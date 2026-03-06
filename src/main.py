@@ -2,10 +2,11 @@ import sys
 import pygame
 
 from combat import player_attack
-from dungeon import generate_dungeon, spawn_monsters
+from dungeon import generate_dungeon, spawn_monsters, spawn_items
 from fov import calculate_fov
+from items import Weapon, Armor, Shield, Corpse
 from player import Player
-from quiz_engine import QuizEngine, QuizState
+from quiz_engine import QuizEngine, QuizMode, QuizState
 from renderer import Renderer, TILE_SIZE
 
 WINDOW_W  = 1280
@@ -18,9 +19,10 @@ VIEWPORT_H = WINDOW_H // TILE_SIZE   # 22 tiles
 MSG_MAX = 8
 
 # Game states
-STATE_PLAYER = 'player'
-STATE_QUIZ   = 'quiz'
-STATE_DEAD   = 'dead'
+STATE_PLAYER      = 'player'
+STATE_QUIZ        = 'quiz'
+STATE_EQUIP_MENU  = 'equip_menu'
+STATE_DEAD        = 'dead'
 
 
 class Game:
@@ -30,10 +32,12 @@ class Game:
         self.font_md = pygame.font.SysFont('consolas', 20)
         self.font_lg = pygame.font.SysFont('consolas', 28, bold=True)
 
-        self.quiz_engine   = QuizEngine()
+        self.quiz_engine        = QuizEngine()
         self.messages: list[str] = []
-        self.state         = STATE_PLAYER
-        self.combat_target = None
+        self.state              = STATE_PLAYER
+        self.combat_target      = None
+        self.quiz_title         = ''          # set before each quiz start
+        self.equip_menu_items: list = []      # items shown in equip menu
 
         self._new_level(1)
 
@@ -42,12 +46,12 @@ class Game:
     # ------------------------------------------------------------------
 
     def _new_level(self, level: int):
-        self.dungeon  = generate_dungeon(80, 50, level)
-        self.player   = Player()
+        self.dungeon      = generate_dungeon(80, 50, level)
+        self.player       = Player()
         self.player.x, self.player.y = self.dungeon.rooms[0].center
-        self.monsters = spawn_monsters(self.dungeon.rooms, level, self.dungeon)
-        self.corpses: list[dict] = []
-        self.renderer = Renderer(self.screen, VIEWPORT_W, VIEWPORT_H)
+        self.monsters     = spawn_monsters(self.dungeon.rooms, level, self.dungeon)
+        self.ground_items = spawn_items(self.dungeon.rooms, level, self.dungeon)
+        self.renderer     = Renderer(self.screen, VIEWPORT_W, VIEWPORT_H)
         self._refresh_fov()
         self.log(f"You descend to dungeon level {level}.")
 
@@ -71,18 +75,24 @@ class Game:
     # ------------------------------------------------------------------
 
     def handle_event(self, event: pygame.event.Event) -> bool:
-        """Process one event. Returns False to signal quit."""
         if event.type == pygame.QUIT:
             return False
         if event.type != pygame.KEYDOWN:
             return True
+
         if event.key == pygame.K_ESCAPE:
-            return False
+            if self.state == STATE_EQUIP_MENU:
+                self.state = STATE_PLAYER
+                return True
+            return False  # quit
 
         if self.state == STATE_PLAYER:
             self._player_input(event.key)
         elif self.state == STATE_QUIZ:
             self._quiz_input(event.key)
+        elif self.state == STATE_EQUIP_MENU:
+            self._equip_menu_input(event.key)
+
         return True
 
     _MOVE_KEYS = {
@@ -93,6 +103,16 @@ class Game:
     }
 
     def _player_input(self, key: int):
+        # Pick up item
+        if key in (pygame.K_g, pygame.K_COMMA):
+            self._pickup()
+            return
+
+        # Open equip menu
+        if key == pygame.K_e:
+            self._open_equip_menu()
+            return
+
         if key not in self._MOVE_KEYS:
             return
 
@@ -118,9 +138,98 @@ class Game:
             self._refresh_fov()
             self._do_monster_turns()
 
+    # ------------------------------------------------------------------
+    # Pickup
+    # ------------------------------------------------------------------
+
+    def _pickup(self):
+        px, py = self.player.x, self.player.y
+        item = next((i for i in self.ground_items if i.x == px and i.y == py), None)
+        if item is None:
+            self.log("There is nothing here to pick up.")
+            return
+        if self.player.add_to_inventory(item):
+            self.ground_items.remove(item)
+            self.log(f"You pick up the {item.name}.")
+            self._do_monster_turns()
+        else:
+            self.log("You are carrying too much to pick that up.")
+
+    # ------------------------------------------------------------------
+    # Equip menu
+    # ------------------------------------------------------------------
+
+    def _open_equip_menu(self):
+        self.equip_menu_items = [
+            i for i in self.player.inventory
+            if isinstance(i, (Weapon, Armor, Shield))
+        ]
+        if not self.equip_menu_items:
+            self.log("You have nothing equippable in your inventory.")
+            return
+        self.state = STATE_EQUIP_MENU
+
+    def _equip_menu_input(self, key: int):
+        key_to_idx = {
+            pygame.K_1: 0, pygame.K_KP1: 0,
+            pygame.K_2: 1, pygame.K_KP2: 1,
+            pygame.K_3: 2, pygame.K_KP3: 2,
+            pygame.K_4: 3, pygame.K_KP4: 3,
+            pygame.K_5: 4, pygame.K_KP5: 4,
+            pygame.K_6: 5, pygame.K_KP6: 5,
+            pygame.K_7: 6, pygame.K_KP7: 6,
+            pygame.K_8: 7, pygame.K_KP8: 7,
+            pygame.K_9: 8, pygame.K_KP9: 8,
+        }
+        idx = key_to_idx.get(key)
+        if idx is None or idx >= len(self.equip_menu_items):
+            return
+        self.state = STATE_PLAYER
+        self._equip_item(self.equip_menu_items[idx])
+
+    def _equip_item(self, item):
+        if isinstance(item, Weapon):
+            # Weapons equip instantly — no quiz needed
+            self.player._apply_equip(item)
+            self.player.remove_from_inventory(item)
+            self.log(f"You equip the {item.name}.")
+            self._do_monster_turns()
+
+        elif isinstance(item, (Armor, Shield)):
+            item_name = item.name
+            self.quiz_title = f"EQUIPPING {item_name.upper()}  —  GEOGRAPHY"
+            self.state = STATE_QUIZ
+
+            def on_complete(result):
+                self.state = STATE_PLAYER
+                if result.success:
+                    self.player._apply_equip(item)
+                    self.player.remove_from_inventory(item)
+                    self.log(
+                        f"You equip the {item_name}. AC is now {self.player.get_ac()}."
+                    )
+                else:
+                    self.log(f"You struggle to put on the {item_name} and give up.")
+                self._do_monster_turns()
+
+            self.quiz_engine.start_quiz(
+                mode='threshold',
+                subject='geography',
+                tier=1,
+                callback=on_complete,
+                threshold=item.equip_threshold,
+                wisdom=self.player.WIS,
+            )
+
+    # ------------------------------------------------------------------
+    # Combat
+    # ------------------------------------------------------------------
+
     def _start_combat(self, monster):
         self.state = STATE_QUIZ
         self.combat_target = monster
+        weapon_name = self.player.weapon.name if self.player.weapon else 'bare hands'
+        self.quiz_title = f"COMBAT vs {monster.name.upper()}  —  MATH CHAIN"
 
         # Floating eye: paralyze on melee contact
         if monster.kind == 'floating_eye':
@@ -138,8 +247,8 @@ class Game:
                 )
                 if killed:
                     self.log(f"The {monster.name} is slain!")
-                    self.corpses.append(
-                        {'x': monster.x, 'y': monster.y, 'name': monster.name}
+                    self.ground_items.append(
+                        Corpse(monster.name, monster.kind, monster.x, monster.y)
                     )
             self._do_monster_turns()
 
@@ -197,10 +306,8 @@ class Game:
         self.screen.fill((0, 0, 0))
         self.renderer.draw_dungeon(self.dungeon, self.visible, cam_x, cam_y)
 
-        for c in self.corpses:
-            self.renderer.draw_entity(
-                c['x'], c['y'], (100, 30, 30), cam_x, cam_y, self.visible
-            )
+        for item in self.ground_items:
+            self.renderer.draw_item(item, cam_x, cam_y, self.visible)
 
         for m in self.monsters:
             if m.alive:
@@ -215,6 +322,8 @@ class Game:
 
         if self.state == STATE_QUIZ:
             self._draw_quiz()
+        elif self.state == STATE_EQUIP_MENU:
+            self._draw_equip_menu()
         elif self.state == STATE_DEAD:
             self._draw_death_screen()
 
@@ -227,36 +336,50 @@ class Game:
         cam_y = max(0, min(cam_y, self.dungeon.height - VIEWPORT_H))
         return cam_x, cam_y
 
+    # ------------------------------------------------------------------
+    # HUD
+    # ------------------------------------------------------------------
+
     def _draw_hud(self):
         p = self.player
-        paralyzed = p.status_effects.get('paralyzed', 0)
-        status = f"  [PARALYZED: {paralyzed}]" if paralyzed else ""
+        weapon_str  = p.weapon.name if p.weapon else 'bare hands'
+        paralyzed   = p.status_effects.get('paralyzed', 0)
+        status      = f"  [PARALYZED:{paralyzed}]" if paralyzed else ""
         text = (
-            f"HP {p.hp}/{p.max_hp}   SP {p.sp}/{p.max_sp}   MP {p.mp}/{p.max_mp}"
-            f"   WIS {p.WIS}{status}"
+            f"HP {p.hp}/{p.max_hp}  AC {p.get_ac()}"
+            f"  |  {weapon_str}"
+            f"  |  SP {p.sp}/{p.max_sp}  MP {p.mp}/{p.max_mp}"
+            f"  WIS {p.WIS}{status}"
         )
         surf = self.font_sm.render(text, True, (220, 210, 100))
-        pygame.draw.rect(self.screen, (0, 0, 0), (0, 0, surf.get_width() + 20, 22))
+        pygame.draw.rect(self.screen, (0, 0, 0), (0, 0, WINDOW_W, 22))
         self.screen.blit(surf, (8, 4))
 
+    # ------------------------------------------------------------------
+    # Message log
+    # ------------------------------------------------------------------
+
     def _draw_messages(self):
-        msgs = self.messages[-6:]
+        msgs   = self.messages[-6:]
         line_h = 19
         box_h  = len(msgs) * line_h + 8
         box_y  = WINDOW_H - box_h
         pygame.draw.rect(self.screen, (0, 0, 0), (0, box_y, 760, box_h))
         for i, msg in enumerate(msgs):
-            age = len(msgs) - 1 - i
+            age    = len(msgs) - 1 - i
             bright = max(110, 220 - age * 28)
-            surf = self.font_sm.render(msg, True, (bright, bright, bright))
+            surf   = self.font_sm.render(msg, True, (bright, bright, bright))
             self.screen.blit(surf, (8, box_y + 4 + i * line_h))
+
+    # ------------------------------------------------------------------
+    # Quiz modal
+    # ------------------------------------------------------------------
 
     def _draw_quiz(self):
         qe = self.quiz_engine
         if not qe.current_question:
             return
 
-        # Dim background
         overlay = pygame.Surface((WINDOW_W, WINDOW_H), pygame.SRCALPHA)
         overlay.fill((0, 0, 0, 165))
         self.screen.blit(overlay, (0, 0))
@@ -268,23 +391,27 @@ class Game:
         pygame.draw.rect(self.screen, (16, 16, 38), (bx, by, bw, bh), border_radius=12)
         pygame.draw.rect(self.screen, (70, 70, 140), (bx, by, bw, bh), 2, border_radius=12)
 
-        # Header
-        target_name = self.combat_target.name.upper() if self.combat_target else 'ENEMY'
-        hdr = self.font_md.render(
-            f"COMBAT vs {target_name}  —  MATH CHAIN", True, (255, 200, 60)
-        )
+        # Header (context-aware title)
+        hdr = self.font_md.render(self.quiz_title, True, (255, 200, 60))
         self.screen.blit(hdr, (bx + 18, by + 14))
 
-        chain_surf = self.font_md.render(f"Chain: {qe.chain}", True, (80, 255, 120))
-        self.screen.blit(chain_surf, (bx + bw - chain_surf.get_width() - 18, by + 14))
+        # Counter — chain for chain mode, progress for threshold mode
+        if qe.mode in (QuizMode.CHAIN, QuizMode.ESCALATOR_CHAIN):
+            counter_text  = f"Chain: {qe.chain}"
+            counter_color = (80, 255, 120)
+        else:
+            counter_text  = f"{qe.correct_count}/{qe.required} correct"
+            counter_color = (120, 200, 255)
+        c_surf = self.font_md.render(counter_text, True, counter_color)
+        self.screen.blit(c_surf, (bx + bw - c_surf.get_width() - 18, by + 14))
 
         # Timer bar
         bar_x, bar_y, bar_w, bar_h = bx + 18, by + 50, bw - 36, 10
         ratio = max(0.0, qe.time_remaining / max(1, qe.timer_seconds))
         pygame.draw.rect(self.screen, (40, 15, 15), (bar_x, bar_y, bar_w, bar_h), border_radius=5)
         bar_color = (
-            (50, 200, 50)   if ratio > 0.50 else
-            (210, 160, 40)  if ratio > 0.25 else
+            (50, 200, 50)  if ratio > 0.50 else
+            (210, 160, 40) if ratio > 0.25 else
             (210, 50, 50)
         )
         pygame.draw.rect(
@@ -307,22 +434,21 @@ class Game:
             (bx + 18,        by + 255),
             (bx + 18 + 364,  by + 255),
         ]
-
         correct_str = str(qe.current_question.get('answer', '')).strip().lower()
         selected    = qe.last_answer.strip().lower()
 
         for i, (choice, (cx, cy)) in enumerate(zip(choices, positions)):
-            c_lower = choice.strip().lower()
+            c_lower     = choice.strip().lower()
             is_correct  = c_lower == correct_str
             is_selected = bool(selected) and c_lower == selected
 
             if qe.state == QuizState.RESULT:
                 if is_correct:
-                    bg, border = (18, 72, 18), (50, 210, 50)
+                    bg, border = (18, 72, 18),  (50, 210, 50)
                 elif is_selected:
-                    bg, border = (72, 18, 18), (210, 50, 50)
+                    bg, border = (72, 18, 18),  (210, 50, 50)
                 else:
-                    bg, border = (22, 22, 52), (55, 55, 100)
+                    bg, border = (22, 22, 52),  (55, 55, 100)
             else:
                 bg, border = (24, 24, 56), (65, 65, 120)
 
@@ -335,7 +461,6 @@ class Game:
             c_surf = self.font_md.render(str(choice), True, (220, 220, 220))
             self.screen.blit(c_surf, (cx + 68, cy + (ch - c_surf.get_height()) // 2))
 
-        # Correct / wrong feedback
         if qe.state == QuizState.RESULT:
             if qe.last_correct:
                 fb = self.font_lg.render("CORRECT!", True, (80, 255, 80))
@@ -343,10 +468,83 @@ class Game:
                 fb = self.font_lg.render("WRONG!", True, (255, 80, 80))
             self.screen.blit(fb, (bx + (bw - fb.get_width()) // 2, by + bh - 52))
 
-        # Key hint (only while asking)
         if qe.state == QuizState.ASKING:
             hint = self.font_sm.render("Press 1-4 to answer", True, (120, 120, 160))
             self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, by + bh - 28))
+
+    # ------------------------------------------------------------------
+    # Equip menu overlay
+    # ------------------------------------------------------------------
+
+    def _draw_equip_menu(self):
+        overlay = pygame.Surface((WINDOW_W, WINDOW_H), pygame.SRCALPHA)
+        overlay.fill((0, 0, 0, 150))
+        self.screen.blit(overlay, (0, 0))
+
+        bw, bh = 560, min(80 + len(self.equip_menu_items) * 48 + 60, 500)
+        bx = (WINDOW_W - bw) // 2
+        by = (WINDOW_H - bh) // 2
+
+        pygame.draw.rect(self.screen, (16, 20, 36), (bx, by, bw, bh), border_radius=12)
+        pygame.draw.rect(self.screen, (70, 70, 140), (bx, by, bw, bh), 2, border_radius=12)
+
+        title = self.font_md.render("EQUIP ITEM", True, (255, 200, 60))
+        self.screen.blit(title, (bx + 20, by + 16))
+
+        # Equipped status line
+        p = self.player
+        eq_weapon = p.weapon.name if p.weapon else 'none'
+        eq_str = self.font_sm.render(
+            f"Weapon: {eq_weapon}   AC: {p.get_ac()}", True, (160, 200, 160)
+        )
+        self.screen.blit(eq_str, (bx + 20, by + 44))
+
+        pygame.draw.line(
+            self.screen, (60, 60, 100),
+            (bx + 10, by + 66), (bx + bw - 10, by + 66)
+        )
+
+        for i, item in enumerate(self.equip_menu_items):
+            iy = by + 76 + i * 48
+            row_bg = (28, 28, 58) if i % 2 == 0 else (22, 22, 48)
+            pygame.draw.rect(self.screen, row_bg, (bx + 10, iy, bw - 20, 42), border_radius=6)
+
+            num = self.font_md.render(f"[{i + 1}]", True, (160, 160, 80))
+            self.screen.blit(num, (bx + 18, iy + 11))
+
+            name_surf = self.font_md.render(item.name, True, (220, 220, 220))
+            self.screen.blit(name_surf, (bx + 70, iy + 11))
+
+            if isinstance(item, Weapon):
+                detail = self.font_sm.render(
+                    f"weapon  {item.damage}  chain x{item.max_chain_length or '?'}",
+                    True, (160, 200, 160)
+                )
+            elif isinstance(item, (Armor, Shield)):
+                quiz_req = f"geography x{item.equip_threshold}"
+                ac_str   = f"+{item.ac_bonus} AC"
+                slot_str = getattr(item, 'slot', 'shield')
+                detail   = self.font_sm.render(
+                    f"{slot_str}  {ac_str}  (quiz: {quiz_req})", True, (160, 180, 220)
+                )
+            else:
+                detail = self.font_sm.render(item.item_class, True, (140, 140, 140))
+
+            self.screen.blit(detail, (bx + 70, iy + 30))
+
+        hint_y = by + bh - 34
+        pygame.draw.line(
+            self.screen, (60, 60, 100),
+            (bx + 10, hint_y - 8), (bx + bw - 10, hint_y - 8)
+        )
+        hint = self.font_sm.render(
+            "Press number to equip  |  ESC to cancel", True, (120, 120, 160)
+        )
+        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
+
+    # ------------------------------------------------------------------
+    # Death screen
+    # ------------------------------------------------------------------
 
     def _draw_death_screen(self):
         overlay = pygame.Surface((WINDOW_W, WINDOW_H), pygame.SRCALPHA)
@@ -368,16 +566,14 @@ def main():
     pygame.display.set_caption("Philosopher's Quest")
     clock = pygame.time.Clock()
 
-    game = Game(screen)
+    game    = Game(screen)
     running = True
 
     while running:
         dt = clock.tick(FPS) / 1000.0
-
         for event in pygame.event.get():
             if not game.handle_event(event):
                 running = False
-
         game.update(dt)
         game.render()
 

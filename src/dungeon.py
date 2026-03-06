@@ -1,3 +1,4 @@
+import copy
 import json
 import os
 import random
@@ -153,6 +154,42 @@ def spawn_monsters(rooms: List[Room], level: int, dungeon: 'Dungeon',
             break
 
     return monsters
+
+
+def spawn_items(rooms: List[Room], level: int, dungeon: 'Dungeon') -> list:
+    """Spawn items in dungeon rooms. 33% chance per room (skips first room)."""
+    from items import load_items
+
+    rng = random.Random()
+    templates: list = []
+    for cls_name in ('weapon', 'armor'):
+        try:
+            templates += load_items(cls_name)
+        except FileNotFoundError:
+            pass
+
+    eligible = [t for t in templates if t.min_level <= level] or templates[:]
+    if not eligible:
+        return []
+
+    ground_items = []
+    for room in rooms[1:]:
+        if rng.random() > 0.33:
+            continue
+        tiles = list(room.inner_tiles())
+        rng.shuffle(tiles)
+        for tx, ty in tiles:
+            if not dungeon.is_walkable(tx, ty):
+                continue
+            if any(i.x == tx and i.y == ty for i in ground_items):
+                continue
+            inst = copy.copy(rng.choice(eligible))
+            inst.x = tx
+            inst.y = ty
+            ground_items.append(inst)
+            break
+
+    return ground_items
 
 
 def _weighted_choice(pool: dict, rng: random.Random) -> str:

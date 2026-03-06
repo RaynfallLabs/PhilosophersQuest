@@ -1,0 +1,35 @@
+{
+  "rusty_dagger": {
+    "name": "rusty dagger",
+    "symbol": ")",
+    "color": [160, 160, 170],
+    "weight": 1.0,
+    "min_level": 1,
+    "damage": "1d4",
+    "chain_multipliers": [0.5, 1.0, 1.5, 2.0, 2.5],
+    "max_chain_length": 5,
+    "quiz_tier": 1
+  },
+  "short_sword": {
+    "name": "short sword",
+    "symbol": ")",
+    "color": [200, 210, 230],
+    "weight": 2.0,
+    "min_level": 1,
+    "damage": "1d6",
+    "chain_multipliers": [1.0, 1.5, 2.0, 2.5, 3.0],
+    "max_chain_length": 5,
+    "quiz_tier": 1
+  },
+  "iron_mace": {
+    "name": "iron mace",
+    "symbol": ")",
+    "color": [140, 130, 120],
+    "weight": 4.0,
+    "min_level": 2,
+    "damage": "1d8",
+    "chain_multipliers": [1.0, 1.5, 2.0, 3.0, 4.0],
+    "max_chain_length": 5,
+    "quiz_tier": 2
+  }
+}

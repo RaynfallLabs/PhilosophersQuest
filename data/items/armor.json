@@ -1,0 +1,32 @@
+{
+  "leather_cap": {
+    "name": "leather cap",
+    "symbol": "[",
+    "color": [160, 120, 60],
+    "weight": 1.0,
+    "min_level": 1,
+    "slot": "head",
+    "ac_bonus": 1,
+    "equip_threshold": 2
+  },
+  "leather_armor": {
+    "name": "leather armor",
+    "symbol": "[",
+    "color": [140, 100, 50],
+    "weight": 5.0,
+    "min_level": 1,
+    "slot": "body",
+    "ac_bonus": 2,
+    "equip_threshold": 3
+  },
+  "iron_helm": {
+    "name": "iron helm",
+    "symbol": "[",
+    "color": [160, 165, 175],
+    "weight": 3.0,
+    "min_level": 2,
+    "slot": "head",
+    "ac_bonus": 2,
+    "equip_threshold": 3
+  }
+}

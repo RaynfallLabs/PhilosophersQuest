@@ -30,6 +30,7 @@ class Renderer:
         self.screen = screen
         self.vw = viewport_tiles_w
         self.vh = viewport_tiles_h
+        self._sym_font = pygame.font.SysFont('consolas', TILE_SIZE - 8, bold=True)
 
     def _to_screen(self, wx: int, wy: int, cam_x: int, cam_y: int):
         return (wx - cam_x) * TILE_SIZE, (wy - cam_y) * TILE_SIZE
@@ -61,10 +62,20 @@ class Renderer:
 
     def draw_entity(self, x: int, y: int, color: tuple,
                     cam_x: int, cam_y: int, visible: set):
-        """Draw a monster or item as a colored square (only if visible)."""
+        """Draw a monster as a colored square (only if visible)."""
         if (x, y) not in visible:
             return
         sx, sy = self._to_screen(x, y, cam_x, cam_y)
         pad = 5
         rect = pygame.Rect(sx + pad, sy + pad, TILE_SIZE - pad * 2, TILE_SIZE - pad * 2)
         pygame.draw.rect(self.screen, color, rect)
+
+    def draw_item(self, item, cam_x: int, cam_y: int, visible: set):
+        """Draw an item's symbol glyph on the ground (only if visible)."""
+        if (item.x, item.y) not in visible:
+            return
+        sx, sy = self._to_screen(item.x, item.y, cam_x, cam_y)
+        surf = self._sym_font.render(item.symbol, True, item.color)
+        ox = (TILE_SIZE - surf.get_width()) // 2
+        oy = (TILE_SIZE - surf.get_height()) // 2
+        self.screen.blit(surf, (sx + ox, sy + oy))

@@ -93,3 +93,31 @@ class Player:
 
     def get_current_weight(self) -> float:
         return sum(getattr(item, 'weight', 0) for item in self.inventory)
+
+    # --- Inventory ---
+
+    def add_to_inventory(self, item) -> bool:
+        """Add item if within weight limit. Returns True on success."""
+        if self.get_current_weight() + getattr(item, 'weight', 0) > self.get_carry_limit():
+            return False
+        self.inventory.append(item)
+        return True
+
+    def remove_from_inventory(self, item) -> bool:
+        if item in self.inventory:
+            self.inventory.remove(item)
+            return True
+        return False
+
+    # --- Equipment ---
+
+    def _apply_equip(self, item):
+        """Place item into the correct equipment slot. No quiz check — call after quiz success."""
+        from items import Weapon, Armor, Shield, ARMOR_SLOTS
+        if isinstance(item, Weapon):
+            self.weapon = item
+        elif isinstance(item, Armor):
+            idx = ARMOR_SLOTS.index(item.slot) if item.slot in ARMOR_SLOTS else 0
+            self.armor_slots[idx] = item
+        elif isinstance(item, Shield):
+            self.shield = item
