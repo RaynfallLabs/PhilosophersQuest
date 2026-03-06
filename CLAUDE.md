@@ -1,61 +1,77 @@
 # Philosopher's Quest
 
-## What This Is
-A graphical roguelike RPG where the core mechanic is answering quiz questions. Players explore high-fantasy dungeons, fight monsters, collect loot, and interact with the world by answering knowledge-based questions. Correct answers succeed, wrong answers fail or have consequences.
+## Core Concept
+A graphical roguelike where knowledge is power. Every action requires answering quiz questions. Performance determines outcome — not random chance.
 
-Built with Pygame for rich 2D graphics, animations, and sound.
+## Quiz Modes
+- **threshold** — Must answer X correct to succeed (e.g., equipping armor, harvesting)
+- **chain** — Build combo until wrong answer; score = chain length (e.g., combat attacks)
+- **escalator_threshold** — Questions get harder each round; must hit a correct threshold
+- **escalator_chain** — Questions get harder each round; chain until failure (e.g., cooking)
 
-## Target Audience
-Children ages 11-12 and growing. The game is designed to be played for years, with question content that scales from middle school through high school and beyond. Should be colorful, engaging, fun, and rewarding without being childish.
+## Subject → Action Mapping
+| Subject     | Action                  |
+|-------------|-------------------------|
+| math        | Combat attacks (chain)  |
+| geography   | Armor/shield equipping  |
+| history     | Accessory equipping     |
+| animal      | Harvesting corpses      |
+| cooking     | Preparing food          |
+| science     | Magic / wands           |
+| philosophy  | Identification          |
+| grammar     | Reading scrolls         |
+| economics   | Lockpicking             |
 
-## Question System
-- Questions stored in external JSON or YAML files, easily editable by a non-programmer
-- Questions tagged by: category, difficulty level, age-appropriateness
-- Difficulty levels: Elementary, Middle School, High School, Advanced
-- Categories: Math, Science, History, Geography, Vocabulary, Literature, Logic, Philosophy
-- Game pulls questions based on player's selected difficulty and action type
-- Easy to add new questions or entire question packs over time
-- Possible future: integration with educational APIs or AI-generated questions
+## Player Stats
+- **STR** — Carry capacity
+- **CON** — Max HP and SP
+- **DEX** — Armor class bonus
+- **INT** — Max MP
+- **WIS** — Quiz timer bonus (+1 second per point)
+- **PER** — Sight radius
 
 ## Project Structure
-- `src/` - All game code
-- `src/assets/` - Graphics, sprites, sounds, fonts
-- `src/assets/sprites/` - Character and monster sprites
-- `src/assets/tiles/` - Dungeon tiles (walls, floors, doors, etc.)
-- `src/assets/ui/` - Interface elements (buttons, health bars, question boxes)
-- `src/assets/sounds/` - Sound effects and music
-- `data/questions/` - Question files (JSON/YAML), organized by category and difficulty
-- `tests/` - All test files
-- `requirements.txt` - Python dependencies
+```
+src/
+  main.py           - Entry point
+  game.py           - Main game loop and state management
+  player.py         - Player class: stats, inventory, equipment
+  monster.py        - Monster class with AI patterns
+  dungeon.py        - Procedural dungeon generation
+  combat.py         - Combat resolution
+  quiz_engine.py    - All quiz logic (threshold, chain, escalator modes)
+  fov.py            - Shadowcasting field of view
+  renderer.py       - Pygame tile rendering
+  ui.py             - Sidebar, message log, menus
+  input_handler.py  - Keyboard input processing
+  items.py          - Item classes and equipment system
+  food_system.py    - Harvest and cooking mechanics
+  dice.py           - Dice notation parser ("2d6+3")
 
-## Commands
-- Run the game: `python src/main.py`
-- Run tests: `pytest tests/ -v`
-- Install dependencies: `pip install -r requirements.txt`
+data/
+  questions/        - Quiz question JSON files organized by subject
+  monsters.json     - Monster definitions
+  items/            - Item JSON files by category
+
+assets/
+  tiles/            - Tile graphics (placeholder colored squares initially)
+  fonts/            - Game fonts
+```
 
 ## Tech Stack
 - Python 3.13
-- Pygame for graphics, input, and sound
-- Sprite-based 2D with tile maps
-- Animated characters and monsters
+- Pygame — rendering, input, sound
+- Tile-based graphics (32×32 pixels)
+- JSON data files for questions, monsters, items
+
+## Commands
+- Run game: `python src/main.py`
+- Run tests: `pytest tests/ -v`
+- Install dependencies: `pip install -r requirements.txt`
 
 ## Development Rules
-- Write clean, readable Python code
-- Add tests for new features
+- Keep code modular — one responsibility per file
+- Match mechanics exactly from the JS prototype
+- Use placeholder graphics (colored rectangles) initially; swap in real art later
+- All questions and game data loaded from JSON files — no hardcoded content
 - Commit after each working feature
-- Use descriptive commit messages
-
-## Visual Style
-- High fantasy aesthetic (castles, dungeons, magical forests)
-- Colorful and appealing but not babyish — think classic SNES RPGs
-- Smooth animations for movement, attacks, effects
-- Clear visual feedback for correct/incorrect answers
-- Spell effects, particle systems for magic
-
-## Game Design Notes
-- Turn-based or real-time with pause (TBD)
-- Quiz questions determine success of actions (combat, lockpicking, persuasion, magic, etc.)
-- Question difficulty scales with action difficulty and player-selected difficulty level
-- Rewards and progression system to keep players motivated
-- Multiple character classes with different strengths
-- Procedurally generated dungeons for replayability
