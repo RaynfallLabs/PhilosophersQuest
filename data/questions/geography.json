@@ -1,0 +1,32 @@
+[
+  {
+    "tier": 1,
+    "question": "What is the capital of France?",
+    "answer": "Paris",
+    "choices": ["Lyon", "Paris", "Marseille", "Bordeaux"]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Japan?",
+    "answer": "Tokyo",
+    "choices": ["Osaka", "Kyoto", "Tokyo", "Hiroshima"]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Australia?",
+    "answer": "Canberra",
+    "choices": ["Sydney", "Melbourne", "Brisbane", "Canberra"]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Canada?",
+    "answer": "Ottawa",
+    "choices": ["Toronto", "Vancouver", "Ottawa", "Montreal"]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Brazil?",
+    "answer": "Brasilia",
+    "choices": ["Rio de Janeiro", "Sao Paulo", "Brasilia", "Salvador"]
+  }
+]

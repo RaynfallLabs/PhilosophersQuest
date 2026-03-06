@@ -1,0 +1,95 @@
+class Player:
+    BASE_HP = 20
+    BASE_SP = 20
+    BASE_MP = 10
+    BASE_TIMER = 10      # seconds for quiz timer
+    CARRY_BASE = 50
+    CARRY_PER_STR = 5
+
+    def __init__(self):
+        # Primary stats
+        self.STR = 10
+        self.CON = 10
+        self.DEX = 10
+        self.INT = 10
+        self.WIS = 10
+        self.PER = 10
+
+        # Resources
+        self.max_hp = self.BASE_HP + self.CON
+        self.hp = self.max_hp
+        self.max_sp = self.BASE_SP + self.CON
+        self.sp = self.max_sp
+        self.max_mp = self.BASE_MP + self.INT
+        self.mp = self.max_mp
+
+        # Position on the dungeon grid
+        self.x = 0
+        self.y = 0
+
+        # Equipment slots
+        self.weapon = None
+        self.shield = None
+        self.armor_slots = [None] * 8     # head, chest, legs, feet, hands, back, ring x2
+        self.accessory_slots = [None] * 4
+
+        # Inventory (list of item objects)
+        self.inventory = []
+
+        # Status effects: effect_name -> turns_remaining
+        self.status_effects: dict[str, int] = {}
+        # Resistances: damage_type -> multiplier (0.0 = immune, 1.0 = normal)
+        self.resistances: dict[str, float] = {}
+
+    # --- Resources ---
+
+    def take_damage(self, amount: int, damage_type: str = 'physical') -> int:
+        """Apply damage after resistance. Returns actual damage dealt."""
+        resistance = self.resistances.get(damage_type, 1.0)
+        actual = max(0, int(amount * resistance))
+        self.hp = max(0, self.hp - actual)
+        return actual
+
+    def is_dead(self) -> bool:
+        return self.hp <= 0
+
+    def spend_sp(self, amount: int) -> bool:
+        """Spend stamina points. Returns False if insufficient."""
+        if self.sp < amount:
+            return False
+        self.sp -= amount
+        return True
+
+    def restore_sp(self, amount: int):
+        self.sp = min(self.max_sp, self.sp + amount)
+
+    def restore_hp(self, amount: int):
+        self.hp = min(self.max_hp, self.hp + amount)
+
+    def restore_mp(self, amount: int):
+        self.mp = min(self.max_mp, self.mp + amount)
+
+    # --- Derived stats ---
+
+    def get_ac(self) -> int:
+        """Armor class = 10 + DEX modifier + equipped armor and shield bonuses."""
+        dex_mod = (self.DEX - 10) // 2
+        armor_bonus = sum(
+            getattr(slot, 'ac_bonus', 0) for slot in self.armor_slots if slot is not None
+        )
+        shield_bonus = getattr(self.shield, 'ac_bonus', 0) if self.shield else 0
+        return 10 + dex_mod + armor_bonus + shield_bonus
+
+    def get_sight_radius(self) -> int:
+        """Sight radius in tiles, driven by PER stat."""
+        return max(3, self.PER // 2)
+
+    def get_quiz_timer(self) -> int:
+        """Quiz timer in seconds: base + 1s per WIS point above 10."""
+        return self.BASE_TIMER + max(0, self.WIS - 10)
+
+    def get_carry_limit(self) -> int:
+        return self.CARRY_BASE + self.STR * self.CARRY_PER_STR
+
+    def get_current_weight(self) -> float:
+        return sum(getattr(item, 'weight', 0) for item in self.inventory)
