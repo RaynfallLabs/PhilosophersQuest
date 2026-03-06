@@ -59,6 +59,7 @@ class QuizEngine:
         self.chain: int = 0
         self.correct_count: int = 0
         self.asked_count: int = 0
+        self.last_answer: str = ''    # last submitted answer string
 
     # --- Public API ---
 
@@ -100,6 +101,7 @@ class QuizEngine:
         self.correct_count = 0
         self.asked_count = 0
         self.last_correct = None
+        self.last_answer = ''
         self.result_timer = 0.0
 
         self._pool = pool
@@ -114,6 +116,7 @@ class QuizEngine:
         correct = str(self.current_question['answer']).strip().lower()
         is_correct = choice.strip().lower() == correct
 
+        self.last_answer = choice
         self.asked_count += 1
         self.last_correct = is_correct
 

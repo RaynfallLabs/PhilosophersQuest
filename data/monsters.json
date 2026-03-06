@@ -1,0 +1,52 @@
+{
+  "giant_rat": {
+    "name": "giant rat",
+    "symbol": "r",
+    "color": [0, 180, 50],
+    "hp": "1d4",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 1,
+    "frequency": 10,
+    "attacks": [
+      {"name": "bite", "damage": "1d3", "type": "physical"}
+    ]
+  },
+  "goblin": {
+    "name": "goblin",
+    "symbol": "o",
+    "color": [80, 160, 30],
+    "hp": "1d8",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 1,
+    "frequency": 8,
+    "attacks": [
+      {"name": "slash", "damage": "1d6", "type": "physical"}
+    ]
+  },
+  "grid_bug": {
+    "name": "grid bug",
+    "symbol": "x",
+    "color": [180, 0, 220],
+    "hp": "1d2",
+    "speed": 1,
+    "ai_pattern": "grid_bug",
+    "min_level": 1,
+    "frequency": 12,
+    "attacks": [
+      {"name": "zap", "damage": "1d2", "type": "physical"}
+    ]
+  },
+  "floating_eye": {
+    "name": "floating eye",
+    "symbol": "e",
+    "color": [60, 120, 255],
+    "hp": "10",
+    "speed": 0,
+    "ai_pattern": "sessile",
+    "min_level": 1,
+    "frequency": 5,
+    "attacks": []
+  }
+}

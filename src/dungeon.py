@@ -1,3 +1,5 @@
+import json
+import os
 import random
 from dataclasses import dataclass
 from typing import List, Tuple
@@ -113,3 +115,51 @@ def _carve_h_corridor(tiles, x1, x2, y):
 def _carve_v_corridor(tiles, y1, y2, x):
     for y in range(min(y1, y2), max(y1, y2) + 1):
         tiles[y][x] = FLOOR
+
+
+def spawn_monsters(rooms: List[Room], level: int, dungeon: 'Dungeon',
+                   min_count: int = 3, max_count: int = 5) -> list:
+    """Spawn monsters in dungeon rooms (skips the first room)."""
+    from monster import Monster  # local import avoids circular dependency
+
+    monsters_path = os.path.join(os.path.dirname(__file__), '..', 'data', 'monsters.json')
+    with open(monsters_path, encoding='utf-8') as f:
+        all_defs = json.load(f)
+
+    eligible = {k: v for k, v in all_defs.items() if v.get('min_level', 1) <= level}
+    if not eligible:
+        return []
+
+    rng = random.Random()
+    count = rng.randint(min_count, max_count)
+    monsters = []
+    spawn_rooms = rooms[1:]  # keep player's first room clear
+
+    for _ in range(count):
+        if not spawn_rooms:
+            break
+        room = rng.choice(spawn_rooms)
+        tiles = list(room.inner_tiles())
+        rng.shuffle(tiles)
+
+        for tx, ty in tiles:
+            if not dungeon.is_walkable(tx, ty):
+                continue
+            if any(m.x == tx and m.y == ty for m in monsters):
+                continue
+            kind = _weighted_choice(eligible, rng)
+            defn = {**eligible[kind], 'id': kind}
+            monsters.append(Monster(defn, tx, ty))
+            break
+
+    return monsters
+
+
+def _weighted_choice(pool: dict, rng: random.Random) -> str:
+    total = sum(v.get('frequency', 1) for v in pool.values())
+    r = rng.randint(1, total)
+    for key, val in pool.items():
+        r -= val.get('frequency', 1)
+        if r <= 0:
+            return key
+    return list(pool.keys())[-1]
