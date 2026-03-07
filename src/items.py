@@ -54,8 +54,18 @@ class Accessory(Item):
         self.effects = defn.get('effects', {})
 
 
+class Ingredient(Item):
+    def __init__(self, defn: dict):
+        super().__init__(defn)
+        self.source_monster = defn.get('source_monster', '')
+        # recipes: str(quality 0-5) -> {name, sp, bonus_type, bonus_amount}
+        self.recipes: dict = defn.get('recipes', {})
+
+
 class Corpse(Item):
-    def __init__(self, monster_name: str, monster_id: str, x: int, y: int):
+    def __init__(self, monster_name: str, monster_id: str, x: int, y: int,
+                 harvest_tier: int = 1, harvest_threshold: int = 2,
+                 ingredient_id: str | None = None):
         defn = {
             'id':         f'corpse_{monster_id}',
             'name':       f'{monster_name} corpse',
@@ -67,8 +77,9 @@ class Corpse(Item):
         }
         super().__init__(defn)
         self.monster_id        = monster_id
-        self.harvest_tier      = 1
-        self.harvest_threshold = 2
+        self.harvest_tier      = harvest_tier
+        self.harvest_threshold = harvest_threshold
+        self.ingredient_id     = ingredient_id
         self.x = x
         self.y = y
 
@@ -78,10 +89,11 @@ class Corpse(Item):
 # ------------------------------------------------------------------
 
 _CLASS_MAP: dict[str, type] = {
-    'weapon':    Weapon,
-    'armor':     Armor,
-    'shield':    Shield,
-    'accessory': Accessory,
+    'weapon':     Weapon,
+    'armor':      Armor,
+    'shield':     Shield,
+    'accessory':  Accessory,
+    'ingredient': Ingredient,
 }
 
 

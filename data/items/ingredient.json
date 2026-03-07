@@ -1,0 +1,34 @@
+{
+  "rat_meat": {
+    "name": "rat meat",
+    "symbol": ",",
+    "color": [200, 130, 80],
+    "weight": 2.0,
+    "min_level": 1,
+    "source_monster": "giant_rat",
+    "recipes": {
+      "0": {"name": "ruined rat slop",        "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "roasted rat",             "sp": 15,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "decent rat stew",         "sp": 30,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "good rat roast",          "sp": 50,  "bonus_type": "random_stat", "bonus_amount": 1},
+      "4": {"name": "great rat feast",         "sp": 75,  "bonus_type": "combat_stat", "bonus_amount": 1},
+      "5": {"name": "masterwork rat cuisine",  "sp": 100, "bonus_type": "two_stats",   "bonus_amount": 2}
+    }
+  },
+  "goblin_flesh": {
+    "name": "goblin flesh",
+    "symbol": ",",
+    "color": [120, 170, 80],
+    "weight": 5.0,
+    "min_level": 1,
+    "source_monster": "goblin",
+    "recipes": {
+      "0": {"name": "ruined goblin mess",        "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "goblin stew",               "sp": 20,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "decent goblin roast",       "sp": 40,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "good goblin meal",          "sp": 60,  "bonus_type": "random_stat", "bonus_amount": 1},
+      "4": {"name": "great goblin feast",        "sp": 85,  "bonus_type": "combat_stat", "bonus_amount": 1},
+      "5": {"name": "masterwork goblin banquet", "sp": 120, "bonus_type": "two_stats",   "bonus_amount": 2}
+    }
+  }
+}

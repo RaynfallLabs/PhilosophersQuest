@@ -10,7 +10,10 @@
     "frequency": 10,
     "attacks": [
       {"name": "bite", "damage": "1d3", "type": "physical"}
-    ]
+    ],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": "rat_meat"
   },
   "goblin": {
     "name": "goblin",
@@ -23,7 +26,10 @@
     "frequency": 8,
     "attacks": [
       {"name": "slash", "damage": "1d6", "type": "physical"}
-    ]
+    ],
+    "harvest_tier": 1,
+    "harvest_threshold": 3,
+    "ingredient_id": "goblin_flesh"
   },
   "grid_bug": {
     "name": "grid bug",
@@ -36,7 +42,10 @@
     "frequency": 12,
     "attacks": [
       {"name": "zap", "damage": "1d2", "type": "physical"}
-    ]
+    ],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": null
   },
   "floating_eye": {
     "name": "floating eye",
@@ -47,6 +56,9 @@
     "ai_pattern": "sessile",
     "min_level": 1,
     "frequency": 5,
-    "attacks": []
+    "attacks": [],
+    "harvest_tier": 1,
+    "harvest_threshold": 4,
+    "ingredient_id": null
   }
 }

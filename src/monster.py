@@ -20,6 +20,10 @@ class Monster:
         self.y = y
         self.alive = True
 
+        self.harvest_tier      = defn.get('harvest_tier', 1)
+        self.harvest_threshold = defn.get('harvest_threshold', 2)
+        self.ingredient_id     = defn.get('ingredient_id', None)
+
     # --- Combat ---
 
     def take_damage(self, amount: int) -> int:

@@ -109,6 +109,17 @@ class Player:
             return True
         return False
 
+    # --- Stat bonuses ---
+
+    def apply_stat_bonus(self, stat: str, amount: int):
+        """Permanently increase a stat and update derived maximums."""
+        setattr(self, stat, getattr(self, stat) + amount)
+        if stat == 'CON':
+            self.max_hp = self.BASE_HP + self.CON
+            self.max_sp = self.BASE_SP + self.CON
+        elif stat == 'INT':
+            self.max_mp = self.BASE_MP + self.INT
+
     # --- Equipment ---
 
     def _apply_equip(self, item):

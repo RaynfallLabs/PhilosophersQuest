@@ -1,0 +1,62 @@
+[
+  {
+    "tier": 1,
+    "question": "At what temperature does water boil (Fahrenheit)?",
+    "answer": "212",
+    "choices": ["100", "180", "212", "250"]
+  },
+  {
+    "tier": 1,
+    "question": "What herb is traditionally used in pesto?",
+    "answer": "basil",
+    "choices": ["basil", "rosemary", "thyme", "oregano"]
+  },
+  {
+    "tier": 1,
+    "question": "What grain is used to make most bread?",
+    "answer": "wheat",
+    "choices": ["rice", "wheat", "corn", "oats"]
+  },
+  {
+    "tier": 1,
+    "question": "What does sauteing mean?",
+    "answer": "frying quickly in a little fat",
+    "choices": ["boiling in water", "frying quickly in a little fat", "baking in an oven", "slow roasting"]
+  },
+  {
+    "tier": 1,
+    "question": "What is the main ingredient in hummus?",
+    "answer": "chickpeas",
+    "choices": ["lentils", "chickpeas", "black beans", "kidney beans"]
+  },
+  {
+    "tier": 2,
+    "question": "At what internal temperature is chicken safe to eat (Fahrenheit)?",
+    "answer": "165",
+    "choices": ["145", "155", "165", "180"]
+  },
+  {
+    "tier": 2,
+    "question": "What does al dente mean in cooking?",
+    "answer": "firm to the bite",
+    "choices": ["very soft", "firm to the bite", "fully raw", "lightly browned"]
+  },
+  {
+    "tier": 2,
+    "question": "What does blanching involve?",
+    "answer": "briefly boiling then cooling in ice water",
+    "choices": ["slow roasting", "deep frying", "briefly boiling then cooling in ice water", "marinating overnight"]
+  },
+  {
+    "tier": 2,
+    "question": "What is umami often described as?",
+    "answer": "savory",
+    "choices": ["sweet", "sour", "savory", "bitter"]
+  },
+  {
+    "tier": 2,
+    "question": "What does the Maillard reaction cause in cooking?",
+    "answer": "browning and new flavors",
+    "choices": ["food to become soft", "browning and new flavors", "food to turn sour", "bread to rise"]
+  }
+]

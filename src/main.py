@@ -3,8 +3,9 @@ import pygame
 
 from combat import player_attack
 from dungeon import generate_dungeon, spawn_monsters, spawn_items
+from food_system import harvest_corpse, cook_ingredient
 from fov import calculate_fov
-from items import Weapon, Armor, Shield, Corpse
+from items import Weapon, Armor, Shield, Corpse, Ingredient
 from player import Player
 from quiz_engine import QuizEngine, QuizMode, QuizState
 from renderer import Renderer, TILE_SIZE
@@ -22,6 +23,7 @@ MSG_MAX = 8
 STATE_PLAYER      = 'player'
 STATE_QUIZ        = 'quiz'
 STATE_EQUIP_MENU  = 'equip_menu'
+STATE_COOK_MENU   = 'cook_menu'
 STATE_DEAD        = 'dead'
 
 
@@ -36,8 +38,10 @@ class Game:
         self.messages: list[str] = []
         self.state              = STATE_PLAYER
         self.combat_target      = None
-        self.quiz_title         = ''          # set before each quiz start
-        self.equip_menu_items: list = []      # items shown in equip menu
+        self.quiz_title         = ''
+        self.equip_menu_items: list = []
+        self.cook_menu_items: list  = []
+        self.harvest_target         = None
 
         self._new_level(1)
 
@@ -81,7 +85,7 @@ class Game:
             return True
 
         if event.key == pygame.K_ESCAPE:
-            if self.state == STATE_EQUIP_MENU:
+            if self.state in (STATE_EQUIP_MENU, STATE_COOK_MENU):
                 self.state = STATE_PLAYER
                 return True
             return False  # quit
@@ -92,6 +96,8 @@ class Game:
             self._quiz_input(event.key)
         elif self.state == STATE_EQUIP_MENU:
             self._equip_menu_input(event.key)
+        elif self.state == STATE_COOK_MENU:
+            self._cook_menu_input(event.key)
 
         return True
 
@@ -111,6 +117,16 @@ class Game:
         # Open equip menu
         if key == pygame.K_e:
             self._open_equip_menu()
+            return
+
+        # Harvest corpse
+        if key == pygame.K_h:
+            self._harvest()
+            return
+
+        # Open cook menu
+        if key == pygame.K_c:
+            self._open_cook_menu()
             return
 
         if key not in self._MOVE_KEYS:
@@ -136,7 +152,24 @@ class Game:
         elif self.dungeon.is_walkable(nx, ny):
             self.player.x, self.player.y = nx, ny
             self._refresh_fov()
+            self._tick_sp()
             self._do_monster_turns()
+
+    # ------------------------------------------------------------------
+    # SP starvation
+    # ------------------------------------------------------------------
+
+    def _tick_sp(self):
+        if self.player.sp > 0:
+            self.player.sp -= 1
+            if self.player.sp == 0:
+                self.log("You are hungry! Find food before you starve.")
+        else:
+            dmg = self.player.take_damage(1, 'starvation')
+            self.log(f"You are starving! You take {dmg} damage.")
+            if self.player.is_dead():
+                self.state = STATE_DEAD
+                self.log("You have died of starvation! Press ESC to quit.")
 
     # ------------------------------------------------------------------
     # Pickup
@@ -154,6 +187,84 @@ class Game:
             self._do_monster_turns()
         else:
             self.log("You are carrying too much to pick that up.")
+
+    # ------------------------------------------------------------------
+    # Harvest
+    # ------------------------------------------------------------------
+
+    def _harvest(self):
+        px, py = self.player.x, self.player.y
+        corpse = next(
+            (i for i in self.ground_items if isinstance(i, Corpse) and i.x == px and i.y == py),
+            None
+        )
+        if corpse is None:
+            self.log("There is no corpse here to harvest.")
+            return
+        if corpse.ingredient_id is None:
+            self.log(f"The {corpse.name} yields nothing useful.")
+            self.ground_items.remove(corpse)
+            return
+
+        self.ground_items.remove(corpse)
+        self.quiz_title = f"HARVESTING {corpse.name.upper()}  —  ANIMAL LORE"
+        self.state = STATE_QUIZ
+
+        def on_complete(ingredient, message: str):
+            self.state = STATE_PLAYER
+            self.log(message)
+            if ingredient is not None:
+                if not self.player.add_to_inventory(ingredient):
+                    self.ground_items.append(ingredient)
+                    ingredient.x, ingredient.y = px, py
+                    self.log(f"Too heavy to carry — {ingredient.name} dropped.")
+            self._do_monster_turns()
+
+        harvest_corpse(self.player, corpse, self.quiz_engine, on_complete)
+
+    # ------------------------------------------------------------------
+    # Cook menu
+    # ------------------------------------------------------------------
+
+    def _open_cook_menu(self):
+        self.cook_menu_items = [
+            i for i in self.player.inventory if isinstance(i, Ingredient)
+        ]
+        if not self.cook_menu_items:
+            self.log("You have no ingredients to cook.")
+            return
+        self.state = STATE_COOK_MENU
+
+    def _cook_menu_input(self, key: int):
+        key_to_idx = {
+            pygame.K_1: 0, pygame.K_KP1: 0,
+            pygame.K_2: 1, pygame.K_KP2: 1,
+            pygame.K_3: 2, pygame.K_KP3: 2,
+            pygame.K_4: 3, pygame.K_KP4: 3,
+            pygame.K_5: 4, pygame.K_KP5: 4,
+            pygame.K_6: 5, pygame.K_KP6: 5,
+            pygame.K_7: 6, pygame.K_KP7: 6,
+            pygame.K_8: 7, pygame.K_KP8: 7,
+            pygame.K_9: 8, pygame.K_KP9: 8,
+        }
+        idx = key_to_idx.get(key)
+        if idx is None or idx >= len(self.cook_menu_items):
+            return
+        self.state = STATE_PLAYER
+        self._cook_item(self.cook_menu_items[idx])
+
+    def _cook_item(self, ingredient):
+        self.player.remove_from_inventory(ingredient)
+        self.quiz_title = f"COOKING {ingredient.name.upper()}  —  COOKING CHAIN"
+        self.state = STATE_QUIZ
+
+        def on_complete(messages: list[str]):
+            self.state = STATE_PLAYER
+            for msg in messages:
+                self.log(msg)
+            self._do_monster_turns()
+
+        cook_ingredient(self.player, ingredient, self.quiz_engine, on_complete)
 
     # ------------------------------------------------------------------
     # Equip menu
@@ -189,7 +300,6 @@ class Game:
 
     def _equip_item(self, item):
         if isinstance(item, Weapon):
-            # Weapons equip instantly — no quiz needed
             self.player._apply_equip(item)
             self.player.remove_from_inventory(item)
             self.log(f"You equip the {item.name}.")
@@ -228,10 +338,8 @@ class Game:
     def _start_combat(self, monster):
         self.state = STATE_QUIZ
         self.combat_target = monster
-        weapon_name = self.player.weapon.name if self.player.weapon else 'bare hands'
         self.quiz_title = f"COMBAT vs {monster.name.upper()}  —  MATH CHAIN"
 
-        # Floating eye: paralyze on melee contact
         if monster.kind == 'floating_eye':
             cur = self.player.status_effects.get('paralyzed', 0)
             self.player.status_effects['paralyzed'] = max(cur, 3)
@@ -248,7 +356,12 @@ class Game:
                 if killed:
                     self.log(f"The {monster.name} is slain!")
                     self.ground_items.append(
-                        Corpse(monster.name, monster.kind, monster.x, monster.y)
+                        Corpse(
+                            monster.name, monster.kind, monster.x, monster.y,
+                            harvest_tier=monster.harvest_tier,
+                            harvest_threshold=monster.harvest_threshold,
+                            ingredient_id=monster.ingredient_id,
+                        )
                     )
             self._do_monster_turns()
 
@@ -324,6 +437,8 @@ class Game:
             self._draw_quiz()
         elif self.state == STATE_EQUIP_MENU:
             self._draw_equip_menu()
+        elif self.state == STATE_COOK_MENU:
+            self._draw_cook_menu()
         elif self.state == STATE_DEAD:
             self._draw_death_screen()
 
@@ -342,18 +457,33 @@ class Game:
 
     def _draw_hud(self):
         p = self.player
-        weapon_str  = p.weapon.name if p.weapon else 'bare hands'
-        paralyzed   = p.status_effects.get('paralyzed', 0)
-        status      = f"  [PARALYZED:{paralyzed}]" if paralyzed else ""
+        weapon_str = p.weapon.name if p.weapon else 'bare hands'
+        paralyzed  = p.status_effects.get('paralyzed', 0)
+        status     = f"  [PARALYZED:{paralyzed}]" if paralyzed else ""
+
+        sp_ratio = p.sp / max(1, p.max_sp)
+        if sp_ratio > 0.5:
+            sp_color = (80, 220, 80)
+        elif sp_ratio > 0.25:
+            sp_color = (220, 160, 40)
+        else:
+            sp_color = (220, 50, 50)
+
+        hungry_str = "  [HUNGRY]" if p.sp == 0 else ""
+
         text = (
             f"HP {p.hp}/{p.max_hp}  AC {p.get_ac()}"
             f"  |  {weapon_str}"
-            f"  |  SP {p.sp}/{p.max_sp}  MP {p.mp}/{p.max_mp}"
+            f"  |  SP {p.sp}/{p.max_sp}{hungry_str}  MP {p.mp}/{p.max_mp}"
             f"  WIS {p.WIS}{status}"
         )
         surf = self.font_sm.render(text, True, (220, 210, 100))
         pygame.draw.rect(self.screen, (0, 0, 0), (0, 0, WINDOW_W, 22))
         self.screen.blit(surf, (8, 4))
+
+        # SP color dot indicator
+        dot_x = 8 + self.font_sm.size(f"HP {p.hp}/{p.max_hp}  AC {p.get_ac()}  |  {weapon_str}  |  SP ")[0]
+        pygame.draw.circle(self.screen, sp_color, (dot_x - 6, 11), 4)
 
     # ------------------------------------------------------------------
     # Message log
@@ -391,11 +521,9 @@ class Game:
         pygame.draw.rect(self.screen, (16, 16, 38), (bx, by, bw, bh), border_radius=12)
         pygame.draw.rect(self.screen, (70, 70, 140), (bx, by, bw, bh), 2, border_radius=12)
 
-        # Header (context-aware title)
         hdr = self.font_md.render(self.quiz_title, True, (255, 200, 60))
         self.screen.blit(hdr, (bx + 18, by + 14))
 
-        # Counter — chain for chain mode, progress for threshold mode
         if qe.mode in (QuizMode.CHAIN, QuizMode.ESCALATOR_CHAIN):
             counter_text  = f"Chain: {qe.chain}"
             counter_color = (80, 255, 120)
@@ -405,7 +533,6 @@ class Game:
         c_surf = self.font_md.render(counter_text, True, counter_color)
         self.screen.blit(c_surf, (bx + bw - c_surf.get_width() - 18, by + 14))
 
-        # Timer bar
         bar_x, bar_y, bar_w, bar_h = bx + 18, by + 50, bw - 36, 10
         ratio = max(0.0, qe.time_remaining / max(1, qe.timer_seconds))
         pygame.draw.rect(self.screen, (40, 15, 15), (bar_x, bar_y, bar_w, bar_h), border_radius=5)
@@ -419,12 +546,10 @@ class Game:
             (bar_x, bar_y, int(bar_w * ratio), bar_h), border_radius=5
         )
 
-        # Question
         q_text = qe.current_question.get('question', '')
         q_surf = self.font_lg.render(q_text, True, (255, 255, 255))
         self.screen.blit(q_surf, (bx + 18, by + 78))
 
-        # Answer choices — 2×2 grid
         choices    = qe.current_question.get('choices', [])
         labels     = ['1', '2', '3', '4']
         cw, ch     = 340, 72
@@ -491,7 +616,6 @@ class Game:
         title = self.font_md.render("EQUIP ITEM", True, (255, 200, 60))
         self.screen.blit(title, (bx + 20, by + 16))
 
-        # Equipped status line
         p = self.player
         eq_weapon = p.weapon.name if p.weapon else 'none'
         eq_str = self.font_sm.render(
@@ -539,6 +663,64 @@ class Game:
         )
         hint = self.font_sm.render(
             "Press number to equip  |  ESC to cancel", True, (120, 120, 160)
+        )
+        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
+
+    # ------------------------------------------------------------------
+    # Cook menu overlay
+    # ------------------------------------------------------------------
+
+    def _draw_cook_menu(self):
+        overlay = pygame.Surface((WINDOW_W, WINDOW_H), pygame.SRCALPHA)
+        overlay.fill((0, 0, 0, 150))
+        self.screen.blit(overlay, (0, 0))
+
+        bw, bh = 560, min(80 + len(self.cook_menu_items) * 48 + 60, 500)
+        bx = (WINDOW_W - bw) // 2
+        by = (WINDOW_H - bh) // 2
+
+        pygame.draw.rect(self.screen, (20, 16, 10), (bx, by, bw, bh), border_radius=12)
+        pygame.draw.rect(self.screen, (140, 100, 40), (bx, by, bw, bh), 2, border_radius=12)
+
+        title = self.font_md.render("COOK INGREDIENT", True, (255, 200, 60))
+        self.screen.blit(title, (bx + 20, by + 16))
+
+        sp_str = self.font_sm.render(
+            f"SP: {self.player.sp}/{self.player.max_sp}  (cooking restores SP + stats)",
+            True, (200, 180, 120)
+        )
+        self.screen.blit(sp_str, (bx + 20, by + 44))
+
+        pygame.draw.line(
+            self.screen, (100, 80, 40),
+            (bx + 10, by + 66), (bx + bw - 10, by + 66)
+        )
+
+        for i, item in enumerate(self.cook_menu_items):
+            iy = by + 76 + i * 48
+            row_bg = (30, 22, 12) if i % 2 == 0 else (24, 18, 10)
+            pygame.draw.rect(self.screen, row_bg, (bx + 10, iy, bw - 20, 42), border_radius=6)
+
+            num = self.font_md.render(f"[{i + 1}]", True, (200, 160, 60))
+            self.screen.blit(num, (bx + 18, iy + 11))
+
+            name_surf = self.font_md.render(item.name, True, (220, 220, 200))
+            self.screen.blit(name_surf, (bx + 70, iy + 11))
+
+            best = item.recipes.get('5', item.recipes.get('3', {}))
+            best_name = best.get('name', '?')
+            detail = self.font_sm.render(
+                f"best: {best_name}", True, (180, 160, 100)
+            )
+            self.screen.blit(detail, (bx + 70, iy + 30))
+
+        hint_y = by + bh - 34
+        pygame.draw.line(
+            self.screen, (100, 80, 40),
+            (bx + 10, hint_y - 8), (bx + bw - 10, hint_y - 8)
+        )
+        hint = self.font_sm.render(
+            "Press number to cook  |  ESC to cancel", True, (160, 140, 80)
         )
         self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
 
