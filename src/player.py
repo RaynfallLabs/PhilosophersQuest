@@ -122,6 +122,19 @@ class Player:
 
     # --- Equipment ---
 
+    def get_equipped_items(self) -> dict:
+        """Return dict of slot_name -> item (or None) for UI display."""
+        from items import ARMOR_SLOTS
+        slots = {'weapon': self.weapon, 'shield': self.shield}
+        for i, name in enumerate(ARMOR_SLOTS):
+            slots[name] = self.armor_slots[i]
+        return slots
+
+    def get_inventory_display(self) -> list:
+        """Return list of (letter, item) tuples for UI display (max 26)."""
+        letters = 'abcdefghijklmnopqrstuvwxyz'
+        return [(letters[i], item) for i, item in enumerate(self.inventory[:26])]
+
     def _apply_equip(self, item):
         """Place item into the correct equipment slot. No quiz check — call after quiz success."""
         from items import Weapon, Armor, Shield, ARMOR_SLOTS
