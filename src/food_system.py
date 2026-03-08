@@ -64,6 +64,7 @@ def harvest_corpse(player, corpse, quiz_engine, on_complete):
         callback=_callback,
         threshold=getattr(corpse, 'harvest_threshold', 2),
         wisdom=player.WIS,
+        timer_modifier=player.get_quiz_timer_modifier(),
     )
 
 
@@ -101,6 +102,7 @@ def cook_ingredient(player, ingredient, quiz_engine, on_complete):
         callback=_callback,
         max_chain=5,
         wisdom=player.WIS,
+        timer_modifier=player.get_quiz_timer_modifier(),
     )
 
 

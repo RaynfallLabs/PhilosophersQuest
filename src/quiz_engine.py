@@ -60,6 +60,8 @@ class QuizEngine:
         self.correct_count: int = 0
         self.asked_count: int = 0
         self.last_answer: str = ''    # last submitted answer string
+        self.confused_order: list | None = None   # shuffled choice indices when confused
+        self._timer_modifier: float = 1.0
 
     # --- Public API ---
 
@@ -77,12 +79,13 @@ class QuizEngine:
 
     def start_quiz(self, mode: str | QuizMode, subject: str, tier: int,
                    callback, threshold: int = 3, max_chain: int | None = None,
-                   wisdom: int = 10):
+                   wisdom: int = 10, timer_modifier: float = 1.0):
         """
         Start a quiz session.
-          threshold — for threshold modes: number of correct answers needed.
-                      Total questions asked = ceil(threshold * 1.5).
-          max_chain — for chain modes: auto-succeed after this chain length (None = unlimited).
+          threshold     — for threshold modes: number of correct answers needed.
+                          Total questions asked = ceil(threshold * 1.5).
+          max_chain     — for chain modes: auto-succeed after this chain length (None = unlimited).
+          timer_modifier — multiplier on the base timer (e.g. 0.55 when confused).
           callback(QuizResult) is called when the quiz ends.
         """
         if isinstance(mode, str):
@@ -99,7 +102,8 @@ class QuizEngine:
         self.total_qs = math.ceil(threshold * 1.5)
         self.max_chain = max_chain
         self.callback = callback
-        self.timer_seconds = 10 + max(0, wisdom - 10)
+        self._timer_modifier = timer_modifier
+        self.timer_seconds = round((10 + max(0, wisdom - 10)) * timer_modifier)
 
         self.score = 0
         self.chain = 0
@@ -108,6 +112,7 @@ class QuizEngine:
         self.last_correct = None
         self.last_answer = ''
         self.result_timer = 0.0
+        self.confused_order = None
 
         self._pool = pool
         self._pool_idx = 0
@@ -163,6 +168,15 @@ class QuizEngine:
         self._pool_idx += 1
         self.time_remaining = float(self.timer_seconds)
         self.state = QuizState.ASKING
+
+        # Generate shuffled choice order for confused players
+        choices = self.current_question.get('choices', [])
+        if choices and self._timer_modifier < 1.0:
+            order = list(range(len(choices)))
+            random.shuffle(order)
+            self.confused_order = order
+        else:
+            self.confused_order = None
 
     def _advance(self):
         mode = self.mode

@@ -30,31 +30,42 @@ class Player:
         # Equipment slots
         self.weapon = None
         self.shield = None
-        self.armor_slots = [None] * 8     # head, chest, legs, feet, hands, back, ring x2
+        self.armor_slots = [None] * 8     # head, body, arms, hands, legs, feet, cloak, shirt
         self.accessory_slots = [None] * 4
 
         # Inventory (list of item objects)
         self.inventory = []
 
-        # Status effects: effect_name -> turns_remaining
+        # Status effects: effect_id -> turns_remaining (or -1 for permanent)
         self.status_effects: dict[str, int] = {}
-        # Resistances: damage_type -> multiplier (0.0 = immune, 1.0 = normal)
+        # Fractional damage resistances: damage_type -> multiplier (0.0=immune,1.0=normal)
         self.resistances: dict[str, float] = {}
 
     # --- Resources ---
 
     def take_damage(self, amount: int, damage_type: str = 'physical') -> int:
-        """Apply damage after resistance. Returns actual damage dealt."""
+        """Apply damage after immunity and resistance checks. Returns actual damage."""
+        from status_effects import DAMAGE_IMMUNITY
+        # Full immunity via status effect
+        immunity_effect = DAMAGE_IMMUNITY.get(damage_type)
+        if immunity_effect and self.has_effect(immunity_effect):
+            return 0
+
+        # Fractional resistance from items/intrinsics
         resistance = self.resistances.get(damage_type, 1.0)
         actual = max(0, int(amount * resistance))
         self.hp = max(0, self.hp - actual)
+
+        # Damage wakes a sleeping player
+        if actual > 0 and 'sleeping' in self.status_effects:
+            del self.status_effects['sleeping']
+
         return actual
 
     def is_dead(self) -> bool:
         return self.hp <= 0
 
     def spend_sp(self, amount: int) -> bool:
-        """Spend stamina points. Returns False if insufficient."""
         if self.sp < amount:
             return False
         self.sp -= amount
@@ -69,6 +80,22 @@ class Player:
     def restore_mp(self, amount: int):
         self.mp = min(self.max_mp, self.mp + amount)
 
+    # --- Status effects ---
+
+    def has_effect(self, name: str) -> bool:
+        """True if the effect is active (any non-zero value)."""
+        return self.status_effects.get(name, 0) != 0
+
+    def add_effect(self, name: str, duration: int) -> bool:
+        """Apply effect via the status_effects module. Returns True if applied."""
+        from status_effects import apply_effect
+        return apply_effect(self, name, duration)
+
+    def tick_effects(self) -> list:
+        """Process one turn for all active effects. Returns list of (msg, type) pairs."""
+        from status_effects import tick_all
+        return tick_all(self)
+
     # --- Derived stats ---
 
     def get_ac(self) -> int:
@@ -78,15 +105,29 @@ class Player:
             getattr(slot, 'ac_bonus', 0) for slot in self.armor_slots if slot is not None
         )
         shield_bonus = getattr(self.shield, 'ac_bonus', 0) if self.shield else 0
-        return 10 + dex_mod + armor_bonus + shield_bonus
+        # Invisible grants a small AC bonus (hard to hit)
+        invisible_bonus = 2 if self.has_effect('invisible') else 0
+        return 10 + dex_mod + armor_bonus + shield_bonus + invisible_bonus
 
     def get_sight_radius(self) -> int:
-        """Sight radius in tiles, driven by PER stat."""
+        """Sight radius in tiles. Blindness caps it at 1."""
+        if self.has_effect('blinded'):
+            return 1
         return max(3, self.PER // 2)
 
     def get_quiz_timer(self) -> int:
-        """Quiz timer in seconds: base + 1s per WIS point above 10."""
+        """Base quiz timer in seconds (before modifiers)."""
         return self.BASE_TIMER + max(0, self.WIS - 10)
+
+    def get_quiz_timer_modifier(self) -> float:
+        """Multiplier applied to quiz timer based on active effects."""
+        mod = 1.0
+        if self.has_effect('confused'):      mod *= 0.55
+        if self.has_effect('stunned'):       mod *= 0.75
+        if self.has_effect('blinded'):       mod *= 0.70
+        if self.has_effect('hallucinating'): mod *= 0.80
+        if self.has_effect('hasted'):        mod *= 1.25
+        return round(mod, 2)
 
     def get_carry_limit(self) -> int:
         return self.CARRY_BASE + self.STR * self.CARRY_PER_STR
@@ -97,7 +138,6 @@ class Player:
     # --- Inventory ---
 
     def add_to_inventory(self, item) -> bool:
-        """Add item if within weight limit. Returns True on success."""
         if self.get_current_weight() + getattr(item, 'weight', 0) > self.get_carry_limit():
             return False
         self.inventory.append(item)
@@ -112,7 +152,7 @@ class Player:
     # --- Stat bonuses ---
 
     def apply_stat_bonus(self, stat: str, amount: int):
-        """Permanently increase a stat and update derived maximums."""
+        """Permanently change a stat and update derived maximums."""
         setattr(self, stat, getattr(self, stat) + amount)
         if stat == 'CON':
             self.max_hp = self.BASE_HP + self.CON
@@ -123,7 +163,6 @@ class Player:
     # --- Equipment ---
 
     def get_equipped_items(self) -> dict:
-        """Return dict of slot_name -> item (or None) for UI display."""
         from items import ARMOR_SLOTS
         slots = {'weapon': self.weapon, 'shield': self.shield}
         for i, name in enumerate(ARMOR_SLOTS):
@@ -131,12 +170,10 @@ class Player:
         return slots
 
     def get_inventory_display(self) -> list:
-        """Return list of (letter, item) tuples for UI display (max 26)."""
         letters = 'abcdefghijklmnopqrstuvwxyz'
         return [(letters[i], item) for i, item in enumerate(self.inventory[:26])]
 
     def _apply_equip(self, item):
-        """Place item into the correct equipment slot. No quiz check — call after quiz success."""
         from items import Weapon, Armor, Shield, ARMOR_SLOTS
         if isinstance(item, Weapon):
             self.weapon = item

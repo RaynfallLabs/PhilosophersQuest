@@ -53,6 +53,7 @@ class Game:
         self.turn_count         = 0
         self.dungeon_level      = 1
         self.defeat_reason      = 'died'   # 'died' | 'starved' | 'fled'
+        self._slow_skip         = False    # toggled each turn when slowed
 
         self._new_level(1)
 
@@ -163,6 +164,8 @@ class Game:
     }
 
     def _player_input(self, key: int):
+        import random as _rng
+
         if key in (pygame.K_g, pygame.K_COMMA):
             self._pickup()
             return
@@ -179,18 +182,47 @@ class Game:
         if key not in self._MOVE_KEYS:
             return
 
-        paralyzed = self.player.status_effects.get('paralyzed', 0)
-        if paralyzed > 0:
-            self.player.status_effects['paralyzed'] = paralyzed - 1
-            remaining = paralyzed - 1
-            self.add_message(
-                f"Paralyzed! ({remaining} turn{'s' if remaining != 1 else ''} left)",
-                'danger'
-            )
+        # Sleep: skip turn
+        if self.player.has_effect('sleeping'):
+            self.add_message("You are fast asleep!", 'warning')
+            self._advance_turn()
+            return
+
+        # Paralyzed: skip turn
+        if self.player.has_effect('paralyzed'):
+            self.add_message("You are paralyzed and cannot move!", 'danger')
+            self._advance_turn()
+            return
+
+        # Slowed: skip every other turn
+        if self.player.has_effect('slowed'):
+            self._slow_skip = not self._slow_skip
+            if self._slow_skip:
+                self.add_message("You move sluggishly.", 'warning')
+                self._advance_turn()
+                return
+
+        # Fumbling: 20% chance to waste turn
+        if self.player.has_effect('fumbling') and _rng.random() < 0.20:
+            self.add_message("You stumble and waste your turn!", 'warning')
+            self._advance_turn()
+            return
+
+        # Stunned: 25% chance to fail
+        if self.player.has_effect('stunned') and _rng.random() < 0.25:
+            self.add_message("You are too dazed to act!", 'warning')
             self._advance_turn()
             return
 
         dx, dy = self._MOVE_KEYS[key]
+
+        # Confused: randomize direction
+        if self.player.has_effect('confused'):
+            dx, dy = _rng.choice(
+                [(0,-1),(0,1),(-1,0),(1,0),(-1,-1),(-1,1),(1,-1),(1,1)]
+            )
+            self.add_message("You stumble in a random direction!", 'warning')
+
         nx, ny = self.player.x + dx, self.player.y + dy
 
         target = next(
@@ -205,6 +237,9 @@ class Game:
             if self.state != STATE_DEAD:
                 self._notify_stairs(nx, ny)
                 self._advance_turn()
+                # Haste: grant a free second move
+                if self.player.has_effect('hasted') and self.state == STATE_PLAYER:
+                    self.add_message("You move with supernatural speed!", 'info')
 
     def _notify_stairs(self, x: int, y: int):
         tile = self.dungeon.tiles[y][x]
@@ -276,7 +311,70 @@ class Game:
 
     def _advance_turn(self):
         self.turn_count += 1
+
+        # Tick all player status effects
+        effect_msgs = self.player.tick_effects()
+        for text, mtype in effect_msgs:
+            if text == '_teleport':
+                self._teleport_player()
+            elif text == '_petrify_death':
+                self.defeat_reason = 'died'
+                self.state = STATE_DEAD
+                self.add_message("You have turned completely to stone!", 'danger')
+            else:
+                self.add_message(text, mtype)
+
+        if self.state == STATE_DEAD:
+            return
+
+        # Warning: alert for nearby monsters
+        self._do_warning()
+        # Searching: auto-reveal adjacent tiles
+        self._do_searching()
+
         self._do_monster_turns()
+
+    def _teleport_player(self):
+        import random as _rng
+        floors = [
+            (x, y)
+            for y in range(self.dungeon.height)
+            for x in range(self.dungeon.width)
+            if self.dungeon.is_walkable(x, y)
+            and not any(m.alive and m.x == x and m.y == y for m in self.monsters)
+        ]
+        if floors:
+            self.player.x, self.player.y = _rng.choice(floors)
+            self._refresh_fov()
+            self.add_message("You feel disoriented as space warps around you!", 'warning')
+
+    def _do_warning(self):
+        """Warn if monsters are within 5 tiles when player has the warning effect."""
+        if not self.player.has_effect('warning'):
+            return
+        px, py = self.player.x, self.player.y
+        nearby = [
+            m for m in self.monsters
+            if m.alive and abs(m.x - px) <= 5 and abs(m.y - py) <= 5
+            and (m.x, m.y) not in self.visible
+        ]
+        if nearby:
+            self.add_message(
+                f"Your danger sense tingles! ({len(nearby)} unseen threat{'s' if len(nearby) > 1 else ''} near)",
+                'warning'
+            )
+
+    def _do_searching(self):
+        """Auto-reveal adjacent tiles when player has the searching effect."""
+        if not self.player.has_effect('searching'):
+            return
+        px, py = self.player.x, self.player.y
+        for dy in range(-1, 2):
+            for dx in range(-1, 2):
+                nx, ny = px + dx, py + dy
+                if 0 <= nx < self.dungeon.width and 0 <= ny < self.dungeon.height:
+                    if hasattr(self.dungeon, 'explored'):
+                        self.dungeon.explored.add((nx, ny))
 
     # ------------------------------------------------------------------
     # SP starvation
@@ -462,6 +560,7 @@ class Game:
                 callback=on_complete,
                 threshold=item.equip_threshold,
                 wisdom=self.player.WIS,
+                timer_modifier=self.player.get_quiz_timer_modifier(),
             )
 
     # ------------------------------------------------------------------
@@ -519,7 +618,13 @@ class Game:
         }
         idx = key_map.get(key)
         if idx is not None and idx < len(choices):
-            self.quiz_engine.answer(choices[idx])
+            qe = self.quiz_engine
+            # Map displayed position back to actual choice via confused_order
+            if qe.confused_order and len(qe.confused_order) == len(choices):
+                actual_idx = qe.confused_order[idx]
+            else:
+                actual_idx = idx
+            self.quiz_engine.answer(choices[actual_idx])
 
     # ------------------------------------------------------------------
     # Monster turns
@@ -563,6 +668,11 @@ class Game:
         for m in self.monsters:
             if m.alive:
                 self.renderer.draw_entity(m.x, m.y, m.color, cam_x, cam_y, self.visible)
+        # Telepathy: render unseen monsters as dim dots
+        if self.player.has_effect('telepathy'):
+            for m in self.monsters:
+                if m.alive and (m.x, m.y) not in self.visible:
+                    self.renderer.draw_entity(m.x, m.y, (70, 70, 120), cam_x, cam_y, None)
         self.renderer.draw_player(self.player, cam_x, cam_y)
         self.screen.set_clip(None)
 
@@ -643,6 +753,11 @@ class Game:
         self.screen.blit(q_surf, (bx + 18, by + 78))
 
         choices   = qe.current_question.get('choices', [])
+        # Confused players see choices in a scrambled order
+        if qe.confused_order and len(qe.confused_order) == len(choices):
+            display_choices = [choices[i] for i in qe.confused_order]
+        else:
+            display_choices = choices
         cw, ch    = 340, 72
         positions = [
             (bx + 18,       by + 165), (bx + 18 + 364, by + 165),
@@ -651,7 +766,7 @@ class Game:
         correct_str = str(qe.current_question.get('answer', '')).strip().lower()
         selected    = qe.last_answer.strip().lower()
 
-        for i, (choice, (cx, cy)) in enumerate(zip(choices, positions)):
+        for i, (choice, (cx, cy)) in enumerate(zip(display_choices, positions)):
             c_lower    = choice.strip().lower()
             is_correct  = c_lower == correct_str
             is_selected = bool(selected) and c_lower == selected

@@ -146,6 +146,7 @@ class Sidebar:
         return y + 2 * 16 + self.SECTION_GAP
 
     def _status(self, player, dungeon_level: int, turn_count: int, y: int) -> int:
+        from status_effects import EFFECT_INFO, DEBUFFS
         y = self._header("STATUS", y)
         for text, color in [
             (f"AC     {player.get_ac()}",           (150, 195, 150)),
@@ -158,13 +159,7 @@ class Sidebar:
                              (self.x + self.PAD, y))
             y += 14
 
-        para = player.status_effects.get('paralyzed', 0)
-        if para > 0:
-            self.screen.blit(
-                self._fbold.render(f"[Paralyzed {para}t]", True, (215, 50, 50)),
-                (self.x + self.PAD, y)
-            )
-            y += 15
+        # Hunger indicator
         sp = player.sp
         if sp < 10:
             self.screen.blit(
@@ -178,6 +173,21 @@ class Sidebar:
                 (self.x + self.PAD, y)
             )
             y += 15
+
+        # Active status effects in a 2-column grid
+        active = [(eid, val) for eid, val in player.status_effects.items() if val != 0]
+        if active:
+            col_w = (self.w - self.PAD * 2) // 2
+            for i, (eid, val) in enumerate(active):
+                info = EFFECT_INFO.get(eid)
+                if not info:
+                    continue
+                display_name, rgb, _ = info
+                label = f"[{display_name}]"
+                ax = self.x + self.PAD + (i % 2) * col_w
+                ay = y + (i // 2) * 14
+                self.screen.blit(self._fbold.render(label, True, rgb), (ax, ay))
+            y += ((len(active) + 1) // 2) * 14
 
         return y + self.SECTION_GAP
 

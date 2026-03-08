@@ -34,4 +34,5 @@ def player_attack(player, monster, quiz_engine, on_complete):
         callback=_callback,
         max_chain=weapon.max_chain_length if weapon else None,
         wisdom=player.WIS,
+        timer_modifier=player.get_quiz_timer_modifier(),
     )
