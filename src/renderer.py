@@ -88,7 +88,23 @@ class Renderer:
         if (item.x, item.y) not in visible:
             return
         sx, sy = self._to_screen(item.x, item.y, cam_x, cam_y)
-        surf   = self._sym_font.render(item.symbol, True, item.color)
-        ox     = (TILE_SIZE - surf.get_width())  // 2
-        oy     = (TILE_SIZE - surf.get_height()) // 2
+
+        # Containers: draw a filled rect in the item color, then the glyph
+        from items import Container
+        if isinstance(item, Container):
+            pad = 3
+            pygame.draw.rect(
+                self.screen, (30, 20, 10),
+                (sx + pad, sy + pad, TILE_SIZE - pad * 2, TILE_SIZE - pad * 2),
+                border_radius=3
+            )
+            pygame.draw.rect(
+                self.screen, item.color,
+                (sx + pad, sy + pad, TILE_SIZE - pad * 2, TILE_SIZE - pad * 2),
+                2, border_radius=3
+            )
+
+        surf = self._sym_font.render(item.symbol, True, item.color)
+        ox   = (TILE_SIZE - surf.get_width())  // 2
+        oy   = (TILE_SIZE - surf.get_height()) // 2
         self.screen.blit(surf, (sx + ox, sy + oy))

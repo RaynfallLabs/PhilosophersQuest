@@ -390,10 +390,13 @@ def spawn_monsters(rooms: List[Room], level: int, dungeon: Dungeon,
 
 
 def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
-    """Spawn items in dungeon rooms.  33% chance per room (skips first room)."""
-    from items import load_items
+    """Spawn items, containers, and lockpicks in dungeon rooms."""
+    from items import load_items, Container, Lockpick
 
-    rng       = random.Random()
+    rng          = random.Random()
+    ground_items = []
+
+    # ── Regular items (weapons/armor) — 33% chance per room ────────────────
     templates: list = []
     for cls_name in ('weapon', 'armor'):
         try:
@@ -402,27 +405,88 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
             pass
 
     eligible = [t for t in templates if t.min_level <= level] or templates[:]
-    if not eligible:
-        return []
 
-    ground_items = []
     for room in rooms[1:]:
         if rng.random() > 0.33:
             continue
-        tiles = list(room.inner_tiles())
-        rng.shuffle(tiles)
-        for tx, ty in tiles:
-            if not dungeon.is_walkable(tx, ty):
-                continue
-            if any(i.x == tx and i.y == ty for i in ground_items):
-                continue
-            inst   = copy.copy(rng.choice(eligible))
-            inst.x = tx
-            inst.y = ty
-            ground_items.append(inst)
+        _place_one(eligible, room, dungeon, ground_items, rng)
+
+    # ── Containers — guaranteed minimum 1; diminishing extras ────────────────
+    try:
+        all_containers = load_items('container')
+    except FileNotFoundError:
+        all_containers = []
+
+    _MIMIC_CHANCE = 0.08  # 8% of containers are secretly mimics
+
+    eligible_containers = [c for c in all_containers if c.min_level <= level]
+    if not eligible_containers:
+        eligible_containers = all_containers[:]
+
+    # Weight containers by frequency field
+    total_freq = sum(getattr(c, 'quiz_threshold', 1) for c in eligible_containers) or 1
+
+    def pick_container() -> Optional[Container]:
+        if not eligible_containers:
+            return None
+        weights = [c.extra_item_chance for c in eligible_containers]
+        chosen  = rng.choices(eligible_containers, weights=weights, k=1)[0]
+        inst    = copy.copy(chosen)
+        # Tier variance: ±1 level, clamped 1-5
+        tier = max(1, min(5, level + rng.randint(-1, 1)))
+        inst.tier = tier
+        inst.is_mimic = rng.random() < _MIMIC_CHANCE
+        return inst
+
+    # Guaranteed first container
+    for room in rng.sample(rooms[1:], min(len(rooms) - 1, len(rooms) - 1)):
+        c = pick_container()
+        if c and _place_one([c], room, dungeon, ground_items, rng):
             break
 
+    # Additional containers with diminishing probability
+    extra_chance = 0.55
+    for room in rng.sample(rooms[1:], min(len(rooms) - 1, len(rooms) - 1)):
+        if rng.random() > extra_chance:
+            continue
+        c = pick_container()
+        if c:
+            _place_one([c], room, dungeon, ground_items, rng)
+        extra_chance *= 0.45   # 0.55 → 0.25 → 0.11 → …
+
+    # ── Lockpicks — 1-2 per level, in random rooms ─────────────────────────
+    try:
+        all_picks = load_items('lockpick')
+    except FileNotFoundError:
+        all_picks = []
+
+    eligible_picks = [p for p in all_picks if p.min_level <= level] or all_picks[:]
+    pick_count = rng.randint(1, 2)
+    rooms_for_picks = rng.sample(rooms[1:], min(pick_count, len(rooms) - 1))
+    for room in rooms_for_picks:
+        _place_one(eligible_picks, room, dungeon, ground_items, rng)
+
     return ground_items
+
+
+def _place_one(templates: list, room: 'Room', dungeon: 'Dungeon',
+               ground_items: list, rng: random.Random) -> bool:
+    """Try to place one randomly-chosen template item in room. Returns True on success."""
+    if not templates:
+        return False
+    tiles = list(room.inner_tiles())
+    rng.shuffle(tiles)
+    for tx, ty in tiles:
+        if not dungeon.is_walkable(tx, ty):
+            continue
+        if any(i.x == tx and i.y == ty for i in ground_items):
+            continue
+        inst   = copy.copy(rng.choice(templates))
+        inst.x = tx
+        inst.y = ty
+        ground_items.append(inst)
+        return True
+    return False
 
 
 def _weighted_choice(pool: dict, rng: random.Random) -> str:

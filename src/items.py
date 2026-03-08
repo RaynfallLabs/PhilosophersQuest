@@ -59,6 +59,30 @@ class Artifact(Item):
         super().__init__(defn)
 
 
+class Lockpick(Item):
+    def __init__(self, defn: dict):
+        super().__init__(defn)
+        self.max_durability          = int(defn.get('max_durability', 5))
+        self.durability              = int(defn.get('durability', 5))
+        self.durability_loss_success = int(defn.get('durability_loss_success', 1))
+        self.durability_loss_failure = int(defn.get('durability_loss_failure', 2))
+
+
+class Container(Item):
+    def __init__(self, defn: dict):
+        super().__init__(defn)
+        self.tier           = int(defn.get('tier', 1))
+        self.quiz_threshold = int(defn.get('quiz_threshold', 2))
+        self.trapped        = bool(defn.get('trapped', False))
+        self.trap           = defn.get('trap', None)   # dict or None
+        self.gold           = defn.get('gold', [0, 0]) # [min, max]
+        self.extra_item_chance = float(defn.get('extra_item_chance', 0.40))
+        # Runtime state (not from JSON)
+        self.trap_triggered = False
+        self.opened         = False
+        self.is_mimic       = False
+
+
 class Ingredient(Item):
     def __init__(self, defn: dict):
         super().__init__(defn)
@@ -100,6 +124,8 @@ _CLASS_MAP: dict[str, type] = {
     'accessory':  Accessory,
     'ingredient': Ingredient,
     'artifact':   Artifact,
+    'lockpick':   Lockpick,
+    'container':  Container,
 }
 
 

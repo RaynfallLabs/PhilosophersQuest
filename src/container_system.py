@@ -1,0 +1,214 @@
+"""
+Container / lockpicking system.
+
+Flow:
+  attempt_lockpick(player, container, quiz_engine, dungeon, monsters, callback)
+    → starts economics threshold quiz
+    → on success: opens container, generates loot, returns items + gold
+    → on failure: triggers trap (first failure only), damages lockpick,
+                  30% chance to alert nearby monsters
+
+Mimic check:
+  check_for_mimic(player, container, monsters)
+    → if container.is_mimic: spawns mimic monster, returns True
+    → else: returns False
+"""
+
+import random
+
+from dice import roll
+
+
+# ---------------------------------------------------------------------------
+# Public API
+# ---------------------------------------------------------------------------
+
+def attempt_lockpick(player, container, quiz_engine, dungeon, monsters, on_complete):
+    """
+    Start an Economics threshold quiz to open *container*.
+
+    on_complete({'status': str, 'loot': list, 'gold': int, 'messages': list[tuple]})
+      status: 'no_lockpick' | 'opened' | 'failed'
+      loot:   list of Item instances (empty on failure)
+      gold:   int (0 on failure)
+      messages: list of (text, type) pairs
+    """
+    from items import Lockpick
+    lockpick = next((i for i in player.inventory if isinstance(i, Lockpick)), None)
+
+    if lockpick is None:
+        on_complete({'status': 'no_lockpick', 'loot': [], 'gold': 0,
+                     'messages': [('You need a lockpick to open this!', 'warning')]})
+        return
+
+    def _callback(result):
+        if result.success:
+            _handle_success(player, container, lockpick, dungeon, on_complete)
+        else:
+            _handle_failure(player, container, lockpick, dungeon, monsters, on_complete)
+
+    quiz_engine.start_quiz(
+        mode='threshold',
+        subject='economics',
+        tier=container.tier,
+        callback=_callback,
+        threshold=container.quiz_threshold,
+        wisdom=player.WIS,
+        timer_modifier=player.get_quiz_timer_modifier(),
+    )
+
+
+def check_for_mimic(player, container, monsters) -> bool:
+    """
+    Attack a container to check for a mimic.
+    If it is a mimic, spawn the mimic monster and return True.
+    Returns False if it's a normal container.
+    """
+    if not container.is_mimic:
+        return False
+
+    _spawn_mimic(container, monsters)
+    return True
+
+
+# ---------------------------------------------------------------------------
+# Internal helpers
+# ---------------------------------------------------------------------------
+
+def _handle_success(player, container, lockpick, dungeon, on_complete):
+    messages = []
+
+    # Wear lockpick
+    lockpick.durability -= lockpick.durability_loss_success
+    if lockpick.durability <= 0:
+        player.remove_from_inventory(lockpick)
+        messages.append(('Your lockpick breaks!', 'warning'))
+    else:
+        messages.append((f'Lockpick durability: {lockpick.durability}/{lockpick.max_durability}', 'info'))
+
+    container.opened = True
+
+    # Gold
+    gold = random.randint(container.gold[0], container.gold[1])
+
+    # Loot items: guaranteed 1, then diminishing extras
+    loot = _generate_loot(container, dungeon.level)
+
+    messages.insert(0, ('The lock clicks open!', 'success'))
+    if gold:
+        messages.append((f'You find {gold} gold coins!', 'loot'))
+    for item in loot:
+        messages.append((f'You find a {item.name}!', 'loot'))
+
+    on_complete({'status': 'opened', 'loot': loot, 'gold': gold, 'messages': messages})
+
+
+def _handle_failure(player, container, lockpick, dungeon, monsters, on_complete):
+    messages = [('The lock resists your attempt.', 'warning')]
+
+    # Trap: triggers only on first failure
+    if container.trapped and not container.trap_triggered:
+        container.trap_triggered = True
+        _trigger_trap(player, container.trap, messages)
+
+    # Lockpick durability damage
+    lockpick.durability -= lockpick.durability_loss_failure
+    if lockpick.durability <= 0:
+        player.remove_from_inventory(lockpick)
+        messages.append(('Your lockpick snaps in two!', 'danger'))
+    else:
+        messages.append((f'Lockpick durability: {lockpick.durability}/{lockpick.max_durability}', 'info'))
+
+    # 30% chance to alert nearby monsters
+    if random.random() < 0.30:
+        alerted = _alert_nearby(player, dungeon, monsters)
+        if alerted:
+            messages.append((f'The scraping noise alerts nearby monsters!', 'danger'))
+
+    on_complete({'status': 'failed', 'loot': [], 'gold': 0, 'messages': messages})
+
+
+def _trigger_trap(player, trap: dict, messages: list):
+    """Apply trap damage and optional status effect to the player."""
+    dmg_roll = trap.get('damage', '0')
+    raw_dmg  = roll(dmg_roll) if dmg_roll != '0' else 0
+    actual   = player.take_damage(raw_dmg, 'physical') if raw_dmg else 0
+
+    messages.append((trap.get('message', 'A trap triggers!'), 'danger'))
+    if actual:
+        messages.append((f'You take {actual} damage!', 'danger'))
+
+    effect     = trap.get('effect')
+    effect_dur = int(trap.get('effect_duration', 5))
+    effect_ch  = float(trap.get('effect_chance', 0.5))
+
+    if effect and random.random() < effect_ch:
+        applied = player.add_effect(effect, effect_dur)
+        if applied:
+            messages.append((f'You are {effect}!', 'danger'))
+
+
+def _alert_nearby(player, dungeon, monsters) -> bool:
+    """Wake up monsters within 8 tiles. Returns True if any were alerted."""
+    from status_effects import apply_effect
+    alerted = False
+    px, py  = player.x, player.y
+    for m in monsters:
+        if not m.alive:
+            continue
+        if abs(m.x - px) <= 8 and abs(m.y - py) <= 8:
+            if m.ai_pattern in ('sessile',):
+                m.ai_pattern = 'aggressive'
+                alerted = True
+    return alerted
+
+
+def _generate_loot(container, dungeon_level: int) -> list:
+    """Pick 1+ items appropriate for the container's tier."""
+    import copy
+    from items import load_items
+
+    # Build eligible item pool from weapons and armor at or below container tier
+    pool = []
+    for cls_name in ('weapon', 'armor'):
+        try:
+            items = load_items(cls_name)
+            pool.extend(
+                t for t in items
+                if t.min_level <= max(1, dungeon_level)
+            )
+        except FileNotFoundError:
+            pass
+
+    if not pool:
+        return []
+
+    # Always give at least 1 item
+    chosen = [copy.copy(random.choice(pool))]
+
+    # Extra items with diminishing probability
+    chance = container.extra_item_chance
+    while chance > 0.05 and random.random() < chance:
+        chosen.append(copy.copy(random.choice(pool)))
+        chance *= 0.40   # e.g. 0.50 → 0.20 → 0.08 → …
+
+    return chosen
+
+
+def _spawn_mimic(container, monsters: list):
+    """Replace a mimic container with a live mimic monster."""
+    import json, os
+    from monster import Monster
+
+    monsters_path = os.path.join(
+        os.path.dirname(__file__), '..', 'data', 'monsters.json'
+    )
+    with open(monsters_path, encoding='utf-8') as f:
+        all_defs = json.load(f)
+
+    defn = all_defs.get('mimic')
+    if defn is None:
+        return
+
+    mimic = Monster({**defn, 'id': 'mimic'}, container.x, container.y)
+    monsters.append(mimic)

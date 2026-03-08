@@ -2,11 +2,12 @@ import sys
 import pygame
 
 from combat import player_attack
+from container_system import attempt_lockpick, check_for_mimic
 from dungeon import (generate_dungeon, spawn_monsters, spawn_items,
                      STAIRS_UP, STAIRS_DOWN, DOOR, SECRET_DOOR)
 from food_system import harvest_corpse, cook_ingredient
 from fov import calculate_fov
-from items import Weapon, Armor, Shield, Corpse, Ingredient, Artifact
+from items import Weapon, Armor, Shield, Corpse, Ingredient, Artifact, Container, Lockpick
 from level_manager import LevelManager
 from player import Player
 from quiz_engine import QuizEngine, QuizMode, QuizState
@@ -32,6 +33,7 @@ STATE_COOK_MENU    = 'cook_menu'
 STATE_CONFIRM_EXIT = 'confirm_exit'
 STATE_VICTORY      = 'victory'
 STATE_DEAD         = 'dead'
+STATE_LOCKPICK     = 'lockpick'
 
 
 class Game:
@@ -178,6 +180,12 @@ class Game:
             return
         if key == pygame.K_c:
             self._open_cook_menu()
+            return
+        if key == pygame.K_p:
+            self._lockpick()
+            return
+        if key == pygame.K_a:
+            self._attack_container()
             return
 
         if key not in self._MOVE_KEYS:
@@ -442,6 +450,88 @@ class Game:
             self._advance_turn()
         else:
             self.add_message("You are carrying too much to pick that up.", 'warning')
+
+    # ------------------------------------------------------------------
+    # Lockpicking
+    # ------------------------------------------------------------------
+
+    def _find_adjacent_container(self):
+        """Return a Container on the player's tile or any adjacent tile, or None."""
+        px, py = self.player.x, self.player.y
+        for item in self.ground_items:
+            if not isinstance(item, Container) or item.opened:
+                continue
+            if abs(item.x - px) <= 1 and abs(item.y - py) <= 1:
+                return item
+        return None
+
+    def _lockpick(self):
+        container = self._find_adjacent_container()
+        if container is None:
+            self.add_message("There is no container to pick nearby.", 'info')
+            return
+
+        # Mimic springs out on first interaction
+        if container.is_mimic:
+            self.add_message(
+                f"The {container.name} springs to life — it's a MIMIC!", 'danger'
+            )
+            from container_system import _spawn_mimic
+            _spawn_mimic(container, self.monsters)
+            self.ground_items.remove(container)
+            self._advance_turn()
+            return
+
+        if not any(isinstance(i, Lockpick) for i in self.player.inventory):
+            self.add_message("You need a lockpick to attempt this.", 'warning')
+            return
+
+        self.quiz_title = (
+            f"PICKING {container.name.upper()}  —  ECONOMICS  "
+            f"(tier {container.tier}, need {container.quiz_threshold} correct)"
+        )
+        self.state = STATE_QUIZ
+
+        def on_complete(result: dict):
+            self.state = STATE_PLAYER
+            for text, mtype in result['messages']:
+                self.add_message(text, mtype)
+
+            if result['status'] == 'opened':
+                # Remove container, scatter loot at its position
+                cx, cy = container.x, container.y
+                self.ground_items.remove(container)
+                for loot_item in result['loot']:
+                    loot_item.x, loot_item.y = cx, cy
+                    self.ground_items.append(loot_item)
+                # Gold reported via message (no currency item needed)
+
+            self._advance_turn()
+
+        attempt_lockpick(
+            self.player, container,
+            self.quiz_engine, self.dungeon, self.monsters,
+            on_complete
+        )
+
+    def _attack_container(self):
+        """Press 'a' to probe an adjacent container for mimics."""
+        container = self._find_adjacent_container()
+        if container is None:
+            self.add_message("There is no container to attack nearby.", 'info')
+            return
+        if container.is_mimic:
+            self.add_message(
+                f"The {container.name} springs to life — it's a MIMIC!", 'danger'
+            )
+            from container_system import _spawn_mimic
+            _spawn_mimic(container, self.monsters)
+            self.ground_items.remove(container)
+        else:
+            self.add_message(
+                f"You strike the {container.name}. It's solid — just a chest.", 'info'
+            )
+        self._advance_turn()
 
     # ------------------------------------------------------------------
     # Harvest

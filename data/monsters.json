@@ -176,6 +176,29 @@
     "harvest_threshold": 4,
     "ingredient_id": null
   },
+  "mimic": {
+    "name": "mimic",
+    "symbol": "&",
+    "color": [180, 120, 40],
+    "hp": "3d8",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 2,
+    "frequency": 0,
+    "attacks": [
+      {
+        "name": "bite",
+        "damage": "2d6",
+        "type": "physical",
+        "effect": "paralyzed",
+        "effect_chance": 0.20,
+        "effect_duration": 3
+      }
+    ],
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": null
+  },
   "leprechaun": {
     "name": "leprechaun",
     "symbol": "l",

@@ -88,5 +88,119 @@
     "question": "What is quantitative easing?",
     "answer": "central bank buys assets to add money",
     "choices": ["raising interest rates sharply", "central bank buys assets to add money", "cutting government spending", "reducing money in circulation"]
+  },
+  {
+    "tier": 3,
+    "question": "Who founded the Austrian School of Economics?",
+    "answer": "Carl Menger",
+    "choices": ["Adam Smith", "Carl Menger", "Friedrich Hayek", "Ludwig von Mises"]
+  },
+  {
+    "tier": 3,
+    "question": "What is the Bitcoin halving?",
+    "answer": "block reward cuts in half every 210,000 blocks",
+    "choices": ["Bitcoin price doubles", "block reward cuts in half every 210,000 blocks", "network difficulty resets", "transaction fees double"]
+  },
+  {
+    "tier": 3,
+    "question": "What is the Austrian Business Cycle Theory?",
+    "answer": "credit expansion causes boom-bust cycles",
+    "choices": ["markets self-regulate always", "credit expansion causes boom-bust cycles", "government spending prevents recessions", "inflation is always beneficial"]
+  },
+  {
+    "tier": 3,
+    "question": "What is a Satoshi?",
+    "answer": "smallest unit of Bitcoin (0.00000001 BTC)",
+    "choices": ["one thousand Bitcoin", "smallest unit of Bitcoin (0.00000001 BTC)", "a type of blockchain", "a Bitcoin wallet"]
+  },
+  {
+    "tier": 3,
+    "question": "What is the 'invisible hand' in economics?",
+    "answer": "market self-regulation through individual self-interest",
+    "choices": ["government economic planning", "market self-regulation through individual self-interest", "hidden corporate control", "foreign trade influence"]
+  },
+  {
+    "tier": 3,
+    "question": "What is time preference in Austrian economics?",
+    "answer": "valuing present goods over future goods",
+    "choices": ["the interest rate set by banks", "valuing present goods over future goods", "how long a product lasts", "consumer spending patterns"]
+  },
+  {
+    "tier": 3,
+    "question": "What is a blockchain?",
+    "answer": "a distributed immutable ledger of transactions",
+    "choices": ["a government database", "a distributed immutable ledger of transactions", "a type of cryptocurrency exchange", "a bank's internal ledger"]
+  },
+  {
+    "tier": 4,
+    "question": "What is Gresham's Law?",
+    "answer": "bad money drives out good money",
+    "choices": ["good money drives out bad money", "bad money drives out good money", "inflation destroys savings", "money supply equals growth"]
+  },
+  {
+    "tier": 4,
+    "question": "What is the Lightning Network?",
+    "answer": "Bitcoin Layer 2 for fast small payments",
+    "choices": ["a type of altcoin", "Bitcoin Layer 2 for fast small payments", "a government digital currency", "Bitcoin's energy consumption rating"]
+  },
+  {
+    "tier": 4,
+    "question": "What is the Cantillon Effect?",
+    "answer": "new money benefits those who receive it first",
+    "choices": ["prices rise equally for everyone", "new money benefits those who receive it first", "gold prices rise with inflation", "central banks control all prices"]
+  },
+  {
+    "tier": 4,
+    "question": "What is fractional reserve banking?",
+    "answer": "banks lend more than they hold in deposits",
+    "choices": ["banks hold all deposits in reserve", "banks lend more than they hold in deposits", "reserves equal total money supply", "government backs all loans"]
+  },
+  {
+    "tier": 4,
+    "question": "What did Ludwig von Mises argue about socialism?",
+    "answer": "economic calculation is impossible without prices",
+    "choices": ["socialism can outperform capitalism", "economic calculation is impossible without prices", "central planning always works", "markets are inefficient"]
+  },
+  {
+    "tier": 4,
+    "question": "What is a hash function in Bitcoin?",
+    "answer": "converts data into a fixed-length unique output",
+    "choices": ["encrypts user identities", "converts data into a fixed-length unique output", "stores transaction history", "authorizes miners to print coins"]
+  },
+  {
+    "tier": 5,
+    "question": "What is the Misesian Regression Theorem?",
+    "answer": "money's value traces back to its commodity origin",
+    "choices": ["money gains value from government decree", "money's value traces back to its commodity origin", "prices are always rational", "inflation is always voluntary"]
+  },
+  {
+    "tier": 5,
+    "question": "What is a 51% attack on Bitcoin?",
+    "answer": "controlling majority of mining hash rate to manipulate blocks",
+    "choices": ["government seizing 51% of Bitcoin", "controlling majority of mining hash rate to manipulate blocks", "51 countries banning Bitcoin", "inflation of 51% annually"]
+  },
+  {
+    "tier": 5,
+    "question": "What did Hayek argue in 'The Denationalisation of Money'?",
+    "answer": "competing private currencies would outperform government money",
+    "choices": ["only gold should be money", "competing private currencies would outperform government money", "central banks improve economic stability", "government should control all money"]
+  },
+  {
+    "tier": 5,
+    "question": "What is the Byzantine Generals Problem in relation to Bitcoin?",
+    "answer": "achieving consensus in a trustless distributed network",
+    "choices": ["military-grade Bitcoin encryption", "achieving consensus in a trustless distributed network", "cross-border Bitcoin regulations", "the energy cost of proof of work"]
+  },
+  {
+    "tier": 5,
+    "question": "What is Proof of Work in Bitcoin mining?",
+    "answer": "computational puzzle that validates transactions and creates new blocks",
+    "choices": ["government verification of transactions", "computational puzzle that validates transactions and creates new blocks", "proof that miners own Bitcoin", "energy certificate for green mining"]
+  },
+  {
+    "tier": 5,
+    "question": "What is the Mises Action Axiom?",
+    "answer": "all human action is purposeful and goal-directed",
+    "choices": ["people act randomly", "all human action is purposeful and goal-directed", "only markets have rational actors", "government action is always rational"]
   }
 ]
