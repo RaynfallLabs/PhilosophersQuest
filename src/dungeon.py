@@ -481,7 +481,10 @@ def _place_one(templates: list, room: 'Room', dungeon: 'Dungeon',
             continue
         if any(i.x == tx and i.y == ty for i in ground_items):
             continue
-        inst   = copy.copy(rng.choice(templates))
+        inst = copy.copy(rng.choice(templates))
+        # Re-roll wand charges semi-randomly at spawn time
+        if hasattr(inst, 'charges_min'):
+            inst.charges = rng.randint(inst.charges_min, inst.charges_max)
         inst.x = tx
         inst.y = ty
         ground_items.append(inst)

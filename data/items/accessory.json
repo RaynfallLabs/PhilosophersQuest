@@ -1,98 +1,1978 @@
 {
-  "ring_of_warning": {
+  "ring_warning_oak": {
     "name": "ring of warning",
     "symbol": "=",
-    "color": [200, 200, 80],
+    "color": [
+      180,
+      140,
+      80
+    ],
     "weight": 0.1,
     "min_level": 1,
     "slot": "ring",
     "equip_threshold": 2,
     "quiz_tier": 1,
-    "effects": {"status": "warning", "duration": -1},
-    "unidentified_name": "plain ring"
+    "effects": {
+      "status": "warning",
+      "duration": -1
+    },
+    "unidentified_name": "oak ring"
   },
-  "ring_of_searching": {
+  "ring_warning_runed_metal": {
+    "name": "ring of warning",
+    "symbol": "=",
+    "color": [
+      155,
+      155,
+      175
+    ],
+    "weight": 0.1,
+    "min_level": 1,
+    "slot": "ring",
+    "equip_threshold": 2,
+    "quiz_tier": 1,
+    "effects": {
+      "status": "warning",
+      "duration": -1
+    },
+    "unidentified_name": "runed metal ring"
+  },
+  "ring_warning_ancient_copper": {
+    "name": "ring of warning",
+    "symbol": "=",
+    "color": [
+      180,
+      120,
+      60
+    ],
+    "weight": 0.1,
+    "min_level": 1,
+    "slot": "ring",
+    "equip_threshold": 2,
+    "quiz_tier": 1,
+    "effects": {
+      "status": "warning",
+      "duration": -1
+    },
+    "unidentified_name": "ancient copper ring"
+  },
+  "ring_warning_bone": {
+    "name": "ring of warning",
+    "symbol": "=",
+    "color": [
+      220,
+      210,
+      190
+    ],
+    "weight": 0.1,
+    "min_level": 1,
+    "slot": "ring",
+    "equip_threshold": 2,
+    "quiz_tier": 1,
+    "effects": {
+      "status": "warning",
+      "duration": -1
+    },
+    "unidentified_name": "bone ring"
+  },
+  "ring_warning_twisted_iron": {
+    "name": "ring of warning",
+    "symbol": "=",
+    "color": [
+      130,
+      130,
+      140
+    ],
+    "weight": 0.1,
+    "min_level": 1,
+    "slot": "ring",
+    "equip_threshold": 2,
+    "quiz_tier": 1,
+    "effects": {
+      "status": "warning",
+      "duration": -1
+    },
+    "unidentified_name": "twisted iron ring"
+  },
+  "ring_warning_carved_jade": {
+    "name": "ring of warning",
+    "symbol": "=",
+    "color": [
+      100,
+      180,
+      120
+    ],
+    "weight": 0.1,
+    "min_level": 1,
+    "slot": "ring",
+    "equip_threshold": 2,
+    "quiz_tier": 1,
+    "effects": {
+      "status": "warning",
+      "duration": -1
+    },
+    "unidentified_name": "carved jade ring"
+  },
+  "ring_warning_rough_stone": {
+    "name": "ring of warning",
+    "symbol": "=",
+    "color": [
+      140,
+      130,
+      120
+    ],
+    "weight": 0.1,
+    "min_level": 1,
+    "slot": "ring",
+    "equip_threshold": 2,
+    "quiz_tier": 1,
+    "effects": {
+      "status": "warning",
+      "duration": -1
+    },
+    "unidentified_name": "rough stone ring"
+  },
+  "ring_warning_grey_granite": {
+    "name": "ring of warning",
+    "symbol": "=",
+    "color": [
+      150,
+      150,
+      150
+    ],
+    "weight": 0.1,
+    "min_level": 1,
+    "slot": "ring",
+    "equip_threshold": 2,
+    "quiz_tier": 1,
+    "effects": {
+      "status": "warning",
+      "duration": -1
+    },
+    "unidentified_name": "grey granite ring"
+  },
+  "ring_searching_silver": {
     "name": "ring of searching",
     "symbol": "=",
-    "color": [100, 200, 100],
+    "color": [
+      200,
+      200,
+      210
+    ],
     "weight": 0.1,
     "min_level": 1,
     "slot": "ring",
     "equip_threshold": 2,
     "quiz_tier": 1,
-    "effects": {"status": "searching", "duration": -1},
-    "unidentified_name": "green ring"
-  },
-  "ring_of_telepathy": {
-    "name": "ring of telepathy",
-    "symbol": "=",
-    "color": [100, 100, 255],
-    "weight": 0.1,
-    "min_level": 2,
-    "slot": "ring",
-    "equip_threshold": 3,
-    "quiz_tier": 2,
-    "effects": {"status": "telepathy", "duration": -1},
-    "unidentified_name": "blue ring"
-  },
-  "ring_of_strength": {
-    "name": "ring of strength",
-    "symbol": "=",
-    "color": [255, 100, 100],
-    "weight": 0.1,
-    "min_level": 2,
-    "slot": "ring",
-    "equip_threshold": 3,
-    "quiz_tier": 2,
-    "effects": {"stat": "STR", "amount": 2},
-    "unidentified_name": "red ring"
-  },
-  "ring_of_regeneration": {
-    "name": "ring of regeneration",
-    "symbol": "=",
-    "color": [80, 255, 120],
-    "weight": 0.1,
-    "min_level": 2,
-    "slot": "ring",
-    "equip_threshold": 3,
-    "quiz_tier": 2,
-    "effects": {"status": "regenerating", "duration": -1},
+    "effects": {
+      "status": "searching",
+      "duration": -1
+    },
     "unidentified_name": "silver ring"
   },
-  "amulet_of_protection": {
-    "name": "amulet of protection",
+  "ring_searching_polished_crystal": {
+    "name": "ring of searching",
+    "symbol": "=",
+    "color": [
+      210,
+      240,
+      255
+    ],
+    "weight": 0.1,
+    "min_level": 1,
+    "slot": "ring",
+    "equip_threshold": 2,
+    "quiz_tier": 1,
+    "effects": {
+      "status": "searching",
+      "duration": -1
+    },
+    "unidentified_name": "polished crystal ring"
+  },
+  "ring_searching_malachite": {
+    "name": "ring of searching",
+    "symbol": "=",
+    "color": [
+      60,
+      160,
+      80
+    ],
+    "weight": 0.1,
+    "min_level": 1,
+    "slot": "ring",
+    "equip_threshold": 2,
+    "quiz_tier": 1,
+    "effects": {
+      "status": "searching",
+      "duration": -1
+    },
+    "unidentified_name": "malachite ring"
+  },
+  "ring_searching_engraved_pewter": {
+    "name": "ring of searching",
+    "symbol": "=",
+    "color": [
+      160,
+      165,
+      170
+    ],
+    "weight": 0.1,
+    "min_level": 1,
+    "slot": "ring",
+    "equip_threshold": 2,
+    "quiz_tier": 1,
+    "effects": {
+      "status": "searching",
+      "duration": -1
+    },
+    "unidentified_name": "engraved pewter ring"
+  },
+  "ring_searching_gleaming_iron": {
+    "name": "ring of searching",
+    "symbol": "=",
+    "color": [
+      180,
+      180,
+      200
+    ],
+    "weight": 0.1,
+    "min_level": 1,
+    "slot": "ring",
+    "equip_threshold": 2,
+    "quiz_tier": 1,
+    "effects": {
+      "status": "searching",
+      "duration": -1
+    },
+    "unidentified_name": "gleaming iron ring"
+  },
+  "ring_searching_pale_ivory": {
+    "name": "ring of searching",
+    "symbol": "=",
+    "color": [
+      240,
+      235,
+      210
+    ],
+    "weight": 0.1,
+    "min_level": 1,
+    "slot": "ring",
+    "equip_threshold": 2,
+    "quiz_tier": 1,
+    "effects": {
+      "status": "searching",
+      "duration": -1
+    },
+    "unidentified_name": "pale ivory ring"
+  },
+  "ring_searching_mossy_stone": {
+    "name": "ring of searching",
+    "symbol": "=",
+    "color": [
+      100,
+      140,
+      80
+    ],
+    "weight": 0.1,
+    "min_level": 1,
+    "slot": "ring",
+    "equip_threshold": 2,
+    "quiz_tier": 1,
+    "effects": {
+      "status": "searching",
+      "duration": -1
+    },
+    "unidentified_name": "mossy stone ring"
+  },
+  "ring_telepathy_sapphire": {
+    "name": "ring of telepathy",
+    "symbol": "=",
+    "color": [
+      40,
+      80,
+      220
+    ],
+    "weight": 0.1,
+    "min_level": 2,
+    "slot": "ring",
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {
+      "status": "telepathy",
+      "duration": -1
+    },
+    "unidentified_name": "sapphire ring"
+  },
+  "ring_telepathy_lapis_lazuli": {
+    "name": "ring of telepathy",
+    "symbol": "=",
+    "color": [
+      50,
+      90,
+      180
+    ],
+    "weight": 0.1,
+    "min_level": 2,
+    "slot": "ring",
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {
+      "status": "telepathy",
+      "duration": -1
+    },
+    "unidentified_name": "lapis lazuli ring"
+  },
+  "ring_telepathy_cobalt_blue": {
+    "name": "ring of telepathy",
+    "symbol": "=",
+    "color": [
+      50,
+      100,
+      200
+    ],
+    "weight": 0.1,
+    "min_level": 2,
+    "slot": "ring",
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {
+      "status": "telepathy",
+      "duration": -1
+    },
+    "unidentified_name": "cobalt blue ring"
+  },
+  "ring_telepathy_dark_obsidian": {
+    "name": "ring of telepathy",
+    "symbol": "=",
+    "color": [
+      40,
+      40,
+      60
+    ],
+    "weight": 0.1,
+    "min_level": 2,
+    "slot": "ring",
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {
+      "status": "telepathy",
+      "duration": -1
+    },
+    "unidentified_name": "dark obsidian ring"
+  },
+  "ring_telepathy_moonstone": {
+    "name": "ring of telepathy",
+    "symbol": "=",
+    "color": [
+      200,
+      210,
+      255
+    ],
+    "weight": 0.1,
+    "min_level": 2,
+    "slot": "ring",
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {
+      "status": "telepathy",
+      "duration": -1
+    },
+    "unidentified_name": "moonstone ring"
+  },
+  "ring_telepathy_twilight_crystal": {
+    "name": "ring of telepathy",
+    "symbol": "=",
+    "color": [
+      100,
+      80,
+      180
+    ],
+    "weight": 0.1,
+    "min_level": 2,
+    "slot": "ring",
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {
+      "status": "telepathy",
+      "duration": -1
+    },
+    "unidentified_name": "twilight crystal ring"
+  },
+  "ring_regen_emerald": {
+    "name": "ring of regeneration",
+    "symbol": "=",
+    "color": [
+      20,
+      180,
+      60
+    ],
+    "weight": 0.1,
+    "min_level": 2,
+    "slot": "ring",
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {
+      "status": "regenerating",
+      "duration": -1
+    },
+    "unidentified_name": "emerald ring"
+  },
+  "ring_regen_peridot": {
+    "name": "ring of regeneration",
+    "symbol": "=",
+    "color": [
+      100,
+      200,
+      60
+    ],
+    "weight": 0.1,
+    "min_level": 2,
+    "slot": "ring",
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {
+      "status": "regenerating",
+      "duration": -1
+    },
+    "unidentified_name": "peridot ring"
+  },
+  "ring_regen_serpentine": {
+    "name": "ring of regeneration",
+    "symbol": "=",
+    "color": [
+      80,
+      160,
+      80
+    ],
+    "weight": 0.1,
+    "min_level": 2,
+    "slot": "ring",
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {
+      "status": "regenerating",
+      "duration": -1
+    },
+    "unidentified_name": "serpentine ring"
+  },
+  "ring_regen_verdant_jade": {
+    "name": "ring of regeneration",
+    "symbol": "=",
+    "color": [
+      50,
+      150,
+      70
+    ],
+    "weight": 0.1,
+    "min_level": 2,
+    "slot": "ring",
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {
+      "status": "regenerating",
+      "duration": -1
+    },
+    "unidentified_name": "verdant jade ring"
+  },
+  "ring_regen_living_wood": {
+    "name": "ring of regeneration",
+    "symbol": "=",
+    "color": [
+      100,
+      140,
+      60
+    ],
+    "weight": 0.1,
+    "min_level": 2,
+    "slot": "ring",
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {
+      "status": "regenerating",
+      "duration": -1
+    },
+    "unidentified_name": "living wood ring"
+  },
+  "ring_strength_iron": {
+    "name": "ring of strength",
+    "symbol": "=",
+    "color": [
+      120,
+      120,
+      130
+    ],
+    "weight": 0.1,
+    "min_level": 1,
+    "slot": "ring",
+    "equip_threshold": 2,
+    "quiz_tier": 1,
+    "effects": {
+      "stat": "STR",
+      "amount": 1
+    },
+    "unidentified_name": "iron ring"
+  },
+  "ring_strength_steel": {
+    "name": "ring of strength",
+    "symbol": "=",
+    "color": [
+      150,
+      155,
+      165
+    ],
+    "weight": 0.1,
+    "min_level": 2,
+    "slot": "ring",
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {
+      "stat": "STR",
+      "amount": 2
+    },
+    "unidentified_name": "steel ring"
+  },
+  "ring_strength_adamantine": {
+    "name": "ring of strength",
+    "symbol": "=",
+    "color": [
+      80,
+      90,
+      110
+    ],
+    "weight": 0.1,
+    "min_level": 3,
+    "slot": "ring",
+    "equip_threshold": 4,
+    "quiz_tier": 3,
+    "effects": {
+      "stat": "STR",
+      "amount": 3
+    },
+    "unidentified_name": "adamantine ring"
+  },
+  "ring_strength_mithril": {
+    "name": "ring of strength",
+    "symbol": "=",
+    "color": [
+      170,
+      200,
+      240
+    ],
+    "weight": 0.1,
+    "min_level": 3,
+    "slot": "ring",
+    "equip_threshold": 4,
+    "quiz_tier": 3,
+    "effects": {
+      "stat": "STR",
+      "amount": 3
+    },
+    "unidentified_name": "mithril ring"
+  },
+  "ring_constitution_ruby": {
+    "name": "ring of constitution",
+    "symbol": "=",
+    "color": [
+      220,
+      40,
+      40
+    ],
+    "weight": 0.1,
+    "min_level": 1,
+    "slot": "ring",
+    "equip_threshold": 2,
+    "quiz_tier": 1,
+    "effects": {
+      "stat": "CON",
+      "amount": 1
+    },
+    "unidentified_name": "ruby ring"
+  },
+  "ring_constitution_coral": {
+    "name": "ring of constitution",
+    "symbol": "=",
+    "color": [
+      220,
+      100,
+      80
+    ],
+    "weight": 0.1,
+    "min_level": 2,
+    "slot": "ring",
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {
+      "stat": "CON",
+      "amount": 2
+    },
+    "unidentified_name": "coral ring"
+  },
+  "ring_constitution_carnelian": {
+    "name": "ring of constitution",
+    "symbol": "=",
+    "color": [
+      200,
+      80,
+      40
+    ],
+    "weight": 0.1,
+    "min_level": 2,
+    "slot": "ring",
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {
+      "stat": "CON",
+      "amount": 2
+    },
+    "unidentified_name": "carnelian ring"
+  },
+  "ring_constitution_garnet": {
+    "name": "ring of constitution",
+    "symbol": "=",
+    "color": [
+      180,
+      30,
+      30
+    ],
+    "weight": 0.1,
+    "min_level": 3,
+    "slot": "ring",
+    "equip_threshold": 4,
+    "quiz_tier": 3,
+    "effects": {
+      "stat": "CON",
+      "amount": 3
+    },
+    "unidentified_name": "garnet ring"
+  },
+  "ring_dexterity_quicksilver": {
+    "name": "ring of dexterity",
+    "symbol": "=",
+    "color": [
+      200,
+      220,
+      220
+    ],
+    "weight": 0.1,
+    "min_level": 1,
+    "slot": "ring",
+    "equip_threshold": 2,
+    "quiz_tier": 1,
+    "effects": {
+      "stat": "DEX",
+      "amount": 1
+    },
+    "unidentified_name": "quicksilver ring"
+  },
+  "ring_dexterity_thin_wire": {
+    "name": "ring of dexterity",
+    "symbol": "=",
+    "color": [
+      190,
+      190,
+      190
+    ],
+    "weight": 0.1,
+    "min_level": 2,
+    "slot": "ring",
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {
+      "stat": "DEX",
+      "amount": 2
+    },
+    "unidentified_name": "thin wire ring"
+  },
+  "ring_dexterity_spun_glass": {
+    "name": "ring of dexterity",
+    "symbol": "=",
+    "color": [
+      220,
+      240,
+      255
+    ],
+    "weight": 0.1,
+    "min_level": 2,
+    "slot": "ring",
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {
+      "stat": "DEX",
+      "amount": 2
+    },
+    "unidentified_name": "spun glass ring"
+  },
+  "ring_dexterity_featherweight": {
+    "name": "ring of dexterity",
+    "symbol": "=",
+    "color": [
+      240,
+      240,
+      255
+    ],
+    "weight": 0.1,
+    "min_level": 3,
+    "slot": "ring",
+    "equip_threshold": 4,
+    "quiz_tier": 3,
+    "effects": {
+      "stat": "DEX",
+      "amount": 3
+    },
+    "unidentified_name": "featherweight ring"
+  },
+  "ring_intellect_amethyst": {
+    "name": "ring of intellect",
+    "symbol": "=",
+    "color": [
+      160,
+      80,
+      200
+    ],
+    "weight": 0.1,
+    "min_level": 1,
+    "slot": "ring",
+    "equip_threshold": 2,
+    "quiz_tier": 1,
+    "effects": {
+      "stat": "INT",
+      "amount": 1
+    },
+    "unidentified_name": "amethyst ring"
+  },
+  "ring_intellect_purple_glass": {
+    "name": "ring of intellect",
+    "symbol": "=",
+    "color": [
+      140,
+      60,
+      180
+    ],
+    "weight": 0.1,
+    "min_level": 2,
+    "slot": "ring",
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {
+      "stat": "INT",
+      "amount": 2
+    },
+    "unidentified_name": "purple glass ring"
+  },
+  "ring_intellect_arcane_pewter": {
+    "name": "ring of intellect",
+    "symbol": "=",
+    "color": [
+      130,
+      100,
+      170
+    ],
+    "weight": 0.1,
+    "min_level": 2,
+    "slot": "ring",
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {
+      "stat": "INT",
+      "amount": 2
+    },
+    "unidentified_name": "arcane pewter ring"
+  },
+  "ring_intellect_prismatic": {
+    "name": "ring of intellect",
+    "symbol": "=",
+    "color": [
+      200,
+      180,
+      255
+    ],
+    "weight": 0.1,
+    "min_level": 3,
+    "slot": "ring",
+    "equip_threshold": 4,
+    "quiz_tier": 3,
+    "effects": {
+      "stat": "INT",
+      "amount": 3
+    },
+    "unidentified_name": "prismatic ring"
+  },
+  "ring_wisdom_opal": {
+    "name": "ring of wisdom",
+    "symbol": "=",
+    "color": [
+      200,
+      200,
+      240
+    ],
+    "weight": 0.1,
+    "min_level": 1,
+    "slot": "ring",
+    "equip_threshold": 2,
+    "quiz_tier": 1,
+    "effects": {
+      "stat": "WIS",
+      "amount": 1
+    },
+    "unidentified_name": "opal ring"
+  },
+  "ring_wisdom_pearl": {
+    "name": "ring of wisdom",
+    "symbol": "=",
+    "color": [
+      240,
+      240,
+      240
+    ],
+    "weight": 0.1,
+    "min_level": 2,
+    "slot": "ring",
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {
+      "stat": "WIS",
+      "amount": 2
+    },
+    "unidentified_name": "pearl ring"
+  },
+  "ring_wisdom_ivory": {
+    "name": "ring of wisdom",
+    "symbol": "=",
+    "color": [
+      240,
+      235,
+      210
+    ],
+    "weight": 0.1,
+    "min_level": 2,
+    "slot": "ring",
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {
+      "stat": "WIS",
+      "amount": 2
+    },
+    "unidentified_name": "ivory ring"
+  },
+  "ring_wisdom_white_quartz": {
+    "name": "ring of wisdom",
+    "symbol": "=",
+    "color": [
+      220,
+      225,
+      230
+    ],
+    "weight": 0.1,
+    "min_level": 3,
+    "slot": "ring",
+    "equip_threshold": 4,
+    "quiz_tier": 3,
+    "effects": {
+      "stat": "WIS",
+      "amount": 3
+    },
+    "unidentified_name": "white quartz ring"
+  },
+  "ring_perception_topaz": {
+    "name": "ring of perception",
+    "symbol": "=",
+    "color": [
+      220,
+      180,
+      60
+    ],
+    "weight": 0.1,
+    "min_level": 1,
+    "slot": "ring",
+    "equip_threshold": 2,
+    "quiz_tier": 1,
+    "effects": {
+      "stat": "PER",
+      "amount": 1
+    },
+    "unidentified_name": "topaz ring"
+  },
+  "ring_perception_amber": {
+    "name": "ring of perception",
+    "symbol": "=",
+    "color": [
+      200,
+      150,
+      40
+    ],
+    "weight": 0.1,
+    "min_level": 2,
+    "slot": "ring",
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {
+      "stat": "PER",
+      "amount": 2
+    },
+    "unidentified_name": "amber ring"
+  },
+  "ring_perception_citrine": {
+    "name": "ring of perception",
+    "symbol": "=",
+    "color": [
+      220,
+      200,
+      80
+    ],
+    "weight": 0.1,
+    "min_level": 2,
+    "slot": "ring",
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {
+      "stat": "PER",
+      "amount": 2
+    },
+    "unidentified_name": "citrine ring"
+  },
+  "ring_perception_hawks_eye": {
+    "name": "ring of perception",
+    "symbol": "=",
+    "color": [
+      180,
+      140,
+      60
+    ],
+    "weight": 0.1,
+    "min_level": 3,
+    "slot": "ring",
+    "equip_threshold": 4,
+    "quiz_tier": 3,
+    "effects": {
+      "stat": "PER",
+      "amount": 3
+    },
+    "unidentified_name": "hawks-eye ring"
+  },
+  "ring_fire_res_a": {
+    "name": "ring of fire resist",
+    "symbol": "=",
+    "color": [
+      255,
+      100,
+      30
+    ],
+    "weight": 0.1,
+    "min_level": 2,
+    "slot": "ring",
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {
+      "status": "fire_resist",
+      "duration": -1
+    },
+    "unidentified_name": "fire opal ring"
+  },
+  "ring_fire_res_b": {
+    "name": "ring of fire resist",
+    "symbol": "=",
+    "color": [
+      220,
+      80,
+      20
+    ],
+    "weight": 0.1,
+    "min_level": 2,
+    "slot": "ring",
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {
+      "status": "fire_resist",
+      "duration": -1
+    },
+    "unidentified_name": "molten iron ring"
+  },
+  "ring_cold_res_a": {
+    "name": "ring of cold resist",
+    "symbol": "=",
+    "color": [
+      120,
+      200,
+      255
+    ],
+    "weight": 0.1,
+    "min_level": 2,
+    "slot": "ring",
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {
+      "status": "cold_resist",
+      "duration": -1
+    },
+    "unidentified_name": "glacial quartz ring"
+  },
+  "ring_cold_res_b": {
+    "name": "ring of cold resist",
+    "symbol": "=",
+    "color": [
+      160,
+      220,
+      255
+    ],
+    "weight": 0.1,
+    "min_level": 2,
+    "slot": "ring",
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {
+      "status": "cold_resist",
+      "duration": -1
+    },
+    "unidentified_name": "frost crystal ring"
+  },
+  "ring_shock_res_a": {
+    "name": "ring of shock resist",
+    "symbol": "=",
+    "color": [
+      240,
+      200,
+      60
+    ],
+    "weight": 0.1,
+    "min_level": 2,
+    "slot": "ring",
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {
+      "status": "shock_resist",
+      "duration": -1
+    },
+    "unidentified_name": "crackling copper ring"
+  },
+  "ring_shock_res_b": {
+    "name": "ring of shock resist",
+    "symbol": "=",
+    "color": [
+      200,
+      180,
+      40
+    ],
+    "weight": 0.1,
+    "min_level": 2,
+    "slot": "ring",
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {
+      "status": "shock_resist",
+      "duration": -1
+    },
+    "unidentified_name": "arc-spark brass ring"
+  },
+  "ring_poison_res_a": {
+    "name": "ring of poison resist",
+    "symbol": "=",
+    "color": [
+      60,
+      180,
+      80
+    ],
+    "weight": 0.1,
+    "min_level": 2,
+    "slot": "ring",
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {
+      "status": "poison_resist",
+      "duration": -1
+    },
+    "unidentified_name": "jade serpent ring"
+  },
+  "ring_poison_res_b": {
+    "name": "ring of poison resist",
+    "symbol": "=",
+    "color": [
+      80,
+      200,
+      60
+    ],
+    "weight": 0.1,
+    "min_level": 2,
+    "slot": "ring",
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {
+      "status": "poison_resist",
+      "duration": -1
+    },
+    "unidentified_name": "toxic tourmaline ring"
+  },
+  "ring_sleep_res_a": {
+    "name": "ring of sleep resist",
+    "symbol": "=",
+    "color": [
+      140,
+      140,
+      220
+    ],
+    "weight": 0.1,
+    "min_level": 2,
+    "slot": "ring",
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {
+      "status": "sleep_resist",
+      "duration": -1
+    },
+    "unidentified_name": "dreamstone ring"
+  },
+  "ring_sleep_res_b": {
+    "name": "ring of sleep resist",
+    "symbol": "=",
+    "color": [
+      160,
+      160,
+      240
+    ],
+    "weight": 0.1,
+    "min_level": 2,
+    "slot": "ring",
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {
+      "status": "sleep_resist",
+      "duration": -1
+    },
+    "unidentified_name": "lucid crystal ring"
+  },
+  "ring_magic_res_a": {
+    "name": "ring of magic resist",
+    "symbol": "=",
+    "color": [
+      160,
+      140,
+      200
+    ],
+    "weight": 0.1,
+    "min_level": 3,
+    "slot": "ring",
+    "equip_threshold": 4,
+    "quiz_tier": 3,
+    "effects": {
+      "status": "magic_resist",
+      "duration": -1
+    },
+    "unidentified_name": "warded pewter ring"
+  },
+  "ring_drain_res_a": {
+    "name": "ring of drain resist",
+    "symbol": "=",
+    "color": [
+      140,
+      80,
+      160
+    ],
+    "weight": 0.1,
+    "min_level": 3,
+    "slot": "ring",
+    "equip_threshold": 4,
+    "quiz_tier": 3,
+    "effects": {
+      "status": "drain_resist",
+      "duration": -1
+    },
+    "unidentified_name": "soul-ward jasper ring"
+  },
+  "ring_levitate": {
+    "name": "ring of levitating",
+    "symbol": "=",
+    "color": [
+      200,
+      200,
+      240
+    ],
+    "weight": 0.1,
+    "min_level": 3,
+    "slot": "ring",
+    "equip_threshold": 4,
+    "quiz_tier": 3,
+    "effects": {
+      "status": "levitating",
+      "duration": -1
+    },
+    "unidentified_name": "phantom silver ring"
+  },
+  "ring_invisible": {
+    "name": "ring of invisible",
+    "symbol": "=",
+    "color": [
+      220,
+      230,
+      240
+    ],
+    "weight": 0.1,
+    "min_level": 3,
+    "slot": "ring",
+    "equip_threshold": 4,
+    "quiz_tier": 3,
+    "effects": {
+      "status": "invisible",
+      "duration": -1
+    },
+    "unidentified_name": "ghostly crystal ring"
+  },
+  "ring_hasted": {
+    "name": "ring of hasted",
+    "symbol": "=",
+    "color": [
+      240,
+      230,
+      80
+    ],
+    "weight": 0.1,
+    "min_level": 3,
+    "slot": "ring",
+    "equip_threshold": 4,
+    "quiz_tier": 3,
+    "effects": {
+      "status": "hasted",
+      "duration": -1
+    },
+    "unidentified_name": "quickstep tourmaline ring"
+  },
+  "ring_clairvoy": {
+    "name": "ring of clairvoyant",
+    "symbol": "=",
+    "color": [
+      60,
+      60,
+      80
+    ],
+    "weight": 0.1,
+    "min_level": 3,
+    "slot": "ring",
+    "equip_threshold": 5,
+    "quiz_tier": 3,
+    "effects": {
+      "status": "clairvoyant",
+      "duration": -1
+    },
+    "unidentified_name": "all-seeing onyx ring"
+  },
+  "ring_displace": {
+    "name": "ring of displacement",
+    "symbol": "=",
+    "color": [
+      80,
+      80,
+      100
+    ],
+    "weight": 0.1,
+    "min_level": 3,
+    "slot": "ring",
+    "equip_threshold": 4,
+    "quiz_tier": 3,
+    "effects": {
+      "status": "displacement",
+      "duration": -1
+    },
+    "unidentified_name": "blurred obsidian ring"
+  },
+  "ring_curse_teleport": {
+    "name": "ring of teleportitis",
+    "symbol": "=",
+    "color": [
+      100,
+      60,
+      100
+    ],
+    "weight": 0.1,
+    "min_level": 1,
+    "slot": "ring",
+    "equip_threshold": 2,
+    "quiz_tier": 1,
+    "effects": {
+      "status": "teleportitis",
+      "duration": -1
+    },
+    "unidentified_name": "chaotic onyx ring"
+  },
+  "ring_curse_aggravate": {
+    "name": "ring of aggravation",
+    "symbol": "=",
+    "color": [
+      180,
+      140,
+      40
+    ],
+    "weight": 0.1,
+    "min_level": 1,
+    "slot": "ring",
+    "equip_threshold": 2,
+    "quiz_tier": 1,
+    "effects": {
+      "status": "aggravated",
+      "duration": -1
+    },
+    "unidentified_name": "aggravating brass ring"
+  },
+  "ring_curse_fumble": {
+    "name": "ring of fumbling",
+    "symbol": "=",
+    "color": [
+      100,
+      100,
+      110
+    ],
+    "weight": 0.1,
+    "min_level": 1,
+    "slot": "ring",
+    "equip_threshold": 2,
+    "quiz_tier": 1,
+    "effects": {
+      "status": "fumbling",
+      "duration": -1
+    },
+    "unidentified_name": "heavy lead ring"
+  },
+  "ring_curse_slow": {
+    "name": "ring of slowing",
+    "symbol": "=",
+    "color": [
+      90,
+      90,
+      100
+    ],
+    "weight": 0.1,
+    "min_level": 1,
+    "slot": "ring",
+    "equip_threshold": 2,
+    "quiz_tier": 1,
+    "effects": {
+      "status": "slowed",
+      "duration": -1
+    },
+    "unidentified_name": "leaden iron ring"
+  },
+  "amulet_warning_leather": {
+    "name": "amulet of warning",
     "symbol": "\"",
-    "color": [220, 180, 60],
+    "color": [
+      180,
+      140,
+      80
+    ],
     "weight": 0.2,
     "min_level": 1,
     "slot": "amulet",
     "equip_threshold": 2,
     "quiz_tier": 1,
-    "effects": {"stat": "CON", "amount": 2},
-    "unidentified_name": "golden amulet"
+    "effects": {
+      "status": "warning",
+      "duration": -1
+    },
+    "unidentified_name": "leather cord amulet"
   },
-  "amulet_of_wisdom": {
-    "name": "amulet of wisdom",
+  "amulet_warning_copper": {
+    "name": "amulet of warning",
     "symbol": "\"",
-    "color": [180, 100, 220],
+    "color": [
+      180,
+      120,
+      60
+    ],
+    "weight": 0.2,
+    "min_level": 1,
+    "slot": "amulet",
+    "equip_threshold": 2,
+    "quiz_tier": 1,
+    "effects": {
+      "status": "warning",
+      "duration": -1
+    },
+    "unidentified_name": "copper chain amulet"
+  },
+  "amulet_searching_bone": {
+    "name": "amulet of searching",
+    "symbol": "\"",
+    "color": [
+      220,
+      210,
+      190
+    ],
+    "weight": 0.2,
+    "min_level": 1,
+    "slot": "amulet",
+    "equip_threshold": 2,
+    "quiz_tier": 1,
+    "effects": {
+      "status": "searching",
+      "duration": -1
+    },
+    "unidentified_name": "bone chain amulet"
+  },
+  "amulet_searching_bronze": {
+    "name": "amulet of searching",
+    "symbol": "\"",
+    "color": [
+      160,
+      120,
+      60
+    ],
+    "weight": 0.2,
+    "min_level": 1,
+    "slot": "amulet",
+    "equip_threshold": 2,
+    "quiz_tier": 1,
+    "effects": {
+      "status": "searching",
+      "duration": -1
+    },
+    "unidentified_name": "bronze chain amulet"
+  },
+  "amulet_telepathy_silver": {
+    "name": "amulet of telepathy",
+    "symbol": "\"",
+    "color": [
+      200,
+      200,
+      210
+    ],
     "weight": 0.2,
     "min_level": 2,
     "slot": "amulet",
     "equip_threshold": 3,
     "quiz_tier": 2,
-    "effects": {"stat": "WIS", "amount": 3},
-    "unidentified_name": "purple amulet"
+    "effects": {
+      "status": "telepathy",
+      "duration": -1
+    },
+    "unidentified_name": "silver chain amulet"
   },
-  "amulet_of_fire_resistance": {
-    "name": "amulet of fire resistance",
+  "amulet_telepathy_jade": {
+    "name": "amulet of telepathy",
     "symbol": "\"",
-    "color": [255, 130, 50],
+    "color": [
+      60,
+      180,
+      100
+    ],
+    "weight": 0.2,
+    "min_level": 2,
+    "slot": "amulet",
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {
+      "status": "telepathy",
+      "duration": -1
+    },
+    "unidentified_name": "jade pendant"
+  },
+  "amulet_regen_jade": {
+    "name": "amulet of regeneration",
+    "symbol": "\"",
+    "color": [
+      20,
+      180,
+      60
+    ],
+    "weight": 0.2,
+    "min_level": 2,
+    "slot": "amulet",
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {
+      "status": "regenerating",
+      "duration": -1
+    },
+    "unidentified_name": "healing jade pendant"
+  },
+  "amulet_hasted": {
+    "name": "amulet of speed",
+    "symbol": "\"",
+    "color": [
+      240,
+      230,
+      80
+    ],
     "weight": 0.2,
     "min_level": 3,
     "slot": "amulet",
     "equip_threshold": 4,
     "quiz_tier": 3,
-    "effects": {"status": "fire_resist", "duration": -1},
-    "unidentified_name": "warm amulet"
+    "effects": {
+      "status": "hasted",
+      "duration": -1
+    },
+    "unidentified_name": "swift-wind talisman"
+  },
+  "amulet_invis": {
+    "name": "amulet of invisibility",
+    "symbol": "\"",
+    "color": [
+      200,
+      220,
+      240
+    ],
+    "weight": 0.2,
+    "min_level": 3,
+    "slot": "amulet",
+    "equip_threshold": 4,
+    "quiz_tier": 3,
+    "effects": {
+      "status": "invisible",
+      "duration": -1
+    },
+    "unidentified_name": "mist-silver pendant"
+  },
+  "amulet_levitate": {
+    "name": "amulet of levitation",
+    "symbol": "\"",
+    "color": [
+      180,
+      200,
+      240
+    ],
+    "weight": 0.2,
+    "min_level": 3,
+    "slot": "amulet",
+    "equip_threshold": 4,
+    "quiz_tier": 3,
+    "effects": {
+      "status": "levitating",
+      "duration": -1
+    },
+    "unidentified_name": "cloud-iron locket"
+  },
+  "amulet_clairvoyant": {
+    "name": "amulet of clairvoyance",
+    "symbol": "\"",
+    "color": [
+      80,
+      60,
+      100
+    ],
+    "weight": 0.2,
+    "min_level": 3,
+    "slot": "amulet",
+    "equip_threshold": 5,
+    "quiz_tier": 3,
+    "effects": {
+      "status": "clairvoyant",
+      "duration": -1
+    },
+    "unidentified_name": "all-seeing eye pendant"
+  },
+  "amulet_displace": {
+    "name": "amulet of displacement",
+    "symbol": "\"",
+    "color": [
+      100,
+      100,
+      140
+    ],
+    "weight": 0.2,
+    "min_level": 3,
+    "slot": "amulet",
+    "equip_threshold": 4,
+    "quiz_tier": 3,
+    "effects": {
+      "status": "displacement",
+      "duration": -1
+    },
+    "unidentified_name": "blurred shadow pendant"
+  },
+  "amulet_fire_res": {
+    "name": "amulet of fire resistance",
+    "symbol": "\"",
+    "color": [
+      255,
+      100,
+      30
+    ],
+    "weight": 0.2,
+    "min_level": 2,
+    "slot": "amulet",
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {
+      "status": "fire_resist",
+      "duration": -1
+    },
+    "unidentified_name": "fire-kissed pendant"
+  },
+  "amulet_cold_res": {
+    "name": "amulet of cold resistance",
+    "symbol": "\"",
+    "color": [
+      120,
+      200,
+      255
+    ],
+    "weight": 0.2,
+    "min_level": 2,
+    "slot": "amulet",
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {
+      "status": "cold_resist",
+      "duration": -1
+    },
+    "unidentified_name": "frost-kissed locket"
+  },
+  "amulet_shock_res": {
+    "name": "amulet of shock resistance",
+    "symbol": "\"",
+    "color": [
+      240,
+      200,
+      60
+    ],
+    "weight": 0.2,
+    "min_level": 2,
+    "slot": "amulet",
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {
+      "status": "shock_resist",
+      "duration": -1
+    },
+    "unidentified_name": "crackling charm"
+  },
+  "amulet_poison_res": {
+    "name": "amulet of poison resistance",
+    "symbol": "\"",
+    "color": [
+      60,
+      180,
+      80
+    ],
+    "weight": 0.2,
+    "min_level": 2,
+    "slot": "amulet",
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {
+      "status": "poison_resist",
+      "duration": -1
+    },
+    "unidentified_name": "serpent tooth pendant"
+  },
+  "amulet_sleep_res": {
+    "name": "amulet of sleep resistance",
+    "symbol": "\"",
+    "color": [
+      140,
+      140,
+      220
+    ],
+    "weight": 0.2,
+    "min_level": 2,
+    "slot": "amulet",
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {
+      "status": "sleep_resist",
+      "duration": -1
+    },
+    "unidentified_name": "dream-ward medallion"
+  },
+  "amulet_magic_res": {
+    "name": "amulet of magic resistance",
+    "symbol": "\"",
+    "color": [
+      160,
+      140,
+      200
+    ],
+    "weight": 0.2,
+    "min_level": 3,
+    "slot": "amulet",
+    "equip_threshold": 4,
+    "quiz_tier": 3,
+    "effects": {
+      "status": "magic_resist",
+      "duration": -1
+    },
+    "unidentified_name": "ward-woven talisman"
+  },
+  "amulet_drain_res": {
+    "name": "amulet of drain resistance",
+    "symbol": "\"",
+    "color": [
+      140,
+      80,
+      160
+    ],
+    "weight": 0.2,
+    "min_level": 3,
+    "slot": "amulet",
+    "equip_threshold": 4,
+    "quiz_tier": 3,
+    "effects": {
+      "status": "drain_resist",
+      "duration": -1
+    },
+    "unidentified_name": "life-ward chain"
+  },
+  "amulet_strength_iron_medallion": {
+    "name": "amulet of strength",
+    "symbol": "\"",
+    "color": [
+      120,
+      120,
+      130
+    ],
+    "weight": 0.2,
+    "min_level": 2,
+    "slot": "amulet",
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {
+      "stat": "STR",
+      "amount": 2
+    },
+    "unidentified_name": "iron medallion"
+  },
+  "amulet_strength_titan_iron_pendant": {
+    "name": "amulet of strength",
+    "symbol": "\"",
+    "color": [
+      80,
+      90,
+      110
+    ],
+    "weight": 0.2,
+    "min_level": 3,
+    "slot": "amulet",
+    "equip_threshold": 4,
+    "quiz_tier": 3,
+    "effects": {
+      "stat": "STR",
+      "amount": 3
+    },
+    "unidentified_name": "titan iron pendant"
+  },
+  "amulet_constitution_ruby_pendant": {
+    "name": "amulet of constitution",
+    "symbol": "\"",
+    "color": [
+      220,
+      40,
+      40
+    ],
+    "weight": 0.2,
+    "min_level": 2,
+    "slot": "amulet",
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {
+      "stat": "CON",
+      "amount": 2
+    },
+    "unidentified_name": "ruby pendant"
+  },
+  "amulet_constitution_guardian_ruby_locket": {
+    "name": "amulet of constitution",
+    "symbol": "\"",
+    "color": [
+      180,
+      30,
+      30
+    ],
+    "weight": 0.2,
+    "min_level": 3,
+    "slot": "amulet",
+    "equip_threshold": 4,
+    "quiz_tier": 3,
+    "effects": {
+      "stat": "CON",
+      "amount": 3
+    },
+    "unidentified_name": "guardian ruby locket"
+  },
+  "amulet_dexterity_quicksilver_charm": {
+    "name": "amulet of dexterity",
+    "symbol": "\"",
+    "color": [
+      200,
+      220,
+      220
+    ],
+    "weight": 0.2,
+    "min_level": 2,
+    "slot": "amulet",
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {
+      "stat": "DEX",
+      "amount": 2
+    },
+    "unidentified_name": "quicksilver charm"
+  },
+  "amulet_dexterity_air_light_locket": {
+    "name": "amulet of dexterity",
+    "symbol": "\"",
+    "color": [
+      210,
+      230,
+      255
+    ],
+    "weight": 0.2,
+    "min_level": 3,
+    "slot": "amulet",
+    "equip_threshold": 4,
+    "quiz_tier": 3,
+    "effects": {
+      "stat": "DEX",
+      "amount": 3
+    },
+    "unidentified_name": "air-light locket"
+  },
+  "amulet_intellect_amethyst_talisman": {
+    "name": "amulet of intellect",
+    "symbol": "\"",
+    "color": [
+      160,
+      80,
+      200
+    ],
+    "weight": 0.2,
+    "min_level": 2,
+    "slot": "amulet",
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {
+      "stat": "INT",
+      "amount": 2
+    },
+    "unidentified_name": "amethyst talisman"
+  },
+  "amulet_intellect_brilliant_crystal_medallion": {
+    "name": "amulet of intellect",
+    "symbol": "\"",
+    "color": [
+      200,
+      180,
+      255
+    ],
+    "weight": 0.2,
+    "min_level": 3,
+    "slot": "amulet",
+    "equip_threshold": 4,
+    "quiz_tier": 3,
+    "effects": {
+      "stat": "INT",
+      "amount": 3
+    },
+    "unidentified_name": "brilliant crystal medallion"
+  },
+  "amulet_wisdom_opal_locket": {
+    "name": "amulet of wisdom",
+    "symbol": "\"",
+    "color": [
+      200,
+      200,
+      240
+    ],
+    "weight": 0.2,
+    "min_level": 2,
+    "slot": "amulet",
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {
+      "stat": "WIS",
+      "amount": 2
+    },
+    "unidentified_name": "opal locket"
+  },
+  "amulet_wisdom_sage_ivory_locket": {
+    "name": "amulet of wisdom",
+    "symbol": "\"",
+    "color": [
+      240,
+      235,
+      210
+    ],
+    "weight": 0.2,
+    "min_level": 3,
+    "slot": "amulet",
+    "equip_threshold": 4,
+    "quiz_tier": 3,
+    "effects": {
+      "stat": "WIS",
+      "amount": 3
+    },
+    "unidentified_name": "sage ivory locket"
+  },
+  "amulet_perception_eagle_eye_pendant": {
+    "name": "amulet of perception",
+    "symbol": "\"",
+    "color": [
+      180,
+      140,
+      60
+    ],
+    "weight": 0.2,
+    "min_level": 2,
+    "slot": "amulet",
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {
+      "stat": "PER",
+      "amount": 2
+    },
+    "unidentified_name": "eagle-eye pendant"
+  },
+  "amulet_perception_hawk_feather_talisman": {
+    "name": "amulet of perception",
+    "symbol": "\"",
+    "color": [
+      200,
+      160,
+      60
+    ],
+    "weight": 0.2,
+    "min_level": 3,
+    "slot": "amulet",
+    "equip_threshold": 4,
+    "quiz_tier": 3,
+    "effects": {
+      "stat": "PER",
+      "amount": 3
+    },
+    "unidentified_name": "hawk-feather talisman"
+  },
+  "amulet_curse_teleport": {
+    "name": "amulet of teleportitis",
+    "symbol": "\"",
+    "color": [
+      100,
+      60,
+      100
+    ],
+    "weight": 0.2,
+    "min_level": 1,
+    "slot": "amulet",
+    "equip_threshold": 2,
+    "quiz_tier": 1,
+    "effects": {
+      "status": "teleportitis",
+      "duration": -1
+    },
+    "unidentified_name": "chaotic silver pendant"
+  },
+  "amulet_curse_slow": {
+    "name": "amulet of slowing",
+    "symbol": "\"",
+    "color": [
+      90,
+      90,
+      100
+    ],
+    "weight": 0.2,
+    "min_level": 1,
+    "slot": "amulet",
+    "equip_threshold": 2,
+    "quiz_tier": 1,
+    "effects": {
+      "status": "slowed",
+      "duration": -1
+    },
+    "unidentified_name": "leaden-weight medallion"
   }
 }

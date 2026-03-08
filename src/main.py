@@ -859,31 +859,142 @@ class Game:
         )
 
     def _apply_wand_effect(self, wand: 'Wand'):
+        import random as _rng
         from dice import roll
         effect = wand.effect
 
+        # ── CHARACTER EFFECTS ────────────────────────────────────────────────
         if effect == 'heal':
             amount = roll(wand.power) if wand.power else 8
             self.player.restore_hp(amount)
             self.add_message(f"The wand heals you for {amount} HP!", 'success')
 
+        elif effect == 'extra_heal':
+            amount = (roll(wand.power) if wand.power else 20) + 10
+            self.player.restore_hp(amount)
+            self.add_message(f"Intense healing washes over you — {amount} HP restored!", 'success')
+
+        elif effect == 'restore_body':
+            self.player.hp = self.player.max_hp
+            self.player.sp = self.player.max_sp
+            self.player.mp = self.player.max_mp
+            self.add_message("Your body is fully restored!", 'success')
+
         elif effect == 'haste_self':
-            self.player.add_effect('hasted', 10)
+            self.player.add_effect('hasted', 12)
             self.add_message("You feel supernaturally swift!", 'success')
+
+        elif effect == 'invisibility_self':
+            self.player.add_effect('invisible', 15)
+            self.add_message("You fade from sight!", 'success')
+
+        elif effect == 'levitation_self':
+            self.player.add_effect('levitating', 12)
+            self.add_message("You rise gently off the ground!", 'success')
 
         elif effect == 'teleport_self':
             self._teleport_player()
 
-        elif effect in ('sleep_monster', 'fire_bolt', 'cold_bolt'):
+        # ── WORLD EFFECTS ────────────────────────────────────────────────────
+        elif effect == 'digging':
+            px, py = self.player.x, self.player.y
+            opened = 0
+            from dungeon import DOOR, SECRET_DOOR, WALL, FLOOR
+            for dx, dy in [(0,-1),(0,1),(-1,0),(1,0),(-1,-1),(-1,1),(1,-1),(1,1)]:
+                nx, ny = px + dx, py + dy
+                if self.dungeon.in_bounds(nx, ny):
+                    t = self.dungeon.tiles[ny][nx]
+                    if t in (DOOR, SECRET_DOOR, WALL):
+                        self.dungeon.tiles[ny][nx] = FLOOR
+                        opened += 1
+            self._refresh_fov()
+            self.add_message(
+                f"The wand blasts open {opened} wall{'s' if opened != 1 else ''} around you!" if opened
+                else "The wand hums — nothing to dig here.", 'success' if opened else 'info'
+            )
+
+        elif effect == 'light':
+            radius = 15
+            px, py = self.player.x, self.player.y
+            for dy in range(-radius, radius + 1):
+                for dx in range(-radius, radius + 1):
+                    if dx*dx + dy*dy <= radius*radius:
+                        nx, ny = px + dx, py + dy
+                        if self.dungeon.in_bounds(nx, ny):
+                            self.dungeon.explored.add((nx, ny))
+            self.add_message("Brilliant light floods the area!", 'success')
+
+        elif effect == 'create_monster':
+            import json, os
+            from monster import Monster
+            mp = os.path.join(os.path.dirname('src/'), 'data', 'monsters.json')
+            try:
+                with open(mp, encoding='utf-8') as f:
+                    all_defs = json.load(f)
+                eligible = {k: v for k, v in all_defs.items()
+                            if v.get('min_level', 1) <= self.dungeon_level and v.get('frequency', 1) > 0}
+                if eligible:
+                    kind = _rng.choice(list(eligible.keys()))
+                    defn = {**eligible[kind], 'id': kind}
+                    floors = [
+                        (x, y) for y in range(self.dungeon.height)
+                        for x in range(self.dungeon.width)
+                        if self.dungeon.is_walkable(x, y)
+                        and abs(x - self.player.x) <= 6 and abs(y - self.player.y) <= 6
+                        and not any(m.alive and m.x == x and m.y == y for m in self.monsters)
+                        and (x, y) != (self.player.x, self.player.y)
+                    ]
+                    if floors:
+                        mx, my = _rng.choice(floors)
+                        self.monsters.append(Monster(defn, mx, my))
+                        self.add_message(f"A {defn['name']} materialises from the ether!", 'danger')
+                    else:
+                        self.add_message("The wand sputters — no room for a monster nearby.", 'info')
+            except Exception:
+                self.add_message("The wand misfires!", 'warning')
+
+        # ── STATUS EFFECTS ON TARGET ─────────────────────────────────────────
+        elif effect in ('sleep_monster', 'slow_monster', 'confuse_monster',
+                        'paralyze_monster', 'blind_monster', 'stoning',
+                        'fire_bolt', 'cold_bolt', 'lightning_bolt',
+                        'acid_spray', 'magic_missile', 'striking',
+                        'death_ray', 'cancellation', 'polymorph_monster'):
             target = self._nearest_visible_monster()
             if target is None:
                 self.add_message("The wand hums but finds no target.", 'info')
                 return
+
             if effect == 'sleep_monster':
-                target.add_effect('sleeping', 6)
+                target.add_effect('sleeping', 8)
+                self.add_message(f"The {target.name} slumps into a deep sleep!", 'success')
+
+            elif effect == 'slow_monster':
+                target.add_effect('slowed', 8)
+                self.add_message(f"The {target.name} slows to a crawl!", 'success')
+
+            elif effect == 'confuse_monster':
+                target.add_effect('confused', 10)
+                self.add_message(f"The {target.name} staggers in confusion!", 'success')
+
+            elif effect == 'paralyze_monster':
+                target.add_effect('paralyzed', 6)
+                self.add_message(f"The {target.name} is locked in place!", 'success')
+
+            elif effect == 'blind_monster':
+                target.add_effect('blinded', 8)
+                self.add_message(f"The {target.name} claws at its eyes, blinded!", 'success')
+
+            elif effect == 'stoning':
+                target.add_effect('petrifying', 5)
+                # Petrifying kills the monster after turns expire
+                self.add_message(f"The {target.name} begins to turn to stone!", 'success')
+
+            elif effect == 'cancellation':
+                target.status_effects.clear()
                 self.add_message(
-                    f"The {target.name} slumps into a deep sleep!", 'success'
+                    f"The {target.name}'s abilities and effects are cancelled!", 'success'
                 )
+
             elif effect == 'fire_bolt':
                 dmg = roll(wand.power) if wand.power else 6
                 actual = target.take_damage(dmg)
@@ -892,15 +1003,103 @@ class Game:
                 )
                 if not target.alive:
                     self._on_monster_killed(target)
+
             elif effect == 'cold_bolt':
                 dmg = roll(wand.power) if wand.power else 4
                 actual = target.take_damage(dmg)
                 target.add_effect('slowed', 4)
                 self.add_message(
-                    f"A bolt of cold strikes the {target.name} for {actual} damage!", 'success'
+                    f"A bolt of cold strikes the {target.name} for {actual} damage and slows it!", 'success'
                 )
                 if not target.alive:
                     self._on_monster_killed(target)
+
+            elif effect == 'lightning_bolt':
+                # Shock resist blocks all damage
+                from status_effects import DAMAGE_IMMUNITY
+                dmg = roll(wand.power) if wand.power else 10
+                actual = target.take_damage(dmg)
+                if actual > 0:
+                    target.add_effect('stunned', 3)
+                    self.add_message(
+                        f"Lightning strikes the {target.name} for {actual} damage — it is stunned!", 'success'
+                    )
+                else:
+                    self.add_message(f"The {target.name} absorbs the lightning harmlessly.", 'info')
+                if not target.alive:
+                    self._on_monster_killed(target)
+
+            elif effect == 'acid_spray':
+                dmg = roll(wand.power) if wand.power else 4
+                actual = target.take_damage(dmg)
+                target.add_effect('diseased', 6)
+                self.add_message(
+                    f"Acid dissolves the {target.name} for {actual} damage — it is diseased!", 'success'
+                )
+                if not target.alive:
+                    self._on_monster_killed(target)
+
+            elif effect == 'magic_missile':
+                # Irresistible: bypasses all resistances
+                dmg = roll(wand.power) + 1 if wand.power else 5
+                target.hp = max(0, target.hp - dmg)
+                if target.hp == 0:
+                    target.alive = False
+                self.add_message(
+                    f"A magic missile unerringly strikes the {target.name} for {dmg} damage!", 'success'
+                )
+                if not target.alive:
+                    self._on_monster_killed(target)
+
+            elif effect == 'striking':
+                dmg = roll(wand.power) if wand.power else 10
+                actual = target.take_damage(dmg)
+                self.add_message(
+                    f"The wand slams into the {target.name} for {actual} physical damage!", 'success'
+                )
+                if not target.alive:
+                    self._on_monster_killed(target)
+
+            elif effect == 'death_ray':
+                # 70% chance instant kill; remaining HP otherwise
+                if _rng.random() < 0.70:
+                    target.hp = 0
+                    target.alive = False
+                    self.add_message(f"The {target.name} is slain instantly by the death ray!", 'success')
+                    self._on_monster_killed(target)
+                else:
+                    dmg = max(1, target.max_hp // 2)
+                    actual = target.take_damage(dmg)
+                    self.add_message(
+                        f"The death ray grazes the {target.name} for {actual} damage!", 'success'
+                    )
+                    if not target.alive:
+                        self._on_monster_killed(target)
+
+            elif effect == 'polymorph_monster':
+                import json, os
+                from monster import Monster
+                mp = os.path.join(os.path.dirname('src/'), 'data', 'monsters.json')
+                try:
+                    with open(mp, encoding='utf-8') as f:
+                        all_defs = json.load(f)
+                    eligible = [k for k, v in all_defs.items()
+                                if v.get('min_level', 1) <= self.dungeon_level
+                                and k != target.kind and v.get('frequency', 1) > 0]
+                    if eligible:
+                        old_name = target.name
+                        kind = _rng.choice(eligible)
+                        defn = {**all_defs[kind], 'id': kind}
+                        new_m = Monster(defn, target.x, target.y)
+                        idx = self.monsters.index(target)
+                        self.monsters[idx] = new_m
+                        self.add_message(
+                            f"The {old_name} warps into a {new_m.name}!", 'success'
+                        )
+                    else:
+                        self.add_message("The polymorph wand finds no suitable form.", 'info')
+                except Exception:
+                    self.add_message("The wand misfires!", 'warning')
 
     def _nearest_visible_monster(self):
         """Return the closest alive monster currently in FOV, or None."""

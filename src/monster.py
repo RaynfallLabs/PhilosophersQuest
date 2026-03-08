@@ -111,6 +111,12 @@ class Monster:
         if self.has_effect('sleeping') or self.has_effect('paralyzed'):
             return False
 
+        # Slowed: skip every other turn
+        if self.has_effect('slowed'):
+            self._slow_skip = not getattr(self, '_slow_skip', False)
+            if self._slow_skip:
+                return False
+
         # Aggravated overrides passive/cowardly AI patterns
         effective_pattern = self.ai_pattern
         if player.has_effect('aggravated') and effective_pattern in ('sessile', 'cowardly'):
@@ -150,6 +156,9 @@ class Monster:
         return dx <= 1 and dy <= 1 and not (dx == 0 and dy == 0)
 
     def _preferred_dir(self, player, effective_pattern: str) -> tuple[int, int]:
+        # Confused or blinded monsters stumble randomly
+        if self.has_effect('confused') or self.has_effect('blinded'):
+            return random.choice([(0, -1), (0, 1), (-1, 0), (1, 0)])
         dx = 0 if self.x == player.x else (1 if player.x > self.x else -1)
         dy = 0 if self.y == player.y else (1 if player.y > self.y else -1)
         if effective_pattern == 'cowardly':

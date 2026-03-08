@@ -62,8 +62,11 @@ class Accessory(Item):
 class Wand(Item):
     def __init__(self, defn: dict):
         super().__init__(defn)
-        self.charges          = int(defn.get('charges', 3))
-        self.max_charges      = int(defn.get('max_charges', 5))
+        # charges_min/max used at spawn time to roll a semi-random starting count
+        self.charges_min      = int(defn.get('charges_min', defn.get('charges', 3)))
+        self.charges_max      = int(defn.get('charges_max', self.charges_min))
+        self.charges          = self.charges_min          # re-rolled when placed in dungeon
+        self.max_charges      = int(defn.get('max_charges', self.charges_max))
         self.quiz_tier        = int(defn.get('quiz_tier', 1))
         self.quiz_threshold   = int(defn.get('quiz_threshold', 2))
         self.effect           = defn.get('effect', '')
