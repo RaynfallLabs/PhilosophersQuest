@@ -103,7 +103,15 @@ class Monster:
 
         for ddx, ddy in candidates:
             nx, ny = self.x + ddx, self.y + ddy
-            if dungeon.is_walkable(nx, ny) and (nx, ny) not in occupied and (nx, ny) != player_pos:
+            if (nx, ny) in occupied or (nx, ny) == player_pos:
+                continue
+            tile = dungeon.tiles[ny][nx] if dungeon.in_bounds(nx, ny) else 0
+            from dungeon import DOOR
+            if tile == DOOR:
+                dungeon.open_door(nx, ny)   # monsters open doors
+                self.x, self.y = nx, ny
+                break
+            if dungeon.is_walkable(nx, ny):
                 self.x, self.y = nx, ny
                 break
 

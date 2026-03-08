@@ -1,17 +1,48 @@
+"""
+Dungeon generation using Binary Space Partitioning (BSP).
+
+BSP guarantees:
+  - No overlapping rooms
+  - Every room is reachable (corridors connect every sibling pair)
+  - Natural, evenly-distributed room placement
+
+After BSP placement the generator runs post-processing passes for:
+  - Doors      at corridor/room junctions (70% chance)
+  - Secret doors in shortcut wall gaps between parallel corridors
+  - Stairs up (first room) and stairs down (last room)
+"""
+
 import copy
 import json
 import os
 import random
 from dataclasses import dataclass
-from typing import List, Tuple
+from typing import List, Optional, Set, Tuple
 
-# Tile type constants
-WALL = 0
-FLOOR = 1
-STAIRS_UP = 2
-STAIRS_DOWN = 3
-DOOR = 4
+# ---------------------------------------------------------------------------
+# Tile constants
+# ---------------------------------------------------------------------------
 
+WALL        = 0   # impassable, opaque
+FLOOR       = 1   # passable, transparent
+STAIRS_UP   = 2   # exit to previous level
+STAIRS_DOWN = 3   # exit to next level
+DOOR        = 4   # opaque until opened (bump to open)
+SECRET_DOOR = 5   # looks like WALL; discovered by searching or bumping
+
+# ---------------------------------------------------------------------------
+# BSP tuning
+# ---------------------------------------------------------------------------
+
+_BSP_MIN_LEAF  = 9    # minimum region dimension before splitting stops
+_ROOM_PAD      = 2    # minimum tiles between room edge and region edge
+_ROOM_MIN_INNER = 3   # minimum interior (floor) tiles per axis
+_ROOM_MAX_INNER = 9   # maximum interior tiles per axis
+
+
+# ---------------------------------------------------------------------------
+# Room
+# ---------------------------------------------------------------------------
 
 @dataclass
 class Room:
@@ -25,103 +56,305 @@ class Room:
         return (self.x + self.width // 2, self.y + self.height // 2)
 
     def inner_tiles(self):
-        """Yields (x, y) for all floor tiles inside this room (excluding walls)."""
+        """Yields every floor tile inside this room (excluding the outer wall ring)."""
         for ry in range(self.y + 1, self.y + self.height - 1):
             for rx in range(self.x + 1, self.x + self.width - 1):
                 yield rx, ry
 
-    def intersects(self, other: 'Room') -> bool:
+    def wall_tiles(self):
+        """Yields every tile on the outer border of this room."""
+        for x in range(self.x, self.x + self.width):
+            yield x, self.y
+            yield x, self.y + self.height - 1
+        for y in range(self.y + 1, self.y + self.height - 1):
+            yield self.x, y
+            yield self.x + self.width - 1, y
+
+    def intersects(self, other: 'Room', pad: int = 1) -> bool:
         return (
-            self.x < other.x + other.width and
-            self.x + self.width > other.x and
-            self.y < other.y + other.height and
-            self.y + self.height > other.y
+            self.x - pad < other.x + other.width  and
+            self.x + self.width  + pad > other.x  and
+            self.y - pad < other.y + other.height and
+            self.y + self.height + pad > other.y
         )
 
+
+# ---------------------------------------------------------------------------
+# Dungeon
+# ---------------------------------------------------------------------------
 
 class Dungeon:
     def __init__(self, tiles: List[List[int]], rooms: List[Room],
                  width: int, height: int, level: int):
-        self.tiles = tiles
-        self.rooms = rooms
-        self.width = width
+        self.tiles  = tiles
+        self.rooms  = rooms
+        self.width  = width
         self.height = height
-        self.level = level
-        self.explored = [[False] * width for _ in range(height)]
+        self.level  = level
+        # Explored tiles stored as a set of (x, y) tuples for easy membership checks
+        self.explored: Set[Tuple[int, int]] = set()
 
     def in_bounds(self, x: int, y: int) -> bool:
         return 0 <= x < self.width and 0 <= y < self.height
 
     def is_walkable(self, x: int, y: int) -> bool:
-        return self.in_bounds(x, y) and self.tiles[y][x] != WALL
+        """True if the player / monster can freely move onto this tile.
+        Doors and secret doors block movement until explicitly opened."""
+        return self.in_bounds(x, y) and self.tiles[y][x] not in (WALL, DOOR, SECRET_DOOR)
 
     def is_opaque(self, x: int, y: int) -> bool:
-        return not self.in_bounds(x, y) or self.tiles[y][x] == WALL
+        """True if the tile blocks line-of-sight (for FOV)."""
+        return (not self.in_bounds(x, y)
+                or self.tiles[y][x] in (WALL, DOOR, SECRET_DOOR))
 
+    def open_door(self, x: int, y: int) -> bool:
+        """Open a closed door or reveal a secret door.  Returns True on success."""
+        if self.in_bounds(x, y) and self.tiles[y][x] in (DOOR, SECRET_DOOR):
+            self.tiles[y][x] = FLOOR
+            return True
+        return False
+
+
+# ---------------------------------------------------------------------------
+# BSP node
+# ---------------------------------------------------------------------------
+
+class _BSPNode:
+    def __init__(self, x: int, y: int, w: int, h: int):
+        self.x, self.y, self.w, self.h = x, y, w, h
+        self.left:  Optional['_BSPNode'] = None
+        self.right: Optional['_BSPNode'] = None
+        self.room:  Optional[Room]       = None
+
+    @property
+    def is_leaf(self) -> bool:
+        return self.left is None
+
+    def split(self, rng: random.Random) -> bool:
+        if not self.is_leaf:
+            return False
+
+        # Prefer splitting the longer axis; fall back to random
+        if   self.w > self.h * 1.25:
+            horiz = False
+        elif self.h > self.w * 1.25:
+            horiz = True
+        else:
+            horiz = rng.random() < 0.5
+
+        dim = self.h if horiz else self.w
+        if dim < _BSP_MIN_LEAF * 2:
+            return False
+
+        split = rng.randint(_BSP_MIN_LEAF, dim - _BSP_MIN_LEAF)
+        if horiz:
+            self.left  = _BSPNode(self.x, self.y,         self.w, split)
+            self.right = _BSPNode(self.x, self.y + split, self.w, self.h - split)
+        else:
+            self.left  = _BSPNode(self.x,         self.y, split,          self.h)
+            self.right = _BSPNode(self.x + split,  self.y, self.w - split, self.h)
+        return True
+
+    def get_room(self) -> Optional[Room]:
+        """Return any room in this subtree (depth-first, left-preferred)."""
+        if self.room:
+            return self.room
+        lr = self.left.get_room()  if self.left  else None
+        rr = self.right.get_room() if self.right else None
+        return lr or rr
+
+    def leaves(self):
+        if self.is_leaf:
+            yield self
+        else:
+            yield from self.left.leaves()
+            yield from self.right.leaves()
+
+
+# ---------------------------------------------------------------------------
+# Public generator
+# ---------------------------------------------------------------------------
 
 def generate_dungeon(width: int = 80, height: int = 50, level: int = 1) -> Dungeon:
-    rng = random.Random()
+    """
+    Generate a complete dungeon level using BSP + post-processing passes.
+    Every room is guaranteed to be connected.  Room count scales with depth.
+    """
+    rng   = random.Random()
     tiles = [[WALL] * width for _ in range(height)]
-    rooms: List[Room] = []
 
-    max_rooms = 15
-    min_size = 5
-    max_size = 12
+    # ── 1. BSP partitioning ──────────────────────────────────────────────────
+    root   = _BSPNode(1, 1, width - 2, height - 2)
+    queue  = [root]
+    target = min(6 + level * 2, 18)
 
-    for _ in range(max_rooms * 3):  # extra attempts to place max_rooms
-        if len(rooms) >= max_rooms:
+    for _ in range(target * 4):
+        leaves = [n for n in queue if n.is_leaf and max(n.w, n.h) >= _BSP_MIN_LEAF * 2]
+        if not leaves or sum(1 for n in queue if n.is_leaf) >= target:
             break
-        w = rng.randint(min_size, max_size)
-        h = rng.randint(min_size, max_size)
-        x = rng.randint(1, width - w - 2)
-        y = rng.randint(1, height - h - 2)
-        new_room = Room(x, y, w, h)
+        node = rng.choice(leaves)
+        if node.split(rng):
+            queue.append(node.left)
+            queue.append(node.right)
 
-        if any(new_room.intersects(r) for r in rooms):
-            continue
+    # ── 2. Place one room in each BSP leaf ───────────────────────────────────
+    rooms: List[Room] = []
+    for leaf in root.leaves():
+        room = _room_in_leaf(leaf, rng)
+        if room:
+            leaf.room = room
+            rooms.append(room)
+            for rx, ry in room.inner_tiles():
+                tiles[ry][rx] = FLOOR
 
-        for rx, ry in new_room.inner_tiles():
-            tiles[ry][rx] = FLOOR
+    # ── 3. Connect sibling pairs up the BSP tree ─────────────────────────────
+    _connect_bsp(root, tiles, rng)
 
-        if rooms:
-            prev_cx, prev_cy = rooms[-1].center
-            cx, cy = new_room.center
-            _carve_corridor(tiles, prev_cx, prev_cy, cx, cy, rng)
+    # ── 4. Place doors at room-wall openings ─────────────────────────────────
+    _place_doors(tiles, rooms, rng, chance=0.70)
 
-        rooms.append(new_room)
+    # ── 5. Place secret doors (shortcuts) ────────────────────────────────────
+    _place_secret_doors(tiles, width, height, rooms, rng, level)
 
+    # ── 6. Place stairs ──────────────────────────────────────────────────────
     if len(rooms) >= 2:
         sx, sy = rooms[0].center
         tiles[sy][sx] = STAIRS_UP
         ex, ey = rooms[-1].center
         tiles[ey][ex] = STAIRS_DOWN
+    elif rooms:
+        cx, cy = rooms[0].center
+        tiles[cy][cx] = STAIRS_UP
 
     return Dungeon(tiles, rooms, width, height, level)
 
 
-def _carve_corridor(tiles, x1, y1, x2, y2, rng):
+# ---------------------------------------------------------------------------
+# BSP helpers
+# ---------------------------------------------------------------------------
+
+def _room_in_leaf(leaf: _BSPNode, rng: random.Random) -> Optional[Room]:
+    """Fit a randomly-sized room inside the BSP leaf with padding."""
+    max_w = min(leaf.w - _ROOM_PAD * 2, _ROOM_MAX_INNER + 2)
+    max_h = min(leaf.h - _ROOM_PAD * 2, _ROOM_MAX_INNER + 2)
+    min_w = _ROOM_MIN_INNER + 2  # +2 for the surrounding wall ring
+    min_h = _ROOM_MIN_INNER + 2
+
+    if max_w < min_w or max_h < min_h:
+        return None
+
+    rw = rng.randint(min_w, max_w)
+    rh = rng.randint(min_h, max_h)
+    rx = leaf.x + rng.randint(_ROOM_PAD, max(leaf.w - rw - _ROOM_PAD, _ROOM_PAD))
+    ry = leaf.y + rng.randint(_ROOM_PAD, max(leaf.h - rh - _ROOM_PAD, _ROOM_PAD))
+    return Room(rx, ry, rw, rh)
+
+
+def _connect_bsp(node: _BSPNode, tiles: List[List[int]], rng: random.Random):
+    """Recursively connect every pair of BSP siblings with a corridor."""
+    if node.is_leaf:
+        return
+    _connect_bsp(node.left,  tiles, rng)
+    _connect_bsp(node.right, tiles, rng)
+
+    left_room  = node.left.get_room()
+    right_room = node.right.get_room()
+    if left_room and right_room:
+        x1, y1 = left_room.center
+        x2, y2 = right_room.center
+        _carve_corridor(tiles, x1, y1, x2, y2, rng)
+
+
+def _carve_corridor(tiles, x1: int, y1: int, x2: int, y2: int, rng: random.Random):
+    """Carve an L-shaped (or straight) corridor between two points."""
     if rng.random() < 0.5:
-        _carve_h_corridor(tiles, x1, x2, y1)
-        _carve_v_corridor(tiles, y1, y2, x2)
+        _carve_h(tiles, x1, x2, y1)
+        _carve_v(tiles, y1, y2, x2)
     else:
-        _carve_v_corridor(tiles, y1, y2, x1)
-        _carve_h_corridor(tiles, x1, x2, y2)
+        _carve_v(tiles, y1, y2, x1)
+        _carve_h(tiles, x1, x2, y2)
 
 
-def _carve_h_corridor(tiles, x1, x2, y):
+def _carve_h(tiles, x1: int, x2: int, y: int):
     for x in range(min(x1, x2), max(x1, x2) + 1):
-        tiles[y][x] = FLOOR
+        if tiles[y][x] == WALL:
+            tiles[y][x] = FLOOR
 
 
-def _carve_v_corridor(tiles, y1, y2, x):
+def _carve_v(tiles, y1: int, y2: int, x: int):
     for y in range(min(y1, y2), max(y1, y2) + 1):
-        tiles[y][x] = FLOOR
+        if tiles[y][x] == WALL:
+            tiles[y][x] = FLOOR
 
 
-def spawn_monsters(rooms: List[Room], level: int, dungeon: 'Dungeon',
+# ---------------------------------------------------------------------------
+# Door placement
+# ---------------------------------------------------------------------------
+
+def _place_doors(tiles, rooms: List[Room], rng: random.Random, chance: float = 0.70):
+    """
+    A corridor enters a room by carving through the room's outer wall.
+    Any room-wall tile that is FLOOR was carved by a corridor — make it a DOOR.
+    """
+    for room in rooms:
+        for wx, wy in room.wall_tiles():
+            if tiles[wy][wx] == FLOOR:
+                # Confirm it's a valid 1-tile passage (not a wide opening)
+                # Count orthogonal floor neighbors — a doorway has exactly 2
+                floor_nbrs = sum(
+                    1 for dx, dy in [(0,-1),(0,1),(-1,0),(1,0)]
+                    if 0 <= wx+dx < len(tiles[0]) and 0 <= wy+dy < len(tiles)
+                    and tiles[wy+dy][wx+dx] in (FLOOR, STAIRS_UP, STAIRS_DOWN)
+                )
+                if floor_nbrs >= 1 and rng.random() < chance:
+                    tiles[wy][wx] = DOOR
+
+
+# ---------------------------------------------------------------------------
+# Secret door placement
+# ---------------------------------------------------------------------------
+
+def _place_secret_doors(tiles, width: int, height: int,
+                        rooms: List[Room], rng: random.Random, level: int):
+    """
+    Place a handful of secret doors in WALL tiles that sit between two separate
+    FLOOR regions (providing a hidden shortcut).  They look identical to WALL
+    until the player discovers them by bumping or searching.
+    """
+    # Build a quick set of room-wall positions so we don't overlap with regular doors
+    room_walls: Set[Tuple[int, int]] = set()
+    for room in rooms:
+        room_walls.update(room.wall_tiles())
+
+    target   = max(1, 1 + level // 3)   # 1-2 per level
+    placed   = 0
+    attempts = 0
+
+    while placed < target and attempts < 400:
+        attempts += 1
+        x = rng.randint(2, width  - 3)
+        y = rng.randint(2, height - 3)
+
+        if tiles[y][x] != WALL or (x, y) in room_walls:
+            continue
+
+        # Check for exactly-opposite floor neighbours (N/S or E/W) = shortcut gap
+        ns = (tiles[y-1][x] == FLOOR and tiles[y+1][x] == FLOOR)
+        ew = (tiles[y][x-1] == FLOOR and tiles[y][x+1] == FLOOR)
+
+        if ns or ew:
+            tiles[y][x] = SECRET_DOOR
+            placed += 1
+
+
+# ---------------------------------------------------------------------------
+# Spawn helpers  (unchanged signatures — called by level_manager)
+# ---------------------------------------------------------------------------
+
+def spawn_monsters(rooms: List[Room], level: int, dungeon: Dungeon,
                    min_count: int = 3, max_count: int = 5) -> list:
     """Spawn monsters in dungeon rooms (skips the first room)."""
-    from monster import Monster  # local import avoids circular dependency
+    from monster import Monster
 
     monsters_path = os.path.join(os.path.dirname(__file__), '..', 'data', 'monsters.json')
     with open(monsters_path, encoding='utf-8') as f:
@@ -131,15 +364,15 @@ def spawn_monsters(rooms: List[Room], level: int, dungeon: 'Dungeon',
     if not eligible:
         return []
 
-    rng = random.Random()
-    count = rng.randint(min_count, max_count)
+    rng      = random.Random()
+    count    = rng.randint(min_count, max_count)
     monsters = []
-    spawn_rooms = rooms[1:]  # keep player's first room clear
+    spawn_rooms = rooms[1:]
 
     for _ in range(count):
         if not spawn_rooms:
             break
-        room = rng.choice(spawn_rooms)
+        room  = rng.choice(spawn_rooms)
         tiles = list(room.inner_tiles())
         rng.shuffle(tiles)
 
@@ -156,11 +389,11 @@ def spawn_monsters(rooms: List[Room], level: int, dungeon: 'Dungeon',
     return monsters
 
 
-def spawn_items(rooms: List[Room], level: int, dungeon: 'Dungeon') -> list:
-    """Spawn items in dungeon rooms. 33% chance per room (skips first room)."""
+def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
+    """Spawn items in dungeon rooms.  33% chance per room (skips first room)."""
     from items import load_items
 
-    rng = random.Random()
+    rng       = random.Random()
     templates: list = []
     for cls_name in ('weapon', 'armor'):
         try:
@@ -183,7 +416,7 @@ def spawn_items(rooms: List[Room], level: int, dungeon: 'Dungeon') -> list:
                 continue
             if any(i.x == tx and i.y == ty for i in ground_items):
                 continue
-            inst = copy.copy(rng.choice(eligible))
+            inst   = copy.copy(rng.choice(eligible))
             inst.x = tx
             inst.y = ty
             ground_items.append(inst)

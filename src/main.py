@@ -2,7 +2,8 @@ import sys
 import pygame
 
 from combat import player_attack
-from dungeon import generate_dungeon, spawn_monsters, spawn_items, STAIRS_UP, STAIRS_DOWN
+from dungeon import (generate_dungeon, spawn_monsters, spawn_items,
+                     STAIRS_UP, STAIRS_DOWN, DOOR, SECRET_DOOR)
 from food_system import harvest_corpse, cook_ingredient
 from fov import calculate_fov
 from items import Weapon, Armor, Shield, Corpse, Ingredient, Artifact
@@ -228,8 +229,33 @@ class Game:
         target = next(
             (m for m in self.monsters if m.alive and m.x == nx and m.y == ny), None
         )
+        if not self.dungeon.in_bounds(nx, ny):
+            return
+
+        tile_at_dest = self.dungeon.tiles[ny][nx]
+
         if target:
             self._start_combat(target)
+        elif tile_at_dest == DOOR:
+            # Bump-to-open: open the door and step through in one action
+            self.dungeon.open_door(nx, ny)
+            self.player.x, self.player.y = nx, ny
+            self._refresh_fov()
+            self.add_message("You open the door.", 'info')
+            self._tick_sp()
+            if self.state != STATE_DEAD:
+                self._notify_stairs(nx, ny)
+                self._advance_turn()
+        elif tile_at_dest == SECRET_DOOR:
+            # Bump reveals secret door (chance based on PER)
+            per_chance = min(0.85, 0.3 + self.player.PER * 0.04)
+            if _rng.random() < per_chance:
+                self.dungeon.tiles[ny][nx] = DOOR
+                self._refresh_fov()
+                self.add_message("You find a secret door!", 'success')
+            else:
+                self.add_message("You feel something odd about this wall...", 'info')
+            self._advance_turn()
         elif self.dungeon.is_walkable(nx, ny):
             self.player.x, self.player.y = nx, ny
             self._refresh_fov()
@@ -365,7 +391,7 @@ class Game:
             )
 
     def _do_searching(self):
-        """Auto-reveal adjacent tiles when player has the searching effect."""
+        """Auto-reveal adjacent tiles and secret doors when player is searching."""
         if not self.player.has_effect('searching'):
             return
         px, py = self.player.x, self.player.y
@@ -373,8 +399,11 @@ class Game:
             for dx in range(-1, 2):
                 nx, ny = px + dx, py + dy
                 if 0 <= nx < self.dungeon.width and 0 <= ny < self.dungeon.height:
-                    if hasattr(self.dungeon, 'explored'):
-                        self.dungeon.explored.add((nx, ny))
+                    self.dungeon.explored.add((nx, ny))
+                    if self.dungeon.tiles[ny][nx] == SECRET_DOOR:
+                        self.dungeon.tiles[ny][nx] = DOOR
+                        self._refresh_fov()
+                        self.add_message("Searching reveals a secret door!", 'success')
 
     # ------------------------------------------------------------------
     # SP starvation
