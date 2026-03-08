@@ -1101,6 +1101,204 @@ class Game:
                 except Exception:
                     self.add_message("The wand misfires!", 'warning')
 
+            elif effect == 'fear_monster':
+                target.add_effect('feared', 10)
+                target.ai_pattern = 'cowardly'
+                self.add_message(f"The {target.name} turns and flees in terror!", 'success')
+
+            elif effect == 'charm_monster':
+                target.add_effect('charmed', 20)
+                target.ai_pattern = 'sessile'
+                self.add_message(f"The {target.name} gazes at you with adoration.", 'success')
+
+            elif effect == 'poison_monster':
+                target.add_effect('poisoned', 12)
+                self.add_message(f"The {target.name} writhes as poison courses through it!", 'success')
+
+            elif effect == 'disease_monster':
+                target.add_effect('diseased', 15)
+                actual = target.take_damage(max(1, target.max_hp // 5))
+                self.add_message(f"The {target.name} is wracked by disease! ({actual} dmg)", 'success')
+                if not target.alive:
+                    self._on_monster_killed(target)
+
+            elif effect == 'curse_monster':
+                target.add_effect('cursed', 20)
+                target.add_effect('slowed', 8)
+                self.add_message(f"Dark energy envelops the {target.name}! It is cursed and slowed.", 'success')
+
+            elif effect == 'teleport_monster':
+                open_tiles = [(x, y)
+                              for y in range(len(self.dungeon.tiles))
+                              for x in range(len(self.dungeon.tiles[y]))
+                              if self.dungeon.is_walkable(x, y)]
+                if open_tiles:
+                    tx, ty = _rng.choice(open_tiles)
+                    old_name = target.name
+                    target.x, target.y = tx, ty
+                    self.add_message(f"The {old_name} vanishes in a flash of light!", 'success')
+
+            elif effect == 'drain_life':
+                from dice import roll
+                dmg = roll(wand.power) if wand.power else _rng.randint(3, 10)
+                actual = target.take_damage(dmg)
+                heal = min(actual, self.player.max_hp - self.player.hp)
+                self.player.hp += heal
+                self.add_message(
+                    f"You drain {actual} life from the {target.name}! (+{heal} HP)", 'success'
+                )
+                if not target.alive:
+                    self._on_monster_killed(target)
+
+            elif effect == 'disintegrate':
+                if _rng.random() < 0.85:
+                    target.hp = 0
+                    target.alive = False
+                    self.add_message(f"The {target.name} is disintegrated!", 'success')
+                    self._on_monster_killed(target)
+                else:
+                    actual = target.take_damage(target.max_hp // 3)
+                    self.add_message(f"The {target.name} is partially disintegrated! ({actual} dmg)", 'success')
+                    if not target.alive:
+                        self._on_monster_killed(target)
+
+            elif effect == 'weaken_monster':
+                target.add_effect('weakened', 15)
+                if target.attacks:
+                    self.add_message(f"The {target.name} looks visibly weaker!", 'success')
+                else:
+                    self.add_message(f"The {target.name} seems diminished.", 'success')
+
+            elif effect == 'drain_magic':
+                target.status_effects.clear()
+                self.add_message(f"The {target.name}'s magical effects are drained away!", 'success')
+
+            elif effect == 'dispel_magic':
+                target.status_effects.clear()
+                self.add_message(f"All enchantments on the {target.name} are dispelled!", 'success')
+
+        # ---- Effects that don't require a target OR handle mass effects ----
+        if effect == 'boost_str':
+            old = self.player.STR
+            self.player.apply_stat_bonus('STR', 1)
+            self.add_message(f"You feel powerful! STR: {old} -> {self.player.STR}", 'success')
+
+        elif effect == 'boost_con':
+            old = self.player.CON
+            self.player.apply_stat_bonus('CON', 1)
+            self.player.max_hp = self.player._compute_max_hp()
+            self.add_message(f"You feel hardy! CON: {old} -> {self.player.CON}", 'success')
+
+        elif effect == 'boost_int':
+            old = self.player.INT
+            self.player.apply_stat_bonus('INT', 1)
+            self.add_message(f"Your mind sharpens! INT: {old} -> {self.player.INT}", 'success')
+
+        elif effect == 'shield_self':
+            self.player.add_effect('shielded', 15)
+            self.add_message("A shimmering barrier surrounds you!", 'success')
+
+        elif effect == 'fire_shield':
+            self.player.add_effect('fire_shield', 15)
+            self.add_message("Flames swirl around you! You are protected from fire.", 'success')
+
+        elif effect == 'cold_shield':
+            self.player.add_effect('cold_shield', 15)
+            self.add_message("Frost encases you! You are protected from cold.", 'success')
+
+        elif effect == 'regeneration_self':
+            self.player.add_effect('regenerating', 30)
+            self.add_message("You feel your wounds slowly closing.", 'success')
+
+        elif effect == 'reflect_self':
+            self.player.add_effect('reflecting', 20)
+            self.add_message("A reflective aura surrounds you!", 'success')
+
+        elif effect == 'phase_self':
+            self.player.add_effect('phasing', 15)
+            self.add_message("You feel briefly incorporeal — walls seem thin.", 'success')
+
+        elif effect == 'detect_monsters':
+            for m in self.monsters:
+                if m.alive:
+                    self.visible.add((m.x, m.y))
+            self.add_message("You sense the presence of all nearby creatures!", 'success')
+
+        elif effect == 'detect_treasure':
+            for item in self.ground_items:
+                self.dungeon.revealed.add((item.x, item.y))
+            self.add_message("A golden shimmer reveals hidden treasures!", 'success')
+
+        elif effect == 'clairvoyance':
+            for y in range(len(self.dungeon.tiles)):
+                for x in range(len(self.dungeon.tiles[y])):
+                    self.dungeon.revealed.add((x, y))
+            self.add_message("Your mind expands — you perceive the entire level!", 'success')
+
+        elif effect == 'identify_item':
+            unknown = [i for i in self.player.inventory if hasattr(i, 'identified') and not i.identified]
+            if unknown:
+                item = unknown[0]
+                item.identified = True
+                self.player.known_item_ids.add(item.id)
+                self.add_message(f"The wand identifies: {item.name}!", 'success')
+            else:
+                self.add_message("Everything you carry is already known.", 'info')
+
+        elif effect == 'enchant_weapon':
+            w = self.player.weapon
+            if w:
+                w.enchant_bonus += 1
+                self.add_message(f"Your {w.name} glows! Enchantment +{w.enchant_bonus}.", 'success')
+            else:
+                self.add_message("You wield no weapon to enchant.", 'warning')
+
+        elif effect == 'earthquake':
+            visible_monsters = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
+            total_dmg = 0
+            for m in visible_monsters:
+                dmg = _rng.randint(5, 20)
+                actual = m.take_damage(dmg)
+                total_dmg += actual
+                if not m.alive:
+                    self._on_monster_killed(m)
+            self.add_message(f"The earth shakes! {len(visible_monsters)} creatures are battered. ({total_dmg} total dmg)", 'success')
+
+        elif effect == 'explosion':
+            from dice import roll
+            visible_monsters = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
+            for m in visible_monsters:
+                dmg = roll(wand.power) if wand.power else _rng.randint(8, 24)
+                actual = m.take_damage(dmg)
+                if not m.alive:
+                    self._on_monster_killed(m)
+            self.add_message(f"A massive explosion engulfs the area! ({len(visible_monsters)} creatures hit)", 'success')
+
+        elif effect == 'mass_confuse':
+            visible_monsters = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
+            for m in visible_monsters:
+                m.add_effect('confused', 12)
+            self.add_message(f"A wave of confusion washes over {len(visible_monsters)} creatures!", 'success')
+
+        elif effect == 'mass_sleep':
+            visible_monsters = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
+            for m in visible_monsters:
+                m.add_effect('sleeping', 10)
+            self.add_message(f"All visible creatures slump into slumber! ({len(visible_monsters)} affected)", 'success')
+
+        elif effect == 'mass_slow':
+            visible_monsters = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
+            for m in visible_monsters:
+                m.add_effect('slowed', 10)
+            self.add_message(f"{len(visible_monsters)} creatures are slowed!", 'success')
+
+        elif effect == 'time_stop':
+            self.player.add_effect('time_stopped', 5)
+            self.add_message("Time freezes! You have 5 turns of free movement.", 'success')
+
+        elif effect == 'wish':
+            self.add_message("The wand glows brilliantly... but you cannot yet speak your wish.", 'info')
+
     def _nearest_visible_monster(self):
         """Return the closest alive monster currently in FOV, or None."""
         px, py = self.player.x, self.player.y

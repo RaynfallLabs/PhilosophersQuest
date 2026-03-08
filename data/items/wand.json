@@ -1,202 +1,1902 @@
 {
   "wand_of_healing": {
     "name": "wand of healing",
-    "symbol": "/", "color": [100, 255, 100], "weight": 0.5, "min_level": 1,
-    "charges_min": 3, "charges_max": 5, "max_charges": 5,
-    "quiz_tier": 1, "quiz_threshold": 2,
-    "effect": "heal", "power": "2d8",
-    "unidentified_name": "glowing wand"
+    "symbol": "/",
+    "color": [
+      100,
+      255,
+      100
+    ],
+    "weight": 0.5,
+    "min_level": 1,
+    "charges_min": 3,
+    "charges_max": 5,
+    "max_charges": 5,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "heal",
+    "power": "2d8",
+    "unidentified_name": "oak wand"
   },
   "wand_of_extra_healing": {
     "name": "wand of extra healing",
-    "symbol": "/", "color": [60, 255, 120], "weight": 0.5, "min_level": 2,
-    "charges_min": 2, "charges_max": 4, "max_charges": 4,
-    "quiz_tier": 2, "quiz_threshold": 3,
-    "effect": "extra_heal", "power": "4d8",
-    "unidentified_name": "pulsing wand"
+    "symbol": "/",
+    "color": [
+      60,
+      255,
+      120
+    ],
+    "weight": 0.5,
+    "min_level": 2,
+    "charges_min": 2,
+    "charges_max": 4,
+    "max_charges": 4,
+    "quiz_tier": 2,
+    "quiz_threshold": 3,
+    "effect": "extra_heal",
+    "power": "4d8",
+    "unidentified_name": "pine wand"
   },
   "wand_of_restore_body": {
     "name": "wand of restore body",
-    "symbol": "/", "color": [180, 255, 180], "weight": 0.5, "min_level": 3,
-    "charges_min": 2, "charges_max": 3, "max_charges": 3,
-    "quiz_tier": 3, "quiz_threshold": 4,
-    "effect": "restore_body", "power": "",
-    "unidentified_name": "radiant wand"
+    "symbol": "/",
+    "color": [
+      180,
+      255,
+      180
+    ],
+    "weight": 0.5,
+    "min_level": 3,
+    "charges_min": 2,
+    "charges_max": 3,
+    "max_charges": 3,
+    "quiz_tier": 3,
+    "quiz_threshold": 4,
+    "effect": "restore_body",
+    "power": "",
+    "unidentified_name": "ash wand"
   },
   "wand_of_sleep": {
     "name": "wand of sleep",
-    "symbol": "/", "color": [100, 100, 200], "weight": 0.5, "min_level": 1,
-    "charges_min": 4, "charges_max": 6, "max_charges": 6,
-    "quiz_tier": 1, "quiz_threshold": 2,
-    "effect": "sleep_monster", "power": "",
-    "unidentified_name": "humming wand"
+    "symbol": "/",
+    "color": [
+      100,
+      100,
+      200
+    ],
+    "weight": 0.5,
+    "min_level": 1,
+    "charges_min": 4,
+    "charges_max": 6,
+    "max_charges": 6,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "sleep_monster",
+    "power": "",
+    "unidentified_name": "birch wand"
+  },
+  "wand_of_deep_sleep": {
+    "name": "wand of deep sleep",
+    "symbol": "/",
+    "color": [
+      80,
+      80,
+      180
+    ],
+    "weight": 0.5,
+    "min_level": 2,
+    "charges_min": 3,
+    "charges_max": 5,
+    "max_charges": 5,
+    "quiz_tier": 2,
+    "quiz_threshold": 3,
+    "effect": "sleep_monster",
+    "power": "",
+    "unidentified_name": "willow wand"
+  },
+  "wand_of_slumber": {
+    "name": "wand of slumber",
+    "symbol": "/",
+    "color": [
+      120,
+      120,
+      220
+    ],
+    "weight": 0.5,
+    "min_level": 1,
+    "charges_min": 5,
+    "charges_max": 8,
+    "max_charges": 8,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "sleep_monster",
+    "power": "",
+    "unidentified_name": "mahogany wand"
   },
   "wand_of_slow": {
     "name": "wand of slowing",
-    "symbol": "/", "color": [140, 140, 220], "weight": 0.5, "min_level": 1,
-    "charges_min": 4, "charges_max": 7, "max_charges": 7,
-    "quiz_tier": 1, "quiz_threshold": 2,
-    "effect": "slow_monster", "power": "",
-    "unidentified_name": "sluggish wand"
+    "symbol": "/",
+    "color": [
+      140,
+      140,
+      220
+    ],
+    "weight": 0.5,
+    "min_level": 1,
+    "charges_min": 4,
+    "charges_max": 7,
+    "max_charges": 7,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "slow_monster",
+    "power": "",
+    "unidentified_name": "ebony wand"
+  },
+  "wand_of_torpor": {
+    "name": "wand of torpor",
+    "symbol": "/",
+    "color": [
+      110,
+      110,
+      190
+    ],
+    "weight": 0.5,
+    "min_level": 2,
+    "charges_min": 3,
+    "charges_max": 6,
+    "max_charges": 6,
+    "quiz_tier": 2,
+    "quiz_threshold": 3,
+    "effect": "slow_monster",
+    "power": "",
+    "unidentified_name": "walnut wand"
+  },
+  "wand_of_lethargy": {
+    "name": "wand of lethargy",
+    "symbol": "/",
+    "color": [
+      160,
+      160,
+      240
+    ],
+    "weight": 0.5,
+    "min_level": 1,
+    "charges_min": 5,
+    "charges_max": 8,
+    "max_charges": 8,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "slow_monster",
+    "power": "",
+    "unidentified_name": "cherry wand"
   },
   "wand_of_confusion": {
     "name": "wand of confusion",
-    "symbol": "/", "color": [180, 100, 220], "weight": 0.5, "min_level": 1,
-    "charges_min": 4, "charges_max": 6, "max_charges": 6,
-    "quiz_tier": 1, "quiz_threshold": 2,
-    "effect": "confuse_monster", "power": "",
-    "unidentified_name": "swirling wand"
+    "symbol": "/",
+    "color": [
+      180,
+      100,
+      220
+    ],
+    "weight": 0.5,
+    "min_level": 1,
+    "charges_min": 4,
+    "charges_max": 6,
+    "max_charges": 6,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "confuse_monster",
+    "power": "",
+    "unidentified_name": "cedar wand"
+  },
+  "wand_of_bewilderment": {
+    "name": "wand of bewilderment",
+    "symbol": "/",
+    "color": [
+      160,
+      80,
+      200
+    ],
+    "weight": 0.5,
+    "min_level": 2,
+    "charges_min": 3,
+    "charges_max": 5,
+    "max_charges": 5,
+    "quiz_tier": 2,
+    "quiz_threshold": 3,
+    "effect": "confuse_monster",
+    "power": "",
+    "unidentified_name": "teak wand"
+  },
+  "wand_of_madness": {
+    "name": "wand of madness",
+    "symbol": "/",
+    "color": [
+      200,
+      60,
+      240
+    ],
+    "weight": 0.5,
+    "min_level": 3,
+    "charges_min": 2,
+    "charges_max": 4,
+    "max_charges": 4,
+    "quiz_tier": 3,
+    "quiz_threshold": 4,
+    "effect": "confuse_monster",
+    "power": "",
+    "unidentified_name": "rosewood wand"
   },
   "wand_of_paralysis": {
     "name": "wand of paralysis",
-    "symbol": "/", "color": [200, 80, 200], "weight": 0.5, "min_level": 2,
-    "charges_min": 3, "charges_max": 5, "max_charges": 5,
-    "quiz_tier": 2, "quiz_threshold": 3,
-    "effect": "paralyze_monster", "power": "",
-    "unidentified_name": "rigid wand"
+    "symbol": "/",
+    "color": [
+      200,
+      80,
+      200
+    ],
+    "weight": 0.5,
+    "min_level": 2,
+    "charges_min": 3,
+    "charges_max": 5,
+    "max_charges": 5,
+    "quiz_tier": 2,
+    "quiz_threshold": 3,
+    "effect": "paralyze_monster",
+    "power": "",
+    "unidentified_name": "bamboo wand"
+  },
+  "wand_of_petrification": {
+    "name": "wand of petrification",
+    "symbol": "/",
+    "color": [
+      180,
+      60,
+      180
+    ],
+    "weight": 0.5,
+    "min_level": 3,
+    "charges_min": 2,
+    "charges_max": 4,
+    "max_charges": 4,
+    "quiz_tier": 3,
+    "quiz_threshold": 4,
+    "effect": "paralyze_monster",
+    "power": "",
+    "unidentified_name": "gnarled wood wand"
   },
   "wand_of_blindness": {
     "name": "wand of blindness",
-    "symbol": "/", "color": [60, 60, 80], "weight": 0.5, "min_level": 2,
-    "charges_min": 4, "charges_max": 6, "max_charges": 6,
-    "quiz_tier": 2, "quiz_threshold": 3,
-    "effect": "blind_monster", "power": "",
-    "unidentified_name": "dark wand"
+    "symbol": "/",
+    "color": [
+      60,
+      60,
+      80
+    ],
+    "weight": 0.5,
+    "min_level": 2,
+    "charges_min": 4,
+    "charges_max": 6,
+    "max_charges": 6,
+    "quiz_tier": 2,
+    "quiz_threshold": 3,
+    "effect": "blind_monster",
+    "power": "",
+    "unidentified_name": "twisted branch wand"
+  },
+  "wand_of_darkness": {
+    "name": "wand of darkness",
+    "symbol": "/",
+    "color": [
+      40,
+      40,
+      60
+    ],
+    "weight": 0.5,
+    "min_level": 2,
+    "charges_min": 3,
+    "charges_max": 5,
+    "max_charges": 5,
+    "quiz_tier": 2,
+    "quiz_threshold": 3,
+    "effect": "blind_monster",
+    "power": "",
+    "unidentified_name": "carved bone wand"
+  },
+  "wand_of_fear": {
+    "name": "wand of fear",
+    "symbol": "/",
+    "color": [
+      200,
+      160,
+      60
+    ],
+    "weight": 0.5,
+    "min_level": 1,
+    "charges_min": 4,
+    "charges_max": 6,
+    "max_charges": 6,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "fear_monster",
+    "power": "",
+    "unidentified_name": "ivory wand"
+  },
+  "wand_of_dread": {
+    "name": "wand of dread",
+    "symbol": "/",
+    "color": [
+      180,
+      140,
+      40
+    ],
+    "weight": 0.5,
+    "min_level": 2,
+    "charges_min": 3,
+    "charges_max": 5,
+    "max_charges": 5,
+    "quiz_tier": 2,
+    "quiz_threshold": 3,
+    "effect": "fear_monster",
+    "power": "",
+    "unidentified_name": "bleached bone wand"
+  },
+  "wand_of_terror": {
+    "name": "wand of terror",
+    "symbol": "/",
+    "color": [
+      220,
+      120,
+      20
+    ],
+    "weight": 0.5,
+    "min_level": 3,
+    "charges_min": 2,
+    "charges_max": 4,
+    "max_charges": 4,
+    "quiz_tier": 3,
+    "quiz_threshold": 4,
+    "effect": "fear_monster",
+    "power": "",
+    "unidentified_name": "etched bone wand"
+  },
+  "wand_of_charm_monster": {
+    "name": "wand of charm monster",
+    "symbol": "/",
+    "color": [
+      255,
+      180,
+      200
+    ],
+    "weight": 0.5,
+    "min_level": 2,
+    "charges_min": 3,
+    "charges_max": 5,
+    "max_charges": 5,
+    "quiz_tier": 2,
+    "quiz_threshold": 3,
+    "effect": "charm_monster",
+    "power": "",
+    "unidentified_name": "charred bone wand"
+  },
+  "wand_of_domination": {
+    "name": "wand of domination",
+    "symbol": "/",
+    "color": [
+      220,
+      140,
+      180
+    ],
+    "weight": 0.5,
+    "min_level": 4,
+    "charges_min": 2,
+    "charges_max": 3,
+    "max_charges": 3,
+    "quiz_tier": 3,
+    "quiz_threshold": 5,
+    "effect": "charm_monster",
+    "power": "",
+    "unidentified_name": "obsidian wand"
   },
   "wand_of_fire": {
     "name": "wand of fire",
-    "symbol": "/", "color": [255, 100, 50], "weight": 0.5, "min_level": 2,
-    "charges_min": 3, "charges_max": 5, "max_charges": 5,
-    "quiz_tier": 2, "quiz_threshold": 3,
-    "effect": "fire_bolt", "power": "2d6",
-    "unidentified_name": "hot wand"
+    "symbol": "/",
+    "color": [
+      255,
+      100,
+      50
+    ],
+    "weight": 0.5,
+    "min_level": 2,
+    "charges_min": 3,
+    "charges_max": 5,
+    "max_charges": 5,
+    "quiz_tier": 2,
+    "quiz_threshold": 3,
+    "effect": "fire_bolt",
+    "power": "2d6",
+    "unidentified_name": "clear crystal wand"
+  },
+  "wand_of_flame": {
+    "name": "wand of flame",
+    "symbol": "/",
+    "color": [
+      255,
+      60,
+      20
+    ],
+    "weight": 0.5,
+    "min_level": 3,
+    "charges_min": 2,
+    "charges_max": 4,
+    "max_charges": 4,
+    "quiz_tier": 3,
+    "quiz_threshold": 4,
+    "effect": "fire_bolt",
+    "power": "3d6",
+    "unidentified_name": "glowing crystal wand"
+  },
+  "wand_of_inferno": {
+    "name": "wand of inferno",
+    "symbol": "/",
+    "color": [
+      255,
+      20,
+      0
+    ],
+    "weight": 0.5,
+    "min_level": 4,
+    "charges_min": 1,
+    "charges_max": 3,
+    "max_charges": 3,
+    "quiz_tier": 4,
+    "quiz_threshold": 5,
+    "effect": "fire_bolt",
+    "power": "4d6",
+    "unidentified_name": "pulsing crystal wand"
+  },
+  "wand_of_embers": {
+    "name": "wand of embers",
+    "symbol": "/",
+    "color": [
+      220,
+      140,
+      80
+    ],
+    "weight": 0.5,
+    "min_level": 1,
+    "charges_min": 4,
+    "charges_max": 6,
+    "max_charges": 6,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "fire_bolt",
+    "power": "1d8",
+    "unidentified_name": "dark crystal wand"
   },
   "wand_of_cold": {
     "name": "wand of cold",
-    "symbol": "/", "color": [100, 200, 255], "weight": 0.5, "min_level": 2,
-    "charges_min": 3, "charges_max": 5, "max_charges": 5,
-    "quiz_tier": 2, "quiz_threshold": 3,
-    "effect": "cold_bolt", "power": "1d8",
-    "unidentified_name": "cold wand"
+    "symbol": "/",
+    "color": [
+      100,
+      200,
+      255
+    ],
+    "weight": 0.5,
+    "min_level": 2,
+    "charges_min": 3,
+    "charges_max": 5,
+    "max_charges": 5,
+    "quiz_tier": 2,
+    "quiz_threshold": 3,
+    "effect": "cold_bolt",
+    "power": "1d8",
+    "unidentified_name": "frosted glass wand"
+  },
+  "wand_of_frost": {
+    "name": "wand of frost",
+    "symbol": "/",
+    "color": [
+      140,
+      220,
+      255
+    ],
+    "weight": 0.5,
+    "min_level": 2,
+    "charges_min": 3,
+    "charges_max": 5,
+    "max_charges": 5,
+    "quiz_tier": 2,
+    "quiz_threshold": 3,
+    "effect": "cold_bolt",
+    "power": "2d6",
+    "unidentified_name": "smoked glass wand"
+  },
+  "wand_of_ice": {
+    "name": "wand of ice",
+    "symbol": "/",
+    "color": [
+      180,
+      240,
+      255
+    ],
+    "weight": 0.5,
+    "min_level": 3,
+    "charges_min": 2,
+    "charges_max": 4,
+    "max_charges": 4,
+    "quiz_tier": 3,
+    "quiz_threshold": 4,
+    "effect": "cold_bolt",
+    "power": "3d8",
+    "unidentified_name": "cracked glass wand"
+  },
+  "wand_of_glaciation": {
+    "name": "wand of glaciation",
+    "symbol": "/",
+    "color": [
+      200,
+      255,
+      255
+    ],
+    "weight": 0.5,
+    "min_level": 4,
+    "charges_min": 1,
+    "charges_max": 3,
+    "max_charges": 3,
+    "quiz_tier": 4,
+    "quiz_threshold": 5,
+    "effect": "cold_bolt",
+    "power": "4d6",
+    "unidentified_name": "hollow glass wand"
   },
   "wand_of_lightning": {
     "name": "wand of lightning",
-    "symbol": "/", "color": [240, 240, 80], "weight": 0.5, "min_level": 2,
-    "charges_min": 2, "charges_max": 4, "max_charges": 5,
-    "quiz_tier": 2, "quiz_threshold": 3,
-    "effect": "lightning_bolt", "power": "2d8",
-    "unidentified_name": "crackling wand"
+    "symbol": "/",
+    "color": [
+      240,
+      240,
+      80
+    ],
+    "weight": 0.5,
+    "min_level": 2,
+    "charges_min": 2,
+    "charges_max": 4,
+    "max_charges": 5,
+    "quiz_tier": 2,
+    "quiz_threshold": 3,
+    "effect": "lightning_bolt",
+    "power": "2d8",
+    "unidentified_name": "spun glass wand"
+  },
+  "wand_of_thunder": {
+    "name": "wand of thunder",
+    "symbol": "/",
+    "color": [
+      255,
+      255,
+      120
+    ],
+    "weight": 0.5,
+    "min_level": 3,
+    "charges_min": 2,
+    "charges_max": 3,
+    "max_charges": 4,
+    "quiz_tier": 3,
+    "quiz_threshold": 4,
+    "effect": "lightning_bolt",
+    "power": "3d8",
+    "unidentified_name": "quartz wand"
+  },
+  "wand_of_storm": {
+    "name": "wand of storms",
+    "symbol": "/",
+    "color": [
+      255,
+      255,
+      180
+    ],
+    "weight": 0.5,
+    "min_level": 4,
+    "charges_min": 1,
+    "charges_max": 2,
+    "max_charges": 3,
+    "quiz_tier": 4,
+    "quiz_threshold": 5,
+    "effect": "lightning_bolt",
+    "power": "4d8",
+    "unidentified_name": "amethyst wand"
   },
   "wand_of_acid": {
     "name": "wand of acid",
-    "symbol": "/", "color": [140, 220, 60], "weight": 0.5, "min_level": 2,
-    "charges_min": 3, "charges_max": 5, "max_charges": 5,
-    "quiz_tier": 2, "quiz_threshold": 3,
-    "effect": "acid_spray", "power": "1d6",
-    "unidentified_name": "dripping wand"
+    "symbol": "/",
+    "color": [
+      140,
+      220,
+      60
+    ],
+    "weight": 0.5,
+    "min_level": 2,
+    "charges_min": 3,
+    "charges_max": 5,
+    "max_charges": 5,
+    "quiz_tier": 2,
+    "quiz_threshold": 3,
+    "effect": "acid_spray",
+    "power": "1d6",
+    "unidentified_name": "sapphire wand"
+  },
+  "wand_of_corrosion": {
+    "name": "wand of corrosion",
+    "symbol": "/",
+    "color": [
+      100,
+      200,
+      40
+    ],
+    "weight": 0.5,
+    "min_level": 3,
+    "charges_min": 2,
+    "charges_max": 4,
+    "max_charges": 4,
+    "quiz_tier": 3,
+    "quiz_threshold": 4,
+    "effect": "acid_spray",
+    "power": "2d6",
+    "unidentified_name": "ruby wand"
+  },
+  "wand_of_dissolution": {
+    "name": "wand of dissolution",
+    "symbol": "/",
+    "color": [
+      80,
+      180,
+      20
+    ],
+    "weight": 0.5,
+    "min_level": 4,
+    "charges_min": 1,
+    "charges_max": 3,
+    "max_charges": 3,
+    "quiz_tier": 4,
+    "quiz_threshold": 5,
+    "effect": "acid_spray",
+    "power": "3d6",
+    "unidentified_name": "emerald wand"
   },
   "wand_of_magic_missile": {
     "name": "wand of magic missile",
-    "symbol": "/", "color": [200, 160, 255], "weight": 0.5, "min_level": 1,
-    "charges_min": 4, "charges_max": 7, "max_charges": 7,
-    "quiz_tier": 1, "quiz_threshold": 2,
-    "effect": "magic_missile", "power": "2d4",
-    "unidentified_name": "sparking wand"
+    "symbol": "/",
+    "color": [
+      200,
+      160,
+      255
+    ],
+    "weight": 0.5,
+    "min_level": 1,
+    "charges_min": 4,
+    "charges_max": 7,
+    "max_charges": 7,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "magic_missile",
+    "power": "2d4",
+    "unidentified_name": "topaz wand"
+  },
+  "wand_of_force": {
+    "name": "wand of force",
+    "symbol": "/",
+    "color": [
+      180,
+      140,
+      240
+    ],
+    "weight": 0.5,
+    "min_level": 2,
+    "charges_min": 3,
+    "charges_max": 5,
+    "max_charges": 5,
+    "quiz_tier": 2,
+    "quiz_threshold": 3,
+    "effect": "magic_missile",
+    "power": "3d4",
+    "unidentified_name": "onyx wand"
+  },
+  "wand_of_annihilation": {
+    "name": "wand of annihilation",
+    "symbol": "/",
+    "color": [
+      220,
+      180,
+      255
+    ],
+    "weight": 0.5,
+    "min_level": 4,
+    "charges_min": 2,
+    "charges_max": 3,
+    "max_charges": 3,
+    "quiz_tier": 3,
+    "quiz_threshold": 4,
+    "effect": "magic_missile",
+    "power": "4d6",
+    "unidentified_name": "jade wand"
   },
   "wand_of_striking": {
     "name": "wand of striking",
-    "symbol": "/", "color": [220, 140, 60], "weight": 0.5, "min_level": 1,
-    "charges_min": 3, "charges_max": 6, "max_charges": 6,
-    "quiz_tier": 1, "quiz_threshold": 2,
-    "effect": "striking", "power": "3d6",
-    "unidentified_name": "heavy wand"
+    "symbol": "/",
+    "color": [
+      220,
+      140,
+      60
+    ],
+    "weight": 0.5,
+    "min_level": 1,
+    "charges_min": 3,
+    "charges_max": 6,
+    "max_charges": 6,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "striking",
+    "power": "3d6",
+    "unidentified_name": "malachite wand"
+  },
+  "wand_of_crushing": {
+    "name": "wand of crushing",
+    "symbol": "/",
+    "color": [
+      200,
+      120,
+      40
+    ],
+    "weight": 0.5,
+    "min_level": 2,
+    "charges_min": 2,
+    "charges_max": 4,
+    "max_charges": 4,
+    "quiz_tier": 2,
+    "quiz_threshold": 3,
+    "effect": "striking",
+    "power": "4d6",
+    "unidentified_name": "lapis lazuli wand"
+  },
+  "wand_of_smiting": {
+    "name": "wand of smiting",
+    "symbol": "/",
+    "color": [
+      240,
+      160,
+      80
+    ],
+    "weight": 0.5,
+    "min_level": 3,
+    "charges_min": 1,
+    "charges_max": 3,
+    "max_charges": 3,
+    "quiz_tier": 3,
+    "quiz_threshold": 4,
+    "effect": "striking",
+    "power": "5d6",
+    "unidentified_name": "pearl wand"
+  },
+  "wand_of_drain_life": {
+    "name": "wand of drain life",
+    "symbol": "/",
+    "color": [
+      160,
+      40,
+      40
+    ],
+    "weight": 0.5,
+    "min_level": 3,
+    "charges_min": 2,
+    "charges_max": 4,
+    "max_charges": 4,
+    "quiz_tier": 3,
+    "quiz_threshold": 4,
+    "effect": "drain_life",
+    "power": "2d6",
+    "unidentified_name": "coral wand"
+  },
+  "wand_of_vampirism": {
+    "name": "wand of vampirism",
+    "symbol": "/",
+    "color": [
+      120,
+      20,
+      20
+    ],
+    "weight": 0.5,
+    "min_level": 4,
+    "charges_min": 1,
+    "charges_max": 3,
+    "max_charges": 3,
+    "quiz_tier": 4,
+    "quiz_threshold": 5,
+    "effect": "drain_life",
+    "power": "3d6",
+    "unidentified_name": "moonstone wand"
   },
   "wand_of_death": {
     "name": "wand of death",
-    "symbol": "/", "color": [180, 20, 20], "weight": 0.5, "min_level": 4,
-    "charges_min": 1, "charges_max": 2, "max_charges": 3,
-    "quiz_tier": 3, "quiz_threshold": 5,
-    "effect": "death_ray", "power": "",
-    "unidentified_name": "black wand"
+    "symbol": "/",
+    "color": [
+      180,
+      20,
+      20
+    ],
+    "weight": 0.5,
+    "min_level": 4,
+    "charges_min": 1,
+    "charges_max": 2,
+    "max_charges": 3,
+    "quiz_tier": 3,
+    "quiz_threshold": 5,
+    "effect": "death_ray",
+    "power": "",
+    "unidentified_name": "sunstone wand"
   },
   "wand_of_stoning": {
     "name": "wand of stoning",
-    "symbol": "/", "color": [160, 150, 130], "weight": 0.5, "min_level": 3,
-    "charges_min": 2, "charges_max": 4, "max_charges": 4,
-    "quiz_tier": 3, "quiz_threshold": 4,
-    "effect": "stoning", "power": "",
-    "unidentified_name": "grey wand"
+    "symbol": "/",
+    "color": [
+      160,
+      150,
+      130
+    ],
+    "weight": 0.5,
+    "min_level": 3,
+    "charges_min": 2,
+    "charges_max": 4,
+    "max_charges": 4,
+    "quiz_tier": 3,
+    "quiz_threshold": 4,
+    "effect": "stoning",
+    "power": "",
+    "unidentified_name": "bloodstone wand"
+  },
+  "wand_of_disintegration": {
+    "name": "wand of disintegration",
+    "symbol": "/",
+    "color": [
+      200,
+      200,
+      20
+    ],
+    "weight": 0.5,
+    "min_level": 5,
+    "charges_min": 1,
+    "charges_max": 2,
+    "max_charges": 2,
+    "quiz_tier": 4,
+    "quiz_threshold": 5,
+    "effect": "disintegrate",
+    "power": "",
+    "unidentified_name": "tiger eye wand"
   },
   "wand_of_speed": {
     "name": "wand of speed",
-    "symbol": "/", "color": [255, 255, 100], "weight": 0.5, "min_level": 2,
-    "charges_min": 3, "charges_max": 5, "max_charges": 5,
-    "quiz_tier": 2, "quiz_threshold": 3,
-    "effect": "haste_self", "power": "",
-    "unidentified_name": "vibrating wand"
+    "symbol": "/",
+    "color": [
+      255,
+      255,
+      100
+    ],
+    "weight": 0.5,
+    "min_level": 2,
+    "charges_min": 3,
+    "charges_max": 5,
+    "max_charges": 5,
+    "quiz_tier": 2,
+    "quiz_threshold": 3,
+    "effect": "haste_self",
+    "power": "",
+    "unidentified_name": "citrine wand"
+  },
+  "wand_of_swiftness": {
+    "name": "wand of swiftness",
+    "symbol": "/",
+    "color": [
+      240,
+      240,
+      80
+    ],
+    "weight": 0.5,
+    "min_level": 2,
+    "charges_min": 4,
+    "charges_max": 6,
+    "max_charges": 6,
+    "quiz_tier": 2,
+    "quiz_threshold": 3,
+    "effect": "haste_self",
+    "power": "",
+    "unidentified_name": "garnet wand"
   },
   "wand_of_invisibility": {
     "name": "wand of invisibility",
-    "symbol": "/", "color": [200, 220, 240], "weight": 0.5, "min_level": 2,
-    "charges_min": 3, "charges_max": 5, "max_charges": 5,
-    "quiz_tier": 2, "quiz_threshold": 3,
-    "effect": "invisibility_self", "power": "",
-    "unidentified_name": "misty wand"
+    "symbol": "/",
+    "color": [
+      200,
+      220,
+      240
+    ],
+    "weight": 0.5,
+    "min_level": 2,
+    "charges_min": 3,
+    "charges_max": 5,
+    "max_charges": 5,
+    "quiz_tier": 2,
+    "quiz_threshold": 3,
+    "effect": "invisibility_self",
+    "power": "",
+    "unidentified_name": "tourmaline wand"
+  },
+  "wand_of_concealment": {
+    "name": "wand of concealment",
+    "symbol": "/",
+    "color": [
+      180,
+      200,
+      220
+    ],
+    "weight": 0.5,
+    "min_level": 2,
+    "charges_min": 4,
+    "charges_max": 6,
+    "max_charges": 6,
+    "quiz_tier": 2,
+    "quiz_threshold": 3,
+    "effect": "invisibility_self",
+    "power": "",
+    "unidentified_name": "fluorite wand"
   },
   "wand_of_levitation": {
     "name": "wand of levitation",
-    "symbol": "/", "color": [160, 200, 255], "weight": 0.5, "min_level": 2,
-    "charges_min": 3, "charges_max": 5, "max_charges": 5,
-    "quiz_tier": 2, "quiz_threshold": 3,
-    "effect": "levitation_self", "power": "",
-    "unidentified_name": "floating wand"
+    "symbol": "/",
+    "color": [
+      160,
+      200,
+      255
+    ],
+    "weight": 0.5,
+    "min_level": 2,
+    "charges_min": 3,
+    "charges_max": 5,
+    "max_charges": 5,
+    "quiz_tier": 2,
+    "quiz_threshold": 3,
+    "effect": "levitation_self",
+    "power": "",
+    "unidentified_name": "copper wand"
+  },
+  "wand_of_flight": {
+    "name": "wand of flight",
+    "symbol": "/",
+    "color": [
+      140,
+      180,
+      240
+    ],
+    "weight": 0.5,
+    "min_level": 2,
+    "charges_min": 4,
+    "charges_max": 6,
+    "max_charges": 6,
+    "quiz_tier": 2,
+    "quiz_threshold": 3,
+    "effect": "levitation_self",
+    "power": "",
+    "unidentified_name": "bronze wand"
   },
   "wand_of_teleport": {
     "name": "wand of teleportation",
-    "symbol": "/", "color": [200, 100, 200], "weight": 0.5, "min_level": 3,
-    "charges_min": 2, "charges_max": 4, "max_charges": 4,
-    "quiz_tier": 3, "quiz_threshold": 4,
-    "effect": "teleport_self", "power": "",
-    "unidentified_name": "flickering wand"
+    "symbol": "/",
+    "color": [
+      200,
+      100,
+      200
+    ],
+    "weight": 0.5,
+    "min_level": 3,
+    "charges_min": 2,
+    "charges_max": 4,
+    "max_charges": 4,
+    "quiz_tier": 3,
+    "quiz_threshold": 4,
+    "effect": "teleport_self",
+    "power": "",
+    "unidentified_name": "iron wand"
+  },
+  "wand_of_shielding": {
+    "name": "wand of shielding",
+    "symbol": "/",
+    "color": [
+      180,
+      220,
+      255
+    ],
+    "weight": 0.5,
+    "min_level": 2,
+    "charges_min": 3,
+    "charges_max": 5,
+    "max_charges": 5,
+    "quiz_tier": 2,
+    "quiz_threshold": 3,
+    "effect": "shield_self",
+    "power": "",
+    "unidentified_name": "steel wand"
+  },
+  "wand_of_stoneskin": {
+    "name": "wand of stoneskin",
+    "symbol": "/",
+    "color": [
+      200,
+      200,
+      160
+    ],
+    "weight": 0.5,
+    "min_level": 3,
+    "charges_min": 2,
+    "charges_max": 4,
+    "max_charges": 4,
+    "quiz_tier": 3,
+    "quiz_threshold": 4,
+    "effect": "shield_self",
+    "power": "",
+    "unidentified_name": "silver wand"
+  },
+  "wand_of_fire_shield": {
+    "name": "wand of fire shield",
+    "symbol": "/",
+    "color": [
+      255,
+      160,
+      60
+    ],
+    "weight": 0.5,
+    "min_level": 3,
+    "charges_min": 2,
+    "charges_max": 4,
+    "max_charges": 4,
+    "quiz_tier": 3,
+    "quiz_threshold": 4,
+    "effect": "fire_shield",
+    "power": "",
+    "unidentified_name": "gold wand"
+  },
+  "wand_of_cold_shield": {
+    "name": "wand of cold shield",
+    "symbol": "/",
+    "color": [
+      120,
+      220,
+      255
+    ],
+    "weight": 0.5,
+    "min_level": 3,
+    "charges_min": 2,
+    "charges_max": 4,
+    "max_charges": 4,
+    "quiz_tier": 3,
+    "quiz_threshold": 4,
+    "effect": "cold_shield",
+    "power": "",
+    "unidentified_name": "brass wand"
+  },
+  "wand_of_empowerment": {
+    "name": "wand of empowerment",
+    "symbol": "/",
+    "color": [
+      255,
+      160,
+      100
+    ],
+    "weight": 0.5,
+    "min_level": 3,
+    "charges_min": 2,
+    "charges_max": 4,
+    "max_charges": 4,
+    "quiz_tier": 3,
+    "quiz_threshold": 4,
+    "effect": "boost_str",
+    "power": "",
+    "unidentified_name": "pewter wand"
+  },
+  "wand_of_fortitude": {
+    "name": "wand of fortitude",
+    "symbol": "/",
+    "color": [
+      160,
+      255,
+      100
+    ],
+    "weight": 0.5,
+    "min_level": 3,
+    "charges_min": 2,
+    "charges_max": 4,
+    "max_charges": 4,
+    "quiz_tier": 3,
+    "quiz_threshold": 4,
+    "effect": "boost_con",
+    "power": "",
+    "unidentified_name": "runed metal wand"
+  },
+  "wand_of_acuity": {
+    "name": "wand of acuity",
+    "symbol": "/",
+    "color": [
+      100,
+      160,
+      255
+    ],
+    "weight": 0.5,
+    "min_level": 3,
+    "charges_min": 2,
+    "charges_max": 4,
+    "max_charges": 4,
+    "quiz_tier": 3,
+    "quiz_threshold": 4,
+    "effect": "boost_int",
+    "power": "",
+    "unidentified_name": "engraved metal wand"
   },
   "wand_of_digging": {
     "name": "wand of digging",
-    "symbol": "/", "color": [180, 140, 80], "weight": 0.5, "min_level": 1,
-    "charges_min": 5, "charges_max": 8, "max_charges": 8,
-    "quiz_tier": 1, "quiz_threshold": 2,
-    "effect": "digging", "power": "",
-    "unidentified_name": "earthy wand"
+    "symbol": "/",
+    "color": [
+      180,
+      140,
+      80
+    ],
+    "weight": 0.5,
+    "min_level": 1,
+    "charges_min": 5,
+    "charges_max": 8,
+    "max_charges": 8,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "digging",
+    "power": "",
+    "unidentified_name": "polished metal wand"
+  },
+  "wand_of_tunneling": {
+    "name": "wand of tunneling",
+    "symbol": "/",
+    "color": [
+      160,
+      120,
+      60
+    ],
+    "weight": 0.5,
+    "min_level": 2,
+    "charges_min": 4,
+    "charges_max": 7,
+    "max_charges": 7,
+    "quiz_tier": 2,
+    "quiz_threshold": 3,
+    "effect": "digging",
+    "power": "",
+    "unidentified_name": "tarnished metal wand"
   },
   "wand_of_light": {
     "name": "wand of light",
-    "symbol": "/", "color": [255, 255, 200], "weight": 0.5, "min_level": 1,
-    "charges_min": 5, "charges_max": 9, "max_charges": 9,
-    "quiz_tier": 1, "quiz_threshold": 2,
-    "effect": "light", "power": "",
-    "unidentified_name": "bright wand"
+    "symbol": "/",
+    "color": [
+      255,
+      255,
+      200
+    ],
+    "weight": 0.5,
+    "min_level": 1,
+    "charges_min": 5,
+    "charges_max": 9,
+    "max_charges": 9,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "light",
+    "power": "",
+    "unidentified_name": "twisted metal wand"
+  },
+  "wand_of_illumination": {
+    "name": "wand of illumination",
+    "symbol": "/",
+    "color": [
+      255,
+      255,
+      160
+    ],
+    "weight": 0.5,
+    "min_level": 1,
+    "charges_min": 6,
+    "charges_max": 10,
+    "max_charges": 10,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "light",
+    "power": "",
+    "unidentified_name": "black metal wand"
   },
   "wand_of_cancellation": {
     "name": "wand of cancellation",
-    "symbol": "/", "color": [200, 200, 200], "weight": 0.5, "min_level": 2,
-    "charges_min": 4, "charges_max": 6, "max_charges": 6,
-    "quiz_tier": 2, "quiz_threshold": 3,
-    "effect": "cancellation", "power": "",
-    "unidentified_name": "plain wand"
+    "symbol": "/",
+    "color": [
+      200,
+      200,
+      200
+    ],
+    "weight": 0.5,
+    "min_level": 2,
+    "charges_min": 4,
+    "charges_max": 6,
+    "max_charges": 6,
+    "quiz_tier": 2,
+    "quiz_threshold": 3,
+    "effect": "cancellation",
+    "power": "",
+    "unidentified_name": "white metal wand"
   },
-  "wand_of_polymorph": {
-    "name": "wand of polymorph",
-    "symbol": "/", "color": [120, 200, 160], "weight": 0.5, "min_level": 3,
-    "charges_min": 2, "charges_max": 3, "max_charges": 4,
-    "quiz_tier": 3, "quiz_threshold": 4,
-    "effect": "polymorph_monster", "power": "",
-    "unidentified_name": "shifting wand"
+  "wand_of_negation": {
+    "name": "wand of negation",
+    "symbol": "/",
+    "color": [
+      180,
+      180,
+      180
+    ],
+    "weight": 0.5,
+    "min_level": 3,
+    "charges_min": 3,
+    "charges_max": 5,
+    "max_charges": 5,
+    "quiz_tier": 3,
+    "quiz_threshold": 4,
+    "effect": "cancellation",
+    "power": "",
+    "unidentified_name": "braided wire wand"
   },
   "wand_of_create_monster": {
     "name": "wand of create monster",
-    "symbol": "/", "color": [180, 60, 60], "weight": 0.5, "min_level": 2,
-    "charges_min": 3, "charges_max": 5, "max_charges": 5,
-    "quiz_tier": 2, "quiz_threshold": 3,
-    "effect": "create_monster", "power": "",
-    "unidentified_name": "ominous wand"
+    "symbol": "/",
+    "color": [
+      180,
+      60,
+      60
+    ],
+    "weight": 0.5,
+    "min_level": 2,
+    "charges_min": 3,
+    "charges_max": 5,
+    "max_charges": 5,
+    "quiz_tier": 2,
+    "quiz_threshold": 3,
+    "effect": "create_monster",
+    "power": "",
+    "unidentified_name": "mithril wand"
+  },
+  "wand_of_summoning": {
+    "name": "wand of summoning",
+    "symbol": "/",
+    "color": [
+      200,
+      80,
+      80
+    ],
+    "weight": 0.5,
+    "min_level": 3,
+    "charges_min": 2,
+    "charges_max": 4,
+    "max_charges": 4,
+    "quiz_tier": 3,
+    "quiz_threshold": 4,
+    "effect": "create_monster",
+    "power": "",
+    "unidentified_name": "adamantine wand"
+  },
+  "wand_of_detect_monster": {
+    "name": "wand of detect monsters",
+    "symbol": "/",
+    "color": [
+      200,
+      255,
+      160
+    ],
+    "weight": 0.5,
+    "min_level": 1,
+    "charges_min": 4,
+    "charges_max": 7,
+    "max_charges": 7,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "detect_monsters",
+    "power": "",
+    "unidentified_name": "grey stone wand"
+  },
+  "wand_of_detect_treasure": {
+    "name": "wand of detect treasure",
+    "symbol": "/",
+    "color": [
+      255,
+      220,
+      80
+    ],
+    "weight": 0.5,
+    "min_level": 2,
+    "charges_min": 3,
+    "charges_max": 6,
+    "max_charges": 6,
+    "quiz_tier": 2,
+    "quiz_threshold": 3,
+    "effect": "detect_treasure",
+    "power": "",
+    "unidentified_name": "red stone wand"
+  },
+  "wand_of_mapping": {
+    "name": "wand of mapping",
+    "symbol": "/",
+    "color": [
+      100,
+      200,
+      200
+    ],
+    "weight": 0.5,
+    "min_level": 2,
+    "charges_min": 2,
+    "charges_max": 4,
+    "max_charges": 4,
+    "quiz_tier": 2,
+    "quiz_threshold": 3,
+    "effect": "mapping",
+    "power": "",
+    "unidentified_name": "blue stone wand"
+  },
+  "wand_of_clairvoyance": {
+    "name": "wand of clairvoyance",
+    "symbol": "/",
+    "color": [
+      160,
+      255,
+      220
+    ],
+    "weight": 0.5,
+    "min_level": 3,
+    "charges_min": 2,
+    "charges_max": 3,
+    "max_charges": 3,
+    "quiz_tier": 3,
+    "quiz_threshold": 4,
+    "effect": "clairvoyance",
+    "power": "",
+    "unidentified_name": "green stone wand"
+  },
+  "wand_of_polymorph": {
+    "name": "wand of polymorph",
+    "symbol": "/",
+    "color": [
+      120,
+      200,
+      160
+    ],
+    "weight": 0.5,
+    "min_level": 3,
+    "charges_min": 2,
+    "charges_max": 3,
+    "max_charges": 4,
+    "quiz_tier": 3,
+    "quiz_threshold": 4,
+    "effect": "polymorph_monster",
+    "power": "",
+    "unidentified_name": "black stone wand"
+  },
+  "wand_of_transmutation": {
+    "name": "wand of transmutation",
+    "symbol": "/",
+    "color": [
+      100,
+      180,
+      140
+    ],
+    "weight": 0.5,
+    "min_level": 4,
+    "charges_min": 1,
+    "charges_max": 3,
+    "max_charges": 3,
+    "quiz_tier": 4,
+    "quiz_threshold": 5,
+    "effect": "polymorph_monster",
+    "power": "",
+    "unidentified_name": "ancient wood wand"
+  },
+  "wand_of_identify": {
+    "name": "wand of identification",
+    "symbol": "/",
+    "color": [
+      255,
+      200,
+      100
+    ],
+    "weight": 0.5,
+    "min_level": 2,
+    "charges_min": 2,
+    "charges_max": 4,
+    "max_charges": 4,
+    "quiz_tier": 2,
+    "quiz_threshold": 3,
+    "effect": "identify_item",
+    "power": "",
+    "unidentified_name": "lacquered wood wand"
+  },
+  "wand_of_enchantment": {
+    "name": "wand of enchantment",
+    "symbol": "/",
+    "color": [
+      255,
+      220,
+      160
+    ],
+    "weight": 0.5,
+    "min_level": 3,
+    "charges_min": 2,
+    "charges_max": 3,
+    "max_charges": 3,
+    "quiz_tier": 3,
+    "quiz_threshold": 5,
+    "effect": "enchant_weapon",
+    "power": "",
+    "unidentified_name": "gilded wood wand"
+  },
+  "wand_of_curse": {
+    "name": "wand of cursing",
+    "symbol": "/",
+    "color": [
+      100,
+      60,
+      140
+    ],
+    "weight": 0.5,
+    "min_level": 2,
+    "charges_min": 4,
+    "charges_max": 6,
+    "max_charges": 6,
+    "quiz_tier": 2,
+    "quiz_threshold": 3,
+    "effect": "curse_monster",
+    "power": "",
+    "unidentified_name": "scorched wood wand"
+  },
+  "wand_of_teleport_monster": {
+    "name": "wand of teleport monster",
+    "symbol": "/",
+    "color": [
+      180,
+      120,
+      200
+    ],
+    "weight": 0.5,
+    "min_level": 2,
+    "charges_min": 3,
+    "charges_max": 5,
+    "max_charges": 5,
+    "quiz_tier": 2,
+    "quiz_threshold": 3,
+    "effect": "teleport_monster",
+    "power": "",
+    "unidentified_name": "frozen wood wand"
+  },
+  "wand_of_poison": {
+    "name": "wand of poison",
+    "symbol": "/",
+    "color": [
+      80,
+      180,
+      40
+    ],
+    "weight": 0.5,
+    "min_level": 2,
+    "charges_min": 3,
+    "charges_max": 5,
+    "max_charges": 5,
+    "quiz_tier": 2,
+    "quiz_threshold": 3,
+    "effect": "poison_monster",
+    "power": "",
+    "unidentified_name": "painted wood wand"
+  },
+  "wand_of_venom": {
+    "name": "wand of venom",
+    "symbol": "/",
+    "color": [
+      60,
+      160,
+      20
+    ],
+    "weight": 0.5,
+    "min_level": 3,
+    "charges_min": 2,
+    "charges_max": 4,
+    "max_charges": 4,
+    "quiz_tier": 3,
+    "quiz_threshold": 4,
+    "effect": "poison_monster",
+    "power": "",
+    "unidentified_name": "weathered wood wand"
+  },
+  "wand_of_plague": {
+    "name": "wand of plague",
+    "symbol": "/",
+    "color": [
+      100,
+      200,
+      60
+    ],
+    "weight": 0.5,
+    "min_level": 4,
+    "charges_min": 2,
+    "charges_max": 3,
+    "max_charges": 3,
+    "quiz_tier": 3,
+    "quiz_threshold": 4,
+    "effect": "poison_monster",
+    "power": "",
+    "unidentified_name": "notched stick wand"
+  },
+  "wand_of_disease": {
+    "name": "wand of disease",
+    "symbol": "/",
+    "color": [
+      160,
+      200,
+      80
+    ],
+    "weight": 0.5,
+    "min_level": 2,
+    "charges_min": 3,
+    "charges_max": 5,
+    "max_charges": 5,
+    "quiz_tier": 2,
+    "quiz_threshold": 3,
+    "effect": "disease_monster",
+    "power": "",
+    "unidentified_name": "hollow reed wand"
+  },
+  "wand_of_rot": {
+    "name": "wand of rot",
+    "symbol": "/",
+    "color": [
+      140,
+      180,
+      60
+    ],
+    "weight": 0.5,
+    "min_level": 3,
+    "charges_min": 2,
+    "charges_max": 4,
+    "max_charges": 4,
+    "quiz_tier": 3,
+    "quiz_threshold": 4,
+    "effect": "disease_monster",
+    "power": "",
+    "unidentified_name": "driftwood wand"
+  },
+  "wand_of_regeneration": {
+    "name": "wand of regeneration",
+    "symbol": "/",
+    "color": [
+      100,
+      255,
+      160
+    ],
+    "weight": 0.5,
+    "min_level": 3,
+    "charges_min": 2,
+    "charges_max": 4,
+    "max_charges": 4,
+    "quiz_tier": 3,
+    "quiz_threshold": 4,
+    "effect": "regeneration_self",
+    "power": "",
+    "unidentified_name": "serpentine wand"
+  },
+  "wand_of_vitality": {
+    "name": "wand of vitality",
+    "symbol": "/",
+    "color": [
+      120,
+      240,
+      140
+    ],
+    "weight": 0.5,
+    "min_level": 2,
+    "charges_min": 3,
+    "charges_max": 5,
+    "max_charges": 5,
+    "quiz_tier": 2,
+    "quiz_threshold": 3,
+    "effect": "regeneration_self",
+    "power": "",
+    "unidentified_name": "zircon wand"
+  },
+  "wand_of_earthquake": {
+    "name": "wand of earthquake",
+    "symbol": "/",
+    "color": [
+      180,
+      120,
+      60
+    ],
+    "weight": 0.5,
+    "min_level": 4,
+    "charges_min": 1,
+    "charges_max": 2,
+    "max_charges": 2,
+    "quiz_tier": 4,
+    "quiz_threshold": 5,
+    "effect": "earthquake",
+    "power": "",
+    "unidentified_name": "pyrite wand"
+  },
+  "wand_of_explosion": {
+    "name": "wand of explosion",
+    "symbol": "/",
+    "color": [
+      255,
+      120,
+      20
+    ],
+    "weight": 0.5,
+    "min_level": 4,
+    "charges_min": 1,
+    "charges_max": 2,
+    "max_charges": 2,
+    "quiz_tier": 4,
+    "quiz_threshold": 5,
+    "effect": "explosion",
+    "power": "3d8",
+    "unidentified_name": "magnetite wand"
+  },
+  "wand_of_drain_magic": {
+    "name": "wand of drain magic",
+    "symbol": "/",
+    "color": [
+      120,
+      80,
+      180
+    ],
+    "weight": 0.5,
+    "min_level": 3,
+    "charges_min": 2,
+    "charges_max": 4,
+    "max_charges": 4,
+    "quiz_tier": 3,
+    "quiz_threshold": 4,
+    "effect": "drain_magic",
+    "power": "",
+    "unidentified_name": "petrified wood wand"
+  },
+  "wand_of_dispelling": {
+    "name": "wand of dispelling",
+    "symbol": "/",
+    "color": [
+      160,
+      120,
+      200
+    ],
+    "weight": 0.5,
+    "min_level": 2,
+    "charges_min": 3,
+    "charges_max": 5,
+    "max_charges": 5,
+    "quiz_tier": 2,
+    "quiz_threshold": 3,
+    "effect": "dispel_magic",
+    "power": "",
+    "unidentified_name": "arcane oak wand"
+  },
+  "wand_of_aging": {
+    "name": "wand of aging",
+    "symbol": "/",
+    "color": [
+      180,
+      160,
+      100
+    ],
+    "weight": 0.5,
+    "min_level": 2,
+    "charges_min": 3,
+    "charges_max": 5,
+    "max_charges": 5,
+    "quiz_tier": 2,
+    "quiz_threshold": 3,
+    "effect": "weaken_monster",
+    "power": "",
+    "unidentified_name": "runed birch wand"
+  },
+  "wand_of_withering": {
+    "name": "wand of withering",
+    "symbol": "/",
+    "color": [
+      160,
+      140,
+      80
+    ],
+    "weight": 0.5,
+    "min_level": 3,
+    "charges_min": 2,
+    "charges_max": 4,
+    "max_charges": 4,
+    "quiz_tier": 3,
+    "quiz_threshold": 4,
+    "effect": "weaken_monster",
+    "power": "",
+    "unidentified_name": "silver-tipped ash wand"
+  },
+  "wand_of_time_stop": {
+    "name": "wand of time stop",
+    "symbol": "/",
+    "color": [
+      80,
+      80,
+      255
+    ],
+    "weight": 0.5,
+    "min_level": 5,
+    "charges_min": 1,
+    "charges_max": 2,
+    "max_charges": 2,
+    "quiz_tier": 4,
+    "quiz_threshold": 5,
+    "effect": "time_stop",
+    "power": "",
+    "unidentified_name": "gold-banded ebony wand"
+  },
+  "wand_of_wishing": {
+    "name": "wand of wishing",
+    "symbol": "/",
+    "color": [
+      255,
+      255,
+      255
+    ],
+    "weight": 0.5,
+    "min_level": 5,
+    "charges_min": 1,
+    "charges_max": 1,
+    "max_charges": 1,
+    "quiz_tier": 4,
+    "quiz_threshold": 5,
+    "effect": "wish",
+    "power": "",
+    "unidentified_name": "crystal-core iron wand"
+  },
+  "wand_of_reflection": {
+    "name": "wand of reflection",
+    "symbol": "/",
+    "color": [
+      220,
+      240,
+      255
+    ],
+    "weight": 0.5,
+    "min_level": 3,
+    "charges_min": 2,
+    "charges_max": 4,
+    "max_charges": 4,
+    "quiz_tier": 3,
+    "quiz_threshold": 4,
+    "effect": "reflect_self",
+    "power": "",
+    "unidentified_name": "ember-warped wood wand"
+  },
+  "wand_of_mirroring": {
+    "name": "wand of mirroring",
+    "symbol": "/",
+    "color": [
+      200,
+      220,
+      240
+    ],
+    "weight": 0.5,
+    "min_level": 2,
+    "charges_min": 3,
+    "charges_max": 5,
+    "max_charges": 5,
+    "quiz_tier": 2,
+    "quiz_threshold": 3,
+    "effect": "reflect_self",
+    "power": "",
+    "unidentified_name": "frost-laced steel wand"
+  },
+  "wand_of_phasing": {
+    "name": "wand of phasing",
+    "symbol": "/",
+    "color": [
+      160,
+      160,
+      255
+    ],
+    "weight": 0.5,
+    "min_level": 3,
+    "charges_min": 2,
+    "charges_max": 4,
+    "max_charges": 4,
+    "quiz_tier": 3,
+    "quiz_threshold": 4,
+    "effect": "phase_self",
+    "power": "",
+    "unidentified_name": "storm-scarred copper wand"
+  },
+  "wand_of_ethereality": {
+    "name": "wand of ethereality",
+    "symbol": "/",
+    "color": [
+      140,
+      140,
+      240
+    ],
+    "weight": 0.5,
+    "min_level": 4,
+    "charges_min": 1,
+    "charges_max": 3,
+    "max_charges": 3,
+    "quiz_tier": 4,
+    "quiz_threshold": 5,
+    "effect": "phase_self",
+    "power": "",
+    "unidentified_name": "void-touched obsidian wand"
+  },
+  "wand_of_mass_confusion": {
+    "name": "wand of mass confusion",
+    "symbol": "/",
+    "color": [
+      200,
+      80,
+      255
+    ],
+    "weight": 0.5,
+    "min_level": 4,
+    "charges_min": 1,
+    "charges_max": 3,
+    "max_charges": 3,
+    "quiz_tier": 4,
+    "quiz_threshold": 5,
+    "effect": "mass_confuse",
+    "power": "",
+    "unidentified_name": "prismatic crystal wand"
+  },
+  "wand_of_mass_sleep": {
+    "name": "wand of mass sleep",
+    "symbol": "/",
+    "color": [
+      80,
+      60,
+      200
+    ],
+    "weight": 0.5,
+    "min_level": 4,
+    "charges_min": 1,
+    "charges_max": 2,
+    "max_charges": 2,
+    "quiz_tier": 4,
+    "quiz_threshold": 5,
+    "effect": "mass_sleep",
+    "power": "",
+    "unidentified_name": "lightning-forged brass wand"
+  },
+  "wand_of_mass_slow": {
+    "name": "wand of mass slow",
+    "symbol": "/",
+    "color": [
+      120,
+      100,
+      220
+    ],
+    "weight": 0.5,
+    "min_level": 4,
+    "charges_min": 1,
+    "charges_max": 3,
+    "max_charges": 3,
+    "quiz_tier": 4,
+    "quiz_threshold": 5,
+    "effect": "mass_slow",
+    "power": "",
+    "unidentified_name": "sea-glass wand"
   }
 }
