@@ -1,0 +1,92 @@
+[
+  {
+    "tier": 1,
+    "question": "In what year did World War II end?",
+    "answer": "1945",
+    "choices": ["1942", "1943", "1944", "1945"]
+  },
+  {
+    "tier": 1,
+    "question": "Who was the first President of the United States?",
+    "answer": "George Washington",
+    "choices": ["John Adams", "Thomas Jefferson", "George Washington", "Benjamin Franklin"]
+  },
+  {
+    "tier": 1,
+    "question": "What ancient wonder was located in Egypt?",
+    "answer": "Great Pyramid of Giza",
+    "choices": ["Colossus of Rhodes", "Great Pyramid of Giza", "Hanging Gardens", "Lighthouse of Alexandria"]
+  },
+  {
+    "tier": 1,
+    "question": "In what year did the United States declare independence?",
+    "answer": "1776",
+    "choices": ["1766", "1776", "1783", "1789"]
+  },
+  {
+    "tier": 1,
+    "question": "Who was the first person to walk on the Moon?",
+    "answer": "Neil Armstrong",
+    "choices": ["Buzz Aldrin", "Yuri Gagarin", "Neil Armstrong", "John Glenn"]
+  },
+  {
+    "tier": 1,
+    "question": "What empire built the Colosseum in Rome?",
+    "answer": "Roman Empire",
+    "choices": ["Greek Empire", "Ottoman Empire", "Roman Empire", "Byzantine Empire"]
+  },
+  {
+    "tier": 1,
+    "question": "Who is credited with inventing the telephone?",
+    "answer": "Alexander Graham Bell",
+    "choices": ["Thomas Edison", "Nikola Tesla", "Alexander Graham Bell", "Guglielmo Marconi"]
+  },
+  {
+    "tier": 1,
+    "question": "The American Civil War was fought between which regions?",
+    "answer": "North and South",
+    "choices": ["East and West", "North and South", "Union and Britain", "States and Colonies"]
+  },
+  {
+    "tier": 1,
+    "question": "Who led Nazi Germany during World War II?",
+    "answer": "Adolf Hitler",
+    "choices": ["Benito Mussolini", "Joseph Stalin", "Adolf Hitler", "Heinrich Himmler"]
+  },
+  {
+    "tier": 1,
+    "question": "In what year did the Berlin Wall fall?",
+    "answer": "1989",
+    "choices": ["1985", "1987", "1989", "1991"]
+  },
+  {
+    "tier": 2,
+    "question": "Who was the first Roman Emperor?",
+    "answer": "Augustus",
+    "choices": ["Julius Caesar", "Augustus", "Nero", "Caligula"]
+  },
+  {
+    "tier": 2,
+    "question": "In what year did the French Revolution begin?",
+    "answer": "1789",
+    "choices": ["1776", "1783", "1789", "1799"]
+  },
+  {
+    "tier": 2,
+    "question": "What ancient civilization built Machu Picchu?",
+    "answer": "Inca",
+    "choices": ["Aztec", "Maya", "Inca", "Olmec"]
+  },
+  {
+    "tier": 2,
+    "question": "Who was the primary author of the Declaration of Independence?",
+    "answer": "Thomas Jefferson",
+    "choices": ["John Adams", "Thomas Jefferson", "Benjamin Franklin", "James Madison"]
+  },
+  {
+    "tier": 2,
+    "question": "What battle ended Napoleon's rule in Europe?",
+    "answer": "Battle of Waterloo",
+    "choices": ["Battle of Trafalgar", "Battle of Austerlitz", "Battle of Waterloo", "Battle of Leipzig"]
+  }
+]

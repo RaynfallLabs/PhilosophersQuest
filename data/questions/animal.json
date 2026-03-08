@@ -58,5 +58,47 @@
     "question": "What do you call a group of fish swimming together?",
     "answer": "a school",
     "choices": ["a pack", "a school", "a herd", "a pod"]
+  },
+  {
+    "tier": 2,
+    "question": "What do you call an animal that eats only plants?",
+    "answer": "herbivore",
+    "choices": ["carnivore", "herbivore", "omnivore", "insectivore"]
+  },
+  {
+    "tier": 2,
+    "question": "What is a group of lions called?",
+    "answer": "a pride",
+    "choices": ["a pack", "a herd", "a pride", "a colony"]
+  },
+  {
+    "tier": 2,
+    "question": "Where do polar bears live?",
+    "answer": "Arctic",
+    "choices": ["Antarctica", "Siberia", "Arctic", "Greenland"]
+  },
+  {
+    "tier": 2,
+    "question": "What is the only mammal capable of true flight?",
+    "answer": "bat",
+    "choices": ["flying squirrel", "bat", "sugar glider", "colugo"]
+  },
+  {
+    "tier": 2,
+    "question": "What do you call an animal that is active at night?",
+    "answer": "nocturnal",
+    "choices": ["diurnal", "crepuscular", "nocturnal", "arboreal"]
+  },
+  {
+    "tier": 2,
+    "question": "What is the approximate gestation period of an elephant?",
+    "answer": "22 months",
+    "choices": ["12 months", "16 months", "18 months", "22 months"]
+  },
+  {
+    "tier": 2,
+    "question": "What do you call animals that maintain a constant body temperature?",
+    "answer": "warm-blooded",
+    "choices": ["cold-blooded", "warm-blooded", "ectothermic", "poikilothermic"]
   }
 ]

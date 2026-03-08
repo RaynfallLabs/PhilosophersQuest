@@ -1,0 +1,92 @@
+[
+  {
+    "tier": 1,
+    "question": "Who wrote 'The Republic'?",
+    "answer": "Plato",
+    "choices": ["Aristotle", "Plato", "Socrates", "Pythagoras"]
+  },
+  {
+    "tier": 1,
+    "question": "'I think, therefore I am' — who said this?",
+    "answer": "René Descartes",
+    "choices": ["John Locke", "David Hume", "René Descartes", "Immanuel Kant"]
+  },
+  {
+    "tier": 1,
+    "question": "What is the study of knowledge called?",
+    "answer": "epistemology",
+    "choices": ["ontology", "epistemology", "ethics", "aesthetics"]
+  },
+  {
+    "tier": 1,
+    "question": "Who was Plato's most famous student?",
+    "answer": "Aristotle",
+    "choices": ["Socrates", "Aristotle", "Pythagoras", "Epicurus"]
+  },
+  {
+    "tier": 1,
+    "question": "What is the study of right and wrong called?",
+    "answer": "ethics",
+    "choices": ["logic", "ethics", "metaphysics", "aesthetics"]
+  },
+  {
+    "tier": 1,
+    "question": "Who was sentenced to death by drinking hemlock?",
+    "answer": "Socrates",
+    "choices": ["Plato", "Aristotle", "Socrates", "Pythagoras"]
+  },
+  {
+    "tier": 1,
+    "question": "What is the study of existence and reality called?",
+    "answer": "ontology",
+    "choices": ["epistemology", "ethics", "ontology", "logic"]
+  },
+  {
+    "tier": 1,
+    "question": "Who founded the philosophy of Stoicism?",
+    "answer": "Zeno of Citium",
+    "choices": ["Epicurus", "Zeno of Citium", "Marcus Aurelius", "Seneca"]
+  },
+  {
+    "tier": 1,
+    "question": "What does 'philosophy' literally mean in Greek?",
+    "answer": "love of wisdom",
+    "choices": ["love of truth", "love of wisdom", "pursuit of knowledge", "study of being"]
+  },
+  {
+    "tier": 1,
+    "question": "Who wrote 'Critique of Pure Reason'?",
+    "answer": "Immanuel Kant",
+    "choices": ["Georg Hegel", "Arthur Schopenhauer", "Immanuel Kant", "David Hume"]
+  },
+  {
+    "tier": 2,
+    "question": "What is Ayn Rand's philosophy called?",
+    "answer": "Objectivism",
+    "choices": ["Empiricism", "Rationalism", "Objectivism", "Existentialism"]
+  },
+  {
+    "tier": 2,
+    "question": "In Objectivism, what is the ultimate moral purpose?",
+    "answer": "one's own happiness",
+    "choices": ["service to others", "one's own happiness", "rational virtue", "pleasure"]
+  },
+  {
+    "tier": 2,
+    "question": "Who wrote 'Thus Spoke Zarathustra'?",
+    "answer": "Friedrich Nietzsche",
+    "choices": ["Søren Kierkegaard", "Friedrich Nietzsche", "Arthur Schopenhauer", "Georg Hegel"]
+  },
+  {
+    "tier": 2,
+    "question": "What view holds that all events are causally determined?",
+    "answer": "determinism",
+    "choices": ["free will", "compatibilism", "determinism", "fatalism"]
+  },
+  {
+    "tier": 2,
+    "question": "What does 'a priori' mean in philosophy?",
+    "answer": "known before experience",
+    "choices": ["known through senses", "known before experience", "logically contradictory", "based on evidence"]
+  }
+]

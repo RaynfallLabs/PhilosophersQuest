@@ -19,7 +19,7 @@
   },
   {
     "tier": 1,
-    "question": "What does sauteing mean?",
+    "question": "What does sautéing mean?",
     "answer": "frying quickly in a little fat",
     "choices": ["boiling in water", "frying quickly in a little fat", "baking in an oven", "slow roasting"]
   },
@@ -58,5 +58,35 @@
     "question": "What does the Maillard reaction cause in cooking?",
     "answer": "browning and new flavors",
     "choices": ["food to become soft", "browning and new flavors", "food to turn sour", "bread to rise"]
+  },
+  {
+    "tier": 3,
+    "question": "What cooking method uses vacuum-sealed bags in a water bath?",
+    "answer": "sous vide",
+    "choices": ["confit", "poaching", "sous vide", "braising"]
+  },
+  {
+    "tier": 3,
+    "question": "What is a roux?",
+    "answer": "fat and flour cooked together",
+    "choices": ["reduced stock sauce", "fat and flour cooked together", "egg and oil emulsion", "cream reduction"]
+  },
+  {
+    "tier": 3,
+    "question": "What does 'mise en place' mean?",
+    "answer": "everything in its place",
+    "choices": ["put on the plate", "everything in its place", "ready to serve", "measure and prepare"]
+  },
+  {
+    "tier": 3,
+    "question": "What is emulsification in cooking?",
+    "answer": "combining oil and water with an emulsifier",
+    "choices": ["reducing a sauce by boiling", "combining oil and water with an emulsifier", "clarifying butter", "thickening with starch"]
+  },
+  {
+    "tier": 3,
+    "question": "What is tempering chocolate?",
+    "answer": "controlled heating and cooling for gloss",
+    "choices": ["melting chocolate fully", "controlled heating and cooling for gloss", "mixing chocolate with cream", "adding sugar to chocolate"]
   }
 ]

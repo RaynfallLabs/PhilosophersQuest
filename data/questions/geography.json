@@ -88,5 +88,77 @@
     "question": "What is the capital of Kenya?",
     "answer": "Nairobi",
     "choices": ["Mombasa", "Nairobi", "Kisumu", "Nakuru"]
+  },
+  {
+    "tier": 2,
+    "question": "What is the longest river in the world?",
+    "answer": "Nile",
+    "choices": ["Amazon", "Yangtze", "Nile", "Mississippi"]
+  },
+  {
+    "tier": 2,
+    "question": "What mountain range runs through the western United States?",
+    "answer": "Rocky Mountains",
+    "choices": ["Appalachian Mountains", "Sierra Nevada", "Rocky Mountains", "Cascade Range"]
+  },
+  {
+    "tier": 2,
+    "question": "What is the largest ocean on Earth?",
+    "answer": "Pacific Ocean",
+    "choices": ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"]
+  },
+  {
+    "tier": 2,
+    "question": "What is the capital of Thailand?",
+    "answer": "Bangkok",
+    "choices": ["Phuket", "Chiang Mai", "Bangkok", "Pattaya"]
+  },
+  {
+    "tier": 2,
+    "question": "What is the largest desert in the world?",
+    "answer": "Sahara",
+    "choices": ["Gobi", "Arabian", "Sahara", "Patagonian"]
+  },
+  {
+    "tier": 2,
+    "question": "On which continent is the Amazon River?",
+    "answer": "South America",
+    "choices": ["Africa", "Asia", "North America", "South America"]
+  },
+  {
+    "tier": 2,
+    "question": "What mountain range separates Europe from Asia?",
+    "answer": "Ural Mountains",
+    "choices": ["Alps", "Carpathians", "Ural Mountains", "Caucasus Mountains"]
+  },
+  {
+    "tier": 3,
+    "question": "What strait separates Europe from Africa?",
+    "answer": "Strait of Gibraltar",
+    "choices": ["Strait of Hormuz", "Strait of Malacca", "Strait of Gibraltar", "Bering Strait"]
+  },
+  {
+    "tier": 3,
+    "question": "What is the capital of Kazakhstan?",
+    "answer": "Astana",
+    "choices": ["Almaty", "Astana", "Shymkent", "Aktobe"]
+  },
+  {
+    "tier": 3,
+    "question": "What is the capital of Myanmar?",
+    "answer": "Naypyidaw",
+    "choices": ["Rangoon", "Yangon", "Mandalay", "Naypyidaw"]
+  },
+  {
+    "tier": 3,
+    "question": "What is the deepest lake in the world?",
+    "answer": "Lake Baikal",
+    "choices": ["Lake Superior", "Caspian Sea", "Lake Baikal", "Lake Tanganyika"]
+  },
+  {
+    "tier": 3,
+    "question": "What country has the most time zones?",
+    "answer": "France",
+    "choices": ["Russia", "United States", "China", "France"]
   }
 ]

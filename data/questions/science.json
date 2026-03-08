@@ -1,0 +1,92 @@
+[
+  {
+    "tier": 1,
+    "question": "What planet is closest to the Sun?",
+    "answer": "Mercury",
+    "choices": ["Venus", "Mercury", "Earth", "Mars"]
+  },
+  {
+    "tier": 1,
+    "question": "What gas do plants absorb during photosynthesis?",
+    "answer": "carbon dioxide",
+    "choices": ["oxygen", "nitrogen", "carbon dioxide", "hydrogen"]
+  },
+  {
+    "tier": 1,
+    "question": "How many bones are in the adult human body?",
+    "answer": "206",
+    "choices": ["196", "206", "216", "226"]
+  },
+  {
+    "tier": 1,
+    "question": "What is the chemical symbol for water?",
+    "answer": "H2O",
+    "choices": ["HO2", "H2O", "OH2", "H2O2"]
+  },
+  {
+    "tier": 1,
+    "question": "What force keeps objects on the ground?",
+    "answer": "gravity",
+    "choices": ["magnetism", "friction", "gravity", "inertia"]
+  },
+  {
+    "tier": 1,
+    "question": "What planet is known as the Red Planet?",
+    "answer": "Mars",
+    "choices": ["Venus", "Jupiter", "Mars", "Saturn"]
+  },
+  {
+    "tier": 1,
+    "question": "What gas makes up most of Earth's atmosphere?",
+    "answer": "nitrogen",
+    "choices": ["oxygen", "nitrogen", "carbon dioxide", "argon"]
+  },
+  {
+    "tier": 1,
+    "question": "What organ pumps blood through the body?",
+    "answer": "heart",
+    "choices": ["lungs", "liver", "heart", "kidney"]
+  },
+  {
+    "tier": 1,
+    "question": "What is the smallest unit of an element?",
+    "answer": "atom",
+    "choices": ["cell", "molecule", "atom", "proton"]
+  },
+  {
+    "tier": 1,
+    "question": "How many planets are in our solar system?",
+    "answer": "8",
+    "choices": ["7", "8", "9", "10"]
+  },
+  {
+    "tier": 2,
+    "question": "What is the atomic number of carbon?",
+    "answer": "6",
+    "choices": ["4", "6", "8", "12"]
+  },
+  {
+    "tier": 2,
+    "question": "What type of rock forms from cooled lava?",
+    "answer": "igneous",
+    "choices": ["sedimentary", "metamorphic", "igneous", "volcanic"]
+  },
+  {
+    "tier": 2,
+    "question": "What organelle is called the powerhouse of the cell?",
+    "answer": "mitochondria",
+    "choices": ["nucleus", "ribosome", "mitochondria", "vacuole"]
+  },
+  {
+    "tier": 2,
+    "question": "What is the chemical formula for table salt?",
+    "answer": "NaCl",
+    "choices": ["NaOH", "NaCl", "KCl", "CaCl2"]
+  },
+  {
+    "tier": 2,
+    "question": "What layer of the atmosphere contains the ozone layer?",
+    "answer": "stratosphere",
+    "choices": ["troposphere", "stratosphere", "mesosphere", "thermosphere"]
+  }
+]

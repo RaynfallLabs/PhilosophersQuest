@@ -1,0 +1,92 @@
+[
+  {
+    "tier": 1,
+    "question": "What backs fiat currency?",
+    "answer": "government authority",
+    "choices": ["gold reserves", "silver reserves", "government authority", "oil supply"]
+  },
+  {
+    "tier": 1,
+    "question": "Bitcoin is limited to a maximum of how many coins?",
+    "answer": "21 million",
+    "choices": ["10 million", "21 million", "100 million", "unlimited"]
+  },
+  {
+    "tier": 1,
+    "question": "What is inflation?",
+    "answer": "rise in general prices",
+    "choices": ["fall in government debt", "rise in general prices", "decrease in employment", "increase in exports"]
+  },
+  {
+    "tier": 1,
+    "question": "What does GDP stand for?",
+    "answer": "Gross Domestic Product",
+    "choices": ["Gross Domestic Product", "General Debt Payment", "Government Dollar Policy", "Gross Direct Profit"]
+  },
+  {
+    "tier": 1,
+    "question": "What is bartering?",
+    "answer": "trading goods without money",
+    "choices": ["lending money at interest", "trading goods without money", "paying with foreign coins", "taxing imported goods"]
+  },
+  {
+    "tier": 1,
+    "question": "What does a central bank primarily control?",
+    "answer": "interest rates",
+    "choices": ["tax rates", "interest rates", "stock prices", "trade tariffs"]
+  },
+  {
+    "tier": 1,
+    "question": "What is a budget deficit?",
+    "answer": "spending more than income",
+    "choices": ["saving more than spending", "spending more than income", "income equals spending", "zero government debt"]
+  },
+  {
+    "tier": 1,
+    "question": "What is a tariff?",
+    "answer": "a tax on imported goods",
+    "choices": ["a government subsidy", "a tax on imported goods", "a trade agreement", "a type of bond"]
+  },
+  {
+    "tier": 1,
+    "question": "What is supply and demand?",
+    "answer": "price set by availability and desire",
+    "choices": ["price set by government", "price set by availability and desire", "fixed pricing law", "cost of production only"]
+  },
+  {
+    "tier": 1,
+    "question": "What is a recession?",
+    "answer": "period of economic decline",
+    "choices": ["period of rapid growth", "period of economic decline", "high inflation rate", "currency collapse"]
+  },
+  {
+    "tier": 2,
+    "question": "What is compound interest?",
+    "answer": "interest earned on interest",
+    "choices": ["interest on principal only", "interest earned on interest", "fixed rate interest", "tax on savings"]
+  },
+  {
+    "tier": 2,
+    "question": "What was the gold standard?",
+    "answer": "currency backed by gold",
+    "choices": ["a global trading standard", "currency backed by gold", "gold coin monetary system", "reserve bank policy"]
+  },
+  {
+    "tier": 2,
+    "question": "What is monetary policy?",
+    "answer": "central bank manages money supply",
+    "choices": ["government sets tax rates", "central bank manages money supply", "trade agreements between nations", "control of stock market"]
+  },
+  {
+    "tier": 2,
+    "question": "What is opportunity cost?",
+    "answer": "value of the next best alternative",
+    "choices": ["the cost of a lost chance", "value of the next best alternative", "total cost of production", "profit after expenses"]
+  },
+  {
+    "tier": 2,
+    "question": "What is quantitative easing?",
+    "answer": "central bank buys assets to add money",
+    "choices": ["raising interest rates sharply", "central bank buys assets to add money", "cutting government spending", "reducing money in circulation"]
+  }
+]

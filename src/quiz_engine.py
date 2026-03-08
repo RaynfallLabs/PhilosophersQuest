@@ -66,8 +66,13 @@ class QuizEngine:
     def load_questions(self, subject: str) -> list:
         if subject not in self._cache:
             path = os.path.join(_QUESTIONS_DIR, f"{subject}.json")
-            with open(path, encoding='utf-8') as f:
-                self._cache[subject] = json.load(f)
+            try:
+                with open(path, encoding='utf-8') as f:
+                    self._cache[subject] = json.load(f)
+            except FileNotFoundError:
+                import sys
+                print(f"WARNING: Question file not found: {path}", file=sys.stderr)
+                self._cache[subject] = []
         return self._cache[subject]
 
     def start_quiz(self, mode: str | QuizMode, subject: str, tier: int,
