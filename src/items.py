@@ -30,6 +30,7 @@ class Weapon(Item):
         )
         self.max_chain_length: int | None = defn.get('max_chain_length', None)
         self.quiz_tier: int               = defn.get('quiz_tier', 1)
+        self.enchant_bonus: int           = 0
 
 
 class Armor(Item):
@@ -50,8 +51,36 @@ class Shield(Item):
 class Accessory(Item):
     def __init__(self, defn: dict):
         super().__init__(defn)
-        self.slot    = defn['slot']
-        self.effects = defn.get('effects', {})
+        self.slot             = defn['slot']
+        self.effects          = defn.get('effects', {})
+        self.equip_threshold  = int(defn.get('equip_threshold', 2))
+        self.quiz_tier        = int(defn.get('quiz_tier', 1))
+        self.unidentified_name = defn.get('unidentified_name', defn['name'])
+        self.identified       = False
+
+
+class Wand(Item):
+    def __init__(self, defn: dict):
+        super().__init__(defn)
+        self.charges          = int(defn.get('charges', 3))
+        self.max_charges      = int(defn.get('max_charges', 5))
+        self.quiz_tier        = int(defn.get('quiz_tier', 1))
+        self.quiz_threshold   = int(defn.get('quiz_threshold', 2))
+        self.effect           = defn.get('effect', '')
+        self.power            = defn.get('power', '')
+        self.unidentified_name = defn.get('unidentified_name', defn['name'])
+        self.identified       = False
+
+
+class Scroll(Item):
+    def __init__(self, defn: dict):
+        super().__init__(defn)
+        self.quiz_tier        = int(defn.get('quiz_tier', 1))
+        self.quiz_threshold   = int(defn.get('quiz_threshold', 2))
+        self.effect           = defn.get('effect', '')
+        self.power            = defn.get('power', '')
+        self.unidentified_name = defn.get('unidentified_name', defn['name'])
+        self.identified       = False
 
 
 class Artifact(Item):
@@ -122,6 +151,8 @@ _CLASS_MAP: dict[str, type] = {
     'armor':      Armor,
     'shield':     Shield,
     'accessory':  Accessory,
+    'wand':       Wand,
+    'scroll':     Scroll,
     'ingredient': Ingredient,
     'artifact':   Artifact,
     'lockpick':   Lockpick,

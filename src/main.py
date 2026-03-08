@@ -7,7 +7,7 @@ from dungeon import (generate_dungeon, spawn_monsters, spawn_items,
                      STAIRS_UP, STAIRS_DOWN, DOOR, SECRET_DOOR)
 from food_system import harvest_corpse, cook_ingredient
 from fov import calculate_fov
-from items import Weapon, Armor, Shield, Corpse, Ingredient, Artifact, Container, Lockpick
+from items import Weapon, Armor, Shield, Corpse, Ingredient, Artifact, Container, Lockpick, Accessory, Wand, Scroll
 from level_manager import LevelManager
 from player import Player
 from quiz_engine import QuizEngine, QuizMode, QuizState
@@ -26,14 +26,18 @@ VIEWPORT_W = GAME_W // TILE_SIZE    # 30
 VIEWPORT_H = GAME_H // TILE_SIZE    # 18
 
 # Game states
-STATE_PLAYER       = 'player'
-STATE_QUIZ         = 'quiz'
-STATE_EQUIP_MENU   = 'equip_menu'
-STATE_COOK_MENU    = 'cook_menu'
-STATE_CONFIRM_EXIT = 'confirm_exit'
-STATE_VICTORY      = 'victory'
-STATE_DEAD         = 'dead'
-STATE_LOCKPICK     = 'lockpick'
+STATE_PLAYER         = 'player'
+STATE_QUIZ           = 'quiz'
+STATE_EQUIP_MENU     = 'equip_menu'
+STATE_ACCESSORY_MENU = 'accessory_menu'
+STATE_WAND_MENU      = 'wand_menu'
+STATE_SCROLL_MENU    = 'scroll_menu'
+STATE_IDENTIFY_MENU  = 'identify_menu'
+STATE_COOK_MENU      = 'cook_menu'
+STATE_CONFIRM_EXIT   = 'confirm_exit'
+STATE_VICTORY        = 'victory'
+STATE_DEAD           = 'dead'
+STATE_LOCKPICK       = 'lockpick'
 
 
 class Game:
@@ -51,8 +55,12 @@ class Game:
         self.state              = STATE_PLAYER
         self.combat_target      = None
         self.quiz_title         = ''
-        self.equip_menu_items: list = []
-        self.cook_menu_items: list  = []
+        self.equip_menu_items: list      = []
+        self.accessory_menu_items: list  = []
+        self.wand_menu_items: list       = []
+        self.scroll_menu_items: list     = []
+        self.identify_menu_items: list   = []
+        self.cook_menu_items: list       = []
         self.turn_count         = 0
         self.dungeon_level      = 1
         self.defeat_reason      = 'died'   # 'died' | 'starved' | 'fled'
@@ -132,7 +140,10 @@ class Game:
         key = event.key
 
         if key == pygame.K_ESCAPE:
-            if self.state in (STATE_EQUIP_MENU, STATE_COOK_MENU, STATE_CONFIRM_EXIT):
+            if self.state in (STATE_EQUIP_MENU, STATE_ACCESSORY_MENU,
+                              STATE_WAND_MENU, STATE_SCROLL_MENU,
+                              STATE_IDENTIFY_MENU, STATE_COOK_MENU,
+                              STATE_CONFIRM_EXIT):
                 self.state = STATE_PLAYER
                 return True
             if self.state in (STATE_DEAD, STATE_VICTORY):
@@ -152,6 +163,14 @@ class Game:
             self._quiz_input(key)
         elif self.state == STATE_EQUIP_MENU:
             self._equip_menu_input(key)
+        elif self.state == STATE_ACCESSORY_MENU:
+            self._accessory_menu_input(key)
+        elif self.state == STATE_WAND_MENU:
+            self._wand_menu_input(key)
+        elif self.state == STATE_SCROLL_MENU:
+            self._scroll_menu_input(key)
+        elif self.state == STATE_IDENTIFY_MENU:
+            self._identify_menu_input(key)
         elif self.state == STATE_COOK_MENU:
             self._cook_menu_input(key)
         elif self.state == STATE_CONFIRM_EXIT:
@@ -174,6 +193,18 @@ class Game:
             return
         if key == pygame.K_e:
             self._open_equip_menu()
+            return
+        if key == pygame.K_r:
+            self._open_accessory_menu()
+            return
+        if key == pygame.K_u:
+            self._open_wand_menu()
+            return
+        if key == pygame.K_s:
+            self._open_scroll_menu()
+            return
+        if key == pygame.K_i:
+            self._open_identify_menu()
             return
         if key == pygame.K_h:
             self._harvest()
@@ -683,6 +714,424 @@ class Game:
             )
 
     # ------------------------------------------------------------------
+    # Accessory menu  (r key — history quiz)
+    # ------------------------------------------------------------------
+
+    def _open_accessory_menu(self):
+        self.accessory_menu_items = [
+            i for i in self.player.inventory if isinstance(i, Accessory)
+        ]
+        if not self.accessory_menu_items:
+            self.add_message("You have no rings or amulets to equip.", 'info')
+            return
+        self.state = STATE_ACCESSORY_MENU
+
+    def _accessory_menu_input(self, key: int):
+        key_to_idx = {
+            pygame.K_1: 0, pygame.K_KP1: 0,
+            pygame.K_2: 1, pygame.K_KP2: 1,
+            pygame.K_3: 2, pygame.K_KP3: 2,
+            pygame.K_4: 3, pygame.K_KP4: 3,
+            pygame.K_5: 4, pygame.K_KP5: 4,
+            pygame.K_6: 5, pygame.K_KP6: 5,
+        }
+        idx = key_to_idx.get(key)
+        if idx is None or idx >= len(self.accessory_menu_items):
+            return
+        self.state = STATE_PLAYER
+        self._equip_accessory(self.accessory_menu_items[idx])
+
+    def _equip_accessory(self, item: 'Accessory'):
+        # Check for a free slot
+        if all(s is not None for s in self.player.accessory_slots):
+            self.add_message("All accessory slots are full!", 'warning')
+            return
+
+        item_name = self._display_name(item)
+        self.quiz_title = f"EQUIPPING {item_name.upper()}  —  HISTORY"
+        self.state = STATE_QUIZ
+
+        def on_complete(result):
+            self.state = STATE_PLAYER
+            if result.success:
+                self.player._apply_equip(item)
+                self.player.remove_from_inventory(item)
+                item.identified = True
+                self.player.known_item_ids.add(item.id)
+                fx = item.effects
+                if 'status' in fx:
+                    self.add_message(
+                        f"You slip on the {item.name}. You feel {fx['status']}!", 'success'
+                    )
+                else:
+                    stat = fx.get('stat', '')
+                    amt  = fx.get('amount', 0)
+                    self.add_message(
+                        f"You slip on the {item.name}. {stat} +{amt}!", 'success'
+                    )
+            else:
+                self.add_message(
+                    f"You fumble with the {item_name} and give up.", 'warning'
+                )
+            self._advance_turn()
+
+        self.quiz_engine.start_quiz(
+            mode='threshold',
+            subject='history',
+            tier=item.quiz_tier,
+            callback=on_complete,
+            threshold=item.equip_threshold,
+            wisdom=self.player.WIS,
+            timer_modifier=self.player.get_quiz_timer_modifier(),
+        )
+
+    # ------------------------------------------------------------------
+    # Wand menu  (u key — science quiz)
+    # ------------------------------------------------------------------
+
+    def _open_wand_menu(self):
+        self.wand_menu_items = [
+            i for i in self.player.inventory if isinstance(i, Wand)
+        ]
+        if not self.wand_menu_items:
+            self.add_message("You have no wands to use.", 'info')
+            return
+        self.state = STATE_WAND_MENU
+
+    def _wand_menu_input(self, key: int):
+        key_to_idx = {
+            pygame.K_1: 0, pygame.K_KP1: 0,
+            pygame.K_2: 1, pygame.K_KP2: 1,
+            pygame.K_3: 2, pygame.K_KP3: 2,
+            pygame.K_4: 3, pygame.K_KP4: 3,
+            pygame.K_5: 4, pygame.K_KP5: 4,
+            pygame.K_6: 5, pygame.K_KP6: 5,
+            pygame.K_7: 6, pygame.K_KP7: 6,
+            pygame.K_8: 7, pygame.K_KP8: 7,
+            pygame.K_9: 8, pygame.K_KP9: 8,
+        }
+        idx = key_to_idx.get(key)
+        if idx is None or idx >= len(self.wand_menu_items):
+            return
+        self.state = STATE_PLAYER
+        self._invoke_wand(self.wand_menu_items[idx])
+
+    def _invoke_wand(self, wand: 'Wand'):
+        if wand.charges <= 0:
+            self.add_message("The wand is empty — it crumbles to dust.", 'warning')
+            self.player.remove_from_inventory(wand)
+            self._advance_turn()
+            return
+
+        display = self._display_name(wand)
+        self.quiz_title = f"INVOKING {display.upper()}  —  SCIENCE"
+        self.state = STATE_QUIZ
+
+        def on_complete(result):
+            self.state = STATE_PLAYER
+            wand.identified = True
+            self.player.known_item_ids.add(wand.id)
+
+            if not result.success:
+                self.add_message("The wand fizzes and fails to fire.", 'warning')
+                self._advance_turn()
+                return
+
+            wand.charges -= 1
+            self._apply_wand_effect(wand)
+            if wand.charges <= 0:
+                self.add_message("The wand crumbles to dust — it is spent.", 'warning')
+                self.player.remove_from_inventory(wand)
+            else:
+                self.add_message(
+                    f"({wand.charges}/{wand.max_charges} charges remain)", 'info'
+                )
+            self._advance_turn()
+
+        self.quiz_engine.start_quiz(
+            mode='threshold',
+            subject='science',
+            tier=wand.quiz_tier,
+            callback=on_complete,
+            threshold=wand.quiz_threshold,
+            wisdom=self.player.WIS,
+            timer_modifier=self.player.get_quiz_timer_modifier(),
+        )
+
+    def _apply_wand_effect(self, wand: 'Wand'):
+        from dice import roll
+        effect = wand.effect
+
+        if effect == 'heal':
+            amount = roll(wand.power) if wand.power else 8
+            self.player.restore_hp(amount)
+            self.add_message(f"The wand heals you for {amount} HP!", 'success')
+
+        elif effect == 'haste_self':
+            self.player.add_effect('hasted', 10)
+            self.add_message("You feel supernaturally swift!", 'success')
+
+        elif effect == 'teleport_self':
+            self._teleport_player()
+
+        elif effect in ('sleep_monster', 'fire_bolt', 'cold_bolt'):
+            target = self._nearest_visible_monster()
+            if target is None:
+                self.add_message("The wand hums but finds no target.", 'info')
+                return
+            if effect == 'sleep_monster':
+                target.add_effect('sleeping', 6)
+                self.add_message(
+                    f"The {target.name} slumps into a deep sleep!", 'success'
+                )
+            elif effect == 'fire_bolt':
+                dmg = roll(wand.power) if wand.power else 6
+                actual = target.take_damage(dmg)
+                self.add_message(
+                    f"A bolt of fire strikes the {target.name} for {actual} damage!", 'success'
+                )
+                if not target.alive:
+                    self._on_monster_killed(target)
+            elif effect == 'cold_bolt':
+                dmg = roll(wand.power) if wand.power else 4
+                actual = target.take_damage(dmg)
+                target.add_effect('slowed', 4)
+                self.add_message(
+                    f"A bolt of cold strikes the {target.name} for {actual} damage!", 'success'
+                )
+                if not target.alive:
+                    self._on_monster_killed(target)
+
+    def _nearest_visible_monster(self):
+        """Return the closest alive monster currently in FOV, or None."""
+        px, py = self.player.x, self.player.y
+        best, best_dist = None, float('inf')
+        for m in self.monsters:
+            if m.alive and (m.x, m.y) in self.visible:
+                d = abs(m.x - px) + abs(m.y - py)
+                if d < best_dist:
+                    best, best_dist = m, d
+        return best
+
+    def _on_monster_killed(self, monster):
+        """Handle a monster killed by a wand bolt."""
+        self.level_mgr.monsters_killed += 1
+        self.add_message(f"The {monster.name} is slain!", 'success')
+        from items import Corpse
+        self.ground_items.append(
+            Corpse(
+                monster.name, monster.kind, monster.x, monster.y,
+                harvest_tier=monster.harvest_tier,
+                harvest_threshold=monster.harvest_threshold,
+                ingredient_id=monster.ingredient_id,
+            )
+        )
+
+    # ------------------------------------------------------------------
+    # Scroll menu  (s key — grammar quiz)
+    # ------------------------------------------------------------------
+
+    def _open_scroll_menu(self):
+        self.scroll_menu_items = [
+            i for i in self.player.inventory if isinstance(i, Scroll)
+        ]
+        if not self.scroll_menu_items:
+            self.add_message("You have no scrolls to read.", 'info')
+            return
+        self.state = STATE_SCROLL_MENU
+
+    def _scroll_menu_input(self, key: int):
+        key_to_idx = {
+            pygame.K_1: 0, pygame.K_KP1: 0,
+            pygame.K_2: 1, pygame.K_KP2: 1,
+            pygame.K_3: 2, pygame.K_KP3: 2,
+            pygame.K_4: 3, pygame.K_KP4: 3,
+            pygame.K_5: 4, pygame.K_KP5: 4,
+            pygame.K_6: 5, pygame.K_KP6: 5,
+            pygame.K_7: 6, pygame.K_KP7: 6,
+            pygame.K_8: 7, pygame.K_KP8: 7,
+            pygame.K_9: 8, pygame.K_KP9: 8,
+        }
+        idx = key_to_idx.get(key)
+        if idx is None or idx >= len(self.scroll_menu_items):
+            return
+        self.state = STATE_PLAYER
+        self._read_scroll(self.scroll_menu_items[idx])
+
+    def _read_scroll(self, scroll: 'Scroll'):
+        display = self._display_name(scroll)
+        self.quiz_title = f"READING {display.upper()}  —  GRAMMAR"
+        self.state = STATE_QUIZ
+
+        def on_complete(result):
+            self.state = STATE_PLAYER
+            scroll.identified = True
+            self.player.known_item_ids.add(scroll.id)
+            self.player.remove_from_inventory(scroll)
+
+            if not result.success:
+                self.add_message(
+                    "You stumble over the words — the scroll crumbles unread.", 'warning'
+                )
+                self._advance_turn()
+                return
+
+            self.add_message(f"You read the {scroll.name}!", 'success')
+            self._apply_scroll_effect(scroll)
+            self._advance_turn()
+
+        self.quiz_engine.start_quiz(
+            mode='threshold',
+            subject='grammar',
+            tier=scroll.quiz_tier,
+            callback=on_complete,
+            threshold=scroll.quiz_threshold,
+            wisdom=self.player.WIS,
+            timer_modifier=self.player.get_quiz_timer_modifier(),
+        )
+
+    def _apply_scroll_effect(self, scroll: 'Scroll'):
+        from dice import roll
+        effect = scroll.effect
+
+        if effect == 'heal':
+            amount = roll(scroll.power) if scroll.power else 10
+            self.player.restore_hp(amount)
+            self.add_message(f"Healing light washes over you — {amount} HP restored!", 'success')
+
+        elif effect == 'mapping':
+            for y in range(self.dungeon.height):
+                for x in range(self.dungeon.width):
+                    self.dungeon.explored.add((x, y))
+            self.add_message("The dungeon layout floods your mind!", 'success')
+
+        elif effect == 'identify':
+            # Auto-identify first unknown wand/scroll/accessory in inventory
+            unknown = next(
+                (i for i in self.player.inventory
+                 if hasattr(i, 'identified') and not i.identified),
+                None
+            )
+            if unknown:
+                unknown.identified = True
+                self.player.known_item_ids.add(unknown.id)
+                self.add_message(f"The {unknown.name} is revealed!", 'success')
+            else:
+                self.add_message("All your items are already identified.", 'info')
+
+        elif effect == 'enchant_weapon':
+            if self.player.weapon:
+                self.player.weapon.enchant_bonus += 1
+                self.add_message(
+                    f"Your {self.player.weapon.name} glows — enchant +{self.player.weapon.enchant_bonus}!",
+                    'success'
+                )
+            else:
+                self.add_message("You have no weapon to enchant.", 'info')
+
+        elif effect == 'remove_curse':
+            from status_effects import DEBUFFS
+            removed = [e for e in list(self.player.status_effects) if e in DEBUFFS]
+            for e in removed:
+                del self.player.status_effects[e]
+            if removed:
+                self.add_message(
+                    f"A cleansing light removes: {', '.join(removed)}.", 'success'
+                )
+            else:
+                self.add_message("You feel purified (no curses to remove).", 'info')
+
+        elif effect == 'confuse_monsters':
+            count = 0
+            for m in self.monsters:
+                if m.alive and (m.x, m.y) in self.visible:
+                    m.add_effect('confused', 8)
+                    count += 1
+            if count:
+                self.add_message(f"{count} monster(s) reel in confusion!", 'success')
+            else:
+                self.add_message("No monsters are in sight to confuse.", 'info')
+
+    # ------------------------------------------------------------------
+    # Identify menu  (i key — philosophy quiz)
+    # ------------------------------------------------------------------
+
+    def _open_identify_menu(self):
+        self.identify_menu_items = [
+            i for i in self.player.inventory
+            if hasattr(i, 'identified') and not i.identified
+        ]
+        if not self.identify_menu_items:
+            self.add_message("All your items are already identified.", 'info')
+            return
+        self.state = STATE_IDENTIFY_MENU
+
+    def _identify_menu_input(self, key: int):
+        key_to_idx = {
+            pygame.K_1: 0, pygame.K_KP1: 0,
+            pygame.K_2: 1, pygame.K_KP2: 1,
+            pygame.K_3: 2, pygame.K_KP3: 2,
+            pygame.K_4: 3, pygame.K_KP4: 3,
+            pygame.K_5: 4, pygame.K_KP5: 4,
+            pygame.K_6: 5, pygame.K_KP6: 5,
+            pygame.K_7: 6, pygame.K_KP7: 6,
+            pygame.K_8: 7, pygame.K_KP8: 7,
+            pygame.K_9: 8, pygame.K_KP9: 8,
+        }
+        idx = key_to_idx.get(key)
+        if idx is None or idx >= len(self.identify_menu_items):
+            return
+        self.state = STATE_PLAYER
+        self._identify_item(self.identify_menu_items[idx])
+
+    def _identify_item(self, item):
+        display = self._display_name(item)
+        self.quiz_title = f"IDENTIFYING {display.upper()}  —  PHILOSOPHY"
+        self.state = STATE_QUIZ
+
+        def on_complete(result):
+            self.state = STATE_PLAYER
+            if result.success:
+                item.identified = True
+                self.player.known_item_ids.add(item.id)
+                # Also identify all matching items in inventory and on ground
+                for inv_item in self.player.inventory:
+                    if inv_item.id == item.id:
+                        inv_item.identified = True
+                for ground_item in self.ground_items:
+                    if ground_item.id == item.id:
+                        ground_item.identified = True
+                self.add_message(
+                    f"The {display} is revealed: it is a {item.name}!", 'success'
+                )
+            else:
+                self.add_message(
+                    f"You ponder the {display} but gain no insight.", 'warning'
+                )
+            self._advance_turn()
+
+        self.quiz_engine.start_quiz(
+            mode='threshold',
+            subject='philosophy',
+            tier=getattr(item, 'quiz_tier', 1),
+            callback=on_complete,
+            threshold=3,
+            wisdom=self.player.WIS,
+            timer_modifier=self.player.get_quiz_timer_modifier(),
+        )
+
+    # ------------------------------------------------------------------
+    # Display name helper
+    # ------------------------------------------------------------------
+
+    def _display_name(self, item) -> str:
+        """Return item's true name if identified, else its unidentified name."""
+        if hasattr(item, 'identified') and not item.identified:
+            if item.id not in self.player.known_item_ids:
+                return getattr(item, 'unidentified_name', item.name)
+        return item.name
+
+    # ------------------------------------------------------------------
     # Combat
     # ------------------------------------------------------------------
 
@@ -802,6 +1251,14 @@ class Game:
             self._draw_quiz()
         elif self.state == STATE_EQUIP_MENU:
             self._draw_equip_menu()
+        elif self.state == STATE_ACCESSORY_MENU:
+            self._draw_accessory_menu()
+        elif self.state == STATE_WAND_MENU:
+            self._draw_wand_menu()
+        elif self.state == STATE_SCROLL_MENU:
+            self._draw_scroll_menu()
+        elif self.state == STATE_IDENTIFY_MENU:
+            self._draw_identify_menu()
         elif self.state == STATE_COOK_MENU:
             self._draw_cook_menu()
         elif self.state == STATE_CONFIRM_EXIT:
@@ -986,6 +1443,258 @@ class Game:
                          (bx + 10, hint_y - 8), (bx + bw - 10, hint_y - 8))
         hint = self.font_sm.render(
             "Press number to equip  |  ESC to cancel", True, (120, 120, 160)
+        )
+        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
+
+    # ------------------------------------------------------------------
+    # Accessory menu overlay
+    # ------------------------------------------------------------------
+
+    def _draw_accessory_menu(self):
+        overlay = pygame.Surface((WINDOW_W, WINDOW_H), pygame.SRCALPHA)
+        overlay.fill((0, 0, 0, 150))
+        self.screen.blit(overlay, (0, 0))
+
+        bw = 580
+        bh = min(90 + len(self.accessory_menu_items) * 52 + 50, 520)
+        bx = (GAME_W - bw) // 2
+        by = (WINDOW_H - bh) // 2
+
+        pygame.draw.rect(self.screen, (20, 18, 36), (bx, by, bw, bh), border_radius=12)
+        pygame.draw.rect(self.screen, (180, 140, 60), (bx, by, bw, bh), 2, border_radius=12)
+
+        self.screen.blit(
+            self.font_md.render("EQUIP RING / AMULET", True, (255, 200, 60)),
+            (bx + 20, by + 16)
+        )
+        slots_used = sum(1 for s in self.player.accessory_slots if s is not None)
+        self.screen.blit(
+            self.font_sm.render(
+                f"Accessory slots: {slots_used}/4",
+                True, (160, 200, 160)
+            ),
+            (bx + 20, by + 44)
+        )
+        pygame.draw.line(self.screen, (100, 80, 40),
+                         (bx + 10, by + 66), (bx + bw - 10, by + 66))
+
+        for i, item in enumerate(self.accessory_menu_items):
+            iy = by + 76 + i * 52
+            pygame.draw.rect(
+                self.screen,
+                (28, 24, 48) if i % 2 == 0 else (22, 18, 40),
+                (bx + 10, iy, bw - 20, 46), border_radius=6
+            )
+            dname = self._display_name(item)
+            self.screen.blit(
+                self.font_md.render(f"[{i+1}]", True, (200, 160, 60)), (bx + 18, iy + 13)
+            )
+            self.screen.blit(
+                self.font_md.render(dname, True, (220, 220, 220)), (bx + 70, iy + 13)
+            )
+            if item.identified or item.id in self.player.known_item_ids:
+                fx = item.effects
+                if 'status' in fx:
+                    detail_text = f"grants {fx['status']}  (history x{item.equip_threshold})"
+                else:
+                    detail_text = f"{fx.get('stat','?')} +{fx.get('amount',0)}  (history x{item.equip_threshold})"
+            else:
+                detail_text = f"unidentified  (history x{item.equip_threshold})"
+            self.screen.blit(
+                self.font_sm.render(detail_text, True, (160, 160, 200)),
+                (bx + 70, iy + 34)
+            )
+
+        hint_y = by + bh - 30
+        pygame.draw.line(self.screen, (100, 80, 40),
+                         (bx + 10, hint_y - 8), (bx + bw - 10, hint_y - 8))
+        hint = self.font_sm.render(
+            "Press number to equip  |  ESC to cancel", True, (140, 120, 80)
+        )
+        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
+
+    # ------------------------------------------------------------------
+    # Wand menu overlay
+    # ------------------------------------------------------------------
+
+    def _draw_wand_menu(self):
+        overlay = pygame.Surface((WINDOW_W, WINDOW_H), pygame.SRCALPHA)
+        overlay.fill((0, 0, 0, 150))
+        self.screen.blit(overlay, (0, 0))
+
+        bw = 580
+        bh = min(90 + len(self.wand_menu_items) * 52 + 50, 520)
+        bx = (GAME_W - bw) // 2
+        by = (WINDOW_H - bh) // 2
+
+        pygame.draw.rect(self.screen, (16, 22, 36), (bx, by, bw, bh), border_radius=12)
+        pygame.draw.rect(self.screen, (60, 140, 200), (bx, by, bw, bh), 2, border_radius=12)
+
+        self.screen.blit(
+            self.font_md.render("USE WAND  [SCIENCE]", True, (100, 200, 255)),
+            (bx + 20, by + 16)
+        )
+        self.screen.blit(
+            self.font_sm.render("Nearest visible monster is auto-targeted.",
+                                True, (140, 180, 220)),
+            (bx + 20, by + 44)
+        )
+        pygame.draw.line(self.screen, (40, 80, 120),
+                         (bx + 10, by + 66), (bx + bw - 10, by + 66))
+
+        for i, item in enumerate(self.wand_menu_items):
+            iy = by + 76 + i * 52
+            pygame.draw.rect(
+                self.screen,
+                (16, 28, 48) if i % 2 == 0 else (12, 22, 40),
+                (bx + 10, iy, bw - 20, 46), border_radius=6
+            )
+            dname = self._display_name(item)
+            charge_color = (
+                (80, 200, 80) if item.charges > item.max_charges // 2
+                else (200, 160, 40) if item.charges > 0
+                else (200, 60, 60)
+            )
+            self.screen.blit(
+                self.font_md.render(f"[{i+1}]", True, (100, 180, 255)), (bx + 18, iy + 13)
+            )
+            self.screen.blit(
+                self.font_md.render(dname, True, (220, 220, 220)), (bx + 70, iy + 13)
+            )
+            self.screen.blit(
+                self.font_sm.render(f"charges: {item.charges}/{item.max_charges}",
+                                    True, charge_color),
+                (bx + 70, iy + 34)
+            )
+            if item.identified or item.id in self.player.known_item_ids:
+                effect_x = bx + 220
+                self.screen.blit(
+                    self.font_sm.render(f"effect: {item.effect}", True, (160, 200, 220)),
+                    (effect_x, iy + 34)
+                )
+
+        hint_y = by + bh - 30
+        pygame.draw.line(self.screen, (40, 80, 120),
+                         (bx + 10, hint_y - 8), (bx + bw - 10, hint_y - 8))
+        hint = self.font_sm.render(
+            "Press number to invoke  |  ESC to cancel", True, (80, 140, 180)
+        )
+        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
+
+    # ------------------------------------------------------------------
+    # Scroll menu overlay
+    # ------------------------------------------------------------------
+
+    def _draw_scroll_menu(self):
+        overlay = pygame.Surface((WINDOW_W, WINDOW_H), pygame.SRCALPHA)
+        overlay.fill((0, 0, 0, 150))
+        self.screen.blit(overlay, (0, 0))
+
+        bw = 580
+        bh = min(90 + len(self.scroll_menu_items) * 52 + 50, 520)
+        bx = (GAME_W - bw) // 2
+        by = (WINDOW_H - bh) // 2
+
+        pygame.draw.rect(self.screen, (26, 22, 16), (bx, by, bw, bh), border_radius=12)
+        pygame.draw.rect(self.screen, (200, 180, 100), (bx, by, bw, bh), 2, border_radius=12)
+
+        self.screen.blit(
+            self.font_md.render("READ SCROLL  [GRAMMAR]", True, (255, 230, 140)),
+            (bx + 20, by + 16)
+        )
+        self.screen.blit(
+            self.font_sm.render("Scroll is consumed whether or not you succeed.",
+                                True, (200, 180, 120)),
+            (bx + 20, by + 44)
+        )
+        pygame.draw.line(self.screen, (120, 100, 50),
+                         (bx + 10, by + 66), (bx + bw - 10, by + 66))
+
+        for i, item in enumerate(self.scroll_menu_items):
+            iy = by + 76 + i * 52
+            pygame.draw.rect(
+                self.screen,
+                (34, 28, 18) if i % 2 == 0 else (26, 22, 14),
+                (bx + 10, iy, bw - 20, 46), border_radius=6
+            )
+            dname = self._display_name(item)
+            self.screen.blit(
+                self.font_md.render(f"[{i+1}]", True, (220, 200, 100)), (bx + 18, iy + 13)
+            )
+            self.screen.blit(
+                self.font_md.render(dname, True, (220, 220, 200)), (bx + 70, iy + 13)
+            )
+            if item.identified or item.id in self.player.known_item_ids:
+                detail_text = f"effect: {item.effect}  (grammar x{item.quiz_threshold})"
+            else:
+                detail_text = f"unknown effect  (grammar x{item.quiz_threshold})"
+            self.screen.blit(
+                self.font_sm.render(detail_text, True, (180, 160, 100)),
+                (bx + 70, iy + 34)
+            )
+
+        hint_y = by + bh - 30
+        pygame.draw.line(self.screen, (120, 100, 50),
+                         (bx + 10, hint_y - 8), (bx + bw - 10, hint_y - 8))
+        hint = self.font_sm.render(
+            "Press number to read  |  ESC to cancel", True, (160, 140, 80)
+        )
+        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
+
+    # ------------------------------------------------------------------
+    # Identify menu overlay
+    # ------------------------------------------------------------------
+
+    def _draw_identify_menu(self):
+        overlay = pygame.Surface((WINDOW_W, WINDOW_H), pygame.SRCALPHA)
+        overlay.fill((0, 0, 0, 150))
+        self.screen.blit(overlay, (0, 0))
+
+        bw = 580
+        bh = min(90 + len(self.identify_menu_items) * 52 + 50, 520)
+        bx = (GAME_W - bw) // 2
+        by = (WINDOW_H - bh) // 2
+
+        pygame.draw.rect(self.screen, (18, 16, 30), (bx, by, bw, bh), border_radius=12)
+        pygame.draw.rect(self.screen, (160, 100, 220), (bx, by, bw, bh), 2, border_radius=12)
+
+        self.screen.blit(
+            self.font_md.render("IDENTIFY ITEM  [PHILOSOPHY]", True, (200, 160, 255)),
+            (bx + 20, by + 16)
+        )
+        self.screen.blit(
+            self.font_sm.render("Answer 3 correct to identify the chosen item.",
+                                True, (160, 130, 200)),
+            (bx + 20, by + 44)
+        )
+        pygame.draw.line(self.screen, (80, 50, 120),
+                         (bx + 10, by + 66), (bx + bw - 10, by + 66))
+
+        for i, item in enumerate(self.identify_menu_items):
+            iy = by + 76 + i * 52
+            pygame.draw.rect(
+                self.screen,
+                (26, 20, 44) if i % 2 == 0 else (20, 16, 36),
+                (bx + 10, iy, bw - 20, 46), border_radius=6
+            )
+            dname = self._display_name(item)
+            type_label = type(item).__name__
+            self.screen.blit(
+                self.font_md.render(f"[{i+1}]", True, (180, 130, 255)), (bx + 18, iy + 13)
+            )
+            self.screen.blit(
+                self.font_md.render(dname, True, (220, 210, 240)), (bx + 70, iy + 13)
+            )
+            self.screen.blit(
+                self.font_sm.render(f"type: {type_label.lower()}", True, (140, 110, 180)),
+                (bx + 70, iy + 34)
+            )
+
+        hint_y = by + bh - 30
+        pygame.draw.line(self.screen, (80, 50, 120),
+                         (bx + 10, hint_y - 8), (bx + bw - 10, hint_y - 8))
+        hint = self.font_sm.render(
+            "Press number to identify  |  ESC to cancel", True, (120, 90, 160)
         )
         self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
 

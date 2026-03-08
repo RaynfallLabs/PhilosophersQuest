@@ -1,0 +1,98 @@
+{
+  "ring_of_warning": {
+    "name": "ring of warning",
+    "symbol": "=",
+    "color": [200, 200, 80],
+    "weight": 0.1,
+    "min_level": 1,
+    "slot": "ring",
+    "equip_threshold": 2,
+    "quiz_tier": 1,
+    "effects": {"status": "warning", "duration": -1},
+    "unidentified_name": "plain ring"
+  },
+  "ring_of_searching": {
+    "name": "ring of searching",
+    "symbol": "=",
+    "color": [100, 200, 100],
+    "weight": 0.1,
+    "min_level": 1,
+    "slot": "ring",
+    "equip_threshold": 2,
+    "quiz_tier": 1,
+    "effects": {"status": "searching", "duration": -1},
+    "unidentified_name": "green ring"
+  },
+  "ring_of_telepathy": {
+    "name": "ring of telepathy",
+    "symbol": "=",
+    "color": [100, 100, 255],
+    "weight": 0.1,
+    "min_level": 2,
+    "slot": "ring",
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {"status": "telepathy", "duration": -1},
+    "unidentified_name": "blue ring"
+  },
+  "ring_of_strength": {
+    "name": "ring of strength",
+    "symbol": "=",
+    "color": [255, 100, 100],
+    "weight": 0.1,
+    "min_level": 2,
+    "slot": "ring",
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {"stat": "STR", "amount": 2},
+    "unidentified_name": "red ring"
+  },
+  "ring_of_regeneration": {
+    "name": "ring of regeneration",
+    "symbol": "=",
+    "color": [80, 255, 120],
+    "weight": 0.1,
+    "min_level": 2,
+    "slot": "ring",
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {"status": "regenerating", "duration": -1},
+    "unidentified_name": "silver ring"
+  },
+  "amulet_of_protection": {
+    "name": "amulet of protection",
+    "symbol": "\"",
+    "color": [220, 180, 60],
+    "weight": 0.2,
+    "min_level": 1,
+    "slot": "amulet",
+    "equip_threshold": 2,
+    "quiz_tier": 1,
+    "effects": {"stat": "CON", "amount": 2},
+    "unidentified_name": "golden amulet"
+  },
+  "amulet_of_wisdom": {
+    "name": "amulet of wisdom",
+    "symbol": "\"",
+    "color": [180, 100, 220],
+    "weight": 0.2,
+    "min_level": 2,
+    "slot": "amulet",
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {"stat": "WIS", "amount": 3},
+    "unidentified_name": "purple amulet"
+  },
+  "amulet_of_fire_resistance": {
+    "name": "amulet of fire resistance",
+    "symbol": "\"",
+    "color": [255, 130, 50],
+    "weight": 0.2,
+    "min_level": 3,
+    "slot": "amulet",
+    "equip_threshold": 4,
+    "quiz_tier": 3,
+    "effects": {"status": "fire_resist", "duration": -1},
+    "unidentified_name": "warm amulet"
+  }
+}

@@ -21,9 +21,10 @@ def player_attack(player, monster, quiz_engine, on_complete):
             return
 
         base        = roll(weapon.damage if weapon else '1d4')
+        enchant     = weapon.enchant_bonus if weapon else 0
         multipliers = weapon.chain_multipliers if weapon else _DEFAULT_MULTIPLIERS
         mult        = multipliers[min(chain - 1, len(multipliers) - 1)]
-        damage      = max(1, int(base * mult))
+        damage      = max(1, int((base + enchant) * mult))
         actual      = monster.take_damage(damage)
         on_complete(actual, monster.is_dead(), chain)
 

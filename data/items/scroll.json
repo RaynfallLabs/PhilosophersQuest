@@ -1,0 +1,74 @@
+{
+  "scroll_of_heal": {
+    "name": "scroll of healing",
+    "symbol": "?",
+    "color": [180, 255, 180],
+    "weight": 0.1,
+    "min_level": 1,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "heal",
+    "power": "3d6",
+    "unidentified_name": "crumpled scroll"
+  },
+  "scroll_of_mapping": {
+    "name": "scroll of mapping",
+    "symbol": "?",
+    "color": [180, 220, 255],
+    "weight": 0.1,
+    "min_level": 1,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "mapping",
+    "power": "",
+    "unidentified_name": "yellowed scroll"
+  },
+  "scroll_of_identify": {
+    "name": "scroll of identify",
+    "symbol": "?",
+    "color": [220, 220, 180],
+    "weight": 0.1,
+    "min_level": 1,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "identify",
+    "power": "",
+    "unidentified_name": "torn scroll"
+  },
+  "scroll_of_enchant_weapon": {
+    "name": "scroll of enchant weapon",
+    "symbol": "?",
+    "color": [255, 200, 100],
+    "weight": 0.1,
+    "min_level": 2,
+    "quiz_tier": 2,
+    "quiz_threshold": 3,
+    "effect": "enchant_weapon",
+    "power": "",
+    "unidentified_name": "silver scroll"
+  },
+  "scroll_of_remove_curse": {
+    "name": "scroll of remove curse",
+    "symbol": "?",
+    "color": [200, 180, 255],
+    "weight": 0.1,
+    "min_level": 1,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "remove_curse",
+    "power": "",
+    "unidentified_name": "glowing scroll"
+  },
+  "scroll_of_confuse_monsters": {
+    "name": "scroll of confusion",
+    "symbol": "?",
+    "color": [255, 180, 255],
+    "weight": 0.1,
+    "min_level": 2,
+    "quiz_tier": 2,
+    "quiz_threshold": 3,
+    "effect": "confuse_monsters",
+    "power": "",
+    "unidentified_name": "swirling scroll"
+  }
+}

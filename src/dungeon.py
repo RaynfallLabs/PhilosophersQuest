@@ -396,9 +396,9 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
     rng          = random.Random()
     ground_items = []
 
-    # ── Regular items (weapons/armor) — 33% chance per room ────────────────
+    # ── Regular items (weapons/armor/accessories/wands/scrolls) — 33% per room ──
     templates: list = []
-    for cls_name in ('weapon', 'armor'):
+    for cls_name in ('weapon', 'armor', 'accessory', 'wand', 'scroll'):
         try:
             templates += load_items(cls_name)
         except FileNotFoundError:

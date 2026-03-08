@@ -24,6 +24,25 @@ class Monster:
         self.harvest_threshold = defn.get('harvest_threshold', 2)
         self.ingredient_id     = defn.get('ingredient_id', None)
 
+        # Minimal status effects for wand interactions
+        self.status_effects: dict[str, int] = {}  # effect_id -> turns remaining
+
+    # --- Status effects ---
+
+    def add_effect(self, name: str, duration: int):
+        current = self.status_effects.get(name, 0)
+        self.status_effects[name] = min(current + duration, 60)
+
+    def has_effect(self, name: str) -> bool:
+        return self.status_effects.get(name, 0) > 0
+
+    def tick_effects(self):
+        """Decrement all active effects by one turn."""
+        for name in list(self.status_effects):
+            self.status_effects[name] -= 1
+            if self.status_effects[name] <= 0:
+                del self.status_effects[name]
+
     # --- Combat ---
 
     def take_damage(self, amount: int) -> int:
@@ -31,6 +50,8 @@ class Monster:
         self.hp = max(0, self.hp - actual)
         if self.hp == 0:
             self.alive = False
+        if actual > 0:
+            self.status_effects.pop('sleeping', None)
         return actual
 
     def is_dead(self) -> bool:
@@ -82,6 +103,12 @@ class Monster:
     def take_turn(self, player, dungeon, all_monsters) -> bool:
         """Execute this monster's turn. Returns True if it attacked the player."""
         if not self.alive:
+            return False
+
+        self.tick_effects()
+
+        # Immobilised by sleep or paralysis
+        if self.has_effect('sleeping') or self.has_effect('paralyzed'):
             return False
 
         # Aggravated overrides passive/cowardly AI patterns

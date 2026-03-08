@@ -40,6 +40,8 @@ class Player:
         self.status_effects: dict[str, int] = {}
         # Fractional damage resistances: damage_type -> multiplier (0.0=immune,1.0=normal)
         self.resistances: dict[str, float] = {}
+        # Item IDs the player has identified this run
+        self.known_item_ids: set[str] = set()
 
     # --- Resources ---
 
@@ -174,7 +176,7 @@ class Player:
         return [(letters[i], item) for i, item in enumerate(self.inventory[:26])]
 
     def _apply_equip(self, item):
-        from items import Weapon, Armor, Shield, ARMOR_SLOTS
+        from items import Weapon, Armor, Shield, Accessory, ARMOR_SLOTS
         if isinstance(item, Weapon):
             self.weapon = item
         elif isinstance(item, Armor):
@@ -182,3 +184,15 @@ class Player:
             self.armor_slots[idx] = item
         elif isinstance(item, Shield):
             self.shield = item
+        elif isinstance(item, Accessory):
+            # Find first empty accessory slot
+            for i in range(len(self.accessory_slots)):
+                if self.accessory_slots[i] is None:
+                    self.accessory_slots[i] = item
+                    break
+            # Apply the accessory's effect permanently
+            fx = item.effects
+            if 'status' in fx:
+                self.add_effect(fx['status'], fx.get('duration', -1))
+            if 'stat' in fx:
+                self.apply_stat_bonus(fx['stat'], fx.get('amount', 0))
