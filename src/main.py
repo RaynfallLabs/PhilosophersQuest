@@ -2,10 +2,11 @@ import sys
 import pygame
 
 from combat import player_attack
-from dungeon import generate_dungeon, spawn_monsters, spawn_items
+from dungeon import generate_dungeon, spawn_monsters, spawn_items, STAIRS_UP, STAIRS_DOWN
 from food_system import harvest_corpse, cook_ingredient
 from fov import calculate_fov
-from items import Weapon, Armor, Shield, Corpse, Ingredient
+from items import Weapon, Armor, Shield, Corpse, Ingredient, Artifact
+from level_manager import LevelManager
 from player import Player
 from quiz_engine import QuizEngine, QuizMode, QuizState
 from renderer import Renderer, TILE_SIZE
@@ -15,31 +16,35 @@ WINDOW_W = 1280
 WINDOW_H = 720
 FPS      = 60
 
-GAME_W = WINDOW_W - SIDEBAR_W      # 980 px — left area for game + messages
-MSG_H  = 144                        # message log height (bottom of game area)
-GAME_H = WINDOW_H - MSG_H          # 576 px = 18 tiles tall
+GAME_W = WINDOW_W - SIDEBAR_W      # 980 px
+MSG_H  = 144
+GAME_H = WINDOW_H - MSG_H          # 576 px = 18 tiles
 
-VIEWPORT_W = GAME_W // TILE_SIZE    # 30 tiles wide
-VIEWPORT_H = GAME_H // TILE_SIZE    # 18 tiles tall
+VIEWPORT_W = GAME_W // TILE_SIZE    # 30
+VIEWPORT_H = GAME_H // TILE_SIZE    # 18
 
 # Game states
-STATE_PLAYER     = 'player'
-STATE_QUIZ       = 'quiz'
-STATE_EQUIP_MENU = 'equip_menu'
-STATE_COOK_MENU  = 'cook_menu'
-STATE_DEAD       = 'dead'
+STATE_PLAYER       = 'player'
+STATE_QUIZ         = 'quiz'
+STATE_EQUIP_MENU   = 'equip_menu'
+STATE_COOK_MENU    = 'cook_menu'
+STATE_CONFIRM_EXIT = 'confirm_exit'
+STATE_VICTORY      = 'victory'
+STATE_DEAD         = 'dead'
 
 
 class Game:
     def __init__(self, screen: pygame.Surface):
-        self.screen = screen
-        self.font_md = pygame.font.SysFont('consolas', 20)
-        self.font_lg = pygame.font.SysFont('consolas', 28, bold=True)
-        self.font_sm = pygame.font.SysFont('consolas', 15)
+        self.screen    = screen
+        self.font_sm   = pygame.font.SysFont('consolas', 15)
+        self.font_md   = pygame.font.SysFont('consolas', 20)
+        self.font_lg   = pygame.font.SysFont('consolas', 28, bold=True)
+        self.font_xl   = pygame.font.SysFont('consolas', 36, bold=True)
 
         self.quiz_engine        = QuizEngine()
         self.msg_log            = MessageLog()
         self.sidebar            = Sidebar(screen, GAME_W)
+        self.level_mgr          = LevelManager()
         self.state              = STATE_PLAYER
         self.combat_target      = None
         self.quiz_title         = ''
@@ -47,6 +52,7 @@ class Game:
         self.cook_menu_items: list  = []
         self.turn_count         = 0
         self.dungeon_level      = 1
+        self.defeat_reason      = 'died'   # 'died' | 'starved' | 'fled'
 
         self._new_level(1)
 
@@ -62,15 +68,46 @@ class Game:
     # ------------------------------------------------------------------
 
     def _new_level(self, level: int):
-        self.dungeon_level    = level
-        self.dungeon          = generate_dungeon(80, 50, level)
-        self.player           = Player()
-        self.player.x, self.player.y = self.dungeon.rooms[0].center
-        self.monsters         = spawn_monsters(self.dungeon.rooms, level, self.dungeon)
-        self.ground_items     = spawn_items(self.dungeon.rooms, level, self.dungeon)
-        self.renderer         = Renderer(self.screen, VIEWPORT_W, VIEWPORT_H)
+        """Initial game setup only — creates fresh player."""
+        self.dungeon_level           = level
+        dungeon, monsters, items     = self.level_mgr.generate(level)
+        self.dungeon                 = dungeon
+        self.monsters                = monsters
+        self.ground_items            = items
+        self.player                  = Player()
+        self.player.x, self.player.y = dungeon.rooms[0].center
+        self.renderer                = Renderer(self.screen, VIEWPORT_W, VIEWPORT_H)
         self._refresh_fov()
-        self.add_message(f"You descend to dungeon level {level}.", 'info')
+        self.add_message("You enter the dungeon. Find the Philosopher's Stone!", 'info')
+
+    def _change_level(self, new_level: int, enter_from_top: bool):
+        """Transition between levels, preserving the player."""
+        # Save current level state
+        self.level_mgr.save(
+            self.dungeon_level, self.dungeon, self.monsters, self.ground_items
+        )
+
+        # Load saved or generate fresh
+        saved = self.level_mgr.load(new_level)
+        if saved:
+            dungeon, monsters, ground_items = saved
+        else:
+            dungeon, monsters, ground_items = self.level_mgr.generate(new_level)
+
+        self.dungeon      = dungeon
+        self.monsters     = monsters
+        self.ground_items = ground_items
+        self.dungeon_level = new_level
+
+        # Place player at the stairs they came through
+        if enter_from_top:
+            self.player.x, self.player.y = dungeon.rooms[0].center
+            self.add_message(f"You descend to level {new_level}.", 'info')
+        else:
+            self.player.x, self.player.y = dungeon.rooms[-1].center
+            self.add_message(f"You ascend to level {new_level}.", 'info')
+
+        self._refresh_fov()
 
     def _refresh_fov(self):
         self.visible = calculate_fov(
@@ -88,20 +125,33 @@ class Game:
         if event.type != pygame.KEYDOWN:
             return True
 
-        if event.key == pygame.K_ESCAPE:
-            if self.state in (STATE_EQUIP_MENU, STATE_COOK_MENU):
+        key = event.key
+
+        if key == pygame.K_ESCAPE:
+            if self.state in (STATE_EQUIP_MENU, STATE_COOK_MENU, STATE_CONFIRM_EXIT):
                 self.state = STATE_PLAYER
                 return True
+            if self.state in (STATE_DEAD, STATE_VICTORY):
+                return False
             return False
 
         if self.state == STATE_PLAYER:
-            self._player_input(event.key)
+            # Stair keys checked by unicode to handle shift+. / shift+,
+            if event.unicode == '>':
+                self._descend_stairs()
+                return True
+            if event.unicode == '<':
+                self._ascend_stairs()
+                return True
+            self._player_input(key)
         elif self.state == STATE_QUIZ:
-            self._quiz_input(event.key)
+            self._quiz_input(key)
         elif self.state == STATE_EQUIP_MENU:
-            self._equip_menu_input(event.key)
+            self._equip_menu_input(key)
         elif self.state == STATE_COOK_MENU:
-            self._cook_menu_input(event.key)
+            self._cook_menu_input(key)
+        elif self.state == STATE_CONFIRM_EXIT:
+            self._confirm_exit_input(key)
 
         return True
 
@@ -134,7 +184,7 @@ class Game:
             self.player.status_effects['paralyzed'] = paralyzed - 1
             remaining = paralyzed - 1
             self.add_message(
-                f"You are paralyzed! ({remaining} turn{'s' if remaining != 1 else ''} left)",
+                f"Paralyzed! ({remaining} turn{'s' if remaining != 1 else ''} left)",
                 'danger'
             )
             self._advance_turn()
@@ -152,7 +202,73 @@ class Game:
             self.player.x, self.player.y = nx, ny
             self._refresh_fov()
             self._tick_sp()
-            self._advance_turn()
+            if self.state != STATE_DEAD:
+                self._notify_stairs(nx, ny)
+                self._advance_turn()
+
+    def _notify_stairs(self, x: int, y: int):
+        tile = self.dungeon.tiles[y][x]
+        if tile == STAIRS_DOWN:
+            self.add_message("Stairs lead down here  —  press '>' to descend.", 'info')
+        elif tile == STAIRS_UP:
+            if self.dungeon_level == 1:
+                self.add_message("The dungeon exit  —  press '<' to leave.", 'warning')
+            else:
+                self.add_message("Stairs lead up here  —  press '<' to ascend.", 'info')
+
+    # ------------------------------------------------------------------
+    # Stair navigation
+    # ------------------------------------------------------------------
+
+    def _descend_stairs(self):
+        px, py = self.player.x, self.player.y
+        if self.dungeon.tiles[py][px] != STAIRS_DOWN:
+            self.add_message("There are no stairs leading down here.", 'info')
+            return
+        self._change_level(self.dungeon_level + 1, enter_from_top=True)
+
+    def _ascend_stairs(self):
+        px, py = self.player.x, self.player.y
+        if self.dungeon.tiles[py][px] != STAIRS_UP:
+            self.add_message("There are no stairs leading up here.", 'info')
+            return
+        if self.dungeon_level == 1:
+            self.state = STATE_CONFIRM_EXIT
+        else:
+            self._change_level(self.dungeon_level - 1, enter_from_top=False)
+
+    def _confirm_exit_input(self, key: int):
+        if key in (pygame.K_y, pygame.K_RETURN):
+            self._do_exit()
+        elif key in (pygame.K_n, pygame.K_ESCAPE):
+            self.state = STATE_PLAYER
+
+    def _do_exit(self):
+        has_stone = any(
+            isinstance(i, Artifact) and i.id == 'philosophers_stone'
+            for i in self.player.inventory
+        )
+        if has_stone:
+            self.state = STATE_VICTORY
+        else:
+            self.defeat_reason = 'fled'
+            self.state = STATE_DEAD
+
+    # ------------------------------------------------------------------
+    # Scoring
+    # ------------------------------------------------------------------
+
+    def _calc_score(self) -> int:
+        has_stone = any(
+            isinstance(i, Artifact) and i.id == 'philosophers_stone'
+            for i in self.player.inventory
+        )
+        return (
+            self.turn_count * 10
+            + self.level_mgr.max_level_reached * 1000
+            + self.level_mgr.monsters_killed * 100
+            + (50000 if has_stone else 0)
+        )
 
     # ------------------------------------------------------------------
     # Turn bookkeeping
@@ -173,10 +289,11 @@ class Game:
                 self.add_message("You are hungry! Find food before you starve.", 'warning')
         else:
             dmg = self.player.take_damage(1, 'starvation')
-            self.add_message(f"You are starving! You take {dmg} damage.", 'danger')
+            self.add_message(f"Starving! You take {dmg} damage.", 'danger')
             if self.player.is_dead():
+                self.defeat_reason = 'starved'
                 self.state = STATE_DEAD
-                self.add_message("You have died of starvation! Press ESC to quit.", 'danger')
+                self.add_message("You have starved to death! Press ESC to quit.", 'danger')
 
     # ------------------------------------------------------------------
     # Pickup
@@ -191,6 +308,10 @@ class Game:
         if self.player.add_to_inventory(item):
             self.ground_items.remove(item)
             self.add_message(f"You pick up the {item.name}.", 'loot')
+            if isinstance(item, Artifact) and item.id == 'philosophers_stone':
+                self.add_message(
+                    "The Philosopher's Stone! Return to the surface to win!", 'loot'
+                )
             self._advance_turn()
         else:
             self.add_message("You are carrying too much to pick that up.", 'warning')
@@ -220,14 +341,13 @@ class Game:
 
         def on_complete(ingredient, message: str):
             self.state = STATE_PLAYER
-            msg_type = 'loot' if ingredient is not None else 'warning'
-            self.add_message(message, msg_type)
+            self.add_message(message, 'loot' if ingredient is not None else 'warning')
             if ingredient is not None:
                 if not self.player.add_to_inventory(ingredient):
                     self.ground_items.append(ingredient)
                     ingredient.x, ingredient.y = px, py
                     self.add_message(
-                        f"Too heavy to carry — {ingredient.name} dropped.", 'warning'
+                        f"Too heavy — {ingredient.name} dropped.", 'warning'
                     )
             self._advance_turn()
 
@@ -250,7 +370,7 @@ class Game:
         key_to_idx = {
             pygame.K_1: 0, pygame.K_KP1: 0,
             pygame.K_2: 1, pygame.K_KP2: 1,
-            pygame.K_3: 2, pygame.K_KP2: 2,
+            pygame.K_3: 2, pygame.K_KP3: 2,
             pygame.K_4: 3, pygame.K_KP4: 3,
             pygame.K_5: 4, pygame.K_KP5: 4,
             pygame.K_6: 5, pygame.K_KP6: 5,
@@ -272,10 +392,7 @@ class Game:
         def on_complete(messages: list[str]):
             self.state = STATE_PLAYER
             for i, msg in enumerate(messages):
-                if i == 0 and 'ruin' in msg.lower():
-                    self.add_message(msg, 'warning')
-                else:
-                    self.add_message(msg, 'success')
+                self.add_message(msg, 'warning' if (i == 0 and 'ruin' in msg.lower()) else 'success')
             self._advance_turn()
 
         cook_ingredient(self.player, ingredient, self.quiz_engine, on_complete)
@@ -318,7 +435,6 @@ class Game:
             self.player.remove_from_inventory(item)
             self.add_message(f"You equip the {item.name}.", 'success')
             self._advance_turn()
-
         elif isinstance(item, (Armor, Shield)):
             item_name = item.name
             self.quiz_title = f"EQUIPPING {item_name.upper()}  —  GEOGRAPHY"
@@ -335,7 +451,7 @@ class Game:
                     )
                 else:
                     self.add_message(
-                        f"You struggle to put on the {item_name} and give up.", 'warning'
+                        f"You struggle with the {item_name} and give up.", 'warning'
                     )
                 self._advance_turn()
 
@@ -374,6 +490,7 @@ class Game:
                     'success'
                 )
                 if killed:
+                    self.level_mgr.monsters_killed += 1
                     self.add_message(f"The {monster.name} is slain!", 'success')
                     self.ground_items.append(
                         Corpse(
@@ -417,6 +534,7 @@ class Game:
                 dmg, msg = m.attack(self.player)
                 self.add_message(msg, 'danger')
                 if self.player.is_dead():
+                    self.defeat_reason = 'died'
                     self.state = STATE_DEAD
                     self.add_message("You have died! Press ESC to quit.", 'danger')
                     return
@@ -437,10 +555,8 @@ class Game:
         cam_x, cam_y = self._camera()
         self.screen.fill((0, 0, 0))
 
-        # Clip rendering to the game viewport area
         game_clip = pygame.Rect(0, 0, GAME_W, GAME_H)
         self.screen.set_clip(game_clip)
-
         self.renderer.draw_dungeon(self.dungeon, self.visible, cam_x, cam_y)
         for item in self.ground_items:
             self.renderer.draw_item(item, cam_x, cam_y, self.visible)
@@ -448,22 +564,21 @@ class Game:
             if m.alive:
                 self.renderer.draw_entity(m.x, m.y, m.color, cam_x, cam_y, self.visible)
         self.renderer.draw_player(self.player, cam_x, cam_y)
-
         self.screen.set_clip(None)
 
-        # Message log below game viewport
         self.msg_log.draw(self.screen, 0, GAME_H, GAME_W, MSG_H)
-
-        # Sidebar
         self.sidebar.draw(self.player, self.dungeon_level, self.turn_count)
 
-        # Overlays (drawn on top of everything, no clipping)
         if self.state == STATE_QUIZ:
             self._draw_quiz()
         elif self.state == STATE_EQUIP_MENU:
             self._draw_equip_menu()
         elif self.state == STATE_COOK_MENU:
             self._draw_cook_menu()
+        elif self.state == STATE_CONFIRM_EXIT:
+            self._draw_confirm_exit()
+        elif self.state == STATE_VICTORY:
+            self._draw_victory_screen()
         elif self.state == STATE_DEAD:
             self._draw_death_screen()
 
@@ -496,12 +611,13 @@ class Game:
         pygame.draw.rect(self.screen, (16, 16, 38), (bx, by, bw, bh), border_radius=12)
         pygame.draw.rect(self.screen, (70, 70, 140), (bx, by, bw, bh), 2, border_radius=12)
 
-        hdr = self.font_md.render(self.quiz_title, True, (255, 200, 60))
-        self.screen.blit(hdr, (bx + 18, by + 14))
+        self.screen.blit(
+            self.font_md.render(self.quiz_title, True, (255, 200, 60)),
+            (bx + 18, by + 14)
+        )
 
         if qe.mode in (QuizMode.CHAIN, QuizMode.ESCALATOR_CHAIN):
-            counter_text  = f"Chain: {qe.chain}"
-            counter_color = (80, 255, 120)
+            counter_text, counter_color = f"Chain: {qe.chain}", (80, 255, 120)
         else:
             counter_text  = f"{qe.correct_count}/{qe.required} correct"
             counter_color = (120, 200, 255)
@@ -514,59 +630,60 @@ class Game:
         bar_color = (
             (50, 200, 50)  if ratio > 0.50 else
             (210, 160, 40) if ratio > 0.25 else
-            (210, 50, 50)
+            (210, 50,  50)
         )
         pygame.draw.rect(
             self.screen, bar_color,
             (bar_x, bar_y, int(bar_w * ratio), bar_h), border_radius=5
         )
 
-        q_text = qe.current_question.get('question', '')
-        q_surf = self.font_lg.render(q_text, True, (255, 255, 255))
+        q_surf = self.font_lg.render(
+            qe.current_question.get('question', ''), True, (255, 255, 255)
+        )
         self.screen.blit(q_surf, (bx + 18, by + 78))
 
         choices   = qe.current_question.get('choices', [])
-        labels    = ['1', '2', '3', '4']
         cw, ch    = 340, 72
         positions = [
-            (bx + 18,        by + 165),
-            (bx + 18 + 364,  by + 165),
-            (bx + 18,        by + 255),
-            (bx + 18 + 364,  by + 255),
+            (bx + 18,       by + 165), (bx + 18 + 364, by + 165),
+            (bx + 18,       by + 255), (bx + 18 + 364, by + 255),
         ]
         correct_str = str(qe.current_question.get('answer', '')).strip().lower()
         selected    = qe.last_answer.strip().lower()
 
         for i, (choice, (cx, cy)) in enumerate(zip(choices, positions)):
-            c_lower     = choice.strip().lower()
+            c_lower    = choice.strip().lower()
             is_correct  = c_lower == correct_str
             is_selected = bool(selected) and c_lower == selected
 
             if qe.state == QuizState.RESULT:
-                if is_correct:
-                    bg, border = (18, 72, 18),  (50, 210, 50)
-                elif is_selected:
-                    bg, border = (72, 18, 18),  (210, 50, 50)
-                else:
-                    bg, border = (22, 22, 52),  (55, 55, 100)
+                bg, border = (
+                    ((18, 72, 18), (50, 210, 50))   if is_correct  else
+                    ((72, 18, 18), (210, 50, 50))   if is_selected else
+                    ((22, 22, 52), (55, 55, 100))
+                )
             else:
                 bg, border = (24, 24, 56), (65, 65, 120)
 
             pygame.draw.rect(self.screen, bg,     (cx, cy, cw, ch), border_radius=8)
             pygame.draw.rect(self.screen, border, (cx, cy, cw, ch), 2, border_radius=8)
 
-            lbl = self.font_md.render(f"[{labels[i]}]", True, (160, 160, 80))
-            self.screen.blit(lbl, (cx + 12, cy + (ch - lbl.get_height()) // 2))
-
-            c_surf = self.font_md.render(str(choice), True, (220, 220, 220))
-            self.screen.blit(c_surf, (cx + 68, cy + (ch - c_surf.get_height()) // 2))
+            self.screen.blit(
+                self.font_md.render(f"[{i+1}]", True, (160, 160, 80)),
+                (cx + 12, cy + (ch - self.font_md.get_height()) // 2)
+            )
+            self.screen.blit(
+                self.font_md.render(str(choice), True, (220, 220, 220)),
+                (cx + 68, cy + (ch - self.font_md.get_height()) // 2)
+            )
 
         if qe.state == QuizState.RESULT:
-            fb_text  = "CORRECT!" if qe.last_correct else "WRONG!"
-            fb_color = (80, 255, 80)  if qe.last_correct else (255, 80, 80)
-            fb = self.font_lg.render(fb_text, True, fb_color)
+            fb = self.font_lg.render(
+                "CORRECT!" if qe.last_correct else "WRONG!",
+                True,
+                (80, 255, 80) if qe.last_correct else (255, 80, 80)
+            )
             self.screen.blit(fb, (bx + (bw - fb.get_width()) // 2, by + bh - 52))
-
         if qe.state == QuizState.ASKING:
             hint = self.font_sm.render("Press 1-4 to answer", True, (120, 120, 160))
             self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, by + bh - 28))
@@ -589,30 +706,31 @@ class Game:
         pygame.draw.rect(self.screen, (70, 70, 140), (bx, by, bw, bh), 2, border_radius=12)
 
         self.screen.blit(
-            self.font_md.render("EQUIP ITEM", True, (255, 200, 60)),
-            (bx + 20, by + 16)
+            self.font_md.render("EQUIP ITEM", True, (255, 200, 60)), (bx + 20, by + 16)
         )
-
         p = self.player
-        eq_str = self.font_sm.render(
-            f"Weapon: {p.weapon.name if p.weapon else 'none'}   AC: {p.get_ac()}",
-            True, (160, 200, 160)
+        self.screen.blit(
+            self.font_sm.render(
+                f"Weapon: {p.weapon.name if p.weapon else 'none'}   AC: {p.get_ac()}",
+                True, (160, 200, 160)
+            ),
+            (bx + 20, by + 44)
         )
-        self.screen.blit(eq_str, (bx + 20, by + 44))
         pygame.draw.line(self.screen, (60, 60, 100),
                          (bx + 10, by + 66), (bx + bw - 10, by + 66))
 
         for i, item in enumerate(self.equip_menu_items):
             iy = by + 76 + i * 48
-            row_bg = (28, 28, 58) if i % 2 == 0 else (22, 22, 48)
-            pygame.draw.rect(self.screen, row_bg, (bx + 10, iy, bw - 20, 42), border_radius=6)
-            self.screen.blit(
-                self.font_md.render(f"[{i+1}]", True, (160, 160, 80)),
-                (bx + 18, iy + 11)
+            pygame.draw.rect(
+                self.screen,
+                (28, 28, 58) if i % 2 == 0 else (22, 22, 48),
+                (bx + 10, iy, bw - 20, 42), border_radius=6
             )
             self.screen.blit(
-                self.font_md.render(item.name, True, (220, 220, 220)),
-                (bx + 70, iy + 11)
+                self.font_md.render(f"[{i+1}]", True, (160, 160, 80)), (bx + 18, iy + 11)
+            )
+            self.screen.blit(
+                self.font_md.render(item.name, True, (220, 220, 220)), (bx + 70, iy + 11)
             )
             if isinstance(item, Weapon):
                 detail = self.font_sm.render(
@@ -670,8 +788,11 @@ class Game:
 
         for i, item in enumerate(self.cook_menu_items):
             iy = by + 76 + i * 48
-            row_bg = (30, 22, 12) if i % 2 == 0 else (24, 18, 10)
-            pygame.draw.rect(self.screen, row_bg, (bx + 10, iy, bw - 20, 42), border_radius=6)
+            pygame.draw.rect(
+                self.screen,
+                (30, 22, 12) if i % 2 == 0 else (24, 18, 10),
+                (bx + 10, iy, bw - 20, 42), border_radius=6
+            )
             self.screen.blit(
                 self.font_md.render(f"[{i+1}]", True, (200, 160, 60)),
                 (bx + 18, iy + 11)
@@ -695,17 +816,126 @@ class Game:
         self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
 
     # ------------------------------------------------------------------
-    # Death screen
+    # Confirm exit overlay
+    # ------------------------------------------------------------------
+
+    def _draw_confirm_exit(self):
+        overlay = pygame.Surface((WINDOW_W, WINDOW_H), pygame.SRCALPHA)
+        overlay.fill((0, 0, 0, 160))
+        self.screen.blit(overlay, (0, 0))
+
+        bw, bh = 500, 200
+        bx = (GAME_W - bw) // 2
+        by = (WINDOW_H - bh) // 2
+
+        pygame.draw.rect(self.screen, (20, 20, 38), (bx, by, bw, bh), border_radius=12)
+        pygame.draw.rect(self.screen, (100, 100, 160), (bx, by, bw, bh), 2, border_radius=12)
+
+        has_stone = any(
+            isinstance(i, Artifact) and i.id == 'philosophers_stone'
+            for i in self.player.inventory
+        )
+
+        if has_stone:
+            title = self.font_lg.render("LEAVE THE DUNGEON?", True, (255, 215, 0))
+            sub   = self.font_md.render(
+                "You carry the Philosopher's Stone!", True, (255, 215, 0)
+            )
+        else:
+            title = self.font_lg.render("LEAVE THE DUNGEON?", True, (220, 200, 80))
+            sub   = self.font_md.render(
+                "You don't have the Philosopher's Stone.", True, (200, 160, 80)
+            )
+
+        self.screen.blit(title, (bx + (bw - title.get_width()) // 2, by + 30))
+        self.screen.blit(sub,   (bx + (bw - sub.get_width())   // 2, by + 76))
+
+        hint = self.font_md.render("[Y] Leave   [N] Stay", True, (160, 200, 160))
+        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, by + 136))
+
+    # ------------------------------------------------------------------
+    # Victory screen
+    # ------------------------------------------------------------------
+
+    def _draw_victory_screen(self):
+        overlay = pygame.Surface((WINDOW_W, WINDOW_H), pygame.SRCALPHA)
+        overlay.fill((20, 15, 0, 200))
+        self.screen.blit(overlay, (0, 0))
+
+        score = self._calc_score()
+        cx    = GAME_W // 2
+
+        title = self.font_xl.render("VICTORY!", True, (255, 215, 0))
+        self.screen.blit(title, (cx - title.get_width() // 2, 140))
+
+        sub = self.font_lg.render(
+            "You retrieved the Philosopher's Stone!", True, (255, 240, 160)
+        )
+        self.screen.blit(sub, (cx - sub.get_width() // 2, 205))
+
+        score_surf = self.font_lg.render(f"Final Score: {score:,}", True, (255, 215, 0))
+        self.screen.blit(score_surf, (cx - score_surf.get_width() // 2, 270))
+
+        details = self.font_md.render(
+            f"Turns: {self.turn_count}   |   "
+            f"Deepest Level: {self.level_mgr.max_level_reached}   |   "
+            f"Kills: {self.level_mgr.monsters_killed}",
+            True, (200, 180, 120)
+        )
+        self.screen.blit(details, (cx - details.get_width() // 2, 326))
+
+        breakdown = self.font_sm.render(
+            f"({self.turn_count}×10 turns)  +  "
+            f"({self.level_mgr.max_level_reached}×1000 depth)  +  "
+            f"({self.level_mgr.monsters_killed}×100 kills)  +  50000 stone bonus",
+            True, (160, 145, 90)
+        )
+        self.screen.blit(breakdown, (cx - breakdown.get_width() // 2, 358))
+
+        hint = self.font_md.render("Press ESC to quit", True, (140, 180, 140))
+        self.screen.blit(hint, (cx - hint.get_width() // 2, 420))
+
+    # ------------------------------------------------------------------
+    # Death / defeat screen
     # ------------------------------------------------------------------
 
     def _draw_death_screen(self):
         overlay = pygame.Surface((WINDOW_W, WINDOW_H), pygame.SRCALPHA)
-        overlay.fill((80, 0, 0, 130))
+        overlay.fill((80, 0, 0, 140))
         self.screen.blit(overlay, (0, 0))
-        dead = self.font_lg.render("YOU HAVE DIED", True, (255, 80, 80))
-        sub  = self.font_md.render("Press ESC to quit", True, (200, 200, 200))
-        self.screen.blit(dead, ((GAME_W - dead.get_width()) // 2, WINDOW_H // 2 - 36))
-        self.screen.blit(sub,  ((GAME_W - sub.get_width())  // 2, WINDOW_H // 2 + 14))
+
+        score = self._calc_score()
+        cx    = GAME_W // 2
+
+        if self.defeat_reason == 'fled':
+            title_text = "YOU FLED THE DUNGEON"
+            sub_text   = "You left without the Philosopher's Stone."
+        elif self.defeat_reason == 'starved':
+            title_text = "YOU HAVE STARVED"
+            sub_text   = f"You starved on dungeon level {self.dungeon_level}."
+        else:
+            title_text = "YOU HAVE DIED"
+            sub_text   = f"You were slain on dungeon level {self.dungeon_level}."
+
+        title = self.font_xl.render(title_text, True, (255, 80, 80))
+        self.screen.blit(title, (cx - title.get_width() // 2, 160))
+
+        sub = self.font_lg.render(sub_text, True, (200, 160, 160))
+        self.screen.blit(sub, (cx - sub.get_width() // 2, 218))
+
+        score_surf = self.font_lg.render(f"Final Score: {score:,}", True, (220, 180, 80))
+        self.screen.blit(score_surf, (cx - score_surf.get_width() // 2, 280))
+
+        details = self.font_md.render(
+            f"Turns: {self.turn_count}   |   "
+            f"Deepest Level: {self.level_mgr.max_level_reached}   |   "
+            f"Kills: {self.level_mgr.monsters_killed}",
+            True, (180, 150, 150)
+        )
+        self.screen.blit(details, (cx - details.get_width() // 2, 330))
+
+        hint = self.font_md.render("Press ESC to quit", True, (160, 130, 130))
+        self.screen.blit(hint, (cx - hint.get_width() // 2, 390))
 
 
 # ------------------------------------------------------------------

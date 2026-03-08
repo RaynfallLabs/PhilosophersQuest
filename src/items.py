@@ -54,6 +54,11 @@ class Accessory(Item):
         self.effects = defn.get('effects', {})
 
 
+class Artifact(Item):
+    def __init__(self, defn: dict):
+        super().__init__(defn)
+
+
 class Ingredient(Item):
     def __init__(self, defn: dict):
         super().__init__(defn)
@@ -94,6 +99,7 @@ _CLASS_MAP: dict[str, type] = {
     'shield':     Shield,
     'accessory':  Accessory,
     'ingredient': Ingredient,
+    'artifact':   Artifact,
 }
 
 
