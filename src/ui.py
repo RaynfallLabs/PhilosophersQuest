@@ -148,8 +148,10 @@ class Sidebar:
     def _status(self, player, dungeon_level: int, turn_count: int, y: int) -> int:
         from status_effects import EFFECT_INFO, DEBUFFS
         y = self._header("STATUS", y)
+        ac = player.get_ac()
+        ac_color = (100, 220, 100) if ac <= 0 else (150, 195, 150) if ac <= 5 else (195, 175, 100)
         for text, color in [
-            (f"AC     {player.get_ac()}",           (150, 195, 150)),
+            (f"AC     {ac}",                          ac_color),
             (f"Level  {dungeon_level}",               (150, 150, 205)),
             (f"Turns  {turn_count}",                  (140, 140, 175)),
             (f"Sight  {player.get_sight_radius()}",   (150, 195, 205)),
@@ -211,6 +213,15 @@ class Sidebar:
                         if getattr(i, 'ammo_type', None) == ammo_type
                     )
                     iname += f" [{total} {ammo_type}s]"
+                # Cursed indicator
+                if getattr(item, 'cursed', False):
+                    iname += " {C}"
+                # Enchantment indicator
+                eb = getattr(item, 'enchant_bonus', 0)
+                if eb > 0:
+                    iname += f" +{eb}"
+                elif eb < 0:
+                    iname += f" {eb}"
             else:
                 iname = "\u2014"
             ic = (195, 190, 135) if item else (52, 52, 70)

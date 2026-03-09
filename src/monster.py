@@ -24,6 +24,10 @@ class Monster:
         self.harvest_threshold = defn.get('harvest_threshold', 2)
         self.ingredient_id     = defn.get('ingredient_id', None)
 
+        # THAC0: "To Hit Armor Class Zero". Lower = more accurate.
+        # Default: 20 - min_level (level 1 → THAC0 19, level 20 → THAC0 0)
+        self.thac0: int = int(defn.get('thac0', max(-5, 20 - defn.get('min_level', 1))))
+
         # Minimal status effects for wand interactions
         self.status_effects: dict[str, int] = {}  # effect_id -> turns remaining
 
@@ -58,7 +62,7 @@ class Monster:
         return not self.alive
 
     def attack(self, player) -> tuple[int, str]:
-        """Monster attacks player. Returns (damage_dealt, message)."""
+        """Monster attacks player using THAC0 vs player AC. Returns (damage_dealt, message)."""
         if not self.attacks:
             # Floating eye: gaze-based paralysis (checks sleep_resist)
             if not player.has_effect('sleep_resist'):
@@ -70,10 +74,18 @@ class Monster:
 
         atk = random.choice(self.attacks)
 
-        # Invisible player: 30% miss chance
-        if player.has_effect('invisible') and random.random() < 0.30:
-            return 0, f"The {self.name} swings at you and misses!"
+        # ── THAC0 Attack Roll ──────────────────────────────────────────────
+        d20 = random.randint(1, 20)
+        player_ac = player.get_ac()
+        to_hit = self.thac0 - player_ac   # roll must be >= this to hit
 
+        # Natural 1 always misses; natural 20 always hits
+        if d20 == 1:
+            return 0, f"The {self.name} swings at you and misses!"
+        if d20 != 20 and d20 < to_hit:
+            return 0, f"The {self.name} swings at you and misses! (AC {player_ac} deflects)"
+
+        # ── Hit: roll damage ───────────────────────────────────────────────
         dmg = roll(atk['damage'])
         actual = player.take_damage(dmg, atk.get('type', 'physical'))
 

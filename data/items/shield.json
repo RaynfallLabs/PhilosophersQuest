@@ -1,0 +1,124 @@
+{
+  "wooden_shield": {
+    "name": "wooden shield",
+    "symbol": ")",
+    "color": [
+      160,
+      120,
+      60
+    ],
+    "weight": 3.0,
+    "min_level": 1,
+    "tier": 1,
+    "material": "wood",
+    "ac_bonus": 1,
+    "equip_threshold": 2,
+    "quiz_tier": 1,
+    "damage_resistances": {},
+    "can_be_cursed": false,
+    "enchant_bonus": 0
+  },
+  "iron_shield": {
+    "name": "iron shield",
+    "symbol": ")",
+    "color": [
+      160,
+      165,
+      175
+    ],
+    "weight": 5.0,
+    "min_level": 21,
+    "tier": 2,
+    "material": "iron",
+    "ac_bonus": 2,
+    "equip_threshold": 2,
+    "quiz_tier": 2,
+    "damage_resistances": {},
+    "can_be_cursed": true,
+    "enchant_bonus": 0
+  },
+  "steel_shield": {
+    "name": "steel shield",
+    "symbol": ")",
+    "color": [
+      170,
+      175,
+      190
+    ],
+    "weight": 5.5,
+    "min_level": 41,
+    "tier": 3,
+    "material": "steel",
+    "ac_bonus": 2,
+    "equip_threshold": 2,
+    "quiz_tier": 3,
+    "damage_resistances": {
+      "slash": 0.95
+    },
+    "can_be_cursed": true,
+    "enchant_bonus": 0
+  },
+  "crystal_shield": {
+    "name": "crystal shield",
+    "symbol": ")",
+    "color": [
+      160,
+      210,
+      255
+    ],
+    "weight": 4.0,
+    "min_level": 61,
+    "tier": 4,
+    "material": "crystal",
+    "ac_bonus": 3,
+    "equip_threshold": 2,
+    "quiz_tier": 4,
+    "damage_resistances": {
+      "magic": 0.85
+    },
+    "can_be_cursed": false,
+    "enchant_bonus": 0
+  },
+  "dragonscale_shield": {
+    "name": "dragonscale shield",
+    "symbol": ")",
+    "color": [
+      200,
+      155,
+      75
+    ],
+    "weight": 4.5,
+    "min_level": 81,
+    "tier": 5,
+    "material": "dragonscale",
+    "ac_bonus": 4,
+    "equip_threshold": 2,
+    "quiz_tier": 5,
+    "damage_resistances": {
+      "fire": 0.5
+    },
+    "can_be_cursed": false,
+    "enchant_bonus": 0
+  },
+  "adamantine_shield": {
+    "name": "adamantine shield",
+    "symbol": ")",
+    "color": [
+      90,
+      190,
+      140
+    ],
+    "weight": 7.0,
+    "min_level": 81,
+    "tier": 5,
+    "material": "adamantine",
+    "ac_bonus": 4,
+    "equip_threshold": 2,
+    "quiz_tier": 5,
+    "damage_resistances": {
+      "blunt": 0.8
+    },
+    "can_be_cursed": true,
+    "enchant_bonus": 0
+  }
+}

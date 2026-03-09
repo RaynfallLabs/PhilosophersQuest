@@ -693,39 +693,73 @@ class Game:
 
     def _equip_item(self, item):
         if isinstance(item, Weapon):
+            # Check if switching to 2H while shield is cursed
+            if getattr(item, 'two_handed', False) and self.player.shield:
+                ok, msg = self.player.try_unequip_slot(self.player.shield)
+                if not ok:
+                    self.add_message(msg, 'warning')
+                    return
             self.player._apply_equip(item)
             self.player.remove_from_inventory(item)
-            self.add_message(f"You equip the {item.name}.", 'success')
+            suffix = " (two-handed)" if getattr(item, 'two_handed', False) else ""
+            self.add_message(f"You equip the {item.name}{suffix}.", 'success')
             self._advance_turn()
-        elif isinstance(item, (Armor, Shield)):
-            item_name = item.name
-            self.quiz_title = f"EQUIPPING {item_name.upper()}  —  GEOGRAPHY"
-            self.state = STATE_QUIZ
+        elif isinstance(item, Shield):
+            if not self.player.can_equip_shield():
+                self.add_message(
+                    "You cannot use a shield while wielding a two-handed weapon!", 'warning'
+                )
+                return
+            # Check if current shield is cursed
+            if self.player.shield:
+                ok, msg = self.player.try_unequip_slot(self.player.shield)
+                if not ok:
+                    self.add_message(msg, 'warning')
+                    return
+            self._start_armor_quiz(item)
+        elif isinstance(item, Armor):
+            # Check if current item in that slot is cursed
+            from items import ARMOR_SLOTS
+            idx = ARMOR_SLOTS.index(item.slot) if item.slot in ARMOR_SLOTS else -1
+            if idx >= 0 and self.player.armor_slots[idx]:
+                ok, msg = self.player.try_unequip_slot(self.player.armor_slots[idx])
+                if not ok:
+                    self.add_message(msg, 'warning')
+                    return
+            self._start_armor_quiz(item)
 
-            def on_complete(result):
-                self.state = STATE_PLAYER
-                if result.success:
-                    self.player._apply_equip(item)
-                    self.player.remove_from_inventory(item)
-                    self.add_message(
-                        f"You equip the {item_name}. AC is now {self.player.get_ac()}.",
-                        'success'
-                    )
-                else:
-                    self.add_message(
-                        f"You struggle with the {item_name} and give up.", 'warning'
-                    )
-                self._advance_turn()
+    def _start_armor_quiz(self, item):
+        """Launch geography threshold quiz to equip armor or shield."""
+        item_name = item.name
+        cursed_tag = " (cursed)" if getattr(item, 'cursed', False) else ""
+        self.quiz_title = f"EQUIPPING {item_name.upper()}  —  GEOGRAPHY"
+        self.state = STATE_QUIZ
 
-            self.quiz_engine.start_quiz(
-                mode='threshold',
-                subject='geography',
-                tier=1,
-                callback=on_complete,
-                threshold=item.equip_threshold,
-                wisdom=self.player.WIS,
-                timer_modifier=self.player.get_quiz_timer_modifier(),
-            )
+        def on_complete(result):
+            self.state = STATE_PLAYER
+            if result.success:
+                self.player._apply_equip(item)
+                self.player.remove_from_inventory(item)
+                ac = self.player.get_ac()
+                msg = f"You equip the {item_name}{cursed_tag}. AC is now {ac}."
+                if getattr(item, 'cursed', False):
+                    msg += " It feels wrong..."
+                self.add_message(msg, 'success')
+            else:
+                self.add_message(
+                    f"You struggle with the {item_name} and give up.", 'warning'
+                )
+            self._advance_turn()
+
+        self.quiz_engine.start_quiz(
+            mode='threshold',
+            subject='geography',
+            tier=getattr(item, 'quiz_tier', 1),
+            callback=on_complete,
+            threshold=item.equip_threshold,
+            wisdom=self.player.WIS,
+            timer_modifier=self.player.get_quiz_timer_modifier(),
+        )
 
     # ------------------------------------------------------------------
     # Accessory menu  (r key — history quiz)

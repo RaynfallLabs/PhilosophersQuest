@@ -1,32 +1,1133 @@
 {
+  "padded_coif": {
+    "name": "padded coif",
+    "symbol": "[",
+    "color": [
+      160,
+      140,
+      110
+    ],
+    "weight": 0.5,
+    "min_level": 1,
+    "slot": "head",
+    "tier": 1,
+    "material": "padded",
+    "ac_bonus": 0,
+    "equip_threshold": 1,
+    "quiz_tier": 1,
+    "damage_resistances": {},
+    "can_be_cursed": false,
+    "enchant_bonus": 0
+  },
   "leather_cap": {
     "name": "leather cap",
     "symbol": "[",
-    "color": [160, 120, 60],
+    "color": [
+      160,
+      120,
+      60
+    ],
     "weight": 1.0,
     "min_level": 1,
     "slot": "head",
+    "tier": 1,
+    "material": "leather",
     "ac_bonus": 1,
-    "equip_threshold": 2
-  },
-  "leather_armor": {
-    "name": "leather armor",
-    "symbol": "[",
-    "color": [140, 100, 50],
-    "weight": 5.0,
-    "min_level": 1,
-    "slot": "body",
-    "ac_bonus": 2,
-    "equip_threshold": 3
+    "equip_threshold": 1,
+    "quiz_tier": 1,
+    "damage_resistances": {},
+    "can_be_cursed": false,
+    "enchant_bonus": 0
   },
   "iron_helm": {
     "name": "iron helm",
     "symbol": "[",
-    "color": [160, 165, 175],
+    "color": [
+      160,
+      165,
+      175
+    ],
     "weight": 3.0,
-    "min_level": 2,
+    "min_level": 21,
     "slot": "head",
+    "tier": 2,
+    "material": "iron",
     "ac_bonus": 2,
-    "equip_threshold": 3
+    "equip_threshold": 2,
+    "quiz_tier": 2,
+    "damage_resistances": {},
+    "can_be_cursed": false,
+    "enchant_bonus": 0
+  },
+  "chain_coif": {
+    "name": "chain coif",
+    "symbol": "[",
+    "color": [
+      150,
+      155,
+      165
+    ],
+    "weight": 1.5,
+    "min_level": 21,
+    "slot": "head",
+    "tier": 2,
+    "material": "chain",
+    "ac_bonus": 1,
+    "equip_threshold": 1,
+    "quiz_tier": 2,
+    "damage_resistances": {},
+    "can_be_cursed": false,
+    "enchant_bonus": 0
+  },
+  "steel_helm": {
+    "name": "steel helm",
+    "symbol": "[",
+    "color": [
+      170,
+      175,
+      185
+    ],
+    "weight": 3.5,
+    "min_level": 41,
+    "slot": "head",
+    "tier": 3,
+    "material": "steel",
+    "ac_bonus": 2,
+    "equip_threshold": 2,
+    "quiz_tier": 3,
+    "damage_resistances": {},
+    "can_be_cursed": true,
+    "enchant_bonus": 0
+  },
+  "great_helm": {
+    "name": "great helm",
+    "symbol": "[",
+    "color": [
+      180,
+      185,
+      195
+    ],
+    "weight": 5.0,
+    "min_level": 41,
+    "slot": "head",
+    "tier": 3,
+    "material": "steel",
+    "ac_bonus": 3,
+    "equip_threshold": 2,
+    "quiz_tier": 3,
+    "damage_resistances": {
+      "pierce": 0.9
+    },
+    "can_be_cursed": true,
+    "enchant_bonus": 0
+  },
+  "plate_helm": {
+    "name": "plate helm",
+    "symbol": "[",
+    "color": [
+      200,
+      205,
+      215
+    ],
+    "weight": 4.0,
+    "min_level": 61,
+    "slot": "head",
+    "tier": 4,
+    "material": "plate",
+    "ac_bonus": 3,
+    "equip_threshold": 2,
+    "quiz_tier": 4,
+    "damage_resistances": {
+      "slash": 0.9
+    },
+    "can_be_cursed": true,
+    "enchant_bonus": 0
+  },
+  "crystal_helm": {
+    "name": "crystal helm",
+    "symbol": "[",
+    "color": [
+      180,
+      220,
+      255
+    ],
+    "weight": 3.0,
+    "min_level": 61,
+    "slot": "head",
+    "tier": 4,
+    "material": "crystal",
+    "ac_bonus": 4,
+    "equip_threshold": 2,
+    "quiz_tier": 4,
+    "damage_resistances": {
+      "magic": 0.9
+    },
+    "can_be_cursed": false,
+    "enchant_bonus": 0
+  },
+  "dragonscale_helm": {
+    "name": "dragonscale helm",
+    "symbol": "[",
+    "color": [
+      200,
+      160,
+      80
+    ],
+    "weight": 3.0,
+    "min_level": 81,
+    "slot": "head",
+    "tier": 5,
+    "material": "dragonscale",
+    "ac_bonus": 4,
+    "equip_threshold": 2,
+    "quiz_tier": 5,
+    "damage_resistances": {
+      "fire": 0.5
+    },
+    "can_be_cursed": false,
+    "enchant_bonus": 0
+  },
+  "adamantine_helm": {
+    "name": "adamantine helm",
+    "symbol": "[",
+    "color": [
+      100,
+      200,
+      150
+    ],
+    "weight": 5.0,
+    "min_level": 81,
+    "slot": "head",
+    "tier": 5,
+    "material": "adamantine",
+    "ac_bonus": 5,
+    "equip_threshold": 2,
+    "quiz_tier": 5,
+    "damage_resistances": {
+      "blunt": 0.75
+    },
+    "can_be_cursed": true,
+    "enchant_bonus": 0
+  },
+  "cloth_armor": {
+    "name": "cloth armor",
+    "symbol": "[",
+    "color": [
+      200,
+      190,
+      170
+    ],
+    "weight": 2.0,
+    "min_level": 1,
+    "slot": "body",
+    "tier": 1,
+    "material": "cloth",
+    "ac_bonus": 0,
+    "equip_threshold": 2,
+    "quiz_tier": 1,
+    "damage_resistances": {},
+    "can_be_cursed": false,
+    "enchant_bonus": 0
+  },
+  "padded_armor": {
+    "name": "padded armor",
+    "symbol": "[",
+    "color": [
+      175,
+      160,
+      130
+    ],
+    "weight": 4.0,
+    "min_level": 1,
+    "slot": "body",
+    "tier": 1,
+    "material": "padded",
+    "ac_bonus": 1,
+    "equip_threshold": 2,
+    "quiz_tier": 1,
+    "damage_resistances": {},
+    "can_be_cursed": false,
+    "enchant_bonus": 0
+  },
+  "leather_armor": {
+    "name": "leather armor",
+    "symbol": "[",
+    "color": [
+      140,
+      100,
+      50
+    ],
+    "weight": 5.0,
+    "min_level": 1,
+    "slot": "body",
+    "tier": 1,
+    "material": "leather",
+    "ac_bonus": 2,
+    "equip_threshold": 3,
+    "quiz_tier": 1,
+    "damage_resistances": {},
+    "can_be_cursed": false,
+    "enchant_bonus": 0
+  },
+  "ring_mail": {
+    "name": "ring mail",
+    "symbol": "[",
+    "color": [
+      160,
+      160,
+      170
+    ],
+    "weight": 7.0,
+    "min_level": 21,
+    "slot": "body",
+    "tier": 2,
+    "material": "iron",
+    "ac_bonus": 3,
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "damage_resistances": {},
+    "can_be_cursed": true,
+    "enchant_bonus": 0
+  },
+  "scale_mail": {
+    "name": "scale mail",
+    "symbol": "[",
+    "color": [
+      165,
+      170,
+      180
+    ],
+    "weight": 8.0,
+    "min_level": 21,
+    "slot": "body",
+    "tier": 2,
+    "material": "steel",
+    "ac_bonus": 3,
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "damage_resistances": {
+      "slash": 0.95
+    },
+    "can_be_cursed": true,
+    "enchant_bonus": 0
+  },
+  "chain_mail": {
+    "name": "chain mail",
+    "symbol": "[",
+    "color": [
+      155,
+      160,
+      175
+    ],
+    "weight": 9.0,
+    "min_level": 21,
+    "slot": "body",
+    "tier": 2,
+    "material": "chain",
+    "ac_bonus": 4,
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "damage_resistances": {
+      "slash": 0.9,
+      "pierce": 0.9
+    },
+    "can_be_cursed": true,
+    "enchant_bonus": 0
+  },
+  "banded_mail": {
+    "name": "banded mail",
+    "symbol": "[",
+    "color": [
+      175,
+      180,
+      195
+    ],
+    "weight": 10.0,
+    "min_level": 41,
+    "slot": "body",
+    "tier": 3,
+    "material": "steel",
+    "ac_bonus": 5,
+    "equip_threshold": 3,
+    "quiz_tier": 3,
+    "damage_resistances": {
+      "slash": 0.85
+    },
+    "can_be_cursed": true,
+    "enchant_bonus": 0
+  },
+  "splint_mail": {
+    "name": "splint mail",
+    "symbol": "[",
+    "color": [
+      180,
+      185,
+      200
+    ],
+    "weight": 11.0,
+    "min_level": 41,
+    "slot": "body",
+    "tier": 3,
+    "material": "steel",
+    "ac_bonus": 5,
+    "equip_threshold": 3,
+    "quiz_tier": 3,
+    "damage_resistances": {
+      "blunt": 0.9
+    },
+    "can_be_cursed": true,
+    "enchant_bonus": 0
+  },
+  "half_plate": {
+    "name": "half plate",
+    "symbol": "[",
+    "color": [
+      190,
+      195,
+      210
+    ],
+    "weight": 12.0,
+    "min_level": 41,
+    "slot": "body",
+    "tier": 3,
+    "material": "steel",
+    "ac_bonus": 6,
+    "equip_threshold": 3,
+    "quiz_tier": 3,
+    "damage_resistances": {
+      "slash": 0.8
+    },
+    "can_be_cursed": true,
+    "enchant_bonus": 0
+  },
+  "full_plate": {
+    "name": "full plate",
+    "symbol": "[",
+    "color": [
+      210,
+      215,
+      230
+    ],
+    "weight": 15.0,
+    "min_level": 61,
+    "slot": "body",
+    "tier": 4,
+    "material": "plate",
+    "ac_bonus": 7,
+    "equip_threshold": 4,
+    "quiz_tier": 4,
+    "damage_resistances": {
+      "slash": 0.75,
+      "blunt": 0.85
+    },
+    "can_be_cursed": true,
+    "enchant_bonus": 0
+  },
+  "crystal_plate": {
+    "name": "crystal plate",
+    "symbol": "[",
+    "color": [
+      160,
+      210,
+      255
+    ],
+    "weight": 10.0,
+    "min_level": 61,
+    "slot": "body",
+    "tier": 4,
+    "material": "crystal",
+    "ac_bonus": 7,
+    "equip_threshold": 4,
+    "quiz_tier": 4,
+    "damage_resistances": {
+      "fire": 0.75,
+      "cold": 0.75
+    },
+    "can_be_cursed": false,
+    "enchant_bonus": 0
+  },
+  "dragonscale_armor": {
+    "name": "dragonscale armor",
+    "symbol": "[",
+    "color": [
+      200,
+      150,
+      70
+    ],
+    "weight": 12.0,
+    "min_level": 81,
+    "slot": "body",
+    "tier": 5,
+    "material": "dragonscale",
+    "ac_bonus": 8,
+    "equip_threshold": 4,
+    "quiz_tier": 5,
+    "damage_resistances": {
+      "fire": 0.5,
+      "acid": 0.75
+    },
+    "can_be_cursed": false,
+    "enchant_bonus": 0
+  },
+  "adamantine_armor": {
+    "name": "adamantine armor",
+    "symbol": "[",
+    "color": [
+      90,
+      190,
+      140
+    ],
+    "weight": 18.0,
+    "min_level": 81,
+    "slot": "body",
+    "tier": 5,
+    "material": "adamantine",
+    "ac_bonus": 9,
+    "equip_threshold": 4,
+    "quiz_tier": 5,
+    "damage_resistances": {
+      "slash": 0.6,
+      "blunt": 0.6
+    },
+    "can_be_cursed": true,
+    "enchant_bonus": 0
+  },
+  "leather_bracers": {
+    "name": "leather bracers",
+    "symbol": "[",
+    "color": [
+      150,
+      110,
+      55
+    ],
+    "weight": 1.0,
+    "min_level": 1,
+    "slot": "arms",
+    "tier": 1,
+    "material": "leather",
+    "ac_bonus": 1,
+    "equip_threshold": 1,
+    "quiz_tier": 1,
+    "damage_resistances": {},
+    "can_be_cursed": false,
+    "enchant_bonus": 0
+  },
+  "iron_bracers": {
+    "name": "iron bracers",
+    "symbol": "[",
+    "color": [
+      155,
+      160,
+      170
+    ],
+    "weight": 2.0,
+    "min_level": 21,
+    "slot": "arms",
+    "tier": 2,
+    "material": "iron",
+    "ac_bonus": 1,
+    "equip_threshold": 2,
+    "quiz_tier": 2,
+    "damage_resistances": {},
+    "can_be_cursed": true,
+    "enchant_bonus": 0
+  },
+  "steel_bracers": {
+    "name": "steel bracers",
+    "symbol": "[",
+    "color": [
+      170,
+      175,
+      185
+    ],
+    "weight": 2.5,
+    "min_level": 41,
+    "slot": "arms",
+    "tier": 3,
+    "material": "steel",
+    "ac_bonus": 1,
+    "equip_threshold": 2,
+    "quiz_tier": 3,
+    "damage_resistances": {},
+    "can_be_cursed": true,
+    "enchant_bonus": 0
+  },
+  "plate_bracers": {
+    "name": "plate bracers",
+    "symbol": "[",
+    "color": [
+      200,
+      205,
+      215
+    ],
+    "weight": 3.0,
+    "min_level": 61,
+    "slot": "arms",
+    "tier": 4,
+    "material": "plate",
+    "ac_bonus": 2,
+    "equip_threshold": 2,
+    "quiz_tier": 4,
+    "damage_resistances": {
+      "slash": 0.9
+    },
+    "can_be_cursed": true,
+    "enchant_bonus": 0
+  },
+  "adamantine_bracers": {
+    "name": "adamantine bracers",
+    "symbol": "[",
+    "color": [
+      90,
+      190,
+      140
+    ],
+    "weight": 4.0,
+    "min_level": 81,
+    "slot": "arms",
+    "tier": 5,
+    "material": "adamantine",
+    "ac_bonus": 2,
+    "equip_threshold": 2,
+    "quiz_tier": 5,
+    "damage_resistances": {
+      "blunt": 0.85
+    },
+    "can_be_cursed": true,
+    "enchant_bonus": 0
+  },
+  "cloth_gloves": {
+    "name": "cloth gloves",
+    "symbol": "[",
+    "color": [
+      210,
+      200,
+      180
+    ],
+    "weight": 0.3,
+    "min_level": 1,
+    "slot": "hands",
+    "tier": 1,
+    "material": "cloth",
+    "ac_bonus": 0,
+    "equip_threshold": 1,
+    "quiz_tier": 1,
+    "damage_resistances": {},
+    "can_be_cursed": false,
+    "enchant_bonus": 0
+  },
+  "leather_gloves": {
+    "name": "leather gloves",
+    "symbol": "[",
+    "color": [
+      155,
+      115,
+      60
+    ],
+    "weight": 0.5,
+    "min_level": 1,
+    "slot": "hands",
+    "tier": 1,
+    "material": "leather",
+    "ac_bonus": 0,
+    "equip_threshold": 1,
+    "quiz_tier": 1,
+    "damage_resistances": {},
+    "can_be_cursed": false,
+    "enchant_bonus": 0
+  },
+  "chain_gauntlets": {
+    "name": "chain gauntlets",
+    "symbol": "[",
+    "color": [
+      155,
+      160,
+      175
+    ],
+    "weight": 1.5,
+    "min_level": 21,
+    "slot": "hands",
+    "tier": 2,
+    "material": "chain",
+    "ac_bonus": 1,
+    "equip_threshold": 1,
+    "quiz_tier": 2,
+    "damage_resistances": {},
+    "can_be_cursed": true,
+    "enchant_bonus": 0
+  },
+  "steel_gauntlets": {
+    "name": "steel gauntlets",
+    "symbol": "[",
+    "color": [
+      170,
+      175,
+      185
+    ],
+    "weight": 2.0,
+    "min_level": 41,
+    "slot": "hands",
+    "tier": 3,
+    "material": "steel",
+    "ac_bonus": 1,
+    "equip_threshold": 2,
+    "quiz_tier": 3,
+    "damage_resistances": {},
+    "can_be_cursed": true,
+    "enchant_bonus": 0
+  },
+  "plate_gauntlets": {
+    "name": "plate gauntlets",
+    "symbol": "[",
+    "color": [
+      200,
+      205,
+      215
+    ],
+    "weight": 2.5,
+    "min_level": 61,
+    "slot": "hands",
+    "tier": 4,
+    "material": "plate",
+    "ac_bonus": 1,
+    "equip_threshold": 2,
+    "quiz_tier": 4,
+    "damage_resistances": {
+      "blunt": 0.9
+    },
+    "can_be_cursed": true,
+    "enchant_bonus": 0
+  },
+  "adamantine_gauntlets": {
+    "name": "adamantine gauntlets",
+    "symbol": "[",
+    "color": [
+      90,
+      190,
+      140
+    ],
+    "weight": 3.0,
+    "min_level": 81,
+    "slot": "hands",
+    "tier": 5,
+    "material": "adamantine",
+    "ac_bonus": 2,
+    "equip_threshold": 2,
+    "quiz_tier": 5,
+    "damage_resistances": {},
+    "can_be_cursed": true,
+    "enchant_bonus": 0
+  },
+  "leather_leggings": {
+    "name": "leather leggings",
+    "symbol": "[",
+    "color": [
+      145,
+      105,
+      50
+    ],
+    "weight": 2.0,
+    "min_level": 1,
+    "slot": "legs",
+    "tier": 1,
+    "material": "leather",
+    "ac_bonus": 1,
+    "equip_threshold": 2,
+    "quiz_tier": 1,
+    "damage_resistances": {},
+    "can_be_cursed": false,
+    "enchant_bonus": 0
+  },
+  "chain_leggings": {
+    "name": "chain leggings",
+    "symbol": "[",
+    "color": [
+      155,
+      160,
+      175
+    ],
+    "weight": 4.0,
+    "min_level": 21,
+    "slot": "legs",
+    "tier": 2,
+    "material": "chain",
+    "ac_bonus": 1,
+    "equip_threshold": 2,
+    "quiz_tier": 2,
+    "damage_resistances": {},
+    "can_be_cursed": true,
+    "enchant_bonus": 0
+  },
+  "steel_greaves": {
+    "name": "steel greaves",
+    "symbol": "[",
+    "color": [
+      170,
+      175,
+      185
+    ],
+    "weight": 5.0,
+    "min_level": 41,
+    "slot": "legs",
+    "tier": 3,
+    "material": "steel",
+    "ac_bonus": 2,
+    "equip_threshold": 2,
+    "quiz_tier": 3,
+    "damage_resistances": {},
+    "can_be_cursed": true,
+    "enchant_bonus": 0
+  },
+  "plate_greaves": {
+    "name": "plate greaves",
+    "symbol": "[",
+    "color": [
+      200,
+      205,
+      215
+    ],
+    "weight": 6.0,
+    "min_level": 61,
+    "slot": "legs",
+    "tier": 4,
+    "material": "plate",
+    "ac_bonus": 2,
+    "equip_threshold": 2,
+    "quiz_tier": 4,
+    "damage_resistances": {},
+    "can_be_cursed": true,
+    "enchant_bonus": 0
+  },
+  "adamantine_greaves": {
+    "name": "adamantine greaves",
+    "symbol": "[",
+    "color": [
+      90,
+      190,
+      140
+    ],
+    "weight": 8.0,
+    "min_level": 81,
+    "slot": "legs",
+    "tier": 5,
+    "material": "adamantine",
+    "ac_bonus": 3,
+    "equip_threshold": 2,
+    "quiz_tier": 5,
+    "damage_resistances": {
+      "slash": 0.9
+    },
+    "can_be_cursed": true,
+    "enchant_bonus": 0
+  },
+  "leather_boots": {
+    "name": "leather boots",
+    "symbol": "[",
+    "color": [
+      140,
+      100,
+      50
+    ],
+    "weight": 1.0,
+    "min_level": 1,
+    "slot": "feet",
+    "tier": 1,
+    "material": "leather",
+    "ac_bonus": 0,
+    "equip_threshold": 1,
+    "quiz_tier": 1,
+    "damage_resistances": {},
+    "can_be_cursed": false,
+    "enchant_bonus": 0
+  },
+  "iron_boots": {
+    "name": "iron boots",
+    "symbol": "[",
+    "color": [
+      155,
+      160,
+      170
+    ],
+    "weight": 3.0,
+    "min_level": 21,
+    "slot": "feet",
+    "tier": 2,
+    "material": "iron",
+    "ac_bonus": 1,
+    "equip_threshold": 1,
+    "quiz_tier": 2,
+    "damage_resistances": {},
+    "can_be_cursed": true,
+    "enchant_bonus": 0
+  },
+  "steel_boots": {
+    "name": "steel boots",
+    "symbol": "[",
+    "color": [
+      170,
+      175,
+      185
+    ],
+    "weight": 3.5,
+    "min_level": 41,
+    "slot": "feet",
+    "tier": 3,
+    "material": "steel",
+    "ac_bonus": 1,
+    "equip_threshold": 1,
+    "quiz_tier": 3,
+    "damage_resistances": {},
+    "can_be_cursed": true,
+    "enchant_bonus": 0
+  },
+  "plate_boots": {
+    "name": "plate boots",
+    "symbol": "[",
+    "color": [
+      200,
+      205,
+      215
+    ],
+    "weight": 4.0,
+    "min_level": 61,
+    "slot": "feet",
+    "tier": 4,
+    "material": "plate",
+    "ac_bonus": 1,
+    "equip_threshold": 1,
+    "quiz_tier": 4,
+    "damage_resistances": {},
+    "can_be_cursed": true,
+    "enchant_bonus": 0
+  },
+  "adamantine_boots": {
+    "name": "adamantine boots",
+    "symbol": "[",
+    "color": [
+      90,
+      190,
+      140
+    ],
+    "weight": 5.0,
+    "min_level": 81,
+    "slot": "feet",
+    "tier": 5,
+    "material": "adamantine",
+    "ac_bonus": 2,
+    "equip_threshold": 1,
+    "quiz_tier": 5,
+    "damage_resistances": {},
+    "can_be_cursed": true,
+    "enchant_bonus": 0
+  },
+  "cloth_cloak": {
+    "name": "cloth cloak",
+    "symbol": "[",
+    "color": [
+      200,
+      195,
+      175
+    ],
+    "weight": 1.0,
+    "min_level": 1,
+    "slot": "cloak",
+    "tier": 1,
+    "material": "cloth",
+    "ac_bonus": 0,
+    "equip_threshold": 1,
+    "quiz_tier": 1,
+    "damage_resistances": {},
+    "can_be_cursed": false,
+    "enchant_bonus": 0
+  },
+  "leather_cloak": {
+    "name": "leather cloak",
+    "symbol": "[",
+    "color": [
+      140,
+      110,
+      60
+    ],
+    "weight": 1.5,
+    "min_level": 21,
+    "slot": "cloak",
+    "tier": 2,
+    "material": "leather",
+    "ac_bonus": 1,
+    "equip_threshold": 1,
+    "quiz_tier": 2,
+    "damage_resistances": {},
+    "can_be_cursed": false,
+    "enchant_bonus": 0
+  },
+  "ring_cloak": {
+    "name": "ring cloak",
+    "symbol": "[",
+    "color": [
+      155,
+      160,
+      170
+    ],
+    "weight": 2.0,
+    "min_level": 41,
+    "slot": "cloak",
+    "tier": 3,
+    "material": "iron",
+    "ac_bonus": 1,
+    "equip_threshold": 1,
+    "quiz_tier": 3,
+    "damage_resistances": {},
+    "can_be_cursed": true,
+    "enchant_bonus": 0
+  },
+  "crystal_cloak": {
+    "name": "crystal cloak",
+    "symbol": "[",
+    "color": [
+      180,
+      220,
+      255
+    ],
+    "weight": 1.5,
+    "min_level": 61,
+    "slot": "cloak",
+    "tier": 4,
+    "material": "crystal",
+    "ac_bonus": 2,
+    "equip_threshold": 1,
+    "quiz_tier": 4,
+    "damage_resistances": {
+      "magic": 0.85
+    },
+    "can_be_cursed": false,
+    "enchant_bonus": 0
+  },
+  "dragonscale_cloak": {
+    "name": "dragonscale cloak",
+    "symbol": "[",
+    "color": [
+      200,
+      150,
+      70
+    ],
+    "weight": 2.0,
+    "min_level": 81,
+    "slot": "cloak",
+    "tier": 5,
+    "material": "dragonscale",
+    "ac_bonus": 2,
+    "equip_threshold": 1,
+    "quiz_tier": 5,
+    "damage_resistances": {
+      "fire": 0.5
+    },
+    "can_be_cursed": false,
+    "enchant_bonus": 0
+  },
+  "cloth_shirt": {
+    "name": "cloth shirt",
+    "symbol": "[",
+    "color": [
+      215,
+      210,
+      190
+    ],
+    "weight": 0.5,
+    "min_level": 1,
+    "slot": "shirt",
+    "tier": 1,
+    "material": "cloth",
+    "ac_bonus": 0,
+    "equip_threshold": 1,
+    "quiz_tier": 1,
+    "damage_resistances": {},
+    "can_be_cursed": false,
+    "enchant_bonus": 0
+  },
+  "padded_shirt": {
+    "name": "padded shirt",
+    "symbol": "[",
+    "color": [
+      185,
+      175,
+      145
+    ],
+    "weight": 1.0,
+    "min_level": 21,
+    "slot": "shirt",
+    "tier": 2,
+    "material": "padded",
+    "ac_bonus": 1,
+    "equip_threshold": 1,
+    "quiz_tier": 2,
+    "damage_resistances": {},
+    "can_be_cursed": false,
+    "enchant_bonus": 0
+  },
+  "chain_shirt": {
+    "name": "chain shirt",
+    "symbol": "[",
+    "color": [
+      155,
+      160,
+      175
+    ],
+    "weight": 3.0,
+    "min_level": 41,
+    "slot": "shirt",
+    "tier": 3,
+    "material": "chain",
+    "ac_bonus": 1,
+    "equip_threshold": 1,
+    "quiz_tier": 3,
+    "damage_resistances": {
+      "slash": 0.95
+    },
+    "can_be_cursed": true,
+    "enchant_bonus": 0
+  },
+  "mithril_shirt": {
+    "name": "mithril shirt",
+    "symbol": "[",
+    "color": [
+      180,
+      200,
+      240
+    ],
+    "weight": 2.0,
+    "min_level": 61,
+    "slot": "shirt",
+    "tier": 4,
+    "material": "mithril",
+    "ac_bonus": 2,
+    "equip_threshold": 1,
+    "quiz_tier": 4,
+    "damage_resistances": {
+      "magic": 0.9
+    },
+    "can_be_cursed": false,
+    "enchant_bonus": 0
+  },
+  "adamantine_shirt": {
+    "name": "adamantine shirt",
+    "symbol": "[",
+    "color": [
+      90,
+      190,
+      140
+    ],
+    "weight": 4.0,
+    "min_level": 81,
+    "slot": "shirt",
+    "tier": 5,
+    "material": "adamantine",
+    "ac_bonus": 2,
+    "equip_threshold": 1,
+    "quiz_tier": 5,
+    "damage_resistances": {
+      "slash": 0.85
+    },
+    "can_be_cursed": true,
+    "enchant_bonus": 0
   }
 }

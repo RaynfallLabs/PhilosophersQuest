@@ -53,8 +53,9 @@ class Player:
         if immunity_effect and self.has_effect(immunity_effect):
             return 0
 
-        # Fractional resistance from items/intrinsics
+        # Fractional resistance: status/accessory effects × armor resistances
         resistance = self.resistances.get(damage_type, 1.0)
+        resistance *= self.get_armor_resistance(damage_type)
         actual = max(0, int(amount * resistance))
         self.hp = max(0, self.hp - actual)
 
@@ -101,15 +102,33 @@ class Player:
     # --- Derived stats ---
 
     def get_ac(self) -> int:
-        """Armor class = 10 + DEX modifier + equipped armor and shield bonuses."""
+        """Armor class — lower is better (harder for monsters to hit).
+        Base 10, reduced by DEX modifier, armor ac_bonus + enchant_bonus, shield,
+        and status effects like invisibility."""
         dex_mod = (self.DEX - 10) // 2
         armor_bonus = sum(
-            getattr(slot, 'ac_bonus', 0) for slot in self.armor_slots if slot is not None
+            getattr(s, 'ac_bonus', 0) + getattr(s, 'enchant_bonus', 0)
+            for s in self.armor_slots if s is not None
         )
-        shield_bonus = getattr(self.shield, 'ac_bonus', 0) if self.shield else 0
-        # Invisible grants a small AC bonus (hard to hit)
+        shield_bonus = (
+            getattr(self.shield, 'ac_bonus', 0) + getattr(self.shield, 'enchant_bonus', 0)
+            if self.shield else 0
+        )
+        # Invisibility: harder to hit → lowers AC by 2
         invisible_bonus = 2 if self.has_effect('invisible') else 0
-        return 10 + dex_mod + armor_bonus + shield_bonus + invisible_bonus
+        # Shielded status effect (from wand of shielding): -2 AC
+        shield_effect   = 2 if self.has_effect('shielded') else 0
+        return 10 - dex_mod - armor_bonus - shield_bonus - invisible_bonus - shield_effect
+
+    def get_armor_resistance(self, damage_type: str) -> float:
+        """Combined damage resistance multiplier from all equipped armor/shield."""
+        mult = 1.0
+        for slot in self.armor_slots:
+            if slot and hasattr(slot, 'damage_resistances'):
+                mult *= slot.damage_resistances.get(damage_type, 1.0)
+        if self.shield and hasattr(self.shield, 'damage_resistances'):
+            mult *= self.shield.damage_resistances.get(damage_type, 1.0)
+        return mult
 
     def get_sight_radius(self) -> int:
         """Sight radius in tiles. Blindness caps it at 1."""
@@ -188,14 +207,44 @@ class Player:
         letters = 'abcdefghijklmnopqrstuvwxyz'
         return [(letters[i], item) for i, item in enumerate(self.inventory[:26])]
 
+    def can_equip_shield(self) -> bool:
+        """Returns False when a two-handed weapon is equipped."""
+        return not (self.weapon and getattr(self.weapon, 'two_handed', False))
+
+    def try_unequip_slot(self, slot_item) -> tuple[bool, str]:
+        """Attempt to remove an equipped item. Returns (success, message).
+        Fails if the item is cursed."""
+        if slot_item and getattr(slot_item, 'cursed', False):
+            return False, f"The {slot_item.name} is welded to you!"
+        return True, ""
+
     def _apply_equip(self, item):
         from items import Weapon, Armor, Shield, Accessory, ARMOR_SLOTS
         if isinstance(item, Weapon):
+            # Unequip shield if switching to 2H
+            if getattr(item, 'two_handed', False) and self.shield:
+                ok, msg = self.try_unequip_slot(self.shield)
+                if not ok:
+                    return  # can't swap — cursed shield blocks
+                self.inventory.append(self.shield)
+                self.shield = None
             self.weapon = item
         elif isinstance(item, Armor):
             idx = ARMOR_SLOTS.index(item.slot) if item.slot in ARMOR_SLOTS else 0
+            old = self.armor_slots[idx]
+            ok, _ = self.try_unequip_slot(old)
+            if not ok:
+                return
+            if old:
+                self.inventory.append(old)
             self.armor_slots[idx] = item
         elif isinstance(item, Shield):
+            old = self.shield
+            ok, _ = self.try_unequip_slot(old)
+            if not ok:
+                return
+            if old:
+                self.inventory.append(old)
             self.shield = item
         elif isinstance(item, Accessory):
             # Find first empty accessory slot

@@ -53,16 +53,30 @@ class Weapon(Item):
 class Armor(Item):
     def __init__(self, defn: dict):
         super().__init__(defn)
-        self.slot             = defn['slot']
-        self.ac_bonus: int    = int(defn['ac_bonus'])
-        self.equip_threshold  = int(defn.get('equip_threshold', 2))
+        self.slot                = defn['slot']
+        self.tier: int           = int(defn.get('tier', 1))
+        self.material: str       = defn.get('material', 'leather')
+        self.ac_bonus: int       = int(defn['ac_bonus'])
+        self.enchant_bonus: int  = int(defn.get('enchant_bonus', 0))
+        self.equip_threshold     = int(defn.get('equip_threshold', 2))
+        self.quiz_tier: int      = int(defn.get('quiz_tier', 1))
+        self.damage_resistances: dict = defn.get('damage_resistances', {})
+        self.can_be_cursed: bool = bool(defn.get('can_be_cursed', False))
+        self.cursed: bool        = False   # set at spawn time
 
 
 class Shield(Item):
     def __init__(self, defn: dict):
         super().__init__(defn)
-        self.ac_bonus: int   = int(defn['ac_bonus'])
-        self.equip_threshold = int(defn.get('equip_threshold', 2))
+        self.tier: int           = int(defn.get('tier', 1))
+        self.material: str       = defn.get('material', 'wood')
+        self.ac_bonus: int       = int(defn['ac_bonus'])
+        self.enchant_bonus: int  = int(defn.get('enchant_bonus', 0))
+        self.equip_threshold     = int(defn.get('equip_threshold', 2))
+        self.quiz_tier: int      = int(defn.get('quiz_tier', 1))
+        self.damage_resistances: dict = defn.get('damage_resistances', {})
+        self.can_be_cursed: bool = bool(defn.get('can_be_cursed', False))
+        self.cursed: bool        = False
 
 
 class Accessory(Item):

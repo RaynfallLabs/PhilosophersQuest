@@ -396,9 +396,9 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
     rng          = random.Random()
     ground_items = []
 
-    # ── Regular items (weapons/armor/accessories/wands/scrolls/ammo) — 33% per room ──
+    # ── Regular items (weapons/armor/shield/accessories/wands/scrolls/ammo) — 33% per room ──
     templates: list = []
-    for cls_name in ('weapon', 'armor', 'accessory', 'wand', 'scroll', 'ammo'):
+    for cls_name in ('weapon', 'armor', 'shield', 'accessory', 'wand', 'scroll', 'ammo'):
         try:
             templates += load_items(cls_name)
         except FileNotFoundError:
@@ -488,6 +488,11 @@ def _place_one(templates: list, room: 'Room', dungeon: 'Dungeon',
         # Re-roll ammo count at spawn time
         if hasattr(inst, 'count_min'):
             inst.count = rng.randint(inst.count_min, inst.count_max)
+        # Randomly curse armor/shield at spawn (10% chance if can_be_cursed)
+        if getattr(inst, 'can_be_cursed', False) and rng.random() < 0.10:
+            inst.cursed = True
+            # Cursed items often have negative enchantment
+            inst.enchant_bonus = rng.choice([-2, -1, -1, 0])
         inst.x = tx
         inst.y = ty
         ground_items.append(inst)
