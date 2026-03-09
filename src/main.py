@@ -38,6 +38,7 @@ STATE_CONFIRM_EXIT   = 'confirm_exit'
 STATE_VICTORY        = 'victory'
 STATE_DEAD           = 'dead'
 STATE_LOCKPICK       = 'lockpick'
+STATE_TARGET         = 'target'        # ranged targeting cursor
 
 
 class Game:
@@ -65,6 +66,11 @@ class Game:
         self.dungeon_level      = 1
         self.defeat_reason      = 'died'   # 'died' | 'starved' | 'fled'
         self._slow_skip         = False    # toggled each turn when slowed
+        # Targeting state (ranged attacks)
+        self.target_cursor_x    = 0        # world tile position of targeting cursor
+        self.target_cursor_y    = 0
+        self._target_candidates: list = [] # visible monsters sorted by distance
+        self._target_idx        = 0        # which candidate is selected
 
         self._new_level(1)
 
@@ -143,7 +149,7 @@ class Game:
             if self.state in (STATE_EQUIP_MENU, STATE_ACCESSORY_MENU,
                               STATE_WAND_MENU, STATE_SCROLL_MENU,
                               STATE_IDENTIFY_MENU, STATE_COOK_MENU,
-                              STATE_CONFIRM_EXIT):
+                              STATE_CONFIRM_EXIT, STATE_TARGET):
                 self.state = STATE_PLAYER
                 return True
             if self.state in (STATE_DEAD, STATE_VICTORY):
@@ -159,6 +165,8 @@ class Game:
                 self._ascend_stairs()
                 return True
             self._player_input(key)
+        elif self.state == STATE_TARGET:
+            self._target_input(key)
         elif self.state == STATE_QUIZ:
             self._quiz_input(key)
         elif self.state == STATE_EQUIP_MENU:
@@ -217,6 +225,9 @@ class Game:
             return
         if key == pygame.K_a:
             self._attack_container()
+            return
+        if key == pygame.K_f:
+            self._open_targeting()
             return
 
         if key not in self._MOVE_KEYS:
@@ -1529,6 +1540,164 @@ class Game:
         return item.name
 
     # ------------------------------------------------------------------
+    # Ranged targeting
+    # ------------------------------------------------------------------
+
+    def _open_targeting(self):
+        """Enter targeting mode for ranged attacks (f key)."""
+        weapon = self.player.weapon
+        if not weapon or not weapon.requires_ammo:
+            self.add_message("You have no ranged weapon equipped.", 'warning')
+            return
+
+        # Check ammo
+        ammo_type = weapon.requires_ammo
+        ammo_items = [i for i in self.player.inventory
+                      if getattr(i, 'ammo_type', None) == ammo_type]
+        if not ammo_items:
+            self.add_message(
+                f"You have no {ammo_type}s! Cannot fire the {weapon.name}.", 'warning'
+            )
+            return
+
+        # Build candidate list: visible alive monsters sorted by distance
+        px, py = self.player.x, self.player.y
+        from combat import can_ranged_attack
+        candidates = [
+            m for m in self.monsters
+            if m.alive and (m.x, m.y) in self.visible
+            and can_ranged_attack(self.player, m, self.dungeon)
+        ]
+        candidates.sort(key=lambda m: abs(m.x - px) + abs(m.y - py))
+
+        self._target_candidates = candidates
+        self._target_idx = 0
+
+        if candidates:
+            m = candidates[0]
+            self.target_cursor_x = m.x
+            self.target_cursor_y = m.y
+        else:
+            # No valid targets — cursor starts on player
+            self.target_cursor_x = px
+            self.target_cursor_y = py
+
+        self.state = STATE_TARGET
+        if candidates:
+            self.add_message(
+                f"Targeting with {weapon.name} — arrow keys to move, TAB to cycle, ENTER to fire, ESC to cancel.",
+                'info'
+            )
+        else:
+            self.add_message(
+                f"No targets in range for {weapon.name}. Move cursor with arrow keys, ENTER to fire, ESC to cancel.",
+                'info'
+            )
+
+    _TARGET_MOVE_KEYS = {
+        pygame.K_UP:    (0, -1), pygame.K_k: (0, -1),
+        pygame.K_DOWN:  (0,  1), pygame.K_j: (0,  1),
+        pygame.K_LEFT:  (-1, 0), pygame.K_h: (-1, 0),
+        pygame.K_RIGHT: (1,  0), pygame.K_l: (1,  0),
+        pygame.K_KP7:   (-1,-1), pygame.K_KP8: (0,-1), pygame.K_KP9: (1,-1),
+        pygame.K_KP4:   (-1, 0), pygame.K_KP6: (1, 0),
+        pygame.K_KP1:   (-1, 1), pygame.K_KP2: (0, 1), pygame.K_KP3: (1, 1),
+    }
+
+    def _target_input(self, key: int):
+        """Handle key input while in targeting mode."""
+        # TAB / t — cycle through valid monster targets
+        if key in (pygame.K_TAB, pygame.K_t) and self._target_candidates:
+            self._target_idx = (self._target_idx + 1) % len(self._target_candidates)
+            m = self._target_candidates[self._target_idx]
+            self.target_cursor_x = m.x
+            self.target_cursor_y = m.y
+            return
+
+        # Arrow / vi keys — free cursor movement
+        if key in self._TARGET_MOVE_KEYS:
+            dx, dy = self._TARGET_MOVE_KEYS[key]
+            self.target_cursor_x += dx
+            self.target_cursor_y += dy
+            # Clamp to dungeon bounds
+            self.target_cursor_x = max(0, min(self.target_cursor_x, self.dungeon.width - 1))
+            self.target_cursor_y = max(0, min(self.target_cursor_y, self.dungeon.height - 1))
+            return
+
+        # ENTER / SPACE / f — confirm shot
+        if key in (pygame.K_RETURN, pygame.K_KP_ENTER, pygame.K_SPACE, pygame.K_f):
+            # Find monster at cursor
+            target = next(
+                (m for m in self.monsters
+                 if m.alive and m.x == self.target_cursor_x and m.y == self.target_cursor_y),
+                None
+            )
+            self.state = STATE_PLAYER
+            if target:
+                from combat import can_ranged_attack
+                if can_ranged_attack(self.player, target, self.dungeon):
+                    self._fire_ranged(target)
+                else:
+                    self.add_message("No clear line of sight to that target.", 'warning')
+            else:
+                self.add_message("No target there — shot cancelled.", 'warning')
+
+    def _fire_ranged(self, monster):
+        """Consume one ammo and launch the math chain quiz for a ranged shot."""
+        weapon = self.player.weapon
+        ammo_type = weapon.requires_ammo
+
+        # Consume one ammo item from inventory
+        ammo_item = next(
+            (i for i in self.player.inventory
+             if getattr(i, 'ammo_type', None) == ammo_type),
+            None
+        )
+        if not ammo_item:
+            self.add_message(f"Out of {ammo_type}s!", 'warning')
+            return
+
+        # Decrement stack or remove
+        if getattr(ammo_item, 'count', 1) > 1:
+            ammo_item.count -= 1
+        else:
+            self.player.inventory.remove(ammo_item)
+
+        self.state = STATE_QUIZ
+        self.combat_target = monster
+        dist = max(abs(weapon.reach - (abs(monster.x - self.player.x) +
+                                        abs(monster.y - self.player.y))), 1)
+        self.quiz_title = (
+            f"FIRE {weapon.name.upper()} at {monster.name.upper()}  —  MATH CHAIN"
+        )
+
+        def on_complete(damage: int, killed: bool, chain: int, stunned: bool = False):
+            self.state = STATE_PLAYER
+            if chain == 0:
+                self.add_message(
+                    f"Your shot flies wide — you miss the {monster.name}!", 'warning'
+                )
+            else:
+                self.add_message(
+                    f"Chain x{chain}! Your {weapon.requires_ammo} strikes the {monster.name} for {damage} damage!",
+                    'success'
+                )
+                if killed:
+                    self.level_mgr.monsters_killed += 1
+                    self.add_message(f"The {monster.name} is slain!", 'success')
+                    self.ground_items.append(
+                        Corpse(
+                            monster.name, monster.kind, monster.x, monster.y,
+                            harvest_tier=monster.harvest_tier,
+                            harvest_threshold=monster.harvest_threshold,
+                            ingredient_id=monster.ingredient_id,
+                        )
+                    )
+            self._advance_turn()
+
+        player_attack(self.player, monster, self.quiz_engine, on_complete)
+
+    # ------------------------------------------------------------------
     # Combat
     # ------------------------------------------------------------------
 
@@ -1644,7 +1813,9 @@ class Game:
         self.msg_log.draw(self.screen, 0, GAME_H, GAME_W, MSG_H)
         self.sidebar.draw(self.player, self.dungeon_level, self.turn_count)
 
-        if self.state == STATE_QUIZ:
+        if self.state == STATE_TARGET:
+            self._draw_targeting(cam_x, cam_y)
+        elif self.state == STATE_QUIZ:
             self._draw_quiz()
         elif self.state == STATE_EQUIP_MENU:
             self._draw_equip_menu()
@@ -1673,6 +1844,95 @@ class Game:
         cam_x = max(0, min(cam_x, self.dungeon.width  - VIEWPORT_W))
         cam_y = max(0, min(cam_y, self.dungeon.height - VIEWPORT_H))
         return cam_x, cam_y
+
+    # ------------------------------------------------------------------
+    # Targeting overlay
+    # ------------------------------------------------------------------
+
+    def _draw_targeting(self, cam_x: int, cam_y: int):
+        """Draw trajectory line and cursor highlight for ranged targeting."""
+        from combat import _line_of_sight
+        T = TILE_SIZE
+        px, py = self.player.x, self.player.y
+        cx, cy = self.target_cursor_x, self.target_cursor_y
+
+        # Check LoS and whether there's a target at cursor
+        has_los = _line_of_sight(px, py, cx, cy, self.dungeon)
+        target_monster = next(
+            (m for m in self.monsters if m.alive and m.x == cx and m.y == cy), None
+        )
+        weapon = self.player.weapon
+        in_reach = weapon and (max(abs(cx - px), abs(cy - py)) <= weapon.reach)
+        valid_shot = has_los and in_reach and target_monster is not None
+
+        # Draw trajectory dots from player to cursor (skip player tile)
+        traj_surf = pygame.Surface((T, T), pygame.SRCALPHA)
+        dot_color = (255, 220, 60, 180) if valid_shot else (200, 80, 80, 160)
+        pygame.draw.circle(traj_surf, dot_color, (T // 2, T // 2), 4)
+
+        # Bresenham walk to draw trajectory
+        x0, y0, x1, y1 = px, py, cx, cy
+        dx, dy = abs(x1 - x0), abs(y1 - y0)
+        sx = 1 if x1 > x0 else -1
+        sy = 1 if y1 > y0 else -1
+        err = dx - dy
+        tx, ty = x0, y0
+        while True:
+            if (tx, ty) != (x0, y0) and (tx, ty) != (x1, y1):
+                scr_x = (tx - cam_x) * T
+                scr_y = (ty - cam_y) * T
+                if 0 <= scr_x < GAME_W and 0 <= scr_y < GAME_H:
+                    self.screen.blit(traj_surf, (scr_x, scr_y))
+            if tx == x1 and ty == y1:
+                break
+            e2 = 2 * err
+            if e2 > -dy:
+                err -= dy
+                tx += sx
+            if e2 < dx:
+                err += dx
+                ty += sy
+
+        # Highlight all valid target monsters in range
+        from combat import can_ranged_attack
+        for m in self._target_candidates:
+            scr_x = (m.x - cam_x) * T
+            scr_y = (m.y - cam_y) * T
+            if 0 <= scr_x < GAME_W and 0 <= scr_y < GAME_H:
+                hl = pygame.Surface((T, T), pygame.SRCALPHA)
+                hl.fill((255, 200, 0, 60))
+                self.screen.blit(hl, (scr_x, scr_y))
+                pygame.draw.rect(self.screen, (255, 200, 0),
+                                 (scr_x, scr_y, T, T), 1)
+
+        # Cursor highlight on target tile
+        scr_cx = (cx - cam_x) * T
+        scr_cy = (cy - cam_y) * T
+        if 0 <= scr_cx < GAME_W and 0 <= scr_cy < GAME_H:
+            cur_color = (80, 255, 80) if valid_shot else (255, 80, 80)
+            pygame.draw.rect(self.screen, cur_color,
+                             (scr_cx, scr_cy, T, T), 2)
+
+        # HUD label at bottom of game area
+        if valid_shot:
+            label = f"FIRE at {target_monster.name}  [ENTER=shoot  TAB=next  ESC=cancel]"
+            label_color = (80, 255, 80)
+        elif target_monster and not has_los:
+            label = f"No line of sight to {target_monster.name}  [ESC=cancel]"
+            label_color = (255, 80, 80)
+        elif not in_reach:
+            label = f"Out of range  [arrow keys to move cursor  ESC=cancel]"
+            label_color = (255, 160, 40)
+        else:
+            label = f"No target  [arrow keys to move  TAB=cycle targets  ESC=cancel]"
+            label_color = (200, 200, 200)
+
+        label_surf = self.font_sm.render(label, True, label_color)
+        label_bg = pygame.Surface((label_surf.get_width() + 16, label_surf.get_height() + 8),
+                                  pygame.SRCALPHA)
+        label_bg.fill((0, 0, 0, 180))
+        self.screen.blit(label_bg, (8, GAME_H - label_surf.get_height() - 16))
+        self.screen.blit(label_surf, (16, GAME_H - label_surf.get_height() - 12))
 
     # ------------------------------------------------------------------
     # Quiz modal
