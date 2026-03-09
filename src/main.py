@@ -1542,17 +1542,17 @@ class Game:
             self.player.status_effects['paralyzed'] = max(cur, 3)
             self.add_message("The floating eye's gaze paralyzes you!", 'danger')
 
-        def on_complete(damage: int, killed: bool, chain: int):
+        def on_complete(damage: int, killed: bool, chain: int, stunned: bool = False):
             self.state = STATE_PLAYER
             if chain == 0:
                 self.add_message(
                     f"You swing wildly at the {monster.name} and miss!", 'warning'
                 )
             else:
-                self.add_message(
-                    f"Chain x{chain}! You strike the {monster.name} for {damage} damage!",
-                    'success'
-                )
+                msg = f"Chain x{chain}! You strike the {monster.name} for {damage} damage!"
+                if stunned:
+                    msg += f" The {monster.name} is stunned!"
+                self.add_message(msg, 'success')
                 if killed:
                     self.level_mgr.monsters_killed += 1
                     self.add_message(f"The {monster.name} is slain!", 'success')

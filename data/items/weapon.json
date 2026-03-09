@@ -1,35 +1,2617 @@
 {
-  "rusty_dagger": {
-    "name": "rusty dagger",
+  "iron_sword": {
+    "name": "iron sword",
+    "class": "sword",
+    "variant": "1h",
+    "tier": 1,
+    "material": "iron",
+    "mathTier": 1,
+    "baseDamage": 6,
+    "chainMultipliers": [
+      1.0,
+      2.0,
+      4.0,
+      6.0,
+      8.0,
+      10.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash",
+      "pierce"
+    ],
     "symbol": ")",
-    "color": [160, 160, 170],
-    "weight": 1.0,
-    "min_level": 1,
-    "damage": "1d4",
-    "chain_multipliers": [0.5, 1.0, 1.5, 2.0, 2.5],
-    "max_chain_length": 5,
-    "quiz_tier": 1
+    "color": [
+      200,
+      210,
+      230
+    ],
+    "weight": 3,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 100,
+      "21-40": 60,
+      "41-60": 20,
+      "61-80": 5,
+      "81-100": 2
+    },
+    "containerLootTier": "common",
+    "value": 50,
+    "min_level": 1
   },
-  "short_sword": {
-    "name": "short sword",
+  "iron_longsword": {
+    "name": "iron longsword",
+    "class": "sword",
+    "variant": "2h",
+    "tier": 1,
+    "material": "iron",
+    "mathTier": 1,
+    "baseDamage": 9,
+    "chainMultipliers": [
+      1.0,
+      2.0,
+      4.0,
+      6.0,
+      8.0,
+      10.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash",
+      "pierce"
+    ],
     "symbol": ")",
-    "color": [200, 210, 230],
-    "weight": 2.0,
-    "min_level": 1,
-    "damage": "1d6",
-    "chain_multipliers": [1.0, 1.5, 2.0, 2.5, 3.0],
-    "max_chain_length": 5,
-    "quiz_tier": 1
+    "color": [
+      180,
+      195,
+      220
+    ],
+    "weight": 5,
+    "twoHanded": true,
+    "reach": 1,
+    "stunChance": 0.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 100,
+      "21-40": 60,
+      "41-60": 20,
+      "61-80": 5,
+      "81-100": 2
+    },
+    "containerLootTier": "common",
+    "value": 70,
+    "min_level": 1
   },
-  "iron_mace": {
-    "name": "iron mace",
+  "steel_sword": {
+    "name": "steel sword",
+    "class": "sword",
+    "variant": "1h",
+    "tier": 2,
+    "material": "steel",
+    "mathTier": 2,
+    "baseDamage": 8,
+    "chainMultipliers": [
+      1.0,
+      2.0,
+      4.0,
+      6.0,
+      8.0,
+      10.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash",
+      "pierce"
+    ],
     "symbol": ")",
-    "color": [140, 130, 120],
-    "weight": 4.0,
-    "min_level": 2,
-    "damage": "1d8",
-    "chain_multipliers": [1.0, 1.5, 2.0, 3.0, 4.0],
-    "max_chain_length": 5,
-    "quiz_tier": 2
+    "color": [
+      200,
+      210,
+      230
+    ],
+    "weight": 3,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 20,
+      "21-40": 100,
+      "41-60": 60,
+      "61-80": 20,
+      "81-100": 5
+    },
+    "containerLootTier": "uncommon",
+    "value": 150,
+    "min_level": 21
+  },
+  "steel_longsword": {
+    "name": "steel longsword",
+    "class": "sword",
+    "variant": "2h",
+    "tier": 2,
+    "material": "steel",
+    "mathTier": 2,
+    "baseDamage": 12,
+    "chainMultipliers": [
+      1.0,
+      2.0,
+      4.0,
+      6.0,
+      8.0,
+      10.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash",
+      "pierce"
+    ],
+    "symbol": ")",
+    "color": [
+      180,
+      195,
+      220
+    ],
+    "weight": 5,
+    "twoHanded": true,
+    "reach": 1,
+    "stunChance": 0.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 20,
+      "21-40": 100,
+      "41-60": 60,
+      "61-80": 20,
+      "81-100": 5
+    },
+    "containerLootTier": "uncommon",
+    "value": 210,
+    "min_level": 21
+  },
+  "hardened_gold_sword": {
+    "name": "hardened gold sword",
+    "class": "sword",
+    "variant": "1h",
+    "tier": 3,
+    "material": "hardened gold",
+    "mathTier": 3,
+    "baseDamage": 10,
+    "chainMultipliers": [
+      1.0,
+      2.0,
+      4.0,
+      6.0,
+      8.0,
+      10.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash",
+      "pierce"
+    ],
+    "symbol": ")",
+    "color": [
+      200,
+      210,
+      230
+    ],
+    "weight": 3,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 5,
+      "21-40": 20,
+      "41-60": 100,
+      "61-80": 60,
+      "81-100": 20
+    },
+    "containerLootTier": "rare",
+    "value": 400,
+    "min_level": 41
+  },
+  "hardened_gold_longsword": {
+    "name": "hardened gold longsword",
+    "class": "sword",
+    "variant": "2h",
+    "tier": 3,
+    "material": "hardened gold",
+    "mathTier": 3,
+    "baseDamage": 15,
+    "chainMultipliers": [
+      1.0,
+      2.0,
+      4.0,
+      6.0,
+      8.0,
+      10.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash",
+      "pierce"
+    ],
+    "symbol": ")",
+    "color": [
+      180,
+      195,
+      220
+    ],
+    "weight": 5,
+    "twoHanded": true,
+    "reach": 1,
+    "stunChance": 0.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 5,
+      "21-40": 20,
+      "41-60": 100,
+      "61-80": 60,
+      "81-100": 20
+    },
+    "containerLootTier": "rare",
+    "value": 560,
+    "min_level": 41
+  },
+  "diamond_sword": {
+    "name": "diamond sword",
+    "class": "sword",
+    "variant": "1h",
+    "tier": 4,
+    "material": "diamond",
+    "mathTier": 4,
+    "baseDamage": 12,
+    "chainMultipliers": [
+      1.0,
+      2.0,
+      4.0,
+      6.0,
+      8.0,
+      10.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash",
+      "pierce"
+    ],
+    "symbol": ")",
+    "color": [
+      200,
+      210,
+      230
+    ],
+    "weight": 3,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 1,
+      "21-40": 5,
+      "41-60": 20,
+      "61-80": 100,
+      "81-100": 60
+    },
+    "containerLootTier": "very_rare",
+    "value": 1000,
+    "min_level": 61
+  },
+  "diamond_longsword": {
+    "name": "diamond longsword",
+    "class": "sword",
+    "variant": "2h",
+    "tier": 4,
+    "material": "diamond",
+    "mathTier": 4,
+    "baseDamage": 18,
+    "chainMultipliers": [
+      1.0,
+      2.0,
+      4.0,
+      6.0,
+      8.0,
+      10.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash",
+      "pierce"
+    ],
+    "symbol": ")",
+    "color": [
+      180,
+      195,
+      220
+    ],
+    "weight": 5,
+    "twoHanded": true,
+    "reach": 1,
+    "stunChance": 0.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 1,
+      "21-40": 5,
+      "41-60": 20,
+      "61-80": 100,
+      "81-100": 60
+    },
+    "containerLootTier": "very_rare",
+    "value": 1400,
+    "min_level": 61
+  },
+  "adamantine_sword": {
+    "name": "adamantine sword",
+    "class": "sword",
+    "variant": "1h",
+    "tier": 5,
+    "material": "adamantine",
+    "mathTier": 5,
+    "baseDamage": 15,
+    "chainMultipliers": [
+      1.0,
+      2.0,
+      4.0,
+      6.0,
+      8.0,
+      10.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash",
+      "pierce"
+    ],
+    "symbol": ")",
+    "color": [
+      200,
+      210,
+      230
+    ],
+    "weight": 3,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 1,
+      "41-60": 5,
+      "61-80": 20,
+      "81-100": 100
+    },
+    "containerLootTier": "legendary",
+    "value": 3000,
+    "min_level": 81
+  },
+  "adamantine_longsword": {
+    "name": "adamantine longsword",
+    "class": "sword",
+    "variant": "2h",
+    "tier": 5,
+    "material": "adamantine",
+    "mathTier": 5,
+    "baseDamage": 22,
+    "chainMultipliers": [
+      1.0,
+      2.0,
+      4.0,
+      6.0,
+      8.0,
+      10.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash",
+      "pierce"
+    ],
+    "symbol": ")",
+    "color": [
+      180,
+      195,
+      220
+    ],
+    "weight": 5,
+    "twoHanded": true,
+    "reach": 1,
+    "stunChance": 0.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 1,
+      "41-60": 5,
+      "61-80": 20,
+      "81-100": 100
+    },
+    "containerLootTier": "legendary",
+    "value": 4200,
+    "min_level": 81
+  },
+  "iron_dagger": {
+    "name": "iron dagger",
+    "class": "dagger",
+    "variant": "1h",
+    "tier": 1,
+    "material": "iron",
+    "mathTier": 1,
+    "baseDamage": 3,
+    "chainMultipliers": [
+      0.0,
+      1.0,
+      2.0,
+      4.0,
+      8.0,
+      16.0,
+      32.0
+    ],
+    "maxChainLength": 7,
+    "damageTypes": [
+      "pierce"
+    ],
+    "symbol": ")",
+    "color": [
+      220,
+      220,
+      200
+    ],
+    "weight": 1,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 100,
+      "21-40": 60,
+      "41-60": 20,
+      "61-80": 5,
+      "81-100": 2
+    },
+    "containerLootTier": "common",
+    "value": 30,
+    "min_level": 1
+  },
+  "steel_dagger": {
+    "name": "steel dagger",
+    "class": "dagger",
+    "variant": "1h",
+    "tier": 2,
+    "material": "steel",
+    "mathTier": 2,
+    "baseDamage": 4,
+    "chainMultipliers": [
+      0.0,
+      1.0,
+      2.0,
+      4.0,
+      8.0,
+      16.0,
+      32.0
+    ],
+    "maxChainLength": 7,
+    "damageTypes": [
+      "pierce"
+    ],
+    "symbol": ")",
+    "color": [
+      220,
+      220,
+      200
+    ],
+    "weight": 1,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 20,
+      "21-40": 100,
+      "41-60": 60,
+      "61-80": 20,
+      "81-100": 5
+    },
+    "containerLootTier": "uncommon",
+    "value": 90,
+    "min_level": 21
+  },
+  "hardened_gold_dagger": {
+    "name": "hardened gold dagger",
+    "class": "dagger",
+    "variant": "1h",
+    "tier": 3,
+    "material": "hardened gold",
+    "mathTier": 3,
+    "baseDamage": 5,
+    "chainMultipliers": [
+      0.0,
+      1.0,
+      2.0,
+      4.0,
+      8.0,
+      16.0,
+      32.0
+    ],
+    "maxChainLength": 7,
+    "damageTypes": [
+      "pierce"
+    ],
+    "symbol": ")",
+    "color": [
+      220,
+      220,
+      200
+    ],
+    "weight": 1,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 5,
+      "21-40": 20,
+      "41-60": 100,
+      "61-80": 60,
+      "81-100": 20
+    },
+    "containerLootTier": "rare",
+    "value": 240,
+    "min_level": 41
+  },
+  "diamond_dagger": {
+    "name": "diamond dagger",
+    "class": "dagger",
+    "variant": "1h",
+    "tier": 4,
+    "material": "diamond",
+    "mathTier": 4,
+    "baseDamage": 6,
+    "chainMultipliers": [
+      0.0,
+      1.0,
+      2.0,
+      4.0,
+      8.0,
+      16.0,
+      32.0
+    ],
+    "maxChainLength": 7,
+    "damageTypes": [
+      "pierce"
+    ],
+    "symbol": ")",
+    "color": [
+      220,
+      220,
+      200
+    ],
+    "weight": 1,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 1,
+      "21-40": 5,
+      "41-60": 20,
+      "61-80": 100,
+      "81-100": 60
+    },
+    "containerLootTier": "very_rare",
+    "value": 600,
+    "min_level": 61
+  },
+  "adamantine_dagger": {
+    "name": "adamantine dagger",
+    "class": "dagger",
+    "variant": "1h",
+    "tier": 5,
+    "material": "adamantine",
+    "mathTier": 5,
+    "baseDamage": 8,
+    "chainMultipliers": [
+      0.0,
+      1.0,
+      2.0,
+      4.0,
+      8.0,
+      16.0,
+      32.0
+    ],
+    "maxChainLength": 7,
+    "damageTypes": [
+      "pierce"
+    ],
+    "symbol": ")",
+    "color": [
+      220,
+      220,
+      200
+    ],
+    "weight": 1,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 1,
+      "41-60": 5,
+      "61-80": 20,
+      "81-100": 100
+    },
+    "containerLootTier": "legendary",
+    "value": 1800,
+    "min_level": 81
+  },
+  "iron_axe": {
+    "name": "iron axe",
+    "class": "axe",
+    "variant": "1h",
+    "tier": 1,
+    "material": "iron",
+    "mathTier": 1,
+    "baseDamage": 8,
+    "chainMultipliers": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash"
+    ],
+    "symbol": ")",
+    "color": [
+      180,
+      140,
+      100
+    ],
+    "weight": 5,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 100,
+      "21-40": 60,
+      "41-60": 20,
+      "61-80": 5,
+      "81-100": 2
+    },
+    "containerLootTier": "common",
+    "value": 55,
+    "min_level": 1
+  },
+  "iron_greataxe": {
+    "name": "iron greataxe",
+    "class": "axe",
+    "variant": "2h",
+    "tier": 1,
+    "material": "iron",
+    "mathTier": 1,
+    "baseDamage": 12,
+    "chainMultipliers": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash"
+    ],
+    "symbol": ")",
+    "color": [
+      160,
+      120,
+      80
+    ],
+    "weight": 8,
+    "twoHanded": true,
+    "reach": 1,
+    "stunChance": 0.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 100,
+      "21-40": 60,
+      "41-60": 20,
+      "61-80": 5,
+      "81-100": 2
+    },
+    "containerLootTier": "common",
+    "value": 80,
+    "min_level": 1
+  },
+  "steel_axe": {
+    "name": "steel axe",
+    "class": "axe",
+    "variant": "1h",
+    "tier": 2,
+    "material": "steel",
+    "mathTier": 2,
+    "baseDamage": 10,
+    "chainMultipliers": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash"
+    ],
+    "symbol": ")",
+    "color": [
+      180,
+      140,
+      100
+    ],
+    "weight": 5,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 20,
+      "21-40": 100,
+      "41-60": 60,
+      "61-80": 20,
+      "81-100": 5
+    },
+    "containerLootTier": "uncommon",
+    "value": 165,
+    "min_level": 21
+  },
+  "steel_greataxe": {
+    "name": "steel greataxe",
+    "class": "axe",
+    "variant": "2h",
+    "tier": 2,
+    "material": "steel",
+    "mathTier": 2,
+    "baseDamage": 15,
+    "chainMultipliers": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash"
+    ],
+    "symbol": ")",
+    "color": [
+      160,
+      120,
+      80
+    ],
+    "weight": 8,
+    "twoHanded": true,
+    "reach": 1,
+    "stunChance": 0.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 20,
+      "21-40": 100,
+      "41-60": 60,
+      "61-80": 20,
+      "81-100": 5
+    },
+    "containerLootTier": "uncommon",
+    "value": 240,
+    "min_level": 21
+  },
+  "hardened_gold_axe": {
+    "name": "hardened gold axe",
+    "class": "axe",
+    "variant": "1h",
+    "tier": 3,
+    "material": "hardened gold",
+    "mathTier": 3,
+    "baseDamage": 12,
+    "chainMultipliers": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash"
+    ],
+    "symbol": ")",
+    "color": [
+      180,
+      140,
+      100
+    ],
+    "weight": 5,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 5,
+      "21-40": 20,
+      "41-60": 100,
+      "61-80": 60,
+      "81-100": 20
+    },
+    "containerLootTier": "rare",
+    "value": 440,
+    "min_level": 41
+  },
+  "hardened_gold_greataxe": {
+    "name": "hardened gold greataxe",
+    "class": "axe",
+    "variant": "2h",
+    "tier": 3,
+    "material": "hardened gold",
+    "mathTier": 3,
+    "baseDamage": 18,
+    "chainMultipliers": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash"
+    ],
+    "symbol": ")",
+    "color": [
+      160,
+      120,
+      80
+    ],
+    "weight": 8,
+    "twoHanded": true,
+    "reach": 1,
+    "stunChance": 0.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 5,
+      "21-40": 20,
+      "41-60": 100,
+      "61-80": 60,
+      "81-100": 20
+    },
+    "containerLootTier": "rare",
+    "value": 640,
+    "min_level": 41
+  },
+  "diamond_axe": {
+    "name": "diamond axe",
+    "class": "axe",
+    "variant": "1h",
+    "tier": 4,
+    "material": "diamond",
+    "mathTier": 4,
+    "baseDamage": 15,
+    "chainMultipliers": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash"
+    ],
+    "symbol": ")",
+    "color": [
+      180,
+      140,
+      100
+    ],
+    "weight": 5,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 1,
+      "21-40": 5,
+      "41-60": 20,
+      "61-80": 100,
+      "81-100": 60
+    },
+    "containerLootTier": "very_rare",
+    "value": 1100,
+    "min_level": 61
+  },
+  "diamond_greataxe": {
+    "name": "diamond greataxe",
+    "class": "axe",
+    "variant": "2h",
+    "tier": 4,
+    "material": "diamond",
+    "mathTier": 4,
+    "baseDamage": 22,
+    "chainMultipliers": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash"
+    ],
+    "symbol": ")",
+    "color": [
+      160,
+      120,
+      80
+    ],
+    "weight": 8,
+    "twoHanded": true,
+    "reach": 1,
+    "stunChance": 0.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 1,
+      "21-40": 5,
+      "41-60": 20,
+      "61-80": 100,
+      "81-100": 60
+    },
+    "containerLootTier": "very_rare",
+    "value": 1600,
+    "min_level": 61
+  },
+  "adamantine_axe": {
+    "name": "adamantine axe",
+    "class": "axe",
+    "variant": "1h",
+    "tier": 5,
+    "material": "adamantine",
+    "mathTier": 5,
+    "baseDamage": 18,
+    "chainMultipliers": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash"
+    ],
+    "symbol": ")",
+    "color": [
+      180,
+      140,
+      100
+    ],
+    "weight": 5,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 1,
+      "41-60": 5,
+      "61-80": 20,
+      "81-100": 100
+    },
+    "containerLootTier": "legendary",
+    "value": 3300,
+    "min_level": 81
+  },
+  "adamantine_greataxe": {
+    "name": "adamantine greataxe",
+    "class": "axe",
+    "variant": "2h",
+    "tier": 5,
+    "material": "adamantine",
+    "mathTier": 5,
+    "baseDamage": 27,
+    "chainMultipliers": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash"
+    ],
+    "symbol": ")",
+    "color": [
+      160,
+      120,
+      80
+    ],
+    "weight": 8,
+    "twoHanded": true,
+    "reach": 1,
+    "stunChance": 0.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 1,
+      "41-60": 5,
+      "61-80": 20,
+      "81-100": 100
+    },
+    "containerLootTier": "legendary",
+    "value": 4800,
+    "min_level": 81
+  },
+  "wood_club": {
+    "name": "wood club",
+    "class": "club",
+    "variant": "1h",
+    "tier": 1,
+    "material": "wood",
+    "mathTier": 1,
+    "baseDamage": 5,
+    "chainMultipliers": [
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0
+    ],
+    "maxChainLength": 5,
+    "damageTypes": [
+      "blunt"
+    ],
+    "symbol": ")",
+    "color": [
+      150,
+      120,
+      80
+    ],
+    "weight": 4,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 100,
+      "21-40": 60,
+      "41-60": 20,
+      "61-80": 5,
+      "81-100": 2
+    },
+    "containerLootTier": "common",
+    "value": 40,
+    "min_level": 1
+  },
+  "wood_hammer": {
+    "name": "wood hammer",
+    "class": "club",
+    "variant": "1h",
+    "tier": 1,
+    "material": "wood",
+    "mathTier": 1,
+    "baseDamage": 6,
+    "chainMultipliers": [
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0
+    ],
+    "maxChainLength": 5,
+    "damageTypes": [
+      "blunt"
+    ],
+    "symbol": ")",
+    "color": [
+      140,
+      130,
+      120
+    ],
+    "weight": 5,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 100,
+      "21-40": 60,
+      "41-60": 20,
+      "61-80": 5,
+      "81-100": 2
+    },
+    "containerLootTier": "common",
+    "value": 45,
+    "min_level": 1
+  },
+  "hardwood_club": {
+    "name": "hardwood club",
+    "class": "club",
+    "variant": "1h",
+    "tier": 2,
+    "material": "hardwood",
+    "mathTier": 2,
+    "baseDamage": 7,
+    "chainMultipliers": [
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0
+    ],
+    "maxChainLength": 5,
+    "damageTypes": [
+      "blunt"
+    ],
+    "symbol": ")",
+    "color": [
+      150,
+      120,
+      80
+    ],
+    "weight": 4,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 20,
+      "21-40": 100,
+      "41-60": 60,
+      "61-80": 20,
+      "81-100": 5
+    },
+    "containerLootTier": "uncommon",
+    "value": 120,
+    "min_level": 21
+  },
+  "hardwood_hammer": {
+    "name": "hardwood hammer",
+    "class": "club",
+    "variant": "1h",
+    "tier": 2,
+    "material": "hardwood",
+    "mathTier": 2,
+    "baseDamage": 8,
+    "chainMultipliers": [
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0
+    ],
+    "maxChainLength": 5,
+    "damageTypes": [
+      "blunt"
+    ],
+    "symbol": ")",
+    "color": [
+      140,
+      130,
+      120
+    ],
+    "weight": 5,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 20,
+      "21-40": 100,
+      "41-60": 60,
+      "61-80": 20,
+      "81-100": 5
+    },
+    "containerLootTier": "uncommon",
+    "value": 135,
+    "min_level": 21
+  },
+  "ironwood_club": {
+    "name": "ironwood club",
+    "class": "club",
+    "variant": "1h",
+    "tier": 3,
+    "material": "ironwood",
+    "mathTier": 3,
+    "baseDamage": 9,
+    "chainMultipliers": [
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0
+    ],
+    "maxChainLength": 5,
+    "damageTypes": [
+      "blunt"
+    ],
+    "symbol": ")",
+    "color": [
+      150,
+      120,
+      80
+    ],
+    "weight": 4,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 5,
+      "21-40": 20,
+      "41-60": 100,
+      "61-80": 60,
+      "81-100": 20
+    },
+    "containerLootTier": "rare",
+    "value": 320,
+    "min_level": 41
+  },
+  "ironwood_hammer": {
+    "name": "ironwood hammer",
+    "class": "club",
+    "variant": "1h",
+    "tier": 3,
+    "material": "ironwood",
+    "mathTier": 3,
+    "baseDamage": 10,
+    "chainMultipliers": [
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0
+    ],
+    "maxChainLength": 5,
+    "damageTypes": [
+      "blunt"
+    ],
+    "symbol": ")",
+    "color": [
+      140,
+      130,
+      120
+    ],
+    "weight": 5,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 5,
+      "21-40": 20,
+      "41-60": 100,
+      "61-80": 60,
+      "81-100": 20
+    },
+    "containerLootTier": "rare",
+    "value": 360,
+    "min_level": 41
+  },
+  "diamond_club": {
+    "name": "diamond club",
+    "class": "club",
+    "variant": "1h",
+    "tier": 4,
+    "material": "diamond",
+    "mathTier": 4,
+    "baseDamage": 11,
+    "chainMultipliers": [
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0
+    ],
+    "maxChainLength": 5,
+    "damageTypes": [
+      "blunt"
+    ],
+    "symbol": ")",
+    "color": [
+      150,
+      120,
+      80
+    ],
+    "weight": 4,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 1,
+      "21-40": 5,
+      "41-60": 20,
+      "61-80": 100,
+      "81-100": 60
+    },
+    "containerLootTier": "very_rare",
+    "value": 800,
+    "min_level": 61
+  },
+  "diamond_hammer": {
+    "name": "diamond hammer",
+    "class": "club",
+    "variant": "1h",
+    "tier": 4,
+    "material": "diamond",
+    "mathTier": 4,
+    "baseDamage": 12,
+    "chainMultipliers": [
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0
+    ],
+    "maxChainLength": 5,
+    "damageTypes": [
+      "blunt"
+    ],
+    "symbol": ")",
+    "color": [
+      140,
+      130,
+      120
+    ],
+    "weight": 5,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 1,
+      "21-40": 5,
+      "41-60": 20,
+      "61-80": 100,
+      "81-100": 60
+    },
+    "containerLootTier": "very_rare",
+    "value": 900,
+    "min_level": 61
+  },
+  "dragonbone_club": {
+    "name": "dragonbone club",
+    "class": "club",
+    "variant": "1h",
+    "tier": 5,
+    "material": "dragonbone",
+    "mathTier": 5,
+    "baseDamage": 14,
+    "chainMultipliers": [
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0
+    ],
+    "maxChainLength": 5,
+    "damageTypes": [
+      "blunt"
+    ],
+    "symbol": ")",
+    "color": [
+      150,
+      120,
+      80
+    ],
+    "weight": 4,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 1,
+      "41-60": 5,
+      "61-80": 20,
+      "81-100": 100
+    },
+    "containerLootTier": "legendary",
+    "value": 2400,
+    "min_level": 81
+  },
+  "dragonbone_hammer": {
+    "name": "dragonbone hammer",
+    "class": "club",
+    "variant": "1h",
+    "tier": 5,
+    "material": "dragonbone",
+    "mathTier": 5,
+    "baseDamage": 16,
+    "chainMultipliers": [
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0
+    ],
+    "maxChainLength": 5,
+    "damageTypes": [
+      "blunt"
+    ],
+    "symbol": ")",
+    "color": [
+      140,
+      130,
+      120
+    ],
+    "weight": 5,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 1,
+      "41-60": 5,
+      "61-80": 20,
+      "81-100": 100
+    },
+    "containerLootTier": "legendary",
+    "value": 2700,
+    "min_level": 81
+  },
+  "wood_staff": {
+    "name": "wood staff",
+    "class": "staff",
+    "variant": "2h",
+    "tier": 1,
+    "material": "wood",
+    "mathTier": 1,
+    "baseDamage": 5,
+    "chainMultipliers": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "blunt"
+    ],
+    "symbol": "/",
+    "color": [
+      140,
+      110,
+      70
+    ],
+    "weight": 4,
+    "twoHanded": true,
+    "reach": 2,
+    "stunChance": 0.1,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 100,
+      "21-40": 60,
+      "41-60": 20,
+      "61-80": 5,
+      "81-100": 2
+    },
+    "containerLootTier": "common",
+    "value": 60,
+    "min_level": 1
+  },
+  "hardwood_staff": {
+    "name": "hardwood staff",
+    "class": "staff",
+    "variant": "2h",
+    "tier": 2,
+    "material": "hardwood",
+    "mathTier": 2,
+    "baseDamage": 7,
+    "chainMultipliers": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "blunt"
+    ],
+    "symbol": "/",
+    "color": [
+      140,
+      110,
+      70
+    ],
+    "weight": 4,
+    "twoHanded": true,
+    "reach": 2,
+    "stunChance": 0.12,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 20,
+      "21-40": 100,
+      "41-60": 60,
+      "61-80": 20,
+      "81-100": 5
+    },
+    "containerLootTier": "uncommon",
+    "value": 180,
+    "min_level": 21
+  },
+  "ironwood_staff": {
+    "name": "ironwood staff",
+    "class": "staff",
+    "variant": "2h",
+    "tier": 3,
+    "material": "ironwood",
+    "mathTier": 3,
+    "baseDamage": 9,
+    "chainMultipliers": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "blunt"
+    ],
+    "symbol": "/",
+    "color": [
+      140,
+      110,
+      70
+    ],
+    "weight": 4,
+    "twoHanded": true,
+    "reach": 2,
+    "stunChance": 0.15,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 5,
+      "21-40": 20,
+      "41-60": 100,
+      "61-80": 60,
+      "81-100": 20
+    },
+    "containerLootTier": "rare",
+    "value": 480,
+    "min_level": 41
+  },
+  "diamond_staff": {
+    "name": "diamond staff",
+    "class": "staff",
+    "variant": "2h",
+    "tier": 4,
+    "material": "diamond",
+    "mathTier": 4,
+    "baseDamage": 11,
+    "chainMultipliers": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "blunt"
+    ],
+    "symbol": "/",
+    "color": [
+      140,
+      110,
+      70
+    ],
+    "weight": 4,
+    "twoHanded": true,
+    "reach": 2,
+    "stunChance": 0.18,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 1,
+      "21-40": 5,
+      "41-60": 20,
+      "61-80": 100,
+      "81-100": 60
+    },
+    "containerLootTier": "very_rare",
+    "value": 1200,
+    "min_level": 61
+  },
+  "dragonbone_staff": {
+    "name": "dragonbone staff",
+    "class": "staff",
+    "variant": "2h",
+    "tier": 5,
+    "material": "dragonbone",
+    "mathTier": 5,
+    "baseDamage": 14,
+    "chainMultipliers": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "blunt"
+    ],
+    "symbol": "/",
+    "color": [
+      140,
+      110,
+      70
+    ],
+    "weight": 4,
+    "twoHanded": true,
+    "reach": 2,
+    "stunChance": 0.2,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 1,
+      "41-60": 5,
+      "61-80": 20,
+      "81-100": 100
+    },
+    "containerLootTier": "legendary",
+    "value": 3600,
+    "min_level": 81
+  },
+  "iron_spear": {
+    "name": "iron spear",
+    "class": "polearm",
+    "variant": "2h",
+    "tier": 1,
+    "material": "iron",
+    "mathTier": 1,
+    "baseDamage": 7,
+    "chainMultipliers": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "pierce"
+    ],
+    "symbol": "/",
+    "color": [
+      180,
+      180,
+      200
+    ],
+    "weight": 6,
+    "twoHanded": true,
+    "reach": 2,
+    "stunChance": 0.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 100,
+      "21-40": 60,
+      "41-60": 20,
+      "61-80": 5,
+      "81-100": 2
+    },
+    "containerLootTier": "common",
+    "value": 50,
+    "min_level": 1
+  },
+  "steel_spear": {
+    "name": "steel spear",
+    "class": "polearm",
+    "variant": "2h",
+    "tier": 2,
+    "material": "steel",
+    "mathTier": 2,
+    "baseDamage": 9,
+    "chainMultipliers": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "pierce"
+    ],
+    "symbol": "/",
+    "color": [
+      190,
+      200,
+      210
+    ],
+    "weight": 6,
+    "twoHanded": true,
+    "reach": 2,
+    "stunChance": 0.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 20,
+      "21-40": 100,
+      "41-60": 60,
+      "61-80": 20,
+      "81-100": 5
+    },
+    "containerLootTier": "uncommon",
+    "value": 150,
+    "min_level": 21
+  },
+  "steel_glaive": {
+    "name": "steel glaive",
+    "class": "polearm",
+    "variant": "2h",
+    "tier": 2,
+    "material": "steel",
+    "mathTier": 2,
+    "baseDamage": 10,
+    "chainMultipliers": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash",
+      "pierce"
+    ],
+    "symbol": "/",
+    "color": [
+      180,
+      190,
+      200
+    ],
+    "weight": 6,
+    "twoHanded": true,
+    "reach": 2,
+    "stunChance": 0.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 20,
+      "21-40": 100,
+      "41-60": 60,
+      "61-80": 20,
+      "81-100": 5
+    },
+    "containerLootTier": "uncommon",
+    "value": 180,
+    "min_level": 21
+  },
+  "hardened_gold_glaive": {
+    "name": "hardened gold glaive",
+    "class": "polearm",
+    "variant": "2h",
+    "tier": 3,
+    "material": "hardened gold",
+    "mathTier": 3,
+    "baseDamage": 12,
+    "chainMultipliers": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash",
+      "pierce"
+    ],
+    "symbol": "/",
+    "color": [
+      210,
+      190,
+      100
+    ],
+    "weight": 6,
+    "twoHanded": true,
+    "reach": 2,
+    "stunChance": 0.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 5,
+      "21-40": 20,
+      "41-60": 100,
+      "61-80": 60,
+      "81-100": 20
+    },
+    "containerLootTier": "rare",
+    "value": 480,
+    "min_level": 41
+  },
+  "hardened_gold_halberd": {
+    "name": "hardened gold halberd",
+    "class": "polearm",
+    "variant": "2h",
+    "tier": 3,
+    "material": "hardened gold",
+    "mathTier": 3,
+    "baseDamage": 14,
+    "chainMultipliers": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash",
+      "pierce"
+    ],
+    "symbol": "/",
+    "color": [
+      200,
+      180,
+      90
+    ],
+    "weight": 6,
+    "twoHanded": true,
+    "reach": 2,
+    "stunChance": 0.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 5,
+      "21-40": 20,
+      "41-60": 100,
+      "61-80": 60,
+      "81-100": 20
+    },
+    "containerLootTier": "rare",
+    "value": 600,
+    "min_level": 41
+  },
+  "diamond_halberd": {
+    "name": "diamond halberd",
+    "class": "polearm",
+    "variant": "2h",
+    "tier": 4,
+    "material": "diamond",
+    "mathTier": 4,
+    "baseDamage": 17,
+    "chainMultipliers": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash",
+      "pierce"
+    ],
+    "symbol": "/",
+    "color": [
+      160,
+      220,
+      255
+    ],
+    "weight": 6,
+    "twoHanded": true,
+    "reach": 2,
+    "stunChance": 0.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 1,
+      "21-40": 5,
+      "41-60": 20,
+      "61-80": 100,
+      "81-100": 60
+    },
+    "containerLootTier": "very_rare",
+    "value": 1500,
+    "min_level": 61
+  },
+  "adamantine_halberd": {
+    "name": "adamantine halberd",
+    "class": "polearm",
+    "variant": "2h",
+    "tier": 5,
+    "material": "adamantine",
+    "mathTier": 5,
+    "baseDamage": 21,
+    "chainMultipliers": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash",
+      "pierce"
+    ],
+    "symbol": "/",
+    "color": [
+      120,
+      200,
+      160
+    ],
+    "weight": 6,
+    "twoHanded": true,
+    "reach": 2,
+    "stunChance": 0.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 1,
+      "41-60": 5,
+      "61-80": 20,
+      "81-100": 100
+    },
+    "containerLootTier": "legendary",
+    "value": 4500,
+    "min_level": 81
+  },
+  "adamantine_glaive": {
+    "name": "adamantine glaive",
+    "class": "polearm",
+    "variant": "2h",
+    "tier": 5,
+    "material": "adamantine",
+    "mathTier": 5,
+    "baseDamage": 20,
+    "chainMultipliers": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash",
+      "pierce"
+    ],
+    "symbol": "/",
+    "color": [
+      110,
+      190,
+      150
+    ],
+    "weight": 6,
+    "twoHanded": true,
+    "reach": 2,
+    "stunChance": 0.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 1,
+      "41-60": 5,
+      "61-80": 20,
+      "81-100": 100
+    },
+    "containerLootTier": "legendary",
+    "value": 4200,
+    "min_level": 81
+  },
+  "wood_shortbow": {
+    "name": "wood shortbow",
+    "class": "ranged",
+    "variant": "2h",
+    "tier": 1,
+    "material": "wood",
+    "mathTier": 1,
+    "baseDamage": 4,
+    "chainMultipliers": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "pierce"
+    ],
+    "symbol": "}",
+    "color": [
+      160,
+      120,
+      80
+    ],
+    "weight": 2,
+    "twoHanded": true,
+    "reach": 15,
+    "stunChance": 0.0,
+    "requiresAmmo": "arrow",
+    "floorSpawnWeight": {
+      "1-20": 100,
+      "21-40": 60,
+      "41-60": 20,
+      "61-80": 5,
+      "81-100": 2
+    },
+    "containerLootTier": "common",
+    "value": 40,
+    "min_level": 1
+  },
+  "wood_longbow": {
+    "name": "wood longbow",
+    "class": "ranged",
+    "variant": "2h",
+    "tier": 1,
+    "material": "wood",
+    "mathTier": 1,
+    "baseDamage": 6,
+    "chainMultipliers": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "pierce"
+    ],
+    "symbol": "}",
+    "color": [
+      140,
+      110,
+      70
+    ],
+    "weight": 3,
+    "twoHanded": true,
+    "reach": 20,
+    "stunChance": 0.0,
+    "requiresAmmo": "arrow",
+    "floorSpawnWeight": {
+      "1-20": 100,
+      "21-40": 60,
+      "41-60": 20,
+      "61-80": 5,
+      "81-100": 2
+    },
+    "containerLootTier": "common",
+    "value": 50,
+    "min_level": 1
+  },
+  "hardwood_shortbow": {
+    "name": "hardwood shortbow",
+    "class": "ranged",
+    "variant": "2h",
+    "tier": 2,
+    "material": "hardwood",
+    "mathTier": 2,
+    "baseDamage": 5,
+    "chainMultipliers": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "pierce"
+    ],
+    "symbol": "}",
+    "color": [
+      150,
+      110,
+      70
+    ],
+    "weight": 2,
+    "twoHanded": true,
+    "reach": 17,
+    "stunChance": 0.0,
+    "requiresAmmo": "arrow",
+    "floorSpawnWeight": {
+      "1-20": 20,
+      "21-40": 100,
+      "41-60": 60,
+      "61-80": 20,
+      "81-100": 5
+    },
+    "containerLootTier": "uncommon",
+    "value": 120,
+    "min_level": 21
+  },
+  "hardwood_longbow": {
+    "name": "hardwood longbow",
+    "class": "ranged",
+    "variant": "2h",
+    "tier": 2,
+    "material": "hardwood",
+    "mathTier": 2,
+    "baseDamage": 8,
+    "chainMultipliers": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "pierce"
+    ],
+    "symbol": "}",
+    "color": [
+      130,
+      100,
+      60
+    ],
+    "weight": 3,
+    "twoHanded": true,
+    "reach": 22,
+    "stunChance": 0.0,
+    "requiresAmmo": "arrow",
+    "floorSpawnWeight": {
+      "1-20": 20,
+      "21-40": 100,
+      "41-60": 60,
+      "61-80": 20,
+      "81-100": 5
+    },
+    "containerLootTier": "uncommon",
+    "value": 150,
+    "min_level": 21
+  },
+  "ironwood_shortbow": {
+    "name": "ironwood shortbow",
+    "class": "ranged",
+    "variant": "2h",
+    "tier": 3,
+    "material": "ironwood",
+    "mathTier": 3,
+    "baseDamage": 6,
+    "chainMultipliers": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "pierce"
+    ],
+    "symbol": "}",
+    "color": [
+      140,
+      130,
+      110
+    ],
+    "weight": 2,
+    "twoHanded": true,
+    "reach": 17,
+    "stunChance": 0.0,
+    "requiresAmmo": "arrow",
+    "floorSpawnWeight": {
+      "1-20": 5,
+      "21-40": 20,
+      "41-60": 100,
+      "61-80": 60,
+      "81-100": 20
+    },
+    "containerLootTier": "rare",
+    "value": 320,
+    "min_level": 41
+  },
+  "ironwood_longbow": {
+    "name": "ironwood longbow",
+    "class": "ranged",
+    "variant": "2h",
+    "tier": 3,
+    "material": "ironwood",
+    "mathTier": 3,
+    "baseDamage": 10,
+    "chainMultipliers": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "pierce"
+    ],
+    "symbol": "}",
+    "color": [
+      120,
+      115,
+      100
+    ],
+    "weight": 3,
+    "twoHanded": true,
+    "reach": 22,
+    "stunChance": 0.0,
+    "requiresAmmo": "arrow",
+    "floorSpawnWeight": {
+      "1-20": 5,
+      "21-40": 20,
+      "41-60": 100,
+      "61-80": 60,
+      "81-100": 20
+    },
+    "containerLootTier": "rare",
+    "value": 400,
+    "min_level": 41
+  },
+  "diamond_shortbow": {
+    "name": "diamond shortbow",
+    "class": "ranged",
+    "variant": "2h",
+    "tier": 4,
+    "material": "diamond",
+    "mathTier": 4,
+    "baseDamage": 8,
+    "chainMultipliers": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "pierce"
+    ],
+    "symbol": "}",
+    "color": [
+      180,
+      230,
+      255
+    ],
+    "weight": 2,
+    "twoHanded": true,
+    "reach": 18,
+    "stunChance": 0.0,
+    "requiresAmmo": "arrow",
+    "floorSpawnWeight": {
+      "1-20": 1,
+      "21-40": 5,
+      "41-60": 20,
+      "61-80": 100,
+      "81-100": 60
+    },
+    "containerLootTier": "very_rare",
+    "value": 900,
+    "min_level": 61
+  },
+  "diamond_longbow": {
+    "name": "diamond longbow",
+    "class": "ranged",
+    "variant": "2h",
+    "tier": 4,
+    "material": "diamond",
+    "mathTier": 4,
+    "baseDamage": 12,
+    "chainMultipliers": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "pierce"
+    ],
+    "symbol": "}",
+    "color": [
+      160,
+      210,
+      255
+    ],
+    "weight": 3,
+    "twoHanded": true,
+    "reach": 22,
+    "stunChance": 0.0,
+    "requiresAmmo": "arrow",
+    "floorSpawnWeight": {
+      "1-20": 1,
+      "21-40": 5,
+      "41-60": 20,
+      "61-80": 100,
+      "81-100": 60
+    },
+    "containerLootTier": "very_rare",
+    "value": 1100,
+    "min_level": 61
+  },
+  "dragonbone_longbow": {
+    "name": "dragonbone longbow",
+    "class": "ranged",
+    "variant": "2h",
+    "tier": 5,
+    "material": "dragonbone",
+    "mathTier": 5,
+    "baseDamage": 15,
+    "chainMultipliers": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "pierce"
+    ],
+    "symbol": "}",
+    "color": [
+      200,
+      160,
+      80
+    ],
+    "weight": 3,
+    "twoHanded": true,
+    "reach": 25,
+    "stunChance": 0.0,
+    "requiresAmmo": "arrow",
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 1,
+      "41-60": 5,
+      "61-80": 20,
+      "81-100": 100
+    },
+    "containerLootTier": "legendary",
+    "value": 3600,
+    "min_level": 81
+  },
+  "iron_crossbow": {
+    "name": "iron crossbow",
+    "class": "ranged",
+    "variant": "2h",
+    "tier": 1,
+    "material": "iron",
+    "mathTier": 1,
+    "baseDamage": 7,
+    "chainMultipliers": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "pierce"
+    ],
+    "symbol": "}",
+    "color": [
+      160,
+      155,
+      150
+    ],
+    "weight": 4,
+    "twoHanded": true,
+    "reach": 20,
+    "stunChance": 0.0,
+    "requiresAmmo": "bolt",
+    "floorSpawnWeight": {
+      "1-20": 100,
+      "21-40": 60,
+      "41-60": 20,
+      "61-80": 5,
+      "81-100": 2
+    },
+    "containerLootTier": "common",
+    "value": 50,
+    "min_level": 1
+  },
+  "steel_crossbow": {
+    "name": "steel crossbow",
+    "class": "ranged",
+    "variant": "2h",
+    "tier": 2,
+    "material": "steel",
+    "mathTier": 2,
+    "baseDamage": 9,
+    "chainMultipliers": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "pierce"
+    ],
+    "symbol": "}",
+    "color": [
+      180,
+      180,
+      190
+    ],
+    "weight": 4,
+    "twoHanded": true,
+    "reach": 22,
+    "stunChance": 0.0,
+    "requiresAmmo": "bolt",
+    "floorSpawnWeight": {
+      "1-20": 20,
+      "21-40": 100,
+      "41-60": 60,
+      "61-80": 20,
+      "81-100": 5
+    },
+    "containerLootTier": "uncommon",
+    "value": 150,
+    "min_level": 21
+  },
+  "hardened_gold_crossbow": {
+    "name": "hardened gold crossbow",
+    "class": "ranged",
+    "variant": "2h",
+    "tier": 3,
+    "material": "hardened gold",
+    "mathTier": 3,
+    "baseDamage": 11,
+    "chainMultipliers": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "pierce"
+    ],
+    "symbol": "}",
+    "color": [
+      210,
+      190,
+      80
+    ],
+    "weight": 4,
+    "twoHanded": true,
+    "reach": 22,
+    "stunChance": 0.0,
+    "requiresAmmo": "bolt",
+    "floorSpawnWeight": {
+      "1-20": 5,
+      "21-40": 20,
+      "41-60": 100,
+      "61-80": 60,
+      "81-100": 20
+    },
+    "containerLootTier": "rare",
+    "value": 400,
+    "min_level": 41
+  },
+  "diamond_crossbow": {
+    "name": "diamond crossbow",
+    "class": "ranged",
+    "variant": "2h",
+    "tier": 4,
+    "material": "diamond",
+    "mathTier": 4,
+    "baseDamage": 14,
+    "chainMultipliers": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "pierce"
+    ],
+    "symbol": "}",
+    "color": [
+      160,
+      220,
+      255
+    ],
+    "weight": 4,
+    "twoHanded": true,
+    "reach": 23,
+    "stunChance": 0.0,
+    "requiresAmmo": "bolt",
+    "floorSpawnWeight": {
+      "1-20": 1,
+      "21-40": 5,
+      "41-60": 20,
+      "61-80": 100,
+      "81-100": 60
+    },
+    "containerLootTier": "very_rare",
+    "value": 1100,
+    "min_level": 61
+  },
+  "adamantine_crossbow": {
+    "name": "adamantine crossbow",
+    "class": "ranged",
+    "variant": "2h",
+    "tier": 5,
+    "material": "adamantine",
+    "mathTier": 5,
+    "baseDamage": 18,
+    "chainMultipliers": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "pierce"
+    ],
+    "symbol": "}",
+    "color": [
+      100,
+      200,
+      150
+    ],
+    "weight": 4,
+    "twoHanded": true,
+    "reach": 25,
+    "stunChance": 0.0,
+    "requiresAmmo": "bolt",
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 1,
+      "41-60": 5,
+      "61-80": 20,
+      "81-100": 100
+    },
+    "containerLootTier": "legendary",
+    "value": 3600,
+    "min_level": 81
   }
 }

@@ -24,13 +24,30 @@ class Item:
 class Weapon(Item):
     def __init__(self, defn: dict):
         super().__init__(defn)
-        self.damage            = defn['damage']
+        # New structured fields (camelCase keys from JSON, fallback to legacy snake_case)
+        self.weapon_class: str          = defn.get('class', defn.get('weapon_class', 'sword'))
+        self.variant: str               = defn.get('variant', '1h')
+        self.tier: int                  = int(defn.get('tier', 1))
+        self.material: str              = defn.get('material', 'iron')
+        self.base_damage: int           = int(defn.get('baseDamage', defn.get('base_damage', 5)))
+        # Legacy dice damage kept for backward compat; new weapons use base_damage
+        self.damage: str | None         = defn.get('damage', None)
         self.chain_multipliers: list[float] = defn.get(
-            'chain_multipliers', [0.5, 1.0, 1.5, 2.0, 2.5]
+            'chainMultipliers', defn.get('chain_multipliers', [0.5, 1.0, 1.5, 2.0, 2.5])
         )
-        self.max_chain_length: int | None = defn.get('max_chain_length', None)
-        self.quiz_tier: int               = defn.get('quiz_tier', 1)
-        self.enchant_bonus: int           = 0
+        self.max_chain_length: int | None = defn.get(
+            'maxChainLength', defn.get('max_chain_length', None)
+        )
+        self.quiz_tier: int             = int(defn.get('mathTier', defn.get('quiz_tier', 1)))
+        self.damage_types: list[str]    = defn.get('damageTypes', defn.get('damage_types', ['slash']))
+        self.two_handed: bool           = bool(defn.get('twoHanded', defn.get('two_handed', False)))
+        self.reach: int                 = int(defn.get('reach', 1))
+        self.stun_chance: float         = float(defn.get('stunChance', defn.get('stun_chance', 0.0)))
+        self.requires_ammo: str | None  = defn.get('requiresAmmo', defn.get('requires_ammo', None))
+        self.floor_spawn_weight: dict   = defn.get('floorSpawnWeight', defn.get('floor_spawn_weight', {}))
+        self.container_loot_tier: str   = defn.get('containerLootTier', defn.get('container_loot_tier', 'common'))
+        self.value: int                 = int(defn.get('value', 50))
+        self.enchant_bonus: int         = 0
 
 
 class Armor(Item):
