@@ -1710,6 +1710,7 @@ class Game:
 
         def on_complete(damage: int, killed: bool, chain: int, stunned: bool = False):
             self.state = STATE_PLAYER
+            self.combat_target = None
             if chain == 0:
                 self.add_message(
                     f"Your shot flies wide — you miss the {monster.name}!", 'warning'
@@ -1750,6 +1751,7 @@ class Game:
 
         def on_complete(damage: int, killed: bool, chain: int, stunned: bool = False):
             self.state = STATE_PLAYER
+            self.combat_target = None
             if chain == 0:
                 self.add_message(
                     f"You swing wildly at the {monster.name} and miss!", 'warning'
@@ -1980,11 +1982,17 @@ class Game:
         if not qe.current_question:
             return
 
+        is_combat = (
+            self.combat_target is not None
+            and qe.mode == QuizMode.CHAIN
+        )
+
         overlay = pygame.Surface((WINDOW_W, WINDOW_H), pygame.SRCALPHA)
         overlay.fill((0, 0, 0, 165))
         self.screen.blit(overlay, (0, 0))
 
-        bw, bh = 740, 410
+        bw = 740
+        bh = 490 if is_combat else 410
         bx = (GAME_W - bw) // 2
         by = (WINDOW_H - bh) // 2
 
@@ -2068,10 +2076,89 @@ class Game:
                 True,
                 (80, 255, 80) if qe.last_correct else (255, 80, 80)
             )
-            self.screen.blit(fb, (bx + (bw - fb.get_width()) // 2, by + bh - 52))
+            self.screen.blit(fb, (bx + (bw - fb.get_width()) // 2, by + bh - (132 if is_combat else 52)))
         if qe.state == QuizState.ASKING:
             hint = self.font_sm.render("Press 1-4 to answer", True, (120, 120, 160))
-            self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, by + bh - 28))
+            self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, by + bh - (108 if is_combat else 28)))
+
+        # ── Combat HUD strip (chain mode vs a monster) ──────────────────
+        if is_combat:
+            self._draw_combat_hud(bx, by + bh - 100, bw)
+
+    def _draw_combat_hud(self, bx: int, strip_y: int, bw: int):
+        """Draw monster HP bar + chain damage preview at strip_y inside the quiz modal."""
+        from combat import _damage_multiplier
+        monster = self.combat_target
+        weapon  = self.player.weapon
+
+        pygame.draw.line(self.screen, (50, 50, 100),
+                         (bx + 10, strip_y), (bx + bw - 10, strip_y))
+
+        # Left column: monster HP bar
+        lx = bx + 18
+        hp_ratio = max(0.0, monster.hp / max(1, monster.max_hp))
+        hp_color = (
+            (50, 200, 50)  if hp_ratio > 0.50 else
+            (210, 160, 40) if hp_ratio > 0.25 else
+            (210, 50,  50)
+        )
+        name_surf = self.font_sm.render(
+            f"{monster.name.upper()}  HP: {monster.hp}/{monster.max_hp}",
+            True, (200, 170, 130)
+        )
+        self.screen.blit(name_surf, (lx, strip_y + 8))
+
+        hb_y = strip_y + 26
+        hb_w = 220
+        pygame.draw.rect(self.screen, (30, 12, 12), (lx, hb_y, hb_w, 10), border_radius=3)
+        if hp_ratio > 0:
+            pygame.draw.rect(self.screen, hp_color,
+                             (lx, hb_y, max(2, int(hb_w * hp_ratio)), 10), border_radius=3)
+
+        # Status effects on monster
+        effects = [e for e, v in monster.status_effects.items() if v > 0]
+        if effects:
+            eff_surf = self.font_sm.render(
+                "  ".join(f"[{e}]" for e in effects[:4]),
+                True, (200, 200, 80)
+            )
+            self.screen.blit(eff_surf, (lx, hb_y + 14))
+
+        # Right column: chain damage preview
+        rx = bx + 260
+        base    = weapon.base_damage if weapon else 4
+        enchant = weapon.enchant_bonus if weapon else 0
+        mults   = weapon.chain_multipliers if weapon else [0.5, 1.0, 1.5, 2.0, 2.5, 3.0]
+        dtypes  = weapon.damage_types if weapon else ['physical']
+        dm      = _damage_multiplier(dtypes, monster)
+
+        # Damage type indicator
+        if dm >= 1.5:
+            dm_text, dm_color = "WEAKNESS!", (80, 255, 80)
+        elif dm <= 0.5:
+            dm_text, dm_color = "RESISTED", (255, 100, 100)
+        else:
+            dm_text, dm_color = "/".join(dtypes), (160, 160, 180)
+        self.screen.blit(
+            self.font_sm.render(dm_text, True, dm_color),
+            (rx, strip_y + 8)
+        )
+
+        # Chain multiplier table: show up to 6 steps
+        preview_parts = []
+        for i, mult in enumerate(mults[:6]):
+            dmg = max(1, int((base + enchant) * mult * dm))
+            preview_parts.append(f"x{i+1}:{dmg}")
+        chain_text = "  ".join(preview_parts)
+        chain_surf = self.font_sm.render(chain_text, True, (130, 200, 255))
+        self.screen.blit(chain_surf, (rx, strip_y + 26))
+
+        # Weapon name
+        w_name = weapon.name if weapon else "bare hands"
+        self.screen.blit(
+            self.font_sm.render(f"Weapon: {w_name}", True, (150, 150, 180)),
+            (rx, strip_y + 44)
+        )
 
     # ------------------------------------------------------------------
     # Equip menu overlay
@@ -2118,8 +2205,9 @@ class Game:
                 self.font_md.render(item.name, True, (220, 220, 220)), (bx + 70, iy + 11)
             )
             if isinstance(item, Weapon):
+                dmg_str = f"{item.base_damage}dmg" if item.base_damage else (item.damage or "?")
                 detail = self.font_sm.render(
-                    f"weapon  {item.damage}  chain x{item.max_chain_length or '?'}",
+                    f"{item.weapon_class}  {dmg_str}  chain x{item.max_chain_length or '?'}  tier {item.quiz_tier}",
                     True, (160, 200, 160)
                 )
             elif isinstance(item, (Armor, Shield)):

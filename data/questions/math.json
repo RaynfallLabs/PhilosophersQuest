@@ -1,110 +1,2906 @@
 [
   {
     "tier": 1,
-    "question": "What is 6 × 7?",
+    "question": "What is 9 × 2?",
+    "answer": "18",
+    "choices": [
+      "16",
+      "18",
+      "20",
+      "9"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 10 × 5?",
+    "answer": "50",
+    "choices": [
+      "40",
+      "45",
+      "50",
+      "55"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 6 × 10?",
+    "answer": "60",
+    "choices": [
+      "50",
+      "54",
+      "60",
+      "70"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 8 × 10?",
+    "answer": "80",
+    "choices": [
+      "70",
+      "72",
+      "80",
+      "90"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 10 × 4?",
+    "answer": "40",
+    "choices": [
+      "30",
+      "36",
+      "40",
+      "44"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 9 × 5?",
+    "answer": "45",
+    "choices": [
+      "36",
+      "40",
+      "45",
+      "50"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 10 × 7?",
+    "answer": "70",
+    "choices": [
+      "60",
+      "63",
+      "70",
+      "77"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 7 × 6?",
     "answer": "42",
-    "choices": ["36", "42", "48", "49"]
-  },
-  {
-    "tier": 1,
-    "question": "What is 8 × 9?",
-    "answer": "72",
-    "choices": ["63", "72", "81", "64"]
-  },
-  {
-    "tier": 1,
-    "question": "What is 7 × 8?",
-    "answer": "56",
-    "choices": ["48", "54", "56", "63"]
-  },
-  {
-    "tier": 1,
-    "question": "What is 4 × 6?",
-    "answer": "24",
-    "choices": ["18", "20", "24", "28"]
+    "choices": [
+      "35",
+      "36",
+      "42",
+      "48"
+    ]
   },
   {
     "tier": 1,
     "question": "What is 9 × 9?",
     "answer": "81",
-    "choices": ["72", "81", "90", "64"]
+    "choices": [
+      "72",
+      "79",
+      "81",
+      "90"
+    ]
   },
   {
     "tier": 1,
-    "question": "What is 12 × 12?",
-    "answer": "144",
-    "choices": ["124", "132", "144", "148"]
+    "question": "What is 9 × 8?",
+    "answer": "72",
+    "choices": [
+      "63",
+      "64",
+      "72",
+      "80"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 8 × 9?",
+    "answer": "72",
+    "choices": [
+      "63",
+      "64",
+      "72",
+      "81"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 11 × 3?",
+    "answer": "33",
+    "choices": [
+      "22",
+      "30",
+      "33",
+      "36"
+    ]
   },
   {
     "tier": 1,
     "question": "What is 11 × 8?",
     "answer": "88",
-    "choices": ["80", "88", "96", "99"]
+    "choices": [
+      "77",
+      "80",
+      "88",
+      "96"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 12 × 2?",
+    "answer": "24",
+    "choices": [
+      "12",
+      "22",
+      "24",
+      "26"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 10 × 10?",
+    "answer": "100",
+    "choices": [
+      "100",
+      "110",
+      "90",
+      "98"
+    ]
   },
   {
     "tier": 1,
     "question": "What is 6 × 9?",
     "answer": "54",
-    "choices": ["45", "48", "54", "63"]
+    "choices": [
+      "45",
+      "48",
+      "54",
+      "63"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 11 × 6?",
+    "answer": "66",
+    "choices": [
+      "55",
+      "60",
+      "66",
+      "72"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 8 × 5?",
+    "answer": "40",
+    "choices": [
+      "32",
+      "35",
+      "40",
+      "45"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 11 × 5?",
+    "answer": "55",
+    "choices": [
+      "44",
+      "50",
+      "55",
+      "60"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 7 × 9?",
+    "answer": "63",
+    "choices": [
+      "54",
+      "56",
+      "63",
+      "72"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 11 × 11?",
+    "answer": "121",
+    "choices": [
+      "110",
+      "119",
+      "121",
+      "132"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 7 × 10?",
+    "answer": "70",
+    "choices": [
+      "60",
+      "63",
+      "70",
+      "80"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 7 × 11?",
+    "answer": "77",
+    "choices": [
+      "66",
+      "70",
+      "77",
+      "88"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 11 × 2?",
+    "answer": "22",
+    "choices": [
+      "11",
+      "20",
+      "22",
+      "24"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 10 × 8?",
+    "answer": "80",
+    "choices": [
+      "70",
+      "72",
+      "80",
+      "88"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 12 × 9?",
+    "answer": "108",
+    "choices": [
+      "108",
+      "117",
+      "96",
+      "99"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 11 × 4?",
+    "answer": "44",
+    "choices": [
+      "33",
+      "40",
+      "44",
+      "48"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 11 × 12?",
+    "answer": "132",
+    "choices": [
+      "120",
+      "121",
+      "132",
+      "144"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 9 × 11?",
+    "answer": "99",
+    "choices": [
+      "110",
+      "88",
+      "90",
+      "99"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 10 × 9?",
+    "answer": "90",
+    "choices": [
+      "80",
+      "81",
+      "90",
+      "99"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 8 × 3?",
+    "answer": "24",
+    "choices": [
+      "16",
+      "21",
+      "24",
+      "27"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 6 × 4?",
+    "answer": "24",
+    "choices": [
+      "18",
+      "20",
+      "24",
+      "28"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 7 × 7?",
+    "answer": "49",
+    "choices": [
+      "42",
+      "47",
+      "49",
+      "56"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 10 × 11?",
+    "answer": "110",
+    "choices": [
+      "100",
+      "110",
+      "121",
+      "99"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 8 × 2?",
+    "answer": "16",
+    "choices": [
+      "14",
+      "16",
+      "18",
+      "8"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 11 × 7?",
+    "answer": "77",
+    "choices": [
+      "66",
+      "70",
+      "77",
+      "84"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 8 × 4?",
+    "answer": "32",
+    "choices": [
+      "24",
+      "28",
+      "32",
+      "36"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 6 × 7?",
+    "answer": "42",
+    "choices": [
+      "35",
+      "36",
+      "42",
+      "49"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 6 × 8?",
+    "answer": "48",
+    "choices": [
+      "40",
+      "42",
+      "48",
+      "56"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 9 × 12?",
+    "answer": "108",
+    "choices": [
+      "108",
+      "120",
+      "96",
+      "99"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 47 + 35?",
+    "answer": "82",
+    "choices": [
+      "81",
+      "82",
+      "83",
+      "92"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 63 + 28?",
+    "answer": "91",
+    "choices": [
+      "101",
+      "90",
+      "91",
+      "92"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 55 + 37?",
+    "answer": "92",
+    "choices": [
+      "102",
+      "91",
+      "92",
+      "93"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 76 + 24?",
+    "answer": "100",
+    "choices": [
+      "100",
+      "101",
+      "110",
+      "99"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 83 + 19?",
+    "answer": "102",
+    "choices": [
+      "101",
+      "102",
+      "103",
+      "112"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 44 + 58?",
+    "answer": "102",
+    "choices": [
+      "101",
+      "102",
+      "103",
+      "112"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 67 + 36?",
+    "answer": "103",
+    "choices": [
+      "102",
+      "103",
+      "104",
+      "113"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 52 + 49?",
+    "answer": "101",
+    "choices": [
+      "100",
+      "101",
+      "102",
+      "111"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 71 + 29?",
+    "answer": "100",
+    "choices": [
+      "100",
+      "101",
+      "110",
+      "99"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 85 + 17?",
+    "answer": "102",
+    "choices": [
+      "101",
+      "102",
+      "103",
+      "112"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 38 + 64?",
+    "answer": "102",
+    "choices": [
+      "101",
+      "102",
+      "103",
+      "112"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 91 + 23?",
+    "answer": "114",
+    "choices": [
+      "113",
+      "114",
+      "115",
+      "124"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 83 - 28?",
+    "answer": "55",
+    "choices": [
+      "54",
+      "55",
+      "56",
+      "65"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 97 - 45?",
+    "answer": "52",
+    "choices": [
+      "51",
+      "52",
+      "53",
+      "62"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 71 - 36?",
+    "answer": "35",
+    "choices": [
+      "34",
+      "35",
+      "36",
+      "45"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 64 - 29?",
+    "answer": "35",
+    "choices": [
+      "34",
+      "35",
+      "36",
+      "45"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 88 - 53?",
+    "answer": "35",
+    "choices": [
+      "34",
+      "35",
+      "36",
+      "45"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 76 - 47?",
+    "answer": "29",
+    "choices": [
+      "28",
+      "29",
+      "30",
+      "39"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 92 - 38?",
+    "answer": "54",
+    "choices": [
+      "53",
+      "54",
+      "55",
+      "64"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 81 - 26?",
+    "answer": "55",
+    "choices": [
+      "54",
+      "55",
+      "56",
+      "65"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 72 ÷ 8?",
+    "answer": "9",
+    "choices": [
+      "10",
+      "7",
+      "8",
+      "9"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 56 ÷ 7?",
+    "answer": "8",
+    "choices": [
+      "6",
+      "7",
+      "8",
+      "9"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 84 ÷ 12?",
+    "answer": "7",
+    "choices": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 48 ÷ 6?",
+    "answer": "8",
+    "choices": [
+      "6",
+      "7",
+      "8",
+      "9"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 99 ÷ 9?",
+    "answer": "11",
+    "choices": [
+      "10",
+      "11",
+      "12",
+      "9"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 144 ÷ 12?",
+    "answer": "12",
+    "choices": [
+      "10",
+      "11",
+      "12",
+      "13"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 63 ÷ 9?",
+    "answer": "7",
+    "choices": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 96 ÷ 8?",
+    "answer": "12",
+    "choices": [
+      "10",
+      "11",
+      "12",
+      "13"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 132 ÷ 11?",
+    "answer": "12",
+    "choices": [
+      "10",
+      "11",
+      "12",
+      "13"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 108 ÷ 9?",
+    "answer": "12",
+    "choices": [
+      "10",
+      "11",
+      "12",
+      "13"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 45 ÷ 9?",
+    "answer": "5",
+    "choices": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 77 ÷ 11?",
+    "answer": "7",
+    "choices": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 120 ÷ 10?",
+    "answer": "12",
+    "choices": [
+      "10",
+      "11",
+      "12",
+      "13"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 36 ÷ 4?",
+    "answer": "9",
+    "choices": [
+      "10",
+      "7",
+      "8",
+      "9"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 66 ÷ 6?",
+    "answer": "11",
+    "choices": [
+      "10",
+      "11",
+      "12",
+      "9"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 54 ÷ 6?",
+    "answer": "9",
+    "choices": [
+      "10",
+      "7",
+      "8",
+      "9"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 88 ÷ 8?",
+    "answer": "11",
+    "choices": [
+      "10",
+      "11",
+      "12",
+      "9"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 110 ÷ 10?",
+    "answer": "11",
+    "choices": [
+      "10",
+      "11",
+      "12",
+      "9"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 126 ÷ 9?",
+    "answer": "14",
+    "choices": [
+      "12",
+      "13",
+      "14",
+      "15"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 60 ÷ 5?",
+    "answer": "12",
+    "choices": [
+      "10",
+      "11",
+      "12",
+      "13"
+    ]
   },
   {
     "tier": 2,
     "question": "What is 25% of 80?",
     "answer": "20",
-    "choices": ["15", "20", "25", "30"]
+    "choices": [
+      "15",
+      "20",
+      "25",
+      "30"
+    ]
   },
   {
     "tier": 2,
-    "question": "What is 1/2 + 1/3?",
-    "answer": "5/6",
-    "choices": ["2/5", "2/6", "5/6", "3/4"]
-  },
-  {
-    "tier": 2,
-    "question": "What is 15% of 200?",
-    "answer": "30",
-    "choices": ["20", "25", "30", "35"]
-  },
-  {
-    "tier": 2,
-    "question": "What is 3/4 minus 1/4?",
-    "answer": "1/2",
-    "choices": ["1/4", "1/2", "2/4", "3/8"]
-  },
-  {
-    "tier": 2,
-    "question": "A $40 shirt is 20% off. What is the sale price?",
-    "answer": "$32",
-    "choices": ["$28", "$30", "$32", "$34"]
-  },
-  {
-    "tier": 3,
-    "question": "What is the square root of 144?",
-    "answer": "12",
-    "choices": ["11", "12", "13", "14"]
-  },
-  {
-    "tier": 3,
-    "question": "If 3x = 21, what is x?",
-    "answer": "7",
-    "choices": ["6", "7", "8", "9"]
-  },
-  {
-    "tier": 3,
-    "question": "What is 2 to the power of 8?",
-    "answer": "256",
-    "choices": ["128", "256", "512", "64"]
-  },
-  {
-    "tier": 3,
-    "question": "If y = 2x + 3 and x = 5, what is y?",
-    "answer": "13",
-    "choices": ["10", "11", "13", "15"]
-  },
-  {
-    "tier": 3,
-    "question": "What is the square root of 225?",
+    "question": "What is 10% of 150?",
     "answer": "15",
-    "choices": ["13", "14", "15", "16"]
+    "choices": [
+      "10",
+      "15",
+      "20",
+      "25"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 50% of 64?",
+    "answer": "32",
+    "choices": [
+      "16",
+      "28",
+      "32",
+      "40"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 20% of 90?",
+    "answer": "18",
+    "choices": [
+      "12",
+      "18",
+      "22",
+      "27"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 25% of 120?",
+    "answer": "30",
+    "choices": [
+      "25",
+      "30",
+      "35",
+      "40"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 10% of 250?",
+    "answer": "25",
+    "choices": [
+      "20",
+      "25",
+      "30",
+      "50"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 50% of 46?",
+    "answer": "23",
+    "choices": [
+      "13",
+      "18",
+      "23",
+      "27"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 5% of 200?",
+    "answer": "10",
+    "choices": [
+      "10",
+      "15",
+      "20",
+      "5"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 75% of 40?",
+    "answer": "30",
+    "choices": [
+      "20",
+      "25",
+      "30",
+      "35"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 20% of 65?",
+    "answer": "13",
+    "choices": [
+      "13",
+      "16",
+      "20",
+      "8"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 10% of 340?",
+    "answer": "34",
+    "choices": [
+      "24",
+      "34",
+      "40",
+      "44"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 25% of 44?",
+    "answer": "11",
+    "choices": [
+      "11",
+      "14",
+      "18",
+      "8"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 50% of 86?",
+    "answer": "43",
+    "choices": [
+      "33",
+      "43",
+      "48",
+      "56"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 20% of 45?",
+    "answer": "9",
+    "choices": [
+      "12",
+      "18",
+      "5",
+      "9"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 10% of 470?",
+    "answer": "47",
+    "choices": [
+      "37",
+      "47",
+      "50",
+      "57"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 2^5?",
+    "answer": "32",
+    "choices": [
+      "16",
+      "24",
+      "32",
+      "64"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 2^6?",
+    "answer": "64",
+    "choices": [
+      "128",
+      "32",
+      "48",
+      "64"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 2^7?",
+    "answer": "128",
+    "choices": [
+      "128",
+      "256",
+      "64",
+      "96"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 2^8?",
+    "answer": "256",
+    "choices": [
+      "128",
+      "192",
+      "256",
+      "512"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 3^3?",
+    "answer": "27",
+    "choices": [
+      "18",
+      "27",
+      "36",
+      "9"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 3^4?",
+    "answer": "81",
+    "choices": [
+      "243",
+      "27",
+      "72",
+      "81"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 3^5?",
+    "answer": "243",
+    "choices": [
+      "216",
+      "243",
+      "729",
+      "81"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 5^2?",
+    "answer": "25",
+    "choices": [
+      "10",
+      "20",
+      "25",
+      "30"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 5^3?",
+    "answer": "125",
+    "choices": [
+      "100",
+      "125",
+      "25",
+      "625"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 7^2?",
+    "answer": "49",
+    "choices": [
+      "14",
+      "36",
+      "49",
+      "56"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 4^3?",
+    "answer": "64",
+    "choices": [
+      "16",
+      "256",
+      "32",
+      "64"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 2^9?",
+    "answer": "512",
+    "choices": [
+      "1024",
+      "256",
+      "384",
+      "512"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Calculate: 5 × 8 + 12 = ?",
+    "answer": "52",
+    "choices": [
+      "48",
+      "52",
+      "55",
+      "60"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Calculate: 4 × 9 - 7 = ?",
+    "answer": "29",
+    "choices": [
+      "25",
+      "29",
+      "30",
+      "36"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Calculate: 6 × 7 + 15 = ?",
+    "answer": "57",
+    "choices": [
+      "42",
+      "55",
+      "57",
+      "62"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Calculate: 3 × 12 - 8 = ?",
+    "answer": "28",
+    "choices": [
+      "24",
+      "28",
+      "30",
+      "36"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Calculate: 7 × 8 + 9 = ?",
+    "answer": "65",
+    "choices": [
+      "56",
+      "63",
+      "65",
+      "70"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Calculate: 9 × 6 - 14 = ?",
+    "answer": "40",
+    "choices": [
+      "38",
+      "40",
+      "50",
+      "54"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Calculate: 11 × 5 + 7 = ?",
+    "answer": "62",
+    "choices": [
+      "55",
+      "60",
+      "62",
+      "65"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Calculate: 8 × 9 - 18 = ?",
+    "answer": "54",
+    "choices": [
+      "50",
+      "54",
+      "60",
+      "72"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Calculate: 12 × 7 + 3 = ?",
+    "answer": "87",
+    "choices": [
+      "63",
+      "84",
+      "87",
+      "90"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Calculate: 6 × 11 - 9 = ?",
+    "answer": "57",
+    "choices": [
+      "50",
+      "57",
+      "60",
+      "66"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Evaluate: 2 + 3 × 4",
+    "answer": "14",
+    "choices": [
+      "11",
+      "14",
+      "20",
+      "24"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Evaluate: (2 + 3) × 4",
+    "answer": "20",
+    "choices": [
+      "10",
+      "14",
+      "20",
+      "24"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Evaluate: 10 - 2 × 3",
+    "answer": "4",
+    "choices": [
+      "24",
+      "4",
+      "6",
+      "8"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Evaluate: (10 - 2) × 3",
+    "answer": "24",
+    "choices": [
+      "24",
+      "4",
+      "6",
+      "8"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Evaluate: 3^2 + 4^2",
+    "answer": "25",
+    "choices": [
+      "25",
+      "30",
+      "49",
+      "7"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Evaluate: (3 + 4)^2",
+    "answer": "49",
+    "choices": [
+      "14",
+      "25",
+      "49",
+      "56"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Evaluate: 2 × 3 + 4 × 5",
+    "answer": "26",
+    "choices": [
+      "22",
+      "26",
+      "34",
+      "70"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Evaluate: (2 + 3)^2 - 1",
+    "answer": "24",
+    "choices": [
+      "20",
+      "24",
+      "26",
+      "4"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Evaluate: 100 ÷ (4 × 5)",
+    "answer": "5",
+    "choices": [
+      "10",
+      "125",
+      "20",
+      "5"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Evaluate: 3 × (8 - 5)^2",
+    "answer": "27",
+    "choices": [
+      "18",
+      "27",
+      "81",
+      "9"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Evaluate: 2^3 × 3 + 1",
+    "answer": "25",
+    "choices": [
+      "13",
+      "25",
+      "48",
+      "49"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Evaluate: (5 + 3) × (5 - 3)",
+    "answer": "16",
+    "choices": [
+      "10",
+      "16",
+      "2",
+      "8"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Solve: x + 15 = 32, x = ?",
+    "answer": "17",
+    "choices": [
+      "13",
+      "15",
+      "17",
+      "47"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Solve: 3x = 27, x = ?",
+    "answer": "9",
+    "choices": [
+      "24",
+      "3",
+      "30",
+      "9"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Solve: x - 8 = 19, x = ?",
+    "answer": "27",
+    "choices": [
+      "11",
+      "27",
+      "28",
+      "8"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Solve: 2x + 4 = 18, x = ?",
+    "answer": "7",
+    "choices": [
+      "11",
+      "18",
+      "5",
+      "7"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Solve: 5x - 10 = 25, x = ?",
+    "answer": "7",
+    "choices": [
+      "15",
+      "3",
+      "5",
+      "7"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Solve: x / 4 = 9, x = ?",
+    "answer": "36",
+    "choices": [
+      "13",
+      "36",
+      "4",
+      "40"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Solve: 2x + 6 = 22, x = ?",
+    "answer": "8",
+    "choices": [
+      "14",
+      "16",
+      "4",
+      "8"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Solve: 4x - 3 = 17, x = ?",
+    "answer": "5",
+    "choices": [
+      "14",
+      "20",
+      "5",
+      "7"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Solve: x/3 + 2 = 8, x = ?",
+    "answer": "18",
+    "choices": [
+      "18",
+      "24",
+      "30",
+      "6"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Solve: 7x = 56, x = ?",
+    "answer": "8",
+    "choices": [
+      "49",
+      "7",
+      "8",
+      "9"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Solve: x + x + 5 = 19, x = ?",
+    "answer": "7",
+    "choices": [
+      "12",
+      "14",
+      "7",
+      "8"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Solve: 3x + 3 = 21, x = ?",
+    "answer": "6",
+    "choices": [
+      "24",
+      "6",
+      "7",
+      "8"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Area of a 7 × 9 rectangle = ?",
+    "answer": "63",
+    "choices": [
+      "16",
+      "56",
+      "63",
+      "72"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Area of a 8 × 12 rectangle = ?",
+    "answer": "96",
+    "choices": [
+      "104",
+      "20",
+      "80",
+      "96"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Area of a 5 × 5 square = ?",
+    "answer": "25",
+    "choices": [
+      "10",
+      "20",
+      "25",
+      "30"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Area of a 6 × 11 rectangle = ?",
+    "answer": "66",
+    "choices": [
+      "17",
+      "55",
+      "66",
+      "77"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Area of a base=10, height=8 triangle (b×h÷2) = ?",
+    "answer": "40",
+    "choices": [
+      "18",
+      "20",
+      "40",
+      "80"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Area of a base=6, height=9 triangle = ?",
+    "answer": "27",
+    "choices": [
+      "15",
+      "27",
+      "30",
+      "54"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Area of a 4 × 4 square = ?",
+    "answer": "16",
+    "choices": [
+      "12",
+      "16",
+      "20",
+      "8"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Area of a 9 × 9 square = ?",
+    "answer": "81",
+    "choices": [
+      "18",
+      "72",
+      "81",
+      "90"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which is prime?",
+    "answer": "17",
+    "choices": [
+      "15",
+      "17",
+      "21",
+      "25"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which is NOT prime?",
+    "answer": "27",
+    "choices": [
+      "17",
+      "23",
+      "27",
+      "29"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "How many primes between 10 and 20?",
+    "answer": "4",
+    "choices": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is √144?",
+    "answer": "12",
+    "choices": [
+      "11",
+      "12",
+      "13",
+      "14"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is √169?",
+    "answer": "13",
+    "choices": [
+      "12",
+      "13",
+      "14",
+      "15"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is √196?",
+    "answer": "14",
+    "choices": [
+      "13",
+      "14",
+      "15",
+      "16"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is √225?",
+    "answer": "15",
+    "choices": [
+      "14",
+      "15",
+      "16",
+      "17"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is √256?",
+    "answer": "16",
+    "choices": [
+      "14",
+      "15",
+      "16",
+      "18"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is √49?",
+    "answer": "7",
+    "choices": [
+      "6",
+      "7",
+      "8",
+      "9"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is √81?",
+    "answer": "9",
+    "choices": [
+      "8",
+      "9",
+      "10",
+      "11"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is √121?",
+    "answer": "11",
+    "choices": [
+      "10",
+      "11",
+      "12",
+      "13"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 37 mod 5?",
+    "answer": "2",
+    "choices": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 43 mod 7?",
+    "answer": "1",
+    "choices": [
+      "0",
+      "1",
+      "2",
+      "3"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 51 mod 8?",
+    "answer": "3",
+    "choices": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 29 mod 6?",
+    "answer": "5",
+    "choices": [
+      "0",
+      "1",
+      "4",
+      "5"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 100 mod 9?",
+    "answer": "1",
+    "choices": [
+      "0",
+      "1",
+      "2",
+      "3"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 77 mod 11?",
+    "answer": "0",
+    "choices": [
+      "0",
+      "1",
+      "2",
+      "10"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 63 mod 10?",
+    "answer": "3",
+    "choices": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 88 mod 13?",
+    "answer": "9",
+    "choices": [
+      "8",
+      "9",
+      "10",
+      "11"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 47 mod 4?",
+    "answer": "3",
+    "choices": [
+      "0",
+      "1",
+      "2",
+      "3"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 99 mod 7?",
+    "answer": "1",
+    "choices": [
+      "0",
+      "1",
+      "2",
+      "3"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 72 mod 11?",
+    "answer": "6",
+    "choices": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 56 mod 9?",
+    "answer": "2",
+    "choices": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 123 mod 7?",
+    "answer": "4",
+    "choices": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 144 mod 13?",
+    "answer": "1",
+    "choices": [
+      "0",
+      "1",
+      "2",
+      "3"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 200 mod 11?",
+    "answer": "2",
+    "choices": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 91 mod 6?",
+    "answer": "1",
+    "choices": [
+      "0",
+      "1",
+      "2",
+      "3"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "LCM of 4 and 6 = ?",
+    "answer": "12",
+    "choices": [
+      "10",
+      "12",
+      "24",
+      "8"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "LCM of 3 and 8 = ?",
+    "answer": "24",
+    "choices": [
+      "11",
+      "16",
+      "24",
+      "8"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "LCM of 6 and 9 = ?",
+    "answer": "18",
+    "choices": [
+      "12",
+      "18",
+      "27",
+      "54"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "LCM of 5 and 12 = ?",
+    "answer": "60",
+    "choices": [
+      "12",
+      "17",
+      "30",
+      "60"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "LCM of 8 and 12 = ?",
+    "answer": "24",
+    "choices": [
+      "20",
+      "24",
+      "48",
+      "96"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "LCM of 7 and 14 = ?",
+    "answer": "14",
+    "choices": [
+      "14",
+      "21",
+      "7",
+      "98"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "LCM of 4 and 10 = ?",
+    "answer": "20",
+    "choices": [
+      "14",
+      "20",
+      "40",
+      "8"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "LCM of 6 and 10 = ?",
+    "answer": "30",
+    "choices": [
+      "16",
+      "30",
+      "4",
+      "60"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "LCM of 9 and 12 = ?",
+    "answer": "36",
+    "choices": [
+      "108",
+      "21",
+      "24",
+      "36"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "LCM of 5 and 8 = ?",
+    "answer": "40",
+    "choices": [
+      "13",
+      "20",
+      "40",
+      "80"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "GCD of 12 and 18 = ?",
+    "answer": "6",
+    "choices": [
+      "3",
+      "4",
+      "6",
+      "9"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "GCD of 24 and 36 = ?",
+    "answer": "12",
+    "choices": [
+      "12",
+      "24",
+      "6",
+      "8"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "GCD of 15 and 25 = ?",
+    "answer": "5",
+    "choices": [
+      "1",
+      "10",
+      "3",
+      "5"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "GCD of 48 and 64 = ?",
+    "answer": "16",
+    "choices": [
+      "16",
+      "32",
+      "4",
+      "8"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "GCD of 30 and 45 = ?",
+    "answer": "15",
+    "choices": [
+      "15",
+      "5",
+      "6",
+      "9"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "GCD of 21 and 35 = ?",
+    "answer": "7",
+    "choices": [
+      "1",
+      "14",
+      "3",
+      "7"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "GCD of 36 and 60 = ?",
+    "answer": "12",
+    "choices": [
+      "12",
+      "18",
+      "6",
+      "9"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "GCD of 56 and 84 = ?",
+    "answer": "28",
+    "choices": [
+      "14",
+      "28",
+      "56",
+      "7"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "How many ways to choose 2 from 5?",
+    "answer": "10",
+    "choices": [
+      "10",
+      "15",
+      "20",
+      "5"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "How many ways to choose 2 from 6?",
+    "answer": "15",
+    "choices": [
+      "12",
+      "15",
+      "20",
+      "6"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "How many ways to choose 2 from 7?",
+    "answer": "21",
+    "choices": [
+      "14",
+      "21",
+      "28",
+      "7"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "How many ways to choose 2 from 8?",
+    "answer": "28",
+    "choices": [
+      "16",
+      "28",
+      "36",
+      "56"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "How many ways to choose 3 from 5?",
+    "answer": "10",
+    "choices": [
+      "10",
+      "15",
+      "20",
+      "5"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "How many ways to choose 3 from 6?",
+    "answer": "20",
+    "choices": [
+      "15",
+      "18",
+      "20",
+      "6"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "How many ways to choose 2 from 4?",
+    "answer": "6",
+    "choices": [
+      "12",
+      "4",
+      "6",
+      "8"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "How many ways to choose 2 from 9?",
+    "answer": "36",
+    "choices": [
+      "18",
+      "36",
+      "45",
+      "81"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Right triangle with legs 3 and 4. Hypotenuse = ?",
+    "answer": "5",
+    "choices": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Right triangle with legs 5 and 12. Hypotenuse = ?",
+    "answer": "13",
+    "choices": [
+      "11",
+      "13",
+      "14",
+      "17"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Right triangle with legs 8 and 15. Hypotenuse = ?",
+    "answer": "17",
+    "choices": [
+      "16",
+      "17",
+      "19",
+      "23"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Right triangle with legs 7 and 24. Hypotenuse = ?",
+    "answer": "25",
+    "choices": [
+      "22",
+      "25",
+      "28",
+      "30"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Right triangle with legs 6 and 8. Hypotenuse = ?",
+    "answer": "10",
+    "choices": [
+      "10",
+      "11",
+      "14",
+      "9"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Right triangle with legs 9 and 40. Hypotenuse = ?",
+    "answer": "41",
+    "choices": [
+      "39",
+      "41",
+      "43",
+      "49"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Right triangle with legs 20 and 21. Hypotenuse = ?",
+    "answer": "29",
+    "choices": [
+      "27",
+      "29",
+      "30",
+      "41"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "x² - 5x + 6 = 0, one root is 2. Other root = ?",
+    "answer": "3",
+    "choices": [
+      "1",
+      "3",
+      "4",
+      "6"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "x² - 7x + 12 = 0, one root is 3. Other root = ?",
+    "answer": "4",
+    "choices": [
+      "2",
+      "4",
+      "5",
+      "7"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "x² - 9x + 20 = 0, one root is 4. Other root = ?",
+    "answer": "5",
+    "choices": [
+      "3",
+      "5",
+      "6",
+      "9"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "x² - 8x + 15 = 0, one root is 3. Other root = ?",
+    "answer": "5",
+    "choices": [
+      "4",
+      "5",
+      "6",
+      "8"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "x² - 11x + 24 = 0, one root is 8. Other root = ?",
+    "answer": "3",
+    "choices": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "x² - 6x + 8 = 0, one root is 4. Other root = ?",
+    "answer": "2",
+    "choices": [
+      "1",
+      "2",
+      "3",
+      "6"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is log₂(32)?",
+    "answer": "5",
+    "choices": [
+      "4",
+      "5",
+      "6",
+      "16"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is log₂(64)?",
+    "answer": "6",
+    "choices": [
+      "5",
+      "6",
+      "7",
+      "32"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is log₂(16)?",
+    "answer": "4",
+    "choices": [
+      "3",
+      "4",
+      "5",
+      "8"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is log₂(256)?",
+    "answer": "8",
+    "choices": [
+      "7",
+      "8",
+      "9",
+      "128"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is log₃(81)?",
+    "answer": "4",
+    "choices": [
+      "3",
+      "4",
+      "5",
+      "27"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is log₃(243)?",
+    "answer": "5",
+    "choices": [
+      "4",
+      "5",
+      "6",
+      "81"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is log₅(125)?",
+    "answer": "3",
+    "choices": [
+      "2",
+      "3",
+      "4",
+      "25"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is log₁₀(1000)?",
+    "answer": "3",
+    "choices": [
+      "2",
+      "3",
+      "4",
+      "10"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is log₂(1)?",
+    "answer": "0",
+    "choices": [
+      "-1",
+      "0",
+      "1",
+      "2"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is log₂(512)?",
+    "answer": "9",
+    "choices": [
+      "8",
+      "9",
+      "10",
+      "256"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is log₃(729)?",
+    "answer": "6",
+    "choices": [
+      "5",
+      "6",
+      "7",
+      "243"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is log₄(64)?",
+    "answer": "3",
+    "choices": [
+      "2",
+      "3",
+      "4",
+      "16"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "8th Fibonacci number (sequence: 1,1,2,3,5,...)",
+    "answer": "21",
+    "choices": [
+      "13",
+      "21",
+      "34",
+      "55"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "9th Fibonacci number",
+    "answer": "34",
+    "choices": [
+      "21",
+      "34",
+      "55",
+      "89"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "10th Fibonacci number",
+    "answer": "55",
+    "choices": [
+      "34",
+      "55",
+      "89",
+      "144"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Sum of first 5 Fibonacci numbers: 1+1+2+3+5",
+    "answer": "12",
+    "choices": [
+      "10",
+      "11",
+      "12",
+      "13"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Position of 13 in the Fibonacci sequence (1-indexed)",
+    "answer": "7",
+    "choices": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Sum of first 7 Fibonacci: 1+1+2+3+5+8+13",
+    "answer": "33",
+    "choices": [
+      "21",
+      "29",
+      "33",
+      "54"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Largest prime factor of 60",
+    "answer": "5",
+    "choices": [
+      "3",
+      "5",
+      "6",
+      "15"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Largest prime factor of 84",
+    "answer": "7",
+    "choices": [
+      "4",
+      "6",
+      "7",
+      "14"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Largest prime factor of 100",
+    "answer": "5",
+    "choices": [
+      "4",
+      "5",
+      "10",
+      "25"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Largest prime factor of 78",
+    "answer": "13",
+    "choices": [
+      "6",
+      "13",
+      "26",
+      "39"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Largest prime factor of 126",
+    "answer": "7",
+    "choices": [
+      "3",
+      "7",
+      "14",
+      "63"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Prime factors of 360 with repetition (count)",
+    "answer": "6",
+    "choices": [
+      "4",
+      "5",
+      "6",
+      "8"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Distinct prime factors of 180 (count)",
+    "answer": "3",
+    "choices": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Largest prime factor of 210",
+    "answer": "7",
+    "choices": [
+      "5",
+      "7",
+      "14",
+      "42"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Largest prime factor of 462",
+    "answer": "11",
+    "choices": [
+      "7",
+      "11",
+      "14",
+      "42"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "How many divisors does 36 have?",
+    "answer": "9",
+    "choices": [
+      "6",
+      "7",
+      "9",
+      "12"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "How many divisors does 48 have?",
+    "answer": "10",
+    "choices": [
+      "8",
+      "9",
+      "10",
+      "12"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Sum of divisors of 12 (including 1 and 12)",
+    "answer": "28",
+    "choices": [
+      "14",
+      "16",
+      "28",
+      "36"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Count of integers 1-100 divisible by both 3 and 5",
+    "answer": "6",
+    "choices": [
+      "5",
+      "6",
+      "7",
+      "20"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "φ(12) = ? (Euler's totient)",
+    "answer": "4",
+    "choices": [
+      "2",
+      "4",
+      "6",
+      "8"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "φ(10) = ?",
+    "answer": "4",
+    "choices": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Number of primes between 1 and 30",
+    "answer": "10",
+    "choices": [
+      "9",
+      "10",
+      "11",
+      "12"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "10th prime number",
+    "answer": "29",
+    "choices": [
+      "23",
+      "29",
+      "31",
+      "37"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Sum of digits of 9876",
+    "answer": "30",
+    "choices": [
+      "27",
+      "30",
+      "33",
+      "36"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "How many factors does 72 have?",
+    "answer": "12",
+    "choices": [
+      "9",
+      "10",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "x² = 144, x > 0. x = ?",
+    "answer": "12",
+    "choices": [
+      "11",
+      "12",
+      "13",
+      "72"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "x² - 2x - 15 = 0. Positive root = ?",
+    "answer": "5",
+    "choices": [
+      "3",
+      "5",
+      "6",
+      "15"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Sum of arithmetic series 1+3+5+…+19 (10 terms)",
+    "answer": "100",
+    "choices": [
+      "90",
+      "100",
+      "110",
+      "200"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Sum of 1+2+…+20",
+    "answer": "210",
+    "choices": [
+      "190",
+      "200",
+      "210",
+      "220"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Sum of 1+2+…+50",
+    "answer": "1275",
+    "choices": [
+      "1000",
+      "1250",
+      "1275",
+      "1300"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "If 2^x = 128, x = ?",
+    "answer": "7",
+    "choices": [
+      "6",
+      "7",
+      "8",
+      "9"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "If 3^x = 729, x = ?",
+    "answer": "6",
+    "choices": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Two consecutive integers have product 182. Smaller one?",
+    "answer": "13",
+    "choices": [
+      "12",
+      "13",
+      "14",
+      "18"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Circle area with radius 5 (π≈3)",
+    "answer": "75",
+    "choices": [
+      "15",
+      "25",
+      "75",
+      "150"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Circle circumference with radius 7 (π≈7)",
+    "answer": "44",
+    "choices": [
+      "14",
+      "22",
+      "44",
+      "154"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "If f(x) = 2x + 3, f(10) = ?",
+    "answer": "23",
+    "choices": [
+      "13",
+      "20",
+      "23",
+      "26"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Arithmetic mean of 12, 15, 18, 21, 24",
+    "answer": "18",
+    "choices": [
+      "15",
+      "16",
+      "18",
+      "20"
+    ]
   }
 ]
