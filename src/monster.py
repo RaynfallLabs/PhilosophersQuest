@@ -28,6 +28,10 @@ class Monster:
         # Default: 20 - min_level (level 1 → THAC0 19, level 20 → THAC0 0)
         self.thac0: int = int(defn.get('thac0', max(-5, 20 - defn.get('min_level', 1))))
 
+        # Resistances and weaknesses (damage type strings)
+        self.resistances: list[str] = defn.get('resistances', [])
+        self.weaknesses:  list[str] = defn.get('weaknesses', [])
+
         # Minimal status effects for wand interactions
         self.status_effects: dict[str, int] = {}  # effect_id -> turns remaining
 

@@ -2,15 +2,26 @@
   "giant_rat": {
     "name": "giant rat",
     "symbol": "r",
-    "color": [0, 180, 50],
+    "color": [
+      0,
+      180,
+      50
+    ],
     "hp": "1d4",
     "speed": 1,
     "ai_pattern": "aggressive",
     "min_level": 1,
+    "thac0": 19,
     "frequency": 10,
     "attacks": [
-      {"name": "bite", "damage": "1d3", "type": "physical"}
+      {
+        "name": "bite",
+        "damage": "1d3",
+        "type": "physical"
+      }
     ],
+    "resistances": [],
+    "weaknesses": [],
     "harvest_tier": 1,
     "harvest_threshold": 2,
     "ingredient_id": "rat_meat"
@@ -18,15 +29,26 @@
   "goblin": {
     "name": "goblin",
     "symbol": "o",
-    "color": [80, 160, 30],
+    "color": [
+      80,
+      160,
+      30
+    ],
     "hp": "1d8",
     "speed": 1,
     "ai_pattern": "aggressive",
     "min_level": 1,
+    "thac0": 19,
     "frequency": 8,
     "attacks": [
-      {"name": "slash", "damage": "1d6", "type": "physical"}
+      {
+        "name": "slash",
+        "damage": "1d6",
+        "type": "physical"
+      }
     ],
+    "resistances": [],
+    "weaknesses": [],
     "harvest_tier": 1,
     "harvest_threshold": 3,
     "ingredient_id": "goblin_flesh"
@@ -34,15 +56,26 @@
   "grid_bug": {
     "name": "grid bug",
     "symbol": "x",
-    "color": [180, 0, 220],
+    "color": [
+      180,
+      0,
+      220
+    ],
     "hp": "1d2",
     "speed": 1,
     "ai_pattern": "grid_bug",
     "min_level": 1,
+    "thac0": 19,
     "frequency": 12,
     "attacks": [
-      {"name": "zap", "damage": "1d2", "type": "physical"}
+      {
+        "name": "zap",
+        "damage": "1d2",
+        "type": "physical"
+      }
     ],
+    "resistances": [],
+    "weaknesses": [],
     "harvest_tier": 1,
     "harvest_threshold": 2,
     "ingredient_id": null
@@ -50,13 +83,20 @@
   "floating_eye": {
     "name": "floating eye",
     "symbol": "e",
-    "color": [60, 120, 255],
+    "color": [
+      60,
+      120,
+      255
+    ],
     "hp": "10",
     "speed": 0,
     "ai_pattern": "sessile",
     "min_level": 1,
+    "thac0": 19,
     "frequency": 5,
     "attacks": [],
+    "resistances": [],
+    "weaknesses": [],
     "harvest_tier": 1,
     "harvest_threshold": 4,
     "ingredient_id": null
@@ -64,11 +104,16 @@
   "bat": {
     "name": "bat",
     "symbol": "B",
-    "color": [130, 90, 160],
+    "color": [
+      130,
+      90,
+      160
+    ],
     "hp": "1d4",
     "speed": 2,
     "ai_pattern": "aggressive",
     "min_level": 1,
+    "thac0": 19,
     "frequency": 8,
     "attacks": [
       {
@@ -80,6 +125,8 @@
         "effect_duration": 4
       }
     ],
+    "resistances": [],
+    "weaknesses": [],
     "harvest_tier": 1,
     "harvest_threshold": 2,
     "ingredient_id": null
@@ -87,11 +134,16 @@
   "cobra": {
     "name": "cobra",
     "symbol": "S",
-    "color": [60, 200, 60],
+    "color": [
+      60,
+      200,
+      60
+    ],
     "hp": "1d6",
     "speed": 1,
     "ai_pattern": "aggressive",
     "min_level": 2,
+    "thac0": 18,
     "frequency": 6,
     "attacks": [
       {
@@ -99,10 +151,12 @@
         "damage": "1d4",
         "type": "poison",
         "effect": "poisoned",
-        "effect_chance": 0.40,
+        "effect_chance": 0.4,
         "effect_duration": 8
       }
     ],
+    "resistances": [],
+    "weaknesses": [],
     "harvest_tier": 2,
     "harvest_threshold": 3,
     "ingredient_id": "snake_meat"
@@ -110,11 +164,16 @@
   "zombie": {
     "name": "zombie",
     "symbol": "Z",
-    "color": [140, 180, 100],
+    "color": [
+      140,
+      180,
+      100
+    ],
     "hp": "2d6",
     "speed": 1,
     "ai_pattern": "aggressive",
     "min_level": 2,
+    "thac0": 18,
     "frequency": 5,
     "attacks": [
       {
@@ -122,10 +181,12 @@
         "damage": "1d6",
         "type": "physical",
         "effect": "diseased",
-        "effect_chance": 0.30,
+        "effect_chance": 0.3,
         "effect_duration": 15
       }
     ],
+    "resistances": [],
+    "weaknesses": [],
     "harvest_tier": 2,
     "harvest_threshold": 4,
     "ingredient_id": null
@@ -133,11 +194,16 @@
   "gelatinous_cube": {
     "name": "gelatinous cube",
     "symbol": "G",
-    "color": [180, 230, 180],
+    "color": [
+      180,
+      230,
+      180
+    ],
     "hp": "2d8",
     "speed": 1,
     "ai_pattern": "aggressive",
     "min_level": 2,
+    "thac0": 18,
     "frequency": 4,
     "attacks": [
       {
@@ -149,6 +215,8 @@
         "effect_duration": 5
       }
     ],
+    "resistances": [],
+    "weaknesses": [],
     "harvest_tier": 2,
     "harvest_threshold": 4,
     "ingredient_id": null
@@ -156,11 +224,16 @@
   "wraith": {
     "name": "wraith",
     "symbol": "W",
-    "color": [160, 160, 210],
+    "color": [
+      160,
+      160,
+      210
+    ],
     "hp": "2d8",
     "speed": 1,
     "ai_pattern": "aggressive",
     "min_level": 3,
+    "thac0": 17,
     "frequency": 4,
     "attacks": [
       {
@@ -168,10 +241,12 @@
         "damage": "1d6",
         "type": "drain",
         "effect": "slowed",
-        "effect_chance": 0.30,
+        "effect_chance": 0.3,
         "effect_duration": 6
       }
     ],
+    "resistances": [],
+    "weaknesses": [],
     "harvest_tier": 3,
     "harvest_threshold": 4,
     "ingredient_id": null
@@ -179,11 +254,16 @@
   "mimic": {
     "name": "mimic",
     "symbol": "&",
-    "color": [180, 120, 40],
+    "color": [
+      180,
+      120,
+      40
+    ],
     "hp": "3d8",
     "speed": 1,
     "ai_pattern": "aggressive",
     "min_level": 2,
+    "thac0": 18,
     "frequency": 0,
     "attacks": [
       {
@@ -191,10 +271,12 @@
         "damage": "2d6",
         "type": "physical",
         "effect": "paralyzed",
-        "effect_chance": 0.20,
+        "effect_chance": 0.2,
         "effect_duration": 3
       }
     ],
+    "resistances": [],
+    "weaknesses": [],
     "harvest_tier": 2,
     "harvest_threshold": 3,
     "ingredient_id": null
@@ -202,11 +284,16 @@
   "leprechaun": {
     "name": "leprechaun",
     "symbol": "l",
-    "color": [60, 200, 100],
+    "color": [
+      60,
+      200,
+      100
+    ],
     "hp": "1d8",
     "speed": 2,
     "ai_pattern": "cowardly",
     "min_level": 3,
+    "thac0": 17,
     "frequency": 3,
     "attacks": [
       {
@@ -214,12 +301,1912 @@
         "damage": "1d4",
         "type": "physical",
         "effect": "teleportitis",
-        "effect_chance": 0.40,
+        "effect_chance": 0.4,
         "effect_duration": 10
       }
     ],
+    "resistances": [],
+    "weaknesses": [],
     "harvest_tier": 3,
     "harvest_threshold": 3,
+    "ingredient_id": null
+  },
+  "kobold": {
+    "name": "kobold",
+    "symbol": "k",
+    "color": [
+      60,
+      140,
+      60
+    ],
+    "hp": "1d4",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 1,
+    "thac0": 19,
+    "frequency": 10,
+    "attacks": [
+      {
+        "name": "stab",
+        "damage": "1d3",
+        "type": "pierce"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": null
+  },
+  "cave_spider": {
+    "name": "cave spider",
+    "symbol": "s",
+    "color": [
+      120,
+      80,
+      40
+    ],
+    "hp": "1d6",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 1,
+    "thac0": 19,
+    "frequency": 7,
+    "attacks": [
+      {
+        "name": "bite",
+        "damage": "1d4",
+        "type": "poison",
+        "effect": "poisoned",
+        "effect_chance": 0.35,
+        "effect_duration": 6
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": null
+  },
+  "skeleton": {
+    "name": "skeleton",
+    "symbol": "Z",
+    "color": [
+      220,
+      220,
+      210
+    ],
+    "hp": "1d8",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 1,
+    "thac0": 19,
+    "frequency": 6,
+    "attacks": [
+      {
+        "name": "strike",
+        "damage": "1d6",
+        "type": "blunt"
+      }
+    ],
+    "resistances": [
+      "blunt",
+      "cold"
+    ],
+    "weaknesses": [
+      "slash"
+    ],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": null
+  },
+  "fire_beetle": {
+    "name": "fire beetle",
+    "symbol": "b",
+    "color": [
+      255,
+      120,
+      30
+    ],
+    "hp": "1d4",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 1,
+    "thac0": 19,
+    "frequency": 8,
+    "attacks": [
+      {
+        "name": "bite",
+        "damage": "1d4",
+        "type": "fire",
+        "effect": "burning",
+        "effect_chance": 0.25,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": [
+      "fire"
+    ],
+    "weaknesses": [],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": "fire_gland"
+  },
+  "orc_scout": {
+    "name": "orc scout",
+    "symbol": "o",
+    "color": [
+      100,
+      140,
+      60
+    ],
+    "hp": "1d8",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 1,
+    "thac0": 19,
+    "frequency": 6,
+    "attacks": [
+      {
+        "name": "slash",
+        "damage": "1d6",
+        "type": "slash"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": null
+  },
+  "gnoll": {
+    "name": "gnoll",
+    "symbol": "H",
+    "color": [
+      180,
+      150,
+      90
+    ],
+    "hp": "2d4",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 1,
+    "thac0": 19,
+    "frequency": 5,
+    "attacks": [
+      {
+        "name": "bite",
+        "damage": "1d6",
+        "type": "physical"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": "gnoll_hide"
+  },
+  "hobgoblin": {
+    "name": "hobgoblin",
+    "symbol": "O",
+    "color": [
+      60,
+      110,
+      40
+    ],
+    "hp": "2d6",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 3,
+    "thac0": 17,
+    "frequency": 5,
+    "attacks": [
+      {
+        "name": "slash",
+        "damage": "1d8",
+        "type": "slash"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": null
+  },
+  "ghoul": {
+    "name": "ghoul",
+    "symbol": "Z",
+    "color": [
+      100,
+      140,
+      80
+    ],
+    "hp": "2d6",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 3,
+    "thac0": 17,
+    "frequency": 4,
+    "attacks": [
+      {
+        "name": "claw",
+        "damage": "1d6",
+        "type": "physical",
+        "effect": "paralyzed",
+        "effect_chance": 0.3,
+        "effect_duration": 4
+      },
+      {
+        "name": "bite",
+        "damage": "1d4",
+        "type": "drain"
+      }
+    ],
+    "resistances": [
+      "cold",
+      "poison"
+    ],
+    "weaknesses": [],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": null
+  },
+  "dire_rat": {
+    "name": "dire rat",
+    "symbol": "R",
+    "color": [
+      100,
+      60,
+      20
+    ],
+    "hp": "1d6",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 3,
+    "thac0": 17,
+    "frequency": 7,
+    "attacks": [
+      {
+        "name": "bite",
+        "damage": "1d6",
+        "type": "physical",
+        "effect": "diseased",
+        "effect_chance": 0.2,
+        "effect_duration": 10
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": "rat_meat"
+  },
+  "acid_blob": {
+    "name": "acid blob",
+    "symbol": "j",
+    "color": [
+      180,
+      220,
+      60
+    ],
+    "hp": "2d6",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 3,
+    "thac0": 17,
+    "frequency": 4,
+    "attacks": [
+      {
+        "name": "engulf",
+        "damage": "1d6",
+        "type": "acid",
+        "effect": "weakened",
+        "effect_chance": 0.3,
+        "effect_duration": 6
+      }
+    ],
+    "resistances": [
+      "acid",
+      "blunt"
+    ],
+    "weaknesses": [
+      "cold"
+    ],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": null
+  },
+  "troll": {
+    "name": "troll",
+    "symbol": "T",
+    "color": [
+      100,
+      160,
+      100
+    ],
+    "hp": "4d8",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 7,
+    "thac0": 13,
+    "frequency": 4,
+    "attacks": [
+      {
+        "name": "claw",
+        "damage": "2d6",
+        "type": "slash"
+      },
+      {
+        "name": "bite",
+        "damage": "2d4",
+        "type": "physical"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [
+      "fire",
+      "acid"
+    ],
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "troll_hide"
+  },
+  "orc_warrior": {
+    "name": "orc warrior",
+    "symbol": "O",
+    "color": [
+      80,
+      120,
+      50
+    ],
+    "hp": "3d6",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 7,
+    "thac0": 13,
+    "frequency": 6,
+    "attacks": [
+      {
+        "name": "axe",
+        "damage": "2d6",
+        "type": "slash"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "harvest_tier": 2,
+    "harvest_threshold": 2,
+    "ingredient_id": null
+  },
+  "dark_elf": {
+    "name": "dark elf",
+    "symbol": "e",
+    "color": [
+      120,
+      60,
+      180
+    ],
+    "hp": "2d6",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 7,
+    "thac0": 13,
+    "frequency": 4,
+    "attacks": [
+      {
+        "name": "dart",
+        "damage": "1d6",
+        "type": "poison",
+        "effect": "poisoned",
+        "effect_chance": 0.4,
+        "effect_duration": 8
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": null
+  },
+  "wight": {
+    "name": "wight",
+    "symbol": "W",
+    "color": [
+      200,
+      200,
+      220
+    ],
+    "hp": "3d8",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 7,
+    "thac0": 13,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "drain",
+        "damage": "1d8",
+        "type": "drain",
+        "effect": "slowed",
+        "effect_chance": 0.4,
+        "effect_duration": 8
+      }
+    ],
+    "resistances": [
+      "cold",
+      "poison",
+      "blunt"
+    ],
+    "weaknesses": [
+      "fire"
+    ],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": null
+  },
+  "rust_monster": {
+    "name": "rust monster",
+    "symbol": "R",
+    "color": [
+      180,
+      100,
+      40
+    ],
+    "hp": "2d6",
+    "speed": 1,
+    "ai_pattern": "cowardly",
+    "min_level": 7,
+    "thac0": 13,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "antenna",
+        "damage": "1d4",
+        "type": "acid",
+        "effect": "weakened",
+        "effect_chance": 0.5,
+        "effect_duration": 10
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": null
+  },
+  "cave_bear": {
+    "name": "cave bear",
+    "symbol": "B",
+    "color": [
+      140,
+      100,
+      60
+    ],
+    "hp": "4d6",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 7,
+    "thac0": 13,
+    "frequency": 4,
+    "attacks": [
+      {
+        "name": "claw",
+        "damage": "2d6",
+        "type": "slash"
+      },
+      {
+        "name": "bite",
+        "damage": "2d4",
+        "type": "physical"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "harvest_tier": 2,
+    "harvest_threshold": 2,
+    "ingredient_id": "bear_meat"
+  },
+  "ogre": {
+    "name": "ogre",
+    "symbol": "O",
+    "color": [
+      160,
+      120,
+      80
+    ],
+    "hp": "4d8",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 10,
+    "thac0": 10,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "club",
+        "damage": "3d6",
+        "type": "blunt"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [
+      "slash"
+    ],
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": null
+  },
+  "shadow": {
+    "name": "shadow",
+    "symbol": "s",
+    "color": [
+      80,
+      80,
+      120
+    ],
+    "hp": "3d6",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 10,
+    "thac0": 10,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "touch",
+        "damage": "1d6",
+        "type": "drain",
+        "effect": "blinded",
+        "effect_chance": 0.3,
+        "effect_duration": 5
+      }
+    ],
+    "resistances": [
+      "blunt",
+      "slash",
+      "pierce",
+      "cold"
+    ],
+    "weaknesses": [
+      "fire"
+    ],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": null
+  },
+  "mummy": {
+    "name": "mummy",
+    "symbol": "M",
+    "color": [
+      180,
+      160,
+      100
+    ],
+    "hp": "4d8",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 10,
+    "thac0": 10,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "slam",
+        "damage": "2d8",
+        "type": "blunt",
+        "effect": "diseased",
+        "effect_chance": 0.5,
+        "effect_duration": 20
+      },
+      {
+        "name": "rot",
+        "damage": "1d4",
+        "type": "physical",
+        "effect": "weakened",
+        "effect_chance": 0.4,
+        "effect_duration": 10
+      }
+    ],
+    "resistances": [
+      "blunt",
+      "cold",
+      "poison"
+    ],
+    "weaknesses": [
+      "fire"
+    ],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": null
+  },
+  "giant_spider": {
+    "name": "giant spider",
+    "symbol": "S",
+    "color": [
+      80,
+      60,
+      80
+    ],
+    "hp": "3d8",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 10,
+    "thac0": 10,
+    "frequency": 4,
+    "attacks": [
+      {
+        "name": "bite",
+        "damage": "2d6",
+        "type": "poison",
+        "effect": "paralyzed",
+        "effect_chance": 0.35,
+        "effect_duration": 6
+      },
+      {
+        "name": "web_spray",
+        "damage": "1d4",
+        "type": "physical",
+        "effect": "slowed",
+        "effect_chance": 0.5,
+        "effect_duration": 8
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": null
+  },
+  "ettin": {
+    "name": "ettin",
+    "symbol": "E",
+    "color": [
+      140,
+      130,
+      120
+    ],
+    "hp": "6d8",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 16,
+    "thac0": 4,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "club_left",
+        "damage": "2d8",
+        "type": "blunt"
+      },
+      {
+        "name": "club_right",
+        "damage": "2d8",
+        "type": "blunt"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [
+      "slash",
+      "pierce"
+    ],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": null
+  },
+  "manticore": {
+    "name": "manticore",
+    "symbol": "M",
+    "color": [
+      200,
+      100,
+      60
+    ],
+    "hp": "5d8",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 16,
+    "thac0": 4,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "claw",
+        "damage": "2d6",
+        "type": "slash"
+      },
+      {
+        "name": "tail_spike",
+        "damage": "2d6",
+        "type": "pierce",
+        "effect": "poisoned",
+        "effect_chance": 0.3,
+        "effect_duration": 6
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": "manticore_spine"
+  },
+  "specter": {
+    "name": "specter",
+    "symbol": "W",
+    "color": [
+      160,
+      200,
+      255
+    ],
+    "hp": "4d8",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 16,
+    "thac0": 4,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "touch",
+        "damage": "2d6",
+        "type": "drain",
+        "effect": "slowed",
+        "effect_chance": 0.5,
+        "effect_duration": 10
+      },
+      {
+        "name": "wail",
+        "damage": "1d4",
+        "type": "physical",
+        "effect": "weakened",
+        "effect_chance": 0.4,
+        "effect_duration": 8
+      }
+    ],
+    "resistances": [
+      "slash",
+      "pierce",
+      "blunt",
+      "cold",
+      "poison"
+    ],
+    "weaknesses": [
+      "fire"
+    ],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": null
+  },
+  "basilisk": {
+    "name": "basilisk",
+    "symbol": "b",
+    "color": [
+      100,
+      160,
+      80
+    ],
+    "hp": "5d8",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 16,
+    "thac0": 4,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "bite",
+        "damage": "2d6",
+        "type": "physical"
+      },
+      {
+        "name": "gaze",
+        "damage": "0d0",
+        "type": "physical",
+        "effect": "paralyzed",
+        "effect_chance": 1.0,
+        "effect_duration": 8
+      }
+    ],
+    "resistances": [
+      "poison"
+    ],
+    "weaknesses": [],
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "basilisk_stone"
+  },
+  "chimera": {
+    "name": "chimera",
+    "symbol": "C",
+    "color": [
+      200,
+      80,
+      160
+    ],
+    "hp": "6d8",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 16,
+    "thac0": 4,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "claw",
+        "damage": "2d6",
+        "type": "slash"
+      },
+      {
+        "name": "bite",
+        "damage": "2d8",
+        "type": "physical"
+      },
+      {
+        "name": "fire_breath",
+        "damage": "3d6",
+        "type": "fire"
+      }
+    ],
+    "resistances": [
+      "fire"
+    ],
+    "weaknesses": [],
+    "harvest_tier": 3,
+    "harvest_threshold": 2,
+    "ingredient_id": "chimera_heart"
+  },
+  "minotaur": {
+    "name": "minotaur",
+    "symbol": "M",
+    "color": [
+      160,
+      120,
+      100
+    ],
+    "hp": "6d8",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 20,
+    "thac0": 0,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "gore",
+        "damage": "3d6",
+        "type": "pierce"
+      },
+      {
+        "name": "slam",
+        "damage": "2d8",
+        "type": "blunt"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [
+      "slash"
+    ],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": null
+  },
+  "frost_crawler": {
+    "name": "frost crawler",
+    "symbol": "c",
+    "color": [
+      180,
+      230,
+      255
+    ],
+    "hp": "4d8",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 20,
+    "thac0": 0,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "bite",
+        "damage": "2d6",
+        "type": "cold",
+        "effect": "frozen",
+        "effect_chance": 0.35,
+        "effect_duration": 6
+      },
+      {
+        "name": "chill_aura",
+        "damage": "1d4",
+        "type": "cold"
+      }
+    ],
+    "resistances": [
+      "cold"
+    ],
+    "weaknesses": [
+      "fire"
+    ],
+    "harvest_tier": 2,
+    "harvest_threshold": 2,
+    "ingredient_id": "frost_gland"
+  },
+  "medusa": {
+    "name": "medusa",
+    "symbol": "M",
+    "color": [
+      220,
+      200,
+      60
+    ],
+    "hp": "5d8",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 20,
+    "thac0": 0,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "snake_bite",
+        "damage": "2d4",
+        "type": "poison",
+        "effect": "poisoned",
+        "effect_chance": 0.5,
+        "effect_duration": 10
+      },
+      {
+        "name": "gaze",
+        "damage": "0d0",
+        "type": "physical",
+        "effect": "paralyzed",
+        "effect_chance": 0.7,
+        "effect_duration": 6
+      }
+    ],
+    "resistances": [
+      "poison"
+    ],
+    "weaknesses": [],
+    "harvest_tier": 3,
+    "harvest_threshold": 5,
+    "ingredient_id": "medusa_blood"
+  },
+  "vampire_spawn": {
+    "name": "vampire spawn",
+    "symbol": "V",
+    "color": [
+      160,
+      60,
+      100
+    ],
+    "hp": "5d8",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 20,
+    "thac0": 0,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "bite",
+        "damage": "2d8",
+        "type": "drain",
+        "effect": "slowed",
+        "effect_chance": 0.4,
+        "effect_duration": 8
+      }
+    ],
+    "resistances": [
+      "cold",
+      "poison",
+      "blunt"
+    ],
+    "weaknesses": [
+      "fire"
+    ],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": null
+  },
+  "fire_elemental": {
+    "name": "fire elemental",
+    "symbol": "E",
+    "color": [
+      255,
+      100,
+      20
+    ],
+    "hp": "6d8",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 25,
+    "thac0": -5,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "fire_slam",
+        "damage": "3d8",
+        "type": "fire",
+        "effect": "burning",
+        "effect_chance": 0.5,
+        "effect_duration": 6
+      }
+    ],
+    "resistances": [
+      "fire",
+      "slash",
+      "pierce"
+    ],
+    "weaknesses": [
+      "cold"
+    ],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": null
+  },
+  "earth_elemental": {
+    "name": "earth elemental",
+    "symbol": "E",
+    "color": [
+      130,
+      110,
+      80
+    ],
+    "hp": "8d8",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 25,
+    "thac0": -5,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "stone_fist",
+        "damage": "4d6",
+        "type": "blunt"
+      }
+    ],
+    "resistances": [
+      "blunt",
+      "slash",
+      "pierce",
+      "cold"
+    ],
+    "weaknesses": [
+      "acid"
+    ],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": null
+  },
+  "storm_elemental": {
+    "name": "storm elemental",
+    "symbol": "E",
+    "color": [
+      180,
+      220,
+      255
+    ],
+    "hp": "6d8",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 25,
+    "thac0": -5,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "lightning",
+        "damage": "3d6",
+        "type": "shock",
+        "effect": "stunned",
+        "effect_chance": 0.4,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": [
+      "shock",
+      "slash"
+    ],
+    "weaknesses": [
+      "blunt"
+    ],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": null
+  },
+  "lich_apprentice": {
+    "name": "lich apprentice",
+    "symbol": "L",
+    "color": [
+      180,
+      200,
+      255
+    ],
+    "hp": "6d8",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 25,
+    "thac0": -5,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "cold_bolt",
+        "damage": "3d6",
+        "type": "cold"
+      },
+      {
+        "name": "death_touch",
+        "damage": "2d8",
+        "type": "drain"
+      }
+    ],
+    "resistances": [
+      "cold",
+      "poison",
+      "blunt"
+    ],
+    "weaknesses": [
+      "fire"
+    ],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": null
+  },
+  "mind_flayer": {
+    "name": "mind flayer",
+    "symbol": "h",
+    "color": [
+      160,
+      100,
+      200
+    ],
+    "hp": "6d8",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 25,
+    "thac0": -5,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "mind_blast",
+        "damage": "2d8",
+        "type": "physical",
+        "effect": "confused",
+        "effect_chance": 0.6,
+        "effect_duration": 10
+      },
+      {
+        "name": "tentacle",
+        "damage": "2d4",
+        "type": "drain"
+      }
+    ],
+    "resistances": [
+      "poison"
+    ],
+    "weaknesses": [],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": null
+  },
+  "vampire": {
+    "name": "vampire",
+    "symbol": "V",
+    "color": [
+      140,
+      30,
+      80
+    ],
+    "hp": "8d8",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 35,
+    "thac0": -10,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "bite",
+        "damage": "3d8",
+        "type": "drain",
+        "effect": "slowed",
+        "effect_chance": 0.5,
+        "effect_duration": 10
+      },
+      {
+        "name": "charm",
+        "damage": "0d0",
+        "type": "physical",
+        "effect": "confused",
+        "effect_chance": 0.3,
+        "effect_duration": 15
+      }
+    ],
+    "resistances": [
+      "cold",
+      "poison",
+      "slash",
+      "pierce"
+    ],
+    "weaknesses": [
+      "fire"
+    ],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": null
+  },
+  "death_knight": {
+    "name": "death knight",
+    "symbol": "K",
+    "color": [
+      100,
+      80,
+      160
+    ],
+    "hp": "8d8",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 35,
+    "thac0": -10,
+    "frequency": 1,
+    "attacks": [
+      {
+        "name": "sword",
+        "damage": "3d8",
+        "type": "drain"
+      },
+      {
+        "name": "fear_aura",
+        "damage": "0d0",
+        "type": "physical",
+        "effect": "feared",
+        "effect_chance": 0.4,
+        "effect_duration": 8
+      }
+    ],
+    "resistances": [
+      "cold",
+      "poison"
+    ],
+    "weaknesses": [
+      "fire"
+    ],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": null
+  },
+  "bone_golem": {
+    "name": "bone golem",
+    "symbol": "G",
+    "color": [
+      200,
+      200,
+      190
+    ],
+    "hp": "10d8",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 35,
+    "thac0": -10,
+    "frequency": 1,
+    "attacks": [
+      {
+        "name": "slam",
+        "damage": "4d6",
+        "type": "blunt"
+      }
+    ],
+    "resistances": [
+      "blunt",
+      "cold",
+      "poison",
+      "pierce"
+    ],
+    "weaknesses": [
+      "slash",
+      "fire"
+    ],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": null
+  },
+  "greater_demon": {
+    "name": "greater demon",
+    "symbol": "D",
+    "color": [
+      200,
+      40,
+      40
+    ],
+    "hp": "8d8",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 35,
+    "thac0": -10,
+    "frequency": 1,
+    "attacks": [
+      {
+        "name": "claw",
+        "damage": "3d6",
+        "type": "fire"
+      },
+      {
+        "name": "slam",
+        "damage": "2d8",
+        "type": "physical"
+      }
+    ],
+    "resistances": [
+      "fire",
+      "poison"
+    ],
+    "weaknesses": [
+      "cold"
+    ],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": null
+  },
+  "young_dragon": {
+    "name": "young dragon",
+    "symbol": "d",
+    "color": [
+      220,
+      120,
+      40
+    ],
+    "hp": "10d8",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 45,
+    "thac0": -10,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "claw",
+        "damage": "3d6",
+        "type": "slash"
+      },
+      {
+        "name": "fire_breath",
+        "damage": "5d6",
+        "type": "fire",
+        "effect": "burning",
+        "effect_chance": 0.6,
+        "effect_duration": 6
+      }
+    ],
+    "resistances": [
+      "fire"
+    ],
+    "weaknesses": [
+      "cold"
+    ],
+    "harvest_tier": 4,
+    "harvest_threshold": 4,
+    "ingredient_id": "dragon_scale"
+  },
+  "beholder": {
+    "name": "beholder",
+    "symbol": "B",
+    "color": [
+      100,
+      200,
+      100
+    ],
+    "hp": "8d8",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 45,
+    "thac0": -10,
+    "frequency": 1,
+    "attacks": [
+      {
+        "name": "eye_ray",
+        "damage": "3d8",
+        "type": "physical",
+        "effect": "paralyzed",
+        "effect_chance": 0.4,
+        "effect_duration": 5
+      },
+      {
+        "name": "eye_ray_2",
+        "damage": "2d8",
+        "type": "physical",
+        "effect": "confused",
+        "effect_chance": 0.5,
+        "effect_duration": 8
+      },
+      {
+        "name": "eye_ray_3",
+        "damage": "2d6",
+        "type": "physical",
+        "effect": "blinded",
+        "effect_chance": 0.4,
+        "effect_duration": 6
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": null
+  },
+  "vampire_lord": {
+    "name": "vampire lord",
+    "symbol": "V",
+    "color": [
+      180,
+      20,
+      80
+    ],
+    "hp": "10d8",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 45,
+    "thac0": -10,
+    "frequency": 1,
+    "attacks": [
+      {
+        "name": "bite",
+        "damage": "4d8",
+        "type": "drain"
+      },
+      {
+        "name": "charm_gaze",
+        "damage": "0d0",
+        "type": "physical",
+        "effect": "confused",
+        "effect_chance": 0.5,
+        "effect_duration": 20
+      }
+    ],
+    "resistances": [
+      "cold",
+      "poison",
+      "slash",
+      "pierce",
+      "blunt"
+    ],
+    "weaknesses": [
+      "fire"
+    ],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": null
+  },
+  "lich": {
+    "name": "lich",
+    "symbol": "L",
+    "color": [
+      160,
+      180,
+      255
+    ],
+    "hp": "10d8",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 45,
+    "thac0": -10,
+    "frequency": 1,
+    "attacks": [
+      {
+        "name": "death_touch",
+        "damage": "4d8",
+        "type": "drain"
+      },
+      {
+        "name": "cold_bolt",
+        "damage": "4d6",
+        "type": "cold"
+      },
+      {
+        "name": "fear_gaze",
+        "damage": "0d0",
+        "type": "physical",
+        "effect": "feared",
+        "effect_chance": 1.0,
+        "effect_duration": 6
+      }
+    ],
+    "resistances": [
+      "cold",
+      "poison",
+      "blunt",
+      "slash",
+      "pierce"
+    ],
+    "weaknesses": [
+      "fire"
+    ],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": null
+  },
+  "adult_dragon": {
+    "name": "adult dragon",
+    "symbol": "D",
+    "color": [
+      200,
+      80,
+      20
+    ],
+    "hp": "14d8",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 61,
+    "thac0": -10,
+    "frequency": 1,
+    "attacks": [
+      {
+        "name": "claw",
+        "damage": "4d6",
+        "type": "slash"
+      },
+      {
+        "name": "bite",
+        "damage": "4d8",
+        "type": "physical"
+      },
+      {
+        "name": "fire_breath",
+        "damage": "6d8",
+        "type": "fire",
+        "effect": "burning",
+        "effect_chance": 0.7,
+        "effect_duration": 8
+      }
+    ],
+    "resistances": [
+      "fire"
+    ],
+    "weaknesses": [
+      "cold"
+    ],
+    "harvest_tier": 4,
+    "harvest_threshold": 5,
+    "ingredient_id": "dragon_scale"
+  },
+  "iron_golem": {
+    "name": "iron golem",
+    "symbol": "G",
+    "color": [
+      140,
+      140,
+      140
+    ],
+    "hp": "16d8",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 61,
+    "thac0": -10,
+    "frequency": 1,
+    "attacks": [
+      {
+        "name": "slam",
+        "damage": "5d8",
+        "type": "blunt"
+      }
+    ],
+    "resistances": [
+      "fire",
+      "cold",
+      "shock",
+      "blunt",
+      "slash",
+      "pierce",
+      "poison"
+    ],
+    "weaknesses": [
+      "acid"
+    ],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": null
+  },
+  "greater_lich": {
+    "name": "greater lich",
+    "symbol": "L",
+    "color": [
+      120,
+      140,
+      255
+    ],
+    "hp": "12d8",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 61,
+    "thac0": -10,
+    "frequency": 1,
+    "attacks": [
+      {
+        "name": "death_bolt",
+        "damage": "5d8",
+        "type": "drain"
+      },
+      {
+        "name": "cold_wave",
+        "damage": "4d8",
+        "type": "cold",
+        "effect": "frozen",
+        "effect_chance": 0.6,
+        "effect_duration": 8
+      }
+    ],
+    "resistances": [
+      "cold",
+      "poison",
+      "blunt",
+      "slash",
+      "pierce"
+    ],
+    "weaknesses": [
+      "fire"
+    ],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": null
+  },
+  "arch_demon": {
+    "name": "arch demon",
+    "symbol": "D",
+    "color": [
+      255,
+      20,
+      20
+    ],
+    "hp": "14d8",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 61,
+    "thac0": -10,
+    "frequency": 1,
+    "attacks": [
+      {
+        "name": "hellfire",
+        "damage": "5d8",
+        "type": "fire",
+        "effect": "burning",
+        "effect_chance": 0.8,
+        "effect_duration": 8
+      },
+      {
+        "name": "rend",
+        "damage": "4d6",
+        "type": "slash"
+      }
+    ],
+    "resistances": [
+      "fire",
+      "poison"
+    ],
+    "weaknesses": [
+      "cold"
+    ],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": null
+  },
+  "ancient_dragon": {
+    "name": "ancient dragon",
+    "symbol": "D",
+    "color": [
+      40,
+      80,
+      255
+    ],
+    "hp": "20d8",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 81,
+    "thac0": -10,
+    "frequency": 1,
+    "attacks": [
+      {
+        "name": "claw",
+        "damage": "5d8",
+        "type": "slash"
+      },
+      {
+        "name": "bite",
+        "damage": "6d8",
+        "type": "physical"
+      },
+      {
+        "name": "frost_breath",
+        "damage": "8d8",
+        "type": "cold",
+        "effect": "frozen",
+        "effect_chance": 0.8,
+        "effect_duration": 10
+      }
+    ],
+    "resistances": [
+      "cold",
+      "slash"
+    ],
+    "weaknesses": [
+      "fire"
+    ],
+    "harvest_tier": 5,
+    "harvest_threshold": 5,
+    "ingredient_id": "dragon_scale"
+  },
+  "ancient_lich": {
+    "name": "ancient lich",
+    "symbol": "L",
+    "color": [
+      80,
+      100,
+      255
+    ],
+    "hp": "18d8",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 81,
+    "thac0": -10,
+    "frequency": 0,
+    "attacks": [
+      {
+        "name": "death_ray",
+        "damage": "6d8",
+        "type": "drain"
+      },
+      {
+        "name": "curse",
+        "damage": "0d0",
+        "type": "physical",
+        "effect": "weakened",
+        "effect_chance": 1.0,
+        "effect_duration": 30
+      },
+      {
+        "name": "cold_nova",
+        "damage": "5d8",
+        "type": "cold",
+        "effect": "frozen",
+        "effect_chance": 0.7,
+        "effect_duration": 10
+      }
+    ],
+    "resistances": [
+      "cold",
+      "poison",
+      "blunt",
+      "slash",
+      "pierce",
+      "fire",
+      "acid",
+      "shock"
+    ],
+    "weaknesses": [],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": null
+  },
+  "death_lord": {
+    "name": "death lord",
+    "symbol": "D",
+    "color": [
+      60,
+      0,
+      80
+    ],
+    "hp": "20d8",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 81,
+    "thac0": -10,
+    "frequency": 1,
+    "attacks": [
+      {
+        "name": "soul_rend",
+        "damage": "5d8",
+        "type": "drain",
+        "effect": "weakened",
+        "effect_chance": 0.8,
+        "effect_duration": 20
+      },
+      {
+        "name": "fear_aura",
+        "damage": "0d0",
+        "type": "physical",
+        "effect": "feared",
+        "effect_chance": 1.0,
+        "effect_duration": 10
+      },
+      {
+        "name": "death_gaze",
+        "damage": "3d8",
+        "type": "drain",
+        "effect": "slowed",
+        "effect_chance": 0.8,
+        "effect_duration": 10
+      }
+    ],
+    "resistances": [
+      "cold",
+      "poison",
+      "blunt",
+      "slash",
+      "pierce"
+    ],
+    "weaknesses": [
+      "fire"
+    ],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": null
+  },
+  "chaos_spawn": {
+    "name": "chaos spawn",
+    "symbol": "C",
+    "color": [
+      200,
+      100,
+      200
+    ],
+    "hp": "16d8",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 81,
+    "thac0": -10,
+    "frequency": 1,
+    "attacks": [
+      {
+        "name": "chaos_touch",
+        "damage": "5d8",
+        "type": "physical",
+        "effect": "confused",
+        "effect_chance": 0.8,
+        "effect_duration": 15
+      },
+      {
+        "name": "void_claw",
+        "damage": "4d8",
+        "type": "drain"
+      }
+    ],
+    "resistances": [
+      "blunt",
+      "slash"
+    ],
+    "weaknesses": [],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": null
+  },
+  "soul_eater": {
+    "name": "soul eater",
+    "symbol": "A",
+    "color": [
+      40,
+      40,
+      100
+    ],
+    "hp": "18d8",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 81,
+    "thac0": -10,
+    "frequency": 1,
+    "attacks": [
+      {
+        "name": "soul_drain",
+        "damage": "6d8",
+        "type": "drain",
+        "effect": "weakened",
+        "effect_chance": 1.0,
+        "effect_duration": 20
+      },
+      {
+        "name": "terror",
+        "damage": "0d0",
+        "type": "physical",
+        "effect": "feared",
+        "effect_chance": 0.9,
+        "effect_duration": 12
+      }
+    ],
+    "resistances": [
+      "cold",
+      "poison",
+      "blunt",
+      "slash",
+      "pierce",
+      "fire",
+      "shock"
+    ],
+    "weaknesses": [
+      "acid"
+    ],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
     "ingredient_id": null
   }
 }

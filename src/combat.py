@@ -8,18 +8,18 @@ _DEFAULT_MULTIPLIERS = [0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 4.0, 5.0]
 # Monster defn can set 'resistances': ['slash'] or 'weaknesses': ['pierce']
 def _damage_multiplier(damage_types: list[str], monster) -> float:
     """Return 0.5 for resistance, 1.5 for weakness, 1.0 otherwise.
-    If weapon has multiple types, pick the best result."""
-    best = 1.0
+    If weapon has multiple types, pick the best result across all types."""
     resistances = getattr(monster, 'resistances', [])
     weaknesses  = getattr(monster, 'weaknesses', [])
+    mults = []
     for dt in damage_types:
         if dt in weaknesses:
-            return 1.5          # exploit weakness immediately
-        if dt not in resistances:
-            best = max(best, 1.0)
+            mults.append(1.5)
+        elif dt in resistances:
+            mults.append(0.5)
         else:
-            best = max(best, 0.5)
-    return best
+            mults.append(1.0)
+    return max(mults) if mults else 1.0
 
 
 def player_attack(player, monster, quiz_engine, on_complete, ammo=None):

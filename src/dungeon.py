@@ -352,8 +352,9 @@ def _place_secret_doors(tiles, width: int, height: int,
 # ---------------------------------------------------------------------------
 
 def spawn_monsters(rooms: List[Room], level: int, dungeon: Dungeon,
-                   min_count: int = 3, max_count: int = 5) -> list:
-    """Spawn monsters in dungeon rooms (skips the first room)."""
+                   min_count: int = None, max_count: int = None) -> list:
+    """Spawn monsters in dungeon rooms (skips the first room).
+    Count scales with dungeon level: 3-5 at level 1, up to 10-15 at level 50+."""
     from monster import Monster
 
     monsters_path = os.path.join(os.path.dirname(__file__), '..', 'data', 'monsters.json')
@@ -364,7 +365,11 @@ def spawn_monsters(rooms: List[Room], level: int, dungeon: Dungeon,
     if not eligible:
         return []
 
-    rng      = random.Random()
+    rng = random.Random()
+    if min_count is None:
+        min_count = min(3 + level // 10, 10)
+    if max_count is None:
+        max_count = min(5 + level // 5, 15)
     count    = rng.randint(min_count, max_count)
     monsters = []
     spawn_rooms = rooms[1:]
