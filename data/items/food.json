@@ -1,0 +1,123 @@
+{
+  "bread_ration": {
+    "name": "bread ration",
+    "symbol": "%",
+    "color": [210, 180, 100],
+    "weight": 0.5,
+    "min_level": 1,
+    "sp_restore": 25,
+    "hp_restore": 0,
+    "bonus_type": "none",
+    "bonus_amount": 0,
+    "floor_spawn_weight": {"1-100": 80}
+  },
+  "dried_meat": {
+    "name": "dried meat",
+    "symbol": "%",
+    "color": [180, 110, 70],
+    "weight": 0.8,
+    "min_level": 1,
+    "sp_restore": 35,
+    "hp_restore": 0,
+    "bonus_type": "none",
+    "bonus_amount": 0,
+    "floor_spawn_weight": {"1-100": 70}
+  },
+  "hard_cheese": {
+    "name": "hard cheese",
+    "symbol": "%",
+    "color": [230, 210, 120],
+    "weight": 0.6,
+    "min_level": 1,
+    "sp_restore": 28,
+    "hp_restore": 0,
+    "bonus_type": "none",
+    "bonus_amount": 0,
+    "floor_spawn_weight": {"1-100": 65}
+  },
+  "wild_mushroom": {
+    "name": "wild mushroom",
+    "symbol": "%",
+    "color": [180, 130, 200],
+    "weight": 0.3,
+    "min_level": 1,
+    "sp_restore": 20,
+    "hp_restore": 0,
+    "bonus_type": "random_stat",
+    "bonus_amount": 1,
+    "floor_spawn_weight": {"1-100": 50}
+  },
+  "apple": {
+    "name": "apple",
+    "symbol": "%",
+    "color": [220, 60, 60],
+    "weight": 0.4,
+    "min_level": 1,
+    "sp_restore": 18,
+    "hp_restore": 2,
+    "bonus_type": "none",
+    "bonus_amount": 0,
+    "floor_spawn_weight": {"1-100": 60}
+  },
+  "trail_rations": {
+    "name": "trail rations",
+    "symbol": "%",
+    "color": [200, 160, 80],
+    "weight": 1.5,
+    "min_level": 1,
+    "sp_restore": 45,
+    "hp_restore": 0,
+    "bonus_type": "none",
+    "bonus_amount": 0,
+    "floor_spawn_weight": {"1-100": 55}
+  },
+  "healing_herb": {
+    "name": "healing herb",
+    "symbol": "%",
+    "color": [80, 200, 100],
+    "weight": 0.2,
+    "min_level": 3,
+    "sp_restore": 10,
+    "hp_restore": 8,
+    "bonus_type": "none",
+    "bonus_amount": 0,
+    "floor_spawn_weight": {"1-100": 45}
+  },
+  "elvish_bread": {
+    "name": "elvish bread",
+    "symbol": "%",
+    "color": [220, 220, 160],
+    "weight": 0.5,
+    "min_level": 10,
+    "sp_restore": 60,
+    "hp_restore": 5,
+    "bonus_type": "none",
+    "bonus_amount": 0,
+    "floor_spawn_weight": {"1-9": 0, "10-100": 30}
+  },
+  "hearty_stew": {
+    "name": "hearty stew",
+    "symbol": "%",
+    "color": [200, 140, 60],
+    "weight": 1.0,
+    "min_level": 5,
+    "sp_restore": 55,
+    "hp_restore": 10,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "floor_spawn_weight": {"1-4": 0, "5-100": 25}
+  },
+  "philosopher_tea": {
+    "name": "philosopher's tea",
+    "symbol": "%",
+    "color": [160, 100, 220],
+    "weight": 0.3,
+    "min_level": 15,
+    "sp_restore": 40,
+    "hp_restore": 0,
+    "bonus_type": "stat",
+    "bonus_stat": "WIS",
+    "bonus_amount": 1,
+    "floor_spawn_weight": {"1-14": 0, "15-100": 20}
+  }
+}

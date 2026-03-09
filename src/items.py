@@ -189,6 +189,19 @@ class Ammo(Item):
         self.value:        int = int(defn.get('value', 1))
 
 
+class Food(Item):
+    """Ready-to-eat food item. Restores SP and optionally HP; may grant a stat bonus."""
+    def __init__(self, defn: dict):
+        super().__init__(defn)
+        self.sp_restore:  int  = int(defn.get('sp_restore', 20))
+        self.hp_restore:  int  = int(defn.get('hp_restore', 0))
+        self.bonus_type:  str  = defn.get('bonus_type', 'none')
+        self.bonus_stat:  str  = defn.get('bonus_stat', '')
+        self.bonus_effect: str = defn.get('bonus_effect', '')
+        self.bonus_amount: int = int(defn.get('bonus_amount', 0))
+        self.floor_spawn_weight: dict = defn.get('floor_spawn_weight', {})
+
+
 # ------------------------------------------------------------------
 # Loading
 # ------------------------------------------------------------------
@@ -203,6 +216,7 @@ _CLASS_MAP: dict[str, type] = {
     'ingredient': Ingredient,
     'artifact':   Artifact,
     'ammo':       Ammo,
+    'food':       Food,
     'lockpick':   Lockpick,
     'container':  Container,
 }

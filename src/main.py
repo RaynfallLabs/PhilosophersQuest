@@ -5,9 +5,9 @@ from combat import player_attack
 from container_system import attempt_lockpick, check_for_mimic
 from dungeon import (generate_dungeon, spawn_monsters, spawn_items,
                      STAIRS_UP, STAIRS_DOWN, DOOR, SECRET_DOOR)
-from food_system import harvest_corpse, cook_ingredient
+from food_system import harvest_corpse, cook_ingredient, eat_food, eat_raw
 from fov import calculate_fov
-from items import Weapon, Armor, Shield, Corpse, Ingredient, Artifact, Container, Lockpick, Accessory, Wand, Scroll, Ammo
+from items import Weapon, Armor, Shield, Corpse, Ingredient, Artifact, Container, Lockpick, Accessory, Wand, Scroll, Ammo, Food
 from level_manager import LevelManager
 from player import Player
 from quiz_engine import QuizEngine, QuizMode, QuizState
@@ -39,6 +39,7 @@ STATE_VICTORY        = 'victory'
 STATE_DEAD           = 'dead'
 STATE_LOCKPICK       = 'lockpick'
 STATE_TARGET         = 'target'        # ranged targeting cursor
+STATE_EAT_MENU       = 'eat_menu'      # eat food / raw ingredient
 
 
 class Game:
@@ -62,6 +63,7 @@ class Game:
         self.scroll_menu_items: list     = []
         self.identify_menu_items: list   = []
         self.cook_menu_items: list       = []
+        self.eat_menu_items: list        = []
         self.turn_count         = 0
         self.dungeon_level      = 1
         self.defeat_reason      = 'died'   # 'died' | 'starved' | 'fled'
@@ -149,7 +151,8 @@ class Game:
             if self.state in (STATE_EQUIP_MENU, STATE_ACCESSORY_MENU,
                               STATE_WAND_MENU, STATE_SCROLL_MENU,
                               STATE_IDENTIFY_MENU, STATE_COOK_MENU,
-                              STATE_CONFIRM_EXIT, STATE_TARGET):
+                              STATE_CONFIRM_EXIT, STATE_TARGET,
+                              STATE_EAT_MENU):
                 self.state = STATE_PLAYER
                 return True
             if self.state in (STATE_DEAD, STATE_VICTORY):
@@ -181,6 +184,8 @@ class Game:
             self._identify_menu_input(key)
         elif self.state == STATE_COOK_MENU:
             self._cook_menu_input(key)
+        elif self.state == STATE_EAT_MENU:
+            self._eat_menu_input(key)
         elif self.state == STATE_CONFIRM_EXIT:
             self._confirm_exit_input(key)
 
@@ -228,6 +233,9 @@ class Game:
             return
         if key == pygame.K_f:
             self._open_targeting()
+            return
+        if key == pygame.K_z:
+            self._open_eat_menu()
             return
 
         if key not in self._MOVE_KEYS:
@@ -658,6 +666,48 @@ class Game:
             self._advance_turn()
 
         cook_ingredient(self.player, ingredient, self.quiz_engine, on_complete)
+
+    # ------------------------------------------------------------------
+    # Eat menu  (z key)
+    # ------------------------------------------------------------------
+
+    def _open_eat_menu(self):
+        """Collect Food items and Ingredients for eating/raw-eating."""
+        self.eat_menu_items = [
+            i for i in self.player.inventory
+            if isinstance(i, (Food, Ingredient))
+        ]
+        if not self.eat_menu_items:
+            self.add_message("You have nothing to eat.", 'info')
+            return
+        self.state = STATE_EAT_MENU
+
+    def _eat_menu_input(self, key: int):
+        key_to_idx = {
+            pygame.K_1: 0, pygame.K_KP1: 0,
+            pygame.K_2: 1, pygame.K_KP2: 1,
+            pygame.K_3: 2, pygame.K_KP3: 2,
+            pygame.K_4: 3, pygame.K_KP4: 3,
+            pygame.K_5: 4, pygame.K_KP5: 4,
+            pygame.K_6: 5, pygame.K_KP6: 5,
+            pygame.K_7: 6, pygame.K_KP7: 6,
+            pygame.K_8: 7, pygame.K_KP8: 7,
+            pygame.K_9: 8, pygame.K_KP9: 8,
+        }
+        idx = key_to_idx.get(key)
+        if idx is None or idx >= len(self.eat_menu_items):
+            return
+        self.state = STATE_PLAYER
+        item = self.eat_menu_items[idx]
+        self.player.remove_from_inventory(item)
+        if isinstance(item, Food):
+            messages = eat_food(self.player, item)
+        else:
+            messages = eat_raw(self.player, item)
+        mtype = 'success' if self.player.sp > 0 else 'warning'
+        for msg in messages:
+            self.add_message(msg, mtype)
+        self._advance_turn()
 
     # ------------------------------------------------------------------
     # Equip menu
@@ -1868,6 +1918,8 @@ class Game:
             self._draw_identify_menu()
         elif self.state == STATE_COOK_MENU:
             self._draw_cook_menu()
+        elif self.state == STATE_EAT_MENU:
+            self._draw_eat_menu()
         elif self.state == STATE_CONFIRM_EXIT:
             self._draw_confirm_exit()
         elif self.state == STATE_VICTORY:
@@ -2543,6 +2595,80 @@ class Game:
     # ------------------------------------------------------------------
     # Confirm exit overlay
     # ------------------------------------------------------------------
+
+    def _draw_eat_menu(self):
+        overlay = pygame.Surface((WINDOW_W, WINDOW_H), pygame.SRCALPHA)
+        overlay.fill((0, 0, 0, 150))
+        self.screen.blit(overlay, (0, 0))
+
+        bw = 580
+        bh = min(90 + len(self.eat_menu_items) * 52 + 50, 540)
+        bx = (GAME_W - bw) // 2
+        by = (WINDOW_H - bh) // 2
+
+        pygame.draw.rect(self.screen, (16, 22, 12), (bx, by, bw, bh), border_radius=12)
+        pygame.draw.rect(self.screen, (80, 160, 60), (bx, by, bw, bh), 2, border_radius=12)
+
+        self.screen.blit(
+            self.font_md.render("EAT  [Z]", True, (160, 220, 80)),
+            (bx + 20, by + 16)
+        )
+        sp = self.player.sp
+        sp_color = (80, 200, 80) if sp > 30 else (210, 160, 40) if sp > 10 else (210, 50, 50)
+        self.screen.blit(
+            self.font_sm.render(
+                f"SP: {sp}/{self.player.max_sp}  — Food restores SP. Ingredients eaten raw give minimal SP.",
+                True, sp_color
+            ),
+            (bx + 20, by + 44)
+        )
+        pygame.draw.line(self.screen, (50, 100, 40),
+                         (bx + 10, by + 66), (bx + bw - 10, by + 66))
+
+        for i, item in enumerate(self.eat_menu_items):
+            iy = by + 76 + i * 52
+            pygame.draw.rect(
+                self.screen,
+                (18, 28, 14) if i % 2 == 0 else (14, 22, 10),
+                (bx + 10, iy, bw - 20, 46), border_radius=6
+            )
+            self.screen.blit(
+                self.font_md.render(f"[{i+1}]", True, (120, 200, 80)),
+                (bx + 18, iy + 13)
+            )
+            self.screen.blit(
+                self.font_md.render(item.name, True, (220, 220, 200)),
+                (bx + 70, iy + 13)
+            )
+            if isinstance(item, Food):
+                parts = [f"+{item.sp_restore} SP"]
+                if item.hp_restore:
+                    parts.append(f"+{item.hp_restore} HP")
+                if item.bonus_type != 'none' and item.bonus_amount:
+                    if item.bonus_type == 'stat':
+                        parts.append(f"{item.bonus_stat}+{item.bonus_amount}")
+                    elif item.bonus_type == 'random_stat':
+                        parts.append(f"rand stat+{item.bonus_amount}")
+                    elif item.bonus_type == 'combat_stat':
+                        parts.append(f"STR/CON+{item.bonus_amount}")
+                detail_text = "  ".join(parts)
+            else:
+                best_q = max(item.recipes.keys(), key=int)
+                best_sp = item.recipes[best_q].get('sp', 0)
+                raw_sp = item.recipes.get('1', item.recipes.get('0', {})).get('sp', 5)
+                detail_text = f"raw: {raw_sp} SP  (cook for up to {best_sp} SP)"
+            self.screen.blit(
+                self.font_sm.render(detail_text, True, (140, 190, 120)),
+                (bx + 70, iy + 34)
+            )
+
+        hint_y = by + bh - 30
+        pygame.draw.line(self.screen, (50, 100, 40),
+                         (bx + 10, hint_y - 8), (bx + bw - 10, hint_y - 8))
+        hint = self.font_sm.render(
+            "Press number to eat  |  ESC to cancel", True, (100, 160, 80)
+        )
+        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
 
     def _draw_confirm_exit(self):
         overlay = pygame.Surface((WINDOW_W, WINDOW_H), pygame.SRCALPHA)

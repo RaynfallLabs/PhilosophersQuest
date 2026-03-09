@@ -471,7 +471,40 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
     for room in rooms_for_picks:
         _place_one(eligible_picks, room, dungeon, ground_items, rng)
 
+    # ── Food — 1-3 items scattered across rooms ──────────────────────────────
+    try:
+        all_food = load_items('food')
+    except FileNotFoundError:
+        all_food = []
+
+    eligible_food = _food_eligible(all_food, level)
+    food_count = rng.randint(1, 3)
+    food_rooms = rng.sample(rooms[1:], min(food_count, len(rooms) - 1))
+    for room in food_rooms:
+        _place_one(eligible_food, room, dungeon, ground_items, rng)
+
     return ground_items
+
+
+def _food_eligible(templates: list, level: int) -> list:
+    """Return food items eligible for this level, weighted by floor_spawn_weight."""
+    eligible = []
+    for item in templates:
+        w = _food_weight(item.floor_spawn_weight, level)
+        if w > 0:
+            eligible.extend([item] * w)
+    return eligible or templates[:]
+
+
+def _food_weight(spawn_weights: dict, level: int) -> int:
+    """Look up the spawn weight for a given level from a range-keyed dict."""
+    for key, weight in spawn_weights.items():
+        parts = str(key).split('-')
+        lo = int(parts[0])
+        hi = int(parts[1]) if len(parts) > 1 else lo
+        if lo <= level <= hi:
+            return int(weight)
+    return 0
 
 
 def _place_one(templates: list, room: 'Room', dungeon: 'Dungeon',

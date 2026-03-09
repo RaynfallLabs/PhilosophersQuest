@@ -126,5 +126,57 @@ def _apply_bonus(player, recipe) -> list[str]:
         for stat in chosen:
             player.apply_stat_bonus(stat, bonus_amount)
             messages.append(f"Your {_STAT_LABELS[stat]} increases by {bonus_amount}!")
+    elif bonus_type == 'all_stats':
+        for stat in _ALL_STATS:
+            player.apply_stat_bonus(stat, bonus_amount)
+        messages.append(f"All your stats increase by {bonus_amount}!")
+    elif bonus_type == 'stat':
+        stat = recipe.get('bonus_stat', '')
+        if stat in _STAT_LABELS:
+            player.apply_stat_bonus(stat, bonus_amount)
+            messages.append(f"Your {_STAT_LABELS[stat]} increases by {bonus_amount}!")
+    elif bonus_type == 'status':
+        effect = recipe.get('bonus_effect', '')
+        if effect:
+            player.add_effect(effect, bonus_amount)
+            messages.append(f"You feel a {effect.replace('_', ' ')} effect for {bonus_amount} turns!")
 
     return messages
+
+
+# ------------------------------------------------------------------
+# Eating
+# ------------------------------------------------------------------
+
+def eat_food(player, food_item) -> list[str]:
+    """
+    Directly consume a Food item. Returns list of messages.
+    Restores SP and optionally HP; may apply a bonus.
+    """
+    messages = []
+    sp = food_item.sp_restore
+    hp = food_item.hp_restore
+
+    player.restore_sp(sp)
+    messages.append(f"You eat the {food_item.name}. ({sp} SP restored)")
+
+    if hp > 0:
+        player.restore_hp(hp)
+        messages.append(f"The food soothes your wounds. (+{hp} HP)")
+
+    bonus_recipe = {
+        'bonus_type':   food_item.bonus_type,
+        'bonus_stat':   food_item.bonus_stat,
+        'bonus_effect': food_item.bonus_effect,
+        'bonus_amount': food_item.bonus_amount,
+    }
+    messages.extend(_apply_bonus(player, bonus_recipe))
+    return messages
+
+
+def eat_raw(player, ingredient) -> list[str]:
+    """Eat an ingredient raw (quality 1 recipe, no quiz)."""
+    recipe = ingredient.recipes.get('1', ingredient.recipes.get('0', {}))
+    sp = int(recipe.get('sp', 5))
+    player.restore_sp(sp)
+    return [f"You choke down the raw {ingredient.name}. ({sp} SP, unpleasant)."]

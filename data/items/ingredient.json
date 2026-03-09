@@ -7,12 +7,12 @@
     "min_level": 1,
     "source_monster": "giant_rat",
     "recipes": {
-      "0": {"name": "ruined rat slop",        "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
-      "1": {"name": "roasted rat",             "sp": 15,  "bonus_type": "none",        "bonus_amount": 0},
-      "2": {"name": "decent rat stew",         "sp": 30,  "bonus_type": "none",        "bonus_amount": 0},
-      "3": {"name": "good rat roast",          "sp": 50,  "bonus_type": "random_stat", "bonus_amount": 1},
-      "4": {"name": "great rat feast",         "sp": 75,  "bonus_type": "combat_stat", "bonus_amount": 1},
-      "5": {"name": "masterwork rat cuisine",  "sp": 100, "bonus_type": "two_stats",   "bonus_amount": 2}
+      "0": {"name": "ruined rat slop",          "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "roasted rat",              "sp": 15,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "decent rat stew",          "sp": 30,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "good rat roast",           "sp": 50,  "bonus_type": "random_stat", "bonus_amount": 1},
+      "4": {"name": "great rat feast",          "sp": 75,  "bonus_type": "combat_stat", "bonus_amount": 1},
+      "5": {"name": "masterwork rat cuisine",   "sp": 100, "bonus_type": "two_stats",   "bonus_amount": 2}
     }
   },
   "goblin_flesh": {
@@ -29,6 +29,182 @@
       "3": {"name": "good goblin meal",          "sp": 60,  "bonus_type": "random_stat", "bonus_amount": 1},
       "4": {"name": "great goblin feast",        "sp": 85,  "bonus_type": "combat_stat", "bonus_amount": 1},
       "5": {"name": "masterwork goblin banquet", "sp": 120, "bonus_type": "two_stats",   "bonus_amount": 2}
+    }
+  },
+  "snake_meat": {
+    "name": "snake meat",
+    "symbol": ",",
+    "color": [150, 190, 100],
+    "weight": 3.0,
+    "min_level": 1,
+    "source_monster": "cobra",
+    "recipes": {
+      "0": {"name": "ruined snake mash",         "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "grilled snake",             "sp": 18,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "snake broth",               "sp": 35,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "spiced snake roast",        "sp": 55,  "bonus_type": "stat",        "bonus_stat": "DEX", "bonus_amount": 1},
+      "4": {"name": "serpent medallion stew",    "sp": 80,  "bonus_type": "stat",        "bonus_stat": "DEX", "bonus_amount": 1},
+      "5": {"name": "cobra king's delicacy",     "sp": 110, "bonus_type": "status",      "bonus_effect": "poison_resist", "bonus_amount": 30}
+    }
+  },
+  "fire_gland": {
+    "name": "fire gland",
+    "symbol": ",",
+    "color": [230, 100, 40],
+    "weight": 1.5,
+    "min_level": 1,
+    "source_monster": "fire_beetle",
+    "recipes": {
+      "0": {"name": "scorched gland mush",       "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "roasted fire gland",        "sp": 12,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "spicy fire broth",          "sp": 25,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "ember-infused stew",        "sp": 40,  "bonus_type": "status",      "bonus_effect": "fire_shield", "bonus_amount": 15},
+      "4": {"name": "blazing fire reduction",    "sp": 60,  "bonus_type": "status",      "bonus_effect": "fire_shield", "bonus_amount": 25},
+      "5": {"name": "pyreling essence draught",  "sp": 80,  "bonus_type": "status",      "bonus_effect": "fire_shield", "bonus_amount": 40}
+    }
+  },
+  "gnoll_hide": {
+    "name": "gnoll hide",
+    "symbol": ",",
+    "color": [180, 140, 80],
+    "weight": 6.0,
+    "min_level": 2,
+    "source_monster": "gnoll",
+    "recipes": {
+      "0": {"name": "burnt gnoll leather",       "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "boiled gnoll scraps",       "sp": 22,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "gnoll hide broth",          "sp": 45,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "tenderised gnoll roast",    "sp": 65,  "bonus_type": "stat",        "bonus_stat": "CON", "bonus_amount": 1},
+      "4": {"name": "marinated gnoll feast",     "sp": 90,  "bonus_type": "stat",        "bonus_stat": "CON", "bonus_amount": 1},
+      "5": {"name": "gnoll chieftain's banquet", "sp": 125, "bonus_type": "combat_stat", "bonus_amount": 2}
+    }
+  },
+  "troll_hide": {
+    "name": "troll hide",
+    "symbol": ",",
+    "color": [80, 160, 100],
+    "weight": 8.0,
+    "min_level": 7,
+    "source_monster": "troll",
+    "recipes": {
+      "0": {"name": "rubbery troll scraps",      "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "tough troll stew",          "sp": 30,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "slow-cooked troll hide",    "sp": 55,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "regenerative troll broth",  "sp": 80,  "bonus_type": "status",      "bonus_effect": "regenerating", "bonus_amount": 20},
+      "4": {"name": "vitality troll roast",      "sp": 110, "bonus_type": "status",      "bonus_effect": "regenerating", "bonus_amount": 35},
+      "5": {"name": "troll-heart essence",       "sp": 150, "bonus_type": "stat",        "bonus_stat": "CON", "bonus_amount": 2}
+    }
+  },
+  "bear_meat": {
+    "name": "bear meat",
+    "symbol": ",",
+    "color": [190, 120, 70],
+    "weight": 10.0,
+    "min_level": 7,
+    "source_monster": "cave_bear",
+    "recipes": {
+      "0": {"name": "ruined bear chunks",        "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "roasted bear flank",        "sp": 40,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "hearty bear stew",          "sp": 75,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "slow-roasted bear",         "sp": 110, "bonus_type": "stat",        "bonus_stat": "STR", "bonus_amount": 1},
+      "4": {"name": "bear chieftain's roast",    "sp": 150, "bonus_type": "combat_stat", "bonus_amount": 2},
+      "5": {"name": "cave bear king's feast",    "sp": 200, "bonus_type": "two_stats",   "bonus_amount": 2}
+    }
+  },
+  "manticore_spine": {
+    "name": "manticore spine",
+    "symbol": ",",
+    "color": [200, 80, 160],
+    "weight": 5.0,
+    "min_level": 16,
+    "source_monster": "manticore",
+    "recipes": {
+      "0": {"name": "poisoned spine mash",       "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "detoxified spine broth",    "sp": 50,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "manticore marrow soup",     "sp": 90,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "venomous spine reduction",  "sp": 130, "bonus_type": "stat",        "bonus_stat": "DEX", "bonus_amount": 2},
+      "4": {"name": "manticore essence broth",   "sp": 175, "bonus_type": "two_stats",   "bonus_amount": 2},
+      "5": {"name": "king manticore's draught",  "sp": 230, "bonus_type": "stat",        "bonus_stat": "DEX", "bonus_amount": 3}
+    }
+  },
+  "basilisk_stone": {
+    "name": "basilisk stone",
+    "symbol": ",",
+    "color": [160, 160, 120],
+    "weight": 7.0,
+    "min_level": 18,
+    "source_monster": "basilisk",
+    "recipes": {
+      "0": {"name": "crumbled stone dust",       "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "mineral stone broth",       "sp": 40,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "basilisk essence soup",     "sp": 80,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "petrified flesh roast",     "sp": 120, "bonus_type": "stat",        "bonus_stat": "STR", "bonus_amount": 2},
+      "4": {"name": "basilisk king's pottage",   "sp": 170, "bonus_type": "combat_stat", "bonus_amount": 2},
+      "5": {"name": "gorgon-heart stew",         "sp": 220, "bonus_type": "two_stats",   "bonus_amount": 3}
+    }
+  },
+  "chimera_heart": {
+    "name": "chimera heart",
+    "symbol": ",",
+    "color": [200, 120, 200],
+    "weight": 6.0,
+    "min_level": 22,
+    "source_monster": "chimera",
+    "recipes": {
+      "0": {"name": "rancid chimera organ",      "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "chimera heart broth",       "sp": 60,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "tri-essence heart soup",    "sp": 110, "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "chimera power stew",        "sp": 160, "bonus_type": "stat",        "bonus_stat": "INT", "bonus_amount": 2},
+      "4": {"name": "beast-heart reduction",     "sp": 210, "bonus_type": "two_stats",   "bonus_amount": 2},
+      "5": {"name": "tri-nature essence feast",  "sp": 270, "bonus_type": "all_stats",   "bonus_amount": 1}
+    }
+  },
+  "frost_gland": {
+    "name": "frost gland",
+    "symbol": ",",
+    "color": [140, 200, 240],
+    "weight": 3.0,
+    "min_level": 20,
+    "source_monster": "frost_crawler",
+    "recipes": {
+      "0": {"name": "melted frost slurry",       "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "chilled frost extract",     "sp": 45,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "cryo-essence broth",        "sp": 85,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "frost-infused reduction",   "sp": 125, "bonus_type": "status",      "bonus_effect": "cold_shield", "bonus_amount": 20},
+      "4": {"name": "glacial essence draught",   "sp": 170, "bonus_type": "status",      "bonus_effect": "cold_shield", "bonus_amount": 35},
+      "5": {"name": "absolute zero elixir",      "sp": 220, "bonus_type": "status",      "bonus_effect": "cold_shield", "bonus_amount": 50}
+    }
+  },
+  "medusa_blood": {
+    "name": "medusa blood",
+    "symbol": ",",
+    "color": [180, 60, 180],
+    "weight": 2.0,
+    "min_level": 24,
+    "source_monster": "medusa",
+    "recipes": {
+      "0": {"name": "poisonous blood puddle",    "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "neutralised medusa serum",  "sp": 55,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "gorgon blood reduction",    "sp": 100, "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "serpent-sight broth",       "sp": 150, "bonus_type": "stat",        "bonus_stat": "PER", "bonus_amount": 2},
+      "4": {"name": "medusa's gaze distillate",  "sp": 200, "bonus_type": "two_stats",   "bonus_amount": 2},
+      "5": {"name": "gorgon queen's elixir",     "sp": 260, "bonus_type": "stat",        "bonus_stat": "PER", "bonus_amount": 4}
+    }
+  },
+  "dragon_scale": {
+    "name": "dragon scale",
+    "symbol": ",",
+    "color": [255, 160, 40],
+    "weight": 12.0,
+    "min_level": 45,
+    "source_monster": "young_dragon",
+    "recipes": {
+      "0": {"name": "charred scale dust",          "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "dragon scale consomme",       "sp": 100, "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "dragonfire essence broth",    "sp": 180, "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "draconic power reduction",    "sp": 280, "bonus_type": "combat_stat", "bonus_amount": 3},
+      "4": {"name": "elder dragon's feast",        "sp": 400, "bonus_type": "two_stats",   "bonus_amount": 3},
+      "5": {"name": "ancient dragon's blessing",   "sp": 550, "bonus_type": "all_stats",   "bonus_amount": 2}
     }
   }
 }
