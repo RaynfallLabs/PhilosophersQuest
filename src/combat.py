@@ -22,14 +22,15 @@ def _damage_multiplier(damage_types: list[str], monster) -> float:
     return best
 
 
-def player_attack(player, monster, quiz_engine, on_complete):
+def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
     """
     Start a math chain quiz for the player attacking a monster.
 
     on_complete(damage: int, killed: bool, chain: int) is called when the quiz ends.
     Chain 0 (first answer wrong) = MISS (0 damage).
     Uses weapon's base_damage (int) or falls back to rolling weapon.damage (dice string).
-    Applies enchant_bonus, damage type multipliers, and stun chance on hit.
+    Applies enchant_bonus, ammo damage_bonus, damage type multipliers, and stun chance on hit.
+    ammo: optional Ammo item whose damage_bonus is added to base damage.
     """
     weapon = player.weapon
 
@@ -47,6 +48,8 @@ def player_attack(player, monster, quiz_engine, on_complete):
         else:
             base = roll('1d4')
 
+        # Ammo damage bonus (ranged shots only)
+        ammo_bonus  = ammo.damage_bonus if ammo else 0
         enchant     = weapon.enchant_bonus if weapon else 0
         multipliers = weapon.chain_multipliers if weapon else _DEFAULT_MULTIPLIERS
         mult        = multipliers[min(chain - 1, len(multipliers) - 1)]
@@ -56,7 +59,7 @@ def player_attack(player, monster, quiz_engine, on_complete):
         if weapon:
             dtype_mult = _damage_multiplier(weapon.damage_types, monster)
 
-        damage = max(1, int((base + enchant) * mult * dtype_mult))
+        damage = max(1, int((base + enchant + ammo_bonus) * mult * dtype_mult))
         actual = monster.take_damage(damage)
 
         # Stun mechanic (staves only, or any weapon with stunChance > 0)

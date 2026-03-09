@@ -201,7 +201,18 @@ class Sidebar:
             ("Feet",   "feet"),
         ]:
             item = equipped.get(key)
-            iname = item.name if item else "\u2014"
+            if item:
+                iname = item.name
+                # Show ammo count for ranged weapons
+                if key == "weapon" and getattr(item, 'requires_ammo', None):
+                    ammo_type = item.requires_ammo
+                    total = sum(
+                        i.count for i in player.inventory
+                        if getattr(i, 'ammo_type', None) == ammo_type
+                    )
+                    iname += f" [{total} {ammo_type}s]"
+            else:
+                iname = "\u2014"
             ic = (195, 190, 135) if item else (52, 52, 70)
             self.screen.blit(
                 self._fsm.render(f"{label}:", True, (105, 105, 150)),
@@ -245,8 +256,10 @@ class Sidebar:
                 self._fsm.render(f"{letter})", True, (145, 145, 65)),
                 (self.x + self.PAD, y)
             )
+            count = getattr(item, 'count', None)
+            display = f"{item.name} x{count}" if count is not None else item.name
             self.screen.blit(
-                self._fsm.render(item.name, True, ic),
+                self._fsm.render(display, True, ic),
                 (self.x + self.PAD + 19, y)
             )
             y += 14

@@ -162,6 +162,19 @@ class Corpse(Item):
         self.y = y
 
 
+class Ammo(Item):
+    def __init__(self, defn: dict):
+        super().__init__(defn)
+        self.ammo_type:    str = defn.get('ammo_type', 'arrow')
+        self.tier:         int = int(defn.get('tier', 1))
+        self.damage_bonus: int = int(defn.get('damage_bonus', 0))
+        self.count_min:    int = int(defn.get('count_min', 10))
+        self.count_max:    int = int(defn.get('count_max', 20))
+        self.count:        int = self.count_min   # re-rolled at spawn
+        self.floor_spawn_weight: dict = defn.get('floor_spawn_weight', {})
+        self.value:        int = int(defn.get('value', 1))
+
+
 # ------------------------------------------------------------------
 # Loading
 # ------------------------------------------------------------------
@@ -175,6 +188,7 @@ _CLASS_MAP: dict[str, type] = {
     'scroll':     Scroll,
     'ingredient': Ingredient,
     'artifact':   Artifact,
+    'ammo':       Ammo,
     'lockpick':   Lockpick,
     'container':  Container,
 }

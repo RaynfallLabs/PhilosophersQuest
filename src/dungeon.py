@@ -396,9 +396,9 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
     rng          = random.Random()
     ground_items = []
 
-    # ── Regular items (weapons/armor/accessories/wands/scrolls) — 33% per room ──
+    # ── Regular items (weapons/armor/accessories/wands/scrolls/ammo) — 33% per room ──
     templates: list = []
-    for cls_name in ('weapon', 'armor', 'accessory', 'wand', 'scroll'):
+    for cls_name in ('weapon', 'armor', 'accessory', 'wand', 'scroll', 'ammo'):
         try:
             templates += load_items(cls_name)
         except FileNotFoundError:
@@ -485,6 +485,9 @@ def _place_one(templates: list, room: 'Room', dungeon: 'Dungeon',
         # Re-roll wand charges semi-randomly at spawn time
         if hasattr(inst, 'charges_min'):
             inst.charges = rng.randint(inst.charges_min, inst.charges_max)
+        # Re-roll ammo count at spawn time
+        if hasattr(inst, 'count_min'):
+            inst.count = rng.randint(inst.count_min, inst.count_max)
         inst.x = tx
         inst.y = ty
         ground_items.append(inst)

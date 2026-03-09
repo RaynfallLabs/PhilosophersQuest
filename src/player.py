@@ -135,13 +135,26 @@ class Player:
         return self.CARRY_BASE + self.STR * self.CARRY_PER_STR
 
     def get_current_weight(self) -> float:
-        return sum(getattr(item, 'weight', 0) for item in self.inventory)
+        total = 0.0
+        for item in self.inventory:
+            count = getattr(item, 'count', 1)
+            total += getattr(item, 'weight', 0) * count
+        return total
 
     # --- Inventory ---
 
     def add_to_inventory(self, item) -> bool:
-        if self.get_current_weight() + getattr(item, 'weight', 0) > self.get_carry_limit():
+        # Ammo stacks: merge into existing stack of same id
+        count = getattr(item, 'count', 1)
+        item_weight = getattr(item, 'weight', 0) * count
+        if item_weight + self.get_current_weight() > self.get_carry_limit():
             return False
+        # Check for stackable ammo
+        if hasattr(item, 'ammo_type'):
+            existing = next((i for i in self.inventory if i.id == item.id), None)
+            if existing is not None:
+                existing.count += item.count
+                return True
         self.inventory.append(item)
         return True
 

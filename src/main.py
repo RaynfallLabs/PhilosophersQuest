@@ -7,7 +7,7 @@ from dungeon import (generate_dungeon, spawn_monsters, spawn_items,
                      STAIRS_UP, STAIRS_DOWN, DOOR, SECRET_DOOR)
 from food_system import harvest_corpse, cook_ingredient
 from fov import calculate_fov
-from items import Weapon, Armor, Shield, Corpse, Ingredient, Artifact, Container, Lockpick, Accessory, Wand, Scroll
+from items import Weapon, Armor, Shield, Corpse, Ingredient, Artifact, Container, Lockpick, Accessory, Wand, Scroll, Ammo
 from level_manager import LevelManager
 from player import Player
 from quiz_engine import QuizEngine, QuizMode, QuizState
@@ -484,7 +484,10 @@ class Game:
             return
         if self.player.add_to_inventory(item):
             self.ground_items.remove(item)
-            self.add_message(f"You pick up the {item.name}.", 'loot')
+            if isinstance(item, Ammo):
+                self.add_message(f"You pick up {item.count} {item.name}s.", 'loot')
+            else:
+                self.add_message(f"You pick up the {item.name}.", 'loot')
             if isinstance(item, Artifact) and item.id == 'philosophers_stone':
                 self.add_message(
                     "The Philosopher's Stone! Return to the surface to win!", 'loot'
@@ -1695,7 +1698,7 @@ class Game:
                     )
             self._advance_turn()
 
-        player_attack(self.player, monster, self.quiz_engine, on_complete)
+        player_attack(self.player, monster, self.quiz_engine, on_complete, ammo=ammo_item)
 
     # ------------------------------------------------------------------
     # Combat
