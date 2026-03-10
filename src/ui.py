@@ -1,6 +1,6 @@
 import pygame
 
-SIDEBAR_W = 300
+SIDEBAR_W = 320
 
 _MSG_COLORS = {
     'info':    (210, 210, 210),
@@ -58,9 +58,9 @@ class Sidebar:
         self.x = x
         self.w = SIDEBAR_W
         self.h = screen.get_height()
-        self._fsm  = pygame.font.SysFont('consolas', 13)
-        self._fbold = pygame.font.SysFont('consolas', 13, bold=True)
-        self._fhd  = pygame.font.SysFont('consolas', 13, bold=True)
+        self._fsm  = pygame.font.SysFont('consolas', 14)
+        self._fbold = pygame.font.SysFont('consolas', 14, bold=True)
+        self._fhd  = pygame.font.SysFont('consolas', 14, bold=True)
 
     def draw(self, player, dungeon_level: int, turn_count: int):
         pygame.draw.rect(self.screen, (10, 10, 22), (self.x, 0, self.w, self.h))
@@ -163,13 +163,13 @@ class Sidebar:
 
         # Hunger indicator
         sp = player.sp
-        if sp < 10:
+        if sp < 20:
             self.screen.blit(
                 self._fbold.render("[Starving!]", True, (215, 50, 50)),
                 (self.x + self.PAD, y)
             )
             y += 15
-        elif sp < 30:
+        elif sp < 60:
             self.screen.blit(
                 self._fbold.render("[Hungry]", True, (215, 180, 45)),
                 (self.x + self.PAD, y)

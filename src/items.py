@@ -157,7 +157,8 @@ class Ingredient(Item):
 class Corpse(Item):
     def __init__(self, monster_name: str, monster_id: str, x: int, y: int,
                  harvest_tier: int = 1, harvest_threshold: int = 2,
-                 ingredient_id: str | None = None):
+                 ingredient_id: str | None = None,
+                 lore: str = '', monster_def: dict | None = None):
         defn = {
             'id':         f'corpse_{monster_id}',
             'name':       f'{monster_name} corpse',
@@ -169,9 +170,13 @@ class Corpse(Item):
         }
         super().__init__(defn)
         self.monster_id        = monster_id
+        self.monster_name      = monster_name
         self.harvest_tier      = harvest_tier
         self.harvest_threshold = harvest_threshold
         self.ingredient_id     = ingredient_id
+        self.lore              = lore
+        self.monster_def       = monster_def or {}   # full definition for stat display
+        self.lore_identified   = False
         self.x = x
         self.y = y
 

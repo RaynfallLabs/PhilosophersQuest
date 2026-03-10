@@ -145,9 +145,9 @@ class QuizEngine:
     def update(self, dt: float):
         """Call each frame with delta time in seconds."""
         if self.state == QuizState.ASKING:
-            self.time_remaining -= dt
-            if self.time_remaining <= 0:
-                self.answer('')  # timeout counts as a wrong answer
+            # Timer counts down once across the whole session — clamp at 0, never force an answer
+            if self.time_remaining > 0:
+                self.time_remaining = max(0.0, self.time_remaining - dt)
 
         elif self.state == QuizState.RESULT:
             self.result_timer -= dt
@@ -166,7 +166,7 @@ class QuizEngine:
             self._pool_idx = 0
         self.current_question = self._pool[self._pool_idx]
         self._pool_idx += 1
-        self.time_remaining = float(self.timer_seconds)
+        # Timer is set once in start_quiz() and runs continuously — no reset per question
         self.state = QuizState.ASKING
 
         # Generate shuffled choice order for confused players

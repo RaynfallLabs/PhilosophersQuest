@@ -1,92 +1,86 @@
 [
-  {
-    "tier": 1,
-    "question": "At what temperature does water boil (Fahrenheit)?",
-    "answer": "212",
-    "choices": ["100", "180", "212", "250"]
-  },
-  {
-    "tier": 1,
-    "question": "What herb is traditionally used in pesto?",
-    "answer": "basil",
-    "choices": ["basil", "rosemary", "thyme", "oregano"]
-  },
-  {
-    "tier": 1,
-    "question": "What grain is used to make most bread?",
-    "answer": "wheat",
-    "choices": ["rice", "wheat", "corn", "oats"]
-  },
-  {
-    "tier": 1,
-    "question": "What does sautéing mean?",
-    "answer": "frying quickly in a little fat",
-    "choices": ["boiling in water", "frying quickly in a little fat", "baking in an oven", "slow roasting"]
-  },
-  {
-    "tier": 1,
-    "question": "What is the main ingredient in hummus?",
-    "answer": "chickpeas",
-    "choices": ["lentils", "chickpeas", "black beans", "kidney beans"]
-  },
-  {
-    "tier": 2,
-    "question": "At what internal temperature is chicken safe to eat (Fahrenheit)?",
-    "answer": "165",
-    "choices": ["145", "155", "165", "180"]
-  },
-  {
-    "tier": 2,
-    "question": "What does al dente mean in cooking?",
-    "answer": "firm to the bite",
-    "choices": ["very soft", "firm to the bite", "fully raw", "lightly browned"]
-  },
-  {
-    "tier": 2,
-    "question": "What does blanching involve?",
-    "answer": "briefly boiling then cooling in ice water",
-    "choices": ["slow roasting", "deep frying", "briefly boiling then cooling in ice water", "marinating overnight"]
-  },
-  {
-    "tier": 2,
-    "question": "What is umami often described as?",
-    "answer": "savory",
-    "choices": ["sweet", "sour", "savory", "bitter"]
-  },
-  {
-    "tier": 2,
-    "question": "What does the Maillard reaction cause in cooking?",
-    "answer": "browning and new flavors",
-    "choices": ["food to become soft", "browning and new flavors", "food to turn sour", "bread to rise"]
-  },
-  {
-    "tier": 3,
-    "question": "What cooking method uses vacuum-sealed bags in a water bath?",
-    "answer": "sous vide",
-    "choices": ["confit", "poaching", "sous vide", "braising"]
-  },
-  {
-    "tier": 3,
-    "question": "What is a roux?",
-    "answer": "fat and flour cooked together",
-    "choices": ["reduced stock sauce", "fat and flour cooked together", "egg and oil emulsion", "cream reduction"]
-  },
-  {
-    "tier": 3,
-    "question": "What does 'mise en place' mean?",
-    "answer": "everything in its place",
-    "choices": ["put on the plate", "everything in its place", "ready to serve", "measure and prepare"]
-  },
-  {
-    "tier": 3,
-    "question": "What is emulsification in cooking?",
-    "answer": "combining oil and water with an emulsifier",
-    "choices": ["reducing a sauce by boiling", "combining oil and water with an emulsifier", "clarifying butter", "thickening with starch"]
-  },
-  {
-    "tier": 3,
-    "question": "What is tempering chocolate?",
-    "answer": "controlled heating and cooling for gloss",
-    "choices": ["melting chocolate fully", "controlled heating and cooling for gloss", "mixing chocolate with cream", "adding sugar to chocolate"]
-  }
+  {"question": "At what temperature does water boil at sea level?", "choices": ["90°C", "100°C", "110°C", "120°C"], "answer": "100°C", "tier": 1},
+  {"question": "What herb is traditionally used in pesto?", "choices": ["Basil", "Rosemary", "Thyme", "Oregano"], "answer": "Basil", "tier": 1},
+  {"question": "What grain is used to make most bread?", "choices": ["Rice", "Wheat", "Corn", "Oats"], "answer": "Wheat", "tier": 1},
+  {"question": "What is the main ingredient in hummus?", "choices": ["Lentils", "Chickpeas", "Black beans", "Kidney beans"], "answer": "Chickpeas", "tier": 1},
+  {"question": "What tool is used to measure the temperature of meat?", "choices": ["Kitchen scale", "Meat thermometer", "Hygrometer", "Probe timer"], "answer": "Meat thermometer", "tier": 1},
+  {"question": "What does sautéing mean?", "choices": ["Boiling in water", "Frying quickly in a little fat", "Baking in an oven", "Slow roasting"], "answer": "Frying quickly in a little fat", "tier": 1},
+  {"question": "What is the primary leavening agent in bread?", "choices": ["Baking powder", "Yeast", "Baking soda", "Egg whites"], "answer": "Yeast", "tier": 1},
+  {"question": "What kitchen tool is used to finely chop or mince?", "choices": ["Peeler", "Chef's knife", "Grater", "Tongs"], "answer": "Chef's knife", "tier": 1},
+  {"question": "What is the freezing point of water in Celsius?", "choices": ["-10°C", "0°C", "10°C", "5°C"], "answer": "0°C", "tier": 1},
+  {"question": "What type of fat is butter?", "choices": ["Unsaturated fat", "Trans fat", "Saturated fat", "Polyunsaturated fat"], "answer": "Saturated fat", "tier": 1},
+  {"question": "What is the main ingredient in guacamole?", "choices": ["Tomato", "Avocado", "Mango", "Pepper"], "answer": "Avocado", "tier": 1},
+  {"question": "Which kitchen tool is used to strain liquids?", "choices": ["Spatula", "Colander", "Whisk", "Ladle"], "answer": "Colander", "tier": 1},
+  {"question": "What does it mean to 'dice' a vegetable?", "choices": ["Cut into long strips", "Cut into small cubes", "Tear into pieces", "Slice paper-thin"], "answer": "Cut into small cubes", "tier": 1},
+  {"question": "What is pasta traditionally made from?", "choices": ["Rice flour", "Durum wheat semolina", "Corn flour", "Barley flour"], "answer": "Durum wheat semolina", "tier": 1},
+  {"question": "What is the standard safe internal temperature for cooked chicken (Celsius)?", "choices": ["65°C", "70°C", "74°C", "80°C"], "answer": "74°C", "tier": 1},
+  {"question": "What is olive oil extracted from?", "choices": ["Olives", "Sunflower seeds", "Rapeseed", "Corn"], "answer": "Olives", "tier": 1},
+  {"question": "What does 'marinating' mean?", "choices": ["Coating food in breadcrumbs", "Soaking food in seasoned liquid before cooking", "Cooking in butter", "Drying food with salt"], "answer": "Soaking food in seasoned liquid before cooking", "tier": 1},
+  {"question": "Which of these is a dairy product?", "choices": ["Tofu", "Miso", "Parmesan", "Tahini"], "answer": "Parmesan", "tier": 1},
+
+  {"question": "What cooking technique involves briefly boiling food then plunging into ice water?", "choices": ["Blanching", "Poaching", "Steaming", "Simmering"], "answer": "Blanching", "tier": 2},
+  {"question": "What does 'al dente' mean?", "choices": ["Very soft", "Firm to the bite", "Fully raw", "Lightly browned"], "answer": "Firm to the bite", "tier": 2},
+  {"question": "What does the Maillard reaction cause in cooking?", "choices": ["Food to become soft", "Browning and new flavors", "Food to turn sour", "Bread to rise"], "answer": "Browning and new flavors", "tier": 2},
+  {"question": "What is umami often described as?", "choices": ["Sweet", "Sour", "Savory", "Bitter"], "answer": "Savory", "tier": 2},
+  {"question": "At what internal temperature is beef considered medium-rare (Celsius)?", "choices": ["50°C", "57°C", "68°C", "74°C"], "answer": "57°C", "tier": 2},
+  {"question": "What country is sushi originally from?", "choices": ["China", "Korea", "Japan", "Thailand"], "answer": "Japan", "tier": 2},
+  {"question": "What is 'braising'?", "choices": ["Cooking in a large amount of liquid", "Searing then slow-cooking in a small amount of liquid", "Cooking over an open flame", "Deep frying"], "answer": "Searing then slow-cooking in a small amount of liquid", "tier": 2},
+  {"question": "What is the approximate ratio of flour to fat in a standard shortcrust pastry?", "choices": ["4:1", "2:1", "1:1", "3:1"], "answer": "2:1", "tier": 2},
+  {"question": "What cuisine does 'paella' originate from?", "choices": ["Italian", "French", "Spanish", "Portuguese"], "answer": "Spanish", "tier": 2},
+  {"question": "What does 'reduce' mean in cooking?", "choices": ["Cool a liquid quickly", "Thicken a liquid by boiling off water", "Add acid to a sauce", "Blend a sauce smooth"], "answer": "Thicken a liquid by boiling off water", "tier": 2},
+  {"question": "What is a 'julienne' cut?", "choices": ["Small cubes", "Thin matchstick strips", "Diagonal slices", "Half-moon slices"], "answer": "Thin matchstick strips", "tier": 2},
+  {"question": "What country does 'kimchi' come from?", "choices": ["Japan", "China", "Vietnam", "Korea"], "answer": "Korea", "tier": 2},
+  {"question": "What kitchen technique is 'folding'?", "choices": ["Beating vigorously", "Gently combining two mixtures to preserve air", "Pressing dough flat", "Cutting dough into pieces"], "answer": "Gently combining two mixtures to preserve air", "tier": 2},
+  {"question": "What is the main ingredient in a traditional French onion soup?", "choices": ["Leeks", "Shallots", "Caramelized onions", "Scallions"], "answer": "Caramelized onions", "tier": 2},
+  {"question": "What grain is risotto made from?", "choices": ["Long-grain rice", "Arborio rice", "Basmati rice", "Jasmine rice"], "answer": "Arborio rice", "tier": 2},
+  {"question": "What does 'poaching' mean?", "choices": ["Cooking in oil at high heat", "Cooking gently in barely simmering liquid", "Roasting in an oven", "Grilling over coals"], "answer": "Cooking gently in barely simmering liquid", "tier": 2},
+  {"question": "What type of cuisine prominently uses 'mole' sauce?", "choices": ["Italian", "Indian", "Mexican", "Thai"], "answer": "Mexican", "tier": 2},
+  {"question": "What is the key ingredient that makes bread rise when using sourdough?", "choices": ["Commercial yeast", "Wild yeast and lactic acid bacteria", "Baking powder", "Eggs"], "answer": "Wild yeast and lactic acid bacteria", "tier": 2},
+
+  {"question": "What are the five French mother sauces? One is Béchamel. Name another.", "choices": ["Velouté", "Hollandaise", "Alfredo", "Tzatziki"], "answer": "Velouté", "tier": 3},
+  {"question": "What does 'mise en place' mean?", "choices": ["Put on the plate", "Everything in its place", "Ready to serve", "Measure and prepare"], "answer": "Everything in its place", "tier": 3},
+  {"question": "What is a roux?", "choices": ["Reduced stock sauce", "Fat and flour cooked together", "Egg and oil emulsion", "Cream reduction"], "answer": "Fat and flour cooked together", "tier": 3},
+  {"question": "What is tempering chocolate?", "choices": ["Melting chocolate fully", "Controlled heating and cooling for gloss and snap", "Mixing chocolate with cream", "Adding sugar to chocolate"], "answer": "Controlled heating and cooling for gloss and snap", "tier": 3},
+  {"question": "What is emulsification in cooking?", "choices": ["Reducing a sauce by boiling", "Combining oil and water with an emulsifier", "Clarifying butter", "Thickening with starch"], "answer": "Combining oil and water with an emulsifier", "tier": 3},
+  {"question": "What is the French term for cooking vegetables until soft and translucent without browning?", "choices": ["Sauté", "Sweat", "Caramelize", "Deglaze"], "answer": "Sweat", "tier": 3},
+  {"question": "Which spice comes from the stigma of the Crocus sativus flower?", "choices": ["Turmeric", "Cardamom", "Saffron", "Paprika"], "answer": "Saffron", "tier": 3},
+  {"question": "What is 'deglazing' a pan?", "choices": ["Cleaning a pan with soap", "Adding liquid to dissolve browned bits from a pan", "Cooling a pan under water", "Greasing a pan before use"], "answer": "Adding liquid to dissolve browned bits from a pan", "tier": 3},
+  {"question": "What is the fermentation process that makes yogurt?", "choices": ["Alcoholic fermentation", "Lactic acid fermentation", "Acetic acid fermentation", "Malolactic fermentation"], "answer": "Lactic acid fermentation", "tier": 3},
+  {"question": "What is 'clarified butter'?", "choices": ["Butter with salt removed", "Butter with milk solids and water removed", "Whipped butter", "Cultured butter"], "answer": "Butter with milk solids and water removed", "tier": 3},
+  {"question": "What spice originates from the Moluccas (Spice Islands) and is the dried seed of Myristica fragrans?", "choices": ["Clove", "Nutmeg", "Allspice", "Mace"], "answer": "Nutmeg", "tier": 3},
+  {"question": "What is 'chiffonade'?", "choices": ["A French pastry", "Thin ribbon cuts of leafy vegetables or herbs", "A garnishing sauce", "Fried shallots"], "answer": "Thin ribbon cuts of leafy vegetables or herbs", "tier": 3},
+  {"question": "What are the five French mother sauces? One is Espagnole. What is it based on?", "choices": ["Fish stock", "Veal/beef brown stock", "Milk", "White chicken stock"], "answer": "Veal/beef brown stock", "tier": 3},
+  {"question": "What is miso made from?", "choices": ["Fermented soybeans", "Fermented rice", "Fermented wheat", "Fermented fish"], "answer": "Fermented soybeans", "tier": 3},
+  {"question": "What does 'en papillote' mean?", "choices": ["Cooked in paper or foil packets", "Served tableside", "Flambéed with alcohol", "Cooked in a clay pot"], "answer": "Cooked in paper or foil packets", "tier": 3},
+  {"question": "What acid is responsible for the sour taste in sourdough bread?", "choices": ["Citric acid", "Lactic acid and acetic acid", "Acetic acid only", "Malic acid"], "answer": "Lactic acid and acetic acid", "tier": 3},
+
+  {"question": "What temperature is used for sous vide cooking of chicken breast?", "choices": ["63°C", "74°C", "82°C", "55°C"], "answer": "63°C", "tier": 4},
+  {"question": "What cooking method uses vacuum-sealed bags in a water bath?", "choices": ["Confit", "Poaching", "Sous vide", "Braising"], "answer": "Sous vide", "tier": 4},
+  {"question": "What is 'confit'?", "choices": ["Cooking slowly submerged in fat at low temperature", "Cooking in a pressure cooker", "Smoking food at low temperature", "Pickling in vinegar"], "answer": "Cooking slowly submerged in fat at low temperature", "tier": 4},
+  {"question": "What is the role of the 'garde manger' in a professional kitchen?", "choices": ["Head chef", "Responsible for cold food preparation", "Pastry chef", "Sauce chef"], "answer": "Responsible for cold food preparation", "tier": 4},
+  {"question": "In the classical brigade system, what is the 'saucier' responsible for?", "choices": ["Soups and broths only", "Sautéed items and sauces", "Roasted meats", "Grilled items"], "answer": "Sautéed items and sauces", "tier": 4},
+  {"question": "What is 'spherification' in molecular gastronomy?", "choices": ["Creating foam from liquids", "Encasing liquids in a gel membrane to form spheres", "Flash-freezing with liquid nitrogen", "Emulsifying oil into a gel"], "answer": "Encasing liquids in a gel membrane to form spheres", "tier": 4},
+  {"question": "What is the purpose of 'tempering' eggs when adding them to a hot liquid?", "choices": ["To kill bacteria", "To gradually raise egg temperature and prevent curdling", "To add flavor", "To thin the liquid"], "answer": "To gradually raise egg temperature and prevent curdling", "tier": 4},
+  {"question": "What is 'nappe' consistency in a sauce?", "choices": ["Thin enough to pour freely", "Thick enough to coat the back of a spoon", "Completely set like gelatin", "Reduced to a glaze"], "answer": "Thick enough to coat the back of a spoon", "tier": 4},
+  {"question": "What does 'blooming' gelatin mean?", "choices": ["Heating gelatin until it melts", "Soaking gelatin in cold water to hydrate it before dissolving", "Whipping gelatin to create foam", "Mixing gelatin with acid"], "answer": "Soaking gelatin in cold water to hydrate it before dissolving", "tier": 4},
+  {"question": "What is 'transglutaminase' sometimes called in professional cooking?", "choices": ["Chef's glue", "Meat glue", "Texture binder", "Protein gel"], "answer": "Meat glue", "tier": 4},
+  {"question": "What role does a 'poissonnier' play in a professional kitchen brigade?", "choices": ["Vegetable chef", "Fish and seafood chef", "Soup chef", "Pastry assistant"], "answer": "Fish and seafood chef", "tier": 4},
+  {"question": "What is 'carryover cooking'?", "choices": ["Continuing to cook food after removing it from heat", "Transferring food between cooking methods", "Reheating previously cooked food", "Cooking food in advance"], "answer": "Continuing to cook food after removing it from heat", "tier": 4},
+  {"question": "What is the 'Maillard reaction' temperature threshold approximately?", "choices": ["100°C", "140°C", "200°C", "260°C"], "answer": "140°C", "tier": 4},
+  {"question": "What is 'fond' in French cooking terminology?", "choices": ["A type of pastry dough", "Browned bits stuck to the bottom of a pan", "A fortified wine", "A reduction sauce"], "answer": "Browned bits stuck to the bottom of a pan", "tier": 4},
+  {"question": "What is the purpose of 'resting' meat after cooking?", "choices": ["To let it cool for safe handling", "To allow juices to redistribute throughout the meat", "To finish cooking the center", "To firm up the crust"], "answer": "To allow juices to redistribute throughout the meat", "tier": 4},
+
+  {"question": "Which chemical reaction causes bread crust to brown?", "choices": ["Maillard reaction", "Caramelization", "Oxidation", "Fermentation"], "answer": "Maillard reaction", "tier": 5},
+  {"question": "What compound in chili peppers causes the burning sensation?", "choices": ["Capsaicin", "Piperine", "Allicin", "Tannin"], "answer": "Capsaicin", "tier": 5},
+  {"question": "What is 'agar-agar' derived from?", "choices": ["Animal bones", "Red algae", "Fruit pectin", "Corn starch"], "answer": "Red algae", "tier": 5},
+  {"question": "What is the historical origin of 'haute cuisine'?", "choices": ["Ancient Roman banquets", "17th-century French royal courts", "Italian Renaissance dining", "Victorian English aristocracy"], "answer": "17th-century French royal courts", "tier": 5},
+  {"question": "What is 'transglutaminase' and what does it do chemically?", "choices": ["An enzyme that cross-links proteins in meat", "A starch-based thickener", "A synthetic emulsifier", "A yeast extract flavor booster"], "answer": "An enzyme that cross-links proteins in meat", "tier": 5},
+  {"question": "What is the Scoville scale used to measure?", "choices": ["Wine acidity", "The heat of peppers", "Sugar concentration in fruit", "Salt concentration in brine"], "answer": "The heat of peppers", "tier": 5},
+  {"question": "What is 'pectin' and what is its culinary role?", "choices": ["A sugar found in fruit used for sweetness", "A natural polymer in fruit cell walls used as a gelling agent", "A protein that sets custards", "An enzyme that tenderizes meat"], "answer": "A natural polymer in fruit cell walls used as a gelling agent", "tier": 5},
+  {"question": "What ancient civilization first cultivated chocolate from cacao?", "choices": ["Aztec", "Inca", "Maya", "Olmec"], "answer": "Olmec", "tier": 5},
+  {"question": "What causes the 'tearing eyes' reaction when cutting onions?", "choices": ["Allicin gas", "Syn-propanethial-S-oxide vapor", "Sulfuric acid release", "Quercetin oxidation"], "answer": "Syn-propanethial-S-oxide vapor", "tier": 5},
+  {"question": "In molecular gastronomy, what gas is commonly used for flash-freezing tableside?", "choices": ["Carbon dioxide", "Liquid nitrogen", "Liquid helium", "Nitrous oxide"], "answer": "Liquid nitrogen", "tier": 5},
+  {"question": "What is 'hydrocolloid' in the context of modern cooking?", "choices": ["A method of water-based cooking", "A substance that forms gels or thickens when mixed with water", "A vacuum-sealing process", "A type of collagen-based stock"], "answer": "A substance that forms gels or thickens when mixed with water", "tier": 5},
+  {"question": "What ancient Roman fermented fish sauce is considered a precursor to Worcestershire sauce?", "choices": ["Moretum", "Garum", "Posca", "Liquamen"], "answer": "Garum", "tier": 5},
+  {"question": "What is the chemical compound responsible for the distinctive flavor of truffles?", "choices": ["Dimethyl sulfide", "2,4-Dithiapentane", "Methyl mercaptan", "Geosmin"], "answer": "2,4-Dithiapentane", "tier": 5}
 ]

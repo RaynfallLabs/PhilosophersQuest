@@ -23,14 +23,21 @@ class Monster:
         self.harvest_tier      = defn.get('harvest_tier', 1)
         self.harvest_threshold = defn.get('harvest_threshold', 2)
         self.ingredient_id     = defn.get('ingredient_id', None)
+        self.min_level: int    = int(defn.get('min_level', 1))
+        self.max_level         = defn.get('max_level', None)  # soft cap; None = no cap
 
         # THAC0: "To Hit Armor Class Zero". Lower = more accurate.
-        # Default: 20 - min_level (level 1 → THAC0 19, level 20 → THAC0 0)
-        self.thac0: int = int(defn.get('thac0', max(-5, 20 - defn.get('min_level', 1))))
+        self.thac0: int = int(defn.get('thac0', max(-10, 20 - defn.get('min_level', 1))))
 
         # Resistances and weaknesses (damage type strings)
         self.resistances: list[str] = defn.get('resistances', [])
         self.weaknesses:  list[str] = defn.get('weaknesses', [])
+
+        # Treasure drop definition
+        self.treasure: dict = defn.get('treasure', {'gold': [0, 0], 'item_chance': 0.0, 'item_tier': 1})
+
+        # Lore text revealed when corpse is identified
+        self.lore: str = defn.get('lore', '')
 
         # Minimal status effects for wand interactions
         self.status_effects: dict[str, int] = {}  # effect_id -> turns remaining

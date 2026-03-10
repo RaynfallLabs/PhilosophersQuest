@@ -90,6 +90,66 @@
     "choices": ["Mombasa", "Nairobi", "Kisumu", "Nakuru"]
   },
   {
+    "tier": 1,
+    "question": "How many continents are there on Earth?",
+    "answer": "7",
+    "choices": ["5", "6", "7", "8"]
+  },
+  {
+    "tier": 1,
+    "question": "Which is the largest continent by area?",
+    "answer": "Asia",
+    "choices": ["Africa", "Asia", "North America", "Europe"]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Russia?",
+    "answer": "Moscow",
+    "choices": ["St. Petersburg", "Moscow", "Novosibirsk", "Kazan"]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of the United Kingdom?",
+    "answer": "London",
+    "choices": ["Edinburgh", "Manchester", "London", "Cardiff"]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of the United States?",
+    "answer": "Washington, D.C.",
+    "choices": ["New York City", "Los Angeles", "Washington, D.C.", "Chicago"]
+  },
+  {
+    "tier": 1,
+    "question": "Which ocean lies between Europe and North America?",
+    "answer": "Atlantic Ocean",
+    "choices": ["Pacific Ocean", "Indian Ocean", "Atlantic Ocean", "Arctic Ocean"]
+  },
+  {
+    "tier": 1,
+    "question": "On which continent is Nigeria located?",
+    "answer": "Africa",
+    "choices": ["South America", "Asia", "Africa", "Europe"]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of South Africa?",
+    "answer": "Pretoria",
+    "choices": ["Cape Town", "Johannesburg", "Pretoria", "Durban"]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Turkey?",
+    "answer": "Ankara",
+    "choices": ["Istanbul", "Ankara", "Izmir", "Bursa"]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Saudi Arabia?",
+    "answer": "Riyadh",
+    "choices": ["Jeddah", "Riyadh", "Mecca", "Medina"]
+  },
+  {
     "tier": 2,
     "question": "What is the longest river in the world?",
     "answer": "Nile",
@@ -132,6 +192,78 @@
     "choices": ["Alps", "Carpathians", "Ural Mountains", "Caucasus Mountains"]
   },
   {
+    "tier": 2,
+    "question": "Which river is the longest in Africa?",
+    "answer": "Nile",
+    "choices": ["Nile", "Congo", "Niger", "Zambezi"]
+  },
+  {
+    "tier": 2,
+    "question": "Which mountain range contains Mount Everest?",
+    "answer": "Himalayas",
+    "choices": ["Karakoram", "Hindu Kush", "Himalayas", "Tian Shan"]
+  },
+  {
+    "tier": 2,
+    "question": "What is the largest country in South America by area?",
+    "answer": "Brazil",
+    "choices": ["Argentina", "Peru", "Brazil", "Colombia"]
+  },
+  {
+    "tier": 2,
+    "question": "Which body of water separates Asia from North America at its narrowest point?",
+    "answer": "Bering Strait",
+    "choices": ["Strait of Malacca", "Bering Strait", "Davis Strait", "Luzon Strait"]
+  },
+  {
+    "tier": 2,
+    "question": "What is the largest country in Africa by area?",
+    "answer": "Algeria",
+    "choices": ["Sudan", "Libya", "Algeria", "Democratic Republic of the Congo"]
+  },
+  {
+    "tier": 2,
+    "question": "The Alps mountain range is located primarily in which continent?",
+    "answer": "Europe",
+    "choices": ["Asia", "South America", "North America", "Europe"]
+  },
+  {
+    "tier": 2,
+    "question": "What is the largest lake in Africa?",
+    "answer": "Lake Victoria",
+    "choices": ["Lake Tanganyika", "Lake Malawi", "Lake Victoria", "Lake Chad"]
+  },
+  {
+    "tier": 2,
+    "question": "What river runs through Egypt?",
+    "answer": "Nile",
+    "choices": ["Congo", "Niger", "Nile", "Zambezi"]
+  },
+  {
+    "tier": 2,
+    "question": "Which country shares the longest land border with the United States?",
+    "answer": "Canada",
+    "choices": ["Mexico", "Canada", "Cuba", "Greenland"]
+  },
+  {
+    "tier": 2,
+    "question": "What is the name of the sea between Italy and the Balkans?",
+    "answer": "Adriatic Sea",
+    "choices": ["Aegean Sea", "Ionian Sea", "Adriatic Sea", "Tyrrhenian Sea"]
+  },
+  {
+    "tier": 2,
+    "question": "On which continent is the Sahara Desert located?",
+    "answer": "Africa",
+    "choices": ["Asia", "Australia", "Africa", "South America"]
+  },
+  {
+    "tier": 2,
+    "question": "Which country borders Germany to the east?",
+    "answer": "Poland",
+    "choices": ["Czech Republic", "Austria", "Poland", "Slovakia"]
+  },
+  {
     "tier": 3,
     "question": "What strait separates Europe from Africa?",
     "answer": "Strait of Gibraltar",
@@ -160,5 +292,305 @@
     "question": "What country has the most time zones?",
     "answer": "France",
     "choices": ["Russia", "United States", "China", "France"]
+  },
+  {
+    "tier": 3,
+    "question": "Which country has the most land borders?",
+    "answer": "China",
+    "choices": ["China", "Russia", "Brazil", "Germany"]
+  },
+  {
+    "tier": 3,
+    "question": "What is the largest island in the world?",
+    "answer": "Greenland",
+    "choices": ["Australia", "New Guinea", "Greenland", "Borneo"]
+  },
+  {
+    "tier": 3,
+    "question": "Which country has the longest coastline in the world?",
+    "answer": "Canada",
+    "choices": ["Russia", "Indonesia", "Norway", "Canada"]
+  },
+  {
+    "tier": 3,
+    "question": "What is the smallest country in the world by area?",
+    "answer": "Vatican City",
+    "choices": ["Monaco", "Nauru", "Vatican City", "San Marino"]
+  },
+  {
+    "tier": 3,
+    "question": "At what latitude is the Tropic of Cancer located?",
+    "answer": "23.5 degrees North",
+    "choices": ["0 degrees", "23.5 degrees North", "66.5 degrees North", "23.5 degrees South"]
+  },
+  {
+    "tier": 3,
+    "question": "Which country has the largest population in the world?",
+    "answer": "India",
+    "choices": ["China", "India", "United States", "Indonesia"]
+  },
+  {
+    "tier": 3,
+    "question": "Which ocean island nation is the world's largest archipelago state?",
+    "answer": "Indonesia",
+    "choices": ["Philippines", "Japan", "Indonesia", "Maldives"]
+  },
+  {
+    "tier": 3,
+    "question": "What is the capital of New Zealand?",
+    "answer": "Wellington",
+    "choices": ["Auckland", "Christchurch", "Wellington", "Dunedin"]
+  },
+  {
+    "tier": 3,
+    "question": "Which African country has the most populous city on the continent?",
+    "answer": "Nigeria",
+    "choices": ["Egypt", "Ethiopia", "Nigeria", "Democratic Republic of the Congo"]
+  },
+  {
+    "tier": 3,
+    "question": "What is the approximate population of the world (as of 2024)?",
+    "answer": "8 billion",
+    "choices": ["6 billion", "7 billion", "8 billion", "9 billion"]
+  },
+  {
+    "tier": 3,
+    "question": "Which country is the largest by area in the world?",
+    "answer": "Russia",
+    "choices": ["Canada", "United States", "China", "Russia"]
+  },
+  {
+    "tier": 3,
+    "question": "What is the highest mountain in the Americas?",
+    "answer": "Aconcagua",
+    "choices": ["Denali", "Mount Logan", "Aconcagua", "Chimborazo"]
+  },
+  {
+    "tier": 3,
+    "question": "Which island group does Hawaii belong to?",
+    "answer": "Polynesia",
+    "choices": ["Micronesia", "Melanesia", "Polynesia", "Oceania"]
+  },
+  {
+    "tier": 3,
+    "question": "Which country is Borneo's largest portion part of?",
+    "answer": "Indonesia",
+    "choices": ["Malaysia", "Brunei", "Philippines", "Indonesia"]
+  },
+  {
+    "tier": 4,
+    "question": "Which is the world's largest landlocked country by area?",
+    "answer": "Kazakhstan",
+    "choices": ["Kazakhstan", "Mongolia", "Bolivia", "Ethiopia"]
+  },
+  {
+    "tier": 4,
+    "question": "What is the only country that borders both Spain and France?",
+    "answer": "Andorra",
+    "choices": ["Monaco", "Andorra", "Luxembourg", "Liechtenstein"]
+  },
+  {
+    "tier": 4,
+    "question": "Which country completely surrounds Lesotho?",
+    "answer": "South Africa",
+    "choices": ["Mozambique", "Botswana", "Zimbabwe", "South Africa"]
+  },
+  {
+    "tier": 4,
+    "question": "What is the lowest point on Earth's land surface?",
+    "answer": "Dead Sea shore",
+    "choices": ["Death Valley", "Dead Sea shore", "Mariana Trench", "Lake Assal"]
+  },
+  {
+    "tier": 4,
+    "question": "How many landlocked countries are in Africa?",
+    "answer": "16",
+    "choices": ["10", "12", "16", "20"]
+  },
+  {
+    "tier": 4,
+    "question": "Which country has the southernmost capital city in the world?",
+    "answer": "New Zealand",
+    "choices": ["Argentina", "Chile", "Australia", "New Zealand"]
+  },
+  {
+    "tier": 4,
+    "question": "What is the world's largest hot desert?",
+    "answer": "Sahara",
+    "choices": ["Arabian Desert", "Sahara", "Kalahari", "Namib"]
+  },
+  {
+    "tier": 4,
+    "question": "Which geographical feature forms the border between the United States and Canada in the west?",
+    "answer": "49th parallel",
+    "choices": ["Columbia River", "Rocky Mountains", "49th parallel", "Missouri River"]
+  },
+  {
+    "tier": 4,
+    "question": "What is the world's highest navigable lake?",
+    "answer": "Lake Titicaca",
+    "choices": ["Lake Baikal", "Lake Titicaca", "Crater Lake", "Issyk-Kul"]
+  },
+  {
+    "tier": 4,
+    "question": "Which country is divided into two parts by the Strait of Kerch?",
+    "answer": "Ukraine",
+    "choices": ["Russia", "Ukraine", "Turkey", "Georgia"]
+  },
+  {
+    "tier": 4,
+    "question": "The Atacama Desert is primarily located in which country?",
+    "answer": "Chile",
+    "choices": ["Peru", "Bolivia", "Chile", "Argentina"]
+  },
+  {
+    "tier": 4,
+    "question": "What is the world's largest river by discharge volume?",
+    "answer": "Amazon",
+    "choices": ["Nile", "Congo", "Amazon", "Yangtze"]
+  },
+  {
+    "tier": 4,
+    "question": "Which country has both Atlantic and Pacific coastlines in South America?",
+    "answer": "Colombia",
+    "choices": ["Venezuela", "Ecuador", "Colombia", "Peru"]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Eritrea?",
+    "answer": "Asmara",
+    "choices": ["Addis Ababa", "Djibouti", "Asmara", "Khartoum"]
+  },
+  {
+    "tier": 4,
+    "question": "Which country occupies the western third of the island of New Guinea?",
+    "answer": "Indonesia",
+    "choices": ["Papua New Guinea", "Australia", "Indonesia", "Timor-Leste"]
+  },
+  {
+    "tier": 4,
+    "question": "The Mekong River flows through how many countries?",
+    "answer": "6",
+    "choices": ["4", "5", "6", "7"]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Burkina Faso?",
+    "answer": "Ouagadougou",
+    "choices": ["Bamako", "Niamey", "Ouagadougou", "Lome"]
+  },
+  {
+    "tier": 4,
+    "question": "Which country is the Falkland Islands a territory of?",
+    "answer": "United Kingdom",
+    "choices": ["Argentina", "United States", "United Kingdom", "Spain"]
+  },
+  {
+    "tier": 4,
+    "question": "What is the world's longest mountain range above sea level?",
+    "answer": "Andes",
+    "choices": ["Himalayas", "Rockies", "Andes", "Alps"]
+  },
+  {
+    "tier": 4,
+    "question": "Which African country has the largest land area?",
+    "answer": "Algeria",
+    "choices": ["Sudan", "Democratic Republic of the Congo", "Libya", "Algeria"]
+  },
+  {
+    "tier": 5,
+    "question": "Which country is an exclave of Russia separated from the mainland?",
+    "answer": "Kaliningrad",
+    "choices": ["Kaliningrad", "Tatarstan", "Chechnya", "Sakhalin"]
+  },
+  {
+    "tier": 5,
+    "question": "Which microstate is surrounded entirely by Italy and is not part of the EU?",
+    "answer": "Vatican City",
+    "choices": ["San Marino", "Vatican City", "Monaco", "Liechtenstein"]
+  },
+  {
+    "tier": 5,
+    "question": "What is the world's only doubly landlocked country?",
+    "answer": "Uzbekistan",
+    "choices": ["Tajikistan", "Turkmenistan", "Uzbekistan", "Afghanistan"]
+  },
+  {
+    "tier": 5,
+    "question": "Which territory is administered by both Spain and France under a co-principality?",
+    "answer": "Andorra",
+    "choices": ["Gibraltar", "Ceuta", "Andorra", "Basque Country"]
+  },
+  {
+    "tier": 5,
+    "question": "Cabinda is an exclave of which African country?",
+    "answer": "Angola",
+    "choices": ["Congo", "Democratic Republic of the Congo", "Angola", "Gabon"]
+  },
+  {
+    "tier": 5,
+    "question": "What is the world's smallest republic by population?",
+    "answer": "Nauru",
+    "choices": ["Palau", "Tuvalu", "Nauru", "San Marino"]
+  },
+  {
+    "tier": 5,
+    "question": "Which disputed territory is administered by Morocco but claimed by the Sahrawi Republic?",
+    "answer": "Western Sahara",
+    "choices": ["Western Sahara", "Azawad", "Cabinda", "Somaliland"]
+  },
+  {
+    "tier": 5,
+    "question": "What is the name of the narrow strip of land connecting North and South America?",
+    "answer": "Isthmus of Panama",
+    "choices": ["Isthmus of Suez", "Isthmus of Panama", "Strait of Magellan", "Darien Gap"]
+  },
+  {
+    "tier": 5,
+    "question": "Which country has a territory called Nakhchivan that is an exclave separated by Armenia?",
+    "answer": "Azerbaijan",
+    "choices": ["Armenia", "Iran", "Turkey", "Azerbaijan"]
+  },
+  {
+    "tier": 5,
+    "question": "The Wakhan Corridor is a narrow strip of Afghanistan that borders which country?",
+    "answer": "China",
+    "choices": ["Tajikistan", "Pakistan", "China", "India"]
+  },
+  {
+    "tier": 5,
+    "question": "Which island nation in the Pacific is the world's fourth smallest country by area?",
+    "answer": "Tuvalu",
+    "choices": ["Nauru", "Palau", "Tuvalu", "Marshall Islands"]
+  },
+  {
+    "tier": 5,
+    "question": "What is the name of the disputed region between India and Pakistan in the Himalayas?",
+    "answer": "Kashmir",
+    "choices": ["Ladakh", "Kashmir", "Siachen", "Punjab"]
+  },
+  {
+    "tier": 5,
+    "question": "Which enclave country is surrounded entirely by South Africa except for a short border with Mozambique?",
+    "answer": "Eswatini",
+    "choices": ["Lesotho", "Eswatini", "Botswana", "Zimbabwe"]
+  },
+  {
+    "tier": 5,
+    "question": "The Ferghana Valley is divided among which three Central Asian countries?",
+    "answer": "Uzbekistan, Kyrgyzstan, and Tajikistan",
+    "choices": ["Kazakhstan, Uzbekistan, and Turkmenistan", "Uzbekistan, Kyrgyzstan, and Tajikistan", "Afghanistan, Tajikistan, and Uzbekistan", "Kyrgyzstan, Kazakhstan, and Uzbekistan"]
+  },
+  {
+    "tier": 5,
+    "question": "Which country claims sovereignty over the Spratly Islands along with several other nations?",
+    "answer": "China",
+    "choices": ["Vietnam", "Philippines", "China", "Malaysia"]
+  },
+  {
+    "tier": 5,
+    "question": "What is the only country in the world that is both an island and a continent?",
+    "answer": "Australia",
+    "choices": ["Greenland", "Australia", "New Guinea", "Iceland"]
   }
 ]

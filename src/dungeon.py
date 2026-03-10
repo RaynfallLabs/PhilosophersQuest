@@ -361,7 +361,17 @@ def spawn_monsters(rooms: List[Room], level: int, dungeon: Dungeon,
     with open(monsters_path, encoding='utf-8') as f:
         all_defs = json.load(f)
 
-    eligible = {k: v for k, v in all_defs.items() if v.get('min_level', 1) <= level}
+    # Build weighted pool: monsters past their max_level get fraction of normal weight
+    eligible = {}
+    for k, v in all_defs.items():
+        if v.get('min_level', 1) > level:
+            continue
+        max_lv = v.get('max_level', None)
+        freq = v.get('frequency', 5)
+        if max_lv is not None and level > max_lv:
+            over = level - max_lv
+            freq = max(1, freq - over)   # frequency decays by 1 per level over cap
+        eligible[k] = {**v, '_spawn_freq': freq}
     if not eligible:
         return []
 
@@ -539,10 +549,10 @@ def _place_one(templates: list, room: 'Room', dungeon: 'Dungeon',
 
 
 def _weighted_choice(pool: dict, rng: random.Random) -> str:
-    total = sum(v.get('frequency', 1) for v in pool.values())
-    r = rng.randint(1, total)
+    total = sum(v.get('_spawn_freq', v.get('frequency', 1)) for v in pool.values())
+    r = rng.random() * total
     for key, val in pool.items():
-        r -= val.get('frequency', 1)
+        r -= val.get('_spawn_freq', val.get('frequency', 1))
         if r <= 0:
             return key
-    return list(pool.keys())[-1]
+    return next(iter(pool))

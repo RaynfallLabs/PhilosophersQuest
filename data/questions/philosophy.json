@@ -1,92 +1,92 @@
 [
-  {
-    "tier": 1,
-    "question": "Who wrote 'The Republic'?",
-    "answer": "Plato",
-    "choices": ["Aristotle", "Plato", "Socrates", "Pythagoras"]
-  },
-  {
-    "tier": 1,
-    "question": "'I think, therefore I am' — who said this?",
-    "answer": "René Descartes",
-    "choices": ["John Locke", "David Hume", "René Descartes", "Immanuel Kant"]
-  },
-  {
-    "tier": 1,
-    "question": "What is the study of knowledge called?",
-    "answer": "epistemology",
-    "choices": ["ontology", "epistemology", "ethics", "aesthetics"]
-  },
-  {
-    "tier": 1,
-    "question": "Who was Plato's most famous student?",
-    "answer": "Aristotle",
-    "choices": ["Socrates", "Aristotle", "Pythagoras", "Epicurus"]
-  },
-  {
-    "tier": 1,
-    "question": "What is the study of right and wrong called?",
-    "answer": "ethics",
-    "choices": ["logic", "ethics", "metaphysics", "aesthetics"]
-  },
-  {
-    "tier": 1,
-    "question": "Who was sentenced to death by drinking hemlock?",
-    "answer": "Socrates",
-    "choices": ["Plato", "Aristotle", "Socrates", "Pythagoras"]
-  },
-  {
-    "tier": 1,
-    "question": "What is the study of existence and reality called?",
-    "answer": "ontology",
-    "choices": ["epistemology", "ethics", "ontology", "logic"]
-  },
-  {
-    "tier": 1,
-    "question": "Who founded the philosophy of Stoicism?",
-    "answer": "Zeno of Citium",
-    "choices": ["Epicurus", "Zeno of Citium", "Marcus Aurelius", "Seneca"]
-  },
-  {
-    "tier": 1,
-    "question": "What does 'philosophy' literally mean in Greek?",
-    "answer": "love of wisdom",
-    "choices": ["love of truth", "love of wisdom", "pursuit of knowledge", "study of being"]
-  },
-  {
-    "tier": 1,
-    "question": "Who wrote 'Critique of Pure Reason'?",
-    "answer": "Immanuel Kant",
-    "choices": ["Georg Hegel", "Arthur Schopenhauer", "Immanuel Kant", "David Hume"]
-  },
-  {
-    "tier": 2,
-    "question": "What is Ayn Rand's philosophy called?",
-    "answer": "Objectivism",
-    "choices": ["Empiricism", "Rationalism", "Objectivism", "Existentialism"]
-  },
-  {
-    "tier": 2,
-    "question": "In Objectivism, what is the ultimate moral purpose?",
-    "answer": "one's own happiness",
-    "choices": ["service to others", "one's own happiness", "rational virtue", "pleasure"]
-  },
-  {
-    "tier": 2,
-    "question": "Who wrote 'Thus Spoke Zarathustra'?",
-    "answer": "Friedrich Nietzsche",
-    "choices": ["Søren Kierkegaard", "Friedrich Nietzsche", "Arthur Schopenhauer", "Georg Hegel"]
-  },
-  {
-    "tier": 2,
-    "question": "What view holds that all events are causally determined?",
-    "answer": "determinism",
-    "choices": ["free will", "compatibilism", "determinism", "fatalism"]
-  },
-  {
-    "tier": 2,
-    "question": "What does 'a priori' mean in philosophy?",
-    "answer": "known before experience",
-    "choices": ["known through senses", "known before experience", "logically contradictory", "based on evidence"]
-  }
+  {"question": "Who wrote 'The Republic'?", "choices": ["Plato", "Aristotle", "Socrates", "Pythagoras"], "answer": "Plato", "tier": 1},
+  {"question": "'I think, therefore I am' — who said this?", "choices": ["John Locke", "David Hume", "René Descartes", "Immanuel Kant"], "answer": "René Descartes", "tier": 1},
+  {"question": "What is the study of knowledge called?", "choices": ["Ontology", "Epistemology", "Ethics", "Aesthetics"], "answer": "Epistemology", "tier": 1},
+  {"question": "Who was Plato's most famous student?", "choices": ["Socrates", "Aristotle", "Pythagoras", "Epicurus"], "answer": "Aristotle", "tier": 1},
+  {"question": "What is the branch of philosophy that studies right and wrong?", "choices": ["Logic", "Ethics", "Metaphysics", "Aesthetics"], "answer": "Ethics", "tier": 1},
+  {"question": "Who was sentenced to death by drinking hemlock?", "choices": ["Plato", "Aristotle", "Socrates", "Pythagoras"], "answer": "Socrates", "tier": 1},
+  {"question": "What is the study of existence and reality called?", "choices": ["Epistemology", "Ethics", "Ontology", "Logic"], "answer": "Ontology", "tier": 1},
+  {"question": "Who founded the philosophy of Stoicism?", "choices": ["Epicurus", "Zeno of Citium", "Marcus Aurelius", "Seneca"], "answer": "Zeno of Citium", "tier": 1},
+  {"question": "What does 'philosophy' literally mean in Greek?", "choices": ["Love of truth", "Love of wisdom", "Pursuit of knowledge", "Study of being"], "answer": "Love of wisdom", "tier": 1},
+  {"question": "Who wrote 'Critique of Pure Reason'?", "choices": ["Immanuel Kant", "John Locke", "David Hume", "René Descartes"], "answer": "Immanuel Kant", "tier": 1},
+  {"question": "What is metaphysics the study of?", "choices": ["The fundamental nature of reality", "The rules of logic", "The basis of moral judgment", "The study of beauty"], "answer": "The fundamental nature of reality", "tier": 1},
+  {"question": "Who is considered the father of Western philosophy?", "choices": ["Socrates", "Plato", "Aristotle", "Thales"], "answer": "Socrates", "tier": 1},
+  {"question": "What branch of philosophy deals with the nature of beauty and art?", "choices": ["Aesthetics", "Ethics", "Epistemology", "Logic"], "answer": "Aesthetics", "tier": 1},
+  {"question": "Who wrote 'Nicomachean Ethics'?", "choices": ["Aristotle", "Plato", "Socrates", "Epicurus"], "answer": "Aristotle", "tier": 1},
+  {"question": "What philosophical term describes belief that we cannot know anything with certainty?", "choices": ["Skepticism", "Nihilism", "Relativism", "Agnosticism"], "answer": "Skepticism", "tier": 1},
+  {"question": "What did Plato call his community of learning in Athens?", "choices": ["The Academy", "The Lyceum", "The Agora", "The Stoa"], "answer": "The Academy", "tier": 1},
+  {"question": "Who wrote 'The Prince'?", "choices": ["Niccolò Machiavelli", "Thomas Hobbes", "John Locke", "Jean-Jacques Rousseau"], "answer": "Niccolò Machiavelli", "tier": 1},
+  {"question": "What is the term for belief in no god or gods?", "choices": ["Atheism", "Agnosticism", "Nihilism", "Pantheism"], "answer": "Atheism", "tier": 1},
+
+  {"question": "Which philosophical school holds that knowledge comes primarily from sensory experience?", "choices": ["Empiricism", "Rationalism", "Idealism", "Skepticism"], "answer": "Empiricism", "tier": 2},
+  {"question": "What is Ayn Rand's philosophy called?", "choices": ["Objectivism", "Empiricism", "Rationalism", "Existentialism"], "answer": "Objectivism", "tier": 2},
+  {"question": "Who wrote 'Thus Spoke Zarathustra'?", "choices": ["Friedrich Nietzsche", "Søren Kierkegaard", "Arthur Schopenhauer", "Georg Hegel"], "answer": "Friedrich Nietzsche", "tier": 2},
+  {"question": "What view holds that all events are causally determined?", "choices": ["Determinism", "Free will", "Compatibilism", "Fatalism"], "answer": "Determinism", "tier": 2},
+  {"question": "What does 'a priori' mean in philosophy?", "choices": ["Known before experience", "Known through senses", "Logically contradictory", "Based on evidence"], "answer": "Known before experience", "tier": 2},
+  {"question": "What philosophical school holds that reality is fundamentally mental or spiritual?", "choices": ["Idealism", "Materialism", "Empiricism", "Naturalism"], "answer": "Idealism", "tier": 2},
+  {"question": "Who is the key figure of modern rationalism, arguing reason alone yields true knowledge?", "choices": ["René Descartes", "John Locke", "David Hume", "Francis Bacon"], "answer": "René Descartes", "tier": 2},
+  {"question": "What is utilitarianism?", "choices": ["The greatest good for the greatest number", "Duty-based moral reasoning", "Virtue as the highest good", "Personal benefit as the moral guide"], "answer": "The greatest good for the greatest number", "tier": 2},
+  {"question": "Who wrote 'Being and Time'?", "choices": ["Martin Heidegger", "Jean-Paul Sartre", "Edmund Husserl", "Albert Camus"], "answer": "Martin Heidegger", "tier": 2},
+  {"question": "What philosophical movement emphasizes individual freedom and responsibility?", "choices": ["Existentialism", "Stoicism", "Pragmatism", "Structuralism"], "answer": "Existentialism", "tier": 2},
+  {"question": "Which philosopher wrote 'Leviathan'?", "choices": ["Thomas Hobbes", "John Locke", "Jean-Jacques Rousseau", "Niccolò Machiavelli"], "answer": "Thomas Hobbes", "tier": 2},
+  {"question": "What is Kant's categorical imperative?", "choices": ["Act only according to a maxim you could will to be a universal law", "Always maximize happiness", "Follow your duty regardless of consequences", "Virtue is the highest good"], "answer": "Act only according to a maxim you could will to be a universal law", "tier": 2},
+  {"question": "Who founded pragmatism as a philosophical movement?", "choices": ["William James", "John Dewey", "Charles Sanders Peirce", "Richard Rorty"], "answer": "Charles Sanders Peirce", "tier": 2},
+  {"question": "What is Plato's theory of Forms?", "choices": ["Abstract ideal forms are more real than physical objects", "Forms are mental constructs only", "Physical objects are the only true reality", "Forms are divine creations"], "answer": "Abstract ideal forms are more real than physical objects", "tier": 2},
+  {"question": "Who wrote 'An Essay Concerning Human Understanding'?", "choices": ["John Locke", "David Hume", "George Berkeley", "Francis Bacon"], "answer": "John Locke", "tier": 2},
+  {"question": "What does 'a posteriori' mean in philosophy?", "choices": ["Known through experience", "Known before experience", "Known by reason alone", "Known to be false"], "answer": "Known through experience", "tier": 2},
+  {"question": "What is Nietzsche's concept of 'will to power'?", "choices": ["The fundamental drive to achieve mastery and self-overcoming", "The desire for political domination", "The will to survive at any cost", "The drive for pleasure"], "answer": "The fundamental drive to achieve mastery and self-overcoming", "tier": 2},
+  {"question": "Which philosopher argued 'to be is to be perceived'?", "choices": ["George Berkeley", "John Locke", "David Hume", "Gottfried Leibniz"], "answer": "George Berkeley", "tier": 2},
+  {"question": "What is deontological ethics?", "choices": ["Ethics based on duties and rules rather than consequences", "Ethics based on maximizing happiness", "Ethics based on virtuous character", "Ethics based on social contracts"], "answer": "Ethics based on duties and rules rather than consequences", "tier": 2},
+
+  {"question": "What is Plato's Allegory of the Cave meant to illustrate?", "choices": ["The nature of reality and perception", "The ethics of slavery", "The ideal city-state", "The existence of God"], "answer": "The nature of reality and perception", "tier": 3},
+  {"question": "What is the Ontological Argument for God's existence?", "choices": ["God must exist because the concept of a perfect being requires existence", "God's existence is evident from the design of the universe", "Everything must have a first cause, which is God", "Moral law implies a divine lawgiver"], "answer": "God must exist because the concept of a perfect being requires existence", "tier": 3},
+  {"question": "What is the Cosmological Argument for God's existence?", "choices": ["Everything that exists must have a cause, leading to a first uncaused cause", "The universe's design implies a designer", "God exists because we can conceive of a perfect being", "Morality requires a divine source"], "answer": "Everything that exists must have a cause, leading to a first uncaused cause", "tier": 3},
+  {"question": "What is the Teleological Argument for God's existence?", "choices": ["The order and purpose in nature implies an intelligent designer", "Everything has a cause, leading to God", "The concept of God implies God's existence", "Consciousness implies a divine creator"], "answer": "The order and purpose in nature implies an intelligent designer", "tier": 3},
+  {"question": "What is Descartes' 'Evil Demon' thought experiment designed to test?", "choices": ["Whether any knowledge can be certain if an all-powerful deceiver exists", "Whether God could be evil", "Whether the external world exists", "Whether other minds exist"], "answer": "Whether any knowledge can be certain if an all-powerful deceiver exists", "tier": 3},
+  {"question": "What is the 'Ship of Theseus' thought experiment about?", "choices": ["Whether identity persists through complete replacement of parts", "Whether ships have consciousness", "The ethics of property ownership", "Whether teleportation preserves identity"], "answer": "Whether identity persists through complete replacement of parts", "tier": 3},
+  {"question": "What is the Trolley Problem designed to explore?", "choices": ["The tension between consequentialist and deontological moral intuitions", "The ethics of public transportation", "Whether inaction is morally neutral", "The value of human life in economics"], "answer": "The tension between consequentialist and deontological moral intuitions", "tier": 3},
+  {"question": "What is Hume's problem of induction?", "choices": ["We cannot rationally justify the belief that the future will resemble the past", "Inductive logic is always invalid", "Scientific observations cannot be generalized", "Mathematical truths cannot be verified empirically"], "answer": "We cannot rationally justify the belief that the future will resemble the past", "tier": 3},
+  {"question": "What is Kant's distinction between phenomena and noumena?", "choices": ["Phenomena are things as experienced; noumena are things as they are in themselves", "Phenomena are illusions; noumena are real things", "Phenomena are rational concepts; noumena are sensory experiences", "Phenomena are physical; noumena are spiritual"], "answer": "Phenomena are things as experienced; noumena are things as they are in themselves", "tier": 3},
+  {"question": "What is the 'Chinese Room' thought experiment by John Searle meant to argue?", "choices": ["A computer following rules does not truly understand language", "Machines can achieve genuine consciousness", "Language is meaningless without context", "Translation is philosophically impossible"], "answer": "A computer following rules does not truly understand language", "tier": 3},
+  {"question": "What is Rawls' 'veil of ignorance' concept?", "choices": ["Principles of justice should be chosen without knowing one's place in society", "We are ignorant of what justice truly requires", "Moral choices should ignore consequences", "Society should be governed by the wisest"], "answer": "Principles of justice should be chosen without knowing one's place in society", "tier": 3},
+  {"question": "What is the 'Brain in a Vat' thought experiment?", "choices": ["A scenario questioning whether we can know we are not deceived about all of reality", "A test of artificial intelligence", "An argument for materialism", "A challenge to the existence of the self"], "answer": "A scenario questioning whether we can know we are not deceived about all of reality", "tier": 3},
+  {"question": "What is Pascal's Wager?", "choices": ["It is rational to believe in God because the potential benefit outweighs the cost", "God's existence can be proven mathematically", "Faith is superior to reason", "Moral virtue requires belief in God"], "answer": "It is rational to believe in God because the potential benefit outweighs the cost", "tier": 3},
+  {"question": "What is Hegel's dialectical method?", "choices": ["Thesis and antithesis resolve into a synthesis", "Truth emerges from pure reason alone", "Contradictions are resolved by abandoning one side", "History progresses through random chance"], "answer": "Thesis and antithesis resolve into a synthesis", "tier": 3},
+  {"question": "What is the 'is-ought' problem identified by David Hume?", "choices": ["You cannot derive moral obligations from factual statements alone", "Moral facts cannot be observed empirically", "Ought implies can", "Value judgments are always subjective"], "answer": "You cannot derive moral obligations from factual statements alone", "tier": 3},
+  {"question": "What is Nietzsche's concept of 'eternal recurrence'?", "choices": ["The idea that all events recur infinitely, used as a thought experiment about affirming life", "A belief in reincarnation", "The cyclical nature of history", "The repetition of moral failures across cultures"], "answer": "The idea that all events recur infinitely, used as a thought experiment about affirming life", "tier": 3},
+  {"question": "What is Sartre's claim that 'existence precedes essence'?", "choices": ["Humans first exist and then define themselves through choices", "Essence is defined by God before birth", "Human nature is fixed by biology", "Existence and essence are identical"], "answer": "Humans first exist and then define themselves through choices", "tier": 3},
+  {"question": "What is Aristotle's concept of eudaimonia?", "choices": ["Flourishing or living well through virtuous activity", "Pleasure and avoidance of pain", "Fulfillment of duty", "Harmony with nature"], "answer": "Flourishing or living well through virtuous activity", "tier": 3},
+
+  {"question": "What logical fallacy involves attacking a person rather than their argument?", "choices": ["Ad hominem", "Straw man", "False dichotomy", "Slippery slope"], "answer": "Ad hominem", "tier": 4},
+  {"question": "What is a straw man fallacy?", "choices": ["Misrepresenting an opponent's argument to make it easier to attack", "Appealing to irrelevant authority", "Drawing a false analogy", "Claiming two things cannot both be true"], "answer": "Misrepresenting an opponent's argument to make it easier to attack", "tier": 4},
+  {"question": "What is the 'appeal to authority' fallacy?", "choices": ["Claiming something is true because an authority figure said so, without other evidence", "Attacking the character of a source", "Dismissing an argument based on its origin", "Claiming majority opinion is proof of truth"], "answer": "Claiming something is true because an authority figure said so, without other evidence", "tier": 4},
+  {"question": "What is Aristotle's syllogism?", "choices": ["A form of deductive reasoning with two premises leading to a conclusion", "An inductive argument from examples", "A rhetorical device for persuasion", "A method of questioning assumptions"], "answer": "A form of deductive reasoning with two premises leading to a conclusion", "tier": 4},
+  {"question": "What did Thales of Miletus propose as the fundamental substance of all reality?", "choices": ["Water", "Fire", "Air", "Earth"], "answer": "Water", "tier": 4},
+  {"question": "What is Epicureanism's highest good?", "choices": ["Ataraxia — tranquility and freedom from fear", "Pleasure in all forms", "Virtue for its own sake", "Social harmony"], "answer": "Ataraxia — tranquility and freedom from fear", "tier": 4},
+  {"question": "What is Hobbes' description of life in the state of nature?", "choices": ["Solitary, poor, nasty, brutish, and short", "A peaceful community of rational beings", "A natural hierarchy of the strong over the weak", "A life of simple pleasures"], "answer": "Solitary, poor, nasty, brutish, and short", "tier": 4},
+  {"question": "Who wrote 'Two Treatises of Government'?", "choices": ["John Locke", "Thomas Hobbes", "Jean-Jacques Rousseau", "Montesquieu"], "answer": "John Locke", "tier": 4},
+  {"question": "What is Rousseau's concept of the 'social contract'?", "choices": ["Individuals surrender some freedoms to a collective authority in exchange for protection", "Rulers are chosen by divine right", "Natural freedom is superior to civil society", "Society is governed by the strongest members"], "answer": "Individuals surrender some freedoms to a collective authority in exchange for protection", "tier": 4},
+  {"question": "What is the false dichotomy fallacy?", "choices": ["Presenting only two options when more exist", "Arguing from a false analogy", "Appealing to emotions instead of logic", "Assuming correlation implies causation"], "answer": "Presenting only two options when more exist", "tier": 4},
+  {"question": "What is Plato's concept of the philosopher-king?", "choices": ["Cities should be ruled by those with philosophical wisdom", "Philosophers should remain outside politics", "Knowledge and power must always be separated", "Democracy is the ideal form of government"], "answer": "Cities should be ruled by those with philosophical wisdom", "tier": 4},
+  {"question": "What is the 'slippery slope' fallacy?", "choices": ["Claiming one event will inevitably lead to extreme consequences without justification", "Arguing by analogy from a single case", "Using circular reasoning", "Misquoting a source"], "answer": "Claiming one event will inevitably lead to extreme consequences without justification", "tier": 4},
+  {"question": "Who wrote 'The Social Contract'?", "choices": ["Jean-Jacques Rousseau", "John Locke", "Thomas Hobbes", "Immanuel Kant"], "answer": "Jean-Jacques Rousseau", "tier": 4},
+  {"question": "What is Aristotle's 'golden mean'?", "choices": ["Virtue lies between deficiency and excess", "The midpoint between competing ethical theories", "A mathematical principle applied to ethics", "Moderation in all pleasures"], "answer": "Virtue lies between deficiency and excess", "tier": 4},
+  {"question": "What is the 'begging the question' fallacy?", "choices": ["Using the conclusion as a premise in the argument", "Raising irrelevant questions to distract", "Asking leading questions to win a debate", "Demanding proof of an obvious truth"], "answer": "Using the conclusion as a premise in the argument", "tier": 4},
+  {"question": "What is Locke's theory of the 'tabula rasa'?", "choices": ["The mind begins as a blank slate, shaped entirely by experience", "The mind is born with innate ideas", "Reason is more reliable than experience", "The mind reflects divine reason"], "answer": "The mind begins as a blank slate, shaped entirely by experience", "tier": 4},
+
+  {"question": "Which philosopher coined the term 'Overman' (Übermensch)?", "choices": ["Friedrich Nietzsche", "Arthur Schopenhauer", "Georg Hegel", "Ludwig Feuerbach"], "answer": "Friedrich Nietzsche", "tier": 5},
+  {"question": "What is the distinction between analytic and continental philosophy?", "choices": ["Analytic focuses on logic and language; continental emphasizes history, existence, and culture", "Analytic is European; continental is Anglo-American", "Analytic uses intuition; continental uses formal logic", "They are names for the same tradition"], "answer": "Analytic focuses on logic and language; continental emphasizes history, existence, and culture", "tier": 5},
+  {"question": "What is moral realism?", "choices": ["Moral facts exist independently of what anyone thinks or feels", "Morality is constructed by society", "Moral statements express emotions only", "Moral truth varies by culture"], "answer": "Moral facts exist independently of what anyone thinks or feels", "tier": 5},
+  {"question": "What is the 'hard problem of consciousness' as identified by David Chalmers?", "choices": ["Why physical processes give rise to subjective experience", "How the brain processes sensory information", "Whether machines can be conscious", "How language shapes thought"], "answer": "Why physical processes give rise to subjective experience", "tier": 5},
+  {"question": "What is eliminative materialism?", "choices": ["Folk psychological concepts like beliefs and desires will be replaced by neuroscience", "The mind does not exist", "Only material things are real", "Consciousness is an illusion created by language"], "answer": "Folk psychological concepts like beliefs and desires will be replaced by neuroscience", "tier": 5},
+  {"question": "Who developed the philosophy of 'process philosophy'?", "choices": ["Alfred North Whitehead", "Bertrand Russell", "Ludwig Wittgenstein", "William James"], "answer": "Alfred North Whitehead", "tier": 5},
+  {"question": "What is Wittgenstein's 'language game' concept?", "choices": ["The meaning of words depends on their use within a form of life", "Language is a formal logical system", "Meaning is determined by mental images", "Words have fixed meanings across all contexts"], "answer": "The meaning of words depends on their use within a form of life", "tier": 5},
+  {"question": "What is the philosophy of phenomenology primarily concerned with?", "choices": ["The structure of first-person conscious experience", "The logical structure of knowledge", "The social basis of morality", "The physical basis of thought"], "answer": "The structure of first-person conscious experience", "tier": 5},
+  {"question": "Who founded phenomenology as a philosophical method?", "choices": ["Edmund Husserl", "Martin Heidegger", "Maurice Merleau-Ponty", "Jean-Paul Sartre"], "answer": "Edmund Husserl", "tier": 5},
+  {"question": "What is emotivism in meta-ethics?", "choices": ["Moral statements express emotional attitudes rather than facts", "Emotions are the basis of rational moral decisions", "Moral truths are known through feeling", "Empathy is the foundation of ethics"], "answer": "Moral statements express emotional attitudes rather than facts", "tier": 5},
+  {"question": "What is Quine's critique of the analytic-synthetic distinction?", "choices": ["The distinction between analytic truths and empirical facts cannot be clearly drawn", "All truths are ultimately analytic", "Synthetic truths are unknowable", "The distinction is useful but imprecise"], "answer": "The distinction between analytic truths and empirical facts cannot be clearly drawn", "tier": 5},
+  {"question": "What is the 'zombie' thought experiment in philosophy of mind?", "choices": ["A being physically identical to a human but with no subjective experience, used to argue consciousness is non-physical", "A thought experiment about the ethics of artificial life", "An argument that the self is an illusion", "A challenge to behaviorist theories of mind"], "answer": "A being physically identical to a human but with no subjective experience, used to argue consciousness is non-physical", "tier": 5},
+  {"question": "Who wrote 'Discipline and Punish'?", "choices": ["Michel Foucault", "Jacques Derrida", "Louis Althusser", "Jean Baudrillard"], "answer": "Michel Foucault", "tier": 5},
+  {"question": "What is Derrida's concept of 'deconstruction'?", "choices": ["A method revealing how texts rely on unstable oppositions and hidden assumptions", "The literal destruction of philosophical texts", "A critique of all meaning as subjective", "A structuralist analysis of language"], "answer": "A method revealing how texts rely on unstable oppositions and hidden assumptions", "tier": 5},
+  {"question": "What is the philosophical position of panpsychism?", "choices": ["Consciousness or mind is a fundamental feature of all matter", "Everything is made of a single substance", "All knowledge comes from the mind", "Nature is governed by rational principles"], "answer": "Consciousness or mind is a fundamental feature of all matter", "tier": 5}
 ]

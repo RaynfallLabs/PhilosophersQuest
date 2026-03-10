@@ -1,7 +1,7 @@
 import pygame
 from dungeon import WALL, FLOOR, STAIRS_UP, STAIRS_DOWN, DOOR, SECRET_DOOR
 
-TILE_SIZE = 32
+TILE_SIZE = 40
 
 # Visible tile colors
 _VISIBLE = {

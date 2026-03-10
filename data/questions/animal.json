@@ -1,104 +1,96 @@
 [
-  {
-    "tier": 1,
-    "question": "How many legs does a spider have?",
-    "answer": "8",
-    "choices": ["6", "8", "10", "12"]
-  },
-  {
-    "tier": 1,
-    "question": "What do you call a group of wolves?",
-    "answer": "a pack",
-    "choices": ["a pack", "a herd", "a flock", "a pride"]
-  },
-  {
-    "tier": 1,
-    "question": "What is the fastest land animal?",
-    "answer": "cheetah",
-    "choices": ["lion", "cheetah", "horse", "leopard"]
-  },
-  {
-    "tier": 1,
-    "question": "How many hearts does an octopus have?",
-    "answer": "3",
-    "choices": ["1", "2", "3", "4"]
-  },
-  {
-    "tier": 1,
-    "question": "What do you call a female deer?",
-    "answer": "doe",
-    "choices": ["doe", "hen", "cow", "sow"]
-  },
-  {
-    "tier": 1,
-    "question": "What is a baby kangaroo called?",
-    "answer": "joey",
-    "choices": ["kit", "joey", "cub", "pup"]
-  },
-  {
-    "tier": 1,
-    "question": "Which of these birds cannot fly?",
-    "answer": "penguin",
-    "choices": ["eagle", "penguin", "hawk", "sparrow"]
-  },
-  {
-    "tier": 1,
-    "question": "What is the largest mammal on Earth?",
-    "answer": "blue whale",
-    "choices": ["elephant", "blue whale", "giraffe", "hippopotamus"]
-  },
-  {
-    "tier": 1,
-    "question": "How many legs does an insect have?",
-    "answer": "6",
-    "choices": ["4", "6", "8", "10"]
-  },
-  {
-    "tier": 1,
-    "question": "What do you call a group of fish swimming together?",
-    "answer": "a school",
-    "choices": ["a pack", "a school", "a herd", "a pod"]
-  },
-  {
-    "tier": 2,
-    "question": "What do you call an animal that eats only plants?",
-    "answer": "herbivore",
-    "choices": ["carnivore", "herbivore", "omnivore", "insectivore"]
-  },
-  {
-    "tier": 2,
-    "question": "What is a group of lions called?",
-    "answer": "a pride",
-    "choices": ["a pack", "a herd", "a pride", "a colony"]
-  },
-  {
-    "tier": 2,
-    "question": "Where do polar bears live?",
-    "answer": "Arctic",
-    "choices": ["Antarctica", "Siberia", "Arctic", "Greenland"]
-  },
-  {
-    "tier": 2,
-    "question": "What is the only mammal capable of true flight?",
-    "answer": "bat",
-    "choices": ["flying squirrel", "bat", "sugar glider", "colugo"]
-  },
-  {
-    "tier": 2,
-    "question": "What do you call an animal that is active at night?",
-    "answer": "nocturnal",
-    "choices": ["diurnal", "crepuscular", "nocturnal", "arboreal"]
-  },
-  {
-    "tier": 2,
-    "question": "What is the approximate gestation period of an elephant?",
-    "answer": "22 months",
-    "choices": ["12 months", "16 months", "18 months", "22 months"]
-  },
-  {
-    "tier": 2,
-    "question": "What do you call animals that maintain a constant body temperature?",
-    "answer": "warm-blooded",
-    "choices": ["cold-blooded", "warm-blooded", "ectothermic", "poikilothermic"]
-  }
+  {"question": "What is the largest land animal?", "choices": ["African Elephant", "Hippopotamus", "Giraffe", "White Rhino"], "answer": "African Elephant", "tier": 1},
+  {"question": "How many legs does a spider have?", "choices": ["6", "8", "10", "12"], "answer": "8", "tier": 1},
+  {"question": "What is the fastest land animal?", "choices": ["Lion", "Cheetah", "Horse", "Leopard"], "answer": "Cheetah", "tier": 1},
+  {"question": "What is the largest mammal on Earth?", "choices": ["Elephant", "Blue Whale", "Giraffe", "Hippopotamus"], "answer": "Blue Whale", "tier": 1},
+  {"question": "Which bird cannot fly?", "choices": ["Eagle", "Penguin", "Hawk", "Sparrow"], "answer": "Penguin", "tier": 1},
+  {"question": "How many hearts does an octopus have?", "choices": ["1", "2", "3", "4"], "answer": "3", "tier": 1},
+  {"question": "What do you call a baby kangaroo?", "choices": ["Kit", "Joey", "Cub", "Pup"], "answer": "Joey", "tier": 1},
+  {"question": "How many legs does an insect have?", "choices": ["4", "6", "8", "10"], "answer": "6", "tier": 1},
+  {"question": "What do you call a female deer?", "choices": ["Doe", "Hen", "Cow", "Sow"], "answer": "Doe", "tier": 1},
+  {"question": "What type of animal is a dolphin?", "choices": ["Fish", "Reptile", "Mammal", "Amphibian"], "answer": "Mammal", "tier": 1},
+  {"question": "What is the tallest animal in the world?", "choices": ["Elephant", "Giraffe", "Ostrich", "Camel"], "answer": "Giraffe", "tier": 1},
+  {"question": "What do you call an animal that eats only meat?", "choices": ["Herbivore", "Omnivore", "Carnivore", "Insectivore"], "answer": "Carnivore", "tier": 1},
+  {"question": "What do you call an animal that eats only plants?", "choices": ["Carnivore", "Herbivore", "Omnivore", "Insectivore"], "answer": "Herbivore", "tier": 1},
+  {"question": "What is a group of fish swimming together called?", "choices": ["A pack", "A school", "A herd", "A pod"], "answer": "A school", "tier": 1},
+  {"question": "Which of these is a reptile?", "choices": ["Frog", "Salamander", "Crocodile", "Axolotl"], "answer": "Crocodile", "tier": 1},
+  {"question": "What is the only mammal capable of true flight?", "choices": ["Flying squirrel", "Bat", "Sugar glider", "Colugo"], "answer": "Bat", "tier": 1},
+  {"question": "What do you call a group of wolves?", "choices": ["A pack", "A herd", "A flock", "A pride"], "answer": "A pack", "tier": 1},
+  {"question": "How many legs does a crab have?", "choices": ["6", "8", "10", "12"], "answer": "10", "tier": 1},
+  {"question": "What type of animal is a shark?", "choices": ["Mammal", "Reptile", "Fish", "Amphibian"], "answer": "Fish", "tier": 1},
+  {"question": "What is a young swan called?", "choices": ["Chick", "Signet", "Cygnet", "Fledgling"], "answer": "Cygnet", "tier": 1},
+
+  {"question": "What is a group of crows called?", "choices": ["A murder", "A flock", "A pack", "A colony"], "answer": "A murder", "tier": 2},
+  {"question": "What is a group of lions called?", "choices": ["A pack", "A herd", "A pride", "A colony"], "answer": "A pride", "tier": 2},
+  {"question": "What is the approximate gestation period of an elephant?", "choices": ["12 months", "16 months", "18 months", "22 months"], "answer": "22 months", "tier": 2},
+  {"question": "What do you call an animal that is active at night?", "choices": ["Diurnal", "Crepuscular", "Nocturnal", "Arboreal"], "answer": "Nocturnal", "tier": 2},
+  {"question": "What do you call animals that maintain a constant body temperature?", "choices": ["Cold-blooded", "Warm-blooded", "Ectothermic", "Poikilothermic"], "answer": "Warm-blooded", "tier": 2},
+  {"question": "Where do polar bears live in the wild?", "choices": ["Antarctica", "Siberia", "Arctic", "Iceland"], "answer": "Arctic", "tier": 2},
+  {"question": "What is the top speed of a cheetah?", "choices": ["80 km/h", "100 km/h", "112 km/h", "130 km/h"], "answer": "112 km/h", "tier": 2},
+  {"question": "What is a group of elephants called?", "choices": ["A herd", "A pack", "A troop", "A pod"], "answer": "A herd", "tier": 2},
+  {"question": "What is a group of geese on the ground called?", "choices": ["A flock", "A gaggle", "A skein", "A colony"], "answer": "A gaggle", "tier": 2},
+  {"question": "What is the gestation period of a domestic dog?", "choices": ["30 days", "45 days", "63 days", "90 days"], "answer": "63 days", "tier": 2},
+  {"question": "Which animal has the longest lifespan?", "choices": ["Tortoise", "Elephant", "Parrot", "Whale"], "answer": "Tortoise", "tier": 2},
+  {"question": "What do you call a group of whales?", "choices": ["A pod", "A school", "A herd", "A pack"], "answer": "A pod", "tier": 2},
+  {"question": "What is the process by which a caterpillar becomes a butterfly called?", "choices": ["Molting", "Metamorphosis", "Pupation", "Eclosion"], "answer": "Metamorphosis", "tier": 2},
+  {"question": "What is the gestation period of a domestic cat?", "choices": ["45 days", "55 days", "65 days", "75 days"], "answer": "65 days", "tier": 2},
+  {"question": "Which bird has the largest wingspan?", "choices": ["Bald Eagle", "Albatross", "Condor", "Pelican"], "answer": "Albatross", "tier": 2},
+  {"question": "What is a group of flamingos called?", "choices": ["A flock", "A flamboyance", "A colony", "A huddle"], "answer": "A flamboyance", "tier": 2},
+  {"question": "What do migrating birds use to navigate?", "choices": ["Wind patterns", "Star positions", "Earth's magnetic field", "Smell"], "answer": "Earth's magnetic field", "tier": 2},
+  {"question": "What is the fastest bird in level flight?", "choices": ["Peregrine falcon", "Swift", "Frigate bird", "Duck"], "answer": "Swift", "tier": 2},
+  {"question": "What is a group of owls called?", "choices": ["A flock", "A pack", "A parliament", "A colony"], "answer": "A parliament", "tier": 2},
+  {"question": "What do you call the shedding of skin in snakes?", "choices": ["Molting", "Ecdysis", "Sloughing", "Shedding"], "answer": "Ecdysis", "tier": 2},
+
+  {"question": "To which order do bats belong?", "choices": ["Chiroptera", "Rodentia", "Insectivora", "Primates"], "answer": "Chiroptera", "tier": 3},
+  {"question": "What family does the domestic cat belong to?", "choices": ["Canidae", "Felidae", "Mustelidae", "Viverridae"], "answer": "Felidae", "tier": 3},
+  {"question": "What is the taxonomic class of birds?", "choices": ["Mammalia", "Aves", "Reptilia", "Amphibia"], "answer": "Aves", "tier": 3},
+  {"question": "Which animal has the most chromosomes?", "choices": ["Fern", "Hermit crab", "Atlas blue butterfly", "Goldfish"], "answer": "Atlas blue butterfly", "tier": 3},
+  {"question": "What adaptation do camels use to survive desert heat?", "choices": ["Storing water in humps", "Storing fat in humps", "Sweating from humps", "Radiating heat from humps"], "answer": "Storing fat in humps", "tier": 3},
+  {"question": "What is the difference between an alligator and a crocodile snout?", "choices": ["Alligator has a U-shaped snout, crocodile has a V-shaped snout", "Alligator has a V-shaped snout, crocodile has a U-shaped snout", "They look identical", "Crocodile has a square snout"], "answer": "Alligator has a U-shaped snout, crocodile has a V-shaped snout", "tier": 3},
+  {"question": "What order do whales and dolphins belong to?", "choices": ["Pinnipedia", "Cetacea", "Sirenia", "Carnivora"], "answer": "Cetacea", "tier": 3},
+  {"question": "What is unique about the platypus among mammals?", "choices": ["It lays eggs", "It has no fur", "It cannot swim", "It has no teeth ever"], "answer": "It lays eggs", "tier": 3},
+  {"question": "What family does the wolf belong to?", "choices": ["Felidae", "Ursidae", "Canidae", "Mustelidae"], "answer": "Canidae", "tier": 3},
+  {"question": "What is the function of a shark's ampullae of Lorenzini?", "choices": ["Sight enhancement", "Detecting electrical fields", "Sound amplification", "Pressure sensing"], "answer": "Detecting electrical fields", "tier": 3},
+  {"question": "Which primate is most closely related to humans?", "choices": ["Gorilla", "Orangutan", "Chimpanzee", "Gibbon"], "answer": "Chimpanzee", "tier": 3},
+  {"question": "What is the ecological term for animals that eat both plants and animals?", "choices": ["Herbivore", "Carnivore", "Omnivore", "Detritivore"], "answer": "Omnivore", "tier": 3},
+  {"question": "What class do frogs and salamanders belong to?", "choices": ["Reptilia", "Amphibia", "Mammalia", "Pisces"], "answer": "Amphibia", "tier": 3},
+  {"question": "What is the term for animals that are active at dawn and dusk?", "choices": ["Nocturnal", "Diurnal", "Crepuscular", "Cathemeral"], "answer": "Crepuscular", "tier": 3},
+  {"question": "What adaptation allows Arctic foxes to survive polar winters?", "choices": ["Thick blubber layer", "Seasonal fur color change and insulating coat", "Hibernation", "Migration"], "answer": "Seasonal fur color change and insulating coat", "tier": 3},
+  {"question": "What is the order that includes all true bugs (e.g., stink bugs)?", "choices": ["Coleoptera", "Hemiptera", "Hymenoptera", "Diptera"], "answer": "Hemiptera", "tier": 3},
+  {"question": "What is the name for the protective hard outer covering of insects?", "choices": ["Endoskeleton", "Carapace", "Exoskeleton", "Shell"], "answer": "Exoskeleton", "tier": 3},
+  {"question": "Which of these snakes is non-venomous?", "choices": ["King cobra", "Black mamba", "Ball python", "Taipan"], "answer": "Ball python", "tier": 3},
+  {"question": "To what order do horses belong?", "choices": ["Artiodactyla", "Perissodactyla", "Carnivora", "Rodentia"], "answer": "Perissodactyla", "tier": 3},
+  {"question": "What do you call the larval stage of a frog?", "choices": ["Nymph", "Tadpole", "Larva", "Pupa"], "answer": "Tadpole", "tier": 3},
+
+  {"question": "Which animal has blue blood due to copper-based hemocyanin?", "choices": ["Horseshoe crab", "Octopus", "Squid", "All of these"], "answer": "All of these", "tier": 4},
+  {"question": "What is the venom of the cone snail capable of?", "choices": ["Causing mild irritation", "Killing a human", "Only affecting fish", "Causing temporary blindness"], "answer": "Killing a human", "tier": 4},
+  {"question": "Which animal produces the toxin tetrodotoxin?", "choices": ["Box jellyfish", "Pufferfish", "Blue-ringed octopus", "Both pufferfish and blue-ringed octopus"], "answer": "Both pufferfish and blue-ringed octopus", "tier": 4},
+  {"question": "What critically endangered great ape is found only on Borneo and Sumatra?", "choices": ["Chimpanzee", "Orangutan", "Gorilla", "Bonobo"], "answer": "Orangutan", "tier": 4},
+  {"question": "What is unique about the axolotl's regenerative ability?", "choices": ["It can regrow its tail", "It can regrow entire limbs including spinal cord segments", "It can regrow its head", "It cannot regenerate"], "answer": "It can regrow entire limbs including spinal cord segments", "tier": 4},
+  {"question": "The Komodo dragon uses which method to detect prey?", "choices": ["Echolocation", "Flicking tongue to detect chemical signals", "Infrared sensing pits", "Electrical field detection"], "answer": "Flicking tongue to detect chemical signals", "tier": 4},
+  {"question": "Which endangered cat species is native to the Iberian Peninsula?", "choices": ["Amur leopard", "Iberian lynx", "Snow leopard", "Clouded leopard"], "answer": "Iberian lynx", "tier": 4},
+  {"question": "What is the world's most venomous spider?", "choices": ["Black widow", "Brown recluse", "Sydney funnel-web spider", "Brazilian wandering spider"], "answer": "Sydney funnel-web spider", "tier": 4},
+  {"question": "What unique defense mechanism does the bombardier beetle use?", "choices": ["Spraying acid", "Ejecting boiling chemical spray", "Playing dead", "Releasing foul odor"], "answer": "Ejecting boiling chemical spray", "tier": 4},
+  {"question": "What rare trait does the mantis shrimp possess in its vision?", "choices": ["Infrared vision", "Up to 16 types of color receptors", "360-degree vision", "Ultraviolet-only vision"], "answer": "Up to 16 types of color receptors", "tier": 4},
+  {"question": "Which animal is capable of surviving in the vacuum of space due to cryptobiosis?", "choices": ["Brine shrimp", "Tardigrade", "Nematode", "Bdelloid rotifer"], "answer": "Tardigrade", "tier": 4},
+  {"question": "Which endangered marine mammal is sometimes called the 'sea cow'?", "choices": ["Beluga whale", "Narwhal", "Dugong", "Porpoise"], "answer": "Dugong", "tier": 4},
+  {"question": "What is the world's most venomous snake by venom toxicity?", "choices": ["Black mamba", "Inland taipan", "King cobra", "Eastern brown snake"], "answer": "Inland taipan", "tier": 4},
+  {"question": "Which animal has the most powerful bite force relative to body size?", "choices": ["Hyena", "Crocodile", "Tasmanian devil", "Tarantula"], "answer": "Tasmanian devil", "tier": 4},
+  {"question": "What chemical in poison dart frogs makes them toxic?", "choices": ["Tetrodotoxin", "Batrachotoxin", "Ciguatoxin", "Saxitoxin"], "answer": "Batrachotoxin", "tier": 4},
+
+  {"question": "What is the fastest-reproducing mammal by gestation time?", "choices": ["Virginia opossum", "Mouse", "Hamster", "Shrew"], "answer": "Virginia opossum", "tier": 5},
+  {"question": "What is the scientific name of the common chimpanzee?", "choices": ["Pan troglodytes", "Pan paniscus", "Gorilla gorilla", "Homo sapiens"], "answer": "Pan troglodytes", "tier": 5},
+  {"question": "What evolutionary mechanism describes how whales lost their hind limbs?", "choices": ["Convergent evolution", "Vestigial structure regression", "Adaptive radiation", "Coevolution"], "answer": "Vestigial structure regression", "tier": 5},
+  {"question": "Which extremophile animal can survive temperatures above 150°C?", "choices": ["Tardigrade", "Pompeii worm", "Antarctic icefish", "Hydrothermal vent shrimp"], "answer": "Pompeii worm", "tier": 5},
+  {"question": "What unique protein allows the Antarctic icefish to survive without hemoglobin?", "choices": ["Myoglobin", "Antifreeze glycoproteins", "Cytochrome c", "Ferritin"], "answer": "Antifreeze glycoproteins", "tier": 5},
+  {"question": "What is the binomial nomenclature system based on?", "choices": ["English genus and species names", "Latin or Greek genus and species names", "Discoverer's name and habitat", "Common name and order"], "answer": "Latin or Greek genus and species names", "tier": 5},
+  {"question": "What is the concept of 'convergent evolution' best illustrated by?", "choices": ["Whales and fish both having streamlined bodies", "Dogs and wolves sharing DNA", "Birds and bats both being vertebrates", "Apes and humans sharing ancestors"], "answer": "Whales and fish both having streamlined bodies", "tier": 5},
+  {"question": "What is the deepest-diving marine mammal?", "choices": ["Sperm whale", "Blue whale", "Cuvier's beaked whale", "Elephant seal"], "answer": "Cuvier's beaked whale", "tier": 5},
+  {"question": "What adaptation allows the wood frog to survive being frozen solid?", "choices": ["Antifreeze proteins in blood", "Glucose accumulation preventing ice crystal damage", "Fat layer insulation", "Metabolic shutdown and dehydration"], "answer": "Glucose accumulation preventing ice crystal damage", "tier": 5},
+  {"question": "What is the term for genetic change that provides no fitness advantage but persists through populations?", "choices": ["Natural selection", "Genetic drift", "Adaptive evolution", "Directional selection"], "answer": "Genetic drift", "tier": 5},
+  {"question": "Which organism holds the record for most known cells in a nervous system relative to body?", "choices": ["Octopus", "Crow", "Mantis shrimp", "Roundworm (C. elegans)"], "answer": "Octopus", "tier": 5},
+  {"question": "What is the scientific order containing all rodents?", "choices": ["Lagomorpha", "Rodentia", "Insectivora", "Soricomorpha"], "answer": "Rodentia", "tier": 5},
+  {"question": "Which phenomenon describes animals evolving similar traits independently?", "choices": ["Divergent evolution", "Coevolution", "Convergent evolution", "Parallel evolution"], "answer": "Convergent evolution", "tier": 5},
+  {"question": "What is the primary mechanism by which new species form (speciation)?", "choices": ["Mutation alone", "Reproductive isolation leading to genetic divergence", "Hybridization", "Epigenetic change"], "answer": "Reproductive isolation leading to genetic divergence", "tier": 5},
+  {"question": "What is the name of the protein that gives red blood cells their oxygen-carrying ability?", "choices": ["Hemocyanin", "Hemoglobin", "Myoglobin", "Ferritin"], "answer": "Hemoglobin", "tier": 5}
 ]

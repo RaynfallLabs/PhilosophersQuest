@@ -1,92 +1,96 @@
 [
-  {
-    "tier": 1,
-    "question": "What is the past tense of 'run'?",
-    "answer": "ran",
-    "choices": ["runned", "ran", "ranned", "was running"]
-  },
-  {
-    "tier": 1,
-    "question": "Which word is correct for possession: 'their' or 'there'?",
-    "answer": "their",
-    "choices": ["there", "their", "they're", "the're"]
-  },
-  {
-    "tier": 1,
-    "question": "What part of speech is the word 'quickly'?",
-    "answer": "adverb",
-    "choices": ["adjective", "adverb", "noun", "verb"]
-  },
-  {
-    "tier": 1,
-    "question": "What is a synonym?",
-    "answer": "a word with the same meaning",
-    "choices": ["a word with the opposite meaning", "a word with the same meaning", "a word that sounds the same", "a describing word"]
-  },
-  {
-    "tier": 1,
-    "question": "What punctuation mark ends a declarative sentence?",
-    "answer": "period",
-    "choices": ["comma", "period", "colon", "semicolon"]
-  },
-  {
-    "tier": 1,
-    "question": "What part of speech is the word 'happy'?",
-    "answer": "adjective",
-    "choices": ["adverb", "noun", "adjective", "verb"]
-  },
-  {
-    "tier": 1,
-    "question": "What is the plural of 'mouse'?",
-    "answer": "mice",
-    "choices": ["mouses", "mices", "mice", "moose"]
-  },
-  {
-    "tier": 1,
-    "question": "Which of these words is a conjunction?",
-    "answer": "and",
-    "choices": ["fast", "and", "red", "jump"]
-  },
-  {
-    "tier": 1,
-    "question": "Which is correct for countable items: 'fewer' or 'less'?",
-    "answer": "fewer",
-    "choices": ["less", "fewer", "lesser", "little"]
-  },
-  {
-    "tier": 1,
-    "question": "What is a noun?",
-    "answer": "a person, place, or thing",
-    "choices": ["an action word", "a describing word", "a person, place, or thing", "a connecting word"]
-  },
-  {
-    "tier": 2,
-    "question": "What is a subordinating conjunction?",
-    "answer": "joins a clause to a main clause",
-    "choices": ["links two equal clauses", "joins a clause to a main clause", "connects two nouns", "modifies a verb"]
-  },
-  {
-    "tier": 2,
-    "question": "What is the subjunctive mood used for?",
-    "answer": "expressing wishes or hypotheticals",
-    "choices": ["stating facts", "expressing wishes or hypotheticals", "giving commands", "asking questions"]
-  },
-  {
-    "tier": 2,
-    "question": "What is a dangling modifier?",
-    "answer": "a phrase that doesn't match its noun",
-    "choices": ["an unnecessary adjective", "a phrase that doesn't match its noun", "a misplaced adverb", "a double negative"]
-  },
-  {
-    "tier": 2,
-    "question": "What word class is 'under' in 'under the bridge'?",
-    "answer": "preposition",
-    "choices": ["conjunction", "adjective", "preposition", "adverb"]
-  },
-  {
-    "tier": 2,
-    "question": "What is passive voice?",
-    "answer": "subject receives the action",
-    "choices": ["subject performs the action", "subject receives the action", "verb describes a state", "no subject is named"]
-  }
+  {"question": "What part of speech modifies a verb, adjective, or another adverb?", "choices": ["Adverb", "Adjective", "Conjunction", "Preposition"], "answer": "Adverb", "tier": 1},
+  {"question": "Which of the following is a noun?", "choices": ["Happiness", "Run", "Quickly", "Beautiful"], "answer": "Happiness", "tier": 1},
+  {"question": "What part of speech connects words, phrases, or clauses?", "choices": ["Conjunction", "Article", "Pronoun", "Verb"], "answer": "Conjunction", "tier": 1},
+  {"question": "Which punctuation mark ends a declarative sentence?", "choices": ["Period", "Comma", "Semicolon", "Colon"], "answer": "Period", "tier": 1},
+  {"question": "What is the subject of the sentence 'The dog barked loudly'?", "choices": ["The dog", "barked", "loudly", "The"], "answer": "The dog", "tier": 1},
+  {"question": "Which of the following is an adjective?", "choices": ["Enormous", "Eat", "Slowly", "Because"], "answer": "Enormous", "tier": 1},
+  {"question": "What part of speech shows a relationship between a noun and another word?", "choices": ["Preposition", "Interjection", "Adverb", "Conjunction"], "answer": "Preposition", "tier": 1},
+  {"question": "Which sentence type asks a question?", "choices": ["Interrogative", "Declarative", "Imperative", "Exclamatory"], "answer": "Interrogative", "tier": 1},
+  {"question": "What is the plural of 'child'?", "choices": ["Children", "Childs", "Childes", "Childrens"], "answer": "Children", "tier": 1},
+  {"question": "Which article is used before a word starting with a vowel sound?", "choices": ["An", "A", "The", "One"], "answer": "An", "tier": 1},
+  {"question": "What part of speech replaces a noun?", "choices": ["Pronoun", "Verb", "Adverb", "Preposition"], "answer": "Pronoun", "tier": 1},
+  {"question": "Which sentence type gives a command or request?", "choices": ["Imperative", "Interrogative", "Declarative", "Exclamatory"], "answer": "Imperative", "tier": 1},
+  {"question": "What punctuation mark is used to separate items in a list?", "choices": ["Comma", "Period", "Colon", "Dash"], "answer": "Comma", "tier": 1},
+  {"question": "Which of the following is a verb?", "choices": ["Sprint", "Blue", "Happily", "Under"], "answer": "Sprint", "tier": 1},
+  {"question": "What is the possessive form of 'James'?", "choices": ["James's", "James'", "Jamess", "James"], "answer": "James's", "tier": 1},
+  {"question": "Which sentence is exclamatory?", "choices": ["What a beautiful sunset!", "The sunset is beautiful.", "Is the sunset beautiful?", "Watch the sunset."], "answer": "What a beautiful sunset!", "tier": 1},
+  {"question": "What does an interjection express?", "choices": ["Emotion or exclamation", "Action or state", "A relationship between words", "A description"], "answer": "Emotion or exclamation", "tier": 1},
+  {"question": "Which of the following is a proper noun?", "choices": ["Paris", "City", "Building", "River"], "answer": "Paris", "tier": 1},
+  {"question": "What punctuation mark introduces a list or explanation?", "choices": ["Colon", "Comma", "Apostrophe", "Hyphen"], "answer": "Colon", "tier": 1},
+  {"question": "A sentence must have at minimum which two components?", "choices": ["Subject and predicate", "Noun and adjective", "Verb and adverb", "Article and noun"], "answer": "Subject and predicate", "tier": 1},
+
+  {"question": "Which sentence is in the passive voice?", "choices": ["The cat was chased by the dog", "The dog chased the cat", "The dog runs fast", "The cat sleeps"], "answer": "The cat was chased by the dog", "tier": 2},
+  {"question": "Which word correctly completes: 'The medicine had a strong ___ on him'?", "choices": ["Effect", "Affect", "Effekt", "Affekt"], "answer": "Effect", "tier": 2},
+  {"question": "Which is the correct use of 'they're'?", "choices": ["They're going to the park", "Their going to the park", "There going to the park", "Theyre going to the park"], "answer": "They're going to the park", "tier": 2},
+  {"question": "What is an independent clause?", "choices": ["A clause that can stand alone as a sentence", "A clause that depends on another clause", "A phrase without a verb", "A sentence with two subjects"], "answer": "A clause that can stand alone as a sentence", "tier": 2},
+  {"question": "What is a subordinate clause?", "choices": ["A clause that cannot stand alone as a sentence", "A clause with two verbs", "A sentence with no object", "A phrase with an adjective"], "answer": "A clause that cannot stand alone as a sentence", "tier": 2},
+  {"question": "Which verb tense describes an action completed before another past action?", "choices": ["Past perfect", "Simple past", "Past progressive", "Present perfect"], "answer": "Past perfect", "tier": 2},
+  {"question": "Which word correctly fills the blank: 'She will ___ the situation carefully'?", "choices": ["Affect", "Effect", "Infect", "Neglect"], "answer": "Affect", "tier": 2},
+  {"question": "What type of phrase contains a gerund as its head?", "choices": ["Gerund phrase", "Infinitive phrase", "Participial phrase", "Prepositional phrase"], "answer": "Gerund phrase", "tier": 2},
+  {"question": "Which sentence uses the present perfect tense?", "choices": ["She has visited Paris", "She visited Paris", "She visits Paris", "She was visiting Paris"], "answer": "She has visited Paris", "tier": 2},
+  {"question": "Which is the correct sentence regarding countable nouns?", "choices": ["Fewer people attended than expected", "Less people attended than expected", "Lesser people attended than expected", "Few people attended then expected"], "answer": "Fewer people attended than expected", "tier": 2},
+  {"question": "What is a compound sentence?", "choices": ["Two independent clauses joined by a conjunction or semicolon", "A sentence with one independent and one dependent clause", "A sentence with three or more clauses", "A sentence with no punctuation"], "answer": "Two independent clauses joined by a conjunction or semicolon", "tier": 2},
+  {"question": "Which correctly distinguishes 'who' from 'whom'?", "choices": ["'Who' is a subject; 'whom' is an object", "'Who' is formal; 'whom' is informal", "'Whom' is a subject; 'who' is an object", "They are interchangeable"], "answer": "'Who' is a subject; 'whom' is an object", "tier": 2},
+  {"question": "Which sentence uses the future perfect tense?", "choices": ["By noon, she will have finished the report", "She will finish the report by noon", "She finished the report by noon", "She has finished the report"], "answer": "By noon, she will have finished the report", "tier": 2},
+  {"question": "What is an appositive?", "choices": ["A noun or noun phrase that renames another noun beside it", "A verb that acts as a noun", "A clause that modifies a verb", "A phrase that modifies an adjective"], "answer": "A noun or noun phrase that renames another noun beside it", "tier": 2},
+  {"question": "Which sentence avoids a comma splice?", "choices": ["He was tired; he went to bed", "He was tired, he went to bed", "He was tired he went to bed", "He was tired, and, he went to bed"], "answer": "He was tired; he went to bed", "tier": 2},
+  {"question": "Which word is a coordinating conjunction?", "choices": ["But", "Although", "Because", "Unless"], "answer": "But", "tier": 2},
+  {"question": "What is subject-verb agreement?", "choices": ["The verb must match the subject in number", "The subject must come before the verb", "The verb must match the object in tense", "The subject must be a noun"], "answer": "The verb must match the subject in number", "tier": 2},
+  {"question": "Which sentence correctly uses 'its' vs 'it's'?", "choices": ["The dog wagged its tail", "The dog wagged it's tail", "The dog wagged its' tail", "The dog wagged its tails'"], "answer": "The dog wagged its tail", "tier": 2},
+  {"question": "What is a prepositional phrase?", "choices": ["A preposition followed by its object and any modifiers", "A verb phrase with a preposition", "A noun modified by a preposition", "A clause introduced by a preposition"], "answer": "A preposition followed by its object and any modifiers", "tier": 2},
+  {"question": "Which is a subordinating conjunction?", "choices": ["Although", "And", "But", "Or"], "answer": "Although", "tier": 2},
+
+  {"question": "What is a dangling modifier?", "choices": ["A modifier not clearly connected to what it modifies", "A misplaced comma", "A double negative", "A run-on sentence"], "answer": "A modifier not clearly connected to what it modifies", "tier": 3},
+  {"question": "Which sentence uses the subjunctive mood correctly?", "choices": ["If I were rich, I would travel", "If I was rich, I would travel", "If I am rich, I would travel", "If I be rich, I would travel"], "answer": "If I were rich, I would travel", "tier": 3},
+  {"question": "What is a gerund?", "choices": ["A verb form ending in -ing used as a noun", "A verb form used as an adjective", "An infinitive used as an adverb", "A past participle used as a noun"], "answer": "A verb form ending in -ing used as a noun", "tier": 3},
+  {"question": "When should an em dash be used?", "choices": ["To introduce an aside or abrupt break in thought", "To separate items in a list", "To connect two complete sentences", "To show possession"], "answer": "To introduce an aside or abrupt break in thought", "tier": 3},
+  {"question": "What is a misplaced modifier?", "choices": ["A modifier placed too far from the word it modifies", "A modifier that contradicts the noun", "A modifier with no clear referent", "A modifier used as a subject"], "answer": "A modifier placed too far from the word it modifies", "tier": 3},
+  {"question": "Which sentence contains a squinting modifier?", "choices": ["Students who practice often improve", "Running quickly, she reached the bus", "He ate the cake that was stale", "The book on the table is mine"], "answer": "Students who practice often improve", "tier": 3},
+  {"question": "What is the key difference between a gerund and a present participle?", "choices": ["Gerunds function as nouns; participles function as adjectives", "Gerunds are past tense; participles are present tense", "Gerunds modify nouns; participles modify verbs", "There is no difference"], "answer": "Gerunds function as nouns; participles function as adjectives", "tier": 3},
+  {"question": "Which correctly uses a semicolon?", "choices": ["She loves hiking; she hates camping", "She loves hiking; and hates camping", "She loves; hiking and hates camping", "She; loves hiking and hates camping"], "answer": "She loves hiking; she hates camping", "tier": 3},
+  {"question": "What is the subjunctive mood used to express?", "choices": ["Wishes, hypotheticals, and conditions contrary to fact", "Actions in the past", "Commands and requests", "Questions and negations"], "answer": "Wishes, hypotheticals, and conditions contrary to fact", "tier": 3},
+  {"question": "Which sentence correctly uses an infinitive as a noun?", "choices": ["To err is human", "Running is fun", "She was running fast", "The running water"], "answer": "To err is human", "tier": 3},
+  {"question": "What is a restrictive clause?", "choices": ["A clause that is essential to the meaning of the sentence", "A clause set off by commas", "A clause that adds extra information", "A clause beginning with 'which'"], "answer": "A clause that is essential to the meaning of the sentence", "tier": 3},
+  {"question": "Which punctuation correctly sets off a non-restrictive clause?", "choices": ["Commas", "Semicolons", "Colons", "Em dashes only"], "answer": "Commas", "tier": 3},
+  {"question": "What is a split infinitive?", "choices": ["An infinitive with an adverb inserted between 'to' and the verb", "An infinitive used as a gerund", "An infinitive at the end of a sentence", "An infinitive without 'to'"], "answer": "An infinitive with an adverb inserted between 'to' and the verb", "tier": 3},
+  {"question": "Which is an example of parallel structure?", "choices": ["She likes hiking, swimming, and running", "She likes hiking, to swim, and runs", "She likes hike, swimming, and to run", "She likes to hike, swimming, run"], "answer": "She likes hiking, swimming, and running", "tier": 3},
+  {"question": "What does an ellipsis indicate in writing?", "choices": ["An omission of words or a trailing off of thought", "A comparison between two things", "A sudden interruption", "An emphasis on a word"], "answer": "An omission of words or a trailing off of thought", "tier": 3},
+  {"question": "What is an absolute phrase?", "choices": ["A phrase with its own subject and participle that modifies an entire sentence", "A phrase that cannot be moved", "A phrase with no modifiers", "A phrase used as a subject"], "answer": "A phrase with its own subject and participle that modifies an entire sentence", "tier": 3},
+  {"question": "Which sentence contains a dangling participle?", "choices": ["Walking down the street, the trees were beautiful", "Walking down the street, she admired the trees", "She walked down the street admiring the trees", "The trees were beautiful as she walked"], "answer": "Walking down the street, the trees were beautiful", "tier": 3},
+  {"question": "What is asyndeton?", "choices": ["The omission of conjunctions between parts of a sentence", "The repetition of a word at the beginning of clauses", "A figure of speech using understatement", "The addition of extra conjunctions"], "answer": "The omission of conjunctions between parts of a sentence", "tier": 3},
+
+  {"question": "What rhetorical device repeats a word at the end of successive clauses?", "choices": ["Epistrophe", "Anaphora", "Chiasmus", "Asyndeton"], "answer": "Epistrophe", "tier": 4},
+  {"question": "What is anaphora?", "choices": ["Repetition of a word or phrase at the beginning of successive clauses", "Repetition at the end of clauses", "A reversal of grammatical structures in successive phrases", "The omission of conjunctions"], "answer": "Repetition of a word or phrase at the beginning of successive clauses", "tier": 4},
+  {"question": "What is chiasmus?", "choices": ["A reversal of grammatical structures in successive clauses", "Repetition at the start of clauses", "The use of a word to modify two others in different ways", "Omission of words for effect"], "answer": "A reversal of grammatical structures in successive clauses", "tier": 4},
+  {"question": "What is synecdoche?", "choices": ["A figure of speech where a part represents the whole or vice versa", "A comparison using 'like' or 'as'", "The repetition of consonant sounds", "Attribution of human qualities to non-human things"], "answer": "A figure of speech where a part represents the whole or vice versa", "tier": 4},
+  {"question": "From which Latin word does 'grammar' ultimately derive?", "choices": ["Grammatica", "Gramma", "Grammus", "Grammaire"], "answer": "Grammatica", "tier": 4},
+  {"question": "What is zeugma?", "choices": ["A word that governs two or more other words in different senses", "The repetition of a phrase at intervals", "A comparison between unlike things", "An understatement for effect"], "answer": "A word that governs two or more other words in different senses", "tier": 4},
+  {"question": "What is polysyndeton?", "choices": ["The use of multiple conjunctions in close succession", "The omission of conjunctions", "Repetition at the start of clauses", "Reversal of grammatical structure"], "answer": "The use of multiple conjunctions in close succession", "tier": 4},
+  {"question": "What does the term 'syntax' literally mean in Greek?", "choices": ["Arrangement together", "Word order", "Sentence law", "Speech rule"], "answer": "Arrangement together", "tier": 4},
+  {"question": "What is metonymy?", "choices": ["Substituting the name of something with something closely associated", "A comparison without 'like' or 'as'", "Exaggeration for effect", "A word that imitates a sound"], "answer": "Substituting the name of something with something closely associated", "tier": 4},
+  {"question": "What is the rhetorical device of anadiplosis?", "choices": ["Repeating the last word of one clause at the start of the next", "Repeating the first word of successive clauses", "Reversing the structure of two parallel phrases", "Using a part to represent the whole"], "answer": "Repeating the last word of one clause at the start of the next", "tier": 4},
+  {"question": "What is the term for a word formed from another word's letters rearranged?", "choices": ["Anagram", "Palindrome", "Portmanteau", "Acronym"], "answer": "Anagram", "tier": 4},
+  {"question": "What is litotes?", "choices": ["Understatement using a negative to affirm the positive", "Exaggeration for emphasis", "Repetition for emphasis", "A comparison using 'like' or 'as'"], "answer": "Understatement using a negative to affirm the positive", "tier": 4},
+  {"question": "What is a hendiadys?", "choices": ["Expressing one idea through two nouns joined by 'and'", "Expressing two ideas with one noun", "A reversal of two parallel clauses", "The use of extra adjectives for emphasis"], "answer": "Expressing one idea through two nouns joined by 'and'", "tier": 4},
+  {"question": "What does 'predicate' mean etymologically?", "choices": ["That which is asserted or proclaimed", "That which is placed before", "That which is questioned", "That which is described"], "answer": "That which is asserted or proclaimed", "tier": 4},
+  {"question": "What is antanaclasis?", "choices": ["The repetition of a word in a different or contrary sense", "The use of a word before the thing it modifies", "Reversing grammatical structure in successive clauses", "Using one word to govern two phrases differently"], "answer": "The repetition of a word in a different or contrary sense", "tier": 4},
+  {"question": "What is a periodic sentence?", "choices": ["A sentence whose main clause is withheld until the end", "A sentence with multiple independent clauses", "A sentence using periodic punctuation", "A sentence that appears at regular intervals in a text"], "answer": "A sentence whose main clause is withheld until the end", "tier": 4},
+
+  {"question": "In transformational grammar, what is a 'deep structure'?", "choices": ["The abstract syntactic representation underlying a sentence", "The surface word order of a sentence", "A type of embedded clause", "The phonological form of words"], "answer": "The abstract syntactic representation underlying a sentence", "tier": 5},
+  {"question": "Who developed transformational-generative grammar?", "choices": ["Noam Chomsky", "Ferdinand de Saussure", "Leonard Bloomfield", "Edward Sapir"], "answer": "Noam Chomsky", "tier": 5},
+  {"question": "What is a 'surface structure' in transformational grammar?", "choices": ["The actual form in which a sentence appears", "The underlying meaning of a sentence", "The phonetic realization of a morpheme", "A tree diagram of a sentence"], "answer": "The actual form in which a sentence appears", "tier": 5},
+  {"question": "What does the Sapir-Whorf hypothesis claim?", "choices": ["Language influences or determines thought and perception", "All languages share a universal grammar", "Language evolved from primate communication", "Grammar is learned entirely through imitation"], "answer": "Language influences or determines thought and perception", "tier": 5},
+  {"question": "What is a morpheme?", "choices": ["The smallest unit of meaning in a language", "The smallest unit of sound in a language", "A word with a single syllable", "A phrase with one grammatical function"], "answer": "The smallest unit of meaning in a language", "tier": 5},
+  {"question": "What is universal grammar in Chomskyan theory?", "choices": ["An innate linguistic structure shared by all humans", "A set of grammar rules applicable to all languages", "A grammar that covers all historical languages", "The grammar rules of Latin as a universal standard"], "answer": "An innate linguistic structure shared by all humans", "tier": 5},
+  {"question": "What is a 'phrase structure rule'?", "choices": ["A rule specifying how a syntactic category can be expanded", "A rule governing punctuation within phrases", "A rule about the placement of adverbs", "A rule about the rhythm of sentences"], "answer": "A rule specifying how a syntactic category can be expanded", "tier": 5},
+  {"question": "What is the archaic English second-person singular pronoun?", "choices": ["Thou", "Thee", "Thy", "Thine"], "answer": "Thou", "tier": 5},
+  {"question": "In historical English, what was the subjunctive second-person singular form of 'to be'?", "choices": ["Wert", "Wast", "Art", "Beest"], "answer": "Wert", "tier": 5},
+  {"question": "What is a 'free morpheme'?", "choices": ["A morpheme that can stand alone as a word", "A morpheme that must attach to another word", "A morpheme with no fixed meaning", "A morpheme borrowed from another language"], "answer": "A morpheme that can stand alone as a word", "tier": 5},
+  {"question": "What does 'theta role' refer to in Government and Binding theory?", "choices": ["The semantic role assigned to a noun phrase by a predicate", "The syntactic position of a noun phrase", "The phonological shape of a verb", "The morphological case of a noun"], "answer": "The semantic role assigned to a noun phrase by a predicate", "tier": 5},
+  {"question": "What is 'c-command' in syntactic theory?", "choices": ["A structural dominance relationship between nodes in a syntax tree", "The power of a clause to modify another clause", "The control a verb exerts over its arguments", "A constraint on the placement of complementizers"], "answer": "A structural dominance relationship between nodes in a syntax tree", "tier": 5},
+  {"question": "What is the 'Minimalist Program' in linguistics?", "choices": ["Chomsky's approach seeking the simplest principles for language", "A theory that all grammar can be reduced to ten rules", "A movement to simplify English spelling", "A model eliminating all transformational rules"], "answer": "Chomsky's approach seeking the simplest principles for language", "tier": 5},
+  {"question": "What is an agglutinative language?", "choices": ["A language that builds words by combining distinct morphemes", "A language with few inflections", "A language where word order determines meaning", "A language with no morphological marking"], "answer": "A language that builds words by combining distinct morphemes", "tier": 5},
+  {"question": "What is 'pro-drop' in linguistic typology?", "choices": ["Allowing the omission of subject pronouns when they are understood", "Dropping the object from a transitive sentence", "Omitting function words in informal speech", "Reducing long phrases to pronouns"], "answer": "Allowing the omission of subject pronouns when they are understood", "tier": 5},
+  {"question": "What is 'wh-movement' in transformational grammar?", "choices": ["The displacement of a wh-word to the front of a clause", "The substitution of a noun with a wh-pronoun", "The deletion of wh-words in relative clauses", "The insertion of wh-words into embedded clauses"], "answer": "The displacement of a wh-word to the front of a clause", "tier": 5}
 ]

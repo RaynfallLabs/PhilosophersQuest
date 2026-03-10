@@ -1,6 +1,6 @@
 class Player:
     BASE_HP = 20
-    BASE_SP = 20
+    BASE_SP = 200
     BASE_MP = 10
     BASE_TIMER = 10      # seconds for quiz timer
     CARRY_BASE = 50

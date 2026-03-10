@@ -1,3 +1,4 @@
+import math
 import sys
 import pygame
 
@@ -14,16 +15,368 @@ from quiz_engine import QuizEngine, QuizMode, QuizState
 from renderer import Renderer, TILE_SIZE
 from ui import Sidebar, MessageLog, SIDEBAR_W
 
-WINDOW_W = 1280
-WINDOW_H = 720
+WINDOW_W = 1600
+WINDOW_H = 900
 FPS      = 60
 
-GAME_W = WINDOW_W - SIDEBAR_W      # 980 px
-MSG_H  = 144
-GAME_H = WINDOW_H - MSG_H          # 576 px = 18 tiles
+GAME_W = WINDOW_W - SIDEBAR_W      # 1280 px
+MSG_H  = 160
+GAME_H = WINDOW_H - MSG_H          # 740 px = 18 tiles
 
-VIEWPORT_W = GAME_W // TILE_SIZE    # 30
+VIEWPORT_W = GAME_W // TILE_SIZE    # 32
 VIEWPORT_H = GAME_H // TILE_SIZE    # 18
+
+# ------------------------------------------------------------------
+# Secret character builds (name → stat overrides)
+# Each entry: dict with any of STR/CON/DEX/INT/WIS/PER as overrides.
+# Populate with real builds later; leave empty for now.
+# ------------------------------------------------------------------
+SECRET_BUILDS: dict[str, dict] = {
+    # e.g. "aristotle": {"WIS": 18, "INT": 16, "PER": 14},
+}
+
+
+# ------------------------------------------------------------------
+# Welcome screen
+# ------------------------------------------------------------------
+
+class WelcomeScreen:
+    """90s adventure-game-style welcome screen with domain art vortex."""
+
+    _TITLE_LINE1 = "PHILOSOPHER'S"
+    _TITLE_LINE2 = "QUEST"
+    _PROMPT      = "Enter your name, seeker:"
+
+    # (label, base_angle_deg, EGA-style color, quiz subject symbol)
+    _DOMAINS = [
+        ("MATH",       0,   (85, 255, 255), "∑"),
+        ("GEOGRAPHY",  40,  (85, 255, 85),  "◈"),
+        ("HISTORY",    80,  (255, 215, 0),  "Ω"),
+        ("ANIMAL",     120, (255, 140, 0),  "☽"),
+        ("COOKING",    160, (255, 85, 255), "⌘"),
+        ("SCIENCE",    200, (85, 85, 255),  "✦"),
+        ("PHILOSOPHY", 240, (200, 200, 255),"Φ"),
+        ("GRAMMAR",    280, (255, 85, 85),  "¶"),
+        ("ECONOMICS",  320, (170, 255, 0),  "◆"),
+    ]
+
+    def __init__(self, screen: pygame.Surface):
+        self.screen   = screen
+        self.W, self.H = screen.get_size()
+        self.cx = self.W // 2
+        self.cy = self.H // 2
+        self.font_xl   = pygame.font.SysFont('consolas', 56, bold=True)
+        self.font_lg   = pygame.font.SysFont('consolas', 34, bold=True)
+        self.font_md   = pygame.font.SysFont('consolas', 20)
+        self.font_sm   = pygame.font.SysFont('consolas', 15)
+        self.font_icon = pygame.font.SysFont('consolas', 26, bold=True)
+        self.font_tiny = pygame.font.SysFont('consolas', 12)
+        self.name_buf    = ''
+        self.cursor_on   = True
+        self.cursor_timer = 0.0
+        self._anim_t     = 0.0
+        # Pre-render stone background into a surface
+        self._bg = self._make_stone_bg()
+
+    def _make_stone_bg(self):
+        surf = pygame.Surface((self.W, self.H))
+        surf.fill((4, 5, 14))
+        block = 48
+        for row in range(self.H // block + 2):
+            for col in range(self.W // block + 2):
+                x, y = col * block, row * block
+                shade = 10 + ((row ^ col) & 3) * 3
+                pygame.draw.rect(surf, (shade, shade, shade + 5),
+                                 (x + 2, y + 2, block - 3, block - 3))
+                # mortar lines
+                pygame.draw.line(surf, (shade + 8, shade + 8, shade + 14),
+                                 (x + 2, y + 2), (x + block - 3, y + 2))
+                pygame.draw.line(surf, (shade + 8, shade + 8, shade + 14),
+                                 (x + 2, y + 2), (x + 2, y + block - 3))
+        return surf
+
+    def run(self, clock: pygame.time.Clock) -> tuple[str, dict | None]:
+        while True:
+            dt = clock.tick(60) / 1000.0
+            self._anim_t  += dt
+            self.cursor_timer += dt
+            if self.cursor_timer >= 0.55:
+                self.cursor_on = not self.cursor_on
+                self.cursor_timer = 0.0
+
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    sys.exit()
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_RETURN and self.name_buf.strip():
+                        name  = self.name_buf.strip()
+                        build = SECRET_BUILDS.get(name.lower())
+                        return name, build
+                    elif event.key == pygame.K_BACKSPACE:
+                        self.name_buf = self.name_buf[:-1]
+                    elif event.key == pygame.K_ESCAPE:
+                        pygame.quit()
+                        sys.exit()
+                    elif len(self.name_buf) < 24 and event.unicode.isprintable():
+                        self.name_buf += event.unicode
+
+            self._draw()
+            pygame.display.flip()
+
+    # ------------------------------------------------------------------ drawing
+
+    def _draw(self):
+        t  = self._anim_t
+        cx, cy = self.cx, self.cy
+
+        self.screen.blit(self._bg, (0, 0))
+        self._draw_radial_glow(cx, cy)
+        self._draw_domain_ring(cx, cy, t)
+        self._draw_vortex(cx, cy, t)
+        self._draw_stone(cx, cy, t)
+        self._draw_vignette()
+        self._draw_title_banner(cx)
+        self._draw_name_input(cx, cy)
+        self._draw_footer(cx)
+
+    def _draw_radial_glow(self, cx, cy):
+        glow = pygame.Surface((self.W, self.H), pygame.SRCALPHA)
+        for r, alpha in [(300, 12), (240, 18), (180, 22), (130, 28), (90, 20)]:
+            pygame.draw.circle(glow, (30, 0, 80, alpha), (cx, cy), r)
+        self.screen.blit(glow, (0, 0))
+
+    def _draw_domain_ring(self, cx, cy, t):
+        ring_r = min(cx, cy) * 0.52
+        orbit_speed = 0.018   # radians/sec — very slow orbit
+        base_angle  = t * orbit_speed
+
+        for i, (label, deg_off, color, symbol) in enumerate(self._DOMAINS):
+            angle  = base_angle + math.radians(deg_off)
+            ix = cx + int(ring_r * math.cos(angle))
+            iy = cy + int(ring_r * math.sin(angle))
+
+            # Energy tendril from icon to center (3 fading lines)
+            for w, frac in [(3, 0.25), (2, 0.45), (1, 0.75)]:
+                c = tuple(int(v * frac) for v in color)
+                pygame.draw.line(self.screen, c, (ix, iy), (cx, cy), w)
+
+            # Icon background panel (EGA-style bordered box)
+            box_w, box_h = 68, 58
+            bx, by = ix - box_w // 2, iy - box_h // 2
+            pygame.draw.rect(self.screen, (8, 8, 20), (bx, by, box_w, box_h))
+            pygame.draw.rect(self.screen, color, (bx, by, box_w, box_h), 2)
+            # Inner highlight line (top and left — classic 90s bevel)
+            bright = tuple(min(255, v + 80) for v in color)
+            pygame.draw.line(self.screen, bright, (bx+1, by+1), (bx+box_w-2, by+1))
+            pygame.draw.line(self.screen, bright, (bx+1, by+1), (bx+1, by+box_h-2))
+
+            # Domain symbol (large glyph)
+            sym_surf = self.font_icon.render(symbol, True, color)
+            self.screen.blit(sym_surf, (ix - sym_surf.get_width() // 2, iy - 18))
+
+            # Domain-specific mini pixel art shape
+            self._draw_domain_detail(ix, iy, label, color, t)
+
+            # Label below box
+            lbl = self.font_tiny.render(label, True, color)
+            self.screen.blit(lbl, (ix - lbl.get_width() // 2, by + box_h + 3))
+
+    def _draw_domain_detail(self, cx, cy, label, color, t):
+        """Draw a small iconic shape for each domain beneath the symbol."""
+        dim = tuple(max(0, v - 60) for v in color)
+        bright = tuple(min(255, v + 60) for v in color)
+        if label == "MATH":
+            # Two horizontal bars (= sign) and a plus
+            pygame.draw.line(self.screen, dim, (cx-12, cy+12), (cx+12, cy+12), 2)
+            pygame.draw.line(self.screen, dim, (cx-12, cy+17), (cx+12, cy+17), 2)
+        elif label == "GEOGRAPHY":
+            # Mountain silhouette (triangle)
+            pts = [(cx, cy+8), (cx-12, cy+20), (cx+12, cy+20)]
+            pygame.draw.polygon(self.screen, dim, pts)
+            pygame.draw.polygon(self.screen, color, pts, 1)
+        elif label == "HISTORY":
+            # Column (rectangle with capital)
+            pygame.draw.rect(self.screen, dim, (cx-5, cy+10, 10, 14))
+            pygame.draw.rect(self.screen, color, (cx-9, cy+9, 18, 3))
+            pygame.draw.rect(self.screen, color, (cx-9, cy+23, 18, 3))
+        elif label == "ANIMAL":
+            # Paw print (circle + 3 small circles)
+            pygame.draw.circle(self.screen, dim, (cx, cy+16), 7)
+            for dx in [-8, 0, 8]:
+                pygame.draw.circle(self.screen, color, (cx+dx, cy+7), 3)
+        elif label == "COOKING":
+            # Cauldron (trapezoid)
+            pts = [(cx-10, cy+10), (cx+10, cy+10),
+                   (cx+8,  cy+22), (cx-8,  cy+22)]
+            pygame.draw.polygon(self.screen, dim, pts)
+            pygame.draw.polygon(self.screen, color, pts, 1)
+            pygame.draw.line(self.screen, bright, (cx-12, cy+10), (cx+12, cy+10), 2)
+            # Steam
+            for sx in [-4, 4]:
+                phase = int(t * 3 + sx) % 4
+                pygame.draw.line(self.screen, color,
+                                 (cx+sx, cy+8-phase), (cx+sx, cy+4-phase), 1)
+        elif label == "SCIENCE":
+            # Flask (circle on a stem)
+            pygame.draw.circle(self.screen, dim, (cx, cy+18), 6)
+            pygame.draw.rect(self.screen, color, (cx-2, cy+10, 4, 8))
+            pygame.draw.line(self.screen, color, (cx-5, cy+10), (cx+5, cy+10), 2)
+        elif label == "PHILOSOPHY":
+            # Eye shape
+            pts_t = [(cx-12, cy+14), (cx, cy+8), (cx+12, cy+14)]
+            pts_b = [(cx-12, cy+14), (cx, cy+20), (cx+12, cy+14)]
+            pygame.draw.polygon(self.screen, dim, pts_t + pts_b)
+            pygame.draw.polygon(self.screen, color, pts_t, 1)
+            pygame.draw.polygon(self.screen, color, pts_b, 1)
+            pygame.draw.circle(self.screen, bright, (cx, cy+14), 4)
+        elif label == "GRAMMAR":
+            # Open book
+            pygame.draw.rect(self.screen, dim, (cx-12, cy+10, 11, 13))
+            pygame.draw.rect(self.screen, dim, (cx+1,  cy+10, 11, 13))
+            pygame.draw.line(self.screen, bright, (cx, cy+10), (cx, cy+23), 1)
+            # Quill
+            pts = [(cx+8, cy+8), (cx+14, cy+2), (cx+11, cy+14)]
+            pygame.draw.polygon(self.screen, color, pts)
+        elif label == "ECONOMICS":
+            # Coin stack (2 ovals)
+            pygame.draw.ellipse(self.screen, dim,   (cx-9, cy+15, 18, 8))
+            pygame.draw.ellipse(self.screen, color, (cx-9, cy+15, 18, 8), 1)
+            pygame.draw.ellipse(self.screen, dim,   (cx-9, cy+10, 18, 8))
+            pygame.draw.ellipse(self.screen, color, (cx-9, cy+10, 18, 8), 1)
+
+    def _draw_vortex(self, cx, cy, t):
+        """Rotating spiral arms — the knowledge vortex."""
+        num_arms = 6
+        steps    = 24
+        max_r    = 200
+        twist    = 3.0   # radians per revolution of the spiral
+
+        for arm in range(num_arms):
+            arm_base = arm * (2 * math.pi / num_arms)
+            # Alternate arm colors from domain palette
+            domain_color = self._DOMAINS[arm % len(self._DOMAINS)][2]
+
+            for step in range(steps):
+                frac  = step / steps
+                frac2 = (step + 1) / steps
+                r1 = frac  * max_r
+                r2 = frac2 * max_r
+                theta1 = arm_base + frac  * twist - t * 0.7
+                theta2 = arm_base + frac2 * twist - t * 0.7
+
+                x1 = cx + int(r1 * math.cos(theta1))
+                y1 = cy + int(r1 * math.sin(theta1))
+                x2 = cx + int(r2 * math.cos(theta2))
+                y2 = cy + int(r2 * math.sin(theta2))
+
+                brightness = frac
+                c = tuple(int(v * brightness * 0.7) for v in domain_color)
+                w = max(1, int(3 * (1 - frac)))
+                pygame.draw.line(self.screen, c, (x1, y1), (x2, y2), w)
+
+    def _draw_stone(self, cx, cy, t):
+        """The Philosopher's Stone — pulsing golden gem."""
+        pulse   = abs(math.sin(t * 1.3))
+        orb_r   = 34
+        glow_r  = orb_r + int(14 + pulse * 10)
+
+        # Outer glow rings
+        glow_surf = pygame.Surface((glow_r * 2 + 10, glow_r * 2 + 10), pygame.SRCALPHA)
+        gc = glow_surf.get_rect().center
+        for g in range(glow_r, 0, -4):
+            alpha = int(35 * (g / glow_r) * pulse)
+            col   = (220, 160, int(30 + 60 * pulse), alpha)
+            pygame.draw.circle(glow_surf, col, gc, g)
+        self.screen.blit(glow_surf, (cx - gc[0], cy - gc[1]))
+
+        # Octagon gem (EGA diamond feel)
+        r = orb_r
+        oct_pts = [(cx + int(r * math.cos(math.radians(a))),
+                    cy + int(r * math.sin(math.radians(a))))
+                   for a in range(0, 360, 45)]
+        pygame.draw.polygon(self.screen, (180, 130, 20), oct_pts)
+        # Face highlights (EGA bevel)
+        pygame.draw.polygon(self.screen, (255, 220, 80), oct_pts, 2)
+        # Inner gem facet
+        inner_pts = [(cx + int((r * 0.5) * math.cos(math.radians(a + 22))),
+                      cy + int((r * 0.5) * math.sin(math.radians(a + 22))))
+                     for a in range(0, 360, 45)]
+        pygame.draw.polygon(self.screen, (255, 240, 140), inner_pts)
+        # Sparkle cross
+        spark_len = int(8 + pulse * 10)
+        for ang in [0, 45, 90, 135]:
+            rad = math.radians(ang + t * 30)
+            ex  = cx + int(spark_len * math.cos(rad))
+            ey  = cy + int(spark_len * math.sin(rad))
+            ex2 = cx - int(spark_len * math.cos(rad))
+            ey2 = cy - int(spark_len * math.sin(rad))
+            pygame.draw.line(self.screen, (255, 255, 200), (ex, ey), (ex2, ey2), 2)
+
+    def _draw_vignette(self):
+        W, H = self.W, self.H
+        vig = pygame.Surface((W, H), pygame.SRCALPHA)
+        for step in range(28):
+            ratio  = step / 28
+            alpha  = int(220 * ratio ** 2.2)
+            margin = int(step * 16)
+            pygame.draw.rect(vig, (0, 0, 0, alpha),
+                             (margin, margin, W - 2*margin, H - 2*margin), 10)
+        self.screen.blit(vig, (0, 0))
+
+    def _draw_title_banner(self, cx):
+        # DOS-style double-line border banner at top
+        bw, bh = 640, 96
+        bx, by = cx - bw // 2, 22
+        pygame.draw.rect(self.screen, (6, 6, 20), (bx, by, bw, bh))
+        # Double border
+        pygame.draw.rect(self.screen, (180, 140, 20), (bx, by, bw, bh), 2)
+        pygame.draw.rect(self.screen, (255, 215, 60), (bx+4, by+4, bw-8, bh-8), 1)
+
+        # Shadow + gold title
+        for text, y, font, shadow_off in [
+            (self._TITLE_LINE1, by + 10, self.font_lg,  2),
+            (self._TITLE_LINE2, by + 48, self.font_xl,  3),
+        ]:
+            shadow = font.render(text, True, (0, 0, 0))
+            self.screen.blit(shadow, (cx - shadow.get_width() // 2 + shadow_off,
+                                       y + shadow_off))
+            gold = font.render(text, True, (255, 215, 60))
+            self.screen.blit(gold, (cx - gold.get_width() // 2, y))
+
+    def _draw_name_input(self, cx, cy):
+        # DOS-style dialog box
+        box_w, box_h = 480, 90
+        bx = cx - box_w // 2
+        by = cy + int(min(cy, self.H - cy) * 0.60)
+
+        pygame.draw.rect(self.screen, (6, 6, 20), (bx, by, box_w, box_h))
+        pygame.draw.rect(self.screen, (85, 85, 255), (bx, by, box_w, box_h), 2)
+        pygame.draw.rect(self.screen, (0, 0, 170), (bx+4, by+4, box_w-8, box_h-8), 1)
+
+        prompt = self.font_md.render(self._PROMPT, True, (170, 170, 255))
+        self.screen.blit(prompt, (bx + 14, by + 10))
+
+        # Input field
+        field_y = by + 40
+        pygame.draw.rect(self.screen, (0, 0, 40), (bx + 14, field_y, box_w - 28, 32))
+        pygame.draw.rect(self.screen, (85, 85, 255), (bx + 14, field_y, box_w - 28, 32), 1)
+        display = self.name_buf + ('_' if self.cursor_on else ' ')
+        txt = self.font_lg.render(display, True, (255, 255, 255))
+        self.screen.blit(txt, (bx + 20, field_y + (32 - txt.get_height()) // 2))
+
+        # Secret build badge
+        if self.name_buf.strip().lower() in SECRET_BUILDS:
+            badge = self.font_sm.render("★  SECRET BUILD ACTIVE!", True, (255, 255, 85))
+            self.screen.blit(badge, (cx - badge.get_width() // 2, by + box_h + 6))
+
+    def _draw_footer(self, cx):
+        hint = self.font_tiny.render(
+            "[ ENTER ] begin quest     [ ESC ] quit",
+            True, (85, 85, 170)
+        )
+        self.screen.blit(hint, (cx - hint.get_width() // 2, self.H - 28))
+
 
 # Game states
 STATE_PLAYER         = 'player'
@@ -40,11 +393,17 @@ STATE_DEAD           = 'dead'
 STATE_LOCKPICK       = 'lockpick'
 STATE_TARGET         = 'target'        # ranged targeting cursor
 STATE_EAT_MENU       = 'eat_menu'      # eat food / raw ingredient
+STATE_HELP           = 'help'
+STATE_LORE           = 'lore'
 
 
 class Game:
-    def __init__(self, screen: pygame.Surface):
-        self.screen    = screen
+    def __init__(self, screen: pygame.Surface,
+                 player_name: str = 'Adventurer',
+                 secret_build: dict | None = None):
+        self.screen        = screen
+        self.player_name   = player_name
+        self.secret_build  = secret_build   # dict of stat overrides, or None
         self.font_sm   = pygame.font.SysFont('consolas', 15)
         self.font_md   = pygame.font.SysFont('consolas', 20)
         self.font_lg   = pygame.font.SysFont('consolas', 28, bold=True)
@@ -64,6 +423,7 @@ class Game:
         self.identify_menu_items: list   = []
         self.cook_menu_items: list       = []
         self.eat_menu_items: list        = []
+        self.player_gold        = 0
         self.turn_count         = 0
         self.dungeon_level      = 1
         self.defeat_reason      = 'died'   # 'died' | 'starved' | 'fled'
@@ -95,10 +455,26 @@ class Game:
         self.monsters                = monsters
         self.ground_items            = items
         self.player                  = Player()
+        # Apply secret build stat overrides if any
+        if self.secret_build:
+            for stat, value in self.secret_build.items():
+                if hasattr(self.player, stat):
+                    setattr(self.player, stat, value)
+            # Recompute derived stats after overrides
+            self.player.max_hp = self.player.BASE_HP + self.player.CON
+            self.player.hp     = self.player.max_hp
+            self.player.max_sp = self.player.BASE_SP + self.player.CON
+            self.player.sp     = self.player.max_sp
+            self.player.max_mp = self.player.BASE_MP + self.player.INT
+            self.player.mp     = self.player.max_mp
         self.player.x, self.player.y = dungeon.rooms[0].center
         self.renderer                = Renderer(self.screen, VIEWPORT_W, VIEWPORT_H)
         self._refresh_fov()
-        self.add_message("You enter the dungeon. Find the Philosopher's Stone!", 'info')
+        greeting = f"Welcome, {self.player_name}!"
+        if self.secret_build:
+            greeting += "  (Secret build active!)"
+        self.add_message(greeting, 'success')
+        self.add_message("Find the Philosopher's Stone and escape!", 'info')
 
     def _change_level(self, new_level: int, enter_from_top: bool):
         """Transition between levels, preserving the player."""
@@ -152,7 +528,7 @@ class Game:
                               STATE_WAND_MENU, STATE_SCROLL_MENU,
                               STATE_IDENTIFY_MENU, STATE_COOK_MENU,
                               STATE_CONFIRM_EXIT, STATE_TARGET,
-                              STATE_EAT_MENU):
+                              STATE_EAT_MENU, STATE_HELP, STATE_LORE):
                 self.state = STATE_PLAYER
                 return True
             if self.state in (STATE_DEAD, STATE_VICTORY):
@@ -166,6 +542,9 @@ class Game:
                 return True
             if event.unicode == '<':
                 self._ascend_stairs()
+                return True
+            if event.unicode == '?':
+                self.state = STATE_HELP
                 return True
             self._player_input(key)
         elif self.state == STATE_TARGET:
@@ -186,6 +565,10 @@ class Game:
             self._cook_menu_input(key)
         elif self.state == STATE_EAT_MENU:
             self._eat_menu_input(key)
+        elif self.state == STATE_HELP:
+            self._help_input(key)
+        elif self.state == STATE_LORE:
+            self._lore_input(key)
         elif self.state == STATE_CONFIRM_EXIT:
             self._confirm_exit_input(key)
 
@@ -236,6 +619,12 @@ class Game:
             return
         if key == pygame.K_z:
             self._open_eat_menu()
+            return
+        if key == pygame.K_SLASH or key == pygame.K_QUESTION:
+            self.state = STATE_HELP
+            return
+        if key == pygame.K_x:
+            self._examine_corpse()
             return
 
         if key not in self._MOVE_KEYS:
@@ -303,6 +692,7 @@ class Game:
             self._tick_sp()
             if self.state != STATE_DEAD:
                 self._notify_stairs(nx, ny)
+                self._notify_ground(nx, ny)
                 self._advance_turn()
         elif tile_at_dest == SECRET_DOOR:
             # Bump reveals secret door (chance based on PER)
@@ -320,6 +710,7 @@ class Game:
             self._tick_sp()
             if self.state != STATE_DEAD:
                 self._notify_stairs(nx, ny)
+                self._notify_ground(nx, ny)
                 self._advance_turn()
                 # Haste: grant a free second move
                 if self.player.has_effect('hasted') and self.state == STATE_PLAYER:
@@ -334,6 +725,25 @@ class Game:
                 self.add_message("The dungeon exit  —  press '<' to leave.", 'warning')
             else:
                 self.add_message("Stairs lead up here  —  press '<' to ascend.", 'info')
+
+    def _notify_ground(self, x: int, y: int):
+        """Print messages about items and notable features at (x, y)."""
+        here = [item for item in self.ground_items if item.x == x and item.y == y]
+        if len(here) == 1:
+            item = here[0]
+            article = 'an' if item.name[0].lower() in 'aeiou' else 'a'
+            self.add_message(f"You see {article} {item.name} lying here.", 'info')
+        elif len(here) == 2:
+            self.add_message(
+                f"You see {here[0].name} and {here[1].name} lying here.", 'info'
+            )
+        elif len(here) > 2:
+            self.add_message(
+                f"You see {len(here)} items here: "
+                + ', '.join(i.name for i in here[:3])
+                + ('...' if len(here) > 3 else '.'),
+                'info'
+            )
 
     # ------------------------------------------------------------------
     # Stair navigation
@@ -1284,7 +1694,6 @@ class Game:
         elif effect == 'boost_con':
             old = self.player.CON
             self.player.apply_stat_bonus('CON', 1)
-            self.player.max_hp = self.player._compute_max_hp()
             self.add_message(f"You feel hardy! CON: {old} -> {self.player.CON}", 'success')
 
         elif effect == 'boost_int':
@@ -1412,6 +1821,7 @@ class Game:
         """Handle a monster killed by a wand bolt."""
         self.level_mgr.monsters_killed += 1
         self.add_message(f"The {monster.name} is slain!", 'success')
+        self._drop_treasure(monster)
         from items import Corpse
         self.ground_items.append(
             Corpse(
@@ -1419,8 +1829,51 @@ class Game:
                 harvest_tier=monster.harvest_tier,
                 harvest_threshold=monster.harvest_threshold,
                 ingredient_id=monster.ingredient_id,
+                lore=getattr(monster, 'lore', ''),
+                monster_def={
+                    'hp': monster.max_hp,
+                    'thac0': monster.thac0,
+                    'attacks': monster.attacks,
+                    'resistances': monster.resistances,
+                    'weaknesses': monster.weaknesses,
+                    'speed': monster.speed,
+                },
             )
         )
+
+    def _drop_treasure(self, monster):
+        """Drop gold and possibly an item when a monster dies."""
+        import random as _rng
+        treasure = getattr(monster, 'treasure', {})
+        gold_range = treasure.get('gold', [0, 0])
+        gold = _rng.randint(int(gold_range[0]), max(int(gold_range[0]), int(gold_range[1])))
+        if gold > 0:
+            self.add_message(f"The {monster.name} drops {gold} gold coins.", 'loot')
+            # Gold is tracked as a player resource (add to a gold counter)
+            if not hasattr(self, 'player_gold'):
+                self.player_gold = 0
+            self.player_gold += gold
+        item_chance = treasure.get('item_chance', 0.0)
+        if _rng.random() < item_chance:
+            item_tier = int(treasure.get('item_tier', 1))
+            self._spawn_treasure_item(monster.x, monster.y, item_tier)
+
+    def _spawn_treasure_item(self, x: int, y: int, tier: int):
+        """Place a random item of up to `tier` at (x,y)."""
+        import random as _rng
+        from items import load_items, copy_at
+        candidates = []
+        for cls_name in ('weapon', 'armor', 'shield', 'accessory', 'wand', 'scroll'):
+            try:
+                for item in load_items(cls_name):
+                    if item.min_level <= tier * 5:
+                        candidates.append(item)
+            except Exception:
+                pass
+        if candidates:
+            chosen = copy_at(_rng.choice(candidates), x, y)
+            self.ground_items.append(chosen)
+            self.add_message(f"It drops {chosen.name}!", 'loot')
 
     # ------------------------------------------------------------------
     # Scroll menu  (s key — grammar quiz)
@@ -1773,12 +2226,22 @@ class Game:
                 if killed:
                     self.level_mgr.monsters_killed += 1
                     self.add_message(f"The {monster.name} is slain!", 'success')
+                    self._drop_treasure(monster)
                     self.ground_items.append(
                         Corpse(
                             monster.name, monster.kind, monster.x, monster.y,
                             harvest_tier=monster.harvest_tier,
                             harvest_threshold=monster.harvest_threshold,
                             ingredient_id=monster.ingredient_id,
+                            lore=getattr(monster, 'lore', ''),
+                            monster_def={
+                                'hp': monster.max_hp,
+                                'thac0': monster.thac0,
+                                'attacks': monster.attacks,
+                                'resistances': monster.resistances,
+                                'weaknesses': monster.weaknesses,
+                                'speed': monster.speed,
+                            },
                         )
                     )
             self._advance_turn()
@@ -1814,12 +2277,22 @@ class Game:
                 if killed:
                     self.level_mgr.monsters_killed += 1
                     self.add_message(f"The {monster.name} is slain!", 'success')
+                    self._drop_treasure(monster)
                     self.ground_items.append(
                         Corpse(
                             monster.name, monster.kind, monster.x, monster.y,
                             harvest_tier=monster.harvest_tier,
                             harvest_threshold=monster.harvest_threshold,
                             ingredient_id=monster.ingredient_id,
+                            lore=getattr(monster, 'lore', ''),
+                            monster_def={
+                                'hp': monster.max_hp,
+                                'thac0': monster.thac0,
+                                'attacks': monster.attacks,
+                                'resistances': monster.resistances,
+                                'weaknesses': monster.weaknesses,
+                                'speed': monster.speed,
+                            },
                         )
                     )
             self._advance_turn()
@@ -1926,6 +2399,10 @@ class Game:
             self._draw_victory_screen()
         elif self.state == STATE_DEAD:
             self._draw_death_screen()
+        elif self.state == STATE_HELP:
+            self._draw_help_screen()
+        elif self.state == STATE_LORE:
+            self._draw_lore_screen()
 
         pygame.display.flip()
 
@@ -2029,187 +2506,323 @@ class Game:
     # Quiz modal
     # ------------------------------------------------------------------
 
+    # Subject accent colours — match the welcome screen domain ring
+    _SUBJECT_COLOR = {
+        'math':       (0,   220, 255),
+        'geography':  (0,   200,  80),
+        'history':    (220, 180,   0),
+        'animal':     (220, 110,  20),
+        'cooking':    (220,  40, 180),
+        'science':    (80,  100, 255),
+        'philosophy': (200, 200, 220),
+        'grammar':    (220,  50,  50),
+        'economics':  (160, 220,   0),
+    }
+
+    @staticmethod
+    def _wrap_text(text: str, font: pygame.font.Font, max_w: int) -> list[str]:
+        """Break text into lines that fit within max_w pixels."""
+        words  = text.split()
+        lines  = []
+        cur    = ''
+        for word in words:
+            test = (cur + ' ' + word).strip()
+            if font.size(test)[0] <= max_w:
+                cur = test
+            else:
+                if cur:
+                    lines.append(cur)
+                cur = word
+        if cur:
+            lines.append(cur)
+        return lines or ['']
+
     def _draw_quiz(self):
         qe = self.quiz_engine
         if not qe.current_question:
             return
 
-        is_combat = (
-            self.combat_target is not None
-            and qe.mode == QuizMode.CHAIN
-        )
+        is_combat = (self.combat_target is not None and qe.mode == QuizMode.CHAIN)
+        accent    = self._SUBJECT_COLOR.get(qe.subject, (160, 130, 255))
+        accent_dim = tuple(max(0, v - 90) for v in accent)
 
+        # ── Overlay ────────────────────────────────────────────────────
         overlay = pygame.Surface((WINDOW_W, WINDOW_H), pygame.SRCALPHA)
-        overlay.fill((0, 0, 0, 165))
+        overlay.fill((0, 0, 0, 185))
         self.screen.blit(overlay, (0, 0))
 
-        bw = 740
-        bh = 490 if is_combat else 410
-        bx = (GAME_W - bw) // 2
-        by = (WINDOW_H - bh) // 2
+        # ── Modal geometry ─────────────────────────────────────────────
+        bw = 860
+        PAD = 22
 
-        pygame.draw.rect(self.screen, (16, 16, 38), (bx, by, bw, bh), border_radius=12)
-        pygame.draw.rect(self.screen, (70, 70, 140), (bx, by, bw, bh), 2, border_radius=12)
+        # Question text (wrapped) — calculate height first
+        q_font    = self.font_md
+        q_text    = qe.current_question.get('question', '')
+        q_lines   = self._wrap_text(q_text, q_font, bw - PAD * 2)
+        q_line_h  = q_font.get_height() + 4
+        q_height  = len(q_lines) * q_line_h
 
-        self.screen.blit(
-            self.font_md.render(self.quiz_title, True, (255, 200, 60)),
-            (bx + 18, by + 14)
-        )
-
-        if qe.mode in (QuizMode.CHAIN, QuizMode.ESCALATOR_CHAIN):
-            counter_text, counter_color = f"Chain: {qe.chain}", (80, 255, 120)
-        else:
-            counter_text  = f"{qe.correct_count}/{qe.required} correct"
-            counter_color = (120, 200, 255)
-        c_surf = self.font_md.render(counter_text, True, counter_color)
-        self.screen.blit(c_surf, (bx + bw - c_surf.get_width() - 18, by + 14))
-
-        bar_x, bar_y, bar_w, bar_h = bx + 18, by + 50, bw - 36, 10
-        ratio = max(0.0, qe.time_remaining / max(1, qe.timer_seconds))
-        pygame.draw.rect(self.screen, (40, 15, 15), (bar_x, bar_y, bar_w, bar_h), border_radius=5)
-        bar_color = (
-            (50, 200, 50)  if ratio > 0.50 else
-            (210, 160, 40) if ratio > 0.25 else
-            (210, 50,  50)
-        )
-        pygame.draw.rect(
-            self.screen, bar_color,
-            (bar_x, bar_y, int(bar_w * ratio), bar_h), border_radius=5
-        )
-
-        q_surf = self.font_lg.render(
-            qe.current_question.get('question', ''), True, (255, 255, 255)
-        )
-        self.screen.blit(q_surf, (bx + 18, by + 78))
-
-        choices   = qe.current_question.get('choices', [])
-        # Confused players see choices in a scrambled order
+        # Choice button layout
+        choices = qe.current_question.get('choices', [])
         if qe.confused_order and len(qe.confused_order) == len(choices):
             display_choices = [choices[i] for i in qe.confused_order]
         else:
             display_choices = choices
-        cw, ch    = 340, 72
-        positions = [
-            (bx + 18,       by + 165), (bx + 18 + 364, by + 165),
-            (bx + 18,       by + 255), (bx + 18 + 364, by + 255),
-        ]
+
+        c_font   = self.font_sm
+        c_line_h = c_font.get_height() + 3
+        KEY_W    = 48         # width of [1] key hint area
+        GAP      = 14         # gap between the two choice columns
+        cw       = (bw - PAD * 2 - GAP) // 2   # each choice card width
+        c_text_w = cw - KEY_W - 16              # wrappable text area per card
+        # pre-wrap all choice texts
+        c_wrapped = [self._wrap_text(str(ch), c_font, c_text_w) for ch in display_choices]
+        max_c_lines = max((len(w) for w in c_wrapped), default=1)
+        ch_height = max(52, max_c_lines * c_line_h + 20)  # card height
+
+        # Fixed section heights
+        HEADER_H = 42
+        TIMER_H  = 28
+        STATUS_H = 36
+        COMBAT_H = 110 if is_combat else 0
+        SECTION_GAP = 10
+
+        bh = (HEADER_H + TIMER_H + SECTION_GAP
+              + q_height + SECTION_GAP * 2
+              + ch_height * 2 + GAP          # two rows of choices
+              + STATUS_H + SECTION_GAP
+              + COMBAT_H + PAD)
+
+        bx = (GAME_W - bw) // 2
+        by = max(20, (WINDOW_H - bh) // 2)
+
+        # ── Stone panel background ─────────────────────────────────────
+        pygame.draw.rect(self.screen, (10, 8, 22), (bx, by, bw, bh), border_radius=10)
+
+        # Subtle stone texture (alternating row shading)
+        for row in range(bh // 6):
+            if row % 2 == 0:
+                pygame.draw.line(self.screen, (14, 12, 28),
+                                 (bx + 4, by + row * 6 + 3), (bx + bw - 4, by + row * 6 + 3))
+
+        # Outer border — accent colour
+        pygame.draw.rect(self.screen, accent, (bx, by, bw, bh), 2, border_radius=10)
+        # Inner border — dimmer
+        pygame.draw.rect(self.screen, accent_dim, (bx + 4, by + 4, bw - 8, bh - 8), 1, border_radius=8)
+
+        # Corner flourishes (small pixel diamonds)
+        for fx, fy in [(bx+12, by+12), (bx+bw-13, by+12),
+                       (bx+12, by+bh-13), (bx+bw-13, by+bh-13)]:
+            pygame.draw.line(self.screen, accent, (fx-5, fy), (fx+5, fy), 1)
+            pygame.draw.line(self.screen, accent, (fx, fy-5), (fx, fy+5), 1)
+            pygame.draw.circle(self.screen, accent, (fx, fy), 2)
+
+        # ── Header strip ──────────────────────────────────────────────
+        pygame.draw.rect(self.screen, (16, 12, 36), (bx, by, bw, HEADER_H), border_radius=10)
+        pygame.draw.line(self.screen, accent, (bx + PAD, by + HEADER_H),
+                         (bx + bw - PAD, by + HEADER_H))
+
+        title_surf = self.font_md.render(self.quiz_title, True, (255, 215, 60))
+        self.screen.blit(title_surf, (bx + PAD, by + (HEADER_H - title_surf.get_height()) // 2))
+
+        # Mode / progress counter (top-right)
+        if qe.mode in (QuizMode.CHAIN, QuizMode.ESCALATOR_CHAIN):
+            c_text, c_color = f"Chain ×{qe.chain}", (80, 255, 140)
+        else:
+            c_text  = f"{qe.correct_count} / {qe.required}"
+            c_color = (120, 200, 255)
+        c_surf = self.font_md.render(c_text, True, c_color)
+        self.screen.blit(c_surf, (bx + bw - c_surf.get_width() - PAD,
+                                   by + (HEADER_H - c_surf.get_height()) // 2))
+
+        # ── Timer bar ─────────────────────────────────────────────────
+        ty        = by + HEADER_H + 6
+        bar_x     = bx + PAD
+        bar_w     = bw - PAD * 2
+        bar_h     = 14
+
+        ratio = max(0.0, qe.time_remaining / max(1, qe.timer_seconds))
+        t_color = (
+            (40, 210, 80)  if ratio > 0.55 else
+            (210, 160, 40) if ratio > 0.28 else
+            (210, 50,  50)
+        )
+        pygame.draw.rect(self.screen, (28, 10, 10), (bar_x, ty, bar_w, bar_h), border_radius=4)
+        if ratio > 0:
+            pygame.draw.rect(self.screen, t_color,
+                             (bar_x, ty, max(4, int(bar_w * ratio)), bar_h), border_radius=4)
+        # Tick marks every 20%
+        for tick in range(1, 5):
+            tx = bar_x + int(bar_w * tick / 5)
+            pygame.draw.line(self.screen, (0, 0, 0), (tx, ty), (tx, ty + bar_h), 1)
+
+        # Timer seconds label — always shows live remaining time
+        secs = int(qe.time_remaining)
+        t_label = self.font_sm.render(f"{secs}s", True, t_color)
+        self.screen.blit(t_label, (bar_x + bar_w + 6, ty + (bar_h - t_label.get_height()) // 2))
+
+        # ── Question text ─────────────────────────────────────────────
+        qy = ty + TIMER_H
+        for line in q_lines:
+            surf = q_font.render(line, True, (255, 245, 210))
+            self.screen.blit(surf, (bx + PAD, qy))
+            qy += q_line_h
+        qy += SECTION_GAP
+
+        # Thin separator
+        pygame.draw.line(self.screen, accent_dim, (bx + PAD, qy - 4), (bx + bw - PAD, qy - 4))
+
+        # ── Choice cards (2 × 2 grid) ─────────────────────────────────
         correct_str = str(qe.current_question.get('answer', '')).strip().lower()
         selected    = qe.last_answer.strip().lower()
+        in_result   = (qe.state == QuizState.RESULT)
 
-        for i, (choice, (cx, cy)) in enumerate(zip(display_choices, positions)):
-            c_lower    = choice.strip().lower()
+        for i, (choice, wrapped_lines) in enumerate(zip(display_choices, c_wrapped)):
+            col = i % 2
+            row = i // 2
+            cx_ = bx + PAD + col * (cw + GAP)
+            cy_ = qy + row * (ch_height + GAP)
+
+            c_lower     = str(choice).strip().lower()
             is_correct  = c_lower == correct_str
             is_selected = bool(selected) and c_lower == selected
 
-            if qe.state == QuizState.RESULT:
-                bg, border = (
-                    ((18, 72, 18), (50, 210, 50))   if is_correct  else
-                    ((72, 18, 18), (210, 50, 50))   if is_selected else
-                    ((22, 22, 52), (55, 55, 100))
-                )
+            if in_result:
+                if is_correct:
+                    bg_c, bdr_c = (8, 52, 8),    accent if qe.last_correct else (50, 200, 50)
+                elif is_selected:
+                    bg_c, bdr_c = (62, 8, 8),    (200, 50, 50)
+                else:
+                    bg_c, bdr_c = (14, 12, 30),  (40, 35, 70)
             else:
-                bg, border = (24, 24, 56), (65, 65, 120)
+                bg_c, bdr_c = (18, 14, 38), (60, 50, 100)
 
-            pygame.draw.rect(self.screen, bg,     (cx, cy, cw, ch), border_radius=8)
-            pygame.draw.rect(self.screen, border, (cx, cy, cw, ch), 2, border_radius=8)
+            # Card shadow
+            pygame.draw.rect(self.screen, (0, 0, 0),
+                             (cx_ + 3, cy_ + 3, cw, ch_height), border_radius=7)
+            # Card background
+            pygame.draw.rect(self.screen, bg_c, (cx_, cy_, cw, ch_height), border_radius=7)
+            # Card border
+            pygame.draw.rect(self.screen, bdr_c, (cx_, cy_, cw, ch_height), 2, border_radius=7)
+            # Inner bevel (top/left highlight)
+            bevel = tuple(min(255, v + 40) for v in bdr_c)
+            pygame.draw.line(self.screen, bevel, (cx_+2, cy_+1), (cx_+cw-3, cy_+1))
+            pygame.draw.line(self.screen, bevel, (cx_+1, cy_+2), (cx_+1, cy_+ch_height-3))
 
-            self.screen.blit(
-                self.font_md.render(f"[{i+1}]", True, (160, 160, 80)),
-                (cx + 12, cy + (ch - self.font_md.get_height()) // 2)
+            # Key hint — rune-stone style
+            key_label = f"[{i+1}]"
+            key_surf  = self.font_md.render(key_label, True, accent if not in_result else (100, 100, 100))
+            self.screen.blit(key_surf, (cx_ + 10,
+                                         cy_ + (ch_height - key_surf.get_height()) // 2))
+
+            # Choice text (wrapped)
+            text_color = (
+                (120, 255, 120) if in_result and is_correct  else
+                (255, 100, 100) if in_result and is_selected else
+                (220, 215, 200)
             )
-            self.screen.blit(
-                self.font_md.render(str(choice), True, (220, 220, 220)),
-                (cx + 68, cy + (ch - self.font_md.get_height()) // 2)
-            )
+            text_x = cx_ + KEY_W
+            text_y = cy_ + (ch_height - len(wrapped_lines) * c_line_h) // 2
+            for line in wrapped_lines:
+                ls = c_font.render(line, True, text_color)
+                self.screen.blit(ls, (text_x, text_y))
+                text_y += c_line_h
 
-        if qe.state == QuizState.RESULT:
-            fb = self.font_lg.render(
-                "CORRECT!" if qe.last_correct else "WRONG!",
-                True,
-                (80, 255, 80) if qe.last_correct else (255, 80, 80)
-            )
-            self.screen.blit(fb, (bx + (bw - fb.get_width()) // 2, by + bh - (132 if is_combat else 52)))
-        if qe.state == QuizState.ASKING:
-            hint = self.font_sm.render("Press 1-4 to answer", True, (120, 120, 160))
-            self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, by + bh - (108 if is_combat else 28)))
+        # ── Status / feedback bar ─────────────────────────────────────
+        status_y = qy + 2 * (ch_height + GAP) + SECTION_GAP
 
-        # ── Combat HUD strip (chain mode vs a monster) ──────────────────
+        if in_result:
+            fb_text  = "✦  CORRECT!" if qe.last_correct else "✦  WRONG!"
+            fb_color = (80, 255, 100) if qe.last_correct else (255, 80, 80)
+            fb_surf  = self.font_lg.render(fb_text, True, fb_color)
+            self.screen.blit(fb_surf, (bx + (bw - fb_surf.get_width()) // 2, status_y))
+        elif qe.state == QuizState.ASKING:
+            hint = self.font_sm.render("Press  1  2  3  4  to answer", True, (90, 85, 130))
+            self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, status_y + 10))
+
+        # ── Combat HUD ────────────────────────────────────────────────
         if is_combat:
-            self._draw_combat_hud(bx, by + bh - 100, bw)
+            self._draw_combat_hud(bx, status_y + STATUS_H + SECTION_GAP, bw, accent)
 
-    def _draw_combat_hud(self, bx: int, strip_y: int, bw: int):
-        """Draw monster HP bar + chain damage preview at strip_y inside the quiz modal."""
+    def _draw_combat_hud(self, bx: int, strip_y: int, bw: int, accent=(80, 80, 180)):
+        """Draw monster HP bar + chain damage preview inside the quiz modal."""
         from combat import _damage_multiplier
         monster = self.combat_target
         weapon  = self.player.weapon
 
-        pygame.draw.line(self.screen, (50, 50, 100),
-                         (bx + 10, strip_y), (bx + bw - 10, strip_y))
+        # Separator
+        pygame.draw.line(self.screen, accent,
+                         (bx + 18, strip_y), (bx + bw - 18, strip_y))
 
-        # Left column: monster HP bar
-        lx = bx + 18
+        sy = strip_y + 10
+
+        # ── Left: monster name + HP bar ───────────────────────────────
+        lx       = bx + 22
         hp_ratio = max(0.0, monster.hp / max(1, monster.max_hp))
         hp_color = (
-            (50, 200, 50)  if hp_ratio > 0.50 else
+            (40, 200, 60)  if hp_ratio > 0.50 else
             (210, 160, 40) if hp_ratio > 0.25 else
             (210, 50,  50)
         )
         name_surf = self.font_sm.render(
-            f"{monster.name.upper()}  HP: {monster.hp}/{monster.max_hp}",
-            True, (200, 170, 130)
+            f"{monster.name.upper()}   {monster.hp}/{monster.max_hp} HP",
+            True, (220, 185, 140)
         )
-        self.screen.blit(name_surf, (lx, strip_y + 8))
+        self.screen.blit(name_surf, (lx, sy))
 
-        hb_y = strip_y + 26
-        hb_w = 220
-        pygame.draw.rect(self.screen, (30, 12, 12), (lx, hb_y, hb_w, 10), border_radius=3)
+        hb_y, hb_w = sy + 18, 260
+        pygame.draw.rect(self.screen, (30, 10, 10), (lx, hb_y, hb_w, 12), border_radius=4)
         if hp_ratio > 0:
             pygame.draw.rect(self.screen, hp_color,
-                             (lx, hb_y, max(2, int(hb_w * hp_ratio)), 10), border_radius=3)
+                             (lx, hb_y, max(3, int(hb_w * hp_ratio)), 12), border_radius=4)
+        pygame.draw.rect(self.screen, (60, 40, 40), (lx, hb_y, hb_w, 12), 1, border_radius=4)
 
-        # Status effects on monster
         effects = [e for e, v in monster.status_effects.items() if v > 0]
         if effects:
-            eff_surf = self.font_sm.render(
-                "  ".join(f"[{e}]" for e in effects[:4]),
-                True, (200, 200, 80)
-            )
-            self.screen.blit(eff_surf, (lx, hb_y + 14))
+            eff = self.font_sm.render("  ".join(f"[{e}]" for e in effects[:5]),
+                                       True, (220, 220, 60))
+            self.screen.blit(eff, (lx, hb_y + 16))
 
-        # Right column: chain damage preview
-        rx = bx + 260
-        base    = weapon.base_damage if weapon else 4
+        # ── Right: damage preview + weapon ───────────────────────────
+        rx      = bx + 320
+        base    = weapon.base_damage  if weapon else 4
         enchant = weapon.enchant_bonus if weapon else 0
         mults   = weapon.chain_multipliers if weapon else [0.5, 1.0, 1.5, 2.0, 2.5, 3.0]
         dtypes  = weapon.damage_types if weapon else ['physical']
         dm      = _damage_multiplier(dtypes, monster)
 
-        # Damage type indicator
         if dm >= 1.5:
-            dm_text, dm_color = "WEAKNESS!", (80, 255, 80)
+            dm_text, dm_col = "WEAKNESS!", (60, 255, 80)
         elif dm <= 0.5:
-            dm_text, dm_color = "RESISTED", (255, 100, 100)
+            dm_text, dm_col = "RESISTED",  (255, 80, 80)
         else:
-            dm_text, dm_color = "/".join(dtypes), (160, 160, 180)
-        self.screen.blit(
-            self.font_sm.render(dm_text, True, dm_color),
-            (rx, strip_y + 8)
-        )
+            dm_text, dm_col = "/".join(dtypes).upper(), (160, 160, 200)
+        self.screen.blit(self.font_sm.render(dm_text, True, dm_col), (rx, sy))
 
-        # Chain multiplier table: show up to 6 steps
-        preview_parts = []
+        # Chain table: colour each step by heat (low→high damage)
+        parts = []
         for i, mult in enumerate(mults[:6]):
             dmg = max(1, int((base + enchant) * mult * dm))
-            preview_parts.append(f"x{i+1}:{dmg}")
-        chain_text = "  ".join(preview_parts)
-        chain_surf = self.font_sm.render(chain_text, True, (130, 200, 255))
-        self.screen.blit(chain_surf, (rx, strip_y + 26))
+            parts.append((f"×{i+1}:{dmg}", dmg))
+        max_dmg = max(d for _, d in parts) or 1
+        row1_x  = rx
+        for label, dmg in parts[:3]:
+            heat  = dmg / max_dmg
+            col   = (int(40 + 215 * heat), int(200 - 150 * heat), int(80 - 60 * heat))
+            surf  = self.font_sm.render(label, True, col)
+            self.screen.blit(surf, (row1_x, sy + 18))
+            row1_x += surf.get_width() + 14
+        row2_x = rx
+        for label, dmg in parts[3:]:
+            heat  = dmg / max_dmg
+            col   = (int(40 + 215 * heat), int(200 - 150 * heat), int(80 - 60 * heat))
+            surf  = self.font_sm.render(label, True, col)
+            self.screen.blit(surf, (row2_x, sy + 34))
+            row2_x += surf.get_width() + 14
 
-        # Weapon name
         w_name = weapon.name if weapon else "bare hands"
         self.screen.blit(
-            self.font_sm.render(f"Weapon: {w_name}", True, (150, 150, 180)),
-            (rx, strip_y + 44)
+            self.font_sm.render(f"{w_name}", True, (150, 145, 185)), (rx, sy + 52)
         )
 
     # ------------------------------------------------------------------
@@ -2788,6 +3401,202 @@ class Game:
         hint = self.font_md.render("Press ESC to quit", True, (160, 130, 130))
         self.screen.blit(hint, (cx - hint.get_width() // 2, 390))
 
+    # ------------------------------------------------------------------
+    # Help screen
+    # ------------------------------------------------------------------
+
+    def _help_input(self, key: int):
+        if key in (pygame.K_ESCAPE, pygame.K_SLASH, pygame.K_RETURN, pygame.K_SPACE):
+            self.state = STATE_PLAYER
+
+    # ------------------------------------------------------------------
+    # Examine corpse  (X key — philosophy quiz → reveals lore + stat block)
+    # ------------------------------------------------------------------
+
+    def _examine_corpse(self):
+        px, py = self.player.x, self.player.y
+        corpse = next(
+            (i for i in self.ground_items if i.x == px and i.y == py
+             and getattr(i, 'monster_id', None) is not None),
+            None
+        )
+        if corpse is None:
+            self.add_message("There is no corpse here to examine.", 'info')
+            return
+        if corpse.lore_identified:
+            self.state = STATE_LORE
+            self._lore_subject = corpse
+            return
+        self.quiz_title = f"EXAMINING {corpse.monster_name.upper()} CORPSE  —  PHILOSOPHY"
+        self.state = STATE_QUIZ
+
+        def on_complete(result):
+            self.state = STATE_PLAYER
+            if result.success:
+                corpse.lore_identified = True
+                self._lore_subject = corpse
+                self.state = STATE_LORE
+                self.add_message(
+                    f"Your philosophical insight reveals the nature of the {corpse.monster_name}!", 'success'
+                )
+            else:
+                self.add_message("You study the corpse but gain no insight.", 'warning')
+            self._advance_turn()
+
+        self.quiz_engine.start_quiz(
+            mode='threshold',
+            subject='philosophy',
+            tier=max(1, min(5, getattr(corpse, 'harvest_tier', 1) + 1)),
+            callback=on_complete,
+            threshold=2,
+            wisdom=self.player.WIS,
+            timer_modifier=self.player.get_quiz_timer_modifier(),
+        )
+
+    def _lore_input(self, key: int):
+        if key in (pygame.K_ESCAPE, pygame.K_RETURN, pygame.K_SPACE, pygame.K_x):
+            self.state = STATE_PLAYER
+
+    def _draw_lore_screen(self):
+        corpse = getattr(self, '_lore_subject', None)
+        if not corpse:
+            return
+        overlay = pygame.Surface((WINDOW_W, WINDOW_H), pygame.SRCALPHA)
+        overlay.fill((0, 0, 0, 200))
+        self.screen.blit(overlay, (0, 0))
+
+        bw, bh = 780, 480
+        bx = (GAME_W - bw) // 2
+        by = (WINDOW_H - bh) // 2
+
+        pygame.draw.rect(self.screen, (8, 6, 20), (bx, by, bw, bh), border_radius=10)
+        pygame.draw.rect(self.screen, (160, 120, 40), (bx, by, bw, bh), 2, border_radius=10)
+        pygame.draw.rect(self.screen, (80, 60, 20), (bx+4, by+4, bw-8, bh-8), 1, border_radius=8)
+
+        # Title
+        title = self.font_lg.render(
+            f"{corpse.monster_name.upper()} — BESTIARY ENTRY", True, (255, 210, 60)
+        )
+        self.screen.blit(title, (bx + (bw - title.get_width()) // 2, by + 14))
+        pygame.draw.line(self.screen, (120, 90, 30),
+                         (bx + 20, by + 50), (bx + bw - 20, by + 50))
+
+        mdef = corpse.monster_def
+        y = by + 60
+
+        # Stat block
+        stats = [
+            f"HP: {mdef.get('hp', '?')}    THAC0: {mdef.get('thac0', '?')}    Speed: {mdef.get('speed', 1)}",
+        ]
+        res = mdef.get('resistances', [])
+        wks = mdef.get('weaknesses', [])
+        if res:
+            stats.append(f"Resistances: {', '.join(res)}")
+        if wks:
+            stats.append(f"Weaknesses:  {', '.join(wks)}")
+
+        atks = mdef.get('attacks', [])
+        for atk in atks:
+            line = f"Attack — {atk.get('name','?')}: {atk.get('damage','?')} {atk.get('type','physical')}"
+            eff = atk.get('effect')
+            if eff:
+                line += f"  [{eff} {int(atk.get('effect_chance',0)*100)}%]"
+            stats.append(line)
+
+        for line in stats:
+            surf = self.font_sm.render(line, True, (200, 185, 140))
+            self.screen.blit(surf, (bx + 20, y))
+            y += 18
+
+        pygame.draw.line(self.screen, (80, 60, 20),
+                         (bx + 20, y + 4), (bx + bw - 20, y + 4))
+        y += 14
+
+        # Lore text (wrapped)
+        lore = corpse.lore or "No lore recorded."
+        lore_font = self.font_sm
+        lore_lines = self._wrap_text(lore, lore_font, bw - 40)
+        for line in lore_lines:
+            surf = lore_font.render(line, True, (210, 200, 170))
+            self.screen.blit(surf, (bx + 20, y))
+            y += lore_font.get_height() + 3
+
+        hint = self.font_sm.render("[ ESC / ENTER / X ] to close", True, (80, 70, 40))
+        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, by + bh - 28))
+
+    def _draw_help_screen(self):
+        overlay = pygame.Surface((WINDOW_W, WINDOW_H), pygame.SRCALPHA)
+        overlay.fill((0, 0, 0, 195))
+        self.screen.blit(overlay, (0, 0))
+
+        bw, bh = 860, 560
+        bx = (GAME_W - bw) // 2
+        by = (WINDOW_H - bh) // 2
+
+        # DOS double-border style
+        pygame.draw.rect(self.screen, (6, 6, 20),   (bx, by, bw, bh))
+        pygame.draw.rect(self.screen, (85, 85, 255), (bx, by, bw, bh), 2)
+        pygame.draw.rect(self.screen, (0, 0, 170),   (bx+4, by+4, bw-8, bh-8), 1)
+
+        title = self.font_lg.render("COMMAND REFERENCE", True, (255, 255, 85))
+        self.screen.blit(title, (bx + (bw - title.get_width()) // 2, by + 14))
+        pygame.draw.line(self.screen, (85, 85, 255),
+                         (bx + 20, by + 50), (bx + bw - 20, by + 50))
+
+        _COMMANDS = [
+            # (key_label, description, color)
+            # --- Movement ---
+            ("MOVEMENT", None, (170, 170, 255)),
+            ("Arrows / hjkl", "Move / attack monster by bumping",   (210, 210, 210)),
+            ("ACTIONS", None, (170, 170, 255)),
+            ("G  or  ,",       "Pick up item on ground",             (210, 210, 210)),
+            ("E",              "Equip weapon/armor (Geography quiz)",(210, 210, 210)),
+            ("R",              "Equip accessory (History quiz)",      (210, 210, 210)),
+            ("U",              "Use wand (Science quiz)",             (210, 210, 210)),
+            ("S",              "Read scroll (Grammar quiz)",          (210, 210, 210)),
+            ("I",              "Identify item (Philosophy quiz)",     (210, 210, 210)),
+            ("H",              "Harvest corpse (Animal quiz)",        (210, 210, 210)),
+            ("C",              "Cook ingredient (Cooking quiz)",      (210, 210, 210)),
+            ("Z",              "Eat food or raw ingredient",          (210, 210, 210)),
+            ("F",              "Fire ranged weapon (Math quiz)",      (210, 210, 210)),
+            ("P",              "Pick lock (Economics quiz)",          (210, 210, 210)),
+            ("A",              "Attack / force-open container",       (210, 210, 210)),
+            ("X",              "Examine corpse for lore (Philosophy quiz)",  (210, 210, 210)),
+            ("NAVIGATION", None, (170, 170, 255)),
+            (">",              "Descend stairs",                      (210, 210, 210)),
+            ("<",              "Ascend stairs / exit dungeon",        (210, 210, 210)),
+            ("QUIZ ANSWERS", None, (170, 170, 255)),
+            ("1 2 3 4",        "Answer quiz questions",               (255, 255, 85)),
+            ("MISC", None, (170, 170, 255)),
+            ("?",              "This help screen",                    (210, 210, 210)),
+            ("ESC",            "Cancel menu / quit game",             (210, 210, 210)),
+        ]
+
+        col_w   = (bw - 40) // 2
+        left_x  = bx + 20
+        right_x = bx + 20 + col_w
+        y       = by + 60
+        line_h  = 20
+        col_break = 12   # switch to right column at this index
+
+        for idx, entry in enumerate(_COMMANDS):
+            key_label, desc, color = entry
+            cx_ = left_x if idx < col_break else right_x
+            cy_ = y + (idx if idx < col_break else idx - col_break) * line_h
+
+            if desc is None:
+                # Section header
+                hdr = self.font_sm.render(f"── {key_label} ──", True, color)
+                self.screen.blit(hdr, (cx_, cy_))
+            else:
+                ksurf = self.font_sm.render(key_label, True, (255, 215, 60))
+                dsurf = self.font_sm.render(desc, True, color)
+                self.screen.blit(ksurf, (cx_, cy_))
+                self.screen.blit(dsurf, (cx_ + 130, cy_))
+
+        hint = self.font_sm.render("Press ESC or ? to close", True, (85, 85, 170))
+        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, by + bh - 28))
+
 
 # ------------------------------------------------------------------
 # Entry point
@@ -2799,7 +3608,11 @@ def main():
     pygame.display.set_caption("Philosopher's Quest")
     clock = pygame.time.Clock()
 
-    game    = Game(screen)
+    # Welcome screen — get name and optional secret build
+    welcome = WelcomeScreen(screen)
+    player_name, secret_build = welcome.run(clock)
+
+    game    = Game(screen, player_name=player_name, secret_build=secret_build)
     running = True
 
     while running:

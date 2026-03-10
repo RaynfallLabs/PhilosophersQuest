@@ -60,16 +60,70 @@
     "choices": ["1985", "1987", "1989", "1991"]
   },
   {
+    "tier": 1,
+    "question": "In what year did World War I begin?",
+    "answer": "1914",
+    "choices": ["1912", "1913", "1914", "1916"]
+  },
+  {
+    "tier": 1,
+    "question": "Who was the first man to travel to space?",
+    "answer": "Yuri Gagarin",
+    "choices": ["Neil Armstrong", "Alan Shepard", "Yuri Gagarin", "Buzz Aldrin"]
+  },
+  {
+    "tier": 1,
+    "question": "Which country dropped atomic bombs on Japan in 1945?",
+    "answer": "United States",
+    "choices": ["Soviet Union", "United Kingdom", "United States", "France"]
+  },
+  {
+    "tier": 1,
+    "question": "What was the name of the ship that sank after hitting an iceberg in 1912?",
+    "answer": "Titanic",
+    "choices": ["Lusitania", "Britannic", "Titanic", "Olympic"]
+  },
+  {
+    "tier": 1,
+    "question": "Who was the leader of the Soviet Union during most of World War II?",
+    "answer": "Joseph Stalin",
+    "choices": ["Vladimir Lenin", "Leon Trotsky", "Joseph Stalin", "Nikita Khrushchev"]
+  },
+  {
+    "tier": 1,
+    "question": "What year did the French Revolution begin?",
+    "answer": "1789",
+    "choices": ["1776", "1783", "1789", "1799"]
+  },
+  {
+    "tier": 1,
+    "question": "Who painted the Mona Lisa?",
+    "answer": "Leonardo da Vinci",
+    "choices": ["Michelangelo", "Raphael", "Leonardo da Vinci", "Botticelli"]
+  },
+  {
+    "tier": 1,
+    "question": "In what year did Christopher Columbus first reach the Americas?",
+    "answer": "1492",
+    "choices": ["1488", "1492", "1497", "1502"]
+  },
+  {
+    "tier": 1,
+    "question": "What ancient civilization built the pyramids at Giza?",
+    "answer": "Ancient Egyptians",
+    "choices": ["Mesopotamians", "Ancient Romans", "Ancient Egyptians", "Ancient Greeks"]
+  },
+  {
+    "tier": 1,
+    "question": "Who was the British Prime Minister during most of World War II?",
+    "answer": "Winston Churchill",
+    "choices": ["Neville Chamberlain", "Winston Churchill", "Clement Attlee", "Anthony Eden"]
+  },
+  {
     "tier": 2,
     "question": "Who was the first Roman Emperor?",
     "answer": "Augustus",
     "choices": ["Julius Caesar", "Augustus", "Nero", "Caligula"]
-  },
-  {
-    "tier": 2,
-    "question": "In what year did the French Revolution begin?",
-    "answer": "1789",
-    "choices": ["1776", "1783", "1789", "1799"]
   },
   {
     "tier": 2,
@@ -88,5 +142,383 @@
     "question": "What battle ended Napoleon's rule in Europe?",
     "answer": "Battle of Waterloo",
     "choices": ["Battle of Trafalgar", "Battle of Austerlitz", "Battle of Waterloo", "Battle of Leipzig"]
+  },
+  {
+    "tier": 2,
+    "question": "Which empire was ruled by Genghis Khan?",
+    "answer": "Mongol Empire",
+    "choices": ["Ottoman Empire", "Mongol Empire", "Persian Empire", "Tang Dynasty"]
+  },
+  {
+    "tier": 2,
+    "question": "What event triggered the start of World War I?",
+    "answer": "Assassination of Archduke Franz Ferdinand",
+    "choices": ["Invasion of Belgium", "Assassination of Archduke Franz Ferdinand", "Sinking of the Lusitania", "Ottoman declaration of war"]
+  },
+  {
+    "tier": 2,
+    "question": "Which Russian leader initiated the Bolshevik Revolution in 1917?",
+    "answer": "Vladimir Lenin",
+    "choices": ["Joseph Stalin", "Leon Trotsky", "Vladimir Lenin", "Mikhail Gorbachev"]
+  },
+  {
+    "tier": 2,
+    "question": "The Renaissance began in which country?",
+    "answer": "Italy",
+    "choices": ["France", "Germany", "England", "Italy"]
+  },
+  {
+    "tier": 2,
+    "question": "Which pharaoh is most associated with the Exodus story in ancient Egypt?",
+    "answer": "Ramesses II",
+    "choices": ["Tutankhamun", "Cleopatra", "Akhenaten", "Ramesses II"]
+  },
+  {
+    "tier": 2,
+    "question": "What was the name of the Cold War military standoff in 1962 involving nuclear weapons?",
+    "answer": "Cuban Missile Crisis",
+    "choices": ["Bay of Pigs Invasion", "Cuban Missile Crisis", "Korean War", "Vietnam Conflict"]
+  },
+  {
+    "tier": 2,
+    "question": "In what year did the Soviet Union collapse?",
+    "answer": "1991",
+    "choices": ["1985", "1989", "1991", "1993"]
+  },
+  {
+    "tier": 2,
+    "question": "Who was the first female Prime Minister of the United Kingdom?",
+    "answer": "Margaret Thatcher",
+    "choices": ["Theresa May", "Margaret Thatcher", "Barbara Castle", "Harriet Harman"]
+  },
+  {
+    "tier": 2,
+    "question": "What was the name of the treaty that ended World War I?",
+    "answer": "Treaty of Versailles",
+    "choices": ["Treaty of Paris", "Treaty of Versailles", "Treaty of Brest-Litovsk", "Treaty of Ghent"]
+  },
+  {
+    "tier": 2,
+    "question": "Which ancient civilization created the first known writing system?",
+    "answer": "Sumerians",
+    "choices": ["Egyptians", "Sumerians", "Chinese", "Indus Valley people"]
+  },
+  {
+    "tier": 2,
+    "question": "The D-Day invasion in WWII targeted which country's coast?",
+    "answer": "France",
+    "choices": ["Belgium", "Netherlands", "France", "Germany"]
+  },
+  {
+    "tier": 2,
+    "question": "Who was the emperor of France during the Napoleonic Wars?",
+    "answer": "Napoleon Bonaparte",
+    "choices": ["Louis XVI", "Napoleon Bonaparte", "Charles X", "Louis XVIII"]
+  },
+  {
+    "tier": 2,
+    "question": "What country did Germany invade to trigger Britain and France entering WWII?",
+    "answer": "Poland",
+    "choices": ["France", "Czechoslovakia", "Poland", "Austria"]
+  },
+  {
+    "tier": 2,
+    "question": "Who was the South African leader who ended apartheid and became the first Black president?",
+    "answer": "Nelson Mandela",
+    "choices": ["Desmond Tutu", "Nelson Mandela", "Oliver Tambo", "Walter Sisulu"]
+  },
+  {
+    "tier": 3,
+    "question": "The Treaty of Versailles was signed in which year?",
+    "answer": "1919",
+    "choices": ["1917", "1918", "1919", "1920"]
+  },
+  {
+    "tier": 3,
+    "question": "Which English king signed the Magna Carta?",
+    "answer": "King John",
+    "choices": ["King John", "King Henry II", "King Richard I", "King Edward I"]
+  },
+  {
+    "tier": 3,
+    "question": "The Battle of Hastings took place in what year?",
+    "answer": "1066",
+    "choices": ["1054", "1066", "1076", "1083"]
+  },
+  {
+    "tier": 3,
+    "question": "Who commanded the Union Army at the end of the American Civil War?",
+    "answer": "Ulysses S. Grant",
+    "choices": ["William Sherman", "George McClellan", "Ulysses S. Grant", "Philip Sheridan"]
+  },
+  {
+    "tier": 3,
+    "question": "In what year was the United Nations founded?",
+    "answer": "1945",
+    "choices": ["1919", "1939", "1945", "1948"]
+  },
+  {
+    "tier": 3,
+    "question": "Who was the Egyptian pharaoh whose tomb was discovered in 1922?",
+    "answer": "Tutankhamun",
+    "choices": ["Ramesses II", "Akhenaten", "Tutankhamun", "Cleopatra"]
+  },
+  {
+    "tier": 3,
+    "question": "What was the name of the first artificial satellite launched into space?",
+    "answer": "Sputnik",
+    "choices": ["Explorer 1", "Vostok", "Sputnik", "Luna 1"]
+  },
+  {
+    "tier": 3,
+    "question": "Which general led the Confederate Army during the American Civil War?",
+    "answer": "Robert E. Lee",
+    "choices": ["Stonewall Jackson", "Jefferson Davis", "James Longstreet", "Robert E. Lee"]
+  },
+  {
+    "tier": 3,
+    "question": "What was the name of the Chinese communist leader who founded the People's Republic of China?",
+    "answer": "Mao Zedong",
+    "choices": ["Deng Xiaoping", "Chiang Kai-shek", "Zhou Enlai", "Mao Zedong"]
+  },
+  {
+    "tier": 3,
+    "question": "In what year did India gain independence from Britain?",
+    "answer": "1947",
+    "choices": ["1945", "1947", "1950", "1952"]
+  },
+  {
+    "tier": 3,
+    "question": "Who was the Ottoman Sultan who conquered Constantinople in 1453?",
+    "answer": "Mehmed II",
+    "choices": ["Suleiman the Magnificent", "Mehmed II", "Bayezid II", "Selim I"]
+  },
+  {
+    "tier": 3,
+    "question": "What was the name of the 1920 agreement that established the borders of Turkey?",
+    "answer": "Treaty of Lausanne",
+    "choices": ["Treaty of Sevres", "Treaty of Lausanne", "Treaty of Berlin", "Treaty of San Remo"]
+  },
+  {
+    "tier": 3,
+    "question": "Who led the Cuban Revolution that brought him to power in 1959?",
+    "answer": "Fidel Castro",
+    "choices": ["Che Guevara", "Raul Castro", "Fidel Castro", "Fulgencio Batista"]
+  },
+  {
+    "tier": 3,
+    "question": "What year did the American Civil War end?",
+    "answer": "1865",
+    "choices": ["1862", "1863", "1865", "1867"]
+  },
+  {
+    "tier": 3,
+    "question": "Which empire was at its height under Emperor Ashoka?",
+    "answer": "Maurya Empire",
+    "choices": ["Mughal Empire", "Gupta Empire", "Maurya Empire", "Chola Empire"]
+  },
+  {
+    "tier": 3,
+    "question": "What was the name of the plan for European economic recovery after WWII funded by the United States?",
+    "answer": "Marshall Plan",
+    "choices": ["Truman Doctrine", "Marshall Plan", "Lend-Lease Act", "European Recovery Fund"]
+  },
+  {
+    "tier": 3,
+    "question": "In what year did the Russian Revolution take place?",
+    "answer": "1917",
+    "choices": ["1905", "1914", "1917", "1921"]
+  },
+  {
+    "tier": 3,
+    "question": "Who was the first European to reach India by sea?",
+    "answer": "Vasco da Gama",
+    "choices": ["Christopher Columbus", "Ferdinand Magellan", "Vasco da Gama", "Bartolomeu Dias"]
+  },
+  {
+    "tier": 3,
+    "question": "In what year was Israel established as an independent state?",
+    "answer": "1948",
+    "choices": ["1945", "1947", "1948", "1950"]
+  },
+  {
+    "tier": 4,
+    "question": "What was the name of the feudal system of loyalty in medieval Japan?",
+    "answer": "Bushido",
+    "choices": ["Shinto", "Zen", "Bushido", "Samurai code"]
+  },
+  {
+    "tier": 4,
+    "question": "Who was the Mongol ruler who conquered most of Persia and Central Asia after Genghis Khan?",
+    "answer": "Timur",
+    "choices": ["Kublai Khan", "Ogedei Khan", "Timur", "Hulagu Khan"]
+  },
+  {
+    "tier": 4,
+    "question": "The Hundred Years' War was fought between which two countries?",
+    "answer": "England and France",
+    "choices": ["England and Spain", "France and Spain", "England and France", "Holy Roman Empire and France"]
+  },
+  {
+    "tier": 4,
+    "question": "Which Byzantine Emperor is credited with codifying Roman law?",
+    "answer": "Justinian I",
+    "choices": ["Constantine I", "Theodosius I", "Justinian I", "Heraclius"]
+  },
+  {
+    "tier": 4,
+    "question": "What was the name of the plague that devastated Europe in the 14th century?",
+    "answer": "Black Death",
+    "choices": ["Bubonic Plague", "Black Death", "Great Pestilence", "Sweating Sickness"]
+  },
+  {
+    "tier": 4,
+    "question": "In what year did the Sack of Rome by the Visigoths occur?",
+    "answer": "410 AD",
+    "choices": ["376 AD", "395 AD", "410 AD", "455 AD"]
+  },
+  {
+    "tier": 4,
+    "question": "Who founded the Mughal Empire in India?",
+    "answer": "Babur",
+    "choices": ["Akbar", "Humayun", "Babur", "Shah Jahan"]
+  },
+  {
+    "tier": 4,
+    "question": "What was the name of the economic policy in the Soviet Union under Stalin that forced collective farming?",
+    "answer": "Collectivization",
+    "choices": ["Five-Year Plan", "New Economic Policy", "Collectivization", "Perestroika"]
+  },
+  {
+    "tier": 4,
+    "question": "What was the name of the Viking explorer credited with reaching North America around 1000 AD?",
+    "answer": "Leif Erikson",
+    "choices": ["Eric the Red", "Leif Erikson", "Ragnar Lothbrok", "Bjorn Ironside"]
+  },
+  {
+    "tier": 4,
+    "question": "The Thirty Years' War primarily took place in which region of Europe?",
+    "answer": "Holy Roman Empire",
+    "choices": ["France", "Spain", "England", "Holy Roman Empire"]
+  },
+  {
+    "tier": 4,
+    "question": "Who was the last Aztec emperor?",
+    "answer": "Cuauhtemoc",
+    "choices": ["Montezuma II", "Cuauhtemoc", "Itzcoatl", "Ahuitzotl"]
+  },
+  {
+    "tier": 4,
+    "question": "The Reconquista was the centuries-long effort to retake which region from Muslim rule?",
+    "answer": "Iberian Peninsula",
+    "choices": ["Balkans", "Sicily", "Holy Land", "Iberian Peninsula"]
+  },
+  {
+    "tier": 4,
+    "question": "What was the name of the 1648 treaty that ended the Thirty Years' War?",
+    "answer": "Peace of Westphalia",
+    "choices": ["Peace of Augsburg", "Peace of Westphalia", "Treaty of Utrecht", "Peace of Passau"]
+  },
+  {
+    "tier": 4,
+    "question": "Who was the Zulu king who fought the British in the Anglo-Zulu War of 1879?",
+    "answer": "Cetshwayo",
+    "choices": ["Shaka Zulu", "Dingane", "Cetshwayo", "Mpande"]
+  },
+  {
+    "tier": 4,
+    "question": "What ancient empire was centered at Persepolis?",
+    "answer": "Achaemenid Persian Empire",
+    "choices": ["Sassanid Empire", "Parthian Empire", "Achaemenid Persian Empire", "Median Empire"]
+  },
+  {
+    "tier": 5,
+    "question": "Which Sumerian city is considered one of the world's first urban centers?",
+    "answer": "Uruk",
+    "choices": ["Uruk", "Babylon", "Nineveh", "Ur"]
+  },
+  {
+    "tier": 5,
+    "question": "What was the name of the first known law code, created around 2100 BC?",
+    "answer": "Code of Ur-Nammu",
+    "choices": ["Code of Hammurabi", "Code of Ur-Nammu", "Twelve Tables", "Laws of Manu"]
+  },
+  {
+    "tier": 5,
+    "question": "The Battle of Carrhae in 53 BC was a catastrophic defeat for Rome against which empire?",
+    "answer": "Parthian Empire",
+    "choices": ["Persian Empire", "Seleucid Empire", "Parthian Empire", "Armenian Kingdom"]
+  },
+  {
+    "tier": 5,
+    "question": "What ancient Egyptian pharaoh introduced monotheism centered on the sun god Aten?",
+    "answer": "Akhenaten",
+    "choices": ["Ramesses II", "Thutmose III", "Amenhotep III", "Akhenaten"]
+  },
+  {
+    "tier": 5,
+    "question": "The Minoan civilization was centered on which Mediterranean island?",
+    "answer": "Crete",
+    "choices": ["Cyprus", "Malta", "Sicily", "Crete"]
+  },
+  {
+    "tier": 5,
+    "question": "Who was the last Byzantine Emperor, who died defending Constantinople in 1453?",
+    "answer": "Constantine XI",
+    "choices": ["John VIII", "Manuel II", "Constantine XI", "Alexios IV"]
+  },
+  {
+    "tier": 5,
+    "question": "Which ancient Chinese dynasty built the first version of the Great Wall?",
+    "answer": "Qin Dynasty",
+    "choices": ["Han Dynasty", "Zhou Dynasty", "Qin Dynasty", "Tang Dynasty"]
+  },
+  {
+    "tier": 5,
+    "question": "The Battle of Tours in 732 AD halted the northward expansion of which force into Europe?",
+    "answer": "Umayyad Caliphate",
+    "choices": ["Ottoman Empire", "Abbasid Caliphate", "Umayyad Caliphate", "Fatimid Caliphate"]
+  },
+  {
+    "tier": 5,
+    "question": "What was the name of the Neo-Assyrian king who sacked Babylon in 689 BC?",
+    "answer": "Sennacherib",
+    "choices": ["Tiglath-Pileser III", "Sargon II", "Sennacherib", "Ashurbanipal"]
+  },
+  {
+    "tier": 5,
+    "question": "What pre-Columbian civilization built the city of Teotihuacan?",
+    "answer": "Teotihuacanos",
+    "choices": ["Aztec", "Maya", "Toltec", "Teotihuacanos"]
+  },
+  {
+    "tier": 5,
+    "question": "The Heian period is associated with which country's classical culture?",
+    "answer": "Japan",
+    "choices": ["China", "Korea", "Vietnam", "Japan"]
+  },
+  {
+    "tier": 5,
+    "question": "The Indus Valley Civilization's major city of Mohenjo-daro is located in modern-day which country?",
+    "answer": "Pakistan",
+    "choices": ["India", "Afghanistan", "Pakistan", "Bangladesh"]
+  },
+  {
+    "tier": 5,
+    "question": "Who wrote 'The Histories', considered one of the first works of historical writing?",
+    "answer": "Herodotus",
+    "choices": ["Thucydides", "Herodotus", "Livy", "Polybius"]
+  },
+  {
+    "tier": 5,
+    "question": "What was the name of the Carthaginian general who crossed the Alps to invade Rome?",
+    "answer": "Hannibal Barca",
+    "choices": ["Hamilcar Barca", "Hasdrubal", "Hannibal Barca", "Mago Barca"]
+  },
+  {
+    "tier": 5,
+    "question": "The Srivijaya Empire was a powerful maritime empire centered in which modern country?",
+    "answer": "Indonesia",
+    "choices": ["Malaysia", "Thailand", "Cambodia", "Indonesia"]
   }
 ]

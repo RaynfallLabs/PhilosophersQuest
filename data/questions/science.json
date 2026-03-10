@@ -1,92 +1,105 @@
 [
-  {
-    "tier": 1,
-    "question": "What planet is closest to the Sun?",
-    "answer": "Mercury",
-    "choices": ["Venus", "Mercury", "Earth", "Mars"]
-  },
-  {
-    "tier": 1,
-    "question": "What gas do plants absorb during photosynthesis?",
-    "answer": "carbon dioxide",
-    "choices": ["oxygen", "nitrogen", "carbon dioxide", "hydrogen"]
-  },
-  {
-    "tier": 1,
-    "question": "How many bones are in the adult human body?",
-    "answer": "206",
-    "choices": ["196", "206", "216", "226"]
-  },
-  {
-    "tier": 1,
-    "question": "What is the chemical symbol for water?",
-    "answer": "H2O",
-    "choices": ["HO2", "H2O", "OH2", "H2O2"]
-  },
-  {
-    "tier": 1,
-    "question": "What force keeps objects on the ground?",
-    "answer": "gravity",
-    "choices": ["magnetism", "friction", "gravity", "inertia"]
-  },
-  {
-    "tier": 1,
-    "question": "What planet is known as the Red Planet?",
-    "answer": "Mars",
-    "choices": ["Venus", "Jupiter", "Mars", "Saturn"]
-  },
-  {
-    "tier": 1,
-    "question": "What gas makes up most of Earth's atmosphere?",
-    "answer": "nitrogen",
-    "choices": ["oxygen", "nitrogen", "carbon dioxide", "argon"]
-  },
-  {
-    "tier": 1,
-    "question": "What organ pumps blood through the body?",
-    "answer": "heart",
-    "choices": ["lungs", "liver", "heart", "kidney"]
-  },
-  {
-    "tier": 1,
-    "question": "What is the smallest unit of an element?",
-    "answer": "atom",
-    "choices": ["cell", "molecule", "atom", "proton"]
-  },
-  {
-    "tier": 1,
-    "question": "How many planets are in our solar system?",
-    "answer": "8",
-    "choices": ["7", "8", "9", "10"]
-  },
-  {
-    "tier": 2,
-    "question": "What is the atomic number of carbon?",
-    "answer": "6",
-    "choices": ["4", "6", "8", "12"]
-  },
-  {
-    "tier": 2,
-    "question": "What type of rock forms from cooled lava?",
-    "answer": "igneous",
-    "choices": ["sedimentary", "metamorphic", "igneous", "volcanic"]
-  },
-  {
-    "tier": 2,
-    "question": "What organelle is called the powerhouse of the cell?",
-    "answer": "mitochondria",
-    "choices": ["nucleus", "ribosome", "mitochondria", "vacuole"]
-  },
-  {
-    "tier": 2,
-    "question": "What is the chemical formula for table salt?",
-    "answer": "NaCl",
-    "choices": ["NaOH", "NaCl", "KCl", "CaCl2"]
-  },
-  {
-    "tier": 2,
-    "question": "What layer of the atmosphere contains the ozone layer?",
-    "answer": "stratosphere",
-    "choices": ["troposphere", "stratosphere", "mesosphere", "thermosphere"]
-  }
+  {"question": "What is the chemical symbol for gold?", "choices": ["Au", "Go", "Gd", "Ag"], "answer": "Au", "tier": 1},
+  {"question": "What is the chemical symbol for water?", "choices": ["H2O", "HO2", "H3O", "OH2"], "answer": "H2O", "tier": 1},
+  {"question": "How many planets are in our solar system?", "choices": ["8", "9", "7", "10"], "answer": "8", "tier": 1},
+  {"question": "What force pulls objects toward Earth?", "choices": ["Gravity", "Magnetism", "Friction", "Tension"], "answer": "Gravity", "tier": 1},
+  {"question": "What are the three states of matter?", "choices": ["Solid, liquid, gas", "Hot, cold, warm", "Earth, water, fire", "Metal, wood, stone"], "answer": "Solid, liquid, gas", "tier": 1},
+  {"question": "What is the closest star to Earth?", "choices": ["The Sun", "Proxima Centauri", "Alpha Centauri", "Sirius"], "answer": "The Sun", "tier": 1},
+  {"question": "What gas do plants absorb during photosynthesis?", "choices": ["Carbon dioxide", "Oxygen", "Nitrogen", "Hydrogen"], "answer": "Carbon dioxide", "tier": 1},
+  {"question": "What is the chemical symbol for oxygen?", "choices": ["O", "Ox", "Om", "Or"], "answer": "O", "tier": 1},
+  {"question": "What color is produced when red and blue light are combined?", "choices": ["Magenta", "Purple", "Green", "Yellow"], "answer": "Magenta", "tier": 1},
+  {"question": "What is the largest planet in our solar system?", "choices": ["Jupiter", "Saturn", "Neptune", "Uranus"], "answer": "Jupiter", "tier": 1},
+  {"question": "What type of energy does a moving object have?", "choices": ["Kinetic energy", "Potential energy", "Thermal energy", "Chemical energy"], "answer": "Kinetic energy", "tier": 1},
+  {"question": "What is the chemical symbol for iron?", "choices": ["Fe", "Ir", "In", "Io"], "answer": "Fe", "tier": 1},
+  {"question": "Which planet is known as the Red Planet?", "choices": ["Mars", "Venus", "Mercury", "Saturn"], "answer": "Mars", "tier": 1},
+  {"question": "What is the basic unit of life?", "choices": ["The cell", "The atom", "The molecule", "The gene"], "answer": "The cell", "tier": 1},
+  {"question": "What is the approximate speed of light in a vacuum?", "choices": ["300,000 km/s", "150,000 km/s", "30,000 km/s", "3,000 km/s"], "answer": "300,000 km/s", "tier": 1},
+  {"question": "What organ pumps blood through the human body?", "choices": ["Heart", "Liver", "Kidney", "Lung"], "answer": "Heart", "tier": 1},
+  {"question": "What is the chemical symbol for sodium?", "choices": ["Na", "So", "Sd", "Nm"], "answer": "Na", "tier": 1},
+  {"question": "What phenomenon explains why the sky appears blue?", "choices": ["Rayleigh scattering", "Reflection", "Refraction", "Diffraction"], "answer": "Rayleigh scattering", "tier": 1},
+  {"question": "What is the SI unit of force?", "choices": ["Newton", "Joule", "Watt", "Pascal"], "answer": "Newton", "tier": 1},
+  {"question": "Which element is most abundant in Earth's atmosphere?", "choices": ["Nitrogen", "Oxygen", "Carbon dioxide", "Argon"], "answer": "Nitrogen", "tier": 1},
+  {"question": "What is the process by which liquid water changes to water vapor?", "choices": ["Evaporation", "Condensation", "Sublimation", "Precipitation"], "answer": "Evaporation", "tier": 1},
+  {"question": "How many bones are in the adult human body?", "choices": ["206", "196", "216", "226"], "answer": "206", "tier": 1},
+
+  {"question": "What is Newton's Second Law of Motion?", "choices": ["F = ma", "E = mc²", "F = mv", "p = mv"], "answer": "F = ma", "tier": 2},
+  {"question": "What does the First Law of Thermodynamics state?", "choices": ["Energy cannot be created or destroyed", "Entropy always increases", "Heat flows from cold to hot", "Pressure and volume are inversely related"], "answer": "Energy cannot be created or destroyed", "tier": 2},
+  {"question": "What is the atomic number of carbon?", "choices": ["6", "12", "8", "14"], "answer": "6", "tier": 2},
+  {"question": "What type of cell division produces gametes?", "choices": ["Meiosis", "Mitosis", "Binary fission", "Budding"], "answer": "Meiosis", "tier": 2},
+  {"question": "What is the SI unit of electrical resistance?", "choices": ["Ohm", "Volt", "Ampere", "Farad"], "answer": "Ohm", "tier": 2},
+  {"question": "What organelle is called the powerhouse of the cell?", "choices": ["Mitochondria", "Nucleus", "Ribosome", "Golgi apparatus"], "answer": "Mitochondria", "tier": 2},
+  {"question": "Which gas law states that pressure and volume of a gas are inversely proportional at constant temperature?", "choices": ["Boyle's Law", "Charles's Law", "Gay-Lussac's Law", "Avogadro's Law"], "answer": "Boyle's Law", "tier": 2},
+  {"question": "What type of wave is sound?", "choices": ["Longitudinal wave", "Transverse wave", "Surface wave", "Electromagnetic wave"], "answer": "Longitudinal wave", "tier": 2},
+  {"question": "What principle organizes elements in the periodic table?", "choices": ["Atomic number", "Atomic mass", "Electronegativity", "Density"], "answer": "Atomic number", "tier": 2},
+  {"question": "What is Newton's Third Law of Motion?", "choices": ["Every action has an equal and opposite reaction", "F = ma", "Objects in motion stay in motion", "Energy is conserved"], "answer": "Every action has an equal and opposite reaction", "tier": 2},
+  {"question": "What organelle is responsible for protein synthesis?", "choices": ["Ribosome", "Mitochondria", "Nucleus", "Vacuole"], "answer": "Ribosome", "tier": 2},
+  {"question": "Approximately what is Avogadro's number?", "choices": ["6.022 × 10²³", "6.022 × 10²⁰", "6.022 × 10²⁶", "6.022 × 10¹⁸"], "answer": "6.022 × 10²³", "tier": 2},
+  {"question": "What concept is the Second Law of Thermodynamics related to?", "choices": ["Entropy", "Energy conservation", "Temperature", "Pressure"], "answer": "Entropy", "tier": 2},
+  {"question": "What is the chemical formula for table salt?", "choices": ["NaCl", "KCl", "CaCl2", "MgCl2"], "answer": "NaCl", "tier": 2},
+  {"question": "What is the approximate speed of sound in air at sea level?", "choices": ["343 m/s", "300 m/s", "500 m/s", "1000 m/s"], "answer": "343 m/s", "tier": 2},
+  {"question": "What is the pH of pure water?", "choices": ["7", "0", "14", "5"], "answer": "7", "tier": 2},
+  {"question": "Which planet has the most known moons in our solar system?", "choices": ["Saturn", "Jupiter", "Neptune", "Uranus"], "answer": "Saturn", "tier": 2},
+  {"question": "What is the SI unit of energy?", "choices": ["Joule", "Watt", "Newton", "Calorie"], "answer": "Joule", "tier": 2},
+  {"question": "What is the wavelength range of ultraviolet light?", "choices": ["10–400 nm", "400–700 nm", "700–1000 nm", "1–10 nm"], "answer": "10–400 nm", "tier": 2},
+  {"question": "What is the most abundant element in the universe?", "choices": ["Hydrogen", "Helium", "Oxygen", "Carbon"], "answer": "Hydrogen", "tier": 2},
+  {"question": "What type of rock forms from cooled lava?", "choices": ["Igneous", "Sedimentary", "Metamorphic", "Volcanic"], "answer": "Igneous", "tier": 2},
+
+  {"question": "How many base pairs are in a complete human DNA genome?", "choices": ["3 billion", "30 million", "300 million", "30 billion"], "answer": "3 billion", "tier": 3},
+  {"question": "What subatomic particles are found in the nucleus of an atom?", "choices": ["Protons and neutrons", "Protons and electrons", "Neutrons and electrons", "Quarks only"], "answer": "Protons and neutrons", "tier": 3},
+  {"question": "What is the process by which atoms emit particles or energy to become stable?", "choices": ["Radioactive decay", "Nuclear fusion", "Fission", "Beta emission only"], "answer": "Radioactive decay", "tier": 3},
+  {"question": "What type of chemical bond involves the sharing of electrons?", "choices": ["Covalent bond", "Ionic bond", "Metallic bond", "Van der Waals bond"], "answer": "Covalent bond", "tier": 3},
+  {"question": "What is Ohm's Law?", "choices": ["V = IR", "P = IV", "F = ma", "E = mc²"], "answer": "V = IR", "tier": 3},
+  {"question": "What molecule carries genetic information in cells?", "choices": ["DNA", "RNA", "ATP", "Protein"], "answer": "DNA", "tier": 3},
+  {"question": "What is the charge of an electron?", "choices": ["Negative", "Positive", "Neutral", "Variable"], "answer": "Negative", "tier": 3},
+  {"question": "What phenomenon occurs when light changes direction passing between two different mediums?", "choices": ["Refraction", "Reflection", "Diffraction", "Absorption"], "answer": "Refraction", "tier": 3},
+  {"question": "What are the four nucleotide bases in DNA?", "choices": ["Adenine, thymine, guanine, cytosine", "Adenine, uracil, guanine, cytosine", "Adenine, thymine, guanine, uracil", "Alanine, thymine, guanine, cytosine"], "answer": "Adenine, thymine, guanine, cytosine", "tier": 3},
+  {"question": "What is the law of conservation of mass?", "choices": ["Mass is neither created nor destroyed in a chemical reaction", "Mass equals energy divided by speed squared", "Mass increases during nuclear reactions", "Mass is always conserved in all reactions including nuclear"], "answer": "Mass is neither created nor destroyed in a chemical reaction", "tier": 3},
+  {"question": "What is the index of refraction?", "choices": ["The ratio of the speed of light in vacuum to the speed in a medium", "The angle at which light reflects", "The wavelength of refracted light", "The frequency shift of light"], "answer": "The ratio of the speed of light in vacuum to the speed in a medium", "tier": 3},
+  {"question": "What is an isotope?", "choices": ["An atom with the same proton count but different neutron count", "An atom with the same neutron count but different proton count", "A charged atom", "A molecule with different elements"], "answer": "An atom with the same proton count but different neutron count", "tier": 3},
+  {"question": "What is the Doppler effect?", "choices": ["A change in observed frequency due to relative motion", "Light bending around objects", "Sound traveling faster in water", "Interference of waves"], "answer": "A change in observed frequency due to relative motion", "tier": 3},
+  {"question": "What is the role of enzymes in biochemical reactions?", "choices": ["Catalysts that speed up reactions", "Energy storage molecules", "Structural proteins", "Genetic material carriers"], "answer": "Catalysts that speed up reactions", "tier": 3},
+  {"question": "What phenomenon describes light behaving as both a wave and a particle?", "choices": ["Wave-particle duality", "Superposition", "Entanglement", "Interference"], "answer": "Wave-particle duality", "tier": 3},
+  {"question": "How do acids and bases differ on the pH scale?", "choices": ["Acids have pH below 7, bases above 7", "Acids have pH above 7, bases below 7", "Both have pH of 7", "Acids have pH of 0 only"], "answer": "Acids have pH below 7, bases above 7", "tier": 3},
+  {"question": "What is a gene?", "choices": ["A segment of DNA that codes for a protein", "A type of RNA molecule", "A chromosome structure", "A cellular organelle"], "answer": "A segment of DNA that codes for a protein", "tier": 3},
+  {"question": "What is the half-life of a radioactive substance?", "choices": ["Time for half the atoms to decay", "Time for all atoms to decay", "Time for half the energy to be released", "Time for half the mass to convert to energy"], "answer": "Time for half the atoms to decay", "tier": 3},
+  {"question": "What does Kirchhoff's Voltage Law state?", "choices": ["The sum of voltages around a closed loop is zero", "Current entering a node equals current leaving", "Resistance is proportional to length", "Power equals current times voltage"], "answer": "The sum of voltages around a closed loop is zero", "tier": 3},
+  {"question": "What is the key difference between mitosis and meiosis?", "choices": ["Mitosis produces two identical cells; meiosis produces four genetically unique cells", "Mitosis produces four cells; meiosis produces two", "Mitosis is for reproduction; meiosis is for growth", "They are the same process"], "answer": "Mitosis produces two identical cells; meiosis produces four genetically unique cells", "tier": 3},
+
+  {"question": "What is the Heisenberg Uncertainty Principle about?", "choices": ["Position and momentum cannot both be precisely known", "Energy is always conserved", "Light speed is constant", "Electrons orbit in fixed paths"], "answer": "Position and momentum cannot both be precisely known", "tier": 4},
+  {"question": "What does E = mc² describe?", "choices": ["Mass-energy equivalence", "Momentum of a photon", "Kinetic energy of a particle", "Gravitational potential energy"], "answer": "Mass-energy equivalence", "tier": 4},
+  {"question": "What is a functional group in organic chemistry?", "choices": ["A specific atom or group that determines chemical properties of a molecule", "A group of molecules in the same state", "The nucleus of an organic compound", "A carbon chain length"], "answer": "A specific atom or group that determines chemical properties of a molecule", "tier": 4},
+  {"question": "What is nuclear fission?", "choices": ["Splitting a heavy nucleus into smaller fragments", "Combining two light nuclei into one", "Emitting an alpha particle from a nucleus", "Converting a neutron to a proton"], "answer": "Splitting a heavy nucleus into smaller fragments", "tier": 4},
+  {"question": "What is quantum tunneling?", "choices": ["A particle passing through a barrier it classically could not overcome", "An electron jumping between energy levels", "A particle moving faster than light", "Entanglement across long distances"], "answer": "A particle passing through a barrier it classically could not overcome", "tier": 4},
+  {"question": "What is the special theory of relativity's key postulate about the speed of light?", "choices": ["The speed of light is constant for all observers", "Light speed increases with energy", "Light speed depends on the observer's velocity", "Light slows down in a vacuum"], "answer": "The speed of light is constant for all observers", "tier": 4},
+  {"question": "What is an alkane in organic chemistry?", "choices": ["A saturated hydrocarbon with only single bonds", "A hydrocarbon with at least one double bond", "A hydrocarbon with at least one triple bond", "A hydrocarbon with an aromatic ring"], "answer": "A saturated hydrocarbon with only single bonds", "tier": 4},
+  {"question": "What occurs during radioactive beta decay?", "choices": ["A neutron converts to a proton, emitting an electron and antineutrino", "A nucleus emits a helium nucleus", "A nucleus emits only a gamma ray", "A proton converts to a neutron, emitting a positron"], "answer": "A neutron converts to a proton, emitting an electron and antineutrino", "tier": 4},
+  {"question": "What does time dilation in special relativity predict?", "choices": ["Moving clocks tick slower relative to stationary ones", "Moving clocks tick faster relative to stationary ones", "Time is absolute for all observers", "Gravity stops time"], "answer": "Moving clocks tick slower relative to stationary ones", "tier": 4},
+  {"question": "What is the Schrödinger equation used for?", "choices": ["Describing the quantum state of a system", "Calculating relativistic momentum", "Describing nuclear decay rates", "Predicting chemical reaction rates"], "answer": "Describing the quantum state of a system", "tier": 4},
+  {"question": "What characterizes a benzene ring?", "choices": ["Six carbons in a ring with delocalized electrons", "Six oxygen atoms in a ring", "Six carbon atoms in a chain", "Six carbon atoms with only single bonds"], "answer": "Six carbons in a ring with delocalized electrons", "tier": 4},
+  {"question": "What is nuclear fusion?", "choices": ["Combining two light nuclei to form a heavier nucleus", "Splitting a heavy nucleus into fragments", "Emitting radiation from an unstable nucleus", "Converting mass to energy without nuclear change"], "answer": "Combining two light nuclei to form a heavier nucleus", "tier": 4},
+  {"question": "What is the Pauli Exclusion Principle?", "choices": ["No two fermions can occupy the same quantum state simultaneously", "Electrons orbit in defined paths", "Opposite charges attract", "Energy is quantized in discrete packets"], "answer": "No two fermions can occupy the same quantum state simultaneously", "tier": 4},
+  {"question": "How does general relativity describe gravity?", "choices": ["Gravity is the curvature of spacetime caused by mass", "Gravity is a force transmitted by gravitons", "Gravity acts instantaneously across any distance", "Gravity is proportional to velocity"], "answer": "Gravity is the curvature of spacetime caused by mass", "tier": 4},
+  {"question": "What is an enantiomer in chemistry?", "choices": ["A molecule that is a non-superimposable mirror image of another", "A molecule with the same formula but different connectivity", "Two molecules with identical properties", "An isomer with the same spatial arrangement"], "answer": "A molecule that is a non-superimposable mirror image of another", "tier": 4},
+  {"question": "What is the photoelectric effect?", "choices": ["Electrons are emitted from a material when light strikes it", "Light is absorbed by electrons causing heat", "Electrons emit photons when excited", "Light is reflected by free electrons"], "answer": "Electrons are emitted from a material when light strikes it", "tier": 4},
+  {"question": "What does Le Chatelier's Principle state?", "choices": ["A system at equilibrium will shift to counteract any imposed change", "Reactions always proceed to the right", "Equilibrium constants increase with temperature", "The rate of forward and reverse reactions are always equal"], "answer": "A system at equilibrium will shift to counteract any imposed change", "tier": 4},
+  {"question": "What is the significance of activation energy in chemistry?", "choices": ["The minimum energy needed for a chemical reaction to proceed", "The energy released when bonds form", "The total energy of reactants", "The energy stored in chemical bonds"], "answer": "The minimum energy needed for a chemical reaction to proceed", "tier": 4},
+
+  {"question": "What is the name of the force-carrying particle for the strong nuclear force?", "choices": ["Gluon", "Photon", "W boson", "Graviton"], "answer": "Gluon", "tier": 5},
+  {"question": "What is the Standard Model of particle physics?", "choices": ["A theory describing fundamental particles and three of the four fundamental forces", "A model of the solar system", "A theory of gravity at quantum scales", "A description of atomic nuclei only"], "answer": "A theory describing fundamental particles and three of the four fundamental forces", "tier": 5},
+  {"question": "What is dark matter?", "choices": ["Matter that does not interact electromagnetically but has gravitational effects", "Matter that absorbs all light", "Antimatter that has collapsed", "Ordinary matter in black holes"], "answer": "Matter that does not interact electromagnetically but has gravitational effects", "tier": 5},
+  {"question": "What is the Higgs boson responsible for?", "choices": ["Giving mass to other fundamental particles", "Carrying the electromagnetic force", "Mediating the weak nuclear force", "Binding quarks together"], "answer": "Giving mass to other fundamental particles", "tier": 5},
+  {"question": "What is quantum entanglement?", "choices": ["A correlation between quantum states such that measuring one particle instantly affects its partner", "Particles merging into a single entity", "A particle existing in two places simultaneously", "Quantum tunneling between two particles"], "answer": "A correlation between quantum states such that measuring one particle instantly affects its partner", "tier": 5},
+  {"question": "What is the Chandrasekhar limit?", "choices": ["The maximum mass of a white dwarf star, about 1.4 solar masses", "The minimum mass for a star to ignite fusion", "The radius at which a black hole's gravity becomes inescapable", "The maximum radius of a neutron star"], "answer": "The maximum mass of a white dwarf star, about 1.4 solar masses", "tier": 5},
+  {"question": "What is CRISPR-Cas9 used for?", "choices": ["Precise gene editing in DNA", "Amplifying DNA sequences", "Sequencing entire genomes", "Synthesizing proteins from RNA"], "answer": "Precise gene editing in DNA", "tier": 5},
+  {"question": "What is the cosmological constant in general relativity associated with?", "choices": ["Dark energy and the accelerating expansion of the universe", "The bending of light around massive objects", "The gravitational pull of dark matter", "The formation of black holes"], "answer": "Dark energy and the accelerating expansion of the universe", "tier": 5},
+  {"question": "What are quarks?", "choices": ["Fundamental constituents of protons and neutrons", "The smallest known electrons", "Massless force-carrying particles", "Heavy leptons"], "answer": "Fundamental constituents of protons and neutrons", "tier": 5},
+  {"question": "What is the Planck length?", "choices": ["The smallest meaningful length scale in physics, approximately 1.6 × 10⁻³⁵ meters", "The wavelength of the most energetic photons", "The radius of a proton", "The distance light travels in one Planck time"], "answer": "The smallest meaningful length scale in physics, approximately 1.6 × 10⁻³⁵ meters", "tier": 5},
+  {"question": "What is a neutron star primarily made of?", "choices": ["Neutrons packed at nuclear density", "Protons and electrons only", "Compressed hydrogen and helium", "Quarks in a deconfined state"], "answer": "Neutrons packed at nuclear density", "tier": 5},
+  {"question": "What does CP violation in particle physics refer to?", "choices": ["An asymmetry between matter and antimatter in certain weak interactions", "Conservation of charge and parity together", "Violation of energy conservation at quantum scales", "Asymmetry of spin in nuclear reactions"], "answer": "An asymmetry between matter and antimatter in certain weak interactions", "tier": 5},
+  {"question": "What is the Casimir effect?", "choices": ["An attractive force between uncharged conducting plates due to quantum vacuum fluctuations", "The repulsion of like magnetic poles", "The pressure exerted by electromagnetic radiation", "The energy released in pair annihilation"], "answer": "An attractive force between uncharged conducting plates due to quantum vacuum fluctuations", "tier": 5},
+  {"question": "What is string theory?", "choices": ["A framework where fundamental particles are modeled as one-dimensional strings", "A theory of quantum gravity only", "A model describing quark confinement", "A description of cosmic strings in astrophysics"], "answer": "A framework where fundamental particles are modeled as one-dimensional strings", "tier": 5},
+  {"question": "What is Hawking radiation?", "choices": ["Thermal radiation predicted to be emitted by black holes due to quantum effects near the event horizon", "Radiation emitted by neutron stars", "Cosmic rays from active galactic nuclei", "X-rays produced by matter falling into black holes"], "answer": "Thermal radiation predicted to be emitted by black holes due to quantum effects near the event horizon", "tier": 5},
+  {"question": "What is the weak nuclear force responsible for?", "choices": ["Radioactive beta decay and certain nuclear reactions", "Holding protons and neutrons together", "Electromagnetic interactions between charges", "Gravity at quantum scales"], "answer": "Radioactive beta decay and certain nuclear reactions", "tier": 5},
+  {"question": "What is supersymmetry (SUSY) in particle physics?", "choices": ["A proposed symmetry pairing each Standard Model particle with a superpartner", "A symmetry between left and right in particle interactions", "The symmetry between matter and antimatter", "A theory of symmetric string vibrations"], "answer": "A proposed symmetry pairing each Standard Model particle with a superpartner", "tier": 5},
+  {"question": "What is the significance of the Cosmic Microwave Background (CMB)?", "choices": ["It is thermal radiation left over from the early universe, supporting the Big Bang theory", "It is the combined radiation emitted by all stars", "It is the radiation from the center of the Milky Way", "It is the microwave emission from interstellar hydrogen"], "answer": "It is thermal radiation left over from the early universe, supporting the Big Bang theory", "tier": 5}
 ]
