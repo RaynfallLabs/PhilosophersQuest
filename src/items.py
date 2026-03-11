@@ -19,6 +19,10 @@ class Item:
         self.min_level  = int(defn.get('min_level', 1))
         self.x: int = 0
         self.y: int = 0
+        # Identification system — subclasses set identified=False for hidden items
+        self.lore: str          = defn.get('lore', '')
+        self.set_id: str        = defn.get('set_id', '')
+        self.set_name: str      = defn.get('set_name', '')
 
 
 class Weapon(Item):
@@ -48,6 +52,8 @@ class Weapon(Item):
         self.container_loot_tier: str   = defn.get('containerLootTier', defn.get('container_loot_tier', 'common'))
         self.value: int                 = int(defn.get('value', 50))
         self.enchant_bonus: int         = 0
+        self.identified: bool           = bool(defn.get('identified', False))
+        self.unidentified_name: str     = defn.get('unidentified_name', 'an unknown weapon')
 
 
 class Armor(Item):
@@ -63,6 +69,8 @@ class Armor(Item):
         self.damage_resistances: dict = defn.get('damage_resistances', {})
         self.can_be_cursed: bool = bool(defn.get('can_be_cursed', False))
         self.cursed: bool        = False   # set at spawn time
+        self.identified: bool    = bool(defn.get('identified', False))
+        self.unidentified_name: str = defn.get('unidentified_name', 'unknown armor')
 
 
 class Shield(Item):
@@ -77,6 +85,8 @@ class Shield(Item):
         self.damage_resistances: dict = defn.get('damage_resistances', {})
         self.can_be_cursed: bool = bool(defn.get('can_be_cursed', False))
         self.cursed: bool        = False
+        self.identified: bool    = bool(defn.get('identified', False))
+        self.unidentified_name: str = defn.get('unidentified_name', 'an unknown shield')
 
 
 class Accessory(Item):
@@ -87,7 +97,7 @@ class Accessory(Item):
         self.equip_threshold  = int(defn.get('equip_threshold', 2))
         self.quiz_tier        = int(defn.get('quiz_tier', 1))
         self.unidentified_name = defn.get('unidentified_name', defn['name'])
-        self.identified       = False
+        self.identified       = bool(defn.get('identified', False))
 
 
 class Wand(Item):
@@ -103,7 +113,7 @@ class Wand(Item):
         self.effect           = defn.get('effect', '')
         self.power            = defn.get('power', '')
         self.unidentified_name = defn.get('unidentified_name', defn['name'])
-        self.identified       = False
+        self.identified       = bool(defn.get('identified', False))
 
 
 class Scroll(Item):
@@ -114,7 +124,7 @@ class Scroll(Item):
         self.effect           = defn.get('effect', '')
         self.power            = defn.get('power', '')
         self.unidentified_name = defn.get('unidentified_name', defn['name'])
-        self.identified       = False
+        self.identified       = bool(defn.get('identified', False))
 
 
 class Artifact(Item):
@@ -129,6 +139,8 @@ class Lockpick(Item):
         self.durability              = int(defn.get('durability', 5))
         self.durability_loss_success = int(defn.get('durability_loss_success', 1))
         self.durability_loss_failure = int(defn.get('durability_loss_failure', 2))
+        self.identified: bool        = True
+        self.unidentified_name: str  = defn.get('unidentified_name', self.name)
 
 
 class Container(Item):
@@ -151,7 +163,9 @@ class Ingredient(Item):
         super().__init__(defn)
         self.source_monster = defn.get('source_monster', '')
         # recipes: str(quality 0-5) -> {name, sp, bonus_type, bonus_amount}
-        self.recipes: dict = defn.get('recipes', {})
+        self.recipes: dict  = defn.get('recipes', {})
+        self.identified: bool       = True   # raw ingredients are obvious
+        self.unidentified_name: str = defn.get('unidentified_name', self.name)
 
 
 class Corpse(Item):
@@ -192,6 +206,9 @@ class Ammo(Item):
         self.count:        int = self.count_min   # re-rolled at spawn
         self.floor_spawn_weight: dict = defn.get('floor_spawn_weight', {})
         self.value:        int = int(defn.get('value', 1))
+        # Ammo is always visually obvious — identified by default
+        self.identified: bool       = True
+        self.unidentified_name: str = defn.get('unidentified_name', self.name)
 
 
 class Food(Item):
@@ -205,6 +222,9 @@ class Food(Item):
         self.bonus_effect: str = defn.get('bonus_effect', '')
         self.bonus_amount: int = int(defn.get('bonus_amount', 0))
         self.floor_spawn_weight: dict = defn.get('floor_spawn_weight', {})
+        # Food is recognizable by appearance — identified by default
+        self.identified: bool       = True
+        self.unidentified_name: str = defn.get('unidentified_name', self.name)
 
 
 # ------------------------------------------------------------------

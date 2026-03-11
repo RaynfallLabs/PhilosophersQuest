@@ -11,7 +11,9 @@
     "count_min": 10,
     "count_max": 30,
     "floor_spawn_weight": {"1-20": 100, "21-40": 60, "41-60": 20, "61-80": 5, "81-100": 2},
-    "value": 1
+    "value": 1,
+    "unidentified_name": "arrows",
+    "lore": "Simple shafts of ash-wood tipped with hammered iron heads. Cheap to produce and reliable enough for hunting, these arrows have brought down game and men alike across countless battlefields."
   },
   "steel_arrow": {
     "name": "steel arrow",
@@ -25,7 +27,9 @@
     "count_min": 8,
     "count_max": 24,
     "floor_spawn_weight": {"1-20": 10, "21-40": 100, "41-60": 60, "61-80": 20, "81-100": 5},
-    "value": 3
+    "value": 3,
+    "unidentified_name": "arrows",
+    "lore": "Fletcher-grade steel points affixed to straight-grained cedar shafts with silk thread. The tempered tips hold their edge through stone and bone alike, punching through light armor with ease."
   },
   "hardened_gold_arrow": {
     "name": "hardened gold arrow",
@@ -39,7 +43,9 @@
     "count_min": 6,
     "count_max": 18,
     "floor_spawn_weight": {"1-20": 0, "21-40": 10, "41-60": 100, "61-80": 60, "81-100": 20},
-    "value": 8
+    "value": 8,
+    "unidentified_name": "arrows",
+    "lore": "Alchemically hardened gold conducts magical energy more efficiently than common metals, making these arrows ideal against creatures with spell resistance. The gleaming heads catch light like tiny suns in flight."
   },
   "diamond_arrow": {
     "name": "diamond arrow",
@@ -53,7 +59,9 @@
     "count_min": 5,
     "count_max": 15,
     "floor_spawn_weight": {"1-20": 0, "21-40": 0, "41-60": 10, "61-80": 100, "81-100": 60},
-    "value": 20
+    "value": 20,
+    "unidentified_name": "arrows",
+    "lore": "Diamond points ground to molecular sharpness pierce through enchanted armor as though it were wet paper. Only the wealthiest archers can afford to loose these arrows and not retrieve them afterward."
   },
   "dragonbone_arrow": {
     "name": "dragonbone arrow",
@@ -67,7 +75,9 @@
     "count_min": 4,
     "count_max": 12,
     "floor_spawn_weight": {"1-20": 0, "21-40": 0, "41-60": 0, "61-80": 10, "81-100": 100},
-    "value": 50
+    "value": 50,
+    "unidentified_name": "arrows",
+    "lore": "Shafts carved from the hollow bones of ancient dragons retain a whisper of draconic essence. They strike with the weight of legend, and even the wound they leave behind smolders faintly for hours."
   },
   "iron_bolt": {
     "name": "iron bolt",
@@ -81,7 +91,9 @@
     "count_min": 10,
     "count_max": 25,
     "floor_spawn_weight": {"1-20": 100, "21-40": 60, "41-60": 20, "61-80": 5, "81-100": 2},
-    "value": 1
+    "value": 1,
+    "unidentified_name": "bolts",
+    "lore": "Short, stout iron bolts designed for crossbow use. Their stubby profile sacrifices range for punching power, making them favored by dungeon fighters who need to stop a charging enemy fast."
   },
   "steel_bolt": {
     "name": "steel bolt",
@@ -95,7 +107,9 @@
     "count_min": 8,
     "count_max": 20,
     "floor_spawn_weight": {"1-20": 10, "21-40": 100, "41-60": 60, "61-80": 20, "81-100": 5},
-    "value": 3
+    "value": 3,
+    "unidentified_name": "bolts",
+    "lore": "Precision-ground steel bolts with quarrel-cut fletching for stable flight in close quarters. The hardened heads deform on impact to maximize wound channel, making them brutally effective against unarmored foes."
   },
   "hardened_gold_bolt": {
     "name": "hardened gold bolt",
@@ -109,7 +123,9 @@
     "count_min": 6,
     "count_max": 16,
     "floor_spawn_weight": {"1-20": 0, "21-40": 10, "41-60": 100, "61-80": 60, "81-100": 20},
-    "value": 8
+    "value": 8,
+    "unidentified_name": "bolts",
+    "lore": "These gleaming bolts carry a faint anti-magical charge locked into the gold during the hardening process. Spellcasters struck by them find their concentration disrupted, making these prized by monster hunters."
   },
   "diamond_bolt": {
     "name": "diamond bolt",
@@ -123,7 +139,9 @@
     "count_min": 5,
     "count_max": 12,
     "floor_spawn_weight": {"1-20": 0, "21-40": 0, "41-60": 10, "61-80": 100, "81-100": 60},
-    "value": 20
+    "value": 20,
+    "unidentified_name": "bolts",
+    "lore": "Diamond-tipped bolts that can shear through the thickest plate armor. The crystalline tips shatter on impact, sending razor shards into the wound — a gruesome but devastatingly effective design."
   },
   "adamantine_bolt": {
     "name": "adamantine bolt",
@@ -137,6 +155,8 @@
     "count_min": 4,
     "count_max": 10,
     "floor_spawn_weight": {"1-20": 0, "21-40": 0, "41-60": 0, "61-80": 10, "81-100": 100},
-    "value": 50
+    "value": 50,
+    "unidentified_name": "bolts",
+    "lore": "Forged from the rarest metal in the known world, these bolts are virtually indestructible and can be recovered after almost every shot. Dragon hide, golem plating, and enchanted barriers alike offer no meaningful protection against them."
   }
 }

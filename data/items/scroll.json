@@ -9,7 +9,8 @@
     "quiz_threshold": 2,
     "effect": "heal",
     "power": "3d6",
-    "unidentified_name": "crumpled scroll"
+    "unidentified_name": "crumpled scroll",
+    "lore": "Inscribed in the flowing script of ancient temple healers, this scroll channels divine restorative energy into the reader's body. The words dissolve into warm golden light as they are spoken aloud, leaving the parchment blank and the reader mended."
   },
   "scroll_of_mapping": {
     "name": "scroll of mapping",
@@ -21,7 +22,8 @@
     "quiz_threshold": 2,
     "effect": "mapping",
     "power": "",
-    "unidentified_name": "yellowed scroll"
+    "unidentified_name": "yellowed scroll",
+    "lore": "Cartographers of the old empire inscribed these scrolls with a sympathetic mapping enchantment. Upon reading, the dungeon's layout floods into the reader's mind as a complete spatial memory — every corridor, chamber, and stairwell within range suddenly known."
   },
   "scroll_of_identify": {
     "name": "scroll of identify",
@@ -33,7 +35,8 @@
     "quiz_threshold": 2,
     "effect": "identify",
     "power": "",
-    "unidentified_name": "torn scroll"
+    "unidentified_name": "torn scroll",
+    "lore": "The text of this scroll, penned in ink derived from truth-speaking crystals, vibrates with revealing energy. When read aloud over an unknown object, the scroll's magic strips away all disguise and false appearance, revealing the item's true name and nature."
   },
   "scroll_of_enchant_weapon": {
     "name": "scroll of enchant weapon",
@@ -45,7 +48,8 @@
     "quiz_threshold": 3,
     "effect": "enchant_weapon",
     "power": "",
-    "unidentified_name": "silver scroll"
+    "unidentified_name": "silver scroll",
+    "lore": "Written in fire-silver ink by weaponsmith-mages of the dwarven academies, this scroll bonds an additional layer of enchantment into any held weapon. The runes crawl up the blade as they're spoken, burning themselves permanently into the metal."
   },
   "scroll_of_remove_curse": {
     "name": "scroll of remove curse",
@@ -57,7 +61,8 @@
     "quiz_threshold": 2,
     "effect": "remove_curse",
     "power": "",
-    "unidentified_name": "glowing scroll"
+    "unidentified_name": "glowing scroll",
+    "lore": "Inscribed by priests who specialized in the removal of malefic enchantments, this scroll radiates a faint cleansing light. Reading it aloud shatters whatever dark binding holds an item to its bearer, restoring freedom of choice and purging the curse entirely."
   },
   "scroll_of_confuse_monsters": {
     "name": "scroll of confusion",
@@ -69,6 +74,7 @@
     "quiz_threshold": 3,
     "effect": "confuse_monsters",
     "power": "",
-    "unidentified_name": "swirling scroll"
+    "unidentified_name": "swirling scroll",
+    "lore": "This scroll was used by arena tamers to disorient multiple beasts simultaneously. The text is written in a spiraling pattern that, when read, projects a psychic dissonance affecting every creature in range — their senses scramble, their movements become erratic, and their intent is lost in confusion."
   }
 }

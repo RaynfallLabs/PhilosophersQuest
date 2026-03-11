@@ -40,7 +40,10 @@
     },
     "containerLootTier": "common",
     "value": 50,
-    "min_level": 1
+    "min_level": 1,
+    "unidentified_name": "a dull-edged short blade",
+    "lore": "The standard iron sword has been the companion of dungeon-delvers for centuries. Its modest weight and straightforward balance make it the weapon most beginners train with. There is no shame in iron — it has ended more monsters than all other metals combined.",
+    "quiz_tier": 1
   },
   "iron_longsword": {
     "name": "iron longsword",
@@ -83,7 +86,10 @@
     },
     "containerLootTier": "common",
     "value": 70,
-    "min_level": 1
+    "min_level": 1,
+    "unidentified_name": "a heavy notched blade",
+    "lore": "The iron longsword sacrifices speed for reach and leverage, allowing the wielder to deliver devastating cuts from a safer distance. Its fuller — the groove down the center — reduces weight while preserving structural integrity, a compromise that defines the blade's character.",
+    "quiz_tier": 1
   },
   "steel_sword": {
     "name": "steel sword",
@@ -126,7 +132,10 @@
     },
     "containerLootTier": "uncommon",
     "value": 150,
-    "min_level": 21
+    "min_level": 21,
+    "unidentified_name": "a polished short blade",
+    "lore": "Forged by a smith who understood the relationship between carbon content and edge retention, this steel sword holds its sharpness through extended combat. The quenching process leaves a faint wave pattern in the metal, visible in certain light.",
+    "quiz_tier": 2
   },
   "steel_longsword": {
     "name": "steel longsword",
@@ -169,7 +178,10 @@
     },
     "containerLootTier": "uncommon",
     "value": 210,
-    "min_level": 21
+    "min_level": 21,
+    "unidentified_name": "a polished long blade",
+    "lore": "Steel longswords are the mark of the trained warrior — expensive to produce, requiring significant skill to wield effectively, but rewarding mastery with exceptional cutting power and durability. Armies that equip their veterans in steel are armies to be feared.",
+    "quiz_tier": 2
   },
   "hardened_gold_sword": {
     "name": "hardened gold sword",
@@ -212,7 +224,10 @@
     },
     "containerLootTier": "rare",
     "value": 400,
-    "min_level": 41
+    "min_level": 41,
+    "unidentified_name": "a gleaming short blade",
+    "lore": "Hardened gold — an alchemical alloy developed by wizard-smiths — is denser than steel and holds enchantments more readily. The sword has a warm golden sheen that many describe as beautiful, which has led to the somewhat unfair reputation of 'decorative' weapons that are in fact highly lethal.",
+    "quiz_tier": 3
   },
   "hardened_gold_longsword": {
     "name": "hardened gold longsword",
@@ -255,7 +270,10 @@
     },
     "containerLootTier": "rare",
     "value": 560,
-    "min_level": 41
+    "min_level": 41,
+    "unidentified_name": "a gleaming long blade",
+    "lore": "A hardened gold longsword is the sign of serious investment in one's equipment. The alchemical alloy takes enchantments more readily than any mundane metal, and several famous enchanted swords were originally hardened gold longswords before their final treatment.",
+    "quiz_tier": 3
   },
   "diamond_sword": {
     "name": "diamond sword",
@@ -298,7 +316,10 @@
     },
     "containerLootTier": "very_rare",
     "value": 1000,
-    "min_level": 61
+    "min_level": 61,
+    "unidentified_name": "a crystalline short blade",
+    "lore": "Diamond weapons are not true gemstone — they are an artificially grown lattice of carbon, magically stabilized into metal-like properties. The edge is supernaturally sharp and difficult to damage. A diamond sword will outlast its wielder by generations.",
+    "quiz_tier": 4
   },
   "diamond_longsword": {
     "name": "diamond longsword",
@@ -341,7 +362,10 @@
     },
     "containerLootTier": "very_rare",
     "value": 1400,
-    "min_level": 61
+    "min_level": 61,
+    "unidentified_name": "a crystalline long blade",
+    "lore": "Diamond longswords represent the pinnacle of non-magical weapon crafting. The growing process takes years and significant arcane investment. Warriors who carry diamond longswords are either very wealthy, very lucky, or both.",
+    "quiz_tier": 4
   },
   "adamantine_sword": {
     "name": "adamantine sword",
@@ -384,7 +408,10 @@
     },
     "containerLootTier": "legendary",
     "value": 3000,
-    "min_level": 81
+    "min_level": 81,
+    "unidentified_name": "an obsidian-dark short blade",
+    "lore": "Adamantine — dark, dense, and supernaturally tough — was first discovered in meteorite craters. Weapons made from it resist magical damage and their edges self-heal minor nicks. An adamantine sword carries a quiet gravity that even non-magical beings can sense.",
+    "quiz_tier": 5
   },
   "adamantine_longsword": {
     "name": "adamantine longsword",
@@ -427,7 +454,10 @@
     },
     "containerLootTier": "legendary",
     "value": 4200,
-    "min_level": 81
+    "min_level": 81,
+    "unidentified_name": "an obsidian-dark long blade",
+    "lore": "The obsidian darkness of adamantine longswords is legendary. They do not merely cut — they consume. Scholars theorize that adamantine has properties aligned with the void between stars, giving it an almost supernatural ability to find weaknesses in armor and magical defenses.",
+    "quiz_tier": 5
   },
   "iron_dagger": {
     "name": "iron dagger",
@@ -470,7 +500,10 @@
     },
     "containerLootTier": "common",
     "value": 30,
-    "min_level": 1
+    "min_level": 1,
+    "unidentified_name": "a rough-edged knife",
+    "lore": "The iron dagger is the backup weapon of backup weapons — cheap, easy to conceal, and fast. Most adventurers carry at least one. Their small size means they can reach places larger weapons cannot, penetrating gaps in armor that would turn a sword.",
+    "quiz_tier": 1
   },
   "steel_dagger": {
     "name": "steel dagger",
@@ -513,7 +546,10 @@
     },
     "containerLootTier": "uncommon",
     "value": 90,
-    "min_level": 21
+    "min_level": 21,
+    "unidentified_name": "a narrow stiletto",
+    "lore": "A well-made steel dagger is a precision instrument for close work. The narrow blade can slip between scale plates, pierce chain links, or find the gap beneath a helmet. Assassins prize the steel dagger for its balance of durability and discretion.",
+    "quiz_tier": 2
   },
   "hardened_gold_dagger": {
     "name": "hardened gold dagger",
@@ -556,7 +592,10 @@
     },
     "containerLootTier": "rare",
     "value": 240,
-    "min_level": 41
+    "min_level": 41,
+    "unidentified_name": "a gleaming narrow blade",
+    "lore": "A hardened gold dagger is a rarity — the alloy is expensive, and most smiths consider daggers too small to justify the cost. Those that exist are typically special commissions: assassination tools or dueling pieces where appearance matters as much as function.",
+    "quiz_tier": 3
   },
   "diamond_dagger": {
     "name": "diamond dagger",
@@ -599,7 +638,10 @@
     },
     "containerLootTier": "very_rare",
     "value": 600,
-    "min_level": 61
+    "min_level": 61,
+    "unidentified_name": "a crystalline dirk",
+    "lore": "Diamond daggers are made by artificially growing the blade around a microscopic structural crystal. The result is a blade of terrifying sharpness that can pierce materials that would blunt steel. They are also nearly impossible to detect with magical means — diamond is largely transparent to divination.",
+    "quiz_tier": 4
   },
   "adamantine_dagger": {
     "name": "adamantine dagger",
@@ -642,7 +684,12 @@
     },
     "containerLootTier": "legendary",
     "value": 1800,
-    "min_level": 81
+    "min_level": 81,
+    "unidentified_name": "a jet-dark needle blade",
+    "lore": "An adamantine dagger is a fearsome thing to face in darkness. The blade absorbs ambient light, making it nearly invisible. It was from such a dagger that the legend of the 'shadow blade' originated — warriors who carried them appeared to strike with darkness itself.",
+    "set_id": "shadow_walker",
+    "set_name": "The Shadow Walker's Set",
+    "quiz_tier": 5
   },
   "iron_axe": {
     "name": "iron axe",
@@ -684,7 +731,10 @@
     },
     "containerLootTier": "common",
     "value": 55,
-    "min_level": 1
+    "min_level": 1,
+    "unidentified_name": "a pitted single-bit axe",
+    "lore": "The iron war axe is a practical weapon for practical people. It needs no precision — the weight and edge of the head do the work. Its single-bitted design allows the smith to concentrate the metal where it counts, producing a weapon of significant force.",
+    "quiz_tier": 1
   },
   "iron_greataxe": {
     "name": "iron greataxe",
@@ -726,7 +776,10 @@
     },
     "containerLootTier": "common",
     "value": 80,
-    "min_level": 1
+    "min_level": 1,
+    "unidentified_name": "a heavy double-bit axe",
+    "lore": "The iron greataxe requires both hands and significant strength, but delivers blows capable of cleaving through light armor. It is the weapon of the unsubtle — there is no technique to speak of, only application of force, but applied correctly, force is enough.",
+    "quiz_tier": 1
   },
   "steel_axe": {
     "name": "steel axe",
@@ -768,7 +821,10 @@
     },
     "containerLootTier": "uncommon",
     "value": 165,
-    "min_level": 21
+    "min_level": 21,
+    "unidentified_name": "a smooth-helved war axe",
+    "lore": "A steel war axe has the reliability of iron with improved edge retention. The blade can be sharpened to a finer edge, improving its cutting depth significantly. Woodcutters sometimes mistake war axes for tools — an error they do not make twice.",
+    "quiz_tier": 2
   },
   "steel_greataxe": {
     "name": "steel greataxe",
@@ -810,7 +866,10 @@
     },
     "containerLootTier": "uncommon",
     "value": 240,
-    "min_level": 21
+    "min_level": 21,
+    "unidentified_name": "a balanced greataxe",
+    "lore": "The steel greataxe is balanced differently from its iron cousin — the longer handle and heavier head are carefully weighted to make the weapon feel lighter than it is. Experienced users generate tremendous momentum with relatively little effort.",
+    "quiz_tier": 2
   },
   "hardened_gold_axe": {
     "name": "hardened gold axe",
@@ -852,7 +911,10 @@
     },
     "containerLootTier": "rare",
     "value": 440,
-    "min_level": 41
+    "min_level": 41,
+    "unidentified_name": "a gleaming single-bit axe",
+    "lore": "A hardened gold war axe glows with warm light in dark places, a property of the alchemical alloy. Dungeon explorers find this either useful or dangerous depending on whether they prefer to see or be unseen.",
+    "quiz_tier": 3
   },
   "hardened_gold_greataxe": {
     "name": "hardened gold greataxe",
@@ -894,7 +956,10 @@
     },
     "containerLootTier": "rare",
     "value": 640,
-    "min_level": 41
+    "min_level": 41,
+    "unidentified_name": "a gleaming double-bit axe",
+    "lore": "The hardened gold greataxe is a statement of power, financial and otherwise. Its dense head concentrates force into the cutting edge with greater efficiency than iron or steel. Axe-fighters who can afford gold alloy rarely go back.",
+    "quiz_tier": 3
   },
   "diamond_axe": {
     "name": "diamond axe",
@@ -936,7 +1001,10 @@
     },
     "containerLootTier": "very_rare",
     "value": 1100,
-    "min_level": 61
+    "min_level": 61,
+    "unidentified_name": "a crystalline axe head",
+    "lore": "Diamond axes grow along crystalline fracture lines, giving their edges a microscopic serration invisible to the naked eye. This gives them exceptional bite in any material, including stone and magical constructs.",
+    "quiz_tier": 4
   },
   "diamond_greataxe": {
     "name": "diamond greataxe",
@@ -978,7 +1046,10 @@
     },
     "containerLootTier": "very_rare",
     "value": 1600,
-    "min_level": 61
+    "min_level": 61,
+    "unidentified_name": "a massive crystalline axe",
+    "lore": "A diamond greataxe is a weapon of tremendous destructive potential. The self-sharpening nature of diamond crystal means this weapon never dulls, regardless of what it strikes. Museum curators who have examined recovered specimens cannot find a single flaw in the edge.",
+    "quiz_tier": 4
   },
   "adamantine_axe": {
     "name": "adamantine axe",
@@ -1020,7 +1091,10 @@
     },
     "containerLootTier": "legendary",
     "value": 3300,
-    "min_level": 81
+    "min_level": 81,
+    "unidentified_name": "a dark ore single-bit axe",
+    "lore": "Adamantine holds an edge that resists all known means of dulling. An adamantine war axe used for a decade in constant combat will be as sharp as the day it was forged. The dark metal also resonates oddly with magic — enchantments applied to it are amplified.",
+    "quiz_tier": 5
   },
   "adamantine_greataxe": {
     "name": "adamantine greataxe",
@@ -1062,7 +1136,10 @@
     },
     "containerLootTier": "legendary",
     "value": 4800,
-    "min_level": 81
+    "min_level": 81,
+    "unidentified_name": "a dark ore greataxe",
+    "lore": "The adamantine greataxe is a weapon that dungeons are built to stop. Its weight is extraordinary, requiring prodigious strength, but its ability to cleave through magical and physical barriers alike makes it the preferred instrument for demolishing doors, walls, and the creatures behind them.",
+    "quiz_tier": 5
   },
   "wood_club": {
     "name": "wood club",
@@ -1103,7 +1180,10 @@
     },
     "containerLootTier": "common",
     "value": 40,
-    "min_level": 1
+    "min_level": 1,
+    "unidentified_name": "a rough wooden bludgeon",
+    "lore": "The humble wooden club has defended lives since before metallurgy. There is something philosophically satisfying about a weapon so ancient and so immediate. Its effectiveness is primitive and unsubtle, which makes it no less effective.",
+    "quiz_tier": 1
   },
   "wood_hammer": {
     "name": "wood hammer",
@@ -1144,7 +1224,10 @@
     },
     "containerLootTier": "common",
     "value": 45,
-    "min_level": 1
+    "min_level": 1,
+    "unidentified_name": "a crude wooden mallet",
+    "lore": "A wooden hammer transmits force differently from a metal one — the grain absorbs some energy, then releases it in a slightly delayed pulse that can crack bone without necessarily breaking skin. Some fighters find this effect particularly useful against armored opponents.",
+    "quiz_tier": 1
   },
   "hardwood_club": {
     "name": "hardwood club",
@@ -1185,7 +1268,10 @@
     },
     "containerLootTier": "uncommon",
     "value": 120,
-    "min_level": 21
+    "min_level": 21,
+    "unidentified_name": "a dense dark-grained club",
+    "lore": "Dense hardwood clubs cut from the heartwood of iron-oak trees are nearly as heavy as iron while remaining organic. They flex slightly on impact, adding a whip-snap to blows that catches opponents off-guard.",
+    "quiz_tier": 2
   },
   "hardwood_hammer": {
     "name": "hardwood hammer",
@@ -1226,7 +1312,10 @@
     },
     "containerLootTier": "uncommon",
     "value": 135,
-    "min_level": 21
+    "min_level": 21,
+    "unidentified_name": "a dense dark-grained hammer",
+    "lore": "The iron-oak hardwood hammer was the weapon of choice for dwarven forge-workers before they adopted metal tools. The dense grain transmits vibrations in unusual ways — strikes feel dull but the force penetrates shields with remarkable efficiency.",
+    "quiz_tier": 2
   },
   "ironwood_club": {
     "name": "ironwood club",
@@ -1267,7 +1356,10 @@
     },
     "containerLootTier": "rare",
     "value": 320,
-    "min_level": 41
+    "min_level": 41,
+    "unidentified_name": "an iron-banded cudgel",
+    "lore": "Ironwood clubs are reinforced at striking surfaces with iron bands, converting the organic impact of wood into something approaching a metal bludgeon. The hybrid nature makes them resist the rust and enchantment-stripping properties of some dungeon environments.",
+    "quiz_tier": 3
   },
   "ironwood_hammer": {
     "name": "ironwood hammer",
@@ -1308,7 +1400,10 @@
     },
     "containerLootTier": "rare",
     "value": 360,
-    "min_level": 41
+    "min_level": 41,
+    "unidentified_name": "an iron-banded maul",
+    "lore": "The iron-banded ironwood maul combines the best properties of both materials. The wooden haft absorbs hand-shock on impact; the iron cap focuses force on a small point. Smiths and warriors alike respect its thoughtful engineering.",
+    "quiz_tier": 3
   },
   "diamond_club": {
     "name": "diamond club",
@@ -1349,7 +1444,10 @@
     },
     "containerLootTier": "very_rare",
     "value": 800,
-    "min_level": 61
+    "min_level": 61,
+    "unidentified_name": "a crystalline bludgeon",
+    "lore": "A crystalline bludgeon of diamond-lattice construction transmits force with almost no energy loss. The material does not compress — every joule of swing energy reaches the target. This makes diamond clubs disproportionately damaging for their apparent weight.",
+    "quiz_tier": 4
   },
   "diamond_hammer": {
     "name": "diamond hammer",
@@ -1390,7 +1488,10 @@
     },
     "containerLootTier": "very_rare",
     "value": 900,
-    "min_level": 61
+    "min_level": 61,
+    "unidentified_name": "a crystalline warhammer",
+    "lore": "Diamond warhammers are forged by growing crystal around a weighted core. They can shatter stone, crack enchanted materials, and stun targets through heavy armor. Several dungeon bosses have met their end from the stunning blows of a diamond warhammer.",
+    "quiz_tier": 4
   },
   "dragonbone_club": {
     "name": "dragonbone club",
@@ -1431,7 +1532,10 @@
     },
     "containerLootTier": "legendary",
     "value": 2400,
-    "min_level": 81
+    "min_level": 81,
+    "unidentified_name": "a pale ivory bludgeon",
+    "lore": "Dragonbone clubs are carved from the arm-bones of dragons — nearly as strong as metal, lighter, and warm to the touch. They retain a trace of the dragon's elemental nature; those made from fire dragon bones occasionally spark on heavy impact.",
+    "quiz_tier": 5
   },
   "dragonbone_hammer": {
     "name": "dragonbone hammer",
@@ -1472,7 +1576,10 @@
     },
     "containerLootTier": "legendary",
     "value": 2700,
-    "min_level": 81
+    "min_level": 81,
+    "unidentified_name": "a pale ivory warhammer",
+    "lore": "A dragonbone warhammer carries the dragon's weight in every sense. The density of dragon bone, combined with the immense striking surface of the hammer head, creates a weapon capable of physically stunning creatures far larger than its wielder.",
+    "quiz_tier": 5
   },
   "wood_staff": {
     "name": "wood staff",
@@ -1514,7 +1621,10 @@
     },
     "containerLootTier": "common",
     "value": 60,
-    "min_level": 1
+    "min_level": 1,
+    "unidentified_name": "a smooth wooden staff",
+    "lore": "The wooden staff is the first weapon of scholars and the last weapon of the old. Its length compensates for reach, its structure doubles as walking support, and its material accepts magical inscriptions readily. A wizard's staff is never merely a staff.",
+    "quiz_tier": 1
   },
   "hardwood_staff": {
     "name": "hardwood staff",
@@ -1556,7 +1666,10 @@
     },
     "containerLootTier": "uncommon",
     "value": 180,
-    "min_level": 21
+    "min_level": 21,
+    "unidentified_name": "a dark-grained quarterstaff",
+    "lore": "The dark-grained hardwood quarterstaff is heavier and more rigid than its plain-wood cousin, turning it from a walking aid into a genuine fighting weapon. Temple guards throughout history have preferred staves to swords for their versatility and the unmistakable authority they project.",
+    "quiz_tier": 2
   },
   "ironwood_staff": {
     "name": "ironwood staff",
@@ -1598,7 +1711,10 @@
     },
     "containerLootTier": "rare",
     "value": 480,
-    "min_level": 41
+    "min_level": 41,
+    "unidentified_name": "an iron-shod staff",
+    "lore": "An iron-shod staff bridges the gap between weapon and tool. The iron ends can be used as hooks, probes, or striking points, while the staff's length allows its user to check for traps before committing weight. It is the explorer's weapon.",
+    "quiz_tier": 3
   },
   "diamond_staff": {
     "name": "diamond staff",
@@ -1640,7 +1756,12 @@
     },
     "containerLootTier": "very_rare",
     "value": 1200,
-    "min_level": 61
+    "min_level": 61,
+    "unidentified_name": "a crystalline staff of inquiry",
+    "lore": "The Diamond Staff of Inquiry is said to have been first carried by a philosopher who descended into the dungeon seeking ultimate truth. The crystalline shaft channels magical understanding, granting its bearer enhanced insight. It is the first piece of the Philosopher's Set — the other pieces are the Philosopher's Ring and the Philosopher's Amulet. When all three are carried together, the wielder can identify items by touch alone, requiring no quiz.",
+    "set_id": "philosophers",
+    "set_name": "The Philosopher's Set",
+    "quiz_tier": 4
   },
   "dragonbone_staff": {
     "name": "dragonbone staff",
@@ -1682,7 +1803,10 @@
     },
     "containerLootTier": "legendary",
     "value": 3600,
-    "min_level": 81
+    "min_level": 81,
+    "unidentified_name": "a pale ivory staff",
+    "lore": "A dragonbone staff carries the spiritual residue of its origin. Dragons are ancient creatures with accumulated wisdom, and their bones retain this quality after death. Scholars believe dragonbone staves enhance concentration in ways no other material can match.",
+    "quiz_tier": 5
   },
   "iron_spear": {
     "name": "iron spear",
@@ -1724,7 +1848,10 @@
     },
     "containerLootTier": "common",
     "value": 50,
-    "min_level": 1
+    "min_level": 1,
+    "unidentified_name": "a rough-shafted spear",
+    "lore": "The iron spear is humanity's oldest dungeon weapon. Its reach keeps enemies at distance, and its point requires less precision than a sword edge. Iron spears break more often than steel, but iron is abundant and spear-making requires no great craft.",
+    "quiz_tier": 1
   },
   "steel_spear": {
     "name": "steel spear",
@@ -1766,7 +1893,10 @@
     },
     "containerLootTier": "uncommon",
     "value": 150,
-    "min_level": 21
+    "min_level": 21,
+    "unidentified_name": "a balanced spear",
+    "lore": "A balanced steel spear is a precision instrument when wielded by a trained user. The point penetrates where edges cannot, and the shaft can be used to parry or sweep. Spear-fighters can hold corridors against multiple opponents — the dungeon's geography rewards their reach.",
+    "quiz_tier": 2
   },
   "steel_glaive": {
     "name": "steel glaive",
@@ -1809,7 +1939,10 @@
     },
     "containerLootTier": "uncommon",
     "value": 180,
-    "min_level": 21
+    "min_level": 21,
+    "unidentified_name": "a curved pole-blade",
+    "lore": "The glaive's curved blade at the end of a long pole allows for sweeping cuts as well as thrusting attacks. It requires more training than a spear and rewards the investment — a skilled glaive-user can attack in arcs that close the space between themselves and enemies.",
+    "quiz_tier": 2
   },
   "hardened_gold_glaive": {
     "name": "hardened gold glaive",
@@ -1852,7 +1985,10 @@
     },
     "containerLootTier": "rare",
     "value": 480,
-    "min_level": 41
+    "min_level": 41,
+    "unidentified_name": "a gleaming pole-blade",
+    "lore": "A hardened gold glaive glows faintly in darkness, a consequence of the alchemical alloy. This is both advantage and disadvantage — enemies can see it coming, but so can allies in urgent situations.",
+    "quiz_tier": 3
   },
   "hardened_gold_halberd": {
     "name": "hardened gold halberd",
@@ -1895,7 +2031,10 @@
     },
     "containerLootTier": "rare",
     "value": 600,
-    "min_level": 41
+    "min_level": 41,
+    "unidentified_name": "a gleaming halberd",
+    "lore": "The halberd combines axe, spear, and hook into a single weapon — versatile, intimidating, and effective against mounted and armored opponents. A hardened gold halberd adds the enchantment-readiness of the alloy to this already formidable package.",
+    "quiz_tier": 3
   },
   "diamond_halberd": {
     "name": "diamond halberd",
@@ -1938,7 +2077,10 @@
     },
     "containerLootTier": "very_rare",
     "value": 1500,
-    "min_level": 61
+    "min_level": 61,
+    "unidentified_name": "a crystalline halberd",
+    "lore": "A diamond halberd's axe-blade grows along a crystalline structure that gives it a microscopically serrated edge invisible to the naked eye. This makes it exceptional against armor — the edge finds cracks and gaps that a smooth blade would slide over.",
+    "quiz_tier": 4
   },
   "adamantine_halberd": {
     "name": "adamantine halberd",
@@ -1981,7 +2123,10 @@
     },
     "containerLootTier": "legendary",
     "value": 4500,
-    "min_level": 81
+    "min_level": 81,
+    "unidentified_name": "a dark ore halberd",
+    "lore": "An adamantine halberd is a weapon of war, not adventure. Its weight demands dedication to wield, but its ability to crack magical defenses and pierce any known armor makes it the choice of dungeon raiders who expect to face the hardest targets.",
+    "quiz_tier": 5
   },
   "adamantine_glaive": {
     "name": "adamantine glaive",
@@ -2024,7 +2169,10 @@
     },
     "containerLootTier": "legendary",
     "value": 4200,
-    "min_level": 81
+    "min_level": 81,
+    "unidentified_name": "a dark ore glaive",
+    "lore": "The dark ore glaive sheds ambient light rather than reflecting it — a disconcerting visual effect that unnerves opponents. Its edge is self-maintaining; the adamantine structure realigns on a molecular level after each impact, keeping the blade perpetually sharp.",
+    "quiz_tier": 5
   },
   "wood_shortbow": {
     "name": "wood shortbow",
@@ -2066,7 +2214,10 @@
     },
     "containerLootTier": "common",
     "value": 40,
-    "min_level": 1
+    "min_level": 1,
+    "unidentified_name": "a simple short bow",
+    "lore": "The simple short bow is the everyman's ranged weapon. Easily made, easily repaired, and capable of putting an arrow through a monster at forty feet — all the range most dungeon encounters require.",
+    "quiz_tier": 1
   },
   "wood_longbow": {
     "name": "wood longbow",
@@ -2108,7 +2259,10 @@
     },
     "containerLootTier": "common",
     "value": 50,
-    "min_level": 1
+    "min_level": 1,
+    "unidentified_name": "a simple long bow",
+    "lore": "A long bow's draw requires greater strength than a short bow, but delivers proportionally greater force at distance. Skilled long-bow archers can launch arrows that punch through light armor at range, and at close quarters the long bow is also an effective improvised club.",
+    "quiz_tier": 1
   },
   "hardwood_shortbow": {
     "name": "hardwood shortbow",
@@ -2150,7 +2304,10 @@
     },
     "containerLootTier": "uncommon",
     "value": 120,
-    "min_level": 21
+    "min_level": 21,
+    "unidentified_name": "a dark-grained short bow",
+    "lore": "A dark-grained short bow holds its shape longer than plain wood, resisting the warping effects of dungeon humidity. Its draw weight is slightly higher, producing better arrow penetration than comparable lighter bows.",
+    "quiz_tier": 2
   },
   "hardwood_longbow": {
     "name": "hardwood longbow",
@@ -2192,7 +2349,10 @@
     },
     "containerLootTier": "uncommon",
     "value": 150,
-    "min_level": 21
+    "min_level": 21,
+    "unidentified_name": "a dark-grained long bow",
+    "lore": "Dense wood long bows are the choice of dungeon archers who expect extended use in varying conditions. The denser grain holds string tension more consistently, producing better accuracy over time.",
+    "quiz_tier": 2
   },
   "ironwood_shortbow": {
     "name": "ironwood shortbow",
@@ -2234,7 +2394,10 @@
     },
     "containerLootTier": "rare",
     "value": 320,
-    "min_level": 41
+    "min_level": 41,
+    "unidentified_name": "an iron-tipped short bow",
+    "lore": "The iron-reinforced short bow has metal tips at the limb ends to prevent stress fractures. This seemingly small improvement dramatically extends the bow's lifespan under hard use — an important consideration for explorers who can't easily replace equipment.",
+    "quiz_tier": 3
   },
   "ironwood_longbow": {
     "name": "ironwood longbow",
@@ -2276,7 +2439,10 @@
     },
     "containerLootTier": "rare",
     "value": 400,
-    "min_level": 41
+    "min_level": 41,
+    "unidentified_name": "an iron-reinforced long bow",
+    "lore": "Iron-reinforced long bows produce extraordinary arrow velocity for their draw weight. The metal tips act as counterweights, changing the bow's flex dynamics in ways that experienced archers learn to exploit for longer range and better precision.",
+    "quiz_tier": 3
   },
   "diamond_shortbow": {
     "name": "diamond shortbow",
@@ -2318,7 +2484,10 @@
     },
     "containerLootTier": "very_rare",
     "value": 900,
-    "min_level": 61
+    "min_level": 61,
+    "unidentified_name": "a crystalline short bow",
+    "lore": "A crystalline short bow is an engineering marvel — the crystal lattice is flexible along one axis and rigid along another, allowing it to act as a perfect spring. Every joule of draw energy transfers cleanly to the arrow, with no vibration loss in the limbs.",
+    "quiz_tier": 4
   },
   "diamond_longbow": {
     "name": "diamond longbow",
@@ -2360,7 +2529,10 @@
     },
     "containerLootTier": "very_rare",
     "value": 1100,
-    "min_level": 61
+    "min_level": 61,
+    "unidentified_name": "a crystalline long bow",
+    "lore": "A crystalline long bow can produce arrow velocities approaching the theoretical maximum for unpowered projectile weapons. The arrows whistle audibly in flight — a distinctive sound that some dungeon monsters have learned to fear.",
+    "quiz_tier": 4
   },
   "dragonbone_longbow": {
     "name": "dragonbone longbow",
@@ -2402,7 +2574,10 @@
     },
     "containerLootTier": "legendary",
     "value": 3600,
-    "min_level": 81
+    "min_level": 81,
+    "unidentified_name": "a pale ivory war bow",
+    "lore": "A dragonbone war bow is reserved for elite archers — its draw weight exceeds what most humans can sustain for more than a few shots, but the arrows it launches strike with force approaching a crossbow. It is said to have been the weapon of choice of the legendary dragon-hunter Mira the Accurate.",
+    "quiz_tier": 5
   },
   "iron_crossbow": {
     "name": "iron crossbow",
@@ -2444,7 +2619,10 @@
     },
     "containerLootTier": "common",
     "value": 50,
-    "min_level": 1
+    "min_level": 1,
+    "unidentified_name": "a crude iron-framed crossbow",
+    "lore": "The iron-framed crossbow is the entry point for projectile weapons — simple to use, requiring no archery training, and capable of significant damage at range. Its slow reload time is its primary weakness in fast-moving dungeon encounters.",
+    "quiz_tier": 1
   },
   "steel_crossbow": {
     "name": "steel crossbow",
@@ -2486,7 +2664,10 @@
     },
     "containerLootTier": "uncommon",
     "value": 150,
-    "min_level": 21
+    "min_level": 21,
+    "unidentified_name": "a polished steel crossbow",
+    "lore": "A steel crossbow is a significant upgrade from iron — more durable, with a smoother action that reduces reload time. The precision of its parts allows for a heavier prod, producing greater arrow velocity.",
+    "quiz_tier": 2
   },
   "hardened_gold_crossbow": {
     "name": "hardened gold crossbow",
@@ -2528,7 +2709,10 @@
     },
     "containerLootTier": "rare",
     "value": 400,
-    "min_level": 41
+    "min_level": 41,
+    "unidentified_name": "a gleaming crossbow",
+    "lore": "A hardened gold crossbow incorporates the alchemical alloy's enchantment-affinity into its mechanism. Bolts fired from it carry magical charge slightly more efficiently than from standard crossbows, amplifying any enchantments on the ammunition.",
+    "quiz_tier": 3
   },
   "diamond_crossbow": {
     "name": "diamond crossbow",
@@ -2570,7 +2754,10 @@
     },
     "containerLootTier": "very_rare",
     "value": 1100,
-    "min_level": 61
+    "min_level": 61,
+    "unidentified_name": "a crystalline crossbow",
+    "lore": "The mechanism of a diamond crossbow is a masterpiece of magical engineering — crystalline gears and cams that self-align after each shot, maintaining consistent draw force without adjustment. The bolts it fires can crack stone.",
+    "quiz_tier": 4
   },
   "adamantine_crossbow": {
     "name": "adamantine crossbow",
@@ -2612,6 +2799,9 @@
     },
     "containerLootTier": "legendary",
     "value": 3600,
-    "min_level": 81
+    "min_level": 81,
+    "unidentified_name": "a dark ore crossbow",
+    "lore": "An adamantine crossbow fires its bolts with supernatural force. The dark metal mechanism stores more energy than any mundane material could, then releases it in a single explosive motion. Bolts from this weapon can punch through armor that would stop a ballistae bolt.",
+    "quiz_tier": 5
   }
 }

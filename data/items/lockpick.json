@@ -8,7 +8,9 @@
     "max_durability": 5,
     "durability": 5,
     "durability_loss_success": 1,
-    "durability_loss_failure": 2
+    "durability_loss_failure": 2,
+    "unidentified_name": "a slender pick",
+    "lore": "A finely tapered length of hardened wire, bent at precise angles by someone who understood locks as a language. Thieves' guilds the world over guard the secret of their manufacture jealously, for a good pick is worth more than the gold it might liberate."
   },
   "master_lockpick": {
     "name": "master lockpick",
@@ -19,6 +21,8 @@
     "max_durability": 8,
     "durability": 8,
     "durability_loss_success": 0,
-    "durability_loss_failure": 1
+    "durability_loss_failure": 1,
+    "unidentified_name": "a slender pick",
+    "lore": "Crafted from a single strand of spell-hardened gold, this exceptional tool is said to whisper the correct angle to its wielder's fingertips. The master picksmith who forged it reportedly never failed a lock in forty years of work."
   }
 }

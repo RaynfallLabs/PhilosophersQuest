@@ -9,7 +9,9 @@
     "hp_restore": 0,
     "bonus_type": "none",
     "bonus_amount": 0,
-    "floor_spawn_weight": {"1-100": 80}
+    "floor_spawn_weight": {"1-100": 80},
+    "unidentified_name": "bread ration",
+    "lore": "A dense loaf of twice-baked trail bread, hard enough to crack a tooth but sustaining enough to keep a dungeon delver moving for hours. Adventurers claim the dusty flavor grows on you — they are lying."
   },
   "dried_meat": {
     "name": "dried meat",
@@ -21,7 +23,9 @@
     "hp_restore": 0,
     "bonus_type": "none",
     "bonus_amount": 0,
-    "floor_spawn_weight": {"1-100": 70}
+    "floor_spawn_weight": {"1-100": 70},
+    "unidentified_name": "dried meat",
+    "lore": "Salt-cured strips of some unidentified creature, wound tight and wrapped in waxed cloth. The jerky is chewy and intensely flavored — not pleasant, but undeniably filling and easy to carry."
   },
   "hard_cheese": {
     "name": "hard cheese",
@@ -33,7 +37,9 @@
     "hp_restore": 0,
     "bonus_type": "none",
     "bonus_amount": 0,
-    "floor_spawn_weight": {"1-100": 65}
+    "floor_spawn_weight": {"1-100": 65},
+    "unidentified_name": "hard cheese",
+    "lore": "A wheel of cave-aged hard cheese, its rind thick and its interior dense as packed earth. Dungeon merchants prize it because it keeps indefinitely in cool passages and provides solid sustenance without the mess of liquids."
   },
   "wild_mushroom": {
     "name": "wild mushroom",
@@ -45,7 +51,9 @@
     "hp_restore": 0,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
-    "floor_spawn_weight": {"1-100": 50}
+    "floor_spawn_weight": {"1-100": 50},
+    "unidentified_name": "wild mushroom",
+    "lore": "A large cap of unknown subterranean mushroom, faintly luminescent at the gills. Consuming it restores some stamina and sometimes imparts a strange alchemical shift to the eater's physiology — scholars theorize the spores carry mutative properties."
   },
   "apple": {
     "name": "apple",
@@ -57,7 +65,9 @@
     "hp_restore": 2,
     "bonus_type": "none",
     "bonus_amount": 0,
-    "floor_spawn_weight": {"1-100": 60}
+    "floor_spawn_weight": {"1-100": 60},
+    "unidentified_name": "apple",
+    "lore": "A crisp, red apple — impossibly fresh considering the depth at which it was found. The flesh is cool and slightly sweet, and eating it leaves the body feeling subtly mended, as though the fruit itself knows what healing means."
   },
   "trail_rations": {
     "name": "trail rations",
@@ -69,7 +79,9 @@
     "hp_restore": 0,
     "bonus_type": "none",
     "bonus_amount": 0,
-    "floor_spawn_weight": {"1-100": 55}
+    "floor_spawn_weight": {"1-100": 55},
+    "unidentified_name": "trail rations",
+    "lore": "A substantial pack of mixed provisions — dried fruit, salted crackers, hard tack, and a small sealed jar of rendered fat. It's not glamorous but it's thorough, and experienced delvers always carry a week's worth."
   },
   "healing_herb": {
     "name": "healing herb",
@@ -81,7 +93,9 @@
     "hp_restore": 8,
     "bonus_type": "none",
     "bonus_amount": 0,
-    "floor_spawn_weight": {"1-100": 45}
+    "floor_spawn_weight": {"1-100": 45},
+    "unidentified_name": "healing herb",
+    "lore": "A bundle of bruised leaves that smell faintly of pine and citrus. When consumed, they release compounds that accelerate blood clotting and reduce inflammation — healers once grew these in monastery gardens, but wild specimens thrive in dungeon crevices."
   },
   "elvish_bread": {
     "name": "elvish bread",
@@ -93,7 +107,9 @@
     "hp_restore": 5,
     "bonus_type": "none",
     "bonus_amount": 0,
-    "floor_spawn_weight": {"1-9": 0, "10-100": 30}
+    "floor_spawn_weight": {"1-9": 0, "10-100": 30},
+    "unidentified_name": "elvish bread",
+    "lore": "Baked under starlight using grain that grows only in enchanted groves, this pale, dense loaf is infused with vitality that sustains the body long after ordinary food would be exhausted. A single piece keeps travelers going for days in the world above — down here, its power is more modest but still remarkable."
   },
   "hearty_stew": {
     "name": "hearty stew",
@@ -105,7 +121,9 @@
     "hp_restore": 10,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "floor_spawn_weight": {"1-4": 0, "5-100": 25}
+    "floor_spawn_weight": {"1-4": 0, "5-100": 25},
+    "unidentified_name": "hearty stew",
+    "lore": "A thick, rich stew of root vegetables and tender meat, still warm in its sealed clay pot. The recipe, passed down through generations of dungeon tavern-keepers, has been refined to maximize the fighting edge it gives to anyone who eats it — warriors speak of it almost reverently."
   },
   "philosopher_tea": {
     "name": "philosopher's tea",
@@ -118,6 +136,8 @@
     "bonus_type": "stat",
     "bonus_stat": "WIS",
     "bonus_amount": 1,
-    "floor_spawn_weight": {"1-14": 0, "15-100": 20}
+    "floor_spawn_weight": {"1-14": 0, "15-100": 20},
+    "unidentified_name": "philosopher's tea",
+    "lore": "Brewed from leaves found only near ancient ruins, this deep violet tea clears the mind and sharpens perception in ways ordinary stimulants cannot approach. Scholars who have tasted it describe a heightened awareness that makes quiz questions seem to answer themselves."
   }
 }

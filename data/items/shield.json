@@ -16,7 +16,9 @@
     "quiz_tier": 1,
     "damage_resistances": {},
     "can_be_cursed": false,
-    "enchant_bonus": 0
+    "enchant_bonus": 0,
+    "unidentified_name": "a battered round shield",
+    "lore": "A rough disc of layered oak planks bound with iron strips at the rim. Though unglamorous, its bulk has turned aside countless blows from claws and rusted blades alike — the scratches and gouges in its face speak of many such meetings."
   },
   "iron_shield": {
     "name": "iron shield",
@@ -35,7 +37,9 @@
     "quiz_tier": 2,
     "damage_resistances": {},
     "can_be_cursed": true,
-    "enchant_bonus": 0
+    "enchant_bonus": 0,
+    "unidentified_name": "a dented iron shield",
+    "lore": "Hammered iron beaten into a slightly domed profile for strength, with a riveted central boss for grip stability. Standard issue for militia and professional guards, its proven design has remained unchanged for three centuries."
   },
   "steel_shield": {
     "name": "steel shield",
@@ -56,7 +60,9 @@
       "slash": 0.95
     },
     "can_be_cursed": true,
-    "enchant_bonus": 0
+    "enchant_bonus": 0,
+    "unidentified_name": "a reinforced kite shield",
+    "lore": "Polished steel stretched over a shaped core, this kite shield is tempered to resist glancing blows. The slight flex in its face absorbs slash impacts before they can transfer fully to the wielder's arm."
   },
   "crystal_shield": {
     "name": "crystal shield",
@@ -77,7 +83,9 @@
       "magic": 0.85
     },
     "can_be_cursed": false,
-    "enchant_bonus": 0
+    "enchant_bonus": 0,
+    "unidentified_name": "a glassy translucent shield",
+    "lore": "Ground from a single slab of spell-resonant crystal, this shield is almost perfectly transparent. Its lattice structure disperses incoming magical energy harmlessly, making it prized by those who face arcane opponents — and beautiful enough to be displayed in noble halls when not in use."
   },
   "dragonscale_shield": {
     "name": "dragonscale shield",
@@ -98,7 +106,9 @@
       "fire": 0.5
     },
     "can_be_cursed": false,
-    "enchant_bonus": 0
+    "enchant_bonus": 0,
+    "unidentified_name": "an iridescent scale-faced shield",
+    "lore": "Built around overlapping scales from a fire dragon's underbelly — the toughest portion of an already near-indestructible hide. Fire washes over this shield like water off oil, and its iridescent surface shifts colors as though the dragon's spirit still lingers within."
   },
   "adamantine_shield": {
     "name": "adamantine shield",
@@ -119,6 +129,8 @@
       "blunt": 0.8
     },
     "can_be_cursed": true,
-    "enchant_bonus": 0
+    "enchant_bonus": 0,
+    "unidentified_name": "a jet-dark heavy shield",
+    "lore": "A massive tower shield of pure adamantine, its surface an almost organic dark green-black. The metal is supernaturally dense — blunt weapons simply bounce off as though striking a mountain, though the weight demands exceptional constitution from its bearer."
   }
 }

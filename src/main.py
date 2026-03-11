@@ -470,10 +470,15 @@ class Game:
         self.player.x, self.player.y = dungeon.rooms[0].center
         self.renderer                = Renderer(self.screen, VIEWPORT_W, VIEWPORT_H)
         self._refresh_fov()
+
+        # Give the player their Philosopher's Amulet (always starts identified)
+        self._give_starting_amulet()
+
         greeting = f"Welcome, {self.player_name}!"
         if self.secret_build:
             greeting += "  (Secret build active!)"
         self.add_message(greeting, 'success')
+        self.add_message("You carry the Philosopher's Amulet. Use [I] to identify items.", 'info')
         self.add_message("Find the Philosopher's Stone and escape!", 'info')
 
     def _change_level(self, new_level: int, enter_from_top: bool):
@@ -504,6 +509,19 @@ class Game:
             self.add_message(f"You ascend to level {new_level}.", 'info')
 
         self._refresh_fov()
+
+    def _give_starting_amulet(self):
+        """Give the player a Philosopher's Amulet and mark it identified."""
+        from items import load_items, Accessory
+        try:
+            accessories = load_items('accessory')
+            amulet = next((a for a in accessories if a.id == 'philosophers_amulet'), None)
+            if amulet:
+                amulet.identified = True
+                self.player.inventory.append(amulet)
+                self.player.known_item_ids.add('philosophers_amulet')
+        except Exception:
+            pass  # Silently skip if amulet data not yet present
 
     def _refresh_fov(self):
         self.visible = calculate_fov(
@@ -1954,16 +1972,21 @@ class Game:
             self.add_message("The dungeon layout floods your mind!", 'success')
 
         elif effect == 'identify':
-            # Auto-identify first unknown wand/scroll/accessory in inventory
+            # Auto-identify first unknown item in inventory
             unknown = next(
                 (i for i in self.player.inventory
-                 if hasattr(i, 'identified') and not i.identified),
+                 if hasattr(i, 'identified') and not i.identified
+                    and i.id not in self.player.known_item_ids),
                 None
             )
             if unknown:
                 unknown.identified = True
                 self.player.known_item_ids.add(unknown.id)
-                self.add_message(f"The {unknown.name} is revealed!", 'success')
+                self._propagate_identification(unknown.id)
+                self.add_message(f"The {unknown.unidentified_name} is revealed: {unknown.name}!", 'success')
+                if unknown.lore:
+                    self._lore_subject = unknown
+                    self.state = STATE_LORE
             else:
                 self.add_message("All your items are already identified.", 'info')
 
@@ -2005,9 +2028,22 @@ class Game:
     # ------------------------------------------------------------------
 
     def _open_identify_menu(self):
+        # Require the Philosopher's Amulet in inventory
+        has_amulet = any(
+            getattr(i, 'id', '') == 'philosophers_amulet'
+            for i in self.player.inventory
+        ) or any(
+            getattr(i, 'id', '') == 'philosophers_amulet'
+            for slot in self.player.accessory_slots if slot is not None
+            for i in [slot]
+        )
+        if not has_amulet:
+            self.add_message("You need the Philosopher's Amulet to identify items.", 'warning')
+            return
         self.identify_menu_items = [
             i for i in self.player.inventory
             if hasattr(i, 'identified') and not i.identified
+               and i.id not in self.player.known_item_ids
         ]
         if not self.identify_menu_items:
             self.add_message("All your items are already identified.", 'info')
@@ -2042,16 +2078,15 @@ class Game:
             if result.success:
                 item.identified = True
                 self.player.known_item_ids.add(item.id)
-                # Also identify all matching items in inventory and on ground
-                for inv_item in self.player.inventory:
-                    if inv_item.id == item.id:
-                        inv_item.identified = True
-                for ground_item in self.ground_items:
-                    if ground_item.id == item.id:
-                        ground_item.identified = True
+                # Propagate to ALL items: inventory, ground, and every stored level
+                self._propagate_identification(item.id)
                 self.add_message(
-                    f"The {display} is revealed: it is a {item.name}!", 'success'
+                    f"The {display} is revealed: {item.name}!", 'success'
                 )
+                # Show lore screen for the identified item
+                if item.lore:
+                    self._lore_subject = item
+                    self.state = STATE_LORE
             else:
                 self.add_message(
                     f"You ponder the {display} but gain no insight.", 'warning'
@@ -2068,6 +2103,22 @@ class Game:
             timer_modifier=self.player.get_quiz_timer_modifier(),
         )
 
+    def _propagate_identification(self, item_id: str):
+        """Mark every instance of item_id as identified across all game state."""
+        # Current inventory
+        for i in self.player.inventory:
+            if i.id == item_id and hasattr(i, 'identified'):
+                i.identified = True
+        # Current ground
+        for i in self.ground_items:
+            if i.id == item_id and hasattr(i, 'identified'):
+                i.identified = True
+        # Saved levels in level manager
+        for _lvl, (_dng, _mon, saved_items) in self.level_mgr._saved.items():
+            for i in saved_items:
+                if i.id == item_id and hasattr(i, 'identified'):
+                    i.identified = True
+
     # ------------------------------------------------------------------
     # Display name helper
     # ------------------------------------------------------------------
@@ -2075,8 +2126,11 @@ class Game:
     def _display_name(self, item) -> str:
         """Return item's true name if identified, else its unidentified name."""
         if hasattr(item, 'identified') and not item.identified:
-            if item.id not in self.player.known_item_ids:
-                return getattr(item, 'unidentified_name', item.name)
+            # Auto-identify if the player has already identified this type
+            if item.id in self.player.known_item_ids:
+                item.identified = True
+                return item.name
+            return getattr(item, 'unidentified_name', item.name)
         return item.name
 
     # ------------------------------------------------------------------
@@ -3125,7 +3179,8 @@ class Game:
                 (bx + 10, iy, bw - 20, 46), border_radius=6
             )
             dname = self._display_name(item)
-            type_label = type(item).__name__
+            type_label = item.item_class
+            tier_lbl = f"  tier {item.quiz_tier}" if hasattr(item, 'quiz_tier') else ""
             self.screen.blit(
                 self.font_md.render(f"[{i+1}]", True, (180, 130, 255)), (bx + 18, iy + 13)
             )
@@ -3133,7 +3188,8 @@ class Game:
                 self.font_md.render(dname, True, (220, 210, 240)), (bx + 70, iy + 13)
             )
             self.screen.blit(
-                self.font_sm.render(f"type: {type_label.lower()}", True, (140, 110, 180)),
+                self.font_sm.render(f"{type_label}{tier_lbl}  —  philosophy x3 correct",
+                                    True, (140, 110, 180)),
                 (bx + 70, iy + 34)
             )
 
@@ -3458,71 +3514,179 @@ class Game:
             self.state = STATE_PLAYER
 
     def _draw_lore_screen(self):
-        corpse = getattr(self, '_lore_subject', None)
-        if not corpse:
+        subject = getattr(self, '_lore_subject', None)
+        if not subject:
             return
+
+        from items import Corpse, Weapon, Armor, Shield, Accessory, Wand, Scroll
+        from items import Food, Ammo, Lockpick, Ingredient
+        is_corpse = isinstance(subject, Corpse)
+
         overlay = pygame.Surface((WINDOW_W, WINDOW_H), pygame.SRCALPHA)
         overlay.fill((0, 0, 0, 200))
         self.screen.blit(overlay, (0, 0))
 
-        bw, bh = 780, 480
+        bw, bh = 820, 540
         bx = (GAME_W - bw) // 2
         by = (WINDOW_H - bh) // 2
 
+        # Background panel
         pygame.draw.rect(self.screen, (8, 6, 20), (bx, by, bw, bh), border_radius=10)
-        pygame.draw.rect(self.screen, (160, 120, 40), (bx, by, bw, bh), 2, border_radius=10)
-        pygame.draw.rect(self.screen, (80, 60, 20), (bx+4, by+4, bw-8, bh-8), 1, border_radius=8)
+        if is_corpse:
+            border_col = (160, 120, 40)
+            inner_col  = (80, 60, 20)
+            title_col  = (255, 210, 60)
+            stat_col   = (200, 185, 140)
+            lore_col   = (210, 200, 170)
+        else:
+            border_col = (80, 120, 200)
+            inner_col  = (40, 60, 120)
+            title_col  = (160, 210, 255)
+            stat_col   = (180, 200, 230)
+            lore_col   = (200, 215, 240)
 
-        # Title
-        title = self.font_lg.render(
-            f"{corpse.monster_name.upper()} — BESTIARY ENTRY", True, (255, 210, 60)
-        )
-        self.screen.blit(title, (bx + (bw - title.get_width()) // 2, by + 14))
-        pygame.draw.line(self.screen, (120, 90, 30),
-                         (bx + 20, by + 50), (bx + bw - 20, by + 50))
+        pygame.draw.rect(self.screen, border_col, (bx, by, bw, bh), 2, border_radius=10)
+        pygame.draw.rect(self.screen, inner_col,  (bx+4, by+4, bw-8, bh-8), 1, border_radius=8)
 
-        mdef = corpse.monster_def
-        y = by + 60
+        y = by + 14
 
-        # Stat block
-        stats = [
-            f"HP: {mdef.get('hp', '?')}    THAC0: {mdef.get('thac0', '?')}    Speed: {mdef.get('speed', 1)}",
-        ]
-        res = mdef.get('resistances', [])
-        wks = mdef.get('weaknesses', [])
-        if res:
-            stats.append(f"Resistances: {', '.join(res)}")
-        if wks:
-            stats.append(f"Weaknesses:  {', '.join(wks)}")
+        if is_corpse:
+            # ── CORPSE / BESTIARY ENTRY ──────────────────────────────────
+            title = self.font_lg.render(
+                f"{subject.monster_name.upper()} — BESTIARY", True, title_col
+            )
+            self.screen.blit(title, (bx + (bw - title.get_width()) // 2, y))
+            y += 40
+            pygame.draw.line(self.screen, border_col, (bx+20, y), (bx+bw-20, y))
+            y += 12
 
-        atks = mdef.get('attacks', [])
-        for atk in atks:
-            line = f"Attack — {atk.get('name','?')}: {atk.get('damage','?')} {atk.get('type','physical')}"
-            eff = atk.get('effect')
-            if eff:
-                line += f"  [{eff} {int(atk.get('effect_chance',0)*100)}%]"
-            stats.append(line)
+            mdef = subject.monster_def
+            stat_lines = [
+                f"HP: {mdef.get('hp', '?')}    THAC0: {mdef.get('thac0', '?')}    Speed: {mdef.get('speed', 1)}",
+            ]
+            res = mdef.get('resistances', [])
+            wks = mdef.get('weaknesses', [])
+            if res:
+                stat_lines.append(f"Resists: {', '.join(res)}")
+            if wks:
+                stat_lines.append(f"Weak to: {', '.join(wks)}")
+            for atk in mdef.get('attacks', []):
+                line = f"  \u2022 {atk.get('name','?')}: {atk.get('damage','?')} ({atk.get('type','physical')})"
+                eff = atk.get('effect')
+                if eff:
+                    line += f"  \u2192 {eff} {int(atk.get('effect_chance',0)*100)}%"
+                stat_lines.append(line)
 
-        for line in stats:
-            surf = self.font_sm.render(line, True, (200, 185, 140))
+            lore_text = subject.lore or "No lore recorded."
+
+        else:
+            # ── ITEM IDENTIFICATION ENTRY ────────────────────────────────
+            item_class_label = subject.item_class.upper()
+            title = self.font_lg.render(
+                f"{subject.name.upper()} — {item_class_label}", True, title_col
+            )
+            self.screen.blit(title, (bx + (bw - title.get_width()) // 2, y))
+            y += 40
+            pygame.draw.line(self.screen, border_col, (bx+20, y), (bx+bw-20, y))
+            y += 12
+
+            stat_lines = []
+
+            # Set membership banner
+            if getattr(subject, 'set_id', ''):
+                set_label = getattr(subject, 'set_name', subject.set_id)
+                stat_lines.append(f"\u2605 Part of {set_label} \u2605")
+
+            if isinstance(subject, Weapon):
+                dmg_types = ', '.join(subject.damage_types) if subject.damage_types else 'physical'
+                stat_lines.append(f"Type: {subject.weapon_class}  |  Material: {subject.material}  |  Tier: {subject.tier}")
+                stat_lines.append(f"Base Damage: {subject.base_damage}  |  Damage Type: {dmg_types}")
+                if subject.two_handed:
+                    stat_lines.append("Two-handed  |  Reach: " + str(subject.reach))
+                else:
+                    stat_lines.append(f"One-handed  |  Reach: {subject.reach}")
+                if subject.stun_chance > 0:
+                    stat_lines.append(f"Stun Chance: {int(subject.stun_chance*100)}%")
+                if subject.requires_ammo:
+                    stat_lines.append(f"Requires Ammo: {subject.requires_ammo}")
+                mults = subject.chain_multipliers
+                if mults:
+                    mult_str = '  '.join(f"x{m:.1f}" for m in mults[:6])
+                    stat_lines.append(f"Chain Multipliers: {mult_str}")
+                stat_lines.append(f"Value: {subject.value} gold")
+
+            elif isinstance(subject, Armor):
+                stat_lines.append(f"Slot: {subject.slot}  |  Material: {subject.material}  |  Tier: {subject.tier}")
+                stat_lines.append(f"AC Bonus: -{subject.ac_bonus}  |  Enchant: +{subject.enchant_bonus}")
+                stat_lines.append(f"Equip Threshold: {subject.equip_threshold} correct answers")
+                if subject.damage_resistances:
+                    res_str = '  '.join(f"{k}: {int(v*100)}%" for k, v in subject.damage_resistances.items())
+                    stat_lines.append(f"Resistances: {res_str}")
+                if subject.can_be_cursed:
+                    stat_lines.append("WARNING: This item can be cursed.")
+
+            elif isinstance(subject, Shield):
+                stat_lines.append(f"Material: {subject.material}  |  Tier: {subject.tier}")
+                stat_lines.append(f"AC Bonus: -{subject.ac_bonus}  |  Enchant: +{subject.enchant_bonus}")
+                stat_lines.append(f"Equip Threshold: {subject.equip_threshold} correct answers")
+                if subject.damage_resistances:
+                    res_str = '  '.join(f"{k}: {int(v*100)}%" for k, v in subject.damage_resistances.items())
+                    stat_lines.append(f"Resistances: {res_str}")
+
+            elif isinstance(subject, Accessory):
+                stat_lines.append(f"Slot: {subject.slot}")
+                efx = subject.effects
+                if efx:
+                    eff_str = ', '.join(f"{k}={v}" for k, v in efx.items())
+                    stat_lines.append(f"Effects: {eff_str}")
+                stat_lines.append(f"Equip Threshold: {subject.equip_threshold} correct answers")
+
+            elif isinstance(subject, Wand):
+                stat_lines.append(f"Effect: {subject.effect}  |  Power: {subject.power}")
+                stat_lines.append(f"Charges: {subject.charges}/{subject.max_charges}")
+                stat_lines.append(f"Quiz Threshold: {subject.quiz_threshold} correct answers")
+
+            elif isinstance(subject, Scroll):
+                stat_lines.append(f"Effect: {subject.effect}  |  Power: {subject.power}")
+                stat_lines.append(f"Quiz Threshold: {subject.quiz_threshold} correct answers")
+
+            elif isinstance(subject, Food):
+                stat_lines.append(f"SP Restored: {subject.sp_restore}  |  HP Restored: {subject.hp_restore}")
+                if subject.bonus_type != 'none' and subject.bonus_amount:
+                    stat_lines.append(f"Bonus: {subject.bonus_type} {subject.bonus_stat or subject.bonus_effect} +{subject.bonus_amount}")
+
+            elif isinstance(subject, Ammo):
+                stat_lines.append(f"Ammo Type: {subject.ammo_type}  |  Tier: {subject.tier}")
+                stat_lines.append(f"Damage Bonus: +{subject.damage_bonus}  |  Count: {subject.count_min}-{subject.count_max}")
+
+            lore_text = subject.lore or "No further records found."
+
+        # Draw stat lines
+        for line in stat_lines:
+            surf = self.font_sm.render(line, True, stat_col)
             self.screen.blit(surf, (bx + 20, y))
-            y += 18
+            y += 20
 
-        pygame.draw.line(self.screen, (80, 60, 20),
-                         (bx + 20, y + 4), (bx + bw - 20, y + 4))
-        y += 14
+        y += 4
+        pygame.draw.line(self.screen, inner_col, (bx+20, y), (bx+bw-20, y))
+        y += 12
 
-        # Lore text (wrapped)
-        lore = corpse.lore or "No lore recorded."
-        lore_font = self.font_sm
-        lore_lines = self._wrap_text(lore, lore_font, bw - 40)
+        # Lore section header
+        lore_hdr = self.font_sm.render("— LORE —", True, border_col)
+        self.screen.blit(lore_hdr, (bx + (bw - lore_hdr.get_width()) // 2, y))
+        y += 22
+
+        # Lore text (wrapped, with remaining space)
+        lore_lines = self._wrap_text(lore_text, self.font_sm, bw - 44)
         for line in lore_lines:
-            surf = lore_font.render(line, True, (210, 200, 170))
-            self.screen.blit(surf, (bx + 20, y))
-            y += lore_font.get_height() + 3
+            if y + self.font_sm.get_height() > by + bh - 40:
+                break
+            surf = self.font_sm.render(line, True, lore_col)
+            self.screen.blit(surf, (bx + 22, y))
+            y += self.font_sm.get_height() + 3
 
-        hint = self.font_sm.render("[ ESC / ENTER / X ] to close", True, (80, 70, 40))
-        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, by + bh - 28))
+        hint = self.font_sm.render("[ ESC / ENTER / SPACE ] to close", True, (80, 80, 100))
+        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, by + bh - 26))
 
     def _draw_help_screen(self):
         overlay = pygame.Surface((WINDOW_W, WINDOW_H), pygame.SRCALPHA)
