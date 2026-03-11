@@ -9,7 +9,7 @@
     "hp_restore": 0,
     "bonus_type": "none",
     "bonus_amount": 0,
-    "floor_spawn_weight": {"1-100": 80},
+    "floor_spawn_weight": {"1-30": 80, "31-60": 40, "61-100": 15},
     "unidentified_name": "bread ration",
     "lore": "A dense loaf of twice-baked trail bread, hard enough to crack a tooth but sustaining enough to keep a dungeon delver moving for hours. Adventurers claim the dusty flavor grows on you — they are lying."
   },
@@ -23,7 +23,7 @@
     "hp_restore": 0,
     "bonus_type": "none",
     "bonus_amount": 0,
-    "floor_spawn_weight": {"1-100": 70},
+    "floor_spawn_weight": {"1-30": 70, "31-60": 35, "61-100": 12},
     "unidentified_name": "dried meat",
     "lore": "Salt-cured strips of some unidentified creature, wound tight and wrapped in waxed cloth. The jerky is chewy and intensely flavored — not pleasant, but undeniably filling and easy to carry."
   },
@@ -37,7 +37,7 @@
     "hp_restore": 0,
     "bonus_type": "none",
     "bonus_amount": 0,
-    "floor_spawn_weight": {"1-100": 65},
+    "floor_spawn_weight": {"1-30": 65, "31-60": 30, "61-100": 10},
     "unidentified_name": "hard cheese",
     "lore": "A wheel of cave-aged hard cheese, its rind thick and its interior dense as packed earth. Dungeon merchants prize it because it keeps indefinitely in cool passages and provides solid sustenance without the mess of liquids."
   },
@@ -51,7 +51,7 @@
     "hp_restore": 0,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
-    "floor_spawn_weight": {"1-100": 50},
+    "floor_spawn_weight": {"1-30": 50, "31-60": 40, "61-100": 25},
     "unidentified_name": "wild mushroom",
     "lore": "A large cap of unknown subterranean mushroom, faintly luminescent at the gills. Consuming it restores some stamina and sometimes imparts a strange alchemical shift to the eater's physiology — scholars theorize the spores carry mutative properties."
   },
@@ -65,7 +65,7 @@
     "hp_restore": 2,
     "bonus_type": "none",
     "bonus_amount": 0,
-    "floor_spawn_weight": {"1-100": 60},
+    "floor_spawn_weight": {"1-30": 60, "31-60": 28, "61-100": 8},
     "unidentified_name": "apple",
     "lore": "A crisp, red apple — impossibly fresh considering the depth at which it was found. The flesh is cool and slightly sweet, and eating it leaves the body feeling subtly mended, as though the fruit itself knows what healing means."
   },
@@ -79,7 +79,7 @@
     "hp_restore": 0,
     "bonus_type": "none",
     "bonus_amount": 0,
-    "floor_spawn_weight": {"1-100": 55},
+    "floor_spawn_weight": {"1-30": 55, "31-60": 32, "61-100": 12},
     "unidentified_name": "trail rations",
     "lore": "A substantial pack of mixed provisions — dried fruit, salted crackers, hard tack, and a small sealed jar of rendered fat. It's not glamorous but it's thorough, and experienced delvers always carry a week's worth."
   },
@@ -93,7 +93,7 @@
     "hp_restore": 8,
     "bonus_type": "none",
     "bonus_amount": 0,
-    "floor_spawn_weight": {"1-100": 45},
+    "floor_spawn_weight": {"1-30": 45, "31-60": 30, "61-100": 15},
     "unidentified_name": "healing herb",
     "lore": "A bundle of bruised leaves that smell faintly of pine and citrus. When consumed, they release compounds that accelerate blood clotting and reduce inflammation — healers once grew these in monastery gardens, but wild specimens thrive in dungeon crevices."
   },
@@ -124,6 +124,34 @@
     "floor_spawn_weight": {"1-4": 0, "5-100": 25},
     "unidentified_name": "hearty stew",
     "lore": "A thick, rich stew of root vegetables and tender meat, still warm in its sealed clay pot. The recipe, passed down through generations of dungeon tavern-keepers, has been refined to maximize the fighting edge it gives to anyone who eats it — warriors speak of it almost reverently."
+  },
+  "deep_fungi": {
+    "name": "deep fungi",
+    "symbol": "%",
+    "color": [120, 80, 180],
+    "weight": 0.4,
+    "min_level": 35,
+    "sp_restore": 70,
+    "hp_restore": 5,
+    "bonus_type": "random_stat",
+    "bonus_amount": 1,
+    "floor_spawn_weight": {"1-34": 0, "35-60": 25, "61-100": 35},
+    "unidentified_name": "deep fungi",
+    "lore": "A cluster of deep-dwelling mushrooms that grow only in the lowest passages where no light has ever reached. They absorb residual magical energy from the stone itself, concentrating it in their flesh. Eating them is intensely disorienting for a moment, then extraordinarily nourishing — the body adapts to the depth they came from."
+  },
+  "void_ration": {
+    "name": "void ration",
+    "symbol": "%",
+    "color": [80, 60, 120],
+    "weight": 0.5,
+    "min_level": 60,
+    "sp_restore": 90,
+    "hp_restore": 10,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 2,
+    "floor_spawn_weight": {"1-59": 0, "60-100": 20},
+    "unidentified_name": "void ration",
+    "lore": "A dense brick of compressed sustenance infused with void essence, found only in the abyssal depths where conventional food would rot instantly. Consuming it fills the body with a cold, focused energy that sharpens combat reflexes to an inhuman degree. Those who eat it report that hunger becomes an abstract concept for hours afterward."
   },
   "philosopher_tea": {
     "name": "philosopher's tea",

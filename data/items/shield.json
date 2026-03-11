@@ -20,6 +20,27 @@
     "unidentified_name": "a battered round shield",
     "lore": "A rough disc of layered oak planks bound with iron strips at the rim. Though unglamorous, its bulk has turned aside countless blows from claws and rusted blades alike — the scratches and gouges in its face speak of many such meetings."
   },
+  "hide_shield": {
+    "name": "hide shield",
+    "symbol": ")",
+    "color": [
+      140,
+      100,
+      70
+    ],
+    "weight": 2.5,
+    "min_level": 11,
+    "tier": 1,
+    "material": "hide",
+    "ac_bonus": 1,
+    "equip_threshold": 2,
+    "quiz_tier": 1,
+    "damage_resistances": {},
+    "can_be_cursed": false,
+    "enchant_bonus": 0,
+    "unidentified_name": "a cured beast-hide buckler",
+    "lore": "Layers of thick beast-hide, cured in tallow and stretched over a wicker frame. More resistant to weathering than wood and marginally tougher against animal claws, the hide shield is a common upgrade for explorers who haven't yet found metal."
+  },
   "iron_shield": {
     "name": "iron shield",
     "symbol": ")",
@@ -40,6 +61,29 @@
     "enchant_bonus": 0,
     "unidentified_name": "a dented iron shield",
     "lore": "Hammered iron beaten into a slightly domed profile for strength, with a riveted central boss for grip stability. Standard issue for militia and professional guards, its proven design has remained unchanged for three centuries."
+  },
+  "bronze_shield": {
+    "name": "bronze shield",
+    "symbol": ")",
+    "color": [
+      185,
+      140,
+      70
+    ],
+    "weight": 4.5,
+    "min_level": 31,
+    "tier": 2,
+    "material": "bronze",
+    "ac_bonus": 2,
+    "equip_threshold": 2,
+    "quiz_tier": 2,
+    "damage_resistances": {
+      "pierce": 0.90
+    },
+    "can_be_cursed": true,
+    "enchant_bonus": 0,
+    "unidentified_name": "a tarnished round buckler",
+    "lore": "Cast bronze shaped into a wide convex disc, its curved face designed to deflect thrusting weapons at an angle. The alloy is softer than iron but denser, and its slight give on impact absorbs piercing force that would punch straight through a rigid plate."
   },
   "steel_shield": {
     "name": "steel shield",
@@ -64,6 +108,29 @@
     "unidentified_name": "a reinforced kite shield",
     "lore": "Polished steel stretched over a shaped core, this kite shield is tempered to resist glancing blows. The slight flex in its face absorbs slash impacts before they can transfer fully to the wielder's arm."
   },
+  "mithril_shield": {
+    "name": "mithril shield",
+    "symbol": ")",
+    "color": [
+      160,
+      210,
+      195
+    ],
+    "weight": 2.0,
+    "min_level": 51,
+    "tier": 3,
+    "material": "mithril",
+    "ac_bonus": 3,
+    "equip_threshold": 2,
+    "quiz_tier": 3,
+    "damage_resistances": {
+      "lightning": 0.80
+    },
+    "can_be_cursed": false,
+    "enchant_bonus": 0,
+    "unidentified_name": "a feather-light silvery disc",
+    "lore": "Beaten from a single piece of true mithril — a metal so light it seems to float yet harder than tempered steel — this shield feels almost weightless in the hand. Its crystalline inner structure scatters electrical discharges harmlessly across its surface in pale blue arcs."
+  },
   "crystal_shield": {
     "name": "crystal shield",
     "symbol": ")",
@@ -86,6 +153,30 @@
     "enchant_bonus": 0,
     "unidentified_name": "a glassy translucent shield",
     "lore": "Ground from a single slab of spell-resonant crystal, this shield is almost perfectly transparent. Its lattice structure disperses incoming magical energy harmlessly, making it prized by those who face arcane opponents — and beautiful enough to be displayed in noble halls when not in use."
+  },
+  "obsidian_shield": {
+    "name": "obsidian shield",
+    "symbol": ")",
+    "color": [
+      60,
+      55,
+      80
+    ],
+    "weight": 5.0,
+    "min_level": 71,
+    "tier": 4,
+    "material": "obsidian",
+    "ac_bonus": 3,
+    "equip_threshold": 2,
+    "quiz_tier": 4,
+    "damage_resistances": {
+      "magic": 0.88,
+      "blunt": 0.92
+    },
+    "can_be_cursed": false,
+    "enchant_bonus": 0,
+    "unidentified_name": "a volcanic glass war-shield",
+    "lore": "Ground from volcanic obsidian glass and reinforced with a web of iron banding, this shield is as much a magical ward as a physical barrier. The glass lattice partially refracts spell energies before they can cohere into damaging force, and its extreme hardness resists crushing impacts that dent ordinary metals."
   },
   "dragonscale_shield": {
     "name": "dragonscale shield",

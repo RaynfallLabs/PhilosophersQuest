@@ -141,14 +141,15 @@ class Player:
         return self.BASE_TIMER + max(0, self.WIS - 10)
 
     def get_quiz_timer_modifier(self) -> float:
-        """Multiplier applied to quiz timer based on active effects."""
+        """Multiplier applied to quiz timer based on active effects.
+        Floor of 0.40x prevents stacked debuffs from making quizzes unsolvable."""
         mod = 1.0
         if self.has_effect('confused'):      mod *= 0.55
         if self.has_effect('stunned'):       mod *= 0.75
         if self.has_effect('blinded'):       mod *= 0.70
         if self.has_effect('hallucinating'): mod *= 0.80
         if self.has_effect('hasted'):        mod *= 1.25
-        return round(mod, 2)
+        return round(max(0.40, mod), 2)
 
     def get_carry_limit(self) -> int:
         return self.CARRY_BASE + self.STR * self.CARRY_PER_STR

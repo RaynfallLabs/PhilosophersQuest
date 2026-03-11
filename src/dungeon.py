@@ -419,7 +419,7 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
         except FileNotFoundError:
             pass
 
-    eligible = [t for t in templates if t.min_level <= level] or templates[:]
+    eligible = _item_eligible_weighted(templates, level)
 
     for room in rooms[1:]:
         if rng.random() > 0.33:
@@ -494,6 +494,26 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
         _place_one(eligible_food, room, dungeon, ground_items, rng)
 
     return ground_items
+
+
+def _item_eligible_weighted(templates: list, level: int) -> list:
+    """Build a weighted eligible pool for non-food items.
+    Items with a floorSpawnWeight table are repeated proportionally to their weight
+    at the current level, so late-game items crowd out early-game ones naturally.
+    Items without a weight table are eligible at weight 1 if min_level passes."""
+    eligible = []
+    for item in templates:
+        if item.min_level > level:
+            continue
+        fw = getattr(item, 'floor_spawn_weight', {})
+        if fw:
+            w = _food_weight(fw, level)   # range-key parser handles both dict formats
+            if w > 0:
+                eligible.extend([item] * w)
+            # Weight 0 for this level range means the item has aged out — skip it
+        else:
+            eligible.append(item)
+    return eligible or [t for t in templates if t.min_level <= level] or templates[:]
 
 
 def _food_eligible(templates: list, level: int) -> list:

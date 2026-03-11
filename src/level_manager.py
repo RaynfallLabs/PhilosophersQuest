@@ -1,8 +1,8 @@
 import copy
 import random
 
-# Philosopher's Stone spawns on this level (3 for testing, 100 for production)
-STONE_LEVEL = 3
+# Philosopher's Stone spawns on this level
+STONE_LEVEL = 100
 
 
 class LevelManager:
@@ -28,9 +28,9 @@ class LevelManager:
 
         dungeon = generate_dungeon(80, 50, level_num)
 
-        # Monster count scales with depth
-        min_m = min(3 + (level_num - 1), 8)
-        max_m = min(5 + level_num, 14)
+        # Monster count scales with depth (higher ceiling for deep levels)
+        min_m = min(3 + (level_num - 1), 12)
+        max_m = min(5 + level_num, 18)
         monsters = spawn_monsters(dungeon.rooms, level_num, dungeon, min_m, max_m)
 
         items = spawn_items(dungeon.rooms, level_num, dungeon)

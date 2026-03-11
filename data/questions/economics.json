@@ -202,5 +202,281 @@
     "question": "What is the Mises Action Axiom?",
     "answer": "all human action is purposeful and goal-directed",
     "choices": ["people act randomly", "all human action is purposeful and goal-directed", "only markets have rational actors", "government action is always rational"]
+  },
+  {
+    "tier": 1,
+    "question": "What is interest?",
+    "answer": "the cost of borrowing money",
+    "choices": ["a bank fee for storage", "the cost of borrowing money", "a tax on savings", "a type of dividend"]
+  },
+  {
+    "tier": 1,
+    "question": "What is unemployment?",
+    "answer": "workers who want jobs but cannot find them",
+    "choices": ["workers who quit voluntarily", "workers who want jobs but cannot find them", "people who retire early", "seasonal part-time workers"]
+  },
+  {
+    "tier": 1,
+    "question": "What is a monopoly?",
+    "answer": "one seller controls an entire market",
+    "choices": ["many competing sellers", "one seller controls an entire market", "a government-owned business", "a type of investment bond"]
+  },
+  {
+    "tier": 1,
+    "question": "What is a subsidy?",
+    "answer": "government payment to support an industry",
+    "choices": ["a tax on goods", "government payment to support an industry", "a type of loan agreement", "a trade barrier"]
+  },
+  {
+    "tier": 1,
+    "question": "What does CPI measure?",
+    "answer": "consumer price changes over time",
+    "choices": ["corporate profit index", "consumer price changes over time", "currency purchasing index", "central pricing indicator"]
+  },
+  {
+    "tier": 1,
+    "question": "What is a bond?",
+    "answer": "a loan made to a government or corporation",
+    "choices": ["a share of company ownership", "a loan made to a government or corporation", "a type of insurance policy", "a currency reserve instrument"]
+  },
+  {
+    "tier": 2,
+    "question": "What is fiscal policy?",
+    "answer": "government uses spending and taxes to influence the economy",
+    "choices": ["central bank controls money supply", "government uses spending and taxes to influence the economy", "setting international trade rules", "regulating stock markets directly"]
+  },
+  {
+    "tier": 2,
+    "question": "What causes hyperinflation?",
+    "answer": "excessive money printing beyond economic output",
+    "choices": ["reduced government spending", "excessive money printing beyond economic output", "high unemployment rates", "too many exports"]
+  },
+  {
+    "tier": 2,
+    "question": "What is the velocity of money?",
+    "answer": "how often money changes hands in an economy",
+    "choices": ["the speed of electronic transfers", "how often money changes hands in an economy", "the rate of currency printing", "the inflation rate of a currency"]
+  },
+  {
+    "tier": 2,
+    "question": "What is a trade surplus?",
+    "answer": "exports exceed imports",
+    "choices": ["imports exceed exports", "exports exceed imports", "equal trade between nations", "government surplus revenue"]
+  },
+  {
+    "tier": 2,
+    "question": "What is price elasticity?",
+    "answer": "how demand changes as price changes",
+    "choices": ["the physical durability of goods", "how demand changes as price changes", "government price control mechanisms", "the rate of price inflation"]
+  },
+  {
+    "tier": 2,
+    "question": "What is a stock?",
+    "answer": "a share of ownership in a company",
+    "choices": ["a loan to a company", "a share of ownership in a company", "a government bond", "a type of currency"]
+  },
+  {
+    "tier": 2,
+    "question": "What is GDP per capita?",
+    "answer": "total economic output divided by population",
+    "choices": ["average tax paid per citizen", "total economic output divided by population", "government spending per person", "median household income"]
+  },
+  {
+    "tier": 2,
+    "question": "What does the Federal Reserve do?",
+    "answer": "sets US monetary policy and interest rates",
+    "choices": ["sets US tax policy", "sets US monetary policy and interest rates", "prints physical currency only", "regulates international trade agreements"]
+  },
+  {
+    "tier": 2,
+    "question": "What is a bull market?",
+    "answer": "a market with rising prices over time",
+    "choices": ["a market with falling prices", "a market with rising prices over time", "a highly volatile market", "a government-controlled market"]
+  },
+  {
+    "tier": 2,
+    "question": "What is diversification in investing?",
+    "answer": "spreading investments to reduce risk",
+    "choices": ["investing only in safe assets", "spreading investments to reduce risk", "holding only cash reserves", "concentrating in one promising sector"]
+  },
+  {
+    "tier": 2,
+    "question": "What is the debt-to-GDP ratio?",
+    "answer": "national debt as a percentage of economic output",
+    "choices": ["individual debt compared to income", "national debt as a percentage of economic output", "trade deficit as share of exports", "government spending ratio"]
+  },
+  {
+    "tier": 3,
+    "question": "What did Adam Smith's 'Wealth of Nations' argue?",
+    "answer": "free markets create prosperity through specialization and self-interest",
+    "choices": ["governments should own key industries", "free markets create prosperity through specialization and self-interest", "trade causes national poverty", "workers should control production"]
+  },
+  {
+    "tier": 3,
+    "question": "What is the Keynesian multiplier?",
+    "answer": "government spending increases GDP by more than the initial amount",
+    "choices": ["taxes multiply economic output", "government spending increases GDP by more than the initial amount", "savings multiply investment returns", "trade multiplies employment levels"]
+  },
+  {
+    "tier": 3,
+    "question": "What is comparative advantage?",
+    "answer": "produce what you can make at lowest relative cost",
+    "choices": ["always produce what you do best absolutely", "produce what you can make at lowest relative cost", "avoid trading with economic competitors", "specialize only in manufacturing"]
+  },
+  {
+    "tier": 3,
+    "question": "What is the Laffer Curve?",
+    "answer": "there is an optimal tax rate beyond which revenue falls",
+    "choices": ["higher taxes always raise more revenue", "there is an optimal tax rate beyond which revenue falls", "lower taxes always raise revenue", "taxes have no effect on output"]
+  },
+  {
+    "tier": 3,
+    "question": "What is mercantilism?",
+    "answer": "a nation's wealth measured by its gold and trade surplus",
+    "choices": ["free trade between all nations", "a nation's wealth measured by its gold and trade surplus", "workers owning the means of production", "minimal government involvement in trade"]
+  },
+  {
+    "tier": 3,
+    "question": "What is the tragedy of the commons?",
+    "answer": "shared resources are overused without private ownership",
+    "choices": ["privatization always fails in practice", "shared resources are overused without private ownership", "governments manage commons best", "markets inevitably destroy shared resources"]
+  },
+  {
+    "tier": 3,
+    "question": "What is a central bank's reserve requirement?",
+    "answer": "the fraction of deposits banks must keep on hand",
+    "choices": ["the amount of gold a bank must own", "the fraction of deposits banks must keep on hand", "government-mandated interest rates", "maximum loan limits for banks"]
+  },
+  {
+    "tier": 3,
+    "question": "What is stagflation?",
+    "answer": "simultaneous high inflation and high unemployment",
+    "choices": ["economic growth with low inflation", "simultaneous high inflation and high unemployment", "rapid deflation with low unemployment", "currency appreciation with trade deficit"]
+  },
+  {
+    "tier": 3,
+    "question": "What is the difference between stocks and bonds?",
+    "answer": "stocks are equity, bonds are debt",
+    "choices": ["stocks are always safer than bonds", "stocks are equity, bonds are debt", "bonds grow faster than stocks", "they are essentially the same instrument"]
+  },
+  {
+    "tier": 4,
+    "question": "What is the Austrian critique of central planning?",
+    "answer": "price signals cannot be replicated without free markets",
+    "choices": ["central planning is always optimal", "price signals cannot be replicated without free markets", "technology can fully replace markets", "government knows consumer preferences best"]
+  },
+  {
+    "tier": 4,
+    "question": "What is Hayek's 'knowledge problem'?",
+    "answer": "dispersed local knowledge cannot be centrally aggregated",
+    "choices": ["governments have too much information", "dispersed local knowledge cannot be centrally aggregated", "markets fail due to information gaps", "knowledge is freely available to planners"]
+  },
+  {
+    "tier": 4,
+    "question": "What is a UTXO in Bitcoin?",
+    "answer": "unspent transaction output used as input to new transactions",
+    "choices": ["a type of Bitcoin wallet", "unspent transaction output used as input to new transactions", "a Bitcoin mining reward unit", "a unit of account in Bitcoin"]
+  },
+  {
+    "tier": 4,
+    "question": "What is the natural rate of interest in Austrian theory?",
+    "answer": "the rate set by people's time preferences",
+    "choices": ["the rate set by central banks", "the rate set by people's time preferences", "the rate determined by inflation", "the minimum rate required for investment"]
+  },
+  {
+    "tier": 4,
+    "question": "What is Böhm-Bawerk's contribution to economics?",
+    "answer": "capital structure and time preference theory of interest",
+    "choices": ["monetary policy framework", "capital structure and time preference theory of interest", "theory of comparative advantage", "marginal utility calculus"]
+  },
+  {
+    "tier": 4,
+    "question": "What is sound money according to Austrian economists?",
+    "answer": "money with stable purchasing power not controlled by governments",
+    "choices": ["money backed by military force", "money with stable purchasing power not controlled by governments", "exclusively gold coin currency", "electronically issued government currency"]
+  },
+  {
+    "tier": 4,
+    "question": "What is moral hazard in banking?",
+    "answer": "risk-taking increases when consequences are borne by others",
+    "choices": ["banks always act ethically given regulation", "risk-taking increases when consequences are borne by others", "excessive regulation causes bank failures", "depositors bear all banking risk"]
+  },
+  {
+    "tier": 4,
+    "question": "What is the broken window fallacy?",
+    "answer": "destruction does not create net economic benefit",
+    "choices": ["rebuilding after disasters boosts GDP durably", "destruction does not create net economic benefit", "war always stimulates long-term growth", "spending always creates lasting wealth"]
+  },
+  {
+    "tier": 4,
+    "question": "What is purchasing power parity?",
+    "answer": "exchange rates should equalize price levels between countries",
+    "choices": ["currencies always trade at face value", "exchange rates should equalize price levels between countries", "rich countries always have strong currencies", "trade alone determines all exchange rates"]
+  },
+  {
+    "tier": 4,
+    "question": "What is a Ponzi scheme?",
+    "answer": "earlier investors are paid with funds from later investors",
+    "choices": ["a legal pyramid investment structure", "earlier investors are paid with funds from later investors", "a type of government bond scheme", "a central bank money creation mechanism"]
+  },
+  {
+    "tier": 5,
+    "question": "What is praxeology?",
+    "answer": "the study of human action as a deductive science",
+    "choices": ["practical political economy", "the study of human action as a deductive science", "analysis of historical price movements", "empirical market research methods"]
+  },
+  {
+    "tier": 5,
+    "question": "What did Rothbard argue in 'Man, Economy, and State'?",
+    "answer": "all state intervention distorts voluntary market coordination",
+    "choices": ["mixed economies are optimal", "all state intervention distorts voluntary market coordination", "central banks prevent recessions reliably", "minimal regulation improves markets incrementally"]
+  },
+  {
+    "tier": 5,
+    "question": "What is endogenous money theory?",
+    "answer": "banks create money through lending, not from reserves",
+    "choices": ["money supply is fixed by government", "banks create money through lending, not from reserves", "central banks control all money creation", "gold determines the money supply"]
+  },
+  {
+    "tier": 5,
+    "question": "What is Ricardian equivalence?",
+    "answer": "government borrowing and taxation are equivalent in effect",
+    "choices": ["free trade always benefits both parties", "government borrowing and taxation are equivalent in effect", "trade deficits equal private savings", "capital flows balance all trade deficits"]
+  },
+  {
+    "tier": 5,
+    "question": "What does the Fisher equation state?",
+    "answer": "nominal interest rate equals real rate plus expected inflation",
+    "choices": ["money supply equals price level times velocity", "nominal interest rate equals real rate plus expected inflation", "GDP equals investment plus consumption", "inflation equals money growth minus output growth"]
+  },
+  {
+    "tier": 5,
+    "question": "What is the Coase theorem?",
+    "answer": "without transaction costs, rights assignments do not affect efficiency",
+    "choices": ["property rights always prevent market failures", "without transaction costs, rights assignments do not affect efficiency", "government must resolve all externalities", "market prices reflect all social costs"]
+  },
+  {
+    "tier": 5,
+    "question": "What is Say's Law?",
+    "answer": "supply creates its own demand",
+    "choices": ["demand creates its own supply", "supply creates its own demand", "money is neutral in the long run", "prices adjust instantaneously to equilibrium"]
+  },
+  {
+    "tier": 5,
+    "question": "What is the efficient market hypothesis?",
+    "answer": "asset prices reflect all available information",
+    "choices": ["markets are always irrational", "asset prices reflect all available information", "technical analysis reliably predicts prices", "insider trading is always detectable"]
+  },
+  {
+    "tier": 5,
+    "question": "What is the paradox of thrift?",
+    "answer": "individual saving harms aggregate demand when everyone does it simultaneously",
+    "choices": ["saving is always beneficial for economies", "individual saving harms aggregate demand when everyone does it simultaneously", "investment always follows increased saving", "thrift always causes long-run deflation"]
+  },
+  {
+    "tier": 5,
+    "question": "What is the Shapley value in cooperative game theory?",
+    "answer": "a fair distribution of payoffs based on each player's marginal contributions",
+    "choices": ["the payoff in a Nash equilibrium", "a fair distribution of payoffs based on each player's marginal contributions", "the dominant strategy outcome", "the maximum possible collective payoff"]
   }
 ]
