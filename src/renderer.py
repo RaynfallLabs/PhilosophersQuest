@@ -1,7 +1,10 @@
+import os
 import pygame
 from dungeon import WALL, FLOOR, STAIRS_UP, STAIRS_DOWN, DOOR, SECRET_DOOR
 
 TILE_SIZE = 40
+
+_SPRITE_DIR = os.path.join(os.path.dirname(__file__), '..', 'assets', 'tiles', 'monsters')
 
 # Visible tile colors
 _VISIBLE = {
@@ -33,7 +36,20 @@ class Renderer:
         self.screen = screen
         self.vw     = viewport_tiles_w
         self.vh     = viewport_tiles_h
-        self._sym_font = pygame.font.SysFont('consolas', TILE_SIZE - 8, bold=True)
+        self._sym_font    = pygame.font.SysFont('consolas', TILE_SIZE - 8, bold=True)
+        self._sprite_cache: dict[str, pygame.Surface | None] = {}
+
+    def _get_sprite(self, mid: str) -> 'pygame.Surface | None':
+        if mid in self._sprite_cache:
+            return self._sprite_cache[mid]
+        path = os.path.join(_SPRITE_DIR, f"{mid}.png")
+        if os.path.exists(path):
+            raw = pygame.image.load(path).convert_alpha()
+            surf = pygame.transform.scale(raw, (TILE_SIZE, TILE_SIZE))
+            self._sprite_cache[mid] = surf
+        else:
+            self._sprite_cache[mid] = None
+        return self._sprite_cache[mid]
 
     def _to_screen(self, wx: int, wy: int, cam_x: int, cam_y: int):
         return (wx - cam_x) * TILE_SIZE, (wy - cam_y) * TILE_SIZE
@@ -73,14 +89,19 @@ class Renderer:
         pygame.draw.rect(self.screen, _PLAYER, rect)
 
     def draw_entity(self, x: int, y: int, color: tuple,
-                    cam_x: int, cam_y: int, visible):
+                    cam_x: int, cam_y: int, visible, mid: str = ''):
         """Draw a monster or dim dot.  Pass visible=None to always draw."""
         if visible is not None and (x, y) not in visible:
             return
         sx, sy = self._to_screen(x, y, cam_x, cam_y)
-        pad    = 5
-        rect   = pygame.Rect(sx + pad, sy + pad,
-                             TILE_SIZE - pad * 2, TILE_SIZE - pad * 2)
+        if mid:
+            sprite = self._get_sprite(mid)
+            if sprite:
+                self.screen.blit(sprite, (sx, sy))
+                return
+        pad  = 5
+        rect = pygame.Rect(sx + pad, sy + pad,
+                           TILE_SIZE - pad * 2, TILE_SIZE - pad * 2)
         pygame.draw.rect(self.screen, color, rect)
 
     def draw_item(self, item, cam_x: int, cam_y: int, visible: set):

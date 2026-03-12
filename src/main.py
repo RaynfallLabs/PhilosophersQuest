@@ -6,7 +6,9 @@ from combat import player_attack
 from container_system import attempt_lockpick, check_for_mimic
 from dungeon import (generate_dungeon, spawn_monsters, spawn_items,
                      STAIRS_UP, STAIRS_DOWN, DOOR, SECRET_DOOR)
-from food_system import harvest_corpse, cook_ingredient, eat_food, eat_raw
+from food_system import (harvest_corpse, cook_ingredient, eat_food, eat_raw,
+                         get_available_compound_recipes, cook_compound_recipe,
+                         get_recipes_for_ingredient)
 from fov import calculate_fov
 from items import Weapon, Armor, Shield, Corpse, Ingredient, Artifact, Container, Lockpick, Accessory, Wand, Scroll, Ammo, Food
 from level_manager import LevelManager
@@ -20,6 +22,32 @@ WINDOW_H = 900
 FPS      = 60
 
 GAME_W = WINDOW_W - SIDEBAR_W      # 1280 px
+
+# ------------------------------------------------------------------
+# Module-level helpers
+# ------------------------------------------------------------------
+
+def _cook_menu_bonus_label(recipe: dict) -> str:
+    """Short bonus description for the cook menu."""
+    bt     = recipe.get('bonus_type', 'none')
+    amt    = recipe.get('bonus_amount', 0)
+    stat   = recipe.get('bonus_stat', '')
+    effect = recipe.get('bonus_effect', '')
+    if bt == 'none' or amt == 0:
+        return ''
+    if bt == 'stat' and stat:
+        return f"[+{amt} {stat}]"
+    if bt == 'two_stats':
+        return f"[+{amt} two stats]"
+    if bt == 'all_stats':
+        return f"[+{amt} ALL stats]"
+    if bt == 'combat_stat':
+        return f"[+{amt} STR/CON]"
+    if bt == 'random_stat':
+        return f"[+{amt} random stat]"
+    if bt == 'status' and effect:
+        return f"[{effect.replace('_',' ')} ×{amt}t]"
+    return f"[+{amt}]"
 MSG_H  = 160
 GAME_H = WINDOW_H - MSG_H          # 740 px = 18 tiles
 
@@ -422,6 +450,7 @@ class Game:
         self.scroll_menu_items: list     = []
         self.identify_menu_items: list   = []
         self.cook_menu_items: list       = []
+        self.cook_compound_recipes: list = []   # available multi-ingredient recipes
         self.eat_menu_items: list        = []
         self.player_gold        = 0
         self.turn_count         = 0
@@ -1059,13 +1088,19 @@ class Game:
         self.cook_menu_items = [
             i for i in self.player.inventory if isinstance(i, Ingredient)
         ]
-        if not self.cook_menu_items:
+        self.cook_compound_recipes = get_available_compound_recipes(self.player.inventory)
+        if not self.cook_menu_items and not self.cook_compound_recipes:
             self.add_message("You have no ingredients to cook.", 'info')
             return
         self.state = STATE_COOK_MENU
 
     def _cook_menu_input(self, key: int):
-        key_to_idx = {
+        # Letter keys A-F select compound recipes; number keys 1-9 select single ingredients
+        recipe_keys = {
+            pygame.K_a: 0, pygame.K_b: 1, pygame.K_c: 2,
+            pygame.K_d: 3, pygame.K_e: 4, pygame.K_f: 5,
+        }
+        ing_keys = {
             pygame.K_1: 0, pygame.K_KP1: 0,
             pygame.K_2: 1, pygame.K_KP2: 1,
             pygame.K_3: 2, pygame.K_KP3: 2,
@@ -1076,7 +1111,13 @@ class Game:
             pygame.K_8: 7, pygame.K_KP8: 7,
             pygame.K_9: 8, pygame.K_KP9: 8,
         }
-        idx = key_to_idx.get(key)
+        if key in recipe_keys:
+            ridx = recipe_keys[key]
+            if ridx < len(self.cook_compound_recipes):
+                self.state = STATE_PLAYER
+                self._cook_compound(self.cook_compound_recipes[ridx])
+            return
+        idx = ing_keys.get(key)
         if idx is None or idx >= len(self.cook_menu_items):
             return
         self.state = STATE_PLAYER
@@ -1094,6 +1135,19 @@ class Game:
             self._advance_turn()
 
         cook_ingredient(self.player, ingredient, self.quiz_engine, on_complete)
+
+    def _cook_compound(self, recipe: dict):
+        ing_names = ', '.join(recipe.get('ingredients', []))
+        self.quiz_title = f"PREPARING {recipe['name'].upper()}  —  COOKING CHAIN"
+        self.state = STATE_QUIZ
+
+        def on_complete(messages: list[str]):
+            self.state = STATE_PLAYER
+            for i, msg in enumerate(messages):
+                self.add_message(msg, 'warning' if (i == 0 and ('ruin' in msg.lower() or 'mediocre' in msg.lower())) else 'success')
+            self._advance_turn()
+
+        cook_compound_recipe(self.player, recipe, self.player.inventory, self.quiz_engine, on_complete)
 
     # ------------------------------------------------------------------
     # Eat menu  (z key)
@@ -2417,7 +2471,7 @@ class Game:
             self.renderer.draw_item(item, cam_x, cam_y, self.visible)
         for m in self.monsters:
             if m.alive:
-                self.renderer.draw_entity(m.x, m.y, m.color, cam_x, cam_y, self.visible)
+                self.renderer.draw_entity(m.x, m.y, m.color, cam_x, cam_y, self.visible, mid=m.kind)
         # Telepathy: render unseen monsters as dim dots
         if self.player.has_effect('telepathy'):
             for m in self.monsters:
@@ -3210,8 +3264,17 @@ class Game:
         overlay.fill((0, 0, 0, 150))
         self.screen.blit(overlay, (0, 0))
 
-        bw = 560
-        bh = min(80 + len(self.cook_menu_items) * 48 + 60, 500)
+        n_compound = len(self.cook_compound_recipes)
+        n_single   = len(self.cook_menu_items)
+        row_h      = 52
+        compound_header_h = 28 if n_compound else 0
+        single_header_h   = 28 if n_single and n_compound else 0
+        bw = 620
+        bh = min(
+            80 + compound_header_h + n_compound * row_h
+               + single_header_h   + n_single   * row_h + 60,
+            560
+        )
         bx = (GAME_W - bw) // 2
         by = (WINDOW_H - bh) // 2
 
@@ -3219,12 +3282,12 @@ class Game:
         pygame.draw.rect(self.screen, (140, 100, 40), (bx, by, bw, bh), 2, border_radius=12)
 
         self.screen.blit(
-            self.font_md.render("COOK INGREDIENT", True, (255, 200, 60)),
+            self.font_md.render("COOK", True, (255, 200, 60)),
             (bx + 20, by + 16)
         )
         self.screen.blit(
             self.font_sm.render(
-                f"SP: {self.player.sp}/{self.player.max_sp}  (cooking restores SP + stats)",
+                f"SP: {self.player.sp}/{self.player.max_sp}  —  cooking restores SP + permanent stat bonuses",
                 True, (200, 180, 120)
             ),
             (bx + 20, by + 44)
@@ -3232,33 +3295,97 @@ class Game:
         pygame.draw.line(self.screen, (100, 80, 40),
                          (bx + 10, by + 66), (bx + bw - 10, by + 66))
 
-        for i, item in enumerate(self.cook_menu_items):
-            iy = by + 76 + i * 48
-            pygame.draw.rect(
-                self.screen,
-                (30, 22, 12) if i % 2 == 0 else (24, 18, 10),
-                (bx + 10, iy, bw - 20, 42), border_radius=6
-            )
+        cy = by + 76
+        letter_labels = 'ABCDEF'
+
+        # ── Compound (multi-ingredient) recipes ──────────────────────────
+        if n_compound:
             self.screen.blit(
-                self.font_md.render(f"[{i+1}]", True, (200, 160, 60)),
-                (bx + 18, iy + 11)
+                self.font_sm.render("COMPOUND RECIPES  (letter keys)", True, (255, 220, 80)),
+                (bx + 18, cy)
             )
-            self.screen.blit(
-                self.font_md.render(item.name, True, (220, 220, 200)),
-                (bx + 70, iy + 11)
-            )
-            best = item.recipes.get('5', item.recipes.get('3', {}))
-            self.screen.blit(
-                self.font_sm.render(f"best: {best.get('name', '?')}", True, (180, 160, 100)),
-                (bx + 70, iy + 30)
-            )
+            cy += compound_header_h
+            for i, recipe in enumerate(self.cook_compound_recipes[:6]):
+                iy = cy
+                pygame.draw.rect(
+                    self.screen,
+                    (18, 30, 12) if i % 2 == 0 else (14, 24, 10),
+                    (bx + 10, iy, bw - 20, row_h - 4), border_radius=6
+                )
+                lbl = letter_labels[i]
+                self.screen.blit(
+                    self.font_md.render(f"[{lbl}]", True, (120, 220, 80)),
+                    (bx + 18, iy + 6)
+                )
+                self.screen.blit(
+                    self.font_md.render(recipe['name'], True, (180, 255, 140)),
+                    (bx + 70, iy + 6)
+                )
+                # Ingredient list + SP
+                ing_list = ', '.join(recipe.get('ingredients', []))
+                sp_val   = recipe.get('sp', 0)
+                bonus_label = _cook_menu_bonus_label(recipe)
+                detail = f"{ing_list}  |  {sp_val} SP  {bonus_label}"
+                self.screen.blit(
+                    self.font_sm.render(detail, True, (140, 200, 100)),
+                    (bx + 70, iy + 30)
+                )
+                cy += row_h
+
+        # ── Single ingredients ────────────────────────────────────────────
+        if n_single:
+            if n_compound:
+                pygame.draw.line(self.screen, (80, 70, 40),
+                                 (bx + 10, cy + 4), (bx + bw - 10, cy + 4))
+                cy += 8
+                self.screen.blit(
+                    self.font_sm.render("SINGLE INGREDIENTS  (number keys)", True, (200, 180, 100)),
+                    (bx + 18, cy)
+                )
+                cy += single_header_h
+            for i, item in enumerate(self.cook_menu_items[:9]):
+                iy = cy
+                pygame.draw.rect(
+                    self.screen,
+                    (30, 22, 12) if i % 2 == 0 else (24, 18, 10),
+                    (bx + 10, iy, bw - 20, row_h - 4), border_radius=6
+                )
+                self.screen.blit(
+                    self.font_md.render(f"[{i+1}]", True, (200, 160, 60)),
+                    (bx + 18, iy + 6)
+                )
+                self.screen.blit(
+                    self.font_md.render(item.name, True, (220, 220, 200)),
+                    (bx + 70, iy + 6)
+                )
+                best = item.recipes.get('5', item.recipes.get('3', {}))
+                # Show compound recipes this ingredient is used in
+                used_in = get_recipes_for_ingredient(item.id)
+                used_str = ''
+                if used_in:
+                    names = [r['name'] for r in used_in[:2]]
+                    used_str = '  ✦ ' + ', '.join(names)
+                    if len(used_in) > 2:
+                        used_str += f' +{len(used_in)-2}'
+                self.screen.blit(
+                    self.font_sm.render(
+                        f"best solo: {best.get('name', '?')}{used_str}",
+                        True, (180, 160, 100)
+                    ),
+                    (bx + 70, iy + 30)
+                )
+                cy += row_h
 
         hint_y = by + bh - 34
         pygame.draw.line(self.screen, (100, 80, 40),
                          (bx + 10, hint_y - 8), (bx + bw - 10, hint_y - 8))
-        hint = self.font_sm.render(
-            "Press number to cook  |  ESC to cancel", True, (160, 140, 80)
-        )
+        hint_parts = []
+        if n_compound:
+            hint_parts.append("A-F: compound recipe")
+        if n_single:
+            hint_parts.append("1-9: single ingredient")
+        hint_parts.append("ESC: cancel")
+        hint = self.font_sm.render("  |  ".join(hint_parts), True, (160, 140, 80))
         self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
 
     # ------------------------------------------------------------------
