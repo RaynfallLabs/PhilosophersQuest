@@ -104,6 +104,7 @@ class QuizEngine:
         self.callback = callback
         self._timer_modifier = timer_modifier
         self.timer_seconds = round((10 + max(0, wisdom - 10)) * timer_modifier)
+        self.time_remaining = float(self.timer_seconds)
 
         self.score = 0
         self.chain = 0
@@ -145,9 +146,16 @@ class QuizEngine:
     def update(self, dt: float):
         """Call each frame with delta time in seconds."""
         if self.state == QuizState.ASKING:
-            # Timer counts down once across the whole session — clamp at 0, never force an answer
             if self.time_remaining > 0:
                 self.time_remaining = max(0.0, self.time_remaining - dt)
+                if self.time_remaining == 0.0:
+                    # Time's up — count as a wrong answer and advance
+                    self.last_answer = ''
+                    self.asked_count += 1
+                    self.last_correct = False
+                    self.chain = 0
+                    self.state = QuizState.RESULT
+                    self.result_timer = self.RESULT_DISPLAY_TIME
 
         elif self.state == QuizState.RESULT:
             self.result_timer -= dt

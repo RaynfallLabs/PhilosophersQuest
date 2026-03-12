@@ -498,6 +498,7 @@ class Game:
             self.player.mp     = self.player.max_mp
         self.player.x, self.player.y = dungeon.rooms[0].center
         self.renderer                = Renderer(self.screen, VIEWPORT_W, VIEWPORT_H)
+        self.renderer.set_dungeon(dungeon.width, dungeon.height, GAME_W, GAME_H)
         self._refresh_fov()
 
         # Give the player their Philosopher's Amulet (always starts identified)
@@ -528,6 +529,7 @@ class Game:
         self.monsters     = monsters
         self.ground_items = ground_items
         self.dungeon_level = new_level
+        self.renderer.set_dungeon(dungeon.width, dungeon.height, GAME_W, GAME_H)
 
         # Place player at the stairs they came through
         if enter_from_top:
@@ -2515,11 +2517,7 @@ class Game:
         pygame.display.flip()
 
     def _camera(self) -> tuple[int, int]:
-        cam_x = self.player.x - VIEWPORT_W // 2
-        cam_y = self.player.y - VIEWPORT_H // 2
-        cam_x = max(0, min(cam_x, self.dungeon.width  - VIEWPORT_W))
-        cam_y = max(0, min(cam_y, self.dungeon.height - VIEWPORT_H))
-        return cam_x, cam_y
+        return 0, 0
 
     # ------------------------------------------------------------------
     # Targeting overlay
@@ -2528,7 +2526,8 @@ class Game:
     def _draw_targeting(self, cam_x: int, cam_y: int):
         """Draw trajectory line and cursor highlight for ranged targeting."""
         from combat import _line_of_sight
-        T = TILE_SIZE
+        T   = self.renderer.map_tile_size
+        w2s = self.renderer.world_to_screen
         px, py = self.player.x, self.player.y
         cx, cy = self.target_cursor_x, self.target_cursor_y
 
@@ -2544,7 +2543,7 @@ class Game:
         # Draw trajectory dots from player to cursor (skip player tile)
         traj_surf = pygame.Surface((T, T), pygame.SRCALPHA)
         dot_color = (255, 220, 60, 180) if valid_shot else (200, 80, 80, 160)
-        pygame.draw.circle(traj_surf, dot_color, (T // 2, T // 2), 4)
+        pygame.draw.circle(traj_surf, dot_color, (T // 2, T // 2), max(2, T // 8))
 
         # Bresenham walk to draw trajectory
         x0, y0, x1, y1 = px, py, cx, cy
@@ -2555,8 +2554,7 @@ class Game:
         tx, ty = x0, y0
         while True:
             if (tx, ty) != (x0, y0) and (tx, ty) != (x1, y1):
-                scr_x = (tx - cam_x) * T
-                scr_y = (ty - cam_y) * T
+                scr_x, scr_y = w2s(tx, ty)
                 if 0 <= scr_x < GAME_W and 0 <= scr_y < GAME_H:
                     self.screen.blit(traj_surf, (scr_x, scr_y))
             if tx == x1 and ty == y1:
@@ -2572,22 +2570,18 @@ class Game:
         # Highlight all valid target monsters in range
         from combat import can_ranged_attack
         for m in self._target_candidates:
-            scr_x = (m.x - cam_x) * T
-            scr_y = (m.y - cam_y) * T
+            scr_x, scr_y = w2s(m.x, m.y)
             if 0 <= scr_x < GAME_W and 0 <= scr_y < GAME_H:
                 hl = pygame.Surface((T, T), pygame.SRCALPHA)
                 hl.fill((255, 200, 0, 60))
                 self.screen.blit(hl, (scr_x, scr_y))
-                pygame.draw.rect(self.screen, (255, 200, 0),
-                                 (scr_x, scr_y, T, T), 1)
+                pygame.draw.rect(self.screen, (255, 200, 0), (scr_x, scr_y, T, T), 1)
 
         # Cursor highlight on target tile
-        scr_cx = (cx - cam_x) * T
-        scr_cy = (cy - cam_y) * T
+        scr_cx, scr_cy = w2s(cx, cy)
         if 0 <= scr_cx < GAME_W and 0 <= scr_cy < GAME_H:
             cur_color = (80, 255, 80) if valid_shot else (255, 80, 80)
-            pygame.draw.rect(self.screen, cur_color,
-                             (scr_cx, scr_cy, T, T), 2)
+            pygame.draw.rect(self.screen, cur_color, (scr_cx, scr_cy, T, T), 2)
 
         # HUD label at bottom of game area
         if valid_shot:
