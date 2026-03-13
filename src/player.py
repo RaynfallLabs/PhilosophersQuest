@@ -36,6 +36,10 @@ class Player:
         # Inventory (list of item objects)
         self.inventory = []
 
+        # Prayer system
+        self.prayer_cooldown: int   = 0   # turns remaining until next prayer
+        self.prayer_boon_count: int = 0   # permanent bonuses received (diminishing returns)
+
         # Status effects: effect_id -> turns_remaining (or -1 for permanent)
         self.status_effects: dict[str, int] = {}
         # Fractional damage resistances: damage_type -> multiplier (0.0=immune,1.0=normal)

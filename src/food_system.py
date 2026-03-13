@@ -5,7 +5,11 @@ import random
 _INGREDIENT_PATH = os.path.join(
     os.path.dirname(__file__), '..', 'data', 'items', 'ingredient.json'
 )
+_RECIPE_PATH = os.path.join(
+    os.path.dirname(__file__), '..', 'data', 'items', 'recipes.json'
+)
 _ingredient_cache: dict | None = None
+_recipe_cache: dict | None = None
 
 _STAT_LABELS = {
     'STR': 'strength', 'CON': 'constitution', 'DEX': 'dexterity',
@@ -25,6 +29,84 @@ def _raw_ingredients() -> dict:
         with open(_INGREDIENT_PATH, encoding='utf-8') as f:
             _ingredient_cache = json.load(f)
     return _ingredient_cache
+
+
+def _raw_recipes() -> dict:
+    global _recipe_cache
+    if _recipe_cache is None:
+        with open(_RECIPE_PATH, encoding='utf-8') as f:
+            _recipe_cache = json.load(f)
+    return _recipe_cache
+
+
+# ------------------------------------------------------------------
+# Compound recipe helpers
+# ------------------------------------------------------------------
+
+def get_available_compound_recipes(inventory: list) -> list[dict]:
+    """Return compound recipe dicts where the player has ALL required ingredients."""
+    from items import Ingredient
+    held_ids = {item.id for item in inventory if isinstance(item, Ingredient)}
+    return [
+        {'id': rid, **rdef}
+        for rid, rdef in _raw_recipes().items()
+        if all(ing in held_ids for ing in rdef.get('ingredients', []))
+    ]
+
+
+def get_recipes_for_ingredient(ingredient_id: str) -> list[dict]:
+    """Return all compound recipes that list this ingredient_id."""
+    return [
+        {'id': rid, **rdef}
+        for rid, rdef in _raw_recipes().items()
+        if ingredient_id in rdef.get('ingredients', [])
+    ]
+
+
+def cook_compound_recipe(player, recipe: dict, inventory: list, quiz_engine, on_complete):
+    """
+    Remove all required ingredients from inventory, then run an escalator_chain
+    cooking quiz. Quality 0 = total ruin; 1-2 = partial; 3-5 = full bonus.
+    on_complete(messages: list[str]) is called when the quiz ends.
+    """
+    from items import Ingredient
+    # Consume all required ingredients now (before quiz)
+    for ing_id in recipe.get('ingredients', []):
+        for item in list(inventory):
+            if isinstance(item, Ingredient) and item.id == ing_id:
+                player.remove_from_inventory(item)
+                break
+
+    def _callback(result):
+        quality = min(5, result.score)
+        messages = []
+        meal_name = recipe['name']
+
+        if quality == 0:
+            messages.append(f"You ruin the preparation. The {meal_name} is wasted.")
+        elif quality < 3:
+            sp = max(10, recipe.get('sp', 100) // 4)
+            player.restore_sp(sp)
+            messages.append(f"You produce a mediocre {meal_name} (quality {quality}/5).")
+            messages.append(f"You force it down and restore {sp} SP.")
+        else:
+            sp = recipe.get('sp', 100)
+            player.restore_sp(sp)
+            messages.append(f"You masterfully prepare {meal_name}! (quality {quality}/5)")
+            messages.append(f"You savour it and restore {sp} SP.")
+            messages.extend(_apply_bonus(player, recipe))
+
+        on_complete(messages)
+
+    quiz_engine.start_quiz(
+        mode='escalator_chain',
+        subject='cooking',
+        tier=recipe.get('tier', 1),
+        callback=_callback,
+        max_chain=5,
+        wisdom=player.WIS,
+        timer_modifier=player.get_quiz_timer_modifier(),
+    )
 
 
 def load_ingredient_for(ingredient_id: str):

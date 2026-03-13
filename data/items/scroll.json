@@ -2,7 +2,11 @@
   "scroll_of_heal": {
     "name": "scroll of healing",
     "symbol": "?",
-    "color": [180, 255, 180],
+    "color": [
+      180,
+      255,
+      180
+    ],
     "weight": 0.1,
     "min_level": 1,
     "quiz_tier": 1,
@@ -15,7 +19,11 @@
   "scroll_of_mapping": {
     "name": "scroll of mapping",
     "symbol": "?",
-    "color": [180, 220, 255],
+    "color": [
+      180,
+      220,
+      255
+    ],
     "weight": 0.1,
     "min_level": 1,
     "quiz_tier": 1,
@@ -28,7 +36,11 @@
   "scroll_of_identify": {
     "name": "scroll of identify",
     "symbol": "?",
-    "color": [220, 220, 180],
+    "color": [
+      220,
+      220,
+      180
+    ],
     "weight": 0.1,
     "min_level": 1,
     "quiz_tier": 1,
@@ -41,7 +53,11 @@
   "scroll_of_enchant_weapon": {
     "name": "scroll of enchant weapon",
     "symbol": "?",
-    "color": [255, 200, 100],
+    "color": [
+      255,
+      200,
+      100
+    ],
     "weight": 0.1,
     "min_level": 2,
     "quiz_tier": 2,
@@ -54,7 +70,11 @@
   "scroll_of_remove_curse": {
     "name": "scroll of remove curse",
     "symbol": "?",
-    "color": [200, 180, 255],
+    "color": [
+      200,
+      180,
+      255
+    ],
     "weight": 0.1,
     "min_level": 1,
     "quiz_tier": 1,
@@ -67,7 +87,11 @@
   "scroll_of_confuse_monsters": {
     "name": "scroll of confusion",
     "symbol": "?",
-    "color": [255, 180, 255],
+    "color": [
+      255,
+      180,
+      255
+    ],
     "weight": 0.1,
     "min_level": 2,
     "quiz_tier": 2,
@@ -76,5 +100,100 @@
     "power": "",
     "unidentified_name": "swirling scroll",
     "lore": "This scroll was used by arena tamers to disorient multiple beasts simultaneously. The text is written in a spiraling pattern that, when read, projects a psychic dissonance affecting every creature in range — their senses scramble, their movements become erratic, and their intent is lost in confusion."
+  },
+  "scroll_of_the_labyrinth": {
+    "name": "Scroll of the Labyrinth",
+    "symbol": "?",
+    "color": [
+      180,
+      80,
+      50
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 20,
+    "quiz_tier": 1,
+    "quiz_threshold": 1,
+    "effect": "boss_reward",
+    "power": "LABYRINTH-MMXXV-I",
+    "unidentified_name": "Scroll of the Labyrinth",
+    "identified": true,
+    "lore": "Sealed with the mark of the Cretan Labyrinth. A reward scroll from Dad -- show him this code!"
+  },
+  "scroll_of_the_gorgon": {
+    "name": "Scroll of the Gorgon",
+    "symbol": "?",
+    "color": [
+      80,
+      180,
+      80
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 40,
+    "quiz_tier": 1,
+    "quiz_threshold": 1,
+    "effect": "boss_reward",
+    "power": "GORGON-MMXXV-II",
+    "unidentified_name": "Scroll of the Gorgon",
+    "identified": true,
+    "lore": "Sealed with a serpent's eye. A reward scroll from Dad -- show him this code!"
+  },
+  "scroll_of_the_hoard": {
+    "name": "Scroll of the Dragon Hoard",
+    "symbol": "?",
+    "color": [
+      200,
+      100,
+      20
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 60,
+    "quiz_tier": 1,
+    "quiz_threshold": 1,
+    "effect": "boss_reward",
+    "power": "DRAGONHOARD-MMXXV-III",
+    "unidentified_name": "Scroll of the Dragon Hoard",
+    "identified": true,
+    "lore": "Sealed with a golden dragon scale. A reward scroll from Dad -- show him this code!"
+  },
+  "scroll_of_ragnarok": {
+    "name": "Scroll of Ragnarok",
+    "symbol": "?",
+    "color": [
+      180,
+      200,
+      240
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 80,
+    "quiz_tier": 1,
+    "quiz_threshold": 1,
+    "effect": "boss_reward",
+    "power": "RAGNAROK-MMXXV-IV",
+    "unidentified_name": "Scroll of Ragnarok",
+    "identified": true,
+    "lore": "Sealed with the howl of the World-Wolf. A reward scroll from Dad -- show him this code!"
+  },
+  "scroll_of_the_abyss": {
+    "name": "Scroll of the Abyss",
+    "symbol": "?",
+    "color": [
+      160,
+      60,
+      220
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 100,
+    "quiz_tier": 1,
+    "quiz_threshold": 1,
+    "effect": "boss_reward",
+    "power": "ABYSS-MMXXV-V",
+    "unidentified_name": "Scroll of the Abyss",
+    "identified": true,
+    "lore": "Sealed with the mark of the Bottomless Pit. A reward scroll from Dad -- show him this code!"
   }
 }

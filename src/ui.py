@@ -25,7 +25,7 @@ class MessageLog:
 
     def __init__(self):
         self.entries: list[tuple[str, str]] = []
-        self._font = pygame.font.SysFont('consolas', 14)
+        self._font = pygame.font.SysFont('consolas', 16)
 
     def add(self, text: str, msg_type: str = 'info'):
         self.entries.append((text, msg_type))
@@ -36,7 +36,7 @@ class MessageLog:
         pygame.draw.rect(screen, (8, 8, 16), (x, y, w, h))
         pygame.draw.line(screen, (40, 40, 80), (x, y), (x + w, y), 1)
 
-        line_h = 18
+        line_h = 21
         max_lines = (h - 8) // line_h
         visible = self.entries[-max_lines:]
 
@@ -53,18 +53,32 @@ class Sidebar:
     PAD = 10
     SECTION_GAP = 8
 
+    @staticmethod
+    def _cap(name: str) -> str:
+        """Capitalize the first letter of each space-separated word."""
+        return ' '.join(w[:1].upper() + w[1:] for w in name.split())
+
+    @staticmethod
+    def _fit(font: pygame.font.Font, text: str, max_px: int) -> str:
+        """Truncate text with ellipsis so it fits within max_px pixels."""
+        if font.size(text)[0] <= max_px:
+            return text
+        while len(text) > 1 and font.size(text + '\u2026')[0] > max_px:
+            text = text[:-1]
+        return text + '\u2026'
+
     def __init__(self, screen: pygame.Surface, x: int):
         self.screen = screen
         self.x = x
         self.w = SIDEBAR_W
-        self.h = screen.get_height()
-        self._fsm  = pygame.font.SysFont('consolas', 14)
-        self._fbold = pygame.font.SysFont('consolas', 14, bold=True)
-        self._fhd  = pygame.font.SysFont('consolas', 14, bold=True)
+        self._fsm  = pygame.font.SysFont('consolas', 16)
+        self._fbold = pygame.font.SysFont('consolas', 16, bold=True)
+        self._fhd  = pygame.font.SysFont('consolas', 16, bold=True)
 
     def draw(self, player, dungeon_level: int, turn_count: int):
-        pygame.draw.rect(self.screen, (10, 10, 22), (self.x, 0, self.w, self.h))
-        pygame.draw.line(self.screen, (45, 45, 85), (self.x, 0), (self.x, self.h), 2)
+        h = self.screen.get_height()
+        pygame.draw.rect(self.screen, (10, 10, 22), (self.x, 0, self.w, h))
+        pygame.draw.line(self.screen, (45, 45, 85), (self.x, 0), (self.x, h), 2)
 
         y = self.PAD
         y = self._vitals(player, y)
@@ -79,12 +93,12 @@ class Sidebar:
 
     def _header(self, text: str, y: int) -> int:
         pygame.draw.rect(self.screen, (20, 20, 42),
-                         (self.x + self.PAD, y, self.w - self.PAD * 2, 16))
+                         (self.x + self.PAD, y, self.w - self.PAD * 2, 19))
         self.screen.blit(
             self._fhd.render(text, True, (120, 140, 210)),
             (self.x + self.PAD + 3, y)
         )
-        return y + 18
+        return y + 21
 
     def _bar(self, y: int, label: str, val: int, max_val: int,
              bar_color: tuple) -> int:
@@ -93,7 +107,7 @@ class Sidebar:
             (self.x + self.PAD, y)
         )
         bx = self.x + self.PAD + 26
-        bw = self.w - self.PAD * 2 - 26 - 42
+        bw = self.w - self.PAD * 2 - 26 - 62
         bh = 10
         ratio = max(0.0, min(1.0, val / max(1, max_val)))
 
@@ -108,7 +122,7 @@ class Sidebar:
             self._fsm.render(f"{val}/{max_val}", True, (150, 150, 165)),
             (bx + bw + 4, y)
         )
-        return y + 14
+        return y + 18
 
     # ------------------------------------------------------------------
     # Sections
@@ -137,13 +151,13 @@ class Sidebar:
         col_w = (self.w - self.PAD * 2) // 3
         for i, (name, val) in enumerate(attrs):
             ax = self.x + self.PAD + (i % 3) * col_w
-            ay = y + (i // 3) * 16
+            ay = y + (i // 3) * 19
             self.screen.blit(
                 self._fsm.render(f"{name}:", True, (105, 105, 150)), (ax, ay)
             )
             vc = (235, 205, 55) if val > 12 else (175, 175, 195) if val >= 10 else (185, 85, 85)
-            self.screen.blit(self._fbold.render(str(val), True, vc), (ax + 33, ay))
-        return y + 2 * 16 + self.SECTION_GAP
+            self.screen.blit(self._fbold.render(str(val), True, vc), (ax + 38, ay))
+        return y + 2 * 19 + self.SECTION_GAP
 
     def _status(self, player, dungeon_level: int, turn_count: int, y: int) -> int:
         from status_effects import EFFECT_INFO, DEBUFFS
@@ -159,7 +173,21 @@ class Sidebar:
         ]:
             self.screen.blit(self._fsm.render(text, True, color),
                              (self.x + self.PAD, y))
-            y += 14
+            y += 18
+
+        # Prayer cooldown
+        if player.prayer_cooldown > 0:
+            pray_color = (140, 100, 200)
+            self.screen.blit(
+                self._fsm.render(f"Prayer: {player.prayer_cooldown}t", True, pray_color),
+                (self.x + self.PAD, y)
+            )
+        else:
+            self.screen.blit(
+                self._fsm.render("Prayer: Ready", True, (160, 220, 255)),
+                (self.x + self.PAD, y)
+            )
+        y += 18
 
         # Hunger indicator
         sp = player.sp
@@ -168,13 +196,13 @@ class Sidebar:
                 self._fbold.render("[Starving!]", True, (215, 50, 50)),
                 (self.x + self.PAD, y)
             )
-            y += 15
+            y += 19
         elif sp < 60:
             self.screen.blit(
                 self._fbold.render("[Hungry]", True, (215, 180, 45)),
                 (self.x + self.PAD, y)
             )
-            y += 15
+            y += 19
 
         # Active status effects in a 2-column grid
         active = [(eid, val) for eid, val in player.status_effects.items() if val != 0]
@@ -187,9 +215,9 @@ class Sidebar:
                 display_name, rgb, _ = info
                 label = f"[{display_name}]"
                 ax = self.x + self.PAD + (i % 2) * col_w
-                ay = y + (i // 2) * 14
+                ay = y + (i // 2) * 18
                 self.screen.blit(self._fbold.render(label, True, rgb), (ax, ay))
-            y += ((len(active) + 1) // 2) * 14
+            y += ((len(active) + 1) // 2) * 18
 
         return y + self.SECTION_GAP
 
@@ -225,15 +253,13 @@ class Sidebar:
             else:
                 iname = "\u2014"
             ic = (195, 190, 135) if item else (52, 52, 70)
-            self.screen.blit(
-                self._fsm.render(f"{label}:", True, (105, 105, 150)),
-                (self.x + self.PAD, y)
-            )
-            self.screen.blit(
-                self._fsm.render(iname, True, ic),
-                (self.x + self.PAD + 46, y)
-            )
-            y += 14
+            label_surf = self._fsm.render(f"{label}:", True, (105, 105, 150))
+            self.screen.blit(label_surf, (self.x + self.PAD, y))
+            name_x = self.x + self.PAD + label_surf.get_width() + 5
+            max_name_w = self.x + self.w - self.PAD - name_x
+            iname = self._fit(self._fsm, self._cap(iname), max_name_w)
+            self.screen.blit(self._fsm.render(iname, True, ic), (name_x, y))
+            y += 18
         return y + self.SECTION_GAP
 
     def _inventory(self, player, y: int):
@@ -253,10 +279,10 @@ class Sidebar:
             self._fsm.render(f"Wt: {wt:.0f}/{lim}", True, wc),
             (self.x + self.PAD, y)
         )
-        y += 14
+        y += 18
 
         for letter, item in items:
-            if y > self.h - 16:
+            if y > self.screen.get_height() - 16:
                 self.screen.blit(
                     self._fsm.render("...", True, (85, 85, 105)),
                     (self.x + self.PAD, y)
@@ -268,9 +294,12 @@ class Sidebar:
                 (self.x + self.PAD, y)
             )
             count = getattr(item, 'count', None)
-            display = f"{item.name} x{count}" if count is not None else item.name
+            cname = self._cap(item.name)
+            display = f"{cname} x{count}" if count is not None else cname
+            max_disp_w = self.w - self.PAD * 2 - 19
+            display = self._fit(self._fsm, display, max_disp_w)
             self.screen.blit(
                 self._fsm.render(display, True, ic),
                 (self.x + self.PAD + 19, y)
             )
-            y += 14
+            y += 18

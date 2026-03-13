@@ -17,7 +17,14 @@
       "duration": -1
     },
     "unidentified_name": "oak ring",
-    "lore": "Carved from a branch of a prophetic oak tree, this ring faintly pulses when danger approaches, alerting the wearer before their eyes perceive the threat."
+    "lore": "Carved from a branch of a prophetic oak tree, this ring faintly pulses when danger approaches, alerting the wearer before their eyes perceive the threat.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 40,
+      "81-100": 40
+    }
   },
   "ring_warning_runed_metal": {
     "name": "ring of warning",
@@ -37,7 +44,14 @@
       "duration": -1
     },
     "unidentified_name": "runed metal ring",
-    "lore": "The runes inscribed on this metal band are a warning-sense enchantment of military origin, used by scouts who needed to detect ambushes without breaking stealth themselves."
+    "lore": "The runes inscribed on this metal band are a warning-sense enchantment of military origin, used by scouts who needed to detect ambushes without breaking stealth themselves.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 40,
+      "81-100": 40
+    }
   },
   "ring_warning_ancient_copper": {
     "name": "ring of warning",
@@ -57,7 +71,14 @@
       "duration": -1
     },
     "unidentified_name": "ancient copper ring",
-    "lore": "Ancient copper carries a memory of the earth's danger-sense, and this ring's verdigris-tinged surface grows warm whenever hostile intent comes near."
+    "lore": "Ancient copper carries a memory of the earth's danger-sense, and this ring's verdigris-tinged surface grows warm whenever hostile intent comes near.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 40,
+      "81-100": 40
+    }
   },
   "ring_warning_bone": {
     "name": "ring of warning",
@@ -77,7 +98,14 @@
       "duration": -1
     },
     "unidentified_name": "bone ring",
-    "lore": "Carved from the bone of an animal with exceptional instincts, this ring channels a residual predator-sense that alerts its wearer to threats before they fully manifest."
+    "lore": "Carved from the bone of an animal with exceptional instincts, this ring channels a residual predator-sense that alerts its wearer to threats before they fully manifest.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 40,
+      "81-100": 40
+    }
   },
   "ring_warning_twisted_iron": {
     "name": "ring of warning",
@@ -97,7 +125,14 @@
       "duration": -1
     },
     "unidentified_name": "twisted iron ring",
-    "lore": "The twisted iron band vibrates almost imperceptibly when danger nears — a subtle but unmistakable signal that experienced wearers learn to read as reliably as a shout."
+    "lore": "The twisted iron band vibrates almost imperceptibly when danger nears — a subtle but unmistakable signal that experienced wearers learn to read as reliably as a shout.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 40,
+      "81-100": 40
+    }
   },
   "ring_warning_carved_jade": {
     "name": "ring of warning",
@@ -117,7 +152,14 @@
       "duration": -1
     },
     "unidentified_name": "carved jade ring",
-    "lore": "The jade surface of this ring is cool to the touch until danger approaches, at which point it grows almost feverishly warm — a startling contrast that has saved many lives."
+    "lore": "The jade surface of this ring is cool to the touch until danger approaches, at which point it grows almost feverishly warm — a startling contrast that has saved many lives.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 40,
+      "81-100": 40
+    }
   },
   "ring_warning_rough_stone": {
     "name": "ring of warning",
@@ -137,7 +179,14 @@
       "duration": -1
     },
     "unidentified_name": "rough stone ring",
-    "lore": "An unpolished stone ring of obscure origin that quivers against the skin when hostile creatures are near, as though the stone itself remembers being struck."
+    "lore": "An unpolished stone ring of obscure origin that quivers against the skin when hostile creatures are near, as though the stone itself remembers being struck.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 40,
+      "81-100": 40
+    }
   },
   "ring_warning_grey_granite": {
     "name": "ring of warning",
@@ -157,7 +206,14 @@
       "duration": -1
     },
     "unidentified_name": "grey granite ring",
-    "lore": "Grey granite holds the patience of mountains, but this enchanted band pulses with urgency when threats approach — the contrast between stone's stillness and its sudden alarm is deeply unsettling to those who encounter it the first time."
+    "lore": "Grey granite holds the patience of mountains, but this enchanted band pulses with urgency when threats approach — the contrast between stone's stillness and its sudden alarm is deeply unsettling to those who encounter it the first time.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 40,
+      "81-100": 40
+    }
   },
   "ring_searching_silver": {
     "name": "ring of searching",
@@ -177,7 +233,14 @@
       "duration": -1
     },
     "unidentified_name": "silver ring",
-    "lore": "Silver is said to reveal what is hidden from ordinary sight, and this ring sharpens the wearer's perception of concealed passages and secret doors in the dungeon's walls."
+    "lore": "Silver is said to reveal what is hidden from ordinary sight, and this ring sharpens the wearer's perception of concealed passages and secret doors in the dungeon's walls.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 40,
+      "81-100": 40
+    }
   },
   "ring_searching_polished_crystal": {
     "name": "ring of searching",
@@ -197,7 +260,14 @@
       "duration": -1
     },
     "unidentified_name": "polished crystal ring",
-    "lore": "The transparent crystal band focuses light into microscopic cracks and seams in stonework, allowing the wearer to notice hidden mechanisms that would otherwise be invisible."
+    "lore": "The transparent crystal band focuses light into microscopic cracks and seams in stonework, allowing the wearer to notice hidden mechanisms that would otherwise be invisible.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 40,
+      "81-100": 40
+    }
   },
   "ring_searching_malachite": {
     "name": "ring of searching",
@@ -217,7 +287,14 @@
       "duration": -1
     },
     "unidentified_name": "malachite ring",
-    "lore": "Malachite resonates with the secret nature of stone, and this banded green ring draws the wearer's eye toward inconsistencies in dungeon architecture — the telltale signs of hidden doors and concealed passages."
+    "lore": "Malachite resonates with the secret nature of stone, and this banded green ring draws the wearer's eye toward inconsistencies in dungeon architecture — the telltale signs of hidden doors and concealed passages.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 40,
+      "81-100": 40
+    }
   },
   "ring_searching_engraved_pewter": {
     "name": "ring of searching",
@@ -237,7 +314,14 @@
       "duration": -1
     },
     "unidentified_name": "engraved pewter ring",
-    "lore": "The engraved patterns on this pewter band are actually a searching-sense formula, activating a passive scanning enchantment that lets the wearer detect what is deliberately concealed nearby."
+    "lore": "The engraved patterns on this pewter band are actually a searching-sense formula, activating a passive scanning enchantment that lets the wearer detect what is deliberately concealed nearby.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 40,
+      "81-100": 40
+    }
   },
   "ring_searching_gleaming_iron": {
     "name": "ring of searching",
@@ -257,7 +341,14 @@
       "duration": -1
     },
     "unidentified_name": "gleaming iron ring",
-    "lore": "An unusually lustrous iron ring that, when worn, makes the wearer acutely aware of the wrongness of concealed spaces — doors disguised as walls, pits covered with false stone, traps hidden in plain sight."
+    "lore": "An unusually lustrous iron ring that, when worn, makes the wearer acutely aware of the wrongness of concealed spaces — doors disguised as walls, pits covered with false stone, traps hidden in plain sight.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 40,
+      "81-100": 40
+    }
   },
   "ring_searching_pale_ivory": {
     "name": "ring of searching",
@@ -277,7 +368,14 @@
       "duration": -1
     },
     "unidentified_name": "pale ivory ring",
-    "lore": "Carved from a tusk known for prophetic associations, this pale ring lends the wearer a persistent awareness of hidden things — a sixth sense refined from an animal's natural vigilance."
+    "lore": "Carved from a tusk known for prophetic associations, this pale ring lends the wearer a persistent awareness of hidden things — a sixth sense refined from an animal's natural vigilance.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 40,
+      "81-100": 40
+    }
   },
   "ring_searching_mossy_stone": {
     "name": "ring of searching",
@@ -297,7 +395,14 @@
       "duration": -1
     },
     "unidentified_name": "mossy stone ring",
-    "lore": "The mossy surface of this ring is actually a colony of sensing spores that have bonded with the enchantment, creating an organic early-warning system for hidden architectural features."
+    "lore": "The mossy surface of this ring is actually a colony of sensing spores that have bonded with the enchantment, creating an organic early-warning system for hidden architectural features.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 40,
+      "81-100": 40
+    }
   },
   "ring_telepathy_sapphire": {
     "name": "ring of telepathy",
@@ -308,7 +413,7 @@
       220
     ],
     "weight": 0.1,
-    "min_level": 2,
+    "min_level": 8,
     "slot": "ring",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -317,7 +422,14 @@
       "duration": -1
     },
     "unidentified_name": "sapphire ring",
-    "lore": "The sapphire's deep blue is associated with clarity of mind across many cultures; this ring leverages that association to project the wearer's perception across distance, reading the surface thoughts of nearby creatures."
+    "lore": "The sapphire's deep blue is associated with clarity of mind across many cultures; this ring leverages that association to project the wearer's perception across distance, reading the surface thoughts of nearby creatures.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 40
+    }
   },
   "ring_telepathy_lapis_lazuli": {
     "name": "ring of telepathy",
@@ -328,7 +440,7 @@
       180
     ],
     "weight": 0.1,
-    "min_level": 2,
+    "min_level": 8,
     "slot": "ring",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -337,7 +449,14 @@
       "duration": -1
     },
     "unidentified_name": "lapis lazuli ring",
-    "lore": "Lapis was prized by ancient mind-mages for its resonance with thought-waves; this ring's golden pyrite flecks serve as focusing elements for the telepathic enchantment locked inside."
+    "lore": "Lapis was prized by ancient mind-mages for its resonance with thought-waves; this ring's golden pyrite flecks serve as focusing elements for the telepathic enchantment locked inside.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 40
+    }
   },
   "ring_telepathy_cobalt_blue": {
     "name": "ring of telepathy",
@@ -348,7 +467,7 @@
       200
     ],
     "weight": 0.1,
-    "min_level": 2,
+    "min_level": 8,
     "slot": "ring",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -357,7 +476,14 @@
       "duration": -1
     },
     "unidentified_name": "cobalt blue ring",
-    "lore": "A cobalt-blue ring that resonates at the exact frequency of sapient thought, allowing the wearer to sense the emotional states and immediate intentions of creatures within range."
+    "lore": "A cobalt-blue ring that resonates at the exact frequency of sapient thought, allowing the wearer to sense the emotional states and immediate intentions of creatures within range.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 40
+    }
   },
   "ring_telepathy_dark_obsidian": {
     "name": "ring of telepathy",
@@ -368,7 +494,7 @@
       60
     ],
     "weight": 0.1,
-    "min_level": 2,
+    "min_level": 8,
     "slot": "ring",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -377,7 +503,14 @@
       "duration": -1
     },
     "unidentified_name": "dark obsidian ring",
-    "lore": "Obsidian is volcanic in origin, but this particular band was carved from a vein with unusual mental resonance properties — wearing it is like having a quiet voice in one's head that whispers the intentions of nearby creatures."
+    "lore": "Obsidian is volcanic in origin, but this particular band was carved from a vein with unusual mental resonance properties — wearing it is like having a quiet voice in one's head that whispers the intentions of nearby creatures.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 40
+    }
   },
   "ring_telepathy_moonstone": {
     "name": "ring of telepathy",
@@ -388,7 +521,7 @@
       255
     ],
     "weight": 0.1,
-    "min_level": 2,
+    "min_level": 8,
     "slot": "ring",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -397,7 +530,14 @@
       "duration": -1
     },
     "unidentified_name": "moonstone ring",
-    "lore": "Moonstone's eerie inner glow reflects the light of a mind-reading enchantment. Wearers report that nearby creatures' thoughts appear at the edge of their consciousness like half-remembered dreams."
+    "lore": "Moonstone's eerie inner glow reflects the light of a mind-reading enchantment. Wearers report that nearby creatures' thoughts appear at the edge of their consciousness like half-remembered dreams.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 40
+    }
   },
   "ring_telepathy_twilight_crystal": {
     "name": "ring of telepathy",
@@ -408,7 +548,7 @@
       180
     ],
     "weight": 0.1,
-    "min_level": 2,
+    "min_level": 8,
     "slot": "ring",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -417,7 +557,14 @@
       "duration": -1
     },
     "unidentified_name": "twilight crystal ring",
-    "lore": "A twilight-purple crystal that exists in an optical state between transparent and opaque, much like the boundary between private thought and spoken word — wearing it erodes that boundary for nearby minds."
+    "lore": "A twilight-purple crystal that exists in an optical state between transparent and opaque, much like the boundary between private thought and spoken word — wearing it erodes that boundary for nearby minds.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 40
+    }
   },
   "ring_regen_emerald": {
     "name": "ring of regeneration",
@@ -428,7 +575,7 @@
       60
     ],
     "weight": 0.1,
-    "min_level": 2,
+    "min_level": 8,
     "slot": "ring",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -437,7 +584,14 @@
       "duration": -1
     },
     "unidentified_name": "emerald ring",
-    "lore": "The living green of this emerald pulses with regenerative vitality, accelerating the body's natural healing until minor wounds close between heartbeats and major injuries mend in hours rather than days."
+    "lore": "The living green of this emerald pulses with regenerative vitality, accelerating the body's natural healing until minor wounds close between heartbeats and major injuries mend in hours rather than days.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 40
+    }
   },
   "ring_regen_peridot": {
     "name": "ring of regeneration",
@@ -448,7 +602,7 @@
       60
     ],
     "weight": 0.1,
-    "min_level": 2,
+    "min_level": 8,
     "slot": "ring",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -457,7 +611,14 @@
       "duration": -1
     },
     "unidentified_name": "peridot ring",
-    "lore": "Peridot forms deep within the earth under conditions of intense heat and pressure — a forging process that instills the stone with a drive toward renewal that transfers to the ring's wearer as accelerated healing."
+    "lore": "Peridot forms deep within the earth under conditions of intense heat and pressure — a forging process that instills the stone with a drive toward renewal that transfers to the ring's wearer as accelerated healing.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 40
+    }
   },
   "ring_regen_serpentine": {
     "name": "ring of regeneration",
@@ -468,7 +629,7 @@
       80
     ],
     "weight": 0.1,
-    "min_level": 2,
+    "min_level": 8,
     "slot": "ring",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -477,7 +638,14 @@
       "duration": -1
     },
     "unidentified_name": "serpentine ring",
-    "lore": "Named for its snake-skin patterning, serpentine was associated with renewal and rebirth across many ancient cultures — this ring channels that symbolic power into genuine physical regeneration."
+    "lore": "Named for its snake-skin patterning, serpentine was associated with renewal and rebirth across many ancient cultures — this ring channels that symbolic power into genuine physical regeneration.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 40
+    }
   },
   "ring_regen_verdant_jade": {
     "name": "ring of regeneration",
@@ -488,7 +656,7 @@
       70
     ],
     "weight": 0.1,
-    "min_level": 2,
+    "min_level": 8,
     "slot": "ring",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -497,7 +665,14 @@
       "duration": -1
     },
     "unidentified_name": "verdant jade ring",
-    "lore": "Deep forest-green jade carries the slow patient energy of growing things, and this ring channels that vitality into the wearer's body — wounds closing with the steady inevitability of vines reclaiming old stone."
+    "lore": "Deep forest-green jade carries the slow patient energy of growing things, and this ring channels that vitality into the wearer's body — wounds closing with the steady inevitability of vines reclaiming old stone.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 40
+    }
   },
   "ring_regen_living_wood": {
     "name": "ring of regeneration",
@@ -508,7 +683,7 @@
       60
     ],
     "weight": 0.1,
-    "min_level": 2,
+    "min_level": 8,
     "slot": "ring",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -517,7 +692,14 @@
       "duration": -1
     },
     "unidentified_name": "living wood ring",
-    "lore": "This ring was carved from wood taken from a living tree still in the ground at the time of cutting, preserving the living essence of the plant matter. That essence drives continuous cellular regeneration in the wearer."
+    "lore": "This ring was carved from wood taken from a living tree still in the ground at the time of cutting, preserving the living essence of the plant matter. That essence drives continuous cellular regeneration in the wearer.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 40
+    }
   },
   "ring_strength_iron": {
     "name": "ring of strength",
@@ -537,7 +719,14 @@
       "amount": 1
     },
     "unidentified_name": "iron ring",
-    "lore": "Iron is the metal of physical labor and martial endurance; this simple band channels that essence into the wearer's muscles, granting a reliable increase to raw strength."
+    "lore": "Iron is the metal of physical labor and martial endurance; this simple band channels that essence into the wearer's muscles, granting a reliable increase to raw strength.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 40,
+      "81-100": 40
+    }
   },
   "ring_strength_steel": {
     "name": "ring of strength",
@@ -548,7 +737,7 @@
       165
     ],
     "weight": 0.1,
-    "min_level": 2,
+    "min_level": 8,
     "slot": "ring",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -557,7 +746,14 @@
       "amount": 2
     },
     "unidentified_name": "steel ring",
-    "lore": "The superior refinement of steel over iron is reflected in this ring's stronger enhancement — the muscles of the wearer cord and harden noticeably while it is worn, providing meaningful combat advantage."
+    "lore": "The superior refinement of steel over iron is reflected in this ring's stronger enhancement — the muscles of the wearer cord and harden noticeably while it is worn, providing meaningful combat advantage.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 40
+    }
   },
   "ring_strength_adamantine": {
     "name": "ring of strength",
@@ -568,7 +764,7 @@
       110
     ],
     "weight": 0.1,
-    "min_level": 3,
+    "min_level": 25,
     "slot": "ring",
     "equip_threshold": 4,
     "quiz_tier": 3,
@@ -577,7 +773,14 @@
       "amount": 3
     },
     "unidentified_name": "adamantine ring",
-    "lore": "The densest metal known to mortals grants the densest strength enhancement known to ring-makers; wearers of adamantine strength rings have been known to bend iron bars with bare hands."
+    "lore": "The densest metal known to mortals grants the densest strength enhancement known to ring-makers; wearers of adamantine strength rings have been known to bend iron bars with bare hands.",
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 80
+    }
   },
   "ring_strength_mithril": {
     "name": "ring of strength",
@@ -588,7 +791,7 @@
       240
     ],
     "weight": 0.1,
-    "min_level": 3,
+    "min_level": 25,
     "slot": "ring",
     "equip_threshold": 4,
     "quiz_tier": 3,
@@ -597,7 +800,14 @@
       "amount": 3
     },
     "unidentified_name": "mithril ring",
-    "lore": "Mithril's strength-to-weight ratio is legendary; this ring enhances the wearer's physical capabilities to a similar degree — extraordinary power delivered without the usual associated bulk."
+    "lore": "Mithril's strength-to-weight ratio is legendary; this ring enhances the wearer's physical capabilities to a similar degree — extraordinary power delivered without the usual associated bulk.",
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 80
+    }
   },
   "ring_constitution_ruby": {
     "name": "ring of constitution",
@@ -617,7 +827,14 @@
       "amount": 1
     },
     "unidentified_name": "ruby ring",
-    "lore": "Rubies were believed by ancient healers to strengthen the blood and harden the body against illness and injury; this ring activates that belief as literal fact, enhancing the wearer's constitution."
+    "lore": "Rubies were believed by ancient healers to strengthen the blood and harden the body against illness and injury; this ring activates that belief as literal fact, enhancing the wearer's constitution.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 40,
+      "81-100": 40
+    }
   },
   "ring_constitution_coral": {
     "name": "ring of constitution",
@@ -628,7 +845,7 @@
       80
     ],
     "weight": 0.1,
-    "min_level": 2,
+    "min_level": 8,
     "slot": "ring",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -637,7 +854,14 @@
       "amount": 2
     },
     "unidentified_name": "coral ring",
-    "lore": "Coral grows relentlessly despite the crushing pressures of deep water — this ring channels that stubborn vitality, significantly bolstering the wearer's endurance and resistance to harm."
+    "lore": "Coral grows relentlessly despite the crushing pressures of deep water — this ring channels that stubborn vitality, significantly bolstering the wearer's endurance and resistance to harm.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 40
+    }
   },
   "ring_constitution_carnelian": {
     "name": "ring of constitution",
@@ -648,7 +872,7 @@
       40
     ],
     "weight": 0.1,
-    "min_level": 2,
+    "min_level": 8,
     "slot": "ring",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -657,7 +881,14 @@
       "amount": 2
     },
     "unidentified_name": "carnelian ring",
-    "lore": "Carnelian was carried by warriors for courage and physical hardiness since ancient times — this ring makes good on that tradition, providing genuine constitutional enhancement rather than mere psychological comfort."
+    "lore": "Carnelian was carried by warriors for courage and physical hardiness since ancient times — this ring makes good on that tradition, providing genuine constitutional enhancement rather than mere psychological comfort.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 40
+    }
   },
   "ring_constitution_garnet": {
     "name": "ring of constitution",
@@ -668,7 +899,7 @@
       30
     ],
     "weight": 0.1,
-    "min_level": 3,
+    "min_level": 25,
     "slot": "ring",
     "equip_threshold": 4,
     "quiz_tier": 3,
@@ -677,7 +908,14 @@
       "amount": 3
     },
     "unidentified_name": "garnet ring",
-    "lore": "Deep garnet vibrates at a frequency that resonates with the body's fundamental vitality; this ring markedly improves the wearer's stamina, hit point capacity, and resistance to environmental stresses."
+    "lore": "Deep garnet vibrates at a frequency that resonates with the body's fundamental vitality; this ring markedly improves the wearer's stamina, hit point capacity, and resistance to environmental stresses.",
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 80
+    }
   },
   "ring_dexterity_quicksilver": {
     "name": "ring of dexterity",
@@ -697,7 +935,14 @@
       "amount": 1
     },
     "unidentified_name": "quicksilver ring",
-    "lore": "Mercury's liquid swiftness is captured in this ring's enchantment, translating the metal's effortless flow into enhanced reflexes and precision of movement for the wearer."
+    "lore": "Mercury's liquid swiftness is captured in this ring's enchantment, translating the metal's effortless flow into enhanced reflexes and precision of movement for the wearer.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 40,
+      "81-100": 40
+    }
   },
   "ring_dexterity_thin_wire": {
     "name": "ring of dexterity",
@@ -708,7 +953,7 @@
       190
     ],
     "weight": 0.1,
-    "min_level": 2,
+    "min_level": 8,
     "slot": "ring",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -717,7 +962,14 @@
       "amount": 2
     },
     "unidentified_name": "thin wire ring",
-    "lore": "This impossibly fine wire ring represents the pinnacle of delicate metalworking — wearing it transfers some of that delicacy to the wearer's fingers, greatly enhancing manual precision and overall agility."
+    "lore": "This impossibly fine wire ring represents the pinnacle of delicate metalworking — wearing it transfers some of that delicacy to the wearer's fingers, greatly enhancing manual precision and overall agility.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 40
+    }
   },
   "ring_dexterity_spun_glass": {
     "name": "ring of dexterity",
@@ -728,7 +980,7 @@
       255
     ],
     "weight": 0.1,
-    "min_level": 2,
+    "min_level": 8,
     "slot": "ring",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -737,7 +989,14 @@
       "amount": 2
     },
     "unidentified_name": "spun glass ring",
-    "lore": "Spun from a single unbroken thread of glass in a process requiring extraordinary patience and skill, this ring imparts the maker's mastery of precise movement to whoever wears it."
+    "lore": "Spun from a single unbroken thread of glass in a process requiring extraordinary patience and skill, this ring imparts the maker's mastery of precise movement to whoever wears it.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 40
+    }
   },
   "ring_dexterity_featherweight": {
     "name": "ring of dexterity",
@@ -748,7 +1007,7 @@
       255
     ],
     "weight": 0.1,
-    "min_level": 3,
+    "min_level": 25,
     "slot": "ring",
     "equip_threshold": 4,
     "quiz_tier": 3,
@@ -757,7 +1016,14 @@
       "amount": 3
     },
     "unidentified_name": "featherweight ring",
-    "lore": "So light it can barely be felt on the finger, this ring was enchanted by a master acrobat-mage who wanted to capture perfect physical grace in an item. The result is a dramatic enhancement to the wearer's coordination and reflexes."
+    "lore": "So light it can barely be felt on the finger, this ring was enchanted by a master acrobat-mage who wanted to capture perfect physical grace in an item. The result is a dramatic enhancement to the wearer's coordination and reflexes.",
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 80
+    }
   },
   "ring_intellect_amethyst": {
     "name": "ring of intellect",
@@ -777,7 +1043,14 @@
       "amount": 1
     },
     "unidentified_name": "amethyst ring",
-    "lore": "Amethyst has been associated with clarity of thought since antiquity; this ring channels that association into a genuine enhancement of the wearer's reasoning capacity and magical aptitude."
+    "lore": "Amethyst has been associated with clarity of thought since antiquity; this ring channels that association into a genuine enhancement of the wearer's reasoning capacity and magical aptitude.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 40,
+      "81-100": 40
+    }
   },
   "ring_intellect_purple_glass": {
     "name": "ring of intellect",
@@ -788,7 +1061,7 @@
       180
     ],
     "weight": 0.1,
-    "min_level": 2,
+    "min_level": 8,
     "slot": "ring",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -797,7 +1070,14 @@
       "amount": 2
     },
     "unidentified_name": "purple glass ring",
-    "lore": "Purple glass was used in ancient scrying lenses, and this ring carries an echo of that tradition — wearing it sharpens the mind significantly, improving memory, reasoning, and magical power simultaneously."
+    "lore": "Purple glass was used in ancient scrying lenses, and this ring carries an echo of that tradition — wearing it sharpens the mind significantly, improving memory, reasoning, and magical power simultaneously.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 40
+    }
   },
   "ring_intellect_arcane_pewter": {
     "name": "ring of intellect",
@@ -808,7 +1088,7 @@
       170
     ],
     "weight": 0.1,
-    "min_level": 2,
+    "min_level": 8,
     "slot": "ring",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -817,7 +1097,14 @@
       "amount": 2
     },
     "unidentified_name": "arcane pewter ring",
-    "lore": "Pewter mixed with arcane reagents during casting, this ring's dull surface belies its sophisticated enchantment — worn, it noticeably improves the wearer's intellectual capacity and mana reserves."
+    "lore": "Pewter mixed with arcane reagents during casting, this ring's dull surface belies its sophisticated enchantment — worn, it noticeably improves the wearer's intellectual capacity and mana reserves.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 40
+    }
   },
   "ring_intellect_prismatic": {
     "name": "ring of intellect",
@@ -828,7 +1115,7 @@
       255
     ],
     "weight": 0.1,
-    "min_level": 3,
+    "min_level": 25,
     "slot": "ring",
     "equip_threshold": 4,
     "quiz_tier": 3,
@@ -837,7 +1124,14 @@
       "amount": 3
     },
     "unidentified_name": "prismatic ring",
-    "lore": "A ring that splits incoming light into a full spectrum — a metaphor made literal for the wearer's mind, which gains the ability to analyze problems from multiple simultaneous angles. The intelligence enhancement is dramatic and immediate."
+    "lore": "A ring that splits incoming light into a full spectrum — a metaphor made literal for the wearer's mind, which gains the ability to analyze problems from multiple simultaneous angles. The intelligence enhancement is dramatic and immediate.",
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 80
+    }
   },
   "ring_wisdom_opal": {
     "name": "ring of wisdom",
@@ -857,7 +1151,14 @@
       "amount": 1
     },
     "unidentified_name": "opal ring",
-    "lore": "The opal's shifting internal fire has always been associated with intuition and deeper knowing; this ring enhances the wearer's wisdom, improving quiz timing and heightening awareness of hidden truths."
+    "lore": "The opal's shifting internal fire has always been associated with intuition and deeper knowing; this ring enhances the wearer's wisdom, improving quiz timing and heightening awareness of hidden truths.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 40,
+      "81-100": 40
+    }
   },
   "ring_wisdom_pearl": {
     "name": "ring of wisdom",
@@ -868,7 +1169,7 @@
       240
     ],
     "weight": 0.1,
-    "min_level": 2,
+    "min_level": 8,
     "slot": "ring",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -877,7 +1178,14 @@
       "amount": 2
     },
     "unidentified_name": "pearl ring",
-    "lore": "Pearls are formed through patient endurance of irritation — an apt metaphor for wisdom itself. This ring bestows the patient acuity that comes from long experience, significantly improving the wearer's judgment and quiz performance."
+    "lore": "Pearls are formed through patient endurance of irritation — an apt metaphor for wisdom itself. This ring bestows the patient acuity that comes from long experience, significantly improving the wearer's judgment and quiz performance.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 40
+    }
   },
   "ring_wisdom_ivory": {
     "name": "ring of wisdom",
@@ -888,7 +1196,7 @@
       210
     ],
     "weight": 0.1,
-    "min_level": 2,
+    "min_level": 8,
     "slot": "ring",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -897,7 +1205,14 @@
       "amount": 2
     },
     "unidentified_name": "ivory ring",
-    "lore": "Carved from ancient ivory of uncertain provenance, this ring carries a gravity of accumulated experience that transfers to its wearer as enhanced discernment and measured judgment."
+    "lore": "Carved from ancient ivory of uncertain provenance, this ring carries a gravity of accumulated experience that transfers to its wearer as enhanced discernment and measured judgment.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 40
+    }
   },
   "ring_wisdom_white_quartz": {
     "name": "ring of wisdom",
@@ -908,7 +1223,7 @@
       230
     ],
     "weight": 0.1,
-    "min_level": 3,
+    "min_level": 25,
     "slot": "ring",
     "equip_threshold": 4,
     "quiz_tier": 3,
@@ -917,7 +1232,14 @@
       "amount": 3
     },
     "unidentified_name": "white quartz ring",
-    "lore": "White quartz is the stone most used in divination traditions worldwide; this ring concentrates centuries of divinatory enchantment into a permanent wisdom enhancement that provides an exceptional boost to the wearer's perceptive judgment."
+    "lore": "White quartz is the stone most used in divination traditions worldwide; this ring concentrates centuries of divinatory enchantment into a permanent wisdom enhancement that provides an exceptional boost to the wearer's perceptive judgment.",
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 80
+    }
   },
   "ring_perception_topaz": {
     "name": "ring of perception",
@@ -937,7 +1259,14 @@
       "amount": 1
     },
     "unidentified_name": "topaz ring",
-    "lore": "Topaz catches light from every angle simultaneously — and this ring extends that quality to the wearer's vision, expanding their effective sight radius in the darkened passages of the dungeon."
+    "lore": "Topaz catches light from every angle simultaneously — and this ring extends that quality to the wearer's vision, expanding their effective sight radius in the darkened passages of the dungeon.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 40,
+      "81-100": 40
+    }
   },
   "ring_perception_amber": {
     "name": "ring of perception",
@@ -948,7 +1277,7 @@
       40
     ],
     "weight": 0.1,
-    "min_level": 2,
+    "min_level": 8,
     "slot": "ring",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -957,7 +1286,14 @@
       "amount": 2
     },
     "unidentified_name": "amber ring",
-    "lore": "Ancient amber sometimes contains preserved insects whose compound eyes saw in directions simultaneously — this ring channels that multi-directional awareness, meaningfully increasing the wearer's field of perception."
+    "lore": "Ancient amber sometimes contains preserved insects whose compound eyes saw in directions simultaneously — this ring channels that multi-directional awareness, meaningfully increasing the wearer's field of perception.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 40
+    }
   },
   "ring_perception_citrine": {
     "name": "ring of perception",
@@ -968,7 +1304,7 @@
       80
     ],
     "weight": 0.1,
-    "min_level": 2,
+    "min_level": 8,
     "slot": "ring",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -977,7 +1313,14 @@
       "amount": 2
     },
     "unidentified_name": "citrine ring",
-    "lore": "Golden citrine focuses light efficiently, and this ring's enchantment does the same for the wearer's senses — dramatically increasing the distance at which they can reliably detect movement and detail."
+    "lore": "Golden citrine focuses light efficiently, and this ring's enchantment does the same for the wearer's senses — dramatically increasing the distance at which they can reliably detect movement and detail.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 40
+    }
   },
   "ring_perception_hawks_eye": {
     "name": "ring of perception",
@@ -988,7 +1331,7 @@
       60
     ],
     "weight": 0.1,
-    "min_level": 3,
+    "min_level": 25,
     "slot": "ring",
     "equip_threshold": 4,
     "quiz_tier": 3,
@@ -997,7 +1340,14 @@
       "amount": 3
     },
     "unidentified_name": "hawks-eye ring",
-    "lore": "Named for the raptor whose vision is legendary, this ring's enchantment provides an almost supernatural expansion of the wearer's perceptual range — at full effect, wearers describe seeing clearly in conditions that would blind ordinary adventurers entirely."
+    "lore": "Named for the raptor whose vision is legendary, this ring's enchantment provides an almost supernatural expansion of the wearer's perceptual range — at full effect, wearers describe seeing clearly in conditions that would blind ordinary adventurers entirely.",
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 80
+    }
   },
   "ring_fire_res_a": {
     "name": "ring of fire resist",
@@ -1008,7 +1358,7 @@
       30
     ],
     "weight": 0.1,
-    "min_level": 2,
+    "min_level": 8,
     "slot": "ring",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -1017,7 +1367,14 @@
       "duration": -1
     },
     "unidentified_name": "fire opal ring",
-    "lore": "A fire opal set in a band of heat-treated iron, this ring was forged in a volcano's mouth by a smith who worked alongside fire elementals. It makes the wearer's skin shed flame like water sheds off oiled leather."
+    "lore": "A fire opal set in a band of heat-treated iron, this ring was forged in a volcano's mouth by a smith who worked alongside fire elementals. It makes the wearer's skin shed flame like water sheds off oiled leather.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 40
+    }
   },
   "ring_fire_res_b": {
     "name": "ring of fire resist",
@@ -1028,7 +1385,7 @@
       20
     ],
     "weight": 0.1,
-    "min_level": 2,
+    "min_level": 8,
     "slot": "ring",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -1037,7 +1394,14 @@
       "duration": -1
     },
     "unidentified_name": "molten iron ring",
-    "lore": "This iron ring was quenched not in water but in fire itself, permanently altering its magical properties. The wearer's skin becomes dramatically more resistant to flames — a vital enchantment in any dungeon where fire-breathing creatures patrol."
+    "lore": "This iron ring was quenched not in water but in fire itself, permanently altering its magical properties. The wearer's skin becomes dramatically more resistant to flames — a vital enchantment in any dungeon where fire-breathing creatures patrol.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 40
+    }
   },
   "ring_cold_res_a": {
     "name": "ring of cold resist",
@@ -1048,7 +1412,7 @@
       255
     ],
     "weight": 0.1,
-    "min_level": 2,
+    "min_level": 8,
     "slot": "ring",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -1057,7 +1421,14 @@
       "duration": -1
     },
     "unidentified_name": "glacial quartz ring",
-    "lore": "Quartz formed within glacier ice over thousands of years, this ring carries the cold's patience within it — and grants the wearer an immunity to that very patience, becoming impervious to magical cold."
+    "lore": "Quartz formed within glacier ice over thousands of years, this ring carries the cold's patience within it — and grants the wearer an immunity to that very patience, becoming impervious to magical cold.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 40
+    }
   },
   "ring_cold_res_b": {
     "name": "ring of cold resist",
@@ -1068,7 +1439,7 @@
       255
     ],
     "weight": 0.1,
-    "min_level": 2,
+    "min_level": 8,
     "slot": "ring",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -1077,7 +1448,14 @@
       "duration": -1
     },
     "unidentified_name": "frost crystal ring",
-    "lore": "This crystal seems perpetually frosted, yet the wearer's finger never grows cold — the ring absorbs cold energy before it can harm its owner, leaving the wearer comfortable while ice storms rage around them."
+    "lore": "This crystal seems perpetually frosted, yet the wearer's finger never grows cold — the ring absorbs cold energy before it can harm its owner, leaving the wearer comfortable while ice storms rage around them.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 40
+    }
   },
   "ring_shock_res_a": {
     "name": "ring of shock resist",
@@ -1088,7 +1466,7 @@
       60
     ],
     "weight": 0.1,
-    "min_level": 2,
+    "min_level": 8,
     "slot": "ring",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -1097,7 +1475,14 @@
       "duration": -1
     },
     "unidentified_name": "crackling copper ring",
-    "lore": "Copper is electricity's preferred path, and this ring was enchanted to make itself that path instead of the wearer — electrical energy flows harmlessly through the ring and dissipates, sparing the body entirely."
+    "lore": "Copper is electricity's preferred path, and this ring was enchanted to make itself that path instead of the wearer — electrical energy flows harmlessly through the ring and dissipates, sparing the body entirely.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 40
+    }
   },
   "ring_shock_res_b": {
     "name": "ring of shock resist",
@@ -1108,7 +1493,7 @@
       40
     ],
     "weight": 0.1,
-    "min_level": 2,
+    "min_level": 8,
     "slot": "ring",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -1117,7 +1502,14 @@
       "duration": -1
     },
     "unidentified_name": "arc-spark brass ring",
-    "lore": "This brass ring occasionally emits small spontaneous sparks — a sign that it is actively absorbing and discharging ambient electrical energy harmlessly, protecting the wearer from lightning and shock attacks."
+    "lore": "This brass ring occasionally emits small spontaneous sparks — a sign that it is actively absorbing and discharging ambient electrical energy harmlessly, protecting the wearer from lightning and shock attacks.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 40
+    }
   },
   "ring_poison_res_a": {
     "name": "ring of poison resist",
@@ -1128,7 +1520,7 @@
       80
     ],
     "weight": 0.1,
-    "min_level": 2,
+    "min_level": 8,
     "slot": "ring",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -1137,7 +1529,14 @@
       "duration": -1
     },
     "unidentified_name": "jade serpent ring",
-    "lore": "Carved in the shape of a serpent devouring its own tail, this jade ring was used by venomous creature handlers who needed reliable protection against accidental bites. The antitoxin enchantment is thoroughly tested."
+    "lore": "Carved in the shape of a serpent devouring its own tail, this jade ring was used by venomous creature handlers who needed reliable protection against accidental bites. The antitoxin enchantment is thoroughly tested.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 40
+    }
   },
   "ring_poison_res_b": {
     "name": "ring of poison resist",
@@ -1148,7 +1547,7 @@
       60
     ],
     "weight": 0.1,
-    "min_level": 2,
+    "min_level": 8,
     "slot": "ring",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -1157,7 +1556,14 @@
       "duration": -1
     },
     "unidentified_name": "toxic tourmaline ring",
-    "lore": "Tourmaline naturally concentrates certain minerals that neutralize biological toxins; this enchanted ring magnifies that property dramatically, making its wearer virtually immune to ingested, injected, and contact poisons."
+    "lore": "Tourmaline naturally concentrates certain minerals that neutralize biological toxins; this enchanted ring magnifies that property dramatically, making its wearer virtually immune to ingested, injected, and contact poisons.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 40
+    }
   },
   "ring_sleep_res_a": {
     "name": "ring of sleep resist",
@@ -1168,7 +1574,7 @@
       220
     ],
     "weight": 0.1,
-    "min_level": 2,
+    "min_level": 8,
     "slot": "ring",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -1177,7 +1583,14 @@
       "duration": -1
     },
     "unidentified_name": "dreamstone ring",
-    "lore": "Carved from dreamstone — a mineral that forms only in locations where many creatures have died in their sleep — this ring paradoxically protects against the very sleep effects its material evokes."
+    "lore": "Carved from dreamstone — a mineral that forms only in locations where many creatures have died in their sleep — this ring paradoxically protects against the very sleep effects its material evokes.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 40
+    }
   },
   "ring_sleep_res_b": {
     "name": "ring of sleep resist",
@@ -1188,7 +1601,7 @@
       240
     ],
     "weight": 0.1,
-    "min_level": 2,
+    "min_level": 8,
     "slot": "ring",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -1197,7 +1610,14 @@
       "duration": -1
     },
     "unidentified_name": "lucid crystal ring",
-    "lore": "Those who wear this pale lavender crystal ring report that their sleep is uncommonly vivid and lucid — but more importantly, sleep-inducing magic simply fails to take hold while the ring is worn."
+    "lore": "Those who wear this pale lavender crystal ring report that their sleep is uncommonly vivid and lucid — but more importantly, sleep-inducing magic simply fails to take hold while the ring is worn.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 40
+    }
   },
   "ring_magic_res_a": {
     "name": "ring of magic resist",
@@ -1208,7 +1628,7 @@
       200
     ],
     "weight": 0.1,
-    "min_level": 3,
+    "min_level": 25,
     "slot": "ring",
     "equip_threshold": 4,
     "quiz_tier": 3,
@@ -1217,7 +1637,14 @@
       "duration": -1
     },
     "unidentified_name": "warded pewter ring",
-    "lore": "Every millimeter of this pewter ring's surface is engraved with layered warding formulae, creating a persistent anti-magical field that deflects directed spells before they can take full effect on the wearer."
+    "lore": "Every millimeter of this pewter ring's surface is engraved with layered warding formulae, creating a persistent anti-magical field that deflects directed spells before they can take full effect on the wearer.",
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 80
+    }
   },
   "ring_drain_res_a": {
     "name": "ring of drain resist",
@@ -1228,7 +1655,7 @@
       160
     ],
     "weight": 0.1,
-    "min_level": 3,
+    "min_level": 1,
     "slot": "ring",
     "equip_threshold": 4,
     "quiz_tier": 3,
@@ -1237,7 +1664,14 @@
       "duration": -1
     },
     "unidentified_name": "soul-ward jasper ring",
-    "lore": "Carved from jasper found in an old graveyard where necromancers had worked, this ring has developed a natural hostility to life-draining magic — it wraps the wearer's vital energy in a protective shell impervious to drain effects."
+    "lore": "Carved from jasper found in an old graveyard where necromancers had worked, this ring has developed a natural hostility to life-draining magic — it wraps the wearer's vital energy in a protective shell impervious to drain effects.",
+    "floorSpawnWeight": {
+      "1-20": 60,
+      "21-40": 60,
+      "41-60": 40,
+      "61-80": 30,
+      "81-100": 20
+    }
   },
   "ring_levitate": {
     "name": "ring of levitating",
@@ -1248,7 +1682,7 @@
       240
     ],
     "weight": 0.1,
-    "min_level": 3,
+    "min_level": 25,
     "slot": "ring",
     "equip_threshold": 4,
     "quiz_tier": 3,
@@ -1257,7 +1691,14 @@
       "duration": -1
     },
     "unidentified_name": "phantom silver ring",
-    "lore": "This ring seems to float on the finger rather than sit against the skin — a subtle preview of the levitation it grants. Wearers drift silently above pit traps and submerged floors, untouchable by ground-level threats."
+    "lore": "This ring seems to float on the finger rather than sit against the skin — a subtle preview of the levitation it grants. Wearers drift silently above pit traps and submerged floors, untouchable by ground-level threats.",
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 80
+    }
   },
   "ring_invisible": {
     "name": "ring of invisible",
@@ -1268,7 +1709,7 @@
       240
     ],
     "weight": 0.1,
-    "min_level": 3,
+    "min_level": 25,
     "slot": "ring",
     "equip_threshold": 4,
     "quiz_tier": 3,
@@ -1277,7 +1718,14 @@
       "duration": -1
     },
     "unidentified_name": "ghostly crystal ring",
-    "lore": "Enchanted with a light-bending field that makes the wearer invisible to normal sight. The ring itself becomes invisible along with everything it touches — veteran wearers learn to keep close track of where they left it."
+    "lore": "Enchanted with a light-bending field that makes the wearer invisible to normal sight. The ring itself becomes invisible along with everything it touches — veteran wearers learn to keep close track of where they left it.",
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 80
+    }
   },
   "ring_hasted": {
     "name": "ring of hasted",
@@ -1288,7 +1736,7 @@
       80
     ],
     "weight": 0.1,
-    "min_level": 3,
+    "min_level": 25,
     "slot": "ring",
     "equip_threshold": 4,
     "quiz_tier": 3,
@@ -1297,7 +1745,14 @@
       "duration": -1
     },
     "unidentified_name": "quickstep tourmaline ring",
-    "lore": "A haste enchantment locked permanently into tourmaline by a wizard who could never tolerate moving at normal speed. Wearers move at doubled pace, making combat and exploration dramatically more efficient — though hunger accelerates equally."
+    "lore": "A haste enchantment locked permanently into tourmaline by a wizard who could never tolerate moving at normal speed. Wearers move at doubled pace, making combat and exploration dramatically more efficient — though hunger accelerates equally.",
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 80
+    }
   },
   "ring_clairvoy": {
     "name": "ring of clairvoyant",
@@ -1308,7 +1763,7 @@
       80
     ],
     "weight": 0.1,
-    "min_level": 3,
+    "min_level": 25,
     "slot": "ring",
     "equip_threshold": 5,
     "quiz_tier": 3,
@@ -1317,7 +1772,14 @@
       "duration": -1
     },
     "unidentified_name": "all-seeing onyx ring",
-    "lore": "This near-black onyx ring makes the wearer aware of the entire dungeon level simultaneously — not as a map, but as a felt spatial awareness, like having eyes in every wall. It is profoundly disorienting at first and profoundly useful once mastered."
+    "lore": "This near-black onyx ring makes the wearer aware of the entire dungeon level simultaneously — not as a map, but as a felt spatial awareness, like having eyes in every wall. It is profoundly disorienting at first and profoundly useful once mastered.",
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 80
+    }
   },
   "ring_displace": {
     "name": "ring of displacement",
@@ -1328,7 +1790,7 @@
       100
     ],
     "weight": 0.1,
-    "min_level": 3,
+    "min_level": 25,
     "slot": "ring",
     "equip_threshold": 4,
     "quiz_tier": 3,
@@ -1337,7 +1799,14 @@
       "duration": -1
     },
     "unidentified_name": "blurred obsidian ring",
-    "lore": "A displacement effect makes the wearer appear to be slightly offset from their actual position — enemies targeting the image find their attacks passing through empty air while the real body remains untouched."
+    "lore": "A displacement effect makes the wearer appear to be slightly offset from their actual position — enemies targeting the image find their attacks passing through empty air while the real body remains untouched.",
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 80
+    }
   },
   "ring_curse_teleport": {
     "name": "ring of teleportitis",
@@ -1357,7 +1826,14 @@
       "duration": -1
     },
     "unidentified_name": "chaotic onyx ring",
-    "lore": "A cursed ring with a broken teleportation enchantment that activates randomly rather than on command. The wearer finds themselves suddenly elsewhere at unpredictable intervals — occasionally useful, often catastrophic."
+    "lore": "A cursed ring with a broken teleportation enchantment that activates randomly rather than on command. The wearer finds themselves suddenly elsewhere at unpredictable intervals — occasionally useful, often catastrophic.",
+    "floorSpawnWeight": {
+      "1-20": 60,
+      "21-40": 60,
+      "41-60": 40,
+      "61-80": 30,
+      "81-100": 20
+    }
   },
   "ring_curse_aggravate": {
     "name": "ring of aggravation",
@@ -1377,7 +1853,14 @@
       "duration": -1
     },
     "unidentified_name": "aggravating brass ring",
-    "lore": "This cursed ring emits a low-frequency magical irritant that drives nearby creatures to aggression toward the wearer — even docile monsters become hostile, and hostile ones become frenzied. Removing it requires magical assistance."
+    "lore": "This cursed ring emits a low-frequency magical irritant that drives nearby creatures to aggression toward the wearer — even docile monsters become hostile, and hostile ones become frenzied. Removing it requires magical assistance.",
+    "floorSpawnWeight": {
+      "1-20": 60,
+      "21-40": 60,
+      "41-60": 40,
+      "61-80": 30,
+      "81-100": 20
+    }
   },
   "ring_curse_fumble": {
     "name": "ring of fumbling",
@@ -1397,7 +1880,14 @@
       "duration": -1
     },
     "unidentified_name": "heavy lead ring",
-    "lore": "A maliciously enchanted band that subtly disrupts motor coordination — objects slip from the wearer's grasp, footfalls become uncertain, and combat becomes a series of embarrassing near-misses. Cursed upon first contact."
+    "lore": "A maliciously enchanted band that subtly disrupts motor coordination — objects slip from the wearer's grasp, footfalls become uncertain, and combat becomes a series of embarrassing near-misses. Cursed upon first contact.",
+    "floorSpawnWeight": {
+      "1-20": 60,
+      "21-40": 60,
+      "41-60": 40,
+      "61-80": 30,
+      "81-100": 20
+    }
   },
   "ring_curse_slow": {
     "name": "ring of slowing",
@@ -1417,7 +1907,14 @@
       "duration": -1
     },
     "unidentified_name": "leaden iron ring",
-    "lore": "This ring seems heavier than iron has any right to be, and that heaviness extends to every movement of the wearer — slowed to half speed, they become easy prey for anything with patience enough to follow them."
+    "lore": "This ring seems heavier than iron has any right to be, and that heaviness extends to every movement of the wearer — slowed to half speed, they become easy prey for anything with patience enough to follow them.",
+    "floorSpawnWeight": {
+      "1-20": 60,
+      "21-40": 60,
+      "41-60": 40,
+      "61-80": 30,
+      "81-100": 20
+    }
   },
   "amulet_warning_leather": {
     "name": "amulet of warning",
@@ -1437,7 +1934,14 @@
       "duration": -1
     },
     "unidentified_name": "leather cord amulet",
-    "lore": "A simple tooth or claw strung on a leather cord, charged with a warning-sense enchantment by a dungeon shaman. The amulet grows hot against the sternum when danger approaches from any direction."
+    "lore": "A simple tooth or claw strung on a leather cord, charged with a warning-sense enchantment by a dungeon shaman. The amulet grows hot against the sternum when danger approaches from any direction.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 40,
+      "81-100": 40
+    }
   },
   "amulet_warning_copper": {
     "name": "amulet of warning",
@@ -1457,7 +1961,14 @@
       "duration": -1
     },
     "unidentified_name": "copper chain amulet",
-    "lore": "An oxidized copper pendant hanging from a matching chain, enchanted to vibrate at the frequency of approaching hostility. The verdigris darkens further as threats draw closer — a colorful if morbid safety gauge."
+    "lore": "An oxidized copper pendant hanging from a matching chain, enchanted to vibrate at the frequency of approaching hostility. The verdigris darkens further as threats draw closer — a colorful if morbid safety gauge.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 40,
+      "81-100": 40
+    }
   },
   "amulet_searching_bone": {
     "name": "amulet of searching",
@@ -1477,7 +1988,14 @@
       "duration": -1
     },
     "unidentified_name": "bone chain amulet",
-    "lore": "Carved from the small bones of a creature known for finding hidden caches of food, this amulet extends that natural searching ability to the wearer — detecting hidden doors and secret passages that would otherwise go unnoticed."
+    "lore": "Carved from the small bones of a creature known for finding hidden caches of food, this amulet extends that natural searching ability to the wearer — detecting hidden doors and secret passages that would otherwise go unnoticed.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 40,
+      "81-100": 40
+    }
   },
   "amulet_searching_bronze": {
     "name": "amulet of searching",
@@ -1497,7 +2015,14 @@
       "duration": -1
     },
     "unidentified_name": "bronze chain amulet",
-    "lore": "A bronze pendant engraved with a magnifying lens motif, this amulet continually scans the environment for concealed architectural features — its wearer detects hidden doors, traps, and passages with unusual reliability."
+    "lore": "A bronze pendant engraved with a magnifying lens motif, this amulet continually scans the environment for concealed architectural features — its wearer detects hidden doors, traps, and passages with unusual reliability.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 40,
+      "81-100": 40
+    }
   },
   "amulet_telepathy_silver": {
     "name": "amulet of telepathy",
@@ -1508,7 +2033,7 @@
       210
     ],
     "weight": 0.2,
-    "min_level": 2,
+    "min_level": 8,
     "slot": "amulet",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -1517,7 +2042,14 @@
       "duration": -1
     },
     "unidentified_name": "silver chain amulet",
-    "lore": "A polished silver disc on a delicate chain, engraved with a mind's-eye motif. The silver amplifies the wearer's natural sensitivity to others' thoughts, making nearby creatures' intentions transparent to anyone skilled enough to interpret the impressions."
+    "lore": "A polished silver disc on a delicate chain, engraved with a mind's-eye motif. The silver amplifies the wearer's natural sensitivity to others' thoughts, making nearby creatures' intentions transparent to anyone skilled enough to interpret the impressions.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 40
+    }
   },
   "amulet_telepathy_jade": {
     "name": "amulet of telepathy",
@@ -1528,7 +2060,7 @@
       100
     ],
     "weight": 0.2,
-    "min_level": 2,
+    "min_level": 8,
     "slot": "amulet",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -1537,7 +2069,14 @@
       "duration": -1
     },
     "unidentified_name": "jade pendant",
-    "lore": "Shaped like a stylized brain in green jade, this pendant was the prize possession of a mind-mage who claimed to have used it to read dragons' dreams. The telepathic enchantment is genuine and powerful."
+    "lore": "Shaped like a stylized brain in green jade, this pendant was the prize possession of a mind-mage who claimed to have used it to read dragons' dreams. The telepathic enchantment is genuine and powerful.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 40
+    }
   },
   "amulet_regen_jade": {
     "name": "amulet of regeneration",
@@ -1548,7 +2087,7 @@
       60
     ],
     "weight": 0.2,
-    "min_level": 2,
+    "min_level": 8,
     "slot": "amulet",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -1557,7 +2096,14 @@
       "duration": -1
     },
     "unidentified_name": "healing jade pendant",
-    "lore": "Carved in the shape of entwined healing herbs, this vivid green jade pendant pulses with restorative energy that continuously repairs the wearer's body — minor cuts closing in moments, deeper wounds mending with remarkable speed."
+    "lore": "Carved in the shape of entwined healing herbs, this vivid green jade pendant pulses with restorative energy that continuously repairs the wearer's body — minor cuts closing in moments, deeper wounds mending with remarkable speed.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 40
+    }
   },
   "amulet_hasted": {
     "name": "amulet of speed",
@@ -1568,7 +2114,7 @@
       80
     ],
     "weight": 0.2,
-    "min_level": 3,
+    "min_level": 25,
     "slot": "amulet",
     "equip_threshold": 4,
     "quiz_tier": 3,
@@ -1577,7 +2123,14 @@
       "duration": -1
     },
     "unidentified_name": "swift-wind talisman",
-    "lore": "Forged by an artificer who studied the flight patterns of swifts, this amulet permanently accelerates the wearer's body to the edge of what flesh can sustain — every action taken at double the normal speed, every threat met and passed before slower opponents can react."
+    "lore": "Forged by an artificer who studied the flight patterns of swifts, this amulet permanently accelerates the wearer's body to the edge of what flesh can sustain — every action taken at double the normal speed, every threat met and passed before slower opponents can react.",
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 80
+    }
   },
   "amulet_invis": {
     "name": "amulet of invisibility",
@@ -1588,7 +2141,7 @@
       240
     ],
     "weight": 0.2,
-    "min_level": 3,
+    "min_level": 25,
     "slot": "amulet",
     "equip_threshold": 4,
     "quiz_tier": 3,
@@ -1597,7 +2150,14 @@
       "duration": -1
     },
     "unidentified_name": "mist-silver pendant",
-    "lore": "This pendant phases its wearer partially out of the visible light spectrum, making them effectively invisible to most creatures. The enchantment is more complete than ring versions — even shadows are suppressed."
+    "lore": "This pendant phases its wearer partially out of the visible light spectrum, making them effectively invisible to most creatures. The enchantment is more complete than ring versions — even shadows are suppressed.",
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 80
+    }
   },
   "amulet_levitate": {
     "name": "amulet of levitation",
@@ -1608,7 +2168,7 @@
       240
     ],
     "weight": 0.2,
-    "min_level": 3,
+    "min_level": 25,
     "slot": "amulet",
     "equip_threshold": 4,
     "quiz_tier": 3,
@@ -1617,7 +2177,14 @@
       "duration": -1
     },
     "unidentified_name": "cloud-iron locket",
-    "lore": "An amulet forged from a meteorite fragment that fell slowly — impossibly slowly — to earth over the course of three days. The anti-gravity essence locked in that iron now raises the wearer silently above the dungeon floor."
+    "lore": "An amulet forged from a meteorite fragment that fell slowly — impossibly slowly — to earth over the course of three days. The anti-gravity essence locked in that iron now raises the wearer silently above the dungeon floor.",
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 80
+    }
   },
   "amulet_clairvoyant": {
     "name": "amulet of clairvoyance",
@@ -1628,7 +2195,7 @@
       100
     ],
     "weight": 0.2,
-    "min_level": 3,
+    "min_level": 25,
     "slot": "amulet",
     "equip_threshold": 5,
     "quiz_tier": 3,
@@ -1637,7 +2204,14 @@
       "duration": -1
     },
     "unidentified_name": "all-seeing eye pendant",
-    "lore": "An eye carved in dark stone, this amulet grants awareness of the entire dungeon level simultaneously — a gift that feels like omniscience and would be mistaken for madness by anyone who didn't understand its nature."
+    "lore": "An eye carved in dark stone, this amulet grants awareness of the entire dungeon level simultaneously — a gift that feels like omniscience and would be mistaken for madness by anyone who didn't understand its nature.",
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 80
+    }
   },
   "amulet_displace": {
     "name": "amulet of displacement",
@@ -1648,7 +2222,7 @@
       140
     ],
     "weight": 0.2,
-    "min_level": 3,
+    "min_level": 25,
     "slot": "amulet",
     "equip_threshold": 4,
     "quiz_tier": 3,
@@ -1657,7 +2231,14 @@
       "duration": -1
     },
     "unidentified_name": "blurred shadow pendant",
-    "lore": "A constant visual distortion surrounds whoever wears this amulet — their apparent position offset from their actual location, making aimed attacks frustratingly inaccurate. Enemies targeting the image consistently find nothing but air."
+    "lore": "A constant visual distortion surrounds whoever wears this amulet — their apparent position offset from their actual location, making aimed attacks frustratingly inaccurate. Enemies targeting the image consistently find nothing but air.",
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 80
+    }
   },
   "amulet_fire_res": {
     "name": "amulet of fire resistance",
@@ -1668,7 +2249,7 @@
       30
     ],
     "weight": 0.2,
-    "min_level": 2,
+    "min_level": 8,
     "slot": "amulet",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -1677,7 +2258,14 @@
       "duration": -1
     },
     "unidentified_name": "fire-kissed pendant",
-    "lore": "This amulet was worn by a fire-dancer who performed within actual bonfires for audiences. The enchantment protecting her skin has been maintained and strengthened into a reliable and permanent fire resistance."
+    "lore": "This amulet was worn by a fire-dancer who performed within actual bonfires for audiences. The enchantment protecting her skin has been maintained and strengthened into a reliable and permanent fire resistance.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 40
+    }
   },
   "amulet_cold_res": {
     "name": "amulet of cold resistance",
@@ -1688,7 +2276,7 @@
       255
     ],
     "weight": 0.2,
-    "min_level": 2,
+    "min_level": 8,
     "slot": "amulet",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -1697,7 +2285,14 @@
       "duration": -1
     },
     "unidentified_name": "frost-kissed locket",
-    "lore": "A locket that is always slightly cold to the touch, as though it absorbs ambient warmth — in exchange, it provides the wearer complete protection from freezing temperatures and cold-based magical attacks."
+    "lore": "A locket that is always slightly cold to the touch, as though it absorbs ambient warmth — in exchange, it provides the wearer complete protection from freezing temperatures and cold-based magical attacks.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 40
+    }
   },
   "amulet_shock_res": {
     "name": "amulet of shock resistance",
@@ -1708,7 +2303,7 @@
       60
     ],
     "weight": 0.2,
-    "min_level": 2,
+    "min_level": 8,
     "slot": "amulet",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -1717,7 +2312,14 @@
       "duration": -1
     },
     "unidentified_name": "crackling charm",
-    "lore": "Made by a guild of storm-riders who needed protection during electrified weather events, this amulet wraps the wearer in a grounding field that routes electrical energy harmlessly into the surrounding stonework."
+    "lore": "Made by a guild of storm-riders who needed protection during electrified weather events, this amulet wraps the wearer in a grounding field that routes electrical energy harmlessly into the surrounding stonework.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 40
+    }
   },
   "amulet_poison_res": {
     "name": "amulet of poison resistance",
@@ -1728,7 +2330,7 @@
       80
     ],
     "weight": 0.2,
-    "min_level": 2,
+    "min_level": 8,
     "slot": "amulet",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -1737,7 +2339,14 @@
       "duration": -1
     },
     "unidentified_name": "serpent tooth pendant",
-    "lore": "A genuine serpent tooth from a venomous snake, set in silver and enchanted with an antitoxin field. The irony of using a poison-delivery mechanism as poison protection was apparently not lost on its maker."
+    "lore": "A genuine serpent tooth from a venomous snake, set in silver and enchanted with an antitoxin field. The irony of using a poison-delivery mechanism as poison protection was apparently not lost on its maker.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 40
+    }
   },
   "amulet_sleep_res": {
     "name": "amulet of sleep resistance",
@@ -1748,7 +2357,7 @@
       220
     ],
     "weight": 0.2,
-    "min_level": 2,
+    "min_level": 8,
     "slot": "amulet",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -1757,7 +2366,14 @@
       "duration": -1
     },
     "unidentified_name": "dream-ward medallion",
-    "lore": "Enchanted by a monk who had taken a vow of wakefulness, this medallion permanently keeps its wearer from being magically induced into sleep — mundane exhaustion still applies, but no magical somnolence can take hold."
+    "lore": "Enchanted by a monk who had taken a vow of wakefulness, this medallion permanently keeps its wearer from being magically induced into sleep — mundane exhaustion still applies, but no magical somnolence can take hold.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 40
+    }
   },
   "amulet_magic_res": {
     "name": "amulet of magic resistance",
@@ -1768,7 +2384,7 @@
       200
     ],
     "weight": 0.2,
-    "min_level": 3,
+    "min_level": 25,
     "slot": "amulet",
     "equip_threshold": 4,
     "quiz_tier": 3,
@@ -1777,7 +2393,14 @@
       "duration": -1
     },
     "unidentified_name": "ward-woven talisman",
-    "lore": "Woven from threads of anti-magical material and charged with layered warding enchantments, this amulet provides broad-spectrum resistance to directed spells — mage opponents find their carefully prepared attacks losing significant potency."
+    "lore": "Woven from threads of anti-magical material and charged with layered warding enchantments, this amulet provides broad-spectrum resistance to directed spells — mage opponents find their carefully prepared attacks losing significant potency.",
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 80
+    }
   },
   "amulet_drain_res": {
     "name": "amulet of drain resistance",
@@ -1788,7 +2411,7 @@
       160
     ],
     "weight": 0.2,
-    "min_level": 3,
+    "min_level": 1,
     "slot": "amulet",
     "equip_threshold": 4,
     "quiz_tier": 3,
@@ -1797,7 +2420,14 @@
       "duration": -1
     },
     "unidentified_name": "life-ward chain",
-    "lore": "Forged to protect against the vampiric magics that undead creatures employ, this amulet wraps the wearer's life force in a protective shell impervious to energy drain — an essential item for those venturing into undead-heavy dungeon levels."
+    "lore": "Forged to protect against the vampiric magics that undead creatures employ, this amulet wraps the wearer's life force in a protective shell impervious to energy drain — an essential item for those venturing into undead-heavy dungeon levels.",
+    "floorSpawnWeight": {
+      "1-20": 60,
+      "21-40": 60,
+      "41-60": 40,
+      "61-80": 30,
+      "81-100": 20
+    }
   },
   "amulet_strength_iron_medallion": {
     "name": "amulet of strength",
@@ -1808,7 +2438,7 @@
       130
     ],
     "weight": 0.2,
-    "min_level": 2,
+    "min_level": 8,
     "slot": "amulet",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -1817,7 +2447,14 @@
       "amount": 2
     },
     "unidentified_name": "iron medallion",
-    "lore": "A heavy iron medallion worn by gladiators in the old arenas, enchanted to significantly enhance physical strength. The enhancement is visible — veins cord against the skin and muscles visibly bulk while the amulet is worn."
+    "lore": "A heavy iron medallion worn by gladiators in the old arenas, enchanted to significantly enhance physical strength. The enhancement is visible — veins cord against the skin and muscles visibly bulk while the amulet is worn.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 40
+    }
   },
   "amulet_strength_titan_iron_pendant": {
     "name": "amulet of strength",
@@ -1828,7 +2465,7 @@
       110
     ],
     "weight": 0.2,
-    "min_level": 3,
+    "min_level": 25,
     "slot": "amulet",
     "equip_threshold": 4,
     "quiz_tier": 3,
@@ -1837,7 +2474,14 @@
       "amount": 3
     },
     "unidentified_name": "titan iron pendant",
-    "lore": "Named for the mythological giants who could move mountains, this amulet provides a dramatic strength enhancement that leaves the wearer capable of feats of raw power that should be physically impossible for a creature their size."
+    "lore": "Named for the mythological giants who could move mountains, this amulet provides a dramatic strength enhancement that leaves the wearer capable of feats of raw power that should be physically impossible for a creature their size.",
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 80
+    }
   },
   "amulet_constitution_ruby_pendant": {
     "name": "amulet of constitution",
@@ -1848,7 +2492,7 @@
       40
     ],
     "weight": 0.2,
-    "min_level": 2,
+    "min_level": 8,
     "slot": "amulet",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -1857,7 +2501,14 @@
       "amount": 2
     },
     "unidentified_name": "ruby pendant",
-    "lore": "A blood-red ruby pendant that resonates with the body's vital force, significantly enhancing the wearer's constitution — their hit points increase, their stamina improves, and minor poisons affect them less severely."
+    "lore": "A blood-red ruby pendant that resonates with the body's vital force, significantly enhancing the wearer's constitution — their hit points increase, their stamina improves, and minor poisons affect them less severely.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 40
+    }
   },
   "amulet_constitution_guardian_ruby_locket": {
     "name": "amulet of constitution",
@@ -1868,7 +2519,7 @@
       30
     ],
     "weight": 0.2,
-    "min_level": 3,
+    "min_level": 25,
     "slot": "amulet",
     "equip_threshold": 4,
     "quiz_tier": 3,
@@ -1877,7 +2528,14 @@
       "amount": 3
     },
     "unidentified_name": "guardian ruby locket",
-    "lore": "This deep crimson locket houses a guardian spirit that constantly reinforces the wearer's physical vitality — the constitution boost is dramatic enough that seasoned fighters notice it immediately as a transformation in how punishment their body can absorb."
+    "lore": "This deep crimson locket houses a guardian spirit that constantly reinforces the wearer's physical vitality — the constitution boost is dramatic enough that seasoned fighters notice it immediately as a transformation in how punishment their body can absorb.",
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 80
+    }
   },
   "amulet_dexterity_quicksilver_charm": {
     "name": "amulet of dexterity",
@@ -1888,7 +2546,7 @@
       220
     ],
     "weight": 0.2,
-    "min_level": 2,
+    "min_level": 8,
     "slot": "amulet",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -1897,7 +2555,14 @@
       "amount": 2
     },
     "unidentified_name": "quicksilver charm",
-    "lore": "A small charm containing a sealed vial of actual mercury, enchanted to transfer its liquid swiftness to the wearer — movements become fluid and precise, reflexes sharpen, and armor class improves noticeably."
+    "lore": "A small charm containing a sealed vial of actual mercury, enchanted to transfer its liquid swiftness to the wearer — movements become fluid and precise, reflexes sharpen, and armor class improves noticeably.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 40
+    }
   },
   "amulet_dexterity_air_light_locket": {
     "name": "amulet of dexterity",
@@ -1908,7 +2573,7 @@
       255
     ],
     "weight": 0.2,
-    "min_level": 3,
+    "min_level": 25,
     "slot": "amulet",
     "equip_threshold": 4,
     "quiz_tier": 3,
@@ -1917,7 +2582,14 @@
       "amount": 3
     },
     "unidentified_name": "air-light locket",
-    "lore": "So light that wearing it feels like wearing nothing at all, this air-enchanted locket translates its own near-weightlessness to the wearer's movements — they become preternaturally agile, their every motion flowing with the ease of breath."
+    "lore": "So light that wearing it feels like wearing nothing at all, this air-enchanted locket translates its own near-weightlessness to the wearer's movements — they become preternaturally agile, their every motion flowing with the ease of breath.",
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 80
+    }
   },
   "amulet_intellect_amethyst_talisman": {
     "name": "amulet of intellect",
@@ -1928,7 +2600,7 @@
       200
     ],
     "weight": 0.2,
-    "min_level": 2,
+    "min_level": 8,
     "slot": "amulet",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -1937,7 +2609,14 @@
       "amount": 2
     },
     "unidentified_name": "amethyst talisman",
-    "lore": "An amethyst carved into a stylized brain, hung on a silver chain — a fanciful design that nonetheless delivers genuine intellectual enhancement, improving the wearer's reasoning, memory, and magical capacity significantly."
+    "lore": "An amethyst carved into a stylized brain, hung on a silver chain — a fanciful design that nonetheless delivers genuine intellectual enhancement, improving the wearer's reasoning, memory, and magical capacity significantly.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 40
+    }
   },
   "amulet_intellect_brilliant_crystal_medallion": {
     "name": "amulet of intellect",
@@ -1948,7 +2627,7 @@
       255
     ],
     "weight": 0.2,
-    "min_level": 3,
+    "min_level": 25,
     "slot": "amulet",
     "equip_threshold": 4,
     "quiz_tier": 3,
@@ -1957,7 +2636,14 @@
       "amount": 3
     },
     "unidentified_name": "brilliant crystal medallion",
-    "lore": "Faceted crystal that catches every available light and throws it back in a dozen directions — a fitting metaphor for the dramatically enhanced intellect this medallion provides. Scholars who have worn it describe the experience as thinking with an extra layer of mind."
+    "lore": "Faceted crystal that catches every available light and throws it back in a dozen directions — a fitting metaphor for the dramatically enhanced intellect this medallion provides. Scholars who have worn it describe the experience as thinking with an extra layer of mind.",
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 80
+    }
   },
   "amulet_wisdom_opal_locket": {
     "name": "amulet of wisdom",
@@ -1968,7 +2654,7 @@
       240
     ],
     "weight": 0.2,
-    "min_level": 2,
+    "min_level": 8,
     "slot": "amulet",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -1977,7 +2663,14 @@
       "amount": 2
     },
     "unidentified_name": "opal locket",
-    "lore": "An opal locket that opens to reveal nothing — the container is the enchantment, and what it holds is the distilled wisdom of its original owner, ready to be borrowed by whoever wears it."
+    "lore": "An opal locket that opens to reveal nothing — the container is the enchantment, and what it holds is the distilled wisdom of its original owner, ready to be borrowed by whoever wears it.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 40
+    }
   },
   "amulet_wisdom_sage_ivory_locket": {
     "name": "amulet of wisdom",
@@ -1988,7 +2681,7 @@
       210
     ],
     "weight": 0.2,
-    "min_level": 3,
+    "min_level": 25,
     "slot": "amulet",
     "equip_threshold": 4,
     "quiz_tier": 3,
@@ -1997,7 +2690,14 @@
       "amount": 3
     },
     "unidentified_name": "sage ivory locket",
-    "lore": "Carved from the cane of a legendary sage who spent forty years in a dungeon, emerging with knowledge of its every secret, this locket passes on a fragment of that accumulated dungeon-wisdom — dramatically improving judgment, quiz timing, and intuitive threat assessment."
+    "lore": "Carved from the cane of a legendary sage who spent forty years in a dungeon, emerging with knowledge of its every secret, this locket passes on a fragment of that accumulated dungeon-wisdom — dramatically improving judgment, quiz timing, and intuitive threat assessment.",
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 80
+    }
   },
   "amulet_perception_eagle_eye_pendant": {
     "name": "amulet of perception",
@@ -2008,7 +2708,7 @@
       60
     ],
     "weight": 0.2,
-    "min_level": 2,
+    "min_level": 8,
     "slot": "amulet",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -2017,7 +2717,14 @@
       "amount": 2
     },
     "unidentified_name": "eagle-eye pendant",
-    "lore": "An eagle's eye set in gold, enchanted to share the raptor's legendary visual acuity with the wearer — their effective sight radius expands significantly, allowing them to spot threats and targets at distances that would challenge even keen natural vision."
+    "lore": "An eagle's eye set in gold, enchanted to share the raptor's legendary visual acuity with the wearer — their effective sight radius expands significantly, allowing them to spot threats and targets at distances that would challenge even keen natural vision.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 40
+    }
   },
   "amulet_perception_hawk_feather_talisman": {
     "name": "amulet of perception",
@@ -2028,7 +2735,7 @@
       60
     ],
     "weight": 0.2,
-    "min_level": 3,
+    "min_level": 25,
     "slot": "amulet",
     "equip_threshold": 4,
     "quiz_tier": 3,
@@ -2037,7 +2744,14 @@
       "amount": 3
     },
     "unidentified_name": "hawk-feather talisman",
-    "lore": "Three hawk feathers bound in copper wire and charged with an expanding-sight enchantment, this talisman dramatically increases the wearer's perceptual range — at full effect, they can monitor a radius of dungeon that most adventurers would consider an entire floor."
+    "lore": "Three hawk feathers bound in copper wire and charged with an expanding-sight enchantment, this talisman dramatically increases the wearer's perceptual range — at full effect, they can monitor a radius of dungeon that most adventurers would consider an entire floor.",
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 80
+    }
   },
   "amulet_curse_teleport": {
     "name": "amulet of teleportitis",
@@ -2057,7 +2771,14 @@
       "duration": -1
     },
     "unidentified_name": "chaotic silver pendant",
-    "lore": "A ruined teleportation amulet whose control rune has been destroyed, leaving only random teleportation at unpredictable intervals. The wearer finds themselves elsewhere without warning — an effect that is occasionally life-saving and frequently catastrophic."
+    "lore": "A ruined teleportation amulet whose control rune has been destroyed, leaving only random teleportation at unpredictable intervals. The wearer finds themselves elsewhere without warning — an effect that is occasionally life-saving and frequently catastrophic.",
+    "floorSpawnWeight": {
+      "1-20": 60,
+      "21-40": 60,
+      "41-60": 40,
+      "61-80": 30,
+      "81-100": 20
+    }
   },
   "amulet_curse_slow": {
     "name": "amulet of slowing",
@@ -2077,7 +2798,14 @@
       "duration": -1
     },
     "unidentified_name": "leaden-weight medallion",
-    "lore": "A cursed medallion that makes the wearer feel as though every movement is performed underwater — half speed at all times, reactions delayed, and the frustrating sensation that everything around them is moving normally while they struggle through invisible resistance."
+    "lore": "A cursed medallion that makes the wearer feel as though every movement is performed underwater — half speed at all times, reactions delayed, and the frustrating sensation that everything around them is moving normally while they struggle through invisible resistance.",
+    "floorSpawnWeight": {
+      "1-20": 60,
+      "21-40": 60,
+      "41-60": 40,
+      "61-80": 30,
+      "81-100": 20
+    }
   },
   "philosophers_amulet": {
     "name": "Philosopher's Amulet",
@@ -2100,7 +2828,14 @@
     "identified": true,
     "set_id": "philosophers",
     "set_name": "The Philosopher's Set",
-    "lore": "This golden amulet is engraved with the ouroboros — the serpent devouring its own tail, symbol of eternal knowledge. It is said to have belonged to the first philosopher who descended into the dungeon seeking ultimate truth. The amulet resonates with philosophical understanding, allowing its wearer to identify the true nature of unknown items through rigorous examination. As one of the three pieces of the Philosopher's Set, wearing it alongside the Philosopher's Ring and the Diamond Staff of Inquiry is said to grant the ability to identify items simply by touching them."
+    "lore": "This golden amulet is engraved with the ouroboros — the serpent devouring its own tail, symbol of eternal knowledge. It is said to have belonged to the first philosopher who descended into the dungeon seeking ultimate truth. The amulet resonates with philosophical understanding, allowing its wearer to identify the true nature of unknown items through rigorous examination. As one of the three pieces of the Philosopher's Set, wearing it alongside the Philosopher's Ring and the Diamond Staff of Inquiry is said to grant the ability to identify items simply by touching them.",
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 40,
+      "81-100": 40
+    }
   },
   "dragonslayer_ring": {
     "name": "Dragonslayer's Ring",
@@ -2111,7 +2846,7 @@
       40
     ],
     "weight": 0.1,
-    "min_level": 4,
+    "min_level": 65,
     "slot": "ring",
     "equip_threshold": 5,
     "quiz_tier": 5,
@@ -2124,7 +2859,14 @@
     "unidentified_name": "a scorched gold ring",
     "set_id": "dragonslayer",
     "set_name": "The Dragonslayer's Set",
-    "lore": "Forged from gold salvaged from the hoard of a great wyrm and quenched in dragon's blood, this ring radiates intense warmth. As one of the three pieces of the Dragonslayer's Set, wearing it alongside the Dragonbone Longsword and Dragonscale Armor grants immunity to fear and +2 to all attacks against dragons — the complete set turns its wearer into the most feared dragon hunter who ever lived."
+    "lore": "Forged from gold salvaged from the hoard of a great wyrm and quenched in dragon's blood, this ring radiates intense warmth. As one of the three pieces of the Dragonslayer's Set, wearing it alongside the Dragonbone Longsword and Dragonscale Armor grants immunity to fear and +2 to all attacks against dragons — the complete set turns its wearer into the most feared dragon hunter who ever lived.",
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 80,
+      "81-100": 80
+    }
   },
   "shadow_walker_ring": {
     "name": "Shadow Walker's Ring",
@@ -2135,7 +2877,7 @@
       60
     ],
     "weight": 0.1,
-    "min_level": 4,
+    "min_level": 65,
     "slot": "ring",
     "equip_threshold": 5,
     "quiz_tier": 5,
@@ -2146,7 +2888,14 @@
     "unidentified_name": "a night-black signet ring",
     "set_id": "shadow_walker",
     "set_name": "The Shadow Walker's Set",
-    "lore": "A matte-black ring that seems to absorb light from its surroundings, worn by the leader of an ancient thieves' guild who specialized in assassinations too dangerous for ordinary operatives. As one of the three pieces of the Shadow Walker's Set, wearing it alongside the Adamantine Dagger and the Dragonscale Cloak grants a poison strike on all attacks and the ability to move silently regardless of armor worn."
+    "lore": "A matte-black ring that seems to absorb light from its surroundings, worn by the leader of an ancient thieves' guild who specialized in assassinations too dangerous for ordinary operatives. As one of the three pieces of the Shadow Walker's Set, wearing it alongside the Adamantine Dagger and the Dragonscale Cloak grants a poison strike on all attacks and the ability to move silently regardless of armor worn.",
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 80,
+      "81-100": 80
+    }
   },
   "philosophers_ring": {
     "name": "Philosopher's Ring",
@@ -2157,7 +2906,7 @@
       100
     ],
     "weight": 0.1,
-    "min_level": 3,
+    "min_level": 45,
     "slot": "ring",
     "equip_threshold": 4,
     "quiz_tier": 4,
@@ -2170,6 +2919,461 @@
     "unidentified_name": "a pale etched gold band",
     "set_id": "philosophers",
     "set_name": "The Philosopher's Set",
-    "lore": "Inscribed with a miniature version of the Philosopher's Amulet's ouroboros, this ring was worn by the original dungeon philosopher on the hand that held their quill. As one of the three pieces of the Philosopher's Set, wearing it alongside the Philosopher's Amulet and the Diamond Staff of Inquiry is said to grant the ability to identify items simply by touching them — knowledge flowing naturally as breath."
+    "lore": "Inscribed with a miniature version of the Philosopher's Amulet's ouroboros, this ring was worn by the original dungeon philosopher on the hand that held their quill. As one of the three pieces of the Philosopher's Set, wearing it alongside the Philosopher's Amulet and the Diamond Staff of Inquiry is said to grant the ability to identify items simply by touching them — knowledge flowing naturally as breath.",
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 80
+    }
+  },
+  "ring_protection_silver": {
+    "name": "ring of protection +1",
+    "symbol": "=",
+    "color": [
+      220,
+      220,
+      240
+    ],
+    "weight": 0.1,
+    "min_level": 8,
+    "slot": "ring",
+    "equip_threshold": 2,
+    "quiz_tier": 2,
+    "effects": {
+      "stat": "AC",
+      "amount": 1
+    },
+    "unidentified_name": "a smooth silver ring",
+    "lore": "A silver ring engraved with overlapping ward-circles. The protection it offers is modest but reliable — every experienced adventurer keeps at least one.",
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 40
+    }
+  },
+  "ring_protection_gold": {
+    "name": "ring of protection +2",
+    "symbol": "=",
+    "color": [
+      220,
+      200,
+      80
+    ],
+    "weight": 0.1,
+    "min_level": 25,
+    "slot": "ring",
+    "equip_threshold": 3,
+    "quiz_tier": 3,
+    "effects": {
+      "stat": "AC",
+      "amount": 2
+    },
+    "unidentified_name": "a polished gold band",
+    "lore": "A finely wrought golden ring set with nested protection glyphs. The field it generates slightly deflects incoming attacks, as if the air itself becomes briefly solid around the wearer.",
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 80
+    }
+  },
+  "ring_protection_adamantine": {
+    "name": "ring of protection +3",
+    "symbol": "=",
+    "color": [
+      80,
+      60,
+      170
+    ],
+    "weight": 0.1,
+    "min_level": 45,
+    "slot": "ring",
+    "equip_threshold": 4,
+    "quiz_tier": 4,
+    "effects": {
+      "stat": "AC",
+      "amount": 3
+    },
+    "unidentified_name": "a dark heavy ring",
+    "lore": "A dense band of adamantine inscribed with protection formulae so complex that identifying the ring correctly requires advanced philosophical training. The field it generates is nearly impenetrable.",
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 80
+    }
+  },
+  "ring_speed_quicksilver": {
+    "name": "ring of speed",
+    "symbol": "=",
+    "color": [
+      210,
+      230,
+      240
+    ],
+    "weight": 0.1,
+    "min_level": 25,
+    "slot": "ring",
+    "equip_threshold": 3,
+    "quiz_tier": 3,
+    "effects": {
+      "status": "hasted",
+      "duration": -1
+    },
+    "unidentified_name": "a vibrating quicksilver ring",
+    "lore": "Quicksilver rings that vibrate at a specific resonance can entrain the wearer's nervous system to fire slightly faster. The effect is subtle but cumulative — the ring's owner moves, thinks, and reacts just quickly enough to survive situations that would kill others.",
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 80
+    }
+  },
+  "ring_sustenance_amber": {
+    "name": "ring of sustenance",
+    "symbol": "=",
+    "color": [
+      210,
+      170,
+      80
+    ],
+    "weight": 0.1,
+    "min_level": 8,
+    "slot": "ring",
+    "equip_threshold": 2,
+    "quiz_tier": 2,
+    "effects": {
+      "status": "sustained",
+      "duration": -1
+    },
+    "unidentified_name": "a warm amber ring",
+    "lore": "An amber ring containing a preserved insect that has not aged for ten thousand years. The preservation field extends to the wearer's metabolism, slowing hunger and reducing the need for rest. Useful in deep dungeons where food is scarce.",
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-20": 80,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 40
+    }
+  },
+  "ring_strength_dragonbone": {
+    "name": "ring of giant strength",
+    "symbol": "=",
+    "color": [
+      210,
+      200,
+      175
+    ],
+    "weight": 0.1,
+    "min_level": 45,
+    "slot": "ring",
+    "equip_threshold": 4,
+    "quiz_tier": 4,
+    "effects": {
+      "stat": "STR",
+      "amount": 4
+    },
+    "unidentified_name": "a massive carved bone ring",
+    "lore": "Carved from the finger-knuckle of a fire giant, this ring channels a fraction of the creature's legendary strength into the wearer. The inscription reads: 'Take from strength; do not merely borrow it.'",
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 80
+    }
+  },
+  "ring_constitution_diamond": {
+    "name": "ring of endurance",
+    "symbol": "=",
+    "color": [
+      200,
+      245,
+      255
+    ],
+    "weight": 0.1,
+    "min_level": 45,
+    "slot": "ring",
+    "equip_threshold": 4,
+    "quiz_tier": 4,
+    "effects": {
+      "stat": "CON",
+      "amount": 4
+    },
+    "unidentified_name": "a faceted crystal ring",
+    "lore": "A diamond ring that channels the stone's indomitable hardness into the wearer's constitution. Those who have worn it for long periods report an unusual inability to tire, a reduced need for sleep, and a strange clarity of purpose.",
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 80
+    }
+  },
+  "ring_intellect_prismatic_deep": {
+    "name": "ring of brilliance",
+    "symbol": "=",
+    "color": [
+      200,
+      180,
+      255
+    ],
+    "weight": 0.1,
+    "min_level": 45,
+    "slot": "ring",
+    "equip_threshold": 4,
+    "quiz_tier": 4,
+    "effects": {
+      "stat": "INT",
+      "amount": 4
+    },
+    "unidentified_name": "a shifting prismatic ring",
+    "lore": "The prismatic ring contains a miniature aurora borealis in its setting — an observable phenomenon with no satisfactory mundane explanation. Wearers report accelerated thought, improved memory consolidation, and an occasional overwhelming sense of suddenly understanding something they cannot articulate.",
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 80
+    }
+  },
+  "amulet_life_saving": {
+    "name": "amulet of life saving",
+    "symbol": "\"",
+    "color": [
+      255,
+      230,
+      80
+    ],
+    "weight": 0.2,
+    "min_level": 45,
+    "slot": "amulet",
+    "equip_threshold": 4,
+    "quiz_tier": 4,
+    "effects": {
+      "status": "life_save",
+      "duration": -1
+    },
+    "unidentified_name": "a warm golden medallion",
+    "lore": "A single-use death ward forged from the solidified moment of a healer's last breath. The amulet cannot be refilled — when it triggers, it is spent. But the one time it matters, no price seems too high. Necromancers have offered fortunes to study how this effect works; none have succeeded.",
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 80
+    }
+  },
+  "amulet_spell_turning": {
+    "name": "amulet of spell turning",
+    "symbol": "\"",
+    "color": [
+      180,
+      160,
+      255
+    ],
+    "weight": 0.2,
+    "min_level": 45,
+    "slot": "amulet",
+    "equip_threshold": 4,
+    "quiz_tier": 4,
+    "effects": {
+      "status": "spell_turning",
+      "duration": -1
+    },
+    "unidentified_name": "a spiral-engraved medallion",
+    "lore": "A medallion inscribed with a möbius-strip ward that sends certain spells back to their casters. The effect is imperfect — complex magics may partially deflect, partially turn, or simply fail. But the look on an enemy wizard's face when their own fireball returns is considered adequate compensation.",
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 80
+    }
+  },
+  "amulet_truesight": {
+    "name": "amulet of true sight",
+    "symbol": "\"",
+    "color": [
+      200,
+      245,
+      200
+    ],
+    "weight": 0.2,
+    "min_level": 25,
+    "slot": "amulet",
+    "equip_threshold": 3,
+    "quiz_tier": 3,
+    "effects": {
+      "status": "truesight",
+      "duration": -1
+    },
+    "unidentified_name": "a clear gem pendant",
+    "lore": "A lens of perfectly clear crystal that has been inscribed with wards against illusion, displacement, and invisibility. Looking through it reveals the world as it actually is. The feeling of wearing it has been compared to taking off glasses you did not know you were wearing.",
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 80,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 80
+    }
+  },
+  "amulet_reflection": {
+    "name": "amulet of reflection",
+    "symbol": "\"",
+    "color": [
+      220,
+      235,
+      255
+    ],
+    "weight": 0.2,
+    "min_level": 45,
+    "slot": "amulet",
+    "equip_threshold": 4,
+    "quiz_tier": 4,
+    "effects": {
+      "status": "reflecting",
+      "duration": -1
+    },
+    "unidentified_name": "a mirror-faced medallion",
+    "lore": "The face of this medallion is a perfect silver mirror. When hostile magic contacts it, the amulet reflects a portion of the effect back at its source. Powerful spellcasters who encounter this amulet for the first time sometimes cast their second spell into their own reflection.",
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 80,
+      "61-80": 80,
+      "81-100": 80
+    }
+  },
+  "amulet_titan_constitution": {
+    "name": "amulet of titan constitution",
+    "symbol": "\"",
+    "color": [
+      220,
+      60,
+      60
+    ],
+    "weight": 0.2,
+    "min_level": 65,
+    "slot": "amulet",
+    "equip_threshold": 5,
+    "quiz_tier": 5,
+    "effects": {
+      "stat": "CON",
+      "amount": 5
+    },
+    "unidentified_name": "a heavy blood-red gem pendant",
+    "lore": "Forged in the crater where a titan fell, this amulet radiates a palpable sense of physical authority. The CON bonus it provides is extraordinary — those who wear it describe simultaneously feeling that their body could survive almost anything and that it probably will have to.",
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 80,
+      "81-100": 80
+    }
+  },
+  "amulet_archmage_intellect": {
+    "name": "amulet of archmage intellect",
+    "symbol": "\"",
+    "color": [
+      180,
+      140,
+      255
+    ],
+    "weight": 0.2,
+    "min_level": 65,
+    "slot": "amulet",
+    "equip_threshold": 5,
+    "quiz_tier": 5,
+    "effects": {
+      "stat": "INT",
+      "amount": 5
+    },
+    "unidentified_name": "a violet crystalline pendant",
+    "lore": "This amulet was reportedly the property of a council of arch-mages who each contributed one year of their own intelligence to its enchantment. The cumulative effect of several lifetimes of accumulated intellect is significant.",
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 80,
+      "81-100": 80
+    }
+  },
+  "ring_curse_drain": {
+    "name": "ring of life drain",
+    "symbol": "=",
+    "color": [
+      80,
+      40,
+      120
+    ],
+    "weight": 0.1,
+    "min_level": 1,
+    "slot": "ring",
+    "equip_threshold": 2,
+    "quiz_tier": 1,
+    "effects": {
+      "status": "draining",
+      "duration": -1
+    },
+    "unidentified_name": "a cold purple ring",
+    "lore": "This ring appears valuable and may even feel empowering when first worn. The draining effect is subtle at first — a slight weariness after long use. By the time the wearer notices the full extent of the damage, they have usually worn it for some time.",
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-20": 60,
+      "21-40": 60,
+      "41-60": 40,
+      "61-80": 30,
+      "81-100": 20
+    }
+  },
+  "amulet_curse_drain": {
+    "name": "amulet of doom",
+    "symbol": "\"",
+    "color": [
+      60,
+      20,
+      80
+    ],
+    "weight": 0.2,
+    "min_level": 1,
+    "slot": "amulet",
+    "equip_threshold": 2,
+    "quiz_tier": 1,
+    "effects": {
+      "status": "doomed",
+      "duration": -1
+    },
+    "unidentified_name": "an ominous dark pendant",
+    "lore": "The amulet of doom does not harm the wearer directly. Instead, it makes the universe slightly more hostile — doors that would close slowly now close quickly; enemies that might have hesitated now strike immediately; saving throws always seem to land on the worst possible number. It has no off switch.",
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-20": 60,
+      "21-40": 60,
+      "41-60": 40,
+      "61-80": 30,
+      "81-100": 20
+    }
   }
 }

@@ -1,96 +1,5524 @@
 [
-  {"question": "What part of speech modifies a verb, adjective, or another adverb?", "choices": ["Adverb", "Adjective", "Conjunction", "Preposition"], "answer": "Adverb", "tier": 1},
-  {"question": "Which of the following is a noun?", "choices": ["Happiness", "Run", "Quickly", "Beautiful"], "answer": "Happiness", "tier": 1},
-  {"question": "What part of speech connects words, phrases, or clauses?", "choices": ["Conjunction", "Article", "Pronoun", "Verb"], "answer": "Conjunction", "tier": 1},
-  {"question": "Which punctuation mark ends a declarative sentence?", "choices": ["Period", "Comma", "Semicolon", "Colon"], "answer": "Period", "tier": 1},
-  {"question": "What is the subject of the sentence 'The dog barked loudly'?", "choices": ["The dog", "barked", "loudly", "The"], "answer": "The dog", "tier": 1},
-  {"question": "Which of the following is an adjective?", "choices": ["Enormous", "Eat", "Slowly", "Because"], "answer": "Enormous", "tier": 1},
-  {"question": "What part of speech shows a relationship between a noun and another word?", "choices": ["Preposition", "Interjection", "Adverb", "Conjunction"], "answer": "Preposition", "tier": 1},
-  {"question": "Which sentence type asks a question?", "choices": ["Interrogative", "Declarative", "Imperative", "Exclamatory"], "answer": "Interrogative", "tier": 1},
-  {"question": "What is the plural of 'child'?", "choices": ["Children", "Childs", "Childes", "Childrens"], "answer": "Children", "tier": 1},
-  {"question": "Which article is used before a word starting with a vowel sound?", "choices": ["An", "A", "The", "One"], "answer": "An", "tier": 1},
-  {"question": "What part of speech replaces a noun?", "choices": ["Pronoun", "Verb", "Adverb", "Preposition"], "answer": "Pronoun", "tier": 1},
-  {"question": "Which sentence type gives a command or request?", "choices": ["Imperative", "Interrogative", "Declarative", "Exclamatory"], "answer": "Imperative", "tier": 1},
-  {"question": "What punctuation mark is used to separate items in a list?", "choices": ["Comma", "Period", "Colon", "Dash"], "answer": "Comma", "tier": 1},
-  {"question": "Which of the following is a verb?", "choices": ["Sprint", "Blue", "Happily", "Under"], "answer": "Sprint", "tier": 1},
-  {"question": "What is the possessive form of 'James'?", "choices": ["James's", "James'", "Jamess", "James"], "answer": "James's", "tier": 1},
-  {"question": "Which sentence is exclamatory?", "choices": ["What a beautiful sunset!", "The sunset is beautiful.", "Is the sunset beautiful?", "Watch the sunset."], "answer": "What a beautiful sunset!", "tier": 1},
-  {"question": "What does an interjection express?", "choices": ["Emotion or exclamation", "Action or state", "A relationship between words", "A description"], "answer": "Emotion or exclamation", "tier": 1},
-  {"question": "Which of the following is a proper noun?", "choices": ["Paris", "City", "Building", "River"], "answer": "Paris", "tier": 1},
-  {"question": "What punctuation mark introduces a list or explanation?", "choices": ["Colon", "Comma", "Apostrophe", "Hyphen"], "answer": "Colon", "tier": 1},
-  {"question": "A sentence must have at minimum which two components?", "choices": ["Subject and predicate", "Noun and adjective", "Verb and adverb", "Article and noun"], "answer": "Subject and predicate", "tier": 1},
-
-  {"question": "Which sentence is in the passive voice?", "choices": ["The cat was chased by the dog", "The dog chased the cat", "The dog runs fast", "The cat sleeps"], "answer": "The cat was chased by the dog", "tier": 2},
-  {"question": "Which word correctly completes: 'The medicine had a strong ___ on him'?", "choices": ["Effect", "Affect", "Effekt", "Affekt"], "answer": "Effect", "tier": 2},
-  {"question": "Which is the correct use of 'they're'?", "choices": ["They're going to the park", "Their going to the park", "There going to the park", "Theyre going to the park"], "answer": "They're going to the park", "tier": 2},
-  {"question": "What is an independent clause?", "choices": ["A clause that can stand alone as a sentence", "A clause that depends on another clause", "A phrase without a verb", "A sentence with two subjects"], "answer": "A clause that can stand alone as a sentence", "tier": 2},
-  {"question": "What is a subordinate clause?", "choices": ["A clause that cannot stand alone as a sentence", "A clause with two verbs", "A sentence with no object", "A phrase with an adjective"], "answer": "A clause that cannot stand alone as a sentence", "tier": 2},
-  {"question": "Which verb tense describes an action completed before another past action?", "choices": ["Past perfect", "Simple past", "Past progressive", "Present perfect"], "answer": "Past perfect", "tier": 2},
-  {"question": "Which word correctly fills the blank: 'She will ___ the situation carefully'?", "choices": ["Affect", "Effect", "Infect", "Neglect"], "answer": "Affect", "tier": 2},
-  {"question": "What type of phrase contains a gerund as its head?", "choices": ["Gerund phrase", "Infinitive phrase", "Participial phrase", "Prepositional phrase"], "answer": "Gerund phrase", "tier": 2},
-  {"question": "Which sentence uses the present perfect tense?", "choices": ["She has visited Paris", "She visited Paris", "She visits Paris", "She was visiting Paris"], "answer": "She has visited Paris", "tier": 2},
-  {"question": "Which is the correct sentence regarding countable nouns?", "choices": ["Fewer people attended than expected", "Less people attended than expected", "Lesser people attended than expected", "Few people attended then expected"], "answer": "Fewer people attended than expected", "tier": 2},
-  {"question": "What is a compound sentence?", "choices": ["Two independent clauses joined by a conjunction or semicolon", "A sentence with one independent and one dependent clause", "A sentence with three or more clauses", "A sentence with no punctuation"], "answer": "Two independent clauses joined by a conjunction or semicolon", "tier": 2},
-  {"question": "Which correctly distinguishes 'who' from 'whom'?", "choices": ["'Who' is a subject; 'whom' is an object", "'Who' is formal; 'whom' is informal", "'Whom' is a subject; 'who' is an object", "They are interchangeable"], "answer": "'Who' is a subject; 'whom' is an object", "tier": 2},
-  {"question": "Which sentence uses the future perfect tense?", "choices": ["By noon, she will have finished the report", "She will finish the report by noon", "She finished the report by noon", "She has finished the report"], "answer": "By noon, she will have finished the report", "tier": 2},
-  {"question": "What is an appositive?", "choices": ["A noun or noun phrase that renames another noun beside it", "A verb that acts as a noun", "A clause that modifies a verb", "A phrase that modifies an adjective"], "answer": "A noun or noun phrase that renames another noun beside it", "tier": 2},
-  {"question": "Which sentence avoids a comma splice?", "choices": ["He was tired; he went to bed", "He was tired, he went to bed", "He was tired he went to bed", "He was tired, and, he went to bed"], "answer": "He was tired; he went to bed", "tier": 2},
-  {"question": "Which word is a coordinating conjunction?", "choices": ["But", "Although", "Because", "Unless"], "answer": "But", "tier": 2},
-  {"question": "What is subject-verb agreement?", "choices": ["The verb must match the subject in number", "The subject must come before the verb", "The verb must match the object in tense", "The subject must be a noun"], "answer": "The verb must match the subject in number", "tier": 2},
-  {"question": "Which sentence correctly uses 'its' vs 'it's'?", "choices": ["The dog wagged its tail", "The dog wagged it's tail", "The dog wagged its' tail", "The dog wagged its tails'"], "answer": "The dog wagged its tail", "tier": 2},
-  {"question": "What is a prepositional phrase?", "choices": ["A preposition followed by its object and any modifiers", "A verb phrase with a preposition", "A noun modified by a preposition", "A clause introduced by a preposition"], "answer": "A preposition followed by its object and any modifiers", "tier": 2},
-  {"question": "Which is a subordinating conjunction?", "choices": ["Although", "And", "But", "Or"], "answer": "Although", "tier": 2},
-
-  {"question": "What is a dangling modifier?", "choices": ["A modifier not clearly connected to what it modifies", "A misplaced comma", "A double negative", "A run-on sentence"], "answer": "A modifier not clearly connected to what it modifies", "tier": 3},
-  {"question": "Which sentence uses the subjunctive mood correctly?", "choices": ["If I were rich, I would travel", "If I was rich, I would travel", "If I am rich, I would travel", "If I be rich, I would travel"], "answer": "If I were rich, I would travel", "tier": 3},
-  {"question": "What is a gerund?", "choices": ["A verb form ending in -ing used as a noun", "A verb form used as an adjective", "An infinitive used as an adverb", "A past participle used as a noun"], "answer": "A verb form ending in -ing used as a noun", "tier": 3},
-  {"question": "When should an em dash be used?", "choices": ["To introduce an aside or abrupt break in thought", "To separate items in a list", "To connect two complete sentences", "To show possession"], "answer": "To introduce an aside or abrupt break in thought", "tier": 3},
-  {"question": "What is a misplaced modifier?", "choices": ["A modifier placed too far from the word it modifies", "A modifier that contradicts the noun", "A modifier with no clear referent", "A modifier used as a subject"], "answer": "A modifier placed too far from the word it modifies", "tier": 3},
-  {"question": "Which sentence contains a squinting modifier?", "choices": ["Students who practice often improve", "Running quickly, she reached the bus", "He ate the cake that was stale", "The book on the table is mine"], "answer": "Students who practice often improve", "tier": 3},
-  {"question": "What is the key difference between a gerund and a present participle?", "choices": ["Gerunds function as nouns; participles function as adjectives", "Gerunds are past tense; participles are present tense", "Gerunds modify nouns; participles modify verbs", "There is no difference"], "answer": "Gerunds function as nouns; participles function as adjectives", "tier": 3},
-  {"question": "Which correctly uses a semicolon?", "choices": ["She loves hiking; she hates camping", "She loves hiking; and hates camping", "She loves; hiking and hates camping", "She; loves hiking and hates camping"], "answer": "She loves hiking; she hates camping", "tier": 3},
-  {"question": "What is the subjunctive mood used to express?", "choices": ["Wishes, hypotheticals, and conditions contrary to fact", "Actions in the past", "Commands and requests", "Questions and negations"], "answer": "Wishes, hypotheticals, and conditions contrary to fact", "tier": 3},
-  {"question": "Which sentence correctly uses an infinitive as a noun?", "choices": ["To err is human", "Running is fun", "She was running fast", "The running water"], "answer": "To err is human", "tier": 3},
-  {"question": "What is a restrictive clause?", "choices": ["A clause that is essential to the meaning of the sentence", "A clause set off by commas", "A clause that adds extra information", "A clause beginning with 'which'"], "answer": "A clause that is essential to the meaning of the sentence", "tier": 3},
-  {"question": "Which punctuation correctly sets off a non-restrictive clause?", "choices": ["Commas", "Semicolons", "Colons", "Em dashes only"], "answer": "Commas", "tier": 3},
-  {"question": "What is a split infinitive?", "choices": ["An infinitive with an adverb inserted between 'to' and the verb", "An infinitive used as a gerund", "An infinitive at the end of a sentence", "An infinitive without 'to'"], "answer": "An infinitive with an adverb inserted between 'to' and the verb", "tier": 3},
-  {"question": "Which is an example of parallel structure?", "choices": ["She likes hiking, swimming, and running", "She likes hiking, to swim, and runs", "She likes hike, swimming, and to run", "She likes to hike, swimming, run"], "answer": "She likes hiking, swimming, and running", "tier": 3},
-  {"question": "What does an ellipsis indicate in writing?", "choices": ["An omission of words or a trailing off of thought", "A comparison between two things", "A sudden interruption", "An emphasis on a word"], "answer": "An omission of words or a trailing off of thought", "tier": 3},
-  {"question": "What is an absolute phrase?", "choices": ["A phrase with its own subject and participle that modifies an entire sentence", "A phrase that cannot be moved", "A phrase with no modifiers", "A phrase used as a subject"], "answer": "A phrase with its own subject and participle that modifies an entire sentence", "tier": 3},
-  {"question": "Which sentence contains a dangling participle?", "choices": ["Walking down the street, the trees were beautiful", "Walking down the street, she admired the trees", "She walked down the street admiring the trees", "The trees were beautiful as she walked"], "answer": "Walking down the street, the trees were beautiful", "tier": 3},
-  {"question": "What is asyndeton?", "choices": ["The omission of conjunctions between parts of a sentence", "The repetition of a word at the beginning of clauses", "A figure of speech using understatement", "The addition of extra conjunctions"], "answer": "The omission of conjunctions between parts of a sentence", "tier": 3},
-
-  {"question": "What rhetorical device repeats a word at the end of successive clauses?", "choices": ["Epistrophe", "Anaphora", "Chiasmus", "Asyndeton"], "answer": "Epistrophe", "tier": 4},
-  {"question": "What is anaphora?", "choices": ["Repetition of a word or phrase at the beginning of successive clauses", "Repetition at the end of clauses", "A reversal of grammatical structures in successive phrases", "The omission of conjunctions"], "answer": "Repetition of a word or phrase at the beginning of successive clauses", "tier": 4},
-  {"question": "What is chiasmus?", "choices": ["A reversal of grammatical structures in successive clauses", "Repetition at the start of clauses", "The use of a word to modify two others in different ways", "Omission of words for effect"], "answer": "A reversal of grammatical structures in successive clauses", "tier": 4},
-  {"question": "What is synecdoche?", "choices": ["A figure of speech where a part represents the whole or vice versa", "A comparison using 'like' or 'as'", "The repetition of consonant sounds", "Attribution of human qualities to non-human things"], "answer": "A figure of speech where a part represents the whole or vice versa", "tier": 4},
-  {"question": "From which Latin word does 'grammar' ultimately derive?", "choices": ["Grammatica", "Gramma", "Grammus", "Grammaire"], "answer": "Grammatica", "tier": 4},
-  {"question": "What is zeugma?", "choices": ["A word that governs two or more other words in different senses", "The repetition of a phrase at intervals", "A comparison between unlike things", "An understatement for effect"], "answer": "A word that governs two or more other words in different senses", "tier": 4},
-  {"question": "What is polysyndeton?", "choices": ["The use of multiple conjunctions in close succession", "The omission of conjunctions", "Repetition at the start of clauses", "Reversal of grammatical structure"], "answer": "The use of multiple conjunctions in close succession", "tier": 4},
-  {"question": "What does the term 'syntax' literally mean in Greek?", "choices": ["Arrangement together", "Word order", "Sentence law", "Speech rule"], "answer": "Arrangement together", "tier": 4},
-  {"question": "What is metonymy?", "choices": ["Substituting the name of something with something closely associated", "A comparison without 'like' or 'as'", "Exaggeration for effect", "A word that imitates a sound"], "answer": "Substituting the name of something with something closely associated", "tier": 4},
-  {"question": "What is the rhetorical device of anadiplosis?", "choices": ["Repeating the last word of one clause at the start of the next", "Repeating the first word of successive clauses", "Reversing the structure of two parallel phrases", "Using a part to represent the whole"], "answer": "Repeating the last word of one clause at the start of the next", "tier": 4},
-  {"question": "What is the term for a word formed from another word's letters rearranged?", "choices": ["Anagram", "Palindrome", "Portmanteau", "Acronym"], "answer": "Anagram", "tier": 4},
-  {"question": "What is litotes?", "choices": ["Understatement using a negative to affirm the positive", "Exaggeration for emphasis", "Repetition for emphasis", "A comparison using 'like' or 'as'"], "answer": "Understatement using a negative to affirm the positive", "tier": 4},
-  {"question": "What is a hendiadys?", "choices": ["Expressing one idea through two nouns joined by 'and'", "Expressing two ideas with one noun", "A reversal of two parallel clauses", "The use of extra adjectives for emphasis"], "answer": "Expressing one idea through two nouns joined by 'and'", "tier": 4},
-  {"question": "What does 'predicate' mean etymologically?", "choices": ["That which is asserted or proclaimed", "That which is placed before", "That which is questioned", "That which is described"], "answer": "That which is asserted or proclaimed", "tier": 4},
-  {"question": "What is antanaclasis?", "choices": ["The repetition of a word in a different or contrary sense", "The use of a word before the thing it modifies", "Reversing grammatical structure in successive clauses", "Using one word to govern two phrases differently"], "answer": "The repetition of a word in a different or contrary sense", "tier": 4},
-  {"question": "What is a periodic sentence?", "choices": ["A sentence whose main clause is withheld until the end", "A sentence with multiple independent clauses", "A sentence using periodic punctuation", "A sentence that appears at regular intervals in a text"], "answer": "A sentence whose main clause is withheld until the end", "tier": 4},
-
-  {"question": "In transformational grammar, what is a 'deep structure'?", "choices": ["The abstract syntactic representation underlying a sentence", "The surface word order of a sentence", "A type of embedded clause", "The phonological form of words"], "answer": "The abstract syntactic representation underlying a sentence", "tier": 5},
-  {"question": "Who developed transformational-generative grammar?", "choices": ["Noam Chomsky", "Ferdinand de Saussure", "Leonard Bloomfield", "Edward Sapir"], "answer": "Noam Chomsky", "tier": 5},
-  {"question": "What is a 'surface structure' in transformational grammar?", "choices": ["The actual form in which a sentence appears", "The underlying meaning of a sentence", "The phonetic realization of a morpheme", "A tree diagram of a sentence"], "answer": "The actual form in which a sentence appears", "tier": 5},
-  {"question": "What does the Sapir-Whorf hypothesis claim?", "choices": ["Language influences or determines thought and perception", "All languages share a universal grammar", "Language evolved from primate communication", "Grammar is learned entirely through imitation"], "answer": "Language influences or determines thought and perception", "tier": 5},
-  {"question": "What is a morpheme?", "choices": ["The smallest unit of meaning in a language", "The smallest unit of sound in a language", "A word with a single syllable", "A phrase with one grammatical function"], "answer": "The smallest unit of meaning in a language", "tier": 5},
-  {"question": "What is universal grammar in Chomskyan theory?", "choices": ["An innate linguistic structure shared by all humans", "A set of grammar rules applicable to all languages", "A grammar that covers all historical languages", "The grammar rules of Latin as a universal standard"], "answer": "An innate linguistic structure shared by all humans", "tier": 5},
-  {"question": "What is a 'phrase structure rule'?", "choices": ["A rule specifying how a syntactic category can be expanded", "A rule governing punctuation within phrases", "A rule about the placement of adverbs", "A rule about the rhythm of sentences"], "answer": "A rule specifying how a syntactic category can be expanded", "tier": 5},
-  {"question": "What is the archaic English second-person singular pronoun?", "choices": ["Thou", "Thee", "Thy", "Thine"], "answer": "Thou", "tier": 5},
-  {"question": "In historical English, what was the subjunctive second-person singular form of 'to be'?", "choices": ["Wert", "Wast", "Art", "Beest"], "answer": "Wert", "tier": 5},
-  {"question": "What is a 'free morpheme'?", "choices": ["A morpheme that can stand alone as a word", "A morpheme that must attach to another word", "A morpheme with no fixed meaning", "A morpheme borrowed from another language"], "answer": "A morpheme that can stand alone as a word", "tier": 5},
-  {"question": "What does 'theta role' refer to in Government and Binding theory?", "choices": ["The semantic role assigned to a noun phrase by a predicate", "The syntactic position of a noun phrase", "The phonological shape of a verb", "The morphological case of a noun"], "answer": "The semantic role assigned to a noun phrase by a predicate", "tier": 5},
-  {"question": "What is 'c-command' in syntactic theory?", "choices": ["A structural dominance relationship between nodes in a syntax tree", "The power of a clause to modify another clause", "The control a verb exerts over its arguments", "A constraint on the placement of complementizers"], "answer": "A structural dominance relationship between nodes in a syntax tree", "tier": 5},
-  {"question": "What is the 'Minimalist Program' in linguistics?", "choices": ["Chomsky's approach seeking the simplest principles for language", "A theory that all grammar can be reduced to ten rules", "A movement to simplify English spelling", "A model eliminating all transformational rules"], "answer": "Chomsky's approach seeking the simplest principles for language", "tier": 5},
-  {"question": "What is an agglutinative language?", "choices": ["A language that builds words by combining distinct morphemes", "A language with few inflections", "A language where word order determines meaning", "A language with no morphological marking"], "answer": "A language that builds words by combining distinct morphemes", "tier": 5},
-  {"question": "What is 'pro-drop' in linguistic typology?", "choices": ["Allowing the omission of subject pronouns when they are understood", "Dropping the object from a transitive sentence", "Omitting function words in informal speech", "Reducing long phrases to pronouns"], "answer": "Allowing the omission of subject pronouns when they are understood", "tier": 5},
-  {"question": "What is 'wh-movement' in transformational grammar?", "choices": ["The displacement of a wh-word to the front of a clause", "The substitution of a noun with a wh-pronoun", "The deletion of wh-words in relative clauses", "The insertion of wh-words into embedded clauses"], "answer": "The displacement of a wh-word to the front of a clause", "tier": 5}
+  {
+    "tier": 1,
+    "question": "What part of speech is the word 'dog' in the sentence 'The dog ran fast'?",
+    "answer": "Noun",
+    "choices": [
+      "Noun",
+      "Verb",
+      "Adjective",
+      "Adverb"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What part of speech is the word 'ran' in the sentence 'The dog ran fast'?",
+    "answer": "Verb",
+    "choices": [
+      "Noun",
+      "Verb",
+      "Adjective",
+      "Adverb"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What part of speech is the word 'fast' in 'The dog ran fast'?",
+    "answer": "Adverb",
+    "choices": [
+      "Noun",
+      "Verb",
+      "Adjective",
+      "Adverb"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What part of speech is the word 'happy' in 'She is a happy girl'?",
+    "answer": "Adjective",
+    "choices": [
+      "Noun",
+      "Verb",
+      "Adjective",
+      "Adverb"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What part of speech is the word 'she' in 'She runs every day'?",
+    "answer": "Pronoun",
+    "choices": [
+      "Noun",
+      "Verb",
+      "Pronoun",
+      "Adverb"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which sentence ends with the correct punctuation for a question?",
+    "answer": "Where are you going?",
+    "choices": [
+      "Where are you going.",
+      "Where are you going!",
+      "Where are you going?",
+      "where are you going?"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which word is a noun?",
+    "answer": "Mountain",
+    "choices": [
+      "Mountain",
+      "Run",
+      "Quickly",
+      "Beautiful"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which word is a verb?",
+    "answer": "Jump",
+    "choices": [
+      "Jump",
+      "Blue",
+      "Slowly",
+      "Table"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which word is an adjective?",
+    "answer": "Tiny",
+    "choices": [
+      "Tiny",
+      "Eat",
+      "Silently",
+      "Book"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which word is an adverb?",
+    "answer": "Carefully",
+    "choices": [
+      "Carefully",
+      "Cat",
+      "Bright",
+      "Swim"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which sentence is capitalized correctly?",
+    "answer": "My friend Sarah lives in Texas.",
+    "choices": [
+      "My friend sarah lives in texas.",
+      "my friend Sarah lives in Texas.",
+      "My friend Sarah lives in Texas.",
+      "My Friend Sarah lives in Texas."
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which of these is a complete sentence?",
+    "answer": "The bird sang a song.",
+    "choices": [
+      "The bird sang a song.",
+      "Running down the street.",
+      "A big red.",
+      "Because it was raining."
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which of these is a sentence fragment?",
+    "answer": "Under the old oak tree.",
+    "choices": [
+      "The cat sleeps.",
+      "Under the old oak tree.",
+      "We went to the park.",
+      "Birds fly south in winter."
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the correct plural of 'cat'?",
+    "answer": "cats",
+    "choices": [
+      "cats",
+      "cates",
+      "cat's",
+      "caties"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the correct plural of 'box'?",
+    "answer": "boxes",
+    "choices": [
+      "boxs",
+      "boxes",
+      "boxies",
+      "boxen"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the correct plural of 'baby'?",
+    "answer": "babies",
+    "choices": [
+      "babys",
+      "babies",
+      "babyes",
+      "baby's"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the correct plural of 'leaf'?",
+    "answer": "leaves",
+    "choices": [
+      "leafs",
+      "leaves",
+      "leafes",
+      "leaf's"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which sentence uses a comma correctly in a list?",
+    "answer": "I like apples, oranges, and bananas.",
+    "choices": [
+      "I like apples oranges and bananas.",
+      "I like, apples, oranges and bananas.",
+      "I like apples, oranges, and bananas.",
+      "I, like apples, oranges, and bananas."
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which pronoun replaces 'the boys' in a sentence?",
+    "answer": "They",
+    "choices": [
+      "He",
+      "She",
+      "They",
+      "It"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which pronoun replaces 'Maria' in a sentence?",
+    "answer": "She",
+    "choices": [
+      "He",
+      "She",
+      "They",
+      "It"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which sentence is capitalized correctly at the start?",
+    "answer": "Dogs are loyal animals.",
+    "choices": [
+      "dogs are loyal animals.",
+      "Dogs are loyal animals.",
+      "DOGS are loyal animals.",
+      "doGs are loyal animals."
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What punctuation mark goes at the end of an exclamatory sentence?",
+    "answer": "!",
+    "choices": [
+      ".",
+      "?",
+      "!",
+      ","
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What punctuation mark goes at the end of a statement?",
+    "answer": ".",
+    "choices": [
+      ".",
+      "?",
+      "!",
+      ","
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which word in 'The red car drove slowly' is an adjective?",
+    "answer": "red",
+    "choices": [
+      "The",
+      "red",
+      "drove",
+      "slowly"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which word in 'The red car drove slowly' is an adverb?",
+    "answer": "slowly",
+    "choices": [
+      "The",
+      "red",
+      "drove",
+      "slowly"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the correct plural of 'child'?",
+    "answer": "children",
+    "choices": [
+      "childs",
+      "childrens",
+      "children",
+      "child's"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the correct plural of 'foot'?",
+    "answer": "feet",
+    "choices": [
+      "foots",
+      "feet",
+      "feets",
+      "foot's"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which of the following is a proper noun?",
+    "answer": "London",
+    "choices": [
+      "city",
+      "London",
+      "building",
+      "river"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which of the following is a common noun?",
+    "answer": "school",
+    "choices": [
+      "Tuesday",
+      "Amazon",
+      "school",
+      "Maria"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "A pronoun is used to replace which part of speech?",
+    "answer": "Noun",
+    "choices": [
+      "Verb",
+      "Noun",
+      "Adjective",
+      "Adverb"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which sentence has correct capitalization for a proper noun?",
+    "answer": "We visited the Eiffel Tower.",
+    "choices": [
+      "We visited the eiffel tower.",
+      "We Visited The Eiffel Tower.",
+      "We visited the Eiffel Tower.",
+      "we visited the eiffel tower."
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which word is a noun in 'The quick fox jumps'?",
+    "answer": "fox",
+    "choices": [
+      "The",
+      "quick",
+      "fox",
+      "jumps"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the correct plural of 'mouse'?",
+    "answer": "mice",
+    "choices": [
+      "mouses",
+      "mouse's",
+      "mice",
+      "mices"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What part of speech describes a verb?",
+    "answer": "Adverb",
+    "choices": [
+      "Adjective",
+      "Pronoun",
+      "Adverb",
+      "Noun"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which sentence uses a question mark correctly?",
+    "answer": "Did you eat breakfast?",
+    "choices": [
+      "Did you eat breakfast.",
+      "Did you eat breakfast!",
+      "Did you eat breakfast?",
+      "did you eat breakfast?"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which of these is a sentence fragment?",
+    "answer": "After the long, hot summer.",
+    "choices": [
+      "She loves to read.",
+      "After the long, hot summer.",
+      "We played outside.",
+      "He smiled at me."
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the correct plural of 'dish'?",
+    "answer": "dishes",
+    "choices": [
+      "dishs",
+      "dishes",
+      "dishies",
+      "dish's"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which word is a verb in 'The children laughed loudly'?",
+    "answer": "laughed",
+    "choices": [
+      "The",
+      "children",
+      "laughed",
+      "loudly"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What part of speech is 'we'?",
+    "answer": "Pronoun",
+    "choices": [
+      "Noun",
+      "Verb",
+      "Adjective",
+      "Pronoun"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which sentence is complete?",
+    "answer": "The sun sets in the west.",
+    "choices": [
+      "The sun sets in the west.",
+      "Running through the park every.",
+      "Big and round.",
+      "When the moon rises."
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the correct plural of 'wolf'?",
+    "answer": "wolves",
+    "choices": [
+      "wolfs",
+      "wolves",
+      "wolfes",
+      "wolf's"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which sentence uses correct capitalization for days of the week?",
+    "answer": "I have soccer practice on Monday.",
+    "choices": [
+      "I have soccer practice on monday.",
+      "I have soccer practice on Monday.",
+      "i have Soccer practice on Monday.",
+      "I Have Soccer Practice On Monday."
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the plural of 'person'?",
+    "answer": "people",
+    "choices": [
+      "persons",
+      "peoples",
+      "people",
+      "person's"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What type of noun names a specific person, place, or thing?",
+    "answer": "Proper noun",
+    "choices": [
+      "Common noun",
+      "Proper noun",
+      "Abstract noun",
+      "Collective noun"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which sentence is NOT a fragment?",
+    "answer": "The rain fell heavily.",
+    "choices": [
+      "The rain fell heavily.",
+      "After the game.",
+      "While sleeping.",
+      "Big dark clouds."
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What part of speech is 'over' in 'The bird flew over the hill'?",
+    "answer": "Preposition",
+    "choices": [
+      "Noun",
+      "Verb",
+      "Adjective",
+      "Preposition"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the plural of 'ox'?",
+    "answer": "oxen",
+    "choices": [
+      "oxes",
+      "ox's",
+      "oxen",
+      "oxs"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which word is a verb in 'The stars shine brightly'?",
+    "answer": "shine",
+    "choices": [
+      "The",
+      "stars",
+      "shine",
+      "brightly"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which sentence uses a period correctly?",
+    "answer": "We went to the store.",
+    "choices": [
+      "We went to the store",
+      "We went to the store.",
+      "We went to the store?",
+      "We went to the store!."
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is a group of words that makes a complete thought called?",
+    "answer": "Sentence",
+    "choices": [
+      "Fragment",
+      "Phrase",
+      "Sentence",
+      "Clause"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which word is an adjective in 'A cold wind blew through the trees'?",
+    "answer": "cold",
+    "choices": [
+      "A",
+      "cold",
+      "blew",
+      "through"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which of these is a verb?",
+    "answer": "whisper",
+    "choices": [
+      "loudly",
+      "storm",
+      "whisper",
+      "golden"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the plural of 'cactus'?",
+    "answer": "cacti",
+    "choices": [
+      "cactuses",
+      "cacti",
+      "cactuss",
+      "cactuss'"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which sentence shows correct end punctuation for an exclamation?",
+    "answer": "Watch out!",
+    "choices": [
+      "Watch out.",
+      "Watch out?",
+      "Watch out!",
+      "Watch out,"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which of the following words is a noun?",
+    "answer": "freedom",
+    "choices": [
+      "freedom",
+      "quickly",
+      "bright",
+      "shout"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which is a pronoun in 'She gave it to them'?",
+    "answer": "them",
+    "choices": [
+      "gave",
+      "to",
+      "them",
+      "it"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the plural of 'fish' (referring to one species)?",
+    "answer": "fish",
+    "choices": [
+      "fishes",
+      "fish",
+      "fishs",
+      "fish's"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which sentence is correctly capitalized?",
+    "answer": "On Friday we saw a movie.",
+    "choices": [
+      "on Friday we saw a movie.",
+      "On friday we saw a movie.",
+      "On Friday we saw a movie.",
+      "On Friday We Saw A Movie."
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What part of speech is 'and'?",
+    "answer": "Conjunction",
+    "choices": [
+      "Noun",
+      "Preposition",
+      "Conjunction",
+      "Adverb"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which word in 'He runs very fast' is an adverb modifying another adverb?",
+    "answer": "very",
+    "choices": [
+      "He",
+      "runs",
+      "very",
+      "fast"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the plural of 'goose'?",
+    "answer": "geese",
+    "choices": [
+      "gooses",
+      "goosies",
+      "geese",
+      "goose's"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which type of sentence gives a command?",
+    "answer": "Imperative",
+    "choices": [
+      "Declarative",
+      "Interrogative",
+      "Exclamatory",
+      "Imperative"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which word is a noun in 'The river flows quietly'?",
+    "answer": "river",
+    "choices": [
+      "The",
+      "river",
+      "flows",
+      "quietly"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "A word that takes the place of a noun is called a ___.",
+    "answer": "Pronoun",
+    "choices": [
+      "Verb",
+      "Adjective",
+      "Pronoun",
+      "Adverb"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which sentence correctly uses a comma after an introductory word?",
+    "answer": "Yes, I will come to the party.",
+    "choices": [
+      "Yes I will come to the party.",
+      "Yes, I will come to the party.",
+      "Yes I, will come to the party.",
+      "Yes! I will come to the party."
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the correct plural of 'half'?",
+    "answer": "halves",
+    "choices": [
+      "halfs",
+      "halfes",
+      "halves",
+      "half's"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which of these words is an adverb?",
+    "answer": "silently",
+    "choices": [
+      "silence",
+      "silent",
+      "silently",
+      "silencer"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which sentence is a fragment?",
+    "answer": "Jumping over the fence.",
+    "choices": [
+      "She jumped over the fence.",
+      "Jumping over the fence.",
+      "The fence was tall.",
+      "He landed safely."
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which word is a verb in 'The baby cried all night'?",
+    "answer": "cried",
+    "choices": [
+      "The",
+      "baby",
+      "cried",
+      "night"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which of these is a common noun?",
+    "answer": "ocean",
+    "choices": [
+      "Pacific",
+      "ocean",
+      "Sarah",
+      "Monday"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which pronoun replaces 'the table'?",
+    "answer": "it",
+    "choices": [
+      "he",
+      "she",
+      "it",
+      "they"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the plural of 'tooth'?",
+    "answer": "teeth",
+    "choices": [
+      "tooths",
+      "teeth",
+      "toothes",
+      "tooth's"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which of these sentences is complete?",
+    "answer": "Elephants have excellent memories.",
+    "choices": [
+      "Elephants have excellent memories.",
+      "The largest land animal.",
+      "Running across the savanna.",
+      "Big ears and a long trunk."
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "A word that describes how, when, where, or to what degree is called an ___.",
+    "answer": "Adverb",
+    "choices": [
+      "Adjective",
+      "Adverb",
+      "Noun",
+      "Pronoun"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which word is an adjective in 'A fluffy white cloud drifted by'?",
+    "answer": "fluffy",
+    "choices": [
+      "A",
+      "fluffy",
+      "drifted",
+      "by"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the plural of 'man'?",
+    "answer": "men",
+    "choices": [
+      "mans",
+      "men",
+      "manes",
+      "man's"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What part of speech is 'but'?",
+    "answer": "Conjunction",
+    "choices": [
+      "Preposition",
+      "Adjective",
+      "Conjunction",
+      "Adverb"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which sentence uses correct end punctuation?",
+    "answer": "How old are you?",
+    "choices": [
+      "How old are you.",
+      "How old are you!",
+      "How old are you?",
+      "How old are you,"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What part of speech is 'in' in 'She lives in Paris'?",
+    "answer": "Preposition",
+    "choices": [
+      "Noun",
+      "Adjective",
+      "Adverb",
+      "Preposition"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which word is a noun in 'Courage is an important quality'?",
+    "answer": "Courage",
+    "choices": [
+      "Courage",
+      "is",
+      "important",
+      "quality"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which of these words is NOT an adjective?",
+    "answer": "eat",
+    "choices": [
+      "tall",
+      "red",
+      "eat",
+      "small"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the plural of 'deer'?",
+    "answer": "deer",
+    "choices": [
+      "deers",
+      "deer's",
+      "deer",
+      "deeries"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which type of sentence makes a statement?",
+    "answer": "Declarative",
+    "choices": [
+      "Declarative",
+      "Interrogative",
+      "Exclamatory",
+      "Imperative"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which type of sentence expresses strong emotion?",
+    "answer": "Exclamatory",
+    "choices": [
+      "Declarative",
+      "Interrogative",
+      "Exclamatory",
+      "Imperative"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which type of sentence asks a question?",
+    "answer": "Interrogative",
+    "choices": [
+      "Declarative",
+      "Interrogative",
+      "Exclamatory",
+      "Imperative"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the plural of 'knife'?",
+    "answer": "knives",
+    "choices": [
+      "knifes",
+      "knives",
+      "knife's",
+      "knifes'"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the plural of 'tomato'?",
+    "answer": "tomatoes",
+    "choices": [
+      "tomatos",
+      "tomatoes",
+      "tomatoies",
+      "tomato's"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which pronoun is used for a single male person?",
+    "answer": "he",
+    "choices": [
+      "she",
+      "they",
+      "he",
+      "it"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which word is an adverb in 'She sings beautifully'?",
+    "answer": "beautifully",
+    "choices": [
+      "She",
+      "sings",
+      "beautifully",
+      "none"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What punctuation mark separates items in a list?",
+    "answer": "Comma",
+    "choices": [
+      "Period",
+      "Comma",
+      "Semicolon",
+      "Colon"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which of these is NOT a pronoun?",
+    "answer": "quickly",
+    "choices": [
+      "he",
+      "she",
+      "quickly",
+      "they"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which word describes a noun?",
+    "answer": "Adjective",
+    "choices": [
+      "Adverb",
+      "Adjective",
+      "Verb",
+      "Pronoun"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "A word that shows action is called a ___.",
+    "answer": "Verb",
+    "choices": [
+      "Noun",
+      "Verb",
+      "Adjective",
+      "Adverb"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "A person, place, thing, or idea is called a ___.",
+    "answer": "Noun",
+    "choices": [
+      "Noun",
+      "Verb",
+      "Adjective",
+      "Pronoun"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which sentence is a complete sentence?",
+    "answer": "My dog loves to play fetch.",
+    "choices": [
+      "My dog loves to play fetch.",
+      "Because the weather was nice.",
+      "The very tall building.",
+      "Walking to school every morning."
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which word is a pronoun?",
+    "answer": "him",
+    "choices": [
+      "run",
+      "fast",
+      "him",
+      "blue"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which sentence uses correct capitalization for a month?",
+    "answer": "Her birthday is in July.",
+    "choices": [
+      "Her birthday is in july.",
+      "her birthday is in July.",
+      "Her birthday is in July.",
+      "Her Birthday Is In July."
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the plural of 'woman'?",
+    "answer": "women",
+    "choices": [
+      "womans",
+      "women",
+      "womens",
+      "woman's"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which sentence is a fragment?",
+    "answer": "In the middle of the night.",
+    "choices": [
+      "She woke up suddenly.",
+      "In the middle of the night.",
+      "He heard a loud noise.",
+      "The cat knocked over the lamp."
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the plural of 'bus'?",
+    "answer": "buses",
+    "choices": [
+      "buss",
+      "busses",
+      "buses",
+      "bus's"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which word is an adjective in 'The old brown dog slept'?",
+    "answer": "old",
+    "choices": [
+      "The",
+      "old",
+      "slept",
+      "dog"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which sentence shows correct subject-verb agreement?",
+    "answer": "The dogs run in the park.",
+    "choices": [
+      "The dogs runs in the park.",
+      "The dogs run in the park.",
+      "The dog run in the park.",
+      "The dogs runned in the park."
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which sentence uses the past tense correctly?",
+    "answer": "She walked to school yesterday.",
+    "choices": [
+      "She walk to school yesterday.",
+      "She walks to school yesterday.",
+      "She walked to school yesterday.",
+      "She walking to school yesterday."
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which sentence uses the future tense correctly?",
+    "answer": "I will call you tomorrow.",
+    "choices": [
+      "I called you tomorrow.",
+      "I call you tomorrow.",
+      "I will call you tomorrow.",
+      "I am calling you tomorrow."
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What does FANBOYS stand for in grammar?",
+    "answer": "Coordinating conjunctions",
+    "choices": [
+      "Subordinating conjunctions",
+      "Coordinating conjunctions",
+      "Correlative conjunctions",
+      "Conjunctive adverbs"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which is a coordinating conjunction from FANBOYS?",
+    "answer": "but",
+    "choices": [
+      "although",
+      "because",
+      "but",
+      "since"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which sentence uses 'its' correctly?",
+    "answer": "The dog wagged its tail.",
+    "choices": [
+      "The dog wagged it's tail.",
+      "The dog wagged its tail.",
+      "The dog wagged its' tail.",
+      "The dog wagged its tails."
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which sentence uses 'it's' correctly?",
+    "answer": "It's a beautiful day outside.",
+    "choices": [
+      "Its a beautiful day outside.",
+      "It's a beautiful day outside.",
+      "Its' a beautiful day outside.",
+      "It's' a beautiful day outside."
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which sentence uses 'their' correctly?",
+    "answer": "The students turned in their homework.",
+    "choices": [
+      "The students turned in there homework.",
+      "The students turned in they're homework.",
+      "The students turned in their homework.",
+      "The students turned in theirs homework."
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which sentence uses 'they're' correctly?",
+    "answer": "They're going to the movies tonight.",
+    "choices": [
+      "Their going to the movies tonight.",
+      "There going to the movies tonight.",
+      "They're going to the movies tonight.",
+      "Theyre going to the movies tonight."
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which sentence uses 'there' correctly?",
+    "answer": "There is a book on the table.",
+    "choices": [
+      "They're is a book on the table.",
+      "Their is a book on the table.",
+      "There is a book on the table.",
+      "Thier is a book on the table."
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Identify the direct object: 'She kicked the ball.'",
+    "answer": "ball",
+    "choices": [
+      "She",
+      "kicked",
+      "ball",
+      "the"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Identify the indirect object: 'He gave Mary a flower.'",
+    "answer": "Mary",
+    "choices": [
+      "He",
+      "gave",
+      "Mary",
+      "flower"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which sentence uses present perfect tense?",
+    "answer": "I have finished my homework.",
+    "choices": [
+      "I finished my homework.",
+      "I finish my homework.",
+      "I have finished my homework.",
+      "I will finish my homework."
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which sentence uses past perfect tense?",
+    "answer": "She had already eaten when he arrived.",
+    "choices": [
+      "She already ate when he arrived.",
+      "She has already eaten when he arrived.",
+      "She had already eaten when he arrived.",
+      "She will have eaten when he arrived."
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which verb agrees with its subject in 'Neither of the boys ___ ready'?",
+    "answer": "is",
+    "choices": [
+      "are",
+      "is",
+      "were",
+      "be"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which verb agrees with its subject in 'The team ___ winning the game'?",
+    "answer": "is",
+    "choices": [
+      "are",
+      "is",
+      "were",
+      "have"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the correct possessive form of 'teacher'?",
+    "answer": "teacher's",
+    "choices": [
+      "teachers",
+      "teacher's",
+      "teachers'",
+      "teacher'"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the correct possessive form of 'students' (plural possessive)?",
+    "answer": "students'",
+    "choices": [
+      "students",
+      "student's",
+      "students'",
+      "students's"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which FANBOYS conjunction joins the clauses in 'I wanted pizza, but she wanted tacos'?",
+    "answer": "but",
+    "choices": [
+      "for",
+      "and",
+      "but",
+      "yet"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which sentence uses correct subject-verb agreement with 'everyone'?",
+    "answer": "Everyone is invited to the party.",
+    "choices": [
+      "Everyone are invited to the party.",
+      "Everyone is invited to the party.",
+      "Everyone were invited to the party.",
+      "Everyone have been invited to the party."
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What verb tense is used in 'They are studying for the test'?",
+    "answer": "Present progressive",
+    "choices": [
+      "Simple present",
+      "Present progressive",
+      "Past progressive",
+      "Present perfect"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What verb tense is used in 'He was sleeping when I called'?",
+    "answer": "Past progressive",
+    "choices": [
+      "Simple past",
+      "Present progressive",
+      "Past progressive",
+      "Past perfect"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which sentence uses a conjunction correctly?",
+    "answer": "I like math, and I also like science.",
+    "choices": [
+      "I like math, I also like science.",
+      "I like math and, I also like science.",
+      "I like math, and I also like science.",
+      "I like math and also like, science."
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which sentence shows correct subject-verb agreement with 'each'?",
+    "answer": "Each student has a pencil.",
+    "choices": [
+      "Each student have a pencil.",
+      "Each students have a pencil.",
+      "Each student has a pencil.",
+      "Each students has a pencil."
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the correct contraction for 'they are'?",
+    "answer": "they're",
+    "choices": [
+      "theyre",
+      "their",
+      "they're",
+      "they'are"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the correct contraction for 'it is'?",
+    "answer": "it's",
+    "choices": [
+      "its",
+      "it's",
+      "its'",
+      "it'is"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the direct object in 'The chef cooked a delicious meal'?",
+    "answer": "meal",
+    "choices": [
+      "chef",
+      "cooked",
+      "delicious",
+      "meal"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which sentence uses 'your' correctly?",
+    "answer": "Is this your backpack?",
+    "choices": [
+      "Is this you're backpack?",
+      "Is this your backpack?",
+      "Is this yr backpack?",
+      "Is this yours backpack?"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which sentence uses 'you're' correctly?",
+    "answer": "You're the best student in class.",
+    "choices": [
+      "Your the best student in class.",
+      "You're the best student in class.",
+      "Youre the best student in class.",
+      "You are' the best student in class."
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What tense is 'will have completed' an example of?",
+    "answer": "Future perfect",
+    "choices": [
+      "Future simple",
+      "Present perfect",
+      "Past perfect",
+      "Future perfect"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which FANBOYS conjunction shows contrast between two clauses?",
+    "answer": "but",
+    "choices": [
+      "and",
+      "for",
+      "but",
+      "so"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which FANBOYS conjunction shows result or effect?",
+    "answer": "so",
+    "choices": [
+      "nor",
+      "but",
+      "or",
+      "so"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which sentence shows correct subject-verb agreement with 'none'?",
+    "answer": "None of the milk is left.",
+    "choices": [
+      "None of the milk are left.",
+      "None of the milk is left.",
+      "None of the milk were left.",
+      "None of the milks is left."
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the indirect object in 'She baked her brother a cake'?",
+    "answer": "brother",
+    "choices": [
+      "She",
+      "baked",
+      "brother",
+      "cake"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which sentence uses 'whose' correctly?",
+    "answer": "Whose coat is on the chair?",
+    "choices": [
+      "Who's coat is on the chair?",
+      "Whose coat is on the chair?",
+      "Who coat is on the chair?",
+      "Whos coat is on the chair?"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which sentence uses 'who's' correctly?",
+    "answer": "Who's coming to the party?",
+    "choices": [
+      "Whose coming to the party?",
+      "Who's coming to the party?",
+      "Whos coming to the party?",
+      "Who is's coming to the party?"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the past tense of 'swim'?",
+    "answer": "swam",
+    "choices": [
+      "swimmed",
+      "swum",
+      "swam",
+      "swimed"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the past tense of 'bring'?",
+    "answer": "brought",
+    "choices": [
+      "bringed",
+      "brung",
+      "brought",
+      "brang"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which sentence uses the correct past tense of 'go'?",
+    "answer": "We went to the beach last summer.",
+    "choices": [
+      "We goed to the beach last summer.",
+      "We gone to the beach last summer.",
+      "We went to the beach last summer.",
+      "We going to the beach last summer."
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which verb form is correct: 'The data ___ collected yesterday'?",
+    "answer": "were",
+    "choices": [
+      "was",
+      "were",
+      "is",
+      "has"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which FANBOYS conjunction shows a reason or cause?",
+    "answer": "for",
+    "choices": [
+      "nor",
+      "for",
+      "so",
+      "yet"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the correct possessive of 'James'?",
+    "answer": "James's",
+    "choices": [
+      "James'",
+      "James's",
+      "Jamess",
+      "James s'"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the past tense of 'begin'?",
+    "answer": "began",
+    "choices": [
+      "begined",
+      "begun",
+      "began",
+      "beginned"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which sentence uses 'fewer' correctly?",
+    "answer": "There are fewer students today.",
+    "choices": [
+      "There are less students today.",
+      "There are fewer students today.",
+      "There are more fewer students today.",
+      "There are fewest students today."
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which sentence uses 'less' correctly?",
+    "answer": "I have less homework than usual.",
+    "choices": [
+      "I have fewer homework than usual.",
+      "I have less homework than usual.",
+      "I have lessest homework than usual.",
+      "I have more less homework than usual."
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the correct possessive of 'children'?",
+    "answer": "children's",
+    "choices": [
+      "childrens'",
+      "childrens",
+      "children's",
+      "children'"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which sentence has a subject-verb agreement error?",
+    "answer": "The news are bad today.",
+    "choices": [
+      "The news is bad today.",
+      "The news are bad today.",
+      "The information is correct.",
+      "Mathematics is my favorite subject."
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the past tense of 'write'?",
+    "answer": "wrote",
+    "choices": [
+      "writed",
+      "written",
+      "wrote",
+      "writhed"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the past participle of 'eat'?",
+    "answer": "eaten",
+    "choices": [
+      "ate",
+      "eated",
+      "eaten",
+      "eatten"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which sentence correctly uses 'well' vs 'good'?",
+    "answer": "She played the piano well.",
+    "choices": [
+      "She played the piano good.",
+      "She played the piano well.",
+      "She played the piano goodly.",
+      "She played the piano betterly."
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the conjunction in 'I want to go, yet I am tired'?",
+    "answer": "yet",
+    "choices": [
+      "want",
+      "go",
+      "yet",
+      "tired"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which sentence contains a direct object?",
+    "answer": "She read a novel last night.",
+    "choices": [
+      "He slept all afternoon.",
+      "She read a novel last night.",
+      "They ran quickly.",
+      "The bird sang."
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the correct contraction for 'cannot'?",
+    "answer": "can't",
+    "choices": [
+      "cann't",
+      "can't",
+      "cant",
+      "can'nt"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which sentence uses the present perfect tense correctly?",
+    "answer": "He has visited Paris three times.",
+    "choices": [
+      "He visited Paris three times.",
+      "He is visiting Paris three times.",
+      "He has visited Paris three times.",
+      "He visits Paris three times."
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which verb form is correct: 'Everyone ___ a test today'?",
+    "answer": "has",
+    "choices": [
+      "have",
+      "has",
+      "are having",
+      "had have"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What does a direct object receive in a sentence?",
+    "answer": "The action of the verb",
+    "choices": [
+      "The subject",
+      "The action of the verb",
+      "The indirect object",
+      "The predicate"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the past tense of 'choose'?",
+    "answer": "chose",
+    "choices": [
+      "choosed",
+      "chosen",
+      "chose",
+      "choose"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the future progressive tense of 'work'?",
+    "answer": "will be working",
+    "choices": [
+      "will work",
+      "will have worked",
+      "will be working",
+      "would work"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which FANBOYS conjunction shows an alternative or choice?",
+    "answer": "or",
+    "choices": [
+      "and",
+      "but",
+      "or",
+      "for"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the past tense of 'throw'?",
+    "answer": "threw",
+    "choices": [
+      "throwed",
+      "thrown",
+      "threw",
+      "thru"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which sentence uses 'to' correctly (not 'too' or 'two')?",
+    "answer": "I want to go to the store.",
+    "choices": [
+      "I want too go to the store.",
+      "I want two go to the store.",
+      "I want to go to the store.",
+      "I want to go too the store."
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the past tense of 'run'?",
+    "answer": "ran",
+    "choices": [
+      "runned",
+      "ranned",
+      "ran",
+      "run"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the past tense of 'speak'?",
+    "answer": "spoke",
+    "choices": [
+      "speaked",
+      "spoken",
+      "spoke",
+      "spoked"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which sentence uses correct subject-verb agreement with a compound subject joined by 'and'?",
+    "answer": "Tom and Sara are coming to the party.",
+    "choices": [
+      "Tom and Sara is coming to the party.",
+      "Tom and Sara are coming to the party.",
+      "Tom and Sara was coming to the party.",
+      "Tom and Sara comes to the party."
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the past participle of 'see'?",
+    "answer": "seen",
+    "choices": [
+      "saw",
+      "seed",
+      "seen",
+      "seened"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which verb form is correct: 'She ___ been waiting for an hour'?",
+    "answer": "has",
+    "choices": [
+      "have",
+      "has",
+      "is",
+      "was"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the correct possessive of 'the dog' (singular)?",
+    "answer": "the dog's collar",
+    "choices": [
+      "the dogs collar",
+      "the dog's collar",
+      "the dogs' collar",
+      "the dog collar"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which sentence uses 'affect' correctly as a verb?",
+    "answer": "The cold weather will affect the crops.",
+    "choices": [
+      "The cold weather will effect the crops.",
+      "The cold weather will affect the crops.",
+      "The cold weather will effect affect the crops.",
+      "The cold weather effects the crops."
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which sentence uses 'effect' correctly as a noun?",
+    "answer": "The new law had a positive effect on crime rates.",
+    "choices": [
+      "The new law had a positive affect on crime rates.",
+      "The new law had a positive effect on crime rates.",
+      "The new law effected crime rates positively.",
+      "The new law had a positive effecting on crime rates."
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the past tense of 'take'?",
+    "answer": "took",
+    "choices": [
+      "taked",
+      "taken",
+      "took",
+      "toke"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the past participle of 'go'?",
+    "answer": "gone",
+    "choices": [
+      "went",
+      "goed",
+      "gone",
+      "going"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which sentence contains an indirect object?",
+    "answer": "She gave him a gift.",
+    "choices": [
+      "She ran quickly.",
+      "She gave him a gift.",
+      "She opened the door.",
+      "She sang loudly."
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which FANBOYS conjunction is used to negate both options?",
+    "answer": "nor",
+    "choices": [
+      "or",
+      "nor",
+      "but",
+      "yet"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the correct contraction for 'he is'?",
+    "answer": "he's",
+    "choices": [
+      "hes",
+      "he's",
+      "he'is",
+      "hes'"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the past tense of 'break'?",
+    "answer": "broke",
+    "choices": [
+      "breaked",
+      "broken",
+      "broke",
+      "broked"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which sentence contains a dependent clause?",
+    "answer": "Although it was raining, we went outside.",
+    "choices": [
+      "We went outside.",
+      "Although it was raining, we went outside.",
+      "It was raining and we went outside.",
+      "We went outside and it was raining."
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which sentence is a compound sentence?",
+    "answer": "I studied hard, and I passed the test.",
+    "choices": [
+      "I studied hard.",
+      "Because I studied hard, I passed.",
+      "I studied hard, and I passed the test.",
+      "I studied hard to pass the test."
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which sentence is a complex sentence?",
+    "answer": "When she arrived, the party began.",
+    "choices": [
+      "She arrived and the party began.",
+      "She arrived; the party began.",
+      "When she arrived, the party began.",
+      "She arrived. The party began."
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which sentence uses the Oxford comma?",
+    "answer": "I need flour, sugar, and eggs.",
+    "choices": [
+      "I need flour, sugar and eggs.",
+      "I need flour sugar and eggs.",
+      "I need flour, sugar, and eggs.",
+      "I need flour and sugar and eggs."
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which sentence is written in the active voice?",
+    "answer": "The dog chased the cat.",
+    "choices": [
+      "The cat was chased by the dog.",
+      "The cat had been chased.",
+      "The dog chased the cat.",
+      "The chasing was done by the dog."
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which sentence is written in the passive voice?",
+    "answer": "The report was written by Anna.",
+    "choices": [
+      "Anna wrote the report.",
+      "Anna is writing the report.",
+      "The report was written by Anna.",
+      "Anna will write the report."
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which sentence contains a misplaced modifier?",
+    "answer": "She almost drove her kids to school every day.",
+    "choices": [
+      "Almost every day, she drove her kids to school.",
+      "She drove her kids to school almost every day.",
+      "She almost drove her kids to school every day.",
+      "Every day she almost drove her kids to school."
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which sentence contains a dangling modifier?",
+    "answer": "Running down the street, the backpack fell off.",
+    "choices": [
+      "Running down the street, she dropped her backpack.",
+      "While running down the street, she dropped her backpack.",
+      "Running down the street, the backpack fell off.",
+      "She dropped her backpack while running."
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is an independent clause?",
+    "answer": "A clause that can stand alone as a sentence",
+    "choices": [
+      "A clause that cannot stand alone",
+      "A clause that can stand alone as a sentence",
+      "A phrase with no verb",
+      "A dependent clause with a conjunction"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is a dependent clause?",
+    "answer": "A clause that cannot stand alone as a sentence",
+    "choices": [
+      "A clause that can stand alone",
+      "A clause that has no subject",
+      "A clause that cannot stand alone as a sentence",
+      "A complete sentence"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which sentence correctly uses a comma before a coordinating conjunction?",
+    "answer": "He wanted to help, but he didn't know how.",
+    "choices": [
+      "He wanted to help but, he didn't know how.",
+      "He wanted to help but he didn't know how.",
+      "He wanted to help, but he didn't know how.",
+      "He wanted, to help but he didn't know how."
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which sentence uses a comma correctly after an introductory clause?",
+    "answer": "When the sun set, we lit a fire.",
+    "choices": [
+      "When the sun set we lit a fire.",
+      "When the sun set, we lit a fire.",
+      "When, the sun set we lit a fire.",
+      "When the sun set; we lit a fire."
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which sentence has a dangling modifier?",
+    "answer": "Driving to school, the radio played loud music.",
+    "choices": [
+      "While driving to school, she heard loud music.",
+      "Driving to school, she heard the radio.",
+      "Driving to school, the radio played loud music.",
+      "She drove to school listening to loud music."
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which sentence has a misplaced modifier?",
+    "answer": "I only eat vegetables on Tuesdays.",
+    "choices": [
+      "I eat only vegetables on Tuesdays.",
+      "Only on Tuesdays do I eat vegetables.",
+      "I only eat vegetables on Tuesdays.",
+      "On Tuesdays I eat only vegetables."
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which sentence correctly uses a nonrestrictive clause with commas?",
+    "answer": "My brother, who lives in Boston, is a doctor.",
+    "choices": [
+      "My brother who lives in Boston is a doctor.",
+      "My brother, who lives in Boston is a doctor.",
+      "My brother, who lives in Boston, is a doctor.",
+      "My brother who lives in Boston, is a doctor."
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "A compound sentence must contain at least how many independent clauses?",
+    "answer": "Two",
+    "choices": [
+      "One",
+      "Two",
+      "Three",
+      "Four"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which word introduces a dependent clause in 'I went home because I was tired'?",
+    "answer": "because",
+    "choices": [
+      "I",
+      "went",
+      "home",
+      "because"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which sentence is a simple sentence?",
+    "answer": "The children played in the yard.",
+    "choices": [
+      "The children played and laughed in turn.",
+      "The children played in the yard.",
+      "The children played, and the dog ran with them.",
+      "Because the children played, they were tired."
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which sentence uses commas correctly in a series?",
+    "answer": "She visited Rome, Paris, and Madrid.",
+    "choices": [
+      "She visited Rome Paris and Madrid.",
+      "She visited, Rome, Paris, and Madrid.",
+      "She visited Rome, Paris, and Madrid.",
+      "She visited Rome and Paris and Madrid."
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the term for a sentence that has both independent and dependent clauses?",
+    "answer": "Complex sentence",
+    "choices": [
+      "Simple sentence",
+      "Compound sentence",
+      "Complex sentence",
+      "Compound-complex sentence"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which sentence correctly uses a restrictive clause?",
+    "answer": "The student who studied the hardest got an A.",
+    "choices": [
+      "The student, who studied the hardest, got an A.",
+      "The student who studied the hardest got an A.",
+      "The student; who studied the hardest; got an A.",
+      "The student: who studied the hardest: got an A."
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which is an example of active voice?",
+    "answer": "The teacher graded the papers.",
+    "choices": [
+      "The papers were graded by the teacher.",
+      "The papers had been graded.",
+      "The teacher graded the papers.",
+      "Grading was done by the teacher."
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "In the passive voice, what is the focus?",
+    "answer": "The receiver of the action",
+    "choices": [
+      "The person doing the action",
+      "The receiver of the action",
+      "The time of the action",
+      "The place of the action"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which sentence uses an appositive with correct punctuation?",
+    "answer": "My dog, a golden retriever, loves to swim.",
+    "choices": [
+      "My dog a golden retriever loves to swim.",
+      "My dog, a golden retriever loves to swim.",
+      "My dog, a golden retriever, loves to swim.",
+      "My dog a golden retriever, loves to swim."
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which sentence contains a relative clause?",
+    "answer": "The book that I borrowed was excellent.",
+    "choices": [
+      "I borrowed an excellent book.",
+      "The book was excellent.",
+      "The book that I borrowed was excellent.",
+      "I borrowed the book and it was excellent."
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which sentence is a compound-complex sentence?",
+    "answer": "Although she was tired, she finished her work, and she went to bed.",
+    "choices": [
+      "She was tired, so she went to bed.",
+      "Although she was tired, she finished her work.",
+      "She was tired and went to bed.",
+      "Although she was tired, she finished her work, and she went to bed."
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which sentence has a misplaced modifier?",
+    "answer": "He served sandwiches to the children on paper plates.",
+    "choices": [
+      "On paper plates, he served sandwiches to the children.",
+      "He served the children sandwiches on paper plates.",
+      "He served sandwiches to the children on paper plates.",
+      "He placed the sandwiches on paper plates for the children."
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What type of clause is 'who helped me' in 'The woman who helped me was kind'?",
+    "answer": "Relative clause",
+    "choices": [
+      "Adverbial clause",
+      "Noun clause",
+      "Relative clause",
+      "Independent clause"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which sentence correctly uses a comma to separate two independent clauses?",
+    "answer": "The sun was shining, and the birds were singing.",
+    "choices": [
+      "The sun was shining and the birds were singing.",
+      "The sun was shining, and the birds were singing.",
+      "The sun was shining, and, the birds were singing.",
+      "The sun was shining and, the birds were singing."
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which sentence contains a dangling modifier?",
+    "answer": "After finishing the exam, the room felt silent.",
+    "choices": [
+      "After she finished the exam, the room was silent.",
+      "After finishing the exam, she noticed the room was silent.",
+      "After finishing the exam, the room felt silent.",
+      "The room fell silent after she finished the exam."
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What does a subordinate clause begin with?",
+    "answer": "A subordinating conjunction or relative pronoun",
+    "choices": [
+      "A comma",
+      "A subordinating conjunction or relative pronoun",
+      "A coordinating conjunction",
+      "A semicolon"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which sentence is written in passive voice?",
+    "answer": "The trophy was won by our team.",
+    "choices": [
+      "Our team won the trophy.",
+      "Our team is winning the trophy.",
+      "The trophy was won by our team.",
+      "Our team wins trophies."
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which comma rule applies in 'By the way, I forgot to mention something'?",
+    "answer": "Comma after an introductory phrase",
+    "choices": [
+      "Comma in a series",
+      "Comma after an introductory phrase",
+      "Comma before a conjunction",
+      "Comma with nonrestrictive clause"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What kind of sentence is 'She laughed, but he cried'?",
+    "answer": "Compound",
+    "choices": [
+      "Simple",
+      "Compound",
+      "Complex",
+      "Compound-complex"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which sentence uses a comma splice (an error)?",
+    "answer": "It was raining, we stayed inside.",
+    "choices": [
+      "It was raining; we stayed inside.",
+      "It was raining, so we stayed inside.",
+      "Because it was raining, we stayed inside.",
+      "It was raining, we stayed inside."
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which sentence correctly avoids a comma splice?",
+    "answer": "I was hungry; I ate a sandwich.",
+    "choices": [
+      "I was hungry, I ate a sandwich.",
+      "I was hungry I ate a sandwich.",
+      "I was hungry; I ate a sandwich.",
+      "I was hungry so, I ate a sandwich."
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "A modifier should be placed as close as possible to the word it ___.",
+    "answer": "modifies",
+    "choices": [
+      "precedes",
+      "follows",
+      "modifies",
+      "introduces"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which sentence is an example of a run-on?",
+    "answer": "I love hiking I go every weekend.",
+    "choices": [
+      "I love hiking.",
+      "I love hiking; I go every weekend.",
+      "I love hiking, and I go every weekend.",
+      "I love hiking I go every weekend."
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What kind of sentence is 'Even though she was sick, she came to work, but she left early'?",
+    "answer": "Compound-complex",
+    "choices": [
+      "Simple",
+      "Compound",
+      "Complex",
+      "Compound-complex"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which sentence correctly punctuates an introductory adverbial clause?",
+    "answer": "Because it was cold, we wore jackets.",
+    "choices": [
+      "Because it was cold we wore jackets.",
+      "Because it was cold, we wore jackets.",
+      "Because, it was cold, we wore jackets.",
+      "Because it was cold; we wore jackets."
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which sentence has a misplaced modifier?",
+    "answer": "She wore a hat to the party with feathers.",
+    "choices": [
+      "To the party, she wore a hat with feathers.",
+      "She wore a feathered hat to the party.",
+      "She wore a hat with feathers to the party.",
+      "She wore a hat to the party with feathers."
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is a run-on sentence?",
+    "answer": "Two or more independent clauses joined without proper punctuation",
+    "choices": [
+      "A sentence that is too long",
+      "A sentence with too many adjectives",
+      "Two or more independent clauses joined without proper punctuation",
+      "A sentence with no verb"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which sentence uses commas correctly with an appositive?",
+    "answer": "Paris, the capital of France, is a beautiful city.",
+    "choices": [
+      "Paris the capital of France is a beautiful city.",
+      "Paris, the capital of France is a beautiful city.",
+      "Paris the capital of France, is a beautiful city.",
+      "Paris, the capital of France, is a beautiful city."
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which clause is dependent in 'I ran inside when the rain started'?",
+    "answer": "when the rain started",
+    "choices": [
+      "I ran inside",
+      "when the rain started",
+      "I ran",
+      "inside when"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which sentence demonstrates parallel structure?",
+    "answer": "She likes reading, swimming, and hiking.",
+    "choices": [
+      "She likes to read, swimming, and hike.",
+      "She likes reading, to swim, and hiking.",
+      "She likes reading, swimming, and hiking.",
+      "She likes read, swim, and hike."
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the effect of converting an active sentence to passive voice?",
+    "answer": "The focus shifts to the receiver of the action",
+    "choices": [
+      "The sentence becomes shorter",
+      "The focus shifts to the receiver of the action",
+      "The verb tense changes to past",
+      "The subject disappears"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which sentence uses a nonrestrictive clause that is missing its required commas?",
+    "answer": "My sister who is a nurse works at the hospital.",
+    "choices": [
+      "My sister, who is a nurse, works at the hospital.",
+      "My sister, who is a nurse works at the hospital.",
+      "My sister who is a nurse works at the hospital.",
+      "My sister works at the hospital."
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which type of clause can function as a noun in a sentence?",
+    "answer": "Noun clause",
+    "choices": [
+      "Adverbial clause",
+      "Relative clause",
+      "Noun clause",
+      "Prepositional clause"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which sentence correctly fixes the comma splice 'I was tired, I fell asleep early'?",
+    "answer": "I was tired, so I fell asleep early.",
+    "choices": [
+      "I was tired, I fell asleep early.",
+      "I was tired I fell asleep early.",
+      "I was tired, so I fell asleep early.",
+      "I was tired; and I fell asleep early."
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What makes 'before you leave' a dependent clause?",
+    "answer": "It cannot stand alone as a complete sentence",
+    "choices": [
+      "It has a subject and verb",
+      "It cannot stand alone as a complete sentence",
+      "It begins with a verb",
+      "It is a question"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What type of clause is 'that he was lying' in 'She knew that he was lying'?",
+    "answer": "Noun clause",
+    "choices": [
+      "Adverbial clause",
+      "Relative clause",
+      "Noun clause",
+      "Independent clause"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which sentence uses a coordinating conjunction to join two simple sentences correctly?",
+    "answer": "She was nervous, yet she gave a great speech.",
+    "choices": [
+      "She was nervous yet she gave a great speech.",
+      "She was nervous, yet she gave a great speech.",
+      "She was nervous yet, she gave a great speech.",
+      "She was nervous — yet she gave a great speech."
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which sentence is a simple sentence with a compound predicate?",
+    "answer": "She cooked dinner and washed the dishes.",
+    "choices": [
+      "She cooked dinner, and she washed the dishes.",
+      "She cooked dinner and washed the dishes.",
+      "Because she cooked dinner, she washed the dishes.",
+      "She cooked dinner; she washed the dishes."
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which sentence uses a semicolon correctly?",
+    "answer": "She loves jazz; he prefers classical music.",
+    "choices": [
+      "She loves jazz; and he prefers classical music.",
+      "She loves jazz; he prefers classical music.",
+      "She loves; jazz he prefers classical music.",
+      "She loves jazz he; prefers classical music."
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which sentence uses a colon correctly to introduce a list?",
+    "answer": "I need three things: a pen, paper, and an eraser.",
+    "choices": [
+      "I need: three things, a pen, paper, and an eraser.",
+      "I need three things: a pen, paper, and an eraser.",
+      "I need three things a pen: paper and an eraser.",
+      "I need three things, a pen, paper, and an eraser:"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is a subordinating conjunction?",
+    "answer": "A word that joins a dependent clause to an independent clause",
+    "choices": [
+      "A word that joins two independent clauses",
+      "A word that joins a dependent clause to an independent clause",
+      "A word that replaces a noun",
+      "A word that modifies an adjective"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which is a subordinating conjunction?",
+    "answer": "although",
+    "choices": [
+      "and",
+      "but",
+      "although",
+      "for"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which sentence demonstrates parallel structure?",
+    "answer": "He enjoys reading, writing, and coding.",
+    "choices": [
+      "He enjoys reading, to write, and code.",
+      "He enjoys to read, writing, and coding.",
+      "He enjoys reading, writing, and coding.",
+      "He enjoys reading, write, and to code."
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which sentence uses a dash correctly to introduce a summary?",
+    "answer": "She had one goal — to win the championship.",
+    "choices": [
+      "She had one goal to win — the championship.",
+      "She had — one goal to win the championship.",
+      "She had one goal — to win the championship.",
+      "She had one goal to win the — championship."
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What rhetorical device is used in 'The stars danced in the night sky'?",
+    "answer": "Personification",
+    "choices": [
+      "Simile",
+      "Metaphor",
+      "Personification",
+      "Hyperbole"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What rhetorical device is used in 'Life is a journey'?",
+    "answer": "Metaphor",
+    "choices": [
+      "Simile",
+      "Metaphor",
+      "Alliteration",
+      "Hyperbole"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What rhetorical device is used in 'Her smile was like sunshine'?",
+    "answer": "Simile",
+    "choices": [
+      "Simile",
+      "Metaphor",
+      "Personification",
+      "Irony"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What rhetorical device is used in 'Sally sells seashells by the seashore'?",
+    "answer": "Alliteration",
+    "choices": [
+      "Assonance",
+      "Metaphor",
+      "Alliteration",
+      "Hyperbole"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What rhetorical device is used in 'I've told you a million times!'?",
+    "answer": "Hyperbole",
+    "choices": [
+      "Metaphor",
+      "Understatement",
+      "Hyperbole",
+      "Personification"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which sentence lacks parallel structure?",
+    "answer": "She likes to swim, hiking, and to run.",
+    "choices": [
+      "She likes swimming, hiking, and running.",
+      "She likes to swim, to hike, and to run.",
+      "She likes to swim, hiking, and to run.",
+      "She likes swimming and hiking and running."
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which sentence uses a semicolon incorrectly?",
+    "answer": "I went to the store; and bought milk.",
+    "choices": [
+      "The storm was severe; we stayed indoors.",
+      "I went to the store; and bought milk.",
+      "She studied hard; she passed the exam.",
+      "He was tired; he went to bed early."
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is formal register in writing?",
+    "answer": "Language appropriate for professional or academic contexts",
+    "choices": [
+      "Casual, conversational language",
+      "Language appropriate for professional or academic contexts",
+      "Language using slang and contractions",
+      "The verb tense used in formal writing"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which sentence uses formal register?",
+    "answer": "The committee has reached a consensus on the proposed legislation.",
+    "choices": [
+      "The group kinda agreed on the new law.",
+      "The committee has reached a consensus on the proposed legislation.",
+      "Yeah, they all said the law was fine.",
+      "Everyone was cool with the new rules."
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which sentence uses informal register?",
+    "answer": "Gonna head out now — catch you later!",
+    "choices": [
+      "I will be departing momentarily.",
+      "Please accept my sincerest apologies.",
+      "Gonna head out now — catch you later!",
+      "The matter requires further consideration."
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which sentence uses a colon correctly to introduce a single idea?",
+    "answer": "There is only one solution: hard work.",
+    "choices": [
+      "There is: only one solution, hard work.",
+      "There is only one: solution, hard work.",
+      "There is only one solution: hard work.",
+      "There is only one solution, hard work:."
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the rhetorical device in 'The world is a stage'?",
+    "answer": "Metaphor",
+    "choices": [
+      "Simile",
+      "Metaphor",
+      "Allusion",
+      "Hyperbole"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the rhetorical device when a text references a well-known work or historical event?",
+    "answer": "Allusion",
+    "choices": [
+      "Allusion",
+      "Metaphor",
+      "Simile",
+      "Irony"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the rhetorical device when opposites are placed side by side for effect?",
+    "answer": "Antithesis",
+    "choices": [
+      "Parallelism",
+      "Antithesis",
+      "Oxymoron",
+      "Juxtaposition"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which sentence correctly uses a semicolon to join related independent clauses?",
+    "answer": "The concert was amazing; everyone left satisfied.",
+    "choices": [
+      "The concert was amazing, everyone left satisfied.",
+      "The concert was amazing; and everyone left satisfied.",
+      "The concert was amazing; everyone left satisfied.",
+      "The concert was amazing; because everyone left satisfied."
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which sentence violates parallel structure in a list?",
+    "answer": "The job requires typing, to answer phones, and filing.",
+    "choices": [
+      "The job requires typing, answering phones, and filing.",
+      "The job requires to type, to answer phones, and to file.",
+      "The job requires typing, to answer phones, and filing.",
+      "The job requires that you type, answer phones, and file."
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What type of conjunction is 'not only... but also'?",
+    "answer": "Correlative conjunction",
+    "choices": [
+      "Subordinating conjunction",
+      "Coordinating conjunction",
+      "Correlative conjunction",
+      "Conjunctive adverb"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which sentence uses parenthetical dashes correctly?",
+    "answer": "The answer — if you can believe it — was right there all along.",
+    "choices": [
+      "The answer — if you can believe it was right there all along.",
+      "The answer, if you can believe it — was right there all along.",
+      "The answer — if you can believe it — was right there all along.",
+      "The — answer if you can believe it — was right there all along."
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the term for deliberately understating something for effect?",
+    "answer": "Litotes",
+    "choices": [
+      "Hyperbole",
+      "Litotes",
+      "Metaphor",
+      "Irony"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which sentence uses 'however' as a conjunctive adverb with correct punctuation?",
+    "answer": "I wanted to go; however, I was too tired.",
+    "choices": [
+      "I wanted to go, however I was too tired.",
+      "I wanted to go; however I was too tired.",
+      "I wanted to go; however, I was too tired.",
+      "I wanted to go however; I was too tired."
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which subordinating conjunction shows time?",
+    "answer": "while",
+    "choices": [
+      "although",
+      "because",
+      "while",
+      "unless"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which subordinating conjunction shows condition?",
+    "answer": "unless",
+    "choices": [
+      "since",
+      "although",
+      "unless",
+      "while"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which subordinating conjunction shows concession?",
+    "answer": "although",
+    "choices": [
+      "because",
+      "while",
+      "unless",
+      "although"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is an oxymoron?",
+    "answer": "Two contradictory terms placed together",
+    "choices": [
+      "A word that imitates a sound",
+      "Two contradictory terms placed together",
+      "An exaggerated statement",
+      "A comparison using 'like' or 'as'"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which phrase is an oxymoron?",
+    "answer": "deafening silence",
+    "choices": [
+      "as quiet as a mouse",
+      "the roaring storm",
+      "deafening silence",
+      "life is a rollercoaster"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which sentence uses a colon incorrectly?",
+    "answer": "The winner is: the team with the most points.",
+    "choices": [
+      "She had one dream: to become a pilot.",
+      "The winner is: the team with the most points.",
+      "He needed only one thing: sleep.",
+      "They carried supplies: food, water, and rope."
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is anaphora as a rhetorical device?",
+    "answer": "Repetition of a word or phrase at the beginning of successive clauses",
+    "choices": [
+      "Repetition of words at the end of clauses",
+      "Repetition of a word or phrase at the beginning of successive clauses",
+      "A sudden reversal of fortune",
+      "A comparison without using 'like' or 'as'"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which sentence uses a dash to show an abrupt interruption?",
+    "answer": "I was just going to say — never mind.",
+    "choices": [
+      "I was just going to say, never mind.",
+      "I was just going to say; never mind.",
+      "I was just going to say — never mind.",
+      "I was just — going to say never mind."
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the rhetorical effect of using second person ('you') in writing?",
+    "answer": "It directly engages the reader",
+    "choices": [
+      "It creates distance from the reader",
+      "It directly engages the reader",
+      "It makes the writing more formal",
+      "It focuses on the writer's experience"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which sentence uses a semicolon with a conjunctive adverb correctly?",
+    "answer": "She was nervous; nevertheless, she performed brilliantly.",
+    "choices": [
+      "She was nervous, nevertheless she performed brilliantly.",
+      "She was nervous; nevertheless she performed brilliantly.",
+      "She was nervous; nevertheless, she performed brilliantly.",
+      "She was nervous: nevertheless, she performed brilliantly."
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is chiasmus?",
+    "answer": "A rhetorical device reversing grammatical structures in successive clauses",
+    "choices": [
+      "Repeating the same word multiple times",
+      "A rhetorical device reversing grammatical structures in successive clauses",
+      "Placing two opposites next to each other",
+      "Using a question as a statement"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which rhetorical device asks a question not meant to be answered?",
+    "answer": "Rhetorical question",
+    "choices": [
+      "Hyperbole",
+      "Alliteration",
+      "Rhetorical question",
+      "Anaphora"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which sentence uses parallel structure in a list of infinitives?",
+    "answer": "She wants to travel, to learn, and to grow.",
+    "choices": [
+      "She wants to travel, learning, and grow.",
+      "She wants travel, to learn, and growing.",
+      "She wants to travel, to learn, and to grow.",
+      "She wants to travel and learn and growing."
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What does the rhetorical device 'epistrophe' involve?",
+    "answer": "Repetition of a word or phrase at the end of successive clauses",
+    "choices": [
+      "Repetition at the beginning of clauses",
+      "Repetition of a word or phrase at the end of successive clauses",
+      "Using opposite ideas together",
+      "Comparing unlike things with 'like' or 'as'"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which type of dash indicates a longer pause or interruption than a hyphen?",
+    "answer": "Em dash",
+    "choices": [
+      "En dash",
+      "Em dash",
+      "Hyphen",
+      "Double hyphen"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the primary function of an en dash?",
+    "answer": "To indicate a range, such as dates or scores",
+    "choices": [
+      "To connect two words into a compound adjective",
+      "To indicate a range, such as dates or scores",
+      "To show a sudden pause or interruption",
+      "To separate items in a complex list"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the rhetorical device at work in 'Ask not what your country can do for you — ask what you can do for your country'?",
+    "answer": "Chiasmus",
+    "choices": [
+      "Anaphora",
+      "Epiphora",
+      "Chiasmus",
+      "Antithesis"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which sentence shows incorrect parallel structure in a comparison?",
+    "answer": "Running is more fun than to swim.",
+    "choices": [
+      "Running is more fun than swimming.",
+      "To run is more fun than to swim.",
+      "Running is more fun than to swim.",
+      "He would rather run than swim."
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which subordinating conjunction shows cause?",
+    "answer": "because",
+    "choices": [
+      "although",
+      "while",
+      "because",
+      "unless"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which sentence uses formal language appropriate for academic writing?",
+    "answer": "The evidence suggests a strong correlation between the variables.",
+    "choices": [
+      "The stuff shows the things are really linked.",
+      "We can totally see that these two things are connected.",
+      "The evidence suggests a strong correlation between the variables.",
+      "You can see these things are obviously connected."
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is synecdoche?",
+    "answer": "Using a part to represent the whole",
+    "choices": [
+      "Using the whole to represent a part",
+      "Using a part to represent the whole",
+      "Comparing two unlike things using 'like'",
+      "Attributing human qualities to non-human things"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is metonymy?",
+    "answer": "Using a related concept or word to represent something else",
+    "choices": [
+      "Using a part for the whole",
+      "Using a related concept or word to represent something else",
+      "An exaggerated comparison",
+      "Placing two opposites together"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which is an example of synecdoche?",
+    "answer": "All hands on deck.",
+    "choices": [
+      "The pen is mightier than the sword.",
+      "All hands on deck.",
+      "The world is a stage.",
+      "I've told you a million times."
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the purpose of a hyphen in a compound adjective like 'well-known author'?",
+    "answer": "To link two or more words that together modify a noun",
+    "choices": [
+      "To show a pause in the sentence",
+      "To link two or more words that together modify a noun",
+      "To indicate a range between two numbers",
+      "To introduce a list"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which sentence uses a conjunctive adverb correctly?",
+    "answer": "He studied all night; therefore, he passed the exam.",
+    "choices": [
+      "He studied all night, therefore he passed the exam.",
+      "He studied all night; therefore, he passed the exam.",
+      "He studied all night; therefore he passed the exam.",
+      "He studied all night: therefore, he passed the exam."
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the term for a word that sounds like the thing it describes, such as 'buzz' or 'crash'?",
+    "answer": "Onomatopoeia",
+    "choices": [
+      "Alliteration",
+      "Assonance",
+      "Onomatopoeia",
+      "Consonance"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which sentence uses a colon correctly before a quotation?",
+    "answer": "She said exactly what she meant: 'I quit.'",
+    "choices": [
+      "She said exactly what she meant, 'I quit.'",
+      "She said: exactly what she meant 'I quit.'",
+      "She said exactly what she meant: 'I quit.'",
+      "She said exactly what she meant 'I quit':"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which sentence has correct parallel structure with correlative conjunctions?",
+    "answer": "She is not only talented but also hardworking.",
+    "choices": [
+      "She is not only talented but hardworking also.",
+      "She is not only talented but also hardworking.",
+      "She is not only talented also but hardworking.",
+      "She not only is talented but also hardworking."
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is dramatic irony?",
+    "answer": "When the audience knows something the characters do not",
+    "choices": [
+      "When a character says the opposite of what they mean",
+      "When the audience knows something the characters do not",
+      "When an unexpected event contradicts expectations",
+      "When two opposite ideas are combined"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is verbal irony?",
+    "answer": "Saying the opposite of what is meant",
+    "choices": [
+      "An unexpected outcome that is the opposite of what was expected",
+      "When the audience knows more than the character",
+      "Saying the opposite of what is meant",
+      "Using exaggeration for effect"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is situational irony?",
+    "answer": "An outcome that is the opposite of what was expected",
+    "choices": [
+      "Saying the opposite of what is meant",
+      "When the audience knows more than the character",
+      "An outcome that is the opposite of what was expected",
+      "Using metaphor for emphasis"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is foreshadowing in literature?",
+    "answer": "Clues or hints about what will happen later in the story",
+    "choices": [
+      "A flashback to a previous event",
+      "Clues or hints about what will happen later in the story",
+      "Describing the setting in detail",
+      "Revealing a character's inner thoughts"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is symbolism?",
+    "answer": "Using an object or image to represent a deeper idea or concept",
+    "choices": [
+      "A comparison using 'like' or 'as'",
+      "Using an object or image to represent a deeper idea or concept",
+      "Attributing human qualities to non-human things",
+      "An exaggerated statement for effect"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the etymology of the word 'chronology'?",
+    "answer": "From Greek 'chronos' (time) + 'logos' (study)",
+    "choices": [
+      "From Latin 'chrono' (order) + 'logy' (writing)",
+      "From Greek 'chronos' (time) + 'logos' (study)",
+      "From French 'chronique' (chronicle) + 'ologie'",
+      "From Latin 'tempus' (time) + 'logos'"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does the Latin root 'port' mean?",
+    "answer": "To carry",
+    "choices": [
+      "To speak",
+      "To carry",
+      "To write",
+      "To see"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does the Greek root 'graph' mean?",
+    "answer": "To write",
+    "choices": [
+      "To see",
+      "To speak",
+      "To write",
+      "To measure"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does the Latin root 'scrib/script' mean?",
+    "answer": "To write",
+    "choices": [
+      "To carry",
+      "To write",
+      "To read",
+      "To call"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does the Greek root 'bio' mean?",
+    "answer": "Life",
+    "choices": [
+      "Earth",
+      "Water",
+      "Life",
+      "Light"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does the Greek root 'geo' mean?",
+    "answer": "Earth",
+    "choices": [
+      "Life",
+      "Earth",
+      "Time",
+      "Water"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which rhetorical appeal relies on emotion?",
+    "answer": "Pathos",
+    "choices": [
+      "Ethos",
+      "Logos",
+      "Pathos",
+      "Kairos"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which rhetorical appeal relies on the speaker's credibility and character?",
+    "answer": "Ethos",
+    "choices": [
+      "Ethos",
+      "Logos",
+      "Pathos",
+      "Kairos"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which rhetorical appeal relies on logic and evidence?",
+    "answer": "Logos",
+    "choices": [
+      "Ethos",
+      "Logos",
+      "Pathos",
+      "Kairos"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the grammatical subject of a sentence?",
+    "answer": "The noun or pronoun that performs the action",
+    "choices": [
+      "The word that receives the action",
+      "The noun or pronoun that performs the action",
+      "The main verb in the sentence",
+      "The prepositional phrase"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "In sentence diagramming, what does the vertical line between subject and predicate represent?",
+    "answer": "The division between the complete subject and complete predicate",
+    "choices": [
+      "The conjunction connecting two clauses",
+      "The division between the complete subject and complete predicate",
+      "The relationship between a modifier and what it modifies",
+      "The line that marks the object of the verb"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is a nominative absolute?",
+    "answer": "A noun + participial phrase that modifies the whole sentence",
+    "choices": [
+      "A noun used as a verb",
+      "A noun + participial phrase that modifies the whole sentence",
+      "A subject complement after a linking verb",
+      "An appositive that renames the subject"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What linguistic term describes words that sound like what they represent, such as 'sizzle'?",
+    "answer": "Onomatopoeia",
+    "choices": [
+      "Alliteration",
+      "Onomatopoeia",
+      "Assonance",
+      "Consonance"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the difference between denotation and connotation?",
+    "answer": "Denotation is literal meaning; connotation is the emotional association",
+    "choices": [
+      "Denotation is informal; connotation is formal",
+      "Denotation is literal meaning; connotation is the emotional association",
+      "Denotation is figurative; connotation is literal",
+      "They mean the same thing"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does the prefix 'ante-' mean?",
+    "answer": "Before",
+    "choices": [
+      "After",
+      "Against",
+      "Before",
+      "Around"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does the prefix 'post-' mean?",
+    "answer": "After",
+    "choices": [
+      "Before",
+      "After",
+      "Below",
+      "Over"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is a participial phrase?",
+    "answer": "A phrase beginning with a participle that modifies a noun",
+    "choices": [
+      "A phrase beginning with an infinitive",
+      "A phrase beginning with a preposition",
+      "A phrase beginning with a participle that modifies a noun",
+      "A phrase that acts as the subject of the sentence"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is an absolute phrase?",
+    "answer": "A noun and participle combination that modifies the whole sentence without being grammatically connected to it",
+    "choices": [
+      "A phrase that can become a sentence with a subject added",
+      "A phrase that modifies only the subject",
+      "A noun and participle combination that modifies the whole sentence without being grammatically connected to it",
+      "A phrase that begins with a preposition"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does the root 'logy' mean?",
+    "answer": "The study of",
+    "choices": [
+      "To speak",
+      "The study of",
+      "A system or method",
+      "Writing or text"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is a gerund?",
+    "answer": "A verb form ending in -ing that functions as a noun",
+    "choices": [
+      "A verb form ending in -ing that modifies a noun",
+      "A verb form ending in -ing that functions as a noun",
+      "A verb form ending in -ed that functions as an adjective",
+      "A verb in the progressive tense"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is an infinitive phrase?",
+    "answer": "A phrase beginning with 'to' + a verb that can function as a noun, adjective, or adverb",
+    "choices": [
+      "A phrase beginning with 'to' + a verb that can function as a noun, adjective, or adverb",
+      "A phrase that begins with a gerund",
+      "A phrase that replaces the main verb",
+      "A phrase that begins with a preposition"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the term for the repetition of consonant sounds within words close together?",
+    "answer": "Consonance",
+    "choices": [
+      "Alliteration",
+      "Assonance",
+      "Consonance",
+      "Onomatopoeia"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the term for the repetition of vowel sounds in nearby words?",
+    "answer": "Assonance",
+    "choices": [
+      "Alliteration",
+      "Assonance",
+      "Consonance",
+      "Rhyme"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does the Greek prefix 'hyper-' mean?",
+    "answer": "Over, excessive",
+    "choices": [
+      "Under, less",
+      "Over, excessive",
+      "Around, beside",
+      "Against, opposite"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does the Greek prefix 'hypo-' mean?",
+    "answer": "Under, below normal",
+    "choices": [
+      "Over, excessive",
+      "Around",
+      "Under, below normal",
+      "Before"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the term for a word or phrase that softens a harsh or unpleasant idea?",
+    "answer": "Euphemism",
+    "choices": [
+      "Dysphemism",
+      "Euphemism",
+      "Understatement",
+      "Litotes"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the difference between a phrase and a clause?",
+    "answer": "A clause has a subject and predicate; a phrase does not",
+    "choices": [
+      "A phrase has a subject; a clause does not",
+      "A clause has a subject and predicate; a phrase does not",
+      "They are interchangeable terms",
+      "A phrase can stand alone; a clause cannot"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does the root 'aud' mean?",
+    "answer": "To hear",
+    "choices": [
+      "To see",
+      "To speak",
+      "To hear",
+      "To touch"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does the root 'vis/vid' mean?",
+    "answer": "To see",
+    "choices": [
+      "To hear",
+      "To see",
+      "To know",
+      "To speak"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the rhetorical concept of 'kairos'?",
+    "answer": "Choosing the right moment or timing for a message",
+    "choices": [
+      "The credibility of the speaker",
+      "Emotional appeal in writing",
+      "Choosing the right moment or timing for a message",
+      "The logical structure of an argument"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the linguistic term for the study of word meanings?",
+    "answer": "Semantics",
+    "choices": [
+      "Syntax",
+      "Phonology",
+      "Semantics",
+      "Morphology"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the linguistic term for the study of sentence structure?",
+    "answer": "Syntax",
+    "choices": [
+      "Semantics",
+      "Syntax",
+      "Morphology",
+      "Phonology"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the linguistic term for the study of word formation?",
+    "answer": "Morphology",
+    "choices": [
+      "Syntax",
+      "Phonology",
+      "Semantics",
+      "Morphology"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does the prefix 'mis-' mean in words like 'misunderstand'?",
+    "answer": "Wrongly, badly",
+    "choices": [
+      "Not, without",
+      "Wrongly, badly",
+      "Before",
+      "After"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is an appositive phrase?",
+    "answer": "A noun or noun phrase that renames or identifies a nearby noun",
+    "choices": [
+      "A phrase that modifies a verb",
+      "A noun or noun phrase that renames or identifies a nearby noun",
+      "A phrase that introduces a dependent clause",
+      "A phrase that modifies an adjective"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does the root 'dict' mean?",
+    "answer": "To say or speak",
+    "choices": [
+      "To write",
+      "To say or speak",
+      "To carry",
+      "To know"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the key difference between a simile and a metaphor?",
+    "answer": "A simile uses 'like' or 'as'; a metaphor makes a direct comparison",
+    "choices": [
+      "A metaphor uses 'like' or 'as'; a simile makes a direct comparison",
+      "A simile uses 'like' or 'as'; a metaphor makes a direct comparison",
+      "Both use 'like' or 'as'",
+      "They mean the same thing"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the narrative perspective where the narrator knows everything about all characters?",
+    "answer": "Omniscient point of view",
+    "choices": [
+      "First-person point of view",
+      "Limited third-person",
+      "Omniscient point of view",
+      "Second-person point of view"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does the root 'voc/vok' mean?",
+    "answer": "Voice, to call",
+    "choices": [
+      "To hear",
+      "Voice, to call",
+      "To see",
+      "To carry"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the term for a sentence that begins with the main idea followed by supporting details?",
+    "answer": "Cumulative (loose) sentence",
+    "choices": [
+      "Periodic sentence",
+      "Cumulative (loose) sentence",
+      "Inverted sentence",
+      "Compound sentence"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is a periodic sentence?",
+    "answer": "A sentence that withholds the main idea until the end",
+    "choices": [
+      "A sentence that begins with the main idea",
+      "A sentence that withholds the main idea until the end",
+      "A sentence with multiple independent clauses",
+      "A sentence that uses anaphora"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does the prefix 'inter-' mean?",
+    "answer": "Between, among",
+    "choices": [
+      "Within, inside",
+      "Between, among",
+      "Against, opposite",
+      "Over, above"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does the prefix 'intra-' mean?",
+    "answer": "Within, inside",
+    "choices": [
+      "Between, among",
+      "Within, inside",
+      "Against, opposite",
+      "Beyond"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the term for a word derived from a proper noun, such as 'Shakespearean'?",
+    "answer": "Eponym or denominym",
+    "choices": [
+      "Portmanteau",
+      "Eponym or denominym",
+      "Neologism",
+      "Cognate"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does the root 'cred' mean?",
+    "answer": "To believe",
+    "choices": [
+      "To carry",
+      "To say",
+      "To believe",
+      "To write"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is a zeugma?",
+    "answer": "Using one word to apply to two other words in different ways",
+    "choices": [
+      "Repeating the same word for emphasis",
+      "Using one word to apply to two other words in different ways",
+      "Placing two contradictory terms together",
+      "An extended metaphor throughout a text"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the standard grammatical usage of 'affect' vs. 'effect'?",
+    "answer": "'Affect' is usually a verb; 'effect' is usually a noun",
+    "choices": [
+      "'Effect' is usually a verb; 'affect' is usually a noun",
+      "'Affect' is usually a verb; 'effect' is usually a noun",
+      "They are interchangeable in formal writing",
+      "'Affect' is a noun; 'effect' is an adjective"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is a portmanteau word?",
+    "answer": "A word created by blending two words together",
+    "choices": [
+      "A word borrowed from another language",
+      "A word created by blending two words together",
+      "A word formed by adding a prefix to a root",
+      "A word that means the opposite of another word"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the term for a word that is spelled the same as another but has a different meaning and origin?",
+    "answer": "Homograph",
+    "choices": [
+      "Homophone",
+      "Homonym",
+      "Homograph",
+      "Synonym"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which of the following is an example of a periodic sentence?",
+    "answer": "Although she had every reason to give up, she persevered.",
+    "choices": [
+      "She persevered despite having every reason to give up.",
+      "She worked hard and persevered.",
+      "Although she had every reason to give up, she persevered.",
+      "Perseverance was her greatest quality."
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does the Latin root 'bene' mean?",
+    "answer": "Good, well",
+    "choices": [
+      "Bad, wrong",
+      "Good, well",
+      "Many, much",
+      "Small, little"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does the Latin root 'mal' mean?",
+    "answer": "Bad, wrong",
+    "choices": [
+      "Good, well",
+      "Bad, wrong",
+      "Great, large",
+      "Few, small"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the term for a word's position and function in a sentence?",
+    "answer": "Syntactic role",
+    "choices": [
+      "Semantic field",
+      "Morphological class",
+      "Syntactic role",
+      "Phonological pattern"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is an extended metaphor?",
+    "answer": "A metaphor sustained and developed throughout a passage or work",
+    "choices": [
+      "A very long simile",
+      "A metaphor sustained and developed throughout a passage or work",
+      "A metaphor that contradicts itself",
+      "A comparison using multiple 'like' or 'as' phrases"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does the Greek root 'micro' mean?",
+    "answer": "Small",
+    "choices": [
+      "Large",
+      "Small",
+      "Many",
+      "Few"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does the Greek root 'macro' mean?",
+    "answer": "Large, long",
+    "choices": [
+      "Small",
+      "Fast",
+      "Large, long",
+      "Many"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the term for giving human characteristics to non-human things?",
+    "answer": "Personification",
+    "choices": [
+      "Anthropomorphism",
+      "Simile",
+      "Personification",
+      "Metaphor"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does the Latin root 'jur/jus' mean?",
+    "answer": "Law, right",
+    "choices": [
+      "To judge",
+      "Law, right",
+      "To speak",
+      "To carry"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the difference between a homophone and a homograph?",
+    "answer": "Homophones sound alike but differ in spelling/meaning; homographs are spelled alike but differ in meaning/pronunciation",
+    "choices": [
+      "They are the same thing",
+      "Homographs sound alike; homophones look alike",
+      "Homophones sound alike but differ in spelling/meaning; homographs are spelled alike but differ in meaning/pronunciation",
+      "Homophones are formal; homographs are informal"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the term for the overall feeling or atmosphere a literary work creates in the reader?",
+    "answer": "Mood",
+    "choices": [
+      "Tone",
+      "Mood",
+      "Theme",
+      "Voice"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the difference between mood and tone in literature?",
+    "answer": "Tone is the author's attitude; mood is the feeling the reader gets",
+    "choices": [
+      "They are the same thing",
+      "Mood is the author's attitude; tone is the reader's feeling",
+      "Tone is the author's attitude; mood is the feeling the reader gets",
+      "Tone refers to setting; mood refers to character"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does the root 'path' mean in words like 'empathy' and 'pathology'?",
+    "answer": "Feeling, disease, suffering",
+    "choices": [
+      "Thought, mind",
+      "Feeling, disease, suffering",
+      "Life, living",
+      "Earth, ground"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is anagnorisis in literary terms?",
+    "answer": "The moment a character recognizes their true nature or makes an important discovery",
+    "choices": [
+      "The turning point of a plot",
+      "The moment a character recognizes their true nature or makes an important discovery",
+      "The introduction of a main character",
+      "The resolution of the conflict"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is periphrasis?",
+    "answer": "Using more words than necessary to express an idea; circumlocution",
+    "choices": [
+      "A very brief, concise statement",
+      "Using more words than necessary to express an idea; circumlocution",
+      "Repeating the same sound at the start of words",
+      "A type of metaphor comparing two unlike things"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does the Latin root 'anni/annu' mean?",
+    "answer": "Year",
+    "choices": [
+      "Month",
+      "Day",
+      "Year",
+      "Time"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the term for the perspective from which a story is told?",
+    "answer": "Narrative point of view",
+    "choices": [
+      "Narrative tone",
+      "Narrative point of view",
+      "Narrative mood",
+      "Narrative structure"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does the prefix 'circum-' mean?",
+    "answer": "Around, surrounding",
+    "choices": [
+      "Through, across",
+      "Around, surrounding",
+      "Before, ahead of",
+      "Against, opposite"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the term for a figure of speech that uses extreme exaggeration?",
+    "answer": "Hyperbole",
+    "choices": [
+      "Litotes",
+      "Metaphor",
+      "Hyperbole",
+      "Personification"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does the Latin root 'fort' mean?",
+    "answer": "Strong",
+    "choices": [
+      "Quick",
+      "Strong",
+      "Wise",
+      "Large"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does the root 'rupt' mean?",
+    "answer": "To break",
+    "choices": [
+      "To run",
+      "To break",
+      "To burn",
+      "To hold"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the term for the point in a story where the tension is highest?",
+    "answer": "Climax",
+    "choices": [
+      "Exposition",
+      "Rising action",
+      "Climax",
+      "Denouement"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the term for the conclusion or unwinding of a plot after the climax?",
+    "answer": "Denouement",
+    "choices": [
+      "Climax",
+      "Falling action",
+      "Denouement",
+      "Exposition"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does the Greek root 'phil' mean?",
+    "answer": "Love, fondness",
+    "choices": [
+      "Truth",
+      "Love, fondness",
+      "Knowledge",
+      "Power"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does the Greek root 'soph' mean?",
+    "answer": "Wisdom",
+    "choices": [
+      "Power",
+      "Strength",
+      "Wisdom",
+      "Truth"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the difference between syntax and semantics?",
+    "answer": "Syntax concerns sentence structure; semantics concerns meaning",
+    "choices": [
+      "Syntax concerns meaning; semantics concerns structure",
+      "Syntax concerns sentence structure; semantics concerns meaning",
+      "They are the same field of study",
+      "Syntax is informal; semantics is formal"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does the prefix 'trans-' mean?",
+    "answer": "Across, beyond",
+    "choices": [
+      "Below, under",
+      "Across, beyond",
+      "Within, inside",
+      "Against, opposite"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is a motif in literature?",
+    "answer": "A recurring element that has symbolic significance",
+    "choices": [
+      "The main theme of a work",
+      "A recurring element that has symbolic significance",
+      "The climax of the narrative",
+      "A character who reappears in multiple works"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does the Latin root 'temp' mean?",
+    "answer": "Time",
+    "choices": [
+      "Heat",
+      "Place",
+      "Time",
+      "Change"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the narrative technique of revealing earlier events called?",
+    "answer": "Flashback (analepsis)",
+    "choices": [
+      "Foreshadowing",
+      "In medias res",
+      "Flashback (analepsis)",
+      "Prolepsis"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is in medias res?",
+    "answer": "Beginning a narrative in the middle of the action",
+    "choices": [
+      "A flashback technique",
+      "Beginning a narrative in the middle of the action",
+      "Concluding a story with a twist",
+      "Providing backstory before the main plot"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does the Greek root 'tele' mean?",
+    "answer": "Far, distant",
+    "choices": [
+      "Fast",
+      "Far, distant",
+      "Light",
+      "Heat"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does the root 'terr' mean?",
+    "answer": "Earth, land",
+    "choices": [
+      "Water",
+      "Earth, land",
+      "Fire",
+      "Air"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the term for the voice an author uses that reflects their personality and style?",
+    "answer": "Author's voice",
+    "choices": [
+      "Narrative mood",
+      "Author's voice",
+      "Point of view",
+      "Register"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the term for the logical fallacy that attacks a person rather than their argument?",
+    "answer": "Ad hominem",
+    "choices": [
+      "Straw man",
+      "Ad hominem",
+      "False dichotomy",
+      "Slippery slope"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does the root 'spect' mean?",
+    "answer": "To look, to see",
+    "choices": [
+      "To hear",
+      "To speak",
+      "To look, to see",
+      "To touch"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the term for a word that sounds like another word but is spelled differently and has a different meaning?",
+    "answer": "Homophone",
+    "choices": [
+      "Homograph",
+      "Homophone",
+      "Homonym",
+      "Antonym"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the term for a new word coined to reflect a new concept or technology?",
+    "answer": "Neologism",
+    "choices": [
+      "Archaism",
+      "Portmanteau",
+      "Neologism",
+      "Cognate"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does the Latin root 'luc/lum' mean?",
+    "answer": "Light",
+    "choices": [
+      "Dark",
+      "Fire",
+      "Light",
+      "Sound"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the term for repeating a root word in different grammatical forms within a clause, such as 'to sleep the sleep of the just'?",
+    "answer": "Polyptoton",
+    "choices": [
+      "Anaphora",
+      "Polyptoton",
+      "Epistrophe",
+      "Anadiplosis"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does the root 'greg' mean in words like 'congregation' and 'gregarious'?",
+    "answer": "Group, flock",
+    "choices": [
+      "Leader",
+      "Group, flock",
+      "Speak",
+      "Walk"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the term for the substitution of an agreeable expression for a blunt one?",
+    "answer": "Euphemism",
+    "choices": [
+      "Dysphemism",
+      "Hyperbole",
+      "Euphemism",
+      "Litotes"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does the Latin root 'cap/cept' mean?",
+    "answer": "To take or seize",
+    "choices": [
+      "To give",
+      "To take or seize",
+      "To carry",
+      "To know"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the term for repetition where the ending word of one clause becomes the opening word of the next?",
+    "answer": "Anadiplosis",
+    "choices": [
+      "Anaphora",
+      "Epistrophe",
+      "Anadiplosis",
+      "Chiasmus"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does the Greek root 'onym' mean?",
+    "answer": "Name, word",
+    "choices": [
+      "Sound",
+      "Number",
+      "Name, word",
+      "Form"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the term for the study of the origin and history of words?",
+    "answer": "Etymology",
+    "choices": [
+      "Semantics",
+      "Morphology",
+      "Etymology",
+      "Phonology"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does the prefix 'sub-' mean?",
+    "answer": "Under, below",
+    "choices": [
+      "Over, above",
+      "Under, below",
+      "Before",
+      "Against"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does the prefix 'super-' mean?",
+    "answer": "Above, over, beyond",
+    "choices": [
+      "Under, below",
+      "Against, opposite",
+      "Before",
+      "Above, over, beyond"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the term for using a word or phrase in the same grammatical form to establish balance, such as 'veni, vidi, vici'?",
+    "answer": "Parallelism",
+    "choices": [
+      "Chiasmus",
+      "Anaphora",
+      "Parallelism",
+      "Antithesis"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does the root 'mit/miss' mean?",
+    "answer": "To send",
+    "choices": [
+      "To carry",
+      "To send",
+      "To write",
+      "To speak"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which sentence uses the correct form? 'The dog wagged its tail' or 'The dog wagged it's tail'?",
+    "answer": "The dog wagged its tail",
+    "choices": [
+      "The dog wagged it's tail",
+      "The dog wagged its tail",
+      "Both are correct",
+      "Neither is correct"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the past tense of the verb 'run'?",
+    "answer": "ran",
+    "choices": [
+      "runned",
+      "ranned",
+      "run",
+      "ran"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which word is a conjunction in this sentence: 'I wanted pie, but there was none left'?",
+    "answer": "but",
+    "choices": [
+      "wanted",
+      "pie",
+      "but",
+      "left"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which sentence has correct subject-verb agreement?",
+    "answer": "The team plays well together.",
+    "choices": [
+      "The team play well together.",
+      "The team plays well together.",
+      "The teams plays well together.",
+      "The team are play well."
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What type of noun is 'happiness'?",
+    "answer": "Abstract noun",
+    "choices": [
+      "Proper noun",
+      "Concrete noun",
+      "Abstract noun",
+      "Collective noun"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which is the correct possessive form for a group of boys?",
+    "answer": "boys'",
+    "choices": [
+      "boy's",
+      "boys'",
+      "boys's",
+      "boies'"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the future perfect tense of 'write'?",
+    "answer": "will have written",
+    "choices": [
+      "will write",
+      "will be writing",
+      "will have wrote",
+      "will have written"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which word is an adverb in: 'She quickly finished her lunch'?",
+    "answer": "quickly",
+    "choices": [
+      "She",
+      "quickly",
+      "finished",
+      "lunch"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is a pronoun?",
+    "answer": "A word that replaces a noun",
+    "choices": [
+      "A describing word",
+      "A word that replaces a noun",
+      "An action word",
+      "A connecting word"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which sentence uses the correct homophone?",
+    "answer": "They're going to the store.",
+    "choices": [
+      "Their going to the store.",
+      "There going to the store.",
+      "They're going to the store.",
+      "Theyre going to the store."
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the plural of 'leaf'?",
+    "answer": "leaves",
+    "choices": [
+      "leafs",
+      "leafes",
+      "leaves",
+      "leave"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which word is a preposition in: 'The cat sat under the table'?",
+    "answer": "under",
+    "choices": [
+      "cat",
+      "sat",
+      "under",
+      "table"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which sentence is in passive voice?",
+    "answer": "The cake was eaten by the dog.",
+    "choices": [
+      "The dog ate the cake.",
+      "The cake was eaten by the dog.",
+      "The dog is eating the cake.",
+      "The dog will eat the cake."
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What type of sentence has two independent clauses joined by a conjunction?",
+    "answer": "Compound sentence",
+    "choices": [
+      "Simple sentence",
+      "Compound sentence",
+      "Complex sentence",
+      "Compound-complex sentence"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the comparative form of 'good'?",
+    "answer": "better",
+    "choices": [
+      "gooder",
+      "more good",
+      "best",
+      "better"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which word is NOT a coordinating conjunction (FANBOYS)?",
+    "answer": "because",
+    "choices": [
+      "for",
+      "and",
+      "because",
+      "but"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What does an apostrophe show in 'Sarah's book'?",
+    "answer": "Possession",
+    "choices": [
+      "Contraction",
+      "Plural",
+      "Possession",
+      "Abbreviation"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the direct object in: 'Maria baked a delicious cake'?",
+    "answer": "cake",
+    "choices": [
+      "Maria",
+      "baked",
+      "delicious",
+      "cake"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which sentence uses a comma correctly?",
+    "answer": "After dinner, we watched a movie.",
+    "choices": [
+      "After dinner we watched a movie.",
+      "After, dinner we watched a movie.",
+      "After dinner we, watched a movie.",
+      "After dinner, we watched a movie."
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What tense is used in: 'She has been studying for hours'?",
+    "answer": "Present perfect continuous",
+    "choices": [
+      "Simple past",
+      "Present perfect",
+      "Present continuous",
+      "Present perfect continuous"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which part of speech does the word 'beautiful' belong to?",
+    "answer": "Adjective",
+    "choices": [
+      "Adverb",
+      "Noun",
+      "Verb",
+      "Adjective"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the superlative form of 'bad'?",
+    "answer": "worst",
+    "choices": [
+      "more bad",
+      "baddest",
+      "worse",
+      "worst"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which sentence avoids a double negative correctly?",
+    "answer": "I don't have any money.",
+    "choices": [
+      "I don't have no money.",
+      "I don't have any money.",
+      "I haven't got no money.",
+      "I don't got no money."
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the indirect object in: 'She gave him the book'?",
+    "answer": "him",
+    "choices": [
+      "She",
+      "gave",
+      "him",
+      "book"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which word correctly completes the sentence: 'Neither the cat __ the dog likes baths'?",
+    "answer": "nor",
+    "choices": [
+      "or",
+      "nor",
+      "and",
+      "but"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is a dependent clause?",
+    "answer": "A clause that cannot stand alone as a sentence",
+    "choices": [
+      "A clause with two verbs",
+      "A clause that cannot stand alone as a sentence",
+      "A clause with no subject",
+      "An independent sentence"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which sentence contains a dangling modifier?",
+    "answer": "Walking to school, the rain started.",
+    "choices": [
+      "Walking to school, I got wet.",
+      "Walking to school, the rain started.",
+      "The rain started while I walked to school.",
+      "I walked to school in the rain."
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the function of a semicolon?",
+    "answer": "To join two closely related independent clauses",
+    "choices": [
+      "To introduce a list",
+      "To join two closely related independent clauses",
+      "To set off a non-essential phrase",
+      "To end a sentence"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which sentence uses the subjunctive mood correctly?",
+    "answer": "If I were rich, I would travel.",
+    "choices": [
+      "If I was rich, I would travel.",
+      "If I were rich, I would travel.",
+      "If I am rich, I will travel.",
+      "If I be rich, I travel."
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is a gerund?",
+    "answer": "A verb ending in -ing used as a noun",
+    "choices": [
+      "A verb describing ongoing action",
+      "A verb ending in -ing used as a noun",
+      "An adjective formed from a verb",
+      "A past participle"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Identify the appositive: 'My brother, a skilled chef, cooks every Sunday.'",
+    "answer": "a skilled chef",
+    "choices": [
+      "My brother",
+      "a skilled chef",
+      "cooks",
+      "every Sunday"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the difference between 'which' and 'that' in relative clauses?",
+    "answer": "'That' is for essential clauses; 'which' is for non-essential clauses",
+    "choices": [
+      "They are interchangeable",
+      "'That' is for non-essential; 'which' is for essential",
+      "'That' is for essential clauses; 'which' is for non-essential clauses",
+      "'Which' is only used for people"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which sentence demonstrates correct parallel structure?",
+    "answer": "She likes hiking, swimming, and cycling.",
+    "choices": [
+      "She likes hiking, to swim, and cycle.",
+      "She likes hiking, swimming, and cycling.",
+      "She likes to hike, swim, and cycling.",
+      "She likes to hike, swimming, and to cycle."
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is an infinitive phrase?",
+    "answer": "A phrase beginning with 'to' followed by a verb",
+    "choices": [
+      "A phrase describing a noun",
+      "A phrase beginning with 'to' followed by a verb",
+      "A clause with a subject and verb",
+      "A phrase beginning with a preposition"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "In 'The exhausted hikers finally reached camp,' what does 'exhausted' function as?",
+    "answer": "Adjective modifying hikers",
+    "choices": [
+      "Adverb modifying reached",
+      "Adjective modifying hikers",
+      "Past tense verb",
+      "Noun"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is asyndeton?",
+    "answer": "Omitting conjunctions between items in a list for effect",
+    "choices": [
+      "Using too many conjunctions",
+      "Omitting conjunctions between items in a list for effect",
+      "A figure of speech using sound",
+      "A type of sentence fragment"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the difference between active and passive voice?",
+    "answer": "Active: subject does the action; Passive: subject receives the action",
+    "choices": [
+      "Active is past tense; passive is present tense",
+      "Active: subject does the action; Passive: subject receives the action",
+      "Active uses 'to be'; passive does not",
+      "Active has a direct object; passive does not"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which punctuation correctly sets off a non-restrictive clause?",
+    "answer": "Commas",
+    "choices": [
+      "Parentheses",
+      "Commas",
+      "Dashes",
+      "Either commas or dashes"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is a participial phrase?",
+    "answer": "A phrase that begins with a participle and modifies a noun",
+    "choices": [
+      "A phrase that starts with a gerund",
+      "A phrase that begins with a participle and modifies a noun",
+      "A prepositional phrase with an action word",
+      "A phrase that acts as a noun"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What type of sentence is: 'Although it was raining, we went outside'?",
+    "answer": "Complex sentence",
+    "choices": [
+      "Simple sentence",
+      "Compound sentence",
+      "Complex sentence",
+      "Compound-complex sentence"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which sentence contains a misplaced modifier?",
+    "answer": "She served cake to the guests on paper plates.",
+    "choices": [
+      "She served the guests cake on paper plates.",
+      "She served cake to the guests on paper plates.",
+      "On paper plates, she served cake to the guests.",
+      "She served the guests cake, which was on paper plates."
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the correct punctuation for this sentence: 'I bought apples oranges and bananas'?",
+    "answer": "I bought apples, oranges, and bananas.",
+    "choices": [
+      "I bought apples, oranges and bananas.",
+      "I bought apples, oranges, and bananas.",
+      "I bought apples oranges, and bananas.",
+      "I bought; apples, oranges, and bananas."
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is a transitive verb?",
+    "answer": "A verb that requires a direct object",
+    "choices": [
+      "A verb in the present tense",
+      "A verb that requires a direct object",
+      "A verb with no object",
+      "A linking verb"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What does the colon do in: 'He needed three things: courage, strength, and wisdom'?",
+    "answer": "Introduces a list after an independent clause",
+    "choices": [
+      "Replaces a comma",
+      "Introduces a list after an independent clause",
+      "Shows a pause like a semicolon",
+      "Joins two independent clauses"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which is correct? 'Lay' vs 'Lie'",
+    "answer": "'Lay' needs an object; 'lie' does not",
+    "choices": [
+      "They mean the same thing",
+      "'Lay' is past tense of 'lie'",
+      "'Lay' needs an object; 'lie' does not",
+      "'Lie' is used for objects; 'lay' is for people"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is a compound-complex sentence?",
+    "answer": "A sentence with at least two independent clauses and one dependent clause",
+    "choices": [
+      "A sentence with two verbs",
+      "A sentence with at least two independent clauses and one dependent clause",
+      "A sentence with multiple adjectives",
+      "A sentence joined by a semicolon"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which word is a subordinating conjunction?",
+    "answer": "although",
+    "choices": [
+      "and",
+      "but",
+      "or",
+      "although"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What does 'antecedent' mean in grammar?",
+    "answer": "The noun that a pronoun refers back to",
+    "choices": [
+      "A type of verb tense",
+      "The noun that a pronoun refers back to",
+      "A word that comes before an adjective",
+      "A type of clause"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the purpose of a thesis statement?",
+    "answer": "To state the main argument of an essay",
+    "choices": [
+      "To summarize the conclusion",
+      "To provide evidence",
+      "To state the main argument of an essay",
+      "To introduce background information"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which sentence uses a colon correctly?",
+    "answer": "She had one goal: to win.",
+    "choices": [
+      "She: had one goal to win.",
+      "She had: one goal to win.",
+      "She had one: goal to win.",
+      "She had one goal: to win."
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is an em dash used for?",
+    "answer": "To set off an abrupt interruption or add emphasis",
+    "choices": [
+      "To show a range of numbers",
+      "To separate syllables",
+      "To set off an abrupt interruption or add emphasis",
+      "To connect two words into one"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the nominative case?",
+    "answer": "The case used for the subject of a sentence",
+    "choices": [
+      "The case used for direct objects",
+      "The case used for the subject of a sentence",
+      "The case used for indirect objects",
+      "The case used after prepositions"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which sentence shows correct use of 'fewer' vs 'less'?",
+    "answer": "There are fewer apples today.",
+    "choices": [
+      "There is less apples today.",
+      "There are fewer apples today.",
+      "There are less apples today.",
+      "There is fewer apples today."
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is a restrictive clause?",
+    "answer": "A clause essential to the meaning of the sentence",
+    "choices": [
+      "A clause set off by commas",
+      "A clause essential to the meaning of the sentence",
+      "A clause beginning with 'which'",
+      "A clause that can be removed without changing meaning"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which correctly uses the dash?",
+    "answer": "The solution — if it works — will save time.",
+    "choices": [
+      "The solution, if it works, will save time.",
+      "The solution — if it works — will save time.",
+      "The solution: if it works; will save time.",
+      "The solution (if it works,) will save time."
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is an oxymoron?",
+    "answer": "A figure of speech that combines contradictory terms",
+    "choices": [
+      "A repeated sound at the start of words",
+      "A figure of speech that combines contradictory terms",
+      "An exaggerated statement",
+      "A comparison using 'like' or 'as'"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the past perfect tense used for?",
+    "answer": "To describe an action completed before another past action",
+    "choices": [
+      "To describe ongoing past action",
+      "To describe an action completed before another past action",
+      "To describe future action",
+      "To describe habitual past action"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is anaphora?",
+    "answer": "Repetition of a word or phrase at the beginning of successive clauses",
+    "choices": [
+      "Repetition of sounds",
+      "Repetition of a word or phrase at the beginning of successive clauses",
+      "An interruption in narrative",
+      "A reversal of word order"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which sentence is correct?",
+    "answer": "Who is coming to the party?",
+    "choices": [
+      "Whom is coming to the party?",
+      "Who is coming to the party?",
+      "Whose coming to the party?",
+      "Who's person is coming?"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is a predicate nominative?",
+    "answer": "A noun or pronoun in the predicate that renames the subject",
+    "choices": [
+      "The main verb of a sentence",
+      "A noun or pronoun in the predicate that renames the subject",
+      "A noun used as an adjective",
+      "The subject of a sentence"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the difference between 'affect' and 'effect'?",
+    "answer": "'Affect' is usually a verb; 'effect' is usually a noun",
+    "choices": [
+      "They are synonyms",
+      "'Effect' is usually a verb; 'affect' is usually a noun",
+      "'Affect' is usually a verb; 'effect' is usually a noun",
+      "Both are nouns"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is a clause?",
+    "answer": "A group of words with a subject and a verb",
+    "choices": [
+      "Any group of words",
+      "A group of words with a subject and a verb",
+      "A sentence fragment",
+      "A group of words without a verb"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which sentence correctly uses 'who' vs 'whom'?",
+    "answer": "To whom should I address the letter?",
+    "choices": [
+      "To who should I address the letter?",
+      "To whom should I address the letter?",
+      "Whom should I invite?",
+      "Who did you give it to?"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What type of figurative language is 'The wind whispered through the trees'?",
+    "answer": "Personification",
+    "choices": [
+      "Simile",
+      "Metaphor",
+      "Personification",
+      "Hyperbole"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is a verbal phrase?",
+    "answer": "A phrase built around a verb form used as another part of speech",
+    "choices": [
+      "Any phrase with a verb",
+      "A phrase built around a verb form used as another part of speech",
+      "A phrase describing an action",
+      "A clause with both subject and verb"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which correctly uses quotation marks?",
+    "answer": "She said, \"I'll be there soon.\"",
+    "choices": [
+      "She said, 'I'll be there soon.'",
+      "She said, \"I'll be there soon.\"",
+      "She said: \"I'll be there soon\"",
+      "She said I'll be there soon."
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is a topic sentence?",
+    "answer": "The sentence that states the main idea of a paragraph",
+    "choices": [
+      "The first sentence of an essay",
+      "The sentence that states the main idea of a paragraph",
+      "A sentence with many details",
+      "The concluding sentence of a paragraph"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the vocative case?",
+    "answer": "The case used when directly addressing someone",
+    "choices": [
+      "The case used for subjects",
+      "The case used when directly addressing someone",
+      "The case for indirect objects",
+      "The case after prepositions"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is polysyndeton?",
+    "answer": "Using many conjunctions in a series for stylistic effect",
+    "choices": [
+      "Using no conjunctions",
+      "Using many conjunctions in a series for stylistic effect",
+      "A type of run-on sentence",
+      "Repetition of a conjunction at the end of clauses"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which sentence is grammatically correct?",
+    "answer": "Running fast, he missed the turn.",
+    "choices": [
+      "Running fast, the turn was missed.",
+      "Running fast, he missed the turn.",
+      "He running fast, the turn was missed.",
+      "Running fast, a turn was missed by him."
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is a chiasmus?",
+    "answer": "A rhetorical reversal of grammatical structures in successive clauses",
+    "choices": [
+      "Repetition of initial consonant sounds",
+      "A rhetorical reversal of grammatical structures in successive clauses",
+      "An appeal to emotion",
+      "A logical argument structure"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the genitive absolute in Greek grammar, and what is its closest English equivalent?",
+    "answer": "The nominative absolute — a noun phrase that modifies an entire clause",
+    "choices": [
+      "The passive voice",
+      "The nominative absolute — a noun phrase that modifies an entire clause",
+      "The subjunctive mood",
+      "A gerund phrase"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is a zeugma?",
+    "answer": "Using one word to apply to two others in different senses",
+    "choices": [
+      "A reversal of word order",
+      "Using one word to apply to two others in different senses",
+      "Repetition of a word",
+      "A figure comparing two unlike things"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the difference between denotation and connotation?",
+    "answer": "Denotation is literal meaning; connotation is implied meaning",
+    "choices": [
+      "Denotation is implied meaning; connotation is literal meaning",
+      "Denotation is literal meaning; connotation is implied meaning",
+      "They mean the same thing",
+      "Denotation applies to nouns; connotation to verbs"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is a synecdoche?",
+    "answer": "Using a part to represent the whole, or vice versa",
+    "choices": [
+      "Using an object to represent an idea",
+      "Using a part to represent the whole, or vice versa",
+      "A comparison using 'like' or 'as'",
+      "Using a mild phrase to replace an offensive one"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "In formal English, what is wrong with: 'The reason is because I was sick'?",
+    "answer": "'Because' is redundant after 'the reason is' — use 'that'",
+    "choices": [
+      "'Reason' should be 'purpose'",
+      "'Because' is redundant after 'the reason is' — use 'that'",
+      "Nothing is wrong",
+      "'Is' should be 'was'"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is a litotes?",
+    "answer": "Understatement using a negative to affirm a positive",
+    "choices": [
+      "Extreme exaggeration",
+      "Understatement using a negative to affirm a positive",
+      "A comparison of two unlike things",
+      "A statement that contradicts itself"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the subjunctive mood used for?",
+    "answer": "Expressing wishes, hypotheticals, or doubt",
+    "choices": [
+      "Expressing commands",
+      "Expressing statements of fact",
+      "Expressing wishes, hypotheticals, or doubt",
+      "Expressing questions"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the Oxford comma, and why is it debated?",
+    "answer": "The comma before 'and' in a list; debated for clarity vs brevity",
+    "choices": [
+      "A comma after 'however' at sentence start; required in formal writing",
+      "The comma before 'and' in a list; debated for clarity vs brevity",
+      "A comma used in British English after a date",
+      "A comma required before all conjunctions"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is epistrophe?",
+    "answer": "Repetition of a word or phrase at the end of successive clauses",
+    "choices": [
+      "Repetition at the start of clauses",
+      "Repetition of a word or phrase at the end of successive clauses",
+      "A sudden interruption in speech",
+      "A list without conjunctions"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the difference between a phrase and a clause?",
+    "answer": "A clause has both a subject and a verb; a phrase does not",
+    "choices": [
+      "A phrase is longer than a clause",
+      "A clause has both a subject and a verb; a phrase does not",
+      "A phrase can stand alone; a clause cannot",
+      "They are the same thing"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is aposiopesis?",
+    "answer": "A sudden break in speech, leaving a sentence incomplete for effect",
+    "choices": [
+      "Excessive use of commas",
+      "A sudden break in speech, leaving a sentence incomplete for effect",
+      "Starting a sentence with 'and' or 'but'",
+      "Using a question that expects no answer"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is a periodic sentence?",
+    "answer": "A sentence where the main clause comes at the end for dramatic effect",
+    "choices": [
+      "A sentence with many clauses",
+      "A sentence where the main clause comes at the end for dramatic effect",
+      "A sentence that asks a question",
+      "A sentence with parallel structure"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What does 'voice' mean in grammar?",
+    "answer": "Whether the subject performs or receives the verb's action",
+    "choices": [
+      "The tone of a piece of writing",
+      "Whether the subject performs or receives the verb's action",
+      "The level of formality",
+      "Whether a verb is present or past tense"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is hypotaxis?",
+    "answer": "Using subordinate clauses to create complex, layered sentences",
+    "choices": [
+      "Using no clauses at all",
+      "Short, direct sentences",
+      "Using subordinate clauses to create complex, layered sentences",
+      "Putting the verb before the subject"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the difference between euphemism and dysphemism?",
+    "answer": "Euphemism softens language; dysphemism makes it harsher",
+    "choices": [
+      "They are synonyms",
+      "Euphemism softens language; dysphemism makes it harsher",
+      "Euphemism uses slang; dysphemism uses formal language",
+      "Dysphemism softens; euphemism harshens"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is a rhetorical question?",
+    "answer": "A question asked for effect, not expecting an actual answer",
+    "choices": [
+      "A question with no answer",
+      "A question at the end of an argument",
+      "A question asked for effect, not expecting an actual answer",
+      "An indirect question embedded in a sentence"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is parataxis?",
+    "answer": "Placing clauses side by side without subordinating conjunctions",
+    "choices": [
+      "A sentence with many adjectives",
+      "Placing clauses side by side without subordinating conjunctions",
+      "Using very long subordinate clauses",
+      "Starting every sentence with 'and'"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the difference between a simile and a metaphor?",
+    "answer": "A simile uses 'like' or 'as'; a metaphor makes a direct comparison",
+    "choices": [
+      "A metaphor uses 'like' or 'as'; a simile makes a direct comparison",
+      "A simile uses 'like' or 'as'; a metaphor makes a direct comparison",
+      "They are the same device",
+      "A simile is indirect; a metaphor is only used in poetry"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is stream of consciousness in writing?",
+    "answer": "A narrative technique presenting a character's continuous thoughts",
+    "choices": [
+      "Writing without any punctuation",
+      "A narrative technique presenting a character's continuous thoughts",
+      "Writing in present tense throughout",
+      "A type of first-person narration"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the accusative case?",
+    "answer": "The case for direct objects of a verb",
+    "choices": [
+      "The case for the subject",
+      "The case for direct objects of a verb",
+      "The case after prepositions",
+      "The case for possession"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is a malapropism?",
+    "answer": "Mistakenly using a similar-sounding word in place of the correct one",
+    "choices": [
+      "A made-up word",
+      "Mistakenly using a similar-sounding word in place of the correct one",
+      "Deliberately misspelling a word",
+      "Using a word that has two meanings"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the dative case used for?",
+    "answer": "The indirect object — typically indicating 'to whom' or 'for whom'",
+    "choices": [
+      "The subject of the verb",
+      "The direct object",
+      "The indirect object — typically indicating 'to whom' or 'for whom'",
+      "Showing possession"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is an ellipsis used for in writing?",
+    "answer": "To indicate omitted text or a trailing pause in dialogue",
+    "choices": [
+      "To separate two independent clauses",
+      "To introduce a list",
+      "To indicate omitted text or a trailing pause in dialogue",
+      "To end a sentence with emphasis"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is syllepsis?",
+    "answer": "Using a single word to apply to two others, creating a humorous or surprising effect",
+    "choices": [
+      "A type of metaphor",
+      "Repeating a word in two different senses",
+      "Using a single word to apply to two others, creating a humorous or surprising effect",
+      "A form of irony"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the difference between 'imply' and 'infer'?",
+    "answer": "The speaker implies; the listener infers",
+    "choices": [
+      "They are synonyms",
+      "The listener implies; the speaker infers",
+      "The speaker implies; the listener infers",
+      "'Imply' is for written text; 'infer' is for speech"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is a solecism?",
+    "answer": "A grammatical error or unconventional usage",
+    "choices": [
+      "A figure of speech",
+      "A grammatical error or unconventional usage",
+      "A formal style of writing",
+      "A type of sentence structure"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the difference between transitive and intransitive verbs?",
+    "answer": "Transitive verbs take a direct object; intransitive verbs do not",
+    "choices": [
+      "Transitive verbs are in active voice; intransitive are in passive",
+      "Transitive verbs are regular; intransitive are irregular",
+      "Transitive verbs take a direct object; intransitive verbs do not",
+      "Transitive verbs are past tense; intransitive are present tense"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is cataphora?",
+    "answer": "Using a pronoun before introducing the noun it refers to",
+    "choices": [
+      "Repeating a word for emphasis",
+      "Using a pronoun before introducing the noun it refers to",
+      "Using a noun to replace a pronoun",
+      "A type of metaphor"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is an absolute phrase?",
+    "answer": "A phrase with a subject and a participle that modifies an entire clause",
+    "choices": [
+      "A phrase that stands alone as a sentence",
+      "A phrase with a subject and a participle that modifies an entire clause",
+      "An infinitive phrase used as an adjective",
+      "A prepositional phrase"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the difference between formal and informal register?",
+    "answer": "Formal uses standard grammar and avoids contractions; informal is conversational",
+    "choices": [
+      "Formal uses longer words; informal uses short words",
+      "Formal uses standard grammar and avoids contractions; informal is conversational",
+      "Formal is for fiction; informal is for non-fiction",
+      "There is no meaningful difference"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is synchysis in rhetoric?",
+    "answer": "An interlocking pattern of word order (ABAB) for stylistic effect",
+    "choices": [
+      "Reversing the expected word order",
+      "An interlocking pattern of word order (ABAB) for stylistic effect",
+      "A list of synonyms",
+      "Placing modifiers far from the words they modify"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is alliteration?",
+    "answer": "Repetition of the same initial consonant sound in nearby words",
+    "choices": [
+      "Repetition of vowel sounds",
+      "Repetition of the same initial consonant sound in nearby words",
+      "Repetition of a word or phrase",
+      "Using words that imitate sounds"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the difference between 'comprise' and 'compose'?",
+    "answer": "The whole comprises the parts; the parts compose the whole",
+    "choices": [
+      "They are synonyms",
+      "The whole comprises the parts; the parts compose the whole",
+      "The parts comprise the whole; the whole composes the parts",
+      "'Comprise' is formal; 'compose' is informal"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is prosody in poetry?",
+    "answer": "The patterns of rhythm, stress, and sound in poetry",
+    "choices": [
+      "The theme of a poem",
+      "The patterns of rhythm, stress, and sound in poetry",
+      "The use of figurative language",
+      "The structure of stanzas"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the vocative comma?",
+    "answer": "A comma used to separate a direct address from the rest of the sentence",
+    "choices": [
+      "A comma used in lists",
+      "A comma used to separate a direct address from the rest of the sentence",
+      "A comma used before a conjunction",
+      "A comma after an introductory phrase"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is a non sequitur in writing?",
+    "answer": "A statement that does not logically follow from what came before",
+    "choices": [
+      "A transition phrase",
+      "A statement that does not logically follow from what came before",
+      "A conclusion that restates the thesis",
+      "An abrupt paragraph change"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What does 'syntax' refer to in grammar?",
+    "answer": "The arrangement of words and phrases to form sentences",
+    "choices": [
+      "The meaning of words",
+      "The arrangement of words and phrases to form sentences",
+      "The sound of language",
+      "The history of a word"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is bathos?",
+    "answer": "An abrupt, jarring drop from the elevated to the trivial",
+    "choices": [
+      "A gradual increase in tension",
+      "An abrupt, jarring drop from the elevated to the trivial",
+      "Extreme exaggeration for comic effect",
+      "A long, flowing sentence structure"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is a haplology?",
+    "answer": "Omitting a syllable or sound that appears twice in succession",
+    "choices": [
+      "Adding an extra syllable to a word",
+      "Omitting a syllable or sound that appears twice in succession",
+      "Pronouncing silent letters",
+      "Blending two words into one"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is antithesis in rhetoric?",
+    "answer": "Placing contrasting ideas in parallel structure to highlight the contrast",
+    "choices": [
+      "A restatement of the thesis",
+      "Placing contrasting ideas in parallel structure to highlight the contrast",
+      "The opposite of a thesis statement",
+      "Using the same word with opposite meanings"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is auxesis?",
+    "answer": "Arranging words or clauses in order of increasing importance",
+    "choices": [
+      "Decreasing in importance throughout a sentence",
+      "Arranging words or clauses in order of increasing importance",
+      "A type of rhyme scheme",
+      "Repeating the last word of one clause at the start of the next"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the difference between a complex and compound sentence?",
+    "answer": "Complex has a dependent clause; compound joins two independent clauses",
+    "choices": [
+      "Complex has more words than compound",
+      "Complex has a dependent clause; compound joins two independent clauses",
+      "Compound uses a semicolon; complex does not",
+      "They are the same thing"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is euphony in writing?",
+    "answer": "The use of pleasant, harmonious sounds in language",
+    "choices": [
+      "The use of harsh, discordant sounds",
+      "The use of pleasant, harmonious sounds in language",
+      "A type of rhythm in prose",
+      "Repeating the same word for emphasis"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the ablative absolute in Latin grammar's English equivalent?",
+    "answer": "A nominative absolute phrase that modifies an entire sentence",
+    "choices": [
+      "A gerund phrase",
+      "A nominative absolute phrase that modifies an entire sentence",
+      "A subordinate clause introduced by 'since'",
+      "An infinitive phrase"
+    ]
+  }
 ]

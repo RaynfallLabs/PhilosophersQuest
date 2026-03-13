@@ -1,6 +1,6 @@
 import os
 import pygame
-from dungeon import WALL, FLOOR, STAIRS_UP, STAIRS_DOWN, DOOR, SECRET_DOOR
+from dungeon import WALL, FLOOR, STAIRS_UP, STAIRS_DOWN, DOOR, SECRET_DOOR, ALTAR
 
 TILE_SIZE = 40  # kept for UI/font sizing outside the renderer
 
@@ -14,6 +14,7 @@ _VISIBLE = {
     STAIRS_DOWN: (200, 185,  50),
     DOOR:        (139,  90,  43),
     SECRET_DOOR: (130, 130, 140),
+    ALTAR:       (200, 170,  80),
 }
 
 # Explored-but-not-currently-visible (dimmed) colors
@@ -24,6 +25,7 @@ _EXPLORED = {
     STAIRS_DOWN: ( 70,  65,  25),
     DOOR:        ( 55,  35,  18),
     SECRET_DOOR: ( 60,  60,  65),
+    ALTAR:       ( 80,  65,  30),
 }
 
 _UNEXPLORED = (0, 0, 0)
@@ -93,6 +95,13 @@ class Renderer:
 
                 if (tx, ty) in visible and tile == DOOR:
                     glyph = self._sym_font.render('+', True, (210, 130, 60))
+                    ox = (T - glyph.get_width())  // 2
+                    oy = (T - glyph.get_height()) // 2
+                    self.screen.blit(glyph, (sx + ox, sy + oy))
+
+                if (tx, ty) in visible and tile == ALTAR:
+                    # Draw a simple raised altar: a golden cross symbol
+                    glyph = self._sym_font.render('\u271d', True, (255, 220, 80))
                     ox = (T - glyph.get_width())  // 2
                     oy = (T - glyph.get_height()) // 2
                     self.screen.blit(glyph, (sx + ox, sy + oy))

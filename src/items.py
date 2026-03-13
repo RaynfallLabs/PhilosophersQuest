@@ -47,6 +47,10 @@ class Weapon(Item):
         self.two_handed: bool           = bool(defn.get('twoHanded', defn.get('two_handed', False)))
         self.reach: int                 = int(defn.get('reach', 1))
         self.stun_chance: float         = float(defn.get('stunChance', defn.get('stun_chance', 0.0)))
+        self.bleed_chance: float        = float(defn.get('bleedChance', defn.get('bleed_chance', 0.0)))
+        self.knockback: bool            = bool(defn.get('knockback', False))
+        self.ignore_shield: bool        = bool(defn.get('ignoreShield', defn.get('ignore_shield', False)))
+        self.crit_multiplier: float     = float(defn.get('critMultiplier', defn.get('crit_multiplier', 1.0)))
         self.requires_ammo: str | None  = defn.get('requiresAmmo', defn.get('requires_ammo', None))
         self.floor_spawn_weight: dict   = defn.get('floorSpawnWeight', defn.get('floor_spawn_weight', {}))
         self.container_loot_tier: str   = defn.get('containerLootTier', defn.get('container_loot_tier', 'common'))
@@ -164,6 +168,7 @@ class Ingredient(Item):
         self.source_monster = defn.get('source_monster', '')
         # recipes: str(quality 0-5) -> {name, sp, bonus_type, bonus_amount}
         self.recipes: dict  = defn.get('recipes', {})
+        self.floor_spawn_weight: dict = defn.get('floor_spawn_weight', {})
         self.identified: bool       = True   # raw ingredients are obvious
         self.unidentified_name: str = defn.get('unidentified_name', self.name)
 

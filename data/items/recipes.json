@@ -1,0 +1,891 @@
+{
+  "ember_rat_skewer": {
+    "name": "Ember-Kissed Rat Skewer",
+    "ingredients": [
+      "rat_meat",
+      "ember_spice"
+    ],
+    "tier": 1,
+    "sp": 90,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 1,
+    "description": "Rat meat rubbed with ember spice and seared over hot coals. Crude but satisfying."
+  },
+  "herbed_serpent_fricassee": {
+    "name": "Herbed Serpent Fricassee",
+    "ingredients": [
+      "snake_meat",
+      "rosemary_sprig"
+    ],
+    "tier": 1,
+    "sp": 85,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 1,
+    "description": "Delicate snake flesh simmered in rosemary-infused oil until tender."
+  },
+  "spiced_frog_legs_provencal": {
+    "name": "Spiced Frog Legs Provençal",
+    "ingredients": [
+      "frog_legs",
+      "serpent_pepper"
+    ],
+    "tier": 1,
+    "sp": 80,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 1,
+    "description": "Pan-fried frog legs in a serpent-pepper reduction. Light, crisp, and invigorating."
+  },
+  "mushroom_goblin_potage": {
+    "name": "Cave Mushroom & Goblin Potage",
+    "ingredients": [
+      "goblin_flesh",
+      "cave_mushroom"
+    ],
+    "tier": 1,
+    "sp": 100,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 1,
+    "description": "A hearty potage of goblin flesh and earthy cave mushrooms. Not pretty, but fortifying."
+  },
+  "thyme_bear_haunch": {
+    "name": "Wild Thyme Roasted Bear Haunch",
+    "ingredients": [
+      "bear_meat",
+      "wild_thyme"
+    ],
+    "tier": 1,
+    "sp": 110,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 1,
+    "description": "Slow-roasted bear meat on a bed of wild thyme. Barbaric in name, masterful in result."
+  },
+  "celery_lizard_broth": {
+    "name": "Pale Celery Lizard Bouillon",
+    "ingredients": [
+      "lizard_meat",
+      "pale_celery"
+    ],
+    "tier": 1,
+    "sp": 80,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 1,
+    "description": "A light bouillon made from dungeon lizard and pale celery. Restorative and clean."
+  },
+  "bullywug_carrot_bisque": {
+    "name": "Cave Carrot Bullywug Bisque",
+    "ingredients": [
+      "bullywug_leg",
+      "cave_carrot"
+    ],
+    "tier": 1,
+    "sp": 85,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 1,
+    "description": "Chunky cave carrots puréed with tender bullywug leg. Rich, orange, and surprisingly refined."
+  },
+  "spore_silk_consomme": {
+    "name": "Glowing Spore & Spider Consommé",
+    "ingredients": [
+      "spider_silk",
+      "glowing_spore"
+    ],
+    "tier": 1,
+    "sp": 85,
+    "bonus_type": "stat",
+    "bonus_stat": "INT",
+    "bonus_amount": 1,
+    "description": "Spider-silk gelatin clarified with glowing spores. The resulting broth shimmers faintly."
+  },
+  "gnoll_herb_ragout": {
+    "name": "Braised Gnoll Shank with Cave Herbs",
+    "ingredients": [
+      "gnoll_hide",
+      "wild_thyme",
+      "cave_carrot"
+    ],
+    "tier": 2,
+    "sp": 160,
+    "bonus_type": "two_stats",
+    "bonus_amount": 1,
+    "description": "Gnoll rendered low and slow with aromatic herbs and root vegetables. A warrior's reward."
+  },
+  "spriggan_ragout": {
+    "name": "Spriggan Thorn Ragout en Cocotte",
+    "ingredients": [
+      "spriggan_thorn",
+      "serpent_pepper",
+      "cave_mushroom"
+    ],
+    "tier": 2,
+    "sp": 165,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 2,
+    "description": "Thorny spriggan extract reduced with pepper and mushroom into a nimble-making sauce."
+  },
+  "manticore_bisque": {
+    "name": "Manticore Spine Grand Bisque",
+    "ingredients": [
+      "manticore_spine",
+      "ember_spice",
+      "pale_celery"
+    ],
+    "tier": 2,
+    "sp": 175,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 2,
+    "description": "Manticore spine marrow extracted into a bisque fiery with ember spice. Brutally strengthening."
+  },
+  "blink_hare_hasenpfeffer": {
+    "name": "Blink-Gland Hasenpfeffer",
+    "ingredients": [
+      "blink_gland",
+      "valerian_root",
+      "cave_mushroom"
+    ],
+    "tier": 2,
+    "sp": 175,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 2,
+    "description": "Blink dog gland dissolved in valerian-mushroom stock. The first spoonful and you feel faster."
+  },
+  "troll_tourte": {
+    "name": "Braised Troll Shin Tourte",
+    "ingredients": [
+      "troll_hide",
+      "pale_celery",
+      "rosemary_sprig"
+    ],
+    "tier": 2,
+    "sp": 170,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 2,
+    "description": "Troll hide's regenerative proteins slow-extracted and baked in a celery-rosemary pastry crust."
+  },
+  "wisp_risotto": {
+    "name": "Luminous Wisp Essence Risotto",
+    "ingredients": [
+      "wisp_essence",
+      "glowing_spore",
+      "crimson_fungus"
+    ],
+    "tier": 2,
+    "sp": 180,
+    "bonus_type": "stat",
+    "bonus_stat": "INT",
+    "bonus_amount": 2,
+    "description": "Wisp essence stirred into a mushroom risotto that glows faintly. Each bite sharpens the mind."
+  },
+  "raven_elixir": {
+    "name": "Raven-Black Sage Elixir",
+    "ingredients": [
+      "raven_feather",
+      "valerian_root",
+      "nightshade_leaf"
+    ],
+    "tier": 2,
+    "sp": 165,
+    "bonus_type": "two_stats",
+    "bonus_amount": 1,
+    "description": "Raven feather extract distilled with valerian and nightshade. A scholar's midnight draught."
+  },
+  "dragon_scale_pot_au_feu": {
+    "name": "Dragon Scale Pot-au-Feu",
+    "ingredients": [
+      "dragon_scale",
+      "void_salt",
+      "wild_thyme",
+      "bear_meat"
+    ],
+    "tier": 3,
+    "sp": 260,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 3,
+    "description": "Dragon scale rendered in void-salt brine with bear and thyme. The pot practically growls."
+  },
+  "medusa_bouillabaisse": {
+    "name": "Medusa Blood Bouillabaisse",
+    "ingredients": [
+      "medusa_blood",
+      "nightshade_leaf",
+      "serpent_pepper",
+      "cave_mushroom"
+    ],
+    "tier": 3,
+    "sp": 265,
+    "bonus_type": "two_stats",
+    "bonus_amount": 2,
+    "description": "Medusa blood carefully neutralized and simmered with pepper and mushroom. Sharpens eyes and mind alike."
+  },
+  "chimera_heart_royale": {
+    "name": "Chimera Heart Royale",
+    "ingredients": [
+      "chimera_heart",
+      "ember_spice",
+      "mandrake_root",
+      "cave_carrot"
+    ],
+    "tier": 3,
+    "sp": 280,
+    "bonus_type": "all_stats",
+    "bonus_amount": 1,
+    "description": "The tripartite heart of a chimera reduced with root herbs. Every stat improves. Every sense sharpens."
+  },
+  "basilisk_perpignan": {
+    "name": "Basilisk Stone Broth Perpignan",
+    "ingredients": [
+      "basilisk_stone",
+      "rosemary_sprig",
+      "pale_celery",
+      "cave_carrot"
+    ],
+    "tier": 3,
+    "sp": 255,
+    "bonus_type": "two_stats",
+    "bonus_amount": 2,
+    "description": "Petrified basilisk gaze dissolved by rosemary acid into a clarified, terrifyingly good broth."
+  },
+  "frost_consomme_glace": {
+    "name": "Frost-Gland Consommé Glacé",
+    "ingredients": [
+      "frost_gland",
+      "void_salt",
+      "crimson_fungus",
+      "valerian_root"
+    ],
+    "tier": 3,
+    "sp": 265,
+    "bonus_type": "two_stats",
+    "bonus_amount": 2,
+    "description": "Frost gland essence crystallized by void salt, balanced by crimson fungus. Clarity in every spoonful."
+  },
+  "eagle_eye_consomme": {
+    "name": "Eagle-Eye Summit Consommé",
+    "ingredients": [
+      "eagle_feather",
+      "cave_carrot",
+      "petrified_mushroom",
+      "dragon_salt"
+    ],
+    "tier": 3,
+    "sp": 270,
+    "bonus_type": "stat",
+    "bonus_stat": "PER",
+    "bonus_amount": 3,
+    "description": "Eagle feather broth enriched with ancient mushroom and dragon salt. Vision reaches to the horizon."
+  },
+  "philosophers_grand_banquet": {
+    "name": "The Philosopher's Grand Banquet",
+    "ingredients": [
+      "chimera_heart",
+      "dragon_scale",
+      "lord_phylactery"
+    ],
+    "tier": 5,
+    "sp": 500,
+    "bonus_type": "all_stats",
+    "bonus_amount": 2,
+    "lore": "The apex of dungeon cuisine. Every great cook dreams of this dish. Most die attempting it."
+  },
+  "abyssal_midnight_feast": {
+    "name": "Abyssal Midnight Feast",
+    "ingredients": [
+      "bone_shard",
+      "rotted_flesh",
+      "nightshade_leaf",
+      "void_salt",
+      "valerian_root"
+    ],
+    "tier": 4,
+    "sp": 380,
+    "bonus_type": "two_stats",
+    "bonus_amount": 3,
+    "description": "A forbidden dish from the deep places. The ingredients are vile. The result is transcendent."
+  },
+  "serpent_king_culmination": {
+    "name": "Serpent King's Culmination",
+    "ingredients": [
+      "manticore_spine",
+      "medusa_blood",
+      "serpent_pepper",
+      "dragon_salt",
+      "rosemary_sprig"
+    ],
+    "tier": 4,
+    "sp": 400,
+    "bonus_type": "two_stats",
+    "bonus_amount": 2,
+    "description": "The pinnacle of venom-cuisine. Snake, spine, and stone distilled into a sublime crescendo."
+  },
+  "dragon_heart_braisage": {
+    "name": "Dragon-Heart Sublime Braisage",
+    "ingredients": [
+      "adult_dragon_heart",
+      "blue_dragon_scale",
+      "dragon_salt",
+      "ember_spice",
+      "mandrake_root"
+    ],
+    "tier": 4,
+    "sp": 500,
+    "bonus_type": "two_stats",
+    "bonus_amount": 3,
+    "description": "The ultimate warrior's feast. A red dragon's heart braised in blue dragon brine. Legendary strength."
+  },
+  "goblin_rat_stew": {
+    "name": "Goblin and Rat Stew",
+    "ingredients": [
+      "goblin_flesh",
+      "rat_meat"
+    ],
+    "tier": 1,
+    "sp": 70,
+    "bonus_type": "random_stat",
+    "bonus_amount": 1,
+    "lore": "A foul but filling stew. The dungeon has lower standards."
+  },
+  "serpent_frog_bisque": {
+    "name": "Serpent and Frog Bisque",
+    "ingredients": [
+      "snake_meat",
+      "frog_legs"
+    ],
+    "tier": 1,
+    "sp": 75,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 1,
+    "lore": "Two slippery creatures make a surprisingly agile meal."
+  },
+  "bat_rat_soup": {
+    "name": "Cave Creature Broth",
+    "ingredients": [
+      "bat_wing",
+      "rat_meat"
+    ],
+    "tier": 1,
+    "sp": 60,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 1,
+    "lore": "The dungeon's most common inhabitants, simmered together."
+  },
+  "chitin_bone_crisps": {
+    "name": "Chitin and Bone Crisps",
+    "ingredients": [
+      "insect_carapace",
+      "bone_shard"
+    ],
+    "tier": 1,
+    "sp": 55,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 1,
+    "lore": "Crunchy. Nutritionally dubious. Surprisingly addictive."
+  },
+  "goblin_bone_pottage": {
+    "name": "Goblin Bone Pottage",
+    "ingredients": [
+      "goblin_flesh",
+      "bone_shard"
+    ],
+    "tier": 1,
+    "sp": 65,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 1,
+    "lore": "A thick, grim pottage. Goblins eat this themselves, apparently."
+  },
+  "spider_silk_jelly": {
+    "name": "Spider Silk Aspic",
+    "ingredients": [
+      "spider_silk",
+      "eye_jelly"
+    ],
+    "tier": 2,
+    "sp": 85,
+    "bonus_type": "stat",
+    "bonus_stat": "PER",
+    "bonus_amount": 1,
+    "lore": "The silk dissolves into a trembling aspic. Enhances perception."
+  },
+  "orc_bat_broth": {
+    "name": "Orcish Cave Broth",
+    "ingredients": [
+      "orc_blood",
+      "bat_wing"
+    ],
+    "tier": 2,
+    "sp": 80,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 1,
+    "lore": "Orcs make this on campaign. It's not good, but it works."
+  },
+  "gnoll_lion_ragout": {
+    "name": "Gnoll and Lion Ragout",
+    "ingredients": [
+      "gnoll_hide",
+      "lion_meat"
+    ],
+    "tier": 2,
+    "sp": 100,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 1,
+    "lore": "Two predators combined. Smells like a pride and a pack of gnolls fighting."
+  },
+  "death_knight_broth": {
+    "name": "Death Knight's Black Broth",
+    "ingredients": [
+      "charred_bone",
+      "zombie_flesh"
+    ],
+    "tier": 2,
+    "sp": 95,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 1,
+    "lore": "The Spartans had their black broth. This is darker."
+  },
+  "hobgoblin_orc_stew": {
+    "name": "Regimental Stew",
+    "ingredients": [
+      "hobgoblin_blood",
+      "orc_blood"
+    ],
+    "tier": 2,
+    "sp": 105,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "lore": "When goblinoid armies march, both bloods end up in the pot."
+  },
+  "lizard_frog_ragout": {
+    "name": "Cave Amphibian Ragout",
+    "ingredients": [
+      "lizard_meat",
+      "frog_legs"
+    ],
+    "tier": 1,
+    "sp": 72,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 1,
+    "lore": "Surprisingly delicate, if you can get past the skin."
+  },
+  "bear_troll_haunch": {
+    "name": "Monstrous Meat Haunch",
+    "ingredients": [
+      "bear_meat",
+      "troll_hide"
+    ],
+    "tier": 3,
+    "sp": 150,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 1,
+    "lore": "Troll flesh regenerates even during cooking. Fortunately, this is tasty."
+  },
+  "hobgoblin_ogre_feast": {
+    "name": "Warlord's War Feast",
+    "ingredients": [
+      "hobgoblin_blood",
+      "ogre_hide"
+    ],
+    "tier": 3,
+    "sp": 140,
+    "bonus_type": "two_stats",
+    "bonus_amount": 1,
+    "lore": "The spoils of two brutal commanders, cooked together."
+  },
+  "spectral_eye_consomme": {
+    "name": "Spectral Eye Consommé",
+    "ingredients": [
+      "spectral_essence",
+      "eye_jelly"
+    ],
+    "tier": 3,
+    "sp": 120,
+    "bonus_type": "stat",
+    "bonus_stat": "WIS",
+    "bonus_amount": 1,
+    "lore": "You can see things clearly after eating this. Things you might prefer not to see."
+  },
+  "shadow_crystal_broth": {
+    "name": "Shadow-Walker's Broth",
+    "ingredients": [
+      "shadow_essence",
+      "shadow_crystal"
+    ],
+    "tier": 3,
+    "sp": 130,
+    "bonus_type": "status",
+    "bonus_effect": "invisible",
+    "bonus_amount": 10,
+    "lore": "Solid shadows dissolved in darkness. Grants brief invisibility."
+  },
+  "wisp_soul_risotto": {
+    "name": "Will-o-Wisp Risotto",
+    "ingredients": [
+      "wisp_essence",
+      "soul_fragment"
+    ],
+    "tier": 3,
+    "sp": 125,
+    "bonus_type": "stat",
+    "bonus_stat": "INT",
+    "bonus_amount": 1,
+    "lore": "Ethereal ingredients make for an ethereally potent dish."
+  },
+  "bugbear_troll_roast": {
+    "name": "Brute's Double Roast",
+    "ingredients": [
+      "bugbear_pelt",
+      "troll_hide"
+    ],
+    "tier": 3,
+    "sp": 155,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 1,
+    "lore": "Two of the dungeon's most feared brutes, slow-roasted until the rage leaves them."
+  },
+  "spider_phase_silk_dish": {
+    "name": "Phased Silk Noodles",
+    "ingredients": [
+      "spider_silk",
+      "phase_silk"
+    ],
+    "tier": 3,
+    "sp": 115,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 1,
+    "lore": "Normal and phase silk twined together. The noodles partially phase through your bowl."
+  },
+  "demon_heart_roast": {
+    "name": "Demon Heart Roast",
+    "ingredients": [
+      "demon_heart",
+      "demon_bile"
+    ],
+    "tier": 4,
+    "sp": 180,
+    "bonus_type": "two_stats",
+    "bonus_amount": 1,
+    "lore": "You should not be cooking this. And yet here you are."
+  },
+  "elder_vampire_phylactery_elixir": {
+    "name": "Undeath Synthesis Elixir",
+    "ingredients": [
+      "elder_vampire_blood",
+      "lord_phylactery"
+    ],
+    "tier": 4,
+    "sp": 200,
+    "bonus_type": "stat",
+    "bonus_stat": "WIS",
+    "bonus_amount": 1,
+    "lore": "Undeath concentrated into a beverage. Technically not recommended."
+  },
+  "cerebral_eye_pudding": {
+    "name": "Mind Flayer's Pudding",
+    "ingredients": [
+      "cerebral_fluid",
+      "eye_jelly"
+    ],
+    "tier": 4,
+    "sp": 190,
+    "bonus_type": "two_stats",
+    "bonus_amount": 1,
+    "lore": "Mind flayers eat brains. You eat their fluid. Who is the apex predator now?"
+  },
+  "death_essence_soul_stew": {
+    "name": "Death's Harvest Stew",
+    "ingredients": [
+      "death_essence",
+      "soul_fragment"
+    ],
+    "tier": 4,
+    "sp": 195,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 2,
+    "lore": "Harvested from the boundary of life and death. Reinforces your hold on existence."
+  },
+  "troll_ogre_regeneration_broth": {
+    "name": "Regeneration Broth",
+    "ingredients": [
+      "troll_regeneration_gland",
+      "ogre_hide"
+    ],
+    "tier": 4,
+    "sp": 210,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 2,
+    "lore": "The troll gland still twitches in the pot. That's how you know it's working."
+  },
+  "dragon_fire_gland_elixir": {
+    "name": "Dragon Blood Elixir",
+    "ingredients": [
+      "dragon_scale",
+      "fire_gland"
+    ],
+    "tier": 4,
+    "sp": 220,
+    "bonus_type": "two_stats",
+    "bonus_amount": 1,
+    "lore": "Fire and scale — the essence of a dragon in one dangerous drink."
+  },
+  "chaos_void_brew": {
+    "name": "Void Chaos Brew",
+    "ingredients": [
+      "chaos_essence",
+      "void_shard"
+    ],
+    "tier": 4,
+    "sp": 200,
+    "bonus_type": "random_stat",
+    "bonus_amount": 2,
+    "lore": "The effects are unpredictable, like everything touched by chaos and void."
+  },
+  "cultist_arcane_tincture": {
+    "name": "Arcane Cultist Tincture",
+    "ingredients": [
+      "cultist_reagent",
+      "arcane_bone_dust"
+    ],
+    "tier": 3,
+    "sp": 145,
+    "bonus_type": "stat",
+    "bonus_stat": "INT",
+    "bonus_amount": 1,
+    "lore": "Dark sorcery and ancient bone powder, combined by a very brave cook."
+  },
+  "changeling_puca_illusion_soup": {
+    "name": "Fae Illusion Soup",
+    "ingredients": [
+      "changeling_glamour",
+      "puca_hair"
+    ],
+    "tier": 3,
+    "sp": 135,
+    "bonus_type": "status",
+    "bonus_effect": "invisible",
+    "bonus_amount": 8,
+    "lore": "The fae have always known secrets of concealment. This soup smells of both mischief and magic."
+  },
+  "drow_venom_tincture": {
+    "name": "Drow Venom Tincture",
+    "ingredients": [
+      "drow_poison_extract",
+      "paralytic_venom"
+    ],
+    "tier": 3,
+    "sp": 110,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 1,
+    "lore": "Drow spend centuries perfecting their venoms. A small amount, properly prepared, sharpens reflexes."
+  },
+  "basilisk_medusa_grand_feast": {
+    "name": "Gorgon's Grand Feast",
+    "ingredients": [
+      "basilisk_eye",
+      "medusa_blood"
+    ],
+    "tier": 4,
+    "sp": 240,
+    "bonus_type": "two_stats",
+    "bonus_amount": 2,
+    "lore": "Both creatures turn things to stone with a glance. Cooked together, they give you eyes like theirs."
+  },
+  "chimera_dragon_roast": {
+    "name": "Chimera and Dragon Roast",
+    "ingredients": [
+      "chimera_heart",
+      "dragon_scale"
+    ],
+    "tier": 5,
+    "sp": 280,
+    "bonus_type": "all_stats",
+    "bonus_amount": 1,
+    "lore": "Two of the most terrible predators in the deep. Their flesh combined is beyond transcendent."
+  },
+  "lich_vampire_death_banquet": {
+    "name": "The Undying Banquet",
+    "ingredients": [
+      "lord_phylactery",
+      "elder_vampire_blood"
+    ],
+    "tier": 5,
+    "sp": 300,
+    "bonus_type": "all_stats",
+    "bonus_amount": 1,
+    "lore": "Lich and vampire — two forms of cheating death. Together they may share their secret with you."
+  },
+  "devourer_soul_judges_feast": {
+    "name": "Ammit's Judgment Feast",
+    "ingredients": [
+      "devourer_tooth",
+      "soul_fragment"
+    ],
+    "tier": 5,
+    "sp": 320,
+    "bonus_type": "all_stats",
+    "bonus_amount": 1,
+    "lore": "The Egyptian devourer weighs souls. Consuming her tooth alongside one grants the wisdom of judgment."
+  },
+  "pit_fiend_void_supremacy": {
+    "name": "Infernal Void Supremacy",
+    "ingredients": [
+      "pit_fiend_scale",
+      "void_ichor"
+    ],
+    "tier": 5,
+    "sp": 350,
+    "bonus_type": "all_stats",
+    "bonus_amount": 1,
+    "lore": "The deepest evil and the deepest void. Those who survive eating this are changed forever."
+  },
+  "troll_demon_brain_undying": {
+    "name": "The Undying Formula",
+    "ingredients": [
+      "troll_regeneration_gland",
+      "demon_heart",
+      "death_essence"
+    ],
+    "tier": 5,
+    "sp": 400,
+    "bonus_type": "all_stats",
+    "bonus_amount": 2,
+    "lore": "Regeneration, infernal fire, and the essence of death itself. The ultimate tonic of survival."
+  },
+  "shadow_bat_stew": {
+    "name": "Cave Shadow Stew",
+    "ingredients": [
+      "shadow_fur",
+      "bat_wing"
+    ],
+    "tier": 2,
+    "sp": 90,
+    "bonus_type": "status",
+    "bonus_effect": "invisible",
+    "bonus_amount": 6,
+    "lore": "Shadow hound and bat — both creatures of darkness. Their essence grants temporary concealment."
+  },
+  "grub_goblin_bake": {
+    "name": "Grub and Goblin Bake",
+    "ingredients": [
+      "insect_carapace",
+      "goblin_flesh"
+    ],
+    "tier": 1,
+    "sp": 68,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 1,
+    "lore": "Goblins eat grubs regularly. You're just cutting out the middleman."
+  },
+  "lycan_troll_broth": {
+    "name": "Feral Broth",
+    "ingredients": [
+      "lycanthrope_blood",
+      "troll_hide"
+    ],
+    "tier": 4,
+    "sp": 175,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 2,
+    "lore": "Werewolf and troll — two creatures defined by savage regeneration and strength."
+  },
+  "raven_eagle_consomme": {
+    "name": "Sky Hunter's Consommé",
+    "ingredients": [
+      "raven_feather",
+      "eagle_feather"
+    ],
+    "tier": 3,
+    "sp": 120,
+    "bonus_type": "stat",
+    "bonus_stat": "PER",
+    "bonus_amount": 2,
+    "lore": "The raven sees omens. The eagle sees clearly. Both feathers boiled grant exceptional sight."
+  },
+  "naga_python_scales": {
+    "name": "Serpent Scales Supreme",
+    "ingredients": [
+      "naga_scale",
+      "python_scales"
+    ],
+    "tier": 3,
+    "sp": 130,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 1,
+    "lore": "Two magnificent serpents. One divine, one natural. Scales from both, prepared with reverence."
+  },
+  "owlbear_griffin_feast": {
+    "name": "Chimeric Predator Feast",
+    "ingredients": [
+      "owlbear_feather",
+      "griffin_feather"
+    ],
+    "tier": 4,
+    "sp": 200,
+    "bonus_type": "two_stats",
+    "bonus_amount": 1,
+    "lore": "Two hybrid creatures that shouldn't exist, combined into a meal that probably shouldn't exist either."
+  },
+  "barrow_embalming_stew": {
+    "name": "Tomb Guardian Stew",
+    "ingredients": [
+      "barrow_dust",
+      "embalming_resin"
+    ],
+    "tier": 3,
+    "sp": 110,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 1,
+    "lore": "Ancient preservatives and the dust of barrows. Your body becomes harder to destroy."
+  },
+  "wisp_shadow_brew": {
+    "name": "Twilight Brew",
+    "ingredients": [
+      "wisp_essence",
+      "shadow_essence"
+    ],
+    "tier": 3,
+    "sp": 125,
+    "bonus_type": "stat",
+    "bonus_stat": "WIS",
+    "bonus_amount": 1,
+    "lore": "Light and shadow at the boundary between worlds. Wisdom comes from understanding both."
+  },
+  "orc_bugbear_conquest": {
+    "name": "Conqueror's Pottage",
+    "ingredients": [
+      "orc_blood",
+      "bugbear_pelt"
+    ],
+    "tier": 2,
+    "sp": 110,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "lore": "Goblinoid warriors eat together before battle. You eat them after."
+  }
+}

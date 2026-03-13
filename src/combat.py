@@ -59,6 +59,19 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
         if weapon:
             dtype_mult = _damage_multiplier(weapon.damage_types, monster)
 
+        # Shield bypass: ignore_shield weapons deal full damage through monster's shielded effect
+        if not (weapon and weapon.ignore_shield):
+            if monster.has_effect('shielded'):
+                dtype_mult *= 0.5
+
+        # Critical hit: if weapon has crit_multiplier and chain hits max, apply bonus
+        crit = False
+        if weapon and weapon.crit_multiplier > 1.0:
+            max_c = weapon.max_chain_length or len(weapon.chain_multipliers)
+            if chain >= max_c:
+                mult *= weapon.crit_multiplier
+                crit = True
+
         damage = max(1, int((base + enchant + ammo_bonus) * mult * dtype_mult))
         actual = monster.take_damage(damage)
 
@@ -69,12 +82,21 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
                 # Monster makes a resistance roll (CON-like — use max_hp as proxy)
                 resist_threshold = max(0.1, 1.0 - (monster.max_hp / 200.0))
                 if random.random() > resist_threshold:
-                    # Stun: refresh rather than stack
                     current = monster.status_effects.get('paralyzed', 0)
                     monster.status_effects['paralyzed'] = max(current, 2)
                     stunned = True
 
-        on_complete(actual, monster.is_dead(), chain, stunned=stunned)
+        # Bleed mechanic
+        if weapon and weapon.bleed_chance > 0 and actual > 0:
+            if random.random() < weapon.bleed_chance:
+                monster.status_effects['bleeding'] = monster.status_effects.get('bleeding', 0) + 3
+
+        # Knockback mechanic (handled by caller via return value; flag via on_complete extra)
+        knocked = False
+        if weapon and weapon.knockback and actual > 0:
+            knocked = True
+
+        on_complete(actual, monster.is_dead(), chain, stunned=stunned, knocked=knocked, crit=crit)
 
     quiz_engine.start_quiz(
         mode='chain',
@@ -85,6 +107,18 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
         wisdom=player.WIS,
         timer_modifier=player.get_quiz_timer_modifier(),
     )
+
+
+def apply_knockback(player, monster, dungeon):
+    """Push monster one tile away from the player. No-ops if tile is blocked."""
+    dx = monster.x - player.x
+    dy = monster.y - player.y
+    # Normalize to direction
+    nx = (1 if dx > 0 else -1) if dx != 0 else 0
+    ny = (1 if dy > 0 else -1) if dy != 0 else 0
+    tx, ty = monster.x + nx, monster.y + ny
+    if dungeon.is_walkable(tx, ty):
+        monster.x, monster.y = tx, ty
 
 
 def can_melee_attack(player, monster) -> bool:

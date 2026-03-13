@@ -1,96 +1,5502 @@
 [
-  {"question": "What is the largest land animal?", "choices": ["African Elephant", "Hippopotamus", "Giraffe", "White Rhino"], "answer": "African Elephant", "tier": 1},
-  {"question": "How many legs does a spider have?", "choices": ["6", "8", "10", "12"], "answer": "8", "tier": 1},
-  {"question": "What is the fastest land animal?", "choices": ["Lion", "Cheetah", "Horse", "Leopard"], "answer": "Cheetah", "tier": 1},
-  {"question": "What is the largest mammal on Earth?", "choices": ["Elephant", "Blue Whale", "Giraffe", "Hippopotamus"], "answer": "Blue Whale", "tier": 1},
-  {"question": "Which bird cannot fly?", "choices": ["Eagle", "Penguin", "Hawk", "Sparrow"], "answer": "Penguin", "tier": 1},
-  {"question": "How many hearts does an octopus have?", "choices": ["1", "2", "3", "4"], "answer": "3", "tier": 1},
-  {"question": "What do you call a baby kangaroo?", "choices": ["Kit", "Joey", "Cub", "Pup"], "answer": "Joey", "tier": 1},
-  {"question": "How many legs does an insect have?", "choices": ["4", "6", "8", "10"], "answer": "6", "tier": 1},
-  {"question": "What do you call a female deer?", "choices": ["Doe", "Hen", "Cow", "Sow"], "answer": "Doe", "tier": 1},
-  {"question": "What type of animal is a dolphin?", "choices": ["Fish", "Reptile", "Mammal", "Amphibian"], "answer": "Mammal", "tier": 1},
-  {"question": "What is the tallest animal in the world?", "choices": ["Elephant", "Giraffe", "Ostrich", "Camel"], "answer": "Giraffe", "tier": 1},
-  {"question": "What do you call an animal that eats only meat?", "choices": ["Herbivore", "Omnivore", "Carnivore", "Insectivore"], "answer": "Carnivore", "tier": 1},
-  {"question": "What do you call an animal that eats only plants?", "choices": ["Carnivore", "Herbivore", "Omnivore", "Insectivore"], "answer": "Herbivore", "tier": 1},
-  {"question": "What is a group of fish swimming together called?", "choices": ["A pack", "A school", "A herd", "A pod"], "answer": "A school", "tier": 1},
-  {"question": "Which of these is a reptile?", "choices": ["Frog", "Salamander", "Crocodile", "Axolotl"], "answer": "Crocodile", "tier": 1},
-  {"question": "What is the only mammal capable of true flight?", "choices": ["Flying squirrel", "Bat", "Sugar glider", "Colugo"], "answer": "Bat", "tier": 1},
-  {"question": "What do you call a group of wolves?", "choices": ["A pack", "A herd", "A flock", "A pride"], "answer": "A pack", "tier": 1},
-  {"question": "How many legs does a crab have?", "choices": ["6", "8", "10", "12"], "answer": "10", "tier": 1},
-  {"question": "What type of animal is a shark?", "choices": ["Mammal", "Reptile", "Fish", "Amphibian"], "answer": "Fish", "tier": 1},
-  {"question": "What is a young swan called?", "choices": ["Chick", "Signet", "Cygnet", "Fledgling"], "answer": "Cygnet", "tier": 1},
-
-  {"question": "What is a group of crows called?", "choices": ["A murder", "A flock", "A pack", "A colony"], "answer": "A murder", "tier": 2},
-  {"question": "What is a group of lions called?", "choices": ["A pack", "A herd", "A pride", "A colony"], "answer": "A pride", "tier": 2},
-  {"question": "What is the approximate gestation period of an elephant?", "choices": ["12 months", "16 months", "18 months", "22 months"], "answer": "22 months", "tier": 2},
-  {"question": "What do you call an animal that is active at night?", "choices": ["Diurnal", "Crepuscular", "Nocturnal", "Arboreal"], "answer": "Nocturnal", "tier": 2},
-  {"question": "What do you call animals that maintain a constant body temperature?", "choices": ["Cold-blooded", "Warm-blooded", "Ectothermic", "Poikilothermic"], "answer": "Warm-blooded", "tier": 2},
-  {"question": "Where do polar bears live in the wild?", "choices": ["Antarctica", "Siberia", "Arctic", "Iceland"], "answer": "Arctic", "tier": 2},
-  {"question": "What is the top speed of a cheetah?", "choices": ["80 km/h", "100 km/h", "112 km/h", "130 km/h"], "answer": "112 km/h", "tier": 2},
-  {"question": "What is a group of elephants called?", "choices": ["A herd", "A pack", "A troop", "A pod"], "answer": "A herd", "tier": 2},
-  {"question": "What is a group of geese on the ground called?", "choices": ["A flock", "A gaggle", "A skein", "A colony"], "answer": "A gaggle", "tier": 2},
-  {"question": "What is the gestation period of a domestic dog?", "choices": ["30 days", "45 days", "63 days", "90 days"], "answer": "63 days", "tier": 2},
-  {"question": "Which animal has the longest lifespan?", "choices": ["Tortoise", "Elephant", "Parrot", "Whale"], "answer": "Tortoise", "tier": 2},
-  {"question": "What do you call a group of whales?", "choices": ["A pod", "A school", "A herd", "A pack"], "answer": "A pod", "tier": 2},
-  {"question": "What is the process by which a caterpillar becomes a butterfly called?", "choices": ["Molting", "Metamorphosis", "Pupation", "Eclosion"], "answer": "Metamorphosis", "tier": 2},
-  {"question": "What is the gestation period of a domestic cat?", "choices": ["45 days", "55 days", "65 days", "75 days"], "answer": "65 days", "tier": 2},
-  {"question": "Which bird has the largest wingspan?", "choices": ["Bald Eagle", "Albatross", "Condor", "Pelican"], "answer": "Albatross", "tier": 2},
-  {"question": "What is a group of flamingos called?", "choices": ["A flock", "A flamboyance", "A colony", "A huddle"], "answer": "A flamboyance", "tier": 2},
-  {"question": "What do migrating birds use to navigate?", "choices": ["Wind patterns", "Star positions", "Earth's magnetic field", "Smell"], "answer": "Earth's magnetic field", "tier": 2},
-  {"question": "What is the fastest bird in level flight?", "choices": ["Peregrine falcon", "Swift", "Frigate bird", "Duck"], "answer": "Swift", "tier": 2},
-  {"question": "What is a group of owls called?", "choices": ["A flock", "A pack", "A parliament", "A colony"], "answer": "A parliament", "tier": 2},
-  {"question": "What do you call the shedding of skin in snakes?", "choices": ["Molting", "Ecdysis", "Sloughing", "Shedding"], "answer": "Ecdysis", "tier": 2},
-
-  {"question": "To which order do bats belong?", "choices": ["Chiroptera", "Rodentia", "Insectivora", "Primates"], "answer": "Chiroptera", "tier": 3},
-  {"question": "What family does the domestic cat belong to?", "choices": ["Canidae", "Felidae", "Mustelidae", "Viverridae"], "answer": "Felidae", "tier": 3},
-  {"question": "What is the taxonomic class of birds?", "choices": ["Mammalia", "Aves", "Reptilia", "Amphibia"], "answer": "Aves", "tier": 3},
-  {"question": "Which animal has the most chromosomes?", "choices": ["Fern", "Hermit crab", "Atlas blue butterfly", "Goldfish"], "answer": "Atlas blue butterfly", "tier": 3},
-  {"question": "What adaptation do camels use to survive desert heat?", "choices": ["Storing water in humps", "Storing fat in humps", "Sweating from humps", "Radiating heat from humps"], "answer": "Storing fat in humps", "tier": 3},
-  {"question": "What is the difference between an alligator and a crocodile snout?", "choices": ["Alligator has a U-shaped snout, crocodile has a V-shaped snout", "Alligator has a V-shaped snout, crocodile has a U-shaped snout", "They look identical", "Crocodile has a square snout"], "answer": "Alligator has a U-shaped snout, crocodile has a V-shaped snout", "tier": 3},
-  {"question": "What order do whales and dolphins belong to?", "choices": ["Pinnipedia", "Cetacea", "Sirenia", "Carnivora"], "answer": "Cetacea", "tier": 3},
-  {"question": "What is unique about the platypus among mammals?", "choices": ["It lays eggs", "It has no fur", "It cannot swim", "It has no teeth ever"], "answer": "It lays eggs", "tier": 3},
-  {"question": "What family does the wolf belong to?", "choices": ["Felidae", "Ursidae", "Canidae", "Mustelidae"], "answer": "Canidae", "tier": 3},
-  {"question": "What is the function of a shark's ampullae of Lorenzini?", "choices": ["Sight enhancement", "Detecting electrical fields", "Sound amplification", "Pressure sensing"], "answer": "Detecting electrical fields", "tier": 3},
-  {"question": "Which primate is most closely related to humans?", "choices": ["Gorilla", "Orangutan", "Chimpanzee", "Gibbon"], "answer": "Chimpanzee", "tier": 3},
-  {"question": "What is the ecological term for animals that eat both plants and animals?", "choices": ["Herbivore", "Carnivore", "Omnivore", "Detritivore"], "answer": "Omnivore", "tier": 3},
-  {"question": "What class do frogs and salamanders belong to?", "choices": ["Reptilia", "Amphibia", "Mammalia", "Pisces"], "answer": "Amphibia", "tier": 3},
-  {"question": "What is the term for animals that are active at dawn and dusk?", "choices": ["Nocturnal", "Diurnal", "Crepuscular", "Cathemeral"], "answer": "Crepuscular", "tier": 3},
-  {"question": "What adaptation allows Arctic foxes to survive polar winters?", "choices": ["Thick blubber layer", "Seasonal fur color change and insulating coat", "Hibernation", "Migration"], "answer": "Seasonal fur color change and insulating coat", "tier": 3},
-  {"question": "What is the order that includes all true bugs (e.g., stink bugs)?", "choices": ["Coleoptera", "Hemiptera", "Hymenoptera", "Diptera"], "answer": "Hemiptera", "tier": 3},
-  {"question": "What is the name for the protective hard outer covering of insects?", "choices": ["Endoskeleton", "Carapace", "Exoskeleton", "Shell"], "answer": "Exoskeleton", "tier": 3},
-  {"question": "Which of these snakes is non-venomous?", "choices": ["King cobra", "Black mamba", "Ball python", "Taipan"], "answer": "Ball python", "tier": 3},
-  {"question": "To what order do horses belong?", "choices": ["Artiodactyla", "Perissodactyla", "Carnivora", "Rodentia"], "answer": "Perissodactyla", "tier": 3},
-  {"question": "What do you call the larval stage of a frog?", "choices": ["Nymph", "Tadpole", "Larva", "Pupa"], "answer": "Tadpole", "tier": 3},
-
-  {"question": "Which animal has blue blood due to copper-based hemocyanin?", "choices": ["Horseshoe crab", "Octopus", "Squid", "All of these"], "answer": "All of these", "tier": 4},
-  {"question": "What is the venom of the cone snail capable of?", "choices": ["Causing mild irritation", "Killing a human", "Only affecting fish", "Causing temporary blindness"], "answer": "Killing a human", "tier": 4},
-  {"question": "Which animal produces the toxin tetrodotoxin?", "choices": ["Box jellyfish", "Pufferfish", "Blue-ringed octopus", "Both pufferfish and blue-ringed octopus"], "answer": "Both pufferfish and blue-ringed octopus", "tier": 4},
-  {"question": "What critically endangered great ape is found only on Borneo and Sumatra?", "choices": ["Chimpanzee", "Orangutan", "Gorilla", "Bonobo"], "answer": "Orangutan", "tier": 4},
-  {"question": "What is unique about the axolotl's regenerative ability?", "choices": ["It can regrow its tail", "It can regrow entire limbs including spinal cord segments", "It can regrow its head", "It cannot regenerate"], "answer": "It can regrow entire limbs including spinal cord segments", "tier": 4},
-  {"question": "The Komodo dragon uses which method to detect prey?", "choices": ["Echolocation", "Flicking tongue to detect chemical signals", "Infrared sensing pits", "Electrical field detection"], "answer": "Flicking tongue to detect chemical signals", "tier": 4},
-  {"question": "Which endangered cat species is native to the Iberian Peninsula?", "choices": ["Amur leopard", "Iberian lynx", "Snow leopard", "Clouded leopard"], "answer": "Iberian lynx", "tier": 4},
-  {"question": "What is the world's most venomous spider?", "choices": ["Black widow", "Brown recluse", "Sydney funnel-web spider", "Brazilian wandering spider"], "answer": "Sydney funnel-web spider", "tier": 4},
-  {"question": "What unique defense mechanism does the bombardier beetle use?", "choices": ["Spraying acid", "Ejecting boiling chemical spray", "Playing dead", "Releasing foul odor"], "answer": "Ejecting boiling chemical spray", "tier": 4},
-  {"question": "What rare trait does the mantis shrimp possess in its vision?", "choices": ["Infrared vision", "Up to 16 types of color receptors", "360-degree vision", "Ultraviolet-only vision"], "answer": "Up to 16 types of color receptors", "tier": 4},
-  {"question": "Which animal is capable of surviving in the vacuum of space due to cryptobiosis?", "choices": ["Brine shrimp", "Tardigrade", "Nematode", "Bdelloid rotifer"], "answer": "Tardigrade", "tier": 4},
-  {"question": "Which endangered marine mammal is sometimes called the 'sea cow'?", "choices": ["Beluga whale", "Narwhal", "Dugong", "Porpoise"], "answer": "Dugong", "tier": 4},
-  {"question": "What is the world's most venomous snake by venom toxicity?", "choices": ["Black mamba", "Inland taipan", "King cobra", "Eastern brown snake"], "answer": "Inland taipan", "tier": 4},
-  {"question": "Which animal has the most powerful bite force relative to body size?", "choices": ["Hyena", "Crocodile", "Tasmanian devil", "Tarantula"], "answer": "Tasmanian devil", "tier": 4},
-  {"question": "What chemical in poison dart frogs makes them toxic?", "choices": ["Tetrodotoxin", "Batrachotoxin", "Ciguatoxin", "Saxitoxin"], "answer": "Batrachotoxin", "tier": 4},
-
-  {"question": "What is the fastest-reproducing mammal by gestation time?", "choices": ["Virginia opossum", "Mouse", "Hamster", "Shrew"], "answer": "Virginia opossum", "tier": 5},
-  {"question": "What is the scientific name of the common chimpanzee?", "choices": ["Pan troglodytes", "Pan paniscus", "Gorilla gorilla", "Homo sapiens"], "answer": "Pan troglodytes", "tier": 5},
-  {"question": "What evolutionary mechanism describes how whales lost their hind limbs?", "choices": ["Convergent evolution", "Vestigial structure regression", "Adaptive radiation", "Coevolution"], "answer": "Vestigial structure regression", "tier": 5},
-  {"question": "Which extremophile animal can survive temperatures above 150°C?", "choices": ["Tardigrade", "Pompeii worm", "Antarctic icefish", "Hydrothermal vent shrimp"], "answer": "Pompeii worm", "tier": 5},
-  {"question": "What unique protein allows the Antarctic icefish to survive without hemoglobin?", "choices": ["Myoglobin", "Antifreeze glycoproteins", "Cytochrome c", "Ferritin"], "answer": "Antifreeze glycoproteins", "tier": 5},
-  {"question": "What is the binomial nomenclature system based on?", "choices": ["English genus and species names", "Latin or Greek genus and species names", "Discoverer's name and habitat", "Common name and order"], "answer": "Latin or Greek genus and species names", "tier": 5},
-  {"question": "What is the concept of 'convergent evolution' best illustrated by?", "choices": ["Whales and fish both having streamlined bodies", "Dogs and wolves sharing DNA", "Birds and bats both being vertebrates", "Apes and humans sharing ancestors"], "answer": "Whales and fish both having streamlined bodies", "tier": 5},
-  {"question": "What is the deepest-diving marine mammal?", "choices": ["Sperm whale", "Blue whale", "Cuvier's beaked whale", "Elephant seal"], "answer": "Cuvier's beaked whale", "tier": 5},
-  {"question": "What adaptation allows the wood frog to survive being frozen solid?", "choices": ["Antifreeze proteins in blood", "Glucose accumulation preventing ice crystal damage", "Fat layer insulation", "Metabolic shutdown and dehydration"], "answer": "Glucose accumulation preventing ice crystal damage", "tier": 5},
-  {"question": "What is the term for genetic change that provides no fitness advantage but persists through populations?", "choices": ["Natural selection", "Genetic drift", "Adaptive evolution", "Directional selection"], "answer": "Genetic drift", "tier": 5},
-  {"question": "Which organism holds the record for most known cells in a nervous system relative to body?", "choices": ["Octopus", "Crow", "Mantis shrimp", "Roundworm (C. elegans)"], "answer": "Octopus", "tier": 5},
-  {"question": "What is the scientific order containing all rodents?", "choices": ["Lagomorpha", "Rodentia", "Insectivora", "Soricomorpha"], "answer": "Rodentia", "tier": 5},
-  {"question": "Which phenomenon describes animals evolving similar traits independently?", "choices": ["Divergent evolution", "Coevolution", "Convergent evolution", "Parallel evolution"], "answer": "Convergent evolution", "tier": 5},
-  {"question": "What is the primary mechanism by which new species form (speciation)?", "choices": ["Mutation alone", "Reproductive isolation leading to genetic divergence", "Hybridization", "Epigenetic change"], "answer": "Reproductive isolation leading to genetic divergence", "tier": 5},
-  {"question": "What is the name of the protein that gives red blood cells their oxygen-carrying ability?", "choices": ["Hemocyanin", "Hemoglobin", "Myoglobin", "Ferritin"], "answer": "Hemoglobin", "tier": 5}
+  {
+    "question": "What is the largest land animal?",
+    "choices": [
+      "African Elephant",
+      "Hippopotamus",
+      "Giraffe",
+      "White Rhino"
+    ],
+    "answer": "African Elephant",
+    "tier": 1
+  },
+  {
+    "question": "How many legs does a spider have?",
+    "choices": [
+      "6",
+      "8",
+      "10",
+      "12"
+    ],
+    "answer": "8",
+    "tier": 1
+  },
+  {
+    "question": "What is the fastest land animal?",
+    "choices": [
+      "Lion",
+      "Cheetah",
+      "Horse",
+      "Leopard"
+    ],
+    "answer": "Cheetah",
+    "tier": 1
+  },
+  {
+    "question": "What is the largest mammal on Earth?",
+    "choices": [
+      "Elephant",
+      "Blue Whale",
+      "Giraffe",
+      "Hippopotamus"
+    ],
+    "answer": "Blue Whale",
+    "tier": 1
+  },
+  {
+    "question": "Which bird cannot fly?",
+    "choices": [
+      "Eagle",
+      "Penguin",
+      "Hawk",
+      "Sparrow"
+    ],
+    "answer": "Penguin",
+    "tier": 1
+  },
+  {
+    "question": "How many hearts does an octopus have?",
+    "choices": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "3",
+    "tier": 1
+  },
+  {
+    "question": "What do you call a baby kangaroo?",
+    "choices": [
+      "Kit",
+      "Joey",
+      "Cub",
+      "Pup"
+    ],
+    "answer": "Joey",
+    "tier": 1
+  },
+  {
+    "question": "How many legs does an insect have?",
+    "choices": [
+      "4",
+      "6",
+      "8",
+      "10"
+    ],
+    "answer": "6",
+    "tier": 1
+  },
+  {
+    "question": "What do you call a female deer?",
+    "choices": [
+      "Doe",
+      "Hen",
+      "Cow",
+      "Sow"
+    ],
+    "answer": "Doe",
+    "tier": 1
+  },
+  {
+    "question": "What type of animal is a dolphin?",
+    "choices": [
+      "Fish",
+      "Reptile",
+      "Mammal",
+      "Amphibian"
+    ],
+    "answer": "Mammal",
+    "tier": 1
+  },
+  {
+    "question": "What is the tallest animal in the world?",
+    "choices": [
+      "Elephant",
+      "Giraffe",
+      "Ostrich",
+      "Camel"
+    ],
+    "answer": "Giraffe",
+    "tier": 1
+  },
+  {
+    "question": "What do you call an animal that eats only meat?",
+    "choices": [
+      "Herbivore",
+      "Omnivore",
+      "Carnivore",
+      "Insectivore"
+    ],
+    "answer": "Carnivore",
+    "tier": 1
+  },
+  {
+    "question": "What do you call an animal that eats only plants?",
+    "choices": [
+      "Carnivore",
+      "Herbivore",
+      "Omnivore",
+      "Insectivore"
+    ],
+    "answer": "Herbivore",
+    "tier": 1
+  },
+  {
+    "question": "What is a group of fish swimming together called?",
+    "choices": [
+      "A pack",
+      "A school",
+      "A herd",
+      "A pod"
+    ],
+    "answer": "A school",
+    "tier": 1
+  },
+  {
+    "question": "Which of these is a reptile?",
+    "choices": [
+      "Frog",
+      "Salamander",
+      "Crocodile",
+      "Axolotl"
+    ],
+    "answer": "Crocodile",
+    "tier": 1
+  },
+  {
+    "question": "What is the only mammal capable of true flight?",
+    "choices": [
+      "Flying squirrel",
+      "Bat",
+      "Sugar glider",
+      "Colugo"
+    ],
+    "answer": "Bat",
+    "tier": 1
+  },
+  {
+    "question": "What do you call a group of wolves?",
+    "choices": [
+      "A pack",
+      "A herd",
+      "A flock",
+      "A pride"
+    ],
+    "answer": "A pack",
+    "tier": 1
+  },
+  {
+    "question": "How many legs does a crab have?",
+    "choices": [
+      "6",
+      "8",
+      "10",
+      "12"
+    ],
+    "answer": "10",
+    "tier": 1
+  },
+  {
+    "question": "What type of animal is a shark?",
+    "choices": [
+      "Mammal",
+      "Reptile",
+      "Fish",
+      "Amphibian"
+    ],
+    "answer": "Fish",
+    "tier": 1
+  },
+  {
+    "question": "What is a young swan called?",
+    "choices": [
+      "Chick",
+      "Signet",
+      "Cygnet",
+      "Fledgling"
+    ],
+    "answer": "Cygnet",
+    "tier": 1
+  },
+  {
+    "question": "What is a group of crows called?",
+    "choices": [
+      "A murder",
+      "A flock",
+      "A pack",
+      "A colony"
+    ],
+    "answer": "A murder",
+    "tier": 2
+  },
+  {
+    "question": "What is a group of lions called?",
+    "choices": [
+      "A pack",
+      "A herd",
+      "A pride",
+      "A colony"
+    ],
+    "answer": "A pride",
+    "tier": 2
+  },
+  {
+    "question": "What is the approximate gestation period of an elephant?",
+    "choices": [
+      "12 months",
+      "16 months",
+      "18 months",
+      "22 months"
+    ],
+    "answer": "22 months",
+    "tier": 2
+  },
+  {
+    "question": "What do you call an animal that is active at night?",
+    "choices": [
+      "Diurnal",
+      "Crepuscular",
+      "Nocturnal",
+      "Arboreal"
+    ],
+    "answer": "Nocturnal",
+    "tier": 2
+  },
+  {
+    "question": "What do you call animals that maintain a constant body temperature?",
+    "choices": [
+      "Cold-blooded",
+      "Warm-blooded",
+      "Ectothermic",
+      "Poikilothermic"
+    ],
+    "answer": "Warm-blooded",
+    "tier": 2
+  },
+  {
+    "question": "Where do polar bears live in the wild?",
+    "choices": [
+      "Antarctica",
+      "Siberia",
+      "Arctic",
+      "Iceland"
+    ],
+    "answer": "Arctic",
+    "tier": 2
+  },
+  {
+    "question": "What is the top speed of a cheetah?",
+    "choices": [
+      "80 km/h",
+      "100 km/h",
+      "112 km/h",
+      "130 km/h"
+    ],
+    "answer": "112 km/h",
+    "tier": 2
+  },
+  {
+    "question": "What is a group of elephants called?",
+    "choices": [
+      "A herd",
+      "A pack",
+      "A troop",
+      "A pod"
+    ],
+    "answer": "A herd",
+    "tier": 2
+  },
+  {
+    "question": "What is a group of geese on the ground called?",
+    "choices": [
+      "A flock",
+      "A gaggle",
+      "A skein",
+      "A colony"
+    ],
+    "answer": "A gaggle",
+    "tier": 2
+  },
+  {
+    "question": "What is the gestation period of a domestic dog?",
+    "choices": [
+      "30 days",
+      "45 days",
+      "63 days",
+      "90 days"
+    ],
+    "answer": "63 days",
+    "tier": 2
+  },
+  {
+    "question": "Which animal has the longest lifespan?",
+    "choices": [
+      "Tortoise",
+      "Elephant",
+      "Parrot",
+      "Whale"
+    ],
+    "answer": "Tortoise",
+    "tier": 2
+  },
+  {
+    "question": "What do you call a group of whales?",
+    "choices": [
+      "A pod",
+      "A school",
+      "A herd",
+      "A pack"
+    ],
+    "answer": "A pod",
+    "tier": 2
+  },
+  {
+    "question": "What is the process by which a caterpillar becomes a butterfly called?",
+    "choices": [
+      "Molting",
+      "Metamorphosis",
+      "Pupation",
+      "Eclosion"
+    ],
+    "answer": "Metamorphosis",
+    "tier": 2
+  },
+  {
+    "question": "What is the gestation period of a domestic cat?",
+    "choices": [
+      "45 days",
+      "55 days",
+      "65 days",
+      "75 days"
+    ],
+    "answer": "65 days",
+    "tier": 2
+  },
+  {
+    "question": "Which bird has the largest wingspan?",
+    "choices": [
+      "Bald Eagle",
+      "Albatross",
+      "Condor",
+      "Pelican"
+    ],
+    "answer": "Albatross",
+    "tier": 2
+  },
+  {
+    "question": "What is a group of flamingos called?",
+    "choices": [
+      "A flock",
+      "A flamboyance",
+      "A colony",
+      "A huddle"
+    ],
+    "answer": "A flamboyance",
+    "tier": 2
+  },
+  {
+    "question": "What do migrating birds use to navigate?",
+    "choices": [
+      "Wind patterns",
+      "Star positions",
+      "Earth's magnetic field",
+      "Smell"
+    ],
+    "answer": "Earth's magnetic field",
+    "tier": 2
+  },
+  {
+    "question": "What is the fastest bird in level flight?",
+    "choices": [
+      "Peregrine falcon",
+      "Swift",
+      "Frigate bird",
+      "Duck"
+    ],
+    "answer": "Swift",
+    "tier": 2
+  },
+  {
+    "question": "What is a group of owls called?",
+    "choices": [
+      "A flock",
+      "A pack",
+      "A parliament",
+      "A colony"
+    ],
+    "answer": "A parliament",
+    "tier": 2
+  },
+  {
+    "question": "What do you call the shedding of skin in snakes?",
+    "choices": [
+      "Molting",
+      "Ecdysis",
+      "Sloughing",
+      "Shedding"
+    ],
+    "answer": "Ecdysis",
+    "tier": 2
+  },
+  {
+    "question": "To which order do bats belong?",
+    "choices": [
+      "Chiroptera",
+      "Rodentia",
+      "Insectivora",
+      "Primates"
+    ],
+    "answer": "Chiroptera",
+    "tier": 3
+  },
+  {
+    "question": "What family does the domestic cat belong to?",
+    "choices": [
+      "Canidae",
+      "Felidae",
+      "Mustelidae",
+      "Viverridae"
+    ],
+    "answer": "Felidae",
+    "tier": 3
+  },
+  {
+    "question": "What is the taxonomic class of birds?",
+    "choices": [
+      "Mammalia",
+      "Aves",
+      "Reptilia",
+      "Amphibia"
+    ],
+    "answer": "Aves",
+    "tier": 3
+  },
+  {
+    "question": "Which animal has the most chromosomes?",
+    "choices": [
+      "Fern",
+      "Hermit crab",
+      "Atlas blue butterfly",
+      "Goldfish"
+    ],
+    "answer": "Atlas blue butterfly",
+    "tier": 3
+  },
+  {
+    "question": "What adaptation do camels use to survive desert heat?",
+    "choices": [
+      "Storing water in humps",
+      "Storing fat in humps",
+      "Sweating from humps",
+      "Radiating heat from humps"
+    ],
+    "answer": "Storing fat in humps",
+    "tier": 3
+  },
+  {
+    "question": "What is the difference between an alligator and a crocodile snout?",
+    "choices": [
+      "Alligator has a U-shaped snout, crocodile has a V-shaped snout",
+      "Alligator has a V-shaped snout, crocodile has a U-shaped snout",
+      "They look identical",
+      "Crocodile has a square snout"
+    ],
+    "answer": "Alligator has a U-shaped snout, crocodile has a V-shaped snout",
+    "tier": 3
+  },
+  {
+    "question": "What order do whales and dolphins belong to?",
+    "choices": [
+      "Pinnipedia",
+      "Cetacea",
+      "Sirenia",
+      "Carnivora"
+    ],
+    "answer": "Cetacea",
+    "tier": 3
+  },
+  {
+    "question": "What is unique about the platypus among mammals?",
+    "choices": [
+      "It lays eggs",
+      "It has no fur",
+      "It cannot swim",
+      "It has no teeth ever"
+    ],
+    "answer": "It lays eggs",
+    "tier": 3
+  },
+  {
+    "question": "What family does the wolf belong to?",
+    "choices": [
+      "Felidae",
+      "Ursidae",
+      "Canidae",
+      "Mustelidae"
+    ],
+    "answer": "Canidae",
+    "tier": 3
+  },
+  {
+    "question": "What is the function of a shark's ampullae of Lorenzini?",
+    "choices": [
+      "Sight enhancement",
+      "Detecting electrical fields",
+      "Sound amplification",
+      "Pressure sensing"
+    ],
+    "answer": "Detecting electrical fields",
+    "tier": 3
+  },
+  {
+    "question": "Which primate is most closely related to humans?",
+    "choices": [
+      "Gorilla",
+      "Orangutan",
+      "Chimpanzee",
+      "Gibbon"
+    ],
+    "answer": "Chimpanzee",
+    "tier": 3
+  },
+  {
+    "question": "What is the ecological term for animals that eat both plants and animals?",
+    "choices": [
+      "Herbivore",
+      "Carnivore",
+      "Omnivore",
+      "Detritivore"
+    ],
+    "answer": "Omnivore",
+    "tier": 3
+  },
+  {
+    "question": "What class do frogs and salamanders belong to?",
+    "choices": [
+      "Reptilia",
+      "Amphibia",
+      "Mammalia",
+      "Pisces"
+    ],
+    "answer": "Amphibia",
+    "tier": 3
+  },
+  {
+    "question": "What is the term for animals that are active at dawn and dusk?",
+    "choices": [
+      "Nocturnal",
+      "Diurnal",
+      "Crepuscular",
+      "Cathemeral"
+    ],
+    "answer": "Crepuscular",
+    "tier": 3
+  },
+  {
+    "question": "What adaptation allows Arctic foxes to survive polar winters?",
+    "choices": [
+      "Thick blubber layer",
+      "Seasonal fur color change and insulating coat",
+      "Hibernation",
+      "Migration"
+    ],
+    "answer": "Seasonal fur color change and insulating coat",
+    "tier": 3
+  },
+  {
+    "question": "What is the order that includes all true bugs (e.g., stink bugs)?",
+    "choices": [
+      "Coleoptera",
+      "Hemiptera",
+      "Hymenoptera",
+      "Diptera"
+    ],
+    "answer": "Hemiptera",
+    "tier": 3
+  },
+  {
+    "question": "What is the name for the protective hard outer covering of insects?",
+    "choices": [
+      "Endoskeleton",
+      "Carapace",
+      "Exoskeleton",
+      "Shell"
+    ],
+    "answer": "Exoskeleton",
+    "tier": 3
+  },
+  {
+    "question": "Which of these snakes is non-venomous?",
+    "choices": [
+      "King cobra",
+      "Black mamba",
+      "Ball python",
+      "Taipan"
+    ],
+    "answer": "Ball python",
+    "tier": 3
+  },
+  {
+    "question": "To what order do horses belong?",
+    "choices": [
+      "Artiodactyla",
+      "Perissodactyla",
+      "Carnivora",
+      "Rodentia"
+    ],
+    "answer": "Perissodactyla",
+    "tier": 3
+  },
+  {
+    "question": "What do you call the larval stage of a frog?",
+    "choices": [
+      "Nymph",
+      "Tadpole",
+      "Larva",
+      "Pupa"
+    ],
+    "answer": "Tadpole",
+    "tier": 3
+  },
+  {
+    "question": "Which animal has blue blood due to copper-based hemocyanin?",
+    "choices": [
+      "Horseshoe crab",
+      "Octopus",
+      "Squid",
+      "All of these"
+    ],
+    "answer": "All of these",
+    "tier": 4
+  },
+  {
+    "question": "What is the venom of the cone snail capable of?",
+    "choices": [
+      "Causing mild irritation",
+      "Killing a human",
+      "Only affecting fish",
+      "Causing temporary blindness"
+    ],
+    "answer": "Killing a human",
+    "tier": 4
+  },
+  {
+    "question": "Which animal produces the toxin tetrodotoxin?",
+    "choices": [
+      "Box jellyfish",
+      "Pufferfish",
+      "Blue-ringed octopus",
+      "Both pufferfish and blue-ringed octopus"
+    ],
+    "answer": "Both pufferfish and blue-ringed octopus",
+    "tier": 4
+  },
+  {
+    "question": "What critically endangered great ape is found only on Borneo and Sumatra?",
+    "choices": [
+      "Chimpanzee",
+      "Orangutan",
+      "Gorilla",
+      "Bonobo"
+    ],
+    "answer": "Orangutan",
+    "tier": 4
+  },
+  {
+    "question": "What is unique about the axolotl's regenerative ability?",
+    "choices": [
+      "It can regrow its tail",
+      "It can regrow entire limbs including spinal cord segments",
+      "It can regrow its head",
+      "It cannot regenerate"
+    ],
+    "answer": "It can regrow entire limbs including spinal cord segments",
+    "tier": 4
+  },
+  {
+    "question": "The Komodo dragon uses which method to detect prey?",
+    "choices": [
+      "Echolocation",
+      "Flicking tongue to detect chemical signals",
+      "Infrared sensing pits",
+      "Electrical field detection"
+    ],
+    "answer": "Flicking tongue to detect chemical signals",
+    "tier": 4
+  },
+  {
+    "question": "Which endangered cat species is native to the Iberian Peninsula?",
+    "choices": [
+      "Amur leopard",
+      "Iberian lynx",
+      "Snow leopard",
+      "Clouded leopard"
+    ],
+    "answer": "Iberian lynx",
+    "tier": 4
+  },
+  {
+    "question": "What is the world's most venomous spider?",
+    "choices": [
+      "Black widow",
+      "Brown recluse",
+      "Sydney funnel-web spider",
+      "Brazilian wandering spider"
+    ],
+    "answer": "Sydney funnel-web spider",
+    "tier": 4
+  },
+  {
+    "question": "What unique defense mechanism does the bombardier beetle use?",
+    "choices": [
+      "Spraying acid",
+      "Ejecting boiling chemical spray",
+      "Playing dead",
+      "Releasing foul odor"
+    ],
+    "answer": "Ejecting boiling chemical spray",
+    "tier": 4
+  },
+  {
+    "question": "What rare trait does the mantis shrimp possess in its vision?",
+    "choices": [
+      "Infrared vision",
+      "Up to 16 types of color receptors",
+      "360-degree vision",
+      "Ultraviolet-only vision"
+    ],
+    "answer": "Up to 16 types of color receptors",
+    "tier": 4
+  },
+  {
+    "question": "Which animal is capable of surviving in the vacuum of space due to cryptobiosis?",
+    "choices": [
+      "Brine shrimp",
+      "Tardigrade",
+      "Nematode",
+      "Bdelloid rotifer"
+    ],
+    "answer": "Tardigrade",
+    "tier": 4
+  },
+  {
+    "question": "Which endangered marine mammal is sometimes called the 'sea cow'?",
+    "choices": [
+      "Beluga whale",
+      "Narwhal",
+      "Dugong",
+      "Porpoise"
+    ],
+    "answer": "Dugong",
+    "tier": 4
+  },
+  {
+    "question": "What is the world's most venomous snake by venom toxicity?",
+    "choices": [
+      "Black mamba",
+      "Inland taipan",
+      "King cobra",
+      "Eastern brown snake"
+    ],
+    "answer": "Inland taipan",
+    "tier": 4
+  },
+  {
+    "question": "Which animal has the most powerful bite force relative to body size?",
+    "choices": [
+      "Hyena",
+      "Crocodile",
+      "Tasmanian devil",
+      "Tarantula"
+    ],
+    "answer": "Tasmanian devil",
+    "tier": 4
+  },
+  {
+    "question": "What chemical in poison dart frogs makes them toxic?",
+    "choices": [
+      "Tetrodotoxin",
+      "Batrachotoxin",
+      "Ciguatoxin",
+      "Saxitoxin"
+    ],
+    "answer": "Batrachotoxin",
+    "tier": 4
+  },
+  {
+    "question": "What is the fastest-reproducing mammal by gestation time?",
+    "choices": [
+      "Virginia opossum",
+      "Mouse",
+      "Hamster",
+      "Shrew"
+    ],
+    "answer": "Virginia opossum",
+    "tier": 5
+  },
+  {
+    "question": "What is the scientific name of the common chimpanzee?",
+    "choices": [
+      "Pan troglodytes",
+      "Pan paniscus",
+      "Gorilla gorilla",
+      "Homo sapiens"
+    ],
+    "answer": "Pan troglodytes",
+    "tier": 5
+  },
+  {
+    "question": "What evolutionary mechanism describes how whales lost their hind limbs?",
+    "choices": [
+      "Convergent evolution",
+      "Vestigial structure regression",
+      "Adaptive radiation",
+      "Coevolution"
+    ],
+    "answer": "Vestigial structure regression",
+    "tier": 5
+  },
+  {
+    "question": "Which extremophile animal can survive temperatures above 150°C?",
+    "choices": [
+      "Tardigrade",
+      "Pompeii worm",
+      "Antarctic icefish",
+      "Hydrothermal vent shrimp"
+    ],
+    "answer": "Pompeii worm",
+    "tier": 5
+  },
+  {
+    "question": "What unique protein allows the Antarctic icefish to survive without hemoglobin?",
+    "choices": [
+      "Myoglobin",
+      "Antifreeze glycoproteins",
+      "Cytochrome c",
+      "Ferritin"
+    ],
+    "answer": "Antifreeze glycoproteins",
+    "tier": 5
+  },
+  {
+    "question": "What is the binomial nomenclature system based on?",
+    "choices": [
+      "English genus and species names",
+      "Latin or Greek genus and species names",
+      "Discoverer's name and habitat",
+      "Common name and order"
+    ],
+    "answer": "Latin or Greek genus and species names",
+    "tier": 5
+  },
+  {
+    "question": "What is the concept of 'convergent evolution' best illustrated by?",
+    "choices": [
+      "Whales and fish both having streamlined bodies",
+      "Dogs and wolves sharing DNA",
+      "Birds and bats both being vertebrates",
+      "Apes and humans sharing ancestors"
+    ],
+    "answer": "Whales and fish both having streamlined bodies",
+    "tier": 5
+  },
+  {
+    "question": "What is the deepest-diving marine mammal?",
+    "choices": [
+      "Sperm whale",
+      "Blue whale",
+      "Cuvier's beaked whale",
+      "Elephant seal"
+    ],
+    "answer": "Cuvier's beaked whale",
+    "tier": 5
+  },
+  {
+    "question": "What adaptation allows the wood frog to survive being frozen solid?",
+    "choices": [
+      "Antifreeze proteins in blood",
+      "Glucose accumulation preventing ice crystal damage",
+      "Fat layer insulation",
+      "Metabolic shutdown and dehydration"
+    ],
+    "answer": "Glucose accumulation preventing ice crystal damage",
+    "tier": 5
+  },
+  {
+    "question": "What is the term for genetic change that provides no fitness advantage but persists through populations?",
+    "choices": [
+      "Natural selection",
+      "Genetic drift",
+      "Adaptive evolution",
+      "Directional selection"
+    ],
+    "answer": "Genetic drift",
+    "tier": 5
+  },
+  {
+    "question": "Which organism holds the record for most known cells in a nervous system relative to body?",
+    "choices": [
+      "Octopus",
+      "Crow",
+      "Mantis shrimp",
+      "Roundworm (C. elegans)"
+    ],
+    "answer": "Octopus",
+    "tier": 5
+  },
+  {
+    "question": "What is the scientific order containing all rodents?",
+    "choices": [
+      "Lagomorpha",
+      "Rodentia",
+      "Insectivora",
+      "Soricomorpha"
+    ],
+    "answer": "Rodentia",
+    "tier": 5
+  },
+  {
+    "question": "Which phenomenon describes animals evolving similar traits independently?",
+    "choices": [
+      "Divergent evolution",
+      "Coevolution",
+      "Convergent evolution",
+      "Parallel evolution"
+    ],
+    "answer": "Convergent evolution",
+    "tier": 5
+  },
+  {
+    "question": "What is the primary mechanism by which new species form (speciation)?",
+    "choices": [
+      "Mutation alone",
+      "Reproductive isolation leading to genetic divergence",
+      "Hybridization",
+      "Epigenetic change"
+    ],
+    "answer": "Reproductive isolation leading to genetic divergence",
+    "tier": 5
+  },
+  {
+    "question": "What is the name of the protein that gives red blood cells their oxygen-carrying ability?",
+    "choices": [
+      "Hemocyanin",
+      "Hemoglobin",
+      "Myoglobin",
+      "Ferritin"
+    ],
+    "answer": "Hemoglobin",
+    "tier": 5
+  },
+  {
+    "tier": 1,
+    "question": "What do we call an animal that eats only plants?",
+    "answer": "Herbivore",
+    "choices": [
+      "Carnivore",
+      "Omnivore",
+      "Herbivore",
+      "Insectivore"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What do we call an animal that eats only meat?",
+    "answer": "Carnivore",
+    "choices": [
+      "Herbivore",
+      "Carnivore",
+      "Omnivore",
+      "Scavenger"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What do we call an animal that eats both plants and animals?",
+    "answer": "Omnivore",
+    "choices": [
+      "Carnivore",
+      "Herbivore",
+      "Omnivore",
+      "Predator"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the fastest land animal?",
+    "answer": "Cheetah",
+    "choices": [
+      "Lion",
+      "Cheetah",
+      "Horse",
+      "Greyhound"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which animal is known for its black and white stripes?",
+    "answer": "Zebra",
+    "choices": [
+      "Panda",
+      "Tiger",
+      "Zebra",
+      "Skunk"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What do caterpillars turn into?",
+    "answer": "Butterflies or moths",
+    "choices": [
+      "Bees",
+      "Beetles",
+      "Butterflies or moths",
+      "Dragonflies"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which animal has the longest neck?",
+    "answer": "Giraffe",
+    "choices": [
+      "Elephant",
+      "Ostrich",
+      "Giraffe",
+      "Camel"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is a group of wolves called?",
+    "answer": "A pack",
+    "choices": [
+      "A herd",
+      "A flock",
+      "A pack",
+      "A pride"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is a group of lions called?",
+    "answer": "A pride",
+    "choices": [
+      "A pack",
+      "A herd",
+      "A pride",
+      "A troop"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which animal is the largest on land?",
+    "answer": "African elephant",
+    "choices": [
+      "Giraffe",
+      "Hippopotamus",
+      "African elephant",
+      "White rhinoceros"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What do frogs breathe with when they are tadpoles?",
+    "answer": "Gills",
+    "choices": [
+      "Lungs",
+      "Gills",
+      "Skin",
+      "Nostrils"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which bird is known for its ability to mimic human speech?",
+    "answer": "Parrot",
+    "choices": [
+      "Eagle",
+      "Parrot",
+      "Owl",
+      "Penguin"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is a baby cat called?",
+    "answer": "Kitten",
+    "choices": [
+      "Cub",
+      "Kitten",
+      "Pup",
+      "Foal"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is a baby cow called?",
+    "answer": "Calf",
+    "choices": [
+      "Foal",
+      "Piglet",
+      "Calf",
+      "Lamb"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is a baby dog called?",
+    "answer": "Puppy",
+    "choices": [
+      "Kitten",
+      "Cub",
+      "Puppy",
+      "Foal"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is a baby sheep called?",
+    "answer": "Lamb",
+    "choices": [
+      "Calf",
+      "Kid",
+      "Lamb",
+      "Piglet"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which animal is known for storing water in its hump?",
+    "answer": "Camel",
+    "choices": [
+      "Camel",
+      "Hippopotamus",
+      "Elephant",
+      "Rhinoceros"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What covers the body of a fish?",
+    "answer": "Scales",
+    "choices": [
+      "Fur",
+      "Feathers",
+      "Scales",
+      "Skin"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which of these animals is a mammal?",
+    "answer": "Dolphin",
+    "choices": [
+      "Shark",
+      "Dolphin",
+      "Tuna",
+      "Salmon"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What do bees make that humans eat?",
+    "answer": "Honey",
+    "choices": [
+      "Wax",
+      "Nectar",
+      "Honey",
+      "Pollen"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "How many legs does an insect have?",
+    "answer": "6",
+    "choices": [
+      "4",
+      "6",
+      "8",
+      "10"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "How many legs does a spider have?",
+    "answer": "8",
+    "choices": [
+      "6",
+      "8",
+      "10",
+      "12"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which animal sleeps hanging upside down?",
+    "answer": "Bat",
+    "choices": [
+      "Sloth",
+      "Bat",
+      "Koala",
+      "Opossum"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the largest bird in the world?",
+    "answer": "Ostrich",
+    "choices": [
+      "Emu",
+      "Albatross",
+      "Ostrich",
+      "Condor"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which animal is famous for building dams in rivers?",
+    "answer": "Beaver",
+    "choices": [
+      "Otter",
+      "Muskrat",
+      "Beaver",
+      "Platypus"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is a group of fish called?",
+    "answer": "A school",
+    "choices": [
+      "A flock",
+      "A pack",
+      "A school",
+      "A swarm"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which animal carries its young in a pouch?",
+    "answer": "Kangaroo",
+    "choices": [
+      "Hedgehog",
+      "Squirrel",
+      "Kangaroo",
+      "Rabbit"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What do snakes use to smell?",
+    "answer": "Their tongue",
+    "choices": [
+      "Their nose",
+      "Their skin",
+      "Their tongue",
+      "Their eyes"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which animal is known as man's best friend?",
+    "answer": "Dog",
+    "choices": [
+      "Cat",
+      "Dog",
+      "Horse",
+      "Parrot"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is a young horse called?",
+    "answer": "Foal",
+    "choices": [
+      "Calf",
+      "Pony",
+      "Foal",
+      "Colt"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which animal has a shell on its back?",
+    "answer": "Tortoise",
+    "choices": [
+      "Armadillo",
+      "Tortoise",
+      "Pangolin",
+      "Hedgehog"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the tallest animal in the world?",
+    "answer": "Giraffe",
+    "choices": [
+      "Elephant",
+      "Giraffe",
+      "Camel",
+      "Moose"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which bird cannot fly?",
+    "answer": "Penguin",
+    "choices": [
+      "Parrot",
+      "Hawk",
+      "Penguin",
+      "Robin"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What do you call a warm-blooded animal that feeds its young with milk?",
+    "answer": "Mammal",
+    "choices": [
+      "Reptile",
+      "Amphibian",
+      "Mammal",
+      "Bird"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which animal is the symbol of Australia?",
+    "answer": "Kangaroo",
+    "choices": [
+      "Koala",
+      "Dingo",
+      "Kangaroo",
+      "Platypus"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What color is a polar bear's fur?",
+    "answer": "White",
+    "choices": [
+      "Yellow",
+      "White",
+      "Cream",
+      "Brown"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which insect is famous for communicating through dance?",
+    "answer": "Honeybee",
+    "choices": [
+      "Ant",
+      "Firefly",
+      "Honeybee",
+      "Cricket"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What do frogs lay their eggs in?",
+    "answer": "Water",
+    "choices": [
+      "Trees",
+      "Soil",
+      "Water",
+      "Leaves"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which animal is the largest in the ocean?",
+    "answer": "Blue whale",
+    "choices": [
+      "Great white shark",
+      "Giant squid",
+      "Blue whale",
+      "Sperm whale"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is a group of bees called?",
+    "answer": "A swarm",
+    "choices": [
+      "A flock",
+      "A colony",
+      "A swarm",
+      "A hive"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What type of animal is a salamander?",
+    "answer": "Amphibian",
+    "choices": [
+      "Reptile",
+      "Mammal",
+      "Amphibian",
+      "Insect"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What do butterflies drink?",
+    "answer": "Nectar",
+    "choices": [
+      "Water",
+      "Honey",
+      "Nectar",
+      "Sap"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which large African animal is known for its horn?",
+    "answer": "Rhinoceros",
+    "choices": [
+      "Hippopotamus",
+      "Giraffe",
+      "Rhinoceros",
+      "Buffalo"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is a female deer called?",
+    "answer": "Doe",
+    "choices": [
+      "Hind",
+      "Doe",
+      "Ewe",
+      "Vixen"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is a male lion's most distinctive feature?",
+    "answer": "Mane",
+    "choices": [
+      "Spots",
+      "Stripes",
+      "Mane",
+      "Long tail"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which animal has a very long tongue it uses to catch ants?",
+    "answer": "Anteater",
+    "choices": [
+      "Pangolin",
+      "Aardvark",
+      "Anteater",
+      "Armadillo"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the process called when a snake sheds its skin?",
+    "answer": "Molting",
+    "choices": [
+      "Hibernation",
+      "Metamorphosis",
+      "Molting",
+      "Migration"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which bird is famous for its beautiful tail feathers?",
+    "answer": "Peacock",
+    "choices": [
+      "Pheasant",
+      "Peacock",
+      "Macaw",
+      "Flamingo"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is a baby frog called before it grows legs?",
+    "answer": "Tadpole",
+    "choices": [
+      "Polliwog",
+      "Tadpole",
+      "Nymph",
+      "Larva"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "How do whales breathe?",
+    "answer": "Through a blowhole on top of their head",
+    "choices": [
+      "Through gills",
+      "Through their mouth",
+      "Through a blowhole on top of their head",
+      "Through their skin"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which animal is known for sleeping up to 20 hours a day?",
+    "answer": "Koala",
+    "choices": [
+      "Sloth",
+      "Koala",
+      "Panda",
+      "Cat"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What do we call animals that are active at night?",
+    "answer": "Nocturnal",
+    "choices": [
+      "Diurnal",
+      "Nocturnal",
+      "Crepuscular",
+      "Dormant"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which sea creature has eight arms?",
+    "answer": "Octopus",
+    "choices": [
+      "Squid",
+      "Crab",
+      "Octopus",
+      "Jellyfish"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What do earthworms eat?",
+    "answer": "Soil and decaying organic matter",
+    "choices": [
+      "Leaves only",
+      "Insects",
+      "Soil and decaying organic matter",
+      "Roots"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is a group of geese on the ground called?",
+    "answer": "A gaggle",
+    "choices": [
+      "A flock",
+      "A gaggle",
+      "A pride",
+      "A colony"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which animal is known for changing color to match its surroundings?",
+    "answer": "Chameleon",
+    "choices": [
+      "Octopus",
+      "Gecko",
+      "Chameleon",
+      "Frog"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is a baby bear called?",
+    "answer": "Cub",
+    "choices": [
+      "Calf",
+      "Cub",
+      "Pup",
+      "Kit"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the name for animals that sleep through winter?",
+    "answer": "Hibernating",
+    "choices": [
+      "Migrating",
+      "Hibernating",
+      "Estivating",
+      "Burrowing"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is a male goose called?",
+    "answer": "Gander",
+    "choices": [
+      "Drake",
+      "Buck",
+      "Gander",
+      "Tom"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is a male duck called?",
+    "answer": "Drake",
+    "choices": [
+      "Gander",
+      "Drake",
+      "Buck",
+      "Tom"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which animal is the slowest in the world?",
+    "answer": "Three-toed sloth",
+    "choices": [
+      "Tortoise",
+      "Garden snail",
+      "Three-toed sloth",
+      "Starfish"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the only mammal capable of sustained flight?",
+    "answer": "Bat",
+    "choices": [
+      "Flying squirrel",
+      "Flying fish",
+      "Bat",
+      "Sugar glider"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "How many wings does a butterfly have?",
+    "answer": "4",
+    "choices": [
+      "2",
+      "4",
+      "6",
+      "8"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What body part does a scorpion use to sting?",
+    "answer": "Its tail",
+    "choices": [
+      "Its claws",
+      "Its tail",
+      "Its legs",
+      "Its mouth"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which large ocean animal is not a fish despite looking like one?",
+    "answer": "Dolphin",
+    "choices": [
+      "Tuna",
+      "Swordfish",
+      "Dolphin",
+      "Marlin"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the name for a group of ants?",
+    "answer": "A colony",
+    "choices": [
+      "A swarm",
+      "A colony",
+      "A hive",
+      "A nest"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which part of a bird's body do feathers grow from?",
+    "answer": "The skin",
+    "choices": [
+      "The bones",
+      "The muscles",
+      "The skin",
+      "The scales"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What do owls do with the parts of prey they cannot digest?",
+    "answer": "Regurgitate them as pellets",
+    "choices": [
+      "Pass them in droppings",
+      "Store them in a pouch",
+      "Regurgitate them as pellets",
+      "Bury them"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which mammal lays eggs?",
+    "answer": "Platypus",
+    "choices": [
+      "Echidna",
+      "Platypus",
+      "Both platypus and echidna",
+      "Koala"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What color is a flamingo's feathers due to?",
+    "answer": "Pigments in the shrimp and algae they eat",
+    "choices": [
+      "Genetics alone",
+      "Sunlight",
+      "Pigments in the shrimp and algae they eat",
+      "Age"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the name for a young kangaroo?",
+    "answer": "Joey",
+    "choices": [
+      "Cub",
+      "Joey",
+      "Kit",
+      "Pup"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which animal has the most powerful bite force among land animals?",
+    "answer": "Saltwater crocodile",
+    "choices": [
+      "Hippopotamus",
+      "Lion",
+      "Saltwater crocodile",
+      "Spotted hyena"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is a group of elephants called?",
+    "answer": "A herd",
+    "choices": [
+      "A pack",
+      "A pride",
+      "A herd",
+      "A troop"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is a baby whale called?",
+    "answer": "Calf",
+    "choices": [
+      "Pup",
+      "Calf",
+      "Cub",
+      "Kit"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which bird lays the largest egg of any living bird?",
+    "answer": "Ostrich",
+    "choices": [
+      "Emu",
+      "Cassowary",
+      "Ostrich",
+      "Kiwi"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "How do most fish breathe?",
+    "answer": "Using gills",
+    "choices": [
+      "Using lungs",
+      "Absorbing oxygen through skin",
+      "Using gills",
+      "Surfacing to breathe air"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the scientific study of animals called?",
+    "answer": "Zoology",
+    "choices": [
+      "Biology",
+      "Ecology",
+      "Zoology",
+      "Ethology"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which animal has the longest lifespan?",
+    "answer": "Giant tortoise",
+    "choices": [
+      "Elephant",
+      "Giant tortoise",
+      "Bowhead whale",
+      "Human"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is camouflage used for by animals?",
+    "answer": "To blend into surroundings and avoid predators or ambush prey",
+    "choices": [
+      "To attract mates",
+      "To regulate temperature",
+      "To blend into surroundings and avoid predators or ambush prey",
+      "To communicate with their species"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which type of animal is cold-blooded?",
+    "answer": "Reptile",
+    "choices": [
+      "Mammal",
+      "Bird",
+      "Reptile",
+      "All of the above"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the scientific name for humans?",
+    "answer": "Homo sapiens",
+    "choices": [
+      "Homo erectus",
+      "Pan troglodytes",
+      "Homo sapiens",
+      "Homo habilis"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which ocean animal uses sonar (echolocation)?",
+    "answer": "Dolphin",
+    "choices": [
+      "Shark",
+      "Whale shark",
+      "Dolphin",
+      "Sea turtle"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is a group of gorillas called?",
+    "answer": "A troop",
+    "choices": [
+      "A pride",
+      "A pack",
+      "A troop",
+      "A band"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What do we call an animal that feeds on dead animals?",
+    "answer": "Scavenger",
+    "choices": [
+      "Predator",
+      "Parasite",
+      "Scavenger",
+      "Herbivore"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which animal has the largest brain relative to its body size?",
+    "answer": "Bottlenose dolphin",
+    "choices": [
+      "Human",
+      "Chimpanzee",
+      "Bottlenose dolphin",
+      "Crow"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which bird has the widest wingspan?",
+    "answer": "Wandering albatross",
+    "choices": [
+      "California condor",
+      "Bald eagle",
+      "Wandering albatross",
+      "Great bustard"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 'mimicry' in animals?",
+    "answer": "When one species resembles another to gain an advantage",
+    "choices": [
+      "When animals copy human behavior",
+      "When one species resembles another to gain an advantage",
+      "When animals blend with the environment",
+      "When animals imitate sounds"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is a 'marsupial'?",
+    "answer": "A mammal whose young complete development in a pouch",
+    "choices": [
+      "A mammal that lives in water",
+      "A mammal whose young complete development in a pouch",
+      "A mammal that lays eggs",
+      "An animal with a bony shell"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the main diet of a giant panda?",
+    "answer": "Bamboo",
+    "choices": [
+      "Grasses",
+      "Bamboo",
+      "Roots and berries",
+      "Insects"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the largest species of big cat?",
+    "answer": "Tiger",
+    "choices": [
+      "Lion",
+      "Jaguar",
+      "Tiger",
+      "Leopard"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 'estivation' in animals?",
+    "answer": "Dormancy during hot or dry conditions (like hibernation but for summer)",
+    "choices": [
+      "Migration to cooler areas",
+      "Dormancy during hot or dry conditions (like hibernation but for summer)",
+      "Burrowing for shelter",
+      "Storing food for winter"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which ocean creature can regenerate lost arms?",
+    "answer": "Starfish (sea star)",
+    "choices": [
+      "Jellyfish",
+      "Crab",
+      "Starfish (sea star)",
+      "Lobster"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is bioluminescence?",
+    "answer": "The production of light by living organisms",
+    "choices": [
+      "The glow caused by algae",
+      "The production of light by living organisms",
+      "Reflection of moonlight on scales",
+      "The color of deep-sea creatures"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the heaviest living animal?",
+    "answer": "Blue whale",
+    "choices": [
+      "African elephant",
+      "Sperm whale",
+      "Blue whale",
+      "Hippopotamus"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What do male fireflies use their light for?",
+    "answer": "Attracting mates",
+    "choices": [
+      "Hunting prey",
+      "Attracting mates",
+      "Warning predators",
+      "Navigating in darkness"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is a 'vertebrate'?",
+    "answer": "An animal with a backbone",
+    "choices": [
+      "An animal with an external skeleton",
+      "An animal with a backbone",
+      "An animal without a skeleton",
+      "An animal with a hard shell"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which animal produces the most powerful natural poison?",
+    "answer": "Golden poison dart frog",
+    "choices": [
+      "Box jellyfish",
+      "Inland taipan",
+      "Golden poison dart frog",
+      "Blue-ringed octopus"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 'symbiosis' in biology?",
+    "answer": "A close relationship between two different species",
+    "choices": [
+      "Competition between two animals",
+      "A close relationship between two different species",
+      "When animals share a habitat",
+      "Parasite and host relationship only"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which animal is the only mammal with scales?",
+    "answer": "Pangolin",
+    "choices": [
+      "Hedgehog",
+      "Armadillo",
+      "Pangolin",
+      "Echidna"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which insect is famous for navigating using the Earth's magnetic field?",
+    "answer": "Monarch butterfly",
+    "choices": [
+      "Bumblebee",
+      "Monarch butterfly",
+      "Army ant",
+      "Locust"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What does a hermit crab use as a shell?",
+    "answer": "Empty shells of other animals",
+    "choices": [
+      "Its own molded shell",
+      "Empty shells of other animals",
+      "Pieces of rock",
+      "Dead coral"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the term for animals born from eggs outside the mother's body?",
+    "answer": "Oviparous",
+    "choices": [
+      "Viviparous",
+      "Oviparous",
+      "Ovoviviparous",
+      "Mammalian"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "How do bats navigate in the dark?",
+    "answer": "Echolocation — emitting sound waves and hearing the echoes",
+    "choices": [
+      "Infrared vision",
+      "Echolocation — emitting sound waves and hearing the echoes",
+      "Sensing air currents",
+      "Smell alone"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is a 'nymph' in insect development?",
+    "answer": "An immature insect that resembles the adult but lacks wings",
+    "choices": [
+      "A larva that lives in water",
+      "An immature insect that resembles the adult but lacks wings",
+      "A pupa about to hatch",
+      "A female insect of a colony"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which part of the brain is more developed in birds that navigate long distances?",
+    "answer": "The hippocampus",
+    "choices": [
+      "The cerebellum",
+      "The hippocampus",
+      "The brainstem",
+      "The visual cortex"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 'complete metamorphosis'?",
+    "answer": "A life cycle with egg, larva, pupa, and adult stages",
+    "choices": [
+      "A life cycle with egg, nymph, and adult stages",
+      "A life cycle with egg, larva, pupa, and adult stages",
+      "A change in color as an animal matures",
+      "Transformation by shedding skin"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which African animal spends most of its life in water?",
+    "answer": "Hippopotamus",
+    "choices": [
+      "Crocodile",
+      "Hippopotamus",
+      "Manatee",
+      "Sitatunga"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the term for a food chain that starts with plants?",
+    "answer": "Producer-based food chain",
+    "choices": [
+      "Secondary chain",
+      "Producer-based food chain",
+      "Carnivore chain",
+      "Omnivore network"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is an arthropod?",
+    "answer": "An invertebrate with an exoskeleton, segmented body, and jointed legs",
+    "choices": [
+      "Any ocean creature",
+      "An invertebrate with an exoskeleton, segmented body, and jointed legs",
+      "An animal with both gills and lungs",
+      "A worm-like creature"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which animal has the most complex eyes in the animal kingdom?",
+    "answer": "Mantis shrimp",
+    "choices": [
+      "Dragonfly",
+      "Eagle",
+      "Mantis shrimp",
+      "Cat"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the scientific term for when animals travel seasonally?",
+    "answer": "Migration",
+    "choices": [
+      "Dispersal",
+      "Nomadism",
+      "Migration",
+      "Foraging"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 'mutualism' in ecology?",
+    "answer": "A relationship where both species benefit",
+    "choices": [
+      "One species benefits at the other's expense",
+      "Both species are harmed",
+      "A relationship where both species benefit",
+      "Neither species is affected"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which bird is known for building the most complex nests?",
+    "answer": "Weaver bird",
+    "choices": [
+      "Magpie",
+      "Bower bird",
+      "Weaver bird",
+      "Swallow"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is a 'cetacean'?",
+    "answer": "A marine mammal such as a whale, dolphin, or porpoise",
+    "choices": [
+      "Any large ocean creature",
+      "A fish with warm blood",
+      "A marine mammal such as a whale, dolphin, or porpoise",
+      "An ocean reptile"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which large cat is the only one that roars and purrs?",
+    "answer": "Cheetah cannot roar — lions, tigers, leopards, and jaguars roar",
+    "choices": [
+      "Lion",
+      "Cheetah cannot roar — lions, tigers, leopards, and jaguars roar",
+      "Jaguar",
+      "Tiger"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the term for animals active at dawn and dusk?",
+    "answer": "Crepuscular",
+    "choices": [
+      "Nocturnal",
+      "Diurnal",
+      "Crepuscular",
+      "Vespertine"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the largest spider in the world?",
+    "answer": "Goliath birdeater tarantula",
+    "choices": [
+      "Giant huntsman spider",
+      "Goliath birdeater tarantula",
+      "Brazilian wandering spider",
+      "Camel spider"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What do maggots turn into?",
+    "answer": "Flies",
+    "choices": [
+      "Beetles",
+      "Mosquitoes",
+      "Flies",
+      "Moths"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 'commensalism'?",
+    "answer": "One species benefits while the other is unaffected",
+    "choices": [
+      "Both benefit",
+      "One species benefits while the other is unaffected",
+      "One harms the other",
+      "Both are harmed"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which animal communicates using ultrasonic sounds below human hearing?",
+    "answer": "Elephant",
+    "choices": [
+      "Dog",
+      "Elephant",
+      "Bat",
+      "Dolphin"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which reptile is the longest in the world?",
+    "answer": "Reticulated python",
+    "choices": [
+      "Anaconda",
+      "Saltwater crocodile",
+      "Reticulated python",
+      "Komodo dragon"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 'selective pressure' in animal evolution?",
+    "answer": "Environmental factors that affect which traits survive to the next generation",
+    "choices": [
+      "The pressure of predators on prey",
+      "Environmental factors that affect which traits survive to the next generation",
+      "How animals choose mates",
+      "Competition for food only"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which animal has the highest blood pressure?",
+    "answer": "Giraffe",
+    "choices": [
+      "Blue whale",
+      "Elephant",
+      "Giraffe",
+      "Cheetah"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is an 'apex predator'?",
+    "answer": "A predator at the top of the food chain with no natural enemies",
+    "choices": [
+      "The largest animal in an ecosystem",
+      "A predator at the top of the food chain with no natural enemies",
+      "An animal that eats only meat",
+      "The most abundant predator"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is an 'invertebrate'?",
+    "answer": "An animal without a backbone",
+    "choices": [
+      "An animal without any skeleton",
+      "An animal without a backbone",
+      "A soft-bodied animal",
+      "An aquatic animal"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which large cat is the fastest runner?",
+    "answer": "Cheetah",
+    "choices": [
+      "Lion",
+      "Leopard",
+      "Cheetah",
+      "Jaguar"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 'aposematism' in animals?",
+    "answer": "Bright warning coloration to signal danger to predators",
+    "choices": [
+      "Mimicking another animal",
+      "Bright warning coloration to signal danger to predators",
+      "Hiding in plain sight",
+      "Using color to attract mates"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the term for the outer skeleton of insects and crustaceans?",
+    "answer": "Exoskeleton",
+    "choices": [
+      "Carapace",
+      "Exoskeleton",
+      "Endoskeleton",
+      "Shell"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which sense is most developed in sharks?",
+    "answer": "Smell",
+    "choices": [
+      "Vision",
+      "Hearing",
+      "Smell",
+      "Touch"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What do elephants use their trunks for?",
+    "answer": "Breathing, smelling, drinking, and grasping",
+    "choices": [
+      "Only breathing",
+      "Only drinking water",
+      "Breathing, smelling, drinking, and grasping",
+      "Mostly fighting"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is an 'ecosystem'?",
+    "answer": "A community of living things interacting with their environment",
+    "choices": [
+      "A habitat where one species lives",
+      "A community of living things interacting with their environment",
+      "A food chain in a specific area",
+      "A protected nature reserve"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which insect pollinates the most flowers worldwide?",
+    "answer": "Honeybee",
+    "choices": [
+      "Bumblebee",
+      "Butterfly",
+      "Honeybee",
+      "Moth"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is a 'keystone species'?",
+    "answer": "A species whose presence has a disproportionately large effect on its ecosystem",
+    "choices": [
+      "The largest species in an area",
+      "A species whose presence has a disproportionately large effect on its ecosystem",
+      "A species at the top of the food chain",
+      "The first species to colonize an area"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What organ do fish use to control their buoyancy?",
+    "answer": "Swim bladder",
+    "choices": [
+      "Fins",
+      "Gills",
+      "Swim bladder",
+      "Lateral line"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which animal is known for its ability to drink seawater and excrete salt?",
+    "answer": "Albatross",
+    "choices": [
+      "Pelican",
+      "Sea turtle",
+      "Albatross",
+      "Penguin"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the function of a bird's crop?",
+    "answer": "Temporarily storing food before digestion",
+    "choices": [
+      "Producing eggs",
+      "Filtering toxins",
+      "Temporarily storing food before digestion",
+      "Producing bile"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which animals form the largest animal societies on Earth?",
+    "answer": "Leafcutter ants",
+    "choices": [
+      "Termites",
+      "Honeybees",
+      "Leafcutter ants",
+      "Army ants"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the process by which animals release body heat?",
+    "answer": "Thermoregulation",
+    "choices": [
+      "Respiration",
+      "Thermoregulation",
+      "Metabolism",
+      "Radiation"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which animal can survive the longest without water?",
+    "answer": "Kangaroo rat",
+    "choices": [
+      "Camel",
+      "Dromedary",
+      "Kangaroo rat",
+      "Desert tortoise"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 'feather preening' in birds?",
+    "answer": "Maintaining and cleaning feathers using the beak and oils",
+    "choices": [
+      "Displaying for a mate",
+      "Removing parasites with water",
+      "Maintaining and cleaning feathers using the beak and oils",
+      "Waterproofing during rain"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which fish is known for walking on land briefly?",
+    "answer": "Mudskipper",
+    "choices": [
+      "Lungfish",
+      "Mudskipper",
+      "Climbing perch",
+      "Bowfin"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the main purpose of an animal's circadian rhythm?",
+    "answer": "Regulating sleep and activity cycles with day and night",
+    "choices": [
+      "Controlling migration timing",
+      "Regulating sleep and activity cycles with day and night",
+      "Setting mating seasons",
+      "Determining food intake"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is a 'pheromone'?",
+    "answer": "A chemical signal released by animals to communicate with others of the same species",
+    "choices": [
+      "A type of venom",
+      "A hormone that controls metabolism",
+      "A chemical signal released by animals to communicate with others of the same species",
+      "A substance that repels insects"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which is the only fish that can swim upright?",
+    "answer": "Seahorse",
+    "choices": [
+      "Pufferfish",
+      "Seahorse",
+      "Lionfish",
+      "Pipefish"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 'kin selection' in evolutionary biology?",
+    "answer": "An animal favoring relatives because they share genes, increasing gene survival",
+    "choices": [
+      "Animals choosing the strongest mates",
+      "An animal favoring relatives because they share genes, increasing gene survival",
+      "Selecting territory based on family history",
+      "Competition between siblings"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is a 'drone' bee?",
+    "answer": "A male bee whose only purpose is to mate with the queen",
+    "choices": [
+      "A worker bee that scouts for food",
+      "A male bee whose only purpose is to mate with the queen",
+      "A bee that guards the hive",
+      "A bee that produces honey"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What does 'arboreal' describe?",
+    "answer": "An animal that lives in trees",
+    "choices": [
+      "An animal that lives underground",
+      "An animal that lives in water",
+      "An animal that lives in trees",
+      "An animal that lives in grasslands"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which animal has the most teeth?",
+    "answer": "Garden snail (up to 25,000 tiny teeth on its radula)",
+    "choices": [
+      "Great white shark",
+      "Garden snail (up to 25,000 tiny teeth on its radula)",
+      "Crocodile",
+      "Dolphin"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is a 'pelage'?",
+    "answer": "The fur, hair, or wool coat of a mammal",
+    "choices": [
+      "A type of ocean layer",
+      "The fur, hair, or wool coat of a mammal",
+      "The outer shell of a crustacean",
+      "A bird's pattern of feathers"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 'convergent evolution'?",
+    "answer": "When unrelated species independently evolve similar traits due to similar environments",
+    "choices": [
+      "When related species become more similar over time",
+      "When unrelated species independently evolve similar traits due to similar environments",
+      "When evolution runs backwards",
+      "When a species splits into two"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which organ do sharks use to detect electrical fields?",
+    "answer": "The ampullae of Lorenzini",
+    "choices": [
+      "The lateral line",
+      "The ampullae of Lorenzini",
+      "Electroreceptors in their fins",
+      "Their olfactory bulbs"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the function of the lateral line in fish?",
+    "answer": "Detecting water pressure and vibrations",
+    "choices": [
+      "Controlling buoyancy",
+      "Detecting water pressure and vibrations",
+      "Filtering water",
+      "Regulating salt balance"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 'Hamilton's rule' in evolutionary biology?",
+    "answer": "Altruistic behavior spreads when its benefit to relatives, weighted by relatedness, exceeds its cost",
+    "choices": [
+      "Predator-prey population cycles follow mathematical ratios",
+      "Altruistic behavior spreads when its benefit to relatives, weighted by relatedness, exceeds its cost",
+      "Migration distance is proportional to food availability",
+      "Competition between siblings determines dominance"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 'optimal foraging theory'?",
+    "answer": "Animals maximize energy gained while minimizing energy spent finding food",
+    "choices": [
+      "Animals always choose the nearest food source",
+      "Animals maximize energy gained while minimizing energy spent finding food",
+      "Animals forage in groups to reduce risk",
+      "Animals store more food than they need"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What type of reproduction involves only one parent?",
+    "answer": "Asexual reproduction",
+    "choices": [
+      "Asexual reproduction",
+      "Sexual reproduction",
+      "Binary fission",
+      "Parthenogenesis (a form of asexual)"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which primate is most closely related to humans?",
+    "answer": "Chimpanzee",
+    "choices": [
+      "Gorilla",
+      "Orangutan",
+      "Chimpanzee",
+      "Bonobo"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 'aestivation' in animals?",
+    "answer": "A dormancy state during hot, dry periods",
+    "choices": [
+      "Migration to warmer areas",
+      "Rapid reproduction in spring",
+      "A dormancy state during hot, dry periods",
+      "Slowing metabolism in winter"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What distinguishes a mammal from other vertebrates?",
+    "answer": "Milk production, hair or fur, and live birth (in most cases)",
+    "choices": [
+      "Having four limbs",
+      "Milk production, hair or fur, and live birth (in most cases)",
+      "Being warm-blooded only",
+      "Having a diaphragm for breathing"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 'sexual dimorphism'?",
+    "answer": "Differences in size or appearance between males and females of the same species",
+    "choices": [
+      "When animals can change sex",
+      "Differences in size or appearance between males and females of the same species",
+      "Having two distinct breeding seasons",
+      "Choosing mates based on symmetry"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which hormone triggers migration in birds?",
+    "answer": "Melatonin and photoperiod-sensitive hormones",
+    "choices": [
+      "Adrenaline",
+      "Testosterone",
+      "Melatonin and photoperiod-sensitive hormones",
+      "Cortisol"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 'cryptic coloration'?",
+    "answer": "Coloration that hides an animal from predators by blending with the background",
+    "choices": [
+      "Bright warning colors",
+      "Patterns used in mating displays",
+      "Coloration that hides an animal from predators by blending with the background",
+      "Color that changes with temperature"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the difference between a 'habitat' and a 'niche'?",
+    "answer": "A habitat is where an organism lives; a niche is its role in that environment",
+    "choices": [
+      "They mean the same thing",
+      "A habitat is tropical; a niche is polar",
+      "A habitat is where an organism lives; a niche is its role in that environment",
+      "A niche is a smaller habitat"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 'counter-shading' in animals?",
+    "answer": "Dark coloration on top and light on the bottom to reduce shadow visibility",
+    "choices": [
+      "Using color to signal danger",
+      "Matching the color of rocks",
+      "Dark coloration on top and light on the bottom to reduce shadow visibility",
+      "Stripes that break up the body outline"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 'warning coloration' (aposematism) designed to do?",
+    "answer": "Signal to predators that an animal is toxic, venomous, or dangerous",
+    "choices": [
+      "Attract a mate",
+      "Signal to predators that an animal is toxic, venomous, or dangerous",
+      "Help the animal regulate temperature",
+      "Camouflage in bright environments"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which mammal has the highest body temperature?",
+    "answer": "Shrew (up to 40.5°C / 105°F)",
+    "choices": [
+      "Dog",
+      "Rabbit",
+      "Shrew (up to 40.5°C / 105°F)",
+      "Cat"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is a 'territory' in animal behavior?",
+    "answer": "An area defended against intruders, usually for feeding or breeding",
+    "choices": [
+      "The range an animal travels in its lifetime",
+      "An area defended against intruders, usually for feeding or breeding",
+      "The migratory path followed each year",
+      "The area shared by members of a group"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 'operant conditioning' in animal behavior?",
+    "answer": "Learning where behaviors are strengthened or weakened by consequences",
+    "choices": [
+      "Learning by watching others",
+      "Learning where behaviors are strengthened or weakened by consequences",
+      "Learning by imitation",
+      "Learning based on instinct only"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which cephalopod has the largest brain among invertebrates?",
+    "answer": "Octopus",
+    "choices": [
+      "Giant squid",
+      "Nautilus",
+      "Octopus",
+      "Cuttlefish"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 'r-selection' in reproductive strategy?",
+    "answer": "Producing many small offspring with little parental care",
+    "choices": [
+      "Producing few, well-cared-for offspring",
+      "Producing many small offspring with little parental care",
+      "Reproducing only once in a lifetime",
+      "Cooperating with relatives to raise young"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 'K-selection' in reproductive strategy?",
+    "answer": "Producing few, large offspring with extensive parental care",
+    "choices": [
+      "Producing many offspring to ensure some survive",
+      "Producing few, large offspring with extensive parental care",
+      "Breeding rapidly in short bursts",
+      "Random breeding with no parental care"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 'honest signaling' in animal communication?",
+    "answer": "Signals that reliably indicate the sender's quality because they are costly to produce",
+    "choices": [
+      "Signals used only with trusted group members",
+      "Signals that reliably indicate the sender's quality because they are costly to produce",
+      "Avoiding deceptive displays",
+      "Warning calls that always indicate real danger"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 'agonistic behavior'?",
+    "answer": "Social behaviors related to conflict, threat, and submission between animals",
+    "choices": [
+      "Cooperative behaviors in a group",
+      "Social behaviors related to conflict, threat, and submission between animals",
+      "Mating displays and courtship",
+      "Territorial marking"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 'isothermy' in marine mammals?",
+    "answer": "Maintaining a stable body temperature despite cold ocean temperatures",
+    "choices": [
+      "Using body heat to warm eggs",
+      "Maintaining a stable body temperature despite cold ocean temperatures",
+      "Shedding insulating fat in summer",
+      "Regulating salt and water balance"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which organ helps birds navigate using Earth's magnetic field?",
+    "answer": "Magnetite crystals in the beak region",
+    "choices": [
+      "The inner ear",
+      "Magnetite crystals in the beak region",
+      "Specialized photoreceptors in the eye",
+      "Sensory cells in the wings"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 'trophic cascade'?",
+    "answer": "How changes in a top predator's population affect all levels of the food web",
+    "choices": [
+      "A waterfall-based ecosystem",
+      "How changes in a top predator's population affect all levels of the food web",
+      "The flow of nutrients through soil",
+      "How seasons affect food availability"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 'appeasement behavior' in animals?",
+    "answer": "Submissive gestures that reduce aggression from a dominant animal",
+    "choices": [
+      "Marking territory with scent",
+      "Submissive gestures that reduce aggression from a dominant animal",
+      "Behaviors that attract a mate",
+      "Playing dead to avoid predators"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 'resource partitioning'?",
+    "answer": "Species dividing up resources to reduce competition",
+    "choices": [
+      "An animal defending its food supply",
+      "Species dividing up resources to reduce competition",
+      "Sharing a nesting site",
+      "Migrating to new feeding grounds"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which fish uses electric fields to hunt and navigate?",
+    "answer": "Electric eel",
+    "choices": [
+      "Lamprey",
+      "Stingray",
+      "Electric eel",
+      "Hagfish"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 'altruism' in animal behavior?",
+    "answer": "An action that helps another individual at a cost to the performer",
+    "choices": [
+      "Sharing territory peacefully",
+      "An action that helps another individual at a cost to the performer",
+      "Cooperating to hunt",
+      "Teaching offspring to survive"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is a 'diploid' organism?",
+    "answer": "An organism with two sets of chromosomes",
+    "choices": [
+      "An organism that reproduces asexually",
+      "An organism with two sets of chromosomes",
+      "An organism with a double shell",
+      "An organism with two hearts"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 'imprinting' in animal behavior?",
+    "answer": "A rapid learning process in young animals that fixes a long-lasting behavior",
+    "choices": [
+      "Learning a route through repeated travel",
+      "A rapid learning process in young animals that fixes a long-lasting behavior",
+      "The instinct to hide from predators",
+      "Memorizing food sources"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 'peristalsis'?",
+    "answer": "Muscular contractions that move food through the digestive tract",
+    "choices": [
+      "The process of filtering blood",
+      "Muscular contractions that move food through the digestive tract",
+      "Contractions that move oxygen into cells",
+      "How muscles work in bivalves"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which mammal has the most complex vocal repertoire?",
+    "answer": "Sperm whale (longest, loudest vocalizations) / Humans overall",
+    "choices": [
+      "Chimpanzee",
+      "Bottlenose dolphin",
+      "Sperm whale (longest, loudest vocalizations) / Humans overall",
+      "Humpback whale"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 'eusociality'?",
+    "answer": "The highest level of animal social organization, with division of reproductive labor",
+    "choices": [
+      "Animals that always live alone",
+      "The highest level of animal social organization, with division of reproductive labor",
+      "Animals that cooperate in migration",
+      "Animals that share territory"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which sense do snakes primarily use to detect heat?",
+    "answer": "Pit organs (heat-sensing pits near their mouth)",
+    "choices": [
+      "Their tongue",
+      "Their skin",
+      "Pit organs (heat-sensing pits near their mouth)",
+      "Their eyes"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 'surplus killing'?",
+    "answer": "When a predator kills more prey than it can immediately eat",
+    "choices": [
+      "Killing to defend territory",
+      "When a predator kills more prey than it can immediately eat",
+      "Group hunting resulting in excess prey",
+      "Humans overhunting wild animals"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 'natal homing' in sea turtles?",
+    "answer": "Returning to the beach where they were born to lay their own eggs",
+    "choices": [
+      "Swimming toward warmer water for birth",
+      "Returning to the beach where they were born to lay their own eggs",
+      "Following parents during first migration",
+      "Using star maps to find nesting sites"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 'countercurrent exchange' in fish gills?",
+    "answer": "Blood and water flow in opposite directions to maximize oxygen absorption",
+    "choices": [
+      "The fish reversing direction to avoid predators",
+      "Blood and water flow in opposite directions to maximize oxygen absorption",
+      "Recycling water between gill chambers",
+      "Controlling water temperature in the blood"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the function of the 'cloaca' in birds?",
+    "answer": "A shared exit for the reproductive, digestive, and urinary systems",
+    "choices": [
+      "Producing and storing eggs",
+      "A shared exit for the reproductive, digestive, and urinary systems",
+      "Controlling feather alignment",
+      "Regulating salt balance"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 'plumage' in birds?",
+    "answer": "The layer of feathers that cover a bird",
+    "choices": [
+      "The song of a bird during mating",
+      "The layer of feathers that cover a bird",
+      "The pattern on a bird's eggs",
+      "A bird's territorial display"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 'biological magnification'?",
+    "answer": "Toxins increasing in concentration as they move up the food chain",
+    "choices": [
+      "How predators grow larger than prey over time",
+      "Toxins increasing in concentration as they move up the food chain",
+      "The growth of populations in ideal conditions",
+      "How cells multiply in an organism"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which large mammal has the longest pregnancy?",
+    "answer": "African elephant (approximately 22 months)",
+    "choices": [
+      "Blue whale",
+      "Giraffe",
+      "African elephant (approximately 22 months)",
+      "Rhinoceros"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 'echolocation' used for by bats?",
+    "answer": "Detecting obstacles and prey by emitting ultrasonic pulses and hearing echoes",
+    "choices": [
+      "Communicating with other bats",
+      "Detecting obstacles and prey by emitting ultrasonic pulses and hearing echoes",
+      "Navigation during migration",
+      "Finding water sources"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 'semelparity'?",
+    "answer": "Reproducing only once in a lifetime, then dying",
+    "choices": [
+      "Having two reproductive cycles a year",
+      "Reproducing only once in a lifetime, then dying",
+      "Choosing only one mate forever",
+      "Waiting many years before first reproduction"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is a 'zoonotic disease'?",
+    "answer": "A disease that can be transmitted between animals and humans",
+    "choices": [
+      "A disease that affects zoo animals only",
+      "A disease that can be transmitted between animals and humans",
+      "A parasitic disease spread by insects",
+      "A disease caused by eating animals"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 'cryptobiosis'?",
+    "answer": "A state of extreme dormancy where metabolic processes nearly stop",
+    "choices": [
+      "Hiding inside another organism",
+      "A state of extreme dormancy where metabolic processes nearly stop",
+      "Using camouflage to hide from predators",
+      "Living underwater without oxygen"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 'sexual selection'?",
+    "answer": "Evolution driven by mate choice and competition for mates",
+    "choices": [
+      "Selecting the most fit individuals for reproduction",
+      "Evolution driven by mate choice and competition for mates",
+      "The genetic differences between males and females",
+      "The process of organisms reproducing sexually"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which bird performs the most elaborate courtship dance?",
+    "answer": "Bird of paradise",
+    "choices": [
+      "Peacock",
+      "Crane",
+      "Bird of paradise",
+      "Albatross"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is a 'guild' in ecology?",
+    "answer": "A group of species that use the same type of environmental resource in a similar way",
+    "choices": [
+      "A group of animals that hunt cooperatively",
+      "A group of species that use the same type of environmental resource in a similar way",
+      "A community of animals living in the same tree",
+      "A group of migratory species"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 'taxis' in animal behavior?",
+    "answer": "Movement toward or away from a stimulus",
+    "choices": [
+      "Navigation using memorized landmarks",
+      "Movement toward or away from a stimulus",
+      "Returning to a home territory",
+      "Instinctive migration route"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the difference between 'innate' and 'learned' behavior?",
+    "answer": "Innate behavior is genetic and present from birth; learned behavior develops through experience",
+    "choices": [
+      "Innate is for feeding; learned is for mating",
+      "Innate behavior is genetic and present from birth; learned behavior develops through experience",
+      "Learned behavior is always better than innate",
+      "Innate behavior disappears with age"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 'metabolic rate'?",
+    "answer": "The speed at which an organism converts food into energy",
+    "choices": [
+      "How fast an animal grows",
+      "The speed at which an organism converts food into energy",
+      "The amount of food an animal needs daily",
+      "How efficiently an animal stores fat"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which animals demonstrate the ability to use tools?",
+    "answer": "Chimpanzees, crows, otters, and some dolphins",
+    "choices": [
+      "Only chimpanzees",
+      "Chimpanzees and crows only",
+      "Chimpanzees, crows, otters, and some dolphins",
+      "Only primates"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 'inclusive fitness'?",
+    "answer": "An individual's total genetic success including that of related individuals they help",
+    "choices": [
+      "The fitness of a group rather than an individual",
+      "An individual's total genetic success including that of related individuals they help",
+      "How healthy an animal is over its lifetime",
+      "The number of offspring produced"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 'torpor' in animals?",
+    "answer": "A short-term physiological state of reduced activity and metabolism",
+    "choices": [
+      "A state of deep, year-long hibernation",
+      "A short-term physiological state of reduced activity and metabolism",
+      "Being paralyzed by cold",
+      "Playing dead as a defense"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which marine mammal has the densest fur in the world?",
+    "answer": "Sea otter",
+    "choices": [
+      "Fur seal",
+      "Polar bear",
+      "Sea otter",
+      "Harbor seal"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 'biomimicry'?",
+    "answer": "Designing technology based on structures and processes found in nature",
+    "choices": [
+      "Animals imitating each other",
+      "Designing technology based on structures and processes found in nature",
+      "Genetic engineering of animals",
+      "Using nature to heal injuries"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the 'Red Queen hypothesis'?",
+    "answer": "Species must constantly evolve just to maintain fitness relative to competing species",
+    "choices": [
+      "Dominant species always hold their advantage",
+      "Species must constantly evolve just to maintain fitness relative to competing species",
+      "Evolution always leads to greater complexity",
+      "Random mutations produce rapid change"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What are 'dermal denticles'?",
+    "answer": "Tiny tooth-like scales covering a shark's skin",
+    "choices": [
+      "Sensory organs in sharks' noses",
+      "Tiny tooth-like scales covering a shark's skin",
+      "Electroreceptors in shark skin",
+      "The hardened skin of rays"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 'kleptoparasitism'?",
+    "answer": "Stealing food from another animal rather than hunting it yourself",
+    "choices": [
+      "Parasitism through water-borne larvae",
+      "Stealing food from another animal rather than hunting it yourself",
+      "Feeding on parasites living on a host",
+      "Invading another species' nest"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 'character displacement'?",
+    "answer": "When competing species evolve to become more different from each other in the same area",
+    "choices": [
+      "When a species changes its behavior in a new environment",
+      "When competing species evolve to become more different from each other in the same area",
+      "When animals migrate to avoid competition",
+      "When one species eliminates another"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the 'comparative anatomy' approach in zoology?",
+    "answer": "Studying similarities and differences in body structures across species",
+    "choices": [
+      "Comparing the size of animals",
+      "Studying similarities and differences in body structures across species",
+      "Measuring physical abilities across species",
+      "Comparing diets of related animals"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'punctuated equilibrium' in evolution?",
+    "answer": "Long periods of stability interrupted by rapid evolutionary change",
+    "choices": [
+      "Evolution occurs only during mass extinctions",
+      "Long periods of stability interrupted by rapid evolutionary change",
+      "All evolution happens at the same slow pace",
+      "Evolution accelerates with climate change"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'horizontal gene transfer'?",
+    "answer": "The transfer of genes between organisms other than through reproduction",
+    "choices": [
+      "Genes moving through the bloodstream",
+      "The transfer of genes between organisms other than through reproduction",
+      "Inheriting traits from both parents equally",
+      "Mutations spreading through a population"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the 'selfish gene' concept by Dawkins?",
+    "answer": "Genes, not organisms, are the fundamental unit of selection — genes that promote their own copying spread",
+    "choices": [
+      "Dominant animals take resources from weaker ones",
+      "Genes, not organisms, are the fundamental unit of selection — genes that promote their own copying spread",
+      "Evolution always favors individual survival",
+      "Animals act selfishly for group benefit"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'allopatric speciation'?",
+    "answer": "A species splits into two due to geographic separation",
+    "choices": [
+      "Two species merging after isolation",
+      "A species splits into two due to geographic separation",
+      "Speciation caused by disease",
+      "Separate species occupying the same area"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the 'handicap principle' in evolutionary biology?",
+    "answer": "Costly displays signal genetic quality because only strong individuals can afford them",
+    "choices": [
+      "Weak animals survive by displaying weakness",
+      "Costly displays signal genetic quality because only strong individuals can afford them",
+      "Animals that look unhealthy are preferred",
+      "Displays help animals avoid predators"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'Batesian mimicry'?",
+    "answer": "A harmless species imitates the warning signals of a harmful species",
+    "choices": [
+      "Two harmful species resemble each other",
+      "A harmless species imitates the warning signals of a harmful species",
+      "A species evolves to match its background",
+      "Predators mimic prey to get closer"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'Müllerian mimicry'?",
+    "answer": "Two or more harmful species resemble each other, reinforcing the warning signal",
+    "choices": [
+      "A harmless species copies a dangerous one",
+      "Two or more harmful species resemble each other, reinforcing the warning signal",
+      "Prey species copy their predators",
+      "Color patterns shared between unrelated species"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'group selection'?",
+    "answer": "The idea that natural selection can favor traits that benefit the group at cost to individuals",
+    "choices": [
+      "Selection based on family ties only",
+      "The idea that natural selection can favor traits that benefit the group at cost to individuals",
+      "Choosing the strongest individual to reproduce",
+      "Selection acting on entire populations during bottlenecks"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What does 'niche partitioning' prevent?",
+    "answer": "Competitive exclusion between similar species",
+    "choices": [
+      "Overfeeding",
+      "Migration between habitats",
+      "Competitive exclusion between similar species",
+      "Inbreeding in small populations"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'recapitulation theory' (Haeckel)?",
+    "answer": "The idea that embryos repeat the evolutionary stages of their ancestors during development",
+    "choices": [
+      "Offspring repeat the life stages of parents",
+      "The idea that embryos repeat the evolutionary stages of their ancestors during development",
+      "Evolution reuses old adaptations",
+      "Endangered species can re-evolve from related ones"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'genetic drift'?",
+    "answer": "Random changes in allele frequencies in small populations",
+    "choices": [
+      "Genes spreading through water",
+      "Random changes in allele frequencies in small populations",
+      "Mutations accumulating in isolated populations",
+      "Natural selection acting on a single gene"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'allometry'?",
+    "answer": "The study of how the size of one body part relates to another as an organism grows",
+    "choices": [
+      "How animals adapt to altitude",
+      "The study of how the size of one body part relates to another as an organism grows",
+      "How multiple species compare in size",
+      "Measuring metabolic efficiency"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'assortative mating'?",
+    "answer": "The tendency for individuals to mate with others of similar phenotype",
+    "choices": [
+      "Mating based on dominance rank",
+      "The tendency for individuals to mate with others of similar phenotype",
+      "Choosing mates from outside the family group",
+      "Seasonal mating driven by hormones"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'phylogenetics'?",
+    "answer": "The study of evolutionary relationships between organisms",
+    "choices": [
+      "The study of animal behavior over time",
+      "The study of evolutionary relationships between organisms",
+      "The classification of organisms by physical traits",
+      "The history of a specific species"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'osmoregulation'?",
+    "answer": "Controlling the concentration of water and salts in body fluids",
+    "choices": [
+      "Regulating oxygen levels in blood",
+      "Controlling the concentration of water and salts in body fluids",
+      "Maintaining constant body temperature",
+      "Regulating blood sugar levels"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the 'endosymbiotic theory'?",
+    "answer": "Mitochondria and chloroplasts originated as free-living bacteria absorbed by early cells",
+    "choices": [
+      "Early life evolved from shared ancestral cells",
+      "Mitochondria and chloroplasts originated as free-living bacteria absorbed by early cells",
+      "Cells acquired DNA from their environment",
+      "Complex cells evolved by sharing resources"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'reproductive isolation'?",
+    "answer": "Barriers that prevent two populations from interbreeding even if in the same area",
+    "choices": [
+      "Animals avoiding contact during breeding",
+      "Barriers that prevent two populations from interbreeding even if in the same area",
+      "Physical separation of two groups",
+      "Males competing until only one can breed"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'comparative genomics' in zoology?",
+    "answer": "Comparing DNA sequences across species to understand evolution and function",
+    "choices": [
+      "Cataloguing animal species by their chromosomes",
+      "Comparing DNA sequences across species to understand evolution and function",
+      "Studying genetic diseases in wild animals",
+      "Tracing family trees of endangered species"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'ecological succession'?",
+    "answer": "The process by which communities change over time following a disturbance",
+    "choices": [
+      "How populations recover after hunting",
+      "The process by which communities change over time following a disturbance",
+      "Species migrating into new habitats",
+      "Gradual climate shifts affecting ecosystems"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'genetic bottleneck'?",
+    "answer": "A sharp reduction in population size that reduces genetic diversity",
+    "choices": [
+      "Competition reducing access to mates",
+      "A sharp reduction in population size that reduces genetic diversity",
+      "Loss of a keystone species",
+      "A habitat shrinking in size"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'altitudinal migration'?",
+    "answer": "Moving to higher or lower elevations seasonally rather than latitudinally",
+    "choices": [
+      "Migration driven by altitude sickness",
+      "Moving to higher or lower elevations seasonally rather than latitudinally",
+      "Flying above cloud cover during migration",
+      "Navigation using altitude pressure"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'island biogeography theory'?",
+    "answer": "Island species diversity is determined by immigration rate and extinction rate",
+    "choices": [
+      "Islands have less diversity than mainlands always",
+      "Island species diversity is determined by immigration rate and extinction rate",
+      "Islands produce unique species through radiation",
+      "Small islands have fewer species due to smaller size only"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'competitive exclusion principle'?",
+    "answer": "Two species cannot coexist indefinitely on the same limiting resource in the same niche",
+    "choices": [
+      "Dominant species always displace weaker ones",
+      "Two species cannot coexist indefinitely on the same limiting resource in the same niche",
+      "Competition always reduces biodiversity",
+      "The strongest always survive"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'directional selection'?",
+    "answer": "Natural selection favoring one extreme phenotype over the average and the other extreme",
+    "choices": [
+      "Both extremes favored over the average",
+      "Natural selection favoring one extreme phenotype over the average and the other extreme",
+      "Stabilizing forces in populations",
+      "Random selection of traits"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'stabilizing selection'?",
+    "answer": "Natural selection favoring the average phenotype and eliminating extremes",
+    "choices": [
+      "Maintaining current population size",
+      "Natural selection favoring the average phenotype and eliminating extremes",
+      "Keeping body temperature stable",
+      "A balance between predators and prey"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'disruptive selection'?",
+    "answer": "Natural selection favoring two extreme phenotypes over the intermediate",
+    "choices": [
+      "Natural selection favoring two extreme phenotypes over the intermediate",
+      "A sudden shift in natural selection direction",
+      "Competition that splits a population",
+      "Random genetic variation"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'the bottleneck effect' versus 'founder effect'?",
+    "answer": "Bottleneck: population shrinks due to disaster; Founder: small group starts new population",
+    "choices": [
+      "Both are caused by overhunting",
+      "Bottleneck: population shrinks due to disaster; Founder: small group starts new population",
+      "Founder effect reduces diversity more",
+      "Both result in increased genetic variation"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'reciprocal altruism'?",
+    "answer": "Helping another individual with the expectation of future return help",
+    "choices": [
+      "Helping relatives to spread shared genes",
+      "Helping another individual with the expectation of future return help",
+      "Cooperative hunting benefiting the whole group",
+      "Parents helping offspring"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'natal dispersal'?",
+    "answer": "Young animals moving away from their birthplace to establish their own territory",
+    "choices": [
+      "Parents abandoning offspring",
+      "Young animals moving away from their birthplace to establish their own territory",
+      "Migration back to breeding grounds",
+      "Dispersal of spores from fungi"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the 'paradox of the plankton'?",
+    "answer": "Many plankton species coexist on the same few resources, defying the exclusion principle",
+    "choices": [
+      "Plankton are more diverse in cold water",
+      "Many plankton species coexist on the same few resources, defying the exclusion principle",
+      "Plankton cannot be classified into species",
+      "Plankton diversity increases with pollution"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'co-evolution'?",
+    "answer": "Two or more species evolving in response to each other over time",
+    "choices": [
+      "Two species merging into one",
+      "Two or more species evolving in response to each other over time",
+      "Related species evolving differently",
+      "Parallel evolution in isolated habitats"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'adaptive radiation'?",
+    "answer": "Rapid diversification of one ancestral species into many species filling different niches",
+    "choices": [
+      "An animal adapting to radiation exposure",
+      "Rapid diversification of one ancestral species into many species filling different niches",
+      "A species colonizing a new continent",
+      "Evolution in response to climate change"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'niche construction'?",
+    "answer": "When an organism modifies its environment, altering selection pressures on itself and others",
+    "choices": [
+      "Building nests and burrows",
+      "When an organism modifies its environment, altering selection pressures on itself and others",
+      "Choosing the best habitat available",
+      "A species creating new ecological niches"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'phenotypic plasticity'?",
+    "answer": "The ability of an organism to change its characteristics in response to the environment",
+    "choices": [
+      "Random mutation producing new features",
+      "The ability of an organism to change its characteristics in response to the environment",
+      "A genetic trait that varies between individuals",
+      "Physical traits inherited from parents"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'ectothermy'?",
+    "answer": "Regulation of body temperature using external heat sources",
+    "choices": [
+      "Producing body heat internally",
+      "Regulation of body temperature using external heat sources",
+      "Having no temperature regulation",
+      "Using behavior to keep warm only in emergencies"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'endothermy'?",
+    "answer": "Generating and maintaining body heat internally through metabolism",
+    "choices": [
+      "Absorbing heat from the environment",
+      "Generating and maintaining body heat internally through metabolism",
+      "Lowering temperature during rest",
+      "Storing heat in thick fat layers"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'crypsis'?",
+    "answer": "The ability of an organism to avoid observation or detection by other organisms",
+    "choices": [
+      "Playing dead as a defense",
+      "The ability of an organism to avoid observation or detection by other organisms",
+      "Moving silently",
+      "Releasing a chemical deterrent"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'allelic frequency' in a population?",
+    "answer": "The proportion of each allele at a given locus in a population's gene pool",
+    "choices": [
+      "The number of genes an individual carries",
+      "The proportion of each allele at a given locus in a population's gene pool",
+      "The number of mutations per generation",
+      "How often each gene is expressed"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'ecological release'?",
+    "answer": "When an invasive or introduced species expands its niche in the absence of usual predators or competitors",
+    "choices": [
+      "When a population rebounds after hunting bans",
+      "When an invasive or introduced species expands its niche in the absence of usual predators or competitors",
+      "When a keystone species is reintroduced",
+      "Animals thriving after habitat restoration"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'kin recognition' in animals?",
+    "answer": "The ability to identify and behave differently toward relatives compared to non-relatives",
+    "choices": [
+      "Animals recognizing members of their own species",
+      "The ability to identify and behave differently toward relatives compared to non-relatives",
+      "Imprinting on the parent at birth",
+      "Identifying group members by smell"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'polyandry' in animal mating systems?",
+    "answer": "One female mating with multiple males",
+    "choices": [
+      "One male mating with multiple females",
+      "One female mating with multiple males",
+      "All members of a group mating freely",
+      "Mating between closely related individuals"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'polygyny'?",
+    "answer": "One male mating with multiple females",
+    "choices": [
+      "One female mating with multiple males",
+      "Multiple males and females all mating with each other",
+      "One male mating with multiple females",
+      "A group mating system with no clear roles"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'regressive evolution'?",
+    "answer": "The loss of complex structures that are no longer useful in an organism's environment",
+    "choices": [
+      "Evolving backwards toward earlier forms",
+      "The loss of complex structures that are no longer useful in an organism's environment",
+      "A mutation that reduces fitness",
+      "Random deterioration of genes"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the 'mass extinction' that killed the non-avian dinosaurs called?",
+    "answer": "The Cretaceous-Paleogene (K-Pg) extinction event",
+    "choices": [
+      "The Permian extinction",
+      "The Triassic extinction",
+      "The Cretaceous-Paleogene (K-Pg) extinction event",
+      "The Devonian extinction"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'evolutionarily stable strategy' (ESS)?",
+    "answer": "A behavioral strategy that, when adopted by most of the population, cannot be displaced by any other strategy",
+    "choices": [
+      "The most common behavior in a population",
+      "A behavioral strategy that, when adopted by most of the population, cannot be displaced by any other strategy",
+      "A cooperation strategy that benefits all members",
+      "The strategy used by the dominant individual"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'biogeography'?",
+    "answer": "The study of the geographic distribution of species and ecosystems",
+    "choices": [
+      "The study of animal migration routes",
+      "The study of the geographic distribution of species and ecosystems",
+      "The distribution of marine habitats",
+      "Mapping the locations of endangered species"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the 'Cambrian explosion'?",
+    "answer": "A rapid appearance of most major animal body plans in the fossil record ~540 million years ago",
+    "choices": [
+      "A volcanic event that triggered rapid evolution",
+      "A rapid appearance of most major animal body plans in the fossil record ~540 million years ago",
+      "The mass extinction that cleared the way for vertebrates",
+      "The rapid spread of life to land from the sea"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'epibenthic' versus 'endobenthic' in marine biology?",
+    "answer": "Epibenthic lives on the seafloor surface; endobenthic lives within the substrate",
+    "choices": [
+      "Epibenthic is open water; endobenthic is near-shore",
+      "Epibenthic lives on the seafloor surface; endobenthic lives within the substrate",
+      "Epibenthic is carnivorous; endobenthic is filter-feeding",
+      "Epibenthic uses camouflage; endobenthic burrows to hide"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'chemical ecology'?",
+    "answer": "The study of chemical signals and substances that mediate interactions between organisms",
+    "choices": [
+      "Using chemistry to identify animal species",
+      "The study of chemical signals and substances that mediate interactions between organisms",
+      "Studying pollution effects on animals",
+      "The chemistry of animal digestion"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'metapopulation'?",
+    "answer": "A group of separated populations of the same species that interact through migration",
+    "choices": [
+      "A population spread across a very large area",
+      "A group of separated populations of the same species that interact through migration",
+      "Multiple species living in the same habitat",
+      "The combined population of two merged species"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'theropod' in paleontology?",
+    "answer": "A bipedal dinosaur group that includes the ancestors of birds",
+    "choices": [
+      "Any plant-eating dinosaur",
+      "A bipedal dinosaur group that includes the ancestors of birds",
+      "A marine reptile of the Mesozoic",
+      "An armor-plated dinosaur"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'cryptic species'?",
+    "answer": "Species that look nearly identical but are genetically distinct and reproductively isolated",
+    "choices": [
+      "Endangered species hiding in remote areas",
+      "Species that look nearly identical but are genetically distinct and reproductively isolated",
+      "Animals that change appearance seasonally",
+      "Species discovered through fossil records only"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'neoteny'?",
+    "answer": "Retaining juvenile features into adulthood due to delayed development",
+    "choices": [
+      "Aging faster in captivity",
+      "Retaining juvenile features into adulthood due to delayed development",
+      "Growing larger than the normal adult size",
+      "Reproducing before fully grown"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is a 'relict species'?",
+    "answer": "A species that was once widespread but now survives only in isolated areas",
+    "choices": [
+      "A species resurrected from extinction",
+      "A species that was once widespread but now survives only in isolated areas",
+      "A species found only in one location",
+      "A species not yet fully classified"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'aposematic coloration' most effective against?",
+    "answer": "Visually hunting predators that can learn to associate color with bad experiences",
+    "choices": [
+      "Nocturnal predators",
+      "Visually hunting predators that can learn to associate color with bad experiences",
+      "All predators equally",
+      "Predators that use smell to hunt"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'dietary generalism' versus 'dietary specialism'?",
+    "answer": "Generalists eat many food types; specialists rely on a narrow range",
+    "choices": [
+      "Generalists survive better always",
+      "Generalists eat many food types; specialists rely on a narrow range",
+      "Specialists are always larger animals",
+      "Generalists eat more calories per day"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'biotelemetry'?",
+    "answer": "Using electronic tags to track the movements and physiology of wild animals",
+    "choices": [
+      "Measuring animal brainwaves in labs",
+      "Using electronic tags to track the movements and physiology of wild animals",
+      "Analyzing the sounds animals make",
+      "Remote sensing of habitat changes"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'intrasexual selection'?",
+    "answer": "Competition between members of the same sex for mating opportunities",
+    "choices": [
+      "Females choosing the best males",
+      "Competition between members of the same sex for mating opportunities",
+      "Both sexes displaying for each other",
+      "Mate guarding after pairing"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'intersexual selection'?",
+    "answer": "One sex choosing mates based on the traits of the other sex",
+    "choices": [
+      "Males and females competing with each other",
+      "One sex choosing mates based on the traits of the other sex",
+      "Physical combat between rivals",
+      "Seasonal mate changes"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'supernormal stimulus'?",
+    "answer": "An exaggerated imitation of a natural stimulus that produces a stronger response than the real thing",
+    "choices": [
+      "A predator too large for prey to respond to",
+      "An exaggerated imitation of a natural stimulus that produces a stronger response than the real thing",
+      "A stimulus from an entirely new environment",
+      "A sound too high-pitched for animals to hear"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'population viability analysis' (PVA)?",
+    "answer": "A method used to estimate the likelihood of a population's survival over time",
+    "choices": [
+      "Counting how many animals live in an area",
+      "A method used to estimate the likelihood of a population's survival over time",
+      "Tracking invasive species populations",
+      "Analyzing the genetic health of a population"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'endoparasitism'?",
+    "answer": "Parasitism occurring inside the host's body",
+    "choices": [
+      "Parasitism on the host's skin surface",
+      "Parasitism occurring inside the host's body",
+      "Parasites that sterilize their host",
+      "Parasites that kill their host quickly"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'ectoparasitism'?",
+    "answer": "Parasitism occurring on the outside of the host's body",
+    "choices": [
+      "Parasitism occurring on the outside of the host's body",
+      "Parasitism occurring inside the host's body",
+      "Parasites that live near but not on their host",
+      "Social parasites that infiltrate colonies"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'age structure' in a population?",
+    "answer": "The distribution of individuals among different age groups",
+    "choices": [
+      "The average age of animals in a habitat",
+      "The distribution of individuals among different age groups",
+      "The lifespan of each age cohort",
+      "Growth rate relative to age"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'environmental stochasticity'?",
+    "answer": "Random variation in environmental conditions that affects population survival",
+    "choices": [
+      "Predictable climate cycles affecting populations",
+      "Random variation in environmental conditions that affects population survival",
+      "Human disturbances to ecosystems",
+      "Long-term evolutionary pressures"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the function of 'countershading' in marine animals?",
+    "answer": "Dark on top and light on bottom disrupts the depth cue caused by sunlight from above",
+    "choices": [
+      "Reflecting sunlight to stay cool",
+      "Dark on top and light on bottom disrupts the depth cue caused by sunlight from above",
+      "Attracting mates in clear water",
+      "Absorbing heat in cold oceans"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'automimicry'?",
+    "answer": "When a non-toxic part of an animal resembles a toxic or warning-colored part",
+    "choices": [
+      "Mimicking a different species",
+      "When a non-toxic part of an animal resembles a toxic or warning-colored part",
+      "Changing color to match background automatically",
+      "Copying the display of a rival"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'iteroparity'?",
+    "answer": "Reproducing multiple times over the course of a lifetime",
+    "choices": [
+      "Reproducing once per year",
+      "Reproducing multiple times over the course of a lifetime",
+      "Reproducing in multiple locations",
+      "Reproducing with multiple partners"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'heterochrony' in evolution?",
+    "answer": "Changes in the timing or rate of developmental events between ancestor and descendant",
+    "choices": [
+      "Two species evolving at different speeds",
+      "Changes in the timing or rate of developmental events between ancestor and descendant",
+      "Adaptations that occur during a single lifetime",
+      "Different species sharing the same growth patterns"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What are 'extremophiles'?",
+    "answer": "Organisms that thrive in extreme environmental conditions such as heat, cold, or high acidity",
+    "choices": [
+      "Animals with extreme defensive adaptations",
+      "Organisms that thrive in extreme environmental conditions such as heat, cold, or high acidity",
+      "Species living at the limits of their range",
+      "Animals that seek out the most challenging habitats"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'ecological resilience'?",
+    "answer": "The ability of an ecosystem to absorb disturbance and reorganize to retain similar function",
+    "choices": [
+      "How quickly animals return after a disaster",
+      "The ability of an ecosystem to absorb disturbance and reorganize to retain similar function",
+      "The resistance of a species to disease",
+      "The size of a habitat needed to sustain a population"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'polygynandry'?",
+    "answer": "A mating system where multiple males and multiple females all mate with each other",
+    "choices": [
+      "One male with multiple females",
+      "One female with multiple males",
+      "A mating system where multiple males and multiple females all mate with each other",
+      "Mating for life in large groups"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'character convergence' in evolution?",
+    "answer": "When two species living in the same area become more similar over time due to shared selection pressures",
+    "choices": [
+      "Two separate species merging through interbreeding",
+      "When two species living in the same area become more similar over time due to shared selection pressures",
+      "Two unrelated species developing identical traits",
+      "Species losing distinctive features over time"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the 'dear enemy effect'?",
+    "answer": "Animals respond less aggressively to familiar neighbors than to strangers",
+    "choices": [
+      "Animals that live near humans become tame",
+      "Animals respond less aggressively to familiar neighbors than to strangers",
+      "Predators avoid prey they see regularly",
+      "Animals warn neighbors of approaching predators"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'genomic imprinting'?",
+    "answer": "Gene expression differs depending on whether the gene was inherited from the mother or father",
+    "choices": [
+      "The genome reflects the environment",
+      "Gene expression differs depending on whether the gene was inherited from the mother or father",
+      "Genes imprint behaviors on the brain",
+      "Identical twins share perfectly imprinted genes"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the 'Baldwin effect'?",
+    "answer": "Learned behaviors can guide natural selection if they repeatedly lead to advantageous conditions",
+    "choices": [
+      "Animals learn to change their genes",
+      "Learned behaviors can guide natural selection if they repeatedly lead to advantageous conditions",
+      "Cultural transmission replaces genetic evolution",
+      "Behavior is always more plastic than morphology"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'epigenetics' in the context of animal biology?",
+    "answer": "Changes in gene expression not involving changes to DNA sequence, often environmentally influenced",
+    "choices": [
+      "Evolution faster than Darwinian rates",
+      "Changes in gene expression not involving changes to DNA sequence, often environmentally influenced",
+      "The study of animal behavior across generations",
+      "Genetic mutations passed only through the mother"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'pleiotropy'?",
+    "answer": "One gene affecting multiple traits simultaneously",
+    "choices": [
+      "Multiple genes controlling one trait",
+      "One gene affecting multiple traits simultaneously",
+      "Genes carried on multiple chromosomes",
+      "Genes affecting only one sex"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'frequency-dependent selection'?",
+    "answer": "The fitness of a phenotype depends on how common or rare it is in the population",
+    "choices": [
+      "Selection pressure that increases with population density",
+      "The fitness of a phenotype depends on how common or rare it is in the population",
+      "Rare traits are always selected against",
+      "Selection favoring the most common traits"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'molecular clock' hypothesis?",
+    "answer": "DNA accumulates mutations at a roughly constant rate, allowing dating of divergence events",
+    "choices": [
+      "Cells contain timing mechanisms for reproduction",
+      "DNA accumulates mutations at a roughly constant rate, allowing dating of divergence events",
+      "Species evolve faster in warm climates",
+      "Mitochondrial genes change faster than nuclear genes"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'synteny' in genomics?",
+    "answer": "The conservation of gene order on chromosomes across different species",
+    "choices": [
+      "Genes with identical functions in different species",
+      "The conservation of gene order on chromosomes across different species",
+      "Shared regulatory sequences between species",
+      "Genes inherited without recombination"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'bet-hedging' as a life history strategy?",
+    "answer": "Reducing variance in fitness across variable environments at the cost of average fitness",
+    "choices": [
+      "Diversifying breeding sites to reduce predation",
+      "Reducing variance in fitness across variable environments at the cost of average fitness",
+      "Producing multiple litters per season",
+      "Delaying reproduction until conditions are ideal"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'phenotypic integration'?",
+    "answer": "The degree to which multiple traits are correlated and evolve together",
+    "choices": [
+      "The total phenotype of an organism",
+      "The degree to which multiple traits are correlated and evolve together",
+      "The integration of genotype and phenotype",
+      "How individual traits change over a lifetime"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'phylogeography'?",
+    "answer": "The study of the geographic distribution of genetic lineages within and among species",
+    "choices": [
+      "Mapping the migration routes of ancient species",
+      "The study of the geographic distribution of genetic lineages within and among species",
+      "Reconstructing the habitats of extinct species",
+      "Genetic differences between island and mainland populations"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the 'neutral theory of molecular evolution'?",
+    "answer": "Most molecular changes are neutral (not selected for or against) and spread by genetic drift",
+    "choices": [
+      "Evolution is driven by environment, not competition",
+      "Most molecular changes are neutral (not selected for or against) and spread by genetic drift",
+      "Only beneficial mutations accumulate over time",
+      "Evolution at the molecular level is faster than at morphological level"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'prezygotic isolation'?",
+    "answer": "Barriers to reproduction that prevent the formation of a zygote",
+    "choices": [
+      "Barriers that prevent embryo development",
+      "Barriers to reproduction that prevent the formation of a zygote",
+      "Competition between sperm from different males",
+      "The inability of hybrids to survive"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'postzygotic isolation'?",
+    "answer": "Barriers to reproduction after fertilization, such as hybrid sterility or inviability",
+    "choices": [
+      "Barriers that prevent fertilization",
+      "Barriers to reproduction after fertilization, such as hybrid sterility or inviability",
+      "One species out-competing another after mating",
+      "Behavioral differences preventing mating"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'sensory drive' in the evolution of communication signals?",
+    "answer": "Signals evolve to match the sensory environment and the receiver's perceptual system",
+    "choices": [
+      "Animals evolve stronger senses over time",
+      "Signals evolve to match the sensory environment and the receiver's perceptual system",
+      "Predators evolve to jam prey communication",
+      "Sensory overload triggers fight-or-flight"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'conflict of interest between the sexes' in evolutionary biology?",
+    "answer": "Males and females have different optimal reproductive strategies, causing evolutionary conflicts",
+    "choices": [
+      "Males and females compete for the same food",
+      "Males and females have different optimal reproductive strategies, causing evolutionary conflicts",
+      "Only one sex controls mating in each species",
+      "Males and females have different lifespans"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'honest advertisement' in animal signaling?",
+    "answer": "Costly signals that reliably convey the signaler's condition because only high-quality individuals can produce them",
+    "choices": [
+      "Animals always signal truthfully",
+      "Costly signals that reliably convey the signaler's condition because only high-quality individuals can produce them",
+      "Warning signals that indicate real danger",
+      "Color patterns that match actual toxicity"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'cultural transmission' in animal behavior?",
+    "answer": "The spread of behaviors within a population through social learning rather than genetics",
+    "choices": [
+      "Teaching offspring to hunt",
+      "The spread of behaviors within a population through social learning rather than genetics",
+      "Animals adopting human behaviors",
+      "Behaviors that replace genetic instincts"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'clade' in phylogenetics?",
+    "answer": "A group consisting of an ancestor and all of its descendants",
+    "choices": [
+      "A cluster of related species",
+      "A group consisting of an ancestor and all of its descendants",
+      "A grade of similarly complex organisms",
+      "Species sharing a common habitat"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'synapomorphy'?",
+    "answer": "A shared derived character state inherited from a common ancestor",
+    "choices": [
+      "A trait shared by all animals",
+      "A shared derived character state inherited from a common ancestor",
+      "A trait common to an entire order",
+      "Convergent features in unrelated taxa"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'evolutionary constraint'?",
+    "answer": "A limitation on the range of phenotypes that natural selection can produce in a lineage",
+    "choices": [
+      "Competition preventing rapid evolution",
+      "A limitation on the range of phenotypes that natural selection can produce in a lineage",
+      "An adaptation that cannot be lost once evolved",
+      "A developmental stage that prevents change"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'reaction norm'?",
+    "answer": "The pattern of phenotypes produced by a single genotype across a range of environments",
+    "choices": [
+      "The range of environments a species can survive in",
+      "The pattern of phenotypes produced by a single genotype across a range of environments",
+      "The limits of behavioral flexibility",
+      "How rapidly an organism adapts to change"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'ecological speciation'?",
+    "answer": "Speciation driven by divergent natural selection from contrasting environments",
+    "choices": [
+      "Speciation caused by habitat destruction",
+      "Speciation driven by divergent natural selection from contrasting environments",
+      "Speciation triggered by genetic mutation only",
+      "Speciation caused by geographic barriers"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'evo-devo'?",
+    "answer": "Evolutionary developmental biology — how changes in developmental genes produce new morphologies",
+    "choices": [
+      "The study of ancient animal development",
+      "Evolutionary developmental biology — how changes in developmental genes produce new morphologies",
+      "Evolution of behavior in developing animals",
+      "Development of evolutionary theory over time"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'genome size paradox' (C-value enigma)?",
+    "answer": "Some simple organisms have larger genomes than complex ones, suggesting genome size is not proportional to complexity",
+    "choices": [
+      "Complex animals have more genes than simple ones",
+      "Some simple organisms have larger genomes than complex ones, suggesting genome size is not proportional to complexity",
+      "Larger animals always have larger genomes",
+      "Mammals have the largest genomes"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'gene flow'?",
+    "answer": "The transfer of genetic variation from one population to another through migration and interbreeding",
+    "choices": [
+      "Genetic drift in small populations",
+      "The transfer of genetic variation from one population to another through migration and interbreeding",
+      "The expression of genes in different environments",
+      "Random mutations spreading through a population"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'balancing selection'?",
+    "answer": "Natural selection that maintains multiple alleles in a population (e.g., heterozygote advantage)",
+    "choices": [
+      "Selection that produces no net change",
+      "Natural selection that maintains multiple alleles in a population (e.g., heterozygote advantage)",
+      "Selection that favors the average phenotype",
+      "Equal survival rates across all phenotypes"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'transgenerational epigenetic inheritance'?",
+    "answer": "Epigenetic changes acquired in one generation are passed to offspring",
+    "choices": [
+      "Traits learned by parents are always passed on",
+      "Epigenetic changes acquired in one generation are passed to offspring",
+      "All genetic mutations affect the next generation",
+      "Cultural behaviors transmitted through DNA"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'population genetics'?",
+    "answer": "The study of genetic variation and its change within and between populations",
+    "choices": [
+      "The genetics of population-level diseases",
+      "The study of genetic variation and its change within and between populations",
+      "Measuring the size and density of populations",
+      "Genetics of breeding programs in zoos"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'dispersal limitation'?",
+    "answer": "The failure of a species to reach a suitable habitat due to barriers to movement",
+    "choices": [
+      "Animals unable to move due to injury",
+      "The failure of a species to reach a suitable habitat due to barriers to movement",
+      "Slow reproduction limiting population spread",
+      "Territorial behavior limiting range expansion"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'sexual conflict'?",
+    "answer": "Opposing selection pressures on males and females that can lead to evolutionary arms races",
+    "choices": [
+      "Males and females competing for the same food",
+      "Opposing selection pressures on males and females that can lead to evolutionary arms races",
+      "Male competition for access to females",
+      "Female choice reducing male diversity"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'life history theory'?",
+    "answer": "The study of how natural selection shapes the timing and pattern of growth, reproduction, and death",
+    "choices": [
+      "The study of animal biographies",
+      "The study of how natural selection shapes the timing and pattern of growth, reproduction, and death",
+      "How animals learn survival skills",
+      "The stages of a species' evolutionary history"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'ring species'?",
+    "answer": "A series of adjacent populations where neighboring populations can interbreed but the two end populations cannot",
+    "choices": [
+      "A circular migration route",
+      "A series of adjacent populations where neighboring populations can interbreed but the two end populations cannot",
+      "Species that evolved on circular islands",
+      "Populations connected by a ring of habitat"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'parasitoid'?",
+    "answer": "An organism that lays eggs in a host; larvae develop inside and kill the host",
+    "choices": [
+      "A parasite that slowly weakens its host",
+      "An organism that lays eggs in a host; larvae develop inside and kill the host",
+      "A parasite that lives entirely on the host's skin",
+      "A large predator that also feeds on smaller parasites"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'exaptation'?",
+    "answer": "A trait that evolved for one function is co-opted for a new function",
+    "choices": [
+      "A trait that is no longer useful",
+      "A trait that evolved for one function is co-opted for a new function",
+      "Rapid evolution of multiple traits at once",
+      "Evolution producing the same trait twice"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'arms race' in predator-prey evolution?",
+    "answer": "Reciprocal adaptations where each party evolves counter-responses to the other's evolution",
+    "choices": [
+      "Predators always winning evolution over time",
+      "Reciprocal adaptations where each party evolves counter-responses to the other's evolution",
+      "Prey evolving speed while predators evolve camouflage",
+      "Only predators driving evolutionary change"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'mate-choice copying'?",
+    "answer": "Individuals choosing mates based on observed mating decisions by others",
+    "choices": [
+      "Choosing a mate based on parent preferences",
+      "Individuals choosing mates based on observed mating decisions by others",
+      "Females copying male display behaviors",
+      "Males competing by imitating rivals"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'character release' in an island population?",
+    "answer": "In the absence of competitors, a species may expand its niche and show greater individual variation",
+    "choices": [
+      "A species becoming tamer after isolation",
+      "In the absence of competitors, a species may expand its niche and show greater individual variation",
+      "Traits becoming fixed without pressure",
+      "Rapid evolution toward a mainland ancestor"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'niche conservatism'?",
+    "answer": "The tendency for species to retain ancestral ecological traits rather than evolving new niches",
+    "choices": [
+      "Conserving habitat for endangered niches",
+      "The tendency for species to retain ancestral ecological traits rather than evolving new niches",
+      "Maintaining behavior patterns learned in youth",
+      "Avoiding niche overlap with competitors"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'spandrel' in evolutionary biology (Gould and Lewontin)?",
+    "answer": "A byproduct of an adaptation that has no direct selective value itself but may acquire functions later",
+    "choices": [
+      "A structural trait with no known function",
+      "A byproduct of an adaptation that has no direct selective value itself but may acquire functions later",
+      "A vestigial organ",
+      "A trait shared by all members of a clade"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'macroevolution'?",
+    "answer": "Evolutionary change at or above the species level, producing new taxa",
+    "choices": [
+      "Very rapid evolution",
+      "Evolutionary change at or above the species level, producing new taxa",
+      "Changes in gene frequency within a population",
+      "Evolution of large body size"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'unit of selection' debate in evolutionary biology?",
+    "answer": "Whether selection primarily acts on genes, individuals, or groups",
+    "choices": [
+      "How to measure the strength of selection",
+      "Whether selection primarily acts on genes, individuals, or groups",
+      "Which traits are most commonly selected",
+      "Which environments produce the most evolution"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'condition-dependent handicap'?",
+    "answer": "A signal whose cost is proportional to the signaler's condition, so only fit individuals can afford it",
+    "choices": [
+      "A disability that helps find better mates",
+      "A signal whose cost is proportional to the signaler's condition, so only fit individuals can afford it",
+      "A trait that is costly to all individuals equally",
+      "A physical feature that impairs survival but attracts mates"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'ecological trap'?",
+    "answer": "When organisms are attracted to a habitat of low quality, lowering their fitness",
+    "choices": [
+      "A habitat too small to support a population",
+      "When organisms are attracted to a habitat of low quality, lowering their fitness",
+      "A habitat surrounded by barriers",
+      "A specialist species unable to adapt to a new environment"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'trophic level'?",
+    "answer": "The position an organism occupies in a food chain based on its feeding role",
+    "choices": [
+      "The depth at which marine organisms feed",
+      "The position an organism occupies in a food chain based on its feeding role",
+      "The number of prey items an organism eats",
+      "The energy content of food at each stage"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'phylogenetic signal'?",
+    "answer": "The tendency for closely related species to resemble each other more than expected by chance",
+    "choices": [
+      "A DNA sequence shared by a whole phylum",
+      "The tendency for closely related species to resemble each other more than expected by chance",
+      "A marker used to trace evolution",
+      "The genetic signal used to reconstruct family trees"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'Cope's rule'?",
+    "answer": "The tendency for body size to increase over evolutionary time within a lineage",
+    "choices": [
+      "Predators are always larger than their prey",
+      "The tendency for body size to increase over evolutionary time within a lineage",
+      "Complex organisms evolve faster than simple ones",
+      "Island species tend to shrink over time"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'olfactory communication' in mammals?",
+    "answer": "Using chemical scent signals (pheromones, gland secretions) to convey information to other individuals",
+    "choices": [
+      "Communicating through high-frequency sounds",
+      "Using chemical scent signals (pheromones, gland secretions) to convey information to other individuals",
+      "Visual displays that indicate dominance",
+      "Tactile signals used during grooming"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'parental investment theory' (Trivers)?",
+    "answer": "The sex that invests more in offspring is the choosier sex; the less-investing sex competes more for mates",
+    "choices": [
+      "Parents always invest equally in offspring",
+      "The sex that invests more in offspring is the choosier sex; the less-investing sex competes more for mates",
+      "Larger species invest more than smaller ones",
+      "Females always choose mates; males always compete"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'ecophysiology'?",
+    "answer": "The study of how environmental factors influence an organism's physiological processes",
+    "choices": [
+      "The ecology of plant physiology",
+      "The study of how environmental factors influence an organism's physiological processes",
+      "How ecosystems regulate global physiology",
+      "The energy budget of a whole ecosystem"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'carry capacity' (K) in population ecology?",
+    "answer": "The maximum population size an environment can sustain indefinitely",
+    "choices": [
+      "The weight an animal can carry",
+      "The maximum population size an environment can sustain indefinitely",
+      "The population density at which reproduction peaks",
+      "The growth rate of a population at low density"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'source-sink dynamics'?",
+    "answer": "Productive (source) habitats supply dispersing individuals that sustain populations in poor (sink) habitats",
+    "choices": [
+      "Drainage patterns determining animal movement",
+      "Productive (source) habitats supply dispersing individuals that sustain populations in poor (sink) habitats",
+      "Animals moving between water and land",
+      "Seasonal flooding determining habitat quality"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'character state' in cladistics?",
+    "answer": "A specific condition of a morphological or molecular attribute used to classify organisms",
+    "choices": [
+      "The dominant trait in a population",
+      "A specific condition of a morphological or molecular attribute used to classify organisms",
+      "The genetic blueprint of a species",
+      "The set of behaviors defining a clade"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'ecological stoichiometry'?",
+    "answer": "The study of the balance of chemical elements in ecological interactions",
+    "choices": [
+      "The chemical analysis of soil",
+      "The study of the balance of chemical elements in ecological interactions",
+      "Measuring toxins in the food chain",
+      "How chemical defenses evolve in plants and animals"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'neuroethology'?",
+    "answer": "The study of the neural mechanisms underlying natural animal behavior",
+    "choices": [
+      "Animal behavior under stress",
+      "The study of the neural mechanisms underlying natural animal behavior",
+      "How nervous system size relates to intelligence",
+      "The evolution of the vertebrate brain"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'predator-prey cycle' (Lotka-Volterra)?",
+    "answer": "Predator and prey populations oscillate, with prey peaks followed by predator peaks then crashes",
+    "choices": [
+      "Predators always control prey numbers",
+      "Predator and prey populations oscillate, with prey peaks followed by predator peaks then crashes",
+      "Prey evolve faster than predators",
+      "Predators always go extinct if prey become scarce"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'sexual arms race'?",
+    "answer": "Escalating co-evolutionary conflict between male and female reproductive strategies",
+    "choices": [
+      "Males fighting until only one survives",
+      "Escalating co-evolutionary conflict between male and female reproductive strategies",
+      "Both sexes evolving more elaborate displays",
+      "Selection for larger body size in both sexes"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'cryptic female choice'?",
+    "answer": "After mating, females use physiological mechanisms to select among sperm from different males",
+    "choices": [
+      "Females choosing mates without being observed",
+      "After mating, females use physiological mechanisms to select among sperm from different males",
+      "Females hiding offspring from males",
+      "Silent courtship behaviors females use to accept mates"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'ecological fitting'?",
+    "answer": "Organisms use pre-existing traits to interact with novel environments or hosts without evolving new traits",
+    "choices": [
+      "Rapid adaptation to a new habitat",
+      "Organisms use pre-existing traits to interact with novel environments or hosts without evolving new traits",
+      "Animals fitting perfectly into their niche",
+      "Specialization producing perfect ecological roles"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'signal evolution' in the context of receiver psychology?",
+    "answer": "Signals evolve to exploit pre-existing sensory biases in receivers rather than being entirely arbitrary",
+    "choices": [
+      "Signals become louder over evolutionary time",
+      "Signals evolve to exploit pre-existing sensory biases in receivers rather than being entirely arbitrary",
+      "Both sender and receiver evolve at the same rate",
+      "Signal complexity tracks predation pressure"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'genomic conflict'?",
+    "answer": "Genetic elements within the same organism competing to increase their own transmission at cost to others",
+    "choices": [
+      "Competition between organisms for reproductive access",
+      "Genetic elements within the same organism competing to increase their own transmission at cost to others",
+      "Conflict between a parasite's genes and the host's",
+      "Different genes controlling opposite traits"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'landscape genetics'?",
+    "answer": "How landscape features influence gene flow and genetic variation across space",
+    "choices": [
+      "How climate shapes animal distributions",
+      "How landscape features influence gene flow and genetic variation across space",
+      "Studying genetics at the continental scale",
+      "How habitats are classified by dominant species"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'functional morphology'?",
+    "answer": "The study of how the structure and form of organisms relate to their function",
+    "choices": [
+      "The study of how muscles work",
+      "The study of how the structure and form of organisms relate to their function",
+      "Classifying species by body shape",
+      "How size affects behavior"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'bet-hedging via variable offspring quality'?",
+    "answer": "Producing offspring with varied phenotypes to ensure some survive unpredictable conditions",
+    "choices": [
+      "Having more offspring than strictly necessary",
+      "Producing offspring with varied phenotypes to ensure some survive unpredictable conditions",
+      "Raising some offspring with extra care",
+      "Delaying all reproduction until conditions stabilize"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'trophic mismatch'?",
+    "answer": "Misalignment between peak food availability and the timing of reproduction, often linked to climate change",
+    "choices": [
+      "A predator in the wrong habitat",
+      "Misalignment between peak food availability and the timing of reproduction, often linked to climate change",
+      "Animals competing for food outside their trophic level",
+      "A species eating from too many trophic levels"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'obligate mutualism'?",
+    "answer": "A mutualistic relationship where both species depend on the interaction for survival",
+    "choices": [
+      "Cooperation that occurs only in certain conditions",
+      "A mutualistic relationship where both species depend on the interaction for survival",
+      "A temporary alliance between predator species",
+      "Two species that evolved simultaneously in isolation"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'local adaptation'?",
+    "answer": "Populations evolving genotypes better suited to their own local environment than to other environments",
+    "choices": [
+      "Any adaptation occurring in a specific region",
+      "Populations evolving genotypes better suited to their own local environment than to other environments",
+      "Rapid adaptation in urban environments",
+      "A species restricted to a single location"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'diffuse co-evolution'?",
+    "answer": "Evolutionary responses to multiple species rather than one-to-one co-evolution",
+    "choices": [
+      "Co-evolution that happens slowly",
+      "Evolutionary responses to multiple species rather than one-to-one co-evolution",
+      "Co-evolution driven by climate",
+      "Unrelated species affecting each other indirectly"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'phylogenetic comparative method'?",
+    "answer": "Using evolutionary trees to account for shared ancestry when comparing trait variation across species",
+    "choices": [
+      "Comparing ancient and modern species",
+      "Using evolutionary trees to account for shared ancestry when comparing trait variation across species",
+      "A method for dating fossils",
+      "Building species trees from behavioral data"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is a group of crows called?",
+    "answer": "A murder",
+    "choices": [
+      "A flock",
+      "A murder",
+      "A colony",
+      "A pack"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which animal is known for spraying a smelly liquid as defense?",
+    "answer": "Skunk",
+    "choices": [
+      "Porcupine",
+      "Skunk",
+      "Badger",
+      "Wolverine"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the name for a baby pig?",
+    "answer": "Piglet",
+    "choices": [
+      "Cub",
+      "Piglet",
+      "Shoat",
+      "Pup"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which large bird of prey is a symbol of the United States?",
+    "answer": "Bald eagle",
+    "choices": [
+      "Golden eagle",
+      "Osprey",
+      "Bald eagle",
+      "Red-tailed hawk"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 'parthenogenesis'?",
+    "answer": "Reproduction from an unfertilized egg",
+    "choices": [
+      "Reproduction requiring two parents",
+      "Reproduction from an unfertilized egg",
+      "Reproduction by budding",
+      "Cloning in vertebrates"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which ocean layer receives no sunlight at all?",
+    "answer": "Midnight zone (aphotic zone)",
+    "choices": [
+      "Twilight zone",
+      "Midnight zone (aphotic zone)",
+      "Sunlit zone",
+      "Abyssal zone"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is a 'carapace' in crustaceans and turtles?",
+    "answer": "The hard upper shell covering the back",
+    "choices": [
+      "The soft underbelly",
+      "The hard upper shell covering the back",
+      "A type of protective scale",
+      "A layer of blubber"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which animal is the only one known to have a four-chambered stomach?",
+    "answer": "Cows and other ruminants",
+    "choices": [
+      "Horses",
+      "Cows and other ruminants",
+      "Pigs",
+      "Elephants"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the function of whiskers in cats and other mammals?",
+    "answer": "Sensing nearby objects and air currents",
+    "choices": [
+      "Regulating temperature",
+      "Sensing nearby objects and air currents",
+      "Attracting mates",
+      "Filtering dust from air"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 'venom' versus 'poison' in animals?",
+    "answer": "Venom is injected; poison is harmful when touched or eaten",
+    "choices": [
+      "They mean the same thing",
+      "Venom is from snakes; poison is from frogs",
+      "Venom is injected; poison is harmful when touched or eaten",
+      "Poison is stronger than venom"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What do pangolins eat?",
+    "answer": "Ants and termites",
+    "choices": [
+      "Leaves and fruit",
+      "Ants and termites",
+      "Small rodents",
+      "Fish"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 'delayed implantation' in some mammals?",
+    "answer": "After fertilization, the embryo pauses development before implanting in the uterus",
+    "choices": [
+      "Late birth due to stress",
+      "After fertilization, the embryo pauses development before implanting in the uterus",
+      "Eggs fertilized weeks after mating",
+      "Embryos developing outside the uterus"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the role of a 'worker' in a bee colony?",
+    "answer": "Collecting nectar, making honey, feeding larvae, and defending the hive",
+    "choices": [
+      "Laying eggs",
+      "Collecting nectar, making honey, feeding larvae, and defending the hive",
+      "Mating with the queen",
+      "Leading scouts to new food sources"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which bird has the best sense of smell among all birds?",
+    "answer": "Turkey vulture",
+    "choices": [
+      "Albatross",
+      "Kiwi",
+      "Turkey vulture",
+      "Condor"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 'sperm competition'?",
+    "answer": "When sperm from multiple males compete to fertilize a female's eggs",
+    "choices": [
+      "Males fighting before mating",
+      "When sperm from multiple males compete to fertilize a female's eggs",
+      "A female's immune response to foreign sperm",
+      "The selection of faster-swimming sperm"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the 'umwelt' concept in animal behavior (von Uexküll)?",
+    "answer": "Each animal's subjective sensory and perceptual world",
+    "choices": [
+      "The territory an animal calls home",
+      "Each animal's subjective sensory and perceptual world",
+      "The instinctive behaviors of an animal",
+      "The evolutionary history of an animal's senses"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which mammal has no vocal cords?",
+    "answer": "Giraffe",
+    "choices": [
+      "Elephant",
+      "Giraffe",
+      "Koala",
+      "Giant panda"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is a 'piscivore'?",
+    "answer": "An animal that primarily eats fish",
+    "choices": [
+      "An animal that eats only plants",
+      "An animal that primarily eats fish",
+      "An animal that eats only insects",
+      "An animal that eats crustaceans"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 'automimicry' in butterflies?",
+    "answer": "When a non-toxic species mimics a closely related toxic species",
+    "choices": [
+      "Caterpillar resembles a twig",
+      "When a non-toxic species mimics a closely related toxic species",
+      "Butterfly looks like a flower",
+      "Male mimics female to avoid competition"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 'geophagy' in animals?",
+    "answer": "Eating soil or clay to supplement minerals or neutralize toxins",
+    "choices": [
+      "Digging for water",
+      "Eating soil or clay to supplement minerals or neutralize toxins",
+      "Burying food for later",
+      "Using mud for cooling"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 'precocial' versus 'altricial' offspring?",
+    "answer": "Precocial young are mobile at birth; altricial young are helpless and need care",
+    "choices": [
+      "Precocial develop faster after birth than altricial",
+      "Precocial young are mobile at birth; altricial young are helpless and need care",
+      "Altricial animals mature earlier than precocial",
+      "Precocial means born live; altricial means hatched"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 'schooling behavior' in fish an adaptation against?",
+    "answer": "Predation — coordinated groups are harder to single out and attack",
+    "choices": [
+      "Competition for food",
+      "Predation — coordinated groups are harder to single out and attack",
+      "Finding mates",
+      "Navigating currents"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 'ossification' in vertebrate development?",
+    "answer": "The process by which cartilage or connective tissue is replaced by bone",
+    "choices": [
+      "How bones heal after fracture",
+      "The process by which cartilage or connective tissue is replaced by bone",
+      "The hardening of an exoskeleton",
+      "Bone density increasing with age"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 'swarm intelligence' in social insects?",
+    "answer": "Complex collective behavior emerging from simple rules followed by each individual",
+    "choices": [
+      "The intelligence of the queen",
+      "Complex collective behavior emerging from simple rules followed by each individual",
+      "The coordinated attack of army ants",
+      "Group decision-making based on voting"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What are 'nuptial gifts' in animal courtship?",
+    "answer": "Food or other items offered by males to females as part of courtship",
+    "choices": [
+      "Brightly colored displays",
+      "Food or other items offered by males to females as part of courtship",
+      "Territorial boundaries given to a mate",
+      "Songs dedicated to a specific female"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the function of a bird's uropygial gland?",
+    "answer": "Producing oils used in feather preening and waterproofing",
+    "choices": [
+      "Producing calls and song",
+      "Detecting magnetic fields",
+      "Producing oils used in feather preening and waterproofing",
+      "Regulating salt balance"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 'cooperative breeding'?",
+    "answer": "Non-breeding helpers assist parents in raising young",
+    "choices": [
+      "Two parents sharing all duties equally",
+      "Non-breeding helpers assist parents in raising young",
+      "A group of animals all breeding simultaneously",
+      "Rotating parenting roles within a group"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 'dietary switching' in omnivores?",
+    "answer": "Shifting diet composition in response to seasonal availability of food types",
+    "choices": [
+      "Eating different prey species as adults than as juveniles",
+      "Shifting diet composition in response to seasonal availability of food types",
+      "Suddenly adopting a carnivore diet",
+      "Choosing mates based on their diet"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'Rensch's rule'?",
+    "answer": "In species where males are larger than females, larger species show greater size dimorphism",
+    "choices": [
+      "Females grow larger in resource-rich environments",
+      "In species where males are larger than females, larger species show greater size dimorphism",
+      "Male-biased dimorphism always increases over time",
+      "Body size scales with habitat temperature"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'ecoimmunology'?",
+    "answer": "The study of how ecological factors shape and are shaped by immune defenses",
+    "choices": [
+      "How immune systems evolved from simpler organisms",
+      "The study of how ecological factors shape and are shaped by immune defenses",
+      "The use of ecology to control disease outbreaks",
+      "How parasites shape ecosystem structure"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'spatial memory' important for in food-caching animals?",
+    "answer": "Remembering the locations of stored food across a large area for retrieval later",
+    "choices": [
+      "Avoiding predators in known territories",
+      "Remembering the locations of stored food across a large area for retrieval later",
+      "Mapping migration routes",
+      "Recognizing individual members of a group"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'social learning' in animals?",
+    "answer": "Acquiring information or behaviors by observing or interacting with others",
+    "choices": [
+      "Instinctive behaviors passed through genes",
+      "Acquiring information or behaviors by observing or interacting with others",
+      "Teaching offspring using rewards",
+      "Imprinting at a critical period only"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'cooperative hunting' and in which species is it best studied?",
+    "answer": "Group hunting to capture prey too large or fast for individuals — e.g., lions, wolves, killer whales",
+    "choices": [
+      "Any animals that happen to hunt near each other",
+      "Group hunting to capture prey too large or fast for individuals — e.g., lions, wolves, killer whales",
+      "Insects swarming to overwhelm prey",
+      "Only observed in primates"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'ontogenetic niche shift'?",
+    "answer": "A change in an organism's diet or habitat as it grows from juvenile to adult",
+    "choices": [
+      "An adult animal adopting juvenile behaviors",
+      "A change in an organism's diet or habitat as it grows from juvenile to adult",
+      "An animal leaving its birth territory",
+      "Seasonal changes in feeding behavior"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'intraspecific competition'?",
+    "answer": "Competition for resources between members of the same species",
+    "choices": [
+      "Competition between predator and prey",
+      "Competition for resources between members of the same species",
+      "Competition between closely related species",
+      "Competition for mates only"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'phylogenetic inertia'?",
+    "answer": "The tendency of lineages to retain ancestral traits due to developmental or genetic constraints",
+    "choices": [
+      "Ancient lineages evolving slowly",
+      "The tendency of lineages to retain ancestral traits due to developmental or genetic constraints",
+      "How species persist across mass extinctions",
+      "Traits shared by all species in a phylum"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'lek' mating system?",
+    "answer": "Males gather at a traditional display ground where females visit to choose mates",
+    "choices": [
+      "A dominant male holding territory with females",
+      "Males gather at a traditional display ground where females visit to choose mates",
+      "A group of males cooperating to attract females",
+      "A mating system without female choice"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'intersexual conflict over parental care'?",
+    "answer": "Each parent has an evolutionary incentive to provide less care and let the other compensate",
+    "choices": [
+      "Males and females fighting over who guards the nest",
+      "Each parent has an evolutionary incentive to provide less care and let the other compensate",
+      "Competition over which parent the offspring resemble",
+      "Disputes over territory used for raising young"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 'species distribution modelling'?",
+    "answer": "Using environmental data and known occurrence records to predict where species could live",
+    "choices": [
+      "Mapping where animals have been hunted",
+      "Using environmental data and known occurrence records to predict where species could live",
+      "Tracking GPS-tagged animals",
+      "Creating habitat corridors between populations"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'major histocompatibility complex' (MHC) related to in mate choice?",
+    "answer": "Animals may prefer mates with different MHC genes, producing offspring with better immune diversity",
+    "choices": [
+      "Matching MHC ensures genetic compatibility",
+      "Animals may prefer mates with different MHC genes, producing offspring with better immune diversity",
+      "MHC genes determine dominance rank",
+      "Only females have MHC-based mate preferences"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'sensory exploitation' in sexual selection?",
+    "answer": "A signal evolves to hijack a pre-existing sensory preference in the receiver",
+    "choices": [
+      "Predators exploiting prey sensory weaknesses",
+      "A signal evolves to hijack a pre-existing sensory preference in the receiver",
+      "Males using misleading displays",
+      "Females testing multiple males simultaneously"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the 'green beard effect' in kin selection?",
+    "answer": "A gene causes both a recognizable signal and a preference to help others displaying that signal",
+    "choices": [
+      "Green animals helping each other due to shared camouflage",
+      "A gene causes both a recognizable signal and a preference to help others displaying that signal",
+      "Kin recognition through visual patterns",
+      "Plants signaling kin through root networks"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'spandrel' equivalent in animal morphology?",
+    "answer": "A trait that arose as a structural byproduct of other adaptations, not directly selected for",
+    "choices": [
+      "A vestigial organ",
+      "A trait that arose as a structural byproduct of other adaptations, not directly selected for",
+      "A convergent trait",
+      "A trait under relaxed selection"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'selective sweep'?",
+    "answer": "When a beneficial mutation increases rapidly and pulls neutral variants with it",
+    "choices": [
+      "Natural selection clearing out all old variants",
+      "When a beneficial mutation increases rapidly and pulls neutral variants with it",
+      "Rapid extinction of competing alleles",
+      "Mass death clearing a population"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'gene-culture co-evolution'?",
+    "answer": "Genes and cultural practices influence each other reciprocally over evolutionary time",
+    "choices": [
+      "Cultures determining which animals survive",
+      "Genes and cultural practices influence each other reciprocally over evolutionary time",
+      "Animals learning behaviors that later become innate",
+      "Cultural selection replacing genetic selection"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'developmental canalization'?",
+    "answer": "The tendency for development to follow a fixed pathway despite genetic or environmental variation",
+    "choices": [
+      "Genes controlling only one developmental stage",
+      "The tendency for development to follow a fixed pathway despite genetic or environmental variation",
+      "Development becoming more variable with age",
+      "Embryos resisting environmental input"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'antagonistic pleiotropy'?",
+    "answer": "A gene increases fitness early in life but decreases it later, contributing to aging",
+    "choices": [
+      "A gene that helps one sex but harms the other",
+      "A gene increases fitness early in life but decreases it later, contributing to aging",
+      "Conflicting traits maintained in balance",
+      "Two genes competing for the same expression"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'habitat fragmentation' most damaging to?",
+    "answer": "Species with large home ranges, low dispersal ability, or specialized habitat needs",
+    "choices": [
+      "Fast-reproducing species with broad diets",
+      "Species with large home ranges, low dispersal ability, or specialized habitat needs",
+      "Migratory species that visit multiple habitats",
+      "Species at the top of the food chain only"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'taxon cycle' theory?",
+    "answer": "Species colonize new habitats, expand, then contract to fragmented populations, then re-speciate",
+    "choices": [
+      "Species diversity fluctuates with climate cycles",
+      "Species colonize new habitats, expand, then contract to fragmented populations, then re-speciate",
+      "The turnover of species in an ecosystem over time",
+      "How dominant taxa are replaced over geological time"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'evolutionary rescue'?",
+    "answer": "When rapid adaptive evolution prevents a population from going extinct in a changing environment",
+    "choices": [
+      "Reintroducing a species to its former range",
+      "When rapid adaptive evolution prevents a population from going extinct in a changing environment",
+      "Captive breeding programs that restore wild populations",
+      "Evolution producing resistance to pollution"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'trophic cascade reversal'?",
+    "answer": "When increasing a lower-level species biomass disrupts the predator-controlled equilibrium",
+    "choices": [
+      "Removing a top predator increasing plant growth",
+      "When increasing a lower-level species biomass disrupts the predator-controlled equilibrium",
+      "A prey species driving predators extinct",
+      "Cascades that run from the bottom to the top of the food web"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'niche hypervolume' (Hutchinson)?",
+    "answer": "An n-dimensional space defined by all environmental variables required for a species to survive",
+    "choices": [
+      "The physical area a species can occupy",
+      "An n-dimensional space defined by all environmental variables required for a species to survive",
+      "The overlap between two species' ranges",
+      "The diet breadth of a generalist species"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'developmental constraint' in evolutionary biology?",
+    "answer": "Limits on the range of phenotypes that development can produce, constraining evolution",
+    "choices": [
+      "Time limits on how fast evolution can occur",
+      "Limits on the range of phenotypes that development can produce, constraining evolution",
+      "Physical limitations of body size",
+      "Genetic mutations that prevent reproduction"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'social immunity' in colonial insects?",
+    "answer": "Collective behaviors that protect the colony from disease, such as removing infected individuals",
+    "choices": [
+      "The immune response of the queen protecting the colony",
+      "Collective behaviors that protect the colony from disease, such as removing infected individuals",
+      "Secretions that kill pathogens in honey",
+      "Group resistance to a shared pathogen"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'honest signaling equilibrium'?",
+    "answer": "A state where signals remain reliable because deception is too costly to be favored by selection",
+    "choices": [
+      "A society where all animals signal truthfully",
+      "A state where signals remain reliable because deception is too costly to be favored by selection",
+      "The natural state before deceptive signals evolved",
+      "A stable population of honest and dishonest signalers"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'thermal performance curve'?",
+    "answer": "A function describing how an organism's performance varies with temperature",
+    "choices": [
+      "How quickly animals warm up after cold",
+      "A function describing how an organism's performance varies with temperature",
+      "The temperature range a species can survive in",
+      "The energy cost of maintaining body temperature"
+    ]
+  }
 ]

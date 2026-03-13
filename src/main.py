@@ -5,7 +5,7 @@ import pygame
 from combat import player_attack
 from container_system import attempt_lockpick, check_for_mimic
 from dungeon import (generate_dungeon, spawn_monsters, spawn_items,
-                     STAIRS_UP, STAIRS_DOWN, DOOR, SECRET_DOOR)
+                     STAIRS_UP, STAIRS_DOWN, DOOR, SECRET_DOOR, ALTAR)
 from food_system import (harvest_corpse, cook_ingredient, eat_food, eat_raw,
                          get_available_compound_recipes, cook_compound_recipe,
                          get_recipes_for_ingredient)
@@ -22,6 +22,17 @@ WINDOW_H = 900
 FPS      = 60
 
 GAME_W = WINDOW_W - SIDEBAR_W      # 1280 px
+
+
+def _update_layout(w: int, h: int):
+    """Recalculate derived layout globals after a window resize."""
+    global WINDOW_W, WINDOW_H, GAME_W, GAME_H, VIEWPORT_W, VIEWPORT_H
+    WINDOW_W   = w
+    WINDOW_H   = h
+    GAME_W     = WINDOW_W - SIDEBAR_W
+    GAME_H     = WINDOW_H - MSG_H
+    VIEWPORT_W = GAME_W // TILE_SIZE
+    VIEWPORT_H = GAME_H // TILE_SIZE
 
 # ------------------------------------------------------------------
 # Module-level helpers
@@ -86,6 +97,7 @@ class WelcomeScreen:
         ("PHILOSOPHY", 240, (200, 200, 255),"Φ"),
         ("GRAMMAR",    280, (255, 85, 85),  "¶"),
         ("ECONOMICS",  320, (170, 255, 0),  "◆"),
+        ("THEOLOGY",   355, (200, 170, 80), "✝"),
     ]
 
     def __init__(self, screen: pygame.Surface):
@@ -123,7 +135,11 @@ class WelcomeScreen:
                                  (x + 2, y + 2), (x + 2, y + block - 3))
         return surf
 
-    def run(self, clock: pygame.time.Clock) -> tuple[str, dict | None]:
+    def run(self, clock: pygame.time.Clock) -> tuple[str | None, dict | None]:
+        """Returns (None, None) if user chose 'Continue' (load save), else (name, build)."""
+        from save_system import save_exists
+        self._has_save = save_exists()
+
         while True:
             dt = clock.tick(60) / 1000.0
             self._anim_t  += dt
@@ -137,6 +153,8 @@ class WelcomeScreen:
                     pygame.quit()
                     sys.exit()
                 if event.type == pygame.KEYDOWN:
+                    if self._has_save and event.unicode.lower() == 'c':
+                        return None, None   # sentinel: load save
                     if event.key == pygame.K_RETURN and self.name_buf.strip():
                         name  = self.name_buf.strip()
                         build = SECRET_BUILDS.get(name.lower())
@@ -399,11 +417,16 @@ class WelcomeScreen:
             self.screen.blit(badge, (cx - badge.get_width() // 2, by + box_h + 6))
 
     def _draw_footer(self, cx):
-        hint = self.font_tiny.render(
-            "[ ENTER ] begin quest     [ ESC ] quit",
-            True, (85, 85, 170)
-        )
+        has_save = getattr(self, '_has_save', False)
+        if has_save:
+            text = "[ C ] continue saved game     [ ENTER ] new game     [ ESC ] quit"
+        else:
+            text = "[ ENTER ] begin quest     [ ESC ] quit"
+        hint = self.font_tiny.render(text, True, (85, 85, 170))
         self.screen.blit(hint, (cx - hint.get_width() // 2, self.H - 28))
+        if has_save:
+            save_hint = self.font_sm.render("★  Saved game found!", True, (100, 200, 100))
+            self.screen.blit(save_hint, (cx - save_hint.get_width() // 2, self.H - 52))
 
 
 # Game states
@@ -423,6 +446,7 @@ STATE_TARGET         = 'target'        # ranged targeting cursor
 STATE_EAT_MENU       = 'eat_menu'      # eat food / raw ingredient
 STATE_HELP           = 'help'
 STATE_LORE           = 'lore'
+STATE_PRAY           = 'pray'
 
 
 class Game:
@@ -432,10 +456,10 @@ class Game:
         self.screen        = screen
         self.player_name   = player_name
         self.secret_build  = secret_build   # dict of stat overrides, or None
-        self.font_sm   = pygame.font.SysFont('consolas', 15)
-        self.font_md   = pygame.font.SysFont('consolas', 20)
-        self.font_lg   = pygame.font.SysFont('consolas', 28, bold=True)
-        self.font_xl   = pygame.font.SysFont('consolas', 36, bold=True)
+        self.font_sm   = pygame.font.SysFont('consolas', 17)
+        self.font_md   = pygame.font.SysFont('consolas', 22)
+        self.font_lg   = pygame.font.SysFont('consolas', 30, bold=True)
+        self.font_xl   = pygame.font.SysFont('consolas', 38, bold=True)
 
         self.quiz_engine        = QuizEngine()
         self.msg_log            = MessageLog()
@@ -457,6 +481,10 @@ class Game:
         self.dungeon_level      = 1
         self.defeat_reason      = 'died'   # 'died' | 'starved' | 'fled'
         self._slow_skip         = False    # toggled each turn when slowed
+        # Key-held movement (arrow key auto-repeat)
+        self._move_hold_timer   = 0.0      # countdown until next repeated move
+        self._move_hold_delay   = 0.18     # seconds before repeat kicks in
+        self._move_hold_first   = True     # True = waiting for initial delay
         # Targeting state (ranged attacks)
         self.target_cursor_x    = 0        # world tile position of targeting cursor
         self.target_cursor_y    = 0
@@ -511,6 +539,22 @@ class Game:
         self.add_message("You carry the Philosopher's Amulet. Use [I] to identify items.", 'info')
         self.add_message("Find the Philosopher's Stone and escape!", 'info')
 
+    def load_state(self, state: dict):
+        """Restore all game state from a previously saved dict (pickle)."""
+        self.player        = state['player']
+        self.player_name   = state['player_name']
+        self.secret_build  = state.get('secret_build')
+        self.turn_count    = state['turn_count']
+        self.dungeon_level = state['dungeon_level']
+        self.player_gold   = state['player_gold']
+        self.level_mgr     = state['level_mgr']
+        self.dungeon       = state['dungeon']
+        self.monsters      = state['monsters']
+        self.ground_items  = state['ground_items']
+        self.renderer.set_dungeon(self.dungeon.width, self.dungeon.height, GAME_W, GAME_H)
+        self._refresh_fov()
+        self.add_message("Welcome back, seeker. Your journey continues…", 'success')
+
     def _change_level(self, new_level: int, enter_from_top: bool):
         """Transition between levels, preserving the player."""
         # Save current level state
@@ -564,13 +608,28 @@ class Game:
     # Event handling
     # ------------------------------------------------------------------
 
+    def on_resize(self, w: int, h: int):
+        """Called after window is resized — syncs renderer and sidebar."""
+        _update_layout(w, h)
+        self.renderer.set_dungeon(
+            self.dungeon.width, self.dungeon.height, GAME_W, GAME_H
+        )
+        self.sidebar.x = GAME_W
+
     def handle_event(self, event: pygame.event.Event) -> bool:
         if event.type == pygame.QUIT:
             return False
+        if event.type == pygame.WINDOWRESIZED:
+            self.on_resize(event.x, event.y)
+            return True
         if event.type != pygame.KEYDOWN:
             return True
 
         key = event.key
+
+        if key == pygame.K_F11:
+            pygame.display.toggle_fullscreen()
+            return True
 
         if key == pygame.K_ESCAPE:
             if self.state in (STATE_EQUIP_MENU, STATE_ACCESSORY_MENU,
@@ -666,6 +725,9 @@ class Game:
         if key == pygame.K_f:
             self._open_targeting()
             return
+        if key == pygame.K_BACKSLASH:
+            self._start_pray()
+            return
         if key == pygame.K_z:
             self._open_eat_menu()
             return
@@ -677,6 +739,13 @@ class Game:
             return
 
         if key not in self._MOVE_KEYS:
+            return
+
+        self._do_move(*self._MOVE_KEYS[key])
+
+    def _do_move(self, dx: int, dy: int):
+        """Attempt a player move/action in direction (dx, dy)."""
+        if self.state != STATE_PLAYER:
             return
 
         # Sleep: skip turn
@@ -710,8 +779,6 @@ class Game:
             self.add_message("You are too dazed to act!", 'warning')
             self._advance_turn()
             return
-
-        dx, dy = self._MOVE_KEYS[key]
 
         # Confused: randomize direction
         if self.player.has_effect('confused'):
@@ -774,22 +841,33 @@ class Game:
                 self.add_message("The dungeon exit  —  press '<' to leave.", 'warning')
             else:
                 self.add_message("Stairs lead up here  —  press '<' to ascend.", 'info')
+        elif tile == ALTAR:
+            self.add_message("A sacred altar stands here. Press '\\' to pray with divine bonus.", 'info')
+
+    @staticmethod
+    def _display_name(item) -> str:
+        """Return the name to show for an item — unidentified name if not yet identified."""
+        if not getattr(item, 'identified', True):
+            return getattr(item, 'unidentified_name', item.name)
+        return item.name
 
     def _notify_ground(self, x: int, y: int):
         """Print messages about items and notable features at (x, y)."""
         here = [item for item in self.ground_items if item.x == x and item.y == y]
         if len(here) == 1:
             item = here[0]
-            article = 'an' if item.name[0].lower() in 'aeiou' else 'a'
-            self.add_message(f"You see {article} {item.name} lying here.", 'info')
+            dname = self._display_name(item)
+            article = 'an' if dname[0].lower() in 'aeiou' else 'a'
+            self.add_message(f"You see {article} {dname} lying here.", 'info')
         elif len(here) == 2:
             self.add_message(
-                f"You see {here[0].name} and {here[1].name} lying here.", 'info'
+                f"You see {self._display_name(here[0])} and "
+                f"{self._display_name(here[1])} lying here.", 'info'
             )
         elif len(here) > 2:
             self.add_message(
                 f"You see {len(here)} items here: "
-                + ', '.join(i.name for i in here[:3])
+                + ', '.join(self._display_name(i) for i in here[:3])
                 + ('...' if len(here) > 3 else '.'),
                 'info'
             )
@@ -827,10 +905,17 @@ class Game:
             for i in self.player.inventory
         )
         if has_stone:
+            self._on_game_over()
             self.state = STATE_VICTORY
         else:
             self.defeat_reason = 'fled'
+            self._on_game_over()
             self.state = STATE_DEAD
+
+    def _on_game_over(self):
+        """Delete save file on any game-ending event (permadeath)."""
+        from save_system import delete_save
+        delete_save()
 
     # ------------------------------------------------------------------
     # Scoring
@@ -855,6 +940,10 @@ class Game:
     def _advance_turn(self):
         self.turn_count += 1
 
+        # Decrement prayer cooldown
+        if self.player.prayer_cooldown > 0:
+            self.player.prayer_cooldown -= 1
+
         # Tick all player status effects
         effect_msgs = self.player.tick_effects()
         for text, mtype in effect_msgs:
@@ -862,6 +951,7 @@ class Game:
                 self._teleport_player()
             elif text == '_petrify_death':
                 self.defeat_reason = 'died'
+                self._on_game_over()
                 self.state = STATE_DEAD
                 self.add_message("You have turned completely to stone!", 'danger')
             else:
@@ -936,6 +1026,7 @@ class Game:
             self.add_message(f"Starving! You take {dmg} damage.", 'danger')
             if self.player.is_dead():
                 self.defeat_reason = 'starved'
+                self._on_game_over()
                 self.state = STATE_DEAD
                 self.add_message("You have starved to death! Press ESC to quit.", 'danger')
 
@@ -1192,6 +1283,167 @@ class Game:
         for msg in messages:
             self.add_message(msg, mtype)
         self._advance_turn()
+
+    # ------------------------------------------------------------------
+    # Prayer  (\ key — theology escalator_chain quiz)
+    # ------------------------------------------------------------------
+
+    def _start_pray(self):
+        """Begin a prayer — escalator chain quiz (theology). Cooldown-gated."""
+        if self.player.prayer_cooldown > 0:
+            self.add_message(
+                f"You cannot pray yet. ({self.player.prayer_cooldown} turns remain)",
+                'warning'
+            )
+            return
+        at_altar = self.dungeon.tiles[self.player.y][self.player.x] == ALTAR
+        bonus_desc = " The altar amplifies your prayer." if at_altar else ""
+        self.add_message(f"You kneel and pray...{bonus_desc}", 'info')
+        self._at_altar = at_altar
+        self.quiz_title = "PRAYER — THEOLOGY"
+        self.state = STATE_QUIZ
+
+        def on_complete(result):
+            chain = result.score
+            self._resolve_prayer(chain, self._at_altar)
+            self.state = STATE_PLAYER
+            self._advance_turn()
+
+        self.quiz_engine.start_quiz(
+            mode='escalator_chain',
+            subject='theology',
+            tier=1,
+            callback=on_complete,
+            max_chain=8,
+            wisdom=self.player.WIS,
+            timer_modifier=self.player.get_quiz_timer_modifier(),
+        )
+
+    def _resolve_prayer(self, chain: int, at_altar: bool = False):
+        """Apply prayer blessings based on chain score. Higher chain = greater boon."""
+        _PRAYER_VERSES = {
+            0: None,
+            1: ("Cast all your anxiety on him, because he cares for you.", "1 Peter 5:7"),
+            2: ("If we confess our sins, he is faithful and just to forgive us.", "1 John 1:9"),
+            3: ("He heals the brokenhearted and binds up their wounds.", "Psalm 147:3"),
+            4: ("Those who hope in the LORD will renew their strength.", "Isaiah 40:31"),
+            5: ("The LORD is my shepherd; I shall not want.", "Psalm 23:1"),
+            6: ("I can do all things through him who strengthens me.", "Philippians 4:13"),
+            7: ("Do not be afraid, for I am with you; I will strengthen you.", "Isaiah 41:10"),
+            8: ("Well done, good and faithful servant!", "Matthew 25:23"),
+        }
+        p = self.player
+        effective = chain + (1 if at_altar else 0)
+
+        # Cooldown scales with how powerful a prayer was answered
+        p.prayer_cooldown = max(100, 80 + effective * 25)
+
+        if effective == 0:
+            self.add_message("The heavens are silent.", 'info')
+            return
+
+        msgs = []
+
+        if effective >= 8:
+            # Perfect/near-perfect chain: permanent stat bonus (diminishing returns)
+            if p.prayer_boon_count < 3:
+                p.apply_stat_bonus('WIS', 1)
+                p.prayer_boon_count += 1
+                msgs.append("A divine light fills you. Your wisdom is permanently increased! (WIS +1)")
+            else:
+                p.hp = p.max_hp
+                p.sp = p.max_sp
+                msgs.append("Divine grace overflows! You are fully restored!")
+            p.hp = p.max_hp
+            p.sp = p.max_sp
+
+        elif effective >= 7:
+            p.hp = p.max_hp
+            p.sp = p.max_sp
+            msgs.append("A warm light washes over you. You are fully healed and restored!")
+
+        elif effective >= 6:
+            p.sp = p.max_sp
+            heal = p.max_hp // 2
+            p.hp = min(p.max_hp, p.hp + heal)
+            msgs.append(f"Divine grace heals your wounds. (+{heal} HP, SP fully restored)")
+
+        elif effective >= 5:
+            sp_gain = int(p.max_sp * 0.6)
+            p.sp = min(p.max_sp, p.sp + sp_gain)
+            heal = p.max_hp // 5
+            p.hp = min(p.max_hp, p.hp + heal)
+            msgs.append(f"Your spirit is renewed. (+{sp_gain} SP, +{heal} HP)")
+
+        elif effective >= 4:
+            sp_gain = int(p.max_sp * 0.3)
+            p.sp = min(p.max_sp, p.sp + sp_gain)
+            msgs.append(f"Your stamina is renewed. (+{sp_gain} SP)")
+
+        elif effective >= 3:
+            # Cleanse ALL negative status effects
+            bad_effects = ['poisoned', 'paralyzed', 'confused', 'bleeding', 'blinded',
+                           'sleeping', 'slowed', 'weakened', 'cursed']
+            cleared = [e for e in bad_effects if p.has_effect(e)]
+            for e in cleared:
+                p.status_effects.pop(e, None)
+            if cleared:
+                msgs.append(f"All afflictions lifted: {', '.join(cleared)}!")
+            else:
+                sp_gain = p.max_sp // 5
+                p.sp = min(p.max_sp, p.sp + sp_gain)
+                msgs.append(f"You feel cleansed and refreshed. (+{sp_gain} SP)")
+
+        elif effective >= 2:
+            # Remove one major negative status OR uncurse one item
+            major = ['poisoned', 'paralyzed', 'blinded']
+            removed = next((e for e in major if p.has_effect(e)), None)
+            if removed:
+                p.status_effects.pop(removed, None)
+                msgs.append(f"The {removed} condition is lifted!")
+            else:
+                cursed_items = []
+                for slot in p.armor_slots:
+                    if slot and getattr(slot, 'cursed', False):
+                        cursed_items.append(slot)
+                if p.shield and getattr(p.shield, 'cursed', False):
+                    cursed_items.append(p.shield)
+                if cursed_items:
+                    target = cursed_items[0]
+                    target.cursed = False
+                    msgs.append(f"The curse on your {target.name} is broken!")
+                else:
+                    minor = ['confused', 'bleeding', 'slowed', 'sleeping']
+                    removed = next((e for e in minor if p.has_effect(e)), None)
+                    if removed:
+                        p.status_effects.pop(removed, None)
+                        msgs.append(f"The {removed} condition is lifted!")
+                    else:
+                        sp_gain = p.max_sp // 10
+                        p.sp = min(p.max_sp, p.sp + sp_gain)
+                        msgs.append(f"A gentle comfort washes over you. (+{sp_gain} SP)")
+
+        elif effective >= 1:
+            minor = ['confused', 'bleeding', 'slowed', 'sleeping']
+            removed = next((e for e in minor if p.has_effect(e)), None)
+            if removed:
+                p.status_effects.pop(removed, None)
+                msgs.append(f"The {removed} condition fades away.")
+            else:
+                sp_gain = p.max_sp // 20
+                p.sp = min(p.max_sp, p.sp + sp_gain)
+                msgs.append(f"A faint warmth soothes your spirit. (+{sp_gain} SP)")
+
+        for m in msgs:
+            self.add_message(m, 'success')
+
+        # Display verse
+        verse_key = min(effective, 8)
+        verse_data = _PRAYER_VERSES.get(verse_key)
+        if verse_data:
+            verse_text, citation = verse_data
+            self.add_message(f'"{verse_text}"', 'loot')
+            self.add_message(f"  — {citation}", 'info')
 
     # ------------------------------------------------------------------
     # Equip menu
@@ -1932,6 +2184,25 @@ class Game:
             item_tier = int(treasure.get('item_tier', 1))
             self._spawn_treasure_item(monster.x, monster.y, item_tier)
 
+        # Boss reward scroll
+        boss_scroll_id = treasure.get('boss_scroll_id')
+        if boss_scroll_id:
+            self._spawn_boss_scroll(monster.x, monster.y, boss_scroll_id)
+
+    def _spawn_boss_scroll(self, x: int, y: int, scroll_id: str):
+        """Place a pre-identified boss reward scroll at (x, y)."""
+        from items import load_items, copy_at
+        try:
+            scrolls = load_items('scroll')
+            template = next((s for s in scrolls if s.id == scroll_id), None)
+            if template:
+                sc = copy_at(template, x, y)
+                sc.identified = True
+                self.ground_items.append(sc)
+                self.add_message("★ The boss drops a REWARD SCROLL!", 'loot')
+        except Exception:
+            pass
+
     def _spawn_treasure_item(self, x: int, y: int, tier: int):
         """Place a random item of up to `tier` at (x,y)."""
         import random as _rng
@@ -2020,6 +2291,15 @@ class Game:
             amount = roll(scroll.power) if scroll.power else 10
             self.player.restore_hp(amount)
             self.add_message(f"Healing light washes over you — {amount} HP restored!", 'success')
+
+        elif effect == 'boss_reward':
+            code = scroll.power or '???'
+            self.add_message(f"★ BOSS REWARD CODE: {code} ★", 'loot')
+            self.add_message("Show this code to Dad in real life for a reward!", 'success')
+            self.add_message("You can re-read this scroll at any time to see the code again.", 'info')
+            # Put the scroll back in inventory so the player can re-read it
+            self.player.inventory.append(scroll)
+            return  # skip the remove that the caller does
 
         elif effect == 'mapping':
             for y in range(self.dungeon.height):
@@ -2372,7 +2652,8 @@ class Game:
             self.player.status_effects['paralyzed'] = max(cur, 3)
             self.add_message("The floating eye's gaze paralyzes you!", 'danger')
 
-        def on_complete(damage: int, killed: bool, chain: int, stunned: bool = False):
+        def on_complete(damage: int, killed: bool, chain: int, stunned: bool = False,
+                        knocked: bool = False, crit: bool = False):
             self.state = STATE_PLAYER
             self.combat_target = None
             if chain == 0:
@@ -2380,9 +2661,18 @@ class Game:
                     f"You swing wildly at the {monster.name} and miss!", 'warning'
                 )
             else:
-                msg = f"Chain x{chain}! You strike the {monster.name} for {damage} damage!"
+                if crit:
+                    msg = f"CRITICAL! Chain x{chain}! You strike the {monster.name} for {damage} damage!"
+                else:
+                    msg = f"Chain x{chain}! You strike the {monster.name} for {damage} damage!"
                 if stunned:
                     msg += f" The {monster.name} is stunned!"
+                if monster.status_effects.get('bleeding', 0) > 0:
+                    msg += f" The {monster.name} is bleeding!"
+                if knocked and not killed:
+                    from combat import apply_knockback
+                    apply_knockback(self.player, monster, self.dungeon)
+                    msg += f" The {monster.name} is knocked back!"
                 self.add_message(msg, 'success')
                 if killed:
                     self.level_mgr.monsters_killed += 1
@@ -2446,6 +2736,7 @@ class Game:
                 self.add_message(msg, 'danger')
                 if self.player.is_dead():
                     self.defeat_reason = 'died'
+                    self._on_game_over()
                     self.state = STATE_DEAD
                     self.add_message("You have died! Press ESC to quit.", 'danger')
                     return
@@ -2454,9 +2745,38 @@ class Game:
     # Update
     # ------------------------------------------------------------------
 
+    # Arrow keys that trigger held-movement (only these four, not vi keys)
+    _ARROW_KEYS = {
+        pygame.K_UP:    (0, -1),
+        pygame.K_DOWN:  (0,  1),
+        pygame.K_LEFT:  (-1, 0),
+        pygame.K_RIGHT: (1,  0),
+    }
+    _MOVE_HOLD_INTERVAL = 0.07  # seconds between repeated moves once repeat is active
+
     def update(self, dt: float):
         if self.state == STATE_QUIZ:
             self.quiz_engine.update(dt)
+
+        if self.state == STATE_PLAYER:
+            pressed = pygame.key.get_pressed()
+            held_dir = None
+            for k, d in self._ARROW_KEYS.items():
+                if pressed[k]:
+                    held_dir = d
+                    break
+
+            prev = getattr(self, '_prev_held_dir', None)
+            if held_dir != prev:
+                # Direction changed (or key released/pressed) — restart delay
+                self._move_hold_timer = self._move_hold_delay if held_dir else 0.0
+                self._move_hold_first = True
+            elif held_dir is not None:
+                self._move_hold_timer -= dt
+                if self._move_hold_timer <= 0:
+                    self._move_hold_timer = self._MOVE_HOLD_INTERVAL
+                    self._do_move(*held_dir)
+            self._prev_held_dir = held_dir
 
     # ------------------------------------------------------------------
     # Rendering
@@ -2619,6 +2939,7 @@ class Game:
         'philosophy': (200, 200, 220),
         'grammar':    (220,  50,  50),
         'economics':  (160, 220,   0),
+        'theology':   (200, 170,  80),
     }
 
     @staticmethod
@@ -2654,8 +2975,8 @@ class Game:
         self.screen.blit(overlay, (0, 0))
 
         # ── Modal geometry ─────────────────────────────────────────────
-        bw = 860
-        PAD = 22
+        bw = min(1060, GAME_W - 40)
+        PAD = 24
 
         # Question text (wrapped) — calculate height first
         q_font    = self.font_md
@@ -2936,8 +3257,8 @@ class Game:
         overlay.fill((0, 0, 0, 150))
         self.screen.blit(overlay, (0, 0))
 
-        bw = 560
-        bh = min(80 + len(self.equip_menu_items) * 48 + 60, 500)
+        bw = min(560, GAME_W - 40)
+        bh = min(80 + len(self.equip_menu_items) * 48 + 60, 500, WINDOW_H - 40)
         bx = (GAME_W - bw) // 2
         by = (WINDOW_H - bh) // 2
 
@@ -3004,8 +3325,8 @@ class Game:
         overlay.fill((0, 0, 0, 150))
         self.screen.blit(overlay, (0, 0))
 
-        bw = 580
-        bh = min(90 + len(self.accessory_menu_items) * 52 + 50, 520)
+        bw = min(580, GAME_W - 40)
+        bh = min(90 + len(self.accessory_menu_items) * 52 + 50, 520, WINDOW_H - 40)
         bx = (GAME_W - bw) // 2
         by = (WINDOW_H - bh) // 2
 
@@ -3071,8 +3392,8 @@ class Game:
         overlay.fill((0, 0, 0, 150))
         self.screen.blit(overlay, (0, 0))
 
-        bw = 580
-        bh = min(90 + len(self.wand_menu_items) * 52 + 50, 520)
+        bw = min(580, GAME_W - 40)
+        bh = min(90 + len(self.wand_menu_items) * 52 + 50, 520, WINDOW_H - 40)
         bx = (GAME_W - bw) // 2
         by = (WINDOW_H - bh) // 2
 
@@ -3139,8 +3460,8 @@ class Game:
         overlay.fill((0, 0, 0, 150))
         self.screen.blit(overlay, (0, 0))
 
-        bw = 580
-        bh = min(90 + len(self.scroll_menu_items) * 52 + 50, 520)
+        bw = min(580, GAME_W - 40)
+        bh = min(90 + len(self.scroll_menu_items) * 52 + 50, 520, WINDOW_H - 40)
         bx = (GAME_W - bw) // 2
         by = (WINDOW_H - bh) // 2
 
@@ -3199,8 +3520,8 @@ class Game:
         overlay.fill((0, 0, 0, 150))
         self.screen.blit(overlay, (0, 0))
 
-        bw = 580
-        bh = min(90 + len(self.identify_menu_items) * 52 + 50, 520)
+        bw = min(580, GAME_W - 40)
+        bh = min(90 + len(self.identify_menu_items) * 52 + 50, 520, WINDOW_H - 40)
         bx = (GAME_W - bw) // 2
         by = (WINDOW_H - bh) // 2
 
@@ -3263,7 +3584,7 @@ class Game:
         row_h      = 52
         compound_header_h = 28 if n_compound else 0
         single_header_h   = 28 if n_single and n_compound else 0
-        bw = 620
+        bw = min(620, GAME_W - 40)
         bh = min(
             80 + compound_header_h + n_compound * row_h
                + single_header_h   + n_single   * row_h + 60,
@@ -3295,10 +3616,17 @@ class Game:
         # ── Compound (multi-ingredient) recipes ──────────────────────────
         if n_compound:
             self.screen.blit(
-                self.font_sm.render("COMPOUND RECIPES  (letter keys)", True, (255, 220, 80)),
+                self.font_sm.render("COMPOUND RECIPES  (letter keys — you have all ingredients!)", True, (255, 220, 80)),
                 (bx + 18, cy)
             )
             cy += compound_header_h
+        elif n_single:
+            hint = self.font_sm.render(
+                "Tip: collect multiple ingredients to unlock compound recipes with greater bonuses.",
+                True, (160, 140, 80)
+            )
+            self.screen.blit(hint, (bx + 18, cy))
+            cy += 22
             for i, recipe in enumerate(self.cook_compound_recipes[:6]):
                 iy = cy
                 pygame.draw.rect(
@@ -3315,8 +3643,11 @@ class Game:
                     self.font_md.render(recipe['name'], True, (180, 255, 140)),
                     (bx + 70, iy + 6)
                 )
-                # Ingredient list + SP
-                ing_list = ', '.join(recipe.get('ingredients', []))
+                # Ingredient list + SP — resolve IDs to display names
+                from food_system import _raw_ingredients as _ri
+                _ings = _ri()
+                def _ing_name(iid): return _ings.get(iid, {}).get('name', iid)
+                ing_list = ', '.join(_ing_name(iid) for iid in recipe.get('ingredients', []))
                 sp_val   = recipe.get('sp', 0)
                 bonus_label = _cook_menu_bonus_label(recipe)
                 detail = f"{ing_list}  |  {sp_val} SP  {bonus_label}"
@@ -3391,8 +3722,8 @@ class Game:
         overlay.fill((0, 0, 0, 150))
         self.screen.blit(overlay, (0, 0))
 
-        bw = 580
-        bh = min(90 + len(self.eat_menu_items) * 52 + 50, 540)
+        bw = min(580, GAME_W - 40)
+        bh = min(90 + len(self.eat_menu_items) * 52 + 50, 540, WINDOW_H - 40)
         bx = (GAME_W - bw) // 2
         by = (WINDOW_H - bh) // 2
 
@@ -3465,7 +3796,7 @@ class Game:
         overlay.fill((0, 0, 0, 160))
         self.screen.blit(overlay, (0, 0))
 
-        bw, bh = 500, 200
+        bw, bh = min(500, GAME_W - 40), 200
         bx = (GAME_W - bw) // 2
         by = (WINDOW_H - bh) // 2
 
@@ -3647,7 +3978,7 @@ class Game:
         overlay.fill((0, 0, 0, 200))
         self.screen.blit(overlay, (0, 0))
 
-        bw, bh = 820, 540
+        bw, bh = min(1000, GAME_W - 40), min(640, WINDOW_H - 40)
         bx = (GAME_W - bw) // 2
         by = (WINDOW_H - bh) // 2
 
@@ -3698,6 +4029,28 @@ class Game:
                     line += f"  \u2192 {eff} {int(atk.get('effect_chance',0)*100)}%"
                 stat_lines.append(line)
 
+            # ── Ingredient & recipe hints ─────────────────────────────────
+            from food_system import load_ingredient_for, get_recipes_for_ingredient
+            ing_id = subject.ingredient_id
+            if ing_id:
+                ing = load_ingredient_for(ing_id)
+                if ing:
+                    stat_lines.append(f"Ingredient: {ing.name}  (harvest with H)")
+                    # Best solo cook result
+                    best_solo = ing.recipes.get('5', ing.recipes.get('3', {}))
+                    if best_solo.get('name'):
+                        stat_lines.append(f"Solo cook: {best_solo['name']}  ({best_solo.get('sp',0)} SP)")
+                    # Compound recipes using this ingredient
+                    compound = get_recipes_for_ingredient(ing_id)
+                    if compound:
+                        stat_lines.append("Used in recipes:")
+                        for r in compound[:4]:
+                            stat_lines.append(f"  \u2022 {r['name']}  ({', '.join(r.get('ingredients', []))})")
+                        if len(compound) > 4:
+                            stat_lines.append(f"  \u2026 and {len(compound)-4} more")
+            else:
+                stat_lines.append("Ingredient: none (not harvestable)")
+
             lore_text = subject.lore or "No lore recorded."
 
         else:
@@ -3726,8 +4079,19 @@ class Game:
                     stat_lines.append("Two-handed  |  Reach: " + str(subject.reach))
                 else:
                     stat_lines.append(f"One-handed  |  Reach: {subject.reach}")
+                specials = []
                 if subject.stun_chance > 0:
-                    stat_lines.append(f"Stun Chance: {int(subject.stun_chance*100)}%")
+                    specials.append(f"Stun {int(subject.stun_chance*100)}%")
+                if subject.bleed_chance > 0:
+                    specials.append(f"Bleed {int(subject.bleed_chance*100)}%")
+                if subject.knockback:
+                    specials.append("Knockback")
+                if subject.ignore_shield:
+                    specials.append("Ignores Shield")
+                if subject.crit_multiplier > 1.0:
+                    specials.append(f"Perfect Chain Crit x{subject.crit_multiplier:.1f}")
+                if specials:
+                    stat_lines.append(f"Special: {',  '.join(specials)}")
                 if subject.requires_ammo:
                     stat_lines.append(f"Requires Ammo: {subject.requires_ammo}")
                 mults = subject.chain_multipliers
@@ -3786,7 +4150,7 @@ class Game:
         for line in stat_lines:
             surf = self.font_sm.render(line, True, stat_col)
             self.screen.blit(surf, (bx + 20, y))
-            y += 20
+            y += 22
 
         y += 4
         pygame.draw.line(self.screen, inner_col, (bx+20, y), (bx+bw-20, y))
@@ -3814,7 +4178,7 @@ class Game:
         overlay.fill((0, 0, 0, 195))
         self.screen.blit(overlay, (0, 0))
 
-        bw, bh = 860, 560
+        bw, bh = min(1060, GAME_W - 40), min(600, WINDOW_H - 40)
         bx = (GAME_W - bw) // 2
         by = (WINDOW_H - bh) // 2
 
@@ -3826,32 +4190,32 @@ class Game:
         title = self.font_lg.render("COMMAND REFERENCE", True, (255, 255, 85))
         self.screen.blit(title, (bx + (bw - title.get_width()) // 2, by + 14))
         pygame.draw.line(self.screen, (85, 85, 255),
-                         (bx + 20, by + 50), (bx + bw - 20, by + 50))
+                         (bx + 20, by + 56), (bx + bw - 20, by + 56))
 
         _COMMANDS = [
             # (key_label, description, color)
-            # --- Movement ---
             ("MOVEMENT", None, (170, 170, 255)),
-            ("Arrows / hjkl", "Move / attack monster by bumping",   (210, 210, 210)),
+            ("Arrows / hjkl",  "Move / attack",                      (210, 210, 210)),
             ("ACTIONS", None, (170, 170, 255)),
-            ("G  or  ,",       "Pick up item on ground",             (210, 210, 210)),
-            ("E",              "Equip weapon/armor (Geography quiz)",(210, 210, 210)),
-            ("R",              "Equip accessory (History quiz)",      (210, 210, 210)),
-            ("U",              "Use wand (Science quiz)",             (210, 210, 210)),
-            ("S",              "Read scroll (Grammar quiz)",          (210, 210, 210)),
-            ("I",              "Identify item (Philosophy quiz)",     (210, 210, 210)),
-            ("H",              "Harvest corpse (Animal quiz)",        (210, 210, 210)),
-            ("C",              "Cook ingredient (Cooking quiz)",      (210, 210, 210)),
-            ("Z",              "Eat food or raw ingredient",          (210, 210, 210)),
-            ("F",              "Fire ranged weapon (Math quiz)",      (210, 210, 210)),
-            ("P",              "Pick lock (Economics quiz)",          (210, 210, 210)),
-            ("A",              "Attack / force-open container",       (210, 210, 210)),
-            ("X",              "Examine corpse for lore (Philosophy quiz)",  (210, 210, 210)),
+            ("G  or  ,",       "Pick up item",                        (210, 210, 210)),
+            ("E",              "Equip weapon/armor  [Geography]",     (210, 210, 210)),
+            ("R",              "Equip accessory  [History]",          (210, 210, 210)),
+            ("U",              "Use wand  [Science]",                 (210, 210, 210)),
+            ("S",              "Read scroll  [Grammar]",              (210, 210, 210)),
+            ("I",              "Identify item  [Philosophy]",         (210, 210, 210)),
+            ("H",              "Harvest corpse  [Animal]",            (210, 210, 210)),
+            ("C",              "Cook ingredient  [Cooking]",          (210, 210, 210)),
+            ("Z",              "Eat food / raw ingredient",           (210, 210, 210)),
+            ("\\",             "Pray  [Theology]",                    (200, 180, 255)),
+            ("F",              "Fire ranged weapon  [Math]",          (210, 210, 210)),
+            ("P",              "Pick lock  [Economics]",              (210, 210, 210)),
+            ("A",              "Attack / open container",             (210, 210, 210)),
+            ("X",              "Examine corpse lore  [Philosophy]",   (210, 210, 210)),
             ("NAVIGATION", None, (170, 170, 255)),
             (">",              "Descend stairs",                      (210, 210, 210)),
-            ("<",              "Ascend stairs / exit dungeon",        (210, 210, 210)),
+            ("<",              "Ascend / exit dungeon",               (210, 210, 210)),
             ("QUIZ ANSWERS", None, (170, 170, 255)),
-            ("1 2 3 4",        "Answer quiz questions",               (255, 255, 85)),
+            ("1  2  3  4",     "Answer quiz questions",               (255, 255, 85)),
             ("MISC", None, (170, 170, 255)),
             ("?",              "This help screen",                    (210, 210, 210)),
             ("ESC",            "Cancel menu / quit game",             (210, 210, 210)),
@@ -3860,9 +4224,9 @@ class Game:
         col_w   = (bw - 40) // 2
         left_x  = bx + 20
         right_x = bx + 20 + col_w
-        y       = by + 60
-        line_h  = 20
-        col_break = 12   # switch to right column at this index
+        y       = by + 66
+        line_h  = 22
+        col_break = 12
 
         for idx, entry in enumerate(_COMMANDS):
             key_label, desc, color = entry
@@ -3870,14 +4234,13 @@ class Game:
             cy_ = y + (idx if idx < col_break else idx - col_break) * line_h
 
             if desc is None:
-                # Section header
                 hdr = self.font_sm.render(f"── {key_label} ──", True, color)
                 self.screen.blit(hdr, (cx_, cy_))
             else:
                 ksurf = self.font_sm.render(key_label, True, (255, 215, 60))
                 dsurf = self.font_sm.render(desc, True, color)
                 self.screen.blit(ksurf, (cx_, cy_))
-                self.screen.blit(dsurf, (cx_ + 130, cy_))
+                self.screen.blit(dsurf, (cx_ + 140, cy_))
 
         hint = self.font_sm.render("Press ESC or ? to close", True, (85, 85, 170))
         self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, by + bh - 28))
@@ -3888,16 +4251,32 @@ class Game:
 # ------------------------------------------------------------------
 
 def main():
+    from save_system import save_exists, load_game, save_game
+
     pygame.init()
-    screen = pygame.display.set_mode((WINDOW_W, WINDOW_H))
+    screen = pygame.display.set_mode((WINDOW_W, WINDOW_H), pygame.RESIZABLE)
     pygame.display.set_caption("Philosopher's Quest")
     clock = pygame.time.Clock()
 
-    # Welcome screen — get name and optional secret build
+    # Welcome screen — may return (None, None) if player chose Continue
     welcome = WelcomeScreen(screen)
     player_name, secret_build = welcome.run(clock)
 
-    game    = Game(screen, player_name=player_name, secret_build=secret_build)
+    if player_name is None:
+        # Load saved game
+        state = load_game()
+        if state:
+            game = Game(screen,
+                        player_name=state.get('player_name', 'Adventurer'),
+                        secret_build=state.get('secret_build'))
+            game.load_state(state)
+        else:
+            # Fallback: saved file was corrupted / missing — start fresh
+            game = Game(screen, player_name='Adventurer')
+            game.add_message("Save file could not be loaded — starting a new game.", 'warning')
+    else:
+        game = Game(screen, player_name=player_name, secret_build=secret_build)
+
     running = True
 
     while running:
@@ -3907,6 +4286,10 @@ def main():
                 running = False
         game.update(dt)
         game.render()
+
+    # Auto-save on clean exit if the game is still in progress
+    if game.state not in (STATE_DEAD, STATE_VICTORY):
+        save_game(game)
 
     pygame.quit()
     sys.exit()

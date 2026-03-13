@@ -1,596 +1,5502 @@
 [
   {
     "tier": 1,
+    "question": "What is the capital of the United States?",
+    "answer": "Washington, D.C.",
+    "choices": [
+      "New York City",
+      "Washington, D.C.",
+      "Los Angeles",
+      "Chicago"
+    ]
+  },
+  {
+    "tier": 1,
     "question": "What is the capital of France?",
     "answer": "Paris",
-    "choices": ["Lyon", "Paris", "Marseille", "Bordeaux"]
+    "choices": [
+      "Lyon",
+      "Marseille",
+      "Paris",
+      "Nice"
+    ]
   },
   {
     "tier": 1,
     "question": "What is the capital of Japan?",
     "answer": "Tokyo",
-    "choices": ["Osaka", "Kyoto", "Tokyo", "Hiroshima"]
+    "choices": [
+      "Osaka",
+      "Kyoto",
+      "Tokyo",
+      "Hiroshima"
+    ]
   },
   {
     "tier": 1,
     "question": "What is the capital of Australia?",
     "answer": "Canberra",
-    "choices": ["Sydney", "Melbourne", "Brisbane", "Canberra"]
-  },
-  {
-    "tier": 1,
-    "question": "What is the capital of Canada?",
-    "answer": "Ottawa",
-    "choices": ["Toronto", "Vancouver", "Ottawa", "Montreal"]
+    "choices": [
+      "Sydney",
+      "Melbourne",
+      "Canberra",
+      "Brisbane"
+    ]
   },
   {
     "tier": 1,
     "question": "What is the capital of Brazil?",
-    "answer": "Brasilia",
-    "choices": ["Rio de Janeiro", "Sao Paulo", "Brasilia", "Salvador"]
-  },
-  {
-    "tier": 1,
-    "question": "What is the capital of Germany?",
-    "answer": "Berlin",
-    "choices": ["Hamburg", "Munich", "Berlin", "Frankfurt"]
+    "answer": "Brasília",
+    "choices": [
+      "São Paulo",
+      "Rio de Janeiro",
+      "Brasília",
+      "Salvador"
+    ]
   },
   {
     "tier": 1,
     "question": "What is the capital of China?",
     "answer": "Beijing",
-    "choices": ["Shanghai", "Beijing", "Guangzhou", "Shenzhen"]
-  },
-  {
-    "tier": 1,
-    "question": "What is the capital of Mexico?",
-    "answer": "Mexico City",
-    "choices": ["Guadalajara", "Monterrey", "Mexico City", "Tijuana"]
-  },
-  {
-    "tier": 1,
-    "question": "What is the capital of Italy?",
-    "answer": "Rome",
-    "choices": ["Milan", "Venice", "Naples", "Rome"]
-  },
-  {
-    "tier": 1,
-    "question": "What is the capital of Egypt?",
-    "answer": "Cairo",
-    "choices": ["Alexandria", "Cairo", "Luxor", "Aswan"]
-  },
-  {
-    "tier": 1,
-    "question": "What is the capital of Argentina?",
-    "answer": "Buenos Aires",
-    "choices": ["Cordoba", "Rosario", "Buenos Aires", "Mendoza"]
-  },
-  {
-    "tier": 1,
-    "question": "What is the capital of India?",
-    "answer": "New Delhi",
-    "choices": ["Mumbai", "New Delhi", "Kolkata", "Bangalore"]
-  },
-  {
-    "tier": 1,
-    "question": "What is the capital of South Korea?",
-    "answer": "Seoul",
-    "choices": ["Busan", "Seoul", "Incheon", "Daegu"]
-  },
-  {
-    "tier": 1,
-    "question": "What is the capital of Spain?",
-    "answer": "Madrid",
-    "choices": ["Barcelona", "Valencia", "Madrid", "Seville"]
-  },
-  {
-    "tier": 1,
-    "question": "What is the capital of Kenya?",
-    "answer": "Nairobi",
-    "choices": ["Mombasa", "Nairobi", "Kisumu", "Nakuru"]
-  },
-  {
-    "tier": 1,
-    "question": "How many continents are there on Earth?",
-    "answer": "7",
-    "choices": ["5", "6", "7", "8"]
-  },
-  {
-    "tier": 1,
-    "question": "Which is the largest continent by area?",
-    "answer": "Asia",
-    "choices": ["Africa", "Asia", "North America", "Europe"]
-  },
-  {
-    "tier": 1,
-    "question": "What is the capital of Russia?",
-    "answer": "Moscow",
-    "choices": ["St. Petersburg", "Moscow", "Novosibirsk", "Kazan"]
+    "choices": [
+      "Shanghai",
+      "Beijing",
+      "Guangzhou",
+      "Shenzhen"
+    ]
   },
   {
     "tier": 1,
     "question": "What is the capital of the United Kingdom?",
     "answer": "London",
-    "choices": ["Edinburgh", "Manchester", "London", "Cardiff"]
+    "choices": [
+      "Manchester",
+      "Edinburgh",
+      "London",
+      "Birmingham"
+    ]
   },
   {
     "tier": 1,
-    "question": "What is the capital of the United States?",
-    "answer": "Washington, D.C.",
-    "choices": ["New York City", "Los Angeles", "Washington, D.C.", "Chicago"]
+    "question": "What is the capital of Germany?",
+    "answer": "Berlin",
+    "choices": [
+      "Munich",
+      "Hamburg",
+      "Berlin",
+      "Frankfurt"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Canada?",
+    "answer": "Ottawa",
+    "choices": [
+      "Toronto",
+      "Vancouver",
+      "Montreal",
+      "Ottawa"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Italy?",
+    "answer": "Rome",
+    "choices": [
+      "Milan",
+      "Rome",
+      "Naples",
+      "Venice"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Spain?",
+    "answer": "Madrid",
+    "choices": [
+      "Barcelona",
+      "Madrid",
+      "Seville",
+      "Valencia"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Russia?",
+    "answer": "Moscow",
+    "choices": [
+      "Saint Petersburg",
+      "Moscow",
+      "Novosibirsk",
+      "Kazan"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of India?",
+    "answer": "New Delhi",
+    "choices": [
+      "Mumbai",
+      "Kolkata",
+      "New Delhi",
+      "Chennai"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Mexico?",
+    "answer": "Mexico City",
+    "choices": [
+      "Guadalajara",
+      "Monterrey",
+      "Mexico City",
+      "Puebla"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of South Korea?",
+    "answer": "Seoul",
+    "choices": [
+      "Busan",
+      "Incheon",
+      "Seoul",
+      "Daegu"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "How many continents are there on Earth?",
+    "answer": "7",
+    "choices": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which continent is the largest by land area?",
+    "answer": "Asia",
+    "choices": [
+      "Africa",
+      "Asia",
+      "North America",
+      "Europe"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which continent is the smallest?",
+    "answer": "Australia",
+    "choices": [
+      "Europe",
+      "Antarctica",
+      "Australia",
+      "South America"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which continent contains the most countries?",
+    "answer": "Africa",
+    "choices": [
+      "Asia",
+      "Africa",
+      "Europe",
+      "South America"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "On which continent is Brazil located?",
+    "answer": "South America",
+    "choices": [
+      "North America",
+      "Africa",
+      "South America",
+      "Europe"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "How many oceans are there on Earth?",
+    "answer": "5",
+    "choices": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which is the largest ocean?",
+    "answer": "Pacific Ocean",
+    "choices": [
+      "Atlantic Ocean",
+      "Indian Ocean",
+      "Pacific Ocean",
+      "Arctic Ocean"
+    ]
   },
   {
     "tier": 1,
     "question": "Which ocean lies between Europe and North America?",
     "answer": "Atlantic Ocean",
-    "choices": ["Pacific Ocean", "Indian Ocean", "Atlantic Ocean", "Arctic Ocean"]
+    "choices": [
+      "Pacific Ocean",
+      "Atlantic Ocean",
+      "Indian Ocean",
+      "Arctic Ocean"
+    ]
   },
   {
     "tier": 1,
-    "question": "On which continent is Nigeria located?",
-    "answer": "Africa",
-    "choices": ["South America", "Asia", "Africa", "Europe"]
+    "question": "Which is the smallest ocean?",
+    "answer": "Arctic Ocean",
+    "choices": [
+      "Southern Ocean",
+      "Arctic Ocean",
+      "Indian Ocean",
+      "Atlantic Ocean"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which ocean surrounds Antarctica?",
+    "answer": "Southern Ocean",
+    "choices": [
+      "Indian Ocean",
+      "Pacific Ocean",
+      "Southern Ocean",
+      "Arctic Ocean"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which direction does the sun rise from?",
+    "answer": "East",
+    "choices": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which is the largest country in the world by area?",
+    "answer": "Russia",
+    "choices": [
+      "China",
+      "United States",
+      "Canada",
+      "Russia"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which is the most populous country in the world?",
+    "answer": "India",
+    "choices": [
+      "China",
+      "India",
+      "United States",
+      "Indonesia"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Egypt?",
+    "answer": "Cairo",
+    "choices": [
+      "Alexandria",
+      "Cairo",
+      "Luxor",
+      "Aswan"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Argentina?",
+    "answer": "Buenos Aires",
+    "choices": [
+      "Córdoba",
+      "Rosario",
+      "Buenos Aires",
+      "Mendoza"
+    ]
   },
   {
     "tier": 1,
     "question": "What is the capital of South Africa?",
     "answer": "Pretoria",
-    "choices": ["Cape Town", "Johannesburg", "Pretoria", "Durban"]
+    "choices": [
+      "Cape Town",
+      "Johannesburg",
+      "Pretoria",
+      "Durban"
+    ]
   },
   {
     "tier": 1,
     "question": "What is the capital of Turkey?",
     "answer": "Ankara",
-    "choices": ["Istanbul", "Ankara", "Izmir", "Bursa"]
+    "choices": [
+      "Istanbul",
+      "Izmir",
+      "Ankara",
+      "Bursa"
+    ]
   },
   {
     "tier": 1,
     "question": "What is the capital of Saudi Arabia?",
     "answer": "Riyadh",
-    "choices": ["Jeddah", "Riyadh", "Mecca", "Medina"]
+    "choices": [
+      "Jeddah",
+      "Mecca",
+      "Riyadh",
+      "Medina"
+    ]
   },
   {
-    "tier": 2,
-    "question": "What is the longest river in the world?",
+    "tier": 1,
+    "question": "What is the capital of Nigeria?",
+    "answer": "Abuja",
+    "choices": [
+      "Lagos",
+      "Kano",
+      "Abuja",
+      "Ibadan"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Indonesia?",
+    "answer": "Jakarta",
+    "choices": [
+      "Surabaya",
+      "Bandung",
+      "Jakarta",
+      "Medan"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Pakistan?",
+    "answer": "Islamabad",
+    "choices": [
+      "Karachi",
+      "Lahore",
+      "Islamabad",
+      "Peshawar"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Greece?",
+    "answer": "Athens",
+    "choices": [
+      "Thessaloniki",
+      "Athens",
+      "Patras",
+      "Heraklion"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of the Netherlands?",
+    "answer": "Amsterdam",
+    "choices": [
+      "Rotterdam",
+      "Amsterdam",
+      "The Hague",
+      "Utrecht"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Sweden?",
+    "answer": "Stockholm",
+    "choices": [
+      "Gothenburg",
+      "Malmö",
+      "Stockholm",
+      "Uppsala"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Norway?",
+    "answer": "Oslo",
+    "choices": [
+      "Bergen",
+      "Oslo",
+      "Trondheim",
+      "Stavanger"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Poland?",
+    "answer": "Warsaw",
+    "choices": [
+      "Krakow",
+      "Warsaw",
+      "Gdansk",
+      "Wroclaw"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Ukraine?",
+    "answer": "Kyiv",
+    "choices": [
+      "Kharkiv",
+      "Kyiv",
+      "Odessa",
+      "Lviv"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Portugal?",
+    "answer": "Lisbon",
+    "choices": [
+      "Porto",
+      "Lisbon",
+      "Braga",
+      "Faro"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Switzerland?",
+    "answer": "Bern",
+    "choices": [
+      "Zurich",
+      "Geneva",
+      "Bern",
+      "Basel"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Belgium?",
+    "answer": "Brussels",
+    "choices": [
+      "Antwerp",
+      "Brussels",
+      "Ghent",
+      "Bruges"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Austria?",
+    "answer": "Vienna",
+    "choices": [
+      "Salzburg",
+      "Vienna",
+      "Graz",
+      "Innsbruck"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "On which continent is Kenya located?",
+    "answer": "Africa",
+    "choices": [
+      "Asia",
+      "Africa",
+      "South America",
+      "Europe"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "On which continent is Canada located?",
+    "answer": "North America",
+    "choices": [
+      "South America",
+      "Europe",
+      "North America",
+      "Asia"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which is the longest river in the world?",
     "answer": "Nile",
-    "choices": ["Amazon", "Yangtze", "Nile", "Mississippi"]
+    "choices": [
+      "Amazon",
+      "Nile",
+      "Mississippi",
+      "Yangtze"
+    ]
   },
   {
-    "tier": 2,
-    "question": "What mountain range runs through the western United States?",
-    "answer": "Rocky Mountains",
-    "choices": ["Appalachian Mountains", "Sierra Nevada", "Rocky Mountains", "Cascade Range"]
+    "tier": 1,
+    "question": "What is the capital of New Zealand?",
+    "answer": "Wellington",
+    "choices": [
+      "Auckland",
+      "Wellington",
+      "Christchurch",
+      "Hamilton"
+    ]
   },
   {
-    "tier": 2,
-    "question": "What is the largest ocean on Earth?",
-    "answer": "Pacific Ocean",
-    "choices": ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"]
-  },
-  {
-    "tier": 2,
+    "tier": 1,
     "question": "What is the capital of Thailand?",
     "answer": "Bangkok",
-    "choices": ["Phuket", "Chiang Mai", "Bangkok", "Pattaya"]
+    "choices": [
+      "Chiang Mai",
+      "Bangkok",
+      "Pattaya",
+      "Phuket"
+    ]
   },
   {
-    "tier": 2,
-    "question": "What is the largest desert in the world?",
+    "tier": 1,
+    "question": "What is the capital of Kenya?",
+    "answer": "Nairobi",
+    "choices": [
+      "Mombasa",
+      "Nairobi",
+      "Kisumu",
+      "Nakuru"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Chile?",
+    "answer": "Santiago",
+    "choices": [
+      "Valparaíso",
+      "Santiago",
+      "Concepción",
+      "Antofagasta"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Peru?",
+    "answer": "Lima",
+    "choices": [
+      "Cusco",
+      "Lima",
+      "Arequipa",
+      "Trujillo"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Colombia?",
+    "answer": "Bogotá",
+    "choices": [
+      "Medellín",
+      "Cali",
+      "Bogotá",
+      "Cartagena"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Venezuela?",
+    "answer": "Caracas",
+    "choices": [
+      "Maracaibo",
+      "Valencia",
+      "Caracas",
+      "Barquisimeto"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Cuba?",
+    "answer": "Havana",
+    "choices": [
+      "Santiago de Cuba",
+      "Havana",
+      "Camagüey",
+      "Holguín"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Iran?",
+    "answer": "Tehran",
+    "choices": [
+      "Isfahan",
+      "Mashhad",
+      "Tehran",
+      "Tabriz"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Iraq?",
+    "answer": "Baghdad",
+    "choices": [
+      "Basra",
+      "Mosul",
+      "Baghdad",
+      "Erbil"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Israel?",
+    "answer": "Jerusalem",
+    "choices": [
+      "Tel Aviv",
+      "Haifa",
+      "Jerusalem",
+      "Beersheba"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Ethiopia?",
+    "answer": "Addis Ababa",
+    "choices": [
+      "Dire Dawa",
+      "Gondar",
+      "Addis Ababa",
+      "Mekelle"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Morocco?",
+    "answer": "Rabat",
+    "choices": [
+      "Casablanca",
+      "Marrakech",
+      "Rabat",
+      "Fez"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Ghana?",
+    "answer": "Accra",
+    "choices": [
+      "Kumasi",
+      "Accra",
+      "Tamale",
+      "Sekondi"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Tanzania?",
+    "answer": "Dodoma",
+    "choices": [
+      "Dar es Salaam",
+      "Dodoma",
+      "Mwanza",
+      "Arusha"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Denmark?",
+    "answer": "Copenhagen",
+    "choices": [
+      "Aarhus",
+      "Odense",
+      "Copenhagen",
+      "Aalborg"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Finland?",
+    "answer": "Helsinki",
+    "choices": [
+      "Tampere",
+      "Helsinki",
+      "Espoo",
+      "Turku"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Czech Republic?",
+    "answer": "Prague",
+    "choices": [
+      "Brno",
+      "Prague",
+      "Ostrava",
+      "Pilsen"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Hungary?",
+    "answer": "Budapest",
+    "choices": [
+      "Debrecen",
+      "Budapest",
+      "Miskolc",
+      "Pécs"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Romania?",
+    "answer": "Bucharest",
+    "choices": [
+      "Cluj-Napoca",
+      "Bucharest",
+      "Timișoara",
+      "Iași"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of the Philippines?",
+    "answer": "Manila",
+    "choices": [
+      "Cebu City",
+      "Davao",
+      "Manila",
+      "Quezon City"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Malaysia?",
+    "answer": "Kuala Lumpur",
+    "choices": [
+      "George Town",
+      "Johor Bahru",
+      "Kuala Lumpur",
+      "Ipoh"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Bangladesh?",
+    "answer": "Dhaka",
+    "choices": [
+      "Chittagong",
+      "Dhaka",
+      "Sylhet",
+      "Rajshahi"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Vietnam?",
+    "answer": "Hanoi",
+    "choices": [
+      "Ho Chi Minh City",
+      "Da Nang",
+      "Hanoi",
+      "Can Tho"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Sri Lanka?",
+    "answer": "Colombo",
+    "choices": [
+      "Kandy",
+      "Colombo",
+      "Galle",
+      "Jaffna"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which is the largest desert in the world?",
     "answer": "Sahara",
-    "choices": ["Gobi", "Arabian", "Sahara", "Patagonian"]
+    "choices": [
+      "Arabian Desert",
+      "Sahara",
+      "Gobi Desert",
+      "Australian Outback"
+    ]
   },
   {
-    "tier": 2,
-    "question": "On which continent is the Amazon River?",
+    "tier": 1,
+    "question": "Which country is the largest in Africa by area?",
+    "answer": "Algeria",
+    "choices": [
+      "Sudan",
+      "Democratic Republic of Congo",
+      "Algeria",
+      "Libya"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Zimbabwe?",
+    "answer": "Harare",
+    "choices": [
+      "Bulawayo",
+      "Harare",
+      "Mutare",
+      "Gweru"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Zambia?",
+    "answer": "Lusaka",
+    "choices": [
+      "Ndola",
+      "Lusaka",
+      "Kitwe",
+      "Livingstone"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Uganda?",
+    "answer": "Kampala",
+    "choices": [
+      "Entebbe",
+      "Gulu",
+      "Kampala",
+      "Jinja"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Algeria?",
+    "answer": "Algiers",
+    "choices": [
+      "Oran",
+      "Constantine",
+      "Algiers",
+      "Annaba"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Ireland?",
+    "answer": "Dublin",
+    "choices": [
+      "Cork",
+      "Galway",
+      "Dublin",
+      "Limerick"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Serbia?",
+    "answer": "Belgrade",
+    "choices": [
+      "Novi Sad",
+      "Belgrade",
+      "Niš",
+      "Kragujevac"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Croatia?",
+    "answer": "Zagreb",
+    "choices": [
+      "Split",
+      "Zagreb",
+      "Rijeka",
+      "Osijek"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Slovakia?",
+    "answer": "Bratislava",
+    "choices": [
+      "Košice",
+      "Bratislava",
+      "Prešov",
+      "Žilina"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Bulgaria?",
+    "answer": "Sofia",
+    "choices": [
+      "Plovdiv",
+      "Sofia",
+      "Varna",
+      "Burgas"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Ecuador?",
+    "answer": "Quito",
+    "choices": [
+      "Guayaquil",
+      "Quito",
+      "Cuenca",
+      "Manta"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Bolivia?",
+    "answer": "Sucre",
+    "choices": [
+      "La Paz",
+      "Sucre",
+      "Cochabamba",
+      "Santa Cruz"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Paraguay?",
+    "answer": "Asunción",
+    "choices": [
+      "Ciudad del Este",
+      "Asunción",
+      "Encarnación",
+      "San Lorenzo"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Uruguay?",
+    "answer": "Montevideo",
+    "choices": [
+      "Salto",
+      "Paysandú",
+      "Montevideo",
+      "Maldonado"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Nepal?",
+    "answer": "Kathmandu",
+    "choices": [
+      "Pokhara",
+      "Kathmandu",
+      "Lalitpur",
+      "Biratnagar"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Afghanistan?",
+    "answer": "Kabul",
+    "choices": [
+      "Kandahar",
+      "Herat",
+      "Kabul",
+      "Mazar-i-Sharif"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Jordan?",
+    "answer": "Amman",
+    "choices": [
+      "Zarqa",
+      "Irbid",
+      "Amman",
+      "Aqaba"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Lebanon?",
+    "answer": "Beirut",
+    "choices": [
+      "Tripoli",
+      "Sidon",
+      "Beirut",
+      "Tyre"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Syria?",
+    "answer": "Damascus",
+    "choices": [
+      "Aleppo",
+      "Homs",
+      "Damascus",
+      "Latakia"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Libya?",
+    "answer": "Tripoli",
+    "choices": [
+      "Benghazi",
+      "Tripoli",
+      "Misrata",
+      "Tobruk"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Tunisia?",
+    "answer": "Tunis",
+    "choices": [
+      "Sfax",
+      "Sousse",
+      "Tunis",
+      "Kairouan"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which continent is Antarctica closest to?",
     "answer": "South America",
-    "choices": ["Africa", "Asia", "North America", "South America"]
+    "choices": [
+      "Africa",
+      "Australia",
+      "South America",
+      "Europe"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Myanmar?",
+    "answer": "Naypyidaw",
+    "choices": [
+      "Yangon",
+      "Mandalay",
+      "Naypyidaw",
+      "Mawlamyine"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital of Singapore?",
+    "answer": "Singapore",
+    "choices": [
+      "Kuala Lumpur",
+      "Jakarta",
+      "Singapore",
+      "Manila"
+    ]
   },
   {
     "tier": 2,
-    "question": "What mountain range separates Europe from Asia?",
-    "answer": "Ural Mountains",
-    "choices": ["Alps", "Carpathians", "Ural Mountains", "Caucasus Mountains"]
+    "question": "What is the capital of Albania?",
+    "answer": "Tirana",
+    "choices": [
+      "Durrës",
+      "Tirana",
+      "Shkodër",
+      "Vlorë"
+    ]
   },
   {
     "tier": 2,
-    "question": "Which river is the longest in Africa?",
+    "question": "What is the capital of Belarus?",
+    "answer": "Minsk",
+    "choices": [
+      "Brest",
+      "Grodno",
+      "Minsk",
+      "Vitebsk"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the capital of Bosnia and Herzegovina?",
+    "answer": "Sarajevo",
+    "choices": [
+      "Banja Luka",
+      "Sarajevo",
+      "Tuzla",
+      "Mostar"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the capital of Cambodia?",
+    "answer": "Phnom Penh",
+    "choices": [
+      "Siem Reap",
+      "Phnom Penh",
+      "Battambang",
+      "Sihanoukville"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the capital of Cyprus?",
+    "answer": "Nicosia",
+    "choices": [
+      "Limassol",
+      "Nicosia",
+      "Larnaca",
+      "Paphos"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the capital of Estonia?",
+    "answer": "Tallinn",
+    "choices": [
+      "Tartu",
+      "Tallinn",
+      "Narva",
+      "Pärnu"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the capital of Georgia (country)?",
+    "answer": "Tbilisi",
+    "choices": [
+      "Kutaisi",
+      "Batumi",
+      "Tbilisi",
+      "Rustavi"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the capital of Guatemala?",
+    "answer": "Guatemala City",
+    "choices": [
+      "Quetzaltenango",
+      "Escuintla",
+      "Guatemala City",
+      "Mixco"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the capital of Honduras?",
+    "answer": "Tegucigalpa",
+    "choices": [
+      "San Pedro Sula",
+      "Tegucigalpa",
+      "Choloma",
+      "La Ceiba"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the capital of Iceland?",
+    "answer": "Reykjavik",
+    "choices": [
+      "Akureyri",
+      "Kópavogur",
+      "Reykjavik",
+      "Hafnarfjörður"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the capital of Latvia?",
+    "answer": "Riga",
+    "choices": [
+      "Daugavpils",
+      "Jelgava",
+      "Riga",
+      "Liepāja"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the capital of Lithuania?",
+    "answer": "Vilnius",
+    "choices": [
+      "Kaunas",
+      "Klaipėda",
+      "Vilnius",
+      "Šiauliai"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the capital of Luxembourg?",
+    "answer": "Luxembourg City",
+    "choices": [
+      "Esch-sur-Alzette",
+      "Luxembourg City",
+      "Differdange",
+      "Dudelange"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the capital of Moldova?",
+    "answer": "Chișinău",
+    "choices": [
+      "Tiraspol",
+      "Bălți",
+      "Chișinău",
+      "Tighina"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the capital of Mongolia?",
+    "answer": "Ulaanbaatar",
+    "choices": [
+      "Darkhan",
+      "Erdenet",
+      "Ulaanbaatar",
+      "Choibalsan"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the capital of Nicaragua?",
+    "answer": "Managua",
+    "choices": [
+      "León",
+      "Granada",
+      "Managua",
+      "Masaya"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the capital of Panama?",
+    "answer": "Panama City",
+    "choices": [
+      "Colón",
+      "David",
+      "Panama City",
+      "La Chorrera"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the capital of Slovenia?",
+    "answer": "Ljubljana",
+    "choices": [
+      "Maribor",
+      "Ljubljana",
+      "Celje",
+      "Kranj"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the capital of Uzbekistan?",
+    "answer": "Tashkent",
+    "choices": [
+      "Samarkand",
+      "Namangan",
+      "Tashkent",
+      "Andijan"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which river is the longest in South America?",
+    "answer": "Amazon",
+    "choices": [
+      "Paraná",
+      "Amazon",
+      "Orinoco",
+      "São Francisco"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which river flows through Egypt?",
     "answer": "Nile",
-    "choices": ["Nile", "Congo", "Niger", "Zambezi"]
+    "choices": [
+      "Congo",
+      "Niger",
+      "Nile",
+      "Zambezi"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which river flows through Germany and empties into the North Sea?",
+    "answer": "Rhine",
+    "choices": [
+      "Danube",
+      "Rhine",
+      "Elbe",
+      "Oder"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which mountain range runs along the western coast of South America?",
+    "answer": "Andes",
+    "choices": [
+      "Rockies",
+      "Appalachians",
+      "Andes",
+      "Serra do Mar"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which mountain range separates Europe from Asia?",
+    "answer": "Ural Mountains",
+    "choices": [
+      "Caucasus Mountains",
+      "Alps",
+      "Ural Mountains",
+      "Carpathians"
+    ]
   },
   {
     "tier": 2,
     "question": "Which mountain range contains Mount Everest?",
     "answer": "Himalayas",
-    "choices": ["Karakoram", "Hindu Kush", "Himalayas", "Tian Shan"]
+    "choices": [
+      "Karakoram",
+      "Hindu Kush",
+      "Himalayas",
+      "Tian Shan"
+    ]
   },
   {
     "tier": 2,
-    "question": "What is the largest country in South America by area?",
-    "answer": "Brazil",
-    "choices": ["Argentina", "Peru", "Brazil", "Colombia"]
+    "question": "What is the capital of Texas?",
+    "answer": "Austin",
+    "choices": [
+      "Houston",
+      "Dallas",
+      "Austin",
+      "San Antonio"
+    ]
   },
   {
     "tier": 2,
-    "question": "Which body of water separates Asia from North America at its narrowest point?",
-    "answer": "Bering Strait",
-    "choices": ["Strait of Malacca", "Bering Strait", "Davis Strait", "Luzon Strait"]
+    "question": "What is the capital of California?",
+    "answer": "Sacramento",
+    "choices": [
+      "Los Angeles",
+      "San Francisco",
+      "Sacramento",
+      "San Diego"
+    ]
   },
   {
     "tier": 2,
-    "question": "What is the largest country in Africa by area?",
-    "answer": "Algeria",
-    "choices": ["Sudan", "Libya", "Algeria", "Democratic Republic of the Congo"]
+    "question": "What is the capital of New York State?",
+    "answer": "Albany",
+    "choices": [
+      "New York City",
+      "Buffalo",
+      "Albany",
+      "Rochester"
+    ]
   },
   {
     "tier": 2,
-    "question": "The Alps mountain range is located primarily in which continent?",
-    "answer": "Europe",
-    "choices": ["Asia", "South America", "North America", "Europe"]
+    "question": "What is the capital of Florida?",
+    "answer": "Tallahassee",
+    "choices": [
+      "Miami",
+      "Orlando",
+      "Tallahassee",
+      "Tampa"
+    ]
   },
   {
     "tier": 2,
-    "question": "What is the largest lake in Africa?",
-    "answer": "Lake Victoria",
-    "choices": ["Lake Tanganyika", "Lake Malawi", "Lake Victoria", "Lake Chad"]
+    "question": "What is the capital of Illinois?",
+    "answer": "Springfield",
+    "choices": [
+      "Chicago",
+      "Rockford",
+      "Springfield",
+      "Peoria"
+    ]
   },
   {
     "tier": 2,
-    "question": "What river runs through Egypt?",
-    "answer": "Nile",
-    "choices": ["Congo", "Niger", "Nile", "Zambezi"]
+    "question": "What is the capital of Ohio?",
+    "answer": "Columbus",
+    "choices": [
+      "Cleveland",
+      "Cincinnati",
+      "Columbus",
+      "Akron"
+    ]
   },
   {
     "tier": 2,
-    "question": "Which country shares the longest land border with the United States?",
-    "answer": "Canada",
-    "choices": ["Mexico", "Canada", "Cuba", "Greenland"]
+    "question": "What is the capital of Pennsylvania?",
+    "answer": "Harrisburg",
+    "choices": [
+      "Philadelphia",
+      "Pittsburgh",
+      "Harrisburg",
+      "Allentown"
+    ]
   },
   {
     "tier": 2,
-    "question": "What is the name of the sea between Italy and the Balkans?",
-    "answer": "Adriatic Sea",
-    "choices": ["Aegean Sea", "Ionian Sea", "Adriatic Sea", "Tyrrhenian Sea"]
+    "question": "What is the capital of Massachusetts?",
+    "answer": "Boston",
+    "choices": [
+      "Worcester",
+      "Springfield",
+      "Boston",
+      "Cambridge"
+    ]
   },
   {
     "tier": 2,
-    "question": "On which continent is the Sahara Desert located?",
-    "answer": "Africa",
-    "choices": ["Asia", "Australia", "Africa", "South America"]
+    "question": "What is the capital of the US state of Georgia?",
+    "answer": "Atlanta",
+    "choices": [
+      "Savannah",
+      "Augusta",
+      "Atlanta",
+      "Macon"
+    ]
   },
   {
     "tier": 2,
-    "question": "Which country borders Germany to the east?",
-    "answer": "Poland",
-    "choices": ["Czech Republic", "Austria", "Poland", "Slovakia"]
+    "question": "What is the capital of Michigan?",
+    "answer": "Lansing",
+    "choices": [
+      "Detroit",
+      "Grand Rapids",
+      "Lansing",
+      "Flint"
+    ]
   },
   {
-    "tier": 3,
-    "question": "What strait separates Europe from Africa?",
-    "answer": "Strait of Gibraltar",
-    "choices": ["Strait of Hormuz", "Strait of Malacca", "Strait of Gibraltar", "Bering Strait"]
+    "tier": 2,
+    "question": "What is the capital of Colorado?",
+    "answer": "Denver",
+    "choices": [
+      "Colorado Springs",
+      "Aurora",
+      "Denver",
+      "Boulder"
+    ]
   },
   {
-    "tier": 3,
-    "question": "What is the capital of Kazakhstan?",
-    "answer": "Astana",
-    "choices": ["Almaty", "Astana", "Shymkent", "Aktobe"]
+    "tier": 2,
+    "question": "What is the capital of Washington State?",
+    "answer": "Olympia",
+    "choices": [
+      "Seattle",
+      "Spokane",
+      "Olympia",
+      "Tacoma"
+    ]
   },
   {
-    "tier": 3,
-    "question": "What is the capital of Myanmar?",
-    "answer": "Naypyidaw",
-    "choices": ["Rangoon", "Yangon", "Mandalay", "Naypyidaw"]
+    "tier": 2,
+    "question": "What is the capital of Arizona?",
+    "answer": "Phoenix",
+    "choices": [
+      "Tucson",
+      "Mesa",
+      "Phoenix",
+      "Scottsdale"
+    ]
   },
   {
-    "tier": 3,
-    "question": "What is the deepest lake in the world?",
-    "answer": "Lake Baikal",
-    "choices": ["Lake Superior", "Caspian Sea", "Lake Baikal", "Lake Tanganyika"]
+    "tier": 2,
+    "question": "What is the capital of Virginia?",
+    "answer": "Richmond",
+    "choices": [
+      "Virginia Beach",
+      "Norfolk",
+      "Richmond",
+      "Chesapeake"
+    ]
   },
   {
-    "tier": 3,
-    "question": "What country has the most time zones?",
-    "answer": "France",
-    "choices": ["Russia", "United States", "China", "France"]
+    "tier": 2,
+    "question": "What is the capital of North Carolina?",
+    "answer": "Raleigh",
+    "choices": [
+      "Charlotte",
+      "Greensboro",
+      "Raleigh",
+      "Durham"
+    ]
   },
   {
-    "tier": 3,
-    "question": "Which country has the most land borders?",
-    "answer": "China",
-    "choices": ["China", "Russia", "Brazil", "Germany"]
+    "tier": 2,
+    "question": "Which US state is the largest by area?",
+    "answer": "Alaska",
+    "choices": [
+      "Texas",
+      "California",
+      "Alaska",
+      "Montana"
+    ]
   },
   {
-    "tier": 3,
-    "question": "What is the largest island in the world?",
-    "answer": "Greenland",
-    "choices": ["Australia", "New Guinea", "Greenland", "Borneo"]
+    "tier": 2,
+    "question": "Which US state is the smallest by area?",
+    "answer": "Rhode Island",
+    "choices": [
+      "Delaware",
+      "Connecticut",
+      "Rhode Island",
+      "New Jersey"
+    ]
   },
   {
-    "tier": 3,
+    "tier": 2,
     "question": "Which country has the longest coastline in the world?",
     "answer": "Canada",
-    "choices": ["Russia", "Indonesia", "Norway", "Canada"]
+    "choices": [
+      "Russia",
+      "Australia",
+      "Canada",
+      "Norway"
+    ]
   },
   {
-    "tier": 3,
-    "question": "What is the smallest country in the world by area?",
-    "answer": "Vatican City",
-    "choices": ["Monaco", "Nauru", "Vatican City", "San Marino"]
+    "tier": 2,
+    "question": "Which is the deepest lake in the world?",
+    "answer": "Lake Baikal",
+    "choices": [
+      "Lake Tanganyika",
+      "Lake Baikal",
+      "Caspian Sea",
+      "Lake Superior"
+    ]
   },
   {
-    "tier": 3,
-    "question": "At what latitude is the Tropic of Cancer located?",
-    "answer": "23.5 degrees North",
-    "choices": ["0 degrees", "23.5 degrees North", "66.5 degrees North", "23.5 degrees South"]
+    "tier": 2,
+    "question": "Which is the largest lake in Africa?",
+    "answer": "Lake Victoria",
+    "choices": [
+      "Lake Tanganyika",
+      "Lake Malawi",
+      "Lake Victoria",
+      "Lake Turkana"
+    ]
   },
   {
-    "tier": 3,
-    "question": "Which country has the largest population in the world?",
-    "answer": "India",
-    "choices": ["China", "India", "United States", "Indonesia"]
+    "tier": 2,
+    "question": "What is the capital of the Democratic Republic of Congo?",
+    "answer": "Kinshasa",
+    "choices": [
+      "Lubumbashi",
+      "Kinshasa",
+      "Mbuji-Mayi",
+      "Kisangani"
+    ]
   },
   {
-    "tier": 3,
-    "question": "Which ocean island nation is the world's largest archipelago state?",
-    "answer": "Indonesia",
-    "choices": ["Philippines", "Japan", "Indonesia", "Maldives"]
+    "tier": 2,
+    "question": "What is the capital of Cameroon?",
+    "answer": "Yaoundé",
+    "choices": [
+      "Douala",
+      "Yaoundé",
+      "Bamenda",
+      "Garoua"
+    ]
   },
   {
-    "tier": 3,
-    "question": "What is the capital of New Zealand?",
-    "answer": "Wellington",
-    "choices": ["Auckland", "Christchurch", "Wellington", "Dunedin"]
+    "tier": 2,
+    "question": "What is the capital of Senegal?",
+    "answer": "Dakar",
+    "choices": [
+      "Thiès",
+      "Kaolack",
+      "Dakar",
+      "Saint-Louis"
+    ]
   },
   {
-    "tier": 3,
-    "question": "Which African country has the most populous city on the continent?",
-    "answer": "Nigeria",
-    "choices": ["Egypt", "Ethiopia", "Nigeria", "Democratic Republic of the Congo"]
+    "tier": 2,
+    "question": "What is the capital of Sudan?",
+    "answer": "Khartoum",
+    "choices": [
+      "Omdurman",
+      "Khartoum",
+      "Port Sudan",
+      "Kassala"
+    ]
   },
   {
-    "tier": 3,
-    "question": "What is the approximate population of the world (as of 2024)?",
-    "answer": "8 billion",
-    "choices": ["6 billion", "7 billion", "8 billion", "9 billion"]
+    "tier": 2,
+    "question": "What is the capital of Angola?",
+    "answer": "Luanda",
+    "choices": [
+      "Huambo",
+      "Lubango",
+      "Luanda",
+      "Benguela"
+    ]
   },
   {
-    "tier": 3,
-    "question": "Which country is the largest by area in the world?",
-    "answer": "Russia",
-    "choices": ["Canada", "United States", "China", "Russia"]
+    "tier": 2,
+    "question": "What is the capital of Mozambique?",
+    "answer": "Maputo",
+    "choices": [
+      "Beira",
+      "Nampula",
+      "Maputo",
+      "Quelimane"
+    ]
   },
   {
-    "tier": 3,
-    "question": "What is the highest mountain in the Americas?",
+    "tier": 2,
+    "question": "What is the capital of Ivory Coast (Côte d'Ivoire)?",
+    "answer": "Yamoussoukro",
+    "choices": [
+      "Abidjan",
+      "Yamoussoukro",
+      "Bouaké",
+      "Daloa"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the capital of Haiti?",
+    "answer": "Port-au-Prince",
+    "choices": [
+      "Cap-Haïtien",
+      "Port-au-Prince",
+      "Gonaïves",
+      "Les Cayes"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the capital of Jamaica?",
+    "answer": "Kingston",
+    "choices": [
+      "Montego Bay",
+      "Kingston",
+      "Spanish Town",
+      "Portmore"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the capital of Costa Rica?",
+    "answer": "San José",
+    "choices": [
+      "Cartago",
+      "San José",
+      "Liberia",
+      "Alajuela"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the capital of El Salvador?",
+    "answer": "San Salvador",
+    "choices": [
+      "Santa Ana",
+      "San Salvador",
+      "Soyapango",
+      "San Miguel"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the capital of Laos?",
+    "answer": "Vientiane",
+    "choices": [
+      "Luang Prabang",
+      "Vientiane",
+      "Savannakhet",
+      "Pakse"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the capital of Kyrgyzstan?",
+    "answer": "Bishkek",
+    "choices": [
+      "Osh",
+      "Jalal-Abad",
+      "Bishkek",
+      "Karakol"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the capital of Tajikistan?",
+    "answer": "Dushanbe",
+    "choices": [
+      "Khujand",
+      "Dushanbe",
+      "Kulob",
+      "Qurghonteppa"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the capital of Turkmenistan?",
+    "answer": "Ashgabat",
+    "choices": [
+      "Türkmenabat",
+      "Ashgabat",
+      "Mary",
+      "Daşoguz"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which is the highest mountain in Africa?",
+    "answer": "Mount Kilimanjaro",
+    "choices": [
+      "Mount Kenya",
+      "Mount Kilimanjaro",
+      "Mount Stanley",
+      "Ras Dejen"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which is the highest mountain in the Americas?",
     "answer": "Aconcagua",
-    "choices": ["Denali", "Mount Logan", "Aconcagua", "Chimborazo"]
+    "choices": [
+      "Denali",
+      "Mount Logan",
+      "Aconcagua",
+      "Mount Whitney"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which country is known as the Land of the Rising Sun?",
+    "answer": "Japan",
+    "choices": [
+      "China",
+      "South Korea",
+      "Japan",
+      "Vietnam"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the capital of Armenia?",
+    "answer": "Yerevan",
+    "choices": [
+      "Gyumri",
+      "Vanadzor",
+      "Yerevan",
+      "Vagharshapat"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the capital of Azerbaijan?",
+    "answer": "Baku",
+    "choices": [
+      "Ganja",
+      "Sumqayit",
+      "Baku",
+      "Lankaran"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the capital of North Macedonia?",
+    "answer": "Skopje",
+    "choices": [
+      "Bitola",
+      "Kumanovo",
+      "Skopje",
+      "Tetovo"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the capital of Montenegro?",
+    "answer": "Podgorica",
+    "choices": [
+      "Nikšić",
+      "Podgorica",
+      "Bijelo Polje",
+      "Bar"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the capital of Kosovo?",
+    "answer": "Pristina",
+    "choices": [
+      "Prizren",
+      "Peja",
+      "Pristina",
+      "Mitrovica"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the capital of Malta?",
+    "answer": "Valletta",
+    "choices": [
+      "Birkirkara",
+      "Valletta",
+      "Mosta",
+      "Qormi"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the capital of Kuwait?",
+    "answer": "Kuwait City",
+    "choices": [
+      "Hawalli",
+      "Kuwait City",
+      "Salmiya",
+      "Jahra"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the capital of Qatar?",
+    "answer": "Doha",
+    "choices": [
+      "Al Rayyan",
+      "Doha",
+      "Al Wakrah",
+      "Al Khor"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the capital of Bahrain?",
+    "answer": "Manama",
+    "choices": [
+      "Riffa",
+      "Muharraq",
+      "Manama",
+      "Hamad Town"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the capital of Oman?",
+    "answer": "Muscat",
+    "choices": [
+      "Salalah",
+      "Sohar",
+      "Muscat",
+      "Nizwa"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the capital of Yemen?",
+    "answer": "Sanaa",
+    "choices": [
+      "Aden",
+      "Taizz",
+      "Sanaa",
+      "Hodeidah"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the capital of the United Arab Emirates?",
+    "answer": "Abu Dhabi",
+    "choices": [
+      "Dubai",
+      "Sharjah",
+      "Abu Dhabi",
+      "Ajman"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the capital of Papua New Guinea?",
+    "answer": "Port Moresby",
+    "choices": [
+      "Lae",
+      "Mount Hagen",
+      "Port Moresby",
+      "Madang"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the capital of Fiji?",
+    "answer": "Suva",
+    "choices": [
+      "Nadi",
+      "Lautoka",
+      "Suva",
+      "Labasa"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the capital of Kazakhstan?",
+    "answer": "Astana",
+    "choices": [
+      "Almaty",
+      "Astana",
+      "Shymkent",
+      "Karaganda"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the capital of North Korea?",
+    "answer": "Pyongyang",
+    "choices": [
+      "Nampo",
+      "Hamhung",
+      "Pyongyang",
+      "Chongjin"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which river is the longest in Europe?",
+    "answer": "Volga",
+    "choices": [
+      "Danube",
+      "Rhine",
+      "Volga",
+      "Seine"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which country is home to the Serengeti plains?",
+    "answer": "Tanzania",
+    "choices": [
+      "Kenya",
+      "Tanzania",
+      "Uganda",
+      "Ethiopia"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which mountain range forms the border between France and Spain?",
+    "answer": "Pyrenees",
+    "choices": [
+      "Alps",
+      "Massif Central",
+      "Pyrenees",
+      "Jura Mountains"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the capital of Brunei?",
+    "answer": "Bandar Seri Begawan",
+    "choices": [
+      "Kuala Belait",
+      "Seria",
+      "Bandar Seri Begawan",
+      "Tutong"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the capital of East Timor (Timor-Leste)?",
+    "answer": "Dili",
+    "choices": [
+      "Baucau",
+      "Maliana",
+      "Dili",
+      "Same"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which is the largest lake in North America?",
+    "answer": "Lake Superior",
+    "choices": [
+      "Lake Michigan",
+      "Lake Huron",
+      "Lake Superior",
+      "Lake Erie"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the capital of Ireland?",
+    "answer": "Dublin",
+    "choices": [
+      "Cork",
+      "Galway",
+      "Dublin",
+      "Limerick"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which country has the most natural lakes in the world?",
+    "answer": "Canada",
+    "choices": [
+      "Russia",
+      "Finland",
+      "Canada",
+      "United States"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the capital of Madagascar?",
+    "answer": "Antananarivo",
+    "choices": [
+      "Toamasina",
+      "Antsirabe",
+      "Antananarivo",
+      "Mahajanga"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which ocean does the Congo River drain into?",
+    "answer": "Atlantic Ocean",
+    "choices": [
+      "Indian Ocean",
+      "Atlantic Ocean",
+      "Pacific Ocean",
+      "Southern Ocean"
+    ]
   },
   {
     "tier": 3,
-    "question": "Which island group does Hawaii belong to?",
-    "answer": "Polynesia",
-    "choices": ["Micronesia", "Melanesia", "Polynesia", "Oceania"]
+    "question": "Which country is completely surrounded by South Africa?",
+    "answer": "Lesotho",
+    "choices": [
+      "Eswatini",
+      "Botswana",
+      "Lesotho",
+      "Namibia"
+    ]
   },
   {
     "tier": 3,
-    "question": "Which country is Borneo's largest portion part of?",
-    "answer": "Indonesia",
-    "choices": ["Malaysia", "Brunei", "Philippines", "Indonesia"]
+    "question": "Which country is completely surrounded by Italy?",
+    "answer": "San Marino",
+    "choices": [
+      "Vatican City",
+      "Monaco",
+      "San Marino",
+      "Liechtenstein"
+    ]
   },
   {
-    "tier": 4,
-    "question": "Which is the world's largest landlocked country by area?",
-    "answer": "Kazakhstan",
-    "choices": ["Kazakhstan", "Mongolia", "Bolivia", "Ethiopia"]
+    "tier": 3,
+    "question": "Which of these countries is landlocked?",
+    "answer": "Switzerland",
+    "choices": [
+      "Portugal",
+      "Sweden",
+      "Switzerland",
+      "Denmark"
+    ]
   },
   {
-    "tier": 4,
-    "question": "What is the only country that borders both Spain and France?",
-    "answer": "Andorra",
-    "choices": ["Monaco", "Andorra", "Luxembourg", "Liechtenstein"]
+    "tier": 3,
+    "question": "Which of these African countries is landlocked?",
+    "answer": "Chad",
+    "choices": [
+      "Senegal",
+      "Mozambique",
+      "Chad",
+      "Cameroon"
+    ]
   },
   {
-    "tier": 4,
-    "question": "Which country completely surrounds Lesotho?",
-    "answer": "South Africa",
-    "choices": ["Mozambique", "Botswana", "Zimbabwe", "South Africa"]
+    "tier": 3,
+    "question": "Which of these Asian countries is landlocked?",
+    "answer": "Nepal",
+    "choices": [
+      "Vietnam",
+      "Thailand",
+      "Nepal",
+      "Malaysia"
+    ]
   },
   {
-    "tier": 4,
+    "tier": 3,
+    "question": "Which country shares borders with the most other countries?",
+    "answer": "China",
+    "choices": [
+      "Russia",
+      "Brazil",
+      "China",
+      "Germany"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which is the world's largest hot desert?",
+    "answer": "Sahara",
+    "choices": [
+      "Gobi",
+      "Arabian Desert",
+      "Sahara",
+      "Kalahari"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which is the world's largest cold desert?",
+    "answer": "Antarctic Desert",
+    "choices": [
+      "Arctic Desert",
+      "Gobi Desert",
+      "Patagonian Desert",
+      "Antarctic Desert"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which is the highest point in Australia?",
+    "answer": "Mount Kosciuszko",
+    "choices": [
+      "Mount Meharry",
+      "Mount Bruce",
+      "Mount Kosciuszko",
+      "Mount Zeil"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which is the deepest lake in Africa?",
+    "answer": "Lake Tanganyika",
+    "choices": [
+      "Lake Victoria",
+      "Lake Malawi",
+      "Lake Tanganyika",
+      "Lake Albert"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which desert covers much of Mongolia and northern China?",
+    "answer": "Gobi",
+    "choices": [
+      "Taklamakan",
+      "Gobi",
+      "Ordos",
+      "Karakum"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which two countries share the longest international border?",
+    "answer": "Canada and the United States",
+    "choices": [
+      "Russia and Kazakhstan",
+      "Brazil and Bolivia",
+      "Canada and the United States",
+      "China and Mongolia"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which is the longest mountain range in the world?",
+    "answer": "Andes",
+    "choices": [
+      "Rocky Mountains",
+      "Himalayas",
+      "Andes",
+      "Great Dividing Range"
+    ]
+  },
+  {
+    "tier": 3,
     "question": "What is the lowest point on Earth's land surface?",
     "answer": "Dead Sea shore",
-    "choices": ["Death Valley", "Dead Sea shore", "Mariana Trench", "Lake Assal"]
+    "choices": [
+      "Death Valley",
+      "Danakil Depression",
+      "Dead Sea shore",
+      "Lake Assal"
+    ]
   },
   {
-    "tier": 4,
-    "question": "How many landlocked countries are in Africa?",
-    "answer": "16",
-    "choices": ["10", "12", "16", "20"]
+    "tier": 3,
+    "question": "Which strait connects the Atlantic and Pacific Oceans at the southern tip of South America?",
+    "answer": "Strait of Magellan",
+    "choices": [
+      "Drake Passage",
+      "Strait of Magellan",
+      "Beagle Channel",
+      "Bass Strait"
+    ]
   },
   {
-    "tier": 4,
-    "question": "Which country has the southernmost capital city in the world?",
-    "answer": "New Zealand",
-    "choices": ["Argentina", "Chile", "Australia", "New Zealand"]
+    "tier": 3,
+    "question": "Which strait separates Africa from Europe?",
+    "answer": "Strait of Gibraltar",
+    "choices": [
+      "Strait of Messina",
+      "Strait of Gibraltar",
+      "Strait of Otranto",
+      "Bosphorus"
+    ]
   },
   {
-    "tier": 4,
-    "question": "What is the world's largest hot desert?",
-    "answer": "Sahara",
-    "choices": ["Arabian Desert", "Sahara", "Kalahari", "Namib"]
+    "tier": 3,
+    "question": "Which canal connects the Mediterranean Sea to the Red Sea?",
+    "answer": "Suez Canal",
+    "choices": [
+      "Panama Canal",
+      "Suez Canal",
+      "Kiel Canal",
+      "Corinth Canal"
+    ]
   },
   {
-    "tier": 4,
-    "question": "Which geographical feature forms the border between the United States and Canada in the west?",
-    "answer": "49th parallel",
-    "choices": ["Columbia River", "Rocky Mountains", "49th parallel", "Missouri River"]
+    "tier": 3,
+    "question": "Which African country is the most populous?",
+    "answer": "Nigeria",
+    "choices": [
+      "Ethiopia",
+      "Egypt",
+      "Nigeria",
+      "Democratic Republic of Congo"
+    ]
   },
   {
-    "tier": 4,
-    "question": "What is the world's highest navigable lake?",
+    "tier": 3,
+    "question": "What is the driest place on Earth?",
+    "answer": "Atacama Desert",
+    "choices": [
+      "Death Valley",
+      "Sahara Desert",
+      "Atacama Desert",
+      "Namib Desert"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which is the world's highest navigable lake?",
     "answer": "Lake Titicaca",
-    "choices": ["Lake Baikal", "Lake Titicaca", "Crater Lake", "Issyk-Kul"]
+    "choices": [
+      "Lake Poopó",
+      "Lake Titicaca",
+      "Laguna Colorada",
+      "Lake Junín"
+    ]
   },
   {
-    "tier": 4,
-    "question": "Which country is divided into two parts by the Strait of Kerch?",
-    "answer": "Ukraine",
-    "choices": ["Russia", "Ukraine", "Turkey", "Georgia"]
+    "tier": 3,
+    "question": "What is the name of the body of water between Australia and New Zealand?",
+    "answer": "Tasman Sea",
+    "choices": [
+      "Coral Sea",
+      "Timor Sea",
+      "Tasman Sea",
+      "Arafura Sea"
+    ]
   },
   {
-    "tier": 4,
-    "question": "The Atacama Desert is primarily located in which country?",
-    "answer": "Chile",
-    "choices": ["Peru", "Bolivia", "Chile", "Argentina"]
+    "tier": 3,
+    "question": "Which African country was formerly known as Rhodesia?",
+    "answer": "Zimbabwe",
+    "choices": [
+      "Zambia",
+      "Malawi",
+      "Zimbabwe",
+      "Botswana"
+    ]
   },
   {
-    "tier": 4,
-    "question": "What is the world's largest river by discharge volume?",
-    "answer": "Amazon",
-    "choices": ["Nile", "Congo", "Amazon", "Yangtze"]
+    "tier": 3,
+    "question": "Which country was formerly known as Siam?",
+    "answer": "Thailand",
+    "choices": [
+      "Cambodia",
+      "Laos",
+      "Thailand",
+      "Myanmar"
+    ]
   },
   {
-    "tier": 4,
-    "question": "Which country has both Atlantic and Pacific coastlines in South America?",
-    "answer": "Colombia",
-    "choices": ["Venezuela", "Ecuador", "Colombia", "Peru"]
+    "tier": 3,
+    "question": "Which country was formerly known as Persia?",
+    "answer": "Iran",
+    "choices": [
+      "Iraq",
+      "Afghanistan",
+      "Iran",
+      "Turkey"
+    ]
   },
   {
-    "tier": 4,
+    "tier": 3,
+    "question": "Which sea separates Italy from Croatia?",
+    "answer": "Adriatic Sea",
+    "choices": [
+      "Tyrrhenian Sea",
+      "Ionian Sea",
+      "Adriatic Sea",
+      "Aegean Sea"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the name of the peninsula that Spain and Portugal occupy?",
+    "answer": "Iberian Peninsula",
+    "choices": [
+      "Balkan Peninsula",
+      "Italian Peninsula",
+      "Iberian Peninsula",
+      "Scandinavian Peninsula"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which peninsula contains Finland, Sweden, and Norway?",
+    "answer": "Scandinavian Peninsula",
+    "choices": [
+      "Kola Peninsula",
+      "Jutland Peninsula",
+      "Scandinavian Peninsula",
+      "Baltic Peninsula"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which of these countries does the Equator pass through?",
+    "answer": "Kenya",
+    "choices": [
+      "Cameroon",
+      "Nigeria",
+      "Kenya",
+      "Angola"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the capital of Bhutan?",
+    "answer": "Thimphu",
+    "choices": [
+      "Paro",
+      "Punakha",
+      "Thimphu",
+      "Phuntsholing"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the capital of Maldives?",
+    "answer": "Malé",
+    "choices": [
+      "Addu City",
+      "Malé",
+      "Fuvahmulah",
+      "Kulhudhuffushi"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the capital of Mauritius?",
+    "answer": "Port Louis",
+    "choices": [
+      "Vacoas-Phoenix",
+      "Curepipe",
+      "Port Louis",
+      "Quatre Bornes"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the capital of Somalia?",
+    "answer": "Mogadishu",
+    "choices": [
+      "Hargeisa",
+      "Kismayo",
+      "Mogadishu",
+      "Bosaso"
+    ]
+  },
+  {
+    "tier": 3,
     "question": "What is the capital of Eritrea?",
     "answer": "Asmara",
-    "choices": ["Addis Ababa", "Djibouti", "Asmara", "Khartoum"]
+    "choices": [
+      "Massawa",
+      "Keren",
+      "Asmara",
+      "Assab"
+    ]
   },
   {
-    "tier": 4,
-    "question": "Which country occupies the western third of the island of New Guinea?",
-    "answer": "Indonesia",
-    "choices": ["Papua New Guinea", "Australia", "Indonesia", "Timor-Leste"]
+    "tier": 3,
+    "question": "What is the capital of Djibouti?",
+    "answer": "Djibouti City",
+    "choices": [
+      "Tadjourah",
+      "Ali Sabieh",
+      "Djibouti City",
+      "Obock"
+    ]
   },
   {
-    "tier": 4,
-    "question": "The Mekong River flows through how many countries?",
-    "answer": "6",
-    "choices": ["4", "5", "6", "7"]
+    "tier": 3,
+    "question": "Which country contains the source of the Blue Nile?",
+    "answer": "Ethiopia",
+    "choices": [
+      "Sudan",
+      "Uganda",
+      "Ethiopia",
+      "Eritrea"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which US state contains the Grand Canyon?",
+    "answer": "Arizona",
+    "choices": [
+      "Utah",
+      "Colorado",
+      "Arizona",
+      "Nevada"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which US state contains Yellowstone National Park?",
+    "answer": "Wyoming",
+    "choices": [
+      "Montana",
+      "Idaho",
+      "Wyoming",
+      "Colorado"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the capital of North Dakota?",
+    "answer": "Bismarck",
+    "choices": [
+      "Fargo",
+      "Grand Forks",
+      "Bismarck",
+      "Minot"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the capital of Montana?",
+    "answer": "Helena",
+    "choices": [
+      "Billings",
+      "Missoula",
+      "Helena",
+      "Great Falls"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the capital of Wyoming?",
+    "answer": "Cheyenne",
+    "choices": [
+      "Casper",
+      "Laramie",
+      "Cheyenne",
+      "Gillette"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the capital of Alaska?",
+    "answer": "Juneau",
+    "choices": [
+      "Anchorage",
+      "Fairbanks",
+      "Juneau",
+      "Kodiak"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the capital of Hawaii?",
+    "answer": "Honolulu",
+    "choices": [
+      "Hilo",
+      "Kailua",
+      "Honolulu",
+      "Pearl City"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the capital of Nevada?",
+    "answer": "Carson City",
+    "choices": [
+      "Las Vegas",
+      "Reno",
+      "Carson City",
+      "Henderson"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the capital of New Mexico?",
+    "answer": "Santa Fe",
+    "choices": [
+      "Albuquerque",
+      "Las Cruces",
+      "Santa Fe",
+      "Roswell"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the capital of Tennessee?",
+    "answer": "Nashville",
+    "choices": [
+      "Memphis",
+      "Knoxville",
+      "Nashville",
+      "Chattanooga"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the capital of Kentucky?",
+    "answer": "Frankfort",
+    "choices": [
+      "Louisville",
+      "Lexington",
+      "Frankfort",
+      "Bowling Green"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the capital of Indiana?",
+    "answer": "Indianapolis",
+    "choices": [
+      "Fort Wayne",
+      "Evansville",
+      "Indianapolis",
+      "South Bend"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the capital of Minnesota?",
+    "answer": "Saint Paul",
+    "choices": [
+      "Minneapolis",
+      "Duluth",
+      "Saint Paul",
+      "Rochester"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the capital of Missouri?",
+    "answer": "Jefferson City",
+    "choices": [
+      "Kansas City",
+      "St. Louis",
+      "Jefferson City",
+      "Springfield"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the capital of Wisconsin?",
+    "answer": "Madison",
+    "choices": [
+      "Milwaukee",
+      "Green Bay",
+      "Madison",
+      "Kenosha"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which is the largest island in the Mediterranean Sea?",
+    "answer": "Sicily",
+    "choices": [
+      "Sardinia",
+      "Cyprus",
+      "Sicily",
+      "Corsica"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which two countries share the Patagonia region?",
+    "answer": "Argentina and Chile",
+    "choices": [
+      "Argentina and Bolivia",
+      "Argentina and Chile",
+      "Chile and Peru",
+      "Brazil and Argentina"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the capital of Greenland?",
+    "answer": "Nuuk",
+    "choices": [
+      "Ilulissat",
+      "Sisimiut",
+      "Nuuk",
+      "Aasiaat"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which country was formerly known as Burma?",
+    "answer": "Myanmar",
+    "choices": [
+      "Cambodia",
+      "Thailand",
+      "Myanmar",
+      "Laos"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which river is the longest in Asia?",
+    "answer": "Yangtze",
+    "choices": [
+      "Yellow River",
+      "Mekong",
+      "Yangtze",
+      "Ganges"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the capital of the US state of Idaho?",
+    "answer": "Boise",
+    "choices": [
+      "Nampa",
+      "Meridian",
+      "Boise",
+      "Idaho Falls"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which US state is Mount Rushmore located in?",
+    "answer": "South Dakota",
+    "choices": [
+      "North Dakota",
+      "Nebraska",
+      "South Dakota",
+      "Wyoming"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which country has the most freshwater by total volume?",
+    "answer": "Brazil",
+    "choices": [
+      "Russia",
+      "Canada",
+      "Brazil",
+      "United States"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the name of the large salt flat in Bolivia?",
+    "answer": "Salar de Uyuni",
+    "choices": [
+      "Atacama Salt Flat",
+      "Salar de Atacama",
+      "Salar de Uyuni",
+      "Altiplano Salt Lake"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which country contains the Nile Delta?",
+    "answer": "Egypt",
+    "choices": [
+      "Sudan",
+      "Libya",
+      "Egypt",
+      "Ethiopia"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which sea lies between Greece and Turkey?",
+    "answer": "Aegean Sea",
+    "choices": [
+      "Ionian Sea",
+      "Adriatic Sea",
+      "Aegean Sea",
+      "Sea of Marmara"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which country was formerly known as Abyssinia?",
+    "answer": "Ethiopia",
+    "choices": [
+      "Eritrea",
+      "Sudan",
+      "Ethiopia",
+      "Somalia"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the capital of Iowa?",
+    "answer": "Des Moines",
+    "choices": [
+      "Cedar Rapids",
+      "Davenport",
+      "Des Moines",
+      "Iowa City"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the capital of South Carolina?",
+    "answer": "Columbia",
+    "choices": [
+      "Charleston",
+      "Greenville",
+      "Columbia",
+      "Spartanburg"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which country is home to the Ngorongoro Crater?",
+    "answer": "Tanzania",
+    "choices": [
+      "Kenya",
+      "Uganda",
+      "Tanzania",
+      "Rwanda"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the capital of Zambia?",
+    "answer": "Lusaka",
+    "choices": [
+      "Ndola",
+      "Kitwe",
+      "Lusaka",
+      "Livingstone"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the capital of Malawi?",
+    "answer": "Lilongwe",
+    "choices": [
+      "Blantyre",
+      "Mzuzu",
+      "Lilongwe",
+      "Zomba"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which country contains Victoria Falls?",
+    "answer": "Zimbabwe and Zambia",
+    "choices": [
+      "Mozambique and Zimbabwe",
+      "Zambia and Angola",
+      "Zimbabwe and Zambia",
+      "Botswana and Zambia"
+    ]
   },
   {
     "tier": 4,
     "question": "What is the capital of Burkina Faso?",
     "answer": "Ouagadougou",
-    "choices": ["Bamako", "Niamey", "Ouagadougou", "Lome"]
+    "choices": [
+      "Bobo-Dioulasso",
+      "Ouagadougou",
+      "Banfora",
+      "Koudougou"
+    ]
   },
   {
     "tier": 4,
-    "question": "Which country is the Falkland Islands a territory of?",
-    "answer": "United Kingdom",
-    "choices": ["Argentina", "United States", "United Kingdom", "Spain"]
+    "question": "What is the capital of Guinea-Bissau?",
+    "answer": "Bissau",
+    "choices": [
+      "Bafatá",
+      "Gabú",
+      "Bissau",
+      "Canchungo"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Guinea?",
+    "answer": "Conakry",
+    "choices": [
+      "Kankan",
+      "Kindia",
+      "Conakry",
+      "Labé"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Mali?",
+    "answer": "Bamako",
+    "choices": [
+      "Timbuktu",
+      "Gao",
+      "Bamako",
+      "Mopti"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Niger?",
+    "answer": "Niamey",
+    "choices": [
+      "Zinder",
+      "Maradi",
+      "Niamey",
+      "Agadez"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Benin?",
+    "answer": "Porto-Novo",
+    "choices": [
+      "Cotonou",
+      "Porto-Novo",
+      "Parakou",
+      "Abomey"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Togo?",
+    "answer": "Lomé",
+    "choices": [
+      "Sokodé",
+      "Kpalimé",
+      "Lomé",
+      "Kara"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Sierra Leone?",
+    "answer": "Freetown",
+    "choices": [
+      "Bo",
+      "Kenema",
+      "Freetown",
+      "Koidu"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Liberia?",
+    "answer": "Monrovia",
+    "choices": [
+      "Gbarnga",
+      "Buchanan",
+      "Monrovia",
+      "Kakata"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Central African Republic?",
+    "answer": "Bangui",
+    "choices": [
+      "Bimbo",
+      "Berbérati",
+      "Bangui",
+      "Carnot"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Republic of the Congo?",
+    "answer": "Brazzaville",
+    "choices": [
+      "Pointe-Noire",
+      "Dolisie",
+      "Brazzaville",
+      "Nkayi"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Gabon?",
+    "answer": "Libreville",
+    "choices": [
+      "Port-Gentil",
+      "Franceville",
+      "Libreville",
+      "Oyem"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Equatorial Guinea?",
+    "answer": "Malabo",
+    "choices": [
+      "Bata",
+      "Ebebiyín",
+      "Malabo",
+      "Aconibe"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of São Tomé and Príncipe?",
+    "answer": "São Tomé",
+    "choices": [
+      "Santo António",
+      "Neves",
+      "São Tomé",
+      "Trindade"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Cape Verde?",
+    "answer": "Praia",
+    "choices": [
+      "Mindelo",
+      "Santa Maria",
+      "Praia",
+      "Assomada"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Comoros?",
+    "answer": "Moroni",
+    "choices": [
+      "Mutsamudu",
+      "Fomboni",
+      "Moroni",
+      "Domoni"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Rwanda?",
+    "answer": "Kigali",
+    "choices": [
+      "Butare",
+      "Gisenyi",
+      "Kigali",
+      "Ruhengeri"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Burundi?",
+    "answer": "Gitega",
+    "choices": [
+      "Bujumbura",
+      "Ngozi",
+      "Gitega",
+      "Rumonge"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of South Sudan?",
+    "answer": "Juba",
+    "choices": [
+      "Malakal",
+      "Wau",
+      "Juba",
+      "Yambio"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Eswatini (formerly Swaziland)?",
+    "answer": "Mbabane",
+    "choices": [
+      "Manzini",
+      "Lobamba",
+      "Mbabane",
+      "Siteki"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Namibia?",
+    "answer": "Windhoek",
+    "choices": [
+      "Walvis Bay",
+      "Swakopmund",
+      "Windhoek",
+      "Rundu"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Botswana?",
+    "answer": "Gaborone",
+    "choices": [
+      "Francistown",
+      "Molepolole",
+      "Gaborone",
+      "Maun"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Suriname?",
+    "answer": "Paramaribo",
+    "choices": [
+      "Lelydorp",
+      "Nieuw Nickerie",
+      "Paramaribo",
+      "Albina"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Guyana?",
+    "answer": "Georgetown",
+    "choices": [
+      "Linden",
+      "New Amsterdam",
+      "Georgetown",
+      "Anna Regina"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Trinidad and Tobago?",
+    "answer": "Port of Spain",
+    "choices": [
+      "San Fernando",
+      "Chaguanas",
+      "Port of Spain",
+      "Arima"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Belize?",
+    "answer": "Belmopan",
+    "choices": [
+      "Belize City",
+      "San Ignacio",
+      "Belmopan",
+      "Dangriga"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Dominica?",
+    "answer": "Roseau",
+    "choices": [
+      "Portsmouth",
+      "Marigot",
+      "Roseau",
+      "Castle Bruce"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Saint Lucia?",
+    "answer": "Castries",
+    "choices": [
+      "Vieux Fort",
+      "Soufrière",
+      "Castries",
+      "Gros Islet"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Barbados?",
+    "answer": "Bridgetown",
+    "choices": [
+      "Speightstown",
+      "Oistins",
+      "Bridgetown",
+      "Holetown"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Grenada?",
+    "answer": "Saint George's",
+    "choices": [
+      "Grenville",
+      "Gouyave",
+      "Saint George's",
+      "Victoria"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Saint Vincent and the Grenadines?",
+    "answer": "Kingstown",
+    "choices": [
+      "Georgetown",
+      "Barrouallie",
+      "Kingstown",
+      "Layou"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Antigua and Barbuda?",
+    "answer": "Saint John's",
+    "choices": [
+      "Codrington",
+      "Falmouth",
+      "Saint John's",
+      "All Saints"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Saint Kitts and Nevis?",
+    "answer": "Basseterre",
+    "choices": [
+      "Charlestown",
+      "Sandy Point Town",
+      "Basseterre",
+      "Cayon"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of The Bahamas?",
+    "answer": "Nassau",
+    "choices": [
+      "Freeport",
+      "Nassau",
+      "Marsh Harbour",
+      "Governor's Harbour"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Samoa?",
+    "answer": "Apia",
+    "choices": [
+      "Salelologa",
+      "Saleimoa",
+      "Apia",
+      "Faleula"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Tonga?",
+    "answer": "Nuku'alofa",
+    "choices": [
+      "Neiafu",
+      "Haveluloto",
+      "Nuku'alofa",
+      "Pangai"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Vanuatu?",
+    "answer": "Port Vila",
+    "choices": [
+      "Luganville",
+      "Norsup",
+      "Port Vila",
+      "Lakatoro"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Solomon Islands?",
+    "answer": "Honiara",
+    "choices": [
+      "Gizo",
+      "Auki",
+      "Honiara",
+      "Kirakira"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Kiribati?",
+    "answer": "South Tarawa",
+    "choices": [
+      "Christmas Island",
+      "Banaba",
+      "South Tarawa",
+      "Butaritari"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Micronesia?",
+    "answer": "Palikir",
+    "choices": [
+      "Kolonia",
+      "Weno",
+      "Palikir",
+      "Tofol"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Palau?",
+    "answer": "Ngerulmud",
+    "choices": [
+      "Koror",
+      "Melekeok",
+      "Ngerulmud",
+      "Airai"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Marshall Islands?",
+    "answer": "Majuro",
+    "choices": [
+      "Ebeye",
+      "Jaluit",
+      "Majuro",
+      "Wotje"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Nauru?",
+    "answer": "Yaren",
+    "choices": [
+      "Aiwo",
+      "Meneng",
+      "Yaren",
+      "Buada"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Tuvalu?",
+    "answer": "Funafuti",
+    "choices": [
+      "Nukufetau",
+      "Nanumea",
+      "Funafuti",
+      "Vaitupu"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which strait separates the UK from France?",
+    "answer": "Strait of Dover",
+    "choices": [
+      "North Sea Passage",
+      "Strait of Dover",
+      "Celtic Sea Passage",
+      "Pentland Firth"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which strait separates Turkey's European and Asian parts?",
+    "answer": "Bosphorus",
+    "choices": [
+      "Dardanelles",
+      "Bosphorus",
+      "Strait of Otranto",
+      "Kerch Strait"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which strait separates Alaska from Russia?",
+    "answer": "Bering Strait",
+    "choices": [
+      "Davis Strait",
+      "Hudson Strait",
+      "Bering Strait",
+      "Hecate Strait"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which body of water borders Ukraine to the south?",
+    "answer": "Black Sea",
+    "choices": [
+      "Caspian Sea",
+      "Sea of Azov",
+      "Black Sea",
+      "Aegean Sea"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which landlocked sea is the world's largest inland body of water?",
+    "answer": "Caspian Sea",
+    "choices": [
+      "Aral Sea",
+      "Dead Sea",
+      "Caspian Sea",
+      "Lake Baikal"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Andorra?",
+    "answer": "Andorra la Vella",
+    "choices": [
+      "Escaldes-Engordany",
+      "Encamp",
+      "Andorra la Vella",
+      "La Massana"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Liechtenstein?",
+    "answer": "Vaduz",
+    "choices": [
+      "Schaan",
+      "Balzers",
+      "Vaduz",
+      "Triesen"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Monaco?",
+    "answer": "Monaco",
+    "choices": [
+      "Monte Carlo",
+      "La Condamine",
+      "Monaco",
+      "Fontvieille"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of San Marino?",
+    "answer": "City of San Marino",
+    "choices": [
+      "Serravalle",
+      "Borgo Maggiore",
+      "City of San Marino",
+      "Domagnano"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which country has the world's highest capital city?",
+    "answer": "Bolivia",
+    "choices": [
+      "Nepal",
+      "Peru",
+      "Bolivia",
+      "Ecuador"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which African country has the most pyramids?",
+    "answer": "Sudan",
+    "choices": [
+      "Egypt",
+      "Sudan",
+      "Ethiopia",
+      "Libya"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which river forms the border between the US states of Oregon and Washington?",
+    "answer": "Columbia River",
+    "choices": [
+      "Snake River",
+      "Willamette River",
+      "Columbia River",
+      "John Day River"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which is the largest of the Great Lakes by surface area?",
+    "answer": "Lake Superior",
+    "choices": [
+      "Lake Michigan",
+      "Lake Huron",
+      "Lake Superior",
+      "Lake Erie"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the name of the narrow strip of land that connects North and South America?",
+    "answer": "Isthmus of Panama",
+    "choices": [
+      "Isthmus of Darien",
+      "Isthmus of Panama",
+      "Central American Corridor",
+      "Mesoamerican Neck"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which two countries share the island of Hispaniola?",
+    "answer": "Haiti and Dominican Republic",
+    "choices": [
+      "Cuba and Jamaica",
+      "Haiti and Dominican Republic",
+      "Trinidad and Tobago",
+      "Puerto Rico and US Virgin Islands"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of North Korea?",
+    "answer": "Pyongyang",
+    "choices": [
+      "Nampo",
+      "Hamhung",
+      "Pyongyang",
+      "Chongjin"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Cambodia?",
+    "answer": "Phnom Penh",
+    "choices": [
+      "Siem Reap",
+      "Battambang",
+      "Phnom Penh",
+      "Kampong Cham"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which country is home to the large Sundarban mangrove forest?",
+    "answer": "Bangladesh",
+    "choices": [
+      "Indonesia",
+      "Brazil",
+      "Bangladesh",
+      "India"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which river forms the border between Zambia and Zimbabwe?",
+    "answer": "Zambezi River",
+    "choices": [
+      "Limpopo River",
+      "Congo River",
+      "Zambezi River",
+      "Okavango River"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which country shares borders with both Norway and Russia?",
+    "answer": "Finland",
+    "choices": [
+      "Sweden",
+      "Estonia",
+      "Finland",
+      "Latvia"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Mauritania?",
+    "answer": "Nouakchott",
+    "choices": [
+      "Nouadhibou",
+      "Kiffa",
+      "Nouakchott",
+      "Rosso"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Niger?",
+    "answer": "Niamey",
+    "choices": [
+      "Zinder",
+      "Agadez",
+      "Niamey",
+      "Diffa"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Guinea?",
+    "answer": "Conakry",
+    "choices": [
+      "Kankan",
+      "Nzérékoré",
+      "Conakry",
+      "Boké"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which country's territory includes the Azores islands?",
+    "answer": "Portugal",
+    "choices": [
+      "Spain",
+      "France",
+      "Portugal",
+      "UK"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which country's territory includes the Canary Islands?",
+    "answer": "Spain",
+    "choices": [
+      "Portugal",
+      "Morocco",
+      "Spain",
+      "France"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Tajikistan?",
+    "answer": "Dushanbe",
+    "choices": [
+      "Khujand",
+      "Kulob",
+      "Dushanbe",
+      "Qurghonteppa"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which country does Svalbard (Spitsbergen) belong to?",
+    "answer": "Norway",
+    "choices": [
+      "Russia",
+      "Denmark",
+      "Norway",
+      "Sweden"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Bhutan?",
+    "answer": "Thimphu",
+    "choices": [
+      "Paro",
+      "Punakha",
+      "Thimphu",
+      "Jakar"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which major river flows through Iraq?",
+    "answer": "Tigris and Euphrates",
+    "choices": [
+      "Nile and Niger",
+      "Tigris and Euphrates",
+      "Indus and Ganges",
+      "Amu Darya and Syr Darya"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Kyrgyzstan?",
+    "answer": "Bishkek",
+    "choices": [
+      "Osh",
+      "Jalal-Abad",
+      "Bishkek",
+      "Naryn"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which country does Easter Island (Rapa Nui) belong to?",
+    "answer": "Chile",
+    "choices": [
+      "Ecuador",
+      "Peru",
+      "Chile",
+      "Polynesia"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Turkmenistan?",
+    "answer": "Ashgabat",
+    "choices": [
+      "Türkmenabat",
+      "Mary",
+      "Ashgabat",
+      "Daşoguz"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which country has the longest river in Europe flowing through it?",
+    "answer": "Russia",
+    "choices": [
+      "Ukraine",
+      "Romania",
+      "Russia",
+      "Germany"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Uzbekistan?",
+    "answer": "Tashkent",
+    "choices": [
+      "Samarkand",
+      "Bukhara",
+      "Tashkent",
+      "Namangan"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of South Sudan?",
+    "answer": "Juba",
+    "choices": [
+      "Wau",
+      "Malakal",
+      "Juba",
+      "Yambio"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which country is home to the Virunga Mountains, habitat of mountain gorillas?",
+    "answer": "Democratic Republic of Congo",
+    "choices": [
+      "Uganda",
+      "Rwanda",
+      "Democratic Republic of Congo",
+      "Kenya"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the name of the sea that borders Iran, Kazakhstan, and Russia?",
+    "answer": "Caspian Sea",
+    "choices": [
+      "Aral Sea",
+      "Black Sea",
+      "Caspian Sea",
+      "Caspian Basin"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the approximate latitude of the Tropic of Cancer?",
+    "answer": "23.5°N",
+    "choices": [
+      "0°",
+      "23.5°S",
+      "23.5°N",
+      "66.5°N"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the approximate latitude of the Arctic Circle?",
+    "answer": "66.5°N",
+    "choices": [
+      "60°N",
+      "66.5°N",
+      "70°N",
+      "75°N"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the approximate latitude of the Tropic of Capricorn?",
+    "answer": "23.5°S",
+    "choices": [
+      "0°",
+      "23.5°S",
+      "30°S",
+      "35°S"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which country has the exclave of Nakhchivan, separated from the rest of the country?",
+    "answer": "Azerbaijan",
+    "choices": [
+      "Armenia",
+      "Iran",
+      "Azerbaijan",
+      "Georgia"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which country contains the Wakhan Corridor, a narrow strip bordering China?",
+    "answer": "Afghanistan",
+    "choices": [
+      "Pakistan",
+      "Tajikistan",
+      "Afghanistan",
+      "Kyrgyzstan"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What are the names of the Spanish exclaves on the northern coast of Africa?",
+    "answer": "Ceuta and Melilla",
+    "choices": [
+      "Gibraltar and Ceuta",
+      "Ceuta and Melilla",
+      "Canary Islands and Melilla",
+      "Ceuta and Ifni"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the name of the deepest point in the Pacific Ocean?",
+    "answer": "Challenger Deep",
+    "choices": [
+      "Horizon Deep",
+      "Vitjaz Deep",
+      "Challenger Deep",
+      "Sirena Deep"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which country has the world's most northerly capital city?",
+    "answer": "Iceland",
+    "choices": [
+      "Norway",
+      "Finland",
+      "Iceland",
+      "Canada"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which African country is divided into two parts by the country of Gambia?",
+    "answer": "Senegal",
+    "choices": [
+      "Guinea-Bissau",
+      "Mauritania",
+      "Senegal",
+      "Guinea"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which island is disputed between Argentina and the United Kingdom?",
+    "answer": "Falkland Islands",
+    "choices": [
+      "South Georgia",
+      "South Sandwich Islands",
+      "Falkland Islands",
+      "Tierra del Fuego"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which country contains the Danakil Depression, one of Earth's hottest and lowest places?",
+    "answer": "Ethiopia",
+    "choices": [
+      "Eritrea",
+      "Djibouti",
+      "Ethiopia",
+      "Somalia"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which river system drains the largest watershed in North America?",
+    "answer": "Mississippi-Missouri River System",
+    "choices": [
+      "Colorado River System",
+      "Columbia River System",
+      "Mississippi-Missouri River System",
+      "Mackenzie River System"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the capital of the autonomous region of Tibet (Xizang)?",
+    "answer": "Lhasa",
+    "choices": [
+      "Shigatse",
+      "Chamdo",
+      "Lhasa",
+      "Nagqu"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which countries have territory on both the European and Asian continents?",
+    "answer": "Russia and Turkey",
+    "choices": [
+      "Georgia and Turkey",
+      "Azerbaijan and Turkey",
+      "Russia and Turkey",
+      "Kazakhstan and Russia"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the approximate longitude of the Prime Meridian?",
+    "answer": "0°",
+    "choices": [
+      "90°W",
+      "180°",
+      "0°",
+      "45°E"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the name of the tectonic plate that the Indian subcontinent sits on?",
+    "answer": "Indo-Australian Plate",
+    "choices": [
+      "Eurasian Plate",
+      "African Plate",
+      "Indo-Australian Plate",
+      "Pacific Plate"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which country contains the Thar Desert?",
+    "answer": "India and Pakistan",
+    "choices": [
+      "India only",
+      "Pakistan only",
+      "India and Pakistan",
+      "Afghanistan and Pakistan"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which is the smallest country in the world by area?",
+    "answer": "Vatican City",
+    "choices": [
+      "Monaco",
+      "Nauru",
+      "Vatican City",
+      "San Marino"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the name of the underwater mountain range in the middle of the Atlantic Ocean?",
+    "answer": "Mid-Atlantic Ridge",
+    "choices": [
+      "Atlantic Seamounts",
+      "Transatlantic Ridge",
+      "Mid-Atlantic Ridge",
+      "Atlantic Cordillera"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which country has three capital cities: Pretoria (administrative), Cape Town (legislative), and Bloemfontein (judicial)?",
+    "answer": "South Africa",
+    "choices": [
+      "Namibia",
+      "Botswana",
+      "South Africa",
+      "Zimbabwe"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the name of the territory at the southern tip of Spain that is a British Overseas Territory?",
+    "answer": "Gibraltar",
+    "choices": [
+      "Ceuta",
+      "Melilla",
+      "Gibraltar",
+      "Canary Islands"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the capital of the Faroe Islands (Danish autonomous territory)?",
+    "answer": "Tórshavn",
+    "choices": [
+      "Klaksvík",
+      "Runavík",
+      "Tórshavn",
+      "Fuglafjørður"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the name of the world's longest coral reef system?",
+    "answer": "Great Barrier Reef",
+    "choices": [
+      "Mesoamerican Barrier Reef",
+      "Red Sea Coral Reef",
+      "Great Barrier Reef",
+      "New Caledonia Barrier Reef"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which country has the Dasht-e Kavir (Great Salt Desert) within its borders?",
+    "answer": "Iran",
+    "choices": [
+      "Saudi Arabia",
+      "Pakistan",
+      "Iran",
+      "Afghanistan"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which of these is an example of a Russian exclave?",
+    "answer": "Kaliningrad",
+    "choices": [
+      "Sakhalin",
+      "Kamchatka",
+      "Kaliningrad",
+      "Chukotka"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the capital of the autonomous region of Xinjiang?",
+    "answer": "Ürümqi",
+    "choices": [
+      "Kashgar",
+      "Hotan",
+      "Ürümqi",
+      "Aksu"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which African country's territory completely surrounds Gambia on three sides?",
+    "answer": "Senegal",
+    "choices": [
+      "Guinea-Bissau",
+      "Mauritania",
+      "Senegal",
+      "Mali"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which country contains the Tibesti Mountains, the highest range in the Sahara?",
+    "answer": "Chad",
+    "choices": [
+      "Libya",
+      "Algeria",
+      "Chad",
+      "Niger"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the name of the large brackish lake on the border between Iran and Turkey?",
+    "answer": "Lake Van",
+    "choices": [
+      "Lake Urmia",
+      "Lake Sevan",
+      "Lake Van",
+      "Lake Zarivar"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which country has the world's southernmost capital city?",
+    "answer": "New Zealand",
+    "choices": [
+      "Argentina",
+      "Chile",
+      "New Zealand",
+      "South Africa"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the name of the narrow waterway between the Malay Peninsula and Sumatra?",
+    "answer": "Strait of Malacca",
+    "choices": [
+      "Banda Sea",
+      "Java Sea",
+      "Strait of Malacca",
+      "Celebes Sea"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which small country's territory is an enclave within Belgium?",
+    "answer": "None — Baarle-Hertog is a Belgian municipality with Dutch enclaves inside it",
+    "choices": [
+      "Luxembourg",
+      "None — Baarle-Hertog is a Belgian municipality with Dutch enclaves inside it",
+      "Andorra",
+      "Monaco"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which river forms the border between South Africa and Zimbabwe?",
+    "answer": "Limpopo River",
+    "choices": [
+      "Zambezi River",
+      "Orange River",
+      "Limpopo River",
+      "Vaal River"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which plateau is known as the 'Roof of the World' due to its extreme altitude?",
+    "answer": "Tibetan Plateau",
+    "choices": [
+      "Pamir Plateau",
+      "Mongolian Plateau",
+      "Tibetan Plateau",
+      "Iranian Plateau"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the capital of the semi-autonomous region of Somaliland?",
+    "answer": "Hargeisa",
+    "choices": [
+      "Berbera",
+      "Borama",
+      "Hargeisa",
+      "Burao"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which country contains both the Hindu Kush and part of the Karakoram mountain range?",
+    "answer": "Pakistan",
+    "choices": [
+      "Afghanistan",
+      "China",
+      "Pakistan",
+      "India"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the name of the body of water that separates India from Sri Lanka?",
+    "answer": "Palk Strait",
+    "choices": [
+      "Gulf of Mannar",
+      "Laccadive Sea",
+      "Palk Strait",
+      "Andaman Sea"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which European country is divided into cantons, some of which are subdivided into half-cantons?",
+    "answer": "Switzerland",
+    "choices": [
+      "Austria",
+      "Belgium",
+      "Switzerland",
+      "Germany"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which mountain in Papua New Guinea is the highest peak in Oceania (excluding Australia)?",
+    "answer": "Mount Wilhelm",
+    "choices": [
+      "Mount Victoria",
+      "Mount Giluwe",
+      "Mount Wilhelm",
+      "Mount Bangeta"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which ocean strait was historically vital for spice trade routes between Europe and Southeast Asia?",
+    "answer": "Strait of Malacca",
+    "choices": [
+      "Strait of Hormuz",
+      "Bab-el-Mandeb Strait",
+      "Strait of Malacca",
+      "Lombok Strait"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which country's easternmost territory — Big Diomede Island — is just kilometers from Alaska?",
+    "answer": "Russia",
+    "choices": [
+      "China",
+      "Japan",
+      "Russia",
+      "Canada"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which African region is known as the 'Horn of Africa'?",
+    "answer": "The northeastern projection including Ethiopia, Eritrea, Djibouti, and Somalia",
+    "choices": [
+      "The Cape of Good Hope region",
+      "The northwestern Saharan region",
+      "The northeastern projection including Ethiopia, Eritrea, Djibouti, and Somalia",
+      "The Lake Victoria basin region"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the geographic term for land that is part of a country but separated from the main territory by another country?",
+    "answer": "Exclave",
+    "choices": [
+      "Enclave",
+      "Exclave",
+      "Peninsula",
+      "Isthmus"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which country controls the Îles Éparses, a group of scattered islands in the Indian Ocean also claimed by Madagascar?",
+    "answer": "France",
+    "choices": [
+      "UK",
+      "France",
+      "Portugal",
+      "Spain"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the name of the sea enclosed by Greece, Turkey, and Bulgaria?",
+    "answer": "Aegean Sea",
+    "choices": [
+      "Ionian Sea",
+      "Marmara Sea",
+      "Aegean Sea",
+      "Adriatic Sea"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which country has the second-longest coastline in the world?",
+    "answer": "Norway",
+    "choices": [
+      "Australia",
+      "Indonesia",
+      "Norway",
+      "Russia"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the name of the geographic line that divides day and night on Earth?",
+    "answer": "Terminator line",
+    "choices": [
+      "Equator",
+      "Prime Meridian",
+      "Terminator line",
+      "International Date Line"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which country is home to the Wakhan Corridor and shares a tiny border with China?",
+    "answer": "Afghanistan",
+    "choices": [
+      "Pakistan",
+      "Tajikistan",
+      "Afghanistan",
+      "Kyrgyzstan"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which two countries share the Karakoram mountain range?",
+    "answer": "Pakistan and China",
+    "choices": [
+      "India and China",
+      "Pakistan and China",
+      "Pakistan and Afghanistan",
+      "China and Tajikistan"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the name of the narrow strip of Namibian territory that extends eastward to touch Zimbabwe and Zambia?",
+    "answer": "Caprivi Strip (Zambezi Region)",
+    "choices": [
+      "Namibian Corridor",
+      "Okavango Spur",
+      "Caprivi Strip (Zambezi Region)",
+      "Kalahari Extension"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which sea lies between the Arabian Peninsula and the Horn of Africa?",
+    "answer": "Gulf of Aden",
+    "choices": [
+      "Red Sea",
+      "Arabian Sea",
+      "Gulf of Aden",
+      "Persian Gulf"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which of these countries does NOT border the Caspian Sea?",
+    "answer": "Iraq",
+    "choices": [
+      "Iran",
+      "Iraq",
+      "Kazakhstan",
+      "Turkmenistan"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the approximate total length of the Amazon River in kilometers?",
+    "answer": "6,400 km",
+    "choices": [
+      "4,500 km",
+      "6,400 km",
+      "7,200 km",
+      "5,100 km"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which country is home to the Sichuan Basin and the Three Gorges region?",
+    "answer": "China",
+    "choices": [
+      "Vietnam",
+      "Myanmar",
+      "China",
+      "Laos"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the name of the largest island in Indonesia?",
+    "answer": "Sumatra",
+    "choices": [
+      "Java",
+      "Borneo (Kalimantan)",
+      "Sumatra",
+      "Sulawesi"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which US state has the longest total coastline including islands and inlets?",
+    "answer": "Alaska",
+    "choices": [
+      "Florida",
+      "California",
+      "Alaska",
+      "Michigan"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the deepest lake in South America?",
+    "answer": "General Carrera Lake",
+    "choices": [
+      "Lake Titicaca",
+      "Lagoa dos Patos",
+      "General Carrera Lake",
+      "Lake Poopó"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the name of the narrow channel that separates Greenland from Canada?",
+    "answer": "Davis Strait",
+    "choices": [
+      "Hudson Strait",
+      "Baffin Bay",
+      "Davis Strait",
+      "Labrador Sea"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which country is home to the Baliem Valley, a remote highland region in Oceania?",
+    "answer": "Indonesia",
+    "choices": [
+      "Papua New Guinea",
+      "Australia",
+      "Indonesia",
+      "Timor-Leste"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which country's official name is the 'Bolivarian Republic'?",
+    "answer": "Venezuela",
+    "choices": [
+      "Colombia",
+      "Bolivia",
+      "Venezuela",
+      "Ecuador"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the name of the salt desert that covers much of the center of Iran?",
+    "answer": "Dasht-e Kavir",
+    "choices": [
+      "Rub' al Khali",
+      "Dasht-e Lut",
+      "Dasht-e Kavir",
+      "Karakum Desert"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which ocean does the Orinoco River empty into?",
+    "answer": "Atlantic Ocean",
+    "choices": [
+      "Pacific Ocean",
+      "Caribbean Sea",
+      "Atlantic Ocean",
+      "Gulf of Mexico"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the name of the large bay between Hudson Bay and Baffin Island?",
+    "answer": "Foxe Basin",
+    "choices": [
+      "James Bay",
+      "Hudson Strait",
+      "Foxe Basin",
+      "Ungava Bay"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which country is home to the Altai Mountains, where Russia, China, Mongolia, and Kazakhstan meet?",
+    "answer": "All four countries share the Altai Mountains",
+    "choices": [
+      "Russia only",
+      "Mongolia only",
+      "China and Mongolia only",
+      "All four countries share the Altai Mountains"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the name of the geographic process where rivers deposit sediment at their mouths?",
+    "answer": "Delta formation",
+    "choices": [
+      "Alluvial fan",
+      "Estuary widening",
+      "Delta formation",
+      "River braiding"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which country contains the Kimberley Plateau region?",
+    "answer": "Australia",
+    "choices": [
+      "Papua New Guinea",
+      "New Zealand",
+      "Australia",
+      "Indonesia"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the name of the deepest point in the Arctic Ocean?",
+    "answer": "Litke Deep",
+    "choices": [
+      "Fram Basin",
+      "Nansen Basin",
+      "Litke Deep",
+      "Molloy Deep"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which country is home to the Atacama Desert, the driest non-polar desert on Earth?",
+    "answer": "Chile",
+    "choices": [
+      "Peru",
+      "Bolivia",
+      "Chile",
+      "Argentina"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the largest ocean on Earth?",
+    "answer": "Pacific Ocean",
+    "choices": [
+      "Atlantic Ocean",
+      "Indian Ocean",
+      "Arctic Ocean",
+      "Pacific Ocean"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the longest river in South America?",
+    "answer": "Amazon",
+    "choices": [
+      "Orinoco",
+      "Parana",
+      "Amazon",
+      "Rio Grande"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which US state is the largest by area?",
+    "answer": "Alaska",
+    "choices": [
+      "Texas",
+      "California",
+      "Montana",
+      "Alaska"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the capital of Australia?",
+    "answer": "Canberra",
+    "choices": [
+      "Sydney",
+      "Melbourne",
+      "Brisbane",
+      "Canberra"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which mountain range separates Europe from Asia?",
+    "answer": "Ural Mountains",
+    "choices": [
+      "Alps",
+      "Carpathians",
+      "Caucasus",
+      "Ural Mountains"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the capital of Canada?",
+    "answer": "Ottawa",
+    "choices": [
+      "Toronto",
+      "Vancouver",
+      "Montreal",
+      "Ottawa"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which African country has the largest population?",
+    "answer": "Nigeria",
+    "choices": [
+      "Ethiopia",
+      "Egypt",
+      "South Africa",
+      "Nigeria"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the smallest country in the world by area?",
+    "answer": "Vatican City",
+    "choices": [
+      "Monaco",
+      "San Marino",
+      "Liechtenstein",
+      "Vatican City"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the capital of Argentina?",
+    "answer": "Buenos Aires",
+    "choices": [
+      "Santiago",
+      "Lima",
+      "Bogota",
+      "Buenos Aires"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which sea lies between Italy and the Balkans?",
+    "answer": "Adriatic Sea",
+    "choices": [
+      "Aegean Sea",
+      "Ionian Sea",
+      "Adriatic Sea",
+      "Tyrrhenian Sea"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the world's largest desert?",
+    "answer": "Sahara",
+    "choices": [
+      "Arabian Desert",
+      "Gobi Desert",
+      "Sahara",
+      "Patagonian Desert"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "How many time zones does Russia span?",
+    "answer": "11",
+    "choices": [
+      "8",
+      "9",
+      "11",
+      "13"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which country is entirely surrounded by South Africa?",
+    "answer": "Lesotho",
+    "choices": [
+      "Eswatini",
+      "Botswana",
+      "Lesotho",
+      "Namibia"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the deepest lake in the world?",
+    "answer": "Lake Baikal",
+    "choices": [
+      "Lake Superior",
+      "Caspian Sea",
+      "Lake Titicaca",
+      "Lake Baikal"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which strait separates Europe from Africa?",
+    "answer": "Strait of Gibraltar",
+    "choices": [
+      "Strait of Hormuz",
+      "Bosphorus",
+      "Strait of Gibraltar",
+      "Strait of Malacca"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the capital of New Zealand?",
+    "answer": "Wellington",
+    "choices": [
+      "Auckland",
+      "Christchurch",
+      "Hamilton",
+      "Wellington"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which country has the most natural lakes?",
+    "answer": "Canada",
+    "choices": [
+      "Russia",
+      "Finland",
+      "USA",
+      "Canada"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which ocean is saltiest on average?",
+    "answer": "Atlantic Ocean",
+    "choices": [
+      "Pacific Ocean",
+      "Indian Ocean",
+      "Atlantic Ocean",
+      "Arctic Ocean"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the capital of Pakistan?",
+    "answer": "Islamabad",
+    "choices": [
+      "Karachi",
+      "Lahore",
+      "Islamabad",
+      "Rawalpindi"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which river flows through Baghdad?",
+    "answer": "Tigris",
+    "choices": [
+      "Euphrates",
+      "Nile",
+      "Tigris",
+      "Indus"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the largest island in the Mediterranean Sea?",
+    "answer": "Sicily",
+    "choices": [
+      "Sardinia",
+      "Corsica",
+      "Sicily",
+      "Cyprus"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the driest continent on Earth?",
+    "answer": "Antarctica",
+    "choices": [
+      "Australia",
+      "Africa",
+      "Asia",
+      "Antarctica"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which country has the longest coastline in the world?",
+    "answer": "Canada",
+    "choices": [
+      "Russia",
+      "Norway",
+      "Indonesia",
+      "Canada"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the capital of Saudi Arabia?",
+    "answer": "Riyadh",
+    "choices": [
+      "Mecca",
+      "Medina",
+      "Jeddah",
+      "Riyadh"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which two continents are connected by the Isthmus of Panama?",
+    "answer": "North and South America",
+    "choices": [
+      "North America and Europe",
+      "North and South America",
+      "South America and Africa",
+      "Europe and Asia"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which country has the most UNESCO World Heritage Sites?",
+    "answer": "Italy",
+    "choices": [
+      "China",
+      "France",
+      "Spain",
+      "Italy"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the capital of Ethiopia?",
+    "answer": "Addis Ababa",
+    "choices": [
+      "Nairobi",
+      "Khartoum",
+      "Addis Ababa",
+      "Kampala"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which mountain is the highest in Africa?",
+    "answer": "Mount Kilimanjaro",
+    "choices": [
+      "Mount Kenya",
+      "Mount Elgon",
+      "Rwenzori",
+      "Mount Kilimanjaro"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the capital of Ukraine?",
+    "answer": "Kyiv",
+    "choices": [
+      "Lviv",
+      "Kharkiv",
+      "Odesa",
+      "Kyiv"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which river forms much of the border between the USA and Mexico?",
+    "answer": "Rio Grande",
+    "choices": [
+      "Colorado River",
+      "Pecos River",
+      "Rio Grande",
+      "Gila River"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the name of the peninsula containing Spain and Portugal?",
+    "answer": "Iberian Peninsula",
+    "choices": [
+      "Scandinavian Peninsula",
+      "Italian Peninsula",
+      "Iberian Peninsula",
+      "Balkan Peninsula"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the capital of Colombia?",
+    "answer": "Bogota",
+    "choices": [
+      "Medellin",
+      "Cali",
+      "Cartagena",
+      "Bogota"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which country lies between France and Spain in the Pyrenees?",
+    "answer": "Andorra",
+    "choices": [
+      "Monaco",
+      "Luxembourg",
+      "Andorra",
+      "Liechtenstein"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the largest country in Africa by area?",
+    "answer": "Algeria",
+    "choices": [
+      "Sudan",
+      "DR Congo",
+      "Libya",
+      "Algeria"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which sea lies between Greece and Turkey?",
+    "answer": "Aegean Sea",
+    "choices": [
+      "Black Sea",
+      "Adriatic Sea",
+      "Ionian Sea",
+      "Aegean Sea"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the capital of South Korea?",
+    "answer": "Seoul",
+    "choices": [
+      "Busan",
+      "Incheon",
+      "Daegu",
+      "Seoul"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the name of the largest bay in the world?",
+    "answer": "Bay of Bengal",
+    "choices": [
+      "Hudson Bay",
+      "Gulf of Mexico",
+      "Bay of Bengal",
+      "Gulf of Guinea"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which African country was never colonized by a European power?",
+    "answer": "Ethiopia",
+    "choices": [
+      "Liberia",
+      "Morocco",
+      "Ethiopia",
+      "Madagascar"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the capital of Colombia?",
+    "answer": "Bogota",
+    "choices": [
+      "Medellin",
+      "Barranquilla",
+      "Cali",
+      "Bogota"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which country contains Lake Titicaca, the world's highest navigable lake?",
+    "answer": "Bolivia and Peru",
+    "choices": [
+      "Chile and Bolivia",
+      "Bolivia and Peru",
+      "Ecuador and Peru",
+      "Argentina and Chile"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the capital of the Philippines?",
+    "answer": "Manila",
+    "choices": [
+      "Cebu",
+      "Quezon City",
+      "Davao",
+      "Manila"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which European country has the most rivers?",
+    "answer": "Russia",
+    "choices": [
+      "Germany",
+      "France",
+      "Ukraine",
+      "Russia"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which ocean current keeps Western Europe warmer than its latitude suggests?",
+    "answer": "Gulf Stream",
+    "choices": [
+      "Labrador Current",
+      "North Atlantic Drift",
+      "Gulf Stream",
+      "Canary Current"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the capital of Iran?",
+    "answer": "Tehran",
+    "choices": [
+      "Isfahan",
+      "Shiraz",
+      "Mashhad",
+      "Tehran"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Kazakhstan?",
+    "answer": "Astana",
+    "choices": [
+      "Almaty",
+      "Shymkent",
+      "Astana",
+      "Karaganda"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which is the only country to border both the Caspian Sea and the Persian Gulf?",
+    "answer": "Iran",
+    "choices": [
+      "Iraq",
+      "Azerbaijan",
+      "Turkmenistan",
+      "Iran"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Myanmar?",
+    "answer": "Naypyidaw",
+    "choices": [
+      "Yangon",
+      "Mandalay",
+      "Bago",
+      "Naypyidaw"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which country contains the Atacama Desert?",
+    "answer": "Chile",
+    "choices": [
+      "Peru",
+      "Bolivia",
+      "Argentina",
+      "Chile"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the largest lake in Africa?",
+    "answer": "Lake Victoria",
+    "choices": [
+      "Lake Tanganyika",
+      "Lake Malawi",
+      "Lake Chad",
+      "Lake Victoria"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which country shares land borders with the most other countries?",
+    "answer": "China",
+    "choices": [
+      "Russia",
+      "Brazil",
+      "China",
+      "Sudan"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Mongolia?",
+    "answer": "Ulaanbaatar",
+    "choices": [
+      "Erdenet",
+      "Darkhan",
+      "Choibalsan",
+      "Ulaanbaatar"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Mekong River empties into which body of water?",
+    "answer": "South China Sea",
+    "choices": [
+      "Gulf of Thailand",
+      "Andaman Sea",
+      "South China Sea",
+      "Indian Ocean"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Burkina Faso?",
+    "answer": "Ouagadougou",
+    "choices": [
+      "Bamako",
+      "Niamey",
+      "Abidjan",
+      "Ouagadougou"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which country is home to Angel Falls, the world's highest waterfall?",
+    "answer": "Venezuela",
+    "choices": [
+      "Brazil",
+      "Colombia",
+      "Ecuador",
+      "Venezuela"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which strait connects the Black Sea to the Sea of Marmara?",
+    "answer": "Bosphorus",
+    "choices": [
+      "Dardanelles",
+      "Bosphorus",
+      "Kerch Strait",
+      "Messina Strait"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Tajikistan?",
+    "answer": "Dushanbe",
+    "choices": [
+      "Tashkent",
+      "Bishkek",
+      "Ashgabat",
+      "Dushanbe"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which African country is split between the Sahara and the Sahel?",
+    "answer": "Mali",
+    "choices": [
+      "Niger",
+      "Chad",
+      "Sudan",
+      "Mali"
+    ]
   },
   {
     "tier": 4,
     "question": "What is the world's longest mountain range above sea level?",
     "answer": "Andes",
-    "choices": ["Himalayas", "Rockies", "Andes", "Alps"]
+    "choices": [
+      "Himalayas",
+      "Rockies",
+      "Alps",
+      "Andes"
+    ]
   },
   {
     "tier": 4,
-    "question": "Which African country has the largest land area?",
-    "answer": "Algeria",
-    "choices": ["Sudan", "Democratic Republic of the Congo", "Libya", "Algeria"]
-  },
-  {
-    "tier": 5,
-    "question": "Which country is an exclave of Russia separated from the mainland?",
-    "answer": "Kaliningrad",
-    "choices": ["Kaliningrad", "Tatarstan", "Chechnya", "Sakhalin"]
-  },
-  {
-    "tier": 5,
-    "question": "Which microstate is surrounded entirely by Italy and is not part of the EU?",
-    "answer": "Vatican City",
-    "choices": ["San Marino", "Vatican City", "Monaco", "Liechtenstein"]
-  },
-  {
-    "tier": 5,
-    "question": "What is the world's only doubly landlocked country?",
-    "answer": "Uzbekistan",
-    "choices": ["Tajikistan", "Turkmenistan", "Uzbekistan", "Afghanistan"]
-  },
-  {
-    "tier": 5,
-    "question": "Which territory is administered by both Spain and France under a co-principality?",
-    "answer": "Andorra",
-    "choices": ["Gibraltar", "Ceuta", "Andorra", "Basque Country"]
-  },
-  {
-    "tier": 5,
-    "question": "Cabinda is an exclave of which African country?",
-    "answer": "Angola",
-    "choices": ["Congo", "Democratic Republic of the Congo", "Angola", "Gabon"]
-  },
-  {
-    "tier": 5,
-    "question": "What is the world's smallest republic by population?",
-    "answer": "Nauru",
-    "choices": ["Palau", "Tuvalu", "Nauru", "San Marino"]
-  },
-  {
-    "tier": 5,
-    "question": "Which disputed territory is administered by Morocco but claimed by the Sahrawi Republic?",
-    "answer": "Western Sahara",
-    "choices": ["Western Sahara", "Azawad", "Cabinda", "Somaliland"]
-  },
-  {
-    "tier": 5,
-    "question": "What is the name of the narrow strip of land connecting North and South America?",
-    "answer": "Isthmus of Panama",
-    "choices": ["Isthmus of Suez", "Isthmus of Panama", "Strait of Magellan", "Darien Gap"]
-  },
-  {
-    "tier": 5,
-    "question": "Which country has a territory called Nakhchivan that is an exclave separated by Armenia?",
-    "answer": "Azerbaijan",
-    "choices": ["Armenia", "Iran", "Turkey", "Azerbaijan"]
-  },
-  {
-    "tier": 5,
-    "question": "The Wakhan Corridor is a narrow strip of Afghanistan that borders which country?",
+    "question": "Which country has the Yangtze River as its longest river?",
     "answer": "China",
-    "choices": ["Tajikistan", "Pakistan", "China", "India"]
+    "choices": [
+      "Vietnam",
+      "Myanmar",
+      "China",
+      "Laos"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the capital of Bolivia (seat of government)?",
+    "answer": "La Paz",
+    "choices": [
+      "Sucre",
+      "Santa Cruz",
+      "Cochabamba",
+      "La Paz"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which European country has the highest population density?",
+    "answer": "Monaco",
+    "choices": [
+      "Netherlands",
+      "Malta",
+      "San Marino",
+      "Monaco"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the name of the sea that separates Madagascar from mainland Africa?",
+    "answer": "Mozambique Channel",
+    "choices": [
+      "Somali Sea",
+      "Madagascar Strait",
+      "Mozambique Channel",
+      "Indian Passage"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which Scandinavian country has no land border with Russia?",
+    "answer": "Denmark",
+    "choices": [
+      "Norway",
+      "Sweden",
+      "Finland",
+      "Denmark"
+    ]
   },
   {
     "tier": 5,
-    "question": "Which island nation in the Pacific is the world's fourth smallest country by area?",
-    "answer": "Tuvalu",
-    "choices": ["Nauru", "Palau", "Tuvalu", "Marshall Islands"]
+    "question": "What is the approximate latitude of the Tropic of Capricorn?",
+    "answer": "23.5 degrees South",
+    "choices": [
+      "0 degrees",
+      "23.5 degrees North",
+      "23.5 degrees South",
+      "66.5 degrees South"
+    ]
   },
   {
     "tier": 5,
-    "question": "What is the name of the disputed region between India and Pakistan in the Himalayas?",
-    "answer": "Kashmir",
-    "choices": ["Ladakh", "Kashmir", "Siachen", "Punjab"]
-  },
-  {
-    "tier": 5,
-    "question": "Which enclave country is surrounded entirely by South Africa except for a short border with Mozambique?",
-    "answer": "Eswatini",
-    "choices": ["Lesotho", "Eswatini", "Botswana", "Zimbabwe"]
-  },
-  {
-    "tier": 5,
-    "question": "The Ferghana Valley is divided among which three Central Asian countries?",
+    "question": "The Fergana Valley is shared by which three Central Asian countries?",
     "answer": "Uzbekistan, Kyrgyzstan, and Tajikistan",
-    "choices": ["Kazakhstan, Uzbekistan, and Turkmenistan", "Uzbekistan, Kyrgyzstan, and Tajikistan", "Afghanistan, Tajikistan, and Uzbekistan", "Kyrgyzstan, Kazakhstan, and Uzbekistan"]
+    "choices": [
+      "Kazakhstan, Uzbekistan, Turkmenistan",
+      "Uzbekistan, Kyrgyzstan, and Tajikistan",
+      "Kyrgyzstan, Kazakhstan, China",
+      "Tajikistan, Afghanistan, Uzbekistan"
+    ]
   },
   {
     "tier": 5,
-    "question": "Which country claims sovereignty over the Spratly Islands along with several other nations?",
-    "answer": "China",
-    "choices": ["Vietnam", "Philippines", "China", "Malaysia"]
+    "question": "What is the capital of South Sudan?",
+    "answer": "Juba",
+    "choices": [
+      "Malakal",
+      "Wau",
+      "Bor",
+      "Juba"
+    ]
   },
   {
     "tier": 5,
-    "question": "What is the only country in the world that is both an island and a continent?",
-    "answer": "Australia",
-    "choices": ["Greenland", "Australia", "New Guinea", "Iceland"]
+    "question": "Which country contains the Wakhan Corridor?",
+    "answer": "Afghanistan",
+    "choices": [
+      "Pakistan",
+      "Tajikistan",
+      "China",
+      "Afghanistan"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the capital of Eritrea?",
+    "answer": "Asmara",
+    "choices": [
+      "Massawa",
+      "Keren",
+      "Assab",
+      "Asmara"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Dinaric Alps run along the coast of which body of water?",
+    "answer": "Adriatic Sea",
+    "choices": [
+      "Aegean Sea",
+      "Ionian Sea",
+      "Adriatic Sea",
+      "Black Sea"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which country contains the Tonle Sap, Southeast Asia's largest freshwater lake?",
+    "answer": "Cambodia",
+    "choices": [
+      "Vietnam",
+      "Thailand",
+      "Laos",
+      "Cambodia"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Salween River flows primarily through which country before reaching the sea?",
+    "answer": "Myanmar",
+    "choices": [
+      "Thailand",
+      "Cambodia",
+      "Vietnam",
+      "Myanmar"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the capital of the Faroe Islands?",
+    "answer": "Torshavn",
+    "choices": [
+      "Runavik",
+      "Klaksvik",
+      "Torshavn",
+      "Eidi"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which country lies entirely within Italy?",
+    "answer": "San Marino",
+    "choices": [
+      "Vatican City",
+      "Monaco",
+      "Liechtenstein",
+      "San Marino"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which island group includes Majorca and Ibiza?",
+    "answer": "Balearic Islands",
+    "choices": [
+      "Canary Islands",
+      "Azores",
+      "Balearic Islands",
+      "Madeira"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the capital of Kyrgyzstan?",
+    "answer": "Bishkek",
+    "choices": [
+      "Osh",
+      "Jalal-Abad",
+      "Karakol",
+      "Bishkek"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Sunda Trench lies in which ocean?",
+    "answer": "Indian Ocean",
+    "choices": [
+      "Pacific Ocean",
+      "Indian Ocean",
+      "Southern Ocean",
+      "Atlantic Ocean"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the name of the disputed region between Armenia and Azerbaijan?",
+    "answer": "Nagorno-Karabakh",
+    "choices": [
+      "Nakhchivan",
+      "Adjara",
+      "South Ossetia",
+      "Nagorno-Karabakh"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which river delta is the largest in the world?",
+    "answer": "Ganges-Brahmaputra Delta",
+    "choices": [
+      "Amazon Delta",
+      "Nile Delta",
+      "Mississippi Delta",
+      "Ganges-Brahmaputra Delta"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the capital of Vanuatu?",
+    "answer": "Port Vila",
+    "choices": [
+      "Suva",
+      "Honiara",
+      "Apia",
+      "Port Vila"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Sundarbans mangrove forest lies across which two countries?",
+    "answer": "India and Bangladesh",
+    "choices": [
+      "India and Myanmar",
+      "India and Bangladesh",
+      "Bangladesh and Myanmar",
+      "India and Sri Lanka"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the name of the cape at the southernmost tip of mainland Africa?",
+    "answer": "Cape Agulhas",
+    "choices": [
+      "Cape of Good Hope",
+      "Cape Point",
+      "Cape Columbine",
+      "Cape Agulhas"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the capital of Turkmenistan?",
+    "answer": "Ashgabat",
+    "choices": [
+      "Mary",
+      "Turkmenbashi",
+      "Dashoguz",
+      "Ashgabat"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which is the only country to have a non-rectangular national flag?",
+    "answer": "Nepal",
+    "choices": [
+      "Switzerland",
+      "Vatican City",
+      "Nepal",
+      "Bangladesh"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Sahel region of Africa lies immediately to which direction of the Sahara?",
+    "answer": "South",
+    "choices": [
+      "North",
+      "East",
+      "West",
+      "South"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the capital of Western Sahara as administered by Morocco?",
+    "answer": "Laayoune",
+    "choices": [
+      "Dakhla",
+      "Smara",
+      "Laayoune",
+      "Tifariti"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which country is an exclave of Azerbaijan?",
+    "answer": "Nakhchivan",
+    "choices": [
+      "Nagorno-Karabakh",
+      "Nakhchivan",
+      "Adjara",
+      "Ganja"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the world's longest mountain range including undersea ranges?",
+    "answer": "Mid-Ocean Ridge",
+    "choices": [
+      "Andes",
+      "Himalayas",
+      "Rocky Mountains",
+      "Mid-Ocean Ridge"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which country contains both the highest and lowest points in South America?",
+    "answer": "Argentina",
+    "choices": [
+      "Chile",
+      "Bolivia",
+      "Peru",
+      "Argentina"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the name of the geographic feature formed where the Rhine meets the North Sea?",
+    "answer": "Rhine-Meuse-Scheldt Delta",
+    "choices": [
+      "Rhine Delta",
+      "North Sea Delta",
+      "Rhine-Meuse-Scheldt Delta",
+      "Frisian Delta"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which tiny nation is surrounded entirely by Switzerland?",
+    "answer": "Liechtenstein",
+    "choices": [
+      "Monaco",
+      "San Marino",
+      "Andorra",
+      "Liechtenstein"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the capital of Timor-Leste?",
+    "answer": "Dili",
+    "choices": [
+      "Baucau",
+      "Maliana",
+      "Same",
+      "Dili"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which country contains the Namib Desert, the oldest desert on Earth?",
+    "answer": "Namibia",
+    "choices": [
+      "Botswana",
+      "South Africa",
+      "Angola",
+      "Namibia"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the name of the sea north of Siberia between Novaya Zemlya and Franz Josef Land?",
+    "answer": "Barents Sea",
+    "choices": [
+      "Kara Sea",
+      "Laptev Sea",
+      "Barents Sea",
+      "White Sea"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which landlocked country is doubly landlocked (surrounded only by other landlocked countries)?",
+    "answer": "Uzbekistan",
+    "choices": [
+      "Kazakhstan",
+      "Liechtenstein",
+      "Uzbekistan",
+      "Bhutan"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the capital of the Solomon Islands?",
+    "answer": "Honiara",
+    "choices": [
+      "Port Moresby",
+      "Suva",
+      "Apia",
+      "Honiara"
+    ]
   }
 ]

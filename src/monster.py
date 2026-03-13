@@ -52,11 +52,16 @@ class Monster:
         return self.status_effects.get(name, 0) > 0
 
     def tick_effects(self):
-        """Decrement all active effects by one turn."""
+        """Decrement all active effects by one turn. Apply damage-over-time effects."""
+        bleeding_dmg = 0
         for name in list(self.status_effects):
+            if name == 'bleeding' and self.status_effects[name] > 0:
+                bleeding_dmg = max(1, self.max_hp // 15)
             self.status_effects[name] -= 1
             if self.status_effects[name] <= 0:
                 del self.status_effects[name]
+        if bleeding_dmg > 0:
+            self.take_damage(bleeding_dmg)
 
     # --- Combat ---
 

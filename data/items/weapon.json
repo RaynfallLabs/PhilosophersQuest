@@ -8,12 +8,11 @@
     "mathTier": 1,
     "baseDamage": 6,
     "chainMultipliers": [
+      0.5,
       1.0,
+      1.5,
       2.0,
-      4.0,
-      6.0,
-      8.0,
-      10.0
+      2.5
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -54,12 +53,10 @@
     "mathTier": 1,
     "baseDamage": 9,
     "chainMultipliers": [
+      0.5,
       1.0,
-      2.0,
-      4.0,
-      6.0,
-      8.0,
-      10.0
+      1.8,
+      2.5
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -100,12 +97,12 @@
     "mathTier": 2,
     "baseDamage": 8,
     "chainMultipliers": [
+      0.5,
       1.0,
+      1.5,
       2.0,
-      4.0,
-      6.0,
-      8.0,
-      10.0
+      2.5,
+      3.0
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -146,12 +143,11 @@
     "mathTier": 2,
     "baseDamage": 12,
     "chainMultipliers": [
+      0.5,
       1.0,
-      2.0,
-      4.0,
-      6.0,
-      8.0,
-      10.0
+      1.8,
+      2.5,
+      3.2
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -192,12 +188,13 @@
     "mathTier": 3,
     "baseDamage": 10,
     "chainMultipliers": [
+      0.5,
       1.0,
+      1.5,
       2.0,
-      4.0,
-      6.0,
-      8.0,
-      10.0
+      2.5,
+      3.0,
+      3.5
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -238,12 +235,12 @@
     "mathTier": 3,
     "baseDamage": 15,
     "chainMultipliers": [
+      0.5,
       1.0,
-      2.0,
-      4.0,
-      6.0,
-      8.0,
-      10.0
+      1.8,
+      2.5,
+      3.2,
+      4.0
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -284,12 +281,14 @@
     "mathTier": 4,
     "baseDamage": 12,
     "chainMultipliers": [
+      0.5,
       1.0,
+      1.5,
       2.0,
-      4.0,
-      6.0,
-      8.0,
-      10.0
+      2.5,
+      3.0,
+      3.5,
+      4.0
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -330,12 +329,13 @@
     "mathTier": 4,
     "baseDamage": 18,
     "chainMultipliers": [
+      0.5,
       1.0,
-      2.0,
+      1.8,
+      2.5,
+      3.2,
       4.0,
-      6.0,
-      8.0,
-      10.0
+      4.8
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -376,12 +376,16 @@
     "mathTier": 5,
     "baseDamage": 15,
     "chainMultipliers": [
+      0.5,
       1.0,
+      1.5,
       2.0,
+      2.5,
+      3.0,
+      3.5,
       4.0,
-      6.0,
-      8.0,
-      10.0
+      4.5,
+      5.0
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -422,12 +426,14 @@
     "mathTier": 5,
     "baseDamage": 22,
     "chainMultipliers": [
+      0.5,
       1.0,
-      2.0,
+      1.8,
+      2.5,
+      3.2,
       4.0,
-      6.0,
-      8.0,
-      10.0
+      4.8,
+      5.5
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -468,13 +474,13 @@
     "mathTier": 1,
     "baseDamage": 3,
     "chainMultipliers": [
-      0.0,
+      0.3,
+      0.6,
       1.0,
-      2.0,
-      4.0,
-      8.0,
-      16.0,
-      32.0
+      1.4,
+      1.8,
+      2.2,
+      2.5
     ],
     "maxChainLength": 7,
     "damageTypes": [
@@ -514,13 +520,14 @@
     "mathTier": 2,
     "baseDamage": 4,
     "chainMultipliers": [
-      0.0,
+      0.3,
+      0.6,
       1.0,
-      2.0,
-      4.0,
-      8.0,
-      16.0,
-      32.0
+      1.4,
+      1.8,
+      2.2,
+      2.6,
+      3.0
     ],
     "maxChainLength": 7,
     "damageTypes": [
@@ -560,13 +567,15 @@
     "mathTier": 3,
     "baseDamage": 5,
     "chainMultipliers": [
-      0.0,
+      0.3,
+      0.6,
       1.0,
-      2.0,
-      4.0,
-      8.0,
-      16.0,
-      32.0
+      1.4,
+      1.8,
+      2.2,
+      2.6,
+      3.0,
+      3.5
     ],
     "maxChainLength": 7,
     "damageTypes": [
@@ -606,13 +615,16 @@
     "mathTier": 4,
     "baseDamage": 6,
     "chainMultipliers": [
-      0.0,
+      0.3,
+      0.6,
       1.0,
-      2.0,
-      4.0,
-      8.0,
-      16.0,
-      32.0
+      1.4,
+      1.8,
+      2.2,
+      2.6,
+      3.0,
+      3.5,
+      4.0
     ],
     "maxChainLength": 7,
     "damageTypes": [
@@ -652,13 +664,17 @@
     "mathTier": 5,
     "baseDamage": 8,
     "chainMultipliers": [
-      0.0,
+      0.3,
+      0.6,
       1.0,
-      2.0,
+      1.4,
+      1.8,
+      2.2,
+      2.6,
+      3.0,
+      3.5,
       4.0,
-      8.0,
-      16.0,
-      32.0
+      4.5
     ],
     "maxChainLength": 7,
     "damageTypes": [
@@ -700,12 +716,11 @@
     "mathTier": 1,
     "baseDamage": 8,
     "chainMultipliers": [
+      0.5,
       1.0,
+      1.5,
       2.0,
-      3.0,
-      4.0,
-      5.0,
-      6.0
+      2.5
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -745,12 +760,10 @@
     "mathTier": 1,
     "baseDamage": 12,
     "chainMultipliers": [
+      0.5,
       1.0,
-      2.0,
-      3.0,
-      4.0,
-      5.0,
-      6.0
+      1.8,
+      2.5
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -790,12 +803,12 @@
     "mathTier": 2,
     "baseDamage": 10,
     "chainMultipliers": [
+      0.5,
       1.0,
+      1.5,
       2.0,
-      3.0,
-      4.0,
-      5.0,
-      6.0
+      2.5,
+      3.0
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -835,12 +848,11 @@
     "mathTier": 2,
     "baseDamage": 15,
     "chainMultipliers": [
+      0.5,
       1.0,
-      2.0,
-      3.0,
-      4.0,
-      5.0,
-      6.0
+      1.8,
+      2.5,
+      3.2
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -880,12 +892,13 @@
     "mathTier": 3,
     "baseDamage": 12,
     "chainMultipliers": [
+      0.5,
       1.0,
+      1.5,
       2.0,
+      2.5,
       3.0,
-      4.0,
-      5.0,
-      6.0
+      3.5
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -925,12 +938,12 @@
     "mathTier": 3,
     "baseDamage": 18,
     "chainMultipliers": [
+      0.5,
       1.0,
-      2.0,
-      3.0,
-      4.0,
-      5.0,
-      6.0
+      1.8,
+      2.5,
+      3.2,
+      4.0
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -970,12 +983,14 @@
     "mathTier": 4,
     "baseDamage": 15,
     "chainMultipliers": [
+      0.5,
       1.0,
+      1.5,
       2.0,
+      2.5,
       3.0,
-      4.0,
-      5.0,
-      6.0
+      3.5,
+      4.0
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -1015,12 +1030,13 @@
     "mathTier": 4,
     "baseDamage": 22,
     "chainMultipliers": [
+      0.5,
       1.0,
-      2.0,
-      3.0,
+      1.8,
+      2.5,
+      3.2,
       4.0,
-      5.0,
-      6.0
+      4.8
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -1060,12 +1076,16 @@
     "mathTier": 5,
     "baseDamage": 18,
     "chainMultipliers": [
+      0.5,
       1.0,
+      1.5,
       2.0,
+      2.5,
       3.0,
+      3.5,
       4.0,
-      5.0,
-      6.0
+      4.5,
+      5.0
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -1105,12 +1125,14 @@
     "mathTier": 5,
     "baseDamage": 27,
     "chainMultipliers": [
+      0.5,
       1.0,
-      2.0,
-      3.0,
+      1.8,
+      2.5,
+      3.2,
       4.0,
-      5.0,
-      6.0
+      4.8,
+      5.5
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -1150,11 +1172,11 @@
     "mathTier": 1,
     "baseDamage": 5,
     "chainMultipliers": [
+      0.5,
       1.0,
       1.5,
       2.0,
-      2.5,
-      3.0
+      2.5
     ],
     "maxChainLength": 5,
     "damageTypes": [
@@ -1194,11 +1216,11 @@
     "mathTier": 1,
     "baseDamage": 6,
     "chainMultipliers": [
+      0.5,
       1.0,
       1.5,
       2.0,
-      2.5,
-      3.0
+      2.5
     ],
     "maxChainLength": 5,
     "damageTypes": [
@@ -1238,6 +1260,7 @@
     "mathTier": 2,
     "baseDamage": 7,
     "chainMultipliers": [
+      0.5,
       1.0,
       1.5,
       2.0,
@@ -1282,6 +1305,7 @@
     "mathTier": 2,
     "baseDamage": 8,
     "chainMultipliers": [
+      0.5,
       1.0,
       1.5,
       2.0,
@@ -1326,11 +1350,13 @@
     "mathTier": 3,
     "baseDamage": 9,
     "chainMultipliers": [
+      0.5,
       1.0,
       1.5,
       2.0,
       2.5,
-      3.0
+      3.0,
+      3.5
     ],
     "maxChainLength": 5,
     "damageTypes": [
@@ -1370,11 +1396,13 @@
     "mathTier": 3,
     "baseDamage": 10,
     "chainMultipliers": [
+      0.5,
       1.0,
       1.5,
       2.0,
       2.5,
-      3.0
+      3.0,
+      3.5
     ],
     "maxChainLength": 5,
     "damageTypes": [
@@ -1414,11 +1442,14 @@
     "mathTier": 4,
     "baseDamage": 11,
     "chainMultipliers": [
+      0.5,
       1.0,
       1.5,
       2.0,
       2.5,
-      3.0
+      3.0,
+      3.5,
+      4.0
     ],
     "maxChainLength": 5,
     "damageTypes": [
@@ -1458,11 +1489,14 @@
     "mathTier": 4,
     "baseDamage": 12,
     "chainMultipliers": [
+      0.5,
       1.0,
       1.5,
       2.0,
       2.5,
-      3.0
+      3.0,
+      3.5,
+      4.0
     ],
     "maxChainLength": 5,
     "damageTypes": [
@@ -1502,11 +1536,16 @@
     "mathTier": 5,
     "baseDamage": 14,
     "chainMultipliers": [
+      0.5,
       1.0,
       1.5,
       2.0,
       2.5,
-      3.0
+      3.0,
+      3.5,
+      4.0,
+      4.5,
+      5.0
     ],
     "maxChainLength": 5,
     "damageTypes": [
@@ -1546,11 +1585,16 @@
     "mathTier": 5,
     "baseDamage": 16,
     "chainMultipliers": [
+      0.5,
       1.0,
       1.5,
       2.0,
       2.5,
-      3.0
+      3.0,
+      3.5,
+      4.0,
+      4.5,
+      5.0
     ],
     "maxChainLength": 5,
     "damageTypes": [
@@ -1590,12 +1634,10 @@
     "mathTier": 1,
     "baseDamage": 5,
     "chainMultipliers": [
+      0.5,
       1.0,
-      2.0,
-      3.0,
-      4.0,
-      5.0,
-      6.0
+      1.8,
+      2.5
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -1635,12 +1677,11 @@
     "mathTier": 2,
     "baseDamage": 7,
     "chainMultipliers": [
+      0.5,
       1.0,
-      2.0,
-      3.0,
-      4.0,
-      5.0,
-      6.0
+      1.8,
+      2.5,
+      3.2
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -1680,12 +1721,12 @@
     "mathTier": 3,
     "baseDamage": 9,
     "chainMultipliers": [
+      0.5,
       1.0,
-      2.0,
-      3.0,
-      4.0,
-      5.0,
-      6.0
+      1.8,
+      2.5,
+      3.2,
+      4.0
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -1725,12 +1766,13 @@
     "mathTier": 4,
     "baseDamage": 11,
     "chainMultipliers": [
+      0.5,
       1.0,
-      2.0,
-      3.0,
+      1.8,
+      2.5,
+      3.2,
       4.0,
-      5.0,
-      6.0
+      4.8
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -1772,12 +1814,14 @@
     "mathTier": 5,
     "baseDamage": 14,
     "chainMultipliers": [
+      0.5,
       1.0,
-      2.0,
-      3.0,
+      1.8,
+      2.5,
+      3.2,
       4.0,
-      5.0,
-      6.0
+      4.8,
+      5.5
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -1817,12 +1861,10 @@
     "mathTier": 1,
     "baseDamage": 7,
     "chainMultipliers": [
+      0.5,
       1.0,
-      2.0,
-      3.0,
-      4.0,
-      5.0,
-      6.0
+      1.8,
+      2.5
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -1862,12 +1904,11 @@
     "mathTier": 2,
     "baseDamage": 9,
     "chainMultipliers": [
+      0.5,
       1.0,
-      2.0,
-      3.0,
-      4.0,
-      5.0,
-      6.0
+      1.8,
+      2.5,
+      3.2
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -1907,12 +1948,11 @@
     "mathTier": 2,
     "baseDamage": 10,
     "chainMultipliers": [
+      0.5,
       1.0,
-      2.0,
-      3.0,
-      4.0,
-      5.0,
-      6.0
+      1.8,
+      2.5,
+      3.2
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -1953,12 +1993,12 @@
     "mathTier": 3,
     "baseDamage": 12,
     "chainMultipliers": [
+      0.5,
       1.0,
-      2.0,
-      3.0,
-      4.0,
-      5.0,
-      6.0
+      1.8,
+      2.5,
+      3.2,
+      4.0
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -1999,12 +2039,12 @@
     "mathTier": 3,
     "baseDamage": 14,
     "chainMultipliers": [
+      0.5,
       1.0,
-      2.0,
-      3.0,
-      4.0,
-      5.0,
-      6.0
+      1.8,
+      2.5,
+      3.2,
+      4.0
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -2045,12 +2085,13 @@
     "mathTier": 4,
     "baseDamage": 17,
     "chainMultipliers": [
+      0.5,
       1.0,
-      2.0,
-      3.0,
+      1.8,
+      2.5,
+      3.2,
       4.0,
-      5.0,
-      6.0
+      4.8
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -2091,12 +2132,14 @@
     "mathTier": 5,
     "baseDamage": 21,
     "chainMultipliers": [
+      0.5,
       1.0,
-      2.0,
-      3.0,
+      1.8,
+      2.5,
+      3.2,
       4.0,
-      5.0,
-      6.0
+      4.8,
+      5.5
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -2137,12 +2180,14 @@
     "mathTier": 5,
     "baseDamage": 20,
     "chainMultipliers": [
+      0.5,
       1.0,
-      2.0,
-      3.0,
+      1.8,
+      2.5,
+      3.2,
       4.0,
-      5.0,
-      6.0
+      4.8,
+      5.5
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -2183,12 +2228,10 @@
     "mathTier": 1,
     "baseDamage": 4,
     "chainMultipliers": [
+      0.5,
       1.0,
-      2.0,
-      3.0,
-      4.0,
-      5.0,
-      6.0
+      1.8,
+      2.5
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -2228,12 +2271,10 @@
     "mathTier": 1,
     "baseDamage": 6,
     "chainMultipliers": [
+      0.5,
       1.0,
-      2.0,
-      3.0,
-      4.0,
-      5.0,
-      6.0
+      1.8,
+      2.5
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -2273,12 +2314,11 @@
     "mathTier": 2,
     "baseDamage": 5,
     "chainMultipliers": [
+      0.5,
       1.0,
-      2.0,
-      3.0,
-      4.0,
-      5.0,
-      6.0
+      1.8,
+      2.5,
+      3.2
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -2318,12 +2358,11 @@
     "mathTier": 2,
     "baseDamage": 8,
     "chainMultipliers": [
+      0.5,
       1.0,
-      2.0,
-      3.0,
-      4.0,
-      5.0,
-      6.0
+      1.8,
+      2.5,
+      3.2
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -2363,12 +2402,12 @@
     "mathTier": 3,
     "baseDamage": 6,
     "chainMultipliers": [
+      0.5,
       1.0,
-      2.0,
-      3.0,
-      4.0,
-      5.0,
-      6.0
+      1.8,
+      2.5,
+      3.2,
+      4.0
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -2408,12 +2447,12 @@
     "mathTier": 3,
     "baseDamage": 10,
     "chainMultipliers": [
+      0.5,
       1.0,
-      2.0,
-      3.0,
-      4.0,
-      5.0,
-      6.0
+      1.8,
+      2.5,
+      3.2,
+      4.0
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -2453,12 +2492,13 @@
     "mathTier": 4,
     "baseDamage": 8,
     "chainMultipliers": [
+      0.5,
       1.0,
-      2.0,
-      3.0,
+      1.8,
+      2.5,
+      3.2,
       4.0,
-      5.0,
-      6.0
+      4.8
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -2498,12 +2538,13 @@
     "mathTier": 4,
     "baseDamage": 12,
     "chainMultipliers": [
+      0.5,
       1.0,
-      2.0,
-      3.0,
+      1.8,
+      2.5,
+      3.2,
       4.0,
-      5.0,
-      6.0
+      4.8
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -2543,12 +2584,14 @@
     "mathTier": 5,
     "baseDamage": 15,
     "chainMultipliers": [
+      0.5,
       1.0,
-      2.0,
-      3.0,
+      1.8,
+      2.5,
+      3.2,
       4.0,
-      5.0,
-      6.0
+      4.8,
+      5.5
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -2588,12 +2631,10 @@
     "mathTier": 1,
     "baseDamage": 7,
     "chainMultipliers": [
+      0.5,
       1.0,
-      2.0,
-      3.0,
-      4.0,
-      5.0,
-      6.0
+      1.8,
+      2.5
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -2633,12 +2674,11 @@
     "mathTier": 2,
     "baseDamage": 9,
     "chainMultipliers": [
+      0.5,
       1.0,
-      2.0,
-      3.0,
-      4.0,
-      5.0,
-      6.0
+      1.8,
+      2.5,
+      3.2
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -2678,12 +2718,12 @@
     "mathTier": 3,
     "baseDamage": 11,
     "chainMultipliers": [
+      0.5,
       1.0,
-      2.0,
-      3.0,
-      4.0,
-      5.0,
-      6.0
+      1.8,
+      2.5,
+      3.2,
+      4.0
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -2723,12 +2763,13 @@
     "mathTier": 4,
     "baseDamage": 14,
     "chainMultipliers": [
+      0.5,
       1.0,
-      2.0,
-      3.0,
+      1.8,
+      2.5,
+      3.2,
       4.0,
-      5.0,
-      6.0
+      4.8
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -2768,12 +2809,14 @@
     "mathTier": 5,
     "baseDamage": 18,
     "chainMultipliers": [
+      0.5,
       1.0,
-      2.0,
-      3.0,
+      1.8,
+      2.5,
+      3.2,
       4.0,
-      5.0,
-      6.0
+      4.8,
+      5.5
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -2803,5 +2846,2973 @@
     "unidentified_name": "a dark ore crossbow",
     "lore": "An adamantine crossbow fires its bolts with supernatural force. The dark metal mechanism stores more energy than any mundane material could, then releases it in a single explosive motion. Bolts from this weapon can punch through armor that would stop a ballistae bolt.",
     "quiz_tier": 5
+  },
+  "bone_mace": {
+    "name": "bone mace",
+    "class": "mace",
+    "variant": "1h",
+    "tier": 1,
+    "material": "bone",
+    "mathTier": 1,
+    "baseDamage": 5,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "crush"
+    ],
+    "symbol": ")",
+    "color": [
+      220,
+      215,
+      195
+    ],
+    "weight": 3,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.15,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 100,
+      "21-40": 20,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
+    },
+    "containerLootTier": "common",
+    "value": 20,
+    "min_level": 1,
+    "unidentified_name": "a crude bone club",
+    "lore": "Fashioned from the femur of some large beast, this mace is little more than a heavy stick. Primitive but effective — the skull gives way just as readily to bone as to iron.",
+    "quiz_tier": 1,
+    "identified": false
+  },
+  "iron_mace": {
+    "name": "iron mace",
+    "class": "mace",
+    "variant": "1h",
+    "tier": 1,
+    "material": "iron",
+    "mathTier": 1,
+    "baseDamage": 7,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "crush"
+    ],
+    "symbol": ")",
+    "color": [
+      200,
+      210,
+      230
+    ],
+    "weight": 3,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.22,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 100,
+      "21-40": 20,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
+    },
+    "containerLootTier": "common",
+    "value": 95,
+    "min_level": 1,
+    "unidentified_name": "a heavy flanged club",
+    "lore": "The flanged mace was a revelation in medieval warfare — its protruding ridges could deform plate armor and transmit fatal force even through thick padding. This iron version is the workhorse of dungeon brawlers who prefer certainty over finesse.",
+    "quiz_tier": 1,
+    "identified": false
+  },
+  "steel_mace": {
+    "name": "steel mace",
+    "class": "mace",
+    "variant": "1h",
+    "tier": 2,
+    "material": "steel",
+    "mathTier": 2,
+    "baseDamage": 10,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "crush"
+    ],
+    "symbol": ")",
+    "color": [
+      160,
+      185,
+      215
+    ],
+    "weight": 3,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.26,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 30,
+      "21-40": 100,
+      "41-60": 20,
+      "61-80": 0,
+      "81-100": 0
+    },
+    "containerLootTier": "common",
+    "value": 170,
+    "min_level": 21,
+    "unidentified_name": "a heavy ridged bludgeon",
+    "lore": "A well-tempered steel mace carries authority that few swords can match against heavily armored foes. Crusader knights favored such weapons when their blades proved useless against Saracen mail.",
+    "quiz_tier": 2,
+    "identified": false
+  },
+  "hardened_gold_mace": {
+    "name": "hardened gold mace",
+    "class": "mace",
+    "variant": "1h",
+    "tier": 3,
+    "material": "hardened gold",
+    "mathTier": 3,
+    "baseDamage": 13,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0,
+      3.5
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "crush"
+    ],
+    "symbol": ")",
+    "color": [
+      220,
+      190,
+      60
+    ],
+    "weight": 3,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.3,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 30,
+      "41-60": 100,
+      "61-80": 20,
+      "81-100": 0
+    },
+    "containerLootTier": "uncommon",
+    "value": 245,
+    "min_level": 41,
+    "unidentified_name": "a gleaming weighted club",
+    "lore": "Hardened gold is denser than steel and far more resistant to corrosion. The weight distribution of a gold mace is subtly different — the swing carries longer, the impact more decisive. Bishops of old carried such weapons, claiming they shed no blood while still crushing skulls.",
+    "quiz_tier": 3,
+    "identified": false
+  },
+  "diamond_mace": {
+    "name": "diamond mace",
+    "class": "mace",
+    "variant": "1h",
+    "tier": 4,
+    "material": "diamond",
+    "mathTier": 4,
+    "baseDamage": 16,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0,
+      3.5,
+      4.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "crush"
+    ],
+    "symbol": ")",
+    "color": [
+      180,
+      240,
+      255
+    ],
+    "weight": 3,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.33,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 30,
+      "61-80": 100,
+      "81-100": 20
+    },
+    "containerLootTier": "rare",
+    "value": 320,
+    "min_level": 61,
+    "unidentified_name": "a brilliantly faceted bludgeon",
+    "lore": "Diamond-tipped flanges can shatter the finest plate as if it were terracotta. The mage-smiths who craft these tools embed the gem-work into channels of enchanted iron, ensuring the diamonds survive the brutal stresses of combat.",
+    "quiz_tier": 4,
+    "identified": false
+  },
+  "adamantine_mace": {
+    "name": "adamantine mace",
+    "class": "mace",
+    "variant": "1h",
+    "tier": 5,
+    "material": "adamantine",
+    "mathTier": 5,
+    "baseDamage": 20,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0,
+      3.5,
+      4.0,
+      4.5,
+      5.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "crush"
+    ],
+    "symbol": ")",
+    "color": [
+      90,
+      60,
+      180
+    ],
+    "weight": 3,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.36,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 30,
+      "81-100": 100
+    },
+    "containerLootTier": "rare",
+    "value": 400,
+    "min_level": 81,
+    "unidentified_name": "an unnaturally heavy flanged mace",
+    "lore": "Adamantine absorbs kinetic energy like a dark sponge and releases it concentrated at the point of impact. Wielding this mace feels like striking with a piece of a collapsed star.",
+    "quiz_tier": 5,
+    "identified": false
+  },
+  "iron_warhammer": {
+    "name": "iron war hammer",
+    "class": "warhammer",
+    "variant": "2h",
+    "tier": 1,
+    "material": "iron",
+    "mathTier": 1,
+    "baseDamage": 11,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.8,
+      2.5
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "crush"
+    ],
+    "symbol": ")",
+    "color": [
+      200,
+      210,
+      230
+    ],
+    "weight": 5,
+    "twoHanded": true,
+    "reach": 1,
+    "stunChance": 0.28,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 100,
+      "21-40": 20,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
+    },
+    "containerLootTier": "common",
+    "value": 115,
+    "min_level": 1,
+    "unidentified_name": "a two-handed iron hammer",
+    "lore": "The war hammer's long haft provides leverage that no one-handed weapon can match. Used to drive tent stakes by day and skulls by night, this iron model has seen both purposes.",
+    "quiz_tier": 1,
+    "identified": false
+  },
+  "steel_warhammer": {
+    "name": "steel war hammer",
+    "class": "warhammer",
+    "variant": "2h",
+    "tier": 2,
+    "material": "steel",
+    "mathTier": 2,
+    "baseDamage": 15,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.8,
+      2.5,
+      3.2
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "crush"
+    ],
+    "symbol": ")",
+    "color": [
+      160,
+      185,
+      215
+    ],
+    "weight": 5,
+    "twoHanded": true,
+    "reach": 1,
+    "stunChance": 0.32,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 30,
+      "21-40": 100,
+      "41-60": 20,
+      "61-80": 0,
+      "81-100": 0
+    },
+    "containerLootTier": "common",
+    "value": 195,
+    "min_level": 21,
+    "unidentified_name": "a heavy two-handed steel hammer",
+    "lore": "The Swiss and German infantry of the late medieval period elevated the war hammer into a specialized anti-armor tool. The poll spike could punch through visors; the hammerhead deformed pauldrons. This steel version carries that lethal legacy.",
+    "quiz_tier": 2,
+    "identified": false
+  },
+  "hardened_gold_warhammer": {
+    "name": "hardened gold war hammer",
+    "class": "warhammer",
+    "variant": "2h",
+    "tier": 3,
+    "material": "hardened gold",
+    "mathTier": 3,
+    "baseDamage": 19,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.8,
+      2.5,
+      3.2,
+      4.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "crush"
+    ],
+    "symbol": ")",
+    "color": [
+      220,
+      190,
+      60
+    ],
+    "weight": 5,
+    "twoHanded": true,
+    "reach": 1,
+    "stunChance": 0.35,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 30,
+      "41-60": 100,
+      "61-80": 20,
+      "81-100": 0
+    },
+    "containerLootTier": "uncommon",
+    "value": 275,
+    "min_level": 41,
+    "unidentified_name": "a gleaming two-handed maul",
+    "lore": "A maul of hardened gold is almost offensively heavy — until the first blow lands. Then the weight becomes a virtue. Dwarven artificers claim that gold hardened with their secret alloys is twice as effective as steel at transmitting force through enchanted armor.",
+    "quiz_tier": 3,
+    "identified": false
+  },
+  "diamond_warhammer": {
+    "name": "diamond war hammer",
+    "class": "warhammer",
+    "variant": "2h",
+    "tier": 4,
+    "material": "diamond",
+    "mathTier": 4,
+    "baseDamage": 23,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.8,
+      2.5,
+      3.2,
+      4.0,
+      4.8
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "crush"
+    ],
+    "symbol": ")",
+    "color": [
+      180,
+      240,
+      255
+    ],
+    "weight": 5,
+    "twoHanded": true,
+    "reach": 1,
+    "stunChance": 0.38,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 30,
+      "61-80": 100,
+      "81-100": 20
+    },
+    "containerLootTier": "rare",
+    "value": 355,
+    "min_level": 61,
+    "unidentified_name": "a brutally heavy gem-faced hammer",
+    "lore": "The impact of a diamond war hammer sends cracks propagating through stone floors. Its face is set with a flat diamond matrix that shatters on contact with metal — but regrows with each blow, a peculiarity no sage has fully explained.",
+    "quiz_tier": 4,
+    "identified": false
+  },
+  "adamantine_warhammer": {
+    "name": "adamantine war hammer",
+    "class": "warhammer",
+    "variant": "2h",
+    "tier": 5,
+    "material": "adamantine",
+    "mathTier": 5,
+    "baseDamage": 28,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.8,
+      2.5,
+      3.2,
+      4.0,
+      4.8,
+      5.5
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "crush"
+    ],
+    "symbol": ")",
+    "color": [
+      90,
+      60,
+      180
+    ],
+    "weight": 5,
+    "twoHanded": true,
+    "reach": 1,
+    "stunChance": 0.4,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 30,
+      "81-100": 100
+    },
+    "containerLootTier": "rare",
+    "value": 440,
+    "min_level": 81,
+    "unidentified_name": "an impossibly heavy two-handed hammer",
+    "lore": "Adamantine war hammers are not swung — they are guided. The weapon's own momentum does the work; the wielder merely steers. Legends say this weapon once belonged to a giant.",
+    "quiz_tier": 5,
+    "identified": false
+  },
+  "iron_morningstar": {
+    "name": "iron morningstar",
+    "class": "morningstar",
+    "variant": "1h",
+    "tier": 1,
+    "material": "iron",
+    "mathTier": 1,
+    "baseDamage": 8,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "crush",
+      "pierce"
+    ],
+    "symbol": ")",
+    "color": [
+      200,
+      210,
+      230
+    ],
+    "weight": 3,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.15,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 100,
+      "21-40": 20,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
+    },
+    "containerLootTier": "common",
+    "value": 100,
+    "min_level": 1,
+    "unidentified_name": "a spiked iron ball on a shaft",
+    "lore": "The morningstar — a spiked ball atop a stout shaft — was feared more for the wounds it left than the force it delivered. The iron spikes punch through ring mail and leave jagged tears that refuse to clot.",
+    "quiz_tier": 1,
+    "identified": false
+  },
+  "steel_morningstar": {
+    "name": "steel morningstar",
+    "class": "morningstar",
+    "variant": "1h",
+    "tier": 2,
+    "material": "steel",
+    "mathTier": 2,
+    "baseDamage": 11,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "crush",
+      "pierce"
+    ],
+    "symbol": ")",
+    "color": [
+      160,
+      185,
+      215
+    ],
+    "weight": 3,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.18,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 30,
+      "21-40": 100,
+      "41-60": 20,
+      "61-80": 0,
+      "81-100": 0
+    },
+    "containerLootTier": "common",
+    "value": 175,
+    "min_level": 21,
+    "unidentified_name": "a steel spiked bludgeon",
+    "lore": "Steel-tipped spikes on a forged shaft represent a step up in brutality. The morningstar was commonplace in 13th-century European warfare, valued because soldiers could learn its use in days rather than years.",
+    "quiz_tier": 2,
+    "identified": false
+  },
+  "hardened_gold_morningstar": {
+    "name": "hardened gold morningstar",
+    "class": "morningstar",
+    "variant": "1h",
+    "tier": 3,
+    "material": "hardened gold",
+    "mathTier": 3,
+    "baseDamage": 14,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0,
+      3.5
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "crush",
+      "pierce"
+    ],
+    "symbol": ")",
+    "color": [
+      220,
+      190,
+      60
+    ],
+    "weight": 3,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.2,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 30,
+      "41-60": 100,
+      "61-80": 20,
+      "81-100": 0
+    },
+    "containerLootTier": "uncommon",
+    "value": 250,
+    "min_level": 41,
+    "unidentified_name": "a gleaming spiked golden ball",
+    "lore": "A morningstar of hardened gold carries almost ceremonial menace. Each spike is etched with serpentine scrollwork. The wounds it leaves are ragged things that bleed for hours, as if cursed by the ornate craftsmanship itself.",
+    "quiz_tier": 3,
+    "identified": false
+  },
+  "diamond_morningstar": {
+    "name": "diamond morningstar",
+    "class": "morningstar",
+    "variant": "1h",
+    "tier": 4,
+    "material": "diamond",
+    "mathTier": 4,
+    "baseDamage": 17,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0,
+      3.5,
+      4.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "crush",
+      "pierce"
+    ],
+    "symbol": ")",
+    "color": [
+      180,
+      240,
+      255
+    ],
+    "weight": 3,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.22,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 30,
+      "61-80": 100,
+      "81-100": 20
+    },
+    "containerLootTier": "rare",
+    "value": 325,
+    "min_level": 61,
+    "unidentified_name": "a spiked gem-encrusted weapon",
+    "lore": "Diamond spikes slice as cleanly as blades while the iron core delivers concussive force. Victims of this weapon face two problems simultaneously: hemorrhage and shock. The combination is usually fatal.",
+    "quiz_tier": 4,
+    "identified": false
+  },
+  "adamantine_morningstar": {
+    "name": "adamantine morningstar",
+    "class": "morningstar",
+    "variant": "1h",
+    "tier": 5,
+    "material": "adamantine",
+    "mathTier": 5,
+    "baseDamage": 22,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0,
+      3.5,
+      4.0,
+      4.5,
+      5.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "crush",
+      "pierce"
+    ],
+    "symbol": ")",
+    "color": [
+      90,
+      60,
+      180
+    ],
+    "weight": 3,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.25,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 30,
+      "81-100": 100
+    },
+    "containerLootTier": "rare",
+    "value": 410,
+    "min_level": 81,
+    "unidentified_name": "a terrifyingly spiked iron ball",
+    "lore": "An adamantine morningstar is the last word in martial brutality. The spikes are capable of piercing dragon hide, and the weight behind each blow is staggering. Wounds from this weapon are catastrophic and invariably begin to bleed.",
+    "quiz_tier": 5,
+    "identified": false
+  },
+  "iron_flail": {
+    "name": "iron flail",
+    "class": "flail",
+    "variant": "1h",
+    "tier": 1,
+    "material": "iron",
+    "mathTier": 1,
+    "baseDamage": 7,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "crush"
+    ],
+    "symbol": ")",
+    "color": [
+      200,
+      210,
+      230
+    ],
+    "weight": 3,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": true,
+    "critMultiplier": 1.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 100,
+      "21-40": 20,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
+    },
+    "containerLootTier": "common",
+    "value": 95,
+    "min_level": 1,
+    "unidentified_name": "a chained iron ball",
+    "lore": "The flail's flexible chain allows its head to arc around a shield's edge, delivering force to spots the wielder could not otherwise reach. This iron model is a peasant's weapon — cheap, effective, and deeply resented by knights who spent fortunes on shields.",
+    "quiz_tier": 1,
+    "identified": false
+  },
+  "steel_flail": {
+    "name": "steel flail",
+    "class": "flail",
+    "variant": "1h",
+    "tier": 2,
+    "material": "steel",
+    "mathTier": 2,
+    "baseDamage": 10,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "crush"
+    ],
+    "symbol": ")",
+    "color": [
+      160,
+      185,
+      215
+    ],
+    "weight": 3,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": true,
+    "critMultiplier": 1.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 30,
+      "21-40": 100,
+      "41-60": 20,
+      "61-80": 0,
+      "81-100": 0
+    },
+    "containerLootTier": "common",
+    "value": 170,
+    "min_level": 21,
+    "unidentified_name": "a heavy chained steel ball",
+    "lore": "A steel flail in trained hands renders a shield almost irrelevant. The head snaps around guards with contemptuous ease. European foot soldiers adopted the flail specifically to counter the proliferation of large tower shields in 12th-century warfare.",
+    "quiz_tier": 2,
+    "identified": false
+  },
+  "hardened_gold_flail": {
+    "name": "hardened gold flail",
+    "class": "flail",
+    "variant": "1h",
+    "tier": 3,
+    "material": "hardened gold",
+    "mathTier": 3,
+    "baseDamage": 13,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0,
+      3.5
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "crush"
+    ],
+    "symbol": ")",
+    "color": [
+      220,
+      190,
+      60
+    ],
+    "weight": 3,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": true,
+    "critMultiplier": 1.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 30,
+      "41-60": 100,
+      "61-80": 20,
+      "81-100": 0
+    },
+    "containerLootTier": "uncommon",
+    "value": 245,
+    "min_level": 41,
+    "unidentified_name": "a weighted golden flail",
+    "lore": "The weight of hardened gold makes this flail's head swing with almost predatory momentum. The chain is enchanted with flexibility wards that prevent kinking even at full extension. No shield yet made has stopped it.",
+    "quiz_tier": 3,
+    "identified": false
+  },
+  "diamond_flail": {
+    "name": "diamond flail",
+    "class": "flail",
+    "variant": "1h",
+    "tier": 4,
+    "material": "diamond",
+    "mathTier": 4,
+    "baseDamage": 16,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0,
+      3.5,
+      4.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "crush"
+    ],
+    "symbol": ")",
+    "color": [
+      180,
+      240,
+      255
+    ],
+    "weight": 3,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": true,
+    "critMultiplier": 1.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 30,
+      "61-80": 100,
+      "81-100": 20
+    },
+    "containerLootTier": "rare",
+    "value": 320,
+    "min_level": 61,
+    "unidentified_name": "a gem-headed chained weapon",
+    "lore": "The diamond head of this flail shatters against armor but reforms in an instant — an enchantment that bewilders anyone trying to block it. The chain whispers as it moves, a sound that experienced warriors have learned to dread.",
+    "quiz_tier": 4,
+    "identified": false
+  },
+  "adamantine_flail": {
+    "name": "adamantine flail",
+    "class": "flail",
+    "variant": "1h",
+    "tier": 5,
+    "material": "adamantine",
+    "mathTier": 5,
+    "baseDamage": 20,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0,
+      3.5,
+      4.0,
+      4.5,
+      5.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "crush"
+    ],
+    "symbol": ")",
+    "color": [
+      90,
+      60,
+      180
+    ],
+    "weight": 3,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": true,
+    "critMultiplier": 1.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 30,
+      "81-100": 100
+    },
+    "containerLootTier": "rare",
+    "value": 400,
+    "min_level": 81,
+    "unidentified_name": "an incredibly dense chained weapon",
+    "lore": "Adamantine flails are weapons of last resort even among elite warriors. The chain never tangles; the head never shatters; the force is absolute. The only reliable response to being struck is to fall.",
+    "quiz_tier": 5,
+    "identified": false
+  },
+  "iron_rapier": {
+    "name": "iron rapier",
+    "class": "rapier",
+    "variant": "1h",
+    "tier": 1,
+    "material": "iron",
+    "mathTier": 1,
+    "baseDamage": 5,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "pierce"
+    ],
+    "symbol": ")",
+    "color": [
+      200,
+      210,
+      230
+    ],
+    "weight": 3,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 100,
+      "21-40": 20,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
+    },
+    "containerLootTier": "common",
+    "value": 85,
+    "min_level": 1,
+    "unidentified_name": "a thin thrusting blade",
+    "lore": "A slender iron blade ground to a needle point, the rapier was the duelist's weapon of choice throughout Renaissance Europe. What it lacks in raw power it compensates with speed and precision. A perfect thrust through the visor slot ends fights instantly.",
+    "quiz_tier": 1,
+    "identified": false
+  },
+  "steel_rapier": {
+    "name": "steel rapier",
+    "class": "rapier",
+    "variant": "1h",
+    "tier": 2,
+    "material": "steel",
+    "mathTier": 2,
+    "baseDamage": 7,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "pierce"
+    ],
+    "symbol": ")",
+    "color": [
+      160,
+      185,
+      215
+    ],
+    "weight": 3,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.1,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 30,
+      "21-40": 100,
+      "41-60": 20,
+      "61-80": 0,
+      "81-100": 0
+    },
+    "containerLootTier": "common",
+    "value": 155,
+    "min_level": 21,
+    "unidentified_name": "a slim steel thrusting sword",
+    "lore": "The Spanish pappenheimer rapier refined the form: a flexible blade tapering to a wicked point, balanced for the thrust rather than the cut. Steel allows the blade to be made longer and more whippy. Masters of the form could place their point anywhere within their opponent's guard.",
+    "quiz_tier": 2,
+    "identified": false
+  },
+  "hardened_gold_rapier": {
+    "name": "hardened gold rapier",
+    "class": "rapier",
+    "variant": "1h",
+    "tier": 3,
+    "material": "hardened gold",
+    "mathTier": 3,
+    "baseDamage": 9,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0,
+      3.5
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "pierce"
+    ],
+    "symbol": ")",
+    "color": [
+      220,
+      190,
+      60
+    ],
+    "weight": 3,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.2,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 30,
+      "41-60": 100,
+      "61-80": 20,
+      "81-100": 0
+    },
+    "containerLootTier": "uncommon",
+    "value": 225,
+    "min_level": 41,
+    "unidentified_name": "a gleaming thin thrusting blade",
+    "lore": "A rapier of hardened gold is paradoxically both a status symbol and a lethal weapon. The gold alloy allows unusual flexibility — the blade bends in a full arc without breaking, storing energy that snaps it straight on release and drives the point home with devastating authority.",
+    "quiz_tier": 3,
+    "identified": false
+  },
+  "diamond_rapier": {
+    "name": "diamond rapier",
+    "class": "rapier",
+    "variant": "1h",
+    "tier": 4,
+    "material": "diamond",
+    "mathTier": 4,
+    "baseDamage": 12,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0,
+      3.5,
+      4.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "pierce"
+    ],
+    "symbol": ")",
+    "color": [
+      180,
+      240,
+      255
+    ],
+    "weight": 3,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.3,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 30,
+      "61-80": 100,
+      "81-100": 20
+    },
+    "containerLootTier": "rare",
+    "value": 300,
+    "min_level": 61,
+    "unidentified_name": "a crystalline needle-pointed blade",
+    "lore": "Diamond ground to a blade that can pierce plate armor as if it were wood. The weapon's lightness belies its devastation. A diamond rapier's perfect chain strike has been compared to a lightning bolt finding the shortest path to ground.",
+    "quiz_tier": 4,
+    "identified": false
+  },
+  "adamantine_rapier": {
+    "name": "adamantine rapier",
+    "class": "rapier",
+    "variant": "1h",
+    "tier": 5,
+    "material": "adamantine",
+    "mathTier": 5,
+    "baseDamage": 15,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0,
+      3.5,
+      4.0,
+      4.5,
+      5.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "pierce"
+    ],
+    "symbol": ")",
+    "color": [
+      90,
+      60,
+      180
+    ],
+    "weight": 3,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.5,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 30,
+      "81-100": 100
+    },
+    "containerLootTier": "rare",
+    "value": 375,
+    "min_level": 81,
+    "unidentified_name": "a dark slender thrusting sword",
+    "lore": "The last word in precision killing. An adamantine rapier can pierce any known protection. Its perfect chain strike channels all the wielder's skill into one catastrophic thrust that bypasses the body's defenses entirely.",
+    "quiz_tier": 5,
+    "identified": false
+  },
+  "iron_scimitar": {
+    "name": "iron scimitar",
+    "class": "scimitar",
+    "variant": "1h",
+    "tier": 1,
+    "material": "iron",
+    "mathTier": 1,
+    "baseDamage": 7,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash"
+    ],
+    "symbol": ")",
+    "color": [
+      200,
+      210,
+      230
+    ],
+    "weight": 3,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 100,
+      "21-40": 20,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
+    },
+    "containerLootTier": "common",
+    "value": 95,
+    "min_level": 1,
+    "unidentified_name": "a curved iron slashing blade",
+    "lore": "The scimitar's curved blade is designed for cavalry — the drawing cut that slices as the horseman rides past. On foot it is equally fearsome: the curved edge travels a longer path through flesh than a straight blade of identical length.",
+    "quiz_tier": 1,
+    "identified": false
+  },
+  "steel_scimitar": {
+    "name": "steel scimitar",
+    "class": "scimitar",
+    "variant": "1h",
+    "tier": 2,
+    "material": "steel",
+    "mathTier": 2,
+    "baseDamage": 9,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash"
+    ],
+    "symbol": ")",
+    "color": [
+      160,
+      185,
+      215
+    ],
+    "weight": 3,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.1,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 30,
+      "21-40": 100,
+      "41-60": 20,
+      "61-80": 0,
+      "81-100": 0
+    },
+    "containerLootTier": "common",
+    "value": 165,
+    "min_level": 21,
+    "unidentified_name": "a curved steel slashing sword",
+    "lore": "Saracen smiths developed steel scimitars to a fine art. A well-tempered curve blade combines the edge geometry that maximizes cutting with the structural rigidity needed to survive combat. Crusader accounts describe these blades as 'cutting like scissors through silk.'",
+    "quiz_tier": 2,
+    "identified": false
+  },
+  "hardened_gold_scimitar": {
+    "name": "hardened gold scimitar",
+    "class": "scimitar",
+    "variant": "1h",
+    "tier": 3,
+    "material": "hardened gold",
+    "mathTier": 3,
+    "baseDamage": 12,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0,
+      3.5
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash"
+    ],
+    "symbol": ")",
+    "color": [
+      220,
+      190,
+      60
+    ],
+    "weight": 3,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.2,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 30,
+      "41-60": 100,
+      "61-80": 20,
+      "81-100": 0
+    },
+    "containerLootTier": "uncommon",
+    "value": 240,
+    "min_level": 41,
+    "unidentified_name": "a curved gleaming slasher",
+    "lore": "The curved lines of a hardened gold scimitar make it as aesthetically striking as it is dangerous. The curve amplifies the cutting motion; the gold's density adds momentum at the tip where it matters most. Several legendary blades of this type are named in Islamic chronicles.",
+    "quiz_tier": 3,
+    "identified": false
+  },
+  "diamond_scimitar": {
+    "name": "diamond scimitar",
+    "class": "scimitar",
+    "variant": "1h",
+    "tier": 4,
+    "material": "diamond",
+    "mathTier": 4,
+    "baseDamage": 15,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0,
+      3.5,
+      4.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash"
+    ],
+    "symbol": ")",
+    "color": [
+      180,
+      240,
+      255
+    ],
+    "weight": 3,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.3,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 30,
+      "61-80": 100,
+      "81-100": 20
+    },
+    "containerLootTier": "rare",
+    "value": 315,
+    "min_level": 61,
+    "unidentified_name": "a curved crystal-edged blade",
+    "lore": "A diamond-edged curve blade divides flesh so cleanly that wounds seem to seal before bleeding — then open catastrophically a second later. The perfect chain strike with this weapon is a blur that leaves opponents confused about when and how badly they were cut.",
+    "quiz_tier": 4,
+    "identified": false
+  },
+  "adamantine_scimitar": {
+    "name": "adamantine scimitar",
+    "class": "scimitar",
+    "variant": "1h",
+    "tier": 5,
+    "material": "adamantine",
+    "mathTier": 5,
+    "baseDamage": 18,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0,
+      3.5,
+      4.0,
+      4.5,
+      5.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash"
+    ],
+    "symbol": ")",
+    "color": [
+      90,
+      60,
+      180
+    ],
+    "weight": 3,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.4,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 30,
+      "81-100": 100
+    },
+    "containerLootTier": "rare",
+    "value": 390,
+    "min_level": 81,
+    "unidentified_name": "a dark sweeping curved blade",
+    "lore": "An adamantine scimitar completes its arc so quickly that it seems to disappear between one heartbeat and the next. The critical momentum of a flawless chain attack through the curved edge geometry is catastrophic.",
+    "quiz_tier": 5,
+    "identified": false
+  },
+  "iron_zweihander": {
+    "name": "iron zweihander",
+    "class": "zweihander",
+    "variant": "2h",
+    "tier": 1,
+    "material": "iron",
+    "mathTier": 1,
+    "baseDamage": 13,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.8,
+      2.5
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash",
+      "pierce"
+    ],
+    "symbol": ")",
+    "color": [
+      200,
+      210,
+      230
+    ],
+    "weight": 5,
+    "twoHanded": true,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 100,
+      "21-40": 20,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
+    },
+    "containerLootTier": "common",
+    "value": 125,
+    "min_level": 1,
+    "unidentified_name": "a massive two-handed iron sword",
+    "lore": "The zweihander — literally 'two-hander' — was the weapon of Doppelsöldner, German mercenaries paid double wages to stand in the front rank and shatter enemy pike formations. An iron zweihander is crude but the physics are simple: mass times velocity.",
+    "quiz_tier": 1,
+    "identified": false
+  },
+  "steel_zweihander": {
+    "name": "steel zweihander",
+    "class": "zweihander",
+    "variant": "2h",
+    "tier": 2,
+    "material": "steel",
+    "mathTier": 2,
+    "baseDamage": 17,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.8,
+      2.5,
+      3.2
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash",
+      "pierce"
+    ],
+    "symbol": ")",
+    "color": [
+      160,
+      185,
+      215
+    ],
+    "weight": 5,
+    "twoHanded": true,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 30,
+      "21-40": 100,
+      "41-60": 20,
+      "61-80": 0,
+      "81-100": 0
+    },
+    "containerLootTier": "common",
+    "value": 205,
+    "min_level": 21,
+    "unidentified_name": "a long steel two-handed sword",
+    "lore": "The 16th-century zweihander reached up to 6 feet in length and weighed 5 to 7 pounds. This steel version is at the lower end of that spectrum but fully battle-ready. The flamboyant (flame-shaped) blade was designed to disrupt pole formations with vibration on contact.",
+    "quiz_tier": 2,
+    "identified": false
+  },
+  "hardened_gold_zweihander": {
+    "name": "hardened gold zweihander",
+    "class": "zweihander",
+    "variant": "2h",
+    "tier": 3,
+    "material": "hardened gold",
+    "mathTier": 3,
+    "baseDamage": 21,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.8,
+      2.5,
+      3.2,
+      4.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash",
+      "pierce"
+    ],
+    "symbol": ")",
+    "color": [
+      220,
+      190,
+      60
+    ],
+    "weight": 5,
+    "twoHanded": true,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 30,
+      "41-60": 100,
+      "61-80": 20,
+      "81-100": 0
+    },
+    "containerLootTier": "uncommon",
+    "value": 285,
+    "min_level": 41,
+    "unidentified_name": "a massive gleaming two-handed blade",
+    "lore": "A zweihander of hardened gold is an absurdity in steel workshops but a masterwork in magical ones. The weight is borne by enchantments; the edge is keener than any steel. Those few who have wielded it describe the experience as 'conducting a symphony of carnage.'",
+    "quiz_tier": 3,
+    "identified": false
+  },
+  "diamond_zweihander": {
+    "name": "diamond zweihander",
+    "class": "zweihander",
+    "variant": "2h",
+    "tier": 4,
+    "material": "diamond",
+    "mathTier": 4,
+    "baseDamage": 26,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.8,
+      2.5,
+      3.2,
+      4.0,
+      4.8
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash",
+      "pierce"
+    ],
+    "symbol": ")",
+    "color": [
+      180,
+      240,
+      255
+    ],
+    "weight": 5,
+    "twoHanded": true,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 30,
+      "61-80": 100,
+      "81-100": 20
+    },
+    "containerLootTier": "rare",
+    "value": 370,
+    "min_level": 61,
+    "unidentified_name": "a crystalline two-handed giant blade",
+    "lore": "This weapon is slightly taller than the average dwarf and carries enough kinetic energy to cleave through a door. The diamond matrix edge stays forever sharp. Each blow is accompanied by a high-pitched tone from the crystal's vibration.",
+    "quiz_tier": 4,
+    "identified": false
+  },
+  "adamantine_zweihander": {
+    "name": "adamantine zweihander",
+    "class": "zweihander",
+    "variant": "2h",
+    "tier": 5,
+    "material": "adamantine",
+    "mathTier": 5,
+    "baseDamage": 32,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.8,
+      2.5,
+      3.2,
+      4.0,
+      4.8,
+      5.5
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash",
+      "pierce"
+    ],
+    "symbol": ")",
+    "color": [
+      90,
+      60,
+      180
+    ],
+    "weight": 5,
+    "twoHanded": true,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 30,
+      "81-100": 100
+    },
+    "containerLootTier": "rare",
+    "value": 460,
+    "min_level": 81,
+    "unidentified_name": "a devastatingly heavy two-handed sword",
+    "lore": "The adamantine zweihander is a weapon of legend. Very few can lift it without magical assistance. Those who can wield it effectively leave nothing standing. The blade's black surface absorbs light even as it cuts through armor.",
+    "quiz_tier": 5,
+    "identified": false
+  },
+  "gladius": {
+    "name": "gladius",
+    "class": "sword",
+    "variant": "1h",
+    "tier": 1,
+    "material": "iron",
+    "mathTier": 1,
+    "baseDamage": 7,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash",
+      "pierce"
+    ],
+    "symbol": ")",
+    "color": [
+      210,
+      220,
+      235
+    ],
+    "weight": 3,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 20,
+      "21-40": 10,
+      "41-60": 5,
+      "61-80": 2,
+      "81-100": 1
+    },
+    "containerLootTier": "common",
+    "value": 120,
+    "min_level": 1,
+    "unidentified_name": "a short leaf-shaped sword",
+    "lore": "The gladius Hispaniensis was the standard sidearm of the Roman legionary from the 2nd century BC. Its 50-60cm leaf-shaped blade excelled in close formation fighting — the legionary crouched behind his scutum and thrust upward at an exposed abdomen. It won an empire.",
+    "quiz_tier": 1,
+    "identified": false
+  },
+  "pugio": {
+    "name": "pugio",
+    "class": "dagger",
+    "variant": "1h",
+    "tier": 1,
+    "material": "iron",
+    "mathTier": 1,
+    "baseDamage": 4,
+    "chainMultipliers": [
+      0.3,
+      0.6,
+      1.0,
+      1.4,
+      1.8,
+      2.2,
+      2.5
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "pierce",
+      "slash"
+    ],
+    "symbol": ")",
+    "color": [
+      200,
+      210,
+      220
+    ],
+    "weight": 3,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 20,
+      "21-40": 10,
+      "41-60": 5,
+      "61-80": 2,
+      "81-100": 1
+    },
+    "containerLootTier": "common",
+    "value": 80,
+    "min_level": 1,
+    "unidentified_name": "a wide-bladed Roman knife",
+    "lore": "The pugio was the personal sidearm of Roman soldiers and officers from the 1st century BC. Worn on the left hip as a counterweight to the gladius, it served as a last resort in close combat and a tool for camp life. Julius Caesar was allegedly stabbed with a pugio — or many of them.",
+    "quiz_tier": 1,
+    "identified": false
+  },
+  "kopis": {
+    "name": "kopis",
+    "class": "scimitar",
+    "variant": "1h",
+    "tier": 1,
+    "material": "iron",
+    "mathTier": 1,
+    "baseDamage": 8,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash"
+    ],
+    "symbol": ")",
+    "color": [
+      195,
+      175,
+      130
+    ],
+    "weight": 3,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 20,
+      "21-40": 10,
+      "41-60": 5,
+      "61-80": 2,
+      "81-100": 1
+    },
+    "containerLootTier": "common",
+    "value": 110,
+    "min_level": 1,
+    "unidentified_name": "a heavy curved slashing blade",
+    "lore": "The kopis was favored by Greek cavalry and Persian infantry alike. Unlike the straight xiphos, its forward-curving blade was optimized for chopping downward strokes — ideal from horseback. Alexander's Macedonian cavalry carried kopis as secondary weapons alongside their sarissas.",
+    "quiz_tier": 1,
+    "identified": false
+  },
+  "francisca": {
+    "name": "francisca",
+    "class": "axe",
+    "variant": "1h",
+    "tier": 1,
+    "material": "iron",
+    "mathTier": 1,
+    "baseDamage": 9,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash"
+    ],
+    "symbol": ")",
+    "color": [
+      180,
+      170,
+      150
+    ],
+    "weight": 3,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.0,
+    "knockback": true,
+    "ignoreShield": false,
+    "critMultiplier": 1.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 20,
+      "21-40": 10,
+      "41-60": 5,
+      "61-80": 2,
+      "81-100": 1
+    },
+    "containerLootTier": "common",
+    "value": 130,
+    "min_level": 1,
+    "unidentified_name": "a strangely curved single-edged hatchet",
+    "lore": "The francisca was the signature weapon of the Frankish warriors, used from the 5th to 8th centuries. Thrown just before contact, it caromed unpredictably along the ground and knocked down shields, disrupting formations. The 'knockback' effect was literal — it knocked shields away before the charge.",
+    "quiz_tier": 1,
+    "identified": false
+  },
+  "sica": {
+    "name": "sica",
+    "class": "dagger",
+    "variant": "1h",
+    "tier": 1,
+    "material": "iron",
+    "mathTier": 1,
+    "baseDamage": 4,
+    "chainMultipliers": [
+      0.3,
+      0.6,
+      1.0,
+      1.4,
+      1.8,
+      2.2,
+      2.5
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash",
+      "pierce"
+    ],
+    "symbol": ")",
+    "color": [
+      195,
+      185,
+      160
+    ],
+    "weight": 3,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.2,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 20,
+      "21-40": 10,
+      "41-60": 5,
+      "61-80": 2,
+      "81-100": 1
+    },
+    "containerLootTier": "common",
+    "value": 100,
+    "min_level": 1,
+    "unidentified_name": "a curved single-edged knife",
+    "lore": "The sica was the weapon of Dacian warriors and Roman gladiators. Its inward-curved blade was designed to reach behind an opponent's shield and hook around armor. Roman writers noted that wounds from the sica had an unusual tendency to reopen — a phenomenon this blade replicates.",
+    "quiz_tier": 1,
+    "identified": false
+  },
+  "falchion": {
+    "name": "falchion",
+    "class": "sword",
+    "variant": "1h",
+    "tier": 2,
+    "material": "steel",
+    "mathTier": 2,
+    "baseDamage": 11,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash"
+    ],
+    "symbol": ")",
+    "color": [
+      170,
+      185,
+      210
+    ],
+    "weight": 3,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.1,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 5,
+      "21-40": 40,
+      "41-60": 20,
+      "61-80": 8,
+      "81-100": 3
+    },
+    "containerLootTier": "common",
+    "value": 250,
+    "min_level": 21,
+    "unidentified_name": "a heavy curved single-edged sword",
+    "lore": "The falchion was a weapon of the common soldier: cheaper to produce than a knightly sword, requiring less skill to use effectively, and brutally efficient against lightly armored opponents. The wide blade stored more momentum than a narrower sword. Medieval chroniclers described its users as 'indifferent to finesse but devoted to results.'",
+    "quiz_tier": 2,
+    "identified": false
+  },
+  "cinquedea": {
+    "name": "cinquedea",
+    "class": "dagger",
+    "variant": "1h",
+    "tier": 2,
+    "material": "steel",
+    "mathTier": 2,
+    "baseDamage": 7,
+    "chainMultipliers": [
+      0.3,
+      0.6,
+      1.0,
+      1.4,
+      1.8,
+      2.2,
+      2.6,
+      3.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash",
+      "pierce"
+    ],
+    "symbol": ")",
+    "color": [
+      175,
+      190,
+      215
+    ],
+    "weight": 3,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.1,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 5,
+      "21-40": 35,
+      "41-60": 15,
+      "61-80": 5,
+      "81-100": 2
+    },
+    "containerLootTier": "common",
+    "value": 220,
+    "min_level": 21,
+    "unidentified_name": "a very wide short blade",
+    "lore": "Named for its width of 'five fingers' at the ricasso, the cinquedea was a Renaissance Italian status weapon that doubled as a serious fighting tool. Its five ridges gave structural rigidity to an unusually wide blade. Wealthy citizens of 15th-century Ferrara wore these at the hip as a statement of intent.",
+    "quiz_tier": 2,
+    "identified": false
+  },
+  "estoc": {
+    "name": "estoc",
+    "class": "sword",
+    "variant": "1h",
+    "tier": 2,
+    "material": "steel",
+    "mathTier": 2,
+    "baseDamage": 9,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "pierce"
+    ],
+    "symbol": ")",
+    "color": [
+      180,
+      200,
+      225
+    ],
+    "weight": 3,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": true,
+    "critMultiplier": 1.1,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 5,
+      "21-40": 40,
+      "41-60": 20,
+      "61-80": 8,
+      "81-100": 3
+    },
+    "containerLootTier": "common",
+    "value": 280,
+    "min_level": 21,
+    "unidentified_name": "a long stiff thrusting sword",
+    "lore": "The estoc — from Old French 'estocade,' to thrust — was developed specifically to defeat plate armor. Its stiff, unsharpened blade was designed to be driven through mail rings and into gaps in plate. In the hands of an expert it bypasses all surface defenses.",
+    "quiz_tier": 2,
+    "identified": false
+  },
+  "kukri": {
+    "name": "kukri",
+    "class": "dagger",
+    "variant": "1h",
+    "tier": 2,
+    "material": "steel",
+    "mathTier": 2,
+    "baseDamage": 8,
+    "chainMultipliers": [
+      0.3,
+      0.6,
+      1.0,
+      1.4,
+      1.8,
+      2.2,
+      2.6,
+      3.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash"
+    ],
+    "symbol": ")",
+    "color": [
+      165,
+      175,
+      185
+    ],
+    "weight": 3,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.22,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 5,
+      "21-40": 35,
+      "41-60": 18,
+      "61-80": 7,
+      "81-100": 2
+    },
+    "containerLootTier": "common",
+    "value": 200,
+    "min_level": 21,
+    "unidentified_name": "a forward-curved heavy blade",
+    "lore": "The kukri is the national weapon of Nepal and the combat knife of the Gurkha soldiers who have earned fear and respect in every army that has faced them. The forward curve concentrates force at the tip of the blade; the narrow notch near the guard prevents blood from running onto the handle. The Gurkha saying goes: 'Never draw it without drawing blood.'",
+    "quiz_tier": 2,
+    "identified": false
+  },
+  "war_scythe": {
+    "name": "war scythe",
+    "class": "polearm",
+    "variant": "2h",
+    "tier": 2,
+    "material": "steel",
+    "mathTier": 2,
+    "baseDamage": 13,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.8,
+      2.5,
+      3.2
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash",
+      "pierce"
+    ],
+    "symbol": ")",
+    "color": [
+      170,
+      180,
+      190
+    ],
+    "weight": 5,
+    "twoHanded": true,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 5,
+      "21-40": 35,
+      "41-60": 15,
+      "61-80": 5,
+      "81-100": 2
+    },
+    "containerLootTier": "common",
+    "value": 240,
+    "min_level": 21,
+    "unidentified_name": "a repurposed agricultural polearm",
+    "lore": "The war scythe was the weapon of desperate men — peasant armies during the Hussite Wars, Polish nobility uprisings, and countless smaller rebellions. A blacksmith would rotate the blade 90 degrees on a long haft, transforming a harvest tool into a weapon capable of unhorsing cavalry. Inelegant but terrifyingly effective.",
+    "quiz_tier": 2,
+    "identified": false
+  },
+  "bastard_sword": {
+    "name": "bastard sword",
+    "class": "sword",
+    "variant": "2h",
+    "tier": 2,
+    "material": "steel",
+    "mathTier": 2,
+    "baseDamage": 14,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.8,
+      2.5,
+      3.2
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash",
+      "pierce"
+    ],
+    "symbol": ")",
+    "color": [
+      175,
+      195,
+      220
+    ],
+    "weight": 5,
+    "twoHanded": true,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.1,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 5,
+      "21-40": 40,
+      "41-60": 25,
+      "61-80": 10,
+      "81-100": 4
+    },
+    "containerLootTier": "common",
+    "value": 300,
+    "min_level": 21,
+    "unidentified_name": "a versatile long-gripped sword",
+    "lore": "The 'bastard sword' or hand-and-a-half sword occupied the gap between a standard longsword and a full two-hander. It could be wielded one-handed from horseback or two-handed on foot. Its length gave reach; its grip options gave versatility. The name comes from its ambiguous classification in medieval catalogs.",
+    "quiz_tier": 2,
+    "identified": false
+  },
+  "katana": {
+    "name": "katana",
+    "class": "sword",
+    "variant": "1h",
+    "tier": 3,
+    "material": "hardened gold",
+    "mathTier": 3,
+    "baseDamage": 13,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0,
+      3.5
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash"
+    ],
+    "symbol": ")",
+    "color": [
+      220,
+      215,
+      190
+    ],
+    "weight": 3,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.2,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 5,
+      "41-60": 50,
+      "61-80": 25,
+      "81-100": 10
+    },
+    "containerLootTier": "uncommon",
+    "value": 600,
+    "min_level": 41,
+    "unidentified_name": "a gracefully curved eastern longsword",
+    "lore": "The katana represents centuries of Japanese metallurgical art. The differential hardening process — clay-coating the spine before quenching — creates a blade with a hard edge and tough back. The characteristic curve (sori) develops during the quench. A perfect kata produces a strike that opponents frequently describe as not feeling until seconds after.",
+    "quiz_tier": 3,
+    "identified": false
+  },
+  "dao": {
+    "name": "dao",
+    "class": "scimitar",
+    "variant": "1h",
+    "tier": 3,
+    "material": "hardened gold",
+    "mathTier": 3,
+    "baseDamage": 12,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0,
+      3.5
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash"
+    ],
+    "symbol": ")",
+    "color": [
+      215,
+      185,
+      60
+    ],
+    "weight": 3,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.2,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 5,
+      "41-60": 45,
+      "61-80": 22,
+      "81-100": 8
+    },
+    "containerLootTier": "uncommon",
+    "value": 580,
+    "min_level": 41,
+    "unidentified_name": "a curved eastern broadsword",
+    "lore": "The dao is one of the four traditional weapons of Chinese martial arts. Its single-edged curved blade was the standard weapon of Chinese cavalry and infantry through multiple dynasties. Masters of the dao are said to achieve a state of 'no-mind' in which the blade becomes an extension of intent rather than arm.",
+    "quiz_tier": 3,
+    "identified": false
+  },
+  "naginata": {
+    "name": "naginata",
+    "class": "polearm",
+    "variant": "2h",
+    "tier": 3,
+    "material": "ironwood",
+    "mathTier": 3,
+    "baseDamage": 15,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.8,
+      2.5,
+      3.2,
+      4.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash",
+      "pierce"
+    ],
+    "symbol": ")",
+    "color": [
+      130,
+      110,
+      80
+    ],
+    "weight": 5,
+    "twoHanded": true,
+    "reach": 2,
+    "stunChance": 0.0,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.2,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 5,
+      "41-60": 45,
+      "61-80": 22,
+      "81-100": 8
+    },
+    "containerLootTier": "uncommon",
+    "value": 620,
+    "min_level": 41,
+    "unidentified_name": "a long polearm with a curved blade",
+    "lore": "The naginata was the weapon of the onna-bugeisha, Japanese female warriors, and later of Buddhist warrior monks. Its long shaft and curved blade combined the reach of a spear with the cutting ability of a sword. Naginata schools still exist in Japan; the weapon is considered more difficult to master than the katana.",
+    "quiz_tier": 3,
+    "identified": false
+  },
+  "claymore": {
+    "name": "claymore",
+    "class": "zweihander",
+    "variant": "2h",
+    "tier": 3,
+    "material": "hardened gold",
+    "mathTier": 3,
+    "baseDamage": 21,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.8,
+      2.5,
+      3.2,
+      4.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash",
+      "pierce"
+    ],
+    "symbol": ")",
+    "color": [
+      200,
+      195,
+      175
+    ],
+    "weight": 5,
+    "twoHanded": true,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 5,
+      "41-60": 45,
+      "61-80": 20,
+      "81-100": 8
+    },
+    "containerLootTier": "uncommon",
+    "value": 700,
+    "min_level": 41,
+    "unidentified_name": "a massive highland two-handed sword",
+    "lore": "The Scottish claymore (claidheamh mòr, 'great sword') was the signature weapon of Highland warriors from the 15th century. Its distinctive downward-angling quillons with trefoil finials made it instantly recognizable. Swung by a Highland warrior in full charge, the claymore could cleave through leather, mail, and occasionally the man wearing it.",
+    "quiz_tier": 3,
+    "identified": false
+  },
+  "partisan": {
+    "name": "partisan",
+    "class": "polearm",
+    "variant": "2h",
+    "tier": 3,
+    "material": "hardened gold",
+    "mathTier": 3,
+    "baseDamage": 14,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.8,
+      2.5,
+      3.2,
+      4.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "pierce",
+      "slash"
+    ],
+    "symbol": ")",
+    "color": [
+      210,
+      180,
+      60
+    ],
+    "weight": 5,
+    "twoHanded": true,
+    "reach": 2,
+    "stunChance": 0.0,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 5,
+      "41-60": 40,
+      "61-80": 18,
+      "81-100": 6
+    },
+    "containerLootTier": "uncommon",
+    "value": 580,
+    "min_level": 41,
+    "unidentified_name": "a long spear with side blades",
+    "lore": "The partisan was a ceremonial and combat polearm of the Renaissance, featuring a main spike with two smaller side blades at the base. The side blades could catch and bind an opponent's weapon, or be used for slashing after the main thrust. Papal Swiss Guards carried partisans as marks of office.",
+    "quiz_tier": 3,
+    "identified": false
+  },
+  "mameluke_saber": {
+    "name": "mameluke saber",
+    "class": "scimitar",
+    "variant": "1h",
+    "tier": 4,
+    "material": "diamond",
+    "mathTier": 4,
+    "baseDamage": 16,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0,
+      3.5,
+      4.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash"
+    ],
+    "symbol": ")",
+    "color": [
+      190,
+      245,
+      255
+    ],
+    "weight": 3,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.3,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 5,
+      "61-80": 50,
+      "81-100": 20
+    },
+    "containerLootTier": "rare",
+    "value": 1200,
+    "min_level": 61,
+    "unidentified_name": "an exquisitely curved cavalry saber",
+    "lore": "The mameluke saber was the weapon of the warrior-slave elite of the Islamic world. Its distinctive T-shaped cross-section and radical curve made it the deadliest cavalry saber of its era. Napoleon's guard officers adopted the style after Egypt; US Marine officers still carry a version of this blade today.",
+    "quiz_tier": 4,
+    "identified": false
+  },
+  "flamberge": {
+    "name": "flamberge",
+    "class": "zweihander",
+    "variant": "2h",
+    "tier": 4,
+    "material": "diamond",
+    "mathTier": 4,
+    "baseDamage": 25,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.8,
+      2.5,
+      3.2,
+      4.0,
+      4.8
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash",
+      "pierce"
+    ],
+    "symbol": ")",
+    "color": [
+      185,
+      245,
+      255
+    ],
+    "weight": 5,
+    "twoHanded": true,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.18,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 5,
+      "61-80": 45,
+      "81-100": 18
+    },
+    "containerLootTier": "rare",
+    "value": 1400,
+    "min_level": 61,
+    "unidentified_name": "a two-handed undulating blade",
+    "lore": "The flamberge's wave-shaped blade was not merely aesthetic. The undulations created additional cutting edges along the blade's length and disrupted opponents' parries by vibrating their weapons uncomfortably. Opponents who blocked a flamberge often found their hands numbed; those it touched bore wounds that festered unusually.",
+    "quiz_tier": 4,
+    "identified": false
+  },
+  "executioners_sword": {
+    "name": "executioner's sword",
+    "class": "sword",
+    "variant": "2h",
+    "tier": 4,
+    "material": "diamond",
+    "mathTier": 4,
+    "baseDamage": 18,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.8,
+      2.5,
+      3.2,
+      4.0,
+      4.8
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash"
+    ],
+    "symbol": ")",
+    "color": [
+      180,
+      240,
+      255
+    ],
+    "weight": 5,
+    "twoHanded": true,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.25,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.3,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 5,
+      "61-80": 40,
+      "81-100": 15
+    },
+    "containerLootTier": "rare",
+    "value": 1350,
+    "min_level": 61,
+    "unidentified_name": "a massive blunt-tipped slashing blade",
+    "lore": "The headsman's sword had no point — a stabbing weapon is useless when your target is kneeling. Instead, the blade was ground to extraordinary sharpness along its length for a clean single-stroke execution. A skilled executioner was expected to sever the head in one blow; a second stroke was considered a failure and the victim's family was entitled to demand compensation.",
+    "quiz_tier": 4,
+    "identified": false
+  },
+  "soul_reaver": {
+    "name": "Soul Reaver",
+    "class": "scimitar",
+    "variant": "1h",
+    "tier": 5,
+    "material": "adamantine",
+    "mathTier": 5,
+    "baseDamage": 20,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0,
+      3.5,
+      4.0,
+      4.5,
+      5.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash",
+      "pierce"
+    ],
+    "symbol": ")",
+    "color": [
+      80,
+      50,
+      180
+    ],
+    "weight": 3,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.3,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.5,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 8
+    },
+    "containerLootTier": "rare",
+    "value": 5000,
+    "min_level": 81,
+    "unidentified_name": "a dark whispering curved blade",
+    "lore": "Few who have held the Soul Reaver remember doing so willingly. The blade selects its wielders, and the criteria are opaque. What is known: wounds it inflicts do not heal without magic; the blade whispers between kills; and it grows heavier if used against the innocent. Its origin is attributed variously to a dying god, a betrayed archmage, and a particularly vengeful plague.",
+    "quiz_tier": 5,
+    "identified": false
+  },
+  "dawnbreaker": {
+    "name": "Dawnbreaker",
+    "class": "warhammer",
+    "variant": "2h",
+    "tier": 5,
+    "material": "adamantine",
+    "mathTier": 5,
+    "baseDamage": 30,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.8,
+      2.5,
+      3.2,
+      4.0,
+      4.8,
+      5.5
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "crush"
+    ],
+    "symbol": ")",
+    "color": [
+      200,
+      180,
+      80
+    ],
+    "weight": 5,
+    "twoHanded": true,
+    "reach": 1,
+    "stunChance": 0.45,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.4,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 6
+    },
+    "containerLootTier": "rare",
+    "value": 5000,
+    "min_level": 81,
+    "unidentified_name": "a radiant two-handed hammer",
+    "lore": "Dawnbreaker is the weapon that ended the First Darkness — at least, that is the oldest story. The hammer's adamantine head contains a shard of preserved dawn light, visible as a faint golden gleam even in pitch darkness. Undead creatures struck by it take triple damage from the light component, in addition to the physical devastation.",
+    "quiz_tier": 5,
+    "identified": false
+  },
+  "venomfang": {
+    "name": "Venomfang",
+    "class": "morningstar",
+    "variant": "1h",
+    "tier": 5,
+    "material": "adamantine",
+    "mathTier": 5,
+    "baseDamage": 23,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0,
+      3.5,
+      4.0,
+      4.5,
+      5.0
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "crush",
+      "pierce"
+    ],
+    "symbol": ")",
+    "color": [
+      90,
+      130,
+      70
+    ],
+    "weight": 3,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.35,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 7
+    },
+    "containerLootTier": "rare",
+    "value": 4800,
+    "min_level": 81,
+    "unidentified_name": "a darkly gleaming spiked weapon",
+    "lore": "A master poisoner's commission from an earlier age. The spikes of Venomfang are hollow, filled with a venom that was synthesized from the distilled suffering of a hundred different creatures. The weapon weeps a thin dark ichor when hungry, which is often. The bleed it inflicts does not merely cut — it corrupts.",
+    "quiz_tier": 5,
+    "identified": false
   }
 }

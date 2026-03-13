@@ -24,6 +24,18 @@ class LevelManager:
 
     def generate(self, level_num: int):
         """Create a fresh level, spawn monsters/items, save, and return it."""
+        from boss_levels import BOSS_LEVELS, generate_boss_level
+
+        if level_num in BOSS_LEVELS:
+            dungeon, monsters, items = generate_boss_level(level_num)
+            # Place Philosopher's Stone on level 100
+            if level_num == STONE_LEVEL:
+                stone = _place_stone(dungeon, items)
+                if stone:
+                    items.append(stone)
+            self.max_level_reached = max(self.max_level_reached, level_num)
+            return dungeon, monsters, items
+
         from dungeon import generate_dungeon, spawn_monsters, spawn_items
 
         dungeon = generate_dungeon(80, 50, level_num)

@@ -29,6 +29,7 @@ STAIRS_UP   = 2   # exit to previous level
 STAIRS_DOWN = 3   # exit to next level
 DOOR        = 4   # opaque until opened (bump to open)
 SECRET_DOOR = 5   # looks like WALL; discovered by searching or bumping
+ALTAR       = 6   # sacred altar; walkable, amplifies prayers
 
 # ---------------------------------------------------------------------------
 # BSP tuning
@@ -101,6 +102,10 @@ class Dungeon:
         """True if the player / monster can freely move onto this tile.
         Doors and secret doors block movement until explicitly opened."""
         return self.in_bounds(x, y) and self.tiles[y][x] not in (WALL, DOOR, SECRET_DOOR)
+
+    def is_altar(self, x: int, y: int) -> bool:
+        """True if this tile is a sacred altar."""
+        return self.in_bounds(x, y) and self.tiles[y][x] == ALTAR
 
     def is_opaque(self, x: int, y: int) -> bool:
         """True if the tile blocks line-of-sight (for FOV)."""
@@ -225,6 +230,18 @@ def generate_dungeon(width: int = 80, height: int = 50, level: int = 1) -> Dunge
     elif rooms:
         cx, cy = rooms[0].center
         tiles[cy][cx] = STAIRS_UP
+
+    # ── 7. Place altar (one per 15 levels: level 1, 16, 31, 46, ...) ─────────
+    if level % 15 == 1 and len(rooms) >= 2:
+        # Place altar in a random room (not the first room where player starts)
+        altar_room = rng.choice(rooms[1:])
+        inner = [
+            (tx, ty) for tx, ty in altar_room.inner_tiles()
+            if tiles[ty][tx] == FLOOR
+        ]
+        if inner:
+            ax, ay = rng.choice(inner)
+            tiles[ay][ax] = ALTAR
 
     return Dungeon(tiles, rooms, width, height, level)
 

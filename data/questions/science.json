@@ -1,105 +1,5513 @@
 [
-  {"question": "What is the chemical symbol for gold?", "choices": ["Au", "Go", "Gd", "Ag"], "answer": "Au", "tier": 1},
-  {"question": "What is the chemical symbol for water?", "choices": ["H2O", "HO2", "H3O", "OH2"], "answer": "H2O", "tier": 1},
-  {"question": "How many planets are in our solar system?", "choices": ["8", "9", "7", "10"], "answer": "8", "tier": 1},
-  {"question": "What force pulls objects toward Earth?", "choices": ["Gravity", "Magnetism", "Friction", "Tension"], "answer": "Gravity", "tier": 1},
-  {"question": "What are the three states of matter?", "choices": ["Solid, liquid, gas", "Hot, cold, warm", "Earth, water, fire", "Metal, wood, stone"], "answer": "Solid, liquid, gas", "tier": 1},
-  {"question": "What is the closest star to Earth?", "choices": ["The Sun", "Proxima Centauri", "Alpha Centauri", "Sirius"], "answer": "The Sun", "tier": 1},
-  {"question": "What gas do plants absorb during photosynthesis?", "choices": ["Carbon dioxide", "Oxygen", "Nitrogen", "Hydrogen"], "answer": "Carbon dioxide", "tier": 1},
-  {"question": "What is the chemical symbol for oxygen?", "choices": ["O", "Ox", "Om", "Or"], "answer": "O", "tier": 1},
-  {"question": "What color is produced when red and blue light are combined?", "choices": ["Magenta", "Purple", "Green", "Yellow"], "answer": "Magenta", "tier": 1},
-  {"question": "What is the largest planet in our solar system?", "choices": ["Jupiter", "Saturn", "Neptune", "Uranus"], "answer": "Jupiter", "tier": 1},
-  {"question": "What type of energy does a moving object have?", "choices": ["Kinetic energy", "Potential energy", "Thermal energy", "Chemical energy"], "answer": "Kinetic energy", "tier": 1},
-  {"question": "What is the chemical symbol for iron?", "choices": ["Fe", "Ir", "In", "Io"], "answer": "Fe", "tier": 1},
-  {"question": "Which planet is known as the Red Planet?", "choices": ["Mars", "Venus", "Mercury", "Saturn"], "answer": "Mars", "tier": 1},
-  {"question": "What is the basic unit of life?", "choices": ["The cell", "The atom", "The molecule", "The gene"], "answer": "The cell", "tier": 1},
-  {"question": "What is the approximate speed of light in a vacuum?", "choices": ["300,000 km/s", "150,000 km/s", "30,000 km/s", "3,000 km/s"], "answer": "300,000 km/s", "tier": 1},
-  {"question": "What organ pumps blood through the human body?", "choices": ["Heart", "Liver", "Kidney", "Lung"], "answer": "Heart", "tier": 1},
-  {"question": "What is the chemical symbol for sodium?", "choices": ["Na", "So", "Sd", "Nm"], "answer": "Na", "tier": 1},
-  {"question": "What phenomenon explains why the sky appears blue?", "choices": ["Rayleigh scattering", "Reflection", "Refraction", "Diffraction"], "answer": "Rayleigh scattering", "tier": 1},
-  {"question": "What is the SI unit of force?", "choices": ["Newton", "Joule", "Watt", "Pascal"], "answer": "Newton", "tier": 1},
-  {"question": "Which element is most abundant in Earth's atmosphere?", "choices": ["Nitrogen", "Oxygen", "Carbon dioxide", "Argon"], "answer": "Nitrogen", "tier": 1},
-  {"question": "What is the process by which liquid water changes to water vapor?", "choices": ["Evaporation", "Condensation", "Sublimation", "Precipitation"], "answer": "Evaporation", "tier": 1},
-  {"question": "How many bones are in the adult human body?", "choices": ["206", "196", "216", "226"], "answer": "206", "tier": 1},
-
-  {"question": "What is Newton's Second Law of Motion?", "choices": ["F = ma", "E = mc²", "F = mv", "p = mv"], "answer": "F = ma", "tier": 2},
-  {"question": "What does the First Law of Thermodynamics state?", "choices": ["Energy cannot be created or destroyed", "Entropy always increases", "Heat flows from cold to hot", "Pressure and volume are inversely related"], "answer": "Energy cannot be created or destroyed", "tier": 2},
-  {"question": "What is the atomic number of carbon?", "choices": ["6", "12", "8", "14"], "answer": "6", "tier": 2},
-  {"question": "What type of cell division produces gametes?", "choices": ["Meiosis", "Mitosis", "Binary fission", "Budding"], "answer": "Meiosis", "tier": 2},
-  {"question": "What is the SI unit of electrical resistance?", "choices": ["Ohm", "Volt", "Ampere", "Farad"], "answer": "Ohm", "tier": 2},
-  {"question": "What organelle is called the powerhouse of the cell?", "choices": ["Mitochondria", "Nucleus", "Ribosome", "Golgi apparatus"], "answer": "Mitochondria", "tier": 2},
-  {"question": "Which gas law states that pressure and volume of a gas are inversely proportional at constant temperature?", "choices": ["Boyle's Law", "Charles's Law", "Gay-Lussac's Law", "Avogadro's Law"], "answer": "Boyle's Law", "tier": 2},
-  {"question": "What type of wave is sound?", "choices": ["Longitudinal wave", "Transverse wave", "Surface wave", "Electromagnetic wave"], "answer": "Longitudinal wave", "tier": 2},
-  {"question": "What principle organizes elements in the periodic table?", "choices": ["Atomic number", "Atomic mass", "Electronegativity", "Density"], "answer": "Atomic number", "tier": 2},
-  {"question": "What is Newton's Third Law of Motion?", "choices": ["Every action has an equal and opposite reaction", "F = ma", "Objects in motion stay in motion", "Energy is conserved"], "answer": "Every action has an equal and opposite reaction", "tier": 2},
-  {"question": "What organelle is responsible for protein synthesis?", "choices": ["Ribosome", "Mitochondria", "Nucleus", "Vacuole"], "answer": "Ribosome", "tier": 2},
-  {"question": "Approximately what is Avogadro's number?", "choices": ["6.022 × 10²³", "6.022 × 10²⁰", "6.022 × 10²⁶", "6.022 × 10¹⁸"], "answer": "6.022 × 10²³", "tier": 2},
-  {"question": "What concept is the Second Law of Thermodynamics related to?", "choices": ["Entropy", "Energy conservation", "Temperature", "Pressure"], "answer": "Entropy", "tier": 2},
-  {"question": "What is the chemical formula for table salt?", "choices": ["NaCl", "KCl", "CaCl2", "MgCl2"], "answer": "NaCl", "tier": 2},
-  {"question": "What is the approximate speed of sound in air at sea level?", "choices": ["343 m/s", "300 m/s", "500 m/s", "1000 m/s"], "answer": "343 m/s", "tier": 2},
-  {"question": "What is the pH of pure water?", "choices": ["7", "0", "14", "5"], "answer": "7", "tier": 2},
-  {"question": "Which planet has the most known moons in our solar system?", "choices": ["Saturn", "Jupiter", "Neptune", "Uranus"], "answer": "Saturn", "tier": 2},
-  {"question": "What is the SI unit of energy?", "choices": ["Joule", "Watt", "Newton", "Calorie"], "answer": "Joule", "tier": 2},
-  {"question": "What is the wavelength range of ultraviolet light?", "choices": ["10–400 nm", "400–700 nm", "700–1000 nm", "1–10 nm"], "answer": "10–400 nm", "tier": 2},
-  {"question": "What is the most abundant element in the universe?", "choices": ["Hydrogen", "Helium", "Oxygen", "Carbon"], "answer": "Hydrogen", "tier": 2},
-  {"question": "What type of rock forms from cooled lava?", "choices": ["Igneous", "Sedimentary", "Metamorphic", "Volcanic"], "answer": "Igneous", "tier": 2},
-
-  {"question": "How many base pairs are in a complete human DNA genome?", "choices": ["3 billion", "30 million", "300 million", "30 billion"], "answer": "3 billion", "tier": 3},
-  {"question": "What subatomic particles are found in the nucleus of an atom?", "choices": ["Protons and neutrons", "Protons and electrons", "Neutrons and electrons", "Quarks only"], "answer": "Protons and neutrons", "tier": 3},
-  {"question": "What is the process by which atoms emit particles or energy to become stable?", "choices": ["Radioactive decay", "Nuclear fusion", "Fission", "Beta emission only"], "answer": "Radioactive decay", "tier": 3},
-  {"question": "What type of chemical bond involves the sharing of electrons?", "choices": ["Covalent bond", "Ionic bond", "Metallic bond", "Van der Waals bond"], "answer": "Covalent bond", "tier": 3},
-  {"question": "What is Ohm's Law?", "choices": ["V = IR", "P = IV", "F = ma", "E = mc²"], "answer": "V = IR", "tier": 3},
-  {"question": "What molecule carries genetic information in cells?", "choices": ["DNA", "RNA", "ATP", "Protein"], "answer": "DNA", "tier": 3},
-  {"question": "What is the charge of an electron?", "choices": ["Negative", "Positive", "Neutral", "Variable"], "answer": "Negative", "tier": 3},
-  {"question": "What phenomenon occurs when light changes direction passing between two different mediums?", "choices": ["Refraction", "Reflection", "Diffraction", "Absorption"], "answer": "Refraction", "tier": 3},
-  {"question": "What are the four nucleotide bases in DNA?", "choices": ["Adenine, thymine, guanine, cytosine", "Adenine, uracil, guanine, cytosine", "Adenine, thymine, guanine, uracil", "Alanine, thymine, guanine, cytosine"], "answer": "Adenine, thymine, guanine, cytosine", "tier": 3},
-  {"question": "What is the law of conservation of mass?", "choices": ["Mass is neither created nor destroyed in a chemical reaction", "Mass equals energy divided by speed squared", "Mass increases during nuclear reactions", "Mass is always conserved in all reactions including nuclear"], "answer": "Mass is neither created nor destroyed in a chemical reaction", "tier": 3},
-  {"question": "What is the index of refraction?", "choices": ["The ratio of the speed of light in vacuum to the speed in a medium", "The angle at which light reflects", "The wavelength of refracted light", "The frequency shift of light"], "answer": "The ratio of the speed of light in vacuum to the speed in a medium", "tier": 3},
-  {"question": "What is an isotope?", "choices": ["An atom with the same proton count but different neutron count", "An atom with the same neutron count but different proton count", "A charged atom", "A molecule with different elements"], "answer": "An atom with the same proton count but different neutron count", "tier": 3},
-  {"question": "What is the Doppler effect?", "choices": ["A change in observed frequency due to relative motion", "Light bending around objects", "Sound traveling faster in water", "Interference of waves"], "answer": "A change in observed frequency due to relative motion", "tier": 3},
-  {"question": "What is the role of enzymes in biochemical reactions?", "choices": ["Catalysts that speed up reactions", "Energy storage molecules", "Structural proteins", "Genetic material carriers"], "answer": "Catalysts that speed up reactions", "tier": 3},
-  {"question": "What phenomenon describes light behaving as both a wave and a particle?", "choices": ["Wave-particle duality", "Superposition", "Entanglement", "Interference"], "answer": "Wave-particle duality", "tier": 3},
-  {"question": "How do acids and bases differ on the pH scale?", "choices": ["Acids have pH below 7, bases above 7", "Acids have pH above 7, bases below 7", "Both have pH of 7", "Acids have pH of 0 only"], "answer": "Acids have pH below 7, bases above 7", "tier": 3},
-  {"question": "What is a gene?", "choices": ["A segment of DNA that codes for a protein", "A type of RNA molecule", "A chromosome structure", "A cellular organelle"], "answer": "A segment of DNA that codes for a protein", "tier": 3},
-  {"question": "What is the half-life of a radioactive substance?", "choices": ["Time for half the atoms to decay", "Time for all atoms to decay", "Time for half the energy to be released", "Time for half the mass to convert to energy"], "answer": "Time for half the atoms to decay", "tier": 3},
-  {"question": "What does Kirchhoff's Voltage Law state?", "choices": ["The sum of voltages around a closed loop is zero", "Current entering a node equals current leaving", "Resistance is proportional to length", "Power equals current times voltage"], "answer": "The sum of voltages around a closed loop is zero", "tier": 3},
-  {"question": "What is the key difference between mitosis and meiosis?", "choices": ["Mitosis produces two identical cells; meiosis produces four genetically unique cells", "Mitosis produces four cells; meiosis produces two", "Mitosis is for reproduction; meiosis is for growth", "They are the same process"], "answer": "Mitosis produces two identical cells; meiosis produces four genetically unique cells", "tier": 3},
-
-  {"question": "What is the Heisenberg Uncertainty Principle about?", "choices": ["Position and momentum cannot both be precisely known", "Energy is always conserved", "Light speed is constant", "Electrons orbit in fixed paths"], "answer": "Position and momentum cannot both be precisely known", "tier": 4},
-  {"question": "What does E = mc² describe?", "choices": ["Mass-energy equivalence", "Momentum of a photon", "Kinetic energy of a particle", "Gravitational potential energy"], "answer": "Mass-energy equivalence", "tier": 4},
-  {"question": "What is a functional group in organic chemistry?", "choices": ["A specific atom or group that determines chemical properties of a molecule", "A group of molecules in the same state", "The nucleus of an organic compound", "A carbon chain length"], "answer": "A specific atom or group that determines chemical properties of a molecule", "tier": 4},
-  {"question": "What is nuclear fission?", "choices": ["Splitting a heavy nucleus into smaller fragments", "Combining two light nuclei into one", "Emitting an alpha particle from a nucleus", "Converting a neutron to a proton"], "answer": "Splitting a heavy nucleus into smaller fragments", "tier": 4},
-  {"question": "What is quantum tunneling?", "choices": ["A particle passing through a barrier it classically could not overcome", "An electron jumping between energy levels", "A particle moving faster than light", "Entanglement across long distances"], "answer": "A particle passing through a barrier it classically could not overcome", "tier": 4},
-  {"question": "What is the special theory of relativity's key postulate about the speed of light?", "choices": ["The speed of light is constant for all observers", "Light speed increases with energy", "Light speed depends on the observer's velocity", "Light slows down in a vacuum"], "answer": "The speed of light is constant for all observers", "tier": 4},
-  {"question": "What is an alkane in organic chemistry?", "choices": ["A saturated hydrocarbon with only single bonds", "A hydrocarbon with at least one double bond", "A hydrocarbon with at least one triple bond", "A hydrocarbon with an aromatic ring"], "answer": "A saturated hydrocarbon with only single bonds", "tier": 4},
-  {"question": "What occurs during radioactive beta decay?", "choices": ["A neutron converts to a proton, emitting an electron and antineutrino", "A nucleus emits a helium nucleus", "A nucleus emits only a gamma ray", "A proton converts to a neutron, emitting a positron"], "answer": "A neutron converts to a proton, emitting an electron and antineutrino", "tier": 4},
-  {"question": "What does time dilation in special relativity predict?", "choices": ["Moving clocks tick slower relative to stationary ones", "Moving clocks tick faster relative to stationary ones", "Time is absolute for all observers", "Gravity stops time"], "answer": "Moving clocks tick slower relative to stationary ones", "tier": 4},
-  {"question": "What is the Schrödinger equation used for?", "choices": ["Describing the quantum state of a system", "Calculating relativistic momentum", "Describing nuclear decay rates", "Predicting chemical reaction rates"], "answer": "Describing the quantum state of a system", "tier": 4},
-  {"question": "What characterizes a benzene ring?", "choices": ["Six carbons in a ring with delocalized electrons", "Six oxygen atoms in a ring", "Six carbon atoms in a chain", "Six carbon atoms with only single bonds"], "answer": "Six carbons in a ring with delocalized electrons", "tier": 4},
-  {"question": "What is nuclear fusion?", "choices": ["Combining two light nuclei to form a heavier nucleus", "Splitting a heavy nucleus into fragments", "Emitting radiation from an unstable nucleus", "Converting mass to energy without nuclear change"], "answer": "Combining two light nuclei to form a heavier nucleus", "tier": 4},
-  {"question": "What is the Pauli Exclusion Principle?", "choices": ["No two fermions can occupy the same quantum state simultaneously", "Electrons orbit in defined paths", "Opposite charges attract", "Energy is quantized in discrete packets"], "answer": "No two fermions can occupy the same quantum state simultaneously", "tier": 4},
-  {"question": "How does general relativity describe gravity?", "choices": ["Gravity is the curvature of spacetime caused by mass", "Gravity is a force transmitted by gravitons", "Gravity acts instantaneously across any distance", "Gravity is proportional to velocity"], "answer": "Gravity is the curvature of spacetime caused by mass", "tier": 4},
-  {"question": "What is an enantiomer in chemistry?", "choices": ["A molecule that is a non-superimposable mirror image of another", "A molecule with the same formula but different connectivity", "Two molecules with identical properties", "An isomer with the same spatial arrangement"], "answer": "A molecule that is a non-superimposable mirror image of another", "tier": 4},
-  {"question": "What is the photoelectric effect?", "choices": ["Electrons are emitted from a material when light strikes it", "Light is absorbed by electrons causing heat", "Electrons emit photons when excited", "Light is reflected by free electrons"], "answer": "Electrons are emitted from a material when light strikes it", "tier": 4},
-  {"question": "What does Le Chatelier's Principle state?", "choices": ["A system at equilibrium will shift to counteract any imposed change", "Reactions always proceed to the right", "Equilibrium constants increase with temperature", "The rate of forward and reverse reactions are always equal"], "answer": "A system at equilibrium will shift to counteract any imposed change", "tier": 4},
-  {"question": "What is the significance of activation energy in chemistry?", "choices": ["The minimum energy needed for a chemical reaction to proceed", "The energy released when bonds form", "The total energy of reactants", "The energy stored in chemical bonds"], "answer": "The minimum energy needed for a chemical reaction to proceed", "tier": 4},
-
-  {"question": "What is the name of the force-carrying particle for the strong nuclear force?", "choices": ["Gluon", "Photon", "W boson", "Graviton"], "answer": "Gluon", "tier": 5},
-  {"question": "What is the Standard Model of particle physics?", "choices": ["A theory describing fundamental particles and three of the four fundamental forces", "A model of the solar system", "A theory of gravity at quantum scales", "A description of atomic nuclei only"], "answer": "A theory describing fundamental particles and three of the four fundamental forces", "tier": 5},
-  {"question": "What is dark matter?", "choices": ["Matter that does not interact electromagnetically but has gravitational effects", "Matter that absorbs all light", "Antimatter that has collapsed", "Ordinary matter in black holes"], "answer": "Matter that does not interact electromagnetically but has gravitational effects", "tier": 5},
-  {"question": "What is the Higgs boson responsible for?", "choices": ["Giving mass to other fundamental particles", "Carrying the electromagnetic force", "Mediating the weak nuclear force", "Binding quarks together"], "answer": "Giving mass to other fundamental particles", "tier": 5},
-  {"question": "What is quantum entanglement?", "choices": ["A correlation between quantum states such that measuring one particle instantly affects its partner", "Particles merging into a single entity", "A particle existing in two places simultaneously", "Quantum tunneling between two particles"], "answer": "A correlation between quantum states such that measuring one particle instantly affects its partner", "tier": 5},
-  {"question": "What is the Chandrasekhar limit?", "choices": ["The maximum mass of a white dwarf star, about 1.4 solar masses", "The minimum mass for a star to ignite fusion", "The radius at which a black hole's gravity becomes inescapable", "The maximum radius of a neutron star"], "answer": "The maximum mass of a white dwarf star, about 1.4 solar masses", "tier": 5},
-  {"question": "What is CRISPR-Cas9 used for?", "choices": ["Precise gene editing in DNA", "Amplifying DNA sequences", "Sequencing entire genomes", "Synthesizing proteins from RNA"], "answer": "Precise gene editing in DNA", "tier": 5},
-  {"question": "What is the cosmological constant in general relativity associated with?", "choices": ["Dark energy and the accelerating expansion of the universe", "The bending of light around massive objects", "The gravitational pull of dark matter", "The formation of black holes"], "answer": "Dark energy and the accelerating expansion of the universe", "tier": 5},
-  {"question": "What are quarks?", "choices": ["Fundamental constituents of protons and neutrons", "The smallest known electrons", "Massless force-carrying particles", "Heavy leptons"], "answer": "Fundamental constituents of protons and neutrons", "tier": 5},
-  {"question": "What is the Planck length?", "choices": ["The smallest meaningful length scale in physics, approximately 1.6 × 10⁻³⁵ meters", "The wavelength of the most energetic photons", "The radius of a proton", "The distance light travels in one Planck time"], "answer": "The smallest meaningful length scale in physics, approximately 1.6 × 10⁻³⁵ meters", "tier": 5},
-  {"question": "What is a neutron star primarily made of?", "choices": ["Neutrons packed at nuclear density", "Protons and electrons only", "Compressed hydrogen and helium", "Quarks in a deconfined state"], "answer": "Neutrons packed at nuclear density", "tier": 5},
-  {"question": "What does CP violation in particle physics refer to?", "choices": ["An asymmetry between matter and antimatter in certain weak interactions", "Conservation of charge and parity together", "Violation of energy conservation at quantum scales", "Asymmetry of spin in nuclear reactions"], "answer": "An asymmetry between matter and antimatter in certain weak interactions", "tier": 5},
-  {"question": "What is the Casimir effect?", "choices": ["An attractive force between uncharged conducting plates due to quantum vacuum fluctuations", "The repulsion of like magnetic poles", "The pressure exerted by electromagnetic radiation", "The energy released in pair annihilation"], "answer": "An attractive force between uncharged conducting plates due to quantum vacuum fluctuations", "tier": 5},
-  {"question": "What is string theory?", "choices": ["A framework where fundamental particles are modeled as one-dimensional strings", "A theory of quantum gravity only", "A model describing quark confinement", "A description of cosmic strings in astrophysics"], "answer": "A framework where fundamental particles are modeled as one-dimensional strings", "tier": 5},
-  {"question": "What is Hawking radiation?", "choices": ["Thermal radiation predicted to be emitted by black holes due to quantum effects near the event horizon", "Radiation emitted by neutron stars", "Cosmic rays from active galactic nuclei", "X-rays produced by matter falling into black holes"], "answer": "Thermal radiation predicted to be emitted by black holes due to quantum effects near the event horizon", "tier": 5},
-  {"question": "What is the weak nuclear force responsible for?", "choices": ["Radioactive beta decay and certain nuclear reactions", "Holding protons and neutrons together", "Electromagnetic interactions between charges", "Gravity at quantum scales"], "answer": "Radioactive beta decay and certain nuclear reactions", "tier": 5},
-  {"question": "What is supersymmetry (SUSY) in particle physics?", "choices": ["A proposed symmetry pairing each Standard Model particle with a superpartner", "A symmetry between left and right in particle interactions", "The symmetry between matter and antimatter", "A theory of symmetric string vibrations"], "answer": "A proposed symmetry pairing each Standard Model particle with a superpartner", "tier": 5},
-  {"question": "What is the significance of the Cosmic Microwave Background (CMB)?", "choices": ["It is thermal radiation left over from the early universe, supporting the Big Bang theory", "It is the combined radiation emitted by all stars", "It is the radiation from the center of the Milky Way", "It is the microwave emission from interstellar hydrogen"], "answer": "It is thermal radiation left over from the early universe, supporting the Big Bang theory", "tier": 5}
+  {
+    "tier": 1,
+    "question": "What is the chemical symbol for water?",
+    "answer": "H2O",
+    "choices": [
+      "H2O",
+      "CO2",
+      "O2",
+      "NaCl"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the chemical symbol for gold?",
+    "answer": "Au",
+    "choices": [
+      "Au",
+      "Go",
+      "Gd",
+      "Fe"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the chemical symbol for iron?",
+    "answer": "Fe",
+    "choices": [
+      "Fe",
+      "Ir",
+      "In",
+      "Io"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the chemical symbol for sodium?",
+    "answer": "Na",
+    "choices": [
+      "Na",
+      "So",
+      "Sd",
+      "Nm"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the chemical symbol for oxygen?",
+    "answer": "O",
+    "choices": [
+      "O",
+      "Ox",
+      "Om",
+      "Oy"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the chemical symbol for carbon?",
+    "answer": "C",
+    "choices": [
+      "C",
+      "Ca",
+      "Cb",
+      "Co"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the chemical symbol for hydrogen?",
+    "answer": "H",
+    "choices": [
+      "H",
+      "Hy",
+      "He",
+      "Hd"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the chemical symbol for silver?",
+    "answer": "Ag",
+    "choices": [
+      "Ag",
+      "Si",
+      "Sv",
+      "Sl"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the chemical symbol for copper?",
+    "answer": "Cu",
+    "choices": [
+      "Cu",
+      "Co",
+      "Cp",
+      "Cr"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the chemical symbol for lead?",
+    "answer": "Pb",
+    "choices": [
+      "Pb",
+      "Le",
+      "Ld",
+      "Pl"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which planet is closest to the Sun?",
+    "answer": "Mercury",
+    "choices": [
+      "Mercury",
+      "Venus",
+      "Mars",
+      "Earth"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which planet is the largest in our solar system?",
+    "answer": "Jupiter",
+    "choices": [
+      "Jupiter",
+      "Saturn",
+      "Neptune",
+      "Uranus"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "How many planets are in our solar system?",
+    "answer": "8",
+    "choices": [
+      "8",
+      "7",
+      "9",
+      "10"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What force pulls objects toward Earth?",
+    "answer": "Gravity",
+    "choices": [
+      "Gravity",
+      "Magnetism",
+      "Friction",
+      "Tension"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What are the three common states of matter?",
+    "answer": "Solid, liquid, gas",
+    "choices": [
+      "Solid, liquid, gas",
+      "Hot, warm, cold",
+      "Hard, soft, fluid",
+      "Stone, water, air"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What process do plants use to make food from sunlight?",
+    "answer": "Photosynthesis",
+    "choices": [
+      "Photosynthesis",
+      "Respiration",
+      "Digestion",
+      "Fermentation"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the basic unit of life?",
+    "answer": "Cell",
+    "choices": [
+      "Cell",
+      "Atom",
+      "Organ",
+      "Tissue"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What gas do plants release during photosynthesis?",
+    "answer": "Oxygen",
+    "choices": [
+      "Oxygen",
+      "Carbon dioxide",
+      "Nitrogen",
+      "Hydrogen"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What gas do humans breathe in to survive?",
+    "answer": "Oxygen",
+    "choices": [
+      "Oxygen",
+      "Carbon dioxide",
+      "Nitrogen",
+      "Hydrogen"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the center of an atom called?",
+    "answer": "Nucleus",
+    "choices": [
+      "Nucleus",
+      "Core",
+      "Proton",
+      "Shell"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which magnet poles attract each other?",
+    "answer": "Opposite poles",
+    "choices": [
+      "Opposite poles",
+      "Same poles",
+      "North poles only",
+      "South poles only"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the boiling point of water in Celsius?",
+    "answer": "100°C",
+    "choices": [
+      "100°C",
+      "50°C",
+      "212°C",
+      "0°C"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the freezing point of water in Celsius?",
+    "answer": "0°C",
+    "choices": [
+      "0°C",
+      "32°C",
+      "10°C",
+      "-10°C"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What planet is known as the Red Planet?",
+    "answer": "Mars",
+    "choices": [
+      "Mars",
+      "Mercury",
+      "Venus",
+      "Jupiter"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the chemical formula for table salt?",
+    "answer": "NaCl",
+    "choices": [
+      "NaCl",
+      "KCl",
+      "MgO",
+      "CaCO3"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What types of energy does the Sun produce that we can feel and see?",
+    "answer": "Light and heat energy",
+    "choices": [
+      "Light and heat energy",
+      "Electrical energy",
+      "Chemical energy",
+      "Sound energy"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which organ pumps blood through the human body?",
+    "answer": "Heart",
+    "choices": [
+      "Heart",
+      "Lungs",
+      "Liver",
+      "Kidneys"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What do we call animals that eat only plants?",
+    "answer": "Herbivores",
+    "choices": [
+      "Herbivores",
+      "Carnivores",
+      "Omnivores",
+      "Predators"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the chemical symbol for calcium?",
+    "answer": "Ca",
+    "choices": [
+      "Ca",
+      "Cl",
+      "Cm",
+      "Cb"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What does a thermometer measure?",
+    "answer": "Temperature",
+    "choices": [
+      "Temperature",
+      "Pressure",
+      "Weight",
+      "Speed"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the closest star to Earth?",
+    "answer": "The Sun",
+    "choices": [
+      "The Sun",
+      "Proxima Centauri",
+      "Sirius",
+      "Betelgeuse"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which planet has easily visible rings around it?",
+    "answer": "Saturn",
+    "choices": [
+      "Saturn",
+      "Jupiter",
+      "Uranus",
+      "Neptune"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the chemical symbol for nitrogen?",
+    "answer": "N",
+    "choices": [
+      "N",
+      "Ni",
+      "Nt",
+      "No"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the process by which liquid water turns into water vapor called?",
+    "answer": "Evaporation",
+    "choices": [
+      "Evaporation",
+      "Condensation",
+      "Precipitation",
+      "Sublimation"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What organ do humans use to breathe?",
+    "answer": "Lungs",
+    "choices": [
+      "Lungs",
+      "Gills",
+      "Heart",
+      "Trachea"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which planet is called the Blue Planet because of its oceans?",
+    "answer": "Earth",
+    "choices": [
+      "Earth",
+      "Neptune",
+      "Uranus",
+      "Venus"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the hardest natural substance on Earth?",
+    "answer": "Diamond",
+    "choices": [
+      "Diamond",
+      "Gold",
+      "Iron",
+      "Quartz"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "How many bones are in the adult human body?",
+    "answer": "206",
+    "choices": [
+      "206",
+      "186",
+      "220",
+      "246"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What type of rock is formed from cooled lava or magma?",
+    "answer": "Igneous rock",
+    "choices": [
+      "Igneous rock",
+      "Sedimentary rock",
+      "Metamorphic rock",
+      "Limestone"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the chemical symbol for potassium?",
+    "answer": "K",
+    "choices": [
+      "K",
+      "Po",
+      "Pt",
+      "Pu"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What gas makes up most of Earth's atmosphere (about 78%)?",
+    "answer": "Nitrogen",
+    "choices": [
+      "Nitrogen",
+      "Oxygen",
+      "Carbon dioxide",
+      "Argon"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the smallest planet in our solar system?",
+    "answer": "Mercury",
+    "choices": [
+      "Mercury",
+      "Mars",
+      "Venus",
+      "Pluto"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What do carnivores eat?",
+    "answer": "Meat",
+    "choices": [
+      "Meat",
+      "Plants",
+      "Both plants and meat",
+      "Insects only"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What color is chlorophyll, the pigment found in plant leaves?",
+    "answer": "Green",
+    "choices": [
+      "Green",
+      "Yellow",
+      "Blue",
+      "Red"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the chemical symbol for helium?",
+    "answer": "He",
+    "choices": [
+      "He",
+      "Hl",
+      "Hi",
+      "Hm"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What type of animal is a whale?",
+    "answer": "Mammal",
+    "choices": [
+      "Mammal",
+      "Fish",
+      "Amphibian",
+      "Reptile"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the formula for carbon dioxide?",
+    "answer": "CO2",
+    "choices": [
+      "CO2",
+      "CO",
+      "C2O",
+      "O2C"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What keeps planets in orbit around the Sun?",
+    "answer": "Gravity",
+    "choices": [
+      "Gravity",
+      "Magnetism",
+      "Wind",
+      "Electromagnetism"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the chemical symbol for chlorine?",
+    "answer": "Cl",
+    "choices": [
+      "Cl",
+      "Ch",
+      "Ce",
+      "Cn"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What kind of energy is stored in food?",
+    "answer": "Chemical energy",
+    "choices": [
+      "Chemical energy",
+      "Kinetic energy",
+      "Nuclear energy",
+      "Electrical energy"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which planet is farthest from the Sun in our solar system?",
+    "answer": "Neptune",
+    "choices": [
+      "Neptune",
+      "Pluto",
+      "Uranus",
+      "Saturn"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the chemical symbol for magnesium?",
+    "answer": "Mg",
+    "choices": [
+      "Mg",
+      "Ma",
+      "Mn",
+      "Me"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What do we call the outer layer of the Earth?",
+    "answer": "Crust",
+    "choices": [
+      "Crust",
+      "Mantle",
+      "Core",
+      "Shell"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the main greenhouse gas produced by burning fossil fuels?",
+    "answer": "Carbon dioxide",
+    "choices": [
+      "Carbon dioxide",
+      "Oxygen",
+      "Nitrogen",
+      "Hydrogen"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which planet has the most moons in our solar system?",
+    "answer": "Saturn",
+    "choices": [
+      "Saturn",
+      "Jupiter",
+      "Uranus",
+      "Neptune"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the chemical symbol for fluorine?",
+    "answer": "F",
+    "choices": [
+      "F",
+      "Fl",
+      "Fr",
+      "Fn"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What force opposes motion between two surfaces in contact?",
+    "answer": "Friction",
+    "choices": [
+      "Friction",
+      "Gravity",
+      "Tension",
+      "Magnetism"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What do plants need to carry out photosynthesis?",
+    "answer": "Sunlight, water, and carbon dioxide",
+    "choices": [
+      "Sunlight, water, and carbon dioxide",
+      "Sunlight, oxygen, and soil",
+      "Water, nitrogen, and heat",
+      "Carbon dioxide, oxygen, and minerals"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the chemical symbol for aluminum?",
+    "answer": "Al",
+    "choices": [
+      "Al",
+      "Am",
+      "An",
+      "Ai"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What gas do humans exhale as a waste product?",
+    "answer": "Carbon dioxide",
+    "choices": [
+      "Carbon dioxide",
+      "Oxygen",
+      "Nitrogen",
+      "Helium"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the chemical symbol for zinc?",
+    "answer": "Zn",
+    "choices": [
+      "Zn",
+      "Zi",
+      "Ze",
+      "Zc"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What substance makes up about 60% of the adult human body?",
+    "answer": "Water",
+    "choices": [
+      "Water",
+      "Protein",
+      "Fat",
+      "Calcium"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "How many days does it take Earth to orbit the Sun?",
+    "answer": "365",
+    "choices": [
+      "365",
+      "300",
+      "400",
+      "30"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What type of simple machine is a staircase?",
+    "answer": "Inclined plane",
+    "choices": [
+      "Inclined plane",
+      "Lever",
+      "Pulley",
+      "Wedge"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the chemical symbol for tin?",
+    "answer": "Sn",
+    "choices": [
+      "Sn",
+      "Ti",
+      "Tn",
+      "Si"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What organ produces insulin in the human body?",
+    "answer": "Pancreas",
+    "choices": [
+      "Pancreas",
+      "Liver",
+      "Kidneys",
+      "Thyroid"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the layer of gases surrounding Earth called?",
+    "answer": "Atmosphere",
+    "choices": [
+      "Atmosphere",
+      "Stratosphere",
+      "Ozone",
+      "Biosphere"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is measured in watts?",
+    "answer": "Electrical power",
+    "choices": [
+      "Electrical power",
+      "Energy",
+      "Voltage",
+      "Temperature"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the chemical symbol for phosphorus?",
+    "answer": "P",
+    "choices": [
+      "P",
+      "Ph",
+      "Ps",
+      "Pl"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What type of animal lays eggs and has feathers?",
+    "answer": "Bird",
+    "choices": [
+      "Bird",
+      "Reptile",
+      "Mammal",
+      "Amphibian"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the chemical symbol for mercury?",
+    "answer": "Hg",
+    "choices": [
+      "Hg",
+      "Me",
+      "Mr",
+      "Mc"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the name of Earth's natural satellite?",
+    "answer": "Moon",
+    "choices": [
+      "Moon",
+      "Titan",
+      "Europa",
+      "Phobos"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which of these is a physical change rather than a chemical change?",
+    "answer": "Cutting paper",
+    "choices": [
+      "Cutting paper",
+      "Burning wood",
+      "Rusting iron",
+      "Baking a cake"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What unit measures electric current?",
+    "answer": "Ampere",
+    "choices": [
+      "Ampere",
+      "Volt",
+      "Watt",
+      "Ohm"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What type of blood cells fight infection in the human body?",
+    "answer": "White blood cells",
+    "choices": [
+      "White blood cells",
+      "Red blood cells",
+      "Platelets",
+      "Plasma"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which planet is located between Jupiter and Uranus?",
+    "answer": "Saturn",
+    "choices": [
+      "Saturn",
+      "Mars",
+      "Neptune",
+      "Venus"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the approximate speed of light?",
+    "answer": "300,000 km/s",
+    "choices": [
+      "300,000 km/s",
+      "3,000 km/s",
+      "30,000 km/s",
+      "3,000,000 km/s"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the chemical symbol for bromine?",
+    "answer": "Br",
+    "choices": [
+      "Br",
+      "Bm",
+      "Bo",
+      "Bn"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is a pure substance made of only one kind of atom called?",
+    "answer": "Element",
+    "choices": [
+      "Element",
+      "Compound",
+      "Mixture",
+      "Molecule"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What type of simple machine is a nail?",
+    "answer": "Wedge",
+    "choices": [
+      "Wedge",
+      "Lever",
+      "Pulley",
+      "Screw"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the chemical symbol for sulfur?",
+    "answer": "S",
+    "choices": [
+      "S",
+      "Su",
+      "Sl",
+      "Sr"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What do red blood cells carry through the body?",
+    "answer": "Oxygen",
+    "choices": [
+      "Oxygen",
+      "Carbon dioxide",
+      "Nutrients",
+      "Waste"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the chemical symbol for neon?",
+    "answer": "Ne",
+    "choices": [
+      "Ne",
+      "No",
+      "Nn",
+      "Nm"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What do we call animals that have a backbone?",
+    "answer": "Vertebrates",
+    "choices": [
+      "Vertebrates",
+      "Invertebrates",
+      "Arthropods",
+      "Chordates"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What type of energy is stored in a stretched rubber band?",
+    "answer": "Potential energy",
+    "choices": [
+      "Potential energy",
+      "Kinetic energy",
+      "Chemical energy",
+      "Thermal energy"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the chemical symbol for argon?",
+    "answer": "Ar",
+    "choices": [
+      "Ar",
+      "Ag",
+      "An",
+      "Am"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the name of the galaxy that contains our solar system?",
+    "answer": "Milky Way",
+    "choices": [
+      "Milky Way",
+      "Andromeda",
+      "Orion",
+      "Triangulum"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the chemical symbol for lithium?",
+    "answer": "Li",
+    "choices": [
+      "Li",
+      "Lt",
+      "Lm",
+      "Lo"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What do we call a substance made of two or more elements chemically combined?",
+    "answer": "Compound",
+    "choices": [
+      "Compound",
+      "Mixture",
+      "Element",
+      "Alloy"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What scale is commonly used to measure temperature in science experiments?",
+    "answer": "Celsius",
+    "choices": [
+      "Celsius",
+      "Fahrenheit",
+      "Rankine",
+      "Delisle"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the chemical symbol for beryllium?",
+    "answer": "Be",
+    "choices": [
+      "Be",
+      "Br",
+      "Ba",
+      "Bi"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "How many chambers does the human heart have?",
+    "answer": "4",
+    "choices": [
+      "4",
+      "2",
+      "3",
+      "6"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the name of the process where a liquid turns into a solid?",
+    "answer": "Freezing",
+    "choices": [
+      "Freezing",
+      "Melting",
+      "Evaporation",
+      "Condensation"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What do we call an organism that makes its own food through photosynthesis?",
+    "answer": "Producer",
+    "choices": [
+      "Producer",
+      "Consumer",
+      "Decomposer",
+      "Predator"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the chemical symbol for chromium?",
+    "answer": "Cr",
+    "choices": [
+      "Cr",
+      "Ch",
+      "Cm",
+      "Co"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the name given to the path a planet takes around the Sun?",
+    "answer": "Orbit",
+    "choices": [
+      "Orbit",
+      "Revolution",
+      "Trajectory",
+      "Ellipsis"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What do we call a push or pull exerted on an object?",
+    "answer": "Force",
+    "choices": [
+      "Force",
+      "Energy",
+      "Power",
+      "Momentum"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the chemical symbol for barium?",
+    "answer": "Ba",
+    "choices": [
+      "Ba",
+      "Br",
+      "Be",
+      "Bi"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the name of the process where water vapor in the air turns back into liquid water?",
+    "answer": "Condensation",
+    "choices": [
+      "Condensation",
+      "Evaporation",
+      "Sublimation",
+      "Freezing"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the chemical symbol for iodine?",
+    "answer": "I",
+    "choices": [
+      "I",
+      "Id",
+      "Io",
+      "In"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What structure in a cell contains the genetic material (DNA)?",
+    "answer": "Nucleus",
+    "choices": [
+      "Nucleus",
+      "Mitochondria",
+      "Cell membrane",
+      "Ribosome"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which group of elements on the periodic table is known as noble gases?",
+    "answer": "Group 18",
+    "choices": [
+      "Group 18",
+      "Group 1",
+      "Group 17",
+      "Group 2"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What are the elements in Group 1 of the periodic table called?",
+    "answer": "Alkali metals",
+    "choices": [
+      "Alkali metals",
+      "Alkaline earth metals",
+      "Noble gases",
+      "Halogens"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which group contains fluorine, chlorine, and bromine?",
+    "answer": "Halogens (Group 17)",
+    "choices": [
+      "Halogens (Group 17)",
+      "Noble gases (Group 18)",
+      "Alkali metals (Group 1)",
+      "Transition metals"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What does Newton's First Law of Motion state?",
+    "answer": "An object at rest stays at rest unless acted on by a net force",
+    "choices": [
+      "An object at rest stays at rest unless acted on by a net force",
+      "Force equals mass times acceleration",
+      "For every action there is an equal and opposite reaction",
+      "Energy cannot be created or destroyed"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is Newton's Second Law of Motion expressed as a formula?",
+    "answer": "F = ma",
+    "choices": [
+      "F = ma",
+      "E = mc2",
+      "v = d/t",
+      "P = mv"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What does Newton's Third Law of Motion state?",
+    "answer": "For every action there is an equal and opposite reaction",
+    "choices": [
+      "For every action there is an equal and opposite reaction",
+      "Objects in motion stay in motion",
+      "Force equals mass times acceleration",
+      "Energy is always conserved"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What simple machine consists of a wheel with a groove that a rope can run through?",
+    "answer": "Pulley",
+    "choices": [
+      "Pulley",
+      "Lever",
+      "Wedge",
+      "Gear"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is an ecosystem?",
+    "answer": "A community of organisms and their physical environment interacting together",
+    "choices": [
+      "A community of organisms and their physical environment interacting together",
+      "A group of animals in a forest",
+      "The study of plants and their habitats",
+      "A single food web"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is an atom?",
+    "answer": "The smallest unit of an element that retains its chemical properties",
+    "choices": [
+      "The smallest unit of an element that retains its chemical properties",
+      "The smallest living unit",
+      "A type of molecule",
+      "A charged particle"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is a molecule?",
+    "answer": "Two or more atoms bonded together",
+    "choices": [
+      "Two or more atoms bonded together",
+      "A single charged atom",
+      "The nucleus of an atom",
+      "An element in pure form"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the atomic number of carbon?",
+    "answer": "6",
+    "choices": [
+      "6",
+      "12",
+      "8",
+      "4"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the atomic number of oxygen?",
+    "answer": "8",
+    "choices": [
+      "8",
+      "16",
+      "6",
+      "10"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What subatomic particles are found in the nucleus of an atom?",
+    "answer": "Protons and neutrons",
+    "choices": [
+      "Protons and neutrons",
+      "Protons and electrons",
+      "Neutrons and electrons",
+      "Quarks and leptons"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What electric charge does an electron carry?",
+    "answer": "Negative",
+    "choices": [
+      "Negative",
+      "Positive",
+      "Neutral",
+      "Variable"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the term for the number of protons in an atom's nucleus?",
+    "answer": "Atomic number",
+    "choices": [
+      "Atomic number",
+      "Mass number",
+      "Atomic mass",
+      "Electron number"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which noble gas is used in party balloons as a safe alternative to hydrogen?",
+    "answer": "Helium",
+    "choices": [
+      "Helium",
+      "Neon",
+      "Argon",
+      "Krypton"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What type of simple machine is a ramp?",
+    "answer": "Inclined plane",
+    "choices": [
+      "Inclined plane",
+      "Lever",
+      "Wedge",
+      "Pulley"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the fulcrum of a lever?",
+    "answer": "The pivot point",
+    "choices": [
+      "The pivot point",
+      "The load end",
+      "The effort end",
+      "The handle"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the term for when one animal hunts and eats another animal?",
+    "answer": "Predation",
+    "choices": [
+      "Predation",
+      "Parasitism",
+      "Mutualism",
+      "Commensalism"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is a food chain?",
+    "answer": "A sequence showing how energy flows from one organism to the next through feeding",
+    "choices": [
+      "A sequence showing how energy flows from one organism to the next through feeding",
+      "A list of all foods eaten by one animal",
+      "A type of ecosystem",
+      "A network of all food webs in an area"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What are compounds made only of carbon and hydrogen called?",
+    "answer": "Hydrocarbons",
+    "choices": [
+      "Hydrocarbons",
+      "Carbohydrates",
+      "Carbonates",
+      "Hydroxides"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the chemical formula for methane (natural gas)?",
+    "answer": "CH4",
+    "choices": [
+      "CH4",
+      "CO2",
+      "C2H6",
+      "C2H2"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What are atoms of the same element with different numbers of neutrons called?",
+    "answer": "Isotopes",
+    "choices": [
+      "Isotopes",
+      "Isomers",
+      "Ions",
+      "Isobars"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the term for an atom that has gained or lost electrons and carries a charge?",
+    "answer": "Ion",
+    "choices": [
+      "Ion",
+      "Isotope",
+      "Radical",
+      "Molecule"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the process by which organisms break down glucose to release energy for life?",
+    "answer": "Cellular respiration",
+    "choices": [
+      "Cellular respiration",
+      "Photosynthesis",
+      "Fermentation",
+      "Digestion"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which layer of the atmosphere contains the ozone layer?",
+    "answer": "Stratosphere",
+    "choices": [
+      "Stratosphere",
+      "Troposphere",
+      "Mesosphere",
+      "Thermosphere"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the study of fossils called?",
+    "answer": "Paleontology",
+    "choices": [
+      "Paleontology",
+      "Geology",
+      "Archaeology",
+      "Anthropology"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the correct order of water cycle stages: evaporation → condensation → ?",
+    "answer": "Precipitation",
+    "choices": [
+      "Precipitation",
+      "Sublimation",
+      "Transpiration",
+      "Infiltration"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which element is the most abundant in Earth's crust?",
+    "answer": "Oxygen",
+    "choices": [
+      "Oxygen",
+      "Silicon",
+      "Aluminum",
+      "Iron"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is a mixture of two or more metals called?",
+    "answer": "Alloy",
+    "choices": [
+      "Alloy",
+      "Compound",
+      "Solution",
+      "Amalgam"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the SI unit of force?",
+    "answer": "Newton",
+    "choices": [
+      "Newton",
+      "Joule",
+      "Pascal",
+      "Watt"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the SI unit of energy?",
+    "answer": "Joule",
+    "choices": [
+      "Joule",
+      "Watt",
+      "Newton",
+      "Pascal"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the relationship between speed, distance, and time?",
+    "answer": "Speed = distance ÷ time",
+    "choices": [
+      "Speed = distance ÷ time",
+      "Speed = time ÷ distance",
+      "Speed = distance × time",
+      "Speed = distance + time"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the key difference between a physical change and a chemical change?",
+    "answer": "A chemical change produces a new substance; a physical change does not",
+    "choices": [
+      "A chemical change produces a new substance; a physical change does not",
+      "A physical change is permanent; a chemical change is reversible",
+      "Physical changes involve heat; chemical changes do not",
+      "They are the same thing"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What type of rock forms when sediment is compressed and cemented over time?",
+    "answer": "Sedimentary rock",
+    "choices": [
+      "Sedimentary rock",
+      "Igneous rock",
+      "Metamorphic rock",
+      "Volcanic rock"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "How is the periodic table primarily organized?",
+    "answer": "By increasing atomic number",
+    "choices": [
+      "By increasing atomic number",
+      "By increasing atomic mass",
+      "Alphabetical order",
+      "By decreasing reactivity"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the term for the amount of matter in an object?",
+    "answer": "Mass",
+    "choices": [
+      "Mass",
+      "Weight",
+      "Density",
+      "Volume"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is density?",
+    "answer": "Mass divided by volume",
+    "choices": [
+      "Mass divided by volume",
+      "Volume divided by mass",
+      "Mass times volume",
+      "Weight divided by area"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which gas makes up about 21% of Earth's atmosphere?",
+    "answer": "Oxygen",
+    "choices": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon dioxide",
+      "Argon"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the name for organisms that break down dead matter and return nutrients to the soil?",
+    "answer": "Decomposers",
+    "choices": [
+      "Decomposers",
+      "Consumers",
+      "Producers",
+      "Predators"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the atomic number of hydrogen?",
+    "answer": "1",
+    "choices": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "In a solution, what is the solute?",
+    "answer": "The substance that is dissolved",
+    "choices": [
+      "The substance that is dissolved",
+      "The liquid that dissolves things",
+      "The resulting mixture",
+      "The undissolved solid at the bottom"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the process of rocks breaking down by weather and water called?",
+    "answer": "Weathering",
+    "choices": [
+      "Weathering",
+      "Erosion",
+      "Deposition",
+      "Sedimentation"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What are the three types of simple machines derived from the inclined plane?",
+    "answer": "Wedge, screw, inclined plane",
+    "choices": [
+      "Wedge, screw, inclined plane",
+      "Lever, wheel, pulley",
+      "Gear, wheel, axle",
+      "Pulley, lever, wedge"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the main difference between a mammal and a reptile?",
+    "answer": "Mammals are warm-blooded and nurse young with milk",
+    "choices": [
+      "Mammals are warm-blooded and nurse young with milk",
+      "Reptiles have scales and are warm-blooded",
+      "Mammals lay eggs; reptiles do not",
+      "Reptiles breathe with lungs; mammals breathe differently"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the name for the amount of space an object occupies?",
+    "answer": "Volume",
+    "choices": [
+      "Volume",
+      "Mass",
+      "Area",
+      "Density"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the chemical formula for hydrogen peroxide?",
+    "answer": "H2O2",
+    "choices": [
+      "H2O2",
+      "H2O",
+      "HO",
+      "H3O"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the common name for dihydrogen monoxide (H2O)?",
+    "answer": "Water",
+    "choices": [
+      "Water",
+      "Hydrogen",
+      "Oxygen",
+      "Peroxide"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the term for when a solid turns directly into a gas without becoming a liquid?",
+    "answer": "Sublimation",
+    "choices": [
+      "Sublimation",
+      "Evaporation",
+      "Condensation",
+      "Vaporization"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the process of evolution driven by survival of those best adapted to their environment?",
+    "answer": "Natural selection",
+    "choices": [
+      "Natural selection",
+      "Artificial selection",
+      "Genetic drift",
+      "Mutation"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What cells carry electrical signals in the human nervous system?",
+    "answer": "Neurons",
+    "choices": [
+      "Neurons",
+      "Muscles",
+      "Blood cells",
+      "Hormones"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the chemical formula for ammonia?",
+    "answer": "NH3",
+    "choices": [
+      "NH3",
+      "NO2",
+      "N2H4",
+      "NaOH"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What are the two main types of cells?",
+    "answer": "Prokaryotic and eukaryotic",
+    "choices": [
+      "Prokaryotic and eukaryotic",
+      "Plant and animal",
+      "Unicellular and multicellular",
+      "Organic and inorganic"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the difference between speed and velocity?",
+    "answer": "Velocity includes direction; speed does not",
+    "choices": [
+      "Velocity includes direction; speed does not",
+      "Speed is always faster than velocity",
+      "Velocity is measured in km/h; speed is not",
+      "They are the same thing"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What type of energy does a moving object have?",
+    "answer": "Kinetic energy",
+    "choices": [
+      "Kinetic energy",
+      "Potential energy",
+      "Chemical energy",
+      "Thermal energy"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the name for a predator at the top of a food chain with no natural predators?",
+    "answer": "Apex predator",
+    "choices": [
+      "Apex predator",
+      "Top producer",
+      "Primary consumer",
+      "Keystone species"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "How many elements are in the periodic table?",
+    "answer": "118",
+    "choices": [
+      "118",
+      "109",
+      "92",
+      "103"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What type of bond connects water molecules to each other?",
+    "answer": "Hydrogen bond",
+    "choices": [
+      "Hydrogen bond",
+      "Covalent bond",
+      "Ionic bond",
+      "Metallic bond"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the name for force per unit area?",
+    "answer": "Pressure",
+    "choices": [
+      "Pressure",
+      "Stress",
+      "Tension",
+      "Force density"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What are the tiny organisms that form the base of most aquatic food chains?",
+    "answer": "Plankton",
+    "choices": [
+      "Plankton",
+      "Algae",
+      "Krill",
+      "Zooids"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What term describes how easily a substance dissolves in water?",
+    "answer": "Solubility",
+    "choices": [
+      "Solubility",
+      "Miscibility",
+      "Reactivity",
+      "Viscosity"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What element is found in all organic molecules?",
+    "answer": "Carbon",
+    "choices": [
+      "Carbon",
+      "Oxygen",
+      "Hydrogen",
+      "Nitrogen"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the name for the change in velocity over time?",
+    "answer": "Acceleration",
+    "choices": [
+      "Acceleration",
+      "Speed",
+      "Momentum",
+      "Force"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the primary role of the ozone layer?",
+    "answer": "It absorbs harmful ultraviolet radiation from the Sun",
+    "choices": [
+      "It absorbs harmful ultraviolet radiation from the Sun",
+      "It produces oxygen for breathing",
+      "It reflects heat back to Earth",
+      "It prevents meteorites from reaching Earth"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the chemical formula for glucose (the sugar cells use for energy)?",
+    "answer": "C6H12O6",
+    "choices": [
+      "C6H12O6",
+      "C2H5OH",
+      "CH4",
+      "C12H22O11"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which types of rock can become metamorphic rock under heat and pressure?",
+    "answer": "Both igneous and sedimentary rocks",
+    "choices": [
+      "Both igneous and sedimentary rocks",
+      "Only sedimentary rock",
+      "Only igneous rock",
+      "Only volcanic rock"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the term for the variety of different species living in an area?",
+    "answer": "Biodiversity",
+    "choices": [
+      "Biodiversity",
+      "Ecology",
+      "Biome",
+      "Community"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What element has the periodic table symbol Fe and atomic number 26?",
+    "answer": "Iron",
+    "choices": [
+      "Iron",
+      "Zinc",
+      "Cobalt",
+      "Nickel"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the SI unit of electric charge?",
+    "answer": "Coulomb",
+    "choices": [
+      "Coulomb",
+      "Ampere",
+      "Volt",
+      "Farad"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is a biome?",
+    "answer": "A large region with a specific climate and characteristic community of organisms",
+    "choices": [
+      "A large region with a specific climate and characteristic community of organisms",
+      "A type of ecosystem found only in the ocean",
+      "A community of microorganisms in the soil",
+      "A single species' habitat"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which elements are alkaline earth metals in Group 2 of the periodic table?",
+    "answer": "Beryllium, magnesium, calcium, strontium, barium, radium",
+    "choices": [
+      "Beryllium, magnesium, calcium, strontium, barium, radium",
+      "Lithium, sodium, potassium, rubidium, cesium, francium",
+      "Fluorine, chlorine, bromine, iodine, astatine",
+      "Helium, neon, argon, krypton, xenon, radon"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the unit used to measure electrical resistance?",
+    "answer": "Ohm",
+    "choices": [
+      "Ohm",
+      "Volt",
+      "Ampere",
+      "Watt"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the name for a symbiotic relationship where both organisms benefit?",
+    "answer": "Mutualism",
+    "choices": [
+      "Mutualism",
+      "Parasitism",
+      "Commensalism",
+      "Predation"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the process by which plants lose water vapor through tiny pores in their leaves?",
+    "answer": "Transpiration",
+    "choices": [
+      "Transpiration",
+      "Respiration",
+      "Photosynthesis",
+      "Evaporation"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the chemical formula for calcium carbonate (the main component of limestone)?",
+    "answer": "CaCO3",
+    "choices": [
+      "CaCO3",
+      "Ca(OH)2",
+      "CaCl2",
+      "CaSO4"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which planet has an extreme axial tilt, causing it to appear to rotate on its side?",
+    "answer": "Uranus",
+    "choices": [
+      "Uranus",
+      "Neptune",
+      "Saturn",
+      "Jupiter"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the term for the total number of protons and neutrons in an atom's nucleus?",
+    "answer": "Mass number",
+    "choices": [
+      "Mass number",
+      "Atomic number",
+      "Atomic mass",
+      "Nucleon charge"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the chemical formula for sulfuric acid?",
+    "answer": "H2SO4",
+    "choices": [
+      "H2SO4",
+      "HCl",
+      "HNO3",
+      "H3PO4"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the difference between renewable and non-renewable energy sources?",
+    "answer": "Renewable energy is naturally replenished; non-renewable energy is finite",
+    "choices": [
+      "Renewable energy is naturally replenished; non-renewable energy is finite",
+      "Renewable energy is nuclear; non-renewable is solar",
+      "Renewable energy pollutes more; non-renewable does not",
+      "They are interchangeable terms"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the name for heat transfer through direct physical contact?",
+    "answer": "Conduction",
+    "choices": [
+      "Conduction",
+      "Convection",
+      "Radiation",
+      "Diffusion"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the transfer of heat through the movement of a fluid (liquid or gas) called?",
+    "answer": "Convection",
+    "choices": [
+      "Convection",
+      "Conduction",
+      "Radiation",
+      "Advection"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What type of simple machine is the spine of a screw?",
+    "answer": "Inclined plane wrapped in a spiral",
+    "choices": [
+      "Inclined plane wrapped in a spiral",
+      "A lever bent into a circle",
+      "A pulley with a fixed axle",
+      "A wedge on an axle"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the chemical formula for ethanol (drinking alcohol)?",
+    "answer": "C2H5OH",
+    "choices": [
+      "C2H5OH",
+      "CH3OH",
+      "C3H7OH",
+      "C6H12O6"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the name for the process by which certain materials release stored light energy after being exposed to light?",
+    "answer": "Phosphorescence",
+    "choices": [
+      "Phosphorescence",
+      "Fluorescence",
+      "Luminescence",
+      "Bioluminescence"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the term for organisms that can make their own food using energy from chemicals rather than light?",
+    "answer": "Chemotrophs",
+    "choices": [
+      "Chemotrophs",
+      "Phototrophs",
+      "Heterotrophs",
+      "Autotrophs"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the relationship between pressure and depth in a fluid?",
+    "answer": "Pressure increases with depth",
+    "choices": [
+      "Pressure increases with depth",
+      "Pressure decreases with depth",
+      "Pressure remains constant with depth",
+      "Pressure depends only on temperature"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the chemical symbol for the element with atomic number 79?",
+    "answer": "Au",
+    "choices": [
+      "Au",
+      "Ag",
+      "Pt",
+      "Cu"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the term for the resistance of a fluid to flow?",
+    "answer": "Viscosity",
+    "choices": [
+      "Viscosity",
+      "Density",
+      "Buoyancy",
+      "Surface tension"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What process converts atmospheric nitrogen into compounds usable by plants?",
+    "answer": "Nitrogen fixation",
+    "choices": [
+      "Nitrogen fixation",
+      "Denitrification",
+      "Nitrification",
+      "Ammonification"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "In a chemical reaction, what are the starting substances called?",
+    "answer": "Reactants",
+    "choices": [
+      "Reactants",
+      "Products",
+      "Catalysts",
+      "Reagents"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "In a chemical reaction, what are the substances produced called?",
+    "answer": "Products",
+    "choices": [
+      "Products",
+      "Reactants",
+      "Catalysts",
+      "Substrates"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the relationship between frequency and wavelength of a wave?",
+    "answer": "They are inversely proportional",
+    "choices": [
+      "They are inversely proportional",
+      "They are directly proportional",
+      "They are unrelated to each other",
+      "Wavelength is always double the frequency"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the term for the number of complete wave cycles per second?",
+    "answer": "Frequency",
+    "choices": [
+      "Frequency",
+      "Wavelength",
+      "Amplitude",
+      "Period"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "How is the wavelength of a wave defined?",
+    "answer": "The distance between two consecutive crests",
+    "choices": [
+      "The distance between two consecutive crests",
+      "The height of the wave above rest",
+      "The number of cycles per second",
+      "The speed at which the wave travels"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What organelle is often called the powerhouse of the cell?",
+    "answer": "Mitochondria",
+    "choices": [
+      "Mitochondria",
+      "Nucleus",
+      "Ribosome",
+      "Chloroplast"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What organelle contains the cell's genetic information (DNA)?",
+    "answer": "Nucleus",
+    "choices": [
+      "Nucleus",
+      "Mitochondria",
+      "Ribosome",
+      "Vacuole"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What cell organelle is responsible for protein synthesis?",
+    "answer": "Ribosome",
+    "choices": [
+      "Ribosome",
+      "Golgi apparatus",
+      "Endoplasmic reticulum",
+      "Lysosome"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What does DNA stand for?",
+    "answer": "Deoxyribonucleic acid",
+    "choices": [
+      "Deoxyribonucleic acid",
+      "Deoxyribosenucleic acid",
+      "Diribonucleic acid",
+      "Diaminonucleic acid"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What are chromosomes?",
+    "answer": "Thread-like structures made of DNA and protein that carry genes",
+    "choices": [
+      "Thread-like structures made of DNA and protein that carry genes",
+      "Individual genes within a cell",
+      "Proteins that replicate DNA",
+      "RNA molecules used in translation"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "How many chromosomes do normal human body cells contain?",
+    "answer": "46",
+    "choices": [
+      "46",
+      "23",
+      "48",
+      "44"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is plate tectonics?",
+    "answer": "The theory that Earth's crust is divided into moving plates",
+    "choices": [
+      "The theory that Earth's crust is divided into moving plates",
+      "The study of earthquake patterns",
+      "The theory that continents were once connected only",
+      "The movement of magma inside Earth"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the rock cycle?",
+    "answer": "The continuous process by which rocks change from one type to another over time",
+    "choices": [
+      "The continuous process by which rocks change from one type to another over time",
+      "The formation of igneous rocks from magma only",
+      "The erosion of rocks by wind and water",
+      "The classification system for rock types"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is a catalyst?",
+    "answer": "A substance that speeds up a chemical reaction without being consumed",
+    "choices": [
+      "A substance that speeds up a chemical reaction without being consumed",
+      "A substance that slows down a reaction",
+      "A product created in a chemical reaction",
+      "A type of reactant consumed in the reaction"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the term for the minimum energy required to start a chemical reaction?",
+    "answer": "Activation energy",
+    "choices": [
+      "Activation energy",
+      "Potential energy",
+      "Kinetic energy",
+      "Bond energy"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What does the Richter scale measure?",
+    "answer": "The magnitude of earthquakes",
+    "choices": [
+      "The magnitude of earthquakes",
+      "The depth of earthquakes",
+      "The frequency of earthquakes",
+      "The damage caused by earthquakes"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the difference between exothermic and endothermic reactions?",
+    "answer": "Exothermic releases heat; endothermic absorbs heat",
+    "choices": [
+      "Exothermic releases heat; endothermic absorbs heat",
+      "Exothermic absorbs heat; endothermic releases heat",
+      "Exothermic produces gas; endothermic does not",
+      "They are the same type of reaction"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the amplitude of a wave?",
+    "answer": "The maximum displacement from the rest position",
+    "choices": [
+      "The maximum displacement from the rest position",
+      "The number of cycles per second",
+      "The distance between two crests",
+      "The speed of the wave"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What organelle is found in plant cells but NOT in animal cells?",
+    "answer": "Chloroplast",
+    "choices": [
+      "Chloroplast",
+      "Mitochondria",
+      "Nucleus",
+      "Ribosome"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the cell membrane primarily made of?",
+    "answer": "A phospholipid bilayer",
+    "choices": [
+      "A phospholipid bilayer",
+      "A protein sheet",
+      "Cellulose fibers",
+      "A lipid monolayer"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is osmosis?",
+    "answer": "The movement of water across a semi-permeable membrane from high to low water concentration",
+    "choices": [
+      "The movement of water across a semi-permeable membrane from high to low water concentration",
+      "The movement of solutes across a membrane",
+      "The process of active transport",
+      "The movement of gases in and out of cells"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is diffusion?",
+    "answer": "The movement of particles from an area of high concentration to low concentration",
+    "choices": [
+      "The movement of particles from an area of high concentration to low concentration",
+      "The movement of particles from low to high concentration",
+      "Active transport of molecules across a membrane",
+      "The dissolution of a solid in a liquid"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What are metamorphic rocks?",
+    "answer": "Rocks formed when existing rocks are transformed by heat and pressure",
+    "choices": [
+      "Rocks formed when existing rocks are transformed by heat and pressure",
+      "Rocks formed from cooled lava",
+      "Rocks formed from compressed sediment",
+      "Rocks found only near volcanoes"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is erosion?",
+    "answer": "The wearing away and transport of rock and soil by wind, water, or ice",
+    "choices": [
+      "The wearing away and transport of rock and soil by wind, water, or ice",
+      "The breaking down of rock in place without movement",
+      "The deposit of sediment in a new location",
+      "The formation of new rock from minerals"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the formula relating wave speed, frequency, and wavelength?",
+    "answer": "v = fλ",
+    "choices": [
+      "v = fλ",
+      "v = f/λ",
+      "v = λ/f",
+      "f = vλ"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is a gene?",
+    "answer": "A segment of DNA that codes for a specific protein or trait",
+    "choices": [
+      "A segment of DNA that codes for a specific protein or trait",
+      "A type of chromosome",
+      "The entire DNA of an organism",
+      "A protein that regulates cell division"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which base pairs are complementary in DNA?",
+    "answer": "Adenine-Thymine and Cytosine-Guanine",
+    "choices": [
+      "Adenine-Thymine and Cytosine-Guanine",
+      "Adenine-Cytosine and Thymine-Guanine",
+      "Adenine-Guanine and Cytosine-Thymine",
+      "Adenine-Uracil and Cytosine-Guanine"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the double helix?",
+    "answer": "The twisted ladder shape of the DNA molecule",
+    "choices": [
+      "The twisted ladder shape of the DNA molecule",
+      "The two strands of RNA found in the nucleus",
+      "The circular structure of bacterial chromosomes",
+      "The coiled shape of proteins"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What does the law of conservation of mass state?",
+    "answer": "Matter cannot be created or destroyed in a chemical reaction",
+    "choices": [
+      "Matter cannot be created or destroyed in a chemical reaction",
+      "Energy cannot be created or destroyed",
+      "Mass always increases during chemical reactions",
+      "Products always weigh less than reactants"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What are longitudinal waves?",
+    "answer": "Waves where the particle movement is parallel to the wave's direction of travel",
+    "choices": [
+      "Waves where the particle movement is parallel to the wave's direction of travel",
+      "Waves where the particle movement is perpendicular to the wave direction",
+      "Waves that travel only through a vacuum",
+      "Waves that require water to travel"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What are transverse waves?",
+    "answer": "Waves where the particle movement is perpendicular to the wave's direction of travel",
+    "choices": [
+      "Waves where the particle movement is perpendicular to the wave's direction of travel",
+      "Waves where the particle movement is parallel to the wave direction",
+      "Waves that travel through solids only",
+      "Waves that carry no energy"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Is sound a longitudinal or transverse wave?",
+    "answer": "Longitudinal wave",
+    "choices": [
+      "Longitudinal wave",
+      "Transverse wave",
+      "Electromagnetic wave",
+      "Surface wave"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What causes a rainbow to form in the sky?",
+    "answer": "Refraction and dispersion of light through water droplets",
+    "choices": [
+      "Refraction and dispersion of light through water droplets",
+      "Reflection of light off clouds",
+      "Scattering of light by dust particles",
+      "Diffraction of light through air"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is refraction?",
+    "answer": "The bending of light as it passes from one medium to another",
+    "choices": [
+      "The bending of light as it passes from one medium to another",
+      "The bouncing of light off a surface",
+      "The splitting of light into colors",
+      "The absorption of light by a medium"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the process of cell division that produces two genetically identical daughter cells?",
+    "answer": "Mitosis",
+    "choices": [
+      "Mitosis",
+      "Meiosis",
+      "Cytokinesis",
+      "Binary fission"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the process of cell division that produces reproductive cells (sperm and eggs)?",
+    "answer": "Meiosis",
+    "choices": [
+      "Meiosis",
+      "Mitosis",
+      "Cytokinesis",
+      "Conjugation"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the continental drift theory?",
+    "answer": "The idea that continents were once joined together and have moved apart over millions of years",
+    "choices": [
+      "The idea that continents were once joined together and have moved apart over millions of years",
+      "The theory that continents will eventually collide and merge",
+      "The study of earthquakes at plate boundaries",
+      "The movement of oceanic plates under continents"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the Golgi apparatus responsible for in a cell?",
+    "answer": "Processing and packaging proteins for export or transport",
+    "choices": [
+      "Processing and packaging proteins for export or transport",
+      "Producing energy for the cell",
+      "Synthesizing proteins directly from mRNA",
+      "Storing genetic information"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the most common type of rock found on the ocean floor?",
+    "answer": "Basalt",
+    "choices": [
+      "Basalt",
+      "Granite",
+      "Limestone",
+      "Sandstone"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What primarily causes the tides on Earth?",
+    "answer": "The gravitational pull of the Moon",
+    "choices": [
+      "The gravitational pull of the Moon",
+      "The rotation of the Earth",
+      "Wind on the ocean surface",
+      "Pressure changes in the atmosphere"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the term for when unrelated species evolve similar traits independently?",
+    "answer": "Convergent evolution",
+    "choices": [
+      "Convergent evolution",
+      "Divergent evolution",
+      "Parallel evolution",
+      "Adaptive radiation"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the Doppler effect?",
+    "answer": "The change in observed frequency of a wave due to relative motion between source and observer",
+    "choices": [
+      "The change in observed frequency of a wave due to relative motion between source and observer",
+      "The slowing of waves as they pass through a denser medium",
+      "The bending of waves around obstacles",
+      "The increase in wave amplitude over distance"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the key difference between a mixture and a compound?",
+    "answer": "A compound has elements chemically bonded; a mixture has substances physically combined",
+    "choices": [
+      "A compound has elements chemically bonded; a mixture has substances physically combined",
+      "A mixture is always purer than a compound",
+      "A compound can always be separated by physical means",
+      "They are interchangeable terms"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which part of the electromagnetic spectrum has the highest frequency?",
+    "answer": "Gamma rays",
+    "choices": [
+      "Gamma rays",
+      "X-rays",
+      "Ultraviolet radiation",
+      "Radio waves"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the trophic level of plants in an ecosystem?",
+    "answer": "First trophic level (primary producers)",
+    "choices": [
+      "First trophic level (primary producers)",
+      "Second trophic level",
+      "Third trophic level",
+      "Zeroth trophic level"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "How is a volcano formed?",
+    "answer": "Magma escapes through a vent in Earth's crust and accumulates",
+    "choices": [
+      "Magma escapes through a vent in Earth's crust and accumulates",
+      "Earthquake activity near the ocean builds a mound",
+      "Erosion carves out a mountain shape",
+      "Sediment builds up over long periods"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the key structural difference between prokaryotic and eukaryotic cells?",
+    "answer": "Eukaryotic cells have a membrane-bound nucleus; prokaryotic cells do not",
+    "choices": [
+      "Eukaryotic cells have a membrane-bound nucleus; prokaryotic cells do not",
+      "Prokaryotic cells are much larger than eukaryotic cells",
+      "Prokaryotic cells have more complex organelles",
+      "Eukaryotic cells have no cell wall"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What organ system is responsible for breaking down food into nutrients?",
+    "answer": "Digestive system",
+    "choices": [
+      "Digestive system",
+      "Circulatory system",
+      "Respiratory system",
+      "Endocrine system"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the name for the part of the Earth that supports life?",
+    "answer": "Biosphere",
+    "choices": [
+      "Biosphere",
+      "Atmosphere",
+      "Hydrosphere",
+      "Geosphere"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What process releases energy from glucose for use by cells?",
+    "answer": "Cellular respiration",
+    "choices": [
+      "Cellular respiration",
+      "Photosynthesis",
+      "Fermentation",
+      "Glycolysis only"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the endoplasmic reticulum's role in the cell?",
+    "answer": "It is a network of membranes involved in protein and lipid synthesis and transport",
+    "choices": [
+      "It is a network of membranes involved in protein and lipid synthesis and transport",
+      "It is the site of DNA replication",
+      "It produces ATP for the cell",
+      "It breaks down waste materials"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the difference between a food web and a food chain?",
+    "answer": "A food web shows multiple interconnected food chains; a food chain is a single linear path",
+    "choices": [
+      "A food web shows multiple interconnected food chains; a food chain is a single linear path",
+      "A food chain is more complex than a food web",
+      "A food web shows only predator-prey relationships",
+      "They are the same thing"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the term for the bending of waves around obstacles or through openings?",
+    "answer": "Diffraction",
+    "choices": [
+      "Diffraction",
+      "Refraction",
+      "Reflection",
+      "Dispersion"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the lithosphere?",
+    "answer": "The rigid outer layer of Earth including the crust and upper mantle",
+    "choices": [
+      "The rigid outer layer of Earth including the crust and upper mantle",
+      "The liquid outer core of Earth",
+      "The middle layer of the atmosphere",
+      "The layer of ocean water surrounding Earth"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the term for genetic material passed from parents to offspring?",
+    "answer": "Heredity",
+    "choices": [
+      "Heredity",
+      "Evolution",
+      "Mutation",
+      "Adaptation"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the name for the region of the Earth's interior between the crust and the core?",
+    "answer": "Mantle",
+    "choices": [
+      "Mantle",
+      "Lithosphere",
+      "Asthenosphere",
+      "Mesosphere"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What are convection currents in the mantle responsible for?",
+    "answer": "Driving the movement of tectonic plates",
+    "choices": [
+      "Driving the movement of tectonic plates",
+      "Causing volcanic eruptions directly",
+      "Creating ocean tides",
+      "Producing Earth's magnetic field"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What does it mean to balance a chemical equation?",
+    "answer": "The number of atoms of each element must be equal on both sides of the equation",
+    "choices": [
+      "The number of atoms of each element must be equal on both sides of the equation",
+      "The total electric charge must be zero on both sides",
+      "The number of molecules must be equal on both sides",
+      "The mass in grams of reactants must equal products"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the correct order of the electromagnetic spectrum from lowest to highest frequency?",
+    "answer": "Radio, microwave, infrared, visible, UV, X-ray, gamma",
+    "choices": [
+      "Radio, microwave, infrared, visible, UV, X-ray, gamma",
+      "Gamma, X-ray, UV, visible, infrared, microwave, radio",
+      "Radio, infrared, UV, X-ray, microwave, visible, gamma",
+      "Visible, radio, gamma, UV, infrared, microwave, X-ray"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What are Mendel's two laws of inheritance?",
+    "answer": "Law of Segregation and Law of Independent Assortment",
+    "choices": [
+      "Law of Segregation and Law of Independent Assortment",
+      "Law of Dominance and Law of Blending",
+      "Law of Natural Selection and Law of Variation",
+      "Law of Mutation and Law of Recombination"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What does pH measure?",
+    "answer": "The concentration of hydrogen ions (how acidic or basic a solution is)",
+    "choices": [
+      "The concentration of hydrogen ions (how acidic or basic a solution is)",
+      "The concentration of hydroxide ions only",
+      "The strength of a chemical bond",
+      "The boiling point of a solution"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What pH value indicates a perfectly neutral solution?",
+    "answer": "7",
+    "choices": [
+      "7",
+      "0",
+      "14",
+      "5"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What pH value range indicates an acidic solution?",
+    "answer": "Below 7",
+    "choices": [
+      "Below 7",
+      "Above 7",
+      "Exactly 7",
+      "Above 10"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is a dominant allele?",
+    "answer": "An allele whose trait is expressed when even one copy is present",
+    "choices": [
+      "An allele whose trait is expressed when even one copy is present",
+      "An allele expressed only when two copies are present",
+      "The most common allele in a population",
+      "An allele located on the X chromosome"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is a recessive allele?",
+    "answer": "An allele that is only expressed in the phenotype when two copies are present",
+    "choices": [
+      "An allele that is only expressed in the phenotype when two copies are present",
+      "An allele whose trait is always expressed",
+      "The rarest allele in a population",
+      "An allele located on the Y chromosome"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the genotype of a heterozygous individual for a given trait?",
+    "answer": "Aa (one dominant, one recessive allele)",
+    "choices": [
+      "Aa (one dominant, one recessive allele)",
+      "AA (two dominant alleles)",
+      "aa (two recessive alleles)",
+      "Aa* (one dominant, one mutant allele)"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is phenotype?",
+    "answer": "The observable physical characteristics of an organism resulting from its genotype",
+    "choices": [
+      "The observable physical characteristics of an organism resulting from its genotype",
+      "The complete genetic makeup of an organism",
+      "A specific version of a gene",
+      "The chromosomal arrangement of an organism"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What does Newton's Law of Universal Gravitation state?",
+    "answer": "Every object attracts every other object with a force proportional to their masses and inversely proportional to the square of their distance",
+    "choices": [
+      "Every object attracts every other object with a force proportional to their masses and inversely proportional to the square of their distance",
+      "Objects fall with the same acceleration regardless of mass",
+      "Gravity only acts between very large objects like planets",
+      "The force of gravity is the same everywhere in the universe"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the SI unit of frequency?",
+    "answer": "Hertz (Hz)",
+    "choices": [
+      "Hertz (Hz)",
+      "Newton (N)",
+      "Pascal (Pa)",
+      "Watt (W)"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What does Ohm's Law state?",
+    "answer": "Voltage equals current multiplied by resistance (V = IR)",
+    "choices": [
+      "Voltage equals current multiplied by resistance (V = IR)",
+      "Current equals voltage multiplied by resistance",
+      "Resistance equals current divided by voltage",
+      "Voltage equals current divided by resistance"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is natural selection?",
+    "answer": "The process where organisms with traits better suited to the environment survive and reproduce more",
+    "choices": [
+      "The process where organisms with traits better suited to the environment survive and reproduce more",
+      "Random genetic changes spreading through populations",
+      "All organisms in a species evolving at the same rate",
+      "Stronger organisms consuming weaker organisms"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is an acid according to the Arrhenius definition?",
+    "answer": "A substance that releases H+ ions in aqueous solution",
+    "choices": [
+      "A substance that releases H+ ions in aqueous solution",
+      "A substance that releases OH- ions in water",
+      "A substance with a pH above 7",
+      "A substance that accepts protons from another substance"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is a base according to the Arrhenius definition?",
+    "answer": "A substance that releases OH- ions in aqueous solution",
+    "choices": [
+      "A substance that releases OH- ions in aqueous solution",
+      "A substance that releases H+ ions in water",
+      "A substance with a pH below 7",
+      "A substance that donates protons to another substance"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What happens in a neutralization reaction?",
+    "answer": "An acid and a base react to form water and a salt",
+    "choices": [
+      "An acid and a base react to form water and a salt",
+      "A metal reacts with an acid to form hydrogen gas",
+      "Two acids combine to form a stronger acid",
+      "A base reacts with a metal to release heat"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the formula for kinetic energy?",
+    "answer": "KE = ½mv²",
+    "choices": [
+      "KE = ½mv²",
+      "KE = mv",
+      "KE = mgh",
+      "KE = ½ma²"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the formula for gravitational potential energy?",
+    "answer": "PE = mgh",
+    "choices": [
+      "PE = mgh",
+      "PE = ½mv²",
+      "PE = mv²",
+      "PE = Fd"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "How is momentum defined?",
+    "answer": "The product of an object's mass and velocity (p = mv)",
+    "choices": [
+      "The product of an object's mass and velocity (p = mv)",
+      "The product of mass and acceleration",
+      "The product of force and time",
+      "The product of velocity and acceleration"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What does the law of conservation of energy state?",
+    "answer": "Energy cannot be created or destroyed, only converted from one form to another",
+    "choices": [
+      "Energy cannot be created or destroyed, only converted from one form to another",
+      "Energy is always lost as heat in any process",
+      "Energy can be created from matter in special circumstances",
+      "The total energy of a closed system always decreases"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the difference between a gene and an allele?",
+    "answer": "A gene is a DNA segment that codes for a trait; an allele is a specific variant of that gene",
+    "choices": [
+      "A gene is a DNA segment that codes for a trait; an allele is a specific variant of that gene",
+      "Genes are on chromosomes; alleles are not",
+      "Alleles are always dominant; genes can be recessive",
+      "They mean exactly the same thing"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is sex-linked inheritance?",
+    "answer": "Traits encoded on the sex chromosomes (X or Y), showing different inheritance patterns in males and females",
+    "choices": [
+      "Traits encoded on the sex chromosomes (X or Y), showing different inheritance patterns in males and females",
+      "Traits that are only inherited from the mother",
+      "Traits that are always dominant in males",
+      "Traits that consistently skip a generation"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is a Punnett square used for?",
+    "answer": "Predicting the probability of offspring inheriting certain genetic traits",
+    "choices": [
+      "Predicting the probability of offspring inheriting certain genetic traits",
+      "Mapping the physical location of genes on chromosomes",
+      "Showing the molecular structure of DNA",
+      "Calculating mutation rates in a population"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the electromagnetic force?",
+    "answer": "The fundamental force that acts between electrically charged particles",
+    "choices": [
+      "The fundamental force that acts between electrically charged particles",
+      "The force that holds the nucleus together",
+      "The force responsible for radioactive decay",
+      "The force of gravity at very small scales"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the strong nuclear force?",
+    "answer": "The fundamental force that holds protons and neutrons together in the nucleus",
+    "choices": [
+      "The fundamental force that holds protons and neutrons together in the nucleus",
+      "The force between electrons and protons in an atom",
+      "The force that causes radioactive decay",
+      "The force responsible for magnetism"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What electromagnetic wave has the longest wavelength?",
+    "answer": "Radio waves",
+    "choices": [
+      "Radio waves",
+      "Gamma rays",
+      "X-rays",
+      "Microwaves"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is radioactive decay?",
+    "answer": "The spontaneous breakdown of an unstable nucleus with emission of radiation",
+    "choices": [
+      "The spontaneous breakdown of an unstable nucleus with emission of radiation",
+      "The splitting of an atom's electron shells",
+      "The slowing of electrons in a magnetic field",
+      "The conversion of chemical energy to radiation"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is alpha radiation?",
+    "answer": "A particle consisting of 2 protons and 2 neutrons (helium-4 nucleus) emitted from a nucleus",
+    "choices": [
+      "A particle consisting of 2 protons and 2 neutrons (helium-4 nucleus) emitted from a nucleus",
+      "A high-energy electron emitted from the nucleus",
+      "A high-energy photon emitted from the nucleus",
+      "A neutron emitted from the nucleus"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is beta radiation?",
+    "answer": "A fast-moving electron (or positron) emitted from an unstable nucleus",
+    "choices": [
+      "A fast-moving electron (or positron) emitted from an unstable nucleus",
+      "A particle of 2 protons and 2 neutrons",
+      "A high-energy photon from nuclear transitions",
+      "A neutral subatomic particle ejected from the nucleus"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is gamma radiation?",
+    "answer": "High-energy electromagnetic radiation emitted from an excited atomic nucleus",
+    "choices": [
+      "High-energy electromagnetic radiation emitted from an excited atomic nucleus",
+      "A particle of 2 protons and 2 neutrons",
+      "A fast electron emitted from the nucleus",
+      "A type of X-ray produced by electron transitions"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "How is work defined in physics?",
+    "answer": "Force multiplied by displacement in the direction of the force",
+    "choices": [
+      "Force multiplied by displacement in the direction of the force",
+      "Force multiplied by time",
+      "Mass multiplied by acceleration",
+      "Energy divided by time"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is power in physics?",
+    "answer": "Work done per unit time",
+    "choices": [
+      "Work done per unit time",
+      "Force times velocity squared",
+      "Energy times time",
+      "Mass times acceleration squared"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the formula for work?",
+    "answer": "W = Fd",
+    "choices": [
+      "W = Fd",
+      "W = mv",
+      "W = P/t",
+      "W = qV"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is an ionic compound?",
+    "answer": "A compound formed by electrostatic attraction between positive and negative ions",
+    "choices": [
+      "A compound formed by electrostatic attraction between positive and negative ions",
+      "A compound formed by two atoms sharing electrons equally",
+      "A compound made of only one element in multiple forms",
+      "A compound that dissolves only in organic solvents"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is a covalent compound?",
+    "answer": "A compound formed by atoms sharing pairs of electrons",
+    "choices": [
+      "A compound formed by atoms sharing pairs of electrons",
+      "A compound formed by electron transfer between atoms",
+      "A compound made of positive and negative ions",
+      "A compound of metals bonded to non-metals by ionic bonds"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What are the four nucleotide bases in DNA?",
+    "answer": "Adenine, thymine, cytosine, guanine",
+    "choices": [
+      "Adenine, thymine, cytosine, guanine",
+      "Adenine, uracil, cytosine, guanine",
+      "Adenine, thymine, cytosine, uridine",
+      "Adenine, thymine, cytosine, ribose"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is selective breeding?",
+    "answer": "The practice of choosing organisms with desired traits to breed together",
+    "choices": [
+      "The practice of choosing organisms with desired traits to breed together",
+      "Genetically modifying organisms in a laboratory",
+      "Allowing organisms to breed randomly without intervention",
+      "Preventing reproduction in organisms with undesirable traits"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What type of electromagnetic radiation do warm and hot objects emit?",
+    "answer": "Infrared radiation",
+    "choices": [
+      "Infrared radiation",
+      "Ultraviolet radiation",
+      "Gamma radiation",
+      "X-rays"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is inertia?",
+    "answer": "The tendency of an object to resist changes in its state of motion",
+    "choices": [
+      "The tendency of an object to resist changes in its state of motion",
+      "The force needed to move a stationary object",
+      "The acceleration of an object under gravity",
+      "The energy stored in a stationary object"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the key difference between nuclear fission and fusion?",
+    "answer": "Fission splits heavy nuclei; fusion combines light nuclei",
+    "choices": [
+      "Fission splits heavy nuclei; fusion combines light nuclei",
+      "Fusion splits heavy nuclei; fission combines light nuclei",
+      "Fission is used only in stars; fusion is used in reactors",
+      "They both produce the same amount of energy per reaction"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the half-life of a radioactive element?",
+    "answer": "The time it takes for half of the radioactive atoms in a sample to decay",
+    "choices": [
+      "The time it takes for half of the radioactive atoms in a sample to decay",
+      "The time it takes for all atoms in a sample to decay",
+      "The average lifetime of a single radioactive atom",
+      "Half the time required for a complete decay cycle"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What does Charles's Law state about gases?",
+    "answer": "At constant pressure, the volume of a gas is directly proportional to its absolute temperature",
+    "choices": [
+      "At constant pressure, the volume of a gas is directly proportional to its absolute temperature",
+      "At constant temperature, the pressure of a gas is inversely proportional to volume",
+      "At constant volume, the pressure is directly proportional to temperature",
+      "Gas volume is constant regardless of temperature changes"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What does Boyle's Law state about gases?",
+    "answer": "At constant temperature, the pressure of a gas is inversely proportional to its volume",
+    "choices": [
+      "At constant temperature, the pressure of a gas is inversely proportional to its volume",
+      "At constant pressure, the volume is directly proportional to temperature",
+      "Gas pressure is always constant in a closed container",
+      "Temperature and pressure of a gas are directly proportional"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is fertilization?",
+    "answer": "The fusion of a sperm and egg cell to form a zygote",
+    "choices": [
+      "The fusion of a sperm and egg cell to form a zygote",
+      "The division of cells to produce gametes",
+      "The implantation of an embryo in the uterus",
+      "The development of an embryo from a single cell"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is natural selection primarily acting on?",
+    "answer": "Heritable variation in traits that affects an organism's reproductive success",
+    "choices": [
+      "Heritable variation in traits that affects an organism's reproductive success",
+      "All organisms in a population equally",
+      "Only beneficial mutations that arise spontaneously",
+      "Traits an organism acquires during its lifetime"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the formula for pressure?",
+    "answer": "P = F/A (force divided by area)",
+    "choices": [
+      "P = F/A (force divided by area)",
+      "P = FA",
+      "P = F - A",
+      "P = A/F"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What are isotopes?",
+    "answer": "Atoms of the same element with the same number of protons but different numbers of neutrons",
+    "choices": [
+      "Atoms of the same element with the same number of protons but different numbers of neutrons",
+      "Atoms of different elements with the same mass number",
+      "Atoms that have gained or lost electrons to form ions",
+      "Different elements that have the same atomic number"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is an enzyme?",
+    "answer": "A protein that acts as a biological catalyst, speeding up chemical reactions in living things",
+    "choices": [
+      "A protein that acts as a biological catalyst, speeding up chemical reactions in living things",
+      "A type of carbohydrate used primarily for energy storage",
+      "A molecule that stores and transmits genetic information",
+      "A type of fat that provides structural support to cell membranes"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the primary function of the kidneys?",
+    "answer": "To filter blood and remove metabolic waste products as urine",
+    "choices": [
+      "To filter blood and remove metabolic waste products as urine",
+      "To produce digestive enzymes for the stomach",
+      "To regulate blood sugar levels through hormone secretion",
+      "To produce growth hormones for the body"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the key difference between aerobic and anaerobic respiration?",
+    "answer": "Aerobic respiration requires oxygen; anaerobic does not",
+    "choices": [
+      "Aerobic respiration requires oxygen; anaerobic does not",
+      "Anaerobic respiration requires oxygen; aerobic does not",
+      "Aerobic respiration occurs only in muscles; anaerobic occurs elsewhere",
+      "They produce identical amounts of ATP"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is mutation in genetics?",
+    "answer": "A change in the DNA nucleotide sequence of a gene or chromosome",
+    "choices": [
+      "A change in the DNA nucleotide sequence of a gene or chromosome",
+      "The normal variation between individuals in a population",
+      "The expression of a previously silent recessive gene",
+      "The epigenetic methylation of a gene promoter"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is speciation?",
+    "answer": "The evolutionary process by which populations diverge to form new distinct species",
+    "choices": [
+      "The evolutionary process by which populations diverge to form new distinct species",
+      "The extinction of one species being replaced by another",
+      "The migration of species to new habitats",
+      "The hybridization of two closely related species"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the difference between a conductor and an insulator?",
+    "answer": "Conductors allow electricity to flow freely; insulators resist the flow of electricity",
+    "choices": [
+      "Conductors allow electricity to flow freely; insulators resist the flow of electricity",
+      "Insulators allow electricity to flow freely; conductors resist it",
+      "Conductors are always metals; insulators are always non-metals",
+      "They both allow electricity to flow but at different voltages"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the electron configuration of carbon?",
+    "answer": "1s² 2s² 2p²",
+    "choices": [
+      "1s² 2s² 2p²",
+      "1s² 2s² 2p⁴",
+      "1s² 2s⁴",
+      "1s² 1p² 2s²"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the electron configuration of oxygen?",
+    "answer": "1s² 2s² 2p⁴",
+    "choices": [
+      "1s² 2s² 2p⁴",
+      "1s² 2s² 2p²",
+      "1s² 2s² 2p⁶",
+      "1s² 2s⁴ 2p²"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does the Pauli Exclusion Principle state?",
+    "answer": "No two electrons in an atom can have the same set of four quantum numbers",
+    "choices": [
+      "No two electrons in an atom can have the same set of four quantum numbers",
+      "Electrons always fill the lowest energy orbitals first",
+      "Electrons in degenerate orbitals fill with parallel spins first",
+      "Each orbital can hold a maximum of three electrons"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does Hund's Rule state?",
+    "answer": "Electrons occupy degenerate orbitals singly with parallel spins before pairing up",
+    "choices": [
+      "Electrons occupy degenerate orbitals singly with parallel spins before pairing up",
+      "Electrons always pair up in orbitals before moving to a new subshell",
+      "Electrons fill the highest energy orbitals first",
+      "No two electrons can occupy the same orbital under any circumstances"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the Aufbau principle?",
+    "answer": "Electrons fill atomic orbitals starting from the lowest energy level upward",
+    "choices": [
+      "Electrons fill atomic orbitals starting from the lowest energy level upward",
+      "Electrons fill the highest energy level first and work downward",
+      "Electrons pair up in all orbitals before filling new subshells",
+      "Electrons alternate between spin up and spin down in sequence"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is quantum mechanics primarily concerned with?",
+    "answer": "The behavior of particles at the atomic and subatomic scale",
+    "choices": [
+      "The behavior of particles at the atomic and subatomic scale",
+      "The motion of large objects at relativistic speeds",
+      "The study of gravitational fields around massive objects",
+      "The behavior of gases under extreme pressure conditions"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does Heisenberg's Uncertainty Principle state?",
+    "answer": "It is impossible to simultaneously know the exact position and momentum of a particle",
+    "choices": [
+      "It is impossible to simultaneously know the exact position and momentum of a particle",
+      "Particles always travel in straight lines until disturbed by a force",
+      "The energy of a photon is proportional to its wavelength",
+      "Electrons orbit the nucleus only in fixed circular paths"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is wave-particle duality?",
+    "answer": "The concept that particles like electrons exhibit both wave-like and particle-like properties",
+    "choices": [
+      "The concept that particles like electrons exhibit both wave-like and particle-like properties",
+      "The idea that light travels only as a particle and never as a wave",
+      "The concept that electrons always travel as waves and never as particles",
+      "The observation that only photons exhibit dual wave-particle behavior"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is transcription in molecular biology?",
+    "answer": "The process by which DNA is used as a template to produce messenger RNA (mRNA)",
+    "choices": [
+      "The process by which DNA is used as a template to produce messenger RNA (mRNA)",
+      "The process by which mRNA is translated into a protein sequence",
+      "The process by which DNA is replicated to form two identical copies",
+      "The process by which proteins fold into functional 3D shapes"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is translation in molecular biology?",
+    "answer": "The process by which ribosomes decode mRNA to synthesize a protein",
+    "choices": [
+      "The process by which ribosomes decode mRNA to synthesize a protein",
+      "The process by which DNA is transcribed into mRNA",
+      "The process by which tRNA is produced directly from DNA",
+      "The process by which proteins are broken down into amino acids"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is a codon?",
+    "answer": "A sequence of three nucleotides in mRNA that codes for a specific amino acid",
+    "choices": [
+      "A sequence of three nucleotides in mRNA that codes for a specific amino acid",
+      "A sequence of two nucleotides in DNA that codes for a gene",
+      "A type of tRNA molecule that carries amino acids to the ribosome",
+      "A regulatory sequence in DNA that controls gene expression"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "How many standard amino acids are encoded by the genetic code?",
+    "answer": "20",
+    "choices": [
+      "20",
+      "4",
+      "64",
+      "16"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is an ionic bond?",
+    "answer": "A bond formed by the electrostatic attraction between oppositely charged ions",
+    "choices": [
+      "A bond formed by the electrostatic attraction between oppositely charged ions",
+      "A bond formed by two atoms sharing electrons equally",
+      "A bond formed by two atoms sharing electrons unequally",
+      "A bond between two metal atoms sharing delocalized electrons"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is a covalent bond?",
+    "answer": "A chemical bond formed by two atoms sharing a pair of electrons",
+    "choices": [
+      "A chemical bond formed by two atoms sharing a pair of electrons",
+      "A bond formed by electrostatic attraction of opposite charges",
+      "A bond between two metal ions in a crystalline lattice",
+      "A bond formed by complete electron transfer from one atom to another"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is a polar covalent bond?",
+    "answer": "A covalent bond where electrons are shared unequally due to electronegativity differences",
+    "choices": [
+      "A covalent bond where electrons are shared unequally due to electronegativity differences",
+      "A covalent bond where electrons are shared equally between atoms",
+      "A bond between two ions of opposite charge",
+      "A bond between metal atoms in a metallic lattice"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is electronegativity?",
+    "answer": "A measure of an atom's ability to attract shared electrons in a chemical bond",
+    "choices": [
+      "A measure of an atom's ability to attract shared electrons in a chemical bond",
+      "The energy required to remove an electron from a neutral atom",
+      "The number of valence electrons in an atom's outermost shell",
+      "The force holding electrons to the nucleus in isolation"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does the First Law of Thermodynamics state?",
+    "answer": "Energy cannot be created or destroyed; the total energy of the universe is constant",
+    "choices": [
+      "Energy cannot be created or destroyed; the total energy of the universe is constant",
+      "Heat flows spontaneously only from hot to cold objects",
+      "The entropy of an isolated system always increases over time",
+      "At absolute zero, entropy reaches its minimum possible value"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does the Second Law of Thermodynamics state?",
+    "answer": "The entropy of an isolated system always increases over time",
+    "choices": [
+      "The entropy of an isolated system always increases over time",
+      "Energy cannot be created or destroyed in any process",
+      "Heat flows spontaneously from cold to hot regions",
+      "The total momentum of a closed system is always conserved"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is entropy in thermodynamics?",
+    "answer": "A measure of disorder or randomness in a system",
+    "choices": [
+      "A measure of disorder or randomness in a system",
+      "A measure of the total energy contained in a system",
+      "The energy available to do useful work in a system",
+      "The equilibrium temperature of a system"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does Einstein's famous equation E = mc² express?",
+    "answer": "Mass and energy are equivalent; energy equals mass times the speed of light squared",
+    "choices": [
+      "Mass and energy are equivalent; energy equals mass times the speed of light squared",
+      "Energy equals force times displacement",
+      "Momentum equals mass times velocity",
+      "Force equals mass times the speed of light"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is time dilation in special relativity?",
+    "answer": "Moving clocks tick slower relative to stationary observers",
+    "choices": [
+      "Moving clocks tick slower relative to stationary observers",
+      "Stationary clocks always run faster than any moving clock",
+      "Time passes at the same rate for all observers in all frames",
+      "Clocks near massive objects run faster due to gravity"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is length contraction in special relativity?",
+    "answer": "Objects moving at high speed appear shorter in their direction of motion to a stationary observer",
+    "choices": [
+      "Objects moving at high speed appear shorter in their direction of motion to a stationary observer",
+      "Objects moving at high speed appear longer than when at rest",
+      "Length is constant regardless of the speed of the observer",
+      "Objects at rest appear shorter than fast-moving objects"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the photoelectric effect?",
+    "answer": "The emission of electrons from a metal surface when light above a threshold frequency shines on it",
+    "choices": [
+      "The emission of electrons from a metal surface when light above a threshold frequency shines on it",
+      "The emission of light when electrons strike a metal surface",
+      "The reflection of light off a polished metallic surface",
+      "The bending of light as it passes through a glass lens"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What did Einstein's explanation of the photoelectric effect reveal?",
+    "answer": "Light is made up of discrete packets of energy called photons",
+    "choices": [
+      "Light is made up of discrete packets of energy called photons",
+      "Light travels only as a continuous wave",
+      "Electrons behave as waves rather than particles",
+      "Electricity is produced by simply heating metal surfaces"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is a photon?",
+    "answer": "A massless quantum of electromagnetic energy",
+    "choices": [
+      "A massless quantum of electromagnetic energy",
+      "A particle found in the atomic nucleus",
+      "A charged subatomic particle with high energy",
+      "An electron accelerated to the speed of light"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is Planck's constant (h) used to calculate?",
+    "answer": "The energy of a photon: E = hf",
+    "choices": [
+      "The energy of a photon: E = hf",
+      "The mass of a single electron",
+      "The speed of electromagnetic radiation",
+      "The charge carried by a single proton"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is a quantum?",
+    "answer": "The smallest discrete unit of a physical quantity such as energy",
+    "choices": [
+      "The smallest discrete unit of a physical quantity such as energy",
+      "The largest possible unit of energy in a system",
+      "A type of fundamental subatomic particle",
+      "A measure of wave amplitude at a given point"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What are the four quantum numbers that fully describe an electron in an atom?",
+    "answer": "Principal (n), angular momentum (l), magnetic (ml), and spin (ms)",
+    "choices": [
+      "Principal (n), angular momentum (l), magnetic (ml), and spin (ms)",
+      "Charge, mass, position, and velocity",
+      "Orbital, shell, spin, and charge",
+      "Principal, secondary, tertiary, and quaternary"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is VSEPR theory used to predict?",
+    "answer": "The three-dimensional shape of molecules based on electron pair repulsion",
+    "choices": [
+      "The three-dimensional shape of molecules based on electron pair repulsion",
+      "The energy of covalent bonds in a molecule",
+      "The polarity of ionic compound crystals",
+      "The atomic mass of elements in a compound"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the molecular geometry of water (H2O) according to VSEPR theory?",
+    "answer": "Bent (V-shaped)",
+    "choices": [
+      "Bent (V-shaped)",
+      "Linear",
+      "Tetrahedral",
+      "Trigonal planar"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the molecular shape of methane (CH4)?",
+    "answer": "Tetrahedral",
+    "choices": [
+      "Tetrahedral",
+      "Linear",
+      "Bent",
+      "Trigonal pyramidal"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is a hydrogen bond?",
+    "answer": "A weak electrostatic attraction between a hydrogen atom bonded to F, O, or N and another F, O, or N atom",
+    "choices": [
+      "A weak electrostatic attraction between a hydrogen atom bonded to F, O, or N and another F, O, or N atom",
+      "A covalent bond between two hydrogen atoms in H2",
+      "An ionic bond that involves a hydrogen ion",
+      "The internal bond within the H2 molecule"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is general relativity?",
+    "answer": "Einstein's theory that gravity arises from the curvature of spacetime caused by mass and energy",
+    "choices": [
+      "Einstein's theory that gravity arises from the curvature of spacetime caused by mass and energy",
+      "Einstein's theory that the speed of light is constant for all inertial observers",
+      "The quantum theory of gravity at the subatomic scale",
+      "The unified theory of electricity and magnetism"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the strong nuclear force?",
+    "answer": "The fundamental force that holds quarks together inside protons and neutrons",
+    "choices": [
+      "The fundamental force that holds quarks together inside protons and neutrons",
+      "The force that keeps electrons in orbit around the nucleus",
+      "The force responsible for beta decay of nuclei",
+      "The force that maintains planetary orbits around stars"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the weak nuclear force responsible for?",
+    "answer": "Radioactive beta decay and certain nuclear reactions",
+    "choices": [
+      "Radioactive beta decay and certain nuclear reactions",
+      "Holding protons and neutrons together in the nucleus",
+      "Keeping electrons bound to atomic nuclei",
+      "Producing electromagnetic radiation from excited atoms"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What are quarks?",
+    "answer": "Fundamental subatomic particles that combine to form protons and neutrons",
+    "choices": [
+      "Fundamental subatomic particles that combine to form protons and neutrons",
+      "Heavy electrons found within the atomic nucleus",
+      "Particles that carry the electromagnetic force",
+      "The force-carrier particles of the strong nuclear interaction"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What are leptons?",
+    "answer": "A family of fundamental particles including electrons, muons, and neutrinos",
+    "choices": [
+      "A family of fundamental particles including electrons, muons, and neutrinos",
+      "Particles that make up protons and neutrons",
+      "Very heavy versions of quarks",
+      "Force-carrying bosons in the Standard Model"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the Higgs boson?",
+    "answer": "The quantum of the Higgs field, which is responsible for giving other particles their mass",
+    "choices": [
+      "The quantum of the Higgs field, which is responsible for giving other particles their mass",
+      "A type of heavy quark with unusually high mass",
+      "The force-carrying particle of the strong nuclear force",
+      "A neutral lepton produced in high-energy nuclear reactions"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does the Standard Model of particle physics describe?",
+    "answer": "The fundamental particles and three of the four fundamental forces (excluding gravity)",
+    "choices": [
+      "The fundamental particles and three of the four fundamental forces (excluding gravity)",
+      "The motion of planets and stars in the universe",
+      "A unified theory that includes all four fundamental forces",
+      "Only the structure of the atomic nucleus"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is nuclear fusion?",
+    "answer": "The combining of light atomic nuclei to form a heavier nucleus, releasing enormous energy",
+    "choices": [
+      "The combining of light atomic nuclei to form a heavier nucleus, releasing enormous energy",
+      "The splitting of heavy atomic nuclei into lighter fragments",
+      "The spontaneous emission of radiation from an unstable nucleus",
+      "The conversion of matter into antimatter in high-energy collisions"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What powers the Sun?",
+    "answer": "Nuclear fusion of hydrogen nuclei into helium",
+    "choices": [
+      "Nuclear fusion of hydrogen nuclei into helium",
+      "Nuclear fission of uranium and other heavy elements",
+      "Chemical combustion of hydrogen in the solar atmosphere",
+      "Radioactive decay of heavy elements in the solar core"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is DNA replication?",
+    "answer": "The process of copying a DNA molecule to produce two identical double-stranded helices",
+    "choices": [
+      "The process of copying a DNA molecule to produce two identical double-stranded helices",
+      "The process of transcribing DNA information into messenger RNA",
+      "The process of translating RNA code into a protein chain",
+      "The process of repairing chemically damaged DNA sequences"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What enzyme synthesizes new DNA strands during replication?",
+    "answer": "DNA polymerase",
+    "choices": [
+      "DNA polymerase",
+      "RNA polymerase",
+      "Helicase",
+      "Ligase"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is CRISPR-Cas9 used for in biotechnology?",
+    "answer": "Precise editing of specific sequences within an organism's DNA",
+    "choices": [
+      "Precise editing of specific sequences within an organism's DNA",
+      "Rapidly sequencing entire genomes in real time",
+      "Producing large quantities of a desired protein from a gene",
+      "Identifying mutations in cancer cells for diagnosis only"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is epigenetics?",
+    "answer": "The study of heritable changes in gene expression that do not involve altering the DNA sequence itself",
+    "choices": [
+      "The study of heritable changes in gene expression that do not involve altering the DNA sequence itself",
+      "The study of gene mutations as they accumulate over generations",
+      "The inherited changes to the actual DNA nucleotide sequence",
+      "The physical mapping of genes onto chromosomes"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "In thermodynamics, what is an exothermic reaction characterized by?",
+    "answer": "A negative enthalpy change (ΔH < 0), meaning heat is released to the surroundings",
+    "choices": [
+      "A negative enthalpy change (ΔH < 0), meaning heat is released to the surroundings",
+      "A positive enthalpy change, meaning heat is absorbed from surroundings",
+      "A reaction that proceeds spontaneously at all temperatures",
+      "A reaction where entropy always increases regardless of temperature"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does a negative Gibbs free energy (ΔG < 0) tell us about a reaction?",
+    "answer": "The reaction is spontaneous under the given conditions",
+    "choices": [
+      "The reaction is spontaneous under the given conditions",
+      "The total heat released by the reaction is negative",
+      "The activation energy of the reaction is very low",
+      "The reaction proceeds very rapidly without a catalyst"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What are enantiomers in chemistry?",
+    "answer": "Non-superimposable mirror-image molecules with the same connectivity",
+    "choices": [
+      "Non-superimposable mirror-image molecules with the same connectivity",
+      "Molecules with the same molecular formula but different structural connectivity",
+      "Molecules with the same structure but different electron configurations",
+      "Isomers that differ only in the position of a double bond"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does Le Chatelier's Principle state?",
+    "answer": "When a system at equilibrium is disturbed, it shifts to partially counteract the disturbance",
+    "choices": [
+      "When a system at equilibrium is disturbed, it shifts to partially counteract the disturbance",
+      "Chemical reactions always proceed in the direction of decreasing entropy",
+      "Equilibrium constants always increase with rising temperature",
+      "Reactants and products are always present in equal concentrations at equilibrium"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the electron configuration of sodium (Na, atomic number 11)?",
+    "answer": "1s² 2s² 2p⁶ 3s¹",
+    "choices": [
+      "1s² 2s² 2p⁶ 3s¹",
+      "1s² 2s² 2p⁵ 3s²",
+      "1s² 2s² 2p⁶ 3p¹",
+      "1s² 2s⁶ 2p² 3s¹"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the electron configuration of chlorine (Cl, atomic number 17)?",
+    "answer": "1s² 2s² 2p⁶ 3s² 3p⁵",
+    "choices": [
+      "1s² 2s² 2p⁶ 3s² 3p⁵",
+      "1s² 2s² 2p⁶ 3s² 3p⁶",
+      "1s² 2s² 2p⁶ 3s² 3d⁵",
+      "1s² 2s² 2p⁵ 3s² 3p⁶"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the critical point of a substance?",
+    "answer": "The temperature and pressure above which distinct liquid and gas phases no longer exist",
+    "choices": [
+      "The temperature and pressure above which distinct liquid and gas phases no longer exist",
+      "The single point at which all three phases coexist in equilibrium",
+      "The temperature at which a solid first becomes a liquid",
+      "The maximum pressure at which a gas can be compressed into liquid form"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the triple point of a substance?",
+    "answer": "The unique temperature and pressure at which solid, liquid, and gas phases coexist in equilibrium",
+    "choices": [
+      "The unique temperature and pressure at which solid, liquid, and gas phases coexist in equilibrium",
+      "The temperature above which no liquid phase can exist at any pressure",
+      "The temperature at which the substance is most thermally stable",
+      "The normal melting point measured at standard atmospheric pressure"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is an atomic orbital in quantum mechanics?",
+    "answer": "A mathematical function describing the region of space where an electron is likely to be found",
+    "choices": [
+      "A mathematical function describing the region of space where an electron is likely to be found",
+      "The fixed circular path an electron follows around the nucleus",
+      "The discrete energy level an electron is assigned to",
+      "A type of subatomic particle that orbits the nucleus"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the de Broglie wavelength?",
+    "answer": "The wavelength associated with a moving particle, given by λ = h/mv",
+    "choices": [
+      "The wavelength associated with a moving particle, given by λ = h/mv",
+      "The frequency of an electron oscillating in its orbital",
+      "The wavelength of light emitted when an electron drops to a lower energy level",
+      "The physical diameter of an atomic orbital"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the Bohr model of the atom?",
+    "answer": "A model where electrons orbit the nucleus in fixed, discrete circular energy levels",
+    "choices": [
+      "A model where electrons orbit the nucleus in fixed, discrete circular energy levels",
+      "A model where electrons exist in probability clouds (orbitals) around the nucleus",
+      "A model where the nucleus contains both protons and electrons",
+      "A model where electrons move randomly throughout the atomic volume"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is allosteric regulation of an enzyme?",
+    "answer": "Regulation where a molecule binds to a site other than the active site and changes the enzyme's activity",
+    "choices": [
+      "Regulation where a molecule binds to a site other than the active site and changes the enzyme's activity",
+      "Competitive inhibition at the active site by a substrate analog",
+      "Activation of an enzyme by covalent phosphorylation",
+      "Product inhibition where the enzyme's own product blocks the active site"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the Krebs cycle (citric acid cycle)?",
+    "answer": "A series of mitochondrial reactions that generate NADH, FADH2, and ATP from acetyl-CoA",
+    "choices": [
+      "A series of mitochondrial reactions that generate NADH, FADH2, and ATP from acetyl-CoA",
+      "The glycolytic pathway that splits glucose into two pyruvate molecules",
+      "The light-dependent reactions of photosynthesis that produce ATP",
+      "The process of converting NADH back into NAD+ in the mitochondria"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is chemiosmosis?",
+    "answer": "ATP synthesis driven by proton flow down a gradient across the inner mitochondrial membrane through ATP synthase",
+    "choices": [
+      "ATP synthesis driven by proton flow down a gradient across the inner mitochondrial membrane through ATP synthase",
+      "The passive movement of glucose molecules across cell membranes",
+      "Protein synthesis powered by ribosomal ATP hydrolysis",
+      "The metabolic breakdown of fatty acids to produce acetyl-CoA"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does the Hardy-Weinberg principle state?",
+    "answer": "In the absence of evolutionary forces, allele and genotype frequencies in a population remain constant",
+    "choices": [
+      "In the absence of evolutionary forces, allele and genotype frequencies in a population remain constant",
+      "Natural selection inevitably drives all alleles toward fixation or elimination",
+      "Genetic drift is always the primary driver of allele frequency change",
+      "Allele frequencies always increase proportionally with growing population size"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What do you call a substance that cannot be broken down into simpler substances by chemical means?",
+    "answer": "Element",
+    "choices": [
+      "Compound",
+      "Mixture",
+      "Element",
+      "Molecule"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which planet is known as the Red Planet?",
+    "answer": "Mars",
+    "choices": [
+      "Jupiter",
+      "Venus",
+      "Mars",
+      "Mercury"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the force that pulls objects toward the center of the Earth?",
+    "answer": "Gravity",
+    "choices": [
+      "Magnetism",
+      "Gravity",
+      "Friction",
+      "Inertia"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the powerhouse of the cell?",
+    "answer": "Mitochondria",
+    "choices": [
+      "Nucleus",
+      "Ribosome",
+      "Mitochondria",
+      "Chloroplast"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which type of rock is formed from cooled magma or lava?",
+    "answer": "Igneous",
+    "choices": [
+      "Sedimentary",
+      "Metamorphic",
+      "Igneous",
+      "Composite"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the chemical formula for water?",
+    "answer": "H2O",
+    "choices": [
+      "HO",
+      "H2O",
+      "H2O2",
+      "OH2"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the term for animals that eat only plants?",
+    "answer": "Herbivore",
+    "choices": [
+      "Carnivore",
+      "Omnivore",
+      "Herbivore",
+      "Decomposer"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What type of energy does a moving object possess?",
+    "answer": "Kinetic energy",
+    "choices": [
+      "Potential energy",
+      "Thermal energy",
+      "Kinetic energy",
+      "Nuclear energy"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the name of the process by which water vapor cools and becomes liquid?",
+    "answer": "Condensation",
+    "choices": [
+      "Evaporation",
+      "Sublimation",
+      "Condensation",
+      "Precipitation"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "How many bones are in the adult human body?",
+    "answer": "206",
+    "choices": [
+      "186",
+      "196",
+      "206",
+      "216"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the speed of light (approximately)?",
+    "answer": "300,000 km/s",
+    "choices": [
+      "30,000 km/s",
+      "300,000 km/s",
+      "3,000,000 km/s",
+      "3,000 km/s"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is Newton's Second Law of Motion?",
+    "answer": "Force equals mass times acceleration (F = ma)",
+    "choices": [
+      "An object in motion stays in motion",
+      "For every action there is an equal and opposite reaction",
+      "Force equals mass times acceleration (F = ma)",
+      "Objects accelerate toward Earth at 9.8 m/s²"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the atomic number of carbon?",
+    "answer": "6",
+    "choices": [
+      "4",
+      "6",
+      "8",
+      "12"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which organelle is responsible for photosynthesis in plant cells?",
+    "answer": "Chloroplast",
+    "choices": [
+      "Mitochondria",
+      "Nucleus",
+      "Chloroplast",
+      "Vacuole"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the difference between a physical change and a chemical change?",
+    "answer": "Physical changes alter form; chemical changes create new substances",
+    "choices": [
+      "Physical changes are reversible; chemical changes always are not",
+      "Physical changes alter form; chemical changes create new substances",
+      "Physical changes require heat; chemical changes do not",
+      "They are the same thing"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the pH of a neutral solution?",
+    "answer": "7",
+    "choices": [
+      "0",
+      "5",
+      "7",
+      "14"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What causes seasons on Earth?",
+    "answer": "Earth's axial tilt as it orbits the Sun",
+    "choices": [
+      "Earth's distance from the Sun",
+      "Solar flares",
+      "Earth's axial tilt as it orbits the Sun",
+      "The Moon's gravitational pull"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the name of the scale used to measure earthquake magnitude?",
+    "answer": "Richter scale",
+    "choices": [
+      "Beaufort scale",
+      "Richter scale",
+      "Mohs scale",
+      "Kelvin scale"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is a food web?",
+    "answer": "A complex network of feeding relationships in an ecosystem",
+    "choices": [
+      "A single path of energy transfer",
+      "A complex network of feeding relationships in an ecosystem",
+      "The food preferences of a predator",
+      "A diagram of nutrient cycles"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What happens during mitosis?",
+    "answer": "A cell divides to produce two genetically identical daughter cells",
+    "choices": [
+      "A cell produces sex cells",
+      "A cell divides to produce two genetically identical daughter cells",
+      "DNA is copied and repaired",
+      "Proteins are manufactured"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the electromagnetic spectrum?",
+    "answer": "The range of all types of electromagnetic radiation ordered by wavelength",
+    "choices": [
+      "The range of colors visible to the human eye",
+      "The range of all types of electromagnetic radiation ordered by wavelength",
+      "The wavelengths used in radio communication",
+      "The energy levels of electrons in an atom"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is a gene?",
+    "answer": "A segment of DNA that codes for a specific protein or trait",
+    "choices": [
+      "A unit of measurement in genetics",
+      "A segment of DNA that codes for a specific protein or trait",
+      "A chromosome",
+      "A type of cell"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the difference between an acid and a base?",
+    "answer": "Acids have pH below 7 and donate H+ ions; bases have pH above 7 and accept H+ ions",
+    "choices": [
+      "Acids are solids; bases are liquids",
+      "Acids taste sweet; bases taste sour",
+      "Acids have pH below 7 and donate H+ ions; bases have pH above 7 and accept H+ ions",
+      "Acids are man-made; bases are natural"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is tectonic plate movement responsible for?",
+    "answer": "Earthquakes, volcanoes, and mountain formation",
+    "choices": [
+      "Weather patterns",
+      "Ocean currents",
+      "Earthquakes, volcanoes, and mountain formation",
+      "Tides and waves"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the law of conservation of energy?",
+    "answer": "Energy cannot be created or destroyed, only converted from one form to another",
+    "choices": [
+      "Energy is always lost as heat",
+      "Matter and energy are interchangeable",
+      "Energy cannot be created or destroyed, only converted from one form to another",
+      "Total energy in a system always increases"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which blood type is known as the universal donor?",
+    "answer": "O negative",
+    "choices": [
+      "A positive",
+      "AB positive",
+      "O positive",
+      "O negative"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the process by which organisms change over many generations to become better suited to their environment?",
+    "answer": "Evolution by natural selection",
+    "choices": [
+      "Mutation",
+      "Evolution by natural selection",
+      "Adaptation",
+      "Genetic drift"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the role of white blood cells?",
+    "answer": "To fight infection and disease",
+    "choices": [
+      "To carry oxygen",
+      "To clot blood",
+      "To fight infection and disease",
+      "To produce hormones"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What type of wave requires a medium to travel through?",
+    "answer": "Mechanical wave",
+    "choices": [
+      "Electromagnetic wave",
+      "Mechanical wave",
+      "Light wave",
+      "Radio wave"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the main gas in Earth's atmosphere?",
+    "answer": "Nitrogen",
+    "choices": [
+      "Oxygen",
+      "Carbon dioxide",
+      "Argon",
+      "Nitrogen"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the difference between a star and a planet?",
+    "answer": "Stars produce their own light via nuclear fusion; planets do not",
+    "choices": [
+      "Stars are bigger than planets",
+      "Stars produce their own light via nuclear fusion; planets do not",
+      "Stars orbit galaxies; planets orbit stars",
+      "Stars are made of gas; planets are solid"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is osmosis?",
+    "answer": "The movement of water across a semi-permeable membrane from low to high solute concentration",
+    "choices": [
+      "The movement of solutes across a membrane",
+      "The movement of water across a semi-permeable membrane from low to high solute concentration",
+      "The diffusion of gases",
+      "The breakdown of large molecules"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the role of the nucleus in a cell?",
+    "answer": "To store DNA and control cell activities",
+    "choices": [
+      "To produce energy",
+      "To store DNA and control cell activities",
+      "To make proteins",
+      "To control what enters and exits the cell"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is a chemical bond?",
+    "answer": "A force of attraction that holds atoms together",
+    "choices": [
+      "A reaction between two compounds",
+      "A force of attraction that holds atoms together",
+      "An electron that is shared between elements",
+      "A type of molecule"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is kinetic molecular theory?",
+    "answer": "Matter is made of constantly moving particles, and temperature measures their average kinetic energy",
+    "choices": [
+      "All matter is made of atoms",
+      "Matter is made of constantly moving particles, and temperature measures their average kinetic energy",
+      "Molecules move faster when cooled",
+      "Matter exists only in solid, liquid, or gas form"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the greenhouse effect?",
+    "answer": "The trapping of solar heat by gases in Earth's atmosphere",
+    "choices": [
+      "The reflection of sunlight by ice and snow",
+      "The heating of the ocean by the Sun",
+      "The trapping of solar heat by gases in Earth's atmosphere",
+      "The depletion of the ozone layer"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What does DNA stand for?",
+    "answer": "Deoxyribonucleic acid",
+    "choices": [
+      "Deoxyribonucleic acid",
+      "Double Nucleic Acid",
+      "Deoxyribose Nucleotide Assembly",
+      "Dinucleic Acid"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is refraction?",
+    "answer": "The bending of light as it passes from one medium to another",
+    "choices": [
+      "The bouncing of light off a surface",
+      "The bending of light as it passes from one medium to another",
+      "The absorption of light by a material",
+      "The splitting of light into a spectrum"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What are isotopes?",
+    "answer": "Atoms of the same element with different numbers of neutrons",
+    "choices": [
+      "Different elements with the same mass number",
+      "Atoms of the same element with different numbers of neutrons",
+      "Charged atoms",
+      "Molecules with the same formula but different structures"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the water cycle?",
+    "answer": "The continuous movement of water through evaporation, condensation, and precipitation",
+    "choices": [
+      "The movement of ocean currents",
+      "The continuous movement of water through evaporation, condensation, and precipitation",
+      "The filtering of water through rock",
+      "The chemical breakdown of water by sunlight"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What does the Mohs scale measure?",
+    "answer": "Mineral hardness",
+    "choices": [
+      "Earthquake magnitude",
+      "Mineral hardness",
+      "Wind speed",
+      "Ocean depth"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the nervous system's main function?",
+    "answer": "To send and receive signals throughout the body and brain",
+    "choices": [
+      "To pump blood around the body",
+      "To digest food",
+      "To send and receive signals throughout the body and brain",
+      "To filter waste from the blood"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the difference between renewable and non-renewable energy?",
+    "answer": "Renewable sources replenish naturally; non-renewable ones do not",
+    "choices": [
+      "Renewable energy is always solar; non-renewable is fossil fuels",
+      "Renewable sources replenish naturally; non-renewable ones do not",
+      "Renewable energy is expensive; non-renewable is cheap",
+      "Renewable energy only works in certain climates"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is potential energy?",
+    "answer": "Stored energy that an object has due to its position or state",
+    "choices": [
+      "The energy of motion",
+      "Stored energy that an object has due to its position or state",
+      "The energy produced by burning fuel",
+      "Heat energy"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which planet has the most moons?",
+    "answer": "Saturn",
+    "choices": [
+      "Jupiter",
+      "Saturn",
+      "Uranus",
+      "Neptune"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is an alloy?",
+    "answer": "A mixture of two or more metals",
+    "choices": [
+      "A very pure metal",
+      "A mixture of two or more metals",
+      "A non-metallic mineral",
+      "A compound of a metal and a non-metal"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the function of red blood cells?",
+    "answer": "To carry oxygen around the body via hemoglobin",
+    "choices": [
+      "To fight infection",
+      "To clot wounds",
+      "To carry oxygen around the body via hemoglobin",
+      "To carry nutrients from digestion"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the difference between a conductor and an insulator?",
+    "answer": "Conductors allow electricity or heat to flow easily; insulators do not",
+    "choices": [
+      "Conductors are metals; insulators are non-metals",
+      "Conductors allow electricity or heat to flow easily; insulators do not",
+      "Conductors are negative; insulators are positive",
+      "Conductors are hot; insulators are cold"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What causes thunder?",
+    "answer": "The rapid expansion of air heated by a lightning bolt",
+    "choices": [
+      "Clouds colliding together",
+      "The rapid expansion of air heated by a lightning bolt",
+      "Pressure differences in storm cells",
+      "The sound of static electricity discharging"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the periodic table organized by?",
+    "answer": "Increasing atomic number (number of protons)",
+    "choices": [
+      "Alphabetical order",
+      "Increasing atomic weight",
+      "Increasing atomic number (number of protons)",
+      "Discovery date"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is a fossil?",
+    "answer": "The preserved remains or impression of an ancient organism",
+    "choices": [
+      "A very old rock",
+      "The preserved remains or impression of an ancient organism",
+      "A type of mineral",
+      "Dead organic material in soil"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the difference between a physical and chemical property?",
+    "answer": "Physical properties can be observed without changing the substance; chemical properties describe how it reacts",
+    "choices": [
+      "Physical properties require instruments; chemical properties do not",
+      "Physical properties can be observed without changing the substance; chemical properties describe how it reacts",
+      "Physical properties relate to solids; chemical properties to liquids",
+      "They are the same"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the main function of the digestive system?",
+    "answer": "To break down food into nutrients the body can absorb",
+    "choices": [
+      "To pump blood around the body",
+      "To break down food into nutrients the body can absorb",
+      "To filter waste from the blood",
+      "To exchange gases in the lungs"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the difference between ionic and covalent bonds?",
+    "answer": "Ionic bonds transfer electrons; covalent bonds share electrons",
+    "choices": [
+      "Ionic bonds are weaker than covalent",
+      "Ionic bonds transfer electrons; covalent bonds share electrons",
+      "Covalent bonds transfer electrons; ionic bonds share electrons",
+      "They are the same type of bond"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is Ohm's Law?",
+    "answer": "Voltage equals current times resistance (V = IR)",
+    "choices": [
+      "Power equals force times distance",
+      "Voltage equals current times resistance (V = IR)",
+      "Current equals voltage divided by power",
+      "Resistance equals voltage times current"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is Mendel's Law of Segregation?",
+    "answer": "Each organism has two alleles for each trait, and they separate during gamete formation",
+    "choices": [
+      "Dominant traits always appear in offspring",
+      "Each organism has two alleles for each trait, and they separate during gamete formation",
+      "Offspring inherit equal traits from both parents",
+      "Genes are located on chromosomes"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is a catalyst?",
+    "answer": "A substance that speeds up a chemical reaction without being consumed",
+    "choices": [
+      "A substance that slows a reaction",
+      "A substance that speeds up a chemical reaction without being consumed",
+      "A type of reactant",
+      "An energy source for reactions"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What does the atomic mass of an element represent?",
+    "answer": "The average mass of an element's atoms, accounting for isotopes",
+    "choices": [
+      "The number of protons in the nucleus",
+      "The number of electrons in the outer shell",
+      "The average mass of an element's atoms, accounting for isotopes",
+      "The total number of particles in the nucleus"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is homeostasis?",
+    "answer": "The body's ability to maintain a stable internal environment",
+    "choices": [
+      "The process of cell division",
+      "The growth of an organism",
+      "The body's ability to maintain a stable internal environment",
+      "The response to external stimuli"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the difference between mitosis and meiosis?",
+    "answer": "Mitosis produces 2 identical cells; meiosis produces 4 genetically diverse sex cells",
+    "choices": [
+      "Mitosis occurs in sex cells; meiosis in body cells",
+      "Mitosis produces 2 identical cells; meiosis produces 4 genetically diverse sex cells",
+      "They are the same process",
+      "Mitosis uses DNA; meiosis uses RNA"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is Boyle's Law?",
+    "answer": "At constant temperature, pressure and volume of a gas are inversely proportional",
+    "choices": [
+      "As temperature increases, gas volume increases",
+      "At constant temperature, pressure and volume of a gas are inversely proportional",
+      "At constant pressure, gas volume is proportional to temperature",
+      "Gas pressure depends on the number of particles"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the electromagnetic force?",
+    "answer": "The force between electrically charged particles",
+    "choices": [
+      "The force that holds the nucleus together",
+      "The force between electrically charged particles",
+      "The force responsible for gravity",
+      "The force driving nuclear decay"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the difference between a dominant and recessive allele?",
+    "answer": "Dominant alleles mask recessive alleles when both are present",
+    "choices": [
+      "Dominant alleles are more common",
+      "Dominant alleles mask recessive alleles when both are present",
+      "Recessive alleles are always expressed",
+      "Dominant alleles mutate less"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is nuclear fission?",
+    "answer": "Splitting a heavy atomic nucleus into lighter nuclei, releasing energy",
+    "choices": [
+      "Combining light nuclei to form heavier ones",
+      "Splitting a heavy atomic nucleus into lighter nuclei, releasing energy",
+      "Radioactive decay of unstable nuclei",
+      "The absorption of neutrons by a nucleus"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What are valence electrons?",
+    "answer": "Electrons in the outermost shell of an atom that determine chemical behavior",
+    "choices": [
+      "Electrons that orbit the nucleus at any level",
+      "Electrons that are lost in ionization",
+      "Electrons in the outermost shell of an atom that determine chemical behavior",
+      "Electrons shared in covalent bonds"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is Charles's Law?",
+    "answer": "At constant pressure, the volume of a gas is proportional to its temperature",
+    "choices": [
+      "At constant temperature, pressure and volume are inversely proportional",
+      "At constant pressure, the volume of a gas is proportional to its temperature",
+      "Gas pressure is proportional to the number of particles",
+      "Gas molecules exert equal pressure in all directions"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is natural selection?",
+    "answer": "The process by which organisms better adapted to their environment tend to survive and reproduce more",
+    "choices": [
+      "Random mutations in a population",
+      "Selective breeding by humans",
+      "The process by which organisms better adapted to their environment tend to survive and reproduce more",
+      "The extinction of poorly adapted species"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the difference between velocity and speed?",
+    "answer": "Velocity includes direction; speed does not",
+    "choices": [
+      "Velocity is faster than speed",
+      "Velocity includes direction; speed does not",
+      "Speed includes direction; velocity does not",
+      "They are the same measurement"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the role of ribosomes in a cell?",
+    "answer": "To synthesize proteins using instructions from mRNA",
+    "choices": [
+      "To produce energy",
+      "To store DNA",
+      "To synthesize proteins using instructions from mRNA",
+      "To control what enters the cell"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the law of conservation of mass?",
+    "answer": "Matter is neither created nor destroyed in a chemical reaction",
+    "choices": [
+      "Energy is neither created nor destroyed",
+      "Matter is neither created nor destroyed in a chemical reaction",
+      "The mass of reactants always exceeds that of products",
+      "Mass increases as a reaction proceeds"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is specific heat capacity?",
+    "answer": "The amount of heat needed to raise 1 kg of a substance by 1°C",
+    "choices": [
+      "The maximum temperature a substance can reach",
+      "The amount of heat needed to raise 1 kg of a substance by 1°C",
+      "The heat released when a substance melts",
+      "The speed at which a substance conducts heat"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is CRISPR in genetics?",
+    "answer": "A gene-editing tool that cuts and modifies DNA at specific locations",
+    "choices": [
+      "A type of chromosome",
+      "A gene-editing tool that cuts and modifies DNA at specific locations",
+      "A method of DNA sequencing",
+      "A type of protein that repairs DNA"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the difference between a physical mixture and a compound?",
+    "answer": "In a compound, elements are chemically bonded; in a mixture, they are not",
+    "choices": [
+      "Mixtures contain one element; compounds contain two",
+      "In a compound, elements are chemically bonded; in a mixture, they are not",
+      "Compounds can be separated physically; mixtures cannot",
+      "They are the same thing"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is entropy?",
+    "answer": "A measure of disorder or randomness in a system, which tends to increase over time",
+    "choices": [
+      "The total energy of a system",
+      "A measure of disorder or randomness in a system, which tends to increase over time",
+      "The speed of a chemical reaction",
+      "The heat lost in an inefficient system"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the Doppler effect?",
+    "answer": "The change in frequency of a wave as its source moves toward or away from an observer",
+    "choices": [
+      "The bending of light around massive objects",
+      "The change in frequency of a wave as its source moves toward or away from an observer",
+      "The splitting of white light into colors",
+      "The amplification of sound in a tunnel"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is a half-life?",
+    "answer": "The time it takes for half of a radioactive substance to decay",
+    "choices": [
+      "The lifespan of an organism divided by two",
+      "The time it takes for half of a radioactive substance to decay",
+      "Half the time of a chemical reaction",
+      "The point at which an element loses half its electrons"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the role of the endocrine system?",
+    "answer": "To regulate body functions through hormones released into the bloodstream",
+    "choices": [
+      "To coordinate muscle movements",
+      "To digest nutrients",
+      "To regulate body functions through hormones released into the bloodstream",
+      "To defend against pathogens"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the difference between aerobic and anaerobic respiration?",
+    "answer": "Aerobic requires oxygen and is more efficient; anaerobic does not and produces less ATP",
+    "choices": [
+      "Aerobic occurs in animals; anaerobic in plants",
+      "Aerobic requires oxygen and is more efficient; anaerobic does not and produces less ATP",
+      "Anaerobic produces CO2; aerobic does not",
+      "They produce the same amount of energy"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the strong nuclear force?",
+    "answer": "The force that binds protons and neutrons together in the nucleus",
+    "choices": [
+      "The gravitational force between atoms",
+      "The force between electrons and the nucleus",
+      "The force that binds protons and neutrons together in the nucleus",
+      "The electromagnetic force between charged particles"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is an exothermic reaction?",
+    "answer": "A reaction that releases heat energy to the surroundings",
+    "choices": [
+      "A reaction requiring heat energy to proceed",
+      "A reaction that releases heat energy to the surroundings",
+      "A reaction occurring at extremely high temperatures",
+      "A reaction involving only gases"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is genetic mutation?",
+    "answer": "A change in the DNA sequence of a gene",
+    "choices": [
+      "The inheritance of traits from parents",
+      "A change in the DNA sequence of a gene",
+      "The copying of DNA during cell division",
+      "The regulation of gene expression"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is work in physics?",
+    "answer": "Force applied over a distance (W = F × d)",
+    "choices": [
+      "Any physical activity",
+      "Force applied over a distance (W = F × d)",
+      "Energy stored in an object",
+      "The rate of energy transfer"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the process of transcription in molecular biology?",
+    "answer": "The copying of DNA into mRNA in the nucleus",
+    "choices": [
+      "The synthesis of proteins at ribosomes",
+      "The copying of DNA into mRNA in the nucleus",
+      "The replication of DNA before cell division",
+      "The transport of proteins out of the cell"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the difference between mass and weight?",
+    "answer": "Mass is the amount of matter; weight is the force of gravity on that mass",
+    "choices": [
+      "They are the same measurement",
+      "Mass is measured in Newtons; weight in kilograms",
+      "Mass is the amount of matter; weight is the force of gravity on that mass",
+      "Weight never changes; mass does"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is an ecosystem?",
+    "answer": "A community of living organisms interacting with their physical environment",
+    "choices": [
+      "A single species in a habitat",
+      "The physical environment of a region",
+      "A community of living organisms interacting with their physical environment",
+      "The food chains of an area"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is Archimedes' principle?",
+    "answer": "An object in a fluid experiences an upward buoyant force equal to the weight of fluid it displaces",
+    "choices": [
+      "Pressure increases with depth in a fluid",
+      "An object in a fluid experiences an upward buoyant force equal to the weight of fluid it displaces",
+      "A fluid flows from high to low pressure",
+      "Liquids are incompressible"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the function of the lymphatic system?",
+    "answer": "To remove excess fluid, fight infection, and transport fats from digestion",
+    "choices": [
+      "To pump blood around the body",
+      "To remove excess fluid, fight infection, and transport fats from digestion",
+      "To filter blood in the kidneys",
+      "To regulate body temperature"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is resonance in chemistry?",
+    "answer": "When a molecule's electrons are delocalized over multiple bonds, best described as a mix of structures",
+    "choices": [
+      "When a molecule vibrates at a specific frequency",
+      "When a molecule's electrons are delocalized over multiple bonds, best described as a mix of structures",
+      "When two molecules bond temporarily",
+      "When atoms share electrons equally"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the principle of superposition in geology?",
+    "answer": "In undisturbed rock layers, the oldest layers are at the bottom",
+    "choices": [
+      "Rock types alternate in predictable patterns",
+      "In undisturbed rock layers, the oldest layers are at the bottom",
+      "Igneous rocks always overlie sedimentary rocks",
+      "All rock layers are horizontal when formed"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is power in physics?",
+    "answer": "The rate at which work is done or energy is transferred (P = W/t)",
+    "choices": [
+      "Force times distance",
+      "The rate at which work is done or energy is transferred (P = W/t)",
+      "Mass times velocity",
+      "Energy stored in a system"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is a symbiotic relationship?",
+    "answer": "A close, long-term relationship between two different species",
+    "choices": [
+      "A food chain",
+      "A close, long-term relationship between two different species",
+      "Competition between organisms for resources",
+      "Any interaction between two animals"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What causes the color of a star?",
+    "answer": "Its surface temperature — hotter stars are bluer, cooler stars are redder",
+    "choices": [
+      "Its size",
+      "Its chemical composition",
+      "Its distance from Earth",
+      "Its surface temperature — hotter stars are bluer, cooler stars are redder"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is a polymer?",
+    "answer": "A large molecule made of many repeating smaller units called monomers",
+    "choices": [
+      "A type of atomic bond",
+      "A large molecule made of many repeating smaller units called monomers",
+      "A compound with both acid and base properties",
+      "A molecule with only carbon and hydrogen"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the difference between nuclear fusion and fission?",
+    "answer": "Fusion combines nuclei and releases more energy; fission splits nuclei",
+    "choices": [
+      "Fission combines nuclei; fusion splits them",
+      "They release the same amount of energy",
+      "Fusion combines nuclei and releases more energy; fission splits nuclei",
+      "Fission occurs in stars; fusion in reactors"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is pH a measure of?",
+    "answer": "The concentration of hydrogen ions (H+) in a solution",
+    "choices": [
+      "The strength of an acid or base as a pure substance",
+      "The concentration of hydrogen ions (H+) in a solution",
+      "The number of electrons donated in a reaction",
+      "The temperature at which a reaction occurs"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is Heisenberg's Uncertainty Principle?",
+    "answer": "It is impossible to simultaneously know both the exact position and momentum of a particle",
+    "choices": [
+      "Particles cannot move faster than light",
+      "It is impossible to simultaneously know both the exact position and momentum of a particle",
+      "Matter and energy are equivalent",
+      "All electrons have the same energy level"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the Pauli Exclusion Principle?",
+    "answer": "No two electrons in the same atom can have the same set of four quantum numbers",
+    "choices": [
+      "Electrons repel each other",
+      "No two electrons in the same atom can have the same set of four quantum numbers",
+      "Electrons always pair up in orbitals",
+      "All orbitals must be filled before pairing begins"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is Le Chatelier's Principle?",
+    "answer": "If a system at equilibrium is disturbed, it shifts to oppose the disturbance",
+    "choices": [
+      "Reactions always proceed in the direction that releases energy",
+      "If a system at equilibrium is disturbed, it shifts to oppose the disturbance",
+      "At equilibrium, forward and reverse rates are both zero",
+      "Higher temperature always increases reaction rate"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the photoelectric effect?",
+    "answer": "Light shining on a metal can eject electrons if the light has sufficient frequency",
+    "choices": [
+      "Light bends around massive objects",
+      "Light shining on a metal can eject electrons if the light has sufficient frequency",
+      "Light slows down in dense materials",
+      "Light can be converted to sound at high frequencies"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is VSEPR theory used for?",
+    "answer": "Predicting the 3D shape of molecules based on electron pair repulsion",
+    "choices": [
+      "Calculating bond energies",
+      "Predicting the 3D shape of molecules based on electron pair repulsion",
+      "Determining the reactivity of elements",
+      "Explaining electron configuration"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the Hardy-Weinberg principle?",
+    "answer": "Allele frequencies in a population remain constant without evolutionary forces",
+    "choices": [
+      "Dominant alleles increase in frequency over time",
+      "Allele frequencies in a population remain constant without evolutionary forces",
+      "Mutations always favor survival",
+      "Sexual reproduction generates more variation than asexual"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is a nucleotide?",
+    "answer": "The building block of DNA/RNA, consisting of a sugar, phosphate, and nitrogenous base",
+    "choices": [
+      "A type of amino acid",
+      "The building block of DNA/RNA, consisting of a sugar, phosphate, and nitrogenous base",
+      "A protein that reads genetic code",
+      "A segment of DNA encoding one protein"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the First Law of Thermodynamics?",
+    "answer": "The total energy of an isolated system remains constant",
+    "choices": [
+      "Entropy always increases",
+      "The total energy of an isolated system remains constant",
+      "Heat flows from cold to hot",
+      "Energy cannot be converted between forms"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is an action potential in neuroscience?",
+    "answer": "A rapid electrical signal transmitted along a neuron's membrane",
+    "choices": [
+      "The resting electrical charge of a neuron",
+      "A rapid electrical signal transmitted along a neuron's membrane",
+      "The chemical released at a synapse",
+      "The signal sent from the brain to a muscle"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the Krebs cycle?",
+    "answer": "A series of reactions in mitochondria that extract energy from acetyl-CoA",
+    "choices": [
+      "The process of DNA replication",
+      "A series of reactions in mitochondria that extract energy from acetyl-CoA",
+      "The pathway for protein synthesis",
+      "The cycle of cell division"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is electronegativity?",
+    "answer": "An atom's tendency to attract electrons toward itself in a chemical bond",
+    "choices": [
+      "The charge of an ion",
+      "An atom's tendency to attract electrons toward itself in a chemical bond",
+      "The number of electrons an atom can share",
+      "The energy needed to remove an electron from an atom"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the difference between a strong acid and a weak acid?",
+    "answer": "Strong acids fully dissociate in water; weak acids only partially dissociate",
+    "choices": [
+      "Strong acids are more corrosive",
+      "Strong acids have a lower pH in all cases",
+      "Strong acids fully dissociate in water; weak acids only partially dissociate",
+      "Weak acids are less dangerous"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is stellar nucleosynthesis?",
+    "answer": "The process by which nuclear reactions in stars create heavier elements from hydrogen and helium",
+    "choices": [
+      "The formation of stars from gas clouds",
+      "The process by which nuclear reactions in stars create heavier elements from hydrogen and helium",
+      "The explosion of a supernova",
+      "The cycle of energy in a star's core"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the difference between genotype and phenotype?",
+    "answer": "Genotype is the genetic makeup; phenotype is the observable expression of those genes",
+    "choices": [
+      "Genotype is observable; phenotype is genetic",
+      "Genotype is the genetic makeup; phenotype is the observable expression of those genes",
+      "Genotype involves dominant genes only; phenotype includes recessive",
+      "They are the same thing"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is a buffer solution?",
+    "answer": "A solution that resists changes in pH when small amounts of acid or base are added",
+    "choices": [
+      "A solution with a pH of exactly 7",
+      "A solution that resists changes in pH when small amounts of acid or base are added",
+      "A solution that reacts with all acids",
+      "A concentrated acid-base mixture"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the Second Law of Thermodynamics?",
+    "answer": "In any energy transfer, entropy tends to increase, and heat flows from hot to cold",
+    "choices": [
+      "Energy cannot be created or destroyed",
+      "In any energy transfer, entropy tends to increase, and heat flows from hot to cold",
+      "All processes are reversible at the molecular level",
+      "The internal energy of a system equals the heat added minus work done"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is a blackbody in physics?",
+    "answer": "An object that absorbs all electromagnetic radiation and emits radiation based only on its temperature",
+    "choices": [
+      "A black hole",
+      "An object that reflects all light",
+      "An object that absorbs all electromagnetic radiation and emits radiation based only on its temperature",
+      "A theoretical material with zero resistivity"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is epigenetics?",
+    "answer": "The study of heritable changes in gene expression that don't involve changes to DNA sequence",
+    "choices": [
+      "The study of genes in evolutionary history",
+      "The study of heritable changes in gene expression that don't involve changes to DNA sequence",
+      "The mapping of entire genomes",
+      "The study of how mutations spread through populations"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is Avogadro's number?",
+    "answer": "6.022 × 10²³ — the number of particles in one mole of a substance",
+    "choices": [
+      "3.14 × 10⁸",
+      "6.022 × 10²³ — the number of particles in one mole of a substance",
+      "9.8 m/s²",
+      "1.67 × 10⁻²⁷"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the difference between fission and radioactive decay?",
+    "answer": "Fission is induced by neutron bombardment; radioactive decay occurs spontaneously",
+    "choices": [
+      "They are the same process",
+      "Fission is induced by neutron bombardment; radioactive decay occurs spontaneously",
+      "Radioactive decay only affects heavy elements",
+      "Fission does not release energy"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the Bohr model of the atom?",
+    "answer": "Electrons orbit the nucleus in fixed circular paths with specific energy levels",
+    "choices": [
+      "The nucleus contains electrons as well as protons",
+      "Electrons orbit the nucleus in fixed circular paths with specific energy levels",
+      "Atoms are mostly solid with a uniform charge distribution",
+      "Electrons move randomly around the nucleus"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is protein folding?",
+    "answer": "The process by which a protein chain takes on its functional 3D structure",
+    "choices": [
+      "The synthesis of proteins at ribosomes",
+      "The process by which a protein chain takes on its functional 3D structure",
+      "The breakdown of proteins by enzymes",
+      "The transportation of proteins in the bloodstream"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the difference between alpha, beta, and gamma radiation?",
+    "answer": "Alpha is helium nuclei; beta is electrons/positrons; gamma is high-energy photons",
+    "choices": [
+      "They differ only in energy level",
+      "Alpha is electrons; beta is protons; gamma is neutrons",
+      "Alpha is helium nuclei; beta is electrons/positrons; gamma is high-energy photons",
+      "They are the same type of radiation at different frequencies"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is special relativity's key insight?",
+    "answer": "The laws of physics are the same in all inertial frames, and the speed of light is constant",
+    "choices": [
+      "Gravity warps space and time",
+      "The laws of physics are the same in all inertial frames, and the speed of light is constant",
+      "Energy and mass are always conserved together",
+      "Objects can exceed the speed of light in a vacuum"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the Michaelis-Menten equation used for?",
+    "answer": "Describing the rate of enzyme-catalyzed reactions as a function of substrate concentration",
+    "choices": [
+      "Calculating gene frequencies",
+      "Describing the rate of enzyme-catalyzed reactions as a function of substrate concentration",
+      "Modeling population growth",
+      "Predicting protein structure"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is Hund's rule?",
+    "answer": "Electrons fill orbitals of equal energy one at a time before pairing",
+    "choices": [
+      "Electrons always pair up in the lowest energy orbital",
+      "Electrons fill orbitals of equal energy one at a time before pairing",
+      "Electrons prefer the outermost orbital",
+      "No two electrons can have the same spin"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the Coriolis effect?",
+    "answer": "The deflection of moving objects due to Earth's rotation",
+    "choices": [
+      "The slowing of ocean currents near the equator",
+      "The deflection of moving objects due to Earth's rotation",
+      "The warming of polar regions by ocean currents",
+      "The spinning of storms around low-pressure systems"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the difference between eukaryotic and prokaryotic cells?",
+    "answer": "Eukaryotes have a membrane-bound nucleus; prokaryotes do not",
+    "choices": [
+      "Eukaryotes are smaller than prokaryotes",
+      "Prokaryotes have a nucleus; eukaryotes do not",
+      "Eukaryotes have a membrane-bound nucleus; prokaryotes do not",
+      "Prokaryotes are found only in extreme environments"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is Faraday's Law of electromagnetic induction?",
+    "answer": "A changing magnetic field induces an electric current in a conductor",
+    "choices": [
+      "Like poles of magnets attract",
+      "A changing magnetic field induces an electric current in a conductor",
+      "Electric current produces a magnetic field",
+      "Voltage equals current times resistance"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the Aufbau principle?",
+    "answer": "Electrons fill atomic orbitals from the lowest energy level upward",
+    "choices": [
+      "Electrons are always found in pairs",
+      "Electrons fill atomic orbitals from the lowest energy level upward",
+      "All subshells must fill before the next shell begins",
+      "Electrons cannot occupy the same orbital"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is trophic level in ecology?",
+    "answer": "The position an organism occupies in a food chain based on its energy source",
+    "choices": [
+      "The depth at which an organism lives",
+      "The position an organism occupies in a food chain based on its energy source",
+      "The number of offspring an organism produces",
+      "The geographic range of a species"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the uncertainty in the wavelength-frequency relationship for photons?",
+    "answer": "E = hf, where h is Planck's constant and f is frequency",
+    "choices": [
+      "E = mc²",
+      "E = hf, where h is Planck's constant and f is frequency",
+      "E = mgh",
+      "E = ½mv²"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the central dogma of molecular biology?",
+    "answer": "DNA is transcribed to RNA, which is translated into protein",
+    "choices": [
+      "Proteins contain the genetic blueprint of life",
+      "DNA is transcribed to RNA, which is translated into protein",
+      "RNA is converted back to DNA in all cells",
+      "Genes are transmitted unchanged to offspring"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is allosteric regulation of enzymes?",
+    "answer": "Binding of a molecule at a site other than the active site changes the enzyme's activity",
+    "choices": [
+      "Competitive inhibition of the active site",
+      "Binding of a molecule at a site other than the active site changes the enzyme's activity",
+      "The lock-and-key model of enzyme-substrate binding",
+      "Heat denaturation of enzyme structure"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is degeneracy in the genetic code?",
+    "answer": "Most amino acids are encoded by more than one codon",
+    "choices": [
+      "Mutations that cause disease",
+      "Most amino acids are encoded by more than one codon",
+      "The redundancy of non-coding DNA",
+      "The overlap between gene sequences"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the difference between osmolarity and tonicity?",
+    "answer": "Osmolarity is the total solute concentration; tonicity describes effect on cell volume",
+    "choices": [
+      "They are synonyms",
+      "Osmolarity is the total solute concentration; tonicity describes effect on cell volume",
+      "Tonicity measures total solutes; osmolarity measures only electrolytes",
+      "Osmolarity is for solids; tonicity is for solutions"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the significance of carbon's valence in chemistry?",
+    "answer": "Carbon has 4 valence electrons, allowing it to form 4 bonds and build complex molecules",
+    "choices": [
+      "Carbon can form only double bonds",
+      "Carbon has 4 valence electrons, allowing it to form 4 bonds and build complex molecules",
+      "Carbon is the most electronegative element",
+      "Carbon always forms ionic bonds"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the observer effect in quantum mechanics?",
+    "answer": "Measuring a quantum system inherently disturbs it",
+    "choices": [
+      "Observation reveals hidden properties",
+      "Measuring a quantum system inherently disturbs it",
+      "Light from a measurement changes particle trajectory",
+      "Quantum particles behave differently when watched by humans"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is Fick's Law of diffusion?",
+    "answer": "The rate of diffusion is proportional to the concentration gradient and surface area, and inversely proportional to thickness",
+    "choices": [
+      "Diffusion only occurs down concentration gradients",
+      "The rate of diffusion is proportional to the concentration gradient and surface area, and inversely proportional to thickness",
+      "Larger molecules diffuse faster than smaller ones",
+      "Diffusion rate is constant regardless of concentration"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the name for the process by which plants make food using sunlight?",
+    "answer": "Photosynthesis",
+    "choices": [
+      "Respiration",
+      "Photosynthesis",
+      "Transpiration",
+      "Fermentation"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is activation energy?",
+    "answer": "The minimum energy needed to start a chemical reaction",
+    "choices": [
+      "The total energy released in a reaction",
+      "The energy of the products minus the reactants",
+      "The minimum energy needed to start a chemical reaction",
+      "The energy stored in chemical bonds"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the difference between an element and a compound?",
+    "answer": "An element has one type of atom; a compound has two or more types chemically bonded",
+    "choices": [
+      "An element is always a solid; a compound is a liquid",
+      "An element has one type of atom; a compound has two or more types chemically bonded",
+      "A compound can be separated physically; an element cannot",
+      "They are the same thing"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the magnification formula in optics?",
+    "answer": "Magnification equals image height divided by object height (or image distance divided by object distance)",
+    "choices": [
+      "M = f/d",
+      "M = d/f",
+      "Magnification equals image height divided by object height (or image distance divided by object distance)",
+      "M = n x lambda"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is a vestigial structure?",
+    "answer": "A body part that has lost most of its original function through evolution",
+    "choices": [
+      "A structure shared between many species",
+      "A body part that has lost most of its original function through evolution",
+      "A newly evolved trait",
+      "A structure unique to one species"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the principle of complementarity in quantum mechanics?",
+    "answer": "A quantum object can exhibit wave or particle behavior, but not both at the same time",
+    "choices": [
+      "Two quantum states can never overlap",
+      "A quantum object can exhibit wave or particle behavior, but not both at the same time",
+      "Particles and antiparticles always annihilate",
+      "Quantum states always come in pairs"
+    ]
+  }
 ]

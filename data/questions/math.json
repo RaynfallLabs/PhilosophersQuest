@@ -1,112 +1,211 @@
 [
   {
     "tier": 1,
-    "question": "What is 9 × 2?",
-    "answer": "18",
+    "question": "What is 7 × 8?",
+    "answer": "56",
     "choices": [
-      "16",
-      "18",
-      "20",
-      "9"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What is 10 × 5?",
-    "answer": "50",
-    "choices": [
-      "40",
-      "45",
-      "50",
-      "55"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What is 6 × 10?",
-    "answer": "60",
-    "choices": [
-      "50",
       "54",
-      "60",
-      "70"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What is 8 × 10?",
-    "answer": "80",
-    "choices": [
-      "70",
-      "72",
-      "80",
-      "90"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What is 10 × 4?",
-    "answer": "40",
-    "choices": [
-      "30",
-      "36",
-      "40",
-      "44"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What is 9 × 5?",
-    "answer": "45",
-    "choices": [
-      "36",
-      "40",
-      "45",
-      "50"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What is 10 × 7?",
-    "answer": "70",
-    "choices": [
-      "60",
+      "56",
       "63",
-      "70",
-      "77"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What is 7 × 6?",
-    "answer": "42",
-    "choices": [
-      "35",
-      "36",
-      "42",
       "48"
     ]
   },
   {
     "tier": 1,
-    "question": "What is 9 × 9?",
-    "answer": "81",
+    "question": "What is 9 × 6?",
+    "answer": "54",
     "choices": [
-      "72",
-      "79",
-      "81",
-      "90"
+      "48",
+      "54",
+      "63",
+      "45"
     ]
   },
   {
     "tier": 1,
-    "question": "What is 9 × 8?",
-    "answer": "72",
+    "question": "What is 12 × 11?",
+    "answer": "132",
     "choices": [
-      "63",
-      "64",
-      "72",
-      "80"
+      "121",
+      "132",
+      "143",
+      "122"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 72 ÷ 8?",
+    "answer": "9",
+    "choices": [
+      "7",
+      "8",
+      "9",
+      "10"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 63 ÷ 7?",
+    "answer": "9",
+    "choices": [
+      "8",
+      "9",
+      "7",
+      "6"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 144 ÷ 12?",
+    "answer": "12",
+    "choices": [
+      "11",
+      "12",
+      "13",
+      "14"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the perimeter of a rectangle that is 5 cm wide and 8 cm long?",
+    "answer": "26 cm",
+    "choices": [
+      "13 cm",
+      "26 cm",
+      "40 cm",
+      "20 cm"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the area of a square with side length 6 cm?",
+    "answer": "36 cm²",
+    "choices": [
+      "24 cm²",
+      "36 cm²",
+      "12 cm²",
+      "30 cm²"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the area of a rectangle that is 4 cm wide and 9 cm long?",
+    "answer": "36 cm²",
+    "choices": [
+      "26 cm²",
+      "36 cm²",
+      "13 cm²",
+      "45 cm²"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 0.5 + 0.3?",
+    "answer": "0.8",
+    "choices": [
+      "0.8",
+      "0.53",
+      "0.35",
+      "1.5"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 1.2 + 3.4?",
+    "answer": "4.6",
+    "choices": [
+      "4.6",
+      "4.34",
+      "5.6",
+      "3.46"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 2.7 - 1.3?",
+    "answer": "1.4",
+    "choices": [
+      "1.4",
+      "1.3",
+      "1.6",
+      "2.4"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the value of the 5 in the number 3,572?",
+    "answer": "500",
+    "choices": [
+      "5",
+      "50",
+      "500",
+      "5000"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the value of the 4 in 4,081?",
+    "answer": "4,000",
+    "choices": [
+      "4",
+      "40",
+      "400",
+      "4,000"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which number is in the tenths place in 7.46?",
+    "answer": "4",
+    "choices": [
+      "7",
+      "4",
+      "6",
+      "74"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 1/2 + 1/4?",
+    "answer": "3/4",
+    "choices": [
+      "2/6",
+      "1/3",
+      "3/4",
+      "2/4"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 3/4 of 20?",
+    "answer": "15",
+    "choices": [
+      "10",
+      "12",
+      "15",
+      "18"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 1/3 of 24?",
+    "answer": "8",
+    "choices": [
+      "6",
+      "7",
+      "8",
+      "9"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "A bag has 3 red, 5 blue, and 2 green marbles. How many marbles are there in total?",
+    "answer": "10",
+    "choices": [
+      "8",
+      "9",
+      "10",
+      "11"
     ]
   },
   {
@@ -115,108 +214,9 @@
     "answer": "72",
     "choices": [
       "63",
-      "64",
       "72",
-      "81"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What is 11 × 3?",
-    "answer": "33",
-    "choices": [
-      "22",
-      "30",
-      "33",
-      "36"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What is 11 × 8?",
-    "answer": "88",
-    "choices": [
-      "77",
-      "80",
-      "88",
-      "96"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What is 12 × 2?",
-    "answer": "24",
-    "choices": [
-      "12",
-      "22",
-      "24",
-      "26"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What is 10 × 10?",
-    "answer": "100",
-    "choices": [
-      "100",
-      "110",
-      "90",
-      "98"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What is 6 × 9?",
-    "answer": "54",
-    "choices": [
-      "45",
-      "48",
-      "54",
-      "63"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What is 11 × 6?",
-    "answer": "66",
-    "choices": [
-      "55",
-      "60",
-      "66",
-      "72"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What is 8 × 5?",
-    "answer": "40",
-    "choices": [
-      "32",
-      "35",
-      "40",
-      "45"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What is 11 × 5?",
-    "answer": "55",
-    "choices": [
-      "44",
-      "50",
-      "55",
-      "60"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What is 7 × 9?",
-    "answer": "63",
-    "choices": [
-      "54",
-      "56",
-      "63",
-      "72"
+      "81",
+      "64"
     ]
   },
   {
@@ -224,131 +224,329 @@
     "question": "What is 11 × 11?",
     "answer": "121",
     "choices": [
-      "110",
-      "119",
+      "111",
+      "112",
       "121",
-      "132"
+      "122"
     ]
   },
   {
     "tier": 1,
-    "question": "What is 7 × 10?",
-    "answer": "70",
+    "question": "What is 56 ÷ 7?",
+    "answer": "8",
     "choices": [
-      "60",
-      "63",
-      "70",
-      "80"
+      "6",
+      "7",
+      "8",
+      "9"
     ]
   },
   {
     "tier": 1,
-    "question": "What is 7 × 11?",
-    "answer": "77",
+    "question": "What is 45 ÷ 5?",
+    "answer": "9",
     "choices": [
-      "66",
-      "70",
-      "77",
-      "88"
+      "7",
+      "8",
+      "9",
+      "10"
     ]
   },
   {
     "tier": 1,
-    "question": "What is 11 × 2?",
-    "answer": "22",
+    "question": "What is the perimeter of a square with side length 7 m?",
+    "answer": "28 m",
     "choices": [
-      "11",
-      "20",
-      "22",
-      "24"
+      "21 m",
+      "28 m",
+      "49 m",
+      "14 m"
     ]
   },
   {
     "tier": 1,
-    "question": "What is 10 × 8?",
-    "answer": "80",
+    "question": "What is 0.9 - 0.4?",
+    "answer": "0.5",
     "choices": [
-      "70",
-      "72",
-      "80",
-      "88"
+      "0.5",
+      "0.4",
+      "0.13",
+      "0.9"
     ]
   },
   {
     "tier": 1,
-    "question": "What is 12 × 9?",
-    "answer": "108",
+    "question": "Which of these is equal to one half?",
+    "answer": "0.5",
     "choices": [
-      "108",
-      "117",
-      "96",
-      "99"
+      "0.2",
+      "0.5",
+      "5.0",
+      "0.05"
     ]
   },
   {
     "tier": 1,
-    "question": "What is 11 × 4?",
-    "answer": "44",
+    "question": "What is 6 × 7?",
+    "answer": "42",
     "choices": [
-      "33",
-      "40",
+      "36",
+      "42",
+      "48",
+      "43"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 48 ÷ 6?",
+    "answer": "8",
+    "choices": [
+      "6",
+      "7",
+      "8",
+      "9"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the area of a rectangle 3 cm wide and 12 cm long?",
+    "answer": "36 cm²",
+    "choices": [
+      "30 cm²",
+      "36 cm²",
+      "15 cm²",
+      "24 cm²"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 4 × 12?",
+    "answer": "48",
+    "choices": [
       "44",
-      "48"
+      "46",
+      "48",
+      "52"
     ]
   },
   {
     "tier": 1,
-    "question": "What is 11 × 12?",
-    "answer": "132",
+    "question": "A bar chart shows sales of 30 on Monday, 45 on Tuesday, and 25 on Wednesday. What were the total sales?",
+    "answer": "100",
+    "choices": [
+      "90",
+      "95",
+      "100",
+      "105"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 2/5 written as a decimal?",
+    "answer": "0.4",
+    "choices": [
+      "0.2",
+      "0.4",
+      "0.5",
+      "0.25"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 3/4 written as a decimal?",
+    "answer": "0.75",
+    "choices": [
+      "0.34",
+      "0.75",
+      "0.7",
+      "0.8"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 100 × 7?",
+    "answer": "700",
+    "choices": [
+      "70",
+      "700",
+      "7,000",
+      "107"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 1,000 ÷ 10?",
+    "answer": "100",
+    "choices": [
+      "10",
+      "100",
+      "1,000",
+      "10,000"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the perimeter of a rectangle 6 m long and 3 m wide?",
+    "answer": "18 m",
+    "choices": [
+      "9 m",
+      "18 m",
+      "36 m",
+      "12 m"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "How many minutes are in 3 hours?",
+    "answer": "180",
     "choices": [
       "120",
-      "121",
-      "132",
-      "144"
+      "150",
+      "180",
+      "200"
     ]
   },
   {
     "tier": 1,
-    "question": "What is 9 × 11?",
-    "answer": "99",
+    "question": "A pizza is cut into 8 equal slices. You eat 3 slices. What fraction did you eat?",
+    "answer": "3/8",
     "choices": [
-      "110",
-      "88",
-      "90",
-      "99"
+      "1/3",
+      "3/8",
+      "5/8",
+      "3/5"
     ]
   },
   {
     "tier": 1,
-    "question": "What is 10 × 9?",
-    "answer": "90",
+    "question": "What is 9 × 9?",
+    "answer": "81",
     "choices": [
+      "72",
       "80",
       "81",
-      "90",
-      "99"
+      "90"
     ]
   },
   {
     "tier": 1,
-    "question": "What is 8 × 3?",
-    "answer": "24",
+    "question": "What is 5 × 5 × 5?",
+    "answer": "125",
     "choices": [
-      "16",
-      "21",
-      "24",
-      "27"
+      "25",
+      "75",
+      "100",
+      "125"
     ]
   },
   {
     "tier": 1,
-    "question": "What is 6 × 4?",
-    "answer": "24",
+    "question": "Round 347 to the nearest hundred.",
+    "answer": "300",
     "choices": [
-      "18",
+      "300",
+      "350",
+      "400",
+      "340"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Round 2.76 to the nearest tenth.",
+    "answer": "2.8",
+    "choices": [
+      "2.7",
+      "2.8",
+      "3.0",
+      "2.76"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 1/2 of 50?",
+    "answer": "25",
+    "choices": [
       "20",
-      "24",
-      "28"
+      "25",
+      "30",
+      "10"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which is the largest fraction: 1/2, 1/3, or 1/4?",
+    "answer": "1/2",
+    "choices": [
+      "1/4",
+      "1/3",
+      "1/2",
+      "They are equal"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 6 squared (6²)?",
+    "answer": "36",
+    "choices": [
+      "12",
+      "18",
+      "36",
+      "66"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 10 squared (10²)?",
+    "answer": "100",
+    "choices": [
+      "20",
+      "100",
+      "1,000",
+      "10"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "If apples cost $0.50 each, how much do 6 apples cost?",
+    "answer": "$3.00",
+    "choices": [
+      "$2.50",
+      "$3.00",
+      "$3.50",
+      "$6.50"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 15% of 100?",
+    "answer": "15",
+    "choices": [
+      "1.5",
+      "10",
+      "15",
+      "50"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the area of a square with side length 9 cm?",
+    "answer": "81 cm²",
+    "choices": [
+      "36 cm²",
+      "72 cm²",
+      "81 cm²",
+      "90 cm²"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 3 × 3 × 3?",
+    "answer": "27",
+    "choices": [
+      "9",
+      "18",
+      "27",
+      "33"
     ]
   },
   {
@@ -364,35 +562,79 @@
   },
   {
     "tier": 1,
-    "question": "What is 10 × 11?",
-    "answer": "110",
+    "question": "What is 84 ÷ 12?",
+    "answer": "7",
     "choices": [
-      "100",
-      "110",
-      "121",
-      "99"
+      "6",
+      "7",
+      "8",
+      "9"
     ]
   },
   {
     "tier": 1,
-    "question": "What is 8 × 2?",
-    "answer": "16",
+    "question": "What is the perimeter of a square with side 10 cm?",
+    "answer": "40 cm",
     "choices": [
-      "14",
-      "16",
-      "18",
+      "10 cm",
+      "20 cm",
+      "40 cm",
+      "100 cm"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "A box has 4 rows of 6 chocolates. How many chocolates are there?",
+    "answer": "24",
+    "choices": [
+      "10",
+      "20",
+      "24",
+      "26"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 1/4 written as a decimal?",
+    "answer": "0.25",
+    "choices": [
+      "0.14",
+      "0.25",
+      "0.4",
+      "0.5"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 0.1 + 0.2?",
+    "answer": "0.3",
+    "choices": [
+      "0.12",
+      "0.21",
+      "0.3",
+      "1.2"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "How many sides does a hexagon have?",
+    "answer": "6",
+    "choices": [
+      "5",
+      "6",
+      "7",
       "8"
     ]
   },
   {
     "tier": 1,
-    "question": "What is 11 × 7?",
-    "answer": "77",
+    "question": "What is 50% of 80?",
+    "answer": "40",
     "choices": [
-      "66",
-      "70",
-      "77",
-      "84"
+      "20",
+      "30",
+      "40",
+      "50"
     ]
   },
   {
@@ -400,290 +642,92 @@
     "question": "What is 8 × 4?",
     "answer": "32",
     "choices": [
-      "24",
       "28",
+      "30",
       "32",
       "36"
     ]
   },
   {
     "tier": 1,
-    "question": "What is 6 × 7?",
-    "answer": "42",
+    "question": "Which digit is in the hundreds place in 5,326?",
+    "answer": "3",
     "choices": [
-      "35",
-      "36",
-      "42",
-      "49"
+      "5",
+      "3",
+      "2",
+      "6"
     ]
   },
   {
     "tier": 1,
-    "question": "What is 6 × 8?",
-    "answer": "48",
+    "question": "What is 9 × 4?",
+    "answer": "36",
     "choices": [
-      "40",
-      "42",
-      "48",
-      "56"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What is 9 × 12?",
-    "answer": "108",
-    "choices": [
-      "108",
-      "120",
-      "96",
-      "99"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What is 47 + 35?",
-    "answer": "82",
-    "choices": [
-      "81",
-      "82",
-      "83",
-      "92"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What is 63 + 28?",
-    "answer": "91",
-    "choices": [
-      "101",
-      "90",
-      "91",
-      "92"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What is 55 + 37?",
-    "answer": "92",
-    "choices": [
-      "102",
-      "91",
-      "92",
-      "93"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What is 76 + 24?",
-    "answer": "100",
-    "choices": [
-      "100",
-      "101",
-      "110",
-      "99"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What is 83 + 19?",
-    "answer": "102",
-    "choices": [
-      "101",
-      "102",
-      "103",
-      "112"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What is 44 + 58?",
-    "answer": "102",
-    "choices": [
-      "101",
-      "102",
-      "103",
-      "112"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What is 67 + 36?",
-    "answer": "103",
-    "choices": [
-      "102",
-      "103",
-      "104",
-      "113"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What is 52 + 49?",
-    "answer": "101",
-    "choices": [
-      "100",
-      "101",
-      "102",
-      "111"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What is 71 + 29?",
-    "answer": "100",
-    "choices": [
-      "100",
-      "101",
-      "110",
-      "99"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What is 85 + 17?",
-    "answer": "102",
-    "choices": [
-      "101",
-      "102",
-      "103",
-      "112"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What is 38 + 64?",
-    "answer": "102",
-    "choices": [
-      "101",
-      "102",
-      "103",
-      "112"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What is 91 + 23?",
-    "answer": "114",
-    "choices": [
-      "113",
-      "114",
-      "115",
-      "124"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What is 83 - 28?",
-    "answer": "55",
-    "choices": [
-      "54",
-      "55",
-      "56",
-      "65"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What is 97 - 45?",
-    "answer": "52",
-    "choices": [
-      "51",
-      "52",
-      "53",
-      "62"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What is 71 - 36?",
-    "answer": "35",
-    "choices": [
-      "34",
-      "35",
+      "27",
+      "32",
       "36",
       "45"
     ]
   },
   {
     "tier": 1,
-    "question": "What is 64 - 29?",
-    "answer": "35",
+    "question": "What is 11 × 12?",
+    "answer": "132",
     "choices": [
-      "34",
-      "35",
-      "36",
-      "45"
+      "122",
+      "130",
+      "132",
+      "144"
     ]
   },
   {
     "tier": 1,
-    "question": "What is 88 - 53?",
-    "answer": "35",
-    "choices": [
-      "34",
-      "35",
-      "36",
-      "45"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What is 76 - 47?",
-    "answer": "29",
-    "choices": [
-      "28",
-      "29",
-      "30",
-      "39"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What is 92 - 38?",
-    "answer": "54",
-    "choices": [
-      "53",
-      "54",
-      "55",
-      "64"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What is 81 - 26?",
-    "answer": "55",
-    "choices": [
-      "54",
-      "55",
-      "56",
-      "65"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "What is 72 ÷ 8?",
+    "question": "What is 36 ÷ 4?",
     "answer": "9",
     "choices": [
-      "10",
       "7",
       "8",
-      "9"
+      "9",
+      "10"
     ]
   },
   {
-    "tier": 2,
-    "question": "What is 56 ÷ 7?",
-    "answer": "8",
+    "tier": 1,
+    "question": "A rectangle has length 10 cm and width 5 cm. What is its area?",
+    "answer": "50 cm²",
+    "choices": [
+      "15 cm²",
+      "30 cm²",
+      "50 cm²",
+      "100 cm²"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 25% of 40?",
+    "answer": "10",
+    "choices": [
+      "4",
+      "8",
+      "10",
+      "25"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 2.5 × 4?",
+    "answer": "10",
     "choices": [
       "6",
-      "7",
       "8",
-      "9"
+      "10",
+      "12"
     ]
   },
   {
-    "tier": 2,
-    "question": "What is 84 ÷ 12?",
+    "tier": 1,
+    "question": "What is 1/5 of 35?",
     "answer": "7",
     "choices": [
       "5",
@@ -693,51 +737,183 @@
     ]
   },
   {
-    "tier": 2,
-    "question": "What is 48 ÷ 6?",
+    "tier": 1,
+    "question": "What is 7 + 8 + 9?",
+    "answer": "24",
+    "choices": [
+      "22",
+      "23",
+      "24",
+      "25"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "A clock shows 3:45. How many minutes until 4:00?",
+    "answer": "15",
+    "choices": [
+      "10",
+      "15",
+      "20",
+      "45"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 4 × 4?",
+    "answer": "16",
+    "choices": [
+      "8",
+      "12",
+      "16",
+      "20"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 12 × 12?",
+    "answer": "144",
+    "choices": [
+      "124",
+      "132",
+      "140",
+      "144"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 81 ÷ 9?",
+    "answer": "9",
+    "choices": [
+      "7",
+      "8",
+      "9",
+      "10"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 3.0 - 1.5?",
+    "answer": "1.5",
+    "choices": [
+      "1.4",
+      "1.5",
+      "1.6",
+      "2.5"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "If one pencil costs 30 cents, how much do 5 pencils cost?",
+    "answer": "$1.50",
+    "choices": [
+      "$1.00",
+      "$1.20",
+      "$1.50",
+      "$2.00"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the place value of 7 in 9,700?",
+    "answer": "Hundreds",
+    "choices": [
+      "Tens",
+      "Hundreds",
+      "Thousands",
+      "Ten-thousands"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 2/3 of 12?",
     "answer": "8",
     "choices": [
+      "4",
       "6",
-      "7",
       "8",
       "9"
     ]
   },
   {
-    "tier": 2,
-    "question": "What is 99 ÷ 9?",
-    "answer": "11",
+    "tier": 1,
+    "question": "What fraction of 20 is 5?",
+    "answer": "1/4",
     "choices": [
-      "10",
-      "11",
-      "12",
-      "9"
+      "1/5",
+      "1/4",
+      "1/3",
+      "1/2"
     ]
   },
   {
-    "tier": 2,
-    "question": "What is 144 ÷ 12?",
+    "tier": 1,
+    "question": "What is 6 × 11?",
+    "answer": "66",
+    "choices": [
+      "60",
+      "65",
+      "66",
+      "76"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 120 ÷ 10?",
     "answer": "12",
     "choices": [
       "10",
       "11",
       "12",
-      "13"
+      "15"
     ]
   },
   {
-    "tier": 2,
-    "question": "What is 63 ÷ 9?",
+    "tier": 1,
+    "question": "A square room has a side length of 5 m. What is the area?",
+    "answer": "25 m²",
+    "choices": [
+      "10 m²",
+      "20 m²",
+      "25 m²",
+      "30 m²"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 0.75 written as a fraction?",
+    "answer": "3/4",
+    "choices": [
+      "1/4",
+      "1/2",
+      "3/4",
+      "7/5"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "A graph shows 12 cats, 8 dogs, and 5 fish. How many more cats than fish are there?",
     "answer": "7",
     "choices": [
-      "5",
-      "6",
+      "4",
       "7",
-      "8"
+      "8",
+      "10"
     ]
   },
   {
-    "tier": 2,
+    "tier": 1,
+    "question": "What is 3 × 8?",
+    "answer": "24",
+    "choices": [
+      "21",
+      "22",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "tier": 1,
     "question": "What is 96 ÷ 8?",
     "answer": "12",
     "choices": [
@@ -748,154 +924,275 @@
     ]
   },
   {
-    "tier": 2,
-    "question": "What is 132 ÷ 11?",
-    "answer": "12",
+    "tier": 1,
+    "question": "What is the perimeter of a rectangle 10 m long and 4 m wide?",
+    "answer": "28 m",
     "choices": [
-      "10",
-      "11",
-      "12",
-      "13"
+      "14 m",
+      "24 m",
+      "28 m",
+      "40 m"
     ]
   },
   {
-    "tier": 2,
-    "question": "What is 108 ÷ 9?",
-    "answer": "12",
+    "tier": 1,
+    "question": "Which is equivalent to 50%?",
+    "answer": "1/2",
     "choices": [
-      "10",
-      "11",
-      "12",
-      "13"
+      "1/4",
+      "1/3",
+      "1/2",
+      "2/3"
     ]
   },
   {
-    "tier": 2,
-    "question": "What is 45 ÷ 9?",
-    "answer": "5",
+    "tier": 1,
+    "question": "What is 7 × 11?",
+    "answer": "77",
     "choices": [
-      "3",
-      "4",
-      "5",
-      "6"
+      "70",
+      "74",
+      "77",
+      "78"
     ]
   },
   {
-    "tier": 2,
-    "question": "What is 77 ÷ 11?",
-    "answer": "7",
+    "tier": 1,
+    "question": "How many days are in 3 weeks?",
+    "answer": "21",
     "choices": [
-      "5",
-      "6",
-      "7",
-      "8"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "What is 120 ÷ 10?",
-    "answer": "12",
-    "choices": [
-      "10",
-      "11",
-      "12",
-      "13"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "What is 36 ÷ 4?",
-    "answer": "9",
-    "choices": [
-      "10",
-      "7",
-      "8",
-      "9"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "What is 66 ÷ 6?",
-    "answer": "11",
-    "choices": [
-      "10",
-      "11",
-      "12",
-      "9"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "What is 54 ÷ 6?",
-    "answer": "9",
-    "choices": [
-      "10",
-      "7",
-      "8",
-      "9"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "What is 88 ÷ 8?",
-    "answer": "11",
-    "choices": [
-      "10",
-      "11",
-      "12",
-      "9"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "What is 110 ÷ 10?",
-    "answer": "11",
-    "choices": [
-      "10",
-      "11",
-      "12",
-      "9"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "What is 126 ÷ 9?",
-    "answer": "14",
-    "choices": [
-      "12",
-      "13",
       "14",
-      "15"
+      "18",
+      "21",
+      "24"
     ]
   },
   {
-    "tier": 2,
-    "question": "What is 60 ÷ 5?",
-    "answer": "12",
+    "tier": 1,
+    "question": "What is 200 ÷ 4?",
+    "answer": "50",
     "choices": [
-      "10",
-      "11",
-      "12",
-      "13"
+      "40",
+      "50",
+      "60",
+      "80"
     ]
   },
   {
-    "tier": 2,
-    "question": "What is 25% of 80?",
+    "tier": 1,
+    "question": "If you have $5.00 and spend $2.75, how much change do you get?",
+    "answer": "$2.25",
+    "choices": [
+      "$1.75",
+      "$2.00",
+      "$2.25",
+      "$2.50"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 4/8 in simplest form?",
+    "answer": "1/2",
+    "choices": [
+      "1/2",
+      "2/4",
+      "4/8",
+      "1/4"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 10% of 200?",
     "answer": "20",
     "choices": [
-      "15",
+      "2",
+      "10",
       "20",
-      "25",
-      "30"
+      "200"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 9 × 7?",
+    "answer": "63",
+    "choices": [
+      "54",
+      "56",
+      "63",
+      "72"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "A rectangle is 7 cm long and 3 cm wide. What is its perimeter?",
+    "answer": "20 cm",
+    "choices": [
+      "10 cm",
+      "20 cm",
+      "21 cm",
+      "14 cm"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is the area of a square with side length 4 m?",
+    "answer": "16 m²",
+    "choices": [
+      "8 m²",
+      "12 m²",
+      "16 m²",
+      "20 m²"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 5/10 written in simplest form?",
+    "answer": "1/2",
+    "choices": [
+      "1/2",
+      "5/10",
+      "2/5",
+      "1/5"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 6 × 6?",
+    "answer": "36",
+    "choices": [
+      "30",
+      "33",
+      "36",
+      "42"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 3/6 in its simplest form?",
+    "answer": "1/2",
+    "choices": [
+      "1/3",
+      "1/2",
+      "2/3",
+      "3/6"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "A chart shows 40 votes for red and 60 for blue. What fraction chose blue?",
+    "answer": "3/5",
+    "choices": [
+      "1/2",
+      "2/5",
+      "3/5",
+      "2/3"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 8 × 11?",
+    "answer": "88",
+    "choices": [
+      "81",
+      "84",
+      "88",
+      "99"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "What is 5 × 9?",
+    "answer": "45",
+    "choices": [
+      "40",
+      "44",
+      "45",
+      "54"
     ]
   },
   {
     "tier": 2,
-    "question": "What is 10% of 150?",
+    "question": "What is 345 ÷ 15?",
+    "answer": "23",
+    "choices": [
+      "21",
+      "22",
+      "23",
+      "25"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 256 ÷ 8?",
+    "answer": "32",
+    "choices": [
+      "28",
+      "30",
+      "32",
+      "34"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 137 ÷ 6? Give the whole number and remainder.",
+    "answer": "22 remainder 5",
+    "choices": [
+      "22 remainder 4",
+      "22 remainder 5",
+      "23 remainder 1",
+      "21 remainder 6"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 2/3 + 1/6?",
+    "answer": "5/6",
+    "choices": [
+      "3/9",
+      "1/2",
+      "5/6",
+      "3/6"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 3/4 - 1/8?",
+    "answer": "5/8",
+    "choices": [
+      "2/4",
+      "5/8",
+      "4/8",
+      "1/2"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 2/3 × 3/4?",
+    "answer": "1/2",
+    "choices": [
+      "5/7",
+      "1/2",
+      "6/12",
+      "2/1"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 3/4 ÷ 3/8?",
+    "answer": "2",
+    "choices": [
+      "1/2",
+      "9/32",
+      "2",
+      "3/2"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 25% of 60?",
     "answer": "15",
     "choices": [
-      "10",
+      "12",
       "15",
       "20",
       "25"
@@ -903,73 +1200,238 @@
   },
   {
     "tier": 2,
-    "question": "What is 50% of 64?",
-    "answer": "32",
+    "question": "What is 30% of 90?",
+    "answer": "27",
     "choices": [
-      "16",
-      "28",
-      "32",
-      "40"
+      "18",
+      "24",
+      "27",
+      "30"
     ]
   },
   {
     "tier": 2,
-    "question": "What is 20% of 90?",
-    "answer": "18",
+    "question": "A shirt costs $40. It is on sale for 20% off. What is the sale price?",
+    "answer": "$32",
+    "choices": [
+      "$20",
+      "$28",
+      "$32",
+      "$38"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "If 3 apples cost $1.50, how much does 1 apple cost?",
+    "answer": "$0.50",
+    "choices": [
+      "$0.25",
+      "$0.50",
+      "$0.75",
+      "$1.00"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "A car travels 120 miles in 3 hours. What is its speed in miles per hour?",
+    "answer": "40 mph",
+    "choices": [
+      "30 mph",
+      "40 mph",
+      "45 mph",
+      "60 mph"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the ratio 12:8 in simplest form?",
+    "answer": "3:2",
+    "choices": [
+      "6:4",
+      "3:2",
+      "4:3",
+      "2:1"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "If 5 out of 20 students are absent, what percentage are absent?",
+    "answer": "25%",
+    "choices": [
+      "20%",
+      "25%",
+      "30%",
+      "5%"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the area of a triangle with base 8 cm and height 5 cm?",
+    "answer": "20 cm²",
+    "choices": [
+      "13 cm²",
+      "20 cm²",
+      "40 cm²",
+      "24 cm²"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the area of a triangle with base 10 m and height 6 m?",
+    "answer": "30 m²",
+    "choices": [
+      "16 m²",
+      "30 m²",
+      "60 m²",
+      "20 m²"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is -3 + 7?",
+    "answer": "4",
+    "choices": [
+      "-4",
+      "4",
+      "10",
+      "-10"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is -5 - (-2)?",
+    "answer": "-3",
+    "choices": [
+      "7",
+      "-7",
+      "3",
+      "-3"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is -4 × 3?",
+    "answer": "-12",
     "choices": [
       "12",
-      "18",
-      "22",
-      "27"
+      "-12",
+      "7",
+      "-7"
     ]
   },
   {
     "tier": 2,
-    "question": "What is 25% of 120?",
-    "answer": "30",
+    "question": "What is -18 ÷ (-3)?",
+    "answer": "6",
     "choices": [
-      "25",
-      "30",
-      "35",
-      "40"
+      "6",
+      "-6",
+      "-54",
+      "54"
     ]
   },
   {
     "tier": 2,
-    "question": "What is 10% of 250?",
+    "question": "What is 3/5 written as a percentage?",
+    "answer": "60%",
+    "choices": [
+      "35%",
+      "50%",
+      "60%",
+      "75%"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 7/8 + 1/4?",
+    "answer": "9/8",
+    "choices": [
+      "8/12",
+      "9/8",
+      "8/8",
+      "10/8"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 5/6 - 1/3?",
+    "answer": "1/2",
+    "choices": [
+      "4/3",
+      "1/2",
+      "1/6",
+      "2/3"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "A recipe needs 2/3 cup of sugar. If you make 3 batches, how much sugar do you need?",
+    "answer": "2 cups",
+    "choices": [
+      "1 cup",
+      "1 1/2 cups",
+      "2 cups",
+      "3 cups"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 80% of 150?",
+    "answer": "120",
+    "choices": [
+      "80",
+      "100",
+      "120",
+      "130"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "If the ratio of boys to girls is 3:5 and there are 15 boys, how many girls are there?",
     "answer": "25",
     "choices": [
       "20",
       "25",
       "30",
-      "50"
+      "35"
     ]
   },
   {
     "tier": 2,
-    "question": "What is 50% of 46?",
-    "answer": "23",
+    "question": "What is 462 ÷ 21?",
+    "answer": "22",
     "choices": [
-      "13",
-      "18",
-      "23",
-      "27"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "What is 5% of 200?",
-    "answer": "10",
-    "choices": [
-      "10",
-      "15",
       "20",
-      "5"
+      "21",
+      "22",
+      "23"
     ]
   },
   {
     "tier": 2,
-    "question": "What is 75% of 40?",
+    "question": "What is 875 ÷ 25?",
+    "answer": "35",
+    "choices": [
+      "30",
+      "33",
+      "35",
+      "37"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 1/2 ÷ 1/4?",
+    "answer": "2",
+    "choices": [
+      "1/8",
+      "1/4",
+      "1/2",
+      "2"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 40% of 75?",
     "answer": "30",
     "choices": [
       "20",
@@ -980,153 +1442,54 @@
   },
   {
     "tier": 2,
-    "question": "What is 20% of 65?",
-    "answer": "13",
+    "question": "A map uses a scale of 1 cm : 50 km. Two cities are 6 cm apart on the map. How far apart are they really?",
+    "answer": "300 km",
     "choices": [
-      "13",
-      "16",
-      "20",
-      "8"
+      "50 km",
+      "56 km",
+      "300 km",
+      "600 km"
     ]
   },
   {
     "tier": 2,
-    "question": "What is 10% of 340?",
-    "answer": "34",
+    "question": "What is 5/9 + 1/3?",
+    "answer": "8/9",
     "choices": [
-      "24",
-      "34",
-      "40",
-      "44"
+      "6/12",
+      "8/9",
+      "2/3",
+      "6/9"
     ]
   },
   {
     "tier": 2,
-    "question": "What is 25% of 44?",
-    "answer": "11",
+    "question": "What is 4/5 × 1/2?",
+    "answer": "2/5",
     "choices": [
-      "11",
-      "14",
-      "18",
-      "8"
+      "4/10",
+      "2/5",
+      "5/8",
+      "4/7"
     ]
   },
   {
     "tier": 2,
-    "question": "What is 50% of 86?",
-    "answer": "43",
+    "question": "A store sells juice for $1.20 per bottle. You buy 4 bottles. How much do you spend?",
+    "answer": "$4.80",
     "choices": [
-      "33",
-      "43",
-      "48",
-      "56"
+      "$4.00",
+      "$4.80",
+      "$5.00",
+      "$5.20"
     ]
   },
   {
     "tier": 2,
-    "question": "What is 20% of 45?",
-    "answer": "9",
+    "question": "What is 15% of 200?",
+    "answer": "30",
     "choices": [
-      "12",
-      "18",
-      "5",
-      "9"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "What is 10% of 470?",
-    "answer": "47",
-    "choices": [
-      "37",
-      "47",
-      "50",
-      "57"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "What is 2^5?",
-    "answer": "32",
-    "choices": [
-      "16",
-      "24",
-      "32",
-      "64"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "What is 2^6?",
-    "answer": "64",
-    "choices": [
-      "128",
-      "32",
-      "48",
-      "64"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "What is 2^7?",
-    "answer": "128",
-    "choices": [
-      "128",
-      "256",
-      "64",
-      "96"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "What is 2^8?",
-    "answer": "256",
-    "choices": [
-      "128",
-      "192",
-      "256",
-      "512"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "What is 3^3?",
-    "answer": "27",
-    "choices": [
-      "18",
-      "27",
-      "36",
-      "9"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "What is 3^4?",
-    "answer": "81",
-    "choices": [
-      "243",
-      "27",
-      "72",
-      "81"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "What is 3^5?",
-    "answer": "243",
-    "choices": [
-      "216",
-      "243",
-      "729",
-      "81"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "What is 5^2?",
-    "answer": "25",
-    "choices": [
-      "10",
+      "15",
       "20",
       "25",
       "30"
@@ -1134,395 +1497,1165 @@
   },
   {
     "tier": 2,
-    "question": "What is 5^3?",
-    "answer": "125",
+    "question": "What is the area of a triangle with base 14 cm and height 9 cm?",
+    "answer": "63 cm²",
     "choices": [
-      "100",
-      "125",
-      "25",
-      "625"
+      "23 cm²",
+      "63 cm²",
+      "126 cm²",
+      "46 cm²"
     ]
   },
   {
     "tier": 2,
-    "question": "What is 7^2?",
-    "answer": "49",
+    "question": "What is -6 + (-4)?",
+    "answer": "-10",
     "choices": [
-      "14",
-      "36",
-      "49",
-      "56"
+      "-10",
+      "10",
+      "-2",
+      "2"
     ]
   },
   {
     "tier": 2,
-    "question": "What is 4^3?",
-    "answer": "64",
+    "question": "What is 7 × (-5)?",
+    "answer": "-35",
     "choices": [
-      "16",
-      "256",
-      "32",
-      "64"
+      "35",
+      "-35",
+      "-12",
+      "12"
     ]
   },
   {
     "tier": 2,
-    "question": "What is 2^9?",
-    "answer": "512",
+    "question": "What is -24 ÷ 6?",
+    "answer": "-4",
     "choices": [
-      "1024",
-      "256",
-      "384",
-      "512"
+      "4",
+      "-4",
+      "18",
+      "-18"
     ]
   },
   {
     "tier": 2,
-    "question": "Calculate: 5 × 8 + 12 = ?",
+    "question": "A class of 30 students has 18 girls. What percentage are boys?",
+    "answer": "40%",
+    "choices": [
+      "30%",
+      "40%",
+      "60%",
+      "18%"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Simplify the ratio 24:36.",
+    "answer": "2:3",
+    "choices": [
+      "2:3",
+      "4:6",
+      "6:9",
+      "3:2"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 5/12 + 1/4?",
+    "answer": "2/3",
+    "choices": [
+      "6/16",
+      "2/3",
+      "6/12",
+      "1/2"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 9/10 - 2/5?",
+    "answer": "1/2",
+    "choices": [
+      "7/5",
+      "1/2",
+      "7/10",
+      "1/10"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Which is greater: 3/4 or 5/7?",
+    "answer": "3/4",
+    "choices": [
+      "3/4",
+      "5/7",
+      "They are equal",
+      "Cannot determine"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "If 12 cans cost $9.00, how much does 1 can cost?",
+    "answer": "$0.75",
+    "choices": [
+      "$0.50",
+      "$0.60",
+      "$0.75",
+      "$1.00"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 65% of 80?",
     "answer": "52",
     "choices": [
+      "45",
       "48",
       "52",
-      "55",
       "60"
     ]
   },
   {
     "tier": 2,
-    "question": "Calculate: 4 × 9 - 7 = ?",
-    "answer": "29",
+    "question": "A number is increased from 50 to 60. What is the percentage increase?",
+    "answer": "20%",
     "choices": [
-      "25",
-      "29",
-      "30",
-      "36"
+      "10%",
+      "20%",
+      "25%",
+      "50%"
     ]
   },
   {
     "tier": 2,
-    "question": "Calculate: 6 × 7 + 15 = ?",
-    "answer": "57",
+    "question": "What is 3/7 × 14?",
+    "answer": "6",
     "choices": [
-      "42",
-      "55",
-      "57",
-      "62"
+      "3",
+      "6",
+      "7",
+      "42"
     ]
   },
   {
     "tier": 2,
-    "question": "Calculate: 3 × 12 - 8 = ?",
-    "answer": "28",
+    "question": "What is 7/10 as a percentage?",
+    "answer": "70%",
     "choices": [
-      "24",
-      "28",
-      "30",
-      "36"
+      "7%",
+      "17%",
+      "70%",
+      "710%"
     ]
   },
   {
     "tier": 2,
-    "question": "Calculate: 7 × 8 + 9 = ?",
-    "answer": "65",
+    "question": "What is -2 × (-9)?",
+    "answer": "18",
     "choices": [
-      "56",
-      "63",
-      "65",
-      "70"
+      "-18",
+      "18",
+      "-11",
+      "11"
     ]
   },
   {
     "tier": 2,
-    "question": "Calculate: 9 × 6 - 14 = ?",
-    "answer": "40",
+    "question": "What is 4/5 - 3/10?",
+    "answer": "1/2",
     "choices": [
-      "38",
+      "1/10",
+      "1/5",
+      "1/2",
+      "7/10"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "A dozen eggs costs $2.40. What is the cost per egg?",
+    "answer": "$0.20",
+    "choices": [
+      "$0.10",
+      "$0.15",
+      "$0.20",
+      "$0.24"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 144 ÷ 9?",
+    "answer": "16",
+    "choices": [
+      "14",
+      "15",
+      "16",
+      "18"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 2/3 ÷ 4?",
+    "answer": "1/6",
+    "choices": [
+      "8/3",
+      "1/6",
+      "2/12",
+      "3/8"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "A television costs $300. There is a 15% tax. What is the total cost?",
+    "answer": "$345",
+    "choices": [
+      "$315",
+      "$330",
+      "$345",
+      "$360"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Solve the proportion: 3/4 = x/12. What is x?",
+    "answer": "9",
+    "choices": [
+      "6",
+      "8",
+      "9",
+      "16"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 5/6 ÷ 5/3?",
+    "answer": "1/2",
+    "choices": [
+      "1/2",
+      "25/18",
+      "1/3",
+      "3/2"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 1/4 + 1/3?",
+    "answer": "7/12",
+    "choices": [
+      "2/7",
+      "1/6",
+      "7/12",
+      "2/12"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "If a car drives 55 mph for 4 hours, how far does it travel?",
+    "answer": "220 miles",
+    "choices": [
+      "180 miles",
+      "200 miles",
+      "220 miles",
+      "240 miles"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 35% of 120?",
+    "answer": "42",
+    "choices": [
+      "35",
       "40",
-      "50",
-      "54"
+      "42",
+      "45"
     ]
   },
   {
     "tier": 2,
-    "question": "Calculate: 11 × 5 + 7 = ?",
-    "answer": "62",
+    "question": "What is -10 + 4 - (-3)?",
+    "answer": "-3",
     "choices": [
-      "55",
-      "60",
-      "62",
-      "65"
+      "-3",
+      "3",
+      "-17",
+      "17"
     ]
   },
   {
     "tier": 2,
-    "question": "Calculate: 8 × 9 - 18 = ?",
-    "answer": "54",
+    "question": "If 2/5 of a class are boys, what percentage are girls?",
+    "answer": "60%",
     "choices": [
-      "50",
-      "54",
-      "60",
-      "72"
+      "40%",
+      "50%",
+      "60%",
+      "2/5"
     ]
   },
   {
     "tier": 2,
-    "question": "Calculate: 12 × 7 + 3 = ?",
-    "answer": "87",
+    "question": "What is 7/8 - 3/4?",
+    "answer": "1/8",
     "choices": [
-      "63",
-      "84",
-      "87",
+      "4/4",
+      "1/2",
+      "1/8",
+      "4/8"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "A price drops from $80 to $60. What is the percentage decrease?",
+    "answer": "25%",
+    "choices": [
+      "20%",
+      "25%",
+      "30%",
+      "33%"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 3/8 × 4/9?",
+    "answer": "1/6",
+    "choices": [
+      "7/17",
+      "1/6",
+      "12/72",
+      "4/24"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "If 7 notebooks cost $14.70, how much does 1 cost?",
+    "answer": "$2.10",
+    "choices": [
+      "$1.75",
+      "$2.00",
+      "$2.10",
+      "$2.25"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 225 ÷ 15?",
+    "answer": "15",
+    "choices": [
+      "13",
+      "14",
+      "15",
+      "16"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "A bag has 4 red, 6 blue, and 10 green balls. What fraction are blue?",
+    "answer": "3/10",
+    "choices": [
+      "1/5",
+      "3/10",
+      "2/5",
+      "1/3"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is -5 × (-6) ÷ 3?",
+    "answer": "10",
+    "choices": [
+      "-10",
+      "10",
+      "-90",
       "90"
     ]
   },
   {
     "tier": 2,
-    "question": "Calculate: 6 × 11 - 9 = ?",
-    "answer": "57",
+    "question": "What is 7/9 - 1/3?",
+    "answer": "4/9",
     "choices": [
-      "50",
-      "57",
-      "60",
-      "66"
+      "6/6",
+      "4/9",
+      "2/3",
+      "6/9"
     ]
   },
   {
-    "tier": 3,
-    "question": "Evaluate: 2 + 3 × 4",
-    "answer": "14",
+    "tier": 2,
+    "question": "Solve the proportion: 6/x = 2/5. What is x?",
+    "answer": "15",
     "choices": [
-      "11",
-      "14",
-      "20",
-      "24"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "Evaluate: (2 + 3) × 4",
-    "answer": "20",
-    "choices": [
+      "3",
       "10",
-      "14",
-      "20",
-      "24"
+      "12",
+      "15"
     ]
   },
   {
-    "tier": 3,
-    "question": "Evaluate: 10 - 2 × 3",
-    "answer": "4",
+    "tier": 2,
+    "question": "What is 55% of 40?",
+    "answer": "22",
     "choices": [
-      "24",
-      "4",
-      "6",
-      "8"
+      "18",
+      "20",
+      "22",
+      "25"
     ]
   },
   {
-    "tier": 3,
-    "question": "Evaluate: (10 - 2) × 3",
+    "tier": 2,
+    "question": "What is the area of a triangle with base 20 cm and height 7 cm?",
+    "answer": "70 cm²",
+    "choices": [
+      "27 cm²",
+      "70 cm²",
+      "140 cm²",
+      "35 cm²"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 1/3 × 2/5?",
+    "answer": "2/15",
+    "choices": [
+      "3/8",
+      "2/15",
+      "2/8",
+      "1/15"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "If a train takes 2.5 hours to travel 175 miles, what is its speed?",
+    "answer": "70 mph",
+    "choices": [
+      "60 mph",
+      "65 mph",
+      "70 mph",
+      "80 mph"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the value of 5 cubed (5³)?",
+    "answer": "125",
+    "choices": [
+      "15",
+      "25",
+      "125",
+      "625"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 60% of 45?",
+    "answer": "27",
+    "choices": [
+      "20",
+      "25",
+      "27",
+      "30"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "If a book costs $12.50 and you have a 10% discount coupon, how much do you pay?",
+    "answer": "$11.25",
+    "choices": [
+      "$10.00",
+      "$11.25",
+      "$11.50",
+      "$12.00"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 3/4 + 5/8?",
+    "answer": "11/8",
+    "choices": [
+      "8/12",
+      "11/8",
+      "8/8",
+      "10/8"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "A rectangle's area is 48 cm². Its width is 6 cm. What is its length?",
+    "answer": "8 cm",
+    "choices": [
+      "6 cm",
+      "7 cm",
+      "8 cm",
+      "9 cm"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 11/12 - 2/3?",
+    "answer": "3/12",
+    "choices": [
+      "9/9",
+      "3/12",
+      "9/12",
+      "1/4"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Simplify: 18/24.",
+    "answer": "3/4",
+    "choices": [
+      "2/3",
+      "3/4",
+      "9/12",
+      "6/8"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 75% of 64?",
+    "answer": "48",
+    "choices": [
+      "42",
+      "48",
+      "54",
+      "60"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is -8 - 5?",
+    "answer": "-13",
+    "choices": [
+      "3",
+      "-3",
+      "-13",
+      "13"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "A box contains 24 chocolates, and 1/3 are dark chocolate. How many are dark?",
+    "answer": "8",
+    "choices": [
+      "6",
+      "7",
+      "8",
+      "9"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 576 ÷ 24?",
     "answer": "24",
     "choices": [
-      "24",
-      "4",
-      "6",
-      "8"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "Evaluate: 3^2 + 4^2",
-    "answer": "25",
-    "choices": [
-      "25",
-      "30",
-      "49",
-      "7"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "Evaluate: (3 + 4)^2",
-    "answer": "49",
-    "choices": [
-      "14",
-      "25",
-      "49",
-      "56"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "Evaluate: 2 × 3 + 4 × 5",
-    "answer": "26",
-    "choices": [
       "22",
-      "26",
-      "34",
+      "23",
+      "24",
+      "25"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 5/8 + 3/4?",
+    "answer": "11/8",
+    "choices": [
+      "8/12",
+      "11/8",
+      "10/8",
+      "1/2"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "If 8 workers can finish a job in 5 days, how many days would 10 workers take?",
+    "answer": "4 days",
+    "choices": [
+      "3 days",
+      "4 days",
+      "5 days",
+      "6 days"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 120% of 50?",
+    "answer": "60",
+    "choices": [
+      "50",
+      "55",
+      "60",
       "70"
     ]
   },
   {
-    "tier": 3,
-    "question": "Evaluate: (2 + 3)^2 - 1",
-    "answer": "24",
+    "tier": 2,
+    "question": "What is 2/9 + 5/9?",
+    "answer": "7/9",
     "choices": [
-      "20",
-      "24",
-      "26",
-      "4"
+      "7/9",
+      "7/18",
+      "1/3",
+      "2/3"
     ]
   },
   {
-    "tier": 3,
-    "question": "Evaluate: 100 ÷ (4 × 5)",
-    "answer": "5",
-    "choices": [
-      "10",
-      "125",
-      "20",
-      "5"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "Evaluate: 3 × (8 - 5)^2",
-    "answer": "27",
-    "choices": [
-      "18",
-      "27",
-      "81",
-      "9"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "Evaluate: 2^3 × 3 + 1",
-    "answer": "25",
+    "tier": 2,
+    "question": "What is 5 × (-3) - 2?",
+    "answer": "-17",
     "choices": [
       "13",
-      "25",
-      "48",
-      "49"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "Evaluate: (5 + 3) × (5 - 3)",
-    "answer": "16",
-    "choices": [
-      "10",
-      "16",
-      "2",
-      "8"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "Solve: x + 15 = 32, x = ?",
-    "answer": "17",
-    "choices": [
-      "13",
-      "15",
+      "-13",
       "17",
-      "47"
+      "-17"
     ]
   },
   {
-    "tier": 3,
-    "question": "Solve: 3x = 27, x = ?",
-    "answer": "9",
+    "tier": 2,
+    "question": "A store marks up a $50 item by 40%. What is the selling price?",
+    "answer": "$70",
     "choices": [
-      "24",
-      "3",
-      "30",
-      "9"
+      "$60",
+      "$65",
+      "$70",
+      "$90"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 4/7 × 21?",
+    "answer": "12",
+    "choices": [
+      "7",
+      "8",
+      "12",
+      "84"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 3/10 + 2/5?",
+    "answer": "7/10",
+    "choices": [
+      "5/15",
+      "7/10",
+      "1/2",
+      "1/10"
     ]
   },
   {
     "tier": 3,
-    "question": "Solve: x - 8 = 19, x = ?",
-    "answer": "27",
+    "question": "What is 3 + 4 × 2?",
+    "answer": "11",
     "choices": [
       "11",
-      "27",
-      "28",
-      "8"
+      "14",
+      "10",
+      "20"
     ]
   },
   {
     "tier": 3,
-    "question": "Solve: 2x + 4 = 18, x = ?",
-    "answer": "7",
+    "question": "Evaluate: (5 + 3)² - 10.",
+    "answer": "54",
     "choices": [
-      "11",
-      "18",
-      "5",
-      "7"
+      "44",
+      "54",
+      "64",
+      "26"
     ]
   },
   {
     "tier": 3,
-    "question": "Solve: 5x - 10 = 25, x = ?",
-    "answer": "7",
+    "question": "Evaluate: 2 × (3 + 5)² ÷ 4.",
+    "answer": "32",
     "choices": [
-      "15",
-      "3",
-      "5",
-      "7"
+      "20",
+      "25",
+      "32",
+      "48"
     ]
   },
   {
     "tier": 3,
-    "question": "Solve: x / 4 = 9, x = ?",
-    "answer": "36",
-    "choices": [
-      "13",
-      "36",
-      "4",
-      "40"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "Solve: 2x + 6 = 22, x = ?",
+    "question": "Solve for x: x + 7 = 15.",
     "answer": "8",
     "choices": [
-      "14",
-      "16",
-      "4",
-      "8"
+      "6",
+      "7",
+      "8",
+      "22"
     ]
   },
   {
     "tier": 3,
-    "question": "Solve: 4x - 3 = 17, x = ?",
-    "answer": "5",
+    "question": "Solve for x: 3x = 21.",
+    "answer": "7",
     "choices": [
-      "14",
-      "20",
-      "5",
-      "7"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "Solve: x/3 + 2 = 8, x = ?",
-    "answer": "18",
-    "choices": [
+      "7",
       "18",
       "24",
-      "30",
+      "63"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Solve for x: 2x - 5 = 9.",
+    "answer": "7",
+    "choices": [
+      "2",
+      "5",
+      "7",
+      "14"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Solve for x: x/4 + 3 = 7.",
+    "answer": "16",
+    "choices": [
+      "1",
+      "10",
+      "16",
+      "28"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is -7 × (-3) + 4?",
+    "answer": "25",
+    "choices": [
+      "17",
+      "25",
+      "-17",
+      "-25"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is -12 + (-5) × 2?",
+    "answer": "-22",
+    "choices": [
+      "-34",
+      "-22",
+      "2",
+      "22"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the circumference of a circle with radius 7 cm? (Use pi = 3.14)",
+    "answer": "43.96 cm",
+    "choices": [
+      "21.98 cm",
+      "43.96 cm",
+      "153.86 cm",
+      "49 cm"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the area of a circle with radius 5 cm? (Use pi = 3.14)",
+    "answer": "78.5 cm²",
+    "choices": [
+      "15.7 cm²",
+      "31.4 cm²",
+      "78.5 cm²",
+      "314 cm²"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "A circle has diameter 10 m. What is its circumference? (Use pi = 3.14)",
+    "answer": "31.4 m",
+    "choices": [
+      "15.7 m",
+      "31.4 m",
+      "78.5 m",
+      "100 m"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the probability of rolling a 4 on a standard six-sided die?",
+    "answer": "1/6",
+    "choices": [
+      "1/4",
+      "1/6",
+      "4/6",
+      "1/3"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "A bag has 3 red, 4 blue, and 5 green marbles. What is the probability of picking a blue one?",
+    "answer": "1/3",
+    "choices": [
+      "1/4",
+      "1/3",
+      "4/5",
+      "4/12"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the mean of 4, 7, 9, 10?",
+    "answer": "7.5",
+    "choices": [
+      "7",
+      "7.5",
+      "8",
+      "9"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the median of 3, 5, 7, 9, 11?",
+    "answer": "7",
+    "choices": [
+      "5",
+      "7",
+      "9",
+      "7.5"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the mode of 2, 4, 4, 5, 7, 7, 7, 9?",
+    "answer": "7",
+    "choices": [
+      "4",
+      "5",
+      "7",
+      "9"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the mean of 6, 8, 10, 12, 14?",
+    "answer": "10",
+    "choices": [
+      "8",
+      "9",
+      "10",
+      "11"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the median of 8, 3, 5, 1, 9?",
+    "answer": "5",
+    "choices": [
+      "3",
+      "5",
+      "8",
+      "9"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Evaluate: 10 - 3² + 4 × 2.",
+    "answer": "9",
+    "choices": [
+      "9",
+      "15",
+      "42",
       "6"
     ]
   },
   {
     "tier": 3,
-    "question": "Solve: 7x = 56, x = ?",
+    "question": "Evaluate: 5(3 + 2) - 4².",
+    "answer": "9",
+    "choices": [
+      "9",
+      "11",
+      "25",
+      "1"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Solve for x: 5x + 3 = 28.",
+    "answer": "5",
+    "choices": [
+      "4",
+      "5",
+      "6",
+      "25"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Solve for x: 4(x - 2) = 12.",
+    "answer": "5",
+    "choices": [
+      "3",
+      "4",
+      "5",
+      "7"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Solve for x: 2x + 3 = x + 7.",
+    "answer": "4",
+    "choices": [
+      "2",
+      "3",
+      "4",
+      "10"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is -3 - (-8)?",
+    "answer": "5",
+    "choices": [
+      "-11",
+      "5",
+      "11",
+      "-5"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is (-4)² - 3?",
+    "answer": "13",
+    "choices": [
+      "-19",
+      "13",
+      "19",
+      "-13"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "A circle has area 50.24 cm². What is its radius? (Use pi = 3.14)",
+    "answer": "4 cm",
+    "choices": [
+      "2 cm",
+      "4 cm",
+      "8 cm",
+      "16 cm"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the probability of flipping two heads in a row with a fair coin?",
+    "answer": "1/4",
+    "choices": [
+      "1/8",
+      "1/4",
+      "1/2",
+      "3/4"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the probability of rolling an odd number on a six-sided die?",
+    "answer": "1/2",
+    "choices": [
+      "1/3",
+      "1/2",
+      "2/3",
+      "3/6"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Solve for x: x/3 - 2 = 4.",
+    "answer": "18",
+    "choices": [
+      "6",
+      "8",
+      "18",
+      "12"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 3 × 2³ - 5?",
+    "answer": "19",
+    "choices": [
+      "13",
+      "19",
+      "21",
+      "7"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is -2(x - 5) when x = 3?",
+    "answer": "4",
+    "choices": [
+      "-4",
+      "4",
+      "16",
+      "-16"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the range of 4, 9, 15, 2, 11?",
+    "answer": "13",
+    "choices": [
+      "9",
+      "11",
+      "13",
+      "15"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The probability of rain on any day is 0.3. What is the probability it does NOT rain?",
+    "answer": "0.7",
+    "choices": [
+      "0.3",
+      "0.6",
+      "0.7",
+      "1.3"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Solve for y: 3y - 4 = 2y + 6.",
+    "answer": "10",
+    "choices": [
+      "2",
+      "6",
+      "10",
+      "14"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the circumference of a circle with diameter 14 cm? (Use pi = 3.14)",
+    "answer": "43.96 cm",
+    "choices": [
+      "21.98 cm",
+      "43.96 cm",
+      "153.86 cm",
+      "87.92 cm"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Evaluate: 6² ÷ 4 + 3 × 2.",
+    "answer": "15",
+    "choices": [
+      "12",
+      "15",
+      "18",
+      "21"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the mean of 1, 3, 5, 7, 9, 11?",
+    "answer": "6",
+    "choices": [
+      "5",
+      "6",
+      "7",
+      "5.5"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "A number when doubled and then decreased by 3 equals 13. What is the number?",
     "answer": "8",
     "choices": [
-      "49",
+      "5",
+      "7",
+      "8",
+      "10"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which expression equals 4x when x = 5?",
+    "answer": "20",
+    "choices": [
+      "9",
+      "20",
+      "25",
+      "45"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is -15 ÷ 3 + (-2)?",
+    "answer": "-7",
+    "choices": [
+      "-7",
+      "7",
+      "-3",
+      "3"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Solve: 7 - 2(x + 1) = 3. What is x?",
+    "answer": "1",
+    "choices": [
+      "1",
+      "2",
+      "3",
+      "-1"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the area of a circle with diameter 12 cm? (Use pi = 3.14)",
+    "answer": "113.04 cm²",
+    "choices": [
+      "37.68 cm²",
+      "113.04 cm²",
+      "144 cm²",
+      "452.16 cm²"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the median of 2, 4, 6, 8?",
+    "answer": "5",
+    "choices": [
+      "4",
+      "5",
+      "6",
+      "4.5"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Evaluate: 4 + 3 × (8 - 2).",
+    "answer": "22",
+    "choices": [
+      "42",
+      "22",
+      "18",
+      "30"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the probability of drawing a heart from a standard 52-card deck?",
+    "answer": "1/4",
+    "choices": [
+      "1/13",
+      "1/4",
+      "4/52",
+      "1/52"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the mode of 5, 5, 7, 8, 8, 8, 9?",
+    "answer": "8",
+    "choices": [
+      "5",
       "7",
       "8",
       "9"
@@ -1530,21 +2663,54 @@
   },
   {
     "tier": 3,
-    "question": "Solve: x + x + 5 = 19, x = ?",
-    "answer": "7",
+    "question": "Solve for x: x² = 49.",
+    "answer": "7 or -7",
     "choices": [
-      "12",
-      "14",
       "7",
-      "8"
+      "7 or -7",
+      "-7",
+      "24.5"
     ]
   },
   {
     "tier": 3,
-    "question": "Solve: 3x + 3 = 21, x = ?",
+    "question": "Evaluate: (2 + 3)² × 2 - 10.",
+    "answer": "40",
+    "choices": [
+      "30",
+      "40",
+      "50",
+      "20"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 2/3 of (-18)?",
+    "answer": "-12",
+    "choices": [
+      "-12",
+      "12",
+      "-6",
+      "6"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Solve for x: 2(3x - 1) = 16.",
+    "answer": "3",
+    "choices": [
+      "2",
+      "3",
+      "4",
+      "9"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the mean of the first 5 even numbers (2, 4, 6, 8, 10)?",
     "answer": "6",
     "choices": [
-      "24",
+      "5",
       "6",
       "7",
       "8"
@@ -1552,127 +2718,2602 @@
   },
   {
     "tier": 3,
-    "question": "Area of a 7 × 9 rectangle = ?",
-    "answer": "63",
+    "question": "What is the range of -3, 0, 5, -1, 8?",
+    "answer": "11",
     "choices": [
-      "16",
-      "56",
-      "63",
-      "72"
+      "8",
+      "9",
+      "11",
+      "13"
     ]
   },
   {
     "tier": 3,
-    "question": "Area of a 8 × 12 rectangle = ?",
-    "answer": "96",
-    "choices": [
-      "104",
-      "20",
-      "80",
-      "96"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "Area of a 5 × 5 square = ?",
+    "question": "Evaluate: 3² + 4².",
     "answer": "25",
     "choices": [
-      "10",
+      "14",
+      "25",
+      "49",
+      "7"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "A dice is rolled twice. What is the probability of getting 6 both times?",
+    "answer": "1/36",
+    "choices": [
+      "1/6",
+      "1/12",
+      "1/36",
+      "2/36"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Solve for n: n/5 = -3.",
+    "answer": "-15",
+    "choices": [
+      "-8",
+      "-15",
+      "15",
+      "-2"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is (-3) × (-4) + (-5)?",
+    "answer": "7",
+    "choices": [
+      "-17",
+      "17",
+      "7",
+      "-7"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "If a circle's circumference is 62.8 cm, what is its radius? (Use pi = 3.14)",
+    "answer": "10 cm",
+    "choices": [
+      "5 cm",
+      "10 cm",
+      "20 cm",
+      "100 cm"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 2 × 5 - 8 ÷ 4?",
+    "answer": "8",
+    "choices": [
+      "1",
+      "5",
+      "8",
+      "12"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Solve for x: x - 3 = 2x + 1.",
+    "answer": "-4",
+    "choices": [
+      "4",
+      "-4",
+      "-2",
+      "2"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the mean of 15, 20, 25, 30, 35?",
+    "answer": "25",
+    "choices": [
       "20",
       "25",
+      "27",
       "30"
     ]
   },
   {
     "tier": 3,
-    "question": "Area of a 6 × 11 rectangle = ?",
-    "answer": "66",
+    "question": "Evaluate: 2³ + 3² - 4.",
+    "answer": "13",
     "choices": [
-      "17",
-      "55",
-      "66",
-      "77"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "Area of a base=10, height=8 triangle (b×h÷2) = ?",
-    "answer": "40",
-    "choices": [
-      "18",
-      "20",
-      "40",
-      "80"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "Area of a base=6, height=9 triangle = ?",
-    "answer": "27",
-    "choices": [
-      "15",
-      "27",
-      "30",
-      "54"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "Area of a 4 × 4 square = ?",
-    "answer": "16",
-    "choices": [
-      "12",
-      "16",
-      "20",
-      "8"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "Area of a 9 × 9 square = ?",
-    "answer": "81",
-    "choices": [
-      "18",
-      "72",
-      "81",
-      "90"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "Which is prime?",
-    "answer": "17",
-    "choices": [
-      "15",
-      "17",
+      "11",
+      "13",
       "21",
-      "25"
+      "9"
     ]
   },
   {
     "tier": 3,
-    "question": "Which is NOT prime?",
-    "answer": "27",
+    "question": "What is (-6)² ÷ 3?",
+    "answer": "12",
     "choices": [
-      "17",
-      "23",
-      "27",
-      "29"
+      "-12",
+      "12",
+      "4",
+      "-4"
     ]
   },
   {
     "tier": 3,
-    "question": "How many primes between 10 and 20?",
-    "answer": "4",
+    "question": "A bag has 5 white and 3 black balls. If one is drawn at random, what is the probability it is white?",
+    "answer": "5/8",
     "choices": [
+      "3/8",
+      "5/8",
+      "5/3",
+      "3/5"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Which value of x satisfies 3x + 6 = 0?",
+    "answer": "-2",
+    "choices": [
+      "-2",
+      "2",
+      "-3",
+      "3"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the area of a circle with radius 3 cm? (Use pi = 3.14)",
+    "answer": "28.26 cm²",
+    "choices": [
+      "9.42 cm²",
+      "18.84 cm²",
+      "28.26 cm²",
+      "56.52 cm²"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 10 - (2 + 3) × 1 + 6 ÷ 2?",
+    "answer": "8",
+    "choices": [
+      "6",
+      "7",
+      "8",
+      "10"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Solve: 5(2x + 1) = 35. What is x?",
+    "answer": "3",
+    "choices": [
+      "2",
       "3",
       "4",
+      "7"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "A coin is flipped three times. What is the probability of getting exactly 3 tails?",
+    "answer": "1/8",
+    "choices": [
+      "1/2",
+      "1/4",
+      "1/6",
+      "1/8"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the median of 7, 3, 9, 1, 5, 11?",
+    "answer": "6",
+    "choices": [
       "5",
+      "6",
+      "7",
+      "4"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Evaluate: (-2)³.",
+    "answer": "-8",
+    "choices": [
+      "-6",
+      "-8",
+      "8",
       "6"
     ]
   },
   {
     "tier": 3,
+    "question": "Solve for x: 6x = 4x + 10.",
+    "answer": "5",
+    "choices": [
+      "2",
+      "5",
+      "10",
+      "-5"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 16 + (-4) × (-3) - 2²?",
+    "answer": "24",
+    "choices": [
+      "16",
+      "24",
+      "-8",
+      "28"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the circumference of a circle with radius 10 cm? (Use pi = 3.14)",
+    "answer": "62.8 cm",
+    "choices": [
+      "31.4 cm",
+      "62.8 cm",
+      "314 cm",
+      "100 cm"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 4x - 3y when x = 5 and y = 2?",
+    "answer": "14",
+    "choices": [
+      "10",
+      "12",
+      "14",
+      "20"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "A number is 3 more than twice another. If the smaller is 4, what is the larger?",
+    "answer": "11",
+    "choices": [
+      "9",
+      "10",
+      "11",
+      "12"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Evaluate: 3 + 6 ÷ 2 × 4 - 1.",
+    "answer": "14",
+    "choices": [
+      "10",
+      "12",
+      "14",
+      "18"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the probability of NOT drawing a spade from a 52-card deck?",
+    "answer": "3/4",
+    "choices": [
+      "1/4",
+      "1/2",
+      "3/4",
+      "13/52"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the mode of 1, 2, 2, 3, 3, 3, 4?",
+    "answer": "3",
+    "choices": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Solve for a: 3a - 7 = 2a + 5.",
+    "answer": "12",
+    "choices": [
+      "2",
+      "7",
+      "12",
+      "-12"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is (-5)² + (-3)²?",
+    "answer": "34",
+    "choices": [
+      "64",
+      "34",
+      "-34",
+      "16"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "If a circle's area is 28.26 cm², what is its radius? (Use pi = 3.14)",
+    "answer": "3 cm",
+    "choices": [
+      "3 cm",
+      "6 cm",
+      "9 cm",
+      "2 cm"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the mean of -4, -1, 0, 3, 7?",
+    "answer": "1",
+    "choices": [
+      "0",
+      "1",
+      "2",
+      "-1"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Evaluate: 2⁴ - (3 - 1)³.",
+    "answer": "8",
+    "choices": [
+      "8",
+      "0",
+      "24",
+      "16"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Solve for x: x + 2x + 3x = 36.",
+    "answer": "6",
+    "choices": [
+      "4",
+      "6",
+      "9",
+      "12"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "If P(A) = 0.4 and P(B) = 0.6 and A and B are complementary, what is P(A) + P(B)?",
+    "answer": "1",
+    "choices": [
+      "0.4",
+      "0.6",
+      "1",
+      "0.24"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is 5 - 2 × (3 + 1) ÷ 4?",
+    "answer": "3",
+    "choices": [
+      "3",
+      "1.5",
+      "7",
+      "0"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the median of 10, 20, 30, 40?",
+    "answer": "25",
+    "choices": [
+      "20",
+      "25",
+      "30",
+      "15"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the slope of the line through (2, 3) and (6, 11)?",
+    "answer": "2",
+    "choices": [
+      "1/2",
+      "2",
+      "4",
+      "8"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the slope of the line y = 3x - 4?",
+    "answer": "3",
+    "choices": [
+      "-4",
+      "3",
+      "3x",
+      "7"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the y-intercept of y = -2x + 5?",
+    "answer": "5",
+    "choices": [
+      "-2",
+      "5",
+      "-5",
+      "2"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the square root of 144?",
+    "answer": "12",
+    "choices": [
+      "11",
+      "12",
+      "13",
+      "14"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the square root of 225?",
+    "answer": "15",
+    "choices": [
+      "13",
+      "14",
+      "15",
+      "16"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the square root of 49?",
+    "answer": "7",
+    "choices": [
+      "6",
+      "7",
+      "8",
+      "9"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "A right triangle has legs of 3 cm and 4 cm. What is the hypotenuse?",
+    "answer": "5 cm",
+    "choices": [
+      "5 cm",
+      "6 cm",
+      "7 cm",
+      "sqrt(7) cm"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "A right triangle has legs of 5 m and 12 m. What is the hypotenuse?",
+    "answer": "13 m",
+    "choices": [
+      "11 m",
+      "13 m",
+      "17 m",
+      "sqrt(119) m"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "A right triangle has legs of 8 and 6. What is the hypotenuse?",
+    "answer": "10",
+    "choices": [
+      "9",
+      "10",
+      "11",
+      "14"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the volume of a cube with side length 4 cm?",
+    "answer": "64 cm³",
+    "choices": [
+      "16 cm³",
+      "48 cm³",
+      "64 cm³",
+      "96 cm³"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the volume of a rectangular prism that is 5 cm × 4 cm × 3 cm?",
+    "answer": "60 cm³",
+    "choices": [
+      "47 cm³",
+      "60 cm³",
+      "94 cm³",
+      "120 cm³"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the volume of a cylinder with radius 3 cm and height 7 cm? (Use pi = 3.14)",
+    "answer": "197.82 cm³",
+    "choices": [
+      "65.94 cm³",
+      "131.88 cm³",
+      "197.82 cm³",
+      "395.64 cm³"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Write 0.00045 in scientific notation.",
+    "answer": "4.5 × 10⁻⁴",
+    "choices": [
+      "45 × 10⁻⁵",
+      "4.5 × 10⁻⁴",
+      "4.5 × 10⁴",
+      "0.45 × 10⁻³"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Write 3,700,000 in scientific notation.",
+    "answer": "3.7 × 10⁶",
+    "choices": [
+      "3.7 × 10⁵",
+      "3.7 × 10⁶",
+      "37 × 10⁵",
+      "3.7 × 10⁷"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 2.5 × 10³ in standard form?",
+    "answer": "2,500",
+    "choices": [
+      "250",
+      "2,500",
+      "25,000",
+      "0.0025"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 2³ × 2⁴?",
+    "answer": "128",
+    "choices": [
+      "64",
+      "128",
+      "256",
+      "512"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 5³ ÷ 5²?",
+    "answer": "5",
+    "choices": [
+      "1",
+      "5",
+      "25",
+      "125"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is (3²)³?",
+    "answer": "729",
+    "choices": [
+      "27",
+      "81",
+      "729",
+      "6561"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the slope of a horizontal line?",
+    "answer": "0",
+    "choices": [
+      "0",
+      "1",
+      "Undefined",
+      "Infinity"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the slope of a vertical line?",
+    "answer": "Undefined",
+    "choices": [
+      "0",
+      "1",
+      "Undefined",
+      "-1"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the equation of a line with slope 2 and y-intercept -3?",
+    "answer": "y = 2x - 3",
+    "choices": [
+      "y = -3x + 2",
+      "y = 2x - 3",
+      "y = 2x + 3",
+      "y = 3x - 2"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Solve the system: y = x + 2 and y = 3x - 4. What is x?",
+    "answer": "3",
+    "choices": [
+      "1",
+      "2",
+      "3",
+      "5"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the volume of a cone with radius 3 cm and height 8 cm? (Use pi = 3.14)",
+    "answer": "75.36 cm³",
+    "choices": [
+      "25.12 cm³",
+      "75.36 cm³",
+      "226.08 cm³",
+      "37.68 cm³"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the mean of: 5, 7, 9, 11, 13, 15?",
+    "answer": "10",
+    "choices": [
+      "9",
+      "10",
+      "11",
+      "12"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What does standard deviation measure?",
+    "answer": "Spread of data around the mean",
+    "choices": [
+      "The average value",
+      "The most common value",
+      "The middle value",
+      "Spread of data around the mean"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Solve the equation: 2x - 3 = x + 5.",
+    "answer": "8",
+    "choices": [
+      "2",
+      "4",
+      "8",
+      "-8"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the slope of a line parallel to y = 4x + 1?",
+    "answer": "4",
+    "choices": [
+      "1",
+      "-4",
+      "4",
+      "1/4"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the slope of a line perpendicular to y = 2x + 3?",
+    "answer": "-1/2",
+    "choices": [
+      "2",
+      "-2",
+      "1/2",
+      "-1/2"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "A sphere has radius 3 cm. What is its volume? (V = 4/3 × pi × r³, use pi = 3.14)",
+    "answer": "113.04 cm³",
+    "choices": [
+      "28.26 cm³",
+      "113.04 cm³",
+      "339.12 cm³",
+      "56.52 cm³"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is sqrt(2) × sqrt(8)?",
+    "answer": "4",
+    "choices": [
+      "2",
+      "4",
+      "8",
+      "sqrt(16)"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is x⁰ for any non-zero x?",
+    "answer": "1",
+    "choices": [
+      "0",
+      "1",
+      "x",
+      "Undefined"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the equation of the x-axis?",
+    "answer": "y = 0",
+    "choices": [
+      "x = 0",
+      "y = 0",
+      "x = y",
+      "y = 1"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Solve the system: 2x + y = 7 and x - y = 2. What is x?",
+    "answer": "3",
+    "choices": [
+      "1",
+      "2",
+      "3",
+      "5"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the volume of a pyramid with base area 24 cm² and height 9 cm?",
+    "answer": "72 cm³",
+    "choices": [
+      "36 cm³",
+      "72 cm³",
+      "108 cm³",
+      "216 cm³"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 4² × (1/2)²?",
+    "answer": "4",
+    "choices": [
+      "2",
+      "4",
+      "8",
+      "16"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is sqrt(3² + 4²)?",
+    "answer": "5",
+    "choices": [
+      "5",
+      "7",
+      "25",
+      "sqrt(7)"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "If y = 2x² and x = 3, what is y?",
+    "answer": "18",
+    "choices": [
+      "12",
+      "18",
+      "36",
+      "6"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 3.6 × 10⁻² in standard form?",
+    "answer": "0.036",
+    "choices": [
+      "0.036",
+      "0.36",
+      "3.6",
+      "360"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "A right triangle has hypotenuse 10 m and one leg 6 m. What is the other leg?",
+    "answer": "8 m",
+    "choices": [
+      "6 m",
+      "8 m",
+      "7 m",
+      "4 m"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Solve for x: 3x² = 75. What are the solutions?",
+    "answer": "5 or -5",
+    "choices": [
+      "5",
+      "-5",
+      "5 or -5",
+      "25"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The line y = -x + 4 crosses the x-axis at which point?",
+    "answer": "(4, 0)",
+    "choices": [
+      "(0, 4)",
+      "(4, 0)",
+      "(-4, 0)",
+      "(0, -4)"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the volume of a cube with side length 6 cm?",
+    "answer": "216 cm³",
+    "choices": [
+      "36 cm³",
+      "72 cm³",
+      "216 cm³",
+      "120 cm³"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 2 to the power of 5 (2⁵)?",
+    "answer": "32",
+    "choices": [
+      "10",
+      "16",
+      "32",
+      "64"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 10⁻³ in standard form?",
+    "answer": "0.001",
+    "choices": [
+      "1000",
+      "100",
+      "0.001",
+      "0.01"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the slope of the line through (0, 5) and (3, 5)?",
+    "answer": "0",
+    "choices": [
+      "0",
+      "5",
+      "Undefined",
+      "5/3"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "A cone and a cylinder share the same base and height. The cone's volume is what fraction of the cylinder's?",
+    "answer": "1/3",
+    "choices": [
+      "1/2",
+      "1/3",
+      "2/3",
+      "1/4"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is sqrt(100) + sqrt(81)?",
+    "answer": "19",
+    "choices": [
+      "13",
+      "17",
+      "19",
+      "21"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Solve: 2(x + 4) = 3(x - 1). What is x?",
+    "answer": "11",
+    "choices": [
+      "5",
+      "7",
+      "11",
+      "-5"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 4.5 × 10⁴ + 2.5 × 10⁴?",
+    "answer": "7 × 10⁴",
+    "choices": [
+      "7 × 10⁴",
+      "7 × 10⁸",
+      "6 × 10⁴",
+      "70,000"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which linear equation has a slope of -3?",
+    "answer": "y = -3x + 1",
+    "choices": [
+      "y = 3x - 1",
+      "y = x - 3",
+      "y = -3x + 1",
+      "y = -x + 3"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "A rectangular prism is 10 cm × 5 cm × 4 cm. What is its surface area?",
+    "answer": "220 cm²",
+    "choices": [
+      "200 cm²",
+      "220 cm²",
+      "240 cm²",
+      "200 cm³"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the value of 3⁻²?",
+    "answer": "1/9",
+    "choices": [
+      "-9",
+      "-6",
+      "1/9",
+      "9"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Find the slope of the line: 4x - 2y = 8.",
+    "answer": "2",
+    "choices": [
+      "4",
+      "2",
+      "-4",
+      "-2"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the surface area of a cube with side length 5 cm?",
+    "answer": "150 cm²",
+    "choices": [
+      "25 cm²",
+      "100 cm²",
+      "125 cm²",
+      "150 cm²"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 9^(1/2)?",
+    "answer": "3",
+    "choices": [
+      "3",
+      "4.5",
+      "81",
+      "9"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Solve the system: x + y = 5 and x - y = 1. What is y?",
+    "answer": "2",
+    "choices": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "A ladder 13 m long leans against a wall. Its base is 5 m from the wall. How high up the wall does it reach?",
+    "answer": "12 m",
+    "choices": [
+      "8 m",
+      "10 m",
+      "12 m",
+      "13 m"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 7² + 7⁰?",
+    "answer": "50",
+    "choices": [
+      "49",
+      "50",
+      "56",
+      "64"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which value of x satisfies 5x - 2 = 3x + 8?",
+    "answer": "5",
+    "choices": [
+      "3",
+      "5",
+      "6",
+      "8"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is (2x³)(3x²)?",
+    "answer": "6x⁵",
+    "choices": [
+      "5x⁵",
+      "6x⁵",
+      "6x⁶",
+      "5x⁶"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the volume of a cylinder with diameter 10 cm and height 5 cm? (Use pi = 3.14)",
+    "answer": "392.5 cm³",
+    "choices": [
+      "157 cm³",
+      "314 cm³",
+      "392.5 cm³",
+      "785 cm³"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 8^(2/3)?",
+    "answer": "4",
+    "choices": [
+      "2",
+      "4",
+      "8",
+      "16"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 16^(3/4)?",
+    "answer": "8",
+    "choices": [
+      "4",
+      "8",
+      "12",
+      "16"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The line y = 5 is parallel to which axis?",
+    "answer": "The x-axis",
+    "choices": [
+      "The x-axis",
+      "The y-axis",
+      "Both axes",
+      "Neither axis"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the y-value when x = 4 for y = 3x + 1?",
+    "answer": "13",
+    "choices": [
+      "7",
+      "9",
+      "13",
+      "16"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is (3.0 × 10⁸) ÷ (6.0 × 10²)?",
+    "answer": "5 × 10⁵",
+    "choices": [
+      "0.5 × 10⁶",
+      "5 × 10⁵",
+      "5 × 10⁶",
+      "0.5 × 10⁵"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "A data set is: 5, 8, 10, 12, 15. What is the interquartile range?",
+    "answer": "7",
+    "choices": [
+      "5",
+      "7",
+      "10",
+      "12"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is (a³)² simplified?",
+    "answer": "a⁶",
+    "choices": [
+      "a⁵",
+      "a⁶",
+      "a⁹",
+      "2a³"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Solve: |x - 3| = 5. What are the solutions?",
+    "answer": "8 or -2",
+    "choices": [
+      "8 or -2",
+      "8 or 2",
+      "3 or -3",
+      "-8 or 2"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the approximate value of sqrt(50)?",
+    "answer": "7.07",
+    "choices": [
+      "5.5",
+      "7.07",
+      "7.5",
+      "8"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "A train travels at 80 mph. How far does it go in 2 hours and 30 minutes?",
+    "answer": "200 miles",
+    "choices": [
+      "160 miles",
+      "180 miles",
+      "200 miles",
+      "240 miles"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 25^(1/2) × 16^(1/2)?",
+    "answer": "20",
+    "choices": [
+      "10",
+      "15",
+      "20",
+      "25"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Solve the system: 3x + 2y = 12 and x = 2. What is y?",
+    "answer": "3",
+    "choices": [
+      "2",
+      "3",
+      "4",
+      "6"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the coefficient of x in 7x² + 3x - 5?",
+    "answer": "3",
+    "choices": [
+      "7",
+      "3",
+      "-5",
+      "2"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the range of the data: 4, 9, 2, 15, 7?",
+    "answer": "13",
+    "choices": [
+      "9",
+      "11",
+      "13",
+      "15"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 2⁻³?",
+    "answer": "1/8",
+    "choices": [
+      "-8",
+      "-6",
+      "1/8",
+      "8"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is x² - y² when x = 7 and y = 3?",
+    "answer": "40",
+    "choices": [
+      "16",
+      "40",
+      "100",
+      "58"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Which of these is a perfect square?",
+    "answer": "169",
+    "choices": [
+      "150",
+      "168",
+      "169",
+      "171"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the volume of a rectangular pyramid with base 6 cm × 4 cm and height 9 cm?",
+    "answer": "72 cm³",
+    "choices": [
+      "36 cm³",
+      "54 cm³",
+      "72 cm³",
+      "216 cm³"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Write 58,000 in scientific notation.",
+    "answer": "5.8 × 10⁴",
+    "choices": [
+      "5.8 × 10³",
+      "5.8 × 10⁴",
+      "58 × 10³",
+      "0.58 × 10⁵"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the slope of the line through (1, -3) and (4, 3)?",
+    "answer": "2",
+    "choices": [
+      "1",
+      "2",
+      "3",
+      "6"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Solve: x² - 5x + 6 = 0. What are the solutions?",
+    "answer": "2 and 3",
+    "choices": [
+      "2 and 3",
+      "-2 and -3",
+      "1 and 6",
+      "-1 and -6"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Solve: x² + x - 12 = 0. What are the solutions?",
+    "answer": "3 and -4",
+    "choices": [
+      "3 and -4",
+      "-3 and 4",
+      "4 and 3",
+      "-4 and -3"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Solve: x² - 9 = 0. What are the solutions?",
+    "answer": "3 and -3",
+    "choices": [
+      "9 and -9",
+      "3 and -3",
+      "3 only",
+      "-3 only"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Solve: x² + 4x + 4 = 0.",
+    "answer": "-2 (double root)",
+    "choices": [
+      "2 and -2",
+      "4 and -4",
+      "-2 (double root)",
+      "2 (double root)"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the discriminant of x² - 4x + 4 = 0?",
+    "answer": "0",
+    "choices": [
+      "0",
+      "16",
+      "8",
+      "-16"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Use the quadratic formula to solve 2x² + 3x - 2 = 0. What are the solutions?",
+    "answer": "1/2 and -2",
+    "choices": [
+      "1/2 and -2",
+      "2 and -1/2",
+      "-1/2 and 2",
+      "1 and -2"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Solve the system: 2x + y = 8 and x - y = 1. What is x?",
+    "answer": "3",
+    "choices": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Solve: x² - 7x + 10 = 0.",
+    "answer": "2 and 5",
+    "choices": [
+      "2 and 5",
+      "-2 and -5",
+      "1 and 10",
+      "-1 and -10"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is sin(30°)?",
+    "answer": "1/2",
+    "choices": [
+      "sqrt(2)/2",
+      "1/2",
+      "sqrt(3)/2",
+      "1"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is cos(60°)?",
+    "answer": "1/2",
+    "choices": [
+      "sqrt(3)/2",
+      "1/2",
+      "sqrt(2)/2",
+      "0"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is tan(45°)?",
+    "answer": "1",
+    "choices": [
+      "0",
+      "1/2",
+      "1",
+      "sqrt(3)"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is sin(90°)?",
+    "answer": "1",
+    "choices": [
+      "0",
+      "1/2",
+      "sqrt(2)/2",
+      "1"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is cos(0°)?",
+    "answer": "1",
+    "choices": [
+      "0",
+      "1/2",
+      "sqrt(2)/2",
+      "1"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "A right triangle has opposite side 3 and hypotenuse 5. What is the sine of that angle?",
+    "answer": "3/5",
+    "choices": [
+      "3/4",
+      "3/5",
+      "4/5",
+      "5/3"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "A right triangle has adjacent side 5 and hypotenuse 13. What is the cosine of that angle?",
+    "answer": "5/13",
+    "choices": [
+      "5/12",
+      "12/13",
+      "5/13",
+      "13/5"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is log base 10 of 1000?",
+    "answer": "3",
+    "choices": [
+      "2",
+      "3",
+      "4",
+      "10"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is log base 2 of 8?",
+    "answer": "3",
+    "choices": [
+      "2",
+      "3",
+      "4",
+      "8"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is log base 2 of 1?",
+    "answer": "0",
+    "choices": [
+      "0",
+      "1",
+      "2",
+      "Undefined"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is log base 10 of 0.01?",
+    "answer": "-2",
+    "choices": [
+      "-3",
+      "-2",
+      "2",
+      "3"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Factor: x² - 16.",
+    "answer": "(x - 4)(x + 4)",
+    "choices": [
+      "(x - 4)²",
+      "(x + 4)²",
+      "(x - 4)(x + 4)",
+      "(x - 8)(x + 2)"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Factor: x² + 5x + 6.",
+    "answer": "(x + 2)(x + 3)",
+    "choices": [
+      "(x + 1)(x + 6)",
+      "(x + 2)(x + 3)",
+      "(x - 2)(x - 3)",
+      "(x + 5)(x + 1)"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Factor: 2x² + 8x.",
+    "answer": "2x(x + 4)",
+    "choices": [
+      "2(x + 4)",
+      "x(2x + 8)",
+      "2x(x + 4)",
+      "2x² + 8x"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Factor: x² - 6x + 9.",
+    "answer": "(x - 3)²",
+    "choices": [
+      "(x - 3)(x + 3)",
+      "(x - 3)²",
+      "(x + 3)²",
+      "(x - 9)(x - 1)"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Simplify: x³ × x⁵.",
+    "answer": "x⁸",
+    "choices": [
+      "x⁸",
+      "x¹⁵",
+      "2x⁸",
+      "x²"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Simplify: x⁸ ÷ x³.",
+    "answer": "x⁵",
+    "choices": [
+      "x⁵",
+      "x¹¹",
+      "x²⁴",
+      "x³"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Simplify: (2x²y)³.",
+    "answer": "8x⁶y³",
+    "choices": [
+      "6x⁶y³",
+      "8x⁵y³",
+      "8x⁶y³",
+      "8x⁶y"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the vertex of the parabola y = x² - 4x + 3?",
+    "answer": "(2, -1)",
+    "choices": [
+      "(-2, 3)",
+      "(2, -1)",
+      "(4, 3)",
+      "(-4, 1)"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which direction does the parabola y = -x² + 2x open?",
+    "answer": "Downward",
+    "choices": [
+      "Upward",
+      "Downward",
+      "Left",
+      "Right"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is sin(60°)?",
+    "answer": "sqrt(3)/2",
+    "choices": [
+      "1/2",
+      "sqrt(2)/2",
+      "sqrt(3)/2",
+      "sqrt(3)"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is cos(30°)?",
+    "answer": "sqrt(3)/2",
+    "choices": [
+      "1/2",
+      "sqrt(2)/2",
+      "sqrt(3)/2",
+      "1"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is tan(60°)?",
+    "answer": "sqrt(3)",
+    "choices": [
+      "1",
+      "sqrt(2)",
+      "sqrt(3)",
+      "1/sqrt(3)"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Solve: x² + 2x - 15 = 0.",
+    "answer": "3 and -5",
+    "choices": [
+      "3 and -5",
+      "5 and -3",
+      "-5 and -3",
+      "5 and 3"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is log base 3 of 27?",
+    "answer": "3",
+    "choices": [
+      "2",
+      "3",
+      "9",
+      "27"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the axis of symmetry for y = x² - 6x + 8?",
+    "answer": "x = 3",
+    "choices": [
+      "x = 3",
+      "x = -3",
+      "x = 6",
+      "x = 8"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Solve the system: x² + y = 5 and y = x + 1. What are the x-values?",
+    "answer": "2 and -2",
+    "choices": [
+      "1 and -2",
+      "2 and -2",
+      "2 and 2",
+      "-1 and 2"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What are the roots of y = 2(x - 1)(x + 3)?",
+    "answer": "1 and -3",
+    "choices": [
+      "-1 and 3",
+      "1 and -3",
+      "2 and 6",
+      "-2 and -6"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Simplify: log(a) + log(b).",
+    "answer": "log(ab)",
+    "choices": [
+      "log(a + b)",
+      "log(ab)",
+      "log(a/b)",
+      "log(a) × log(b)"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Simplify: log(a) - log(b).",
+    "answer": "log(a/b)",
+    "choices": [
+      "log(a - b)",
+      "log(a/b)",
+      "log(a × b)",
+      "log(b/a)"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Simplify: n × log(a).",
+    "answer": "log(aⁿ)",
+    "choices": [
+      "log(na)",
+      "log(aⁿ)",
+      "n + log(a)",
+      "log(a/n)"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "A right triangle has a 30° angle and opposite side 5. What is the hypotenuse?",
+    "answer": "10",
+    "choices": [
+      "5sqrt(3)",
+      "10",
+      "5sqrt(2)",
+      "5"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Solve: 3^x = 27.",
+    "answer": "3",
+    "choices": [
+      "2",
+      "3",
+      "9",
+      "27"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Solve: 2^x = 64.",
+    "answer": "6",
+    "choices": [
+      "4",
+      "5",
+      "6",
+      "8"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the quadratic formula for ax² + bx + c = 0?",
+    "answer": "x = (-b ± sqrt(b²-4ac)) / 2a",
+    "choices": [
+      "x = b ± sqrt(b²-4ac)",
+      "x = -b / 2a",
+      "x = (-b ± sqrt(b²-4ac)) / 2a",
+      "x = (b ± sqrt(b²-4ac)) / 2a"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Factor completely: 3x² - 12.",
+    "answer": "3(x - 2)(x + 2)",
+    "choices": [
+      "3(x - 4)",
+      "3(x² - 4)",
+      "3(x - 2)(x + 2)",
+      "3x(x - 4)"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Solve: x² = 7. What is x?",
+    "answer": "±sqrt(7)",
+    "choices": [
+      "7/2",
+      "±sqrt(7)",
+      "49",
+      "sqrt(7) only"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is tan(30°)?",
+    "answer": "1/sqrt(3)",
+    "choices": [
+      "sqrt(3)",
+      "1/sqrt(3)",
+      "1",
+      "1/2"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Expand: (x + 3)².",
+    "answer": "x² + 6x + 9",
+    "choices": [
+      "x² + 9",
+      "x² + 3x + 9",
+      "x² + 6x + 9",
+      "x² + 6x + 6"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Expand: (2x - 1)(x + 4).",
+    "answer": "2x² + 7x - 4",
+    "choices": [
+      "2x² + 8x - 4",
+      "2x² + 7x - 4",
+      "2x² + 7x + 4",
+      "2x² - 4"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is log base 5 of 125?",
+    "answer": "3",
+    "choices": [
+      "2",
+      "3",
+      "5",
+      "25"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Solve: 4x² - 1 = 0.",
+    "answer": "1/2 and -1/2",
+    "choices": [
+      "1/4 and -1/4",
+      "1/2 and -1/2",
+      "1 and -1",
+      "2 and -2"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which expression equals e⁰?",
+    "answer": "1",
+    "choices": [
+      "0",
+      "1",
+      "e",
+      "Undefined"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Find the roots of f(x) = x² - 2x - 8.",
+    "answer": "4 and -2",
+    "choices": [
+      "4 and -2",
+      "-4 and 2",
+      "2 and -4",
+      "4 and 2"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Simplify: (x²y³) / (xy).",
+    "answer": "xy²",
+    "choices": [
+      "x²y²",
+      "xy²",
+      "x³y⁴",
+      "y²/x"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the sum of the roots of x² - 7x + 10 = 0?",
+    "answer": "7",
+    "choices": [
+      "5",
+      "7",
+      "10",
+      "-7"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the product of the roots of x² - 7x + 10 = 0?",
+    "answer": "10",
+    "choices": [
+      "7",
+      "10",
+      "-10",
+      "17"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Solve: (x + 2)² = 25.",
+    "answer": "3 and -7",
+    "choices": [
+      "3 and -7",
+      "5 and -5",
+      "7 and -3",
+      "5 and 2"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Factor: x³ - x.",
+    "answer": "x(x - 1)(x + 1)",
+    "choices": [
+      "x(x - 1)",
+      "x(x + 1)²",
+      "x(x - 1)(x + 1)",
+      "x²(x - 1)"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the y-intercept of y = x² - 3x + 2?",
+    "answer": "2",
+    "choices": [
+      "-3",
+      "2",
+      "1",
+      "0"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which equation represents an exponential function?",
+    "answer": "y = 3^x",
+    "choices": [
+      "y = 3x",
+      "y = x³",
+      "y = 3^x",
+      "y = x + 3"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Solve: log base 2 of x = 5.",
+    "answer": "32",
+    "choices": [
+      "10",
+      "25",
+      "32",
+      "64"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the value of sin²(θ) + cos²(θ) for any angle θ?",
+    "answer": "1",
+    "choices": [
+      "0",
+      "1",
+      "2",
+      "Depends on θ"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Solve: 3x² - 27 = 0.",
+    "answer": "3 and -3",
+    "choices": [
+      "9 and -9",
+      "3 and -3",
+      "sqrt(9) and -sqrt(9)",
+      "1 and -9"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What are the x-intercepts of y = (x - 5)(x + 2)?",
+    "answer": "5 and -2",
+    "choices": [
+      "5 and 2",
+      "-5 and 2",
+      "5 and -2",
+      "-5 and -2"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Expand: (x - 4)(x + 4).",
+    "answer": "x² - 16",
+    "choices": [
+      "x² + 16",
+      "x² - 16",
+      "x² - 8x + 16",
+      "x² + 8x - 16"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is sin(45°)?",
+    "answer": "sqrt(2)/2",
+    "choices": [
+      "1/2",
+      "sqrt(2)/2",
+      "sqrt(3)/2",
+      "1"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "A right triangle has a hypotenuse of 10 and an angle of 60°. What is the length of the adjacent side?",
+    "answer": "5",
+    "choices": [
+      "5",
+      "5sqrt(3)",
+      "10sqrt(3)",
+      "5sqrt(2)"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the range of y = x² + 1?",
+    "answer": "y ≥ 1",
+    "choices": [
+      "y ≥ 0",
+      "y ≥ 1",
+      "All real numbers",
+      "y ≤ 1"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the domain of y = log(x)?",
+    "answer": "x > 0",
+    "choices": [
+      "All real numbers",
+      "x ≥ 0",
+      "x > 0",
+      "x > 1"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Solve: 5^x = 1. What is x?",
+    "answer": "0",
+    "choices": [
+      "0",
+      "1",
+      "5",
+      "Undefined"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Solve: 2x² + 5x - 3 = 0.",
+    "answer": "1/2 and -3",
+    "choices": [
+      "1/2 and -3",
+      "-1/2 and 3",
+      "3 and -1/2",
+      "1 and -3"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which property states that log_a(a^x) = x?",
+    "answer": "Inverse property of logarithms",
+    "choices": [
+      "Product rule",
+      "Power rule",
+      "Inverse property of logarithms",
+      "Change of base rule"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Factor: x² + 7x + 12.",
+    "answer": "(x + 3)(x + 4)",
+    "choices": [
+      "(x + 2)(x + 6)",
+      "(x + 3)(x + 4)",
+      "(x + 1)(x + 12)",
+      "(x + 6)(x + 2)"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the discriminant of x² + 2x + 5 = 0?",
+    "answer": "-16",
+    "choices": [
+      "24",
+      "16",
+      "-16",
+      "4"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "How many real solutions does x² + 2x + 5 = 0 have?",
+    "answer": "None",
+    "choices": [
+      "One",
+      "Two",
+      "None",
+      "Infinitely many"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Simplify: (3xy²)².",
+    "answer": "9x²y⁴",
+    "choices": [
+      "6xy⁴",
+      "9x²y⁴",
+      "9x²y²",
+      "6x²y⁴"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Solve for x: log base 10 of x = 2.",
+    "answer": "100",
+    "choices": [
+      "10",
+      "20",
+      "100",
+      "1000"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the vertex of y = -(x + 1)² + 4?",
+    "answer": "(-1, 4)",
+    "choices": [
+      "(1, 4)",
+      "(-1, -4)",
+      "(-1, 4)",
+      "(1, -4)"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Factor: 6x² + 11x + 4.",
+    "answer": "(2x + 1)(3x + 4)",
+    "choices": [
+      "(6x + 1)(x + 4)",
+      "(2x + 1)(3x + 4)",
+      "(3x + 1)(2x + 4)",
+      "(6x + 4)(x + 1)"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 4^(3/2)?",
+    "answer": "8",
+    "choices": [
+      "6",
+      "8",
+      "12",
+      "16"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Simplify: sqrt(72).",
+    "answer": "6sqrt(2)",
+    "choices": [
+      "8sqrt(3)",
+      "6sqrt(2)",
+      "4sqrt(6)",
+      "36sqrt(2)"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Solve: x² - 3x = 0.",
+    "answer": "0 and 3",
+    "choices": [
+      "0 and 3",
+      "3 only",
+      "0 only",
+      "-3 and 3"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The parabola y = ax² + bx + c opens upward when:",
+    "answer": "a > 0",
+    "choices": [
+      "a > 0",
+      "a < 0",
+      "b > 0",
+      "c > 0"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is log base 10 of 10?",
+    "answer": "1",
+    "choices": [
+      "0",
+      "1",
+      "10",
+      "100"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is log base 2 of 16?",
+    "answer": "4",
+    "choices": [
+      "2",
+      "4",
+      "8",
+      "16"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Solve: x² - 4x - 12 = 0.",
+    "answer": "6 and -2",
+    "choices": [
+      "6 and -2",
+      "-6 and 2",
+      "4 and -3",
+      "3 and -4"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Expand: (x + 1)³.",
+    "answer": "x³ + 3x² + 3x + 1",
+    "choices": [
+      "x³ + 1",
+      "x³ + 3x + 1",
+      "x³ + 3x² + 3x + 1",
+      "3x³ + 3x"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "A right triangle has legs a and b and hypotenuse c. Which formula gives c?",
+    "answer": "c = sqrt(a² + b²)",
+    "choices": [
+      "c = a + b",
+      "c = sqrt(a + b)",
+      "c = sqrt(a² + b²)",
+      "c = a² + b²"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is cos(45°)?",
+    "answer": "sqrt(2)/2",
+    "choices": [
+      "1/2",
+      "sqrt(3)/2",
+      "sqrt(2)/2",
+      "1"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Solve: 3(x - 2)² = 48.",
+    "answer": "6 and -2",
+    "choices": [
+      "6 and -2",
+      "4 and -4",
+      "6 and 2",
+      "-6 and 2"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is log base 8 of 1?",
+    "answer": "0",
+    "choices": [
+      "0",
+      "1",
+      "8",
+      "Undefined"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Factor: x² - x - 6.",
+    "answer": "(x - 3)(x + 2)",
+    "choices": [
+      "(x + 3)(x - 2)",
+      "(x - 3)(x + 2)",
+      "(x - 6)(x + 1)",
+      "(x + 6)(x - 1)"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Using the quadratic formula, solve x² - 6x + 5 = 0.",
+    "answer": "5 and 1",
+    "choices": [
+      "5 and -1",
+      "-5 and 1",
+      "5 and 1",
+      "-5 and -1"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is tan(0°)?",
+    "answer": "0",
+    "choices": [
+      "0",
+      "1",
+      "Undefined",
+      "Infinity"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Which is the correct factorization of 4x² - 4x + 1?",
+    "answer": "(2x - 1)²",
+    "choices": [
+      "(4x - 1)(x - 1)",
+      "(2x - 1)²",
+      "(2x + 1)²",
+      "(4x + 1)(x - 1)"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Simplify: (x^(1/2))⁴.",
+    "answer": "x²",
+    "choices": [
+      "x²",
+      "x^(1/8)",
+      "4x^(1/2)",
+      "x⁴"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 27^(1/3)?",
+    "answer": "3",
+    "choices": [
+      "3",
+      "9",
+      "27",
+      "81"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Solve: x² + 6x + 9 = 0.",
+    "answer": "-3 (double root)",
+    "choices": [
+      "3 and -3",
+      "-3 (double root)",
+      "3 (double root)",
+      "6 and -9"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 3/4 divided by 1/2?",
+    "answer": "3/2",
+    "choices": [
+      "3/2",
+      "3/8",
+      "1/2",
+      "2/3"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "A store marks up an item by 20%. If it cost \u0000, what is the selling price?",
+    "answer": "\u0000",
+    "choices": [
+      "\u0005",
+      "\u0000",
+      "\u0005",
+      "\u0000"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is the greatest common factor of 24 and 36?",
+    "answer": "12",
+    "choices": [
+      "6",
+      "8",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Express 0.625 as a fraction in lowest terms.",
+    "answer": "5/8",
+    "choices": [
+      "5/8",
+      "6/10",
+      "3/4",
+      "7/10"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "If a recipe calls for 2/3 cup of sugar and you double it, how much sugar do you need?",
+    "answer": "4/3 cups",
+    "choices": [
+      "1 cup",
+      "4/3 cups",
+      "1 1/2 cups",
+      "2 cups"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "What is 15% of 80?",
+    "answer": "12",
+    "choices": [
+      "10",
+      "12",
+      "14",
+      "16"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Solve for x: 3x - 7 = 14",
+    "answer": "7",
+    "choices": [
+      "5",
+      "6",
+      "7",
+      "9"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the area of a circle with radius 5? (Use π ≈ 3.14)",
+    "answer": "78.5",
+    "choices": [
+      "31.4",
+      "78.5",
+      "94.2",
+      "157"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Simplify: 4 + 3 × (8 - 2) ÷ 2",
+    "answer": "13",
+    "choices": [
+      "10",
+      "13",
+      "16",
+      "21"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is -8 + (-5)?",
+    "answer": "-13",
+    "choices": [
+      "-3",
+      "-13",
+      "3",
+      "13"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "If P(A) = 0.4, what is the probability that A does NOT occur?",
+    "answer": "0.6",
+    "choices": [
+      "0.4",
+      "0.5",
+      "0.6",
+      "1.4"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the median of: 3, 7, 9, 2, 5?",
+    "answer": "5",
+    "choices": [
+      "3",
+      "5",
+      "7",
+      "9"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Solve: 2(x + 4) = 18",
+    "answer": "5",
+    "choices": [
+      "3",
+      "4",
+      "5",
+      "7"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the circumference of a circle with diameter 10? (Use π ≈ 3.14)",
+    "answer": "31.4",
+    "choices": [
+      "15.7",
+      "31.4",
+      "62.8",
+      "78.5"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is (-3)²?",
+    "answer": "9",
+    "choices": [
+      "-9",
+      "-6",
+      "6",
+      "9"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "A bag has 4 red and 6 blue marbles. What is the probability of picking red?",
+    "answer": "2/5",
+    "choices": [
+      "1/4",
+      "2/5",
+      "1/2",
+      "2/3"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is the mode of: 4, 7, 4, 9, 2, 4, 7?",
+    "answer": "4",
+    "choices": [
+      "2",
+      "4",
+      "7",
+      "9"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Simplify: 5x + 3x - 2x",
+    "answer": "6x",
+    "choices": [
+      "4x",
+      "5x",
+      "6x",
+      "8x"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the slope of the line y = 3x - 5?",
+    "answer": "3",
+    "choices": [
+      "-5",
+      "1/3",
+      "3",
+      "5"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Solve: x² = 49",
+    "answer": "±7",
+    "choices": [
+      "±6",
+      "±7",
+      "±8",
+      "7"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 4.2 × 10³ in standard form?",
+    "answer": "4200",
+    "choices": [
+      "420",
+      "4200",
+      "42000",
+      "0.0042"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Find the volume of a cube with side length 4.",
+    "answer": "64",
+    "choices": [
+      "16",
+      "48",
+      "64",
+      "96"
+    ]
+  },
+  {
+    "tier": 4,
     "question": "What is √144?",
     "answer": "12",
     "choices": [
@@ -1683,1224 +5324,190 @@
     ]
   },
   {
-    "tier": 3,
-    "question": "What is √169?",
-    "answer": "13",
+    "tier": 4,
+    "question": "If y = 2x + 1, what is y when x = -3?",
+    "answer": "-5",
     "choices": [
-      "12",
-      "13",
-      "14",
-      "15"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "What is √196?",
-    "answer": "14",
-    "choices": [
-      "13",
-      "14",
-      "15",
-      "16"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "What is √225?",
-    "answer": "15",
-    "choices": [
-      "14",
-      "15",
-      "16",
-      "17"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "What is √256?",
-    "answer": "16",
-    "choices": [
-      "14",
-      "15",
-      "16",
-      "18"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "What is √49?",
-    "answer": "7",
-    "choices": [
-      "6",
-      "7",
-      "8",
-      "9"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "What is √81?",
-    "answer": "9",
-    "choices": [
-      "8",
-      "9",
-      "10",
-      "11"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "What is √121?",
-    "answer": "11",
-    "choices": [
-      "10",
-      "11",
-      "12",
-      "13"
+      "-7",
+      "-5",
+      "-3",
+      "-1"
     ]
   },
   {
     "tier": 4,
-    "question": "What is 37 mod 5?",
-    "answer": "2",
-    "choices": [
-      "1",
-      "2",
-      "3",
-      "4"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "What is 43 mod 7?",
-    "answer": "1",
-    "choices": [
-      "0",
-      "1",
-      "2",
-      "3"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "What is 51 mod 8?",
-    "answer": "3",
-    "choices": [
-      "2",
-      "3",
-      "4",
-      "5"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "What is 29 mod 6?",
-    "answer": "5",
-    "choices": [
-      "0",
-      "1",
-      "4",
-      "5"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "What is 100 mod 9?",
-    "answer": "1",
-    "choices": [
-      "0",
-      "1",
-      "2",
-      "3"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "What is 77 mod 11?",
-    "answer": "0",
-    "choices": [
-      "0",
-      "1",
-      "2",
-      "10"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "What is 63 mod 10?",
-    "answer": "3",
-    "choices": [
-      "2",
-      "3",
-      "4",
-      "5"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "What is 88 mod 13?",
-    "answer": "9",
-    "choices": [
-      "8",
-      "9",
-      "10",
-      "11"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "What is 47 mod 4?",
-    "answer": "3",
-    "choices": [
-      "0",
-      "1",
-      "2",
-      "3"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "What is 99 mod 7?",
-    "answer": "1",
-    "choices": [
-      "0",
-      "1",
-      "2",
-      "3"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "What is 72 mod 11?",
-    "answer": "6",
-    "choices": [
-      "5",
-      "6",
-      "7",
-      "8"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "What is 56 mod 9?",
-    "answer": "2",
-    "choices": [
-      "1",
-      "2",
-      "3",
-      "4"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "What is 123 mod 7?",
-    "answer": "4",
-    "choices": [
-      "3",
-      "4",
-      "5",
-      "6"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "What is 144 mod 13?",
-    "answer": "1",
-    "choices": [
-      "0",
-      "1",
-      "2",
-      "3"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "What is 200 mod 11?",
-    "answer": "2",
-    "choices": [
-      "1",
-      "2",
-      "3",
-      "4"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "What is 91 mod 6?",
-    "answer": "1",
-    "choices": [
-      "0",
-      "1",
-      "2",
-      "3"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "LCM of 4 and 6 = ?",
-    "answer": "12",
-    "choices": [
-      "10",
-      "12",
-      "24",
-      "8"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "LCM of 3 and 8 = ?",
-    "answer": "24",
-    "choices": [
-      "11",
-      "16",
-      "24",
-      "8"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "LCM of 6 and 9 = ?",
-    "answer": "18",
-    "choices": [
-      "12",
-      "18",
-      "27",
-      "54"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "LCM of 5 and 12 = ?",
-    "answer": "60",
-    "choices": [
-      "12",
-      "17",
-      "30",
-      "60"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "LCM of 8 and 12 = ?",
-    "answer": "24",
-    "choices": [
-      "20",
-      "24",
-      "48",
-      "96"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "LCM of 7 and 14 = ?",
-    "answer": "14",
-    "choices": [
-      "14",
-      "21",
-      "7",
-      "98"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "LCM of 4 and 10 = ?",
-    "answer": "20",
-    "choices": [
-      "14",
-      "20",
-      "40",
-      "8"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "LCM of 6 and 10 = ?",
-    "answer": "30",
-    "choices": [
-      "16",
-      "30",
-      "4",
-      "60"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "LCM of 9 and 12 = ?",
-    "answer": "36",
-    "choices": [
-      "108",
-      "21",
-      "24",
-      "36"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "LCM of 5 and 8 = ?",
-    "answer": "40",
-    "choices": [
-      "13",
-      "20",
-      "40",
-      "80"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "GCD of 12 and 18 = ?",
-    "answer": "6",
-    "choices": [
-      "3",
-      "4",
-      "6",
-      "9"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "GCD of 24 and 36 = ?",
-    "answer": "12",
-    "choices": [
-      "12",
-      "24",
-      "6",
-      "8"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "GCD of 15 and 25 = ?",
-    "answer": "5",
-    "choices": [
-      "1",
-      "10",
-      "3",
-      "5"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "GCD of 48 and 64 = ?",
-    "answer": "16",
-    "choices": [
-      "16",
-      "32",
-      "4",
-      "8"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "GCD of 30 and 45 = ?",
-    "answer": "15",
-    "choices": [
-      "15",
-      "5",
-      "6",
-      "9"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "GCD of 21 and 35 = ?",
-    "answer": "7",
-    "choices": [
-      "1",
-      "14",
-      "3",
-      "7"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "GCD of 36 and 60 = ?",
-    "answer": "12",
-    "choices": [
-      "12",
-      "18",
-      "6",
-      "9"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "GCD of 56 and 84 = ?",
-    "answer": "28",
-    "choices": [
-      "14",
-      "28",
-      "56",
-      "7"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "How many ways to choose 2 from 5?",
+    "question": "A right triangle has legs of 6 and 8. What is the hypotenuse?",
     "answer": "10",
     "choices": [
-      "10",
-      "15",
-      "20",
-      "5"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "How many ways to choose 2 from 6?",
-    "answer": "15",
-    "choices": [
-      "12",
-      "15",
-      "20",
-      "6"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "How many ways to choose 2 from 7?",
-    "answer": "21",
-    "choices": [
-      "14",
-      "21",
-      "28",
-      "7"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "How many ways to choose 2 from 8?",
-    "answer": "28",
-    "choices": [
-      "16",
-      "28",
-      "36",
-      "56"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "How many ways to choose 3 from 5?",
-    "answer": "10",
-    "choices": [
-      "10",
-      "15",
-      "20",
-      "5"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "How many ways to choose 3 from 6?",
-    "answer": "20",
-    "choices": [
-      "15",
-      "18",
-      "20",
-      "6"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "How many ways to choose 2 from 4?",
-    "answer": "6",
-    "choices": [
-      "12",
-      "4",
-      "6",
-      "8"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "How many ways to choose 2 from 9?",
-    "answer": "36",
-    "choices": [
-      "18",
-      "36",
-      "45",
-      "81"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "Right triangle with legs 3 and 4. Hypotenuse = ?",
-    "answer": "5",
-    "choices": [
-      "5",
-      "6",
-      "7",
-      "8"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "Right triangle with legs 5 and 12. Hypotenuse = ?",
-    "answer": "13",
-    "choices": [
-      "11",
-      "13",
-      "14",
-      "17"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "Right triangle with legs 8 and 15. Hypotenuse = ?",
-    "answer": "17",
-    "choices": [
-      "16",
-      "17",
-      "19",
-      "23"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "Right triangle with legs 7 and 24. Hypotenuse = ?",
-    "answer": "25",
-    "choices": [
-      "22",
-      "25",
-      "28",
-      "30"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "Right triangle with legs 6 and 8. Hypotenuse = ?",
-    "answer": "10",
-    "choices": [
-      "10",
-      "11",
-      "14",
-      "9"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "Right triangle with legs 9 and 40. Hypotenuse = ?",
-    "answer": "41",
-    "choices": [
-      "39",
-      "41",
-      "43",
-      "49"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "Right triangle with legs 20 and 21. Hypotenuse = ?",
-    "answer": "29",
-    "choices": [
-      "27",
-      "29",
-      "30",
-      "41"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "x² - 5x + 6 = 0, one root is 2. Other root = ?",
-    "answer": "3",
-    "choices": [
-      "1",
-      "3",
-      "4",
-      "6"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "x² - 7x + 12 = 0, one root is 3. Other root = ?",
-    "answer": "4",
-    "choices": [
-      "2",
-      "4",
-      "5",
-      "7"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "x² - 9x + 20 = 0, one root is 4. Other root = ?",
-    "answer": "5",
-    "choices": [
-      "3",
-      "5",
-      "6",
-      "9"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "x² - 8x + 15 = 0, one root is 3. Other root = ?",
-    "answer": "5",
-    "choices": [
-      "4",
-      "5",
-      "6",
-      "8"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "x² - 11x + 24 = 0, one root is 8. Other root = ?",
-    "answer": "3",
-    "choices": [
-      "2",
-      "3",
-      "4",
-      "5"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "x² - 6x + 8 = 0, one root is 4. Other root = ?",
-    "answer": "2",
-    "choices": [
-      "1",
-      "2",
-      "3",
-      "6"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "What is log₂(32)?",
-    "answer": "5",
-    "choices": [
-      "4",
-      "5",
-      "6",
-      "16"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "What is log₂(64)?",
-    "answer": "6",
-    "choices": [
-      "5",
-      "6",
-      "7",
-      "32"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "What is log₂(16)?",
-    "answer": "4",
-    "choices": [
-      "3",
-      "4",
-      "5",
-      "8"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "What is log₂(256)?",
-    "answer": "8",
-    "choices": [
-      "7",
-      "8",
-      "9",
-      "128"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "What is log₃(81)?",
-    "answer": "4",
-    "choices": [
-      "3",
-      "4",
-      "5",
-      "27"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "What is log₃(243)?",
-    "answer": "5",
-    "choices": [
-      "4",
-      "5",
-      "6",
-      "81"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "What is log₅(125)?",
-    "answer": "3",
-    "choices": [
-      "2",
-      "3",
-      "4",
-      "25"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "What is log₁₀(1000)?",
-    "answer": "3",
-    "choices": [
-      "2",
-      "3",
-      "4",
-      "10"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "What is log₂(1)?",
-    "answer": "0",
-    "choices": [
-      "-1",
-      "0",
-      "1",
-      "2"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "What is log₂(512)?",
-    "answer": "9",
-    "choices": [
-      "8",
       "9",
       "10",
-      "256"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "What is log₃(729)?",
-    "answer": "6",
-    "choices": [
-      "5",
-      "6",
-      "7",
-      "243"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "What is log₄(64)?",
-    "answer": "3",
-    "choices": [
-      "2",
-      "3",
-      "4",
-      "16"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "8th Fibonacci number (sequence: 1,1,2,3,5,...)",
-    "answer": "21",
-    "choices": [
-      "13",
-      "21",
-      "34",
-      "55"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "9th Fibonacci number",
-    "answer": "34",
-    "choices": [
-      "21",
-      "34",
-      "55",
-      "89"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "10th Fibonacci number",
-    "answer": "55",
-    "choices": [
-      "34",
-      "55",
-      "89",
-      "144"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "Sum of first 5 Fibonacci numbers: 1+1+2+3+5",
-    "answer": "12",
-    "choices": [
-      "10",
-      "11",
       "12",
-      "13"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "Position of 13 in the Fibonacci sequence (1-indexed)",
-    "answer": "7",
-    "choices": [
-      "5",
-      "6",
-      "7",
-      "8"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "Sum of first 7 Fibonacci: 1+1+2+3+5+8+13",
-    "answer": "33",
-    "choices": [
-      "21",
-      "29",
-      "33",
-      "54"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "Largest prime factor of 60",
-    "answer": "5",
-    "choices": [
-      "3",
-      "5",
-      "6",
-      "15"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "Largest prime factor of 84",
-    "answer": "7",
-    "choices": [
-      "4",
-      "6",
-      "7",
       "14"
     ]
   },
   {
-    "tier": 5,
-    "question": "Largest prime factor of 100",
-    "answer": "5",
+    "tier": 4,
+    "question": "What is the mean of: 12, 18, 24, 6?",
+    "answer": "15",
     "choices": [
-      "4",
-      "5",
-      "10",
-      "25"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "Largest prime factor of 78",
-    "answer": "13",
-    "choices": [
-      "6",
-      "13",
-      "26",
-      "39"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "Largest prime factor of 126",
-    "answer": "7",
-    "choices": [
-      "3",
-      "7",
+      "12",
       "14",
-      "63"
+      "15",
+      "18"
     ]
   },
   {
-    "tier": 5,
-    "question": "Prime factors of 360 with repetition (count)",
-    "answer": "6",
+    "tier": 4,
+    "question": "Solve: 2x + 5 = x - 3",
+    "answer": "-8",
     "choices": [
-      "4",
-      "5",
-      "6",
+      "-8",
+      "-2",
+      "2",
       "8"
     ]
   },
   {
+    "tier": 4,
+    "question": "What is 6.02 × 10⁻²?",
+    "answer": "0.0602",
+    "choices": [
+      "0.00602",
+      "0.0602",
+      "0.602",
+      "60.2"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the surface area of a rectangular box 3×4×5?",
+    "answer": "94",
+    "choices": [
+      "60",
+      "82",
+      "94",
+      "120"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Simplify: (x³)²",
+    "answer": "x⁶",
+    "choices": [
+      "x⁵",
+      "x⁶",
+      "x⁸",
+      "2x³"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "A line passes through (0, 2) and (4, 10). What is its slope?",
+    "answer": "2",
+    "choices": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the interquartile range of: 2, 4, 6, 8, 10, 12?",
+    "answer": "6",
+    "choices": [
+      "4",
+      "6",
+      "8",
+      "10"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Solve: |x - 3| = 7",
+    "answer": "x = 10 or x = -4",
+    "choices": [
+      "x = 10 or x = -4",
+      "x = 4 or x = -10",
+      "x = 10 only",
+      "x = 4 only"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the probability of rolling an even number on a standard die twice in a row?",
+    "answer": "1/4",
+    "choices": [
+      "1/6",
+      "1/4",
+      "1/3",
+      "1/2"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Factor: x² - 9",
+    "answer": "(x+3)(x-3)",
+    "choices": [
+      "(x-3)²",
+      "(x+3)(x-3)",
+      "(x+9)(x-1)",
+      "(x-3)(x+1)"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Convert 45° to radians.",
+    "answer": "π/4",
+    "choices": [
+      "π/6",
+      "π/4",
+      "π/3",
+      "π/2"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the y-intercept of the line 3x + 2y = 12?",
+    "answer": "6",
+    "choices": [
+      "3",
+      "4",
+      "6",
+      "12"
+    ]
+  },
+  {
     "tier": 5,
-    "question": "Distinct prime factors of 180 (count)",
+    "question": "Solve the system: x + y = 7, 2x - y = 2",
+    "answer": "x = 3, y = 4",
+    "choices": [
+      "x = 2, y = 5",
+      "x = 3, y = 4",
+      "x = 4, y = 3",
+      "x = 5, y = 2"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What are the roots of x² - 5x + 6 = 0?",
+    "answer": "2 and 3",
+    "choices": [
+      "1 and 6",
+      "2 and 3",
+      "−2 and −3",
+      "3 and 5"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Evaluate: log₁₀(1000)",
     "answer": "3",
     "choices": [
       "2",
       "3",
       "4",
-      "5"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "Largest prime factor of 210",
-    "answer": "7",
-    "choices": [
-      "5",
-      "7",
-      "14",
-      "42"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "Largest prime factor of 462",
-    "answer": "11",
-    "choices": [
-      "7",
-      "11",
-      "14",
-      "42"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "How many divisors does 36 have?",
-    "answer": "9",
-    "choices": [
-      "6",
-      "7",
-      "9",
-      "12"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "How many divisors does 48 have?",
-    "answer": "10",
-    "choices": [
-      "8",
-      "9",
-      "10",
-      "12"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "Sum of divisors of 12 (including 1 and 12)",
-    "answer": "28",
-    "choices": [
-      "14",
-      "16",
-      "28",
-      "36"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "Count of integers 1-100 divisible by both 3 and 5",
-    "answer": "6",
-    "choices": [
-      "5",
-      "6",
-      "7",
-      "20"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "φ(12) = ? (Euler's totient)",
-    "answer": "4",
-    "choices": [
-      "2",
-      "4",
-      "6",
-      "8"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "φ(10) = ?",
-    "answer": "4",
-    "choices": [
-      "2",
-      "3",
-      "4",
-      "5"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "Number of primes between 1 and 30",
-    "answer": "10",
-    "choices": [
-      "9",
-      "10",
-      "11",
-      "12"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "10th prime number",
-    "answer": "29",
-    "choices": [
-      "23",
-      "29",
-      "31",
-      "37"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "Sum of digits of 9876",
-    "answer": "30",
-    "choices": [
-      "27",
-      "30",
-      "33",
-      "36"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "How many factors does 72 have?",
-    "answer": "12",
-    "choices": [
-      "9",
-      "10",
-      "12",
-      "18"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "x² = 144, x > 0. x = ?",
-    "answer": "12",
-    "choices": [
-      "11",
-      "12",
-      "13",
-      "72"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "x² - 2x - 15 = 0. Positive root = ?",
-    "answer": "5",
-    "choices": [
-      "3",
-      "5",
-      "6",
-      "15"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "Sum of arithmetic series 1+3+5+…+19 (10 terms)",
-    "answer": "100",
-    "choices": [
-      "90",
-      "100",
-      "110",
-      "200"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "Sum of 1+2+…+20",
-    "answer": "210",
-    "choices": [
-      "190",
-      "200",
-      "210",
-      "220"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "Sum of 1+2+…+50",
-    "answer": "1275",
-    "choices": [
-      "1000",
-      "1250",
-      "1275",
-      "1300"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "If 2^x = 128, x = ?",
-    "answer": "7",
-    "choices": [
-      "6",
-      "7",
-      "8",
-      "9"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "If 3^x = 729, x = ?",
-    "answer": "6",
-    "choices": [
-      "5",
-      "6",
-      "7",
-      "8"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "Two consecutive integers have product 182. Smaller one?",
-    "answer": "13",
-    "choices": [
-      "12",
-      "13",
-      "14",
-      "18"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "Circle area with radius 5 (π≈3)",
-    "answer": "75",
-    "choices": [
-      "15",
-      "25",
-      "75",
-      "150"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "Circle circumference with radius 7 (π≈7)",
-    "answer": "44",
-    "choices": [
-      "14",
-      "22",
-      "44",
-      "154"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "If f(x) = 2x + 3, f(10) = ?",
-    "answer": "23",
-    "choices": [
-      "13",
-      "20",
-      "23",
-      "26"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "Arithmetic mean of 12, 15, 18, 21, 24",
-    "answer": "18",
-    "choices": [
-      "15",
-      "16",
-      "18",
-      "20"
+      "10"
     ]
   }
 ]

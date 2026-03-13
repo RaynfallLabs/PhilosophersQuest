@@ -21,6 +21,7 @@ A graphical roguelike where knowledge is power. Every action requires answering 
 | philosophy  | Identification          |
 | grammar     | Reading scrolls         |
 | economics   | Lockpicking             |
+| theology    | Praying                 |
 
 ## Player Stats
 - **STR** — Carry capacity
