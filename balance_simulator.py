@@ -1,24 +1,24 @@
 #!/usr/bin/env python3
 """
-balance_simulator.py — Monte Carlo balance analysis for Philosopher's Quest
-Usage: python balance_simulator.py [--runs N] [--max-level N] [--seed N]
+balance_simulator.py -- Monte Carlo balance analysis for Philosopher's Quest
+Usage: python balance_simulator.py [--runs N] [--max-level N] [--seed N] [--skill low|med|high]
 
-Assumptions (documented in-line):
-  - Quiz success model: Bernoulli p_correct(tier, WIS) per question
-  - Combat = one quiz per attack attempt; monster retaliates if alive after
-  - THAC0 system: monster hits if d20 >= THAC0 - player_AC (descending AC)
-  - Gear: player equips best weapon/armor found on the floor each level
-  - SP drain and starvation are ignored (food system not simulated)
-  - Flee not modelled; player fights to death or victory
+Model assumptions (all documented at point of use):
+  - Quiz: Bernoulli success per question, parameterised by (tier, WIS, skill preset)
+  - Combat: one CHAIN quiz per attack turn; monster retaliates if alive after player swing
+  - THAC0: monster hits if d20 >= THAC0 - player_AC  (natural 1 always misses)
+  - Armor equip: blocked by a geography THRESHOLD quiz; failing leaves armor unequipped
+  - Gear: player finds best-available item each level with FIND_CHANCE probability
+  - Enchant: weapons +0/+1/+2 on find (80/12/8%); armor cursed with -1/-2 on find (10%)
+  - SP: drained per combat turn + base exploration cost; food items restore SP; SP=0 -> starvation
+  - Flee: not modelled; fights to the death
+  - Scrolls/wands/potions: not modelled (they improve survival beyond what we report here)
 """
 
-import json, math, random, argparse, sys
+import json, math, random, argparse
 from collections import defaultdict
 from pathlib import Path
 
-# ---------------------------------------------------------------------------
-# Paths
-# ---------------------------------------------------------------------------
 ROOT = Path(__file__).parent
 DATA = ROOT / 'data'
 
@@ -35,56 +35,78 @@ def load_data():
     weapons  = _load(DATA / 'items' / 'weapon.json')
     armor    = _load(DATA / 'items' / 'armor.json')
     shields  = _load(DATA / 'items' / 'shield.json')
-    return monsters, weapons, armor, shields
+    food     = _load(DATA / 'items' / 'food.json')
+    return monsters, weapons, armor, shields, food
 
 # ---------------------------------------------------------------------------
-# Dice helpers
+# Dice helpers -- support NdX, NdX+M, NdX-M
 # ---------------------------------------------------------------------------
 
-def avg_dice(notation: str) -> float:
-    """Return expected value of a dice expression like '2d6+3' or '1d4'."""
-    if not notation:
-        return 0.0
+def _parse_dice(notation: str) -> float:
+    """Return expected value of a dice expression."""
+    notation = str(notation).lower().replace(' ', '')
+    # Split on + but preserve leading minus via a small trick
     total = 0.0
-    for part in str(notation).lower().replace(' ', '').split('+'):
-        if 'd' in part:
-            n, d = part.split('d')
-            n = int(n) if n else 1
-            d = int(d)
-            total += n * (d + 1) / 2.0
-        elif part.lstrip('-').isdigit():
-            total += int(part)
+    sign  = 1
+    token = ''
+    for ch in notation + '+':
+        if ch in '+-' and token:
+            if 'd' in token:
+                n, d = token.split('d')
+                n = int(n) if n else 1
+                total += sign * n * (int(d) + 1) / 2.0
+            else:
+                total += sign * int(token)
+            token = ''
+            sign = 1 if ch == '+' else -1
+        else:
+            token += ch
     return total
 
+def avg_dice(notation: str) -> float:
+    try:
+        return _parse_dice(notation)
+    except Exception:
+        return 2.5  # safe fallback
+
 def roll_dice(notation: str) -> int:
-    """Roll a dice expression and return the result."""
-    if not notation:
-        return 1
+    notation = str(notation).lower().replace(' ', '')
     total = 0
-    for part in str(notation).lower().replace(' ', '').split('+'):
-        if 'd' in part:
-            n, d = part.split('d')
-            n = int(n) if n else 1
-            d = int(d)
-            total += sum(random.randint(1, d) for _ in range(n))
-        elif part.lstrip('-').isdigit():
-            total += int(part)
+    sign  = 1
+    token = ''
+    for ch in notation + '+':
+        if ch in '+-' and token:
+            if 'd' in token:
+                n, d = token.split('d')
+                n = int(n) if n else 1
+                total += sign * sum(random.randint(1, int(d)) for _ in range(n))
+            else:
+                total += sign * int(token)
+            token = ''
+            sign = 1 if ch == '+' else -1
+        else:
+            token += ch
     return max(1, total)
 
 # ---------------------------------------------------------------------------
-# Quiz success model
+# Quiz success models
 # ---------------------------------------------------------------------------
-# Assumption: a competent player answers tier-1 math correctly ~70% of the time.
-# Each tier above 1 reduces accuracy by 0.06 (harder questions).
-# Each WIS point above 10 adds +0.02 (more timer headroom = less panic).
-# These constants are tunable. Results show sensitivity in the output.
+# Base accuracy by skill preset:
+#   low  = 0.55  (struggling player, gets questions wrong under time pressure)
+#   med  = 0.70  (competent player -- the default)
+#   high = 0.85  (strong academic, fast recall)
+# Per-tier penalty: each tier above 1 reduces p by 0.06 (harder questions).
+# WIS bonus: +0.015 per WIS point above 10 (more seconds on timer = calmer answers).
+# All clamped to [0.30, 0.94].
 
-def p_correct(tier: int, wis: int) -> float:
-    base = 0.70 - (tier - 1) * 0.06 + (wis - 10) * 0.02
-    return max(0.35, min(0.92, base))
+SKILL_BASE = {'low': 0.55, 'med': 0.70, 'high': 0.85}
+
+def p_correct(tier: int, wis: int, skill: str = 'med') -> float:
+    base = SKILL_BASE[skill] - (tier - 1) * 0.06 + (wis - 10) * 0.015
+    return max(0.30, min(0.94, base))
 
 def roll_chain(p: float, max_chain: int) -> int:
-    """Simulate a CHAIN quiz: answer correctly until wrong, cap at max_chain."""
+    """Simulate a CHAIN quiz: correct answers accumulate until wrong or cap."""
     chain = 0
     while chain < max_chain:
         if random.random() < p:
@@ -93,376 +115,547 @@ def roll_chain(p: float, max_chain: int) -> int:
             break
     return chain
 
+def p_threshold(required: int, total_qs: int, p: float) -> float:
+    """
+    P(passing a THRESHOLD quiz) = P(>= required correct out of total_qs).
+    Uses binomial CDF.  Used for armor/accessory equip and armor-equip barrier.
+    """
+    # Sum P(exactly k correct) for k in [required, total_qs]
+    success = 0.0
+    for k in range(required, total_qs + 1):
+        binom = math.comb(total_qs, k)
+        success += binom * (p ** k) * ((1 - p) ** (total_qs - k))
+    return success
+
 # ---------------------------------------------------------------------------
-# Monster spawn weights (mirrors dungeon.py logic)
+# Monster spawn pool (exact mirror of dungeon.py logic)
 # ---------------------------------------------------------------------------
 
 def build_monster_pool(monsters: dict, level: int) -> list:
-    """Return a frequency-weighted list of monster IDs eligible at this level."""
+    """Frequency-weighted list of monster IDs eligible at this level."""
     pool = []
     for mid, m in monsters.items():
-        if m.get('frequency', 5) == 0:
-            continue                        # boss-only, never randomly spawn
-        min_lv = m.get('min_level', 1)
-        max_lv = m.get('max_level', None)
-        if min_lv > level:
-            continue
         freq = m.get('frequency', 5)
+        if freq == 0:
+            continue                     # boss-only monsters
+        if m.get('min_level', 1) > level:
+            continue
+        max_lv = m.get('max_level')
         if max_lv and level > max_lv:
-            freq = max(1, freq - (level - max_lv))  # decay past max_level
+            freq = max(1, freq - (level - max_lv))   # decay past max_level
         pool.extend([mid] * freq)
     return pool
 
 # ---------------------------------------------------------------------------
-# Item pool helpers
+# Item-pool helpers
 # ---------------------------------------------------------------------------
 
 def _spawn_weight(spawn_weights: dict, level: int) -> int:
-    """Pick the weight entry whose level range contains `level`."""
+    """Resolve a floor_spawn_weight dict (keys like '1-20') at a given level."""
     for key, w in spawn_weights.items():
         parts = str(key).split('-')
         if len(parts) == 2:
-            lo, hi = int(parts[0]), int(parts[1])
-            if lo <= level <= hi:
-                return w
+            try:
+                if int(parts[0]) <= level <= int(parts[1]):
+                    return w
+            except ValueError:
+                pass
     return 0
 
-def best_weapon_at_level(weapons: dict, level: int):
-    """Return the highest-baseDamage weapon eligible to spawn at this level."""
-    # Assumption: player picks up and uses the best damage weapon they find.
+def _is_spawnable(item: dict, level: int) -> bool:
+    if item.get('min_level', 1) > level:
+        return False
+    sw = item.get('floorSpawnWeight') or item.get('floor_spawn_weight') or {}
+    if sw and _spawn_weight(sw, level) == 0:
+        return False
+    return True
+
+def best_weapon_at_level(weapons: dict, level: int) -> dict | None:
+    """Highest-baseDamage weapon spawnable at this level."""
     best = None
-    for wid, w in weapons.items():
-        if w.get('min_level', 1) > level:
+    for w in weapons.values():
+        if not _is_spawnable(w, level):
             continue
-        sw = w.get('floorSpawnWeight') or w.get('floor_spawn_weight') or {}
-        if sw and _spawn_weight(sw, level) == 0:
-            continue
-        if best is None or w.get('baseDamage', 4) > best[1].get('baseDamage', 4):
-            best = (wid, w)
-    return best[1] if best else None
+        if best is None or w.get('baseDamage', 0) > best.get('baseDamage', 0):
+            best = w
+    return best
 
-def best_armor_ac_at_level(armor: dict, shields: dict, level: int) -> int:
-    """Return total AC bonus (armor + shield) a lucky player might have by this level."""
-    # Sum the best per-slot armor and one shield available at this level.
-    # Assumption: player equips one piece per slot; simulate only body + shield for brevity.
-    body_ac = 0
-    for aid, a in armor.items():
-        if a.get('min_level', 1) > level:
+def best_armor_ac_per_slot(armor: dict, shields: dict, level: int) -> int:
+    """
+    Sum the best AC bonus across ALL 8 armor slots + shield.
+    Mirrors actual player: head, body, arms, hands, legs, feet, cloak, shirt.
+    Previously only counted 'body' -- fixed to sum all slots.
+    """
+    best_per_slot: dict[str, int] = {}
+    for a in armor.values():
+        if not _is_spawnable(a, level):
             continue
-        sw = a.get('floorSpawnWeight') or a.get('floor_spawn_weight') or {}
-        if sw and _spawn_weight(sw, level) == 0:
-            continue
-        if a.get('slot', 'body') == 'body':
-            body_ac = max(body_ac, a.get('ac_bonus', 0))
+        slot = a.get('slot', 'body')
+        ac   = a.get('ac_bonus', 0)
+        if ac > best_per_slot.get(slot, 0):
+            best_per_slot[slot] = ac
 
-    shield_ac = 0
-    for sid, s in shields.items():
-        if s.get('min_level', 1) > level:
-            continue
-        shield_ac = max(shield_ac, s.get('ac_bonus', 0))
+    shield_ac = max((s.get('ac_bonus', 0) for s in shields.values()
+                     if _is_spawnable(s, level)), default=0)
+    return sum(best_per_slot.values()) + shield_ac
 
-    return body_ac + shield_ac
+def food_sp_pool(food: dict, level: int) -> list[int]:
+    """Return SP-restore values of food items spawnable at this level."""
+    result = []
+    for f in food.values():
+        if _is_spawnable(f, level):
+            result.append(f.get('sp_restore', 20))
+    return result or [20]
 
 # ---------------------------------------------------------------------------
-# Player simulation model
+# Player model
 # ---------------------------------------------------------------------------
+# Stats mirror src/player.py constants:
+#   BASE_HP = 20,  BASE_SP = 200  (both add CON)
+#   AC = 10 - floor((DEX-10)/2) - armor_bonus - shield_bonus
+#   Quiz timer base = 10s + WIS points (WIS affects p_correct directly here)
 
 class SimPlayer:
-    """Lightweight mutable player state for one simulated run."""
+    def __init__(self, skill: str = 'med'):
+        self.skill = skill
+        # Base stats (all 10 -- default build, no secret build)
+        self.STR = self.CON = self.DEX = self.INT = self.WIS = self.PER = 10
 
-    # Assumption: all base stats = 10 (no secret build, no level-up bonuses).
-    def __init__(self):
-        self.WIS = 10
-        self.CON = 10
-        self.DEX = 10
-        self.max_hp = 20 + self.CON        # 30 HP
+        self.max_hp = 20 + self.CON          # 30 HP  (src/player.py BASE_HP + CON)
         self.hp     = self.max_hp
-        self.ac     = 10 - (self.DEX - 10) // 2   # AC = 10
+        self.max_sp = 200 + self.CON         # 210 SP (src/player.py BASE_SP + CON)
+        self.sp     = self.max_sp
 
-        # Starting gear (iron dagger + no armor)
-        self.weapon_base_dmg  = 4          # iron_dagger baseDamage
-        self.weapon_mults     = [0.5, 1.0, 1.5, 2.0, 2.5]
-        self.weapon_max_chain = 5
-        self.weapon_quiz_tier = 1
-        self.armor_ac_bonus   = 0          # +AC from equipped armor/shield
+        # Base AC before armor (descending: lower = better)
+        self._base_ac    = 10 - (self.DEX - 10) // 2   # = 10
+        self.armor_ac    = 0     # sum of all equipped armor + shield AC
+        self.weapon_enchant = 0  # enchantment bonus on weapon
 
-    def effective_ac(self) -> int:
-        return self.ac - self.armor_ac_bonus  # lower = better
+        # Starting weapon: iron_dagger (loaded from weapon.json)
+        # Actual JSON values: baseDamage=3, chainMultipliers=[0.3,0.6,1.0,1.4,1.8,2.2,2.5]
+        # maxChainLength=7, mathTier=1
+        self.weapon_base_dmg  = 3
+        self.weapon_mults     = [0.3, 0.6, 1.0, 1.4, 1.8, 2.2, 2.5]
+        self.weapon_max_chain = 7
+        self.weapon_quiz_tier = 1            # mathTier from JSON
+        self.weapon_dmg_types = ['pierce']   # iron_dagger damage types
 
-    def upgrade_weapon(self, w: dict):
-        if w.get('baseDamage', 0) > self.weapon_base_dmg:
-            self.weapon_base_dmg  = w['baseDamage']
+    @property
+    def ac(self) -> int:
+        return self._base_ac - self.armor_ac
+
+    def upgrade_weapon(self, w: dict, enchant: int = 0):
+        """
+        Replace weapon if new one has higher effective base damage.
+        Field name note: JSON uses 'mathTier' (camelCase), not 'quiz_tier'.
+        """
+        new_base = w.get('baseDamage', 0)
+        if new_base + enchant > self.weapon_base_dmg + self.weapon_enchant:
+            self.weapon_base_dmg  = new_base
+            self.weapon_enchant   = enchant
+            # chainMultipliers is camelCase in JSON -- matches items.py
             self.weapon_mults     = w.get('chainMultipliers', self.weapon_mults)
             self.weapon_max_chain = w.get('maxChainLength', len(self.weapon_mults))
-            self.weapon_quiz_tier = w.get('quiz_tier', 1)
+            # JSON uses 'mathTier'; items.py does the same dual-key lookup
+            self.weapon_quiz_tier = w.get('mathTier', w.get('quiz_tier', 1))
+            self.weapon_dmg_types = w.get('damageTypes', ['slash'])
 
     def upgrade_armor(self, bonus: int):
-        self.armor_ac_bonus = max(self.armor_ac_bonus, bonus)
+        if bonus > self.armor_ac:
+            self.armor_ac = bonus
+
+    def drain_sp(self, amount: int):
+        self.sp = max(0, self.sp - amount)
+
+    def restore_sp(self, amount: int):
+        self.sp = min(self.max_sp, self.sp + amount)
+
+    def is_starving(self) -> bool:
+        return self.sp == 0
 
 # ---------------------------------------------------------------------------
-# Single combat simulation
+# Damage type resistance helper
 # ---------------------------------------------------------------------------
+
+def dtype_multiplier(weapon_types: list, monster: dict) -> float:
+    """
+    Mirrors combat.py _damage_multiplier: take the MAX multiplier across
+    all weapon damage types vs monster's resistances/weaknesses.
+    Returns 0.5 (resist), 1.0 (neutral), or 1.5 (weakness).
+    """
+    resistances = set(monster.get('resistances', []))
+    weaknesses  = set(monster.get('weaknesses',  []))
+    best = 1.0
+    for dt in weapon_types:
+        if dt in weaknesses:
+            best = max(best, 1.5)
+        elif dt in resistances:
+            best = min(best, 0.5) if best == 1.0 else best
+    return best
+
+# ---------------------------------------------------------------------------
+# Single combat
+# ---------------------------------------------------------------------------
+
+# SP cost per combat turn (player moves, swings, receives hits)
+SP_PER_COMBAT_TURN = 2
 
 def simulate_combat(player: SimPlayer, monster: dict) -> dict:
     """
-    Simulate one player-vs-monster fight.
-    Returns stats dict with hp_lost, turns, won, chain_lengths.
+    One player-vs-monster fight.
+    - Player attacks: CHAIN quiz -> chain length -> damage
+    - Enchant bonus added to base before multiplier (mirrors combat.py line 75)
+    - Monster retaliates each turn it survives
+    - SP drains SP_PER_COMBAT_TURN per round; SP=0 adds 1 starvation dmg/turn
+    - Damage types checked vs monster resistances/weaknesses
     """
-    m_hp = roll_dice(str(monster.get('hp', '1d6')))
-    p_cor = p_correct(player.weapon_quiz_tier, player.WIS)
-    chains = []
+    m_hp   = roll_dice(str(monster.get('hp', '1d6')))
+    p_cor  = p_correct(player.weapon_quiz_tier, player.WIS, player.skill)
+    dmult  = dtype_multiplier(player.weapon_dmg_types, monster)
+
+    # THAC0 system: monster hits if d20 >= THAC0 - player_AC; nat-1 always misses
+    thac0       = monster.get('thac0', 20)
+    roll_needed = max(2, thac0 - player.ac)
+    hit_chance  = max(0.0, min(1.0, (21 - roll_needed) / 20.0))
+
+    chains           = []
     player_hp_before = player.hp
-    turns = 0
+    turns            = 0
+    starvation_dmg   = 0
 
     while m_hp > 0 and player.hp > 0:
         turns += 1
+        player.drain_sp(SP_PER_COMBAT_TURN)
 
-        # --- Player attacks ---
+        # Starvation: 1 HP/turn at SP=0 (src/main.py _tick_sp)
+        if player.is_starving():
+            player.hp -= 1
+            starvation_dmg += 1
+            if player.hp <= 0:
+                break
+
+        # --- Player attacks (one CHAIN quiz = one attack turn) ---
         chain = roll_chain(p_cor, player.weapon_max_chain)
         chains.append(chain)
         if chain > 0:
-            idx = min(chain - 1, len(player.weapon_mults) - 1)
+            idx  = min(chain - 1, len(player.weapon_mults) - 1)
             mult = player.weapon_mults[idx]
-            dmg = max(1, int(player.weapon_base_dmg * mult))
+            # Enchant adds to base BEFORE multiplier, matching combat.py
+            raw  = player.weapon_base_dmg + player.weapon_enchant
+            dmg  = max(1, int(raw * mult * dmult))
             m_hp -= dmg
 
         if m_hp <= 0:
             break
 
         # --- Monster retaliates ---
-        # THAC0 system: hit if d20 >= THAC0 - player_AC
-        thac0 = monster.get('thac0', 20)
-        roll_needed = thac0 - player.effective_ac()
-        if random.randint(1, 20) >= max(2, roll_needed):
+        if random.random() < hit_chance:
             attacks = monster.get('attacks', [{'damage': '1d4'}])
             for atk in attacks:
-                dmg_m = roll_dice(str(atk.get('damage', '1d4')))
-                player.hp -= dmg_m
+                player.hp -= roll_dice(str(atk.get('damage', '1d4')))
 
     won = m_hp <= 0
     return {
-        'won':      won,
-        'hp_lost':  max(0, player_hp_before - player.hp),
-        'turns':    turns,
-        'chains':   chains,
-        'avg_chain': sum(chains) / len(chains) if chains else 0,
+        'won':          won,
+        'hp_lost':      max(0, player_hp_before - player.hp),
+        'turns':        turns,
+        'chains':       chains,
+        'starv_dmg':    starvation_dmg,
     }
 
 # ---------------------------------------------------------------------------
 # Single level simulation
 # ---------------------------------------------------------------------------
 
+# Base exploration SP cost per level (movement before/between fights)
+SP_EXPLORATION_PER_LEVEL = 25
+
+# Geography threshold quiz barrier to equip armor (mirrors game requirement).
+# default armor equip_threshold=2, total_qs=ceil(2*1.5)=3, quiz_tier=1
+ARMOR_EQUIP_REQUIRED = 2
+ARMOR_EQUIP_TOTAL    = 3   # ceil(required * 1.5)
+ARMOR_QUIZ_TIER      = 1   # geography tier 1 for early armor
+
+# Weapon/armor find chance per level (not every level has ideal loot)
+FIND_CHANCE = 0.55
+
+# Enchantment distribution when finding a weapon (+0 most common)
+# Mirrors dungeon.py which can yield enchanted weapons from containers/drops
+ENCHANT_DIST = [(0, 0.80), (1, 0.12), (2, 0.08)]
+
+def roll_enchant() -> int:
+    r = random.random()
+    cumulative = 0.0
+    for val, prob in ENCHANT_DIST:
+        cumulative += prob
+        if r < cumulative:
+            return val
+    return 0
+
 def simulate_level(player: SimPlayer, level: int,
                    monsters: dict, weapons: dict,
-                   armor: dict, shields: dict) -> dict:
+                   armor: dict, shields: dict,
+                   food: dict) -> dict:
     """
-    Simulate one dungeon level: gear upgrade + N monster combats.
-    Returns per-level stats dict.
+    Simulate one dungeon level.
+    Order: gear upgrade -> food spawn/eat -> combat loop -> starvation check.
     """
-    # Gear upgrade — Assumption: player finds and equips the best available
-    # weapon and armor on this level with 60% probability per slot.
-    # (Reflects that not every room has loot and not every item is optimal.)
-    FIND_CHANCE = 0.60
+    # --- Weapon upgrade ---
     if random.random() < FIND_CHANCE:
         w = best_weapon_at_level(weapons, level)
         if w:
-            player.upgrade_weapon(w)
+            player.upgrade_weapon(w, enchant=roll_enchant())
 
+    # --- Armor upgrade (gated by geography quiz) ---
     if random.random() < FIND_CHANCE:
-        ac_bonus = best_armor_ac_at_level(armor, shields, level)
-        player.upgrade_armor(ac_bonus)
+        geo_p    = p_correct(ARMOR_QUIZ_TIER, player.WIS, player.skill)
+        can_equip = random.random() < p_threshold(ARMOR_EQUIP_REQUIRED,
+                                                   ARMOR_EQUIP_TOTAL, geo_p)
+        if can_equip:
+            bonus = best_armor_ac_per_slot(armor, shields, level)
+            player.upgrade_armor(bonus)
+        # If quiz fails: player carries but does not benefit from the armor
 
-    # Spawn N monsters — mirrors dungeon.py count formula
-    min_m = min(3 + (level - 1), 12)
-    max_m = min(5 + level, 18)
+    # --- Food spawn (1-3 items per level; mirrors dungeon.py spawn_items) ---
+    sp_pool  = food_sp_pool(food, level)
+    n_food   = random.randint(1, 3)
+    food_sp  = sum(random.choice(sp_pool) for _ in range(n_food))
+    # Player eats all food found immediately when SP < 80% (hungry/starving)
+    if player.sp < player.max_sp * 0.80:
+        player.restore_sp(food_sp)
+
+    # --- Exploration SP drain (moving through the floor before/between fights) ---
+    player.drain_sp(SP_EXPLORATION_PER_LEVEL)
+
+    # --- Combat encounters ---
+    # Monster count from dungeon.py spawn_monsters (fixed from original simulator)
+    min_m = min(3 + level // 10, 10)
+    max_m = min(5 + level // 5, 15)
     n_monsters = random.randint(min_m, max_m)
 
     pool = build_monster_pool(monsters, level)
     if not pool:
-        return {'combats': 0, 'hp_lost': 0, 'deaths': 0, 'won': 0, 'chains': []}
+        return {'combats': 0, 'hp_lost': 0, 'sp_drained': 0,
+                'death': None, 'won': 0, 'chains': [], 'starv_dmg': 0}
 
-    combats_won = 0
+    combats_won  = 0
     total_hp_lost = 0
-    all_chains = []
-    died = False
+    all_chains   = []
+    total_starv  = 0
+    death_cause  = None
 
     for _ in range(n_monsters):
         if player.hp <= 0:
-            died = True
+            death_cause = 'starvation' if player.is_starving() else 'combat'
             break
-        mid = random.choice(pool)
+
+        mid    = random.choice(pool)
         result = simulate_combat(player, monsters[mid])
         total_hp_lost += result['hp_lost']
         all_chains.extend(result['chains'])
+        total_starv   += result['starv_dmg']
         if result['won']:
             combats_won += 1
+        elif player.hp <= 0:
+            death_cause = 'starvation' if result['starv_dmg'] > 0 else 'combat'
 
-    # Partial HP regen between levels — Assumption: rest at stairs restores 20% max HP.
-    player.hp = min(player.max_hp, player.hp + int(player.max_hp * 0.20))
+    # Eat any remaining food after combat if still hungry
+    if player.sp < player.max_sp * 0.80 and player.hp > 0:
+        player.restore_sp(food_sp // 2)
 
     return {
-        'combats':  n_monsters,
-        'won':      combats_won,
-        'hp_lost':  total_hp_lost,
-        'deaths':   1 if died else 0,
-        'chains':   all_chains,
+        'combats':    n_monsters,
+        'won':        combats_won,
+        'hp_lost':    total_hp_lost,
+        'sp_drained': SP_EXPLORATION_PER_LEVEL + total_starv * SP_PER_COMBAT_TURN,
+        'death':      death_cause,
+        'chains':     all_chains,
+        'starv_dmg':  total_starv,
     }
 
 # ---------------------------------------------------------------------------
-# Full run simulation
+# Full run
 # ---------------------------------------------------------------------------
 
 def simulate_run(max_level: int, monsters: dict, weapons: dict,
-                 armor: dict, shields: dict) -> dict:
-    """Simulate one complete run through max_level dungeon levels."""
-    player   = SimPlayer()
-    per_lv   = []
-    died_on  = None
+                 armor: dict, shields: dict, food: dict,
+                 skill: str = 'med') -> dict:
+    player  = SimPlayer(skill=skill)
+    per_lv  = []
+    died_on = None
+    death_cause = None
 
     for lv in range(1, max_level + 1):
-        stats = simulate_level(player, lv, monsters, weapons, armor, shields)
-        stats['level'] = lv
+        stats = simulate_level(player, lv, monsters, weapons, armor, shields, food)
+        stats['level']        = lv
         stats['hp_remaining'] = player.hp
+        stats['sp_remaining'] = player.sp
         per_lv.append(stats)
 
-        if stats['deaths'] or player.hp <= 0:
-            died_on = lv
+        if stats['death'] or player.hp <= 0:
+            died_on     = lv
+            death_cause = stats['death'] or ('starvation' if player.sp == 0 else 'combat')
             break
 
     return {
-        'survived':  died_on is None,
-        'died_on':   died_on,
-        'per_level': per_lv,
+        'survived':    died_on is None,
+        'died_on':     died_on,
+        'death_cause': death_cause,
+        'per_level':   per_lv,
     }
 
 # ---------------------------------------------------------------------------
-# Aggregation & reporting
+# Aggregation + report
 # ---------------------------------------------------------------------------
 
-def run_simulation(runs: int, max_level: int, seed: int):
+def run_simulation(runs: int, max_level: int, seed: int, skill: str):
     random.seed(seed)
-    monsters, weapons, armor, shields = load_data()
+    monsters, weapons, armor, shields, food = load_data()
 
-    # Per-level accumulators
-    survived_to   = defaultdict(int)    # level -> runs that reached it alive
-    deaths_on     = defaultdict(int)    # level -> deaths on that level
-    hp_lost_lv    = defaultdict(list)   # level -> list of hp_lost values
-    chains_lv     = defaultdict(list)   # level -> all chain lengths
-    combats_won   = defaultdict(int)
-    combats_total = defaultdict(int)
-    turns_lv      = defaultdict(list)
+    dummy = SimPlayer()
+    start_hp = dummy.max_hp
+    start_sp = dummy.max_sp
 
+    survived_to    = defaultdict(int)
+    deaths_on      = defaultdict(int)
+    death_cause    = defaultdict(lambda: defaultdict(int))  # lv -> cause -> count
+    hp_lost_lv     = defaultdict(list)
+    sp_remaining_lv = defaultdict(list)   # actual SP left at end of level
+    chains_lv      = defaultdict(list)
+    combats_won    = defaultdict(int)
+    combats_total  = defaultdict(int)
+    starv_dmg_lv   = defaultdict(list)
     total_survived = 0
 
     for _ in range(runs):
-        result = simulate_run(max_level, monsters, weapons, armor, shields)
+        result = simulate_run(max_level, monsters, weapons, armor, shields,
+                              food, skill=skill)
         if result['survived']:
             total_survived += 1
-            survived_to[max_level] += 1
 
-        for lvstats in result['per_level']:
-            lv = lvstats['level']
-            survived_to[lv] += 1         # reached this level alive (even if died here)
-            hp_lost_lv[lv].append(lvstats['hp_lost'])
-            chains_lv[lv].extend(lvstats['chains'])
-            combats_won[lv]   += lvstats['won']
-            combats_total[lv] += lvstats['combats']
-            if lvstats['deaths']:
+        for s in result['per_level']:
+            lv = s['level']
+            survived_to[lv]        += 1
+            hp_lost_lv[lv].append(s['hp_lost'])
+            sp_remaining_lv[lv].append(s['sp_remaining'])
+            chains_lv[lv].extend(s['chains'])
+            combats_won[lv]        += s['won']
+            combats_total[lv]      += s['combats']
+            starv_dmg_lv[lv].append(s['starv_dmg'])
+            if s['death']:
                 deaths_on[lv] += 1
+                death_cause[lv][s['death']] += 1
 
-    # ---- Print report --------------------------------------------------------
-    W = 72
+    # ---- Report ---------------------------------------------------------------
+    W = 80
     print('=' * W)
-    print(' Philosopher\'s Quest — Balance Simulation Report')
-    print(f' {runs} runs · max level {max_level} · seed {seed}')
-    print(f' Quiz model: p_correct = 0.70 - (tier-1)×0.06 + (WIS-10)×0.02')
-    print(f' Gear model: 60% chance to find best available weapon/armor per level')
-    print(f' Recovery  : +20% max HP regen between levels')
+    print('  Philosopher\'s Quest -- Balance Simulation Report')
+    print(f'  {runs} runs  |  max level {max_level}  |  seed {seed}  |  skill preset: {skill}')
+    print(f'  Quiz model : p_correct = {SKILL_BASE[skill]:.2f} - (tier-1)*0.06 + (WIS-10)*0.015')
+    print(f'  Armor equip: geography threshold quiz (need {ARMOR_EQUIP_REQUIRED}/{ARMOR_EQUIP_TOTAL} correct, tier {ARMOR_QUIZ_TIER})')
+    print(f'  SP model   : {SP_EXPLORATION_PER_LEVEL} SP/level exploration + {SP_PER_COMBAT_TURN} SP/combat turn; starvation=1 HP/turn at SP=0')
+    print(f'  Gear find  : {FIND_CHANCE*100:.0f}% chance/level; weapon enchant +0/+1/+2 at 80/12/8%')
     print('=' * W)
 
-    # Survival rates
-    print(f'\n{"LEVEL":<8} {"REACHED":>8} {"DIED":>8} {"SURV%":>8} {"AVG HP LOST":>12} {"WIN%":>8} {"AVG CHAIN":>10}')
-    print('-' * W)
-
-    start_hp = 30  # SimPlayer default max_hp
     red_flags = []
 
+    print(f'\n{"LV":<4} {"REACHED":>7} {"DIED":>6} {"SURV%":>7} {"HP_LOST":>9} {"SP_LEFT":>8} {"WIN%":>7} {"AVG_CHAIN":>10}  NOTE')
+    print('-' * W)
+
     for lv in range(1, max_level + 1):
-        reached   = survived_to.get(lv, 0)
-        died      = deaths_on.get(lv, 0)
+        reached = survived_to.get(lv, 0)
         if reached == 0:
-            continue
+            break
+        died      = deaths_on.get(lv, 0)
         surv_pct  = 100.0 * (reached - died) / reached
-        avg_hp    = sum(hp_lost_lv[lv]) / max(1, len(hp_lost_lv[lv]))
+        avg_hp    = sum(hp_lost_lv[lv]) / len(hp_lost_lv[lv])
         hp_pct    = 100.0 * avg_hp / start_hp
+        avg_sp_remaining = sum(sp_remaining_lv[lv]) / len(sp_remaining_lv[lv])
         win_pct   = 100.0 * combats_won[lv] / max(1, combats_total[lv])
         clist     = chains_lv[lv]
         avg_chain = sum(clist) / max(1, len(clist))
+        avg_starv = sum(starv_dmg_lv[lv]) / len(starv_dmg_lv[lv])
 
-        flag = ''
+        notes = []
         if hp_pct > 60:
-            flag = '! HIGH DMG'
-            red_flags.append(f'Level {lv}: avg HP lost {avg_hp:.1f} = {hp_pct:.0f}% of max HP -> too punishing')
-        if surv_pct < 70 and lv <= 3:
-            flag = flag or '! LETHAL'
-            red_flags.append(f'Level {lv}: only {surv_pct:.1f}% survive -> early lethality spike')
-        if win_pct < 50:
-            flag = flag or '! LOW WIN'
-            red_flags.append(f'Level {lv}: combat win rate {win_pct:.1f}% < 50% -> monsters too strong')
+            notes.append('HIGH_DMG')
+            red_flags.append(f'L{lv}: avg HP lost {avg_hp:.1f} ({hp_pct:.0f}% of max) -> too punishing')
+        if surv_pct < 70 and lv <= 5:
+            notes.append('LETHAL')
+            red_flags.append(f'L{lv}: survival {surv_pct:.1f}% -> difficulty spike')
+        if win_pct < 45:
+            notes.append('LOW_WIN')
+            red_flags.append(f'L{lv}: combat win rate {win_pct:.1f}% -> monsters too strong')
+        if avg_starv > 2:
+            notes.append('STARVATION')
+            red_flags.append(f'L{lv}: avg {avg_starv:.1f} starvation HP lost -> food supply too thin')
 
-        print(f'{lv:<8} {reached:>8} {died:>8} {surv_pct:>7.1f}% {avg_hp:>10.1f} ({hp_pct:>4.0f}%) {win_pct:>6.1f}%  {avg_chain:>7.2f}  {flag}')
+        note_str = ' '.join(f'[{n}]' for n in notes)
+        print(f'{lv:<4} {reached:>7} {died:>6} {surv_pct:>6.1f}% {avg_hp:>7.1f}({hp_pct:>3.0f}%) {avg_sp_remaining:>7.0f} {win_pct:>6.1f}% {avg_chain:>9.2f}  {note_str}')
 
-    # Overall survival
     print('-' * W)
-    overall_pct = 100.0 * total_survived / runs
-    print(f'\nOverall survival to level {max_level}: {total_survived}/{runs} = {overall_pct:.1f}%')
+    print(f'\nOverall survival to level {max_level}: {total_survived}/{runs} ({100*total_survived/runs:.1f}%)')
 
-    # Death distribution
+    # Death distribution + cause breakdown
     print(f'\nDEATH DISTRIBUTION:')
     total_deaths = sum(deaths_on.values())
     for lv in sorted(deaths_on):
-        pct = 100.0 * deaths_on[lv] / max(1, total_deaths)
-        bar = '#' * int(pct / 2)
-        print(f'  Level {lv:>3}: {deaths_on[lv]:>5} deaths ({pct:>5.1f}%)  {bar}')
+        pct   = 100.0 * deaths_on[lv] / max(1, total_deaths)
+        bar   = '#' * int(pct / 2)
+        causes = death_cause[lv]
+        cause_str = '  '.join(f'{c}={n}' for c, n in sorted(causes.items()))
+        print(f'  L{lv:>3}: {deaths_on[lv]:>5} deaths ({pct:>5.1f}%)  {bar}  [{cause_str}]')
 
-    # Gear baseline at key levels
-    print(f'\nGEAR BASELINE (best available, no quiz required):')
-    for lv in [1, 3, 5, 8, 10] if max_level >= 10 else range(1, max_level + 1, max(1, max_level // 5)):
-        w = best_weapon_at_level(weapons, lv)
-        ac = best_armor_ac_at_level(armor, shields, lv)
+    # Gear baseline -- all slots, all levels
+    print(f'\nGEAR CEILING (best spawnable, per slot, no quiz required):')
+    print(f'  {"LV":<5} {"BEST WEAPON (base+max_enchant)":35} {"TOTAL AC BONUS":>15}')
+    sample_levels = sorted(set([1, 2, 3, 5, 7, 10, 15, 20]) & set(range(1, max_level + 2)))
+    for lv in sample_levels:
+        if lv > max_level:
+            continue
+        w  = best_weapon_at_level(weapons, lv)
+        ac = best_armor_ac_per_slot(armor, shields, lv)
         if w:
-            bd = w.get('baseDamage', '?')
-            wn = w.get('name', '?')
-            print(f'  Level {lv:>3}: weapon={wn} (base {bd} dmg)  armor AC bonus={ac}')
+            bd   = w.get('baseDamage', '?')
+            name = w.get('name', '?')[:32]
+            tier = w.get('mathTier', w.get('quiz_tier', '?'))
+            print(f'  {lv:<5} {name:<35} (base {bd:>2}, mathTier {tier})   AC+{ac}')
 
-    # Chain length insights
-    print(f'\nCHAIN LENGTH INSIGHTS (combat quiz, WIS=10, tier 1 -> p=0.70):')
-    p = p_correct(1, 10)
-    for chain in range(0, 7):
-        prob = (p ** chain) * (1 - p) if chain < 6 else p ** 6
-        mults = [0.5, 1.0, 1.5, 2.0, 2.5]
-        if chain == 0:
+    # Chain probability table (starting dagger -- actual JSON values)
+    base_mults = [0.3, 0.6, 1.0, 1.4, 1.8, 2.2, 2.5]
+    base_dmg   = 3
+    p_base     = p_correct(1, 10, skill)
+    print(f'\nCHAIN TABLE  (iron_dagger: base {base_dmg}  |  skill={skill}  p={p_base:.2f}):')
+    print(f'  {"CHAIN":>6}  {"P(chain=k)":>11}  {"DAMAGE":>8}  {"E[dmg contrib]":>16}')
+    q = 1.0
+    for k in range(0, len(base_mults) + 1):
+        if k == 0:
+            prob = 1 - p_base
             dmg_str = '0 (miss)'
+            edm_str = '0.00'
         else:
-            m = mults[min(chain-1, len(mults)-1)]
-            dmg_str = f'4 x {m} = {4*m:.1f} (iron dagger start)'
-        print(f'  Chain {chain}: P={prob:.3f}  ->  {dmg_str}')
+            prob = (p_base ** k) * (1 - p_base) if k < len(base_mults) else p_base ** len(base_mults)
+            m    = base_mults[k - 1]
+            dmg  = max(1, int(base_dmg * m))
+            edm  = prob * dmg
+            dmg_str = f'{base_dmg} x {m:.1f} = {dmg}'
+            edm_str = f'{edm:.2f}'
+        print(f'  {k:>6}  {prob:>11.4f}  {dmg_str:>8}  {edm_str:>16}')
 
-    # Red flags summary
+    # Red flags
     if red_flags:
         print(f'\nRED FLAGS:')
         seen = set()
-        for flag in red_flags:
-            if flag not in seen:
-                print(f'  [!] {flag}')
-                seen.add(flag)
+        for f in red_flags:
+            if f not in seen:
+                print(f'  [!] {f}')
+                seen.add(f)
     else:
-        print(f'\n[OK] No critical balance flags detected at p_correct=0.70 baseline.')
+        print(f'\n[OK] No critical flags at skill={skill}.')
 
     print('=' * W)
-    print('NOTE: This model ignores SP drain, flee, potions, scrolls, and wands.')
-    print('Adjust --runs for stability; re-tune p_correct constants for different')
-    print('player skill assumptions.')
+    print('Caveats: flee/scrolls/wands/potions not modelled (all improve survival).')
+    print('Re-run with --skill low/high to bracket the expected player range.')
     print('=' * W)
 
 # ---------------------------------------------------------------------------
@@ -470,13 +663,14 @@ def run_simulation(runs: int, max_level: int, seed: int):
 # ---------------------------------------------------------------------------
 
 def main():
-    parser = argparse.ArgumentParser(description='Philosopher\'s Quest balance simulator')
-    parser.add_argument('--runs',      type=int, default=500,  help='Number of simulation runs (default: 500)')
-    parser.add_argument('--max-level', type=int, default=10,   help='Deepest dungeon level to simulate (default: 10)')
-    parser.add_argument('--seed',      type=int, default=42,   help='Random seed for reproducibility (default: 42)')
-    args = parser.parse_args()
-
-    run_simulation(args.runs, args.max_level, args.seed)
+    ap = argparse.ArgumentParser(description='Philosopher\'s Quest balance simulator')
+    ap.add_argument('--runs',      type=int,   default=500,   help='Simulation runs (default 500)')
+    ap.add_argument('--max-level', type=int,   default=10,    help='Deepest level to simulate (default 10)')
+    ap.add_argument('--seed',      type=int,   default=42,    help='RNG seed (default 42)')
+    ap.add_argument('--skill',     type=str,   default='med',
+                    choices=['low', 'med', 'high'],           help='Player skill preset (default med)')
+    args = ap.parse_args()
+    run_simulation(args.runs, args.max_level, args.seed, args.skill)
 
 if __name__ == '__main__':
     main()
