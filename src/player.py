@@ -51,10 +51,14 @@ class Player:
 
     def take_damage(self, amount: int, damage_type: str = 'physical') -> int:
         """Apply damage after immunity and resistance checks. Returns actual damage."""
-        from status_effects import DAMAGE_IMMUNITY
+        from status_effects import DAMAGE_IMMUNITY, SHIELD_IMMUNITY
         # Full immunity via status effect
         immunity_effect = DAMAGE_IMMUNITY.get(damage_type)
         if immunity_effect and self.has_effect(immunity_effect):
+            return 0
+        # Shield effects also grant elemental immunity
+        shield_effect = SHIELD_IMMUNITY.get(damage_type)
+        if shield_effect and self.has_effect(shield_effect):
             return 0
 
         # Fractional resistance: status/accessory effects × armor resistances
@@ -239,6 +243,12 @@ class Player:
     def _apply_equip(self, item):
         from items import Weapon, Armor, Shield, Accessory, ARMOR_SLOTS
         if isinstance(item, Weapon):
+            # Return old weapon to inventory (check for cursed)
+            if self.weapon:
+                ok, msg = self.try_unequip_slot(self.weapon)
+                if not ok:
+                    return  # cursed weapon blocks swap
+                self.inventory.append(self.weapon)
             # Unequip shield if switching to 2H
             if getattr(item, 'two_handed', False) and self.shield:
                 ok, msg = self.try_unequip_slot(self.shield)

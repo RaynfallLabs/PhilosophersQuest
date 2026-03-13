@@ -54,14 +54,26 @@ class Monster:
     def tick_effects(self):
         """Decrement all active effects by one turn. Apply damage-over-time effects."""
         bleeding_dmg = 0
+        poison_dmg   = 0
+        disease_tick = False
         for name in list(self.status_effects):
-            if name == 'bleeding' and self.status_effects[name] > 0:
-                bleeding_dmg = max(1, self.max_hp // 15)
+            val = self.status_effects[name]
+            if val > 0:
+                if name == 'bleeding':
+                    bleeding_dmg = max(1, self.max_hp // 15)
+                elif name == 'poisoned':
+                    poison_dmg = 1
+                elif name == 'diseased':
+                    disease_tick = True
             self.status_effects[name] -= 1
             if self.status_effects[name] <= 0:
                 del self.status_effects[name]
         if bleeding_dmg > 0:
             self.take_damage(bleeding_dmg)
+        if poison_dmg > 0:
+            self.take_damage(poison_dmg)
+        if disease_tick and random.random() < 0.08:
+            self.take_damage(max(1, self.max_hp // 20))
 
     # --- Combat ---
 
@@ -101,14 +113,34 @@ class Monster:
         if d20 != 20 and d20 < to_hit:
             return 0, f"The {self.name} swings at you and misses! (AC {player_ac} deflects)"
 
+        # Displacement: 30% miss chance even on successful attack roll
+        if player.has_effect('displacement') and random.random() < 0.30:
+            return 0, f"The {self.name} strikes at your displaced image and misses!"
+
         # ── Hit: roll damage ───────────────────────────────────────────────
         dmg = roll(atk['damage'])
-        actual = player.take_damage(dmg, atk.get('type', 'physical'))
+        atk_type = atk.get('type', 'physical')
+
+        # Weakened: this monster's attack deals half damage
+        if self.has_effect('weakened'):
+            dmg = max(1, dmg // 2)
+
+        actual = player.take_damage(dmg, atk_type)
 
         msg = f"The {self.name} {atk['name']}s you for {actual} damage!"
 
+        # Fire/cold shield: if attack was blocked (actual=0), reflect damage back
+        if actual == 0 and atk_type == 'fire' and player.has_effect('fire_shield'):
+            refl = max(1, dmg // 2)
+            self.take_damage(refl)
+            msg = f"The {self.name}'s fire reflects back! ({refl} dmg)"
+        elif actual == 0 and atk_type == 'cold' and player.has_effect('cold_shield'):
+            refl = max(1, dmg // 2)
+            self.take_damage(refl)
+            msg = f"The {self.name}'s cold reflects back! ({refl} dmg)"
+
         # Drain attack: reduce CON if not drain_resist
-        if atk.get('type') == 'drain' and not player.has_effect('drain_resist'):
+        if atk_type == 'drain' and not player.has_effect('drain_resist'):
             old_con = player.CON
             player.apply_stat_bonus('CON', -1)
             if player.CON < old_con:
@@ -120,9 +152,14 @@ class Monster:
             chance   = atk.get('effect_chance', 0.30)
             duration = atk.get('effect_duration', 5)
             if random.random() < chance:
-                applied = player.add_effect(effect_id, duration)
-                if applied:
-                    msg += f" You are {effect_id}!"
+                # Reflecting: 50% chance to bounce effect back at attacker
+                if player.has_effect('reflecting') and random.random() < 0.50:
+                    self.add_effect(effect_id, duration)
+                    msg += f" The effect reflects back — the {self.name} is {effect_id}!"
+                else:
+                    applied = player.add_effect(effect_id, duration)
+                    if applied:
+                        msg += f" You are {effect_id}!"
 
         return actual, msg
 

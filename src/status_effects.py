@@ -42,6 +42,13 @@ EFFECT_INFO: dict[str, tuple] = {
     'searching':          ('Searching',          (160, 200, 160), 'Auto-reveal adjacent tiles'),
     'clairvoyant':        ('Clairvoyant',        (245, 205, 105), 'Large area revealed around you'),
     'displacement':       ('Displaced',          (200, 200, 200), 'Monsters may miss your true position'),
+    # ---- Active buffs (wand/accessory-granted) ----
+    'shielded':           ('Shielded',           (120, 180, 245), '+2 AC; physical damage halved'),
+    'fire_shield':        ('Fire Shield',        (245, 120,  40), 'Immune to fire; reflects fire attacks'),
+    'cold_shield':        ('Cold Shield',        ( 80, 200, 245), 'Immune to cold; reflects cold attacks'),
+    'reflecting':         ('Reflecting',         (220, 220, 180), '50% chance to reflect monster status attacks'),
+    'phasing':            ('Phasing',            (180, 180, 220), 'Can walk through walls'),
+    'time_stopped':       ('Time Stop',          (245, 220, 100), 'Time is frozen — monsters cannot act'),
     # ---- Resistances (can be timed or permanent) ----
     'fire_resist':        ('Fire Resist',        (245, 130,  50), 'Immune to fire damage'),
     'cold_resist':        ('Cold Resist',        (100, 195, 245), 'Immune to cold damage'),
@@ -62,6 +69,7 @@ DEBUFFS: frozenset = frozenset({
 BUFFS: frozenset = frozenset({
     'hasted', 'invisible', 'levitating', 'regenerating', 'telepathy',
     'warning', 'searching', 'clairvoyant', 'displacement',
+    'shielded', 'fire_shield', 'cold_shield', 'reflecting', 'phasing', 'time_stopped',
     'fire_resist', 'cold_resist', 'shock_resist', 'poison_resist',
     'sleep_resist', 'magic_resist', 'drain_resist', 'disint_resist',
 })
@@ -73,13 +81,19 @@ _RESIST_BLOCKS: dict[str, set] = {
     'drain_resist':  {'diseased'},
 }
 
-# Damage type → immunity status effect
+# Damage type → immunity status effect (first match wins; fire_shield overrides fire_resist)
 DAMAGE_IMMUNITY: dict[str, str] = {
     'fire':    'fire_resist',
     'cold':    'cold_resist',
     'electric':'shock_resist',
     'poison':  'poison_resist',
     'drain':   'drain_resist',
+}
+
+# Additional damage-type immunities granted by shield effects (checked separately)
+SHIELD_IMMUNITY: dict[str, str] = {
+    'fire': 'fire_shield',
+    'cold': 'cold_shield',
 }
 
 # Messages shown when a timed effect expires
@@ -106,6 +120,12 @@ _EXPIRE_MSGS: dict[str, tuple] = {
     'searching':      ('You stop searching automatically.',      'info'),
     'clairvoyant':    ('Your clairvoyance fades.',               'info'),
     'displacement':   ('Your displacement aura fades.',          'info'),
+    'shielded':       ('Your shield barrier dissipates.',        'info'),
+    'fire_shield':    ('The flames around you die down.',        'info'),
+    'cold_shield':    ('The frost shell around you melts.',      'info'),
+    'reflecting':     ('Your reflective aura fades.',            'info'),
+    'phasing':        ('You feel solid again.',                  'info'),
+    'time_stopped':   ('Time resumes its flow.',                 'info'),
 }
 
 
