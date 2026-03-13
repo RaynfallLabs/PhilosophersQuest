@@ -573,6 +573,9 @@ class Game:
         self.dungeon_level = new_level
         self.renderer.set_dungeon(dungeon.width, dungeon.height, GAME_W, GAME_H)
 
+        # Grant HP on every level transition
+        self.player.on_level_change()
+
         # Place player at the stairs they came through
         if enter_from_top:
             self.player.x, self.player.y = dungeon.rooms[0].center

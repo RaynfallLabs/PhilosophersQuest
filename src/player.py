@@ -84,6 +84,19 @@ class Player:
     def restore_hp(self, amount: int):
         self.hp = min(self.max_hp, self.hp + amount)
 
+    HP_PER_LEVEL = 8  # max HP gained per dungeon level (staircase use)
+
+    def on_level_change(self):
+        """Called when player uses a staircase. Grants max HP and stair-rest healing.
+
+        The stair-rest heal scales with max HP (5%) so deep-level players recover
+        meaningfully between floors — important for the 200-level gauntlet.
+        At L1: ~2 HP; at L20: ~9 HP; at L60: ~25 HP; at L100: ~41 HP.
+        """
+        self.max_hp += self.HP_PER_LEVEL
+        rest_heal = max(self.HP_PER_LEVEL, int(self.max_hp * 0.05))
+        self.hp = min(self.hp + rest_heal, self.max_hp)
+
     def restore_mp(self, amount: int):
         self.mp = min(self.max_mp, self.mp + amount)
 

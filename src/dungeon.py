@@ -394,9 +394,9 @@ def spawn_monsters(rooms: List[Room], level: int, dungeon: Dungeon,
 
     rng = random.Random()
     if min_count is None:
-        min_count = min(3 + level // 10, 10)
+        min_count = min(2 + level // 15, 7)
     if max_count is None:
-        max_count = min(5 + level // 5, 15)
+        max_count = min(3 + level // 8, 11)
     count    = rng.randint(min_count, max_count)
     monsters = []
     spawn_rooms = rooms[1:]
