@@ -163,34 +163,76 @@ def _alert_nearby(player, dungeon, monsters) -> bool:
     return alerted
 
 
+# Per container tier: which item categories to draw from, max quiz tier
+# allowed, and whether legendary (containerLootTier='legendary') items can appear.
+_TIER_LOOT_CFG: dict[int, dict] = {
+    1: {'classes': ['weapon', 'armor', 'ammo'],
+        'max_tier': 2, 'legendary': False},
+    2: {'classes': ['weapon', 'armor', 'ammo', 'accessory'],
+        'max_tier': 3, 'legendary': False},
+    3: {'classes': ['weapon', 'armor', 'accessory', 'scroll', 'wand'],
+        'max_tier': 4, 'legendary': False},
+    4: {'classes': ['weapon', 'armor', 'accessory', 'scroll', 'wand'],
+        'max_tier': 5, 'legendary': False},
+    5: {'classes': ['weapon', 'armor', 'accessory', 'scroll', 'wand'],
+        'max_tier': 5, 'legendary': True},
+}
+
+
+def _item_tier(item) -> int:
+    """Return the effective quiz/difficulty tier of an item (1–5)."""
+    return int(getattr(item, 'quiz_tier',
+               getattr(item, 'tier', 1)))
+
+
 def _generate_loot(container, dungeon_level: int) -> list:
-    """Pick 1+ items appropriate for the container's tier."""
+    """
+    Pick 1+ items whose tier and class match the container's tier.
+    Higher-tier containers draw from more categories, allow higher-tier
+    items, and bias toward the best items in the pool.
+    """
     import copy
     from items import load_items
 
-    # Build eligible item pool from weapons and armor at or below container tier
+    container_tier = max(1, min(5, getattr(container, 'tier', 1)))
+    cfg = _TIER_LOOT_CFG[container_tier]
+
     pool = []
-    for cls_name in ('weapon', 'armor'):
+    for cls_name in cfg['classes']:
         try:
-            items = load_items(cls_name)
-            pool.extend(
-                t for t in items
-                if t.min_level <= max(1, dungeon_level)
-            )
+            for item in load_items(cls_name):
+                itier = _item_tier(item)
+                # Skip items above the allowed tier ceiling
+                if itier > cfg['max_tier']:
+                    continue
+                # Legendary items only in tier-5 containers
+                if getattr(item, 'container_loot_tier', 'common') == 'legendary' \
+                        and not cfg['legendary']:
+                    continue
+                # Must have spawned by this dungeon level
+                if item.min_level > max(1, dungeon_level):
+                    continue
+                pool.append(item)
         except FileNotFoundError:
             pass
 
     if not pool:
         return []
 
-    # Always give at least 1 item
-    chosen = [copy.copy(random.choice(pool))]
+    # Bias toward higher-tier items in higher-tier containers (weight by tier²)
+    if container_tier >= 3:
+        weights = [_item_tier(i) ** 2 for i in pool]
+    else:
+        weights = [1] * len(pool)
 
-    # Extra items with diminishing probability
+    def pick_one():
+        return copy.copy(random.choices(pool, weights=weights, k=1)[0])
+
+    chosen = [pick_one()]
     chance = container.extra_item_chance
     while chance > 0.05 and random.random() < chance:
-        chosen.append(copy.copy(random.choice(pool)))
-        chance *= 0.40   # e.g. 0.50 → 0.20 → 0.08 → …
+        chosen.append(pick_one())
+        chance *= 0.40
 
     return chosen
 

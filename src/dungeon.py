@@ -464,9 +464,9 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
         weights = [c.extra_item_chance for c in eligible_containers]
         chosen  = rng.choices(eligible_containers, weights=weights, k=1)[0]
         inst    = copy.copy(chosen)
-        # Tier variance: ±1 level, clamped 1-5
-        tier = max(1, min(5, level + rng.randint(-1, 1)))
-        inst.tier = tier
+        # Map dungeon level 1-100 to container tier 1-5, with ±1 variance
+        base_tier = max(1, min(5, (level - 1) // 20 + 1))
+        inst.tier = max(1, min(5, base_tier + rng.randint(-1, 1)))
         inst.is_mimic = rng.random() < _MIMIC_CHANCE
         return inst
 
