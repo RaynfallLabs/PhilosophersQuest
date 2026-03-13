@@ -3375,5 +3375,1136 @@
       "61-80": 30,
       "81-100": 20
     }
+  },
+  "ring_of_gyges": {
+    "name": "Ring of Gyges",
+    "symbol": "=",
+    "color": [
+      180,
+      180,
+      180
+    ],
+    "weight": 0.1,
+    "min_level": 60,
+    "slot": "ring",
+    "equip_threshold": 5,
+    "quiz_tier": 5,
+    "effects": {
+      "status": "invisible",
+      "duration": -1
+    },
+    "unidentified_name": "a plain iron ring with no markings",
+    "floorSpawnWeight": {
+      "61-80": 1,
+      "81-100": 2
+    },
+    "identified": false,
+    "lore": "Plato's thought experiment made physical. A shepherd found it in a chasm opened by earthquake, wore it, discovered its power, seduced the queen, killed the king, and took the throne. Plato used it to ask: would a just man behave differently if invisible? The Ring doesn't answer the question. It only enables it."
+  },
+  "ring_of_the_nibelung": {
+    "name": "Ring of the Nibelung",
+    "symbol": "=",
+    "color": [
+      200,
+      150,
+      50
+    ],
+    "weight": 0.2,
+    "min_level": 65,
+    "slot": "ring",
+    "equip_threshold": 5,
+    "quiz_tier": 5,
+    "effects": {
+      "stat": "STR",
+      "amount": 4
+    },
+    "unidentified_name": "a heavy gold ring with a tiny rune",
+    "floorSpawnWeight": {
+      "81-100": 2
+    },
+    "identified": false,
+    "lore": "Andvari's gold ring, stolen by Loki and given as wergild to the giant Hreidmar. Andvari cursed it: it would destroy every owner. Hreidmar was killed by his son. Fafnir killed his brother for it. Sigurd killed Fafnir. The ring went to Gudrun, who murdered Sigurd. Wagner compressed this into four operas. The curse required no compression."
+  },
+  "andvaranaut": {
+    "name": "Andvaranaut",
+    "symbol": "=",
+    "color": [
+      255,
+      215,
+      80
+    ],
+    "weight": 0.1,
+    "min_level": 55,
+    "slot": "ring",
+    "equip_threshold": 4,
+    "quiz_tier": 5,
+    "effects": {
+      "stat": "INT",
+      "amount": 3,
+      "status": "searching",
+      "duration": -1
+    },
+    "unidentified_name": "a golden ring that seems lighter than it should",
+    "floorSpawnWeight": {
+      "61-80": 1,
+      "81-100": 2
+    },
+    "identified": false,
+    "lore": "Andvari's magic ring that could find gold wherever it lay hidden. Loki stole it with the rest of the dwarf's hoard to pay the wergild for killing Otr. Andvari cursed both the ring and all the gold as he surrendered them. The ring found gold. It could not find safe owners."
+  },
+  "draupnir": {
+    "name": "Draupnir",
+    "symbol": "=",
+    "color": [
+      255,
+      230,
+      100
+    ],
+    "weight": 0.3,
+    "min_level": 65,
+    "slot": "ring",
+    "equip_threshold": 5,
+    "quiz_tier": 5,
+    "effects": {
+      "stat": "INT",
+      "amount": 4
+    },
+    "unidentified_name": "a golden arm-ring of extraordinary weight",
+    "floorSpawnWeight": {
+      "81-100": 2
+    },
+    "identified": false,
+    "lore": "Odin's ring — every ninth night eight rings of equal weight dripped from it. Odin placed it on Baldur's funeral pyre. Baldur returned it from Hel as proof that he had been there. Hermod carried it back. It is the only object ever to make a round trip to the realm of the dead and return unchanged."
+  },
+  "ring_of_solomon": {
+    "name": "Seal of Solomon",
+    "symbol": "=",
+    "color": [
+      120,
+      180,
+      120
+    ],
+    "weight": 0.1,
+    "min_level": 60,
+    "slot": "ring",
+    "equip_threshold": 5,
+    "quiz_tier": 5,
+    "effects": {
+      "stat": "WIS",
+      "amount": 3,
+      "status": "telepathy",
+      "duration": -1
+    },
+    "unidentified_name": "a signet ring with a six-pointed star",
+    "floorSpawnWeight": {
+      "61-80": 1,
+      "81-100": 2
+    },
+    "identified": false,
+    "lore": "The ring that let Solomon command demons and djinn, given to him from heaven. With it he enslaved Asmodeus, the king of demons, and forced him to assist in the Temple's construction. When a demon stole the ring, Solomon was reduced to begging for food until he recovered it. The ring's power depended entirely on who wore it."
+  },
+  "ring_of_eluned": {
+    "name": "Ring of Eluned",
+    "symbol": "=",
+    "color": [
+      160,
+      200,
+      160
+    ],
+    "weight": 0.1,
+    "min_level": 50,
+    "slot": "ring",
+    "equip_threshold": 4,
+    "quiz_tier": 5,
+    "effects": {
+      "status": "invisible",
+      "duration": -1,
+      "stat": "DEX",
+      "amount": 2
+    },
+    "unidentified_name": "a green ring of twisted ivy-metal",
+    "floorSpawnWeight": {
+      "61-80": 1,
+      "81-100": 2
+    },
+    "identified": false,
+    "lore": "The Welsh Arthurian heroine Luned gave this ring to Owain when he was trapped in a portcullis. It rendered him invisible to the castle's inhabitants until he could escape. She retrieved it afterward, which is the appropriate thing to do with a ring of this power. Most people who receive such gifts do not return them."
+  },
+  "brisingamen": {
+    "name": "Brisingamen",
+    "symbol": "\"",
+    "color": [
+      255,
+      100,
+      150
+    ],
+    "weight": 0.3,
+    "min_level": 65,
+    "slot": "amulet",
+    "equip_threshold": 5,
+    "quiz_tier": 5,
+    "effects": {
+      "stat": "WIS",
+      "amount": 3,
+      "status": "regeneration",
+      "duration": -1
+    },
+    "unidentified_name": "a necklace of four interlocked golden torcs",
+    "floorSpawnWeight": {
+      "81-100": 2
+    },
+    "identified": false,
+    "lore": "Freya's necklace, forged by four dwarves over four days. She paid each one a night of her company. Loki stole it in the form of a fly; Heimdall fought him in seal-form to recover it. Freya wore it in battle and her tears became gold. The Brisingamen is the most written-about piece of Norse jewellery. The dwarves received no further acknowledgment in the sagas."
+  },
+  "talisman_of_troy": {
+    "name": "Palladium of Troy",
+    "symbol": "\"",
+    "color": [
+      200,
+      200,
+      255
+    ],
+    "weight": 0.5,
+    "min_level": 65,
+    "slot": "amulet",
+    "equip_threshold": 5,
+    "quiz_tier": 5,
+    "effects": {
+      "status": "reflecting",
+      "duration": -1
+    },
+    "unidentified_name": "a small wooden figure of armed Athena",
+    "floorSpawnWeight": {
+      "61-80": 1,
+      "81-100": 2
+    },
+    "identified": false,
+    "lore": "The Palladium — a carved image of Athena that fell from the sky — kept Troy invincible as long as it remained within the city walls. Odysseus and Diomedes stole it. Troy fell. Later, every major city of the ancient world claimed to have the original Palladium: Rome, Athens, Argos, Sparta. They cannot all be correct. They may all be correct."
+  },
+  "eye_of_horus": {
+    "name": "Eye of Horus",
+    "symbol": "\"",
+    "color": [
+      80,
+      200,
+      255
+    ],
+    "weight": 0.2,
+    "min_level": 60,
+    "slot": "amulet",
+    "equip_threshold": 5,
+    "quiz_tier": 5,
+    "effects": {
+      "stat": "PER",
+      "amount": 4,
+      "status": "truesight",
+      "duration": -1
+    },
+    "unidentified_name": "a faience amulet shaped like a falcon's eye",
+    "floorSpawnWeight": {
+      "61-80": 1,
+      "81-100": 2
+    },
+    "identified": false,
+    "lore": "When Set tore out Horus's eye, Thoth restored it. The restored eye — the wedjat — became the symbol of protection, health, and restored power. Egyptian physicians prescribed it; sailors wore it on boats. The mathematical fractions of the eye's components sum to 63/64. The missing 1/64 was left to Thoth to complete with magic."
+  },
+  "scarab_of_khepri": {
+    "name": "Scarab of Khepri",
+    "symbol": "\"",
+    "color": [
+      100,
+      200,
+      100
+    ],
+    "weight": 0.2,
+    "min_level": 55,
+    "slot": "amulet",
+    "equip_threshold": 4,
+    "quiz_tier": 5,
+    "effects": {
+      "status": "life_save",
+      "duration": -1
+    },
+    "unidentified_name": "a carved green stone beetle",
+    "floorSpawnWeight": {
+      "61-80": 1,
+      "81-100": 2
+    },
+    "identified": false,
+    "lore": "Khepri, the scarab god, rolls the sun across the sky each morning — the same motion the dung beetle makes rolling its ball. Egyptian amulets shaped like scarabs were placed over the heart of the dead to prevent it from testifying against its owner at the judgment. The heart was considered the source of moral failure. The scarab, apparently, overruled it."
+  },
+  "hamsa_hand": {
+    "name": "Hand of Fatima",
+    "symbol": "\"",
+    "color": [
+      200,
+      180,
+      140
+    ],
+    "weight": 0.2,
+    "min_level": 40,
+    "slot": "amulet",
+    "equip_threshold": 4,
+    "quiz_tier": 4,
+    "effects": {
+      "stat": "CON",
+      "amount": 2,
+      "status": "warning",
+      "duration": -1
+    },
+    "unidentified_name": "an open hand amulet with an eye in the palm",
+    "floorSpawnWeight": {
+      "61-80": 1,
+      "81-100": 2
+    },
+    "identified": false,
+    "lore": "The hamsa appears in Islamic, Jewish, and Christian traditions under different names — Hand of Fatima, Hand of Miriam, Hand of Mary. The eye in the palm deflects the evil eye. It is one of the few symbols shared without significant modification across the Mediterranean's three Abrahamic faiths. No one disputes it. Everyone claims it."
+  },
+  "ouroboros_pendant": {
+    "name": "Ouroboros",
+    "symbol": "\"",
+    "color": [
+      120,
+      180,
+      80
+    ],
+    "weight": 0.2,
+    "min_level": 45,
+    "slot": "amulet",
+    "equip_threshold": 4,
+    "quiz_tier": 4,
+    "effects": {
+      "status": "regeneration",
+      "duration": -1,
+      "stat": "CON",
+      "amount": 2
+    },
+    "unidentified_name": "a silver pendant of a serpent eating its tail",
+    "floorSpawnWeight": {
+      "61-80": 1,
+      "81-100": 2
+    },
+    "identified": false,
+    "lore": "The oldest image of the ouroboros appears in an Egyptian royal tomb, 1350 BCE. It represents cyclical time, eternal recurrence, the universe sustaining itself. Alchemists adopted it. Jung analysed it. Kekulé claimed the image gave him the ring structure of benzene in a dream. Whether this last part is true, the benzene ring is real."
+  },
+  "necklace_of_harmonia": {
+    "name": "Necklace of Harmonia",
+    "symbol": "\"",
+    "color": [
+      200,
+      150,
+      200
+    ],
+    "weight": 0.3,
+    "min_level": 65,
+    "slot": "amulet",
+    "equip_threshold": 5,
+    "quiz_tier": 5,
+    "effects": {
+      "stat": "WIS",
+      "amount": 4
+    },
+    "unidentified_name": "a golden necklace of impossible craftsmanship",
+    "floorSpawnWeight": {
+      "81-100": 2
+    },
+    "identified": false,
+    "lore": "Hephaestus forged it as a wedding gift for Harmonia when she married Cadmus — and cursed it, because Harmonia's mother was Aphrodite, who had cuckolded him with Ares. Every woman who wore it suffered catastrophe: Jocasta, Eriphyle (who betrayed her husband for it), Jocasta again, Callirhoe. The necklace destroyed houses. It is still beautiful."
+  },
+  "menat_of_hathor": {
+    "name": "Menat of Hathor",
+    "symbol": "\"",
+    "color": [
+      255,
+      180,
+      100
+    ],
+    "weight": 0.4,
+    "min_level": 50,
+    "slot": "amulet",
+    "equip_threshold": 4,
+    "quiz_tier": 4,
+    "effects": {
+      "stat": "CON",
+      "amount": 4
+    },
+    "unidentified_name": "a beaded collar of carnelian and faience",
+    "floorSpawnWeight": {
+      "61-80": 1,
+      "81-100": 2
+    },
+    "identified": false,
+    "lore": "Hathor's sacred necklace, shaken as a rattle in her rituals. Temple reliefs show pharaohs receiving the menat from the goddess as a guarantee of health, fertility, and joy. It was both jewellery and musical instrument. The sound of carnelian beads against each other was, in Hathor's theology, the sound of everything being well."
+  },
+  "heart_of_ahriman": {
+    "name": "Heart of Ahriman",
+    "symbol": "\"",
+    "color": [
+      200,
+      0,
+      80
+    ],
+    "weight": 0.3,
+    "min_level": 70,
+    "slot": "amulet",
+    "equip_threshold": 5,
+    "quiz_tier": 5,
+    "effects": {
+      "stat": "INT",
+      "amount": 5
+    },
+    "unidentified_name": "a deep red gem that seems to pulse",
+    "floorSpawnWeight": {
+      "81-100": 2
+    },
+    "identified": false,
+    "lore": "Ahriman, the Zoroastrian principle of darkness and chaos, is not merely evil but anti-being — the force that unmakes. His heart, if such a thing could be extracted and held, would contain complete knowledge of all things that can be destroyed. This is a great deal of knowledge. The gem is warm. It should not be warm."
+  },
+  "tyet_of_isis": {
+    "name": "Tyet of Isis",
+    "symbol": "\"",
+    "color": [
+      220,
+      60,
+      80
+    ],
+    "weight": 0.2,
+    "min_level": 60,
+    "slot": "amulet",
+    "equip_threshold": 5,
+    "quiz_tier": 5,
+    "effects": {
+      "status": "life_save",
+      "duration": -1,
+      "stat": "WIS",
+      "amount": 2
+    },
+    "unidentified_name": "a knotted red jasper amulet like a tied sash",
+    "floorSpawnWeight": {
+      "61-80": 1,
+      "81-100": 2
+    },
+    "identified": false,
+    "lore": "The knot of Isis — the tyet — accompanied the dead as written in Chapter 156 of the Book of the Dead: 'You possess your blood, Isis; you possess your power.' It was always made of red jasper or red stone. Red was the colour of Isis's protective power, not of blood. This distinction mattered to Egyptian physicians."
+  },
+  "idunn_apple_charm": {
+    "name": "Idunn's Apple",
+    "symbol": "\"",
+    "color": [
+      180,
+      255,
+      120
+    ],
+    "weight": 0.2,
+    "min_level": 70,
+    "slot": "amulet",
+    "equip_threshold": 5,
+    "quiz_tier": 5,
+    "effects": {
+      "stat": "CON",
+      "amount": 5
+    },
+    "unidentified_name": "a carved jade apple on a silver chain",
+    "floorSpawnWeight": {
+      "81-100": 2
+    },
+    "identified": false,
+    "lore": "Idunn kept the golden apples that gave the Aesir their eternal youth. When Loki allowed the giant Thjazi to kidnap her, the gods began to age. They forced Loki to retrieve her; he turned into a falcon, turned her into a nut, and flew back. Thjazi pursued. The gods lit fires at Asgard's walls and Thjazi burned. Idunn is the one person in Norse mythology who causes a crisis by simply not being present."
+  },
+  "caduceus_charm": {
+    "name": "Caduceus of Hermes",
+    "symbol": "\"",
+    "color": [
+      160,
+      220,
+      180
+    ],
+    "weight": 0.2,
+    "min_level": 50,
+    "slot": "amulet",
+    "equip_threshold": 4,
+    "quiz_tier": 4,
+    "effects": {
+      "status": "regeneration",
+      "duration": -1,
+      "stat": "WIS",
+      "amount": 2
+    },
+    "unidentified_name": "a charm of two serpents coiled around a winged rod",
+    "floorSpawnWeight": {
+      "61-80": 1,
+      "81-100": 2
+    },
+    "identified": false,
+    "lore": "Hermes received the caduceus from Apollo in exchange for the lyre. It could put people to sleep or wake them, guide souls to the underworld, and — in later tradition — heal. Medical associations adopted it, confusing it with Asclepius's single-serpent staff. The American Military medical corps still uses the caduceus. Doctors point out the distinction; the military finds it difficult to care."
+  },
+  "torque_of_lugh": {
+    "name": "Torque of Lugh",
+    "symbol": "\"",
+    "color": [
+      255,
+      200,
+      80
+    ],
+    "weight": 0.4,
+    "min_level": 65,
+    "slot": "amulet",
+    "equip_threshold": 5,
+    "quiz_tier": 5,
+    "effects": {
+      "stat": "STR",
+      "amount": 4
+    },
+    "unidentified_name": "a twisted gold neck-ring of Celtic make",
+    "floorSpawnWeight": {
+      "61-80": 1,
+      "81-100": 2
+    },
+    "identified": false,
+    "lore": "Lugh of the Long Arm wore a golden torque as one of his divine symbols, along with Fragarach and a magic horse. He was the god of skill — every skill simultaneously — because he argued his way past the Tuatha's gatekeeper by pointing out that while they had specialists, none of them could do everything he could. The gatekeeper let him in."
+  },
+  "pectoral_of_amun": {
+    "name": "Pectoral of Amun",
+    "symbol": "\"",
+    "color": [
+      200,
+      160,
+      80
+    ],
+    "weight": 0.5,
+    "min_level": 65,
+    "slot": "amulet",
+    "equip_threshold": 5,
+    "quiz_tier": 5,
+    "effects": {
+      "stat": "WIS",
+      "amount": 4
+    },
+    "unidentified_name": "a broad chest ornament of lapis and gold",
+    "floorSpawnWeight": {
+      "61-80": 1,
+      "81-100": 2
+    },
+    "identified": false,
+    "lore": "Amun, whose name means 'the hidden one,' was invisible by definition — his cult image was sealed inside the inner sanctum of Karnak, and even priests could not see it. His pectoral was worn by pharaohs when making decisions of state. The decisions were not actually made by the pectoral. They were, however, required to be made while wearing it."
+  },
+  "ankh_of_ra": {
+    "name": "Ankh of Ra",
+    "symbol": "\"",
+    "color": [
+      255,
+      220,
+      80
+    ],
+    "weight": 0.2,
+    "min_level": 50,
+    "slot": "amulet",
+    "equip_threshold": 4,
+    "quiz_tier": 4,
+    "effects": {
+      "stat": "CON",
+      "amount": 3,
+      "status": "regeneration",
+      "duration": -1
+    },
+    "unidentified_name": "a looped cross of gilded bronze",
+    "floorSpawnWeight": {
+      "61-80": 1,
+      "81-100": 2
+    },
+    "identified": false,
+    "lore": "Ra holds the ankh — the key of life — in all his standard depictions. He passes it to pharaohs; pharaohs pass it to other gods; everyone passes it. The ankh's shape may derive from a sandal strap, a mirror, or a feminine symbol depending on which scholar you consult. In Coptic Christianity it became the crux ansata and survived into church iconography. It is the oldest recurring symbol in Egyptian art."
+  },
+  "ring_of_gawain": {
+    "name": "Ring of Sir Gawain",
+    "symbol": "=",
+    "color": [
+      180,
+      220,
+      180
+    ],
+    "weight": 0.1,
+    "min_level": 60,
+    "slot": "ring",
+    "equip_threshold": 5,
+    "quiz_tier": 5,
+    "effects": {
+      "stat": "STR",
+      "amount": 3,
+      "status": "hasted",
+      "duration": -1
+    },
+    "unidentified_name": "a plain green ring with a small enameled star",
+    "floorSpawnWeight": {
+      "61-80": 1,
+      "81-100": 2
+    },
+    "identified": false,
+    "lore": "In the Alliterative Morte Arthure, Gawain's strength grew until noon, held until three, and then diminished. In the Green Knight poem, he wore a green girdle he believed would protect him, and was ashamed when his small evasion was revealed. The shame was disproportionate; Gawain was the most courteous knight, which meant his lapses troubled him more than other men's crimes troubled them."
+  },
+  "ring_of_odysseus": {
+    "name": "Ring of Odysseus",
+    "symbol": "=",
+    "color": [
+      200,
+      180,
+      140
+    ],
+    "weight": 0.1,
+    "min_level": 60,
+    "slot": "ring",
+    "equip_threshold": 5,
+    "quiz_tier": 5,
+    "effects": {
+      "stat": "PER",
+      "amount": 4,
+      "status": "searching",
+      "duration": -1
+    },
+    "unidentified_name": "an old bronze ring with a ship carved in the stone",
+    "floorSpawnWeight": {
+      "61-80": 1,
+      "81-100": 2
+    },
+    "identified": false,
+    "lore": "Odysseus had no magical ring. He needed none. He was the man who thought of the wooden horse, who tied himself to the mast to hear the Sirens safely, who invented false identities with the ease of breathing. What he could not solve with cunning he solved with patience. The ring is his, in retrospect — it was always going to be found by someone who didn't go home the easy way."
+  },
+  "ring_of_scheherazade": {
+    "name": "Ring of Scheherazade",
+    "symbol": "=",
+    "color": [
+      200,
+      160,
+      255
+    ],
+    "weight": 0.1,
+    "min_level": 60,
+    "slot": "ring",
+    "equip_threshold": 5,
+    "quiz_tier": 5,
+    "effects": {
+      "stat": "INT",
+      "amount": 4
+    },
+    "unidentified_name": "a ring set with a pale blue stone that swirls",
+    "floorSpawnWeight": {
+      "61-80": 1,
+      "81-100": 2
+    },
+    "identified": false,
+    "lore": "Scheherazade told 1,001 stories to postpone her execution. She did not use magic; she used structure — each story nested inside another, every night's tale ending at a moment too interesting to stop. She survived by being more valuable alive than dead. This is the original argument for intellectual labour. She was also, by the end, the queen."
+  },
+  "amulet_of_merlin": {
+    "name": "Amulet of Merlin",
+    "symbol": "\"",
+    "color": [
+      100,
+      100,
+      200
+    ],
+    "weight": 0.3,
+    "min_level": 70,
+    "slot": "amulet",
+    "equip_threshold": 5,
+    "quiz_tier": 5,
+    "effects": {
+      "stat": "INT",
+      "amount": 5
+    },
+    "unidentified_name": "a blue pendant with a moving star inside the stone",
+    "floorSpawnWeight": {
+      "81-100": 2
+    },
+    "identified": false,
+    "lore": "Merlin was the son of an incubus and a Welsh princess, a fact that concerned his contemporaries far less than it perhaps should have. He advised three kings, built Stonehenge (in some accounts), created the Round Table, engineered the conception of Arthur, and was eventually imprisoned in a glass tower or a tree or a cave by his student Nimue. The nature of the prison varies. The imprisonment does not."
+  },
+  "ring_of_pythia": {
+    "name": "Ring of the Oracle",
+    "symbol": "=",
+    "color": [
+      200,
+      200,
+      140
+    ],
+    "weight": 0.1,
+    "min_level": 55,
+    "slot": "ring",
+    "equip_threshold": 4,
+    "quiz_tier": 5,
+    "effects": {
+      "status": "clairvoyant",
+      "duration": -1,
+      "stat": "PER",
+      "amount": 2
+    },
+    "unidentified_name": "a bronze ring smelling faintly of laurel smoke",
+    "floorSpawnWeight": {
+      "61-80": 1,
+      "81-100": 2
+    },
+    "identified": false,
+    "lore": "The Pythia at Delphi sat over a chasm in the earth and breathed volcanic vapour while speaking for Apollo. Her pronouncements were famously ambiguous: Croesus was told that if he attacked Persia, he would destroy a great empire. He did. The empire was his own. The Oracle was never wrong. It just required careful interpretation."
+  },
+  "anklet_of_atalanta": {
+    "name": "Anklet of Atalanta",
+    "symbol": "=",
+    "color": [
+      200,
+      255,
+      180
+    ],
+    "weight": 0.1,
+    "min_level": 65,
+    "slot": "ring",
+    "equip_threshold": 5,
+    "quiz_tier": 5,
+    "effects": {
+      "stat": "DEX",
+      "amount": 5
+    },
+    "unidentified_name": "a delicate runner's anklet of pale silver",
+    "floorSpawnWeight": {
+      "81-100": 2
+    },
+    "identified": false,
+    "lore": "Atalanta could outrun any man alive. Her father offered her hand to whoever could beat her in a race. The losers were killed. Hippomenes won by dropping three golden apples from Aphrodite; she stopped to pick them up. She did not stop because she wanted the apples. She stopped because losing was the most interesting thing that had happened to her yet."
+  },
+  "crown_of_croesus": {
+    "name": "Diadem of Croesus",
+    "symbol": "=",
+    "color": [
+      220,
+      200,
+      80
+    ],
+    "weight": 0.2,
+    "min_level": 50,
+    "slot": "ring",
+    "equip_threshold": 4,
+    "quiz_tier": 4,
+    "effects": {
+      "stat": "INT",
+      "amount": 3,
+      "status": "searching",
+      "duration": -1
+    },
+    "unidentified_name": "a small golden diadem fragment on a chain",
+    "floorSpawnWeight": {
+      "61-80": 1,
+      "81-100": 2
+    },
+    "identified": false,
+    "lore": "Croesus of Lydia was the richest man in the world and knew it. He tested the Delphic Oracle with an absurd question to verify its power before asking whether he should attack Persia. It answered correctly. He attacked Persia. The Oracle had also answered correctly about that. Croesus's error was not the Oracle. It was the interpretation."
+  },
+  "collar_of_njord": {
+    "name": "Sea-Collar of Njörd",
+    "symbol": "\"",
+    "color": [
+      80,
+      180,
+      220
+    ],
+    "weight": 0.3,
+    "min_level": 45,
+    "slot": "amulet",
+    "equip_threshold": 4,
+    "quiz_tier": 4,
+    "effects": {
+      "stat": "CON",
+      "amount": 3,
+      "status": "warning",
+      "duration": -1
+    },
+    "unidentified_name": "a necklace of Baltic amber and whale-bone",
+    "floorSpawnWeight": {
+      "61-80": 1,
+      "81-100": 2
+    },
+    "identified": false,
+    "lore": "Njörd ruled the winds and the seas and was responsible for the catch of fish and hunters' luck. He married Skadi, who chose him by his feet — the most beautiful feet among the gods — expecting to have chosen Baldur. They lived six days in her mountains, six by the sea, and both were miserable by turns. Nordic marriage counsellors date their profession's origin to this arrangement."
+  },
+  "ring_of_percival": {
+    "name": "Ring of the Pure Knight",
+    "symbol": "=",
+    "color": [
+      220,
+      240,
+      255
+    ],
+    "weight": 0.1,
+    "min_level": 65,
+    "slot": "ring",
+    "equip_threshold": 5,
+    "quiz_tier": 5,
+    "effects": {
+      "stat": "WIS",
+      "amount": 4
+    },
+    "unidentified_name": "a silver ring set with a small cup-shaped hollow",
+    "floorSpawnWeight": {
+      "61-80": 1,
+      "81-100": 2
+    },
+    "identified": false,
+    "lore": "Percival failed the Grail question because he was too polite to ask what was wrong with the Fisher King. He had been told not to ask too many questions. He followed the instruction and failed. When he returned and asked — Who does the Grail serve? — the king was healed. The lesson of the Grail quest is that courtesy has limits, and sometimes the correct action is to inquire."
+  },
+  "ring_of_lancelot": {
+    "name": "Ring of the Fallen Knight",
+    "symbol": "=",
+    "color": [
+      255,
+      200,
+      200
+    ],
+    "weight": 0.1,
+    "min_level": 65,
+    "slot": "ring",
+    "equip_threshold": 5,
+    "quiz_tier": 5,
+    "effects": {
+      "stat": "STR",
+      "amount": 4,
+      "status": "hasted",
+      "duration": -1
+    },
+    "unidentified_name": "a red-gold ring with a small tower engraved on it",
+    "floorSpawnWeight": {
+      "81-100": 2
+    },
+    "identified": false,
+    "lore": "Lancelot was the greatest knight in the world and destroyed the Round Table by being exactly that. His affair with Guinevere was not a secret he kept — it was a secret everyone kept for him because they needed him too much to confront him. The tower on the ring is the tower of Joyous Gard, where he retreated when his virtue finally failed the test he had spent his life avoiding."
+  },
+  "seal_of_agrippa": {
+    "name": "Seal of Agrippa",
+    "symbol": "\"",
+    "color": [
+      100,
+      100,
+      150
+    ],
+    "weight": 0.2,
+    "min_level": 60,
+    "slot": "amulet",
+    "equip_threshold": 5,
+    "quiz_tier": 5,
+    "effects": {
+      "stat": "INT",
+      "amount": 3,
+      "status": "clairvoyant",
+      "duration": -1
+    },
+    "unidentified_name": "a wax seal pendant with planetary symbols",
+    "floorSpawnWeight": {
+      "61-80": 1,
+      "81-100": 2
+    },
+    "identified": false,
+    "lore": "Heinrich Cornelius Agrippa published Three Books of Occult Philosophy in 1531, systematizing all of Renaissance magic into a single framework: the elemental world, the celestial world, and the intellectual world. He was accused of heresy, employed by kings, and died in debt. His books were the most widely read magical texts of the 16th century. He himself claimed at the end that they were worthless. He was probably not being entirely honest."
+  },
+  "philosophers_ring_legendary": {
+    "name": "Philosopher's Ring",
+    "symbol": "=",
+    "color": [
+      200,
+      180,
+      255
+    ],
+    "weight": 0.1,
+    "min_level": 65,
+    "slot": "ring",
+    "equip_threshold": 5,
+    "quiz_tier": 5,
+    "effects": {
+      "stat": "WIS",
+      "amount": 3,
+      "status": "truesight",
+      "duration": -1
+    },
+    "unidentified_name": "a ring of strange alloy that seems to look back at you",
+    "floorSpawnWeight": {
+      "81-100": 2
+    },
+    "identified": false,
+    "lore": "The philosopher does not merely think — the philosopher perceives. Socrates described his daimon as a voice that told him what not to do; he considered this the most useful kind of guidance. The ring was found in the ruins of the Academy at Athens, described in a catalogue written three centuries after Plato's death. The description ends mid-sentence. The catalogue's final page is missing."
+  },
+  "amulet_of_pythagoras": {
+    "name": "Tetractys Amulet",
+    "symbol": "\"",
+    "color": [
+      160,
+      200,
+      220
+    ],
+    "weight": 0.2,
+    "min_level": 50,
+    "slot": "amulet",
+    "equip_threshold": 4,
+    "quiz_tier": 4,
+    "effects": {
+      "stat": "INT",
+      "amount": 3,
+      "status": "searching",
+      "duration": -1
+    },
+    "unidentified_name": "a bronze triangle pendant with ten points",
+    "floorSpawnWeight": {
+      "61-80": 1,
+      "81-100": 2
+    },
+    "identified": false,
+    "lore": "Pythagoras swore his oaths by the Tetractys — the triangular figure of ten points arranged 1-2-3-4 that represented the musical ratios and the structure of the cosmos. His brotherhood at Croton was vegetarian, banned beans, and believed the soul transmigrated between lives. They were also the first people to prove that the square root of 2 is irrational, a discovery so disturbing that Hippasus, who made it, was allegedly drowned at sea."
+  },
+  "ring_of_hypatia": {
+    "name": "Ring of Hypatia",
+    "symbol": "=",
+    "color": [
+      220,
+      240,
+      200
+    ],
+    "weight": 0.1,
+    "min_level": 55,
+    "slot": "ring",
+    "equip_threshold": 4,
+    "quiz_tier": 5,
+    "effects": {
+      "stat": "INT",
+      "amount": 3,
+      "status": "truesight",
+      "duration": -1
+    },
+    "unidentified_name": "a thin bronze ring engraved with mathematical diagrams",
+    "floorSpawnWeight": {
+      "61-80": 1,
+      "81-100": 2
+    },
+    "identified": false,
+    "lore": "Hypatia of Alexandria was the foremost mathematician and astronomer of her age, head of the Neoplatonic school, advisor to the prefect Orestes. In 415 CE a Christian mob pulled her from her chariot, dragged her to a church, and killed her. Her father Theon had raised her to be 'a perfect human being.' What destroyed her was not her imperfection. It was that the people around her could not tolerate the example."
+  },
+  "ring_of_thunder": {
+    "name": "Ring of Thunder",
+    "symbol": "=",
+    "color": [
+      180,
+      200,
+      255
+    ],
+    "weight": 0.1,
+    "min_level": 20,
+    "slot": "ring",
+    "quiz_tier": 4,
+    "equip_threshold": 5,
+    "effects": {
+      "stat": "INT",
+      "amount": 2,
+      "status": "shock_resist",
+      "duration": -1
+    },
+    "identified": false,
+    "unidentified_name": "crackling ring",
+    "lore": "Forged in the heart of a perpetual thunderstorm by an Aztec storm-caller, this ring hums with suppressed electrical charge. Lightning that strikes the wearer grounds harmlessly through the stone, while the storm energy sharpens the intellect to razor clarity."
+  },
+  "amulet_of_the_titan": {
+    "name": "Amulet of the Titan",
+    "symbol": "\"",
+    "color": [
+      220,
+      160,
+      80
+    ],
+    "weight": 0.3,
+    "min_level": 22,
+    "slot": "amulet",
+    "quiz_tier": 4,
+    "equip_threshold": 5,
+    "effects": {
+      "stat": "STR",
+      "amount": 3
+    },
+    "identified": false,
+    "unidentified_name": "heavy amulet",
+    "lore": "Cast from ore pulled from the bones of fallen Titans by Hephaestus as a jest, this amulet transfers a sliver of Titanic strength to the wearer. Those with the constitution to bear it find themselves capable of feats of impossible might."
+  },
+  "ring_of_the_deep": {
+    "name": "Ring of the Deep",
+    "symbol": "=",
+    "color": [
+      60,
+      140,
+      200
+    ],
+    "weight": 0.1,
+    "min_level": 18,
+    "slot": "ring",
+    "quiz_tier": 4,
+    "equip_threshold": 5,
+    "effects": {
+      "stat": "CON",
+      "amount": 2,
+      "status": "cold_resist",
+      "duration": -1
+    },
+    "identified": false,
+    "unidentified_name": "cold blue ring",
+    "lore": "Carved from a bioluminescent crystal found only at extreme ocean depth, this ring adapts the wearer's constitution to the crushing cold of the abyss. Divers of the Phoenician coast traded entire fortunes for such rings, which allowed descent to waters where no natural body could survive."
+  },
+  "amulet_of_insight": {
+    "name": "Amulet of Insight",
+    "symbol": "\"",
+    "color": [
+      255,
+      240,
+      140
+    ],
+    "weight": 0.2,
+    "min_level": 20,
+    "slot": "amulet",
+    "quiz_tier": 4,
+    "equip_threshold": 5,
+    "effects": {
+      "stat": "WIS",
+      "amount": 3
+    },
+    "identified": false,
+    "unidentified_name": "warm amulet",
+    "lore": "Handed down through thirty-six generations of oracle-priests at Delphi, this focus crystal was used to receive the god's voice without distortion. The priests believed wisdom was not intelligence but receptivity — and this amulet sharpens that receptivity to inhuman degree."
+  },
+  "ring_of_the_assassin": {
+    "name": "Ring of the Assassin",
+    "symbol": "=",
+    "color": [
+      100,
+      100,
+      140
+    ],
+    "weight": 0.1,
+    "min_level": 25,
+    "slot": "ring",
+    "quiz_tier": 4,
+    "equip_threshold": 5,
+    "effects": {
+      "stat": "DEX",
+      "amount": 3,
+      "status": "invisible",
+      "duration": -1
+    },
+    "identified": false,
+    "unidentified_name": "dark ring",
+    "lore": "The signet of the Hashshashin grandmaster, recovered after the sack of Alamut. The ring's stone refracts light around the wearer with unsettling precision. Paired with the supernatural quickness it grants, its bearer becomes effectively impossible to track in dim light."
+  },
+  "amulet_of_fortitude": {
+    "name": "Amulet of Fortitude",
+    "symbol": "\"",
+    "color": [
+      80,
+      200,
+      120
+    ],
+    "weight": 0.2,
+    "min_level": 24,
+    "slot": "amulet",
+    "quiz_tier": 4,
+    "equip_threshold": 5,
+    "effects": {
+      "stat": "CON",
+      "amount": 3,
+      "status": "regenerating",
+      "duration": -1
+    },
+    "identified": false,
+    "unidentified_name": "pulsing amulet",
+    "lore": "A gift from Asclepius to a mortal champion whose constitution had been ravaged by poison. The carved serpent at its centre channels a fraction of divine healing energy into the wearer continuously. Wounds knit, poisons fade, and exhaustion retreats in its presence."
+  },
+  "ring_of_far_sight": {
+    "name": "Ring of Far Sight",
+    "symbol": "=",
+    "color": [
+      200,
+      240,
+      180
+    ],
+    "weight": 0.1,
+    "min_level": 22,
+    "slot": "ring",
+    "quiz_tier": 4,
+    "equip_threshold": 5,
+    "effects": {
+      "stat": "PER",
+      "amount": 3,
+      "status": "warning",
+      "duration": -1
+    },
+    "identified": false,
+    "unidentified_name": "pale green ring",
+    "lore": "Fashioned by the eagle-eyed sentinels of the Watchtower of Rhodes, worn by scouts who needed to perceive threats at inhuman range. The iris of its gem dilates and contracts like an eye, and something in that motion transmits itself to the wearer — both sight and instinct are magnified."
+  },
+  "amulet_of_the_archmage": {
+    "name": "Amulet of the Archmage",
+    "symbol": "\"",
+    "color": [
+      200,
+      140,
+      255
+    ],
+    "weight": 0.2,
+    "min_level": 28,
+    "slot": "amulet",
+    "quiz_tier": 4,
+    "equip_threshold": 5,
+    "effects": {
+      "stat": "INT",
+      "amount": 3,
+      "status": "fire_resist",
+      "duration": -1
+    },
+    "identified": false,
+    "unidentified_name": "hot amulet",
+    "lore": "The ceremonial amulet of the Dean of the Arcane Faculty — a position first held by Thales, who wore it when demonstrating that fire could not harm a mind that understood its nature. Since then it has passed through the hands of thirty-seven archmages, each adding a layer of heat-resistant enchantment."
+  },
+  "ring_of_displacement": {
+    "name": "Ring of Displacement",
+    "symbol": "=",
+    "color": [
+      210,
+      210,
+      220
+    ],
+    "weight": 0.1,
+    "min_level": 26,
+    "slot": "ring",
+    "quiz_tier": 4,
+    "equip_threshold": 5,
+    "effects": {
+      "stat": "DEX",
+      "amount": 2,
+      "status": "displacement",
+      "duration": -1
+    },
+    "identified": false,
+    "unidentified_name": "blurring ring",
+    "lore": "The gem in this ring is a shard of a displacer beast's crystallized nervous tissue — the organ responsible for the beast's light-bending ability. It projects a constant false image approximately one step from the wearer's true position, causing every attack to land on air."
+  },
+  "amulet_of_protection": {
+    "name": "Amulet of Protection",
+    "symbol": "\"",
+    "color": [
+      140,
+      180,
+      220
+    ],
+    "weight": 0.2,
+    "min_level": 22,
+    "slot": "amulet",
+    "quiz_tier": 4,
+    "equip_threshold": 5,
+    "effects": {
+      "stat": "CON",
+      "amount": 2,
+      "status": "magic_resist",
+      "duration": -1
+    },
+    "identified": false,
+    "unidentified_name": "cool amulet",
+    "lore": "Blessed by the last high priest of Esagila, the great ziggurat of Babylon, this amulet projects an invisible ward that absorbs and dissipates magical energy before it can take hold. Even the most precisely aimed enchantments fray and fail against its steady resistance."
   }
 }

@@ -195,5 +195,158 @@
     "unidentified_name": "Scroll of the Abyss",
     "identified": true,
     "lore": "Sealed with the mark of the Bottomless Pit. A reward scroll from Dad -- show him this code!"
+  },
+  "scroll_of_sleep": {
+    "name": "scroll of sleep",
+    "symbol": "?",
+    "color": [
+      160,
+      160,
+      240
+    ],
+    "weight": 0.1,
+    "min_level": 5,
+    "quiz_tier": 3,
+    "quiz_threshold": 4,
+    "effect": "sleep_monsters",
+    "power": "",
+    "unidentified_name": "drowsy scroll",
+    "lore": "Penned by the dream-weavers of Morpheus in ink distilled from poppy essence, this scroll releases a wave of irresistible somnolence. Every creature in sight is swept into deep slumber — only the reader, having spoken the words aloud, remains awake and free to act."
+  },
+  "scroll_of_haste": {
+    "name": "scroll of haste",
+    "symbol": "?",
+    "color": [
+      240,
+      240,
+      80
+    ],
+    "weight": 0.1,
+    "min_level": 8,
+    "quiz_tier": 3,
+    "quiz_threshold": 4,
+    "effect": "haste_self",
+    "power": "15",
+    "unidentified_name": "blurred scroll",
+    "lore": "Written in quicksilver ink by fleet-footed Hermes himself — or so the seller claimed — this scroll binds the speed-essence of the divine messenger into the reader's limbs. For a short time, reality slows around you while you move at twice the natural pace."
+  },
+  "scroll_of_enchant_armor": {
+    "name": "scroll of enchant armor",
+    "symbol": "?",
+    "color": [
+      200,
+      160,
+      255
+    ],
+    "weight": 0.1,
+    "min_level": 6,
+    "quiz_tier": 3,
+    "quiz_threshold": 4,
+    "effect": "enchant_armor",
+    "power": "",
+    "unidentified_name": "gleaming scroll",
+    "lore": "The armorers' guilds of three ages of the world spent centuries perfecting this scroll. Reading it aloud over a worn piece of armor causes the metal (or leather, or hide) to tighten, harden, and align — one permanent layer of reinforcement added to whatever protection you bear."
+  },
+  "scroll_of_teleportation": {
+    "name": "scroll of teleportation",
+    "symbol": "?",
+    "color": [
+      100,
+      220,
+      255
+    ],
+    "weight": 0.1,
+    "min_level": 12,
+    "quiz_tier": 4,
+    "quiz_threshold": 5,
+    "effect": "teleport_self",
+    "power": "",
+    "unidentified_name": "trembling scroll",
+    "lore": "The spatial theorists of Alexandria considered this scroll a philosophical as much as a practical achievement. Reading it dissolves your relationship with the current point in space and reconstitutes you at some other floor tile, selected at the whim of the dungeon."
+  },
+  "scroll_of_charging": {
+    "name": "scroll of charging",
+    "symbol": "?",
+    "color": [
+      120,
+      200,
+      140
+    ],
+    "weight": 0.1,
+    "min_level": 15,
+    "quiz_tier": 4,
+    "quiz_threshold": 5,
+    "effect": "charging",
+    "power": "",
+    "unidentified_name": "crackling scroll",
+    "lore": "Inscribed by the artificers who first learned to trap raw magical force in crystalline matrices, this scroll rekindles exhausted power. Upon reading, ambient magical energy floods into every wand in the reader's possession, refreshing their reserves by one full charge each."
+  },
+  "scroll_of_identify_all": {
+    "name": "scroll of mass identify",
+    "symbol": "?",
+    "color": [
+      255,
+      230,
+      130
+    ],
+    "weight": 0.1,
+    "min_level": 14,
+    "quiz_tier": 4,
+    "quiz_threshold": 5,
+    "effect": "identify_all",
+    "power": "",
+    "unidentified_name": "revealing scroll",
+    "lore": "A far more powerful version of the common identification scroll. This text requires the reader to articulate the true name of knowledge itself. Upon completion, every obscured, unnamed, and unexamined item in one's possession is simultaneously revealed in full."
+  },
+  "scroll_of_annihilation": {
+    "name": "scroll of annihilation",
+    "symbol": "?",
+    "color": [
+      255,
+      80,
+      80
+    ],
+    "weight": 0.1,
+    "min_level": 30,
+    "quiz_tier": 5,
+    "quiz_threshold": 6,
+    "effect": "annihilate",
+    "power": "",
+    "unidentified_name": "scorched scroll",
+    "lore": "The most feared text in the dungeon archivist's catalogue. Its words were first spoken on the day the great library of Carthage burned. Reading it perfectly causes every creature in sight to dissolve in a flash of obliterating white energy, leaving only silence and ash."
+  },
+  "scroll_of_time_stop": {
+    "name": "scroll of time stop",
+    "symbol": "?",
+    "color": [
+      200,
+      220,
+      255
+    ],
+    "weight": 0.1,
+    "min_level": 40,
+    "quiz_tier": 5,
+    "quiz_threshold": 6,
+    "effect": "time_stop_scroll",
+    "power": "10",
+    "unidentified_name": "frozen scroll",
+    "lore": "The theoretical framework for this scroll was laid by Zeno of Elea, who proved logically that motion is an illusion. Ten turns of absolute stillness surround the reader: monsters freeze mid-stride, arrows hang in mid-air, the dungeon holds its breath."
+  },
+  "scroll_of_great_power": {
+    "name": "scroll of great power",
+    "symbol": "?",
+    "color": [
+      255,
+      215,
+      0
+    ],
+    "weight": 0.1,
+    "min_level": 50,
+    "quiz_tier": 5,
+    "quiz_threshold": 6,
+    "effect": "great_power",
+    "power": "",
+    "unidentified_name": "blazing scroll",
+    "lore": "The capstone work of the philosopher Porphyry, who spent forty years distilling the essence of Aristotle's categories into a single transformative incantation. Those few who have read it perfectly emerge changed: stronger, hardier, swifter, keener, wiser, more perceptive. Every faculty permanently elevated by one degree."
   }
 }

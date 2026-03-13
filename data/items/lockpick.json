@@ -2,7 +2,11 @@
   "lockpick": {
     "name": "lockpick",
     "symbol": "~",
-    "color": [210, 205, 160],
+    "color": [
+      210,
+      205,
+      160
+    ],
     "weight": 0.2,
     "min_level": 1,
     "max_durability": 5,
@@ -15,7 +19,11 @@
   "master_lockpick": {
     "name": "master lockpick",
     "symbol": "~",
-    "color": [245, 235, 100],
+    "color": [
+      245,
+      235,
+      100
+    ],
     "weight": 0.2,
     "min_level": 3,
     "max_durability": 8,
@@ -24,5 +32,56 @@
     "durability_loss_failure": 1,
     "unidentified_name": "a slender pick",
     "lore": "Crafted from a single strand of spell-hardened gold, this exceptional tool is said to whisper the correct angle to its wielder's fingertips. The master picksmith who forged it reportedly never failed a lock in forty years of work."
+  },
+  "mithril_lockpick": {
+    "name": "mithril lockpick",
+    "symbol": "~",
+    "color": [
+      180,
+      220,
+      255
+    ],
+    "weight": 0.1,
+    "min_level": 12,
+    "max_durability": 15,
+    "durability": 15,
+    "durability_loss_success": 0,
+    "durability_loss_failure": 1,
+    "unidentified_name": "silvery pick",
+    "lore": "Drawn from a single strand of mithril by elvish jewelers, this pick is supernaturally light and rigid. It transmits the subtlest mechanical signals through its shaft into the wielder's fingertips, making even complex lock mechanisms feel transparent. Success never dulls it — only failure leaves a mark."
+  },
+  "diamond_lockpick": {
+    "name": "diamond lockpick",
+    "symbol": "~",
+    "color": [
+      220,
+      245,
+      255
+    ],
+    "weight": 0.1,
+    "min_level": 28,
+    "max_durability": 25,
+    "durability": 25,
+    "durability_loss_success": 0,
+    "durability_loss_failure": 0,
+    "unidentified_name": "crystalline pick",
+    "lore": "Ground from a single diamond crystal by the artificer-monks of the high reaches, this pick is functionally indestructible. It cannot be broken by failure or success — only lost. Thieves who carry one treat it as a sacred object, the highest expression of their craft."
+  },
+  "philosophers_pick": {
+    "name": "philosopher's pick",
+    "symbol": "~",
+    "color": [
+      255,
+      240,
+      180
+    ],
+    "weight": 0.1,
+    "min_level": 50,
+    "max_durability": 99,
+    "durability": 99,
+    "durability_loss_success": 0,
+    "durability_loss_failure": 0,
+    "unidentified_name": "radiant pick",
+    "lore": "Legend holds that this was fashioned by Daedalus himself after escaping the Labyrinth — an instrument capable of opening any lock in any world. It never dulls, never breaks, and never fails in the hands of the learned. To carry it is to carry the proof that all barriers are merely puzzles awaiting the correct solution."
   }
 }

@@ -2212,6 +2212,63 @@ class Game:
         elif effect == 'wish':
             self.add_message("The wand glows brilliantly... but you cannot yet speak your wish.", 'info')
 
+        # ── Tier 5 wand effects ───────────────────────────────────────────
+        elif effect == 'nova':
+            from dice import roll as _roll
+            all_monsters = [m for m in self.monsters if m.alive]
+            if not all_monsters:
+                self.add_message("The wand fires but no creatures are present!", 'info')
+            else:
+                total = 0
+                for m in all_monsters:
+                    dmg = _roll(wand.power) if wand.power else _rng.randint(15, 30)
+                    actual = m.take_damage(dmg)
+                    total += actual
+                    if not m.alive:
+                        self._on_monster_killed(m)
+                self.add_message(
+                    f"A nova of stellar fire engulfs the entire level! "
+                    f"({len(all_monsters)} creatures hit, {total} total damage)", 'success'
+                )
+
+        elif effect == 'life_transfer':
+            target = self._nearest_visible_monster()
+            if not target:
+                self.add_message("No visible target for life transfer.", 'warning')
+            else:
+                drain = max(1, target.hp // 2)
+                actual = target.take_damage(drain)
+                self.player.restore_hp(actual)
+                self.add_message(
+                    f"Life force drains from the {target.name}! "
+                    f"({actual} drained, +{actual} HP to you)", 'success'
+                )
+                if not target.alive:
+                    self._on_monster_killed(target)
+
+        elif effect == 'abjuration':
+            target = self._nearest_visible_monster()
+            # Strip all effects from target
+            cleared_monster = 0
+            if target:
+                cleared_monster = len(target.status_effects)
+                target.status_effects.clear()
+            # Purge player debuffs
+            from status_effects import DEBUFFS
+            cleared_player = [e for e in list(self.player.status_effects) if e in DEBUFFS]
+            for e in cleared_player:
+                del self.player.status_effects[e]
+            if target and cleared_monster:
+                self.add_message(
+                    f"Abjuration strips {cleared_monster} effect(s) from the {target.name}!", 'success'
+                )
+            if cleared_player:
+                self.add_message(
+                    f"Your afflictions dissolve: {', '.join(cleared_player)}.", 'success'
+                )
+            if not target and not cleared_player:
+                self.add_message("Nothing to abjure.", 'info')
+
     def _nearest_visible_monster(self):
         """Return the closest alive monster currently in FOV, or None."""
         px, py = self.player.x, self.player.y
@@ -2438,6 +2495,86 @@ class Game:
                 self.add_message(f"{count} monster(s) reel in confusion!", 'success')
             else:
                 self.add_message("No monsters are in sight to confuse.", 'info')
+
+        # ── Tier 3 scroll effects ──────────────────────────────────────────
+        elif effect == 'sleep_monsters':
+            targets = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
+            for m in targets:
+                m.add_effect('sleeping', 8)
+            if targets:
+                self.add_message(f"A wave of slumber washes out — {len(targets)} creature(s) fall asleep!", 'success')
+            else:
+                self.add_message("No creatures are in sight to affect.", 'info')
+
+        elif effect == 'haste_self':
+            duration = int(scroll.power) if scroll.power else 15
+            self.player.add_effect('hasted', duration)
+            self.add_message(f"Energy surges through you — hasted for {duration} turns!", 'success')
+
+        elif effect == 'enchant_armor':
+            # Find the best-slotted armor piece to enchant
+            equipped = [s for s in self.player.armor_slots if s is not None]
+            if equipped:
+                target = equipped[0]
+                target.enchant_bonus = getattr(target, 'enchant_bonus', 0) + 1
+                self.add_message(
+                    f"Your {target.name} shines — enchant +{target.enchant_bonus}!", 'success'
+                )
+            else:
+                self.add_message("You wear no armor to enchant.", 'info')
+
+        # ── Tier 4 scroll effects ──────────────────────────────────────────
+        elif effect == 'teleport_self':
+            self._teleport_player()
+
+        elif effect == 'charging':
+            from items import Wand
+            wands = [i for i in self.player.inventory if isinstance(i, Wand)]
+            if wands:
+                for w in wands:
+                    w.charges = min(w.max_charges, w.charges + 1)
+                self.add_message(
+                    f"Magical energy crackles into {len(wands)} wand(s) — each recharged by 1!", 'success'
+                )
+            else:
+                self.add_message("You carry no wands to charge.", 'info')
+
+        elif effect == 'identify_all':
+            unknown = [i for i in self.player.inventory
+                       if hasattr(i, 'identified') and not i.identified]
+            if unknown:
+                for item in unknown:
+                    item.identified = True
+                    self.player.known_item_ids.add(item.id)
+                self.add_message(
+                    f"A flash of revelation — {len(unknown)} item(s) identified!", 'success'
+                )
+            else:
+                self.add_message("All your items are already identified.", 'info')
+
+        # ── Tier 5 scroll effects ──────────────────────────────────────────
+        elif effect == 'annihilate':
+            victims = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
+            for m in victims:
+                m.hp = 0
+                m.alive = False
+                self._on_monster_killed(m)
+            if victims:
+                self.add_message(
+                    f"A blinding flash of white energy obliterates {len(victims)} creature(s)!", 'success'
+                )
+            else:
+                self.add_message("No creatures are visible to annihilate.", 'info')
+
+        elif effect == 'time_stop_scroll':
+            duration = int(scroll.power) if scroll.power else 10
+            self.player.add_effect('time_stopped', duration)
+            self.add_message(f"Time itself halts — {duration} turns of absolute stillness!", 'success')
+
+        elif effect == 'great_power':
+            for stat in ('STR', 'CON', 'DEX', 'INT', 'WIS', 'PER'):
+                self.player.apply_stat_bonus(stat, 1)
+            self.add_message("Every faculty within you is elevated! All stats permanently +1!", 'success')
 
     # ------------------------------------------------------------------
     # Identify menu  (i key — philosophy quiz)

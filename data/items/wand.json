@@ -1998,5 +1998,80 @@
     "power": "",
     "unidentified_name": "sea-glass wand",
     "lore": "An area effect slowing wand that significantly reduces the speed of all targets in range. Creates windows of safety for a group."
+  },
+  "wand_of_nova": {
+    "name": "wand of nova",
+    "symbol": "/",
+    "color": [
+      255,
+      200,
+      80
+    ],
+    "weight": 0.5,
+    "min_level": 60,
+    "quiz_tier": 5,
+    "quiz_threshold": 4,
+    "charges_min": 2,
+    "charges_max": 4,
+    "max_charges": 4,
+    "effect": "nova",
+    "power": "4d8",
+    "unidentified_name": "blazing wand",
+    "containerLootTier": "legendary",
+    "floorSpawnWeight": {
+      "81-100": 1
+    },
+    "lore": "Recovered from the ruins of the great star-mages' observatory, this wand releases a burst of stellar energy that radiates to every corner of the floor. No creature on the level is safe when it fires. The light of a dying star, compressed and redirected.",
+    "identified": false
+  },
+  "wand_of_life_force": {
+    "name": "wand of life force",
+    "symbol": "/",
+    "color": [
+      180,
+      80,
+      255
+    ],
+    "weight": 0.5,
+    "min_level": 70,
+    "quiz_tier": 5,
+    "quiz_threshold": 4,
+    "charges_min": 3,
+    "charges_max": 5,
+    "max_charges": 5,
+    "effect": "life_transfer",
+    "power": "",
+    "unidentified_name": "pulsing wand",
+    "containerLootTier": "legendary",
+    "floorSpawnWeight": {
+      "81-100": 1
+    },
+    "lore": "Forged by necromancers who believed that life energy is conserved rather than destroyed, this wand creates a conduit between wielder and target. The target's vitality flows directly into the user. The more wounded your enemy, the more you gain.",
+    "identified": false
+  },
+  "wand_of_abjuration": {
+    "name": "wand of abjuration",
+    "symbol": "/",
+    "color": [
+      140,
+      200,
+      255
+    ],
+    "weight": 0.5,
+    "min_level": 65,
+    "quiz_tier": 5,
+    "quiz_threshold": 4,
+    "charges_min": 3,
+    "charges_max": 5,
+    "max_charges": 5,
+    "effect": "abjuration",
+    "power": "",
+    "unidentified_name": "clear wand",
+    "containerLootTier": "legendary",
+    "floorSpawnWeight": {
+      "81-100": 1
+    },
+    "lore": "A masterwork of defensive magic theory. This wand simultaneously strips all applied enchantments from a target and purges the wielder of their own afflictions. Wielded in desperation or with surgical precision, it can turn the tide of a losing battle by resetting the magical state of both combatants.",
+    "identified": false
   }
 }
