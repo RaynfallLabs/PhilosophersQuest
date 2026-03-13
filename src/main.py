@@ -2,6 +2,13 @@ import math
 import sys
 import pygame
 
+# FANTASY: High-fantasy medieval/arcane grimoire UI theme
+from fantasy_ui import (FP, get_font, draw_panel, draw_dark_panel,
+                         draw_header_bar, draw_divider, draw_shadow_text,
+                         draw_glow_text, centered_text, draw_overlay,
+                         draw_rune_circle, draw_filigree_bar, draw_candle_glow,
+                         draw_choice_button, ITEM_COLOR, make_parchment)
+
 from combat import player_attack
 from container_system import attempt_lockpick, check_for_mimic
 from dungeon import (generate_dungeon, spawn_monsters, spawn_items,
@@ -105,12 +112,13 @@ class WelcomeScreen:
         self.W, self.H = screen.get_size()
         self.cx = self.W // 2
         self.cy = self.H // 2
-        self.font_xl   = pygame.font.SysFont('consolas', 56, bold=True)
-        self.font_lg   = pygame.font.SysFont('consolas', 34, bold=True)
-        self.font_md   = pygame.font.SysFont('consolas', 20)
-        self.font_sm   = pygame.font.SysFont('consolas', 15)
-        self.font_icon = pygame.font.SysFont('consolas', 26, bold=True)
-        self.font_tiny = pygame.font.SysFont('consolas', 12)
+        # FANTASY: Replace consolas fonts with grimoire theme fonts
+        self.font_xl   = get_font('title',   52, bold=True)
+        self.font_lg   = get_font('heading', 32)
+        self.font_md   = get_font('body',    20)
+        self.font_sm   = get_font('body',    15)
+        self.font_icon = get_font('gothic',  26)
+        self.font_tiny = get_font('body',    12)
         self.name_buf    = ''
         self.cursor_on   = True
         self.cursor_timer = 0.0
@@ -371,61 +379,50 @@ class WelcomeScreen:
         self.screen.blit(vig, (0, 0))
 
     def _draw_title_banner(self, cx):
-        # DOS-style double-line border banner at top
-        bw, bh = 640, 96
+        # FANTASY: Illuminated manuscript title — gold text on midnight panel
+        bw, bh = 640, 106
         bx, by = cx - bw // 2, 22
-        pygame.draw.rect(self.screen, (6, 6, 20), (bx, by, bw, bh))
-        # Double border
-        pygame.draw.rect(self.screen, (180, 140, 20), (bx, by, bw, bh), 2)
-        pygame.draw.rect(self.screen, (255, 215, 60), (bx+4, by+4, bw-8, bh-8), 1)
+        draw_panel(self.screen, (bx, by, bw, bh), bg=False)
+        # FANTASY: Decorative filigree under title
+        draw_filigree_bar(self.screen, bx + 20, by + bh - 12, bw - 40, FP.GOLD_DARK)
 
-        # Shadow + gold title
-        for text, y, font, shadow_off in [
-            (self._TITLE_LINE1, by + 10, self.font_lg,  2),
-            (self._TITLE_LINE2, by + 48, self.font_xl,  3),
+        for text, y, font, is_main in [
+            (self._TITLE_LINE1, by + 12, self.font_lg, False),
+            (self._TITLE_LINE2, by + 48, self.font_xl, True),
         ]:
-            shadow = font.render(text, True, (0, 0, 0))
-            self.screen.blit(shadow, (cx - shadow.get_width() // 2 + shadow_off,
-                                       y + shadow_off))
-            gold = font.render(text, True, (255, 215, 60))
-            self.screen.blit(gold, (cx - gold.get_width() // 2, y))
+            col = FP.GOLD if not is_main else FP.GOLD_BRIGHT
+            centered_text(self.screen, font, text, col, y, shadow=True)
 
     def _draw_name_input(self, cx, cy):
-        # DOS-style dialog box
-        box_w, box_h = 480, 90
+        # FANTASY: Parchment dialog box for name entry
+        box_w, box_h = 500, 96
         bx = cx - box_w // 2
         by = cy + int(min(cy, self.H - cy) * 0.60)
-
-        pygame.draw.rect(self.screen, (6, 6, 20), (bx, by, box_w, box_h))
-        pygame.draw.rect(self.screen, (85, 85, 255), (bx, by, box_w, box_h), 2)
-        pygame.draw.rect(self.screen, (0, 0, 170), (bx+4, by+4, box_w-8, box_h-8), 1)
-
-        prompt = self.font_md.render(self._PROMPT, True, (170, 170, 255))
-        self.screen.blit(prompt, (bx + 14, by + 10))
-
-        # Input field
-        field_y = by + 40
-        pygame.draw.rect(self.screen, (0, 0, 40), (bx + 14, field_y, box_w - 28, 32))
-        pygame.draw.rect(self.screen, (85, 85, 255), (bx + 14, field_y, box_w - 28, 32), 1)
-        display = self.name_buf + ('_' if self.cursor_on else ' ')
-        txt = self.font_lg.render(display, True, (255, 255, 255))
-        self.screen.blit(txt, (bx + 20, field_y + (32 - txt.get_height()) // 2))
-
-        # Secret build badge
+        draw_panel(self.screen, (bx, by, box_w, box_h), border_color=FP.GOLD)
+        draw_header_bar(self.screen, (bx, by, box_w, 32),
+                        text=self._PROMPT, font=self.font_sm, text_color=FP.GOLD_PALE)
+        # FANTASY: Input field
+        field_y = by + 38
+        pygame.draw.rect(self.screen, FP.MIDNIGHT, (bx + 14, field_y, box_w - 28, 34))
+        pygame.draw.rect(self.screen, FP.GOLD_DARK, (bx + 14, field_y, box_w - 28, 34), 1)
+        display = self.name_buf + ('|' if self.cursor_on else ' ')
+        draw_shadow_text(self.screen, self.font_lg, display, FP.PARCHMENT_LIGHT,
+                         (bx + 20, field_y + (34 - self.font_lg.get_height()) // 2))
         if self.name_buf.strip().lower() in SECRET_BUILDS:
-            badge = self.font_sm.render("★  SECRET BUILD ACTIVE!", True, (255, 255, 85))
-            self.screen.blit(badge, (cx - badge.get_width() // 2, by + box_h + 6))
+            badge = self.font_sm.render("★  SECRET BUILD ACTIVE!", True, FP.GOLD_BRIGHT)
+            self.screen.blit(badge, (cx - badge.get_width() // 2, by + box_h + 8))
 
     def _draw_footer(self, cx):
+        # FANTASY: Subtle footer hint
         has_save = getattr(self, '_has_save', False)
         if has_save:
             text = "[ C ] continue saved game     [ ENTER ] new game     [ ESC ] quit"
         else:
-            text = "[ ENTER ] begin quest     [ ESC ] quit"
-        hint = self.font_tiny.render(text, True, (85, 85, 170))
+            text = "[ ENTER ] begin your quest     [ ESC ] quit"
+        hint = self.font_tiny.render(text, True, FP.HINT_TEXT)
         self.screen.blit(hint, (cx - hint.get_width() // 2, self.H - 28))
         if has_save:
-            save_hint = self.font_sm.render("★  Saved game found!", True, (100, 200, 100))
+            save_hint = self.font_sm.render("★  A saved journey awaits", True, FP.SUCCESS_TEXT)
             self.screen.blit(save_hint, (cx - save_hint.get_width() // 2, self.H - 52))
 
 
@@ -456,10 +453,11 @@ class Game:
         self.screen        = screen
         self.player_name   = player_name
         self.secret_build  = secret_build   # dict of stat overrides, or None
-        self.font_sm   = pygame.font.SysFont('consolas', 17)
-        self.font_md   = pygame.font.SysFont('consolas', 22)
-        self.font_lg   = pygame.font.SysFont('consolas', 30, bold=True)
-        self.font_xl   = pygame.font.SysFont('consolas', 38, bold=True)
+        # FANTASY: Grimoire font set
+        self.font_sm   = get_font('body',    17)
+        self.font_md   = get_font('body',    22)
+        self.font_lg   = get_font('heading', 28)
+        self.font_xl   = get_font('title',   36, bold=True)
 
         self.quiz_engine        = QuizEngine()
         self.msg_log            = MessageLog()
@@ -3019,34 +3017,11 @@ class Game:
         bx = (GAME_W - bw) // 2
         by = max(20, (WINDOW_H - bh) // 2)
 
-        # ── Stone panel background ─────────────────────────────────────
-        pygame.draw.rect(self.screen, (10, 8, 22), (bx, by, bw, bh), border_radius=10)
-
-        # Subtle stone texture (alternating row shading)
-        for row in range(bh // 6):
-            if row % 2 == 0:
-                pygame.draw.line(self.screen, (14, 12, 28),
-                                 (bx + 4, by + row * 6 + 3), (bx + bw - 4, by + row * 6 + 3))
-
-        # Outer border — accent colour
-        pygame.draw.rect(self.screen, accent, (bx, by, bw, bh), 2, border_radius=10)
-        # Inner border — dimmer
-        pygame.draw.rect(self.screen, accent_dim, (bx + 4, by + 4, bw - 8, bh - 8), 1, border_radius=8)
-
-        # Corner flourishes (small pixel diamonds)
-        for fx, fy in [(bx+12, by+12), (bx+bw-13, by+12),
-                       (bx+12, by+bh-13), (bx+bw-13, by+bh-13)]:
-            pygame.draw.line(self.screen, accent, (fx-5, fy), (fx+5, fy), 1)
-            pygame.draw.line(self.screen, accent, (fx, fy-5), (fx, fy+5), 1)
-            pygame.draw.circle(self.screen, accent, (fx, fy), 2)
-
-        # ── Header strip ──────────────────────────────────────────────
-        pygame.draw.rect(self.screen, (16, 12, 36), (bx, by, bw, HEADER_H), border_radius=10)
-        pygame.draw.line(self.screen, accent, (bx + PAD, by + HEADER_H),
-                         (bx + bw - PAD, by + HEADER_H))
-
-        title_surf = self.font_md.render(self.quiz_title, True, (255, 215, 60))
-        self.screen.blit(title_surf, (bx + PAD, by + (HEADER_H - title_surf.get_height()) // 2))
+        # FANTASY: Arcane grimoire quiz panel
+        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=accent)
+        draw_header_bar(self.screen, (bx, by, bw, HEADER_H),
+                        text=self.quiz_title, font=self.font_md,
+                        text_color=FP.GOLD_BRIGHT, accent=accent)
 
         # Mode / progress counter (top-right)
         if qe.mode in (QuizMode.CHAIN, QuizMode.ESCALATOR_CHAIN):
@@ -3253,66 +3228,66 @@ class Game:
     # ------------------------------------------------------------------
 
     def _draw_equip_menu(self):
-        overlay = pygame.Surface((WINDOW_W, WINDOW_H), pygame.SRCALPHA)
-        overlay.fill((0, 0, 0, 150))
-        self.screen.blit(overlay, (0, 0))
+        # FANTASY: Grimoire-themed equip menu
+        draw_overlay(self.screen, 160)
 
         bw = min(560, GAME_W - 40)
         bh = min(80 + len(self.equip_menu_items) * 48 + 60, 500, WINDOW_H - 40)
         bx = (GAME_W - bw) // 2
         by = (WINDOW_H - bh) // 2
 
-        pygame.draw.rect(self.screen, (16, 20, 36), (bx, by, bw, bh), border_radius=12)
-        pygame.draw.rect(self.screen, (70, 70, 140), (bx, by, bw, bh), 2, border_radius=12)
+        # FANTASY: Dark arcane panel with gold border
+        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.GOLD)
+        # FANTASY: Grimoire header bar
+        draw_header_bar(self.screen, (bx, by, bw, 40), text="EQUIP ITEM  ·  GEOGRAPHY",
+                        font=self.font_md, text_color=FP.GOLD_BRIGHT)
 
-        self.screen.blit(
-            self.font_md.render("EQUIP ITEM", True, (255, 200, 60)), (bx + 20, by + 16)
-        )
         p = self.player
         self.screen.blit(
             self.font_sm.render(
                 f"Weapon: {p.weapon.name if p.weapon else 'none'}   AC: {p.get_ac()}",
-                True, (160, 200, 160)
+                True, FP.BODY_TEXT
             ),
             (bx + 20, by + 44)
         )
-        pygame.draw.line(self.screen, (60, 60, 100),
-                         (bx + 10, by + 66), (bx + bw - 10, by + 66))
+        # FANTASY: Ornamental divider
+        draw_divider(self.screen, bx + 10, by + 66, bw - 20)
 
         for i, item in enumerate(self.equip_menu_items):
             iy = by + 76 + i * 48
+            # FANTASY: Alternating midnight row colors
             pygame.draw.rect(
                 self.screen,
-                (28, 28, 58) if i % 2 == 0 else (22, 22, 48),
+                FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
                 (bx + 10, iy, bw - 20, 42), border_radius=6
             )
             self.screen.blit(
-                self.font_md.render(f"[{i+1}]", True, (160, 160, 80)), (bx + 18, iy + 11)
+                self.font_md.render(f"[{i+1}]", True, FP.GOLD_BRIGHT), (bx + 18, iy + 11)
             )
             self.screen.blit(
-                self.font_md.render(item.name, True, (220, 220, 220)), (bx + 70, iy + 11)
+                self.font_md.render(item.name, True, FP.BODY_TEXT), (bx + 70, iy + 11)
             )
             if isinstance(item, Weapon):
                 dmg_str = f"{item.base_damage}dmg" if item.base_damage else (item.damage or "?")
                 detail = self.font_sm.render(
                     f"{item.weapon_class}  {dmg_str}  chain x{item.max_chain_length or '?'}  tier {item.quiz_tier}",
-                    True, (160, 200, 160)
+                    True, FP.BODY_TEXT
                 )
             elif isinstance(item, (Armor, Shield)):
                 detail = self.font_sm.render(
                     f"{getattr(item, 'slot', 'shield')}  +{item.ac_bonus} AC"
                     f"  (quiz: geography x{item.equip_threshold})",
-                    True, (160, 180, 220)
+                    True, FP.BODY_TEXT
                 )
             else:
-                detail = self.font_sm.render(item.item_class, True, (140, 140, 140))
+                detail = self.font_sm.render(item.item_class, True, FP.FADED_TEXT)
             self.screen.blit(detail, (bx + 70, iy + 30))
 
         hint_y = by + bh - 34
-        pygame.draw.line(self.screen, (60, 60, 100),
-                         (bx + 10, hint_y - 8), (bx + bw - 10, hint_y - 8))
+        # FANTASY: Ornamental divider before hint
+        draw_divider(self.screen, bx + 10, hint_y - 8, bw - 20)
         hint = self.font_sm.render(
-            "Press number to equip  |  ESC to cancel", True, (120, 120, 160)
+            "Press number to equip  |  ESC to cancel", True, FP.HINT_TEXT
         )
         self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
 
@@ -3321,46 +3296,43 @@ class Game:
     # ------------------------------------------------------------------
 
     def _draw_accessory_menu(self):
-        overlay = pygame.Surface((WINDOW_W, WINDOW_H), pygame.SRCALPHA)
-        overlay.fill((0, 0, 0, 150))
-        self.screen.blit(overlay, (0, 0))
+        # FANTASY: Grimoire-themed accessory menu
+        draw_overlay(self.screen, 160)
 
         bw = min(580, GAME_W - 40)
         bh = min(90 + len(self.accessory_menu_items) * 52 + 50, 520, WINDOW_H - 40)
         bx = (GAME_W - bw) // 2
         by = (WINDOW_H - bh) // 2
 
-        pygame.draw.rect(self.screen, (20, 18, 36), (bx, by, bw, bh), border_radius=12)
-        pygame.draw.rect(self.screen, (180, 140, 60), (bx, by, bw, bh), 2, border_radius=12)
+        # FANTASY: Dark panel with gold border
+        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.GOLD)
+        draw_header_bar(self.screen, (bx, by, bw, 40), text="EQUIP ACCESSORY  ·  HISTORY",
+                        font=self.font_md, text_color=FP.GOLD_BRIGHT)
 
-        self.screen.blit(
-            self.font_md.render("EQUIP RING / AMULET", True, (255, 200, 60)),
-            (bx + 20, by + 16)
-        )
         slots_used = sum(1 for s in self.player.accessory_slots if s is not None)
         self.screen.blit(
             self.font_sm.render(
                 f"Accessory slots: {slots_used}/4",
-                True, (160, 200, 160)
+                True, FP.BODY_TEXT
             ),
             (bx + 20, by + 44)
         )
-        pygame.draw.line(self.screen, (100, 80, 40),
-                         (bx + 10, by + 66), (bx + bw - 10, by + 66))
+        draw_divider(self.screen, bx + 10, by + 66, bw - 20)
 
         for i, item in enumerate(self.accessory_menu_items):
             iy = by + 76 + i * 52
+            # FANTASY: Alternating midnight row colors
             pygame.draw.rect(
                 self.screen,
-                (28, 24, 48) if i % 2 == 0 else (22, 18, 40),
+                FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
                 (bx + 10, iy, bw - 20, 46), border_radius=6
             )
             dname = self._display_name(item)
             self.screen.blit(
-                self.font_md.render(f"[{i+1}]", True, (200, 160, 60)), (bx + 18, iy + 13)
+                self.font_md.render(f"[{i+1}]", True, FP.GOLD_BRIGHT), (bx + 18, iy + 13)
             )
             self.screen.blit(
-                self.font_md.render(dname, True, (220, 220, 220)), (bx + 70, iy + 13)
+                self.font_md.render(dname, True, FP.BODY_TEXT), (bx + 70, iy + 13)
             )
             if item.identified or item.id in self.player.known_item_ids:
                 fx = item.effects
@@ -3371,15 +3343,14 @@ class Game:
             else:
                 detail_text = f"unidentified  (history x{item.equip_threshold})"
             self.screen.blit(
-                self.font_sm.render(detail_text, True, (160, 160, 200)),
+                self.font_sm.render(detail_text, True, FP.FADED_TEXT),
                 (bx + 70, iy + 34)
             )
 
         hint_y = by + bh - 30
-        pygame.draw.line(self.screen, (100, 80, 40),
-                         (bx + 10, hint_y - 8), (bx + bw - 10, hint_y - 8))
+        draw_divider(self.screen, bx + 10, hint_y - 8, bw - 20)
         hint = self.font_sm.render(
-            "Press number to equip  |  ESC to cancel", True, (140, 120, 80)
+            "Press number to equip  |  ESC to cancel", True, FP.HINT_TEXT
         )
         self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
 
@@ -3388,48 +3359,45 @@ class Game:
     # ------------------------------------------------------------------
 
     def _draw_wand_menu(self):
-        overlay = pygame.Surface((WINDOW_W, WINDOW_H), pygame.SRCALPHA)
-        overlay.fill((0, 0, 0, 150))
-        self.screen.blit(overlay, (0, 0))
+        # FANTASY: Grimoire-themed wand menu
+        draw_overlay(self.screen, 160)
 
         bw = min(580, GAME_W - 40)
         bh = min(90 + len(self.wand_menu_items) * 52 + 50, 520, WINDOW_H - 40)
         bx = (GAME_W - bw) // 2
         by = (WINDOW_H - bh) // 2
 
-        pygame.draw.rect(self.screen, (16, 22, 36), (bx, by, bw, bh), border_radius=12)
-        pygame.draw.rect(self.screen, (60, 140, 200), (bx, by, bw, bh), 2, border_radius=12)
+        # FANTASY: Dark panel with arcane border
+        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.ARCANE_BRIGHT)
+        draw_header_bar(self.screen, (bx, by, bw, 40), text="USE WAND  ·  SCIENCE",
+                        font=self.font_md, text_color=FP.GOLD_BRIGHT)
 
         self.screen.blit(
-            self.font_md.render("USE WAND  [SCIENCE]", True, (100, 200, 255)),
-            (bx + 20, by + 16)
-        )
-        self.screen.blit(
             self.font_sm.render("Nearest visible monster is auto-targeted.",
-                                True, (140, 180, 220)),
+                                True, FP.BODY_TEXT),
             (bx + 20, by + 44)
         )
-        pygame.draw.line(self.screen, (40, 80, 120),
-                         (bx + 10, by + 66), (bx + bw - 10, by + 66))
+        draw_divider(self.screen, bx + 10, by + 66, bw - 20)
 
         for i, item in enumerate(self.wand_menu_items):
             iy = by + 76 + i * 52
+            # FANTASY: Alternating midnight row colors
             pygame.draw.rect(
                 self.screen,
-                (16, 28, 48) if i % 2 == 0 else (12, 22, 40),
+                FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
                 (bx + 10, iy, bw - 20, 46), border_radius=6
             )
             dname = self._display_name(item)
             charge_color = (
-                (80, 200, 80) if item.charges > item.max_charges // 2
-                else (200, 160, 40) if item.charges > 0
-                else (200, 60, 60)
+                FP.SUCCESS_TEXT if item.charges > item.max_charges // 2
+                else FP.WARNING_TEXT if item.charges > 0
+                else FP.DANGER_TEXT
             )
             self.screen.blit(
-                self.font_md.render(f"[{i+1}]", True, (100, 180, 255)), (bx + 18, iy + 13)
+                self.font_md.render(f"[{i+1}]", True, FP.GOLD_BRIGHT), (bx + 18, iy + 13)
             )
             self.screen.blit(
-                self.font_md.render(dname, True, (220, 220, 220)), (bx + 70, iy + 13)
+                self.font_md.render(dname, True, FP.BODY_TEXT), (bx + 70, iy + 13)
             )
             self.screen.blit(
                 self.font_sm.render(f"charges: {item.charges}/{item.max_charges}",
@@ -3439,15 +3407,14 @@ class Game:
             if item.identified or item.id in self.player.known_item_ids:
                 effect_x = bx + 220
                 self.screen.blit(
-                    self.font_sm.render(f"effect: {item.effect}", True, (160, 200, 220)),
+                    self.font_sm.render(f"effect: {item.effect}", True, FP.GOLD_PALE),
                     (effect_x, iy + 34)
                 )
 
         hint_y = by + bh - 30
-        pygame.draw.line(self.screen, (40, 80, 120),
-                         (bx + 10, hint_y - 8), (bx + bw - 10, hint_y - 8))
+        draw_divider(self.screen, bx + 10, hint_y - 8, bw - 20)
         hint = self.font_sm.render(
-            "Press number to invoke  |  ESC to cancel", True, (80, 140, 180)
+            "Press number to invoke  |  ESC to cancel", True, FP.HINT_TEXT
         )
         self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
 
@@ -3456,58 +3423,54 @@ class Game:
     # ------------------------------------------------------------------
 
     def _draw_scroll_menu(self):
-        overlay = pygame.Surface((WINDOW_W, WINDOW_H), pygame.SRCALPHA)
-        overlay.fill((0, 0, 0, 150))
-        self.screen.blit(overlay, (0, 0))
+        # FANTASY: Grimoire-themed scroll menu
+        draw_overlay(self.screen, 160)
 
         bw = min(580, GAME_W - 40)
         bh = min(90 + len(self.scroll_menu_items) * 52 + 50, 520, WINDOW_H - 40)
         bx = (GAME_W - bw) // 2
         by = (WINDOW_H - bh) // 2
 
-        pygame.draw.rect(self.screen, (26, 22, 16), (bx, by, bw, bh), border_radius=12)
-        pygame.draw.rect(self.screen, (200, 180, 100), (bx, by, bw, bh), 2, border_radius=12)
+        # FANTASY: Dark panel with gold border
+        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.GOLD)
+        draw_header_bar(self.screen, (bx, by, bw, 40), text="READ SCROLL  ·  GRAMMAR",
+                        font=self.font_md, text_color=FP.GOLD_BRIGHT)
 
         self.screen.blit(
-            self.font_md.render("READ SCROLL  [GRAMMAR]", True, (255, 230, 140)),
-            (bx + 20, by + 16)
-        )
-        self.screen.blit(
             self.font_sm.render("Scroll is consumed whether or not you succeed.",
-                                True, (200, 180, 120)),
+                                True, FP.BODY_TEXT),
             (bx + 20, by + 44)
         )
-        pygame.draw.line(self.screen, (120, 100, 50),
-                         (bx + 10, by + 66), (bx + bw - 10, by + 66))
+        draw_divider(self.screen, bx + 10, by + 66, bw - 20)
 
         for i, item in enumerate(self.scroll_menu_items):
             iy = by + 76 + i * 52
+            # FANTASY: Alternating midnight row colors
             pygame.draw.rect(
                 self.screen,
-                (34, 28, 18) if i % 2 == 0 else (26, 22, 14),
+                FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
                 (bx + 10, iy, bw - 20, 46), border_radius=6
             )
             dname = self._display_name(item)
             self.screen.blit(
-                self.font_md.render(f"[{i+1}]", True, (220, 200, 100)), (bx + 18, iy + 13)
+                self.font_md.render(f"[{i+1}]", True, FP.GOLD_BRIGHT), (bx + 18, iy + 13)
             )
             self.screen.blit(
-                self.font_md.render(dname, True, (220, 220, 200)), (bx + 70, iy + 13)
+                self.font_md.render(dname, True, FP.BODY_TEXT), (bx + 70, iy + 13)
             )
             if item.identified or item.id in self.player.known_item_ids:
                 detail_text = f"effect: {item.effect}  (grammar x{item.quiz_threshold})"
             else:
                 detail_text = f"unknown effect  (grammar x{item.quiz_threshold})"
             self.screen.blit(
-                self.font_sm.render(detail_text, True, (180, 160, 100)),
+                self.font_sm.render(detail_text, True, FP.FADED_TEXT),
                 (bx + 70, iy + 34)
             )
 
         hint_y = by + bh - 30
-        pygame.draw.line(self.screen, (120, 100, 50),
-                         (bx + 10, hint_y - 8), (bx + bw - 10, hint_y - 8))
+        draw_divider(self.screen, bx + 10, hint_y - 8, bw - 20)
         hint = self.font_sm.render(
-            "Press number to read  |  ESC to cancel", True, (160, 140, 80)
+            "Press number to read  |  ESC to cancel", True, FP.HINT_TEXT
         )
         self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
 
@@ -3516,57 +3479,53 @@ class Game:
     # ------------------------------------------------------------------
 
     def _draw_identify_menu(self):
-        overlay = pygame.Surface((WINDOW_W, WINDOW_H), pygame.SRCALPHA)
-        overlay.fill((0, 0, 0, 150))
-        self.screen.blit(overlay, (0, 0))
+        # FANTASY: Grimoire-themed identify menu
+        draw_overlay(self.screen, 160)
 
         bw = min(580, GAME_W - 40)
         bh = min(90 + len(self.identify_menu_items) * 52 + 50, 520, WINDOW_H - 40)
         bx = (GAME_W - bw) // 2
         by = (WINDOW_H - bh) // 2
 
-        pygame.draw.rect(self.screen, (18, 16, 30), (bx, by, bw, bh), border_radius=12)
-        pygame.draw.rect(self.screen, (160, 100, 220), (bx, by, bw, bh), 2, border_radius=12)
+        # FANTASY: Dark panel with arcane border
+        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.ARCANE_BRIGHT)
+        draw_header_bar(self.screen, (bx, by, bw, 40), text="IDENTIFY ITEM  ·  PHILOSOPHY",
+                        font=self.font_md, text_color=FP.GOLD_BRIGHT)
 
         self.screen.blit(
-            self.font_md.render("IDENTIFY ITEM  [PHILOSOPHY]", True, (200, 160, 255)),
-            (bx + 20, by + 16)
-        )
-        self.screen.blit(
             self.font_sm.render("Answer 3 correct to identify the chosen item.",
-                                True, (160, 130, 200)),
+                                True, FP.BODY_TEXT),
             (bx + 20, by + 44)
         )
-        pygame.draw.line(self.screen, (80, 50, 120),
-                         (bx + 10, by + 66), (bx + bw - 10, by + 66))
+        draw_divider(self.screen, bx + 10, by + 66, bw - 20)
 
         for i, item in enumerate(self.identify_menu_items):
             iy = by + 76 + i * 52
+            # FANTASY: Alternating midnight row colors
             pygame.draw.rect(
                 self.screen,
-                (26, 20, 44) if i % 2 == 0 else (20, 16, 36),
+                FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
                 (bx + 10, iy, bw - 20, 46), border_radius=6
             )
             dname = self._display_name(item)
             type_label = item.item_class
             tier_lbl = f"  tier {item.quiz_tier}" if hasattr(item, 'quiz_tier') else ""
             self.screen.blit(
-                self.font_md.render(f"[{i+1}]", True, (180, 130, 255)), (bx + 18, iy + 13)
+                self.font_md.render(f"[{i+1}]", True, FP.GOLD_BRIGHT), (bx + 18, iy + 13)
             )
             self.screen.blit(
-                self.font_md.render(dname, True, (220, 210, 240)), (bx + 70, iy + 13)
+                self.font_md.render(dname, True, FP.BODY_TEXT), (bx + 70, iy + 13)
             )
             self.screen.blit(
                 self.font_sm.render(f"{type_label}{tier_lbl}  —  philosophy x3 correct",
-                                    True, (140, 110, 180)),
+                                    True, FP.FADED_TEXT),
                 (bx + 70, iy + 34)
             )
 
         hint_y = by + bh - 30
-        pygame.draw.line(self.screen, (80, 50, 120),
-                         (bx + 10, hint_y - 8), (bx + bw - 10, hint_y - 8))
+        draw_divider(self.screen, bx + 10, hint_y - 8, bw - 20)
         hint = self.font_sm.render(
-            "Press number to identify  |  ESC to cancel", True, (120, 90, 160)
+            "Press number to identify  |  ESC to cancel", True, FP.HINT_TEXT
         )
         self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
 
@@ -3575,9 +3534,8 @@ class Game:
     # ------------------------------------------------------------------
 
     def _draw_cook_menu(self):
-        overlay = pygame.Surface((WINDOW_W, WINDOW_H), pygame.SRCALPHA)
-        overlay.fill((0, 0, 0, 150))
-        self.screen.blit(overlay, (0, 0))
+        # FANTASY: Grimoire-themed cook menu
+        draw_overlay(self.screen, 160)
 
         n_compound = len(self.cook_compound_recipes)
         n_single   = len(self.cook_menu_items)
@@ -3593,22 +3551,19 @@ class Game:
         bx = (GAME_W - bw) // 2
         by = (WINDOW_H - bh) // 2
 
-        pygame.draw.rect(self.screen, (20, 16, 10), (bx, by, bw, bh), border_radius=12)
-        pygame.draw.rect(self.screen, (140, 100, 40), (bx, by, bw, bh), 2, border_radius=12)
+        # FANTASY: Dark panel with success (green) border for cooking
+        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.SUCCESS_TEXT)
+        draw_header_bar(self.screen, (bx, by, bw, 40), text="COOK INGREDIENT  ·  COOKING",
+                        font=self.font_md, text_color=FP.GOLD_BRIGHT)
 
-        self.screen.blit(
-            self.font_md.render("COOK", True, (255, 200, 60)),
-            (bx + 20, by + 16)
-        )
         self.screen.blit(
             self.font_sm.render(
                 f"SP: {self.player.sp}/{self.player.max_sp}  —  cooking restores SP + permanent stat bonuses",
-                True, (200, 180, 120)
+                True, FP.BODY_TEXT
             ),
             (bx + 20, by + 44)
         )
-        pygame.draw.line(self.screen, (100, 80, 40),
-                         (bx + 10, by + 66), (bx + bw - 10, by + 66))
+        draw_divider(self.screen, bx + 10, by + 66, bw - 20)
 
         cy = by + 76
         letter_labels = 'ABCDEF'
@@ -3616,31 +3571,32 @@ class Game:
         # ── Compound (multi-ingredient) recipes ──────────────────────────
         if n_compound:
             self.screen.blit(
-                self.font_sm.render("COMPOUND RECIPES  (letter keys — you have all ingredients!)", True, (255, 220, 80)),
+                self.font_sm.render("COMPOUND RECIPES  (letter keys — you have all ingredients!)", True, FP.GOLD_BRIGHT),
                 (bx + 18, cy)
             )
             cy += compound_header_h
         elif n_single:
             hint = self.font_sm.render(
                 "Tip: collect multiple ingredients to unlock compound recipes with greater bonuses.",
-                True, (160, 140, 80)
+                True, FP.FADED_TEXT
             )
             self.screen.blit(hint, (bx + 18, cy))
             cy += 22
             for i, recipe in enumerate(self.cook_compound_recipes[:6]):
                 iy = cy
+                # FANTASY: Alternating midnight row colors
                 pygame.draw.rect(
                     self.screen,
-                    (18, 30, 12) if i % 2 == 0 else (14, 24, 10),
+                    FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
                     (bx + 10, iy, bw - 20, row_h - 4), border_radius=6
                 )
                 lbl = letter_labels[i]
                 self.screen.blit(
-                    self.font_md.render(f"[{lbl}]", True, (120, 220, 80)),
+                    self.font_md.render(f"[{lbl}]", True, FP.GOLD_BRIGHT),
                     (bx + 18, iy + 6)
                 )
                 self.screen.blit(
-                    self.font_md.render(recipe['name'], True, (180, 255, 140)),
+                    self.font_md.render(recipe['name'], True, FP.GOLD_PALE),
                     (bx + 70, iy + 6)
                 )
                 # Ingredient list + SP — resolve IDs to display names
@@ -3652,7 +3608,7 @@ class Game:
                 bonus_label = _cook_menu_bonus_label(recipe)
                 detail = f"{ing_list}  |  {sp_val} SP  {bonus_label}"
                 self.screen.blit(
-                    self.font_sm.render(detail, True, (140, 200, 100)),
+                    self.font_sm.render(detail, True, FP.BODY_TEXT),
                     (bx + 70, iy + 30)
                 )
                 cy += row_h
@@ -3660,27 +3616,27 @@ class Game:
         # ── Single ingredients ────────────────────────────────────────────
         if n_single:
             if n_compound:
-                pygame.draw.line(self.screen, (80, 70, 40),
-                                 (bx + 10, cy + 4), (bx + bw - 10, cy + 4))
+                draw_divider(self.screen, bx + 10, cy + 4, bw - 20)
                 cy += 8
                 self.screen.blit(
-                    self.font_sm.render("SINGLE INGREDIENTS  (number keys)", True, (200, 180, 100)),
+                    self.font_sm.render("SINGLE INGREDIENTS  (number keys)", True, FP.BODY_TEXT),
                     (bx + 18, cy)
                 )
                 cy += single_header_h
             for i, item in enumerate(self.cook_menu_items[:9]):
                 iy = cy
+                # FANTASY: Alternating midnight row colors
                 pygame.draw.rect(
                     self.screen,
-                    (30, 22, 12) if i % 2 == 0 else (24, 18, 10),
+                    FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
                     (bx + 10, iy, bw - 20, row_h - 4), border_radius=6
                 )
                 self.screen.blit(
-                    self.font_md.render(f"[{i+1}]", True, (200, 160, 60)),
+                    self.font_md.render(f"[{i+1}]", True, FP.GOLD_BRIGHT),
                     (bx + 18, iy + 6)
                 )
                 self.screen.blit(
-                    self.font_md.render(item.name, True, (220, 220, 200)),
+                    self.font_md.render(item.name, True, FP.BODY_TEXT),
                     (bx + 70, iy + 6)
                 )
                 best = item.recipes.get('5', item.recipes.get('3', {}))
@@ -3695,22 +3651,21 @@ class Game:
                 self.screen.blit(
                     self.font_sm.render(
                         f"best solo: {best.get('name', '?')}{used_str}",
-                        True, (180, 160, 100)
+                        True, FP.FADED_TEXT
                     ),
                     (bx + 70, iy + 30)
                 )
                 cy += row_h
 
         hint_y = by + bh - 34
-        pygame.draw.line(self.screen, (100, 80, 40),
-                         (bx + 10, hint_y - 8), (bx + bw - 10, hint_y - 8))
+        draw_divider(self.screen, bx + 10, hint_y - 8, bw - 20)
         hint_parts = []
         if n_compound:
             hint_parts.append("A-F: compound recipe")
         if n_single:
             hint_parts.append("1-9: single ingredient")
         hint_parts.append("ESC: cancel")
-        hint = self.font_sm.render("  |  ".join(hint_parts), True, (160, 140, 80))
+        hint = self.font_sm.render("  |  ".join(hint_parts), True, FP.HINT_TEXT)
         self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
 
     # ------------------------------------------------------------------
@@ -3718,24 +3673,21 @@ class Game:
     # ------------------------------------------------------------------
 
     def _draw_eat_menu(self):
-        overlay = pygame.Surface((WINDOW_W, WINDOW_H), pygame.SRCALPHA)
-        overlay.fill((0, 0, 0, 150))
-        self.screen.blit(overlay, (0, 0))
+        # FANTASY: Grimoire-themed eat menu
+        draw_overlay(self.screen, 160)
 
         bw = min(580, GAME_W - 40)
         bh = min(90 + len(self.eat_menu_items) * 52 + 50, 540, WINDOW_H - 40)
         bx = (GAME_W - bw) // 2
         by = (WINDOW_H - bh) // 2
 
-        pygame.draw.rect(self.screen, (16, 22, 12), (bx, by, bw, bh), border_radius=12)
-        pygame.draw.rect(self.screen, (80, 160, 60), (bx, by, bw, bh), 2, border_radius=12)
+        # FANTASY: Dark panel with success (green) border for nourishment
+        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.SUCCESS_TEXT)
+        draw_header_bar(self.screen, (bx, by, bw, 40), text="EAT  ·  NOURISHMENT",
+                        font=self.font_md, text_color=FP.GOLD_BRIGHT)
 
-        self.screen.blit(
-            self.font_md.render("EAT  [Z]", True, (160, 220, 80)),
-            (bx + 20, by + 16)
-        )
         sp = self.player.sp
-        sp_color = (80, 200, 80) if sp > 30 else (210, 160, 40) if sp > 10 else (210, 50, 50)
+        sp_color = FP.SUCCESS_TEXT if sp > 30 else FP.WARNING_TEXT if sp > 10 else FP.DANGER_TEXT
         self.screen.blit(
             self.font_sm.render(
                 f"SP: {sp}/{self.player.max_sp}  — Food restores SP. Ingredients eaten raw give minimal SP.",
@@ -3743,22 +3695,22 @@ class Game:
             ),
             (bx + 20, by + 44)
         )
-        pygame.draw.line(self.screen, (50, 100, 40),
-                         (bx + 10, by + 66), (bx + bw - 10, by + 66))
+        draw_divider(self.screen, bx + 10, by + 66, bw - 20)
 
         for i, item in enumerate(self.eat_menu_items):
             iy = by + 76 + i * 52
+            # FANTASY: Alternating midnight row colors
             pygame.draw.rect(
                 self.screen,
-                (18, 28, 14) if i % 2 == 0 else (14, 22, 10),
+                FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
                 (bx + 10, iy, bw - 20, 46), border_radius=6
             )
             self.screen.blit(
-                self.font_md.render(f"[{i+1}]", True, (120, 200, 80)),
+                self.font_md.render(f"[{i+1}]", True, FP.GOLD_BRIGHT),
                 (bx + 18, iy + 13)
             )
             self.screen.blit(
-                self.font_md.render(item.name, True, (220, 220, 200)),
+                self.font_md.render(item.name, True, FP.BODY_TEXT),
                 (bx + 70, iy + 13)
             )
             if isinstance(item, Food):
@@ -3779,135 +3731,143 @@ class Game:
                 raw_sp = item.recipes.get('1', item.recipes.get('0', {})).get('sp', 5)
                 detail_text = f"raw: {raw_sp} SP  (cook for up to {best_sp} SP)"
             self.screen.blit(
-                self.font_sm.render(detail_text, True, (140, 190, 120)),
+                self.font_sm.render(detail_text, True, FP.FADED_TEXT),
                 (bx + 70, iy + 34)
             )
 
         hint_y = by + bh - 30
-        pygame.draw.line(self.screen, (50, 100, 40),
-                         (bx + 10, hint_y - 8), (bx + bw - 10, hint_y - 8))
+        draw_divider(self.screen, bx + 10, hint_y - 8, bw - 20)
         hint = self.font_sm.render(
-            "Press number to eat  |  ESC to cancel", True, (100, 160, 80)
+            "Press number to eat  |  ESC to cancel", True, FP.HINT_TEXT
         )
         self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
 
     def _draw_confirm_exit(self):
-        overlay = pygame.Surface((WINDOW_W, WINDOW_H), pygame.SRCALPHA)
-        overlay.fill((0, 0, 0, 160))
-        self.screen.blit(overlay, (0, 0))
-
-        bw, bh = min(500, GAME_W - 40), 200
+        # FANTASY: Parchment confirmation dialog
+        draw_overlay(self.screen, 170)
+        bw, bh = min(520, GAME_W - 40), 210
         bx = (GAME_W - bw) // 2
         by = (WINDOW_H - bh) // 2
-
-        pygame.draw.rect(self.screen, (20, 20, 38), (bx, by, bw, bh), border_radius=12)
-        pygame.draw.rect(self.screen, (100, 100, 160), (bx, by, bw, bh), 2, border_radius=12)
+        draw_dark_panel(self.screen, (bx, by, bw, bh))
+        draw_header_bar(self.screen, (bx, by, bw, 40),
+                        text="LEAVE THE DUNGEON?",
+                        font=self.font_lg, text_color=FP.GOLD_BRIGHT)
 
         has_stone = any(
             isinstance(i, Artifact) and i.id == 'philosophers_stone'
             for i in self.player.inventory
         )
-
         if has_stone:
-            title = self.font_lg.render("LEAVE THE DUNGEON?", True, (255, 215, 0))
-            sub   = self.font_md.render(
-                "You carry the Philosopher's Stone!", True, (255, 215, 0)
-            )
+            sub = "You carry the Philosopher's Stone — this ends in triumph!"
+            sc  = FP.GOLD_BRIGHT
         else:
-            title = self.font_lg.render("LEAVE THE DUNGEON?", True, (220, 200, 80))
-            sub   = self.font_md.render(
-                "You don't have the Philosopher's Stone.", True, (200, 160, 80)
-            )
+            sub = "You do not carry the Philosopher's Stone."
+            sc  = FP.WARNING_TEXT
 
-        self.screen.blit(title, (bx + (bw - title.get_width()) // 2, by + 30))
-        self.screen.blit(sub,   (bx + (bw - sub.get_width())   // 2, by + 76))
-
-        hint = self.font_md.render("[Y] Leave   [N] Stay", True, (160, 200, 160))
-        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, by + 136))
+        sub_surf = self.font_md.render(sub, True, sc)
+        self.screen.blit(sub_surf, (bx + (bw - sub_surf.get_width()) // 2, by + 60))
+        draw_divider(self.screen, bx + 20, by + 100, bw - 40)
+        hint = self.font_md.render("[ Y ] Leave   [ N ] Stay", True, FP.GOLD_PALE)
+        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, by + 118))
+        hint2 = self.font_sm.render("Departing without the Stone ends your quest.", True, FP.FADED_TEXT)
+        self.screen.blit(hint2, (bx + (bw - hint2.get_width()) // 2, by + 158))
 
     # ------------------------------------------------------------------
     # Victory screen
     # ------------------------------------------------------------------
 
     def _draw_victory_screen(self):
-        overlay = pygame.Surface((WINDOW_W, WINDOW_H), pygame.SRCALPHA)
-        overlay.fill((20, 15, 0, 200))
-        self.screen.blit(overlay, (0, 0))
-
+        # FANTASY: Illuminated manuscript victory screen
+        draw_overlay(self.screen, 210, (12, 10, 0))
         score = self._calc_score()
         cx    = GAME_W // 2
+        cy    = WINDOW_H // 2
 
-        title = self.font_xl.render("VICTORY!", True, (255, 215, 0))
-        self.screen.blit(title, (cx - title.get_width() // 2, 140))
+        # FANTASY: Animated rune circles
+        t = pygame.time.get_ticks() / 1000.0
+        draw_rune_circle(self.screen, cx, cy, 260, (*FP.GOLD_DARK, 120), t, 16)
+        draw_rune_circle(self.screen, cx, cy, 180, (*FP.GOLD, 90),       -t * 1.3, 10)
+        draw_candle_glow(self.screen, cx, cy, 0.9)
 
-        sub = self.font_lg.render(
-            "You retrieved the Philosopher's Stone!", True, (255, 240, 160)
-        )
-        self.screen.blit(sub, (cx - sub.get_width() // 2, 205))
+        # FANTASY: Gold filigree bar under title
+        draw_filigree_bar(self.screen, cx - 320, cy - 100, 640, FP.GOLD)
 
-        score_surf = self.font_lg.render(f"Final Score: {score:,}", True, (255, 215, 0))
-        self.screen.blit(score_surf, (cx - score_surf.get_width() // 2, 270))
+        centered_text(self.screen, self.font_xl, "VICTORY!", FP.GOLD_BRIGHT, cy - 148, shadow=True)
+        draw_glow_text(self.screen, self.font_lg,
+                       "You retrieved the Philosopher's Stone!",
+                       FP.PARCHMENT_LIGHT, (cx - 320, cy - 100))
 
-        details = self.font_md.render(
-            f"Turns: {self.turn_count}   |   "
-            f"Deepest Level: {self.level_mgr.max_level_reached}   |   "
-            f"Kills: {self.level_mgr.monsters_killed}",
-            True, (200, 180, 120)
-        )
-        self.screen.blit(details, (cx - details.get_width() // 2, 326))
+        draw_filigree_bar(self.screen, cx - 260, cy - 68, 520, FP.GOLD_DARK)
 
-        breakdown = self.font_sm.render(
-            f"({self.turn_count}×10 turns)  +  "
-            f"({self.level_mgr.max_level_reached}×1000 depth)  +  "
-            f"({self.level_mgr.monsters_killed}×100 kills)  +  50000 stone bonus",
-            True, (160, 145, 90)
-        )
-        self.screen.blit(breakdown, (cx - breakdown.get_width() // 2, 358))
+        score_text = f"Final Score:  {score:,}"
+        draw_shadow_text(self.screen, self.font_lg, score_text,
+                         FP.GOLD_BRIGHT, (cx - self.font_lg.size(score_text)[0]//2, cy - 56))
 
-        hint = self.font_md.render("Press ESC to quit", True, (140, 180, 140))
-        self.screen.blit(hint, (cx - hint.get_width() // 2, 420))
+        details = (f"Turns: {self.turn_count}   |   "
+                   f"Deepest Level: {self.level_mgr.max_level_reached}   |   "
+                   f"Kills: {self.level_mgr.monsters_killed}")
+        d_surf = self.font_md.render(details, True, FP.BODY_TEXT)
+        self.screen.blit(d_surf, (cx - d_surf.get_width() // 2, cy))
+
+        breakdown = (f"({self.turn_count}×10)  +  ({self.level_mgr.max_level_reached}×1000)  +"
+                     f"  ({self.level_mgr.monsters_killed}×100)  +  50 000 stone bonus")
+        b_surf = self.font_sm.render(breakdown, True, FP.FADED_TEXT)
+        self.screen.blit(b_surf, (cx - b_surf.get_width() // 2, cy + 32))
+
+        draw_filigree_bar(self.screen, cx - 260, cy + 68, 520, FP.GOLD_DARK)
+        hint = self.font_md.render("Press ESC to close", True, FP.HINT_TEXT)
+        self.screen.blit(hint, (cx - hint.get_width() // 2, cy + 90))
 
     # ------------------------------------------------------------------
     # Death / defeat screen
     # ------------------------------------------------------------------
 
     def _draw_death_screen(self):
-        overlay = pygame.Surface((WINDOW_W, WINDOW_H), pygame.SRCALPHA)
-        overlay.fill((80, 0, 0, 140))
-        self.screen.blit(overlay, (0, 0))
-
+        # FANTASY: Dark blood-red death screen with animated runes
+        draw_overlay(self.screen, 180, (50, 0, 0))
         score = self._calc_score()
         cx    = GAME_W // 2
+        cy    = WINDOW_H // 2
+
+        t = pygame.time.get_ticks() / 1000.0
+        draw_rune_circle(self.screen, cx, cy, 240, (*FP.BURGUNDY, 110), t * 0.4, 14)
+        draw_rune_circle(self.screen, cx, cy, 160, (*FP.BLOOD, 70),     -t * 0.6, 8)
 
         if self.defeat_reason == 'fled':
             title_text = "YOU FLED THE DUNGEON"
-            sub_text   = "You left without the Philosopher's Stone."
+            sub_text   = "Your quest ends in cowardice."
+            tc = FP.WARNING_TEXT
         elif self.defeat_reason == 'starved':
             title_text = "YOU HAVE STARVED"
-            sub_text   = f"You starved on dungeon level {self.dungeon_level}."
+            sub_text   = f"Hunger claimed you on level {self.dungeon_level}."
+            tc = FP.WARNING_TEXT
         else:
             title_text = "YOU HAVE DIED"
-            sub_text   = f"You were slain on dungeon level {self.dungeon_level}."
+            sub_text   = f"Slain on dungeon level {self.dungeon_level}."
+            tc = FP.DANGER_TEXT
 
-        title = self.font_xl.render(title_text, True, (255, 80, 80))
-        self.screen.blit(title, (cx - title.get_width() // 2, 160))
+        draw_filigree_bar(self.screen, cx - 300, cy - 110, 600, FP.BURGUNDY_MID)
+        draw_glow_text(self.screen, self.font_xl, title_text,
+                       FP.BLOOD, (cx - self.font_xl.size(title_text)[0]//2, cy - 148),
+                       glow_color=FP.BURGUNDY)
+        draw_filigree_bar(self.screen, cx - 300, cy - 96, 600, FP.BURGUNDY_MID)
 
-        sub = self.font_lg.render(sub_text, True, (200, 160, 160))
-        self.screen.blit(sub, (cx - sub.get_width() // 2, 218))
+        sub_surf = self.font_lg.render(sub_text, True, tc)
+        self.screen.blit(sub_surf, (cx - sub_surf.get_width() // 2, cy - 80))
 
-        score_surf = self.font_lg.render(f"Final Score: {score:,}", True, (220, 180, 80))
-        self.screen.blit(score_surf, (cx - score_surf.get_width() // 2, 280))
+        score_text = f"Final Score:  {score:,}"
+        draw_shadow_text(self.screen, self.font_lg, score_text,
+                         FP.GOLD_PALE, (cx - self.font_lg.size(score_text)[0]//2, cy - 40))
 
-        details = self.font_md.render(
-            f"Turns: {self.turn_count}   |   "
-            f"Deepest Level: {self.level_mgr.max_level_reached}   |   "
-            f"Kills: {self.level_mgr.monsters_killed}",
-            True, (180, 150, 150)
-        )
-        self.screen.blit(details, (cx - details.get_width() // 2, 330))
+        details = (f"Turns: {self.turn_count}   |   "
+                   f"Deepest Level: {self.level_mgr.max_level_reached}   |   "
+                   f"Kills: {self.level_mgr.monsters_killed}")
+        d_surf = self.font_md.render(details, True, FP.BODY_TEXT)
+        self.screen.blit(d_surf, (cx - d_surf.get_width() // 2, cy + 2))
 
-        hint = self.font_md.render("Press ESC to quit", True, (160, 130, 130))
-        self.screen.blit(hint, (cx - hint.get_width() // 2, 390))
+        draw_filigree_bar(self.screen, cx - 260, cy + 32, 520, FP.BURGUNDY_DARK)
+        hint = self.font_md.render("Press ESC to close", True, FP.HINT_TEXT)
+        self.screen.blit(hint, (cx - hint.get_width() // 2, cy + 52))
 
     # ------------------------------------------------------------------
     # Help screen
@@ -4182,43 +4142,41 @@ class Game:
         bx = (GAME_W - bw) // 2
         by = (WINDOW_H - bh) // 2
 
-        # DOS double-border style
-        pygame.draw.rect(self.screen, (6, 6, 20),   (bx, by, bw, bh))
-        pygame.draw.rect(self.screen, (85, 85, 255), (bx, by, bw, bh), 2)
-        pygame.draw.rect(self.screen, (0, 0, 170),   (bx+4, by+4, bw-8, bh-8), 1)
-
-        title = self.font_lg.render("COMMAND REFERENCE", True, (255, 255, 85))
-        self.screen.blit(title, (bx + (bw - title.get_width()) // 2, by + 14))
-        pygame.draw.line(self.screen, (85, 85, 255),
-                         (bx + 20, by + 56), (bx + bw - 20, by + 56))
+        # FANTASY: Grimoire-style command reference panel
+        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.GOLD)
+        draw_header_bar(self.screen, (bx, by, bw, 48),
+                        text="COMMAND REFERENCE",
+                        font=self.font_lg, text_color=FP.GOLD_BRIGHT)
+        draw_divider(self.screen, bx + 20, by + 56, bw - 40)
 
         _COMMANDS = [
             # (key_label, description, color)
-            ("MOVEMENT", None, (170, 170, 255)),
-            ("Arrows / hjkl",  "Move / attack",                      (210, 210, 210)),
-            ("ACTIONS", None, (170, 170, 255)),
-            ("G  or  ,",       "Pick up item",                        (210, 210, 210)),
-            ("E",              "Equip weapon/armor  [Geography]",     (210, 210, 210)),
-            ("R",              "Equip accessory  [History]",          (210, 210, 210)),
-            ("U",              "Use wand  [Science]",                 (210, 210, 210)),
-            ("S",              "Read scroll  [Grammar]",              (210, 210, 210)),
-            ("I",              "Identify item  [Philosophy]",         (210, 210, 210)),
-            ("H",              "Harvest corpse  [Animal]",            (210, 210, 210)),
-            ("C",              "Cook ingredient  [Cooking]",          (210, 210, 210)),
-            ("Z",              "Eat food / raw ingredient",           (210, 210, 210)),
+            # FANTASY: Section headers use GOLD_PALE; commands use BODY_TEXT; keys use GOLD_BRIGHT
+            ("MOVEMENT", None, FP.GOLD_PALE),
+            ("Arrows / hjkl",  "Move / attack",                      FP.BODY_TEXT),
+            ("ACTIONS", None, FP.GOLD_PALE),
+            ("G  or  ,",       "Pick up item",                        FP.BODY_TEXT),
+            ("E",              "Equip weapon/armor  [Geography]",     FP.BODY_TEXT),
+            ("R",              "Equip accessory  [History]",          FP.BODY_TEXT),
+            ("U",              "Use wand  [Science]",                 FP.BODY_TEXT),
+            ("S",              "Read scroll  [Grammar]",              FP.BODY_TEXT),
+            ("I",              "Identify item  [Philosophy]",         FP.BODY_TEXT),
+            ("H",              "Harvest corpse  [Animal]",            FP.BODY_TEXT),
+            ("C",              "Cook ingredient  [Cooking]",          FP.BODY_TEXT),
+            ("Z",              "Eat food / raw ingredient",           FP.BODY_TEXT),
             ("\\",             "Pray  [Theology]",                    (200, 180, 255)),
-            ("F",              "Fire ranged weapon  [Math]",          (210, 210, 210)),
-            ("P",              "Pick lock  [Economics]",              (210, 210, 210)),
-            ("A",              "Attack / open container",             (210, 210, 210)),
-            ("X",              "Examine corpse lore  [Philosophy]",   (210, 210, 210)),
-            ("NAVIGATION", None, (170, 170, 255)),
-            (">",              "Descend stairs",                      (210, 210, 210)),
-            ("<",              "Ascend / exit dungeon",               (210, 210, 210)),
-            ("QUIZ ANSWERS", None, (170, 170, 255)),
-            ("1  2  3  4",     "Answer quiz questions",               (255, 255, 85)),
-            ("MISC", None, (170, 170, 255)),
-            ("?",              "This help screen",                    (210, 210, 210)),
-            ("ESC",            "Cancel menu / quit game",             (210, 210, 210)),
+            ("F",              "Fire ranged weapon  [Math]",          FP.BODY_TEXT),
+            ("P",              "Pick lock  [Economics]",              FP.BODY_TEXT),
+            ("A",              "Attack / open container",             FP.BODY_TEXT),
+            ("X",              "Examine corpse lore  [Philosophy]",   FP.BODY_TEXT),
+            ("NAVIGATION", None, FP.GOLD_PALE),
+            (">",              "Descend stairs",                      FP.BODY_TEXT),
+            ("<",              "Ascend / exit dungeon",               FP.BODY_TEXT),
+            ("QUIZ ANSWERS", None, FP.GOLD_PALE),
+            ("1  2  3  4",     "Answer quiz questions",               FP.GOLD_BRIGHT),
+            ("MISC", None, FP.GOLD_PALE),
+            ("?",              "This help screen",                    FP.BODY_TEXT),
+            ("ESC",            "Cancel menu / quit game",             FP.BODY_TEXT),
         ]
 
         col_w   = (bw - 40) // 2
@@ -4234,15 +4192,18 @@ class Game:
             cy_ = y + (idx if idx < col_break else idx - col_break) * line_h
 
             if desc is None:
+                # FANTASY: Section header in GOLD_PALE
                 hdr = self.font_sm.render(f"── {key_label} ──", True, color)
                 self.screen.blit(hdr, (cx_, cy_))
             else:
-                ksurf = self.font_sm.render(key_label, True, (255, 215, 60))
+                # FANTASY: Key label in GOLD_BRIGHT, description in supplied color
+                ksurf = self.font_sm.render(key_label, True, FP.GOLD_BRIGHT)
                 dsurf = self.font_sm.render(desc, True, color)
                 self.screen.blit(ksurf, (cx_, cy_))
                 self.screen.blit(dsurf, (cx_ + 140, cy_))
 
-        hint = self.font_sm.render("Press ESC or ? to close", True, (85, 85, 170))
+        # FANTASY: Footer hint in HINT_TEXT
+        hint = self.font_sm.render("Press ESC or ? to close", True, FP.HINT_TEXT)
         self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, by + bh - 28))
 
 

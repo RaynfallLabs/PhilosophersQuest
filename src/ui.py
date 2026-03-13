@@ -1,23 +1,21 @@
 import pygame
 
+# FANTASY: Import theme helpers from the central fantasy_ui module
+from fantasy_ui import FP, get_font, draw_panel, draw_divider, draw_shadow_text, ITEM_COLOR
+
 SIDEBAR_W = 320
 
+# FANTASY: Rich fantasy-palette message colors
 _MSG_COLORS = {
-    'info':    (210, 210, 210),
-    'success': (80,  220,  80),
-    'warning': (220, 190,  50),
-    'danger':  (220,  60,  60),
-    'loot':    (255, 195,  50),
+    'info':    FP.BODY_TEXT,
+    'success': FP.SUCCESS_TEXT,
+    'warning': FP.WARNING_TEXT,
+    'danger':  FP.DANGER_TEXT,
+    'loot':    FP.LOOT_TEXT,
 }
 
-_IC_COLOR = {
-    'weapon':     (225, 160,  70),
-    'armor':      ( 90, 155, 225),
-    'shield':     ( 90, 175, 225),
-    'ingredient': (150, 220, 110),
-    'corpse':     (155,  75,  75),
-    'accessory':  (215, 110, 215),
-}
+# FANTASY: Use ITEM_COLOR from fantasy_ui instead of local definition
+_IC_COLOR = ITEM_COLOR
 
 
 class MessageLog:
@@ -25,7 +23,8 @@ class MessageLog:
 
     def __init__(self):
         self.entries: list[tuple[str, str]] = []
-        self._font = pygame.font.SysFont('consolas', 16)
+        # FANTASY: Use grimoire body font instead of consolas
+        self._font = get_font('body', 16)
 
     def add(self, text: str, msg_type: str = 'info'):
         self.entries.append((text, msg_type))
@@ -33,8 +32,9 @@ class MessageLog:
             self.entries.pop(0)
 
     def draw(self, screen: pygame.Surface, x: int, y: int, w: int, h: int):
-        pygame.draw.rect(screen, (8, 8, 16), (x, y, w, h))
-        pygame.draw.line(screen, (40, 40, 80), (x, y), (x + w, y), 1)
+        # FANTASY: Midnight background + gold-dark top border
+        pygame.draw.rect(screen, FP.MIDNIGHT, (x, y, w, h))
+        pygame.draw.line(screen, FP.GOLD_DARK, (x, y), (x + w, y), 1)
 
         line_h = 21
         max_lines = (h - 8) // line_h
@@ -71,14 +71,16 @@ class Sidebar:
         self.screen = screen
         self.x = x
         self.w = SIDEBAR_W
-        self._fsm  = pygame.font.SysFont('consolas', 16)
-        self._fbold = pygame.font.SysFont('consolas', 16, bold=True)
-        self._fhd  = pygame.font.SysFont('consolas', 16, bold=True)
+        # FANTASY: Grimoire font set
+        self._fsm   = get_font('body', 16)
+        self._fbold = get_font('body', 16, bold=True)
+        self._fhd   = get_font('heading', 15)
 
     def draw(self, player, dungeon_level: int, turn_count: int):
         h = self.screen.get_height()
-        pygame.draw.rect(self.screen, (10, 10, 22), (self.x, 0, self.w, h))
-        pygame.draw.line(self.screen, (45, 45, 85), (self.x, 0), (self.x, h), 2)
+        # FANTASY: Midnight sidebar background + gold-dark left border
+        pygame.draw.rect(self.screen, FP.MIDNIGHT, (self.x, 0, self.w, h))
+        pygame.draw.line(self.screen, FP.GOLD_DARK, (self.x, 0), (self.x, h), 2)
 
         y = self.PAD
         y = self._vitals(player, y)
@@ -92,18 +94,20 @@ class Sidebar:
     # ------------------------------------------------------------------
 
     def _header(self, text: str, y: int) -> int:
-        pygame.draw.rect(self.screen, (20, 20, 42),
+        # FANTASY: Section header with midnight-mid bg and gold-bright text
+        pygame.draw.rect(self.screen, FP.MIDNIGHT_MID,
                          (self.x + self.PAD, y, self.w - self.PAD * 2, 19))
         self.screen.blit(
-            self._fhd.render(text, True, (120, 140, 210)),
+            self._fhd.render(text, True, FP.GOLD_BRIGHT),
             (self.x + self.PAD + 3, y)
         )
         return y + 21
 
     def _bar(self, y: int, label: str, val: int, max_val: int,
              bar_color: tuple) -> int:
+        # FANTASY: Faded text label
         self.screen.blit(
-            self._fsm.render(label, True, (130, 130, 165)),
+            self._fsm.render(label, True, FP.FADED_TEXT),
             (self.x + self.PAD, y)
         )
         bx = self.x + self.PAD + 26
@@ -111,15 +115,17 @@ class Sidebar:
         bh = 10
         ratio = max(0.0, min(1.0, val / max(1, max_val)))
 
-        pygame.draw.rect(self.screen, (22, 22, 35),
+        # FANTASY: Dark bar background
+        pygame.draw.rect(self.screen, (18, 18, 30),
                          (bx, y + 1, bw, bh), border_radius=3)
         if ratio > 0:
             pygame.draw.rect(self.screen, bar_color,
                              (bx, y + 1, max(2, int(bw * ratio)), bh),
                              border_radius=3)
 
+        # FANTASY: Readout in body text color
         self.screen.blit(
-            self._fsm.render(f"{val}/{max_val}", True, (150, 150, 165)),
+            self._fsm.render(f"{val}/{max_val}", True, FP.BODY_TEXT),
             (bx + bw + 4, y)
         )
         return y + 18
@@ -152,10 +158,12 @@ class Sidebar:
         for i, (name, val) in enumerate(attrs):
             ax = self.x + self.PAD + (i % 3) * col_w
             ay = y + (i // 3) * 19
+            # FANTASY: INK_LIGHT label color
             self.screen.blit(
-                self._fsm.render(f"{name}:", True, (105, 105, 150)), (ax, ay)
+                self._fsm.render(f"{name}:", True, FP.INK_LIGHT), (ax, ay)
             )
-            vc = (235, 205, 55) if val > 12 else (175, 175, 195) if val >= 10 else (185, 85, 85)
+            # FANTASY: Gold for high, body text for mid, danger for low
+            vc = FP.GOLD_BRIGHT if val > 12 else FP.BODY_TEXT if val >= 10 else FP.DANGER_TEXT
             self.screen.blit(self._fbold.render(str(val), True, vc), (ax + 38, ay))
         return y + 2 * 19 + self.SECTION_GAP
 
@@ -163,43 +171,44 @@ class Sidebar:
         from status_effects import EFFECT_INFO, DEBUFFS
         y = self._header("STATUS", y)
         ac = player.get_ac()
-        ac_color = (100, 220, 100) if ac <= 0 else (150, 195, 150) if ac <= 5 else (195, 175, 100)
+        # FANTASY: AC color thresholds
+        ac_color = FP.SUCCESS_TEXT if ac <= 0 else (150, 195, 150) if ac <= 5 else FP.WARNING_TEXT
         for text, color in [
             (f"AC     {ac}",                          ac_color),
-            (f"Level  {dungeon_level}",               (150, 150, 205)),
-            (f"Turns  {turn_count}",                  (140, 140, 175)),
-            (f"Sight  {player.get_sight_radius()}",   (150, 195, 205)),
-            (f"Timer  {player.get_quiz_timer()}s",    (195, 165, 165)),
+            (f"Level  {dungeon_level}",               FP.BODY_TEXT),
+            (f"Turns  {turn_count}",                  FP.BODY_TEXT),
+            (f"Sight  {player.get_sight_radius()}",   FP.BODY_TEXT),
+            (f"Timer  {player.get_quiz_timer()}s",    FP.WARNING_TEXT),
         ]:
             self.screen.blit(self._fsm.render(text, True, color),
                              (self.x + self.PAD, y))
             y += 18
 
-        # Prayer cooldown
+        # Prayer cooldown — FANTASY colors
         if player.prayer_cooldown > 0:
-            pray_color = (140, 100, 200)
+            pray_color = (140, 100, 200)   # cooldown: arcane purple
             self.screen.blit(
                 self._fsm.render(f"Prayer: {player.prayer_cooldown}t", True, pray_color),
                 (self.x + self.PAD, y)
             )
         else:
             self.screen.blit(
-                self._fsm.render("Prayer: Ready", True, (160, 220, 255)),
+                self._fsm.render("Prayer: Ready", True, FP.GOLD_PALE),
                 (self.x + self.PAD, y)
             )
         y += 18
 
-        # Hunger indicator
+        # Hunger indicator — FANTASY colors
         sp = player.sp
         if sp < 20:
             self.screen.blit(
-                self._fbold.render("[Starving!]", True, (215, 50, 50)),
+                self._fbold.render("[Starving!]", True, FP.DANGER_TEXT),
                 (self.x + self.PAD, y)
             )
             y += 19
         elif sp < 60:
             self.screen.blit(
-                self._fbold.render("[Hungry]", True, (215, 180, 45)),
+                self._fbold.render("[Hungry]", True, FP.WARNING_TEXT),
                 (self.x + self.PAD, y)
             )
             y += 19
@@ -252,8 +261,10 @@ class Sidebar:
                     iname += f" {eb}"
             else:
                 iname = "\u2014"
-            ic = (195, 190, 135) if item else (52, 52, 70)
-            label_surf = self._fsm.render(f"{label}:", True, (105, 105, 150))
+            # FANTASY: Gold-pale for equipped items, dim ink for empty slots
+            ic = FP.GOLD_PALE if item else (52, 52, 70)
+            # FANTASY: INK_LIGHT label color
+            label_surf = self._fsm.render(f"{label}:", True, FP.INK_LIGHT)
             self.screen.blit(label_surf, (self.x + self.PAD, y))
             name_x = self.x + self.PAD + label_surf.get_width() + 5
             max_name_w = self.x + self.w - self.PAD - name_x
@@ -274,7 +285,8 @@ class Sidebar:
 
         wt  = player.get_current_weight()
         lim = player.get_carry_limit()
-        wc  = (195, 150, 50) if wt > lim * 0.75 else (110, 155, 110)
+        # FANTASY: Warning for heavy load, success for normal
+        wc  = FP.WARNING_TEXT if wt > lim * 0.75 else FP.SUCCESS_TEXT
         self.screen.blit(
             self._fsm.render(f"Wt: {wt:.0f}/{lim}", True, wc),
             (self.x + self.PAD, y)
@@ -288,9 +300,11 @@ class Sidebar:
                     (self.x + self.PAD, y)
                 )
                 break
+            # FANTASY: Use ITEM_COLOR dict from fantasy_ui
             ic = _IC_COLOR.get(getattr(item, 'item_class', ''), (165, 165, 165))
+            # FANTASY: Gold-dark letter color
             self.screen.blit(
-                self._fsm.render(f"{letter})", True, (145, 145, 65)),
+                self._fsm.render(f"{letter})", True, FP.GOLD_DARK),
                 (self.x + self.PAD, y)
             )
             count = getattr(item, 'count', None)
