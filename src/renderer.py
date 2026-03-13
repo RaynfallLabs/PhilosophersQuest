@@ -4,7 +4,8 @@ from dungeon import WALL, FLOOR, STAIRS_UP, STAIRS_DOWN, DOOR, SECRET_DOOR, ALTA
 
 TILE_SIZE = 40  # kept for UI/font sizing outside the renderer
 
-_SPRITE_DIR = os.path.join(os.path.dirname(__file__), '..', 'assets', 'tiles', 'monsters')
+_SPRITE_DIR       = os.path.join(os.path.dirname(__file__), '..', 'assets', 'tiles', 'monsters')
+_ITEM_SPRITE_DIR  = os.path.join(os.path.dirname(__file__), '..', 'assets', 'tiles', 'items')
 
 # Visible tile colors
 _VISIBLE = {
@@ -45,6 +46,7 @@ class Renderer:
 
         self._sym_font = pygame.font.SysFont('consolas', max(8, TILE_SIZE - 8), bold=True)
         self._sprite_cache: dict[str, pygame.Surface | None] = {}
+        self._item_sprite_cache: dict[str, pygame.Surface | None] = {}
 
     def set_dungeon(self, dungeon_w: int, dungeon_h: int, game_w: int, game_h: int):
         """Compute tile size and centering offsets to fit the entire dungeon in the game panel."""
@@ -56,12 +58,25 @@ class Renderer:
         self.vh = dungeon_h
         font_size = max(8, self.map_tile_size - 2)
         self._sym_font = pygame.font.SysFont('consolas', font_size, bold=True)
-        self._sprite_cache.clear()   # sprites must be rescaled for new tile size
+        self._sprite_cache.clear()        # sprites must be rescaled for new tile size
+        self._item_sprite_cache.clear()
 
     def world_to_screen(self, wx: int, wy: int) -> tuple[int, int]:
         """Convert world tile coords to screen pixel coords."""
         return (wx * self.map_tile_size + self.map_offset_x,
                 wy * self.map_tile_size + self.map_offset_y)
+
+    def _get_item_sprite(self, item_id: str) -> 'pygame.Surface | None':
+        if item_id in self._item_sprite_cache:
+            return self._item_sprite_cache[item_id]
+        path = os.path.join(_ITEM_SPRITE_DIR, f"{item_id}.png")
+        if os.path.exists(path):
+            raw  = pygame.image.load(path).convert_alpha()
+            surf = pygame.transform.scale(raw, (self.map_tile_size, self.map_tile_size))
+            self._item_sprite_cache[item_id] = surf
+        else:
+            self._item_sprite_cache[item_id] = None
+        return self._item_sprite_cache[item_id]
 
     def _get_sprite(self, mid: str) -> 'pygame.Surface | None':
         if mid in self._sprite_cache:
@@ -130,12 +145,20 @@ class Renderer:
                          (sx + pad, sy + pad, T - pad * 2, T - pad * 2))
 
     def draw_item(self, item, cam_x: int = 0, cam_y: int = 0, visible: set = None):
-        """Draw an item glyph (only when visible)."""
+        """Draw an item sprite (or glyph fallback) only when visible."""
         if visible is not None and (item.x, item.y) not in visible:
             return
         T = self.map_tile_size
         sx, sy = self.world_to_screen(item.x, item.y)
 
+        item_id = getattr(item, 'id', None)
+        if item_id:
+            sprite = self._get_item_sprite(item_id)
+            if sprite:
+                self.screen.blit(sprite, (sx, sy))
+                return
+
+        # Fallback: glyph rendering (containers get a box outline first)
         from items import Container
         if isinstance(item, Container):
             pad = max(1, T // 10)
