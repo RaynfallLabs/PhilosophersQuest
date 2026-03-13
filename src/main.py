@@ -534,7 +534,7 @@ class Game:
         if self.secret_build:
             greeting += "  (Secret build active!)"
         self.add_message(greeting, 'success')
-        self.add_message("You carry the Philosopher's Amulet. Use [I] to identify items.", 'info')
+        self.add_message("You carry the Philosopher's Amulet, a dagger, a lockpick, and a ration.", 'info')
         self.add_message("Find the Philosopher's Stone and escape!", 'info')
 
     def load_state(self, state: dict):
@@ -584,8 +584,8 @@ class Game:
         self._refresh_fov()
 
     def _give_starting_amulet(self):
-        """Give the player a Philosopher's Amulet and mark it identified."""
-        from items import load_items, Accessory
+        """Give the player their starting kit: amulet, dagger, lockpick, ration."""
+        from items import load_items
         try:
             accessories = load_items('accessory')
             amulet = next((a for a in accessories if a.id == 'philosophers_amulet'), None)
@@ -594,7 +594,31 @@ class Game:
                 self.player.inventory.append(amulet)
                 self.player.known_item_ids.add('philosophers_amulet')
         except Exception:
-            pass  # Silently skip if amulet data not yet present
+            pass
+
+        try:
+            weapons = load_items('weapon')
+            dagger = next((w for w in weapons if w.id == 'iron_dagger'), None)
+            if dagger:
+                self.player.inventory.append(dagger)
+        except Exception:
+            pass
+
+        try:
+            lockpicks = load_items('lockpick')
+            lockpick = next((l for l in lockpicks if l.id == 'lockpick'), None)
+            if lockpick:
+                self.player.inventory.append(lockpick)
+        except Exception:
+            pass
+
+        try:
+            foods = load_items('food')
+            ration = next((f for f in foods if f.id == 'bread_ration'), None)
+            if ration:
+                self.player.inventory.append(ration)
+        except Exception:
+            pass
 
     def _refresh_fov(self):
         self.visible = calculate_fov(
