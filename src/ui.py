@@ -266,11 +266,16 @@ class Sidebar:
     def _equipment(self, player, y: int) -> int:
         y = self._header("EQUIPMENT", y)
         equipped = player.get_equipped_items()
+        # Check if player has Philosopher's Amulet in inventory
+        has_phil = any(getattr(i, 'id', '') == 'philosophers_amulet'
+                       for i in player.inventory)
         for label, key in [
             ("Weapon", "weapon"), ("Shield", "shield"),
             ("Head",   "head"),   ("Body",   "body"),
             ("Hands",  "hands"),  ("Legs",   "legs"),
             ("Feet",   "feet"),
+            ("Ring 1", "ring_1"), ("Ring 2", "ring_2"),
+            ("Ring 3", "ring_3"), ("Ring 4", "ring_4"),
         ]:
             item = equipped.get(key)
             if item:
@@ -308,6 +313,17 @@ class Sidebar:
             iname = self._fit(self._fsm, self._cap(iname), max_name_w)
             self.screen.blit(self._fsm.render(iname, True, ic), (name_x, y))
             y += 22
+        # Philosopher's Amulet — passive inventory item, not a slot
+        label_surf = self._fsm.render("Amulet:", True, FP.INK_LIGHT)
+        self.screen.blit(label_surf, (self.x + self.PAD, y))
+        name_x = self.x + self.PAD + label_surf.get_width() + 5
+        max_name_w = self.x + self.w - self.PAD - name_x
+        if has_phil:
+            amulet_text = self._fit(self._fsm, "Philosopher's Amulet", max_name_w)
+            self.screen.blit(self._fsm.render(amulet_text, True, (220, 180, 40)), (name_x, y))
+        else:
+            self.screen.blit(self._fsm.render("\u2014", True, (52, 52, 70)), (name_x, y))
+        y += 22
         return y + self.SECTION_GAP
 
     def _inventory(self, player, y: int):

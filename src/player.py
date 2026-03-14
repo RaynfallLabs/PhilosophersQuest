@@ -242,6 +242,8 @@ class Player:
         slots = {'weapon': self.weapon, 'shield': self.shield}
         for i, name in enumerate(ARMOR_SLOTS):
             slots[name] = self.armor_slots[i]
+        for i, item in enumerate(self.accessory_slots):
+            slots[f'ring_{i+1}'] = item
         return slots
 
     def get_inventory_display(self) -> list:

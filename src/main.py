@@ -2056,7 +2056,8 @@ class Game:
 
     def _open_accessory_menu(self):
         self.accessory_menu_items = [
-            i for i in self.player.inventory if isinstance(i, Accessory)
+            i for i in self.player.inventory
+            if isinstance(i, Accessory) and i.id != 'philosophers_amulet'
         ]
         if not self.accessory_menu_items:
             self.add_message("You have no rings or amulets to equip.", 'info')
