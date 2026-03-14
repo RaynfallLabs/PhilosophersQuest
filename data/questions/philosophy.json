@@ -4279,28 +4279,6 @@
     ]
   },
   {
-    "tier": 2,
-    "question": "What is 'nihilism'?",
-    "answer": "The view that life has no inherent meaning or value",
-    "choices": [
-      "The belief that science explains everything",
-      "The view that life has no inherent meaning or value",
-      "The idea that pleasure is everything",
-      "The view that tradition must be followed"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "What is the 'veil of ignorance' thought experiment by John Rawls?",
-    "answer": "Designing a fair society without knowing your place in it",
-    "choices": [
-      "Pretending not to know history",
-      "Designing a fair society without knowing your place in it",
-      "Hiding information from others",
-      "Blindfolding prisoners"
-    ]
-  },
-  {
     "tier": 3,
     "question": "What is the central claim of existentialism?",
     "answer": "Existence precedes essence — we define ourselves through choices",
@@ -5487,5 +5465,38 @@
       "Recording all observed facts",
       "Counting behaviors statistically"
     ]
+  },
+  {
+    "tier": 3,
+    "question": "Kant argued moral worth comes from:",
+    "choices": [
+      "Acting from duty",
+      "Maximizing happiness",
+      "Virtuous character",
+      "Divine command"
+    ],
+    "answer": "Acting from duty"
+  },
+  {
+    "tier": 4,
+    "question": "Wittgenstein claimed the limits of my language are:",
+    "choices": [
+      "The limits of my world",
+      "The limits of logic",
+      "The limits of thought",
+      "The limits of truth"
+    ],
+    "answer": "The limits of my world"
+  },
+  {
+    "tier": 2,
+    "question": "John Stuart Mill developed which ethical theory?",
+    "choices": [
+      "Utilitarianism",
+      "Deontology",
+      "Virtue ethics",
+      "Nihilism"
+    ],
+    "answer": "Utilitarianism"
   }
 ]

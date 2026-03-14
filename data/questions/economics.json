@@ -4028,7 +4028,7 @@
   {
     "tier": 2,
     "question": "What is barter's main disadvantage compared to money?",
-    "answer": "It requires a double coincidence of wants — both parties must have what the other wants",
+    "answer": "It requires a double coincidence of wants — both parties must have what the other needs",
     "choices": [
       "It is illegal in most countries",
       "It requires a double coincidence of wants — both parties must have what the other needs",
@@ -5454,5 +5454,49 @@
       "Autarky always leads to higher welfare for small countries",
       "Free trade optimum requires equal wage levels across countries"
     ]
+  },
+  {
+    "tier": 3,
+    "question": "GDP stands for:",
+    "choices": [
+      "Gross Domestic Product",
+      "General Debt Policy",
+      "Gross Deposit Payment",
+      "General Domestic Price"
+    ],
+    "answer": "Gross Domestic Product"
+  },
+  {
+    "tier": 3,
+    "question": "A budget deficit occurs when spending:",
+    "choices": [
+      "Exceeds revenue",
+      "Equals revenue",
+      "Falls below revenue",
+      "Doubles revenue"
+    ],
+    "answer": "Exceeds revenue"
+  },
+  {
+    "tier": 4,
+    "question": "The velocity of money equation is MV =:",
+    "choices": [
+      "PQ",
+      "PR",
+      "PT",
+      "PI"
+    ],
+    "answer": "PQ"
+  },
+  {
+    "tier": 5,
+    "question": "The Gini coefficient measures:",
+    "choices": [
+      "Income inequality",
+      "Price levels",
+      "Trade balance",
+      "Unemployment rate"
+    ],
+    "answer": "Income inequality"
   }
 ]
