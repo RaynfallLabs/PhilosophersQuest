@@ -679,6 +679,8 @@ class Game:
         self.player_gold        = 0
         self.turn_count         = 0
         self.dungeon_level      = 1
+        self.death_pursues      = False   # True once player ascends L100 with Stone
+        self.death_monster      = None    # DeathMonster instance, persists across floors
         self.defeat_reason      = 'died'   # 'died' | 'starved' | 'fled'
         self.correct_answers    = 0        # total correct answers this run
         self.wrong_answers      = 0        # total wrong answers this run
@@ -794,6 +796,11 @@ class Game:
         else:
             self.player.x, self.player.y = dungeon.rooms[-1].center
             self.add_message(f"You ascend to level {new_level}.", 'info')
+
+        # Death always enters from the stairs below when pursuing
+        if self.death_pursues and self.death_monster is not None:
+            self._place_death_on_level(dungeon)
+            self.add_message("You hear the scrape of a scythe on stone below you…", 'danger')
 
         self._refresh_fov()
 
@@ -1202,7 +1209,59 @@ class Game:
         if self.dungeon_level == 1:
             self.state = STATE_CONFIRM_EXIT
         else:
+            # Trigger Death the moment the player leaves L100 carrying the Stone
+            if self.dungeon_level == 100 and not self.death_pursues:
+                has_stone = any(
+                    isinstance(i, Artifact) and i.id == 'philosophers_stone'
+                    for i in self.player.inventory
+                )
+                if has_stone:
+                    self._trigger_death_pursuit()
             self._change_level(self.dungeon_level - 1, enter_from_top=False)
+
+    def _trigger_death_pursuit(self):
+        from monster import DeathMonster
+        self.death_pursues  = True
+        self.death_monster  = DeathMonster()
+        self.add_message(
+            "The dungeon shudders. A bone-cold wind rises from the deep.", 'danger'
+        )
+        self.add_message(
+            "DEATH has come for the Stone.  Flee — or be reaped.", 'danger'
+        )
+
+    def _place_death_on_level(self, dungeon):
+        """Spawn Death near the down-stairs (rooms[-1]) of the given dungeon."""
+        d = self.death_monster
+        cx, cy = dungeon.rooms[-1].center
+        # Try tiles radiating out from the down-stair room center
+        for dist in range(1, 8):
+            for ddx, ddy in [(dist,0),(-dist,0),(0,dist),(0,-dist),
+                             (dist,dist),(dist,-dist),(-dist,dist),(-dist,-dist)]:
+                nx, ny = cx + ddx, cy + ddy
+                if not dungeon.in_bounds(nx, ny):
+                    continue
+                if dungeon.is_walkable(nx, ny) and (nx, ny) != (self.player.x, self.player.y):
+                    d.x, d.y = nx, ny
+                    d.alive   = True
+                    return
+        # Fallback: same tile as room centre (rare)
+        d.x, d.y = cx, cy
+        d.alive   = True
+
+    def _death_proximity_warning(self):
+        """Emit atmospheric messages based on how close Death is."""
+        if not self.death_pursues or self.death_monster is None:
+            return
+        dm = self.death_monster
+        dist = abs(dm.x - self.player.x) + abs(dm.y - self.player.y)
+        # Only warn when Death enters FOV
+        if (dm.x, dm.y) not in self.visible:
+            return
+        if dist <= 3:
+            self.add_message("Death looms over you — MOVE!", 'danger')
+        elif dist <= 6:
+            self.add_message("Death draws near.", 'danger')
 
     def _confirm_exit_input(self, key: int):
         if key in (pygame.K_y, pygame.K_RETURN):
@@ -1302,6 +1361,7 @@ class Game:
 
         self._do_monster_turns()
         self._maybe_wander_spawn()
+        self._death_proximity_warning()
 
     def _maybe_wander_spawn(self):
         """Periodically spawn a wandering monster to keep pressure on the player."""
@@ -3649,6 +3709,22 @@ class Game:
         # Time stop: monsters are frozen this turn
         if self.player.has_effect('time_stopped'):
             return
+
+        # Death acts first — it is not part of self.monsters to avoid save/load issues
+        if self.death_pursues and self.death_monster is not None:
+            dm = self.death_monster
+            all_m = self.monsters + [dm]
+            did_attack = dm.take_turn(self.player, self.dungeon, all_m)
+            if did_attack:
+                dmg, msg = dm.attack(self.player)
+                self.add_message(msg, 'danger')
+                if self.player.is_dead():
+                    self.defeat_reason = 'died'
+                    self._on_game_over()
+                    self.state = STATE_DEAD
+                    self.add_message("You have died! Press ESC to quit.", 'danger')
+                    return
+
         for m in self.monsters:
             if not m.alive:
                 continue
@@ -3724,6 +3800,16 @@ class Game:
             for m in self.monsters:
                 if m.alive and (m.x, m.y) not in self.visible:
                     self.renderer.draw_entity(m.x, m.y, (70, 70, 120), cam_x, cam_y, None)
+        # Death: always visible when in FOV; drawn with a pale spectral pulse
+        if self.death_pursues and self.death_monster is not None:
+            dm = self.death_monster
+            if (dm.x, dm.y) in self.visible:
+                # Pulse between bone-white and ghostly blue
+                pulse = abs((self.turn_count % 20) - 10) / 10.0   # 0.0–1.0
+                r = int(200 + 55 * pulse)
+                g = int(200 + 55 * pulse)
+                b = 255
+                self.renderer.draw_entity(dm.x, dm.y, (r, g, b), cam_x, cam_y, self.visible, mid='death')
         _pspr = (self.secret_build or {}).get('_sprite', 'player')
         self.renderer.draw_player(self.player, cam_x, cam_y, sprite_name=_pspr)
         self.screen.set_clip(None)

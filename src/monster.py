@@ -250,3 +250,59 @@ class Monster:
         if dy:
             return [(0, dy), (1, 0), (-1, 0)]
         return []
+
+
+class DeathMonster(Monster):
+    """The Grim Reaper — invincible pursuer spawned when the player ascends from L100
+    with the Philosopher's Stone.  Moves at half speed but always hits and deals
+    heavy damage.  Cannot be killed, dispelled, or escaped — only outrun."""
+
+    _DEFN = {
+        'id': 'death',
+        'name': 'Death',
+        'symbol': 'D',
+        'color': [220, 220, 255],
+        'ai_pattern': 'aggressive',
+        'speed': 1,
+        'hp': '1',          # irrelevant — take_damage is overridden
+        'attacks': [{'name': 'reap', 'damage': '2d20+60', 'type': 'physical'}],
+        'thac0': -20,       # always hits
+        'resistances': [],
+        'weaknesses':  [],
+        'treasure':    {'gold': [0, 0], 'item_chance': 0.0, 'item_tier': 1},
+        'lore': '',
+        'min_level': 100,
+    }
+
+    def __init__(self, x: int = 0, y: int = 0):
+        super().__init__(self._DEFN, x, y)
+        self.hp      = 9999
+        self.max_hp  = 9999
+        self._half_speed_skip = False   # toggled each turn; True = skip this turn
+
+    # Death cannot be harmed
+    def take_damage(self, amount: int) -> int:
+        return 0
+
+    def is_dead(self) -> bool:
+        return False
+
+    # Effects don't stick to Death (no sleeping, paralysis, poison, etc.)
+    def tick_effects(self):
+        pass
+
+    def add_effect(self, name: str, duration: int):
+        pass
+
+    def take_turn(self, player, dungeon, all_monsters) -> bool:
+        """Half-speed: acts on alternating turns only."""
+        self._half_speed_skip = not self._half_speed_skip
+        if self._half_speed_skip:
+            return False
+        return super().take_turn(player, dungeon, all_monsters)
+
+    def attack(self, player) -> tuple[int, str]:
+        """Death always hits — no THAC0 roll needed."""
+        dmg = roll(self._DEFN['attacks'][0]['damage'])
+        actual = player.take_damage(dmg, 'physical')
+        return actual, f"Death's scythe tears through you for {actual} damage!"
