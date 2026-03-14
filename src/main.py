@@ -3708,7 +3708,7 @@ class Game:
         self.screen.set_clip(None)
 
         self.msg_log.draw(self.screen, 0, GAME_H, GAME_W, MSG_H)
-        self.sidebar.draw(self.player, self.dungeon_level, self.turn_count)
+        self.sidebar.draw(self.player, self.dungeon_level, self.turn_count, self.player_gold)
 
         if self.state == STATE_TARGET:
             self._draw_targeting(cam_x, cam_y)

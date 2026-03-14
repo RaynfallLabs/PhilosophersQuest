@@ -75,7 +75,7 @@ class Sidebar:
         self._fbold = get_font('body', 20, bold=True)
         self._fhd   = get_font('heading', 19)
 
-    def draw(self, player, dungeon_level: int, turn_count: int):
+    def draw(self, player, dungeon_level: int, turn_count: int, gold: int = 0):
         h = self.screen.get_height()
         # FANTASY: Midnight sidebar background + gold-dark left border
         pygame.draw.rect(self.screen, FP.MIDNIGHT, (self.x, 0, self.w, h))
@@ -84,7 +84,7 @@ class Sidebar:
         y = self.PAD
         y = self._vitals(player, y)
         y = self._attributes(player, y)
-        y = self._status(player, dungeon_level, turn_count, y)
+        y = self._status(player, dungeon_level, turn_count, gold, y)
         y = self._equipment(player, y)
         self._inventory(player, y)
 
@@ -165,7 +165,7 @@ class Sidebar:
             self.screen.blit(self._fbold.render(str(val), True, vc), (ax + 46, ay))
         return y + 2 * 24 + self.SECTION_GAP
 
-    def _status(self, player, dungeon_level: int, turn_count: int, y: int) -> int:
+    def _status(self, player, dungeon_level: int, turn_count: int, gold: int, y: int) -> int:
         from status_effects import EFFECT_INFO, DEBUFFS
         y = self._header("STATUS", y)
         ac = player.get_ac()
@@ -175,6 +175,7 @@ class Sidebar:
             (f"AC     {ac}",                          ac_color),
             (f"Level  {dungeon_level}",               FP.BODY_TEXT),
             (f"Turns  {turn_count}",                  FP.BODY_TEXT),
+            (f"Gold   {gold:,}",                      FP.GOLD_PALE),
             (f"Sight  {player.get_sight_radius()}",   FP.BODY_TEXT),
             (f"Timer  {player.get_quiz_timer()}s",    FP.WARNING_TEXT),
         ]:
