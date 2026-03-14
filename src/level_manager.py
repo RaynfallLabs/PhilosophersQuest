@@ -47,6 +47,9 @@ class LevelManager:
 
         items = spawn_items(dungeon.rooms, level_num, dungeon)
 
+        # Populate hidden chambers with themed monsters/items
+        _populate_hidden_chambers(dungeon, monsters, items, level_num)
+
         if level_num == STONE_LEVEL:
             stone = _place_stone(dungeon, items)
             if stone:
@@ -54,6 +57,82 @@ class LevelManager:
 
         self.max_level_reached = max(self.max_level_reached, level_num)
         return dungeon, monsters, items
+
+
+def _populate_hidden_chambers(dungeon, monsters: list, items: list, level: int):
+    """Populate each hidden chamber with themed monsters or treasure items."""
+    import random as _rng
+    from dungeon import spawn_monsters, spawn_items
+
+    # Theme keyword → monster name/id substrings to prefer
+    THEME_KEYWORDS = {
+        'rat_nest':       ['rat', 'rodent'],
+        'spider_den':     ['spider'],
+        'bat_cave':       ['bat'],
+        'goblin_camp':    ['goblin'],
+        'kobold_den':     ['kobold'],
+        'orc_hideout':    ['orc'],
+        'troll_cave':     ['troll'],
+        'bandit_hideout': ['bandit', 'human', 'brigand', 'thug'],
+        'undead_crypt':   ['skeleton', 'zombie', 'ghoul', 'ghost', 'wraith',
+                           'vampire', 'lich', 'undead', 'specter', 'wight'],
+        'demon_shrine':   ['demon', 'devil', 'imp', 'fiend'],
+        'yuan_ti_lair':   ['yuan', 'serpent', 'snake', 'naga'],
+        'vampire_crypt':  ['vampire', 'bat', 'ghoul'],
+        'dragon_hoard':   ['dragon', 'drake', 'wyrm'],
+        'lich_sanctum':   ['lich', 'skeleton', 'zombie', 'wraith', 'ghost'],
+        'chaos_shrine':   ['chaos', 'demon', 'mutant'],
+        'cache':          [],  # treasure — no monsters
+    }
+
+    for chamber in getattr(dungeon, 'hidden_chambers', []):
+        room = chamber['room']
+        ctype = chamber['type']
+        theme = chamber['theme']
+
+        if ctype == 'treasure':
+            # Spawn 3-5 items inside the chamber
+            tier = min(5, 1 + level // 12)
+            count_target = _rng.randint(3, 5)
+            placed = 0
+            # Re-use spawn_items on the single chamber room, then keep only
+            # items that land inside the chamber (spawn_items skips rooms[0])
+            chamber_items = spawn_items([room, room], level, dungeon)
+            for it in chamber_items:
+                if placed >= count_target:
+                    break
+                items.append(it)
+                placed += 1
+
+        elif ctype == 'lair':
+            keywords = THEME_KEYWORDS.get(theme, [])
+            count_target = _rng.randint(3, 6)
+
+            # Try to spawn monsters via the normal helper using only this chamber room
+            # spawn_monsters skips rooms[0], so pass [dummy, chamber_room]
+            lair_monsters = spawn_monsters([room, room], level, dungeon,
+                                           min_count=count_target,
+                                           max_count=count_target + 1)
+
+            if keywords:
+                # Re-roll monsters that don't match the theme until we get a match
+                # or run out of attempts; just label existing ones as themed preference
+                themed = [m for m in lair_monsters
+                          if any(kw in m.kind.lower() or kw in m.name.lower()
+                                 for kw in keywords)]
+                non_themed = [m for m in lair_monsters if m not in themed]
+
+                # If we found no themed monsters at all, keep whatever spawned
+                # (level-appropriate fallback) — themed monsters may not exist at this level
+                if themed:
+                    # Prefer themed: fill remaining slots from themed pool
+                    final = themed[:count_target]
+                else:
+                    final = lair_monsters[:count_target]
+            else:
+                final = lair_monsters[:count_target]
+
+            monsters.extend(final)
 
 
 def _place_stone(dungeon, existing_items: list):

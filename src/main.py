@@ -1290,6 +1290,8 @@ class Game:
         self._do_warning()
         # Searching: auto-reveal adjacent tiles
         self._do_searching()
+        # Passive PER-based secret door detection
+        self._do_passive_search()
         # Clairvoyant: reveal tiles within 10-tile radius each turn
         if self.player.has_effect('clairvoyant'):
             px, py = self.player.x, self.player.y
@@ -1378,6 +1380,25 @@ class Game:
                         self.dungeon.tiles[ny][nx] = DOOR
                         self._refresh_fov()
                         self.add_message("Searching reveals a secret door!", 'success')
+
+    def _do_passive_search(self):
+        """Passive PER-based detection of adjacent secret doors each turn."""
+        import random as _rng
+        # Small base chance + PER scaling; much weaker than bump or active Searching
+        chance = 0.02 + self.player.PER * 0.008  # PER 10 = 10%, max ~18%
+        px, py = self.player.x, self.player.y
+        for dy in range(-1, 2):
+            for dx in range(-1, 2):
+                if dx == 0 and dy == 0:
+                    continue
+                nx, ny = px + dx, py + dy
+                if not self.dungeon.in_bounds(nx, ny):
+                    continue
+                if self.dungeon.tiles[ny][nx] == SECRET_DOOR:
+                    if _rng.random() < chance:
+                        self.dungeon.tiles[ny][nx] = DOOR
+                        self._refresh_fov()
+                        self.add_message("Your keen senses detect a hidden door nearby!", 'success')
 
     # ------------------------------------------------------------------
     # SP starvation

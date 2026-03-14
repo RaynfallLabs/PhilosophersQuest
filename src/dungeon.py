@@ -94,6 +94,8 @@ class Dungeon:
         self.level  = level
         # Explored tiles stored as a set of (x, y) tuples for easy membership checks
         self.explored: Set[Tuple[int, int]] = set()
+        # Hidden chambers carved adjacent to existing corridors/rooms
+        self.hidden_chambers: list = []  # list of {'room': Room, 'type': str, 'theme': str}
 
     def in_bounds(self, x: int, y: int) -> bool:
         return 0 <= x < self.width and 0 <= y < self.height
@@ -221,6 +223,9 @@ def generate_dungeon(width: int = 80, height: int = 50, level: int = 1) -> Dunge
     # ── 5. Place secret doors (shortcuts) ────────────────────────────────────
     _place_secret_doors(tiles, width, height, rooms, rng, level)
 
+    # ── 5b. Carve hidden chambers off existing corridors/rooms ───────────────
+    hidden_chambers = _place_hidden_chambers(tiles, rooms, width, height, rng, level)
+
     # ── 6. Place stairs ──────────────────────────────────────────────────────
     if len(rooms) >= 2:
         sx, sy = rooms[0].center
@@ -243,7 +248,9 @@ def generate_dungeon(width: int = 80, height: int = 50, level: int = 1) -> Dunge
             ax, ay = rng.choice(inner)
             tiles[ay][ax] = ALTAR
 
-    return Dungeon(tiles, rooms, width, height, level)
+    dungeon = Dungeon(tiles, rooms, width, height, level)
+    dungeon.hidden_chambers = hidden_chambers
+    return dungeon
 
 
 # ---------------------------------------------------------------------------
@@ -343,7 +350,7 @@ def _place_secret_doors(tiles, width: int, height: int,
     for room in rooms:
         room_walls.update(room.wall_tiles())
 
-    target   = max(1, 1 + level // 3)   # 1-2 per level
+    target   = max(2, 2 + level // 4)   # 2+ per level (was max(1, 1 + level // 3))
     placed   = 0
     attempts = 0
 
@@ -362,6 +369,133 @@ def _place_secret_doors(tiles, width: int, height: int,
         if ns or ew:
             tiles[y][x] = SECRET_DOOR
             placed += 1
+
+
+# ---------------------------------------------------------------------------
+# Hidden chamber placement
+# ---------------------------------------------------------------------------
+
+def _place_hidden_chambers(tiles, rooms: List[Room], width: int, height: int,
+                            rng: random.Random, level: int) -> list:
+    """
+    Try to carve 0-2 small hidden rooms adjacent to existing floor/corridor tiles.
+    Each chamber is connected to the main dungeon via a SECRET_DOOR in the shared wall.
+    Returns a list of chamber dicts: {'room': Room, 'type': str, 'theme': str}
+    """
+    # Lair themes by level range
+    def _lair_theme(lvl: int) -> str:
+        if lvl <= 8:
+            return rng.choice(['rat_nest', 'spider_den', 'bat_cave'])
+        elif lvl <= 18:
+            return rng.choice(['goblin_camp', 'kobold_den', 'orc_hideout'])
+        elif lvl <= 35:
+            return rng.choice(['troll_cave', 'bandit_hideout', 'undead_crypt'])
+        elif lvl <= 60:
+            return rng.choice(['demon_shrine', 'yuan_ti_lair', 'vampire_crypt'])
+        else:
+            return rng.choice(['dragon_hoard', 'lich_sanctum', 'chaos_shrine'])
+
+    # Candidate chamber sizes: (interior_w, interior_h)
+    SIZES = [(5, 7), (7, 5), (6, 6)]
+
+    chambers = []
+    # Collect all floor tile positions to pick anchor points from
+    floor_tiles = [
+        (x, y)
+        for y in range(1, height - 1)
+        for x in range(1, width - 1)
+        if tiles[y][x] == FLOOR
+    ]
+    if not floor_tiles:
+        return chambers
+
+    rng.shuffle(floor_tiles)
+    attempts = 0
+    max_attempts = min(200, len(floor_tiles))
+    target_count = rng.randint(0, 2)
+
+    for ax, ay in floor_tiles:
+        if len(chambers) >= target_count:
+            break
+        if attempts >= max_attempts:
+            break
+        attempts += 1
+
+        # Try each direction the chamber could be placed (N/S/E/W of the anchor)
+        directions = [(0, -1), (0, 1), (-1, 0), (1, 0)]
+        rng.shuffle(directions)
+
+        for ddx, ddy in directions:
+            # Layout: anchor(FLOOR) → door_tile(must be WALL → SECRET_DOOR) → chamber
+            door_x = ax + ddx
+            door_y = ay + ddy
+
+            # The door tile must currently be WALL
+            if not (0 < door_x < width - 1 and 0 < door_y < height - 1):
+                continue
+            if tiles[door_y][door_x] != WALL:
+                continue
+
+            # Pick a chamber size
+            iw, ih = rng.choice(SIZES)
+            # Full room including 1-tile wall border
+            rw = iw + 2
+            rh = ih + 2
+
+            # The chamber bounding box starts one step past the door in the same direction.
+            # The door_tile sits in the shared wall between anchor and chamber.
+            # We position the chamber so the door is on its near face wall.
+            if ddx == 0:
+                # Moving vertically: door is on top wall (ddy=+1) or bottom wall (ddy=-1)
+                cx = door_x - rw // 2
+                if ddy == 1:
+                    cy = door_y          # door is the top wall row of the chamber
+                else:
+                    cy = door_y - rh + 1  # door is the bottom wall row of the chamber
+            else:
+                # Moving horizontally: door on left wall (ddx=+1) or right wall (ddx=-1)
+                cy = door_y - rh // 2
+                if ddx == 1:
+                    cx = door_x          # door is the left wall col of the chamber
+                else:
+                    cx = door_x - rw + 1  # door is the right wall col of the chamber
+
+            # Bounds check
+            if cx < 1 or cy < 1 or cx + rw >= width or cy + rh >= height:
+                continue
+
+            # All tiles in bounding box must currently be WALL
+            # (the door tile is inside the box and is already confirmed WALL above)
+            all_wall = True
+            for ty2 in range(cy, cy + rh):
+                for tx2 in range(cx, cx + rw):
+                    if tiles[ty2][tx2] != WALL:
+                        all_wall = False
+                        break
+                if not all_wall:
+                    break
+            if not all_wall:
+                continue
+
+            # Carve it: interior becomes FLOOR, border stays WALL (already WALL),
+            # and we set the connecting wall tile to SECRET_DOOR.
+            room = Room(cx, cy, rw, rh)
+            for rx2, ry2 in room.inner_tiles():   # inner_tiles yields (x, y)
+                tiles[ry2][rx2] = FLOOR
+            tiles[door_y][door_x] = SECRET_DOOR
+
+            # Classify: 60% treasure, 40% lair
+            if rng.random() < 0.60:
+                ctype = 'treasure'
+                theme = 'cache'
+            else:
+                ctype = 'lair'
+                theme = _lair_theme(level)
+
+            chambers.append({'room': room, 'type': ctype, 'theme': theme})
+            break  # placed one; move to next anchor
+
+    return chambers
 
 
 # ---------------------------------------------------------------------------
