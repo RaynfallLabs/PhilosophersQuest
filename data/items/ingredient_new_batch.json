@@ -1,0 +1,898 @@
+{
+  "swamp_serpent_fang": {
+    "name": "swamp serpent fang",
+    "symbol": ",",
+    "color": [80, 160, 90],
+    "weight": 1.5,
+    "min_level": 4,
+    "source_monster": "swamp_serpent",
+    "recipes": {
+      "0": {"name": "ruined fang pulp",              "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "boiled fang broth",              "sp": 25,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "swamp serpent bisque",           "sp": 50,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "venom-leached fang stew",        "sp": 75,  "bonus_type": "status",      "bonus_effect": "poison_resist", "bonus_amount": 15},
+      "4": {"name": "serpent hollow reduction",       "sp": 100, "bonus_type": "status",      "bonus_effect": "poison_resist", "bonus_amount": 25},
+      "5": {"name": "mireking's fang elixir",         "sp": 130, "bonus_type": "stat",        "bonus_stat": "DEX", "bonus_amount": 1}
+    }
+  },
+  "blink_gland": {
+    "name": "blink gland",
+    "symbol": ",",
+    "color": [170, 130, 230],
+    "weight": 1.5,
+    "min_level": 4,
+    "source_monster": "blink_dog",
+    "recipes": {
+      "0": {"name": "burst blink residue",            "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "ethereal gland broth",           "sp": 25,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "phase-dog marrow soup",          "sp": 50,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "blink essence reduction",        "sp": 75,  "bonus_type": "stat",        "bonus_stat": "DEX", "bonus_amount": 1},
+      "4": {"name": "teleport-trace consomme",        "sp": 100, "bonus_type": "status",      "bonus_effect": "haste", "bonus_amount": 20},
+      "5": {"name": "planar-hound's draught",         "sp": 130, "bonus_type": "status",      "bonus_effect": "haste", "bonus_amount": 35}
+    }
+  },
+  "eagle_feather": {
+    "name": "eagle feather",
+    "symbol": ",",
+    "color": [220, 200, 120],
+    "weight": 1.0,
+    "min_level": 4,
+    "source_monster": "giant_eagle",
+    "recipes": {
+      "0": {"name": "charred feather ash",            "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "quill-tip tea",                  "sp": 20,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "soaring feather broth",          "sp": 45,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "aerie-wind reduction",           "sp": 70,  "bonus_type": "stat",        "bonus_stat": "PER", "bonus_amount": 1},
+      "4": {"name": "sky-lord's essence soup",        "sp": 100, "bonus_type": "stat",        "bonus_stat": "PER", "bonus_amount": 2},
+      "5": {"name": "eagle-eye pinnacle draught",     "sp": 130, "bonus_type": "two_stats",   "bonus_amount": 1}
+    }
+  },
+  "wisp_essence": {
+    "name": "wisp essence",
+    "symbol": ",",
+    "color": [220, 240, 255],
+    "weight": 1.0,
+    "min_level": 4,
+    "source_monster": "will_o_wisp_lesser",
+    "recipes": {
+      "0": {"name": "collapsed wisp vapour",          "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "spectral essence broth",         "sp": 22,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "will-light reduction",           "sp": 45,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "luminous wisp distillate",       "sp": 70,  "bonus_type": "stat",        "bonus_stat": "INT", "bonus_amount": 1},
+      "4": {"name": "fae-lantern consomme",           "sp": 100, "bonus_type": "status",      "bonus_effect": "invisible", "bonus_amount": 20},
+      "5": {"name": "foxfire pinnacle elixir",        "sp": 130, "bonus_type": "status",      "bonus_effect": "invisible", "bonus_amount": 35}
+    }
+  },
+  "spriggan_thorn": {
+    "name": "spriggan thorn",
+    "symbol": ",",
+    "color": [100, 180, 60],
+    "weight": 1.0,
+    "min_level": 4,
+    "source_monster": "spriggan",
+    "recipes": {
+      "0": {"name": "wilted thorn mash",              "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "hedge-sprite thorn tea",         "sp": 20,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "briar essence broth",            "sp": 42,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "spinewood stew",                 "sp": 65,  "bonus_type": "stat",        "bonus_stat": "DEX", "bonus_amount": 1},
+      "4": {"name": "verdant thorn reduction",        "sp": 95,  "bonus_type": "stat",        "bonus_stat": "CON", "bonus_amount": 1},
+      "5": {"name": "deepwood sprite's elixir",       "sp": 130, "bonus_type": "two_stats",   "bonus_amount": 1}
+    }
+  },
+  "violet_fungus_cap": {
+    "name": "violet fungus cap",
+    "symbol": ",",
+    "color": [160, 80, 200],
+    "weight": 2.0,
+    "min_level": 4,
+    "source_monster": "violet_fungus",
+    "recipes": {
+      "0": {"name": "rotted fungal sludge",           "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "purple-cap mushroom broth",      "sp": 22,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "violet spore consomme",          "sp": 44,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "mycelial essence soup",          "sp": 68,  "bonus_type": "status",      "bonus_effect": "poison_resist", "bonus_amount": 15},
+      "4": {"name": "elder-cap reduction",            "sp": 95,  "bonus_type": "random_stat", "bonus_amount": 1},
+      "5": {"name": "shroomwarden's pinnacle draught","sp": 130, "bonus_type": "two_stats",   "bonus_amount": 1}
+    }
+  },
+  "lamia_scales": {
+    "name": "lamia scales",
+    "symbol": ",",
+    "color": [210, 170, 90],
+    "weight": 4.0,
+    "min_level": 5,
+    "source_monster": "lamia",
+    "recipes": {
+      "0": {"name": "crumbled lamia flake",           "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "serpent-woman scale broth",      "sp": 28,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "lamia shimmer bisque",           "sp": 55,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "charmer's scale reduction",      "sp": 85,  "bonus_type": "stat",        "bonus_stat": "INT", "bonus_amount": 1},
+      "4": {"name": "desert-queen scale stew",        "sp": 115, "bonus_type": "two_stats",   "bonus_amount": 1},
+      "5": {"name": "lamia sovereign's feast",        "sp": 150, "bonus_type": "combat_stat", "bonus_amount": 2}
+    }
+  },
+  "wolf_pelt": {
+    "name": "wolf pelt",
+    "symbol": ",",
+    "color": [160, 140, 110],
+    "weight": 6.0,
+    "min_level": 5,
+    "source_monster": "fenrir_pup",
+    "recipes": {
+      "0": {"name": "singed wolf scraps",             "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "slow-cooked wolf hide",          "sp": 28,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "wolf-pelt marrow broth",         "sp": 55,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "fenrir-pup roast",               "sp": 85,  "bonus_type": "stat",        "bonus_stat": "STR", "bonus_amount": 1},
+      "4": {"name": "pack-born essence stew",         "sp": 115, "bonus_type": "combat_stat", "bonus_amount": 1},
+      "5": {"name": "godwolf's hide banquet",         "sp": 150, "bonus_type": "combat_stat", "bonus_amount": 2}
+    }
+  },
+  "nothic_eye": {
+    "name": "nothic eye",
+    "symbol": ",",
+    "color": [200, 60, 60],
+    "weight": 2.0,
+    "min_level": 5,
+    "source_monster": "nothic",
+    "recipes": {
+      "0": {"name": "deflated eye jelly",             "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "seer's eye broth",               "sp": 28,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "arcane lens bisque",             "sp": 55,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "mad-gazer's reduction",          "sp": 85,  "bonus_type": "stat",        "bonus_stat": "PER", "bonus_amount": 2},
+      "4": {"name": "truesight jelly consomme",       "sp": 115, "bonus_type": "stat",        "bonus_stat": "WIS", "bonus_amount": 1},
+      "5": {"name": "nothic oracle's elixir",         "sp": 150, "bonus_type": "two_stats",   "bonus_amount": 2}
+    }
+  },
+  "enchanted_plate": {
+    "name": "enchanted plate",
+    "symbol": ",",
+    "color": [180, 200, 220],
+    "weight": 8.0,
+    "min_level": 5,
+    "source_monster": "animated_armor",
+    "recipes": {
+      "0": {"name": "melted iron slag",               "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "smelted enchantment broth",      "sp": 28,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "runesteel marrow soup",          "sp": 55,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "animated iron reduction",        "sp": 85,  "bonus_type": "stat",        "bonus_stat": "CON", "bonus_amount": 1},
+      "4": {"name": "sentinel plate essence",         "sp": 115, "bonus_type": "stat",        "bonus_stat": "STR", "bonus_amount": 1},
+      "5": {"name": "golem-forged draught",           "sp": 150, "bonus_type": "combat_stat", "bonus_amount": 2}
+    }
+  },
+  "shaman_totem": {
+    "name": "shaman totem",
+    "symbol": ",",
+    "color": [190, 130, 60],
+    "weight": 3.0,
+    "min_level": 5,
+    "source_monster": "lizardfolk_shaman",
+    "recipes": {
+      "0": {"name": "scorched totem ash",             "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "ritual totem broth",             "sp": 28,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "spirit-carving consomme",        "sp": 55,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "lizard-sage reduction",          "sp": 85,  "bonus_type": "stat",        "bonus_stat": "INT", "bonus_amount": 1},
+      "4": {"name": "shaman's vision stew",           "sp": 115, "bonus_type": "stat",        "bonus_stat": "WIS", "bonus_amount": 1},
+      "5": {"name": "great-totem essence feast",      "sp": 150, "bonus_type": "two_stats",   "bonus_amount": 2}
+    }
+  },
+  "kuo_toa_slime": {
+    "name": "kuo-toa slime",
+    "symbol": ",",
+    "color": [100, 170, 140],
+    "weight": 2.0,
+    "min_level": 5,
+    "source_monster": "kuo_toa",
+    "recipes": {
+      "0": {"name": "reeking slime puddle",           "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "brine-fish mucus broth",         "sp": 25,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "deep-tide reduction",            "sp": 50,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "abyssal coast stew",             "sp": 80,  "bonus_type": "status",      "bonus_effect": "blind_resist", "bonus_amount": 20},
+      "4": {"name": "fanatic-ooze consomme",          "sp": 110, "bonus_type": "stat",        "bonus_stat": "CON", "bonus_amount": 1},
+      "5": {"name": "deepwater devotee's elixir",     "sp": 150, "bonus_type": "two_stats",   "bonus_amount": 1}
+    }
+  },
+  "cockatrice_beak": {
+    "name": "cockatrice beak",
+    "symbol": ",",
+    "color": [200, 200, 80],
+    "weight": 2.0,
+    "min_level": 5,
+    "source_monster": "cockatrice",
+    "recipes": {
+      "0": {"name": "petrified beak dust",            "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "softened beak broth",            "sp": 28,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "basilisk-fowl bisque",           "sp": 55,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "stonegazer's reduction",         "sp": 85,  "bonus_type": "status",      "bonus_effect": "blind_resist", "bonus_amount": 25},
+      "4": {"name": "cockatrice crown stew",          "sp": 115, "bonus_type": "stat",        "bonus_stat": "DEX", "bonus_amount": 1},
+      "5": {"name": "gorgon-chick's pinnacle soup",   "sp": 150, "bonus_type": "combat_stat", "bonus_amount": 2}
+    }
+  },
+  "grick_hide": {
+    "name": "grick hide",
+    "symbol": ",",
+    "color": [100, 130, 80],
+    "weight": 5.0,
+    "min_level": 5,
+    "source_monster": "grick",
+    "recipes": {
+      "0": {"name": "rubbery grick scraps",           "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "worm-hide broth",                "sp": 28,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "tunnel-beast marrow soup",       "sp": 55,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "rock-crawler reduction",         "sp": 85,  "bonus_type": "stat",        "bonus_stat": "STR", "bonus_amount": 1},
+      "4": {"name": "grick alpha stew",               "sp": 115, "bonus_type": "stat",        "bonus_stat": "CON", "bonus_amount": 1},
+      "5": {"name": "deepstone grick feast",          "sp": 150, "bonus_type": "combat_stat", "bonus_amount": 2}
+    }
+  },
+  "ghast_ichor": {
+    "name": "ghast ichor",
+    "symbol": ",",
+    "color": [130, 170, 80],
+    "weight": 2.0,
+    "min_level": 5,
+    "source_monster": "ghast",
+    "recipes": {
+      "0": {"name": "putrid ichor sludge",            "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "neutralised ghast serum",        "sp": 25,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "charnel-reek reduction",         "sp": 50,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "graverot broth",                 "sp": 80,  "bonus_type": "status",      "bonus_effect": "poison_resist", "bonus_amount": 20},
+      "4": {"name": "ghast paralytic stew",           "sp": 110, "bonus_type": "stat",        "bonus_stat": "CON", "bonus_amount": 1},
+      "5": {"name": "tomb-hunger elixir",             "sp": 150, "bonus_type": "two_stats",   "bonus_amount": 1}
+    }
+  },
+  "false_holy_relic": {
+    "name": "false holy relic",
+    "symbol": ",",
+    "color": [230, 210, 140],
+    "weight": 2.0,
+    "min_level": 5,
+    "source_monster": "huecuva",
+    "recipes": {
+      "0": {"name": "dissolved relic dust",           "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "hollow-faith infusion",          "sp": 25,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "cursed saint's broth",           "sp": 50,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "apostasy reduction",             "sp": 80,  "bonus_type": "stat",        "bonus_stat": "WIS", "bonus_amount": 1},
+      "4": {"name": "damned-cleric consomme",         "sp": 110, "bonus_type": "stat",        "bonus_stat": "INT", "bonus_amount": 1},
+      "5": {"name": "huecuva's sacrament feast",      "sp": 150, "bonus_type": "two_stats",   "bonus_amount": 1}
+    }
+  },
+  "phase_silk": {
+    "name": "phase silk",
+    "symbol": ",",
+    "color": [200, 160, 230],
+    "weight": 1.0,
+    "min_level": 5,
+    "source_monster": "phase_spider_lesser",
+    "recipes": {
+      "0": {"name": "dissolved silk threads",         "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "ethereal silk infusion",         "sp": 25,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "phase-web reduction",            "sp": 50,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "planar-thread broth",            "sp": 80,  "bonus_type": "status",      "bonus_effect": "invisible", "bonus_amount": 15},
+      "4": {"name": "void-silk consomme",             "sp": 110, "bonus_type": "stat",        "bonus_stat": "DEX", "bonus_amount": 1},
+      "5": {"name": "umbral weave draught",           "sp": 150, "bonus_type": "status",      "bonus_effect": "invisible", "bonus_amount": 30}
+    }
+  },
+  "python_scales": {
+    "name": "python scales",
+    "symbol": ",",
+    "color": [110, 150, 80],
+    "weight": 5.0,
+    "min_level": 5,
+    "source_monster": "rock_python",
+    "recipes": {
+      "0": {"name": "shed scale dust",                "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "coiled-snake scale broth",       "sp": 28,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "python-hide bisque",             "sp": 55,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "constrictor's reduction",        "sp": 85,  "bonus_type": "stat",        "bonus_stat": "STR", "bonus_amount": 1},
+      "4": {"name": "rock-coiler stew",               "sp": 115, "bonus_type": "stat",        "bonus_stat": "CON", "bonus_amount": 1},
+      "5": {"name": "great-python sovereign's feast", "sp": 150, "bonus_type": "combat_stat", "bonus_amount": 2}
+    }
+  },
+  "heartwood_sap": {
+    "name": "heartwood sap",
+    "symbol": ",",
+    "color": [180, 220, 120],
+    "weight": 2.0,
+    "min_level": 5,
+    "source_monster": "dryad_guardian",
+    "recipes": {
+      "0": {"name": "soured sap residue",             "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "wild-wood sap tea",              "sp": 28,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "grove-heart reduction",          "sp": 55,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "dryad's lifeblood broth",        "sp": 85,  "bonus_type": "status",      "bonus_effect": "regenerating", "bonus_amount": 15},
+      "4": {"name": "ancient-oak consomme",           "sp": 115, "bonus_type": "stat",        "bonus_stat": "CON", "bonus_amount": 1},
+      "5": {"name": "world-tree heartwood elixir",    "sp": 150, "bonus_type": "status",      "bonus_effect": "regenerating", "bonus_amount": 30}
+    }
+  },
+  "assassin_vine_sap": {
+    "name": "assassin vine sap",
+    "symbol": ",",
+    "color": [60, 140, 50],
+    "weight": 2.0,
+    "min_level": 5,
+    "source_monster": "assassin_vine",
+    "recipes": {
+      "0": {"name": "toxic vine residue",             "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "strangler's sap tea",            "sp": 25,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "thornweald reduction",           "sp": 50,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "killing-vine broth",             "sp": 80,  "bonus_type": "status",      "bonus_effect": "poison_resist", "bonus_amount": 20},
+      "4": {"name": "predator-flora consomme",        "sp": 110, "bonus_type": "stat",        "bonus_stat": "DEX", "bonus_amount": 1},
+      "5": {"name": "garden of death elixir",         "sp": 150, "bonus_type": "status",      "bonus_effect": "poison_resist", "bonus_amount": 40}
+    }
+  },
+  "carbuncle_gem": {
+    "name": "carbuncle gem",
+    "symbol": ",",
+    "color": [230, 60, 90],
+    "weight": 1.0,
+    "min_level": 5,
+    "source_monster": "carbuncle",
+    "recipes": {
+      "0": {"name": "shattered gem dust",             "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "ruby-creature infusion",         "sp": 25,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "gemstone essence broth",         "sp": 50,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "prismatic carbuncle stew",       "sp": 80,  "bonus_type": "random_stat", "bonus_amount": 1},
+      "4": {"name": "living-jewel reduction",         "sp": 110, "bonus_type": "two_stats",   "bonus_amount": 1},
+      "5": {"name": "crown-gem pinnacle draught",     "sp": 150, "bonus_type": "all_stats",   "bonus_amount": 1}
+    }
+  },
+  "bronze_hide_strip": {
+    "name": "bronze hide strip",
+    "symbol": ",",
+    "color": [200, 160, 60],
+    "weight": 7.0,
+    "min_level": 6,
+    "source_monster": "gorgon_warrior",
+    "recipes": {
+      "0": {"name": "oxidised bronze scrap",          "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "metallic hide broth",            "sp": 35,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "gorgon-plate reduction",         "sp": 65,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "iron-bull marrow stew",          "sp": 100, "bonus_type": "stat",        "bonus_stat": "STR", "bonus_amount": 1},
+      "4": {"name": "bronze titan's broth",           "sp": 135, "bonus_type": "combat_stat", "bonus_amount": 2},
+      "5": {"name": "gorgon champion's feast",        "sp": 175, "bonus_type": "combat_stat", "bonus_amount": 3}
+    }
+  },
+  "world_serpent_scale": {
+    "name": "world serpent scale",
+    "symbol": ",",
+    "color": [80, 200, 120],
+    "weight": 8.0,
+    "min_level": 6,
+    "source_monster": "jormungandr_spawn",
+    "recipes": {
+      "0": {"name": "world-scale dust",               "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "midgard scale broth",            "sp": 35,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "ouroboros-hide bisque",          "sp": 65,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "world-ender stew",               "sp": 100, "bonus_type": "status",      "bonus_effect": "poison_resist", "bonus_amount": 25},
+      "4": {"name": "sea-serpent titan reduction",    "sp": 135, "bonus_type": "two_stats",   "bonus_amount": 2},
+      "5": {"name": "jormungandr's pinnacle draught", "sp": 175, "bonus_type": "all_stats",   "bonus_amount": 1}
+    }
+  },
+  "solar_venom": {
+    "name": "solar venom",
+    "symbol": ",",
+    "color": [255, 220, 60],
+    "weight": 1.5,
+    "min_level": 6,
+    "source_monster": "ra_serpent",
+    "recipes": {
+      "0": {"name": "scorched venom ash",             "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "sun-serpent serum",              "sp": 35,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "solarium venom reduction",       "sp": 65,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "sunfire broth",                  "sp": 100, "bonus_type": "status",      "bonus_effect": "fire_shield", "bonus_amount": 25},
+      "4": {"name": "Ra's venom consomme",            "sp": 135, "bonus_type": "status",      "bonus_effect": "fire_shield", "bonus_amount": 40},
+      "5": {"name": "solar-deity elixir",             "sp": 175, "bonus_type": "stat",        "bonus_stat": "INT", "bonus_amount": 2}
+    }
+  },
+  "hero_hound_pelt": {
+    "name": "hero hound pelt",
+    "symbol": ",",
+    "color": [210, 190, 140],
+    "weight": 7.0,
+    "min_level": 6,
+    "source_monster": "fionn_hound",
+    "recipes": {
+      "0": {"name": "singed legend-hide",             "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "mythic-hound stew",              "sp": 35,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "hero's hound reduction",         "sp": 65,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "Fionn's dog roast",              "sp": 100, "bonus_type": "stat",        "bonus_stat": "STR", "bonus_amount": 2},
+      "4": {"name": "legend-hound feast",             "sp": 135, "bonus_type": "combat_stat", "bonus_amount": 2},
+      "5": {"name": "Fionn's champion banquet",       "sp": 175, "bonus_type": "two_stats",   "bonus_amount": 2}
+    }
+  },
+  "shadow_essence": {
+    "name": "shadow essence",
+    "symbol": ",",
+    "color": [80, 60, 120],
+    "weight": 1.0,
+    "min_level": 6,
+    "source_monster": "shadow_demon",
+    "recipes": {
+      "0": {"name": "collapsed shadow vapour",        "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "umbral infusion",                "sp": 32,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "void-shadow reduction",          "sp": 62,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "darkstep essence stew",          "sp": 95,  "bonus_type": "status",      "bonus_effect": "invisible", "bonus_amount": 20},
+      "4": {"name": "demon-shadow consomme",          "sp": 130, "bonus_type": "status",      "bonus_effect": "invisible", "bonus_amount": 35},
+      "5": {"name": "abyssal shadow draught",         "sp": 175, "bonus_type": "two_stats",   "bonus_amount": 2}
+    }
+  },
+  "ochre_extract": {
+    "name": "ochre extract",
+    "symbol": ",",
+    "color": [210, 170, 50],
+    "weight": 3.0,
+    "min_level": 6,
+    "source_monster": "ochre_jelly",
+    "recipes": {
+      "0": {"name": "congealed ochre sludge",         "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "acidic ochre broth",             "sp": 30,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "amber jelly reduction",          "sp": 60,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "ooze-heart consomme",            "sp": 95,  "bonus_type": "stat",        "bonus_stat": "CON", "bonus_amount": 1},
+      "4": {"name": "golden slime essence",           "sp": 130, "bonus_type": "status",      "bonus_effect": "poison_resist", "bonus_amount": 25},
+      "5": {"name": "primordial ochre elixir",        "sp": 175, "bonus_type": "two_stats",   "bonus_amount": 2}
+    }
+  },
+  "pack_lord_skull": {
+    "name": "pack lord skull",
+    "symbol": ",",
+    "color": [190, 170, 110],
+    "weight": 5.0,
+    "min_level": 6,
+    "source_monster": "gnoll_pack_lord",
+    "recipes": {
+      "0": {"name": "shattered skull dust",           "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "marrow-skull broth",             "sp": 35,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "warlord's bone consomme",        "sp": 65,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "gnoll overlord reduction",       "sp": 100, "bonus_type": "stat",        "bonus_stat": "STR", "bonus_amount": 2},
+      "4": {"name": "alpha-hyena feast",              "sp": 135, "bonus_type": "combat_stat", "bonus_amount": 2},
+      "5": {"name": "pack-lord's throne banquet",     "sp": 175, "bonus_type": "two_stats",   "bonus_amount": 2}
+    }
+  },
+  "ettercap_silk": {
+    "name": "ettercap silk",
+    "symbol": ",",
+    "color": [160, 140, 180],
+    "weight": 2.0,
+    "min_level": 6,
+    "source_monster": "ettercap",
+    "recipes": {
+      "0": {"name": "rotted web fibre",               "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "sticky-web infusion",            "sp": 30,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "ettercap silk reduction",        "sp": 60,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "forestweaver's broth",           "sp": 95,  "bonus_type": "stat",        "bonus_stat": "DEX", "bonus_amount": 1},
+      "4": {"name": "arachnid-lord consomme",         "sp": 130, "bonus_type": "status",      "bonus_effect": "invisible", "bonus_amount": 20},
+      "5": {"name": "master-ettercap pinnacle stew",  "sp": 175, "bonus_type": "two_stats",   "bonus_amount": 2}
+    }
+  },
+  "jiangshi_essence": {
+    "name": "jiangshi essence",
+    "symbol": ",",
+    "color": [180, 80, 100],
+    "weight": 2.0,
+    "min_level": 6,
+    "source_monster": "jiangshi",
+    "recipes": {
+      "0": {"name": "stiffened essence residue",      "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "hopping-dead infusion",          "sp": 30,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "chi-vampire reduction",          "sp": 60,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "eastern undead stew",            "sp": 95,  "bonus_type": "stat",        "bonus_stat": "CON", "bonus_amount": 1},
+      "4": {"name": "life-force absorption consomme", "sp": 130, "bonus_type": "status",      "bonus_effect": "regenerating", "bonus_amount": 20},
+      "5": {"name": "jiangshi sovereign's draught",   "sp": 175, "bonus_type": "two_stats",   "bonus_amount": 2}
+    }
+  },
+  "barrow_dust": {
+    "name": "barrow dust",
+    "symbol": ",",
+    "color": [150, 140, 120],
+    "weight": 1.5,
+    "min_level": 6,
+    "source_monster": "barrow_wight",
+    "recipes": {
+      "0": {"name": "dispersed barrow ash",           "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "grave-mound broth",              "sp": 30,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "wight-dust reduction",           "sp": 60,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "burial-mound essence stew",      "sp": 95,  "bonus_type": "stat",        "bonus_stat": "WIS", "bonus_amount": 1},
+      "4": {"name": "ancient-wight consomme",         "sp": 130, "bonus_type": "stat",        "bonus_stat": "INT", "bonus_amount": 1},
+      "5": {"name": "barrow-king's pinnacle draught", "sp": 175, "bonus_type": "two_stats",   "bonus_amount": 2}
+    }
+  },
+  "hollow_essence": {
+    "name": "hollow essence",
+    "symbol": ",",
+    "color": [200, 200, 200],
+    "weight": 1.0,
+    "min_level": 6,
+    "source_monster": "hollow_one",
+    "recipes": {
+      "0": {"name": "empty hollow vapour",            "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "void-echo infusion",             "sp": 28,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "hollow-shell reduction",         "sp": 58,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "emptied-vessel broth",           "sp": 90,  "bonus_type": "stat",        "bonus_stat": "INT", "bonus_amount": 1},
+      "4": {"name": "shell-form consomme",            "sp": 125, "bonus_type": "status",      "bonus_effect": "invisible", "bonus_amount": 20},
+      "5": {"name": "the hollow sacrament",           "sp": 175, "bonus_type": "two_stats",   "bonus_amount": 1}
+    }
+  },
+  "charnel_fang": {
+    "name": "charnel fang",
+    "symbol": ",",
+    "color": [170, 100, 80],
+    "weight": 3.0,
+    "min_level": 6,
+    "source_monster": "charnel_hound",
+    "recipes": {
+      "0": {"name": "rotted fang pulp",               "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "grave-hound fang broth",         "sp": 32,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "death-dog marrow soup",          "sp": 62,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "corpse-hunter reduction",        "sp": 95,  "bonus_type": "stat",        "bonus_stat": "STR", "bonus_amount": 1},
+      "4": {"name": "bonehound feast",                "sp": 130, "bonus_type": "combat_stat", "bonus_amount": 2},
+      "5": {"name": "charnel-pack master's banquet",  "sp": 175, "bonus_type": "combat_stat", "bonus_amount": 3}
+    }
+  },
+  "mantis_foreleg": {
+    "name": "mantis foreleg",
+    "symbol": ",",
+    "color": [130, 190, 80],
+    "weight": 4.0,
+    "min_level": 6,
+    "source_monster": "giant_mantis",
+    "recipes": {
+      "0": {"name": "crushed mantis chitin",          "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "sickle-leg broth",               "sp": 32,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "predator-limb bisque",           "sp": 62,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "mantis-blade reduction",         "sp": 95,  "bonus_type": "stat",        "bonus_stat": "DEX", "bonus_amount": 1},
+      "4": {"name": "praying-hunter stew",            "sp": 130, "bonus_type": "combat_stat", "bonus_amount": 2},
+      "5": {"name": "grand mantis sovereign's feast", "sp": 175, "bonus_type": "two_stats",   "bonus_amount": 2}
+    }
+  },
+  "basilisk_eye": {
+    "name": "basilisk eye",
+    "symbol": ",",
+    "color": [180, 160, 90],
+    "weight": 2.5,
+    "min_level": 6,
+    "source_monster": "lesser_basilisk",
+    "recipes": {
+      "0": {"name": "clouded basilisk eye",           "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "petrified-gaze broth",           "sp": 32,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "stone-gazer reduction",          "sp": 62,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "lizard-king's eye stew",         "sp": 95,  "bonus_type": "stat",        "bonus_stat": "PER", "bonus_amount": 2},
+      "4": {"name": "petrifaction essence",           "sp": 130, "bonus_type": "status",      "bonus_effect": "blind_resist", "bonus_amount": 30},
+      "5": {"name": "basilisk oracle's draught",      "sp": 175, "bonus_type": "two_stats",   "bonus_amount": 2}
+    }
+  },
+  "winter_wolf_pelt": {
+    "name": "winter wolf pelt",
+    "symbol": ",",
+    "color": [220, 230, 245],
+    "weight": 7.0,
+    "min_level": 6,
+    "source_monster": "winter_wolf",
+    "recipes": {
+      "0": {"name": "thawed wolf-hide scraps",        "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "frostpelt broth",                "sp": 35,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "arctic-wolf reduction",          "sp": 65,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "blizzard-hide stew",             "sp": 100, "bonus_type": "status",      "bonus_effect": "cold_shield", "bonus_amount": 20},
+      "4": {"name": "winter-lord's roast",            "sp": 135, "bonus_type": "status",      "bonus_effect": "cold_shield", "bonus_amount": 35},
+      "5": {"name": "glacial wolf pinnacle banquet",  "sp": 175, "bonus_type": "two_stats",   "bonus_amount": 2}
+    }
+  },
+  "death_dog_fang": {
+    "name": "death dog fang",
+    "symbol": ",",
+    "color": [140, 80, 80],
+    "weight": 3.0,
+    "min_level": 6,
+    "source_monster": "death_dog",
+    "recipes": {
+      "0": {"name": "twin-headed fang mash",          "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "plague-fang broth",              "sp": 32,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "death-dog marrow bisque",        "sp": 62,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "diseased-hound reduction",       "sp": 95,  "bonus_type": "status",      "bonus_effect": "poison_resist", "bonus_amount": 20},
+      "4": {"name": "twin-plague stew",               "sp": 130, "bonus_type": "stat",        "bonus_stat": "CON", "bonus_amount": 1},
+      "5": {"name": "death-hound sovereign's feast",  "sp": 175, "bonus_type": "combat_stat", "bonus_amount": 2}
+    }
+  },
+  "tengu_feather": {
+    "name": "tengu feather",
+    "symbol": ",",
+    "color": [40, 40, 50],
+    "weight": 1.0,
+    "min_level": 6,
+    "source_monster": "tengu_warrior",
+    "recipes": {
+      "0": {"name": "singed crow-feather ash",        "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "tengu-wing infusion",            "sp": 30,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "storm-crow broth",               "sp": 60,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "swordmaster's quill reduction",  "sp": 95,  "bonus_type": "stat",        "bonus_stat": "DEX", "bonus_amount": 1},
+      "4": {"name": "tengu elder essence stew",       "sp": 130, "bonus_type": "combat_stat", "bonus_amount": 2},
+      "5": {"name": "storm-tengu pinnacle draught",   "sp": 175, "bonus_type": "two_stats",   "bonus_amount": 2}
+    }
+  },
+  "musk_pollen": {
+    "name": "musk pollen",
+    "symbol": ",",
+    "color": [230, 220, 80],
+    "weight": 1.0,
+    "min_level": 6,
+    "source_monster": "yellow_musk_creeper",
+    "recipes": {
+      "0": {"name": "stale pollen dust",              "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "musk-flower infusion",           "sp": 28,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "yellow-creeper reduction",       "sp": 58,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "drowsy-bloom broth",             "sp": 90,  "bonus_type": "status",      "bonus_effect": "invisible", "bonus_amount": 15},
+      "4": {"name": "musk-lord consomme",             "sp": 125, "bonus_type": "stat",        "bonus_stat": "WIS", "bonus_amount": 1},
+      "5": {"name": "creeping-vine sovereign's draught","sp": 175,"bonus_type": "status",     "bonus_effect": "haste", "bonus_amount": 25}
+    }
+  },
+  "cyclops_eye": {
+    "name": "cyclops eye",
+    "symbol": ",",
+    "color": [200, 100, 50],
+    "weight": 5.0,
+    "min_level": 7,
+    "source_monster": "cyclops",
+    "recipes": {
+      "0": {"name": "burst cyclops eye",              "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "titan-lens broth",               "sp": 40,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "single-sight reduction",         "sp": 75,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "one-eye essence stew",           "sp": 110, "bonus_type": "stat",        "bonus_stat": "PER", "bonus_amount": 2},
+      "4": {"name": "cyclops titan's consomme",       "sp": 150, "bonus_type": "stat",        "bonus_stat": "STR", "bonus_amount": 2},
+      "5": {"name": "polyphemus pinnacle feast",      "sp": 195, "bonus_type": "two_stats",   "bonus_amount": 2}
+    }
+  },
+  "griffin_feather": {
+    "name": "griffin feather",
+    "symbol": ",",
+    "color": [230, 210, 140],
+    "weight": 3.0,
+    "min_level": 7,
+    "source_monster": "griffin",
+    "recipes": {
+      "0": {"name": "scorched griffin plume",         "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "lion-eagle feather broth",       "sp": 40,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "noble-beast reduction",          "sp": 75,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "sky-pride stew",                 "sp": 110, "bonus_type": "stat",        "bonus_stat": "PER", "bonus_amount": 2},
+      "4": {"name": "griffin sovereign's consomme",   "sp": 150, "bonus_type": "combat_stat", "bonus_amount": 2},
+      "5": {"name": "celestial-pride pinnacle feast", "sp": 195, "bonus_type": "two_stats",   "bonus_amount": 2}
+    }
+  },
+  "corrupted_elf_dust": {
+    "name": "corrupted elf dust",
+    "symbol": ",",
+    "color": [160, 100, 200],
+    "weight": 1.0,
+    "min_level": 7,
+    "source_monster": "corrupted_light_elf",
+    "recipes": {
+      "0": {"name": "tainted faerie ash",             "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "fallen-elf infusion",            "sp": 38,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "corruption-bloom reduction",     "sp": 72,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "shadow-fae broth",               "sp": 110, "bonus_type": "stat",        "bonus_stat": "INT", "bonus_amount": 2},
+      "4": {"name": "darklight essence consomme",     "sp": 148, "bonus_type": "status",      "bonus_effect": "invisible", "bonus_amount": 25},
+      "5": {"name": "corrupted starlight draught",    "sp": 195, "bonus_type": "two_stats",   "bonus_amount": 2}
+    }
+  },
+  "crocodile_hide": {
+    "name": "crocodile hide",
+    "symbol": ",",
+    "color": [90, 140, 80],
+    "weight": 9.0,
+    "min_level": 7,
+    "source_monster": "sobek_warrior",
+    "recipes": {
+      "0": {"name": "cured croc-hide scraps",         "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "river-god hide broth",           "sp": 40,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "nile-lord reduction",            "sp": 75,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "sobek-warrior's stew",           "sp": 110, "bonus_type": "stat",        "bonus_stat": "CON", "bonus_amount": 2},
+      "4": {"name": "river-deity feast",              "sp": 150, "bonus_type": "combat_stat", "bonus_amount": 2},
+      "5": {"name": "great Sobek's banquet",          "sp": 195, "bonus_type": "two_stats",   "bonus_amount": 2}
+    }
+  },
+  "desert_sand_essence": {
+    "name": "desert sand essence",
+    "symbol": ",",
+    "color": [230, 200, 120],
+    "weight": 1.0,
+    "min_level": 7,
+    "source_monster": "desert_wraith",
+    "recipes": {
+      "0": {"name": "dispersed sand vapour",          "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "dune-wraith infusion",           "sp": 38,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "mirage-essence reduction",       "sp": 72,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "sandstorm broth",                "sp": 110, "bonus_type": "status",      "bonus_effect": "blind_resist", "bonus_amount": 25},
+      "4": {"name": "desert-veil consomme",           "sp": 148, "bonus_type": "stat",        "bonus_stat": "PER", "bonus_amount": 2},
+      "5": {"name": "eternity-sands draught",         "sp": 195, "bonus_type": "two_stats",   "bonus_amount": 2}
+    }
+  },
+  "demon_ichor": {
+    "name": "demon ichor",
+    "symbol": ",",
+    "color": [200, 40, 60],
+    "weight": 2.0,
+    "min_level": 7,
+    "source_monster": "pazuzu_spawn",
+    "recipes": {
+      "0": {"name": "curdled demon gore",             "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "infernal ichor broth",           "sp": 40,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "abyssal blood reduction",        "sp": 75,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "demon-spawn stew",               "sp": 110, "bonus_type": "stat",        "bonus_stat": "STR", "bonus_amount": 2},
+      "4": {"name": "Pazuzu's spawn consomme",        "sp": 150, "bonus_type": "combat_stat", "bonus_amount": 2},
+      "5": {"name": "demonic pinnacle draught",       "sp": 195, "bonus_type": "two_stats",   "bonus_amount": 2}
+    }
+  },
+  "mouther_ichor": {
+    "name": "mouther ichor",
+    "symbol": ",",
+    "color": [160, 180, 120],
+    "weight": 3.0,
+    "min_level": 7,
+    "source_monster": "gibbering_mouther",
+    "recipes": {
+      "0": {"name": "babbling ichor puddle",          "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "gibbering-maw extract",          "sp": 38,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "chaos-tongue reduction",         "sp": 72,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "mad-mouth essence stew",         "sp": 110, "bonus_type": "random_stat", "bonus_amount": 1},
+      "4": {"name": "gibbering madness consomme",     "sp": 148, "bonus_type": "two_stats",   "bonus_amount": 2},
+      "5": {"name": "eldritch-mouth's pinnacle soup", "sp": 195, "bonus_type": "all_stats",   "bonus_amount": 1}
+    }
+  },
+  "clockwork_gear": {
+    "name": "clockwork gear",
+    "symbol": ",",
+    "color": [180, 160, 80],
+    "weight": 4.0,
+    "min_level": 7,
+    "source_monster": "clockwork_horror",
+    "recipes": {
+      "0": {"name": "stripped gear filings",          "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "smelted clockwork broth",        "sp": 38,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "mechanical-heart reduction",     "sp": 72,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "automaton essence stew",         "sp": 110, "bonus_type": "stat",        "bonus_stat": "INT", "bonus_amount": 2},
+      "4": {"name": "horror-engine consomme",         "sp": 148, "bonus_type": "stat",        "bonus_stat": "DEX", "bonus_amount": 2},
+      "5": {"name": "master-clockwork sovereign's draught","sp": 195, "bonus_type": "combat_stat", "bonus_amount": 3}
+    }
+  },
+  "owlbear_feather": {
+    "name": "owlbear feather",
+    "symbol": ",",
+    "color": [180, 150, 90],
+    "weight": 4.0,
+    "min_level": 7,
+    "source_monster": "owlbear",
+    "recipes": {
+      "0": {"name": "singed owlbear plume",           "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "owl-bear plume broth",           "sp": 40,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "ferocious-beast reduction",      "sp": 75,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "owlbear-heart stew",             "sp": 110, "bonus_type": "stat",        "bonus_stat": "STR", "bonus_amount": 2},
+      "4": {"name": "forest-terror feast",            "sp": 150, "bonus_type": "combat_stat", "bonus_amount": 2},
+      "5": {"name": "alpha-owlbear's banquet",        "sp": 195, "bonus_type": "two_stats",   "bonus_amount": 2}
+    }
+  },
+  "otyugh_organ": {
+    "name": "otyugh organ",
+    "symbol": ",",
+    "color": [120, 140, 70],
+    "weight": 5.0,
+    "min_level": 7,
+    "source_monster": "otyugh",
+    "recipes": {
+      "0": {"name": "diseased organ mash",            "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "filth-beast organ broth",        "sp": 38,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "refuse-lord reduction",          "sp": 72,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "otyugh-pit essence stew",        "sp": 110, "bonus_type": "status",      "bonus_effect": "poison_resist", "bonus_amount": 30},
+      "4": {"name": "great-maw consomme",             "sp": 148, "bonus_type": "stat",        "bonus_stat": "CON", "bonus_amount": 2},
+      "5": {"name": "refuse-king's pinnacle feast",   "sp": 195, "bonus_type": "two_stats",   "bonus_amount": 2}
+    }
+  },
+  "phase_spider_venom": {
+    "name": "phase spider venom",
+    "symbol": ",",
+    "color": [180, 120, 220],
+    "weight": 1.5,
+    "min_level": 7,
+    "source_monster": "phase_spider",
+    "recipes": {
+      "0": {"name": "planar venom residue",           "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "ethereal-fang serum",            "sp": 40,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "phase-web venom reduction",      "sp": 75,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "void-bite broth",                "sp": 110, "bonus_type": "status",      "bonus_effect": "poison_resist", "bonus_amount": 25},
+      "4": {"name": "planar-hunter consomme",         "sp": 150, "bonus_type": "status",      "bonus_effect": "invisible", "bonus_amount": 30},
+      "5": {"name": "phase-queen's pinnacle elixir",  "sp": 195, "bonus_type": "two_stats",   "bonus_amount": 2}
+    }
+  },
+  "vrykolakas_heart": {
+    "name": "vrykolakas heart",
+    "symbol": ",",
+    "color": [190, 30, 60],
+    "weight": 3.0,
+    "min_level": 7,
+    "source_monster": "vrykolakas",
+    "recipes": {
+      "0": {"name": "desiccated plague-heart",        "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "balkan-wraith heart broth",      "sp": 40,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "disease-walker reduction",       "sp": 75,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "pestilent heart stew",           "sp": 110, "bonus_type": "status",      "bonus_effect": "poison_resist", "bonus_amount": 30},
+      "4": {"name": "vrykolakas blood consomme",      "sp": 150, "bonus_type": "stat",        "bonus_stat": "CON", "bonus_amount": 2},
+      "5": {"name": "plague-lord's heart draught",    "sp": 195, "bonus_type": "two_stats",   "bonus_amount": 2}
+    }
+  },
+  "thrall_bone": {
+    "name": "thrall bone",
+    "symbol": ",",
+    "color": [200, 195, 170],
+    "weight": 3.0,
+    "min_level": 7,
+    "source_monster": "lich_thrall",
+    "recipes": {
+      "0": {"name": "crumbled thrall bone",           "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "lich-minion marrow broth",       "sp": 40,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "enslaved-dead reduction",        "sp": 75,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "lich-servant essence stew",      "sp": 110, "bonus_type": "stat",        "bonus_stat": "INT", "bonus_amount": 2},
+      "4": {"name": "arcane-thrall consomme",         "sp": 150, "bonus_type": "stat",        "bonus_stat": "WIS", "bonus_amount": 2},
+      "5": {"name": "lich's pinnacle marrow draught", "sp": 195, "bonus_type": "two_stats",   "bonus_amount": 2}
+    }
+  },
+  "witch_bone": {
+    "name": "witch bone",
+    "symbol": ",",
+    "color": [170, 160, 220],
+    "weight": 2.0,
+    "min_level": 7,
+    "source_monster": "bone_witch",
+    "recipes": {
+      "0": {"name": "charred witch-bone ash",         "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "hexed-skeleton broth",           "sp": 40,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "bone-witch reduction",           "sp": 75,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "coven-bone essence stew",        "sp": 110, "bonus_type": "stat",        "bonus_stat": "INT", "bonus_amount": 2},
+      "4": {"name": "hexcraft consomme",              "sp": 150, "bonus_type": "stat",        "bonus_stat": "WIS", "bonus_amount": 2},
+      "5": {"name": "grand-coven pinnacle draught",   "sp": 195, "bonus_type": "two_stats",   "bonus_amount": 2}
+    }
+  },
+  "crypt_dust": {
+    "name": "crypt dust",
+    "symbol": ",",
+    "color": [160, 155, 140],
+    "weight": 1.0,
+    "min_level": 7,
+    "source_monster": "crypt_thing",
+    "recipes": {
+      "0": {"name": "dispersed crypt ash",            "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "tomb-keeper infusion",           "sp": 38,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "ancient-crypt reduction",        "sp": 72,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "crypt-keeper's broth",           "sp": 108, "bonus_type": "stat",        "bonus_stat": "WIS", "bonus_amount": 1},
+      "4": {"name": "eternal-tomb consomme",          "sp": 148, "bonus_type": "stat",        "bonus_stat": "INT", "bonus_amount": 2},
+      "5": {"name": "cryptarch's pinnacle draught",   "sp": 195, "bonus_type": "two_stats",   "bonus_amount": 2}
+    }
+  },
+  "guardian_bone": {
+    "name": "guardian bone",
+    "symbol": ",",
+    "color": [210, 200, 170],
+    "weight": 4.0,
+    "min_level": 7,
+    "source_monster": "grave_guardian",
+    "recipes": {
+      "0": {"name": "shattered guardian bone",        "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "sentinel marrow broth",          "sp": 40,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "grave-warden reduction",         "sp": 75,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "tomb-guardian essence stew",     "sp": 110, "bonus_type": "stat",        "bonus_stat": "CON", "bonus_amount": 2},
+      "4": {"name": "eternal-warden consomme",        "sp": 150, "bonus_type": "combat_stat", "bonus_amount": 2},
+      "5": {"name": "grave-guardian's pinnacle feast","sp": 195, "bonus_type": "two_stats",   "bonus_amount": 2}
+    }
+  },
+  "gibbering_essence": {
+    "name": "gibbering essence",
+    "symbol": ",",
+    "color": [140, 180, 140],
+    "weight": 2.0,
+    "min_level": 7,
+    "source_monster": "gibbering_slime",
+    "recipes": {
+      "0": {"name": "incoherent slime residue",       "sp": 0,   "bonus_type": "none",        "bonus_amount": 0},
+      "1": {"name": "babbling-ooze infusion",         "sp": 38,  "bonus_type": "none",        "bonus_amount": 0},
+      "2": {"name": "chaos-slime reduction",          "sp": 72,  "bonus_type": "none",        "bonus_amount": 0},
+      "3": {"name": "maddening-goo broth",            "sp": 108, "bonus_type": "random_stat", "bonus_amount": 1},
+      "4": {"name": "eldritch-ooze consomme",         "sp": 148, "bonus_type": "two_stats",   "bonus_amount": 2},
+      "5": {"name": "gibbering-prime pinnacle draught","sp": 195, "bonus_type": "all_stats",  "bonus_amount": 1}
+    }
+  }
+}

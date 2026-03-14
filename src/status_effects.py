@@ -32,6 +32,11 @@ EFFECT_INFO: dict[str, tuple] = {
     'slowed':             ('Slowed',             (155, 155, 230), 'Every other action is skipped'),
     'aggravated':         ('Aggravated',         (230, 100,  50), 'All monsters are alerted'),
     'teleportitis':       ('Teleportitis',       (100, 225, 225), 'May randomly teleport (4%/turn)'),
+    'feared':             ('Feared',             (200,  80, 200), 'Fleeing — cannot approach enemies'),
+    'charmed':            ('Charmed',            (255, 160, 200), 'Under enemy influence'),
+    'cursed':             ('Cursed',             (120,  40, 160), 'Under a dark curse'),
+    'weakened':           ('Weakened',           (150, 150,  80), 'Attack damage halved'),
+    'bleeding':           ('Bleeding',           (200,  40,  40), 'Losing HP from wounds each turn'),
     # ---- Buffs ----
     'hasted':             ('Hasted',             (245, 245,  60), 'Extra action each turn'),
     'invisible':          ('Invisible',          (185, 235, 235), 'Monsters have 30% miss chance'),
@@ -64,6 +69,7 @@ DEBUFFS: frozenset = frozenset({
     'paralyzed', 'sleeping', 'stunned', 'confused', 'blinded', 'hallucinating',
     'poisoned', 'diseased', 'petrifying', 'strangulation', 'fumbling',
     'slowed', 'aggravated', 'teleportitis',
+    'feared', 'charmed', 'cursed', 'weakened', 'bleeding',
 })
 
 BUFFS: frozenset = frozenset({
@@ -126,6 +132,11 @@ _EXPIRE_MSGS: dict[str, tuple] = {
     'reflecting':     ('Your reflective aura fades.',            'info'),
     'phasing':        ('You feel solid again.',                  'info'),
     'time_stopped':   ('Time resumes its flow.',                 'info'),
+    'feared':         ('Your fear subsides.',                    'info'),
+    'charmed':        ('The charm over you breaks.',             'info'),
+    'cursed':         ('The curse lifts.',                       'success'),
+    'weakened':       ('Your strength returns.',                 'info'),
+    'bleeding':       ('Your wounds close.',                     'success'),
 }
 
 
@@ -202,6 +213,14 @@ def tick_all(player, dungeon=None) -> list[tuple[str, str]]:
                 messages.append(('Your skin is hardening into stone!', 'danger'))
             elif val <= 10:
                 messages.append(('You feel yourself stiffening...', 'warning'))
+
+        elif effect == 'bleeding':
+            dmg = player.take_damage(1, 'physical')
+            if dmg:
+                messages.append(('You are bleeding!', 'danger'))
+
+        elif effect == 'weakened':
+            pass  # damage halving is checked at combat time via has_effect('weakened')
 
         elif effect == 'teleportitis':
             if random.random() < 0.04:

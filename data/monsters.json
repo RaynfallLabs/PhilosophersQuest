@@ -18157,7 +18157,7 @@
     ],
     "min_level": 60,
     "frequency": 0,
-    "hp": 220,
+    "hp": 400,
     "thac0": 0,
     "speed": 1,
     "attacks": [
@@ -18207,8 +18207,8 @@
     ],
     "min_level": 80,
     "frequency": 0,
-    "hp": 280,
-    "thac0": -2,
+    "hp": 860,
+    "thac0": -6,
     "speed": 2,
     "attacks": [
       {
@@ -18256,8 +18256,8 @@
     ],
     "min_level": 100,
     "frequency": 0,
-    "hp": 380,
-    "thac0": -5,
+    "hp": 1100,
+    "thac0": -8,
     "speed": 1,
     "attacks": [
       {

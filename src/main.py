@@ -1,4 +1,5 @@
 import math
+import os
 import sys
 import pygame
 
@@ -17,7 +18,7 @@ from food_system import (harvest_corpse, cook_ingredient, eat_food, eat_raw,
                          get_available_compound_recipes, cook_compound_recipe,
                          get_recipes_for_ingredient)
 from fov import calculate_fov
-from items import Weapon, Armor, Shield, Corpse, Ingredient, Artifact, Container, Lockpick, Accessory, Wand, Scroll, Ammo, Food
+from items import Weapon, Armor, Shield, Corpse, Ingredient, Artifact, Container, Lockpick, Accessory, Wand, Scroll, Spellbook, Ammo, Food
 from level_manager import LevelManager
 from player import Player
 from quiz_engine import QuizEngine, QuizMode, QuizState
@@ -73,12 +74,128 @@ VIEWPORT_W = GAME_W // TILE_SIZE    # 32
 VIEWPORT_H = GAME_H // TILE_SIZE    # 18
 
 # ------------------------------------------------------------------
-# Secret character builds (name → stat overrides)
-# Each entry: dict with any of STR/CON/DEX/INT/WIS/PER as overrides.
-# Populate with real builds later; leave empty for now.
+# Secret character builds
+# Stat keys (STR/CON/DEX/INT/WIS/PER) override player defaults.
+# _-prefixed keys are build metadata (ignored by the stat loop):
+#   _sprite       → env sprite name (assets/tiles/env/{_sprite}.png)
+#   _start_weapon → weapon item ID replacing the default iron_dagger
+#   _start_wand   → wand item ID given at start
+#   _start_book   → spellbook item ID given at start
+#   _no_dagger    → True: skip the default iron_dagger
+#   _immortal     → True: player cannot die
+#   _greeting     → custom welcome message line (None = default)
 # ------------------------------------------------------------------
 SECRET_BUILDS: dict[str, dict] = {
-    # e.g. "aristotle": {"WIS": 18, "INT": 16, "PER": 14},
+    # ── Great philosophers — INT/WIS focused, physically frail ──────────────
+    "aristotle": {
+        "INT": 18, "WIS": 16, "PER": 14, "STR": 6, "CON": 8, "DEX": 8,
+        "_sprite": "player_aristotle",
+        "_greeting": "Aristotle the Philosopher enters the dungeon with calm reason.",
+    },
+    "socrates": {
+        "WIS": 20, "INT": 14, "PER": 16, "STR": 8, "CON": 10, "DEX": 7,
+        "_sprite": "player_socrates",
+        "_greeting": "Socrates asks the dungeon a question. It does not answer.",
+    },
+    "plato": {
+        "INT": 17, "WIS": 17, "PER": 12, "STR": 7, "CON": 9, "DEX": 9,
+        "_sprite": "player_plato",
+        "_greeting": "Plato descends into the cave and finds it uncomfortably on-the-nose.",
+    },
+    "nietzsche": {
+        "INT": 16, "WIS": 8, "PER": 14, "STR": 14, "CON": 12, "DEX": 10,
+        "_sprite": "player_nietzsche",
+        "_greeting": "Nietzsche stares into the dungeon. The dungeon stares back.",
+    },
+    "pythagoras": {
+        "INT": 18, "WIS": 14, "PER": 10, "STR": 7, "CON": 8, "DEX": 9,
+        "_sprite": "player_pythagoras",
+        "_greeting": "Pythagoras calculates the optimal descent angle.",
+    },
+    "prometheus": {
+        "INT": 15, "WIS": 15, "CON": 15, "STR": 10, "DEX": 10, "PER": 10,
+        "_sprite": "player_prometheus",
+        "_greeting": "Prometheus brings fire into the dungeon. The monsters are unimpressed.",
+    },
+    "diogenes": {
+        "WIS": 18, "PER": 16, "STR": 5, "CON": 5, "DEX": 5, "INT": 5,
+        "_sprite": "player_diogenes",
+        "_greeting": "Diogenes enters the dungeon. He needs nothing. He wants nothing. He is still going to die.",
+    },
+    # ── Warriors — brawn over brain ─────────────────────────────────────────
+    "achilles": {
+        "STR": 18, "DEX": 16, "CON": 16, "INT": 8, "WIS": 6, "PER": 10,
+        "_sprite": "player_achilles",
+        "_greeting": "Achilles charges in. His heel tingles ominously.",
+    },
+    "leonidas": {
+        "STR": 17, "CON": 18, "DEX": 12, "INT": 9, "WIS": 10, "PER": 8,
+        "_sprite": "player_leonidas",
+        "_greeting": "Leonidas has 299 fewer soldiers than he would like.",
+    },
+    "alexander": {
+        "STR": 16, "DEX": 14, "CON": 14, "INT": 14, "WIS": 10, "PER": 12,
+        "_sprite": "player_alexander",
+        "_greeting": "Alexander the Great descends. He intends to conquer this too.",
+    },
+    "theseus": {
+        "STR": 14, "DEX": 14, "CON": 14, "INT": 12, "WIS": 12, "PER": 12,
+        "_sprite": "player_theseus",
+        "_greeting": "Theseus enters the dungeon. He has done this before.",
+    },
+    # ── Rogues — speed and perception ───────────────────────────────────────
+    "hermes": {
+        "DEX": 18, "PER": 18, "INT": 12, "WIS": 10, "STR": 8, "CON": 7,
+        "_sprite": "player_hermes",
+        "_greeting": "Hermes was here, delivered something, and left. He returned because he forgot to sign.",
+    },
+    "odysseus": {
+        "DEX": 14, "INT": 16, "PER": 16, "WIS": 14, "STR": 10, "CON": 10,
+        "_sprite": "player_odysseus",
+        "_greeting": "Odysseus descends. He expects this to take ten years.",
+    },
+    # ── Mages — pure arcane power ────────────────────────────────────────────
+    "merlin": {
+        "INT": 20, "WIS": 14, "PER": 12, "STR": 5, "CON": 7, "DEX": 8,
+        "_sprite": "player_merlin",
+        "_no_dagger": True,
+        "_start_wand": "wand_of_magic_missile",
+        "_start_book": "spellbook_magic_missile",
+        "_greeting": "Merlin descends with staff in hand and stars in his robe.",
+    },
+    # ── New characters ────────────────────────────────────────────────────────
+    "corwin": {
+        "STR": 11, "CON": 11, "DEX": 12, "INT": 8, "WIS": 10, "PER": 14,
+        "_sprite": "player_ranger",
+        "_no_dagger": True,
+        "_start_weapon": "wood_shortbow",
+        "_start_ammo": "iron_arrow",
+        "_greeting": "Corwin the Ranger nocks an arrow and descends into the dark.",
+    },
+    "fianna": {
+        "STR": 6, "CON": 8, "DEX": 9, "INT": 16, "WIS": 12, "PER": 10,
+        "_sprite": "player_wizard_f",
+        "_no_dagger": True,
+        "_start_wand": "wand_of_magic_missile",
+        "_start_book": "spellbook_magic_missile",
+        "_greeting": "Fianna the Wizard weaves a sigil in the air and descends.",
+    },
+    "fluffs": {
+        "STR": 7, "CON": 10, "DEX": 10, "INT": 18, "WIS": 14, "PER": 12,
+        "_sprite": "player_wizard_f",   # same sprite as Fianna
+        "_no_dagger": True,
+        "_start_wand": "wand_of_magic_missile",
+        "_start_book": "spellbook_magic_missile",
+        "_greeting": "Fluffs the Magnificent makes an entrance. The dungeon is honoured.",
+    },
+    "dad": {
+        "STR": 20, "CON": 20, "DEX": 20, "INT": 20, "WIS": 20, "PER": 20,
+        "_sprite": "player_dad",
+        "_no_dagger": True,
+        "_start_weapon": "punch_in_the_face",
+        "_immortal": True,
+        "_greeting": "Dad has arrived. Everything will be fine.",
+    },
 }
 
 
@@ -444,6 +561,81 @@ STATE_EAT_MENU       = 'eat_menu'      # eat food / raw ingredient
 STATE_HELP           = 'help'
 STATE_LORE           = 'lore'
 STATE_PRAY           = 'pray'
+STATE_SPELL_MENU     = 'spell_menu'
+STATE_HINT           = 'hint'          # Recall Lore result display
+STATE_EXAMINE        = 'examine'       # Examine identified inventory item
+STATE_ENCYCLOPEDIA   = 'encyclopedia'  # Encyclopedia browser
+
+# ---------------------------------------------------------------------------
+# Spells learnable from spellbooks  (spell_id → attributes)
+# ---------------------------------------------------------------------------
+LEARNABLE_SPELLS: dict[str, dict] = {
+    'magic_missile_spell': {
+        'name': 'Magic Missile', 'effect': 'magic_missile', 'power': '2d6',
+        'mp_cost': 3,  'quiz_tier': 1, 'needs_target': True,
+        'desc': 'Unerring force dart, 2d6 damage.',
+    },
+    'sleep_spell': {
+        'name': 'Sleep', 'effect': 'sleep_monster', 'power': '',
+        'mp_cost': 4,  'quiz_tier': 1, 'needs_target': True,
+        'desc': 'Puts one monster to sleep for 6 turns.',
+    },
+    'light_spell': {
+        'name': 'Light', 'effect': 'light', 'power': '',
+        'mp_cost': 2,  'quiz_tier': 1, 'needs_target': False,
+        'desc': 'Illuminate surroundings for 20 turns (+3 PER).',
+    },
+    'shield_spell': {
+        'name': 'Magic Shield', 'effect': 'shield_self', 'power': '',
+        'mp_cost': 5,  'quiz_tier': 2, 'needs_target': False,
+        'desc': '+2 AC, physical damage halved for 12 turns.',
+    },
+    'fire_bolt_spell': {
+        'name': 'Fire Bolt', 'effect': 'fire_bolt', 'power': '4d6',
+        'mp_cost': 6,  'quiz_tier': 2, 'needs_target': True,
+        'desc': 'Fire bolt, 4d6 damage.',
+    },
+    'haste_spell': {
+        'name': 'Haste', 'effect': 'haste_self', 'power': '',
+        'mp_cost': 7,  'quiz_tier': 2, 'needs_target': False,
+        'desc': 'Move twice per turn for 10 turns.',
+    },
+    'heal_spell': {
+        'name': 'Heal', 'effect': 'extra_heal', 'power': '3d8',
+        'mp_cost': 8,  'quiz_tier': 3, 'needs_target': False,
+        'desc': 'Restore 3d8 HP (scales with chain score).',
+    },
+    'invisibility_spell': {
+        'name': 'Invisibility', 'effect': 'invisibility_self', 'power': '',
+        'mp_cost': 9,  'quiz_tier': 3, 'needs_target': False,
+        'desc': 'Become invisible for 15 turns.',
+    },
+    'lightning_spell': {
+        'name': 'Chain Lightning', 'effect': 'lightning_bolt', 'power': '5d6',
+        'mp_cost': 10, 'quiz_tier': 3, 'needs_target': True,
+        'desc': 'Lightning bolt, 5d6 arcing damage.',
+    },
+    'confusion_spell': {
+        'name': 'Confusion', 'effect': 'confuse_monster', 'power': '',
+        'mp_cost': 7,  'quiz_tier': 3, 'needs_target': True,
+        'desc': 'Confuse a monster for 10 turns.',
+    },
+    'displacement_spell': {
+        'name': 'Displacement', 'effect': 'displacement_self', 'power': '',
+        'mp_cost': 12, 'quiz_tier': 4, 'needs_target': False,
+        'desc': 'Attackers miss you 30% of time for 20 turns.',
+    },
+    'ice_storm_spell': {
+        'name': 'Ice Storm', 'effect': 'mass_ice', 'power': '3d6',
+        'mp_cost': 14, 'quiz_tier': 4, 'needs_target': False,
+        'desc': '3d6 cold damage to all visible monsters.',
+    },
+    'paralyze_spell': {
+        'name': 'Paralysis', 'effect': 'paralyze_monster', 'power': '',
+        'mp_cost': 12, 'quiz_tier': 4, 'needs_target': True,
+        'desc': 'Paralyze a monster for 8 turns.',
+    },
+}
 
 
 class Game:
@@ -471,14 +663,26 @@ class Game:
         self.accessory_menu_items: list  = []
         self.wand_menu_items: list       = []
         self.scroll_menu_items: list     = []
+        self.spell_menu_items: list      = []   # list of spell_ids known to player
+        self._lore_hint_text: str | None = None
+        self._lore_hint_chain: int       = 0
+        self._lore_subject: str | None   = None
         self.identify_menu_items: list   = []
         self.cook_menu_items: list       = []
         self.cook_compound_recipes: list = []   # available multi-ingredient recipes
         self.eat_menu_items: list        = []
+        self.examine_menu_items: list    = []   # identified items for examine menu
+        self.encyclopedia_category: str  = ''   # current encyclopedia category
+        self.encyclopedia_selection: int = 0    # selected index in list view
+        self.encyclopedia_entries: list  = []   # current entry list
+        self._encyclopedia_entry: object = None # currently viewed entry detail
         self.player_gold        = 0
         self.turn_count         = 0
         self.dungeon_level      = 1
         self.defeat_reason      = 'died'   # 'died' | 'starved' | 'fled'
+        self.correct_answers    = 0        # total correct answers this run
+        self.wrong_answers      = 0        # total wrong answers this run
+        self.quiz_engine.on_answer = self._on_quiz_answer
         self._slow_skip         = False    # toggled each turn when slowed
         # Key-held movement (arrow key auto-repeat)
         self._move_hold_timer   = 0.0      # countdown until next repeated move
@@ -511,31 +715,37 @@ class Game:
         self.monsters                = monsters
         self.ground_items            = items
         self.player                  = Player()
-        # Apply secret build stat overrides if any
-        if self.secret_build:
-            for stat, value in self.secret_build.items():
-                if hasattr(self.player, stat):
-                    setattr(self.player, stat, value)
-            # Recompute derived stats after overrides
+
+        # Apply secret build stat overrides (ignore _-prefixed metadata keys)
+        b = self.secret_build or {}
+        for stat, value in b.items():
+            if not stat.startswith('_') and hasattr(self.player, stat):
+                setattr(self.player, stat, value)
+        if b:
+            # Recompute derived stats after overrides (STR→max_sp, CON→max_hp, INT→max_mp)
             self.player.max_hp = self.player.BASE_HP + self.player.CON
             self.player.hp     = self.player.max_hp
-            self.player.max_sp = self.player.BASE_SP + self.player.CON
+            self.player.max_sp = self.player.BASE_SP + self.player.STR
             self.player.sp     = self.player.max_sp
             self.player.max_mp = self.player.BASE_MP + self.player.INT
             self.player.mp     = self.player.max_mp
+
+        # Immortality flag
+        self.player.immortal = bool(b.get('_immortal', False))
+
         self.player.x, self.player.y = dungeon.rooms[0].center
         self.renderer                = Renderer(self.screen, VIEWPORT_W, VIEWPORT_H)
         self.renderer.set_dungeon(dungeon.width, dungeon.height, GAME_W, GAME_H)
         self._refresh_fov()
 
-        # Give the player their Philosopher's Amulet (always starts identified)
+        # Give the player their Philosopher's Amulet and build-specific starting kit
         self._give_starting_amulet()
 
-        greeting = f"Welcome, {self.player_name}!"
-        if self.secret_build:
-            greeting += "  (Secret build active!)"
-        self.add_message(greeting, 'success')
-        self.add_message("You carry the Philosopher's Amulet, a dagger, a lockpick, and a ration.", 'info')
+        # Greeting
+        if b.get('_greeting'):
+            self.add_message(b['_greeting'], 'success')
+        else:
+            self.add_message(f"Welcome, {self.player_name}!", 'success')
         self.add_message("Find the Philosopher's Stone and escape!", 'info')
 
     def load_state(self, state: dict):
@@ -588,8 +798,11 @@ class Game:
         self._refresh_fov()
 
     def _give_starting_amulet(self):
-        """Give the player their starting kit: amulet, dagger, lockpick, ration."""
-        from items import load_items
+        """Give the player their starting kit, adjusted for their secret build."""
+        from items import load_items, Ammo
+        b = self.secret_build or {}
+
+        # ── Always: Philosopher's Amulet ──────────────────────────────────
         try:
             accessories = load_items('accessory')
             amulet = next((a for a in accessories if a.id == 'philosophers_amulet'), None)
@@ -600,14 +813,60 @@ class Game:
         except Exception:
             pass
 
+        # ── Weapon: default dagger OR build override ──────────────────────
+        no_dagger     = b.get('_no_dagger', False)
+        start_weapon  = b.get('_start_weapon', None)
         try:
             weapons = load_items('weapon')
-            dagger = next((w for w in weapons if w.id == 'iron_dagger'), None)
-            if dagger:
-                self.player.inventory.append(dagger)
+            if start_weapon:
+                w = next((x for x in weapons if x.id == start_weapon), None)
+                if w:
+                    w.identified = True
+                    self.player.inventory.append(w)
+            elif not no_dagger:
+                dagger = next((x for x in weapons if x.id == 'iron_dagger'), None)
+                if dagger:
+                    self.player.inventory.append(dagger)
         except Exception:
             pass
 
+        # ── Ammo (rangers) ────────────────────────────────────────────────
+        start_ammo = b.get('_start_ammo', None)
+        if start_ammo:
+            try:
+                ammo_items = load_items('ammo')
+                ammo = next((a for a in ammo_items if a.id == start_ammo), None)
+                if ammo:
+                    ammo.count = 20
+                    self.player.inventory.append(ammo)
+            except Exception:
+                pass
+
+        # ── Wand (mages/wizards) ──────────────────────────────────────────
+        start_wand = b.get('_start_wand', None)
+        if start_wand:
+            try:
+                wands = load_items('wand')
+                wand = next((w for w in wands if w.id == start_wand), None)
+                if wand:
+                    wand.identified = True
+                    self.player.inventory.append(wand)
+            except Exception:
+                pass
+
+        # ── Spellbook (mages/wizards) ─────────────────────────────────────
+        start_book = b.get('_start_book', None)
+        if start_book:
+            try:
+                books = load_items('spellbook')
+                book = next((bk for bk in books if bk.id == start_book), None)
+                if book:
+                    book.identified = True
+                    self.player.inventory.append(book)
+            except Exception:
+                pass
+
+        # ── Always: lockpick ──────────────────────────────────────────────
         try:
             lockpicks = load_items('lockpick')
             lockpick = next((l for l in lockpicks if l.id == 'lockpick'), None)
@@ -616,6 +875,7 @@ class Game:
         except Exception:
             pass
 
+        # ── Always: bread ration ──────────────────────────────────────────
         try:
             foods = load_items('food')
             ration = next((f for f in foods if f.id == 'bread_ration'), None)
@@ -662,7 +922,9 @@ class Game:
                               STATE_WAND_MENU, STATE_SCROLL_MENU,
                               STATE_IDENTIFY_MENU, STATE_COOK_MENU,
                               STATE_CONFIRM_EXIT, STATE_TARGET,
-                              STATE_EAT_MENU, STATE_HELP, STATE_LORE):
+                              STATE_EAT_MENU, STATE_HELP, STATE_LORE,
+                              STATE_SPELL_MENU, STATE_HINT,
+                              STATE_EXAMINE, STATE_ENCYCLOPEDIA):
                 self.state = STATE_PLAYER
                 return True
             if self.state in (STATE_DEAD, STATE_VICTORY):
@@ -670,7 +932,7 @@ class Game:
             return False
 
         if self.state == STATE_PLAYER:
-            # Stair keys checked by unicode to handle shift+. / shift+,
+            # Keys checked by unicode to handle shift-modified chars
             if event.unicode == '>':
                 self._descend_stairs()
                 return True
@@ -693,6 +955,8 @@ class Game:
             self._wand_menu_input(key)
         elif self.state == STATE_SCROLL_MENU:
             self._scroll_menu_input(key)
+        elif self.state == STATE_SPELL_MENU:
+            self._spell_menu_input(key)
         elif self.state == STATE_IDENTIFY_MENU:
             self._identify_menu_input(key)
         elif self.state == STATE_COOK_MENU:
@@ -703,6 +967,12 @@ class Game:
             self._help_input(key)
         elif self.state == STATE_LORE:
             self._lore_input(key)
+        elif self.state == STATE_EXAMINE:
+            self._examine_menu_input(key)
+        elif self.state == STATE_ENCYCLOPEDIA:
+            self._encyclopedia_input(key)
+        elif self.state == STATE_HINT:
+            self.state = STATE_PLAYER   # any key dismisses hint overlay
         elif self.state == STATE_CONFIRM_EXIT:
             self._confirm_exit_input(key)
 
@@ -727,8 +997,14 @@ class Game:
         if key == pygame.K_r:
             self._open_accessory_menu()
             return
-        if key == pygame.K_u:
+        if key == pygame.K_z:
             self._open_wand_menu()
+            return
+        if key == pygame.K_u:
+            self._open_eat_menu()
+            return
+        if key == pygame.K_m:
+            self._open_spell_menu()
             return
         if key == pygame.K_s:
             self._open_scroll_menu()
@@ -754,14 +1030,17 @@ class Game:
         if key == pygame.K_BACKSLASH:
             self._start_pray()
             return
-        if key == pygame.K_z:
-            self._open_eat_menu()
+        if key == pygame.K_n:
+            self._start_recall_lore()
             return
         if key == pygame.K_SLASH or key == pygame.K_QUESTION:
             self.state = STATE_HELP
             return
         if key == pygame.K_x:
-            self._examine_corpse()
+            self._open_examine_menu()
+            return
+        if key == pygame.K_b:
+            self._open_encyclopedia()
             return
 
         if key not in self._MOVE_KEYS:
@@ -965,6 +1244,17 @@ class Game:
             + (50000 if has_stone else 0)
         )
 
+    def _get_grade(self, score: int) -> tuple[str, tuple]:
+        """Return (letter_grade, color) based on final score."""
+        if score >= 200_000: return 'S',  (255, 230,  80)
+        if score >= 100_000: return 'A+', (220, 200,  60)
+        if score >=  60_000: return 'A',  (200, 180,  50)
+        if score >=  30_000: return 'B+', (140, 220, 140)
+        if score >=  15_000: return 'B',  (100, 190, 100)
+        if score >=   7_000: return 'C',  (120, 160, 220)
+        if score >=   3_000: return 'D',  (180, 140,  80)
+        return 'F', (180, 60, 60)
+
     # ------------------------------------------------------------------
     # Turn bookkeeping
     # ------------------------------------------------------------------
@@ -975,6 +1265,10 @@ class Game:
         # Decrement prayer cooldown
         if self.player.prayer_cooldown > 0:
             self.player.prayer_cooldown -= 1
+
+        # Decrement recall lore cooldown
+        if self.player.recall_lore_cooldown > 0:
+            self.player.recall_lore_cooldown -= 1
 
         # Tick all player status effects
         effect_msgs = self.player.tick_effects()
@@ -1485,6 +1779,81 @@ class Game:
             self.add_message(f"  — {citation}", 'info')
 
     # ------------------------------------------------------------------
+    # Recall Lore
+    # ------------------------------------------------------------------
+
+    def _on_quiz_answer(self, is_correct: bool):
+        """Fired after every individual quiz answer to tally global stats."""
+        if is_correct:
+            self.correct_answers += 1
+        else:
+            self.wrong_answers += 1
+
+    def _start_recall_lore(self):
+        """Begin a Recall Lore session — escalator chain trivia quiz. Cooldown-gated."""
+        if self.player.recall_lore_cooldown > 0:
+            self.add_message(
+                f"Your mind needs rest before recalling more lore. "
+                f"({self.player.recall_lore_cooldown} turns remain)", 'warning'
+            )
+            return
+        self.add_message("You close your eyes and search your memory...", 'info')
+        self.quiz_title = "RECALL LORE — TRIVIA"
+        self.state = STATE_QUIZ
+
+        def on_complete(result):
+            chain = result.score
+            self._resolve_recall_lore(chain)
+            self.state = STATE_HINT
+            self._advance_turn()
+
+        self.quiz_engine.start_quiz(
+            mode='escalator_chain',
+            subject='trivia',
+            tier=1,
+            callback=on_complete,
+            max_chain=5,
+            wisdom=self.player.WIS,
+            timer_modifier=self.player.get_quiz_timer_modifier(),
+        )
+
+    def _resolve_recall_lore(self, chain: int):
+        """Pick a hint based on chain quality and display it. Set cooldown."""
+        import json as _json
+        import random as _rng
+
+        # Cooldown: longer for better knowledge (takes time to absorb)
+        if chain == 0:
+            self.player.recall_lore_cooldown = 40
+            self.add_message("Your thoughts scatter. Nothing surfaces.", 'warning')
+            self._lore_hint_text = None
+            return
+
+        self.player.recall_lore_cooldown = 50 + chain * 15   # 65 .. 125 turns
+
+        hints_path = os.path.join(
+            os.path.dirname(__file__), '..', 'data', 'hints.json'
+        )
+        try:
+            with open(hints_path, encoding='utf-8') as f:
+                all_hints = _json.load(f)
+        except Exception:
+            self.add_message("A lore scroll crumbles in your memory.", 'warning')
+            self._lore_hint_text = None
+            return
+
+        tier_key = str(min(chain, 5))
+        pool = all_hints.get(tier_key, [])
+        if not pool:
+            self.add_message("Nothing comes to mind.", 'info')
+            self._lore_hint_text = None
+            return
+
+        hint = _rng.choice(pool)
+        self._lore_hint_text = hint
+        self._lore_hint_chain = chain
+
+    # ------------------------------------------------------------------
     # Equip menu
     # ------------------------------------------------------------------
 
@@ -1492,7 +1861,7 @@ class Game:
         from items import ARMOR_SLOTS
         self.equip_menu_items = [
             i for i in self.player.inventory
-            if isinstance(i, (Weapon, Armor, Shield))
+            if isinstance(i, (Weapon, Armor, Shield, Accessory))
         ]
         # Collect currently equipped items for the unequip section
         self.equip_menu_equipped = []
@@ -1503,6 +1872,9 @@ class Game:
         for slot_name, slot_item in zip(ARMOR_SLOTS, self.player.armor_slots):
             if slot_item:
                 self.equip_menu_equipped.append((slot_name, slot_item))
+        for idx, acc_item in enumerate(self.player.accessory_slots):
+            if acc_item is not None:
+                self.equip_menu_equipped.append((f'accessory_{idx}', acc_item))
         if not self.equip_menu_items and not self.equip_menu_equipped:
             self.add_message("Nothing to equip or unequip.", 'info')
             return
@@ -1574,6 +1946,8 @@ class Game:
                     self.add_message(msg, 'warning')
                     return
             self._start_armor_quiz(item)
+        elif isinstance(item, Accessory):
+            self._equip_accessory(item)
 
     def _unequip_slot(self, slot_name: str, item):
         """Remove an equipped item and return it to inventory."""
@@ -1590,6 +1964,17 @@ class Game:
         elif slot_name in ARMOR_SLOTS:
             idx = ARMOR_SLOTS.index(slot_name)
             self.player.armor_slots[idx] = None
+        elif slot_name.startswith('accessory_'):
+            acc_idx = int(slot_name.split('_')[1])
+            self.player.accessory_slots[acc_idx] = None
+            # Reverse the accessory's stat/status bonuses
+            from items import Accessory as _Acc
+            if isinstance(item, _Acc):
+                fx = item.effects
+                if 'stat' in fx:
+                    self.player.apply_stat_bonus(fx['stat'], -fx.get('amount', 0))
+                if 'status' in fx:
+                    self.player.status_effects.pop(fx['status'], None)
         self.player.inventory.append(item)
         self.add_message(f"You remove the {self._display_name(item)}.", 'info')
         self._advance_turn()
@@ -1770,6 +2155,7 @@ class Game:
             threshold=wand.quiz_threshold,
             wisdom=self.player.WIS,
             timer_modifier=self.player.get_quiz_timer_modifier(),
+            extra_seconds=self.player.get_int_quiz_bonus(),
         )
 
     def _apply_wand_effect(self, wand: 'Wand'):
@@ -1841,7 +2227,7 @@ class Game:
         elif effect == 'create_monster':
             import json, os
             from monster import Monster
-            mp = os.path.join(os.path.dirname('src/'), 'data', 'monsters.json')
+            mp = os.path.join(os.path.dirname(__file__), '..', 'data', 'monsters.json')
             try:
                 with open(mp, encoding='utf-8') as f:
                     all_defs = json.load(f)
@@ -1993,7 +2379,7 @@ class Game:
             elif effect == 'polymorph_monster':
                 import json, os
                 from monster import Monster
-                mp = os.path.join(os.path.dirname('src/'), 'data', 'monsters.json')
+                mp = os.path.join(os.path.dirname(__file__), '..', 'data', 'monsters.json')
                 try:
                     with open(mp, encoding='utf-8') as f:
                         all_defs = json.load(f)
@@ -2139,13 +2525,13 @@ class Game:
 
         elif effect == 'detect_treasure':
             for item in self.ground_items:
-                self.dungeon.revealed.add((item.x, item.y))
+                self.dungeon.explored.add((item.x, item.y))
             self.add_message("A golden shimmer reveals hidden treasures!", 'success')
 
         elif effect == 'clairvoyance':
             for y in range(len(self.dungeon.tiles)):
                 for x in range(len(self.dungeon.tiles[y])):
-                    self.dungeon.revealed.add((x, y))
+                    self.dungeon.explored.add((x, y))
             self.add_message("Your mind expands — you perceive the entire level!", 'success')
 
         elif effect == 'identify_item':
@@ -2358,15 +2744,191 @@ class Game:
             self.add_message(f"It drops {chosen.name}!", 'loot')
 
     # ------------------------------------------------------------------
+    # Spell menu  (m key — learned spells, cast with science chain quiz)
+    # ------------------------------------------------------------------
+
+    def _open_spell_menu(self):
+        if not self.player.known_spells:
+            self.add_message("You have not learned any spells.", 'warning')
+            return
+        self.spell_menu_items = list(self.player.known_spells.keys())
+        self.state = STATE_SPELL_MENU
+
+    def _spell_menu_input(self, key: int):
+        if key == pygame.K_ESCAPE:
+            self.state = STATE_PLAYER
+            return
+        idx = None
+        if pygame.K_a <= key <= pygame.K_z:
+            idx = key - pygame.K_a
+        if idx is None or idx >= len(self.spell_menu_items):
+            return
+        self._invoke_spell(self.spell_menu_items[idx])
+
+    def _invoke_spell(self, spell_id: str):
+        spell = LEARNABLE_SPELLS.get(spell_id)
+        if not spell:
+            return
+        mp_cost = spell['mp_cost']
+        if self.player.mp < mp_cost:
+            self.add_message(
+                f"Not enough MP to cast {spell['name']}! "
+                f"(need {mp_cost}, have {self.player.mp})", 'warning')
+            self.state = STATE_PLAYER
+            return
+
+        # For targeted spells, find nearest visible monster
+        target = None
+        if spell.get('needs_target'):
+            target = self._nearest_visible_monster()
+            if target is None:
+                self.add_message("No visible target for this spell.", 'warning')
+                self.state = STATE_PLAYER
+                return
+
+        self.player.mp -= mp_cost
+        self.state = STATE_QUIZ
+        self.quiz_title = f"CAST {spell['name'].upper()} — SCIENCE"
+
+        def on_complete(result):
+            chain = result.score
+            self.state = STATE_PLAYER
+            if chain == 0:
+                self.add_message(f"The {spell['name']} fizzles... (MP wasted)", 'warning')
+            else:
+                self._apply_spell_effect(spell, chain, target)
+            self._advance_turn()
+
+        self.quiz_engine.start_quiz(
+            mode='chain',
+            subject='science',
+            tier=spell['quiz_tier'],
+            callback=on_complete,
+            max_chain=5,
+            wisdom=self.player.WIS,
+            timer_modifier=self.player.get_quiz_timer_modifier(),
+            extra_seconds=self.player.get_int_quiz_bonus(),
+        )
+
+    def _apply_spell_effect(self, spell: dict, chain: int, target=None):
+        """Apply a learned spell's effect. Chain 1-5 scales damage/duration."""
+        import types
+        effect = spell['effect']
+        power  = spell.get('power', '')
+
+        # Scale duration/damage with chain
+        chain_scale = chain / 5.0   # 0.2 .. 1.0
+
+        # Handle the two spell-specific effects not in wand system
+        if effect == 'displacement_self':
+            dur = max(5, int(20 * chain_scale))
+            self.player.add_effect('displacement', dur)
+            self.add_message(f"Your image displaces! ({dur} turns)", 'success')
+            return
+
+        if effect == 'mass_ice':
+            from dice import roll
+            base_dmg = roll(power) if power else 10
+            scaled   = max(1, int(base_dmg * chain_scale))
+            hit = 0
+            for m in list(self.monsters):
+                if m.alive and (m.x, m.y) in self.visible:
+                    m.take_damage(scaled)
+                    if not m.alive:
+                        self._on_monster_killed(m)
+                    hit += 1
+            self.add_message(
+                f"Ice Storm! {hit} monsters take {scaled} cold dmg (chain {chain})", 'success')
+            return
+
+        # Scale extra_heal duration/amount
+        if effect == 'extra_heal':
+            from dice import roll
+            base = roll(power) if power else 8
+            healed = max(1, int(base * chain_scale))
+            self.player.restore_hp(healed)
+            self.add_message(f"You are healed for {healed} HP! (chain {chain})", 'success')
+            return
+
+        # Scale status durations for self-buff spells
+        _SELF_BUFF_DURATIONS = {
+            'shield_self':       ('shielded',    12),
+            'haste_self':        ('hasted',      10),
+            'invisibility_self': ('invisible',   15),
+            'light':             ('clairvoyant', 20),
+        }
+        if effect in _SELF_BUFF_DURATIONS:
+            eff_name, base_dur = _SELF_BUFF_DURATIONS[effect]
+            dur = max(2, int(base_dur * chain_scale))
+            self.player.add_effect(eff_name, dur)
+            self.add_message(
+                f"{spell['name']} — {eff_name} for {dur} turns! (chain {chain})", 'success')
+            return
+
+        # Targeted spells — handle directly so we use the pre-found target
+        if target is not None:
+            from dice import roll as _roll
+            if effect == 'magic_missile':
+                base_dmg = _roll(power) if power else 4
+                scaled = max(1, int(base_dmg * chain_scale))
+                target.hp = max(0, target.hp - scaled)
+                if target.hp == 0:
+                    target.alive = False
+                self.add_message(
+                    f"A magic missile strikes the {target.name} for {scaled} damage! (chain {chain})", 'success')
+                if not target.alive:
+                    self._on_monster_killed(target)
+            elif effect == 'fire_bolt':
+                base_dmg = _roll(power) if power else 8
+                scaled = max(1, int(base_dmg * chain_scale))
+                actual = target.take_damage(scaled)
+                self.add_message(
+                    f"A bolt of fire strikes the {target.name} for {actual} damage! (chain {chain})", 'success')
+                if not target.alive:
+                    self._on_monster_killed(target)
+            elif effect == 'lightning_bolt':
+                base_dmg = _roll(power) if power else 10
+                scaled = max(1, int(base_dmg * chain_scale))
+                actual = target.take_damage(scaled)
+                if actual > 0:
+                    target.add_effect('stunned', max(1, int(3 * chain_scale)))
+                    self.add_message(
+                        f"Lightning strikes the {target.name} for {actual} damage! (chain {chain})", 'success')
+                else:
+                    self.add_message(f"The {target.name} absorbs the lightning harmlessly.", 'info')
+                if not target.alive:
+                    self._on_monster_killed(target)
+            elif effect == 'sleep_monster':
+                dur = max(2, int(6 * chain_scale))
+                target.add_effect('sleeping', dur)
+                self.add_message(f"The {target.name} falls asleep for {dur} turns! (chain {chain})", 'success')
+            elif effect == 'confuse_monster':
+                dur = max(2, int(10 * chain_scale))
+                target.add_effect('confused', dur)
+                self.add_message(f"The {target.name} is confused for {dur} turns! (chain {chain})", 'success')
+            elif effect == 'paralyze_monster':
+                dur = max(2, int(8 * chain_scale))
+                target.add_effect('paralyzed', dur)
+                self.add_message(f"The {target.name} is paralyzed for {dur} turns! (chain {chain})", 'success')
+            else:
+                # Fallback: generic targeted damage
+                from dice import roll as _r
+                scaled = max(1, int((_r(power) if power else 6) * chain_scale))
+                actual = target.take_damage(scaled)
+                self.add_message(f"The {effect} hits the {target.name} for {actual} dmg! (chain {chain})", 'success')
+                if not target.alive:
+                    self._on_monster_killed(target)
+
+    # ------------------------------------------------------------------
     # Scroll menu  (s key — grammar quiz)
     # ------------------------------------------------------------------
 
     def _open_scroll_menu(self):
         self.scroll_menu_items = [
-            i for i in self.player.inventory if isinstance(i, Scroll)
+            i for i in self.player.inventory if isinstance(i, (Scroll, Spellbook))
         ]
         if not self.scroll_menu_items:
-            self.add_message("You have no scrolls to read.", 'info')
+            self.add_message("You have no scrolls or spellbooks to read.", 'info')
             return
         self.state = STATE_SCROLL_MENU
 
@@ -2386,7 +2948,11 @@ class Game:
         if idx is None or idx >= len(self.scroll_menu_items):
             return
         self.state = STATE_PLAYER
-        self._read_scroll(self.scroll_menu_items[idx])
+        item = self.scroll_menu_items[idx]
+        if isinstance(item, Spellbook):
+            self._learn_from_spellbook(item)
+        else:
+            self._read_scroll(item)
 
     def _read_scroll(self, scroll: 'Scroll'):
         display = self._display_name(scroll)
@@ -2418,6 +2984,7 @@ class Game:
             threshold=scroll.quiz_threshold,
             wisdom=self.player.WIS,
             timer_modifier=self.player.get_quiz_timer_modifier(),
+            extra_seconds=self.player.get_int_quiz_bonus(),
         )
 
     def _apply_scroll_effect(self, scroll: 'Scroll'):
@@ -2593,13 +3160,31 @@ class Game:
         if not has_amulet:
             self.add_message("You need the Philosopher's Amulet to identify items.", 'warning')
             return
-        self.identify_menu_items = [
+        inv_items = [
             i for i in self.player.inventory
             if hasattr(i, 'identified') and not i.identified
                and i.id not in self.player.known_item_ids
         ]
+        ground_items = [
+            i for i in self.ground_items
+            if i.x == self.player.x and i.y == self.player.y
+               and hasattr(i, 'identified') and not i.identified
+               and i.id not in self.player.known_item_ids
+        ]
+        # Corpses on the current tile that haven't been lore-identified yet
+        corpses = [
+            i for i in self.ground_items
+            if i.x == self.player.x and i.y == self.player.y
+               and isinstance(i, Corpse)
+        ]
+        # Store as (item, is_ground, is_corpse) tuples
+        self.identify_menu_items = (
+            [(i, False, False) for i in inv_items]
+            + [(i, True,  False) for i in ground_items]
+            + [(i, True,  True)  for i in corpses]
+        )
         if not self.identify_menu_items:
-            self.add_message("All your items are already identified.", 'info')
+            self.add_message("Nothing here to identify or examine.", 'info')
             return
         self.state = STATE_IDENTIFY_MENU
 
@@ -2619,7 +3204,11 @@ class Game:
         if idx is None or idx >= len(self.identify_menu_items):
             return
         self.state = STATE_PLAYER
-        self._identify_item(self.identify_menu_items[idx])
+        item, is_ground, is_corpse = self.identify_menu_items[idx]
+        if is_corpse:
+            self._examine_corpse_direct(item)
+        else:
+            self._identify_item(item)
 
     def _identify_item(self, item):
         display = self._display_name(item)
@@ -2656,6 +3245,42 @@ class Game:
             threshold=id_tier + 1,
             wisdom=self.player.WIS,
             timer_modifier=self.player.get_quiz_timer_modifier(),
+            extra_seconds=self.player.get_int_quiz_bonus(),
+        )
+
+    def _learn_from_spellbook(self, book: 'Spellbook'):
+        """Try to learn the spell in a spellbook via philosophy threshold quiz."""
+        spell_id = book.spell_id
+        if spell_id in self.player.known_spells:
+            self.add_message(f"You already know {book.spell_name}.", 'info')
+            return
+
+        self.state = STATE_QUIZ
+        self.quiz_title = f"DECIPHER SPELLBOOK — PHILOSOPHY"
+
+        def on_complete(result):
+            self.state = STATE_PLAYER
+            if result.success:
+                mp_cost = book.mp_cost
+                self.player.known_spells[spell_id] = mp_cost
+                book.identified = True
+                self.player.remove_from_inventory(book)
+                self.add_message(
+                    f"You master the arcane text! {book.spell_name} learned! (costs {mp_cost} MP)", 'success')
+            else:
+                self.add_message(
+                    "The text resists your understanding. Try again.", 'warning')
+            self._advance_turn()
+
+        self.quiz_engine.start_quiz(
+            mode='threshold',
+            subject='philosophy',
+            tier=book.quiz_tier,
+            callback=on_complete,
+            threshold=book.quiz_threshold,
+            wisdom=self.player.WIS,
+            timer_modifier=self.player.get_quiz_timer_modifier(),
+            extra_seconds=self.player.get_int_quiz_bonus(),
         )
 
     def _propagate_identification(self, item_id: str):
@@ -2671,6 +3296,13 @@ class Game:
     # Display name helper
     # ------------------------------------------------------------------
 
+    @staticmethod
+    def _fix_name_case(name: str) -> str:
+        """Apply Title Case only if the name is entirely lowercase (avoids breaking 'STR+1' etc.)."""
+        if name == name.lower():
+            return name.title()
+        return name
+
     def _display_name(self, item) -> str:
         """Return the name to show for an item.
 
@@ -2680,10 +3312,10 @@ class Game:
         shows modifiers, and only when item.identified (instance examined).
         """
         if not hasattr(item, 'identified'):
-            return item.name
+            return self._fix_name_case(item.name)
         if item.identified or item.id in self.player.known_item_ids:
-            return item.name
-        return getattr(item, 'unidentified_name', item.name)
+            return self._fix_name_case(item.name)
+        return self._fix_name_case(getattr(item, 'unidentified_name', item.name))
 
     # ------------------------------------------------------------------
     # Ranged targeting
@@ -2817,7 +3449,8 @@ class Game:
             f"FIRE {weapon.name.upper()} at {monster.name.upper()}  —  MATH CHAIN"
         )
 
-        def on_complete(damage: int, killed: bool, chain: int, stunned: bool = False):
+        def on_complete(damage: int, killed: bool, chain: int, stunned: bool = False,
+                        knocked: bool = False, crit: bool = False):
             self.state = STATE_PLAYER
             self.combat_target = None
             if chain == 0:
@@ -2887,7 +3520,7 @@ class Game:
                     msg += f" The {monster.name} is bleeding!"
                 if knocked and not killed:
                     from combat import apply_knockback
-                    apply_knockback(self.player, monster, self.dungeon)
+                    apply_knockback(self.player, monster, self.dungeon, self.monsters)
                     msg += f" The {monster.name} is knocked back!"
                 self.add_message(msg, 'success')
                 if killed:
@@ -2949,6 +3582,9 @@ class Game:
         for m in self.monsters:
             if not m.alive:
                 continue
+            # Track monsters the player has seen (for encyclopedia bestiary)
+            if (m.x, m.y) in self.visible:
+                self.player.known_monster_ids.add(m.kind)
             did_attack = m.take_turn(self.player, self.dungeon, self.monsters)
             if did_attack:
                 dmg, msg = m.attack(self.player)
@@ -3018,7 +3654,8 @@ class Game:
             for m in self.monsters:
                 if m.alive and (m.x, m.y) not in self.visible:
                     self.renderer.draw_entity(m.x, m.y, (70, 70, 120), cam_x, cam_y, None)
-        self.renderer.draw_player(self.player, cam_x, cam_y)
+        _pspr = (self.secret_build or {}).get('_sprite', 'player')
+        self.renderer.draw_player(self.player, cam_x, cam_y, sprite_name=_pspr)
         self.screen.set_clip(None)
 
         self.msg_log.draw(self.screen, 0, GAME_H, GAME_W, MSG_H)
@@ -3036,6 +3673,8 @@ class Game:
             self._draw_wand_menu()
         elif self.state == STATE_SCROLL_MENU:
             self._draw_scroll_menu()
+        elif self.state == STATE_SPELL_MENU:
+            self._draw_spell_menu()
         elif self.state == STATE_IDENTIFY_MENU:
             self._draw_identify_menu()
         elif self.state == STATE_COOK_MENU:
@@ -3052,6 +3691,12 @@ class Game:
             self._draw_help_screen()
         elif self.state == STATE_LORE:
             self._draw_lore_screen()
+        elif self.state == STATE_HINT:
+            self._draw_hint_screen()
+        elif self.state == STATE_EXAMINE:
+            self._draw_examine_menu()
+        elif self.state == STATE_ENCYCLOPEDIA:
+            self._draw_encyclopedia()
 
         pygame.display.flip()
 
@@ -3159,6 +3804,7 @@ class Game:
         'grammar':    (220,  50,  50),
         'economics':  (160, 220,   0),
         'theology':   (200, 170,  80),
+        'trivia':     (255, 200, 100),
     }
 
     @staticmethod
@@ -3275,10 +3921,12 @@ class Game:
             tx = bar_x + int(bar_w * tick / 5)
             pygame.draw.line(self.screen, (0, 0, 0), (tx, ty), (tx, ty + bar_h), 1)
 
-        # Timer seconds label — always shows live remaining time
+        # Timer seconds label — right-aligned inside the bar
         secs = int(qe.time_remaining)
-        t_label = self.font_sm.render(f"{secs}s", True, t_color)
-        self.screen.blit(t_label, (bar_x + bar_w + 6, ty + (bar_h - t_label.get_height()) // 2))
+        t_label = self.font_sm.render(f"{secs}s", True, (255, 255, 255))
+        lx = bar_x + bar_w - t_label.get_width() - 4
+        ly = ty + (bar_h - t_label.get_height()) // 2
+        self.screen.blit(t_label, (lx, ly))
 
         # ── Question text ─────────────────────────────────────────────
         qy = ty + TIMER_H
@@ -3490,7 +4138,8 @@ class Game:
         by = (WINDOW_H - bh) // 2
 
         draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.GOLD)
-        draw_header_bar(self.screen, (bx, by, bw, 44), text="EQUIP / UNEQUIP  ·  GEOGRAPHY",
+        draw_header_bar(self.screen, (bx, by, bw, 44),
+                        text="EQUIP / UNEQUIP",
                         font=self.font_md, text_color=FP.GOLD_BRIGHT)
 
         p = self.player
@@ -3531,12 +4180,22 @@ class Game:
                 if isinstance(item, Weapon):
                     dmg_str = f"{item.base_damage}dmg" if item.base_damage else (item.damage or "?")
                     detail_text = f"{item.weapon_class}  {dmg_str}  chain x{item.max_chain_length or '?'}  tier {item.quiz_tier}"
-                elif isinstance(item, (Armor, Shield)):
-                    detail_text = (f"{getattr(item, 'slot', 'shield')}  +{item.ac_bonus} AC"
-                                   f"  (quiz: geography x{item.equip_threshold})")
+                elif isinstance(item, Shield):
+                    detail_text = f"+{item.ac_bonus} AC"
+                elif isinstance(item, Armor):
+                    detail_text = f"{getattr(item, 'slot', 'armor')}  +{item.ac_bonus} AC"
+                elif isinstance(item, Accessory):
+                    if item.identified or item.id in self.player.known_item_ids:
+                        fx = item.effects
+                        if 'status' in fx:
+                            detail_text = f"grants {fx['status']}"
+                        else:
+                            detail_text = f"{fx.get('stat','?')} +{fx.get('amount',0)}"
+                    else:
+                        detail_text = "unidentified accessory"
                 else:
                     detail_text = item.item_class
-                detail_col = FP.BODY_TEXT if isinstance(item, (Weapon, Armor, Shield)) else FP.FADED_TEXT
+                detail_col = FP.BODY_TEXT if isinstance(item, (Weapon, Armor, Shield, Accessory)) else FP.FADED_TEXT
                 detail_surf = self.font_sm.render(detail_text, True, detail_col)
                 if detail_surf.get_width() > max_detail_w:
                     while len(detail_text) > 1 and self.font_sm.size(detail_text + '\u2026')[0] > max_detail_w:
@@ -3609,7 +4268,7 @@ class Game:
 
         # FANTASY: Dark panel with gold border
         draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.GOLD)
-        draw_header_bar(self.screen, (bx, by, bw, 44), text="EQUIP ACCESSORY  ·  HISTORY",
+        draw_header_bar(self.screen, (bx, by, bw, 44), text="EQUIP ACCESSORY",
                         font=self.font_md, text_color=FP.GOLD_BRIGHT)
 
         slots_used = sum(1 for s in self.player.accessory_slots if s is not None)
@@ -3641,11 +4300,11 @@ class Game:
             if item.identified or item.id in self.player.known_item_ids:
                 fx = item.effects
                 if 'status' in fx:
-                    detail_text = f"grants {fx['status']}  (history x{item.equip_threshold})"
+                    detail_text = f"grants {fx['status']}"
                 else:
-                    detail_text = f"{fx.get('stat','?')} +{fx.get('amount',0)}  (history x{item.equip_threshold})"
+                    detail_text = f"{fx.get('stat','?')} +{fx.get('amount',0)}"
             else:
-                detail_text = f"unidentified  (history x{item.equip_threshold})"
+                detail_text = "unidentified"
             detail_surf = self.font_sm.render(detail_text, True, FP.FADED_TEXT)
             if detail_surf.get_width() > max_detail_w:
                 while len(detail_text) > 1 and self.font_sm.size(detail_text + '\u2026')[0] > max_detail_w:
@@ -3656,7 +4315,7 @@ class Game:
         hint_y = by + bh - 34
         draw_divider(self.screen, bx + 10, hint_y - 8, bw - 20)
         hint = self.font_sm.render(
-            "Press number to equip  |  ESC to cancel", True, FP.HINT_TEXT
+            "1-9: select  |  ESC: cancel", True, FP.HINT_TEXT
         )
         self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
 
@@ -3675,11 +4334,11 @@ class Game:
 
         # FANTASY: Dark panel with arcane border
         draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.ARCANE_BRIGHT)
-        draw_header_bar(self.screen, (bx, by, bw, 44), text="USE WAND  ·  SCIENCE",
+        draw_header_bar(self.screen, (bx, by, bw, 44), text="ZAP WAND",
                         font=self.font_md, text_color=FP.GOLD_BRIGHT)
 
         self.screen.blit(
-            self.font_sm.render("Nearest visible monster is auto-targeted.",
+            self.font_sm.render("Nearest visible monster: auto-targeted",
                                 True, FP.BODY_TEXT),
             (bx + 20, by + 48)
         )
@@ -3718,8 +4377,65 @@ class Game:
         hint_y = by + bh - 34
         draw_divider(self.screen, bx + 10, hint_y - 8, bw - 20)
         hint = self.font_sm.render(
-            "Press number to invoke  |  ESC to cancel", True, FP.HINT_TEXT
+            "1-9: select  |  ESC: cancel", True, FP.HINT_TEXT
         )
+        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
+
+    # ------------------------------------------------------------------
+    # Spell menu overlay
+    # ------------------------------------------------------------------
+
+    def _draw_spell_menu(self):
+        draw_overlay(self.screen, 160)
+        n_spells = len(self.spell_menu_items)
+        ROW_H = 66
+        bw = min(820, GAME_W - 40)
+        bh = min(96 + n_spells * ROW_H + 52, WINDOW_H - 40)
+        bx = (GAME_W - bw) // 2
+        by = (WINDOW_H - bh) // 2
+        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.ARCANE_BRIGHT)
+        draw_header_bar(self.screen, (bx, by, bw, 44),
+                        text="CAST SPELL",
+                        font=self.font_md, text_color=FP.GOLD_BRIGHT)
+        self.screen.blit(
+            self.font_sm.render(f"MP: {self.player.mp}/{self.player.max_mp}",
+                                True, FP.BODY_TEXT),
+            (bx + 20, by + 48)
+        )
+        draw_divider(self.screen, bx + 10, by + 72, bw - 20)
+        cy = by + 82
+        max_detail_w = bw - 90
+        for i, spell_id in enumerate(self.spell_menu_items):
+            spell = LEARNABLE_SPELLS.get(spell_id, {})
+            key_lbl = chr(ord('a') + i)
+            mp_cost = spell.get('mp_cost', '?')
+            can_cast = self.player.mp >= int(mp_cost)
+            name_color = FP.BODY_TEXT if can_cast else FP.DANGER_TEXT
+            tier = spell.get('quiz_tier', 1)
+            tier_color = [(180,180,180),(100,200,255),(255,180,80),(200,80,255),(255,100,100)][min(tier-1,4)]
+            iy = cy
+            pygame.draw.rect(
+                self.screen,
+                FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
+                (bx + 10, iy, bw - 20, ROW_H - 8), border_radius=6
+            )
+            self.screen.blit(
+                self.font_md.render(f"[{key_lbl}]", True, FP.GOLD_BRIGHT), (bx + 18, iy + 12)
+            )
+            self.screen.blit(
+                self.font_md.render(spell.get('name', '?'), True, name_color), (bx + 70, iy + 12)
+            )
+            detail_text = f"tier {tier}  |  {mp_cost} MP  |  {spell.get('desc','')}"
+            detail_surf = self.font_sm.render(detail_text, True, tier_color)
+            if detail_surf.get_width() > max_detail_w:
+                while len(detail_text) > 1 and self.font_sm.size(detail_text + '\u2026')[0] > max_detail_w:
+                    detail_text = detail_text[:-1]
+                detail_surf = self.font_sm.render(detail_text + '\u2026', True, tier_color)
+            self.screen.blit(detail_surf, (bx + 70, iy + 38))
+            cy += ROW_H
+        hint_y = by + bh - 34
+        draw_divider(self.screen, bx + 10, hint_y - 8, bw - 20)
+        hint = self.font_sm.render("a-z: select  |  ESC: cancel", True, FP.HINT_TEXT)
         self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
 
     # ------------------------------------------------------------------
@@ -3737,11 +4453,11 @@ class Game:
 
         # FANTASY: Dark panel with gold border
         draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.GOLD)
-        draw_header_bar(self.screen, (bx, by, bw, 44), text="READ SCROLL  ·  GRAMMAR",
+        draw_header_bar(self.screen, (bx, by, bw, 44), text="READ SCROLL / SPELLBOOK",
                         font=self.font_md, text_color=FP.GOLD_BRIGHT)
 
         self.screen.blit(
-            self.font_sm.render("Scroll is consumed whether or not you succeed.",
+            self.font_sm.render("Scrolls: consumed on use  |  Spellbooks: reusable",
                                 True, FP.BODY_TEXT),
             (bx + 20, by + 48)
         )
@@ -3760,13 +4476,24 @@ class Game:
             self.screen.blit(
                 self.font_md.render(f"[{i+1}]", True, FP.GOLD_BRIGHT), (bx + 18, iy + 14)
             )
+            is_book = isinstance(item, Spellbook)
+            name_color = (100, 200, 255) if is_book else FP.BODY_TEXT
             self.screen.blit(
-                self.font_md.render(dname, True, FP.BODY_TEXT), (bx + 70, iy + 14)
+                self.font_md.render(dname, True, name_color), (bx + 70, iy + 14)
             )
-            if item.identified or item.id in self.player.known_item_ids:
-                detail_text = f"effect: {item.effect}  (grammar x{item.quiz_threshold})"
+            if is_book:
+                known = item.spell_id in self.player.known_spells
+                if known:
+                    detail_text = f"[KNOWN] {item.spell_name}"
+                elif item.identified or item.id in self.player.known_item_ids:
+                    detail_text = f"teaches: {item.spell_name}  {item.mp_cost} MP"
+                else:
+                    detail_text = "spellbook"
             else:
-                detail_text = f"unknown effect  (grammar x{item.quiz_threshold})"
+                if item.identified or item.id in self.player.known_item_ids:
+                    detail_text = f"effect: {item.effect}"
+                else:
+                    detail_text = "unknown effect"
             detail_surf = self.font_sm.render(detail_text, True, FP.FADED_TEXT)
             if detail_surf.get_width() > max_detail_w:
                 while len(detail_text) > 1 and self.font_sm.size(detail_text + '\u2026')[0] > max_detail_w:
@@ -3777,7 +4504,7 @@ class Game:
         hint_y = by + bh - 34
         draw_divider(self.screen, bx + 10, hint_y - 8, bw - 20)
         hint = self.font_sm.render(
-            "Press number to read  |  ESC to cancel", True, FP.HINT_TEXT
+            "1-9: select  |  ESC: cancel", True, FP.HINT_TEXT
         )
         self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
 
@@ -3789,53 +4516,72 @@ class Game:
         # FANTASY: Grimoire-themed identify menu
         draw_overlay(self.screen, 160)
 
-        bw = min(760, GAME_W - 40)
-        bh = min(90 + len(self.identify_menu_items) * 66 + 50, WINDOW_H - 40)
+        n_items = len(self.identify_menu_items)
+        ROW_H = 66
+        bw = min(820, GAME_W - 40)
+        bh = min(96 + n_items * ROW_H + 52, WINDOW_H - 40)
         bx = (GAME_W - bw) // 2
         by = (WINDOW_H - bh) // 2
 
         # FANTASY: Dark panel with arcane border
         draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.ARCANE_BRIGHT)
-        draw_header_bar(self.screen, (bx, by, bw, 44), text="IDENTIFY ITEM  ·  PHILOSOPHY",
+        draw_header_bar(self.screen, (bx, by, bw, 44), text="IDENTIFY ITEM",
                         font=self.font_md, text_color=FP.GOLD_BRIGHT)
 
         self.screen.blit(
-            self.font_sm.render("Answer 3 correct to identify the chosen item.",
+            self.font_sm.render("Requires Philosopher's Amulet",
                                 True, FP.BODY_TEXT),
             (bx + 20, by + 48)
         )
         draw_divider(self.screen, bx + 10, by + 72, bw - 20)
 
         max_detail_w = bw - 90
-        for i, item in enumerate(self.identify_menu_items):
-            iy = by + 82 + i * 66
-            # FANTASY: Alternating midnight row colors
-            pygame.draw.rect(
-                self.screen,
-                FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
-                (bx + 10, iy, bw - 20, 60), border_radius=6
-            )
-            dname = self._display_name(item)
-            type_label = item.item_class
-            tier_lbl = f"  tier {item.quiz_tier}" if hasattr(item, 'quiz_tier') else ""
-            self.screen.blit(
-                self.font_md.render(f"[{i+1}]", True, FP.GOLD_BRIGHT), (bx + 18, iy + 14)
-            )
-            self.screen.blit(
-                self.font_md.render(dname, True, FP.BODY_TEXT), (bx + 70, iy + 14)
-            )
-            detail_text = f"{type_label}{tier_lbl}  —  philosophy x3 correct"
-            detail_surf = self.font_sm.render(detail_text, True, FP.FADED_TEXT)
-            if detail_surf.get_width() > max_detail_w:
-                while len(detail_text) > 1 and self.font_sm.size(detail_text + '\u2026')[0] > max_detail_w:
-                    detail_text = detail_text[:-1]
-                detail_surf = self.font_sm.render(detail_text + '\u2026', True, FP.FADED_TEXT)
-            self.screen.blit(detail_surf, (bx + 70, iy + 40))
+        cy = by + 82
+
+        # Separate into inv, ground, and corpse sections
+        inv_entries    = [(i, item) for i, (item, is_g, is_c) in enumerate(self.identify_menu_items) if not is_g and not is_c]
+        ground_entries = [(i, item) for i, (item, is_g, is_c) in enumerate(self.identify_menu_items) if is_g and not is_c]
+        corpse_entries = [(i, item) for i, (item, is_g, is_c) in enumerate(self.identify_menu_items) if is_c]
+
+        def _draw_section(entries, label, label_color, name_color, detail_suffix=''):
+            nonlocal cy
+            if not entries:
+                return
+            if cy > by + 82:
+                draw_divider(self.screen, bx + 10, cy + 4, bw - 20)
+                cy += 12
+            self.screen.blit(self.font_sm.render(label, True, label_color), (bx + 18, cy))
+            cy += 24
+            for i, item in entries:
+                iy = cy
+                pygame.draw.rect(self.screen, FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
+                                 (bx + 10, iy, bw - 20, ROW_H - 8), border_radius=6)
+                dname = self._display_name(item)
+                self.screen.blit(self.font_md.render(f"[{i+1}]", True, FP.GOLD_BRIGHT), (bx + 18, iy + 10))
+                self.screen.blit(self.font_md.render(dname, True, name_color), (bx + 70, iy + 10))
+                if isinstance(item, Corpse):
+                    lore_status = "[EXAMINED]" if item.lore_identified else "[UNEXAMINED]"
+                    detail_text = f"Corpse  {lore_status}"
+                else:
+                    type_label = item.item_class.replace('_', ' ').title()
+                    tier_lbl = f"  tier {item.quiz_tier}" if hasattr(item, 'quiz_tier') else ""
+                    detail_text = f"{type_label}{tier_lbl}{detail_suffix}"
+                detail_surf = self.font_sm.render(detail_text, True, FP.FADED_TEXT)
+                if detail_surf.get_width() > max_detail_w:
+                    while len(detail_text) > 1 and self.font_sm.size(detail_text + '\u2026')[0] > max_detail_w:
+                        detail_text = detail_text[:-1]
+                    detail_surf = self.font_sm.render(detail_text + '\u2026', True, FP.FADED_TEXT)
+                self.screen.blit(detail_surf, (bx + 70, iy + 34))
+                cy += ROW_H
+
+        _draw_section(inv_entries,    "INVENTORY:",            FP.GOLD_BRIGHT,   FP.BODY_TEXT)
+        _draw_section(ground_entries, "ON THE GROUND:",        FP.WARNING_TEXT,  FP.GOLD_PALE,  "  [ground]")
+        _draw_section(corpse_entries, "CORPSES (at your feet):", (180, 130, 255), FP.FADED_TEXT)
 
         hint_y = by + bh - 34
         draw_divider(self.screen, bx + 10, hint_y - 8, bw - 20)
         hint = self.font_sm.render(
-            "Press number to identify  |  ESC to cancel", True, FP.HINT_TEXT
+            "1-9: select  |  ESC: cancel", True, FP.HINT_TEXT
         )
         self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
 
@@ -3863,12 +4609,12 @@ class Game:
 
         # FANTASY: Dark panel with success (green) border for cooking
         draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.SUCCESS_TEXT)
-        draw_header_bar(self.screen, (bx, by, bw, 44), text="COOK INGREDIENT  ·  COOKING",
+        draw_header_bar(self.screen, (bx, by, bw, 44), text="COOK INGREDIENT",
                         font=self.font_md, text_color=FP.GOLD_BRIGHT)
 
         self.screen.blit(
             self.font_sm.render(
-                f"SP: {self.player.sp}/{self.player.max_sp}  —  cooking restores SP + permanent stat bonuses",
+                f"SP: {self.player.sp}/{self.player.max_sp}",
                 True, FP.BODY_TEXT
             ),
             (bx + 20, by + 48)
@@ -3882,7 +4628,7 @@ class Game:
         # ── Compound (multi-ingredient) recipes ──────────────────────────
         max_header_w = bw - 36
         if n_compound:
-            hdr = "COMPOUND RECIPES  (letter keys — you have all ingredients!)"
+            hdr = "COMPOUND RECIPES"
             hdr_surf = self.font_sm.render(hdr, True, FP.GOLD_BRIGHT)
             if hdr_surf.get_width() > max_header_w:
                 while len(hdr) > 1 and self.font_sm.size(hdr + '…')[0] > max_header_w:
@@ -3891,14 +4637,6 @@ class Game:
             self.screen.blit(hdr_surf, (bx + 18, cy))
             cy += compound_header_h
         elif n_single:
-            tip_lines = self._wrap_text(
-                "Tip: collect multiple ingredients to unlock compound recipes with greater bonuses.",
-                self.font_sm, max_header_w
-            )
-            tip_line_h = self.font_sm.get_height() + 2
-            for tip_line in tip_lines:
-                self.screen.blit(self.font_sm.render(tip_line, True, FP.FADED_TEXT), (bx + 18, cy))
-                cy += tip_line_h
             for i, recipe in enumerate(self.cook_compound_recipes[:6]):
                 iy = cy
                 # FANTASY: Alternating midnight row colors
@@ -4002,14 +4740,14 @@ class Game:
 
         # FANTASY: Dark panel with success (green) border for nourishment
         draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.SUCCESS_TEXT)
-        draw_header_bar(self.screen, (bx, by, bw, 44), text="EAT  ·  NOURISHMENT",
+        draw_header_bar(self.screen, (bx, by, bw, 44), text="EAT FOOD",
                         font=self.font_md, text_color=FP.GOLD_BRIGHT)
 
         sp = self.player.sp
         sp_color = FP.SUCCESS_TEXT if sp > 30 else FP.WARNING_TEXT if sp > 10 else FP.DANGER_TEXT
         self.screen.blit(
             self.font_sm.render(
-                f"SP: {sp}/{self.player.max_sp}  — Food restores SP. Ingredients eaten raw give minimal SP.",
+                f"SP: {sp}/{self.player.max_sp}",
                 True, sp_color
             ),
             (bx + 20, by + 48)
@@ -4049,7 +4787,7 @@ class Game:
                 best_q = max(item.recipes.keys(), key=int)
                 best_sp = item.recipes[best_q].get('sp', 0)
                 raw_sp = item.recipes.get('1', item.recipes.get('0', {})).get('sp', 5)
-                detail_text = f"raw: {raw_sp} SP  (cook for up to {best_sp} SP)"
+                detail_text = f"raw: {raw_sp} SP  |  cooked: up to {best_sp} SP"
             detail_surf = self.font_sm.render(detail_text, True, FP.FADED_TEXT)
             if detail_surf.get_width() > max_detail_w:
                 while len(detail_text) > 1 and self.font_sm.size(detail_text + '\u2026')[0] > max_detail_w:
@@ -4060,7 +4798,7 @@ class Game:
         hint_y = by + bh - 34
         draw_divider(self.screen, bx + 10, hint_y - 8, bw - 20)
         hint = self.font_sm.render(
-            "Press number to eat  |  ESC to cancel", True, FP.HINT_TEXT
+            "1-9: select  |  ESC: cancel", True, FP.HINT_TEXT
         )
         self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
 
@@ -4102,43 +4840,64 @@ class Game:
         # FANTASY: Illuminated manuscript victory screen
         draw_overlay(self.screen, 210, (12, 10, 0))
         score = self._calc_score()
+        grade, grade_col = self._get_grade(score)
         cx    = GAME_W // 2
         cy    = WINDOW_H // 2
 
         # FANTASY: Animated rune circles
         t = pygame.time.get_ticks() / 1000.0
-        draw_rune_circle(self.screen, cx, cy, 260, (*FP.GOLD_DARK, 120), t, 16)
-        draw_rune_circle(self.screen, cx, cy, 180, (*FP.GOLD, 90),       -t * 1.3, 10)
+        draw_rune_circle(self.screen, cx, cy, 280, (*FP.GOLD_DARK, 120), t, 16)
+        draw_rune_circle(self.screen, cx, cy, 190, (*FP.GOLD, 90),       -t * 1.3, 10)
         draw_candle_glow(self.screen, cx, cy, 0.9)
 
-        # FANTASY: Gold filigree bar under title
-        draw_filigree_bar(self.screen, cx - 320, cy - 100, 640, FP.GOLD)
-
-        centered_text(self.screen, self.font_xl, "VICTORY!", FP.GOLD_BRIGHT, cy - 148, shadow=True)
+        # Title
+        draw_filigree_bar(self.screen, cx - 320, cy - 152, 640, FP.GOLD)
+        centered_text(self.screen, self.font_xl, "VICTORY!", FP.GOLD_BRIGHT, cy - 192, shadow=True)
         draw_glow_text(self.screen, self.font_lg,
                        "You retrieved the Philosopher's Stone!",
-                       FP.PARCHMENT_LIGHT, (cx - 320, cy - 100))
+                       FP.PARCHMENT_LIGHT, (cx - 320, cy - 152))
+        draw_filigree_bar(self.screen, cx - 320, cy - 122, 640, FP.GOLD_DARK)
 
-        draw_filigree_bar(self.screen, cx - 260, cy - 68, 520, FP.GOLD_DARK)
+        # Grade badge
+        grade_surf = self.font_xl.render(grade, True, grade_col)
+        self.screen.blit(grade_surf, (cx - 240, cy - 100))
 
+        # Score
         score_text = f"Final Score:  {score:,}"
         draw_shadow_text(self.screen, self.font_lg, score_text,
-                         FP.GOLD_BRIGHT, (cx - self.font_lg.size(score_text)[0]//2, cy - 56))
+                         FP.GOLD_BRIGHT, (cx - self.font_lg.size(score_text)[0]//2 + 20, cy - 96))
 
-        details = (f"Turns: {self.turn_count}   |   "
-                   f"Deepest Level: {self.level_mgr.max_level_reached}   |   "
-                   f"Kills: {self.level_mgr.monsters_killed}")
-        d_surf = self.font_md.render(details, True, FP.BODY_TEXT)
-        self.screen.blit(d_surf, (cx - d_surf.get_width() // 2, cy))
+        # Stats table
+        total_q = self.correct_answers + self.wrong_answers
+        acc_pct  = int(100 * self.correct_answers / total_q) if total_q else 0
+        row_y    = cy - 52
+        row_gap  = 26
+        stats = [
+            (f"Turns Survived",        f"{self.turn_count:,}",                FP.BODY_TEXT),
+            (f"Deepest Level",         f"{self.level_mgr.max_level_reached}",  FP.BODY_TEXT),
+            (f"Monsters Slain",        f"{self.level_mgr.monsters_killed:,}",  FP.BODY_TEXT),
+            (f"Gold Collected",        f"{self.player_gold:,}",               FP.GOLD_PALE),
+            (f"Questions Answered",    f"{total_q:,}",                         FP.BODY_TEXT),
+            (f"Correct  /  Wrong",     f"{self.correct_answers} / {self.wrong_answers}   ({acc_pct}%)",
+             (120, 210, 120) if acc_pct >= 70 else FP.WARNING_TEXT),
+        ]
+        lx = cx - 260
+        for label, value, col in stats:
+            lbl_s = self.font_md.render(label + " :", True, FP.FADED_TEXT)
+            val_s = self.font_md.render(value, True, col)
+            self.screen.blit(lbl_s, (lx, row_y))
+            self.screen.blit(val_s, (lx + 280, row_y))
+            row_y += row_gap
 
+        # Score breakdown
+        draw_filigree_bar(self.screen, cx - 280, row_y + 4, 560, FP.GOLD_DARK)
         breakdown = (f"({self.turn_count}×10)  +  ({self.level_mgr.max_level_reached}×1000)  +"
                      f"  ({self.level_mgr.monsters_killed}×100)  +  50 000 stone bonus")
         b_surf = self.font_sm.render(breakdown, True, FP.FADED_TEXT)
-        self.screen.blit(b_surf, (cx - b_surf.get_width() // 2, cy + 32))
+        self.screen.blit(b_surf, (cx - b_surf.get_width() // 2, row_y + 14))
 
-        draw_filigree_bar(self.screen, cx - 260, cy + 68, 520, FP.GOLD_DARK)
         hint = self.font_md.render("Press ESC to close", True, FP.HINT_TEXT)
-        self.screen.blit(hint, (cx - hint.get_width() // 2, cy + 90))
+        self.screen.blit(hint, (cx - hint.get_width() // 2, row_y + 40))
 
     # ------------------------------------------------------------------
     # Death / defeat screen
@@ -4152,8 +4911,8 @@ class Game:
         cy    = WINDOW_H // 2
 
         t = pygame.time.get_ticks() / 1000.0
-        draw_rune_circle(self.screen, cx, cy, 240, (*FP.BURGUNDY, 110), t * 0.4, 14)
-        draw_rune_circle(self.screen, cx, cy, 160, (*FP.BLOOD, 70),     -t * 0.6, 8)
+        draw_rune_circle(self.screen, cx, cy, 260, (*FP.BURGUNDY, 110), t * 0.4, 14)
+        draw_rune_circle(self.screen, cx, cy, 170, (*FP.BLOOD, 70),     -t * 0.6, 8)
 
         if self.defeat_reason == 'fled':
             title_text = "YOU FLED THE DUNGEON"
@@ -4168,28 +4927,51 @@ class Game:
             sub_text   = f"Slain on dungeon level {self.dungeon_level}."
             tc = FP.DANGER_TEXT
 
-        draw_filigree_bar(self.screen, cx - 300, cy - 110, 600, FP.BURGUNDY_MID)
+        grade, grade_col = self._get_grade(score)
+
+        draw_filigree_bar(self.screen, cx - 300, cy - 152, 600, FP.BURGUNDY_MID)
         draw_glow_text(self.screen, self.font_xl, title_text,
-                       FP.BLOOD, (cx - self.font_xl.size(title_text)[0]//2, cy - 148),
+                       FP.BLOOD, (cx - self.font_xl.size(title_text)[0]//2, cy - 192),
                        glow_color=FP.BURGUNDY)
-        draw_filigree_bar(self.screen, cx - 300, cy - 96, 600, FP.BURGUNDY_MID)
+        draw_filigree_bar(self.screen, cx - 300, cy - 122, 600, FP.BURGUNDY_MID)
 
         sub_surf = self.font_lg.render(sub_text, True, tc)
-        self.screen.blit(sub_surf, (cx - sub_surf.get_width() // 2, cy - 80))
+        self.screen.blit(sub_surf, (cx - sub_surf.get_width() // 2, cy - 106))
 
+        # Grade badge
+        grade_surf = self.font_xl.render(grade, True, grade_col)
+        self.screen.blit(grade_surf, (cx - 240, cy - 78))
+
+        # Score
         score_text = f"Final Score:  {score:,}"
         draw_shadow_text(self.screen, self.font_lg, score_text,
-                         FP.GOLD_PALE, (cx - self.font_lg.size(score_text)[0]//2, cy - 40))
+                         FP.GOLD_PALE, (cx - self.font_lg.size(score_text)[0]//2 + 20, cy - 74))
 
-        details = (f"Turns: {self.turn_count}   |   "
-                   f"Deepest Level: {self.level_mgr.max_level_reached}   |   "
-                   f"Kills: {self.level_mgr.monsters_killed}")
-        d_surf = self.font_md.render(details, True, FP.BODY_TEXT)
-        self.screen.blit(d_surf, (cx - d_surf.get_width() // 2, cy + 2))
+        # Stats table
+        total_q  = self.correct_answers + self.wrong_answers
+        acc_pct  = int(100 * self.correct_answers / total_q) if total_q else 0
+        row_y    = cy - 30
+        row_gap  = 26
+        stats = [
+            ("Turns Survived",     f"{self.turn_count:,}",                   FP.BODY_TEXT),
+            ("Deepest Level",      f"{self.level_mgr.max_level_reached}",     FP.BODY_TEXT),
+            ("Monsters Slain",     f"{self.level_mgr.monsters_killed:,}",     FP.BODY_TEXT),
+            ("Gold Collected",     f"{self.player_gold:,}",                   FP.GOLD_PALE),
+            ("Questions Answered", f"{total_q:,}",                            FP.BODY_TEXT),
+            ("Correct  /  Wrong",  f"{self.correct_answers} / {self.wrong_answers}   ({acc_pct}%)",
+             (120, 210, 120) if acc_pct >= 70 else FP.WARNING_TEXT),
+        ]
+        lx = cx - 260
+        for label, value, col in stats:
+            lbl_s = self.font_md.render(label + " :", True, FP.FADED_TEXT)
+            val_s = self.font_md.render(value, True, col)
+            self.screen.blit(lbl_s, (lx, row_y))
+            self.screen.blit(val_s, (lx + 280, row_y))
+            row_y += row_gap
 
-        draw_filigree_bar(self.screen, cx - 260, cy + 32, 520, FP.BURGUNDY_DARK)
+        draw_filigree_bar(self.screen, cx - 260, row_y + 4, 520, FP.BURGUNDY_DARK)
         hint = self.font_md.render("Press ESC to close", True, FP.HINT_TEXT)
-        self.screen.blit(hint, (cx - hint.get_width() // 2, cy + 52))
+        self.screen.blit(hint, (cx - hint.get_width() // 2, row_y + 14))
 
     # ------------------------------------------------------------------
     # Help screen
@@ -4200,8 +4982,41 @@ class Game:
             self.state = STATE_PLAYER
 
     # ------------------------------------------------------------------
-    # Examine corpse  (X key — philosophy quiz → reveals lore + stat block)
+    # Examine corpse  (via I identify menu → philosophy quiz → lore)
     # ------------------------------------------------------------------
+
+    def _examine_corpse_direct(self, corpse):
+        """Called when player selects a corpse from the identify menu."""
+        if corpse.lore_identified:
+            self._lore_subject = corpse
+            self.state = STATE_LORE
+            return
+        self.quiz_title = f"EXAMINING {corpse.monster_name.upper()} CORPSE  —  PHILOSOPHY"
+        self.state = STATE_QUIZ
+
+        def on_complete(result):
+            self.state = STATE_PLAYER
+            if result.success:
+                corpse.lore_identified = True
+                self._lore_subject = corpse
+                self.state = STATE_LORE
+                self.add_message(
+                    f"Your philosophical insight reveals the nature of the {corpse.monster_name}!", 'success'
+                )
+            else:
+                self.add_message("You study the corpse but gain no insight.", 'warning')
+            self._advance_turn()
+
+        self.quiz_engine.start_quiz(
+            mode='threshold',
+            subject='philosophy',
+            tier=max(1, min(5, getattr(corpse, 'harvest_tier', 1) + 1)),
+            callback=on_complete,
+            threshold=2,
+            wisdom=self.player.WIS,
+            timer_modifier=self.player.get_quiz_timer_modifier(),
+            extra_seconds=self.player.get_int_quiz_bonus(),
+        )
 
     def _examine_corpse(self):
         px, py = self.player.x, self.player.y
@@ -4241,6 +5056,7 @@ class Game:
             threshold=2,
             wisdom=self.player.WIS,
             timer_modifier=self.player.get_quiz_timer_modifier(),
+            extra_seconds=self.player.get_int_quiz_bonus(),
         )
 
     def _lore_input(self, key: int):
@@ -4455,12 +5271,577 @@ class Game:
         hint = self.font_sm.render("[ ESC / ENTER / SPACE ] to close", True, (80, 80, 100))
         self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, by + bh - 26))
 
+    # ------------------------------------------------------------------
+    # Examine menu  (x key)
+    # ------------------------------------------------------------------
+
+    def _open_examine_menu(self):
+        """Open a list of all identified items in player inventory (and equipment)."""
+        from items import Weapon, Armor, Shield, Accessory, Wand, Scroll, Spellbook, Ammo, Food, Ingredient
+        items = []
+        # Inventory items that are identified
+        for item in self.player.inventory:
+            if getattr(item, 'identified', True):
+                items.append(item)
+        # Equipped weapon
+        if self.player.weapon and getattr(self.player.weapon, 'identified', True):
+            if self.player.weapon not in items:
+                items.append(self.player.weapon)
+        # Equipped shield
+        if self.player.shield and getattr(self.player.shield, 'identified', True):
+            if self.player.shield not in items:
+                items.append(self.player.shield)
+        # Armor slots
+        from items import ARMOR_SLOTS
+        for slot_item in self.player.armor_slots:
+            if slot_item and getattr(slot_item, 'identified', True):
+                if slot_item not in items:
+                    items.append(slot_item)
+        # Accessory slots
+        for acc in self.player.accessory_slots:
+            if acc and getattr(acc, 'identified', True):
+                if acc not in items:
+                    items.append(acc)
+
+        if not items:
+            self.add_message("You have no identified items to examine.", 'info')
+            return
+        self.examine_menu_items = items
+        self.state = STATE_EXAMINE
+
+    def _examine_menu_input(self, key: int):
+        key_to_idx = {
+            pygame.K_1: 0, pygame.K_KP1: 0,
+            pygame.K_2: 1, pygame.K_KP2: 1,
+            pygame.K_3: 2, pygame.K_KP3: 2,
+            pygame.K_4: 3, pygame.K_KP4: 3,
+            pygame.K_5: 4, pygame.K_KP5: 4,
+            pygame.K_6: 5, pygame.K_KP6: 5,
+            pygame.K_7: 6, pygame.K_KP7: 6,
+            pygame.K_8: 7, pygame.K_KP8: 7,
+            pygame.K_9: 8, pygame.K_KP9: 8,
+        }
+        if key == pygame.K_ESCAPE:
+            self.state = STATE_PLAYER
+            return
+        idx = key_to_idx.get(key)
+        if idx is None or idx >= len(self.examine_menu_items):
+            return
+        item = self.examine_menu_items[idx]
+        # Show lore screen for the selected item
+        self._lore_subject = item
+        self.state = STATE_LORE
+
+    def _get_item_stats_brief(self, item) -> str:
+        """Return a brief one-line stats string for examine menu display."""
+        from items import Weapon, Armor, Shield, Accessory, Wand, Scroll, Spellbook, Ammo, Food, Ingredient, Lockpick
+        if isinstance(item, Weapon):
+            dmg = item.base_damage if item.base_damage else (item.damage or '?')
+            two_h = ' 2H' if getattr(item, 'two_handed', False) else ''
+            return f"{item.weapon_class}{two_h}  {dmg} dmg  tier {item.tier}"
+        elif isinstance(item, Armor):
+            return f"{item.slot}  -{item.ac_bonus} AC  tier {item.tier}"
+        elif isinstance(item, Shield):
+            return f"shield  -{item.ac_bonus} AC  tier {item.tier}"
+        elif isinstance(item, Accessory):
+            fx = item.effects
+            if 'status' in fx:
+                return f"grants {fx['status']}"
+            else:
+                return f"{fx.get('stat','?')} +{fx.get('amount',0)}"
+        elif isinstance(item, Wand):
+            return f"effect: {item.effect}  charges: {item.charges}/{item.max_charges}"
+        elif isinstance(item, Scroll):
+            return f"effect: {item.effect}  tier {item.quiz_tier}"
+        elif isinstance(item, Spellbook):
+            return f"teaches: {item.spell_name}  {item.mp_cost} MP"
+        elif isinstance(item, Food):
+            return f"+{item.sp_restore} SP  +{item.hp_restore} HP"
+        elif isinstance(item, Ingredient):
+            best = item.recipes.get('5', item.recipes.get('3', {}))
+            return f"ingredient — best: {best.get('name', '?')}"
+        elif isinstance(item, Ammo):
+            return f"{item.ammo_type}  x{item.count}"
+        elif isinstance(item, Lockpick):
+            return "lockpick"
+        return item.item_class.replace('_', ' ').title()
+
+    def _draw_examine_menu(self):
+        draw_overlay(self.screen, 160)
+
+        n_items = len(self.examine_menu_items)
+        ROW_H = 64
+        bw = min(820, GAME_W - 40)
+        bh = min(96 + n_items * ROW_H + 52, WINDOW_H - 40)
+        bx = (GAME_W - bw) // 2
+        by = (WINDOW_H - bh) // 2
+
+        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.ARCANE_BRIGHT)
+        draw_header_bar(self.screen, (bx, by, bw, 44), text="EXAMINE ITEM",
+                        font=self.font_md, text_color=FP.GOLD_BRIGHT)
+
+        self.screen.blit(
+            self.font_sm.render("Select an identified item to view its full lore entry.",
+                                True, FP.BODY_TEXT),
+            (bx + 20, by + 48)
+        )
+        draw_divider(self.screen, bx + 10, by + 72, bw - 20)
+
+        max_detail_w = bw - 90
+        cy = by + 82
+        for i, item in enumerate(self.examine_menu_items[:9]):
+            iy = cy
+            pygame.draw.rect(
+                self.screen,
+                FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
+                (bx + 10, iy, bw - 20, ROW_H - 6), border_radius=6
+            )
+            dname = self._display_name(item)
+            type_label = item.item_class.replace('_', ' ').title() if hasattr(item, 'item_class') else ''
+            self.screen.blit(
+                self.font_md.render(f"[{i+1}]", True, FP.GOLD_BRIGHT), (bx + 18, iy + 10)
+            )
+            self.screen.blit(
+                self.font_md.render(dname, True, FP.BODY_TEXT), (bx + 70, iy + 10)
+            )
+            if type_label:
+                type_surf = self.font_sm.render(f"[{type_label}]", True, FP.GOLD_PALE)
+                self.screen.blit(type_surf, (bx + 70, iy + 36))
+                stats_x = bx + 70 + type_surf.get_width() + 12
+            else:
+                stats_x = bx + 70
+            stats_text = self._get_item_stats_brief(item)
+            stats_surf = self.font_sm.render(stats_text, True, FP.FADED_TEXT)
+            if stats_surf.get_width() > max_detail_w - (stats_x - bx - 70):
+                while len(stats_text) > 1 and self.font_sm.size(stats_text + '\u2026')[0] > max_detail_w:
+                    stats_text = stats_text[:-1]
+                stats_surf = self.font_sm.render(stats_text + '\u2026', True, FP.FADED_TEXT)
+            self.screen.blit(stats_surf, (stats_x, iy + 36))
+            cy += ROW_H
+
+        hint_y = by + bh - 34
+        draw_divider(self.screen, bx + 10, hint_y - 8, bw - 20)
+        hint = self.font_sm.render(
+            "1-9: select  |  ESC: close", True, FP.HINT_TEXT
+        )
+        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
+
+    # ------------------------------------------------------------------
+    # Encyclopedia  (b key)
+    # ------------------------------------------------------------------
+
+    def _open_encyclopedia(self):
+        """Open the encyclopedia browser."""
+        self.encyclopedia_category = ''
+        self.encyclopedia_entries = []
+        self.encyclopedia_selection = 0
+        self._encyclopedia_entry = None
+        self.state = STATE_ENCYCLOPEDIA
+
+    def _encyclopedia_input(self, key: int):
+        if self.encyclopedia_category == '':
+            # Category selection screen
+            cat_keys = {
+                pygame.K_1: 'bestiary',
+                pygame.K_2: 'weapon',
+                pygame.K_3: 'armor',
+                pygame.K_4: 'accessory',
+                pygame.K_5: 'scroll',
+                pygame.K_6: 'wand',
+                pygame.K_7: 'spellbook',
+            }
+            if key == pygame.K_ESCAPE:
+                self.state = STATE_PLAYER
+                return
+            cat = cat_keys.get(key)
+            if cat:
+                self.encyclopedia_category = cat
+                self.encyclopedia_selection = 0
+                self._encyclopedia_entry = None
+                self._encyclopedia_load_entries(cat)
+            return
+
+        if self._encyclopedia_entry is not None:
+            # Entry detail view — any key except arrows goes back to list
+            if key == pygame.K_ESCAPE:
+                self._encyclopedia_entry = None
+            return
+
+        # List view
+        if key == pygame.K_ESCAPE:
+            self.encyclopedia_category = ''
+            self.encyclopedia_entries = []
+            self.encyclopedia_selection = 0
+            self._encyclopedia_entry = None
+            return
+        if key in (pygame.K_UP, pygame.K_k):
+            self.encyclopedia_selection = max(0, self.encyclopedia_selection - 1)
+            return
+        if key in (pygame.K_DOWN, pygame.K_j):
+            self.encyclopedia_selection = min(len(self.encyclopedia_entries) - 1,
+                                              self.encyclopedia_selection + 1)
+            return
+        if key in (pygame.K_RETURN, pygame.K_KP_ENTER, pygame.K_SPACE):
+            if 0 <= self.encyclopedia_selection < len(self.encyclopedia_entries):
+                self._encyclopedia_entry = self.encyclopedia_entries[self.encyclopedia_selection]
+            return
+
+    def _encyclopedia_load_entries(self, category: str):
+        """Load known entries for the given category from JSON data files."""
+        import json
+        base = os.path.join(os.path.dirname(__file__), '..', 'data')
+
+        known_ids = getattr(self.player, 'known_item_ids', set())
+        known_monster_ids = getattr(self.player, 'known_monster_ids', set())
+
+        if category == 'bestiary':
+            path = os.path.join(base, 'monsters.json')
+            try:
+                with open(path, encoding='utf-8') as f:
+                    all_defs = json.load(f)
+            except Exception:
+                self.encyclopedia_entries = []
+                return
+            # Include any monster from a corpse lore-identified + any explicitly known
+            # Plus any whose kind appears in known_monster_ids
+            known_kinds = set(known_monster_ids)
+            # Also add monsters we've seen corpses for (lore_identified)
+            for item in self.player.inventory:
+                mid = getattr(item, 'monster_id', None) or getattr(item, 'kind', None)
+                if mid and getattr(item, 'lore_identified', False):
+                    known_kinds.add(mid)
+            entries = []
+            for k, v in all_defs.items():
+                if k in known_kinds:
+                    entries.append({'_id': k, **v})
+            entries.sort(key=lambda e: e.get('name', e['_id']))
+            self.encyclopedia_entries = entries
+        else:
+            path = os.path.join(base, 'items', f'{category}.json')
+            try:
+                with open(path, encoding='utf-8') as f:
+                    all_items = json.load(f)
+            except Exception:
+                self.encyclopedia_entries = []
+                return
+            entries = []
+            for entry in all_items:
+                iid = entry.get('id', '')
+                if iid in known_ids:
+                    entries.append(entry)
+            entries.sort(key=lambda e: e.get('name', e.get('id', '')))
+            self.encyclopedia_entries = entries
+
+    def _draw_encyclopedia(self):
+        """Draw the encyclopedia overlay — category, list, or detail view."""
+        draw_overlay(self.screen, 160)
+
+        bw = min(900, GAME_W - 40)
+        by_base = 60
+        bx = (GAME_W - bw) // 2
+
+        _CAT_LABELS = {
+            '':          'Encyclopedia',
+            'bestiary':  'Bestiary — Monsters',
+            'weapon':    'Armory — Weapons',
+            'armor':     'Armor & Shields',
+            'accessory': 'Accessories',
+            'scroll':    'Scrolls',
+            'wand':      'Wands',
+            'spellbook': 'Spellbooks',
+        }
+
+        if self.encyclopedia_category == '':
+            # ── Category selection screen ─────────────────────────────────
+            bh = min(460, WINDOW_H - 40)
+            by = (WINDOW_H - bh) // 2
+            draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.GOLD)
+            draw_header_bar(self.screen, (bx, by, bw, 44),
+                            text="ENCYCLOPEDIA",
+                            font=self.font_md, text_color=FP.GOLD_BRIGHT)
+            self.screen.blit(
+                self.font_sm.render("Select a category to browse your discovered knowledge.",
+                                    True, FP.BODY_TEXT),
+                (bx + 20, by + 48)
+            )
+            draw_divider(self.screen, bx + 10, by + 72, bw - 20)
+
+            cats = [
+                ('1', 'Bestiary',        'Monsters you have encountered'),
+                ('2', 'Armory',          'Weapons'),
+                ('3', 'Armor',           'Armor & Shields'),
+                ('4', 'Accessories',     'Rings and amulets'),
+                ('5', 'Scrolls',         'Scrolls you have read'),
+                ('6', 'Wands',           'Wands you have used'),
+                ('7', 'Spellbooks',      'Spells you have learned'),
+            ]
+            cy = by + 88
+            ROW_H = 46
+            for key_lbl, cat_name, cat_desc in cats:
+                pygame.draw.rect(self.screen, FP.MIDNIGHT_MID,
+                                 (bx + 10, cy, bw - 20, ROW_H - 4), border_radius=6)
+                self.screen.blit(
+                    self.font_md.render(f"[{key_lbl}]", True, FP.GOLD_BRIGHT),
+                    (bx + 20, cy + 8)
+                )
+                self.screen.blit(
+                    self.font_md.render(cat_name, True, FP.BODY_TEXT),
+                    (bx + 70, cy + 8)
+                )
+                self.screen.blit(
+                    self.font_sm.render(cat_desc, True, FP.FADED_TEXT),
+                    (bx + 300, cy + 12)
+                )
+                cy += ROW_H
+
+            hint_y = by + bh - 34
+            draw_divider(self.screen, bx + 10, hint_y - 8, bw - 20)
+            hint = self.font_sm.render("1-7: select category  |  ESC: close", True, FP.HINT_TEXT)
+            self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
+            return
+
+        header_label = _CAT_LABELS.get(self.encyclopedia_category, self.encyclopedia_category.title())
+
+        if self._encyclopedia_entry is not None:
+            # ── Entry detail view ─────────────────────────────────────────
+            entry = self._encyclopedia_entry
+            bh = min(560, WINDOW_H - 40)
+            by = (WINDOW_H - bh) // 2
+            draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.ARCANE_BRIGHT)
+            draw_header_bar(self.screen, (bx, by, bw, 44),
+                            text=f"ENCYCLOPEDIA — {header_label.upper()}",
+                            font=self.font_md, text_color=FP.GOLD_BRIGHT)
+            draw_divider(self.screen, bx + 10, by + 48, bw - 20)
+
+            y = by + 56
+            name = entry.get('name', entry.get('_id', '?'))
+            name_surf = self.font_lg.render(self._fix_name_case(name), True, FP.GOLD_PALE)
+            self.screen.blit(name_surf, (bx + 20, y))
+            y += 36
+
+            stat_lines = []
+            if self.encyclopedia_category == 'bestiary':
+                hp = entry.get('hp', entry.get('max_hp', '?'))
+                thac0 = entry.get('thac0', '?')
+                speed = entry.get('speed', 1)
+                stat_lines.append(f"HP: {hp}    THAC0: {thac0}    Speed: {speed}")
+                res = entry.get('resistances', [])
+                wks = entry.get('weaknesses', [])
+                if res:
+                    stat_lines.append(f"Resists: {', '.join(res)}")
+                if wks:
+                    stat_lines.append(f"Weak to: {', '.join(wks)}")
+                for atk in entry.get('attacks', []):
+                    line = f"  \u2022 {atk.get('name','?')}: {atk.get('damage','?')} ({atk.get('type','physical')})"
+                    eff = atk.get('effect')
+                    if eff:
+                        line += f"  \u2192 {eff} {int(atk.get('effect_chance',0)*100)}%"
+                    stat_lines.append(line)
+                lore_text = entry.get('lore', 'No lore recorded.')
+            elif self.encyclopedia_category == 'weapon':
+                stat_lines.append(f"Type: {entry.get('weapon_class','?')}  |  Tier: {entry.get('tier','?')}")
+                stat_lines.append(f"Damage: {entry.get('base_damage','?')}  |  Types: {', '.join(entry.get('damage_types',['physical']))}")
+                if entry.get('two_handed'):
+                    stat_lines.append("Two-handed")
+                lore_text = entry.get('lore', 'No further records found.')
+            elif self.encyclopedia_category in ('armor', 'shield'):
+                stat_lines.append(f"AC Bonus: -{entry.get('ac_bonus','?')}  |  Tier: {entry.get('tier','?')}")
+                if entry.get('slot'):
+                    stat_lines.append(f"Slot: {entry['slot']}")
+                lore_text = entry.get('lore', 'No further records found.')
+            elif self.encyclopedia_category == 'accessory':
+                efx = entry.get('effects', {})
+                if 'status' in efx:
+                    stat_lines.append(f"Grants: {efx['status']}")
+                elif 'stat' in efx:
+                    stat_lines.append(f"{efx['stat']} +{efx.get('amount',0)}")
+                lore_text = entry.get('lore', 'No further records found.')
+            elif self.encyclopedia_category == 'wand':
+                stat_lines.append(f"Effect: {entry.get('effect','?')}")
+                stat_lines.append(f"Charges: {entry.get('charges','?')}/{entry.get('max_charges','?')}")
+                lore_text = entry.get('lore', 'No further records found.')
+            elif self.encyclopedia_category == 'scroll':
+                stat_lines.append(f"Effect: {entry.get('effect','?')}")
+                lore_text = entry.get('lore', 'No further records found.')
+            elif self.encyclopedia_category == 'spellbook':
+                stat_lines.append(f"Teaches: {entry.get('spell_name','?')}  |  MP Cost: {entry.get('mp_cost','?')}")
+                lore_text = entry.get('lore', 'No further records found.')
+            else:
+                lore_text = entry.get('lore', 'No further records found.')
+
+            stat_col = (180, 200, 230)
+            for line in stat_lines:
+                surf = self.font_sm.render(line, True, stat_col)
+                self.screen.blit(surf, (bx + 20, y))
+                y += 22
+
+            y += 6
+            pygame.draw.line(self.screen, (40, 60, 120), (bx + 20, y), (bx + bw - 20, y))
+            y += 12
+            lore_hdr = self.font_sm.render("— LORE —", True, (80, 120, 200))
+            self.screen.blit(lore_hdr, (bx + (bw - lore_hdr.get_width()) // 2, y))
+            y += 22
+
+            lore_lines = self._wrap_text(lore_text, self.font_sm, bw - 44)
+            for line in lore_lines:
+                if y + self.font_sm.get_height() > by + bh - 40:
+                    break
+                self.screen.blit(self.font_sm.render(line, True, (200, 215, 240)), (bx + 22, y))
+                y += self.font_sm.get_height() + 3
+
+            hint_y = by + bh - 28
+            hint = self.font_sm.render("ESC: back to list", True, FP.HINT_TEXT)
+            self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
+            return
+
+        # ── Entry list view ───────────────────────────────────────────────
+        entries = self.encyclopedia_entries
+        n = len(entries)
+        ROW_H = 44
+        visible_rows = min(n, 14)
+        bh = min(96 + visible_rows * ROW_H + 52, WINDOW_H - 40)
+        by = (WINDOW_H - bh) // 2
+
+        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.ARCANE_BRIGHT)
+        draw_header_bar(self.screen, (bx, by, bw, 44),
+                        text=f"ENCYCLOPEDIA — {header_label.upper()}  ({n} known)",
+                        font=self.font_md, text_color=FP.GOLD_BRIGHT)
+        draw_divider(self.screen, bx + 10, by + 48, bw - 20)
+
+        if n == 0:
+            msg = self.font_md.render("Nothing discovered yet in this category.", True, FP.FADED_TEXT)
+            self.screen.blit(msg, (bx + (bw - msg.get_width()) // 2, by + 80))
+        else:
+            # Scroll window around selection
+            sel = self.encyclopedia_selection
+            start = max(0, min(sel - visible_rows // 2, n - visible_rows))
+            cy = by + 56
+            for idx in range(start, min(start + visible_rows, n)):
+                entry = entries[idx]
+                iy = cy
+                is_sel = (idx == sel)
+                row_bg = (40, 30, 80) if is_sel else (FP.MIDNIGHT_MID if idx % 2 == 0 else FP.MIDNIGHT)
+                pygame.draw.rect(self.screen, row_bg,
+                                 (bx + 10, iy, bw - 20, ROW_H - 4), border_radius=5)
+                if is_sel:
+                    pygame.draw.rect(self.screen, FP.ARCANE_BRIGHT,
+                                     (bx + 10, iy, bw - 20, ROW_H - 4), 1, border_radius=5)
+                entry_name = entry.get('name', entry.get('_id', '?'))
+                name_col = FP.GOLD_PALE if is_sel else FP.BODY_TEXT
+                self.screen.blit(
+                    self.font_md.render(self._fix_name_case(entry_name), True, name_col),
+                    (bx + 20, iy + 8)
+                )
+                # Brief extra info on same row
+                brief = ''
+                if self.encyclopedia_category == 'bestiary':
+                    hp = entry.get('hp', entry.get('max_hp', '?'))
+                    min_lvl = entry.get('min_level', '?')
+                    brief = f"HP {hp}  |  min lvl {min_lvl}"
+                elif self.encyclopedia_category == 'weapon':
+                    brief = f"{entry.get('weapon_class','?')}  {entry.get('base_damage','?')} dmg"
+                elif self.encyclopedia_category in ('armor',):
+                    brief = f"{entry.get('slot','?')}  -{entry.get('ac_bonus','?')} AC"
+                elif self.encyclopedia_category == 'wand':
+                    brief = f"effect: {entry.get('effect','?')}"
+                elif self.encyclopedia_category == 'scroll':
+                    brief = f"effect: {entry.get('effect','?')}"
+                elif self.encyclopedia_category == 'spellbook':
+                    brief = f"teaches: {entry.get('spell_name','?')}"
+                if brief:
+                    self.screen.blit(
+                        self.font_sm.render(brief, True, FP.FADED_TEXT),
+                        (bx + bw - self.font_sm.size(brief)[0] - 20, iy + 12)
+                    )
+                cy += ROW_H
+
+        hint_y = by + bh - 34
+        draw_divider(self.screen, bx + 10, hint_y - 8, bw - 20)
+        hint = self.font_sm.render(
+            "Up/Down: navigate  |  Enter: view details  |  ESC: categories", True, FP.HINT_TEXT
+        )
+        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
+
+    def _draw_hint_screen(self):
+        """Display a Recall Lore result — parchment-style hint overlay."""
+        from fantasy_ui import FP, get_font
+        hint_text = getattr(self, '_lore_hint_text', None)
+        chain     = getattr(self, '_lore_hint_chain', 0)
+        if hint_text is None:
+            self.state = STATE_PLAYER
+            return
+
+        overlay = pygame.Surface((WINDOW_W, WINDOW_H), pygame.SRCALPHA)
+        overlay.fill((0, 0, 0, 180))
+        self.screen.blit(overlay, (0, 0))
+
+        bw, bh = 760, 280
+        bx = (GAME_W - bw) // 2
+        by = (WINDOW_H - bh) // 2
+
+        # Parchment-warm background
+        pygame.draw.rect(self.screen, (24, 18, 8), (bx, by, bw, bh), border_radius=10)
+        pygame.draw.rect(self.screen, (160, 130, 60), (bx, by, bw, bh), 2, border_radius=10)
+        pygame.draw.rect(self.screen, (80, 65, 25), (bx+4, by+4, bw-8, bh-8), 1, border_radius=8)
+
+        font_title = get_font('heading', 20)
+        font_body  = get_font('body', 19)
+        font_small = get_font('body', 16)
+
+        # Chain quality label
+        quality_labels = {1: "Vague Recollection", 2: "Useful Memory",
+                          3: "Clear Knowledge", 4: "Deep Lore", 5: "Ancient Wisdom"}
+        label = quality_labels.get(chain, "Lore")
+        stars = '\u2605' * chain + '\u2606' * (5 - chain)
+
+        title_surf = font_title.render(f"RECALL LORE  —  {label}", True, (220, 180, 80))
+        self.screen.blit(title_surf, (bx + (bw - title_surf.get_width()) // 2, by + 14))
+
+        stars_surf = font_small.render(stars, True, (200, 160, 60))
+        self.screen.blit(stars_surf, (bx + (bw - stars_surf.get_width()) // 2, by + 40))
+
+        pygame.draw.line(self.screen, (100, 80, 30),
+                         (bx + 30, by + 62), (bx + bw - 30, by + 62))
+
+        # Wrap hint text
+        words = hint_text.split()
+        lines, line = [], []
+        max_w = bw - 60
+        for word in words:
+            test = ' '.join(line + [word])
+            if font_body.size(test)[0] > max_w:
+                if line:
+                    lines.append(' '.join(line))
+                line = [word]
+            else:
+                line.append(word)
+        if line:
+            lines.append(' '.join(line))
+
+        y = by + 78
+        for ln in lines:
+            surf = font_body.render(ln, True, (230, 210, 160))
+            self.screen.blit(surf, (bx + 30, y))
+            y += font_body.get_height() + 4
+
+        # Cooldown notice
+        cd = self.player.recall_lore_cooldown
+        cd_surf = font_small.render(
+            f"Next recall available in {cd} turns  \u2014  [ any key ] to close",
+            True, (100, 85, 45)
+        )
+        self.screen.blit(cd_surf, (bx + (bw - cd_surf.get_width()) // 2, by + bh - 26))
+
     def _draw_help_screen(self):
         overlay = pygame.Surface((WINDOW_W, WINDOW_H), pygame.SRCALPHA)
         overlay.fill((0, 0, 0, 195))
         self.screen.blit(overlay, (0, 0))
 
-        bw, bh = min(1060, GAME_W - 40), min(WINDOW_H - 40, WINDOW_H - 40)
+        bw      = min(900, GAME_W - 40)
+        line_h  = 26
+        col_break = 13
+        content_h = col_break * line_h   # taller of the two columns
+        bh      = 66 + content_h + 24   # y-start of rows + rows + footer padding
         bx = (GAME_W - bw) // 2
         by = (WINDOW_H - bh) // 2
 
@@ -4475,38 +5856,38 @@ class Game:
             # (key_label, description, color)
             # FANTASY: Section headers use GOLD_PALE; commands use BODY_TEXT; keys use GOLD_BRIGHT
             ("MOVEMENT", None, FP.GOLD_PALE),
-            ("Arrows / hjkl",  "Move / attack",                      FP.BODY_TEXT),
-            ("ACTIONS", None, FP.GOLD_PALE),
-            ("G  or  ,",       "Pick up item",                        FP.BODY_TEXT),
-            ("E",              "Equip weapon/armor  [Geography]",     FP.BODY_TEXT),
-            ("R",              "Equip accessory  [History]",          FP.BODY_TEXT),
-            ("U",              "Use wand  [Science]",                 FP.BODY_TEXT),
-            ("S",              "Read scroll  [Grammar]",              FP.BODY_TEXT),
-            ("I",              "Identify item  [Philosophy]",         FP.BODY_TEXT),
-            ("H",              "Harvest corpse  [Animal]",            FP.BODY_TEXT),
-            ("C",              "Cook ingredient  [Cooking]",          FP.BODY_TEXT),
-            ("Z",              "Eat food / raw ingredient",           FP.BODY_TEXT),
-            ("\\",             "Pray  [Theology]",                    (200, 180, 255)),
-            ("F",              "Fire ranged weapon  [Math]",          FP.BODY_TEXT),
-            ("P",              "Pick lock  [Economics]",              FP.BODY_TEXT),
-            ("A",              "Attack / open container",             FP.BODY_TEXT),
-            ("X",              "Examine corpse lore  [Philosophy]",   FP.BODY_TEXT),
-            ("NAVIGATION", None, FP.GOLD_PALE),
-            (">",              "Descend stairs",                      FP.BODY_TEXT),
-            ("<",              "Ascend / exit dungeon",               FP.BODY_TEXT),
+            ("Arrows / hjkl",  "Move / attack",                                          FP.BODY_TEXT),
+            ("ITEMS", None, FP.GOLD_PALE),
+            ("G  or  ,",       "Pick up item",                                            FP.BODY_TEXT),
+            ("E",              "Equip / Unequip",                                          FP.BODY_TEXT),
+            ("I",              "Identify items",                                           FP.BODY_TEXT),
+            ("S",              "Read scroll / spellbook",                                  FP.BODY_TEXT),
+            ("M",              "Cast spell",                                               FP.BODY_TEXT),
+            ("Z",              "Zap wand",                                                 FP.BODY_TEXT),
+            ("U",              "Eat food",                                                 FP.BODY_TEXT),
+            ("C",              "Cook ingredient",                                          FP.BODY_TEXT),
+            ("H",              "Harvest corpse",                                           FP.BODY_TEXT),
+            ("COMBAT & EXPLORATION", None, FP.GOLD_PALE),
+            ("F",              "Fire ranged weapon",                                       FP.BODY_TEXT),
+            ("X",              "Examine identified item",                                  FP.BODY_TEXT),
+            ("B",              "Encyclopedia",                                             FP.BODY_TEXT),
+            ("A",              "Attack / bash container",                                  FP.BODY_TEXT),
+            ("P",              "Pick lock",                                                FP.BODY_TEXT),
+            (">  or  <",       "Use stairs",                                               FP.BODY_TEXT),
+            ("KNOWLEDGE", None, FP.GOLD_PALE),
+            ("\\",             "Pray at altar",                                            (200, 180, 255)),
+            ("N",              "Recall Lore",                                              (120, 200, 240)),
             ("QUIZ ANSWERS", None, FP.GOLD_PALE),
-            ("1  2  3  4",     "Answer quiz questions",               FP.GOLD_BRIGHT),
-            ("MISC", None, FP.GOLD_PALE),
-            ("?",              "This help screen",                    FP.BODY_TEXT),
-            ("ESC",            "Cancel menu / quit game",             FP.BODY_TEXT),
+            ("1  2  3  4",     "Answer questions during quiz",                            FP.GOLD_BRIGHT),
+            ("SYSTEM", None, FP.GOLD_PALE),
+            ("?",              "This help screen",                                         FP.BODY_TEXT),
+            ("ESC",            "Cancel / close menu",                                      FP.BODY_TEXT),
         ]
 
         col_w   = (bw - 40) // 2
         left_x  = bx + 20
         right_x = bx + 20 + col_w
         y       = by + 66
-        line_h  = 26
-        col_break = 12
 
         for idx, entry in enumerate(_COMMANDS):
             key_label, desc, color = entry
@@ -4520,7 +5901,14 @@ class Game:
             else:
                 # FANTASY: Key label in GOLD_BRIGHT, description in supplied color
                 ksurf = self.font_sm.render(key_label, True, FP.GOLD_BRIGHT)
+                # Truncate description if it would overflow the column
+                desc_max_w = col_w - 170
                 dsurf = self.font_sm.render(desc, True, color)
+                if dsurf.get_width() > desc_max_w:
+                    trunc = desc
+                    while len(trunc) > 1 and self.font_sm.size(trunc + '\u2026')[0] > desc_max_w:
+                        trunc = trunc[:-1]
+                    dsurf = self.font_sm.render(trunc + '\u2026', True, color)
                 self.screen.blit(ksurf, (cx_, cy_))
                 self.screen.blit(dsurf, (cx_ + 160, cy_))
 

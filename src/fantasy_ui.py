@@ -114,8 +114,8 @@ def get_font(role: str, size: int, bold: bool = False) -> pygame.font.Font:
     # FANTASY: Return a themed font.
     role: 'title'   → Cinzel Bold (large display, all-caps)
           'heading' → Cinzel Regular (section headers)
-          'body'    → IM Fell English (readable body text)
-          'small'   → IM Fell English small
+          'body'    → Consolas (crisp readable body text)
+          'small'   → Consolas small
           'italic'  → IM Fell English Italic
           'gothic'  → UnifrakturMaguntia (dramatic blackletter)
           'mono'    → Consolas (monospace — code/numbers)
@@ -125,7 +125,8 @@ def get_font(role: str, size: int, bold: bool = False) -> pygame.font.Font:
     if key in _font_cache:
         return _font_cache[key]
 
-    if role == 'mono':
+    if role in ('mono', 'body', 'small'):
+        # Use Consolas for all body/small roles — crisp and highly readable
         font = pygame.font.SysFont('consolas,courier new,monospace', size, bold=bold)
     else:
         fname = _ROLE_FILES.get(role, 'Cinzel-Regular.ttf')

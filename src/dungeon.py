@@ -430,7 +430,7 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
 
     # ── Regular items (weapons/armor/shield/accessories/wands/scrolls/ammo) — 33% per room ──
     templates: list = []
-    for cls_name in ('weapon', 'armor', 'shield', 'accessory', 'wand', 'scroll', 'ammo'):
+    for cls_name in ('weapon', 'armor', 'shield', 'accessory', 'wand', 'scroll', 'spellbook', 'ammo'):
         try:
             templates += load_items(cls_name)
         except FileNotFoundError:

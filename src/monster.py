@@ -68,6 +68,9 @@ class Monster:
             self.status_effects[name] -= 1
             if self.status_effects[name] <= 0:
                 del self.status_effects[name]
+                if name == 'petrifying':
+                    self.hp = 0
+                    self.alive = False
         if bleeding_dmg > 0:
             self.take_damage(bleeding_dmg)
         if poison_dmg > 0:

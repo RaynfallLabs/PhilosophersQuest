@@ -351,9 +351,10 @@
     ],
     "tier": 1,
     "sp": 70,
-    "bonus_type": "random_stat",
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
     "bonus_amount": 1,
-    "lore": "A foul but filling stew. The dungeon has lower standards."
+    "lore": "A foul but filling stew. The dungeon has lower standards. Two scrawny survivors — the toughness transfers."
   },
   "serpent_frog_bisque": {
     "name": "Serpent and Frog Bisque",
@@ -467,9 +468,10 @@
     ],
     "tier": 2,
     "sp": 105,
-    "bonus_type": "combat_stat",
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
     "bonus_amount": 1,
-    "lore": "When goblinoid armies march, both bloods end up in the pot."
+    "lore": "When goblinoid armies march, both bloods end up in the pot. Soldier's strength."
   },
   "lizard_frog_ragout": {
     "name": "Cave Amphibian Ragout",
@@ -494,8 +496,8 @@
     "sp": 150,
     "bonus_type": "stat",
     "bonus_stat": "CON",
-    "bonus_amount": 1,
-    "lore": "Troll flesh regenerates even during cooking. Fortunately, this is tasty."
+    "bonus_amount": 2,
+    "lore": "Troll flesh regenerates even during cooking. The combined vitality is extraordinary."
   },
   "hobgoblin_ogre_feast": {
     "name": "Warlord's War Feast",
@@ -505,9 +507,10 @@
     ],
     "tier": 3,
     "sp": 140,
-    "bonus_type": "two_stats",
-    "bonus_amount": 1,
-    "lore": "The spoils of two brutal commanders, cooked together."
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 2,
+    "lore": "The spoils of two brutal commanders, cooked together. Raw dominance in every bite."
   },
   "spectral_eye_consomme": {
     "name": "Spectral Eye Consommé",
@@ -519,8 +522,8 @@
     "sp": 120,
     "bonus_type": "stat",
     "bonus_stat": "WIS",
-    "bonus_amount": 1,
-    "lore": "You can see things clearly after eating this. Things you might prefer not to see."
+    "bonus_amount": 2,
+    "lore": "You can see beyond the veil after eating this. The dead share what the living cannot know."
   },
   "shadow_crystal_broth": {
     "name": "Shadow-Walker's Broth",
@@ -545,8 +548,8 @@
     "sp": 125,
     "bonus_type": "stat",
     "bonus_stat": "INT",
-    "bonus_amount": 1,
-    "lore": "Ethereal ingredients make for an ethereally potent dish."
+    "bonus_amount": 2,
+    "lore": "Ethereal ingredients merge at the boundary of thought and existence. Understanding comes unbidden."
   },
   "bugbear_troll_roast": {
     "name": "Brute's Double Roast",
@@ -558,8 +561,8 @@
     "sp": 155,
     "bonus_type": "stat",
     "bonus_stat": "STR",
-    "bonus_amount": 1,
-    "lore": "Two of the dungeon's most feared brutes, slow-roasted until the rage leaves them."
+    "bonus_amount": 2,
+    "lore": "Two of the dungeon's most feared brutes, slow-roasted until the rage leaves them and enters you."
   },
   "spider_phase_silk_dish": {
     "name": "Phased Silk Noodles",
@@ -571,8 +574,8 @@
     "sp": 115,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
-    "bonus_amount": 1,
-    "lore": "Normal and phase silk twined together. The noodles partially phase through your bowl."
+    "bonus_amount": 2,
+    "lore": "Normal and phase silk twined together. Your movements become as fluid as the phasing itself."
   },
   "demon_heart_roast": {
     "name": "Demon Heart Roast",
@@ -583,8 +586,8 @@
     "tier": 4,
     "sp": 180,
     "bonus_type": "two_stats",
-    "bonus_amount": 1,
-    "lore": "You should not be cooking this. And yet here you are."
+    "bonus_amount": 2,
+    "lore": "You should not be cooking this. And yet here you are. Infernal power floods through you."
   },
   "elder_vampire_phylactery_elixir": {
     "name": "Undeath Synthesis Elixir",
@@ -596,8 +599,8 @@
     "sp": 200,
     "bonus_type": "stat",
     "bonus_stat": "WIS",
-    "bonus_amount": 1,
-    "lore": "Undeath concentrated into a beverage. Technically not recommended."
+    "bonus_amount": 2,
+    "lore": "Centuries of accumulated vampire cunning and a lich's distilled intellect. Ancient wisdom absorbed."
   },
   "cerebral_eye_pudding": {
     "name": "Mind Flayer's Pudding",
@@ -607,9 +610,10 @@
     ],
     "tier": 4,
     "sp": 190,
-    "bonus_type": "two_stats",
-    "bonus_amount": 1,
-    "lore": "Mind flayers eat brains. You eat their fluid. Who is the apex predator now?"
+    "bonus_type": "stat",
+    "bonus_stat": "INT",
+    "bonus_amount": 3,
+    "lore": "Mind flayers eat brains. You eat their fluid. The alien intelligence floods your thoughts, and you are sharper for it."
   },
   "death_essence_soul_stew": {
     "name": "Death's Harvest Stew",
@@ -646,8 +650,8 @@
     "tier": 4,
     "sp": 220,
     "bonus_type": "two_stats",
-    "bonus_amount": 1,
-    "lore": "Fire and scale — the essence of a dragon in one dangerous drink."
+    "bonus_amount": 2,
+    "lore": "Fire and scale — the draconic essence distilled into one supremely dangerous drink."
   },
   "chaos_void_brew": {
     "name": "Void Chaos Brew",
@@ -671,8 +675,8 @@
     "sp": 145,
     "bonus_type": "stat",
     "bonus_stat": "INT",
-    "bonus_amount": 1,
-    "lore": "Dark sorcery and ancient bone powder, combined by a very brave cook."
+    "bonus_amount": 2,
+    "lore": "Dark sorcery and ancient bone powder. The forbidden knowledge seeps in with every drop."
   },
   "changeling_puca_illusion_soup": {
     "name": "Fae Illusion Soup",
@@ -697,8 +701,8 @@
     "sp": 110,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
-    "bonus_amount": 1,
-    "lore": "Drow spend centuries perfecting their venoms. A small amount, properly prepared, sharpens reflexes."
+    "bonus_amount": 2,
+    "lore": "Drow spend centuries perfecting their venoms. Neutralized and taken as a tincture, the body learns their precision."
   },
   "basilisk_medusa_grand_feast": {
     "name": "Gorgon's Grand Feast",
@@ -807,10 +811,9 @@
     ],
     "tier": 4,
     "sp": 175,
-    "bonus_type": "stat",
-    "bonus_stat": "STR",
+    "bonus_type": "two_stats",
     "bonus_amount": 2,
-    "lore": "Werewolf and troll — two creatures defined by savage regeneration and strength."
+    "lore": "Werewolf ferocity and troll vitality. Two natures of unstoppable savagery, one broth."
   },
   "raven_eagle_consomme": {
     "name": "Sky Hunter's Consommé",
@@ -835,8 +838,8 @@
     "sp": 130,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
-    "bonus_amount": 1,
-    "lore": "Two magnificent serpents. One divine, one natural. Scales from both, prepared with reverence."
+    "bonus_amount": 2,
+    "lore": "Two magnificent serpents. One divine, one natural. Their serpentine grace becomes yours."
   },
   "owlbear_griffin_feast": {
     "name": "Chimeric Predator Feast",
@@ -847,8 +850,8 @@
     "tier": 4,
     "sp": 200,
     "bonus_type": "two_stats",
-    "bonus_amount": 1,
-    "lore": "Two hybrid creatures that shouldn't exist, combined into a meal that probably shouldn't exist either."
+    "bonus_amount": 2,
+    "lore": "Two hybrid predators that shouldn't exist — their impossible power becomes inexplicably yours."
   },
   "barrow_embalming_stew": {
     "name": "Tomb Guardian Stew",
@@ -860,8 +863,8 @@
     "sp": 110,
     "bonus_type": "stat",
     "bonus_stat": "CON",
-    "bonus_amount": 1,
-    "lore": "Ancient preservatives and the dust of barrows. Your body becomes harder to destroy."
+    "bonus_amount": 2,
+    "lore": "Ancient preservatives that kept corpses intact for centuries. Renders the living nearly as indestructible."
   },
   "wisp_shadow_brew": {
     "name": "Twilight Brew",
@@ -873,8 +876,8 @@
     "sp": 125,
     "bonus_type": "stat",
     "bonus_stat": "WIS",
-    "bonus_amount": 1,
-    "lore": "Light and shadow at the boundary between worlds. Wisdom comes from understanding both."
+    "bonus_amount": 2,
+    "lore": "Light and shadow at the boundary between worlds. Only the wise understand both — and after this, you will."
   },
   "orc_bugbear_conquest": {
     "name": "Conqueror's Pottage",
@@ -884,8 +887,9 @@
     ],
     "tier": 2,
     "sp": 110,
-    "bonus_type": "combat_stat",
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
     "bonus_amount": 1,
-    "lore": "Goblinoid warriors eat together before battle. You eat them after."
+    "lore": "Goblinoid warriors eat together before battle. You eat them after. Conqueror's strength."
   }
 }

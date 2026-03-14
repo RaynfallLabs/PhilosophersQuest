@@ -3,7 +3,7 @@ import pygame
 # FANTASY: Import theme helpers from the central fantasy_ui module
 from fantasy_ui import FP, get_font, draw_panel, draw_divider, draw_shadow_text, ITEM_COLOR
 
-SIDEBAR_W = 320
+SIDEBAR_W = 430
 
 # FANTASY: Rich fantasy-palette message colors
 _MSG_COLORS = {
@@ -23,8 +23,7 @@ class MessageLog:
 
     def __init__(self):
         self.entries: list[tuple[str, str]] = []
-        # FANTASY: Use grimoire body font instead of consolas
-        self._font = get_font('body', 16)
+        self._font = get_font('body', 20)
 
     def add(self, text: str, msg_type: str = 'info'):
         self.entries.append((text, msg_type))
@@ -36,7 +35,7 @@ class MessageLog:
         pygame.draw.rect(screen, FP.MIDNIGHT, (x, y, w, h))
         pygame.draw.line(screen, FP.GOLD_DARK, (x, y), (x + w, y), 1)
 
-        line_h = 21
+        line_h = 26
         max_lines = (h - 8) // line_h
         visible = self.entries[-max_lines:]
 
@@ -71,10 +70,10 @@ class Sidebar:
         self.screen = screen
         self.x = x
         self.w = SIDEBAR_W
-        # FANTASY: Grimoire font set
-        self._fsm   = get_font('body', 16)
-        self._fbold = get_font('body', 16, bold=True)
-        self._fhd   = get_font('heading', 15)
+        # FANTASY: Grimoire font set — larger for readability
+        self._fsm   = get_font('body', 20)
+        self._fbold = get_font('body', 20, bold=True)
+        self._fhd   = get_font('heading', 19)
 
     def draw(self, player, dungeon_level: int, turn_count: int):
         h = self.screen.get_height()
@@ -96,12 +95,12 @@ class Sidebar:
     def _header(self, text: str, y: int) -> int:
         # FANTASY: Section header with midnight-mid bg and gold-bright text
         pygame.draw.rect(self.screen, FP.MIDNIGHT_MID,
-                         (self.x + self.PAD, y, self.w - self.PAD * 2, 19))
+                         (self.x + self.PAD, y, self.w - self.PAD * 2, 24))
         self.screen.blit(
             self._fhd.render(text, True, FP.GOLD_BRIGHT),
-            (self.x + self.PAD + 3, y)
+            (self.x + self.PAD + 3, y + 2)
         )
-        return y + 21
+        return y + 26
 
     def _bar(self, y: int, label: str, val: int, max_val: int,
              bar_color: tuple) -> int:
@@ -110,8 +109,9 @@ class Sidebar:
             self._fsm.render(label, True, FP.FADED_TEXT),
             (self.x + self.PAD, y)
         )
+        readout_w = 100
         bx = self.x + self.PAD + 26
-        bw = self.w - self.PAD * 2 - 26 - 62
+        bw = self.w - self.PAD * 2 - 26 - readout_w
         bh = 10
         ratio = max(0.0, min(1.0, val / max(1, max_val)))
 
@@ -123,12 +123,10 @@ class Sidebar:
                              (bx, y + 1, max(2, int(bw * ratio)), bh),
                              border_radius=3)
 
-        # FANTASY: Readout in body text color
-        self.screen.blit(
-            self._fsm.render(f"{val}/{max_val}", True, FP.BODY_TEXT),
-            (bx + bw + 4, y)
-        )
-        return y + 18
+        # FANTASY: Readout right-aligned inside reserved space
+        rsurf = self._fsm.render(f"{val}/{max_val}", True, FP.BODY_TEXT)
+        self.screen.blit(rsurf, (bx + bw + readout_w - rsurf.get_width(), y))
+        return y + 22
 
     # ------------------------------------------------------------------
     # Sections
@@ -157,15 +155,15 @@ class Sidebar:
         col_w = (self.w - self.PAD * 2) // 3
         for i, (name, val) in enumerate(attrs):
             ax = self.x + self.PAD + (i % 3) * col_w
-            ay = y + (i // 3) * 19
+            ay = y + (i // 3) * 24
             # FANTASY: INK_LIGHT label color
             self.screen.blit(
                 self._fsm.render(f"{name}:", True, FP.INK_LIGHT), (ax, ay)
             )
             # FANTASY: Gold for high, body text for mid, danger for low
             vc = FP.GOLD_BRIGHT if val > 12 else FP.BODY_TEXT if val >= 10 else FP.DANGER_TEXT
-            self.screen.blit(self._fbold.render(str(val), True, vc), (ax + 38, ay))
-        return y + 2 * 19 + self.SECTION_GAP
+            self.screen.blit(self._fbold.render(str(val), True, vc), (ax + 46, ay))
+        return y + 2 * 24 + self.SECTION_GAP
 
     def _status(self, player, dungeon_level: int, turn_count: int, y: int) -> int:
         from status_effects import EFFECT_INFO, DEBUFFS
@@ -182,7 +180,16 @@ class Sidebar:
         ]:
             self.screen.blit(self._fsm.render(text, True, color),
                              (self.x + self.PAD, y))
-            y += 18
+            y += 22
+
+        # Known spells count
+        spell_count = len(getattr(player, 'known_spells', {}))
+        if spell_count > 0:
+            self.screen.blit(
+                self._fsm.render(f"Spells {spell_count}", True, (100, 160, 255)),
+                (self.x + self.PAD, y)
+            )
+            y += 22
 
         # Prayer cooldown — FANTASY colors
         if player.prayer_cooldown > 0:
@@ -196,7 +203,21 @@ class Sidebar:
                 self._fsm.render("Prayer: Ready", True, FP.GOLD_PALE),
                 (self.x + self.PAD, y)
             )
-        y += 18
+        y += 22
+
+        # Recall Lore cooldown
+        if player.recall_lore_cooldown > 0:
+            lore_cd_color = (80, 160, 200)   # teal: knowledge cooling
+            self.screen.blit(
+                self._fsm.render(f"Lore:   {player.recall_lore_cooldown}t", True, lore_cd_color),
+                (self.x + self.PAD, y)
+            )
+        else:
+            self.screen.blit(
+                self._fsm.render("Lore:   Ready", True, (120, 200, 240)),
+                (self.x + self.PAD, y)
+            )
+        y += 22
 
         # Hunger indicator — FANTASY colors
         sp = player.sp
@@ -205,13 +226,25 @@ class Sidebar:
                 self._fbold.render("[Starving!]", True, FP.DANGER_TEXT),
                 (self.x + self.PAD, y)
             )
-            y += 19
+            y += 24
         elif sp < 60:
             self.screen.blit(
                 self._fbold.render("[Hungry]", True, FP.WARNING_TEXT),
                 (self.x + self.PAD, y)
             )
-            y += 19
+            y += 24
+
+        # Lockpick durability (if carrying one)
+        from items import Lockpick
+        lp = next((i for i in player.inventory if isinstance(i, Lockpick)), None)
+        if lp is not None:
+            ratio = lp.durability / lp.max_durability
+            lp_color = (FP.SUCCESS_TEXT if ratio > 0.5
+                        else FP.WARNING_TEXT if ratio > 0.25
+                        else FP.DANGER_TEXT)
+            lp_text = f"Lockpick: {lp.durability}/{lp.max_durability}  [{lp.name}]"
+            self.screen.blit(self._fsm.render(lp_text, True, lp_color), (self.x + self.PAD, y))
+            y += 22
 
         # Active status effects in a 2-column grid
         active = [(eid, val) for eid, val in player.status_effects.items() if val != 0]
@@ -224,9 +257,9 @@ class Sidebar:
                 display_name, rgb, _ = info
                 label = f"[{display_name}]"
                 ax = self.x + self.PAD + (i % 2) * col_w
-                ay = y + (i // 2) * 18
+                ay = y + (i // 2) * 22
                 self.screen.blit(self._fbold.render(label, True, rgb), (ax, ay))
-            y += ((len(active) + 1) // 2) * 18
+            y += ((len(active) + 1) // 2) * 22
 
         return y + self.SECTION_GAP
 
@@ -241,7 +274,11 @@ class Sidebar:
         ]:
             item = equipped.get(key)
             if item:
-                iname = item.name
+                # Name: show identified name if type is known, else unidentified name
+                known = (not hasattr(item, 'identified')
+                         or item.identified
+                         or item.id in player.known_item_ids)
+                iname = item.name if known else getattr(item, 'unidentified_name', item.name)
                 # Show ammo count for ranged weapons
                 if key == "weapon" and getattr(item, 'requires_ammo', None):
                     ammo_type = item.requires_ammo
@@ -250,15 +287,15 @@ class Sidebar:
                         if getattr(i, 'ammo_type', None) == ammo_type
                     )
                     iname += f" [{total} {ammo_type}s]"
-                # Cursed indicator
-                if getattr(item, 'cursed', False):
-                    iname += " {C}"
-                # Enchantment indicator
-                eb = getattr(item, 'enchant_bonus', 0)
-                if eb > 0:
-                    iname += f" +{eb}"
-                elif eb < 0:
-                    iname += f" {eb}"
+                # Modifiers only revealed when this specific instance was examined
+                if getattr(item, 'identified', True):
+                    eb = getattr(item, 'enchant_bonus', 0)
+                    if eb > 0:
+                        iname += f" +{eb}"
+                    elif eb < 0:
+                        iname += f" {eb}"
+                    if getattr(item, 'cursed', False):
+                        iname += " {C}"
             else:
                 iname = "\u2014"
             # FANTASY: Gold-pale for equipped items, dim ink for empty slots
@@ -270,7 +307,7 @@ class Sidebar:
             max_name_w = self.x + self.w - self.PAD - name_x
             iname = self._fit(self._fsm, self._cap(iname), max_name_w)
             self.screen.blit(self._fsm.render(iname, True, ic), (name_x, y))
-            y += 18
+            y += 22
         return y + self.SECTION_GAP
 
     def _inventory(self, player, y: int):
@@ -291,10 +328,10 @@ class Sidebar:
             self._fsm.render(f"Wt: {wt:.0f}/{lim}", True, wc),
             (self.x + self.PAD, y)
         )
-        y += 18
+        y += 22
 
         for letter, item in items:
-            if y > self.screen.get_height() - 16:
+            if y > self.screen.get_height() - 20:
                 self.screen.blit(
                     self._fsm.render("...", True, (85, 85, 105)),
                     (self.x + self.PAD, y)
@@ -308,12 +345,16 @@ class Sidebar:
                 (self.x + self.PAD, y)
             )
             count = getattr(item, 'count', None)
-            cname = self._cap(item.name)
+            known = (not hasattr(item, 'identified')
+                     or item.identified
+                     or item.id in player.known_item_ids)
+            raw_name = item.name if known else getattr(item, 'unidentified_name', item.name)
+            cname = self._cap(raw_name)
             display = f"{cname} x{count}" if count is not None else cname
-            max_disp_w = self.w - self.PAD * 2 - 19
+            max_disp_w = self.w - self.PAD * 2 - 24
             display = self._fit(self._fsm, display, max_disp_w)
             self.screen.blit(
                 self._fsm.render(display, True, ic),
-                (self.x + self.PAD + 19, y)
+                (self.x + self.PAD + 24, y)
             )
-            y += 18
+            y += 22

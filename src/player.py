@@ -18,7 +18,7 @@ class Player:
         # Resources
         self.max_hp = self.BASE_HP + self.CON
         self.hp = self.max_hp
-        self.max_sp = self.BASE_SP + self.CON
+        self.max_sp = self.BASE_SP + self.STR
         self.sp = self.max_sp
         self.max_mp = self.BASE_MP + self.INT
         self.mp = self.max_mp
@@ -40,12 +40,22 @@ class Player:
         self.prayer_cooldown: int   = 0   # turns remaining until next prayer
         self.prayer_boon_count: int = 0   # permanent bonuses received (diminishing returns)
 
+        # Recall Lore system
+        self.recall_lore_cooldown: int = 0  # turns remaining until next lore recall
+
+        # Special build flags
+        self.immortal: bool = False         # Dad: cannot die
+
         # Status effects: effect_id -> turns_remaining (or -1 for permanent)
         self.status_effects: dict[str, int] = {}
         # Fractional damage resistances: damage_type -> multiplier (0.0=immune,1.0=normal)
         self.resistances: dict[str, float] = {}
         # Item IDs the player has identified this run
         self.known_item_ids: set[str] = set()
+        # Monster kinds the player has encountered (seen in FOV)
+        self.known_monster_ids: set[str] = set()
+        # Spells learned from spellbooks: spell_id -> mp_cost
+        self.known_spells: dict[str, int] = {}
 
     # --- Resources ---
 
@@ -74,6 +84,8 @@ class Player:
         return actual
 
     def is_dead(self) -> bool:
+        if self.immortal and self.hp <= 0:
+            self.hp = self.max_hp   # snap back to full health instantly
         return self.hp <= 0
 
     def spend_sp(self, amount: int) -> bool:
@@ -100,6 +112,8 @@ class Player:
         self.max_hp += self.HP_PER_LEVEL
         rest_heal = max(self.HP_PER_LEVEL, int(self.max_hp * 0.05))
         self.hp = min(self.hp + rest_heal, self.max_hp)
+        mp_restore = max(2, self.INT // 5)
+        self.restore_mp(mp_restore)
 
     def restore_mp(self, amount: int):
         self.mp = min(self.max_mp, self.mp + amount)
@@ -172,6 +186,10 @@ class Player:
         if self.has_effect('hasted'):        mod *= 1.25
         return round(max(0.40, mod), 2)
 
+    def get_int_quiz_bonus(self) -> int:
+        """Extra quiz seconds for magic subjects (science/grammar/philosophy). +0.5s per INT above 10."""
+        return max(0, self.INT - 10) // 2
+
     def get_carry_limit(self) -> int:
         return self.CARRY_BASE + self.STR * self.CARRY_PER_STR
 
@@ -212,7 +230,8 @@ class Player:
         setattr(self, stat, getattr(self, stat) + amount)
         if stat == 'CON':
             self.max_hp = self.BASE_HP + self.CON
-            self.max_sp = self.BASE_SP + self.CON
+        elif stat == 'STR':
+            self.max_sp = self.BASE_SP + self.STR
         elif stat == 'INT':
             self.max_mp = self.BASE_MP + self.INT
 

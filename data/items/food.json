@@ -47,13 +47,13 @@
     "color": [180, 130, 200],
     "weight": 0.3,
     "min_level": 1,
-    "sp_restore": 20,
-    "hp_restore": 0,
-    "bonus_type": "random_stat",
-    "bonus_amount": 1,
+    "sp_restore": 25,
+    "hp_restore": 3,
+    "bonus_type": "none",
+    "bonus_amount": 0,
     "floor_spawn_weight": {"1-30": 50, "31-60": 40, "61-100": 25},
     "unidentified_name": "wild mushroom",
-    "lore": "A large cap of unknown subterranean mushroom, faintly luminescent at the gills. Consuming it restores some stamina and sometimes imparts a strange alchemical shift to the eater's physiology — scholars theorize the spores carry mutative properties."
+    "lore": "A large cap of unknown subterranean mushroom, faintly luminescent at the gills. Consuming it restores stamina and has mild restorative properties — dungeon foragers claim certain varieties even close minor wounds."
   },
   "apple": {
     "name": "apple",
@@ -118,9 +118,9 @@
     "weight": 1.0,
     "min_level": 5,
     "sp_restore": 55,
-    "hp_restore": 10,
-    "bonus_type": "combat_stat",
-    "bonus_amount": 1,
+    "hp_restore": 15,
+    "bonus_type": "none",
+    "bonus_amount": 0,
     "floor_spawn_weight": {"1-4": 0, "5-100": 25},
     "unidentified_name": "hearty stew",
     "lore": "A thick, rich stew of root vegetables and tender meat, still warm in its sealed clay pot. The recipe, passed down through generations of dungeon tavern-keepers, has been refined to maximize the fighting edge it gives to anyone who eats it — warriors speak of it almost reverently."

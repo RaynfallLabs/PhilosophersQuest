@@ -40,9 +40,9 @@ class LevelManager:
 
         dungeon = generate_dungeon(80, 50, level_num)
 
-        # Monster count scales with depth (higher ceiling for deep levels)
-        min_m = min(3 + (level_num - 1), 12)
-        max_m = min(5 + level_num, 18)
+        # Monster count scales with depth — matches balance targets (L1:2-3, L20:3-5, L50:5-9)
+        min_m = min(2 + level_num // 15, 7)
+        max_m = min(3 + level_num // 8, 11)
         monsters = spawn_monsters(dungeon.rooms, level_num, dungeon, min_m, max_m)
 
         items = spawn_items(dungeon.rooms, level_num, dungeon)

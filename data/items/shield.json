@@ -78,7 +78,7 @@
     "equip_threshold": 2,
     "quiz_tier": 2,
     "damage_resistances": {
-      "pierce": 0.90
+      "pierce": 0.9
     },
     "can_be_cursed": true,
     "enchant_bonus": 0,
@@ -124,7 +124,7 @@
     "equip_threshold": 2,
     "quiz_tier": 3,
     "damage_resistances": {
-      "lightning": 0.80
+      "lightning": 0.8
     },
     "can_be_cursed": false,
     "enchant_bonus": 0,
@@ -223,5 +223,161 @@
     "enchant_bonus": 0,
     "unidentified_name": "a jet-dark heavy shield",
     "lore": "A massive tower shield of pure adamantine, its surface an almost organic dark green-black. The metal is supernaturally dense — blunt weapons simply bounce off as though striking a mountain, though the weight demands exceptional constitution from its bearer."
+  },
+  "aegis_of_athena": {
+    "name": "Aegis of Athena",
+    "symbol": ")",
+    "color": [
+      200,
+      220,
+      255
+    ],
+    "weight": 4.0,
+    "min_level": 65,
+    "tier": 5,
+    "material": "adamantine",
+    "ac_bonus": 5,
+    "enchant_bonus": 0,
+    "equip_threshold": 5,
+    "quiz_tier": 5,
+    "damage_resistances": {
+      "fire": 0.35,
+      "magic": 0.4,
+      "cold": 0.2
+    },
+    "can_be_cursed": false,
+    "cursed": false,
+    "identified": false,
+    "unidentified_name": "a polished shield of supernatural brightness",
+    "floorSpawnWeight": {
+      "81-100": 2
+    },
+    "value": 9500,
+    "lore": "The aegis was not originally a shield but a goatskin breastplate — or a thundercloud — worn by Zeus and Athena. Homer describes Athena shaking it during battle to produce fear in armies. The Gorgoneion — Medusa's severed head — was mounted on it after Perseus made his gift. Athena used a weapon whose power was entirely in what it made people see, rather than what it physically did."
+  },
+  "svalinn_shield": {
+    "name": "Svalinn",
+    "symbol": ")",
+    "color": [
+      200,
+      255,
+      255
+    ],
+    "weight": 3.0,
+    "min_level": 55,
+    "tier": 5,
+    "material": "adamantine",
+    "ac_bonus": 4,
+    "enchant_bonus": 0,
+    "equip_threshold": 4,
+    "quiz_tier": 5,
+    "damage_resistances": {
+      "fire": 0.55,
+      "shock": 0.3
+    },
+    "can_be_cursed": false,
+    "cursed": false,
+    "identified": false,
+    "unidentified_name": "a shield that feels cool to the touch even in heat",
+    "floorSpawnWeight": {
+      "61-80": 1,
+      "81-100": 2
+    },
+    "value": 8000,
+    "lore": "The Poetic Edda places Svalinn — the Cooler — before the sun to shield the earth from its full heat. Without it the mountains would burn and the seas boil. It stands there and no one knows how it arrived. The name means exactly what it does. The Norse naming conventions for cosmological entities were admirably functional."
+  },
+  "pridwen": {
+    "name": "Pridwen",
+    "symbol": ")",
+    "color": [
+      220,
+      220,
+      255
+    ],
+    "weight": 3.5,
+    "min_level": 55,
+    "tier": 5,
+    "material": "adamantine",
+    "ac_bonus": 4,
+    "enchant_bonus": 0,
+    "equip_threshold": 4,
+    "quiz_tier": 5,
+    "damage_resistances": {
+      "magic": 0.4,
+      "fire": 0.15
+    },
+    "can_be_cursed": false,
+    "cursed": false,
+    "identified": false,
+    "unidentified_name": "a white shield with a painted figure",
+    "floorSpawnWeight": {
+      "61-80": 1,
+      "81-100": 2
+    },
+    "value": 8000,
+    "lore": "Arthur's shield, named in the Welsh poem Pa gur and the Mabinogion. The image of the Virgin Mary was painted on its inner face, so Arthur fought facing her. This was the interior side — the side that faces the bearer. The image was not for showing to enemies. It was for Arthur to look at."
+  },
+  "tower_shield_of_ajax": {
+    "name": "Tower Shield of Ajax",
+    "symbol": ")",
+    "color": [
+      180,
+      180,
+      160
+    ],
+    "weight": 9.0,
+    "min_level": 65,
+    "tier": 5,
+    "material": "adamantine",
+    "ac_bonus": 6,
+    "enchant_bonus": 0,
+    "equip_threshold": 5,
+    "quiz_tier": 5,
+    "damage_resistances": {
+      "slash": 0.25,
+      "pierce": 0.35
+    },
+    "can_be_cursed": false,
+    "cursed": false,
+    "identified": false,
+    "unidentified_name": "a massive laminated shield of ox-hide and bronze",
+    "floorSpawnWeight": {
+      "61-80": 1,
+      "81-100": 2
+    },
+    "value": 9000,
+    "lore": "Ajax's shield was described as a tower of seven ox-hides laminated together with bronze — the largest shield in the Iliad. He stood before the Greek ships and held back the Trojans by mass and will. Achilles was the brilliant warrior. Ajax was the one who could not be moved. When Odysseus was awarded Achilles' armour by rhetorical argument, Ajax's grief destroyed him. The shield outlasted its owner."
+  },
+  "scutum_of_aeneas": {
+    "name": "Scutum of Aeneas",
+    "symbol": ")",
+    "color": [
+      190,
+      170,
+      130
+    ],
+    "weight": 6.0,
+    "min_level": 60,
+    "tier": 5,
+    "material": "adamantine",
+    "ac_bonus": 5,
+    "enchant_bonus": 0,
+    "equip_threshold": 4,
+    "quiz_tier": 5,
+    "damage_resistances": {
+      "slash": 0.2,
+      "crush": 0.2,
+      "fire": 0.2
+    },
+    "can_be_cursed": false,
+    "cursed": false,
+    "identified": false,
+    "unidentified_name": "a curved rectangular shield of divine workmanship",
+    "floorSpawnWeight": {
+      "61-80": 1,
+      "81-100": 2
+    },
+    "value": 8500,
+    "lore": "Hephaestus forged a new shield for Aeneas with the entire future of Rome inscribed on its surface — battles not yet fought, emperors not yet born, the city not yet founded. Aeneas carried it without understanding what he looked at. He bore the fame and destiny of his descendants on his shoulders, ignorant of their names. Virgil considered this a beautiful image. It is also a description of every ancestor."
   }
 }

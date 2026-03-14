@@ -157,7 +157,9 @@ def harvest_corpse(player, corpse, quiz_engine, on_complete):
 def cook_ingredient(player, ingredient, quiz_engine, on_complete):
     """
     Trigger a cooking escalator_chain quiz.
-    Chain length 0-5 = meal quality. Meal is auto-consumed; SP restored + stat bonuses.
+    Chain length 0-5 = meal quality. Single-ingredient meals restore SP + HP (scaled by
+    quality and ingredient tier) only — permanent stat bonuses come exclusively from
+    multi-ingredient compound recipes.
     on_complete(messages: list[str]) is called when the quiz ends.
     """
     def _callback(result):
@@ -173,19 +175,48 @@ def cook_ingredient(player, ingredient, quiz_engine, on_complete):
             messages.append(f"You cook {meal_name}  (quality {quality}/5).")
             player.restore_sp(sp_amount)
             messages.append(f"You eat it and restore {sp_amount} SP.")
+            # HP bonus scales with ingredient tier and cooking quality (no stat bonuses here)
+            hp = _cooking_hp_bonus(ingredient.min_level, quality)
+            if hp > 0:
+                player.restore_hp(hp)
+                messages.append(f"The meal soothes your wounds. (+{hp} HP)")
 
-        messages.extend(_apply_bonus(player, recipe))
+        # Status effects (e.g. invisible, regenerating) from ingredient data are still applied
+        bonus_type = recipe.get('bonus_type', 'none')
+        if bonus_type == 'status':
+            messages.extend(_apply_bonus(player, recipe))
+
         on_complete(messages)
 
+    # Derive cooking tier from ingredient's min_level: levels 1-20 → tier 1, 21-40 → tier 2, etc.
+    ing_tier = max(1, min(5, (ingredient.min_level - 1) // 20 + 1))
     quiz_engine.start_quiz(
         mode='escalator_chain',
         subject='cooking',
-        tier=1,
+        tier=ing_tier,
         callback=_callback,
         max_chain=5,
         wisdom=player.WIS,
         timer_modifier=player.get_quiz_timer_modifier(),
     )
+
+
+def _cooking_hp_bonus(min_level: int, quality: int) -> int:
+    """
+    HP restored by cooking a single monster ingredient.
+    Scales with the ingredient's dungeon-depth tier (every 20 levels) and quality (3-5).
+    Quality 1-2 gives no HP — just SP. Quality 3+ adds a small heal.
+    Tier 1 (L1-20): Q3=3  Q4=5  Q5=8
+    Tier 2 (L21-40): Q3=5  Q4=8  Q5=12
+    Tier 3 (L41-60): Q3=8  Q4=12 Q5=18
+    Tier 4 (L61-80): Q3=12 Q4=18 Q5=25
+    Tier 5 (L81-100): Q3=18 Q4=25 Q5=35
+    """
+    if quality < 3:
+        return 0
+    tier = max(1, min(5, (min_level - 1) // 20 + 1))
+    table = {1: (3, 5, 8), 2: (5, 8, 12), 3: (8, 12, 18), 4: (12, 18, 25), 5: (18, 25, 35)}
+    return table[tier][quality - 3]
 
 
 def _apply_bonus(player, recipe) -> list[str]:

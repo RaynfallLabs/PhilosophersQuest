@@ -39,8 +39,10 @@ class Weapon(Item):
         self.chain_multipliers: list[float] = defn.get(
             'chainMultipliers', defn.get('chain_multipliers', [0.5, 1.0, 1.5, 2.0, 2.5])
         )
+        # max_chain_length: if not set in JSON, derive from quiz_tier (tier 1→4, tier 2→5, … tier 5→8)
+        _qt = int(defn.get('mathTier', defn.get('quiz_tier', 1)))
         self.max_chain_length: int | None = defn.get(
-            'maxChainLength', defn.get('max_chain_length', None)
+            'maxChainLength', defn.get('max_chain_length', 3 + _qt)
         )
         self.quiz_tier: int             = int(defn.get('mathTier', defn.get('quiz_tier', 1)))
         self.damage_types: list[str]    = defn.get('damageTypes', defn.get('damage_types', ['slash']))
@@ -129,6 +131,19 @@ class Scroll(Item):
         self.power            = defn.get('power', '')
         self.unidentified_name = defn.get('unidentified_name', defn['name'])
         self.identified       = bool(defn.get('identified', False))
+
+
+class Spellbook(Item):
+    def __init__(self, defn: dict):
+        super().__init__(defn)
+        self.spell_id          = defn.get('spell_id', '')
+        self.spell_name        = defn.get('spell_name', self.name)
+        self.mp_cost           = int(defn.get('mp_cost', 5))
+        self.quiz_tier         = int(defn.get('quiz_tier', 1))
+        self.quiz_threshold    = int(defn.get('quiz_threshold', 1))
+        self.unidentified_name = defn.get('unidentified_name', defn['name'])
+        self.identified        = bool(defn.get('identified', False))
+        self.floor_spawn_weight: dict = defn.get('floor_spawn_weight', {})
 
 
 class Artifact(Item):
@@ -243,6 +258,7 @@ _CLASS_MAP: dict[str, type] = {
     'accessory':  Accessory,
     'wand':       Wand,
     'scroll':     Scroll,
+    'spellbook':  Spellbook,
     'ingredient': Ingredient,
     'artifact':   Artifact,
     'ammo':       Ammo,

@@ -62,6 +62,11 @@ class QuizEngine:
         self.last_answer: str = ''    # last submitted answer string
         self.confused_order: list | None = None   # shuffled choice indices when confused
         self._timer_modifier: float = 1.0
+        self.on_answer = None   # optional callable(is_correct: bool) fired after each answer
+
+        self.celebrating: bool = False
+        self.celebration_text: str = ''
+        self.celebration_timer: float = 0.0
 
     # --- Public API ---
 
@@ -79,7 +84,8 @@ class QuizEngine:
 
     def start_quiz(self, mode: str | QuizMode, subject: str, tier: int,
                    callback, threshold: int = 3, max_chain: int | None = None,
-                   wisdom: int = 10, timer_modifier: float = 1.0):
+                   wisdom: int = 10, timer_modifier: float = 1.0,
+                   extra_seconds: int = 0):
         """
         Start a quiz session.
           threshold     — for threshold modes: number of correct answers needed.
@@ -103,7 +109,7 @@ class QuizEngine:
         self.max_chain = max_chain
         self.callback = callback
         self._timer_modifier = timer_modifier
-        self.timer_seconds = round((10 + wisdom) * timer_modifier)
+        self.timer_seconds = round((10 + wisdom) * timer_modifier) + extra_seconds
         self.time_remaining = float(self.timer_seconds)
 
         self.score = 0
@@ -114,6 +120,9 @@ class QuizEngine:
         self.last_answer = ''
         self.result_timer = 0.0
         self.confused_order = None
+        self.celebrating = False
+        self.celebration_text = ''
+        self.celebration_timer = 0.0
 
         self._pool = pool
         self._pool_idx = 0
@@ -141,10 +150,20 @@ class QuizEngine:
 
         self.state = QuizState.RESULT
         self.result_timer = self.RESULT_DISPLAY_TIME
+        if self.on_answer:
+            self.on_answer(is_correct)
         return is_correct
 
     def update(self, dt: float):
         """Call each frame with delta time in seconds."""
+        if self.celebrating:
+            self.celebration_timer -= dt
+            if self.celebration_timer <= 0:
+                self.celebrating = False
+                self.celebration_text = ''
+                self._end(success=True)
+            return
+
         if self.state == QuizState.ASKING:
             if self.time_remaining > 0:
                 self.time_remaining = max(0.0, self.time_remaining - dt)
@@ -177,9 +196,9 @@ class QuizEngine:
         # Timer is set once in start_quiz() and runs continuously — no reset per question
         self.state = QuizState.ASKING
 
-        # Generate shuffled choice order for confused players
+        # Always shuffle choice order so correct answer position is randomized
         choices = self.current_question.get('choices', [])
-        if choices and self._timer_modifier < 1.0:
+        if choices:
             order = list(range(len(choices)))
             random.shuffle(order)
             self.confused_order = order
@@ -193,15 +212,28 @@ class QuizEngine:
             if not self.last_correct:
                 self._end(success=True)   # chain mode: always "succeeds"; score = chain length
             elif self.max_chain and self.chain >= self.max_chain:
-                self._end(success=True)
+                # Celebrate before ending
+                self.celebrating = True
+                self.celebration_text = 'MAX CHAIN!'
+                self.celebration_timer = 1.5
+                # _end() called from update() after timer expires
             else:
                 if mode == QuizMode.ESCALATOR_CHAIN:
                     self._escalate()
                 self._next_question()
 
         else:  # threshold / escalator_threshold
+            # End immediately on wrong answer
+            if not self.last_correct:
+                self._end(success=False)
+                return
+            # End immediately when threshold reached
+            if self.correct_count >= self.required:
+                self._end(success=True)
+                return
+            # Still have questions left
             if self.asked_count >= self.total_qs:
-                self._end(success=self.correct_count >= self.required)
+                self._end(success=False)   # ran out before hitting threshold
             else:
                 if mode == QuizMode.ESCALATOR_THRESHOLD:
                     self._escalate()

@@ -6,6 +6,18 @@ TILE_SIZE = 40  # kept for UI/font sizing outside the renderer
 
 _SPRITE_DIR       = os.path.join(os.path.dirname(__file__), '..', 'assets', 'tiles', 'monsters')
 _ITEM_SPRITE_DIR  = os.path.join(os.path.dirname(__file__), '..', 'assets', 'tiles', 'items')
+_ENV_SPRITE_DIR   = os.path.join(os.path.dirname(__file__), '..', 'assets', 'tiles', 'env')
+
+# Map tile constants to sprite filenames (SECRET_DOOR looks like WALL)
+_TILE_SPRITE = {
+    WALL:        'wall',
+    FLOOR:       'floor',
+    STAIRS_UP:   'stairs_up',
+    STAIRS_DOWN: 'stairs_down',
+    DOOR:        'door',
+    SECRET_DOOR: 'wall',
+    ALTAR:       'altar',
+}
 
 # Visible tile colors
 _VISIBLE = {
@@ -47,6 +59,8 @@ class Renderer:
         self._sym_font = pygame.font.SysFont('consolas', max(8, TILE_SIZE - 8), bold=True)
         self._sprite_cache: dict[str, pygame.Surface | None] = {}
         self._item_sprite_cache: dict[str, pygame.Surface | None] = {}
+        self._env_sprite_cache: dict[str, pygame.Surface | None] = {}
+        self._player_sprite: pygame.Surface | None = None
 
     def set_dungeon(self, dungeon_w: int, dungeon_h: int, game_w: int, game_h: int):
         """Compute tile size and centering offsets to fit the entire dungeon in the game panel."""
@@ -60,11 +74,25 @@ class Renderer:
         self._sym_font = pygame.font.SysFont('consolas', font_size, bold=True)
         self._sprite_cache.clear()        # sprites must be rescaled for new tile size
         self._item_sprite_cache.clear()
+        self._env_sprite_cache.clear()
+        self._player_sprite = None
 
     def world_to_screen(self, wx: int, wy: int) -> tuple[int, int]:
         """Convert world tile coords to screen pixel coords."""
         return (wx * self.map_tile_size + self.map_offset_x,
                 wy * self.map_tile_size + self.map_offset_y)
+
+    def _get_env_sprite(self, name: str) -> 'pygame.Surface | None':
+        if name in self._env_sprite_cache:
+            return self._env_sprite_cache[name]
+        path = os.path.join(_ENV_SPRITE_DIR, f"{name}.png")
+        if os.path.exists(path):
+            raw  = pygame.image.load(path).convert_alpha()
+            surf = pygame.transform.scale(raw, (self.map_tile_size, self.map_tile_size))
+            self._env_sprite_cache[name] = surf
+        else:
+            self._env_sprite_cache[name] = None
+        return self._env_sprite_cache[name]
 
     def _get_item_sprite(self, item_id: str) -> 'pygame.Surface | None':
         if item_id in self._item_sprite_cache:
@@ -90,9 +118,20 @@ class Renderer:
             self._sprite_cache[mid] = None
         return self._sprite_cache[mid]
 
+    # Pre-built overlay surfaces for explored-tile dimming, keyed by tile size
+    _dim_overlay_cache: dict[int, pygame.Surface] = {}
+
+    def _get_dim_overlay(self, T: int) -> pygame.Surface:
+        if T not in self._dim_overlay_cache:
+            ov = pygame.Surface((T, T), pygame.SRCALPHA)
+            ov.fill((0, 0, 0, 155))   # ~60% dark overlay
+            self._dim_overlay_cache[T] = ov
+        return self._dim_overlay_cache[T]
+
     # cam_x / cam_y kept for signature compat but ignored (always 0,0)
     def draw_dungeon(self, dungeon, visible: set, cam_x: int = 0, cam_y: int = 0):
-        T = self.map_tile_size
+        T   = self.map_tile_size
+        dim = self._get_dim_overlay(T)
         for ty in range(dungeon.height):
             for tx in range(dungeon.width):
                 sx, sy = self.world_to_screen(tx, ty)
@@ -100,33 +139,38 @@ class Renderer:
 
                 if (tx, ty) in visible:
                     dungeon.explored.add((tx, ty))
-                    color = _VISIBLE.get(tile, _VISIBLE[FLOOR])
+                    sprite_name = _TILE_SPRITE.get(tile)
+                    sprite = self._get_env_sprite(sprite_name) if sprite_name else None
+                    if sprite:
+                        self.screen.blit(sprite, (sx, sy))
+                    else:
+                        color = _VISIBLE.get(tile, _VISIBLE[FLOOR])
+                        pygame.draw.rect(self.screen, color, (sx, sy, T, T))
+
                 elif (tx, ty) in dungeon.explored:
-                    color = _EXPLORED.get(tile, _EXPLORED[FLOOR])
+                    sprite_name = _TILE_SPRITE.get(tile)
+                    sprite = self._get_env_sprite(sprite_name) if sprite_name else None
+                    if sprite:
+                        self.screen.blit(sprite, (sx, sy))
+                        self.screen.blit(dim, (sx, sy))
+                    else:
+                        color = _EXPLORED.get(tile, _EXPLORED[FLOOR])
+                        pygame.draw.rect(self.screen, color, (sx, sy, T, T))
+
                 else:
-                    color = _UNEXPLORED
+                    pygame.draw.rect(self.screen, _UNEXPLORED, (sx, sy, T, T))
 
-                pygame.draw.rect(self.screen, color, (sx, sy, T, T))
-
-                if (tx, ty) in visible and tile == DOOR:
-                    glyph = self._sym_font.render('+', True, (210, 130, 60))
-                    ox = (T - glyph.get_width())  // 2
-                    oy = (T - glyph.get_height()) // 2
-                    self.screen.blit(glyph, (sx + ox, sy + oy))
-
-                if (tx, ty) in visible and tile == ALTAR:
-                    # Draw a simple raised altar: a golden cross symbol
-                    glyph = self._sym_font.render('\u271d', True, (255, 220, 80))
-                    ox = (T - glyph.get_width())  // 2
-                    oy = (T - glyph.get_height()) // 2
-                    self.screen.blit(glyph, (sx + ox, sy + oy))
-
-    def draw_player(self, player, cam_x: int = 0, cam_y: int = 0):
-        T   = self.map_tile_size
+    def draw_player(self, player, cam_x: int = 0, cam_y: int = 0,
+                    sprite_name: str = 'player'):
+        T      = self.map_tile_size
         sx, sy = self.world_to_screen(player.x, player.y)
-        pad = max(1, T // 8)
-        pygame.draw.rect(self.screen, _PLAYER,
-                         (sx + pad, sy + pad, T - pad * 2, T - pad * 2))
+        sprite = self._get_env_sprite(sprite_name) or self._get_env_sprite('player')
+        if sprite:
+            self.screen.blit(sprite, (sx, sy))
+        else:
+            pad = max(1, T // 8)
+            pygame.draw.rect(self.screen, _PLAYER,
+                             (sx + pad, sy + pad, T - pad * 2, T - pad * 2))
 
     def draw_entity(self, x: int, y: int, color: tuple,
                     cam_x: int = 0, cam_y: int = 0, visible=None, mid: str = ''):

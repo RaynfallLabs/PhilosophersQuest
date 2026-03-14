@@ -72,15 +72,18 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
                 mult *= weapon.crit_multiplier
                 crit = True
 
-        damage = max(1, int((base + enchant + ammo_bonus) * mult * dtype_mult))
+        str_factor = 1.0 + max(0, player.STR - 10) * 0.03
+        damage = max(1, int((base + enchant + ammo_bonus) * mult * dtype_mult * str_factor))
         actual = monster.take_damage(damage)
 
         # Stun mechanic (staves only, or any weapon with stunChance > 0)
         stunned = False
         if weapon and weapon.stun_chance > 0 and actual > 0:
             if random.random() < weapon.stun_chance:
-                # Monster makes a resistance roll (CON-like — use max_hp as proxy)
-                resist_threshold = max(0.1, 1.0 - (monster.max_hp / 200.0))
+                # Monster makes a resistance roll: bigger monsters resist more.
+                # threshold = hp/300 clamped [0.05, 0.95]; roll must BEAT threshold to stun.
+                # e.g. 30 HP → 90% chance, 150 HP → 50%, 300 HP+ → 5%
+                resist_threshold = min(0.95, max(0.05, monster.max_hp / 300.0))
                 if random.random() > resist_threshold:
                     current = monster.status_effects.get('paralyzed', 0)
                     monster.status_effects['paralyzed'] = max(current, 2)
@@ -109,16 +112,20 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
     )
 
 
-def apply_knockback(player, monster, dungeon):
-    """Push monster one tile away from the player. No-ops if tile is blocked."""
+def apply_knockback(player, monster, dungeon, monsters=None):
+    """Push monster one tile away from the player. No-ops if tile is blocked or occupied."""
     dx = monster.x - player.x
     dy = monster.y - player.y
     # Normalize to direction
     nx = (1 if dx > 0 else -1) if dx != 0 else 0
     ny = (1 if dy > 0 else -1) if dy != 0 else 0
     tx, ty = monster.x + nx, monster.y + ny
-    if dungeon.is_walkable(tx, ty):
-        monster.x, monster.y = tx, ty
+    if not dungeon.is_walkable(tx, ty):
+        return
+    if monsters and any(m is not monster and m.alive and m.x == tx and m.y == ty
+                        for m in monsters):
+        return
+    monster.x, monster.y = tx, ty
 
 
 def can_melee_attack(player, monster) -> bool:
@@ -137,7 +144,7 @@ def can_ranged_attack(player, monster, dungeon) -> bool:
     weapon = player.weapon
     if not weapon or not weapon.requires_ammo:
         return False
-    reach = weapon.reach
+    reach = weapon.reach + max(0, player.PER - 10) // 3
     dx = abs(player.x - monster.x)
     dy = abs(player.y - monster.y)
     dist = max(dx, dy)
