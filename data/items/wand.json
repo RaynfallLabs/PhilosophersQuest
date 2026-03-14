@@ -2073,5 +2073,26 @@
     },
     "lore": "A masterwork of defensive magic theory. This wand simultaneously strips all applied enchantments from a target and purges the wielder of their own afflictions. Wielded in desperation or with surgical precision, it can turn the tide of a losing battle by resetting the magical state of both combatants.",
     "identified": false
+  },
+  "iron_mortar_wand": {
+    "name": "Baba Yaga's Iron Mortar",
+    "symbol": "/",
+    "color": [
+      160,
+      120,
+      80
+    ],
+    "weight": 4.0,
+    "min_level": 50,
+    "charges_min": 3,
+    "charges_max": 5,
+    "max_charges": 5,
+    "quiz_tier": 4,
+    "quiz_threshold": 3,
+    "effect": "iron_mortar",
+    "power": "",
+    "unidentified_name": "a heavy iron pestle",
+    "identified": false,
+    "lore": "Baba Yaga grinds the bones of heroes in this mortar before eating them. When wielded as a wand, it channels chaotic magic — the effect is never the same twice."
   }
 }

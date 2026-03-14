@@ -10,6 +10,7 @@ class LevelManager:
         self._saved: dict = {}          # level_num -> (dungeon, monsters, items)
         self.max_level_reached: int = 1
         self.monsters_killed: int   = 0
+        self._placed_mini_bosses: set = set()
 
     def save(self, level_num: int, dungeon, monsters: list, ground_items: list):
         """Persist current level state so it can be restored later."""
@@ -47,6 +48,9 @@ class LevelManager:
 
         items = spawn_items(dungeon.rooms, level_num, dungeon)
 
+        # Try to spawn a mini-boss on this level
+        self._try_spawn_mini_boss(dungeon, monsters, level_num)
+
         # Populate hidden chambers with themed monsters/items
         _populate_hidden_chambers(dungeon, monsters, items, level_num)
 
@@ -57,6 +61,81 @@ class LevelManager:
 
         self.max_level_reached = max(self.max_level_reached, level_num)
         return dungeon, monsters, items
+
+
+    def _try_spawn_mini_boss(self, dungeon, monsters: list, level_num: int):
+        """Attempt to spawn one mini-boss on this level (at most one per level)."""
+        import json as _json
+        import os as _os
+        import random as _rng
+
+        # Locate monsters.json relative to this file's directory
+        _here = _os.path.dirname(_os.path.abspath(__file__))
+        _monsters_path = _os.path.join(_here, '..', 'data', 'monsters.json')
+        try:
+            with open(_monsters_path, encoding='utf-8') as _f:
+                _all_monsters = _json.load(_f)
+        except Exception:
+            return
+
+        # Filter to eligible mini-bosses for this level that haven't been placed
+        eligible = [
+            (mid, mdata)
+            for mid, mdata in _all_monsters.items()
+            if mdata.get('is_mini_boss')
+            and mdata.get('min_level', 999) <= level_num <= mdata.get('max_level', 0)
+            and mid not in self._placed_mini_bosses
+        ]
+
+        if not eligible:
+            return
+
+        # Shuffle so ordering in JSON doesn't bias selection
+        _rng.shuffle(eligible)
+
+        # Roll spawn chance for each, stop at first success
+        chosen_id = None
+        chosen_data = None
+        for mid, mdata in eligible:
+            if _rng.random() < mdata.get('spawn_chance', 0.0):
+                chosen_id = mid
+                chosen_data = mdata
+                break
+
+        if chosen_id is None:
+            return
+
+        # Pick a room that isn't rooms[0] (start) or rooms[-1] (boss/exit)
+        candidate_rooms = dungeon.rooms[1:-1] if len(dungeon.rooms) > 2 else dungeon.rooms[1:]
+        if not candidate_rooms:
+            candidate_rooms = dungeon.rooms
+
+        room = _rng.choice(candidate_rooms)
+
+        # Find a free walkable tile in the room
+        occupied = {(m.x, m.y) for m in monsters}
+        tiles = list(room.inner_tiles())
+        _rng.shuffle(tiles)
+        spawn_pos = None
+        for tx, ty in tiles:
+            if dungeon.is_walkable(tx, ty) and (tx, ty) not in occupied:
+                spawn_pos = (tx, ty)
+                break
+
+        if spawn_pos is None:
+            return
+
+        # Build the monster via the normal Monster class
+        # Monster.__init__ expects a defn dict with an 'id' key
+        try:
+            from monster import Monster
+            defn = dict(chosen_data)
+            defn['id'] = chosen_id
+            mb = Monster(defn, spawn_pos[0], spawn_pos[1])
+            monsters.append(mb)
+            self._placed_mini_bosses.add(chosen_id)
+        except Exception:
+            pass
 
 
 def _populate_hidden_chambers(dungeon, monsters: list, items: list, level: int):

@@ -379,5 +379,29 @@
     },
     "value": 8500,
     "lore": "Hephaestus forged a new shield for Aeneas with the entire future of Rome inscribed on its surface — battles not yet fought, emperors not yet born, the city not yet founded. Aeneas carried it without understanding what he looked at. He bore the fame and destiny of his descendants on his shoulders, ignorant of their names. Virgil considered this a beautiful image. It is also a description of every ancestor."
+  },
+  "bronze_aegis": {
+    "name": "Bronze Aegis",
+    "symbol": "]",
+    "color": [
+      180,
+      160,
+      100
+    ],
+    "weight": 8.0,
+    "min_level": 12,
+    "tier": 2,
+    "material": "bronze",
+    "ac_bonus": 3,
+    "equip_threshold": 2,
+    "quiz_tier": 2,
+    "damage_resistances": {
+      "blunt": 0.75,
+      "slash": 0.85
+    },
+    "can_be_cursed": false,
+    "enchant_bonus": 0,
+    "unidentified_name": "ancient bronze shield",
+    "lore": "The ceremonial shield of a bronze giant, engraved with the eye of Hephaestus. Its curved surface deflects crushing blows better than any iron shield of its age."
   }
 }

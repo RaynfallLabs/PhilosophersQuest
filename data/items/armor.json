@@ -2863,5 +2863,179 @@
     },
     "value": 8000,
     "lore": "Hannibal Barca crossed the Alps with war elephants in 218 BCE and fought Rome for sixteen years on its own soil. He won every major engagement: Trebia, Trasimene, Cannae — Cannae being the most studied battle in military history, used as a model for encirclement tactics by commanders for two millennia. He never took Rome. He was eventually called home to defend Carthage, lost one battle, and died in exile. He won the tactics and lost the war. Military academies still teach him."
+  },
+  "nemean_pelt": {
+    "name": "Nemean Lion Pelt",
+    "symbol": "[",
+    "color": [
+      220,
+      180,
+      80
+    ],
+    "weight": 12.0,
+    "min_level": 45,
+    "slot": "body",
+    "tier": 4,
+    "material": "hide",
+    "ac_bonus": 5,
+    "equip_threshold": 2,
+    "quiz_tier": 4,
+    "damage_resistances": {
+      "slash": 0.0,
+      "pierce": 0.0
+    },
+    "can_be_cursed": false,
+    "enchant_bonus": 0,
+    "unidentified_name": "thick golden hide",
+    "lore": "The hide of the Nemean Lion, impossible to cut or pierce. Hercules used its own claws to skin it. Wearing it is like wearing the beast itself."
+  },
+  "green_knights_plate": {
+    "name": "Green Knight's Plate",
+    "symbol": "[",
+    "color": [
+      80,
+      180,
+      80
+    ],
+    "weight": 20.0,
+    "min_level": 63,
+    "slot": "body",
+    "tier": 5,
+    "material": "enchanted plate",
+    "ac_bonus": 6,
+    "equip_threshold": 3,
+    "quiz_tier": 5,
+    "damage_resistances": {
+      "slash": 0.75,
+      "physical": 0.85
+    },
+    "can_be_cursed": false,
+    "enchant_bonus": 0,
+    "unidentified_name": "eerily green plate armor",
+    "lore": "Forged from enchanted iron that grows with the wearer, the Green Knight's Plate absorbs blows that would kill a lesser man. The wearer heals slowly but continuously.",
+    "special_effect": "regen_2"
+  },
+  "serpent_scale_mail": {
+    "name": "Serpent Scale Mail",
+    "symbol": "[",
+    "color": [
+      60,
+      160,
+      100
+    ],
+    "weight": 14.0,
+    "min_level": 55,
+    "slot": "body",
+    "tier": 4,
+    "material": "scale",
+    "ac_bonus": 4,
+    "equip_threshold": 2,
+    "quiz_tier": 4,
+    "damage_resistances": {
+      "poison": 0.0,
+      "cold": 0.7
+    },
+    "can_be_cursed": false,
+    "enchant_bonus": 0,
+    "unidentified_name": "iridescent scale hauberk",
+    "lore": "Scales from Jörmungandr's juvenile form, each harder than iron. The poison that suffuses them has been neutralized — but it still repels toxins entirely."
+  },
+  "arachne_silk_cloak": {
+    "name": "Arachne's Silk Cloak",
+    "symbol": "[",
+    "color": [
+      180,
+      140,
+      80
+    ],
+    "weight": 1.5,
+    "min_level": 3,
+    "slot": "cloak",
+    "tier": 2,
+    "material": "silk",
+    "ac_bonus": 1,
+    "equip_threshold": 1,
+    "quiz_tier": 2,
+    "damage_resistances": {
+      "pierce": 0.7
+    },
+    "can_be_cursed": false,
+    "enchant_bonus": 0,
+    "unidentified_name": "shimmering silk cloak",
+    "lore": "Woven by Arachne before her transformation, this cloak is lighter than air and tougher than leather against piercing weapons. It catches arrows and slows blades."
+  },
+  "erlking_mantle": {
+    "name": "Erlking's Mantle",
+    "symbol": "[",
+    "color": [
+      80,
+      140,
+      80
+    ],
+    "weight": 2.0,
+    "min_level": 20,
+    "slot": "cloak",
+    "tier": 3,
+    "material": "enchanted cloth",
+    "ac_bonus": 1,
+    "equip_threshold": 2,
+    "quiz_tier": 3,
+    "damage_resistances": {},
+    "can_be_cursed": false,
+    "enchant_bonus": 0,
+    "unidentified_name": "a green forest cloak",
+    "lore": "Woven from the living branches of the Erlking's forest, this cloak sharpens the senses of the wearer. Sound and sight carry further, and hidden things become easier to discern.",
+    "special_effect": "per_plus_2"
+  },
+  "anansi_web_cloak": {
+    "name": "Anansi's Web Cloak",
+    "symbol": "[",
+    "color": [
+      220,
+      180,
+      40
+    ],
+    "weight": 1.0,
+    "min_level": 85,
+    "slot": "cloak",
+    "tier": 5,
+    "material": "divine silk",
+    "ac_bonus": 2,
+    "equip_threshold": 2,
+    "quiz_tier": 5,
+    "damage_resistances": {
+      "poison": 0.5,
+      "physical": 0.9
+    },
+    "can_be_cursed": false,
+    "enchant_bonus": 0,
+    "unidentified_name": "a glittering golden web",
+    "lore": "Spun by Anansi himself from the thread of a thousand stories, this cloak shifts and deceives. Attacks that should land somehow miss. Traps somehow fail to trigger."
+  },
+  "nidhoggr_scale": {
+    "name": "Níðhöggr's Scale",
+    "symbol": "[",
+    "color": [
+      80,
+      200,
+      80
+    ],
+    "weight": 3.0,
+    "min_level": 90,
+    "slot": "cloak",
+    "tier": 5,
+    "material": "dragon scale",
+    "ac_bonus": 3,
+    "equip_threshold": 3,
+    "quiz_tier": 5,
+    "damage_resistances": {
+      "acid": 0.0,
+      "poison": 0.3,
+      "cold": 0.5
+    },
+    "can_be_cursed": false,
+    "enchant_bonus": 0,
+    "unidentified_name": "a vast dark-green scale",
+    "lore": "A single scale from Níðhöggr's body, imbued with the rot of ages. Nothing corrodes it. Wearing it grants the wearer immunity to acid and strong resistance to all decay-based attacks."
   }
 }

@@ -7888,5 +7888,169 @@
     "identified": true,
     "unidentified_name": "Punch in the Face",
     "lore": "This is Dad’s fist. It is legendary. It has never missed. It has never needed to miss twice. Scientists have attempted to measure the force behind it and their instruments simply stopped working out of respect."
+  },
+  "hunt_captains_sword": {
+    "name": "Hunt Captain's Sword",
+    "class": "sword",
+    "variant": "1h",
+    "tier": 5,
+    "material": "spectral iron",
+    "mathTier": 5,
+    "baseDamage": 18,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.8,
+      2.8,
+      4.0,
+      5.5
+    ],
+    "maxChainLength": 8,
+    "damageTypes": [
+      "slash",
+      "cold"
+    ],
+    "symbol": ")",
+    "color": [
+      180,
+      180,
+      220
+    ],
+    "weight": 3.0,
+    "min_level": 80,
+    "equip_threshold": 3,
+    "quiz_tier": 5,
+    "two_handed": false,
+    "unidentified_name": "a ghostly iron longsword",
+    "can_be_cursed": false,
+    "enchant_bonus": 0,
+    "lore": "Taken from the captain of the Wild Hunt, this blade phases between this world and the spectral realm. Its edge is impossibly sharp and its cold is the cold of the grave.",
+    "effects": {
+      "status": "bleeding",
+      "effect_chance": 0.25,
+      "effect_duration": 4
+    }
+  },
+  "wendigo_fang": {
+    "name": "Wendigo's Fang",
+    "class": "dagger",
+    "variant": "1h",
+    "tier": 5,
+    "material": "bone",
+    "mathTier": 5,
+    "baseDamage": 12,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      2.0,
+      3.0,
+      4.5
+    ],
+    "maxChainLength": 7,
+    "damageTypes": [
+      "cold",
+      "pierce"
+    ],
+    "symbol": ")",
+    "color": [
+      200,
+      220,
+      255
+    ],
+    "weight": 1.5,
+    "min_level": 75,
+    "equip_threshold": 2,
+    "quiz_tier": 5,
+    "two_handed": false,
+    "unidentified_name": "a pale jagged tooth",
+    "can_be_cursed": false,
+    "enchant_bonus": 0,
+    "lore": "A fang torn from the Wendigo's maw. It leaches warmth and stamina from enemies on contact. The wound never feels warm again.",
+    "effects": {
+      "status": "slowed",
+      "effect_chance": 0.35,
+      "effect_duration": 4
+    }
+  },
+  "echidna_fang": {
+    "name": "Echidna's Fang",
+    "class": "dagger",
+    "variant": "1h",
+    "tier": 3,
+    "material": "fang",
+    "mathTier": 3,
+    "baseDamage": 8,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.8,
+      2.8
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "pierce",
+      "poison"
+    ],
+    "symbol": ")",
+    "color": [
+      140,
+      100,
+      160
+    ],
+    "weight": 1.0,
+    "min_level": 15,
+    "equip_threshold": 2,
+    "quiz_tier": 3,
+    "two_handed": false,
+    "unidentified_name": "a curved ivory fang",
+    "can_be_cursed": false,
+    "enchant_bonus": 0,
+    "lore": "A tooth from Echidna herself, mother of all monsters. Wounds from it fester with a slow-acting venom that mimics her many children's poisons.",
+    "effects": {
+      "status": "poisoned",
+      "effect_chance": 0.4,
+      "effect_duration": 7
+    }
+  },
+  "vulcans_brand": {
+    "name": "Vulcan's Brand",
+    "class": "sword",
+    "variant": "1h",
+    "tier": 3,
+    "material": "volcanic iron",
+    "mathTier": 3,
+    "baseDamage": 11,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.7,
+      2.5,
+      3.5
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "slash",
+      "fire"
+    ],
+    "symbol": ")",
+    "color": [
+      200,
+      100,
+      40
+    ],
+    "weight": 4.5,
+    "min_level": 30,
+    "equip_threshold": 2,
+    "quiz_tier": 3,
+    "two_handed": false,
+    "unidentified_name": "a red-hot iron blade",
+    "can_be_cursed": false,
+    "enchant_bonus": 0,
+    "lore": "Forged in Vulcan's own furnace by Cacus who stole the technique from his father. The blade never fully cools and sets enemies alight on a solid strike.",
+    "effects": {
+      "status": "burning",
+      "effect_chance": 0.35,
+      "effect_duration": 4
+    }
   }
 }

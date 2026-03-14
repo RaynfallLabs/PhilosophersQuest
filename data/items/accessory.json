@@ -4506,5 +4506,112 @@
     "identified": false,
     "unidentified_name": "cool amulet",
     "lore": "Blessed by the last high priest of Esagila, the great ziggurat of Babylon, this amulet projects an invisible ward that absorbs and dissipates magical energy before it can take hold. Even the most precisely aimed enchantments fray and fail against its steady resistance."
+  },
+  "sphinx_crown": {
+    "name": "Sphinx's Crown",
+    "symbol": "\"",
+    "color": [
+      200,
+      180,
+      100
+    ],
+    "weight": 1.0,
+    "min_level": 35,
+    "slot": "amulet",
+    "equip_threshold": 2,
+    "quiz_tier": 4,
+    "effects": {
+      "stat": "WIS",
+      "amount": 2
+    },
+    "can_be_cursed": false,
+    "unidentified_name": "a golden riddle-crown",
+    "lore": "The crown of the Sphinx, imbued with millennia of accumulated riddle-wisdom. Wearing it sharpens the mind and extends the time available for all mental challenges."
+  },
+  "sailors_amulet": {
+    "name": "Sailor's Amulet",
+    "symbol": "\"",
+    "color": [
+      40,
+      100,
+      200
+    ],
+    "weight": 0.5,
+    "min_level": 68,
+    "slot": "amulet",
+    "equip_threshold": 2,
+    "quiz_tier": 4,
+    "effects": {
+      "stat": "PER",
+      "amount": 1,
+      "status": "cold_resist",
+      "duration": -1
+    },
+    "can_be_cursed": false,
+    "unidentified_name": "a driftwood amulet",
+    "lore": "Carved from the wood of a ship that survived Charybdis, this amulet carries the protection of calm water. The wearer reads the currents of danger before they arrive."
+  },
+  "anubis_scales": {
+    "name": "Anubis's Scales",
+    "symbol": "\"",
+    "color": [
+      180,
+      100,
+      40
+    ],
+    "weight": 0.8,
+    "min_level": 58,
+    "slot": "amulet",
+    "equip_threshold": 2,
+    "quiz_tier": 4,
+    "effects": {
+      "stat": "CON",
+      "amount": 1
+    },
+    "can_be_cursed": false,
+    "unidentified_name": "balanced golden scales",
+    "lore": "A miniature of the scales Anubis uses to weigh hearts against the feather of Ma'at. Wearing them steadies the pulse and hardens the bearer against the drain of undead."
+  },
+  "ring_of_iron_grip": {
+    "name": "Ring of Iron Grip",
+    "symbol": "=",
+    "color": [
+      200,
+      60,
+      60
+    ],
+    "weight": 0.2,
+    "min_level": 70,
+    "slot": "ring",
+    "equip_threshold": 2,
+    "quiz_tier": 4,
+    "effects": {
+      "stat": "STR",
+      "amount": 2
+    },
+    "can_be_cursed": false,
+    "unidentified_name": "a crude iron band",
+    "lore": "Crushed from a finger of Ravana himself, this ring channels the demon king's immense physical power into whoever wears it. The grip becomes unbreakable."
+  },
+  "obsidian_talisman": {
+    "name": "Obsidian Talisman",
+    "symbol": "\"",
+    "color": [
+      100,
+      60,
+      120
+    ],
+    "weight": 0.4,
+    "min_level": 25,
+    "slot": "amulet",
+    "equip_threshold": 2,
+    "quiz_tier": 3,
+    "effects": {
+      "status": "dark_vision",
+      "duration": -1
+    },
+    "can_be_cursed": false,
+    "unidentified_name": "a jagged black stone",
+    "lore": "Carved from sacrificial obsidian used in Xibalba, the Mayan underworld. It grants the wearer sight in magical darkness and resistance to fear effects from undead."
   }
 }

@@ -2995,6 +2995,28 @@ class Game:
         if boss_scroll_id:
             self._spawn_boss_scroll(monster.x, monster.y, boss_scroll_id)
 
+        # Unique mini-boss drop
+        unique_drop_id = treasure.get('unique_drop_id')
+        if unique_drop_id:
+            self._spawn_unique_item(monster.x, monster.y, unique_drop_id)
+
+    def _spawn_unique_item(self, x: int, y: int, item_id: str):
+        """Place a named unique item at (x, y), searching all item categories."""
+        from items import load_items, copy_at
+        categories = ('weapon', 'armor', 'shield', 'accessory', 'wand', 'scroll')
+        for cat in categories:
+            try:
+                items = load_items(cat)
+                template = next((i for i in items if i.id == item_id), None)
+                if template:
+                    item = copy_at(template, x, y)
+                    item.identified = False
+                    self.ground_items.append(item)
+                    self.add_message("\u2605 A remarkable item falls from the defeated foe!", 'loot')
+                    return
+            except Exception:
+                pass
+
     def _spawn_boss_scroll(self, x: int, y: int, scroll_id: str):
         """Place a pre-identified boss reward scroll at (x, y)."""
         from items import load_items, copy_at

@@ -3428,51 +3428,55 @@
     "name": "Lamia",
     "symbol": "L",
     "color": [
-      180,
-      80,
-      120
+      160,
+      120,
+      180
     ],
-    "hp": "3d8",
+    "min_level": 8,
+    "max_level": 14,
+    "hp": 55,
+    "thac0": 12,
     "speed": 1,
-    "ai_pattern": "aggressive",
-    "min_level": 5,
-    "max_level": 10,
-    "thac0": 14,
-    "frequency": 4,
     "attacks": [
       {
-        "name": "constrict",
-        "damage": "2d6",
-        "type": "physical",
-        "effect": "paralyzed",
-        "effect_chance": 0.3,
-        "effect_duration": 4
+        "name": "bite",
+        "damage": "2d4+2",
+        "type": "poison"
       },
       {
-        "name": "life drain",
+        "name": "embrace",
         "damage": "1d6",
-        "type": "drain"
+        "type": "physical",
+        "effect": "weakened",
+        "effect_chance": 0.35,
+        "effect_duration": 6
       }
     ],
+    "ai_pattern": "aggressive",
     "resistances": [
-      "poison",
-      "shadow"
+      "cold",
+      "poison"
     ],
     "weaknesses": [
+      "fire",
       "holy"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
-    "ingredient_id": "lamia_scales",
+    "ingredient_id": null,
+    "lore": "Born beautiful and cursed by Hera to devour children after her own were slain, Lamia wanders the deep places half-woman half-serpent, stealing life and warmth from the living.",
+    "frequency": 0,
+    "is_mini_boss": true,
+    "spawn_chance": 0.4,
     "treasure": {
       "gold": [
-        20,
-        60
+        40,
+        100
       ],
-      "item_chance": 0.3,
-      "item_tier": 3
-    },
-    "lore": "Once a beautiful Libyan queen beloved by Zeus, Lamia was cursed by Hera and transformed into a child-devouring monster with a serpent's lower body. She can remove her own eyes to sleep while hunting by smell, and feeds on the life force of the young and unwary. Philosophers have debated whether her hunger is madness or grief."
+      "item_chance": 1.0,
+      "item_tier": 2,
+      "unique_drop_id": null
+    }
   },
   "gorgon_warrior": {
     "name": "Gorgon Warrior",
@@ -18300,6 +18304,1036 @@
       "item_chance": 1.0,
       "item_tier": 10,
       "boss_scroll_id": "scroll_of_the_abyss"
+    }
+  },
+  "arachne": {
+    "name": "Arachne",
+    "symbol": "s",
+    "color": [
+      180,
+      140,
+      80
+    ],
+    "min_level": 3,
+    "max_level": 8,
+    "hp": 45,
+    "thac0": 14,
+    "speed": 1,
+    "attacks": [
+      {
+        "name": "bite",
+        "damage": "1d6+2",
+        "type": "poison"
+      },
+      {
+        "name": "web",
+        "damage": "1d4",
+        "type": "physical",
+        "effect": "slowed",
+        "effect_chance": 0.5,
+        "effect_duration": 4
+      }
+    ],
+    "ai_pattern": "aggressive",
+    "resistances": [
+      "poison"
+    ],
+    "weaknesses": [
+      "fire"
+    ],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": null,
+    "lore": "Once a mortal weaver of unmatched skill, Arachne challenged Athena herself to a contest and was transformed into a spider as punishment. Her web can hold a man fast, and her bite carries venom.",
+    "frequency": 0,
+    "is_mini_boss": true,
+    "spawn_chance": 0.45,
+    "treasure": {
+      "gold": [
+        30,
+        80
+      ],
+      "item_chance": 1.0,
+      "item_tier": 2,
+      "unique_drop_id": "arachne_silk_cloak"
+    }
+  },
+  "talos": {
+    "name": "Talos",
+    "symbol": "T",
+    "color": [
+      180,
+      160,
+      100
+    ],
+    "min_level": 12,
+    "max_level": 18,
+    "hp": 90,
+    "thac0": 8,
+    "speed": 1,
+    "attacks": [
+      {
+        "name": "crush",
+        "damage": "3d8",
+        "type": "blunt"
+      }
+    ],
+    "ai_pattern": "aggressive",
+    "resistances": [
+      "pierce",
+      "slash"
+    ],
+    "weaknesses": [
+      "drain",
+      "lightning"
+    ],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": null,
+    "lore": "Talos was a bronze automaton forged by Hephaestus to guard the island of Crete, circling its shores three times daily. His single vein of ichor runs from neck to ankle — drain that life-fluid and he falls.",
+    "frequency": 0,
+    "is_mini_boss": true,
+    "spawn_chance": 0.35,
+    "treasure": {
+      "gold": [
+        80,
+        200
+      ],
+      "item_chance": 1.0,
+      "item_tier": 3,
+      "unique_drop_id": "bronze_aegis"
+    }
+  },
+  "echidna": {
+    "name": "Echidna",
+    "symbol": "E",
+    "color": [
+      140,
+      100,
+      160
+    ],
+    "min_level": 15,
+    "max_level": 22,
+    "hp": 75,
+    "thac0": 10,
+    "speed": 1,
+    "attacks": [
+      {
+        "name": "bite",
+        "damage": "2d6",
+        "type": "poison",
+        "effect": "poisoned",
+        "effect_chance": 0.45,
+        "effect_duration": 8
+      },
+      {
+        "name": "claw",
+        "damage": "1d8",
+        "type": "slash"
+      }
+    ],
+    "ai_pattern": "aggressive",
+    "resistances": [
+      "poison",
+      "cold"
+    ],
+    "weaknesses": [
+      "fire",
+      "holy"
+    ],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": null,
+    "lore": "Echidna, half-woman half-serpent, is the mother of Cerberus, the Hydra, the Chimera, and the Sphinx. She dwells in a cave and never ages, birthing monsters into the world without end.",
+    "frequency": 0,
+    "is_mini_boss": true,
+    "spawn_chance": 0.4,
+    "treasure": {
+      "gold": [
+        60,
+        150
+      ],
+      "item_chance": 1.0,
+      "item_tier": 3,
+      "unique_drop_id": "echidna_fang"
+    }
+  },
+  "erlking": {
+    "name": "Erlking",
+    "symbol": "E",
+    "color": [
+      80,
+      140,
+      80
+    ],
+    "min_level": 20,
+    "max_level": 28,
+    "hp": 65,
+    "thac0": 10,
+    "speed": 1,
+    "attacks": [
+      {
+        "name": "lure",
+        "damage": "1d8",
+        "type": "physical",
+        "effect": "confused",
+        "effect_chance": 0.4,
+        "effect_duration": 5
+      },
+      {
+        "name": "claw",
+        "damage": "2d4",
+        "type": "slash"
+      }
+    ],
+    "ai_pattern": "aggressive",
+    "resistances": [
+      "cold",
+      "physical"
+    ],
+    "weaknesses": [
+      "fire",
+      "iron"
+    ],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": null,
+    "lore": "The Erlking rides the wind through dark forests, luring travelers — especially children — to their doom with beautiful music and false promises. Iron and flame alone disturb his reverie.",
+    "frequency": 0,
+    "is_mini_boss": true,
+    "spawn_chance": 0.4,
+    "treasure": {
+      "gold": [
+        50,
+        120
+      ],
+      "item_chance": 1.0,
+      "item_tier": 3,
+      "unique_drop_id": "erlking_mantle"
+    }
+  },
+  "camazotz": {
+    "name": "Camazotz",
+    "symbol": "B",
+    "color": [
+      100,
+      60,
+      120
+    ],
+    "min_level": 25,
+    "max_level": 33,
+    "hp": 80,
+    "thac0": 8,
+    "speed": 1,
+    "attacks": [
+      {
+        "name": "wing buffet",
+        "damage": "2d6",
+        "type": "physical",
+        "effect": "blinded",
+        "effect_chance": 0.35,
+        "effect_duration": 4
+      },
+      {
+        "name": "bite",
+        "damage": "2d4+2",
+        "type": "drain"
+      }
+    ],
+    "ai_pattern": "aggressive",
+    "resistances": [
+      "cold",
+      "darkness"
+    ],
+    "weaknesses": [
+      "holy",
+      "lightning"
+    ],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": null,
+    "lore": "Camazotz is the Mayan lord of bats and the night, dwelling in Xibalba, the underworld. He is said to have decapitated the Hero Twin Hunahpu. His wings blot out all light, and his bite drains the soul.",
+    "frequency": 0,
+    "is_mini_boss": true,
+    "spawn_chance": 0.4,
+    "treasure": {
+      "gold": [
+        70,
+        160
+      ],
+      "item_chance": 1.0,
+      "item_tier": 3,
+      "unique_drop_id": "obsidian_talisman"
+    }
+  },
+  "cacus": {
+    "name": "Cacus",
+    "symbol": "C",
+    "color": [
+      200,
+      100,
+      40
+    ],
+    "min_level": 30,
+    "max_level": 38,
+    "hp": 100,
+    "thac0": 6,
+    "speed": 1,
+    "attacks": [
+      {
+        "name": "fire breath",
+        "damage": "3d8",
+        "type": "fire"
+      },
+      {
+        "name": "slam",
+        "damage": "2d10",
+        "type": "blunt"
+      }
+    ],
+    "ai_pattern": "aggressive",
+    "resistances": [
+      "fire",
+      "blunt"
+    ],
+    "weaknesses": [
+      "cold",
+      "water"
+    ],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": null,
+    "lore": "Cacus was a fire-breathing giant, son of Vulcan, who terrorized the countryside until Hercules slew him for stealing the cattle of Geryon. He drags prey backward into his cave to hide his tracks.",
+    "frequency": 0,
+    "is_mini_boss": true,
+    "spawn_chance": 0.4,
+    "treasure": {
+      "gold": [
+        90,
+        200
+      ],
+      "item_chance": 1.0,
+      "item_tier": 3,
+      "unique_drop_id": "vulcans_brand"
+    }
+  },
+  "the_sphinx": {
+    "name": "The Sphinx",
+    "symbol": "S",
+    "color": [
+      200,
+      180,
+      100
+    ],
+    "min_level": 35,
+    "max_level": 44,
+    "hp": 70,
+    "thac0": 8,
+    "speed": 1,
+    "attacks": [
+      {
+        "name": "rake",
+        "damage": "2d8",
+        "type": "slash"
+      },
+      {
+        "name": "bite",
+        "damage": "2d6",
+        "type": "physical"
+      }
+    ],
+    "ai_pattern": "aggressive",
+    "resistances": [
+      "magic",
+      "fire"
+    ],
+    "weaknesses": [
+      "pierce"
+    ],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": null,
+    "lore": "The Sphinx crouches at the gates between realms, devouring those who cannot answer her riddle. She is cunning above all other beasts, and her patience is absolute. Only wisdom disarms her.",
+    "frequency": 0,
+    "is_mini_boss": true,
+    "spawn_chance": 0.35,
+    "treasure": {
+      "gold": [
+        100,
+        250
+      ],
+      "item_chance": 1.0,
+      "item_tier": 4,
+      "unique_drop_id": "sphinx_crown"
+    }
+  },
+  "rangda": {
+    "name": "Rangda",
+    "symbol": "W",
+    "color": [
+      180,
+      60,
+      180
+    ],
+    "min_level": 40,
+    "max_level": 49,
+    "hp": 95,
+    "thac0": 6,
+    "speed": 1,
+    "attacks": [
+      {
+        "name": "hex",
+        "damage": "2d8",
+        "type": "magic",
+        "effect": "confused",
+        "effect_chance": 0.5,
+        "effect_duration": 6
+      },
+      {
+        "name": "drain",
+        "damage": "1d10",
+        "type": "drain"
+      }
+    ],
+    "ai_pattern": "aggressive",
+    "resistances": [
+      "magic",
+      "cold"
+    ],
+    "weaknesses": [
+      "holy",
+      "fire"
+    ],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": null,
+    "lore": "Rangda is the demon queen of Bali, mistress of witches and widow of chaos. She leads Leyaks — black magic users — in battle against the divine Barong. Her howl can shatter a warrior’s will.",
+    "frequency": 0,
+    "is_mini_boss": true,
+    "spawn_chance": 0.4,
+    "treasure": {
+      "gold": [
+        100,
+        220
+      ],
+      "item_chance": 1.0,
+      "item_tier": 4,
+      "unique_drop_id": null
+    }
+  },
+  "nemean_lion": {
+    "name": "Nemean Lion",
+    "symbol": "L",
+    "color": [
+      220,
+      180,
+      80
+    ],
+    "min_level": 45,
+    "max_level": 54,
+    "hp": 120,
+    "thac0": 6,
+    "speed": 1,
+    "attacks": [
+      {
+        "name": "claw",
+        "damage": "3d6",
+        "type": "slash"
+      },
+      {
+        "name": "bite",
+        "damage": "2d8",
+        "type": "physical"
+      }
+    ],
+    "ai_pattern": "aggressive",
+    "resistances": [
+      "slash",
+      "pierce"
+    ],
+    "weaknesses": [
+      "blunt"
+    ],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": null,
+    "lore": "The Nemean Lion's hide was impervious to all weapons — no blade or arrow could pierce it. Hercules strangled the beast with his bare hands and used its own claws to skin it. Only blunt force can harm it.",
+    "frequency": 0,
+    "is_mini_boss": true,
+    "spawn_chance": 0.4,
+    "treasure": {
+      "gold": [
+        120,
+        280
+      ],
+      "item_chance": 1.0,
+      "item_tier": 4,
+      "unique_drop_id": "nemean_pelt"
+    }
+  },
+  "baba_yaga": {
+    "name": "Baba Yaga",
+    "symbol": "W",
+    "color": [
+      160,
+      120,
+      80
+    ],
+    "min_level": 50,
+    "max_level": 59,
+    "hp": 110,
+    "thac0": 4,
+    "speed": 1,
+    "attacks": [
+      {
+        "name": "iron bite",
+        "damage": "3d6",
+        "type": "physical",
+        "effect": "bleeding",
+        "effect_chance": 0.45,
+        "effect_duration": 6
+      },
+      {
+        "name": "hex",
+        "damage": "2d6",
+        "type": "magic",
+        "effect": "weakened",
+        "effect_chance": 0.35,
+        "effect_duration": 5
+      }
+    ],
+    "ai_pattern": "aggressive",
+    "resistances": [
+      "magic",
+      "cold"
+    ],
+    "weaknesses": [
+      "fire",
+      "iron"
+    ],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": null,
+    "lore": "Baba Yaga lives in a hut on chicken legs deep in an enchanted forest. Her iron teeth can chew through armor as through bread. She tests heroes who find her — those who fail her trials are eaten.",
+    "frequency": 0,
+    "is_mini_boss": true,
+    "spawn_chance": 0.4,
+    "treasure": {
+      "gold": [
+        130,
+        260
+      ],
+      "item_chance": 1.0,
+      "item_tier": 4,
+      "unique_drop_id": "iron_mortar_wand"
+    }
+  },
+  "jormungandr_juvenile": {
+    "name": "Jörmungandr (Juvenile)",
+    "symbol": "S",
+    "color": [
+      60,
+      160,
+      100
+    ],
+    "min_level": 55,
+    "max_level": 63,
+    "hp": 135,
+    "thac0": 4,
+    "speed": 1,
+    "attacks": [
+      {
+        "name": "venom cloud",
+        "damage": "3d6",
+        "type": "poison",
+        "effect": "poisoned",
+        "effect_chance": 0.6,
+        "effect_duration": 10
+      },
+      {
+        "name": "constrict",
+        "damage": "2d10",
+        "type": "blunt",
+        "effect": "paralyzed",
+        "effect_chance": 0.3,
+        "effect_duration": 3
+      }
+    ],
+    "ai_pattern": "aggressive",
+    "resistances": [
+      "poison",
+      "cold"
+    ],
+    "weaknesses": [
+      "lightning",
+      "fire"
+    ],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": null,
+    "lore": "The World Serpent Jörmungandr encircles all of Midgard, and even in its juvenile form it carries the venom that will one day slay Thor at Ragnarök. Its poison is said to be unkillable by any remedy.",
+    "frequency": 0,
+    "is_mini_boss": true,
+    "spawn_chance": 0.35,
+    "treasure": {
+      "gold": [
+        150,
+        300
+      ],
+      "item_chance": 1.0,
+      "item_tier": 4,
+      "unique_drop_id": "serpent_scale_mail"
+    }
+  },
+  "sets_jackal": {
+    "name": "Set's Jackal",
+    "symbol": "J",
+    "color": [
+      180,
+      100,
+      40
+    ],
+    "min_level": 58,
+    "max_level": 67,
+    "hp": 100,
+    "thac0": 4,
+    "speed": 1,
+    "attacks": [
+      {
+        "name": "shadow strike",
+        "damage": "2d10",
+        "type": "drain"
+      },
+      {
+        "name": "darkness shroud",
+        "damage": "1d8",
+        "type": "physical",
+        "effect": "blinded",
+        "effect_chance": 0.45,
+        "effect_duration": 5
+      }
+    ],
+    "ai_pattern": "aggressive",
+    "resistances": [
+      "drain",
+      "darkness"
+    ],
+    "weaknesses": [
+      "holy",
+      "lightning"
+    ],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": null,
+    "lore": "A jackal-headed enforcer of Set, god of chaos and storms. Where Anubis guides the dead justly, Set's jackals hunt the living for sport. Their touch drains vitality and plunges the world into shadow.",
+    "frequency": 0,
+    "is_mini_boss": true,
+    "spawn_chance": 0.4,
+    "treasure": {
+      "gold": [
+        140,
+        280
+      ],
+      "item_chance": 1.0,
+      "item_tier": 4,
+      "unique_drop_id": "anubis_scales"
+    }
+  },
+  "green_knight": {
+    "name": "The Green Knight",
+    "symbol": "K",
+    "color": [
+      80,
+      180,
+      80
+    ],
+    "min_level": 63,
+    "max_level": 72,
+    "hp": 150,
+    "thac0": 2,
+    "speed": 1,
+    "attacks": [
+      {
+        "name": "greataxe",
+        "damage": "3d10",
+        "type": "slash"
+      },
+      {
+        "name": "headbutt",
+        "damage": "2d6",
+        "type": "blunt",
+        "effect": "stunned",
+        "effect_chance": 0.35,
+        "effect_duration": 3
+      }
+    ],
+    "ai_pattern": "aggressive",
+    "resistances": [
+      "physical",
+      "slash"
+    ],
+    "weaknesses": [
+      "fire",
+      "magic"
+    ],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": null,
+    "lore": "The Green Knight cannot be permanently killed — his head rolls and he picks it up again. He offered his axe to Gawain for one blow, knowing he would return the favor a year hence. His endurance is legendary.",
+    "frequency": 0,
+    "is_mini_boss": true,
+    "spawn_chance": 0.35,
+    "treasure": {
+      "gold": [
+        160,
+        320
+      ],
+      "item_chance": 1.0,
+      "item_tier": 5,
+      "unique_drop_id": "green_knights_plate"
+    }
+  },
+  "charybdis": {
+    "name": "Charybdis",
+    "symbol": "C",
+    "color": [
+      40,
+      100,
+      200
+    ],
+    "min_level": 68,
+    "max_level": 76,
+    "hp": 125,
+    "thac0": 2,
+    "speed": 1,
+    "attacks": [
+      {
+        "name": "vortex pull",
+        "damage": "2d8",
+        "type": "blunt"
+      },
+      {
+        "name": "crushing maw",
+        "damage": "3d10",
+        "type": "crush"
+      }
+    ],
+    "ai_pattern": "aggressive",
+    "resistances": [
+      "water",
+      "cold",
+      "blunt"
+    ],
+    "weaknesses": [
+      "lightning",
+      "fire"
+    ],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": null,
+    "lore": "Charybdis swallows the sea three times a day, creating whirlpools that drag ships to their doom. Only the great Odysseus survived her by clinging to a fig tree above her maw. She draws everything toward her.",
+    "frequency": 0,
+    "is_mini_boss": true,
+    "spawn_chance": 0.35,
+    "treasure": {
+      "gold": [
+        170,
+        340
+      ],
+      "item_chance": 1.0,
+      "item_tier": 5,
+      "unique_drop_id": "sailors_amulet"
+    }
+  },
+  "ravanas_arm": {
+    "name": "Ravana's Arm",
+    "symbol": "A",
+    "color": [
+      200,
+      60,
+      60
+    ],
+    "min_level": 70,
+    "max_level": 79,
+    "hp": 140,
+    "thac0": 0,
+    "speed": 1,
+    "attacks": [
+      {
+        "name": "slam",
+        "damage": "2d8",
+        "type": "blunt"
+      },
+      {
+        "name": "grab",
+        "damage": "2d6",
+        "type": "physical",
+        "effect": "paralyzed",
+        "effect_chance": 0.3,
+        "effect_duration": 3
+      },
+      {
+        "name": "crush",
+        "damage": "2d10",
+        "type": "crush"
+      }
+    ],
+    "ai_pattern": "aggressive",
+    "resistances": [
+      "physical",
+      "blunt"
+    ],
+    "weaknesses": [
+      "fire",
+      "holy"
+    ],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": null,
+    "lore": "Ravana, the ten-headed demon king of Lanka, lost an arm to Rama's divine bow. The arm crawls on its own, animated by Ravana's immense life-force, striking with all the fury of its master's wrath.",
+    "frequency": 0,
+    "is_mini_boss": true,
+    "spawn_chance": 0.4,
+    "treasure": {
+      "gold": [
+        180,
+        360
+      ],
+      "item_chance": 1.0,
+      "item_tier": 5,
+      "unique_drop_id": "ring_of_iron_grip"
+    }
+  },
+  "wendigo": {
+    "name": "Wendigo",
+    "symbol": "W",
+    "color": [
+      200,
+      220,
+      255
+    ],
+    "min_level": 75,
+    "max_level": 84,
+    "hp": 160,
+    "thac0": -2,
+    "speed": 1,
+    "attacks": [
+      {
+        "name": "ice claw",
+        "damage": "3d8",
+        "type": "cold",
+        "effect": "slowed",
+        "effect_chance": 0.4,
+        "effect_duration": 4
+      },
+      {
+        "name": "hunger drain",
+        "damage": "2d6",
+        "type": "drain",
+        "effect": "starving_effect",
+        "effect_chance": 0.55,
+        "effect_duration": 6
+      }
+    ],
+    "ai_pattern": "aggressive",
+    "resistances": [
+      "cold",
+      "physical"
+    ],
+    "weaknesses": [
+      "fire",
+      "holy"
+    ],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": null,
+    "lore": "The Wendigo is born when a human resorts to cannibalism in the frozen north — the ice spirit possesses them and drives them to hunger without end. It drains warmth and satiety, leaving only frozen despair.",
+    "frequency": 0,
+    "is_mini_boss": true,
+    "spawn_chance": 0.35,
+    "treasure": {
+      "gold": [
+        190,
+        380
+      ],
+      "item_chance": 1.0,
+      "item_tier": 5,
+      "unique_drop_id": "wendigo_fang"
+    }
+  },
+  "wild_hunt_captain": {
+    "name": "Wild Hunt Captain",
+    "symbol": "H",
+    "color": [
+      180,
+      180,
+      220
+    ],
+    "min_level": 80,
+    "max_level": 88,
+    "hp": 175,
+    "thac0": -4,
+    "speed": 1,
+    "attacks": [
+      {
+        "name": "spectral blade",
+        "damage": "3d10+5",
+        "type": "slash",
+        "effect": "bleeding",
+        "effect_chance": 0.4,
+        "effect_duration": 5
+      },
+      {
+        "name": "horn blast",
+        "damage": "2d8",
+        "type": "physical",
+        "effect": "stunned",
+        "effect_chance": 0.35,
+        "effect_duration": 3
+      }
+    ],
+    "ai_pattern": "aggressive",
+    "resistances": [
+      "cold",
+      "physical",
+      "slash"
+    ],
+    "weaknesses": [
+      "iron",
+      "holy"
+    ],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": null,
+    "lore": "The Wild Hunt Captain leads the spectral riders who sweep across the winter sky, collecting the souls of the living. To hear the horn is to be marked for death. Iron alone can slow their phantom charge.",
+    "frequency": 0,
+    "is_mini_boss": true,
+    "spawn_chance": 0.35,
+    "treasure": {
+      "gold": [
+        200,
+        400
+      ],
+      "item_chance": 1.0,
+      "item_tier": 5,
+      "unique_drop_id": "hunt_captains_sword"
+    }
+  },
+  "anansi": {
+    "name": "Anansi",
+    "symbol": "A",
+    "color": [
+      220,
+      180,
+      40
+    ],
+    "min_level": 85,
+    "max_level": 93,
+    "hp": 145,
+    "thac0": -4,
+    "speed": 1,
+    "attacks": [
+      {
+        "name": "web trick",
+        "damage": "1d8",
+        "type": "physical",
+        "effect": "confused",
+        "effect_chance": 0.55,
+        "effect_duration": 4
+      },
+      {
+        "name": "venom",
+        "damage": "2d8+4",
+        "type": "poison",
+        "effect": "poisoned",
+        "effect_chance": 0.45,
+        "effect_duration": 8
+      }
+    ],
+    "ai_pattern": "aggressive",
+    "resistances": [
+      "poison",
+      "magic"
+    ],
+    "weaknesses": [
+      "fire",
+      "lightning"
+    ],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": null,
+    "lore": "Anansi is the spider god who owns all stories. He won tales from the Sky God Nyame by trapping Onini the python and Osebo the leopard with his cleverness alone. He never fights directly — he tricks.",
+    "frequency": 0,
+    "is_mini_boss": true,
+    "spawn_chance": 0.4,
+    "treasure": {
+      "gold": [
+        200,
+        400
+      ],
+      "item_chance": 1.0,
+      "item_tier": 5,
+      "unique_drop_id": "anansi_web_cloak"
+    }
+  },
+  "nidhoggr_fragment": {
+    "name": "Níðhöggr Fragment",
+    "symbol": "D",
+    "color": [
+      80,
+      200,
+      80
+    ],
+    "min_level": 90,
+    "max_level": 99,
+    "hp": 190,
+    "thac0": -6,
+    "speed": 1,
+    "attacks": [
+      {
+        "name": "acid bite",
+        "damage": "3d10+5",
+        "type": "acid"
+      },
+      {
+        "name": "venom spray",
+        "damage": "2d8+3",
+        "type": "poison",
+        "effect": "poisoned",
+        "effect_chance": 0.55,
+        "effect_duration": 10
+      },
+      {
+        "name": "claw",
+        "damage": "2d12",
+        "type": "slash"
+      }
+    ],
+    "ai_pattern": "aggressive",
+    "resistances": [
+      "poison",
+      "acid",
+      "cold"
+    ],
+    "weaknesses": [
+      "holy",
+      "lightning"
+    ],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": null,
+    "lore": "Níðhöggr gnaws at the roots of Yggdrasil, the World Tree, working to unravel all of creation. Even a fragment of his body carries his relentless hunger and his acid venom. He will outlast everything.",
+    "frequency": 0,
+    "is_mini_boss": true,
+    "spawn_chance": 0.35,
+    "treasure": {
+      "gold": [
+        250,
+        500
+      ],
+      "item_chance": 1.0,
+      "item_tier": 5,
+      "unique_drop_id": "nidhoggr_scale"
     }
   }
 }
