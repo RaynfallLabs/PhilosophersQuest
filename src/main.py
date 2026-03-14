@@ -565,6 +565,7 @@ STATE_SPELL_MENU     = 'spell_menu'
 STATE_HINT           = 'hint'          # Recall Lore result display
 STATE_EXAMINE        = 'examine'       # Examine identified inventory item
 STATE_ENCYCLOPEDIA   = 'encyclopedia'  # Encyclopedia browser
+STATE_DROP_MENU      = 'drop_menu'    # Drop an item from inventory
 
 # ---------------------------------------------------------------------------
 # Spells learnable from spellbooks  (spell_id → attributes)
@@ -681,6 +682,17 @@ class Game:
         self.dungeon_level      = 1
         self.death_pursues      = False   # True once player ascends L100 with Stone
         self.death_monster      = None    # DeathMonster instance, persists across floors
+        # Deep-lore item spawn levels (one item per range, chosen at game start)
+        import random as _lore_rng
+        self._lore_levels = {
+            'shimmer':     _lore_rng.randint(1,  20),
+            'wrench':      _lore_rng.randint(21, 49),
+            'fire_scroll': _lore_rng.randint(50, 79),
+            'tablet':      _lore_rng.randint(80, 99),
+        }
+        self._lore_placed: set = set()   # which have been placed this run
+        # Drop-item state
+        self.drop_menu_items: list = []
         self.defeat_reason      = 'died'   # 'died' | 'starved' | 'fled'
         self.correct_answers    = 0        # total correct answers this run
         self.wrong_answers      = 0        # total wrong answers this run
@@ -796,6 +808,9 @@ class Game:
         else:
             self.player.x, self.player.y = dungeon.rooms[-1].center
             self.add_message(f"You ascend to level {new_level}.", 'info')
+
+        # Place deep-lore items on their designated levels (once per run)
+        self._maybe_place_lore_items(dungeon, new_level)
 
         # Death always enters from the stairs below when pursuing
         if self.death_pursues and self.death_monster is not None:
@@ -931,7 +946,8 @@ class Game:
                               STATE_CONFIRM_EXIT, STATE_TARGET,
                               STATE_EAT_MENU, STATE_HELP, STATE_LORE,
                               STATE_SPELL_MENU, STATE_HINT,
-                              STATE_EXAMINE, STATE_ENCYCLOPEDIA):
+                              STATE_EXAMINE, STATE_ENCYCLOPEDIA,
+                              STATE_DROP_MENU):
                 self.state = STATE_PLAYER
                 return True
             if self.state in (STATE_DEAD, STATE_VICTORY):
@@ -980,6 +996,8 @@ class Game:
             self._encyclopedia_input(key)
         elif self.state == STATE_HINT:
             self.state = STATE_PLAYER   # any key dismisses hint overlay
+        elif self.state == STATE_DROP_MENU:
+            self._drop_menu_input(key)
         elif self.state == STATE_CONFIRM_EXIT:
             self._confirm_exit_input(key)
 
@@ -1048,6 +1066,9 @@ class Game:
             return
         if key == pygame.K_b:
             self._open_encyclopedia()
+            return
+        if key == pygame.K_d:
+            self._open_drop_menu()
             return
 
         if key not in self._MOVE_KEYS:
@@ -1172,6 +1193,17 @@ class Game:
     def _notify_ground(self, x: int, y: int):
         """Print messages about items and notable features at (x, y)."""
         here = [item for item in self.ground_items if item.x == x and item.y == y]
+        # Abyssal Shimmer: show the inscription when stepped upon
+        shimmer = next((i for i in here if i.id == 'abyssal_shimmer'), None)
+        if shimmer:
+            if shimmer.activated:
+                self.add_message(
+                    "The ground roils with abyssal energy — something is ready.", 'danger'
+                )
+            else:
+                self.add_message("The ground shimmers with ancient power.", 'info')
+                self.add_message("\u201cRevelation 20:14\u201d", 'info')
+            here = [i for i in here if i is not shimmer]   # don't double-list it
         if len(here) == 1:
             item = here[0]
             dname = self._display_name(item)
@@ -1210,9 +1242,11 @@ class Game:
             self.state = STATE_CONFIRM_EXIT
         else:
             # Trigger Death the moment the player leaves L100 carrying the Stone
+            # (either the raw stone or the stone embedded in the complete tablet)
             if self.dungeon_level == 100 and not self.death_pursues:
                 has_stone = any(
-                    isinstance(i, Artifact) and i.id == 'philosophers_stone'
+                    isinstance(i, Artifact) and i.id in ('philosophers_stone',
+                                                          'complete_tablet_of_second_death')
                     for i in self.player.inventory
                 )
                 if has_stone:
@@ -1249,6 +1283,95 @@ class Game:
         d.x, d.y = cx, cy
         d.alive   = True
 
+    def _use_philosophers_wrench(self):
+        """Combine the Philosopher's Stone and the Tablet of Second Death if both are held."""
+        from items import Artifact, make_complete_tablet
+        stone  = next((i for i in self.player.inventory
+                       if isinstance(i, Artifact) and i.id == 'philosophers_stone'), None)
+        tablet = next((i for i in self.player.inventory
+                       if i.id == 'tablet_of_second_death'), None)
+        if stone and tablet:
+            self.player.remove_from_inventory(stone)
+            self.player.remove_from_inventory(tablet)
+            complete = make_complete_tablet(self.player.x, self.player.y)
+            complete.x, complete.y = 0, 0   # inventory item — position doesn't matter
+            self.player.inventory.append(complete)
+            self.add_message(
+                "The Wrench fits perfectly around the Stone.", 'success'
+            )
+            self.add_message(
+                "With a firm turn, the Philosopher's Stone locks into the Tablet.", 'success'
+            )
+            self.add_message(
+                "You hold the Complete Tablet of Second Death.", 'loot'
+            )
+        else:
+            self.add_message(
+                "The wrench socket seems to need something to fit in it.", 'info'
+            )
+
+    def _maybe_place_lore_items(self, dungeon, level: int):
+        """Spawn each deep-lore item on its designated level (once per run)."""
+        from items import (make_abyssal_shimmer, make_philosophers_wrench,
+                           make_scroll_lake_of_fire, make_tablet_of_second_death)
+        import random as _rng
+
+        lore_map = {
+            'shimmer':     (self._lore_levels['shimmer'],     make_abyssal_shimmer),
+            'wrench':      (self._lore_levels['wrench'],      make_philosophers_wrench),
+            'fire_scroll': (self._lore_levels['fire_scroll'], make_scroll_lake_of_fire),
+            'tablet':      (self._lore_levels['tablet'],      make_tablet_of_second_death),
+        }
+        for key, (target_level, factory) in lore_map.items():
+            if level == target_level and key not in self._lore_placed:
+                # Pick a random walkable floor tile that isn't the player start or stairs
+                candidates = []
+                for room in dungeon.rooms[1:-1] or dungeon.rooms:
+                    for dy in range(-1, 2):
+                        for dx in range(-1, 2):
+                            tx, ty = room.center[0] + dx, room.center[1] + dy
+                            if dungeon.in_bounds(tx, ty) and dungeon.is_walkable(tx, ty):
+                                candidates.append((tx, ty))
+                if candidates:
+                    tx, ty = _rng.choice(candidates)
+                    item = factory(tx, ty)
+                    self.ground_items.append(item)
+                    self._lore_placed.add(key)
+
+    def _trigger_abyss(self, shimmer):
+        """The Abyss opens and reclaims Death. The secret victory condition."""
+        from items import make_death_bane_scroll
+        dx, dy = shimmer.x, shimmer.y
+
+        self.add_message("The ancient words echo through the dungeon…", 'danger')
+        self.add_message(
+            '"Then Death and Hades were thrown into the lake of fire."', 'danger'
+        )
+        self.add_message(
+            "The Shimmer tears open — a vast Abyss of black fire yawns beneath Death's feet.", 'danger'
+        )
+        self.add_message(
+            "Death writhes, claws at the stone — and is consumed.", 'danger'
+        )
+        self.add_message(
+            "What no soul before you has ever achieved:  DEATH IS DEAD.", 'success'
+        )
+        self.add_message(
+            "Take this code to your father proudly — you have shown true Wisdom and Courage.", 'success'
+        )
+        self.add_message("\u2605 A scroll materializes from the void. \u2605", 'loot')
+
+        # Destroy Death
+        self.death_pursues = False
+        self.death_monster = None
+
+        # Drop the sixth boss reward scroll
+        reward = make_death_bane_scroll(dx, dy)
+        self.ground_items.append(reward)
+
+        # Remove the Shimmer (the Abyss has closed)
+        self.ground_items = [g for g in self.ground_items if g.id != 'abyssal_shimmer']
+
     def _death_proximity_warning(self):
         """Emit atmospheric messages based on how close Death is."""
         if not self.death_pursues or self.death_monster is None:
@@ -1271,7 +1394,8 @@ class Game:
 
     def _do_exit(self):
         has_stone = any(
-            isinstance(i, Artifact) and i.id == 'philosophers_stone'
+            isinstance(i, Artifact) and i.id in ('philosophers_stone',
+                                                   'complete_tablet_of_second_death')
             for i in self.player.inventory
         )
         if has_stone:
@@ -1293,7 +1417,8 @@ class Game:
 
     def _calc_score(self) -> int:
         has_stone = any(
-            isinstance(i, Artifact) and i.id == 'philosophers_stone'
+            isinstance(i, Artifact) and i.id in ('philosophers_stone',
+                                                   'complete_tablet_of_second_death')
             for i in self.player.inventory
         )
         return (
@@ -1484,9 +1609,17 @@ class Game:
 
     def _pickup(self):
         px, py = self.player.x, self.player.y
-        item = next((i for i in self.ground_items if i.x == px and i.y == py), None)
+        # Skip the Abyssal Shimmer — it's fixed to the floor
+        item = next(
+            (i for i in self.ground_items
+             if i.x == px and i.y == py and i.id != 'abyssal_shimmer'),
+            None
+        )
         if item is None:
-            self.add_message("There is nothing here to pick up.", 'info')
+            # If only the shimmer is here the message was already shown by _notify_ground
+            any_here = any(i for i in self.ground_items if i.x == px and i.y == py)
+            if not any_here:
+                self.add_message("There is nothing here to pick up.", 'info')
             return
         if self.player.add_to_inventory(item):
             self.ground_items.remove(item)
@@ -2246,6 +2379,14 @@ class Game:
         self._invoke_wand(self.wand_menu_items[idx])
 
     def _invoke_wand(self, wand: 'Wand'):
+        # Philosopher's Wrench: no quiz — it's a tool, not magic
+        if wand.id == 'philosophers_wrench':
+            wand.identified = True
+            self.player.known_item_ids.add(wand.id)
+            self._use_philosophers_wrench()
+            self._advance_turn()
+            return
+
         if wand.charges <= 0:
             self.add_message("The wand is empty — it crumbles to dust.", 'warning')
             self.player.remove_from_inventory(wand)
@@ -3273,6 +3414,34 @@ class Game:
                 self.player.apply_stat_bonus(stat, 1)
             self.add_message("Every faculty within you is elevated! All stats permanently +1!", 'success')
 
+        elif effect == 'lake_of_fire':
+            # The inscription is always revealed
+            self.add_message(
+                '"Then Death and Hades were thrown into the lake of fire."', 'info'
+            )
+            # Keep the scroll in inventory — it may need to be read again
+            self.player.inventory.append(scroll)
+
+            # Check if the Abyss conditions are met
+            shimmer = next(
+                (g for g in self.ground_items if g.id == 'abyssal_shimmer' and g.activated),
+                None
+            )
+            complete_on_shimmer = shimmer and any(
+                g.id == 'complete_tablet_of_second_death'
+                and g.x == shimmer.x and g.y == shimmer.y
+                for g in self.ground_items
+            )
+            death_on_shimmer = (
+                self.death_pursues
+                and self.death_monster is not None
+                and shimmer is not None
+                and self.death_monster.x == shimmer.x
+                and self.death_monster.y == shimmer.y
+            )
+            if shimmer and complete_on_shimmer and death_on_shimmer:
+                self._trigger_abyss(shimmer)
+
     # ------------------------------------------------------------------
     # Identify menu  (i key — philosophy quiz)
     # ------------------------------------------------------------------
@@ -3800,6 +3969,21 @@ class Game:
             for m in self.monsters:
                 if m.alive and (m.x, m.y) not in self.visible:
                     self.renderer.draw_entity(m.x, m.y, (70, 70, 120), cam_x, cam_y, None)
+        # Abyssal Shimmer: pulsing violet glow (brighter when activated)
+        for item in self.ground_items:
+            if item.id == 'abyssal_shimmer' and (item.x, item.y) in self.visible:
+                t = self.turn_count % 16
+                pulse = abs(t - 8) / 8.0
+                if getattr(item, 'activated', False):
+                    r = int(160 + 95 * pulse)
+                    g = int(20  + 20 * pulse)
+                    b = 255
+                else:
+                    r = int(60 + 60 * pulse)
+                    g = int(0  + 20 * pulse)
+                    b = int(180 + 75 * pulse)
+                self.renderer.draw_entity(item.x, item.y, (r, g, b), cam_x, cam_y, self.visible)
+
         # Death: always visible when in FOV; drawn with a pale spectral pulse
         if self.death_pursues and self.death_monster is not None:
             dm = self.death_monster
@@ -3853,6 +4037,8 @@ class Game:
             self._draw_examine_menu()
         elif self.state == STATE_ENCYCLOPEDIA:
             self._draw_encyclopedia()
+        elif self.state == STATE_DROP_MENU:
+            self._draw_drop_menu()
 
         pygame.display.flip()
 
@@ -4885,6 +5071,32 @@ class Game:
     # Confirm exit overlay
     # ------------------------------------------------------------------
 
+    def _draw_drop_menu(self):
+        draw_overlay(self.screen, 160)
+        bw = min(600, GAME_W - 40)
+        items = self.drop_menu_items
+        row_h = 22
+        bh = min(GAME_H - 80, 80 + len(items) * row_h + 50)
+        bx = (GAME_W - bw) // 2
+        by = (GAME_H - bh) // 2
+        draw_box(self.screen, bx, by, bw, bh)
+        FP = FontPalette
+        title_surf = self._fbig.render("DROP ITEM", True, FP.GOLD_BRIGHT)
+        self.screen.blit(title_surf, (bx + (bw - title_surf.get_width()) // 2, by + 12))
+        sub_surf = self._fsm.render("Select item to drop at your feet", True, FP.SUBTEXT)
+        self.screen.blit(sub_surf, (bx + (bw - sub_surf.get_width()) // 2, by + 36))
+        letters = 'abcdefghijklmnopqrstuvwxyz'
+        y_off = by + 60
+        for i, item in enumerate(items[:26]):
+            letter = letters[i]
+            dname  = self._display_name(item)
+            col    = FP.ITEM_NAME
+            line   = f"  {letter})  {dname}"
+            surf   = self._fmed.render(line, True, col)
+            self.screen.blit(surf, (bx + 16, y_off + i * row_h))
+        esc_surf = self._fsm.render("ESC to cancel", True, FP.SUBTEXT)
+        self.screen.blit(esc_surf, (bx + (bw - esc_surf.get_width()) // 2, by + bh - 24))
+
     def _draw_eat_menu(self):
         # FANTASY: Grimoire-themed eat menu
         draw_overlay(self.screen, 160)
@@ -5429,6 +5641,62 @@ class Game:
 
     # ------------------------------------------------------------------
     # Examine menu  (x key)
+    # ------------------------------------------------------------------
+    # Drop-item menu  (D key)
+    # ------------------------------------------------------------------
+
+    def _open_drop_menu(self):
+        items = self.player.inventory[:]
+        if not items:
+            self.add_message("You have nothing to drop.", 'info')
+            return
+        self.drop_menu_items = items
+        self.state = STATE_DROP_MENU
+
+    def _drop_menu_input(self, key: int):
+        key_to_idx = {
+            pygame.K_a: 0,  pygame.K_b: 1,  pygame.K_c: 2,  pygame.K_d: 3,
+            pygame.K_e: 4,  pygame.K_f: 5,  pygame.K_g: 6,  pygame.K_h: 7,
+            pygame.K_i: 8,  pygame.K_j: 9,  pygame.K_k: 10, pygame.K_l: 11,
+            pygame.K_m: 12, pygame.K_n: 13, pygame.K_o: 14, pygame.K_p: 15,
+            pygame.K_q: 16, pygame.K_r: 17, pygame.K_s: 18, pygame.K_t: 19,
+            pygame.K_u: 20, pygame.K_v: 21, pygame.K_w: 22, pygame.K_x: 23,
+            pygame.K_y: 24, pygame.K_z: 25,
+        }
+        if key == pygame.K_ESCAPE:
+            self.state = STATE_PLAYER
+            return
+        idx = key_to_idx.get(key)
+        if idx is None or idx >= len(self.drop_menu_items):
+            return
+        self.state = STATE_PLAYER
+        self._do_drop_item(self.drop_menu_items[idx])
+
+    def _do_drop_item(self, item):
+        if not self.player.remove_from_inventory(item):
+            return
+        item.x, item.y = self.player.x, self.player.y
+        self.ground_items.append(item)
+        self.add_message(f"You drop the {self._display_name(item)}.", 'info')
+
+        # Check if Complete Tablet was dropped on the Abyssal Shimmer
+        if item.id == 'complete_tablet_of_second_death':
+            shimmer = next(
+                (g for g in self.ground_items
+                 if g.id == 'abyssal_shimmer' and g.x == item.x and g.y == item.y),
+                None
+            )
+            if shimmer and not shimmer.activated:
+                shimmer.activated = True
+                self.add_message(
+                    "The Shimmer writhes and twists with violent magical energy!", 'success'
+                )
+                self.add_message(
+                    "The Complete Tablet resonates with the Abyssal Shimmer.", 'info'
+                )
+
+        self._advance_turn()
+
     # ------------------------------------------------------------------
 
     def _open_examine_menu(self):
@@ -6028,6 +6296,7 @@ class Game:
             ("X",              "Examine identified item",                                  FP.BODY_TEXT),
             ("B",              "Encyclopedia",                                             FP.BODY_TEXT),
             ("A",              "Attack / bash container",                                  FP.BODY_TEXT),
+            ("D",              "Drop item",                                                FP.BODY_TEXT),
             ("P",              "Pick lock",                                                FP.BODY_TEXT),
             (">  or  <",       "Use stairs",                                               FP.BODY_TEXT),
             ("KNOWLEDGE", None, FP.GOLD_PALE),

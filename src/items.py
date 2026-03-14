@@ -284,3 +284,133 @@ def copy_at(item: Item, x: int, y: int) -> Item:
     inst.x = x
     inst.y = y
     return inst
+
+
+# ------------------------------------------------------------------
+# Deep-lore item factories  (not loaded from JSON)
+# ------------------------------------------------------------------
+
+def make_abyssal_shimmer(x: int, y: int) -> Item:
+    """A fixed terrain feature — the ground shimmers with ancient energy."""
+    item = Item({
+        'id': 'abyssal_shimmer',
+        'name': 'Abyssal Shimmer',
+        'symbol': '*',
+        'color': [80, 20, 160],
+        'weight': 9999.0,
+        'item_class': 'terrain',
+        'min_level': 1,
+    })
+    item.x = x
+    item.y = y
+    item.activated = False   # True once the Complete Tablet is placed here
+    return item
+
+
+def make_tablet_of_second_death(x: int, y: int) -> Item:
+    """A stone tablet with a curious shaped slot — unidentified until examined."""
+    item = Artifact({
+        'id': 'tablet_of_second_death',
+        'name': 'Tablet of Second Death',
+        'symbol': '=',
+        'color': [150, 130, 80],
+        'weight': 3.0,
+        'item_class': 'artifact',
+        'min_level': 80,
+    })
+    item.x = x
+    item.y = y
+    item.unidentified_name = 'plain tablet'
+    item.identified = False
+    item.examine_text = "A plain tablet with a slot that looks like a small stone will fit."
+    return item
+
+
+def make_scroll_lake_of_fire(x: int, y: int) -> Scroll:
+    """A worn scroll — its contents unknown until read."""
+    item = Scroll({
+        'id': 'scroll_lake_of_fire',
+        'name': 'Scroll of the Lake of Fire',
+        'symbol': '?',
+        'color': [220, 80, 20],
+        'weight': 0.3,
+        'item_class': 'scroll',
+        'min_level': 50,
+        'quiz_tier': 3,
+        'quiz_threshold': 3,
+        'effect': 'lake_of_fire',
+        'power': '',
+        'unidentified_name': 'worn scroll',
+        'identified': False,
+    })
+    item.x = x
+    item.y = y
+    return item
+
+
+def make_philosophers_wrench(x: int, y: int) -> Wand:
+    """An odd tool — its purpose unclear until the right pieces are in hand."""
+    item = Wand({
+        'id': 'philosophers_wrench',
+        'name': "Philosopher's Wrench",
+        'symbol': '/',
+        'color': [140, 130, 90],
+        'weight': 2.0,
+        'item_class': 'wand',
+        'min_level': 21,
+        'charges': 99,
+        'charges_min': 99,
+        'charges_max': 99,
+        'max_charges': 99,
+        'quiz_tier': 1,
+        'quiz_threshold': 1,
+        'effect': 'philosophers_wrench',
+        'power': '',
+        'unidentified_name': 'odd tool',
+        'identified': False,
+    })
+    item.x = x
+    item.y = y
+    return item
+
+
+def make_complete_tablet(x: int, y: int) -> Item:
+    """The Stone set perfectly into the Tablet — ready."""
+    item = Artifact({
+        'id': 'complete_tablet_of_second_death',
+        'name': 'Complete Tablet of Second Death',
+        'symbol': '=',
+        'color': [220, 180, 60],
+        'weight': 4.0,
+        'item_class': 'artifact',
+        'min_level': 1,
+    })
+    item.x = x
+    item.y = y
+    item.identified = True
+    item.examine_text = (
+        "The Philosopher's Stone sits perfectly in the slot, glowing with deep energy."
+    )
+    return item
+
+
+def make_death_bane_scroll(x: int, y: int) -> Scroll:
+    """The sixth boss reward scroll — dropped when Death itself is defeated."""
+    item = Scroll({
+        'id': 'scroll_deaths_bane',
+        'name': "Scroll of Death's Bane",
+        'symbol': '?',
+        'color': [220, 220, 255],
+        'weight': 0.1,
+        'item_class': 'scroll',
+        'min_level': 1,
+        'quiz_tier': 1,
+        'quiz_threshold': 1,
+        'effect': 'boss_reward',
+        'power': 'ABYSSAL-VICTOR',
+        'unidentified_name': "Scroll of Death's Bane",
+        'identified': True,
+    })
+    item.x = x
+    item.y = y
+    return item
