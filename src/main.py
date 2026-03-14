@@ -1299,6 +1299,40 @@ class Game:
                         self.dungeon.explored.add((cx, cy))
 
         self._do_monster_turns()
+        self._maybe_wander_spawn()
+
+    def _maybe_wander_spawn(self):
+        """Periodically spawn a wandering monster to keep pressure on the player."""
+        import random as _rng
+        # Spawn every 18-30 turns; more frequently at deeper levels
+        interval = max(12, 28 - self.dungeon_level // 5)
+        if self.turn_count % interval != 0:
+            return
+        # Cap active monsters: don't overpopulate
+        alive = sum(1 for m in self.monsters if m.alive)
+        max_alive = min(4 + self.dungeon_level // 6, 14)
+        if alive >= max_alive:
+            return
+        # Spawn on an explored but currently non-visible tile, away from player
+        px, py = self.player.x, self.player.y
+        occupied = {(m.x, m.y) for m in self.monsters if m.alive}
+        candidates = [
+            (x, y) for (x, y) in self.dungeon.explored
+            if self.dungeon.is_walkable(x, y)
+            and (x, y) not in self.visible
+            and (x, y) not in occupied
+            and abs(x - px) + abs(y - py) >= 8
+        ]
+        if not candidates:
+            return
+        x, y = _rng.choice(candidates)
+        from dungeon import spawn_monsters
+        new_monsters = spawn_monsters(self.dungeon.rooms, self.dungeon_level,
+                                      self.dungeon, min_count=1, max_count=1)
+        if new_monsters:
+            m = new_monsters[0]
+            m.x, m.y = x, y
+            self.monsters.append(m)
 
     def _teleport_player(self):
         import random as _rng
@@ -1376,9 +1410,9 @@ class Game:
         if self.player.add_to_inventory(item):
             self.ground_items.remove(item)
             if isinstance(item, Ammo):
-                self.add_message(f"You pick up {item.count} {item.name}s.", 'loot')
+                self.add_message(f"You pick up {item.count} {self._display_name(item)}s.", 'loot')
             else:
-                self.add_message(f"You pick up the {item.name}.", 'loot')
+                self.add_message(f"You pick up the {self._display_name(item)}.", 'loot')
             if isinstance(item, Artifact) and item.id == 'philosophers_stone':
                 self.add_message(
                     "The Philosopher's Stone! Return to the surface to win!", 'loot'
@@ -1920,6 +1954,8 @@ class Game:
                     return
             self.player._apply_equip(item)
             self.player.remove_from_inventory(item)
+            item.identified = True
+            self.player.known_item_ids.add(item.id)
             suffix = " (two-handed)" if getattr(item, 'two_handed', False) else ""
             self.add_message(f"You equip the {item.name}{suffix}.", 'success')
             self._advance_turn()
@@ -1981,7 +2017,7 @@ class Game:
 
     def _start_armor_quiz(self, item):
         """Launch geography threshold quiz to equip armor or shield."""
-        item_name = item.name
+        item_name = self._display_name(item)
         cursed_tag = " (cursed)" if getattr(item, 'cursed', False) else ""
         self.quiz_title = f"EQUIPPING {item_name.upper()}  —  GEOGRAPHY"
         self.state = STATE_QUIZ
@@ -1991,8 +2027,10 @@ class Game:
             if result.success:
                 self.player._apply_equip(item)
                 self.player.remove_from_inventory(item)
+                item.identified = True
+                self.player.known_item_ids.add(item.id)
                 ac = self.player.get_ac()
-                msg = f"You equip the {item_name}{cursed_tag}. AC is now {ac}."
+                msg = f"You equip the {item.name}{cursed_tag}. AC is now {ac}."
                 if getattr(item, 'cursed', False):
                     msg += " It feels wrong..."
                 self.add_message(msg, 'success')
@@ -4132,7 +4170,7 @@ class Game:
         sep_h     = 30   # height of section separator label
         total_rows = n_equip + n_unequip + (1 if n_equip and n_unequip else 0)
         bw = min(760, GAME_W - 40)
-        bh = min(88 + total_rows * row_h + (sep_h if n_equip and n_unequip else 0) + 44,
+        bh = min(88 + total_rows * row_h + (sep_h if n_equip and n_unequip else 0) + 64,
                  WINDOW_H - 40)
         bx = (GAME_W - bw) // 2
         by = (WINDOW_H - bh) // 2
@@ -4262,7 +4300,7 @@ class Game:
         draw_overlay(self.screen, 160)
 
         bw = min(760, GAME_W - 40)
-        bh = min(90 + len(self.accessory_menu_items) * 66 + 50, WINDOW_H - 40)
+        bh = min(90 + len(self.accessory_menu_items) * 66 + 70, WINDOW_H - 40)
         bx = (GAME_W - bw) // 2
         by = (WINDOW_H - bh) // 2
 
@@ -4328,7 +4366,7 @@ class Game:
         draw_overlay(self.screen, 160)
 
         bw = min(760, GAME_W - 40)
-        bh = min(90 + len(self.wand_menu_items) * 66 + 50, WINDOW_H - 40)
+        bh = min(90 + len(self.wand_menu_items) * 66 + 70, WINDOW_H - 40)
         bx = (GAME_W - bw) // 2
         by = (WINDOW_H - bh) // 2
 
@@ -4390,7 +4428,7 @@ class Game:
         n_spells = len(self.spell_menu_items)
         ROW_H = 66
         bw = min(820, GAME_W - 40)
-        bh = min(96 + n_spells * ROW_H + 52, WINDOW_H - 40)
+        bh = min(96 + n_spells * ROW_H + 70, WINDOW_H - 40)
         bx = (GAME_W - bw) // 2
         by = (WINDOW_H - bh) // 2
         draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.ARCANE_BRIGHT)
@@ -4447,7 +4485,7 @@ class Game:
         draw_overlay(self.screen, 160)
 
         bw = min(760, GAME_W - 40)
-        bh = min(90 + len(self.scroll_menu_items) * 66 + 50, WINDOW_H - 40)
+        bh = min(90 + len(self.scroll_menu_items) * 66 + 70, WINDOW_H - 40)
         bx = (GAME_W - bw) // 2
         by = (WINDOW_H - bh) // 2
 
@@ -4519,7 +4557,7 @@ class Game:
         n_items = len(self.identify_menu_items)
         ROW_H = 66
         bw = min(820, GAME_W - 40)
-        bh = min(96 + n_items * ROW_H + 52, WINDOW_H - 40)
+        bh = min(96 + n_items * ROW_H + 70, WINDOW_H - 40)
         bx = (GAME_W - bw) // 2
         by = (WINDOW_H - bh) // 2
 
@@ -4601,7 +4639,7 @@ class Game:
         bw = min(800, GAME_W - 40)
         bh = min(
             90 + compound_header_h + n_compound * row_h
-               + single_header_h   + n_single   * row_h + 60,
+               + single_header_h   + n_single   * row_h + 70,
             WINDOW_H - 40
         )
         bx = (GAME_W - bw) // 2
@@ -4734,7 +4772,7 @@ class Game:
         draw_overlay(self.screen, 160)
 
         bw = min(760, GAME_W - 40)
-        bh = min(90 + len(self.eat_menu_items) * 66 + 50, WINDOW_H - 40)
+        bh = min(90 + len(self.eat_menu_items) * 66 + 70, WINDOW_H - 40)
         bx = (GAME_W - bw) // 2
         by = (WINDOW_H - bh) // 2
 
@@ -5372,7 +5410,7 @@ class Game:
         n_items = len(self.examine_menu_items)
         ROW_H = 64
         bw = min(820, GAME_W - 40)
-        bh = min(96 + n_items * ROW_H + 52, WINDOW_H - 40)
+        bh = min(96 + n_items * ROW_H + 70, WINDOW_H - 40)
         bx = (GAME_W - bw) // 2
         by = (WINDOW_H - bh) // 2
 
@@ -5699,7 +5737,7 @@ class Game:
         n = len(entries)
         ROW_H = 44
         visible_rows = min(n, 14)
-        bh = min(96 + visible_rows * ROW_H + 52, WINDOW_H - 40)
+        bh = min(96 + visible_rows * ROW_H + 70, WINDOW_H - 40)
         by = (WINDOW_H - bh) // 2
 
         draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.ARCANE_BRIGHT)
