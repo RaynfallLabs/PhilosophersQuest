@@ -31,7 +31,8 @@ class Player:
         self.weapon = None
         self.shield = None
         self.armor_slots = [None] * 8     # head, body, arms, hands, legs, feet, cloak, shirt
-        self.accessory_slots = [None] * 4
+        self.accessory_slots = [None] * 4  # ring slots
+        self.amulet_slot = None            # single amulet slot
 
         # Inventory (list of item objects)
         self.inventory = []
@@ -244,6 +245,7 @@ class Player:
             slots[name] = self.armor_slots[i]
         for i, item in enumerate(self.accessory_slots):
             slots[f'ring_{i+1}'] = item
+        slots['amulet'] = self.amulet_slot
         return slots
 
     def get_inventory_display(self) -> list:
@@ -296,11 +298,24 @@ class Player:
                 self.inventory.append(old)
             self.shield = item
         elif isinstance(item, Accessory):
-            # Find first empty accessory slot
-            for i in range(len(self.accessory_slots)):
-                if self.accessory_slots[i] is None:
-                    self.accessory_slots[i] = item
-                    break
+            if getattr(item, 'slot', 'ring') == 'amulet':
+                # Swap out existing amulet if present
+                old = self.amulet_slot
+                if old:
+                    self.inventory.append(old)
+                    # Reverse old amulet's effects
+                    old_fx = old.effects
+                    if 'status' in old_fx:
+                        self.status_effects.pop(old_fx['status'], None)
+                    if 'stat' in old_fx:
+                        self.apply_stat_bonus(old_fx['stat'], -old_fx.get('amount', 0))
+                self.amulet_slot = item
+            else:
+                # Find first empty ring slot
+                for i in range(len(self.accessory_slots)):
+                    if self.accessory_slots[i] is None:
+                        self.accessory_slots[i] = item
+                        break
             # Apply the accessory's effect permanently
             fx = item.effects
             if 'status' in fx:

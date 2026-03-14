@@ -274,6 +274,7 @@ class Sidebar:
             ("Head",   "head"),   ("Body",   "body"),
             ("Hands",  "hands"),  ("Legs",   "legs"),
             ("Feet",   "feet"),
+            ("Amulet", "amulet"),
             ("Ring 1", "ring_1"), ("Ring 2", "ring_2"),
             ("Ring 3", "ring_3"), ("Ring 4", "ring_4"),
         ]:
@@ -313,17 +314,11 @@ class Sidebar:
             iname = self._fit(self._fsm, self._cap(iname), max_name_w)
             self.screen.blit(self._fsm.render(iname, True, ic), (name_x, y))
             y += 22
-        # Philosopher's Amulet — passive inventory item, not a slot
-        label_surf = self._fsm.render("Amulet:", True, FP.INK_LIGHT)
-        self.screen.blit(label_surf, (self.x + self.PAD, y))
-        name_x = self.x + self.PAD + label_surf.get_width() + 5
-        max_name_w = self.x + self.w - self.PAD - name_x
+        # Philosopher's Amulet — passive carry indicator (not an equip slot)
         if has_phil:
-            amulet_text = self._fit(self._fsm, "Philosopher's Amulet", max_name_w)
-            self.screen.blit(self._fsm.render(amulet_text, True, (220, 180, 40)), (name_x, y))
-        else:
-            self.screen.blit(self._fsm.render("\u2014", True, (52, 52, 70)), (name_x, y))
-        y += 22
+            phil_surf = self._fsm.render("\u2605 Phil. Amulet", True, (220, 180, 40))
+            self.screen.blit(phil_surf, (self.x + self.PAD, y))
+            y += 20
         return y + self.SECTION_GAP
 
     def _inventory(self, player, y: int):

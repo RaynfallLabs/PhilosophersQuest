@@ -1909,6 +1909,8 @@ class Game:
         for idx, acc_item in enumerate(self.player.accessory_slots):
             if acc_item is not None:
                 self.equip_menu_equipped.append((f'accessory_{idx}', acc_item))
+        if self.player.amulet_slot:
+            self.equip_menu_equipped.append(('amulet', self.player.amulet_slot))
         if not self.equip_menu_items and not self.equip_menu_equipped:
             self.add_message("Nothing to equip or unequip.", 'info')
             return
@@ -2003,7 +2005,15 @@ class Game:
         elif slot_name.startswith('accessory_'):
             acc_idx = int(slot_name.split('_')[1])
             self.player.accessory_slots[acc_idx] = None
-            # Reverse the accessory's stat/status bonuses
+            from items import Accessory as _Acc
+            if isinstance(item, _Acc):
+                fx = item.effects
+                if 'stat' in fx:
+                    self.player.apply_stat_bonus(fx['stat'], -fx.get('amount', 0))
+                if 'status' in fx:
+                    self.player.status_effects.pop(fx['status'], None)
+        elif slot_name == 'amulet':
+            self.player.amulet_slot = None
             from items import Accessory as _Acc
             if isinstance(item, _Acc):
                 fx = item.effects
