@@ -566,6 +566,7 @@ STATE_HINT           = 'hint'          # Recall Lore result display
 STATE_EXAMINE        = 'examine'       # Examine identified inventory item
 STATE_ENCYCLOPEDIA   = 'encyclopedia'  # Encyclopedia browser
 STATE_DROP_MENU      = 'drop_menu'    # Drop an item from inventory
+STATE_STORY_POPUP    = 'story_popup'  # Narrative popup (quest intro, boss defeat, ending)
 
 # ---------------------------------------------------------------------------
 # Spells learnable from spellbooks  (spell_id → attributes)
@@ -693,6 +694,9 @@ class Game:
         self._lore_placed: set = set()   # which have been placed this run
         # Drop-item state
         self.drop_menu_items: list = []
+        # Story popup state (quest intro, boss victory, endings)
+        self.popup_data: dict | None = None     # title, lines, accent, code
+        self.popup_next_state: str   = STATE_PLAYER
         self.defeat_reason      = 'died'   # 'died' | 'starved' | 'fled'
         self.correct_answers    = 0        # total correct answers this run
         self.wrong_answers      = 0        # total wrong answers this run
@@ -709,6 +713,7 @@ class Game:
         self._target_idx        = 0        # which candidate is selected
 
         self._new_level(1)
+        self._show_story_popup('dungeon_entrance', STATE_PLAYER)
 
     # ------------------------------------------------------------------
     # Message helper
@@ -949,6 +954,8 @@ class Game:
                               STATE_EXAMINE, STATE_ENCYCLOPEDIA,
                               STATE_DROP_MENU):
                 self.state = STATE_PLAYER
+            if self.state == STATE_STORY_POPUP:
+                self.state = self.popup_next_state
                 return True
             if self.state in (STATE_DEAD, STATE_VICTORY):
                 return False
@@ -998,6 +1005,8 @@ class Game:
             self.state = STATE_PLAYER   # any key dismisses hint overlay
         elif self.state == STATE_DROP_MENU:
             self._drop_menu_input(key)
+        elif self.state == STATE_STORY_POPUP:
+            self.state = self.popup_next_state   # any key advances
         elif self.state == STATE_CONFIRM_EXIT:
             self._confirm_exit_input(key)
 
@@ -1398,13 +1407,12 @@ class Game:
                                                    'complete_tablet_of_second_death')
             for i in self.player.inventory
         )
+        self._on_game_over()
         if has_stone:
-            self._on_game_over()
-            self.state = STATE_VICTORY
+            self._show_story_popup('exit_with_stone', STATE_VICTORY)
         else:
             self.defeat_reason = 'fled'
-            self._on_game_over()
-            self.state = STATE_DEAD
+            self._show_story_popup('exit_without_stone', STATE_DEAD)
 
     def _on_game_over(self):
         """Delete save file on any game-ending event (permadeath)."""
@@ -2942,6 +2950,10 @@ class Game:
         self.level_mgr.monsters_killed += 1
         self.add_message(f"The {monster.name} is slain!", 'success')
         self._drop_treasure(monster)
+        # Boss narrative popup
+        story_key = self._BOSS_STORY_KEYS.get(monster.kind)
+        if story_key:
+            self._show_story_popup(story_key, STATE_PLAYER)
         from items import Corpse
         self.ground_items.append(
             Corpse(
@@ -4039,6 +4051,8 @@ class Game:
             self._draw_encyclopedia()
         elif self.state == STATE_DROP_MENU:
             self._draw_drop_menu()
+        elif self.state == STATE_STORY_POPUP:
+            self._draw_story_popup()
 
         pygame.display.flip()
 
@@ -5079,22 +5093,21 @@ class Game:
         bh = min(GAME_H - 80, 80 + len(items) * row_h + 50)
         bx = (GAME_W - bw) // 2
         by = (GAME_H - bh) // 2
-        draw_box(self.screen, bx, by, bw, bh)
-        FP = FontPalette
+        draw_panel(self.screen, (bx, by, bw, bh))
         title_surf = self._fbig.render("DROP ITEM", True, FP.GOLD_BRIGHT)
         self.screen.blit(title_surf, (bx + (bw - title_surf.get_width()) // 2, by + 12))
-        sub_surf = self._fsm.render("Select item to drop at your feet", True, FP.SUBTEXT)
+        sub_surf = self._fsm.render("Select item to drop at your feet", True, FP.FADED_TEXT)
         self.screen.blit(sub_surf, (bx + (bw - sub_surf.get_width()) // 2, by + 36))
         letters = 'abcdefghijklmnopqrstuvwxyz'
         y_off = by + 60
         for i, item in enumerate(items[:26]):
             letter = letters[i]
             dname  = self._display_name(item)
-            col    = FP.ITEM_NAME
+            col    = FP.PARCHMENT_LIGHT
             line   = f"  {letter})  {dname}"
             surf   = self._fmed.render(line, True, col)
             self.screen.blit(surf, (bx + 16, y_off + i * row_h))
-        esc_surf = self._fsm.render("ESC to cancel", True, FP.SUBTEXT)
+        esc_surf = self._fsm.render("ESC to cancel", True, FP.FADED_TEXT)
         self.screen.blit(esc_surf, (bx + (bw - esc_surf.get_width()) // 2, by + bh - 24))
 
     def _draw_eat_menu(self):
@@ -5199,6 +5212,251 @@ class Game:
         self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, by + 118))
         hint2 = self.font_sm.render("Departing without the Stone ends your quest.", True, FP.FADED_TEXT)
         self.screen.blit(hint2, (bx + (bw - hint2.get_width()) // 2, by + 158))
+
+    # ------------------------------------------------------------------
+    # Story popup  (narrative events: entrance, boss victories, endings)
+    # ------------------------------------------------------------------
+
+    # All narrative content indexed by key
+    _STORY_CONTENT = {
+        'dungeon_entrance': {
+            'title': 'THE PHILOSOPHER\'S QUEST',
+            'accent': (80, 120, 200),
+            'lines': [
+                "Your village of Aethon is dying.",
+                "",
+                "A magical plague — born of corruption and forgotten wisdom — has spread",
+                "through every home, every hearth, every life you have ever known.",
+                "Children grow pale. Elders speak in whispers of an ancient remedy.",
+                "",
+                "The Philosopher's Stone.",
+                "",
+                "Forged at the very bottom of the dungeon beneath the ancient ruins,",
+                "it holds the wisdom needed to break the plague's hold forever.",
+                "No one who has sought it has returned.",
+                "",
+                "But you are not no one.",
+                "",
+                "Descend. Claim the Stone. Return it to the light.",
+                "The people who love you are counting on you.",
+            ],
+            'code': None,
+        },
+        'boss_asterion': {
+            'title': 'ASTERION THE MINOTAUR FALLS',
+            'accent': (180, 50, 50),
+            'lines': [
+                "Asterion was born of Pasiphae and a divine white bull sent by Poseidon —",
+                "a creature of two worlds, neither fully beast nor fully man.",
+                "King Minos imprisoned him in the labyrinth built by Daedalus,",
+                "where he was fed on tribute of youths until Theseus came.",
+                "",
+                "The hero navigated the maze with Ariadne's thread and slew the Minotaur",
+                "not with overwhelming strength, but with preparation and cleverness.",
+                "",
+                "Today, that thread was your knowledge.",
+                "The first guardian falls. The dungeon opens deeper.",
+            ],
+            'code': None,
+        },
+        'boss_medusa': {
+            'title': 'MEDUSA THE GORGON FALLS',
+            'accent': (50, 160, 80),
+            'lines': [
+                "Once a beautiful mortal priestess, Medusa was transformed by Athena's curse",
+                "into a creature whose gaze turned living flesh to stone.",
+                "Her hair became serpents. Her beauty became terror.",
+                "",
+                "Perseus slew her by meeting her eyes only in a mirrored shield —",
+                "trusting reflection over direct sight, wisdom over recklessness.",
+                "From her blood sprang Pegasus and Chrysaor.",
+                "",
+                "Her gaze is stilled. The passage deepens.",
+            ],
+            'code': None,
+        },
+        'boss_fafnir': {
+            'title': 'FAFNIR THE DRAGON FALLS',
+            'accent': (200, 100, 30),
+            'lines': [
+                "Fafnir was not always a dragon.",
+                "He was a dwarf — son of the sorcerer Hreidmar — who murdered his own father",
+                "for cursed Andvari's gold, then transformed over years into a great serpent,",
+                "hoarding his stolen wealth in the Gnita Heath.",
+                "",
+                "The hero Sigurd slew him not by charging, but by patience:",
+                "hiding in a pit along Fafnir's path, striking from below as the dragon passed.",
+                "Cunning over power. Patience over courage alone.",
+                "",
+                "His fire is extinguished. The way below grows darker still.",
+            ],
+            'code': None,
+        },
+        'boss_fenrir': {
+            'title': 'FENRIR THE WOLF FALLS',
+            'accent': (80, 140, 200),
+            'lines': [
+                "Fenrir is the monstrous wolf of Norse prophecy — son of Loki,",
+                "so terrible that the gods themselves feared to approach him.",
+                "They bound him with Gleipnir, a magical ribbon forged from impossible things:",
+                "a cat's footstep, a mountain's roots, a woman's beard, a bear's sinew,",
+                "a fish's breath, and a bird's spittle.",
+                "",
+                "At Ragnarök, he was prophesied to swallow Odin himself.",
+                "",
+                "That prophecy is broken. You have done what even the Allfather could not.",
+                "The deepest chamber lies ahead.",
+            ],
+            'code': None,
+        },
+        'boss_abaddon': {
+            'title': 'ABADDON THE DESTROYER FALLS',
+            'accent': (130, 60, 200),
+            'lines': [
+                "Abaddon is named in Revelation as the angel of the bottomless pit —",
+                "the Destroyer, king of the locust army that rises at the fifth trumpet.",
+                "His name means 'destruction' in Hebrew. He is ruin given form.",
+                "",
+                "That you have defeated him is more than a feat of arms.",
+                "It is a statement about the nature of wisdom itself:",
+                "that knowledge, courage, and preparation can overcome even destruction.",
+                "",
+                "The Philosopher's Stone lies before you.",
+                "Take it. The village is waiting.",
+            ],
+            'code': None,
+        },
+        'exit_with_stone': {
+            'title': 'THE QUEST IS COMPLETE',
+            'accent': (220, 180, 40),
+            'lines': [
+                "You have done what many believed impossible.",
+                "",
+                "You descended into the darkness, faced and defeated five legendary adversaries,",
+                "claimed the Philosopher's Stone, and returned to the light.",
+                "",
+                "Your village of Aethon will be saved.",
+                "The plague will lift. The children will recover.",
+                "The elders will weep with relief.",
+                "The people who counted on you — who believed in you —",
+                "will see the sun rise again because of what you did today.",
+                "",
+                "You are a Philosopher in the truest sense:",
+                "one who loves wisdom enough to seek it at the cost of everything,",
+                "and wise enough to bring it home.",
+                "",
+                "Well done.",
+            ],
+            'code': 'QUEST-COMPLETE',
+        },
+        'exit_without_stone': {
+            'title': 'THE DESERTER',
+            'accent': (100, 100, 100),
+            'lines': [
+                "You ran.",
+                "",
+                "Not from monsters. Not from darkness. Not even from death.",
+                "You ran from the people who needed you most.",
+                "",
+                "From the children who grow weaker with each passing day.",
+                "From the elders who pressed your hands and told you they believed in you.",
+                "From the village that gave everything it had left to send you here.",
+                "",
+                "The Philosopher's Stone remains at the bottom of the dungeon.",
+                "Unreached. Unclaimed. Its wisdom wasted on the dark.",
+                "",
+                "The village of Aethon will not see another spring.",
+                "",
+                "You were not overcome by the dungeon.",
+                "You overcame yourself — and chose retreat.",
+            ],
+            'code': None,
+        },
+    }
+
+    # Map monster kind → story key (only for bosses)
+    _BOSS_STORY_KEYS = {
+        'asterion_minotaur': 'boss_asterion',
+        'medusa_gorgon':     'boss_medusa',
+        'fafnir_dragon':     'boss_fafnir',
+        'fenrir_wolf':       'boss_fenrir',
+        'abaddon_destroyer': 'boss_abaddon',
+    }
+
+    def _show_story_popup(self, key: str, next_state: str = STATE_PLAYER):
+        """Queue a narrative popup. Game pauses until the player dismisses it."""
+        data = self._STORY_CONTENT.get(key)
+        if data is None:
+            return
+        self.popup_data       = data
+        self.popup_next_state = next_state
+        self.state            = STATE_STORY_POPUP
+
+    def _draw_story_popup(self):
+        """Render the current narrative popup over the game world."""
+        if not self.popup_data:
+            return
+        d = self.popup_data
+        FP = FontPalette
+
+        # ── Background ────────────────────────────────────────────────
+        draw_overlay(self.screen, 200, (8, 6, 2))
+
+        accent = d['accent']
+        lines  = d['lines']
+        code   = d.get('code')
+
+        # ── Box sizing ────────────────────────────────────────────────
+        bw  = min(820, GAME_W - 60)
+        row = 22
+        inner_lines = len(lines) + (3 if code else 0)
+        bh  = 80 + inner_lines * row + 64
+        bh  = min(bh, GAME_H + MSG_H - 60)
+        bx  = (GAME_W - bw) // 2
+        by  = max(20, (GAME_H + MSG_H - bh) // 2)
+
+        draw_panel(self.screen, (bx, by, bw, bh), border_color=accent)
+
+        # ── Accent bar under title ─────────────────────────────────────
+        accent_surf = pygame.Surface((bw - 8, 2), pygame.SRCALPHA)
+        accent_surf.fill((*accent, 80))
+        self.screen.blit(accent_surf, (bx + 4, by + 52))
+
+        # ── Title ─────────────────────────────────────────────────────
+        title_surf = self._fbig.render(d['title'], True, accent)
+        tx = bx + (bw - title_surf.get_width()) // 2
+        self.screen.blit(title_surf, (tx, by + 14))
+
+        # ── Body text ─────────────────────────────────────────────────
+        y = by + 64
+        for line in lines:
+            if line == '':
+                y += row // 2
+                continue
+            # Quoted lines in tinted colour
+            col = (200, 195, 160) if line.startswith('"') else FP.PARCHMENT_LIGHT
+            surf = self._fmed.render(line, True, col)
+            self.screen.blit(surf, (bx + 28, y))
+            y += row
+
+        # ── Code block ────────────────────────────────────────────────
+        if code:
+            y += row // 2
+            code_bg = pygame.Surface((bw - 40, row + 8), pygame.SRCALPHA)
+            code_bg.fill((*accent, 60))
+            self.screen.blit(code_bg, (bx + 20, y - 4))
+            code_label = self._fmed.render("Reward Code:  ", True, FP.PARCHMENT_LIGHT)
+            code_val   = self._fbig.render(code, True, FP.GOLD_BRIGHT)
+            total_w    = code_label.get_width() + code_val.get_width()
+            lx = bx + (bw - total_w) // 2
+            self.screen.blit(code_label, (lx, y))
+            self.screen.blit(code_val,   (lx + code_label.get_width(), y - 3))
+            y += row + 14
+
+        # ── Prompt ────────────────────────────────────────────────────
+        prompt = self._fsm.render("— Press any key to continue —", True, FP.HINT_TEXT)
+        px_ = bx + (bw - prompt.get_width()) // 2
+        self.screen.blit(prompt, (px_, by + bh - 26))
 
     # ------------------------------------------------------------------
     # Victory screen
