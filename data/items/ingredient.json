@@ -790,6 +790,7 @@
     ],
     "weight": 1.5,
     "min_level": 1,
+    "mp_restore": 2,
     "source_monster": "skeleton_archer",
     "recipes": {
       "0": {
@@ -1415,6 +1416,7 @@
     ],
     "weight": 5.0,
     "min_level": 2,
+    "mp_restore": 3,
     "source_monster": "skeleton_warrior",
     "recipes": {
       "0": {
@@ -2294,6 +2296,7 @@
     ],
     "weight": 1.5,
     "min_level": 3,
+    "mp_restore": 5,
     "source_monster": "skeleton_mage",
     "recipes": {
       "0": {
@@ -7140,6 +7143,7 @@
     ],
     "weight": 3.0,
     "min_level": 7,
+    "mp_restore": 8,
     "source_monster": "lich_thrall",
     "recipes": {
       "0": {
@@ -13841,5 +13845,109 @@
       }
     },
     "floor_spawn_weight": {}
+  },
+  "wolf_meat": {
+    "name": "wolf meat",
+    "symbol": "m",
+    "color": [
+      150,
+      110,
+      70
+    ],
+    "weight": 1.5,
+    "min_level": 4,
+    "source_monster": "wolf_pack_leader",
+    "recipes": {
+      "0": {
+        "name": "ruined wolf scraps",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "charred wolf meat",
+        "sp": 20,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "roasted wolf haunch",
+        "sp": 40,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "hearty wolf stew",
+        "sp": 65,
+        "bonus_type": "status",
+        "bonus_effect": "haste",
+        "bonus_amount": 10
+      },
+      "4": {
+        "name": "wolf hunter's feast",
+        "sp": 90,
+        "bonus_type": "combat_stat",
+        "bonus_amount": 1
+      },
+      "5": {
+        "name": "alpha wolf essence",
+        "sp": 120,
+        "bonus_type": "two_stats",
+        "bonus_amount": 1
+      }
+    }
+  },
+  "slime_core": {
+    "name": "slime core",
+    "symbol": "*",
+    "color": [
+      80,
+      200,
+      80
+    ],
+    "weight": 0.5,
+    "min_level": 2,
+    "source_monster": "green_slime",
+    "recipes": {
+      "0": {
+        "name": "dissolving slime gloop",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "slime broth",
+        "sp": 10,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "rendered ooze jelly",
+        "sp": 22,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "purified slime reduction",
+        "sp": 38,
+        "bonus_type": "status",
+        "bonus_effect": "poison_resist",
+        "bonus_amount": 20
+      },
+      "4": {
+        "name": "crystallized ooze extract",
+        "sp": 55,
+        "bonus_type": "status",
+        "bonus_effect": "poison_resist",
+        "bonus_amount": 35
+      },
+      "5": {
+        "name": "primal ooze essence",
+        "sp": 75,
+        "bonus_type": "stat",
+        "bonus_stat": "CON",
+        "bonus_amount": 1
+      }
+    }
   }
 }

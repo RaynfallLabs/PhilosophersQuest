@@ -891,5 +891,603 @@
     "bonus_stat": "STR",
     "bonus_amount": 1,
     "lore": "Goblinoid warriors eat together before battle. You eat them after. Conqueror's strength."
+  },
+  "spider_web_stew": {
+    "name": "Spider-Silk Mushroom Stew",
+    "ingredients": [
+      "spider_silk",
+      "cave_mushroom"
+    ],
+    "tier": 1,
+    "sp": 80,
+    "bonus_type": "status",
+    "bonus_effect": "invisible",
+    "bonus_amount": 12,
+    "description": "Silk threads dissolved into mushroom broth bend light around the drinker."
+  },
+  "bat_wing_cracklings": {
+    "name": "Bat Wing Cracklings",
+    "ingredients": [
+      "bat_wing",
+      "wild_thyme"
+    ],
+    "tier": 1,
+    "sp": 70,
+    "bonus_type": "status",
+    "bonus_effect": "haste",
+    "bonus_amount": 15,
+    "description": "Crisped bat wing with thyme. Something about the hollowness of the bones quickens the legs."
+  },
+  "slime_brined_goblin": {
+    "name": "Slime-Brined Goblin Shank",
+    "ingredients": [
+      "goblin_flesh",
+      "slime_core"
+    ],
+    "tier": 1,
+    "sp": 100,
+    "bonus_type": "status",
+    "bonus_effect": "poison_resist",
+    "bonus_amount": 40,
+    "description": "The acidic slime brine permeates the goblin meat, building gut resistance to toxins."
+  },
+  "fallen_bone_broth": {
+    "name": "Fallen Warrior's Bone Broth",
+    "ingredients": [
+      "bone_shard",
+      "cave_carrot"
+    ],
+    "tier": 1,
+    "sp": 75,
+    "bonus_type": "status",
+    "bonus_effect": "regenerating",
+    "bonus_amount": 30,
+    "description": "Marrow coaxed from shattered bones with root vegetables. The dead still nourish the living."
+  },
+  "rat_goblin_street_pot": {
+    "name": "Rat and Goblin Street Pot",
+    "ingredients": [
+      "rat_meat",
+      "goblin_flesh"
+    ],
+    "tier": 1,
+    "sp": 130,
+    "bonus_type": "random_stat",
+    "bonus_amount": 1,
+    "description": "The foundational recipe of the dungeon underclass. Filling, cheap, and surprisingly nutritious."
+  },
+  "cold_cave_jelly": {
+    "name": "Cold Cave Jelly",
+    "ingredients": [
+      "slime_core",
+      "frost_gland"
+    ],
+    "tier": 1,
+    "sp": 85,
+    "bonus_type": "status",
+    "bonus_effect": "cold_shield",
+    "bonus_amount": 25,
+    "description": "Slime set cold in a frost gland casing. Numb to the cold before you're numb for good."
+  },
+  "ember_rat_fire_fusion": {
+    "name": "Ember-Fused Rat Broth",
+    "ingredients": [
+      "rat_meat",
+      "fire_gland"
+    ],
+    "tier": 1,
+    "sp": 100,
+    "bonus_type": "status",
+    "bonus_effect": "fire_shield",
+    "bonus_amount": 25,
+    "description": "The fire beetle's gland renders the rat fat volcanic. Provides temporary fire resistance."
+  },
+  "troll_regen_chowder": {
+    "name": "Troll Regeneration Chowder",
+    "ingredients": [
+      "troll_hide",
+      "bear_meat"
+    ],
+    "tier": 2,
+    "sp": 180,
+    "bonus_type": "status",
+    "bonus_effect": "regenerating",
+    "bonus_amount": 60,
+    "description": "Two of the dungeon's most resilient creatures combined in a hearty chowder. Wounds knit themselves."
+  },
+  "wolf_herb_hunters_roast": {
+    "name": "Wolf and Herb Hunter's Roast",
+    "ingredients": [
+      "wolf_meat",
+      "wild_thyme",
+      "rosemary_sprig"
+    ],
+    "tier": 2,
+    "sp": 160,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "description": "A woodland hunter's meal of slow-roasted wolf with aromatic mountain herbs. Strengthens the body for battle."
+  },
+  "harpy_wing_bisque": {
+    "name": "Harpy Wing Bisque",
+    "ingredients": [
+      "hollow_bone",
+      "cave_carrot"
+    ],
+    "tier": 2,
+    "sp": 110,
+    "bonus_type": "status",
+    "bonus_effect": "haste",
+    "bonus_amount": 30,
+    "description": "Hollow harpy bones dissolved in root vegetable broth. The lightness of flight passes to the eater."
+  },
+  "snake_troll_fortifier": {
+    "name": "Snake-Troll Fortifier",
+    "ingredients": [
+      "snake_meat",
+      "troll_hide"
+    ],
+    "tier": 2,
+    "sp": 140,
+    "bonus_type": "status",
+    "bonus_effect": "poison_resist",
+    "bonus_amount": 50,
+    "description": "Snake venom proteins rendered harmless by troll resilience. The body learns to endure."
+  },
+  "bear_claw_stew": {
+    "name": "Bear Claw Stew",
+    "ingredients": [
+      "bear_meat",
+      "gnoll_hide",
+      "cave_mushroom"
+    ],
+    "tier": 2,
+    "sp": 190,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 2,
+    "description": "Two apex predators of the caves combined with fungi. The strength of both flows into the eater."
+  },
+  "goblin_slime_ferment": {
+    "name": "Goblin-Slime Ferment",
+    "ingredients": [
+      "goblin_flesh",
+      "slime_core",
+      "valerian_root"
+    ],
+    "tier": 2,
+    "sp": 120,
+    "bonus_type": "status",
+    "bonus_effect": "arcane_shield",
+    "bonus_amount": 25,
+    "description": "The alchemical properties of slime, tempered by goblin constitution and root herbs, resist magical forces."
+  },
+  "frost_fire_paradox": {
+    "name": "Frost-Fire Paradox Soup",
+    "ingredients": [
+      "fire_gland",
+      "frost_gland"
+    ],
+    "tier": 2,
+    "sp": 130,
+    "bonus_type": "random_stat",
+    "bonus_amount": 2,
+    "description": "Opposing elements in one pot create chaotic energy. The resulting meal unpredictably strengthens the body."
+  },
+  "corrupted_bone_risotto": {
+    "name": "Corrupted Bone Risotto",
+    "ingredients": [
+      "bone_shard",
+      "warrior_bone",
+      "cave_mushroom"
+    ],
+    "tier": 2,
+    "sp": 110,
+    "bonus_type": "stat",
+    "bonus_stat": "INT",
+    "bonus_amount": 1,
+    "description": "The accumulated memories of undead warriors seep into the mushroom risotto. Their knowledge becomes yours."
+  },
+  "manticore_spine_reduction": {
+    "name": "Manticore Spine Reduction",
+    "ingredients": [
+      "manticore_spine",
+      "bear_meat",
+      "void_salt"
+    ],
+    "tier": 3,
+    "sp": 220,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 2,
+    "description": "Ground manticore spine slow-reduced with bear meat in void-salt brine. Brutally effective."
+  },
+  "basilisk_stone_bisque": {
+    "name": "Basilisk Stone Bisque",
+    "ingredients": [
+      "basilisk_stone",
+      "cave_carrot",
+      "wild_thyme"
+    ],
+    "tier": 3,
+    "sp": 180,
+    "bonus_type": "status",
+    "bonus_effect": "blind_resist",
+    "bonus_amount": 80,
+    "description": "The stone gaze of the basilisk, processed with herbs, teaches the eyes to resist petrifying sight."
+  },
+  "wyvern_frost_broth": {
+    "name": "Wyvern Frost Broth",
+    "ingredients": [
+      "wyvern_stinger",
+      "frost_gland",
+      "cave_carrot"
+    ],
+    "tier": 3,
+    "sp": 200,
+    "bonus_type": "two_stats",
+    "bonus_amount": 1,
+    "description": "Wyvern venom neutralized by frost creates a potent double-tonic. Two attributes improve at once."
+  },
+  "vampire_consomme": {
+    "name": "Vampire Consomme",
+    "ingredients": [
+      "thrall_blood",
+      "nightshade_leaf"
+    ],
+    "tier": 3,
+    "sp": 180,
+    "bonus_type": "status",
+    "bonus_effect": "arcane_shield",
+    "bonus_amount": 40,
+    "description": "Clarified vampire blood with nightshade. Darkly beautiful. Provides resistance to magical forces."
+  },
+  "shadow_reduction": {
+    "name": "Shadow Reduction",
+    "ingredients": [
+      "shadow_essence",
+      "void_salt"
+    ],
+    "tier": 3,
+    "sp": 150,
+    "bonus_type": "status",
+    "bonus_effect": "invisible",
+    "bonus_amount": 30,
+    "description": "Shadow distilled into void salt brine. The eater becomes difficult to perceive."
+  },
+  "troll_manticore_fortifier": {
+    "name": "Troll-Manticore Fortifier",
+    "ingredients": [
+      "troll_hide",
+      "manticore_spine"
+    ],
+    "tier": 3,
+    "sp": 210,
+    "bonus_type": "two_stats",
+    "bonus_amount": 1,
+    "description": "Regenerative troll hide combined with venomous manticore spine. Two attributes improve permanently."
+  },
+  "chimera_chaos_pot": {
+    "name": "Chimera's Chaos Pot",
+    "ingredients": [
+      "chimera_heart",
+      "manticore_spine",
+      "ember_spice"
+    ],
+    "tier": 3,
+    "sp": 280,
+    "bonus_type": "all_stats",
+    "bonus_amount": 1,
+    "description": "Three-natured chimera heart with predatory spine and spice. Every aspect of the body improves."
+  },
+  "lich_bone_extract": {
+    "name": "Lich Bone Extract",
+    "ingredients": [
+      "arcane_bone_dust",
+      "warrior_bone",
+      "nightshade_leaf"
+    ],
+    "tier": 3,
+    "sp": 190,
+    "bonus_type": "stat",
+    "bonus_stat": "INT",
+    "bonus_amount": 2,
+    "description": "Distilled essence of undead spellcasters. Their arcane knowledge, now yours."
+  },
+  "frost_giant_stew": {
+    "name": "Frost Giant's Marrow Stew",
+    "ingredients": [
+      "frost_giant_bone",
+      "bear_meat",
+      "frost_gland"
+    ],
+    "tier": 3,
+    "sp": 230,
+    "bonus_type": "two_stats",
+    "bonus_amount": 1,
+    "description": "The marrow of giants rendered with bear meat in frost. Imparts some of their tremendous constitution."
+  },
+  "medusa_blood_elixir": {
+    "name": "Medusa Blood Elixir",
+    "ingredients": [
+      "medusa_blood",
+      "basilisk_stone"
+    ],
+    "tier": 4,
+    "sp": 260,
+    "bonus_type": "stat",
+    "bonus_stat": "WIS",
+    "bonus_amount": 2,
+    "description": "Two creatures whose gaze transforms others. Drinking their combined essence grants insight beyond sight."
+  },
+  "dragon_scale_tartare": {
+    "name": "Dragon Scale Tartare",
+    "ingredients": [
+      "dragon_scale",
+      "void_salt",
+      "ember_spice"
+    ],
+    "tier": 4,
+    "sp": 280,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 2,
+    "description": "Raw dragon scale cured in void-salt and ember spice. The hardness of dragonhide seeps into the flesh."
+  },
+  "elder_vampire_reduction": {
+    "name": "Elder Vampire's Blood Reduction",
+    "ingredients": [
+      "elder_vampire_blood",
+      "nightshade_leaf",
+      "valerian_root"
+    ],
+    "tier": 4,
+    "sp": 270,
+    "bonus_type": "stat",
+    "bonus_stat": "INT",
+    "bonus_amount": 2,
+    "description": "Centuries of accumulated arcane knowledge flow from elder vampire blood. The mind expands."
+  },
+  "storm_tempest_stew": {
+    "name": "Storm Tempest Stew",
+    "ingredients": [
+      "storm_essence",
+      "void_salt"
+    ],
+    "tier": 4,
+    "sp": 220,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 2,
+    "description": "Elemental storm power condensed in void salt. The speed and reflexes of lightning."
+  },
+  "medusa_dragon_elixir": {
+    "name": "Medusa-Dragon Elixir",
+    "ingredients": [
+      "medusa_blood",
+      "dragon_scale"
+    ],
+    "tier": 4,
+    "sp": 320,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 3,
+    "description": "Two of the dungeon's most feared creatures. Both are nearly impossible to harm. Drinking this makes you harder to harm too."
+  },
+  "wraith_essence_broth": {
+    "name": "Wraith Essence Broth",
+    "ingredients": [
+      "spectral_essence",
+      "void_salt",
+      "valerian_root"
+    ],
+    "tier": 4,
+    "sp": 200,
+    "bonus_type": "status",
+    "bonus_effect": "death_ward",
+    "bonus_amount": 40,
+    "description": "A spirit dissolved in void-salt brine with calming herbs. Temporarily wards against death itself."
+  },
+  "chimera_basilisk_vision": {
+    "name": "Chimera-Basilisk Vision Soup",
+    "ingredients": [
+      "chimera_heart",
+      "basilisk_stone"
+    ],
+    "tier": 4,
+    "sp": 250,
+    "bonus_type": "stat",
+    "bonus_stat": "PER",
+    "bonus_amount": 2,
+    "description": "Two creatures defined by extraordinary senses. Combined, they grant remarkable perception."
+  },
+  "abyssal_fenrir_roast": {
+    "name": "Abyssal Fenrir Roast",
+    "ingredients": [
+      "fenrir_fang",
+      "dragon_scale",
+      "void_salt"
+    ],
+    "tier": 5,
+    "sp": 400,
+    "bonus_type": "two_stats",
+    "bonus_amount": 3,
+    "lore": "The fang of the world-ender with dragon scale. Two apex predators. Two attributes improve by three."
+  },
+  "void_destroyer_feast": {
+    "name": "Void Destroyer's Feast",
+    "ingredients": [
+      "void_essence",
+      "dragon_scale",
+      "chimera_heart"
+    ],
+    "tier": 5,
+    "sp": 480,
+    "bonus_type": "all_stats",
+    "bonus_amount": 2,
+    "lore": "The destroyer of worlds, the king of beasts, the chimera of creation. All stats improve."
+  },
+  "destroyers_arcane_essence": {
+    "name": "Destroyer's Arcane Essence",
+    "ingredients": [
+      "void_essence",
+      "lord_phylactery",
+      "void_salt"
+    ],
+    "tier": 5,
+    "sp": 350,
+    "bonus_type": "status",
+    "bonus_effect": "arcane_shield",
+    "bonus_amount": 150,
+    "lore": "The raw force of Abaddon with the lich's immortal will. Magic cannot touch you for a very long time."
+  },
+  "death_march_reduction": {
+    "name": "Death March Reduction",
+    "ingredients": [
+      "fenrir_fang",
+      "void_essence"
+    ],
+    "tier": 5,
+    "sp": 420,
+    "bonus_type": "all_stats",
+    "bonus_amount": 1,
+    "lore": "The wolf who ends the world and the destroyer of worlds. A meal for the truly fearless."
+  },
+  "rat_dragon_paradox": {
+    "name": "Rat-Dragon Paradox Broth",
+    "ingredients": [
+      "rat_meat",
+      "dragon_scale",
+      "void_salt"
+    ],
+    "tier": 4,
+    "sp": 280,
+    "bonus_type": "all_stats",
+    "bonus_amount": 1,
+    "lore": "The humblest creature and the mightiest combined. Even a rat's meat, prepared with dragon scale, holds wonder. All stats improve."
+  },
+  "snake_medusa_lineage": {
+    "name": "Serpent Lineage Consomme",
+    "ingredients": [
+      "snake_meat",
+      "medusa_blood"
+    ],
+    "tier": 3,
+    "sp": 230,
+    "bonus_type": "two_stats",
+    "bonus_amount": 1,
+    "description": "The lowly snake and its ancient cousin the gorgon, bound by blood. Their combined wisdom flows inward."
+  },
+  "fire_ice_transcendence": {
+    "name": "Fire-Ice Transcendence",
+    "ingredients": [
+      "fire_gland",
+      "frost_gland",
+      "manticore_spine",
+      "dragon_scale"
+    ],
+    "tier": 4,
+    "sp": 300,
+    "bonus_type": "all_stats",
+    "bonus_amount": 1,
+    "lore": "Fire and frost, predator and beast, elemental and ancient. To balance all opposites is to transcend them."
+  },
+  "goblin_chimera_revelation": {
+    "name": "Goblin-Chimera Revelation",
+    "ingredients": [
+      "goblin_flesh",
+      "slime_core",
+      "chimera_heart"
+    ],
+    "tier": 3,
+    "sp": 250,
+    "bonus_type": "two_stats",
+    "bonus_amount": 2,
+    "description": "The first creature you faced and the chimera of later depths. Combining beginning and middle reveals hidden potential."
+  },
+  "first_and_last": {
+    "name": "The First and the Last",
+    "ingredients": [
+      "rat_meat",
+      "void_essence",
+      "void_salt"
+    ],
+    "tier": 5,
+    "sp": 450,
+    "bonus_type": "all_stats",
+    "bonus_amount": 2,
+    "lore": "The first creature of the dungeon and its final guardian. Alpha and omega. Cooking this takes mastery beyond reason."
+  },
+  "bone_of_ages": {
+    "name": "Bone of Ages",
+    "ingredients": [
+      "bone_shard",
+      "warrior_bone",
+      "lord_phylactery"
+    ],
+    "tier": 4,
+    "sp": 320,
+    "bonus_type": "stat",
+    "bonus_stat": "INT",
+    "bonus_amount": 3,
+    "lore": "Bone from levels one, ten, and sixty. The dead across all depths share their accumulated wisdom."
+  },
+  "hunters_trophy_roast": {
+    "name": "Hunter's Trophy Roast",
+    "ingredients": [
+      "rat_meat",
+      "wolf_meat",
+      "bear_meat",
+      "manticore_spine"
+    ],
+    "tier": 3,
+    "sp": 290,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 3,
+    "description": "Rat, wolf, bear, manticore - four levels of predatory escalation in one roast. The progression of strength incarnate."
+  },
+  "alchemists_base": {
+    "name": "The Alchemist's Base",
+    "ingredients": [
+      "slime_core",
+      "basilisk_stone",
+      "chimera_heart",
+      "medusa_blood"
+    ],
+    "tier": 4,
+    "sp": 310,
+    "bonus_type": "stat",
+    "bonus_stat": "WIS",
+    "bonus_amount": 2,
+    "lore": "Four transformative substances - the ooze that dissolves, the stone that petrifies, the heart that merges, the blood that turns. Wisdom distilled."
+  },
+  "elemental_triad": {
+    "name": "Elemental Triad Soup",
+    "ingredients": [
+      "fire_gland",
+      "frost_gland",
+      "storm_essence"
+    ],
+    "tier": 3,
+    "sp": 220,
+    "bonus_type": "stat",
+    "bonus_stat": "PER",
+    "bonus_amount": 2,
+    "description": "Fire, frost, and storm. Commanding all three elements sharpens every sense."
+  },
+  "predator_lineage": {
+    "name": "Predator's Lineage",
+    "ingredients": [
+      "snake_meat",
+      "wyvern_stinger",
+      "dragon_scale"
+    ],
+    "tier": 4,
+    "sp": 290,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 2,
+    "description": "Snake, wyvern, dragon - the reptilian line from humble to apex. Their agility is ancestral."
   }
 }
