@@ -80,10 +80,13 @@ class QuirkSystem:
         self._pl.unlocked_quirks.add(qid)
         apply_fn(self._pl)
         self.game.add_message(f"TRAIT UNLOCKED: {name}", 'loot')
-        self.game.add_message(
-            f"  >> {_QUIRK_EFFECTS.get(qid, '')}",
-            'info'
-        )
+        self.game.add_message(f"  Reward: {_QUIRK_EFFECTS.get(qid, '')}", 'success')
+        trigger = _QUIRK_TRIGGER.get(qid, '')
+        flavor  = _QUIRK_FLAVOR.get(qid, '')
+        if trigger:
+            self.game.add_message(f"  {trigger}", 'info')
+        if flavor:
+            self.game.add_message(f'  "{flavor}"', 'info')
 
     def _timer_bonus(self, subject: str, amount: int):
         def _apply(pl):
@@ -122,7 +125,7 @@ class QuirkSystem:
 
     def on_stair_use(self, new_level: int):
         """Called when player uses stairs (any direction)."""
-        # Cerberus (#49): 50 stair uses -> warning permanent
+        # Cerberus (#49): 300 stair uses -> warning permanent
         self._inc('stair_uses')
         if self._p('stair_uses') >= 300 and not self.is_unlocked('cerberus'):
             self._award('cerberus', "Cerberus",
@@ -132,9 +135,6 @@ class QuirkSystem:
         if new_level == 100 and self._pl.hp <= 10 and not self.is_unlocked('ragnarok'):
             self._award('ragnarok', "Ragnarök's Survivor",
                         lambda pl: pl.apply_stat_bonus('CON', 5))
-
-        # Ariadne (#41): fast floor exits — record entry turn each floor change
-        self._sp('ariadne_entry_turn', self.game.turn_count)
 
     def on_floor_entered(self, dungeon_level: int):
         """Called after arriving on a new floor."""
@@ -152,10 +152,18 @@ class QuirkSystem:
     def on_floor_explored(self, explored_pct: float):
         """Called when FOV is refreshed. explored_pct = explored/total walkable tiles."""
         if explored_pct >= 0.99:
-            self._inc('fully_explored_floors')
-            if self._p('fully_explored_floors') >= 5 and not self.is_unlocked('theseus'):
-                self._award('theseus', "Theseus in the Labyrinth",
-                            lambda pl: pl.apply_stat_bonus('PER', 1))
+            # Only count each dungeon level once — not every FOV refresh
+            floor = self.game.dungeon_level
+            explored_set = self._p('theseus_explored_floors', None)
+            if not isinstance(explored_set, set):
+                explored_set = set()
+            if floor not in explored_set:
+                explored_set.add(floor)
+                self._sp('theseus_explored_floors', explored_set)
+                self._sp('fully_explored_floors', len(explored_set))
+                if len(explored_set) >= 5 and not self.is_unlocked('theseus'):
+                    self._award('theseus', "Theseus in the Labyrinth",
+                                lambda pl: pl.apply_stat_bonus('PER', 1))
 
     def on_quiz_answer(self, subject: str, correct: bool, chain: int,
                        while_blinded: bool, while_confused: bool,
@@ -622,6 +630,114 @@ class QuirkSystem:
             self._award('hermes', "Hermes' Wings",
                         lambda pl: pl.quirk_progress.update({'hermes_active': True}))
 
+
+# What the player did to earn this trait
+_QUIRK_TRIGGER = {
+    'mithridates':   "You ate 5 monster types that had previously poisoned you.",
+    'tiresias':      "You answered 25 questions correctly while blinded.",
+    'odin':          "You waited 12,960 turns — half a day of mortal time.",
+    'scheherazade':  "You read 12 distinct scrolls before identifying them.",
+    'paracelsus':    "Disease drained 5 total stat points from you.",
+    'siegfried':     "You ate ingredients from monsters with 5 distinct attack effects.",
+    'musashi':       "You killed 30 enemies with a chain of exactly 1.",
+    'rasputin':      "You survived 5 separate times at 5% HP or below.",
+    'merlin':        "You zapped 10 distinct unidentified wands.",
+    'buddha':        "You waited 500 times while hostile monsters were nearby.",
+    'hephaestus':    "You equipped the same armor piece 15 times.",
+    'cassandra':     "You passed 10 threshold quizzes despite getting 2+ wrong.",
+    'sisyphus':      "You failed the lockpick quiz on 10 distinct trapped chests.",
+    'job':           "You triggered 5 distinct trap types.",
+    'orpheus':       "You stood beside monsters for 10 turns without fighting, 5 times.",
+    'tantalus':      "You ate 15 ruined quality-0 meals.",
+    'asclepius':     "You harvested 15 distinct poisonous monster species.",
+    'fisher_king':   "You prayed 6 times at 15% HP or below.",
+    'anansi':        "You answered 20 questions correctly while confused.",
+    'prometheus':    "You bled for 5+ turns across 10 separate episodes.",
+    'penelope':      "You equipped or unequipped armor 100 times.",
+    'dionysus':      "You drank 10 potions while hallucinating.",
+    'apollo':        "You achieved a perfect max chain 10 times.",
+    'athena':        "You encountered 50 distinct monster species.",
+    'loki':          "You wore 5 cursed items for 10+ turns each.",
+    'thor':          "You fought 30 combats with the same weapon.",
+    'beowulf':       "You won 10 unarmed combats.",
+    'norns':         "You used Recall Lore 20 times.",
+    'jormungandr':   "You equipped and unequipped the same weapon 20 times.",
+    'shiva':         "You spent 100 turns under hallucination.",
+    'enkidu':        "You harvested 20 distinct monster species.",
+    'perseus':       "You reflected 5 status effects back at monsters.",
+    'theseus':       "You fully explored 5 dungeon floors.",
+    'persephone':    "You cooked quality-5 meals from 5 distinct ingredients.",
+    'hermes':        "You teleported 8 or more times.",
+    'sibyl':         "You answered 500 questions correctly before level 20.",
+    'valkyrie':      "You made 25 ranged kills.",
+    'ahasverus':     "You moved 15,000 tiles — a wanderer without equal.",
+    'circe':         "You cooked meals from 5 distinct bonus-type categories.",
+    'gawain':        "You won 6 combats starting at 40% HP or below.",
+    'ariadne':       "You escaped 10 floors within 30 turns of arriving.",
+    'morgan':        "You cast 6 spells at 20% HP or below.",
+    'cuchulainn':    "You killed 5 enemies while feared.",
+    'fenrir':        "You endured 150 turns under debuffs.",
+    'kali':          "You killed 100 of the same monster type.",
+    'medusa':        "You answered correctly while blinded in 5 separate blinded episodes.",
+    'green_knight':  "You survived 5 single hits dealing 30%+ of your max HP.",
+    'narcissus':     "You examined your inventory 30 times.",
+    'cerberus':      "You used the stairs 300 times.",
+    'ragnarok':      "You descended to level 100 with 10 HP or less.",
+}
+
+# Flavor quote shown on unlock — captures the spirit of the achievement
+_QUIRK_FLAVOR = {
+    'mithridates':   "What does not kill me makes me immune. — Mithridates VI",
+    'tiresias':      "Sight is not needed to know the truth. — Tiresias",
+    'odin':          "I know that I hung on a windy tree, nine long nights. — Hávamál",
+    'scheherazade':  "A story told at the right moment can stop a sword. — Scheherazade",
+    'paracelsus':    "The dose makes the poison — and the cure. — Paracelsus",
+    'siegfried':     "I bathed in dragon blood. Let them try to harm me now.",
+    'musashi':       "The Way of the sword does not require two strikes. — Miyamoto Musashi",
+    'rasputin':      "I was difficult to kill. I remained curious about whether you could.",
+    'merlin':        "Magic is only science the scholar has not yet categorised. — Merlin",
+    'buddha':        "Peace is not the absence of danger — it is the mastery of reaction.",
+    'hephaestus':    "The forge rewards obsession. Every hammer blow matters. — Hephaestus",
+    'cassandra':     "It was always true. You simply refused to hear it. — Cassandra",
+    'sisyphus':      "One must imagine Sisyphus happy — and with a better lockpick.",
+    'job':           "Though He slay me, yet will I trust in Him. — Job 13:15",
+    'orpheus':       "Music can charm even death — but you must not look back. — Orpheus",
+    'tantalus':      "Even the worst meal nourishes the will to eat better next time.",
+    'asclepius':     "The serpent that poisons can also heal, if you learn its nature.",
+    'fisher_king':   "Ask the right question — the wasteland cannot persist. — The Grail Legend",
+    'anansi':        "I am confused? I simply chose the most interesting path. — Anansi",
+    'prometheus':    "They chained me to the rock. I am still here. — Prometheus",
+    'penelope':      "What is woven by day can be unwoven — and rewoven stronger. — Penelope",
+    'dionysus':      "I have seen things sober men will never see. I prefer it. — Dionysus",
+    'apollo':        "The arrow does not miss if the archer does not waver. — Apollo",
+    'athena':        "Wisdom begins with knowing your enemy — all of them. — Athena",
+    'loki':          "Constraints are merely invitations to be creative. — Loki",
+    'thor':          "Mjolnir always returns. Loyalty in battle is its own reward. — Thor",
+    'beowulf':       "I will not use a sword — it would be beneath us both. — Beowulf",
+    'norns':         "Past, present, future — the thread runs through all three. — The Norns",
+    'jormungandr':   "The serpent holds its own tail — neither end willing to let go.",
+    'shiva':         "To destroy the illusion you must first live inside it completely.",
+    'enkidu':        "I walked with beasts and men alike. Both taught me survival. — Enkidu",
+    'perseus':       "Look not at the Gorgon directly — use the shield. — Perseus",
+    'theseus':       "The labyrinth is only dangerous to those who do not map it. — Theseus",
+    'persephone':    "To descend is not defeat — some seeds only bloom in the dark.",
+    'hermes':        "Distance is a habit of mind, not a fact of space. — Hermes",
+    'sibyl':         "I asked for immortality. I should have asked for wisdom to use it.",
+    'valkyrie':      "The battlefield is wider than the blade's reach. Learn to see it.",
+    'ahasverus':     "I walk because I must — but I have learned every road in doing so.",
+    'circe':         "I transform nothing arbitrarily. Each change reveals what was inside.",
+    'gawain':        "The truest courage is not in starting strong, but in finishing. — Gawain",
+    'ariadne':       "I gave him the thread — knowing he would use it to leave. — Ariadne",
+    'morgan':        "Power does not leave when the body is weak. If anything, it sharpens.",
+    'cuchulainn':    "The warp-spasm seizes me — I become the storm. — Cu Chulainn",
+    'fenrir':        "Even bound, I have broken things. Even chained, I grow. — Fenrir",
+    'kali':          "I do not hate what I destroy. I simply am what I am. — Kali",
+    'medusa':        "She turned those who stared to stone — but not those who studied.",
+    'green_knight':  "My head falls — I only laugh. — The Green Knight",
+    'narcissus':     "Self-knowledge is not vanity. Narcissus drowned in ignorance, not love.",
+    'cerberus':      "Three heads — one for what lies behind, one ahead, one for the passage.",
+    'ragnarok':      "The end of the world is not an obstacle. It is merely the next floor.",
+}
 
 # Map quirk IDs to short effect descriptions shown on unlock
 _QUIRK_EFFECTS = {
