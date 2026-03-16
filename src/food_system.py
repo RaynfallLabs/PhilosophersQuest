@@ -1,13 +1,10 @@
 import json
 import os
 import random
+from paths import data_path
 
-_INGREDIENT_PATH = os.path.join(
-    os.path.dirname(__file__), '..', 'data', 'items', 'ingredient.json'
-)
-_RECIPE_PATH = os.path.join(
-    os.path.dirname(__file__), '..', 'data', 'items', 'recipes.json'
-)
+_INGREDIENT_PATH = data_path('data', 'items', 'ingredient.json')
+_RECIPE_PATH     = data_path('data', 'items', 'recipes.json')
 _ingredient_cache: dict | None = None
 _recipe_cache: dict | None = None
 
@@ -106,6 +103,7 @@ def cook_compound_recipe(player, recipe: dict, inventory: list, quiz_engine, on_
         max_chain=5,
         wisdom=player.WIS,
         timer_modifier=player.get_quiz_timer_modifier(),
+        extra_seconds=getattr(player, 'get_quiz_extra_seconds', lambda s: 0)('cooking'),
     )
 
 
@@ -147,6 +145,7 @@ def harvest_corpse(player, corpse, quiz_engine, on_complete):
         threshold=getattr(corpse, 'harvest_threshold', 2),
         wisdom=player.WIS,
         timer_modifier=player.get_quiz_timer_modifier(),
+        extra_seconds=getattr(player, 'get_quiz_extra_seconds', lambda s: 0)('animal'),
     )
 
 
@@ -154,13 +153,14 @@ def harvest_corpse(player, corpse, quiz_engine, on_complete):
 # Cooking
 # ------------------------------------------------------------------
 
-def cook_ingredient(player, ingredient, quiz_engine, on_complete):
+def cook_ingredient(player, ingredient, quiz_engine, on_complete, max_chain: int = 5):
     """
     Trigger a cooking escalator_chain quiz.
     Chain length 0-5 = meal quality. Single-ingredient meals restore SP + HP (scaled by
     quality and ingredient tier) only — permanent stat bonuses come exclusively from
     multi-ingredient compound recipes.
     on_complete(messages: list[str]) is called when the quiz ends.
+    max_chain: maximum chain length (default 5; pass 6 if Persephone quirk is active).
     """
     def _callback(result):
         quality   = min(5, result.score)
@@ -180,6 +180,13 @@ def cook_ingredient(player, ingredient, quiz_engine, on_complete):
             if hp > 0:
                 player.restore_hp(hp)
                 messages.append(f"The meal soothes your wounds. (+{hp} HP)")
+            # MP restore from ingredient (e.g. undead ingredients restore mana)
+            mp_base = getattr(ingredient, 'mp_restore', 0)
+            if mp_base > 0:
+                mp_gained = max(1, int(mp_base * quality / 5)) if quality > 0 else 0
+                if mp_gained > 0:
+                    player.restore_mp(mp_gained)
+                    messages.append(f"The essence of the ingredient restores {mp_gained} MP.")
 
         # Status effects (e.g. invisible, regenerating) from ingredient data are still applied
         bonus_type = recipe.get('bonus_type', 'none')
@@ -195,9 +202,10 @@ def cook_ingredient(player, ingredient, quiz_engine, on_complete):
         subject='cooking',
         tier=ing_tier,
         callback=_callback,
-        max_chain=5,
+        max_chain=max_chain,
         wisdom=player.WIS,
         timer_modifier=player.get_quiz_timer_modifier(),
+        extra_seconds=getattr(player, 'get_quiz_extra_seconds', lambda s: 0)('cooking'),
     )
 
 
@@ -284,6 +292,242 @@ def eat_food(player, food_item) -> list[str]:
         'bonus_amount': food_item.bonus_amount,
     }
     messages.extend(_apply_bonus(player, bonus_recipe))
+    return messages
+
+
+def drink_potion(player, potion) -> list[str]:
+    """
+    Consume a Potion. Returns a list of message strings.
+    No quiz required. Effect applied immediately.
+    """
+    from dice import roll as roll_dice
+
+    effect   = potion.effect
+    power    = potion.power
+    duration = potion.duration
+    messages = []
+
+    # --- Identification on use ---
+    potion.identified = True
+
+    if effect == 'heal':
+        amt = roll_dice(power) if power else 10
+        player.restore_hp(amt)
+        messages.append(f"Warmth floods through you. (+{amt} HP)")
+
+    elif effect == 'extra_heal':
+        amt = roll_dice(power) if power else 25
+        player.restore_hp(amt)
+        messages.append(f"Deep wounds knit closed with startling speed. (+{amt} HP)")
+
+    elif effect == 'full_heal':
+        amt = player.max_hp - player.hp
+        player.restore_hp(amt)
+        messages.append("Every wound closes. You feel completely whole.")
+
+    elif effect == 'restore_sp':
+        amt = roll_dice(power) if power else 50
+        player.restore_sp(amt)
+        messages.append(f"Stamina surges back into your limbs. (+{amt} SP)")
+
+    elif effect == 'cure_poison':
+        removed = player.status_effects.pop('poisoned', None)
+        if removed is not None:
+            messages.append("The poison is purged from your blood.")
+        else:
+            messages.append("You feel briefly nauseous — nothing to cure.")
+
+    elif effect == 'cure_disease':
+        removed = player.status_effects.pop('diseased', None)
+        if removed is not None:
+            messages.append("The disease burns away. You feel yourself recovering.")
+        else:
+            messages.append("You feel a sterile flush — nothing to cure.")
+
+    elif effect == 'cure_all':
+        cured = []
+        from status_effects import DEBUFFS
+        for debuff in list(DEBUFFS):
+            if player.status_effects.pop(debuff, None) is not None:
+                cured.append(debuff.replace('_', ' '))
+        if cured:
+            messages.append(f"Silver fire scours your body. Cured: {', '.join(cured)}.")
+        else:
+            messages.append("You feel pristine — nothing to cure.")
+
+    elif effect == 'haste':
+        player.add_effect('hasted', duration)
+        messages.append(f"The world slows around you. You are Hasted ({duration} turns).")
+
+    elif effect == 'invisibility':
+        player.add_effect('invisible', duration)
+        messages.append(f"You fade from sight. Invisible ({duration} turns).")
+
+    elif effect == 'regeneration':
+        player.add_effect('regenerating', duration)
+        messages.append(f"You feel an uncanny resilience — Regenerating ({duration} turns).")
+
+    elif effect == 'heroism':
+        player.add_effect('heroism', duration)
+        player.apply_stat_bonus('STR', 2)
+        messages.append(f"Surging strength fills your limbs! STR +2, Heroic ({duration} turns).")
+
+    elif effect == 'brilliance':
+        player.add_effect('brilliance', duration)
+        player.apply_stat_bonus('INT', 1)
+        player.apply_stat_bonus('WIS', 1)
+        messages.append(f"Your mind blazes with clarity! INT +1, WIS +1, Brilliant ({duration} turns).")
+
+    elif effect == 'levitation':
+        player.add_effect('levitating', duration)
+        messages.append(f"Your feet leave the ground. Levitating ({duration} turns).")
+
+    elif effect == 'restore_str':
+        # Restore STR to base value (undoes disease drain)
+        base_str = getattr(player, '_base_STR', player.STR)
+        loss = base_str - player.STR
+        if loss > 0:
+            player.apply_stat_bonus('STR', loss)
+            messages.append(f"Strength floods back into your muscles. STR +{loss}.")
+        else:
+            messages.append("Your strength is already at its peak.")
+
+    elif effect == 'gain_level':
+        # Signal to main.py to ascend one floor
+        messages.append("_gain_level")
+
+    elif effect == 'confusion':
+        applied = player.add_effect('confused', duration)
+        if applied:
+            messages.append("Your thoughts spin out of control! You are Confused.")
+        else:
+            messages.append("You feel briefly dizzy — nothing happens.")
+
+    elif effect == 'blindness':
+        applied = player.add_effect('blinded', duration)
+        if applied:
+            messages.append("Darkness closes in! You are Blinded.")
+        else:
+            messages.append("Your eyes water — nothing happens.")
+
+    elif effect == 'poison':
+        applied = player.add_effect('poisoned', 20)
+        if applied:
+            messages.append("You feel violently ill. You are Poisoned!")
+        else:
+            messages.append("You feel fine — your body resists the poison.")
+
+    elif effect == 'paralysis':
+        applied = player.add_effect('paralyzed', duration)
+        if applied:
+            messages.append("Your body locks up! You are Paralyzed.")
+        else:
+            messages.append("You feel a brief stiffness — nothing happens.")
+
+    elif effect == 'hallucination':
+        applied = player.add_effect('hallucinating', duration)
+        if applied:
+            messages.append("The walls breathe. The floor shifts. You are Hallucinating!")
+        else:
+            messages.append("You feel briefly strange — nothing happens.")
+
+    elif effect == 'sleep':
+        applied = player.add_effect('sleeping', duration)
+        if applied:
+            messages.append("Irresistible drowsiness claims you. You fall Asleep!")
+        else:
+            messages.append("You feel briefly drowsy — your will resists.")
+
+    elif effect == 'weakness':
+        applied = player.add_effect('weakened', duration)
+        if applied:
+            messages.append("Your muscles go soft. You feel Weakened!")
+        else:
+            messages.append("You feel a brief fatigue — nothing takes hold.")
+
+    elif effect == 'slow':
+        applied = player.add_effect('slowed', duration)
+        if applied:
+            messages.append("Time thickens around you. You are Slowed.")
+        else:
+            messages.append("You feel momentarily sluggish — it passes.")
+
+    elif effect == 'teleport':
+        messages.append("_teleport")
+        messages.append("Space folds — you are elsewhere!")
+
+    elif effect == 'drain_str':
+        player.apply_stat_bonus('STR', -1)
+        messages.append("Something vital drains away. STR -1!")
+
+    elif effect == 'drain_con':
+        player.apply_stat_bonus('CON', -1)
+        messages.append("Your vitality ebbs. CON -1!")
+
+    elif effect == 'drain_wis':
+        player.apply_stat_bonus('WIS', -1)
+        messages.append("Your clarity clouds. WIS -1!")
+
+    elif effect == 'drain_int':
+        player.apply_stat_bonus('INT', -1)
+        messages.append("Thoughts slip away. INT -1!")
+
+    elif effect == 'sickness':
+        applied = player.add_effect('diseased', duration)
+        if applied:
+            messages.append("A gnawing sickness spreads through you. You are Diseased!")
+        else:
+            messages.append("Your stomach turns — your constitution holds.")
+
+    elif effect == 'fumbling':
+        applied = player.add_effect('fumbling', duration)
+        if applied:
+            messages.append("Your hands won't cooperate. You are Fumbling!")
+        else:
+            messages.append("You feel clumsy for a moment — nothing lasts.")
+
+    elif effect == 'fear':
+        applied = player.add_effect('feared', duration)
+        if applied:
+            messages.append("Terror grips your heart. You are Feared!")
+        else:
+            messages.append("A shadow of dread passes — your courage holds.")
+
+    elif effect == 'fire_resist':
+        player.add_effect('fire_resist', duration)
+        messages.append(f"Heat rolls off you harmlessly. Fire Resist ({duration} turns).")
+
+    elif effect == 'cold_resist':
+        player.add_effect('cold_resist', duration)
+        messages.append(f"The cold cannot touch you. Cold Resist ({duration} turns).")
+
+    elif effect == 'shock_resist':
+        player.add_effect('shock_resist', duration)
+        messages.append(f"Electricity crackles and disperses. Shock Resist ({duration} turns).")
+
+    elif effect == 'restore_mp':
+        amt = int(power) if power else 15
+        before = player.mp
+        player.restore_mp(amt)
+        gained = player.mp - before
+        if gained > 0:
+            messages.append(f"Arcane energy suffuses you. (+{gained} MP)")
+        else:
+            messages.append("Your mana is already full.")
+
+    elif effect == 'brilliance_mp':
+        amt = int(power) if power else 40
+        before = player.mp
+        player.restore_mp(amt)
+        gained = player.mp - before
+        if gained > 0:
+            messages.append(f"Pure magical brilliance floods your channels. (+{gained} MP)")
+        else:
+            messages.append("Your mana reserves are already brimming.")
+
+    else:
+        messages.append("The potion does nothing obvious.")
+
     return messages
 
 

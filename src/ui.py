@@ -183,6 +183,15 @@ class Sidebar:
                              (self.x + self.PAD, y))
             y += 22
 
+        # Lockpick charges
+        picks = getattr(player, 'lockpick_charges', 0)
+        if picks > 0:
+            self.screen.blit(
+                self._fsm.render(f"Picks  {picks}", True, (190, 175, 120)),
+                (self.x + self.PAD, y)
+            )
+            y += 22
+
         # Known spells count
         spell_count = len(getattr(player, 'known_spells', {}))
         if spell_count > 0:

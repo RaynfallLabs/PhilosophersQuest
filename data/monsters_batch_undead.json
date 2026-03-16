@@ -1,0 +1,2055 @@
+{
+  "skeleton_archer": {
+    "name": "Skeleton Archer",
+    "symbol": "s",
+    "color": [220, 220, 200],
+    "hp": "1d6",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 1,
+    "max_level": 4,
+    "thac0": 18,
+    "frequency": 9,
+    "attacks": [
+      {
+        "name": "shoot",
+        "damage": "1d6",
+        "type": "physical",
+        "effect": null,
+        "effect_chance": 0.0,
+        "effect_duration": 0
+      }
+    ],
+    "resistances": ["cold", "poison"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": "bone_shard",
+    "treasure": {"gold": [1, 4], "item_chance": 0.08, "item_tier": 1},
+    "lore": "The bones of fallen archers, animated by dark necromancy. They retain a grim instinct for ranged combat, loosing arrows with hollow eye sockets fixed on their prey. Their quivers are perpetually restocked by some unknown magical compulsion."
+  },
+  "skeleton_warrior": {
+    "name": "Skeleton Warrior",
+    "symbol": "s",
+    "color": [200, 200, 180],
+    "hp": "2d6",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 2,
+    "max_level": 5,
+    "thac0": 17,
+    "frequency": 8,
+    "attacks": [
+      {
+        "name": "slash",
+        "damage": "1d8",
+        "type": "physical",
+        "effect": null,
+        "effect_chance": 0.0,
+        "effect_duration": 0
+      },
+      {
+        "name": "bash",
+        "damage": "1d4",
+        "type": "physical",
+        "effect": "slowed",
+        "effect_chance": 0.15,
+        "effect_duration": 2
+      }
+    ],
+    "resistances": ["cold", "poison"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": "warrior_bone",
+    "treasure": {"gold": [1, 5], "item_chance": 0.1, "item_tier": 1},
+    "lore": "Armored skeletons that once served as elite soldiers in life. Their martial training persists beyond death, making them more dangerous than common skeletons. The enchantments binding them to service were woven by powerful warlocks of a forgotten age."
+  },
+  "skeleton_mage": {
+    "name": "Skeleton Mage",
+    "symbol": "s",
+    "color": [180, 160, 220],
+    "hp": "1d8",
+    "speed": 1,
+    "ai_pattern": "cowardly",
+    "min_level": 3,
+    "max_level": 6,
+    "thac0": 17,
+    "frequency": 7,
+    "attacks": [
+      {
+        "name": "cast",
+        "damage": "2d6",
+        "type": "magic",
+        "effect": null,
+        "effect_chance": 0.0,
+        "effect_duration": 0
+      },
+      {
+        "name": "claw",
+        "damage": "1d4",
+        "type": "physical",
+        "effect": null,
+        "effect_chance": 0.0,
+        "effect_duration": 0
+      }
+    ],
+    "resistances": ["cold", "poison", "magic"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "arcane_bone_dust",
+    "treasure": {"gold": [2, 8], "item_chance": 0.15, "item_tier": 2},
+    "lore": "The skeletal remains of wizards who refused to release their grip on magic even in death. Faint traces of arcane energy crackle between their finger bones as they hurl bolts of magical force. They are prized by necromancers for the residual spell knowledge trapped within their skulls."
+  },
+  "burning_skeleton": {
+    "name": "Burning Skeleton",
+    "symbol": "s",
+    "color": [255, 120, 30],
+    "hp": "2d6",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 3,
+    "max_level": 7,
+    "thac0": 17,
+    "frequency": 7,
+    "attacks": [
+      {
+        "name": "strike",
+        "damage": "1d6",
+        "type": "physical",
+        "effect": null,
+        "effect_chance": 0.0,
+        "effect_duration": 0
+      },
+      {
+        "name": "immolate",
+        "damage": "1d8",
+        "type": "fire",
+        "effect": "burning",
+        "effect_chance": 0.3,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": ["cold", "poison", "fire"],
+    "weaknesses": ["holy", "cold"],
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "charred_bone",
+    "treasure": {"gold": [2, 6], "item_chance": 0.1, "item_tier": 2},
+    "lore": "Skeletons wreathed in unquenchable hellfire, condemned to burn for eternity without being consumed. The flames serve as both weapon and ward, scorching any who come too close. They are said to be the remains of those who trafficked with fire demons in life."
+  },
+  "frost_skeleton": {
+    "name": "Frost Skeleton",
+    "symbol": "s",
+    "color": [160, 210, 240],
+    "hp": "2d6",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 3,
+    "max_level": 7,
+    "thac0": 17,
+    "frequency": 7,
+    "attacks": [
+      {
+        "name": "strike",
+        "damage": "1d6",
+        "type": "physical",
+        "effect": null,
+        "effect_chance": 0.0,
+        "effect_duration": 0
+      },
+      {
+        "name": "freeze",
+        "damage": "1d8",
+        "type": "cold",
+        "effect": "frozen",
+        "effect_chance": 0.25,
+        "effect_duration": 2
+      }
+    ],
+    "resistances": ["cold", "poison"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "frost_bone",
+    "treasure": {"gold": [2, 6], "item_chance": 0.1, "item_tier": 2},
+    "lore": "Skeletons encased in a permanent frost, their bones blue-white with cold energy. They were once warriors slain in frozen wastelands whose spirits merged with winter itself. A faint mist of freezing vapor trails their every movement."
+  },
+  "zombie_hulk": {
+    "name": "Zombie Hulk",
+    "symbol": "z",
+    "color": [100, 150, 80],
+    "hp": "3d8",
+    "speed": 0,
+    "ai_pattern": "aggressive",
+    "min_level": 4,
+    "max_level": 8,
+    "thac0": 15,
+    "frequency": 6,
+    "attacks": [
+      {
+        "name": "pummel",
+        "damage": "2d8",
+        "type": "physical",
+        "effect": "slowed",
+        "effect_chance": 0.35,
+        "effect_duration": 3
+      },
+      {
+        "name": "crush",
+        "damage": "1d10",
+        "type": "physical",
+        "effect": null,
+        "effect_chance": 0.0,
+        "effect_duration": 0
+      }
+    ],
+    "resistances": ["cold", "poison"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "zombie_flesh",
+    "treasure": {"gold": [3, 12], "item_chance": 0.12, "item_tier": 2},
+    "lore": "Enormously swollen undead corpses, their muscles bloated by necromantic energy far beyond what they possessed in life. Though lumbering and slow, a single blow from their massive fists can send warriors flying. Necromancers create them as living battering rams."
+  },
+  "plague_zombie": {
+    "name": "Plague Zombie",
+    "symbol": "z",
+    "color": [80, 130, 50],
+    "hp": "2d8",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 3,
+    "max_level": 6,
+    "thac0": 16,
+    "frequency": 8,
+    "attacks": [
+      {
+        "name": "claw",
+        "damage": "1d6",
+        "type": "physical",
+        "effect": "poisoned",
+        "effect_chance": 0.45,
+        "effect_duration": 5
+      },
+      {
+        "name": "bite",
+        "damage": "1d4",
+        "type": "poison",
+        "effect": "poisoned",
+        "effect_chance": 0.55,
+        "effect_duration": 6
+      }
+    ],
+    "resistances": ["cold", "poison"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "plague_flesh",
+    "treasure": {"gold": [1, 8], "item_chance": 0.07, "item_tier": 1},
+    "lore": "Rotting corpses reanimated during or after a devastating plague, their bodies still teeming with virulent disease. Even a scratch from their blackened fingernails can infect a healthy warrior with a debilitating illness. Wise adventurers deal with them from a distance whenever possible."
+  },
+  "rotting_zombie": {
+    "name": "Rotting Zombie",
+    "symbol": "z",
+    "color": [90, 120, 60],
+    "hp": "1d8",
+    "speed": 0,
+    "ai_pattern": "aggressive",
+    "min_level": 1,
+    "max_level": 3,
+    "thac0": 18,
+    "frequency": 10,
+    "attacks": [
+      {
+        "name": "claw",
+        "damage": "1d4",
+        "type": "physical",
+        "effect": "poisoned",
+        "effect_chance": 0.2,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": ["cold", "poison"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": "rotted_flesh",
+    "treasure": {"gold": [0, 3], "item_chance": 0.05, "item_tier": 1},
+    "lore": "The most basic form of animated corpse, barely held together by decaying sinew and dark magic. They shamble forward with mindless persistence, threatening to overwhelm through sheer numbers. The stench alone is enough to make unprepared adventurers retch."
+  },
+  "ghast": {
+    "name": "Ghast",
+    "symbol": "g",
+    "color": [140, 180, 120],
+    "hp": "3d8",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 5,
+    "max_level": 9,
+    "thac0": 14,
+    "frequency": 5,
+    "attacks": [
+      {
+        "name": "claw",
+        "damage": "1d8",
+        "type": "physical",
+        "effect": "paralyzed",
+        "effect_chance": 0.4,
+        "effect_duration": 4
+      },
+      {
+        "name": "bite",
+        "damage": "1d6",
+        "type": "physical",
+        "effect": "poisoned",
+        "effect_chance": 0.3,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": ["cold", "poison"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": "ghast_ichor",
+    "treasure": {"gold": [5, 18], "item_chance": 0.18, "item_tier": 2},
+    "lore": "More powerful and cunning than common ghouls, ghasts retain a horrific parody of intelligence that they use to coordinate hunts and set ambushes. Their paralytic touch affects even those normally immune to such effects, and they exude a nauseating stench. They are known to collect trophies from particularly challenging prey."
+  },
+  "gravehound": {
+    "name": "Gravehound",
+    "symbol": "d",
+    "color": [160, 140, 110],
+    "hp": "2d6",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 2,
+    "max_level": 5,
+    "thac0": 16,
+    "frequency": 7,
+    "attacks": [
+      {
+        "name": "bite",
+        "damage": "1d8",
+        "type": "physical",
+        "effect": "slowed",
+        "effect_chance": 0.25,
+        "effect_duration": 2
+      }
+    ],
+    "resistances": ["cold", "poison"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": "bone_marrow",
+    "treasure": {"gold": [0, 4], "item_chance": 0.06, "item_tier": 1},
+    "lore": "The skeletal remains of guard dogs and hunting hounds, reanimated to serve as tireless sentinels of tomb complexes. They hunt in packs, using the same cooperative tactics they employed in life to flank and bring down prey. Their bony jaws can snap shut with tremendous force."
+  },
+  "poltergeist": {
+    "name": "Poltergeist",
+    "symbol": "p",
+    "color": [200, 200, 255],
+    "hp": "2d6",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 3,
+    "max_level": 7,
+    "thac0": 16,
+    "frequency": 6,
+    "attacks": [
+      {
+        "name": "hurl",
+        "damage": "1d8",
+        "type": "physical",
+        "effect": "confused",
+        "effect_chance": 0.2,
+        "effect_duration": 3
+      },
+      {
+        "name": "shriek",
+        "damage": "1d4",
+        "type": "magic",
+        "effect": "confused",
+        "effect_chance": 0.3,
+        "effect_duration": 2
+      }
+    ],
+    "resistances": ["cold", "poison", "physical"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": null,
+    "treasure": {"gold": [2, 10], "item_chance": 0.12, "item_tier": 2},
+    "lore": "Restless spirits that manifest as invisible forces hurling objects and causing mayhem. Unlike most undead they are not driven by hunger or hatred but by a confused anguish at their own death. The chaos they cause is an expression of frustration at being trapped between worlds."
+  },
+  "revenant": {
+    "name": "Revenant",
+    "symbol": "r",
+    "color": [200, 170, 200],
+    "hp": "4d10",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 9,
+    "max_level": 14,
+    "thac0": 8,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "throttle",
+        "damage": "3d8",
+        "type": "physical",
+        "effect": "paralyzed",
+        "effect_chance": 0.35,
+        "effect_duration": 3
+      },
+      {
+        "name": "curse",
+        "damage": "2d6",
+        "type": "magic",
+        "effect": "slowed",
+        "effect_chance": 0.4,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": ["cold", "poison", "magic"],
+    "weaknesses": ["holy"],
+    "harvest_tier": 4,
+    "harvest_threshold": 4,
+    "ingredient_id": "revenant_heart",
+    "treasure": {"gold": [30, 90], "item_chance": 0.35, "item_tier": 4},
+    "lore": "The walking dead returned by pure force of will, driven by a singular obsession for vengeance against those who wronged them in life. A revenant will pursue its quarry across planes of existence until justice is satisfied. They are nearly impossible to permanently destroy until their vendetta is resolved."
+  },
+  "allip": {
+    "name": "Allip",
+    "symbol": "a",
+    "color": [160, 140, 200],
+    "hp": "3d8",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 6,
+    "max_level": 10,
+    "thac0": 12,
+    "frequency": 4,
+    "attacks": [
+      {
+        "name": "babble",
+        "damage": "1d4",
+        "type": "magic",
+        "effect": "confused",
+        "effect_chance": 0.55,
+        "effect_duration": 5
+      },
+      {
+        "name": "touch",
+        "damage": "2d6",
+        "type": "drain",
+        "effect": "sleeping",
+        "effect_chance": 0.25,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": ["cold", "poison", "physical"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": null,
+    "treasure": {"gold": [10, 30], "item_chance": 0.15, "item_tier": 3},
+    "lore": "The insane remnant of a tormented soul, the allip is a whirling mass of incorporeal madness that babbles incoherently. Those who listen too carefully to its ravings risk being drawn into its lunacy. It hungers for the sanity it lost, attempting to drain wisdom from the living."
+  },
+  "haunting_presence": {
+    "name": "Haunting Presence",
+    "symbol": "h",
+    "color": [180, 180, 220],
+    "hp": "2d6",
+    "speed": 1,
+    "ai_pattern": "sessile",
+    "min_level": 2,
+    "max_level": 5,
+    "thac0": 17,
+    "frequency": 8,
+    "attacks": [
+      {
+        "name": "frighten",
+        "damage": "1d4",
+        "type": "magic",
+        "effect": "confused",
+        "effect_chance": 0.4,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": ["cold", "poison", "physical"],
+    "weaknesses": ["holy"],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": null,
+    "treasure": {"gold": [0, 5], "item_chance": 0.08, "item_tier": 1},
+    "lore": "A weak spirit bound to a specific location by trauma or unfinished business. It lacks the power to manifest physically but can project overwhelming dread onto those who enter its domain. Most mistake its cold presence for a mere chill wind until it is too late."
+  },
+  "fetch": {
+    "name": "Fetch",
+    "symbol": "f",
+    "color": [190, 190, 190],
+    "hp": "2d8",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 5,
+    "max_level": 9,
+    "thac0": 14,
+    "frequency": 5,
+    "attacks": [
+      {
+        "name": "mimic",
+        "damage": "1d8",
+        "type": "magic",
+        "effect": "confused",
+        "effect_chance": 0.35,
+        "effect_duration": 3
+      },
+      {
+        "name": "drain",
+        "damage": "1d6",
+        "type": "drain",
+        "effect": null,
+        "effect_chance": 0.0,
+        "effect_duration": 0
+      }
+    ],
+    "resistances": ["cold", "poison", "physical"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": null,
+    "treasure": {"gold": [8, 25], "item_chance": 0.2, "item_tier": 3},
+    "lore": "A doppelganger spirit that takes on the appearance of a living person's death omen. Seeing a fetch of yourself is said to portend imminent doom. They delight in mimicking the living before draining their life essence."
+  },
+  "shade": {
+    "name": "Shade",
+    "symbol": "S",
+    "color": [60, 60, 80],
+    "hp": "2d6",
+    "speed": 2,
+    "ai_pattern": "cowardly",
+    "min_level": 4,
+    "max_level": 8,
+    "thac0": 15,
+    "frequency": 6,
+    "attacks": [
+      {
+        "name": "dim",
+        "damage": "1d6",
+        "type": "shadow",
+        "effect": "blinded",
+        "effect_chance": 0.25,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": ["cold", "poison", "shadow"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": null,
+    "treasure": {"gold": [3, 14], "item_chance": 0.1, "item_tier": 2},
+    "lore": "A fragment of a departed soul that could not fully pass on, manifesting as a dim shadow without a source of light. Shades drift through darkened places seeking the warmth of life they can no longer possess. They are formed when souls are improperly laid to rest or violently separated from their bodies."
+  },
+  "will_o_wisp": {
+    "name": "Will-o-Wisp",
+    "symbol": "w",
+    "color": [150, 240, 200],
+    "hp": "3d6",
+    "speed": 3,
+    "ai_pattern": "cowardly",
+    "min_level": 5,
+    "max_level": 10,
+    "thac0": 13,
+    "frequency": 4,
+    "attacks": [
+      {
+        "name": "shock",
+        "damage": "2d8",
+        "type": "lightning",
+        "effect": "paralyzed",
+        "effect_chance": 0.3,
+        "effect_duration": 2
+      }
+    ],
+    "resistances": ["cold", "poison", "lightning", "physical"],
+    "weaknesses": ["magic"],
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": null,
+    "treasure": {"gold": [10, 35], "item_chance": 0.15, "item_tier": 3},
+    "lore": "Eerie glowing lights that drift through swamps and ruins, luring travelers to their doom with their hypnotic radiance. Will-o-wisps are the spirits of the malicious who delight even in death in leading the living astray. They feed on the fear and despair of those lost because of them."
+  },
+  "soul_shadow": {
+    "name": "Soul Shadow",
+    "symbol": "S",
+    "color": [40, 40, 70],
+    "hp": "3d8",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 7,
+    "max_level": 11,
+    "thac0": 11,
+    "frequency": 4,
+    "attacks": [
+      {
+        "name": "siphon",
+        "damage": "2d6",
+        "type": "drain",
+        "effect": "slowed",
+        "effect_chance": 0.3,
+        "effect_duration": 3
+      },
+      {
+        "name": "engulf",
+        "damage": "1d8",
+        "type": "shadow",
+        "effect": "blinded",
+        "effect_chance": 0.2,
+        "effect_duration": 2
+      }
+    ],
+    "resistances": ["cold", "poison", "shadow", "physical"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": null,
+    "treasure": {"gold": [15, 40], "item_chance": 0.15, "item_tier": 3},
+    "lore": "An amalgamation of multiple departed souls fused into a single shadowy entity by catastrophic violence or powerful dark magic. The souls within are in constant anguish, driving the composite creature to spread misery. It drains the vital essence of living beings, adding fragments of their souls to its own mass."
+  },
+  "death_echo": {
+    "name": "Death Echo",
+    "symbol": "e",
+    "color": [170, 150, 200],
+    "hp": "2d6",
+    "speed": 1,
+    "ai_pattern": "sessile",
+    "min_level": 4,
+    "max_level": 7,
+    "thac0": 15,
+    "frequency": 5,
+    "attacks": [
+      {
+        "name": "replay",
+        "damage": "1d8",
+        "type": "magic",
+        "effect": "confused",
+        "effect_chance": 0.4,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": ["cold", "poison", "physical"],
+    "weaknesses": ["holy"],
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": null,
+    "treasure": {"gold": [2, 12], "item_chance": 0.1, "item_tier": 2},
+    "lore": "A psychic impression of a violent death, replaying the moment of its creation endlessly. The death echo appears as a translucent reenactment of its own demise, lashing out at anything that disturbs its loop. Scholars believe these manifestations form when death is so traumatic it leaves a permanent scar on reality."
+  },
+  "vampire_spawn": {
+    "name": "Vampire Spawn",
+    "symbol": "v",
+    "color": [160, 30, 30],
+    "hp": "3d8",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 6,
+    "max_level": 10,
+    "thac0": 12,
+    "frequency": 5,
+    "attacks": [
+      {
+        "name": "claw",
+        "damage": "1d8",
+        "type": "physical",
+        "effect": null,
+        "effect_chance": 0.0,
+        "effect_duration": 0
+      },
+      {
+        "name": "bite",
+        "damage": "1d6",
+        "type": "drain",
+        "effect": null,
+        "effect_chance": 0.0,
+        "effect_duration": 0
+      }
+    ],
+    "resistances": ["cold", "poison"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": "vampire_blood",
+    "treasure": {"gold": [8, 30], "item_chance": 0.2, "item_tier": 3},
+    "lore": "Newly created vampires who have not yet developed the full powers of their bloodline. They are bound in absolute servitude to the vampire who created them, unable to act against their master's wishes. Despite their lesser status, they are still formidable predators compared to common undead."
+  },
+  "vampire_thrall": {
+    "name": "Vampire Thrall",
+    "symbol": "v",
+    "color": [140, 20, 20],
+    "hp": "2d8",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 4,
+    "max_level": 8,
+    "thac0": 15,
+    "frequency": 6,
+    "attacks": [
+      {
+        "name": "strike",
+        "damage": "1d8",
+        "type": "physical",
+        "effect": null,
+        "effect_chance": 0.0,
+        "effect_duration": 0
+      },
+      {
+        "name": "mesmerize",
+        "damage": "0d1",
+        "type": "magic",
+        "effect": "confused",
+        "effect_chance": 0.3,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": ["cold", "poison"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "thrall_blood",
+    "treasure": {"gold": [5, 20], "item_chance": 0.15, "item_tier": 2},
+    "lore": "Living servants of vampires who have been fed small quantities of vampire blood, granting them supernatural strength and unbreakable loyalty. They have not yet died and risen again, existing in a halfway state between life and undeath. They will sacrifice themselves without hesitation to protect their master."
+  },
+  "nosferatu": {
+    "name": "Nosferatu",
+    "symbol": "v",
+    "color": [120, 10, 10],
+    "hp": "4d10",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 10,
+    "max_level": 15,
+    "thac0": 7,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "claw",
+        "damage": "2d8",
+        "type": "physical",
+        "effect": null,
+        "effect_chance": 0.0,
+        "effect_duration": 0
+      },
+      {
+        "name": "drain",
+        "damage": "2d6",
+        "type": "drain",
+        "effect": "paralyzed",
+        "effect_chance": 0.35,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": ["cold", "poison", "magic"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 4,
+    "harvest_threshold": 4,
+    "ingredient_id": "elder_vampire_blood",
+    "treasure": {"gold": [35, 100], "item_chance": 0.4, "item_tier": 4},
+    "lore": "Ancient vampires of a degenerate bloodline, more monstrous than noble in appearance. Unlike their aristocratic cousins, nosferatu embrace the bestial nature of vampirism, becoming physically repulsive creatures of tremendous power. They are solitary hunters who have had centuries to perfect their predatory craft."
+  },
+  "strigoi": {
+    "name": "Strigoi",
+    "symbol": "v",
+    "color": [180, 50, 50],
+    "hp": "3d10",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 8,
+    "max_level": 13,
+    "thac0": 9,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "bite",
+        "damage": "2d6",
+        "type": "drain",
+        "effect": null,
+        "effect_chance": 0.0,
+        "effect_duration": 0
+      },
+      {
+        "name": "claw",
+        "damage": "1d10",
+        "type": "physical",
+        "effect": "poisoned",
+        "effect_chance": 0.2,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": ["cold", "poison"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 4,
+    "harvest_threshold": 4,
+    "ingredient_id": "strigoi_fang",
+    "treasure": {"gold": [25, 80], "item_chance": 0.35, "item_tier": 4},
+    "lore": "A vampire variant from eastern tradition said to be the result of the truly wicked dying without proper burial rites. The strigoi can take animal forms and spreads disease through its corrupted blood. Village folk tell of strigoi returning to drain the life from family members first before seeking other prey."
+  },
+  "jiangshi": {
+    "name": "Jiangshi",
+    "symbol": "v",
+    "color": [200, 180, 160],
+    "hp": "3d8",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 6,
+    "max_level": 11,
+    "thac0": 11,
+    "frequency": 4,
+    "attacks": [
+      {
+        "name": "absorb",
+        "damage": "2d6",
+        "type": "drain",
+        "effect": "paralyzed",
+        "effect_chance": 0.4,
+        "effect_duration": 4
+      },
+      {
+        "name": "strike",
+        "damage": "1d10",
+        "type": "physical",
+        "effect": null,
+        "effect_chance": 0.0,
+        "effect_duration": 0
+      }
+    ],
+    "resistances": ["cold", "poison"],
+    "weaknesses": ["holy", "fire", "lightning"],
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "jiangshi_essence",
+    "treasure": {"gold": [20, 60], "item_chance": 0.25, "item_tier": 3},
+    "lore": "A hopping corpse from eastern tradition, preserved by magical paper talismans and animated by residual spiritual energy. They absorb the chi of living beings through touch, leaving victims completely drained. During the day they are rigid and helpless, but at night they hunt with terrifying determination."
+  },
+  "vrykolakas": {
+    "name": "Vrykolakas",
+    "symbol": "v",
+    "color": [130, 40, 40],
+    "hp": "4d8",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 7,
+    "max_level": 12,
+    "thac0": 10,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "crush",
+        "damage": "2d8",
+        "type": "physical",
+        "effect": null,
+        "effect_chance": 0.0,
+        "effect_duration": 0
+      },
+      {
+        "name": "blood_drain",
+        "damage": "1d8",
+        "type": "drain",
+        "effect": "slowed",
+        "effect_chance": 0.3,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": ["cold", "poison"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "vrykolakas_heart",
+    "treasure": {"gold": [20, 70], "item_chance": 0.3, "item_tier": 3},
+    "lore": "A Greek vampire of immense physical power, bloated with stolen blood and nearly indestructible without specific ritualistic destruction. The vrykolakas was typically an excommunicated individual or one who died in a state of sin. They return to trouble the living with plague, pestilence, and direct violence."
+  },
+  "demi_lich": {
+    "name": "Demi-Lich",
+    "symbol": "L",
+    "color": [220, 200, 80],
+    "hp": "6d12",
+    "speed": 1,
+    "ai_pattern": "sessile",
+    "min_level": 16,
+    "max_level": null,
+    "thac0": -4,
+    "frequency": 1,
+    "attacks": [
+      {
+        "name": "wail",
+        "damage": "4d10",
+        "type": "magic",
+        "effect": "paralyzed",
+        "effect_chance": 0.6,
+        "effect_duration": 6
+      },
+      {
+        "name": "soul_trap",
+        "damage": "3d8",
+        "type": "drain",
+        "effect": null,
+        "effect_chance": 0.0,
+        "effect_duration": 0
+      }
+    ],
+    "resistances": ["cold", "poison", "magic", "fire", "lightning", "physical"],
+    "weaknesses": ["holy"],
+    "harvest_tier": 5,
+    "harvest_threshold": 5,
+    "ingredient_id": "demi_lich_skull",
+    "treasure": {"gold": [100, 300], "item_chance": 0.8, "item_tier": 5},
+    "lore": "A lich so ancient that its body has crumbled away, leaving only the skull which houses its immortal consciousness. The demi-lich has transcended physical existence almost entirely, its soul focused into the gems embedded in its eye sockets. Its very wail can trap the souls of the living, and it commands magic beyond mortal comprehension."
+  },
+  "lich_thrall": {
+    "name": "Lich Thrall",
+    "symbol": "l",
+    "color": [150, 180, 120],
+    "hp": "3d8",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 7,
+    "max_level": 12,
+    "thac0": 11,
+    "frequency": 4,
+    "attacks": [
+      {
+        "name": "cast",
+        "damage": "2d8",
+        "type": "magic",
+        "effect": null,
+        "effect_chance": 0.0,
+        "effect_duration": 0
+      },
+      {
+        "name": "claw",
+        "damage": "1d6",
+        "type": "physical",
+        "effect": "paralyzed",
+        "effect_chance": 0.25,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": ["cold", "poison"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": "thrall_bone",
+    "treasure": {"gold": [15, 45], "item_chance": 0.22, "item_tier": 3},
+    "lore": "Powerful undead spellcasters created by liches to serve as lieutenants and guardians. Unlike common undead, lich thralls retain enough intelligence to cast spells and follow complex orders. They are bound by magical oaths of loyalty that persist beyond any physical compulsion."
+  },
+  "death_mage": {
+    "name": "Death Mage",
+    "symbol": "m",
+    "color": [100, 80, 140],
+    "hp": "3d8",
+    "speed": 1,
+    "ai_pattern": "cowardly",
+    "min_level": 8,
+    "max_level": 13,
+    "thac0": 10,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "necrotic_bolt",
+        "damage": "3d8",
+        "type": "magic",
+        "effect": null,
+        "effect_chance": 0.0,
+        "effect_duration": 0
+      },
+      {
+        "name": "wither",
+        "damage": "2d6",
+        "type": "drain",
+        "effect": "slowed",
+        "effect_chance": 0.35,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": ["cold", "poison", "magic"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "death_mage_phylactery",
+    "treasure": {"gold": [25, 70], "item_chance": 0.35, "item_tier": 4},
+    "lore": "Mortal wizards who voluntarily underwent partial undead transformation to extend their studies of necromancy. They have not yet committed to full lichdom, existing in a twilight state between life and undeath. Their command of death magic is exceptional, though their partially deceased state makes them emotionally unstable."
+  },
+  "bone_witch": {
+    "name": "Bone Witch",
+    "symbol": "w",
+    "color": [180, 140, 180],
+    "hp": "2d10",
+    "speed": 1,
+    "ai_pattern": "cowardly",
+    "min_level": 7,
+    "max_level": 12,
+    "thac0": 11,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "hex",
+        "damage": "2d6",
+        "type": "magic",
+        "effect": "poisoned",
+        "effect_chance": 0.4,
+        "effect_duration": 5
+      },
+      {
+        "name": "bone_lance",
+        "damage": "2d8",
+        "type": "physical",
+        "effect": null,
+        "effect_chance": 0.0,
+        "effect_duration": 0
+      }
+    ],
+    "resistances": ["cold", "poison"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "witch_bone",
+    "treasure": {"gold": [20, 60], "item_chance": 0.3, "item_tier": 3},
+    "lore": "Ancient witches who chose undeath over mortality, their bodies preserved by dark ritual into a skeletal state while retaining their cunning minds. They collect and animate the bones of fallen enemies, using them as both weapons and decorations in their lairs. Bone witches are known to hoard knowledge of forbidden spells."
+  },
+  "necromancer_lord": {
+    "name": "Necromancer Lord",
+    "symbol": "N",
+    "color": [80, 60, 120],
+    "hp": "5d10",
+    "speed": 1,
+    "ai_pattern": "cowardly",
+    "min_level": 12,
+    "max_level": 17,
+    "thac0": 5,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "death_ray",
+        "damage": "4d10",
+        "type": "magic",
+        "effect": null,
+        "effect_chance": 0.0,
+        "effect_duration": 0
+      },
+      {
+        "name": "animate",
+        "damage": "2d8",
+        "type": "drain",
+        "effect": "slowed",
+        "effect_chance": 0.4,
+        "effect_duration": 5
+      }
+    ],
+    "resistances": ["cold", "poison", "magic"],
+    "weaknesses": ["holy"],
+    "harvest_tier": 5,
+    "harvest_threshold": 5,
+    "ingredient_id": "lord_phylactery",
+    "treasure": {"gold": [60, 160], "item_chance": 0.55, "item_tier": 5},
+    "lore": "A master of necromantic arts who has achieved partial undeath, becoming something between a living mage and a lich. They command armies of undead with casual ease, animating fallen enemies on the battlefield to replace fallen minions. Their phylacteries are rumored to be hidden within other undead creatures under their command."
+  },
+  "pale_master": {
+    "name": "Pale Master",
+    "symbol": "P",
+    "color": [220, 210, 230],
+    "hp": "4d10",
+    "speed": 1,
+    "ai_pattern": "cowardly",
+    "min_level": 10,
+    "max_level": 15,
+    "thac0": 7,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "necrotic_touch",
+        "damage": "3d8",
+        "type": "drain",
+        "effect": "paralyzed",
+        "effect_chance": 0.3,
+        "effect_duration": 4
+      },
+      {
+        "name": "death_wave",
+        "damage": "2d10",
+        "type": "magic",
+        "effect": "slowed",
+        "effect_chance": 0.3,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": ["cold", "poison", "magic"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 4,
+    "harvest_threshold": 5,
+    "ingredient_id": "pale_master_essence",
+    "treasure": {"gold": [45, 130], "item_chance": 0.45, "item_tier": 5},
+    "lore": "Necromancers who eschewed the traditional path to lichdom in favor of grafting undead flesh and bone directly to their living bodies. Over time, the boundary between their living and undead components blurs until they are something entirely unique. Their intimate knowledge of undead physiology makes their magic particularly effective."
+  },
+  "wight_lord": {
+    "name": "Wight Lord",
+    "symbol": "W",
+    "color": [100, 120, 100],
+    "hp": "4d10",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 10,
+    "max_level": 15,
+    "thac0": 7,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "drain",
+        "damage": "2d8",
+        "type": "drain",
+        "effect": null,
+        "effect_chance": 0.0,
+        "effect_duration": 0
+      },
+      {
+        "name": "command",
+        "damage": "1d6",
+        "type": "magic",
+        "effect": "confused",
+        "effect_chance": 0.45,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": ["cold", "poison"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 4,
+    "harvest_threshold": 4,
+    "ingredient_id": "wight_essence",
+    "treasure": {"gold": [40, 110], "item_chance": 0.35, "item_tier": 4},
+    "lore": "A wight who has accumulated centuries of strength and taken dominion over lesser undead in a territory. Wight lords retain more of their original personality than common wights, using this cunning to organize their undead underlings into effective raiding parties. Their life-draining touch is especially potent, having been honed across hundreds of victims."
+  },
+  "barrow_wight": {
+    "name": "Barrow Wight",
+    "symbol": "W",
+    "color": [90, 110, 90],
+    "hp": "3d8",
+    "speed": 1,
+    "ai_pattern": "sessile",
+    "min_level": 6,
+    "max_level": 10,
+    "thac0": 12,
+    "frequency": 4,
+    "attacks": [
+      {
+        "name": "drain",
+        "damage": "2d6",
+        "type": "drain",
+        "effect": null,
+        "effect_chance": 0.0,
+        "effect_duration": 0
+      },
+      {
+        "name": "entangle",
+        "damage": "1d4",
+        "type": "physical",
+        "effect": "paralyzed",
+        "effect_chance": 0.3,
+        "effect_duration": 2
+      }
+    ],
+    "resistances": ["cold", "poison"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": "barrow_dust",
+    "treasure": {"gold": [15, 50], "item_chance": 0.25, "item_tier": 3},
+    "lore": "Ancient kings and chieftains entombed with their treasures in burial mounds, cursed to guard their hoards for eternity. Barrow wights resent the living for the freedom they no longer possess, attacking intruders with cold fury. They are bound to their barrow and suffer increasing agony the further they stray from it."
+  },
+  "cairn_wight": {
+    "name": "Cairn Wight",
+    "symbol": "W",
+    "color": [110, 130, 110],
+    "hp": "2d8",
+    "speed": 1,
+    "ai_pattern": "sessile",
+    "min_level": 4,
+    "max_level": 8,
+    "thac0": 14,
+    "frequency": 5,
+    "attacks": [
+      {
+        "name": "drain",
+        "damage": "1d8",
+        "type": "drain",
+        "effect": null,
+        "effect_chance": 0.0,
+        "effect_duration": 0
+      }
+    ],
+    "resistances": ["cold", "poison"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "cairn_stone",
+    "treasure": {"gold": [8, 30], "item_chance": 0.2, "item_tier": 2},
+    "lore": "Wights bound to simple stone cairn burial markers rather than elaborate tomb complexes. They are weaker than their barrow-dwelling kin but no less dangerous to unprepared travelers. Cairn wights often mark the graves of warriors who fell in battle far from home."
+  },
+  "crypt_thing": {
+    "name": "Crypt Thing",
+    "symbol": "c",
+    "color": [160, 150, 130],
+    "hp": "3d8",
+    "speed": 1,
+    "ai_pattern": "sessile",
+    "min_level": 7,
+    "max_level": 12,
+    "thac0": 11,
+    "frequency": 4,
+    "attacks": [
+      {
+        "name": "teleport",
+        "damage": "1d4",
+        "type": "magic",
+        "effect": "confused",
+        "effect_chance": 0.55,
+        "effect_duration": 5
+      },
+      {
+        "name": "claw",
+        "damage": "1d8",
+        "type": "physical",
+        "effect": null,
+        "effect_chance": 0.0,
+        "effect_duration": 0
+      }
+    ],
+    "resistances": ["cold", "poison", "magic"],
+    "weaknesses": ["holy"],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": "crypt_dust",
+    "treasure": {"gold": [15, 55], "item_chance": 0.25, "item_tier": 3},
+    "lore": "A unique form of undead guardian created specifically to protect tombs without causing harm to the protected dead within. Rather than attacking intruders directly, crypt things teleport trespassers to random locations in the dungeon, separating adventuring parties and leaving individuals lost and alone. They cannot be reasoned with or bribed."
+  },
+  "grave_guardian": {
+    "name": "Grave Guardian",
+    "symbol": "G",
+    "color": [140, 130, 120],
+    "hp": "3d10",
+    "speed": 1,
+    "ai_pattern": "sessile",
+    "min_level": 7,
+    "max_level": 11,
+    "thac0": 10,
+    "frequency": 4,
+    "attacks": [
+      {
+        "name": "smash",
+        "damage": "2d8",
+        "type": "physical",
+        "effect": null,
+        "effect_chance": 0.0,
+        "effect_duration": 0
+      },
+      {
+        "name": "ward",
+        "damage": "1d6",
+        "type": "holy",
+        "effect": "slowed",
+        "effect_chance": 0.2,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": ["cold", "poison", "physical"],
+    "weaknesses": ["fire", "magic"],
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "guardian_bone",
+    "treasure": {"gold": [20, 60], "item_chance": 0.2, "item_tier": 3},
+    "lore": "Powerful undead warriors voluntarily entombed as eternal guardians of sacred burial sites. They were once legendary champions who swore oaths to protect the honored dead. Curiously, they wield holy power that is effective against other undead, though they themselves are undead — a testament to the complexity of their sacred duty."
+  },
+  "tomb_guardian": {
+    "name": "Tomb Guardian",
+    "symbol": "G",
+    "color": [130, 120, 110],
+    "hp": "4d10",
+    "speed": 1,
+    "ai_pattern": "sessile",
+    "min_level": 9,
+    "max_level": 14,
+    "thac0": 8,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "cleave",
+        "damage": "2d10",
+        "type": "physical",
+        "effect": null,
+        "effect_chance": 0.0,
+        "effect_duration": 0
+      },
+      {
+        "name": "bind",
+        "damage": "1d8",
+        "type": "magic",
+        "effect": "paralyzed",
+        "effect_chance": 0.35,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": ["cold", "poison", "physical"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 4,
+    "harvest_threshold": 4,
+    "ingredient_id": "tomb_stone_fragment",
+    "treasure": {"gold": [30, 80], "item_chance": 0.25, "item_tier": 4},
+    "lore": "Elite undead sentinels created through a combination of necromancy and binding magic to guard the most important royal tombs. Each tomb guardian was specifically crafted for a single purpose and a single location, becoming more powerful over the centuries as the magic deepens. Tomb guardians become increasingly desperate and violent the deeper into their charge's tomb an intruder penetrates."
+  },
+  "bone_golem": {
+    "name": "Bone Golem",
+    "symbol": "B",
+    "color": [210, 200, 185],
+    "hp": "4d10",
+    "speed": 0,
+    "ai_pattern": "aggressive",
+    "min_level": 9,
+    "max_level": 14,
+    "thac0": 8,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "slam",
+        "damage": "2d10",
+        "type": "physical",
+        "effect": null,
+        "effect_chance": 0.0,
+        "effect_duration": 0
+      },
+      {
+        "name": "bone_spray",
+        "damage": "2d6",
+        "type": "physical",
+        "effect": "blinded",
+        "effect_chance": 0.25,
+        "effect_duration": 2
+      }
+    ],
+    "resistances": ["cold", "poison", "magic"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 4,
+    "harvest_threshold": 4,
+    "ingredient_id": "golem_bone",
+    "treasure": {"gold": [25, 70], "item_chance": 0.15, "item_tier": 4},
+    "lore": "A massive construct assembled from the bones of dozens of creatures, animated by a complex weave of necromantic runes carved directly into its skeletal components. Unlike most undead, a bone golem is not haunted by any specific spirit but animated by pure magical energy. Their construction takes months of painstaking work, making them rare and expensive guardians."
+  },
+  "ossuary_horror": {
+    "name": "Ossuary Horror",
+    "symbol": "O",
+    "color": [190, 175, 160],
+    "hp": "5d12",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 12,
+    "max_level": 17,
+    "thac0": 5,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "bone_lash",
+        "damage": "3d8",
+        "type": "physical",
+        "effect": null,
+        "effect_chance": 0.0,
+        "effect_duration": 0
+      },
+      {
+        "name": "absorb",
+        "damage": "2d8",
+        "type": "drain",
+        "effect": "slowed",
+        "effect_chance": 0.35,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": ["cold", "poison", "physical", "magic"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 5,
+    "harvest_threshold": 5,
+    "ingredient_id": "ossuary_shard",
+    "treasure": {"gold": [50, 140], "item_chance": 0.4, "item_tier": 5},
+    "lore": "A vast shifting mass of thousands of bones animated as a single collective entity. When an ossuary is disturbed by dark magic, the combined spiritual residue of all interred bones can coalesce into this abomination. It can extend pseudopods of bone in any direction and absorb the skeletons of defeated enemies into its own bulk."
+  },
+  "mohrg": {
+    "name": "Mohrg",
+    "symbol": "m",
+    "color": [100, 150, 80],
+    "hp": "3d8+3",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 8,
+    "max_level": 13,
+    "thac0": 9,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "slam",
+        "damage": "1d8",
+        "type": "physical",
+        "effect": null,
+        "effect_chance": 0.0,
+        "effect_duration": 0
+      },
+      {
+        "name": "tongue_lash",
+        "damage": "1d4",
+        "type": "physical",
+        "effect": "paralyzed",
+        "effect_chance": 0.5,
+        "effect_duration": 5
+      }
+    ],
+    "resistances": ["cold", "poison"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "mohrg_organ",
+    "treasure": {"gold": [20, 65], "item_chance": 0.25, "item_tier": 3},
+    "lore": "The animated corpses of mass murderers and serial killers, driven by the same murderous impulses that defined them in life. A mohrg's most terrifying weapon is its visceral tongue, which can paralyze victims with a touch. They compulsively create spawn from those they slay, seeking to build a following of undead murderers."
+  },
+  "huecuva": {
+    "name": "Huecuva",
+    "symbol": "h",
+    "color": [180, 160, 130],
+    "hp": "2d8",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 5,
+    "max_level": 9,
+    "thac0": 13,
+    "frequency": 5,
+    "attacks": [
+      {
+        "name": "claw",
+        "damage": "1d8",
+        "type": "physical",
+        "effect": "poisoned",
+        "effect_chance": 0.4,
+        "effect_duration": 5
+      }
+    ],
+    "resistances": ["cold", "poison", "magic"],
+    "weaknesses": ["holy"],
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "false_holy_relic",
+    "treasure": {"gold": [8, 28], "item_chance": 0.2, "item_tier": 2},
+    "lore": "The undead remains of clerics and holy men who abandoned their faith, condemned to walk as undead mockeries of their former devoted selves. They often appear as illusions of living priests to deceive travelers seeking aid. Their touch spreads a disease that specifically corrupts divine magic, making them particularly dangerous to clerics."
+  },
+  "lesser_death": {
+    "name": "Lesser Death",
+    "symbol": "D",
+    "color": [20, 20, 40],
+    "hp": "4d10",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 12,
+    "max_level": 17,
+    "thac0": 5,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "reap",
+        "damage": "3d10",
+        "type": "drain",
+        "effect": null,
+        "effect_chance": 0.0,
+        "effect_duration": 0
+      },
+      {
+        "name": "death_touch",
+        "damage": "2d8",
+        "type": "magic",
+        "effect": "paralyzed",
+        "effect_chance": 0.35,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": ["cold", "poison", "magic", "physical", "fire", "lightning"],
+    "weaknesses": ["holy"],
+    "harvest_tier": 5,
+    "harvest_threshold": 5,
+    "ingredient_id": "death_essence",
+    "treasure": {"gold": [60, 150], "item_chance": 0.5, "item_tier": 5},
+    "lore": "A minor manifestation of Death itself, neither truly undead nor truly alive but an avatar of ending. They are drawn to places where death is common, feeding on the transition of souls from life to whatever lies beyond. Scholars debate whether lesser deaths are actually undead or simply personifications of a cosmic force wearing an undead guise."
+  },
+  "greater_shadow": {
+    "name": "Greater Shadow",
+    "symbol": "S",
+    "color": [20, 20, 50],
+    "hp": "4d8",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 10,
+    "max_level": 15,
+    "thac0": 8,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "strength_drain",
+        "damage": "2d6",
+        "type": "drain",
+        "effect": "slowed",
+        "effect_chance": 0.45,
+        "effect_duration": 5
+      },
+      {
+        "name": "engulf",
+        "damage": "2d8",
+        "type": "shadow",
+        "effect": "blinded",
+        "effect_chance": 0.35,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": ["cold", "poison", "physical", "shadow"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 4,
+    "harvest_threshold": 4,
+    "ingredient_id": null,
+    "treasure": {"gold": [30, 90], "item_chance": 0.25, "item_tier": 4},
+    "lore": "An ancient and powerful shadow that has fed on living vitality for so long it has grown to monstrous proportions. It can swallow entire rooms in supernatural darkness and devour the strength of all within. Creatures slain by a greater shadow sometimes rise as lesser shadows almost immediately."
+  },
+  "nightshade_spawn": {
+    "name": "Nightshade Spawn",
+    "symbol": "n",
+    "color": [30, 10, 60],
+    "hp": "4d10",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 11,
+    "max_level": 16,
+    "thac0": 6,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "desecrate",
+        "damage": "3d8",
+        "type": "shadow",
+        "effect": "blinded",
+        "effect_chance": 0.4,
+        "effect_duration": 4
+      },
+      {
+        "name": "drain",
+        "damage": "2d8",
+        "type": "drain",
+        "effect": null,
+        "effect_chance": 0.0,
+        "effect_duration": 0
+      }
+    ],
+    "resistances": ["cold", "poison", "shadow", "physical"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 4,
+    "harvest_threshold": 5,
+    "ingredient_id": "nightshade_essence",
+    "treasure": {"gold": [40, 120], "item_chance": 0.35, "item_tier": 5},
+    "lore": "Offspring of true nightshade creatures, these lesser versions of the nightshade family are still among the most powerful undead a dungeon delver is likely to encounter. They embody the concept of negative energy given physical form, corrupting and desecrating everything around them. Plants wither, fire dims, and hope fades in their presence."
+  },
+  "forsaken_shell": {
+    "name": "Forsaken Shell",
+    "symbol": "f",
+    "color": [120, 100, 100],
+    "hp": "2d8",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 4,
+    "max_level": 8,
+    "thac0": 15,
+    "frequency": 6,
+    "attacks": [
+      {
+        "name": "flail",
+        "damage": "1d8",
+        "type": "physical",
+        "effect": null,
+        "effect_chance": 0.0,
+        "effect_duration": 0
+      },
+      {
+        "name": "wail",
+        "damage": "1d4",
+        "type": "magic",
+        "effect": "confused",
+        "effect_chance": 0.25,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": ["cold", "poison"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "hollow_bone",
+    "treasure": {"gold": [3, 15], "item_chance": 0.1, "item_tier": 2},
+    "lore": "An animated body from which the soul has been violently ripped, leaving a hollow vessel that moves on pure necromantic energy alone. The forsaken shell retains no memories or personality of its former occupant. They are sometimes created deliberately by necromancers who need the soul for other purposes but want to keep the body useful."
+  },
+  "hollow_one": {
+    "name": "Hollow One",
+    "symbol": "H",
+    "color": [140, 120, 120],
+    "hp": "3d8",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 6,
+    "max_level": 10,
+    "thac0": 12,
+    "frequency": 5,
+    "attacks": [
+      {
+        "name": "grasp",
+        "damage": "1d10",
+        "type": "physical",
+        "effect": null,
+        "effect_chance": 0.0,
+        "effect_duration": 0
+      },
+      {
+        "name": "shriek",
+        "damage": "1d6",
+        "type": "magic",
+        "effect": "confused",
+        "effect_chance": 0.3,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": ["cold", "poison"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "hollow_essence",
+    "treasure": {"gold": [10, 35], "item_chance": 0.12, "item_tier": 2},
+    "lore": "A person who traded away their soul through dark bargains, died, and now walks as an undead creature of perpetual hunger. The hollow one seeks souls to fill the void where their own used to be, but no soul can permanently fill the absence. They are pitiable creatures, driven mad by an emptiness that cannot be sated."
+  },
+  "charnel_hound": {
+    "name": "Charnel Hound",
+    "symbol": "C",
+    "color": [80, 100, 60],
+    "hp": "3d8",
+    "speed": 3,
+    "ai_pattern": "aggressive",
+    "min_level": 6,
+    "max_level": 11,
+    "thac0": 11,
+    "frequency": 4,
+    "attacks": [
+      {
+        "name": "bite",
+        "damage": "2d8",
+        "type": "physical",
+        "effect": null,
+        "effect_chance": 0.0,
+        "effect_duration": 0
+      },
+      {
+        "name": "bone_crunch",
+        "damage": "1d8",
+        "type": "physical",
+        "effect": "slowed",
+        "effect_chance": 0.3,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": ["cold", "poison"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": "charnel_fang",
+    "treasure": {"gold": [8, 28], "item_chance": 0.1, "item_tier": 2},
+    "lore": "Large skeletal dogs assembled from the bones of multiple animals, animated to serve as fast-moving hunters and trackers. Charnel hounds can follow a scent trail through the ethereal plane, tracking prey across impossible distances. They are frequently employed by necromancers as scouts and to run down fleeing intruders."
+  },
+  "dread_knight": {
+    "name": "Dread Knight",
+    "symbol": "k",
+    "color": [60, 60, 80],
+    "hp": "4d10",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 10,
+    "max_level": 15,
+    "thac0": 7,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "dread_strike",
+        "damage": "2d10",
+        "type": "physical",
+        "effect": "slowed",
+        "effect_chance": 0.3,
+        "effect_duration": 3
+      },
+      {
+        "name": "curse_blow",
+        "damage": "2d8",
+        "type": "shadow",
+        "effect": "confused",
+        "effect_chance": 0.35,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": ["cold", "poison", "shadow"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 4,
+    "harvest_threshold": 4,
+    "ingredient_id": "dread_plate",
+    "treasure": {"gold": [35, 100], "item_chance": 0.4, "item_tier": 4},
+    "lore": "Fallen paladins who have become undead warriors of darkness, their divine power twisted into unholy strength. They retain their martial prowess and tactical intelligence from life, making them among the most dangerous undead combatants. Their armor seems to absorb light, and their gaze carries the weight of condemned souls."
+  },
+  "bone_archer": {
+    "name": "Bone Archer",
+    "symbol": "b",
+    "color": [200, 195, 175],
+    "hp": "2d8",
+    "speed": 1,
+    "ai_pattern": "cowardly",
+    "min_level": 4,
+    "max_level": 8,
+    "thac0": 15,
+    "frequency": 6,
+    "attacks": [
+      {
+        "name": "bone_arrow",
+        "damage": "1d8+1",
+        "type": "physical",
+        "effect": null,
+        "effect_chance": 0.0,
+        "effect_duration": 0
+      },
+      {
+        "name": "cursed_shot",
+        "damage": "1d6",
+        "type": "magic",
+        "effect": "slowed",
+        "effect_chance": 0.2,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": ["cold", "poison"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "bone_arrow",
+    "treasure": {"gold": [5, 18], "item_chance": 0.15, "item_tier": 2},
+    "lore": "Skeletal archers animated with the sole purpose of providing undead ranged fire support. Their arrows are carved from the same bones that compose their fingers, magically regenerating after each shot. Bone archers prefer elevated positions and will attempt to maintain distance from melee opponents."
+  },
+  "skeletal_giant": {
+    "name": "Skeletal Giant",
+    "symbol": "S",
+    "color": [230, 220, 200],
+    "hp": "5d12",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 13,
+    "max_level": 18,
+    "thac0": 4,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "stomp",
+        "damage": "3d10",
+        "type": "physical",
+        "effect": "slowed",
+        "effect_chance": 0.4,
+        "effect_duration": 3
+      },
+      {
+        "name": "bone_hurl",
+        "damage": "2d10",
+        "type": "physical",
+        "effect": null,
+        "effect_chance": 0.0,
+        "effect_duration": 0
+      }
+    ],
+    "resistances": ["cold", "poison", "physical"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 5,
+    "harvest_threshold": 5,
+    "ingredient_id": "giant_bone",
+    "treasure": {"gold": [50, 130], "item_chance": 0.3, "item_tier": 5},
+    "lore": "The reanimated skeleton of a giant, towering over ordinary undead at three to four times human height. A single blow from its massive fists can flatten an armored knight. Skeletal giants are so powerful that most necromancers who create them quickly lose control of the results."
+  },
+  "undead_dragon_lesser": {
+    "name": "Lesser Undead Dragon",
+    "symbol": "U",
+    "color": [80, 100, 80],
+    "hp": "6d12",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 15,
+    "max_level": null,
+    "thac0": 0,
+    "frequency": 1,
+    "attacks": [
+      {
+        "name": "bite",
+        "damage": "3d10",
+        "type": "physical",
+        "effect": null,
+        "effect_chance": 0.0,
+        "effect_duration": 0
+      },
+      {
+        "name": "necrotic_breath",
+        "damage": "4d10",
+        "type": "magic",
+        "effect": "slowed",
+        "effect_chance": 0.5,
+        "effect_duration": 5
+      },
+      {
+        "name": "claw",
+        "damage": "2d8",
+        "type": "physical",
+        "effect": null,
+        "effect_chance": 0.0,
+        "effect_duration": 0
+      }
+    ],
+    "resistances": ["cold", "poison", "magic", "fire", "physical"],
+    "weaknesses": ["holy", "lightning"],
+    "harvest_tier": 5,
+    "harvest_threshold": 5,
+    "ingredient_id": "lesser_draco_bone",
+    "treasure": {"gold": [120, 300], "item_chance": 0.7, "item_tier": 5},
+    "lore": "A draconic corpse reanimated through necromantic art of staggering complexity. Lesser undead dragons retain fragments of their former cunning, making them far more dangerous than other undead of similar power. Their breath weapon now carries the chill of the grave rather than elemental fire or frost."
+  },
+  "lich_dragon_spawn": {
+    "name": "Lich Dragon Spawn",
+    "symbol": "U",
+    "color": [60, 80, 100],
+    "hp": "8d12",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 18,
+    "max_level": null,
+    "thac0": -5,
+    "frequency": 1,
+    "attacks": [
+      {
+        "name": "death_bite",
+        "damage": "4d10",
+        "type": "drain",
+        "effect": "paralyzed",
+        "effect_chance": 0.4,
+        "effect_duration": 5
+      },
+      {
+        "name": "lich_breath",
+        "damage": "5d10",
+        "type": "magic",
+        "effect": "frozen",
+        "effect_chance": 0.45,
+        "effect_duration": 4
+      },
+      {
+        "name": "wing_buffet",
+        "damage": "2d10",
+        "type": "physical",
+        "effect": "slowed",
+        "effect_chance": 0.3,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": ["cold", "poison", "magic", "fire", "lightning", "shadow", "physical"],
+    "weaknesses": ["holy"],
+    "harvest_tier": 5,
+    "harvest_threshold": 5,
+    "ingredient_id": "lich_dragon_scale",
+    "treasure": {"gold": [200, 500], "item_chance": 0.9, "item_tier": 5},
+    "lore": "The pinnacle of necromantic achievement: a dragon transformed into a draconic lich. This creature possesses the full cunning of a dragon, the immortality of a lich, and the combined magical power of both. Lich dragon spawn are created when a true lich convinces or coerces a dragon into the phylactery ritual. They are among the most feared creatures in existence."
+  },
+  "ethereal_filcher": {
+    "name": "Ethereal Filcher",
+    "symbol": "e",
+    "color": [160, 200, 220],
+    "hp": "3d8",
+    "speed": 3,
+    "ai_pattern": "cowardly",
+    "min_level": 5,
+    "max_level": 9,
+    "thac0": 13,
+    "frequency": 4,
+    "attacks": [
+      {
+        "name": "steal",
+        "damage": "1d6",
+        "type": "physical",
+        "effect": "confused",
+        "effect_chance": 0.2,
+        "effect_duration": 2
+      }
+    ],
+    "resistances": ["cold", "poison", "physical"],
+    "weaknesses": ["holy", "magic"],
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": null,
+    "treasure": {"gold": [15, 50], "item_chance": 0.5, "item_tier": 3},
+    "lore": "An incorporeal undead that phases between the material and ethereal planes to steal objects from the living. Ethereal filchers are drawn to bright or magical items, which they collect in hidden ethereal lairs. They are rarely aggressive unless cornered, preferring to flee with their stolen goods rather than risk destruction."
+  },
+  "nightmare_shade": {
+    "name": "Nightmare Shade",
+    "symbol": "N",
+    "color": [30, 20, 60],
+    "hp": "4d8",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 9,
+    "max_level": 14,
+    "thac0": 9,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "terror",
+        "damage": "2d6",
+        "type": "magic",
+        "effect": "confused",
+        "effect_chance": 0.5,
+        "effect_duration": 5
+      },
+      {
+        "name": "shadow_bite",
+        "damage": "2d8",
+        "type": "shadow",
+        "effect": "blinded",
+        "effect_chance": 0.3,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": ["cold", "poison", "shadow", "physical"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 4,
+    "harvest_threshold": 4,
+    "ingredient_id": null,
+    "treasure": {"gold": [25, 80], "item_chance": 0.2, "item_tier": 4},
+    "lore": "Undead born from the accumulated nightmares of those who died in absolute terror. A nightmare shade embodies the worst fears its progenitor experienced and projects them outward to paralyze victims with dread. They can change shape to become the specific fear of whoever they are facing."
+  },
+  "soul_eater_spawn": {
+    "name": "Soul Eater Spawn",
+    "symbol": "s",
+    "color": [60, 0, 80],
+    "hp": "3d10",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 10,
+    "max_level": 15,
+    "thac0": 8,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "consume",
+        "damage": "3d6",
+        "type": "drain",
+        "effect": "slowed",
+        "effect_chance": 0.4,
+        "effect_duration": 4
+      },
+      {
+        "name": "shriek",
+        "damage": "1d8",
+        "type": "magic",
+        "effect": "confused",
+        "effect_chance": 0.35,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": ["cold", "poison", "physical", "magic"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 4,
+    "harvest_threshold": 5,
+    "ingredient_id": "soul_fragment",
+    "treasure": {"gold": [35, 100], "item_chance": 0.3, "item_tier": 4},
+    "lore": "Offspring of soul eaters, ravenous undead spirits that exist solely to consume the spiritual essence of living beings. Each soul they consume adds to their own power, theoretically allowing them to grow without limit. Soul eater spawn are distinguishable from their parents only by their slightly smaller size and reduced power."
+  },
+  "dread_wraith": {
+    "name": "Dread Wraith",
+    "symbol": "W",
+    "color": [50, 50, 100],
+    "hp": "5d10",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 13,
+    "max_level": 18,
+    "thac0": 3,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "life_drain",
+        "damage": "3d8",
+        "type": "drain",
+        "effect": null,
+        "effect_chance": 0.0,
+        "effect_duration": 0
+      },
+      {
+        "name": "wail",
+        "damage": "2d8",
+        "type": "magic",
+        "effect": "paralyzed",
+        "effect_chance": 0.4,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": ["cold", "poison", "physical", "shadow"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 5,
+    "harvest_threshold": 5,
+    "ingredient_id": null,
+    "treasure": {"gold": [55, 150], "item_chance": 0.3, "item_tier": 5},
+    "lore": "Ancient wraiths of tremendous power, dread wraiths are what common wraiths aspire to become after centuries of draining life from the living. They are rarely seen as they prefer to operate from the ethereal plane, reaching through to drain victims without exposing themselves to retaliation. The area around a dread wraith is perpetually cold and lightless."
+  },
+  "nightwing": {
+    "name": "Nightwing",
+    "symbol": "n",
+    "color": [20, 10, 40],
+    "hp": "8d12",
+    "speed": 3,
+    "ai_pattern": "aggressive",
+    "min_level": 16,
+    "max_level": null,
+    "thac0": -3,
+    "frequency": 1,
+    "attacks": [
+      {
+        "name": "wing_buffet",
+        "damage": "3d8",
+        "type": "physical",
+        "effect": "slowed",
+        "effect_chance": 0.3,
+        "effect_duration": 3
+      },
+      {
+        "name": "deathscream",
+        "damage": "4d10",
+        "type": "magic",
+        "effect": "paralyzed",
+        "effect_chance": 0.45,
+        "effect_duration": 5
+      },
+      {
+        "name": "desecrating_touch",
+        "damage": "3d10",
+        "type": "shadow",
+        "effect": "blinded",
+        "effect_chance": 0.4,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": ["cold", "poison", "shadow", "magic", "physical"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 5,
+    "harvest_threshold": 5,
+    "ingredient_id": "nightwing_membrane",
+    "treasure": {"gold": [150, 400], "item_chance": 0.65, "item_tier": 5},
+    "lore": "The greatest of the nightshade creatures, a nightwing appears as a vast bat-like shadow of impossible size that blots out stars as it passes overhead. They are engines of pure negative energy that desecrate the land they fly over, killing plant life and corrupting water sources. Ancient texts warn that a nightwing's arrival heralds a period of mass death and catastrophe."
+  }
+}

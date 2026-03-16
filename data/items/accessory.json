@@ -4292,7 +4292,7 @@
     "weight": 0.1,
     "min_level": 20,
     "slot": "ring",
-    "quiz_tier": 4,
+    "quiz_tier": 2,
     "equip_threshold": 5,
     "effects": {
       "stat": "INT",
@@ -4336,7 +4336,7 @@
     "weight": 0.1,
     "min_level": 18,
     "slot": "ring",
-    "quiz_tier": 4,
+    "quiz_tier": 2,
     "equip_threshold": 5,
     "effects": {
       "stat": "CON",
@@ -4359,7 +4359,7 @@
     "weight": 0.2,
     "min_level": 20,
     "slot": "amulet",
-    "quiz_tier": 4,
+    "quiz_tier": 2,
     "equip_threshold": 5,
     "effects": {
       "stat": "WIS",

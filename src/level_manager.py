@@ -69,9 +69,8 @@ class LevelManager:
         import os as _os
         import random as _rng
 
-        # Locate monsters.json relative to this file's directory
-        _here = _os.path.dirname(_os.path.abspath(__file__))
-        _monsters_path = _os.path.join(_here, '..', 'data', 'monsters.json')
+        from paths import data_path as _dp
+        _monsters_path = _dp('data', 'monsters.json')
         try:
             with open(_monsters_path, encoding='utf-8') as _f:
                 _all_monsters = _json.load(_f)

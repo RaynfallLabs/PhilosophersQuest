@@ -1,0 +1,2541 @@
+{
+  "crystal_ooze": {
+    "name": "crystal ooze",
+    "symbol": "O",
+    "color": [180, 230, 255],
+    "hp": "2d6",
+    "speed": 0,
+    "ai_pattern": "aggressive",
+    "min_level": 4,
+    "max_level": 8,
+    "thac0": 16,
+    "frequency": 6,
+    "attacks": [
+      {
+        "name": "engulf",
+        "damage": "1d6",
+        "type": "physical",
+        "effect": "slowed",
+        "effect_chance": 0.3,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": ["cold", "physical"],
+    "weaknesses": ["fire", "lightning"],
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "crystal_residue",
+    "treasure": {"gold": [5, 20], "item_chance": 0.15, "item_tier": 2},
+    "lore": "A translucent, slow-moving ooze whose body refracts light into prismatic shards. Its crystalline pseudopods can slow victims with a coating of hardening mineral film. Miners fear these creatures for their habit of lurking in gem veins."
+  },
+  "green_slime": {
+    "name": "green slime",
+    "symbol": "O",
+    "color": [50, 200, 50],
+    "hp": "1d6",
+    "speed": 0,
+    "ai_pattern": "sessile",
+    "min_level": 1,
+    "max_level": 5,
+    "thac0": 19,
+    "frequency": 10,
+    "attacks": [
+      {
+        "name": "drip",
+        "damage": "1d4",
+        "type": "poison",
+        "effect": "poisoned",
+        "effect_chance": 0.5,
+        "effect_duration": 6
+      }
+    ],
+    "resistances": ["poison", "cold"],
+    "weaknesses": ["fire"],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": "green_slime_extract",
+    "treasure": {"gold": [0, 3], "item_chance": 0.05, "item_tier": 1},
+    "lore": "Green slime clings to dungeon ceilings and drips onto unsuspecting prey. Contact with its acidic body quickly dissolves organic matter. Alchemists prize small samples for use in corrosive reagents."
+  },
+  "yellow_mold": {
+    "name": "yellow mold",
+    "symbol": "m",
+    "color": [220, 200, 30],
+    "hp": "1d4",
+    "speed": 0,
+    "ai_pattern": "sessile",
+    "min_level": 2,
+    "max_level": 6,
+    "thac0": 19,
+    "frequency": 8,
+    "attacks": [
+      {
+        "name": "spore burst",
+        "damage": "1d4",
+        "type": "poison",
+        "effect": "confused",
+        "effect_chance": 0.6,
+        "effect_duration": 5
+      }
+    ],
+    "resistances": ["poison", "physical"],
+    "weaknesses": ["fire"],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": "yellow_spores",
+    "treasure": {"gold": [0, 2], "item_chance": 0.05, "item_tier": 1},
+    "lore": "This bright fungal growth ejects clouds of hallucinogenic spores when disturbed. Adventurers struck by the cloud often wander aimlessly, laughing at invisible dangers. The spores are highly flammable and burn with a vivid orange flame."
+  },
+  "brown_mold": {
+    "name": "brown mold",
+    "symbol": "m",
+    "color": [139, 90, 43],
+    "hp": "2d4",
+    "speed": 0,
+    "ai_pattern": "sessile",
+    "min_level": 3,
+    "max_level": 7,
+    "thac0": 18,
+    "frequency": 7,
+    "attacks": [
+      {
+        "name": "cold drain",
+        "damage": "1d6",
+        "type": "cold",
+        "effect": "slowed",
+        "effect_chance": 0.4,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": ["cold", "physical"],
+    "weaknesses": ["fire"],
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "brown_mold_patch",
+    "treasure": {"gold": [0, 3], "item_chance": 0.05, "item_tier": 1},
+    "lore": "Brown mold paradoxically absorbs heat from the surrounding air, chilling any creature that draws near. Fire used against it only makes it spread faster and grow colder. The crust it leaves on dungeon walls can be scraped off for use in cooling potions."
+  },
+  "gibbering_slime": {
+    "name": "gibbering slime",
+    "symbol": "O",
+    "color": [180, 100, 200],
+    "hp": "3d8",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 7,
+    "max_level": 12,
+    "thac0": 13,
+    "frequency": 4,
+    "attacks": [
+      {
+        "name": "pseudopod",
+        "damage": "2d6",
+        "type": "physical",
+        "effect": "confused",
+        "effect_chance": 0.5,
+        "effect_duration": 5
+      },
+      {
+        "name": "gibbering",
+        "damage": "1d4",
+        "type": "magic",
+        "effect": "confused",
+        "effect_chance": 0.7,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": ["poison", "magic"],
+    "weaknesses": ["lightning"],
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "gibbering_essence",
+    "treasure": {"gold": [15, 50], "item_chance": 0.2, "item_tier": 3},
+    "lore": "A pulsating mass that constantly emits maddening nonsense syllables from dozens of half-formed mouths. Prolonged exposure to its gibbering induces confusion and terror. Scholars debate whether it possesses some fractured form of intelligence."
+  },
+  "acid_blob": {
+    "name": "acid blob",
+    "symbol": "O",
+    "color": [200, 220, 0],
+    "hp": "2d8",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 5,
+    "max_level": 10,
+    "thac0": 15,
+    "frequency": 5,
+    "attacks": [
+      {
+        "name": "acid splash",
+        "damage": "2d4",
+        "type": "poison",
+        "effect": "burning",
+        "effect_chance": 0.45,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": ["poison", "fire"],
+    "weaknesses": ["cold"],
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "acid_gland",
+    "treasure": {"gold": [5, 20], "item_chance": 0.1, "item_tier": 2},
+    "lore": "An aggressive, fast-moving ooze that leaves trails of corroded stone and melted metal in its wake. Its acid can dissolve metal armor at an alarming rate. The concentrated bile inside its core is an alchemist's treasure."
+  },
+  "toxic_jelly": {
+    "name": "toxic jelly",
+    "symbol": "O",
+    "color": [100, 220, 130],
+    "hp": "2d6+2",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 4,
+    "max_level": 9,
+    "thac0": 16,
+    "frequency": 6,
+    "attacks": [
+      {
+        "name": "engulf",
+        "damage": "1d6",
+        "type": "poison",
+        "effect": "poisoned",
+        "effect_chance": 0.65,
+        "effect_duration": 8
+      }
+    ],
+    "resistances": ["poison"],
+    "weaknesses": ["fire", "cold"],
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "toxic_jelly_sac",
+    "treasure": {"gold": [5, 15], "item_chance": 0.1, "item_tier": 2},
+    "lore": "A vibrant green jelly that carries a virulent toxin in every cell of its body. Any wound it inflicts quickly turns septic without magical treatment. Herbalists use the diluted jelly as a powerful antiseptic in small doses."
+  },
+  "giant_scorpion": {
+    "name": "giant scorpion",
+    "symbol": "s",
+    "color": [180, 140, 60],
+    "hp": "2d8",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 4,
+    "max_level": 9,
+    "thac0": 15,
+    "frequency": 6,
+    "attacks": [
+      {
+        "name": "claw",
+        "damage": "1d6",
+        "type": "physical"
+      },
+      {
+        "name": "sting",
+        "damage": "1d4",
+        "type": "poison",
+        "effect": "paralyzed",
+        "effect_chance": 0.35,
+        "effect_duration": 5
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "scorpion_venom_sac",
+    "treasure": {"gold": [5, 20], "item_chance": 0.1, "item_tier": 2},
+    "lore": "This horse-sized arachnid is among the deadliest creatures in the dungeon's middle depths. Its pincers can crush bones outright, while its stinger delivers a paralytic venom. Desert tribes craft armor from its chitinous shell."
+  },
+  "giant_wasp": {
+    "name": "giant wasp",
+    "symbol": "W",
+    "color": [240, 200, 0],
+    "hp": "1d8",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 3,
+    "max_level": 7,
+    "thac0": 17,
+    "frequency": 7,
+    "attacks": [
+      {
+        "name": "sting",
+        "damage": "1d6",
+        "type": "poison",
+        "effect": "poisoned",
+        "effect_chance": 0.5,
+        "effect_duration": 6
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": "wasp_venom",
+    "treasure": {"gold": [0, 5], "item_chance": 0.1, "item_tier": 1},
+    "lore": "Giant wasps hunt in buzzing clouds and are fiercely territorial around their paper nests. A single sting delivers enough venom to fell a grown man in minutes. Their larval chambers sometimes contain the preserved bodies of paralyzed prey."
+  },
+  "giant_beetle": {
+    "name": "giant beetle",
+    "symbol": "b",
+    "color": [60, 80, 200],
+    "hp": "2d6",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 2,
+    "max_level": 6,
+    "thac0": 17,
+    "frequency": 8,
+    "attacks": [
+      {
+        "name": "mandible bite",
+        "damage": "2d4",
+        "type": "physical"
+      }
+    ],
+    "resistances": ["physical"],
+    "weaknesses": ["lightning"],
+    "harvest_tier": 1,
+    "harvest_threshold": 3,
+    "ingredient_id": "beetle_shell",
+    "treasure": {"gold": [0, 5], "item_chance": 0.1, "item_tier": 1},
+    "lore": "Armored in a thick iridescent carapace, the giant beetle is a surprisingly durable foe. Its mandibles exert crushing force capable of biting through chain mail. Armorers prize the polished shell plates as decorative reinforcements."
+  },
+  "giant_mantis": {
+    "name": "giant mantis",
+    "symbol": "M",
+    "color": [50, 180, 80],
+    "hp": "3d8",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 6,
+    "max_level": 11,
+    "thac0": 14,
+    "frequency": 5,
+    "attacks": [
+      {
+        "name": "raptorial strike",
+        "damage": "2d6",
+        "type": "physical",
+        "effect": "blinded",
+        "effect_chance": 0.2,
+        "effect_duration": 3
+      },
+      {
+        "name": "bite",
+        "damage": "1d6",
+        "type": "physical"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": "mantis_foreleg",
+    "treasure": {"gold": [15, 40], "item_chance": 0.15, "item_tier": 3},
+    "lore": "The giant mantis is a patient ambush predator that can remain perfectly motionless for hours. When it strikes, it moves with terrifying speed, its serrated forelegs capable of decapitating a man. Its compound eyes give it a nearly 360-degree field of vision."
+  },
+  "spider_queen": {
+    "name": "spider queen",
+    "symbol": "A",
+    "color": [160, 30, 160],
+    "hp": "5d10",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 11,
+    "max_level": 16,
+    "thac0": 8,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "venomous bite",
+        "damage": "3d6",
+        "type": "poison",
+        "effect": "paralyzed",
+        "effect_chance": 0.5,
+        "effect_duration": 8
+      },
+      {
+        "name": "web spray",
+        "damage": "1d4",
+        "type": "physical",
+        "effect": "slowed",
+        "effect_chance": 0.7,
+        "effect_duration": 6
+      }
+    ],
+    "resistances": ["poison"],
+    "weaknesses": ["fire"],
+    "harvest_tier": 5,
+    "harvest_threshold": 5,
+    "ingredient_id": "queen_venom_gland",
+    "treasure": {"gold": [40, 100], "item_chance": 0.5, "item_tier": 4},
+    "lore": "The matriarch of spider colonies, the spider queen is an immense eight-legged nightmare covered in dense black hair. She communicates with lesser spiders through pheromones and can direct dozens of them simultaneously. Her throne room is an elaborate web-cathedral hung with cocooned prey."
+  },
+  "phase_spider_lesser": {
+    "name": "phase spider lesser",
+    "symbol": "A",
+    "color": [180, 100, 255],
+    "hp": "2d8",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 5,
+    "max_level": 10,
+    "thac0": 15,
+    "frequency": 6,
+    "attacks": [
+      {
+        "name": "phase bite",
+        "damage": "1d6",
+        "type": "poison",
+        "effect": "poisoned",
+        "effect_chance": 0.4,
+        "effect_duration": 5
+      }
+    ],
+    "resistances": ["magic"],
+    "weaknesses": [],
+    "harvest_tier": 2,
+    "harvest_threshold": 4,
+    "ingredient_id": "phase_silk",
+    "treasure": {"gold": [5, 20], "item_chance": 0.2, "item_tier": 2},
+    "lore": "A smaller cousin of the true phase spider, capable of briefly stepping between planes to avoid attacks. It blinks in and out of visibility during combat, making it extremely difficult to strike. Its silk retains a faint magical shimmer even after the spider's death."
+  },
+  "web_spinner": {
+    "name": "web spinner",
+    "symbol": "a",
+    "color": [220, 220, 180],
+    "hp": "1d6",
+    "speed": 1,
+    "ai_pattern": "cowardly",
+    "min_level": 1,
+    "max_level": 5,
+    "thac0": 18,
+    "frequency": 9,
+    "attacks": [
+      {
+        "name": "web shot",
+        "damage": "1d2",
+        "type": "physical",
+        "effect": "slowed",
+        "effect_chance": 0.6,
+        "effect_duration": 4
+      },
+      {
+        "name": "bite",
+        "damage": "1d3",
+        "type": "poison",
+        "effect": "poisoned",
+        "effect_chance": 0.2,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": [],
+    "weaknesses": ["fire"],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": "spider_silk",
+    "treasure": {"gold": [0, 5], "item_chance": 0.05, "item_tier": 1},
+    "lore": "Web spinners are small but prolific spiders that festoon dungeon corridors with sticky traps. They prefer to let their webs do the fighting, retreating when prey proves too dangerous. Their silk is prized by tailors for its remarkable tensile strength."
+  },
+  "death_beetle": {
+    "name": "death beetle",
+    "symbol": "b",
+    "color": [20, 20, 20],
+    "hp": "3d8+3",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 8,
+    "max_level": 14,
+    "thac0": 12,
+    "frequency": 4,
+    "attacks": [
+      {
+        "name": "crushing bite",
+        "damage": "3d6",
+        "type": "physical"
+      },
+      {
+        "name": "death rattle",
+        "damage": "1d6",
+        "type": "shadow",
+        "effect": "slowed",
+        "effect_chance": 0.3,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": ["physical", "shadow"],
+    "weaknesses": ["holy", "lightning"],
+    "harvest_tier": 4,
+    "harvest_threshold": 4,
+    "ingredient_id": "death_beetle_ichor",
+    "treasure": {"gold": [20, 60], "item_chance": 0.25, "item_tier": 3},
+    "lore": "The death beetle is a massive, obsidian-shelled horror associated with necromantic energies. Its carapace seems to absorb light itself, and its presence is heralded by an eerie rattling sound. Ancient cultures carved its likeness onto tomb doors to ward off grave robbers."
+  },
+  "giant_lizard": {
+    "name": "giant lizard",
+    "symbol": "L",
+    "color": [60, 160, 60],
+    "hp": "2d6",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 2,
+    "max_level": 6,
+    "thac0": 17,
+    "frequency": 8,
+    "attacks": [
+      {
+        "name": "bite",
+        "damage": "1d8",
+        "type": "physical"
+      },
+      {
+        "name": "tail whip",
+        "damage": "1d4",
+        "type": "physical"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": ["cold"],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": "lizard_meat",
+    "treasure": {"gold": [0, 5], "item_chance": 0.05, "item_tier": 1},
+    "lore": "Giant lizards are opportunistic predators that inhabit warm dungeon levels and cave systems. They rely on ambush tactics, remaining motionless until prey is within striking distance. Their meat is considered a delicacy in some underground settlements."
+  },
+  "basilisk_lesser": {
+    "name": "lesser basilisk",
+    "symbol": "B",
+    "color": [120, 160, 80],
+    "hp": "3d8",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 6,
+    "max_level": 11,
+    "thac0": 14,
+    "frequency": 5,
+    "attacks": [
+      {
+        "name": "bite",
+        "damage": "2d6",
+        "type": "physical"
+      },
+      {
+        "name": "petrifying gaze",
+        "damage": "1d4",
+        "type": "magic",
+        "effect": "paralyzed",
+        "effect_chance": 0.4,
+        "effect_duration": 6
+      }
+    ],
+    "resistances": ["magic"],
+    "weaknesses": [],
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "basilisk_eye",
+    "treasure": {"gold": [15, 45], "item_chance": 0.2, "item_tier": 3},
+    "lore": "A juvenile basilisk whose petrifying gaze is not yet fully developed, causing paralysis rather than true petrification. It is nonetheless an extremely dangerous predator whose rocky lair is usually littered with frozen prey. Herbalists seek its eyes for polymorph-related brews."
+  },
+  "rock_python": {
+    "name": "rock python",
+    "symbol": "S",
+    "color": [140, 120, 80],
+    "hp": "3d8",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 5,
+    "max_level": 10,
+    "thac0": 15,
+    "frequency": 6,
+    "attacks": [
+      {
+        "name": "constrict",
+        "damage": "2d6",
+        "type": "physical",
+        "effect": "slowed",
+        "effect_chance": 0.5,
+        "effect_duration": 5
+      },
+      {
+        "name": "bite",
+        "damage": "1d6",
+        "type": "physical"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": ["cold"],
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "python_scales",
+    "treasure": {"gold": [5, 20], "item_chance": 0.1, "item_tier": 2},
+    "lore": "Rock pythons are tremendous constrictors that lurk among boulders and tunnel crevices. They can swallow prey the size of a dwarf whole, though they prefer to crush victims first. Their thick, patterned scales are used to make exceptionally supple leather goods."
+  },
+  "komodo_brute": {
+    "name": "komodo brute",
+    "symbol": "L",
+    "color": [100, 130, 60],
+    "hp": "4d8",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 7,
+    "max_level": 12,
+    "thac0": 13,
+    "frequency": 4,
+    "attacks": [
+      {
+        "name": "rend",
+        "damage": "2d6",
+        "type": "physical"
+      },
+      {
+        "name": "venomous bite",
+        "damage": "1d6",
+        "type": "poison",
+        "effect": "poisoned",
+        "effect_chance": 0.55,
+        "effect_duration": 8
+      }
+    ],
+    "resistances": [],
+    "weaknesses": ["cold"],
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "komodo_venom_gland",
+    "treasure": {"gold": [15, 50], "item_chance": 0.15, "item_tier": 3},
+    "lore": "A brutish giant lizard whose mouth teems with vile bacteria, making every bite a slow death sentence. It tracks wounded prey for miles, patiently waiting for infection to do its work. The jawbone of a komodo brute is sometimes used as a morbid trophy."
+  },
+  "giant_frog": {
+    "name": "giant frog",
+    "symbol": "F",
+    "color": [40, 180, 100],
+    "hp": "1d8",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 1,
+    "max_level": 5,
+    "thac0": 18,
+    "frequency": 9,
+    "attacks": [
+      {
+        "name": "tongue lash",
+        "damage": "1d4",
+        "type": "physical",
+        "effect": "slowed",
+        "effect_chance": 0.3,
+        "effect_duration": 2
+      },
+      {
+        "name": "bite",
+        "damage": "1d6",
+        "type": "physical"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": "frog_legs",
+    "treasure": {"gold": [0, 5], "item_chance": 0.05, "item_tier": 1},
+    "lore": "Giant frogs lurk in subterranean pools and wet tunnels, leaping upon prey with shocking speed. Their sticky tongues can snatch a torch from a hand at ten feet. In desperate times, their legs provide a passable meal."
+  },
+  "mud_crawler": {
+    "name": "mud crawler",
+    "symbol": "c",
+    "color": [100, 80, 40],
+    "hp": "2d6",
+    "speed": 0,
+    "ai_pattern": "aggressive",
+    "min_level": 3,
+    "max_level": 7,
+    "thac0": 17,
+    "frequency": 7,
+    "attacks": [
+      {
+        "name": "claw",
+        "damage": "1d6",
+        "type": "physical",
+        "effect": "slowed",
+        "effect_chance": 0.35,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": ["physical"],
+    "weaknesses": ["fire", "cold"],
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "mud_crawler_hide",
+    "treasure": {"gold": [0, 10], "item_chance": 0.05, "item_tier": 1},
+    "lore": "Mud crawlers are squat, heavily armored reptiles that hug subterranean waterways. Their thick mud-caked hide is nearly impervious to slashing weapons. They move slowly but are almost impossible to dislodge once they have secured a grip."
+  },
+  "swamp_serpent": {
+    "name": "swamp serpent",
+    "symbol": "S",
+    "color": [60, 120, 60],
+    "hp": "2d6+2",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 4,
+    "max_level": 9,
+    "thac0": 16,
+    "frequency": 7,
+    "attacks": [
+      {
+        "name": "bite",
+        "damage": "1d6",
+        "type": "poison",
+        "effect": "poisoned",
+        "effect_chance": 0.45,
+        "effect_duration": 7
+      }
+    ],
+    "resistances": ["poison"],
+    "weaknesses": [],
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "swamp_serpent_fang",
+    "treasure": {"gold": [0, 10], "item_chance": 0.05, "item_tier": 2},
+    "lore": "The swamp serpent is an aggressive aquatic snake that lurks in dungeon flooded chambers and underground rivers. Its potent hemotoxic venom causes rapid hemorrhaging in its victims. Local cultures use its shed skin as waterproofing material for boats and bags."
+  },
+  "sea_snake": {
+    "name": "sea snake",
+    "symbol": "S",
+    "color": [60, 100, 200],
+    "hp": "1d8",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 2,
+    "max_level": 6,
+    "thac0": 18,
+    "frequency": 8,
+    "attacks": [
+      {
+        "name": "bite",
+        "damage": "1d4",
+        "type": "poison",
+        "effect": "paralyzed",
+        "effect_chance": 0.4,
+        "effect_duration": 5
+      }
+    ],
+    "resistances": ["poison"],
+    "weaknesses": [],
+    "harvest_tier": 1,
+    "harvest_threshold": 3,
+    "ingredient_id": "sea_snake_venom",
+    "treasure": {"gold": [0, 5], "item_chance": 0.05, "item_tier": 1},
+    "lore": "Sea snakes possess among the most potent neurotoxic venoms of any serpent, causing rapid paralysis. They are aggressive when cornered and capable of swimming faster than most men can run. Divers near coastal ruins have learned to fear these brightly banded hunters."
+  },
+  "dire_lion": {
+    "name": "dire lion",
+    "symbol": "f",
+    "color": [220, 180, 60],
+    "hp": "4d8",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 7,
+    "max_level": 13,
+    "thac0": 13,
+    "frequency": 4,
+    "attacks": [
+      {
+        "name": "pounce",
+        "damage": "2d8",
+        "type": "physical",
+        "effect": "slowed",
+        "effect_chance": 0.4,
+        "effect_duration": 3
+      },
+      {
+        "name": "rake",
+        "damage": "1d6",
+        "type": "physical"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "lion_meat",
+    "treasure": {"gold": [0, 15], "item_chance": 0.1, "item_tier": 3},
+    "lore": "The dire lion is a magnificent and terrifying predator nearly twice the size of its mundane cousin. Its roar is said to shake loose stalactites from cave ceilings. Prides led by a dire lion claim enormous territories and drive off all competition."
+  },
+  "dire_bear": {
+    "name": "dire bear",
+    "symbol": "q",
+    "color": [150, 100, 60],
+    "hp": "5d10",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 9,
+    "max_level": 15,
+    "thac0": 11,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "claw",
+        "damage": "2d8",
+        "type": "physical"
+      },
+      {
+        "name": "maul",
+        "damage": "2d6",
+        "type": "physical",
+        "effect": "slowed",
+        "effect_chance": 0.35,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "harvest_tier": 4,
+    "harvest_threshold": 4,
+    "ingredient_id": "bear_meat",
+    "treasure": {"gold": [0, 20], "item_chance": 0.1, "item_tier": 3},
+    "lore": "Dire bears are primordial ursines the size of draft horses, possessed of immeasurable strength. They are normally reclusive but defend their territories with catastrophic violence. Their thick pelts are worth a fortune to the right furrier."
+  },
+  "wolf_pack_leader": {
+    "name": "wolf pack leader",
+    "symbol": "w",
+    "color": [160, 160, 160],
+    "hp": "3d8",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 5,
+    "max_level": 9,
+    "thac0": 14,
+    "frequency": 5,
+    "attacks": [
+      {
+        "name": "bite",
+        "damage": "2d6",
+        "type": "physical"
+      },
+      {
+        "name": "howl",
+        "damage": "1d4",
+        "type": "magic",
+        "effect": "confused",
+        "effect_chance": 0.3,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "wolf_pelt",
+    "treasure": {"gold": [0, 15], "item_chance": 0.1, "item_tier": 2},
+    "lore": "Pack leaders are massive wolves that coordinate their brethren with complex howls and body language. They direct flanking maneuvers and coordinated takedowns with uncanny intelligence. Killing a pack leader often causes the rest of the pack to scatter."
+  },
+  "werewolf": {
+    "name": "werewolf",
+    "symbol": "w",
+    "color": [180, 150, 100],
+    "hp": "4d8",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 8,
+    "max_level": 13,
+    "thac0": 12,
+    "frequency": 4,
+    "attacks": [
+      {
+        "name": "claw",
+        "damage": "2d6",
+        "type": "physical"
+      },
+      {
+        "name": "bite",
+        "damage": "2d6+2",
+        "type": "physical",
+        "effect": "poisoned",
+        "effect_chance": 0.25,
+        "effect_duration": 10
+      }
+    ],
+    "resistances": ["physical"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "lycanthrope_blood",
+    "treasure": {"gold": [15, 50], "item_chance": 0.3, "item_tier": 3},
+    "lore": "A cursed human transformed by the moon's influence into a savage wolf-man hybrid. In hybrid form the werewolf possesses the cunning of a person and the ferocity of a beast. Its blood carries the lycanthropic curse, transmissible through bites."
+  },
+  "werewolf_alpha": {
+    "name": "werewolf alpha",
+    "symbol": "W",
+    "color": [200, 160, 80],
+    "hp": "5d10",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 12,
+    "max_level": 17,
+    "thac0": 8,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "savage claw",
+        "damage": "3d6",
+        "type": "physical"
+      },
+      {
+        "name": "alpha bite",
+        "damage": "3d6+3",
+        "type": "shadow",
+        "effect": "poisoned",
+        "effect_chance": 0.4,
+        "effect_duration": 12
+      },
+      {
+        "name": "terrifying howl",
+        "damage": "1d6",
+        "type": "magic",
+        "effect": "confused",
+        "effect_chance": 0.5,
+        "effect_duration": 5
+      }
+    ],
+    "resistances": ["physical", "shadow"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 5,
+    "harvest_threshold": 5,
+    "ingredient_id": "alpha_lycanthrope_blood",
+    "treasure": {"gold": [40, 120], "item_chance": 0.5, "item_tier": 4},
+    "lore": "A centuries-old lycanthrope who has mastered the curse, maintaining control even under the full moon. The alpha can transform at will and commands every wolf and werewolf in its territory. Its howl has been known to drive even veteran warriors mad with fear."
+  },
+  "werebear": {
+    "name": "werebear",
+    "symbol": "q",
+    "color": [160, 110, 70],
+    "hp": "5d10",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 10,
+    "max_level": 15,
+    "thac0": 10,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "bear hug",
+        "damage": "3d6",
+        "type": "physical",
+        "effect": "slowed",
+        "effect_chance": 0.45,
+        "effect_duration": 5
+      },
+      {
+        "name": "claw rake",
+        "damage": "2d6",
+        "type": "physical"
+      }
+    ],
+    "resistances": ["physical"],
+    "weaknesses": ["holy"],
+    "harvest_tier": 4,
+    "harvest_threshold": 4,
+    "ingredient_id": "lycanthrope_blood",
+    "treasure": {"gold": [30, 80], "item_chance": 0.35, "item_tier": 4},
+    "lore": "Werebears are among the more tragic lycanthropes, often struggling against their feral nature. In hybrid form they become immovable juggernauts capable of ripping iron doors from hinges. Unlike werewolves they do not seek victims, but their rage makes them no less deadly."
+  },
+  "wererat": {
+    "name": "wererat",
+    "symbol": "r",
+    "color": [160, 160, 100],
+    "hp": "2d8",
+    "speed": 2,
+    "ai_pattern": "cowardly",
+    "min_level": 5,
+    "max_level": 10,
+    "thac0": 15,
+    "frequency": 6,
+    "attacks": [
+      {
+        "name": "bite",
+        "damage": "1d6",
+        "type": "poison",
+        "effect": "poisoned",
+        "effect_chance": 0.35,
+        "effect_duration": 8
+      },
+      {
+        "name": "dagger thrust",
+        "damage": "1d6",
+        "type": "physical"
+      }
+    ],
+    "resistances": ["physical"],
+    "weaknesses": ["holy"],
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "lycanthrope_blood",
+    "treasure": {"gold": [10, 40], "item_chance": 0.4, "item_tier": 2},
+    "lore": "Wererats skulk through sewer systems and dungeon middens, often working as thieves and informants. They prefer to avoid direct combat, using hit-and-run tactics and their knowledge of hidden passages. Their bite carries a diseased form of the lycanthropic curse."
+  },
+  "weretiger": {
+    "name": "weretiger",
+    "symbol": "f",
+    "color": [220, 140, 40],
+    "hp": "5d10+5",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 12,
+    "max_level": 18,
+    "thac0": 7,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "pounce",
+        "damage": "3d6",
+        "type": "physical",
+        "effect": "slowed",
+        "effect_chance": 0.4,
+        "effect_duration": 4
+      },
+      {
+        "name": "bite",
+        "damage": "2d8",
+        "type": "physical",
+        "effect": "poisoned",
+        "effect_chance": 0.3,
+        "effect_duration": 10
+      },
+      {
+        "name": "rake",
+        "damage": "2d6",
+        "type": "physical"
+      }
+    ],
+    "resistances": ["physical"],
+    "weaknesses": ["holy", "cold"],
+    "harvest_tier": 5,
+    "harvest_threshold": 5,
+    "ingredient_id": "alpha_lycanthrope_blood",
+    "treasure": {"gold": [40, 120], "item_chance": 0.45, "item_tier": 5},
+    "lore": "The weretiger is the apex predator among lycanthropes, combining human cunning with the hunting mastery of a tiger. It is known to stalk prey for days, learning its patterns before striking with terrifying precision. Ancient eastern traditions revere the weretiger as a divine judge of the unworthy."
+  },
+  "winter_wolf": {
+    "name": "winter wolf",
+    "symbol": "w",
+    "color": [200, 220, 255],
+    "hp": "3d8+3",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 6,
+    "max_level": 11,
+    "thac0": 13,
+    "frequency": 5,
+    "attacks": [
+      {
+        "name": "bite",
+        "damage": "2d6",
+        "type": "physical"
+      },
+      {
+        "name": "frost breath",
+        "damage": "2d4",
+        "type": "cold",
+        "effect": "frozen",
+        "effect_chance": 0.4,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": ["cold"],
+    "weaknesses": ["fire"],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": "winter_wolf_pelt",
+    "treasure": {"gold": [15, 45], "item_chance": 0.15, "item_tier": 3},
+    "lore": "Winter wolves are intelligent arctic beasts who can speak in a guttural language and breathe blasts of killing frost. They sometimes serve frost giants as hunters and trackers. Their beautiful white pelts are worth a king's ransom to wealthy furriers."
+  },
+  "blink_dog": {
+    "name": "blink dog",
+    "symbol": "d",
+    "color": [140, 180, 255],
+    "hp": "2d8",
+    "speed": 3,
+    "ai_pattern": "aggressive",
+    "min_level": 4,
+    "max_level": 9,
+    "thac0": 16,
+    "frequency": 6,
+    "attacks": [
+      {
+        "name": "teleport bite",
+        "damage": "1d6",
+        "type": "physical"
+      }
+    ],
+    "resistances": ["magic"],
+    "weaknesses": [],
+    "harvest_tier": 2,
+    "harvest_threshold": 4,
+    "ingredient_id": "blink_gland",
+    "treasure": {"gold": [5, 20], "item_chance": 0.2, "item_tier": 2},
+    "lore": "Blink dogs are intelligent teleporting canines that live in packs and are considered a good omen by travelers. They teleport short distances to attack and immediately blink away, making them extremely hard to pin down. Despite their chaotic fighting style they are deeply loyal creatures who can be befriended."
+  },
+  "death_dog": {
+    "name": "death dog",
+    "symbol": "d",
+    "color": [60, 30, 60],
+    "hp": "3d8",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 6,
+    "max_level": 11,
+    "thac0": 14,
+    "frequency": 5,
+    "attacks": [
+      {
+        "name": "bite",
+        "damage": "1d6",
+        "type": "physical",
+        "effect": "poisoned",
+        "effect_chance": 0.4,
+        "effect_duration": 8
+      },
+      {
+        "name": "second head bite",
+        "damage": "1d6",
+        "type": "shadow",
+        "effect": "poisoned",
+        "effect_chance": 0.4,
+        "effect_duration": 8
+      }
+    ],
+    "resistances": ["poison", "shadow"],
+    "weaknesses": ["holy"],
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "death_dog_fang",
+    "treasure": {"gold": [15, 50], "item_chance": 0.2, "item_tier": 3},
+    "lore": "Death dogs are two-headed fiendish hounds whose bite delivers a supernatural rotting disease. They are often found serving undead lords or guarding cursed tombs. The fangs of a death dog are prized components in necromantic rituals."
+  },
+  "giant_eagle": {
+    "name": "giant eagle",
+    "symbol": "E",
+    "color": [220, 180, 60],
+    "hp": "2d8+2",
+    "speed": 3,
+    "ai_pattern": "aggressive",
+    "min_level": 4,
+    "max_level": 9,
+    "thac0": 16,
+    "frequency": 5,
+    "attacks": [
+      {
+        "name": "talon strike",
+        "damage": "2d4",
+        "type": "physical"
+      },
+      {
+        "name": "beak stab",
+        "damage": "1d6",
+        "type": "physical"
+      }
+    ],
+    "resistances": ["lightning"],
+    "weaknesses": [],
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "eagle_feather",
+    "treasure": {"gold": [5, 20], "item_chance": 0.15, "item_tier": 2},
+    "lore": "Giant eagles are proud and intelligent raptors that nest on the highest dungeon peaks and mountain crags. They are sometimes willing to parley with respectful adventurers and occasionally serve as aerial mounts. A single tail feather is worth more than most peasants earn in a year."
+  },
+  "roc_chick": {
+    "name": "roc chick",
+    "symbol": "E",
+    "color": [200, 160, 80],
+    "hp": "3d8",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 7,
+    "max_level": 12,
+    "thac0": 13,
+    "frequency": 4,
+    "attacks": [
+      {
+        "name": "beak peck",
+        "damage": "2d6",
+        "type": "physical"
+      },
+      {
+        "name": "talon grip",
+        "damage": "2d4",
+        "type": "physical",
+        "effect": "slowed",
+        "effect_chance": 0.3,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "roc_egg_fragment",
+    "treasure": {"gold": [15, 50], "item_chance": 0.2, "item_tier": 3},
+    "lore": "Even a roc chick is a formidable beast, standing taller than a horse and possessing a voracious appetite. The parents defend nesting grounds with world-shaking ferocity. An unhatched roc egg is worth enough gold to buy a small kingdom."
+  },
+  "roc_adult": {
+    "name": "roc adult",
+    "symbol": "E",
+    "color": [240, 200, 100],
+    "hp": "8d12+10",
+    "speed": 3,
+    "ai_pattern": "aggressive",
+    "min_level": 16,
+    "max_level": null,
+    "thac0": -2,
+    "frequency": 1,
+    "attacks": [
+      {
+        "name": "talon crush",
+        "damage": "4d10",
+        "type": "physical",
+        "effect": "slowed",
+        "effect_chance": 0.6,
+        "effect_duration": 5
+      },
+      {
+        "name": "beak cleave",
+        "damage": "4d8",
+        "type": "physical"
+      },
+      {
+        "name": "wing buffet",
+        "damage": "2d8",
+        "type": "physical",
+        "effect": "confused",
+        "effect_chance": 0.4,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": ["physical", "lightning"],
+    "weaknesses": [],
+    "harvest_tier": 5,
+    "harvest_threshold": 5,
+    "ingredient_id": "roc_talon",
+    "treasure": {"gold": [100, 400], "item_chance": 0.7, "item_tier": 5},
+    "lore": "A fully grown roc blots out the sun and creates windstorms with a single wingbeat. Ancient rocs have been known to carry off elephants as snacks for their young. Legends say that every roc feather contains a wish, if one knows the right ritual to release it."
+  },
+  "stirge_swarm": {
+    "name": "stirge swarm",
+    "symbol": "T",
+    "color": [200, 60, 60],
+    "hp": "2d6",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 2,
+    "max_level": 6,
+    "thac0": 17,
+    "frequency": 9,
+    "attacks": [
+      {
+        "name": "bloodsuck",
+        "damage": "1d4",
+        "type": "drain",
+        "effect": "slowed",
+        "effect_chance": 0.4,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": [],
+    "weaknesses": ["fire", "cold"],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": null,
+    "treasure": {"gold": [0, 3], "item_chance": 0.05, "item_tier": 1},
+    "lore": "Stirges are bloodsucking mosquito-like creatures that travel in dense swarms, attaching to exposed flesh with barbed proboscises. A large enough swarm can drain a horse dry in minutes. Their wings make a high-pitched whine that alerts dungeon veterans to take cover."
+  },
+  "tengu_warrior": {
+    "name": "tengu warrior",
+    "symbol": "T",
+    "color": [40, 40, 60],
+    "hp": "3d8",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 6,
+    "max_level": 11,
+    "thac0": 14,
+    "frequency": 5,
+    "attacks": [
+      {
+        "name": "katana strike",
+        "damage": "2d6",
+        "type": "physical"
+      },
+      {
+        "name": "wind gust",
+        "damage": "1d4",
+        "type": "lightning",
+        "effect": "blinded",
+        "effect_chance": 0.25,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": ["lightning"],
+    "weaknesses": [],
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "tengu_feather",
+    "treasure": {"gold": [20, 60], "item_chance": 0.4, "item_tier": 3},
+    "lore": "Tengu warriors are crow-headed humanoid creatures who are master swordsmen of legendary skill. They occupy high dungeon places near wind channels and are fiercely territorial. Some rare tengu serve as sword-instructors to mortals who prove themselves worthy."
+  },
+  "thunderbird_lesser": {
+    "name": "lesser thunderbird",
+    "symbol": "E",
+    "color": [140, 160, 255],
+    "hp": "4d10",
+    "speed": 3,
+    "ai_pattern": "aggressive",
+    "min_level": 10,
+    "max_level": 16,
+    "thac0": 10,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "talon shock",
+        "damage": "2d6",
+        "type": "lightning"
+      },
+      {
+        "name": "thunderclap",
+        "damage": "2d8",
+        "type": "lightning",
+        "effect": "confused",
+        "effect_chance": 0.5,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": ["lightning"],
+    "weaknesses": ["cold"],
+    "harvest_tier": 4,
+    "harvest_threshold": 5,
+    "ingredient_id": "storm_feather",
+    "treasure": {"gold": [30, 100], "item_chance": 0.35, "item_tier": 4},
+    "lore": "The lesser thunderbird is a magnificent storm-hawk that generates electrical fields across its plumage. Each wingbeat crackles with arcs of lightning and its cries shake stone walls. Its feathers remain charged for months after the bird's death, making them prized magical components."
+  },
+  "pixie_swarm": {
+    "name": "pixie swarm",
+    "symbol": "p",
+    "color": [200, 100, 255],
+    "hp": "1d8",
+    "speed": 2,
+    "ai_pattern": "cowardly",
+    "min_level": 2,
+    "max_level": 7,
+    "thac0": 18,
+    "frequency": 7,
+    "attacks": [
+      {
+        "name": "pin prick",
+        "damage": "1d3",
+        "type": "magic",
+        "effect": "sleeping",
+        "effect_chance": 0.45,
+        "effect_duration": 6
+      }
+    ],
+    "resistances": ["magic"],
+    "weaknesses": [],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": "pixie_dust",
+    "treasure": {"gold": [0, 8], "item_chance": 0.2, "item_tier": 1},
+    "lore": "Individually harmless, a swarm of pixies is a nuisance capable of putting entire parties to sleep with enchanted dust. They delight in mischief and have an instinctive hostility toward heavily armed visitors. Pixie dust collected after they depart retains potent soporific properties."
+  },
+  "redcap": {
+    "name": "redcap",
+    "symbol": "h",
+    "color": [200, 30, 30],
+    "hp": "3d8+3",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 7,
+    "max_level": 12,
+    "thac0": 12,
+    "frequency": 4,
+    "attacks": [
+      {
+        "name": "iron boot kick",
+        "damage": "2d6",
+        "type": "physical"
+      },
+      {
+        "name": "pike thrust",
+        "damage": "2d8",
+        "type": "physical"
+      }
+    ],
+    "resistances": ["physical"],
+    "weaknesses": ["holy"],
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "redcap_blood",
+    "treasure": {"gold": [20, 60], "item_chance": 0.35, "item_tier": 3},
+    "lore": "Redcaps are murderous fey that dye their caps in the blood of their victims and must kill regularly or fade away. They are supernaturally strong for their diminutive size, favoring heavy iron boots and long pikes. Their iron-shod feet can crush stone, and their laughter is deeply unsettling."
+  },
+  "will_o_wisp_lesser": {
+    "name": "will-o'-wisp (lesser)",
+    "symbol": "y",
+    "color": [180, 255, 180],
+    "hp": "2d6",
+    "speed": 3,
+    "ai_pattern": "cowardly",
+    "min_level": 4,
+    "max_level": 9,
+    "thac0": 16,
+    "frequency": 6,
+    "attacks": [
+      {
+        "name": "shock",
+        "damage": "2d4",
+        "type": "lightning",
+        "effect": "confused",
+        "effect_chance": 0.35,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": ["magic", "lightning", "physical"],
+    "weaknesses": [],
+    "harvest_tier": 2,
+    "harvest_threshold": 4,
+    "ingredient_id": "wisp_essence",
+    "treasure": {"gold": [0, 10], "item_chance": 0.15, "item_tier": 2},
+    "lore": "Lesser will-o'-wisps are ghostly lights that lure travelers into bogs and pits by mimicking torch light. They feed on the fear and despair of those they lead to doom. They are notoriously difficult to harm, as most weapons simply pass through their luminous forms."
+  },
+  "green_hag": {
+    "name": "green hag",
+    "symbol": "H",
+    "color": [60, 160, 80],
+    "hp": "4d8+4",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 8,
+    "max_level": 13,
+    "thac0": 12,
+    "frequency": 4,
+    "attacks": [
+      {
+        "name": "claw",
+        "damage": "2d6",
+        "type": "physical"
+      },
+      {
+        "name": "weakening curse",
+        "damage": "1d6",
+        "type": "magic",
+        "effect": "slowed",
+        "effect_chance": 0.5,
+        "effect_duration": 8
+      }
+    ],
+    "resistances": ["magic", "poison"],
+    "weaknesses": ["holy"],
+    "harvest_tier": 4,
+    "harvest_threshold": 5,
+    "ingredient_id": "hag_eye",
+    "treasure": {"gold": [20, 80], "item_chance": 0.45, "item_tier": 4},
+    "lore": "Green hags dwell in fetid swamps and use powerful illusions to appear beautiful until they are close enough to strike. They subsist on misery, feeding emotionally on despair they deliberately cause. Covens of three hags can perform terrifying magical rituals far beyond their individual capabilities."
+  },
+  "sea_hag": {
+    "name": "sea hag",
+    "symbol": "H",
+    "color": [60, 100, 160],
+    "hp": "4d8",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 7,
+    "max_level": 12,
+    "thac0": 13,
+    "frequency": 4,
+    "attacks": [
+      {
+        "name": "claw",
+        "damage": "2d4",
+        "type": "physical"
+      },
+      {
+        "name": "horrific gaze",
+        "damage": "1d8",
+        "type": "magic",
+        "effect": "confused",
+        "effect_chance": 0.55,
+        "effect_duration": 6
+      }
+    ],
+    "resistances": ["cold", "poison"],
+    "weaknesses": ["holy"],
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "hag_eye",
+    "treasure": {"gold": [15, 60], "item_chance": 0.4, "item_tier": 3},
+    "lore": "Sea hags are hideous aquatic fey whose faces are so terrible that a prolonged gaze can strike a creature dead of fright. They lurk in coastal caves and underwater dungeons, collecting trinkets from drowned sailors. Their appearance is so awful that mirrors break in their presence."
+  },
+  "annis_hag": {
+    "name": "annis hag",
+    "symbol": "H",
+    "color": [80, 60, 100],
+    "hp": "5d10+5",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 10,
+    "max_level": 15,
+    "thac0": 10,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "crushing claw",
+        "damage": "3d6",
+        "type": "physical",
+        "effect": "slowed",
+        "effect_chance": 0.45,
+        "effect_duration": 5
+      },
+      {
+        "name": "rend",
+        "damage": "2d6",
+        "type": "physical"
+      },
+      {
+        "name": "fog of despair",
+        "damage": "1d6",
+        "type": "magic",
+        "effect": "confused",
+        "effect_chance": 0.4,
+        "effect_duration": 5
+      }
+    ],
+    "resistances": ["physical", "cold"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 4,
+    "harvest_threshold": 5,
+    "ingredient_id": "hag_eye",
+    "treasure": {"gold": [30, 100], "item_chance": 0.5, "item_tier": 4},
+    "lore": "Annis hags are massive, iron-skinned fey who prefer brute force over trickery. A single annis can overpower a giant in a wrestling match, and their claws can shred metal armor. They wear cloaks made from the skins of their victims and smell of blood and iron."
+  },
+  "night_hag": {
+    "name": "night hag",
+    "symbol": "H",
+    "color": [60, 20, 80],
+    "hp": "6d12+6",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 14,
+    "max_level": null,
+    "thac0": 5,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "corrupting touch",
+        "damage": "3d6",
+        "type": "shadow",
+        "effect": "confused",
+        "effect_chance": 0.6,
+        "effect_duration": 8
+      },
+      {
+        "name": "nightmare curse",
+        "damage": "2d8",
+        "type": "magic",
+        "effect": "sleeping",
+        "effect_chance": 0.5,
+        "effect_duration": 10
+      }
+    ],
+    "resistances": ["shadow", "magic", "poison"],
+    "weaknesses": ["holy"],
+    "harvest_tier": 5,
+    "harvest_threshold": 5,
+    "ingredient_id": "night_hag_heartstone",
+    "treasure": {"gold": [60, 180], "item_chance": 0.6, "item_tier": 5},
+    "lore": "Night hags are among the most feared beings in existence, traveling the ethereal plane to torment sleeping mortals. They collect the souls of those they drive to evil in soul-trapping gems called heartstones. Any witch seeking to ascend must first broker a deal with a night hag."
+  },
+  "satyr_trickster": {
+    "name": "satyr trickster",
+    "symbol": "s",
+    "color": [160, 120, 60],
+    "hp": "2d8+2",
+    "speed": 2,
+    "ai_pattern": "cowardly",
+    "min_level": 5,
+    "max_level": 10,
+    "thac0": 15,
+    "frequency": 6,
+    "attacks": [
+      {
+        "name": "ram",
+        "damage": "1d6",
+        "type": "physical"
+      },
+      {
+        "name": "panpipe charm",
+        "damage": "1d4",
+        "type": "magic",
+        "effect": "confused",
+        "effect_chance": 0.55,
+        "effect_duration": 6
+      }
+    ],
+    "resistances": ["magic"],
+    "weaknesses": [],
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "satyr_horn",
+    "treasure": {"gold": [10, 40], "item_chance": 0.3, "item_tier": 2},
+    "lore": "Satyr tricksters are hedonistic goat-men who use enchanted music to disorient and rob travelers. They rarely seek to kill, preferring to steal valuables and vanish into the forest laughing. Their panpipes are occasionally left behind as powerful magical instruments."
+  },
+  "dryad_guardian": {
+    "name": "dryad guardian",
+    "symbol": "d",
+    "color": [60, 180, 60],
+    "hp": "3d8",
+    "speed": 1,
+    "ai_pattern": "cowardly",
+    "min_level": 5,
+    "max_level": 10,
+    "thac0": 15,
+    "frequency": 5,
+    "attacks": [
+      {
+        "name": "entangle",
+        "damage": "1d6",
+        "type": "physical",
+        "effect": "slowed",
+        "effect_chance": 0.6,
+        "effect_duration": 5
+      },
+      {
+        "name": "charm gaze",
+        "damage": "1d4",
+        "type": "magic",
+        "effect": "confused",
+        "effect_chance": 0.5,
+        "effect_duration": 8
+      }
+    ],
+    "resistances": ["magic", "poison"],
+    "weaknesses": ["fire"],
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "heartwood_sap",
+    "treasure": {"gold": [10, 40], "item_chance": 0.3, "item_tier": 3},
+    "lore": "A dryad guardian is an arboreal fey who has chosen to actively defend her grove rather than hide within her tree. She can step between trees at will and commands the vegetation of her domain as extensions of her own body. Those who threaten her forest find roots rising to bind their feet."
+  },
+  "leprechaun_hostile": {
+    "name": "hostile leprechaun",
+    "symbol": "l",
+    "color": [40, 180, 40],
+    "hp": "1d6",
+    "speed": 3,
+    "ai_pattern": "cowardly",
+    "min_level": 3,
+    "max_level": 7,
+    "thac0": 17,
+    "frequency": 6,
+    "attacks": [
+      {
+        "name": "shillelagh",
+        "damage": "1d6",
+        "type": "physical"
+      },
+      {
+        "name": "gold curse",
+        "damage": "1d4",
+        "type": "magic",
+        "effect": "confused",
+        "effect_chance": 0.4,
+        "effect_duration": 5
+      }
+    ],
+    "resistances": ["magic"],
+    "weaknesses": [],
+    "harvest_tier": 1,
+    "harvest_threshold": 3,
+    "ingredient_id": "lucky_clover",
+    "treasure": {"gold": [20, 80], "item_chance": 0.5, "item_tier": 2},
+    "lore": "Not all leprechauns are willing to grant wishes — some who have been robbed too many times have become openly hostile to adventurers. They use powerful illusions and misdirection before lashing out with surprising ferocity. Despite their size their pots of gold are very real."
+  },
+  "spriggan": {
+    "name": "spriggan",
+    "symbol": "g",
+    "color": [80, 100, 60],
+    "hp": "2d8+2",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 4,
+    "max_level": 9,
+    "thac0": 16,
+    "frequency": 6,
+    "attacks": [
+      {
+        "name": "slam",
+        "damage": "2d6",
+        "type": "physical"
+      },
+      {
+        "name": "wither curse",
+        "damage": "1d4",
+        "type": "magic",
+        "effect": "slowed",
+        "effect_chance": 0.35,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": [],
+    "weaknesses": ["fire"],
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "spriggan_thorn",
+    "treasure": {"gold": [10, 35], "item_chance": 0.3, "item_tier": 2},
+    "lore": "Spriggans are grotesque fairy guards who can expand to enormous size to protect their masters' treasures. In their enlarged form they possess tremendous strength but lose much of their natural agility. They are notorious thieves who hoard the stolen goods of travelers."
+  },
+  "boggart": {
+    "name": "boggart",
+    "symbol": "b",
+    "color": [80, 60, 40],
+    "hp": "2d6",
+    "speed": 2,
+    "ai_pattern": "cowardly",
+    "min_level": 3,
+    "max_level": 7,
+    "thac0": 17,
+    "frequency": 7,
+    "attacks": [
+      {
+        "name": "pinch",
+        "damage": "1d4",
+        "type": "physical"
+      },
+      {
+        "name": "haunt",
+        "damage": "1d4",
+        "type": "magic",
+        "effect": "confused",
+        "effect_chance": 0.5,
+        "effect_duration": 5
+      }
+    ],
+    "resistances": ["magic"],
+    "weaknesses": ["holy"],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": null,
+    "treasure": {"gold": [5, 25], "item_chance": 0.2, "item_tier": 1},
+    "lore": "Boggarts are mischievous household fey that have turned malevolent, taking delight in spoiling food, pinching sleepers, and causing minor disasters. They rarely fight directly, preferring to haunt and confuse before fleeing into shadows. A boggart attached to a dungeon room can make that room nearly uninhabitable."
+  },
+  "fire_elemental": {
+    "name": "fire elemental",
+    "symbol": "E",
+    "color": [255, 100, 20],
+    "hp": "4d10",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 8,
+    "max_level": 14,
+    "thac0": 12,
+    "frequency": 4,
+    "attacks": [
+      {
+        "name": "flame touch",
+        "damage": "3d6",
+        "type": "fire",
+        "effect": "burning",
+        "effect_chance": 0.5,
+        "effect_duration": 4
+      },
+      {
+        "name": "fire burst",
+        "damage": "2d8",
+        "type": "fire",
+        "effect": "burning",
+        "effect_chance": 0.4,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": ["fire", "lightning"],
+    "weaknesses": ["cold", "physical"],
+    "harvest_tier": 4,
+    "harvest_threshold": 5,
+    "ingredient_id": "elemental_fire_core",
+    "treasure": {"gold": [20, 60], "item_chance": 0.25, "item_tier": 4},
+    "lore": "Summoned from the Plane of Fire or born from eruptions deep in the earth, fire elementals are columns of living flame possessed of malevolent intelligence. They leave scorched floors and melted walls in their wake. The blazing core that persists after their dispersal can power magical devices for decades."
+  },
+  "water_elemental": {
+    "name": "water elemental",
+    "symbol": "E",
+    "color": [60, 120, 220],
+    "hp": "4d10",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 8,
+    "max_level": 14,
+    "thac0": 12,
+    "frequency": 4,
+    "attacks": [
+      {
+        "name": "wave crash",
+        "damage": "2d8",
+        "type": "cold",
+        "effect": "slowed",
+        "effect_chance": 0.4,
+        "effect_duration": 4
+      },
+      {
+        "name": "drown pull",
+        "damage": "2d6",
+        "type": "physical",
+        "effect": "slowed",
+        "effect_chance": 0.5,
+        "effect_duration": 5
+      }
+    ],
+    "resistances": ["cold", "physical"],
+    "weaknesses": ["fire", "lightning"],
+    "harvest_tier": 4,
+    "harvest_threshold": 5,
+    "ingredient_id": "elemental_water_core",
+    "treasure": {"gold": [20, 60], "item_chance": 0.25, "item_tier": 4},
+    "lore": "Water elementals rise from deep underground lakes and flooded dungeon chambers, taking the form of towering churning waves. They drag victims beneath the surface and hold them until they stop struggling. The core of a water elemental remains perpetually cold and is sought after by cryomancers."
+  },
+  "earth_elemental": {
+    "name": "earth elemental",
+    "symbol": "E",
+    "color": [120, 90, 50],
+    "hp": "5d10+5",
+    "speed": 0,
+    "ai_pattern": "aggressive",
+    "min_level": 9,
+    "max_level": 15,
+    "thac0": 11,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "fist of stone",
+        "damage": "3d8",
+        "type": "physical",
+        "effect": "slowed",
+        "effect_chance": 0.5,
+        "effect_duration": 5
+      },
+      {
+        "name": "tremor",
+        "damage": "2d6",
+        "type": "physical",
+        "effect": "confused",
+        "effect_chance": 0.3,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": ["physical", "cold"],
+    "weaknesses": ["lightning", "fire"],
+    "harvest_tier": 4,
+    "harvest_threshold": 5,
+    "ingredient_id": "elemental_earth_core",
+    "treasure": {"gold": [20, 70], "item_chance": 0.3, "item_tier": 4},
+    "lore": "Earth elementals are slow-moving colossi of living rock and soil that rise from dungeon walls. Their blows can shatter columns and collapse passages. The dense mineral core at their heart is a remarkable magical battery capable of storing enormous amounts of arcane energy."
+  },
+  "air_elemental": {
+    "name": "air elemental",
+    "symbol": "E",
+    "color": [200, 220, 255],
+    "hp": "3d10",
+    "speed": 3,
+    "ai_pattern": "aggressive",
+    "min_level": 7,
+    "max_level": 13,
+    "thac0": 13,
+    "frequency": 4,
+    "attacks": [
+      {
+        "name": "wind slash",
+        "damage": "2d6",
+        "type": "lightning"
+      },
+      {
+        "name": "vortex",
+        "damage": "1d8",
+        "type": "physical",
+        "effect": "confused",
+        "effect_chance": 0.5,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": ["lightning", "physical"],
+    "weaknesses": ["fire", "cold"],
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "elemental_air_core",
+    "treasure": {"gold": [15, 50], "item_chance": 0.2, "item_tier": 3},
+    "lore": "Air elementals are near-invisible whirlwinds that can move at incredible speed through dungeon corridors. Their invisible slashing winds can strip flesh from bone in moments. The compressed air core at their center is prized by enchanters for use in flight-related magic items."
+  },
+  "ice_elemental": {
+    "name": "ice elemental",
+    "symbol": "E",
+    "color": [180, 220, 255],
+    "hp": "4d10",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 9,
+    "max_level": 15,
+    "thac0": 11,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "ice shard",
+        "damage": "2d8",
+        "type": "cold",
+        "effect": "frozen",
+        "effect_chance": 0.45,
+        "effect_duration": 5
+      },
+      {
+        "name": "freezing touch",
+        "damage": "2d6",
+        "type": "cold",
+        "effect": "slowed",
+        "effect_chance": 0.5,
+        "effect_duration": 6
+      }
+    ],
+    "resistances": ["cold", "physical"],
+    "weaknesses": ["fire"],
+    "harvest_tier": 4,
+    "harvest_threshold": 5,
+    "ingredient_id": "elemental_ice_core",
+    "treasure": {"gold": [20, 65], "item_chance": 0.25, "item_tier": 4},
+    "lore": "Ice elementals are crystalline giants born from the deepest glacial caverns and the most savage arctic storms. Their touch coats victims in a sheath of magical ice that slows their movements. The ice core at their heart never melts and remains supernaturally cold even in volcanic environments."
+  },
+  "magma_elemental": {
+    "name": "magma elemental",
+    "symbol": "E",
+    "color": [255, 60, 0],
+    "hp": "5d10+5",
+    "speed": 0,
+    "ai_pattern": "aggressive",
+    "min_level": 11,
+    "max_level": 17,
+    "thac0": 9,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "lava spit",
+        "damage": "3d8",
+        "type": "fire",
+        "effect": "burning",
+        "effect_chance": 0.6,
+        "effect_duration": 5
+      },
+      {
+        "name": "magma fist",
+        "damage": "3d6",
+        "type": "fire",
+        "effect": "burning",
+        "effect_chance": 0.5,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": ["fire", "physical"],
+    "weaknesses": ["cold", "water"],
+    "harvest_tier": 4,
+    "harvest_threshold": 5,
+    "ingredient_id": "elemental_magma_core",
+    "treasure": {"gold": [30, 90], "item_chance": 0.3, "item_tier": 4},
+    "lore": "Magma elementals rise from volcanic vents in the deep dungeon, their ponderous bodies of living rock suffused with molten fire. Everything they touch ignites, and their footprints remain glowing for hours. A magma elemental core is among the most coveted items in pyromantic alchemy."
+  },
+  "storm_elemental": {
+    "name": "storm elemental",
+    "symbol": "E",
+    "color": [100, 100, 200],
+    "hp": "5d10",
+    "speed": 3,
+    "ai_pattern": "aggressive",
+    "min_level": 13,
+    "max_level": 18,
+    "thac0": 7,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "lightning bolt",
+        "damage": "4d8",
+        "type": "lightning",
+        "effect": "confused",
+        "effect_chance": 0.5,
+        "effect_duration": 4
+      },
+      {
+        "name": "thunder slam",
+        "damage": "3d6",
+        "type": "lightning",
+        "effect": "blinded",
+        "effect_chance": 0.4,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": ["lightning", "physical"],
+    "weaknesses": ["cold"],
+    "harvest_tier": 5,
+    "harvest_threshold": 5,
+    "ingredient_id": "storm_elemental_core",
+    "treasure": {"gold": [50, 150], "item_chance": 0.4, "item_tier": 5},
+    "lore": "Storm elementals are rare confluences of air and lightning given terrible form and will. They ride currents of electrified air through dungeon chimneys, striking with bolts of lightning. Their crackling core stores enough electrical energy to power a city for a year."
+  },
+  "void_elemental": {
+    "name": "void elemental",
+    "symbol": "E",
+    "color": [20, 0, 40],
+    "hp": "6d12+6",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 15,
+    "max_level": null,
+    "thac0": 3,
+    "frequency": 1,
+    "attacks": [
+      {
+        "name": "void touch",
+        "damage": "4d8",
+        "type": "shadow",
+        "effect": "blinded",
+        "effect_chance": 0.6,
+        "effect_duration": 6
+      },
+      {
+        "name": "annihilate",
+        "damage": "4d10",
+        "type": "magic",
+        "effect": "confused",
+        "effect_chance": 0.55,
+        "effect_duration": 8
+      }
+    ],
+    "resistances": ["shadow", "magic", "cold", "physical"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 5,
+    "harvest_threshold": 5,
+    "ingredient_id": "void_shard",
+    "treasure": {"gold": [80, 200], "item_chance": 0.5, "item_tier": 5},
+    "lore": "Void elementals originate from the space between planes, manifesting as patches of absolute darkness that devour light and sound. Their touch unravels the bonds of matter, leaving victims partially phased out of existence. A void shard from their core is one of the most dangerous substances in existence."
+  },
+  "shambling_mound": {
+    "name": "shambling mound",
+    "symbol": "V",
+    "color": [60, 80, 30],
+    "hp": "5d10",
+    "speed": 0,
+    "ai_pattern": "aggressive",
+    "min_level": 9,
+    "max_level": 15,
+    "thac0": 11,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "slam",
+        "damage": "3d6",
+        "type": "physical",
+        "effect": "slowed",
+        "effect_chance": 0.45,
+        "effect_duration": 5
+      },
+      {
+        "name": "engulf",
+        "damage": "2d8",
+        "type": "physical",
+        "effect": "slowed",
+        "effect_chance": 0.6,
+        "effect_duration": 6
+      }
+    ],
+    "resistances": ["lightning", "physical", "cold"],
+    "weaknesses": ["fire"],
+    "harvest_tier": 4,
+    "harvest_threshold": 4,
+    "ingredient_id": "mound_mulch",
+    "treasure": {"gold": [15, 50], "item_chance": 0.2, "item_tier": 3},
+    "lore": "Shambling mounds are massive ambulatory heaps of rotting vegetation animated by some swampy life-force or lightning strike. They crush and engulf prey, slowly digesting organic matter within their bulk. Lightning actually heals and invigorates them rather than causing damage."
+  },
+  "assassin_vine": {
+    "name": "assassin vine",
+    "symbol": "V",
+    "color": [40, 120, 20],
+    "hp": "3d8",
+    "speed": 0,
+    "ai_pattern": "sessile",
+    "min_level": 5,
+    "max_level": 10,
+    "thac0": 15,
+    "frequency": 6,
+    "attacks": [
+      {
+        "name": "constrict",
+        "damage": "1d8",
+        "type": "physical",
+        "effect": "slowed",
+        "effect_chance": 0.65,
+        "effect_duration": 6
+      },
+      {
+        "name": "vine whip",
+        "damage": "1d6",
+        "type": "physical"
+      }
+    ],
+    "resistances": ["physical", "cold"],
+    "weaknesses": ["fire"],
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "assassin_vine_sap",
+    "treasure": {"gold": [5, 20], "item_chance": 0.1, "item_tier": 2},
+    "lore": "Assassin vines lurk motionless in dungeon gardens and along corridors, indistinguishable from ordinary vegetation. When prey passes within reach, tendrils shoot out to grab and constrict with crushing force. Their sap contains a mild paralytic useful in herbalist preparations."
+  },
+  "thorn_slinger": {
+    "name": "thorn slinger",
+    "symbol": "V",
+    "color": [100, 140, 40],
+    "hp": "2d8",
+    "speed": 0,
+    "ai_pattern": "sessile",
+    "min_level": 3,
+    "max_level": 8,
+    "thac0": 17,
+    "frequency": 7,
+    "attacks": [
+      {
+        "name": "thorn volley",
+        "damage": "1d6",
+        "type": "physical",
+        "effect": "poisoned",
+        "effect_chance": 0.3,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": ["poison"],
+    "weaknesses": ["fire"],
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "toxic_thorn",
+    "treasure": {"gold": [0, 10], "item_chance": 0.05, "item_tier": 1},
+    "lore": "Thorn slingers are sedentary plants that expel barrages of barbed, poison-coated thorns when any creature enters their range. They position themselves at chokepoints and room entrances for maximum effect. The thorns retain their poison for weeks after being expelled from the plant."
+  },
+  "myconid_worker": {
+    "name": "myconid worker",
+    "symbol": "m",
+    "color": [180, 120, 200],
+    "hp": "1d8",
+    "speed": 1,
+    "ai_pattern": "cowardly",
+    "min_level": 2,
+    "max_level": 6,
+    "thac0": 18,
+    "frequency": 9,
+    "attacks": [
+      {
+        "name": "spore puff",
+        "damage": "1d4",
+        "type": "poison",
+        "effect": "confused",
+        "effect_chance": 0.4,
+        "effect_duration": 5
+      }
+    ],
+    "resistances": ["poison"],
+    "weaknesses": ["fire"],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": "myconid_spore",
+    "treasure": {"gold": [0, 5], "item_chance": 0.05, "item_tier": 1},
+    "lore": "Myconid workers are ambulatory mushroom folk who tend the vast underground gardens of their colonies. They are peaceful by nature but will defend their circles by releasing clouds of hallucinogenic spores. Their spores are a primary component in potions of confusion and certain dream remedies."
+  },
+  "myconid_sovereign": {
+    "name": "myconid sovereign",
+    "symbol": "M",
+    "color": [220, 60, 200],
+    "hp": "5d10+5",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 10,
+    "max_level": 16,
+    "thac0": 10,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "mind spore",
+        "damage": "2d8",
+        "type": "magic",
+        "effect": "confused",
+        "effect_chance": 0.6,
+        "effect_duration": 8
+      },
+      {
+        "name": "slam",
+        "damage": "2d6",
+        "type": "physical"
+      },
+      {
+        "name": "spore cloud",
+        "damage": "2d4",
+        "type": "poison",
+        "effect": "sleeping",
+        "effect_chance": 0.45,
+        "effect_duration": 10
+      }
+    ],
+    "resistances": ["poison", "magic"],
+    "weaknesses": ["fire"],
+    "harvest_tier": 5,
+    "harvest_threshold": 5,
+    "ingredient_id": "sovereign_spore_cap",
+    "treasure": {"gold": [30, 100], "item_chance": 0.4, "item_tier": 5},
+    "lore": "Myconid sovereigns are ancient, enormous mushroom kings who govern entire subterranean fungal kingdoms through psychic spore networks. Their mind-altering spores can suppress the will of entire adventuring parties. The cap of a slain sovereign grows back as a fully sentient mushroom forest."
+  },
+  "yellow_musk_creeper": {
+    "name": "yellow musk creeper",
+    "symbol": "V",
+    "color": [220, 200, 60],
+    "hp": "3d8",
+    "speed": 0,
+    "ai_pattern": "sessile",
+    "min_level": 6,
+    "max_level": 11,
+    "thac0": 15,
+    "frequency": 5,
+    "attacks": [
+      {
+        "name": "musk cloud",
+        "damage": "1d6",
+        "type": "poison",
+        "effect": "confused",
+        "effect_chance": 0.7,
+        "effect_duration": 8
+      },
+      {
+        "name": "tendril lash",
+        "damage": "1d8",
+        "type": "physical",
+        "effect": "slowed",
+        "effect_chance": 0.4,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": ["poison"],
+    "weaknesses": ["fire", "cold"],
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "musk_pollen",
+    "treasure": {"gold": [5, 20], "item_chance": 0.1, "item_tier": 2},
+    "lore": "The yellow musk creeper produces intoxicating clouds of yellow pollen that overwhelm the minds of victims, drawing them into range of its grasping tendrils. Mindless thralls under its influence protect it and carry decomposing organic matter to fertilize its roots. The musk pollen alone is enough to drive most animals into docile confusion."
+  },
+  "gas_spore": {
+    "name": "gas spore",
+    "symbol": "G",
+    "color": [180, 200, 180],
+    "hp": "1d4",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 3,
+    "max_level": 8,
+    "thac0": 18,
+    "frequency": 8,
+    "attacks": [
+      {
+        "name": "explode",
+        "damage": "3d6",
+        "type": "poison",
+        "effect": "poisoned",
+        "effect_chance": 0.55,
+        "effect_duration": 6
+      }
+    ],
+    "resistances": ["poison"],
+    "weaknesses": ["fire", "physical"],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": "spore_cloud_vial",
+    "treasure": {"gold": [0, 5], "item_chance": 0.05, "item_tier": 1},
+    "lore": "Gas spores are floating fungal pods that superficially resemble beholders, leading to fatal cases of mistaken identity among dungeon veterans. Any puncture causes them to detonate in a cloud of toxic spores. Those slain by the gas spore become hosts for new pods within hours."
+  },
+  "violet_fungus": {
+    "name": "violet fungus",
+    "symbol": "V",
+    "color": [120, 40, 160],
+    "hp": "2d8",
+    "speed": 0,
+    "ai_pattern": "sessile",
+    "min_level": 4,
+    "max_level": 9,
+    "thac0": 16,
+    "frequency": 7,
+    "attacks": [
+      {
+        "name": "rotting touch",
+        "damage": "1d6",
+        "type": "poison",
+        "effect": "poisoned",
+        "effect_chance": 0.55,
+        "effect_duration": 8
+      },
+      {
+        "name": "tendril whip",
+        "damage": "1d4",
+        "type": "physical"
+      }
+    ],
+    "resistances": ["poison", "cold"],
+    "weaknesses": ["fire"],
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "violet_fungus_cap",
+    "treasure": {"gold": [0, 10], "item_chance": 0.05, "item_tier": 2},
+    "lore": "Violet fungi lurk in the dark, extending their tendrils to deliver a rotting touch that causes flesh to rapidly decay. They are often found clustered near gray ooze, with which they share a symbiotic relationship. In small quantities their extract is used in controlled decomposition experiments by alchemists."
+  },
+  "pegasus_corrupted": {
+    "name": "corrupted pegasus",
+    "symbol": "P",
+    "color": [80, 60, 120],
+    "hp": "4d10",
+    "speed": 3,
+    "ai_pattern": "aggressive",
+    "min_level": 9,
+    "max_level": 14,
+    "thac0": 11,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "shadow hoof",
+        "damage": "2d6",
+        "type": "shadow"
+      },
+      {
+        "name": "dark wing buffet",
+        "damage": "1d8",
+        "type": "shadow",
+        "effect": "confused",
+        "effect_chance": 0.4,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": ["shadow", "magic"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 4,
+    "harvest_threshold": 5,
+    "ingredient_id": "corrupted_wing_feather",
+    "treasure": {"gold": [30, 90], "item_chance": 0.35, "item_tier": 4},
+    "lore": "Once a noble steed of the gods, this pegasus was twisted by shadow magic into a creature of darkness. Its formerly white flanks are now mottled black and its eyes glow a sickly purple. A courageous wizard who breaks the curse might restore it — but few survive the attempt."
+  },
+  "unicorn_corrupted": {
+    "name": "corrupted unicorn",
+    "symbol": "U",
+    "color": [100, 20, 60],
+    "hp": "5d10",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 11,
+    "max_level": 16,
+    "thac0": 9,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "dark horn gore",
+        "damage": "3d6",
+        "type": "shadow",
+        "effect": "poisoned",
+        "effect_chance": 0.5,
+        "effect_duration": 10
+      },
+      {
+        "name": "trample",
+        "damage": "2d8",
+        "type": "physical",
+        "effect": "slowed",
+        "effect_chance": 0.4,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": ["shadow", "magic"],
+    "weaknesses": ["holy"],
+    "harvest_tier": 5,
+    "harvest_threshold": 5,
+    "ingredient_id": "corrupted_horn_fragment",
+    "treasure": {"gold": [50, 140], "item_chance": 0.5, "item_tier": 5},
+    "lore": "A unicorn whose pure heart was corrupted by prolonged exposure to shadow energies, its once-golden horn now a jagged black spiral that drips with shadow-venom. It rages through dungeons destroying anything that once reminded it of its former life. The corrupted horn fragment retains terrible magical power."
+  },
+  "sphinx_lesser": {
+    "name": "lesser sphinx",
+    "symbol": "X",
+    "color": [220, 180, 80],
+    "hp": "5d10",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 10,
+    "max_level": 16,
+    "thac0": 10,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "claw",
+        "damage": "2d8",
+        "type": "physical"
+      },
+      {
+        "name": "riddle curse",
+        "damage": "2d6",
+        "type": "magic",
+        "effect": "confused",
+        "effect_chance": 0.5,
+        "effect_duration": 6
+      }
+    ],
+    "resistances": ["magic"],
+    "weaknesses": [],
+    "harvest_tier": 5,
+    "harvest_threshold": 5,
+    "ingredient_id": "sphinx_claw",
+    "treasure": {"gold": [50, 150], "item_chance": 0.55, "item_tier": 5},
+    "lore": "Lesser sphinxes guard ancient vaults and archives, compelling all who approach to answer riddles on pain of death. Unlike the great sphinxes, they lack godlike patience and grow violent when bored. Their accumulated knowledge of arcane lore makes defeating one feel like losing an irreplaceable library."
+  },
+  "nue": {
+    "name": "nue",
+    "symbol": "N",
+    "color": [80, 40, 80],
+    "hp": "4d10",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 9,
+    "max_level": 14,
+    "thac0": 11,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "chimeric bite",
+        "damage": "2d8",
+        "type": "physical",
+        "effect": "poisoned",
+        "effect_chance": 0.4,
+        "effect_duration": 6
+      },
+      {
+        "name": "nightmare shriek",
+        "damage": "2d6",
+        "type": "magic",
+        "effect": "confused",
+        "effect_chance": 0.55,
+        "effect_duration": 5
+      }
+    ],
+    "resistances": ["magic", "shadow"],
+    "weaknesses": ["holy"],
+    "harvest_tier": 4,
+    "harvest_threshold": 5,
+    "ingredient_id": "nue_tail_quill",
+    "treasure": {"gold": [30, 90], "item_chance": 0.4, "item_tier": 4},
+    "lore": "The nue is a terrifying chimeric creature from eastern legend with the head of a monkey, the body of a tanuki, the legs of a tiger, and the tail of a serpent. It brings misfortune and illness, and its shriek is said to induce nightmares in all who hear it. A quill from its serpentine tail is a powerful talisman against illness."
+  },
+  "peryton": {
+    "name": "peryton",
+    "symbol": "P",
+    "color": [60, 120, 80],
+    "hp": "3d10",
+    "speed": 3,
+    "ai_pattern": "aggressive",
+    "min_level": 7,
+    "max_level": 12,
+    "thac0": 13,
+    "frequency": 4,
+    "attacks": [
+      {
+        "name": "antler gore",
+        "damage": "2d6",
+        "type": "physical"
+      },
+      {
+        "name": "shadow dive",
+        "damage": "1d8",
+        "type": "shadow",
+        "effect": "blinded",
+        "effect_chance": 0.3,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": ["shadow"],
+    "weaknesses": ["holy"],
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "peryton_antler",
+    "treasure": {"gold": [15, 50], "item_chance": 0.2, "item_tier": 3},
+    "lore": "The peryton is a winged stag of terrible omen whose shadow takes the shape of a human rather than its own form. It hunts intelligent prey specifically, drawn by some dark need to harvest humanoid hearts. The antlers of a peryton are said to grant prophetic visions when carved into a drinking cup."
+  },
+  "carbuncle": {
+    "name": "carbuncle",
+    "symbol": "c",
+    "color": [255, 30, 60],
+    "hp": "2d6",
+    "speed": 2,
+    "ai_pattern": "cowardly",
+    "min_level": 5,
+    "max_level": 10,
+    "thac0": 15,
+    "frequency": 5,
+    "attacks": [
+      {
+        "name": "gem flash",
+        "damage": "1d6",
+        "type": "magic",
+        "effect": "blinded",
+        "effect_chance": 0.55,
+        "effect_duration": 5
+      },
+      {
+        "name": "bite",
+        "damage": "1d4",
+        "type": "physical"
+      }
+    ],
+    "resistances": ["magic"],
+    "weaknesses": ["physical"],
+    "harvest_tier": 3,
+    "harvest_threshold": 5,
+    "ingredient_id": "carbuncle_gem",
+    "treasure": {"gold": [30, 100], "item_chance": 0.6, "item_tier": 4},
+    "lore": "The carbuncle is a small, fox-like magical creature with a brilliant gemstone embedded in its forehead. It uses the gem to flash blinding light at predators before fleeing at tremendous speed. The gem, if carefully extracted after death, is among the most powerful magical focal points that can be found in nature."
+  },
+  "sea_dragon_spawn": {
+    "name": "sea dragon spawn",
+    "symbol": "D",
+    "color": [40, 100, 180],
+    "hp": "6d12",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 13,
+    "max_level": null,
+    "thac0": 6,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "bite",
+        "damage": "3d8",
+        "type": "physical"
+      },
+      {
+        "name": "water jet",
+        "damage": "3d6",
+        "type": "cold",
+        "effect": "frozen",
+        "effect_chance": 0.4,
+        "effect_duration": 5
+      },
+      {
+        "name": "tail slam",
+        "damage": "2d10",
+        "type": "physical",
+        "effect": "slowed",
+        "effect_chance": 0.5,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": ["cold", "physical"],
+    "weaknesses": ["lightning", "fire"],
+    "harvest_tier": 5,
+    "harvest_threshold": 5,
+    "ingredient_id": "sea_dragon_scale",
+    "treasure": {"gold": [60, 180], "item_chance": 0.6, "item_tier": 5},
+    "lore": "Sea dragon spawn are juvenile dragons of the deep ocean, capable of pressurizing water into devastating focused jets. Even as young dragons they dwarf most surface creatures and possess considerable cunning. Their scales are among the most prized armor materials in any coastal nation."
+  }
+}

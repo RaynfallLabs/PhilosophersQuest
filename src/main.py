@@ -11,6 +11,7 @@ from fantasy_ui import (FP, get_font, draw_panel, draw_dark_panel,
                          draw_choice_button, ITEM_COLOR, make_parchment)
 
 from combat import player_attack
+from quirk_system import QuirkSystem
 from container_system import attempt_lockpick, check_for_mimic
 from dungeon import (generate_dungeon, spawn_monsters, spawn_items,
                      STAIRS_UP, STAIRS_DOWN, DOOR, SECRET_DOOR, ALTAR)
@@ -18,9 +19,10 @@ from food_system import (harvest_corpse, cook_ingredient, eat_food, eat_raw,
                          get_available_compound_recipes, cook_compound_recipe,
                          get_recipes_for_ingredient)
 from fov import calculate_fov
-from items import Weapon, Armor, Shield, Corpse, Ingredient, Artifact, Container, Lockpick, Accessory, Wand, Scroll, Spellbook, Ammo, Food
+from items import Weapon, Armor, Shield, Corpse, Ingredient, Artifact, Container, Lockpick, Accessory, Wand, Scroll, Spellbook, Ammo, Food, Potion
 from level_manager import LevelManager
 from player import Player
+import sound_system as _snd
 from quiz_engine import QuizEngine, QuizMode, QuizState
 from renderer import Renderer, TILE_SIZE
 from ui import Sidebar, MessageLog, SIDEBAR_W
@@ -173,7 +175,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "_greeting": "Corwin the Ranger nocks an arrow and descends into the dark.",
     },
     "fianna": {
-        "STR": 6, "CON": 8, "DEX": 9, "INT": 16, "WIS": 12, "PER": 10,
+        "STR": 6, "CON": 8, "DEX": 12, "INT": 16, "WIS": 12, "PER": 10,
         "_sprite": "player_wizard_f",
         "_no_dagger": True,
         "_start_wand": "wand_of_magic_missile",
@@ -195,6 +197,15 @@ SECRET_BUILDS: dict[str, dict] = {
         "_start_weapon": "punch_in_the_face",
         "_immortal": True,
         "_greeting": "Dad has arrived. Everything will be fine.",
+    },
+    "robyn": {
+        "INT": 17, "WIS": 14, "DEX": 16, "PER": 14, "CON": 10, "STR": 9,
+        "_sprite": "player_robyn",
+        "_no_dagger": True,
+        "_start_weapon": "hardwood_shortbow",
+        "_start_ammo": "iron_arrow",
+        "_start_book": "spellbook_sleep",
+        "_greeting": "Robyn descends — sharp-eyed, soft-footed, and sharper-tongued than most.",
     },
 }
 
@@ -240,6 +251,8 @@ class WelcomeScreen:
         self.cursor_on   = True
         self.cursor_timer = 0.0
         self._anim_t     = 0.0
+        self._has_save   = False
+        self._delete_flash = 0.0
         # Pre-render stone background into a surface
         self._bg = self._make_stone_bg()
 
@@ -260,10 +273,9 @@ class WelcomeScreen:
                                  (x + 2, y + 2), (x + 2, y + block - 3))
         return surf
 
-    def run(self, clock: pygame.time.Clock) -> tuple[str | None, dict | None]:
-        """Returns (None, None) if user chose 'Continue' (load save), else (name, build)."""
+    def run(self, clock: pygame.time.Clock) -> tuple[str, dict | None]:
+        """Returns (name, build). If a save exists for name, main() will load it."""
         from save_system import save_exists
-        self._has_save = save_exists()
 
         while True:
             dt = clock.tick(60) / 1000.0
@@ -272,18 +284,26 @@ class WelcomeScreen:
             if self.cursor_timer >= 0.55:
                 self.cursor_on = not self.cursor_on
                 self.cursor_timer = 0.0
+            if getattr(self, '_delete_flash', 0.0) > 0.0:
+                self._delete_flash = max(0.0, self._delete_flash - dt)
+
+            # Update save-exists hint for whatever name is currently typed
+            self._has_save = save_exists(self.name_buf.strip()) if self.name_buf.strip() else False
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
                 if event.type == pygame.KEYDOWN:
-                    if self._has_save and event.unicode.lower() == 'c':
-                        return None, None   # sentinel: load save
                     if event.key == pygame.K_RETURN and self.name_buf.strip():
                         name  = self.name_buf.strip()
                         build = SECRET_BUILDS.get(name.lower())
                         return name, build
+                    elif event.key == pygame.K_DELETE and self._has_save:
+                        from save_system import delete_save
+                        delete_save(self.name_buf.strip())
+                        self._has_save = False
+                        self._delete_flash = 2.0   # seconds to show confirmation
                     elif event.key == pygame.K_BACKSPACE:
                         self.name_buf = self.name_buf[:-1]
                     elif event.key == pygame.K_ESCAPE:
@@ -530,17 +550,38 @@ class WelcomeScreen:
             self.screen.blit(badge, (cx - badge.get_width() // 2, by + box_h + 8))
 
     def _draw_footer(self, cx):
-        # FANTASY: Subtle footer hint
         has_save = getattr(self, '_has_save', False)
-        if has_save:
-            text = "[ C ] continue saved game     [ ENTER ] new game     [ ESC ] quit"
-        else:
-            text = "[ ENTER ] begin your quest     [ ESC ] quit"
+        text = "[ ENTER ] begin your quest     [ ESC ] quit"
         hint = self.font_tiny.render(text, True, FP.HINT_TEXT)
         self.screen.blit(hint, (cx - hint.get_width() // 2, self.H - 28))
-        if has_save:
-            save_hint = self.font_sm.render("★  A saved journey awaits", True, FP.SUCCESS_TEXT)
+        # Delete-flash confirmation (shown for 2 seconds after DEL)
+        flash = getattr(self, '_delete_flash', 0.0)
+        if flash > 0.0:
+            del_msg = self.font_sm.render("✗  Save deleted — press ENTER to start fresh", True, (220, 80, 80))
+            self.screen.blit(del_msg, (cx - del_msg.get_width() // 2, self.H - 52))
+        elif has_save:
+            save_hint = self.font_sm.render("★  Saved journey found — ENTER to continue  |  DEL to erase", True, FP.SUCCESS_TEXT)
             self.screen.blit(save_hint, (cx - save_hint.get_width() // 2, self.H - 52))
+
+        # High score mini-leaderboard (top 3)
+        try:
+            from highscore_system import get_top
+            top = get_top(3)
+            if top:
+                hs_x = cx + 260
+                hs_y = self.H - 140
+                title_s = self.font_sm.render("BEST RUNS", True, FP.GOLD_DARK)
+                self.screen.blit(title_s, (hs_x - title_s.get_width() // 2, hs_y))
+                hs_y += 18
+                for i, e in enumerate(top):
+                    v_mark = "✦" if e.get('victory') else " "
+                    line = f"{v_mark}{i+1}. {e.get('name','?'):<8}  {e['score']:>7,}  {e.get('grade','?'):>2}"
+                    col = FP.GOLD if e.get('victory') else FP.FADED_TEXT
+                    s = self.font_tiny.render(line, True, col)
+                    self.screen.blit(s, (hs_x - s.get_width() // 2, hs_y))
+                    hs_y += 16
+        except Exception:
+            pass
 
 
 # Game states
@@ -558,6 +599,7 @@ STATE_DEAD           = 'dead'
 STATE_LOCKPICK       = 'lockpick'
 STATE_TARGET         = 'target'        # ranged targeting cursor
 STATE_EAT_MENU       = 'eat_menu'      # eat food / raw ingredient
+STATE_QUAFF_MENU     = 'quaff_menu'   # quaff a potion
 STATE_HELP           = 'help'
 STATE_LORE           = 'lore'
 STATE_PRAY           = 'pray'
@@ -565,8 +607,11 @@ STATE_SPELL_MENU     = 'spell_menu'
 STATE_HINT           = 'hint'          # Recall Lore result display
 STATE_EXAMINE        = 'examine'       # Examine identified inventory item
 STATE_ENCYCLOPEDIA   = 'encyclopedia'  # Encyclopedia browser
-STATE_DROP_MENU      = 'drop_menu'    # Drop an item from inventory
-STATE_STORY_POPUP    = 'story_popup'  # Narrative popup (quest intro, boss defeat, ending)
+STATE_DROP_MENU      = 'drop_menu'       # Drop an item from inventory
+STATE_DROP_GOLD_INPUT = 'drop_gold_input' # Numeric prompt: how much gold to drop
+STATE_STORY_POPUP    = 'story_popup'     # Narrative popup (quest intro, boss defeat, ending)
+STATE_MYSTERY_APPROACH = 'mystery_approach'  # Player is approaching a mystery altar
+STATE_SHOP             = 'shop'              # Merchant shop overlay
 
 # ---------------------------------------------------------------------------
 # Spells learnable from spellbooks  (spell_id → attributes)
@@ -653,6 +698,7 @@ class Game:
         self.font_lg   = get_font('heading', 32)
         self.font_xl   = get_font('title',   42, bold=True)
 
+        _snd.init()   # initialise procedural sound synthesis (best-effort)
         self.quiz_engine        = QuizEngine()
         self.msg_log            = MessageLog()
         self.sidebar            = Sidebar(screen, GAME_W)
@@ -673,6 +719,7 @@ class Game:
         self.cook_menu_items: list       = []
         self.cook_compound_recipes: list = []   # available multi-ingredient recipes
         self.eat_menu_items: list        = []
+        self.quaff_menu_items: list      = []
         self.examine_menu_items: list    = []   # identified items for examine menu
         self.encyclopedia_category: str  = ''   # current encyclopedia category
         self.encyclopedia_selection: int = 0    # selected index in list view
@@ -692,15 +739,20 @@ class Game:
             'tablet':      _lore_rng.randint(80, 99),
         }
         self._lore_placed: set = set()   # which have been placed this run
+        self._notified_rooms: set = set()  # (cx, cy) of special rooms already notified
         # Drop-item state
         self.drop_menu_items: list = []
+        self.drop_gold_input: str  = ''   # digit buffer for gold-drop amount prompt
         # Story popup state (quest intro, boss victory, endings)
         self.popup_data: dict | None = None     # title, lines, accent, code
         self.popup_next_state: str   = STATE_PLAYER
         self.defeat_reason      = 'died'   # 'died' | 'starved' | 'fled'
+        self._save_on_quit      = True     # False when player explicitly exits without saving
         self.correct_answers    = 0        # total correct answers this run
         self.wrong_answers      = 0        # total wrong answers this run
+        self._score_saved       = False    # True after high score is written
         self.quiz_engine.on_answer = self._on_quiz_answer
+        self.quirk_system = QuirkSystem(self)
         self._slow_skip         = False    # toggled each turn when slowed
         # Key-held movement (arrow key auto-repeat)
         self._move_hold_timer   = 0.0      # countdown until next repeated move
@@ -711,6 +763,8 @@ class Game:
         self.target_cursor_y    = 0
         self._target_candidates: list = [] # visible monsters sorted by distance
         self._target_idx        = 0        # which candidate is selected
+        # Mystery system state
+        self._active_mystery_altar = None  # MysteryAltar being interacted with
 
         self._new_level(1)
         self._show_story_popup('dungeon_entrance', STATE_PLAYER)
@@ -785,6 +839,11 @@ class Game:
 
     def _change_level(self, new_level: int, enter_from_top: bool):
         """Transition between levels, preserving the player."""
+        # Notify quirk system before level change (fast-exit check)
+        qs = getattr(self, 'quirk_system', None)
+        if qs:
+            qs.on_stairs_taken_fast()
+
         # Save current level state
         self.level_mgr.save(
             self.dungeon_level, self.dungeon, self.monsters, self.ground_items
@@ -801,12 +860,26 @@ class Game:
         self.monsters     = monsters
         self.ground_items = ground_items
         self.dungeon_level = new_level
+        self._notified_rooms = set()   # reset per-floor special room notifications
         self.renderer.set_dungeon(dungeon.width, dungeon.height, GAME_W, GAME_H)
+
+        # Notify quirk system of stair use and floor entry
+        _qs_stair = getattr(self, 'quirk_system', None)
+        if _qs_stair:
+            _qs_stair.on_stair_use(new_level)
+            _qs_stair.on_floor_entered(new_level)
+            # Orpheus: slow all monsters on floor entry
+            if getattr(self.player, 'quirk_progress', {}).get('orpheus_active'):
+                for m in self.monsters:
+                    if m.alive:
+                        m.status_effects['slowed'] = max(
+                            m.status_effects.get('slowed', 0), 5)
 
         # Grant HP on every level transition
         self.player.on_level_change()
 
         # Place player at the stairs they came through
+        _snd.play('level_change')
         if enter_from_top:
             self.player.x, self.player.y = dungeon.rooms[0].center
             self.add_message(f"You descend to level {new_level}.", 'info')
@@ -893,14 +966,8 @@ class Game:
             except Exception:
                 pass
 
-        # ── Always: lockpick ──────────────────────────────────────────────
-        try:
-            lockpicks = load_items('lockpick')
-            lockpick = next((l for l in lockpicks if l.id == 'lockpick'), None)
-            if lockpick:
-                self.player.inventory.append(lockpick)
-        except Exception:
-            pass
+        # ── Always: starting lockpick charges ────────────────────────────
+        self.player.lockpick_charges += 5   # equivalent to one basic lockpick
 
         # ── Always: bread ration ──────────────────────────────────────────
         try:
@@ -910,12 +977,23 @@ class Game:
                 self.player.inventory.append(ration)
         except Exception:
             pass
+        self.player.inventory.sort(key=lambda i: i.name.lower())
 
     def _refresh_fov(self):
         self.visible = calculate_fov(
             self.dungeon, self.player.x, self.player.y,
             self.player.get_sight_radius()
         )
+        qs = getattr(self, 'quirk_system', None)
+        if qs and self.player:
+            total = sum(
+                1 for row in self.dungeon.tiles
+                for tile in row
+                if tile != 0  # non-wall tiles
+            )
+            explored = len(self.dungeon.explored)
+            if total > 0:
+                qs.on_floor_explored(explored / total)
 
     # ------------------------------------------------------------------
     # Event handling
@@ -949,13 +1027,20 @@ class Game:
                               STATE_WAND_MENU, STATE_SCROLL_MENU,
                               STATE_IDENTIFY_MENU, STATE_COOK_MENU,
                               STATE_CONFIRM_EXIT, STATE_TARGET,
-                              STATE_EAT_MENU, STATE_HELP, STATE_LORE,
+                              STATE_EAT_MENU, STATE_QUAFF_MENU, STATE_HELP, STATE_LORE,
                               STATE_SPELL_MENU, STATE_HINT,
                               STATE_EXAMINE, STATE_ENCYCLOPEDIA,
-                              STATE_DROP_MENU):
+                              STATE_DROP_MENU, STATE_DROP_GOLD_INPUT,
+                              STATE_MYSTERY_APPROACH, STATE_SHOP):
+                if self.state == STATE_MYSTERY_APPROACH:
+                    self._active_mystery_altar = None
                 self.state = STATE_PLAYER
+                return True
             if self.state == STATE_STORY_POPUP:
                 self.state = self.popup_next_state
+                return True
+            if self.state == STATE_PLAYER:
+                self.state = STATE_CONFIRM_EXIT
                 return True
             if self.state in (STATE_DEAD, STATE_VICTORY):
                 return False
@@ -993,6 +1078,8 @@ class Game:
             self._cook_menu_input(key)
         elif self.state == STATE_EAT_MENU:
             self._eat_menu_input(key)
+        elif self.state == STATE_QUAFF_MENU:
+            self._quaff_menu_input(key)
         elif self.state == STATE_HELP:
             self._help_input(key)
         elif self.state == STATE_LORE:
@@ -1005,10 +1092,16 @@ class Game:
             self.state = STATE_PLAYER   # any key dismisses hint overlay
         elif self.state == STATE_DROP_MENU:
             self._drop_menu_input(key)
+        elif self.state == STATE_DROP_GOLD_INPUT:
+            self._drop_gold_input(key, event.unicode)
         elif self.state == STATE_STORY_POPUP:
             self.state = self.popup_next_state   # any key advances
         elif self.state == STATE_CONFIRM_EXIT:
             self._confirm_exit_input(key)
+        elif self.state == STATE_MYSTERY_APPROACH:
+            self._mystery_approach_input(key, event.unicode)
+        elif self.state == STATE_SHOP:
+            self._shop_input(key)
 
         return True
 
@@ -1022,6 +1115,24 @@ class Game:
     def _player_input(self, key: int):
         import random as _rng
 
+        if key == pygame.K_PERIOD:
+            qs = getattr(self, 'quirk_system', None)
+            near = any(m.alive for m in self.monsters)
+            if qs:
+                qs.on_wait(near_monsters=near)
+            # Meditation: restore 1 MP when waiting if no monsters are adjacent
+            _adj_monsters = [
+                m for m in self.monsters
+                if m.alive and abs(m.x - self.player.x) <= 1 and abs(m.y - self.player.y) <= 1
+            ]
+            if not _adj_monsters and self.player.mp < self.player.max_mp:
+                self.player.restore_mp(1)
+                self.add_message("You meditate briefly. (+1 MP)", 'info')
+            else:
+                self.add_message("You wait.", 'info')
+            self._advance_turn()
+            return
+
         if key in (pygame.K_g, pygame.K_COMMA):
             self._pickup()
             return
@@ -1029,7 +1140,7 @@ class Game:
             self._open_equip_menu()
             return
         if key == pygame.K_r:
-            self._open_accessory_menu()
+            self._open_scroll_menu()
             return
         if key == pygame.K_z:
             self._open_wand_menu()
@@ -1037,11 +1148,14 @@ class Game:
         if key == pygame.K_u:
             self._open_eat_menu()
             return
+        if key == pygame.K_q:
+            self._open_quaff_menu()
+            return
         if key == pygame.K_m:
             self._open_spell_menu()
             return
         if key == pygame.K_s:
-            self._open_scroll_menu()
+            self._open_accessory_menu()
             return
         if key == pygame.K_i:
             self._open_identify_menu()
@@ -1079,6 +1193,9 @@ class Game:
         if key == pygame.K_d:
             self._open_drop_menu()
             return
+        if key == pygame.K_t:
+            self._open_shop()
+            return
 
         if key not in self._MOVE_KEYS:
             return
@@ -1089,6 +1206,16 @@ class Game:
         """Attempt a player move/action in direction (dx, dy)."""
         if self.state != STATE_PLAYER:
             return
+
+        # Feared: force movement away from nearest visible monster
+        if self.player.has_effect('feared'):
+            visible_monsters = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
+            if visible_monsters:
+                nearest = min(visible_monsters, key=lambda m: abs(m.x - self.player.x) + abs(m.y - self.player.y))
+                flee_dx = 0 if nearest.x == self.player.x else (-1 if nearest.x > self.player.x else 1)
+                flee_dy = 0 if nearest.y == self.player.y else (-1 if nearest.y > self.player.y else 1)
+                dx, dy = flee_dx, flee_dy
+                self.add_message("You flee in terror!", 'danger')
 
         # Sleep: skip turn
         if self.player.has_effect('sleeping'):
@@ -1124,7 +1251,7 @@ class Game:
 
         # Confused: randomize direction
         if self.player.has_effect('confused'):
-            dx, dy = _rng.choice(
+            dx, dy = random.choice(
                 [(0,-1),(0,1),(-1,0),(1,0),(-1,-1),(-1,1),(1,-1),(1,1)]
             )
             self.add_message("You stumble in a random direction!", 'warning')
@@ -1145,7 +1272,12 @@ class Game:
             # Bump-to-open: open the door and step through in one action
             self.dungeon.open_door(nx, ny)
             self.player.x, self.player.y = nx, ny
+            self._check_floor_trap(nx, ny)
+            _qs_move = getattr(self, 'quirk_system', None)
+            if _qs_move:
+                _qs_move.on_move()
             self._refresh_fov()
+            _snd.play('door')
             self.add_message("You open the door.", 'info')
             self._tick_sp()
             if self.state != STATE_DEAD:
@@ -1166,6 +1298,37 @@ class Game:
             self.player.has_effect('phasing') and self.dungeon.in_bounds(nx, ny)
         ):
             self.player.x, self.player.y = nx, ny
+            self._check_floor_trap(nx, ny)
+            _qs_walk = getattr(self, 'quirk_system', None)
+            if _qs_walk:
+                _qs_walk.on_move()
+            # Sisyphus boulder challenge tracking
+            if self.player.quirk_progress.get('sisyphus_boulder_active'):
+                _has_boulder = any(
+                    getattr(i, 'mystery_id', None) == 'sisyphus'
+                    for i in self.player.inventory
+                )
+                if _has_boulder and self.player.get_current_weight() > self.player.get_carry_limit():
+                    self.player.quirk_progress['sisyphus_boulder_tiles'] = (
+                        self.player.quirk_progress.get('sisyphus_boulder_tiles', 0) + 1
+                    )
+                    _sis_tiles = self.player.quirk_progress['sisyphus_boulder_tiles']
+                    if _sis_tiles >= 25:
+                        _boulder = next(
+                            (i for i in self.player.inventory
+                             if getattr(i, 'mystery_id', None) == 'sisyphus'), None
+                        )
+                        if _boulder:
+                            self.player.inventory.remove(_boulder)
+                        from mystery_system import apply_mystery_reward
+                        apply_mystery_reward('sisyphus', self.player, self, True)
+                        self.player.quirk_progress['sisyphus_boulder_active'] = False
+                    elif _sis_tiles % 5 == 0:
+                        self.add_message(
+                            f"The boulder weighs you down. {25 - _sis_tiles} tiles remain.", 'warning'
+                        )
+                elif not _has_boulder:
+                    self.player.quirk_progress['sisyphus_boulder_active'] = False
             self._refresh_fov()
             self._tick_sp()
             if self.state != STATE_DEAD:
@@ -1192,15 +1355,40 @@ class Game:
         elif tile == ALTAR:
             self.add_message("A sacred altar stands here. Press '\\' to pray with divine bonus.", 'info')
 
-    @staticmethod
-    def _display_name(item) -> str:
+    def _display_name(self, item) -> str:
         """Return the name to show for an item — unidentified name if not yet identified."""
         if not getattr(item, 'identified', True):
+            # Also treat as identified if this item type has been seen before this run
+            if hasattr(self, 'player') and item.id in self.player.known_item_ids:
+                return item.name
             return getattr(item, 'unidentified_name', item.name)
         return item.name
 
     def _notify_ground(self, x: int, y: int):
         """Print messages about items and notable features at (x, y)."""
+        # Special room notification (once per room per floor)
+        _SPECIAL_ROOM_MSGS = {
+            'treasury':    ("You enter a treasure vault — riches gleam in the darkness!", 'success'),
+            'library':     ("You enter an ancient library — scrolls line the walls.", 'info'),
+            'shrine':      ("You enter a sacred shrine — you feel the presence of higher powers.", 'info'),
+            'monster_den': ("You enter a monster den — the stench of creatures fills the air!", 'danger'),
+        }
+        for (rcx, rcy), rtype in self.dungeon.special_rooms.items():
+            if (rcx, rcy) not in self._notified_rooms:
+                # Check if player entered any room that contains this center
+                for room in self.dungeon.rooms:
+                    rx1 = room.x
+                    ry1 = room.y
+                    rx2 = room.x + room.width - 1
+                    ry2 = room.y + room.height - 1
+                    if rx1 <= x <= rx2 and ry1 <= y <= ry2:
+                        cx, cy = room.center
+                        if (cx, cy) == (rcx, rcy):
+                            self._notified_rooms.add((rcx, rcy))
+                            msg, style = _SPECIAL_ROOM_MSGS.get(rtype, ("You enter a special room.", 'info'))
+                            self.add_message(msg, style)
+                            break
+
         here = [item for item in self.ground_items if item.x == x and item.y == y]
         # Abyssal Shimmer: show the inscription when stepped upon
         shimmer = next((i for i in here if i.id == 'abyssal_shimmer'), None)
@@ -1397,8 +1585,18 @@ class Game:
 
     def _confirm_exit_input(self, key: int):
         if key in (pygame.K_y, pygame.K_RETURN):
-            self._do_exit()
-        elif key in (pygame.K_n, pygame.K_ESCAPE):
+            # Save & exit cleanly — auto-save runs in main() after the loop
+            self._save_on_quit = True
+            import pygame as _pg
+            _pg.event.post(_pg.event.Event(_pg.QUIT))
+        elif key == pygame.K_n:
+            # Exit without saving — delete any existing save to prevent checkpointing
+            self._save_on_quit = False
+            from save_system import delete_save
+            delete_save(self.player_name)
+            import pygame as _pg
+            _pg.event.post(_pg.event.Event(_pg.QUIT))
+        elif key in (pygame.K_ESCAPE, pygame.K_c):
             self.state = STATE_PLAYER
 
     def _do_exit(self):
@@ -1417,7 +1615,8 @@ class Game:
     def _on_game_over(self):
         """Delete save file on any game-ending event (permadeath)."""
         from save_system import delete_save
-        delete_save()
+        delete_save(self.player_name)
+        _snd.play('death')
 
     # ------------------------------------------------------------------
     # Scoring
@@ -1453,6 +1652,10 @@ class Game:
 
     def _advance_turn(self):
         self.turn_count += 1
+
+        qs = getattr(self, 'quirk_system', None)
+        if qs and self.player:
+            qs.on_turn()
 
         # Decrement prayer cooldown
         if self.player.prayer_cooldown > 0:
@@ -1495,6 +1698,7 @@ class Game:
         self._do_monster_turns()
         self._maybe_wander_spawn()
         self._death_proximity_warning()
+        self._tick_hp_regen()
 
     def _maybe_wander_spawn(self):
         """Periodically spawn a wandering monster to keep pressure on the player."""
@@ -1529,6 +1733,46 @@ class Game:
             m.x, m.y = x, y
             self.monsters.append(m)
 
+    def _check_floor_trap(self, x: int, y: int):
+        """Trigger a floor trap at (x, y) if one exists."""
+        from dice import roll as _dice_roll
+        trap = self.dungeon.traps.get((x, y))
+        if trap is None:
+            return
+        # Levitating players float over traps (reveals them)
+        if self.player.has_effect('levitating'):
+            trap['revealed'] = True
+            self.add_message("You float safely over a trap!", 'info')
+            return
+        # Trap fires — remove it from the floor
+        del self.dungeon.traps[(x, y)]
+        trap_type = trap['type']
+        _snd.play('trap')
+        self.add_message(trap['message'], 'danger')
+        dmg_str = str(trap.get('damage', '0'))
+        if dmg_str != '0' and dmg_str:
+            raw = _dice_roll(dmg_str)
+            actual = self.player.take_damage(raw, trap.get('damage_type', 'physical'))
+            if actual:
+                self.add_message(f"You take {actual} damage!", 'danger')
+        if trap_type == 'alarm':
+            for m in self.monsters:
+                if m.alive and abs(m.x - x) <= 10 and abs(m.y - y) <= 10:
+                    if m.ai_pattern == 'sessile':
+                        m.ai_pattern = 'aggressive'
+            self.add_message("Monsters nearby are alerted!", 'danger')
+        elif trap_type == 'acid':
+            self.player.add_effect('corroding', 5)
+            self.add_message("You feel acid eating at your equipment!", 'danger')
+        elif trap_type == 'teleport':
+            self._teleport_player()
+        qs = getattr(self, 'quirk_system', None)
+        if qs and hasattr(qs, 'on_trap_triggered'):
+            qs.on_trap_triggered(trap_type)
+        if self.player.is_dead():
+            self.add_message("You have died!", 'danger')
+            self.state = STATE_DEAD
+
     def _teleport_player(self):
         import random as _rng
         floors = [
@@ -1542,6 +1786,9 @@ class Game:
             self.player.x, self.player.y = _rng.choice(floors)
             self._refresh_fov()
             self.add_message("You feel disoriented as space warps around you!", 'warning')
+            _qs_tp = getattr(self, 'quirk_system', None)
+            if _qs_tp:
+                _qs_tp.on_teleport()
 
     def _do_warning(self):
         """Warn if monsters are within 5 tiles when player has the warning effect."""
@@ -1612,25 +1859,74 @@ class Game:
                 self.add_message("You have starved to death! Press ESC to quit.", 'danger')
 
     # ------------------------------------------------------------------
+    # Passive HP regeneration
+    # ------------------------------------------------------------------
+
+    def _tick_hp_regen(self):
+        """Regen 1 HP every 15 turns (faster with high CON). Blocked by bleeding/poisoned."""
+        if self.player.hp >= self.player.max_hp:
+            return
+        if self.player.has_effect('bleeding') or self.player.has_effect('poisoned'):
+            return
+        # CON above 12 shaves 1 turn off the interval per point; floor at 10
+        interval = max(10, 20 - max(0, self.player.CON - 12))
+        if self.turn_count % interval == 0:
+            self.player.restore_hp(1)
+
+    # ------------------------------------------------------------------
     # Pickup
     # ------------------------------------------------------------------
 
     def _pickup(self):
+        from items import GoldPile
+        from mystery_system import MysteryAltar
         px, py = self.player.x, self.player.y
         # Skip the Abyssal Shimmer — it's fixed to the floor
+        # Also skip MysteryAltar objects (not_pickable=True)
         item = next(
             (i for i in self.ground_items
-             if i.x == px and i.y == py and i.id != 'abyssal_shimmer'),
+             if i.x == px and i.y == py
+             and i.id != 'abyssal_shimmer'
+             and not getattr(i, 'not_pickable', False)),
             None
         )
         if item is None:
-            # If only the shimmer is here the message was already shown by _notify_ground
+            # Check if there's a non-pickable item here (altar) and tell the player
+            altar_here = next(
+                (i for i in self.ground_items
+                 if i.x == px and i.y == py and getattr(i, 'not_pickable', False)),
+                None
+            )
+            if altar_here:
+                self.add_message(f"The {altar_here.name} cannot be moved.", 'info')
+                return
             any_here = any(i for i in self.ground_items if i.x == px and i.y == py)
             if not any_here:
                 self.add_message("There is nothing here to pick up.", 'info')
             return
+        if isinstance(item, GoldPile):
+            if not hasattr(self, 'player_gold'):
+                self.player_gold = 0
+            self.player_gold += item.amount
+            self.ground_items.remove(item)
+            self.add_message(f"You pick up {item.amount} gold coins.", 'loot')
+            _snd.play('gold')
+            self._advance_turn()
+            return
+        if isinstance(item, Lockpick):
+            # Lockpicks convert directly to charges — never enter inventory
+            charges = getattr(item, 'max_durability', 5)
+            self.player.lockpick_charges = getattr(self.player, 'lockpick_charges', 0) + charges
+            self.ground_items.remove(item)
+            self.add_message(
+                f"You pocket the {item.name}. (+{charges} lockpick charges, "
+                f"total: {self.player.lockpick_charges})", 'loot'
+            )
+            self._advance_turn()
+            return
         if self.player.add_to_inventory(item):
             self.ground_items.remove(item)
+            _snd.play('pickup')
             if isinstance(item, Ammo):
                 self.add_message(f"You pick up {item.count} {self._display_name(item)}s.", 'loot')
             else:
@@ -1674,8 +1970,8 @@ class Game:
             self._advance_turn()
             return
 
-        if not any(isinstance(i, Lockpick) for i in self.player.inventory):
-            self.add_message("You need a lockpick to attempt this.", 'warning')
+        if getattr(self.player, 'lockpick_charges', 0) <= 0:
+            self.add_message("You have no lockpick charges.", 'warning')
             return
 
         self.quiz_title = (
@@ -1696,7 +1992,19 @@ class Game:
                 for loot_item in result['loot']:
                     loot_item.x, loot_item.y = cx, cy
                     self.ground_items.append(loot_item)
-                # Gold reported via message (no currency item needed)
+                    self.add_message(f"You find {self._display_name(loot_item)}!", 'loot')
+                if result['gold'] > 0:
+                    from items import GoldPile
+                    self.ground_items.append(GoldPile(result['gold'], cx, cy))
+            elif result['status'] == 'failed':
+                _qs_lock = getattr(self, 'quirk_system', None)
+                if _qs_lock and getattr(container, 'trapped', False):
+                    _qs_lock.on_lockpick_fail(container.id, self.dungeon_level)
+                # Trap trigger check
+                if _qs_lock and getattr(container, 'trap', None):
+                    trap_type = container.trap.get('type', '') if isinstance(container.trap, dict) else ''
+                    if trap_type:
+                        _qs_lock.on_trap_triggered(trap_type)
 
             self._advance_turn()
 
@@ -1706,11 +2014,30 @@ class Game:
             on_complete
         )
 
+    def _find_adjacent_mystery_altar(self):
+        """Return a MysteryAltar on the player's tile or any adjacent tile, or None."""
+        from mystery_system import MysteryAltar
+        px, py = self.player.x, self.player.y
+        for item in self.ground_items:
+            if not isinstance(item, MysteryAltar):
+                continue
+            if item.activated:
+                continue
+            if abs(item.x - px) <= 1 and abs(item.y - py) <= 1:
+                return item
+        return None
+
     def _attack_container(self):
-        """Press 'a' to probe an adjacent container for mimics."""
+        """Press 'a' to interact with an adjacent mystery altar or probe a container for mimics."""
+        # Check for mystery altar first
+        altar = self._find_adjacent_mystery_altar()
+        if altar is not None:
+            self._start_mystery(altar)
+            return
+
         container = self._find_adjacent_container()
         if container is None:
-            self.add_message("There is no container to attack nearby.", 'info')
+            self.add_message("There is nothing to interact with nearby.", 'info')
             return
         if container.is_mimic:
             self.add_message(
@@ -1724,6 +2051,194 @@ class Game:
                 f"You strike the {container.name}. It's solid — just a chest.", 'info'
             )
         self._advance_turn()
+
+    # ------------------------------------------------------------------
+    # Mystery system
+    # ------------------------------------------------------------------
+
+    def _start_mystery(self, altar):
+        """Begin a mystery encounter — show description and ask the player to accept."""
+        from mystery_system import MYSTERIES, can_activate
+        m = MYSTERIES[altar.mystery_id]
+        # Show description always
+        self.add_message(m['description'], 'info')
+        can, reason = can_activate(altar.mystery_id, self.player,
+                                   getattr(self, 'player_gold', 0))
+        if not can:
+            self.add_message(f"{m['name']}: {reason}", 'warning')
+            return
+        self._active_mystery_altar = altar
+        self.state = STATE_MYSTERY_APPROACH
+
+    def _mystery_approach_input(self, key: int, unicode: str):
+        """Handle input while showing the mystery approach overlay."""
+        if key in (pygame.K_ESCAPE, pygame.K_n):
+            self.state = STATE_PLAYER
+            self._active_mystery_altar = None
+        elif key in (pygame.K_RETURN, pygame.K_y, pygame.K_SPACE):
+            self._begin_mystery_challenge()
+
+    def _begin_mystery_challenge(self):
+        """Trigger the actual challenge for the active mystery."""
+        from mystery_system import MYSTERIES, consume_key_item, get_cauldron_food_items, apply_mystery_reward
+        altar = self._active_mystery_altar
+        if altar is None:
+            self.state = STATE_PLAYER
+            return
+        m  = MYSTERIES[altar.mystery_id]
+        ch = m['challenge']
+
+        # Pre-challenge costs
+        if m.get('stat_cost'):
+            for stat, amt in m['stat_cost'].items():
+                self.player.apply_stat_bonus(stat, amt)
+            self.add_message("You feel a part of yourself drain away as payment...", 'warning')
+
+        if m.get('gold_cost', 0) > 0:
+            self.player_gold = getattr(self, 'player_gold', 0) - m['gold_cost']
+            self.add_message(f"You offer {m['gold_cost']} gold as tribute.", 'info')
+
+        # Consume key item (if any; not cauldron food)
+        if m['key_item'] is not None and altar.mystery_id not in ('cauldron',):
+            consume_key_item(altar.mystery_id, self.player)
+
+        # For cauldron: consume 3 food items
+        if altar.mystery_id == 'cauldron':
+            foods = get_cauldron_food_items(self.player)
+            for food in foods[:3]:
+                self.player.remove_from_inventory(food)
+            self.add_message("Three meals are consumed by the cauldron's fire.", 'info')
+
+        # Sisyphus: physical challenge — start tracking tiles
+        if ch['mode'] == 'physical':
+            self.player.quirk_progress['sisyphus_boulder_active'] = True
+            self.player.quirk_progress['sisyphus_boulder_tiles'] = 0
+            self.add_message("You grasp the boulder. Begin your ascent.", 'info')
+            self.state = STATE_PLAYER
+            self._active_mystery_altar = None
+            return
+
+        # Quiz challenge
+        def _on_mystery_complete(result):
+            success = result.success
+            # For chain mode, check threshold manually
+            if ch['mode'] == 'chain' and 'threshold' in ch:
+                success = result.score >= ch['threshold']
+            # Pandora inversion
+            if m.get('invert_result'):
+                success = not success
+            apply_mystery_reward(altar.mystery_id, self.player, self, success)
+            if not altar.activated:
+                altar.activated = True
+                # Remove altar from ground_items once activated
+                if altar in self.ground_items:
+                    self.ground_items.remove(altar)
+            self._active_mystery_altar = None
+
+        quiz_kwargs = {
+            'mode':           ch['mode'],
+            'subject':        ch['subject'],
+            'tier':           ch['tier'],
+            'callback':       _on_mystery_complete,
+            'threshold':      ch.get('threshold', 3),
+            'wisdom':         self.player.WIS,
+            'timer_modifier': self.player.get_quiz_timer_modifier(),
+            'extra_seconds':  self.player.get_quiz_extra_seconds(ch['subject']),
+        }
+        if 'max_chain' in ch:
+            quiz_kwargs['max_chain'] = ch['max_chain']
+
+        self.quiz_title = f"{m['name'].upper()}  —  {ch['subject'].upper()}"
+        self.state = STATE_QUIZ
+        self.quiz_engine.start_quiz(**quiz_kwargs)
+
+    def _draw_mystery_approach(self):
+        """Draw the mystery encounter overlay — description, requirements, Y/N prompt."""
+        from fantasy_ui import FP, get_font
+        altar = self._active_mystery_altar
+        if altar is None:
+            self.state = STATE_PLAYER
+            return
+
+        from mystery_system import MYSTERIES
+        m = MYSTERIES[altar.mystery_id]
+
+        # Semi-transparent background
+        overlay = pygame.Surface((WINDOW_W, WINDOW_H), pygame.SRCALPHA)
+        overlay.fill((0, 0, 0, 190))
+        self.screen.blit(overlay, (0, 0))
+
+        bw, bh = 780, 320
+        bx = (GAME_W - bw) // 2
+        by = (WINDOW_H - bh) // 2
+
+        # Panel background
+        pygame.draw.rect(self.screen, (18, 12, 6), (bx, by, bw, bh), border_radius=10)
+        pygame.draw.rect(self.screen, altar.color, (bx, by, bw, bh), 2, border_radius=10)
+        pygame.draw.rect(self.screen, tuple(max(0, v - 80) for v in altar.color),
+                         (bx + 4, by + 4, bw - 8, bh - 8), 1, border_radius=8)
+
+        font_title = get_font('heading', 22)
+        font_body  = get_font('body', 19)
+        font_small = get_font('body', 16)
+
+        # Title bar with symbol
+        title_text = f"{altar.symbol}  {m['name'].upper()}  {altar.symbol}"
+        title_surf = font_title.render(title_text, True, altar.color)
+        self.screen.blit(title_surf, (bx + (bw - title_surf.get_width()) // 2, by + 16))
+
+        pygame.draw.line(self.screen, tuple(max(0, v - 60) for v in altar.color),
+                         (bx + 30, by + 48), (bx + bw - 30, by + 48))
+
+        # Description (word-wrapped)
+        desc_text = m['description']
+        words = desc_text.split()
+        lines, line = [], []
+        max_w = bw - 70
+        for word in words:
+            test = ' '.join(line + [word])
+            if font_body.size(test)[0] > max_w:
+                if line:
+                    lines.append(' '.join(line))
+                line = [word]
+            else:
+                line.append(word)
+        if line:
+            lines.append(' '.join(line))
+
+        y = by + 62
+        for ln in lines:
+            surf = font_body.render(ln, True, (230, 215, 180))
+            self.screen.blit(surf, (bx + 35, y))
+            y += font_body.get_height() + 3
+
+        # Requirements info
+        y += 8
+        req_lines = []
+        ch = m['challenge']
+        req_lines.append(
+            f"Challenge: {ch['subject'].capitalize()}  —  {ch['mode'].replace('_', ' ').title()}"
+        )
+        if m['key_item']:
+            req_lines.append(f"Requires: {m['key_item']['name']}")
+        if m.get('gold_cost', 0) > 0:
+            req_lines.append(f"Tribute: {m['gold_cost']} gold")
+        if m.get('stat_cost'):
+            cost_desc = ', '.join(f"{s}{v}" for s, v in m['stat_cost'].items())
+            req_lines.append(f"Cost: {cost_desc}")
+        if altar.mystery_id == 'cauldron':
+            req_lines.append("Requires: 3 prepared meals in inventory")
+
+        for rl in req_lines:
+            surf = font_small.render(rl, True, (180, 170, 130))
+            self.screen.blit(surf, (bx + 35, y))
+            y += font_small.get_height() + 3
+
+        # Prompt
+        prompt = "[ Y / Enter ] Accept the challenge     [ N / Esc ] Leave"
+        prompt_surf = font_small.render(prompt, True, (120, 180, 120))
+        self.screen.blit(prompt_surf,
+                         (bx + (bw - prompt_surf.get_width()) // 2, by + bh - 28))
 
     # ------------------------------------------------------------------
     # Harvest
@@ -1751,7 +2266,22 @@ class Game:
         def on_complete(ingredient, message: str):
             self.state = STATE_PLAYER
             self.add_message(message, 'loot' if ingredient is not None else 'warning')
-            if ingredient is not None:
+            success = ingredient is not None
+            _qs_harv = getattr(self, 'quirk_system', None)
+            if _qs_harv:
+                # Check if this monster's definition applies poison
+                _mon_def = getattr(corpse, 'monster_def', {}) or {}
+                _attacks = _mon_def.get('attacks', [])
+                _applies_poison = any(
+                    atk.get('effect') == 'poisoned' for atk in _attacks
+                    if isinstance(atk, dict)
+                )
+                _qs_harv.on_harvest(
+                    monster_kind=corpse.monster_id,
+                    success=success,
+                    monster_applies_poisoned=_applies_poison,
+                )
+            if success:
                 if not self.player.add_to_inventory(ingredient):
                     self.ground_items.append(ingredient)
                     ingredient.x, ingredient.y = px, py
@@ -1814,9 +2344,29 @@ class Game:
             self.state = STATE_PLAYER
             for i, msg in enumerate(messages):
                 self.add_message(msg, 'warning' if (i == 0 and 'ruin' in msg.lower()) else 'success')
+            # Determine quality from messages to notify quirk system
+            _qs_cook = getattr(self, 'quirk_system', None)
+            if _qs_cook:
+                _quality = 0
+                for _m in messages:
+                    import re as _re
+                    _match = _re.search(r'quality\s+(\d)', _m)
+                    if _match:
+                        _quality = int(_match.group(1))
+                        break
+                _recipe_data = ingredient.recipes.get(str(_quality), ingredient.recipes.get('0', {}))
+                _qs_cook.on_food_eaten(
+                    quality=_quality,
+                    source_monster=getattr(ingredient, 'source_monster', ''),
+                    bonus_type=_recipe_data.get('bonus_type', 'none'),
+                    ingredient_id=ingredient.id,
+                )
             self._advance_turn()
 
-        cook_ingredient(self.player, ingredient, self.quiz_engine, on_complete)
+        # Check Persephone quirk: max chain 6
+        _persephone = getattr(self.player, 'quirk_progress', {}).get('persephone_active', False)
+        cook_ingredient(self.player, ingredient, self.quiz_engine, on_complete,
+                        max_chain=6 if _persephone else 5)
 
     def _cook_compound(self, recipe: dict):
         ing_names = ', '.join(recipe.get('ingredients', []))
@@ -1836,7 +2386,7 @@ class Game:
     # ------------------------------------------------------------------
 
     def _open_eat_menu(self):
-        """Collect Food items and Ingredients for eating/raw-eating."""
+        """Collect Food items and Ingredients for eating."""
         self.eat_menu_items = [
             i for i in self.player.inventory
             if isinstance(i, (Food, Ingredient))
@@ -1866,11 +2416,82 @@ class Game:
         self.player.remove_from_inventory(item)
         if isinstance(item, Food):
             messages = eat_food(self.player, item)
+            mtype = 'success' if self.player.sp > 0 else 'warning'
+            for msg in messages:
+                self.add_message(msg, mtype)
         else:
             messages = eat_raw(self.player, item)
-        mtype = 'success' if self.player.sp > 0 else 'warning'
+            mtype = 'success' if self.player.sp > 0 else 'warning'
+            for msg in messages:
+                self.add_message(msg, mtype)
+        self._advance_turn()
+
+    # ------------------------------------------------------------------
+    # Quaff menu  (Q key)
+    # ------------------------------------------------------------------
+
+    _BENEFICIAL_EFFECTS = frozenset({
+        'heal', 'extra_heal', 'full_heal', 'restore_sp',
+        'cure_poison', 'cure_disease', 'cure_all',
+        'haste', 'invisibility', 'regeneration',
+        'heroism', 'brilliance', 'levitation',
+        'restore_str', 'gain_level',
+        'fire_resist', 'cold_resist', 'shock_resist',
+    })
+
+    def _open_quaff_menu(self):
+        self.quaff_menu_items = [
+            i for i in self.player.inventory if isinstance(i, Potion)
+        ]
+        if not self.quaff_menu_items:
+            self.add_message("You have no potions to quaff.", 'info')
+            return
+        self.state = STATE_QUAFF_MENU
+
+    def _quaff_menu_input(self, key: int):
+        key_to_idx = {
+            pygame.K_1: 0, pygame.K_KP1: 0,
+            pygame.K_2: 1, pygame.K_KP2: 1,
+            pygame.K_3: 2, pygame.K_KP3: 2,
+            pygame.K_4: 3, pygame.K_KP4: 3,
+            pygame.K_5: 4, pygame.K_KP5: 4,
+            pygame.K_6: 5, pygame.K_KP6: 5,
+            pygame.K_7: 6, pygame.K_KP7: 6,
+            pygame.K_8: 7, pygame.K_KP8: 7,
+            pygame.K_9: 8, pygame.K_KP9: 8,
+        }
+        idx = key_to_idx.get(key)
+        if idx is None or idx >= len(self.quaff_menu_items):
+            return
+        self.state = STATE_PLAYER
+        item = self.quaff_menu_items[idx]
+        self.player.remove_from_inventory(item)
+
+        from food_system import drink_potion
+        item.identified = True
+        self.player.known_item_ids.add(item.id)
+        messages = drink_potion(self.player, item)
+        _qs_pot = getattr(self, 'quirk_system', None)
+        if _qs_pot:
+            _qs_pot.on_potion_drunk()
+
+        # Handle special signal: gain_level
+        if '_gain_level' in messages:
+            messages.remove('_gain_level')
+            if self.dungeon_level > 1:
+                self._change_level(self.dungeon_level - 1, enter_from_top=False)
+                self.add_message("The potion propels you upward!", 'success')
+            else:
+                self.add_message("The potion shimmers — but you're already on the first floor.", 'info')
+        # Handle teleport signal
+        if '_teleport' in messages:
+            messages.remove('_teleport')
+            self._teleport_player()
+            self.add_message("The world lurches — you're somewhere else!", 'warning')
+
+        is_good = item.effect in self._BENEFICIAL_EFFECTS
         for msg in messages:
-            self.add_message(msg, mtype)
+            self.add_message(msg, 'success' if is_good else 'danger')
         self._advance_turn()
 
     # ------------------------------------------------------------------
@@ -1896,6 +2517,10 @@ class Game:
             chain = result.score
             self._resolve_prayer(chain, self._at_altar)
             self.state = STATE_PLAYER
+            _qs_pray = getattr(self, 'quirk_system', None)
+            if _qs_pray and chain > 0:
+                hp_pct = self.player.hp / max(1, self.player.max_hp)
+                _qs_pray.on_prayer(hp_pct)
             self._advance_turn()
 
         self.quiz_engine.start_quiz(
@@ -1906,6 +2531,7 @@ class Game:
             max_chain=8,
             wisdom=self.player.WIS,
             timer_modifier=self.player.get_quiz_timer_modifier(),
+            extra_seconds=self.player.get_quiz_extra_seconds('theology'),
         )
 
     def _resolve_prayer(self, chain: int, at_altar: bool = False):
@@ -1926,6 +2552,11 @@ class Game:
 
         # Cooldown scales with how powerful a prayer was answered
         p.prayer_cooldown = max(100, 80 + effective * 25)
+        if getattr(p, 'quirk_progress', {}).get('fisher_king_active'):
+            p.prayer_cooldown = max(1, p.prayer_cooldown // 2)
+        # Fisher King mystery: permanently halved prayer cooldown
+        if getattr(p, 'quirk_progress', {}).get('fisher_king_mystery_active'):
+            p.prayer_cooldown = max(1, p.prayer_cooldown // 2)
 
         if effective == 0:
             self.add_message("The heavens are silent.", 'info')
@@ -2042,8 +2673,26 @@ class Game:
         """Fired after every individual quiz answer to tally global stats."""
         if is_correct:
             self.correct_answers += 1
+            _snd.play('quiz_correct')
         else:
             self.wrong_answers += 1
+            _snd.play('quiz_wrong')
+        # Quirk notifications
+        qe = self.quiz_engine
+        qs = getattr(self, 'quirk_system', None)
+        if qs and self.player:
+            qs.on_quiz_answer(
+                subject=qe.subject,
+                correct=is_correct,
+                chain=qe.chain,
+                while_blinded=self.player.has_effect('blinded'),
+                while_confused=self.player.has_effect('confused'),
+                while_hallucinating=(self.player.has_effect('hallucinating') or
+                                     self.player.has_effect('hallucinating_pot')),
+                while_feared=self.player.has_effect('feared'),
+                wrong_this_session=qe.asked_count - qe.correct_count,
+                score_this_session=qe.score,
+            )
 
     def _start_recall_lore(self):
         """Begin a Recall Lore session — escalator chain trivia quiz. Cooldown-gated."""
@@ -2061,6 +2710,9 @@ class Game:
             chain = result.score
             self._resolve_recall_lore(chain)
             self.state = STATE_HINT
+            _qs_lore = getattr(self, 'quirk_system', None)
+            if _qs_lore:
+                _qs_lore.on_recall_lore()
             self._advance_turn()
 
         self.quiz_engine.start_quiz(
@@ -2071,6 +2723,7 @@ class Game:
             max_chain=5,
             wisdom=self.player.WIS,
             timer_modifier=self.player.get_quiz_timer_modifier(),
+            extra_seconds=self.player.get_quiz_extra_seconds('trivia'),
         )
 
     def _resolve_recall_lore(self, chain: int):
@@ -2086,10 +2739,11 @@ class Game:
             return
 
         self.player.recall_lore_cooldown = 50 + chain * 15   # 65 .. 125 turns
+        if getattr(self.player, 'quirk_progress', {}).get('norns_active'):
+            self.player.recall_lore_cooldown = max(5, self.player.recall_lore_cooldown // 2)
 
-        hints_path = os.path.join(
-            os.path.dirname(__file__), '..', 'data', 'hints.json'
-        )
+        from paths import data_path
+        hints_path = data_path('data', 'hints.json')
         try:
             with open(hints_path, encoding='utf-8') as f:
                 all_hints = _json.load(f)
@@ -2176,12 +2830,16 @@ class Game:
                 if not ok:
                     self.add_message(msg, 'warning')
                     return
+            dname = self._display_name(item)
             self.player._apply_equip(item)
             self.player.remove_from_inventory(item)
             item.identified = True
             self.player.known_item_ids.add(item.id)
             suffix = " (two-handed)" if getattr(item, 'two_handed', False) else ""
-            self.add_message(f"You equip the {item.name}{suffix}.", 'success')
+            self.add_message(f"You equip the {dname}{suffix}.", 'success')
+            _qs_eq = getattr(self, 'quirk_system', None)
+            if _qs_eq:
+                _qs_eq.on_item_equipped(item.id, 'weapon', 'weapon')
             self._advance_turn()
         elif isinstance(item, Shield):
             if not self.player.can_equip_shield():
@@ -2245,6 +2903,13 @@ class Game:
                     self.player.status_effects.pop(fx['status'], None)
         self.player.inventory.append(item)
         self.add_message(f"You remove the {self._display_name(item)}.", 'info')
+        _qs_uneq = getattr(self, 'quirk_system', None)
+        if _qs_uneq:
+            itype = 'weapon' if slot_name == 'weapon' else \
+                    'shield' if slot_name == 'shield' else \
+                    'armor' if slot_name not in ('amulet',) and not slot_name.startswith('accessory_') else \
+                    'accessory'
+            _qs_uneq.on_item_unequipped(item.id, itype, slot_name)
         self._advance_turn()
 
     def _start_armor_quiz(self, item):
@@ -2262,24 +2927,36 @@ class Game:
                 item.identified = True
                 self.player.known_item_ids.add(item.id)
                 ac = self.player.get_ac()
-                msg = f"You equip the {item.name}{cursed_tag}. AC is now {ac}."
+                msg = f"You equip the {item_name}{cursed_tag}. AC is now {ac}."
                 if getattr(item, 'cursed', False):
                     msg += " It feels wrong..."
                 self.add_message(msg, 'success')
+                _qs_arm = getattr(self, 'quirk_system', None)
+                if _qs_arm:
+                    itype = 'shield' if isinstance(item, Shield) else 'armor'
+                    _qs_arm.on_item_equipped(item.id, itype, getattr(item, 'slot', itype))
             else:
                 self.add_message(
                     f"You struggle with the {item_name} and give up.", 'warning'
                 )
             self._advance_turn()
 
+        # Check Hephaestus quirk: -1 threshold for repeatedly-equipped armor slot
+        heph_slot = getattr(self.player, 'quirk_progress', {}).get('hephaestus_slot')
+        if heph_slot and getattr(item, 'slot', '') == heph_slot:
+            _threshold = max(1, item.equip_threshold - 1)
+        else:
+            _threshold = item.equip_threshold
+
         self.quiz_engine.start_quiz(
             mode='threshold',
             subject='geography',
             tier=getattr(item, 'quiz_tier', 1),
             callback=on_complete,
-            threshold=item.equip_threshold,
+            threshold=_threshold,
             wisdom=self.player.WIS,
             timer_modifier=self.player.get_quiz_timer_modifier(),
+            extra_seconds=self.player.get_quiz_extra_seconds('geography'),
         )
 
     # ------------------------------------------------------------------
@@ -2331,13 +3008,13 @@ class Game:
                 fx = item.effects
                 if 'status' in fx:
                     self.add_message(
-                        f"You slip on the {item.name}. You feel {fx['status']}!", 'success'
+                        f"You slip on the {item_name}. You feel {fx['status']}!", 'success'
                     )
                 else:
                     stat = fx.get('stat', '')
                     amt  = fx.get('amount', 0)
                     self.add_message(
-                        f"You slip on the {item.name}. {stat} +{amt}!", 'success'
+                        f"You slip on the {item_name}. {stat} +{amt}!", 'success'
                     )
             else:
                 self.add_message(
@@ -2353,6 +3030,7 @@ class Game:
             threshold=item.equip_threshold,
             wisdom=self.player.WIS,
             timer_modifier=self.player.get_quiz_timer_modifier(),
+            extra_seconds=self.player.get_quiz_extra_seconds('history'),
         )
 
     # ------------------------------------------------------------------
@@ -2404,11 +3082,16 @@ class Game:
         display = self._display_name(wand)
         self.quiz_title = f"INVOKING {display.upper()}  —  SCIENCE"
         self.state = STATE_QUIZ
+        _was_identified_before = getattr(wand, 'identified', False) or \
+            wand.id in self.player.known_item_ids
 
         def on_complete(result):
             self.state = STATE_PLAYER
             wand.identified = True
             self.player.known_item_ids.add(wand.id)
+            _qs_wand = getattr(self, 'quirk_system', None)
+            if _qs_wand:
+                _qs_wand.on_wand_zapped(wand.id, was_identified=_was_identified_before)
 
             if not result.success:
                 self.add_message("The wand fizzes and fails to fire.", 'warning')
@@ -2434,7 +3117,8 @@ class Game:
             threshold=wand.quiz_threshold,
             wisdom=self.player.WIS,
             timer_modifier=self.player.get_quiz_timer_modifier(),
-            extra_seconds=self.player.get_int_quiz_bonus(),
+            extra_seconds=self.player.get_int_quiz_bonus() +
+                          self.player.get_quiz_extra_seconds('science'),
         )
 
     def _apply_wand_effect(self, wand: 'Wand'):
@@ -2506,7 +3190,8 @@ class Game:
         elif effect == 'create_monster':
             import json, os
             from monster import Monster
-            mp = os.path.join(os.path.dirname(__file__), '..', 'data', 'monsters.json')
+            from paths import data_path
+            mp = data_path('data', 'monsters.json')
             try:
                 with open(mp, encoding='utf-8') as f:
                     all_defs = json.load(f)
@@ -2658,7 +3343,8 @@ class Game:
             elif effect == 'polymorph_monster':
                 import json, os
                 from monster import Monster
-                mp = os.path.join(os.path.dirname(__file__), '..', 'data', 'monsters.json')
+                from paths import data_path
+                mp = data_path('data', 'monsters.json')
                 try:
                     with open(mp, encoding='utf-8') as f:
                         all_defs = json.load(f)
@@ -2954,24 +3640,7 @@ class Game:
         story_key = self._BOSS_STORY_KEYS.get(monster.kind)
         if story_key:
             self._show_story_popup(story_key, STATE_PLAYER)
-        from items import Corpse
-        self.ground_items.append(
-            Corpse(
-                monster.name, monster.kind, monster.x, monster.y,
-                harvest_tier=monster.harvest_tier,
-                harvest_threshold=monster.harvest_threshold,
-                ingredient_id=monster.ingredient_id,
-                lore=getattr(monster, 'lore', ''),
-                monster_def={
-                    'hp': monster.max_hp,
-                    'thac0': monster.thac0,
-                    'attacks': monster.attacks,
-                    'resistances': monster.resistances,
-                    'weaknesses': monster.weaknesses,
-                    'speed': monster.speed,
-                },
-            )
-        )
+        self.ground_items.append(self._make_corpse(monster))
 
     def _drop_treasure(self, monster):
         """Drop gold and possibly an item when a monster dies."""
@@ -2980,11 +3649,11 @@ class Game:
         gold_range = treasure.get('gold', [0, 0])
         gold = _rng.randint(int(gold_range[0]), max(int(gold_range[0]), int(gold_range[1])))
         if gold > 0:
-            self.add_message(f"The {monster.name} drops {gold} gold coins.", 'loot')
-            # Gold is tracked as a player resource (add to a gold counter)
-            if not hasattr(self, 'player_gold'):
-                self.player_gold = 0
-            self.player_gold += gold
+            from items import GoldPile
+            self.ground_items.append(GoldPile(gold, monster.x, monster.y))
+            self.add_message(
+                f"The {monster.name} drops {gold} gold coins.", 'loot'
+            )
         item_chance = treasure.get('item_chance', 0.0)
         if _rng.random() < item_chance:
             item_tier = int(treasure.get('item_tier', 1))
@@ -2999,6 +3668,28 @@ class Game:
         unique_drop_id = treasure.get('unique_drop_id')
         if unique_drop_id:
             self._spawn_unique_item(monster.x, monster.y, unique_drop_id)
+
+    def _make_corpse(self, monster):
+        """Create a Corpse for a monster, auto-identifying it if the type is already known."""
+        from items import Corpse
+        c = Corpse(
+            monster.name, monster.kind, monster.x, monster.y,
+            harvest_tier=monster.harvest_tier,
+            harvest_threshold=monster.harvest_threshold,
+            ingredient_id=monster.ingredient_id,
+            lore=getattr(monster, 'lore', ''),
+            monster_def={
+                'hp': monster.max_hp,
+                'thac0': monster.thac0,
+                'attacks': monster.attacks,
+                'resistances': monster.resistances,
+                'weaknesses': monster.weaknesses,
+                'speed': monster.speed,
+            },
+        )
+        if monster.kind in getattr(self.player, 'lore_known_monster_ids', set()):
+            c.lore_identified = True
+        return c
 
     def _spawn_unique_item(self, x: int, y: int, item_id: str):
         """Place a named unique item at (x, y), searching all item categories."""
@@ -3046,7 +3737,7 @@ class Game:
         if candidates:
             chosen = copy_at(_rng.choice(candidates), x, y)
             self.ground_items.append(chosen)
-            self.add_message(f"It drops {chosen.name}!", 'loot')
+            self.add_message(f"It drops {self._display_name(chosen)}!", 'loot')
 
     # ------------------------------------------------------------------
     # Spell menu  (m key — learned spells, cast with science chain quiz)
@@ -3101,7 +3792,12 @@ class Game:
             if chain == 0:
                 self.add_message(f"The {spell['name']} fizzles... (MP wasted)", 'warning')
             else:
+                _snd.play('spell_cast')
                 self._apply_spell_effect(spell, chain, target)
+                _qs_spell = getattr(self, 'quirk_system', None)
+                if _qs_spell:
+                    hp_pct = self.player.hp / max(1, self.player.max_hp)
+                    _qs_spell.on_spell_cast(hp_pct)
             self._advance_turn()
 
         self.quiz_engine.start_quiz(
@@ -3112,7 +3808,8 @@ class Game:
             max_chain=5,
             wisdom=self.player.WIS,
             timer_modifier=self.player.get_quiz_timer_modifier(),
-            extra_seconds=self.player.get_int_quiz_bonus(),
+            extra_seconds=self.player.get_int_quiz_bonus() +
+                          self.player.get_quiz_extra_seconds('science'),
         )
 
     def _apply_spell_effect(self, spell: dict, chain: int, target=None):
@@ -3263,6 +3960,8 @@ class Game:
         display = self._display_name(scroll)
         self.quiz_title = f"READING {display.upper()}  —  GRAMMAR"
         self.state = STATE_QUIZ
+        _was_identified_before = getattr(scroll, 'identified', False) or \
+            scroll.id in self.player.known_item_ids
 
         def on_complete(result):
             self.state = STATE_PLAYER
@@ -3277,7 +3976,10 @@ class Game:
                 self._advance_turn()
                 return
 
-            self.add_message(f"You read the {scroll.name}!", 'success')
+            self.add_message(f"You read the {display}!", 'success')
+            _qs_scroll = getattr(self, 'quirk_system', None)
+            if _qs_scroll:
+                _qs_scroll.on_scroll_read(scroll.id, was_identified=_was_identified_before)
             self._apply_scroll_effect(scroll)
             self._advance_turn()
 
@@ -3289,7 +3991,8 @@ class Game:
             threshold=scroll.quiz_threshold,
             wisdom=self.player.WIS,
             timer_modifier=self.player.get_quiz_timer_modifier(),
-            extra_seconds=self.player.get_int_quiz_bonus(),
+            extra_seconds=self.player.get_int_quiz_bonus() +
+                          self.player.get_quiz_extra_seconds('grammar'),
         )
 
     def _apply_scroll_effect(self, scroll: 'Scroll'):
@@ -3350,10 +4053,26 @@ class Game:
             removed = [e for e in list(self.player.status_effects) if e in DEBUFFS]
             for e in removed:
                 del self.player.status_effects[e]
-            if removed:
-                self.add_message(
-                    f"A cleansing light removes: {', '.join(removed)}.", 'success'
-                )
+            # Also remove the cursed flag from any equipped items
+            cursed_items = []
+            all_equipped = []
+            if self.player.weapon:
+                all_equipped.append(self.player.weapon)
+            all_equipped.extend(s for s in self.player.armor_slots if s)
+            if self.player.shield:
+                all_equipped.append(self.player.shield)
+            all_equipped.extend(s for s in getattr(self.player, 'accessory_slots', []) if s)
+            for eq in all_equipped:
+                if getattr(eq, 'cursed', False):
+                    eq.cursed = False
+                    cursed_items.append(eq.name)
+            if removed or cursed_items:
+                parts = []
+                if removed:
+                    parts.append(f"status effects: {', '.join(removed)}")
+                if cursed_items:
+                    parts.append(f"cursed items: {', '.join(cursed_items)}")
+                self.add_message(f"A cleansing light removes {' and '.join(parts)}.", 'success')
             else:
                 self.add_message("You feel purified (no curses to remove).", 'info')
 
@@ -3394,6 +4113,30 @@ class Game:
                 )
             else:
                 self.add_message("You wear no armor to enchant.", 'info')
+
+        elif effect == 'enchant_item':
+            # Enchant any single equipped item — apply highest bonus to most important slot
+            candidates = []
+            if self.player.weapon:
+                candidates.append(self.player.weapon)
+            for s in self.player.armor_slots:
+                if s:
+                    candidates.append(s)
+            if self.player.shield:
+                candidates.append(self.player.shield)
+            for s in getattr(self.player, 'accessory_slots', []):
+                if s:
+                    candidates.append(s)
+            if candidates:
+                # Auto-pick: prefer weapon if available, otherwise first armor
+                target = candidates[0]
+                target.enchant_bonus = getattr(target, 'enchant_bonus', 0) + 1
+                self.add_message(
+                    f"A golden light infuses your {target.name} — enchant +{target.enchant_bonus}!",
+                    'success'
+                )
+            else:
+                self.add_message("You have no equipped items to enchant.", 'info')
 
         # ── Tier 4 scroll effects ──────────────────────────────────────────
         elif effect == 'teleport_self':
@@ -3637,7 +4380,7 @@ class Game:
         return name
 
     def _display_name(self, item) -> str:
-        """Return the name to show for an item.
+        """Return the name to show for an item, including stack count when > 1.
 
         Type known  (item.id in known_item_ids OR item.identified) → item.name
         Type unknown                                                → item.unidentified_name
@@ -3645,10 +4388,13 @@ class Game:
         shows modifiers, and only when item.identified (instance examined).
         """
         if not hasattr(item, 'identified'):
-            return self._fix_name_case(item.name)
-        if item.identified or item.id in self.player.known_item_ids:
-            return self._fix_name_case(item.name)
-        return self._fix_name_case(getattr(item, 'unidentified_name', item.name))
+            base = self._fix_name_case(item.name)
+        elif item.identified or item.id in self.player.known_item_ids:
+            base = self._fix_name_case(item.name)
+        else:
+            base = self._fix_name_case(getattr(item, 'unidentified_name', item.name))
+        count = getattr(item, 'count', 1)
+        return f"{base} x{count}" if count > 1 else base
 
     # ------------------------------------------------------------------
     # Ranged targeting
@@ -3799,23 +4545,17 @@ class Game:
                     self.level_mgr.monsters_killed += 1
                     self.add_message(f"The {monster.name} is slain!", 'success')
                     self._drop_treasure(monster)
-                    self.ground_items.append(
-                        Corpse(
-                            monster.name, monster.kind, monster.x, monster.y,
-                            harvest_tier=monster.harvest_tier,
-                            harvest_threshold=monster.harvest_threshold,
-                            ingredient_id=monster.ingredient_id,
-                            lore=getattr(monster, 'lore', ''),
-                            monster_def={
-                                'hp': monster.max_hp,
-                                'thac0': monster.thac0,
-                                'attacks': monster.attacks,
-                                'resistances': monster.resistances,
-                                'weaknesses': monster.weaknesses,
-                                'speed': monster.speed,
-                            },
+                    self.ground_items.append(self._make_corpse(monster))
+                    _qs_rng = getattr(self, 'quirk_system', None)
+                    if _qs_rng:
+                        _qs_rng.on_kill(
+                            monster_kind=monster.kind,
+                            chain_score=chain,
+                            ranged=True,
+                            unarmed=False,
+                            hp_pct_before=getattr(self, '_combat_hp_pct_before', 1.0),
+                            is_feared=self.player.has_effect('feared'),
                         )
-                    )
             self._advance_turn()
 
         player_attack(self.player, monster, self.quiz_engine, on_complete, ammo=ammo_item)
@@ -3825,9 +4565,19 @@ class Game:
     # ------------------------------------------------------------------
 
     def _start_combat(self, monster):
+        # Charmed: 40% chance to hesitate instead of attacking
+        if self.player.has_effect('charmed') and random.random() < 0.40:
+            self.add_message("You hesitate, unable to bring yourself to attack.", 'warning')
+            self._advance_turn()
+            return
+
         self.state = STATE_QUIZ
         self.combat_target = monster
         self.quiz_title = f"COMBAT vs {monster.name.upper()}  —  MATH CHAIN"
+        qs = getattr(self, 'quirk_system', None)
+        if qs:
+            qs.on_combat_started()
+        self._combat_hp_pct_before = self.player.hp / max(1, self.player.max_hp)
 
         if monster.kind == 'floating_eye':
             cur = self.player.status_effects.get('paralyzed', 0)
@@ -3843,6 +4593,8 @@ class Game:
                     f"You swing wildly at the {monster.name} and miss!", 'warning'
                 )
             else:
+                if damage > 0:
+                    _snd.play('monster_hit')
                 if crit:
                     msg = f"CRITICAL! Chain x{chain}! You strike the {monster.name} for {damage} damage!"
                 else:
@@ -3860,23 +4612,17 @@ class Game:
                     self.level_mgr.monsters_killed += 1
                     self.add_message(f"The {monster.name} is slain!", 'success')
                     self._drop_treasure(monster)
-                    self.ground_items.append(
-                        Corpse(
-                            monster.name, monster.kind, monster.x, monster.y,
-                            harvest_tier=monster.harvest_tier,
-                            harvest_threshold=monster.harvest_threshold,
-                            ingredient_id=monster.ingredient_id,
-                            lore=getattr(monster, 'lore', ''),
-                            monster_def={
-                                'hp': monster.max_hp,
-                                'thac0': monster.thac0,
-                                'attacks': monster.attacks,
-                                'resistances': monster.resistances,
-                                'weaknesses': monster.weaknesses,
-                                'speed': monster.speed,
-                            },
+                    self.ground_items.append(self._make_corpse(monster))
+                    _qs_kill = getattr(self, 'quirk_system', None)
+                    if _qs_kill:
+                        _qs_kill.on_kill(
+                            monster_kind=monster.kind,
+                            chain_score=chain,
+                            ranged=False,
+                            unarmed=(self.player.weapon is None),
+                            hp_pct_before=getattr(self, '_combat_hp_pct_before', 1.0),
+                            is_feared=self.player.has_effect('feared'),
                         )
-                    )
             self._advance_turn()
 
         player_attack(self.player, monster, self.quiz_engine, on_complete)
@@ -3936,8 +4682,53 @@ class Game:
                 self.player.known_monster_ids.add(m.kind)
             did_attack = m.take_turn(self.player, self.dungeon, self.monsters)
             if did_attack:
+                # Displacement: 30% miss chance
+                if self.player.has_effect('displacement') and random.random() < 0.30:
+                    self.add_message(f"The {m.name}'s attack passes through your displaced image!", 'info')
+                    continue
+
+                _effects_before = set(self.player.status_effects.keys())
                 dmg, msg = m.attack(self.player)
                 self.add_message(msg, 'danger')
+
+                # Fire shield: reflect melee damage back
+                if self.player.has_effect('fire_shield') and dmg > 0:
+                    reflect_dmg = random.randint(2, 9)
+                    m.hp -= reflect_dmg
+                    self.add_message(f"Flames lash back at the {m.name} for {reflect_dmg}!", 'danger')
+                    if m.hp <= 0:
+                        m.alive = False
+                        self._on_monster_killed(m)
+                # Cold shield: reflect melee damage back
+                if self.player.has_effect('cold_shield') and dmg > 0:
+                    reflect_dmg = random.randint(2, 9)
+                    m.hp -= reflect_dmg
+                    self.add_message(f"Ice shatters back at the {m.name} for {reflect_dmg}!", 'danger')
+                    if m.hp <= 0 and m.alive:
+                        m.alive = False
+                        self._on_monster_killed(m)
+
+                # Reflecting: negate 50% of newly applied status effects
+                _new_effects = set(self.player.status_effects.keys()) - _effects_before
+                if self.player.has_effect('reflecting') and _new_effects:
+                    for _new_eff in list(_new_effects):
+                        if random.random() < 0.50:
+                            del self.player.status_effects[_new_eff]
+                            self.add_message(f"Your reflection aura deflects the {_new_eff.replace('_', ' ')}!", 'info')
+                            _new_effects.discard(_new_eff)
+                            _qs_refl = getattr(self, 'quirk_system', None)
+                            if _qs_refl:
+                                _qs_refl.on_status_reflected()
+
+                if dmg > 0:
+                    _snd.play('player_hit')
+                _qs_dmg = getattr(self, 'quirk_system', None)
+                if _qs_dmg and self.player:
+                    if dmg > 0:
+                        _qs_dmg.on_take_damage(dmg, dmg / max(1, self.player.max_hp))
+                    # Notify quirk system of newly applied status effects (after reflection)
+                    for _new_eff in set(self.player.status_effects.keys()) - _effects_before:
+                        _qs_dmg.on_status_applied(_new_eff, m.kind)
                 if self.player.is_dead():
                     self.defeat_reason = 'died'
                     self._on_game_over()
@@ -4055,6 +4846,8 @@ class Game:
             self._draw_cook_menu()
         elif self.state == STATE_EAT_MENU:
             self._draw_eat_menu()
+        elif self.state == STATE_QUAFF_MENU:
+            self._draw_quaff_menu()
         elif self.state == STATE_CONFIRM_EXIT:
             self._draw_confirm_exit()
         elif self.state == STATE_VICTORY:
@@ -4073,8 +4866,14 @@ class Game:
             self._draw_encyclopedia()
         elif self.state == STATE_DROP_MENU:
             self._draw_drop_menu()
+        elif self.state == STATE_DROP_GOLD_INPUT:
+            self._draw_drop_gold_input()
         elif self.state == STATE_STORY_POPUP:
             self._draw_story_popup()
+        elif self.state == STATE_MYSTERY_APPROACH:
+            self._draw_mystery_approach()
+        elif self.state == STATE_SHOP:
+            self._draw_shop()
 
         pygame.display.flip()
 
@@ -4206,6 +5005,11 @@ class Game:
     def _draw_quiz(self):
         qe = self.quiz_engine
         if not qe.current_question:
+            return
+
+        # Celebration takes over the full screen — draw nothing else
+        if qe.celebrating:
+            self._draw_celebration()
             return
 
         is_combat = (self.combat_target is not None and qe.mode == QuizMode.CHAIN)
@@ -4389,31 +5193,36 @@ class Game:
         if is_combat:
             self._draw_combat_hud(bx, status_y + STATUS_H + SECTION_GAP, bw, accent)
 
-        # ── Celebration popup ─────────────────────────────────────────
-        if qe.celebrating:
-            t = qe.celebration_timer
-            pulse = abs(math.sin(t * 6))
-            glow_alpha = int(80 + 60 * pulse)
-            cel_ov = pygame.Surface((WINDOW_W, WINDOW_H), pygame.SRCALPHA)
-            cel_ov.fill((0, 0, 0, glow_alpha))
-            self.screen.blit(cel_ov, (0, 0))
 
-            cel_font = self.font_xl
-            cel_surf = cel_font.render(qe.celebration_text, True, FP.GOLD_BRIGHT)
-            # Glow color pulses between gold and white
-            glow_r = int(255)
-            glow_g = int(200 + 55 * pulse)
-            glow_b = int(40 + 80 * pulse)
-            # Shadow
-            shadow  = cel_font.render(qe.celebration_text, True, (0, 0, 0))
-            cx_cel  = (WINDOW_W - cel_surf.get_width())  // 2
-            cy_cel  = (WINDOW_H - cel_surf.get_height()) // 2 - 40
-            self.screen.blit(shadow, (cx_cel + 5, cy_cel + 5))
-            self.screen.blit(cel_surf, (cx_cel, cy_cel))
+    def _draw_celebration(self):
+        """Full-screen clean celebration screen for MAX CHAIN."""
+        qe    = self.quiz_engine
+        t     = qe.celebration_timer
+        pulse = abs(math.sin(t * 6))
 
-            sub_surf = self.font_lg.render("PERFECT COMBO!", True, (180, 255, 180))
-            sx_cel   = (WINDOW_W - sub_surf.get_width()) // 2
-            self.screen.blit(sub_surf, (sx_cel, cy_cel + cel_surf.get_height() + 14))
+        # Pure black background — quiz modal is gone
+        pygame.draw.rect(self.screen, (0, 0, 0), (0, 0, WINDOW_W, WINDOW_H))
+
+        # Warm pulsing golden glow wash
+        glow_ov = pygame.Surface((WINDOW_W, WINDOW_H), pygame.SRCALPHA)
+        glow_ov.fill((80, 55, 0, int(50 + 40 * pulse)))
+        self.screen.blit(glow_ov, (0, 0))
+
+        # Main "MAX CHAIN!" headline
+        cel_font = self.font_xl
+        glow_col = (255, int(200 + 55 * pulse), int(40 + 80 * pulse))
+        cel_surf = cel_font.render(qe.celebration_text, True, glow_col)
+        shadow   = cel_font.render(qe.celebration_text, True, (0, 0, 0))
+        cx = (WINDOW_W - cel_surf.get_width())  // 2
+        cy = (WINDOW_H - cel_surf.get_height()) // 2 - 40
+        self.screen.blit(shadow,   (cx + 5, cy + 5))
+        self.screen.blit(cel_surf, (cx, cy))
+
+        # Sub-line
+        sub_surf = self.font_lg.render("PERFECT COMBO!", True, (180, 255, 180))
+        self.screen.blit(sub_surf,
+                         ((WINDOW_W - sub_surf.get_width()) // 2,
+                          cy + cel_surf.get_height() + 14))
 
     def _draw_combat_hud(self, bx: int, strip_y: int, bw: int, accent=(80, 80, 180)):
         """Draw monster HP bar + chain damage preview inside the quiz modal."""
@@ -5115,21 +5924,25 @@ class Game:
         bh = min(GAME_H - 80, 80 + len(items) * row_h + 50)
         bx = (GAME_W - bw) // 2
         by = (GAME_H - bh) // 2
-        draw_panel(self.screen, (bx, by, bw, bh))
-        title_surf = self._fbig.render("DROP ITEM", True, FP.GOLD_BRIGHT)
+        draw_dark_panel(self.screen, (bx, by, bw, bh))
+        title_surf = self.font_lg.render("DROP ITEM", True, FP.GOLD_BRIGHT)
         self.screen.blit(title_surf, (bx + (bw - title_surf.get_width()) // 2, by + 12))
-        sub_surf = self._fsm.render("Select item to drop at your feet", True, FP.FADED_TEXT)
+        sub_surf = self.font_sm.render("Select item to drop at your feet", True, FP.FADED_TEXT)
         self.screen.blit(sub_surf, (bx + (bw - sub_surf.get_width()) // 2, by + 36))
         letters = 'abcdefghijklmnopqrstuvwxyz'
         y_off = by + 60
         for i, item in enumerate(items[:26]):
             letter = letters[i]
-            dname  = self._display_name(item)
-            col    = FP.PARCHMENT_LIGHT
+            if isinstance(item, self._GoldDropEntry):
+                dname = f"Gold  ({getattr(self, 'player_gold', 0)} coins)"
+                col   = FP.GOLD_BRIGHT
+            else:
+                dname = self._display_name(item)
+                col   = FP.PARCHMENT_LIGHT
             line   = f"  {letter})  {dname}"
-            surf   = self._fmed.render(line, True, col)
+            surf   = self.font_md.render(line, True, col)
             self.screen.blit(surf, (bx + 16, y_off + i * row_h))
-        esc_surf = self._fsm.render("ESC to cancel", True, FP.FADED_TEXT)
+        esc_surf = self.font_sm.render("ESC to cancel", True, FP.FADED_TEXT)
         self.screen.blit(esc_surf, (bx + (bw - esc_surf.get_width()) // 2, by + bh - 24))
 
     def _draw_eat_menu(self):
@@ -5205,35 +6018,92 @@ class Game:
         )
         self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
 
+    def _draw_quaff_menu(self):
+        draw_overlay(self.screen, 160)
+        items = self.quaff_menu_items
+        bw = min(760, GAME_W - 40)
+        bh = min(90 + len(items) * 66 + 70, WINDOW_H - 40)
+        bx = (GAME_W - bw) // 2
+        by = (WINDOW_H - bh) // 2
+        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=(100, 160, 255))
+        draw_header_bar(self.screen, (bx, by, bw, 44), text="QUAFF POTION",
+                        font=self.font_md, text_color=FP.GOLD_BRIGHT)
+        warning = self.font_sm.render(
+            "Unknown potions may harm — identify first with  I",
+            True, (200, 150, 80)
+        )
+        self.screen.blit(warning, (bx + (bw - warning.get_width()) // 2, by + 50))
+        draw_divider(self.screen, bx + 10, by + 72, bw - 20)
+        max_detail_w = bw - 90
+        for i, item in enumerate(items[:9]):
+            iy = by + 82 + i * 66
+            pygame.draw.rect(
+                self.screen,
+                FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
+                (bx + 10, iy, bw - 20, 60), border_radius=6
+            )
+            # Colour swatch matching potion colour
+            pygame.draw.rect(self.screen, tuple(item.color),
+                             (bx + 18, iy + 18, 24, 24), border_radius=4)
+            self.screen.blit(
+                self.font_md.render(f"[{i+1}]", True, FP.GOLD_BRIGHT),
+                (bx + 50, iy + 14)
+            )
+            self.screen.blit(
+                self.font_md.render(self._display_name(item), True, FP.BODY_TEXT),
+                (bx + 100, iy + 14)
+            )
+            # Detail line
+            known = item.identified or item.id in self.player.known_item_ids
+            if known:
+                eff = item.effect.replace('_', ' ')
+                dur = f"  ({item.duration} turns)" if item.duration else ""
+                is_good = item.effect in self._BENEFICIAL_EFFECTS
+                detail_text = f"{'✦' if is_good else '✖'} {eff}{dur}"
+                detail_col = FP.SUCCESS_TEXT if is_good else FP.DANGER_TEXT
+            else:
+                detail_text = "effect unknown — identify to reveal"
+                detail_col = FP.FADED_TEXT
+            detail_surf = self.font_sm.render(detail_text, True, detail_col)
+            self.screen.blit(detail_surf, (bx + 100, iy + 40))
+        hint_y = by + bh - 34
+        draw_divider(self.screen, bx + 10, hint_y - 8, bw - 20)
+        self.screen.blit(
+            self.font_sm.render("1-9: quaff  |  ESC: cancel", True, FP.HINT_TEXT),
+            (bx + (bw - self.font_sm.size("1-9: quaff  |  ESC: cancel")[0]) // 2, hint_y)
+        )
+
     def _draw_confirm_exit(self):
-        # FANTASY: Parchment confirmation dialog
         draw_overlay(self.screen, 170)
-        bw, bh = min(520, GAME_W - 40), 210
+        bw, bh = min(560, GAME_W - 40), 230
         bx = (GAME_W - bw) // 2
         by = (WINDOW_H - bh) // 2
         draw_dark_panel(self.screen, (bx, by, bw, bh))
         draw_header_bar(self.screen, (bx, by, bw, 40),
-                        text="LEAVE THE DUNGEON?",
+                        text="SAVE YOUR PROGRESS?",
                         font=self.font_lg, text_color=FP.GOLD_BRIGHT)
 
-        has_stone = any(
-            isinstance(i, Artifact) and i.id == 'philosophers_stone'
-            for i in self.player.inventory
-        )
-        if has_stone:
-            sub = "You carry the Philosopher's Stone — this ends in triumph!"
-            sc  = FP.GOLD_BRIGHT
-        else:
-            sub = "You do not carry the Philosopher's Stone."
-            sc  = FP.WARNING_TEXT
+        sub = "Your run will be saved so you can resume it later."
+        sub_surf = self.font_md.render(sub, True, FP.BODY_TEXT)
+        self.screen.blit(sub_surf, (bx + (bw - sub_surf.get_width()) // 2, by + 58))
 
-        sub_surf = self.font_md.render(sub, True, sc)
-        self.screen.blit(sub_surf, (bx + (bw - sub_surf.get_width()) // 2, by + 60))
-        draw_divider(self.screen, bx + 20, by + 100, bw - 40)
-        hint = self.font_md.render("[ Y ] Leave   [ N ] Stay", True, FP.GOLD_PALE)
-        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, by + 118))
-        hint2 = self.font_sm.render("Departing without the Stone ends your quest.", True, FP.FADED_TEXT)
-        self.screen.blit(hint2, (bx + (bw - hint2.get_width()) // 2, by + 158))
+        draw_divider(self.screen, bx + 20, by + 96, bw - 40)
+
+        # Three option rows
+        opts = [
+            ("Y", "Save & Exit",         FP.GOLD_BRIGHT),
+            ("N", "Exit without saving", FP.WARNING_TEXT),
+            ("C / ESC", "Keep playing",  FP.HINT_TEXT),
+        ]
+        oy = by + 112
+        for key_label, desc, col in opts:
+            key_surf  = self.font_md.render(f"[ {key_label} ]", True, col)
+            desc_surf = self.font_md.render(desc, True, FP.BODY_TEXT)
+            total_w   = key_surf.get_width() + 12 + desc_surf.get_width()
+            rx = bx + (bw - total_w) // 2
+            self.screen.blit(key_surf,  (rx, oy))
+            self.screen.blit(desc_surf, (rx + key_surf.get_width() + 12, oy))
+            oy += key_surf.get_height() + 6
 
     # ------------------------------------------------------------------
     # Story popup  (narrative events: entrance, boss victories, endings)
@@ -5423,25 +6293,36 @@ class Game:
         if not self.popup_data:
             return
         d = self.popup_data
-        FP = FontPalette
 
         # ── Background ────────────────────────────────────────────────
         draw_overlay(self.screen, 200, (8, 6, 2))
 
         accent = d['accent']
-        lines  = d['lines']
+        raw_lines = d['lines']
         code   = d.get('code')
 
-        # ── Box sizing ────────────────────────────────────────────────
-        bw  = min(820, GAME_W - 60)
-        row = 22
-        inner_lines = len(lines) + (3 if code else 0)
-        bh  = 80 + inner_lines * row + 64
-        bh  = min(bh, GAME_H + MSG_H - 60)
-        bx  = (GAME_W - bw) // 2
-        by  = max(20, (GAME_H + MSG_H - bh) // 2)
+        bw      = min(820, GAME_W - 60)
+        row     = 22
+        pad_x   = 36   # horizontal padding inside box
+        max_txt = bw - pad_x * 2
 
-        draw_panel(self.screen, (bx, by, bw, bh), border_color=accent)
+        # Pre-wrap every line so we know the true rendered line count
+        wrapped_lines = []  # list of (rendered_text, is_blank, is_quoted)
+        for line in raw_lines:
+            if line == '':
+                wrapped_lines.append(('', True, False))
+            else:
+                quoted = line.startswith('"')
+                for wl in self._wrap_text(line, self.font_md, max_txt):
+                    wrapped_lines.append((wl, False, quoted))
+
+        # ── Box sizing (based on real wrapped line count) ─────────────
+        bh = 80 + len(wrapped_lines) * row + (row * 3 if code else 0) + 64
+        bh = min(bh, GAME_H + MSG_H - 40)
+        bx = (GAME_W - bw) // 2
+        by = max(16, (GAME_H + MSG_H - bh) // 2)
+
+        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=accent)
 
         # ── Accent bar under title ─────────────────────────────────────
         accent_surf = pygame.Surface((bw - 8, 2), pygame.SRCALPHA)
@@ -5449,20 +6330,19 @@ class Game:
         self.screen.blit(accent_surf, (bx + 4, by + 52))
 
         # ── Title ─────────────────────────────────────────────────────
-        title_surf = self._fbig.render(d['title'], True, accent)
+        title_surf = self.font_lg.render(d['title'], True, accent)
         tx = bx + (bw - title_surf.get_width()) // 2
         self.screen.blit(title_surf, (tx, by + 14))
 
         # ── Body text ─────────────────────────────────────────────────
         y = by + 64
-        for line in lines:
-            if line == '':
+        for text, is_blank, is_quoted in wrapped_lines:
+            if is_blank:
                 y += row // 2
                 continue
-            # Quoted lines in tinted colour
-            col = (200, 195, 160) if line.startswith('"') else FP.PARCHMENT_LIGHT
-            surf = self._fmed.render(line, True, col)
-            self.screen.blit(surf, (bx + 28, y))
+            col = (200, 195, 160) if is_quoted else FP.PARCHMENT_LIGHT
+            surf = self.font_md.render(text, True, col)
+            self.screen.blit(surf, (bx + pad_x, y))
             y += row
 
         # ── Code block ────────────────────────────────────────────────
@@ -5471,8 +6351,8 @@ class Game:
             code_bg = pygame.Surface((bw - 40, row + 8), pygame.SRCALPHA)
             code_bg.fill((*accent, 60))
             self.screen.blit(code_bg, (bx + 20, y - 4))
-            code_label = self._fmed.render("Reward Code:  ", True, FP.PARCHMENT_LIGHT)
-            code_val   = self._fbig.render(code, True, FP.GOLD_BRIGHT)
+            code_label = self.font_md.render("Reward Code:  ", True, FP.PARCHMENT_LIGHT)
+            code_val   = self.font_lg.render(code, True, FP.GOLD_BRIGHT)
             total_w    = code_label.get_width() + code_val.get_width()
             lx = bx + (bw - total_w) // 2
             self.screen.blit(code_label, (lx, y))
@@ -5480,7 +6360,7 @@ class Game:
             y += row + 14
 
         # ── Prompt ────────────────────────────────────────────────────
-        prompt = self._fsm.render("— Press any key to continue —", True, FP.HINT_TEXT)
+        prompt = self.font_sm.render("— Press any key to continue —", True, FP.HINT_TEXT)
         px_ = bx + (bw - prompt.get_width()) // 2
         self.screen.blit(prompt, (px_, by + bh - 26))
 
@@ -5548,8 +6428,32 @@ class Game:
         b_surf = self.font_sm.render(breakdown, True, FP.FADED_TEXT)
         self.screen.blit(b_surf, (cx - b_surf.get_width() // 2, row_y + 14))
 
+        # High score: save once, then display top 5
+        from highscore_system import add_score, get_top
+        if not self._score_saved:
+            pname = getattr(self, 'player_name', None) or 'Hero'
+            add_score(pname, score, grade,
+                      self.level_mgr.max_level_reached,
+                      self.level_mgr.monsters_killed,
+                      self.turn_count, victory=True)
+            self._score_saved = True
+
+        top = get_top(5)
+        hs_y = row_y + 56
+        hs_title = self.font_sm.render("— HIGH SCORES —", True, FP.GOLD)
+        self.screen.blit(hs_title, (cx - hs_title.get_width() // 2, hs_y))
+        hs_y += 20
+        for i, e in enumerate(top):
+            marker = "►" if e['score'] == score else " "
+            hs_line = (f"{marker}{i+1}. {e.get('name','?'):<10}  {e['score']:>8,}  "
+                       f"{e.get('grade','?'):>2}  L{e.get('level',0)}")
+            col = FP.GOLD_BRIGHT if e['score'] == score else FP.FADED_TEXT
+            hs_s = self.font_sm.render(hs_line, True, col)
+            self.screen.blit(hs_s, (cx - hs_s.get_width() // 2, hs_y))
+            hs_y += 18
+
         hint = self.font_md.render("Press ESC to close", True, FP.HINT_TEXT)
-        self.screen.blit(hint, (cx - hint.get_width() // 2, row_y + 40))
+        self.screen.blit(hint, (cx - hint.get_width() // 2, hs_y + 6))
 
     # ------------------------------------------------------------------
     # Death / defeat screen
@@ -5622,8 +6526,33 @@ class Game:
             row_y += row_gap
 
         draw_filigree_bar(self.screen, cx - 260, row_y + 4, 520, FP.BURGUNDY_DARK)
+
+        # High score: save once, then display top 5
+        from highscore_system import add_score, get_top
+        if not self._score_saved:
+            pname = getattr(self, 'player_name', None) or 'Hero'
+            add_score(pname, score, grade,
+                      self.level_mgr.max_level_reached,
+                      self.level_mgr.monsters_killed,
+                      self.turn_count, victory=False)
+            self._score_saved = True
+
+        top = get_top(5)
+        hs_y = row_y + 22
+        hs_title = self.font_sm.render("— HIGH SCORES —", True, FP.BURGUNDY_MID)
+        self.screen.blit(hs_title, (cx - hs_title.get_width() // 2, hs_y))
+        hs_y += 20
+        for i, e in enumerate(top):
+            marker = "►" if e['score'] == score else " "
+            hs_line = (f"{marker}{i+1}. {e.get('name','?'):<10}  {e['score']:>8,}  "
+                       f"{e.get('grade','?'):>2}  L{e.get('level',0)}")
+            col = FP.GOLD_PALE if e['score'] == score else FP.FADED_TEXT
+            hs_s = self.font_sm.render(hs_line, True, col)
+            self.screen.blit(hs_s, (cx - hs_s.get_width() // 2, hs_y))
+            hs_y += 18
+
         hint = self.font_md.render("Press ESC to close", True, FP.HINT_TEXT)
-        self.screen.blit(hint, (cx - hint.get_width() // 2, row_y + 14))
+        self.screen.blit(hint, (cx - hint.get_width() // 2, hs_y + 6))
 
     # ------------------------------------------------------------------
     # Help screen
@@ -5650,6 +6579,14 @@ class Game:
             self.state = STATE_PLAYER
             if result.success:
                 corpse.lore_identified = True
+                self.player.lore_known_monster_ids.add(corpse.monster_id)
+                # Propagate to all existing corpses of this type
+                for obj in self.ground_items:
+                    if getattr(obj, 'monster_id', None) == corpse.monster_id:
+                        obj.lore_identified = True
+                for obj in self.player.inventory:
+                    if getattr(obj, 'monster_id', None) == corpse.monster_id:
+                        obj.lore_identified = True
                 self._lore_subject = corpse
                 self.state = STATE_LORE
                 self.add_message(
@@ -5667,7 +6604,8 @@ class Game:
             threshold=2,
             wisdom=self.player.WIS,
             timer_modifier=self.player.get_quiz_timer_modifier(),
-            extra_seconds=self.player.get_int_quiz_bonus(),
+            extra_seconds=self.player.get_int_quiz_bonus() +
+                          self.player.get_quiz_extra_seconds('philosophy'),
         )
 
     def _examine_corpse(self):
@@ -5680,6 +6618,9 @@ class Game:
         if corpse is None:
             self.add_message("There is no corpse here to examine.", 'info')
             return
+        # Auto-identify if this monster type has already been lore-studied
+        if corpse.monster_id in getattr(self.player, 'lore_known_monster_ids', set()):
+            corpse.lore_identified = True
         if corpse.lore_identified:
             self.state = STATE_LORE
             self._lore_subject = corpse
@@ -5691,6 +6632,14 @@ class Game:
             self.state = STATE_PLAYER
             if result.success:
                 corpse.lore_identified = True
+                self.player.lore_known_monster_ids.add(corpse.monster_id)
+                # Propagate to all existing corpses of this type
+                for obj in self.ground_items:
+                    if getattr(obj, 'monster_id', None) == corpse.monster_id:
+                        obj.lore_identified = True
+                for obj in self.player.inventory:
+                    if getattr(obj, 'monster_id', None) == corpse.monster_id:
+                        obj.lore_identified = True
                 self._lore_subject = corpse
                 self.state = STATE_LORE
                 self.add_message(
@@ -5708,7 +6657,8 @@ class Game:
             threshold=2,
             wisdom=self.player.WIS,
             timer_modifier=self.player.get_quiz_timer_modifier(),
-            extra_seconds=self.player.get_int_quiz_bonus(),
+            extra_seconds=self.player.get_int_quiz_bonus() +
+                          self.player.get_quiz_extra_seconds('philosophy'),
         )
 
     def _lore_input(self, key: int):
@@ -5896,8 +6846,15 @@ class Game:
 
             lore_text = subject.lore or "No further records found."
 
-        # Draw stat lines
-        for line in stat_lines:
+        # Draw stat lines (reserve ~120px at bottom for lore section + footer)
+        stat_bottom = by + bh - 120
+        for idx, line in enumerate(stat_lines):
+            if y + 22 > stat_bottom:
+                remaining = len(stat_lines) - idx
+                surf = self.font_sm.render(f"  … and {remaining} more", True, (120, 120, 120))
+                self.screen.blit(surf, (bx + 20, y))
+                y += 22
+                break
             surf = self.font_sm.render(line, True, stat_col)
             self.screen.blit(surf, (bx + 20, y))
             y += 22
@@ -5929,8 +6886,17 @@ class Game:
     # Drop-item menu  (D key)
     # ------------------------------------------------------------------
 
+    class _GoldDropEntry:
+        """Sentinel shown in the drop menu when player has gold to drop."""
+        id = '_gold_drop'
+        @property
+        def name(self): return "Drop Gold"
+
     def _open_drop_menu(self):
-        items = self.player.inventory[:]
+        items = []
+        if getattr(self, 'player_gold', 0) > 0:
+            items.append(self._GoldDropEntry())
+        items += self.player.inventory[:]
         if not items:
             self.add_message("You have nothing to drop.", 'info')
             return
@@ -5953,8 +6919,13 @@ class Game:
         idx = key_to_idx.get(key)
         if idx is None or idx >= len(self.drop_menu_items):
             return
+        item = self.drop_menu_items[idx]
+        if isinstance(item, self._GoldDropEntry):
+            self.drop_gold_input = ''
+            self.state = STATE_DROP_GOLD_INPUT
+            return
         self.state = STATE_PLAYER
-        self._do_drop_item(self.drop_menu_items[idx])
+        self._do_drop_item(item)
 
     def _do_drop_item(self, item):
         if not self.player.remove_from_inventory(item):
@@ -5981,33 +6952,84 @@ class Game:
 
         self._advance_turn()
 
+    def _drop_gold_input(self, key: int, unicode: str):
+        """Handle keystrokes for the gold-amount prompt."""
+        if key in (pygame.K_RETURN, pygame.K_KP_ENTER):
+            amount = int(self.drop_gold_input) if self.drop_gold_input.isdigit() else 0
+            amount = max(0, min(amount, getattr(self, 'player_gold', 0)))
+            if amount > 0:
+                from items import GoldPile
+                pile = GoldPile(amount, self.player.x, self.player.y)
+                self.player_gold -= amount
+                self.ground_items.append(pile)
+                self.add_message(f"You drop {amount} gold coins.", 'info')
+                self._advance_turn()
+            else:
+                self.add_message("No gold dropped.", 'info')
+            self.state = STATE_PLAYER
+            return
+        if key == pygame.K_BACKSPACE:
+            self.drop_gold_input = self.drop_gold_input[:-1]
+            return
+        if unicode.isdigit() and len(self.drop_gold_input) < 7:
+            self.drop_gold_input += unicode
+
+    def _draw_drop_gold_input(self):
+        """Draw a numeric entry overlay to choose how much gold to drop."""
+        draw_overlay(self.screen, 160)
+        bw, bh = 400, 160
+        bx = (GAME_W - bw) // 2
+        by = (GAME_H - bh) // 2
+        draw_dark_panel(self.screen, (bx, by, bw, bh))
+
+        title = self.font_lg.render("DROP GOLD", True, FP.GOLD_BRIGHT)
+        self.screen.blit(title, (bx + (bw - title.get_width()) // 2, by + 14))
+
+        have = getattr(self, 'player_gold', 0)
+        sub = self.font_sm.render(f"You have {have} gold", True, FP.FADED_TEXT)
+        self.screen.blit(sub, (bx + (bw - sub.get_width()) // 2, by + 44))
+
+        # Input box
+        box_rect = pygame.Rect(bx + 60, by + 76, bw - 120, 34)
+        pygame.draw.rect(self.screen, (30, 30, 50), box_rect, border_radius=4)
+        pygame.draw.rect(self.screen, FP.GOLD_BRIGHT, box_rect, 1, border_radius=4)
+        display = self.drop_gold_input or "0"
+        val_surf = self.font_md.render(display, True, FP.PARCHMENT_LIGHT)
+        self.screen.blit(val_surf, (box_rect.x + 8, box_rect.y + 6))
+
+        hint = self.font_sm.render("ENTER to confirm  |  ESC to cancel", True, FP.FADED_TEXT)
+        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, by + bh - 26))
+
     # ------------------------------------------------------------------
+
+    def _item_is_known(self, item) -> bool:
+        """Return True if the item type is known (identified instance OR recognised by type)."""
+        if not hasattr(item, 'identified'):
+            return True  # items without an identified flag are always known
+        return item.identified or item.id in self.player.known_item_ids
 
     def _open_examine_menu(self):
         """Open a list of all identified items in player inventory (and equipment)."""
-        from items import Weapon, Armor, Shield, Accessory, Wand, Scroll, Spellbook, Ammo, Food, Ingredient
+        qs = getattr(self, 'quirk_system', None)
+        if qs:
+            qs.on_examine_used()
+        from items import ARMOR_SLOTS
         items = []
-        # Inventory items that are identified
         for item in self.player.inventory:
-            if getattr(item, 'identified', True):
+            if self._item_is_known(item):
                 items.append(item)
-        # Equipped weapon
-        if self.player.weapon and getattr(self.player.weapon, 'identified', True):
+        if self.player.weapon and self._item_is_known(self.player.weapon):
             if self.player.weapon not in items:
                 items.append(self.player.weapon)
-        # Equipped shield
-        if self.player.shield and getattr(self.player.shield, 'identified', True):
+        if self.player.shield and self._item_is_known(self.player.shield):
             if self.player.shield not in items:
                 items.append(self.player.shield)
-        # Armor slots
-        from items import ARMOR_SLOTS
         for slot_item in self.player.armor_slots:
-            if slot_item and getattr(slot_item, 'identified', True):
+            if slot_item and self._item_is_known(slot_item):
                 if slot_item not in items:
                     items.append(slot_item)
-        # Accessory slots
         for acc in self.player.accessory_slots:
-            if acc and getattr(acc, 'identified', True):
+            if acc and self._item_is_known(acc):
                 if acc not in items:
                     items.append(acc)
 
@@ -6135,6 +7157,109 @@ class Game:
         self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
 
     # ------------------------------------------------------------------
+    # Merchant shop  (t key)
+    # ------------------------------------------------------------------
+
+    def _open_shop(self):
+        """Open the merchant shop if a MerchantNPC is adjacent."""
+        from mystery_system import MerchantNPC
+        px, py = self.player.x, self.player.y
+        merchant = next(
+            (gi for gi in self.ground_items
+             if isinstance(gi, MerchantNPC)
+             and abs(gi.x - px) <= 1 and abs(gi.y - py) <= 1
+             and not gi.sold_out),
+            None
+        )
+        if merchant is None:
+            self.add_message("No merchant nearby.  (T opens shop when adjacent)", 'info')
+            return
+        self._shop_merchant = merchant
+        self._shop_selection = 0
+        self.state = STATE_SHOP
+
+    def _shop_input(self, key: int):
+        m = getattr(self, '_shop_merchant', None)
+        if m is None or key == pygame.K_ESCAPE:
+            self.state = STATE_PLAYER
+            return
+        stock = m.stock
+        if not stock:
+            self.add_message("The merchant has nothing left to sell.", 'info')
+            self.state = STATE_PLAYER
+            return
+        sel = getattr(self, '_shop_selection', 0)
+        if key == pygame.K_UP or key == pygame.K_k:
+            self._shop_selection = (sel - 1) % len(stock)
+        elif key == pygame.K_DOWN or key == pygame.K_j:
+            self._shop_selection = (sel + 1) % len(stock)
+        elif key in (pygame.K_RETURN, pygame.K_SPACE):
+            sel = self._shop_selection
+            if sel < len(stock):
+                item  = stock[sel]
+                price = m.prices[sel]
+                if self.player_gold < price:
+                    self.add_message(f"You can't afford that ({price} gold needed).", 'warning')
+                else:
+                    self.player_gold -= price
+                    self.player.add_to_inventory(item)
+                    iname = getattr(item, 'name', 'item')
+                    _snd.play('buy')
+                    self.add_message(f"You buy {iname} for {price} gold.", 'success')
+                    m.stock.pop(sel)
+                    m.prices.pop(sel)
+                    self._shop_selection = min(sel, len(m.stock) - 1)
+                    if not m.stock:
+                        m.sold_out = True
+                        self.add_message("The merchant has sold everything.", 'info')
+                        self.state = STATE_PLAYER
+
+    def _draw_shop(self):
+        """Draw the merchant shop overlay."""
+        from fantasy_ui import draw_overlay, draw_filigree_bar, centered_text, FP
+        m = getattr(self, '_shop_merchant', None)
+        if m is None:
+            return
+        cx = GAME_W // 2
+        cy = WINDOW_H // 2
+        draw_overlay(self.screen, 200, (10, 8, 2))
+        draw_filigree_bar(self.screen, cx - 280, cy - 180, 560, FP.GOLD)
+        centered_text(self.screen, self.font_lg, "TRAVELLING MERCHANT", FP.GOLD_BRIGHT, cy - 165, shadow=True)
+        draw_filigree_bar(self.screen, cx - 280, cy - 145, 560, FP.GOLD_DARK)
+
+        gold_s = self.font_sm.render(f"Your gold: {self.player_gold}", True, FP.GOLD_PALE)
+        self.screen.blit(gold_s, (cx - gold_s.get_width() // 2, cy - 128))
+
+        stock = m.stock
+        sel   = getattr(self, '_shop_selection', 0)
+        row_y = cy - 106
+        row_h = 28
+        if not stock:
+            empty_s = self.font_md.render("Sold out!", True, FP.FADED_TEXT)
+            self.screen.blit(empty_s, (cx - empty_s.get_width() // 2, row_y))
+        else:
+            for i, (item, price) in enumerate(zip(stock, m.prices)):
+                is_sel = (i == sel)
+                iname  = getattr(item, 'name', '?')
+                wt     = getattr(item, 'weight', 0)
+                line   = f"  {iname}  (wt:{wt:.1f})   {price} gold"
+                fg     = FP.PARCHMENT_LIGHT if is_sel else FP.BODY_TEXT
+                bg_col = (60, 50, 20, 180) if is_sel else None
+                if bg_col:
+                    bg_r = pygame.Rect(cx - 260, row_y - 2, 520, row_h)
+                    bg_surf = pygame.Surface((bg_r.w, bg_r.h), pygame.SRCALPHA)
+                    bg_surf.fill(bg_col)
+                    self.screen.blit(bg_surf, bg_r.topleft)
+                prefix = "► " if is_sel else "  "
+                line_s = self.font_md.render(prefix + line, True, fg)
+                self.screen.blit(line_s, (cx - 260, row_y))
+                row_y += row_h
+
+        draw_filigree_bar(self.screen, cx - 280, row_y + 8, 560, FP.GOLD_DARK)
+        hint = self.font_sm.render("↑↓ navigate   ENTER buy   ESC close", True, FP.HINT_TEXT)
+        self.screen.blit(hint, (cx - hint.get_width() // 2, row_y + 16))
+
+    # ------------------------------------------------------------------
     # Encyclopedia  (b key)
     # ------------------------------------------------------------------
 
@@ -6197,7 +7322,8 @@ class Game:
     def _encyclopedia_load_entries(self, category: str):
         """Load known entries for the given category from JSON data files."""
         import json
-        base = os.path.join(os.path.dirname(__file__), '..', 'data')
+        from paths import data_path
+        base = data_path('data')
 
         known_ids = getattr(self.player, 'known_item_ids', set())
         known_monster_ids = getattr(self.player, 'known_monster_ids', set())
@@ -6569,10 +7695,11 @@ class Game:
             ("G  or  ,",       "Pick up item",                                            FP.BODY_TEXT),
             ("E",              "Equip / Unequip",                                          FP.BODY_TEXT),
             ("I",              "Identify items",                                           FP.BODY_TEXT),
-            ("S",              "Read scroll / spellbook",                                  FP.BODY_TEXT),
+            ("R",              "Read scroll / spellbook",                                  FP.BODY_TEXT),
             ("M",              "Cast spell",                                               FP.BODY_TEXT),
             ("Z",              "Zap wand",                                                 FP.BODY_TEXT),
             ("U",              "Eat food",                                                 FP.BODY_TEXT),
+            ("Q",              "Quaff potion",                                             FP.BODY_TEXT),
             ("C",              "Cook ingredient",                                          FP.BODY_TEXT),
             ("H",              "Harvest corpse",                                           FP.BODY_TEXT),
             ("COMBAT & EXPLORATION", None, FP.GOLD_PALE),
@@ -6631,29 +7758,23 @@ class Game:
 # ------------------------------------------------------------------
 
 def main():
-    from save_system import save_exists, load_game, save_game
+    from save_system import save_exists, load_game, save_game, delete_save
 
     pygame.init()
     screen = pygame.display.set_mode((WINDOW_W, WINDOW_H), pygame.RESIZABLE)
     pygame.display.set_caption("Philosopher's Quest")
     clock = pygame.time.Clock()
 
-    # Welcome screen — may return (None, None) if player chose Continue
     welcome = WelcomeScreen(screen)
     player_name, secret_build = welcome.run(clock)
 
-    if player_name is None:
-        # Load saved game
-        state = load_game()
-        if state:
-            game = Game(screen,
-                        player_name=state.get('player_name', 'Adventurer'),
-                        secret_build=state.get('secret_build'))
-            game.load_state(state)
-        else:
-            # Fallback: saved file was corrupted / missing — start fresh
-            game = Game(screen, player_name='Adventurer')
-            game.add_message("Save file could not be loaded — starting a new game.", 'warning')
+    # If a save exists for this name, load it; otherwise start fresh
+    state = load_game(player_name) if save_exists(player_name) else None
+    if state:
+        game = Game(screen,
+                    player_name=state.get('player_name', player_name),
+                    secret_build=state.get('secret_build'))
+        game.load_state(state)
     else:
         game = Game(screen, player_name=player_name, secret_build=secret_build)
 
@@ -6667,8 +7788,8 @@ def main():
         game.update(dt)
         game.render()
 
-    # Auto-save on clean exit if the game is still in progress
-    if game.state not in (STATE_DEAD, STATE_VICTORY):
+    # Save on clean exit if the game is still in progress and player chose to save
+    if game.state not in (STATE_DEAD, STATE_VICTORY) and game._save_on_quit:
         save_game(game)
 
     pygame.quit()

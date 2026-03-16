@@ -53,6 +53,9 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
         enchant     = weapon.enchant_bonus if weapon else 0
         multipliers = weapon.chain_multipliers if weapon else _DEFAULT_MULTIPLIERS
         mult        = multipliers[min(chain - 1, len(multipliers) - 1)]
+        # Musashi quirk: chain-1 uses 2nd multiplier instead of weakest
+        if chain == 1 and getattr(player, 'quirk_progress', {}).get('musashi_active'):
+            mult = multipliers[min(1, len(multipliers) - 1)]
 
         # Damage type advantage vs monster resistances/weaknesses
         dtype_mult = 1.0
@@ -71,6 +74,15 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
             if chain >= max_c:
                 mult *= weapon.crit_multiplier
                 crit = True
+
+        # Beowulf quirk: unarmed attacks deal +5 base damage
+        if weapon is None:
+            unarmed_bonus = getattr(player, 'quirk_progress', {}).get('beowulf_unarmed_bonus', 0)
+            base += unarmed_bonus
+
+        # Weakened status: halve base damage before multipliers
+        if getattr(player, 'status_effects', {}).get('weakened', 0):
+            base = max(1, base // 2)
 
         str_factor = 1.0 + max(0, player.STR - 10) * 0.03
         damage = max(1, int((base + enchant + ammo_bonus) * mult * dtype_mult * str_factor))
@@ -101,14 +113,21 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
 
         on_complete(actual, monster.is_dead(), chain, stunned=stunned, knocked=knocked, crit=crit)
 
+    # Jormungandr quirk: +1 max chain for repeatedly-equipped weapon
+    _max_chain = weapon.max_chain_length if weapon else None
+    if _max_chain and weapon:
+        if getattr(player, 'quirk_progress', {}).get('jormungandr_weapon_id') == weapon.id:
+            _max_chain += 1
+
     quiz_engine.start_quiz(
         mode='chain',
         subject='math',
         tier=weapon.quiz_tier if weapon else 1,
         callback=_callback,
-        max_chain=weapon.max_chain_length if weapon else None,
+        max_chain=_max_chain,
         wisdom=player.WIS,
         timer_modifier=player.get_quiz_timer_modifier(),
+        extra_seconds=getattr(player, 'get_quiz_extra_seconds', lambda s: 0)('math'),
     )
 
 

@@ -28,7 +28,8 @@ class QuizResult:
     asked: int
 
 
-_QUESTIONS_DIR = os.path.join(os.path.dirname(__file__), '..', 'data', 'questions')
+from paths import data_path
+_QUESTIONS_DIR = data_path('data', 'questions')
 
 
 class QuizEngine:
@@ -36,6 +37,13 @@ class QuizEngine:
 
     def __init__(self):
         self._cache: dict[str, list] = {}
+
+        # Persistent shuffle-decks: keyed by (subject, tier).
+        # Each deck is walked in order across *all* quiz sessions for that subject/tier.
+        # A question only repeats after every question in the pool has been shown at least once.
+        self._decks:    dict[tuple, list] = {}   # (subject, tier) -> shuffled question list
+        self._deck_idx: dict[tuple, int]  = {}   # (subject, tier) -> next position in deck
+        self._last_q:   dict[tuple, dict | None] = {}  # (subject, tier) -> last question shown
 
         self.state = QuizState.IDLE
         self.mode: QuizMode | None = None
@@ -98,8 +106,15 @@ class QuizEngine:
             mode = QuizMode(mode)
 
         all_qs = self.load_questions(subject)
-        pool = [q for q in all_qs if q.get('tier', 1) <= tier] or all_qs[:]
-        random.shuffle(pool)
+        deck_key = (subject, tier)
+
+        # Build the persistent deck for this subject+tier if it doesn't exist yet.
+        if deck_key not in self._decks:
+            pool = [q for q in all_qs if q.get('tier', 1) <= tier] or all_qs[:]
+            random.shuffle(pool)
+            self._decks[deck_key]    = pool
+            self._deck_idx[deck_key] = 0
+            self._last_q[deck_key]   = None
 
         self.mode = mode
         self.subject = subject
@@ -124,8 +139,9 @@ class QuizEngine:
         self.celebration_text = ''
         self.celebration_timer = 0.0
 
-        self._pool = pool
-        self._pool_idx = 0
+        # Resume from where the persistent deck left off.
+        self._pool     = self._decks[deck_key]
+        self._pool_idx = self._deck_idx[deck_key]
         self._next_question()
 
     def answer(self, choice: str) -> bool:
@@ -188,11 +204,25 @@ class QuizEngine:
     # --- Internal ---
 
     def _next_question(self):
+        deck_key = (self.subject, self.tier)
+        last = self._last_q.get(deck_key)
+
         if self._pool_idx >= len(self._pool):
+            # Deck exhausted — reshuffle, but don't let the first card equal the last shown.
             random.shuffle(self._pool)
+            if last is not None and len(self._pool) > 1 and self._pool[0] is last:
+                swap = random.randint(1, len(self._pool) - 1)
+                self._pool[0], self._pool[swap] = self._pool[swap], self._pool[0]
             self._pool_idx = 0
+
         self.current_question = self._pool[self._pool_idx]
         self._pool_idx += 1
+
+        # Persist deck position immediately so _end() doesn't need to duplicate it.
+        if deck_key in self._decks:
+            self._deck_idx[deck_key] = self._pool_idx
+            self._last_q[deck_key]   = self.current_question
+
         # Timer is set once in start_quiz() and runs continuously — no reset per question
         self.state = QuizState.ASKING
 
@@ -242,11 +272,17 @@ class QuizEngine:
     def _escalate(self):
         self.tier += 1
         all_qs = self._cache.get(self.subject, [])
-        new_pool = [q for q in all_qs if q.get('tier', 1) <= self.tier]
-        if new_pool:
-            self._pool = new_pool
-            random.shuffle(self._pool)
-            self._pool_idx = 0
+        deck_key = (self.subject, self.tier)
+
+        if deck_key not in self._decks:
+            new_pool = [q for q in all_qs if q.get('tier', 1) <= self.tier] or all_qs[:]
+            random.shuffle(new_pool)
+            self._decks[deck_key]    = new_pool
+            self._deck_idx[deck_key] = 0
+            self._last_q[deck_key]   = None
+
+        self._pool     = self._decks[deck_key]
+        self._pool_idx = self._deck_idx[deck_key]
 
     def _end(self, success: bool):
         self.state = QuizState.COMPLETE

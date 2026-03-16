@@ -348,5 +348,31 @@
     "power": "",
     "unidentified_name": "blazing scroll",
     "lore": "The capstone work of the philosopher Porphyry, who spent forty years distilling the essence of Aristotle's categories into a single transformative incantation. Those few who have read it perfectly emerge changed: stronger, hardier, swifter, keener, wiser, more perceptive. Every faculty permanently elevated by one degree."
+  },
+  "scroll_of_enchantment": {
+    "name": "scroll of enchantment",
+    "symbol": "?",
+    "color": [255, 220, 100],
+    "weight": 0.1,
+    "min_level": 10,
+    "quiz_tier": 3,
+    "quiz_threshold": 4,
+    "effect": "enchant_item",
+    "power": "",
+    "unidentified_name": "glowing scroll",
+    "lore": "Written by an anonymous enchanter of the Alexandrian school, this scroll channels raw magical force into whatever equipment the reader wears. The ink shimmers gold as the spell takes hold, permanently strengthening one piece of equipment."
+  },
+  "scroll_of_remove_curse": {
+    "name": "scroll of remove curse",
+    "symbol": "?",
+    "color": [200, 180, 255],
+    "weight": 0.1,
+    "min_level": 5,
+    "quiz_tier": 2,
+    "quiz_threshold": 3,
+    "effect": "remove_curse",
+    "power": "",
+    "unidentified_name": "pale scroll",
+    "lore": "A liturgical text drawn from the Egyptian Book of Coming Forth by Day. When read aloud with proper pronunciation, the words sever any magical binding or malevolent enchantment attached to the reader's person or possessions, purifying them completely."
   }
 }

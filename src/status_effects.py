@@ -47,6 +47,9 @@ EFFECT_INFO: dict[str, tuple] = {
     'searching':          ('Searching',          (160, 200, 160), 'Auto-reveal adjacent tiles'),
     'clairvoyant':        ('Clairvoyant',        (245, 205, 105), 'Large area revealed around you'),
     'displacement':       ('Displaced',          (200, 200, 200), 'Monsters may miss your true position'),
+    'heroism':            ('Heroic',             (255, 200,  40), 'STR +2; surging with battle-strength'),
+    'brilliance':         ('Brilliant',          (140, 180, 255), 'INT +1, WIS +1; mind razor-sharp'),
+    'hallucinating_pot':  ('Hallucinating',      (210,  85, 230), 'Reality distorted; quiz timer -20%'),
     # ---- Active buffs (wand/accessory-granted) ----
     'shielded':           ('Shielded',           (120, 180, 245), '+2 AC; physical damage halved'),
     'fire_shield':        ('Fire Shield',        (245, 120,  40), 'Immune to fire; reflects fire attacks'),
@@ -74,7 +77,7 @@ DEBUFFS: frozenset = frozenset({
 
 BUFFS: frozenset = frozenset({
     'hasted', 'invisible', 'levitating', 'regenerating', 'telepathy',
-    'warning', 'searching', 'clairvoyant', 'displacement',
+    'warning', 'searching', 'clairvoyant', 'displacement', 'heroism', 'brilliance',
     'shielded', 'fire_shield', 'cold_shield', 'reflecting', 'phasing', 'time_stopped',
     'fire_resist', 'cold_resist', 'shock_resist', 'poison_resist',
     'sleep_resist', 'magic_resist', 'drain_resist', 'disint_resist',
@@ -137,6 +140,8 @@ _EXPIRE_MSGS: dict[str, tuple] = {
     'cursed':         ('The curse lifts.',                       'success'),
     'weakened':       ('Your strength returns.',                 'info'),
     'bleeding':       ('Your wounds close.',                     'success'),
+    'heroism':        ('The heroic surge fades. STR returns.',   'info'),
+    'brilliance':     ('Your mind settles. INT and WIS return.', 'info'),
 }
 
 
@@ -237,6 +242,12 @@ def tick_all(player, dungeon=None) -> list[tuple[str, str]]:
     # Expire finished effects
     for effect in to_expire:
         player.status_effects.pop(effect, None)
+        # Reverse stat bonuses granted by timed effects
+        if effect == 'heroism':
+            player.apply_stat_bonus('STR', -2)
+        elif effect == 'brilliance':
+            player.apply_stat_bonus('INT', -1)
+            player.apply_stat_bonus('WIS', -1)
         msg_pair = _EXPIRE_MSGS.get(effect)
         if msg_pair:
             messages.append(msg_pair)

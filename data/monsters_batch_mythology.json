@@ -1,0 +1,2065 @@
+{
+  "stymphalian_bird": {
+    "name": "Stymphalian Bird",
+    "symbol": "B",
+    "color": [180, 140, 40],
+    "hp": "1d6",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 1,
+    "max_level": 5,
+    "thac0": 18,
+    "frequency": 8,
+    "attacks": [
+      {
+        "name": "peck",
+        "damage": "1d4",
+        "type": "physical"
+      },
+      {
+        "name": "feather volley",
+        "damage": "1d3",
+        "type": "physical",
+        "effect": "blinded",
+        "effect_chance": 0.2,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": ["physical"],
+    "weaknesses": ["lightning"],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": "bronze_feather",
+    "treasure": {"gold": [2, 10], "item_chance": 0.1, "item_tier": 1},
+    "lore": "Ares' sacred birds of Lake Stymphalia bore bronze beaks, claws, and feathers they launched like arrows. Heracles drove them away with Hephaestus' bronze krotala. In these dungeons they roost in high crevices and dive at unwary explorers."
+  },
+  "satyr_warrior": {
+    "name": "Satyr Warrior",
+    "symbol": "h",
+    "color": [160, 100, 50],
+    "hp": "2d6",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 2,
+    "max_level": 6,
+    "thac0": 17,
+    "frequency": 7,
+    "attacks": [
+      {
+        "name": "club",
+        "damage": "1d8",
+        "type": "physical"
+      },
+      {
+        "name": "headbutt",
+        "damage": "1d4",
+        "type": "physical",
+        "effect": "confused",
+        "effect_chance": 0.25,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "harvest_tier": 2,
+    "harvest_threshold": 2,
+    "ingredient_id": "satyr_horn",
+    "treasure": {"gold": [5, 15], "item_chance": 0.15, "item_tier": 1},
+    "lore": "Satyrs are the rowdy half-goat companions of Dionysus, known more for wine and revelry than war. Those who take up arms are exiles cast out from their bands, bitter and violent. They fight with crude clubs and use their horned heads to disorient opponents."
+  },
+  "empusa": {
+    "name": "Empusa",
+    "symbol": "L",
+    "color": [220, 60, 80],
+    "hp": "2d8",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 3,
+    "max_level": 8,
+    "thac0": 16,
+    "frequency": 5,
+    "attacks": [
+      {
+        "name": "claw",
+        "damage": "1d6",
+        "type": "physical"
+      },
+      {
+        "name": "blood drain",
+        "damage": "1d4",
+        "type": "drain",
+        "effect": "slowed",
+        "effect_chance": 0.35,
+        "effect_duration": 5
+      }
+    ],
+    "resistances": ["fire", "shadow"],
+    "weaknesses": ["holy"],
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "empusa_ichor",
+    "treasure": {"gold": [8, 25], "item_chance": 0.2, "item_tier": 2},
+    "lore": "Empusai are shape-shifting demonesses sent by Hecate to devour travelers at crossroads. They can appear as beautiful women, dogs, or cows before revealing their true form with one leg of bronze and one of an ass. They drain the life force of their victims through seductive illusions."
+  },
+  "hecate_hound": {
+    "name": "Hecate's Hound",
+    "symbol": "C",
+    "color": [60, 20, 100],
+    "hp": "2d6+2",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 4,
+    "max_level": 9,
+    "thac0": 15,
+    "frequency": 5,
+    "attacks": [
+      {
+        "name": "bite",
+        "damage": "1d8",
+        "type": "shadow"
+      },
+      {
+        "name": "howl",
+        "damage": "1d2",
+        "type": "magic",
+        "effect": "confused",
+        "effect_chance": 0.4,
+        "effect_duration": 6
+      }
+    ],
+    "resistances": ["shadow", "poison"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": "shadow_fur",
+    "treasure": {"gold": [15, 40], "item_chance": 0.25, "item_tier": 2},
+    "lore": "Hecate, goddess of magic and crossroads, keeps spectral hounds that patrol the boundaries between the living world and the underworld. Their mournful howls can shatter a mortal's concentration and drive them to madness. They are encountered most frequently near dungeon stairwells."
+  },
+  "lamia": {
+    "name": "Lamia",
+    "symbol": "L",
+    "color": [180, 80, 120],
+    "hp": "3d8",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 5,
+    "max_level": 10,
+    "thac0": 14,
+    "frequency": 4,
+    "attacks": [
+      {
+        "name": "constrict",
+        "damage": "2d6",
+        "type": "physical",
+        "effect": "paralyzed",
+        "effect_chance": 0.3,
+        "effect_duration": 4
+      },
+      {
+        "name": "life drain",
+        "damage": "1d6",
+        "type": "drain"
+      }
+    ],
+    "resistances": ["poison", "shadow"],
+    "weaknesses": ["holy"],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": "lamia_scales",
+    "treasure": {"gold": [20, 60], "item_chance": 0.3, "item_tier": 3},
+    "lore": "Once a beautiful Libyan queen beloved by Zeus, Lamia was cursed by Hera and transformed into a child-devouring monster with a serpent's lower body. She can remove her own eyes to sleep while hunting by smell, and feeds on the life force of the young and unwary. Philosophers have debated whether her hunger is madness or grief."
+  },
+  "harpy": {
+    "name": "Harpy",
+    "symbol": "B",
+    "color": [200, 160, 60],
+    "hp": "2d8",
+    "speed": 3,
+    "ai_pattern": "aggressive",
+    "min_level": 4,
+    "max_level": 9,
+    "thac0": 15,
+    "frequency": 6,
+    "attacks": [
+      {
+        "name": "talon rake",
+        "damage": "1d6",
+        "type": "physical"
+      },
+      {
+        "name": "screech",
+        "damage": "1d3",
+        "type": "magic",
+        "effect": "confused",
+        "effect_chance": 0.35,
+        "effect_duration": 5
+      }
+    ],
+    "resistances": [],
+    "weaknesses": ["lightning"],
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "harpy_feather",
+    "treasure": {"gold": [10, 30], "item_chance": 0.2, "item_tier": 2},
+    "lore": "The Harpies, daughters of Thaumas and Electra, were the Snatchers — winged spirits who stole food and souls for the underworld. Aello and Ocypete tormented King Phineas until driven off by the Argonauts. In the dungeon they swoop from the darkness above, shrieking to disorient before seizing treasure and retreating."
+  },
+  "gorgon_warrior": {
+    "name": "Gorgon Warrior",
+    "symbol": "H",
+    "color": [100, 180, 120],
+    "hp": "3d8+3",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 6,
+    "max_level": 11,
+    "thac0": 13,
+    "frequency": 4,
+    "attacks": [
+      {
+        "name": "spear thrust",
+        "damage": "2d6",
+        "type": "physical"
+      },
+      {
+        "name": "bronze breath",
+        "damage": "1d8",
+        "type": "physical",
+        "effect": "slowed",
+        "effect_chance": 0.4,
+        "effect_duration": 5
+      }
+    ],
+    "resistances": ["physical", "poison"],
+    "weaknesses": ["lightning"],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": "bronze_hide_strip",
+    "treasure": {"gold": [25, 70], "item_chance": 0.3, "item_tier": 3},
+    "lore": "Not to be confused with Medusa's sisters, the Gorgon warriors are bull-like bronze creatures whose breath can petrify living flesh. Ancient sources describe them as cattle possessed by Ares whose exhalations turn enemies to stone. In the dungeon they patrol as living armored sentinels."
+  },
+  "medusa": {
+    "name": "Medusa",
+    "symbol": "M",
+    "color": [80, 200, 80],
+    "hp": "6d10+10",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 10,
+    "max_level": null,
+    "thac0": 4,
+    "frequency": 1,
+    "attacks": [
+      {
+        "name": "snake bite",
+        "damage": "2d6",
+        "type": "poison",
+        "effect": "poisoned",
+        "effect_chance": 0.6,
+        "effect_duration": 10
+      },
+      {
+        "name": "petrifying gaze",
+        "damage": "3d8",
+        "type": "magic",
+        "effect": "paralyzed",
+        "effect_chance": 0.5,
+        "effect_duration": 20
+      }
+    ],
+    "resistances": ["poison", "shadow", "magic"],
+    "weaknesses": ["holy"],
+    "harvest_tier": 5,
+    "harvest_threshold": 5,
+    "ingredient_id": "gorgon_blood",
+    "treasure": {"gold": [80, 200], "item_chance": 0.85, "item_tier": 5},
+    "lore": "Once a radiant priestess of Athena, Medusa was transformed into the most terrible of the Gorgons after drawing Poseidon's unwanted attention within the goddess's temple. Her gaze turns flesh to stone instantly, and her hair writhes with venomous serpents. Perseus slew her by using his shield as a mirror — a lesson in the power of indirect knowledge."
+  },
+  "minotaur": {
+    "name": "Minotaur",
+    "symbol": "T",
+    "color": [160, 80, 30],
+    "hp": "5d10+5",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 8,
+    "max_level": null,
+    "thac0": 5,
+    "frequency": 1,
+    "attacks": [
+      {
+        "name": "gore",
+        "damage": "3d8",
+        "type": "physical"
+      },
+      {
+        "name": "trample",
+        "damage": "2d10",
+        "type": "physical",
+        "effect": "slowed",
+        "effect_chance": 0.45,
+        "effect_duration": 6
+      }
+    ],
+    "resistances": ["physical"],
+    "weaknesses": ["magic"],
+    "harvest_tier": 4,
+    "harvest_threshold": 4,
+    "ingredient_id": "minotaur_horn",
+    "treasure": {"gold": [60, 160], "item_chance": 0.75, "item_tier": 4},
+    "lore": "The Minotaur, Asterion, was the son of Pasiphae and a divine bull, born of Poseidon's curse upon King Minos. Imprisoned in Daedalus's labyrinthine dungeon beneath Knossos, it fed on Athenian tribute until Theseus slew it. It has a genius for mazes and always knows the dungeon layout — it will hunt you relentlessly."
+  },
+  "cyclops": {
+    "name": "Cyclops",
+    "symbol": "G",
+    "color": [180, 130, 80],
+    "hp": "4d10+10",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 7,
+    "max_level": 13,
+    "thac0": 8,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "boulder hurl",
+        "damage": "3d6",
+        "type": "physical"
+      },
+      {
+        "name": "crush",
+        "damage": "4d6",
+        "type": "physical",
+        "effect": "slowed",
+        "effect_chance": 0.5,
+        "effect_duration": 5
+      }
+    ],
+    "resistances": ["physical"],
+    "weaknesses": ["lightning", "magic"],
+    "harvest_tier": 4,
+    "harvest_threshold": 4,
+    "ingredient_id": "cyclops_eye",
+    "treasure": {"gold": [40, 120], "item_chance": 0.45, "item_tier": 3},
+    "lore": "The Cyclopes are one-eyed giants, sons of Poseidon, who dwell in caves and scorn civilization. Polyphemus, most famous of their kind, trapped Odysseus's crew until the hero blinded him with a sharpened stake. Their single eye grants unusual depth perception for throwing boulders but leaves them vulnerable to flanking."
+  },
+  "sphinx": {
+    "name": "Sphinx",
+    "symbol": "S",
+    "color": [220, 190, 90],
+    "hp": "4d12+8",
+    "speed": 1,
+    "ai_pattern": "sessile",
+    "min_level": 9,
+    "max_level": null,
+    "thac0": 6,
+    "frequency": 1,
+    "attacks": [
+      {
+        "name": "claw",
+        "damage": "2d8",
+        "type": "physical"
+      },
+      {
+        "name": "riddle curse",
+        "damage": "2d6",
+        "type": "magic",
+        "effect": "confused",
+        "effect_chance": 0.55,
+        "effect_duration": 8
+      }
+    ],
+    "resistances": ["magic", "poison"],
+    "weaknesses": [],
+    "harvest_tier": 5,
+    "harvest_threshold": 5,
+    "ingredient_id": "sphinx_mane",
+    "treasure": {"gold": [70, 180], "item_chance": 0.8, "item_tier": 5},
+    "lore": "The Sphinx crouched at the gates of Thebes and devoured all who could not answer her riddle: what walks on four legs at dawn, two at noon, three at dusk? Only Oedipus answered correctly and she threw herself from her rock. In the dungeon she sits at crossroads, guarding passage, and will attack any who approach without first attempting her puzzle."
+  },
+  "griffin": {
+    "name": "Griffin",
+    "symbol": "A",
+    "color": [200, 170, 50],
+    "hp": "3d10+4",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 7,
+    "max_level": 13,
+    "thac0": 9,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "talon strike",
+        "damage": "2d6",
+        "type": "physical"
+      },
+      {
+        "name": "beak slash",
+        "damage": "1d10",
+        "type": "physical"
+      }
+    ],
+    "resistances": ["lightning"],
+    "weaknesses": ["shadow"],
+    "harvest_tier": 4,
+    "harvest_threshold": 4,
+    "ingredient_id": "griffin_feather",
+    "treasure": {"gold": [35, 100], "item_chance": 0.4, "item_tier": 3},
+    "lore": "Griffins, with the body of a lion and the head and wings of an eagle, are ancient guardians of divine gold in the far north. Sacred to Apollo and Nemesis, they mate for life and aggressively defend their nests. They are prized by kings for their feathers, which are said to change color in the presence of poison."
+  },
+  "pegasus": {
+    "name": "Pegasus (Hostile)",
+    "symbol": "P",
+    "color": [230, 230, 255],
+    "hp": "3d10+6",
+    "speed": 3,
+    "ai_pattern": "aggressive",
+    "min_level": 8,
+    "max_level": 14,
+    "thac0": 8,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "hoof strike",
+        "damage": "2d8",
+        "type": "physical"
+      },
+      {
+        "name": "lightning dive",
+        "damage": "2d6",
+        "type": "lightning"
+      }
+    ],
+    "resistances": ["lightning"],
+    "weaknesses": ["shadow"],
+    "harvest_tier": 4,
+    "harvest_threshold": 4,
+    "ingredient_id": "winged_mane",
+    "treasure": {"gold": [40, 110], "item_chance": 0.4, "item_tier": 3},
+    "lore": "Born from the blood of Medusa when Perseus struck her down, Pegasus is the divine winged horse associated with thunder and the Muses. While normally gentle when approached by heroes, dungeon-corrupted Pegasi have been driven mad by confinement underground and charge anything that moves."
+  },
+  "hydra": {
+    "name": "Lernaean Hydra",
+    "symbol": "S",
+    "color": [40, 160, 80],
+    "hp": "6d12+12",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 11,
+    "max_level": null,
+    "thac0": 3,
+    "frequency": 1,
+    "attacks": [
+      {
+        "name": "multi-bite",
+        "damage": "3d6",
+        "type": "poison",
+        "effect": "poisoned",
+        "effect_chance": 0.65,
+        "effect_duration": 12
+      },
+      {
+        "name": "acid spit",
+        "damage": "2d8",
+        "type": "poison"
+      }
+    ],
+    "resistances": ["poison", "physical"],
+    "weaknesses": ["fire"],
+    "harvest_tier": 5,
+    "harvest_threshold": 5,
+    "ingredient_id": "hydra_bile",
+    "treasure": {"gold": [80, 200], "item_chance": 0.8, "item_tier": 5},
+    "lore": "The Hydra of Lerna, a water serpent with nine heads, was one of Heracles' twelve labors. Whenever a head was severed, two more grew in its place — until Iolaus cauterized each stump with fire. The dungeon variant still regenerates if not dealt with carefully, and its blood is so toxic that Heracles used it to poison his arrows."
+  },
+  "chimera": {
+    "name": "Chimera",
+    "symbol": "C",
+    "color": [200, 80, 40],
+    "hp": "5d10+8",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 10,
+    "max_level": null,
+    "thac0": 4,
+    "frequency": 1,
+    "attacks": [
+      {
+        "name": "lion bite",
+        "damage": "2d8",
+        "type": "physical"
+      },
+      {
+        "name": "fire breath",
+        "damage": "3d8",
+        "type": "fire",
+        "effect": "burning",
+        "effect_chance": 0.5,
+        "effect_duration": 5
+      },
+      {
+        "name": "goat gore",
+        "damage": "1d10",
+        "type": "physical"
+      }
+    ],
+    "resistances": ["fire"],
+    "weaknesses": ["cold", "lightning"],
+    "harvest_tier": 5,
+    "harvest_threshold": 5,
+    "ingredient_id": "chimera_flame_gland",
+    "treasure": {"gold": [70, 180], "item_chance": 0.8, "item_tier": 5},
+    "lore": "Offspring of Typhon and Echidna, the Chimera has the head of a lion, the body of a goat, and a tail that ends in a serpent's head. It breathes fire and ravaged Lycia until Bellerophon slew it riding Pegasus from above. Only those with equal cunning and divine favor can hope to match this monster."
+  },
+  "cerberus": {
+    "name": "Cerberus",
+    "symbol": "D",
+    "color": [40, 20, 60],
+    "hp": "8d12+20",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 15,
+    "max_level": null,
+    "thac0": -5,
+    "frequency": 1,
+    "attacks": [
+      {
+        "name": "triple bite",
+        "damage": "4d8",
+        "type": "shadow"
+      },
+      {
+        "name": "shadow howl",
+        "damage": "2d6",
+        "type": "shadow",
+        "effect": "paralyzed",
+        "effect_chance": 0.45,
+        "effect_duration": 8
+      },
+      {
+        "name": "serpent tail",
+        "damage": "2d6",
+        "type": "poison",
+        "effect": "poisoned",
+        "effect_chance": 0.55,
+        "effect_duration": 10
+      }
+    ],
+    "resistances": ["shadow", "poison", "physical", "cold"],
+    "weaknesses": ["holy"],
+    "harvest_tier": 5,
+    "harvest_threshold": 5,
+    "ingredient_id": "cerberus_saliva",
+    "treasure": {"gold": [150, 400], "item_chance": 0.95, "item_tier": 5},
+    "lore": "The three-headed hound of Hades guards the entrance to the underworld, permitting the dead to enter but none to leave. Heracles subdued him through sheer strength for his twelfth labor; Orpheus charmed all three heads to sleep with his lyre. In the deepest dungeon he serves as an eternal guardian, his serpent-barbed tail lashing at any who attempt to pass."
+  },
+  "manticore": {
+    "name": "Manticore",
+    "symbol": "M",
+    "color": [200, 60, 30],
+    "hp": "4d10+6",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 9,
+    "max_level": 15,
+    "thac0": 6,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "claw slash",
+        "damage": "2d6",
+        "type": "physical"
+      },
+      {
+        "name": "spine volley",
+        "damage": "2d8",
+        "type": "poison",
+        "effect": "poisoned",
+        "effect_chance": 0.5,
+        "effect_duration": 8
+      }
+    ],
+    "resistances": ["poison"],
+    "weaknesses": ["cold"],
+    "harvest_tier": 4,
+    "harvest_threshold": 4,
+    "ingredient_id": "manticore_spine",
+    "treasure": {"gold": [50, 140], "item_chance": 0.45, "item_tier": 4},
+    "lore": "The Manticore — from the Persian 'man-eater' — has the head of a man, the body of a lion, and a scorpion's tail bristling with venomous spines that it can fire like arrows. It has three rows of teeth and a human voice it uses to lure prey with mimicked cries for help. No part of its victims is ever left behind."
+  },
+  "scylla": {
+    "name": "Scylla",
+    "symbol": "S",
+    "color": [60, 100, 200],
+    "hp": "5d12+10",
+    "speed": 0,
+    "ai_pattern": "sessile",
+    "min_level": 12,
+    "max_level": null,
+    "thac0": 2,
+    "frequency": 1,
+    "attacks": [
+      {
+        "name": "six-headed strike",
+        "damage": "4d6",
+        "type": "physical"
+      },
+      {
+        "name": "dog-head bite",
+        "damage": "3d8",
+        "type": "physical",
+        "effect": "slowed",
+        "effect_chance": 0.4,
+        "effect_duration": 5
+      }
+    ],
+    "resistances": ["cold", "physical"],
+    "weaknesses": ["fire", "lightning"],
+    "harvest_tier": 5,
+    "harvest_threshold": 5,
+    "ingredient_id": "scylla_fang",
+    "treasure": {"gold": [100, 250], "item_chance": 0.85, "item_tier": 5},
+    "lore": "Once a beautiful sea nymph, Scylla was transformed by Circe's jealousy into a twelve-legged monster with six heads, each bearing three rows of teeth. She occupies a narrow sea-cave and snatches sailors from passing ships — even from Odysseus's crew. In the dungeon she anchors herself in a narrow passage and attacks all who try to pass."
+  },
+  "charybdis_spawn": {
+    "name": "Charybdis Spawn",
+    "symbol": "~",
+    "color": [20, 60, 180],
+    "hp": "3d10+5",
+    "speed": 0,
+    "ai_pattern": "sessile",
+    "min_level": 8,
+    "max_level": 13,
+    "thac0": 9,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "whirlpool drag",
+        "damage": "2d8",
+        "type": "cold",
+        "effect": "slowed",
+        "effect_chance": 0.6,
+        "effect_duration": 6
+      }
+    ],
+    "resistances": ["cold", "physical"],
+    "weaknesses": ["lightning"],
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": null,
+    "treasure": {"gold": [30, 90], "item_chance": 0.3, "item_tier": 3},
+    "lore": "Charybdis, the great whirlpool monster, is said to be a daughter of Poseidon who was struck by Zeus's thunderbolt and cast into the sea. Three times daily she swallows the sea and three times regurgitates it. Her spawn are smaller vortex-creatures that cling to dungeon walls and drag creatures toward their central maw."
+  },
+  "titanspawn": {
+    "name": "Titanspawn",
+    "symbol": "G",
+    "color": [120, 100, 200],
+    "hp": "4d12+10",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 12,
+    "max_level": null,
+    "thac0": 1,
+    "frequency": 1,
+    "attacks": [
+      {
+        "name": "stone fist",
+        "damage": "4d8",
+        "type": "physical"
+      },
+      {
+        "name": "chaos blast",
+        "damage": "3d6",
+        "type": "magic",
+        "effect": "confused",
+        "effect_chance": 0.45,
+        "effect_duration": 7
+      }
+    ],
+    "resistances": ["physical", "magic"],
+    "weaknesses": ["holy", "lightning"],
+    "harvest_tier": 5,
+    "harvest_threshold": 5,
+    "ingredient_id": "titan_essence",
+    "treasure": {"gold": [90, 220], "item_chance": 0.8, "item_tier": 5},
+    "lore": "The Titans, elder gods overthrown by Zeus, were imprisoned in Tartarus beneath the deepest earth. Titanspawn are fragments of their primordial essence that have seeped upward through the dungeon rock — barely conscious but seething with ancient rage. They take vaguely humanoid form from the stone around them and attack everything that is not Titan-born."
+  },
+  "frost_giant": {
+    "name": "Frost Giant",
+    "symbol": "G",
+    "color": [140, 200, 240],
+    "hp": "4d12+12",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 9,
+    "max_level": 15,
+    "thac0": 5,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "ice club",
+        "damage": "3d10",
+        "type": "cold"
+      },
+      {
+        "name": "frost breath",
+        "damage": "2d8",
+        "type": "cold",
+        "effect": "frozen",
+        "effect_chance": 0.45,
+        "effect_duration": 6
+      }
+    ],
+    "resistances": ["cold"],
+    "weaknesses": ["fire"],
+    "harvest_tier": 4,
+    "harvest_threshold": 4,
+    "ingredient_id": "frost_giant_bone",
+    "treasure": {"gold": [55, 150], "item_chance": 0.4, "item_tier": 4},
+    "lore": "Frost Giants, or Hrímþursar, dwell in Niflheim and Jötunheimr, ancient enemies of the Aesir gods. They are descendants of Ymir, the primordial being whose body Odin used to create the world. In Ragnarök they will march against Asgard — until then, they lurk in deep cold places, nursing ancient grievances."
+  },
+  "fire_giant": {
+    "name": "Fire Giant",
+    "symbol": "G",
+    "color": [240, 100, 20],
+    "hp": "4d12+14",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 10,
+    "max_level": null,
+    "thac0": 4,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "flaming sword",
+        "damage": "3d10",
+        "type": "fire"
+      },
+      {
+        "name": "magma hurl",
+        "damage": "2d10",
+        "type": "fire",
+        "effect": "burning",
+        "effect_chance": 0.5,
+        "effect_duration": 6
+      }
+    ],
+    "resistances": ["fire"],
+    "weaknesses": ["cold"],
+    "harvest_tier": 5,
+    "harvest_threshold": 5,
+    "ingredient_id": "ember_ash",
+    "treasure": {"gold": [65, 170], "item_chance": 0.5, "item_tier": 4},
+    "lore": "Surtr, the lord of Múspellsheim, leads the Fire Giants — ancient beings of primordial flame who will burn the world at Ragnarök. They forge weapons in the heat of creation itself and are immune to all fire. Their kingdom lies south of the primordial void, and it is said Surtr's sword burns brighter than the sun."
+  },
+  "troll": {
+    "name": "Norse Troll",
+    "symbol": "T",
+    "color": [80, 120, 60],
+    "hp": "3d10+6",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 6,
+    "max_level": 12,
+    "thac0": 11,
+    "frequency": 4,
+    "attacks": [
+      {
+        "name": "claw",
+        "damage": "2d6",
+        "type": "physical"
+      },
+      {
+        "name": "bite",
+        "damage": "1d10",
+        "type": "physical"
+      }
+    ],
+    "resistances": ["physical", "cold"],
+    "weaknesses": ["fire"],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": "troll_flesh",
+    "treasure": {"gold": [25, 70], "item_chance": 0.3, "item_tier": 3},
+    "lore": "Norse trolls are large, dim-witted creatures that dwell under bridges, inside mountains, and in deep forests. They regenerate wounds alarmingly fast — only fire and sunlight can permanently halt their recovery. Many a warrior has thought a troll slain only to find it rising again moments later."
+  },
+  "valkyrie_shade": {
+    "name": "Valkyrie Shade",
+    "symbol": "V",
+    "color": [180, 160, 220],
+    "hp": "4d10+6",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 10,
+    "max_level": null,
+    "thac0": 5,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "spectral spear",
+        "damage": "3d6",
+        "type": "shadow"
+      },
+      {
+        "name": "soul mark",
+        "damage": "2d6",
+        "type": "drain",
+        "effect": "slowed",
+        "effect_chance": 0.4,
+        "effect_duration": 6
+      }
+    ],
+    "resistances": ["shadow", "cold", "physical"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 4,
+    "harvest_threshold": 4,
+    "ingredient_id": "spectral_essence",
+    "treasure": {"gold": [60, 160], "item_chance": 0.55, "item_tier": 4},
+    "lore": "Valkyries are Odin's battle-maidens who choose the slain and carry the worthy to Valhalla. A Valkyrie Shade is the echo of one who failed in her divine duty — perhaps allowing an unworthy soul to enter Valhalla, or falling in battle herself. Stripped of Odin's blessing, they haunt the battlefield-like dungeon corridors, dragging living souls downward."
+  },
+  "fenrir_pup": {
+    "name": "Fenrir's Pup",
+    "symbol": "C",
+    "color": [80, 60, 100],
+    "hp": "2d8+3",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 5,
+    "max_level": 10,
+    "thac0": 13,
+    "frequency": 5,
+    "attacks": [
+      {
+        "name": "savage bite",
+        "damage": "2d6",
+        "type": "physical",
+        "effect": "slowed",
+        "effect_chance": 0.35,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": ["physical"],
+    "weaknesses": ["holy"],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": "wolf_pelt",
+    "treasure": {"gold": [20, 55], "item_chance": 0.25, "item_tier": 2},
+    "lore": "Fenrir is the monstrous wolf son of Loki, bound by the dwarven ribbon Gleipnir until Ragnarök. His offspring, Fenrir's Pups, are already of unnatural size and ferocity. They have inherited some of their father's essence — even Tyr, who fed Fenrir by hand, lost his right arm to the great wolf's jaws."
+  },
+  "jormungandr_spawn": {
+    "name": "Jörmungandr Spawn",
+    "symbol": "S",
+    "color": [40, 180, 100],
+    "hp": "3d8+4",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 6,
+    "max_level": 11,
+    "thac0": 12,
+    "frequency": 4,
+    "attacks": [
+      {
+        "name": "constrict",
+        "damage": "2d6",
+        "type": "physical",
+        "effect": "paralyzed",
+        "effect_chance": 0.3,
+        "effect_duration": 5
+      },
+      {
+        "name": "world-venom bite",
+        "damage": "1d8",
+        "type": "poison",
+        "effect": "poisoned",
+        "effect_chance": 0.55,
+        "effect_duration": 10
+      }
+    ],
+    "resistances": ["poison", "cold"],
+    "weaknesses": ["lightning"],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": "world_serpent_scale",
+    "treasure": {"gold": [25, 75], "item_chance": 0.3, "item_tier": 3},
+    "lore": "Jörmungandr, the Midgard Serpent, encircles the entire world biting its own tail. It is Thor's destined nemesis — at Ragnarök they will slay each other. Its spawn are fragments of its vast coiled body, imbued with the world-poison that will kill even the god of thunder. They are encountered near underground rivers."
+  },
+  "draugr": {
+    "name": "Draugr",
+    "symbol": "Z",
+    "color": [100, 160, 100],
+    "hp": "2d8+2",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 3,
+    "max_level": 8,
+    "thac0": 16,
+    "frequency": 7,
+    "attacks": [
+      {
+        "name": "rotting claw",
+        "damage": "1d8",
+        "type": "physical"
+      },
+      {
+        "name": "curse touch",
+        "damage": "1d4",
+        "type": "shadow",
+        "effect": "slowed",
+        "effect_chance": 0.3,
+        "effect_duration": 6
+      }
+    ],
+    "resistances": ["cold", "shadow", "poison"],
+    "weaknesses": ["fire", "holy"],
+    "harvest_tier": 2,
+    "harvest_threshold": 2,
+    "ingredient_id": "grave_dust",
+    "treasure": {"gold": [8, 25], "item_chance": 0.2, "item_tier": 2},
+    "lore": "Draugr are the restless Norse undead who rise from burial mounds to protect their grave-goods. They can increase in size, pass through walls, and smell blood from great distances. Unlike simple zombies, draugr retain intelligence and malice, sometimes even the memories of their living selves — making them cunning opponents."
+  },
+  "einherjar_ghost": {
+    "name": "Einherjar Ghost",
+    "symbol": "G",
+    "color": [200, 200, 160],
+    "hp": "3d10+4",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 8,
+    "max_level": 13,
+    "thac0": 8,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "phantom blade",
+        "damage": "2d8",
+        "type": "shadow"
+      },
+      {
+        "name": "battle shout",
+        "damage": "1d6",
+        "type": "magic",
+        "effect": "confused",
+        "effect_chance": 0.35,
+        "effect_duration": 5
+      }
+    ],
+    "resistances": ["physical", "cold", "shadow"],
+    "weaknesses": ["holy"],
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": null,
+    "treasure": {"gold": [35, 100], "item_chance": 0.4, "item_tier": 3},
+    "lore": "The Einherjar are Odin's honored dead, warriors chosen from the battlefield to feast and train in Valhalla until Ragnarök. When an Einherjar ghost appears in the dungeon, it is one whose Valhalla was somehow denied — a warrior who died without witnesses, or whose funeral rites were incomplete. They fight with the skill of lifetimes but the despair of the twice-lost."
+  },
+  "nidhogg_brood": {
+    "name": "Níðhöggr Brood",
+    "symbol": "D",
+    "color": [80, 20, 80],
+    "hp": "3d10+5",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 9,
+    "max_level": 14,
+    "thac0": 7,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "corpse gnaw",
+        "damage": "2d8",
+        "type": "poison"
+      },
+      {
+        "name": "shadow spit",
+        "damage": "2d6",
+        "type": "shadow",
+        "effect": "poisoned",
+        "effect_chance": 0.5,
+        "effect_duration": 8
+      }
+    ],
+    "resistances": ["poison", "shadow"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 4,
+    "harvest_threshold": 4,
+    "ingredient_id": "corruption_scale",
+    "treasure": {"gold": [45, 120], "item_chance": 0.4, "item_tier": 4},
+    "lore": "Níðhöggr is the great corpse-gnawing dragon who dwells at the root of Yggdrasil, gnawing the World Tree from below. Its brood are smaller wyrms that carry their parent's essence, infected with the same cosmic rot. They are found in the deepest passages, continuing their parent's slow work of destroying the foundations of the world."
+  },
+  "hugin_raven": {
+    "name": "Huginn Raven",
+    "symbol": "B",
+    "color": [20, 20, 30],
+    "hp": "1d6+1",
+    "speed": 3,
+    "ai_pattern": "cowardly",
+    "min_level": 2,
+    "max_level": 6,
+    "thac0": 18,
+    "frequency": 6,
+    "attacks": [
+      {
+        "name": "peck",
+        "damage": "1d4",
+        "type": "physical",
+        "effect": "blinded",
+        "effect_chance": 0.3,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": [],
+    "weaknesses": ["lightning"],
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": "raven_feather",
+    "treasure": {"gold": [3, 12], "item_chance": 0.15, "item_tier": 1},
+    "lore": "Huginn (Thought) and Muninn (Memory) are Odin's two ravens who fly across the world each day and report what they have seen. Dungeon ravens descended from this line carry a fragment of divine observation — they will flee rather than fight directly, but their pecking attacks aim unerringly for the eyes."
+  },
+  "lindworm": {
+    "name": "Lindworm",
+    "symbol": "W",
+    "color": [100, 140, 60],
+    "hp": "4d10+8",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 8,
+    "max_level": 13,
+    "thac0": 7,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "serpent bite",
+        "damage": "2d8",
+        "type": "poison",
+        "effect": "poisoned",
+        "effect_chance": 0.5,
+        "effect_duration": 8
+      },
+      {
+        "name": "tail sweep",
+        "damage": "2d6",
+        "type": "physical",
+        "effect": "slowed",
+        "effect_chance": 0.35,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": ["poison", "cold"],
+    "weaknesses": ["fire"],
+    "harvest_tier": 4,
+    "harvest_threshold": 4,
+    "ingredient_id": "lindworm_skin",
+    "treasure": {"gold": [40, 110], "item_chance": 0.4, "item_tier": 3},
+    "lore": "The Lindworm is a wingless Norse dragon-serpent, vast and venomous. In legend, a prince was cursed to lindworm form and only freed when a bride willingly shed seven skins to match his own. Dungeon lindworms have no such curse to break — they lurk in flooded tunnels and strike with terrifying speed for their size."
+  },
+  "berserker_spirit": {
+    "name": "Berserker Spirit",
+    "symbol": "G",
+    "color": [220, 80, 40],
+    "hp": "3d10+6",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 7,
+    "max_level": 12,
+    "thac0": 9,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "frenzy blow",
+        "damage": "3d8",
+        "type": "physical"
+      },
+      {
+        "name": "battle rage",
+        "damage": "2d6",
+        "type": "physical",
+        "effect": "confused",
+        "effect_chance": 0.3,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": ["physical"],
+    "weaknesses": ["cold", "magic"],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": null,
+    "treasure": {"gold": [30, 90], "item_chance": 0.35, "item_tier": 3},
+    "lore": "Norse berserkers were warriors who entered a battle trance, fighting with the ferocity of wolves or bears, immune to pain and fear. The berserker spirit is the rage itself — a spectral warrior who never stopped fighting, long after the body died. They attack in a perpetual frenzy and their raw violence can unsettle even seasoned fighters."
+  },
+  "dark_elf": {
+    "name": "Dark Elf (Dökkálfar)",
+    "symbol": "H",
+    "color": [80, 40, 120],
+    "hp": "3d8+3",
+    "speed": 2,
+    "ai_pattern": "cowardly",
+    "min_level": 6,
+    "max_level": 11,
+    "thac0": 11,
+    "frequency": 4,
+    "attacks": [
+      {
+        "name": "shadow bolt",
+        "damage": "2d6",
+        "type": "shadow"
+      },
+      {
+        "name": "cursed blade",
+        "damage": "1d8",
+        "type": "physical",
+        "effect": "poisoned",
+        "effect_chance": 0.4,
+        "effect_duration": 7
+      }
+    ],
+    "resistances": ["shadow", "magic"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": "dark_elf_dust",
+    "treasure": {"gold": [25, 70], "item_chance": 0.35, "item_tier": 3},
+    "lore": "The Dökkálfar, or Dark Elves, dwell in Svartalfheim beneath the earth and are associated with illness and nightmares. Unlike the Light Elves who dwell in Álfheimr close to the gods, Dark Elves are twisted by proximity to Niflheim. They are cunning crafters of cursed objects and prefer ambush and withdrawal to direct confrontation."
+  },
+  "light_elf_hostile": {
+    "name": "Corrupted Light Elf",
+    "symbol": "H",
+    "color": [200, 240, 160],
+    "hp": "2d10+3",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 7,
+    "max_level": 12,
+    "thac0": 10,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "light lance",
+        "damage": "2d8",
+        "type": "holy"
+      },
+      {
+        "name": "radiant burn",
+        "damage": "2d6",
+        "type": "fire",
+        "effect": "blinded",
+        "effect_chance": 0.4,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": ["holy", "magic"],
+    "weaknesses": ["shadow"],
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "corrupted_elf_dust",
+    "treasure": {"gold": [30, 85], "item_chance": 0.4, "item_tier": 3},
+    "lore": "Light Elves normally dwell in the radiant realm of Álfheimr, fairer than the sun. These have been corrupted — perhaps by Loki's influence or by contact with the dungeon's dark energies — and their once-benevolent light has curdled into a burning, indiscriminate radiance that sears all it touches."
+  },
+  "sea_serpent_norse": {
+    "name": "Norse Sea Serpent",
+    "symbol": "S",
+    "color": [30, 120, 160],
+    "hp": "4d12+8",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 10,
+    "max_level": null,
+    "thac0": 5,
+    "frequency": 1,
+    "attacks": [
+      {
+        "name": "coil crush",
+        "damage": "3d8",
+        "type": "cold",
+        "effect": "paralyzed",
+        "effect_chance": 0.35,
+        "effect_duration": 5
+      },
+      {
+        "name": "frost bite",
+        "damage": "2d10",
+        "type": "cold",
+        "effect": "frozen",
+        "effect_chance": 0.4,
+        "effect_duration": 5
+      }
+    ],
+    "resistances": ["cold", "physical"],
+    "weaknesses": ["fire", "lightning"],
+    "harvest_tier": 5,
+    "harvest_threshold": 5,
+    "ingredient_id": "sea_serpent_oil",
+    "treasure": {"gold": [70, 180], "item_chance": 0.65, "item_tier": 4},
+    "lore": "Norse seas are home to immense serpentine creatures second only to Jörmungandr itself. Viking mariners recorded encounters with creatures long enough to encircle entire longships. These dungeon variants have followed underground rivers to their sources, coiling in flooded chambers, their scales bright with cold saltwater light."
+  },
+  "mummy": {
+    "name": "Mummy",
+    "symbol": "Z",
+    "color": [200, 180, 130],
+    "hp": "3d8+4",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 4,
+    "max_level": 9,
+    "thac0": 14,
+    "frequency": 6,
+    "attacks": [
+      {
+        "name": "mummy rot",
+        "damage": "1d8",
+        "type": "shadow",
+        "effect": "poisoned",
+        "effect_chance": 0.55,
+        "effect_duration": 12
+      },
+      {
+        "name": "bandage slam",
+        "damage": "2d6",
+        "type": "physical"
+      }
+    ],
+    "resistances": ["physical", "poison", "shadow"],
+    "weaknesses": ["fire"],
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "canopic_dust",
+    "treasure": {"gold": [15, 45], "item_chance": 0.3, "item_tier": 2},
+    "lore": "Egyptian mummies are the preserved bodies of the noble dead, carefully wrapped and equipped with spells to survive the journey through the Duat. When the burial rites are violated or the tomb disturbed, the body may rise to protect its resting place. Mummy rot is the most feared of dungeon diseases — its festering spiritual corruption resists all but magical cures."
+  },
+  "anubis_guardian": {
+    "name": "Anubis Guardian",
+    "symbol": "H",
+    "color": [40, 30, 80],
+    "hp": "4d10+6",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 8,
+    "max_level": null,
+    "thac0": 7,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "jackal bite",
+        "damage": "2d8",
+        "type": "shadow"
+      },
+      {
+        "name": "death judgment",
+        "damage": "3d6",
+        "type": "holy",
+        "effect": "paralyzed",
+        "effect_chance": 0.4,
+        "effect_duration": 7
+      }
+    ],
+    "resistances": ["shadow", "holy", "poison"],
+    "weaknesses": [],
+    "harvest_tier": 4,
+    "harvest_threshold": 4,
+    "ingredient_id": "embalming_resin",
+    "treasure": {"gold": [45, 130], "item_chance": 0.5, "item_tier": 4},
+    "lore": "Anubis is the jackal-headed god of embalming and guardian of the dead who weighs the heart against the feather of Ma'at. His guardians are divine soldiers who protect sacred burial sites from desecration. They carry crooks and flails — the symbols of judgment — and can pass judgment on a living soul, temporarily stopping the heart."
+  },
+  "ra_serpent": {
+    "name": "Ra's Serpent",
+    "symbol": "S",
+    "color": [255, 200, 30],
+    "hp": "3d8+5",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 6,
+    "max_level": 11,
+    "thac0": 12,
+    "frequency": 4,
+    "attacks": [
+      {
+        "name": "solar bite",
+        "damage": "2d6",
+        "type": "fire"
+      },
+      {
+        "name": "radiant venom",
+        "damage": "1d8",
+        "type": "poison",
+        "effect": "blinded",
+        "effect_chance": 0.35,
+        "effect_duration": 5
+      }
+    ],
+    "resistances": ["fire", "holy"],
+    "weaknesses": ["cold", "shadow"],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": "solar_venom",
+    "treasure": {"gold": [25, 70], "item_chance": 0.3, "item_tier": 3},
+    "lore": "During the nightly solar barque journey, Ra faces Apep — the chaos serpent — in the underworld. Ra's own sacred serpents serve as guardians and weapons against Apep's minions. These golden serpents carry a fragment of solar fire in their venom and are blinding to behold when they strike."
+  },
+  "scarab_swarm": {
+    "name": "Scarab Swarm",
+    "symbol": "i",
+    "color": [60, 140, 80],
+    "hp": "2d6",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 2,
+    "max_level": 7,
+    "thac0": 17,
+    "frequency": 8,
+    "attacks": [
+      {
+        "name": "devour",
+        "damage": "1d6",
+        "type": "physical",
+        "effect": "poisoned",
+        "effect_chance": 0.25,
+        "effect_duration": 5
+      }
+    ],
+    "resistances": ["physical"],
+    "weaknesses": ["fire", "cold"],
+    "harvest_tier": 2,
+    "harvest_threshold": 2,
+    "ingredient_id": "scarab_shell",
+    "treasure": {"gold": [5, 18], "item_chance": 0.15, "item_tier": 1},
+    "lore": "The scarab beetle was sacred to Khepri, the dawn aspect of Ra, symbolizing rebirth and transformation. Corrupted scarab swarms have been twisted by tomb magic into ravenous hordes that strip flesh from bone. Individual beetles are trivial; thousands working together are terrifying. They pour through cracks in dungeon walls."
+  },
+  "sphinx_guardian": {
+    "name": "Egyptian Sphinx",
+    "symbol": "S",
+    "color": [240, 200, 80],
+    "hp": "5d10+10",
+    "speed": 1,
+    "ai_pattern": "sessile",
+    "min_level": 9,
+    "max_level": null,
+    "thac0": 5,
+    "frequency": 1,
+    "attacks": [
+      {
+        "name": "paw crush",
+        "damage": "3d8",
+        "type": "physical"
+      },
+      {
+        "name": "solar roar",
+        "damage": "3d6",
+        "type": "fire",
+        "effect": "blinded",
+        "effect_chance": 0.5,
+        "effect_duration": 6
+      }
+    ],
+    "resistances": ["fire", "holy", "magic"],
+    "weaknesses": ["shadow"],
+    "harvest_tier": 5,
+    "harvest_threshold": 5,
+    "ingredient_id": "sphinx_dust_gold",
+    "treasure": {"gold": [75, 200], "item_chance": 0.8, "item_tier": 5},
+    "lore": "The Great Sphinx of Giza guards the plateau of Giza and, by extension, the Pharaoh's eternal rest. Egyptian sphinxes differ from their Greek cousins — they are pure guardians, manifestations of royal power and divine protection, without the Greek variant's penchant for fatal riddles. They will not parley. They destroy all who approach unbidden."
+  },
+  "ammit_spawn": {
+    "name": "Ammit Spawn",
+    "symbol": "A",
+    "color": [160, 80, 40],
+    "hp": "4d10+8",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 10,
+    "max_level": null,
+    "thac0": 6,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "devour soul",
+        "damage": "3d8",
+        "type": "drain"
+      },
+      {
+        "name": "crocodile snap",
+        "damage": "2d10",
+        "type": "physical",
+        "effect": "poisoned",
+        "effect_chance": 0.35,
+        "effect_duration": 8
+      }
+    ],
+    "resistances": ["shadow", "poison", "drain"],
+    "weaknesses": ["holy"],
+    "harvest_tier": 5,
+    "harvest_threshold": 5,
+    "ingredient_id": null,
+    "treasure": {"gold": [60, 160], "item_chance": 0.6, "item_tier": 4},
+    "lore": "Ammit is the 'Devourer of the Dead,' a composite beast with the head of a crocodile, the forequarters of a lion, and the hindquarters of a hippopotamus. She waits beside the scales of Ma'at to consume hearts found unworthy — those she devours face the second death, true annihilation. Her spawn hunger for the living soul specifically."
+  },
+  "sobek_warrior": {
+    "name": "Sobek Warrior",
+    "symbol": "L",
+    "color": [60, 180, 80],
+    "hp": "3d10+5",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 7,
+    "max_level": 12,
+    "thac0": 10,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "khopesh slash",
+        "damage": "2d8",
+        "type": "physical"
+      },
+      {
+        "name": "death roll",
+        "damage": "3d6",
+        "type": "physical",
+        "effect": "paralyzed",
+        "effect_chance": 0.4,
+        "effect_duration": 5
+      }
+    ],
+    "resistances": ["physical", "poison"],
+    "weaknesses": ["lightning", "cold"],
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "crocodile_hide",
+    "treasure": {"gold": [30, 90], "item_chance": 0.35, "item_tier": 3},
+    "lore": "Sobek, the crocodile god of the Nile, represents military prowess, fertility, and pharaonic power. His warriors are crocodile-headed humanoids armed with the curved khopesh sword, elite soldiers of his divine temple guard. They are notorious for the 'death roll' — dragging enemies to the ground and spinning until they stop resisting."
+  },
+  "ba_spirit": {
+    "name": "Ba Spirit",
+    "symbol": "G",
+    "color": [200, 160, 80],
+    "hp": "2d8+2",
+    "speed": 2,
+    "ai_pattern": "cowardly",
+    "min_level": 5,
+    "max_level": 10,
+    "thac0": 13,
+    "frequency": 4,
+    "attacks": [
+      {
+        "name": "life leech",
+        "damage": "1d8",
+        "type": "drain"
+      },
+      {
+        "name": "wail",
+        "damage": "1d6",
+        "type": "magic",
+        "effect": "confused",
+        "effect_chance": 0.4,
+        "effect_duration": 5
+      }
+    ],
+    "resistances": ["shadow", "physical"],
+    "weaknesses": ["holy"],
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": null,
+    "treasure": {"gold": [20, 60], "item_chance": 0.25, "item_tier": 2},
+    "lore": "The Ba is one of the Egyptian soul's components — the personality aspect, often depicted as a human-headed bird. When a burial is improper or the deceased's name is erased, the Ba cannot complete its journey and wanders, confused and hungry. In the dungeon, lost Ba spirits feed on the life force of the living."
+  },
+  "khepri_beetle": {
+    "name": "Khepri Beetle",
+    "symbol": "I",
+    "color": [80, 200, 120],
+    "hp": "2d8+3",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 4,
+    "max_level": 8,
+    "thac0": 15,
+    "frequency": 5,
+    "attacks": [
+      {
+        "name": "mandible crush",
+        "damage": "1d10",
+        "type": "physical"
+      },
+      {
+        "name": "solar burst",
+        "damage": "1d8",
+        "type": "fire",
+        "effect": "blinded",
+        "effect_chance": 0.3,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": ["fire"],
+    "weaknesses": ["cold", "shadow"],
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "khepri_carapace",
+    "treasure": {"gold": [15, 40], "item_chance": 0.2, "item_tier": 2},
+    "lore": "Khepri is the scarab-headed god who rolls the sun across the sky each morning, a symbol of rebirth and transformation. His sacred beetles have grown to the size of large dogs in the dungeon's magical energies. They carry a solar charge in their carapaces that can release a blinding burst when threatened."
+  },
+  "thoth_construct": {
+    "name": "Thoth Construct",
+    "symbol": "H",
+    "color": [120, 160, 220],
+    "hp": "4d10+8",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 9,
+    "max_level": 14,
+    "thac0": 6,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "scribal blade",
+        "damage": "2d8",
+        "type": "magic"
+      },
+      {
+        "name": "truth gaze",
+        "damage": "2d6",
+        "type": "magic",
+        "effect": "paralyzed",
+        "effect_chance": 0.45,
+        "effect_duration": 6
+      }
+    ],
+    "resistances": ["magic", "lightning"],
+    "weaknesses": ["shadow"],
+    "harvest_tier": 4,
+    "harvest_threshold": 4,
+    "ingredient_id": "thoth_ink",
+    "treasure": {"gold": [50, 140], "item_chance": 0.5, "item_tier": 4},
+    "lore": "Thoth, the ibis-headed god of knowledge, writing, and magic, created the divine scripts that govern reality. His constructs are animated guardians built of living hieroglyphics — each symbol on their body an active spell. They enforce the laws of Ma'at and attack those who carry forbidden knowledge or stolen divine artifacts."
+  },
+  "duat_shade": {
+    "name": "Duat Shade",
+    "symbol": "Z",
+    "color": [80, 60, 100],
+    "hp": "3d8+3",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 6,
+    "max_level": 11,
+    "thac0": 11,
+    "frequency": 4,
+    "attacks": [
+      {
+        "name": "shadow touch",
+        "damage": "2d6",
+        "type": "shadow",
+        "effect": "slowed",
+        "effect_chance": 0.4,
+        "effect_duration": 6
+      }
+    ],
+    "resistances": ["shadow", "cold"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": null,
+    "treasure": {"gold": [22, 65], "item_chance": 0.25, "item_tier": 3},
+    "lore": "The Duat is the Egyptian underworld through which the solar barque of Ra passes each night. Its shades are the fragments of souls that did not survive the weighing of the heart — not devoured by Ammit, but simply dissolved in the dark waters, too thin to be collected. They drift through the dungeon like smoke, hungry for the substance of the living."
+  },
+  "desert_wraith": {
+    "name": "Desert Wraith",
+    "symbol": "G",
+    "color": [220, 200, 140],
+    "hp": "3d10+4",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 7,
+    "max_level": 13,
+    "thac0": 10,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "desert wind",
+        "damage": "2d6",
+        "type": "physical"
+      },
+      {
+        "name": "dehydration",
+        "damage": "2d8",
+        "type": "magic",
+        "effect": "slowed",
+        "effect_chance": 0.5,
+        "effect_duration": 8
+      }
+    ],
+    "resistances": ["fire", "physical", "poison"],
+    "weaknesses": ["cold", "lightning"],
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "desert_sand_essence",
+    "treasure": {"gold": [28, 80], "item_chance": 0.3, "item_tier": 3},
+    "lore": "The Egyptian desert, the Red Land, was the domain of Set — a place of chaos, death, and transformation. Desert wraiths are the spirits of those who died lost in the wastes without burial: their bodies mummified by heat and wind, their souls unable to reach the Duat. They hunger to draw water from the living, desiccating their victims."
+  },
+  "banshee": {
+    "name": "Banshee",
+    "symbol": "G",
+    "color": [200, 220, 255],
+    "hp": "3d10+5",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 8,
+    "max_level": null,
+    "thac0": 7,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "death wail",
+        "damage": "3d8",
+        "type": "magic",
+        "effect": "paralyzed",
+        "effect_chance": 0.5,
+        "effect_duration": 8
+      },
+      {
+        "name": "spirit claw",
+        "damage": "2d6",
+        "type": "shadow"
+      }
+    ],
+    "resistances": ["physical", "shadow", "cold"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 4,
+    "harvest_threshold": 4,
+    "ingredient_id": null,
+    "treasure": {"gold": [40, 110], "item_chance": 0.45, "item_tier": 4},
+    "lore": "The Banshee (Bean Sídhe) is a fairy woman from Irish mythology whose wail presages the death of a family member. She appears as an old woman or a beautiful young woman with long pale hair, weeping and keening. In the dungeon, her wail is not a prophecy but a weapon — the sound alone can stop a mortal heart."
+  },
+  "fomorian": {
+    "name": "Fomorian",
+    "symbol": "G",
+    "color": [80, 100, 60],
+    "hp": "4d12+10",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 9,
+    "max_level": 14,
+    "thac0": 6,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "chaos smash",
+        "damage": "3d10",
+        "type": "physical"
+      },
+      {
+        "name": "evil eye",
+        "damage": "2d8",
+        "type": "magic",
+        "effect": "blinded",
+        "effect_chance": 0.55,
+        "effect_duration": 6
+      }
+    ],
+    "resistances": ["physical", "magic"],
+    "weaknesses": ["holy", "lightning"],
+    "harvest_tier": 4,
+    "harvest_threshold": 4,
+    "ingredient_id": "fomorian_bone",
+    "treasure": {"gold": [50, 140], "item_chance": 0.45, "item_tier": 4},
+    "lore": "The Fomorians are primordial beings from Irish mythology, representing the forces of chaos, darkness, and winter. They warred against the Tuatha Dé Danann in a series of cosmic battles. Fomorians often have single limbs or eyes placed centrally on the forehead — the evil eye of Balor could kill an army with a glance."
+  },
+  "changeling": {
+    "name": "Changeling",
+    "symbol": "H",
+    "color": [160, 180, 140],
+    "hp": "2d8+2",
+    "speed": 1,
+    "ai_pattern": "cowardly",
+    "min_level": 3,
+    "max_level": 8,
+    "thac0": 16,
+    "frequency": 5,
+    "attacks": [
+      {
+        "name": "illusion strike",
+        "damage": "1d8",
+        "type": "magic",
+        "effect": "confused",
+        "effect_chance": 0.45,
+        "effect_duration": 6
+      },
+      {
+        "name": "glamour bite",
+        "damage": "1d6",
+        "type": "shadow"
+      }
+    ],
+    "resistances": ["magic", "shadow"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "changeling_glamour",
+    "treasure": {"gold": [10, 35], "item_chance": 0.25, "item_tier": 2},
+    "lore": "Changelings are fairy children left in place of stolen human infants, or fairy glamours shaped to mimic humans. They are always slightly wrong — too cold, too light, with eyes that reflect what should not be there. In the dungeon they appear as other monsters or adventurers until attacked, then reveal their true shifting, half-formed nature."
+  },
+  "each_uisce": {
+    "name": "Each Uisce",
+    "symbol": "K",
+    "color": [40, 120, 160],
+    "hp": "4d10+8",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 8,
+    "max_level": 13,
+    "thac0": 8,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "trample",
+        "damage": "2d8",
+        "type": "physical"
+      },
+      {
+        "name": "drown drag",
+        "damage": "3d6",
+        "type": "cold",
+        "effect": "paralyzed",
+        "effect_chance": 0.4,
+        "effect_duration": 6
+      }
+    ],
+    "resistances": ["cold", "physical"],
+    "weaknesses": ["fire", "lightning"],
+    "harvest_tier": 4,
+    "harvest_threshold": 4,
+    "ingredient_id": "each_uisce_mane",
+    "treasure": {"gold": [40, 110], "item_chance": 0.4, "item_tier": 3},
+    "lore": "The Each Uisce, or Water Horse, is a supernatural sea-horse from Scottish and Irish folklore. More dangerous than the kelpie, it lurks in sea-lochs and deep coastal waters. Anyone who mounts it is carried beneath the waves and drowned, the rider's body often found minus the liver. In flooded dungeon passages, it appears as an unusually beautiful horse."
+  },
+  "cath_palug": {
+    "name": "Cath Palug",
+    "symbol": "C",
+    "color": [120, 80, 160],
+    "hp": "4d10+6",
+    "speed": 3,
+    "ai_pattern": "aggressive",
+    "min_level": 9,
+    "max_level": 14,
+    "thac0": 6,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "arcane claw",
+        "damage": "2d10",
+        "type": "magic"
+      },
+      {
+        "name": "fey bite",
+        "damage": "2d8",
+        "type": "shadow",
+        "effect": "poisoned",
+        "effect_chance": 0.35,
+        "effect_duration": 7
+      }
+    ],
+    "resistances": ["magic", "shadow"],
+    "weaknesses": ["holy"],
+    "harvest_tier": 4,
+    "harvest_threshold": 4,
+    "ingredient_id": "cath_palug_claw",
+    "treasure": {"gold": [50, 130], "item_chance": 0.45, "item_tier": 4},
+    "lore": "Cath Palug, the Clawing Cat, is a monstrous cat from Welsh and Arthurian mythology that devastated Anglesey before being fought by Kay himself. Some traditions say it was a divine cat, others that it was a monster nurtured by the children of Palug. In any form it is terrifyingly swift and its magical claws can rend spiritual armor."
+  },
+  "fionn_hound": {
+    "name": "Fionn's Hound",
+    "symbol": "C",
+    "color": [240, 220, 180],
+    "hp": "3d8+4",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 6,
+    "max_level": 11,
+    "thac0": 11,
+    "frequency": 4,
+    "attacks": [
+      {
+        "name": "hero's bite",
+        "damage": "2d6",
+        "type": "physical"
+      },
+      {
+        "name": "tracking howl",
+        "damage": "1d6",
+        "type": "magic",
+        "effect": "confused",
+        "effect_chance": 0.3,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": ["physical"],
+    "weaknesses": ["shadow"],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": "hero_hound_pelt",
+    "treasure": {"gold": [25, 70], "item_chance": 0.3, "item_tier": 3},
+    "lore": "Finn mac Cumhaill kept the two greatest hounds in Ireland — Bran and Sceolán, who were actually his nephews transformed by magic. Fionn's hounds are supernatural hunting dogs bred from this same divine lineage. Loyal to their master to the death, they have been turned against intruders in the dungeon and pursue relentlessly once they have a scent."
+  },
+  "puca": {
+    "name": "Púca",
+    "symbol": "K",
+    "color": [60, 40, 80],
+    "hp": "2d8+3",
+    "speed": 3,
+    "ai_pattern": "cowardly",
+    "min_level": 4,
+    "max_level": 9,
+    "thac0": 15,
+    "frequency": 5,
+    "attacks": [
+      {
+        "name": "glamour kick",
+        "damage": "1d10",
+        "type": "magic",
+        "effect": "confused",
+        "effect_chance": 0.5,
+        "effect_duration": 7
+      }
+    ],
+    "resistances": ["magic"],
+    "weaknesses": ["holy"],
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "puca_hair",
+    "treasure": {"gold": [12, 40], "item_chance": 0.25, "item_tier": 2},
+    "lore": "The Púca is a shape-shifting Irish fairy that most often takes the form of a dark horse with glowing eyes, a goat, a rabbit, or a goblin. It leads travelers astray, sometimes offering rides that end dangerously. In the dungeon, a Púca serves as both obstacle and trickster — it may flee only to lead pursuers into worse danger."
+  },
+  "dullahan_spawn": {
+    "name": "Dullahan Spawn",
+    "symbol": "H",
+    "color": [40, 40, 40],
+    "hp": "4d10+7",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 10,
+    "max_level": null,
+    "thac0": 5,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "death name call",
+        "damage": "3d8",
+        "type": "shadow",
+        "effect": "paralyzed",
+        "effect_chance": 0.5,
+        "effect_duration": 8
+      },
+      {
+        "name": "spine whip",
+        "damage": "2d8",
+        "type": "physical",
+        "effect": "blinded",
+        "effect_chance": 0.4,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": ["shadow", "physical", "cold"],
+    "weaknesses": ["holy", "lightning"],
+    "harvest_tier": 4,
+    "harvest_threshold": 5,
+    "ingredient_id": null,
+    "treasure": {"gold": [60, 160], "item_chance": 0.6, "item_tier": 4},
+    "lore": "The Dullahan is the Irish headless horseman who rides a black horse and carries his head under his arm, using a spine as a whip. When he calls your name, you die. A Dullahan Spawn is one who has not yet found the name they seek — they wander dungeons looking for the soul that matches the name already on their lips."
+  },
+  "sluagh": {
+    "name": "Sluagh",
+    "symbol": "G",
+    "color": [60, 50, 80],
+    "hp": "3d10+4",
+    "speed": 3,
+    "ai_pattern": "aggressive",
+    "min_level": 7,
+    "max_level": 12,
+    "thac0": 9,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "soul rend",
+        "damage": "2d8",
+        "type": "drain"
+      },
+      {
+        "name": "swarming descent",
+        "damage": "2d6",
+        "type": "shadow",
+        "effect": "slowed",
+        "effect_chance": 0.4,
+        "effect_duration": 5
+      }
+    ],
+    "resistances": ["shadow", "physical", "cold"],
+    "weaknesses": ["holy", "fire"],
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": null,
+    "treasure": {"gold": [30, 90], "item_chance": 0.35, "item_tier": 3},
+    "lore": "The Sluagh are the unforgiven dead in Irish mythology — souls so wicked that neither heaven nor earth would accept them, condemned to fly in dark swarms from the west. They are the most dangerous of the fairy hosts, seeking to carry off the souls of the dying from western windows. In the dungeon they descend in a cloud, tearing at any life they can reach."
+  },
+  "pazuzu_spawn": {
+    "name": "Pazuzu Spawn",
+    "symbol": "&",
+    "color": [120, 60, 20],
+    "hp": "3d8+4",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 7,
+    "max_level": 12,
+    "thac0": 10,
+    "frequency": 4,
+    "attacks": [
+      {
+        "name": "wind slash",
+        "damage": "2d6",
+        "type": "physical"
+      },
+      {
+        "name": "disease breath",
+        "damage": "1d8",
+        "type": "poison",
+        "effect": "poisoned",
+        "effect_chance": 0.55,
+        "effect_duration": 10
+      }
+    ],
+    "resistances": ["poison", "physical"],
+    "weaknesses": ["holy", "cold"],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": "demon_ichor",
+    "treasure": {"gold": [30, 90], "item_chance": 0.35, "item_tier": 3},
+    "lore": "Pazuzu is the Assyrian king of wind demons, lord of the southwest wind that brought drought and locusts. He is paradoxically used as a protective demon against other evil spirits, particularly Lamashtu who threatened pregnant women. His spawn carry his four wings, scorpion tail, and the feverish disease winds of the desert storm."
+  },
+  "lahamu": {
+    "name": "Lahamu",
+    "symbol": "X",
+    "color": [140, 100, 160],
+    "hp": "4d10+8",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 9,
+    "max_level": 14,
+    "thac0": 6,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "primordial crush",
+        "damage": "3d8",
+        "type": "physical"
+      },
+      {
+        "name": "chaos surge",
+        "damage": "2d8",
+        "type": "magic",
+        "effect": "confused",
+        "effect_chance": 0.45,
+        "effect_duration": 7
+      }
+    ],
+    "resistances": ["physical", "magic", "cold"],
+    "weaknesses": ["lightning", "holy"],
+    "harvest_tier": 4,
+    "harvest_threshold": 4,
+    "ingredient_id": "primordial_clay",
+    "treasure": {"gold": [50, 130], "item_chance": 0.45, "item_tier": 4},
+    "lore": "Lahamu is one of the primordial beings of Babylonian mythology, born from the mingling of Apsu (fresh water) and Tiamat (salt water) before the world was fully formed. She and her consort Lahmu are among the eldest of deities. In the dungeon she manifests as a vast, undefined shape that seems to shift between snake and lion-headed woman."
+  },
+  "anzu_bird": {
+    "name": "Anzu Bird",
+    "symbol": "A",
+    "color": [200, 160, 40],
+    "hp": "4d12+10",
+    "speed": 2,
+    "ai_pattern": "aggressive",
+    "min_level": 10,
+    "max_level": null,
+    "thac0": 4,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "storm talons",
+        "damage": "3d8",
+        "type": "lightning"
+      },
+      {
+        "name": "divine breath",
+        "damage": "3d6",
+        "type": "lightning",
+        "effect": "paralyzed",
+        "effect_chance": 0.4,
+        "effect_duration": 6
+      }
+    ],
+    "resistances": ["lightning", "fire"],
+    "weaknesses": ["cold", "shadow"],
+    "harvest_tier": 5,
+    "harvest_threshold": 5,
+    "ingredient_id": "anzu_feather",
+    "treasure": {"gold": [70, 180], "item_chance": 0.7, "item_tier": 5},
+    "lore": "Anzu (also called Zu) is the great Sumerian lion-headed eagle who stole the Tablet of Destinies from the god Enlil, gaining control over fate itself. He was slain by Ninurta in a thunderstorm battle. The Anzu Bird in the dungeon breathes lightning as Ninurta threw thunderbolts — and carries the residual power of the stolen Tablet."
+  },
+  "ugallu_demon": {
+    "name": "Ugallu Demon",
+    "symbol": "&",
+    "color": [160, 80, 60],
+    "hp": "3d10+6",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 8,
+    "max_level": 13,
+    "thac0": 8,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "demon strike",
+        "damage": "2d8",
+        "type": "shadow"
+      },
+      {
+        "name": "lion roar",
+        "damage": "1d10",
+        "type": "magic",
+        "effect": "confused",
+        "effect_chance": 0.4,
+        "effect_duration": 5
+      }
+    ],
+    "resistances": ["shadow", "poison"],
+    "weaknesses": ["holy", "lightning"],
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "ugallu_claw",
+    "treasure": {"gold": [35, 100], "item_chance": 0.4, "item_tier": 3},
+    "lore": "The Ugallu, or 'Great Weather Beast,' is a Mesopotamian demon with the head of a lion, the body of a man, and the feet of a bird. They are the servants of Tiamat, waging cosmic war against the Anunnaki. Their lion heads can emit a roar that disrupts spellcasting and their claws carry the chaos of the primordial waters."
+  },
+  "kusarikku": {
+    "name": "Kusarikku",
+    "symbol": "T",
+    "color": [140, 100, 60],
+    "hp": "4d10+8",
+    "speed": 1,
+    "ai_pattern": "aggressive",
+    "min_level": 8,
+    "max_level": 13,
+    "thac0": 7,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "bull gore",
+        "damage": "3d8",
+        "type": "physical"
+      },
+      {
+        "name": "chaos stomp",
+        "damage": "2d8",
+        "type": "physical",
+        "effect": "slowed",
+        "effect_chance": 0.4,
+        "effect_duration": 5
+      }
+    ],
+    "resistances": ["physical"],
+    "weaknesses": ["magic", "lightning"],
+    "harvest_tier": 4,
+    "harvest_threshold": 4,
+    "ingredient_id": "kusarikku_horn",
+    "treasure": {"gold": [40, 110], "item_chance": 0.4, "item_tier": 3},
+    "lore": "The Kusarikku, or Bull-Man, is a Mesopotamian creature with the upper body of a man and the lower body of a bull. These hybrid beings served as divine guardians and were placed at temple gates to ward off evil. Some traditions place them as servants of Tiamat created for her cosmic war. Their horns carry the force of divine law."
+  }
+}

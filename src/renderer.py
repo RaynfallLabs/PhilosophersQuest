@@ -1,12 +1,13 @@
 import os
 import pygame
 from dungeon import WALL, FLOOR, STAIRS_UP, STAIRS_DOWN, DOOR, SECRET_DOOR, ALTAR
+from paths import data_path
 
 TILE_SIZE = 40  # kept for UI/font sizing outside the renderer
 
-_SPRITE_DIR       = os.path.join(os.path.dirname(__file__), '..', 'assets', 'tiles', 'monsters')
-_ITEM_SPRITE_DIR  = os.path.join(os.path.dirname(__file__), '..', 'assets', 'tiles', 'items')
-_ENV_SPRITE_DIR   = os.path.join(os.path.dirname(__file__), '..', 'assets', 'tiles', 'env')
+_SPRITE_DIR       = data_path('assets', 'tiles', 'monsters')
+_ITEM_SPRITE_DIR  = data_path('assets', 'tiles', 'items')
+_ENV_SPRITE_DIR   = data_path('assets', 'tiles', 'env')
 
 # Map tile constants to sprite filenames (SECRET_DOOR looks like WALL)
 _TILE_SPRITE = {
@@ -159,6 +160,16 @@ class Renderer:
 
                 else:
                     pygame.draw.rect(self.screen, _UNEXPLORED, (sx, sy, T, T))
+
+        # Draw revealed traps (shown as '^' symbol in warning color when visible)
+        for (tx, ty), trap in getattr(dungeon, 'traps', {}).items():
+            if trap.get('revealed') and (tx, ty) in visible:
+                sx, sy = self.world_to_screen(tx, ty)
+                trap_color = trap.get('color', (255, 200, 0))
+                # Draw a small caret symbol for the trap
+                label = self._sym_font.render('^', True, trap_color)
+                lw, lh = label.get_size()
+                self.screen.blit(label, (sx + (T - lw) // 2, sy + (T - lh) // 2))
 
     def draw_player(self, player, cam_x: int = 0, cam_y: int = 0,
                     sprite_name: str = 'player'):

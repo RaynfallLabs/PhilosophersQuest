@@ -14,6 +14,7 @@ import os
 import random
 
 import pygame
+from paths import data_path
 
 # ─────────────────────────────────────────────────────────────────────────────
 # FANTASY PALETTE  (FP namespace — "Fantasy Palette")
@@ -92,7 +93,7 @@ class FP:
 # ─────────────────────────────────────────────────────────────────────────────
 # FONT LOADING
 # ─────────────────────────────────────────────────────────────────────────────
-_FONT_DIR = os.path.join(os.path.dirname(__file__), '..', 'assets', 'fonts')
+_FONT_DIR = data_path('assets', 'fonts')
 
 # # FANTASY: TTF filenames expected in assets/fonts/
 # Download links listed in ASSETS.md
@@ -200,7 +201,7 @@ def make_parchment(w: int, h: int, dark: bool = False, alpha: int = 255) -> pyga
 
 def _try_parchment_png(w: int, h: int, alpha: int = 235) -> pygame.Surface | None:
     """Try to load assets/textures/parchment.png and scale it."""
-    path = os.path.join(os.path.dirname(__file__), '..', 'assets', 'textures', 'parchment.png')
+    path = data_path('assets', 'textures', 'parchment.png')
     if not os.path.exists(path):
         return None
     try:

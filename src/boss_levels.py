@@ -62,7 +62,8 @@ def _connect(tiles, r1, r2):
 
 def _load_boss(boss_id):
     """Load a monster definition from monsters.json by id."""
-    mp = os.path.join(os.path.dirname(__file__), '..', 'data', 'monsters.json')
+    from paths import data_path
+    mp = data_path('data', 'monsters.json')
     with open(mp, encoding='utf-8') as f:
         all_defs = json.load(f)
     if boss_id not in all_defs:

@@ -1,14 +1,18 @@
 import copy
 import json
 import os
+from paths import data_path
 
-_DATA_DIR = os.path.join(os.path.dirname(__file__), '..', 'data', 'items')
+_DATA_DIR = data_path('data', 'items')
 
 # Armor slot index map (matches Player.armor_slots order)
 ARMOR_SLOTS = ['head', 'body', 'arms', 'hands', 'legs', 'feet', 'cloak', 'shirt']
 
 
 class Item:
+    # Item types where identical instances (same id) merge into a stack
+    _STACKABLE_CLASSES: tuple = ()   # filled in after subclass definitions
+
     def __init__(self, defn: dict):
         self.id         = defn['id']
         self.name       = defn['name']
@@ -19,6 +23,7 @@ class Item:
         self.min_level  = int(defn.get('min_level', 1))
         self.x: int = 0
         self.y: int = 0
+        self.count: int = 1          # stack size; >1 only for stackable types
         # Identification system — subclasses set identified=False for hidden items
         self.lore: str          = defn.get('lore', '')
         self.set_id: str        = defn.get('set_id', '')
@@ -39,11 +44,6 @@ class Weapon(Item):
         self.chain_multipliers: list[float] = defn.get(
             'chainMultipliers', defn.get('chain_multipliers', [0.5, 1.0, 1.5, 2.0, 2.5])
         )
-        # max_chain_length: if not set in JSON, derive from quiz_tier (tier 1→4, tier 2→5, … tier 5→8)
-        _qt = int(defn.get('mathTier', defn.get('quiz_tier', 1)))
-        self.max_chain_length: int | None = defn.get(
-            'maxChainLength', defn.get('max_chain_length', 3 + _qt)
-        )
         self.quiz_tier: int             = int(defn.get('mathTier', defn.get('quiz_tier', 1)))
         self.damage_types: list[str]    = defn.get('damageTypes', defn.get('damage_types', ['slash']))
         self.two_handed: bool           = bool(defn.get('twoHanded', defn.get('two_handed', False)))
@@ -61,6 +61,11 @@ class Weapon(Item):
         self.identified: bool           = bool(defn.get('identified', False))
         self.unidentified_name: str     = defn.get('unidentified_name', 'an unknown weapon')
 
+    @property
+    def max_chain_length(self) -> int:
+        """Always derived from chain_multipliers so old pickled weapons stay correct."""
+        return len(self.chain_multipliers)
+
 
 class Armor(Item):
     def __init__(self, defn: dict):
@@ -77,6 +82,7 @@ class Armor(Item):
         self.cursed: bool        = False   # set at spawn time
         self.identified: bool    = bool(defn.get('identified', False))
         self.unidentified_name: str = defn.get('unidentified_name', 'unknown armor')
+        self.container_loot_tier: str = defn.get('container_loot_tier', 'common')
 
 
 class Shield(Item):
@@ -93,6 +99,7 @@ class Shield(Item):
         self.cursed: bool        = False
         self.identified: bool    = bool(defn.get('identified', False))
         self.unidentified_name: str = defn.get('unidentified_name', 'an unknown shield')
+        self.container_loot_tier: str = defn.get('container_loot_tier', 'common')
 
 
 class Accessory(Item):
@@ -104,6 +111,7 @@ class Accessory(Item):
         self.quiz_tier        = int(defn.get('quiz_tier', 1))
         self.unidentified_name = defn.get('unidentified_name', defn['name'])
         self.identified       = bool(defn.get('identified', False))
+        self.container_loot_tier: str = defn.get('container_loot_tier', 'common')
 
 
 class Wand(Item):
@@ -120,6 +128,7 @@ class Wand(Item):
         self.power            = defn.get('power', '')
         self.unidentified_name = defn.get('unidentified_name', defn['name'])
         self.identified       = bool(defn.get('identified', False))
+        self.container_loot_tier: str = defn.get('containerLootTier', defn.get('container_loot_tier', 'common'))
 
 
 class Scroll(Item):
@@ -131,6 +140,7 @@ class Scroll(Item):
         self.power            = defn.get('power', '')
         self.unidentified_name = defn.get('unidentified_name', defn['name'])
         self.identified       = bool(defn.get('identified', False))
+        self.container_loot_tier: str = defn.get('container_loot_tier', 'common')
 
 
 class Spellbook(Item):
@@ -144,6 +154,7 @@ class Spellbook(Item):
         self.unidentified_name = defn.get('unidentified_name', defn['name'])
         self.identified        = bool(defn.get('identified', False))
         self.floor_spawn_weight: dict = defn.get('floor_spawn_weight', {})
+        self.container_loot_tier: str = defn.get('container_loot_tier', 'common')
 
 
 class Artifact(Item):
@@ -186,6 +197,7 @@ class Ingredient(Item):
         self.floor_spawn_weight: dict = defn.get('floor_spawn_weight', {})
         self.identified: bool       = True   # raw ingredients are obvious
         self.unidentified_name: str = defn.get('unidentified_name', self.name)
+        self.mp_restore: int        = int(defn.get('mp_restore', 0))
 
 
 class Corpse(Item):
@@ -223,7 +235,7 @@ class Ammo(Item):
         self.damage_bonus: int = int(defn.get('damage_bonus', 0))
         self.count_min:    int = int(defn.get('count_min', 10))
         self.count_max:    int = int(defn.get('count_max', 20))
-        self.count:        int = self.count_min   # re-rolled at spawn
+        self.count:        int = self.count_min   # set at spawn; base class also has count=1 default
         self.floor_spawn_weight: dict = defn.get('floor_spawn_weight', {})
         self.value:        int = int(defn.get('value', 1))
         # Ammo is always visually obvious — identified by default
@@ -247,6 +259,33 @@ class Food(Item):
         self.unidentified_name: str = defn.get('unidentified_name', self.name)
 
 
+class Potion(Item):
+    """Drinkable potion. Instant or timed effect; no quiz required."""
+    def __init__(self, defn: dict):
+        super().__init__(defn)
+        self.effect:   str = defn.get('effect', '')
+        self.power:    str = defn.get('power', '')
+        self.duration: int = int(defn.get('duration', 0))
+        self.floor_spawn_weight: dict = defn.get('floorSpawnWeight', {})
+        self.identified: bool       = False
+        self.unidentified_name: str = defn.get('unidentified_name', self.name)
+
+
+class GoldPile:
+    """Gold coins lying on the ground. Picked up to credit player_gold directly."""
+    def __init__(self, amount: int, x: int = 0, y: int = 0):
+        self.id     = 'gold_pile'
+        self.amount = amount
+        self.name   = f"{amount} gold coin{'s' if amount != 1 else ''}"
+        self.symbol = '$'
+        self.color  = (218, 165, 32)
+        self.x      = x
+        self.y      = y
+
+
+# Stackable item types: identical instances (same id) merge into one stack entry.
+Item._STACKABLE_CLASSES = (Ingredient, Food, Potion, Scroll, Ammo)
+
 # ------------------------------------------------------------------
 # Loading
 # ------------------------------------------------------------------
@@ -263,6 +302,7 @@ _CLASS_MAP: dict[str, type] = {
     'artifact':   Artifact,
     'ammo':       Ammo,
     'food':       Food,
+    'potion':     Potion,
     'lockpick':   Lockpick,
     'container':  Container,
 }

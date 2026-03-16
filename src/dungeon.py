@@ -32,6 +32,18 @@ SECRET_DOOR = 5   # looks like WALL; discovered by searching or bumping
 ALTAR       = 6   # sacred altar; walkable, amplifies prayers
 
 # ---------------------------------------------------------------------------
+# Trap definitions
+# ---------------------------------------------------------------------------
+
+TRAP_TYPES = [
+    {'type': 'pit',      'damage': '2d6',   'damage_type': 'physical', 'message': 'You fall into a pit!',              'symbol': '^', 'color': (150, 75, 0)},
+    {'type': 'arrow',    'damage': '1d6+2', 'damage_type': 'pierce',   'message': 'An arrow fires from the wall!',     'symbol': '^', 'color': (180, 140, 80)},
+    {'type': 'alarm',    'damage': '0',     'damage_type': 'none',     'message': 'A pressure plate triggers an alarm!','symbol': '^', 'color': (200, 50, 50)},
+    {'type': 'acid',     'damage': '2d4',   'damage_type': 'acid',     'message': 'Acid sprays from a nozzle!',        'symbol': '^', 'color': (100, 200, 50)},
+    {'type': 'teleport', 'damage': '0',     'damage_type': 'none',     'message': 'The floor vanishes — you teleport!','symbol': '^', 'color': (100, 100, 220)},
+]
+
+# ---------------------------------------------------------------------------
 # BSP tuning
 # ---------------------------------------------------------------------------
 
@@ -96,6 +108,10 @@ class Dungeon:
         self.explored: Set[Tuple[int, int]] = set()
         # Hidden chambers carved adjacent to existing corridors/rooms
         self.hidden_chambers: list = []  # list of {'room': Room, 'type': str, 'theme': str}
+        # Floor traps: (x, y) -> trap definition dict
+        self.traps: dict = {}
+        # Special rooms: (cx, cy) -> type string ('treasury', 'library', 'shrine', 'monster_den')
+        self.special_rooms: dict = {}
 
     def in_bounds(self, x: int, y: int) -> bool:
         return 0 <= x < self.width and 0 <= y < self.height
@@ -508,7 +524,8 @@ def spawn_monsters(rooms: List[Room], level: int, dungeon: Dungeon,
     Count scales with dungeon level: 3-5 at level 1, up to 10-15 at level 50+."""
     from monster import Monster
 
-    monsters_path = os.path.join(os.path.dirname(__file__), '..', 'data', 'monsters.json')
+    from paths import data_path
+    monsters_path = data_path('data', 'monsters.json')
     with open(monsters_path, encoding='utf-8') as f:
         all_defs = json.load(f)
 
@@ -644,27 +661,146 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
     for room in food_rooms:
         _place_one(eligible_food, room, dungeon, ground_items, rng)
 
+    # ── Potions — 1-2 per level, weighted by floorSpawnWeight ────────────────
+    try:
+        all_potions = load_items('potion')
+    except FileNotFoundError:
+        all_potions = []
+
+    eligible_potions = _item_eligible_weighted(all_potions, level)
+    potion_count = rng.randint(1, 2)
+    potion_rooms = rng.sample(rooms[1:], min(potion_count, len(rooms) - 1))
+    for room in potion_rooms:
+        _place_one(eligible_potions, room, dungeon, ground_items, rng)
+
+    # ── Mystery altars ────────────────────────────────────────────────────────
+    try:
+        from mystery_system import spawn_mystery_for_level
+        mystery_result = spawn_mystery_for_level(level, rooms, dungeon, ground_items, rng)
+        if mystery_result:
+            altar, key = mystery_result
+            ground_items.append(altar)
+            if key:
+                ground_items.append(key)
+    except Exception:
+        pass  # mystery system is optional; don't crash dungeon gen on error
+
+    # ── Travelling merchant ───────────────────────────────────────────────────
+    try:
+        from mystery_system import spawn_merchant
+        merchant = spawn_merchant(level, rooms, dungeon, ground_items, rng)
+        if merchant:
+            ground_items.append(merchant)
+    except Exception:
+        pass  # merchant is optional; don't crash dungeon gen on error
+
+    # ── Special rooms ─────────────────────────────────────────────────────────
+    SPECIAL_ROOM_CHANCE = 0.35
+    if rng.random() < SPECIAL_ROOM_CHANCE and len(rooms) > 3:
+        special_room = rng.choice(rooms[2:])
+        room_type = rng.choice(['treasury', 'library', 'shrine', 'monster_den'])
+        cx, cy = special_room.center
+        dungeon.special_rooms[(cx, cy)] = room_type
+
+        if room_type == 'treasury':
+            for _ in range(2):
+                c = pick_container()
+                if c:
+                    _place_one([c], special_room, dungeon, ground_items, rng)
+            gold_amount = rng.randint(level * 3, level * 8)
+            tiles_in_room = [(tx, ty) for tx, ty in special_room.inner_tiles()
+                             if dungeon.tiles[ty][tx] == FLOOR and
+                             not any(i.x == tx and i.y == ty for i in ground_items)]
+            if tiles_in_room:
+                from items import GoldPile
+                gx, gy = rng.choice(tiles_in_room)
+                ground_items.append(GoldPile(gold_amount, gx, gy))
+
+        elif room_type == 'library':
+            try:
+                scrolls = [i for i in load_items('scroll') if i.min_level <= level]
+                books = [i for i in load_items('spellbook') if i.min_level <= level]
+                for _ in range(3):
+                    if scrolls:
+                        _place_one([copy.copy(rng.choice(scrolls))], special_room, dungeon, ground_items, rng)
+                if books and rng.random() < 0.5:
+                    _place_one([copy.copy(rng.choice(books))], special_room, dungeon, ground_items, rng)
+            except Exception:
+                pass
+
+        elif room_type == 'shrine':
+            tiles_in_room = [(tx, ty) for tx, ty in special_room.inner_tiles()
+                             if dungeon.tiles[ty][tx] == FLOOR]
+            if tiles_in_room:
+                ax, ay = rng.choice(tiles_in_room)
+                dungeon.tiles[ay][ax] = ALTAR
+
+        elif room_type == 'monster_den':
+            pass  # monster density handled by spawn_monsters seeing the flag
+
+    # ── Floor traps ───────────────────────────────────────────────────────────
+    start_center = rooms[0].center if rooms else (0, 0)
+    n_traps = rng.randint(1, min(3, 1 + level // 20))
+    trap_candidates = []
+    for ry in range(dungeon.height):
+        for rx in range(dungeon.width):
+            if (dungeon.tiles[ry][rx] == FLOOR
+                    and (rx, ry) != start_center
+                    and not any(i.x == rx and i.y == ry for i in ground_items)):
+                trap_candidates.append((rx, ry))
+    rng.shuffle(trap_candidates)
+    for tx, ty in trap_candidates[:n_traps]:
+        trap = dict(rng.choice(TRAP_TYPES))
+        trap['revealed'] = False
+        dungeon.traps[(tx, ty)] = trap
+
     return ground_items
 
 
 def _item_eligible_weighted(templates: list, level: int) -> list:
-    """Build a weighted eligible pool for non-food items.
-    Items with a floorSpawnWeight table are repeated proportionally to their weight
-    at the current level, so late-game items crowd out early-game ones naturally.
-    Items without a weight table are eligible at weight 1 if min_level passes."""
-    eligible = []
+    """Build a category-balanced weighted pool for non-food items.
+
+    Items are first grouped by class (Weapon, Armor, Scroll, …) so that each
+    category contributes equally regardless of its raw floorSpawnWeight values.
+    Within a category, weights are normalised to SLOTS_PER_TYPE total slots so
+    that heavily-weighted items (e.g. iron swords at L1) still appear more
+    often than rare items — but weapons can't crowd out armor 100:1.
+    """
+    from collections import defaultdict
+
+    SLOTS_PER_TYPE = 20   # each item class gets this many weighted slots in the pool
+
+    by_type: dict[str, list] = defaultdict(list)
     for item in templates:
         if item.min_level > level:
             continue
         fw = getattr(item, 'floor_spawn_weight', {})
         if fw:
-            w = _food_weight(fw, level)   # range-key parser handles both dict formats
-            if w > 0:
-                eligible.extend([item] * w)
-            # Weight 0 for this level range means the item has aged out — skip it
+            w = _food_weight(fw, level)
+            if w <= 0:
+                continue   # aged out of this level range
         else:
-            eligible.append(item)
-    return eligible or [t for t in templates if t.min_level <= level] or templates[:]
+            w = 1
+        by_type[type(item).__name__].append((item, w))
+
+    if not by_type:
+        return [t for t in templates if t.min_level <= level] or templates[:]
+
+    eligible = []
+    for items_weights in by_type.values():
+        total_w = sum(w for _, w in items_weights) or 1
+        n = len(items_weights)
+        if n <= SLOTS_PER_TYPE:
+            # Few candidates — give each at least 1 slot, proportional distribution
+            for item, w in items_weights:
+                slots = max(1, round(w / total_w * SLOTS_PER_TYPE))
+                eligible.extend([item] * slots)
+        else:
+            # Many candidates — sort by weight, take the top SLOTS_PER_TYPE, 1 slot each
+            items_weights.sort(key=lambda x: -x[1])
+            for item, _ in items_weights[:SLOTS_PER_TYPE]:
+                eligible.append(item)
+    return eligible
 
 
 def _food_eligible(templates: list, level: int) -> list:

@@ -1,0 +1,117 @@
+import json
+
+with open('questions/geography.json', encoding='utf-8') as f:
+    q = json.load(f)
+
+new_q = [
+# tier 1 (need 1)
+{"tier":1,"question":"What is the largest ocean on Earth?","answer":"Pacific Ocean","choices":["Atlantic Ocean","Indian Ocean","Arctic Ocean","Pacific Ocean"]},
+# tier 2 (need 11)
+{"tier":2,"question":"What is the longest river in South America?","answer":"Amazon","choices":["Orinoco","Parana","Amazon","Rio Grande"]},
+{"tier":2,"question":"Which US state is the largest by area?","answer":"Alaska","choices":["Texas","California","Montana","Alaska"]},
+{"tier":2,"question":"What is the capital of Australia?","answer":"Canberra","choices":["Sydney","Melbourne","Brisbane","Canberra"]},
+{"tier":2,"question":"Which mountain range separates Europe from Asia?","answer":"Ural Mountains","choices":["Alps","Carpathians","Caucasus","Ural Mountains"]},
+{"tier":2,"question":"What is the capital of Canada?","answer":"Ottawa","choices":["Toronto","Vancouver","Montreal","Ottawa"]},
+{"tier":2,"question":"Which African country has the largest population?","answer":"Nigeria","choices":["Ethiopia","Egypt","South Africa","Nigeria"]},
+{"tier":2,"question":"What is the smallest country in the world by area?","answer":"Vatican City","choices":["Monaco","San Marino","Liechtenstein","Vatican City"]},
+{"tier":2,"question":"What is the capital of Argentina?","answer":"Buenos Aires","choices":["Santiago","Lima","Bogota","Buenos Aires"]},
+{"tier":2,"question":"Which sea lies between Italy and the Balkans?","answer":"Adriatic Sea","choices":["Aegean Sea","Ionian Sea","Adriatic Sea","Tyrrhenian Sea"]},
+{"tier":2,"question":"What is the world's largest desert?","answer":"Sahara","choices":["Arabian Desert","Gobi Desert","Sahara","Patagonian Desert"]},
+{"tier":2,"question":"How many time zones does Russia span?","answer":"11","choices":["8","9","11","13"]},
+# tier 3 (need 32)
+{"tier":3,"question":"Which country is entirely surrounded by South Africa?","answer":"Lesotho","choices":["Eswatini","Botswana","Lesotho","Namibia"]},
+{"tier":3,"question":"What is the deepest lake in the world?","answer":"Lake Baikal","choices":["Lake Superior","Caspian Sea","Lake Titicaca","Lake Baikal"]},
+{"tier":3,"question":"Which strait separates Europe from Africa?","answer":"Strait of Gibraltar","choices":["Strait of Hormuz","Bosphorus","Strait of Gibraltar","Strait of Malacca"]},
+{"tier":3,"question":"What is the capital of New Zealand?","answer":"Wellington","choices":["Auckland","Christchurch","Hamilton","Wellington"]},
+{"tier":3,"question":"Which country has the most natural lakes?","answer":"Canada","choices":["Russia","Finland","USA","Canada"]},
+{"tier":3,"question":"Which ocean is saltiest on average?","answer":"Atlantic Ocean","choices":["Pacific Ocean","Indian Ocean","Atlantic Ocean","Arctic Ocean"]},
+{"tier":3,"question":"What is the capital of Pakistan?","answer":"Islamabad","choices":["Karachi","Lahore","Islamabad","Rawalpindi"]},
+{"tier":3,"question":"Which river flows through Baghdad?","answer":"Tigris","choices":["Euphrates","Nile","Tigris","Indus"]},
+{"tier":3,"question":"What is the largest island in the Mediterranean Sea?","answer":"Sicily","choices":["Sardinia","Corsica","Sicily","Cyprus"]},
+{"tier":3,"question":"What is the driest continent on Earth?","answer":"Antarctica","choices":["Australia","Africa","Asia","Antarctica"]},
+{"tier":3,"question":"Which country has the longest coastline in the world?","answer":"Canada","choices":["Russia","Norway","Indonesia","Canada"]},
+{"tier":3,"question":"What is the capital of Saudi Arabia?","answer":"Riyadh","choices":["Mecca","Medina","Jeddah","Riyadh"]},
+{"tier":3,"question":"Which two continents are connected by the Isthmus of Panama?","answer":"North and South America","choices":["North America and Europe","North and South America","South America and Africa","Europe and Asia"]},
+{"tier":3,"question":"Which country has the most UNESCO World Heritage Sites?","answer":"Italy","choices":["China","France","Spain","Italy"]},
+{"tier":3,"question":"What is the capital of Ethiopia?","answer":"Addis Ababa","choices":["Nairobi","Khartoum","Addis Ababa","Kampala"]},
+{"tier":3,"question":"Which mountain is the highest in Africa?","answer":"Mount Kilimanjaro","choices":["Mount Kenya","Mount Elgon","Rwenzori","Mount Kilimanjaro"]},
+{"tier":3,"question":"What is the capital of Ukraine?","answer":"Kyiv","choices":["Lviv","Kharkiv","Odesa","Kyiv"]},
+{"tier":3,"question":"Which river forms much of the border between the USA and Mexico?","answer":"Rio Grande","choices":["Colorado River","Pecos River","Rio Grande","Gila River"]},
+{"tier":3,"question":"What is the name of the peninsula containing Spain and Portugal?","answer":"Iberian Peninsula","choices":["Scandinavian Peninsula","Italian Peninsula","Iberian Peninsula","Balkan Peninsula"]},
+{"tier":3,"question":"What is the capital of Colombia?","answer":"Bogota","choices":["Medellin","Cali","Cartagena","Bogota"]},
+{"tier":3,"question":"Which country lies between France and Spain in the Pyrenees?","answer":"Andorra","choices":["Monaco","Luxembourg","Andorra","Liechtenstein"]},
+{"tier":3,"question":"What is the largest country in Africa by area?","answer":"Algeria","choices":["Sudan","DR Congo","Libya","Algeria"]},
+{"tier":3,"question":"Which sea lies between Greece and Turkey?","answer":"Aegean Sea","choices":["Black Sea","Adriatic Sea","Ionian Sea","Aegean Sea"]},
+{"tier":3,"question":"What is the capital of South Korea?","answer":"Seoul","choices":["Busan","Incheon","Daegu","Seoul"]},
+{"tier":3,"question":"What is the name of the largest bay in the world?","answer":"Bay of Bengal","choices":["Hudson Bay","Gulf of Mexico","Bay of Bengal","Gulf of Guinea"]},
+{"tier":3,"question":"Which African country was never colonized by a European power?","answer":"Ethiopia","choices":["Liberia","Morocco","Ethiopia","Madagascar"]},
+{"tier":3,"question":"What is the capital of Colombia?","answer":"Bogota","choices":["Medellin","Barranquilla","Cali","Bogota"]},
+{"tier":3,"question":"Which country contains Lake Titicaca, the world's highest navigable lake?","answer":"Bolivia and Peru","choices":["Chile and Bolivia","Bolivia and Peru","Ecuador and Peru","Argentina and Chile"]},
+{"tier":3,"question":"What is the capital of the Philippines?","answer":"Manila","choices":["Cebu","Quezon City","Davao","Manila"]},
+{"tier":3,"question":"Which European country has the most rivers?","answer":"Russia","choices":["Germany","France","Ukraine","Russia"]},
+{"tier":3,"question":"Which ocean current keeps Western Europe warmer than its latitude suggests?","answer":"Gulf Stream","choices":["Labrador Current","North Atlantic Drift","Gulf Stream","Canary Current"]},
+{"tier":3,"question":"What is the capital of Iran?","answer":"Tehran","choices":["Isfahan","Shiraz","Mashhad","Tehran"]},
+# tier 4 (need 19)
+{"tier":4,"question":"What is the capital of Kazakhstan?","answer":"Astana","choices":["Almaty","Shymkent","Astana","Karaganda"]},
+{"tier":4,"question":"Which is the only country to border both the Caspian Sea and the Persian Gulf?","answer":"Iran","choices":["Iraq","Azerbaijan","Turkmenistan","Iran"]},
+{"tier":4,"question":"What is the capital of Myanmar?","answer":"Naypyidaw","choices":["Yangon","Mandalay","Bago","Naypyidaw"]},
+{"tier":4,"question":"Which country contains the Atacama Desert?","answer":"Chile","choices":["Peru","Bolivia","Argentina","Chile"]},
+{"tier":4,"question":"What is the largest lake in Africa?","answer":"Lake Victoria","choices":["Lake Tanganyika","Lake Malawi","Lake Chad","Lake Victoria"]},
+{"tier":4,"question":"Which country shares land borders with the most other countries?","answer":"China","choices":["Russia","Brazil","China","Sudan"]},
+{"tier":4,"question":"What is the capital of Mongolia?","answer":"Ulaanbaatar","choices":["Erdenet","Darkhan","Choibalsan","Ulaanbaatar"]},
+{"tier":4,"question":"The Mekong River empties into which body of water?","answer":"South China Sea","choices":["Gulf of Thailand","Andaman Sea","South China Sea","Indian Ocean"]},
+{"tier":4,"question":"What is the capital of Burkina Faso?","answer":"Ouagadougou","choices":["Bamako","Niamey","Abidjan","Ouagadougou"]},
+{"tier":4,"question":"Which country is home to Angel Falls, the world's highest waterfall?","answer":"Venezuela","choices":["Brazil","Colombia","Ecuador","Venezuela"]},
+{"tier":4,"question":"Which strait connects the Black Sea to the Sea of Marmara?","answer":"Bosphorus","choices":["Dardanelles","Bosphorus","Kerch Strait","Messina Strait"]},
+{"tier":4,"question":"What is the capital of Tajikistan?","answer":"Dushanbe","choices":["Tashkent","Bishkek","Ashgabat","Dushanbe"]},
+{"tier":4,"question":"Which African country is split between the Sahara and the Sahel?","answer":"Mali","choices":["Niger","Chad","Sudan","Mali"]},
+{"tier":4,"question":"What is the world's longest mountain range above sea level?","answer":"Andes","choices":["Himalayas","Rockies","Alps","Andes"]},
+{"tier":4,"question":"Which country has the Yangtze River as its longest river?","answer":"China","choices":["Vietnam","Myanmar","China","Laos"]},
+{"tier":4,"question":"What is the capital of Bolivia (seat of government)?","answer":"La Paz","choices":["Sucre","Santa Cruz","Cochabamba","La Paz"]},
+{"tier":4,"question":"Which European country has the highest population density?","answer":"Monaco","choices":["Netherlands","Malta","San Marino","Monaco"]},
+{"tier":4,"question":"What is the name of the sea that separates Madagascar from mainland Africa?","answer":"Mozambique Channel","choices":["Somali Sea","Madagascar Strait","Mozambique Channel","Indian Passage"]},
+{"tier":4,"question":"Which Scandinavian country has no land border with Russia?","answer":"Denmark","choices":["Norway","Sweden","Finland","Denmark"]},
+# tier 5 (need 32)
+{"tier":5,"question":"What is the approximate latitude of the Tropic of Capricorn?","answer":"23.5 degrees South","choices":["0 degrees","23.5 degrees North","23.5 degrees South","66.5 degrees South"]},
+{"tier":5,"question":"The Fergana Valley is shared by which three Central Asian countries?","answer":"Uzbekistan, Kyrgyzstan, and Tajikistan","choices":["Kazakhstan, Uzbekistan, Turkmenistan","Uzbekistan, Kyrgyzstan, and Tajikistan","Kyrgyzstan, Kazakhstan, China","Tajikistan, Afghanistan, Uzbekistan"]},
+{"tier":5,"question":"What is the capital of South Sudan?","answer":"Juba","choices":["Malakal","Wau","Bor","Juba"]},
+{"tier":5,"question":"Which country contains the Wakhan Corridor?","answer":"Afghanistan","choices":["Pakistan","Tajikistan","China","Afghanistan"]},
+{"tier":5,"question":"What is the capital of Eritrea?","answer":"Asmara","choices":["Massawa","Keren","Assab","Asmara"]},
+{"tier":5,"question":"The Dinaric Alps run along the coast of which body of water?","answer":"Adriatic Sea","choices":["Aegean Sea","Ionian Sea","Adriatic Sea","Black Sea"]},
+{"tier":5,"question":"Which country contains the Tonle Sap, Southeast Asia's largest freshwater lake?","answer":"Cambodia","choices":["Vietnam","Thailand","Laos","Cambodia"]},
+{"tier":5,"question":"The Salween River flows primarily through which country before reaching the sea?","answer":"Myanmar","choices":["Thailand","Cambodia","Vietnam","Myanmar"]},
+{"tier":5,"question":"What is the capital of the Faroe Islands?","answer":"Torshavn","choices":["Runavik","Klaksvik","Torshavn","Eidi"]},
+{"tier":5,"question":"Which country lies entirely within Italy?","answer":"San Marino","choices":["Vatican City","Monaco","Liechtenstein","San Marino"]},
+{"tier":5,"question":"Which island group includes Majorca and Ibiza?","answer":"Balearic Islands","choices":["Canary Islands","Azores","Balearic Islands","Madeira"]},
+{"tier":5,"question":"What is the capital of Kyrgyzstan?","answer":"Bishkek","choices":["Osh","Jalal-Abad","Karakol","Bishkek"]},
+{"tier":5,"question":"The Sunda Trench lies in which ocean?","answer":"Indian Ocean","choices":["Pacific Ocean","Indian Ocean","Southern Ocean","Atlantic Ocean"]},
+{"tier":5,"question":"What is the name of the disputed region between Armenia and Azerbaijan?","answer":"Nagorno-Karabakh","choices":["Nakhchivan","Adjara","South Ossetia","Nagorno-Karabakh"]},
+{"tier":5,"question":"Which river delta is the largest in the world?","answer":"Ganges-Brahmaputra Delta","choices":["Amazon Delta","Nile Delta","Mississippi Delta","Ganges-Brahmaputra Delta"]},
+{"tier":5,"question":"What is the capital of Vanuatu?","answer":"Port Vila","choices":["Suva","Honiara","Apia","Port Vila"]},
+{"tier":5,"question":"The Sundarbans mangrove forest lies across which two countries?","answer":"India and Bangladesh","choices":["India and Myanmar","India and Bangladesh","Bangladesh and Myanmar","India and Sri Lanka"]},
+{"tier":5,"question":"What is the name of the cape at the southernmost tip of mainland Africa?","answer":"Cape Agulhas","choices":["Cape of Good Hope","Cape Point","Cape Columbine","Cape Agulhas"]},
+{"tier":5,"question":"What is the capital of Turkmenistan?","answer":"Ashgabat","choices":["Mary","Turkmenbashi","Dashoguz","Ashgabat"]},
+{"tier":5,"question":"Which is the only country to have a non-rectangular national flag?","answer":"Nepal","choices":["Switzerland","Vatican City","Nepal","Bangladesh"]},
+{"tier":5,"question":"The Sahel region of Africa lies immediately to which direction of the Sahara?","answer":"South","choices":["North","East","West","South"]},
+{"tier":5,"question":"What is the capital of Western Sahara as administered by Morocco?","answer":"Laayoune","choices":["Dakhla","Smara","Laayoune","Tifariti"]},
+{"tier":5,"question":"Which country is an exclave of Azerbaijan?","answer":"Nakhchivan","choices":["Nagorno-Karabakh","Nakhchivan","Adjara","Ganja"]},
+{"tier":5,"question":"What is the world's longest mountain range including undersea ranges?","answer":"Mid-Ocean Ridge","choices":["Andes","Himalayas","Rocky Mountains","Mid-Ocean Ridge"]},
+{"tier":5,"question":"Which country contains both the highest and lowest points in South America?","answer":"Argentina","choices":["Chile","Bolivia","Peru","Argentina"]},
+{"tier":5,"question":"What is the name of the geographic feature formed where the Rhine meets the North Sea?","answer":"Rhine-Meuse-Scheldt Delta","choices":["Rhine Delta","North Sea Delta","Rhine-Meuse-Scheldt Delta","Frisian Delta"]},
+{"tier":5,"question":"Which tiny nation is surrounded entirely by Switzerland?","answer":"Liechtenstein","choices":["Monaco","San Marino","Andorra","Liechtenstein"]},
+{"tier":5,"question":"What is the capital of Timor-Leste?","answer":"Dili","choices":["Baucau","Maliana","Same","Dili"]},
+{"tier":5,"question":"Which country contains the Namib Desert, the oldest desert on Earth?","answer":"Namibia","choices":["Botswana","South Africa","Angola","Namibia"]},
+{"tier":5,"question":"What is the name of the sea north of Siberia between Novaya Zemlya and Franz Josef Land?","answer":"Barents Sea","choices":["Kara Sea","Laptev Sea","Barents Sea","White Sea"]},
+{"tier":5,"question":"Which landlocked country is doubly landlocked (surrounded only by other landlocked countries)?","answer":"Uzbekistan","choices":["Kazakhstan","Liechtenstein","Uzbekistan","Bhutan"]},
+{"tier":5,"question":"What is the capital of the Solomon Islands?","answer":"Honiara","choices":["Port Moresby","Suva","Apia","Honiara"]},
+]
+
+q.extend(new_q)
+with open('questions/geography.json', 'w', encoding='utf-8') as f:
+    json.dump(q, f, ensure_ascii=False, indent=2)
+
+by_tier = {}
+for item in q:
+    t = item.get('tier', 0)
+    by_tier[t] = by_tier.get(t, 0) + 1
+print('geography:', {k: by_tier.get(k, 0) for k in [1,2,3,4,5]}, 'total:', len(q))

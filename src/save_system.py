@@ -1,15 +1,22 @@
 """
-Single-slot save/load system using pickle.
+Per-name save/load system using pickle.
+Each player name gets its own save file (save_<name>.pkl).
 Permadeath: death deletes the save file.
 """
 import os
+import re
 import pickle
+from paths import save_dir
 
-SAVE_PATH = os.path.join(os.path.dirname(__file__), '..', 'save.pkl')
+
+def _save_path(name: str) -> str:
+    """Return the save file path for the given player name."""
+    safe = re.sub(r'[^\w\-]', '_', name.lower())
+    return os.path.join(save_dir(), f'save_{safe}.pkl')
 
 
-def save_exists() -> bool:
-    return os.path.exists(SAVE_PATH)
+def save_exists(name: str) -> bool:
+    return os.path.exists(_save_path(name))
 
 
 def save_game(game) -> bool:
@@ -27,7 +34,7 @@ def save_game(game) -> bool:
             'monsters':      game.monsters,
             'ground_items':  game.ground_items,
         }
-        with open(SAVE_PATH, 'wb') as f:
+        with open(_save_path(game.player_name), 'wb') as f:
             pickle.dump(state, f, protocol=pickle.HIGHEST_PROTOCOL)
         return True
     except Exception as e:
@@ -35,20 +42,21 @@ def save_game(game) -> bool:
         return False
 
 
-def load_game():
-    """Load saved state dict, or None on failure."""
+def load_game(name: str):
+    """Load saved state dict for the given name, or None on failure."""
     try:
-        with open(SAVE_PATH, 'rb') as f:
+        with open(_save_path(name), 'rb') as f:
             return pickle.load(f)
     except Exception as e:
         print(f"[Load] Failed: {e}")
         return None
 
 
-def delete_save():
+def delete_save(name: str):
     """Delete save file (called on death for permadeath)."""
     try:
-        if os.path.exists(SAVE_PATH):
-            os.remove(SAVE_PATH)
+        path = _save_path(name)
+        if os.path.exists(path):
+            os.remove(path)
     except Exception:
         pass

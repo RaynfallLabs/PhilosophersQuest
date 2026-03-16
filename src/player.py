@@ -54,9 +54,16 @@ class Player:
         # Item IDs the player has identified this run
         self.known_item_ids: set[str] = set()
         # Monster kinds the player has encountered (seen in FOV)
-        self.known_monster_ids: set[str] = set()
+        self.known_monster_ids: set[str] = set()   # monsters seen (encyclopedia)
+        self.lore_known_monster_ids: set[str] = set()  # monsters whose corpse has been studied
+        self.lockpick_charges: int = 0             # charges from collected lockpicks
         # Spells learned from spellbooks: spell_id -> mp_cost
         self.known_spells: dict[str, int] = {}
+
+        # Quirk system
+        self.quirk_progress: dict  = {}    # event counters for quirk triggers
+        self.unlocked_quirks: set  = set() # set of earned quirk IDs
+        self.quiz_timer_bonuses: dict = {} # subject -> extra seconds bonus
 
     # --- Resources ---
 
@@ -127,7 +134,15 @@ class Player:
 
     def add_effect(self, name: str, duration: int) -> bool:
         """Apply effect via the status_effects module. Returns True if applied."""
-        from status_effects import apply_effect
+        from status_effects import apply_effect, DEBUFFS
+        # Hermes quirk: double haste duration
+        if name == 'hasted' and duration > 0:
+            if getattr(self, 'quirk_progress', {}).get('hermes_active'):
+                duration = duration * 2
+        # Perseus quirk: halve incoming debuff durations
+        if name in DEBUFFS and duration > 0:
+            if getattr(self, 'quirk_progress', {}).get('perseus_active'):
+                duration = max(1, duration // 2)
         return apply_effect(self, name, duration)
 
     def tick_effects(self) -> list:
@@ -191,6 +206,10 @@ class Player:
         """Extra quiz seconds for magic subjects (science/grammar/philosophy). +0.5s per INT above 10."""
         return max(0, self.INT - 10) // 2
 
+    def get_quiz_extra_seconds(self, subject: str) -> int:
+        """Extra quiz seconds from earned quirks."""
+        return getattr(self, 'quiz_timer_bonuses', {}).get(subject, 0)
+
     def get_carry_limit(self) -> int:
         return self.CARRY_BASE + self.STR * self.CARRY_PER_STR
 
@@ -204,22 +223,27 @@ class Player:
     # --- Inventory ---
 
     def add_to_inventory(self, item) -> bool:
-        # Ammo stacks: merge into existing stack of same id
+        from items import Item
         count = getattr(item, 'count', 1)
         item_weight = getattr(item, 'weight', 0) * count
         if item_weight + self.get_current_weight() > self.get_carry_limit():
             return False
-        # Check for stackable ammo
-        if hasattr(item, 'ammo_type'):
+        # Stack identical items for stackable types (same id)
+        if isinstance(item, Item._STACKABLE_CLASSES):
             existing = next((i for i in self.inventory if i.id == item.id), None)
             if existing is not None:
-                existing.count += item.count
+                existing.count = getattr(existing, 'count', 1) + getattr(item, 'count', 1)
                 return True
         self.inventory.append(item)
+        # Keep inventory sorted alphabetically by item name
+        self.inventory.sort(key=lambda i: i.name.lower())
         return True
 
     def remove_from_inventory(self, item) -> bool:
         if item in self.inventory:
+            if getattr(item, 'count', 1) > 1:
+                item.count -= 1
+                return True
             self.inventory.remove(item)
             return True
         return False
@@ -230,11 +254,13 @@ class Player:
         """Permanently change a stat and update derived maximums."""
         setattr(self, stat, getattr(self, stat) + amount)
         if stat == 'CON':
-            self.max_hp = self.BASE_HP + self.CON
+            self.max_hp += amount   # preserve level scaling
+            self.hp = min(self.hp, self.max_hp)
         elif stat == 'STR':
-            self.max_sp = self.BASE_SP + self.STR
+            self.max_sp += amount
         elif stat == 'INT':
-            self.max_mp = self.BASE_MP + self.INT
+            self.max_mp += amount
+            self.mp = min(self.mp, self.max_mp)
 
     # --- Equipment ---
 
@@ -322,3 +348,5 @@ class Player:
                 self.add_effect(fx['status'], fx.get('duration', -1))
             if 'stat' in fx:
                 self.apply_stat_bonus(fx['stat'], fx.get('amount', 0))
+        # Re-sort inventory after any equipment swap that returned items
+        self.inventory.sort(key=lambda i: i.name.lower())

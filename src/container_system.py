@@ -33,19 +33,17 @@ def attempt_lockpick(player, container, quiz_engine, dungeon, monsters, on_compl
       gold:   int (0 on failure)
       messages: list of (text, type) pairs
     """
-    from items import Lockpick
-    lockpick = next((i for i in player.inventory if isinstance(i, Lockpick)), None)
-
-    if lockpick is None:
+    charges = getattr(player, 'lockpick_charges', 0)
+    if charges <= 0:
         on_complete({'status': 'no_lockpick', 'loot': [], 'gold': 0,
-                     'messages': [('You need a lockpick to open this!', 'warning')]})
+                     'messages': [('You have no lockpick charges!', 'warning')]})
         return
 
     def _callback(result):
         if result.success:
-            _handle_success(player, container, lockpick, dungeon, on_complete)
+            _handle_success(player, container, dungeon, on_complete)
         else:
-            _handle_failure(player, container, lockpick, dungeon, monsters, on_complete)
+            _handle_failure(player, container, dungeon, monsters, on_complete)
 
     quiz_engine.start_quiz(
         mode='threshold',
@@ -55,6 +53,7 @@ def attempt_lockpick(player, container, quiz_engine, dungeon, monsters, on_compl
         threshold=container.quiz_threshold,
         wisdom=player.WIS,
         timer_modifier=player.get_quiz_timer_modifier(),
+        extra_seconds=getattr(player, 'get_quiz_extra_seconds', lambda s: 0)('economics'),
     )
 
 
@@ -75,35 +74,27 @@ def check_for_mimic(player, container, monsters) -> bool:
 # Internal helpers
 # ---------------------------------------------------------------------------
 
-def _handle_success(player, container, lockpick, dungeon, on_complete):
+def _handle_success(player, container, dungeon, on_complete):
     messages = []
 
-    # Wear lockpick
-    lockpick.durability -= lockpick.durability_loss_success
-    if lockpick.durability <= 0:
-        player.remove_from_inventory(lockpick)
-        messages.append(('Your lockpick breaks!', 'warning'))
-    else:
-        messages.append((f'Lockpick durability: {lockpick.durability}/{lockpick.max_durability}', 'info'))
+    # Consume one lockpick charge
+    player.lockpick_charges = max(0, player.lockpick_charges - 1)
+    remaining = player.lockpick_charges
+    messages.append((f'Pick used. {remaining} charge{"s" if remaining != 1 else ""} remaining.', 'info'))
 
     container.opened = True
 
-    # Gold
     gold = random.randint(container.gold[0], container.gold[1])
-
-    # Loot items: guaranteed 1, then diminishing extras
     loot = _generate_loot(container, dungeon.level)
 
     messages.insert(0, ('The lock clicks open!', 'success'))
     if gold:
         messages.append((f'You find {gold} gold coins!', 'loot'))
-    for item in loot:
-        messages.append((f'You find a {item.name}!', 'loot'))
 
     on_complete({'status': 'opened', 'loot': loot, 'gold': gold, 'messages': messages})
 
 
-def _handle_failure(player, container, lockpick, dungeon, monsters, on_complete):
+def _handle_failure(player, container, dungeon, monsters, on_complete):
     messages = [('The lock resists your attempt.', 'warning')]
 
     # Trap: triggers only on first failure
@@ -111,19 +102,16 @@ def _handle_failure(player, container, lockpick, dungeon, monsters, on_complete)
         container.trap_triggered = True
         _trigger_trap(player, container.trap, messages)
 
-    # Lockpick durability damage
-    lockpick.durability -= lockpick.durability_loss_failure
-    if lockpick.durability <= 0:
-        player.remove_from_inventory(lockpick)
-        messages.append(('Your lockpick snaps in two!', 'danger'))
-    else:
-        messages.append((f'Lockpick durability: {lockpick.durability}/{lockpick.max_durability}', 'info'))
+    # Consume one lockpick charge on failure
+    player.lockpick_charges = max(0, player.lockpick_charges - 1)
+    remaining = player.lockpick_charges
+    messages.append((f'Pick damaged. {remaining} charge{"s" if remaining != 1 else ""} remaining.', 'info'))
 
     # 30% chance to alert nearby monsters
     if random.random() < 0.30:
         alerted = _alert_nearby(player, dungeon, monsters)
         if alerted:
-            messages.append((f'The scraping noise alerts nearby monsters!', 'danger'))
+            messages.append(('The scraping noise alerts nearby monsters!', 'danger'))
 
     on_complete({'status': 'failed', 'loot': [], 'gold': 0, 'messages': messages})
 
@@ -242,9 +230,8 @@ def _spawn_mimic(container, monsters: list):
     import json, os
     from monster import Monster
 
-    monsters_path = os.path.join(
-        os.path.dirname(__file__), '..', 'data', 'monsters.json'
-    )
+    from paths import data_path
+    monsters_path = data_path('data', 'monsters.json')
     with open(monsters_path, encoding='utf-8') as f:
         all_defs = json.load(f)
 
