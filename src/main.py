@@ -245,7 +245,7 @@ class WelcomeScreen:
         self.font_lg   = get_font('heading', 32)
         self.font_md   = get_font('body',    20)
         self.font_sm   = get_font('body',    15)
-        self.font_icon = get_font('gothic',  26)
+        self.font_icon = get_font('symbol',  26)
         self.font_tiny = get_font('body',    12)
         self.name_buf    = ''
         self.cursor_on   = True
@@ -546,7 +546,7 @@ class WelcomeScreen:
         draw_shadow_text(self.screen, self.font_lg, display, FP.PARCHMENT_LIGHT,
                          (bx + 20, field_y + (34 - self.font_lg.get_height()) // 2))
         if self.name_buf.strip().lower() in SECRET_BUILDS:
-            badge = self.font_sm.render("★  SECRET BUILD ACTIVE!", True, FP.GOLD_BRIGHT)
+            badge = self.font_sm.render("[*] SECRET BUILD ACTIVE!", True, FP.GOLD_BRIGHT)
             self.screen.blit(badge, (cx - badge.get_width() // 2, by + box_h + 8))
 
     def _draw_footer(self, cx):
@@ -557,10 +557,10 @@ class WelcomeScreen:
         # Delete-flash confirmation (shown for 2 seconds after DEL)
         flash = getattr(self, '_delete_flash', 0.0)
         if flash > 0.0:
-            del_msg = self.font_sm.render("✗  Save deleted — press ENTER to start fresh", True, (220, 80, 80))
+            del_msg = self.font_sm.render("[X] Save deleted — press ENTER to start fresh", True, (220, 80, 80))
             self.screen.blit(del_msg, (cx - del_msg.get_width() // 2, self.H - 52))
         elif has_save:
-            save_hint = self.font_sm.render("★  Saved journey found — ENTER to continue  |  DEL to erase", True, FP.SUCCESS_TEXT)
+            save_hint = self.font_sm.render("[S] Saved journey found — ENTER to continue  |  DEL to erase", True, FP.SUCCESS_TEXT)
             self.screen.blit(save_hint, (cx - save_hint.get_width() // 2, self.H - 52))
 
         # High score mini-leaderboard (top 3)
@@ -3718,7 +3718,7 @@ class Game:
                 sc = copy_at(template, x, y)
                 sc.identified = True
                 self.ground_items.append(sc)
-                self.add_message("★ The boss drops a REWARD SCROLL!", 'loot')
+                self.add_message("[LOOT] The boss drops a REWARD SCROLL!", 'loot')
         except Exception:
             pass
 
@@ -4006,7 +4006,7 @@ class Game:
 
         elif effect == 'boss_reward':
             code = scroll.power or '???'
-            self.add_message(f"★ BOSS REWARD CODE: {code} ★", 'loot')
+            self.add_message(f"[REWARD CODE: {code}]", 'loot')
             self.add_message("Show this code to Dad in real life for a reward!", 'success')
             self.add_message("You can re-read this scroll at any time to see the code again.", 'info')
             # Put the scroll back in inventory so the player can re-read it
@@ -5087,6 +5087,21 @@ class Game:
         bar_x     = bx + PAD
         bar_w     = bw - PAD * 2
         bar_h     = 14
+
+        # Tier pip indicator — 5 small circles (filled = earned, hollow = not yet)
+        pip_r   = 5
+        pip_gap = 13
+        pip_cx0 = bar_x + pip_r
+        pip_cy  = ty + bar_h // 2
+        for i in range(5):
+            px = pip_cx0 + i * pip_gap
+            if i < qe.tier:
+                pygame.draw.circle(self.screen, accent, (px, pip_cy), pip_r)
+            else:
+                pygame.draw.circle(self.screen, accent_dim, (px, pip_cy), pip_r, 1)
+        tier_offset = 5 * pip_gap + 8
+        bar_x += tier_offset
+        bar_w -= tier_offset
 
         ratio = max(0.0, qe.time_remaining / max(1, qe.timer_seconds))
         t_color = (

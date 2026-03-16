@@ -107,6 +107,9 @@ _ROLE_FILES = {
 }
 
 _FALLBACK_FAMILIES = 'garamond,palatino linotype,palatino,georgia,book antiqua,times new roman,consolas'
+
+# Unicode-capable font families for symbol/icon rendering (★ ☆ ✗ ∑ Ω ◆ etc.)
+_SYMBOL_FAMILIES = 'segoe ui symbol,segoe ui emoji,noto sans symbols,dejavu sans,arial unicode ms,unifont'
 _font_cache: dict = {}
 
 
@@ -126,7 +129,10 @@ def get_font(role: str, size: int, bold: bool = False) -> pygame.font.Font:
     if key in _font_cache:
         return _font_cache[key]
 
-    if role in ('mono', 'body', 'small'):
+    if role == 'symbol':
+        # Unicode-capable font for rendering special characters (★ ☆ ✗ ∑ Ω ◆ etc.)
+        font = pygame.font.SysFont(_SYMBOL_FAMILIES, size, bold=bold)
+    elif role in ('mono', 'body', 'small'):
         # Use Consolas for all body/small roles — crisp and highly readable
         font = pygame.font.SysFont('consolas,courier new,monospace', size, bold=bold)
     else:
