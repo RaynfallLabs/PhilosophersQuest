@@ -51,7 +51,8 @@ EFFECT_INFO: dict[str, tuple] = {
     'brilliance':         ('Brilliant',          (140, 180, 255), 'INT +1, WIS +1; mind razor-sharp'),
     'hallucinating_pot':  ('Hallucinating',      (210,  85, 230), 'Reality distorted; quiz timer -20%'),
     # ---- Active buffs (wand/accessory-granted) ----
-    'shielded':           ('Shielded',           (120, 180, 245), '+2 AC; physical damage halved'),
+    'blessed':            ('Blessed',            (200, 240, 160), 'All quiz timers +25%; divine clarity'),
+    'shielded':          ('Shielded',           (120, 180, 245), '+2 AC; physical damage halved'),
     'fire_shield':        ('Fire Shield',        (245, 120,  40), 'Immune to fire; reflects fire attacks'),
     'cold_shield':        ('Cold Shield',        ( 80, 200, 245), 'Immune to cold; reflects cold attacks'),
     'reflecting':         ('Reflecting',         (220, 220, 180), '50% chance to reflect monster status attacks'),
@@ -78,7 +79,7 @@ DEBUFFS: frozenset = frozenset({
 BUFFS: frozenset = frozenset({
     'hasted', 'invisible', 'levitating', 'regenerating', 'telepathy',
     'warning', 'searching', 'clairvoyant', 'displacement', 'heroism', 'brilliance',
-    'shielded', 'fire_shield', 'cold_shield', 'reflecting', 'phasing', 'time_stopped',
+    'shielded', 'fire_shield', 'cold_shield', 'reflecting', 'phasing', 'time_stopped', 'blessed',
     'fire_resist', 'cold_resist', 'shock_resist', 'poison_resist',
     'sleep_resist', 'magic_resist', 'drain_resist', 'disint_resist',
 })
@@ -135,6 +136,7 @@ _EXPIRE_MSGS: dict[str, tuple] = {
     'reflecting':     ('Your reflective aura fades.',            'info'),
     'phasing':        ('You feel solid again.',                  'info'),
     'time_stopped':   ('Time resumes its flow.',                 'info'),
+    'blessed':        ('The divine clarity fades.',              'info'),
     'feared':         ('Your fear subsides.',                    'info'),
     'charmed':        ('The charm over you breaks.',             'info'),
     'cursed':         ('The curse lifts.',                       'success'),

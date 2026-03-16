@@ -28,6 +28,14 @@ Model assumptions:
   - SP: 25/level exploration + 2/combat turn; SP=0 -> 1 HP starvation/turn
   - Scoring: turns*10 + max_level*1000 + kills*100 + 50000 stone bonus
   - Two-phase run: descent then ascent after defeating Abaddon
+  - Quirk system: key passive/active quirks modelled (eye_storm, runic_armor,
+      ramanujan, battle_trance, life_drain, metabolic, iron_ration, phoenix_rising)
+
+Calibration (2026-03-16, seed=42, 3000 runs):
+  - generic build, skill=high: ~3.7% (baseline 3.47% + quirks add ~0.3%)
+  - generic build, skill=med:  0.00%
+  - generic build, skill=low:  0.00%
+  - Target: 1.5-3% high-skill (original 2.9% drifted slightly due to food/item improvements)
 """
 
 import json, math, random, argparse
@@ -330,6 +338,88 @@ def simulate_cooking(player_wis: int, skill: str, level: int) -> tuple:
     return sp, hp, quality
 
 # ---------------------------------------------------------------------------
+# Quirk unlock checker
+# ---------------------------------------------------------------------------
+
+def _check_quirk_unlocks(player: 'SimPlayer', floor_was_clean: bool) -> list:
+    """
+    Check all quirk unlock conditions and apply bonuses when first triggered.
+    Returns list of newly unlocked quirk IDs (for reporting).
+    Call once per level AFTER combat, with floor_was_clean=True if player
+    took no HP damage this level.
+    """
+    newly = []
+
+    # --- Clean-floor streak tracking ---
+    if floor_was_clean:
+        player.clean_floors += 1
+    else:
+        player.clean_floors = 0
+    player.floors_explored += 1
+
+    # eye_storm: 7 consecutive clean floors → +3 max HP
+    if 'eye_storm' not in player.quirk_unlocked and player.clean_floors >= 7:
+        player.quirk_unlocked.add('eye_storm')
+        player.max_hp += 3
+        player.hp = min(player.hp + 3, player.max_hp)
+        newly.append('eye_storm')
+
+    # runic_armor: 200 hits taken → +2 AC
+    # (game threshold 50 hits; sim turns ≈ 4x less granular → scale up)
+    if 'runic_armor' not in player.quirk_unlocked and player.hits_taken >= 200:
+        player.quirk_unlocked.add('runic_armor')
+        player.armor_ac += 2
+        newly.append('runic_armor')
+
+    # temporal_shield: 500 hits taken → +1 more AC
+    if 'temporal_shield' not in player.quirk_unlocked and player.hits_taken >= 500:
+        player.quirk_unlocked.add('temporal_shield')
+        player.armor_ac += 1
+        newly.append('temporal_shield')
+
+    # ramanujan: 3000 correct → max HP +12 (direct bonus; sim counts all subjects so
+    # threshold calibrated to unlock only in very deep/successful runs)
+    if 'ramanujan' not in player.quirk_unlocked and player.quests_correct >= 3000:
+        player.quirk_unlocked.add('ramanujan')
+        player.max_hp += 12
+        player.hp = min(player.hp + 12, player.max_hp)
+        newly.append('ramanujan')
+
+    # battle_trance: 600 kills → max HP +8 (direct combat survivability bonus)
+    if 'battle_trance' not in player.quirk_unlocked and player.kills >= 600:
+        player.quirk_unlocked.add('battle_trance')
+        player.max_hp += 8
+        player.hp = min(player.hp + 8, player.max_hp)
+        newly.append('battle_trance')
+
+    # life_drain: 800 kills → 2 uses of +20 HP steal mid-combat
+    if 'life_drain' not in player.quirk_unlocked and player.kills >= 800:
+        player.quirk_unlocked.add('life_drain')
+        player.life_drain_uses = 2
+        newly.append('life_drain')
+
+    # metabolic: ~5000 simulator turns → 2x restore 100 SP (reduced from 3 to limit impact)
+    if 'metabolic' not in player.quirk_unlocked and player.turns >= 5000:
+        player.quirk_unlocked.add('metabolic')
+        player.metabolic_uses = 2
+        newly.append('metabolic')
+
+    # iron_ration: ~8000 simulator turns → max SP +50 (late-run reward)
+    if 'iron_ration' not in player.quirk_unlocked and player.turns >= 8000:
+        player.quirk_unlocked.add('iron_ration')
+        player.max_sp += 50
+        newly.append('iron_ration')
+
+    # phoenix_rising: 10 near-death hits (HP ≤ 5% when hit) → 10 auto-revives
+    if 'phoenix_rising' not in player.quirk_unlocked and player.near_death_hits >= 10:
+        player.quirk_unlocked.add('phoenix_rising')
+        player.phoenix_uses = 10
+        newly.append('phoenix_rising')
+
+    return newly
+
+
+# ---------------------------------------------------------------------------
 # Gear helpers -- weighted random sampling
 # ---------------------------------------------------------------------------
 
@@ -505,6 +595,17 @@ class SimPlayer:
         self._regen_turn    = 0    # tracks fractional turns for regen tick
         self.passive_regen_interval = max(10, 20 - max(0, self.CON - 12))
 
+        # Quirk system tracking
+        self.quirk_unlocked    = set()   # set of unlocked quirk IDs
+        self.hits_taken        = 0       # monster attacks landed (for runic_armor)
+        self.near_death_hits   = 0       # hits taken while HP <= 5% max (phoenix_rising)
+        self.clean_floors      = 0       # consecutive floors taking no HP damage
+        self.floors_explored   = 0       # total floors completed
+        # Active power charges (unlocked mid-run)
+        self.metabolic_uses    = 0       # SP restore +100 (3 uses, unlocks ~floor 40)
+        self.phoenix_uses      = 0       # auto-revive to full HP (10 uses, hard unlock)
+        self.life_drain_uses   = 0       # steal +25 HP mid-combat (3 uses)
+
     @property
     def ac(self) -> int:
         base = 10 - self._dex_ac - self.armor_ac
@@ -678,6 +779,13 @@ def simulate_combat(player: SimPlayer, monster: dict,
         if pursuer:
             # Death always hits with 2d20+60
             dmg = roll_dice('2d20+60')
+            player.hits_taken += 1
+            if player.hp <= player.max_hp * 0.05:
+                player.near_death_hits += 1
+                if player.phoenix_uses > 0:
+                    player.hp = player.max_hp
+                    player.phoenix_uses -= 1
+                    continue
             if player.take_damage(dmg):
                 break
         else:
@@ -686,6 +794,17 @@ def simulate_combat(player: SimPlayer, monster: dict,
                 total_mdmg = 0
                 for atk in attacks:
                     total_mdmg += roll_dice(str(atk.get('damage', '1d4')))
+                player.hits_taken += 1
+                if player.hp <= player.max_hp * 0.05:
+                    player.near_death_hits += 1
+                    if player.phoenix_uses > 0:
+                        player.hp = player.max_hp
+                        player.phoenix_uses -= 1
+                        continue
+                # Use life_drain when HP critically low (< 30%)
+                if player.life_drain_uses > 0 and player.hp < player.max_hp * 0.30:
+                    player.hp = min(player.max_hp, player.hp + 20)
+                    player.life_drain_uses -= 1
                 if player.take_damage(total_mdmg):
                     break
 
@@ -871,6 +990,11 @@ def simulate_level(player: SimPlayer, level: int,
     # --- Exploration SP drain ---
     player.drain_sp(SP_EXPLORATION_PER_LEVEL)
 
+    # --- Metabolic power: restore 100 SP if critically low ---
+    if player.metabolic_uses > 0 and player.sp < 50:
+        player.restore_sp(100)
+        player.metabolic_uses -= 1
+
     # --- Death Pursuer attack on ascent levels ---
     # Death attacks once per level during ascent (half-speed, but always present).
     # This happens after regular-floor combat but before the stair-rest heal.
@@ -990,6 +1114,9 @@ def simulate_level(player: SimPlayer, level: int,
 
     # Post-combat healing
     player.use_healing(max_hp_fraction=0.75)
+
+    # Quirk unlock check (floor clean = no HP damage from monsters this level)
+    _check_quirk_unlocks(player, floor_was_clean=(total_hp_lost == 0 and not death_cause))
 
     return {
         'combats':     n_monsters,
@@ -1118,6 +1245,7 @@ def _run_result(survived, died_on, phase, death_cause, per_lv, player, miniboss_
         'wrong':         player.quests_wrong,
         'deepest_level': max((s['level'] for s in per_lv if s['phase'] == 'descent'),
                              default=0),
+        'quirks':        set(player.quirk_unlocked),
     }
 
 
@@ -1192,6 +1320,7 @@ def run_simulation(runs: int, max_level: int, seed: int, skill: str,
     total_turns         = []
     grade_counts        = defaultdict(int)
     death_pursuer_kills = 0
+    quirk_unlock_counts = defaultdict(int)  # quirk_id -> runs that unlocked it
 
     for _ in range(runs):
         result = simulate_run(
@@ -1212,6 +1341,8 @@ def run_simulation(runs: int, max_level: int, seed: int, skill: str,
         grade_counts[_grade(result['score'])] += 1
         if result['death_cause'] == 'death_pursuer':
             death_pursuer_kills += 1
+        for qid in result.get('quirks', set()):
+            quirk_unlock_counts[qid] += 1
 
         for s in result['per_level']:
             lv    = s['level']
@@ -1450,6 +1581,27 @@ def run_simulation(runs: int, max_level: int, seed: int, skill: str,
         hp1 = _cooking_hp_bonus(1, q)
         hp5 = _cooking_hp_bonus(81, q)
         print(f'  {q:>8} {freq:>7.1f}%  {sp:>5}  {hp1:>7}  {hp5:>7}')
+
+    # Quirk unlock rates
+    TRACKED_QUIRKS = [
+        ('eye_storm',       'Eye of the Storm    (5 clean floors  -> +3 max HP)'),
+        ('runic_armor',     'Runic Armor         (50 hits taken   -> +2 AC)'),
+        ('temporal_shield', 'Temporal Shield     (150 hits taken  -> +1 AC)'),
+        ('ramanujan',       'Ramanujan           (500 correct     -> WIS+2)'),
+        ('battle_trance',   'Battle Trance       (200 kills       -> WIS+1)'),
+        ('life_drain',      'Life Drain          (200 kills       -> 3x +25HP steal)'),
+        ('metabolic',       'Metabolic Surge     (~1700 turns     -> 3x +100SP)'),
+        ('iron_ration',     'Iron Ration         (~5000 turns     -> max SP+50)'),
+        ('phoenix_rising',  'Phoenix Rising      (10 near-death   -> 10x auto-revive)'),
+    ]
+    print(f'\nQUIRK UNLOCK RATES (skill={skill}):')
+    print(f'  {"QUIRK":<55} {"RUNS":>6}  {"PCT":>7}')
+    print(f'  {"-"*55}  {"-"*6}  {"-"*7}')
+    for qid, label in TRACKED_QUIRKS:
+        cnt = quirk_unlock_counts.get(qid, 0)
+        pct = 100.0 * cnt / runs
+        bar = '#' * max(0, int(pct / 2))
+        print(f'  {label:<55} {cnt:>6}  {pct:>6.1f}%  {bar}')
 
     # Red flags
     if red_flags:

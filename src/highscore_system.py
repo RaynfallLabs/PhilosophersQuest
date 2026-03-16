@@ -11,7 +11,7 @@ import os
 from datetime import datetime
 from typing import Optional
 
-MAX_ENTRIES = 10
+MAX_ENTRIES = 100
 _SCORE_FILE = os.path.join(
     os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
     'highscores.json'

@@ -67,9 +67,9 @@ class FP:
     HEADER_BG       = MIDNIGHT          # header strip fill
     HEADER_TEXT     = GOLD_BRIGHT       # header text
     BODY_TEXT       = PARCHMENT         # normal body text
-    FADED_TEXT      = INK_LIGHT         # disabled / hint text
+    FADED_TEXT      = (165, 155, 185)   # disabled / secondary text — lavender-grey, ~6:1 on midnight
     ACCENT_TEXT     = GOLD_PALE         # accented label text
-    HINT_TEXT       = (120, 115, 165)   # keyboard hint text
+    HINT_TEXT       = (170, 165, 215)   # keyboard hint text — boosted blue-lavender, ~7:1 on midnight
     DANGER_TEXT     = BLOOD
     SUCCESS_TEXT    = (110, 220, 100)
     WARNING_TEXT    = (220, 185,  45)

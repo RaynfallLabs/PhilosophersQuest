@@ -156,9 +156,9 @@ class Sidebar:
         for i, (name, val) in enumerate(attrs):
             ax = self.x + self.PAD + (i % 3) * col_w
             ay = y + (i // 3) * 24
-            # FANTASY: INK_LIGHT label color
+            # FANTASY: FADED_TEXT label color
             self.screen.blit(
-                self._fsm.render(f"{name}:", True, FP.INK_LIGHT), (ax, ay)
+                self._fsm.render(f"{name}:", True, FP.FADED_TEXT), (ax, ay)
             )
             # FANTASY: Gold for high, body text for mid, danger for low
             vc = FP.GOLD_BRIGHT if val > 12 else FP.BODY_TEXT if val >= 10 else FP.DANGER_TEXT
@@ -316,8 +316,8 @@ class Sidebar:
                 iname = "\u2014"
             # FANTASY: Gold-pale for equipped items, dim ink for empty slots
             ic = FP.GOLD_PALE if item else (52, 52, 70)
-            # FANTASY: INK_LIGHT label color
-            label_surf = self._fsm.render(f"{label}:", True, FP.INK_LIGHT)
+            # FANTASY: FADED_TEXT label color
+            label_surf = self._fsm.render(f"{label}:", True, FP.FADED_TEXT)
             self.screen.blit(label_surf, (self.x + self.PAD, y))
             name_x = self.x + self.PAD + label_surf.get_width() + 5
             max_name_w = self.x + self.w - self.PAD - name_x
@@ -360,9 +360,9 @@ class Sidebar:
                 break
             # FANTASY: Use ITEM_COLOR dict from fantasy_ui
             ic = _IC_COLOR.get(getattr(item, 'item_class', ''), (165, 165, 165))
-            # FANTASY: Gold-dark letter color
+            # FANTASY: Gold letter color
             self.screen.blit(
-                self._fsm.render(f"{letter})", True, FP.GOLD_DARK),
+                self._fsm.render(f"{letter})", True, FP.GOLD),
                 (self.x + self.PAD, y)
             )
             count = getattr(item, 'count', None)

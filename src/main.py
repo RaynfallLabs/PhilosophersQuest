@@ -253,6 +253,7 @@ class WelcomeScreen:
         self._anim_t     = 0.0
         self._has_save   = False
         self._delete_flash = 0.0
+        self._show_alltime = False
         # Pre-render stone background into a surface
         self._bg = self._make_stone_bg()
 
@@ -295,6 +296,10 @@ class WelcomeScreen:
                     pygame.quit()
                     sys.exit()
                 if event.type == pygame.KEYDOWN:
+                    if self._show_alltime:
+                        # Any key closes the all-time overlay
+                        self._show_alltime = False
+                        continue
                     if event.key == pygame.K_RETURN and self.name_buf.strip():
                         name  = self.name_buf.strip()
                         build = SECRET_BUILDS.get(name.lower())
@@ -309,6 +314,8 @@ class WelcomeScreen:
                     elif event.key == pygame.K_ESCAPE:
                         pygame.quit()
                         sys.exit()
+                    elif event.key == pygame.K_h:
+                        self._show_alltime = True
                     elif len(self.name_buf) < 24 and event.unicode.isprintable():
                         self.name_buf += event.unicode
 
@@ -330,6 +337,9 @@ class WelcomeScreen:
         self._draw_title_banner(cx)
         self._draw_name_input(cx, cy)
         self._draw_footer(cx)
+        self._draw_leaderboard()
+        if self._show_alltime:
+            self._draw_alltime()
 
     def _draw_radial_glow(self, cx, cy):
         glow = pygame.Surface((self.W, self.H), pygame.SRCALPHA)
@@ -563,25 +573,183 @@ class WelcomeScreen:
             save_hint = self.font_sm.render("[S] Saved journey found — ENTER to continue  |  DEL to erase", True, FP.SUCCESS_TEXT)
             self.screen.blit(save_hint, (cx - save_hint.get_width() // 2, self.H - 52))
 
-        # High score mini-leaderboard (top 3)
+    def _draw_leaderboard(self):
+        """Right-side panel showing Top 10 runs."""
         try:
             from highscore_system import get_top
-            top = get_top(3)
-            if top:
-                hs_x = cx + 260
-                hs_y = self.H - 140
-                title_s = self.font_sm.render("BEST RUNS", True, FP.GOLD_DARK)
-                self.screen.blit(title_s, (hs_x - title_s.get_width() // 2, hs_y))
-                hs_y += 18
-                for i, e in enumerate(top):
-                    v_mark = "✦" if e.get('victory') else " "
-                    line = f"{v_mark}{i+1}. {e.get('name','?'):<8}  {e['score']:>7,}  {e.get('grade','?'):>2}"
-                    col = FP.GOLD if e.get('victory') else FP.FADED_TEXT
-                    s = self.font_tiny.render(line, True, col)
-                    self.screen.blit(s, (hs_x - s.get_width() // 2, hs_y))
-                    hs_y += 16
+            entries = get_top(10)
         except Exception:
-            pass
+            return
+        if not entries:
+            return
+
+        W, H = self.W, self.H
+        bw  = 390
+        bx  = W - bw - 18
+        # Header + rows + divider + footer hint
+        row_h    = 22
+        header_h = 36
+        n        = len(entries)
+        bh       = header_h + 6 + n * row_h + 10 + 26
+        by       = max(130, H // 2 - bh // 2)
+
+        # Semi-transparent background
+        panel = pygame.Surface((bw, bh), pygame.SRCALPHA)
+        panel.fill((6, 4, 18, 215))
+        self.screen.blit(panel, (bx, by))
+        pygame.draw.rect(self.screen, FP.GOLD_DARK, (bx, by, bw, bh), 1, border_radius=6)
+
+        # Header bar
+        pygame.draw.rect(self.screen, FP.MIDNIGHT_MID, (bx, by, bw, header_h), border_radius=6)
+        pygame.draw.rect(self.screen, FP.GOLD_DARK, (bx, by + header_h, bw, 1))
+        hdr = self.font_sm.render("TOP RUNS", True, FP.GOLD_BRIGHT)
+        self.screen.blit(hdr, (bx + bw // 2 - hdr.get_width() // 2,
+                                by + (header_h - hdr.get_height()) // 2))
+
+        # Column header line
+        y = by + header_h + 4
+        col_hdr = self.font_tiny.render("     NAME             LVL      SCORE   GR", True, FP.GOLD_PALE)
+        self.screen.blit(col_hdr, (bx + 8, y))
+        y += 14
+        pygame.draw.line(self.screen, FP.GOLD_DARK, (bx + 8, y), (bx + bw - 8, y))
+        y += 4
+
+        # Rows
+        for i, e in enumerate(entries):
+            victory = e.get('victory', False)
+            name    = e.get('name', '?')[:11]
+            score   = e.get('score', 0)
+            grade   = e.get('grade', '?')
+            level   = e.get('level', 1)
+            col     = FP.GOLD_BRIGHT if victory else FP.BODY_TEXT
+
+            # rank
+            rank_s = self.font_tiny.render(f"{i+1:>2}.", True, FP.FADED_TEXT)
+            self.screen.blit(rank_s, (bx + 8, y))
+            # crown
+            if victory:
+                crown_s = self.font_tiny.render("[V]", True, (255, 215, 0))
+                self.screen.blit(crown_s, (bx + 30, y))
+            # name
+            name_s = self.font_tiny.render(f"{name:<11}", True, col)
+            self.screen.blit(name_s, (bx + 54, y))
+            # level
+            level_s = self.font_tiny.render(f"L{level:<3}", True, FP.FADED_TEXT)
+            self.screen.blit(level_s, (bx + 140, y))
+            # score (right-aligned)
+            score_s = self.font_tiny.render(f"{score:>9,}", True, col)
+            self.screen.blit(score_s, (bx + 183, y))
+            # grade
+            grade_s = self.font_tiny.render(f"{grade:>2}", True, FP.GOLD_PALE)
+            self.screen.blit(grade_s, (bx + 285, y))
+
+            y += row_h
+            # Mid divider after top 5
+            if i == 4:
+                pygame.draw.line(self.screen, FP.MIDNIGHT_MID,
+                                 (bx + 8, y - row_h // 2), (bx + bw - 8, y - row_h // 2))
+
+        # Footer hint
+        pygame.draw.line(self.screen, FP.GOLD_DARK,
+                         (bx + 8, y + 2), (bx + bw - 8, y + 2))
+        hint = self.font_tiny.render("[ H ]  View All-Time Top 100", True, FP.HINT_TEXT)
+        self.screen.blit(hint, (bx + bw // 2 - hint.get_width() // 2, y + 6))
+
+    def _draw_alltime(self):
+        """Full-screen overlay showing all-time top 100 scores."""
+        try:
+            from highscore_system import get_top
+            entries = get_top(100)
+        except Exception:
+            entries = []
+
+        W, H = self.W, self.H
+
+        # Dim overlay
+        overlay = pygame.Surface((W, H), pygame.SRCALPHA)
+        overlay.fill((0, 0, 10, 235))
+        self.screen.blit(overlay, (0, 0))
+
+        bw, bh = min(1380, W - 40), min(830, H - 40)
+        bx = (W - bw) // 2
+        by = (H - bh) // 2
+
+        pygame.draw.rect(self.screen, (8, 6, 22), (bx, by, bw, bh), border_radius=8)
+        pygame.draw.rect(self.screen, FP.GOLD, (bx, by, bw, bh), 2, border_radius=8)
+        pygame.draw.rect(self.screen, FP.GOLD_DARK, (bx + 4, by + 4, bw - 8, bh - 8), 1, border_radius=6)
+
+        # Header
+        header_h = 42
+        pygame.draw.rect(self.screen, FP.MIDNIGHT_MID, (bx, by, bw, header_h), border_radius=8)
+        title = self.font_md.render("ALL-TIME HIGH SCORES", True, FP.GOLD_BRIGHT)
+        self.screen.blit(title, (bx + bw // 2 - title.get_width() // 2,
+                                  by + (header_h - title.get_height()) // 2))
+
+        # Footer
+        footer_h = 28
+        footer_y  = by + bh - footer_h
+        pygame.draw.line(self.screen, FP.GOLD_DARK,
+                         (bx + 16, footer_y - 4), (bx + bw - 16, footer_y - 4))
+        close_hint = self.font_tiny.render("[ Any Key ]  Close", True, FP.HINT_TEXT)
+        self.screen.blit(close_hint, (bx + bw // 2 - close_hint.get_width() // 2,
+                                       footer_y + (footer_h - close_hint.get_height()) // 2))
+
+        # Content area — two columns
+        content_top = by + header_h + 6
+        content_bot = footer_y - 8
+        content_h   = content_bot - content_top
+        row_h       = 17
+        col_w       = bw // 2 - 16
+
+        # Column header
+        col_hdr_txt = "  #  NAME              LVL       SCORE  GR  DATE"
+        for col_x in (bx + 12, bx + bw // 2 + 8):
+            hdr_s = self.font_tiny.render(col_hdr_txt, True, FP.GOLD_PALE)
+            self.screen.blit(hdr_s, (col_x, content_top))
+            pygame.draw.line(self.screen, FP.GOLD_DARK,
+                             (col_x, content_top + 16),
+                             (col_x + col_w, content_top + 16))
+
+        max_rows = (content_h - 22) // row_h
+        row_top  = content_top + 22
+
+        for i, e in enumerate(entries):
+            col_idx = 0 if i < max_rows else 1
+            row_idx = i if i < max_rows else i - max_rows
+            if row_idx >= max_rows:
+                break
+
+            col_x = bx + 12 if col_idx == 0 else bx + bw // 2 + 8
+            ry    = row_top + row_idx * row_h
+
+            victory = e.get('victory', False)
+            name    = e.get('name', '?')[:13]
+            level   = e.get('level', 1)
+            score   = e.get('score', 0)
+            grade   = e.get('grade', '?')
+            date    = e.get('date', '')
+
+            text_col = FP.GOLD_BRIGHT if victory else (FP.BODY_TEXT if row_idx % 2 == 0 else FP.PARCHMENT_DARK)
+            crown    = 'V' if victory else ' '
+
+            # rank + crown
+            rank_s = self.font_tiny.render(f"{crown}{i+1:>3}.", True, FP.FADED_TEXT if not victory else (255, 215, 0))
+            self.screen.blit(rank_s, (col_x, ry))
+            # name
+            name_s = self.font_tiny.render(f"{name:<13}", True, text_col)
+            self.screen.blit(name_s, (col_x + 34, ry))
+            # level
+            level_s = self.font_tiny.render(f"L{level:<3}", True, FP.FADED_TEXT)
+            self.screen.blit(level_s, (col_x + 128, ry))
+            # score
+            score_s = self.font_tiny.render(f"{score:>9,}", True, text_col)
+            self.screen.blit(score_s, (col_x + 165, ry))
+            # grade
+            grade_s = self.font_tiny.render(f"{grade:>2}", True, FP.GOLD_PALE)
+            self.screen.blit(grade_s, (col_x + 240, ry))
+            # date
+            date_s = self.font_tiny.render(date[-5:] if len(date) >= 5 else date, True, FP.FADED_TEXT)
+            self.screen.blit(date_s, (col_x + 262, ry))
 
 
 # Game states
@@ -612,6 +780,7 @@ STATE_DROP_GOLD_INPUT = 'drop_gold_input' # Numeric prompt: how much gold to dro
 STATE_STORY_POPUP    = 'story_popup'     # Narrative popup (quest intro, boss defeat, ending)
 STATE_MYSTERY_APPROACH = 'mystery_approach'  # Player is approaching a mystery altar
 STATE_SHOP             = 'shop'              # Merchant shop overlay
+STATE_POWER_MENU       = 'power_menu'        # Active powers menu (V key)
 
 # ---------------------------------------------------------------------------
 # Spells learnable from spellbooks  (spell_id → attributes)
@@ -1031,7 +1200,8 @@ class Game:
                               STATE_SPELL_MENU, STATE_HINT,
                               STATE_EXAMINE, STATE_ENCYCLOPEDIA,
                               STATE_DROP_MENU, STATE_DROP_GOLD_INPUT,
-                              STATE_MYSTERY_APPROACH, STATE_SHOP):
+                              STATE_MYSTERY_APPROACH, STATE_SHOP,
+                              STATE_POWER_MENU):
                 if self.state == STATE_MYSTERY_APPROACH:
                     self._active_mystery_altar = None
                 self.state = STATE_PLAYER
@@ -1102,6 +1272,8 @@ class Game:
             self._mystery_approach_input(key, event.unicode)
         elif self.state == STATE_SHOP:
             self._shop_input(key)
+        elif self.state == STATE_POWER_MENU:
+            self._power_menu_input(key)
 
         return True
 
@@ -1195,6 +1367,9 @@ class Game:
             return
         if key == pygame.K_t:
             self._open_shop()
+            return
+        if key == pygame.K_v:
+            self._open_power_menu()
             return
 
         if key not in self._MOVE_KEYS:
@@ -1656,6 +1831,7 @@ class Game:
         qs = getattr(self, 'quirk_system', None)
         if qs and self.player:
             qs.on_turn()
+            qs.tick_powers()
 
         # Decrement prayer cooldown
         if self.player.prayer_cooldown > 0:
@@ -1996,6 +2172,9 @@ class Game:
                 if result['gold'] > 0:
                     from items import GoldPile
                     self.ground_items.append(GoldPile(result['gold'], cx, cy))
+                _qs_lk = getattr(self, 'quirk_system', None)
+                if _qs_lk:
+                    _qs_lk.on_lockpick_success()
             elif result['status'] == 'failed':
                 _qs_lock = getattr(self, 'quirk_system', None)
                 if _qs_lock and getattr(container, 'trapped', False):
@@ -4301,6 +4480,9 @@ class Game:
                 self.add_message(
                     f"The {display} is revealed: {item.name}!", 'success'
                 )
+                _qs_id = getattr(self, 'quirk_system', None)
+                if _qs_id:
+                    _qs_id.on_item_identified(item.id)
                 # Show lore screen for the identified item
                 if item.lore:
                     self._lore_subject = item
@@ -4848,6 +5030,8 @@ class Game:
             self._draw_eat_menu()
         elif self.state == STATE_QUAFF_MENU:
             self._draw_quaff_menu()
+        elif self.state == STATE_POWER_MENU:
+            self._draw_power_menu()
         elif self.state == STATE_CONFIRM_EXIT:
             self._draw_confirm_exit()
         elif self.state == STATE_VICTORY:
@@ -5801,9 +5985,22 @@ class Game:
         compound_header_h = 30 if n_compound else 0
         single_header_h   = 30 if n_single and n_compound else 0
         bw = min(800, GAME_W - 40)
+        # Pre-compute compound recipe row heights (may expand for long ingredient lists)
+        _max_detail_w_pre = bw - 90
+        from food_system import _raw_ingredients as _ri_pre
+        _ings_pre = _ri_pre()
+        def _ing_name_pre(iid): return _ings_pre.get(iid, {}).get('name', iid)
+        compound_rows_h = sum(
+            row_h + max(0, len(self._wrap_text(
+                ', '.join(_ing_name_pre(iid) for iid in r.get('ingredients', []))
+                + f"  |  {r.get('sp',0)} SP  {_cook_menu_bonus_label(r)}",
+                self.font_sm, _max_detail_w_pre
+            )) - 1) * 16
+            for r in self.cook_compound_recipes[:6]
+        )
         bh = min(
-            90 + compound_header_h + n_compound * row_h
-               + single_header_h   + n_single   * row_h + 70,
+            90 + compound_header_h + compound_rows_h
+               + single_header_h   + n_single * row_h + 70,
             WINDOW_H - 40
         )
         bx = (GAME_W - bw) // 2
@@ -5838,14 +6035,24 @@ class Game:
                 hdr_surf = self.font_sm.render(hdr + '…', True, FP.GOLD_BRIGHT)
             self.screen.blit(hdr_surf, (bx + 18, cy))
             cy += compound_header_h
-        elif n_single:
+            from food_system import _raw_ingredients as _ri
+            _ings = _ri()
+            def _ing_name(iid): return _ings.get(iid, {}).get('name', iid)
             for i, recipe in enumerate(self.cook_compound_recipes[:6]):
                 iy = cy
-                # FANTASY: Alternating midnight row colors
+                # Resolve ingredient IDs → display names, then word-wrap detail line
+                ing_list = ', '.join(_ing_name(iid) for iid in recipe.get('ingredients', []))
+                sp_val      = recipe.get('sp', 0)
+                bonus_label = _cook_menu_bonus_label(recipe)
+                detail      = f"{ing_list}  |  {sp_val} SP  {bonus_label}"
+                detail_lines = self._wrap_text(detail, self.font_sm, max_detail_w)
+                extra_lines  = max(0, len(detail_lines) - 1)
+                this_row_h   = row_h + extra_lines * 16
+                # FANTASY: Alternating midnight row colors — sized to fit wrapped detail
                 pygame.draw.rect(
                     self.screen,
                     FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
-                    (bx + 10, iy, bw - 20, row_h - 4), border_radius=6
+                    (bx + 10, iy, bw - 20, this_row_h - 4), border_radius=6
                 )
                 lbl = letter_labels[i]
                 self.screen.blit(
@@ -5856,21 +6063,12 @@ class Game:
                     self.font_md.render(recipe['name'], True, FP.GOLD_PALE),
                     (bx + 70, iy + 10)
                 )
-                # Ingredient list + SP — resolve IDs to display names
-                from food_system import _raw_ingredients as _ri
-                _ings = _ri()
-                def _ing_name(iid): return _ings.get(iid, {}).get('name', iid)
-                ing_list = ', '.join(_ing_name(iid) for iid in recipe.get('ingredients', []))
-                sp_val   = recipe.get('sp', 0)
-                bonus_label = _cook_menu_bonus_label(recipe)
-                detail = f"{ing_list}  |  {sp_val} SP  {bonus_label}"
-                detail_surf = self.font_sm.render(detail, True, FP.BODY_TEXT)
-                if detail_surf.get_width() > max_detail_w:
-                    while len(detail) > 1 and self.font_sm.size(detail + '\u2026')[0] > max_detail_w:
-                        detail = detail[:-1]
-                    detail_surf = self.font_sm.render(detail + '\u2026', True, FP.BODY_TEXT)
-                self.screen.blit(detail_surf, (bx + 70, iy + 38))
-                cy += row_h
+                for li, dl in enumerate(detail_lines):
+                    self.screen.blit(
+                        self.font_sm.render(dl, True, FP.BODY_TEXT),
+                        (bx + 70, iy + 38 + li * 16)
+                    )
+                cy += this_row_h
 
         # ── Single ingredients ────────────────────────────────────────────
         if n_single:
@@ -6086,6 +6284,279 @@ class Game:
         self.screen.blit(
             self.font_sm.render("1-9: quaff  |  ESC: cancel", True, FP.HINT_TEXT),
             (bx + (bw - self.font_sm.size("1-9: quaff  |  ESC: cancel")[0]) // 2, hint_y)
+        )
+
+    # ------------------------------------------------------------------
+    # Power menu  (V key)
+    # ------------------------------------------------------------------
+
+    def _open_power_menu(self):
+        from quirk_system import _ACTIVE_POWER_DEFS
+        pl = self.player
+        unlocked = getattr(pl, 'unlocked_quirks', set())
+        power_uses = getattr(pl, 'power_uses', {})
+        power_cds  = getattr(pl, 'power_cooldowns', {})
+        powers = []
+        for pid, pdef in _ACTIVE_POWER_DEFS.items():
+            if pid not in unlocked:
+                continue
+            if pdef.get('uses', 0) > 0:
+                remaining = power_uses.get(pid, 0)
+                if remaining > 0:
+                    powers.append((pid, pdef, remaining, 0))
+            else:
+                cd = power_cds.get(pid, 0)
+                powers.append((pid, pdef, 0, cd))
+        if not powers:
+            self.add_message("You have no active powers. Earn quirks to unlock them!", 'info')
+            return
+        self._power_menu_list = powers
+        self.state = STATE_POWER_MENU
+
+    def _power_menu_input(self, key: int):
+        key_to_idx = {
+            pygame.K_1: 0, pygame.K_KP1: 0,
+            pygame.K_2: 1, pygame.K_KP2: 1,
+            pygame.K_3: 2, pygame.K_KP3: 2,
+            pygame.K_4: 3, pygame.K_KP4: 3,
+            pygame.K_5: 4, pygame.K_KP5: 4,
+            pygame.K_6: 5, pygame.K_KP6: 5,
+            pygame.K_7: 6, pygame.K_KP7: 6,
+            pygame.K_8: 7, pygame.K_KP8: 7,
+            pygame.K_9: 8, pygame.K_KP9: 8,
+        }
+        idx = key_to_idx.get(key)
+        if idx is None or idx >= len(self._power_menu_list):
+            return
+        self.state = STATE_PLAYER
+        pid, pdef, uses_remaining, cooldown = self._power_menu_list[idx]
+        if cooldown > 0:
+            self.add_message(f"{pdef['label']} is cooling down ({cooldown} turns).", 'warning')
+            return
+        if pdef.get('uses', 0) > 0 and uses_remaining <= 0:
+            self.add_message(f"{pdef['label']} has no uses remaining.", 'warning')
+            return
+        self._activate_power(pid)
+        self._advance_turn()
+
+    def _activate_power(self, pid: str):
+        from quirk_system import _ACTIVE_POWER_DEFS
+        from status_effects import DEBUFFS
+        pdef = _ACTIVE_POWER_DEFS.get(pid, {})
+        pl = self.player
+        label = pdef.get('label', pid)
+        # Consume uses or set cooldown
+        if pdef.get('uses', 0) > 0:
+            pl.power_uses[pid] = max(0, pl.power_uses.get(pid, 1) - 1)
+        elif pdef.get('cooldown', 0) > 0:
+            pl.power_cooldowns[pid] = pdef['cooldown']
+
+        # --- Effect dispatch ---
+        if pid == 'metabolic' or pid == 'iron_ration':
+            pl.restore_sp(100)
+            self.add_message(f"{label}: You surge with renewed stamina! (+100 SP)", 'success')
+
+        elif pid == 'time_dilation':
+            pl.add_effect('time_stopped', 10)
+            self.add_message(f"{label}: Time crystallises around you — 10 turns of stillness!", 'success')
+
+        elif pid == 'ouroboros':
+            pl.add_effect('hasted', 20)
+            pl.add_effect('shielded', 20)
+            pl.add_effect('regenerating', 20)
+            self.add_message(f"{label}: The circle completes — Haste, Shield, and Regen surge through you!", 'success')
+
+        elif pid == 'eye_storm':
+            pl.add_effect('invisible', 10)
+            pl.add_effect('blessed', 10)
+            self.add_message(f"{label}: You become one with the calm at the eye of the storm.", 'success')
+
+        elif pid == 'ancestral_q':
+            pl.add_effect('clairvoyant', 20)
+            self.add_message(f"{label}: Ancestral visions flood your mind — the dungeon unfolds!", 'success')
+
+        elif pid == 'sage_counsel':
+            pl.add_effect('blessed', 15)
+            self.add_message(f"{label}: A sage's wisdom descends — all quiz timers extended.", 'success')
+
+        elif pid == 'focused_scholar' or pid == 'arcane_surge':
+            pl.add_effect('brilliance', 10)
+            if pid == 'arcane_surge':
+                pl.restore_mp(pl.max_mp)
+                self.add_message(f"{label}: Arcane energy floods your mind! (MP fully restored, Brilliance 10t)", 'success')
+            else:
+                self.add_message(f"{label}: Your mind reaches a razor edge. (Brilliance 10t)", 'success')
+
+        elif pid == 'mind_fortress':
+            cleared = []
+            mental = {'confused', 'blinded', 'hallucinating', 'hallucinating_pot', 'stunned', 'feared'}
+            for eff in mental:
+                if pl.has_effect(eff):
+                    pl.status_effects.pop(eff, None)
+                    cleared.append(eff.replace('_', ' '))
+            if cleared:
+                self.add_message(f"{label}: Mental walls slam shut — {', '.join(cleared)} cleared!", 'success')
+            else:
+                self.add_message(f"{label}: Your mind is already fortress-clear.", 'info')
+
+        elif pid == 'philosophers_stone':
+            pl.add_effect('blessed', 10)
+            pl.add_effect('brilliance', 10)
+            self.add_message(f"{label}: Gold-bright wisdom suffuses your thoughts.", 'success')
+
+        elif pid == 'atlas_burden':
+            pl.add_effect('heroism', 20)
+            self.add_message(f"{label}: You bear the weight of the world — Heroism for 20 turns!", 'success')
+
+        elif pid == 'zeus_bolt':
+            pl.add_effect('shock_resist', 15)
+            pl.add_effect('hasted', 15)
+            self.add_message(f"{label}: Lightning courses through you — Shock Resist + Hasted 15t!", 'success')
+
+        elif pid == 'gorgon_ward':
+            pl.add_effect('sleep_resist', 15)
+            pl.add_effect('displacement', 15)
+            self.add_message(f"{label}: The gorgon's ward wraps around you — Sleep Resist + Displacement 15t.", 'success')
+
+        elif pid == 'phoenix_rising':
+            pl.hp = pl.max_hp
+            self.add_message(f"{label}: You rise from the ashes — HP fully restored!", 'success')
+
+        elif pid == 'iron_will':
+            pl.add_effect('shielded', 10)
+            pl.add_effect('reflecting', 10)
+            self.add_message(f"{label}: Iron will takes hold — Shielded + Reflecting for 10 turns.", 'success')
+
+        elif pid == 'battle_trance':
+            pl.add_effect('heroism', 15)
+            self.add_message(f"{label}: Battle trance descends — Heroism for 15 turns!", 'success')
+
+        elif pid == 'second_sight':
+            pl.add_effect('telepathy', 15)
+            pl.add_effect('clairvoyant', 15)
+            self.add_message(f"{label}: The second sight opens — Telepathy + Clairvoyance for 15 turns.", 'success')
+
+        elif pid == 'shadow_step':
+            pl.add_effect('invisible', 5)
+            pl.add_effect('phasing', 5)
+            self.add_message(f"{label}: You slip between shadows — Invisible + Phasing for 5 turns.", 'success')
+
+        elif pid == 'death_wish':
+            pl.add_effect('heroism', 10)
+            pl.add_effect('hasted', 10)
+            self.add_message(f"{label}: You embrace the edge — Heroism + Hasted for 10 turns!", 'success')
+
+        elif pid == 'wandering_star':
+            self._teleport_player()
+            self.add_message(f"{label}: You vanish and reappear elsewhere!", 'success')
+
+        elif pid == 'mirror_mind':
+            pl.add_effect('reflecting', 10)
+            pl.add_effect('magic_resist', 10)
+            self.add_message(f"{label}: Your mind becomes a mirror — Reflecting + Magic Resist 10t.", 'success')
+
+        elif pid == 'venom_lore':
+            pl.add_effect('poison_resist', 20)
+            if pl.has_effect('poisoned'):
+                pl.status_effects.pop('poisoned', None)
+                self.add_message(f"{label}: Poison cured. Poison Resist for 20 turns.", 'success')
+            else:
+                self.add_message(f"{label}: Venom knowledge shields you — Poison Resist for 20 turns.", 'success')
+
+        elif pid == 'war_cry':
+            pl.add_effect('hasted', 8)
+            self.add_message(f"{label}: A battle cry erupts — Hasted for 8 turns!", 'success')
+
+        elif pid == 'temporal_shield':
+            pl.add_effect('shielded', 25)
+            self.add_message(f"{label}: A temporal barrier slows all impacts — Shielded for 25 turns.", 'success')
+
+        elif pid == 'mystic_eye':
+            pl.add_effect('telepathy', 15)
+            pl.add_effect('clairvoyant', 15)
+            pl.add_effect('warning', 15)
+            self.add_message(f"{label}: The mystic eye opens wide — Telepathy + Clairvoyance + Warning 15t.", 'success')
+
+        elif pid == 'life_drain':
+            restored = max(1, pl.max_hp // 4)
+            pl.restore_hp(restored)
+            self.add_message(f"{label}: Vital energy flows back — +{restored} HP!", 'success')
+
+        elif pid == 'reality_anchor':
+            cleared = [e for e in list(pl.status_effects.keys()) if e in DEBUFFS]
+            for e in cleared:
+                pl.status_effects.pop(e, None)
+            if cleared:
+                self.add_message(f"{label}: Reality snaps into place — all debuffs cleared!", 'success')
+            else:
+                self.add_message(f"{label}: Nothing to anchor. You are clear.", 'info')
+
+        elif pid == 'runic_armor':
+            pl.add_effect('fire_shield', 10)
+            pl.add_effect('cold_shield', 10)
+            pl.add_effect('shock_resist', 10)
+            self.add_message(f"{label}: Runes blaze — Fire Shield + Cold Shield + Shock Resist 10t!", 'success')
+
+        elif pid == 'astral_form':
+            pl.add_effect('levitating', 8)
+            pl.add_effect('invisible', 8)
+            pl.add_effect('phasing', 8)
+            self.add_message(f"{label}: You transcend the physical — Levitate + Invisible + Phase 8t.", 'success')
+
+        else:
+            self.add_message(f"Used {label}.", 'info')
+
+    def _draw_power_menu(self):
+        powers = getattr(self, '_power_menu_list', [])
+        n = len(powers)
+        bw = min(700, GAME_W - 40)
+        row_h = 66
+        bh = min(90 + n * row_h + 44, WINDOW_H - 40)
+        bx = (GAME_W - bw) // 2
+        by = (WINDOW_H - bh) // 2
+        draw_overlay(self.screen, 160)
+        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=(160, 120, 255))
+        draw_header_bar(self.screen, (bx, by, bw, 44), text="ACTIVE POWERS  [V]",
+                        font=self.font_md, text_color=FP.GOLD_BRIGHT)
+        sub_txt = "Earned through quirk mastery — each power has limited uses."
+        sub_surf = self.font_sm.render(sub_txt, True, FP.FADED_TEXT)
+        self.screen.blit(sub_surf, (bx + (bw - sub_surf.get_width()) // 2, by + 50))
+        draw_divider(self.screen, bx + 10, by + 68, bw - 20)
+        for i, (pid, pdef, uses_rem, cooldown) in enumerate(powers[:9]):
+            iy = by + 78 + i * row_h
+            pygame.draw.rect(
+                self.screen,
+                FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
+                (bx + 10, iy, bw - 20, row_h - 6), border_radius=6
+            )
+            ready = (cooldown == 0) and (pdef.get('uses', 0) == 0 or uses_rem > 0)
+            idx_col = FP.GOLD_BRIGHT if ready else FP.FADED_TEXT
+            self.screen.blit(
+                self.font_md.render(f"[{i+1}]", True, idx_col),
+                (bx + 16, iy + 12)
+            )
+            label_col = FP.BODY_TEXT if ready else FP.FADED_TEXT
+            self.screen.blit(
+                self.font_md.render(pdef.get('label', pid), True, label_col),
+                (bx + 56, iy + 12)
+            )
+            # Uses / cooldown badge
+            if pdef.get('uses', 0) > 0:
+                badge_txt = f"x{uses_rem} left" if uses_rem > 0 else "USED UP"
+                badge_col = FP.SUCCESS_TEXT if uses_rem > 0 else FP.DANGER_TEXT
+            else:
+                badge_txt = "READY" if cooldown == 0 else f"CD:{cooldown}t"
+                badge_col = FP.SUCCESS_TEXT if cooldown == 0 else (200, 160, 80)
+            badge_surf = self.font_sm.render(badge_txt, True, badge_col)
+            self.screen.blit(badge_surf, (bx + bw - badge_surf.get_width() - 18, iy + 14))
+            # Description line
+            desc_surf = self.font_sm.render(pdef.get('desc', ''), True, FP.FADED_TEXT)
+            self.screen.blit(desc_surf, (bx + 56, iy + 38))
+        hint_y = by + bh - 34
+        draw_divider(self.screen, bx + 10, hint_y - 8, bw - 20)
+        self.screen.blit(
+            self.font_sm.render("1-9: use power  |  ESC: close", True, FP.HINT_TEXT),
+            (bx + (bw - self.font_sm.size("1-9: use power  |  ESC: close")[0]) // 2, hint_y)
         )
 
     def _draw_confirm_exit(self):
@@ -6758,11 +7229,15 @@ class Game:
                     # Compound recipes using this ingredient
                     compound = get_recipes_for_ingredient(ing_id)
                     if compound:
+                        from food_system import _raw_ingredients as _ri2
+                        _ings2 = _ri2()
+                        def _iname(iid): return _ings2.get(iid, {}).get('name', iid)
                         stat_lines.append("Used in recipes:")
                         for r in compound[:4]:
-                            stat_lines.append(f"  \u2022 {r['name']}  ({', '.join(r.get('ingredients', []))})")
+                            ing_str = ', '.join(_iname(iid) for iid in r.get('ingredients', []))
+                            stat_lines.append(f"  \u2022 {r['name']}  ({ing_str})")
                         if len(compound) > 4:
-                            stat_lines.append(f"  \u2026 and {len(compound)-4} more")
+                            stat_lines.append(f"  ... and {len(compound)-4} more")
             else:
                 stat_lines.append("Ingredient: none (not harvestable)")
 
@@ -6862,17 +7337,23 @@ class Game:
             lore_text = subject.lore or "No further records found."
 
         # Draw stat lines (reserve ~120px at bottom for lore section + footer)
+        max_stat_w = bw - 44
         stat_bottom = by + bh - 120
+        done = False
         for idx, line in enumerate(stat_lines):
-            if y + 22 > stat_bottom:
-                remaining = len(stat_lines) - idx
-                surf = self.font_sm.render(f"  … and {remaining} more", True, (120, 120, 120))
-                self.screen.blit(surf, (bx + 20, y))
-                y += 22
+            if done:
                 break
-            surf = self.font_sm.render(line, True, stat_col)
-            self.screen.blit(surf, (bx + 20, y))
-            y += 22
+            wrapped = self._wrap_text(line, self.font_sm, max_stat_w)
+            for wl in wrapped or [line]:
+                if y + 22 > stat_bottom:
+                    remaining = len(stat_lines) - idx
+                    surf = self.font_sm.render(f"  ... and {remaining} more", True, (120, 120, 120))
+                    self.screen.blit(surf, (bx + 20, y))
+                    y += 22
+                    done = True
+                    break
+                self.screen.blit(self.font_sm.render(wl, True, stat_col), (bx + 20, y))
+                y += 22
 
         y += 4
         pygame.draw.line(self.screen, inner_col, (bx+20, y), (bx+bw-20, y))
@@ -7520,9 +8001,10 @@ class Game:
 
             stat_col = (180, 200, 230)
             for line in stat_lines:
-                surf = self.font_sm.render(line, True, stat_col)
-                self.screen.blit(surf, (bx + 20, y))
-                y += 22
+                for wl in self._wrap_text(line, self.font_sm, bw - 44) or [line]:
+                    surf = self.font_sm.render(wl, True, stat_col)
+                    self.screen.blit(surf, (bx + 20, y))
+                    y += 22
 
             y += 6
             pygame.draw.line(self.screen, (40, 60, 120), (bx + 20, y), (bx + bw - 20, y))

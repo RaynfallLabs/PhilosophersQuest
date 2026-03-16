@@ -65,6 +65,10 @@ class Player:
         self.unlocked_quirks: set  = set() # set of earned quirk IDs
         self.quiz_timer_bonuses: dict = {} # subject -> extra seconds bonus
 
+        # Active power system (earned via quirks)
+        self.power_cooldowns: dict = {}    # power_id -> turns until usable again (0 = ready)
+        self.power_uses: dict = {}         # power_id -> uses remaining this run
+
     # --- Resources ---
 
     def take_damage(self, amount: int, damage_type: str = 'physical') -> int:
@@ -200,6 +204,7 @@ class Player:
         if self.has_effect('blinded'):       mod *= 0.70
         if self.has_effect('hallucinating'): mod *= 0.80
         if self.has_effect('hasted'):        mod *= 1.25
+        if self.has_effect('blessed'):       mod *= 1.25
         return round(max(0.40, mod), 2)
 
     def get_int_quiz_bonus(self) -> int:
