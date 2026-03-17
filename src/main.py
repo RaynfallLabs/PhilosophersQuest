@@ -2720,7 +2720,7 @@ class Game:
         self.quiz_engine.start_quiz(
             mode='escalator_chain',
             subject='theology',
-            tier=1,
+            tier=min(5, max(1, (self.dungeon_level - 1) // 20 + 1)),
             callback=on_complete,
             max_chain=8,
             wisdom=self.player.WIS,
@@ -7153,7 +7153,7 @@ class Game:
             subject='philosophy',
             tier=max(1, min(5, getattr(corpse, 'harvest_tier', 1) + 1)),
             callback=on_complete,
-            threshold=2,
+            threshold=max(1, min(5, getattr(corpse, 'harvest_tier', 1) + 1)) + 1,
             wisdom=self.player.WIS,
             timer_modifier=self.player.get_quiz_timer_modifier(),
             extra_seconds=self.player.get_int_quiz_bonus() +
@@ -7206,7 +7206,7 @@ class Game:
             subject='philosophy',
             tier=max(1, min(5, getattr(corpse, 'harvest_tier', 1) + 1)),
             callback=on_complete,
-            threshold=2,
+            threshold=max(1, min(5, getattr(corpse, 'harvest_tier', 1) + 1)) + 1,
             wisdom=self.player.WIS,
             timer_modifier=self.player.get_quiz_timer_modifier(),
             extra_seconds=self.player.get_int_quiz_bonus() +

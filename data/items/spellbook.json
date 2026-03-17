@@ -2,196 +2,299 @@
   "spellbook_magic_missile": {
     "name": "Spellbook of Magic Missile",
     "symbol": "+",
-    "color": [100, 180, 255],
+    "color": [
+      100,
+      180,
+      255
+    ],
     "weight": 1.5,
     "min_level": 1,
     "quiz_tier": 1,
-    "quiz_threshold": 1,
+    "quiz_threshold": 2,
     "spell_id": "magic_missile_spell",
     "spell_name": "Magic Missile",
     "mp_cost": 3,
     "unidentified_name": "slim blue tome",
-    "floor_spawn_weight": {"1-20": 12, "21-100": 4},
+    "floor_spawn_weight": {
+      "1-20": 12,
+      "21-100": 4
+    },
     "lore": "The first spell every apprentice masters. An unerring dart of pure magical force."
   },
   "spellbook_sleep": {
     "name": "Spellbook of Sleep",
     "symbol": "+",
-    "color": [180, 140, 220],
+    "color": [
+      180,
+      140,
+      220
+    ],
     "weight": 1.5,
     "min_level": 3,
     "quiz_tier": 1,
-    "quiz_threshold": 1,
+    "quiz_threshold": 2,
     "spell_id": "sleep_spell",
     "spell_name": "Sleep",
     "mp_cost": 4,
     "unidentified_name": "dusty violet tome",
-    "floor_spawn_weight": {"1-3": 0, "4-30": 10, "31-100": 3},
+    "floor_spawn_weight": {
+      "1-3": 0,
+      "4-30": 10,
+      "31-100": 3
+    },
     "lore": "A gentle enchantment that sends living creatures into sudden slumber."
   },
   "spellbook_light": {
     "name": "Spellbook of Light",
     "symbol": "+",
-    "color": [255, 240, 100],
+    "color": [
+      255,
+      240,
+      100
+    ],
     "weight": 1.5,
     "min_level": 2,
     "quiz_tier": 1,
-    "quiz_threshold": 1,
+    "quiz_threshold": 2,
     "spell_id": "light_spell",
     "spell_name": "Light",
     "mp_cost": 2,
     "unidentified_name": "thin yellow tome",
-    "floor_spawn_weight": {"1-2": 0, "3-25": 12, "26-100": 3},
+    "floor_spawn_weight": {
+      "1-2": 0,
+      "3-25": 12,
+      "26-100": 3
+    },
     "lore": "Banishes shadows. Simple, essential, and often the spell that saves lives."
   },
   "spellbook_shield": {
     "name": "Spellbook of Magic Shield",
     "symbol": "+",
-    "color": [80, 200, 255],
+    "color": [
+      80,
+      200,
+      255
+    ],
     "weight": 1.5,
     "min_level": 10,
     "quiz_tier": 2,
-    "quiz_threshold": 2,
+    "quiz_threshold": 3,
     "spell_id": "shield_spell",
     "spell_name": "Magic Shield",
     "mp_cost": 5,
     "unidentified_name": "thick blue tome",
-    "floor_spawn_weight": {"1-10": 0, "11-40": 9, "41-100": 4},
+    "floor_spawn_weight": {
+      "1-10": 0,
+      "11-40": 9,
+      "41-100": 4
+    },
     "lore": "A shimmering barrier that halves physical blows and improves your defenses."
   },
   "spellbook_fire_bolt": {
     "name": "Spellbook of Fire Bolt",
     "symbol": "+",
-    "color": [255, 120, 40],
+    "color": [
+      255,
+      120,
+      40
+    ],
     "weight": 1.5,
     "min_level": 10,
     "quiz_tier": 2,
-    "quiz_threshold": 2,
+    "quiz_threshold": 3,
     "spell_id": "fire_bolt_spell",
     "spell_name": "Fire Bolt",
     "mp_cost": 6,
     "unidentified_name": "scorched red tome",
-    "floor_spawn_weight": {"1-10": 0, "11-40": 9, "41-100": 4},
+    "floor_spawn_weight": {
+      "1-10": 0,
+      "11-40": 9,
+      "41-100": 4
+    },
     "lore": "A bolt of concentrated flame. Dangerous to fire-resistant creatures, devastating to the rest."
   },
   "spellbook_haste": {
     "name": "Spellbook of Haste",
     "symbol": "+",
-    "color": [200, 255, 100],
+    "color": [
+      200,
+      255,
+      100
+    ],
     "weight": 1.5,
     "min_level": 15,
     "quiz_tier": 2,
-    "quiz_threshold": 2,
+    "quiz_threshold": 3,
     "spell_id": "haste_spell",
     "spell_name": "Haste",
     "mp_cost": 7,
     "unidentified_name": "green-veined tome",
-    "floor_spawn_weight": {"1-15": 0, "16-50": 8, "51-100": 4},
+    "floor_spawn_weight": {
+      "1-15": 0,
+      "16-50": 8,
+      "51-100": 4
+    },
     "lore": "Accelerates your body to superhuman speed, granting a free second action each turn."
   },
   "spellbook_heal": {
     "name": "Spellbook of Heal",
     "symbol": "+",
-    "color": [80, 230, 120],
+    "color": [
+      80,
+      230,
+      120
+    ],
     "weight": 1.5,
     "min_level": 20,
     "quiz_tier": 3,
-    "quiz_threshold": 2,
+    "quiz_threshold": 4,
     "spell_id": "heal_spell",
     "spell_name": "Heal",
     "mp_cost": 8,
     "unidentified_name": "worn green tome",
-    "floor_spawn_weight": {"1-20": 0, "21-60": 8, "61-100": 5},
+    "floor_spawn_weight": {
+      "1-20": 0,
+      "21-60": 8,
+      "61-100": 5
+    },
     "lore": "Channels restorative energy. The deeper the mastery, the more HP recovered."
   },
   "spellbook_invisibility": {
     "name": "Spellbook of Invisibility",
     "symbol": "+",
-    "color": [200, 200, 220],
+    "color": [
+      200,
+      200,
+      220
+    ],
     "weight": 1.5,
     "min_level": 25,
     "quiz_tier": 3,
-    "quiz_threshold": 2,
+    "quiz_threshold": 4,
     "spell_id": "invisibility_spell",
     "spell_name": "Invisibility",
     "mp_cost": 9,
     "unidentified_name": "semi-transparent tome",
-    "floor_spawn_weight": {"1-25": 0, "26-70": 7, "71-100": 4},
+    "floor_spawn_weight": {
+      "1-25": 0,
+      "26-70": 7,
+      "71-100": 4
+    },
     "lore": "Bends light around you. Invisibility is not invulnerability, but it is close."
   },
   "spellbook_lightning": {
     "name": "Spellbook of Chain Lightning",
     "symbol": "+",
-    "color": [200, 220, 255],
+    "color": [
+      200,
+      220,
+      255
+    ],
     "weight": 1.5,
     "min_level": 25,
     "quiz_tier": 3,
-    "quiz_threshold": 3,
+    "quiz_threshold": 4,
     "spell_id": "lightning_spell",
     "spell_name": "Chain Lightning",
     "mp_cost": 10,
     "unidentified_name": "crackling silver tome",
-    "floor_spawn_weight": {"1-25": 0, "26-70": 7, "71-100": 4},
+    "floor_spawn_weight": {
+      "1-25": 0,
+      "26-70": 7,
+      "71-100": 4
+    },
     "lore": "Lightning that arcs between targets, chaining to nearby enemies."
   },
   "spellbook_confusion": {
     "name": "Spellbook of Confusion",
     "symbol": "+",
-    "color": [220, 100, 220],
+    "color": [
+      220,
+      100,
+      220
+    ],
     "weight": 1.5,
     "min_level": 20,
     "quiz_tier": 3,
-    "quiz_threshold": 2,
+    "quiz_threshold": 4,
     "spell_id": "confusion_spell",
     "spell_name": "Confusion",
     "mp_cost": 7,
     "unidentified_name": "swirling purple tome",
-    "floor_spawn_weight": {"1-20": 0, "21-60": 7, "61-100": 4},
+    "floor_spawn_weight": {
+      "1-20": 0,
+      "21-60": 7,
+      "61-100": 4
+    },
     "lore": "Scrambles a monster's senses. A confused enemy attacks randomly and loses coordination."
   },
   "spellbook_displacement": {
     "name": "Spellbook of Displacement",
     "symbol": "+",
-    "color": [180, 180, 255],
+    "color": [
+      180,
+      180,
+      255
+    ],
     "weight": 1.5,
     "min_level": 40,
     "quiz_tier": 4,
-    "quiz_threshold": 3,
+    "quiz_threshold": 5,
     "spell_id": "displacement_spell",
     "spell_name": "Displacement",
     "mp_cost": 12,
     "unidentified_name": "shimmering indigo tome",
-    "floor_spawn_weight": {"1-40": 0, "41-80": 6, "81-100": 4},
+    "floor_spawn_weight": {
+      "1-40": 0,
+      "41-80": 6,
+      "81-100": 4
+    },
     "lore": "Projects a false image of you, causing attackers to strike at empty air 30% of the time."
   },
   "spellbook_ice_storm": {
     "name": "Spellbook of Ice Storm",
     "symbol": "+",
-    "color": [140, 220, 255],
+    "color": [
+      140,
+      220,
+      255
+    ],
     "weight": 1.5,
     "min_level": 40,
     "quiz_tier": 4,
-    "quiz_threshold": 3,
+    "quiz_threshold": 5,
     "spell_id": "ice_storm_spell",
     "spell_name": "Ice Storm",
     "mp_cost": 14,
     "unidentified_name": "frost-rimed tome",
-    "floor_spawn_weight": {"1-40": 0, "41-80": 6, "81-100": 4},
+    "floor_spawn_weight": {
+      "1-40": 0,
+      "41-80": 6,
+      "81-100": 4
+    },
     "lore": "Freezing shards blast every visible monster. A battlefield-clearing spell."
   },
   "spellbook_paralyze": {
     "name": "Spellbook of Paralysis",
     "symbol": "+",
-    "color": [220, 200, 100],
+    "color": [
+      220,
+      200,
+      100
+    ],
     "weight": 1.5,
     "min_level": 35,
     "quiz_tier": 4,
-    "quiz_threshold": 3,
+    "quiz_threshold": 5,
     "spell_id": "paralyze_spell",
     "spell_name": "Paralysis",
     "mp_cost": 12,
     "unidentified_name": "amber-bound tome",
-    "floor_spawn_weight": {"1-35": 0, "36-80": 6, "81-100": 4},
+    "floor_spawn_weight": {
+      "1-35": 0,
+      "36-80": 6,
+      "81-100": 4
+    },
     "lore": "Locks a monster in magical stasis. Even the most fearsome creatures cannot move while paralyzed."
   }
 }
