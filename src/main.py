@@ -8324,7 +8324,11 @@ def main():
     from save_system import save_exists, load_game, save_game, delete_save
 
     pygame.init()
-    screen = pygame.display.set_mode((WINDOW_W, WINDOW_H), pygame.RESIZABLE)
+    _di = pygame.display.Info()
+    _start_w = min(WINDOW_W, _di.current_w)
+    _start_h = min(WINDOW_H, _di.current_h)
+    _update_layout(_start_w, _start_h)
+    screen = pygame.display.set_mode((_start_w, _start_h), pygame.RESIZABLE)
     pygame.display.set_caption("Philosopher's Quest")
     clock = pygame.time.Clock()
 
