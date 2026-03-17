@@ -8189,7 +8189,7 @@ class Game:
         quality_labels = {1: "Vague Recollection", 2: "Useful Memory",
                           3: "Clear Knowledge", 4: "Deep Lore", 5: "Ancient Wisdom"}
         label = quality_labels.get(chain, "Lore")
-        stars = '\u2605' * chain + '\u2606' * (5 - chain)
+        stars = '[*] ' * chain + '[ ] ' * (5 - chain)
 
         title_surf = font_title.render(f"RECALL LORE  --  {label}", True, (220, 180, 80))
         self.screen.blit(title_surf, (bx + (bw - title_surf.get_width()) // 2, by + 14))
@@ -8224,7 +8224,7 @@ class Game:
         # Cooldown notice
         cd = self.player.recall_lore_cooldown
         cd_surf = font_small.render(
-            f"Next recall available in {cd} turns  \u2014  [ any key ] to close",
+            f"Next recall available in {cd} turns  --  [ any key ] to close",
             True, (100, 85, 45)
         )
         self.screen.blit(cd_surf, (bx + (bw - cd_surf.get_width()) // 2, by + bh - 26))
@@ -8234,54 +8234,56 @@ class Game:
         overlay.fill((0, 0, 0, 195))
         self.screen.blit(overlay, (0, 0))
 
-        bw      = min(900, GAME_W - 40)
-        line_h  = 26
-        col_break = 13
-        content_h = col_break * line_h   # taller of the two columns
-        bh      = 66 + content_h + 24   # y-start of rows + rows + footer padding
-        bx = (GAME_W - bw) // 2
-        by = (WINDOW_H - bh) // 2
+        _COMMANDS = [
+            # (key_label, description, color)  -- None description = section header
+            ("MOVEMENT", None, FP.GOLD_PALE),
+            ("Arrows / hjkl",  "Move / attack",                   FP.BODY_TEXT),
+            ("ITEMS & EQUIPMENT", None, FP.GOLD_PALE),
+            ("G  or  ,",       "Pick up item",                    FP.BODY_TEXT),
+            ("E",              "Equip armor / weapon",             FP.BODY_TEXT),
+            ("S",              "Equip accessory (ring/amulet)",    FP.BODY_TEXT),
+            ("I",              "Identify items + read corpse lore",FP.BODY_TEXT),
+            ("R",              "Read scroll / spellbook",          FP.BODY_TEXT),
+            ("M",              "Cast spell",                       FP.BODY_TEXT),
+            ("Z",              "Zap wand",                         FP.BODY_TEXT),
+            ("U",              "Eat food",                         FP.BODY_TEXT),
+            ("Q",              "Quaff potion",                     FP.BODY_TEXT),
+            ("D",              "Drop item",                        FP.BODY_TEXT),
+            ("COMBAT & EXPLORATION", None, FP.GOLD_PALE),
+            ("H",              "Harvest monster corpse",           FP.BODY_TEXT),
+            ("C",              "Cook ingredient",                  FP.BODY_TEXT),
+            ("F",              "Fire ranged weapon",               FP.BODY_TEXT),
+            ("A",              "Attack / bash container",          FP.BODY_TEXT),
+            ("P",              "Pick lock",                        FP.BODY_TEXT),
+            (">  or  <",       "Use stairs",                       FP.BODY_TEXT),
+            ("T",              "Visit merchant shop",              FP.BODY_TEXT),
+            ("INFORMATION", None, FP.GOLD_PALE),
+            ("X",              "Examine inventory items",          FP.BODY_TEXT),
+            ("B",              "Encyclopedia",                     FP.BODY_TEXT),
+            ("V",              "Activate quirk power",             FP.BODY_TEXT),
+            ("KNOWLEDGE", None, FP.GOLD_PALE),
+            ("\\",             "Pray at altar",                    (200, 180, 255)),
+            ("N",              "Recall Lore",                      (120, 200, 240)),
+            ("QUIZ", None, FP.GOLD_PALE),
+            ("1  2  3  4",     "Answer question during quiz",      FP.GOLD_BRIGHT),
+            ("SYSTEM", None, FP.GOLD_PALE),
+            ("?",              "This help screen",                 FP.BODY_TEXT),
+            ("ESC",            "Cancel / close menu",              FP.BODY_TEXT),
+        ]
 
-        # FANTASY: Grimoire-style command reference panel
+        line_h    = 26
+        col_break = (len(_COMMANDS) + 1) // 2   # split evenly
+        content_h = col_break * line_h
+        bw        = min(1000, GAME_W - 40)
+        bh        = 66 + content_h + 36
+        bx        = (GAME_W - bw) // 2
+        by        = max(10, (WINDOW_H - bh) // 2)
+
         draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.GOLD)
         draw_header_bar(self.screen, (bx, by, bw, 48),
                         text="COMMAND REFERENCE",
                         font=self.font_lg, text_color=FP.GOLD_BRIGHT)
         draw_divider(self.screen, bx + 20, by + 56, bw - 40)
-
-        _COMMANDS = [
-            # (key_label, description, color)
-            # FANTASY: Section headers use GOLD_PALE; commands use BODY_TEXT; keys use GOLD_BRIGHT
-            ("MOVEMENT", None, FP.GOLD_PALE),
-            ("Arrows / hjkl",  "Move / attack",                                          FP.BODY_TEXT),
-            ("ITEMS", None, FP.GOLD_PALE),
-            ("G  or  ,",       "Pick up item",                                            FP.BODY_TEXT),
-            ("E",              "Equip / Unequip",                                          FP.BODY_TEXT),
-            ("I",              "Identify items",                                           FP.BODY_TEXT),
-            ("R",              "Read scroll / spellbook",                                  FP.BODY_TEXT),
-            ("M",              "Cast spell",                                               FP.BODY_TEXT),
-            ("Z",              "Zap wand",                                                 FP.BODY_TEXT),
-            ("U",              "Eat food",                                                 FP.BODY_TEXT),
-            ("Q",              "Quaff potion",                                             FP.BODY_TEXT),
-            ("C",              "Cook ingredient",                                          FP.BODY_TEXT),
-            ("H",              "Harvest corpse",                                           FP.BODY_TEXT),
-            ("COMBAT & EXPLORATION", None, FP.GOLD_PALE),
-            ("F",              "Fire ranged weapon",                                       FP.BODY_TEXT),
-            ("X",              "Examine identified item",                                  FP.BODY_TEXT),
-            ("B",              "Encyclopedia",                                             FP.BODY_TEXT),
-            ("A",              "Attack / bash container",                                  FP.BODY_TEXT),
-            ("D",              "Drop item",                                                FP.BODY_TEXT),
-            ("P",              "Pick lock",                                                FP.BODY_TEXT),
-            (">  or  <",       "Use stairs",                                               FP.BODY_TEXT),
-            ("KNOWLEDGE", None, FP.GOLD_PALE),
-            ("\\",             "Pray at altar",                                            (200, 180, 255)),
-            ("N",              "Recall Lore",                                              (120, 200, 240)),
-            ("QUIZ ANSWERS", None, FP.GOLD_PALE),
-            ("1  2  3  4",     "Answer questions during quiz",                            FP.GOLD_BRIGHT),
-            ("SYSTEM", None, FP.GOLD_PALE),
-            ("?",              "This help screen",                                         FP.BODY_TEXT),
-            ("ESC",            "Cancel / close menu",                                      FP.BODY_TEXT),
-        ]
 
         col_w   = (bw - 40) // 2
         left_x  = bx + 20
@@ -8294,26 +8296,22 @@ class Game:
             cy_ = y + (idx if idx < col_break else idx - col_break) * line_h
 
             if desc is None:
-                # FANTASY: Section header in GOLD_PALE
                 hdr = self.font_sm.render(f"-- {key_label} --", True, color)
                 self.screen.blit(hdr, (cx_, cy_))
             else:
-                # FANTASY: Key label in GOLD_BRIGHT, description in supplied color
                 ksurf = self.font_sm.render(key_label, True, FP.GOLD_BRIGHT)
-                # Truncate description if it would overflow the column
                 desc_max_w = col_w - 170
                 dsurf = self.font_sm.render(desc, True, color)
                 if dsurf.get_width() > desc_max_w:
                     trunc = desc
-                    while len(trunc) > 1 and self.font_sm.size(trunc + '\u2026')[0] > desc_max_w:
+                    while len(trunc) > 1 and self.font_sm.size(trunc + '...')[0] > desc_max_w:
                         trunc = trunc[:-1]
-                    dsurf = self.font_sm.render(trunc + '\u2026', True, color)
+                    dsurf = self.font_sm.render(trunc + '...', True, color)
                 self.screen.blit(ksurf, (cx_, cy_))
                 self.screen.blit(dsurf, (cx_ + 160, cy_))
 
-        # FANTASY: Footer hint in HINT_TEXT
         hint = self.font_sm.render("Press ESC or ? to close", True, FP.HINT_TEXT)
-        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, by + bh - 32))
+        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, by + bh - 28))
 
 
 # ------------------------------------------------------------------

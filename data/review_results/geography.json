@@ -1,0 +1,6 @@
+[
+  {"index": 33, "field": "answer", "current": "China", "correct": "India", "reason": "India surpassed China as most populous country in 2023; India remains most populous as of 2026"},
+  {"index": 53, "field": "answer", "current": "Jakarta", "correct": "Nusantara", "reason": "Indonesia officially moved its capital to Nusantara (IKN) in 2024"},
+  {"index": 293, "field": "question", "current": "Which country shares the most land borders?", "correct": "REMOVE_OR_REPLACE", "reason": "Both China and Russia have 14 land borders — question has no single correct answer"},
+  {"index": 334, "field": "answer", "current": "Malabo", "correct": "Ciudad de la Paz", "reason": "Equatorial Guinea officially moved capital from Malabo to Ciudad de la Paz in 2022"}
+]

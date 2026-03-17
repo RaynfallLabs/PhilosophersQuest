@@ -1046,17 +1046,6 @@
   },
   {
     "tier": 1,
-    "question": "Which word is a preposition? ",
-    "answer": "Through",
-    "choices": [
-      "Through",
-      "Quickly",
-      "Happy",
-      "Sing"
-    ]
-  },
-  {
-    "tier": 1,
     "question": "Which word is an adverb?",
     "answer": "Gently",
     "choices": [
@@ -1453,7 +1442,7 @@
   },
   {
     "tier": 2,
-    "question": "'Dogs run fast' — 'dogs' and 'run' agree in ___?",
+    "question": "'Dogs run fast' -- 'dogs' and 'run' agree in ___?",
     "answer": "Number",
     "choices": [
       "Tense",
@@ -2256,7 +2245,7 @@
   },
   {
     "tier": 3,
-    "question": "'Running daily is healthy' — 'running daily' is a ___ phrase?",
+    "question": "'Running daily is healthy' -- 'running daily' is a ___ phrase?",
     "answer": "Gerund",
     "choices": [
       "Infinitive",
@@ -2278,7 +2267,7 @@
   },
   {
     "tier": 3,
-    "question": "'Barking loudly, the dog ran away' — 'barking loudly' is a ___ phrase?",
+    "question": "'Barking loudly, the dog ran away' -- 'barking loudly' is a ___ phrase?",
     "answer": "Participial",
     "choices": [
       "Infinitive",
@@ -2289,7 +2278,7 @@
   },
   {
     "tier": 3,
-    "question": "'My sister, a doctor, helped us' — 'a doctor' is a(n) ___?",
+    "question": "'My sister, a doctor, helped us' -- 'a doctor' is a(n) ___?",
     "answer": "Appositive",
     "choices": [
       "Participial phrase",
@@ -2355,7 +2344,7 @@
   },
   {
     "tier": 3,
-    "question": "'We shall fight on the beaches…we shall fight in the fields' uses ___?",
+    "question": "'We shall fight on the beaches...we shall fight in the fields' uses ___?",
     "answer": "Anaphora",
     "choices": [
       "Epistrophe",
@@ -2707,7 +2696,7 @@
   },
   {
     "tier": 4,
-    "question": "Using many conjunctions in succession ('and…and…and') is ___?",
+    "question": "Using many conjunctions in succession ('and...and...and') is ___?",
     "answer": "Polysyndeton",
     "choices": [
       "Asyndeton",
@@ -3071,9 +3060,9 @@
   {
     "tier": 4,
     "question": "Breaking expected parallel structure deliberately is ___?",
-    "answer": "Paralipsis",
+    "answer": "Anacoluthon",
     "choices": [
-      "Paralipsis",
+      "Anacoluthon",
       "Anacoluthon",
       "Asyndeton",
       "Aposiopesis"
@@ -3994,17 +3983,6 @@
   },
   {
     "tier": 3,
-    "question": "Which sentence has correct subject-verb agreement?",
-    "choices": [
-      "Neither he nor she are ready.",
-      "Neither he nor she is ready.",
-      "Neither he nor she were ready.",
-      "Neither he nor she am ready."
-    ],
-    "answer": "Neither he nor she is ready."
-  },
-  {
-    "tier": 3,
     "question": "Parallel structure means items in a list must have the same ___?",
     "choices": [
       "Length",
@@ -4522,7 +4500,7 @@
   },
   {
     "tier": 4,
-    "question": "Ellipsis marks (…) indicate ___?",
+    "question": "Ellipsis marks (...) indicate ___?",
     "choices": [
       "Emphasis",
       "A list follows",

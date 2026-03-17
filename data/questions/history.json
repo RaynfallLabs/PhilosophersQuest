@@ -1,509 +1,5326 @@
 [
-  {"tier": 1, "question": "Who was the first President of the United States?", "answer": "George Washington", "choices": ["John Adams", "Thomas Jefferson", "George Washington", "Benjamin Franklin"]},
-  {"tier": 1, "question": "In what year did World War II end?", "answer": "1945", "choices": ["1943", "1944", "1945", "1946"]},
-  {"tier": 1, "question": "In what year did World War II begin?", "answer": "1939", "choices": ["1937", "1938", "1939", "1940"]},
-  {"tier": 1, "question": "In what year did World War I begin?", "answer": "1914", "choices": ["1912", "1913", "1914", "1916"]},
-  {"tier": 1, "question": "Who wrote the Declaration of Independence?", "answer": "Thomas Jefferson", "choices": ["George Washington", "Thomas Jefferson", "Benjamin Franklin", "John Adams"]},
-  {"tier": 1, "question": "The Declaration of Independence was signed in ___?", "answer": "1776", "choices": ["1775", "1776", "1777", "1778"]},
-  {"tier": 1, "question": "The first humans landed on the Moon in ___?", "answer": "1969", "choices": ["1965", "1967", "1969", "1971"]},
-  {"tier": 1, "question": "Christopher Columbus first reached the Americas in ___?", "answer": "1492", "choices": ["1488", "1492", "1497", "1502"]},
-  {"tier": 1, "question": "Abraham Lincoln was the ___ President of the United States?", "answer": "16th", "choices": ["14th", "15th", "16th", "17th"]},
-  {"tier": 1, "question": "Abraham Lincoln freed enslaved people via the ___?", "answer": "Emancipation Proclamation", "choices": ["Bill of Rights", "Emancipation Proclamation", "Gettysburg Address", "Constitution"]},
-  {"tier": 1, "question": "Martin Luther King Jr. delivered his 'I Have a Dream' speech in ___?", "answer": "1963", "choices": ["1960", "1963", "1965", "1968"]},
-  {"tier": 1, "question": "Napoleon Bonaparte was Emperor of ___?", "answer": "France", "choices": ["France", "Italy", "Spain", "Germany"]},
-  {"tier": 1, "question": "Julius Caesar was a leader of ___?", "answer": "Rome", "choices": ["Greece", "Rome", "Egypt", "Persia"]},
-  {"tier": 1, "question": "Cleopatra was Queen of ___?", "answer": "Egypt", "choices": ["Rome", "Greece", "Egypt", "Persia"]},
-  {"tier": 1, "question": "Alexander the Great was king of ___?", "answer": "Macedonia", "choices": ["Greece", "Macedonia", "Persia", "Egypt"]},
-  {"tier": 1, "question": "Alexander the Great is famous for ___?", "answer": "Conquering a vast empire from Greece to India", "choices": ["Founding Rome", "Conquering a vast empire from Greece to India", "Defeating the Persians at Marathon", "Building the Colosseum"]},
-  {"tier": 1, "question": "The American Civil War lasted from 1861 to ___?", "answer": "1865", "choices": ["1863", "1864", "1865", "1866"]},
-  {"tier": 1, "question": "Which side won the American Civil War?", "answer": "The Union (North)", "choices": ["The Confederacy (South)", "The Union (North)", "It ended in a truce", "Foreign intervention settled it"]},
-  {"tier": 1, "question": "The Gettysburg Address was delivered by ___?", "answer": "Abraham Lincoln", "choices": ["Ulysses S. Grant", "Frederick Douglass", "Abraham Lincoln", "William Sherman"]},
-  {"tier": 1, "question": "World War I ended in ___?", "answer": "1918", "choices": ["1916", "1917", "1918", "1919"]},
-  {"tier": 1, "question": "The French Revolution began in ___?", "answer": "1789", "choices": ["1783", "1786", "1789", "1792"]},
-  {"tier": 1, "question": "Napoleon was defeated at the Battle of ___?", "answer": "Waterloo", "choices": ["Trafalgar", "Waterloo", "Austerlitz", "Leipzig"]},
-  {"tier": 1, "question": "The Roman Empire fell in ___?", "answer": "476 AD", "choices": ["380 AD", "410 AD", "476 AD", "527 AD"]},
-  {"tier": 1, "question": "Rome was traditionally founded in ___?", "answer": "753 BC", "choices": ["600 BC", "753 BC", "900 BC", "509 BC"]},
-  {"tier": 1, "question": "The Black Death was a devastating ___?", "answer": "Plague", "choices": ["Famine", "Flood", "Plague", "War"]},
-  {"tier": 1, "question": "Gutenberg invented the printing press around ___?", "answer": "1440", "choices": ["1200", "1350", "1440", "1510"]},
-  {"tier": 1, "question": "Who was the first man to walk on the Moon?", "answer": "Neil Armstrong", "choices": ["Buzz Aldrin", "Neil Armstrong", "Yuri Gagarin", "John Glenn"]},
-  {"tier": 1, "question": "The first human in space was ___?", "answer": "Yuri Gagarin", "choices": ["Neil Armstrong", "Buzz Aldrin", "Yuri Gagarin", "Alan Shepard"]},
-  {"tier": 1, "question": "The Wright Brothers made their first powered flight in ___?", "answer": "1903", "choices": ["1895", "1900", "1903", "1908"]},
-  {"tier": 1, "question": "Martin Luther King Jr. was assassinated in ___?", "answer": "1968", "choices": ["1963", "1965", "1968", "1970"]},
-  {"tier": 1, "question": "President Kennedy was assassinated in ___?", "answer": "1963", "choices": ["1961", "1962", "1963", "1964"]},
-  {"tier": 1, "question": "The Berlin Wall fell in ___?", "answer": "1989", "choices": ["1985", "1987", "1989", "1991"]},
-  {"tier": 1, "question": "The Soviet Union dissolved in ___?", "answer": "1991", "choices": ["1989", "1990", "1991", "1992"]},
-  {"tier": 1, "question": "The United States dropped atomic bombs on Japan in ___?", "answer": "1945", "choices": ["1943", "1944", "1945", "1946"]},
-  {"tier": 1, "question": "D-Day (the Normandy invasion) occurred in ___?", "answer": "1944", "choices": ["1942", "1943", "1944", "1945"]},
-  {"tier": 1, "question": "Adolf Hitler was the leader of ___?", "answer": "Nazi Germany", "choices": ["Italy", "Japan", "Soviet Union", "Nazi Germany"]},
-  {"tier": 1, "question": "Benito Mussolini was the leader of ___?", "answer": "Italy", "choices": ["Germany", "Italy", "Spain", "Austria"]},
-  {"tier": 1, "question": "The Holocaust resulted in the murder of approximately ___?", "answer": "6 million Jews", "choices": ["1 million Jews", "3 million Jews", "6 million Jews", "10 million Jews"]},
-  {"tier": 1, "question": "Who was the first female Prime Minister of the UK?", "answer": "Margaret Thatcher", "choices": ["Theresa May", "Margaret Thatcher", "Angela Merkel", "Golda Meir"]},
-  {"tier": 1, "question": "Nelson Mandela became South Africa's president in ___?", "answer": "1994", "choices": ["1990", "1992", "1994", "1996"]},
-  {"tier": 1, "question": "The United Nations was founded in ___?", "answer": "1945", "choices": ["1919", "1939", "1945", "1948"]},
-  {"tier": 1, "question": "The Cold War was between the USA and ___?", "answer": "Soviet Union", "choices": ["China", "Soviet Union", "Germany", "Japan"]},
-  {"tier": 1, "question": "The Emancipation Proclamation was issued in ___?", "answer": "1863", "choices": ["1861", "1862", "1863", "1865"]},
-  {"tier": 1, "question": "Winston Churchill was Prime Minister of ___?", "answer": "United Kingdom", "choices": ["Canada", "United Kingdom", "Australia", "France"]},
-  {"tier": 1, "question": "The Titanic sank in ___?", "answer": "1912", "choices": ["1908", "1910", "1912", "1914"]},
-  {"tier": 1, "question": "The Great Depression began in ___?", "answer": "1929", "choices": ["1925", "1927", "1929", "1931"]},
-  {"tier": 1, "question": "Franklin D. Roosevelt served as US President during ___?", "answer": "World War II", "choices": ["World War I", "World War II", "Korean War", "Cold War"]},
-  {"tier": 1, "question": "Japan attacked Pearl Harbor in ___?", "answer": "1941", "choices": ["1939", "1940", "1941", "1942"]},
-  {"tier": 1, "question": "The Great Wall of China was primarily built during which dynasty?", "answer": "Ming Dynasty", "choices": ["Han Dynasty", "Tang Dynasty", "Ming Dynasty", "Qing Dynasty"]},
-  {"tier": 1, "question": "The Eiffel Tower was built in ___?", "answer": "1889", "choices": ["1870", "1885", "1889", "1900"]},
-  {"tier": 1, "question": "Who was the second President of the United States?", "answer": "John Adams", "choices": ["John Adams", "Thomas Jefferson", "James Madison", "James Monroe"]},
-  {"tier": 1, "question": "Genghis Khan led which empire?", "answer": "Mongol Empire", "choices": ["Ottoman Empire", "Mongol Empire", "Ming Dynasty", "Mughal Empire"]},
-  {"tier": 1, "question": "The American Revolution ended in ___?", "answer": "1783", "choices": ["1776", "1781", "1783", "1787"]},
-  {"tier": 1, "question": "Who was the leader of the Soviet Union during World War II?", "answer": "Joseph Stalin", "choices": ["Vladimir Lenin", "Joseph Stalin", "Leon Trotsky", "Nikita Khrushchev"]},
-  {"tier": 1, "question": "The Pacific theater of World War II ended with Japan's surrender in ___?", "answer": "1945", "choices": ["1943", "1944", "1945", "1946"]},
-  {"tier": 1, "question": "The Spanish Inquisition was established by ___?", "answer": "The Spanish monarchy", "choices": ["The Pope", "The Spanish monarchy", "The Holy Roman Emperor", "The French crown"]},
-  {"tier": 1, "question": "George Washington served how many terms as President?", "answer": "2", "choices": ["1", "2", "3", "4"]},
-  {"tier": 1, "question": "The Civil Rights Act in the US was passed in ___?", "answer": "1964", "choices": ["1960", "1962", "1964", "1968"]},
-  {"tier": 1, "question": "India's independence leader was ___?", "answer": "Mahatma Gandhi", "choices": ["Jawaharlal Nehru", "Mahatma Gandhi", "Subhas Chandra Bose", "Bhimrao Ambedkar"]},
-  {"tier": 1, "question": "The French Revolution produced the slogan Liberty, Equality, ___?", "answer": "Fraternity", "choices": ["Justice", "Fraternity", "Democracy", "Unity"]},
-  {"tier": 1, "question": "Cleopatra allied with which Roman leader before Julius Caesar?", "answer": "Julius Caesar (first, then Mark Antony)", "choices": ["Augustus", "Julius Caesar (first, then Mark Antony)", "Pompey", "Cicero"]},
-  {"tier": 1, "question": "The Aztec capital was ___?", "answer": "Tenochtitlan", "choices": ["Cusco", "Tenochtitlan", "Chichen Itza", "Tula"]},
-  {"tier": 1, "question": "Julius Caesar crossed the Rubicon river, signaling ___?", "answer": "A march on Rome (civil war)", "choices": ["A retreat from Gaul", "A march on Rome (civil war)", "An invasion of Egypt", "His abdication"]},
-  {"tier": 1, "question": "The Renaissance began in which Italian city?", "answer": "Florence", "choices": ["Rome", "Florence", "Venice", "Milan"]},
-  {"tier": 1, "question": "The Black Death killed approximately what fraction of Europe's population?", "answer": "One third", "choices": ["One tenth", "One quarter", "One third", "One half"]},
-  {"tier": 1, "question": "The Magna Carta was signed in ___?", "answer": "1215", "choices": ["1066", "1150", "1215", "1265"]},
-  {"tier": 1, "question": "The Battle of Hastings was won by ___?", "answer": "William the Conqueror", "choices": ["Harold Godwinson", "William the Conqueror", "Edward the Confessor", "Sweyn Forkbeard"]},
-  {"tier": 1, "question": "Martin Luther started the Protestant Reformation in ___?", "answer": "1517", "choices": ["1505", "1510", "1517", "1525"]},
-  {"tier": 1, "question": "The Korean War ended in ___?", "answer": "1953", "choices": ["1951", "1952", "1953", "1955"]},
-  {"tier": 1, "question": "The Cuban Missile Crisis occurred in ___?", "answer": "1962", "choices": ["1960", "1961", "1962", "1964"]},
-  {"tier": 1, "question": "The Vietnam War ended in ___?", "answer": "1975", "choices": ["1972", "1973", "1975", "1977"]},
-  {"tier": 1, "question": "Who assassinated Archduke Franz Ferdinand?", "answer": "Gavrilo Princip", "choices": ["Gavrilo Princip", "Mehmed VI", "Nikola Pasic", "Dragutin Dimitrijevic"]},
-  {"tier": 1, "question": "The Crusades were Christian military campaigns to recapture ___?", "answer": "Jerusalem", "choices": ["Constantinople", "Jerusalem", "Rome", "Alexandria"]},
-  {"tier": 1, "question": "The United States entered World War II after the attack on ___?", "answer": "Pearl Harbor", "choices": ["Midway", "Pearl Harbor", "Guam", "Wake Island"]},
-  {"tier": 1, "question": "Napoleon was exiled to the island of ___?", "answer": "Saint Helena", "choices": ["Elba", "Saint Helena", "Corsica", "Sardinia"]},
-  {"tier": 1, "question": "The Spanish Armada was sent to invade ___?", "answer": "England", "choices": ["France", "England", "Scotland", "Ireland"]},
-  {"tier": 1, "question": "India gained independence from Britain in ___?", "answer": "1947", "choices": ["1945", "1947", "1950", "1952"]},
-  {"tier": 1, "question": "The Chinese Communist Revolution succeeded in ___?", "answer": "1949", "choices": ["1945", "1947", "1949", "1951"]},
-  {"tier": 1, "question": "Mao Zedong led ___?", "answer": "Communist China", "choices": ["Nationalist China", "Communist China", "Vietnam", "North Korea"]},
-  {"tier": 1, "question": "The Hundred Years' War was between ___?", "answer": "England and France", "choices": ["England and Spain", "England and France", "France and Germany", "France and Italy"]},
-  {"tier": 1, "question": "Charles Darwin published 'On the Origin of Species' in ___?", "answer": "1859", "choices": ["1845", "1852", "1859", "1867"]},
-  {"tier": 1, "question": "The Communist Manifesto was written by Marx and ___?", "answer": "Engels", "choices": ["Lenin", "Engels", "Trotsky", "Bakunin"]},
-  {"tier": 1, "question": "The Battle of Waterloo was in ___?", "answer": "1815", "choices": ["1812", "1813", "1815", "1817"]},
-  {"tier": 1, "question": "The Boston Tea Party occurred in ___?", "answer": "1773", "choices": ["1765", "1770", "1773", "1776"]},
-  {"tier": 1, "question": "The Louisiana Purchase was made from ___?", "answer": "France", "choices": ["Spain", "France", "Britain", "Mexico"]},
-  {"tier": 1, "question": "The Titanic struck an iceberg in ___?", "answer": "April 1912", "choices": ["April 1910", "April 1911", "April 1912", "April 1913"]},
-  {"tier": 1, "question": "Sputnik, the first artificial satellite, was launched by ___?", "answer": "Soviet Union", "choices": ["United States", "Soviet Union", "Germany", "United Kingdom"]},
-  {"tier": 1, "question": "The Russian Revolution took place in ___?", "answer": "1917", "choices": ["1914", "1916", "1917", "1919"]},
-  {"tier": 1, "question": "Who was the first Roman Emperor?", "answer": "Augustus Caesar", "choices": ["Julius Caesar", "Augustus Caesar", "Marcus Aurelius", "Constantine"]},
-  {"tier": 1, "question": "The Protestant Reformation split which institution?", "answer": "The Christian Church", "choices": ["The Roman Empire", "The Christian Church", "The Ottoman Empire", "The Holy Roman Empire"]},
-  {"tier": 1, "question": "The Suez Canal opened in ___?", "answer": "1869", "choices": ["1855", "1863", "1869", "1875"]},
-  {"tier": 1, "question": "The first transcontinental railroad in the US was completed in ___?", "answer": "1869", "choices": ["1860", "1865", "1869", "1875"]},
-  {"tier": 1, "question": "Who led the Allied forces in Europe during World War II?", "answer": "Eisenhower", "choices": ["Patton", "Eisenhower", "MacArthur", "Montgomery"]},
-  {"tier": 1, "question": "The 13th Amendment to the US Constitution abolished ___?", "answer": "Slavery", "choices": ["Child labor", "Slavery", "Prohibition", "Property requirements for voting"]},
-  {"tier": 1, "question": "Women gained the right to vote in the US in ___?", "answer": "1920", "choices": ["1912", "1916", "1920", "1924"]},
-  {"tier": 1, "question": "The League of Nations was founded after which war?", "answer": "World War I", "choices": ["World War I", "World War II", "American Civil War", "Franco-Prussian War"]},
-  {"tier": 1, "question": "The New Deal was implemented by President ___?", "answer": "Franklin D. Roosevelt", "choices": ["Herbert Hoover", "Franklin D. Roosevelt", "Harry Truman", "Woodrow Wilson"]},
-  {"tier": 1, "question": "The Marshall Plan helped rebuild ___?", "answer": "Europe after World War II", "choices": ["Asia after World War II", "Europe after World War II", "Latin America", "The Middle East"]},
-  {"tier": 1, "question": "NATO was founded in ___?", "answer": "1949", "choices": ["1945", "1947", "1949", "1951"]},
-  {"tier": 1, "question": "The Nuremberg Trials judged ___?", "answer": "Nazi war criminals", "choices": ["Japanese war criminals", "Nazi war criminals", "Soviet war criminals", "Italian war criminals"]},
-
-  {"tier": 2, "question": "The Magna Carta limited the power of ___?", "answer": "The English King", "choices": ["The Pope", "The English King", "The Parliament", "The Nobility"]},
-  {"tier": 2, "question": "Who commanded the Allied forces on D-Day?", "answer": "Dwight D. Eisenhower", "choices": ["George Patton", "Dwight D. Eisenhower", "Douglas MacArthur", "Bernard Montgomery"]},
-  {"tier": 2, "question": "The Bastille was stormed in ___?", "answer": "1789", "choices": ["1787", "1789", "1791", "1793"]},
-  {"tier": 2, "question": "The Treaty of Versailles was signed in ___?", "answer": "1919", "choices": ["1917", "1918", "1919", "1920"]},
-  {"tier": 2, "question": "The Louisiana Purchase occurred in ___?", "answer": "1803", "choices": ["1799", "1803", "1807", "1812"]},
-  {"tier": 2, "question": "Lewis and Clark's expedition was sent west by President ___?", "answer": "Thomas Jefferson", "choices": ["George Washington", "John Adams", "Thomas Jefferson", "James Madison"]},
-  {"tier": 2, "question": "The Battle of Gettysburg was in ___?", "answer": "1863", "choices": ["1861", "1862", "1863", "1864"]},
-  {"tier": 2, "question": "The Communist Manifesto was published in ___?", "answer": "1848", "choices": ["1835", "1848", "1860", "1875"]},
-  {"tier": 2, "question": "The founding of Rome is traditionally dated to ___?", "answer": "753 BC", "choices": ["900 BC", "753 BC", "600 BC", "500 BC"]},
-  {"tier": 2, "question": "The fall of the Western Roman Empire occurred in ___?", "answer": "476 AD", "choices": ["380 AD", "410 AD", "476 AD", "550 AD"]},
-  {"tier": 2, "question": "The Renaissance began in ___?", "answer": "Italy", "choices": ["France", "Italy", "England", "Germany"]},
-  {"tier": 2, "question": "The Silk Road connected China to ___?", "answer": "Europe", "choices": ["Africa", "Europe", "Australia", "South America"]},
-  {"tier": 2, "question": "The Mongol Empire reached its greatest extent under ___?", "answer": "Kublai Khan", "choices": ["Genghis Khan", "Kublai Khan", "Ogedei Khan", "Timur"]},
-  {"tier": 2, "question": "The American Civil War began in ___?", "answer": "1861", "choices": ["1858", "1860", "1861", "1863"]},
-  {"tier": 2, "question": "The French Revolution ended with the rise of ___?", "answer": "Napoleon Bonaparte", "choices": ["Louis XVI", "Napoleon Bonaparte", "Maximilien Robespierre", "The Directory"]},
-  {"tier": 2, "question": "The War of 1812 was between the US and ___?", "answer": "Britain", "choices": ["France", "Britain", "Spain", "Mexico"]},
-  {"tier": 2, "question": "The Spanish-American War occurred in ___?", "answer": "1898", "choices": ["1888", "1895", "1898", "1902"]},
-  {"tier": 2, "question": "The sinking of the Lusitania occurred in ___?", "answer": "1915", "choices": ["1913", "1915", "1917", "1918"]},
-  {"tier": 2, "question": "Vladimir Lenin led the ___?", "answer": "Bolshevik Revolution", "choices": ["French Revolution", "Bolshevik Revolution", "Chinese Revolution", "Mexican Revolution"]},
-  {"tier": 2, "question": "The Hiroshima atomic bomb was dropped on ___?", "answer": "August 6, 1945", "choices": ["July 6, 1945", "August 6, 1945", "August 9, 1945", "September 2, 1945"]},
-  {"tier": 2, "question": "The Berlin Blockade began in ___?", "answer": "1948", "choices": ["1946", "1947", "1948", "1949"]},
-  {"tier": 2, "question": "The State of Israel was founded in ___?", "answer": "1948", "choices": ["1945", "1947", "1948", "1950"]},
-  {"tier": 2, "question": "Sputnik, the first satellite, was launched in ___?", "answer": "1957", "choices": ["1955", "1956", "1957", "1959"]},
-  {"tier": 2, "question": "The Bay of Pigs invasion was in ___?", "answer": "1961", "choices": ["1959", "1960", "1961", "1963"]},
-  {"tier": 2, "question": "The Six-Day War between Israel and Arab states was in ___?", "answer": "1967", "choices": ["1956", "1967", "1973", "1982"]},
-  {"tier": 2, "question": "The Apollo 11 mission landed on the Moon in ___?", "answer": "1969", "choices": ["1967", "1968", "1969", "1970"]},
-  {"tier": 2, "question": "The Iranian Revolution occurred in ___?", "answer": "1979", "choices": ["1975", "1977", "1979", "1981"]},
-  {"tier": 2, "question": "The Soviet invasion of Afghanistan began in ___?", "answer": "1979", "choices": ["1977", "1978", "1979", "1981"]},
-  {"tier": 2, "question": "The Russo-Japanese War ended in ___?", "answer": "1905", "choices": ["1901", "1903", "1905", "1907"]},
-  {"tier": 2, "question": "The Meiji Restoration in Japan began in ___?", "answer": "1868", "choices": ["1853", "1860", "1868", "1876"]},
-  {"tier": 2, "question": "The Boxer Rebellion was against foreign influence in ___?", "answer": "China", "choices": ["Japan", "China", "Korea", "Vietnam"]},
-  {"tier": 2, "question": "Franz Ferdinand was assassinated in ___?", "answer": "1914", "choices": ["1912", "1913", "1914", "1915"]},
-  {"tier": 2, "question": "The assassination of Franz Ferdinand triggered ___?", "answer": "World War I", "choices": ["World War II", "World War I", "The Russian Revolution", "The Balkan Wars"]},
-  {"tier": 2, "question": "The Nuremberg Trials took place in ___?", "answer": "1945-1946", "choices": ["1944-1945", "1945-1946", "1947-1948", "1948-1949"]},
-  {"tier": 2, "question": "The Battle of Trafalgar (1805) was won by ___?", "answer": "Britain", "choices": ["France", "Britain", "Spain", "Netherlands"]},
-  {"tier": 2, "question": "Horatio Nelson died at the Battle of ___?", "answer": "Trafalgar", "choices": ["Waterloo", "Trafalgar", "Austerlitz", "Nile"]},
-  {"tier": 2, "question": "The Monroe Doctrine was proclaimed in ___?", "answer": "1823", "choices": ["1815", "1819", "1823", "1830"]},
-  {"tier": 2, "question": "The Emancipation Proclamation freed enslaved people in ___?", "answer": "Confederate states", "choices": ["All US states", "Confederate states", "Border states only", "Northern states"]},
-  {"tier": 2, "question": "The OPEC oil embargo was in ___?", "answer": "1973", "choices": ["1970", "1972", "1973", "1975"]},
-  {"tier": 2, "question": "Genghis Khan died in ___?", "answer": "1227", "choices": ["1206", "1220", "1227", "1241"]},
-  {"tier": 2, "question": "The Aztec Empire was conquered by ___?", "answer": "Hernan Cortes", "choices": ["Francisco Pizarro", "Hernan Cortes", "Christopher Columbus", "Vasco da Gama"]},
-  {"tier": 2, "question": "The Inca Empire was conquered by ___?", "answer": "Francisco Pizarro", "choices": ["Hernan Cortes", "Francisco Pizarro", "Pedro de Alvarado", "Diego de Almagro"]},
-  {"tier": 2, "question": "The Ottoman Empire captured Constantinople in ___?", "answer": "1453", "choices": ["1389", "1420", "1453", "1480"]},
-  {"tier": 2, "question": "The English Civil War resulted in the execution of ___?", "answer": "King Charles I", "choices": ["King James I", "King Charles I", "King Charles II", "Oliver Cromwell"]},
-  {"tier": 2, "question": "Oliver Cromwell ruled England as ___?", "answer": "Lord Protector", "choices": ["King", "Lord Protector", "Prime Minister", "President"]},
-  {"tier": 2, "question": "The Seven Years' War lasted from 1756 to ___?", "answer": "1763", "choices": ["1760", "1762", "1763", "1765"]},
-  {"tier": 2, "question": "The Glorious Revolution of 1688 placed ___ on the English throne?", "answer": "William and Mary", "choices": ["James II", "William and Mary", "Charles II", "Anne"]},
-  {"tier": 2, "question": "The Battle of Lexington and Concord was in ___?", "answer": "1775", "choices": ["1773", "1774", "1775", "1776"]},
-  {"tier": 2, "question": "The US Constitution was ratified in ___?", "answer": "1788", "choices": ["1783", "1786", "1788", "1791"]},
-  {"tier": 2, "question": "The Bill of Rights was added to the Constitution in ___?", "answer": "1791", "choices": ["1788", "1789", "1791", "1793"]},
-  {"tier": 2, "question": "The Battle of Bunker Hill was in ___?", "answer": "1775", "choices": ["1773", "1774", "1775", "1776"]},
-  {"tier": 2, "question": "The Battle of Yorktown ended the ___?", "answer": "American Revolution", "choices": ["War of 1812", "American Revolution", "French and Indian War", "Seven Years' War"]},
-  {"tier": 2, "question": "The First Opium War between China and Britain ended in ___?", "answer": "1842", "choices": ["1838", "1842", "1848", "1860"]},
-  {"tier": 2, "question": "Leon Trotsky was exiled to and later assassinated in ___?", "answer": "Mexico", "choices": ["France", "Mexico", "United States", "Turkey"]},
-  {"tier": 2, "question": "The Night of the Long Knives occurred in ___?", "answer": "1934", "choices": ["1932", "1933", "1934", "1935"]},
-  {"tier": 2, "question": "Kristallnacht (Night of Broken Glass) was in ___?", "answer": "1938", "choices": ["1935", "1936", "1938", "1940"]},
-  {"tier": 2, "question": "The Molotov-Ribbentrop Pact was signed between the USSR and ___?", "answer": "Nazi Germany", "choices": ["Japan", "Nazi Germany", "Italy", "Finland"]},
-  {"tier": 2, "question": "Operation Barbarossa was Germany's invasion of ___?", "answer": "Soviet Union", "choices": ["Poland", "Soviet Union", "France", "Yugoslavia"]},
-  {"tier": 2, "question": "The Battle of Stalingrad ended in German defeat in ___?", "answer": "1943", "choices": ["1941", "1942", "1943", "1944"]},
-  {"tier": 2, "question": "The Battle of Midway was a turning point against ___?", "answer": "Japan", "choices": ["Germany", "Japan", "Italy", "Korea"]},
-  {"tier": 2, "question": "The Truman Doctrine was proclaimed in ___?", "answer": "1947", "choices": ["1945", "1946", "1947", "1948"]},
-  {"tier": 2, "question": "The Korean War started when North Korea invaded ___?", "answer": "South Korea", "choices": ["China", "South Korea", "Japan", "Taiwan"]},
-  {"tier": 2, "question": "The Berlin Wall was built in ___?", "answer": "1961", "choices": ["1955", "1958", "1961", "1963"]},
-  {"tier": 2, "question": "The Dreyfus Affair took place in ___?", "answer": "France", "choices": ["Germany", "France", "Austria", "Russia"]},
-  {"tier": 2, "question": "The Wannsee Conference planned the ___?", "answer": "Final Solution (genocide of Jews)", "choices": ["Invasion of Poland", "Final Solution (genocide of Jews)", "Anschluss of Austria", "Atlantic Wall defense"]},
-  {"tier": 2, "question": "The Zimmermann Telegram was sent by Germany to ___?", "answer": "Mexico", "choices": ["Austria", "Mexico", "Ottoman Empire", "Argentina"]},
-  {"tier": 2, "question": "The Battle of Verdun was fought in ___?", "answer": "1916", "choices": ["1914", "1915", "1916", "1917"]},
-  {"tier": 2, "question": "The Battle of the Somme began in ___?", "answer": "1916", "choices": ["1914", "1915", "1916", "1917"]},
-  {"tier": 2, "question": "The Titanic struck an iceberg in April ___?", "answer": "1912", "choices": ["1910", "1911", "1912", "1913"]},
-  {"tier": 2, "question": "The 19th Amendment gave voting rights to ___?", "answer": "Women", "choices": ["African Americans", "Women", "Native Americans", "All adults 18+"]},
-  {"tier": 2, "question": "The Suez Canal was opened in ___?", "answer": "1869", "choices": ["1855", "1863", "1869", "1875"]},
-  {"tier": 2, "question": "Joan of Arc fought for ___?", "answer": "France", "choices": ["England", "France", "Burgundy", "The Holy Roman Empire"]},
-  {"tier": 2, "question": "The Battle of Hastings was in ___?", "answer": "1066", "choices": ["1042", "1066", "1087", "1100"]},
-  {"tier": 2, "question": "The First Crusade began in ___?", "answer": "1096", "choices": ["1050", "1075", "1096", "1110"]},
-  {"tier": 2, "question": "The Battle of Marathon (490 BC) was between Athens and ___?", "answer": "Persia", "choices": ["Sparta", "Persia", "Macedon", "Corinth"]},
-  {"tier": 2, "question": "The Peloponnesian War was between Athens and ___?", "answer": "Sparta", "choices": ["Corinth", "Sparta", "Thebes", "Persia"]},
-  {"tier": 2, "question": "Henry VIII broke from the Catholic Church to form ___?", "answer": "The Church of England", "choices": ["The Lutheran Church", "The Church of England", "The Calvinist Church", "The Presbyterian Church"]},
-  {"tier": 2, "question": "The Scramble for Africa by European powers peaked in the ___?", "answer": "1880s-1890s", "choices": ["1850s-1860s", "1870s-1880s", "1880s-1890s", "1900s-1910s"]},
-  {"tier": 2, "question": "The Boxer Rebellion occurred in ___?", "answer": "1900", "choices": ["1890", "1895", "1900", "1905"]},
-  {"tier": 2, "question": "The Battle of Tsushima (1905) was a decisive victory for ___?", "answer": "Japan", "choices": ["Russia", "Japan", "China", "Korea"]},
-  {"tier": 2, "question": "Stalin's Great Purge took place primarily in the ___?", "answer": "1930s", "choices": ["1920s", "1930s", "1940s", "1950s"]},
-  {"tier": 2, "question": "The Anschluss was the annexation of Austria by ___?", "answer": "Nazi Germany", "choices": ["Fascist Italy", "Nazi Germany", "Soviet Union", "Hungary"]},
-  {"tier": 2, "question": "Operation Barbarossa began in ___?", "answer": "1941", "choices": ["1939", "1940", "1941", "1942"]},
-  {"tier": 2, "question": "The Yalta Conference was held in ___?", "answer": "1945", "choices": ["1943", "1944", "1945", "1946"]},
-  {"tier": 2, "question": "The Iranian Revolution was led by ___?", "answer": "Ayatollah Khomeini", "choices": ["Mohammad Mosaddegh", "Ayatollah Khomeini", "Reza Shah", "Ali Khamenei"]},
-  {"tier": 2, "question": "The Rwandan Genocide occurred in ___?", "answer": "1994", "choices": ["1990", "1992", "1994", "1996"]},
-  {"tier": 2, "question": "The Good Friday Agreement ended conflict in ___?", "answer": "Northern Ireland", "choices": ["Bosnia", "Northern Ireland", "Kosovo", "Cyprus"]},
-  {"tier": 2, "question": "The Gulf War (Operation Desert Storm) was in ___?", "answer": "1991", "choices": ["1988", "1990", "1991", "1992"]},
-  {"tier": 2, "question": "The September 11 attacks occurred in ___?", "answer": "2001", "choices": ["1999", "2000", "2001", "2002"]},
-
-  {"tier": 3, "question": "The Treaty of Versailles ended ___?", "answer": "World War I", "choices": ["World War II", "World War I", "The Franco-Prussian War", "The Crimean War"]},
-  {"tier": 3, "question": "The Peace of Westphalia (1648) ended the ___?", "answer": "Thirty Years' War", "choices": ["Hundred Years' War", "Thirty Years' War", "Seven Years' War", "Napoleonic Wars"]},
-  {"tier": 3, "question": "The Louisiana Purchase doubled the size of ___?", "answer": "The United States", "choices": ["France", "The United States", "Canada", "Mexico"]},
-  {"tier": 3, "question": "The main causes of WWI are summarized by the acronym ___?", "answer": "MAIN", "choices": ["STEM", "MAIN", "WARS", "FATE"]},
-  {"tier": 3, "question": "In MAIN, the 'M' stands for ___?", "answer": "Militarism", "choices": ["Monarchy", "Militarism", "Maps", "Manufacturing"]},
-  {"tier": 3, "question": "In MAIN, the 'A' stands for ___?", "answer": "Alliance", "choices": ["Army", "Alliance", "Assassination", "Armament"]},
-  {"tier": 3, "question": "Julius Caesar was assassinated in ___?", "answer": "44 BC", "choices": ["55 BC", "44 BC", "33 BC", "27 BC"]},
-  {"tier": 3, "question": "Caesar was assassinated on the ___?", "answer": "Ides of March", "choices": ["Ides of January", "Ides of February", "Ides of March", "Ides of April"]},
-  {"tier": 3, "question": "The Egyptian pyramids at Giza were built around ___?", "answer": "2500 BC", "choices": ["4000 BC", "2500 BC", "1000 BC", "500 BC"]},
-  {"tier": 3, "question": "The Colosseum in Rome was completed around ___?", "answer": "80 AD", "choices": ["50 AD", "80 AD", "150 AD", "200 AD"]},
-  {"tier": 3, "question": "The Roman Republic transitioned to the Roman Empire under ___?", "answer": "Augustus Caesar", "choices": ["Julius Caesar", "Augustus Caesar", "Marcus Aurelius", "Constantine"]},
-  {"tier": 3, "question": "Constantine the Great made Christianity the official religion of ___?", "answer": "Rome", "choices": ["Greece", "Rome", "Persia", "Egypt"]},
-  {"tier": 3, "question": "The Silk Road was primarily used for ___?", "answer": "Trade between East and West", "choices": ["Military campaigns", "Trade between East and West", "Religious pilgrimages", "Moving armies"]},
-  {"tier": 3, "question": "The Renaissance began approximately in which century?", "answer": "14th century", "choices": ["12th century", "13th century", "14th century", "16th century"]},
-  {"tier": 3, "question": "Henry VIII of England broke from the Catholic Church over ___?", "answer": "His desire to annul his marriage", "choices": ["Theological doctrine", "His desire to annul his marriage", "Church taxation", "Protestant beliefs"]},
-  {"tier": 3, "question": "The Hundred Years' War lasted from 1337 to ___?", "answer": "1453", "choices": ["1420", "1453", "1461", "1475"]},
-  {"tier": 3, "question": "The Spanish Armada was defeated in ___?", "answer": "1588", "choices": ["1570", "1580", "1588", "1600"]},
-  {"tier": 3, "question": "The Thirty Years' War began in ___?", "answer": "1618", "choices": ["1610", "1615", "1618", "1625"]},
-  {"tier": 3, "question": "The Battle of Bunker Hill (1775) actually took place on ___?", "answer": "Breed's Hill", "choices": ["Dorchester Heights", "Breed's Hill", "Lexington Common", "Fort Ticonderoga"]},
-  {"tier": 3, "question": "The Boston Massacre occurred in ___?", "answer": "1770", "choices": ["1765", "1770", "1773", "1775"]},
-  {"tier": 3, "question": "The Continental Congress first met in ___?", "answer": "1774", "choices": ["1770", "1772", "1774", "1776"]},
-  {"tier": 3, "question": "The Articles of Confederation preceded the ___?", "answer": "US Constitution", "choices": ["Declaration of Independence", "US Constitution", "Bill of Rights", "Federalist Papers"]},
-  {"tier": 3, "question": "The War of 1812 ended in ___?", "answer": "1815", "choices": ["1813", "1814", "1815", "1816"]},
-  {"tier": 3, "question": "The 13th Amendment was ratified in ___?", "answer": "1865", "choices": ["1863", "1864", "1865", "1866"]},
-  {"tier": 3, "question": "The 19th Amendment was ratified in ___?", "answer": "1920", "choices": ["1912", "1916", "1920", "1924"]},
-  {"tier": 3, "question": "The Reconstruction Era followed ___?", "answer": "The Civil War", "choices": ["The Mexican-American War", "The Civil War", "The War of 1812", "World War I"]},
-  {"tier": 3, "question": "The Mexican-American War ended in ___?", "answer": "1848", "choices": ["1845", "1848", "1850", "1852"]},
-  {"tier": 3, "question": "The Spanish-American War gave the US control of ___?", "answer": "Puerto Rico, Guam, and Philippines", "choices": ["Cuba and Mexico", "Puerto Rico, Guam, and Philippines", "Hawaii and Alaska", "Panama and Cuba"]},
-  {"tier": 3, "question": "The 14th Amendment granted citizenship to ___?", "answer": "All persons born or naturalized in the US", "choices": ["Formerly enslaved people only", "All persons born or naturalized in the US", "White male citizens", "Veterans of the Civil War"]},
-  {"tier": 3, "question": "The 15th Amendment was ratified in ___?", "answer": "1870", "choices": ["1865", "1867", "1870", "1875"]},
-  {"tier": 3, "question": "The Mughal Empire was founded by ___?", "answer": "Babur", "choices": ["Akbar", "Babur", "Humayun", "Shah Jahan"]},
-  {"tier": 3, "question": "The Mughal Empire was founded in ___?", "answer": "1526", "choices": ["1498", "1510", "1526", "1556"]},
-  {"tier": 3, "question": "The Ottoman Empire was dissolved in ___?", "answer": "1922", "choices": ["1918", "1920", "1922", "1924"]},
-  {"tier": 3, "question": "The Republic of Turkey was founded by ___?", "answer": "Mustafa Kemal Ataturk", "choices": ["Enver Pasha", "Mustafa Kemal Ataturk", "Ismet Inonu", "Mehmed VI"]},
-  {"tier": 3, "question": "The Peloponnesian War ended in ___?", "answer": "404 BC", "choices": ["431 BC", "421 BC", "404 BC", "387 BC"]},
-  {"tier": 3, "question": "The Battle of Thermopylae was in ___?", "answer": "480 BC", "choices": ["490 BC", "480 BC", "470 BC", "460 BC"]},
-  {"tier": 3, "question": "The Battle of Thermopylae was between the Greeks and ___?", "answer": "Persians", "choices": ["Macedonians", "Persians", "Spartans vs Athens", "Romans"]},
-  {"tier": 3, "question": "The Battle of Actium (31 BC) ended the career of ___?", "answer": "Mark Antony and Cleopatra", "choices": ["Julius Caesar", "Mark Antony and Cleopatra", "Pompey the Great", "Brutus and Cassius"]},
-  {"tier": 3, "question": "The Edict of Milan (313 AD) granted ___?", "answer": "Religious tolerance in Rome", "choices": ["Christianity as the state religion", "Religious tolerance in Rome", "Citizenship to all free persons", "Tax exemption for the church"]},
-  {"tier": 3, "question": "The Domesday Book was commissioned by ___?", "answer": "William the Conqueror", "choices": ["Edward the Confessor", "William the Conqueror", "Henry I", "Stephen of Blois"]},
-  {"tier": 3, "question": "The Domesday Book was completed in ___?", "answer": "1086", "choices": ["1070", "1078", "1086", "1100"]},
-  {"tier": 3, "question": "Charlemagne was crowned Holy Roman Emperor in ___?", "answer": "800 AD", "choices": ["771 AD", "800 AD", "814 AD", "843 AD"]},
-  {"tier": 3, "question": "The Protestant Reformation split the Christian church in the ___?", "answer": "16th century", "choices": ["14th century", "15th century", "16th century", "17th century"]},
-  {"tier": 3, "question": "The Seven Years' War (1756-1763) is called the ___?", "answer": "First world war", "choices": ["Last medieval war", "First world war", "War of Succession", "Napoleonic precursor"]},
-  {"tier": 3, "question": "The American Revolution was inspired partly by ___?", "answer": "Enlightenment ideas", "choices": ["The French example", "Enlightenment ideas", "Religious persecution", "Economic depression"]},
-  {"tier": 3, "question": "The Battle of Lepanto (1571) was fought between Christendom and ___?", "answer": "The Ottoman Empire", "choices": ["The Mughal Empire", "The Ottoman Empire", "The Safavid Empire", "The Mamluk Sultanate"]},
-  {"tier": 3, "question": "The Berlin Conference (1884-85) partitioned ___?", "answer": "Africa", "choices": ["Asia", "Africa", "South America", "Southeast Asia"]},
-  {"tier": 3, "question": "The Raj referred to British rule over ___?", "answer": "India", "choices": ["Africa", "India", "Australia", "Canada"]},
-  {"tier": 3, "question": "The Opium Wars were fought between China and ___?", "answer": "Britain", "choices": ["France", "Britain", "USA", "Russia"]},
-  {"tier": 3, "question": "The Meiji Restoration modernized ___?", "answer": "Japan", "choices": ["China", "Japan", "Korea", "Vietnam"]},
-  {"tier": 3, "question": "The Camp David Accords brought peace between Israel and ___?", "answer": "Egypt", "choices": ["Jordan", "Egypt", "Syria", "Lebanon"]},
-  {"tier": 3, "question": "The Camp David Accords were signed in ___?", "answer": "1978", "choices": ["1973", "1976", "1978", "1980"]},
-  {"tier": 3, "question": "The Cultural Revolution in China lasted from 1966 to ___?", "answer": "1976", "choices": ["1970", "1973", "1976", "1978"]},
-  {"tier": 3, "question": "The Rwandan Genocide killed approximately ___?", "answer": "800,000 people", "choices": ["100,000 people", "400,000 people", "800,000 people", "2 million people"]},
-  {"tier": 3, "question": "The Good Friday Agreement was signed in ___?", "answer": "1998", "choices": ["1994", "1996", "1998", "2000"]},
-  {"tier": 3, "question": "The Apartheid system ended in South Africa in ___?", "answer": "1994", "choices": ["1990", "1992", "1994", "1996"]},
-  {"tier": 3, "question": "The Cuban Revolution succeeded in ___?", "answer": "1959", "choices": ["1955", "1957", "1959", "1961"]},
-  {"tier": 3, "question": "Fidel Castro led ___?", "answer": "Cuba", "choices": ["Venezuela", "Cuba", "Nicaragua", "Chile"]},
-  {"tier": 3, "question": "The Non-Aligned Movement was co-founded by ___?", "answer": "Nehru, Nasser, and Tito", "choices": ["Stalin, Mao, and Nasser", "Nehru, Nasser, and Tito", "Churchill, Roosevelt, and de Gaulle", "Sukarno, Nkrumah, and Castro"]},
-  {"tier": 3, "question": "The Helsinki Accords were signed in ___?", "answer": "1975", "choices": ["1972", "1973", "1975", "1977"]},
-  {"tier": 3, "question": "The partition of British India created India and ___?", "answer": "Pakistan", "choices": ["Bangladesh", "Pakistan", "Ceylon", "Burma"]},
-  {"tier": 3, "question": "The Korean Peninsula was divided at the ___?", "answer": "38th parallel", "choices": ["35th parallel", "38th parallel", "40th parallel", "42nd parallel"]},
-  {"tier": 3, "question": "The Marshall Plan distributed approximately ___?", "answer": "$13 billion", "choices": ["$5 billion", "$13 billion", "$25 billion", "$50 billion"]},
-  {"tier": 3, "question": "The Weimar Republic was established in Germany after ___?", "answer": "World War I", "choices": ["World War II", "World War I", "The 1848 Revolution", "The Austro-Prussian War"]},
-  {"tier": 3, "question": "The Rape of Nanjing occurred in ___?", "answer": "1937", "choices": ["1931", "1935", "1937", "1939"]},
-  {"tier": 3, "question": "The Bretton Woods Conference established ___?", "answer": "The IMF and World Bank", "choices": ["The United Nations", "The IMF and World Bank", "NATO", "The World Trade Organization"]},
-  {"tier": 3, "question": "The Yalta Conference divided post-war Europe among ___?", "answer": "USA, USSR, and Britain", "choices": ["USA and USSR only", "USA, USSR, and Britain", "USA, USSR, Britain, and France", "All Allied nations"]},
-  {"tier": 3, "question": "The Potsdam Conference was held in ___?", "answer": "1945", "choices": ["1943", "1944", "1945", "1946"]},
-  {"tier": 3, "question": "The Bandung Conference of nonaligned nations was in ___?", "answer": "1955", "choices": ["1950", "1952", "1955", "1958"]},
-  {"tier": 3, "question": "The OPEC oil embargo targeted ___?", "answer": "Western countries supporting Israel", "choices": ["Japan and Europe", "Western countries supporting Israel", "Communist nations", "South American nations"]},
-  {"tier": 3, "question": "The Crimean War (1853-1856) involved Russia and ___?", "answer": "Britain, France, and Ottoman Empire", "choices": ["Austria and Prussia", "Britain, France, and Ottoman Empire", "USA and Britain", "France and Prussia"]},
-  {"tier": 3, "question": "Florence Nightingale became famous during which war?", "answer": "Crimean War", "choices": ["Boer War", "Crimean War", "Napoleonic Wars", "Seven Years' War"]},
-  {"tier": 3, "question": "The Geneva Conventions primarily govern ___?", "answer": "Treatment of prisoners and civilians in war", "choices": ["Peace treaties", "Treatment of prisoners and civilians in war", "Nuclear weapon usage", "Trade during wartime"]},
-  {"tier": 3, "question": "The Treaty of Paris (1783) ended ___?", "answer": "The American Revolutionary War", "choices": ["The Seven Years' War", "The American Revolutionary War", "The French and Indian War", "The War of 1812"]},
-  {"tier": 3, "question": "The Missouri Compromise of 1820 addressed ___?", "answer": "Slavery in new US territories", "choices": ["Native American relocation", "Slavery in new US territories", "Tariff rates", "Immigration policy"]},
-  {"tier": 3, "question": "The Dred Scott decision ruled that enslaved people were ___?", "answer": "Property, not citizens", "choices": ["Free in Northern states", "Property, not citizens", "Entitled to jury trials", "Protected by the Constitution"]},
-  {"tier": 3, "question": "Abraham Lincoln's Gettysburg Address was delivered at ___?", "answer": "A military cemetery dedication", "choices": ["A political rally", "A military cemetery dedication", "A Union Army headquarters", "A Congressional session"]},
-  {"tier": 3, "question": "The Emancipation Proclamation applied to states ___?", "answer": "In rebellion against the Union", "choices": ["Throughout the entire United States", "In rebellion against the Union", "Only in the Deep South", "That had not yet seceded"]},
-  {"tier": 3, "question": "The Seneca Falls Convention of 1848 launched the ___?", "answer": "Women's suffrage movement in the US", "choices": ["Abolitionist movement", "Women's suffrage movement in the US", "Labor movement", "Temperance movement"]},
-  {"tier": 3, "question": "The Dreyfus Affair exposed antisemitism in ___?", "answer": "France", "choices": ["Germany", "France", "Austria", "Russia"]},
-  {"tier": 3, "question": "The Franco-Prussian War ended in ___?", "answer": "1871", "choices": ["1866", "1869", "1871", "1873"]},
-  {"tier": 3, "question": "The German Empire (Second Reich) was proclaimed in ___?", "answer": "1871", "choices": ["1866", "1869", "1871", "1873"]},
-  {"tier": 3, "question": "Bismarck served as Chancellor of ___?", "answer": "Germany", "choices": ["Austria", "Germany", "Prussia", "Bavaria"]},
-  {"tier": 3, "question": "The Austro-Prussian War (1866) was won by ___?", "answer": "Prussia", "choices": ["Austria", "Prussia", "France", "Russia"]},
-  {"tier": 3, "question": "The Congress of Vienna met in ___?", "answer": "1814-1815", "choices": ["1812-1813", "1814-1815", "1816-1817", "1818-1819"]},
-  {"tier": 3, "question": "The Congress of Vienna was presided over by ___?", "answer": "Metternich", "choices": ["Castlereagh", "Metternich", "Talleyrand", "Alexander I"]},
-  {"tier": 3, "question": "The Hundred Years' War included the famous French heroine ___?", "answer": "Joan of Arc", "choices": ["Eleanor of Aquitaine", "Joan of Arc", "Marie de France", "Christine de Pizan"]},
-  {"tier": 3, "question": "The Black Death reached Europe through ___?", "answer": "Trade routes from Asia", "choices": ["Africa", "Trade routes from Asia", "The Middle East directly", "Crusader knights"]},
-  {"tier": 3, "question": "The Renaissance is associated with a rebirth of ___?", "answer": "Classical Greek and Roman learning", "choices": ["Medieval art", "Classical Greek and Roman learning", "Religious devotion", "Agricultural science"]},
-
-  {"tier": 4, "question": "The Battle of Hastings occurred in ___?", "answer": "1066", "choices": ["1042", "1066", "1086", "1100"]},
-  {"tier": 4, "question": "Who was the first Holy Roman Emperor?", "answer": "Charlemagne", "choices": ["Otto I", "Charlemagne", "Frederick Barbarossa", "Henry IV"]},
-  {"tier": 4, "question": "The Hundred Years' War lasted from 1337 to ___?", "answer": "1453", "choices": ["1420", "1453", "1461", "1475"]},
-  {"tier": 4, "question": "The Spanish Armada was defeated in ___?", "answer": "1588", "choices": ["1570", "1580", "1588", "1600"]},
-  {"tier": 4, "question": "The Thirty Years' War began in ___?", "answer": "1618", "choices": ["1610", "1615", "1618", "1625"]},
-  {"tier": 4, "question": "The Peace of Augsburg (1555) established ___?", "answer": "Cuius regio, eius religio", "choices": ["Freedom of worship for all", "Cuius regio, eius religio", "Protestant supremacy", "Catholic supremacy"]},
-  {"tier": 4, "question": "The Battle of Lepanto (1571) was fought between Christendom and ___?", "answer": "The Ottoman Empire", "choices": ["The Mughal Empire", "The Ottoman Empire", "The Safavid Empire", "The Mamluk Sultanate"]},
-  {"tier": 4, "question": "The Treaty of Utrecht (1713) ended the ___?", "answer": "War of the Spanish Succession", "choices": ["War of the Austrian Succession", "War of the Spanish Succession", "Nine Years' War", "Thirty Years' War"]},
-  {"tier": 4, "question": "Who was the last Byzantine Emperor?", "answer": "Constantine XI", "choices": ["John VIII", "Constantine XI", "Manuel II", "Alexios V"]},
-  {"tier": 4, "question": "The Sykes-Picot Agreement divided the ___?", "answer": "Middle East between Britain and France", "choices": ["Africa among European powers", "Middle East between Britain and France", "Ottoman Empire between Russia and Britain", "Asia between Japan and Russia"]},
-  {"tier": 4, "question": "The Sykes-Picot Agreement was signed in ___?", "answer": "1916", "choices": ["1913", "1916", "1919", "1922"]},
-  {"tier": 4, "question": "The Balfour Declaration (1917) supported ___?", "answer": "A Jewish homeland in Palestine", "choices": ["Arab independence", "A Jewish homeland in Palestine", "Syrian statehood", "The partition of Iraq"]},
-  {"tier": 4, "question": "The Treaty of Versailles imposed war guilt on ___?", "answer": "Germany", "choices": ["Austria", "Germany", "Ottoman Empire", "Bulgaria"]},
-  {"tier": 4, "question": "The reparations imposed on Germany by Versailles were ___?", "answer": "132 billion gold marks", "choices": ["50 billion gold marks", "132 billion gold marks", "250 billion gold marks", "400 billion gold marks"]},
-  {"tier": 4, "question": "The Night of the Long Knives eliminated the ___?", "answer": "SA (Sturmabteilung)", "choices": ["SS", "SA (Sturmabteilung)", "Gestapo", "Wehrmacht leadership"]},
-  {"tier": 4, "question": "The Anschluss occurred in ___?", "answer": "1938", "choices": ["1936", "1937", "1938", "1939"]},
-  {"tier": 4, "question": "The Wannsee Conference was held in ___?", "answer": "1942", "choices": ["1940", "1941", "1942", "1943"]},
-  {"tier": 4, "question": "The Bretton Woods Conference was held in ___?", "answer": "1944", "choices": ["1942", "1944", "1945", "1946"]},
-  {"tier": 4, "question": "The Battle of El Alamein was fought in ___?", "answer": "North Africa", "choices": ["Europe", "North Africa", "Southeast Asia", "The Pacific"]},
-  {"tier": 4, "question": "The Battle of Midway was in ___?", "answer": "1942", "choices": ["1941", "1942", "1943", "1944"]},
-  {"tier": 4, "question": "The Zimmermann Telegram was sent in ___?", "answer": "1917", "choices": ["1915", "1916", "1917", "1918"]},
-  {"tier": 4, "question": "The Mughal Emperor Akbar was known for ___?", "answer": "Religious tolerance", "choices": ["Military conquest only", "Religious tolerance", "Building the Taj Mahal", "Abolishing taxes"]},
-  {"tier": 4, "question": "The Taj Mahal was built by Mughal Emperor ___?", "answer": "Shah Jahan", "choices": ["Akbar", "Shah Jahan", "Aurangzeb", "Jahangir"]},
-  {"tier": 4, "question": "The Thirty Years' War ended with the ___?", "answer": "Peace of Westphalia", "choices": ["Treaty of Utrecht", "Peace of Westphalia", "Treaty of Augsburg", "Congress of Vienna"]},
-  {"tier": 4, "question": "The English Civil War ended with ___?", "answer": "The execution of Charles I and a republic", "choices": ["Restoration of the monarchy", "The execution of Charles I and a republic", "A constitutional monarchy", "Scottish independence"]},
-  {"tier": 4, "question": "The Thirty Years' War was primarily fought over ___?", "answer": "Religious and political conflicts in Europe", "choices": ["Territory in the New World", "Religious and political conflicts in Europe", "Trade route control", "Succession to the Spanish throne"]},
-  {"tier": 4, "question": "The First Sino-Japanese War ended in ___?", "answer": "1895", "choices": ["1890", "1895", "1900", "1905"]},
-  {"tier": 4, "question": "The Second Sino-Japanese War began in ___?", "answer": "1937", "choices": ["1931", "1935", "1937", "1939"]},
-  {"tier": 4, "question": "The Battle of the Marne (1914) stopped the German advance into ___?", "answer": "France", "choices": ["Belgium", "France", "Britain", "Russia"]},
-  {"tier": 4, "question": "The Easter Rising in Ireland occurred in ___?", "answer": "1916", "choices": ["1912", "1914", "1916", "1918"]},
-  {"tier": 4, "question": "The Irish Free State was established in ___?", "answer": "1922", "choices": ["1916", "1920", "1922", "1924"]},
-  {"tier": 4, "question": "The Boer War was fought in ___?", "answer": "South Africa", "choices": ["Australia", "South Africa", "India", "Canada"]},
-  {"tier": 4, "question": "The Berlin Conference (1884) was convened by ___?", "answer": "Bismarck", "choices": ["Kaiser Wilhelm", "Bismarck", "Leopold II", "Lord Salisbury"]},
-  {"tier": 4, "question": "The Congress of Vienna was convened to ___?", "answer": "Redraw Europe after the Napoleonic Wars", "choices": ["End World War I", "Redraw Europe after the Napoleonic Wars", "Divide colonial territories", "Form a European alliance"]},
-  {"tier": 4, "question": "The Taiping Rebellion (1850-1864) occurred in ___?", "answer": "China", "choices": ["Japan", "China", "Vietnam", "Korea"]},
-  {"tier": 4, "question": "The Sepoy Mutiny (Indian Rebellion) was in ___?", "answer": "1857", "choices": ["1845", "1857", "1865", "1875"]},
-  {"tier": 4, "question": "The Scramble for Africa was largely complete by ___?", "answer": "1900", "choices": ["1880", "1890", "1900", "1910"]},
-  {"tier": 4, "question": "The Zulu War between Britain and Zulus was in ___?", "answer": "1879", "choices": ["1870", "1879", "1885", "1899"]},
-  {"tier": 4, "question": "The Fashoda Incident (1898) was a colonial standoff between Britain and ___?", "answer": "France", "choices": ["Germany", "France", "Russia", "Italy"]},
-  {"tier": 4, "question": "The Young Turks overthrew the Sultan in ___?", "answer": "1908", "choices": ["1898", "1904", "1908", "1912"]},
-  {"tier": 4, "question": "The Balkan Wars were fought in ___?", "answer": "1912-1913", "choices": ["1908-1909", "1910-1911", "1912-1913", "1914-1915"]},
-  {"tier": 4, "question": "The Italian unification (Risorgimento) was completed in ___?", "answer": "1871", "choices": ["1848", "1861", "1871", "1880"]},
-  {"tier": 4, "question": "Garibaldi is associated with the unification of ___?", "answer": "Italy", "choices": ["Germany", "Italy", "Spain", "Greece"]},
-  {"tier": 4, "question": "The Crimean War ended with the ___?", "answer": "Treaty of Paris (1856)", "choices": ["Treaty of Berlin", "Treaty of Paris (1856)", "Congress of Vienna", "Peace of Westphalia"]},
-  {"tier": 4, "question": "The Commune of Paris was established in ___?", "answer": "1871", "choices": ["1848", "1871", "1881", "1889"]},
-  {"tier": 4, "question": "The Meiji Constitution was promulgated in ___?", "answer": "1889", "choices": ["1868", "1877", "1889", "1900"]},
-  {"tier": 4, "question": "The Korean War armistice was signed in ___?", "answer": "Panmunjom", "choices": ["Seoul", "Panmunjom", "Pyongyang", "Kaesong"]},
-  {"tier": 4, "question": "The Potsdam Conference divided Germany into ___?", "answer": "4 occupation zones", "choices": ["2 occupation zones", "3 occupation zones", "4 occupation zones", "6 occupation zones"]},
-  {"tier": 4, "question": "The Geneva Conventions were updated most recently in ___?", "answer": "1949", "choices": ["1929", "1945", "1949", "1956"]},
-  {"tier": 4, "question": "The Non-Proliferation Treaty (NPT) was signed in ___?", "answer": "1968", "choices": ["1962", "1965", "1968", "1972"]},
-  {"tier": 4, "question": "The Strategic Arms Limitation Talks (SALT I) concluded in ___?", "answer": "1972", "choices": ["1968", "1970", "1972", "1974"]},
-  {"tier": 4, "question": "The Camp David Accords were brokered by President ___?", "answer": "Jimmy Carter", "choices": ["Richard Nixon", "Gerald Ford", "Jimmy Carter", "Ronald Reagan"]},
-  {"tier": 4, "question": "The Falklands War was fought between Britain and ___?", "answer": "Argentina", "choices": ["Chile", "Argentina", "Brazil", "Uruguay"]},
-  {"tier": 4, "question": "The Falklands War was in ___?", "answer": "1982", "choices": ["1978", "1980", "1982", "1984"]},
-  {"tier": 4, "question": "The Iran-Iraq War lasted from 1980 to ___?", "answer": "1988", "choices": ["1985", "1987", "1988", "1990"]},
-  {"tier": 4, "question": "The Tiananmen Square massacre was in ___?", "answer": "1989", "choices": ["1985", "1987", "1989", "1991"]},
-  {"tier": 4, "question": "The Gulf War coalition was led by ___?", "answer": "United States", "choices": ["United Nations alone", "United States", "United Kingdom", "Saudi Arabia"]},
-  {"tier": 4, "question": "The Oslo Accords were signed between Israel and ___?", "answer": "PLO (Palestinians)", "choices": ["Jordan", "PLO (Palestinians)", "Syria", "Egypt"]},
-  {"tier": 4, "question": "The Oslo Accords were signed in ___?", "answer": "1993", "choices": ["1990", "1991", "1993", "1995"]},
-  {"tier": 4, "question": "The Maastricht Treaty founded ___?", "answer": "The European Union", "choices": ["NATO", "The European Union", "The Council of Europe", "The Euro currency"]},
-  {"tier": 4, "question": "The Maastricht Treaty was signed in ___?", "answer": "1992", "choices": ["1988", "1990", "1992", "1994"]},
-  {"tier": 4, "question": "Nelson Mandela was imprisoned on ___?", "answer": "Robben Island", "choices": ["Alcatraz", "Robben Island", "Devil's Island", "Spitsbergen"]},
-  {"tier": 4, "question": "The apartheid system in South Africa was formally abolished in ___?", "answer": "1991", "choices": ["1988", "1990", "1991", "1993"]},
-  {"tier": 4, "question": "The Bosnian War ended with the ___?", "answer": "Dayton Accords", "choices": ["Paris Peace Conference", "Dayton Accords", "Maastricht Treaty", "Helsinki Accords"]},
-  {"tier": 4, "question": "The Dayton Accords were signed in ___?", "answer": "1995", "choices": ["1993", "1994", "1995", "1996"]},
-  {"tier": 4, "question": "The Battle of Tsushima was a naval battle in which ___?", "answer": "Japan defeated Russia's fleet", "choices": ["Russia defeated Japan", "Japan defeated Russia's fleet", "Britain defeated Japan", "USA defeated Spain's fleet"]},
-  {"tier": 4, "question": "The Entente Cordiale (1904) allied Britain with ___?", "answer": "France", "choices": ["Russia", "France", "Italy", "Belgium"]},
-  {"tier": 4, "question": "The Triple Alliance before WWI was Germany, Austria-Hungary, and ___?", "answer": "Italy", "choices": ["Ottoman Empire", "Italy", "Bulgaria", "Romania"]},
-  {"tier": 4, "question": "The Triple Entente before WWI was Russia, France, and ___?", "answer": "Britain", "choices": ["Belgium", "Britain", "Italy", "Serbia"]},
-
-  {"tier": 5, "question": "The Congress of Vienna met in ___?", "answer": "1814-1815", "choices": ["1812-1813", "1814-1815", "1816-1817", "1818-1819"]},
-  {"tier": 5, "question": "The Congress of Vienna was presided over by ___?", "answer": "Metternich", "choices": ["Castlereagh", "Metternich", "Talleyrand", "Alexander I"]},
-  {"tier": 5, "question": "The Treaty of Utrecht (1713) ended the ___?", "answer": "War of the Spanish Succession", "choices": ["War of the Austrian Succession", "War of the Spanish Succession", "Nine Years' War", "Thirty Years' War"]},
-  {"tier": 5, "question": "The Peace of Augsburg established the principle ___?", "answer": "Cuius regio, eius religio", "choices": ["Freedom of worship for all", "Cuius regio, eius religio", "Protestant supremacy", "Catholic supremacy"]},
-  {"tier": 5, "question": "Who was the last Byzantine Emperor?", "answer": "Constantine XI", "choices": ["John VIII", "Constantine XI", "Manuel II", "Alexios V"]},
-  {"tier": 5, "question": "The Sykes-Picot Agreement was signed in ___?", "answer": "1916", "choices": ["1913", "1916", "1919", "1922"]},
-  {"tier": 5, "question": "The Balfour Declaration was issued in ___?", "answer": "1917", "choices": ["1915", "1916", "1917", "1919"]},
-  {"tier": 5, "question": "The reparations imposed on Germany by Versailles were ___?", "answer": "132 billion gold marks", "choices": ["50 billion gold marks", "132 billion gold marks", "250 billion gold marks", "400 billion gold marks"]},
-  {"tier": 5, "question": "The Battle of Thermopylae was in ___?", "answer": "480 BC", "choices": ["490 BC", "480 BC", "470 BC", "460 BC"]},
-  {"tier": 5, "question": "The Battle of Actium was in ___?", "answer": "31 BC", "choices": ["44 BC", "31 BC", "27 BC", "14 AD"]},
-  {"tier": 5, "question": "The Battle of Lepanto was in ___?", "answer": "1571", "choices": ["1555", "1571", "1588", "1600"]},
-  {"tier": 5, "question": "The Wannsee Conference was held in ___?", "answer": "1942", "choices": ["1940", "1941", "1942", "1943"]},
-  {"tier": 5, "question": "The Bretton Woods Conference was held in ___?", "answer": "1944", "choices": ["1942", "1944", "1945", "1946"]},
-  {"tier": 5, "question": "The Marshall Plan distributed approximately ___?", "answer": "$13 billion", "choices": ["$5 billion", "$13 billion", "$25 billion", "$50 billion"]},
-  {"tier": 5, "question": "The Helsinki Accords recognized ___?", "answer": "Post-WWII European borders", "choices": ["Human rights globally", "Post-WWII European borders", "Nuclear non-proliferation", "German reunification"]},
-  {"tier": 5, "question": "The Fourth Lateran Council (1215) was convened by Pope ___?", "answer": "Innocent III", "choices": ["Gregory IX", "Innocent III", "Urban II", "Alexander III"]},
-  {"tier": 5, "question": "Theodoric the Great was king of the ___?", "answer": "Ostrogoths", "choices": ["Visigoths", "Ostrogoths", "Vandals", "Lombards"]},
-  {"tier": 5, "question": "The Domesday Book was completed in ___?", "answer": "1086", "choices": ["1070", "1078", "1086", "1100"]},
-  {"tier": 5, "question": "The Edict of Milan (313 AD) was issued by Emperor ___?", "answer": "Constantine", "choices": ["Diocletian", "Constantine", "Theodosius", "Nero"]},
-  {"tier": 5, "question": "The Peloponnesian War ended in ___?", "answer": "404 BC", "choices": ["431 BC", "421 BC", "404 BC", "387 BC"]},
-  {"tier": 5, "question": "The Delian League was led by ___?", "answer": "Athens", "choices": ["Sparta", "Athens", "Corinth", "Thebes"]},
-  {"tier": 5, "question": "The Spartan constitution was attributed to ___?", "answer": "Lycurgus", "choices": ["Solon", "Lycurgus", "Cleisthenes", "Draco"]},
-  {"tier": 5, "question": "Athenian democracy was reformed by ___?", "answer": "Cleisthenes", "choices": ["Solon", "Cleisthenes", "Pericles", "Draco"]},
-  {"tier": 5, "question": "The Peace of Nicias (421 BC) temporarily ended which war?", "answer": "Peloponnesian War", "choices": ["Persian Wars", "Peloponnesian War", "Corinthian War", "Sacred War"]},
-  {"tier": 5, "question": "The Carolingian Renaissance was under ___?", "answer": "Charlemagne", "choices": ["Louis the Pious", "Charlemagne", "Charles Martel", "Pepin the Short"]},
-  {"tier": 5, "question": "The Treaty of Verdun (843 AD) divided ___?", "answer": "Charlemagne's empire among his grandsons", "choices": ["The Roman Empire", "Charlemagne's empire among his grandsons", "The Frankish kingdom", "The Holy Roman Empire"]},
-  {"tier": 5, "question": "The Hanseatic League was a trade confederation in ___?", "answer": "Northern Europe", "choices": ["Mediterranean Europe", "Northern Europe", "Eastern Europe", "The Holy Roman Empire"]},
-  {"tier": 5, "question": "The Golden Bull of 1356 established election of the Holy Roman Emperor by ___?", "answer": "Seven prince-electors", "choices": ["All German princes", "Seven prince-electors", "The Pope and princes", "Hereditary succession"]},
-  {"tier": 5, "question": "The Concordat of Worms (1122) resolved the ___?", "answer": "Investiture Controversy", "choices": ["Great Schism", "Investiture Controversy", "Reformation debate", "Crusade organization"]},
-  {"tier": 5, "question": "The Great Schism of 1054 split Christianity into ___?", "answer": "Roman Catholic and Eastern Orthodox", "choices": ["Catholic and Protestant", "Roman Catholic and Eastern Orthodox", "Byzantine and Western", "Papal and Imperial churches"]},
-  {"tier": 5, "question": "The Reconquista was completed in ___?", "answer": "1492", "choices": ["1450", "1475", "1492", "1502"]},
-  {"tier": 5, "question": "The Reconquista ended with the fall of ___?", "answer": "Granada", "choices": ["Toledo", "Seville", "Granada", "Cordoba"]},
-  {"tier": 5, "question": "The Black Death entered Europe primarily through ___?", "answer": "Sicilian ports", "choices": ["French ports", "Sicilian ports", "English ports", "Venetian lagoons"]},
-  {"tier": 5, "question": "The Plague of Justinian (541-549 AD) killed approximately ___?", "answer": "25-50 million people", "choices": ["1 million people", "5 million people", "25-50 million people", "100 million people"]},
-  {"tier": 5, "question": "The Magna Carta clause 39 guaranteed ___?", "answer": "Habeas corpus (no imprisonment without trial)", "choices": ["Freedom of speech", "Habeas corpus (no imprisonment without trial)", "Trial by jury", "Freedom of religion"]},
-  {"tier": 5, "question": "The Model Parliament of 1295 was convened by ___?", "answer": "Edward I", "choices": ["Henry III", "Edward I", "Edward II", "Richard II"]},
-  {"tier": 5, "question": "The Pragmatic Sanction of 1713 concerned succession to the ___?", "answer": "Habsburg throne", "choices": ["French throne", "Habsburg throne", "Polish throne", "Spanish throne"]},
-  {"tier": 5, "question": "The War of the Austrian Succession ended with the ___?", "answer": "Treaty of Aix-la-Chapelle", "choices": ["Peace of Westphalia", "Treaty of Aix-la-Chapelle", "Treaty of Utrecht", "Treaty of Paris"]},
-  {"tier": 5, "question": "The Congress of Vienna's principle of legitimacy was championed by ___?", "answer": "Talleyrand", "choices": ["Metternich", "Talleyrand", "Castlereagh", "Tsar Alexander"]},
-  {"tier": 5, "question": "The Holy Alliance (1815) was proposed by ___?", "answer": "Tsar Alexander I", "choices": ["Metternich", "Tsar Alexander I", "Frederick William III", "Castlereagh"]},
-  {"tier": 5, "question": "The First International was founded by ___?", "answer": "Karl Marx", "choices": ["Friedrich Engels", "Karl Marx", "Mikhail Bakunin", "Ferdinand Lassalle"]},
-  {"tier": 5, "question": "The Paris Commune of 1871 was suppressed in ___?", "answer": "La semaine sanglante (Bloody Week)", "choices": ["A quick coup", "La semaine sanglante (Bloody Week)", "A Russian intervention", "A general amnesty"]},
-  {"tier": 5, "question": "The Fashoda Crisis (1898) nearly brought Britain and France to war over ___?", "answer": "Control of the Upper Nile", "choices": ["Morocco", "Control of the Upper Nile", "West Africa", "Madagascar"]},
-  {"tier": 5, "question": "The Agadir Crisis (1911) was a standoff between Germany and ___?", "answer": "France", "choices": ["Britain", "France", "Russia", "Spain"]},
-  {"tier": 5, "question": "The Brest-Litovsk Treaty (1918) removed which country from WWI?", "answer": "Russia", "choices": ["Bulgaria", "Russia", "Austria-Hungary", "Ottoman Empire"]},
-  {"tier": 5, "question": "The Brest-Litovsk Treaty was between Germany and ___?", "answer": "Bolshevik Russia", "choices": ["Tsarist Russia", "Bolshevik Russia", "Provisional Government Russia", "Ukraine alone"]},
-  {"tier": 5, "question": "The Stresa Front (1935) allied Britain, France, and ___?", "answer": "Italy", "choices": ["Belgium", "Italy", "Poland", "Czechoslovakia"]},
-  {"tier": 5, "question": "The Munich Agreement (1938) conceded the Sudetenland to ___?", "answer": "Nazi Germany", "choices": ["Austria", "Nazi Germany", "Hungary", "Poland"]},
-  {"tier": 5, "question": "The Molotov-Ribbentrop Pact secretly divided ___?", "answer": "Eastern Europe into German and Soviet spheres", "choices": ["Africa into German and Italian spheres", "Eastern Europe into German and Soviet spheres", "The Baltic into German and Finnish spheres", "Poland between Germany and Hungary"]},
-  {"tier": 5, "question": "The Atlantic Charter was signed by Roosevelt and ___?", "answer": "Churchill", "choices": ["Stalin", "Churchill", "de Gaulle", "Chiang Kai-shek"]},
-  {"tier": 5, "question": "The Atlantic Charter was signed in ___?", "answer": "1941", "choices": ["1939", "1940", "1941", "1942"]},
-  {"tier": 5, "question": "The Platt Amendment gave the US control over ___?", "answer": "Cuba", "choices": ["Panama", "Cuba", "Puerto Rico", "Philippines"]},
-  {"tier": 5, "question": "The League of Nations failed partly because ___?", "answer": "The US Senate refused to join", "choices": ["Germany refused to recognize it", "The US Senate refused to join", "Britain withdrew early", "France dominated it too much"]},
-  {"tier": 5, "question": "The United Nations Charter was signed in ___?", "answer": "San Francisco", "choices": ["New York", "San Francisco", "Geneva", "London"]},
-  {"tier": 5, "question": "The Warsaw Pact was formed in ___?", "answer": "1955", "choices": ["1949", "1952", "1955", "1957"]},
-  {"tier": 5, "question": "The Hungarian Uprising against Soviet rule was in ___?", "answer": "1956", "choices": ["1953", "1955", "1956", "1961"]},
-  {"tier": 5, "question": "The Prague Spring was crushed by Soviet forces in ___?", "answer": "1968", "choices": ["1965", "1967", "1968", "1970"]},
-  {"tier": 5, "question": "The Solidarity trade union movement emerged in ___?", "answer": "Poland", "choices": ["Hungary", "Poland", "Czechoslovakia", "East Germany"]},
-  {"tier": 5, "question": "Lech Walesa led the Solidarity movement in ___?", "answer": "Poland", "choices": ["Hungary", "Poland", "Czech Republic", "Romania"]},
-  {"tier": 5, "question": "The velvet revolution overthrew communism in ___?", "answer": "Czechoslovakia", "choices": ["Poland", "Czechoslovakia", "Hungary", "Romania"]},
-  {"tier": 5, "question": "The velvet revolution was led by ___?", "answer": "Vaclav Havel", "choices": ["Alexander Dubcek", "Vaclav Havel", "Lech Walesa", "Ion Iliescu"]},
-  {"tier": 5, "question": "The Maastricht Treaty was formally the Treaty on ___?", "answer": "European Union", "choices": ["Rome", "European Union", "Lisbon", "Amsterdam"]},
-  {"tier": 5, "question": "German reunification occurred in ___?", "answer": "1990", "choices": ["1988", "1989", "1990", "1991"]},
-  {"tier": 5, "question": "The Dayton Accords ending the Bosnian War were signed in ___?", "answer": "1995", "choices": ["1993", "1994", "1995", "1996"]},
-  {"tier": 5, "question": "The International Criminal Court was established in ___?", "answer": "2002", "choices": ["1998", "2000", "2002", "2004"]},
-  {"tier": 5, "question": "The Rome Statute establishing the ICC was signed in ___?", "answer": "1998", "choices": ["1995", "1998", "2000", "2002"]},
-  {"tier": 5, "question": "The Srebrenica massacre occurred in ___?", "answer": "1995", "choices": ["1993", "1994", "1995", "1996"]},
-  {"tier": 5, "question": "The Khmer Rouge regime in Cambodia lasted from 1975 to ___?", "answer": "1979", "choices": ["1977", "1978", "1979", "1981"]},
-  {"tier": 5, "question": "The Khmer Rouge was led by ___?", "answer": "Pol Pot", "choices": ["Hun Sen", "Pol Pot", "Norodom Sihanouk", "Lon Nol"]},
-  {"tier": 5, "question": "The Partition of India occurred in ___?", "answer": "1947", "choices": ["1945", "1947", "1950", "1952"]},
-  {"tier": 5, "question": "The architect of Indian partition was ___?", "answer": "Mountbatten", "choices": ["Churchill", "Mountbatten", "Attlee", "Cripps"]},
-  {"tier": 5, "question": "The Truman Doctrine pledged to support countries resisting ___?", "answer": "Communist subversion", "choices": ["German aggression", "Communist subversion", "Japanese expansion", "Colonial independence"]},
-  {"tier": 5, "question": "The NSC-68 document (1950) outlined ___?", "answer": "US Cold War strategy for containing communism", "choices": ["The Korean War plan", "US Cold War strategy for containing communism", "The H-bomb development plan", "NATO expansion strategy"]},
-  {"tier": 5, "question": "Containment as a US Cold War strategy was articulated by ___?", "answer": "George Kennan", "choices": ["Dean Acheson", "George Kennan", "John Foster Dulles", "Henry Kissinger"]},
-  {"tier": 5, "question": "The Domino Theory held that if one country fell to communism ___?", "answer": "Neighboring countries would follow", "choices": ["The US would intervene militarily", "Neighboring countries would follow", "The Soviet Union would expand", "Nuclear war would result"]},
-  {"tier": 5, "question": "The Long Telegram (1946) warning about Soviet expansionism was written by ___?", "answer": "George Kennan", "choices": ["Dean Acheson", "George Kennan", "Harry Hopkins", "James Byrnes"]},
-  {"tier": 5, "question": "The Cuban Missile Crisis was resolved when the USSR agreed to remove missiles in exchange for ___?", "answer": "A US pledge not to invade Cuba", "choices": ["US nuclear disarmament", "A US pledge not to invade Cuba", "Removal of US missiles from Turkey", "Economic aid to Cuba"]},
-  {"tier": 5, "question": "The Nuclear Test Ban Treaty (1963) prohibited tests in ___?", "answer": "The atmosphere, underwater, and in space", "choices": ["All environments", "The atmosphere, underwater, and in space", "Underground only", "Nuclear-free zones"]},
-  {"tier": 5, "question": "The Tet Offensive was launched in ___?", "answer": "1968", "choices": ["1965", "1967", "1968", "1969"]},
-  {"tier": 5, "question": "The Paris Peace Accords ending US involvement in Vietnam were signed in ___?", "answer": "1973", "choices": ["1970", "1972", "1973", "1975"]},
-  {"tier": 5, "question": "Nixon's 'opening to China' visit was in ___?", "answer": "1972", "choices": ["1969", "1971", "1972", "1974"]},
-  {"tier": 5, "question": "The SALT II treaty was signed but never ratified because of the Soviet invasion of ___?", "answer": "Afghanistan", "choices": ["Poland", "Afghanistan", "Czechoslovakia", "Hungary"]},
-  {"tier": 5, "question": "The START treaty was signed by the US and USSR in ___?", "answer": "1991", "choices": ["1987", "1989", "1991", "1993"]},
-
-  {"tier": 2, "question": "The Berlin Conference (1884-85) was hosted by ___?", "answer": "Germany", "choices": ["Britain", "Germany", "France", "Belgium"]},
-  {"tier": 2, "question": "The Fashoda Crisis (1898) was a standoff between Britain and ___?", "answer": "France", "choices": ["Germany", "France", "Russia", "Italy"]},
-  {"tier": 2, "question": "The Battle of the Bulge was in ___?", "answer": "1944", "choices": ["1942", "1943", "1944", "1945"]},
-  {"tier": 2, "question": "The Battle of Britain (1940) was fought primarily ___?", "answer": "In the air", "choices": ["At sea", "In the air", "On land", "Underground"]},
-  {"tier": 2, "question": "The Weimar Republic's hyperinflation crisis occurred in ___?", "answer": "1923", "choices": ["1919", "1921", "1923", "1925"]},
-  {"tier": 2, "question": "The Enabling Act of 1933 gave dictatorial powers to ___?", "answer": "Adolf Hitler", "choices": ["Paul von Hindenburg", "Adolf Hitler", "Franz von Papen", "Ernst Rohm"]},
-  {"tier": 2, "question": "The Reichstag fire in 1933 was blamed on ___?", "answer": "Communists", "choices": ["Jews", "Communists", "Social Democrats", "Catholics"]},
-  {"tier": 2, "question": "The Suez Crisis occurred in ___?", "answer": "1956", "choices": ["1950", "1954", "1956", "1958"]},
-  {"tier": 2, "question": "The Suez Crisis involved Britain, France, and ___?", "answer": "Israel", "choices": ["USA", "Israel", "Jordan", "Syria"]},
-  {"tier": 2, "question": "NATO was created as an alliance against ___?", "answer": "Soviet expansion", "choices": ["German rearmament", "Soviet expansion", "Communist China", "Nuclear war"]},
-  {"tier": 2, "question": "The Truman Doctrine specifically pledged aid to Greece and ___?", "answer": "Turkey", "choices": ["Italy", "Turkey", "France", "Korea"]},
-
-  {"tier": 3, "question": "The Missouri Compromise admitted Missouri as a slave state and ___?", "answer": "Maine as a free state", "choices": ["Kansas as a free state", "Maine as a free state", "Ohio as a free state", "Iowa as a free state"]},
-  {"tier": 3, "question": "The Kansas-Nebraska Act of 1854 concerned ___?", "answer": "Slavery in new territories", "choices": ["Railroad routes west", "Slavery in new territories", "Native American removal", "Tariff rates"]},
-  {"tier": 3, "question": "The Dred Scott decision was made by the ___?", "answer": "Supreme Court", "choices": ["Congress", "Supreme Court", "President", "Senate"]},
-  {"tier": 3, "question": "The Mexican-American War began in ___?", "answer": "1846", "choices": ["1844", "1846", "1848", "1850"]},
-  {"tier": 3, "question": "The Spanish-American War began in ___?", "answer": "1898", "choices": ["1895", "1897", "1898", "1900"]},
-  {"tier": 3, "question": "The Platt Amendment (1901) gave the US special rights over ___?", "answer": "Cuba", "choices": ["Philippines", "Cuba", "Puerto Rico", "Panama"]},
-  {"tier": 3, "question": "The Progressive Era in the US occurred primarily in the ___?", "answer": "Early 20th century", "choices": ["Mid 19th century", "Early 20th century", "Late 19th century", "Mid 20th century"]},
-  {"tier": 3, "question": "The 16th Amendment established ___?", "answer": "Federal income tax", "choices": ["Senate election by voters", "Federal income tax", "Prohibition", "Women's suffrage"]},
-  {"tier": 3, "question": "The 17th Amendment established ___?", "answer": "Direct election of US senators", "choices": ["Income tax", "Direct election of US senators", "Prohibition", "Women's suffrage"]},
-  {"tier": 3, "question": "The 18th Amendment established ___?", "answer": "Prohibition", "choices": ["Income tax", "Women's suffrage", "Prohibition", "Direct senate election"]},
-  {"tier": 3, "question": "The 21st Amendment ___?", "answer": "Repealed Prohibition", "choices": ["Established income tax", "Repealed Prohibition", "Gave votes to 18-year-olds", "Banned poll taxes"]},
-
-  {"tier": 4, "question": "The Taiping Rebellion lasted from 1850 to ___?", "answer": "1864", "choices": ["1858", "1861", "1864", "1870"]},
-  {"tier": 4, "question": "The Sepoy Mutiny (Indian Rebellion) was suppressed by ___?", "answer": "The British East India Company and Crown forces", "choices": ["The French Army", "The British East India Company and Crown forces", "Other Indian rulers alone", "The Mughal Emperor"]},
-  {"tier": 4, "question": "The First Boer War was in ___?", "answer": "1880-1881", "choices": ["1875-1876", "1880-1881", "1890-1891", "1899-1900"]},
-  {"tier": 4, "question": "The Second Boer War ended in ___?", "answer": "1902", "choices": ["1899", "1901", "1902", "1904"]},
-  {"tier": 4, "question": "The Zulu Kingdom was defeated by Britain at the Battle of ___?", "answer": "Ulundi", "choices": ["Rorke's Drift", "Ulundi", "Isandlwana", "Blood River"]},
-  {"tier": 4, "question": "The Opium Wars resulted in ___?", "answer": "Treaty ports opened in China", "choices": ["China banning opium", "Treaty ports opened in China", "Britain losing Hong Kong", "Japan gaining trade rights"]},
-  {"tier": 4, "question": "Hong Kong was ceded to Britain after the ___?", "answer": "First Opium War", "choices": ["Second Opium War", "First Opium War", "Boxer Rebellion", "Sino-Japanese War"]},
-  {"tier": 4, "question": "The Tongzhi Restoration attempted to revive ___?", "answer": "Qing Dynasty authority in China", "choices": ["The Ming Dynasty", "Qing Dynasty authority in China", "Republican government", "Buddhist institutions"]},
-  {"tier": 4, "question": "The Self-Strengthening Movement in China occurred in the ___?", "answer": "1860s-1890s", "choices": ["1840s-1860s", "1860s-1890s", "1890s-1910s", "1900s-1920s"]},
-  {"tier": 4, "question": "The Boxer Protocol (1901) forced China to pay indemnity to ___?", "answer": "Eight-nation alliance", "choices": ["Britain and France", "Eight-nation alliance", "Japan and Russia", "The USA alone"]},
-  {"tier": 4, "question": "Sun Yat-sen founded the ___?", "answer": "Kuomintang (Nationalist Party)", "choices": ["Chinese Communist Party", "Kuomintang (Nationalist Party)", "Qing Party", "Reform Party"]},
-  {"tier": 4, "question": "The Republic of China was founded in ___?", "answer": "1912", "choices": ["1905", "1908", "1912", "1919"]},
-  {"tier": 4, "question": "The Long March was undertaken by ___?", "answer": "Chinese Communists", "choices": ["Kuomintang forces", "Chinese Communists", "Japanese forces", "Warlord armies"]},
-  {"tier": 4, "question": "The Long March ended in ___?", "answer": "Yan'an", "choices": ["Beijing", "Yan'an", "Shanghai", "Chongqing"]},
-  {"tier": 4, "question": "The Nanking Treaty (1842) ended the ___?", "answer": "First Opium War", "choices": ["Boxer Rebellion", "First Opium War", "Second Sino-Japanese War", "Taiping Rebellion"]},
-  {"tier": 4, "question": "The Scramble for Africa began formally at the ___?", "answer": "Berlin Conference (1884)", "choices": ["Vienna Congress", "Berlin Conference (1884)", "Paris Peace Conference", "Brussels Conference"]},
-  {"tier": 4, "question": "King Leopold II controlled which African territory personally?", "answer": "Congo Free State", "choices": ["Belgian East Africa", "Congo Free State", "French Congo", "Rhodesia"]},
-  {"tier": 4, "question": "The Mau Mau Uprising (1952-1960) was in ___?", "answer": "Kenya", "choices": ["Nigeria", "Kenya", "Tanzania", "Uganda"]},
-  {"tier": 4, "question": "Kwame Nkrumah led independence in ___?", "answer": "Ghana", "choices": ["Nigeria", "Ghana", "Kenya", "Guinea"]},
-  {"tier": 4, "question": "Ghana's independence in 1957 was the first sub-Saharan African country to gain independence from ___?", "answer": "Britain", "choices": ["France", "Britain", "Belgium", "Portugal"]},
-  {"tier": 4, "question": "The Year of Africa (mass independence) was ___?", "answer": "1960", "choices": ["1955", "1960", "1963", "1965"]},
-  {"tier": 4, "question": "The ANC (African National Congress) was founded in ___?", "answer": "1912", "choices": ["1900", "1912", "1925", "1944"]},
-  {"tier": 4, "question": "The Sharpeville Massacre occurred in ___?", "answer": "1960", "choices": ["1950", "1955", "1960", "1965"]},
-  {"tier": 4, "question": "The Iran Hostage Crisis lasted from 1979 to ___?", "answer": "1981", "choices": ["1980", "1981", "1982", "1983"]},
-  {"tier": 4, "question": "The Iran-Iraq War was triggered by Iraq's invasion of ___?", "answer": "Iran", "choices": ["Kuwait", "Iran", "Saudi Arabia", "Syria"]},
-  {"tier": 4, "question": "Iraq invaded Kuwait in ___?", "answer": "1990", "choices": ["1988", "1989", "1990", "1991"]},
-  {"tier": 4, "question": "The Oslo Accords of 1993 were signed at the ___?", "answer": "White House", "choices": ["Oslo City Hall", "White House", "United Nations", "Camp David"]},
-  {"tier": 4, "question": "The first Palestinian intifada began in ___?", "answer": "1987", "choices": ["1982", "1985", "1987", "1989"]},
-  {"tier": 4, "question": "The founding of the PLO (Palestine Liberation Organization) was in ___?", "answer": "1964", "choices": ["1948", "1956", "1964", "1967"]},
-  {"tier": 4, "question": "Yasser Arafat led the ___?", "answer": "PLO", "choices": ["Hamas", "PLO", "Fatah only", "Palestinian Authority"]},
-  {"tier": 4, "question": "The Velvet Divorce split ___?", "answer": "Czechoslovakia into Czech Republic and Slovakia", "choices": ["Yugoslavia into Slovenia and Croatia", "Czechoslovakia into Czech Republic and Slovakia", "Soviet Union into Russia and Ukraine", "Yugoslavia into Bosnia and Serbia"]},
-  {"tier": 5, "question": "The Battle of Adwa (1896) was a victory for ___?", "answer": "Ethiopia over Italy", "choices": ["Italy over Ethiopia", "Ethiopia over Italy", "Britain over Sudan", "France over Morocco"]},
-  {"tier": 5, "question": "The Fashoda Crisis was resolved in favor of ___?", "answer": "Britain", "choices": ["France", "Britain", "Egypt", "Sudan"]},
-  {"tier": 5, "question": "The Algeciras Conference (1906) defused the First ___?", "answer": "Moroccan Crisis", "choices": ["Balkan Crisis", "Moroccan Crisis", "Bosnian Crisis", "Suez Crisis"]},
-  {"tier": 5, "question": "The First Moroccan Crisis (1905) was provoked by ___?", "answer": "Germany", "choices": ["Britain", "Germany", "France", "Spain"]},
-  {"tier": 5, "question": "The Bosnian Crisis (1908) was caused by Austria-Hungary annexing ___?", "answer": "Bosnia and Herzegovina", "choices": ["Serbia", "Bosnia and Herzegovina", "Croatia", "Slovenia"]},
-  {"tier": 5, "question": "The Sarajevo assassinations of 1914 killed Archduke Franz Ferdinand and ___?", "answer": "His wife Sophie", "choices": ["His aide-de-camp", "His wife Sophie", "His driver", "His bodyguard"]},
-  {"tier": 5, "question": "The Schlieffen Plan called for Germany to first defeat ___?", "answer": "France", "choices": ["Russia", "France", "Britain", "Belgium"]},
-  {"tier": 5, "question": "The Gallipoli Campaign (1915-1916) was an Allied attempt to seize ___?", "answer": "The Dardanelles", "choices": ["Suez Canal", "The Dardanelles", "Baghdad", "Jerusalem"]},
-  {"tier": 5, "question": "The Balfour Declaration was issued by which British official?", "answer": "Arthur James Balfour", "choices": ["Lloyd George", "Arthur James Balfour", "Winston Churchill", "Herbert Asquith"]},
-  {"tier": 5, "question": "The League of Nations Covenant was part of the ___?", "answer": "Treaty of Versailles", "choices": ["Treaty of Lausanne", "Treaty of Versailles", "Treaty of Saint-Germain", "Treaty of Neuilly"]},
-  {"tier": 5, "question": "The Permanent Court of International Justice was established in ___?", "answer": "1920", "choices": ["1919", "1920", "1921", "1922"]},
-  {"tier": 5, "question": "The Dawes Plan (1924) restructured German ___?", "answer": "Reparations payments", "choices": ["Military rebuilding", "Reparations payments", "Border disputes", "Trade restrictions"]},
-  {"tier": 5, "question": "The Locarno Treaties (1925) guaranteed the western borders of ___?", "answer": "Germany", "choices": ["France", "Germany", "Belgium", "Italy"]},
-  {"tier": 5, "question": "The Kellogg-Briand Pact (1928) renounced ___?", "answer": "War as an instrument of national policy", "choices": ["Nuclear weapons", "War as an instrument of national policy", "Colonial expansion", "Trade barriers"]},
-  {"tier": 5, "question": "The Decolonization of French Indochina after 1954 led to the independence of ___?", "answer": "Vietnam, Laos, and Cambodia", "choices": ["Vietnam and Korea", "Vietnam, Laos, and Cambodia", "Burma and Malaya", "Philippines and Indonesia"]},
-  {"tier": 5, "question": "The Battle of Dien Bien Phu (1954) was France's defeat by ___?", "answer": "Viet Minh", "choices": ["Viet Cong", "Viet Minh", "Pathet Lao", "Khmer Rouge"]},
-  {"tier": 5, "question": "The Geneva Accords (1954) temporarily divided Vietnam at the ___?", "answer": "17th parallel", "choices": ["38th parallel", "17th parallel", "20th parallel", "15th parallel"]}
+  {
+    "tier": 1,
+    "question": "Who was the first President of the United States?",
+    "answer": "George Washington",
+    "choices": [
+      "John Adams",
+      "Thomas Jefferson",
+      "George Washington",
+      "Benjamin Franklin"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "In what year did World War II end?",
+    "answer": "1945",
+    "choices": [
+      "1943",
+      "1944",
+      "1945",
+      "1946"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "In what year did World War II begin?",
+    "answer": "1939",
+    "choices": [
+      "1937",
+      "1938",
+      "1939",
+      "1940"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "In what year did World War I begin?",
+    "answer": "1914",
+    "choices": [
+      "1912",
+      "1913",
+      "1914",
+      "1916"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Who wrote the Declaration of Independence?",
+    "answer": "Thomas Jefferson",
+    "choices": [
+      "George Washington",
+      "Thomas Jefferson",
+      "Benjamin Franklin",
+      "John Adams"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The Declaration of Independence was signed in ___?",
+    "answer": "1776",
+    "choices": [
+      "1775",
+      "1776",
+      "1777",
+      "1778"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The first humans landed on the Moon in ___?",
+    "answer": "1969",
+    "choices": [
+      "1965",
+      "1967",
+      "1969",
+      "1971"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Christopher Columbus first reached the Americas in ___?",
+    "answer": "1492",
+    "choices": [
+      "1488",
+      "1492",
+      "1497",
+      "1502"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Abraham Lincoln was the ___ President of the United States?",
+    "answer": "16th",
+    "choices": [
+      "14th",
+      "15th",
+      "16th",
+      "17th"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Abraham Lincoln freed enslaved people via the ___?",
+    "answer": "Emancipation Proclamation",
+    "choices": [
+      "Bill of Rights",
+      "Emancipation Proclamation",
+      "Gettysburg Address",
+      "Constitution"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Martin Luther King Jr. delivered his 'I Have a Dream' speech in ___?",
+    "answer": "1963",
+    "choices": [
+      "1960",
+      "1963",
+      "1965",
+      "1968"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Napoleon Bonaparte was Emperor of ___?",
+    "answer": "France",
+    "choices": [
+      "France",
+      "Italy",
+      "Spain",
+      "Germany"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Julius Caesar was a leader of ___?",
+    "answer": "Rome",
+    "choices": [
+      "Greece",
+      "Rome",
+      "Egypt",
+      "Persia"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Cleopatra was Queen of ___?",
+    "answer": "Egypt",
+    "choices": [
+      "Rome",
+      "Greece",
+      "Egypt",
+      "Persia"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Alexander the Great was king of ___?",
+    "answer": "Macedonia",
+    "choices": [
+      "Greece",
+      "Macedonia",
+      "Persia",
+      "Egypt"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Alexander the Great is famous for ___?",
+    "answer": "Conquering a vast empire from Greece to India",
+    "choices": [
+      "Founding Rome",
+      "Conquering a vast empire from Greece to India",
+      "Defeating the Persians at Marathon",
+      "Building the Colosseum"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The American Civil War lasted from 1861 to ___?",
+    "answer": "1865",
+    "choices": [
+      "1863",
+      "1864",
+      "1865",
+      "1866"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which side won the American Civil War?",
+    "answer": "The Union (North)",
+    "choices": [
+      "The Confederacy (South)",
+      "The Union (North)",
+      "It ended in a truce",
+      "Foreign intervention settled it"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The Gettysburg Address was delivered by ___?",
+    "answer": "Abraham Lincoln",
+    "choices": [
+      "Ulysses S. Grant",
+      "Frederick Douglass",
+      "Abraham Lincoln",
+      "William Sherman"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "World War I ended in ___?",
+    "answer": "1918",
+    "choices": [
+      "1916",
+      "1917",
+      "1918",
+      "1919"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The French Revolution began in ___?",
+    "answer": "1789",
+    "choices": [
+      "1783",
+      "1786",
+      "1789",
+      "1792"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Napoleon was defeated at the Battle of ___?",
+    "answer": "Waterloo",
+    "choices": [
+      "Trafalgar",
+      "Waterloo",
+      "Austerlitz",
+      "Leipzig"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The Roman Empire fell in ___?",
+    "answer": "476 AD",
+    "choices": [
+      "380 AD",
+      "410 AD",
+      "476 AD",
+      "527 AD"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Rome was traditionally founded in ___?",
+    "answer": "753 BC",
+    "choices": [
+      "600 BC",
+      "753 BC",
+      "900 BC",
+      "509 BC"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The Black Death was a devastating ___?",
+    "answer": "Plague",
+    "choices": [
+      "Famine",
+      "Flood",
+      "Plague",
+      "War"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Gutenberg invented the printing press around ___?",
+    "answer": "1440",
+    "choices": [
+      "1200",
+      "1350",
+      "1440",
+      "1510"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Who was the first man to walk on the Moon?",
+    "answer": "Neil Armstrong",
+    "choices": [
+      "Buzz Aldrin",
+      "Neil Armstrong",
+      "Yuri Gagarin",
+      "John Glenn"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The first human in space was ___?",
+    "answer": "Yuri Gagarin",
+    "choices": [
+      "Neil Armstrong",
+      "Buzz Aldrin",
+      "Yuri Gagarin",
+      "Alan Shepard"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The Wright Brothers made their first powered flight in ___?",
+    "answer": "1903",
+    "choices": [
+      "1895",
+      "1900",
+      "1903",
+      "1908"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Martin Luther King Jr. was assassinated in ___?",
+    "answer": "1968",
+    "choices": [
+      "1963",
+      "1965",
+      "1968",
+      "1970"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "President Kennedy was assassinated in ___?",
+    "answer": "1963",
+    "choices": [
+      "1961",
+      "1962",
+      "1963",
+      "1964"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The Berlin Wall fell in ___?",
+    "answer": "1989",
+    "choices": [
+      "1985",
+      "1987",
+      "1989",
+      "1991"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The Soviet Union dissolved in ___?",
+    "answer": "1991",
+    "choices": [
+      "1989",
+      "1990",
+      "1991",
+      "1992"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The United States dropped atomic bombs on Japan in ___?",
+    "answer": "1945",
+    "choices": [
+      "1943",
+      "1944",
+      "1945",
+      "1946"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "D-Day (the Normandy invasion) occurred in ___?",
+    "answer": "1944",
+    "choices": [
+      "1942",
+      "1943",
+      "1944",
+      "1945"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Adolf Hitler was the leader of ___?",
+    "answer": "Nazi Germany",
+    "choices": [
+      "Italy",
+      "Japan",
+      "Soviet Union",
+      "Nazi Germany"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Benito Mussolini was the leader of ___?",
+    "answer": "Italy",
+    "choices": [
+      "Germany",
+      "Italy",
+      "Spain",
+      "Austria"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The Holocaust resulted in the murder of approximately ___?",
+    "answer": "6 million Jews",
+    "choices": [
+      "1 million Jews",
+      "3 million Jews",
+      "6 million Jews",
+      "10 million Jews"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Who was the first female Prime Minister of the UK?",
+    "answer": "Margaret Thatcher",
+    "choices": [
+      "Theresa May",
+      "Margaret Thatcher",
+      "Angela Merkel",
+      "Golda Meir"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Nelson Mandela became South Africa's president in ___?",
+    "answer": "1994",
+    "choices": [
+      "1990",
+      "1992",
+      "1994",
+      "1996"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The United Nations was founded in ___?",
+    "answer": "1945",
+    "choices": [
+      "1919",
+      "1939",
+      "1945",
+      "1948"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The Cold War was between the USA and ___?",
+    "answer": "Soviet Union",
+    "choices": [
+      "China",
+      "Soviet Union",
+      "Germany",
+      "Japan"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The Emancipation Proclamation was issued in ___?",
+    "answer": "1863",
+    "choices": [
+      "1861",
+      "1862",
+      "1863",
+      "1865"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Winston Churchill was Prime Minister of ___?",
+    "answer": "United Kingdom",
+    "choices": [
+      "Canada",
+      "United Kingdom",
+      "Australia",
+      "France"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The Titanic sank in ___?",
+    "answer": "1912",
+    "choices": [
+      "1908",
+      "1910",
+      "1912",
+      "1914"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The Great Depression began in ___?",
+    "answer": "1929",
+    "choices": [
+      "1925",
+      "1927",
+      "1929",
+      "1931"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Franklin D. Roosevelt served as US President during ___?",
+    "answer": "World War II",
+    "choices": [
+      "World War I",
+      "World War II",
+      "Korean War",
+      "Cold War"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Japan attacked Pearl Harbor in ___?",
+    "answer": "1941",
+    "choices": [
+      "1939",
+      "1940",
+      "1941",
+      "1942"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The Great Wall of China was primarily built during which dynasty?",
+    "answer": "Ming Dynasty",
+    "choices": [
+      "Han Dynasty",
+      "Tang Dynasty",
+      "Ming Dynasty",
+      "Qing Dynasty"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The Eiffel Tower was built in ___?",
+    "answer": "1889",
+    "choices": [
+      "1870",
+      "1885",
+      "1889",
+      "1900"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Who was the second President of the United States?",
+    "answer": "John Adams",
+    "choices": [
+      "John Adams",
+      "Thomas Jefferson",
+      "James Madison",
+      "James Monroe"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Genghis Khan led which empire?",
+    "answer": "Mongol Empire",
+    "choices": [
+      "Ottoman Empire",
+      "Mongol Empire",
+      "Ming Dynasty",
+      "Mughal Empire"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The American Revolution ended in ___?",
+    "answer": "1783",
+    "choices": [
+      "1776",
+      "1781",
+      "1783",
+      "1787"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Who was the leader of the Soviet Union during World War II?",
+    "answer": "Joseph Stalin",
+    "choices": [
+      "Vladimir Lenin",
+      "Joseph Stalin",
+      "Leon Trotsky",
+      "Nikita Khrushchev"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The Pacific theater of World War II ended with Japan's surrender in ___?",
+    "answer": "1945",
+    "choices": [
+      "1943",
+      "1944",
+      "1945",
+      "1946"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The Spanish Inquisition was established by ___?",
+    "answer": "The Spanish monarchy",
+    "choices": [
+      "The Pope",
+      "The Spanish monarchy",
+      "The Holy Roman Emperor",
+      "The French crown"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "George Washington served how many terms as President?",
+    "answer": "2",
+    "choices": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The Civil Rights Act in the US was passed in ___?",
+    "answer": "1964",
+    "choices": [
+      "1960",
+      "1962",
+      "1964",
+      "1968"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "India's independence leader was ___?",
+    "answer": "Mahatma Gandhi",
+    "choices": [
+      "Jawaharlal Nehru",
+      "Mahatma Gandhi",
+      "Subhas Chandra Bose",
+      "Bhimrao Ambedkar"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The French Revolution produced the slogan Liberty, Equality, ___?",
+    "answer": "Fraternity",
+    "choices": [
+      "Justice",
+      "Fraternity",
+      "Democracy",
+      "Unity"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Which two Roman leaders did Cleopatra famously ally with?",
+    "answer": "Julius Caesar (first, then Mark Antony)",
+    "choices": [
+      "Augustus",
+      "Julius Caesar (first, then Mark Antony)",
+      "Pompey",
+      "Cicero"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The Aztec capital was ___?",
+    "answer": "Tenochtitlan",
+    "choices": [
+      "Cusco",
+      "Tenochtitlan",
+      "Chichen Itza",
+      "Tula"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Julius Caesar crossed the Rubicon river, signaling ___?",
+    "answer": "A march on Rome (civil war)",
+    "choices": [
+      "A retreat from Gaul",
+      "A march on Rome (civil war)",
+      "An invasion of Egypt",
+      "His abdication"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The Renaissance began in which Italian city?",
+    "answer": "Florence",
+    "choices": [
+      "Rome",
+      "Florence",
+      "Venice",
+      "Milan"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The Black Death killed approximately what fraction of Europe's population?",
+    "answer": "One third",
+    "choices": [
+      "One tenth",
+      "One quarter",
+      "One third",
+      "One half"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The Magna Carta was signed in ___?",
+    "answer": "1215",
+    "choices": [
+      "1066",
+      "1150",
+      "1215",
+      "1265"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The Battle of Hastings was won by ___?",
+    "answer": "William the Conqueror",
+    "choices": [
+      "Harold Godwinson",
+      "William the Conqueror",
+      "Edward the Confessor",
+      "Sweyn Forkbeard"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Martin Luther started the Protestant Reformation in ___?",
+    "answer": "1517",
+    "choices": [
+      "1505",
+      "1510",
+      "1517",
+      "1525"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The Korean War ended in ___?",
+    "answer": "1953",
+    "choices": [
+      "1951",
+      "1952",
+      "1953",
+      "1955"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The Cuban Missile Crisis occurred in ___?",
+    "answer": "1962",
+    "choices": [
+      "1960",
+      "1961",
+      "1962",
+      "1964"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The Vietnam War ended in ___?",
+    "answer": "1975",
+    "choices": [
+      "1972",
+      "1973",
+      "1975",
+      "1977"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Who assassinated Archduke Franz Ferdinand?",
+    "answer": "Gavrilo Princip",
+    "choices": [
+      "Gavrilo Princip",
+      "Mehmed VI",
+      "Nikola Pasic",
+      "Dragutin Dimitrijevic"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The Crusades were Christian military campaigns to recapture ___?",
+    "answer": "Jerusalem",
+    "choices": [
+      "Constantinople",
+      "Jerusalem",
+      "Rome",
+      "Alexandria"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The United States entered World War II after the attack on ___?",
+    "answer": "Pearl Harbor",
+    "choices": [
+      "Midway",
+      "Pearl Harbor",
+      "Guam",
+      "Wake Island"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Napoleon was finally exiled to the island of ___?",
+    "answer": "Saint Helena",
+    "choices": [
+      "Elba",
+      "Saint Helena",
+      "Corsica",
+      "Sardinia"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The Spanish Armada was sent to invade ___?",
+    "answer": "England",
+    "choices": [
+      "France",
+      "England",
+      "Scotland",
+      "Ireland"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "India gained independence from Britain in ___?",
+    "answer": "1947",
+    "choices": [
+      "1945",
+      "1947",
+      "1950",
+      "1952"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The Chinese Communist Revolution succeeded in ___?",
+    "answer": "1949",
+    "choices": [
+      "1945",
+      "1947",
+      "1949",
+      "1951"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Mao Zedong led ___?",
+    "answer": "Communist China",
+    "choices": [
+      "Nationalist China",
+      "Communist China",
+      "Vietnam",
+      "North Korea"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The Hundred Years' War was between ___?",
+    "answer": "England and France",
+    "choices": [
+      "England and Spain",
+      "England and France",
+      "France and Germany",
+      "France and Italy"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Charles Darwin published 'On the Origin of Species' in ___?",
+    "answer": "1859",
+    "choices": [
+      "1845",
+      "1852",
+      "1859",
+      "1867"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The Communist Manifesto was written by Marx and ___?",
+    "answer": "Engels",
+    "choices": [
+      "Lenin",
+      "Engels",
+      "Trotsky",
+      "Bakunin"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The Battle of Waterloo was in ___?",
+    "answer": "1815",
+    "choices": [
+      "1812",
+      "1813",
+      "1815",
+      "1817"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The Boston Tea Party occurred in ___?",
+    "answer": "1773",
+    "choices": [
+      "1765",
+      "1770",
+      "1773",
+      "1776"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The Louisiana Purchase was made from ___?",
+    "answer": "France",
+    "choices": [
+      "Spain",
+      "France",
+      "Britain",
+      "Mexico"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The Titanic struck an iceberg in ___?",
+    "answer": "April 1912",
+    "choices": [
+      "April 1910",
+      "April 1911",
+      "April 1912",
+      "April 1913"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Sputnik, the first artificial satellite, was launched by ___?",
+    "answer": "Soviet Union",
+    "choices": [
+      "United States",
+      "Soviet Union",
+      "Germany",
+      "United Kingdom"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The Russian Revolution took place in ___?",
+    "answer": "1917",
+    "choices": [
+      "1914",
+      "1916",
+      "1917",
+      "1919"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Who was the first Roman Emperor?",
+    "answer": "Augustus Caesar",
+    "choices": [
+      "Julius Caesar",
+      "Augustus Caesar",
+      "Marcus Aurelius",
+      "Constantine"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The Protestant Reformation split which institution?",
+    "answer": "The Christian Church",
+    "choices": [
+      "The Roman Empire",
+      "The Christian Church",
+      "The Ottoman Empire",
+      "The Holy Roman Empire"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The Suez Canal opened in ___?",
+    "answer": "1869",
+    "choices": [
+      "1855",
+      "1863",
+      "1869",
+      "1875"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The first transcontinental railroad in the US was completed in ___?",
+    "answer": "1869",
+    "choices": [
+      "1860",
+      "1865",
+      "1869",
+      "1875"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Who led the Allied forces in Europe during World War II?",
+    "answer": "Eisenhower",
+    "choices": [
+      "Patton",
+      "Eisenhower",
+      "MacArthur",
+      "Montgomery"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The 13th Amendment to the US Constitution abolished ___?",
+    "answer": "Slavery",
+    "choices": [
+      "Child labor",
+      "Slavery",
+      "Prohibition",
+      "Property requirements for voting"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Women gained the right to vote in the US in ___?",
+    "answer": "1920",
+    "choices": [
+      "1912",
+      "1916",
+      "1920",
+      "1924"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The League of Nations was founded after which war?",
+    "answer": "World War I",
+    "choices": [
+      "World War I",
+      "World War II",
+      "American Civil War",
+      "Franco-Prussian War"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The New Deal was implemented by President ___?",
+    "answer": "Franklin D. Roosevelt",
+    "choices": [
+      "Herbert Hoover",
+      "Franklin D. Roosevelt",
+      "Harry Truman",
+      "Woodrow Wilson"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The Marshall Plan helped rebuild ___?",
+    "answer": "Europe after World War II",
+    "choices": [
+      "Asia after World War II",
+      "Europe after World War II",
+      "Latin America",
+      "The Middle East"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "NATO was founded in ___?",
+    "answer": "1949",
+    "choices": [
+      "1945",
+      "1947",
+      "1949",
+      "1951"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "The Nuremberg Trials judged ___?",
+    "answer": "Nazi war criminals",
+    "choices": [
+      "Japanese war criminals",
+      "Nazi war criminals",
+      "Soviet war criminals",
+      "Italian war criminals"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Magna Carta limited the power of ___?",
+    "answer": "The English King",
+    "choices": [
+      "The Pope",
+      "The English King",
+      "The Parliament",
+      "The Nobility"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Who commanded the Allied forces on D-Day?",
+    "answer": "Dwight D. Eisenhower",
+    "choices": [
+      "George Patton",
+      "Dwight D. Eisenhower",
+      "Douglas MacArthur",
+      "Bernard Montgomery"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Bastille was stormed in ___?",
+    "answer": "1789",
+    "choices": [
+      "1787",
+      "1789",
+      "1791",
+      "1793"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Treaty of Versailles was signed in ___?",
+    "answer": "1919",
+    "choices": [
+      "1917",
+      "1918",
+      "1919",
+      "1920"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Louisiana Purchase occurred in ___?",
+    "answer": "1803",
+    "choices": [
+      "1799",
+      "1803",
+      "1807",
+      "1812"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Lewis and Clark's expedition was sent west by President ___?",
+    "answer": "Thomas Jefferson",
+    "choices": [
+      "George Washington",
+      "John Adams",
+      "Thomas Jefferson",
+      "James Madison"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Battle of Gettysburg was in ___?",
+    "answer": "1863",
+    "choices": [
+      "1861",
+      "1862",
+      "1863",
+      "1864"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Communist Manifesto was published in ___?",
+    "answer": "1848",
+    "choices": [
+      "1835",
+      "1848",
+      "1860",
+      "1875"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The founding of Rome is traditionally dated to ___?",
+    "answer": "753 BC",
+    "choices": [
+      "900 BC",
+      "753 BC",
+      "600 BC",
+      "500 BC"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The fall of the Western Roman Empire occurred in ___?",
+    "answer": "476 AD",
+    "choices": [
+      "380 AD",
+      "410 AD",
+      "476 AD",
+      "550 AD"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Renaissance began in ___?",
+    "answer": "Italy",
+    "choices": [
+      "France",
+      "Italy",
+      "England",
+      "Germany"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Silk Road connected China to ___?",
+    "answer": "Europe",
+    "choices": [
+      "Africa",
+      "Europe",
+      "Australia",
+      "South America"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Mongol Empire reached its greatest extent under ___?",
+    "answer": "Mongke Khan",
+    "choices": [
+      "Genghis Khan",
+      "Mongke Khan",
+      "Ogedei Khan",
+      "Timur"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The American Civil War began in ___?",
+    "answer": "1861",
+    "choices": [
+      "1858",
+      "1860",
+      "1861",
+      "1863"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The French Revolution ended with the rise of ___?",
+    "answer": "Napoleon Bonaparte",
+    "choices": [
+      "Louis XVI",
+      "Napoleon Bonaparte",
+      "Maximilien Robespierre",
+      "The Directory"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The War of 1812 was between the US and ___?",
+    "answer": "Britain",
+    "choices": [
+      "France",
+      "Britain",
+      "Spain",
+      "Mexico"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Spanish-American War occurred in ___?",
+    "answer": "1898",
+    "choices": [
+      "1888",
+      "1895",
+      "1898",
+      "1902"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The sinking of the Lusitania occurred in ___?",
+    "answer": "1915",
+    "choices": [
+      "1913",
+      "1915",
+      "1917",
+      "1918"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Vladimir Lenin led the ___?",
+    "answer": "Bolshevik Revolution",
+    "choices": [
+      "French Revolution",
+      "Bolshevik Revolution",
+      "Chinese Revolution",
+      "Mexican Revolution"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Hiroshima atomic bomb was dropped on ___?",
+    "answer": "August 6, 1945",
+    "choices": [
+      "July 6, 1945",
+      "August 6, 1945",
+      "August 9, 1945",
+      "September 2, 1945"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Berlin Blockade began in ___?",
+    "answer": "1948",
+    "choices": [
+      "1946",
+      "1947",
+      "1948",
+      "1949"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The State of Israel was founded in ___?",
+    "answer": "1948",
+    "choices": [
+      "1945",
+      "1947",
+      "1948",
+      "1950"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Sputnik, the first satellite, was launched in ___?",
+    "answer": "1957",
+    "choices": [
+      "1955",
+      "1956",
+      "1957",
+      "1959"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Bay of Pigs invasion was in ___?",
+    "answer": "1961",
+    "choices": [
+      "1959",
+      "1960",
+      "1961",
+      "1963"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Six-Day War between Israel and Arab states was in ___?",
+    "answer": "1967",
+    "choices": [
+      "1956",
+      "1967",
+      "1973",
+      "1982"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Apollo 11 mission landed on the Moon in ___?",
+    "answer": "1969",
+    "choices": [
+      "1967",
+      "1968",
+      "1969",
+      "1970"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Iranian Revolution occurred in ___?",
+    "answer": "1979",
+    "choices": [
+      "1975",
+      "1977",
+      "1979",
+      "1981"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Soviet invasion of Afghanistan began in ___?",
+    "answer": "1979",
+    "choices": [
+      "1977",
+      "1978",
+      "1979",
+      "1981"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Russo-Japanese War ended in ___?",
+    "answer": "1905",
+    "choices": [
+      "1901",
+      "1903",
+      "1905",
+      "1907"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Meiji Restoration in Japan began in ___?",
+    "answer": "1868",
+    "choices": [
+      "1853",
+      "1860",
+      "1868",
+      "1876"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Boxer Rebellion was against foreign influence in ___?",
+    "answer": "China",
+    "choices": [
+      "Japan",
+      "China",
+      "Korea",
+      "Vietnam"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Franz Ferdinand was assassinated in ___?",
+    "answer": "1914",
+    "choices": [
+      "1912",
+      "1913",
+      "1914",
+      "1915"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The assassination of Franz Ferdinand triggered ___?",
+    "answer": "World War I",
+    "choices": [
+      "World War II",
+      "World War I",
+      "The Russian Revolution",
+      "The Balkan Wars"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Nuremberg Trials took place in ___?",
+    "answer": "1945-1946",
+    "choices": [
+      "1944-1945",
+      "1945-1946",
+      "1947-1948",
+      "1948-1949"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Battle of Trafalgar (1805) was won by ___?",
+    "answer": "Britain",
+    "choices": [
+      "France",
+      "Britain",
+      "Spain",
+      "Netherlands"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Horatio Nelson died at the Battle of ___?",
+    "answer": "Trafalgar",
+    "choices": [
+      "Waterloo",
+      "Trafalgar",
+      "Austerlitz",
+      "Nile"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Monroe Doctrine was proclaimed in ___?",
+    "answer": "1823",
+    "choices": [
+      "1815",
+      "1819",
+      "1823",
+      "1830"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Emancipation Proclamation freed enslaved people in ___?",
+    "answer": "Confederate states",
+    "choices": [
+      "All US states",
+      "Confederate states",
+      "Border states only",
+      "Northern states"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The OPEC oil embargo was in ___?",
+    "answer": "1973",
+    "choices": [
+      "1970",
+      "1972",
+      "1973",
+      "1975"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Genghis Khan died in ___?",
+    "answer": "1227",
+    "choices": [
+      "1206",
+      "1220",
+      "1227",
+      "1241"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Aztec Empire was conquered by ___?",
+    "answer": "Hernan Cortes",
+    "choices": [
+      "Francisco Pizarro",
+      "Hernan Cortes",
+      "Christopher Columbus",
+      "Vasco da Gama"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Inca Empire was conquered by ___?",
+    "answer": "Francisco Pizarro",
+    "choices": [
+      "Hernan Cortes",
+      "Francisco Pizarro",
+      "Pedro de Alvarado",
+      "Diego de Almagro"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Ottoman Empire captured Constantinople in ___?",
+    "answer": "1453",
+    "choices": [
+      "1389",
+      "1420",
+      "1453",
+      "1480"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The English Civil War resulted in the execution of ___?",
+    "answer": "King Charles I",
+    "choices": [
+      "King James I",
+      "King Charles I",
+      "King Charles II",
+      "Oliver Cromwell"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Oliver Cromwell ruled England as ___?",
+    "answer": "Lord Protector",
+    "choices": [
+      "King",
+      "Lord Protector",
+      "Prime Minister",
+      "President"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Seven Years' War lasted from 1756 to ___?",
+    "answer": "1763",
+    "choices": [
+      "1760",
+      "1762",
+      "1763",
+      "1765"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Glorious Revolution of 1688 placed ___ on the English throne?",
+    "answer": "William and Mary",
+    "choices": [
+      "James II",
+      "William and Mary",
+      "Charles II",
+      "Anne"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Battle of Lexington and Concord was in ___?",
+    "answer": "1775",
+    "choices": [
+      "1773",
+      "1774",
+      "1775",
+      "1776"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The US Constitution was ratified in ___?",
+    "answer": "1788",
+    "choices": [
+      "1783",
+      "1786",
+      "1788",
+      "1791"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Bill of Rights was added to the Constitution in ___?",
+    "answer": "1791",
+    "choices": [
+      "1788",
+      "1789",
+      "1791",
+      "1793"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Battle of Bunker Hill was in ___?",
+    "answer": "1775",
+    "choices": [
+      "1773",
+      "1774",
+      "1775",
+      "1776"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Battle of Yorktown ended the ___?",
+    "answer": "American Revolution",
+    "choices": [
+      "War of 1812",
+      "American Revolution",
+      "French and Indian War",
+      "Seven Years' War"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The First Opium War between China and Britain ended in ___?",
+    "answer": "1842",
+    "choices": [
+      "1838",
+      "1842",
+      "1848",
+      "1860"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Leon Trotsky was exiled to and later assassinated in ___?",
+    "answer": "Mexico",
+    "choices": [
+      "France",
+      "Mexico",
+      "United States",
+      "Turkey"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Night of the Long Knives occurred in ___?",
+    "answer": "1934",
+    "choices": [
+      "1932",
+      "1933",
+      "1934",
+      "1935"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Kristallnacht (Night of Broken Glass) was in ___?",
+    "answer": "1938",
+    "choices": [
+      "1935",
+      "1936",
+      "1938",
+      "1940"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Molotov-Ribbentrop Pact was signed between the USSR and ___?",
+    "answer": "Nazi Germany",
+    "choices": [
+      "Japan",
+      "Nazi Germany",
+      "Italy",
+      "Finland"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Operation Barbarossa was Germany's invasion of ___?",
+    "answer": "Soviet Union",
+    "choices": [
+      "Poland",
+      "Soviet Union",
+      "France",
+      "Yugoslavia"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Battle of Stalingrad ended in German defeat in ___?",
+    "answer": "1943",
+    "choices": [
+      "1941",
+      "1942",
+      "1943",
+      "1944"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Battle of Midway was a turning point against ___?",
+    "answer": "Japan",
+    "choices": [
+      "Germany",
+      "Japan",
+      "Italy",
+      "Korea"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Truman Doctrine was proclaimed in ___?",
+    "answer": "1947",
+    "choices": [
+      "1945",
+      "1946",
+      "1947",
+      "1948"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Korean War started when North Korea invaded ___?",
+    "answer": "South Korea",
+    "choices": [
+      "China",
+      "South Korea",
+      "Japan",
+      "Taiwan"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Berlin Wall was built in ___?",
+    "answer": "1961",
+    "choices": [
+      "1955",
+      "1958",
+      "1961",
+      "1963"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Dreyfus Affair took place in ___?",
+    "answer": "France",
+    "choices": [
+      "Germany",
+      "France",
+      "Austria",
+      "Russia"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Wannsee Conference planned the ___?",
+    "answer": "Final Solution (genocide of Jews)",
+    "choices": [
+      "Invasion of Poland",
+      "Final Solution (genocide of Jews)",
+      "Anschluss of Austria",
+      "Atlantic Wall defense"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Zimmermann Telegram was sent by Germany to ___?",
+    "answer": "Mexico",
+    "choices": [
+      "Austria",
+      "Mexico",
+      "Ottoman Empire",
+      "Argentina"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Battle of Verdun was fought in ___?",
+    "answer": "1916",
+    "choices": [
+      "1914",
+      "1915",
+      "1916",
+      "1917"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Battle of the Somme began in ___?",
+    "answer": "1916",
+    "choices": [
+      "1914",
+      "1915",
+      "1916",
+      "1917"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Titanic struck an iceberg in April ___?",
+    "answer": "1912",
+    "choices": [
+      "1910",
+      "1911",
+      "1912",
+      "1913"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The 19th Amendment gave voting rights to ___?",
+    "answer": "Women",
+    "choices": [
+      "African Americans",
+      "Women",
+      "Native Americans",
+      "All adults 18+"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Suez Canal was opened in ___?",
+    "answer": "1869",
+    "choices": [
+      "1855",
+      "1863",
+      "1869",
+      "1875"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Joan of Arc fought for ___?",
+    "answer": "France",
+    "choices": [
+      "England",
+      "France",
+      "Burgundy",
+      "The Holy Roman Empire"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Battle of Hastings was in ___?",
+    "answer": "1066",
+    "choices": [
+      "1042",
+      "1066",
+      "1087",
+      "1100"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The First Crusade began in ___?",
+    "answer": "1096",
+    "choices": [
+      "1050",
+      "1075",
+      "1096",
+      "1110"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Battle of Marathon (490 BC) was between Athens and ___?",
+    "answer": "Persia",
+    "choices": [
+      "Sparta",
+      "Persia",
+      "Macedon",
+      "Corinth"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Peloponnesian War was between Athens and ___?",
+    "answer": "Sparta",
+    "choices": [
+      "Corinth",
+      "Sparta",
+      "Thebes",
+      "Persia"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Henry VIII broke from the Catholic Church to form ___?",
+    "answer": "The Church of England",
+    "choices": [
+      "The Lutheran Church",
+      "The Church of England",
+      "The Calvinist Church",
+      "The Presbyterian Church"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Scramble for Africa by European powers peaked in the ___?",
+    "answer": "1880s-1890s",
+    "choices": [
+      "1850s-1860s",
+      "1870s-1880s",
+      "1880s-1890s",
+      "1900s-1910s"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Boxer Rebellion occurred in ___?",
+    "answer": "1900",
+    "choices": [
+      "1890",
+      "1895",
+      "1900",
+      "1905"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Battle of Tsushima (1905) was a decisive victory for ___?",
+    "answer": "Japan",
+    "choices": [
+      "Russia",
+      "Japan",
+      "China",
+      "Korea"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Stalin's Great Purge took place primarily in the ___?",
+    "answer": "1930s",
+    "choices": [
+      "1920s",
+      "1930s",
+      "1940s",
+      "1950s"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Anschluss was the annexation of Austria by ___?",
+    "answer": "Nazi Germany",
+    "choices": [
+      "Fascist Italy",
+      "Nazi Germany",
+      "Soviet Union",
+      "Hungary"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Operation Barbarossa began in ___?",
+    "answer": "1941",
+    "choices": [
+      "1939",
+      "1940",
+      "1941",
+      "1942"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Yalta Conference was held in ___?",
+    "answer": "1945",
+    "choices": [
+      "1943",
+      "1944",
+      "1945",
+      "1946"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Iranian Revolution was led by ___?",
+    "answer": "Ayatollah Khomeini",
+    "choices": [
+      "Mohammad Mosaddegh",
+      "Ayatollah Khomeini",
+      "Reza Shah",
+      "Ali Khamenei"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Rwandan Genocide occurred in ___?",
+    "answer": "1994",
+    "choices": [
+      "1990",
+      "1992",
+      "1994",
+      "1996"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Good Friday Agreement ended conflict in ___?",
+    "answer": "Northern Ireland",
+    "choices": [
+      "Bosnia",
+      "Northern Ireland",
+      "Kosovo",
+      "Cyprus"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Gulf War (Operation Desert Storm) was in ___?",
+    "answer": "1991",
+    "choices": [
+      "1988",
+      "1990",
+      "1991",
+      "1992"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The September 11 attacks occurred in ___?",
+    "answer": "2001",
+    "choices": [
+      "1999",
+      "2000",
+      "2001",
+      "2002"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Treaty of Versailles ended ___?",
+    "answer": "World War I",
+    "choices": [
+      "World War II",
+      "World War I",
+      "The Franco-Prussian War",
+      "The Crimean War"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Peace of Westphalia (1648) ended the ___?",
+    "answer": "Thirty Years' War",
+    "choices": [
+      "Hundred Years' War",
+      "Thirty Years' War",
+      "Seven Years' War",
+      "Napoleonic Wars"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Louisiana Purchase doubled the size of ___?",
+    "answer": "The United States",
+    "choices": [
+      "France",
+      "The United States",
+      "Canada",
+      "Mexico"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The main causes of WWI are summarized by the acronym ___?",
+    "answer": "MAIN",
+    "choices": [
+      "STEM",
+      "MAIN",
+      "WARS",
+      "FATE"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "In MAIN, the 'M' stands for ___?",
+    "answer": "Militarism",
+    "choices": [
+      "Monarchy",
+      "Militarism",
+      "Maps",
+      "Manufacturing"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "In MAIN, the 'A' stands for ___?",
+    "answer": "Alliance",
+    "choices": [
+      "Army",
+      "Alliance",
+      "Assassination",
+      "Armament"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Julius Caesar was assassinated in ___?",
+    "answer": "44 BC",
+    "choices": [
+      "55 BC",
+      "44 BC",
+      "33 BC",
+      "27 BC"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Caesar was assassinated on the ___?",
+    "answer": "Ides of March",
+    "choices": [
+      "Ides of January",
+      "Ides of February",
+      "Ides of March",
+      "Ides of April"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Egyptian pyramids at Giza were built around ___?",
+    "answer": "2500 BC",
+    "choices": [
+      "4000 BC",
+      "2500 BC",
+      "1000 BC",
+      "500 BC"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Colosseum in Rome was completed around ___?",
+    "answer": "80 AD",
+    "choices": [
+      "50 AD",
+      "80 AD",
+      "150 AD",
+      "200 AD"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Roman Republic transitioned to the Roman Empire under ___?",
+    "answer": "Augustus Caesar",
+    "choices": [
+      "Julius Caesar",
+      "Augustus Caesar",
+      "Marcus Aurelius",
+      "Constantine"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Emperor Theodosius I made Christianity the official religion of the Roman Empire. In what year?",
+    "answer": "380 AD",
+    "choices": [
+      "Greece",
+      "Rome",
+      "Persia",
+      "Egypt"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Silk Road was primarily used for ___?",
+    "answer": "Trade between East and West",
+    "choices": [
+      "Military campaigns",
+      "Trade between East and West",
+      "Religious pilgrimages",
+      "Moving armies"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Renaissance began approximately in which century?",
+    "answer": "14th century",
+    "choices": [
+      "12th century",
+      "13th century",
+      "14th century",
+      "16th century"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Henry VIII of England broke from the Catholic Church over ___?",
+    "answer": "His desire to annul his marriage",
+    "choices": [
+      "Theological doctrine",
+      "His desire to annul his marriage",
+      "Church taxation",
+      "Protestant beliefs"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Battle of Bunker Hill (1775) actually took place on ___?",
+    "answer": "Breed's Hill",
+    "choices": [
+      "Dorchester Heights",
+      "Breed's Hill",
+      "Lexington Common",
+      "Fort Ticonderoga"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Boston Massacre occurred in ___?",
+    "answer": "1770",
+    "choices": [
+      "1765",
+      "1770",
+      "1773",
+      "1775"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Continental Congress first met in ___?",
+    "answer": "1774",
+    "choices": [
+      "1770",
+      "1772",
+      "1774",
+      "1776"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Articles of Confederation preceded the ___?",
+    "answer": "US Constitution",
+    "choices": [
+      "Declaration of Independence",
+      "US Constitution",
+      "Bill of Rights",
+      "Federalist Papers"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The War of 1812 ended in ___?",
+    "answer": "1815",
+    "choices": [
+      "1813",
+      "1814",
+      "1815",
+      "1816"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The 13th Amendment was ratified in ___?",
+    "answer": "1865",
+    "choices": [
+      "1863",
+      "1864",
+      "1865",
+      "1866"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The 19th Amendment was ratified in ___?",
+    "answer": "1920",
+    "choices": [
+      "1912",
+      "1916",
+      "1920",
+      "1924"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Reconstruction Era followed ___?",
+    "answer": "The Civil War",
+    "choices": [
+      "The Mexican-American War",
+      "The Civil War",
+      "The War of 1812",
+      "World War I"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Mexican-American War ended in ___?",
+    "answer": "1848",
+    "choices": [
+      "1845",
+      "1848",
+      "1850",
+      "1852"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Spanish-American War gave the US control of ___?",
+    "answer": "Puerto Rico, Guam, and Philippines",
+    "choices": [
+      "Cuba and Mexico",
+      "Puerto Rico, Guam, and Philippines",
+      "Hawaii and Alaska",
+      "Panama and Cuba"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The 14th Amendment granted citizenship to ___?",
+    "answer": "All persons born or naturalized in the US",
+    "choices": [
+      "Formerly enslaved people only",
+      "All persons born or naturalized in the US",
+      "White male citizens",
+      "Veterans of the Civil War"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The 15th Amendment was ratified in ___?",
+    "answer": "1870",
+    "choices": [
+      "1865",
+      "1867",
+      "1870",
+      "1875"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Mughal Empire was founded by ___?",
+    "answer": "Babur",
+    "choices": [
+      "Akbar",
+      "Babur",
+      "Humayun",
+      "Shah Jahan"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Mughal Empire was founded in ___?",
+    "answer": "1526",
+    "choices": [
+      "1498",
+      "1510",
+      "1526",
+      "1556"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Ottoman Empire was dissolved in ___?",
+    "answer": "1922",
+    "choices": [
+      "1918",
+      "1920",
+      "1922",
+      "1924"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Republic of Turkey was founded by ___?",
+    "answer": "Mustafa Kemal Ataturk",
+    "choices": [
+      "Enver Pasha",
+      "Mustafa Kemal Ataturk",
+      "Ismet Inonu",
+      "Mehmed VI"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Battle of Thermopylae was between the Greeks and ___?",
+    "answer": "Persians",
+    "choices": [
+      "Macedonians",
+      "Persians",
+      "Spartans vs Athens",
+      "Romans"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Battle of Actium (31 BC) ended the career of ___?",
+    "answer": "Mark Antony and Cleopatra",
+    "choices": [
+      "Julius Caesar",
+      "Mark Antony and Cleopatra",
+      "Pompey the Great",
+      "Brutus and Cassius"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Edict of Milan (313 AD) granted ___?",
+    "answer": "Religious tolerance in Rome",
+    "choices": [
+      "Christianity as the state religion",
+      "Religious tolerance in Rome",
+      "Citizenship to all free persons",
+      "Tax exemption for the church"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Domesday Book was commissioned by ___?",
+    "answer": "William the Conqueror",
+    "choices": [
+      "Edward the Confessor",
+      "William the Conqueror",
+      "Henry I",
+      "Stephen of Blois"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Charlemagne was crowned Holy Roman Emperor in ___?",
+    "answer": "800 AD",
+    "choices": [
+      "771 AD",
+      "800 AD",
+      "814 AD",
+      "843 AD"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Protestant Reformation split the Christian church in the ___?",
+    "answer": "16th century",
+    "choices": [
+      "14th century",
+      "15th century",
+      "16th century",
+      "17th century"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Seven Years' War (1756-1763) is called the ___?",
+    "answer": "First world war",
+    "choices": [
+      "Last medieval war",
+      "First world war",
+      "War of Succession",
+      "Napoleonic precursor"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The American Revolution was inspired partly by ___?",
+    "answer": "Enlightenment ideas",
+    "choices": [
+      "The French example",
+      "Enlightenment ideas",
+      "Religious persecution",
+      "Economic depression"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Berlin Conference (1884-85) partitioned ___?",
+    "answer": "Africa",
+    "choices": [
+      "Asia",
+      "Africa",
+      "South America",
+      "Southeast Asia"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Raj referred to British rule over ___?",
+    "answer": "India",
+    "choices": [
+      "Africa",
+      "India",
+      "Australia",
+      "Canada"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Opium Wars were fought between China and ___?",
+    "answer": "Britain",
+    "choices": [
+      "France",
+      "Britain",
+      "USA",
+      "Russia"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Meiji Restoration modernized ___?",
+    "answer": "Japan",
+    "choices": [
+      "China",
+      "Japan",
+      "Korea",
+      "Vietnam"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Camp David Accords brought peace between Israel and ___?",
+    "answer": "Egypt",
+    "choices": [
+      "Jordan",
+      "Egypt",
+      "Syria",
+      "Lebanon"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Camp David Accords were signed in ___?",
+    "answer": "1978",
+    "choices": [
+      "1973",
+      "1976",
+      "1978",
+      "1980"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Cultural Revolution in China lasted from 1966 to ___?",
+    "answer": "1976",
+    "choices": [
+      "1970",
+      "1973",
+      "1976",
+      "1978"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Rwandan Genocide killed approximately ___?",
+    "answer": "800,000 people",
+    "choices": [
+      "100,000 people",
+      "400,000 people",
+      "800,000 people",
+      "2 million people"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Good Friday Agreement was signed in ___?",
+    "answer": "1998",
+    "choices": [
+      "1994",
+      "1996",
+      "1998",
+      "2000"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Apartheid system ended in South Africa in ___?",
+    "answer": "1994",
+    "choices": [
+      "1990",
+      "1992",
+      "1994",
+      "1996"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Cuban Revolution succeeded in ___?",
+    "answer": "1959",
+    "choices": [
+      "1955",
+      "1957",
+      "1959",
+      "1961"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Fidel Castro led ___?",
+    "answer": "Cuba",
+    "choices": [
+      "Venezuela",
+      "Cuba",
+      "Nicaragua",
+      "Chile"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Non-Aligned Movement was co-founded by ___?",
+    "answer": "Nehru, Nasser, and Tito",
+    "choices": [
+      "Stalin, Mao, and Nasser",
+      "Nehru, Nasser, and Tito",
+      "Churchill, Roosevelt, and de Gaulle",
+      "Sukarno, Nkrumah, and Castro"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Helsinki Accords were signed in ___?",
+    "answer": "1975",
+    "choices": [
+      "1972",
+      "1973",
+      "1975",
+      "1977"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The partition of British India created India and ___?",
+    "answer": "Pakistan",
+    "choices": [
+      "Bangladesh",
+      "Pakistan",
+      "Ceylon",
+      "Burma"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Korean Peninsula was divided at the ___?",
+    "answer": "38th parallel",
+    "choices": [
+      "35th parallel",
+      "38th parallel",
+      "40th parallel",
+      "42nd parallel"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Weimar Republic was established in Germany after ___?",
+    "answer": "World War I",
+    "choices": [
+      "World War II",
+      "World War I",
+      "The 1848 Revolution",
+      "The Austro-Prussian War"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Rape of Nanjing occurred in ___?",
+    "answer": "1937",
+    "choices": [
+      "1931",
+      "1935",
+      "1937",
+      "1939"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Bretton Woods Conference established ___?",
+    "answer": "The IMF and World Bank",
+    "choices": [
+      "The United Nations",
+      "The IMF and World Bank",
+      "NATO",
+      "The World Trade Organization"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Yalta Conference divided post-war Europe among ___?",
+    "answer": "USA, USSR, and Britain",
+    "choices": [
+      "USA and USSR only",
+      "USA, USSR, and Britain",
+      "USA, USSR, Britain, and France",
+      "All Allied nations"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Potsdam Conference was held in ___?",
+    "answer": "1945",
+    "choices": [
+      "1943",
+      "1944",
+      "1945",
+      "1946"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Bandung Conference of nonaligned nations was in ___?",
+    "answer": "1955",
+    "choices": [
+      "1950",
+      "1952",
+      "1955",
+      "1958"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The OPEC oil embargo targeted ___?",
+    "answer": "Western countries supporting Israel",
+    "choices": [
+      "Japan and Europe",
+      "Western countries supporting Israel",
+      "Communist nations",
+      "South American nations"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Crimean War (1853-1856) involved Russia and ___?",
+    "answer": "Britain, France, and Ottoman Empire",
+    "choices": [
+      "Austria and Prussia",
+      "Britain, France, and Ottoman Empire",
+      "USA and Britain",
+      "France and Prussia"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Florence Nightingale became famous during which war?",
+    "answer": "Crimean War",
+    "choices": [
+      "Boer War",
+      "Crimean War",
+      "Napoleonic Wars",
+      "Seven Years' War"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Geneva Conventions primarily govern ___?",
+    "answer": "Treatment of prisoners and civilians in war",
+    "choices": [
+      "Peace treaties",
+      "Treatment of prisoners and civilians in war",
+      "Nuclear weapon usage",
+      "Trade during wartime"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Treaty of Paris (1783) ended ___?",
+    "answer": "The American Revolutionary War",
+    "choices": [
+      "The Seven Years' War",
+      "The American Revolutionary War",
+      "The French and Indian War",
+      "The War of 1812"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Missouri Compromise of 1820 addressed ___?",
+    "answer": "Slavery in new US territories",
+    "choices": [
+      "Native American relocation",
+      "Slavery in new US territories",
+      "Tariff rates",
+      "Immigration policy"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Dred Scott decision ruled that enslaved people were ___?",
+    "answer": "Property, not citizens",
+    "choices": [
+      "Free in Northern states",
+      "Property, not citizens",
+      "Entitled to jury trials",
+      "Protected by the Constitution"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Abraham Lincoln's Gettysburg Address was delivered at ___?",
+    "answer": "A military cemetery dedication",
+    "choices": [
+      "A political rally",
+      "A military cemetery dedication",
+      "A Union Army headquarters",
+      "A Congressional session"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Emancipation Proclamation applied to states ___?",
+    "answer": "In rebellion against the Union",
+    "choices": [
+      "Throughout the entire United States",
+      "In rebellion against the Union",
+      "Only in the Deep South",
+      "That had not yet seceded"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Seneca Falls Convention of 1848 launched the ___?",
+    "answer": "Women's suffrage movement in the US",
+    "choices": [
+      "Abolitionist movement",
+      "Women's suffrage movement in the US",
+      "Labor movement",
+      "Temperance movement"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Dreyfus Affair exposed antisemitism in ___?",
+    "answer": "France",
+    "choices": [
+      "Germany",
+      "France",
+      "Austria",
+      "Russia"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Franco-Prussian War ended in ___?",
+    "answer": "1871",
+    "choices": [
+      "1866",
+      "1869",
+      "1871",
+      "1873"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The German Empire (Second Reich) was proclaimed in ___?",
+    "answer": "1871",
+    "choices": [
+      "1866",
+      "1869",
+      "1871",
+      "1873"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Bismarck served as Chancellor of ___?",
+    "answer": "Germany",
+    "choices": [
+      "Austria",
+      "Germany",
+      "Prussia",
+      "Bavaria"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Austro-Prussian War (1866) was won by ___?",
+    "answer": "Prussia",
+    "choices": [
+      "Austria",
+      "Prussia",
+      "France",
+      "Russia"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Hundred Years' War included the famous French heroine ___?",
+    "answer": "Joan of Arc",
+    "choices": [
+      "Eleanor of Aquitaine",
+      "Joan of Arc",
+      "Marie de France",
+      "Christine de Pizan"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Black Death reached Europe through ___?",
+    "answer": "Trade routes from Asia",
+    "choices": [
+      "Africa",
+      "Trade routes from Asia",
+      "The Middle East directly",
+      "Crusader knights"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Renaissance is associated with a rebirth of ___?",
+    "answer": "Classical Greek and Roman learning",
+    "choices": [
+      "Medieval art",
+      "Classical Greek and Roman learning",
+      "Religious devotion",
+      "Agricultural science"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Battle of Hastings occurred in ___?",
+    "answer": "1066",
+    "choices": [
+      "1042",
+      "1066",
+      "1086",
+      "1100"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Who was the first Holy Roman Emperor?",
+    "answer": "Charlemagne",
+    "choices": [
+      "Otto I",
+      "Charlemagne",
+      "Frederick Barbarossa",
+      "Henry IV"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Hundred Years' War lasted from 1337 to ___?",
+    "answer": "1453",
+    "choices": [
+      "1420",
+      "1453",
+      "1461",
+      "1475"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Spanish Armada was defeated in ___?",
+    "answer": "1588",
+    "choices": [
+      "1570",
+      "1580",
+      "1588",
+      "1600"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Thirty Years' War began in ___?",
+    "answer": "1618",
+    "choices": [
+      "1610",
+      "1615",
+      "1618",
+      "1625"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Peace of Augsburg (1555) established ___?",
+    "answer": "Cuius regio, eius religio",
+    "choices": [
+      "Freedom of worship for all",
+      "Cuius regio, eius religio",
+      "Protestant supremacy",
+      "Catholic supremacy"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Battle of Lepanto (1571) was fought between Christendom and ___?",
+    "answer": "The Ottoman Empire",
+    "choices": [
+      "The Mughal Empire",
+      "The Ottoman Empire",
+      "The Safavid Empire",
+      "The Mamluk Sultanate"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Sykes-Picot Agreement divided the ___?",
+    "answer": "Middle East between Britain and France",
+    "choices": [
+      "Africa among European powers",
+      "Middle East between Britain and France",
+      "Ottoman Empire between Russia and Britain",
+      "Asia between Japan and Russia"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Balfour Declaration (1917) supported ___?",
+    "answer": "A Jewish homeland in Palestine",
+    "choices": [
+      "Arab independence",
+      "A Jewish homeland in Palestine",
+      "Syrian statehood",
+      "The partition of Iraq"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Treaty of Versailles imposed war guilt on ___?",
+    "answer": "Germany",
+    "choices": [
+      "Austria",
+      "Germany",
+      "Ottoman Empire",
+      "Bulgaria"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Night of the Long Knives eliminated the ___?",
+    "answer": "SA (Sturmabteilung)",
+    "choices": [
+      "SS",
+      "SA (Sturmabteilung)",
+      "Gestapo",
+      "Wehrmacht leadership"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Anschluss occurred in ___?",
+    "answer": "1938",
+    "choices": [
+      "1936",
+      "1937",
+      "1938",
+      "1939"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Battle of El Alamein was fought in ___?",
+    "answer": "North Africa",
+    "choices": [
+      "Europe",
+      "North Africa",
+      "Southeast Asia",
+      "The Pacific"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Battle of Midway was in ___?",
+    "answer": "1942",
+    "choices": [
+      "1941",
+      "1942",
+      "1943",
+      "1944"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Zimmermann Telegram was sent in ___?",
+    "answer": "1917",
+    "choices": [
+      "1915",
+      "1916",
+      "1917",
+      "1918"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Mughal Emperor Akbar was known for ___?",
+    "answer": "Religious tolerance",
+    "choices": [
+      "Military conquest only",
+      "Religious tolerance",
+      "Building the Taj Mahal",
+      "Abolishing taxes"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Taj Mahal was built by Mughal Emperor ___?",
+    "answer": "Shah Jahan",
+    "choices": [
+      "Akbar",
+      "Shah Jahan",
+      "Aurangzeb",
+      "Jahangir"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Thirty Years' War ended with the ___?",
+    "answer": "Peace of Westphalia",
+    "choices": [
+      "Treaty of Utrecht",
+      "Peace of Westphalia",
+      "Treaty of Augsburg",
+      "Congress of Vienna"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The English Civil War ended with ___?",
+    "answer": "The execution of Charles I and a republic",
+    "choices": [
+      "Restoration of the monarchy",
+      "The execution of Charles I and a republic",
+      "A constitutional monarchy",
+      "Scottish independence"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Thirty Years' War was primarily fought over ___?",
+    "answer": "Religious and political conflicts in Europe",
+    "choices": [
+      "Territory in the New World",
+      "Religious and political conflicts in Europe",
+      "Trade route control",
+      "Succession to the Spanish throne"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The First Sino-Japanese War ended in ___?",
+    "answer": "1895",
+    "choices": [
+      "1890",
+      "1895",
+      "1900",
+      "1905"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Second Sino-Japanese War began in ___?",
+    "answer": "1937",
+    "choices": [
+      "1931",
+      "1935",
+      "1937",
+      "1939"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Battle of the Marne (1914) stopped the German advance into ___?",
+    "answer": "France",
+    "choices": [
+      "Belgium",
+      "France",
+      "Britain",
+      "Russia"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Easter Rising in Ireland occurred in ___?",
+    "answer": "1916",
+    "choices": [
+      "1912",
+      "1914",
+      "1916",
+      "1918"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Irish Free State was established in ___?",
+    "answer": "1922",
+    "choices": [
+      "1916",
+      "1920",
+      "1922",
+      "1924"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Boer War was fought in ___?",
+    "answer": "South Africa",
+    "choices": [
+      "Australia",
+      "South Africa",
+      "India",
+      "Canada"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Berlin Conference (1884) was convened by ___?",
+    "answer": "Bismarck",
+    "choices": [
+      "Kaiser Wilhelm",
+      "Bismarck",
+      "Leopold II",
+      "Lord Salisbury"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Congress of Vienna was convened to ___?",
+    "answer": "Redraw Europe after the Napoleonic Wars",
+    "choices": [
+      "End World War I",
+      "Redraw Europe after the Napoleonic Wars",
+      "Divide colonial territories",
+      "Form a European alliance"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Taiping Rebellion (1850-1864) occurred in ___?",
+    "answer": "China",
+    "choices": [
+      "Japan",
+      "China",
+      "Vietnam",
+      "Korea"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Sepoy Mutiny (Indian Rebellion) was in ___?",
+    "answer": "1857",
+    "choices": [
+      "1845",
+      "1857",
+      "1865",
+      "1875"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Scramble for Africa was largely complete by ___?",
+    "answer": "1900",
+    "choices": [
+      "1880",
+      "1890",
+      "1900",
+      "1910"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Zulu War between Britain and Zulus was in ___?",
+    "answer": "1879",
+    "choices": [
+      "1870",
+      "1879",
+      "1885",
+      "1899"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Fashoda Incident (1898) was a colonial standoff between Britain and ___?",
+    "answer": "France",
+    "choices": [
+      "Germany",
+      "France",
+      "Russia",
+      "Italy"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Young Turks overthrew the Sultan in ___?",
+    "answer": "1908",
+    "choices": [
+      "1898",
+      "1904",
+      "1908",
+      "1912"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Balkan Wars were fought in ___?",
+    "answer": "1912-1913",
+    "choices": [
+      "1908-1909",
+      "1910-1911",
+      "1912-1913",
+      "1914-1915"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Italian unification (Risorgimento) was completed in ___?",
+    "answer": "1871",
+    "choices": [
+      "1848",
+      "1861",
+      "1871",
+      "1880"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Garibaldi is associated with the unification of ___?",
+    "answer": "Italy",
+    "choices": [
+      "Germany",
+      "Italy",
+      "Spain",
+      "Greece"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Crimean War ended with the ___?",
+    "answer": "Treaty of Paris (1856)",
+    "choices": [
+      "Treaty of Berlin",
+      "Treaty of Paris (1856)",
+      "Congress of Vienna",
+      "Peace of Westphalia"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Commune of Paris was established in ___?",
+    "answer": "1871",
+    "choices": [
+      "1848",
+      "1871",
+      "1881",
+      "1889"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Meiji Constitution was promulgated in ___?",
+    "answer": "1889",
+    "choices": [
+      "1868",
+      "1877",
+      "1889",
+      "1900"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Korean War armistice was signed in ___?",
+    "answer": "Panmunjom",
+    "choices": [
+      "Seoul",
+      "Panmunjom",
+      "Pyongyang",
+      "Kaesong"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Potsdam Conference divided Germany into ___?",
+    "answer": "4 occupation zones",
+    "choices": [
+      "2 occupation zones",
+      "3 occupation zones",
+      "4 occupation zones",
+      "6 occupation zones"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Geneva Conventions were updated most recently in ___?",
+    "answer": "1949",
+    "choices": [
+      "1929",
+      "1945",
+      "1949",
+      "1956"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Non-Proliferation Treaty (NPT) was signed in ___?",
+    "answer": "1968",
+    "choices": [
+      "1962",
+      "1965",
+      "1968",
+      "1972"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Strategic Arms Limitation Talks (SALT I) concluded in ___?",
+    "answer": "1972",
+    "choices": [
+      "1968",
+      "1970",
+      "1972",
+      "1974"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Camp David Accords were brokered by President ___?",
+    "answer": "Jimmy Carter",
+    "choices": [
+      "Richard Nixon",
+      "Gerald Ford",
+      "Jimmy Carter",
+      "Ronald Reagan"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Falklands War was fought between Britain and ___?",
+    "answer": "Argentina",
+    "choices": [
+      "Chile",
+      "Argentina",
+      "Brazil",
+      "Uruguay"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Falklands War was in ___?",
+    "answer": "1982",
+    "choices": [
+      "1978",
+      "1980",
+      "1982",
+      "1984"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Iran-Iraq War lasted from 1980 to ___?",
+    "answer": "1988",
+    "choices": [
+      "1985",
+      "1987",
+      "1988",
+      "1990"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Tiananmen Square massacre was in ___?",
+    "answer": "1989",
+    "choices": [
+      "1985",
+      "1987",
+      "1989",
+      "1991"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Gulf War coalition was led by ___?",
+    "answer": "United States",
+    "choices": [
+      "United Nations alone",
+      "United States",
+      "United Kingdom",
+      "Saudi Arabia"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Oslo Accords were signed between Israel and ___?",
+    "answer": "PLO (Palestinians)",
+    "choices": [
+      "Jordan",
+      "PLO (Palestinians)",
+      "Syria",
+      "Egypt"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Oslo Accords were signed in ___?",
+    "answer": "1993",
+    "choices": [
+      "1990",
+      "1991",
+      "1993",
+      "1995"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Maastricht Treaty founded ___?",
+    "answer": "The European Union",
+    "choices": [
+      "NATO",
+      "The European Union",
+      "The Council of Europe",
+      "The Euro currency"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Maastricht Treaty was signed in ___?",
+    "answer": "1992",
+    "choices": [
+      "1988",
+      "1990",
+      "1992",
+      "1994"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Nelson Mandela was imprisoned on ___?",
+    "answer": "Robben Island",
+    "choices": [
+      "Alcatraz",
+      "Robben Island",
+      "Devil's Island",
+      "Spitsbergen"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The apartheid system in South Africa was formally abolished in ___?",
+    "answer": "1991",
+    "choices": [
+      "1988",
+      "1990",
+      "1991",
+      "1993"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Bosnian War ended with the ___?",
+    "answer": "Dayton Accords",
+    "choices": [
+      "Paris Peace Conference",
+      "Dayton Accords",
+      "Maastricht Treaty",
+      "Helsinki Accords"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Dayton Accords were signed in ___?",
+    "answer": "1995",
+    "choices": [
+      "1993",
+      "1994",
+      "1995",
+      "1996"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Battle of Tsushima was a naval battle in which ___?",
+    "answer": "Japan defeated Russia's fleet",
+    "choices": [
+      "Russia defeated Japan",
+      "Japan defeated Russia's fleet",
+      "Britain defeated Japan",
+      "USA defeated Spain's fleet"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Entente Cordiale (1904) allied Britain with ___?",
+    "answer": "France",
+    "choices": [
+      "Russia",
+      "France",
+      "Italy",
+      "Belgium"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Triple Alliance before WWI was Germany, Austria-Hungary, and ___?",
+    "answer": "Italy",
+    "choices": [
+      "Ottoman Empire",
+      "Italy",
+      "Bulgaria",
+      "Romania"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Triple Entente before WWI was Russia, France, and ___?",
+    "answer": "Britain",
+    "choices": [
+      "Belgium",
+      "Britain",
+      "Italy",
+      "Serbia"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Congress of Vienna met in ___?",
+    "answer": "1814-1815",
+    "choices": [
+      "1812-1813",
+      "1814-1815",
+      "1816-1817",
+      "1818-1819"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Congress of Vienna was presided over by ___?",
+    "answer": "Metternich",
+    "choices": [
+      "Castlereagh",
+      "Metternich",
+      "Talleyrand",
+      "Alexander I"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Treaty of Utrecht (1713) ended the ___?",
+    "answer": "War of the Spanish Succession",
+    "choices": [
+      "War of the Austrian Succession",
+      "War of the Spanish Succession",
+      "Nine Years' War",
+      "Thirty Years' War"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Peace of Augsburg established the principle ___?",
+    "answer": "Cuius regio, eius religio",
+    "choices": [
+      "Freedom of worship for all",
+      "Cuius regio, eius religio",
+      "Protestant supremacy",
+      "Catholic supremacy"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Who was the last Byzantine Emperor?",
+    "answer": "Constantine XI",
+    "choices": [
+      "John VIII",
+      "Constantine XI",
+      "Manuel II",
+      "Alexios V"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Sykes-Picot Agreement was signed in ___?",
+    "answer": "1916",
+    "choices": [
+      "1913",
+      "1916",
+      "1919",
+      "1922"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Balfour Declaration was issued in ___?",
+    "answer": "1917",
+    "choices": [
+      "1915",
+      "1916",
+      "1917",
+      "1919"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The reparations imposed on Germany by Versailles were ___?",
+    "answer": "132 billion gold marks",
+    "choices": [
+      "50 billion gold marks",
+      "132 billion gold marks",
+      "250 billion gold marks",
+      "400 billion gold marks"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Battle of Thermopylae was in ___?",
+    "answer": "480 BC",
+    "choices": [
+      "490 BC",
+      "480 BC",
+      "470 BC",
+      "460 BC"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Battle of Actium was in ___?",
+    "answer": "31 BC",
+    "choices": [
+      "44 BC",
+      "31 BC",
+      "27 BC",
+      "14 AD"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Battle of Lepanto was in ___?",
+    "answer": "1571",
+    "choices": [
+      "1555",
+      "1571",
+      "1588",
+      "1600"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Wannsee Conference was held in ___?",
+    "answer": "1942",
+    "choices": [
+      "1940",
+      "1941",
+      "1942",
+      "1943"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Bretton Woods Conference was held in ___?",
+    "answer": "1944",
+    "choices": [
+      "1942",
+      "1944",
+      "1945",
+      "1946"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Marshall Plan distributed approximately ___?",
+    "answer": "$13 billion",
+    "choices": [
+      "$5 billion",
+      "$13 billion",
+      "$25 billion",
+      "$50 billion"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Helsinki Accords recognized ___?",
+    "answer": "Post-WWII European borders",
+    "choices": [
+      "Human rights globally",
+      "Post-WWII European borders",
+      "Nuclear non-proliferation",
+      "German reunification"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Fourth Lateran Council (1215) was convened by Pope ___?",
+    "answer": "Innocent III",
+    "choices": [
+      "Gregory IX",
+      "Innocent III",
+      "Urban II",
+      "Alexander III"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Theodoric the Great was king of the ___?",
+    "answer": "Ostrogoths",
+    "choices": [
+      "Visigoths",
+      "Ostrogoths",
+      "Vandals",
+      "Lombards"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Domesday Book was completed in ___?",
+    "answer": "1086",
+    "choices": [
+      "1070",
+      "1078",
+      "1086",
+      "1100"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Edict of Milan (313 AD) was issued by Emperor ___?",
+    "answer": "Constantine",
+    "choices": [
+      "Diocletian",
+      "Constantine",
+      "Theodosius",
+      "Nero"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Peloponnesian War ended in ___?",
+    "answer": "404 BC",
+    "choices": [
+      "431 BC",
+      "421 BC",
+      "404 BC",
+      "387 BC"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Delian League was led by ___?",
+    "answer": "Athens",
+    "choices": [
+      "Sparta",
+      "Athens",
+      "Corinth",
+      "Thebes"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Spartan constitution was attributed to ___?",
+    "answer": "Lycurgus",
+    "choices": [
+      "Solon",
+      "Lycurgus",
+      "Cleisthenes",
+      "Draco"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Athenian democracy was reformed by ___?",
+    "answer": "Cleisthenes",
+    "choices": [
+      "Solon",
+      "Cleisthenes",
+      "Pericles",
+      "Draco"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Peace of Nicias (421 BC) temporarily ended which war?",
+    "answer": "Peloponnesian War",
+    "choices": [
+      "Persian Wars",
+      "Peloponnesian War",
+      "Corinthian War",
+      "Sacred War"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Carolingian Renaissance was under ___?",
+    "answer": "Charlemagne",
+    "choices": [
+      "Louis the Pious",
+      "Charlemagne",
+      "Charles Martel",
+      "Pepin the Short"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Treaty of Verdun (843 AD) divided ___?",
+    "answer": "Charlemagne's empire among his grandsons",
+    "choices": [
+      "The Roman Empire",
+      "Charlemagne's empire among his grandsons",
+      "The Frankish kingdom",
+      "The Holy Roman Empire"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Hanseatic League was a trade confederation in ___?",
+    "answer": "Northern Europe",
+    "choices": [
+      "Mediterranean Europe",
+      "Northern Europe",
+      "Eastern Europe",
+      "The Holy Roman Empire"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Golden Bull of 1356 established election of the Holy Roman Emperor by ___?",
+    "answer": "Seven prince-electors",
+    "choices": [
+      "All German princes",
+      "Seven prince-electors",
+      "The Pope and princes",
+      "Hereditary succession"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Concordat of Worms (1122) resolved the ___?",
+    "answer": "Investiture Controversy",
+    "choices": [
+      "Great Schism",
+      "Investiture Controversy",
+      "Reformation debate",
+      "Crusade organization"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Great Schism of 1054 split Christianity into ___?",
+    "answer": "Roman Catholic and Eastern Orthodox",
+    "choices": [
+      "Catholic and Protestant",
+      "Roman Catholic and Eastern Orthodox",
+      "Byzantine and Western",
+      "Papal and Imperial churches"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Reconquista was completed in ___?",
+    "answer": "1492",
+    "choices": [
+      "1450",
+      "1475",
+      "1492",
+      "1502"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Reconquista ended with the fall of ___?",
+    "answer": "Granada",
+    "choices": [
+      "Toledo",
+      "Seville",
+      "Granada",
+      "Cordoba"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Black Death entered Europe primarily through ___?",
+    "answer": "Sicilian ports",
+    "choices": [
+      "French ports",
+      "Sicilian ports",
+      "English ports",
+      "Venetian lagoons"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Plague of Justinian (541-549 AD) killed approximately ___?",
+    "answer": "25-50 million people",
+    "choices": [
+      "1 million people",
+      "5 million people",
+      "25-50 million people",
+      "100 million people"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Magna Carta clause 39 guaranteed ___?",
+    "answer": "Habeas corpus (no imprisonment without trial)",
+    "choices": [
+      "Freedom of speech",
+      "Habeas corpus (no imprisonment without trial)",
+      "Trial by jury",
+      "Freedom of religion"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Model Parliament of 1295 was convened by ___?",
+    "answer": "Edward I",
+    "choices": [
+      "Henry III",
+      "Edward I",
+      "Edward II",
+      "Richard II"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Pragmatic Sanction of 1713 concerned succession to the ___?",
+    "answer": "Habsburg throne",
+    "choices": [
+      "French throne",
+      "Habsburg throne",
+      "Polish throne",
+      "Spanish throne"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The War of the Austrian Succession ended with the ___?",
+    "answer": "Treaty of Aix-la-Chapelle",
+    "choices": [
+      "Peace of Westphalia",
+      "Treaty of Aix-la-Chapelle",
+      "Treaty of Utrecht",
+      "Treaty of Paris"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Congress of Vienna's principle of legitimacy was championed by ___?",
+    "answer": "Talleyrand",
+    "choices": [
+      "Metternich",
+      "Talleyrand",
+      "Castlereagh",
+      "Tsar Alexander"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Holy Alliance (1815) was proposed by ___?",
+    "answer": "Tsar Alexander I",
+    "choices": [
+      "Metternich",
+      "Tsar Alexander I",
+      "Frederick William III",
+      "Castlereagh"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The First International was founded by ___?",
+    "answer": "Karl Marx",
+    "choices": [
+      "Friedrich Engels",
+      "Karl Marx",
+      "Mikhail Bakunin",
+      "Ferdinand Lassalle"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Paris Commune of 1871 was suppressed in ___?",
+    "answer": "La semaine sanglante (Bloody Week)",
+    "choices": [
+      "A quick coup",
+      "La semaine sanglante (Bloody Week)",
+      "A Russian intervention",
+      "A general amnesty"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Fashoda Crisis (1898) nearly brought Britain and France to war over ___?",
+    "answer": "Control of the Upper Nile",
+    "choices": [
+      "Morocco",
+      "Control of the Upper Nile",
+      "West Africa",
+      "Madagascar"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Agadir Crisis (1911) was a standoff between Germany and ___?",
+    "answer": "France",
+    "choices": [
+      "Britain",
+      "France",
+      "Russia",
+      "Spain"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Brest-Litovsk Treaty (1918) removed which country from WWI?",
+    "answer": "Russia",
+    "choices": [
+      "Bulgaria",
+      "Russia",
+      "Austria-Hungary",
+      "Ottoman Empire"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Brest-Litovsk Treaty was between Germany and ___?",
+    "answer": "Bolshevik Russia",
+    "choices": [
+      "Tsarist Russia",
+      "Bolshevik Russia",
+      "Provisional Government Russia",
+      "Ukraine alone"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Stresa Front (1935) allied Britain, France, and ___?",
+    "answer": "Italy",
+    "choices": [
+      "Belgium",
+      "Italy",
+      "Poland",
+      "Czechoslovakia"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Munich Agreement (1938) conceded the Sudetenland to ___?",
+    "answer": "Nazi Germany",
+    "choices": [
+      "Austria",
+      "Nazi Germany",
+      "Hungary",
+      "Poland"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Molotov-Ribbentrop Pact secretly divided ___?",
+    "answer": "Eastern Europe into German and Soviet spheres",
+    "choices": [
+      "Africa into German and Italian spheres",
+      "Eastern Europe into German and Soviet spheres",
+      "The Baltic into German and Finnish spheres",
+      "Poland between Germany and Hungary"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Atlantic Charter was signed by Roosevelt and ___?",
+    "answer": "Churchill",
+    "choices": [
+      "Stalin",
+      "Churchill",
+      "de Gaulle",
+      "Chiang Kai-shek"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Atlantic Charter was signed in ___?",
+    "answer": "1941",
+    "choices": [
+      "1939",
+      "1940",
+      "1941",
+      "1942"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Platt Amendment gave the US control over ___?",
+    "answer": "Cuba",
+    "choices": [
+      "Panama",
+      "Cuba",
+      "Puerto Rico",
+      "Philippines"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The League of Nations failed partly because ___?",
+    "answer": "The US Senate refused to join",
+    "choices": [
+      "Germany refused to recognize it",
+      "The US Senate refused to join",
+      "Britain withdrew early",
+      "France dominated it too much"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The United Nations Charter was signed in ___?",
+    "answer": "San Francisco",
+    "choices": [
+      "New York",
+      "San Francisco",
+      "Geneva",
+      "London"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Warsaw Pact was formed in ___?",
+    "answer": "1955",
+    "choices": [
+      "1949",
+      "1952",
+      "1955",
+      "1957"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Hungarian Uprising against Soviet rule was in ___?",
+    "answer": "1956",
+    "choices": [
+      "1953",
+      "1955",
+      "1956",
+      "1961"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Prague Spring was crushed by Soviet forces in ___?",
+    "answer": "1968",
+    "choices": [
+      "1965",
+      "1967",
+      "1968",
+      "1970"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Solidarity trade union movement emerged in ___?",
+    "answer": "Poland",
+    "choices": [
+      "Hungary",
+      "Poland",
+      "Czechoslovakia",
+      "East Germany"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Lech Walesa led the Solidarity movement in ___?",
+    "answer": "Poland",
+    "choices": [
+      "Hungary",
+      "Poland",
+      "Czech Republic",
+      "Romania"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The velvet revolution overthrew communism in ___?",
+    "answer": "Czechoslovakia",
+    "choices": [
+      "Poland",
+      "Czechoslovakia",
+      "Hungary",
+      "Romania"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The velvet revolution was led by ___?",
+    "answer": "Vaclav Havel",
+    "choices": [
+      "Alexander Dubcek",
+      "Vaclav Havel",
+      "Lech Walesa",
+      "Ion Iliescu"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Maastricht Treaty was formally the Treaty on ___?",
+    "answer": "European Union",
+    "choices": [
+      "Rome",
+      "European Union",
+      "Lisbon",
+      "Amsterdam"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "German reunification occurred in ___?",
+    "answer": "1990",
+    "choices": [
+      "1988",
+      "1989",
+      "1990",
+      "1991"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Dayton Accords ending the Bosnian War were signed in ___?",
+    "answer": "1995",
+    "choices": [
+      "1993",
+      "1994",
+      "1995",
+      "1996"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The International Criminal Court was established in ___?",
+    "answer": "2002",
+    "choices": [
+      "1998",
+      "2000",
+      "2002",
+      "2004"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Rome Statute establishing the ICC was signed in ___?",
+    "answer": "1998",
+    "choices": [
+      "1995",
+      "1998",
+      "2000",
+      "2002"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Srebrenica massacre occurred in ___?",
+    "answer": "1995",
+    "choices": [
+      "1993",
+      "1994",
+      "1995",
+      "1996"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Khmer Rouge regime in Cambodia lasted from 1975 to ___?",
+    "answer": "1979",
+    "choices": [
+      "1977",
+      "1978",
+      "1979",
+      "1981"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Khmer Rouge was led by ___?",
+    "answer": "Pol Pot",
+    "choices": [
+      "Hun Sen",
+      "Pol Pot",
+      "Norodom Sihanouk",
+      "Lon Nol"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Partition of India occurred in ___?",
+    "answer": "1947",
+    "choices": [
+      "1945",
+      "1947",
+      "1950",
+      "1952"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The architect of Indian partition was ___?",
+    "answer": "Mountbatten",
+    "choices": [
+      "Churchill",
+      "Mountbatten",
+      "Attlee",
+      "Cripps"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Truman Doctrine pledged to support countries resisting ___?",
+    "answer": "Communist subversion",
+    "choices": [
+      "German aggression",
+      "Communist subversion",
+      "Japanese expansion",
+      "Colonial independence"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The NSC-68 document (1950) outlined ___?",
+    "answer": "US Cold War strategy for containing communism",
+    "choices": [
+      "The Korean War plan",
+      "US Cold War strategy for containing communism",
+      "The H-bomb development plan",
+      "NATO expansion strategy"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Containment as a US Cold War strategy was articulated by ___?",
+    "answer": "George Kennan",
+    "choices": [
+      "Dean Acheson",
+      "George Kennan",
+      "John Foster Dulles",
+      "Henry Kissinger"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Domino Theory held that if one country fell to communism ___?",
+    "answer": "Neighboring countries would follow",
+    "choices": [
+      "The US would intervene militarily",
+      "Neighboring countries would follow",
+      "The Soviet Union would expand",
+      "Nuclear war would result"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Long Telegram (1946) warning about Soviet expansionism was written by ___?",
+    "answer": "George Kennan",
+    "choices": [
+      "Dean Acheson",
+      "George Kennan",
+      "Harry Hopkins",
+      "James Byrnes"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Cuban Missile Crisis was resolved when the USSR agreed to remove missiles in exchange for ___?",
+    "answer": "A US pledge not to invade Cuba",
+    "choices": [
+      "US nuclear disarmament",
+      "A US pledge not to invade Cuba",
+      "Removal of US missiles from Turkey",
+      "Economic aid to Cuba"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Nuclear Test Ban Treaty (1963) prohibited tests in ___?",
+    "answer": "The atmosphere, underwater, and in space",
+    "choices": [
+      "All environments",
+      "The atmosphere, underwater, and in space",
+      "Underground only",
+      "Nuclear-free zones"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Tet Offensive was launched in ___?",
+    "answer": "1968",
+    "choices": [
+      "1965",
+      "1967",
+      "1968",
+      "1969"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Paris Peace Accords ending US involvement in Vietnam were signed in ___?",
+    "answer": "1973",
+    "choices": [
+      "1970",
+      "1972",
+      "1973",
+      "1975"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Nixon's 'opening to China' visit was in ___?",
+    "answer": "1972",
+    "choices": [
+      "1969",
+      "1971",
+      "1972",
+      "1974"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The SALT II treaty was signed but never ratified because of the Soviet invasion of ___?",
+    "answer": "Afghanistan",
+    "choices": [
+      "Poland",
+      "Afghanistan",
+      "Czechoslovakia",
+      "Hungary"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The START treaty was signed by the US and USSR in ___?",
+    "answer": "1991",
+    "choices": [
+      "1987",
+      "1989",
+      "1991",
+      "1993"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Berlin Conference (1884-85) was hosted by ___?",
+    "answer": "Germany",
+    "choices": [
+      "Britain",
+      "Germany",
+      "France",
+      "Belgium"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Fashoda Crisis (1898) was a standoff between Britain and ___?",
+    "answer": "France",
+    "choices": [
+      "Germany",
+      "France",
+      "Russia",
+      "Italy"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Battle of the Bulge was in ___?",
+    "answer": "1944",
+    "choices": [
+      "1942",
+      "1943",
+      "1944",
+      "1945"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Battle of Britain (1940) was fought primarily ___?",
+    "answer": "In the air",
+    "choices": [
+      "At sea",
+      "In the air",
+      "On land",
+      "Underground"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Weimar Republic's hyperinflation crisis occurred in ___?",
+    "answer": "1923",
+    "choices": [
+      "1919",
+      "1921",
+      "1923",
+      "1925"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Enabling Act of 1933 gave dictatorial powers to ___?",
+    "answer": "Adolf Hitler",
+    "choices": [
+      "Paul von Hindenburg",
+      "Adolf Hitler",
+      "Franz von Papen",
+      "Ernst Rohm"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Reichstag fire in 1933 was blamed on ___?",
+    "answer": "Communists",
+    "choices": [
+      "Jews",
+      "Communists",
+      "Social Democrats",
+      "Catholics"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Suez Crisis occurred in ___?",
+    "answer": "1956",
+    "choices": [
+      "1950",
+      "1954",
+      "1956",
+      "1958"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Suez Crisis involved Britain, France, and ___?",
+    "answer": "Israel",
+    "choices": [
+      "USA",
+      "Israel",
+      "Jordan",
+      "Syria"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "NATO was created as an alliance against ___?",
+    "answer": "Soviet expansion",
+    "choices": [
+      "German rearmament",
+      "Soviet expansion",
+      "Communist China",
+      "Nuclear war"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "The Truman Doctrine specifically pledged aid to Greece and ___?",
+    "answer": "Turkey",
+    "choices": [
+      "Italy",
+      "Turkey",
+      "France",
+      "Korea"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Missouri Compromise admitted Missouri as a slave state and ___?",
+    "answer": "Maine as a free state",
+    "choices": [
+      "Kansas as a free state",
+      "Maine as a free state",
+      "Ohio as a free state",
+      "Iowa as a free state"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Kansas-Nebraska Act of 1854 concerned ___?",
+    "answer": "Slavery in new territories",
+    "choices": [
+      "Railroad routes west",
+      "Slavery in new territories",
+      "Native American removal",
+      "Tariff rates"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Dred Scott decision was made by the ___?",
+    "answer": "Supreme Court",
+    "choices": [
+      "Congress",
+      "Supreme Court",
+      "President",
+      "Senate"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Mexican-American War began in ___?",
+    "answer": "1846",
+    "choices": [
+      "1844",
+      "1846",
+      "1848",
+      "1850"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Spanish-American War began in ___?",
+    "answer": "1898",
+    "choices": [
+      "1895",
+      "1897",
+      "1898",
+      "1900"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Platt Amendment (1901) gave the US special rights over ___?",
+    "answer": "Cuba",
+    "choices": [
+      "Philippines",
+      "Cuba",
+      "Puerto Rico",
+      "Panama"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Progressive Era in the US occurred primarily in the ___?",
+    "answer": "Early 20th century",
+    "choices": [
+      "Mid 19th century",
+      "Early 20th century",
+      "Late 19th century",
+      "Mid 20th century"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The 16th Amendment established ___?",
+    "answer": "Federal income tax",
+    "choices": [
+      "Senate election by voters",
+      "Federal income tax",
+      "Prohibition",
+      "Women's suffrage"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The 17th Amendment established ___?",
+    "answer": "Direct election of US senators",
+    "choices": [
+      "Income tax",
+      "Direct election of US senators",
+      "Prohibition",
+      "Women's suffrage"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The 18th Amendment established ___?",
+    "answer": "Prohibition",
+    "choices": [
+      "Income tax",
+      "Women's suffrage",
+      "Prohibition",
+      "Direct senate election"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The 21st Amendment ___?",
+    "answer": "Repealed Prohibition",
+    "choices": [
+      "Established income tax",
+      "Repealed Prohibition",
+      "Gave votes to 18-year-olds",
+      "Banned poll taxes"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Taiping Rebellion lasted from 1850 to ___?",
+    "answer": "1864",
+    "choices": [
+      "1858",
+      "1861",
+      "1864",
+      "1870"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Sepoy Mutiny (Indian Rebellion) was suppressed by ___?",
+    "answer": "The British East India Company and Crown forces",
+    "choices": [
+      "The French Army",
+      "The British East India Company and Crown forces",
+      "Other Indian rulers alone",
+      "The Mughal Emperor"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The First Boer War was in ___?",
+    "answer": "1880-1881",
+    "choices": [
+      "1875-1876",
+      "1880-1881",
+      "1890-1891",
+      "1899-1900"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Second Boer War ended in ___?",
+    "answer": "1902",
+    "choices": [
+      "1899",
+      "1901",
+      "1902",
+      "1904"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Zulu Kingdom was defeated by Britain at the Battle of ___?",
+    "answer": "Ulundi",
+    "choices": [
+      "Rorke's Drift",
+      "Ulundi",
+      "Isandlwana",
+      "Blood River"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Opium Wars resulted in ___?",
+    "answer": "Treaty ports opened in China",
+    "choices": [
+      "China banning opium",
+      "Treaty ports opened in China",
+      "Britain losing Hong Kong",
+      "Japan gaining trade rights"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Hong Kong was ceded to Britain after the ___?",
+    "answer": "First Opium War",
+    "choices": [
+      "Second Opium War",
+      "First Opium War",
+      "Boxer Rebellion",
+      "Sino-Japanese War"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Tongzhi Restoration attempted to revive ___?",
+    "answer": "Qing Dynasty authority in China",
+    "choices": [
+      "The Ming Dynasty",
+      "Qing Dynasty authority in China",
+      "Republican government",
+      "Buddhist institutions"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Self-Strengthening Movement in China occurred in the ___?",
+    "answer": "1860s-1890s",
+    "choices": [
+      "1840s-1860s",
+      "1860s-1890s",
+      "1890s-1910s",
+      "1900s-1920s"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Boxer Protocol (1901) forced China to pay indemnity to ___?",
+    "answer": "Eight-nation alliance",
+    "choices": [
+      "Britain and France",
+      "Eight-nation alliance",
+      "Japan and Russia",
+      "The USA alone"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Sun Yat-sen founded the ___?",
+    "answer": "Kuomintang (Nationalist Party)",
+    "choices": [
+      "Chinese Communist Party",
+      "Kuomintang (Nationalist Party)",
+      "Qing Party",
+      "Reform Party"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Republic of China was founded in ___?",
+    "answer": "1912",
+    "choices": [
+      "1905",
+      "1908",
+      "1912",
+      "1919"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Long March was undertaken by ___?",
+    "answer": "Chinese Communists",
+    "choices": [
+      "Kuomintang forces",
+      "Chinese Communists",
+      "Japanese forces",
+      "Warlord armies"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Long March ended in ___?",
+    "answer": "Yan'an",
+    "choices": [
+      "Beijing",
+      "Yan'an",
+      "Shanghai",
+      "Chongqing"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Nanking Treaty (1842) ended the ___?",
+    "answer": "First Opium War",
+    "choices": [
+      "Boxer Rebellion",
+      "First Opium War",
+      "Second Sino-Japanese War",
+      "Taiping Rebellion"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Scramble for Africa began formally at the ___?",
+    "answer": "Berlin Conference (1884)",
+    "choices": [
+      "Vienna Congress",
+      "Berlin Conference (1884)",
+      "Paris Peace Conference",
+      "Brussels Conference"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "King Leopold II controlled which African territory personally?",
+    "answer": "Congo Free State",
+    "choices": [
+      "Belgian East Africa",
+      "Congo Free State",
+      "French Congo",
+      "Rhodesia"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Mau Mau Uprising (1952-1960) was in ___?",
+    "answer": "Kenya",
+    "choices": [
+      "Nigeria",
+      "Kenya",
+      "Tanzania",
+      "Uganda"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Kwame Nkrumah led independence in ___?",
+    "answer": "Ghana",
+    "choices": [
+      "Nigeria",
+      "Ghana",
+      "Kenya",
+      "Guinea"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Ghana's independence in 1957 was the first sub-Saharan African country to gain independence from ___?",
+    "answer": "Britain",
+    "choices": [
+      "France",
+      "Britain",
+      "Belgium",
+      "Portugal"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Year of Africa (mass independence) was ___?",
+    "answer": "1960",
+    "choices": [
+      "1955",
+      "1960",
+      "1963",
+      "1965"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The ANC (African National Congress) was founded in ___?",
+    "answer": "1912",
+    "choices": [
+      "1900",
+      "1912",
+      "1925",
+      "1944"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Sharpeville Massacre occurred in ___?",
+    "answer": "1960",
+    "choices": [
+      "1950",
+      "1955",
+      "1960",
+      "1965"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Iran Hostage Crisis lasted from 1979 to ___?",
+    "answer": "1981",
+    "choices": [
+      "1980",
+      "1981",
+      "1982",
+      "1983"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Iran-Iraq War was triggered by Iraq's invasion of ___?",
+    "answer": "Iran",
+    "choices": [
+      "Kuwait",
+      "Iran",
+      "Saudi Arabia",
+      "Syria"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Iraq invaded Kuwait in ___?",
+    "answer": "1990",
+    "choices": [
+      "1988",
+      "1989",
+      "1990",
+      "1991"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Oslo Accords of 1993 were signed at the ___?",
+    "answer": "White House",
+    "choices": [
+      "Oslo City Hall",
+      "White House",
+      "United Nations",
+      "Camp David"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The first Palestinian intifada began in ___?",
+    "answer": "1987",
+    "choices": [
+      "1982",
+      "1985",
+      "1987",
+      "1989"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The founding of the PLO (Palestine Liberation Organization) was in ___?",
+    "answer": "1964",
+    "choices": [
+      "1948",
+      "1956",
+      "1964",
+      "1967"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Yasser Arafat led the ___?",
+    "answer": "PLO",
+    "choices": [
+      "Hamas",
+      "PLO",
+      "Fatah only",
+      "Palestinian Authority"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Velvet Divorce split ___?",
+    "answer": "Czechoslovakia into Czech Republic and Slovakia",
+    "choices": [
+      "Yugoslavia into Slovenia and Croatia",
+      "Czechoslovakia into Czech Republic and Slovakia",
+      "Soviet Union into Russia and Ukraine",
+      "Yugoslavia into Bosnia and Serbia"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Battle of Adwa (1896) was a victory for ___?",
+    "answer": "Ethiopia over Italy",
+    "choices": [
+      "Italy over Ethiopia",
+      "Ethiopia over Italy",
+      "Britain over Sudan",
+      "France over Morocco"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Fashoda Crisis was resolved in favor of ___?",
+    "answer": "Britain",
+    "choices": [
+      "France",
+      "Britain",
+      "Egypt",
+      "Sudan"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Algeciras Conference (1906) defused the First ___?",
+    "answer": "Moroccan Crisis",
+    "choices": [
+      "Balkan Crisis",
+      "Moroccan Crisis",
+      "Bosnian Crisis",
+      "Suez Crisis"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The First Moroccan Crisis (1905) was provoked by ___?",
+    "answer": "Germany",
+    "choices": [
+      "Britain",
+      "Germany",
+      "France",
+      "Spain"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Bosnian Crisis (1908) was caused by Austria-Hungary annexing ___?",
+    "answer": "Bosnia and Herzegovina",
+    "choices": [
+      "Serbia",
+      "Bosnia and Herzegovina",
+      "Croatia",
+      "Slovenia"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Sarajevo assassinations of 1914 killed Archduke Franz Ferdinand and ___?",
+    "answer": "His wife Sophie",
+    "choices": [
+      "His aide-de-camp",
+      "His wife Sophie",
+      "His driver",
+      "His bodyguard"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Schlieffen Plan called for Germany to first defeat ___?",
+    "answer": "France",
+    "choices": [
+      "Russia",
+      "France",
+      "Britain",
+      "Belgium"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Gallipoli Campaign (1915-1916) was an Allied attempt to seize ___?",
+    "answer": "The Dardanelles",
+    "choices": [
+      "Suez Canal",
+      "The Dardanelles",
+      "Baghdad",
+      "Jerusalem"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Balfour Declaration was issued by which British official?",
+    "answer": "Arthur James Balfour",
+    "choices": [
+      "Lloyd George",
+      "Arthur James Balfour",
+      "Winston Churchill",
+      "Herbert Asquith"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The League of Nations Covenant was part of the ___?",
+    "answer": "Treaty of Versailles",
+    "choices": [
+      "Treaty of Lausanne",
+      "Treaty of Versailles",
+      "Treaty of Saint-Germain",
+      "Treaty of Neuilly"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Permanent Court of International Justice was established in ___?",
+    "answer": "1920",
+    "choices": [
+      "1919",
+      "1920",
+      "1921",
+      "1922"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Dawes Plan (1924) restructured German ___?",
+    "answer": "Reparations payments",
+    "choices": [
+      "Military rebuilding",
+      "Reparations payments",
+      "Border disputes",
+      "Trade restrictions"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Locarno Treaties (1925) guaranteed the western borders of ___?",
+    "answer": "Germany",
+    "choices": [
+      "France",
+      "Germany",
+      "Belgium",
+      "Italy"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Kellogg-Briand Pact (1928) renounced ___?",
+    "answer": "War as an instrument of national policy",
+    "choices": [
+      "Nuclear weapons",
+      "War as an instrument of national policy",
+      "Colonial expansion",
+      "Trade barriers"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Decolonization of French Indochina after 1954 led to the independence of ___?",
+    "answer": "Vietnam, Laos, and Cambodia",
+    "choices": [
+      "Vietnam and Korea",
+      "Vietnam, Laos, and Cambodia",
+      "Burma and Malaya",
+      "Philippines and Indonesia"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Battle of Dien Bien Phu (1954) was France's defeat by ___?",
+    "answer": "Viet Minh",
+    "choices": [
+      "Viet Cong",
+      "Viet Minh",
+      "Pathet Lao",
+      "Khmer Rouge"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Geneva Accords (1954) temporarily divided Vietnam at the ___?",
+    "answer": "17th parallel",
+    "choices": [
+      "38th parallel",
+      "17th parallel",
+      "20th parallel",
+      "15th parallel"
+    ]
+  }
 ]

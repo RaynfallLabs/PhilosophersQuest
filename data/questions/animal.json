@@ -638,7 +638,7 @@
     ]
   },
   {
-    "tier": 1,
+    "tier": 2,
     "question": "A group of ravens is called a ___?",
     "answer": "Unkindness",
     "choices": [
@@ -649,7 +649,7 @@
     ]
   },
   {
-    "tier": 1,
+    "tier": 2,
     "question": "A group of owls is called a ___?",
     "answer": "Parliament",
     "choices": [
@@ -814,7 +814,7 @@
     ]
   },
   {
-    "tier": 1,
+    "tier": 2,
     "question": "A group of bears is called a ___?",
     "answer": "Sleuth",
     "choices": [
@@ -957,7 +957,7 @@
     ]
   },
   {
-    "tier": 1,
+    "tier": 2,
     "question": "A baby swan is called a ___?",
     "answer": "Cygnet",
     "choices": [
@@ -990,7 +990,7 @@
     ]
   },
   {
-    "tier": 1,
+    "tier": 2,
     "question": "A group of flamingos is called a ___?",
     "answer": "Flamboyance",
     "choices": [
@@ -1034,7 +1034,7 @@
     ]
   },
   {
-    "tier": 1,
+    "tier": 2,
     "question": "A group of jellyfish is called a ___?",
     "answer": "Bloom",
     "choices": [
@@ -1045,7 +1045,7 @@
     ]
   },
   {
-    "tier": 1,
+    "tier": 2,
     "question": "A group of crocodiles is called a ___?",
     "answer": "Float",
     "choices": [
@@ -1377,7 +1377,7 @@
   {
     "tier": 2,
     "question": "Which animal has the largest brain relative to its body size?",
-    "answer": "Sperm whale (largest overall)",
+    "answer": "Dolphin",
     "choices": [
       "Elephant",
       "Dolphin",
@@ -2113,7 +2113,7 @@
   },
   {
     "tier": 3,
-    "question": "The four stages of complete metamorphosis are: egg → larva → ___ → adult?",
+    "question": "The four stages of complete metamorphosis are: egg -> larva -> ___ -> adult?",
     "answer": "Pupa",
     "choices": [
       "Nymph",
@@ -2685,7 +2685,7 @@
   },
   {
     "tier": 4,
-    "question": "Müllerian mimicry is when multiple ___ species resemble each other?",
+    "question": "Mullerian mimicry is when multiple ___ species resemble each other?",
     "answer": "Harmful",
     "choices": [
       "Harmless",
@@ -3069,7 +3069,7 @@
     ]
   },
   {
-    "tier": 5,
+    "tier": 1,
     "question": "Natural selection was proposed by ___?",
     "answer": "Charles Darwin",
     "choices": [
@@ -3213,7 +3213,7 @@
   },
   {
     "tier": 5,
-    "question": "The central dogma of molecular biology is: DNA → ___ → Protein?",
+    "question": "The central dogma of molecular biology is: DNA -> ___ -> Protein?",
     "answer": "RNA",
     "choices": [
       "Amino acid",
@@ -3555,17 +3555,17 @@
   {
     "tier": 5,
     "question": "The sodium-potassium pump maintains resting potential by pumping ___?",
-    "answer": "3 Na⁺ out, 2 K⁺ in",
+    "answer": "3 Na? out, 2 K? in",
     "choices": [
-      "2 Na⁺ out, 3 K⁺ in",
-      "3 Na⁺ out, 2 K⁺ in",
-      "Equal Na⁺ and K⁺ in both directions",
-      "Ca²⁺ out and Na⁺ in"
+      "2 Na? out, 3 K? in",
+      "3 Na? out, 2 K? in",
+      "Equal Na? and K? in both directions",
+      "Ca^2? out and Na? in"
     ]
   },
   {
     "tier": 5,
-    "question": "The Hardy-Weinberg equation is: p² + 2pq + q² = ___?",
+    "question": "The Hardy-Weinberg equation is: p^2 + 2pq + q^2 = ___?",
     "answer": "1",
     "choices": [
       "0",
@@ -5138,7 +5138,7 @@
   },
   {
     "tier": 5,
-    "question": "Müllerian mimicry differs from Batesian mimicry in that all mimics are ___?",
+    "question": "Mullerian mimicry differs from Batesian mimicry in that all mimics are ___?",
     "answer": "Genuinely harmful (unpalatable or venomous)",
     "choices": [
       "Harmless imitators",
@@ -5457,7 +5457,7 @@
   },
   {
     "tier": 5,
-    "question": "The scientific name for the Galápagos tortoise is ___?",
+    "question": "The scientific name for the Galapagos tortoise is ___?",
     "answer": "Chelonoidis niger",
     "choices": [
       "Aldabrachelys gigantea",

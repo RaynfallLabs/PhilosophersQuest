@@ -1,0 +1,5 @@
+[
+  {"index": 90, "field": "question", "current": "Which herb used in Italian cooking smells like anise?", "correct": "Which herb is most associated with Italian cooking and has a sweet, clove-like aroma?", "reason": "Basil does NOT smell primarily like anise (that's tarragon or fennel fronds). Basil has a sweet, clove-like aroma. Fixing the question premise so basil is unambiguously correct."},
+  {"index": 144, "field": "tier", "current": 1, "correct": 3, "reason": "Tempering chocolate (controlled heating/cooling to form specific cocoa butter crystals) is intermediate culinary knowledge — T3, not T1 basic kitchen knowledge"},
+  {"index": 184, "field": "tier", "current": 2, "correct": 4, "reason": "Spherification (sodium alginate + calcium chloride — molecular gastronomy) is advanced culinary technique, T4 not T2. Another spherification question is correctly placed at T4."}
+]

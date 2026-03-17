@@ -109,8 +109,10 @@ class QuizEngine:
         deck_key = (subject, tier)
 
         # Build the persistent deck for this subject+tier if it doesn't exist yet.
+        # Use ONLY the questions at exactly this tier so lower-tier questions don't
+        # flood higher-tier decks and cause frequent repeats.
         if deck_key not in self._decks:
-            pool = [q for q in all_qs if q.get('tier', 1) <= tier] or all_qs[:]
+            pool = [q for q in all_qs if q.get('tier', 1) == tier] or all_qs[:]
             random.shuffle(pool)
             self._decks[deck_key]    = pool
             self._deck_idx[deck_key] = 0
@@ -275,7 +277,7 @@ class QuizEngine:
         deck_key = (self.subject, self.tier)
 
         if deck_key not in self._decks:
-            new_pool = [q for q in all_qs if q.get('tier', 1) <= self.tier] or all_qs[:]
+            new_pool = [q for q in all_qs if q.get('tier', 1) == self.tier] or all_qs[:]
             random.shuffle(new_pool)
             self._decks[deck_key]    = new_pool
             self._deck_idx[deck_key] = 0

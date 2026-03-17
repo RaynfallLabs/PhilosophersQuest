@@ -1,0 +1,11 @@
+[
+  {"index": 21, "field": "question", "current": "What number commandment is 'You shall not murder'?", "correct": "In Protestant tradition, what number commandment is 'You shall not murder'?", "reason": "Commandment numbering differs by tradition: 6th in Protestant/Orthodox, 5th in Catholic/Lutheran. Must specify tradition to have one correct answer."},
+  {"index": 23, "field": "question", "current": "Which commandment says to honor your father and mother?", "correct": "In Protestant tradition, which commandment says to honor your father and mother?", "reason": "5th in Protestant/Orthodox, 4th in Catholic/Lutheran. Must specify tradition."},
+  {"index": 39, "field": "question", "current": "Which commandment says to keep the Sabbath holy?", "correct": "In Protestant tradition, which commandment says to keep the Sabbath holy?", "reason": "4th in Protestant/Orthodox, 3rd in Catholic/Lutheran. Must specify tradition."},
+  {"index": 46, "field": "tier", "current": 1, "correct": 3, "reason": "Knowing what the Upanishads are requires study beyond basic religious literacy — T3 not T1"},
+  {"index": 64, "field": "answer", "current": "Anubis", "correct": "Osiris", "reason": "Osiris is the king/judge of the dead. Anubis is god of mummification/embalming. Clear factual error."},
+  {"index": 66, "field": "tier", "current": 1, "correct": 2, "reason": "Bhagavad Gita content is T2 educated-adult knowledge, not T1 universal common knowledge"},
+  {"index": 70, "field": "tier", "current": 1, "correct": 3, "reason": "Vedanta as philosophical school exploring Brahman/Atman requires serious study — T3 not T1"},
+  {"index": 200, "field": "tier", "current": 3, "correct": 5, "reason": "Bultmann's demythologization is graduate-level academic theology — T5 not T3"},
+  {"index": 265, "field": "answer", "current": "Sheol", "correct": "Hades", "reason": "Question asks for the GREEK term for the Hebrew underworld. Sheol IS the Hebrew term. The Greek equivalent is Hades. Clear contradiction between question and answer."}
+]

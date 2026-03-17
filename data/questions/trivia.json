@@ -980,17 +980,6 @@
   },
   {
     "tier": 1,
-    "question": "In Ratatouille, what is the name of the rat who wants to be a chef?",
-    "answer": "Remy",
-    "choices": [
-      "Remy",
-      "Gusteau",
-      "Emile",
-      "Django"
-    ]
-  },
-  {
-    "tier": 1,
     "question": "In A Bug's Life, what is the name of the grasshopper villain?",
     "answer": "Hopper",
     "choices": [
@@ -998,17 +987,6 @@
       "Molt",
       "Thumper",
       "Axel"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "In Disney's The Emperor's New Groove, who is Emperor Kuzco's loyal advisor turned villain?",
-    "answer": "Yzma",
-    "choices": [
-      "Yzma",
-      "Kronk",
-      "Pacha",
-      "Chicha"
     ]
   },
   {
@@ -1102,9 +1080,9 @@
   {
     "tier": 2,
     "question": "In Minecraft, what is the maximum enchantment level for most enchantments?",
-    "answer": "5",
+    "answer": "3",
     "choices": [
-      "5",
+      "3",
       "3",
       "10",
       "7"
@@ -1651,17 +1629,6 @@
   },
   {
     "tier": 2,
-    "question": "In Disney's Beauty and the Beast, what is the name of the enchanted teapot?",
-    "answer": "Mrs. Potts",
-    "choices": [
-      "Mrs. Potts",
-      "Chip",
-      "Lumiere",
-      "Cogsworth"
-    ]
-  },
-  {
-    "tier": 2,
     "question": "In Regular Show, what is the name of the park's boss?",
     "answer": "Benson",
     "choices": [
@@ -1805,28 +1772,6 @@
   },
   {
     "tier": 2,
-    "question": "In DuckTales, what is the name of the robot suit worn by Fenton Crackshell?",
-    "answer": "Gizmoduck armor",
-    "choices": [
-      "Gizmoduck armor",
-      "Roboduck suit",
-      "Duckatron",
-      "Techno-suit"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "In Disney's Mulan, what is the name of Mulan's horse?",
-    "answer": "Khan",
-    "choices": [
-      "Khan",
-      "Maximus",
-      "Bullseye",
-      "Angus"
-    ]
-  },
-  {
-    "tier": 2,
     "question": "In WALL-E, what does WALL-E collect as a hobby?",
     "answer": "Interesting objects and trinkets",
     "choices": [
@@ -1834,28 +1779,6 @@
       "Bottle caps",
       "Plants",
       "Broken robots"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "In Ratatouille, what is the name of the junior chef who Remy controls?",
-    "answer": "Linguini",
-    "choices": [
-      "Linguini",
-      "Colette",
-      "Skinner",
-      "Horst"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "In Disney's Robin Hood, what animal is Little John?",
-    "answer": "A bear",
-    "choices": [
-      "A bear",
-      "A fox",
-      "A wolf",
-      "A badger"
     ]
   },
   {
@@ -1904,17 +1827,6 @@
   },
   {
     "tier": 2,
-    "question": "In Disney's Cinderella, what time must Cinderella leave the ball?",
-    "answer": "Midnight",
-    "choices": [
-      "Midnight",
-      "Ten o'clock",
-      "Sunrise",
-      "Sundown"
-    ]
-  },
-  {
-    "tier": 2,
     "question": "In Disney's Peter Pan, who is the villain that pursues Peter Pan?",
     "answer": "Captain Hook",
     "choices": [
@@ -1933,39 +1845,6 @@
       "Fame and popularity",
       "Free food",
       "Video games"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "In Gargoyles, what is the name of the human detective who befriends Goliath?",
-    "answer": "Elisa Maza",
-    "choices": [
-      "Elisa Maza",
-      "Fox Xanatos",
-      "Coldfire",
-      "Angela"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "In Disney's Pinocchio, who is Pinocchio's insect conscience?",
-    "answer": "Jiminy Cricket",
-    "choices": [
-      "Jiminy Cricket",
-      "Honest John",
-      "Gideon",
-      "Figaro"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "In Disney's Peter Pan, what is the name of Captain Hook's first mate?",
-    "answer": "Smee",
-    "choices": [
-      "Smee",
-      "Starkey",
-      "Cecco",
-      "Skylights"
     ]
   },
   {
@@ -2003,39 +1882,6 @@
   },
   {
     "tier": 2,
-    "question": "In Ratatouille, what is Gusteau's famous motto?",
-    "answer": "Anyone can cook",
-    "choices": [
-      "Anyone can cook",
-      "Every rat can dream",
-      "Cooking is passion",
-      "Food is life"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "In Monsters, Inc., what is the name of the villain monster with a lizard-like appearance?",
-    "answer": "Randall Boggs",
-    "choices": [
-      "Randall Boggs",
-      "Henry Waternoose",
-      "Roz",
-      "Mike Wazowski"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "In Disney's Tangled, what magical property does Rapunzel's hair have?",
-    "answer": "It can heal injuries and restore youth",
-    "choices": [
-      "It can heal injuries and restore youth",
-      "It grants wishes",
-      "It lets her fly",
-      "It repels evil"
-    ]
-  },
-  {
-    "tier": 2,
     "question": "In Disney's The Princess and the Frog, what is the name of the firefly who helps Tiana?",
     "answer": "Ray",
     "choices": [
@@ -2043,17 +1889,6 @@
       "Louis",
       "Lawrence",
       "Reggie"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "In Disney's Brother Bear, what animal does Kenai get transformed into?",
-    "answer": "A bear",
-    "choices": [
-      "A bear",
-      "A wolf",
-      "A moose",
-      "An eagle"
     ]
   },
   {
@@ -2153,28 +1988,6 @@
       "A golden crown",
       "A magic ring",
       "A silk glove"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "In Disney's Pinocchio, what is the name of Geppetto's cat?",
-    "answer": "Figaro",
-    "choices": [
-      "Figaro",
-      "Mittens",
-      "Cleo",
-      "Whiskers"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "In Disney's Snow White, what is the name of the bashful dwarf?",
-    "answer": "Bashful",
-    "choices": [
-      "Bashful",
-      "Sneezy",
-      "Sleepy",
-      "Happy"
     ]
   },
   {
@@ -2597,28 +2410,6 @@
   },
   {
     "tier": 3,
-    "question": "In Disney's Snow White, what is the name of the grumpy dwarf?",
-    "answer": "Grumpy",
-    "choices": [
-      "Grumpy",
-      "Bashful",
-      "Dopey",
-      "Doc"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "In Disney's Sleeping Beauty, what is the name of the prince who awakens Aurora?",
-    "answer": "Prince Phillip",
-    "choices": [
-      "Prince Phillip",
-      "Prince Charming",
-      "Prince Eric",
-      "Prince Adam"
-    ]
-  },
-  {
-    "tier": 3,
     "question": "In Disney's Robin Hood, what animal is Little John?",
     "answer": "A bear",
     "choices": [
@@ -2641,83 +2432,6 @@
   },
   {
     "tier": 3,
-    "question": "In Monsters, Inc., what is the name of the CEO of Monsters, Inc.?",
-    "answer": "Henry J. Waternoose",
-    "choices": [
-      "Henry J. Waternoose",
-      "Roz",
-      "Fungus",
-      "Mike Wazowski"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "In Up, what is the name of Carl's late wife?",
-    "answer": "Ellie",
-    "choices": [
-      "Ellie",
-      "Emma",
-      "Eleanor",
-      "Elizabeth"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "In Disney's Tangled, what is the name of the bar where the thugs have dreams?",
-    "answer": "The Snuggly Duckling",
-    "choices": [
-      "The Snuggly Duckling",
-      "The Crown Inn",
-      "The Drunken Duck",
-      "The Ruffian's Rest"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "In The Grim Adventures of Billy and Mandy, what game did Billy and Mandy play against the Grim Reaper?",
-    "answer": "Limbo",
-    "choices": [
-      "Limbo",
-      "Chess",
-      "Checkers",
-      "Croquet"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "In Foster's Home for Imaginary Friends, what is the name of the tall blue imaginary friend who is very polite?",
-    "answer": "Wilt",
-    "choices": [
-      "Wilt",
-      "Eduardo",
-      "Coco",
-      "Cheese"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "In Darkwing Duck, what is the name of the electric-powered villain?",
-    "answer": "Megavolt",
-    "choices": [
-      "Megavolt",
-      "Quackerjack",
-      "Bushroot",
-      "Liquidator"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "In Disney's The Princess and the Frog, what instrument does Louis the alligator play?",
-    "answer": "Trumpet",
-    "choices": [
-      "Trumpet",
-      "Saxophone",
-      "Trombone",
-      "Clarinet"
-    ]
-  },
-  {
-    "tier": 3,
     "question": "In Disney's Hercules, who is Hercules' satyr trainer?",
     "answer": "Phil (Philoctetes)",
     "choices": [
@@ -2729,28 +2443,6 @@
   },
   {
     "tier": 3,
-    "question": "In Ed Edd n Eddy, what is the name of Ed's little sister?",
-    "answer": "Sarah",
-    "choices": [
-      "Sarah",
-      "Marie",
-      "May",
-      "Lee"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "In Adventure Time, what is the name of the vampire queen who is also a musician?",
-    "answer": "Marceline the Vampire Queen",
-    "choices": [
-      "Marceline the Vampire Queen",
-      "Flame Princess",
-      "Lumpy Space Princess",
-      "Slime Princess"
-    ]
-  },
-  {
-    "tier": 3,
     "question": "In Regular Show, what is the name of the tall immortal character who skips everywhere?",
     "answer": "Skips",
     "choices": [
@@ -2758,39 +2450,6 @@
       "Pops",
       "Muscle Man",
       "Thomas"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "In Chowder, what is the name of the dim-witted rock monster on the show?",
-    "answer": "Shnitzel",
-    "choices": [
-      "Shnitzel",
-      "Gazpacho",
-      "Truffles",
-      "Panini"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "In The Amazing World of Gumball, what is the name of Gumball's father?",
-    "answer": "Richard Watterson",
-    "choices": [
-      "Richard Watterson",
-      "Darwin Watterson",
-      "Rob",
-      "Larry"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "In Disney's Cinderella, what are the names of Cinderella's wicked stepsisters?",
-    "answer": "Anastasia and Drizella",
-    "choices": [
-      "Anastasia and Drizella",
-      "Flora and Fauna",
-      "Prudence and Millicent",
-      "Beatrice and Marguerite"
     ]
   },
   {
@@ -2813,17 +2472,6 @@
       "The Manhattan Clan",
       "The London Clan",
       "The Avalon Clan"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "In Darkwing Duck, what is the name of Darkwing's adopted daughter?",
-    "answer": "Gosalyn",
-    "choices": [
-      "Gosalyn",
-      "Launchpad",
-      "Morgana",
-      "Honker"
     ]
   },
   {
@@ -2883,17 +2531,6 @@
   },
   {
     "tier": 3,
-    "question": "In Cars, what is the number on Lightning McQueen's race car?",
-    "answer": "95",
-    "choices": [
-      "95",
-      "86",
-      "43",
-      "24"
-    ]
-  },
-  {
-    "tier": 3,
     "question": "In Toy Story 2, who is the prospector toy villain?",
     "answer": "Stinky Pete the Prospector",
     "choices": [
@@ -2927,17 +2564,6 @@
   },
   {
     "tier": 3,
-    "question": "In Disney's Lilo and Stitch, what is the name of the alien agent initially pursuing Stitch?",
-    "answer": "Pleakley",
-    "choices": [
-      "Pleakley",
-      "Jumba",
-      "Gantu",
-      "Grand Councilwoman"
-    ]
-  },
-  {
-    "tier": 3,
     "question": "In Adventure Time, what is the name of Finn's sword that is magical?",
     "answer": "The Finn Sword",
     "choices": [
@@ -2960,17 +2586,6 @@
   },
   {
     "tier": 3,
-    "question": "In Disney's Hercules, what is the name of Hercules' flying horse?",
-    "answer": "Pegasus",
-    "choices": [
-      "Pegasus",
-      "Philipos",
-      "Bellerophon",
-      "Strider"
-    ]
-  },
-  {
-    "tier": 3,
     "question": "In Cow and Chicken, what are the names of the two main characters?",
     "answer": "Cow and Chicken",
     "choices": [
@@ -2978,17 +2593,6 @@
       "Cow and Rooster",
       "Bessie and Cluck",
       "Moo and Feathers"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "In Goof Troop, what is the name of Pete's daughter?",
-    "answer": "Pistol",
-    "choices": [
-      "Pistol",
-      "Peg",
-      "Goofy",
-      "Max"
     ]
   },
   {
@@ -3048,17 +2652,6 @@
   },
   {
     "tier": 3,
-    "question": "In Disney's Tarzan, what is the name of Tarzan's gorilla friend?",
-    "answer": "Terk",
-    "choices": [
-      "Terk",
-      "Kerchak",
-      "Kala",
-      "Flynt"
-    ]
-  },
-  {
-    "tier": 3,
     "question": "In Disney's The Princess and the Frog, what is the name of the Shadow Man villain?",
     "answer": "Dr. Facilier",
     "choices": [
@@ -3103,28 +2696,6 @@
   },
   {
     "tier": 3,
-    "question": "In Disney's Peter Pan, what is Captain Hook's greatest fear?",
-    "answer": "The ticking crocodile",
-    "choices": [
-      "The ticking crocodile",
-      "Peter Pan defeating him",
-      "Growing old",
-      "Tinker Bell"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "In Disney's Pinocchio, what is the name of Geppetto's cat?",
-    "answer": "Figaro",
-    "choices": [
-      "Figaro",
-      "Cleo",
-      "Stromboli",
-      "Lampwick"
-    ]
-  },
-  {
-    "tier": 3,
     "question": "In Disney's Sleeping Beauty, what kingdom does Prince Phillip come from?",
     "answer": "The Kingdom adjacent to Aurora's kingdom",
     "choices": [
@@ -3158,61 +2729,6 @@
   },
   {
     "tier": 3,
-    "question": "In Gargoyles, who is Goliath's biological daughter?",
-    "answer": "Angela",
-    "choices": [
-      "Angela",
-      "Demona",
-      "Fox",
-      "Elisa"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "In TaleSpin, what is the name of Baloo's mechanic friend?",
-    "answer": "Wildcat",
-    "choices": [
-      "Wildcat",
-      "Kit",
-      "Louie",
-      "Molly"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "In Darkwing Duck, what is the name of the villain made of plant matter?",
-    "answer": "Bushroot",
-    "choices": [
-      "Bushroot",
-      "Megavolt",
-      "Liquidator",
-      "Quackerjack"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "In Disney's Robin Hood (1973), what type of animal is the Sheriff of Nottingham?",
-    "answer": "A wolf",
-    "choices": [
-      "A wolf",
-      "A fox",
-      "A bear",
-      "A lion"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "In Disney's The Jungle Book (1967), what song does Baloo teach Mowgli?",
-    "answer": "The Bare Necessities",
-    "choices": [
-      "The Bare Necessities",
-      "I Wanna Be Like You",
-      "My Own Home",
-      "Colonel Hathi March"
-    ]
-  },
-  {
-    "tier": 3,
     "question": "In Disney's Cinderella, what are the names of Cinderella's two wicked stepsisters?",
     "answer": "Anastasia and Drizella",
     "choices": [
@@ -3220,17 +2736,6 @@
       "Griselda and Lucinda",
       "Beatrice and Marguerite",
       "Prudence and Millicent"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "In Disney's Pinocchio, what is the name of the whale that swallows Geppetto?",
-    "answer": "Monstro",
-    "choices": [
-      "Monstro",
-      "Moby",
-      "Leviathan",
-      "Jonah"
     ]
   },
   {
@@ -3454,7 +2959,7 @@
     ]
   },
   {
-    "tier": 4,
+    "tier": 1,
     "question": "In Disney's Snow White (1937), how many dwarfs are there?",
     "answer": "7",
     "choices": [
@@ -3818,28 +3323,6 @@
   },
   {
     "tier": 4,
-    "question": "In Disney's Pinocchio, what is the name of the island where boys are turned into donkeys?",
-    "answer": "Pleasure Island",
-    "choices": [
-      "Pleasure Island",
-      "Fun Island",
-      "Donkey Island",
-      "Temptation Island"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "In Disney's Peter Pan, what is the name of the tribe princess who befriends Peter Pan?",
-    "answer": "Tiger Lily",
-    "choices": [
-      "Tiger Lily",
-      "Wendy",
-      "Tinker Bell",
-      "Jane"
-    ]
-  },
-  {
-    "tier": 4,
     "question": "In TaleSpin, what is the name of the young boy who works with Baloo?",
     "answer": "Kit Cloudkicker",
     "choices": [
@@ -4170,17 +3653,6 @@
   },
   {
     "tier": 4,
-    "question": "In Disney's Tarzan (1999), what is the name of Tarzan's gorilla father who leads the troop?",
-    "answer": "Kerchak",
-    "choices": [
-      "Kerchak",
-      "Terk",
-      "Kala",
-      "Flynt"
-    ]
-  },
-  {
-    "tier": 4,
     "question": "In Disney's The Princess and the Frog (2009), what is the name of Tiana's friend who is a prince?",
     "answer": "Naveen",
     "choices": [
@@ -4203,21 +3675,10 @@
   },
   {
     "tier": 4,
-    "question": "In Disney's Treasure Planet, what is the name of the shape-shifting creature who is Silver's pet?",
-    "answer": "Morph",
-    "choices": [
-      "Morph",
-      "B.E.N.",
-      "Arrow",
-      "Scroop"
-    ]
-  },
-  {
-    "tier": 4,
     "question": "In Disney's Sleeping Beauty, what are the three good fairies' colors?",
-    "answer": "Flora red, Fauna green, Merryweather blue",
+    "answer": "Flora pink, Fauna green, Merryweather blue",
     "choices": [
-      "Flora red, Fauna green, Merryweather blue",
+      "Flora pink, Fauna green, Merryweather blue",
       "Flora pink, Fauna green, Merryweather blue",
       "Flora gold, Fauna silver, Merryweather white",
       "Flora purple, Fauna yellow, Merryweather orange"
@@ -4246,7 +3707,7 @@
     ]
   },
   {
-    "tier": 4,
+    "tier": 1,
     "question": "In Disney's Cinderella, what time must Cinderella leave the ball?",
     "answer": "Midnight",
     "choices": [
@@ -4268,7 +3729,7 @@
     ]
   },
   {
-    "tier": 4,
+    "tier": 1,
     "question": "In Disney's Pinocchio, what is Pinocchio's defining physical feature that grows when he lies?",
     "answer": "His nose",
     "choices": [
@@ -4391,9 +3852,9 @@
   {
     "tier": 4,
     "question": "In Ben 10, what is the name of Ben's alien form that is made of living rock?",
-    "answer": "Cannonbolt",
+    "answer": "Diamondhead",
     "choices": [
-      "Cannonbolt",
+      "Diamondhead",
       "Diamondhead",
       "Stinkfly",
       "Ripjaws"
@@ -4402,9 +3863,9 @@
   {
     "tier": 5,
     "question": "In the original DuckTales (1987), what is the name of the ancient sorcerer villain in the first multi-part episode?",
-    "answer": "Merlock",
+    "answer": "El Capitan",
     "choices": [
-      "Merlock",
+      "El Capitan",
       "Magica De Spell",
       "El Capitan",
       "Glomgold"
@@ -4853,9 +4314,9 @@
   {
     "tier": 5,
     "question": "In Disney's Lilo and Stitch, what is the name of the alien agent initially pursuing Stitch?",
-    "answer": "Pleakley",
+    "answer": "Gantu",
     "choices": [
-      "Pleakley",
+      "Gantu",
       "Jumba",
       "Gantu",
       "Grand Councilwoman"
@@ -5324,7 +4785,7 @@
     ]
   },
   {
-    "tier": 5,
+    "tier": 1,
     "question": "In Disney's Snow White (1937), what is the name of the happy dwarf?",
     "answer": "Happy",
     "choices": [

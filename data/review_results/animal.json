@@ -1,0 +1,12 @@
+[
+  {"index": 58, "field": "tier", "current": 1, "correct": 2, "reason": "\"Unkindness\" (ravens) is obscure collective noun trivia, not child-level T1 knowledge"},
+  {"index": 59, "field": "tier", "current": 1, "correct": 2, "reason": "\"Parliament\" (owls) is obscure collective noun, not T1 knowledge"},
+  {"index": 74, "field": "tier", "current": 1, "correct": 2, "reason": "\"Sleuth\" (bears) is obscure collective noun, not T1 knowledge"},
+  {"index": 87, "field": "tier", "current": 1, "correct": 2, "reason": "\"Cygnet\" is a less commonly known baby animal name, more appropriate at T2"},
+  {"index": 90, "field": "tier", "current": 1, "correct": 2, "reason": "\"Flamboyance\" (flamingos) is obscure collective noun, not T1"},
+  {"index": 94, "field": "tier", "current": 1, "correct": 2, "reason": "\"Bloom\" (jellyfish) is obscure collective noun, not T1"},
+  {"index": 95, "field": "tier", "current": 1, "correct": 2, "reason": "\"Float\" (crocodiles) is very obscure collective noun, not T1"},
+  {"index": 125, "field": "answer", "current": "Sperm whale (largest overall)", "correct": "Dolphin", "reason": "Question asks largest brain RELATIVE to body size; sperm whale is largest in absolute terms only. Answer label even says '(largest overall)'. Dolphins have far larger brain-to-body ratios."},
+  {"index": 147, "field": "answer", "current": "Polar bear", "correct": "Kodiak bear", "reason": "Kodiak bear rivals or exceeds polar bear in size and is frequently cited as largest. Answer is at minimum ambiguous."},
+  {"index": 279, "field": "tier", "current": 5, "correct": 1, "reason": "Darwin proposing natural selection is elementary school knowledge, clearly misplaced at T5"}
+]

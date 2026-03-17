@@ -1,0 +1,5 @@
+[
+  {"index": 47, "field": "answer", "current": "Confucius", "correct": "Jesus of Nazareth", "reason": "The POSITIVE Golden Rule ('Do to others as you would have them do to you') is from Jesus (Matt 7:12). Confucius taught the NEGATIVE Silver Rule: 'Do not impose on others what you yourself do not want.' The question quotes the positive form, making Jesus the correct answer."},
+  {"index": 134, "field": "answer", "current": "William James", "correct": "Charles Sanders Peirce", "reason": "Peirce coined the term 'pragmatism' and published founding principles in 'How to Make Our Ideas Clear' (1878). James popularized it from 1898 but credited Peirce. Question asks who 'founded' it — that is Peirce."},
+  {"index": 155, "field": "tier", "current": 4, "correct": 1, "reason": "Defining 'metaphysics' as the study of fundamental reality is basic T1 material. An identical question already exists at T1 (index 43). Near-duplicate placed 3 tiers too high — should be removed or replaced with a different T4 question."}
+]

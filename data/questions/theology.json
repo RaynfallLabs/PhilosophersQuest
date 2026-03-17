@@ -232,7 +232,7 @@
   },
   {
     "tier": 1,
-    "question": "What number commandment is 'You shall not murder'?",
+    "question": "In Protestant tradition, what number commandment is 'You shall not murder'?",
     "answer": "Sixth",
     "choices": [
       "Sixth",
@@ -254,7 +254,7 @@
   },
   {
     "tier": 1,
-    "question": "Which commandment says to honor your father and mother?",
+    "question": "In Protestant tradition, which commandment says to honor your father and mother?",
     "answer": "Fifth commandment",
     "choices": [
       "Fifth commandment",
@@ -430,7 +430,7 @@
   },
   {
     "tier": 1,
-    "question": "Which commandment says to keep the Sabbath holy?",
+    "question": "In Protestant tradition, which commandment says to keep the Sabbath holy?",
     "answer": "The fourth commandment",
     "choices": [
       "The fourth commandment",
@@ -506,7 +506,7 @@
     ]
   },
   {
-    "tier": 1,
+    "tier": 3,
     "question": "What are the Upanishads?",
     "answer": "Ancient Hindu philosophical texts exploring the nature of ultimate reality",
     "choices": [
@@ -706,9 +706,9 @@
   {
     "tier": 1,
     "question": "Who is the chief Egyptian god of the dead?",
-    "answer": "Anubis",
+    "answer": "Osiris",
     "choices": [
-      "Anubis",
+      "Osiris",
       "Ra",
       "Osiris",
       "Horus"
@@ -726,7 +726,7 @@
     ]
   },
   {
-    "tier": 1,
+    "tier": 2,
     "question": "What is the Bhagavad Gita?",
     "answer": "A sacred Hindu scripture in which Krishna teaches Arjuna about duty, devotion, and liberation",
     "choices": [
@@ -770,7 +770,7 @@
     ]
   },
   {
-    "tier": 1,
+    "tier": 3,
     "question": "What is the Vedanta school of Hinduism about?",
     "answer": "The philosophical interpretation of the Upanishads, exploring the nature of Brahman and Atman",
     "choices": [
@@ -2200,7 +2200,7 @@
     ]
   },
   {
-    "tier": 3,
+    "tier": 5,
     "question": "What is 'demythologization' in modern theology?",
     "answer": "Bultmann's project of reinterpreting mythological elements of the New Testament in existential terms",
     "choices": [
@@ -2422,9 +2422,9 @@
   {
     "tier": 3,
     "question": "What is Yom Kippur?",
-    "answer": "The Jewish Day of Atonement — the holiest day in the Jewish calendar",
+    "answer": "The Jewish Day of Atonement -- the holiest day in the Jewish calendar",
     "choices": [
-      "The Jewish Day of Atonement — the holiest day in the Jewish calendar",
+      "The Jewish Day of Atonement -- the holiest day in the Jewish calendar",
       "The Jewish New Year",
       "The Passover feast",
       "The first day of Sukkot"
@@ -2620,9 +2620,9 @@
   {
     "tier": 3,
     "question": "What does 'Shema Yisrael' mean?",
-    "answer": "Hear, O Israel — the central Jewish declaration of faith in one God",
+    "answer": "Hear, O Israel -- the central Jewish declaration of faith in one God",
     "choices": [
-      "Hear, O Israel — the central Jewish declaration of faith in one God",
+      "Hear, O Israel -- the central Jewish declaration of faith in one God",
       "Blessed are You, O Lord our God",
       "Praise the Lord all nations",
       "The Lord is my shepherd"
@@ -2917,9 +2917,9 @@
   {
     "tier": 3,
     "question": "What is the Greek term for the Hebrew underworld or realm of the dead?",
-    "answer": "Sheol",
+    "answer": "Hades",
     "choices": [
-      "Sheol",
+      "Hades",
       "Hades",
       "Tartarus",
       "Gehenna"
@@ -3291,12 +3291,12 @@
   {
     "tier": 3,
     "question": "What is the 'kenosis' passage in the New Testament?",
-    "answer": "Philippians 2:7 — Christ 'emptied himself' taking the form of a servant",
+    "answer": "Philippians 2:7 -- Christ 'emptied himself' taking the form of a servant",
     "choices": [
-      "Philippians 2:7 — Christ 'emptied himself' taking the form of a servant",
-      "John 1:1 — 'In the beginning was the Word'",
-      "Colossians 1:15 — 'He is the image of the invisible God'",
-      "Romans 8:11 — 'The Spirit of him who raised Jesus'"
+      "Philippians 2:7 -- Christ 'emptied himself' taking the form of a servant",
+      "John 1:1 -- 'In the beginning was the Word'",
+      "Colossians 1:15 -- 'He is the image of the invisible God'",
+      "Romans 8:11 -- 'The Spirit of him who raised Jesus'"
     ]
   },
   {
@@ -3478,9 +3478,9 @@
   {
     "tier": 4,
     "question": "What did the Peace of Augsburg (1555) establish?",
-    "answer": "The principle 'cuius regio, eius religio' — a ruler's religion determines his subjects' religion",
+    "answer": "The principle 'cuius regio, eius religio' -- a ruler's religion determines his subjects' religion",
     "choices": [
-      "The principle 'cuius regio, eius religio' — a ruler's religion determines his subjects' religion",
+      "The principle 'cuius regio, eius religio' -- a ruler's religion determines his subjects' religion",
       "Full religious freedom for all Christians in the Empire",
       "The dominance of Lutheranism throughout Germany",
       "The ban on Calvinist churches in the Empire"
@@ -3521,7 +3521,7 @@
   },
   {
     "tier": 4,
-    "question": "What is 'theologia gloriae' (theology of glory) — Luther's criticism of it?",
+    "question": "What is 'theologia gloriae' (theology of glory) -- Luther's criticism of it?",
     "answer": "The false theology that knows God through power and glory rather than the cross",
     "choices": [
       "The false theology that knows God through power and glory rather than the cross",
@@ -3885,9 +3885,9 @@
   {
     "tier": 4,
     "question": "What is William of Ockham famous for in medieval philosophy?",
-    "answer": "Ockham's Razor — 'do not multiply entities beyond necessity'",
+    "answer": "Ockham's Razor -- 'do not multiply entities beyond necessity'",
     "choices": [
-      "Ockham's Razor — 'do not multiply entities beyond necessity'",
+      "Ockham's Razor -- 'do not multiply entities beyond necessity'",
       "The ontological argument for God's existence",
       "The synthesis of Aristotle and Christianity",
       "The proof of God from the existence of motion"
@@ -4259,9 +4259,9 @@
   {
     "tier": 4,
     "question": "Who proposed the 'Christus Victor' theory of atonement?",
-    "answer": "Gustaf Aulén in his 1931 book",
+    "answer": "Gustaf Aulen in his 1931 book",
     "choices": [
-      "Gustaf Aulén in his 1931 book",
+      "Gustaf Aulen in his 1931 book",
       "Anselm of Canterbury",
       "Martin Luther",
       "Peter Abelard"
@@ -4296,7 +4296,7 @@
     "choices": [
       "Anselm of Canterbury",
       "Thomas Aquinas",
-      "René Descartes",
+      "Rene Descartes",
       "Immanuel Kant"
     ]
   },
@@ -4407,7 +4407,7 @@
       "Julian of Norwich (1342-c.1416), an English anchoress",
       "Hildegard of Bingen",
       "Meister Eckhart",
-      "Thomas à Kempis"
+      "Thomas a Kempis"
     ]
   },
   {
@@ -4666,9 +4666,9 @@
   {
     "tier": 5,
     "question": "What is 'sunyata' in Buddhism?",
-    "answer": "Emptiness — the lack of inherent, independent existence in phenomena",
+    "answer": "Emptiness -- the lack of inherent, independent existence in phenomena",
     "choices": [
-      "Emptiness — the lack of inherent, independent existence in phenomena",
+      "Emptiness -- the lack of inherent, independent existence in phenomena",
       "The void of Nirvana",
       "The compassion of the bodhisattva",
       "The absence of the self in meditation"
@@ -4677,12 +4677,12 @@
   {
     "tier": 5,
     "question": "What is the Prose Edda's full title and significance?",
-    "answer": "The Prose Edda by Snorri Sturluson — primary source of Norse mythology",
+    "answer": "The Prose Edda by Snorri Sturluson -- primary source of Norse mythology",
     "choices": [
-      "The Prose Edda by Snorri Sturluson — primary source of Norse mythology",
+      "The Prose Edda by Snorri Sturluson -- primary source of Norse mythology",
       "The Poetic Edda by an anonymous 9th-century skald",
-      "The Edda by Adam of Bremen — a German account of Norse religion",
-      "The Edda of Saxo Grammaticus — a Latin retelling of Norse myths"
+      "The Edda by Adam of Bremen -- a German account of Norse religion",
+      "The Edda of Saxo Grammaticus -- a Latin retelling of Norse myths"
     ]
   },
   {
@@ -4754,9 +4754,9 @@
   {
     "tier": 5,
     "question": "What is the mystical concept of the 'coincidentia oppositorum'?",
-    "answer": "The coincidence of opposites in God — a concept developed by Nicholas of Cusa",
+    "answer": "The coincidence of opposites in God -- a concept developed by Nicholas of Cusa",
     "choices": [
-      "The coincidence of opposites in God — a concept developed by Nicholas of Cusa",
+      "The coincidence of opposites in God -- a concept developed by Nicholas of Cusa",
       "The Zen concept of non-duality",
       "The Hegelian dialectic of thesis and antithesis",
       "The Taoist balance of yin and yang"
@@ -4798,9 +4798,9 @@
   {
     "tier": 5,
     "question": "What is 'tikkun olam' in Jewish theology?",
-    "answer": "Repair of the world — human participation in restoring divine sparks scattered in creation",
+    "answer": "Repair of the world -- human participation in restoring divine sparks scattered in creation",
     "choices": [
-      "Repair of the world — human participation in restoring divine sparks scattered in creation",
+      "Repair of the world -- human participation in restoring divine sparks scattered in creation",
       "The weekly Sabbath rest as imitation of God",
       "The observance of 613 commandments",
       "The messianic age when all evil will be destroyed"
@@ -4842,9 +4842,9 @@
   {
     "tier": 5,
     "question": "What is the Bardo Thodol in Tibetan Buddhism?",
-    "answer": "The Tibetan Book of the Dead — a text guiding consciousness through the bardos (intermediate states after death)",
+    "answer": "The Tibetan Book of the Dead -- a text guiding consciousness through the bardos (intermediate states after death)",
     "choices": [
-      "The Tibetan Book of the Dead — a text guiding consciousness through the bardos (intermediate states after death)",
+      "The Tibetan Book of the Dead -- a text guiding consciousness through the bardos (intermediate states after death)",
       "The Tibetan version of the Tripitaka",
       "A collection of Tibetan koans for meditation",
       "A manual for tantric practices"
@@ -5219,9 +5219,9 @@
     "answer": "St. John of the Cross",
     "choices": [
       "St. John of the Cross",
-      "St. Teresa of Ávila",
+      "St. Teresa of Avila",
       "Meister Eckhart",
-      "Thomas à Kempis"
+      "Thomas a Kempis"
     ]
   },
   {
@@ -5271,9 +5271,9 @@
   {
     "tier": 5,
     "question": "Who was Simone Weil, and what theological concept is she known for?",
-    "answer": "A French mystic who developed the concept of 'decreation' — the self emptying toward God's love",
+    "answer": "A French mystic who developed the concept of 'decreation' -- the self emptying toward God's love",
     "choices": [
-      "A French mystic who developed the concept of 'decreation' — the self emptying toward God's love",
+      "A French mystic who developed the concept of 'decreation' -- the self emptying toward God's love",
       "A German philosopher who proposed the death of God",
       "An American theologian who developed process theology",
       "A French feminist theologian who reinterpreted the Trinity"
@@ -5337,9 +5337,9 @@
   {
     "tier": 5,
     "question": "What is 'dependent origination' (pratityasamutpada) in Buddhism?",
-    "answer": "All phenomena arise in dependence upon conditions — nothing exists independently",
+    "answer": "All phenomena arise in dependence upon conditions -- nothing exists independently",
     "choices": [
-      "All phenomena arise in dependence upon conditions — nothing exists independently",
+      "All phenomena arise in dependence upon conditions -- nothing exists independently",
       "The mutual dependence of the Eightfold Path",
       "The co-arising of karma and rebirth",
       "The interdependence of the Three Jewels"
@@ -5381,9 +5381,9 @@
   {
     "tier": 5,
     "question": "What is 'Dzogchen' in Tibetan Buddhism?",
-    "answer": "The 'Great Perfection' — a tradition pointing to the nature of mind as primordially pure and luminous",
+    "answer": "The 'Great Perfection' -- a tradition pointing to the nature of mind as primordially pure and luminous",
     "choices": [
-      "The 'Great Perfection' — a tradition pointing to the nature of mind as primordially pure and luminous",
+      "The 'Great Perfection' -- a tradition pointing to the nature of mind as primordially pure and luminous",
       "A form of Tibetan yoga focusing on breathing",
       "The Mahayana doctrine of emptiness",
       "The initiation ritual of the Gelug school"
@@ -5391,7 +5391,7 @@
   },
   {
     "tier": 5,
-    "question": "What is the 'Imitation of Christ' by Thomas à Kempis?",
+    "question": "What is the 'Imitation of Christ' by Thomas a Kempis?",
     "answer": "A classic 15th-century devotional text on following Christ through humility and interior devotion",
     "choices": [
       "A classic 15th-century devotional text on following Christ through humility and interior devotion",

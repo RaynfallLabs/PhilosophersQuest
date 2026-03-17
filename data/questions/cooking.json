@@ -2,12 +2,12 @@
   {
     "question": "At what temperature does water boil at sea level?",
     "choices": [
-      "90°C",
-      "100°C",
-      "110°C",
-      "120°C"
+      "90 degC",
+      "100 degC",
+      "110 degC",
+      "120 degC"
     ],
-    "answer": "100°C",
+    "answer": "100 degC",
     "tier": 1
   },
   {
@@ -55,7 +55,7 @@
     "tier": 1
   },
   {
-    "question": "What does sautéing mean?",
+    "question": "What does sauteing mean?",
     "choices": [
       "Boiling in water",
       "Frying quickly in a little fat",
@@ -90,12 +90,12 @@
   {
     "question": "What is the freezing point of water in Celsius?",
     "choices": [
-      "-10°C",
-      "0°C",
-      "10°C",
-      "5°C"
+      "-10 degC",
+      "0 degC",
+      "10 degC",
+      "5 degC"
     ],
-    "answer": "0°C",
+    "answer": "0 degC",
     "tier": 1
   },
   {
@@ -156,12 +156,12 @@
   {
     "question": "What is the standard safe internal temperature for cooked chicken (Celsius)?",
     "choices": [
-      "65°C",
-      "70°C",
-      "74°C",
-      "80°C"
+      "65 degC",
+      "70 degC",
+      "74 degC",
+      "80 degC"
     ],
-    "answer": "74°C",
+    "answer": "74 degC",
     "tier": 1
   },
   {
@@ -244,12 +244,12 @@
   {
     "question": "At what internal temperature is beef considered medium-rare (Celsius)?",
     "choices": [
-      "50°C",
-      "57°C",
-      "68°C",
-      "74°C"
+      "50 degC",
+      "57 degC",
+      "68 degC",
+      "74 degC"
     ],
-    "answer": "57°C",
+    "answer": "57 degC",
     "tier": 2
   },
   {
@@ -396,14 +396,14 @@
     "tier": 2
   },
   {
-    "question": "What are the five French mother sauces? One is Béchamel. Name another.",
+    "question": "What are the five French mother sauces? One is Bechamel. Name another.",
     "choices": [
-      "Velouté",
+      "Veloute",
       "Hollandaise",
       "Alfredo",
       "Tzatziki"
     ],
-    "answer": "Velouté",
+    "answer": "Veloute",
     "tier": 3
   },
   {
@@ -453,7 +453,7 @@
   {
     "question": "What is the French term for cooking vegetables until soft and translucent without browning?",
     "choices": [
-      "Sauté",
+      "Saute",
       "Sweat",
       "Caramelize",
       "Deglaze"
@@ -554,7 +554,7 @@
     "choices": [
       "Cooked in paper or foil packets",
       "Served tableside",
-      "Flambéed with alcohol",
+      "Flambeed with alcohol",
       "Cooked in a clay pot"
     ],
     "answer": "Cooked in paper or foil packets",
@@ -574,12 +574,12 @@
   {
     "question": "What temperature is used for sous vide cooking of chicken breast?",
     "choices": [
-      "63°C",
-      "74°C",
-      "82°C",
-      "55°C"
+      "63 degC",
+      "74 degC",
+      "82 degC",
+      "55 degC"
     ],
-    "answer": "63°C",
+    "answer": "63 degC",
     "tier": 4
   },
   {
@@ -619,11 +619,11 @@
     "question": "In the classical brigade system, what is the 'saucier' responsible for?",
     "choices": [
       "Soups and broths only",
-      "Sautéed items and sauces",
+      "Sauteed items and sauces",
       "Roasted meats",
       "Grilled items"
     ],
-    "answer": "Sautéed items and sauces",
+    "answer": "Sauteed items and sauces",
     "tier": 4
   },
   {
@@ -706,12 +706,12 @@
   {
     "question": "What is the 'Maillard reaction' temperature threshold approximately?",
     "choices": [
-      "100°C",
-      "140°C",
-      "200°C",
-      "260°C"
+      "100 degC",
+      "140 degC",
+      "200 degC",
+      "260 degC"
     ],
-    "answer": "140°C",
+    "answer": "140 degC",
     "tier": 4
   },
   {
@@ -903,17 +903,6 @@
   },
   {
     "tier": 1,
-    "question": "Which of these is a dairy product?",
-    "answer": "Butter",
-    "choices": [
-      "Olive oil",
-      "Butter",
-      "Coconut oil",
-      "Lard"
-    ]
-  },
-  {
-    "tier": 1,
     "question": "What do you call the outer layer of bread that is crispy and brown?",
     "answer": "Crust",
     "choices": [
@@ -1002,7 +991,7 @@
   },
   {
     "tier": 1,
-    "question": "Which herb is commonly used in Italian cooking and smells like anise?",
+    "question": "Which herb is most associated with Italian cooking and has a sweet, clove-like aroma?",
     "answer": "Basil",
     "choices": [
       "Oregano",
@@ -1020,17 +1009,6 @@
       "Enhance flavor",
       "Help food brown faster",
       "Preserve color"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What does it mean to 'dice' a vegetable?",
-    "answer": "Cut it into small cubes",
-    "choices": [
-      "Peel it",
-      "Cut it into small cubes",
-      "Blend it into a liquid",
-      "Slice it very thinly"
     ]
   },
   {
@@ -1058,11 +1036,11 @@
   {
     "tier": 1,
     "question": "What is the name for the process of browning meat or vegetables in oil?",
-    "answer": "Sautéing",
+    "answer": "Sauteing",
     "choices": [
       "Poaching",
       "Steaming",
-      "Sautéing",
+      "Sauteing",
       "Blanching"
     ]
   },
@@ -1192,10 +1170,10 @@
     "question": "What is the name for a sauce made from egg yolks, lemon juice, and butter?",
     "answer": "Hollandaise",
     "choices": [
-      "Béchamel",
+      "Bechamel",
       "Hollandaise",
-      "Velouté",
-      "Béarnaise"
+      "Veloute",
+      "Bearnaise"
     ]
   },
   {
@@ -1295,17 +1273,6 @@
       "Avocado",
       "Mango",
       "Tomato"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What is the main ingredient in hummus?",
-    "answer": "Chickpeas",
-    "choices": [
-      "Lentils",
-      "Chickpeas",
-      "Kidney beans",
-      "Edamame"
     ]
   },
   {
@@ -1520,11 +1487,11 @@
   {
     "tier": 1,
     "question": "What is the name for a very thin crepe-like pancake from France?",
-    "answer": "Crêpe",
+    "answer": "Crepe",
     "choices": [
       "Galette",
       "Blini",
-      "Crêpe",
+      "Crepe",
       "Waffle"
     ]
   },
@@ -1617,7 +1584,7 @@
     ]
   },
   {
-    "tier": 1,
+    "tier": 3,
     "question": "What is 'temper' when working with chocolate?",
     "answer": "Carefully melting and cooling chocolate to create a smooth, shiny finish",
     "choices": [
@@ -1750,17 +1717,6 @@
   },
   {
     "tier": 2,
-    "question": "What is 'confit'?",
-    "answer": "Preserving and cooking meat (or fruit) in its own fat or in sugar",
-    "choices": [
-      "A French vinegar dressing",
-      "Preserving and cooking meat (or fruit) in its own fat or in sugar",
-      "A slow braise in wine",
-      "A pickling method"
-    ]
-  },
-  {
-    "tier": 2,
     "question": "What is 'gelatin' derived from in cooking?",
     "answer": "Collagen from animal bones and connective tissue",
     "choices": [
@@ -1794,17 +1750,6 @@
   },
   {
     "tier": 2,
-    "question": "What is 'braising'?",
-    "answer": "Cooking food slowly in a small amount of liquid in a covered pot",
-    "choices": [
-      "Deep frying in fat",
-      "Cooking food slowly in a small amount of liquid in a covered pot",
-      "Grilling over direct heat",
-      "Cooking in a large amount of boiling water"
-    ]
-  },
-  {
-    "tier": 2,
     "question": "What is 'curing' food?",
     "answer": "Preserving food using salt, sugar, smoke, or acid",
     "choices": [
@@ -1817,10 +1762,10 @@
   {
     "tier": 2,
     "question": "What is 'umami'?",
-    "answer": "The fifth basic taste — a savory, meaty taste",
+    "answer": "The fifth basic taste -- a savory, meaty taste",
     "choices": [
       "A Japanese cooking technique",
-      "The fifth basic taste — a savory, meaty taste",
+      "The fifth basic taste -- a savory, meaty taste",
       "A salty flavor in soy sauce",
       "Bitterness from fermentation"
     ]
@@ -1871,7 +1816,7 @@
   },
   {
     "tier": 2,
-    "question": "What is 'en croûte' in French cooking?",
+    "question": "What is 'en croute' in French cooking?",
     "answer": "Food wrapped and baked in a pastry crust",
     "choices": [
       "Food cooked in a crust of salt",
@@ -1971,23 +1916,12 @@
   {
     "tier": 2,
     "question": "What is the difference between 'hard' and 'soft' ball stage in sugar cooking?",
-    "answer": "Hard ball (121-130°C) forms a hard ball in cold water; soft ball (112-116°C) forms a soft one",
+    "answer": "Hard ball (121-130 degC) forms a hard ball in cold water; soft ball (112-116 degC) forms a soft one",
     "choices": [
       "Soft ball uses less sugar",
-      "Hard ball (121-130°C) forms a hard ball in cold water; soft ball (112-116°C) forms a soft one",
+      "Hard ball (121-130 degC) forms a hard ball in cold water; soft ball (112-116 degC) forms a soft one",
       "Hard ball is used for candy; soft ball for jam",
       "They differ only in color, not temperature"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "What is 'clarified butter'?",
-    "answer": "Butter with water and milk solids removed, leaving pure fat with a higher smoke point",
-    "choices": [
-      "Butter with added cream",
-      "Butter with water and milk solids removed, leaving pure fat with a higher smoke point",
-      "Butter that has been filtered",
-      "Whipped butter made lighter"
     ]
   },
   {
@@ -2069,7 +2003,7 @@
   },
   {
     "tier": 2,
-    "question": "What is 'crème fraîche'?",
+    "question": "What is 'creme fraiche'?",
     "answer": "A thick fermented cream with a slightly tangy flavor",
     "choices": [
       "Lightly whipped cream",
@@ -2090,7 +2024,7 @@
     ]
   },
   {
-    "tier": 2,
+    "tier": 4,
     "question": "What is 'spherification' in modern cooking?",
     "answer": "Creating liquid-filled spheres using sodium alginate and calcium chloride",
     "choices": [
@@ -2125,21 +2059,21 @@
   {
     "tier": 2,
     "question": "What is 'caramelization temperature' for sugar?",
-    "answer": "Around 160-180°C (320-356°F)",
+    "answer": "Around 160-180 degC (320-356 degF)",
     "choices": [
-      "100°C",
-      "Around 160-180°C (320-356°F)",
-      "200°C",
-      "140°C"
+      "100 degC",
+      "Around 160-180 degC (320-356 degF)",
+      "200 degC",
+      "140 degC"
     ]
   },
   {
     "tier": 2,
-    "question": "What is a 'velouté'?",
-    "answer": "One of the French mother sauces — a white stock thickened with a roux",
+    "question": "What is a 'veloute'?",
+    "answer": "One of the French mother sauces -- a white stock thickened with a roux",
     "choices": [
       "A cream soup",
-      "One of the French mother sauces — a white stock thickened with a roux",
+      "One of the French mother sauces -- a white stock thickened with a roux",
       "A butter sauce",
       "A tomato-based sauce"
     ]
@@ -2147,12 +2081,12 @@
   {
     "tier": 2,
     "question": "What are the five French mother sauces?",
-    "answer": "Béchamel, velouté, espagnole, hollandaise, and tomato",
+    "answer": "Bechamel, veloute, espagnole, hollandaise, and tomato",
     "choices": [
-      "Beurre blanc, hollandaise, velouté, cream, demi-glace",
-      "Béchamel, velouté, espagnole, hollandaise, and tomato",
-      "Roux, beurre blanc, bisque, hollandaise, velouté",
-      "Cream sauce, tomato, aioli, velouté, beurre blanc"
+      "Beurre blanc, hollandaise, veloute, cream, demi-glace",
+      "Bechamel, veloute, espagnole, hollandaise, and tomato",
+      "Roux, beurre blanc, bisque, hollandaise, veloute",
+      "Cream sauce, tomato, aioli, veloute, beurre blanc"
     ]
   },
   {
@@ -2206,7 +2140,7 @@
     "choices": [
       "A type of salt-cured sausage",
       "A roll of mousse or terrine wrapped tightly in cloth to shape it",
-      "A torch used to caramelize crème brûlée",
+      "A torch used to caramelize creme brulee",
       "A French word for any stuffed dish"
     ]
   },
@@ -2224,17 +2158,17 @@
   {
     "tier": 2,
     "question": "What is 'choux pastry' used for?",
-    "answer": "Making éclairs, profiteroles, and cream puffs",
+    "answer": "Making eclairs, profiteroles, and cream puffs",
     "choices": [
       "Making croissants and pain au chocolat",
-      "Making éclairs, profiteroles, and cream puffs",
+      "Making eclairs, profiteroles, and cream puffs",
       "Making tart shells",
       "Making laminated pastry layers"
     ]
   },
   {
     "tier": 2,
-    "question": "What is 'pâte brisée'?",
+    "question": "What is 'pate brisee'?",
     "answer": "A short, crumbly French pastry dough used for tarts and quiches",
     "choices": [
       "A flaky puff pastry",
@@ -2256,7 +2190,7 @@
   },
   {
     "tier": 2,
-    "question": "What is 'croûton'?",
+    "question": "What is 'crouton'?",
     "answer": "A small cube of toasted or fried bread used to garnish soups and salads",
     "choices": [
       "A type of savory pastry",
@@ -2345,11 +2279,11 @@
   {
     "tier": 2,
     "question": "What is 'clarifying' a stock?",
-    "answer": "Using egg whites to attract and remove impurities to produce a clear consommé",
+    "answer": "Using egg whites to attract and remove impurities to produce a clear consomme",
     "choices": [
       "Reducing the stock until thick",
       "Skimming fat from the surface",
-      "Using egg whites to attract and remove impurities to produce a clear consommé",
+      "Using egg whites to attract and remove impurities to produce a clear consomme",
       "Straining through a fine sieve only"
     ]
   },
@@ -2388,7 +2322,7 @@
   },
   {
     "tier": 2,
-    "question": "What is 'pâté' made from?",
+    "question": "What is 'pate' made from?",
     "answer": "Finely ground or pureed seasoned meat, liver, or fish, baked in a mold",
     "choices": [
       "Cured whole cuts of meat",
@@ -2444,11 +2378,11 @@
   {
     "tier": 2,
     "question": "What is 'clarified stock' called when fully clarified and perfectly clear?",
-    "answer": "Consommé",
+    "answer": "Consomme",
     "choices": [
       "Court bouillon",
       "Jus",
-      "Consommé",
+      "Consomme",
       "Fumet"
     ]
   },
@@ -2499,12 +2433,12 @@
   {
     "tier": 3,
     "question": "What is 'Maillard reaction' temperature range?",
-    "answer": "Above about 140-165°C (280-330°F)",
+    "answer": "Above about 140-165 degC (280-330 degF)",
     "choices": [
-      "Around 100°C (boiling point)",
-      "Above about 140-165°C (280-330°F)",
-      "Above 200°C only",
-      "Between 60-80°C"
+      "Around 100 degC (boiling point)",
+      "Above about 140-165 degC (280-330 degF)",
+      "Above 200 degC only",
+      "Between 60-80 degC"
     ]
   },
   {
@@ -2587,10 +2521,10 @@
   {
     "tier": 3,
     "question": "What is 'maltose' and how does it affect baking?",
-    "answer": "A sugar produced when starch breaks down — it helps with browning and crust color",
+    "answer": "A sugar produced when starch breaks down -- it helps with browning and crust color",
     "choices": [
       "A sugar substitute with no browning",
-      "A sugar produced when starch breaks down — it helps with browning and crust color",
+      "A sugar produced when starch breaks down -- it helps with browning and crust color",
       "A type of fiber in whole grain flour",
       "A natural sweetener in fruit"
     ]
@@ -2699,7 +2633,7 @@
     "question": "What is 'pasteurization' in food science?",
     "answer": "Heating food to a specific temperature to destroy pathogens without fully sterilizing",
     "choices": [
-      "Sterilizing food by heating above 121°C",
+      "Sterilizing food by heating above 121 degC",
       "Heating food to a specific temperature to destroy pathogens without fully sterilizing",
       "Preserving food by adding salt",
       "Irradiating food to extend shelf life"
@@ -2763,12 +2697,12 @@
   {
     "tier": 3,
     "question": "What is 'the danger zone' in food safety?",
-    "answer": "The temperature range 4-60°C (40-140°F) where bacteria multiply rapidly",
+    "answer": "The temperature range 4-60 degC (40-140 degF) where bacteria multiply rapidly",
     "choices": [
-      "Above 100°C where food must be cooked",
-      "The temperature range 4-60°C (40-140°F) where bacteria multiply rapidly",
-      "Below 0°C where freezing causes cell damage",
-      "Between 60-80°C where meat is rare"
+      "Above 100 degC where food must be cooked",
+      "The temperature range 4-60 degC (40-140 degF) where bacteria multiply rapidly",
+      "Below 0 degC where freezing causes cell damage",
+      "Between 60-80 degC where meat is rare"
     ]
   },
   {
@@ -2905,17 +2839,6 @@
   },
   {
     "tier": 3,
-    "question": "What is 'carryover cooking'?",
-    "answer": "Food continues to cook from residual internal heat after being removed from the heat source",
-    "choices": [
-      "Reheating food to finish cooking",
-      "Food continues to cook from residual internal heat after being removed from the heat source",
-      "Slow-cooking that carries over to the next day",
-      "Cooking food in two separate stages"
-    ]
-  },
-  {
-    "tier": 3,
     "question": "What is 'nappe' consistency for a sauce?",
     "answer": "The sauce should coat the back of a spoon and hold a clear line drawn through it",
     "choices": [
@@ -2928,12 +2851,12 @@
   {
     "tier": 3,
     "question": "What is 'poaching temperature' for delicate proteins like fish and eggs?",
-    "answer": "70-85°C (160-185°F) — below a simmer",
+    "answer": "70-85 degC (160-185 degF) -- below a simmer",
     "choices": [
-      "100°C (full boil)",
-      "90-95°C (near boil)",
-      "70-85°C (160-185°F) — below a simmer",
-      "50-60°C (very gentle heat)"
+      "100 degC (full boil)",
+      "90-95 degC (near boil)",
+      "70-85 degC (160-185 degF) -- below a simmer",
+      "50-60 degC (very gentle heat)"
     ]
   },
   {
@@ -2950,10 +2873,10 @@
   {
     "tier": 3,
     "question": "What is 'caramel' stage in sugar work versus 'toffee' stage?",
-    "answer": "Caramel is lighter and more fluid (160-180°C); toffee is cooked to a darker, harder stage",
+    "answer": "Caramel is lighter and more fluid (160-180 degC); toffee is cooked to a darker, harder stage",
     "choices": [
       "They are the same stage",
-      "Caramel is lighter and more fluid (160-180°C); toffee is cooked to a darker, harder stage",
+      "Caramel is lighter and more fluid (160-180 degC); toffee is cooked to a darker, harder stage",
       "Toffee is made with cream added before caramel stage",
       "Caramel is always darker than toffee"
     ]
@@ -3027,10 +2950,10 @@
   {
     "tier": 3,
     "question": "What is 'dough hydration' in bread baking?",
-    "answer": "The ratio of water to flour by weight — higher hydration produces a more open, chewy crumb",
+    "answer": "The ratio of water to flour by weight -- higher hydration produces a more open, chewy crumb",
     "choices": [
       "How much yeast is in the dough",
-      "The ratio of water to flour by weight — higher hydration produces a more open, chewy crumb",
+      "The ratio of water to flour by weight -- higher hydration produces a more open, chewy crumb",
       "The amount of water absorbed from steam in the oven",
       "The water lost during baking"
     ]
@@ -3071,10 +2994,10 @@
   {
     "tier": 3,
     "question": "What is 'cold smoking' versus 'hot smoking'?",
-    "answer": "Cold smoking adds flavor without cooking (below 30°C); hot smoking cooks the food",
+    "answer": "Cold smoking adds flavor without cooking (below 30 degC); hot smoking cooks the food",
     "choices": [
       "Cold smoking uses a lighter wood",
-      "Cold smoking adds flavor without cooking (below 30°C); hot smoking cooks the food",
+      "Cold smoking adds flavor without cooking (below 30 degC); hot smoking cooks the food",
       "Hot smoking is always faster",
       "They produce identical results"
     ]
@@ -3098,7 +3021,7 @@
       "Decorative scoring on a roast",
       "Streaks of fat distributed within the muscle that add flavor and juiciness when cooked",
       "Blood pooling in uncooked meat",
-      "The texture of a pâté"
+      "The texture of a pate"
     ]
   },
   {
@@ -3148,10 +3071,10 @@
   {
     "tier": 3,
     "question": "What is 'curing salt' (pink salt) used for?",
-    "answer": "Preserving and curing meats — the nitrites prevent botulism and give cured meat its color",
+    "answer": "Preserving and curing meats -- the nitrites prevent botulism and give cured meat its color",
     "choices": [
       "Seasoning food with a milder salt",
-      "Preserving and curing meats — the nitrites prevent botulism and give cured meat its color",
+      "Preserving and curing meats -- the nitrites prevent botulism and give cured meat its color",
       "Adding color to bread crust",
       "A substitute for regular salt in baking"
     ]
@@ -3213,7 +3136,7 @@
   },
   {
     "tier": 3,
-    "question": "What is 'sachet d'épices'?",
+    "question": "What is 'sachet d'epices'?",
     "answer": "A small bag of whole spices and herbs used to flavor soups and sauces",
     "choices": [
       "A French term for dry spice blends",
@@ -3335,10 +3258,10 @@
   {
     "tier": 4,
     "question": "What is 'Pasteur effect' in fermentation?",
-    "answer": "The presence of oxygen inhibits fermentation — anaerobic conditions are required for alcohol production",
+    "answer": "The presence of oxygen inhibits fermentation -- anaerobic conditions are required for alcohol production",
     "choices": [
       "Pasteurization kills yeast",
-      "The presence of oxygen inhibits fermentation — anaerobic conditions are required for alcohol production",
+      "The presence of oxygen inhibits fermentation -- anaerobic conditions are required for alcohol production",
       "Fermentation produces heat that must be controlled",
       "Temperature affects yeast strain selection"
     ]
@@ -3357,12 +3280,12 @@
   {
     "tier": 4,
     "question": "What is 'cryogenic cooking' or use of liquid nitrogen in gastronomy?",
-    "answer": "Using liquid nitrogen at -196°C to instantly freeze or create textural contrasts",
+    "answer": "Using liquid nitrogen at -196 degC to instantly freeze or create textural contrasts",
     "choices": [
       "Cooking under high pressure in cold conditions",
-      "Using liquid nitrogen at -196°C to instantly freeze or create textural contrasts",
+      "Using liquid nitrogen at -196 degC to instantly freeze or create textural contrasts",
       "A vacuum technique using very cold air",
-      "Preserving food by freezing at -20°C"
+      "Preserving food by freezing at -20 degC"
     ]
   },
   {
@@ -3390,10 +3313,10 @@
   {
     "tier": 4,
     "question": "What is 'invert sugar' and why is it used in confectionery?",
-    "answer": "A mixture of glucose and fructose from hydrolyzed sucrose — it is sweeter, more hygroscopic, and prevents crystallization",
+    "answer": "A mixture of glucose and fructose from hydrolyzed sucrose -- it is sweeter, more hygroscopic, and prevents crystallization",
     "choices": [
       "A sugar that has been caramelized and inverted",
-      "A mixture of glucose and fructose from hydrolyzed sucrose — it is sweeter, more hygroscopic, and prevents crystallization",
+      "A mixture of glucose and fructose from hydrolyzed sucrose -- it is sweeter, more hygroscopic, and prevents crystallization",
       "Sugar that lowers the boiling point of liquids",
       "A refined form of molasses"
     ]
@@ -3401,10 +3324,10 @@
   {
     "tier": 4,
     "question": "What is 'water activity' (aw) in food preservation?",
-    "answer": "A measure of how much unbound water is available for microbial growth — lower aw means safer longer shelf life",
+    "answer": "A measure of how much unbound water is available for microbial growth -- lower aw means safer longer shelf life",
     "choices": [
       "How much water is added to a recipe",
-      "A measure of how much unbound water is available for microbial growth — lower aw means safer longer shelf life",
+      "A measure of how much unbound water is available for microbial growth -- lower aw means safer longer shelf life",
       "The rate at which food absorbs water",
       "The percentage of water in a food by weight"
     ]
@@ -3412,10 +3335,10 @@
   {
     "tier": 4,
     "question": "What is 'centrifugation' used for in modernist cooking?",
-    "answer": "Separating ingredients by density — e.g., separating fat from stock or clarifying juices",
+    "answer": "Separating ingredients by density -- e.g., separating fat from stock or clarifying juices",
     "choices": [
       "Spinning food to cook it evenly",
-      "Separating ingredients by density — e.g., separating fat from stock or clarifying juices",
+      "Separating ingredients by density -- e.g., separating fat from stock or clarifying juices",
       "Creating foam from liquids",
       "Removing air from vacuum-sealed food"
     ]
@@ -3478,11 +3401,11 @@
   {
     "tier": 4,
     "question": "What is 'albumin' and at what temperature does egg white coagulate?",
-    "answer": "Egg white proteins that begin coagulating around 62-65°C",
+    "answer": "Egg white proteins that begin coagulating around 62-65 degC",
     "choices": [
-      "Egg white proteins that coagulate only at 100°C",
-      "Egg white proteins that begin coagulating around 62-65°C",
-      "Yolk proteins that firm at 70°C",
+      "Egg white proteins that coagulate only at 100 degC",
+      "Egg white proteins that begin coagulating around 62-65 degC",
+      "Yolk proteins that firm at 70 degC",
       "All egg proteins coagulating at the same temperature"
     ]
   },
@@ -3643,10 +3566,10 @@
   {
     "tier": 4,
     "question": "What is 'dextrose equivalent' (DE) in glucose syrup?",
-    "answer": "A measure of the degree of starch hydrolysis — higher DE means sweeter, less viscous syrup",
+    "answer": "A measure of the degree of starch hydrolysis -- higher DE means sweeter, less viscous syrup",
     "choices": [
       "The percentage of glucose in a syrup",
-      "A measure of the degree of starch hydrolysis — higher DE means sweeter, less viscous syrup",
+      "A measure of the degree of starch hydrolysis -- higher DE means sweeter, less viscous syrup",
       "The dextrose content of a sweetener",
       "How quickly a sugar syrup crystallizes"
     ]
@@ -3665,10 +3588,10 @@
   {
     "tier": 4,
     "question": "What is 'protein quality' in baking flour determined by?",
-    "answer": "Gluten-forming proteins (glutenin/gliadin content) — stronger protein produces more elastic dough",
+    "answer": "Gluten-forming proteins (glutenin/gliadin content) -- stronger protein produces more elastic dough",
     "choices": [
       "Fiber content of the flour",
-      "Gluten-forming proteins (glutenin/gliadin content) — stronger protein produces more elastic dough",
+      "Gluten-forming proteins (glutenin/gliadin content) -- stronger protein produces more elastic dough",
       "The milling process used",
       "The mineral content of the wheat"
     ]
@@ -3709,10 +3632,10 @@
   {
     "tier": 4,
     "question": "What is 'non-enzymatic browning' besides Maillard reaction?",
-    "answer": "Caramelization — heat decomposing sugars without amino acids involved",
+    "answer": "Caramelization -- heat decomposing sugars without amino acids involved",
     "choices": [
       "Oxidation of iron in meat",
-      "Caramelization — heat decomposing sugars without amino acids involved",
+      "Caramelization -- heat decomposing sugars without amino acids involved",
       "Fermentation producing brown pigments",
       "Chlorophyll breaking down in heat"
     ]
@@ -3731,10 +3654,10 @@
   {
     "tier": 4,
     "question": "What is 'acidity' measured by in cooking?",
-    "answer": "pH scale — below 7 is acidic, 7 is neutral, above 7 is alkaline",
+    "answer": "pH scale -- below 7 is acidic, 7 is neutral, above 7 is alkaline",
     "choices": [
       "The sourness detected by taste only",
-      "pH scale — below 7 is acidic, 7 is neutral, above 7 is alkaline",
+      "pH scale -- below 7 is acidic, 7 is neutral, above 7 is alkaline",
       "The percentage of acid in a recipe",
       "The concentration of acetic acid in vinegar"
     ]
@@ -3764,32 +3687,32 @@
   {
     "tier": 4,
     "question": "What is 'low-temperature long-time' (LTLT) pasteurization?",
-    "answer": "Heating milk to 63°C for 30 minutes to kill pathogens while preserving flavor",
+    "answer": "Heating milk to 63 degC for 30 minutes to kill pathogens while preserving flavor",
     "choices": [
-      "Boiling milk at 100°C for 2 minutes",
-      "Heating milk to 63°C for 30 minutes to kill pathogens while preserving flavor",
-      "Pasteurizing at 72°C for 15 seconds",
-      "Heating to 121°C for sterilization"
+      "Boiling milk at 100 degC for 2 minutes",
+      "Heating milk to 63 degC for 30 minutes to kill pathogens while preserving flavor",
+      "Pasteurizing at 72 degC for 15 seconds",
+      "Heating to 121 degC for sterilization"
     ]
   },
   {
     "tier": 4,
     "question": "What is 'HTST' (high temperature short time) pasteurization?",
-    "answer": "Heating milk to 72°C for 15 seconds — the most common commercial method",
+    "answer": "Heating milk to 72 degC for 15 seconds -- the most common commercial method",
     "choices": [
-      "Heating to 100°C for 10 seconds",
-      "Heating milk to 72°C for 15 seconds — the most common commercial method",
-      "Heating to 121°C for 3 minutes",
-      "Heating to 82°C for 5 minutes"
+      "Heating to 100 degC for 10 seconds",
+      "Heating milk to 72 degC for 15 seconds -- the most common commercial method",
+      "Heating to 121 degC for 3 minutes",
+      "Heating to 82 degC for 5 minutes"
     ]
   },
   {
     "tier": 4,
     "question": "What is 'UHT' processing for milk?",
-    "answer": "Ultra-high temperature processing at 135-150°C for 2-4 seconds, enabling shelf-stable storage",
+    "answer": "Ultra-high temperature processing at 135-150 degC for 2-4 seconds, enabling shelf-stable storage",
     "choices": [
       "A pasteurization method using UV light",
-      "Ultra-high temperature processing at 135-150°C for 2-4 seconds, enabling shelf-stable storage",
+      "Ultra-high temperature processing at 135-150 degC for 2-4 seconds, enabling shelf-stable storage",
       "Treating milk with ultra-cold temperatures",
       "A homogenization process for milk"
     ]
@@ -3808,10 +3731,10 @@
   {
     "tier": 4,
     "question": "What is the 'specific heat capacity' of water relevant to cooking?",
-    "answer": "Water's high heat capacity means it absorbs a lot of energy before temperature rises — important for boiling and steaming",
+    "answer": "Water's high heat capacity means it absorbs a lot of energy before temperature rises -- important for boiling and steaming",
     "choices": [
       "Water's ability to dissolve most ingredients",
-      "Water's high heat capacity means it absorbs a lot of energy before temperature rises — important for boiling and steaming",
+      "Water's high heat capacity means it absorbs a lot of energy before temperature rises -- important for boiling and steaming",
       "The temperature at which water changes phase",
       "How quickly water transfers heat to food"
     ]
@@ -3819,23 +3742,23 @@
   {
     "tier": 4,
     "question": "What is 'coagulation temperature' for egg yolk?",
-    "answer": "Around 65-70°C — higher than egg whites (62-65°C)",
+    "answer": "Around 65-70 degC -- higher than egg whites (62-65 degC)",
     "choices": [
-      "Around 55-60°C",
-      "Around 65-70°C — higher than egg whites (62-65°C)",
-      "Around 80°C",
+      "Around 55-60 degC",
+      "Around 65-70 degC -- higher than egg whites (62-65 degC)",
+      "Around 80 degC",
       "The same temperature as egg white"
     ]
   },
   {
     "tier": 4,
     "question": "What is 'starch retrogradation' and how can it be slowed?",
-    "answer": "Starch re-crystallizing during cooling — slowed by emulsifiers, higher fat content, or adding anti-staling agents",
+    "answer": "Starch re-crystallizing during cooling -- slowed by emulsifiers, higher fat content, or adding anti-staling agents",
     "choices": [
-      "Starch breaking down during fermentation — slowed by refrigeration",
-      "Starch re-crystallizing during cooling — slowed by emulsifiers, higher fat content, or adding anti-staling agents",
-      "Starch absorbing moisture — slowed by drying",
-      "Starch losing thickening power — slowed by reheating"
+      "Starch breaking down during fermentation -- slowed by refrigeration",
+      "Starch re-crystallizing during cooling -- slowed by emulsifiers, higher fat content, or adding anti-staling agents",
+      "Starch absorbing moisture -- slowed by drying",
+      "Starch losing thickening power -- slowed by reheating"
     ]
   },
   {
@@ -3873,11 +3796,11 @@
   },
   {
     "tier": 4,
-    "question": "What is 'pastry cream' (crème pâtissière)?",
-    "answer": "A thick custard made from milk, eggs, sugar, and starch — used to fill pastries and tarts",
+    "question": "What is 'pastry cream' (creme patissiere)?",
+    "answer": "A thick custard made from milk, eggs, sugar, and starch -- used to fill pastries and tarts",
     "choices": [
       "A cream sauce used in savory pastries",
-      "A thick custard made from milk, eggs, sugar, and starch — used to fill pastries and tarts",
+      "A thick custard made from milk, eggs, sugar, and starch -- used to fill pastries and tarts",
       "A whipped cream stabilized with gelatin",
       "A custard base for ice cream"
     ]
@@ -3907,10 +3830,10 @@
   {
     "tier": 4,
     "question": "What is 'overrun' in ice cream production?",
-    "answer": "The percentage of air churned into ice cream — affects lightness and volume",
+    "answer": "The percentage of air churned into ice cream -- affects lightness and volume",
     "choices": [
       "The excess production beyond a batch",
-      "The percentage of air churned into ice cream — affects lightness and volume",
+      "The percentage of air churned into ice cream -- affects lightness and volume",
       "The layer of ice that forms on freezer-stored ice cream",
       "How much ice cream exceeds its container"
     ]
@@ -4016,18 +3939,18 @@
   },
   {
     "tier": 4,
-    "question": "What is 'clarifying' a consommé using 'clearmeat'?",
+    "question": "What is 'clarifying' a consomme using 'clearmeat'?",
     "answer": "A mixture of lean minced meat, egg whites, mirepoix, and acid that draws impurities as it coagulates",
     "choices": [
       "Adding cream to lighten the stock",
       "A mixture of lean minced meat, egg whites, mirepoix, and acid that draws impurities as it coagulates",
       "Straining through multiple layers of cheesecloth",
-      "Reducing the consommé to concentrate it"
+      "Reducing the consomme to concentrate it"
     ]
   },
   {
     "tier": 4,
-    "question": "What is 'flambé' technique?",
+    "question": "What is 'flambe' technique?",
     "answer": "Adding high-proof alcohol to a pan and igniting it to burn off the alcohol while caramelizing the sauce",
     "choices": [
       "Browning the top of a dish with a torch",
@@ -4050,10 +3973,10 @@
   {
     "tier": 4,
     "question": "What is 'smoke point' and which oils are best for high-heat cooking?",
-    "answer": "The temperature at which oil burns — refined avocado, light olive, and peanut oils have high smoke points",
+    "answer": "The temperature at which oil burns -- refined avocado, light olive, and peanut oils have high smoke points",
     "choices": [
       "The point at which oil produces visible smoke",
-      "The temperature at which oil burns — refined avocado, light olive, and peanut oils have high smoke points",
+      "The temperature at which oil burns -- refined avocado, light olive, and peanut oils have high smoke points",
       "Any oil can be used at any temperature",
       "Only animal fats are suitable for very high heat"
     ]
@@ -4061,10 +3984,10 @@
   {
     "tier": 4,
     "question": "What is 'temperature gradient' in a thick roast?",
-    "answer": "The outside cooks faster than the center — understanding this determines resting and reverse sear techniques",
+    "answer": "The outside cooks faster than the center -- understanding this determines resting and reverse sear techniques",
     "choices": [
       "How evenly an oven distributes heat",
-      "The outside cooks faster than the center — understanding this determines resting and reverse sear techniques",
+      "The outside cooks faster than the center -- understanding this determines resting and reverse sear techniques",
       "How quickly internal temperature rises",
       "The temperature difference between rare and well-done"
     ]
@@ -4116,12 +4039,12 @@
   {
     "tier": 5,
     "question": "What is 'the hard crack stage' in sugar work?",
-    "answer": "Sugar cooked to 149-154°C that forms hard, brittle threads in cold water — used for lollipops and spun sugar",
+    "answer": "Sugar cooked to 149-154 degC that forms hard, brittle threads in cold water -- used for lollipops and spun sugar",
     "choices": [
-      "Sugar at 121°C forming a hard ball",
-      "Sugar cooked to 149-154°C that forms hard, brittle threads in cold water — used for lollipops and spun sugar",
+      "Sugar at 121 degC forming a hard ball",
+      "Sugar cooked to 149-154 degC that forms hard, brittle threads in cold water -- used for lollipops and spun sugar",
       "Caramel stage just before burning",
-      "Sugar at 140°C forming a chewy candy"
+      "Sugar at 140 degC forming a chewy candy"
     ]
   },
   {
@@ -4149,10 +4072,10 @@
   {
     "tier": 5,
     "question": "What is 'high-pressure processing' (HPP) an alternative to?",
-    "answer": "Thermal pasteurization — it kills pathogens at room temperature preserving fresh flavor",
+    "answer": "Thermal pasteurization -- it kills pathogens at room temperature preserving fresh flavor",
     "choices": [
       "Refrigeration for short-term storage",
-      "Thermal pasteurization — it kills pathogens at room temperature preserving fresh flavor",
+      "Thermal pasteurization -- it kills pathogens at room temperature preserving fresh flavor",
       "Chemical preservatives in packaged foods",
       "Freeze-drying for shelf-stable products"
     ]
@@ -4182,10 +4105,10 @@
   {
     "tier": 5,
     "question": "What is 'rheology' in food science?",
-    "answer": "The study of how food flows and deforms — relevant to texture, spreadability, and mouthfeel",
+    "answer": "The study of how food flows and deforms -- relevant to texture, spreadability, and mouthfeel",
     "choices": [
       "The study of flavor compound release",
-      "The study of how food flows and deforms — relevant to texture, spreadability, and mouthfeel",
+      "The study of how food flows and deforms -- relevant to texture, spreadability, and mouthfeel",
       "Chemical analysis of food structure",
       "How food behaves at extreme temperatures"
     ]
@@ -4215,10 +4138,10 @@
   {
     "tier": 5,
     "question": "What is 'aroma compounds' volatility in cooking?",
-    "answer": "Most aroma compounds are volatile organic molecules that evaporate quickly — cooking affects which ones remain",
+    "answer": "Most aroma compounds are volatile organic molecules that evaporate quickly -- cooking affects which ones remain",
     "choices": [
       "Aroma compounds are all water-soluble",
-      "Most aroma compounds are volatile organic molecules that evaporate quickly — cooking affects which ones remain",
+      "Most aroma compounds are volatile organic molecules that evaporate quickly -- cooking affects which ones remain",
       "Aromas only develop at high temperatures",
       "All flavors are retained better when raw"
     ]
@@ -4226,10 +4149,10 @@
   {
     "tier": 5,
     "question": "What is 'sensorineural adaptation' relevant to in tasting?",
-    "answer": "Repeated exposure to the same stimulus reduces its perceived intensity — explains palate fatigue",
+    "answer": "Repeated exposure to the same stimulus reduces its perceived intensity -- explains palate fatigue",
     "choices": [
       "How taste buds repair after spicy food",
-      "Repeated exposure to the same stimulus reduces its perceived intensity — explains palate fatigue",
+      "Repeated exposure to the same stimulus reduces its perceived intensity -- explains palate fatigue",
       "How training improves a chef's palate",
       "The adaptation of smell to cooking smells"
     ]
@@ -4270,10 +4193,10 @@
   {
     "tier": 5,
     "question": "What is 'polyphenol oxidase' and how is it controlled in cooking?",
-    "answer": "An enzyme causing enzymatic browning in cut fruit — controlled by heat, acid, or salt to denature it",
+    "answer": "An enzyme causing enzymatic browning in cut fruit -- controlled by heat, acid, or salt to denature it",
     "choices": [
       "A starch-breaking enzyme controlled by refrigeration",
-      "An enzyme causing enzymatic browning in cut fruit — controlled by heat, acid, or salt to denature it",
+      "An enzyme causing enzymatic browning in cut fruit -- controlled by heat, acid, or salt to denature it",
       "A pigment-producing enzyme used in color enhancement",
       "A protein that causes meat to discolor"
     ]
@@ -4314,10 +4237,10 @@
   {
     "tier": 5,
     "question": "What is 'Strecker degradation'?",
-    "answer": "A reaction between alpha amino acids and carbonyl compounds producing aroma aldehydes — a secondary Maillard pathway",
+    "answer": "A reaction between alpha amino acids and carbonyl compounds producing aroma aldehydes -- a secondary Maillard pathway",
     "choices": [
       "A type of protein hydrolysis in aging cheese",
-      "A reaction between alpha amino acids and carbonyl compounds producing aroma aldehydes — a secondary Maillard pathway",
+      "A reaction between alpha amino acids and carbonyl compounds producing aroma aldehydes -- a secondary Maillard pathway",
       "The browning of bread after it cools",
       "The breakdown of glutamate in fermentation"
     ]
@@ -4325,10 +4248,10 @@
   {
     "tier": 5,
     "question": "What is 'the cook-freeze method' in catering?",
-    "answer": "Food is cooked, blast-frozen, stored, and then regenerated — allowing large-scale advance production",
+    "answer": "Food is cooked, blast-frozen, stored, and then regenerated -- allowing large-scale advance production",
     "choices": [
       "A method of quick-cooking from frozen",
-      "Food is cooked, blast-frozen, stored, and then regenerated — allowing large-scale advance production",
+      "Food is cooked, blast-frozen, stored, and then regenerated -- allowing large-scale advance production",
       "Freezing ingredients before cooking for safety",
       "A technique for producing consistently frozen desserts"
     ]
@@ -4336,10 +4259,10 @@
   {
     "tier": 5,
     "question": "What is 'the boiling point elevation' of water with added salt?",
-    "answer": "Salt raises the boiling point only very slightly (~0.5°C per tablespoon per liter) — negligible for cooking",
+    "answer": "Salt raises the boiling point only very slightly (~0.5 degC per tablespoon per liter) -- negligible for cooking",
     "choices": [
       "Salt significantly raises the boiling point, cooking pasta faster",
-      "Salt raises the boiling point only very slightly (~0.5°C per tablespoon per liter) — negligible for cooking",
+      "Salt raises the boiling point only very slightly (~0.5 degC per tablespoon per liter) -- negligible for cooking",
       "Salt lowers the boiling point of water",
       "The effect is the same as adding sugar"
     ]
@@ -4347,10 +4270,10 @@
   {
     "tier": 5,
     "question": "What is 'the smoke ladder' in barbecue wood selection?",
-    "answer": "Woods vary from mild (apple, cherry) to medium (hickory, oak) to strong (mesquite) — matched to meat type",
+    "answer": "Woods vary from mild (apple, cherry) to medium (hickory, oak) to strong (mesquite) -- matched to meat type",
     "choices": [
       "A rack for managing wood in a smoker",
-      "Woods vary from mild (apple, cherry) to medium (hickory, oak) to strong (mesquite) — matched to meat type",
+      "Woods vary from mild (apple, cherry) to medium (hickory, oak) to strong (mesquite) -- matched to meat type",
       "How quickly a wood burns determines smoke intensity only",
       "All hardwoods produce the same flavored smoke"
     ]
@@ -4358,10 +4281,10 @@
   {
     "tier": 5,
     "question": "What is 'acrylamide' and when does it form in food?",
-    "answer": "A potential carcinogen formed when starchy foods are cooked at high temperatures above 120°C",
+    "answer": "A potential carcinogen formed when starchy foods are cooked at high temperatures above 120 degC",
     "choices": [
       "A natural preservative in smoked foods",
-      "A potential carcinogen formed when starchy foods are cooked at high temperatures above 120°C",
+      "A potential carcinogen formed when starchy foods are cooked at high temperatures above 120 degC",
       "A flavor compound produced during fermentation",
       "A chemical only found in processed meat"
     ]
@@ -4424,10 +4347,10 @@
   {
     "tier": 5,
     "question": "What is 'thermoreversible gelling' in food science?",
-    "answer": "Gels that melt on heating and re-set on cooling — e.g., gelatin (unlike agar, which gels hot and melts on different cycle)",
+    "answer": "Gels that melt on heating and re-set on cooling -- e.g., gelatin (unlike agar, which gels hot and melts on different cycle)",
     "choices": [
       "Gels that can be re-melted once only",
-      "Gels that melt on heating and re-set on cooling — e.g., gelatin (unlike agar, which gels hot and melts on different cycle)",
+      "Gels that melt on heating and re-set on cooling -- e.g., gelatin (unlike agar, which gels hot and melts on different cycle)",
       "Gels that set permanently on heating",
       "Gels that require cooling to form"
     ]
@@ -4439,17 +4362,17 @@
     "choices": [
       "A single reaction producing one key flavor compound",
       "A complex series of reactions producing hundreds of flavor and color compounds from amino acid-sugar reactions at heat",
-      "A chain of reactions occurring only above 200°C",
+      "A chain of reactions occurring only above 200 degC",
       "The progressive breakdown of proteins into amino acids"
     ]
   },
   {
     "tier": 5,
     "question": "What is 'chlorophyll stability' in green vegetables when cooking?",
-    "answer": "Chlorophyll converts to pheophytin (olive-brown) in heat and acid — blanching in unsalted boiling water briefly preserves green color",
+    "answer": "Chlorophyll converts to pheophytin (olive-brown) in heat and acid -- blanching in unsalted boiling water briefly preserves green color",
     "choices": [
-      "Chlorophyll is stable up to 100°C",
-      "Chlorophyll converts to pheophytin (olive-brown) in heat and acid — blanching in unsalted boiling water briefly preserves green color",
+      "Chlorophyll is stable up to 100 degC",
+      "Chlorophyll converts to pheophytin (olive-brown) in heat and acid -- blanching in unsalted boiling water briefly preserves green color",
       "Adding salt fixes the green color permanently",
       "Green color only fades in alkaline conditions"
     ]
@@ -4490,10 +4413,10 @@
   {
     "tier": 5,
     "question": "What is 'the solubility of gases' in liquids relevant to cooking?",
-    "answer": "Colder liquids dissolve more gas — relevant to carbonation, and why cold water absorbs more oxygen",
+    "answer": "Colder liquids dissolve more gas -- relevant to carbonation, and why cold water absorbs more oxygen",
     "choices": [
       "Hot water dissolves more gas than cold",
-      "Colder liquids dissolve more gas — relevant to carbonation, and why cold water absorbs more oxygen",
+      "Colder liquids dissolve more gas -- relevant to carbonation, and why cold water absorbs more oxygen",
       "Dissolved gas affects taste but not texture",
       "Gas solubility is not affected by temperature in food"
     ]
@@ -4512,10 +4435,10 @@
   {
     "tier": 5,
     "question": "What is 'sugar inversion' and how does it affect sweetness?",
-    "answer": "Breaking sucrose into glucose and fructose by acid or invertase — the mixture is sweeter than sucrose alone",
+    "answer": "Breaking sucrose into glucose and fructose by acid or invertase -- the mixture is sweeter than sucrose alone",
     "choices": [
       "Turning sugar upside down in the jar",
-      "Breaking sucrose into glucose and fructose by acid or invertase — the mixture is sweeter than sucrose alone",
+      "Breaking sucrose into glucose and fructose by acid or invertase -- the mixture is sweeter than sucrose alone",
       "Caramelizing sucrose to reduce sweetness",
       "Fermenting sugar until it loses sweetness"
     ]
@@ -4545,10 +4468,10 @@
   {
     "tier": 5,
     "question": "What is 'phase inversion' in emulsion cooking?",
-    "answer": "Changing an oil-in-water emulsion to water-in-oil (or vice versa) — e.g., cream becoming butter during churning",
+    "answer": "Changing an oil-in-water emulsion to water-in-oil (or vice versa) -- e.g., cream becoming butter during churning",
     "choices": [
       "Oil and water separating permanently",
-      "Changing an oil-in-water emulsion to water-in-oil (or vice versa) — e.g., cream becoming butter during churning",
+      "Changing an oil-in-water emulsion to water-in-oil (or vice versa) -- e.g., cream becoming butter during churning",
       "An emulsion becoming a gel",
       "Over-emulsifying until the sauce breaks"
     ]
@@ -4556,10 +4479,10 @@
   {
     "tier": 5,
     "question": "What is 'the burst strength' test in spherification?",
-    "answer": "Measuring the force needed to rupture a sphere — balanced with the right alginate concentration for ideal texture",
+    "answer": "Measuring the force needed to rupture a sphere -- balanced with the right alginate concentration for ideal texture",
     "choices": [
       "Checking if a chocolate truffle has the right filling pressure",
-      "Measuring the force needed to rupture a sphere — balanced with the right alginate concentration for ideal texture",
+      "Measuring the force needed to rupture a sphere -- balanced with the right alginate concentration for ideal texture",
       "Testing how firm a panna cotta is",
       "Checking if bread rises enough"
     ]
@@ -4638,16 +4561,16 @@
       "Higher altitude means higher boiling point",
       "Lower atmospheric pressure at altitude reduces the boiling point of water, requiring longer cooking times",
       "Altitude affects baking but not boiling",
-      "The boiling point is always 100°C regardless of altitude"
+      "The boiling point is always 100 degC regardless of altitude"
     ]
   },
   {
     "tier": 5,
     "question": "What is 'retronasal olfaction' in flavor perception?",
-    "answer": "Aroma compounds traveling from the mouth up the back of the throat to olfactory receptors — most of what we 'taste' is actually smell",
+    "answer": "Aroma compounds traveling from the mouth up the back of the throat to olfactory receptors -- most of what we 'taste' is actually smell",
     "choices": [
       "The smell of food before eating",
-      "Aroma compounds traveling from the mouth up the back of the throat to olfactory receptors — most of what we 'taste' is actually smell",
+      "Aroma compounds traveling from the mouth up the back of the throat to olfactory receptors -- most of what we 'taste' is actually smell",
       "Tasting with the tongue's olfactory cells",
       "How we perceive carbonation in drinks"
     ]
@@ -4688,10 +4611,10 @@
   {
     "tier": 5,
     "question": "What is 'emulsifier HLB value'?",
-    "answer": "The hydrophilic-lipophilic balance — a number indicating whether an emulsifier favors oil-in-water or water-in-oil emulsions",
+    "answer": "The hydrophilic-lipophilic balance -- a number indicating whether an emulsifier favors oil-in-water or water-in-oil emulsions",
     "choices": [
       "How long an emulsifier lasts before breaking down",
-      "The hydrophilic-lipophilic balance — a number indicating whether an emulsifier favors oil-in-water or water-in-oil emulsions",
+      "The hydrophilic-lipophilic balance -- a number indicating whether an emulsifier favors oil-in-water or water-in-oil emulsions",
       "The strength of an emulsifier at high temperatures",
       "The concentration needed to stabilize a given emulsion"
     ]
@@ -4786,18 +4709,18 @@
   },
   {
     "tier": 2,
-    "question": "What is 'tomato concassé'?",
-    "answer": "Tomatoes peeled, seeded, and roughly chopped — used for sauces and garnishes",
+    "question": "What is 'tomato concasse'?",
+    "answer": "Tomatoes peeled, seeded, and roughly chopped -- used for sauces and garnishes",
     "choices": [
       "Pureed tomatoes for sauce",
-      "Tomatoes peeled, seeded, and roughly chopped — used for sauces and garnishes",
+      "Tomatoes peeled, seeded, and roughly chopped -- used for sauces and garnishes",
       "Oven-dried tomato halves",
       "Blanched whole tomatoes"
     ]
   },
   {
     "tier": 2,
-    "question": "What is 'crème anglaise'?",
+    "question": "What is 'creme anglaise'?",
     "answer": "A light vanilla custard sauce made from egg yolks, sugar, and milk",
     "choices": [
       "A thick pastry cream",
@@ -4875,10 +4798,10 @@
   {
     "tier": 2,
     "question": "What is 'a liaison' in sauce making and when is it added?",
-    "answer": "Egg yolks and cream mixture — added off the heat at the end to thicken and enrich without curdling",
+    "answer": "Egg yolks and cream mixture -- added off the heat at the end to thicken and enrich without curdling",
     "choices": [
       "Added at the start of cooking to build body",
-      "Egg yolks and cream mixture — added off the heat at the end to thicken and enrich without curdling",
+      "Egg yolks and cream mixture -- added off the heat at the end to thicken and enrich without curdling",
       "A roux added mid-cooking",
       "An emulsifier mixed in while hot"
     ]
@@ -4962,7 +4885,7 @@
   },
   {
     "tier": 3,
-    "question": "What is 'beurre manié'?",
+    "question": "What is 'beurre manie'?",
     "answer": "Equal parts raw butter and flour kneaded together and whisked into a sauce to thicken it",
     "choices": [
       "Clarified butter with herbs",
@@ -4985,10 +4908,10 @@
   {
     "tier": 3,
     "question": "What is 'the cold-oil spherification' technique?",
-    "answer": "Dropping a hot gel mixture into cold oil — surface tension forms perfect spheres as the gel sets",
+    "answer": "Dropping a hot gel mixture into cold oil -- surface tension forms perfect spheres as the gel sets",
     "choices": [
       "Spherification carried out in a refrigerator",
-      "Dropping a hot gel mixture into cold oil — surface tension forms perfect spheres as the gel sets",
+      "Dropping a hot gel mixture into cold oil -- surface tension forms perfect spheres as the gel sets",
       "Making chocolate truffles in cold oil",
       "Setting cream-based spheres in chilled cooking oil"
     ]
@@ -4996,10 +4919,10 @@
   {
     "tier": 4,
     "question": "What is 'the dextrinization of starch'?",
-    "answer": "Partial breakdown of starch into shorter chains (dextrins) by dry heat, as in toasting bread — reduces thickening power",
+    "answer": "Partial breakdown of starch into shorter chains (dextrins) by dry heat, as in toasting bread -- reduces thickening power",
     "choices": [
       "Complete hydrolysis of starch into sugar",
-      "Partial breakdown of starch into shorter chains (dextrins) by dry heat, as in toasting bread — reduces thickening power",
+      "Partial breakdown of starch into shorter chains (dextrins) by dry heat, as in toasting bread -- reduces thickening power",
       "Starch absorbing water before gelatinization",
       "Starch losing color when overheated"
     ]
@@ -5029,10 +4952,10 @@
   {
     "tier": 4,
     "question": "What is 'gluten extensibility' versus 'gluten elasticity'?",
-    "answer": "Extensibility is how far gluten can stretch; elasticity is how much it springs back — both must be balanced in bread",
+    "answer": "Extensibility is how far gluten can stretch; elasticity is how much it springs back -- both must be balanced in bread",
     "choices": [
-      "Both mean the same thing — how strong gluten is",
-      "Extensibility is how far gluten can stretch; elasticity is how much it springs back — both must be balanced in bread",
+      "Both mean the same thing -- how strong gluten is",
+      "Extensibility is how far gluten can stretch; elasticity is how much it springs back -- both must be balanced in bread",
       "Extensibility is for pastry; elasticity is for bread only",
       "Elasticity increases with hydration; extensibility does not"
     ]
@@ -5062,10 +4985,10 @@
   {
     "tier": 4,
     "question": "What is 'FIFO' in kitchen stock management?",
-    "answer": "First In, First Out — using the oldest stock before newer deliveries to minimize waste",
+    "answer": "First In, First Out -- using the oldest stock before newer deliveries to minimize waste",
     "choices": [
       "Freezing ingredients to increase their longevity",
-      "First In, First Out — using the oldest stock before newer deliveries to minimize waste",
+      "First In, First Out -- using the oldest stock before newer deliveries to minimize waste",
       "Assigning first priority to frequently used items",
       "A stock rotation system for wine cellars only"
     ]
@@ -5150,10 +5073,10 @@
   {
     "tier": 4,
     "question": "What is 'cook's percentage' in bread baking?",
-    "answer": "All ingredients expressed as a percentage of total flour weight — flour is always 100%",
+    "answer": "All ingredients expressed as a percentage of total flour weight -- flour is always 100%",
     "choices": [
       "The percentage of water in a recipe",
-      "All ingredients expressed as a percentage of total flour weight — flour is always 100%",
+      "All ingredients expressed as a percentage of total flour weight -- flour is always 100%",
       "The ratio of yeast to salt in a recipe",
       "Ingredient costs as a percentage of sale price"
     ]
@@ -5172,10 +5095,10 @@
   {
     "tier": 5,
     "question": "What is 'dilatant fluid' behavior in food?",
-    "answer": "Viscosity increases under stress — e.g., cornstarch slurry that hardens when stirred quickly",
+    "answer": "Viscosity increases under stress -- e.g., cornstarch slurry that hardens when stirred quickly",
     "choices": [
       "Fluids that thin when shaken",
-      "Viscosity increases under stress — e.g., cornstarch slurry that hardens when stirred quickly",
+      "Viscosity increases under stress -- e.g., cornstarch slurry that hardens when stirred quickly",
       "Gels that melt under pressure",
       "Sauces that thicken when heated"
     ]
@@ -5183,10 +5106,10 @@
   {
     "tier": 5,
     "question": "What is 'pseudoplastic fluid' behavior?",
-    "answer": "Viscosity decreases under shear stress — most food fluids like ketchup that flow when squeezed",
+    "answer": "Viscosity decreases under shear stress -- most food fluids like ketchup that flow when squeezed",
     "choices": [
       "Viscosity increases when stirred",
-      "Viscosity decreases under shear stress — most food fluids like ketchup that flow when squeezed",
+      "Viscosity decreases under shear stress -- most food fluids like ketchup that flow when squeezed",
       "Fluids that act like solids at low temperature",
       "Fluids that maintain constant viscosity"
     ]
@@ -5194,10 +5117,10 @@
   {
     "tier": 5,
     "question": "What is 'Brix value' used to measure?",
-    "answer": "The sugar content of a liquid — used in juice, wine, and confectionery work",
+    "answer": "The sugar content of a liquid -- used in juice, wine, and confectionery work",
     "choices": [
       "The water content of a sauce",
-      "The sugar content of a liquid — used in juice, wine, and confectionery work",
+      "The sugar content of a liquid -- used in juice, wine, and confectionery work",
       "The pH of a fermented product",
       "The fat percentage of a cream"
     ]
@@ -5260,10 +5183,10 @@
   {
     "tier": 5,
     "question": "What is 'the phase diagram of water' relevant to cooking?",
-    "answer": "Understanding where solid, liquid, and gas phases exist at different pressures and temperatures — applies to pressure cooking and freeze drying",
+    "answer": "Understanding where solid, liquid, and gas phases exist at different pressures and temperatures -- applies to pressure cooking and freeze drying",
     "choices": [
       "How water changes appearance when heated",
-      "Understanding where solid, liquid, and gas phases exist at different pressures and temperatures — applies to pressure cooking and freeze drying",
+      "Understanding where solid, liquid, and gas phases exist at different pressures and temperatures -- applies to pressure cooking and freeze drying",
       "How water composition changes during cooking",
       "The melting point of ice at different salinities"
     ]
@@ -5271,10 +5194,10 @@
   {
     "tier": 5,
     "question": "What is 'diffusion kinetics' relevant to marinating meat?",
-    "answer": "Flavor molecules move slowly through meat by diffusion — most penetration is only a few millimeters",
+    "answer": "Flavor molecules move slowly through meat by diffusion -- most penetration is only a few millimeters",
     "choices": [
       "How fast a brine reaches the center",
-      "Flavor molecules move slowly through meat by diffusion — most penetration is only a few millimeters",
+      "Flavor molecules move slowly through meat by diffusion -- most penetration is only a few millimeters",
       "How acid travels through cell walls",
       "The rate at which salt enters meat during curing"
     ]
@@ -5282,10 +5205,10 @@
   {
     "tier": 5,
     "question": "What is 'the Haber-Bosch parallel' to bread leavening?",
-    "answer": "Both involve nitrogen chemistry — yeast produces CO2 from fermentation analogously to industrial nitrogen fixation in terms of chemical yield efficiency",
+    "answer": "Both involve nitrogen chemistry -- yeast produces CO2 from fermentation analogously to industrial nitrogen fixation in terms of chemical yield efficiency",
     "choices": [
       "Industrial bread uses the same process as nitrogen fixation",
-      "Both involve nitrogen chemistry — yeast produces CO2 from fermentation analogously to industrial nitrogen fixation in terms of chemical yield efficiency",
+      "Both involve nitrogen chemistry -- yeast produces CO2 from fermentation analogously to industrial nitrogen fixation in terms of chemical yield efficiency",
       "Fertilizers used in wheat growing affect bread chemistry",
       "They are entirely unrelated processes"
     ]
@@ -5304,10 +5227,10 @@
   {
     "tier": 5,
     "question": "What is 'acid-mediated hydrolysis' of sucrose called?",
-    "answer": "Inversion — producing an equimolar mixture of glucose and fructose (invert sugar)",
+    "answer": "Inversion -- producing an equimolar mixture of glucose and fructose (invert sugar)",
     "choices": [
       "Caramelization",
-      "Inversion — producing an equimolar mixture of glucose and fructose (invert sugar)",
+      "Inversion -- producing an equimolar mixture of glucose and fructose (invert sugar)",
       "Fermentation",
       "Dextrinization"
     ]
@@ -5337,10 +5260,10 @@
   {
     "tier": 5,
     "question": "What is 'the science of knife cutting' based on?",
-    "answer": "Fracture mechanics — a sharp edge concentrates force into a very small area, exceeding the food's tensile strength",
+    "answer": "Fracture mechanics -- a sharp edge concentrates force into a very small area, exceeding the food's tensile strength",
     "choices": [
       "The weight of the knife determines cutting ability",
-      "Fracture mechanics — a sharp edge concentrates force into a very small area, exceeding the food's tensile strength",
+      "Fracture mechanics -- a sharp edge concentrates force into a very small area, exceeding the food's tensile strength",
       "A sharper angle always gives a better cut",
       "The material of the knife defines sharpness"
     ]
@@ -5348,10 +5271,10 @@
   {
     "tier": 5,
     "question": "What is 'the role of pH in meat color'?",
-    "answer": "Myoglobin changes color depending on pH and oxidation state — low pH causes grey color; higher pH maintains red",
+    "answer": "Myoglobin changes color depending on pH and oxidation state -- low pH causes grey color; higher pH maintains red",
     "choices": [
       "More acid makes meat look redder",
-      "Myoglobin changes color depending on pH and oxidation state — low pH causes grey color; higher pH maintains red",
+      "Myoglobin changes color depending on pH and oxidation state -- low pH causes grey color; higher pH maintains red",
       "Only temperature determines meat color",
       "pH affects only the texture, not color"
     ]
@@ -5359,10 +5282,10 @@
   {
     "tier": 5,
     "question": "What is 'the Maillard product family' broadly?",
-    "answer": "Melanoidins (brown polymers), furans, pyrazines, aldehydes, and ketones — each contributing different colors and flavors",
+    "answer": "Melanoidins (brown polymers), furans, pyrazines, aldehydes, and ketones -- each contributing different colors and flavors",
     "choices": [
       "A series of simple sugar compounds",
-      "Melanoidins (brown polymers), furans, pyrazines, aldehydes, and ketones — each contributing different colors and flavors",
+      "Melanoidins (brown polymers), furans, pyrazines, aldehydes, and ketones -- each contributing different colors and flavors",
       "A family of amino acids released by heat",
       "Caramelization products at high temperature"
     ]
@@ -5370,10 +5293,10 @@
   {
     "tier": 5,
     "question": "What is 'water binding capacity' in meat science?",
-    "answer": "The ability of muscle proteins to hold water — affected by pH, salt, and processing, determining juiciness",
+    "answer": "The ability of muscle proteins to hold water -- affected by pH, salt, and processing, determining juiciness",
     "choices": [
       "How much water can be added to a meat product",
-      "The ability of muscle proteins to hold water — affected by pH, salt, and processing, determining juiciness",
+      "The ability of muscle proteins to hold water -- affected by pH, salt, and processing, determining juiciness",
       "How quickly meat loses moisture when cooked",
       "The water content of a raw meat cut"
     ]
@@ -5447,10 +5370,10 @@
   {
     "tier": 5,
     "question": "What is 'the Scoville organoleptic test' original method?",
-    "answer": "Capsaicin extract diluted in sugar water until heat was no longer detectable by five human tasters — highly subjective",
+    "answer": "Capsaicin extract diluted in sugar water until heat was no longer detectable by five human tasters -- highly subjective",
     "choices": [
       "Measuring capsaicin in milligrams per gram",
-      "Capsaicin extract diluted in sugar water until heat was no longer detectable by five human tasters — highly subjective",
+      "Capsaicin extract diluted in sugar water until heat was no longer detectable by five human tasters -- highly subjective",
       "Comparing peppers to a standard reference spice",
       "Tasting and rating heat on a 1-10 scale"
     ]
@@ -5458,21 +5381,21 @@
   {
     "tier": 5,
     "question": "What is 'thermophilic' versus 'mesophilic' starter cultures in cheese?",
-    "answer": "Thermophilic cultures work at higher temperatures (40-60°C); mesophilic at cooler temperatures (20-30°C)",
+    "answer": "Thermophilic cultures work at higher temperatures (40-60 degC); mesophilic at cooler temperatures (20-30 degC)",
     "choices": [
       "Thermophilic is faster; mesophilic is slower",
-      "Thermophilic cultures work at higher temperatures (40-60°C); mesophilic at cooler temperatures (20-30°C)",
+      "Thermophilic cultures work at higher temperatures (40-60 degC); mesophilic at cooler temperatures (20-30 degC)",
       "Both work at the same temperature range",
-      "Mesophilic only — thermophilic is used in yogurt not cheese"
+      "Mesophilic only -- thermophilic is used in yogurt not cheese"
     ]
   },
   {
     "tier": 5,
     "question": "What is 'the Maillard reaction's dependence on water activity'?",
-    "answer": "The reaction is fastest at intermediate water activity (0.6-0.9) — too wet slows it; too dry stops it",
+    "answer": "The reaction is fastest at intermediate water activity (0.6-0.9) -- too wet slows it; too dry stops it",
     "choices": [
       "The reaction is fastest in wet conditions",
-      "The reaction is fastest at intermediate water activity (0.6-0.9) — too wet slows it; too dry stops it",
+      "The reaction is fastest at intermediate water activity (0.6-0.9) -- too wet slows it; too dry stops it",
       "High water activity speeds up all browning",
       "Dry conditions always accelerate browning"
     ]
@@ -5480,10 +5403,10 @@
   {
     "tier": 5,
     "question": "What is 'the biogenic amine problem' in aged and fermented foods?",
-    "answer": "Decarboxylation of amino acids by bacteria produces amines like histamine — a health hazard in poorly controlled fermentations",
+    "answer": "Decarboxylation of amino acids by bacteria produces amines like histamine -- a health hazard in poorly controlled fermentations",
     "choices": [
       "Amines adding bitterness to aged cheese",
-      "Decarboxylation of amino acids by bacteria produces amines like histamine — a health hazard in poorly controlled fermentations",
+      "Decarboxylation of amino acids by bacteria produces amines like histamine -- a health hazard in poorly controlled fermentations",
       "A flavor defect from over-reduction",
       "Breakdown of proteins causing off-odors"
     ]
@@ -5491,10 +5414,10 @@
   {
     "tier": 5,
     "question": "What is 'the glass noodle' chemistry?",
-    "answer": "Made from mung bean starch (or similar), they are nearly pure amylose — transparent because of minimal scattering of light through the gel",
+    "answer": "Made from mung bean starch (or similar), they are nearly pure amylose -- transparent because of minimal scattering of light through the gel",
     "choices": [
       "Made from refined wheat starch without coloring",
-      "Made from mung bean starch (or similar), they are nearly pure amylose — transparent because of minimal scattering of light through the gel",
+      "Made from mung bean starch (or similar), they are nearly pure amylose -- transparent because of minimal scattering of light through the gel",
       "Made from rice flour dissolved in water",
       "Made from gelatin-based noodle sheets"
     ]

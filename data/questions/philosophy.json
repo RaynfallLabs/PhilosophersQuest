@@ -24,10 +24,10 @@
   {
     "tier": 1,
     "question": "Which philosopher said 'I think, therefore I am'?",
-    "answer": "René Descartes",
+    "answer": "Rene Descartes",
     "choices": [
       "Immanuel Kant",
-      "René Descartes",
+      "Rene Descartes",
       "John Locke",
       "Voltaire"
     ]
@@ -392,7 +392,7 @@
       "John Locke",
       "David Hume",
       "George Berkeley",
-      "René Descartes"
+      "Rene Descartes"
     ]
   },
   {
@@ -519,10 +519,10 @@
   {
     "tier": 1,
     "question": "Who is associated with the golden rule: 'Do to others as you would have them do to you'?",
-    "answer": "Confucius",
+    "answer": "Jesus of Nazareth",
     "choices": [
       "Aristotle",
-      "Confucius",
+      "Jesus of Nazareth",
       "Jesus of Nazareth",
       "Kant"
     ]
@@ -809,7 +809,7 @@
     "choices": [
       "David Hume",
       "John Locke",
-      "René Descartes",
+      "Rene Descartes",
       "George Berkeley"
     ]
   },
@@ -904,11 +904,11 @@
   {
     "tier": 2,
     "question": "Which philosopher believed in the existence of innate ideas?",
-    "answer": "René Descartes",
+    "answer": "Rene Descartes",
     "choices": [
       "John Locke",
       "David Hume",
-      "René Descartes",
+      "Rene Descartes",
       "Francis Bacon"
     ]
   },
@@ -1148,7 +1148,7 @@
     "question": "Which philosopher argued that all knowledge comes from sensory experience?",
     "answer": "John Locke",
     "choices": [
-      "René Descartes",
+      "Rene Descartes",
       "John Locke",
       "Immanuel Kant",
       "Gottfried Leibniz"
@@ -1179,10 +1179,10 @@
   {
     "tier": 3,
     "question": "Who created the thought experiment of the 'evil demon' to doubt all knowledge?",
-    "answer": "René Descartes",
+    "answer": "Rene Descartes",
     "choices": [
       "David Hume",
-      "René Descartes",
+      "Rene Descartes",
       "George Berkeley",
       "Immanuel Kant"
     ]
@@ -1201,10 +1201,10 @@
   {
     "tier": 3,
     "question": "Who is considered the 'father of existentialism'?",
-    "answer": "Søren Kierkegaard",
+    "answer": "Soren Kierkegaard",
     "choices": [
       "Jean-Paul Sartre",
-      "Søren Kierkegaard",
+      "Soren Kierkegaard",
       "Friedrich Nietzsche",
       "Martin Heidegger"
     ]
@@ -1453,7 +1453,7 @@
   },
   {
     "tier": 3,
-    "question": "Which philosopher first introduced the concept of the 'Übermensch' (Superman)?",
+    "question": "Which philosopher first introduced the concept of the 'Ubermensch' (Superman)?",
     "answer": "Friedrich Nietzsche",
     "choices": [
       "Arthur Schopenhauer",
@@ -1476,10 +1476,10 @@
   {
     "tier": 3,
     "question": "Who founded philosophical pragmatism in America?",
-    "answer": "William James",
+    "answer": "Charles Sanders Peirce",
     "choices": [
       "John Dewey",
-      "William James",
+      "Charles Sanders Peirce",
       "Charles Sanders Peirce",
       "Ralph Waldo Emerson"
     ]
@@ -1498,10 +1498,10 @@
   {
     "tier": 3,
     "question": "Who is most associated with mind-body dualism?",
-    "answer": "René Descartes",
+    "answer": "Rene Descartes",
     "choices": [
       "John Locke",
-      "René Descartes",
+      "Rene Descartes",
       "George Berkeley",
       "Baruch Spinoza"
     ]
@@ -1524,7 +1524,7 @@
     "choices": [
       "Gottfried Leibniz",
       "Baruch Spinoza",
-      "René Descartes",
+      "Rene Descartes",
       "Nicolas Malebranche"
     ]
   },
@@ -1608,10 +1608,10 @@
   {
     "tier": 3,
     "question": "Who wrote 'Meditations on First Philosophy'?",
-    "answer": "René Descartes",
+    "answer": "Rene Descartes",
     "choices": [
       "Marcus Aurelius",
-      "René Descartes",
+      "Rene Descartes",
       "Baruch Spinoza",
       "Gottfried Leibniz"
     ]
@@ -1705,7 +1705,7 @@
     ]
   },
   {
-    "tier": 4,
+    "tier": 1,
     "question": "What is 'metaphysics'?",
     "answer": "The study of the fundamental nature of reality",
     "choices": [
@@ -2333,7 +2333,7 @@
   },
   {
     "tier": 5,
-    "question": "What is 'Husserlian epoché'?",
+    "question": "What is 'Husserlian epoche'?",
     "answer": "Suspending judgment about the external world to focus on experience",
     "choices": [
       "A type of logical proof",
@@ -2391,7 +2391,7 @@
     "question": "Who is associated with structuralism in linguistics?",
     "answer": "Ferdinand de Saussure",
     "choices": [
-      "Claude Lévi-Strauss",
+      "Claude Levi-Strauss",
       "Ferdinand de Saussure",
       "Roland Barthes",
       "Jacques Derrida"
@@ -2636,7 +2636,7 @@
       "Guy Debord",
       "Jean Baudrillard",
       "Michel Foucault",
-      "Jean-François Lyotard"
+      "Jean-Francois Lyotard"
     ]
   },
   {
@@ -2795,7 +2795,7 @@
   },
   {
     "tier": 5,
-    "question": "Who co-authored 'Anti-Oedipus' with Félix Guattari?",
+    "question": "Who co-authored 'Anti-Oedipus' with Felix Guattari?",
     "answer": "Gilles Deleuze",
     "choices": [
       "Michel Foucault",
@@ -3020,7 +3020,7 @@
     "choices": [
       "Thomas Aquinas",
       "Anselm of Canterbury",
-      "René Descartes",
+      "Rene Descartes",
       "Gottfried Leibniz"
     ]
   },
@@ -3533,10 +3533,10 @@
   {
     "tier": 1,
     "question": "Which of these is an example of a fact, not an opinion?",
-    "answer": "Water boils at 100°C at sea level",
+    "answer": "Water boils at 100 degC at sea level",
     "choices": [
       "Chocolate is the best flavor",
-      "Water boils at 100°C at sea level",
+      "Water boils at 100 degC at sea level",
       "Dogs are better than cats",
       "Blue is a beautiful color"
     ]
@@ -3807,17 +3807,6 @@
   },
   {
     "tier": 2,
-    "question": "What is a 'syllogism'?",
-    "answer": "A logical argument with two premises and a conclusion",
-    "choices": [
-      "A type of poem",
-      "A musical scale",
-      "A logical argument with two premises and a conclusion",
-      "A branch of mathematics"
-    ]
-  },
-  {
-    "tier": 2,
     "question": "Who wrote 'The Republic', describing an ideal society?",
     "answer": "Plato",
     "choices": [
@@ -3884,7 +3873,7 @@
   },
   {
     "tier": 2,
-    "question": "Which philosopher created the concept of the 'Forms' — perfect versions of things?",
+    "question": "Which philosopher created the concept of the 'Forms' -- perfect versions of things?",
     "answer": "Plato",
     "choices": [
       "Aristotle",
@@ -3902,17 +3891,6 @@
       "True, justified knowledge",
       "A type of argument",
       "A political system"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "What is 'determinism'?",
-    "answer": "The view that all events are caused by prior events, leaving no room for free will",
-    "choices": [
-      "The belief that the future is random",
-      "The view that all events are caused by prior events, leaving no room for free will",
-      "The study of laws and government",
-      "The idea that humans control nature"
     ]
   },
   {
@@ -3940,23 +3918,12 @@
   {
     "tier": 2,
     "question": "Who said 'I think, therefore I am'?",
-    "answer": "René Descartes",
+    "answer": "Rene Descartes",
     "choices": [
       "Aristotle",
       "Plato",
-      "René Descartes",
+      "Rene Descartes",
       "Immanuel Kant"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "What is 'moral absolutism'?",
-    "answer": "The belief that certain actions are always right or wrong regardless of context",
-    "choices": [
-      "The belief that rulers make the laws",
-      "The belief that certain actions are always right or wrong regardless of context",
-      "The idea that morality changes with time",
-      "The study of absolute zero"
     ]
   },
   {
@@ -4049,39 +4016,6 @@
   },
   {
     "tier": 2,
-    "question": "What is the 'problem of evil' in philosophy?",
-    "answer": "How an all-good God can allow suffering to exist",
-    "choices": [
-      "Whether people are naturally wicked",
-      "How an all-good God can allow suffering to exist",
-      "Why wars start",
-      "How to define cruelty"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "What is 'epistemology'?",
-    "answer": "The branch of philosophy concerned with the nature and limits of knowledge",
-    "choices": [
-      "The study of ancient languages",
-      "The branch of philosophy concerned with the nature and limits of knowledge",
-      "The study of political systems",
-      "The branch dealing with matter and energy"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "What is 'virtue ethics'?",
-    "answer": "The view that being moral means developing good character traits",
-    "choices": [
-      "The view that only outcomes matter",
-      "The view that being moral means developing good character traits",
-      "The idea that laws define right and wrong",
-      "Doing whatever produces the most wealth"
-    ]
-  },
-  {
-    "tier": 2,
     "question": "What fallacy is committed when a small first step is said to inevitably lead to extreme consequences?",
     "answer": "Slippery slope",
     "choices": [
@@ -4089,17 +4023,6 @@
       "False dilemma",
       "Slippery slope",
       "Circular reasoning"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "What is 'metaphysics'?",
-    "answer": "The branch of philosophy about the fundamental nature of reality",
-    "choices": [
-      "The study of physical forces",
-      "The branch of philosophy about the fundamental nature of reality",
-      "The study of mental illness",
-      "A type of math"
     ]
   },
   {
@@ -4115,17 +4038,6 @@
   },
   {
     "tier": 2,
-    "question": "What is 'Occam's Razor'?",
-    "answer": "The principle that the simplest explanation is usually correct",
-    "choices": [
-      "A medieval weapon",
-      "The principle that the simplest explanation is usually correct",
-      "Always doubt your first answer",
-      "Never trust appearances"
-    ]
-  },
-  {
-    "tier": 2,
     "question": "What did Plato call people who mistake shadows for reality?",
     "answer": "Prisoners in the cave (allegory of the cave)",
     "choices": [
@@ -4133,17 +4045,6 @@
       "Prisoners in the cave (allegory of the cave)",
       "Tyrants",
       "Guardians"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "What is 'solipsism'?",
-    "answer": "The belief that only one's own mind is certain to exist",
-    "choices": [
-      "The belief that we live many lives",
-      "The belief that only one's own mind is certain to exist",
-      "The view that nature is divine",
-      "The idea that all knowledge is inherited"
     ]
   },
   {
@@ -4214,17 +4115,6 @@
   },
   {
     "tier": 2,
-    "question": "What is 'moral relativism'?",
-    "answer": "The view that moral judgments are not universally true",
-    "choices": [
-      "The view that moral judgments are not universally true",
-      "The belief that morality is absolute",
-      "The study of law",
-      "The measurement of happiness"
-    ]
-  },
-  {
-    "tier": 2,
     "question": "What is an 'inference to the best explanation'?",
     "answer": "Choosing the hypothesis that best explains the evidence",
     "choices": [
@@ -4247,28 +4137,6 @@
   },
   {
     "tier": 2,
-    "question": "What is 'consequentialism'?",
-    "answer": "The view that the morality of an action depends on its outcomes",
-    "choices": [
-      "The view that intentions matter most",
-      "The view that the morality of an action depends on its outcomes",
-      "The belief that rules must never be broken",
-      "The study of consequences in physics"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "What is the 'mind-body problem'?",
-    "answer": "How the mind and physical body are related",
-    "choices": [
-      "How thoughts affect muscles",
-      "How the mind and physical body are related",
-      "Whether robots can think",
-      "How memory works"
-    ]
-  },
-  {
-    "tier": 2,
     "question": "What does 'ad hoc' mean in reasoning?",
     "answer": "An explanation invented just to save a theory from being disproved",
     "choices": [
@@ -4281,10 +4149,10 @@
   {
     "tier": 3,
     "question": "What is the central claim of existentialism?",
-    "answer": "Existence precedes essence — we define ourselves through choices",
+    "answer": "Existence precedes essence -- we define ourselves through choices",
     "choices": [
       "God defines our purpose",
-      "Existence precedes essence — we define ourselves through choices",
+      "Existence precedes essence -- we define ourselves through choices",
       "Nature determines character",
       "Logic reveals all truths"
     ]
@@ -4357,28 +4225,6 @@
   },
   {
     "tier": 3,
-    "question": "What is 'dualism' in philosophy of mind?",
-    "answer": "The view that mind and body are two distinct substances",
-    "choices": [
-      "The belief in two gods",
-      "The view that mind and body are two distinct substances",
-      "A two-party political system",
-      "The idea that all things come in pairs"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "What is 'logical positivism'?",
-    "answer": "The view that only verifiable empirical statements and logic are meaningful",
-    "choices": [
-      "Believing science will solve all problems",
-      "The view that only verifiable empirical statements and logic are meaningful",
-      "The philosophy of positive thinking",
-      "The idea that tradition guides truth"
-    ]
-  },
-  {
-    "tier": 3,
     "question": "What did Thomas Hobbes describe as 'nasty, brutish, and short'?",
     "answer": "Human life without government (the state of nature)",
     "choices": [
@@ -4401,17 +4247,6 @@
   },
   {
     "tier": 3,
-    "question": "Who wrote 'Meditations on First Philosophy'?",
-    "answer": "René Descartes",
-    "choices": [
-      "Immanuel Kant",
-      "John Locke",
-      "René Descartes",
-      "David Hume"
-    ]
-  },
-  {
-    "tier": 3,
     "question": "What is 'social contract theory'?",
     "answer": "People give up some freedoms to a government in exchange for protection",
     "choices": [
@@ -4430,17 +4265,6 @@
       "We cannot logically justify that the future will resemble the past",
       "Logic cannot be used in science",
       "Experience teaches us nothing"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "What is 'idealism' in philosophy?",
-    "answer": "Reality is fundamentally mental or immaterial",
-    "choices": [
-      "The belief that perfect societies can be built",
-      "Reality is fundamentally mental or immaterial",
-      "Placing high value on new ideas",
-      "The view that only physical matter exists"
     ]
   },
   {
@@ -4522,17 +4346,6 @@
   },
   {
     "tier": 3,
-    "question": "What is 'pragmatism' in philosophy?",
-    "answer": "The truth or value of an idea is determined by its practical consequences",
-    "choices": [
-      "Focusing only on everyday problems",
-      "The truth or value of an idea is determined by its practical consequences",
-      "Believing only proven facts",
-      "The view that tradition guides us best"
-    ]
-  },
-  {
-    "tier": 3,
     "question": "What is 'ontology'?",
     "answer": "The branch of metaphysics dealing with the nature of being and existence",
     "choices": [
@@ -4599,17 +4412,6 @@
   },
   {
     "tier": 3,
-    "question": "What is 'Hume's fork'?",
-    "answer": "The distinction between relations of ideas and matters of fact",
-    "choices": [
-      "The split between mind and body",
-      "The distinction between relations of ideas and matters of fact",
-      "The difference between God's will and natural law",
-      "The gap between language and reality"
-    ]
-  },
-  {
-    "tier": 3,
     "question": "What is 'Rawlsian justice'?",
     "answer": "A just society is one that the least well-off members would choose from behind a veil of ignorance",
     "choices": [
@@ -4628,17 +4430,6 @@
       "The study of language and texts, used to analyze philosophical sources",
       "A branch of mathematics",
       "The study of nature"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "What is the 'correspondence theory of truth'?",
-    "answer": "A statement is true if it matches reality",
-    "choices": [
-      "Truth is what works",
-      "A statement is true if it matches reality",
-      "Truth is defined by authority",
-      "Truth is relative to culture"
     ]
   },
   {
@@ -4672,17 +4463,6 @@
       "Before reaching a goal, you must always cross half the remaining distance",
       "Nothing can move faster than light",
       "The shortest path is not always a straight line"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "What is 'intersubjectivity'?",
-    "answer": "Shared understanding or agreement between multiple people",
-    "choices": [
-      "Personal subjectivity",
-      "Shared understanding or agreement between multiple people",
-      "Scientific objectivity",
-      "The study of social media"
     ]
   },
   {
@@ -4742,17 +4522,6 @@
   },
   {
     "tier": 3,
-    "question": "What is 'functionalism' in philosophy of mind?",
-    "answer": "Mental states are defined by their functional roles, not their physical makeup",
-    "choices": [
-      "The brain is a computer",
-      "Mental states are defined by their functional roles, not their physical makeup",
-      "Emotions have survival functions",
-      "The mind is a product of culture"
-    ]
-  },
-  {
-    "tier": 3,
     "question": "What is 'Bentham's utilitarian calculus'?",
     "answer": "A method for measuring pleasure and pain to determine the best action",
     "choices": [
@@ -4782,17 +4551,6 @@
       "A life spent questioning beliefs and values to understand what is good",
       "A life dedicated to religion",
       "A life of travel and experience"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "What is 'negative liberty'?",
-    "answer": "Freedom from interference or external constraints",
-    "choices": [
-      "Having no rights",
-      "Freedom from interference or external constraints",
-      "Choosing not to act",
-      "The liberty to remain ignorant"
     ]
   },
   {
@@ -4830,18 +4588,7 @@
   },
   {
     "tier": 4,
-    "question": "What is 'hermeneutics'?",
-    "answer": "The theory and methodology of text interpretation",
-    "choices": [
-      "The study of ancient heresy",
-      "The theory and methodology of text interpretation",
-      "The study of inheritance in biology",
-      "A branch of mathematics"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "What is the 'Münchhausen trilemma'?",
+    "question": "What is the 'Munchhausen trilemma'?",
     "answer": "All justifications rest on circular arguments, infinite regress, or arbitrary axioms",
     "choices": [
       "How to escape circular arguments",
@@ -4896,17 +4643,6 @@
   },
   {
     "tier": 4,
-    "question": "What is 'nominalism'?",
-    "answer": "Only particular things exist; abstract universals are just names",
-    "choices": [
-      "Names define reality",
-      "Only particular things exist; abstract universals are just names",
-      "Everything can be named",
-      "The study of nouns"
-    ]
-  },
-  {
-    "tier": 4,
     "question": "Who developed 'speech act theory' in philosophy of language?",
     "answer": "J. L. Austin (and later Searle)",
     "choices": [
@@ -4914,28 +4650,6 @@
       "Chomsky",
       "J. L. Austin (and later Searle)",
       "Quine"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "What is 'eliminative materialism'?",
-    "answer": "Folk psychological concepts like belief and desire do not exist and should be replaced by neuroscience",
-    "choices": [
-      "Physical objects are all that exist",
-      "Folk psychological concepts like belief and desire do not exist and should be replaced by neuroscience",
-      "The mind can be reduced to the brain without loss",
-      "Consciousness is an illusion"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "What is 'moral particularism'?",
-    "answer": "No general moral principles exist; each situation must be judged on its own features",
-    "choices": [
-      "Different cultures have different morals",
-      "No general moral principles exist; each situation must be judged on its own features",
-      "Only specific people can make moral judgments",
-      "Morality depends on political systems"
     ]
   },
   {
@@ -5205,10 +4919,10 @@
   {
     "tier": 4,
     "question": "What is 'the paradox of the heap' (sorites paradox)?",
-    "answer": "Removing one grain from a heap still leaves a heap — so where does a heap end?",
+    "answer": "Removing one grain from a heap still leaves a heap -- so where does a heap end?",
     "choices": [
       "How much sand makes a desert",
-      "Removing one grain from a heap still leaves a heap — so where does a heap end?",
+      "Removing one grain from a heap still leaves a heap -- so where does a heap end?",
       "Whether sets can be defined",
       "How language creates objects"
     ]
@@ -5414,10 +5128,10 @@
   {
     "tier": 5,
     "question": "What is 'dialetheism'?",
-    "answer": "The view that some contradictions are true — a statement and its negation can both hold",
+    "answer": "The view that some contradictions are true -- a statement and its negation can both hold",
     "choices": [
       "Logic has two forms",
-      "The view that some contradictions are true — a statement and its negation can both hold",
+      "The view that some contradictions are true -- a statement and its negation can both hold",
       "All logical paradoxes are unsolvable",
       "Truth has degrees"
     ]

@@ -1,513 +1,5502 @@
 [
-  {"tier": 1, "question": "1 × 1 = ?", "answer": "1", "choices": ["1", "2", "0", "11"]},
-  {"tier": 1, "question": "1 × 2 = ?", "answer": "2", "choices": ["2", "1", "3", "12"]},
-  {"tier": 1, "question": "1 × 3 = ?", "answer": "3", "choices": ["3", "2", "4", "13"]},
-  {"tier": 1, "question": "1 × 4 = ?", "answer": "4", "choices": ["4", "3", "5", "14"]},
-  {"tier": 1, "question": "1 × 5 = ?", "answer": "5", "choices": ["5", "4", "6", "15"]},
-  {"tier": 1, "question": "2 × 2 = ?", "answer": "4", "choices": ["4", "2", "6", "3"]},
-  {"tier": 1, "question": "2 × 3 = ?", "answer": "6", "choices": ["6", "5", "8", "4"]},
-  {"tier": 1, "question": "2 × 4 = ?", "answer": "8", "choices": ["8", "6", "10", "7"]},
-  {"tier": 1, "question": "2 × 5 = ?", "answer": "10", "choices": ["10", "8", "12", "9"]},
-  {"tier": 1, "question": "2 × 6 = ?", "answer": "12", "choices": ["12", "10", "14", "8"]},
-  {"tier": 1, "question": "2 × 7 = ?", "answer": "14", "choices": ["14", "12", "16", "21"]},
-  {"tier": 1, "question": "2 × 8 = ?", "answer": "16", "choices": ["16", "14", "18", "24"]},
-  {"tier": 1, "question": "2 × 9 = ?", "answer": "18", "choices": ["18", "16", "20", "27"]},
-  {"tier": 1, "question": "2 × 10 = ?", "answer": "20", "choices": ["20", "12", "22", "18"]},
-  {"tier": 1, "question": "2 × 11 = ?", "answer": "22", "choices": ["22", "20", "24", "21"]},
-  {"tier": 1, "question": "2 × 12 = ?", "answer": "24", "choices": ["24", "22", "26", "12"]},
-  {"tier": 1, "question": "3 × 3 = ?", "answer": "9", "choices": ["9", "6", "12", "8"]},
-  {"tier": 1, "question": "3 × 4 = ?", "answer": "12", "choices": ["12", "9", "15", "16"]},
-  {"tier": 1, "question": "3 × 5 = ?", "answer": "15", "choices": ["15", "12", "18", "14"]},
-  {"tier": 1, "question": "3 × 6 = ?", "answer": "18", "choices": ["18", "15", "21", "16"]},
-  {"tier": 1, "question": "3 × 7 = ?", "answer": "21", "choices": ["21", "18", "24", "28"]},
-  {"tier": 1, "question": "3 × 8 = ?", "answer": "24", "choices": ["24", "21", "27", "18"]},
-  {"tier": 1, "question": "3 × 9 = ?", "answer": "27", "choices": ["27", "24", "30", "21"]},
-  {"tier": 1, "question": "3 × 10 = ?", "answer": "30", "choices": ["30", "27", "33", "13"]},
-  {"tier": 1, "question": "3 × 11 = ?", "answer": "33", "choices": ["33", "30", "36", "31"]},
-  {"tier": 1, "question": "3 × 12 = ?", "answer": "36", "choices": ["36", "33", "39", "34"]},
-  {"tier": 1, "question": "4 × 4 = ?", "answer": "16", "choices": ["16", "12", "20", "8"]},
-  {"tier": 1, "question": "4 × 5 = ?", "answer": "20", "choices": ["20", "16", "24", "15"]},
-  {"tier": 1, "question": "4 × 6 = ?", "answer": "24", "choices": ["24", "20", "28", "18"]},
-  {"tier": 1, "question": "4 × 7 = ?", "answer": "28", "choices": ["28", "24", "32", "21"]},
-  {"tier": 1, "question": "4 × 8 = ?", "answer": "32", "choices": ["32", "28", "36", "24"]},
-  {"tier": 1, "question": "4 × 9 = ?", "answer": "36", "choices": ["36", "32", "40", "27"]},
-  {"tier": 1, "question": "4 × 10 = ?", "answer": "40", "choices": ["40", "36", "44", "14"]},
-  {"tier": 1, "question": "4 × 11 = ?", "answer": "44", "choices": ["44", "40", "48", "41"]},
-  {"tier": 1, "question": "4 × 12 = ?", "answer": "48", "choices": ["48", "44", "52", "46"]},
-  {"tier": 1, "question": "5 × 5 = ?", "answer": "25", "choices": ["25", "20", "30", "10"]},
-  {"tier": 1, "question": "5 × 6 = ?", "answer": "30", "choices": ["30", "25", "35", "24"]},
-  {"tier": 1, "question": "5 × 7 = ?", "answer": "35", "choices": ["35", "30", "40", "28"]},
-  {"tier": 1, "question": "5 × 8 = ?", "answer": "40", "choices": ["40", "35", "45", "32"]},
-  {"tier": 1, "question": "5 × 9 = ?", "answer": "45", "choices": ["45", "40", "50", "36"]},
-  {"tier": 1, "question": "5 × 10 = ?", "answer": "50", "choices": ["50", "45", "55", "15"]},
-  {"tier": 1, "question": "5 × 11 = ?", "answer": "55", "choices": ["55", "50", "60", "51"]},
-  {"tier": 1, "question": "5 × 12 = ?", "answer": "60", "choices": ["60", "55", "65", "56"]},
-  {"tier": 1, "question": "12 ÷ 3 = ?", "answer": "4", "choices": ["4", "3", "5", "6"]},
-  {"tier": 1, "question": "15 ÷ 5 = ?", "answer": "3", "choices": ["3", "4", "2", "5"]},
-  {"tier": 1, "question": "20 ÷ 4 = ?", "answer": "5", "choices": ["5", "4", "6", "3"]},
-  {"tier": 1, "question": "24 ÷ 3 = ?", "answer": "8", "choices": ["8", "7", "9", "6"]},
-  {"tier": 1, "question": "35 ÷ 5 = ?", "answer": "7", "choices": ["7", "6", "8", "9"]},
-  {"tier": 1, "question": "18 ÷ 3 = ?", "answer": "6", "choices": ["6", "5", "7", "4"]},
-  {"tier": 1, "question": "16 ÷ 4 = ?", "answer": "4", "choices": ["4", "3", "5", "6"]},
-  {"tier": 1, "question": "40 ÷ 5 = ?", "answer": "8", "choices": ["8", "7", "9", "6"]},
-  {"tier": 1, "question": "36 ÷ 4 = ?", "answer": "9", "choices": ["9", "8", "10", "7"]},
-  {"tier": 1, "question": "45 ÷ 5 = ?", "answer": "9", "choices": ["9", "8", "10", "7"]},
-  {"tier": 1, "question": "9 + 8 = ?", "answer": "17", "choices": ["17", "15", "16", "18"]},
-  {"tier": 1, "question": "7 + 6 = ?", "answer": "13", "choices": ["13", "11", "14", "12"]},
-  {"tier": 1, "question": "8 + 5 = ?", "answer": "13", "choices": ["13", "12", "14", "11"]},
-  {"tier": 1, "question": "9 + 9 = ?", "answer": "18", "choices": ["18", "17", "19", "16"]},
-  {"tier": 1, "question": "7 + 7 = ?", "answer": "14", "choices": ["14", "13", "15", "12"]},
-  {"tier": 1, "question": "6 + 8 = ?", "answer": "14", "choices": ["14", "12", "15", "13"]},
-  {"tier": 1, "question": "9 + 7 = ?", "answer": "16", "choices": ["16", "15", "17", "14"]},
-  {"tier": 1, "question": "8 + 8 = ?", "answer": "16", "choices": ["16", "15", "17", "14"]},
-  {"tier": 1, "question": "13 - 7 = ?", "answer": "6", "choices": ["6", "5", "7", "8"]},
-  {"tier": 1, "question": "15 - 8 = ?", "answer": "7", "choices": ["7", "6", "8", "9"]},
-  {"tier": 1, "question": "17 - 9 = ?", "answer": "8", "choices": ["8", "7", "9", "6"]},
-  {"tier": 1, "question": "14 - 6 = ?", "answer": "8", "choices": ["8", "7", "9", "6"]},
-  {"tier": 1, "question": "16 - 7 = ?", "answer": "9", "choices": ["9", "8", "10", "7"]},
-  {"tier": 1, "question": "18 - 9 = ?", "answer": "9", "choices": ["9", "8", "10", "7"]},
-  {"tier": 1, "question": "12 - 5 = ?", "answer": "7", "choices": ["7", "6", "8", "5"]},
-  {"tier": 1, "question": "11 - 4 = ?", "answer": "7", "choices": ["7", "6", "8", "5"]},
-  {"tier": 1, "question": "20 - 8 = ?", "answer": "12", "choices": ["12", "11", "13", "10"]},
-  {"tier": 1, "question": "15 - 6 = ?", "answer": "9", "choices": ["9", "8", "10", "7"]},
-  {"tier": 1, "question": "1² = ?", "answer": "1", "choices": ["1", "2", "0", "4"]},
-  {"tier": 1, "question": "2² = ?", "answer": "4", "choices": ["4", "2", "6", "8"]},
-  {"tier": 1, "question": "3² = ?", "answer": "9", "choices": ["9", "6", "12", "8"]},
-  {"tier": 1, "question": "4² = ?", "answer": "16", "choices": ["16", "12", "20", "8"]},
-  {"tier": 1, "question": "5² = ?", "answer": "25", "choices": ["25", "20", "30", "10"]},
-  {"tier": 1, "question": "10 ÷ 2 = ?", "answer": "5", "choices": ["5", "4", "6", "8"]},
-  {"tier": 1, "question": "8 ÷ 4 = ?", "answer": "2", "choices": ["2", "3", "4", "1"]},
-  {"tier": 1, "question": "9 ÷ 3 = ?", "answer": "3", "choices": ["3", "4", "2", "6"]},
-  {"tier": 1, "question": "20 ÷ 5 = ?", "answer": "4", "choices": ["4", "5", "3", "2"]},
-  {"tier": 1, "question": "30 ÷ 5 = ?", "answer": "6", "choices": ["6", "5", "7", "4"]},
-  {"tier": 1, "question": "24 ÷ 4 = ?", "answer": "6", "choices": ["6", "5", "7", "8"]},
-  {"tier": 1, "question": "6 + 7 = ?", "answer": "13", "choices": ["13", "12", "14", "11"]},
-  {"tier": 1, "question": "9 + 6 = ?", "answer": "15", "choices": ["15", "14", "16", "13"]},
-  {"tier": 1, "question": "7 + 8 = ?", "answer": "15", "choices": ["15", "14", "16", "13"]},
-  {"tier": 1, "question": "11 - 6 = ?", "answer": "5", "choices": ["5", "4", "6", "7"]},
-  {"tier": 1, "question": "14 - 8 = ?", "answer": "6", "choices": ["6", "5", "7", "8"]},
-  {"tier": 1, "question": "16 - 9 = ?", "answer": "7", "choices": ["7", "6", "8", "9"]},
-  {"tier": 1, "question": "28 ÷ 4 = ?", "answer": "7", "choices": ["7", "6", "8", "9"]},
-  {"tier": 1, "question": "21 ÷ 3 = ?", "answer": "7", "choices": ["7", "6", "8", "9"]},
-  {"tier": 1, "question": "27 ÷ 3 = ?", "answer": "9", "choices": ["9", "8", "10", "7"]},
-  {"tier": 1, "question": "48 ÷ 4 = ?", "answer": "12", "choices": ["12", "11", "13", "14"]},
-  {"tier": 1, "question": "50 ÷ 5 = ?", "answer": "10", "choices": ["10", "9", "11", "8"]},
-  {"tier": 1, "question": "55 ÷ 5 = ?", "answer": "11", "choices": ["11", "10", "12", "9"]},
-  {"tier": 1, "question": "60 ÷ 5 = ?", "answer": "12", "choices": ["12", "11", "13", "14"]},
-  {"tier": 1, "question": "44 ÷ 4 = ?", "answer": "11", "choices": ["11", "10", "12", "9"]},
-  {"tier": 1, "question": "33 ÷ 3 = ?", "answer": "11", "choices": ["11", "10", "12", "9"]},
-  {"tier": 1, "question": "36 ÷ 3 = ?", "answer": "12", "choices": ["12", "11", "13", "14"]},
-
-  {"tier": 2, "question": "6 × 6 = ?", "answer": "36", "choices": ["36", "30", "42", "48"]},
-  {"tier": 2, "question": "6 × 7 = ?", "answer": "42", "choices": ["42", "36", "48", "49"]},
-  {"tier": 2, "question": "6 × 8 = ?", "answer": "48", "choices": ["48", "42", "54", "56"]},
-  {"tier": 2, "question": "6 × 9 = ?", "answer": "54", "choices": ["54", "48", "60", "63"]},
-  {"tier": 2, "question": "6 × 10 = ?", "answer": "60", "choices": ["60", "54", "66", "16"]},
-  {"tier": 2, "question": "6 × 11 = ?", "answer": "66", "choices": ["66", "60", "72", "61"]},
-  {"tier": 2, "question": "6 × 12 = ?", "answer": "72", "choices": ["72", "66", "78", "68"]},
-  {"tier": 2, "question": "7 × 7 = ?", "answer": "49", "choices": ["49", "42", "56", "48"]},
-  {"tier": 2, "question": "7 × 8 = ?", "answer": "56", "choices": ["56", "49", "63", "54"]},
-  {"tier": 2, "question": "7 × 9 = ?", "answer": "63", "choices": ["63", "56", "70", "54"]},
-  {"tier": 2, "question": "7 × 10 = ?", "answer": "70", "choices": ["70", "63", "77", "17"]},
-  {"tier": 2, "question": "7 × 11 = ?", "answer": "77", "choices": ["77", "70", "84", "71"]},
-  {"tier": 2, "question": "7 × 12 = ?", "answer": "84", "choices": ["84", "77", "91", "78"]},
-  {"tier": 2, "question": "8 × 8 = ?", "answer": "64", "choices": ["64", "56", "72", "48"]},
-  {"tier": 2, "question": "8 × 9 = ?", "answer": "72", "choices": ["72", "64", "81", "63"]},
-  {"tier": 2, "question": "8 × 10 = ?", "answer": "80", "choices": ["80", "72", "88", "18"]},
-  {"tier": 2, "question": "8 × 11 = ?", "answer": "88", "choices": ["88", "80", "96", "81"]},
-  {"tier": 2, "question": "8 × 12 = ?", "answer": "96", "choices": ["96", "88", "104", "84"]},
-  {"tier": 2, "question": "9 × 9 = ?", "answer": "81", "choices": ["81", "72", "90", "63"]},
-  {"tier": 2, "question": "9 × 10 = ?", "answer": "90", "choices": ["90", "81", "99", "19"]},
-  {"tier": 2, "question": "9 × 11 = ?", "answer": "99", "choices": ["99", "90", "108", "91"]},
-  {"tier": 2, "question": "9 × 12 = ?", "answer": "108", "choices": ["108", "99", "117", "96"]},
-  {"tier": 2, "question": "10 × 10 = ?", "answer": "100", "choices": ["100", "90", "110", "20"]},
-  {"tier": 2, "question": "10 × 11 = ?", "answer": "110", "choices": ["110", "100", "120", "101"]},
-  {"tier": 2, "question": "10 × 12 = ?", "answer": "120", "choices": ["120", "110", "130", "112"]},
-  {"tier": 2, "question": "11 × 11 = ?", "answer": "121", "choices": ["121", "111", "132", "110"]},
-  {"tier": 2, "question": "11 × 12 = ?", "answer": "132", "choices": ["132", "121", "143", "122"]},
-  {"tier": 2, "question": "12 × 12 = ?", "answer": "144", "choices": ["144", "132", "156", "136"]},
-  {"tier": 2, "question": "48 ÷ 6 = ?", "answer": "8", "choices": ["8", "7", "9", "6"]},
-  {"tier": 2, "question": "56 ÷ 7 = ?", "answer": "8", "choices": ["8", "7", "9", "6"]},
-  {"tier": 2, "question": "63 ÷ 9 = ?", "answer": "7", "choices": ["7", "6", "8", "9"]},
-  {"tier": 2, "question": "72 ÷ 8 = ?", "answer": "9", "choices": ["9", "8", "10", "7"]},
-  {"tier": 2, "question": "84 ÷ 12 = ?", "answer": "7", "choices": ["7", "6", "8", "9"]},
-  {"tier": 2, "question": "66 ÷ 6 = ?", "answer": "11", "choices": ["11", "10", "12", "9"]},
-  {"tier": 2, "question": "77 ÷ 7 = ?", "answer": "11", "choices": ["11", "10", "12", "9"]},
-  {"tier": 2, "question": "88 ÷ 8 = ?", "answer": "11", "choices": ["11", "10", "12", "9"]},
-  {"tier": 2, "question": "99 ÷ 9 = ?", "answer": "11", "choices": ["11", "10", "12", "9"]},
-  {"tier": 2, "question": "108 ÷ 9 = ?", "answer": "12", "choices": ["12", "11", "13", "14"]},
-  {"tier": 2, "question": "96 ÷ 8 = ?", "answer": "12", "choices": ["12", "11", "13", "14"]},
-  {"tier": 2, "question": "72 ÷ 6 = ?", "answer": "12", "choices": ["12", "11", "13", "14"]},
-  {"tier": 2, "question": "6² = ?", "answer": "36", "choices": ["36", "30", "42", "48"]},
-  {"tier": 2, "question": "7² = ?", "answer": "49", "choices": ["49", "42", "56", "48"]},
-  {"tier": 2, "question": "8² = ?", "answer": "64", "choices": ["64", "56", "72", "81"]},
-  {"tier": 2, "question": "9² = ?", "answer": "81", "choices": ["81", "72", "90", "63"]},
-  {"tier": 2, "question": "10² = ?", "answer": "100", "choices": ["100", "90", "110", "80"]},
-  {"tier": 2, "question": "11² = ?", "answer": "121", "choices": ["121", "111", "132", "110"]},
-  {"tier": 2, "question": "12² = ?", "answer": "144", "choices": ["144", "132", "156", "136"]},
-  {"tier": 2, "question": "½ of 48 = ?", "answer": "24", "choices": ["24", "16", "32", "12"]},
-  {"tier": 2, "question": "½ of 36 = ?", "answer": "18", "choices": ["18", "12", "24", "9"]},
-  {"tier": 2, "question": "½ of 70 = ?", "answer": "35", "choices": ["35", "25", "45", "14"]},
-  {"tier": 2, "question": "¼ of 60 = ?", "answer": "15", "choices": ["15", "20", "12", "18"]},
-  {"tier": 2, "question": "¼ of 80 = ?", "answer": "20", "choices": ["20", "25", "16", "10"]},
-  {"tier": 2, "question": "¼ of 100 = ?", "answer": "25", "choices": ["25", "20", "50", "10"]},
-  {"tier": 2, "question": "¾ of 40 = ?", "answer": "30", "choices": ["30", "20", "35", "10"]},
-  {"tier": 2, "question": "¾ of 80 = ?", "answer": "60", "choices": ["60", "40", "20", "70"]},
-  {"tier": 2, "question": "⅓ of 90 = ?", "answer": "30", "choices": ["30", "45", "27", "33"]},
-  {"tier": 2, "question": "⅓ of 60 = ?", "answer": "20", "choices": ["20", "15", "30", "18"]},
-  {"tier": 2, "question": "25% of 80 = ?", "answer": "20", "choices": ["20", "25", "15", "40"]},
-  {"tier": 2, "question": "25% of 120 = ?", "answer": "30", "choices": ["30", "25", "40", "60"]},
-  {"tier": 2, "question": "50% of 90 = ?", "answer": "45", "choices": ["45", "40", "50", "35"]},
-  {"tier": 2, "question": "50% of 130 = ?", "answer": "65", "choices": ["65", "60", "70", "55"]},
-  {"tier": 2, "question": "10% of 350 = ?", "answer": "35", "choices": ["35", "30", "40", "25"]},
-  {"tier": 2, "question": "10% of 520 = ?", "answer": "52", "choices": ["52", "50", "55", "42"]},
-  {"tier": 2, "question": "75% of 40 = ?", "answer": "30", "choices": ["30", "35", "20", "10"]},
-  {"tier": 2, "question": "75% of 60 = ?", "answer": "45", "choices": ["45", "40", "50", "15"]},
-  {"tier": 2, "question": "10% of 70 = ?", "answer": "7", "choices": ["7", "14", "17", "3"]},
-  {"tier": 2, "question": "50% of 44 = ?", "answer": "22", "choices": ["22", "24", "11", "20"]},
-  {"tier": 2, "question": "9 × 6 = ?", "answer": "54", "choices": ["54", "48", "56", "63"]},
-  {"tier": 2, "question": "6 × 4 = ?", "answer": "24", "choices": ["24", "18", "30", "20"]},
-  {"tier": 2, "question": "7 × 4 = ?", "answer": "28", "choices": ["28", "21", "35", "24"]},
-  {"tier": 2, "question": "8 × 4 = ?", "answer": "32", "choices": ["32", "24", "40", "28"]},
-  {"tier": 2, "question": "9 × 4 = ?", "answer": "36", "choices": ["36", "27", "45", "32"]},
-  {"tier": 2, "question": "7 × 6 = ?", "answer": "42", "choices": ["42", "35", "49", "36"]},
-  {"tier": 2, "question": "8 × 6 = ?", "answer": "48", "choices": ["48", "42", "54", "56"]},
-  {"tier": 2, "question": "12 × 6 = ?", "answer": "72", "choices": ["72", "66", "78", "68"]},
-  {"tier": 2, "question": "12 × 7 = ?", "answer": "84", "choices": ["84", "77", "91", "78"]},
-  {"tier": 2, "question": "12 × 8 = ?", "answer": "96", "choices": ["96", "88", "104", "84"]},
-  {"tier": 2, "question": "12 × 9 = ?", "answer": "108", "choices": ["108", "99", "117", "96"]},
-  {"tier": 2, "question": "12 × 11 = ?", "answer": "132", "choices": ["132", "121", "143", "122"]},
-  {"tier": 2, "question": "11 × 6 = ?", "answer": "66", "choices": ["66", "60", "72", "61"]},
-  {"tier": 2, "question": "11 × 7 = ?", "answer": "77", "choices": ["77", "70", "84", "71"]},
-  {"tier": 2, "question": "11 × 8 = ?", "answer": "88", "choices": ["88", "80", "96", "81"]},
-  {"tier": 2, "question": "11 × 9 = ?", "answer": "99", "choices": ["99", "90", "108", "91"]},
-  {"tier": 2, "question": "56 ÷ 8 = ?", "answer": "7", "choices": ["7", "6", "8", "9"]},
-  {"tier": 2, "question": "42 ÷ 6 = ?", "answer": "7", "choices": ["7", "6", "8", "9"]},
-  {"tier": 2, "question": "54 ÷ 6 = ?", "answer": "9", "choices": ["9", "8", "10", "7"]},
-  {"tier": 2, "question": "70 ÷ 7 = ?", "answer": "10", "choices": ["10", "9", "11", "8"]},
-  {"tier": 2, "question": "90 ÷ 9 = ?", "answer": "10", "choices": ["10", "9", "11", "8"]},
-  {"tier": 2, "question": "110 ÷ 11 = ?", "answer": "10", "choices": ["10", "9", "11", "8"]},
-  {"tier": 2, "question": "120 ÷ 12 = ?", "answer": "10", "choices": ["10", "9", "11", "8"]},
-  {"tier": 2, "question": "49 ÷ 7 = ?", "answer": "7", "choices": ["7", "6", "8", "9"]},
-  {"tier": 2, "question": "81 ÷ 9 = ?", "answer": "9", "choices": ["9", "8", "10", "7"]},
-  {"tier": 2, "question": "64 ÷ 8 = ?", "answer": "8", "choices": ["8", "7", "9", "6"]},
-  {"tier": 2, "question": "36 ÷ 6 = ?", "answer": "6", "choices": ["6", "5", "7", "4"]},
-  {"tier": 2, "question": "144 ÷ 12 = ?", "answer": "12", "choices": ["12", "11", "13", "14"]},
-  {"tier": 2, "question": "132 ÷ 11 = ?", "answer": "12", "choices": ["12", "11", "13", "14"]},
-  {"tier": 2, "question": "10% of 200 = ?", "answer": "20", "choices": ["20", "25", "2", "40"]},
-
-  {"tier": 3, "question": "Area of a rectangle: length × ___?", "answer": "Width", "choices": ["Width", "Height", "Diameter", "Perimeter"]},
-  {"tier": 3, "question": "Area of a rectangle 6 × 9 = ?", "answer": "54", "choices": ["54", "30", "45", "63"]},
-  {"tier": 3, "question": "Area of a rectangle 7 × 8 = ?", "answer": "56", "choices": ["56", "30", "42", "64"]},
-  {"tier": 3, "question": "Area of a rectangle 5 × 12 = ?", "answer": "60", "choices": ["60", "34", "55", "70"]},
-  {"tier": 3, "question": "Area of a rectangle 10 × 4 = ?", "answer": "40", "choices": ["40", "28", "50", "14"]},
-  {"tier": 3, "question": "Perimeter of a rectangle 5 × 4 = ?", "answer": "18", "choices": ["18", "20", "16", "22"]},
-  {"tier": 3, "question": "Perimeter of a rectangle 6 × 3 = ?", "answer": "18", "choices": ["18", "9", "24", "15"]},
-  {"tier": 3, "question": "Perimeter of a rectangle 8 × 5 = ?", "answer": "26", "choices": ["26", "40", "24", "30"]},
-  {"tier": 3, "question": "Perimeter of a rectangle 7 × 7 = ?", "answer": "28", "choices": ["28", "49", "21", "14"]},
-  {"tier": 3, "question": "Area of a triangle = ½ × base × ___?", "answer": "Height", "choices": ["Height", "Width", "Length", "Hypotenuse"]},
-  {"tier": 3, "question": "Area of a triangle: base=8, height=5 = ?", "answer": "20", "choices": ["20", "40", "13", "24"]},
-  {"tier": 3, "question": "Area of a triangle: base=6, height=4 = ?", "answer": "12", "choices": ["12", "24", "10", "16"]},
-  {"tier": 3, "question": "Area of a triangle: base=10, height=6 = ?", "answer": "30", "choices": ["30", "60", "16", "20"]},
-  {"tier": 3, "question": "Area of a triangle: base=9, height=4 = ?", "answer": "18", "choices": ["18", "36", "13", "24"]},
-  {"tier": 3, "question": "Circumference of a circle = 2 × π × ___?", "answer": "Radius", "choices": ["Radius", "Diameter", "Area", "Chord"]},
-  {"tier": 3, "question": "Area of a circle = π × ___²?", "answer": "r", "choices": ["r", "d", "C", "A"]},
-  {"tier": 3, "question": "The diameter of a circle = 2 × ___?", "answer": "Radius", "choices": ["Radius", "Area", "Chord", "π"]},
-  {"tier": 3, "question": "Circumference = π × ___?", "answer": "Diameter", "choices": ["Diameter", "Radius", "Area", "Chord"]},
-  {"tier": 3, "question": "√1 = ?", "answer": "1", "choices": ["1", "0", "2", "3"]},
-  {"tier": 3, "question": "√4 = ?", "answer": "2", "choices": ["2", "1", "3", "4"]},
-  {"tier": 3, "question": "√9 = ?", "answer": "3", "choices": ["3", "2", "4", "5"]},
-  {"tier": 3, "question": "√16 = ?", "answer": "4", "choices": ["4", "3", "5", "6"]},
-  {"tier": 3, "question": "√25 = ?", "answer": "5", "choices": ["5", "4", "6", "7"]},
-  {"tier": 3, "question": "√36 = ?", "answer": "6", "choices": ["6", "5", "7", "8"]},
-  {"tier": 3, "question": "√49 = ?", "answer": "7", "choices": ["7", "6", "8", "9"]},
-  {"tier": 3, "question": "√64 = ?", "answer": "8", "choices": ["8", "7", "9", "10"]},
-  {"tier": 3, "question": "√81 = ?", "answer": "9", "choices": ["9", "8", "10", "7"]},
-  {"tier": 3, "question": "√100 = ?", "answer": "10", "choices": ["10", "9", "11", "50"]},
-  {"tier": 3, "question": "√121 = ?", "answer": "11", "choices": ["11", "10", "12", "13"]},
-  {"tier": 3, "question": "√144 = ?", "answer": "12", "choices": ["12", "11", "13", "14"]},
-  {"tier": 3, "question": "If 3x = 21, then x = ?", "answer": "7", "choices": ["7", "6", "8", "9"]},
-  {"tier": 3, "question": "If x + 9 = 15, then x = ?", "answer": "6", "choices": ["6", "5", "7", "8"]},
-  {"tier": 3, "question": "If 5x = 35, then x = ?", "answer": "7", "choices": ["7", "6", "8", "9"]},
-  {"tier": 3, "question": "If x - 4 = 11, then x = ?", "answer": "15", "choices": ["15", "7", "14", "16"]},
-  {"tier": 3, "question": "If 8x = 56, then x = ?", "answer": "7", "choices": ["7", "6", "8", "9"]},
-  {"tier": 3, "question": "If x + 13 = 20, then x = ?", "answer": "7", "choices": ["7", "6", "8", "33"]},
-  {"tier": 3, "question": "If 4x = 48, then x = ?", "answer": "12", "choices": ["12", "11", "13", "14"]},
-  {"tier": 3, "question": "If x ÷ 6 = 9, then x = ?", "answer": "54", "choices": ["54", "48", "63", "3"]},
-  {"tier": 3, "question": "If 9x = 72, then x = ?", "answer": "8", "choices": ["8", "7", "9", "6"]},
-  {"tier": 3, "question": "If x - 7 = 14, then x = ?", "answer": "21", "choices": ["21", "7", "20", "22"]},
-  {"tier": 3, "question": "3 + 4 × 2 = ?", "answer": "11", "choices": ["11", "14", "10", "13"]},
-  {"tier": 3, "question": "10 - 2 × 3 = ?", "answer": "4", "choices": ["4", "24", "5", "3"]},
-  {"tier": 3, "question": "5 × 3 + 2 = ?", "answer": "17", "choices": ["17", "25", "16", "18"]},
-  {"tier": 3, "question": "8 + 6 ÷ 2 = ?", "answer": "11", "choices": ["11", "7", "10", "14"]},
-  {"tier": 3, "question": "12 ÷ 4 + 5 = ?", "answer": "8", "choices": ["8", "3", "17", "7"]},
-  {"tier": 3, "question": "2 × (3 + 4) = ?", "answer": "14", "choices": ["14", "10", "12", "16"]},
-  {"tier": 3, "question": "3 × (5 - 2) = ?", "answer": "9", "choices": ["9", "6", "13", "10"]},
-  {"tier": 3, "question": "(8 + 2) × 3 = ?", "answer": "30", "choices": ["30", "14", "26", "24"]},
-  {"tier": 3, "question": "20 ÷ (2 + 3) = ?", "answer": "4", "choices": ["4", "12", "5", "3"]},
-  {"tier": 3, "question": "6 + 3² = ?", "answer": "15", "choices": ["15", "81", "12", "18"]},
-  {"tier": 3, "question": "Area of a square with side 7 = ?", "answer": "49", "choices": ["49", "28", "42", "56"]},
-  {"tier": 3, "question": "Area of a square with side 9 = ?", "answer": "81", "choices": ["81", "36", "72", "90"]},
-  {"tier": 3, "question": "Perimeter of a square with side 6 = ?", "answer": "24", "choices": ["24", "36", "12", "18"]},
-  {"tier": 3, "question": "Perimeter of a square with side 8 = ?", "answer": "32", "choices": ["32", "64", "16", "24"]},
-  {"tier": 3, "question": "Area of a rectangle 11 × 3 = ?", "answer": "33", "choices": ["33", "28", "44", "14"]},
-  {"tier": 3, "question": "Perimeter of a rectangle 10 × 6 = ?", "answer": "32", "choices": ["32", "60", "16", "28"]},
-  {"tier": 3, "question": "If 12x = 144, then x = ?", "answer": "12", "choices": ["12", "11", "13", "14"]},
-  {"tier": 3, "question": "If x ÷ 4 = 7, then x = ?", "answer": "28", "choices": ["28", "11", "3", "32"]},
-  {"tier": 3, "question": "If 7x = 63, then x = ?", "answer": "9", "choices": ["9", "8", "10", "7"]},
-  {"tier": 3, "question": "4 × 5 - 6 = ?", "answer": "14", "choices": ["14", "20", "18", "16"]},
-  {"tier": 3, "question": "15 ÷ 3 + 7 = ?", "answer": "12", "choices": ["12", "5", "22", "11"]},
-  {"tier": 3, "question": "2 + 3 × 4 = ?", "answer": "14", "choices": ["14", "20", "12", "15"]},
-  {"tier": 3, "question": "Area of a triangle: base=12, height=5 = ?", "answer": "30", "choices": ["30", "60", "17", "34"]},
-  {"tier": 3, "question": "Area of a rectangle 3 × 15 = ?", "answer": "45", "choices": ["45", "36", "54", "18"]},
-  {"tier": 3, "question": "Perimeter of a rectangle 9 × 2 = ?", "answer": "22", "choices": ["22", "18", "26", "11"]},
-  {"tier": 3, "question": "If x + 25 = 40, then x = ?", "answer": "15", "choices": ["15", "14", "16", "65"]},
-  {"tier": 3, "question": "(4 + 6) × (3 - 1) = ?", "answer": "20", "choices": ["20", "16", "24", "13"]},
-  {"tier": 3, "question": "5² - 4² = ?", "answer": "9", "choices": ["9", "1", "41", "25"]},
-  {"tier": 3, "question": "Area of a triangle: base=14, height=3 = ?", "answer": "21", "choices": ["21", "42", "17", "24"]},
-  {"tier": 3, "question": "Perimeter of a square with side 11 = ?", "answer": "44", "choices": ["44", "121", "22", "40"]},
-  {"tier": 3, "question": "If x - 16 = 9, then x = ?", "answer": "25", "choices": ["25", "7", "24", "26"]},
-  {"tier": 3, "question": "3 × 4² = ?", "answer": "48", "choices": ["48", "144", "36", "64"]},
-  {"tier": 3, "question": "Area of a rectangle 8 × 7 = ?", "answer": "56", "choices": ["56", "30", "48", "63"]},
-  {"tier": 3, "question": "Perimeter of a rectangle 12 × 5 = ?", "answer": "34", "choices": ["34", "60", "30", "24"]},
-  {"tier": 3, "question": "√25 × √4 = ?", "answer": "10", "choices": ["10", "5", "20", "100"]},
-  {"tier": 3, "question": "6 × 4 - 3 × 5 = ?", "answer": "9", "choices": ["9", "15", "21", "45"]},
-
-  {"tier": 4, "question": "Volume of a rectangular box: length × width × ___?", "answer": "Height", "choices": ["Height", "Depth", "Area", "Radius"]},
-  {"tier": 4, "question": "Volume of a cube with side 4 = ?", "answer": "64", "choices": ["64", "48", "16", "12"]},
-  {"tier": 4, "question": "Volume of a cube with side 3 = ?", "answer": "27", "choices": ["27", "9", "18", "12"]},
-  {"tier": 4, "question": "Volume of a cube with side 5 = ?", "answer": "125", "choices": ["125", "25", "75", "100"]},
-  {"tier": 4, "question": "Volume of a cube with side 2 = ?", "answer": "8", "choices": ["8", "4", "6", "12"]},
-  {"tier": 4, "question": "Volume of a box 3 × 4 × 5 = ?", "answer": "60", "choices": ["60", "47", "120", "24"]},
-  {"tier": 4, "question": "Volume of a box 2 × 6 × 7 = ?", "answer": "84", "choices": ["84", "30", "42", "96"]},
-  {"tier": 4, "question": "Volume of a cylinder = π × r² × ___?", "answer": "h", "choices": ["h", "d", "C", "A"]},
-  {"tier": 4, "question": "Surface area of a cube with side 3 = ?", "answer": "54", "choices": ["54", "27", "36", "18"]},
-  {"tier": 4, "question": "Surface area of a cube with side 4 = ?", "answer": "96", "choices": ["96", "64", "48", "16"]},
-  {"tier": 4, "question": "Surface area of a cube with side 2 = ?", "answer": "24", "choices": ["24", "8", "12", "16"]},
-  {"tier": 4, "question": "A right triangle has legs 3 and 4. Hypotenuse = ?", "answer": "5", "choices": ["5", "6", "7", "4"]},
-  {"tier": 4, "question": "A right triangle has legs 5 and 12. Hypotenuse = ?", "answer": "13", "choices": ["13", "14", "11", "15"]},
-  {"tier": 4, "question": "A right triangle has legs 8 and 6. Hypotenuse = ?", "answer": "10", "choices": ["10", "9", "11", "14"]},
-  {"tier": 4, "question": "A right triangle has legs 7 and 24. Hypotenuse = ?", "answer": "25", "choices": ["25", "23", "26", "31"]},
-  {"tier": 4, "question": "A right triangle has legs 9 and 12. Hypotenuse = ?", "answer": "15", "choices": ["15", "14", "21", "13"]},
-  {"tier": 4, "question": "Pythagorean theorem: a² + b² = ___?", "answer": "c²", "choices": ["c²", "c", "2c", "ab"]},
-  {"tier": 4, "question": "If 2x + 5 = 17, then x = ?", "answer": "6", "choices": ["6", "7", "5", "11"]},
-  {"tier": 4, "question": "If 3x - 4 = 14, then x = ?", "answer": "6", "choices": ["6", "5", "7", "10"]},
-  {"tier": 4, "question": "If 4x + 3 = 23, then x = ?", "answer": "5", "choices": ["5", "6", "4", "20"]},
-  {"tier": 4, "question": "If 5x - 10 = 25, then x = ?", "answer": "7", "choices": ["7", "6", "8", "3"]},
-  {"tier": 4, "question": "If 2x + 9 = 25, then x = ?", "answer": "8", "choices": ["8", "7", "9", "17"]},
-  {"tier": 4, "question": "If 6x - 6 = 30, then x = ?", "answer": "6", "choices": ["6", "5", "7", "4"]},
-  {"tier": 4, "question": "If 3x + 7 = 28, then x = ?", "answer": "7", "choices": ["7", "6", "8", "21"]},
-  {"tier": 4, "question": "If 10x - 5 = 45, then x = ?", "answer": "5", "choices": ["5", "4", "6", "40"]},
-  {"tier": 4, "question": "If 2x - 3 = 11, then x = ?", "answer": "7", "choices": ["7", "6", "8", "4"]},
-  {"tier": 4, "question": "If 4x + 8 = 32, then x = ?", "answer": "6", "choices": ["6", "5", "7", "10"]},
-  {"tier": 4, "question": "-8 + 5 = ?", "answer": "-3", "choices": ["-3", "3", "-13", "13"]},
-  {"tier": 4, "question": "-4 + (-6) = ?", "answer": "-10", "choices": ["-10", "10", "-2", "2"]},
-  {"tier": 4, "question": "7 - 12 = ?", "answer": "-5", "choices": ["-5", "5", "-19", "19"]},
-  {"tier": 4, "question": "-9 - 3 = ?", "answer": "-12", "choices": ["-12", "12", "-6", "6"]},
-  {"tier": 4, "question": "-6 × -4 = ?", "answer": "24", "choices": ["24", "-24", "-10", "10"]},
-  {"tier": 4, "question": "-5 × 3 = ?", "answer": "-15", "choices": ["-15", "15", "-8", "8"]},
-  {"tier": 4, "question": "(-3)² = ?", "answer": "9", "choices": ["9", "-9", "6", "-6"]},
-  {"tier": 4, "question": "-24 ÷ 6 = ?", "answer": "-4", "choices": ["-4", "4", "-18", "18"]},
-  {"tier": 4, "question": "-36 ÷ -9 = ?", "answer": "4", "choices": ["4", "-4", "-27", "27"]},
-  {"tier": 4, "question": "-7 × -7 = ?", "answer": "49", "choices": ["49", "-49", "14", "-14"]},
-  {"tier": 4, "question": "½ + ¼ = ?", "answer": "¾", "choices": ["¾", "½", "⅔", "⅖"]},
-  {"tier": 4, "question": "⅓ + ⅓ = ?", "answer": "⅔", "choices": ["⅔", "⅙", "¼", "½"]},
-  {"tier": 4, "question": "¾ - ¼ = ?", "answer": "½", "choices": ["½", "¾", "⅓", "¼"]},
-  {"tier": 4, "question": "⅔ + ⅓ = ?", "answer": "1", "choices": ["1", "⅓", "⅔", "1½"]},
-  {"tier": 4, "question": "½ - ¼ = ?", "answer": "¼", "choices": ["¼", "½", "⅛", "⅓"]},
-  {"tier": 4, "question": "2³ = ?", "answer": "8", "choices": ["8", "6", "9", "16"]},
-  {"tier": 4, "question": "3³ = ?", "answer": "27", "choices": ["27", "9", "18", "81"]},
-  {"tier": 4, "question": "2⁴ = ?", "answer": "16", "choices": ["16", "8", "24", "32"]},
-  {"tier": 4, "question": "3⁴ = ?", "answer": "81", "choices": ["81", "64", "27", "108"]},
-  {"tier": 4, "question": "2⁵ = ?", "answer": "32", "choices": ["32", "16", "25", "64"]},
-  {"tier": 4, "question": "4³ = ?", "answer": "64", "choices": ["64", "12", "48", "256"]},
-  {"tier": 4, "question": "5³ = ?", "answer": "125", "choices": ["125", "15", "75", "100"]},
-  {"tier": 4, "question": "2⁶ = ?", "answer": "64", "choices": ["64", "32", "128", "12"]},
-  {"tier": 4, "question": "10³ = ?", "answer": "1000", "choices": ["1000", "100", "300", "3000"]},
-  {"tier": 4, "question": "If 7x + 2 = 30, then x = ?", "answer": "4", "choices": ["4", "3", "5", "32"]},
-  {"tier": 4, "question": "If 9x - 9 = 54, then x = ?", "answer": "7", "choices": ["7", "6", "8", "5"]},
-  {"tier": 4, "question": "Volume of a box 4 × 4 × 4 = ?", "answer": "64", "choices": ["64", "48", "16", "12"]},
-  {"tier": 4, "question": "Volume of a box 5 × 3 × 4 = ?", "answer": "60", "choices": ["60", "12", "120", "47"]},
-  {"tier": 4, "question": "-2 + 15 = ?", "answer": "13", "choices": ["13", "-13", "17", "-17"]},
-  {"tier": 4, "question": "20 + (-8) = ?", "answer": "12", "choices": ["12", "-12", "28", "-28"]},
-  {"tier": 4, "question": "A right triangle has legs 20 and 21. Hypotenuse = ?", "answer": "29", "choices": ["29", "41", "27", "30"]},
-  {"tier": 4, "question": "If 2x + 1 = 15, then x = ?", "answer": "7", "choices": ["7", "6", "8", "7.5"]},
-  {"tier": 4, "question": "⅓ + ½ = ?", "answer": "⅚", "choices": ["⅚", "⅔", "¾", "⅖"]},
-  {"tier": 4, "question": "¾ + ¼ = ?", "answer": "1", "choices": ["1", "½", "1¼", "¾"]},
-  {"tier": 4, "question": "-3 × 8 = ?", "answer": "-24", "choices": ["-24", "24", "-11", "11"]},
-  {"tier": 4, "question": "(-2)³ = ?", "answer": "-8", "choices": ["-8", "8", "-6", "6"]},
-  {"tier": 4, "question": "Surface area of a cube with side 5 = ?", "answer": "150", "choices": ["150", "125", "25", "30"]},
-  {"tier": 4, "question": "If 11x - 11 = 44, then x = ?", "answer": "5", "choices": ["5", "4", "6", "3"]},
-
-  {"tier": 5, "question": "sin(30°) = ?", "answer": "½", "choices": ["½", "√3/2", "√2/2", "1"]},
-  {"tier": 5, "question": "sin(90°) = ?", "answer": "1", "choices": ["1", "0", "½", "√2/2"]},
-  {"tier": 5, "question": "sin(0°) = ?", "answer": "0", "choices": ["0", "1", "½", "√2/2"]},
-  {"tier": 5, "question": "sin(45°) = ?", "answer": "√2/2", "choices": ["√2/2", "½", "√3/2", "1"]},
-  {"tier": 5, "question": "sin(60°) = ?", "answer": "√3/2", "choices": ["√3/2", "½", "√2/2", "1"]},
-  {"tier": 5, "question": "cos(0°) = ?", "answer": "1", "choices": ["1", "0", "½", "√3/2"]},
-  {"tier": 5, "question": "cos(90°) = ?", "answer": "0", "choices": ["0", "1", "½", "√2/2"]},
-  {"tier": 5, "question": "cos(60°) = ?", "answer": "½", "choices": ["½", "√3/2", "0", "√2/2"]},
-  {"tier": 5, "question": "cos(30°) = ?", "answer": "√3/2", "choices": ["√3/2", "½", "√2/2", "1"]},
-  {"tier": 5, "question": "cos(45°) = ?", "answer": "√2/2", "choices": ["√2/2", "½", "√3/2", "0"]},
-  {"tier": 5, "question": "tan(0°) = ?", "answer": "0", "choices": ["0", "1", "½", "√3"]},
-  {"tier": 5, "question": "tan(45°) = ?", "answer": "1", "choices": ["1", "0", "√3", "½"]},
-  {"tier": 5, "question": "tan(60°) = ?", "answer": "√3", "choices": ["√3", "1", "√2/2", "½"]},
-  {"tier": 5, "question": "tan(30°) = ?", "answer": "1/√3", "choices": ["1/√3", "1", "√3", "½"]},
-  {"tier": 5, "question": "log₁₀(100) = ?", "answer": "2", "choices": ["2", "10", "1", "20"]},
-  {"tier": 5, "question": "log₁₀(1000) = ?", "answer": "3", "choices": ["3", "10", "4", "30"]},
-  {"tier": 5, "question": "log₁₀(10) = ?", "answer": "1", "choices": ["1", "0", "10", "2"]},
-  {"tier": 5, "question": "log₁₀(1) = ?", "answer": "0", "choices": ["0", "1", "-1", "10"]},
-  {"tier": 5, "question": "log₂(8) = ?", "answer": "3", "choices": ["3", "2", "4", "6"]},
-  {"tier": 5, "question": "log₂(16) = ?", "answer": "4", "choices": ["4", "3", "5", "8"]},
-  {"tier": 5, "question": "log₂(4) = ?", "answer": "2", "choices": ["2", "1", "3", "4"]},
-  {"tier": 5, "question": "log₂(32) = ?", "answer": "5", "choices": ["5", "4", "6", "16"]},
-  {"tier": 5, "question": "log₂(1) = ?", "answer": "0", "choices": ["0", "1", "-1", "2"]},
-  {"tier": 5, "question": "The discriminant of ax² + bx + c = 0 is ___?", "answer": "b² - 4ac", "choices": ["b² - 4ac", "b² + 4ac", "-b ± √(b²-4ac)", "2a"]},
-  {"tier": 5, "question": "In the quadratic formula, the denominator is ___?", "answer": "2a", "choices": ["2a", "a", "2b", "b"]},
-  {"tier": 5, "question": "The quadratic formula gives x = (-b ± √D) ÷ ___?", "answer": "2a", "choices": ["2a", "2b", "2c", "a"]},
-  {"tier": 5, "question": "If discriminant > 0, the quadratic has ___ real roots?", "answer": "2", "choices": ["2", "0", "1", "3"]},
-  {"tier": 5, "question": "If discriminant = 0, the quadratic has ___ real root(s)?", "answer": "1", "choices": ["1", "0", "2", "3"]},
-  {"tier": 5, "question": "Distance between (0,0) and (3,4) = ?", "answer": "5", "choices": ["5", "7", "4", "6"]},
-  {"tier": 5, "question": "Distance between (0,0) and (5,12) = ?", "answer": "13", "choices": ["13", "17", "12", "15"]},
-  {"tier": 5, "question": "Distance formula = √((x₂-x₁)² + ___²)?", "answer": "(y₂-y₁)", "choices": ["(y₂-y₁)", "(y₁+y₂)", "(y₂+y₁)", "(x₂-x₁)"]},
-  {"tier": 5, "question": "Slope of a line through (0,0) and (4,8) = ?", "answer": "2", "choices": ["2", "4", "½", "8"]},
-  {"tier": 5, "question": "Slope of a line through (1,2) and (3,6) = ?", "answer": "2", "choices": ["2", "4", "½", "3"]},
-  {"tier": 5, "question": "Slope of a line through (0,5) and (5,0) = ?", "answer": "-1", "choices": ["-1", "1", "-5", "5"]},
-  {"tier": 5, "question": "Slope formula = (y₂ - y₁) ÷ ___?", "answer": "(x₂ - x₁)", "choices": ["(x₂ - x₁)", "(x₁ - x₂)", "(y₁ - y₂)", "(x₂ + x₁)"]},
-  {"tier": 5, "question": "Slope of a horizontal line = ?", "answer": "0", "choices": ["0", "1", "undefined", "-1"]},
-  {"tier": 5, "question": "Slope of a vertical line = ?", "answer": "undefined", "choices": ["undefined", "0", "1", "∞"]},
-  {"tier": 5, "question": "Mean of 4, 7, 9, 12, 8 = ?", "answer": "8", "choices": ["8", "7", "9", "10"]},
-  {"tier": 5, "question": "Mean of 2, 4, 6, 8, 10 = ?", "answer": "6", "choices": ["6", "5", "7", "8"]},
-  {"tier": 5, "question": "Median of 3, 5, 7, 9, 11 = ?", "answer": "7", "choices": ["7", "5", "9", "6"]},
-  {"tier": 5, "question": "Median of 1, 3, 5, 9, 12 = ?", "answer": "5", "choices": ["5", "3", "9", "6"]},
-  {"tier": 5, "question": "Mode of 2, 3, 3, 4, 5 = ?", "answer": "3", "choices": ["3", "2", "4", "5"]},
-  {"tier": 5, "question": "Mode of 1, 2, 2, 3, 4, 4, 4 = ?", "answer": "4", "choices": ["4", "2", "3", "1"]},
-  {"tier": 5, "question": "Range of 3, 7, 2, 9, 5 = ?", "answer": "7", "choices": ["7", "9", "5", "6"]},
-  {"tier": 5, "question": "Mean of 10, 20, 30 = ?", "answer": "20", "choices": ["20", "30", "15", "10"]},
-  {"tier": 5, "question": "2⁻¹ = ?", "answer": "½", "choices": ["½", "-2", "¼", "-½"]},
-  {"tier": 5, "question": "2⁻² = ?", "answer": "¼", "choices": ["¼", "-4", "½", "-¼"]},
-  {"tier": 5, "question": "2⁻³ = ?", "answer": "⅛", "choices": ["⅛", "-8", "¼", "-6"]},
-  {"tier": 5, "question": "10⁻¹ = ?", "answer": "0.1", "choices": ["0.1", "-10", "0.01", "-0.1"]},
-  {"tier": 5, "question": "10⁻² = ?", "answer": "0.01", "choices": ["0.01", "0.1", "-100", "-0.01"]},
-  {"tier": 5, "question": "√(49/64) = ?", "answer": "7/8", "choices": ["7/8", "6/7", "8/9", "49/8"]},
-  {"tier": 5, "question": "√(9/16) = ?", "answer": "3/4", "choices": ["3/4", "2/3", "4/5", "9/4"]},
-  {"tier": 5, "question": "If f(x) = 2x + 3, then f(5) = ?", "answer": "13", "choices": ["13", "10", "16", "7"]},
-  {"tier": 5, "question": "If f(x) = x² - 1, then f(4) = ?", "answer": "15", "choices": ["15", "16", "7", "17"]},
-  {"tier": 5, "question": "If f(x) = 3x - 2, then f(6) = ?", "answer": "16", "choices": ["16", "20", "14", "18"]},
-  {"tier": 5, "question": "If f(x) = x² + 2x, then f(3) = ?", "answer": "15", "choices": ["15", "9", "6", "11"]},
-  {"tier": 5, "question": "Distance between (1,1) and (4,5) = ?", "answer": "5", "choices": ["5", "6", "4", "7"]},
-  {"tier": 5, "question": "Slope of a line through (2,3) and (4,7) = ?", "answer": "2", "choices": ["2", "4", "½", "3"]},
-  {"tier": 5, "question": "Mean of 5, 5, 5, 5, 5 = ?", "answer": "5", "choices": ["5", "25", "1", "0"]},
-  {"tier": 5, "question": "Median of 2, 4, 6, 8, 10 = ?", "answer": "6", "choices": ["6", "4", "8", "5"]},
-  {"tier": 5, "question": "log₁₀(10000) = ?", "answer": "4", "choices": ["4", "3", "5", "10"]},
-  {"tier": 5, "question": "2⁰ = ?", "answer": "1", "choices": ["1", "0", "2", "½"]},
-  {"tier": 5, "question": "Any nonzero number raised to the power 0 = ?", "answer": "1", "choices": ["1", "0", "itself", "undefined"]},
-  {"tier": 5, "question": "log₂(64) = ?", "answer": "6", "choices": ["6", "5", "7", "8"]},
-  {"tier": 5, "question": "If f(x) = x² + 1, then f(0) = ?", "answer": "1", "choices": ["1", "0", "2", "-1"]},
-  {"tier": 5, "question": "The y-intercept of y = 3x + 7 is ___?", "answer": "7", "choices": ["7", "3", "0", "-7"]},
-  {"tier": 5, "question": "The slope of y = 5x - 2 is ___?", "answer": "5", "choices": ["5", "-2", "2", "-5"]},
-  {"tier": 5, "question": "tan(90°) = ?", "answer": "undefined", "choices": ["undefined", "0", "1", "∞"]},
-  {"tier": 5, "question": "sin²(θ) + cos²(θ) = ?", "answer": "1", "choices": ["1", "0", "2", "sin(2θ)"]},
-  {"tier": 5, "question": "Distance between (0,0) and (8,6) = ?", "answer": "10", "choices": ["10", "14", "12", "15"]},
-  {"tier": 5, "question": "Range of 10, 4, 7, 2, 9 = ?", "answer": "8", "choices": ["8", "6", "9", "7"]},
-
-  {"tier": 1, "question": "4 × 3 = ?", "answer": "12", "choices": ["12", "9", "15", "16"]},
-  {"tier": 1, "question": "5 × 4 = ?", "answer": "20", "choices": ["20", "15", "25", "16"]},
-
-  {"tier": 2, "question": "25% of 200 = ?", "answer": "50", "choices": ["50", "40", "25", "75"]},
-  {"tier": 2, "question": "½ of 98 = ?", "answer": "49", "choices": ["49", "48", "50", "24"]},
-  {"tier": 2, "question": "10% of 90 = ?", "answer": "9", "choices": ["9", "19", "10", "8"]},
-
-  {"tier": 3, "question": "Perimeter of a rectangle 4 × 11 = ?", "answer": "30", "choices": ["30", "44", "22", "26"]},
-  {"tier": 3, "question": "Area of a triangle: base=7, height=6 = ?", "answer": "21", "choices": ["21", "42", "13", "24"]},
-  {"tier": 3, "question": "√0 = ?", "answer": "0", "choices": ["0", "1", "-1", "undefined"]},
-  {"tier": 3, "question": "If 6x = 54, then x = ?", "answer": "9", "choices": ["9", "8", "10", "7"]},
-  {"tier": 3, "question": "If x + 6 = 22, then x = ?", "answer": "16", "choices": ["16", "15", "17", "28"]},
-  {"tier": 3, "question": "4 × 3 + 2 × 5 = ?", "answer": "22", "choices": ["22", "50", "21", "30"]},
-  {"tier": 3, "question": "Area of a square with side 12 = ?", "answer": "144", "choices": ["144", "48", "132", "156"]},
-  {"tier": 3, "question": "Perimeter of a square with side 9 = ?", "answer": "36", "choices": ["36", "81", "18", "27"]},
-  {"tier": 3, "question": "Area of a rectangle 4 × 13 = ?", "answer": "52", "choices": ["52", "34", "40", "60"]},
-  {"tier": 3, "question": "If 2x = 18, then x = ?", "answer": "9", "choices": ["9", "8", "10", "16"]},
-  {"tier": 3, "question": "If x - 9 = 18, then x = ?", "answer": "27", "choices": ["27", "9", "26", "28"]},
-  {"tier": 3, "question": "(6 - 2) × (3 + 1) = ?", "answer": "16", "choices": ["16", "12", "20", "14"]},
-  {"tier": 3, "question": "3² + 4² = ?", "answer": "25", "choices": ["25", "49", "7", "49"]},
-  {"tier": 3, "question": "Area of a triangle: base=5, height=10 = ?", "answer": "25", "choices": ["25", "50", "15", "30"]},
-  {"tier": 3, "question": "Perimeter of a rectangle 6 × 11 = ?", "answer": "34", "choices": ["34", "66", "17", "28"]},
-  {"tier": 3, "question": "If x ÷ 3 = 12, then x = ?", "answer": "36", "choices": ["36", "4", "15", "39"]},
-  {"tier": 3, "question": "5 + 2 × 6 - 1 = ?", "answer": "16", "choices": ["16", "41", "12", "17"]},
-  {"tier": 3, "question": "Area of a square with side 5 = ?", "answer": "25", "choices": ["25", "10", "20", "30"]},
-  {"tier": 3, "question": "Perimeter of a square with side 4 = ?", "answer": "16", "choices": ["16", "8", "12", "20"]},
-  {"tier": 3, "question": "If 11x = 99, then x = ?", "answer": "9", "choices": ["9", "8", "10", "7"]},
-  {"tier": 3, "question": "Area of a rectangle 9 × 11 = ?", "answer": "99", "choices": ["99", "40", "90", "110"]},
-  {"tier": 3, "question": "2 × (4 + 3) - 5 = ?", "answer": "9", "choices": ["9", "10", "19", "8"]},
-
-  {"tier": 4, "question": "If 8x - 8 = 48, then x = ?", "answer": "7", "choices": ["7", "6", "8", "5"]},
-  {"tier": 4, "question": "If 5x + 5 = 40, then x = ?", "answer": "7", "choices": ["7", "6", "8", "9"]},
-  {"tier": 4, "question": "-15 ÷ 3 = ?", "answer": "-5", "choices": ["-5", "5", "-12", "12"]},
-  {"tier": 4, "question": "8 × (-3) = ?", "answer": "-24", "choices": ["-24", "24", "-5", "5"]},
-  {"tier": 4, "question": "(-4)² = ?", "answer": "16", "choices": ["16", "-16", "8", "-8"]},
-  {"tier": 4, "question": "(-5)³ = ?", "answer": "-125", "choices": ["-125", "125", "-15", "15"]},
-  {"tier": 4, "question": "¼ + ¼ = ?", "answer": "½", "choices": ["½", "¼", "⅛", "¾"]},
-  {"tier": 4, "question": "⅔ - ⅓ = ?", "answer": "⅓", "choices": ["⅓", "⅔", "1", "¼"]},
-  {"tier": 4, "question": "¾ + ½ = ?", "answer": "1¼", "choices": ["1¼", "1", "½", "¾"]},
-  {"tier": 4, "question": "Volume of a box 6 × 5 × 2 = ?", "answer": "60", "choices": ["60", "13", "30", "120"]},
-  {"tier": 4, "question": "Volume of a cube with side 6 = ?", "answer": "216", "choices": ["216", "36", "72", "108"]},
-  {"tier": 4, "question": "Surface area of a cube with side 6 = ?", "answer": "216", "choices": ["216", "36", "72", "108"]},
-  {"tier": 4, "question": "A right triangle has legs 10 and 24. Hypotenuse = ?", "answer": "26", "choices": ["26", "34", "25", "27"]},
-  {"tier": 4, "question": "A right triangle has legs 15 and 20. Hypotenuse = ?", "answer": "25", "choices": ["25", "35", "24", "26"]},
-  {"tier": 4, "question": "2⁷ = ?", "answer": "128", "choices": ["128", "64", "256", "14"]},
-  {"tier": 4, "question": "3² × 4 = ?", "answer": "36", "choices": ["36", "144", "24", "48"]},
-  {"tier": 4, "question": "If 3x + 12 = 33, then x = ?", "answer": "7", "choices": ["7", "6", "8", "15"]},
-  {"tier": 4, "question": "If 4x - 12 = 20, then x = ?", "answer": "8", "choices": ["8", "7", "9", "2"]},
-  {"tier": 4, "question": "-10 + (-10) = ?", "answer": "-20", "choices": ["-20", "20", "0", "-100"]},
-  {"tier": 4, "question": "-6 + 6 = ?", "answer": "0", "choices": ["0", "-12", "12", "1"]},
-  {"tier": 4, "question": "-3 × -3 × -3 = ?", "answer": "-27", "choices": ["-27", "27", "-9", "9"]},
-  {"tier": 4, "question": "½ × ½ = ?", "answer": "¼", "choices": ["¼", "½", "1", "⅛"]},
-  {"tier": 4, "question": "2/3 × 3/4 = ?", "answer": "½", "choices": ["½", "⅔", "¾", "⅙"]},
-  {"tier": 4, "question": "Volume of a box 10 × 3 × 2 = ?", "answer": "60", "choices": ["60", "15", "600", "30"]},
-  {"tier": 4, "question": "If 12x + 6 = 54, then x = ?", "answer": "4", "choices": ["4", "3", "5", "48"]},
-  {"tier": 4, "question": "If 2(x + 3) = 18, then x = ?", "answer": "6", "choices": ["6", "7", "5", "9"]},
-  {"tier": 4, "question": "(-2)⁴ = ?", "answer": "16", "choices": ["16", "-16", "8", "-8"]},
-  {"tier": 4, "question": "Surface area of a cube: formula = 6 × ___?", "answer": "s²", "choices": ["s²", "s³", "s", "2s"]},
-  {"tier": 4, "question": "A right triangle has legs 6 and 8. Hypotenuse = ?", "answer": "10", "choices": ["10", "11", "9", "14"]},
-  {"tier": 4, "question": "If 5x - 20 = 0, then x = ?", "answer": "4", "choices": ["4", "5", "3", "20"]},
-  {"tier": 4, "question": "2⁸ = ?", "answer": "256", "choices": ["256", "128", "64", "16"]},
-  {"tier": 4, "question": "-4 × -4 × 4 = ?", "answer": "64", "choices": ["64", "-64", "16", "-16"]},
-  {"tier": 4, "question": "If 6x + 6 = 42, then x = ?", "answer": "6", "choices": ["6", "7", "5", "36"]},
-  {"tier": 4, "question": "Volume of a cube with side 1 = ?", "answer": "1", "choices": ["1", "6", "3", "0"]},
-
-  {"tier": 5, "question": "Mean of 1, 3, 5, 7, 9 = ?", "answer": "5", "choices": ["5", "4", "6", "7"]},
-  {"tier": 5, "question": "Median of 4, 4, 7, 10, 10 = ?", "answer": "7", "choices": ["7", "4", "10", "6"]},
-  {"tier": 5, "question": "Mode of 5, 6, 6, 7, 8, 8, 8 = ?", "answer": "8", "choices": ["8", "6", "7", "5"]},
-  {"tier": 5, "question": "Range of 15, 3, 9, 21, 6 = ?", "answer": "18", "choices": ["18", "15", "12", "21"]},
-  {"tier": 5, "question": "log₁₀(0.1) = ?", "answer": "-1", "choices": ["-1", "1", "0.1", "0"]},
-  {"tier": 5, "question": "log₂(½) = ?", "answer": "-1", "choices": ["-1", "1", "0", "-2"]},
-  {"tier": 5, "question": "sin²(30°) + cos²(30°) = ?", "answer": "1", "choices": ["1", "½", "√3", "2"]},
-  {"tier": 5, "question": "If f(x) = x³, then f(3) = ?", "answer": "27", "choices": ["27", "9", "6", "81"]},
-  {"tier": 5, "question": "If f(x) = √x, then f(49) = ?", "answer": "7", "choices": ["7", "6", "8", "49"]},
-  {"tier": 5, "question": "If f(x) = x² - 4, then f(3) = ?", "answer": "5", "choices": ["5", "9", "13", "7"]},
-  {"tier": 5, "question": "Slope of y = -3x + 1 is ___?", "answer": "-3", "choices": ["-3", "1", "3", "-1"]},
-  {"tier": 5, "question": "y-intercept of y = 2x - 5 is ___?", "answer": "-5", "choices": ["-5", "2", "5", "-2"]},
-  {"tier": 5, "question": "Distance between (0,0) and (6,8) = ?", "answer": "10", "choices": ["10", "14", "12", "15"]},
-  {"tier": 5, "question": "Distance between (1,2) and (4,6) = ?", "answer": "5", "choices": ["5", "7", "3", "6"]},
-  {"tier": 5, "question": "Slope of a line through (3,3) and (6,9) = ?", "answer": "2", "choices": ["2", "3", "1", "6"]},
-  {"tier": 5, "question": "3⁻¹ = ?", "answer": "⅓", "choices": ["⅓", "-3", "3", "-⅓"]},
-  {"tier": 5, "question": "4⁻¹ = ?", "answer": "¼", "choices": ["¼", "-4", "4", "-¼"]},
-  {"tier": 5, "question": "5⁰ = ?", "answer": "1", "choices": ["1", "0", "5", "⅕"]},
-  {"tier": 5, "question": "log₃(9) = ?", "answer": "2", "choices": ["2", "3", "1", "9"]},
-  {"tier": 5, "question": "log₃(27) = ?", "answer": "3", "choices": ["3", "2", "4", "9"]},
-  {"tier": 5, "question": "The quadratic formula: x = ?", "answer": "(-b ± √(b²-4ac)) / 2a", "choices": ["(-b ± √(b²-4ac)) / 2a", "(-b ± √(b²+4ac)) / 2a", "(b ± √(b²-4ac)) / 2a", "(-b ± √(b²-4ac)) / a"]},
-  {"tier": 5, "question": "If discriminant < 0, the quadratic has ___ real roots?", "answer": "0", "choices": ["0", "1", "2", "3"]},
-  {"tier": 5, "question": "tan(30°) expressed as a decimal ≈ ?", "answer": "0.577", "choices": ["0.577", "0.866", "0.5", "1"]},
-  {"tier": 5, "question": "cos(45°) = sin(___°)?", "answer": "45", "choices": ["45", "30", "60", "90"]},
-  {"tier": 5, "question": "The reciprocal of sin(θ) is ___?", "answer": "csc(θ)", "choices": ["csc(θ)", "sec(θ)", "cot(θ)", "tan(θ)"]},
-  {"tier": 5, "question": "The reciprocal of cos(θ) is ___?", "answer": "sec(θ)", "choices": ["sec(θ)", "csc(θ)", "cot(θ)", "tan(θ)"]},
-  {"tier": 5, "question": "Mean of 0, 0, 10, 10, 10 = ?", "answer": "6", "choices": ["6", "0", "10", "5"]},
-  {"tier": 5, "question": "Median of 1, 2, 3, 100, 200 = ?", "answer": "3", "choices": ["3", "1", "100", "61"]},
-  {"tier": 5, "question": "log₁₀(0.01) = ?", "answer": "-2", "choices": ["-2", "2", "-1", "0"]},
-
-  {"tier": 3, "question": "Area of a square with side 3 = ?", "answer": "9", "choices": ["9", "6", "12", "3"]},
-  {"tier": 3, "question": "Perimeter of a square with side 5 = ?", "answer": "20", "choices": ["20", "25", "10", "15"]},
-
-  {"tier": 4, "question": "If 3(x - 2) = 15, then x = ?", "answer": "7", "choices": ["7", "5", "9", "6"]}
+  {
+    "tier": 1,
+    "question": "1 x 1 = ?",
+    "answer": "1",
+    "choices": [
+      "1",
+      "2",
+      "0",
+      "11"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "1 x 2 = ?",
+    "answer": "2",
+    "choices": [
+      "2",
+      "1",
+      "3",
+      "12"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "1 x 3 = ?",
+    "answer": "3",
+    "choices": [
+      "3",
+      "2",
+      "4",
+      "13"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "1 x 4 = ?",
+    "answer": "4",
+    "choices": [
+      "4",
+      "3",
+      "5",
+      "14"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "1 x 5 = ?",
+    "answer": "5",
+    "choices": [
+      "5",
+      "4",
+      "6",
+      "15"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "2 x 2 = ?",
+    "answer": "4",
+    "choices": [
+      "4",
+      "2",
+      "6",
+      "3"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "2 x 3 = ?",
+    "answer": "6",
+    "choices": [
+      "6",
+      "5",
+      "8",
+      "4"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "2 x 4 = ?",
+    "answer": "8",
+    "choices": [
+      "8",
+      "6",
+      "10",
+      "7"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "2 x 5 = ?",
+    "answer": "10",
+    "choices": [
+      "10",
+      "8",
+      "12",
+      "9"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "2 x 6 = ?",
+    "answer": "12",
+    "choices": [
+      "12",
+      "10",
+      "14",
+      "8"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "2 x 7 = ?",
+    "answer": "14",
+    "choices": [
+      "14",
+      "12",
+      "16",
+      "21"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "2 x 8 = ?",
+    "answer": "16",
+    "choices": [
+      "16",
+      "14",
+      "18",
+      "24"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "2 x 9 = ?",
+    "answer": "18",
+    "choices": [
+      "18",
+      "16",
+      "20",
+      "27"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "2 x 10 = ?",
+    "answer": "20",
+    "choices": [
+      "20",
+      "12",
+      "22",
+      "18"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "2 x 11 = ?",
+    "answer": "22",
+    "choices": [
+      "22",
+      "20",
+      "24",
+      "21"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "2 x 12 = ?",
+    "answer": "24",
+    "choices": [
+      "24",
+      "22",
+      "26",
+      "12"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "3 x 3 = ?",
+    "answer": "9",
+    "choices": [
+      "9",
+      "6",
+      "12",
+      "8"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "3 x 4 = ?",
+    "answer": "12",
+    "choices": [
+      "12",
+      "9",
+      "15",
+      "16"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "3 x 5 = ?",
+    "answer": "15",
+    "choices": [
+      "15",
+      "12",
+      "18",
+      "14"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "3 x 6 = ?",
+    "answer": "18",
+    "choices": [
+      "18",
+      "15",
+      "21",
+      "16"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "3 x 7 = ?",
+    "answer": "21",
+    "choices": [
+      "21",
+      "18",
+      "24",
+      "28"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "3 x 8 = ?",
+    "answer": "24",
+    "choices": [
+      "24",
+      "21",
+      "27",
+      "18"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "3 x 9 = ?",
+    "answer": "27",
+    "choices": [
+      "27",
+      "24",
+      "30",
+      "21"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "3 x 10 = ?",
+    "answer": "30",
+    "choices": [
+      "30",
+      "27",
+      "33",
+      "13"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "3 x 11 = ?",
+    "answer": "33",
+    "choices": [
+      "33",
+      "30",
+      "36",
+      "31"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "3 x 12 = ?",
+    "answer": "36",
+    "choices": [
+      "36",
+      "33",
+      "39",
+      "34"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "4 x 4 = ?",
+    "answer": "16",
+    "choices": [
+      "16",
+      "12",
+      "20",
+      "8"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "4 x 5 = ?",
+    "answer": "20",
+    "choices": [
+      "20",
+      "16",
+      "24",
+      "15"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "4 x 6 = ?",
+    "answer": "24",
+    "choices": [
+      "24",
+      "20",
+      "28",
+      "18"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "4 x 7 = ?",
+    "answer": "28",
+    "choices": [
+      "28",
+      "24",
+      "32",
+      "21"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "4 x 8 = ?",
+    "answer": "32",
+    "choices": [
+      "32",
+      "28",
+      "36",
+      "24"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "4 x 9 = ?",
+    "answer": "36",
+    "choices": [
+      "36",
+      "32",
+      "40",
+      "27"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "4 x 10 = ?",
+    "answer": "40",
+    "choices": [
+      "40",
+      "36",
+      "44",
+      "14"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "4 x 11 = ?",
+    "answer": "44",
+    "choices": [
+      "44",
+      "40",
+      "48",
+      "41"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "4 x 12 = ?",
+    "answer": "48",
+    "choices": [
+      "48",
+      "44",
+      "52",
+      "46"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "5 x 5 = ?",
+    "answer": "25",
+    "choices": [
+      "25",
+      "20",
+      "30",
+      "10"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "5 x 6 = ?",
+    "answer": "30",
+    "choices": [
+      "30",
+      "25",
+      "35",
+      "24"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "5 x 7 = ?",
+    "answer": "35",
+    "choices": [
+      "35",
+      "30",
+      "40",
+      "28"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "5 x 8 = ?",
+    "answer": "40",
+    "choices": [
+      "40",
+      "35",
+      "45",
+      "32"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "5 x 9 = ?",
+    "answer": "45",
+    "choices": [
+      "45",
+      "40",
+      "50",
+      "36"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "5 x 10 = ?",
+    "answer": "50",
+    "choices": [
+      "50",
+      "45",
+      "55",
+      "15"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "5 x 11 = ?",
+    "answer": "55",
+    "choices": [
+      "55",
+      "50",
+      "60",
+      "51"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "5 x 12 = ?",
+    "answer": "60",
+    "choices": [
+      "60",
+      "55",
+      "65",
+      "56"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "12 / 3 = ?",
+    "answer": "4",
+    "choices": [
+      "4",
+      "3",
+      "5",
+      "6"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "15 / 5 = ?",
+    "answer": "3",
+    "choices": [
+      "3",
+      "4",
+      "2",
+      "5"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "20 / 4 = ?",
+    "answer": "5",
+    "choices": [
+      "5",
+      "4",
+      "6",
+      "3"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "24 / 3 = ?",
+    "answer": "8",
+    "choices": [
+      "8",
+      "7",
+      "9",
+      "6"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "35 / 5 = ?",
+    "answer": "7",
+    "choices": [
+      "7",
+      "6",
+      "8",
+      "9"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "18 / 3 = ?",
+    "answer": "6",
+    "choices": [
+      "6",
+      "5",
+      "7",
+      "4"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "16 / 4 = ?",
+    "answer": "4",
+    "choices": [
+      "4",
+      "3",
+      "5",
+      "6"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "40 / 5 = ?",
+    "answer": "8",
+    "choices": [
+      "8",
+      "7",
+      "9",
+      "6"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "36 / 4 = ?",
+    "answer": "9",
+    "choices": [
+      "9",
+      "8",
+      "10",
+      "7"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "45 / 5 = ?",
+    "answer": "9",
+    "choices": [
+      "9",
+      "8",
+      "10",
+      "7"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "9 + 8 = ?",
+    "answer": "17",
+    "choices": [
+      "17",
+      "15",
+      "16",
+      "18"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "7 + 6 = ?",
+    "answer": "13",
+    "choices": [
+      "13",
+      "11",
+      "14",
+      "12"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "8 + 5 = ?",
+    "answer": "13",
+    "choices": [
+      "13",
+      "12",
+      "14",
+      "11"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "9 + 9 = ?",
+    "answer": "18",
+    "choices": [
+      "18",
+      "17",
+      "19",
+      "16"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "7 + 7 = ?",
+    "answer": "14",
+    "choices": [
+      "14",
+      "13",
+      "15",
+      "12"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "6 + 8 = ?",
+    "answer": "14",
+    "choices": [
+      "14",
+      "12",
+      "15",
+      "13"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "9 + 7 = ?",
+    "answer": "16",
+    "choices": [
+      "16",
+      "15",
+      "17",
+      "14"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "8 + 8 = ?",
+    "answer": "16",
+    "choices": [
+      "16",
+      "15",
+      "17",
+      "14"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "13 - 7 = ?",
+    "answer": "6",
+    "choices": [
+      "6",
+      "5",
+      "7",
+      "8"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "15 - 8 = ?",
+    "answer": "7",
+    "choices": [
+      "7",
+      "6",
+      "8",
+      "9"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "17 - 9 = ?",
+    "answer": "8",
+    "choices": [
+      "8",
+      "7",
+      "9",
+      "6"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "14 - 6 = ?",
+    "answer": "8",
+    "choices": [
+      "8",
+      "7",
+      "9",
+      "6"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "16 - 7 = ?",
+    "answer": "9",
+    "choices": [
+      "9",
+      "8",
+      "10",
+      "7"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "18 - 9 = ?",
+    "answer": "9",
+    "choices": [
+      "9",
+      "8",
+      "10",
+      "7"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "12 - 5 = ?",
+    "answer": "7",
+    "choices": [
+      "7",
+      "6",
+      "8",
+      "5"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "11 - 4 = ?",
+    "answer": "7",
+    "choices": [
+      "7",
+      "6",
+      "8",
+      "5"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "20 - 8 = ?",
+    "answer": "12",
+    "choices": [
+      "12",
+      "11",
+      "13",
+      "10"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "15 - 6 = ?",
+    "answer": "9",
+    "choices": [
+      "9",
+      "8",
+      "10",
+      "7"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "1^2 = ?",
+    "answer": "1",
+    "choices": [
+      "1",
+      "2",
+      "0",
+      "4"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "2^2 = ?",
+    "answer": "4",
+    "choices": [
+      "4",
+      "2",
+      "6",
+      "8"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "3^2 = ?",
+    "answer": "9",
+    "choices": [
+      "9",
+      "6",
+      "12",
+      "8"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "4^2 = ?",
+    "answer": "16",
+    "choices": [
+      "16",
+      "12",
+      "20",
+      "8"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "5^2 = ?",
+    "answer": "25",
+    "choices": [
+      "25",
+      "20",
+      "30",
+      "10"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "10 / 2 = ?",
+    "answer": "5",
+    "choices": [
+      "5",
+      "4",
+      "6",
+      "8"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "8 / 4 = ?",
+    "answer": "2",
+    "choices": [
+      "2",
+      "3",
+      "4",
+      "1"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "9 / 3 = ?",
+    "answer": "3",
+    "choices": [
+      "3",
+      "4",
+      "2",
+      "6"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "20 / 5 = ?",
+    "answer": "4",
+    "choices": [
+      "4",
+      "5",
+      "3",
+      "2"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "30 / 5 = ?",
+    "answer": "6",
+    "choices": [
+      "6",
+      "5",
+      "7",
+      "4"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "24 / 4 = ?",
+    "answer": "6",
+    "choices": [
+      "6",
+      "5",
+      "7",
+      "8"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "6 + 7 = ?",
+    "answer": "13",
+    "choices": [
+      "13",
+      "12",
+      "14",
+      "11"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "9 + 6 = ?",
+    "answer": "15",
+    "choices": [
+      "15",
+      "14",
+      "16",
+      "13"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "7 + 8 = ?",
+    "answer": "15",
+    "choices": [
+      "15",
+      "14",
+      "16",
+      "13"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "11 - 6 = ?",
+    "answer": "5",
+    "choices": [
+      "5",
+      "4",
+      "6",
+      "7"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "14 - 8 = ?",
+    "answer": "6",
+    "choices": [
+      "6",
+      "5",
+      "7",
+      "8"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "16 - 9 = ?",
+    "answer": "7",
+    "choices": [
+      "7",
+      "6",
+      "8",
+      "9"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "28 / 4 = ?",
+    "answer": "7",
+    "choices": [
+      "7",
+      "6",
+      "8",
+      "9"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "21 / 3 = ?",
+    "answer": "7",
+    "choices": [
+      "7",
+      "6",
+      "8",
+      "9"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "27 / 3 = ?",
+    "answer": "9",
+    "choices": [
+      "9",
+      "8",
+      "10",
+      "7"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "48 / 4 = ?",
+    "answer": "12",
+    "choices": [
+      "12",
+      "11",
+      "13",
+      "14"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "50 / 5 = ?",
+    "answer": "10",
+    "choices": [
+      "10",
+      "9",
+      "11",
+      "8"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "55 / 5 = ?",
+    "answer": "11",
+    "choices": [
+      "11",
+      "10",
+      "12",
+      "9"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "60 / 5 = ?",
+    "answer": "12",
+    "choices": [
+      "12",
+      "11",
+      "13",
+      "14"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "44 / 4 = ?",
+    "answer": "11",
+    "choices": [
+      "11",
+      "10",
+      "12",
+      "9"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "33 / 3 = ?",
+    "answer": "11",
+    "choices": [
+      "11",
+      "10",
+      "12",
+      "9"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "36 / 3 = ?",
+    "answer": "12",
+    "choices": [
+      "12",
+      "11",
+      "13",
+      "14"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "6 x 6 = ?",
+    "answer": "36",
+    "choices": [
+      "36",
+      "30",
+      "42",
+      "48"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "6 x 7 = ?",
+    "answer": "42",
+    "choices": [
+      "42",
+      "36",
+      "48",
+      "49"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "6 x 8 = ?",
+    "answer": "48",
+    "choices": [
+      "48",
+      "42",
+      "54",
+      "56"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "6 x 9 = ?",
+    "answer": "54",
+    "choices": [
+      "54",
+      "48",
+      "60",
+      "63"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "6 x 10 = ?",
+    "answer": "60",
+    "choices": [
+      "60",
+      "54",
+      "66",
+      "16"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "6 x 11 = ?",
+    "answer": "66",
+    "choices": [
+      "66",
+      "60",
+      "72",
+      "61"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "6 x 12 = ?",
+    "answer": "72",
+    "choices": [
+      "72",
+      "66",
+      "78",
+      "68"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "7 x 7 = ?",
+    "answer": "49",
+    "choices": [
+      "49",
+      "42",
+      "56",
+      "48"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "7 x 8 = ?",
+    "answer": "56",
+    "choices": [
+      "56",
+      "49",
+      "63",
+      "54"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "7 x 9 = ?",
+    "answer": "63",
+    "choices": [
+      "63",
+      "56",
+      "70",
+      "54"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "7 x 10 = ?",
+    "answer": "70",
+    "choices": [
+      "70",
+      "63",
+      "77",
+      "17"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "7 x 11 = ?",
+    "answer": "77",
+    "choices": [
+      "77",
+      "70",
+      "84",
+      "71"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "7 x 12 = ?",
+    "answer": "84",
+    "choices": [
+      "84",
+      "77",
+      "91",
+      "78"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "8 x 8 = ?",
+    "answer": "64",
+    "choices": [
+      "64",
+      "56",
+      "72",
+      "48"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "8 x 9 = ?",
+    "answer": "72",
+    "choices": [
+      "72",
+      "64",
+      "81",
+      "63"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "8 x 10 = ?",
+    "answer": "80",
+    "choices": [
+      "80",
+      "72",
+      "88",
+      "18"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "8 x 11 = ?",
+    "answer": "88",
+    "choices": [
+      "88",
+      "80",
+      "96",
+      "81"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "8 x 12 = ?",
+    "answer": "96",
+    "choices": [
+      "96",
+      "88",
+      "104",
+      "84"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "9 x 9 = ?",
+    "answer": "81",
+    "choices": [
+      "81",
+      "72",
+      "90",
+      "63"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "9 x 10 = ?",
+    "answer": "90",
+    "choices": [
+      "90",
+      "81",
+      "99",
+      "19"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "9 x 11 = ?",
+    "answer": "99",
+    "choices": [
+      "99",
+      "90",
+      "108",
+      "91"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "9 x 12 = ?",
+    "answer": "108",
+    "choices": [
+      "108",
+      "99",
+      "117",
+      "96"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "10 x 10 = ?",
+    "answer": "100",
+    "choices": [
+      "100",
+      "90",
+      "110",
+      "20"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "10 x 11 = ?",
+    "answer": "110",
+    "choices": [
+      "110",
+      "100",
+      "120",
+      "101"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "10 x 12 = ?",
+    "answer": "120",
+    "choices": [
+      "120",
+      "110",
+      "130",
+      "112"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "11 x 11 = ?",
+    "answer": "121",
+    "choices": [
+      "121",
+      "111",
+      "132",
+      "110"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "11 x 12 = ?",
+    "answer": "132",
+    "choices": [
+      "132",
+      "121",
+      "143",
+      "122"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "12 x 12 = ?",
+    "answer": "144",
+    "choices": [
+      "144",
+      "132",
+      "156",
+      "136"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "48 / 6 = ?",
+    "answer": "8",
+    "choices": [
+      "8",
+      "7",
+      "9",
+      "6"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "56 / 7 = ?",
+    "answer": "8",
+    "choices": [
+      "8",
+      "7",
+      "9",
+      "6"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "63 / 9 = ?",
+    "answer": "7",
+    "choices": [
+      "7",
+      "6",
+      "8",
+      "9"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "72 / 8 = ?",
+    "answer": "9",
+    "choices": [
+      "9",
+      "8",
+      "10",
+      "7"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "84 / 12 = ?",
+    "answer": "7",
+    "choices": [
+      "7",
+      "6",
+      "8",
+      "9"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "66 / 6 = ?",
+    "answer": "11",
+    "choices": [
+      "11",
+      "10",
+      "12",
+      "9"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "77 / 7 = ?",
+    "answer": "11",
+    "choices": [
+      "11",
+      "10",
+      "12",
+      "9"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "88 / 8 = ?",
+    "answer": "11",
+    "choices": [
+      "11",
+      "10",
+      "12",
+      "9"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "99 / 9 = ?",
+    "answer": "11",
+    "choices": [
+      "11",
+      "10",
+      "12",
+      "9"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "108 / 9 = ?",
+    "answer": "12",
+    "choices": [
+      "12",
+      "11",
+      "13",
+      "14"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "96 / 8 = ?",
+    "answer": "12",
+    "choices": [
+      "12",
+      "11",
+      "13",
+      "14"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "72 / 6 = ?",
+    "answer": "12",
+    "choices": [
+      "12",
+      "11",
+      "13",
+      "14"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "6^2 = ?",
+    "answer": "36",
+    "choices": [
+      "36",
+      "30",
+      "42",
+      "48"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "7^2 = ?",
+    "answer": "49",
+    "choices": [
+      "49",
+      "42",
+      "56",
+      "48"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "8^2 = ?",
+    "answer": "64",
+    "choices": [
+      "64",
+      "56",
+      "72",
+      "81"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "9^2 = ?",
+    "answer": "81",
+    "choices": [
+      "81",
+      "72",
+      "90",
+      "63"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "10^2 = ?",
+    "answer": "100",
+    "choices": [
+      "100",
+      "90",
+      "110",
+      "80"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "11^2 = ?",
+    "answer": "121",
+    "choices": [
+      "121",
+      "111",
+      "132",
+      "110"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "12^2 = ?",
+    "answer": "144",
+    "choices": [
+      "144",
+      "132",
+      "156",
+      "136"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "1/2 of 48 = ?",
+    "answer": "24",
+    "choices": [
+      "24",
+      "16",
+      "32",
+      "12"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "1/2 of 36 = ?",
+    "answer": "18",
+    "choices": [
+      "18",
+      "12",
+      "24",
+      "9"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "1/2 of 70 = ?",
+    "answer": "35",
+    "choices": [
+      "35",
+      "25",
+      "45",
+      "14"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "1/4 of 60 = ?",
+    "answer": "15",
+    "choices": [
+      "15",
+      "20",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "1/4 of 80 = ?",
+    "answer": "20",
+    "choices": [
+      "20",
+      "25",
+      "16",
+      "10"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "1/4 of 100 = ?",
+    "answer": "25",
+    "choices": [
+      "25",
+      "20",
+      "50",
+      "10"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "3/4 of 40 = ?",
+    "answer": "30",
+    "choices": [
+      "30",
+      "20",
+      "35",
+      "10"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "3/4 of 80 = ?",
+    "answer": "60",
+    "choices": [
+      "60",
+      "40",
+      "20",
+      "70"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "? of 90 = ?",
+    "answer": "30",
+    "choices": [
+      "30",
+      "45",
+      "27",
+      "33"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "? of 60 = ?",
+    "answer": "20",
+    "choices": [
+      "20",
+      "15",
+      "30",
+      "18"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "25% of 80 = ?",
+    "answer": "20",
+    "choices": [
+      "20",
+      "25",
+      "15",
+      "40"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "25% of 120 = ?",
+    "answer": "30",
+    "choices": [
+      "30",
+      "25",
+      "40",
+      "60"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "50% of 90 = ?",
+    "answer": "45",
+    "choices": [
+      "45",
+      "40",
+      "50",
+      "35"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "50% of 130 = ?",
+    "answer": "65",
+    "choices": [
+      "65",
+      "60",
+      "70",
+      "55"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "10% of 350 = ?",
+    "answer": "35",
+    "choices": [
+      "35",
+      "30",
+      "40",
+      "25"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "10% of 520 = ?",
+    "answer": "52",
+    "choices": [
+      "52",
+      "50",
+      "55",
+      "42"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "75% of 40 = ?",
+    "answer": "30",
+    "choices": [
+      "30",
+      "35",
+      "20",
+      "10"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "75% of 60 = ?",
+    "answer": "45",
+    "choices": [
+      "45",
+      "40",
+      "50",
+      "15"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "10% of 70 = ?",
+    "answer": "7",
+    "choices": [
+      "7",
+      "14",
+      "17",
+      "3"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "50% of 44 = ?",
+    "answer": "22",
+    "choices": [
+      "22",
+      "24",
+      "11",
+      "20"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "9 x 6 = ?",
+    "answer": "54",
+    "choices": [
+      "54",
+      "48",
+      "56",
+      "63"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "6 x 4 = ?",
+    "answer": "24",
+    "choices": [
+      "24",
+      "18",
+      "30",
+      "20"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "7 x 4 = ?",
+    "answer": "28",
+    "choices": [
+      "28",
+      "21",
+      "35",
+      "24"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "8 x 4 = ?",
+    "answer": "32",
+    "choices": [
+      "32",
+      "24",
+      "40",
+      "28"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "9 x 4 = ?",
+    "answer": "36",
+    "choices": [
+      "36",
+      "27",
+      "45",
+      "32"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "7 x 6 = ?",
+    "answer": "42",
+    "choices": [
+      "42",
+      "35",
+      "49",
+      "36"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "8 x 6 = ?",
+    "answer": "48",
+    "choices": [
+      "48",
+      "42",
+      "54",
+      "56"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "12 x 6 = ?",
+    "answer": "72",
+    "choices": [
+      "72",
+      "66",
+      "78",
+      "68"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "12 x 7 = ?",
+    "answer": "84",
+    "choices": [
+      "84",
+      "77",
+      "91",
+      "78"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "12 x 8 = ?",
+    "answer": "96",
+    "choices": [
+      "96",
+      "88",
+      "104",
+      "84"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "12 x 9 = ?",
+    "answer": "108",
+    "choices": [
+      "108",
+      "99",
+      "117",
+      "96"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "12 x 11 = ?",
+    "answer": "132",
+    "choices": [
+      "132",
+      "121",
+      "143",
+      "122"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "11 x 6 = ?",
+    "answer": "66",
+    "choices": [
+      "66",
+      "60",
+      "72",
+      "61"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "11 x 7 = ?",
+    "answer": "77",
+    "choices": [
+      "77",
+      "70",
+      "84",
+      "71"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "11 x 8 = ?",
+    "answer": "88",
+    "choices": [
+      "88",
+      "80",
+      "96",
+      "81"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "11 x 9 = ?",
+    "answer": "99",
+    "choices": [
+      "99",
+      "90",
+      "108",
+      "91"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "56 / 8 = ?",
+    "answer": "7",
+    "choices": [
+      "7",
+      "6",
+      "8",
+      "9"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "42 / 6 = ?",
+    "answer": "7",
+    "choices": [
+      "7",
+      "6",
+      "8",
+      "9"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "54 / 6 = ?",
+    "answer": "9",
+    "choices": [
+      "9",
+      "8",
+      "10",
+      "7"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "70 / 7 = ?",
+    "answer": "10",
+    "choices": [
+      "10",
+      "9",
+      "11",
+      "8"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "90 / 9 = ?",
+    "answer": "10",
+    "choices": [
+      "10",
+      "9",
+      "11",
+      "8"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "110 / 11 = ?",
+    "answer": "10",
+    "choices": [
+      "10",
+      "9",
+      "11",
+      "8"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "120 / 12 = ?",
+    "answer": "10",
+    "choices": [
+      "10",
+      "9",
+      "11",
+      "8"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "49 / 7 = ?",
+    "answer": "7",
+    "choices": [
+      "7",
+      "6",
+      "8",
+      "9"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "81 / 9 = ?",
+    "answer": "9",
+    "choices": [
+      "9",
+      "8",
+      "10",
+      "7"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "64 / 8 = ?",
+    "answer": "8",
+    "choices": [
+      "8",
+      "7",
+      "9",
+      "6"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "36 / 6 = ?",
+    "answer": "6",
+    "choices": [
+      "6",
+      "5",
+      "7",
+      "4"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "144 / 12 = ?",
+    "answer": "12",
+    "choices": [
+      "12",
+      "11",
+      "13",
+      "14"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "132 / 11 = ?",
+    "answer": "12",
+    "choices": [
+      "12",
+      "11",
+      "13",
+      "14"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "10% of 200 = ?",
+    "answer": "20",
+    "choices": [
+      "20",
+      "25",
+      "2",
+      "40"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Area of a rectangle: length x ___?",
+    "answer": "Width",
+    "choices": [
+      "Width",
+      "Height",
+      "Diameter",
+      "Perimeter"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Area of a rectangle 6 x 9 = ?",
+    "answer": "54",
+    "choices": [
+      "54",
+      "30",
+      "45",
+      "63"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Area of a rectangle 7 x 8 = ?",
+    "answer": "56",
+    "choices": [
+      "56",
+      "30",
+      "42",
+      "64"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Area of a rectangle 5 x 12 = ?",
+    "answer": "60",
+    "choices": [
+      "60",
+      "34",
+      "55",
+      "70"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Area of a rectangle 10 x 4 = ?",
+    "answer": "40",
+    "choices": [
+      "40",
+      "28",
+      "50",
+      "14"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Perimeter of a rectangle 5 x 4 = ?",
+    "answer": "18",
+    "choices": [
+      "18",
+      "20",
+      "16",
+      "22"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Perimeter of a rectangle 6 x 3 = ?",
+    "answer": "18",
+    "choices": [
+      "18",
+      "9",
+      "24",
+      "15"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Perimeter of a rectangle 8 x 5 = ?",
+    "answer": "26",
+    "choices": [
+      "26",
+      "40",
+      "24",
+      "30"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Perimeter of a rectangle 7 x 7 = ?",
+    "answer": "28",
+    "choices": [
+      "28",
+      "49",
+      "21",
+      "14"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Area of a triangle = 1/2 x base x ___?",
+    "answer": "Height",
+    "choices": [
+      "Height",
+      "Width",
+      "Length",
+      "Hypotenuse"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Area of a triangle: base=8, height=5 = ?",
+    "answer": "20",
+    "choices": [
+      "20",
+      "40",
+      "13",
+      "24"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Area of a triangle: base=6, height=4 = ?",
+    "answer": "12",
+    "choices": [
+      "12",
+      "24",
+      "10",
+      "16"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Area of a triangle: base=10, height=6 = ?",
+    "answer": "30",
+    "choices": [
+      "30",
+      "60",
+      "16",
+      "20"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Area of a triangle: base=9, height=4 = ?",
+    "answer": "18",
+    "choices": [
+      "18",
+      "36",
+      "13",
+      "24"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Circumference of a circle = 2 x pi x ___?",
+    "answer": "Radius",
+    "choices": [
+      "Radius",
+      "Diameter",
+      "Area",
+      "Chord"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Area of a circle = pi x ___^2?",
+    "answer": "r",
+    "choices": [
+      "r",
+      "d",
+      "C",
+      "A"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The diameter of a circle = 2 x ___?",
+    "answer": "Radius",
+    "choices": [
+      "Radius",
+      "Area",
+      "Chord",
+      "pi"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Circumference = pi x ___?",
+    "answer": "Diameter",
+    "choices": [
+      "Diameter",
+      "Radius",
+      "Area",
+      "Chord"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "sqrt1 = ?",
+    "answer": "1",
+    "choices": [
+      "1",
+      "0",
+      "2",
+      "3"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "sqrt4 = ?",
+    "answer": "2",
+    "choices": [
+      "2",
+      "1",
+      "3",
+      "4"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "sqrt9 = ?",
+    "answer": "3",
+    "choices": [
+      "3",
+      "2",
+      "4",
+      "5"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "sqrt16 = ?",
+    "answer": "4",
+    "choices": [
+      "4",
+      "3",
+      "5",
+      "6"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "sqrt25 = ?",
+    "answer": "5",
+    "choices": [
+      "5",
+      "4",
+      "6",
+      "7"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "sqrt36 = ?",
+    "answer": "6",
+    "choices": [
+      "6",
+      "5",
+      "7",
+      "8"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "sqrt49 = ?",
+    "answer": "7",
+    "choices": [
+      "7",
+      "6",
+      "8",
+      "9"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "sqrt64 = ?",
+    "answer": "8",
+    "choices": [
+      "8",
+      "7",
+      "9",
+      "10"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "sqrt81 = ?",
+    "answer": "9",
+    "choices": [
+      "9",
+      "8",
+      "10",
+      "7"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "sqrt100 = ?",
+    "answer": "10",
+    "choices": [
+      "10",
+      "9",
+      "11",
+      "50"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "sqrt121 = ?",
+    "answer": "11",
+    "choices": [
+      "11",
+      "10",
+      "12",
+      "13"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "sqrt144 = ?",
+    "answer": "12",
+    "choices": [
+      "12",
+      "11",
+      "13",
+      "14"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "If 3x = 21, then x = ?",
+    "answer": "7",
+    "choices": [
+      "7",
+      "6",
+      "8",
+      "9"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "If x + 9 = 15, then x = ?",
+    "answer": "6",
+    "choices": [
+      "6",
+      "5",
+      "7",
+      "8"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "If 5x = 35, then x = ?",
+    "answer": "7",
+    "choices": [
+      "7",
+      "6",
+      "8",
+      "9"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "If x - 4 = 11, then x = ?",
+    "answer": "15",
+    "choices": [
+      "15",
+      "7",
+      "14",
+      "16"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "If 8x = 56, then x = ?",
+    "answer": "7",
+    "choices": [
+      "7",
+      "6",
+      "8",
+      "9"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "If x + 13 = 20, then x = ?",
+    "answer": "7",
+    "choices": [
+      "7",
+      "6",
+      "8",
+      "33"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "If 4x = 48, then x = ?",
+    "answer": "12",
+    "choices": [
+      "12",
+      "11",
+      "13",
+      "14"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "If x / 6 = 9, then x = ?",
+    "answer": "54",
+    "choices": [
+      "54",
+      "48",
+      "63",
+      "3"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "If 9x = 72, then x = ?",
+    "answer": "8",
+    "choices": [
+      "8",
+      "7",
+      "9",
+      "6"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "If x - 7 = 14, then x = ?",
+    "answer": "21",
+    "choices": [
+      "21",
+      "7",
+      "20",
+      "22"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "3 + 4 x 2 = ?",
+    "answer": "11",
+    "choices": [
+      "11",
+      "14",
+      "10",
+      "13"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "10 - 2 x 3 = ?",
+    "answer": "4",
+    "choices": [
+      "4",
+      "24",
+      "5",
+      "3"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "5 x 3 + 2 = ?",
+    "answer": "17",
+    "choices": [
+      "17",
+      "25",
+      "16",
+      "18"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "8 + 6 / 2 = ?",
+    "answer": "11",
+    "choices": [
+      "11",
+      "7",
+      "10",
+      "14"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "12 / 4 + 5 = ?",
+    "answer": "8",
+    "choices": [
+      "8",
+      "3",
+      "17",
+      "7"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "2 x (3 + 4) = ?",
+    "answer": "14",
+    "choices": [
+      "14",
+      "10",
+      "12",
+      "16"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "3 x (5 - 2) = ?",
+    "answer": "9",
+    "choices": [
+      "9",
+      "6",
+      "13",
+      "10"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "(8 + 2) x 3 = ?",
+    "answer": "30",
+    "choices": [
+      "30",
+      "14",
+      "26",
+      "24"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "20 / (2 + 3) = ?",
+    "answer": "4",
+    "choices": [
+      "4",
+      "12",
+      "5",
+      "3"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "6 + 3^2 = ?",
+    "answer": "15",
+    "choices": [
+      "15",
+      "81",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Area of a square with side 7 = ?",
+    "answer": "49",
+    "choices": [
+      "49",
+      "28",
+      "42",
+      "56"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Area of a square with side 9 = ?",
+    "answer": "81",
+    "choices": [
+      "81",
+      "36",
+      "72",
+      "90"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Perimeter of a square with side 6 = ?",
+    "answer": "24",
+    "choices": [
+      "24",
+      "36",
+      "12",
+      "18"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Perimeter of a square with side 8 = ?",
+    "answer": "32",
+    "choices": [
+      "32",
+      "64",
+      "16",
+      "24"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Area of a rectangle 11 x 3 = ?",
+    "answer": "33",
+    "choices": [
+      "33",
+      "28",
+      "44",
+      "14"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Perimeter of a rectangle 10 x 6 = ?",
+    "answer": "32",
+    "choices": [
+      "32",
+      "60",
+      "16",
+      "28"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "If 12x = 144, then x = ?",
+    "answer": "12",
+    "choices": [
+      "12",
+      "11",
+      "13",
+      "14"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "If x / 4 = 7, then x = ?",
+    "answer": "28",
+    "choices": [
+      "28",
+      "11",
+      "3",
+      "32"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "If 7x = 63, then x = ?",
+    "answer": "9",
+    "choices": [
+      "9",
+      "8",
+      "10",
+      "7"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "4 x 5 - 6 = ?",
+    "answer": "14",
+    "choices": [
+      "14",
+      "20",
+      "18",
+      "16"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "15 / 3 + 7 = ?",
+    "answer": "12",
+    "choices": [
+      "12",
+      "5",
+      "22",
+      "11"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "2 + 3 x 4 = ?",
+    "answer": "14",
+    "choices": [
+      "14",
+      "20",
+      "12",
+      "15"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Area of a triangle: base=12, height=5 = ?",
+    "answer": "30",
+    "choices": [
+      "30",
+      "60",
+      "17",
+      "34"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Area of a rectangle 3 x 15 = ?",
+    "answer": "45",
+    "choices": [
+      "45",
+      "36",
+      "54",
+      "18"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Perimeter of a rectangle 9 x 2 = ?",
+    "answer": "22",
+    "choices": [
+      "22",
+      "18",
+      "26",
+      "11"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "If x + 25 = 40, then x = ?",
+    "answer": "15",
+    "choices": [
+      "15",
+      "14",
+      "16",
+      "65"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "(4 + 6) x (3 - 1) = ?",
+    "answer": "20",
+    "choices": [
+      "20",
+      "16",
+      "24",
+      "13"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "5^2 - 4^2 = ?",
+    "answer": "9",
+    "choices": [
+      "9",
+      "1",
+      "41",
+      "25"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Area of a triangle: base=14, height=3 = ?",
+    "answer": "21",
+    "choices": [
+      "21",
+      "42",
+      "17",
+      "24"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Perimeter of a square with side 11 = ?",
+    "answer": "44",
+    "choices": [
+      "44",
+      "121",
+      "22",
+      "40"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "If x - 16 = 9, then x = ?",
+    "answer": "25",
+    "choices": [
+      "25",
+      "7",
+      "24",
+      "26"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "3 x 4^2 = ?",
+    "answer": "48",
+    "choices": [
+      "48",
+      "144",
+      "36",
+      "64"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Area of a rectangle 8 x 7 = ?",
+    "answer": "56",
+    "choices": [
+      "56",
+      "30",
+      "48",
+      "63"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Perimeter of a rectangle 12 x 5 = ?",
+    "answer": "34",
+    "choices": [
+      "34",
+      "60",
+      "30",
+      "24"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "sqrt25 x sqrt4 = ?",
+    "answer": "10",
+    "choices": [
+      "10",
+      "5",
+      "20",
+      "100"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "6 x 4 - 3 x 5 = ?",
+    "answer": "9",
+    "choices": [
+      "9",
+      "15",
+      "21",
+      "45"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Volume of a rectangular box: length x width x ___?",
+    "answer": "Height",
+    "choices": [
+      "Height",
+      "Depth",
+      "Area",
+      "Radius"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Volume of a cube with side 4 = ?",
+    "answer": "64",
+    "choices": [
+      "64",
+      "48",
+      "16",
+      "12"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Volume of a cube with side 3 = ?",
+    "answer": "27",
+    "choices": [
+      "27",
+      "9",
+      "18",
+      "12"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Volume of a cube with side 5 = ?",
+    "answer": "125",
+    "choices": [
+      "125",
+      "25",
+      "75",
+      "100"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Volume of a cube with side 2 = ?",
+    "answer": "8",
+    "choices": [
+      "8",
+      "4",
+      "6",
+      "12"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Volume of a box 3 x 4 x 5 = ?",
+    "answer": "60",
+    "choices": [
+      "60",
+      "47",
+      "120",
+      "24"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Volume of a box 2 x 6 x 7 = ?",
+    "answer": "84",
+    "choices": [
+      "84",
+      "30",
+      "42",
+      "96"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Volume of a cylinder = pi x r^2 x ___?",
+    "answer": "h",
+    "choices": [
+      "h",
+      "d",
+      "C",
+      "A"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Surface area of a cube with side 3 = ?",
+    "answer": "54",
+    "choices": [
+      "54",
+      "27",
+      "36",
+      "18"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Surface area of a cube with side 4 = ?",
+    "answer": "96",
+    "choices": [
+      "96",
+      "64",
+      "48",
+      "16"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Surface area of a cube with side 2 = ?",
+    "answer": "24",
+    "choices": [
+      "24",
+      "8",
+      "12",
+      "16"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "A right triangle has legs 3 and 4. Hypotenuse = ?",
+    "answer": "5",
+    "choices": [
+      "5",
+      "6",
+      "7",
+      "4"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "A right triangle has legs 5 and 12. Hypotenuse = ?",
+    "answer": "13",
+    "choices": [
+      "13",
+      "14",
+      "11",
+      "15"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "A right triangle has legs 8 and 6. Hypotenuse = ?",
+    "answer": "10",
+    "choices": [
+      "10",
+      "9",
+      "11",
+      "14"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "A right triangle has legs 7 and 24. Hypotenuse = ?",
+    "answer": "25",
+    "choices": [
+      "25",
+      "23",
+      "26",
+      "31"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "A right triangle has legs 9 and 12. Hypotenuse = ?",
+    "answer": "15",
+    "choices": [
+      "15",
+      "14",
+      "21",
+      "13"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Pythagorean theorem: a^2 + b^2 = ___?",
+    "answer": "c^2",
+    "choices": [
+      "c^2",
+      "c",
+      "2c",
+      "ab"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "If 2x + 5 = 17, then x = ?",
+    "answer": "6",
+    "choices": [
+      "6",
+      "7",
+      "5",
+      "11"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "If 3x - 4 = 14, then x = ?",
+    "answer": "6",
+    "choices": [
+      "6",
+      "5",
+      "7",
+      "10"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "If 4x + 3 = 23, then x = ?",
+    "answer": "5",
+    "choices": [
+      "5",
+      "6",
+      "4",
+      "20"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "If 5x - 10 = 25, then x = ?",
+    "answer": "7",
+    "choices": [
+      "7",
+      "6",
+      "8",
+      "3"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "If 2x + 9 = 25, then x = ?",
+    "answer": "8",
+    "choices": [
+      "8",
+      "7",
+      "9",
+      "17"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "If 6x - 6 = 30, then x = ?",
+    "answer": "6",
+    "choices": [
+      "6",
+      "5",
+      "7",
+      "4"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "If 3x + 7 = 28, then x = ?",
+    "answer": "7",
+    "choices": [
+      "7",
+      "6",
+      "8",
+      "21"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "If 10x - 5 = 45, then x = ?",
+    "answer": "5",
+    "choices": [
+      "5",
+      "4",
+      "6",
+      "40"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "If 2x - 3 = 11, then x = ?",
+    "answer": "7",
+    "choices": [
+      "7",
+      "6",
+      "8",
+      "4"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "If 4x + 8 = 32, then x = ?",
+    "answer": "6",
+    "choices": [
+      "6",
+      "5",
+      "7",
+      "10"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "-8 + 5 = ?",
+    "answer": "-3",
+    "choices": [
+      "-3",
+      "3",
+      "-13",
+      "13"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "-4 + (-6) = ?",
+    "answer": "-10",
+    "choices": [
+      "-10",
+      "10",
+      "-2",
+      "2"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "7 - 12 = ?",
+    "answer": "-5",
+    "choices": [
+      "-5",
+      "5",
+      "-19",
+      "19"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "-9 - 3 = ?",
+    "answer": "-12",
+    "choices": [
+      "-12",
+      "12",
+      "-6",
+      "6"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "-6 x -4 = ?",
+    "answer": "24",
+    "choices": [
+      "24",
+      "-24",
+      "-10",
+      "10"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "-5 x 3 = ?",
+    "answer": "-15",
+    "choices": [
+      "-15",
+      "15",
+      "-8",
+      "8"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "(-3)^2 = ?",
+    "answer": "9",
+    "choices": [
+      "9",
+      "-9",
+      "6",
+      "-6"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "-24 / 6 = ?",
+    "answer": "-4",
+    "choices": [
+      "-4",
+      "4",
+      "-18",
+      "18"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "-36 / -9 = ?",
+    "answer": "4",
+    "choices": [
+      "4",
+      "-4",
+      "-27",
+      "27"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "-7 x -7 = ?",
+    "answer": "49",
+    "choices": [
+      "49",
+      "-49",
+      "14",
+      "-14"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "1/2 + 1/4 = ?",
+    "answer": "3/4",
+    "choices": [
+      "3/4",
+      "1/2",
+      "?",
+      "?"
+    ]
+  },
+  {
+    "question": "What is the sum of the interior angles of a pentagon?",
+    "answer": "540 degrees",
+    "choices": [
+      "360 degrees",
+      "450 degrees",
+      "540 degrees",
+      "720 degrees"
+    ],
+    "tier": 4
+  },
+  {
+    "tier": 4,
+    "question": "3/4 - 1/4 = ?",
+    "answer": "1/2",
+    "choices": [
+      "1/2",
+      "3/4",
+      "?",
+      "1/4"
+    ]
+  },
+  {
+    "question": "If a triangle has angles of 45 and 60 degrees, what is the third angle?",
+    "answer": "75 degrees",
+    "choices": [
+      "65 degrees",
+      "70 degrees",
+      "75 degrees",
+      "80 degrees"
+    ],
+    "tier": 4
+  },
+  {
+    "tier": 4,
+    "question": "1/2 - 1/4 = ?",
+    "answer": "1/4",
+    "choices": [
+      "1/4",
+      "1/2",
+      "?",
+      "?"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "2^3 = ?",
+    "answer": "8",
+    "choices": [
+      "8",
+      "6",
+      "9",
+      "16"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "3^3 = ?",
+    "answer": "27",
+    "choices": [
+      "27",
+      "9",
+      "18",
+      "81"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 2^4?",
+    "answer": "16",
+    "choices": [
+      "16",
+      "8",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "3? = ?",
+    "answer": "81",
+    "choices": [
+      "81",
+      "64",
+      "27",
+      "108"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 2^5?",
+    "answer": "32",
+    "choices": [
+      "32",
+      "16",
+      "25",
+      "64"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "4^3 = ?",
+    "answer": "64",
+    "choices": [
+      "64",
+      "12",
+      "48",
+      "256"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "5^3 = ?",
+    "answer": "125",
+    "choices": [
+      "125",
+      "15",
+      "75",
+      "100"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 2^6?",
+    "answer": "64",
+    "choices": [
+      "64",
+      "32",
+      "128",
+      "12"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "10^3 = ?",
+    "answer": "1000",
+    "choices": [
+      "1000",
+      "100",
+      "300",
+      "3000"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "If 7x + 2 = 30, then x = ?",
+    "answer": "4",
+    "choices": [
+      "4",
+      "3",
+      "5",
+      "32"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "If 9x - 9 = 54, then x = ?",
+    "answer": "7",
+    "choices": [
+      "7",
+      "6",
+      "8",
+      "5"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Volume of a box 4 x 4 x 4 = ?",
+    "answer": "64",
+    "choices": [
+      "64",
+      "48",
+      "16",
+      "12"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Volume of a box 5 x 3 x 4 = ?",
+    "answer": "60",
+    "choices": [
+      "60",
+      "12",
+      "120",
+      "47"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "-2 + 15 = ?",
+    "answer": "13",
+    "choices": [
+      "13",
+      "-13",
+      "17",
+      "-17"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "20 + (-8) = ?",
+    "answer": "12",
+    "choices": [
+      "12",
+      "-12",
+      "28",
+      "-28"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "A right triangle has legs 20 and 21. Hypotenuse = ?",
+    "answer": "29",
+    "choices": [
+      "29",
+      "41",
+      "27",
+      "30"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "If 2x + 1 = 15, then x = ?",
+    "answer": "7",
+    "choices": [
+      "7",
+      "6",
+      "8",
+      "7.5"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "? + 1/2 = ?",
+    "answer": "?",
+    "choices": [
+      "?",
+      "?",
+      "3/4",
+      "?"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "3/4 + 1/4 = ?",
+    "answer": "1",
+    "choices": [
+      "1",
+      "1/2",
+      "11/4",
+      "3/4"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "-3 x 8 = ?",
+    "answer": "-24",
+    "choices": [
+      "-24",
+      "24",
+      "-11",
+      "11"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "(-2)^3 = ?",
+    "answer": "-8",
+    "choices": [
+      "-8",
+      "8",
+      "-6",
+      "6"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Surface area of a cube with side 5 = ?",
+    "answer": "150",
+    "choices": [
+      "150",
+      "125",
+      "25",
+      "30"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "If 11x - 11 = 44, then x = ?",
+    "answer": "5",
+    "choices": [
+      "5",
+      "4",
+      "6",
+      "3"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "sin(30 deg) = ?",
+    "answer": "1/2",
+    "choices": [
+      "1/2",
+      "sqrt3/2",
+      "sqrt2/2",
+      "1"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "sin(90 deg) = ?",
+    "answer": "1",
+    "choices": [
+      "1",
+      "0",
+      "1/2",
+      "sqrt2/2"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "sin(0 deg) = ?",
+    "answer": "0",
+    "choices": [
+      "0",
+      "1",
+      "1/2",
+      "sqrt2/2"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "sin(45 deg) = ?",
+    "answer": "sqrt2/2",
+    "choices": [
+      "sqrt2/2",
+      "1/2",
+      "sqrt3/2",
+      "1"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "sin(60 deg) = ?",
+    "answer": "sqrt3/2",
+    "choices": [
+      "sqrt3/2",
+      "1/2",
+      "sqrt2/2",
+      "1"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "cos(0 deg) = ?",
+    "answer": "1",
+    "choices": [
+      "1",
+      "0",
+      "1/2",
+      "sqrt3/2"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "cos(90 deg) = ?",
+    "answer": "0",
+    "choices": [
+      "0",
+      "1",
+      "1/2",
+      "sqrt2/2"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "cos(60 deg) = ?",
+    "answer": "1/2",
+    "choices": [
+      "1/2",
+      "sqrt3/2",
+      "0",
+      "sqrt2/2"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "cos(30 deg) = ?",
+    "answer": "sqrt3/2",
+    "choices": [
+      "sqrt3/2",
+      "1/2",
+      "sqrt2/2",
+      "1"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "cos(45 deg) = ?",
+    "answer": "sqrt2/2",
+    "choices": [
+      "sqrt2/2",
+      "1/2",
+      "sqrt3/2",
+      "0"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "tan(0 deg) = ?",
+    "answer": "0",
+    "choices": [
+      "0",
+      "1",
+      "1/2",
+      "sqrt3"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "tan(45 deg) = ?",
+    "answer": "1",
+    "choices": [
+      "1",
+      "0",
+      "sqrt3",
+      "1/2"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "tan(60 deg) = ?",
+    "answer": "sqrt3",
+    "choices": [
+      "sqrt3",
+      "1",
+      "sqrt2/2",
+      "1/2"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "tan(30 deg) = ?",
+    "answer": "1/sqrt3",
+    "choices": [
+      "1/sqrt3",
+      "1",
+      "sqrt3",
+      "1/2"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "log??(100) = ?",
+    "answer": "2",
+    "choices": [
+      "2",
+      "10",
+      "1",
+      "20"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "log??(1000) = ?",
+    "answer": "3",
+    "choices": [
+      "3",
+      "10",
+      "4",
+      "30"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "log??(10) = ?",
+    "answer": "1",
+    "choices": [
+      "1",
+      "0",
+      "10",
+      "2"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "log??(1) = ?",
+    "answer": "0",
+    "choices": [
+      "0",
+      "1",
+      "-1",
+      "10"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "log?(8) = ?",
+    "answer": "3",
+    "choices": [
+      "3",
+      "2",
+      "4",
+      "6"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "log?(16) = ?",
+    "answer": "4",
+    "choices": [
+      "4",
+      "3",
+      "5",
+      "8"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "log?(4) = ?",
+    "answer": "2",
+    "choices": [
+      "2",
+      "1",
+      "3",
+      "4"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "log?(32) = ?",
+    "answer": "5",
+    "choices": [
+      "5",
+      "4",
+      "6",
+      "16"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "log?(1) = ?",
+    "answer": "0",
+    "choices": [
+      "0",
+      "1",
+      "-1",
+      "2"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The discriminant of ax^2 + bx + c = 0 is ___?",
+    "answer": "b^2 - 4ac",
+    "choices": [
+      "b^2 - 4ac",
+      "b^2 + 4ac",
+      "-b +/- sqrt(b^2-4ac)",
+      "2a"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "In the quadratic formula, the denominator is ___?",
+    "answer": "2a",
+    "choices": [
+      "2a",
+      "a",
+      "2b",
+      "b"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The quadratic formula gives x = (-b +/- sqrtD) / ___?",
+    "answer": "2a",
+    "choices": [
+      "2a",
+      "2b",
+      "2c",
+      "a"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "If discriminant > 0, the quadratic has ___ real roots?",
+    "answer": "2",
+    "choices": [
+      "2",
+      "0",
+      "1",
+      "3"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "If discriminant = 0, the quadratic has ___ real root(s)?",
+    "answer": "1",
+    "choices": [
+      "1",
+      "0",
+      "2",
+      "3"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Distance between (0,0) and (3,4) = ?",
+    "answer": "5",
+    "choices": [
+      "5",
+      "7",
+      "4",
+      "6"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Distance between (0,0) and (5,12) = ?",
+    "answer": "13",
+    "choices": [
+      "13",
+      "17",
+      "12",
+      "15"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Distance formula = sqrt((x?-x?)^2 + ___^2)?",
+    "answer": "(y?-y?)",
+    "choices": [
+      "(y?-y?)",
+      "(y?+y?)",
+      "(y?+y?)",
+      "(x?-x?)"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Slope of a line through (0,0) and (4,8) = ?",
+    "answer": "2",
+    "choices": [
+      "2",
+      "4",
+      "1/2",
+      "8"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Slope of a line through (1,2) and (3,6) = ?",
+    "answer": "2",
+    "choices": [
+      "2",
+      "4",
+      "1/2",
+      "3"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Slope of a line through (0,5) and (5,0) = ?",
+    "answer": "-1",
+    "choices": [
+      "-1",
+      "1",
+      "-5",
+      "5"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Slope formula = (y? - y?) / ___?",
+    "answer": "(x? - x?)",
+    "choices": [
+      "(x? - x?)",
+      "(x? - x?)",
+      "(y? - y?)",
+      "(x? + x?)"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Slope of a horizontal line = ?",
+    "answer": "0",
+    "choices": [
+      "0",
+      "1",
+      "undefined",
+      "-1"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Slope of a vertical line = ?",
+    "answer": "undefined",
+    "choices": [
+      "undefined",
+      "0",
+      "1",
+      "inf"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Mean of 4, 7, 9, 12, 8 = ?",
+    "answer": "8",
+    "choices": [
+      "8",
+      "7",
+      "9",
+      "10"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Mean of 2, 4, 6, 8, 10 = ?",
+    "answer": "6",
+    "choices": [
+      "6",
+      "5",
+      "7",
+      "8"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Median of 3, 5, 7, 9, 11 = ?",
+    "answer": "7",
+    "choices": [
+      "7",
+      "5",
+      "9",
+      "6"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Median of 1, 3, 5, 9, 12 = ?",
+    "answer": "5",
+    "choices": [
+      "5",
+      "3",
+      "9",
+      "6"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Mode of 2, 3, 3, 4, 5 = ?",
+    "answer": "3",
+    "choices": [
+      "3",
+      "2",
+      "4",
+      "5"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Mode of 1, 2, 2, 3, 4, 4, 4 = ?",
+    "answer": "4",
+    "choices": [
+      "4",
+      "2",
+      "3",
+      "1"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Range of 3, 7, 2, 9, 5 = ?",
+    "answer": "7",
+    "choices": [
+      "7",
+      "9",
+      "5",
+      "6"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Mean of 10, 20, 30 = ?",
+    "answer": "20",
+    "choices": [
+      "20",
+      "30",
+      "15",
+      "10"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "2?? = ?",
+    "answer": "1/2",
+    "choices": [
+      "1/2",
+      "-2",
+      "1/4",
+      "-1/2"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "2?^2 = ?",
+    "answer": "1/4",
+    "choices": [
+      "1/4",
+      "-4",
+      "1/2",
+      "-1/4"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "2?^3 = ?",
+    "answer": "?",
+    "choices": [
+      "?",
+      "-8",
+      "1/4",
+      "-6"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "10?? = ?",
+    "answer": "0.1",
+    "choices": [
+      "0.1",
+      "-10",
+      "0.01",
+      "-0.1"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "10?^2 = ?",
+    "answer": "0.01",
+    "choices": [
+      "0.01",
+      "0.1",
+      "-100",
+      "-0.01"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "sqrt(49/64) = ?",
+    "answer": "7/8",
+    "choices": [
+      "7/8",
+      "6/7",
+      "8/9",
+      "49/8"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "sqrt(9/16) = ?",
+    "answer": "3/4",
+    "choices": [
+      "3/4",
+      "2/3",
+      "4/5",
+      "9/4"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "If f(x) = 2x + 3, then f(5) = ?",
+    "answer": "13",
+    "choices": [
+      "13",
+      "10",
+      "16",
+      "7"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "If f(x) = x^2 - 1, then f(4) = ?",
+    "answer": "15",
+    "choices": [
+      "15",
+      "16",
+      "7",
+      "17"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "If f(x) = 3x - 2, then f(6) = ?",
+    "answer": "16",
+    "choices": [
+      "16",
+      "20",
+      "14",
+      "18"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "If f(x) = x^2 + 2x, then f(3) = ?",
+    "answer": "15",
+    "choices": [
+      "15",
+      "9",
+      "6",
+      "11"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Distance between (1,1) and (4,5) = ?",
+    "answer": "5",
+    "choices": [
+      "5",
+      "6",
+      "4",
+      "7"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Slope of a line through (2,3) and (4,7) = ?",
+    "answer": "2",
+    "choices": [
+      "2",
+      "4",
+      "1/2",
+      "3"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Mean of 5, 5, 5, 5, 5 = ?",
+    "answer": "5",
+    "choices": [
+      "5",
+      "25",
+      "1",
+      "0"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Median of 2, 4, 6, 8, 10 = ?",
+    "answer": "6",
+    "choices": [
+      "6",
+      "4",
+      "8",
+      "5"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "log??(10000) = ?",
+    "answer": "4",
+    "choices": [
+      "4",
+      "3",
+      "5",
+      "10"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is 2^0?",
+    "answer": "1",
+    "choices": [
+      "1",
+      "0",
+      "2",
+      "1/2"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Any nonzero number raised to the power 0 = ?",
+    "answer": "1",
+    "choices": [
+      "1",
+      "0",
+      "itself",
+      "undefined"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "log?(64) = ?",
+    "answer": "6",
+    "choices": [
+      "6",
+      "5",
+      "7",
+      "8"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "If f(x) = x^2 + 1, then f(0) = ?",
+    "answer": "1",
+    "choices": [
+      "1",
+      "0",
+      "2",
+      "-1"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The y-intercept of y = 3x + 7 is ___?",
+    "answer": "7",
+    "choices": [
+      "7",
+      "3",
+      "0",
+      "-7"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The slope of y = 5x - 2 is ___?",
+    "answer": "5",
+    "choices": [
+      "5",
+      "-2",
+      "2",
+      "-5"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "tan(90 deg) = ?",
+    "answer": "undefined",
+    "choices": [
+      "undefined",
+      "0",
+      "1",
+      "inf"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "sin^2(theta) + cos^2(theta) = ?",
+    "answer": "1",
+    "choices": [
+      "1",
+      "0",
+      "2",
+      "sin(2theta)"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Distance between (0,0) and (8,6) = ?",
+    "answer": "10",
+    "choices": [
+      "10",
+      "14",
+      "12",
+      "15"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Range of 10, 4, 7, 2, 9 = ?",
+    "answer": "8",
+    "choices": [
+      "8",
+      "6",
+      "9",
+      "7"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "4 x 3 = ?",
+    "answer": "12",
+    "choices": [
+      "12",
+      "9",
+      "15",
+      "16"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "5 x 4 = ?",
+    "answer": "20",
+    "choices": [
+      "20",
+      "15",
+      "25",
+      "16"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "25% of 200 = ?",
+    "answer": "50",
+    "choices": [
+      "50",
+      "40",
+      "25",
+      "75"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "1/2 of 98 = ?",
+    "answer": "49",
+    "choices": [
+      "49",
+      "48",
+      "50",
+      "24"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "10% of 90 = ?",
+    "answer": "9",
+    "choices": [
+      "9",
+      "19",
+      "10",
+      "8"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Perimeter of a rectangle 4 x 11 = ?",
+    "answer": "30",
+    "choices": [
+      "30",
+      "44",
+      "22",
+      "26"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Area of a triangle: base=7, height=6 = ?",
+    "answer": "21",
+    "choices": [
+      "21",
+      "42",
+      "13",
+      "24"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "sqrt0 = ?",
+    "answer": "0",
+    "choices": [
+      "0",
+      "1",
+      "-1",
+      "undefined"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "If 6x = 54, then x = ?",
+    "answer": "9",
+    "choices": [
+      "9",
+      "8",
+      "10",
+      "7"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "If x + 6 = 22, then x = ?",
+    "answer": "16",
+    "choices": [
+      "16",
+      "15",
+      "17",
+      "28"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "4 x 3 + 2 x 5 = ?",
+    "answer": "22",
+    "choices": [
+      "22",
+      "50",
+      "21",
+      "30"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Area of a square with side 12 = ?",
+    "answer": "144",
+    "choices": [
+      "144",
+      "48",
+      "132",
+      "156"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Perimeter of a square with side 9 = ?",
+    "answer": "36",
+    "choices": [
+      "36",
+      "81",
+      "18",
+      "27"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Area of a rectangle 4 x 13 = ?",
+    "answer": "52",
+    "choices": [
+      "52",
+      "34",
+      "40",
+      "60"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "If 2x = 18, then x = ?",
+    "answer": "9",
+    "choices": [
+      "9",
+      "8",
+      "10",
+      "16"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "If x - 9 = 18, then x = ?",
+    "answer": "27",
+    "choices": [
+      "27",
+      "9",
+      "26",
+      "28"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "(6 - 2) x (3 + 1) = ?",
+    "answer": "16",
+    "choices": [
+      "16",
+      "12",
+      "20",
+      "14"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "3^2 + 4^2 = ?",
+    "answer": "25",
+    "choices": [
+      "25",
+      "49",
+      "7",
+      "41"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Area of a triangle: base=5, height=10 = ?",
+    "answer": "25",
+    "choices": [
+      "25",
+      "50",
+      "15",
+      "30"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Perimeter of a rectangle 6 x 11 = ?",
+    "answer": "34",
+    "choices": [
+      "34",
+      "66",
+      "17",
+      "28"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "If x / 3 = 12, then x = ?",
+    "answer": "36",
+    "choices": [
+      "36",
+      "4",
+      "15",
+      "39"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "5 + 2 x 6 - 1 = ?",
+    "answer": "16",
+    "choices": [
+      "16",
+      "41",
+      "12",
+      "17"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Area of a square with side 5 = ?",
+    "answer": "25",
+    "choices": [
+      "25",
+      "10",
+      "20",
+      "30"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Perimeter of a square with side 4 = ?",
+    "answer": "16",
+    "choices": [
+      "16",
+      "8",
+      "12",
+      "20"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "If 11x = 99, then x = ?",
+    "answer": "9",
+    "choices": [
+      "9",
+      "8",
+      "10",
+      "7"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Area of a rectangle 9 x 11 = ?",
+    "answer": "99",
+    "choices": [
+      "99",
+      "40",
+      "90",
+      "110"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "2 x (4 + 3) - 5 = ?",
+    "answer": "9",
+    "choices": [
+      "9",
+      "10",
+      "19",
+      "8"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "If 8x - 8 = 48, then x = ?",
+    "answer": "7",
+    "choices": [
+      "7",
+      "6",
+      "8",
+      "5"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "If 5x + 5 = 40, then x = ?",
+    "answer": "7",
+    "choices": [
+      "7",
+      "6",
+      "8",
+      "9"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "-15 / 3 = ?",
+    "answer": "-5",
+    "choices": [
+      "-5",
+      "5",
+      "-12",
+      "12"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "8 x (-3) = ?",
+    "answer": "-24",
+    "choices": [
+      "-24",
+      "24",
+      "-5",
+      "5"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "(-4)^2 = ?",
+    "answer": "16",
+    "choices": [
+      "16",
+      "-16",
+      "8",
+      "-8"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "(-5)^3 = ?",
+    "answer": "-125",
+    "choices": [
+      "-125",
+      "125",
+      "-15",
+      "15"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "1/4 + 1/4 = ?",
+    "answer": "1/2",
+    "choices": [
+      "1/2",
+      "1/4",
+      "?",
+      "3/4"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "? - ? = ?",
+    "answer": "?",
+    "choices": [
+      "?",
+      "?",
+      "1",
+      "1/4"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "3/4 + 1/2 = ?",
+    "answer": "5/4",
+    "choices": [
+      "5/4",
+      "1",
+      "1/2",
+      "3/4"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Volume of a box 6 x 5 x 2 = ?",
+    "answer": "60",
+    "choices": [
+      "60",
+      "13",
+      "30",
+      "120"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Volume of a cube with side 6 = ?",
+    "answer": "216",
+    "choices": [
+      "216",
+      "36",
+      "72",
+      "108"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Surface area of a cube with side 6 = ?",
+    "answer": "216",
+    "choices": [
+      "216",
+      "36",
+      "72",
+      "108"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "A right triangle has legs 10 and 24. Hypotenuse = ?",
+    "answer": "26",
+    "choices": [
+      "26",
+      "34",
+      "25",
+      "27"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "A right triangle has legs 15 and 20. Hypotenuse = ?",
+    "answer": "25",
+    "choices": [
+      "25",
+      "35",
+      "24",
+      "26"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 2^7?",
+    "answer": "128",
+    "choices": [
+      "128",
+      "64",
+      "256",
+      "14"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "3^2 x 4 = ?",
+    "answer": "36",
+    "choices": [
+      "36",
+      "144",
+      "24",
+      "48"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "If 3x + 12 = 33, then x = ?",
+    "answer": "7",
+    "choices": [
+      "7",
+      "6",
+      "8",
+      "15"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "If 4x - 12 = 20, then x = ?",
+    "answer": "8",
+    "choices": [
+      "8",
+      "7",
+      "9",
+      "2"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "-10 + (-10) = ?",
+    "answer": "-20",
+    "choices": [
+      "-20",
+      "20",
+      "0",
+      "-100"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "-6 + 6 = ?",
+    "answer": "0",
+    "choices": [
+      "0",
+      "-12",
+      "12",
+      "1"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "-3 x -3 x -3 = ?",
+    "answer": "-27",
+    "choices": [
+      "-27",
+      "27",
+      "-9",
+      "9"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "1/2 x 1/2 = ?",
+    "answer": "1/4",
+    "choices": [
+      "1/4",
+      "1/2",
+      "1",
+      "?"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "2/3 x 3/4 = ?",
+    "answer": "1/2",
+    "choices": [
+      "1/2",
+      "?",
+      "3/4",
+      "?"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Volume of a box 10 x 3 x 2 = ?",
+    "answer": "60",
+    "choices": [
+      "60",
+      "15",
+      "600",
+      "30"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "If 12x + 6 = 54, then x = ?",
+    "answer": "4",
+    "choices": [
+      "4",
+      "3",
+      "5",
+      "48"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "If 2(x + 3) = 18, then x = ?",
+    "answer": "6",
+    "choices": [
+      "6",
+      "7",
+      "5",
+      "9"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "(-2)? = ?",
+    "answer": "16",
+    "choices": [
+      "16",
+      "-16",
+      "8",
+      "-8"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Surface area of a cube: formula = 6 x ___?",
+    "answer": "s^2",
+    "choices": [
+      "s^2",
+      "s^3",
+      "s",
+      "2s"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "A right triangle has legs 6 and 8. Hypotenuse = ?",
+    "answer": "10",
+    "choices": [
+      "10",
+      "11",
+      "9",
+      "14"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "If 5x - 20 = 0, then x = ?",
+    "answer": "4",
+    "choices": [
+      "4",
+      "5",
+      "3",
+      "20"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is 2^8?",
+    "answer": "256",
+    "choices": [
+      "256",
+      "128",
+      "64",
+      "16"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "-4 x -4 x 4 = ?",
+    "answer": "64",
+    "choices": [
+      "64",
+      "-64",
+      "16",
+      "-16"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "If 6x + 6 = 42, then x = ?",
+    "answer": "6",
+    "choices": [
+      "6",
+      "7",
+      "5",
+      "36"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Volume of a cube with side 1 = ?",
+    "answer": "1",
+    "choices": [
+      "1",
+      "6",
+      "3",
+      "0"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Mean of 1, 3, 5, 7, 9 = ?",
+    "answer": "5",
+    "choices": [
+      "5",
+      "4",
+      "6",
+      "7"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Median of 4, 4, 7, 10, 10 = ?",
+    "answer": "7",
+    "choices": [
+      "7",
+      "4",
+      "10",
+      "6"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Mode of 5, 6, 6, 7, 8, 8, 8 = ?",
+    "answer": "8",
+    "choices": [
+      "8",
+      "6",
+      "7",
+      "5"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Range of 15, 3, 9, 21, 6 = ?",
+    "answer": "18",
+    "choices": [
+      "18",
+      "15",
+      "12",
+      "21"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "log??(0.1) = ?",
+    "answer": "-1",
+    "choices": [
+      "-1",
+      "1",
+      "0.1",
+      "0"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "log?(1/2) = ?",
+    "answer": "-1",
+    "choices": [
+      "-1",
+      "1",
+      "0",
+      "-2"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "sin^2(30 deg) + cos^2(30 deg) = ?",
+    "answer": "1",
+    "choices": [
+      "1",
+      "1/2",
+      "sqrt3",
+      "2"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "If f(x) = x^3, then f(3) = ?",
+    "answer": "27",
+    "choices": [
+      "27",
+      "9",
+      "6",
+      "81"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "If f(x) = sqrtx, then f(49) = ?",
+    "answer": "7",
+    "choices": [
+      "7",
+      "6",
+      "8",
+      "49"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "If f(x) = x^2 - 4, then f(3) = ?",
+    "answer": "5",
+    "choices": [
+      "5",
+      "9",
+      "13",
+      "7"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Slope of y = -3x + 1 is ___?",
+    "answer": "-3",
+    "choices": [
+      "-3",
+      "1",
+      "3",
+      "-1"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "y-intercept of y = 2x - 5 is ___?",
+    "answer": "-5",
+    "choices": [
+      "-5",
+      "2",
+      "5",
+      "-2"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Distance between (0,0) and (6,8) = ?",
+    "answer": "10",
+    "choices": [
+      "10",
+      "14",
+      "12",
+      "15"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Distance between (1,2) and (4,6) = ?",
+    "answer": "5",
+    "choices": [
+      "5",
+      "7",
+      "3",
+      "6"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Slope of a line through (3,3) and (6,9) = ?",
+    "answer": "2",
+    "choices": [
+      "2",
+      "3",
+      "1",
+      "6"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "3?? = ?",
+    "answer": "?",
+    "choices": [
+      "?",
+      "-3",
+      "3",
+      "-?"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "4?? = ?",
+    "answer": "1/4",
+    "choices": [
+      "1/4",
+      "-4",
+      "4",
+      "-1/4"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "5? = ?",
+    "answer": "1",
+    "choices": [
+      "1",
+      "0",
+      "5",
+      "?"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "log?(9) = ?",
+    "answer": "2",
+    "choices": [
+      "2",
+      "3",
+      "1",
+      "9"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "log?(27) = ?",
+    "answer": "3",
+    "choices": [
+      "3",
+      "2",
+      "4",
+      "9"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The quadratic formula: x = ?",
+    "answer": "(-b +/- sqrt(b^2-4ac)) / 2a",
+    "choices": [
+      "(-b +/- sqrt(b^2-4ac)) / 2a",
+      "(-b +/- sqrt(b^2+4ac)) / 2a",
+      "(b +/- sqrt(b^2-4ac)) / 2a",
+      "(-b +/- sqrt(b^2-4ac)) / a"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "If discriminant < 0, the quadratic has ___ real roots?",
+    "answer": "0",
+    "choices": [
+      "0",
+      "1",
+      "2",
+      "3"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "tan(30 deg) expressed as a decimal ~= ?",
+    "answer": "0.577",
+    "choices": [
+      "0.577",
+      "0.866",
+      "0.5",
+      "1"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "cos(45 deg) = sin(___ deg)?",
+    "answer": "45",
+    "choices": [
+      "45",
+      "30",
+      "60",
+      "90"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The reciprocal of sin(theta) is ___?",
+    "answer": "csc(theta)",
+    "choices": [
+      "csc(theta)",
+      "sec(theta)",
+      "cot(theta)",
+      "tan(theta)"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The reciprocal of cos(theta) is ___?",
+    "answer": "sec(theta)",
+    "choices": [
+      "sec(theta)",
+      "csc(theta)",
+      "cot(theta)",
+      "tan(theta)"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Mean of 0, 0, 10, 10, 10 = ?",
+    "answer": "6",
+    "choices": [
+      "6",
+      "0",
+      "10",
+      "5"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Median of 1, 2, 3, 100, 200 = ?",
+    "answer": "3",
+    "choices": [
+      "3",
+      "1",
+      "100",
+      "61"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "log??(0.01) = ?",
+    "answer": "-2",
+    "choices": [
+      "-2",
+      "2",
+      "-1",
+      "0"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Area of a square with side 3 = ?",
+    "answer": "9",
+    "choices": [
+      "9",
+      "6",
+      "12",
+      "3"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Perimeter of a square with side 5 = ?",
+    "answer": "20",
+    "choices": [
+      "20",
+      "25",
+      "10",
+      "15"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "If 3(x - 2) = 15, then x = ?",
+    "answer": "7",
+    "choices": [
+      "7",
+      "5",
+      "9",
+      "6"
+    ]
+  }
 ]

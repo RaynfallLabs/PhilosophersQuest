@@ -144,17 +144,6 @@
   },
   {
     "tier": 1,
-    "question": "What is a consumer?",
-    "answer": "Someone who buys and uses goods or services",
-    "choices": [
-      "Someone who buys and uses goods or services",
-      "Someone who makes goods",
-      "Someone who collects taxes",
-      "Someone who builds roads"
-    ]
-  },
-  {
-    "tier": 1,
     "question": "What is a producer?",
     "answer": "Someone who makes or sells goods and services",
     "choices": [
@@ -507,17 +496,6 @@
   },
   {
     "tier": 1,
-    "question": "What is the law of demand?",
-    "answer": "As price rises, the quantity demanded falls",
-    "choices": [
-      "As price rises, the quantity demanded falls",
-      "As price rises, demand also rises",
-      "Supply always equals demand",
-      "Price has no effect on demand"
-    ]
-  },
-  {
-    "tier": 1,
     "question": "What does 'revenue' mean for a business?",
     "answer": "The total money received from sales",
     "choices": [
@@ -547,17 +525,6 @@
       "Imports",
       "Dividends",
       "Tariffs"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What is the law of supply?",
-    "answer": "As price rises, producers supply more",
-    "choices": [
-      "As price rises, producers supply more",
-      "As price rises, supply falls",
-      "Price does not affect supply",
-      "Supply is always fixed"
     ]
   },
   {
@@ -914,22 +881,11 @@
   },
   {
     "tier": 1,
-    "question": "What is purchasing power?",
-    "answer": "How much your money can buy",
-    "choices": [
-      "How much your money can buy",
-      "The amount of money in your bank account",
-      "The maximum loan amount you can get",
-      "Your total income before taxes"
-    ]
-  },
-  {
-    "tier": 1,
     "question": "What happens to purchasing power when prices rise?",
-    "answer": "It decreases — you can buy less with the same money",
+    "answer": "It decreases -- you can buy less with the same money",
     "choices": [
-      "It decreases — you can buy less with the same money",
-      "It increases — money becomes more valuable",
+      "It decreases -- you can buy less with the same money",
+      "It increases -- money becomes more valuable",
       "It stays the same",
       "It only changes for luxury goods"
     ]
@@ -1497,17 +1453,6 @@
   },
   {
     "tier": 2,
-    "question": "What is a regressive tax?",
-    "answer": "A tax that takes a larger percentage of income from lower earners than higher earners",
-    "choices": [
-      "A tax that takes a larger percentage of income from lower earners than higher earners",
-      "A tax where everyone pays the same amount",
-      "A tax that rises with income",
-      "A tax on corporate profits only"
-    ]
-  },
-  {
-    "tier": 2,
     "question": "What is a flat tax?",
     "answer": "A tax where everyone pays the same percentage of their income",
     "choices": [
@@ -1988,17 +1933,6 @@
       "The best possible outcome",
       "The law of diminishing returns",
       "The equilibrium condition"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "What is price discrimination?",
-    "answer": "Charging different prices to different consumers for the same good",
-    "choices": [
-      "Charging different prices to different consumers for the same good",
-      "Setting prices lower than competitors",
-      "Refusing to sell to certain customers",
-      "Fixing prices with competitors"
     ]
   },
   {
@@ -3214,9 +3148,9 @@
   {
     "tier": 5,
     "question": "What economic concept did Milton Friedman champion?",
-    "answer": "Monetarism — controlling the money supply to manage inflation",
+    "answer": "Monetarism -- controlling the money supply to manage inflation",
     "choices": [
-      "Monetarism — controlling the money supply to manage inflation",
+      "Monetarism -- controlling the money supply to manage inflation",
       "Keynesian deficit spending during recessions",
       "Central planning of key industries",
       "Progressive taxation to reduce inequality"
@@ -3675,17 +3609,6 @@
   },
   {
     "tier": 1,
-    "question": "What is a budget?",
-    "answer": "A plan for how to spend and save money",
-    "choices": [
-      "A type of bank account",
-      "A plan for how to spend and save money",
-      "Money owed to someone",
-      "A government tax"
-    ]
-  },
-  {
-    "tier": 1,
     "question": "What is bartering?",
     "answer": "Trading goods or services directly without using money",
     "choices": [
@@ -3752,28 +3675,6 @@
   },
   {
     "tier": 1,
-    "question": "What is a market?",
-    "answer": "A place where buyers and sellers exchange goods and services",
-    "choices": [
-      "A government department",
-      "A place where buyers and sellers exchange goods and services",
-      "A type of bank",
-      "A legal agreement between two parties"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What does 'scarcity' mean in economics?",
-    "answer": "There are not enough resources to satisfy everyone's wants",
-    "choices": [
-      "Things are very expensive",
-      "There are not enough resources to satisfy everyone's wants",
-      "A country is very poor",
-      "A market has too many goods"
-    ]
-  },
-  {
-    "tier": 1,
     "question": "What is the difference between earning and spending?",
     "answer": "Earning means receiving money; spending means using it to buy things",
     "choices": [
@@ -3814,17 +3715,6 @@
       "The total value of all goods and services produced in a country in a year",
       "The average income of citizens",
       "The total money in circulation"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "What is inflation?",
-    "answer": "A general rise in the price of goods and services over time",
-    "choices": [
-      "A decrease in wages",
-      "A general rise in the price of goods and services over time",
-      "A rise in government spending",
-      "A fall in the value of exports"
     ]
   },
   {
@@ -3895,17 +3785,6 @@
   },
   {
     "tier": 2,
-    "question": "What is a trade deficit?",
-    "answer": "When a country imports more than it exports",
-    "choices": [
-      "When a country has no foreign trade",
-      "When a country's government spends more than it earns",
-      "When a country imports more than it exports",
-      "When a country's debt is greater than its GDP"
-    ]
-  },
-  {
-    "tier": 2,
     "question": "What is interest rate?",
     "answer": "The cost of borrowing money, expressed as a percentage of the loan amount",
     "choices": [
@@ -3924,17 +3803,6 @@
       "A market where shares of publicly traded companies are bought and sold",
       "A government agency that manages currency",
       "A type of commodity exchange"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "What is unemployment?",
-    "answer": "When people who want and are able to work cannot find jobs",
-    "choices": [
-      "When people choose not to work",
-      "When people who want and are able to work cannot find jobs",
-      "When businesses have too many workers",
-      "When wages are too low to attract workers"
     ]
   },
   {
@@ -3972,17 +3840,6 @@
   },
   {
     "tier": 2,
-    "question": "What is a recession?",
-    "answer": "A period of declining economic activity, usually two consecutive quarters of negative GDP growth",
-    "choices": [
-      "When inflation rises above 10%",
-      "A period of declining economic activity, usually two consecutive quarters of negative GDP growth",
-      "When unemployment falls to zero",
-      "A period of rapid economic growth"
-    ]
-  },
-  {
-    "tier": 2,
     "question": "What is the role of a central bank?",
     "answer": "To manage a country's money supply, set interest rates, and oversee the banking system",
     "choices": [
@@ -3990,17 +3847,6 @@
       "To manage a country's money supply, set interest rates, and oversee the banking system",
       "To fund government spending",
       "To regulate international trade"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "What is a monopoly?",
-    "answer": "When one company controls an entire market for a product or service",
-    "choices": [
-      "When two companies share a market equally",
-      "When one company controls an entire market for a product or service",
-      "When the government owns all businesses",
-      "When many small companies compete in a market"
     ]
   },
   {
@@ -4016,35 +3862,13 @@
   },
   {
     "tier": 2,
-    "question": "What is a tariff?",
-    "answer": "A tax placed on imported goods to protect domestic industries",
-    "choices": [
-      "A government tax on income",
-      "A fine for breaking trade laws",
-      "A tax placed on imported goods to protect domestic industries",
-      "A currency exchange fee"
-    ]
-  },
-  {
-    "tier": 2,
     "question": "What is barter's main disadvantage compared to money?",
-    "answer": "It requires a double coincidence of wants — both parties must have what the other needs",
+    "answer": "It requires a double coincidence of wants -- both parties must have what the other needs",
     "choices": [
       "It is illegal in most countries",
-      "It requires a double coincidence of wants — both parties must have what the other needs",
+      "It requires a double coincidence of wants -- both parties must have what the other needs",
       "It is slower than using money",
       "You can only barter for food and shelter"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "What is a subsidy?",
-    "answer": "Money given by the government to support a business or industry",
-    "choices": [
-      "A tax on foreign goods",
-      "A government loan",
-      "Money given by the government to support a business or industry",
-      "A penalty for low-quality goods"
     ]
   },
   {
@@ -4159,17 +3983,6 @@
   },
   {
     "tier": 3,
-    "question": "What is opportunity cost?",
-    "answer": "The value of the next best alternative you give up when making a choice",
-    "choices": [
-      "The total cost of a product",
-      "The hidden cost of a transaction",
-      "The value of the next best alternative you give up when making a choice",
-      "The cost of producing one extra unit"
-    ]
-  },
-  {
-    "tier": 3,
     "question": "What is the difference between fiscal policy and monetary policy?",
     "answer": "Fiscal policy involves government spending and taxes; monetary policy involves money supply and interest rates",
     "choices": [
@@ -4188,28 +4001,6 @@
       "A market with two competing firms",
       "A market with many firms selling similar but differentiated products",
       "A government-regulated market"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "What is an oligopoly?",
-    "answer": "A market dominated by a small number of large firms",
-    "choices": [
-      "A market with one firm",
-      "A market with many small firms",
-      "A market dominated by a small number of large firms",
-      "A government-controlled market"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "What is the multiplier effect in economics?",
-    "answer": "An initial spending increase leads to a larger overall increase in economic output",
-    "choices": [
-      "Inflation multiplies prices over time",
-      "An initial spending increase leads to a larger overall increase in economic output",
-      "Tax cuts always double government revenue",
-      "Interest rates multiply the cost of loans"
     ]
   },
   {
@@ -4269,17 +4060,6 @@
   },
   {
     "tier": 3,
-    "question": "What is a public good?",
-    "answer": "A good that is non-excludable and non-rivalrous, like national defense",
-    "choices": [
-      "A product made by the government",
-      "A good that is non-excludable and non-rivalrous, like national defense",
-      "A good available to all citizens for free",
-      "A product subsidized by the government"
-    ]
-  },
-  {
-    "tier": 3,
     "question": "What is comparative advantage?",
     "answer": "The ability to produce a good at a lower opportunity cost than another producer",
     "choices": [
@@ -4313,28 +4093,6 @@
   },
   {
     "tier": 3,
-    "question": "What is consumer surplus?",
-    "answer": "The difference between what a consumer is willing to pay and what they actually pay",
-    "choices": [
-      "The extra goods a consumer buys when prices fall",
-      "The difference between what a consumer is willing to pay and what they actually pay",
-      "Money saved after all expenses",
-      "The benefit gained from buying in bulk"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "What is producer surplus?",
-    "answer": "The difference between the price a producer receives and the minimum they were willing to accept",
-    "choices": [
-      "The profit from selling to many buyers",
-      "The difference between the price a producer receives and the minimum they were willing to accept",
-      "The total revenue of a producer",
-      "Extra production beyond what the market demands"
-    ]
-  },
-  {
-    "tier": 3,
     "question": "What is the difference between nominal and real GDP?",
     "answer": "Nominal GDP is measured in current prices; real GDP is adjusted for inflation",
     "choices": [
@@ -4353,28 +4111,6 @@
       "Temporary unemployment while workers transition between jobs",
       "Unemployment due to seasonal changes",
       "Long-term unemployment in declining industries"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "What is market failure?",
-    "answer": "When markets fail to allocate resources efficiently, often due to externalities or public goods",
-    "choices": [
-      "When a business goes bankrupt",
-      "When markets fail to allocate resources efficiently, often due to externalities or public goods",
-      "When the government over-regulates industry",
-      "When supply and demand do not align"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "What is a negative externality?",
-    "answer": "A cost imposed on a third party not involved in a transaction",
-    "choices": [
-      "A decrease in production efficiency",
-      "A cost imposed on a third party not involved in a transaction",
-      "A market with falling prices",
-      "A loss made by a business"
     ]
   },
   {
@@ -4445,17 +4181,6 @@
   },
   {
     "tier": 3,
-    "question": "What is a cartel?",
-    "answer": "A group of producers who agree to coordinate pricing and output to maximize profits",
-    "choices": [
-      "A legal trade association",
-      "A type of monopoly created by government",
-      "A group of producers who agree to coordinate pricing and output to maximize profits",
-      "An international trade agreement"
-    ]
-  },
-  {
-    "tier": 3,
     "question": "What is monetary base?",
     "answer": "The total amount of currency in circulation plus bank reserves held at the central bank",
     "choices": [
@@ -4485,17 +4210,6 @@
       "The difference between a country's exports and imports of goods",
       "The value of a country's currency",
       "The ratio of government spending to GDP"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "What is quantitative easing?",
-    "answer": "A central bank policy of buying financial assets to increase money supply and stimulate the economy",
-    "choices": [
-      "Reducing interest rates to zero",
-      "Printing money to pay government debts",
-      "A central bank policy of buying financial assets to increase money supply and stimulate the economy",
-      "Selling government bonds to reduce inflation"
     ]
   },
   {
@@ -4716,17 +4430,6 @@
       "The tendency to take more risks when insulated from the consequences",
       "The risk of government failure",
       "Borrowing beyond one's means"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "What does the Consumer Price Index (CPI) measure?",
-    "answer": "The average change in prices paid by consumers for a basket of goods and services",
-    "choices": [
-      "The total value of consumer spending",
-      "The average change in prices paid by consumers for a basket of goods and services",
-      "Producer costs in manufacturing",
-      "The government's cost of providing services"
     ]
   },
   {
@@ -5062,10 +4765,10 @@
   {
     "tier": 5,
     "question": "What is the Solow residual?",
-    "answer": "The portion of economic growth not explained by increases in capital or labor — often attributed to technological progress",
+    "answer": "The portion of economic growth not explained by increases in capital or labor -- often attributed to technological progress",
     "choices": [
       "The portion of income not subject to taxation",
-      "The portion of economic growth not explained by increases in capital or labor — often attributed to technological progress",
+      "The portion of economic growth not explained by increases in capital or labor -- often attributed to technological progress",
       "The difference between nominal and real GDP growth",
       "Savings not invested in the economy"
     ]
@@ -5271,10 +4974,10 @@
   {
     "tier": 5,
     "question": "What is the diamond-water paradox?",
-    "answer": "Water is essential but cheap; diamonds are trivial but expensive — explained by marginal utility",
+    "answer": "Water is essential but cheap; diamonds are trivial but expensive -- explained by marginal utility",
     "choices": [
       "Essential goods are always priced lower than luxury goods",
-      "Water is essential but cheap; diamonds are trivial but expensive — explained by marginal utility",
+      "Water is essential but cheap; diamonds are trivial but expensive -- explained by marginal utility",
       "Natural resources are always underpriced",
       "The price of a good reflects its total utility"
     ]
@@ -5403,10 +5106,10 @@
   {
     "tier": 5,
     "question": "What is Say's Law?",
-    "answer": "Supply creates its own demand — producing goods generates the income needed to buy them",
+    "answer": "Supply creates its own demand -- producing goods generates the income needed to buy them",
     "choices": [
       "Demand always equals supply in a command economy",
-      "Supply creates its own demand — producing goods generates the income needed to buy them",
+      "Supply creates its own demand -- producing goods generates the income needed to buy them",
       "Markets always clear in the short run",
       "Higher wages always lead to higher consumption"
     ]
@@ -5436,10 +5139,10 @@
   {
     "tier": 5,
     "question": "What is the Tobin Q ratio?",
-    "answer": "The ratio of a firm's market value to the replacement cost of its assets — a signal for investment decisions",
+    "answer": "The ratio of a firm's market value to the replacement cost of its assets -- a signal for investment decisions",
     "choices": [
       "A measure of a firm's profitability",
-      "The ratio of a firm's market value to the replacement cost of its assets — a signal for investment decisions",
+      "The ratio of a firm's market value to the replacement cost of its assets -- a signal for investment decisions",
       "A ratio comparing dividend yields to interest rates",
       "A measure of a firm's debt burden"
     ]
@@ -5456,7 +5159,7 @@
     ]
   },
   {
-    "tier": 3,
+    "tier": 1,
     "question": "GDP stands for:",
     "choices": [
       "Gross Domestic Product",
@@ -5467,7 +5170,7 @@
     "answer": "Gross Domestic Product"
   },
   {
-    "tier": 3,
+    "tier": 1,
     "question": "A budget deficit occurs when spending:",
     "choices": [
       "Exceeds revenue",
