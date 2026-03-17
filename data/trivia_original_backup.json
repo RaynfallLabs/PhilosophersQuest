@@ -232,6 +232,17 @@
   },
   {
     "tier": 1,
+    "question": "In Hollow Knight, what type of creature is the main character?",
+    "answer": "A bug",
+    "choices": [
+      "A bug",
+      "A mouse",
+      "A fairy",
+      "A robot"
+    ]
+  },
+  {
+    "tier": 1,
     "question": "What year did Minecraft officially release for the public?",
     "answer": "2011",
     "choices": [
@@ -309,6 +320,17 @@
   },
   {
     "tier": 1,
+    "question": "In Hollow Knight, what is the name of the kingdom the game is set in?",
+    "answer": "Hallownest",
+    "choices": [
+      "Hallownest",
+      "Bugworld",
+      "Deepholm",
+      "Inkborne"
+    ]
+  },
+  {
+    "tier": 1,
     "question": "What is the name of the princess in Disney's Tangled?",
     "answer": "Rapunzel",
     "choices": [
@@ -375,6 +397,50 @@
   },
   {
     "tier": 1,
+    "question": "In Dexter's Lab, where does Dexter keep his secret laboratory?",
+    "answer": "Behind a bookshelf in his bedroom",
+    "choices": [
+      "Behind a bookshelf in his bedroom",
+      "Under the garage",
+      "In the school basement",
+      "Beneath the backyard"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "In The Powerpuff Girls, what three girls make up the team?",
+    "answer": "Blossom, Bubbles, and Buttercup",
+    "choices": [
+      "Blossom, Bubbles, and Buttercup",
+      "Blossom, Bloom, and Berry",
+      "Candy, Sugar, and Spice",
+      "Rose, Lily, and Violet"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "In Adventure Time, what is the name of Finn's best friend?",
+    "answer": "Jake the Dog",
+    "choices": [
+      "Jake the Dog",
+      "Beemo",
+      "Ice King",
+      "Marceline"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "In Regular Show, what are the two main characters?",
+    "answer": "Mordecai and Rigby",
+    "choices": [
+      "Mordecai and Rigby",
+      "Finn and Jake",
+      "Gumball and Darwin",
+      "Ed and Edd"
+    ]
+  },
+  {
+    "tier": 1,
     "question": "In Star Wars, what is the name of Luke Skywalker's mentor?",
     "answer": "Obi-Wan Kenobi",
     "choices": [
@@ -430,6 +496,28 @@
   },
   {
     "tier": 1,
+    "question": "In Ed Edd n Eddy, what do the Eds constantly try to get?",
+    "answer": "Jawbreakers",
+    "choices": [
+      "Jawbreakers",
+      "Gummy bears",
+      "Lollipops",
+      "Money"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "In Courage the Cowardly Dog, what is the name of the town where Courage lives?",
+    "answer": "Nowhere",
+    "choices": [
+      "Nowhere",
+      "Somewhere",
+      "Faraway",
+      "Endsville"
+    ]
+  },
+  {
+    "tier": 1,
     "question": "In Disney's Lilo and Stitch, what number experiment is Stitch?",
     "answer": "626",
     "choices": [
@@ -437,6 +525,17 @@
       "621",
       "628",
       "420"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "In The Amazing World of Gumball, what kind of animal is Gumball?",
+    "answer": "A cat",
+    "choices": [
+      "A cat",
+      "A rabbit",
+      "A dog",
+      "A bear"
     ]
   },
   {
@@ -470,6 +569,17 @@
       "The Ultimatrix",
       "The Helix",
       "The Prototrix"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "In Gargoyles, during what time of day are the gargoyles active?",
+    "answer": "Night",
+    "choices": [
+      "Night",
+      "Day",
+      "Morning",
+      "Dusk only"
     ]
   },
   {
@@ -551,6 +661,17 @@
   },
   {
     "tier": 1,
+    "question": "In Adventure Time, who is the ruler of the Candy Kingdom?",
+    "answer": "Princess Bubblegum",
+    "choices": [
+      "Princess Bubblegum",
+      "Flame Princess",
+      "Slime Princess",
+      "Lumpy Space Princess"
+    ]
+  },
+  {
+    "tier": 1,
     "question": "In Disney's Snow White, how many dwarfs are there?",
     "answer": "7",
     "choices": [
@@ -580,6 +701,17 @@
       "Silvermist",
       "Rosetta",
       "Vidia"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "In The Amazing World of Gumball, what is the name of Gumball's fish brother?",
+    "answer": "Darwin",
+    "choices": [
+      "Darwin",
+      "Richard",
+      "Anais",
+      "Nicole"
     ]
   },
   {
@@ -639,6 +771,17 @@
   },
   {
     "tier": 1,
+    "question": "In Courage the Cowardly Dog, what kind of dog is Courage?",
+    "answer": "A pink beagle",
+    "choices": [
+      "A pink beagle",
+      "A purple poodle",
+      "A blue terrier",
+      "A red dachshund"
+    ]
+  },
+  {
+    "tier": 1,
     "question": "In Disney's Beauty and the Beast, what is the enchanted clock's name?",
     "answer": "Cogsworth",
     "choices": [
@@ -668,6 +811,17 @@
       "A grasshopper",
       "A firefly",
       "A beetle"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "In Samurai Jack, what does Jack seek in order to return to his own time?",
+    "answer": "A time portal",
+    "choices": [
+      "A time portal",
+      "A magic sword",
+      "A sacred relic",
+      "A dragon's blessing"
     ]
   },
   {
@@ -771,6 +925,17 @@
   },
   {
     "tier": 1,
+    "question": "In Disney's Tarzan, who raised Tarzan in the jungle?",
+    "answer": "Gorillas",
+    "choices": [
+      "Gorillas",
+      "Chimpanzees",
+      "Elephants",
+      "Lions"
+    ]
+  },
+  {
+    "tier": 1,
     "question": "In Ben 10, what is the name of Ben's alien form made of fire?",
     "answer": "Heatblast",
     "choices": [
@@ -782,6 +947,28 @@
   },
   {
     "tier": 1,
+    "question": "In Foster's Home for Imaginary Friends, what is the name of the main imaginary friend?",
+    "answer": "Bloo",
+    "choices": [
+      "Bloo",
+      "Wilt",
+      "Eduardo",
+      "Cheese"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "In The Grim Adventures of Billy and Mandy, how did Billy and Mandy win the Grim Reaper as their friend?",
+    "answer": "They beat him at limbo",
+    "choices": [
+      "They beat him at limbo",
+      "They tricked him at chess",
+      "They defeated him in a race",
+      "They outsmarted him at cards"
+    ]
+  },
+  {
+    "tier": 1,
     "question": "In Disney's The Jungle Book, who is the King of the Apes?",
     "answer": "King Louie",
     "choices": [
@@ -789,6 +976,17 @@
       "Shere Khan",
       "Baloo",
       "Kaa"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "In A Bug's Life, what is the name of the grasshopper villain?",
+    "answer": "Hopper",
+    "choices": [
+      "Hopper",
+      "Molt",
+      "Thumper",
+      "Axel"
     ]
   },
   {
@@ -811,6 +1009,17 @@
       "Miami",
       "Charleston",
       "Savannah"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "In Chowder, what is Chowder training to be?",
+    "answer": "A chef",
+    "choices": [
+      "A chef",
+      "A wizard",
+      "A warrior",
+      "A baker"
     ]
   },
   {
@@ -903,6 +1112,17 @@
   },
   {
     "tier": 2,
+    "question": "In Hollow Knight, what is the currency used in the game?",
+    "answer": "Geo",
+    "choices": [
+      "Geo",
+      "Gold",
+      "Essence",
+      "Soul"
+    ]
+  },
+  {
+    "tier": 2,
     "question": "In Disney's Aladdin, who is the villain trying to marry Jasmine?",
     "answer": "Jafar",
     "choices": [
@@ -969,6 +1189,39 @@
   },
   {
     "tier": 2,
+    "question": "In Gargoyles, what is the name of the gargoyle clan leader?",
+    "answer": "Goliath",
+    "choices": [
+      "Goliath",
+      "Hudson",
+      "Brooklyn",
+      "Lexington"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "In Courage the Cowardly Dog, what is the name of Courage's kind owner?",
+    "answer": "Muriel",
+    "choices": [
+      "Muriel",
+      "Eustace",
+      "Courage",
+      "Shirley"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "In Ed Edd n Eddy, who is the smartest of the three Eds?",
+    "answer": "Edd (Double D)",
+    "choices": [
+      "Edd (Double D)",
+      "Ed",
+      "Eddy",
+      "Kevin"
+    ]
+  },
+  {
+    "tier": 2,
     "question": "In The Powerpuff Girls, who created the Powerpuff Girls?",
     "answer": "Professor Utonium",
     "choices": [
@@ -980,6 +1233,28 @@
   },
   {
     "tier": 2,
+    "question": "In Dexter's Laboratory, what is the name of Dexter's sister who always finds his lab?",
+    "answer": "Dee Dee",
+    "choices": [
+      "Dee Dee",
+      "Dee",
+      "Debbie",
+      "Darla"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "In Samurai Jack, who is the main villain that Jack must defeat?",
+    "answer": "Aku",
+    "choices": [
+      "Aku",
+      "The Scotsman",
+      "Da Samurai",
+      "Demongo"
+    ]
+  },
+  {
+    "tier": 2,
     "question": "In Ben 10, how old is Ben when he finds the Omnitrix?",
     "answer": "10 years old",
     "choices": [
@@ -987,6 +1262,39 @@
       "8 years old",
       "12 years old",
       "14 years old"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "In Adventure Time, what land does the show take place in?",
+    "answer": "The Land of Ooo",
+    "choices": [
+      "The Land of Ooo",
+      "The Land of Adventure",
+      "Aaa",
+      "The Candy Kingdom"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "In Regular Show, where do Mordecai and Rigby work?",
+    "answer": "A park",
+    "choices": [
+      "A park",
+      "A zoo",
+      "A hospital",
+      "A school"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "In The Amazing World of Gumball, what kind of animal is Darwin?",
+    "answer": "A fish",
+    "choices": [
+      "A fish",
+      "A dog",
+      "A cat",
+      "A rabbit"
     ]
   },
   {
@@ -1145,6 +1453,28 @@
   },
   {
     "tier": 2,
+    "question": "In Adventure Time, what is the Ice King always trying to do?",
+    "answer": "Kidnap princesses",
+    "choices": [
+      "Kidnap princesses",
+      "Defeat Finn",
+      "Steal treasure",
+      "Freeze the world"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "In Gargoyles, in what time period were the gargoyles originally active?",
+    "answer": "Medieval Scotland",
+    "choices": [
+      "Medieval Scotland",
+      "Ancient Rome",
+      "Renaissance Italy",
+      "Viking Age Norway"
+    ]
+  },
+  {
+    "tier": 2,
     "question": "In DuckTales, what is the name of the inventor character?",
     "answer": "Gyro Gearloose",
     "choices": [
@@ -1163,6 +1493,17 @@
       "Baloo",
       "Akela",
       "Rikki-Tikki"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "In Dexter's Laboratory, what subject is Dexter a genius at?",
+    "answer": "Science and technology",
+    "choices": [
+      "Science and technology",
+      "Mathematics",
+      "Art",
+      "History"
     ]
   },
   {
@@ -1211,6 +1552,17 @@
   },
   {
     "tier": 2,
+    "question": "In Chowder, who is Chowder's mentor chef?",
+    "answer": "Mung Daal",
+    "choices": [
+      "Mung Daal",
+      "Endive",
+      "Truffles",
+      "Gazpacho"
+    ]
+  },
+  {
+    "tier": 2,
     "question": "In Johnny Bravo, what does Johnny Bravo always carry?",
     "answer": "A comb",
     "choices": [
@@ -1233,6 +1585,28 @@
   },
   {
     "tier": 2,
+    "question": "In Cow and Chicken, what is the name of the recurring villain?",
+    "answer": "The Red Guy",
+    "choices": [
+      "The Red Guy",
+      "The Devil",
+      "Big Bad Wolf",
+      "Professor Evil"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "In Disney's Treasure Planet, what treasure does Jim Hawkins seek?",
+    "answer": "The loot of a thousand worlds",
+    "choices": [
+      "The loot of a thousand worlds",
+      "The Spire",
+      "El Dorado",
+      "A golden map"
+    ]
+  },
+  {
+    "tier": 2,
     "question": "In Disney's Sleeping Beauty, what are the three fairy godmothers named?",
     "answer": "Flora, Fauna, and Merryweather",
     "choices": [
@@ -1251,6 +1625,39 @@
       "Sebastian",
       "Scuttle",
       "Urchin"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "In Regular Show, what is the name of the park's boss?",
+    "answer": "Benson",
+    "choices": [
+      "Benson",
+      "Pops",
+      "Skips",
+      "Muscle Man"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "In The Amazing World of Gumball, what school do the kids attend?",
+    "answer": "Elmore Junior High",
+    "choices": [
+      "Elmore Junior High",
+      "Elmore Elementary",
+      "Elmore High",
+      "Gumball Academy"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "In Foster's Home for Imaginary Friends, who is the strict manager of the house?",
+    "answer": "Mr. Herriman",
+    "choices": [
+      "Mr. Herriman",
+      "Frankie",
+      "Madame Foster",
+      "Bloo"
     ]
   },
   {
@@ -1343,6 +1750,28 @@
   },
   {
     "tier": 2,
+    "question": "In The Grim Adventures of Billy and Mandy, what is the Grim Reaper's most prized possession?",
+    "answer": "His scythe",
+    "choices": [
+      "His scythe",
+      "His robe",
+      "His hood",
+      "His skull"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "In Adventure Time, what is the name of Finn's robot companion?",
+    "answer": "BMO",
+    "choices": [
+      "BMO",
+      "NEPTR",
+      "GUNTER",
+      "Beemo"
+    ]
+  },
+  {
+    "tier": 2,
     "question": "In WALL-E, what does WALL-E collect as a hobby?",
     "answer": "Interesting objects and trinkets",
     "choices": [
@@ -1409,6 +1838,17 @@
   },
   {
     "tier": 2,
+    "question": "In Ed Edd n Eddy, what do the Eds constantly scheme to earn?",
+    "answer": "Money for jawbreakers",
+    "choices": [
+      "Money for jawbreakers",
+      "Fame and popularity",
+      "Free food",
+      "Video games"
+    ]
+  },
+  {
+    "tier": 2,
     "question": "In Toy Story, what is the name of Andy's toy dinosaur?",
     "answer": "Rex",
     "choices": [
@@ -1471,6 +1911,17 @@
       "Upgrade",
       "Ghostfreak",
       "XLR8"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "In A Bug's Life, what is the name of Flik's ant princess ally?",
+    "answer": "Atta",
+    "choices": [
+      "Atta",
+      "Dot",
+      "The Queen",
+      "Rosie"
     ]
   },
   {
@@ -1563,6 +2014,28 @@
   },
   {
     "tier": 3,
+    "question": "In Dexter's Laboratory, what is the name of Dexter's archrival at school?",
+    "answer": "Mandark",
+    "choices": [
+      "Mandark",
+      "Valhallen",
+      "Badaxtra",
+      "Rasslor"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "In Gargoyles, what city does the Manhattan clan call home?",
+    "answer": "New York City",
+    "choices": [
+      "New York City",
+      "Chicago",
+      "London",
+      "Tokyo"
+    ]
+  },
+  {
+    "tier": 3,
     "question": "In DuckTales, who is Scrooge McDuck's pilot?",
     "answer": "Launchpad McQuack",
     "choices": [
@@ -1618,6 +2091,61 @@
   },
   {
     "tier": 3,
+    "question": "In Samurai Jack, what object does Jack seek to return to the past?",
+    "answer": "A time portal",
+    "choices": [
+      "A time portal",
+      "His magical sword",
+      "His father's armor",
+      "A sacred scroll"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "In Courage the Cowardly Dog, who is Courage's grumpy owner?",
+    "answer": "Eustace",
+    "choices": [
+      "Eustace",
+      "Muriel",
+      "Katz",
+      "Le Quack"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "In Foster's Home for Imaginary Friends, who is Mac's imaginary friend?",
+    "answer": "Bloo",
+    "choices": [
+      "Bloo",
+      "Wilt",
+      "Eduardo",
+      "Coco"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "In Ed Edd n Eddy, what is the name of the cul-de-sac they live in?",
+    "answer": "Peach Creek",
+    "choices": [
+      "Peach Creek",
+      "Maple Lane",
+      "Elm Street",
+      "Oak Court"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "In Adventure Time, what is the Ice King's real name?",
+    "answer": "Simon Petrikov",
+    "choices": [
+      "Simon Petrikov",
+      "Gary Iceman",
+      "Winter King",
+      "Arnold Freeze"
+    ]
+  },
+  {
+    "tier": 3,
     "question": "In Johnny Bravo, what is Johnny Bravo's most notable personality trait?",
     "answer": "His extreme vanity about his looks",
     "choices": [
@@ -1636,6 +2164,28 @@
       "Kronk",
       "Pacha",
       "Chicha"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "In Disney's Tarzan, what is the name of the villain who hunts gorillas?",
+    "answer": "Clayton",
+    "choices": [
+      "Clayton",
+      "Kerchak",
+      "Terk",
+      "Professor Porter"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "In Disney's Treasure Planet, what is the name of the cyborg villain?",
+    "answer": "John Silver",
+    "choices": [
+      "John Silver",
+      "Scroop",
+      "Captain Amelia",
+      "B.E.N."
     ]
   },
   {
@@ -1805,6 +2355,17 @@
   },
   {
     "tier": 3,
+    "question": "In Courage the Cowardly Dog, what villain often appears as a traveling salesman?",
+    "answer": "Katz",
+    "choices": [
+      "Katz",
+      "Le Quack",
+      "Benton Tarantella",
+      "The Stitch"
+    ]
+  },
+  {
+    "tier": 3,
     "question": "In DuckTales, what is the name of the robot suit worn by Fenton Crackshell?",
     "answer": "Gizmoduck armor",
     "choices": [
@@ -1882,6 +2443,17 @@
   },
   {
     "tier": 3,
+    "question": "In Regular Show, what is the name of the tall immortal character who skips everywhere?",
+    "answer": "Skips",
+    "choices": [
+      "Skips",
+      "Pops",
+      "Muscle Man",
+      "Thomas"
+    ]
+  },
+  {
+    "tier": 3,
     "question": "In Disney's Sleeping Beauty, what gift does the third fairy change the curse to?",
     "answer": "Sleep instead of death, broken by true love's kiss",
     "choices": [
@@ -1889,6 +2461,17 @@
       "Blindness instead of death",
       "Weakness instead of death",
       "A slumber for 100 years only"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "In Gargoyles, what is Goliath's original gargoyle clan name?",
+    "answer": "The Wyvern Clan",
+    "choices": [
+      "The Wyvern Clan",
+      "The Manhattan Clan",
+      "The London Clan",
+      "The Avalon Clan"
     ]
   },
   {
@@ -1922,6 +2505,17 @@
       "Sir Hiss",
       "Alan-a-Dale",
       "Trigger"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "In Disney's Tarzan, who is Tarzan's gorilla mother?",
+    "answer": "Kala",
+    "choices": [
+      "Kala",
+      "Kerchak",
+      "Terk",
+      "Lady Greystoke"
     ]
   },
   {
@@ -1966,6 +2560,61 @@
       "Alpha",
       "Beta",
       "Kevin"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "In Adventure Time, what is the name of Finn's sword that is magical?",
+    "answer": "The Finn Sword",
+    "choices": [
+      "The Finn Sword",
+      "Jake Sword",
+      "Crystal Sword",
+      "Root Sword"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "In Foster's Home for Imaginary Friends, who created the home for imaginary friends?",
+    "answer": "Madame Foster",
+    "choices": [
+      "Madame Foster",
+      "Frankie",
+      "Mr. Herriman",
+      "Bloo"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "In Cow and Chicken, what are the names of the two main characters?",
+    "answer": "Cow and Chicken",
+    "choices": [
+      "Cow and Chicken",
+      "Cow and Rooster",
+      "Bessie and Cluck",
+      "Moo and Feathers"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "In The Amazing World of Gumball, what is the name of the recurring antagonist?",
+    "answer": "Rob",
+    "choices": [
+      "Rob",
+      "Larry",
+      "Mr. Small",
+      "Principal Brown"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "In Chowder, what is the name of Chowder's rival who always beats him?",
+    "answer": "Panini",
+    "choices": [
+      "Panini",
+      "Gazpacho",
+      "Gorgonzola",
+      "Truffles"
     ]
   },
   {
@@ -2058,6 +2707,17 @@
   },
   {
     "tier": 3,
+    "question": "In Regular Show, who is the antagonist entity that is a powerful demon?",
+    "answer": "Death",
+    "choices": [
+      "Death",
+      "Party Pete",
+      "Benson",
+      "Muscle Man"
+    ]
+  },
+  {
+    "tier": 3,
     "question": "In DuckTales (1987), what is the first multi-episode adventure arc called?",
     "answer": "Treasure of the Golden Suns",
     "choices": [
@@ -2080,6 +2740,17 @@
   },
   {
     "tier": 3,
+    "question": "In Disney's Tarzan, what is the name of Tarzan's gorilla father who leads the troop?",
+    "answer": "Kerchak",
+    "choices": [
+      "Kerchak",
+      "Terk",
+      "Kala",
+      "Flynt"
+    ]
+  },
+  {
+    "tier": 3,
     "question": "In Disney's The Princess and the Frog, what is the full name of the villain?",
     "answer": "Dr. Facilier",
     "choices": [
@@ -2098,6 +2769,17 @@
       "The eagle",
       "The wolf",
       "The salmon"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "In Gargoyles, what is the name of Goliath's gargoyle mentor?",
+    "answer": "Hudson",
+    "choices": [
+      "Hudson",
+      "Brooklyn",
+      "Lexington",
+      "Broadway"
     ]
   },
   {
@@ -2168,6 +2850,17 @@
   },
   {
     "tier": 4,
+    "question": "In Gargoyles, what company's building becomes the gargoyles' home in New York?",
+    "answer": "Xanatos Enterprises",
+    "choices": [
+      "Xanatos Enterprises",
+      "Pack Media Studios",
+      "Nightstone Unlimited",
+      "Castle Wyvern Corp"
+    ]
+  },
+  {
+    "tier": 4,
     "question": "In Goof Troop, what city does the show take place in?",
     "answer": "Spoonerville",
     "choices": [
@@ -2208,6 +2901,17 @@
       "Spoonerville",
       "Duckburg",
       "St. Canard"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "In Gargoyles, what is the name of the billionaire antagonist who reawakened the gargoyles?",
+    "answer": "David Xanatos",
+    "choices": [
+      "David Xanatos",
+      "Owen Burnett",
+      "Tony Dracon",
+      "Demona"
     ]
   },
   {
@@ -2278,6 +2982,72 @@
   },
   {
     "tier": 4,
+    "question": "In Dexter's Laboratory, what is the name of Dexter's rival scientist?",
+    "answer": "Mandark",
+    "choices": [
+      "Mandark",
+      "Valhallen",
+      "Hector von Morcal",
+      "Professor Von Doomsday"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "In Samurai Jack, what time period does Aku send Jack to?",
+    "answer": "The far future",
+    "choices": [
+      "The far future",
+      "Medieval Europe",
+      "Ancient Rome",
+      "1980s America"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "In Courage the Cowardly Dog, what is the name of the recurring villain cat who runs a spa?",
+    "answer": "Katz",
+    "choices": [
+      "Katz",
+      "Shirley",
+      "Le Quack",
+      "The Big Toe"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "In Ed Edd n Eddy, what is the last name shared by all three Eds?",
+    "answer": "They do not share a last name",
+    "choices": [
+      "They do not share a last name",
+      "Ed",
+      "Edwards",
+      "Edmonton"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "In Foster's Home for Imaginary Friends, who runs Foster's Home?",
+    "answer": "Madame Foster",
+    "choices": [
+      "Madame Foster",
+      "Frankie",
+      "Mr. Herriman",
+      "Bloo"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "In Cow and Chicken, what are the parents always shown as?",
+    "answer": "Only their legs from the waist down",
+    "choices": [
+      "Only their legs from the waist down",
+      "Shadows",
+      "Photographs",
+      "Silhouettes behind frosted glass"
+    ]
+  },
+  {
+    "tier": 4,
     "question": "In Johnny Bravo, what city does Johnny live in?",
     "answer": "Aron City",
     "choices": [
@@ -2285,6 +3055,28 @@
       "Springfield",
       "Townsville",
       "Retroville"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "In Chowder, what is the name of the fictional city in the show?",
+    "answer": "Marzipan City",
+    "choices": [
+      "Marzipan City",
+      "Candy Town",
+      "Gumbo City",
+      "Souffle Springs"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "In Disney's Treasure Planet, what is the futuristic setting of the movie?",
+    "answer": "Outer space",
+    "choices": [
+      "Outer space",
+      "The deep ocean",
+      "Underground caverns",
+      "A parallel dimension"
     ]
   },
   {
@@ -2329,6 +3121,17 @@
       "Chick Hicks",
       "Mater",
       "Ramone"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "In A Bug's Life, what is the name of the circus troupe that Flik recruits?",
+    "answer": "P.T. Flea's circus",
+    "choices": [
+      "P.T. Flea's circus",
+      "The Bug Brigade",
+      "The Travelling Troupe",
+      "The Grasshopper Gang"
     ]
   },
   {
@@ -2388,6 +3191,17 @@
   },
   {
     "tier": 4,
+    "question": "In Gargoyles, what is the name of the female gargoyle who betrayed the clan in Scotland?",
+    "answer": "Demona",
+    "choices": [
+      "Demona",
+      "Angela",
+      "Elisa",
+      "Coldfire"
+    ]
+  },
+  {
+    "tier": 4,
     "question": "In Goof Troop, what is the name of Pete's daughter?",
     "answer": "Pistol",
     "choices": [
@@ -2406,6 +3220,28 @@
       "Mojo Jojo",
       "Fuzzy Lumpkins",
       "Princess Morbucks"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "In Ed Edd n Eddy, what is the name of the most feared kid in the cul-de-sac?",
+    "answer": "Kevin",
+    "choices": [
+      "Kevin",
+      "Rolf",
+      "Johnny",
+      "Jonny 2x4"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "In The Amazing World of Gumball, what is the name of Gumball's father?",
+    "answer": "Richard Watterson",
+    "choices": [
+      "Richard Watterson",
+      "Darwin Watterson",
+      "Rob",
+      "Larry"
     ]
   },
   {
@@ -2509,6 +3345,17 @@
   },
   {
     "tier": 4,
+    "question": "In Gargoyles, what is the name of Goliath's evil clone?",
+    "answer": "Thailog",
+    "choices": [
+      "Thailog",
+      "Coldstone",
+      "Brooklyn",
+      "Hudson"
+    ]
+  },
+  {
+    "tier": 4,
     "question": "In Darkwing Duck, what is the name of the villain made entirely of water?",
     "answer": "Liquidator",
     "choices": [
@@ -2564,6 +3411,50 @@
   },
   {
     "tier": 4,
+    "question": "In Samurai Jack, what unique material is Jack's sword made of?",
+    "answer": "A magical metal blessed by the gods",
+    "choices": [
+      "A magical metal blessed by the gods",
+      "Titanium alloy",
+      "Obsidian steel",
+      "Celestial iron"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "In Courage the Cowardly Dog, what is the name of the villainous French con artist duck?",
+    "answer": "Le Quack",
+    "choices": [
+      "Le Quack",
+      "Katz",
+      "Benton Tarantella",
+      "Eustace"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "In Ed Edd n Eddy, what is the name of the foreign exchange student boy?",
+    "answer": "Rolf",
+    "choices": [
+      "Rolf",
+      "Kevin",
+      "Johnny",
+      "Jonny 2x4"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "In Foster's Home for Imaginary Friends, what is the name of Mac's older brother?",
+    "answer": "Terrence",
+    "choices": [
+      "Terrence",
+      "Cheese",
+      "Bloo",
+      "Goo"
+    ]
+  },
+  {
+    "tier": 4,
     "question": "In Ben 10, what is the name of Ben's alien form that is a super-speedster?",
     "answer": "XLR8",
     "choices": [
@@ -2571,6 +3462,39 @@
       "Ghostfreak",
       "Upgrade",
       "Grey Matter"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "In Adventure Time, what is the name of the Lich's original host body?",
+    "answer": "Billy the Hero",
+    "choices": [
+      "Billy the Hero",
+      "Prismo",
+      "The Lich himself",
+      "A dead king"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "In Chowder, what is the name of the large pink blob character?",
+    "answer": "Truffles",
+    "choices": [
+      "Truffles",
+      "Mung Daal",
+      "Endive",
+      "Gazpacho"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "In The Amazing World of Gumball, what is the name of the school counselor who is a cloud?",
+    "answer": "Mr. Small",
+    "choices": [
+      "Mr. Small",
+      "Principal Brown",
+      "Miss Simian",
+      "Banana Joe"
     ]
   },
   {
@@ -2630,6 +3554,17 @@
   },
   {
     "tier": 4,
+    "question": "In Gargoyles, who is Goliath's biological daughter?",
+    "answer": "Angela",
+    "choices": [
+      "Angela",
+      "Demona",
+      "Fox",
+      "Elisa"
+    ]
+  },
+  {
+    "tier": 4,
     "question": "In TaleSpin, what is the name of Baloo's mechanic friend?",
     "answer": "Wildcat",
     "choices": [
@@ -2681,6 +3616,17 @@
       "I Wanna Be Like You",
       "My Own Home",
       "Colonel Hathi March"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "In Disney's Tarzan, what is the name of Tarzan's gorilla friend?",
+    "answer": "Terk",
+    "choices": [
+      "Terk",
+      "Kerchak",
+      "Kala",
+      "Flynt"
     ]
   },
   {
@@ -2828,6 +3774,17 @@
   },
   {
     "tier": 4,
+    "question": "In Gargoyles, what is the name of the Pack member who is a female martial artist?",
+    "answer": "Fox",
+    "choices": [
+      "Fox",
+      "Demona",
+      "Elisa",
+      "Hyena"
+    ]
+  },
+  {
+    "tier": 4,
     "question": "In Goof Troop, what type of car does Goofy drive?",
     "answer": "A beat-up old car",
     "choices": [
@@ -2861,6 +3818,17 @@
   },
   {
     "tier": 4,
+    "question": "In Ed Edd n Eddy, who is the older sister of Eddy that is referenced but never seen?",
+    "answer": "Eddy has a brother, not a sister",
+    "choices": [
+      "Eddy has a brother, not a sister",
+      "May Kanker",
+      "Sarah",
+      "Marie Kanker"
+    ]
+  },
+  {
+    "tier": 4,
     "question": "In The Powerpuff Girls, what substance gives the girls their powers in addition to sugar, spice, and everything nice?",
     "answer": "Chemical X",
     "choices": [
@@ -2868,6 +3836,17 @@
       "Chemical Z",
       "Radioactive Sugar",
       "Dr. Utonium's formula"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "In Foster's Home for Imaginary Friends, what is the name of Mac's imaginary friend who speaks only in gibberish?",
+    "answer": "Bloo speaks clearly; Coco speaks gibberish",
+    "choices": [
+      "Bloo speaks clearly; Coco speaks gibberish",
+      "Wilt",
+      "Eduardo",
+      "Cheese"
     ]
   },
   {
@@ -2890,6 +3869,17 @@
       "Magica De Spell",
       "El Capitan",
       "Glomgold"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "In Gargoyles, who is the gargoyle who betrayed the clan to the Vikings in 994 AD?",
+    "answer": "Demona",
+    "choices": [
+      "Demona",
+      "Coldstone",
+      "Thailog",
+      "The Captain"
     ]
   },
   {
@@ -2927,6 +3917,17 @@
   },
   {
     "tier": 5,
+    "question": "In Gargoyles, what is the name of the sorcerer who trapped the gargoyles in stone sleep for 1000 years?",
+    "answer": "The Magus",
+    "choices": [
+      "The Magus",
+      "Xanatos",
+      "Demona",
+      "Puck"
+    ]
+  },
+  {
+    "tier": 5,
     "question": "In the original DuckTales (1987), what is the name of Gyro Gearloose's little helper robot?",
     "answer": "Little Helper",
     "choices": [
@@ -2945,6 +3946,28 @@
       "Betty",
       "Clarice",
       "Mabel"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "In Samurai Jack season 5, what is the name of the group of female assassins trained to kill Jack?",
+    "answer": "The Daughters of Aku",
+    "choices": [
+      "The Daughters of Aku",
+      "The Cult of Aku",
+      "The Ashi Warriors",
+      "The Shadow Blades"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "In Courage the Cowardly Dog, what recurring villain often poses as a doctor or professional?",
+    "answer": "Le Quack",
+    "choices": [
+      "Le Quack",
+      "Katz",
+      "Benton Tarantella",
+      "Eustace"
     ]
   },
   {
@@ -3081,6 +4104,28 @@
   },
   {
     "tier": 5,
+    "question": "In Disney's Treasure Planet, what is the name of the ship's captain?",
+    "answer": "Captain Amelia",
+    "choices": [
+      "Captain Amelia",
+      "B.E.N.",
+      "Doctor Doppler",
+      "Scroop"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "In A Bug's Life, what is the name of the princess ant who befriends Flik?",
+    "answer": "Atta",
+    "choices": [
+      "Atta",
+      "Dot",
+      "The Queen",
+      "Rosie"
+    ]
+  },
+  {
+    "tier": 5,
     "question": "In Disney's The Princess and the Frog, what instrument does Louis the alligator play?",
     "answer": "Trumpet",
     "choices": [
@@ -3114,6 +4159,28 @@
   },
   {
     "tier": 5,
+    "question": "In The Grim Adventures of Billy and Mandy, what game did Billy and Mandy play against the Grim Reaper?",
+    "answer": "Limbo",
+    "choices": [
+      "Limbo",
+      "Chess",
+      "Checkers",
+      "Croquet"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "In Foster's Home for Imaginary Friends, what is the name of the tall blue imaginary friend who is very polite?",
+    "answer": "Wilt",
+    "choices": [
+      "Wilt",
+      "Eduardo",
+      "Coco",
+      "Cheese"
+    ]
+  },
+  {
+    "tier": 5,
     "question": "In Darkwing Duck, what is the name of the toy-themed villain who uses giant toys as weapons?",
     "answer": "Quackerjack",
     "choices": [
@@ -3121,6 +4188,17 @@
       "Megavolt",
       "Bushroot",
       "Liquidator"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "In Gargoyles, what is the name of the human detective who befriends Goliath?",
+    "answer": "Elisa Maza",
+    "choices": [
+      "Elisa Maza",
+      "Fox Xanatos",
+      "Coldfire",
+      "Angela"
     ]
   },
   {
@@ -3213,6 +4291,28 @@
   },
   {
     "tier": 5,
+    "question": "In Ed Edd n Eddy, what is the name of Ed's little sister?",
+    "answer": "Sarah",
+    "choices": [
+      "Sarah",
+      "Marie",
+      "May",
+      "Lee"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "In Adventure Time, what is the name of the vampire queen who is also a musician?",
+    "answer": "Marceline the Vampire Queen",
+    "choices": [
+      "Marceline the Vampire Queen",
+      "Flame Princess",
+      "Lumpy Space Princess",
+      "Slime Princess"
+    ]
+  },
+  {
+    "tier": 5,
     "question": "In Disney's Lilo and Stitch, what is the name of the alien agent initially pursuing Stitch?",
     "answer": "Gantu",
     "choices": [
@@ -3220,6 +4320,28 @@
       "Jumba",
       "Gantu",
       "Grand Councilwoman"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "In Chowder, what is the name of the dim-witted rock monster on the show?",
+    "answer": "Shnitzel",
+    "choices": [
+      "Shnitzel",
+      "Gazpacho",
+      "Truffles",
+      "Panini"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "In The Amazing World of Gumball, what is the name of the cloud person who is a friend at school?",
+    "answer": "Idaho",
+    "choices": [
+      "Idaho",
+      "Tobias",
+      "Banana Joe",
+      "Anton"
     ]
   },
   {
@@ -3279,6 +4401,17 @@
   },
   {
     "tier": 5,
+    "question": "In Disney's Treasure Planet, what is the name of the amnesiac robot who befriends Jim?",
+    "answer": "B.E.N.",
+    "choices": [
+      "B.E.N.",
+      "Morph",
+      "Arrow",
+      "Scroop"
+    ]
+  },
+  {
+    "tier": 5,
     "question": "In Toy Story 3, what is the name of the pink strawberry-scented bear villain at Sunnyside?",
     "answer": "Lotso",
     "choices": [
@@ -3297,6 +4430,17 @@
       "Magica De Spell",
       "El Capitan",
       "Ma Beagle"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "In Gargoyles, what is the name of the trickster figure from Oberon's court who serves Xanatos?",
+    "answer": "Puck",
+    "choices": [
+      "Puck",
+      "Oberon",
+      "Titania",
+      "Coyote"
     ]
   },
   {
@@ -3433,6 +4577,17 @@
   },
   {
     "tier": 5,
+    "question": "In A Bug's Life, what is the name of Flik's most loyal supporter among the ants?",
+    "answer": "Dot",
+    "choices": [
+      "Dot",
+      "Atta",
+      "The Queen",
+      "Rosie"
+    ]
+  },
+  {
+    "tier": 5,
     "question": "In Up, what is the name of the wilderness explorer troop Russell belongs to?",
     "answer": "Wilderness Explorers",
     "choices": [
@@ -3451,6 +4606,28 @@
       "A frog potion",
       "A bear potion",
       "A fly potion"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "In Disney's Tarzan, what is the name of Jane's father?",
+    "answer": "Professor Porter",
+    "choices": [
+      "Professor Porter",
+      "Professor Philander",
+      "Professor Archimedes",
+      "Professor Bennett"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "In Disney's Treasure Planet, what is the name of the shape-shifting creature who is Silver's pet?",
+    "answer": "Morph",
+    "choices": [
+      "Morph",
+      "B.E.N.",
+      "Arrow",
+      "Scroop"
     ]
   },
   {
@@ -3521,6 +4698,28 @@
   },
   {
     "tier": 5,
+    "question": "In Samurai Jack, what is the origin of Jack's magical sword?",
+    "answer": "It was forged from the righteous wishes of a father",
+    "choices": [
+      "It was forged from the righteous wishes of a father",
+      "Damascus steel",
+      "Celestial iron",
+      "Aku's blood"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "In Foster's Home for Imaginary Friends, what does the imaginary friend Coco look like?",
+    "answer": "A bird-airplane-palm tree hybrid",
+    "choices": [
+      "A bird-airplane-palm tree hybrid",
+      "A giant purple blob",
+      "A robot dragon",
+      "A cloud with arms"
+    ]
+  },
+  {
+    "tier": 5,
     "question": "In Ben 10, what is the name of Ben's alien form that is a tiny super-intelligent grey alien?",
     "answer": "Grey Matter",
     "choices": [
@@ -3528,6 +4727,61 @@
       "Upgrade",
       "Brainstorm",
       "Echo Echo"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "In Adventure Time, what is the name of the Lich's most powerful form?",
+    "answer": "The Lich King",
+    "choices": [
+      "The Lich King",
+      "William the Lich",
+      "The Undead Master",
+      "The Catalyst Comet Villain"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "In Regular Show, what is the name of the powerful soda that grants superpowers?",
+    "answer": "Sumo Punch",
+    "choices": [
+      "Sumo Punch",
+      "Power Pop",
+      "Ultra Soda",
+      "Muscle Brew"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "In Chowder, what is the name of Chowder's rival female character?",
+    "answer": "Panini",
+    "choices": [
+      "Panini",
+      "Truffles",
+      "Endive",
+      "Gorgonzola"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "In The Amazing World of Gumball, what is the name of the school principal?",
+    "answer": "Principal Brown",
+    "choices": [
+      "Principal Brown",
+      "Mr. Small",
+      "Miss Simian",
+      "Mr. Yoshida"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "In Cow and Chicken, what is the name of the villain who appears as a smooth-talking devil?",
+    "answer": "The Red Guy",
+    "choices": [
+      "The Red Guy",
+      "The Big Bad Wolf",
+      "Professor Evil",
+      "The Headless Chicken"
     ]
   },
   {
@@ -3587,6 +4841,17 @@
   },
   {
     "tier": 5,
+    "question": "In Disney's Tarzan (1999), what is the name of Tarzan's gorilla father who leads the troop?",
+    "answer": "Kerchak",
+    "choices": [
+      "Kerchak",
+      "Terk",
+      "Kala",
+      "Flynt"
+    ]
+  },
+  {
+    "tier": 5,
     "question": "In Disney's Mulan (1998), what is the name of the lucky cricket given to Mulan?",
     "answer": "Cri-Kee",
     "choices": [
@@ -3605,6 +4870,17 @@
       "Roboduck",
       "Techno-Duck",
       "Iron Duck"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "In Gargoyles, who is the immortal trickster that is also Owen Burnett's alter ego?",
+    "answer": "Puck",
+    "choices": [
+      "Puck",
+      "Oberon",
+      "Titania",
+      "Coyote"
     ]
   },
   {
@@ -3641,3171 +4917,47 @@
     ]
   },
   {
-    "question": "What type is Charizard?",
-    "answer": "Fire/Flying",
+    "tier": 5,
+    "question": "In Samurai Jack, who is the main villain Aku's original form described as?",
+    "answer": "A shapeshifting master of darkness",
     "choices": [
-      "Fire/Dragon",
-      "Fire/Flying",
-      "Fire/Fighting",
-      "Fire only"
-    ],
-    "tier": 1
+      "A shapeshifting master of darkness",
+      "A dragon king",
+      "A demon emperor",
+      "A fallen god"
+    ]
   },
   {
-    "question": "Which Pokemon is number 001 in the original Pokedex?",
-    "answer": "Bulbasaur",
+    "tier": 5,
+    "question": "In Ed Edd n Eddy, what is the name of Kevin's bicycle?",
+    "answer": "Kevin's bike has no specific name in the show",
     "choices": [
-      "Charmander",
-      "Squirtle",
-      "Bulbasaur",
-      "Caterpie"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What does Pikachu evolve into?",
-    "answer": "Raichu",
-    "choices": [
-      "Pichu",
-      "Raichu",
-      "Electabuzz",
-      "Jolteon"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "Who is Ash Ketchum's rival in the original Pokemon anime?",
-    "answer": "Gary Oak",
-    "choices": [
-      "Brock",
-      "Misty",
-      "Gary Oak",
-      "Tracey"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What legendary Pokemon is found at the end of Cerulean Cave in Pokemon Red and Blue?",
-    "answer": "Mewtwo",
-    "choices": [
-      "Mew",
-      "Mewtwo",
-      "Articuno",
-      "Zapdos"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What type combination does Gengar have?",
-    "answer": "Ghost/Poison",
-    "choices": [
-      "Ghost/Dark",
-      "Ghost/Psychic",
-      "Ghost/Poison",
-      "Dark/Poison"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "Which generation introduced the Steel type?",
-    "answer": "Generation II",
-    "choices": [
-      "Generation I",
-      "Generation II",
-      "Generation III",
-      "Generation IV"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is the legendary Pokemon on the box art of Pokemon Gold?",
-    "answer": "Ho-Oh",
-    "choices": [
-      "Lugia",
-      "Ho-Oh",
-      "Entei",
-      "Suicune"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What is Eevee's Water-type evolution called?",
-    "answer": "Vaporeon",
-    "choices": [
-      "Aqueon",
-      "Vaporeon",
-      "Watereon",
-      "Squirteon"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "Which Pokemon game introduced the Physical/Special split per individual move?",
-    "answer": "Pokemon Diamond and Pearl",
-    "choices": [
-      "Pokemon Ruby and Sapphire",
-      "Pokemon FireRed and LeafGreen",
-      "Pokemon Diamond and Pearl",
-      "Pokemon HeartGold and SoulSilver"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "Which gym leader in Kanto specializes in Rock-type Pokemon?",
-    "answer": "Brock",
-    "choices": [
-      "Misty",
-      "Brock",
-      "Lt. Surge",
-      "Erika"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What is the name of the evil organization in Pokemon Ruby and Sapphire?",
-    "answer": "Team Magma and Team Aqua",
-    "choices": [
-      "Team Rocket",
-      "Team Galactic",
-      "Team Magma and Team Aqua",
-      "Team Plasma"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "Which Pokemon can learn the move Sketch, permanently copying any move?",
-    "answer": "Smeargle",
-    "choices": [
-      "Ditto",
-      "Smeargle",
-      "Mew",
-      "Porygon"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "What is the Pokedex number of Mew?",
-    "answer": "151",
-    "choices": [
-      "150",
-      "151",
-      "152",
-      "153"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What type is super effective against Dragon type?",
-    "answer": "Ice",
-    "choices": [
-      "Water",
-      "Ice",
-      "Fire",
-      "Dragon"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is Ash's rival's name in the Sinnoh region?",
-    "answer": "Paul",
-    "choices": [
-      "Barry",
-      "Paul",
-      "Conway",
-      "Kenny"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "Which move has 100% accuracy and always causes the target to flinch if used first?",
-    "answer": "Fake Out",
-    "choices": [
-      "Headbutt",
-      "Iron Head",
-      "Fake Out",
-      "Rock Slide"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "What is the base stat total of Arceus?",
-    "answer": "720",
-    "choices": [
-      "600",
-      "680",
-      "720",
-      "750"
-    ],
-    "tier": 4
-  },
-  {
-    "question": "What Pokemon has the naturally highest base Speed stat (non-Mega, non-Legendary)?",
-    "answer": "Ninjask",
-    "choices": [
-      "Electrode",
-      "Jolteon",
-      "Ninjask",
-      "Accelgor"
-    ],
-    "tier": 4
-  },
-  {
-    "question": "What attack does Ash's Pikachu most famously use in the anime?",
-    "answer": "Thunderbolt",
-    "choices": [
-      "Thunder",
+      "Kevin's bike has no specific name in the show",
+      "Turbo",
       "Thunderbolt",
-      "Volt Tackle",
-      "Quick Attack"
-    ],
-    "tier": 2
+      "Silver Streak"
+    ]
   },
   {
-    "question": "Which city is home to the Kanto Pokemon League?",
-    "answer": "Indigo Plateau",
+    "tier": 5,
+    "question": "In Adventure Time, what is the name of the crystal dimension where Prismo lives?",
+    "answer": "The Time Room",
     "choices": [
-      "Viridian City",
-      "Cerulean City",
-      "Indigo Plateau",
-      "Pallet Town"
-    ],
-    "tier": 2
+      "The Time Room",
+      "The Crystal Citadel",
+      "Prismo's Dimension",
+      "The Timestop Realm"
+    ]
   },
   {
-    "question": "What evil organization appears in the original Pokemon Red and Blue games?",
-    "answer": "Team Rocket",
+    "tier": 5,
+    "question": "In Foster's Home for Imaginary Friends, what is the name of Mac's shy female friend who creates many imaginary friends?",
+    "answer": "Goo",
     "choices": [
-      "Team Magma",
-      "Team Aqua",
-      "Team Rocket",
-      "Team Galactic"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "How many Eevee evolutions existed in Generation I?",
-    "answer": "3",
-    "choices": [
-      "2",
-      "3",
-      "5",
-      "8"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is the name of Ash's Pikachu's evolved form that Ash refused?",
-    "answer": "Raichu (Ash chose not to evolve Pikachu)",
-    "choices": [
-      "Raichu (Ash chose not to evolve Pikachu)",
-      "Pikachu never had an evolution",
-      "Volt Pikachu",
-      "Alolan Raichu"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "Which Pokemon is known as the Legendary Bird of Ice?",
-    "answer": "Articuno",
-    "choices": [
-      "Articuno",
-      "Zapdos",
-      "Moltres",
-      "Regice"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is Izuku Midoriya's hero name in My Hero Academia?",
-    "answer": "Deku",
-    "choices": [
-      "Green Might",
-      "Deku",
-      "One For All",
-      "Smash Kid"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What is the name of the most powerful Quirk passed down through generations in MHA?",
-    "answer": "One For All",
-    "choices": [
-      "All For One",
-      "One For All",
-      "Symbol of Peace",
-      "United Force"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What is All Might's real name in My Hero Academia?",
-    "answer": "Toshinori Yagi",
-    "choices": [
-      "Hisashi Midoriya",
-      "Toshinori Yagi",
-      "Gran Torino",
-      "Nana Shimura"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is Katsuki Bakugo's official hero name?",
-    "answer": "Great Explosion Murder God Dynamight",
-    "choices": [
-      "Explosion King",
-      "Ground Zero",
-      "Great Explosion Murder God Dynamight",
-      "King Explosion Murder"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What villain has a Quirk that can decay anything he touches in MHA?",
-    "answer": "Tomura Shigaraki",
-    "choices": [
-      "Dabi",
-      "Twice",
-      "Tomura Shigaraki",
-      "Stain"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What school do the Class 1-A heroes attend in MHA?",
-    "answer": "UA High School",
-    "choices": [
-      "Shiketsu High",
-      "Ketsubutsu Academy",
-      "UA High School",
-      "Seiai Academy"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What is Ochaco Uraraka's Quirk in MHA?",
-    "answer": "Zero Gravity",
-    "choices": [
-      "Levitation",
-      "Zero Gravity",
-      "Float",
-      "Gravity Control"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is the real name of the villain Dabi in MHA?",
-    "answer": "Toya Todoroki",
-    "choices": [
-      "Keigo Takami",
-      "Toya Todoroki",
-      "Jin Bubaigawara",
-      "Shuichi Iguchi"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "What is Shoto Todoroki's left side Quirk?",
-    "answer": "Fire",
-    "choices": [
-      "Ice",
-      "Fire",
-      "Plasma",
-      "Explosion"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "Who is the No. 2 Hero who becomes No. 1 after All Might's retirement?",
-    "answer": "Endeavor",
-    "choices": [
-      "Hawks",
-      "Endeavor",
-      "Best Jeanist",
-      "Edgeshot"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is the name of the villain group led by Shigaraki in MHA?",
-    "answer": "League of Villains",
-    "choices": [
-      "Paranormal Liberation Front",
-      "League of Villains",
-      "Meta Liberation Army",
-      "Villain Alliance"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What is Tenya Iida's hero name?",
-    "answer": "Ingenium",
-    "choices": [
-      "Engine",
-      "Turbo Hero",
-      "Ingenium",
-      "Speed Hero"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What percentage of One For All power does Izuku first use in Full Cowl mode?",
-    "answer": "5%",
-    "choices": [
-      "1%",
-      "5%",
-      "8%",
-      "10%"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "What Quirk does Himiko Toga possess?",
-    "answer": "Transform",
-    "choices": [
-      "Mimic",
-      "Transform",
-      "Copy",
-      "Disguise"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "Which MHA character has a navel laser Quirk?",
-    "answer": "Yuga Aoyama",
-    "choices": [
-      "Denki Kaminari",
-      "Yuga Aoyama",
-      "Hanta Sero",
-      "Fumikage Tokoyami"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is Tsuyu Asui's hero name?",
-    "answer": "Froppy",
-    "choices": [
-      "Frogger",
-      "Froppy",
-      "Toad Hero",
-      "Ribbit"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "Who was the eighth wielder of One For All before Izuku?",
-    "answer": "All Might",
-    "choices": [
-      "Gran Torino",
-      "Nana Shimura",
-      "All Might",
-      "Sir Nighteye"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What is the first named move Izuku develops in MHA that concentrates One For All into one finger?",
-    "answer": "Delaware Smash",
-    "choices": [
-      "One For All Full Cowl",
-      "Delaware Smash",
-      "Finger Flick",
-      "Pinpoint Strike"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "What is the name of the USJ villain who was created to kill All Might?",
-    "answer": "Nomu (Anti-Symbol of Peace)",
-    "choices": [
-      "High-End Nomu",
-      "Nomu (Anti-Symbol of Peace)",
-      "Hood",
-      "Johnny"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "Which MHA character is known as the hero 'Suneater'?",
-    "answer": "Tamaki Amajiki",
-    "choices": [
-      "Mirio Togata",
-      "Tamaki Amajiki",
-      "Nejire Hado",
-      "Fat Gum"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "What is Endeavor's real name in MHA?",
-    "answer": "Enji Todoroki",
-    "choices": [
-      "Shoto Todoroki",
-      "Dabi Todoroki",
-      "Enji Todoroki",
-      "Fuyumi Todoroki"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "What is the name of the main character in Hajime no Ippo?",
-    "answer": "Ippo Makunouchi",
-    "choices": [
-      "Mamoru Takamura",
-      "Ichiro Miyata",
-      "Ippo Makunouchi",
-      "Masaru Aoki"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What is Ippo's signature move in Hajime no Ippo?",
-    "answer": "Dempsey Roll",
-    "choices": [
-      "Liver Blow",
-      "Smash",
-      "Dempsey Roll",
-      "Gazelle Punch"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "Which gym does Ippo train at in Hajime no Ippo?",
-    "answer": "Kamogawa Boxing Gym",
-    "choices": [
-      "Otowa Boxing Gym",
-      "Kamogawa Boxing Gym",
-      "Makunouchi Gym",
-      "Fujii Boxing Gym"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is the name of Ippo's coach in Hajime no Ippo?",
-    "answer": "Genji Kamogawa",
-    "choices": [
-      "Dankichi Hama",
-      "Genji Kamogawa",
-      "Shinoda",
-      "Yagi"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What weight class does Ippo Makunouchi compete in?",
-    "answer": "Featherweight",
-    "choices": [
-      "Lightweight",
-      "Super Featherweight",
-      "Featherweight",
-      "Bantamweight"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "Who is Ippo's main rival throughout Hajime no Ippo?",
-    "answer": "Ichiro Miyata",
-    "choices": [
-      "Ryuichi Hayami",
-      "Ichiro Miyata",
-      "Sendo Takeshi",
-      "Vorg Zangief"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What boxing style does Ippo use?",
-    "answer": "Peek-a-Boo",
-    "choices": [
-      "Out-boxing",
-      "Slugger",
-      "Peek-a-Boo",
-      "Southpaw"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is the name of the punch Ippo throws in an upward arc like a leaping gazelle?",
-    "answer": "Gazelle Punch",
-    "choices": [
-      "Rising Upper",
-      "Gazelle Punch",
-      "Arc Smash",
-      "Leap Hook"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "Who is the loud hot-headed boxer from Naniwa who repeatedly clashes with Ippo?",
-    "answer": "Takeshi Sendo",
-    "choices": [
-      "Ryuhei Sawamura",
-      "Takeshi Sendo",
-      "Hammer Nao",
-      "Date Eiji"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What weight class is Mamoru Takamura primarily a champion in?",
-    "answer": "Super Middleweight",
-    "choices": [
-      "Heavyweight",
-      "Light Heavyweight",
-      "Super Middleweight",
-      "Middleweight"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "What is Kimura's signature move in Hajime no Ippo?",
-    "answer": "Dragonfish Blow",
-    "choices": [
-      "Dragon Punch",
-      "Dragonfish Blow",
-      "Rising Dragon",
-      "Fish Hook"
-    ],
-    "tier": 4
-  },
-  {
-    "question": "What is the technique Miyata uses involving slipping an incoming punch and countering simultaneously?",
-    "answer": "Cross Counter",
-    "choices": [
-      "Check Hook",
-      "Cross Counter",
-      "Slip Counter",
-      "Philly Shell"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "Who is the Russian boxer who fights Miyata in Hajime no Ippo?",
-    "answer": "Volg Zangief",
-    "choices": [
-      "Alexander Volkov",
-      "Volg Zangief",
-      "Bryan Hawk",
-      "Ricardo Martinez"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "Which boxer in Hajime no Ippo is nicknamed the 'Wild Tiger'?",
-    "answer": "Takeshi Sendo",
-    "choices": [
-      "Ippo Makunouchi",
-      "Takeshi Sendo",
-      "Bryan Hawk",
-      "Ryuichi Hayami"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "What is the JBC Featherweight champion Ippo defeats to win his first title?",
-    "answer": "Eiji Date",
-    "choices": [
-      "Masahiko Umezawa",
-      "Eiji Date",
-      "Sanada Kazuki",
-      "Sawamura Ryuhei"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "What health condition threatens Ippo's career in his retirement arc?",
-    "answer": "Punch Drunk Syndrome",
-    "choices": [
-      "Broken jaw",
-      "Detached retina",
-      "Punch Drunk Syndrome",
-      "Fractured wrist"
-    ],
-    "tier": 4
-  },
-  {
-    "question": "What does young Ippo deliver for his mother's business at the start of the series?",
-    "answer": "Fish (working on a fishing boat)",
-    "choices": [
-      "Newspapers",
-      "Groceries",
-      "Fish (working on a fishing boat)",
-      "Bread"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What are the names of the two sisters in My Neighbor Totoro?",
-    "answer": "Satsuki and Mei",
-    "choices": [
-      "Satsuki and Yuki",
-      "Sakura and Mei",
-      "Satsuki and Mei",
-      "Natsuki and Mei"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What is the name of the magical cat-shaped bus in My Neighbor Totoro?",
-    "answer": "Catbus",
-    "choices": [
-      "Nekobasu",
-      "Catbus",
-      "Totoro Express",
-      "Forest Bus"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What are the small black fuzzy creatures in My Neighbor Totoro called?",
-    "answer": "Soot Sprites",
-    "choices": [
-      "Dust Bunnies",
-      "Soot Sprites",
-      "Black Gremlins",
-      "Shadow Sprites"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "Where is the sisters' mother during the events of My Neighbor Totoro?",
-    "answer": "In the hospital",
-    "choices": [
-      "Working in Tokyo",
-      "In the hospital",
-      "Visiting relatives",
-      "She had passed away"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What does Totoro give the girls that magically grows into a giant tree overnight?",
-    "answer": "Acorn seeds",
-    "choices": [
-      "A magic leaf",
-      "Acorn seeds",
-      "A forest crystal",
-      "A spirit flower"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What does Totoro use as an umbrella when waiting at the bus stop?",
-    "answer": "A leaf",
-    "choices": [
-      "A mushroom",
-      "A leaf",
-      "A pine cone",
-      "Satsuki's umbrella"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is the human girl's name in Spirited Away?",
-    "answer": "Chihiro",
-    "choices": [
-      "Kiki",
-      "Nausicaa",
-      "Chihiro",
-      "Sen"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What name does Chihiro work under at the bathhouse in Spirited Away?",
-    "answer": "Sen",
-    "choices": [
-      "Chi",
-      "Sen",
-      "Hiro",
-      "Yu"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "Who is the mysterious boy that helps Chihiro in Spirited Away?",
-    "answer": "Haku",
-    "choices": [
-      "Zeniba",
-      "Kamaji",
-      "Haku",
-      "Lin"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What is Haku's true identity in Spirited Away?",
-    "answer": "The spirit of the Kohaku River",
-    "choices": [
-      "A lost human boy",
-      "The spirit of the Kohaku River",
-      "Yubaba's son",
-      "A dragon deity"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "Who operates the boiler room in the bathhouse in Spirited Away?",
-    "answer": "Kamaji",
-    "choices": [
-      "Yubaba",
-      "Kamaji",
-      "Zeniba",
-      "Lin"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What happens to Chihiro's parents when they eat the spirit world food?",
-    "answer": "They turn into pigs",
-    "choices": [
-      "They vanish",
-      "They turn into pigs",
-      "They fall asleep forever",
-      "They become spirits"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What is the name of the silent masked spirit in Spirited Away who follows Chihiro?",
-    "answer": "No-Face",
-    "choices": [
-      "Spirit Mask",
-      "Kaonashi",
-      "No-Face",
-      "Void Walker"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "Who is Yubaba's twin sister in Spirited Away?",
-    "answer": "Zeniba",
-    "choices": [
-      "Kamaji",
-      "Lin",
-      "Zeniba",
-      "Rin"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What does Yubaba steal from Chihiro, trapping her in the spirit world?",
-    "answer": "Her name",
-    "choices": [
-      "Her voice",
-      "Her name",
-      "Her memories",
-      "Her shadow"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is Yubaba's oversized giant baby named in Spirited Away?",
-    "answer": "Boh",
-    "choices": [
-      "Okusama",
-      "Boh",
-      "Tengu",
-      "Gobu"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "What is the name of the human protagonist in Princess Mononoke?",
-    "answer": "Ashitaka",
-    "choices": [
-      "Kiro",
-      "Ashitaka",
-      "Mononoke",
-      "Jigo"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "San is raised by which god in Princess Mononoke?",
-    "answer": "Moro, the wolf goddess",
-    "choices": [
-      "The Deer God",
-      "Moro, the wolf goddess",
-      "Okkoto the boar god",
-      "The Forest Spirit"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is the Forest Spirit also called in Princess Mononoke?",
-    "answer": "Shishigami (Deer God)",
-    "choices": [
-      "Moro",
-      "Shishigami (Deer God)",
-      "Nago",
-      "Okkoto"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is Lady Eboshi's main goal in Princess Mononoke?",
-    "answer": "Build Iron Town and kill the Forest Spirit",
-    "choices": [
-      "Enslave the forest animals",
-      "Build Iron Town and kill the Forest Spirit",
-      "Conquer Japan",
-      "Find the secret of immortality"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What curse does Ashitaka receive at the beginning of Princess Mononoke?",
-    "answer": "A worm-demon curse from a corrupted boar god",
-    "choices": [
-      "A wolf bite curse",
-      "A worm-demon curse from a corrupted boar god",
-      "A forest god's wrath",
-      "A samurai's dying curse"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "Who puts a curse on Sophie in Howl's Moving Castle?",
-    "answer": "The Witch of the Waste",
-    "choices": [
-      "Madam Suliman",
-      "The Witch of the Waste",
-      "Howl",
-      "A jealous rival"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What is the name of the fire demon who powers Howl's castle?",
-    "answer": "Calcifer",
-    "choices": [
-      "Ignis",
-      "Calcifer",
-      "Pyro",
-      "Emberling"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What does Sophie's curse transform her into?",
-    "answer": "An old woman",
-    "choices": [
-      "A cat",
-      "An old woman",
-      "A scarecrow",
-      "A statue"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What is the name of the young boy apprentice in Howl's Moving Castle?",
-    "answer": "Markl",
-    "choices": [
-      "Marco",
-      "Markl",
-      "Hiro",
-      "Tomas"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What secret does Calcifer share with Sophie about his connection to Howl?",
-    "answer": "Howl gave Calcifer his heart to save them both",
-    "choices": [
-      "Calcifer is Howl's true form",
-      "Howl gave Calcifer his heart to save them both",
-      "Calcifer is a fallen star with no connection",
-      "Calcifer controls Howl remotely"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "What is the toxic jungle in Nausicaa of the Valley of the Wind called?",
-    "answer": "Sea of Corruption",
-    "choices": [
-      "Poison Forest",
-      "Sea of Corruption",
-      "Dead Zone",
-      "Toxic Lands"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What are the giant armored insect creatures in Nausicaa called?",
-    "answer": "Ohmu",
-    "choices": [
-      "Goliath Beetles",
-      "Ohmu",
-      "Insectoids",
-      "Forest Guardians"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What does Nausicaa ride through the wind on?",
-    "answer": "A Mehve (glider)",
-    "choices": [
-      "A giant bird",
-      "A Mehve (glider)",
-      "An Ohmu",
-      "A wind horse"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "What is the name of the floating castle in Castle in the Sky?",
-    "answer": "Laputa",
-    "choices": [
-      "Skyfort",
-      "Laputa",
-      "Azalea",
-      "Castlus"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What is the name of the young girl who falls from the sky in Castle in the Sky?",
-    "answer": "Sheeta",
-    "choices": [
-      "Kiki",
-      "Sheeta",
-      "Nausicaa",
-      "Yuki"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is the name of the boy who catches Sheeta in Castle in the Sky?",
-    "answer": "Pazu",
-    "choices": [
-      "Haku",
-      "Pazu",
-      "Ashitaka",
-      "Marco"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "Who is the main government villain in Castle in the Sky?",
-    "answer": "Muska",
-    "choices": [
-      "Dola",
-      "Muska",
-      "General Mouro",
-      "Colonel Rex"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is the name of Kiki's black cat in Kiki's Delivery Service?",
-    "answer": "Jiji",
-    "choices": [
-      "Mochi",
-      "Jiji",
-      "Kuroneko",
-      "Tobi"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What service does Kiki set up in the new town in Kiki's Delivery Service?",
-    "answer": "A flying delivery service",
-    "choices": [
-      "A bakery",
-      "A flying delivery service",
-      "A letter-writing service",
-      "A spell-casting service"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What happens to Kiki's magic partway through Kiki's Delivery Service?",
-    "answer": "She loses her ability to fly and talk to Jiji",
-    "choices": [
-      "She gains new powers",
-      "She loses her ability to fly and talk to Jiji",
-      "Her broom breaks permanently",
-      "She forgets all her spells"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is the name of the boy who befriends Kiki in Kiki's Delivery Service?",
-    "answer": "Tombo",
-    "choices": [
-      "Yuichi",
-      "Tombo",
-      "Osono's helper",
-      "Kenta"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What are the names of the siblings in Grave of the Fireflies?",
-    "answer": "Seita and Setsuko",
-    "choices": [
-      "Kenji and Yuki",
-      "Seita and Setsuko",
-      "Takeshi and Hana",
-      "Akira and Sachi"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What does young Setsuko keep her candy in throughout Grave of the Fireflies?",
-    "answer": "A Sakuma fruit drops tin",
-    "choices": [
-      "A glass jar",
-      "A Sakuma fruit drops tin",
-      "Her mother's bag",
-      "A bamboo container"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "In what war is Grave of the Fireflies set?",
-    "answer": "World War II",
-    "choices": [
-      "Korean War",
-      "World War I",
-      "World War II",
-      "Second Sino-Japanese War"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What kills the children's mother at the beginning of Grave of the Fireflies?",
-    "answer": "Burns from a firebombing",
-    "choices": [
-      "Starvation",
-      "Burns from a firebombing",
-      "Disease",
-      "She disappeared in an air raid"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "Who is the protagonist of The Wind Rises?",
-    "answer": "Jiro Horikoshi",
-    "choices": [
-      "Miyazaki Hayao",
-      "Jiro Horikoshi",
-      "Saburo Horikoshi",
-      "Kenji Watanabe"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What famous fighter plane does Jiro Horikoshi design in The Wind Rises?",
-    "answer": "Zero fighter (Mitsubishi A6M)",
-    "choices": [
-      "Spitfire",
-      "Zero fighter (Mitsubishi A6M)",
-      "Zero Kai",
-      "Type 96 fighter"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What spell is used to disarm an opponent in Harry Potter?",
-    "answer": "Expelliarmus",
-    "choices": [
-      "Stupefy",
-      "Expelliarmus",
-      "Wingardium Leviosa",
-      "Reducto"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What are the four Hogwarts houses?",
-    "answer": "Gryffindor, Slytherin, Hufflepuff, Ravenclaw",
-    "choices": [
-      "Gryffindor, Slytherin, Hufflepuff, Ravenclaw",
-      "Gryffindor, Slytherin, Dumbledore, Ravenclaw",
-      "Gryffindor, Serpentine, Hufflepuff, Ravenclaw",
-      "Gryffindor, Slytherin, Hufflepuff, Wisdomclaw"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What is the killing curse in Harry Potter?",
-    "answer": "Avada Kedavra",
-    "choices": [
-      "Crucio",
-      "Avada Kedavra",
-      "Imperio",
-      "Morsmordre"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What animal form does Hermione's Patronus take?",
-    "answer": "An otter",
-    "choices": [
-      "A cat",
-      "A rabbit",
-      "An otter",
-      "A doe"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "How many Horcruxes does Voldemort create in total (including the unintentional one)?",
-    "answer": "7",
-    "choices": [
-      "5",
-      "6",
-      "7",
-      "8"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is Voldemort's real name?",
-    "answer": "Tom Marvolo Riddle",
-    "choices": [
-      "Thomas Riddle",
-      "Tom Marvolo Riddle",
-      "Voldemort Riddle",
-      "Tom Serpente Riddle"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What position does Harry play on the Gryffindor Quidditch team?",
-    "answer": "Seeker",
-    "choices": [
-      "Chaser",
-      "Keeper",
-      "Beater",
-      "Seeker"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What is the name of Harry's owl?",
-    "answer": "Hedwig",
-    "choices": [
-      "Errol",
-      "Hedwig",
-      "Pigwidgeon",
-      "Fawkes"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What is the spell that makes things levitate?",
-    "answer": "Wingardium Leviosa",
-    "choices": [
-      "Levioso",
-      "Wingardium Leviosa",
-      "Alohomora",
-      "Accio"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What is the incantation to produce a Patronus charm?",
-    "answer": "Expecto Patronum",
-    "choices": [
-      "Patronum Invoco",
-      "Expecto Patronum",
-      "Lumos Maxima",
-      "Protego Patronum"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "Which Hogwarts professor is secretly a werewolf?",
-    "answer": "Remus Lupin",
-    "choices": [
-      "Severus Snape",
-      "Gilderoy Lockhart",
-      "Remus Lupin",
-      "Alastor Moody"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is the name of Harry's godfather?",
-    "answer": "Sirius Black",
-    "choices": [
-      "Remus Lupin",
-      "James Potter",
-      "Sirius Black",
-      "Peter Pettigrew"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "Which Deathly Hallow is described as the most powerful wand ever made?",
-    "answer": "The Elder Wand",
-    "choices": [
-      "The Resurrection Stone",
-      "The Cloak of Invisibility",
-      "The Elder Wand",
-      "The Death Wand"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What is the name of the wizarding bank in the Harry Potter world?",
-    "answer": "Gringotts",
-    "choices": [
-      "Diagon Bank",
-      "Gringotts",
-      "Galleon Trust",
-      "Wizard Reserve"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is the name of Draco Malfoy's father?",
-    "answer": "Lucius Malfoy",
-    "choices": [
-      "Abraxas Malfoy",
-      "Lucius Malfoy",
-      "Cygnus Malfoy",
-      "Cassius Malfoy"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What magical creature did Hagrid hatch and name Norbert?",
-    "answer": "A Norwegian Ridgeback dragon",
-    "choices": [
-      "A Hippogriff",
-      "A Norwegian Ridgeback dragon",
-      "A Hungarian Horntail",
-      "A Chinese Fireball"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is the name of the Gryffindor house ghost?",
-    "answer": "Nearly Headless Nick",
-    "choices": [
-      "The Bloody Baron",
-      "Nearly Headless Nick",
-      "The Grey Lady",
-      "The Fat Friar"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What does the spell Accio do?",
-    "answer": "Summons objects to you",
-    "choices": [
-      "Opens locked doors",
-      "Summons objects to you",
-      "Creates a shield",
-      "Reveals hidden writing"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "Who kills Dumbledore in Harry Potter and the Half-Blood Prince?",
-    "answer": "Severus Snape",
-    "choices": [
-      "Draco Malfoy",
-      "Voldemort",
-      "Severus Snape",
-      "Bellatrix Lestrange"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What is the name of Ron's pet rat that is secretly Peter Pettigrew?",
-    "answer": "Scabbers",
-    "choices": [
-      "Wormtail",
-      "Scabbers",
-      "Nibbles",
-      "Gnaw"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What position does Ron Weasley play in Quidditch?",
-    "answer": "Keeper",
-    "choices": [
-      "Chaser",
-      "Beater",
-      "Keeper",
-      "Seeker"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is the spell that creates light from the tip of a wand?",
-    "answer": "Lumos",
-    "choices": [
-      "Incendio",
-      "Lumos",
-      "Radioso",
-      "Fiat Lux"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What is the pub that serves as the entrance to Diagon Alley?",
-    "answer": "The Leaky Cauldron",
-    "choices": [
-      "The Three Broomsticks",
-      "The Hog's Head",
-      "The Leaky Cauldron",
-      "The Broken Wand"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What are Snape's last words to Harry before dying?",
-    "answer": "Look... at... me (so he can see Lily's eyes)",
-    "choices": [
-      "I always loved you",
-      "You have your mother's eyes",
-      "Look... at... me (so he can see Lily's eyes)",
-      "Tell Dumbledore I am sorry"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "What does Neville Longbottom destroy in the Battle of Hogwarts?",
-    "answer": "Nagini (Voldemort's snake / last Horcrux) with the sword of Gryffindor",
-    "choices": [
-      "The Elder Wand",
-      "Nagini (Voldemort's snake / last Horcrux) with the sword of Gryffindor",
-      "A Death Eater's mask",
-      "The Dark Mark"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "What Hogwarts house does Cedric Diggory belong to?",
-    "answer": "Hufflepuff",
-    "choices": [
-      "Gryffindor",
-      "Hufflepuff",
-      "Ravenclaw",
-      "Slytherin"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is the name of the magical sport played on broomsticks in Harry Potter?",
-    "answer": "Quidditch",
-    "choices": [
-      "Broomball",
-      "Quidditch",
-      "Snitch",
-      "Wizard Ball"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What is the name of Han Solo's ship?",
-    "answer": "Millennium Falcon",
-    "choices": [
-      "Star Destroyer",
-      "Millennium Falcon",
-      "Slave I",
-      "Ghost"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "Who says the famous line 'I am your father' in The Empire Strikes Back?",
-    "answer": "Darth Vader",
-    "choices": [
-      "Emperor Palpatine",
-      "Obi-Wan Kenobi",
-      "Darth Vader",
-      "Yoda"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What planet is Luke Skywalker from?",
-    "answer": "Tatooine",
-    "choices": [
-      "Coruscant",
-      "Alderaan",
-      "Tatooine",
-      "Hoth"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What is the name of the Wookiee co-pilot of the Millennium Falcon?",
-    "answer": "Chewbacca",
-    "choices": [
-      "Wicket",
-      "Chewbacca",
-      "Tarfful",
-      "Zaalbar"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "Which planet is destroyed by the Death Star in A New Hope?",
-    "answer": "Alderaan",
-    "choices": [
-      "Tatooine",
-      "Yavin IV",
-      "Alderaan",
-      "Coruscant"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What color is Luke Skywalker's lightsaber in Return of the Jedi?",
-    "answer": "Green",
-    "choices": [
-      "Blue",
-      "Green",
-      "Yellow",
-      "White"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "Who was Anakin Skywalker's Jedi master?",
-    "answer": "Obi-Wan Kenobi",
-    "choices": [
-      "Qui-Gon Jinn",
-      "Mace Windu",
-      "Obi-Wan Kenobi",
-      "Yoda"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What species is Yoda?",
-    "answer": "Unknown (his species has no official name)",
-    "choices": [
-      "Mirialan",
-      "Unknown (his species has no official name)",
-      "Togruta",
-      "Lannik"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "What is the Sith Rule of Two?",
-    "answer": "Always two there are: a master and an apprentice",
-    "choices": [
-      "Only two Sith may exist at once",
-      "Always two there are: a master and an apprentice",
-      "Sith must fight in pairs",
-      "Two Sith for every Jedi"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "Who trained Darth Maul?",
-    "answer": "Darth Sidious (Palpatine)",
-    "choices": [
-      "Count Dooku",
-      "Darth Plagueis",
-      "Darth Sidious (Palpatine)",
-      "Darth Bane"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What type of fighter does Luke fly in the Battle of Yavin?",
-    "answer": "X-Wing",
-    "choices": [
-      "Y-Wing",
-      "A-Wing",
-      "X-Wing",
-      "B-Wing"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is the name of the battle station the Empire builds in A New Hope?",
-    "answer": "Death Star",
-    "choices": [
-      "Star Fortress",
-      "Death Star",
-      "Imperial Sphere",
-      "Devastator"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "In which film does Han Solo get frozen in carbonite?",
-    "answer": "The Empire Strikes Back",
-    "choices": [
-      "A New Hope",
-      "The Empire Strikes Back",
-      "Return of the Jedi",
-      "Revenge of the Sith"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What order does Palpatine issue to have all Jedi killed by clone troopers?",
-    "answer": "Order 66",
-    "choices": [
-      "Order 13",
-      "Order 66",
-      "Order 99",
-      "Omega Protocol"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is the name of the swampy planet where Yoda lives in exile?",
-    "answer": "Dagobah",
-    "choices": [
-      "Endor",
-      "Geonosis",
-      "Dagobah",
-      "Kashyyyk"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is the name of the bounty hunter who captures Han Solo?",
-    "answer": "Boba Fett",
-    "choices": [
-      "Greedo",
-      "Bossk",
-      "Boba Fett",
-      "Dengar"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What weapon does General Grievous collect from fallen Jedi?",
-    "answer": "Lightsabers",
-    "choices": [
-      "Blasters",
-      "Lightsabers",
-      "Electrostaffs",
-      "Vibroblade"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What does 'midi-chlorians' measure in Star Wars lore?",
-    "answer": "Connection to the Force",
-    "choices": [
-      "Strength of a Force user",
-      "Connection to the Force",
-      "Lightsaber skill",
-      "Remaining life force"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "Who kills Jabba the Hutt in Return of the Jedi?",
-    "answer": "Princess Leia",
-    "choices": [
-      "Han Solo",
-      "Luke Skywalker",
-      "Princess Leia",
-      "Chewbacca"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is the moon where the Ewoks live in Return of the Jedi?",
-    "answer": "Forest Moon of Endor",
-    "choices": [
-      "Yavin IV",
-      "Forest Moon of Endor",
-      "Kashyyyk",
-      "Dathomir"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "Who is Luke Skywalker's twin sister?",
-    "answer": "Leia Organa",
-    "choices": [
-      "Padme Amidala",
-      "Ahsoka Tano",
-      "Leia Organa",
-      "Mon Mothma"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What planet are the Ewoks native to (or rather, what moon)?",
-    "answer": "The Forest Moon of Endor",
-    "choices": [
-      "Endor (the planet)",
-      "The Forest Moon of Endor",
-      "Kashyyyk",
-      "Felucia"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What color are the evil Sith lightsabers almost always?",
-    "answer": "Red",
-    "choices": [
-      "Purple",
-      "Red",
-      "Black",
-      "Orange"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What is Tony Stark's suit of armor powered by?",
-    "answer": "An arc reactor",
-    "choices": [
-      "Vibranium core",
-      "An arc reactor",
-      "Solar energy",
-      "Dark matter"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What are the six Infinity Stones?",
-    "answer": "Space, Mind, Reality, Power, Time, Soul",
-    "choices": [
-      "Space, Mind, Reality, Power, Time, Soul",
-      "Space, Mind, Chaos, Power, Time, Soul",
-      "Space, Mind, Reality, Force, Time, Soul",
-      "Space, Fire, Reality, Power, Time, Soul"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "Who says 'I am Iron Man' before snapping in Avengers: Endgame?",
-    "answer": "Tony Stark",
-    "choices": [
-      "Steve Rogers",
-      "Tony Stark",
-      "Thor",
-      "Nebula"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What is the name of Thor's hammer?",
-    "answer": "Mjolnir",
-    "choices": [
-      "Gungnir",
-      "Mjolnir",
-      "Stormbreaker",
-      "Thunderstrike"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "Which Infinity Stone is hidden on Vormir?",
-    "answer": "Soul Stone",
-    "choices": [
-      "Mind Stone",
-      "Reality Stone",
-      "Space Stone",
-      "Soul Stone"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is Black Widow's real name?",
-    "answer": "Natasha Romanoff",
-    "choices": [
-      "Yelena Belova",
-      "Natasha Romanoff",
-      "Nadia Van Dyne",
-      "Wanda Maximoff"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What is the name of Wakanda's king in Black Panther?",
-    "answer": "T'Challa",
-    "choices": [
-      "N'Jobu",
-      "T'Chaka",
-      "T'Challa",
-      "Killmonger"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "Who is the villain of the first Iron Man film?",
-    "answer": "Obadiah Stane",
-    "choices": [
-      "Justin Hammer",
-      "Ivan Vanko",
-      "Obadiah Stane",
-      "Aldrich Killian"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What does S.H.I.E.L.D. stand for in the MCU?",
-    "answer": "Strategic Homeland Intervention, Enforcement and Logistics Division",
-    "choices": [
-      "Super Human Intelligence Enforcement and Law Division",
-      "Strategic Homeland Intervention, Enforcement and Logistics Division",
-      "Special Heroes Intelligence and Enforcement League Division",
-      "Strategic Heroes International Enforcement and Law Division"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "What is the name of Doctor Strange's home base?",
-    "answer": "The Sanctum Sanctorum",
-    "choices": [
-      "Kamar-Taj",
-      "The Sanctum Sanctorum",
-      "The Mirror Dimension",
-      "The New York Nexus"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "Who is Peter Parker's best friend in Spider-Man: Homecoming?",
-    "answer": "Ned Leeds",
-    "choices": [
-      "Flash Thompson",
-      "Harry Osborn",
-      "Ned Leeds",
-      "Miles Morales"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is the name of the organization secretly embedded inside S.H.I.E.L.D.?",
-    "answer": "HYDRA",
-    "choices": [
-      "CIA",
-      "HYDRA",
-      "NSA",
-      "SWORD"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is Thanos's home planet?",
-    "answer": "Titan",
-    "choices": [
-      "Infinity",
-      "Titan",
-      "Sanctuary",
-      "Saturn moon"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is Thanos's goal with the completed Infinity Gauntlet?",
-    "answer": "Erase half of all life in the universe",
-    "choices": [
-      "Gain immortality",
-      "Erase half of all life in the universe",
-      "Conquer all galaxies",
-      "Reverse entropy permanently"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "Who is sacrificed to obtain the Soul Stone in Avengers: Infinity War?",
-    "answer": "Gamora",
-    "choices": [
-      "Nebula",
-      "Gamora",
-      "Vision",
-      "Heimdall"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What material is Captain America's shield made from?",
-    "answer": "Vibranium",
-    "choices": [
-      "Adamantium",
-      "Vibranium",
-      "Titanium alloy",
-      "Proto-Adamantium"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "In Endgame, who besides Thor is able to lift Mjolnir?",
-    "answer": "Captain America (Steve Rogers)",
-    "choices": [
-      "Iron Man",
-      "Vision",
-      "Captain America (Steve Rogers)",
-      "Hulk"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What is the name of the Guardians of the Galaxy's ship?",
-    "answer": "The Milano",
-    "choices": [
-      "The Benatar",
-      "The Dark Aster",
-      "The Milano",
-      "The Quadrant"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "Which Infinity Stone is contained in the Tesseract?",
-    "answer": "Space Stone",
-    "choices": [
-      "Power Stone",
-      "Mind Stone",
-      "Reality Stone",
-      "Space Stone"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is the name of Ant-Man's mentor and the original Ant-Man?",
-    "answer": "Hank Pym",
-    "choices": [
-      "Howard Stark",
-      "Hank Pym",
-      "Bill Foster",
-      "Jan Van Dyne"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "Who kills Loki in Avengers: Infinity War?",
-    "answer": "Thanos",
-    "choices": [
-      "Corvus Glaive",
-      "Thanos",
-      "Proxima Midnight",
-      "Ebony Maw"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is Nick Fury's most recognizable physical feature?",
-    "answer": "Eye patch over his left eye",
-    "choices": [
-      "Bionic arm",
-      "Eye patch over his left eye",
-      "Scar across his face",
-      "Silver beard"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What is the Power Stone originally found inside in the MCU?",
-    "answer": "The Orb (on Morag)",
-    "choices": [
-      "A gauntlet on Nidavellir",
-      "The Orb (on Morag)",
-      "The Infinity Scepter",
-      "A vault on Xandar"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "What is the final boss of Minecraft?",
-    "answer": "Ender Dragon",
-    "choices": [
-      "The Wither",
-      "Ender Dragon",
-      "Elder Guardian",
-      "Herobrine"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What material is needed to make a Nether Portal in Minecraft?",
-    "answer": "Obsidian",
-    "choices": [
-      "Black Stone",
-      "Obsidian",
-      "Crying Obsidian",
-      "Nether Quartz"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What do you feed a wolf to tame it in Minecraft?",
-    "answer": "Bones",
-    "choices": [
-      "Raw meat",
-      "Fish",
-      "Bones",
-      "Bread"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What is the name of the hostile mob that explodes when near a player?",
-    "answer": "Creeper",
-    "choices": [
-      "Blaze",
-      "Ghast",
-      "Creeper",
-      "TNT Golem"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "How many bookshelves are needed to unlock level 30 enchantments?",
-    "answer": "15",
-    "choices": [
-      "10",
-      "12",
-      "15",
-      "20"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "What mob drops Ender Pearls in Minecraft?",
-    "answer": "Endermen",
-    "choices": [
-      "Endermites",
-      "Endermen",
-      "Shulkers",
-      "Ender Dragon"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What three skulls are needed to summon the Wither?",
-    "answer": "Three Wither Skeleton skulls",
-    "choices": [
-      "Three Zombie heads",
-      "Three Wither Skeleton skulls",
-      "Three Skeleton skulls",
-      "Three Creeper heads"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is the rare biome where Mooshrooms naturally spawn?",
-    "answer": "Mushroom Fields",
-    "choices": [
-      "Deep Dark",
-      "Mushroom Fields",
-      "Lush Caves",
-      "Mega Taiga"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What update added bees to Minecraft Java Edition?",
-    "answer": "1.15 (Buzzy Bees)",
-    "choices": [
-      "1.13 (Aquatic)",
-      "1.14 (Village and Pillage)",
-      "1.15 (Buzzy Bees)",
-      "1.16 (Nether)"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "What does a Nether Star drop from in Minecraft?",
-    "answer": "The Wither",
-    "choices": [
-      "Ender Dragon",
-      "The Wither",
-      "Elder Guardian",
-      "Warden"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What enchantment allows a pickaxe to yield more ore drops?",
-    "answer": "Fortune",
-    "choices": [
-      "Silk Touch",
-      "Efficiency",
-      "Fortune",
-      "Looting"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What new mob in Minecraft 1.19 is drawn to sound in the Deep Dark?",
-    "answer": "Warden",
-    "choices": [
-      "Sculk Shrieker",
-      "Warden",
-      "Deep Creeper",
-      "Darkness Guardian"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What item is used to ignite a Nether Portal?",
-    "answer": "Flint and Steel",
-    "choices": [
-      "Fire Charge (also works)",
-      "Flint and Steel",
-      "Lava Bucket",
-      "Redstone Torch"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is the rarest ore found exclusively in the Nether?",
-    "answer": "Ancient Debris",
-    "choices": [
-      "Diamond",
-      "Nether Gold Ore",
-      "Ancient Debris",
-      "Quartz"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "What is the currency used to trade with villagers in Minecraft?",
-    "answer": "Emeralds",
-    "choices": [
-      "Gold Ingots",
-      "Emeralds",
-      "Diamonds",
-      "Experience Bottles"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What hostile mob in Minecraft drops a music disc when killed by a skeleton?",
-    "answer": "Creeper",
-    "choices": [
-      "Zombie",
-      "Creeper",
-      "Drowned",
-      "Husk"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "What biome generates the tall spires called 'Chorus Plants' in Minecraft?",
-    "answer": "The End (outer islands)",
-    "choices": [
-      "Badlands",
-      "Mega Spruce Taiga",
-      "The End (outer islands)",
-      "Chorus Highlands"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "What effect does the Silk Touch enchantment have?",
-    "answer": "Allows you to mine blocks and pick them up as-is",
-    "choices": [
-      "Makes tools unbreakable",
-      "Allows you to mine blocks and pick them up as-is",
-      "Doubles ore drops",
-      "Prevents mob drops"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "Who are the main protagonists of Resident Evil 2 (original and remake)?",
-    "answer": "Leon Kennedy and Claire Redfield",
-    "choices": [
-      "Chris and Jill",
-      "Leon Kennedy and Claire Redfield",
-      "Leon and Ada Wong",
-      "Claire and Chris Redfield"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What is the name of the virus used to create zombies in the original Resident Evil?",
-    "answer": "T-Virus",
-    "choices": [
-      "G-Virus",
-      "T-Virus",
-      "Mold",
-      "Las Plagas"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "Who is the main antagonist Umbrella executive throughout the early Resident Evil games?",
-    "answer": "Albert Wesker",
-    "choices": [
-      "William Birkin",
-      "Brian Irons",
-      "Albert Wesker",
-      "Oswell Spencer"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What is the name of the relentless pursuer in Resident Evil 3?",
-    "answer": "Nemesis",
-    "choices": [
-      "Mr. X",
-      "Tyrant T-103",
-      "Nemesis",
-      "Stalker-7"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "In Resident Evil 4, what country does Leon travel to?",
-    "answer": "Spain",
-    "choices": [
-      "Romania",
-      "Spain",
-      "Russia",
-      "Eastern Europe"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What are the parasite-controlled villagers in RE4 called?",
-    "answer": "Ganados",
-    "choices": [
-      "Plagas Hosts",
-      "Ganados",
-      "Los Illuminados",
-      "Cultistas"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "Who is Leon Kennedy sent to rescue in Resident Evil 4?",
-    "answer": "Ashley Graham, the President's daughter",
-    "choices": [
-      "Ada Wong",
-      "Claire Redfield",
-      "Ashley Graham, the President's daughter",
-      "Rebecca Chambers"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "Who is the main villain of Resident Evil Village (RE8)?",
-    "answer": "Mother Miranda",
-    "choices": [
-      "Lady Dimitrescu",
-      "Karl Heisenberg",
-      "Mother Miranda",
-      "Ethan Winters"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is the name of the tall vampire woman in RE8 Village?",
-    "answer": "Lady Alcina Dimitrescu",
-    "choices": [
-      "Lady Carmilla",
-      "Lady Alcina Dimitrescu",
-      "Miranda Dimitrescu",
-      "Countess Bloodright"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What corporation is responsible for most biological outbreaks in Resident Evil?",
-    "answer": "Umbrella Corporation",
-    "choices": [
-      "Black Umbrella",
-      "Umbrella Corporation",
-      "Tricell",
-      "Connections"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What is William Birkin's mutation in Resident Evil 2?",
-    "answer": "G-Virus mutation",
-    "choices": [
-      "Tyrant mutation",
-      "G-Virus mutation",
-      "Nemesis mutation",
-      "T-Virus zombie"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What does S.T.A.R.S. stand for in Resident Evil?",
-    "answer": "Special Tactics And Rescue Service",
-    "choices": [
-      "Special Tactical And Recon Squad",
-      "Special Tactics And Rescue Service",
-      "Strategic Tactical Armed Response Section",
-      "Survival Tactical And Recon Service"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "What is the name of the fungal entity in RE7 that Eveline controls?",
-    "answer": "The Mold",
-    "choices": [
-      "The Fungus",
-      "The Mold",
-      "The Root",
-      "The Spore"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "Who is Chris Redfield's partner in the original Resident Evil?",
-    "answer": "Jill Valentine",
-    "choices": [
-      "Claire Redfield",
-      "Jill Valentine",
-      "Rebecca Chambers",
-      "Ada Wong"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is the first shout the Dragonborn learns in Skyrim?",
-    "answer": "Unrelenting Force (Fus Ro Dah)",
-    "choices": [
-      "Fire Breath",
-      "Unrelenting Force (Fus Ro Dah)",
-      "Whirlwind Sprint",
-      "Animal Allegiance"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What is the name of the main antagonist dragon in Skyrim?",
-    "answer": "Alduin",
-    "choices": [
-      "Paarthurnax",
-      "Alduin",
-      "Miraak",
-      "Odahviing"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What is the name of the warrior faction in Skyrim associated with werewolves?",
-    "answer": "The Companions",
-    "choices": [
-      "The Fighters Guild",
-      "The Companions",
-      "The Dawnguard",
-      "The Silver Hand"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "Who is the true leader of the Thieves Guild (as a traitor) in Skyrim?",
-    "answer": "Mercer Frey",
-    "choices": [
-      "Brynjolf",
-      "Mercer Frey",
-      "Vex",
-      "Maven Black-Briar"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "What is the name of the hidden assassin faction in Skyrim?",
-    "answer": "Dark Brotherhood",
-    "choices": [
-      "Brotherhood of Shadows",
-      "Morag Tong",
-      "Dark Brotherhood",
-      "Night's Watch"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "Which Daedric Prince is associated with madness and cheese in Elder Scrolls?",
-    "answer": "Sheogorath",
-    "choices": [
-      "Mehrunes Dagon",
-      "Molag Bal",
-      "Sheogorath",
-      "Clavicus Vile"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is the name of the wise old dragon who lives on the Throat of the World?",
-    "answer": "Paarthurnax",
-    "choices": [
-      "Arngeir",
-      "Paarthurnax",
-      "Einarth",
-      "Borri"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is the name of the civil war leader of the Stormcloaks in Skyrim?",
-    "answer": "Ulfric Stormcloak",
-    "choices": [
-      "General Tullius",
-      "Galmar Stone-Fist",
-      "Ulfric Stormcloak",
-      "Brunwulf Free-Winter"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What are the words of power in Skyrim called collectively?",
-    "answer": "Thu'um",
-    "choices": [
-      "Dragon Speech",
-      "Thu'um",
-      "Shouts of Dovah",
-      "Draconic Calls"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is the title given to one who can absorb dragon souls in Skyrim?",
-    "answer": "Dragonborn (Dovahkiin)",
-    "choices": [
-      "Dragon Hunter",
-      "Dragonborn (Dovahkiin)",
-      "Dragon Slayer",
-      "Dragon Touched"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "Which city in Skyrim is the capital of the Stormcloak rebellion?",
-    "answer": "Windhelm",
-    "choices": [
-      "Whiterun",
-      "Solitude",
-      "Windhelm",
-      "Riften"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "Who is the Daedric Prince of Destruction associated with the planes of Oblivion?",
-    "answer": "Mehrunes Dagon",
-    "choices": [
-      "Molag Bal",
-      "Mehrunes Dagon",
-      "Boethiah",
-      "Hermaeus Mora"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "What is the name of the vampire faction in the Dawnguard DLC?",
-    "answer": "Volkihar Clan",
-    "choices": [
-      "Molag Bal's Chosen",
-      "Volkihar Clan",
-      "The Crimson Court",
-      "Dawnbreaker Vampires"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "What is the name of the ancient axe of the Companions in Skyrim?",
-    "answer": "Wuuthrad",
-    "choices": [
-      "Dragonbane",
-      "Wuuthrad",
-      "Bloodscythe",
-      "Harbinger Blade"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "In Skyrim, what skill tree governs the use of one-handed weapons?",
-    "answer": "One-Handed",
-    "choices": [
-      "Blade",
-      "One-Handed",
-      "Combat",
-      "Warrior"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What is the name of the Daedric Prince who rules the Shivering Isles?",
-    "answer": "Sheogorath",
-    "choices": [
-      "Hermaeus Mora",
-      "Sheogorath",
-      "Sanguine",
-      "Meridia"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "Who is the main villain of Final Fantasy VII?",
-    "answer": "Sephiroth",
-    "choices": [
-      "Shinra President",
-      "Rufus Shinra",
-      "Sephiroth",
-      "Jenova"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What is the name of Cloud's giant sword in FF7?",
-    "answer": "Buster Sword",
-    "choices": [
-      "Masamune",
-      "Buster Sword",
-      "Ultima Weapon",
-      "Hardedge"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "Who dies famously in Final Fantasy VII?",
-    "answer": "Aerith Gainsborough",
-    "choices": [
-      "Tifa Lockhart",
-      "Aerith Gainsborough",
-      "Barret Wallace",
-      "Red XIII"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "Who is Yuna's main guardian in Final Fantasy X?",
-    "answer": "Tidus",
-    "choices": [
-      "Auron",
-      "Tidus",
-      "Wakka",
-      "Kimahri"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is the recurring fire summon in Final Fantasy?",
-    "answer": "Ifrit",
-    "choices": [
-      "Shiva",
-      "Ifrit",
-      "Leviathan",
-      "Ramuh"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What does a Moogle say in every Final Fantasy appearance?",
-    "answer": "Kupo",
-    "choices": [
-      "Moogle!",
-      "Kupo",
-      "Moggy",
-      "Meow"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "Who is the main villain of Final Fantasy VI?",
-    "answer": "Kefka Palazzo",
-    "choices": [
-      "Emperor Gestahl",
-      "Kefka Palazzo",
-      "Ultros",
-      "Atma Weapon"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What does FF6's World of Ruin refer to?",
-    "answer": "The second half of the game after Kefka destroys the world",
-    "choices": [
-      "An alternative dimension",
-      "The second half of the game after Kefka destroys the world",
-      "The ancient Esper world",
-      "The floating continent"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "What is the large yellow bird creature used for transportation in Final Fantasy?",
-    "answer": "Chocobo",
-    "choices": [
-      "Moogle",
-      "Chocobo",
-      "Cactuar",
-      "Tonberry"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What is the name of the recurring Final Fantasy character who is always an engineer or airship pilot?",
-    "answer": "Cid",
-    "choices": [
-      "Biggs",
-      "Cid",
-      "Wedge",
-      "Edgar"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "In FF10, what is the name of the water sport played in Spira?",
-    "answer": "Blitzball",
-    "choices": [
-      "Sphere Break",
-      "Blitzball",
-      "Waterball",
-      "Spira Ball"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is Sephiroth's most powerful attack?",
-    "answer": "Supernova",
-    "choices": [
-      "Meteor",
-      "Heartless Angel",
-      "Supernova",
-      "Shadow Flare"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "What was the original Final Fantasy game released on?",
-    "answer": "NES / Famicom",
-    "choices": [
-      "SNES",
-      "NES / Famicom",
-      "Arcade",
-      "PC-88"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "In Final Fantasy IX, who is the main protagonist?",
-    "answer": "Zidane Tribal",
-    "choices": [
-      "Vivi Ornitier",
-      "Garnet/Dagger",
-      "Zidane Tribal",
-      "Steiner"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is Terra's unique ability in Final Fantasy VI?",
-    "answer": "She can use magic naturally without espers",
-    "choices": [
-      "She can dual-wield swords",
-      "She can use magic naturally without espers",
-      "She has no MP limit",
-      "She can transform into an Esper"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "What is the name of the recurring blue dragon deity summon in Final Fantasy?",
-    "answer": "Bahamut",
-    "choices": [
-      "Leviathan",
-      "Bahamut",
-      "Ramuh",
-      "Odin"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What opera is performed in Final Fantasy VI?",
-    "answer": "Maria and Draco",
-    "choices": [
-      "Aria di Mezzo Carattere only",
-      "Maria and Draco",
-      "The Phantom Train Opera",
-      "Tears for a Dream"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "What is the name of the mega-city built on metal plates in FF7?",
-    "answer": "Midgar",
-    "choices": [
-      "Junon",
-      "Midgar",
-      "Kalm",
-      "Nibelheim"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "Who are the original 8 characters in Super Smash Bros. 64?",
-    "answer": "Mario, Donkey Kong, Link, Samus, Yoshi, Kirby, Fox, Pikachu",
-    "choices": [
-      "Mario, Luigi, Link, Samus, Yoshi, Kirby, Fox, Pikachu",
-      "Mario, Donkey Kong, Link, Samus, Yoshi, Kirby, Fox, Pikachu",
-      "Mario, Donkey Kong, Link, Zelda, Yoshi, Kirby, Fox, Pikachu",
-      "Mario, Donkey Kong, Link, Samus, Yoshi, Kirby, Falco, Pikachu"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is the technique in Melee that lets characters slide on the ground after an air dodge?",
-    "answer": "Wavedashing",
-    "choices": [
-      "Moonwalk",
-      "Wavedashing",
-      "L-cancel slide",
-      "Dash cancel"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "What item in Smash Bros. activates a character's Final Smash?",
-    "answer": "Smash Ball",
-    "choices": [
-      "Final Orb",
-      "Smash Ball",
-      "Power Star",
-      "Trophy"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What is Captain Falcon's most famous move?",
-    "answer": "Falcon Punch",
-    "choices": [
-      "Raptor Boost",
-      "Knee of Justice",
-      "Falcon Punch",
-      "Falcon Dive"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "Which Smash Bros. game introduced the Subspace Emissary story mode?",
-    "answer": "Super Smash Bros. Brawl",
-    "choices": [
-      "Melee",
-      "Super Smash Bros. Brawl",
-      "SSB4 (Wii U)",
-      "Ultimate"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What game is Meta Knight from?",
-    "answer": "Kirby",
-    "choices": [
-      "Metroid",
-      "Kirby",
-      "F-Zero",
-      "Kid Icarus"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What character is widely considered the best in Melee's competitive tier list?",
-    "answer": "Fox McCloud",
-    "choices": [
-      "Marth",
-      "Falco",
-      "Fox McCloud",
-      "Jigglypuff"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "What was the final DLC fighter added to Super Smash Bros. Ultimate?",
-    "answer": "Sora (from Kingdom Hearts)",
-    "choices": [
-      "Master Chief",
-      "Sora (from Kingdom Hearts)",
-      "Waluigi",
-      "Crash Bandicoot"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "What technique in Melee involves canceling the landing lag of aerial attacks?",
-    "answer": "L-canceling",
-    "choices": [
-      "L-canceling",
-      "Shine spiking",
-      "Crouch canceling",
-      "Teching"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "How many total fighters are in Super Smash Bros. Ultimate including all DLC?",
-    "answer": "89",
-    "choices": [
-      "76",
-      "82",
-      "89",
-      "91"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "What move does Ness use that reflects projectiles and absorbs PSI moves?",
-    "answer": "PSI Magnet",
-    "choices": [
-      "PK Shield",
-      "PSI Magnet",
-      "PSI Reflect",
-      "PK Reflect"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "Which Smash Bros. game had the Adventure Mode called 'The Subspace Emissary'?",
-    "answer": "Brawl",
-    "choices": [
-      "Melee",
-      "Brawl",
-      "SSB4",
-      "Ultimate"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is Bowser's species?",
-    "answer": "Koopa",
-    "choices": [
-      "Dragon",
-      "Koopa",
-      "Turtle Beast",
-      "Darkbeast"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What power-up lets Mario shoot fireballs?",
-    "answer": "Fire Flower",
-    "choices": [
-      "Red Mushroom",
-      "Fire Flower",
-      "Super Star",
-      "Cape Feather"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "Who holds the Triforce of Wisdom in the Legend of Zelda?",
-    "answer": "Princess Zelda",
-    "choices": [
-      "Link",
-      "Princess Zelda",
-      "Ganondorf",
-      "The Great Deku Tree"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What is the name of Link's fairy companion in Ocarina of Time?",
-    "answer": "Navi",
-    "choices": [
-      "Tatl",
-      "Navi",
-      "Ciela",
-      "Midna"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What is the famous reveal about Samus Aran at the end of the original Metroid?",
-    "answer": "She is a woman, revealed based on completion time",
-    "choices": [
-      "She is a cyborg",
-      "She is a woman, revealed based on completion time",
-      "She is an alien hybrid",
-      "She is a clone"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is the name of Donkey Kong's main villain?",
-    "answer": "King K. Rool",
-    "choices": [
-      "Bowser",
-      "King K. Rool",
-      "Kremcroc",
-      "Funky Kong"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is the name of Kirby's home world?",
-    "answer": "Planet Popstar",
-    "choices": [
-      "Dream Land",
-      "Planet Popstar",
-      "Kirby World",
-      "Halcandra"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is Captain Falcon's racing vehicle called?",
-    "answer": "Blue Falcon",
-    "choices": [
-      "Falcon Flyer",
-      "Blue Falcon",
-      "Mach Blue",
-      "Speed Falcon"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is the first dungeon in Ocarina of Time called?",
-    "answer": "Inside the Deku Tree",
-    "choices": [
-      "Forest Temple",
-      "Inside the Deku Tree",
-      "Kokiri Forest Dungeon",
-      "Spirit Tree"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What does Ganondorf's piece of the Triforce represent?",
-    "answer": "Power",
-    "choices": [
-      "Courage",
-      "Power",
-      "Wisdom",
-      "Strength"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What is the main lord character in Fire Emblem: Path of Radiance?",
-    "answer": "Ike",
-    "choices": [
-      "Roy",
-      "Marth",
-      "Ike",
-      "Ephraim"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is the final boss of The Legend of Zelda: Majora's Mask?",
-    "answer": "Majora's Wrath (Majora's Mask)",
-    "choices": [
-      "Skull Kid",
-      "Majora's Wrath (Majora's Mask)",
-      "Ganon",
-      "The Moon"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What does Meta Knight's mask conceal?",
-    "answer": "A face almost identical to Kirby's",
-    "choices": [
-      "A skeleton face",
-      "A face almost identical to Kirby's",
-      "A robotic head",
-      "Darkness itself"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "What are the four Divine Beasts in Breath of the Wild named after?",
-    "answer": "The four fallen Champions (Vah Ruta, Vah Medoh, Vah Rudania, Vah Naboris)",
-    "choices": [
-      "The four elements",
-      "The four fallen Champions (Vah Ruta, Vah Medoh, Vah Rudania, Vah Naboris)",
-      "The four races of Hyrule",
-      "Four ancient sages"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "What is the name of the Metroid homeworld where Metroids originate?",
-    "answer": "SR388",
-    "choices": [
-      "Planet Zebes",
-      "SR388",
-      "Aether",
-      "Planet Phaaze"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "What is the premise of the game Grounded?",
-    "answer": "Teenagers are shrunk to insect-size in a suburban backyard",
-    "choices": [
-      "Players explore a jungle as insects",
-      "Teenagers are shrunk to insect-size in a suburban backyard",
-      "Scientists miniaturized in a science lab",
-      "Children lost in a forest at night"
-    ],
-    "tier": 1
-  },
-  {
-    "question": "What are the names of the four playable characters in Grounded?",
-    "answer": "Max, Pete, Willow, and Hoops",
-    "choices": [
-      "Alex, Max, Lily, Sam",
-      "Max, Pete, Willow, and Hoops",
-      "Jake, Pete, Willow, Sarah",
-      "Max, Dylan, Willow, Hoops"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is the name of the robot that gives quests to players in Grounded?",
-    "answer": "BURG.L",
-    "choices": [
-      "OTTO",
-      "BURG.L",
-      "SCA.B",
-      "CHIP"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What device do players use to analyze items and unlock recipes in Grounded?",
-    "answer": "SCA.B",
-    "choices": [
-      "BURG.L Scanner",
-      "SCA.B",
-      "Field Analyzer",
-      "Grub Scanner"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What corporation is responsible for the shrinking experiment in Grounded?",
-    "answer": "Ominent Diversified Sciences",
-    "choices": [
-      "ShrinkTech Corp",
-      "Ominent Diversified Sciences",
-      "Backyard Labs",
-      "Tully Industries"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "Who is the scientist responsible for the shrinking experiment in Grounded?",
-    "answer": "Dr. Wendell Tully",
-    "choices": [
-      "Dr. Victor Brant",
-      "Dr. Wendell Tully",
-      "Professor Whittier",
-      "Dr. Wendell Hoops"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "What is the most feared large spider in Grounded?",
-    "answer": "Wolf Spider",
-    "choices": [
-      "Orb Weaver",
-      "Wolf Spider",
-      "Black Widow",
-      "Funnel Weaver"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What material do players collect from grass blades in Grounded?",
-    "answer": "Grass Planks and Grass Fiber",
-    "choices": [
-      "Fiber and Weed Stems",
-      "Grass Planks and Grass Fiber",
-      "Hay Bales",
-      "Reed Stalks"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What large insect in Grounded sprays a burning chemical as an attack?",
-    "answer": "Bombardier Beetle",
-    "choices": [
-      "Fire Ant",
-      "Bombardier Beetle",
-      "Acid Aphid",
-      "Venom Weevil"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What health drinks can be crafted at a smoothie station in Grounded?",
-    "answer": "Smoothies",
-    "choices": [
-      "Juice Potions",
-      "Smoothies",
-      "Nectar Drinks",
-      "Bug Brew"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What large red creature in Grounded is found near the oak tree and charges players?",
-    "answer": "Ladybird (Ladybug)",
-    "choices": [
-      "Bombardier Beetle",
-      "Ladybird (Ladybug)",
-      "Roly Poly",
-      "Stinkbug"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What material from spiders is needed to build ziplines in Grounded?",
-    "answer": "Spider Silk Rope",
-    "choices": [
-      "Web Chunks",
-      "Spider Silk Rope",
-      "Orb Weaver Rope",
-      "Spider Thread"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "What mineral resource in Grounded is mined from white rocks and used for durable tools?",
-    "answer": "Quartzite",
-    "choices": [
-      "Marble",
-      "Quartzite",
-      "Pebblet",
-      "White Stone"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "What are the small round rock resources called that are used in early crafting in Grounded?",
-    "answer": "Pebblets",
-    "choices": [
-      "Pebbles",
-      "Pebblets",
-      "Small Rocks",
-      "Stone Bits"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "What is the currency used to buy upgrades from BURG.L in Grounded?",
-    "answer": "Raw Science",
-    "choices": [
-      "Credits",
-      "Raw Science",
-      "BURG.L Chips",
-      "Data Chunks"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "What is the main antagonist creature type found in the Haze biome in Grounded?",
-    "answer": "Gnats and infected insects",
-    "choices": [
-      "Giant Wasps",
-      "Gnats and infected insects",
-      "Antlions",
-      "Fire Ants"
-    ],
-    "tier": 3
+      "Goo",
+      "Frankie",
+      "Cheese",
+      "Coco"
+    ]
   }
 ]
