@@ -19,7 +19,7 @@ A graphical roguelike where knowledge is power. Every action requires answering 
 | cooking     | Preparing food          |
 | science     | Magic / wands           |
 | philosophy  | Identification          |
-| grammar     | Reading scrolls         |
+| grammar     | Reading scrolls + spellbooks |
 | economics   | Lockpicking             |
 | theology    | Praying                 |
 

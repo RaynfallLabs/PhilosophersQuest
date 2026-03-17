@@ -4552,14 +4552,14 @@ class Game:
         )
 
     def _learn_from_spellbook(self, book: 'Spellbook'):
-        """Try to learn the spell in a spellbook via philosophy threshold quiz."""
+        """Try to learn the spell in a spellbook via grammar threshold quiz."""
         spell_id = book.spell_id
         if spell_id in self.player.known_spells:
             self.add_message(f"You already know {book.spell_name}.", 'info')
             return
 
         self.state = STATE_QUIZ
-        self.quiz_title = f"DECIPHER SPELLBOOK -- PHILOSOPHY"
+        self.quiz_title = f"DECIPHER SPELLBOOK -- GRAMMAR"
 
         def on_complete(result):
             self.state = STATE_PLAYER
@@ -4577,7 +4577,7 @@ class Game:
 
         self.quiz_engine.start_quiz(
             mode='threshold',
-            subject='philosophy',
+            subject='grammar',
             tier=book.quiz_tier,
             callback=on_complete,
             threshold=book.quiz_threshold,
