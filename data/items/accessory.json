@@ -415,7 +415,7 @@
     "weight": 0.1,
     "min_level": 8,
     "slot": "ring",
-    "equip_threshold": 3,
+    "equip_threshold": 2,
     "quiz_tier": 2,
     "effects": {
       "status": "telepathy",
@@ -442,7 +442,7 @@
     "weight": 0.1,
     "min_level": 8,
     "slot": "ring",
-    "equip_threshold": 3,
+    "equip_threshold": 2,
     "quiz_tier": 2,
     "effects": {
       "status": "telepathy",
@@ -469,7 +469,7 @@
     "weight": 0.1,
     "min_level": 8,
     "slot": "ring",
-    "equip_threshold": 3,
+    "equip_threshold": 2,
     "quiz_tier": 2,
     "effects": {
       "status": "telepathy",
@@ -496,7 +496,7 @@
     "weight": 0.1,
     "min_level": 8,
     "slot": "ring",
-    "equip_threshold": 3,
+    "equip_threshold": 2,
     "quiz_tier": 2,
     "effects": {
       "status": "telepathy",
@@ -523,7 +523,7 @@
     "weight": 0.1,
     "min_level": 8,
     "slot": "ring",
-    "equip_threshold": 3,
+    "equip_threshold": 2,
     "quiz_tier": 2,
     "effects": {
       "status": "telepathy",
@@ -550,7 +550,7 @@
     "weight": 0.1,
     "min_level": 8,
     "slot": "ring",
-    "equip_threshold": 3,
+    "equip_threshold": 2,
     "quiz_tier": 2,
     "effects": {
       "status": "telepathy",
@@ -577,7 +577,7 @@
     "weight": 0.1,
     "min_level": 8,
     "slot": "ring",
-    "equip_threshold": 3,
+    "equip_threshold": 2,
     "quiz_tier": 2,
     "effects": {
       "status": "regenerating",
@@ -604,7 +604,7 @@
     "weight": 0.1,
     "min_level": 8,
     "slot": "ring",
-    "equip_threshold": 3,
+    "equip_threshold": 2,
     "quiz_tier": 2,
     "effects": {
       "status": "regenerating",
@@ -631,7 +631,7 @@
     "weight": 0.1,
     "min_level": 8,
     "slot": "ring",
-    "equip_threshold": 3,
+    "equip_threshold": 2,
     "quiz_tier": 2,
     "effects": {
       "status": "regenerating",
@@ -658,7 +658,7 @@
     "weight": 0.1,
     "min_level": 8,
     "slot": "ring",
-    "equip_threshold": 3,
+    "equip_threshold": 2,
     "quiz_tier": 2,
     "effects": {
       "status": "regenerating",
@@ -685,7 +685,7 @@
     "weight": 0.1,
     "min_level": 8,
     "slot": "ring",
-    "equip_threshold": 3,
+    "equip_threshold": 2,
     "quiz_tier": 2,
     "effects": {
       "status": "regenerating",
@@ -739,7 +739,7 @@
     "weight": 0.1,
     "min_level": 8,
     "slot": "ring",
-    "equip_threshold": 3,
+    "equip_threshold": 2,
     "quiz_tier": 2,
     "effects": {
       "stat": "STR",
@@ -766,7 +766,7 @@
     "weight": 0.1,
     "min_level": 25,
     "slot": "ring",
-    "equip_threshold": 4,
+    "equip_threshold": 2,
     "quiz_tier": 3,
     "effects": {
       "stat": "STR",
@@ -793,7 +793,7 @@
     "weight": 0.1,
     "min_level": 25,
     "slot": "ring",
-    "equip_threshold": 4,
+    "equip_threshold": 2,
     "quiz_tier": 3,
     "effects": {
       "stat": "STR",
@@ -847,7 +847,7 @@
     "weight": 0.1,
     "min_level": 8,
     "slot": "ring",
-    "equip_threshold": 3,
+    "equip_threshold": 2,
     "quiz_tier": 2,
     "effects": {
       "stat": "CON",
@@ -874,7 +874,7 @@
     "weight": 0.1,
     "min_level": 8,
     "slot": "ring",
-    "equip_threshold": 3,
+    "equip_threshold": 2,
     "quiz_tier": 2,
     "effects": {
       "stat": "CON",
@@ -901,7 +901,7 @@
     "weight": 0.1,
     "min_level": 25,
     "slot": "ring",
-    "equip_threshold": 4,
+    "equip_threshold": 2,
     "quiz_tier": 3,
     "effects": {
       "stat": "CON",
@@ -955,7 +955,7 @@
     "weight": 0.1,
     "min_level": 8,
     "slot": "ring",
-    "equip_threshold": 3,
+    "equip_threshold": 2,
     "quiz_tier": 2,
     "effects": {
       "stat": "DEX",
@@ -982,7 +982,7 @@
     "weight": 0.1,
     "min_level": 8,
     "slot": "ring",
-    "equip_threshold": 3,
+    "equip_threshold": 2,
     "quiz_tier": 2,
     "effects": {
       "stat": "DEX",
@@ -1009,7 +1009,7 @@
     "weight": 0.1,
     "min_level": 25,
     "slot": "ring",
-    "equip_threshold": 4,
+    "equip_threshold": 2,
     "quiz_tier": 3,
     "effects": {
       "stat": "DEX",
@@ -1063,7 +1063,7 @@
     "weight": 0.1,
     "min_level": 8,
     "slot": "ring",
-    "equip_threshold": 3,
+    "equip_threshold": 2,
     "quiz_tier": 2,
     "effects": {
       "stat": "INT",
@@ -1090,7 +1090,7 @@
     "weight": 0.1,
     "min_level": 8,
     "slot": "ring",
-    "equip_threshold": 3,
+    "equip_threshold": 2,
     "quiz_tier": 2,
     "effects": {
       "stat": "INT",
@@ -1117,7 +1117,7 @@
     "weight": 0.1,
     "min_level": 25,
     "slot": "ring",
-    "equip_threshold": 4,
+    "equip_threshold": 2,
     "quiz_tier": 3,
     "effects": {
       "stat": "INT",
@@ -1171,7 +1171,7 @@
     "weight": 0.1,
     "min_level": 8,
     "slot": "ring",
-    "equip_threshold": 3,
+    "equip_threshold": 2,
     "quiz_tier": 2,
     "effects": {
       "stat": "WIS",
@@ -1198,7 +1198,7 @@
     "weight": 0.1,
     "min_level": 8,
     "slot": "ring",
-    "equip_threshold": 3,
+    "equip_threshold": 2,
     "quiz_tier": 2,
     "effects": {
       "stat": "WIS",
@@ -1225,7 +1225,7 @@
     "weight": 0.1,
     "min_level": 25,
     "slot": "ring",
-    "equip_threshold": 4,
+    "equip_threshold": 2,
     "quiz_tier": 3,
     "effects": {
       "stat": "WIS",
@@ -1279,7 +1279,7 @@
     "weight": 0.1,
     "min_level": 8,
     "slot": "ring",
-    "equip_threshold": 3,
+    "equip_threshold": 2,
     "quiz_tier": 2,
     "effects": {
       "stat": "PER",
@@ -1306,7 +1306,7 @@
     "weight": 0.1,
     "min_level": 8,
     "slot": "ring",
-    "equip_threshold": 3,
+    "equip_threshold": 2,
     "quiz_tier": 2,
     "effects": {
       "stat": "PER",
@@ -1333,7 +1333,7 @@
     "weight": 0.1,
     "min_level": 25,
     "slot": "ring",
-    "equip_threshold": 4,
+    "equip_threshold": 2,
     "quiz_tier": 3,
     "effects": {
       "stat": "PER",
@@ -1360,7 +1360,7 @@
     "weight": 0.1,
     "min_level": 8,
     "slot": "ring",
-    "equip_threshold": 3,
+    "equip_threshold": 2,
     "quiz_tier": 2,
     "effects": {
       "status": "fire_resist",
@@ -1387,7 +1387,7 @@
     "weight": 0.1,
     "min_level": 8,
     "slot": "ring",
-    "equip_threshold": 3,
+    "equip_threshold": 2,
     "quiz_tier": 2,
     "effects": {
       "status": "fire_resist",
@@ -1414,7 +1414,7 @@
     "weight": 0.1,
     "min_level": 8,
     "slot": "ring",
-    "equip_threshold": 3,
+    "equip_threshold": 2,
     "quiz_tier": 2,
     "effects": {
       "status": "cold_resist",
@@ -1441,7 +1441,7 @@
     "weight": 0.1,
     "min_level": 8,
     "slot": "ring",
-    "equip_threshold": 3,
+    "equip_threshold": 2,
     "quiz_tier": 2,
     "effects": {
       "status": "cold_resist",
@@ -1468,7 +1468,7 @@
     "weight": 0.1,
     "min_level": 8,
     "slot": "ring",
-    "equip_threshold": 3,
+    "equip_threshold": 2,
     "quiz_tier": 2,
     "effects": {
       "status": "shock_resist",
@@ -1495,7 +1495,7 @@
     "weight": 0.1,
     "min_level": 8,
     "slot": "ring",
-    "equip_threshold": 3,
+    "equip_threshold": 2,
     "quiz_tier": 2,
     "effects": {
       "status": "shock_resist",
@@ -1522,7 +1522,7 @@
     "weight": 0.1,
     "min_level": 8,
     "slot": "ring",
-    "equip_threshold": 3,
+    "equip_threshold": 2,
     "quiz_tier": 2,
     "effects": {
       "status": "poison_resist",
@@ -1549,7 +1549,7 @@
     "weight": 0.1,
     "min_level": 8,
     "slot": "ring",
-    "equip_threshold": 3,
+    "equip_threshold": 2,
     "quiz_tier": 2,
     "effects": {
       "status": "poison_resist",
@@ -1576,7 +1576,7 @@
     "weight": 0.1,
     "min_level": 8,
     "slot": "ring",
-    "equip_threshold": 3,
+    "equip_threshold": 2,
     "quiz_tier": 2,
     "effects": {
       "status": "sleep_resist",
@@ -1603,7 +1603,7 @@
     "weight": 0.1,
     "min_level": 8,
     "slot": "ring",
-    "equip_threshold": 3,
+    "equip_threshold": 2,
     "quiz_tier": 2,
     "effects": {
       "status": "sleep_resist",
@@ -1630,7 +1630,7 @@
     "weight": 0.1,
     "min_level": 25,
     "slot": "ring",
-    "equip_threshold": 4,
+    "equip_threshold": 2,
     "quiz_tier": 3,
     "effects": {
       "status": "magic_resist",
@@ -1657,7 +1657,7 @@
     "weight": 0.1,
     "min_level": 1,
     "slot": "ring",
-    "equip_threshold": 4,
+    "equip_threshold": 2,
     "quiz_tier": 3,
     "effects": {
       "status": "drain_resist",
@@ -1684,7 +1684,7 @@
     "weight": 0.1,
     "min_level": 25,
     "slot": "ring",
-    "equip_threshold": 4,
+    "equip_threshold": 2,
     "quiz_tier": 3,
     "effects": {
       "status": "levitating",
@@ -1711,7 +1711,7 @@
     "weight": 0.1,
     "min_level": 25,
     "slot": "ring",
-    "equip_threshold": 4,
+    "equip_threshold": 2,
     "quiz_tier": 3,
     "effects": {
       "status": "invisible",
@@ -1738,7 +1738,7 @@
     "weight": 0.1,
     "min_level": 25,
     "slot": "ring",
-    "equip_threshold": 4,
+    "equip_threshold": 2,
     "quiz_tier": 3,
     "effects": {
       "status": "hasted",
@@ -1765,7 +1765,7 @@
     "weight": 0.1,
     "min_level": 25,
     "slot": "ring",
-    "equip_threshold": 4,
+    "equip_threshold": 2,
     "quiz_tier": 3,
     "effects": {
       "status": "clairvoyant",
@@ -1792,7 +1792,7 @@
     "weight": 0.1,
     "min_level": 25,
     "slot": "ring",
-    "equip_threshold": 4,
+    "equip_threshold": 2,
     "quiz_tier": 3,
     "effects": {
       "status": "displacement",
@@ -1927,7 +1927,7 @@
     "weight": 0.2,
     "min_level": 1,
     "slot": "amulet",
-    "equip_threshold": 2,
+    "equip_threshold": 3,
     "quiz_tier": 1,
     "effects": {
       "status": "warning",
@@ -1954,7 +1954,7 @@
     "weight": 0.2,
     "min_level": 1,
     "slot": "amulet",
-    "equip_threshold": 2,
+    "equip_threshold": 3,
     "quiz_tier": 1,
     "effects": {
       "status": "warning",
@@ -1981,7 +1981,7 @@
     "weight": 0.2,
     "min_level": 1,
     "slot": "amulet",
-    "equip_threshold": 2,
+    "equip_threshold": 3,
     "quiz_tier": 1,
     "effects": {
       "status": "searching",
@@ -2008,7 +2008,7 @@
     "weight": 0.2,
     "min_level": 1,
     "slot": "amulet",
-    "equip_threshold": 2,
+    "equip_threshold": 3,
     "quiz_tier": 1,
     "effects": {
       "status": "searching",
@@ -2116,7 +2116,7 @@
     "weight": 0.2,
     "min_level": 25,
     "slot": "amulet",
-    "equip_threshold": 4,
+    "equip_threshold": 3,
     "quiz_tier": 3,
     "effects": {
       "status": "hasted",
@@ -2143,7 +2143,7 @@
     "weight": 0.2,
     "min_level": 25,
     "slot": "amulet",
-    "equip_threshold": 4,
+    "equip_threshold": 3,
     "quiz_tier": 3,
     "effects": {
       "status": "invisible",
@@ -2170,7 +2170,7 @@
     "weight": 0.2,
     "min_level": 25,
     "slot": "amulet",
-    "equip_threshold": 4,
+    "equip_threshold": 3,
     "quiz_tier": 3,
     "effects": {
       "status": "levitating",
@@ -2197,7 +2197,7 @@
     "weight": 0.2,
     "min_level": 25,
     "slot": "amulet",
-    "equip_threshold": 4,
+    "equip_threshold": 3,
     "quiz_tier": 3,
     "effects": {
       "status": "clairvoyant",
@@ -2224,7 +2224,7 @@
     "weight": 0.2,
     "min_level": 25,
     "slot": "amulet",
-    "equip_threshold": 4,
+    "equip_threshold": 3,
     "quiz_tier": 3,
     "effects": {
       "status": "displacement",
@@ -2386,7 +2386,7 @@
     "weight": 0.2,
     "min_level": 25,
     "slot": "amulet",
-    "equip_threshold": 4,
+    "equip_threshold": 3,
     "quiz_tier": 3,
     "effects": {
       "status": "magic_resist",
@@ -2413,7 +2413,7 @@
     "weight": 0.2,
     "min_level": 1,
     "slot": "amulet",
-    "equip_threshold": 4,
+    "equip_threshold": 3,
     "quiz_tier": 3,
     "effects": {
       "status": "drain_resist",
@@ -2467,7 +2467,7 @@
     "weight": 0.2,
     "min_level": 25,
     "slot": "amulet",
-    "equip_threshold": 4,
+    "equip_threshold": 3,
     "quiz_tier": 3,
     "effects": {
       "stat": "STR",
@@ -2521,7 +2521,7 @@
     "weight": 0.2,
     "min_level": 25,
     "slot": "amulet",
-    "equip_threshold": 4,
+    "equip_threshold": 3,
     "quiz_tier": 3,
     "effects": {
       "stat": "CON",
@@ -2575,7 +2575,7 @@
     "weight": 0.2,
     "min_level": 25,
     "slot": "amulet",
-    "equip_threshold": 4,
+    "equip_threshold": 3,
     "quiz_tier": 3,
     "effects": {
       "stat": "DEX",
@@ -2629,7 +2629,7 @@
     "weight": 0.2,
     "min_level": 25,
     "slot": "amulet",
-    "equip_threshold": 4,
+    "equip_threshold": 3,
     "quiz_tier": 3,
     "effects": {
       "stat": "INT",
@@ -2683,7 +2683,7 @@
     "weight": 0.2,
     "min_level": 25,
     "slot": "amulet",
-    "equip_threshold": 4,
+    "equip_threshold": 3,
     "quiz_tier": 3,
     "effects": {
       "stat": "WIS",
@@ -2737,7 +2737,7 @@
     "weight": 0.2,
     "min_level": 25,
     "slot": "amulet",
-    "equip_threshold": 4,
+    "equip_threshold": 3,
     "quiz_tier": 3,
     "effects": {
       "stat": "PER",
@@ -2764,7 +2764,7 @@
     "weight": 0.2,
     "min_level": 1,
     "slot": "amulet",
-    "equip_threshold": 2,
+    "equip_threshold": 3,
     "quiz_tier": 1,
     "effects": {
       "status": "teleportitis",
@@ -2791,7 +2791,7 @@
     "weight": 0.2,
     "min_level": 1,
     "slot": "amulet",
-    "equip_threshold": 2,
+    "equip_threshold": 3,
     "quiz_tier": 1,
     "effects": {
       "status": "slowed",
@@ -2818,7 +2818,7 @@
     "weight": 0.1,
     "min_level": 1,
     "slot": "amulet",
-    "equip_threshold": 1,
+    "equip_threshold": 3,
     "quiz_tier": 1,
     "effects": {
       "status": "identify_sight",
@@ -2848,7 +2848,7 @@
     "weight": 0.1,
     "min_level": 65,
     "slot": "ring",
-    "equip_threshold": 6,
+    "equip_threshold": 3,
     "quiz_tier": 5,
     "effects": {
       "stat": "STR",
@@ -2879,7 +2879,7 @@
     "weight": 0.1,
     "min_level": 65,
     "slot": "ring",
-    "equip_threshold": 6,
+    "equip_threshold": 3,
     "quiz_tier": 5,
     "effects": {
       "status": "poison_resist",
@@ -2908,7 +2908,7 @@
     "weight": 0.1,
     "min_level": 45,
     "slot": "ring",
-    "equip_threshold": 5,
+    "equip_threshold": 3,
     "quiz_tier": 4,
     "effects": {
       "stat": "WIS",
@@ -2939,7 +2939,7 @@
     "weight": 0.1,
     "min_level": 8,
     "slot": "ring",
-    "equip_threshold": 3,
+    "equip_threshold": 2,
     "quiz_tier": 2,
     "effects": {
       "stat": "AC",
@@ -2967,7 +2967,7 @@
     "weight": 0.1,
     "min_level": 25,
     "slot": "ring",
-    "equip_threshold": 4,
+    "equip_threshold": 2,
     "quiz_tier": 3,
     "effects": {
       "stat": "AC",
@@ -2995,7 +2995,7 @@
     "weight": 0.1,
     "min_level": 45,
     "slot": "ring",
-    "equip_threshold": 5,
+    "equip_threshold": 3,
     "quiz_tier": 4,
     "effects": {
       "stat": "AC",
@@ -3023,7 +3023,7 @@
     "weight": 0.1,
     "min_level": 25,
     "slot": "ring",
-    "equip_threshold": 4,
+    "equip_threshold": 2,
     "quiz_tier": 3,
     "effects": {
       "status": "hasted",
@@ -3051,7 +3051,7 @@
     "weight": 0.1,
     "min_level": 8,
     "slot": "ring",
-    "equip_threshold": 3,
+    "equip_threshold": 2,
     "quiz_tier": 2,
     "effects": {
       "status": "sustained",
@@ -3079,7 +3079,7 @@
     "weight": 0.1,
     "min_level": 45,
     "slot": "ring",
-    "equip_threshold": 5,
+    "equip_threshold": 3,
     "quiz_tier": 4,
     "effects": {
       "stat": "STR",
@@ -3107,7 +3107,7 @@
     "weight": 0.1,
     "min_level": 45,
     "slot": "ring",
-    "equip_threshold": 5,
+    "equip_threshold": 3,
     "quiz_tier": 4,
     "effects": {
       "stat": "CON",
@@ -3135,7 +3135,7 @@
     "weight": 0.1,
     "min_level": 45,
     "slot": "ring",
-    "equip_threshold": 5,
+    "equip_threshold": 3,
     "quiz_tier": 4,
     "effects": {
       "stat": "INT",
@@ -3163,7 +3163,7 @@
     "weight": 0.2,
     "min_level": 45,
     "slot": "amulet",
-    "equip_threshold": 5,
+    "equip_threshold": 4,
     "quiz_tier": 4,
     "effects": {
       "status": "life_save",
@@ -3191,7 +3191,7 @@
     "weight": 0.2,
     "min_level": 45,
     "slot": "amulet",
-    "equip_threshold": 5,
+    "equip_threshold": 4,
     "quiz_tier": 4,
     "effects": {
       "status": "spell_turning",
@@ -3219,7 +3219,7 @@
     "weight": 0.2,
     "min_level": 25,
     "slot": "amulet",
-    "equip_threshold": 4,
+    "equip_threshold": 3,
     "quiz_tier": 3,
     "effects": {
       "status": "truesight",
@@ -3247,7 +3247,7 @@
     "weight": 0.2,
     "min_level": 45,
     "slot": "amulet",
-    "equip_threshold": 5,
+    "equip_threshold": 4,
     "quiz_tier": 4,
     "effects": {
       "status": "reflecting",
@@ -3275,7 +3275,7 @@
     "weight": 0.2,
     "min_level": 65,
     "slot": "amulet",
-    "equip_threshold": 6,
+    "equip_threshold": 4,
     "quiz_tier": 5,
     "effects": {
       "stat": "CON",
@@ -3303,7 +3303,7 @@
     "weight": 0.2,
     "min_level": 65,
     "slot": "amulet",
-    "equip_threshold": 6,
+    "equip_threshold": 4,
     "quiz_tier": 5,
     "effects": {
       "stat": "INT",
@@ -3359,7 +3359,7 @@
     "weight": 0.2,
     "min_level": 1,
     "slot": "amulet",
-    "equip_threshold": 2,
+    "equip_threshold": 3,
     "quiz_tier": 1,
     "effects": {
       "status": "doomed",
@@ -3387,7 +3387,7 @@
     "weight": 0.1,
     "min_level": 60,
     "slot": "ring",
-    "equip_threshold": 6,
+    "equip_threshold": 3,
     "quiz_tier": 5,
     "effects": {
       "status": "invisible",
@@ -3412,7 +3412,7 @@
     "weight": 0.2,
     "min_level": 65,
     "slot": "ring",
-    "equip_threshold": 6,
+    "equip_threshold": 3,
     "quiz_tier": 5,
     "effects": {
       "stat": "STR",
@@ -3436,7 +3436,7 @@
     "weight": 0.1,
     "min_level": 55,
     "slot": "ring",
-    "equip_threshold": 6,
+    "equip_threshold": 3,
     "quiz_tier": 5,
     "effects": {
       "stat": "INT",
@@ -3463,7 +3463,7 @@
     "weight": 0.3,
     "min_level": 65,
     "slot": "ring",
-    "equip_threshold": 6,
+    "equip_threshold": 3,
     "quiz_tier": 5,
     "effects": {
       "stat": "INT",
@@ -3487,7 +3487,7 @@
     "weight": 0.1,
     "min_level": 60,
     "slot": "ring",
-    "equip_threshold": 6,
+    "equip_threshold": 3,
     "quiz_tier": 5,
     "effects": {
       "stat": "WIS",
@@ -3514,7 +3514,7 @@
     "weight": 0.1,
     "min_level": 50,
     "slot": "ring",
-    "equip_threshold": 6,
+    "equip_threshold": 3,
     "quiz_tier": 5,
     "effects": {
       "status": "invisible",
@@ -3541,7 +3541,7 @@
     "weight": 0.3,
     "min_level": 65,
     "slot": "amulet",
-    "equip_threshold": 6,
+    "equip_threshold": 4,
     "quiz_tier": 5,
     "effects": {
       "stat": "WIS",
@@ -3567,7 +3567,7 @@
     "weight": 0.5,
     "min_level": 65,
     "slot": "amulet",
-    "equip_threshold": 6,
+    "equip_threshold": 4,
     "quiz_tier": 5,
     "effects": {
       "status": "reflecting",
@@ -3592,7 +3592,7 @@
     "weight": 0.2,
     "min_level": 60,
     "slot": "amulet",
-    "equip_threshold": 6,
+    "equip_threshold": 4,
     "quiz_tier": 5,
     "effects": {
       "stat": "PER",
@@ -3619,7 +3619,7 @@
     "weight": 0.2,
     "min_level": 55,
     "slot": "amulet",
-    "equip_threshold": 6,
+    "equip_threshold": 4,
     "quiz_tier": 5,
     "effects": {
       "status": "life_save",
@@ -3644,7 +3644,7 @@
     "weight": 0.2,
     "min_level": 40,
     "slot": "amulet",
-    "equip_threshold": 5,
+    "equip_threshold": 4,
     "quiz_tier": 4,
     "effects": {
       "stat": "CON",
@@ -3671,7 +3671,7 @@
     "weight": 0.2,
     "min_level": 45,
     "slot": "amulet",
-    "equip_threshold": 5,
+    "equip_threshold": 4,
     "quiz_tier": 4,
     "effects": {
       "status": "regenerating",
@@ -3698,7 +3698,7 @@
     "weight": 0.3,
     "min_level": 65,
     "slot": "amulet",
-    "equip_threshold": 6,
+    "equip_threshold": 4,
     "quiz_tier": 5,
     "effects": {
       "stat": "WIS",
@@ -3722,7 +3722,7 @@
     "weight": 0.4,
     "min_level": 50,
     "slot": "amulet",
-    "equip_threshold": 5,
+    "equip_threshold": 4,
     "quiz_tier": 4,
     "effects": {
       "stat": "CON",
@@ -3747,7 +3747,7 @@
     "weight": 0.3,
     "min_level": 70,
     "slot": "amulet",
-    "equip_threshold": 6,
+    "equip_threshold": 4,
     "quiz_tier": 5,
     "effects": {
       "stat": "INT",
@@ -3771,7 +3771,7 @@
     "weight": 0.2,
     "min_level": 60,
     "slot": "amulet",
-    "equip_threshold": 6,
+    "equip_threshold": 4,
     "quiz_tier": 5,
     "effects": {
       "status": "life_save",
@@ -3798,7 +3798,7 @@
     "weight": 0.2,
     "min_level": 70,
     "slot": "amulet",
-    "equip_threshold": 6,
+    "equip_threshold": 4,
     "quiz_tier": 5,
     "effects": {
       "stat": "CON",
@@ -3822,7 +3822,7 @@
     "weight": 0.2,
     "min_level": 50,
     "slot": "amulet",
-    "equip_threshold": 5,
+    "equip_threshold": 4,
     "quiz_tier": 4,
     "effects": {
       "status": "regenerating",
@@ -3849,7 +3849,7 @@
     "weight": 0.4,
     "min_level": 65,
     "slot": "amulet",
-    "equip_threshold": 6,
+    "equip_threshold": 4,
     "quiz_tier": 5,
     "effects": {
       "stat": "STR",
@@ -3874,7 +3874,7 @@
     "weight": 0.5,
     "min_level": 65,
     "slot": "amulet",
-    "equip_threshold": 6,
+    "equip_threshold": 4,
     "quiz_tier": 5,
     "effects": {
       "stat": "WIS",
@@ -3899,7 +3899,7 @@
     "weight": 0.2,
     "min_level": 50,
     "slot": "amulet",
-    "equip_threshold": 5,
+    "equip_threshold": 4,
     "quiz_tier": 4,
     "effects": {
       "stat": "CON",
@@ -3926,7 +3926,7 @@
     "weight": 0.1,
     "min_level": 60,
     "slot": "ring",
-    "equip_threshold": 6,
+    "equip_threshold": 3,
     "quiz_tier": 5,
     "effects": {
       "stat": "STR",
@@ -3953,7 +3953,7 @@
     "weight": 0.1,
     "min_level": 60,
     "slot": "ring",
-    "equip_threshold": 6,
+    "equip_threshold": 3,
     "quiz_tier": 5,
     "effects": {
       "stat": "PER",
@@ -3980,7 +3980,7 @@
     "weight": 0.1,
     "min_level": 60,
     "slot": "ring",
-    "equip_threshold": 6,
+    "equip_threshold": 3,
     "quiz_tier": 5,
     "effects": {
       "stat": "INT",
@@ -4005,7 +4005,7 @@
     "weight": 0.3,
     "min_level": 70,
     "slot": "amulet",
-    "equip_threshold": 6,
+    "equip_threshold": 4,
     "quiz_tier": 5,
     "effects": {
       "stat": "INT",
@@ -4029,7 +4029,7 @@
     "weight": 0.1,
     "min_level": 55,
     "slot": "ring",
-    "equip_threshold": 6,
+    "equip_threshold": 3,
     "quiz_tier": 5,
     "effects": {
       "status": "clairvoyant",
@@ -4056,7 +4056,7 @@
     "weight": 0.1,
     "min_level": 65,
     "slot": "ring",
-    "equip_threshold": 6,
+    "equip_threshold": 3,
     "quiz_tier": 5,
     "effects": {
       "stat": "DEX",
@@ -4080,7 +4080,7 @@
     "weight": 0.2,
     "min_level": 50,
     "slot": "ring",
-    "equip_threshold": 5,
+    "equip_threshold": 3,
     "quiz_tier": 4,
     "effects": {
       "stat": "INT",
@@ -4107,7 +4107,7 @@
     "weight": 0.3,
     "min_level": 45,
     "slot": "amulet",
-    "equip_threshold": 5,
+    "equip_threshold": 4,
     "quiz_tier": 4,
     "effects": {
       "stat": "CON",
@@ -4134,7 +4134,7 @@
     "weight": 0.1,
     "min_level": 65,
     "slot": "ring",
-    "equip_threshold": 6,
+    "equip_threshold": 3,
     "quiz_tier": 5,
     "effects": {
       "stat": "WIS",
@@ -4159,7 +4159,7 @@
     "weight": 0.1,
     "min_level": 65,
     "slot": "ring",
-    "equip_threshold": 6,
+    "equip_threshold": 3,
     "quiz_tier": 5,
     "effects": {
       "stat": "STR",
@@ -4185,7 +4185,7 @@
     "weight": 0.2,
     "min_level": 60,
     "slot": "amulet",
-    "equip_threshold": 6,
+    "equip_threshold": 4,
     "quiz_tier": 5,
     "effects": {
       "stat": "INT",
@@ -4212,7 +4212,7 @@
     "weight": 0.1,
     "min_level": 65,
     "slot": "ring",
-    "equip_threshold": 6,
+    "equip_threshold": 3,
     "quiz_tier": 5,
     "effects": {
       "stat": "WIS",
@@ -4238,7 +4238,7 @@
     "weight": 0.2,
     "min_level": 50,
     "slot": "amulet",
-    "equip_threshold": 5,
+    "equip_threshold": 4,
     "quiz_tier": 4,
     "effects": {
       "stat": "INT",
@@ -4265,7 +4265,7 @@
     "weight": 0.1,
     "min_level": 55,
     "slot": "ring",
-    "equip_threshold": 6,
+    "equip_threshold": 3,
     "quiz_tier": 5,
     "effects": {
       "stat": "INT",
@@ -4293,7 +4293,7 @@
     "min_level": 20,
     "slot": "ring",
     "quiz_tier": 2,
-    "equip_threshold": 3,
+    "equip_threshold": 2,
     "effects": {
       "stat": "INT",
       "amount": 2,
@@ -4316,7 +4316,7 @@
     "min_level": 22,
     "slot": "amulet",
     "quiz_tier": 4,
-    "equip_threshold": 5,
+    "equip_threshold": 4,
     "effects": {
       "stat": "STR",
       "amount": 3
@@ -4337,7 +4337,7 @@
     "min_level": 18,
     "slot": "ring",
     "quiz_tier": 2,
-    "equip_threshold": 3,
+    "equip_threshold": 2,
     "effects": {
       "stat": "CON",
       "amount": 2,
@@ -4381,7 +4381,7 @@
     "min_level": 25,
     "slot": "ring",
     "quiz_tier": 4,
-    "equip_threshold": 5,
+    "equip_threshold": 3,
     "effects": {
       "stat": "DEX",
       "amount": 3,
@@ -4404,7 +4404,7 @@
     "min_level": 24,
     "slot": "amulet",
     "quiz_tier": 4,
-    "equip_threshold": 5,
+    "equip_threshold": 4,
     "effects": {
       "stat": "CON",
       "amount": 3,
@@ -4427,7 +4427,7 @@
     "min_level": 22,
     "slot": "ring",
     "quiz_tier": 4,
-    "equip_threshold": 5,
+    "equip_threshold": 3,
     "effects": {
       "stat": "PER",
       "amount": 3,
@@ -4450,7 +4450,7 @@
     "min_level": 28,
     "slot": "amulet",
     "quiz_tier": 4,
-    "equip_threshold": 5,
+    "equip_threshold": 4,
     "effects": {
       "stat": "INT",
       "amount": 3,
@@ -4473,7 +4473,7 @@
     "min_level": 26,
     "slot": "ring",
     "quiz_tier": 4,
-    "equip_threshold": 5,
+    "equip_threshold": 3,
     "effects": {
       "stat": "DEX",
       "amount": 2,
@@ -4496,7 +4496,7 @@
     "min_level": 22,
     "slot": "amulet",
     "quiz_tier": 4,
-    "equip_threshold": 5,
+    "equip_threshold": 4,
     "effects": {
       "stat": "CON",
       "amount": 2,
@@ -4518,7 +4518,7 @@
     "weight": 1.0,
     "min_level": 35,
     "slot": "amulet",
-    "equip_threshold": 5,
+    "equip_threshold": 4,
     "quiz_tier": 4,
     "effects": {
       "stat": "WIS",
@@ -4539,7 +4539,7 @@
     "weight": 0.5,
     "min_level": 68,
     "slot": "amulet",
-    "equip_threshold": 5,
+    "equip_threshold": 4,
     "quiz_tier": 4,
     "effects": {
       "stat": "PER",
@@ -4562,7 +4562,7 @@
     "weight": 0.8,
     "min_level": 58,
     "slot": "amulet",
-    "equip_threshold": 5,
+    "equip_threshold": 4,
     "quiz_tier": 4,
     "effects": {
       "stat": "CON",
@@ -4583,7 +4583,7 @@
     "weight": 0.2,
     "min_level": 70,
     "slot": "ring",
-    "equip_threshold": 5,
+    "equip_threshold": 3,
     "quiz_tier": 4,
     "effects": {
       "stat": "STR",
@@ -4604,7 +4604,7 @@
     "weight": 0.4,
     "min_level": 25,
     "slot": "amulet",
-    "equip_threshold": 4,
+    "equip_threshold": 3,
     "quiz_tier": 3,
     "effects": {
       "status": "dark_vision",
