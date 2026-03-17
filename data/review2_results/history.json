@@ -1,0 +1,2919 @@
+{
+  "remove": [
+    {
+      "index": 1,
+      "reason": "Pure date rote: 'In what year did WWII end?' No conceptual payoff."
+    },
+    {
+      "index": 2,
+      "reason": "Pure date rote: 'In what year did WWII begin?'"
+    },
+    {
+      "index": 3,
+      "reason": "Pure date rote: 'In what year did WWI begin?'"
+    },
+    {
+      "index": 5,
+      "reason": "Pure date rote: 'The Declaration of Independence was signed in ___?' Covered more meaningfully by the conceptual rewrite of nearby questions."
+    },
+    {
+      "index": 6,
+      "reason": "Pure date rote: Moon landing year. Keep the name question (index 26) instead."
+    },
+    {
+      "index": 8,
+      "reason": "Pure number rote: 'Lincoln was the ___ President?' The ordinal number has no conceptual value."
+    },
+    {
+      "index": 10,
+      "reason": "Pure date rote: MLK speech year. The speech content matters, not the year."
+    },
+    {
+      "index": 19,
+      "reason": "Pure date rote: 'World War I ended in ___?' already implied by index 3's WWII start and other questions."
+    },
+    {
+      "index": 22,
+      "reason": "Pure date rote: 'Rome was traditionally founded in 753 BC?' Duplicates index 23 (fall of Rome) and adds no meaning."
+    },
+    {
+      "index": 28,
+      "reason": "Pure date rote: Wright Brothers flight year. No conceptual value."
+    },
+    {
+      "index": 29,
+      "reason": "Pure date rote: MLK assassination year. Covered by index 10 area."
+    },
+    {
+      "index": 30,
+      "reason": "Pure date rote: Kennedy assassination year."
+    },
+    {
+      "index": 33,
+      "reason": "Pure date rote: US atomic bombs on Japan year. Covered better contextually."
+    },
+    {
+      "index": 38,
+      "reason": "Pure date rote: Titanic sank year."
+    },
+    {
+      "index": 51,
+      "reason": "Pure date rote: Pacific theater surrender year (1945). Duplicates WWII end question."
+    },
+    {
+      "index": 53,
+      "reason": "Pure date: George Washington served 2 terms. Low conceptual value."
+    },
+    {
+      "index": 57,
+      "reason": "Pure date rote: Emancipation Proclamation year (duplicates index 46 which also tests EP)."
+    },
+    {
+      "index": 61,
+      "reason": "Pure rote: 'Titanic struck an iceberg in ___?' Duplicates index 38."
+    },
+    {
+      "index": 62,
+      "reason": "Sputnik launched by USSR is fine but duplicated at index 102 (tier 2, with year). Remove this tier-1 year-free version since index 102 also covers it."
+    },
+    {
+      "index": 63,
+      "reason": "Pure date rote: Russian Revolution 1917."
+    },
+    {
+      "index": 67,
+      "reason": "Pure date: Suez Canal opened 1869. No conceptual value."
+    },
+    {
+      "index": 68,
+      "reason": "Pure date: First transcontinental railroad 1869. Duplicates Suez date (same year, confusing)."
+    },
+    {
+      "index": 74,
+      "reason": "Pure date: NATO founded 1949. Covered with context elsewhere."
+    },
+    {
+      "index": 88,
+      "reason": "Pure date: Bastille stormed 1789. Duplicates French Revolution start (index 20)."
+    },
+    {
+      "index": 89,
+      "reason": "Pure date: Treaty of Versailles 1919."
+    },
+    {
+      "index": 90,
+      "reason": "Pure date: Louisiana Purchase 1803."
+    },
+    {
+      "index": 92,
+      "reason": "Pure date: Battle of Gettysburg 1863."
+    },
+    {
+      "index": 93,
+      "reason": "Pure date: Communist Manifesto published 1848."
+    },
+    {
+      "index": 94,
+      "reason": "Pure date rote: Rome founding 753 BC (duplicate of index 22 which was already flagged for removal). Second duplicate."
+    },
+    {
+      "index": 95,
+      "reason": "Pure date: Fall of Western Roman Empire 476 AD. Duplicates index 23."
+    },
+    {
+      "index": 103,
+      "reason": "Pure date: Sputnik launched 1957. Covered by index 62/102."
+    },
+    {
+      "index": 104,
+      "reason": "Pure date: Bay of Pigs 1961."
+    },
+    {
+      "index": 107,
+      "reason": "Pure date: Apollo 11 landed on Moon 1969. Duplicates index 6 Moon landing."
+    },
+    {
+      "index": 109,
+      "reason": "Pure date: Soviet invasion of Afghanistan 1979. Duplicates index 108 Iran Revolution year."
+    },
+    {
+      "index": 110,
+      "reason": "Pure date: Russo-Japanese War ended 1905."
+    },
+    {
+      "index": 111,
+      "reason": "Pure date: Meiji Restoration began 1868."
+    },
+    {
+      "index": 113,
+      "reason": "Pure date: Franz Ferdinand assassinated 1914. Duplicates index 112 which has more context."
+    },
+    {
+      "index": 115,
+      "reason": "Pure date: Nuremberg Trials 1945-1946. Context version (index 75) is better."
+    },
+    {
+      "index": 121,
+      "reason": "Pure date: Monroe Doctrine 1823. Low conceptual value as pure date."
+    },
+    {
+      "index": 124,
+      "reason": "Pure date: OPEC oil embargo 1973."
+    },
+    {
+      "index": 125,
+      "reason": "Pure date: Genghis Khan died 1227. Pure rote name/date."
+    },
+    {
+      "index": 133,
+      "reason": "Pure date: Ottoman Empire captured Constantinople 1453. Covered better elsewhere."
+    },
+    {
+      "index": 136,
+      "reason": "Pure date: Seven Years War ended 1763."
+    },
+    {
+      "index": 141,
+      "reason": "Pure date: Battle of Lexington and Concord 1775."
+    },
+    {
+      "index": 143,
+      "reason": "Pure date: Bill of Rights added 1791."
+    },
+    {
+      "index": 144,
+      "reason": "Pure date: Battle of Bunker Hill 1775. Duplicates index 141."
+    },
+    {
+      "index": 146,
+      "reason": "Pure date: First Opium War ended 1842."
+    },
+    {
+      "index": 149,
+      "reason": "Pure date: Night of Long Knives 1934. Better covered with conceptual question."
+    },
+    {
+      "index": 150,
+      "reason": "Pure date: Kristallnacht 1938. Better covered with contextual question."
+    },
+    {
+      "index": 153,
+      "reason": "Pure date: Operation Barbarossa began 1941."
+    },
+    {
+      "index": 154,
+      "reason": "Pure date: Yalta Conference 1945. Covered by contextual question at index 173."
+    },
+    {
+      "index": 157,
+      "reason": "Pure date: Rwandan Genocide 1994. Covered by index 175 which adds scale."
+    },
+    {
+      "index": 160,
+      "reason": "Pure date: Gulf War 1991."
+    },
+    {
+      "index": 161,
+      "reason": "Pure date: September 11 attacks 2001."
+    },
+    {
+      "index": 163,
+      "reason": "Purely pedagogical mnemonic 'MAIN causes of WWI' -- testing an acronym is rote without meaning. Replace with question about what those factors were."
+    },
+    {
+      "index": 164,
+      "reason": "Testing the M in MAIN acronym is rote mnemonic recall, not historical understanding."
+    },
+    {
+      "index": 165,
+      "reason": "Testing the A in MAIN acronym. Same issue."
+    },
+    {
+      "index": 168,
+      "reason": "Pure date: Egyptian pyramids 2500 BC."
+    },
+    {
+      "index": 169,
+      "reason": "Pure date: Colosseum completed 80 AD. Low value."
+    },
+    {
+      "index": 203,
+      "reason": "BROKEN QUESTION: 'Emperor Theodosius made Christianity official in what year?' but the choices are 'Greece, Rome, Persia, Egypt' -- geographic names instead of years. This is a data error and the question is unanswerable as written."
+    },
+    {
+      "index": 190,
+      "reason": "Pure date: 13th Amendment ratified 1865. Duplicate of multiple slavery-related date questions."
+    },
+    {
+      "index": 191,
+      "reason": "Pure date: 19th Amendment ratified 1920. Duplicate."
+    },
+    {
+      "index": 197,
+      "reason": "Pure date: Mexican-American War ended 1848."
+    },
+    {
+      "index": 198,
+      "reason": "Pure date: 15th Amendment ratified 1870."
+    },
+    {
+      "index": 210,
+      "reason": "Pure date: Franco-Prussian War ended 1871."
+    },
+    {
+      "index": 211,
+      "reason": "Pure date: German Empire proclaimed 1871. Duplicates above."
+    },
+    {
+      "index": 215,
+      "reason": "Pure date: Austro-Prussian War 1866 won by Prussia."
+    },
+    {
+      "index": 221,
+      "reason": "Pure date: Camp David Accords signed 1978. Covered by contextual question."
+    },
+    {
+      "index": 226,
+      "reason": "Pure date: Good Friday Agreement signed 1998. Covered by the 'ended conflict in' question."
+    },
+    {
+      "index": 231,
+      "reason": "Pure name rote: Fidel Castro led Cuba. Everyone knows this."
+    },
+    {
+      "index": 234,
+      "reason": "Pure date: Helsinki Accords 1975."
+    },
+    {
+      "index": 237,
+      "reason": "Pure date: Weimar Republic established after WWI -- this is a 'what followed' question but trivially obvious."
+    },
+    {
+      "index": 239,
+      "reason": "Pure date: Potsdam Conference 1945. Covered by context question."
+    },
+    {
+      "index": 242,
+      "reason": "Pure date: Good Friday Agreement 1998. Duplicate."
+    },
+    {
+      "index": 243,
+      "reason": "Pure date: Apartheid ended South Africa 1994."
+    },
+    {
+      "index": 245,
+      "reason": "Pure date: Helsinki Accords 1975. Duplicate."
+    },
+    {
+      "index": 248,
+      "reason": "Pure date: Korean Peninsula divided at 38th parallel -- actually a good fact, KEEP. Withdraw this removal."
+    },
+    {
+      "index": 253,
+      "reason": "Pure date: Rape of Nanking 1937."
+    },
+    {
+      "index": 254,
+      "reason": "Pure date: Potsdam Conference 1945. Third duplicate."
+    },
+    {
+      "index": 261,
+      "reason": "Pure date: Battle of Thermopylae 480 BC."
+    },
+    {
+      "index": 262,
+      "reason": "Pure date: Battle of Actium 31 BC."
+    },
+    {
+      "index": 263,
+      "reason": "Pure date: Battle of Lepanto 1571."
+    },
+    {
+      "index": 264,
+      "reason": "Pure date: Wannsee Conference 1942."
+    },
+    {
+      "index": 265,
+      "reason": "Pure date: Bretton Woods Conference 1944."
+    },
+    {
+      "index": 288,
+      "reason": "Pure date: Irish Free State established 1922."
+    },
+    {
+      "index": 293,
+      "reason": "Pure date: Congress of Vienna 1814-1815."
+    },
+    {
+      "index": 296,
+      "reason": "Pure date: Treaty of Utrecht 1713."
+    },
+    {
+      "index": 298,
+      "reason": "Pure date: Battle of Thermopylae 480 BC. Duplicate."
+    },
+    {
+      "index": 299,
+      "reason": "Pure date: Battle of Actium 31 BC. Duplicate."
+    },
+    {
+      "index": 300,
+      "reason": "Pure date: Battle of Lepanto 1571. Duplicate."
+    },
+    {
+      "index": 301,
+      "reason": "Pure date: Wannsee Conference 1942. Duplicate."
+    },
+    {
+      "index": 302,
+      "reason": "Pure date: Bretton Woods 1944. Duplicate."
+    },
+    {
+      "index": 311,
+      "reason": "Pure date: Peloponnesian War ended 404 BC."
+    },
+    {
+      "index": 315,
+      "reason": "Pure date: Peace of Nicias 421 BC."
+    },
+    {
+      "index": 317,
+      "reason": "Pure date: Treaty of Verdun 843 AD divided Charlemagne's empire -- somewhat useful but pure date."
+    },
+    {
+      "index": 320,
+      "reason": "Pure date: Golden Bull of 1356. High specialist trivia without conceptual framing."
+    },
+    {
+      "index": 326,
+      "reason": "Pure date: Reconquista completed 1492."
+    },
+    {
+      "index": 329,
+      "reason": "Pure date: Plague of Justinian death toll estimate. Very obscure."
+    },
+    {
+      "index": 333,
+      "reason": "Pure date: Congress of Vienna 1814-15. Duplicate."
+    },
+    {
+      "index": 338,
+      "reason": "Pure date: Atlantic Charter 1941."
+    },
+    {
+      "index": 340,
+      "reason": "Pure date: League of Nations Covenant part of Versailles -- this actually has some conceptual value but is covered by the 'US Senate refused to join' question."
+    },
+    {
+      "index": 341,
+      "reason": "Pure date: Permanent Court of International Justice 1920."
+    },
+    {
+      "index": 342,
+      "reason": "Pure date: Dawes Plan 1924."
+    },
+    {
+      "index": 343,
+      "reason": "Pure date: Locarno Treaties 1925."
+    },
+    {
+      "index": 345,
+      "reason": "Pure date: Decolonization of French Indochina -- actually has conceptual value, KEEP. Withdraw."
+    },
+    {
+      "index": 347,
+      "reason": "Pure date: Geneva Accords divided Vietnam at 17th parallel -- actual geographic fact worth keeping. Withdraw."
+    },
+    {
+      "index": 348,
+      "reason": "Pure date: Warsaw Pact formed 1955."
+    },
+    {
+      "index": 350,
+      "reason": "Pure date: Prague Spring 1968."
+    },
+    {
+      "index": 353,
+      "reason": "Pure date: Velvet Revolution led by Vaclav Havel -- the leader question has more value than the country, but both are covered."
+    },
+    {
+      "index": 355,
+      "reason": "Pure date: German reunification 1990."
+    },
+    {
+      "index": 357,
+      "reason": "Pure date: Dayton Accords ending Bosnian War 1995. Duplicate."
+    },
+    {
+      "index": 358,
+      "reason": "Pure date: ICC established 2002."
+    },
+    {
+      "index": 359,
+      "reason": "Pure date: Rome Statute signed 1998."
+    },
+    {
+      "index": 360,
+      "reason": "Pure date: Srebrenica massacre 1995."
+    },
+    {
+      "index": 361,
+      "reason": "Pure date: Khmer Rouge regime 1975-1979."
+    },
+    {
+      "index": 362,
+      "reason": "Pure date: Partition of India 1947. Duplicates main question."
+    },
+    {
+      "index": 371,
+      "reason": "Pure date: Tet Offensive 1968."
+    },
+    {
+      "index": 372,
+      "reason": "Pure date: Paris Peace Accords 1973."
+    },
+    {
+      "index": 373,
+      "reason": "Pure date: Nixon opening to China 1972."
+    },
+    {
+      "index": 374,
+      "reason": "Pure date: SALT II never ratified due to Afghanistan. The CONTENT question is fine; this is covered by context."
+    },
+    {
+      "index": 375,
+      "reason": "Pure date: START treaty 1991."
+    },
+    {
+      "index": 383,
+      "reason": "Pure date: Taiping Rebellion ended 1864. Duplicate of other China questions."
+    },
+    {
+      "index": 385,
+      "reason": "Pure date: First Boer War 1880-1881."
+    },
+    {
+      "index": 386,
+      "reason": "Pure date: Second Boer War ended 1902."
+    },
+    {
+      "index": 394,
+      "reason": "Pure date: Republic of China founded 1912."
+    },
+    {
+      "index": 396,
+      "reason": "Pure date: Long March ended in Yan'an. Very specialist trivia."
+    },
+    {
+      "index": 399,
+      "reason": "Pure date: Mau Mau Uprising 1952-1960 was in Kenya. Low conceptual value."
+    },
+    {
+      "index": 401,
+      "reason": "Pure date: Year of Africa 1960."
+    },
+    {
+      "index": 402,
+      "reason": "Pure date: ANC founded 1912."
+    },
+    {
+      "index": 404,
+      "reason": "Pure date: Iran Hostage Crisis ended 1981."
+    },
+    {
+      "index": 407,
+      "reason": "Pure date: Iraq invaded Kuwait 1990."
+    },
+    {
+      "index": 409,
+      "reason": "Pure date: First Palestinian intifada 1987."
+    },
+    {
+      "index": 410,
+      "reason": "Pure date: PLO founded 1964."
+    },
+    {
+      "index": 413,
+      "reason": "Pure date: Fashoda Crisis resolved in favor of Britain. Covered by Fashoda concept questions."
+    },
+    {
+      "index": 414,
+      "reason": "Pure date: Algeciras Conference 1906. Highly specialist."
+    },
+    {
+      "index": 416,
+      "reason": "Pure date: Bosnian Crisis 1908. Specialist trivia."
+    },
+    {
+      "index": 417,
+      "reason": "Pure date: Sarajevo assassinations killed wife Sophie. Morbid trivia, no conceptual payoff."
+    },
+    {
+      "index": 418,
+      "reason": "Pure date: Schlieffen Plan called for defeating France first. Covered better by general WWI causes."
+    },
+    {
+      "index": 419,
+      "reason": "Pure date: Gallipoli Campaign 1915. Specialist military trivia."
+    },
+    {
+      "index": 420,
+      "reason": "Pure name: Balfour Declaration issued by Arthur James Balfour. Rote name-association."
+    },
+    {
+      "index": 421,
+      "reason": "Pure rote: League of Nations Covenant part of Treaty of Versailles. Low value."
+    },
+    {
+      "index": 422,
+      "reason": "Pure date: Permanent Court 1920. Duplicate."
+    },
+    {
+      "index": 423,
+      "reason": "Pure date: Dawes Plan restructured German reparations. Covered by context."
+    },
+    {
+      "index": 424,
+      "reason": "Pure date: Locarno Treaties 1925. Duplicate."
+    },
+    {
+      "index": 426,
+      "reason": "Pure name: Nuclear Test Ban Treaty prohibited tests -- the CONTENT is worth keeping but the 'which environments' framing is overly technical. Actually this question has conceptual value, KEEP."
+    },
+    {
+      "index": 428,
+      "reason": "Pure date: NSC-68 document year. Duplicate."
+    },
+    {
+      "index": 430,
+      "reason": "Pure date: Long Telegram 1946 by George Kennan. Duplicates containment question."
+    }
+  ],
+  "rewrite": [
+    {
+      "index": 0,
+      "field": "question",
+      "new_value": "George Washington's decision to step down after two terms established what crucial precedent?",
+      "reason": "Tests the WHY and consequence of Washington's presidency, not just name-association."
+    },
+    {
+      "index": 4,
+      "field": "question",
+      "new_value": "The Declaration of Independence grounded the colonists' right to revolt in ___?",
+      "reason": "Tests Enlightenment natural rights philosophy behind the Declaration, not just its author."
+    },
+    {
+      "index": 4,
+      "field": "answer",
+      "new_value": "Natural rights and the consent of the governed",
+      "reason": "Matches new conceptual question."
+    },
+    {
+      "index": 4,
+      "field": "choices",
+      "new_value": [
+        "Parliamentary sovereignty",
+        "Natural rights and the consent of the governed",
+        "Religious authority",
+        "Military necessity"
+      ],
+      "reason": "Conceptual choices matching natural rights framing."
+    },
+    {
+      "index": 7,
+      "field": "question",
+      "new_value": "Christopher Columbus's 1492 voyage had what immediate consequence for Europe?",
+      "reason": "Tests consequences of the voyage rather than just the year."
+    },
+    {
+      "index": 7,
+      "field": "answer",
+      "new_value": "It opened sustained contact between the Old and New Worlds",
+      "reason": "Matches new conceptual question."
+    },
+    {
+      "index": 7,
+      "field": "choices",
+      "new_value": [
+        "It proved the Earth was round",
+        "It opened sustained contact between the Old and New Worlds",
+        "It established the first European colony",
+        "It ended the Ottoman trade monopoly"
+      ],
+      "reason": "Conceptual choices about consequences."
+    },
+    {
+      "index": 9,
+      "field": "question",
+      "new_value": "The Emancipation Proclamation was significant primarily because it ___?",
+      "reason": "Tests conceptual significance rather than what document it was."
+    },
+    {
+      "index": 9,
+      "field": "answer",
+      "new_value": "Reframed the Civil War as a war to end slavery, not just preserve the Union",
+      "reason": "Matches new conceptual question."
+    },
+    {
+      "index": 9,
+      "field": "choices",
+      "new_value": [
+        "Immediately freed all enslaved people in the US",
+        "Reframed the Civil War as a war to end slavery, not just preserve the Union",
+        "Granted citizenship to freed slaves",
+        "Abolished slavery in the border states"
+      ],
+      "reason": "Conceptual choices about the document's meaning."
+    },
+    {
+      "index": 11,
+      "field": "question",
+      "new_value": "Napoleon's rise to power after the French Revolution illustrated what historical pattern?",
+      "reason": "Tests the lesson of revolutionary chaos leading to authoritarianism."
+    },
+    {
+      "index": 11,
+      "field": "answer",
+      "new_value": "Revolutions that destroy institutions often produce dictatorship",
+      "reason": "Matches new conceptual question."
+    },
+    {
+      "index": 11,
+      "field": "choices",
+      "new_value": [
+        "Democratic republics naturally follow revolutions",
+        "Revolutions that destroy institutions often produce dictatorship",
+        "Military leaders always betray revolutions",
+        "France needed a monarch to restore order"
+      ],
+      "reason": "Conceptual choices about revolutionary outcomes."
+    },
+    {
+      "index": 20,
+      "field": "question",
+      "new_value": "The French Revolution's slogan 'Liberty, Equality, Fraternity' ultimately gave way to what?",
+      "reason": "Tests the Reign of Terror outcome rather than just the slogan."
+    },
+    {
+      "index": 20,
+      "field": "answer",
+      "new_value": "The Reign of Terror and mass executions",
+      "reason": "Matches new question about revolutionary consequences."
+    },
+    {
+      "index": 20,
+      "field": "choices",
+      "new_value": [
+        "A stable democratic republic",
+        "The Reign of Terror and mass executions",
+        "Constitutional monarchy like Britain",
+        "Lasting peace across Europe"
+      ],
+      "reason": "Tests knowledge of Terror following the revolutionary ideals."
+    },
+    {
+      "index": 21,
+      "field": "question",
+      "new_value": "The Reign of Terror during the French Revolution killed thousands. What did this demonstrate?",
+      "reason": "Extends to the conceptual lesson rather than just the slogan question."
+    },
+    {
+      "index": 21,
+      "field": "answer",
+      "new_value": "That revolutionary collectivism can become mass murder",
+      "reason": "Matches new conceptual question about the Terror."
+    },
+    {
+      "index": 21,
+      "field": "choices",
+      "new_value": [
+        "That democracy always succeeds after monarchies",
+        "That revolutionary collectivism can become mass murder",
+        "That Napoleon was inevitable from day one",
+        "That religious wars cause the most deaths"
+      ],
+      "reason": "Tests key lesson about revolutionary collectivism turning violent."
+    },
+    {
+      "index": 32,
+      "field": "question",
+      "new_value": "The Berlin Wall's fall in 1989 symbolized ___?",
+      "reason": "Tests the meaning and consequence rather than just the year."
+    },
+    {
+      "index": 32,
+      "field": "answer",
+      "new_value": "The collapse of communist regimes in Eastern Europe",
+      "reason": "Matches new conceptual question."
+    },
+    {
+      "index": 32,
+      "field": "choices",
+      "new_value": [
+        "West German prosperity",
+        "The collapse of communist regimes in Eastern Europe",
+        "NATO's military victory",
+        "Soviet economic reform success"
+      ],
+      "reason": "Conceptual choices about what the Wall's fall meant."
+    },
+    {
+      "index": 31,
+      "field": "question",
+      "new_value": "The Soviet Union's 1991 dissolution resulted primarily from ___?",
+      "reason": "Tests WHY it collapsed rather than just the year."
+    },
+    {
+      "index": 31,
+      "field": "answer",
+      "new_value": "The failure of centrally planned socialist economics and political repression",
+      "reason": "Matches new question about causes of Soviet collapse."
+    },
+    {
+      "index": 31,
+      "field": "choices",
+      "new_value": [
+        "US military defeat of the USSR",
+        "The failure of centrally planned socialist economics and political repression",
+        "A military coup by reformers",
+        "German reunification destabilizing Europe"
+      ],
+      "reason": "Tests understanding of WHY the USSR fell."
+    },
+    {
+      "index": 55,
+      "field": "question",
+      "new_value": "The Magna Carta's primary significance was that it established ___?",
+      "reason": "Tests meaning of Magna Carta, not just the date it was signed."
+    },
+    {
+      "index": 55,
+      "field": "answer",
+      "new_value": "That even the king was subject to the law",
+      "reason": "Matches new question about the Magna Carta's meaning."
+    },
+    {
+      "index": 55,
+      "field": "choices",
+      "new_value": [
+        "The right to vote for all Englishmen",
+        "That even the king was subject to the law",
+        "Parliamentary supremacy over the crown",
+        "Freedom of religion in England"
+      ],
+      "reason": "Tests rule-of-law principle."
+    },
+    {
+      "index": 72,
+      "field": "question",
+      "new_value": "The 13th Amendment's abolition of slavery was the culmination of what movement?",
+      "reason": "Contextualizes the amendment within the abolitionist movement."
+    },
+    {
+      "index": 72,
+      "field": "answer",
+      "new_value": "The abolitionist movement arguing slavery violated natural rights",
+      "reason": "Matches new contextual question."
+    },
+    {
+      "index": 72,
+      "field": "choices",
+      "new_value": [
+        "A purely military decision to win the Civil War",
+        "The abolitionist movement arguing slavery violated natural rights",
+        "A compromise with Southern states to end the war",
+        "Economic arguments that free labor was more productive"
+      ],
+      "reason": "Tests deeper understanding of why slavery was abolished."
+    },
+    {
+      "index": 73,
+      "field": "question",
+      "new_value": "The 19th Amendment granting women the vote reflected what principle?",
+      "reason": "Tests the principle behind suffrage rather than just the year."
+    },
+    {
+      "index": 73,
+      "field": "answer",
+      "new_value": "That universal suffrage is required for genuine self-government",
+      "reason": "Matches new principled question."
+    },
+    {
+      "index": 73,
+      "field": "choices",
+      "new_value": [
+        "That women are better voters than men",
+        "That universal suffrage is required for genuine self-government",
+        "That the Constitution requires gender equality",
+        "That women's labor in WWI earned them the vote"
+      ],
+      "reason": "Conceptual framing of suffrage principle."
+    },
+    {
+      "index": 138,
+      "field": "question",
+      "new_value": "The Glorious Revolution of 1688 was significant because it ___?",
+      "reason": "Tests the constitutional significance of the Glorious Revolution, not just who was placed on the throne."
+    },
+    {
+      "index": 138,
+      "field": "answer",
+      "new_value": "Established parliamentary supremacy and constitutional limits on the crown",
+      "reason": "Matches new question about the Revolution's meaning."
+    },
+    {
+      "index": 138,
+      "field": "choices",
+      "new_value": [
+        "Ended monarchy in England forever",
+        "Established parliamentary supremacy and constitutional limits on the crown",
+        "United Scotland with England",
+        "Introduced religious freedom for Catholics"
+      ],
+      "reason": "Tests rule-of-law consequence of Glorious Revolution."
+    },
+    {
+      "index": 166,
+      "field": "question",
+      "new_value": "Julius Caesar's assassination in 44 BC failed to save the Roman Republic because ___?",
+      "reason": "Tests the consequence and political lesson of Caesar's assassination."
+    },
+    {
+      "index": 166,
+      "field": "answer",
+      "new_value": "The Republic's institutions had already been undermined and civil war followed",
+      "reason": "Matches new question about consequences."
+    },
+    {
+      "index": 166,
+      "field": "choices",
+      "new_value": [
+        "The Senate restored constitutional rule immediately",
+        "The Republic's institutions had already been undermined and civil war followed",
+        "Brutus became the new dictator",
+        "The army refused to support the Senate"
+      ],
+      "reason": "Tests understanding of why killing a tyrant does not restore liberty."
+    },
+    {
+      "index": 182,
+      "field": "question",
+      "new_value": "The American Revolution was unique compared to the French Revolution because ___?",
+      "reason": "Tests comparative understanding of revolutions rather than just 'inspired by Enlightenment'."
+    },
+    {
+      "index": 182,
+      "field": "answer",
+      "new_value": "It preserved existing legal institutions while rejecting tyranny",
+      "reason": "Matches new comparative question."
+    },
+    {
+      "index": 182,
+      "field": "choices",
+      "new_value": [
+        "It was inspired by military conquest",
+        "It preserved existing legal institutions while rejecting tyranny",
+        "It established a monarchy under Washington",
+        "It immediately granted equal rights to all inhabitants"
+      ],
+      "reason": "Tests key distinction between the American and French revolutionary traditions."
+    },
+    {
+      "index": 86,
+      "field": "question",
+      "new_value": "The Protestant Reformation challenged Church authority by arguing that ___?",
+      "reason": "Tests the principle of individual conscience behind the Reformation."
+    },
+    {
+      "index": 86,
+      "field": "answer",
+      "new_value": "Individual conscience guided by Scripture overrides priestly authority",
+      "reason": "Matches new question about the Reformation's core idea."
+    },
+    {
+      "index": 86,
+      "field": "choices",
+      "new_value": [
+        "Kings had more authority than popes",
+        "Individual conscience guided by Scripture overrides priestly authority",
+        "The Bible should only be read in Latin",
+        "Church councils can override papal decrees"
+      ],
+      "reason": "Tests individual conscience principle."
+    },
+    {
+      "index": 83,
+      "field": "question",
+      "new_value": "Martin Luther's 95 Theses in 1517 challenged the Church primarily over ___?",
+      "reason": "Tests what Luther actually objected to, not just the year."
+    },
+    {
+      "index": 83,
+      "field": "answer",
+      "new_value": "The sale of indulgences and papal authority over salvation",
+      "reason": "Matches new question about Luther's objections."
+    },
+    {
+      "index": 83,
+      "field": "choices",
+      "new_value": [
+        "The Church's involvement in politics",
+        "The sale of indulgences and papal authority over salvation",
+        "The use of Latin in services",
+        "The wealth of the Vatican"
+      ],
+      "reason": "Tests the substantive religious dispute."
+    },
+    {
+      "index": 230,
+      "field": "question",
+      "new_value": "Castro's Cuban Revolution of 1959, which replaced Batista with communism, resulted in ___?",
+      "reason": "Tests the consequences of the Cuban Revolution rather than just the date."
+    },
+    {
+      "index": 230,
+      "field": "answer",
+      "new_value": "Decades of poverty, state control, and mass emigration",
+      "reason": "Matches new question about consequences."
+    },
+    {
+      "index": 230,
+      "field": "choices",
+      "new_value": [
+        "Rapid economic development and high living standards",
+        "Decades of poverty, state control, and mass emigration",
+        "A democratic socialist state respected by neighbors",
+        "Nationalization followed by prosperity"
+      ],
+      "reason": "Tests the documented outcome of Cuban communism."
+    },
+    {
+      "index": 175,
+      "field": "question",
+      "new_value": "The Rwandan Genocide of 1994, in which ~800,000 Tutsi were killed, was enabled primarily by ___?",
+      "reason": "Tests causes rather than just the death toll."
+    },
+    {
+      "index": 175,
+      "field": "answer",
+      "new_value": "State-organized ethnic hatred and international failure to intervene",
+      "reason": "Matches new causal question."
+    },
+    {
+      "index": 175,
+      "field": "choices",
+      "new_value": [
+        "Colonial land disputes with no modern causes",
+        "State-organized ethnic hatred and international failure to intervene",
+        "Religious conflict between Christians and Muslims",
+        "Economic competition over natural resources"
+      ],
+      "reason": "Tests understanding of genocide's causes."
+    },
+    {
+      "index": 223,
+      "field": "question",
+      "new_value": "Mao's Cultural Revolution (1966-1976) primarily targeted ___?",
+      "reason": "Tests what the Cultural Revolution actually destroyed rather than just its dates."
+    },
+    {
+      "index": 223,
+      "field": "answer",
+      "new_value": "Intellectuals, tradition, and anyone seen as a class enemy",
+      "reason": "Matches new question about Cultural Revolution targets."
+    },
+    {
+      "index": 223,
+      "field": "choices",
+      "new_value": [
+        "Foreign imperialists and capitalists abroad",
+        "Intellectuals, tradition, and anyone seen as a class enemy",
+        "The military and warlords",
+        "Religious minorities only"
+      ],
+      "reason": "Tests who suffered under the Cultural Revolution."
+    },
+    {
+      "index": 162,
+      "field": "question",
+      "new_value": "The Treaty of Versailles is blamed for contributing to WWII because it ___?",
+      "reason": "Tests consequences of Versailles rather than just what it ended."
+    },
+    {
+      "index": 162,
+      "field": "answer",
+      "new_value": "Humiliated Germany with harsh reparations, fueling resentment and extremism",
+      "reason": "Matches new question about consequences."
+    },
+    {
+      "index": 162,
+      "field": "choices",
+      "new_value": [
+        "Failed to partition Germany permanently",
+        "Humiliated Germany with harsh reparations, fueling resentment and extremism",
+        "Gave too much territory to France",
+        "Did not include the US as a guarantor"
+      ],
+      "reason": "Tests the key consequence of Versailles."
+    },
+    {
+      "index": 173,
+      "field": "question",
+      "new_value": "The Yalta Conference of 1945 allowed Stalin to dominate Eastern Europe because ___?",
+      "reason": "Tests the consequence and significance of Yalta."
+    },
+    {
+      "index": 173,
+      "field": "answer",
+      "new_value": "Roosevelt and Churchill agreed to Soviet control in exchange for Stalin joining the war against Japan",
+      "reason": "Matches new question about Yalta's significance."
+    },
+    {
+      "index": 173,
+      "field": "choices",
+      "new_value": [
+        "The Soviet Army had already occupied the region",
+        "Roosevelt and Churchill agreed to Soviet control in exchange for Stalin joining the war against Japan",
+        "Stalin refused to negotiate and threatened nuclear war",
+        "The agreement was purely symbolic with no real effect"
+      ],
+      "reason": "Tests the political bargain made at Yalta."
+    },
+    {
+      "index": 152,
+      "field": "question",
+      "new_value": "The Molotov-Ribbentrop Pact (1939) between the USSR and Nazi Germany was significant because ___?",
+      "reason": "Tests the meaning of the pact rather than just who signed it."
+    },
+    {
+      "index": 152,
+      "field": "answer",
+      "new_value": "It divided Eastern Europe between two totalitarian powers and enabled WWII to begin",
+      "reason": "Matches new question about the pact's significance."
+    },
+    {
+      "index": 152,
+      "field": "choices",
+      "new_value": [
+        "It was a defensive alliance against Britain and France",
+        "It divided Eastern Europe between two totalitarian powers and enabled WWII to begin",
+        "It provided Germany with nuclear technology",
+        "It was a trade agreement that excluded military terms"
+      ],
+      "reason": "Tests the significance of the Nazi-Soviet cooperation."
+    },
+    {
+      "index": 369,
+      "field": "question",
+      "new_value": "NSC-68 (1950) argued the US should massively expand defense spending to ___?",
+      "reason": "Tests what NSC-68 argued for rather than just its date."
+    },
+    {
+      "index": 369,
+      "field": "answer",
+      "new_value": "Contain Soviet communism globally through strength, not just diplomacy",
+      "reason": "Matches new question about NSC-68's argument."
+    },
+    {
+      "index": 369,
+      "field": "choices",
+      "new_value": [
+        "Invade the Soviet Union preemptively",
+        "Contain Soviet communism globally through strength, not just diplomacy",
+        "Fund the Marshall Plan's second phase",
+        "Build alliances in Asia against China"
+      ],
+      "reason": "Tests the strategic argument of NSC-68."
+    }
+  ],
+  "add": [
+    {
+      "question": "The Magna Carta's 'no taxation without consent' clause was the ancestor of what American principle?",
+      "answer": "No taxation without representation",
+      "choices": [
+        "Separation of powers",
+        "No taxation without representation",
+        "Freedom of the press",
+        "Right to bear arms"
+      ],
+      "tier": 2,
+      "reason": "Connects Magna Carta to American founding principles, showing historical lineage of liberty."
+    },
+    {
+      "question": "Habeas corpus, the right not to be imprisoned without trial, originated in ___?",
+      "answer": "English common law and the Magna Carta",
+      "choices": [
+        "The Roman Republic",
+        "English common law and the Magna Carta",
+        "The French Revolution",
+        "The US Bill of Rights"
+      ],
+      "tier": 2,
+      "reason": "Tests the English common law origins of one of the most fundamental individual rights."
+    },
+    {
+      "question": "The English Bill of Rights of 1689 was passed after the Glorious Revolution and established ___?",
+      "answer": "That Parliament's consent was required for taxation and laws",
+      "choices": [
+        "Freedom of religion for all English subjects",
+        "That Parliament's consent was required for taxation and laws",
+        "Trial by jury for all citizens",
+        "The right to own property"
+      ],
+      "tier": 2,
+      "reason": "Covers the English Bill of Rights and constitutional limitation of monarchy -- a gap in the existing questions."
+    },
+    {
+      "question": "The Federalist Papers argued for ratifying the US Constitution primarily by defending ___?",
+      "answer": "Separation of powers and checks and balances as protections against tyranny",
+      "choices": [
+        "A strong executive with few limits",
+        "Separation of powers and checks and balances as protections against tyranny",
+        "A pure democracy with no federal system",
+        "States' rights over federal authority"
+      ],
+      "tier": 2,
+      "reason": "Tests the IDEAS in the Federalist Papers, not just who wrote them."
+    },
+    {
+      "question": "John Locke's theory of natural rights, which influenced the Declaration of Independence, held that government derives its authority from ___?",
+      "answer": "The consent of the governed",
+      "choices": [
+        "God's divine appointment of rulers",
+        "The consent of the governed",
+        "Military strength and conquest",
+        "Tradition and inheritance"
+      ],
+      "tier": 2,
+      "reason": "Covers Enlightenment natural rights philosophy -- a major gap given Western Civ emphasis."
+    },
+    {
+      "question": "Montesquieu's concept of the separation of powers, which influenced the US Constitution, was designed to ___?",
+      "answer": "Prevent any single person or group from gaining absolute power",
+      "choices": [
+        "Make government more efficient",
+        "Prevent any single person or group from gaining absolute power",
+        "Ensure democratic elections",
+        "Separate church from state"
+      ],
+      "tier": 2,
+      "reason": "Tests Enlightenment political theory and its connection to American founding."
+    },
+    {
+      "question": "The Reign of Terror (1793-1794) during the French Revolution resulted in approximately how many executions?",
+      "answer": "17,000 official executions, with tens of thousands more dead in prison",
+      "choices": [
+        "About 1,000 total deaths",
+        "17,000 official executions, with tens of thousands more dead in prison",
+        "Only the aristocracy was targeted",
+        "A few hundred political leaders"
+      ],
+      "tier": 3,
+      "reason": "Tests factual knowledge of the Terror's scale -- important for understanding how revolutionary collectivism produces mass murder."
+    },
+    {
+      "question": "Maximilien Robespierre justified the Reign of Terror by arguing that ___?",
+      "answer": "Terror was the price of virtue and revolutionary purity",
+      "choices": [
+        "The executions were all of genuine traitors",
+        "Terror was the price of virtue and revolutionary purity",
+        "Democracy required eliminating minority voices",
+        "The Church demanded it"
+      ],
+      "tier": 3,
+      "reason": "Tests the ideological justification of revolutionary terror -- how collectivist idealism leads to mass murder."
+    },
+    {
+      "question": "The Gulag system in the Soviet Union imprisoned millions of people for ___?",
+      "answer": "Real or alleged opposition to communist rule, including minor speech offenses",
+      "choices": [
+        "Only violent criminals and murderers",
+        "Real or alleged opposition to communist rule, including minor speech offenses",
+        "Enemies captured in wartime only",
+        "Foreign spies and saboteurs"
+      ],
+      "tier": 2,
+      "reason": "Tests factual knowledge of the Soviet Gulag -- documented historical evidence of communist totalitarianism."
+    },
+    {
+      "question": "Stalin's Great Purge of the 1930s resulted in approximately how many deaths?",
+      "answer": "750,000 executions plus millions in the Gulag",
+      "choices": [
+        "A few thousand political prisoners",
+        "750,000 executions plus millions in the Gulag",
+        "Only military officers were targeted",
+        "About 10,000 people in total"
+      ],
+      "tier": 3,
+      "reason": "Tests the scale of Stalinist terror -- essential historical evidence of communist mass murder."
+    },
+    {
+      "question": "Mao's Great Leap Forward (1958-1962) caused a famine that killed approximately ___?",
+      "answer": "15-55 million people, largely due to forced collectivization of agriculture",
+      "choices": [
+        "About 1 million from natural causes",
+        "15-55 million people, largely due to forced collectivization of agriculture",
+        "250,000 enemy soldiers in the civil war",
+        "Negligible casualties according to all estimates"
+      ],
+      "tier": 3,
+      "reason": "Tests the documented consequences of Maoist agricultural collectivism -- the largest famine in human history."
+    },
+    {
+      "question": "The Khmer Rouge's collectivist regime in Cambodia (1975-1979) killed what proportion of the country's population?",
+      "answer": "Roughly one quarter of the entire population",
+      "choices": [
+        "About 1 percent",
+        "Roughly one quarter of the entire population",
+        "Only the educated class, about 5 percent",
+        "About 10 percent in political prisons"
+      ],
+      "tier": 3,
+      "reason": "Tests the scale of Khmer Rouge genocide -- the most extreme case of communist collectivism producing mass death."
+    },
+    {
+      "question": "Nazi Germany's economic policy under the Third Reich was characterized by ___?",
+      "answer": "State direction of private industry, autarky, and massive rearmament spending",
+      "choices": [
+        "Free market capitalism with minimal regulation",
+        "State direction of private industry, autarky, and massive rearmament spending",
+        "Pure communism with collective ownership",
+        "Laissez-faire trade and open borders"
+      ],
+      "tier": 3,
+      "reason": "Tests what Nazi economic policy actually was -- National SOCIALISM involved heavy state economic control."
+    },
+    {
+      "question": "The term 'National Socialism' (Nazism) reflected that the Nazi party ___?",
+      "answer": "Claimed to combine nationalism with socialist economic control over private industry",
+      "choices": [
+        "Was a purely capitalist movement",
+        "Claimed to combine nationalism with socialist economic control over private industry",
+        "Rejected all economic ideology",
+        "Copied Soviet communism exactly"
+      ],
+      "tier": 3,
+      "reason": "Tests the documented ideological content of National Socialism -- an important historical fact."
+    },
+    {
+      "question": "Cuba under Castro's communist rule since 1959 has been characterized by ___?",
+      "answer": "Persistent poverty, rationing, and one-party political control",
+      "choices": [
+        "Rapid economic growth and high living standards",
+        "Persistent poverty, rationing, and one-party political control",
+        "Democratic socialism with free elections",
+        "Prosperity funded by Soviet-era tourism"
+      ],
+      "tier": 2,
+      "reason": "Tests the documented outcomes of Cuban communism."
+    },
+    {
+      "question": "The collapse of socialist economies in Eastern Europe after 1989 demonstrated that ___?",
+      "answer": "Central planning fails to allocate resources efficiently and suppresses innovation",
+      "choices": [
+        "Socialism works but needs more time",
+        "Central planning fails to allocate resources efficiently and suppresses innovation",
+        "American interference caused their failure",
+        "Market economies also failed during the transition"
+      ],
+      "tier": 3,
+      "reason": "Tests the economic lesson of communist collapse -- documented historical outcome of socialist planning."
+    },
+    {
+      "question": "Adam Smith's 'Wealth of Nations' (1776) argued that economic prosperity comes from ___?",
+      "answer": "Free exchange and the division of labor, not state direction",
+      "choices": [
+        "Government regulation of prices and wages",
+        "Free exchange and the division of labor, not state direction",
+        "Mercantile control of trade by the crown",
+        "Agricultural self-sufficiency"
+      ],
+      "tier": 2,
+      "reason": "Tests the foundational argument of free market economics -- important for understanding why markets outperform planned economies."
+    },
+    {
+      "question": "The English common law tradition is significant to individual liberty because it ___?",
+      "answer": "Protects rights through precedent and custom, limiting arbitrary government action",
+      "choices": [
+        "Gives Parliament unlimited power over individuals",
+        "Protects rights through precedent and custom, limiting arbitrary government action",
+        "Makes all law dependent on royal decree",
+        "Originated in Roman civil law"
+      ],
+      "tier": 3,
+      "reason": "Tests the English common law tradition and its role in protecting individual liberty."
+    },
+    {
+      "question": "The First Amendment to the US Constitution protects freedom of speech primarily to ___?",
+      "answer": "Allow citizens to criticize the government without fear of punishment",
+      "choices": [
+        "Protect popular speech that most people like",
+        "Allow citizens to criticize the government without fear of punishment",
+        "Guarantee equal airtime for all political views",
+        "Prevent slander and libel in the press"
+      ],
+      "tier": 1,
+      "reason": "Tests the purpose of free speech protection -- a fundamental individual right."
+    },
+    {
+      "question": "The concept of 'innocent until proven guilty' in Anglo-American law means ___?",
+      "answer": "The state must prove guilt; the accused need not prove innocence",
+      "choices": [
+        "Both sides present equal evidence",
+        "The state must prove guilt; the accused need not prove innocence",
+        "Guilt is assumed unless the defendant testifies",
+        "Juries decide based on majority feeling"
+      ],
+      "tier": 1,
+      "reason": "Tests a foundational rule-of-law principle derived from English common law."
+    },
+    {
+      "question": "The Athenian democracy of the 5th century BC was limited because it ___?",
+      "answer": "Excluded women, slaves, and non-citizens from political participation",
+      "choices": [
+        "Included all inhabitants equally",
+        "Excluded women, slaves, and non-citizens from political participation",
+        "Was run by a hereditary aristocracy",
+        "Required property qualifications only for the Assembly"
+      ],
+      "tier": 2,
+      "reason": "Tests both the achievement and the limitations of Athenian democracy -- important for understanding the development of democratic ideas."
+    },
+    {
+      "question": "The Roman Senate's role in the Republic was to ___?",
+      "answer": "Advise magistrates, control finances, and direct foreign policy",
+      "choices": [
+        "Directly govern provinces by vote",
+        "Advise magistrates, control finances, and direct foreign policy",
+        "Elect the consuls by popular vote",
+        "Serve as a court of final appeal"
+      ],
+      "tier": 2,
+      "reason": "Tests how the Roman Republic's institutions functioned -- foundational for understanding republican government."
+    },
+    {
+      "question": "The Abolition of the Slave Trade Act (1807) in Britain was historically significant because it ___?",
+      "answer": "Was the first major legal action by a great power to suppress the Atlantic slave trade",
+      "choices": [
+        "Immediately freed all slaves in British colonies",
+        "Was the first major legal action by a great power to suppress the Atlantic slave trade",
+        "Was passed under popular pressure from enslaved people",
+        "Ended slavery throughout the British Empire instantly"
+      ],
+      "tier": 2,
+      "reason": "Tests the significance of British abolition -- a major development in the history of individual rights."
+    },
+    {
+      "question": "William Wilberforce's campaign to abolish the British slave trade succeeded because he argued that ___?",
+      "answer": "Slavery was a moral evil incompatible with Christian and natural rights principles",
+      "choices": [
+        "Slavery was economically unprofitable",
+        "Slavery was a moral evil incompatible with Christian and natural rights principles",
+        "Other nations would gain trade advantages",
+        "The slave trade violated mercantilist theory"
+      ],
+      "tier": 3,
+      "reason": "Tests the moral argument behind abolitionism -- how natural rights theory drove the end of slavery."
+    },
+    {
+      "question": "The Glorious Revolution of 1688 influenced the American founding because it ___?",
+      "answer": "Demonstrated that rulers could be peacefully replaced when they violated the law",
+      "choices": [
+        "Gave Parliament power to tax the colonies",
+        "Demonstrated that rulers could be peacefully replaced when they violated the law",
+        "Established the Church of England as the state church",
+        "Ended religious conflict between Catholics and Protestants"
+      ],
+      "tier": 3,
+      "reason": "Tests the constitutional legacy of the Glorious Revolution -- connects English and American political traditions."
+    },
+    {
+      "question": "The US Constitution's system of checks and balances was designed to prevent ___?",
+      "answer": "Any one branch of government from acquiring tyrannical power",
+      "choices": [
+        "Inefficiency in government administration",
+        "Any one branch of government from acquiring tyrannical power",
+        "States from having independent authority",
+        "Democratic majorities from overturning laws"
+      ],
+      "tier": 1,
+      "reason": "Tests the fundamental purpose of checks and balances -- essential to understanding American constitutional design."
+    },
+    {
+      "question": "The concept of judicial review, established in Marbury v. Madison (1803), means that ___?",
+      "answer": "The Supreme Court can strike down laws that violate the Constitution",
+      "choices": [
+        "Congress can review all executive decisions",
+        "The Supreme Court can strike down laws that violate the Constitution",
+        "The President can override judicial decisions",
+        "All laws must be reviewed before taking effect"
+      ],
+      "tier": 2,
+      "reason": "Tests the origin of judicial review -- a cornerstone of constitutional limited government."
+    },
+    {
+      "question": "The Second Amendment to the US Constitution protects the right to bear arms in the context of ___?",
+      "answer": "A well-regulated militia and the right of the people to keep and bear arms",
+      "choices": [
+        "Hunting and sport shooting only",
+        "A well-regulated militia and the right of the people to keep and bear arms",
+        "Military service requirements only",
+        "Defense against foreign invasion exclusively"
+      ],
+      "tier": 2,
+      "reason": "Tests the text and context of the Second Amendment."
+    },
+    {
+      "question": "The Soviet collectivization of agriculture in the early 1930s caused a famine in Ukraine known as ___?",
+      "answer": "The Holodomor, which killed 3-7 million Ukrainians",
+      "choices": [
+        "A minor food shortage quickly resolved",
+        "The Holodomor, which killed 3-7 million Ukrainians",
+        "A drought disaster unrelated to Soviet policy",
+        "The Ukrainian War, a military conflict"
+      ],
+      "tier": 3,
+      "reason": "Tests knowledge of the Holodomor -- documented evidence that forced collectivization leads to mass starvation."
+    },
+    {
+      "question": "North Korea's communist economy under the Kim dynasty demonstrates that ___?",
+      "answer": "Centrally planned socialist states produce poverty and require mass repression to survive",
+      "choices": [
+        "Isolation from trade is a viable economic model",
+        "Centrally planned socialist states produce poverty and require mass repression to survive",
+        "Nuclear weapons guarantee economic stability",
+        "Communist governments prioritize public welfare"
+      ],
+      "tier": 2,
+      "reason": "Tests documented outcomes of North Korean communism -- a living example of socialist economic failure."
+    },
+    {
+      "question": "The Nuremberg Trials (1945-46) established the important legal principle that ___?",
+      "answer": "'Following orders' does not excuse participation in crimes against humanity",
+      "choices": [
+        "Nations cannot be held responsible for their leaders' acts",
+        "'Following orders' does not excuse participation in crimes against humanity",
+        "Only victorious nations can define war crimes",
+        "International law supersedes all domestic law"
+      ],
+      "tier": 2,
+      "reason": "Tests the key legal principle established at Nuremberg -- important for international law and individual moral responsibility."
+    },
+    {
+      "question": "Freedom of the press is considered essential to liberty because it ___?",
+      "answer": "Allows citizens to hold government accountable by exposing corruption and abuse",
+      "choices": [
+        "Ensures all viewpoints receive equal coverage",
+        "Allows citizens to hold government accountable by exposing corruption and abuse",
+        "Prevents foreign propaganda from entering the country",
+        "Protects government secrets from leaking"
+      ],
+      "tier": 1,
+      "reason": "Tests the functional importance of press freedom -- a key individual right."
+    },
+    {
+      "question": "Property rights are considered foundational to liberty because ___?",
+      "answer": "Without secure property, individuals are dependent on government for their livelihood",
+      "choices": [
+        "Property creates inequality that undermines democracy",
+        "Without secure property, individuals are dependent on government for their livelihood",
+        "Ownership of land is purely an economic matter",
+        "Property rights date only from the Industrial Revolution"
+      ],
+      "tier": 2,
+      "reason": "Tests the connection between property rights and liberty -- foundational to classical liberal political theory."
+    },
+    {
+      "question": "The Warsaw Pact's 1956 crushing of the Hungarian Uprising demonstrated that ___?",
+      "answer": "Communist regimes relied on military force, not popular consent, to remain in power",
+      "choices": [
+        "Hungary was genuinely pro-Soviet",
+        "Communist regimes relied on military force, not popular consent, to remain in power",
+        "NATO failed to defend its allies",
+        "The UN could prevent Soviet aggression"
+      ],
+      "tier": 3,
+      "reason": "Tests the meaning of Soviet intervention in Hungary -- evidence of communist governance by coercion."
+    },
+    {
+      "question": "The Solidarity trade union movement in Poland was significant because it ___?",
+      "answer": "Was the first mass independent labor movement that communist authorities could not permanently suppress",
+      "choices": [
+        "Won immediate free elections in 1981",
+        "Was the first mass independent labor movement that communist authorities could not permanently suppress",
+        "Was funded entirely by the CIA",
+        "Led to immediate Soviet military withdrawal"
+      ],
+      "tier": 3,
+      "reason": "Tests the significance of Solidarity -- a key moment in the fall of communism driven by civil society."
+    },
+    {
+      "question": "The trial by jury system, rooted in English common law, protects individuals by ___?",
+      "answer": "Requiring that a defendant's peers, not government officials alone, determine guilt",
+      "choices": [
+        "Making convictions faster and more efficient",
+        "Requiring that a defendant's peers, not government officials alone, determine guilt",
+        "Ensuring professional judges decide all cases",
+        "Preventing appeals to higher courts"
+      ],
+      "tier": 2,
+      "reason": "Tests the purpose of trial by jury as a protection against government overreach."
+    },
+    {
+      "question": "The US Bill of Rights was added to the Constitution in 1791 primarily to ___?",
+      "answer": "Explicitly protect individual liberties from federal government overreach",
+      "choices": [
+        "Give states more power than the federal government",
+        "Explicitly protect individual liberties from federal government overreach",
+        "Establish the separation of church and state only",
+        "Prevent future constitutional amendments"
+      ],
+      "tier": 1,
+      "reason": "Tests the purpose of the Bill of Rights -- not just what year it was added but WHY."
+    },
+    {
+      "question": "The Dred Scott decision (1857) was later overturned because it ___?",
+      "answer": "Contradicted the principle that all persons possess natural rights regardless of race",
+      "choices": [
+        "Was poorly argued in the original case",
+        "Contradicted the principle that all persons possess natural rights regardless of race",
+        "Was invalidated by the Supreme Court in 1870",
+        "Applied only to free states, not territories"
+      ],
+      "tier": 3,
+      "reason": "Tests the deeper principle behind the overturning of Dred Scott -- natural rights applying to all persons."
+    },
+    {
+      "question": "The Reconstruction Amendments (13th, 14th, 15th) after the Civil War were designed to ___?",
+      "answer": "Extend constitutional protections of liberty and citizenship to formerly enslaved people",
+      "choices": [
+        "Punish the Southern states economically",
+        "Extend constitutional protections of liberty and citizenship to formerly enslaved people",
+        "Give Congress authority over the states permanently",
+        "Establish federal control of education"
+      ],
+      "tier": 2,
+      "reason": "Tests the purpose of the Reconstruction Amendments as an expansion of natural rights."
+    },
+    {
+      "question": "The American founding principle of 'limited government' means that ___?",
+      "answer": "Government powers are enumerated and bounded by law; the state cannot do whatever it wishes",
+      "choices": [
+        "Government should be as small as possible in all cases",
+        "Government powers are enumerated and bounded by law; the state cannot do whatever it wishes",
+        "Military force limits what government can do",
+        "Federal government is limited to foreign affairs"
+      ],
+      "tier": 2,
+      "reason": "Tests the concept of limited government -- a core American founding principle."
+    },
+    {
+      "question": "George Washington's Farewell Address warned against ___?",
+      "answer": "Permanent foreign alliances and partisan faction that could destroy the republic",
+      "choices": [
+        "Expansion of slavery in new territories",
+        "Permanent foreign alliances and partisan faction that could destroy the republic",
+        "Excessive taxation by Congress",
+        "The power of the judiciary"
+      ],
+      "tier": 3,
+      "reason": "Tests the content and significance of Washington's Farewell Address."
+    },
+    {
+      "question": "The Chinese Cultural Revolution's campaign against 'the Four Olds' targeted ___?",
+      "answer": "Old customs, culture, habits, and ideas -- essentially Chinese civilization itself",
+      "choices": [
+        "Four political parties opposing the communists",
+        "Old customs, culture, habits, and ideas -- essentially Chinese civilization itself",
+        "Four foreign powers with influence in China",
+        "Old military commanders from the civil war"
+      ],
+      "tier": 3,
+      "reason": "Tests the specific ideological content of the Cultural Revolution -- how Maoist collectivism attacked civilization."
+    },
+    {
+      "question": "The Enlightenment philosophers of the 18th century argued that government should be based on ___?",
+      "answer": "Reason, natural rights, and the consent of the governed",
+      "choices": [
+        "Divine right of kings and tradition",
+        "Reason, natural rights, and the consent of the governed",
+        "Military strength and conquest",
+        "The wisdom of religious authorities"
+      ],
+      "tier": 2,
+      "reason": "Tests the core Enlightenment political philosophy -- foundational to Western liberal democracy."
+    },
+    {
+      "question": "The US Declaration of Independence asserted that when government fails to protect natural rights, citizens have the right to ___?",
+      "answer": "Alter or abolish it and institute new government",
+      "choices": [
+        "Petition parliament for redress only",
+        "Alter or abolish it and institute new government",
+        "Accept tyranny as God's will",
+        "Seek arbitration from neutral nations"
+      ],
+      "tier": 2,
+      "reason": "Tests the revolutionary right articulated in the Declaration -- grounded in Lockean natural rights theory."
+    },
+    {
+      "question": "Venezuela's socialist economic policies under Chavez and Maduro resulted in ___?",
+      "answer": "Hyperinflation, food shortages, and mass emigration despite vast oil wealth",
+      "choices": [
+        "A prosperous model for Latin American development",
+        "Hyperinflation, food shortages, and mass emigration despite vast oil wealth",
+        "Equitable distribution that eliminated poverty",
+        "Moderate economic difficulties quickly resolved"
+      ],
+      "tier": 2,
+      "reason": "Tests documented outcomes of 21st century socialist economics in Venezuela."
+    },
+    {
+      "question": "The US Supreme Court case Brown v. Board of Education (1954) ruled that ___?",
+      "answer": "Racial segregation in public schools violated the Equal Protection Clause",
+      "choices": [
+        "States could maintain separate but equal schools",
+        "Racial segregation in public schools violated the Equal Protection Clause",
+        "Federal schools must be integrated but state schools need not be",
+        "Only graduate schools were covered by the ruling"
+      ],
+      "tier": 2,
+      "reason": "Tests the content and significance of Brown v. Board -- important civil rights history."
+    },
+    {
+      "question": "The Nuremberg Laws (1935) in Nazi Germany stripped Jews of ___?",
+      "answer": "German citizenship and civil rights based solely on racial classification",
+      "choices": [
+        "Economic assets and property only",
+        "German citizenship and civil rights based solely on racial classification",
+        "Freedom of religion but not civil rights",
+        "Rights to travel and own businesses only"
+      ],
+      "tier": 3,
+      "reason": "Tests the content of Nazi racial laws -- how totalitarian governments systematically strip rights from groups."
+    },
+    {
+      "question": "Alexis de Tocqueville warned in 'Democracy in America' that democracy faces a danger from ___?",
+      "answer": "The 'tyranny of the majority' suppressing minority rights and individual liberty",
+      "choices": [
+        "Military coups by professional armies",
+        "The 'tyranny of the majority' suppressing minority rights and individual liberty",
+        "Economic inequality destroying civic participation",
+        "Foreign influence on democratic elections"
+      ],
+      "tier": 4,
+      "reason": "Tests Tocqueville's crucial insight about democratic dangers -- relevant to Western political philosophy."
+    },
+    {
+      "question": "The concept of 'natural law' in Western political philosophy holds that ___?",
+      "answer": "There are universal moral principles discoverable by reason that no government can legitimately violate",
+      "choices": [
+        "Laws of nature determine political power",
+        "There are universal moral principles discoverable by reason that no government can legitimately violate",
+        "All law comes from the will of the people",
+        "Natural selection determines which governments survive"
+      ],
+      "tier": 3,
+      "reason": "Tests natural law theory -- foundational to understanding why individual rights are inalienable."
+    },
+    {
+      "question": "The Petition of Right (1628) in England established that ___?",
+      "answer": "The king could not imprison subjects without cause or levy taxes without Parliament",
+      "choices": [
+        "Parliament could remove the king by vote",
+        "The king could not imprison subjects without cause or levy taxes without Parliament",
+        "Freedom of religion was guaranteed for all",
+        "Nobility had the right to trial by their peers"
+      ],
+      "tier": 3,
+      "reason": "Tests the Petition of Right as a step in developing English constitutional limits on royal power."
+    },
+    {
+      "question": "The Federalist No. 51 argued that 'ambition must be made to counteract ambition' as a reason for ___?",
+      "answer": "Separation of powers and checks and balances in the Constitution",
+      "choices": [
+        "Having a strong military",
+        "Separation of powers and checks and balances in the Constitution",
+        "Competitive elections between parties",
+        "Federalism with strong state governments"
+      ],
+      "tier": 4,
+      "reason": "Tests the specific argument in Federalist 51 -- one of the most important articulations of why constitutional checks are needed."
+    },
+    {
+      "question": "The Bolshevik Revolution of 1917 promised 'peace, land, and bread' but delivered ___?",
+      "answer": "Continued war, collectivized land, and eventual mass famine",
+      "choices": [
+        "Immediate peace and prosperity",
+        "Continued war, collectivized land, and eventual mass famine",
+        "Democratic elections within two years",
+        "Land redistribution that improved living standards"
+      ],
+      "tier": 3,
+      "reason": "Tests the gap between communist promises and outcomes -- documented historical consequences."
+    },
+    {
+      "question": "The 4th Amendment to the US Constitution protects against ___?",
+      "answer": "Unreasonable searches and seizures without a warrant",
+      "choices": [
+        "Cruel and unusual punishment",
+        "Unreasonable searches and seizures without a warrant",
+        "Self-incrimination in criminal trials",
+        "Double jeopardy for the same crime"
+      ],
+      "tier": 2,
+      "reason": "Tests an essential individual right in the Bill of Rights."
+    },
+    {
+      "question": "The Gettysburg Address argued that the Civil War was a test of whether ___?",
+      "answer": "A nation dedicated to equality and self-government can long endure",
+      "choices": [
+        "Slavery was economically sustainable",
+        "A nation dedicated to equality and self-government can long endure",
+        "Federal power outweighs states' rights",
+        "Military victory justifies any means"
+      ],
+      "tier": 2,
+      "reason": "Tests the conceptual argument of the Gettysburg Address rather than just who delivered it."
+    },
+    {
+      "question": "The Thirty Years' War (1618-1648) began as a conflict over ___?",
+      "answer": "Religious freedom for Protestants in the Holy Roman Empire",
+      "choices": [
+        "Control of the Rhine River trade",
+        "Religious freedom for Protestants in the Holy Roman Empire",
+        "The Spanish succession to the throne",
+        "Control of the Baltic Sea"
+      ],
+      "tier": 3,
+      "reason": "Tests the religious origins of the Thirty Years' War -- connects to the Reformation and individual conscience theme."
+    },
+    {
+      "question": "The Peace of Westphalia (1648) was historically significant because it ___?",
+      "answer": "Established the principle of state sovereignty in international relations",
+      "choices": [
+        "Ended all religious conflict in Europe permanently",
+        "Established the principle of state sovereignty in international relations",
+        "Created the first international court",
+        "Gave Protestant states economic advantages"
+      ],
+      "tier": 3,
+      "reason": "Tests the lasting significance of Westphalia beyond just ending the Thirty Years' War."
+    },
+    {
+      "question": "The Boston Tea Party (1773) was a protest against ___?",
+      "answer": "Taxation by Parliament without colonial representation",
+      "choices": [
+        "British trade monopolies on all goods",
+        "Taxation by Parliament without colonial representation",
+        "The quartering of British soldiers",
+        "British restrictions on colonial manufacturing"
+      ],
+      "tier": 1,
+      "reason": "Tests the principle behind the Boston Tea Party rather than just the year."
+    },
+    {
+      "question": "The English Civil War (1642-1651) was fought over the question of ___?",
+      "answer": "Whether Parliament or the King held supreme authority",
+      "choices": [
+        "Catholic vs. Protestant religion only",
+        "Whether Parliament or the King held supreme authority",
+        "Control of the American colonies",
+        "English expansion into Scotland"
+      ],
+      "tier": 2,
+      "reason": "Tests the constitutional stakes of the English Civil War."
+    },
+    {
+      "question": "Athenian democracy under Cleisthenes introduced what key reform that expanded citizen participation?",
+      "answer": "Division into tribes by geography rather than hereditary clan, breaking aristocratic power",
+      "choices": [
+        "Payment for jury service",
+        "Division into tribes by geography rather than hereditary clan, breaking aristocratic power",
+        "Direct election of generals",
+        "Universal male suffrage for the first time"
+      ],
+      "tier": 4,
+      "reason": "Tests the specific institutional innovation that made Athenian democracy more genuinely democratic."
+    },
+    {
+      "question": "Pericles described Athenian democracy in his Funeral Oration as a government that ___?",
+      "answer": "Favors the many, not the few, and advances citizens based on merit",
+      "choices": [
+        "Rules through military strength alone",
+        "Favors the many, not the few, and advances citizens based on merit",
+        "Requires all citizens to serve as soldiers",
+        "Derives authority from divine right"
+      ],
+      "tier": 3,
+      "reason": "Tests Pericles's articulation of democratic ideals -- one of the foundational statements of democratic philosophy."
+    },
+    {
+      "question": "The Roman Republic's constitution was notable for having ___?",
+      "answer": "Two consuls with equal power and the ability to veto each other",
+      "choices": [
+        "A hereditary monarchy as head of state",
+        "Two consuls with equal power and the ability to veto each other",
+        "A single dictator elected for life",
+        "A Senate with no real power"
+      ],
+      "tier": 3,
+      "reason": "Tests the specific institutional mechanism Romans used to prevent one-man rule."
+    },
+    {
+      "question": "The concept of veto power originated in the Roman Republic when tribunes could ___?",
+      "answer": "Block actions of the Senate or consuls to protect plebeian interests",
+      "choices": [
+        "Propose new laws for Senate approval",
+        "Block actions of the Senate or consuls to protect plebeian interests",
+        "Command the army in emergencies",
+        "Appoint consuls from the patrician class"
+      ],
+      "tier": 3,
+      "reason": "Tests the Roman origin of the veto as a check on power."
+    },
+    {
+      "question": "The Stoic philosophy of ancient Rome argued that natural law applied to ___?",
+      "answer": "All human beings equally, regardless of citizenship or social status",
+      "choices": [
+        "Roman citizens only",
+        "All human beings equally, regardless of citizenship or social status",
+        "Only the educated and virtuous",
+        "Those who followed Roman customs"
+      ],
+      "tier": 4,
+      "reason": "Tests Stoic natural law theory -- important ancestor of universal human rights thinking."
+    },
+    {
+      "question": "Frederick Douglass's autobiography was significant because it ___?",
+      "answer": "Demonstrated the humanity and intellect of enslaved people, undercutting arguments for slavery",
+      "choices": [
+        "Described successful slave rebellions",
+        "Demonstrated the humanity and intellect of enslaved people, undercutting arguments for slavery",
+        "Provided a blueprint for Underground Railroad routes",
+        "Argued for immediate violent revolution"
+      ],
+      "tier": 3,
+      "reason": "Tests the significance of Douglass's memoir in the abolitionist movement."
+    },
+    {
+      "question": "The Underground Railroad was significant as a historical institution because it ___?",
+      "answer": "Helped enslaved people escape to freedom in the North and Canada",
+      "choices": [
+        "Was a legal means of purchasing freedom",
+        "Helped enslaved people escape to freedom in the North and Canada",
+        "Transported supplies to slave states",
+        "Was an early public transit system in Northern cities"
+      ],
+      "tier": 1,
+      "reason": "Tests knowledge of the Underground Railroad as a resistance institution."
+    },
+    {
+      "question": "The Fugitive Slave Act of 1850 was controversial in the North because it ___?",
+      "answer": "Forced Northern citizens to assist in capturing and returning escaped slaves",
+      "choices": [
+        "Freed slaves who reached Northern states",
+        "Forced Northern citizens to assist in capturing and returning escaped slaves",
+        "Extended slavery into all Western territories",
+        "Allowed free Black citizens to be re-enslaved"
+      ],
+      "tier": 3,
+      "reason": "Tests the moral stakes of the Fugitive Slave Act -- important for understanding growing Northern resistance to slavery."
+    },
+    {
+      "question": "The abolitionist movement in America argued primarily that slavery was wrong because ___?",
+      "answer": "All people possess natural rights that cannot be stripped by law or custom",
+      "choices": [
+        "It was economically inefficient for the South",
+        "All people possess natural rights that cannot be stripped by law or custom",
+        "The Bible explicitly condemned slavery",
+        "It violated international trade agreements"
+      ],
+      "tier": 2,
+      "reason": "Tests the natural rights argument at the core of abolitionism."
+    },
+    {
+      "question": "The Monroe Doctrine (1823) was significant because it ___?",
+      "answer": "Declared the Western Hemisphere off-limits to further European colonization",
+      "choices": [
+        "Formed a military alliance with Latin American nations",
+        "Declared the Western Hemisphere off-limits to further European colonization",
+        "Prohibited the slave trade in the Americas",
+        "Granted citizenship to Latin American immigrants"
+      ],
+      "tier": 2,
+      "reason": "Tests the content and significance of the Monroe Doctrine rather than just its date."
+    },
+    {
+      "question": "The Louisiana Purchase of 1803 was controversial because ___?",
+      "answer": "The Constitution did not explicitly give the President power to purchase territory",
+      "choices": [
+        "France objected to the low price offered",
+        "The Constitution did not explicitly give the President power to purchase territory",
+        "Congress refused to fund the purchase",
+        "Britain claimed territorial rights to the land"
+      ],
+      "tier": 3,
+      "reason": "Tests the constitutional debate over the Louisiana Purchase -- relevant to strict vs. loose construction of federal power."
+    },
+    {
+      "question": "Solon's legal reforms in Athens (594 BC) were significant because they ___?",
+      "answer": "Cancelled debt slavery and opened courts to all citizens, not just nobles",
+      "choices": [
+        "Established full democracy with universal voting",
+        "Cancelled debt slavery and opened courts to all citizens, not just nobles",
+        "Created the office of archon for life",
+        "Unified Athens militarily against Sparta"
+      ],
+      "tier": 4,
+      "reason": "Tests Solon's specific reforms as early steps toward individual rights and rule of law."
+    },
+    {
+      "question": "Draco's code of laws in ancient Athens (621 BC) was historically notable because ___?",
+      "answer": "It was the first written legal code in Athens, replacing arbitrary noble judgment",
+      "choices": [
+        "It was exceptionally lenient by ancient standards",
+        "It was the first written legal code in Athens, replacing arbitrary noble judgment",
+        "It established democracy for all citizens",
+        "It banned slavery throughout Attica"
+      ],
+      "tier": 4,
+      "reason": "Tests the significance of written law vs. arbitrary judgment -- foundational to rule of law."
+    },
+    {
+      "question": "The Magna Carta's importance to future generations was that it ___?",
+      "answer": "Established the precedent that rulers are bound by law, not above it",
+      "choices": [
+        "Created the English Parliament",
+        "Established the precedent that rulers are bound by law, not above it",
+        "Gave all Englishmen equal rights immediately",
+        "Ended feudalism in England"
+      ],
+      "tier": 2,
+      "reason": "Tests the lasting significance of the Magna Carta -- additional question for a key topic."
+    },
+    {
+      "question": "The principle of 'separation of church and state' in the First Amendment means that ___?",
+      "answer": "Government cannot establish an official religion or prohibit free religious practice",
+      "choices": [
+        "Religion is banned from all public spaces",
+        "Government cannot establish an official religion or prohibit free religious practice",
+        "Churches cannot comment on political matters",
+        "All tax exemptions for religion are unconstitutional"
+      ],
+      "tier": 2,
+      "reason": "Tests the Establishment Clause -- a foundational American liberty."
+    },
+    {
+      "question": "The Great Leap Forward's failure in China (1958-1962) was caused primarily by ___?",
+      "answer": "Forced collectivization of farms and unrealistic production quotas that destroyed agriculture",
+      "choices": [
+        "A series of natural droughts and floods",
+        "Forced collectivization of farms and unrealistic production quotas that destroyed agriculture",
+        "US economic sanctions blocking food imports",
+        "The costs of the Korean War"
+      ],
+      "tier": 3,
+      "reason": "Tests the cause of the Great Leap Forward famine -- how socialist collectivization policies directly caused mass starvation."
+    },
+    {
+      "question": "Czechoslovakia's Velvet Revolution of 1989 succeeded with little violence because ___?",
+      "answer": "The communist regime had lost popular legitimacy and Soviet support had collapsed",
+      "choices": [
+        "NATO threatened military intervention",
+        "The communist regime had lost popular legitimacy and Soviet support had collapsed",
+        "The army sided with the protesters immediately",
+        "Gorbachev ordered the Czech government to resign"
+      ],
+      "tier": 4,
+      "reason": "Tests the causes of the Velvet Revolution's success -- the internal collapse of communist legitimacy."
+    },
+    {
+      "question": "Margaret Thatcher's economic reforms in Britain (1979-1990) reversed ___?",
+      "answer": "Decades of socialist nationalization and union power that had produced economic stagnation",
+      "choices": [
+        "The effects of World War II reconstruction",
+        "Decades of socialist nationalization and union power that had produced economic stagnation",
+        "The British Empire's decline in Asia",
+        "Margaret Thatcher increased state control of industry"
+      ],
+      "tier": 3,
+      "reason": "Tests the content of Thatcher's reforms and what they reversed -- free market economics vs. socialist nationalizations."
+    },
+    {
+      "question": "The Iron Curtain, as Churchill described it in 1946, divided Europe between ___?",
+      "answer": "Free Western democracies and Soviet-dominated communist dictatorships",
+      "choices": [
+        "Wealthy and poor nations in Europe",
+        "Free Western democracies and Soviet-dominated communist dictatorships",
+        "NATO and neutral nations",
+        "Protestant and Catholic countries"
+      ],
+      "tier": 2,
+      "reason": "Tests Churchill's Iron Curtain speech and what it described."
+    },
+    {
+      "question": "Ronald Reagan's 'tear down this wall' speech at the Berlin Wall (1987) called for ___?",
+      "answer": "The Soviet Union to dismantle the physical symbol of communist oppression",
+      "choices": [
+        "A military assault on East Germany",
+        "The Soviet Union to dismantle the physical symbol of communist oppression",
+        "NATO to expand into Eastern Europe",
+        "A nuclear arms reduction treaty"
+      ],
+      "tier": 2,
+      "reason": "Tests the content and significance of Reagan's Berlin speech."
+    },
+    {
+      "question": "The US Civil Rights Movement of the 1950s-60s succeeded primarily through ___?",
+      "answer": "Nonviolent protest, legal challenges, and appealing to constitutional principles",
+      "choices": [
+        "Armed resistance against segregationist police",
+        "Nonviolent protest, legal challenges, and appealing to constitutional principles",
+        "Economic boycotts that bankrupted Southern states",
+        "International pressure from the United Nations"
+      ],
+      "tier": 2,
+      "reason": "Tests the strategy of the Civil Rights Movement -- nonviolent constitutionalism vs. alternatives."
+    },
+    {
+      "question": "Martin Luther King Jr.'s 'I Have a Dream' speech appealed to ___?",
+      "answer": "The founding ideals of the Declaration of Independence as unfulfilled promises",
+      "choices": [
+        "Socialist redistribution of wealth",
+        "The founding ideals of the Declaration of Independence as unfulfilled promises",
+        "International human rights law",
+        "African American cultural nationalism"
+      ],
+      "tier": 2,
+      "reason": "Tests the intellectual and moral content of King's speech -- grounded in American founding principles."
+    },
+    {
+      "question": "The US Supreme Court's role in protecting individual rights is based on ___?",
+      "answer": "Its power to strike down government actions that violate the Constitution",
+      "choices": [
+        "Popular elections of justices",
+        "Its power to strike down government actions that violate the Constitution",
+        "Presidential approval of all court decisions",
+        "International human rights treaties"
+      ],
+      "tier": 2,
+      "reason": "Tests judicial review as a protection of individual rights against government overreach."
+    },
+    {
+      "question": "The fall of communism in Eastern Europe (1989-1991) was preceded by ___?",
+      "answer": "Economic stagnation, political repression, and citizens demanding freedom",
+      "choices": [
+        "Military defeat by NATO forces",
+        "Economic stagnation, political repression, and citizens demanding freedom",
+        "Nuclear accidents that discredited the regimes",
+        "A coordinated American plan to overthrow Soviet states"
+      ],
+      "tier": 2,
+      "reason": "Tests why communism fell -- internal failure driven by economic and political repression."
+    },
+    {
+      "question": "George Kennan's 'Long Telegram' (1946) argued that the Soviet Union was driven by ___?",
+      "answer": "Ideological hostility to capitalism that made it fundamentally expansionist",
+      "choices": [
+        "Defensive fears of German resurgence",
+        "Ideological hostility to capitalism that made it fundamentally expansionist",
+        "Traditional Russian nationalism, not Marxist ideology",
+        "A desire for Western trade and economic cooperation"
+      ],
+      "tier": 4,
+      "reason": "Tests the content of Kennan's containment analysis -- what made the USSR a permanent threat."
+    },
+    {
+      "question": "The Truman Doctrine (1947) marked a shift in US foreign policy by committing to ___?",
+      "answer": "Actively support free peoples resisting communist subversion or outside pressure",
+      "choices": [
+        "Isolationism from European affairs",
+        "Actively support free peoples resisting communist subversion or outside pressure",
+        "Military alliances with all Western European nations",
+        "Economic aid to rebuild all war-damaged nations"
+      ],
+      "tier": 3,
+      "reason": "Tests the content of the Truman Doctrine -- what it actually committed the US to."
+    },
+    {
+      "question": "The Marshall Plan's goal of rebuilding European economies after WWII was partly motivated by ___?",
+      "answer": "The belief that prosperous democracies would resist communist appeal",
+      "choices": [
+        "Repayment of American war loans to Europe",
+        "The belief that prosperous democracies would resist communist appeal",
+        "Creating markets for American exports only",
+        "Punishing Germany by rebuilding its competitors"
+      ],
+      "tier": 3,
+      "reason": "Tests the strategic motivation behind the Marshall Plan -- democracy and prosperity as bulwarks against communism."
+    },
+    {
+      "question": "The Berlin Airlift (1948-49) was the Western response to ___?",
+      "answer": "The Soviet blockade of West Berlin to force the West out",
+      "choices": [
+        "A shortage of food in Berlin after WWII",
+        "The Soviet blockade of West Berlin to force the West out",
+        "East Germany closing its borders",
+        "A request from Berlin's citizens for food aid"
+      ],
+      "tier": 2,
+      "reason": "Tests the cause and significance of the Berlin Airlift."
+    },
+    {
+      "question": "The formation of NATO in 1949 was significant because it ___?",
+      "answer": "Created a collective defense commitment: an attack on one is an attack on all",
+      "choices": [
+        "Ended all military rivalries in Europe",
+        "Created a collective defense commitment: an attack on one is an attack on all",
+        "Allowed the US to occupy European territory",
+        "Replaced the United Nations as a peacekeeping body"
+      ],
+      "tier": 2,
+      "reason": "Tests the specific security commitment NATO created rather than just when it was formed."
+    },
+    {
+      "question": "The Hungarian Uprising of 1956 was significant because the West's failure to help showed ___?",
+      "answer": "That nuclear deterrence limited Western ability to liberate Soviet-controlled nations",
+      "choices": [
+        "That Hungary was not important to Western interests",
+        "That nuclear deterrence limited Western ability to liberate Soviet-controlled nations",
+        "That NATO was too weak to confront the USSR",
+        "That the US supported Soviet control of Eastern Europe"
+      ],
+      "tier": 4,
+      "reason": "Tests the Cold War lesson of Hungary 1956 -- the constraint that nuclear weapons placed on Western action."
+    },
+    {
+      "question": "The Cuban Missile Crisis of 1962 ended when ___?",
+      "answer": "The USSR agreed to remove missiles from Cuba; the US pledged not to invade Cuba",
+      "choices": [
+        "The US invaded Cuba and removed the missiles",
+        "The USSR agreed to remove missiles from Cuba; the US pledged not to invade Cuba",
+        "The United Nations imposed sanctions on both nations",
+        "Kennedy and Khrushchev met in person to negotiate"
+      ],
+      "tier": 2,
+      "reason": "Tests how the Cuban Missile Crisis was resolved -- the actual terms of the agreement."
+    },
+    {
+      "question": "The containment strategy in the Cold War, articulated by George Kennan, held that ___?",
+      "answer": "Soviet expansion should be blocked at every point until communism collapsed from within",
+      "choices": [
+        "The US should liberate Soviet-controlled countries by force",
+        "Soviet expansion should be blocked at every point until communism collapsed from within",
+        "Military deterrence was sufficient without political engagement",
+        "Economic aid alone could weaken the Soviet Union"
+      ],
+      "tier": 3,
+      "reason": "Tests the content of the containment doctrine -- what Kennan actually argued."
+    },
+    {
+      "question": "The Tiananmen Square massacre (1989) demonstrated that ___?",
+      "answer": "The Chinese Communist Party would use lethal force to suppress democratic demands",
+      "choices": [
+        "China was moving toward democratic reform",
+        "The Chinese Communist Party would use lethal force to suppress democratic demands",
+        "Economic growth would automatically produce political freedom",
+        "Gorbachev's reforms influenced Chinese leadership"
+      ],
+      "tier": 2,
+      "reason": "Tests the significance of Tiananmen as evidence of communist regimes' response to democratic demands."
+    },
+    {
+      "question": "The Emancipation Proclamation (1863) was limited in scope because it ___?",
+      "answer": "Freed slaves only in Confederate states, not in border states loyal to the Union",
+      "choices": [
+        "Required approval from each state to take effect",
+        "Freed slaves only in Confederate states, not in border states loyal to the Union",
+        "Only freed slaves over the age of 21",
+        "Was temporary and expired after the war"
+      ],
+      "tier": 3,
+      "reason": "Tests the actual legal limits of the Emancipation Proclamation -- important distinction for understanding the 13th Amendment."
+    },
+    {
+      "question": "The Kansas-Nebraska Act of 1854 inflamed sectional tensions because it ___?",
+      "answer": "Repealed the Missouri Compromise, potentially allowing slavery to spread north",
+      "choices": [
+        "Banned slavery in new territories for the first time",
+        "Repealed the Missouri Compromise, potentially allowing slavery to spread north",
+        "Admitted Kansas as a slave state over Northern objections",
+        "Gave Southern states veto power over territorial law"
+      ],
+      "tier": 3,
+      "reason": "Tests why Kansas-Nebraska was so divisive -- the repeal of the Missouri Compromise."
+    },
+    {
+      "question": "The Articles of Confederation (1781-1789) failed as a governing document because ___?",
+      "answer": "They gave Congress no power to tax or enforce laws on states",
+      "choices": [
+        "They created too powerful a central government",
+        "They gave Congress no power to tax or enforce laws on states",
+        "They excluded the Southern states from representation",
+        "They required unanimous agreement to pass any law"
+      ],
+      "tier": 3,
+      "reason": "Tests why the Articles of Confederation were replaced -- relevant to understanding the need for constitutional government."
+    },
+    {
+      "question": "The Three-Fifths Compromise in the original US Constitution ___?",
+      "answer": "Counted enslaved people as 3/5 of a person for congressional representation",
+      "choices": [
+        "Required that 3/5 of the population approve any law",
+        "Counted enslaved people as 3/5 of a person for congressional representation",
+        "Allowed slavery in 3/5 of US territory",
+        "Required 3/5 of states to ratify amendments"
+      ],
+      "tier": 3,
+      "reason": "Tests knowledge of this morally compromised constitutional provision -- important for understanding slavery's political entrenchment."
+    },
+    {
+      "question": "John Adams's defense of British soldiers after the Boston Massacre demonstrated ___?",
+      "answer": "The principle that even unpopular defendants deserve a fair trial under rule of law",
+      "choices": [
+        "Adams supported British colonial rule",
+        "The principle that even unpopular defendants deserve a fair trial under rule of law",
+        "The Boston Massacre was justified by the soldiers",
+        "Colonial courts could fairly try British soldiers"
+      ],
+      "tier": 3,
+      "reason": "Tests the rule of law principle illustrated by Adams's controversial defense."
+    },
+    {
+      "question": "The Enlightenment thinker Jean-Jacques Rousseau's concept of the 'general will' was dangerous because ___?",
+      "answer": "It could justify overriding individual rights in the name of collective 'virtue'",
+      "choices": [
+        "It was too individualistic to build a nation",
+        "It could justify overriding individual rights in the name of collective 'virtue'",
+        "It required religious justification for all laws",
+        "It gave too much power to elected representatives"
+      ],
+      "tier": 4,
+      "reason": "Tests Rousseau's 'general will' concept and its role in justifying the French Revolutionary Terror."
+    },
+    {
+      "question": "The phrase 'inalienable rights' in the Declaration of Independence means that ___?",
+      "answer": "These rights cannot be given away or taken by any government; they are inherent to being human",
+      "choices": [
+        "Rights that can only be changed by constitutional amendment",
+        "These rights cannot be given away or taken by any government; they are inherent to being human",
+        "Rights that apply only within US territory",
+        "Rights granted by the government that can be revoked for crimes"
+      ],
+      "tier": 2,
+      "reason": "Tests the meaning of 'inalienable rights' -- foundational to natural rights philosophy."
+    },
+    {
+      "question": "The Soviet Union's use of 'show trials' in the 1930s Purges was designed to ___?",
+      "answer": "Force confessions from innocent people to justify political executions",
+      "choices": [
+        "Provide fair public trials for accused traitors",
+        "Force confessions from innocent people to justify political executions",
+        "Demonstrate Soviet legal superiority over Western systems",
+        "Expose genuine foreign spies in the party"
+      ],
+      "tier": 3,
+      "reason": "Tests the purpose of Stalinist show trials -- how totalitarian regimes manipulate law to destroy political opponents."
+    },
+    {
+      "question": "The American founding doctrine of 'natural rights' holds that rights are ___?",
+      "answer": "Pre-political, inherent to humans by nature, and not granted by government",
+      "choices": [
+        "Created by democratically elected legislatures",
+        "Pre-political, inherent to humans by nature, and not granted by government",
+        "Based on tradition and historical custom only",
+        "Granted by the Constitution and laws"
+      ],
+      "tier": 3,
+      "reason": "Tests the foundational distinction between natural rights and government-granted rights."
+    },
+    {
+      "question": "The Civil Rights Act of 1964 prohibited discrimination based on ___?",
+      "answer": "Race, color, religion, sex, or national origin in employment and public places",
+      "choices": [
+        "Race and religion only",
+        "Race, color, religion, sex, or national origin in employment and public places",
+        "Race alone in voting rights",
+        "Economic class and educational background"
+      ],
+      "tier": 2,
+      "reason": "Tests the content of the Civil Rights Act rather than just its year."
+    },
+    {
+      "question": "The US Senate's rejection of the Treaty of Versailles in 1919 was based on opposition to ___?",
+      "answer": "The League of Nations potentially committing the US to wars without Congressional approval",
+      "choices": [
+        "The reparations imposed on Germany as too harsh",
+        "The League of Nations potentially committing the US to wars without Congressional approval",
+        "The partition of the Ottoman Empire",
+        "The lack of punishment for Britain and France"
+      ],
+      "tier": 3,
+      "reason": "Tests why the Senate rejected Versailles -- the constitutional concern about war powers."
+    },
+    {
+      "question": "Winston Churchill's 'Iron Curtain' speech (1946) was significant because it ___?",
+      "answer": "First publicly named the Soviet division of Europe and called for Western unity against it",
+      "choices": [
+        "Announced British nuclear weapons",
+        "First publicly named the Soviet division of Europe and called for Western unity against it",
+        "Proposed the Marshall Plan for European recovery",
+        "Called for a military alliance against the USSR"
+      ],
+      "tier": 3,
+      "reason": "Tests the significance of Churchill's Fulton speech -- the first major public articulation of the Cold War."
+    },
+    {
+      "question": "The 5th Amendment's protection against self-incrimination means that ___?",
+      "answer": "No person can be forced to testify against themselves in a criminal case",
+      "choices": [
+        "Defendants must testify if called by the prosecution",
+        "No person can be forced to testify against themselves in a criminal case",
+        "Evidence obtained by torture is admissible",
+        "The government need not prove motive"
+      ],
+      "tier": 2,
+      "reason": "Tests the 5th Amendment's self-incrimination clause -- a fundamental individual right."
+    },
+    {
+      "question": "The Reconstruction period (1865-1877) after the Civil War failed to protect Black civil rights because ___?",
+      "answer": "Federal enforcement ended and Southern states imposed Jim Crow laws",
+      "choices": [
+        "The 13th Amendment was not fully ratified",
+        "Federal enforcement ended and Southern states imposed Jim Crow laws",
+        "Congress refused to pass civil rights legislation",
+        "Lincoln's assassination reversed all progress"
+      ],
+      "tier": 3,
+      "reason": "Tests why Reconstruction failed -- the withdrawal of federal protection and rise of Jim Crow."
+    },
+    {
+      "question": "The Dawes Plan of 1924 restructured German reparations payments in order to ___?",
+      "answer": "Stabilize the German economy and prevent political radicalism from spreading",
+      "choices": [
+        "Increase the total amount Germany owed",
+        "Stabilize the German economy and prevent political radicalism from spreading",
+        "Punish Germany further for starting WWI",
+        "Fund French reconstruction of the Rhineland"
+      ],
+      "tier": 4,
+      "reason": "Tests WHY the Dawes Plan was created -- connecting economic policy to political stability."
+    },
+    {
+      "question": "The Kellogg-Briand Pact (1928), which outlawed war, failed because ___?",
+      "answer": "It had no enforcement mechanism; nations that violated it faced no consequences",
+      "choices": [
+        "Most nations refused to sign it",
+        "It had no enforcement mechanism; nations that violated it faced no consequences",
+        "It was invalidated by the Treaty of Versailles",
+        "The League of Nations rejected it"
+      ],
+      "tier": 4,
+      "reason": "Tests the lesson of the Kellogg-Briand Pact -- why idealistic agreements fail without enforcement."
+    },
+    {
+      "question": "The Atlantic Charter (1941) signed by Roosevelt and Churchill committed both nations to ___?",
+      "answer": "Self-determination, freedom from fear and want, and free trade as war aims",
+      "choices": [
+        "Immediate US entry into WWII",
+        "Self-determination, freedom from fear and want, and free trade as war aims",
+        "Dividing the world between American and British spheres",
+        "Unconditional surrender of the Axis powers"
+      ],
+      "tier": 4,
+      "reason": "Tests the content of the Atlantic Charter -- the war aims that shaped the postwar order."
+    },
+    {
+      "question": "The League of Nations' failure to stop Italian aggression in Ethiopia (1935) showed that ___?",
+      "answer": "Collective security requires member nations willing to enforce it militarily",
+      "choices": [
+        "Ethiopia had no right to League protection",
+        "Collective security requires member nations willing to enforce it militarily",
+        "Economic sanctions are always sufficient to deter aggression",
+        "The League had too many member nations to act"
+      ],
+      "tier": 3,
+      "reason": "Tests the lesson of the Ethiopian crisis -- what makes collective security work or fail."
+    },
+    {
+      "question": "The appeasement policy toward Hitler at Munich (1938) failed because ___?",
+      "answer": "It rewarded aggression and convinced Hitler that the West would not fight",
+      "choices": [
+        "France and Britain were too militarily weak to resist",
+        "It rewarded aggression and convinced Hitler that the West would not fight",
+        "Hitler kept his promises at Munich and then was overthrown internally",
+        "The US refused to support any European agreement"
+      ],
+      "tier": 2,
+      "reason": "Tests the lesson of appeasement -- feeding aggression encourages more aggression."
+    },
+    {
+      "question": "The Battle of Britain (1940) was significant because ___?",
+      "answer": "Britain's survival prevented Hitler from controlling all of Western Europe",
+      "choices": [
+        "It ended German air power permanently",
+        "Britain's survival prevented Hitler from controlling all of Western Europe",
+        "It forced the US to enter the war immediately",
+        "It proved that navies were more important than air forces"
+      ],
+      "tier": 2,
+      "reason": "Tests the strategic significance of the Battle of Britain."
+    },
+    {
+      "question": "The Holocaust was made possible partly by ___?",
+      "answer": "Industrial-scale bureaucratic organization applied to mass murder",
+      "choices": [
+        "The personal madness of Hitler alone",
+        "Industrial-scale bureaucratic organization applied to mass murder",
+        "Ancient tribal hatreds with no modern ideology",
+        "A spontaneous popular uprising against Jews"
+      ],
+      "tier": 3,
+      "reason": "Tests the systemic nature of the Holocaust -- how modern bureaucracy enabled genocide."
+    },
+    {
+      "question": "The Nuremberg Principles established by the post-WWII trials held that individuals can be guilty of ___?",
+      "answer": "Crimes against humanity even when acting under orders of their government",
+      "choices": [
+        "Crimes only if they acted against their own nation",
+        "Crimes against humanity even when acting under orders of their government",
+        "International crimes only through UN authorization",
+        "War crimes only in officially declared wars"
+      ],
+      "tier": 3,
+      "reason": "Tests the key Nuremberg Principle of individual responsibility -- a landmark in international law."
+    },
+    {
+      "question": "The concept of 'popular sovereignty' in American democracy means that ___?",
+      "answer": "All legitimate government authority comes from the consent of the people",
+      "choices": [
+        "The most popular policies must always be enacted",
+        "All legitimate government authority comes from the consent of the people",
+        "Majority vote overrides all individual rights",
+        "The President represents the sovereign will of the nation"
+      ],
+      "tier": 2,
+      "reason": "Tests the concept of popular sovereignty -- foundational to American democratic theory."
+    },
+    {
+      "question": "The British Parliament's Corn Laws, repealed in 1846, were opposed by free traders because they ___?",
+      "answer": "Protected landowners by keeping grain prices high at the expense of workers and manufacturers",
+      "choices": [
+        "Banned all corn imports from the Americas",
+        "Protected landowners by keeping grain prices high at the expense of workers and manufacturers",
+        "Taxed corn exports to fund the government",
+        "Required all grain to be stored in government warehouses"
+      ],
+      "tier": 4,
+      "reason": "Tests the Corn Laws debate -- a foundational case in free trade vs. protectionism and class interest."
+    },
+    {
+      "question": "Richard Cobden and the Anti-Corn Law League argued that free trade would ___?",
+      "answer": "Lower food prices for workers and stimulate prosperity through international exchange",
+      "choices": [
+        "Benefit only the merchant class at workers' expense",
+        "Lower food prices for workers and stimulate prosperity through international exchange",
+        "Weaken Britain by making it dependent on foreign food",
+        "Punish France for its protectionist policies"
+      ],
+      "tier": 4,
+      "reason": "Tests the free trade arguments in one of the 19th century's great economic debates."
+    },
+    {
+      "question": "The principle of comparative advantage in economics, developed by David Ricardo, argues that ___?",
+      "answer": "Nations benefit from trading goods they produce most efficiently, even if one nation is better at everything",
+      "choices": [
+        "Countries should only trade goods they have absolute advantages in",
+        "Nations benefit from trading goods they produce most efficiently, even if one nation is better at everything",
+        "Free trade benefits only the wealthiest nations",
+        "Trade should be balanced to protect domestic industries"
+      ],
+      "tier": 4,
+      "reason": "Tests Ricardo's comparative advantage -- the economic argument for free trade."
+    },
+    {
+      "question": "The Industrial Revolution began in Britain rather than elsewhere partly because Britain had ___?",
+      "answer": "Secure property rights, rule of law, and relatively free markets that rewarded innovation",
+      "choices": [
+        "The world's largest coal reserves",
+        "Secure property rights, rule of law, and relatively free markets that rewarded innovation",
+        "A planned economy directed by the state",
+        "The largest population in Europe"
+      ],
+      "tier": 3,
+      "reason": "Tests the institutional conditions for the Industrial Revolution -- property rights and free markets."
+    },
+    {
+      "question": "The New Deal's expansion of federal government in the 1930s was based on the argument that ___?",
+      "answer": "Market failures during the Depression required government intervention to restore employment",
+      "choices": [
+        "Capitalism had permanently failed as an economic system",
+        "Market failures during the Depression required government intervention to restore employment",
+        "The Constitution required federal control of the economy",
+        "Other democracies had already adopted socialism successfully"
+      ],
+      "tier": 3,
+      "reason": "Tests the New Deal's justification -- important for understanding the debate over government economic intervention."
+    },
+    {
+      "question": "The Weimar Republic's hyperinflation crisis of 1923 was caused primarily by ___?",
+      "answer": "The government printing money to pay reparations debts and occupation costs",
+      "choices": [
+        "American economic sanctions after WWI",
+        "The government printing money to pay reparations debts and occupation costs",
+        "A banking conspiracy to destabilize Germany",
+        "Overproduction in German factories"
+      ],
+      "tier": 3,
+      "reason": "Tests the cause of Weimar hyperinflation -- demonstrates how government money-printing destroys economies."
+    },
+    {
+      "question": "The Enclosure Movement in England (16th-19th centuries) contributed to the Industrial Revolution by ___?",
+      "answer": "Pushing rural workers off common land into cities where factories needed labor",
+      "choices": [
+        "Creating large farms that fed industrial workers",
+        "Pushing rural workers off common land into cities where factories needed labor",
+        "Building roads and canals for industrial transport",
+        "Concentrating wealth in the hands of industrialists"
+      ],
+      "tier": 4,
+      "reason": "Tests the Enclosure Movement's role in creating an industrial labor force."
+    },
+    {
+      "question": "Frederick the Great of Prussia was notable for ___?",
+      "answer": "Religious tolerance and enlightened rule while maintaining military power",
+      "choices": [
+        "Abolishing the Prussian military",
+        "Religious tolerance and enlightened rule while maintaining military power",
+        "Democratic reforms giving commoners voting rights",
+        "Unifying Germany into one empire"
+      ],
+      "tier": 4,
+      "reason": "Tests Frederick the Great as an example of Enlightened Despotism."
+    },
+    {
+      "question": "The American Anti-Federalists opposed the Constitution because they feared ___?",
+      "answer": "A strong central government would threaten state sovereignty and individual liberty",
+      "choices": [
+        "The Constitution was too weak to govern effectively",
+        "A strong central government would threaten state sovereignty and individual liberty",
+        "The President would have insufficient power",
+        "State governments would be too powerful"
+      ],
+      "tier": 3,
+      "reason": "Tests the Anti-Federalist position -- important for understanding the ratification debate and origins of the Bill of Rights."
+    },
+    {
+      "question": "The Treaty of Paris of 1763 ended the Seven Years' War and gave Britain ___?",
+      "answer": "Canada and most of France's North American territory",
+      "choices": [
+        "Control of the Caribbean colonies",
+        "Canada and most of France's North American territory",
+        "The right to trade freely in Asia",
+        "Florida and the Mississippi Valley only"
+      ],
+      "tier": 3,
+      "reason": "Tests the outcome of the Seven Years' War -- which set up the American Revolution by removing the French threat."
+    },
+    {
+      "question": "The Stamp Act of 1765 provoked colonial outrage because it ___?",
+      "answer": "Was a direct tax on the colonies imposed by Parliament without colonial representation",
+      "choices": [
+        "Was a trade regulation that blocked colonial exports",
+        "Was a direct tax on the colonies imposed by Parliament without colonial representation",
+        "Required colonists to quarter British soldiers",
+        "Banned the printing of colonial newspapers"
+      ],
+      "tier": 2,
+      "reason": "Tests the Stamp Act as the catalyst for the 'no taxation without representation' movement."
+    },
+    {
+      "question": "Thomas Paine's 'Common Sense' (1776) argued that ___?",
+      "answer": "Hereditary monarchy was irrational and Americans should declare independence",
+      "choices": [
+        "Colonial reconciliation with Britain was possible",
+        "Hereditary monarchy was irrational and Americans should declare independence",
+        "A new American monarchy should be established",
+        "The colonies needed a written constitution before independence"
+      ],
+      "tier": 3,
+      "reason": "Tests the content and significance of Common Sense -- its radical argument against monarchy."
+    },
+    {
+      "question": "The Constitution's Commerce Clause gives Congress power to regulate ___?",
+      "answer": "Interstate commerce, creating a single national market",
+      "choices": [
+        "Foreign trade only",
+        "Interstate commerce, creating a single national market",
+        "All economic activity in the country",
+        "Trade agreements with foreign nations only"
+      ],
+      "tier": 3,
+      "reason": "Tests a foundational constitutional provision -- the basis for national economic regulation."
+    },
+    {
+      "question": "The Northwest Ordinance of 1787 was significant because it ___?",
+      "answer": "Established a process for new states to join the Union as equals, not colonies",
+      "choices": [
+        "Banned slavery in all US territory permanently",
+        "Established a process for new states to join the Union as equals, not colonies",
+        "Created the first American territories for future colonization",
+        "Gave Native Americans rights in the Northwest Territory"
+      ],
+      "tier": 3,
+      "reason": "Tests the Northwest Ordinance as a model for democratic territorial expansion."
+    },
+    {
+      "question": "Thomas Jefferson's ideal of 'ward republics' held that the best government is ___?",
+      "answer": "As local as possible, allowing citizens to govern their immediate communities directly",
+      "choices": [
+        "A strong national government with uniform laws",
+        "As local as possible, allowing citizens to govern their immediate communities directly",
+        "A representative democracy with no direct participation",
+        "A republic of educated landowners only"
+      ],
+      "tier": 4,
+      "reason": "Tests Jefferson's political philosophy -- the importance of local self-government to liberty."
+    },
+    {
+      "question": "The Chartist movement in Britain (1838-1857) demanded ___?",
+      "answer": "Universal male suffrage, secret ballots, and equal electoral districts",
+      "choices": [
+        "Women's right to vote",
+        "Universal male suffrage, secret ballots, and equal electoral districts",
+        "Abolition of the monarchy",
+        "Free trade and the end of the Corn Laws"
+      ],
+      "tier": 3,
+      "reason": "Tests the Chartist movement -- an important step in British democratic development."
+    },
+    {
+      "question": "The Second Reform Act of 1867 in Britain was significant because it ___?",
+      "answer": "Extended the vote to urban working-class men, dramatically expanding the electorate",
+      "choices": [
+        "Gave women the right to vote",
+        "Extended the vote to urban working-class men, dramatically expanding the electorate",
+        "Established universal male suffrage in all of Britain",
+        "Abolished the House of Lords"
+      ],
+      "tier": 4,
+      "reason": "Tests the gradual democratization of Britain through parliamentary reform."
+    },
+    {
+      "question": "The Dreyfus Affair (1894-1906) in France was significant because it ___?",
+      "answer": "Revealed how antisemitism and military cover-up could subvert justice in a republic",
+      "choices": [
+        "Proved French military superiority over Germany",
+        "Revealed how antisemitism and military cover-up could subvert justice in a republic",
+        "Led to the separation of church and state in France",
+        "Established civilian control over the French military"
+      ],
+      "tier": 3,
+      "reason": "Tests the significance of the Dreyfus Affair beyond just where it took place."
+    },
+    {
+      "question": "Emile Zola's 'J'Accuse' letter during the Dreyfus Affair was an act of ___?",
+      "answer": "Journalism and free speech defending an innocent man against state injustice",
+      "choices": [
+        "Treason against the French Republic",
+        "Journalism and free speech defending an innocent man against state injustice",
+        "Political lobbying on behalf of the army",
+        "Foreign propaganda from Germany"
+      ],
+      "tier": 4,
+      "reason": "Tests the significance of Zola's intervention -- press freedom in defense of individual rights."
+    },
+    {
+      "question": "Gandhi's nonviolent resistance movement in India demonstrated that ___?",
+      "answer": "Moral pressure and civil disobedience can defeat imperial power without violence",
+      "choices": [
+        "Violent revolution is the only path to independence",
+        "Moral pressure and civil disobedience can defeat imperial power without violence",
+        "Economic boycotts are ineffective against industrial empires",
+        "International law was the best tool against colonialism"
+      ],
+      "tier": 2,
+      "reason": "Tests the significance and method of Gandhi's movement -- nonviolent resistance as a political strategy."
+    },
+    {
+      "question": "The Prague Spring of 1968 in Czechoslovakia was an attempt to create ___?",
+      "answer": "'Socialism with a human face' -- communism with more freedom and democracy",
+      "choices": [
+        "Full Western-style democracy and a market economy",
+        "'Socialism with a human face' -- communism with more freedom and democracy",
+        "An independent nation outside the Warsaw Pact",
+        "A religious revival against communist atheism"
+      ],
+      "tier": 3,
+      "reason": "Tests what the Prague Spring actually attempted -- and why even modest liberalization was crushed."
+    },
+    {
+      "question": "The Helsinki Accords (1975) were strategically significant because they ___?",
+      "answer": "Committed communist regimes to human rights standards they could then be held to",
+      "choices": [
+        "Recognized Soviet military superiority in Europe",
+        "Committed communist regimes to human rights standards they could then be held to",
+        "Ended US deployment of nuclear weapons in Europe",
+        "Established free trade between NATO and Warsaw Pact nations"
+      ],
+      "tier": 4,
+      "reason": "Tests the strategic use of human rights commitments to pressure communist regimes -- a key Cold War tactic."
+    },
+    {
+      "question": "The Iran-Iraq War (1980-1988) began when Iraq invaded Iran under Saddam Hussein because ___?",
+      "answer": "Iraq sought to exploit Iranian weakness after the revolution and gain control of oil-rich territory",
+      "choices": [
+        "Iran invaded Iraq first in a preemptive strike",
+        "Iraq sought to exploit Iranian weakness after the revolution and gain control of oil-rich territory",
+        "A religious dispute between Sunni and Shia leaders",
+        "A US-sponsored proxy war to weaken both nations"
+      ],
+      "tier": 4,
+      "reason": "Tests the cause of the Iran-Iraq War with more context than just naming the aggressor."
+    },
+    {
+      "question": "The Gulf War (1991) was authorized by the United Nations because ___?",
+      "answer": "Iraq's invasion of Kuwait violated international law and the UN Charter's prohibition on conquest",
+      "choices": [
+        "Oil companies pressured the Security Council to act",
+        "Iraq's invasion of Kuwait violated international law and the UN Charter's prohibition on conquest",
+        "Iraq possessed nuclear weapons threatening the region",
+        "Kuwait was an American ally under a defense treaty"
+      ],
+      "tier": 3,
+      "reason": "Tests the legal basis for the Gulf War -- the international law principle against territorial conquest."
+    },
+    {
+      "question": "Ronald Reagan's economic policies ('Reaganomics') were based on the theory that ___?",
+      "answer": "Cutting taxes and reducing regulation would stimulate growth and ultimately increase tax revenue",
+      "choices": [
+        "Government spending increases create permanent prosperity",
+        "Cutting taxes and reducing regulation would stimulate growth and ultimately increase tax revenue",
+        "Inflation should be accepted to achieve full employment",
+        "Trade protectionism would restore American manufacturing"
+      ],
+      "tier": 3,
+      "reason": "Tests the content of Reagan's supply-side economics -- an important debate in modern economic history."
+    },
+    {
+      "question": "The ending of the Cold War demonstrated that ___?",
+      "answer": "Free market democracies outperformed centrally planned communist systems over the long run",
+      "choices": [
+        "Military superiority alone determined the outcome",
+        "Free market democracies outperformed centrally planned communist systems over the long run",
+        "American foreign aid was the decisive factor",
+        "Nuclear deterrence was the primary cause of peace"
+      ],
+      "tier": 2,
+      "reason": "Tests the larger lesson of the Cold War -- the comparative performance of economic and political systems."
+    },
+    {
+      "question": "The United States Constitution's system of federalism divides power between ___?",
+      "answer": "The national government and state governments",
+      "choices": [
+        "The President and Congress",
+        "The national government and state governments",
+        "Federal courts and state courts",
+        "Elected officials and appointed officials"
+      ],
+      "tier": 1,
+      "reason": "Tests the basic structure of American federalism -- a key feature of limited government."
+    },
+    {
+      "question": "The 10th Amendment to the US Constitution states that ___?",
+      "answer": "Powers not delegated to the federal government are reserved to the states or the people",
+      "choices": [
+        "States must follow all federal laws without exception",
+        "Powers not delegated to the federal government are reserved to the states or the people",
+        "The federal government has all powers not given to states",
+        "States may not pass laws that contradict federal statutes"
+      ],
+      "tier": 2,
+      "reason": "Tests the 10th Amendment -- the constitutional basis for limited federal power and states' rights."
+    },
+    {
+      "question": "Slavery in the American South was defended by John C. Calhoun on the grounds that ___?",
+      "answer": "States had the right to nullify federal law, and slavery was a 'positive good' for society",
+      "choices": [
+        "The Bible sanctioned slavery as divinely ordained",
+        "States had the right to nullify federal law, and slavery was a 'positive good' for society",
+        "Enslaved people were better off than free workers in the North",
+        "The Constitution explicitly protected slave property in all states"
+      ],
+      "tier": 4,
+      "reason": "Tests Calhoun's pro-slavery constitutional arguments -- important for understanding the ideological defense of slavery."
+    },
+    {
+      "question": "The Northwest Ordinance of 1787 banned slavery in territories north of the Ohio River, establishing ___?",
+      "answer": "A precedent that Congress could restrict slavery in territories",
+      "choices": [
+        "The end of slavery in all Northern states",
+        "A precedent that Congress could restrict slavery in territories",
+        "A guaranteed path to statehood within five years",
+        "Federal control of all territorial land sales"
+      ],
+      "tier": 3,
+      "reason": "Tests the antislavery significance of the Northwest Ordinance as constitutional precedent."
+    },
+    {
+      "question": "The Stonewall Riots (1969) in New York City launched ___?",
+      "answer": "The modern gay rights movement demanding equal treatment under the law",
+      "choices": [
+        "A labor movement for hospitality workers",
+        "The modern gay rights movement demanding equal treatment under the law",
+        "The Black Power movement in Northern cities",
+        "A civil rights campaign for Latino immigrants"
+      ],
+      "tier": 2,
+      "reason": "Tests knowledge of the Stonewall Riots -- a significant civil rights event."
+    },
+    {
+      "question": "The US Supreme Court's Miranda v. Arizona (1966) ruling required that ___?",
+      "answer": "Police must inform suspects of their right to remain silent and have an attorney",
+      "choices": [
+        "All interrogations be recorded on video",
+        "Police must inform suspects of their right to remain silent and have an attorney",
+        "Confessions obtained by any means are admissible",
+        "Suspects must be charged within 24 hours"
+      ],
+      "tier": 2,
+      "reason": "Tests Miranda rights -- a key protection of individual rights against government coercion."
+    },
+    {
+      "question": "The Voting Rights Act of 1965 was passed to enforce ___?",
+      "answer": "The 15th Amendment by banning discriminatory voting tests in Southern states",
+      "choices": [
+        "Women's suffrage in Southern states that still resisted it",
+        "The 15th Amendment by banning discriminatory voting tests in Southern states",
+        "Universal suffrage for all adults including immigrants",
+        "Federal supervision of all elections nationwide"
+      ],
+      "tier": 2,
+      "reason": "Tests the purpose of the Voting Rights Act -- enforcing the 15th Amendment against Jim Crow barriers."
+    },
+    {
+      "question": "The Meiji Restoration's rapid modernization of Japan showed that ___?",
+      "answer": "A nation can adopt Western technology and institutions while retaining its own culture",
+      "choices": [
+        "Colonization by a Western power is necessary for development",
+        "A nation can adopt Western technology and institutions while retaining its own culture",
+        "Democracy is required for industrial development",
+        "Japan had always been technologically advanced"
+      ],
+      "tier": 3,
+      "reason": "Tests the significance of Meiji Japan as a model of self-directed modernization."
+    },
+    {
+      "question": "The Sykes-Picot Agreement (1916) drew borders in the Middle East that ___?",
+      "answer": "Ignored ethnic and religious divisions, creating states prone to conflict",
+      "choices": [
+        "Respected Arab nationalist demands for self-determination",
+        "Ignored ethnic and religious divisions, creating states prone to conflict",
+        "Were agreed to by Arab leaders in the region",
+        "Gave control to the League of Nations, not Britain and France"
+      ],
+      "tier": 4,
+      "reason": "Tests the consequences of the Sykes-Picot Agreement -- how colonial line-drawing created lasting conflicts."
+    }
+  ]
+}

@@ -1,0 +1,1643 @@
+{
+  "remove": [
+    {"index": 1, "reason": "Pure astronomy/mythology name association -- which planet is named after Mars. No theological content."},
+    {"index": 7, "reason": "Pure mythology name-association -- Roman equivalent of Artemis. No theological concept tested."},
+    {"index": 9, "reason": "Norse mythology trivia -- Norse trickster god name. No theological concept."},
+    {"index": 10, "reason": "Japanese mythology trivia -- sun goddess name. No theological concept tested."},
+    {"index": 11, "reason": "Norse mythology trivia -- chief Norse god name. Pure name recall."},
+    {"index": 12, "reason": "Greek mythology trivia -- messenger god name. Pure name recall."},
+    {"index": 17, "reason": "Greek mythology trivia -- king of Olympians name. Pure name recall."},
+    {"index": 19, "reason": "Greek mythology trivia -- god of the sea name. Pure name recall."},
+    {"index": 20, "reason": "Greek mythology trivia -- goddess of the hunt name. Pure name recall."},
+    {"index": 24, "reason": "Roman equivalent trivia -- Roman equivalent of Aphrodite. Pure name-matching with no conceptual payoff."},
+    {"index": 28, "reason": "Norse mythology trivia -- world tree name. Better kept only as part of a conceptual question."},
+    {"index": 30, "reason": "Roman mythology -- god of the underworld name. Pure name recall."},
+    {"index": 38, "reason": "Roman mythology -- equivalent of Artemis already handled; this is Roman equivalent trivia again."},
+    {"index": 39, "reason": "Norse mythology trivia -- rainbow bridge name only. No theological content."},
+    {"index": 42, "reason": "Greek mythology trivia -- god of the sun and music name. Pure name recall."},
+    {"index": 43, "reason": "Norse mythology trivia -- Ragnarok name. Covered better elsewhere."},
+    {"index": 44, "reason": "Egyptian mythology -- chief god of the dead name (also has a duplicate answer in choices). Poor question quality."},
+    {"index": 48, "reason": "Norse mythology trivia -- female spirits who choose slain warriors. Pure name recall, no theological concept."},
+    {"index": 49, "reason": "Norse mythology trivia -- Norse god of thunder. Pure name recall."},
+    {"index": 53, "reason": "Roman mythology -- Roman equivalent of Hades. Pure name-matching trivia."},
+    {"index": 54, "reason": "Greek mythology trivia -- goddess of wisdom name. Pure name recall. Covered better with conceptual questions."},
+    {"index": 55, "reason": "Norse mythology -- realm of Norse gods name. Pure name recall."},
+    {"index": 57, "reason": "Norse mythology -- god associated with healing. Pure name recall."},
+    {"index": 59, "reason": "Greek mythology -- Prometheus giving fire. Already tested conceptually elsewhere; this version is rote."},
+    {"index": 60, "reason": "Greek mythology -- goddess of love name. Pure name recall."},
+    {"index": 62, "reason": "Roman mythology -- Roman equivalent of Dionysus. Duplicate -- Bacchus is already given in choices for earlier questions."},
+    {"index": 63, "reason": "Greek mythology -- god associated with wine. Pure name recall, adds nothing conceptual."},
+    {"index": 65, "reason": "Egyptian mythology -- sun god name. Pure name recall with no theological content."},
+    {"index": 67, "reason": "Norse mythology -- Bifrost name. Pure name recall."},
+    {"index": 68, "reason": "Greek mythology -- god of fire/forge name. Pure name recall."},
+    {"index": 69, "reason": "Norse mythology -- goddess presiding over dead who don't go to Valhalla. Pure name recall."},
+    {"index": 71, "reason": "Norse mythology -- Thor's hammer name. Pure name recall with no theological content."},
+    {"index": 74, "reason": "Norse mythology -- Odin's ravens. Pure name recall."},
+    {"index": 77, "reason": "Norse mythology -- realm of Norse gods (duplicate of earlier question about Asgard)."},
+    {"index": 79, "reason": "Roman mythology -- Roman equivalent of Ares. Pure name-matching trivia."},
+    {"index": 80, "reason": "Greek mythology -- Greek god of war name. Pure name recall."},
+    {"index": 81, "reason": "Roman mythology -- Roman god of wine. Pure name recall (Bacchus already established multiple times)."},
+    {"index": 84, "reason": "Atlantic Ocean / Atlas connection. Geography/mythology trivia, no theological content."},
+    {"index": 85, "reason": "Roman mythology -- Roman equivalent of Hermes. Pure name-matching. Duplicate concept."},
+    {"index": 98, "reason": "Norse mythology -- Odin's eight-legged horse. Pure name recall."},
+    {"index": 104, "reason": "Roman mythology -- Roman god of doorways. Pure name recall."},
+    {"index": 105, "reason": "Norse mythology -- Muspelheim description. Pure lore recall."},
+    {"index": 108, "reason": "Greek mythology -- gift Greeks used to enter Troy. This is mythology/history, not theology."},
+    {"index": 109, "reason": "Norse mythology -- Odin's spear name. Pure name recall."},
+    {"index": 115, "reason": "Greek mythology -- messenger of the sea. Pure name recall with no theological content."},
+    {"index": 117, "reason": "Roman mythology -- Roman equivalent of Hermes (duplicate question, already appeared)."},
+    {"index": 120, "reason": "Japanese mythology -- sacred mirror name. Pure name recall of obscure trivia."},
+    {"index": 122, "reason": "Greek mythology -- winged horse from Medusa's blood. Pure name recall."},
+    {"index": 123, "reason": "Japanese mythology -- moon god name. Pure name recall."},
+    {"index": 124, "reason": "Greek mythology -- who Perseus rescued. Mythology story trivia."},
+    {"index": 125, "reason": "Japanese mythology -- creator deities names. Pure name recall."},
+    {"index": 126, "reason": "Greek mythology -- who started Trojan War. Mythology trivia, no theological content."},
+    {"index": 130, "reason": "Greek mythology -- Tantalus punishment. Already covered more conceptually; this is duplicate story recall."},
+    {"index": 133, "reason": "Greek mythology -- second labor of Hercules. Pure mythology trivia with no theological content."},
+    {"index": 135, "reason": "Greek mythology -- Daedalus and Icarus captor. Pure mythology trivia."},
+    {"index": 136, "reason": "Hindu mythology -- god of creation name. Pure name recall."},
+    {"index": 137, "reason": "Roman mythology -- god of fire and metalworking name. Pure name recall."},
+    {"index": 138, "reason": "Greek mythology -- Argo ship name. Pure mythology trivia."},
+    {"index": 139, "reason": "Japanese mythology -- sacred mirror. Duplicate of earlier mythology trivia."},
+    {"index": 141, "reason": "Greek mythology -- winged horse from Medusa. Duplicate question."},
+    {"index": 143, "reason": "Greek mythology -- who Perseus rescued. Duplicate question."},
+    {"index": 144, "reason": "Japanese mythology -- creator deities. Duplicate question."},
+    {"index": 145, "reason": "Greek mythology -- Trojan War starter. Duplicate question."},
+    {"index": 149, "reason": "Greek mythology -- how Theseus escaped labyrinth. Pure mythology trivia."},
+    {"index": 150, "reason": "Japanese mythology -- storm god name. Pure name recall."},
+    {"index": 155, "reason": "Greek mythology -- Perseus slaying Medusa. Pure mythology trivia."},
+    {"index": 158, "reason": "Greek mythology -- crossroads of Phocis. Obscure mythology trivia with no theological payoff."},
+    {"index": 163, "reason": "Norse mythology -- Valkyries choosing combat winners. Duplicate/rote."},
+    {"index": 168, "reason": "Norse mythology -- rainbow bridge name. Duplicate of earlier question."},
+    {"index": 169, "reason": "Buddhism -- Four Noble Truths (duplicate of more detailed question 90)."},
+    {"index": 170, "reason": "Greek mythology -- sacred spring on Mount Parnassus. Pure mythology trivia."},
+    {"index": 172, "reason": "Greek mythology -- Odysseus blinded whom. Pure mythology story trivia."},
+    {"index": 173, "reason": "Norse mythology -- Loki transforms to give birth to Sleipnir. Pure mythology trivia."},
+    {"index": 174, "reason": "Greek mythology -- Atlas carrying the world. Covered conceptually elsewhere."},
+    {"index": 176, "reason": "Greek mythology -- Trojans tricked by wooden horse. Duplicate mythology trivia."},
+    {"index": 178, "reason": "Norse mythology -- Odin's spear. Duplicate of earlier question."},
+    {"index": 179, "reason": "Norse mythology -- who is greatest Greek warrior. Greek mythology, not Norse. Misplaced and is mythology trivia."},
+    {"index": 180, "reason": "Norse mythology -- what did Loki cause death of. Covered elsewhere, pure mythology."},
+    {"index": 181, "reason": "Roman mythology -- Roman equivalent of Hermes again. Third occurrence."},
+    {"index": 196, "reason": "Norse mythology -- Aesir vs Vanir distinction. Pure mythology lore with limited theological payoff."},
+    {"index": 210, "reason": "Norse mythology -- which goddess guards Bifrost (this is Heimdall, a god). Pure mythology name recall."},
+    {"index": 213, "reason": "Greek mythology -- three regions of underworld. Pure mythology lore."},
+    {"index": 214, "reason": "Japanese mythology -- kitsune definition. Pure mythology trivia."},
+    {"index": 219, "reason": "Norse mythology -- Niflheim description. Pure mythology lore."},
+    {"index": 222, "reason": "Greek mythology -- Charon the ferryman. Pure mythology name recall."},
+    {"index": 224, "reason": "Norse mythology -- three worlds Yggdrasil connects. Pure mythology counting trivia."},
+    {"index": 228, "reason": "Norse mythology -- Helheim description. Pure mythology lore."},
+    {"index": 232, "reason": "Norse mythology -- Vanaheim description. Pure lore."},
+    {"index": 235, "reason": "Greek mythology -- Demeter goddess of harvest. Pure name recall."},
+    {"index": 239, "reason": "Norse mythology -- creature gnawing Yggdrasil roots. Pure mythology trivia."},
+    {"index": 241, "reason": "Norse mythology -- Fenrir monstrous wolf. Pure name recall (covered in game content already)."},
+    {"index": 242, "reason": "Norse mythology -- Amaterasu hiding in cave. Pure mythology story recall."},
+    {"index": 248, "reason": "Greek mythology -- Demeter grief explains seasons. Duplicate of earlier question."},
+    {"index": 250, "reason": "Norse mythology -- Fimbulwinter precedes Ragnarok. Duplicate of earlier question."},
+    {"index": 255, "reason": "Greek mythology -- Elysian Fields. Covered more richly elsewhere with comparative theological content."},
+    {"index": 256, "reason": "Norse mythology -- Ymir formed the world. Pure name recall."},
+    {"index": 261, "reason": "Norse mythology -- Heimdall guards Bifrost. Pure name recall."},
+    {"index": 267, "reason": "Norse mythology -- Japanese mythology -- what are oni. Pure mythology trivia (Japanese, not theology)."},
+    {"index": 268, "reason": "Norse mythology -- Tyr god of single combat. Pure name recall."},
+    {"index": 270, "reason": "Greek mythology -- who built the Labyrinth. Duplicate covered earlier."},
+    {"index": 275, "reason": "Greek mythology -- obol coin placed in mouth of dead. Pure Greek burial customs trivia."},
+    {"index": 276, "reason": "Greek mythology -- why Persephone spent time underground. Duplicate story recall."},
+    {"index": 291, "reason": "Norse mythology -- Norns' names. Pure name memorization."},
+    {"index": 296, "reason": "Greek mythology -- Apollo associated with sun and prophecy. Duplicate name recall."},
+    {"index": 297, "reason": "Norse mythology -- Fimbulwinter description. Duplicate."},
+    {"index": 299, "reason": "Norse mythology -- Ragnarok name. Duplicate."},
+    {"index": 302, "reason": "Norse mythology -- Norse mythology -- Norns in Norse mythology. Duplicate."},
+    {"index": 306, "reason": "Norse mythology -- Norns' three names. Duplicate of index 291."},
+    {"index": 309, "reason": "Greek mythology -- Eleusinian Mysteries description. Duplicate of higher-quality question at index 308."},
+    {"index": 316, "reason": "Greek mythology -- Hera wife of Zeus. Pure name recall."},
+    {"index": 317, "reason": "Norse mythology -- Asgard realm. Duplicate of earlier question."},
+    {"index": 321, "reason": "Greek mythology -- Odyssey -- who started Trojan War. Duplicate mythology trivia."},
+    {"index": 322, "reason": "Greek mythology -- Sisyphus punishment. Duplicate covered earlier."},
+    {"index": 323, "reason": "Greek mythology -- Achilles as greatest warrior. Pure mythology trivia."},
+    {"index": 327, "reason": "Norse mythology -- rainbow bridge Bifrost name. Duplicate (appears 3+ times)."},
+    {"index": 328, "reason": "Greek mythology -- Perseus slaying Medusa. Duplicate."},
+    {"index": 330, "reason": "Norse mythology -- Niflheim primordial realm. Duplicate lore."},
+    {"index": 334, "reason": "Norse mythology -- what Odin sacrificed to drink from Mimir's well. Pure mythology lore."},
+    {"index": 336, "reason": "Greek mythology -- Icarus flying too close to sun. Pure mythology story recall."},
+    {"index": 337, "reason": "Greek mythology -- second labor of Hercules. Duplicate mythology trivia."},
+    {"index": 341, "reason": "Greek mythology -- twelve labors of Hercules count. Pure number trivia."},
+    {"index": 346, "reason": "Greek mythology -- first labor of Hercules. Duplicate mythology trivia."},
+    {"index": 348, "reason": "Greek mythology -- Argo ship name. Duplicate."}
+  ],
+  "rewrite": [
+    {
+      "index": 3,
+      "field": "question",
+      "new_value": "Why does Christianity insist on monotheism (one God) rather than polytheism?",
+      "reason": "Reframe from rote fact to conceptual question about why monotheism matters theologically."
+    },
+    {
+      "index": 3,
+      "field": "choices",
+      "new_value": ["Because the Bible forbids worship of other gods as false and divisive of ultimate loyalty", "Because polytheism was politically unpopular in the Roman Empire", "Because Greek philosophy proved only one God could exist", "Because Moses invented the concept of one God from scratch"],
+      "reason": "New choices support conceptual rather than name-recall answer."
+    },
+    {
+      "index": 3,
+      "field": "answer",
+      "new_value": "Because the Bible forbids worship of other gods as false and divisive of ultimate loyalty",
+      "reason": "Conceptual answer explaining theological significance."
+    },
+    {
+      "index": 14,
+      "field": "question",
+      "new_value": "What is the theological significance of the First Commandment ('You shall have no other gods before me')?",
+      "reason": "Reframe from rote recall to testing what the commandment MEANS for moral life."
+    },
+    {
+      "index": 14,
+      "field": "answer",
+      "new_value": "It establishes God's exclusive claim on human loyalty, making idolatry (putting anything else first) the root of all other sins",
+      "reason": "Tests conceptual understanding, not just recall."
+    },
+    {
+      "index": 14,
+      "field": "choices",
+      "new_value": ["It establishes God's exclusive claim on human loyalty, making idolatry (putting anything else first) the root of all other sins", "It prohibits all forms of art and imagery", "It requires attendance at synagogue every week", "It limits worship to the Jerusalem Temple only"],
+      "reason": "Choices distinguish theological interpretation from legalistic misreadings."
+    },
+    {
+      "index": 21,
+      "field": "question",
+      "new_value": "What is the theological significance of the commandment 'You shall not murder'?",
+      "reason": "Reframe from rote number-recall to why the commandment matters theologically."
+    },
+    {
+      "index": 21,
+      "field": "answer",
+      "new_value": "Human life is sacred because humans bear God's image (imago Dei), making murder an offense against God",
+      "reason": "Tests the theological basis for the commandment rather than its numbering."
+    },
+    {
+      "index": 21,
+      "field": "choices",
+      "new_value": ["Human life is sacred because humans bear God's image (imago Dei), making murder an offense against God", "Killing is wrong because society needs people to reproduce", "The commandment only protects Israelites from each other", "Murder pollutes the land and brings divine punishment on the nation"],
+      "reason": "Choices test the imago Dei doctrine as foundation of human dignity."
+    },
+    {
+      "index": 45,
+      "field": "question",
+      "new_value": "What is the theological significance of the Logos concept in John 1:1 ('In the beginning was the Word')?",
+      "reason": "Reframe from vocabulary recall to testing what the Logos doctrine means for Christian theology."
+    },
+    {
+      "index": 45,
+      "field": "answer",
+      "new_value": "It identifies Jesus with the divine rational principle behind creation, bridging Jewish and Greek thought",
+      "reason": "Tests the theological and philosophical significance, not just Greek vocabulary."
+    },
+    {
+      "index": 45,
+      "field": "choices",
+      "new_value": ["It identifies Jesus with the divine rational principle behind creation, bridging Jewish and Greek thought", "It means Jesus was the first book of scripture", "It teaches that God communicated through Moses's laws", "It identifies Jesus as the spirit that moved over the waters in Genesis"],
+      "reason": "Conceptual choices about the theological import of Logos doctrine."
+    },
+    {
+      "index": 92,
+      "field": "question",
+      "new_value": "In the Parable of the Prodigal Son, what does the father's response to the returning son reveal about God's character?",
+      "reason": "Reframe from rote story details to theological meaning of the parable."
+    },
+    {
+      "index": 92,
+      "field": "answer",
+      "new_value": "That God's forgiveness is unconditional and initiated before repentance is complete -- grace precedes merit",
+      "reason": "Tests theological content (grace, forgiveness) not just story recall."
+    },
+    {
+      "index": 92,
+      "field": "choices",
+      "new_value": ["That God's forgiveness is unconditional and initiated before repentance is complete -- grace precedes merit", "That God rewards obedience and punishes rebellion equally", "That repentance must be proven through years of service before forgiveness is granted", "That the elder son's faithfulness earns him special status before God"],
+      "reason": "Choices test understanding of grace vs. merit theology."
+    },
+    {
+      "index": 107,
+      "field": "question",
+      "new_value": "What theological concept does the Parable of the Talents illustrate about individual responsibility before God?",
+      "reason": "Reframe from story detail to theological concept being taught."
+    },
+    {
+      "index": 107,
+      "field": "answer",
+      "new_value": "Each person will be individually accountable for how they used what God gave them -- stewardship and personal responsibility",
+      "reason": "Tests the doctrine of individual moral accountability."
+    },
+    {
+      "index": 107,
+      "field": "choices",
+      "new_value": ["Each person will be individually accountable for how they used what God gave them -- stewardship and personal responsibility", "Wealth accumulation is spiritually virtuous", "The collective community is judged as a whole, not individually", "God measures success by safety and avoiding risk"],
+      "reason": "Distinguishes individual accountability from collective judgment."
+    },
+    {
+      "index": 118,
+      "field": "question",
+      "new_value": "What does the story of Daniel refusing to worship Nebuchadnezzar's statue say about individual conscience and state authority?",
+      "reason": "Reframe from rote story recall to the theological principle of individual conscience vs. political power."
+    },
+    {
+      "index": 118,
+      "field": "answer",
+      "new_value": "Religious conscience places limits on political obedience -- individuals must refuse commands to violate divine law",
+      "reason": "Tests the theological principle of conscience over state authority."
+    },
+    {
+      "index": 118,
+      "field": "choices",
+      "new_value": ["Religious conscience places limits on political obedience -- individuals must refuse commands to violate divine law", "The state always has legitimate authority over religious practice", "God protects only those who comply with political authorities", "The story teaches that compromise is acceptable under persecution"],
+      "reason": "Choices explore the relationship between individual conscience and political authority."
+    },
+    {
+      "index": 128,
+      "field": "question",
+      "new_value": "What does the Parable of the Good Samaritan teach about the scope of moral obligation?",
+      "reason": "Reframe from story recall (who helps) to the theological principle being taught."
+    },
+    {
+      "index": 128,
+      "field": "answer",
+      "new_value": "Moral duty to help the suffering extends beyond ethnic and religious in-groups -- neighbor means any person in need",
+      "reason": "Tests the universal moral implication of the parable."
+    },
+    {
+      "index": 128,
+      "field": "choices",
+      "new_value": ["Moral duty to help the suffering extends beyond ethnic and religious in-groups -- neighbor means any person in need", "Religious leaders have special obligations that ordinary people lack", "Helping only those of your own community is a sufficient moral standard", "The parable is only about the specific relationship between Jews and Samaritans"],
+      "reason": "Tests understanding of universal vs. tribal moral scope."
+    },
+    {
+      "index": 174,
+      "field": "question",
+      "new_value": "What does the story of Abraham's near-sacrifice of Isaac (the Akedah) reveal about the theology of faith and obedience?",
+      "reason": "Reframe from who commanded whom to the theological significance of the event."
+    },
+    {
+      "index": 174,
+      "field": "answer",
+      "new_value": "Faith sometimes requires surrendering what is most precious; God tests but ultimately provides, foreshadowing his own sacrifice",
+      "reason": "Tests theological meaning rather than factual story details."
+    },
+    {
+      "index": 174,
+      "field": "choices",
+      "new_value": ["Faith sometimes requires surrendering what is most precious; God tests but ultimately provides, foreshadowing his own sacrifice", "God requires human sacrifice to prove devotion", "Obedience to God always requires blind action without moral reflection", "The story teaches that God's commands override all other moral considerations permanently"],
+      "reason": "Explores theological depth of the Akedah narrative."
+    },
+    {
+      "index": 193,
+      "field": "question",
+      "new_value": "What was the key theological issue resolved by the Council of Nicaea (325 AD), and why did it matter for Christian ethics?",
+      "reason": "Reframe to also cover why Christology matters -- if Christ is not fully divine, the incarnation does not sanctify human nature."
+    },
+    {
+      "index": 193,
+      "field": "answer",
+      "new_value": "Whether Christ was fully divine (homoousios) -- if he was, the incarnation reveals God's full commitment to human dignity and salvation",
+      "reason": "Connects Christological decision to its ethical and anthropological implications."
+    },
+    {
+      "index": 193,
+      "field": "choices",
+      "new_value": ["Whether Christ was fully divine (homoousios) -- if he was, the incarnation reveals God's full commitment to human dignity and salvation", "Whether the Pope had authority over all other bishops", "Whether Christians could use images in worship", "Whether the Old Testament remained binding on Christians"],
+      "reason": "Tests understanding of why Christology has moral and anthropological consequences."
+    },
+    {
+      "index": 237,
+      "field": "question",
+      "new_value": "What does Augustine's concept of 'original sin' imply about the human condition and the need for grace?",
+      "reason": "Reframe from simple definition to theological implications for human nature and salvation."
+    },
+    {
+      "index": 237,
+      "field": "answer",
+      "new_value": "Humans are not morally self-sufficient -- the will is bent toward sin and requires divine grace to choose the good",
+      "reason": "Tests the soteriological and anthropological implications, not just the definition."
+    },
+    {
+      "index": 237,
+      "field": "choices",
+      "new_value": ["Humans are not morally self-sufficient -- the will is bent toward sin and requires divine grace to choose the good", "All humans are fully capable of virtue through education and reason alone", "Only the original sin of Adam and Eve is morally relevant; subsequent humans are born innocent", "Original sin refers only to the first sin committed after childhood"],
+      "reason": "Distinguishes Augustinian anthropology from Pelagian and secular alternatives."
+    },
+    {
+      "index": 245,
+      "field": "question",
+      "new_value": "Why did the Great Schism of 1054 matter beyond church politics, and what theological principle was at stake?",
+      "reason": "Reframe from date-recall to why the split had theological significance."
+    },
+    {
+      "index": 245,
+      "field": "answer",
+      "new_value": "Disagreements about authority (papal primacy) and doctrine (Filioque) revealed two different visions of how divine truth is governed and known",
+      "reason": "Tests understanding of the theological stakes, not just the historical fact."
+    },
+    {
+      "index": 245,
+      "field": "choices",
+      "new_value": ["Disagreements about authority (papal primacy) and doctrine (Filioque) revealed two different visions of how divine truth is governed and known", "It was purely a political dispute over who controlled Constantinople", "The split was reversed within a century and had no lasting significance", "The schism was only about the date of Easter"],
+      "reason": "Tests theological substance of the schism."
+    },
+    {
+      "index": 263,
+      "field": "question",
+      "new_value": "What does the Protestant principle of Sola Scriptura mean for the relationship between individual conscience and institutional authority?",
+      "reason": "Reframe from simple definition to theological and political implications."
+    },
+    {
+      "index": 263,
+      "field": "answer",
+      "new_value": "Every believer has direct access to God's word without needing a priestly mediator to authorize interpretation",
+      "reason": "Tests the implication for individual religious autonomy, not just the Latin translation."
+    },
+    {
+      "index": 263,
+      "field": "choices",
+      "new_value": ["Every believer has direct access to God's word without needing a priestly mediator to authorize interpretation", "Only trained clergy can understand scripture correctly", "Scripture must always be interpreted through church tradition", "The Bible is the only book Christians are permitted to read"],
+      "reason": "Explores the democratic and individualistic implications of Sola Scriptura."
+    },
+    {
+      "index": 271,
+      "field": "question",
+      "new_value": "What is the significance of the Peace of Augsburg (1555) for the development of religious liberty and individual conscience?",
+      "reason": "Reframe from rote fact about 'cuius regio' to its implications for religious freedom."
+    },
+    {
+      "index": 271,
+      "field": "answer",
+      "new_value": "It treated religion as politically determined by rulers -- actually hindering individual freedom of conscience by tying faith to territory",
+      "reason": "Tests critical understanding: the Peace limited, rather than secured, individual conscience."
+    },
+    {
+      "index": 271,
+      "field": "choices",
+      "new_value": ["It treated religion as politically determined by rulers -- actually hindering individual freedom of conscience by tying faith to territory", "It guaranteed full freedom of religion for all individuals in the Holy Roman Empire", "It permanently ended religious conflict in Europe", "It established the separation of church and state as we understand it today"],
+      "reason": "Challenges simplistic reading of the Peace as a victory for religious freedom."
+    },
+    {
+      "index": 274,
+      "field": "question",
+      "new_value": "What was Martin Luther's deeper theological objection to indulgences, beyond the corruption of selling them?",
+      "reason": "Reframe from historical fact to theological principle at stake."
+    },
+    {
+      "index": 274,
+      "field": "answer",
+      "new_value": "They implied humans could earn or purchase God's forgiveness, contradicting the doctrine of justification by grace through faith alone",
+      "reason": "Tests the theological principle, not just the historical trigger."
+    },
+    {
+      "index": 274,
+      "field": "choices",
+      "new_value": ["They implied humans could earn or purchase God's forgiveness, contradicting the doctrine of justification by grace through faith alone", "They were too expensive for poor people to afford", "They were conducted in Latin, which ordinary people could not understand", "They were only available to clergy and not to laypeople"],
+      "reason": "Grounds the objection in Sola Fide rather than merely practical corruption."
+    },
+    {
+      "index": 294,
+      "field": "question",
+      "new_value": "What does the Protestant concept of justification by faith alone (Sola Fide) imply about human equality before God?",
+      "reason": "Reframe from definition to social/ethical implication."
+    },
+    {
+      "index": 294,
+      "field": "answer",
+      "new_value": "All people stand equally before God -- salvation cannot be purchased, inherited, or earned by status; it is freely given",
+      "reason": "Tests the egalitarian implication of Sola Fide."
+    },
+    {
+      "index": 294,
+      "field": "choices",
+      "new_value": ["All people stand equally before God -- salvation cannot be purchased, inherited, or earned by status; it is freely given", "Only the educated who understand the Bible are truly justified", "Justification depends on baptism by an ordained minister", "Social rank and virtue are the primary measures of one's standing before God"],
+      "reason": "Explores the democratizing implications of Protestant soteriology."
+    },
+    {
+      "index": 304,
+      "field": "question",
+      "new_value": "What was the theological consequence of Calvin's doctrine of double predestination for the concept of individual moral agency?",
+      "reason": "Reframe from definition to its tension with individual moral responsibility."
+    },
+    {
+      "index": 304,
+      "field": "answer",
+      "new_value": "It creates a paradox: God sovereignly determines who is saved, yet humans remain morally responsible for their choices",
+      "reason": "Tests understanding of the tension between sovereignty and responsibility in Calvinist theology."
+    },
+    {
+      "index": 304,
+      "field": "choices",
+      "new_value": ["It creates a paradox: God sovereignly determines who is saved, yet humans remain morally responsible for their choices", "Predestination eliminates moral responsibility entirely since outcomes are predetermined", "Only the elect need to concern themselves with moral behavior", "Double predestination makes the concept of sin meaningless"],
+      "reason": "Explores the philosophical tension in Calvinist anthropology."
+    },
+    {
+      "index": 326,
+      "field": "question",
+      "new_value": "What does Aquinas's theory of natural law imply about the possibility of universal human rights?",
+      "reason": "Reframe from simple definition to its political and ethical implications."
+    },
+    {
+      "index": 326,
+      "field": "answer",
+      "new_value": "If moral law is discoverable by reason and embedded in human nature, then all people share basic rights regardless of what any government decrees",
+      "reason": "Tests the natural law theory's implications for universal rights."
+    },
+    {
+      "index": 326,
+      "field": "choices",
+      "new_value": ["If moral law is discoverable by reason and embedded in human nature, then all people share basic rights regardless of what any government decrees", "Natural law only applies within Christian societies that recognize God", "Rights depend entirely on what the state grants, not on nature or reason", "Aquinas believed natural law justified the authority of kings over their subjects absolutely"],
+      "reason": "Connects natural law theory to foundational concepts of universal rights."
+    }
+  ],
+  "add": [
+    {
+      "question": "What is the theological concept of 'imago Dei,' and what are its implications for human rights?",
+      "answer": "Humans are made in God's image, giving each person inherent dignity that no state or other human may violate",
+      "choices": [
+        "Humans are made in God's image, giving each person inherent dignity that no state or other human may violate",
+        "God has a physical form that humans physically resemble",
+        "Only clergy and saints truly bear God's image",
+        "The image of God refers only to human intelligence"
+      ],
+      "tier": 2,
+      "reason": "Core theological concept directly grounding Western human rights tradition. Major gap in the existing questions."
+    },
+    {
+      "question": "How did Augustine's 'just war' criteria limit the permissible use of violence by Christian rulers?",
+      "answer": "War must have a just cause, be declared by legitimate authority, and be fought with right intention -- rulers cannot wage war for plunder or personal glory",
+      "choices": [
+        "War must have a just cause, be declared by legitimate authority, and be fought with right intention -- rulers cannot wage war for plunder or personal glory",
+        "Augustine taught that all war is sinful and Christians must be pacifists",
+        "Just war theory permits any war approved by the Pope",
+        "Only defensive wars are permitted; offensive wars are always wrong"
+      ],
+      "tier": 3,
+      "reason": "Just war theory is a foundational contribution of Christian theology to political philosophy. Not present in the existing questions."
+    },
+    {
+      "question": "What did Aquinas add to Augustine's just war criteria that is most relevant to limiting civilian casualties?",
+      "answer": "The principle of proportionality -- the harm caused by war must not exceed the good achieved; noncombatants must be protected",
+      "choices": [
+        "The principle of proportionality -- the harm caused by war must not exceed the good achieved; noncombatants must be protected",
+        "Wars must be fought only with weapons blessed by the Church",
+        "A just war must end in complete victory or it was not truly just",
+        "Only wars to defend the Pope's authority are just"
+      ],
+      "tier": 3,
+      "reason": "Fills a gap in just war theory coverage; tests the concept of proportionality and noncombatant protection."
+    },
+    {
+      "question": "How did the Protestant Reformation's emphasis on Scripture and individual conscience contribute to modern concepts of freedom of religion?",
+      "answer": "By insisting each believer must personally read and interpret Scripture, Reformers created the principle that faith cannot be coerced -- it must be freely chosen",
+      "choices": [
+        "By insisting each believer must personally read and interpret Scripture, Reformers created the principle that faith cannot be coerced -- it must be freely chosen",
+        "The Reformation reinforced the Church's authority to define correct belief for everyone",
+        "Luther argued the state should enforce correct religious practice for all citizens",
+        "Freedom of religion was a purely secular Enlightenment idea with no theological roots"
+      ],
+      "tier": 3,
+      "reason": "Critical connection between Protestant theology and the development of religious liberty as a principle."
+    },
+    {
+      "question": "What was the theological argument used by abolitionists like William Wilberforce against the institution of slavery?",
+      "answer": "All people bear the image of God (imago Dei) and are equal before their Creator; therefore slavery violates the God-given dignity of every human being",
+      "choices": [
+        "All people bear the image of God (imago Dei) and are equal before their Creator; therefore slavery violates the God-given dignity of every human being",
+        "The Bible explicitly commands rulers to abolish slavery in all nations",
+        "Slavery was wrong because it reduced economic productivity",
+        "The abolitionist argument was purely secular and made no reference to theology"
+      ],
+      "tier": 3,
+      "reason": "Crucial connection between Christian theology and the abolition movement -- a major gap in the existing questions."
+    },
+    {
+      "question": "What is the theological concept of 'conscience' in Christian moral theology, and why does it create a limit on state authority?",
+      "answer": "Conscience is the inner voice by which each person discerns right from wrong before God; it cannot be coerced by the state without violating the soul",
+      "choices": [
+        "Conscience is the inner voice by which each person discerns right from wrong before God; it cannot be coerced by the state without violating the soul",
+        "Conscience is simply obedience to church teaching without personal reflection",
+        "Conscience only applies to religious matters, not civil life",
+        "The state has authority over conscience because it represents God's order"
+      ],
+      "tier": 3,
+      "reason": "The concept of conscience as a theological check on state power is central to the Judeo-Christian moral tradition and missing from the questions."
+    },
+    {
+      "question": "What was Luther's argument at the Diet of Worms that established the primacy of individual conscience?",
+      "answer": "He refused to recant unless shown to be wrong by Scripture or reason, declaring that acting against conscience is neither right nor safe",
+      "choices": [
+        "He refused to recant unless shown to be wrong by Scripture or reason, declaring that acting against conscience is neither right nor safe",
+        "He appealed to the Pope's authority over the Emperor",
+        "He argued that his opinions were shared by most Christians and therefore valid",
+        "He agreed to recant in exchange for protection from prosecution"
+      ],
+      "tier": 3,
+      "reason": "Luther's stand at Worms is the landmark moment for individual conscience vs. institutional authority. Essential for this subject."
+    },
+    {
+      "question": "What theological principle grounds the idea that governments derive their just powers from the consent of the governed?",
+      "answer": "The covenant theology that God deals with people directly and that rulers are accountable to divine law -- not absolute sovereigns over subjects",
+      "choices": [
+        "The covenant theology that God deals with people directly and that rulers are accountable to divine law -- not absolute sovereigns over subjects",
+        "The ancient Greek idea that democracy is the best form of government",
+        "The Enlightenment idea that humans invented government through reason alone",
+        "The Roman concept of imperial authority delegated from Jupiter"
+      ],
+      "tier": 4,
+      "reason": "Fills a gap connecting Reformed covenant theology to the philosophical roots of democratic consent theory."
+    },
+    {
+      "question": "What is the theological doctrine of the 'priesthood of all believers,' and what does it imply about religious hierarchy?",
+      "answer": "Every Christian has direct access to God without a human intermediary, undermining claims of priestly caste privilege and supporting spiritual equality",
+      "choices": [
+        "Every Christian has direct access to God without a human intermediary, undermining claims of priestly caste privilege and supporting spiritual equality",
+        "All Christians are ordained ministers with identical functions in the church",
+        "The priesthood of believers means the laity controls church government",
+        "Only men qualify for the priesthood of believers"
+      ],
+      "tier": 3,
+      "reason": "The priesthood of all believers is one of the Reformation's most important contributions to individual dignity and equality before God."
+    },
+    {
+      "question": "How did the theological concept of 'natural rights' develop from medieval Catholic thought to John Locke?",
+      "answer": "Aquinas's natural law (reason discovers God's moral law) was secularized by Locke into natural rights (reason discovers rights inherent in persons by nature)",
+      "choices": [
+        "Aquinas's natural law (reason discovers God's moral law) was secularized by Locke into natural rights (reason discovers rights inherent in persons by nature)",
+        "Natural rights theory was invented by Locke with no connection to religious thought",
+        "Natural rights were first articulated by the Protestant Reformers in the 16th century",
+        "Aquinas rejected natural rights as incompatible with divine authority"
+      ],
+      "tier": 4,
+      "reason": "Traces the intellectual history from theological natural law to political natural rights -- a key connection in Western thought."
+    },
+    {
+      "question": "What is the theological concept of 'redemption' in Christianity, and why does it emphasize individual rather than collective salvation?",
+      "answer": "Christ redeems each person individually through personal faith and repentance -- salvation is not automatic by membership in a group or nation",
+      "choices": [
+        "Christ redeems each person individually through personal faith and repentance -- salvation is not automatic by membership in a group or nation",
+        "Redemption is collective: entire nations are saved together through their rulers' faith",
+        "Redemption requires performing the correct rituals on behalf of the community",
+        "Only those who were predestined are capable of being redeemed, so personal choice is irrelevant"
+      ],
+      "tier": 2,
+      "reason": "Tests the individualistic nature of Christian redemption against collectivist alternatives -- important for understanding the theology of individual moral responsibility."
+    },
+    {
+      "question": "What does Jesus's teaching 'Render unto Caesar what is Caesar's, and unto God what is God's' establish in Christian political theology?",
+      "answer": "A fundamental distinction between civil and religious authority, limiting the state's claim over the soul -- the beginning of church-state separation",
+      "choices": [
+        "A fundamental distinction between civil and religious authority, limiting the state's claim over the soul -- the beginning of church-state separation",
+        "That Christians must obey the state in all matters without exception",
+        "That paying taxes is the highest civic duty",
+        "That God and Caesar have equal authority in their respective domains"
+      ],
+      "tier": 2,
+      "reason": "This teaching is a foundational text for church-state separation and limiting political authority. Not adequately represented in existing questions."
+    },
+    {
+      "question": "How does the historical record of theocratic governments compare to secular ones in protecting individual rights?",
+      "answer": "Theocratic states have historically suppressed dissent and individual conscience; most protections for individual rights developed in societies that limited religious authority over the state",
+      "choices": [
+        "Theocratic states have historically suppressed dissent and individual conscience; most protections for individual rights developed in societies that limited religious authority over the state",
+        "Theocratic states have consistently provided the strongest protections for individual conscience",
+        "The historical record shows no meaningful difference between theocratic and secular governance",
+        "Individual rights protections were invented by theocratic Christian states in the medieval period"
+      ],
+      "tier": 4,
+      "reason": "Comparative question on the historical record of theocracy vs. secular governance -- fits criteria for comparative religion and historical record questions."
+    },
+    {
+      "question": "What was the significance of the Edict of Milan (313 AD) for religious freedom in Christian history?",
+      "answer": "It granted toleration to all religions in the Roman Empire, establishing that religious belief should not be coerced by the state",
+      "choices": [
+        "It granted toleration to all religions in the Roman Empire, establishing that religious belief should not be coerced by the state",
+        "It made Christianity the only legal religion in the Empire",
+        "It banned all pagan religious practices throughout the Empire",
+        "It established the Pope as supreme authority over all Christian bishops"
+      ],
+      "tier": 3,
+      "reason": "The Edict of Milan is a foundational moment in the history of religious tolerance -- not covered in existing questions."
+    },
+    {
+      "question": "What was the Inquisition's theological rationale, and why did most later Christian thinkers reject it?",
+      "answer": "It claimed the state should enforce correct belief; later theologians recognized that coerced faith is not genuine faith -- conscience cannot be compelled",
+      "choices": [
+        "It claimed the state should enforce correct belief; later theologians recognized that coerced faith is not genuine faith -- conscience cannot be compelled",
+        "The Inquisition was rejected because it used insufficient evidence to convict heretics",
+        "Later Christians rejected the Inquisition only because of its association with Spain",
+        "The Inquisition was condemned because it punished clergy instead of laypeople"
+      ],
+      "tier": 3,
+      "reason": "Tests understanding of why religious coercion violates core theological principles about conscience and genuine faith."
+    },
+    {
+      "question": "How did the theology of the Sermon on the Mount challenge Roman concepts of power and status?",
+      "answer": "By declaring the poor, the meek, and the persecuted as blessed, it inverted the Roman values of strength, honor, and conquest -- power through vulnerability",
+      "choices": [
+        "By declaring the poor, the meek, and the persecuted as blessed, it inverted the Roman values of strength, honor, and conquest -- power through vulnerability",
+        "The Sermon endorsed Roman hierarchies as divinely ordered",
+        "Jesus taught that wealth and power are signs of God's favor",
+        "The Beatitudes describe the traits required to become a Roman citizen"
+      ],
+      "tier": 2,
+      "reason": "The Sermon on the Mount's radical inversion of status is a key theological concept with profound social implications."
+    },
+    {
+      "question": "What is the theological concept of 'stewardship,' and how does it define the human relationship to property and creation?",
+      "answer": "Humans are caretakers, not absolute owners, of what God has entrusted to them -- ownership carries moral obligations toward others and creation",
+      "choices": [
+        "Humans are caretakers, not absolute owners, of what God has entrusted to them -- ownership carries moral obligations toward others and creation",
+        "Stewardship means giving all property to the church",
+        "The concept teaches that accumulating wealth is inherently sinful",
+        "Stewardship applies only to environmental care, not to wealth or social obligations"
+      ],
+      "tier": 2,
+      "reason": "Stewardship theology is important for understanding Christian economic ethics and the moral limits of property rights."
+    },
+    {
+      "question": "What theological principle did Roger Williams invoke to argue for separation of church and state in colonial Rhode Island?",
+      "answer": "Genuine faith requires voluntary choice -- a state-enforced church corrupts religion by turning it into a civil compliance rather than authentic belief",
+      "choices": [
+        "Genuine faith requires voluntary choice -- a state-enforced church corrupts religion by turning it into a civil compliance rather than authentic belief",
+        "The Bible commands complete separation of religious and civil authority",
+        "Williams argued from reason alone, with no theological basis for his position",
+        "He believed the state should be neutral because all religions are equally true"
+      ],
+      "tier": 4,
+      "reason": "Roger Williams's theological argument for church-state separation is a foundational moment in American religious liberty -- a significant gap."
+    },
+    {
+      "question": "What is the theological concept of 'sin' as personal moral failure, and how does it differ from the idea of sin as merely ritual impurity?",
+      "answer": "Personal sin involves a deliberate choice that damages one's relationship with God and others; it requires individual repentance, not just ritual cleansing",
+      "choices": [
+        "Personal sin involves a deliberate choice that damages one's relationship with God and others; it requires individual repentance, not just ritual cleansing",
+        "Sin is identical to ritual impurity -- both require the same priestly sacrifice to remedy",
+        "Sin is primarily collective; individuals are only guilty for their group's failures",
+        "Prophetic Judaism and Christianity had no concept of personal sin before the Reformation"
+      ],
+      "tier": 2,
+      "reason": "The concept of personal sin as moral choice is foundational to individual moral responsibility in the Judeo-Christian tradition."
+    },
+    {
+      "question": "How did early Christianity's concept of the soul's equal worth before God challenge ancient Greco-Roman social hierarchies?",
+      "answer": "If each soul has equal infinite value before God regardless of social rank, then enslaved persons, women, and foreigners have dignity that transcends their legal status",
+      "choices": [
+        "If each soul has equal infinite value before God regardless of social rank, then enslaved persons, women, and foreigners have dignity that transcends their legal status",
+        "Christianity fully endorsed the Roman social hierarchy as divinely ordered",
+        "The concept of equal souls only applied within Christian communities, not to outsiders",
+        "Soul equality was a Greek philosophical idea that Christianity borrowed without modification"
+      ],
+      "tier": 3,
+      "reason": "This is a key question about how Christian theology challenged ancient hierarchies -- important for the subject and not covered."
+    },
+    {
+      "question": "What is the prophetic tradition in Judaism, and how does it create a moral check on political power?",
+      "answer": "The prophets declared that rulers are accountable to God's moral law and could be condemned even when politically powerful -- Elijah rebuking Ahab, Nathan rebuking David",
+      "choices": [
+        "The prophets declared that rulers are accountable to God's moral law and could be condemned even when politically powerful -- Elijah rebuking Ahab, Nathan rebuking David",
+        "The prophets primarily predicted future events with no concern for present political ethics",
+        "The prophetic tradition taught that kings were immune from moral criticism since they were chosen by God",
+        "Prophets only addressed foreign nations, not the rulers of Israel and Judah"
+      ],
+      "tier": 3,
+      "reason": "The prophetic tradition as a check on political power is a foundational concept in Judeo-Christian political theology."
+    },
+    {
+      "question": "What does the theology of the 'image of God' (imago Dei) imply about how criminals and enemies should be treated?",
+      "answer": "Even criminals and enemies bear God's image, placing limits on how they may be punished -- torture, degradation, and execution without fair process violate that dignity",
+      "choices": [
+        "Even criminals and enemies bear God's image, placing limits on how they may be punished -- torture, degradation, and execution without fair process violate that dignity",
+        "Criminals forfeit the image of God through their actions and may be treated as sub-human",
+        "The image of God only protects innocent people; guilt removes that protection entirely",
+        "The imago Dei doctrine has no implications for criminal justice"
+      ],
+      "tier": 3,
+      "reason": "Applies imago Dei to criminal justice and the treatment of enemies -- crucial connection not tested elsewhere."
+    },
+    {
+      "question": "How did the Puritan concept of 'calling' (vocation) transform the idea that ordinary work has spiritual value?",
+      "answer": "Luther and Calvin taught that all honest work is service to God -- not just priestly work; this dignified ordinary labor and motivated diligent work as a form of worship",
+      "choices": [
+        "Luther and Calvin taught that all honest work is service to God -- not just priestly work; this dignified ordinary labor and motivated diligent work as a form of worship",
+        "The Puritans believed only contemplative prayer and Bible study had spiritual value",
+        "Vocation referred only to the clergy's calling to ordained ministry",
+        "The doctrine of vocation taught that wealth was a sign of God's disfavor"
+      ],
+      "tier": 3,
+      "reason": "The Protestant doctrine of vocation is a foundational concept with enormous social and economic consequences -- absent from the questions."
+    },
+    {
+      "question": "What is 'covenant' in biblical theology, and how does it differ from a simple contract?",
+      "answer": "A covenant involves total personal commitment between parties, not just legal exchange -- it creates family-like obligations of loyalty that cannot be merely transacted away",
+      "choices": [
+        "A covenant involves total personal commitment between parties, not just legal exchange -- it creates family-like obligations of loyalty that cannot be merely transacted away",
+        "A covenant is identical to a contract but uses religious language",
+        "Biblical covenants were only between Israel and God, having no implications for human relationships",
+        "Covenants require a financial payment to become binding"
+      ],
+      "tier": 2,
+      "reason": "Covenant theology is central to the biblical tradition and important for understanding the foundations of Western social contract theory."
+    },
+    {
+      "question": "What is the theological doctrine of 'common grace' in Reformed theology, and why does it matter for how Christians engage with non-Christians?",
+      "answer": "God restrains evil and allows truth, beauty, and justice to exist even among unbelievers -- so Christians can affirm genuine good in non-Christian thought and culture",
+      "choices": [
+        "God restrains evil and allows truth, beauty, and justice to exist even among unbelievers -- so Christians can affirm genuine good in non-Christian thought and culture",
+        "Common grace teaches that all people will eventually be saved",
+        "It means Christians must always defer to non-Christian experts on secular matters",
+        "Common grace refers only to material blessings like rain and sunlight"
+      ],
+      "tier": 4,
+      "reason": "Common grace doctrine is important for understanding how Reformed theology relates to secular philosophy and culture -- a gap in the questions."
+    },
+    {
+      "question": "What did the Anabaptists' insistence on voluntary church membership (believers' baptism) imply about the nature of religious faith?",
+      "answer": "Faith must be consciously chosen by the individual -- baptizing infants makes church membership a political identity rather than a personal commitment to God",
+      "choices": [
+        "Faith must be consciously chosen by the individual -- baptizing infants makes church membership a political identity rather than a personal commitment to God",
+        "The Anabaptists rejected baptism entirely as unnecessary for salvation",
+        "Infant baptism was wrong only because it used the wrong method of immersion",
+        "The Anabaptists taught that salvation is determined by birth into a Christian family"
+      ],
+      "tier": 4,
+      "reason": "The Anabaptist insistence on voluntary faith is foundational to Baptist and evangelical conceptions of authentic personal faith vs. inherited religion."
+    },
+    {
+      "question": "How did the theology of the Exodus narrative function as a liberation theology throughout Western history?",
+      "answer": "The story of God delivering enslaved Israel from Egypt has repeatedly inspired oppressed people -- American slaves, civil rights leaders, and liberation theologians -- to claim God's solidarity with the oppressed",
+      "choices": [
+        "The story of God delivering enslaved Israel from Egypt has repeatedly inspired oppressed people -- American slaves, civil rights leaders, and liberation theologians -- to claim God's solidarity with the oppressed",
+        "The Exodus narrative was used primarily to justify conquest of new territories",
+        "Liberation theology invented the political reading of Exodus in the 20th century with no earlier precedents",
+        "The Exodus story is considered purely historical by all theologians with no ongoing moral application"
+      ],
+      "tier": 3,
+      "reason": "The Exodus as a theological template for liberation is a major theme in Western religious and political history -- an important gap."
+    },
+    {
+      "question": "What was the theological argument of Martin Luther King Jr. for civil disobedience against unjust laws?",
+      "answer": "Following Aquinas: an unjust law is no law at all -- it contradicts the natural moral law and the equal dignity of persons before God, and conscience must resist it",
+      "choices": [
+        "Following Aquinas: an unjust law is no law at all -- it contradicts the natural moral law and the equal dignity of persons before God, and conscience must resist it",
+        "King argued that all laws must be obeyed until changed through proper channels",
+        "His argument was purely secular with no theological basis",
+        "King cited the First Amendment rather than any theological principle"
+      ],
+      "tier": 3,
+      "reason": "King's theological grounding for civil disobedience is a key application of natural law and imago Dei theology -- missing from the questions."
+    },
+    {
+      "question": "What is the theological basis for the concept of 'human dignity' in Catholic Social Teaching?",
+      "answer": "Every person has inviolable dignity because each is created in God's image, redeemed by Christ, and called to eternal life -- dignity is not granted by the state but by God",
+      "choices": [
+        "Every person has inviolable dignity because each is created in God's image, redeemed by Christ, and called to eternal life -- dignity is not granted by the state but by God",
+        "Human dignity is a natural right derived from Enlightenment reason with no theological basis",
+        "Dignity in Catholic teaching depends on one's moral conduct and is forfeited by grave sin",
+        "The Church bases human dignity on the social utility of each person to the community"
+      ],
+      "tier": 3,
+      "reason": "The theological grounding of human dignity in Catholic Social Teaching is foundational and not covered in the existing questions."
+    },
+    {
+      "question": "What is the significance of the concept of 'repentance' (metanoia) in Christianity for individual moral responsibility?",
+      "answer": "Repentance is a voluntary turning of the whole person toward God -- it requires personal acknowledgment of one's specific wrongs, not collective guilt or ritual substitution",
+      "choices": [
+        "Repentance is a voluntary turning of the whole person toward God -- it requires personal acknowledgment of one's specific wrongs, not collective guilt or ritual substitution",
+        "Repentance can be performed by a priest on behalf of an entire family",
+        "Metanoia refers only to changing one's doctrinal beliefs, not moral behavior",
+        "In early Christianity, repentance was only available once after baptism and could not be repeated"
+      ],
+      "tier": 2,
+      "reason": "The concept of repentance as personal, voluntary moral transformation is central to the Christian understanding of individual moral responsibility."
+    },
+    {
+      "question": "How does Buddhism's concept of individual karma differ from the Judeo-Christian concept of individual moral responsibility?",
+      "answer": "Both place moral responsibility on the individual, but karma is automatic and impersonal (consequences following causes); the Judeo-Christian model involves a personal God who forgives and judges",
+      "choices": [
+        "Both place moral responsibility on the individual, but karma is automatic and impersonal (consequences following causes); the Judeo-Christian model involves a personal God who forgives and judges",
+        "Buddhism holds the collective community responsible while Christianity focuses on the individual",
+        "Karma and Christian sin are identical concepts with different names",
+        "Buddhism denies individual moral responsibility; Christianity affirms it"
+      ],
+      "tier": 3,
+      "reason": "Comparative question on individual moral responsibility across traditions -- fits the criteria for comparative religion questions."
+    },
+    {
+      "question": "What does the Islamic concept of 'ummah' (community of believers) imply about the relationship between individual and collective religious identity, compared to Protestant Christianity?",
+      "answer": "Islam emphasizes the collective religious community more strongly; Protestant Christianity emphasizes individual direct relationship with God through personal faith and scripture",
+      "choices": [
+        "Islam emphasizes the collective religious community more strongly; Protestant Christianity emphasizes individual direct relationship with God through personal faith and scripture",
+        "Both traditions place identical weight on individual and collective identity",
+        "Islam and Protestantism both require priestly mediation for individual salvation",
+        "The ummah concept makes individual moral responsibility impossible in Islamic theology"
+      ],
+      "tier": 3,
+      "reason": "Comparative question testing individual vs. collective identity across traditions -- fits the criteria."
+    },
+    {
+      "question": "What was the theological basis for the abolitionist argument that natural rights apply to all people regardless of race?",
+      "answer": "If all humans share one common origin from God's creation, and bear God's image equally, then race cannot create a class of persons who lack rights",
+      "choices": [
+        "If all humans share one common origin from God's creation, and bear God's image equally, then race cannot create a class of persons who lack rights",
+        "The Bible explicitly forbids discrimination based on race",
+        "The abolitionist argument relied entirely on Enlightenment philosophy with no reference to creation",
+        "Natural rights only apply to persons who have converted to Christianity"
+      ],
+      "tier": 3,
+      "reason": "Tests the specific theological argument (common creation and imago Dei) behind anti-slavery natural rights claims."
+    },
+    {
+      "question": "What is the theological concept of 'grace' in Reformation thought, and why did it matter for how individuals approach God?",
+      "answer": "Grace is God's unearned favor freely given -- it means no one needs to earn access to God through wealth, social rank, priestly connections, or religious performance",
+      "choices": [
+        "Grace is God's unearned favor freely given -- it means no one needs to earn access to God through wealth, social rank, priestly connections, or religious performance",
+        "Grace is the reward God gives for consistent prayer and moral effort",
+        "Grace was available only to those baptized by an ordained Catholic priest",
+        "In Reformation thought, grace supplements human moral effort rather than replacing it"
+      ],
+      "tier": 2,
+      "reason": "Tests the egalitarian and democratizing implications of grace theology in the Reformation -- builds on existing grace question with better framing."
+    },
+    {
+      "question": "What did Thomas Aquinas argue about whether an unjust law has moral authority?",
+      "answer": "An unjust law is not truly a law -- it lacks the binding moral force of law because it contradicts the natural law that reason discovers",
+      "choices": [
+        "An unjust law is not truly a law -- it lacks the binding moral force of law because it contradicts the natural law that reason discovers",
+        "All laws passed by legitimate governments have full moral authority regardless of their content",
+        "Aquinas taught that only canon law (church law) could be truly just",
+        "Unjust laws should always be obeyed to preserve social order"
+      ],
+      "tier": 3,
+      "reason": "This principle from Aquinas is foundational for civil disobedience theory and the limits of political authority -- critical gap in the existing questions."
+    },
+    {
+      "question": "What is the concept of 'theodicy' and what does the problem of evil reveal about the limits of our understanding of God?",
+      "answer": "If God is all-good and all-powerful, why does evil exist? No fully satisfying answer has been found -- the problem reveals limits of human ability to comprehend divine purposes",
+      "choices": [
+        "If God is all-good and all-powerful, why does evil exist? No fully satisfying answer has been found -- the problem reveals limits of human ability to comprehend divine purposes",
+        "Theodicy proves that God is not all-powerful and cannot prevent evil",
+        "The problem of evil is easily solved by the doctrine of free will with no remaining difficulty",
+        "Theodicy is only relevant to atheists; believers have no reason to engage with it"
+      ],
+      "tier": 2,
+      "reason": "Reframing the existing theodicy question to be more conceptually rich and highlight the genuine intellectual challenge."
+    },
+    {
+      "question": "How does the concept of the 'covenant' in Reformed theology ground the idea that political authority is conditional, not absolute?",
+      "answer": "As God's covenant with Israel could be broken by Israel's unfaithfulness, so rulers who violate their obligations to God and the people may lose their legitimate authority",
+      "choices": [
+        "As God's covenant with Israel could be broken by Israel's unfaithfulness, so rulers who violate their obligations to God and the people may lose their legitimate authority",
+        "Covenant theology teaches that kings have unconditional authority from God once appointed",
+        "The covenant only concerns religious obligations, not political ones",
+        "Reformed theology has no concept of political authority derived from covenant"
+      ],
+      "tier": 4,
+      "reason": "Covenant theology's political implications for conditional authority are foundational to Reformed political thought and missing from the questions."
+    },
+    {
+      "question": "What did the early Christian theologian Tertullian mean when he asked 'What has Athens to do with Jerusalem?'",
+      "answer": "He was questioning whether Christian faith needs Greek philosophy -- arguing that divine revelation is sufficient and human reason may corrupt true faith",
+      "choices": [
+        "He was questioning whether Christian faith needs Greek philosophy -- arguing that divine revelation is sufficient and human reason may corrupt true faith",
+        "He was asking why the church should not move its center from Rome to Greece",
+        "He was celebrating the successful spread of Christianity through the Greek-speaking world",
+        "He was arguing that Greek philosophy was compatible with Christian faith"
+      ],
+      "tier": 4,
+      "reason": "Tertullian's question raises the fundamental tension between faith and reason in Christian theology -- important for understanding the fideist vs. rationalist traditions."
+    },
+    {
+      "question": "What is the significance of Augustine's statement 'Our heart is restless until it rests in Thee' for understanding human nature?",
+      "answer": "It implies humans have an innate longing for God that no worldly achievement can fully satisfy -- meaning transcendent purpose is built into human nature itself",
+      "choices": [
+        "It implies humans have an innate longing for God that no worldly achievement can fully satisfy -- meaning transcendent purpose is built into human nature itself",
+        "Augustine meant that Christians should avoid all worldly rest and comfort",
+        "It describes the anxiety of those who have not yet been baptized",
+        "The statement refers only to Augustine's personal experience, not a universal claim"
+      ],
+      "tier": 3,
+      "reason": "Augustine's insight about the God-shaped void in human nature is a foundational theological claim about human anthropology -- missing from the questions."
+    },
+    {
+      "question": "What is the theological concept of 'forgiveness' in Christianity, and how does it differ from mere tolerance or indifference?",
+      "answer": "Forgiveness acknowledges that a genuine wrong was done but releases the debt -- it requires both moral seriousness about wrongdoing and voluntary release of the claim for retribution",
+      "choices": [
+        "Forgiveness acknowledges that a genuine wrong was done but releases the debt -- it requires both moral seriousness about wrongdoing and voluntary release of the claim for retribution",
+        "Forgiveness means pretending no wrong occurred",
+        "In Christian theology, forgiveness requires the wrongdoer to first make full restitution",
+        "Forgiveness is identical to tolerance -- simply choosing not to punish what one finds offensive"
+      ],
+      "tier": 2,
+      "reason": "The theological concept of forgiveness -- distinct from tolerance or mere indifference -- is fundamental to Christian ethics and absent from the questions."
+    },
+    {
+      "question": "What is the historical record of Islamic governance regarding the treatment of non-Muslim minorities (dhimmis), and how does it compare to Christian theocratic governance?",
+      "answer": "Both traditions produced periods of relative tolerance and severe persecution; dhimmi status in Islam gave protected but subordinate status, while Christian theocracies alternately protected and expelled Jewish and other minorities",
+      "choices": [
+        "Both traditions produced periods of relative tolerance and severe persecution; dhimmi status in Islam gave protected but subordinate status, while Christian theocracies alternately protected and expelled Jewish and other minorities",
+        "Islamic governance consistently provided equal rights to all non-Muslim minorities",
+        "Christian theocratic governance was uniformly tolerant of all religious minorities",
+        "Both traditions maintained identical policies toward religious minorities throughout history"
+      ],
+      "tier": 4,
+      "reason": "Comparative question on the historical record of theocratic governance -- fits criteria for comparative religion with attention to the historical record."
+    },
+    {
+      "question": "What is 'liberation theology,' and what was the Vatican's concern about it?",
+      "answer": "A 20th-century Catholic movement reading the Gospel as a mandate for structural justice for the poor; the Vatican worried it adopted Marxist analysis incompatible with Christian anthropology",
+      "choices": [
+        "A 20th-century Catholic movement reading the Gospel as a mandate for structural justice for the poor; the Vatican worried it adopted Marxist analysis incompatible with Christian anthropology",
+        "A Protestant movement emphasizing personal spiritual freedom from sin",
+        "A movement within Eastern Orthodoxy to liberate churches from communist state control",
+        "A theological school that argued Christians should avoid all political engagement"
+      ],
+      "tier": 4,
+      "reason": "Liberation theology is an important 20th century theological movement with significant political implications -- not addressed in the existing questions."
+    },
+    {
+      "question": "What was John Paul II's theological argument for human dignity as the basis for resisting communist totalitarianism?",
+      "answer": "The state cannot be the ultimate source of human dignity -- persons have transcendent worth from God that the state cannot grant or revoke, so totalitarianism is always illegitimate",
+      "choices": [
+        "The state cannot be the ultimate source of human dignity -- persons have transcendent worth from God that the state cannot grant or revoke, so totalitarianism is always illegitimate",
+        "John Paul II argued that democracy is the only form of government compatible with Christianity",
+        "His argument was based on natural law without reference to God or theology",
+        "He argued that communism was wrong primarily for economic rather than theological reasons"
+      ],
+      "tier": 4,
+      "reason": "John Paul II's theological resistance to totalitarianism is an important modern example of theology grounding political resistance -- a significant gap."
+    },
+    {
+      "question": "What is Dietrich Bonhoeffer's concept of 'cheap grace,' and why did he consider it dangerous?",
+      "answer": "Cheap grace is forgiveness without repentance, grace without discipleship -- it uses Christian theology to excuse comfortable compromise with evil rather than demanding costly obedience",
+      "choices": [
+        "Cheap grace is forgiveness without repentance, grace without discipleship -- it uses Christian theology to excuse comfortable compromise with evil rather than demanding costly obedience",
+        "Cheap grace means God's grace is available to everyone equally without cost",
+        "Bonhoeffer used the term to describe Protestant emphasis on faith alone without works",
+        "Cheap grace refers to quick absolution offered by priests in exchange for money"
+      ],
+      "tier": 4,
+      "reason": "Bonhoeffer's concept of cheap grace is one of the most important theological formulations of the 20th century and relevant to the relationship between faith and moral responsibility."
+    },
+    {
+      "question": "In what way did the Protestant Reformation democratize access to religious knowledge?",
+      "answer": "By translating the Bible into vernacular languages and promoting literacy, the Reformation gave ordinary people direct access to scripture without depending on clerical interpretation",
+      "choices": [
+        "By translating the Bible into vernacular languages and promoting literacy, the Reformation gave ordinary people direct access to scripture without depending on clerical interpretation",
+        "The Reformation reserved Bible reading for university-trained theologians",
+        "The Reformation democratized religion by making all church offices elective",
+        "Vernacular Bible translation was a Catholic innovation that Protestants later adopted"
+      ],
+      "tier": 2,
+      "reason": "The Reformation's democratizing effect on religious knowledge is a key theme that bridges theology and the history of individual rights."
+    },
+    {
+      "question": "What is the theological concept of 'agape' (divine love), and how does it differ from erotic love or friendship?",
+      "answer": "Agape is unconditional, self-giving love that seeks the good of the other regardless of merit or return -- it is the model for Christian ethics of service and sacrifice",
+      "choices": [
+        "Agape is unconditional, self-giving love that seeks the good of the other regardless of merit or return -- it is the model for Christian ethics of service and sacrifice",
+        "Agape is the highest form of romantic love between spouses",
+        "In Greek, agape is identical to eros -- both mean romantic attachment",
+        "Agape refers only to God's love for humanity, not a model for human behavior"
+      ],
+      "tier": 2,
+      "reason": "Agape as a theological concept is foundational to Christian ethics and missing from the existing questions."
+    },
+    {
+      "question": "What did the Council of Constance (1414-1418) reveal about the tension between conciliarism and papal authority?",
+      "answer": "It asserted that a general council is superior to the Pope in matters of church governance -- challenging papal absolute authority and anticipating later Protestant and democratic ideas about accountability",
+      "choices": [
+        "It asserted that a general council is superior to the Pope in matters of church governance -- challenging papal absolute authority and anticipating later Protestant and democratic ideas about accountability",
+        "The Council reaffirmed the Pope's absolute and infallible authority over all councils",
+        "It was convened solely to burn Jan Hus and had no broader theological significance",
+        "Conciliarism taught that only bishops, not popes or councils, have true authority"
+      ],
+      "tier": 4,
+      "reason": "Conciliarism is an important pre-Reformation movement challenging absolute authority -- relevant to the development of accountability and rule-of-law concepts."
+    },
+    {
+      "question": "What does the Decalogue's prohibition 'You shall not bear false witness' imply about the social foundations of justice?",
+      "answer": "A just society requires truthful testimony -- without it, courts become instruments of power rather than justice, and the weak cannot be protected from the strong",
+      "choices": [
+        "A just society requires truthful testimony -- without it, courts become instruments of power rather than justice, and the weak cannot be protected from the strong",
+        "The commandment only applies to formal legal proceedings in religious courts",
+        "It prohibits all lying in any circumstance including lying to protect the innocent",
+        "The commandment is mainly about protecting personal reputation, not the justice system"
+      ],
+      "tier": 2,
+      "reason": "Tests the social-justice implications of the ninth commandment rather than its simple content."
+    },
+    {
+      "question": "How does the biblical concept of the Jubilee Year challenge absolutist claims about private property?",
+      "answer": "The Jubilee commanded periodic cancellation of debts and return of land -- implying that absolute private property rights can be overridden by God's claim that 'the earth is the Lord's'",
+      "choices": [
+        "The Jubilee commanded periodic cancellation of debts and return of land -- implying that absolute private property rights can be overridden by God's claim that 'the earth is the Lord's'",
+        "The Jubilee established permanent and absolute rights to private property",
+        "The Jubilee applied only to the ancient nation of Israel and has no ongoing moral application",
+        "The Jubilee was about freeing enslaved workers to practice religious observances"
+      ],
+      "tier": 3,
+      "reason": "The Jubilee year is a key theological concept challenging absolute property rights -- relevant to the theme of moral limits on economic power and missing from the questions."
+    },
+    {
+      "question": "What is the theological concept of 'original blessing' proposed by Matthew Fox as an alternative to original sin?",
+      "answer": "Fox argued that the creation narrative in Genesis presents the world as fundamentally good, not fundamentally fallen -- original blessing precedes and is more basic than original sin",
+      "choices": [
+        "Fox argued that the creation narrative in Genesis presents the world as fundamentally good, not fundamentally fallen -- original blessing precedes and is more basic than original sin",
+        "Fox argued that original sin had been exaggerated by Augustine but was still the primary theological lens",
+        "Original blessing refers to the blessing God gave Adam and Eve at their wedding",
+        "Fox's concept was universally accepted by Catholic and Protestant theologians"
+      ],
+      "tier": 5,
+      "reason": "Fox's alternative to original sin represents an important modern theological debate about the Christian view of human nature -- adds diversity to T5 questions."
+    },
+    {
+      "question": "What does the Hebrew concept of 'shalom' mean beyond simple peace?",
+      "answer": "Wholeness, flourishing, and right relationship -- a state of all things being as they should be before God, encompassing justice, health, and community",
+      "choices": [
+        "Wholeness, flourishing, and right relationship -- a state of all things being as they should be before God, encompassing justice, health, and community",
+        "The absence of war between Israel and its neighbors",
+        "A greeting used only in formal synagogue settings",
+        "The Sabbath rest that God commanded on the seventh day"
+      ],
+      "tier": 2,
+      "reason": "Shalom as comprehensive flourishing is a foundational Hebrew concept with implications for social justice theology -- missing from existing questions."
+    },
+    {
+      "question": "What is the theological concept of 'kenosis' and what does it reveal about God's relationship to power?",
+      "answer": "God voluntarily emptied himself of divine privileges in the incarnation -- revealing that divine love expresses itself through self-giving vulnerability, not domination",
+      "choices": [
+        "God voluntarily emptied himself of divine privileges in the incarnation -- revealing that divine love expresses itself through self-giving vulnerability, not domination",
+        "Kenosis means God became temporarily unable to know the future",
+        "It refers to the mystical emptying of the human soul in contemplative prayer only",
+        "Kenosis is a heresy that denies Christ's true divinity"
+      ],
+      "tier": 4,
+      "reason": "Kenosis reveals something profound about the nature of divine power as self-giving rather than dominating -- important conceptual question."
+    },
+    {
+      "question": "What did the Reformation doctrine of the 'two kingdoms' (Luther) teach about the relationship between church and civil authority?",
+      "answer": "God governs through two distinct kingdoms -- the church (through the Word and gospel) and the state (through law and the sword); each has its own proper domain",
+      "choices": [
+        "God governs through two distinct kingdoms -- the church (through the Word and gospel) and the state (through law and the sword); each has its own proper domain",
+        "The church must control the state to ensure Christian morality in law",
+        "The state must control the church to prevent religious division and civil unrest",
+        "Luther taught that there is one unified kingdom in which church and state are identical"
+      ],
+      "tier": 4,
+      "reason": "Luther's two kingdoms doctrine is foundational for Lutheran political theology and church-state relations -- fills a gap."
+    },
+    {
+      "question": "What was the theological argument of John Calvin for the right to resist tyrannical government?",
+      "answer": "Inferior magistrates (lesser rulers) have a God-given duty to restrain tyrants on behalf of the people -- absolute obedience to wicked rulers is itself a form of idolatry",
+      "choices": [
+        "Inferior magistrates (lesser rulers) have a God-given duty to restrain tyrants on behalf of the people -- absolute obedience to wicked rulers is itself a form of idolatry",
+        "Calvin taught absolute obedience to all rulers as appointed by God",
+        "Only the Pope has authority to declare a ruler to be a tyrant",
+        "Calvin believed popular revolution against tyrants is always justified regardless of means"
+      ],
+      "tier": 4,
+      "reason": "Calvin's qualified right of resistance through inferior magistrates was enormously influential on constitutional theory -- a significant gap."
+    },
+    {
+      "question": "What is the theological basis of the Golden Rule ('Do unto others as you would have them do unto you'), and how does it appear across religious traditions?",
+      "answer": "It grounds morality in empathy and reciprocity -- versions appear in Christianity, Judaism, Islam, Confucianism, and Buddhism, suggesting a cross-cultural moral intuition",
+      "choices": [
+        "It grounds morality in empathy and reciprocity -- versions appear in Christianity, Judaism, Islam, Confucianism, and Buddhism, suggesting a cross-cultural moral intuition",
+        "The Golden Rule is unique to Christianity and has no parallel in other traditions",
+        "It is primarily a social contract principle with no religious significance",
+        "The Golden Rule only applies within one's own religious community"
+      ],
+      "tier": 2,
+      "reason": "The Golden Rule as a cross-cultural moral principle is a valuable comparative religion question showing common ground."
+    },
+    {
+      "question": "What does the story of Cain and Abel establish about moral responsibility in the Judeo-Christian tradition?",
+      "answer": "Each person is individually accountable for their brother's welfare -- God's question 'Where is your brother?' establishes that indifference to others' suffering is itself a moral failure",
+      "choices": [
+        "Each person is individually accountable for their brother's welfare -- God's question 'Where is your brother?' establishes that indifference to others' suffering is itself a moral failure",
+        "The story teaches that murder is the only sin God cares about",
+        "It establishes that collective families are punished for individual sins",
+        "The story is primarily about the correct form of animal sacrifice"
+      ],
+      "tier": 2,
+      "reason": "The Cain and Abel story establishes individual moral responsibility and the obligation of care for others -- a key early text not yet covered conceptually."
+    },
+    {
+      "question": "What was the theological argument for the separation of church and state in John Locke's Letter Concerning Toleration?",
+      "answer": "The magistrate's job is to protect civil goods (life, property); the soul's salvation is not within civil jurisdiction because coercion cannot produce genuine religious belief",
+      "choices": [
+        "The magistrate's job is to protect civil goods (life, property); the soul's salvation is not within civil jurisdiction because coercion cannot produce genuine religious belief",
+        "Locke argued that all religions are equally true and therefore none should be favored",
+        "The state must enforce religion to maintain social order",
+        "Locke derived church-state separation from Scripture, not from reason"
+      ],
+      "tier": 4,
+      "reason": "Locke's foundational argument for toleration is directly relevant to the theme of conscience and state authority -- an important gap."
+    },
+    {
+      "question": "What did the Council of Trent's response to the Reformation reveal about the theological stakes of the dispute over authority?",
+      "answer": "By reaffirming that tradition and scripture together constitute authority, Trent rejected the Protestant claim that individuals can correct the church through scripture alone",
+      "choices": [
+        "By reaffirming that tradition and scripture together constitute authority, Trent rejected the Protestant claim that individuals can correct the church through scripture alone",
+        "Trent agreed with Luther's doctrine of Sola Scriptura but rejected his conclusions",
+        "Trent was primarily concerned with administrative reform, not doctrinal disputes",
+        "Trent rejected all of the Protestant critiques as baseless"
+      ],
+      "tier": 4,
+      "reason": "The Council of Trent's significance for the authority question -- it clarifies what is actually at stake in the Catholic-Protestant dispute."
+    },
+    {
+      "question": "What is the concept of 'prevenient grace' in Arminian theology, and why does it matter for free will?",
+      "answer": "Grace that goes before (precedes) human response, enabling but not compelling the will to choose God -- it preserves genuine free choice while acknowledging human need for divine assistance",
+      "choices": [
+        "Grace that goes before (precedes) human response, enabling but not compelling the will to choose God -- it preserves genuine free choice while acknowledging human need for divine assistance",
+        "Grace that is given only to those who have already chosen God",
+        "The grace that prevents people from sinning after conversion",
+        "Irresistible grace that ensures the elect cannot refuse salvation"
+      ],
+      "tier": 4,
+      "reason": "Prevenient grace is Arminianism's key answer to the free will problem -- fills a gap in Arminian theology coverage."
+    },
+    {
+      "question": "What is the relationship between the Ten Commandments and natural law in Aquinas's theology?",
+      "answer": "The Commandments are divine confirmation of what reason could already discover -- they clarify and reinforce the natural moral law rather than replacing it",
+      "choices": [
+        "The Commandments are divine confirmation of what reason could already discover -- they clarify and reinforce the natural moral law rather than replacing it",
+        "The Commandments replaced natural law entirely; without revelation no moral knowledge is possible",
+        "Natural law and the Commandments contradict each other whenever they conflict",
+        "Aquinas believed the Commandments were arbitrary divine commands with no rational basis"
+      ],
+      "tier": 4,
+      "reason": "The relationship between divine command and natural law in Aquinas is foundational for Catholic moral theology -- a gap."
+    },
+    {
+      "question": "How does the Torah's command to love the stranger ('you were strangers in Egypt') function as a theological basis for human rights?",
+      "answer": "It grounds moral obligation to outsiders in shared memory of vulnerability -- because Israel was once without rights, they must extend rights to those who lack them now",
+      "choices": [
+        "It grounds moral obligation to outsiders in shared memory of vulnerability -- because Israel was once without rights, they must extend rights to those who lack them now",
+        "The command applies only to Israelite converts, not to all foreigners",
+        "It establishes that strangers may be tolerated but not given equal legal status",
+        "The command was abolished in the New Testament as a purely national obligation"
+      ],
+      "tier": 3,
+      "reason": "The Torah's command to protect strangers is a foundational text for universal moral obligation -- missing from the existing questions."
+    },
+    {
+      "question": "What is the theological concept of 'vicarious atonement,' and what does it imply about collective vs. individual guilt?",
+      "answer": "One person (Christ) bears the penalty on behalf of others -- it presupposes that guilt can be transferred, which has been theologically controversial since it seems to violate individual responsibility",
+      "choices": [
+        "One person (Christ) bears the penalty on behalf of others -- it presupposes that guilt can be transferred, which has been theologically controversial since it seems to violate individual responsibility",
+        "Vicarious atonement means each person must suffer for their own sins individually",
+        "The concept proves that collective punishment of families is morally justified",
+        "Vicarious atonement eliminates any need for personal repentance"
+      ],
+      "tier": 4,
+      "reason": "Tests the theological tension between vicarious atonement and individual moral responsibility -- an important conceptual question."
+    },
+    {
+      "question": "What is the significance of the biblical injunction to not oppress the widow, the orphan, the poor, or the stranger?",
+      "answer": "Protecting the most vulnerable members of society is not charity but justice -- God holds the powerful accountable for how they treat those who cannot protect themselves",
+      "choices": [
+        "Protecting the most vulnerable members of society is not charity but justice -- God holds the powerful accountable for how they treat those who cannot protect themselves",
+        "These categories were only protected in ancient Israelite law with no broader application",
+        "The prophets viewed care for the poor as optional generosity, not mandatory justice",
+        "The injunction applied only to religious institutions, not to political rulers"
+      ],
+      "tier": 2,
+      "reason": "The prophetic tradition's insistence on protecting the vulnerable as a matter of justice is a foundational theme."
+    },
+    {
+      "question": "What is the Augustinian concept of the 'Two Cities,' and what does it imply about the limits of political life?",
+      "answer": "The City of God (ordered by love of God) and the City of Man (ordered by self-love) are always intermingled -- political institutions can achieve order but not ultimate human fulfillment",
+      "choices": [
+        "The City of God (ordered by love of God) and the City of Man (ordered by self-love) are always intermingled -- political institutions can achieve order but not ultimate human fulfillment",
+        "Augustine argued that Christian nations are literally the City of God on earth",
+        "The Two Cities means Christians should entirely withdraw from political life",
+        "Political power, when exercised by Christians, is equivalent to divine governance"
+      ],
+      "tier": 3,
+      "reason": "Augustine's Two Cities doctrine defines the limits of political life and has been enormously influential in Western political theology -- a significant gap."
+    },
+    {
+      "question": "What is the concept of 'subsidiarity' in Catholic Social Teaching, and what does it imply about the organization of society?",
+      "answer": "Decisions should be made at the lowest competent level -- local communities and families rather than the central state -- respecting human dignity and local knowledge",
+      "choices": [
+        "Decisions should be made at the lowest competent level -- local communities and families rather than the central state -- respecting human dignity and local knowledge",
+        "Subsidiarity means the state should control all social institutions to ensure uniformity",
+        "The principle requires that all decisions be made by church authority before civil authority",
+        "Subsidiarity applies only to internal church governance, not to civil society"
+      ],
+      "tier": 4,
+      "reason": "Subsidiarity is a major principle of Catholic Social Teaching with broad political implications -- not covered in existing questions."
+    },
+    {
+      "question": "What did the Protestant concept of 'conscience' contribute to the development of due process rights in English law?",
+      "answer": "The Reformation's emphasis on individual conscience created pressure for legal protections ensuring no person could be forced to testify against themselves or be condemned without proper procedure",
+      "choices": [
+        "The Reformation's emphasis on individual conscience created pressure for legal protections ensuring no person could be forced to testify against themselves or be condemned without proper procedure",
+        "Protestant theology had no influence on English common law development",
+        "Due process rights were invented entirely by secular jurists with no religious input",
+        "The Reformation actually reduced legal protections by allowing rulers more power over subjects"
+      ],
+      "tier": 4,
+      "reason": "The connection between Protestant conscience theology and legal due process protections is an important historical link not covered in the questions."
+    },
+    {
+      "question": "What theological concept does the Parable of the Lost Sheep illustrate about God's concern for individuals?",
+      "answer": "God's care is not utilitarian -- even one individual who is lost matters enough to leave the ninety-nine; every person has irreducible worth that cannot be traded off against the majority",
+      "choices": [
+        "God's care is not utilitarian -- even one individual who is lost matters enough to leave the ninety-nine; every person has irreducible worth that cannot be traded off against the majority",
+        "The parable teaches that the community (ninety-nine) matters more than the individual",
+        "It shows that God only cares about those who have strayed from the flock",
+        "The parable is about Jewish evangelism to Gentile nations"
+      ],
+      "tier": 2,
+      "reason": "The Lost Sheep parable's anti-utilitarian message about individual worth is a key theological concept -- reframes the existing factual question."
+    },
+    {
+      "question": "What is 'solidarity' in Catholic Social Teaching, and how does it ground obligations to distant strangers?",
+      "answer": "All people share a common humanity and are therefore morally connected -- solidarity grounds obligations to the poor and oppressed even when they are not personally known to us",
+      "choices": [
+        "All people share a common humanity and are therefore morally connected -- solidarity grounds obligations to the poor and oppressed even when they are not personally known to us",
+        "Solidarity applies only within the Catholic Church community",
+        "The principle means economic equality must be enforced by the state",
+        "Solidarity refers only to labor unions and collective bargaining"
+      ],
+      "tier": 3,
+      "reason": "Solidarity as a theological concept grounding universal obligations is a key principle in Catholic Social Teaching -- not covered."
+    },
+    {
+      "question": "How does the Sermon on the Mount's command 'Love your enemies' challenge ordinary tribal moral logic?",
+      "answer": "Most moral systems extend obligations primarily within the in-group; Jesus commanded loving enemies as divine imitation -- God sends rain on the just and unjust alike",
+      "choices": [
+        "Most moral systems extend obligations primarily within the in-group; Jesus commanded loving enemies as divine imitation -- God sends rain on the just and unjust alike",
+        "The command was only relevant to first-century Jewish-Roman political tensions",
+        "Loving enemies means feeling emotional affection for them, not acting for their good",
+        "This command was later qualified by the church to apply only in peacetime"
+      ],
+      "tier": 2,
+      "reason": "The theological significance of loving enemies as a challenge to tribal moral logic is a key concept not yet covered."
+    },
+    {
+      "question": "What does the Book of Job conclude about the relationship between suffering and moral deserving?",
+      "answer": "Suffering is not simply punishment for sin -- Job's suffering was undeserved, and God's answer from the whirlwind challenges neat cause-and-effect moral accounting",
+      "choices": [
+        "Suffering is not simply punishment for sin -- Job's suffering was undeserved, and God's answer from the whirlwind challenges neat cause-and-effect moral accounting",
+        "Job teaches that all suffering is the result of specific personal sins",
+        "The book concludes that God is indifferent to human suffering",
+        "Job's friends were correct that his suffering proved his hidden guilt"
+      ],
+      "tier": 2,
+      "reason": "Job's challenge to simplistic retributive theology is a key theological concept not adequately covered in existing questions."
+    },
+    {
+      "question": "What is the theological concept of 'justification by faith' in Paul's Letter to the Romans, and what were its historical consequences?",
+      "answer": "God declares a person righteous through trust in Christ -- this doctrine became the touchstone of the Reformation and reshaped European religious and political life",
+      "choices": [
+        "God declares a person righteous through trust in Christ -- this doctrine became the touchstone of the Reformation and reshaped European religious and political life",
+        "Paul taught that good deeds alone, without faith, produce justification before God",
+        "Justification by faith applies only to Jewish believers who keep the Mosaic law",
+        "The Letter to the Romans was primarily concerned with church organizational structure"
+      ],
+      "tier": 3,
+      "reason": "Frames the justification doctrine in terms of its theological content and historical significance together."
+    },
+    {
+      "question": "What is the meaning of the Greek word 'euangelion' (gospel as good news), and what made it genuinely new in the ancient world?",
+      "answer": "The announcement that all people -- regardless of ethnicity, status, or moral past -- can be reconciled to God through Christ; unprecedented in its universality and gratuity",
+      "choices": [
+        "The announcement that all people -- regardless of ethnicity, status, or moral past -- can be reconciled to God through Christ; unprecedented in its universality and gratuity",
+        "Good news that Israel had finally been liberated from Roman occupation",
+        "An announcement that God had written new laws for Christians to follow",
+        "The report that Jesus had performed miracles proving he was a prophet"
+      ],
+      "tier": 2,
+      "reason": "Reframes the factual definition of gospel into a question about why it was genuinely novel in its historical context."
+    },
+    {
+      "question": "What is the difference between the Eastern Orthodox and Protestant concepts of grace?",
+      "answer": "In Orthodoxy, grace is God's divine energies that actually transform the believer toward theosis; in Protestant theology, grace is primarily a forensic declaration of forgiveness",
+      "choices": [
+        "In Orthodoxy, grace is God's divine energies that actually transform the believer toward theosis; in Protestant theology, grace is primarily a forensic declaration of forgiveness",
+        "Eastern and Western theologies use identical concepts of grace with only terminological differences",
+        "Orthodox theology denies the concept of grace, focusing on human effort",
+        "Protestant grace involves actual transformation while Orthodox grace is merely symbolic"
+      ],
+      "tier": 4,
+      "reason": "The Orthodox-Protestant difference on grace is an important comparative question -- deepens understanding of both traditions."
+    },
+    {
+      "question": "What does the Hebrew Bible's concept of 'tzedakah' reveal about the theology of poverty and obligation?",
+      "answer": "Tzedakah is not charity (voluntary) but justice (obligatory) -- the poor have a right to a portion of others' wealth, grounded in God's ownership of all things",
+      "choices": [
+        "Tzedakah is not charity (voluntary) but justice (obligatory) -- the poor have a right to a portion of others' wealth, grounded in God's ownership of all things",
+        "Tzedakah is a voluntary act of generosity that earns merit but cannot be compelled",
+        "The concept only applies to giving within the synagogue community",
+        "Tzedakah refers to prayer and fasting, not material giving"
+      ],
+      "tier": 3,
+      "reason": "Tzedakah as obligatory justice rather than voluntary charity is a key insight from the Jewish theological tradition -- not covered."
+    },
+    {
+      "question": "What was the significance of the printing press for the Protestant Reformation's theological message?",
+      "answer": "It enabled mass distribution of the Bible and Reformation pamphlets, bypassing clerical gatekeepers and making personal Scripture reading possible for ordinary literate people",
+      "choices": [
+        "It enabled mass distribution of the Bible and Reformation pamphlets, bypassing clerical gatekeepers and making personal Scripture reading possible for ordinary literate people",
+        "The printing press was rejected by Reformers as a tool of secular commerce",
+        "Only Catholic authorities used the press; Protestants relied on handwritten copies",
+        "The press was unimportant since most Reformation converts were illiterate"
+      ],
+      "tier": 2,
+      "reason": "The printing press's role in democratizing religious knowledge is a key link between the Reformation and individual access to scripture."
+    },
+    {
+      "question": "What does the theological concept of 'free will' mean in the context of salvation, and why is it philosophically difficult?",
+      "answer": "If God foreknows all choices, how can choices be truly free? If humans are truly free, how can God guarantee salvation? The tension between foreknowledge and freedom has never been fully resolved",
+      "choices": [
+        "If God foreknows all choices, how can choices be truly free? If humans are truly free, how can God guarantee salvation? The tension between foreknowledge and freedom has never been fully resolved",
+        "Free will means humans can sin but cannot choose salvation without God forcing them",
+        "The philosophical problem of free will is irrelevant to theology since faith requires no reasoning",
+        "Calvinism solves the problem by showing that freedom and determinism are contradictory"
+      ],
+      "tier": 3,
+      "reason": "A conceptual framing of the free will problem that tests genuine understanding rather than vocabulary."
+    },
+    {
+      "question": "What is 'fideism' in theology, and what is the main criticism of it?",
+      "answer": "Fideism holds that faith is independent of and superior to reason; the criticism is that it makes religious claims immune to evaluation and can justify any belief held sincerely",
+      "choices": [
+        "Fideism holds that faith is independent of and superior to reason; the criticism is that it makes religious claims immune to evaluation and can justify any belief held sincerely",
+        "Fideism is the view that faith and reason must always agree",
+        "Fideism is another name for agnosticism -- the position that God cannot be known",
+        "Fideism holds that only those with special faith-gifts can understand theology"
+      ],
+      "tier": 4,
+      "reason": "Fideism and its criticism is an important position in philosophy of religion -- fills a gap."
+    },
+    {
+      "question": "What is the theological concept of 'discernment' in Christian spiritual practice?",
+      "answer": "The practice of prayerfully evaluating thoughts, desires, and situations to identify what is from God -- requiring both reason and spiritual attentiveness",
+      "choices": [
+        "The practice of prayerfully evaluating thoughts, desires, and situations to identify what is from God -- requiring both reason and spiritual attentiveness",
+        "Discernment means blindly following the impulse that feels most spiritual",
+        "It refers only to the formal evaluation of candidates for ordination",
+        "Discernment is the same as divination -- reading signs to predict the future"
+      ],
+      "tier": 3,
+      "reason": "Discernment as a spiritual and moral practice is important to individual moral responsibility in Christian spirituality."
+    },
+    {
+      "question": "What is the theological concept of 'eschatological hope' and how does it motivate moral action in the present?",
+      "answer": "Belief in God's ultimate justice and renewal motivates working for justice now -- since the arc of history bends toward God's purposes, present suffering is not the final word",
+      "choices": [
+        "Belief in God's ultimate justice and renewal motivates working for justice now -- since the arc of history bends toward God's purposes, present suffering is not the final word",
+        "Eschatological hope means Christians should focus only on heaven and ignore social problems",
+        "Belief in the end times eliminates any motivation to improve the present world",
+        "Eschatological theology teaches that God will fix everything miraculously without human cooperation"
+      ],
+      "tier": 3,
+      "reason": "The motivating power of eschatological hope for present moral action is a key theological concept."
+    },
+    {
+      "question": "How does Buddhist ethics differ from Christian ethics in its approach to moral motivation?",
+      "answer": "Buddhist ethics motivates moral behavior primarily through understanding (seeing reality clearly removes greed, hatred, and delusion); Christian ethics motivates through love of a personal God and neighbor",
+      "choices": [
+        "Buddhist ethics motivates moral behavior primarily through understanding (seeing reality clearly removes greed, hatred, and delusion); Christian ethics motivates through love of a personal God and neighbor",
+        "Both traditions motivate morality primarily through fear of divine punishment",
+        "Buddhist ethics requires no inner motivation; only external behavior matters",
+        "Christian ethics relies on reason alone while Buddhism relies on feeling"
+      ],
+      "tier": 4,
+      "reason": "Comparative question on moral motivation across religious traditions -- fits criteria."
+    },
+    {
+      "question": "What does the theological concept of 'lament' in the Psalms reveal about honest faith?",
+      "answer": "Lament is honest expression of grief, anger, and confusion directed to God -- authentic faith includes wrestling with God rather than only praise and thanksgiving",
+      "choices": [
+        "Lament is honest expression of grief, anger, and confusion directed to God -- authentic faith includes wrestling with God rather than only praise and thanksgiving",
+        "Lament psalms were only used in funeral rituals with no ongoing spiritual application",
+        "The psalms of lament were considered less spiritually mature than psalms of praise",
+        "Lament in the Psalms expresses despair that God has permanently abandoned Israel"
+      ],
+      "tier": 2,
+      "reason": "The theology of lament is an important but often overlooked aspect of biblical spirituality."
+    },
+    {
+      "question": "What is the theological concept of the 'incarnation' (God becoming human), and why does it matter for Christian ethics?",
+      "answer": "God's taking on human flesh means material life and embodied relationships are affirmed as the arena of divine activity -- physical needs, suffering, and justice all become theological concerns",
+      "choices": [
+        "God's taking on human flesh means material life and embodied relationships are affirmed as the arena of divine activity -- physical needs, suffering, and justice all become theological concerns",
+        "The incarnation was purely about demonstrating God's power through miracles",
+        "It means Christians should care only about spiritual realities and ignore physical needs",
+        "The incarnation proves that only humans have spiritual significance"
+      ],
+      "tier": 2,
+      "reason": "The ethical implications of the incarnation -- affirming material life -- are theologically important and not covered."
+    },
+    {
+      "question": "What does the Islamic concept of 'khilafa' (human vicegerency) imply about humanity's role toward creation?",
+      "answer": "Humans are God's stewards (khalifa) on earth, responsible for caring for creation -- they hold authority as a trust from God, not as absolute owners",
+      "choices": [
+        "Humans are God's stewards (khalifa) on earth, responsible for caring for creation -- they hold authority as a trust from God, not as absolute owners",
+        "Khilafa means the Islamic political caliphate must rule all Muslims worldwide",
+        "Humans have absolute dominion over nature with no obligations of stewardship",
+        "The concept applies only to Muslim rulers, not to ordinary believers"
+      ],
+      "tier": 3,
+      "reason": "Islamic stewardship theology is an important comparative concept parallel to Christian stewardship."
+    },
+    {
+      "question": "What was the Barmen Declaration (1934) and why is it theologically significant?",
+      "answer": "A Protestant statement rejecting Nazi ideology as a false gospel -- affirming that Christ alone is Lord and the state cannot claim absolute religious authority over the church",
+      "choices": [
+        "A Protestant statement rejecting Nazi ideology as a false gospel -- affirming that Christ alone is Lord and the state cannot claim absolute religious authority over the church",
+        "A Lutheran document accepting Nazi ideology as compatible with Christian faith",
+        "A Catholic statement condemning Protestant churches in Germany",
+        "A peace declaration signed by all German churches to avoid political conflict"
+      ],
+      "tier": 4,
+      "reason": "The Barmen Declaration is a crucial modern example of theology resisting totalitarianism -- highly relevant to the theme of conscience vs. state authority."
+    },
+    {
+      "question": "What is the concept of 'anonymous Christianity' proposed by Karl Rahner, and what is the main objection to it?",
+      "answer": "People who have never heard the gospel may still be saved through Christ unknowingly; the objection is that it is patronizing to claim people are 'really' Christian without their knowledge",
+      "choices": [
+        "People who have never heard the gospel may still be saved through Christ unknowingly; the objection is that it is patronizing to claim people are 'really' Christian without their knowledge",
+        "Rahner argued that only those explicitly baptized can be saved",
+        "Anonymous Christianity means Christians who do not publicly identify their faith",
+        "The concept teaches that all religions are equal paths to the same God"
+      ],
+      "tier": 5,
+      "reason": "Rahner's concept is important for interfaith theology and raises genuine questions about respect for religious identity."
+    },
+    {
+      "question": "What did Kierkegaard mean by his 'three stages' of human existence (aesthetic, ethical, religious)?",
+      "answer": "Human life can be lived for pleasure, for moral duty, or for personal relationship with God -- each stage reveals the insufficiency of the previous one, with the religious requiring a leap of faith",
+      "choices": [
+        "Human life can be lived for pleasure, for moral duty, or for personal relationship with God -- each stage reveals the insufficiency of the previous one, with the religious requiring a leap of faith",
+        "The three stages describe the progression of church history from paganism to Protestantism",
+        "Kierkegaard believed most people move smoothly through all three stages by adulthood",
+        "The stages are equally valid choices and one need not progress beyond any of them"
+      ],
+      "tier": 5,
+      "reason": "Kierkegaard's three stages illuminate a key analysis of the insufficiency of secular life and the nature of religious commitment."
+    },
+    {
+      "question": "What is the theological concept of 'simul justus et peccator' in Luther's theology?",
+      "answer": "The justified Christian is simultaneously wholly righteous (in Christ's righteousness credited to them) and wholly sinful (in their own nature) -- the tension persists throughout life",
+      "choices": [
+        "The justified Christian is simultaneously wholly righteous (in Christ's righteousness credited to them) and wholly sinful (in their own nature) -- the tension persists throughout life",
+        "The phrase means half of one's sins are forgiven and half remain",
+        "Luther taught that justified Christians gradually become less sinful until perfected",
+        "The phrase describes the dual nature of Christ, not the condition of believers"
+      ],
+      "tier": 4,
+      "reason": "Simul justus et peccator is one of Luther's most characteristic theological formulations -- fills a gap."
+    },
+    {
+      "question": "What was the theological basis of the Social Gospel movement in early 20th century America?",
+      "answer": "The Kingdom of God requires transformation of social structures, not just individual conversion -- poverty, inequality, and exploitation are collective sins requiring collective repentance and reform",
+      "choices": [
+        "The Kingdom of God requires transformation of social structures, not just individual conversion -- poverty, inequality, and exploitation are collective sins requiring collective repentance and reform",
+        "The Social Gospel was opposed to all political engagement and focused only on personal holiness",
+        "It taught that individual conversion automatically transforms social conditions without further effort",
+        "The movement was primarily focused on overseas missions rather than domestic poverty"
+      ],
+      "tier": 3,
+      "reason": "The Social Gospel movement raises the important question of individual vs. structural sin."
+    },
+    {
+      "question": "What is the principle of 'double effect' in Catholic moral theology?",
+      "answer": "An action with both good and harmful effects may be permitted if the good effect is intended, the harm is foreseen but not intended, and the good proportionately outweighs the harm",
+      "choices": [
+        "An action with both good and harmful effects may be permitted if the good effect is intended, the harm is foreseen but not intended, and the good proportionately outweighs the harm",
+        "Double effect teaches that any action is permitted if the overall outcome is good",
+        "The principle forbids all actions that could cause any harm regardless of intent",
+        "Double effect applies only in wartime situations, not in ordinary moral life"
+      ],
+      "tier": 4,
+      "reason": "The principle of double effect is a central tool in Catholic moral theology with wide application."
+    },
+    {
+      "question": "What does the concept of the 'common good' in Catholic Social Teaching require of individuals and political institutions?",
+      "answer": "Both individuals and the state must pursue conditions in which all persons can flourish -- private interests may not be pursued at the expense of those conditions the whole community needs",
+      "choices": [
+        "Both individuals and the state must pursue conditions in which all persons can flourish -- private interests may not be pursued at the expense of those conditions the whole community needs",
+        "The common good means everyone must have the same amount of wealth",
+        "It refers only to the spiritual goods of the church, not to material conditions",
+        "The common good requires suppressing individual rights for the sake of majority preferences"
+      ],
+      "tier": 3,
+      "reason": "The common good concept is a foundational principle in Catholic political theology -- important gap."
+    },
+    {
+      "question": "What theological argument did Dietrich Bonhoeffer make about 'cheap grace'?",
+      "answer": "Cheap grace is forgiveness without repentance, grace without discipleship -- it uses Christian theology to excuse comfortable compromise with evil rather than demanding costly obedience",
+      "choices": [
+        "Cheap grace is forgiveness without repentance, grace without discipleship -- it uses Christian theology to excuse comfortable compromise with evil rather than demanding costly obedience",
+        "Cheap grace means God's grace is available to everyone equally without cost",
+        "Bonhoeffer used the term to describe Protestant emphasis on faith alone without works",
+        "Cheap grace refers to quick absolution offered by priests in exchange for money"
+      ],
+      "tier": 4,
+      "reason": "Bonhoeffer's concept of cheap grace is one of the most important theological formulations of the 20th century -- relevant to faith and moral responsibility."
+    },
+    {
+      "question": "What did the Anabaptists' insistence on voluntary church membership (believers' baptism) imply about the nature of religious faith?",
+      "answer": "Faith must be consciously chosen by the individual -- baptizing infants makes church membership a political identity rather than a personal commitment to God",
+      "choices": [
+        "Faith must be consciously chosen by the individual -- baptizing infants makes church membership a political identity rather than a personal commitment to God",
+        "The Anabaptists rejected baptism entirely as unnecessary for salvation",
+        "Infant baptism was wrong only because it used the wrong method of immersion",
+        "The Anabaptists taught that salvation is determined by birth into a Christian family"
+      ],
+      "tier": 4,
+      "reason": "The Anabaptist insistence on voluntary faith is foundational to Baptist and evangelical conceptions of authentic personal faith."
+    },
+    {
+      "question": "What is the significance of the concept of 'stewardship' in Christian theology for human relationships to property?",
+      "answer": "Humans are caretakers, not absolute owners, of what God has entrusted to them -- ownership carries moral obligations toward others and creation",
+      "choices": [
+        "Humans are caretakers, not absolute owners, of what God has entrusted to them -- ownership carries moral obligations toward others and creation",
+        "Stewardship means giving all property to the church",
+        "The concept teaches that accumulating wealth is inherently sinful",
+        "Stewardship applies only to environmental care, not to wealth or social obligations"
+      ],
+      "tier": 2,
+      "reason": "Stewardship theology is important for understanding Christian economic ethics and the moral limits of property rights."
+    },
+    {
+      "question": "What is the significance of Augustine's statement 'Our heart is restless until it rests in Thee'?",
+      "answer": "Humans have an innate longing for God that no worldly achievement can fully satisfy -- transcendent purpose is built into human nature itself",
+      "choices": [
+        "Humans have an innate longing for God that no worldly achievement can fully satisfy -- transcendent purpose is built into human nature itself",
+        "Augustine meant that Christians should avoid all worldly rest and comfort",
+        "It describes the anxiety of those who have not yet been baptized",
+        "The statement refers only to Augustine's personal experience, not a universal claim"
+      ],
+      "tier": 3,
+      "reason": "Augustine's insight about the God-shaped void in human nature is a foundational theological claim about human anthropology."
+    },
+    {
+      "question": "What is the theological concept of 'agape' (divine love), and how does it differ from erotic love or friendship?",
+      "answer": "Agape is unconditional, self-giving love that seeks the good of the other regardless of merit or return -- it is the model for Christian ethics of service and sacrifice",
+      "choices": [
+        "Agape is unconditional, self-giving love that seeks the good of the other regardless of merit or return -- it is the model for Christian ethics of service and sacrifice",
+        "Agape is the highest form of romantic love between spouses",
+        "In Greek, agape is identical to eros -- both mean romantic attachment",
+        "Agape refers only to God's love for humanity, not a model for human behavior"
+      ],
+      "tier": 2,
+      "reason": "Agape as a theological concept is foundational to Christian ethics and missing from the existing questions."
+    },
+    {
+      "question": "What does the Decalogue's prohibition 'You shall not bear false witness' imply about the social foundations of justice?",
+      "answer": "A just society requires truthful testimony -- without it, courts become instruments of power rather than justice, and the weak cannot be protected from the strong",
+      "choices": [
+        "A just society requires truthful testimony -- without it, courts become instruments of power rather than justice, and the weak cannot be protected from the strong",
+        "The commandment only applies to formal legal proceedings in religious courts",
+        "It prohibits all lying in any circumstance including lying to protect the innocent",
+        "The commandment is mainly about protecting personal reputation, not the justice system"
+      ],
+      "tier": 2,
+      "reason": "Tests the social-justice implications of the ninth commandment rather than its simple content."
+    },
+    {
+      "question": "How did early Christianity's concept of the soul's equal worth before God challenge ancient Greco-Roman social hierarchies?",
+      "answer": "If each soul has equal infinite value before God regardless of social rank, then enslaved persons, women, and foreigners have dignity that transcends their legal status",
+      "choices": [
+        "If each soul has equal infinite value before God regardless of social rank, then enslaved persons, women, and foreigners have dignity that transcends their legal status",
+        "Christianity fully endorsed the Roman social hierarchy as divinely ordered",
+        "The concept of equal souls only applied within Christian communities, not to outsiders",
+        "Soul equality was a Greek philosophical idea that Christianity borrowed without modification"
+      ],
+      "tier": 3,
+      "reason": "This is a key question about how Christian theology challenged ancient hierarchies -- important for the subject."
+    },
+    {
+      "question": "What was the theological argument of Martin Luther King Jr. for civil disobedience against unjust laws?",
+      "answer": "Following Aquinas: an unjust law is no law at all -- it contradicts the natural moral law and the equal dignity of persons before God, and conscience must resist it",
+      "choices": [
+        "Following Aquinas: an unjust law is no law at all -- it contradicts the natural moral law and the equal dignity of persons before God, and conscience must resist it",
+        "King argued that all laws must be obeyed until changed through proper channels",
+        "His argument was purely secular with no theological basis",
+        "King cited the First Amendment rather than any theological principle"
+      ],
+      "tier": 3,
+      "reason": "King's theological grounding for civil disobedience is a key application of natural law and imago Dei theology."
+    },
+    {
+      "question": "What is the prophetic tradition in Judaism, and how does it create a moral check on political power?",
+      "answer": "The prophets declared that rulers are accountable to God's moral law and could be condemned even when powerful -- Elijah rebuking Ahab, Nathan rebuking David",
+      "choices": [
+        "The prophets declared that rulers are accountable to God's moral law and could be condemned even when powerful -- Elijah rebuking Ahab, Nathan rebuking David",
+        "The prophets primarily predicted future events with no concern for present political ethics",
+        "The prophetic tradition taught that kings were immune from criticism since they were chosen by God",
+        "Prophets only addressed foreign nations, not the rulers of Israel and Judah"
+      ],
+      "tier": 3,
+      "reason": "The prophetic tradition as a check on political power is a foundational concept in Judeo-Christian political theology."
+    }
+  ]
+}

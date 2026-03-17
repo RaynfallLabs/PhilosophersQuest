@@ -1,0 +1,1055 @@
+{
+  "remove": [
+    {"index": 8, "reason": "Trivial collective noun: pride of lions is rote memorization with no educational value about lion biology."},
+    {"index": 9, "reason": "Trivial collective noun: pack of wolves. The interesting content is wolf social structure, not the label."},
+    {"index": 10, "reason": "Trivial collective noun: flock of birds. Extremely low value."},
+    {"index": 11, "reason": "Trivial collective noun: school of fish. No educational content about fish behavior."},
+    {"index": 12, "reason": "Trivial collective noun: herd of cows."},
+    {"index": 13, "reason": "Trivial collective noun: pod of whales."},
+    {"index": 14, "reason": "Trivial collective noun: colony of ants. The interesting content is ant superorganism biology, not the label."},
+    {"index": 15, "reason": "Trivial collective noun: murder of crows. The interesting content is crow intelligence and tool use, not the poetic label."},
+    {"index": 38, "reason": "Trivial collective noun: gaggle of geese."},
+    {"index": 39, "reason": "Trivial collective noun: herd of elephants. Elephant social structure is fascinating but not served by this question."},
+    {"index": 40, "reason": "Trivial collective noun: pod of dolphins."},
+    {"index": 47, "reason": "Trivial collective noun: colony of bees. Replace with question about bee eusocial structure."},
+    {"index": 49, "reason": "Trivial collective noun: mob of kangaroos."},
+    {"index": 58, "reason": "Obscure collective noun: unkindness of ravens. No educational biology content."},
+    {"index": 59, "reason": "Obscure collective noun: parliament of owls. No educational biology content."},
+    {"index": 63, "reason": "Trivial collective noun: troop of gorillas."},
+    {"index": 70, "reason": "Trivial collective noun: herd of horses."},
+    {"index": 73, "reason": "Trivial collective noun: flock of sheep."},
+    {"index": 74, "reason": "Obscure collective noun: sleuth of bears. No educational value."},
+    {"index": 77, "reason": "Baby animal name: kitten. Pure rote with no biological content."},
+    {"index": 78, "reason": "Baby animal name: puppy. Pure rote."},
+    {"index": 79, "reason": "Baby animal name: foal. Pure rote."},
+    {"index": 80, "reason": "Baby animal name: cub. Pure rote."},
+    {"index": 81, "reason": "Baby animal name: joey. Replace with question about marsupial pouch development biology."},
+    {"index": 82, "reason": "Baby animal name: calf. Pure rote."},
+    {"index": 83, "reason": "Baby animal name: lamb. Pure rote."},
+    {"index": 84, "reason": "Baby animal name: kid. Pure rote."},
+    {"index": 85, "reason": "Baby animal name: tadpole. Keep concept but reframe -- the tadpole question at index 48 teaches metamorphosis better."},
+    {"index": 86, "reason": "Baby animal name: fawn. Pure rote."},
+    {"index": 87, "reason": "Baby animal name: cygnet. Obscure rote with no biological content."},
+    {"index": 88, "reason": "Baby animal name: duckling. Pure rote."},
+    {"index": 89, "reason": "Baby animal name: eaglet. Pure rote."},
+    {"index": 90, "reason": "Trivial collective noun: flamboyance of flamingos."},
+    {"index": 94, "reason": "Trivial collective noun: bloom of jellyfish."},
+    {"index": 95, "reason": "Trivial collective noun: float of crocodiles."},
+    {"index": 96, "reason": "Trivial collective noun: troop of monkeys."},
+    {"index": 129, "reason": "Trivial collective noun: skulk of foxes. No educational content."},
+    {"index": 155, "reason": "Duplicate: flamingo group name already appeared at index 90. Also low-value collective noun."},
+    {"index": 175, "reason": "Scientific name without context: Felis catus for domestic cat. Rote memorization only."},
+    {"index": 176, "reason": "Scientific name without context: Canis lupus familiaris for domestic dog."},
+    {"index": 178, "reason": "Scientific name without context: Mus musculus for house mouse."},
+    {"index": 179, "reason": "Scientific name without context: Panthera leo for lion. The interesting content is lion genus (Panthera) relationships, not the label alone."},
+    {"index": 180, "reason": "Scientific name without context: Panthera tigris for tiger."},
+    {"index": 205, "reason": "Scientific name without context: Equus caballus for horse."},
+    {"index": 206, "reason": "Scientific name without context: Ailuropoda melanoleuca for giant panda."},
+    {"index": 207, "reason": "Scientific name without context: Loxodonta africana for African elephant."},
+    {"index": 211, "reason": "Scientific name without context: Tursiops truncatus for bottlenose dolphin."},
+    {"index": 212, "reason": "Scientific name without context: Carcharodon carcharias for great white shark."},
+    {"index": 213, "reason": "Scientific name without context: Aptenodytes forsteri for emperor penguin."},
+    {"index": 218, "reason": "Scientific name without context: Musca domestica for housefly."},
+    {"index": 219, "reason": "Scientific name without context: Apis mellifera for European honeybee."},
+    {"index": 220, "reason": "Scientific name without context: Gorilla gorilla for western gorilla."},
+    {"index": 330, "reason": "Baby animal name: kit for rabbit. Pure rote."},
+    {"index": 331, "reason": "Baby animal name: piglet for pig. Pure rote."},
+    {"index": 332, "reason": "Trivial collective noun: herd of pigs."},
+    {"index": 335, "reason": "Trivial collective noun: streak of tigers."},
+    {"index": 336, "reason": "Trivial collective noun: coalition of cheetahs."},
+    {"index": 337, "reason": "Trivial collective noun: romp of otters."},
+    {"index": 341, "reason": "Trivial collective noun: flutter of butterflies."},
+    {"index": 342, "reason": "Trivial collective noun: colony of penguins. The interesting content is penguin huddling behavior (which is asked at index 381)."},
+    {"index": 343, "reason": "Trivial collective noun: crash of rhinos."},
+    {"index": 344, "reason": "Trivial collective noun: bloat of hippos."},
+    {"index": 351, "reason": "Trivial collective noun: tower of giraffes."},
+    {"index": 352, "reason": "Trivial collective noun: dazzle of zebras."},
+    {"index": 355, "reason": "Scientific name without context: Sus scrofa domesticus for pig."},
+    {"index": 356, "reason": "Scientific name without context: Bos taurus for cow."},
+    {"index": 357, "reason": "Scientific name without context: Vulpes vulpes for red fox."},
+    {"index": 358, "reason": "Scientific name without context: Rattus norvegicus for brown rat."},
+    {"index": 359, "reason": "Duplicate scientific name for lion (index 179 already covered this)."},
+    {"index": 360, "reason": "Scientific name without context: Panthera uncia for snow leopard."},
+    {"index": 374, "reason": "Scientific name without context: Octopus vulgaris. Multiple more interesting octopus biology questions exist."},
+    {"index": 375, "reason": "Scientific name without context: Crocodylus niloticus."},
+    {"index": 376, "reason": "Scientific name without context: Crocodylus porosus."},
+    {"index": 377, "reason": "Scientific name without context: Alligator mississippiensis."},
+    {"index": 390, "reason": "Scientific name without context: Carassius auratus for goldfish."},
+    {"index": 391, "reason": "Scientific name without context: Danio rerio. Better to ask why zebrafish is a model organism."},
+    {"index": 392, "reason": "Trivial collective noun: fever of stingrays."},
+    {"index": 393, "reason": "Trivial collective noun: shiver of sharks."},
+    {"index": 394, "reason": "Trivial collective noun: mob of meerkats. Meerkat sentinel behavior is the interesting topic."},
+    {"index": 395, "reason": "Trivial collective noun: cete of badgers."},
+    {"index": 396, "reason": "Trivial collective noun: scurry of squirrels."},
+    {"index": 397, "reason": "Trivial collective noun: array of hedgehogs."},
+    {"index": 451, "reason": "Scientific name without context: Acinonyx jubatus for cheetah."},
+    {"index": 452, "reason": "Scientific name without context: Panthera onca for jaguar."},
+    {"index": 453, "reason": "Scientific name without context: Puma concolor for cougar."},
+    {"index": 454, "reason": "Scientific name without context: Ursus americanus for black bear."},
+    {"index": 455, "reason": "Scientific name without context: Ursus arctos horribilis for grizzly bear."},
+    {"index": 456, "reason": "Scientific name without context: Ursus maritimus for polar bear."},
+    {"index": 457, "reason": "Scientific name without context: Canis rufus for red wolf."},
+    {"index": 458, "reason": "Scientific name without context: Canis latrans for coyote."},
+    {"index": 459, "reason": "Scientific name without context: Lycaon pictus for African wild dog."},
+    {"index": 460, "reason": "Scientific name without context: Pan paniscus for bonobo."},
+    {"index": 461, "reason": "Scientific name without context: Pongo pygmaeus for Bornean orangutan."},
+    {"index": 462, "reason": "Scientific name without context: Gorilla beringei beringei for mountain gorilla."},
+    {"index": 463, "reason": "Scientific name without context: Balaenoptera musculus for blue whale."},
+    {"index": 464, "reason": "Scientific name without context: Physeter macrocephalus for sperm whale."},
+    {"index": 465, "reason": "Scientific name without context: Orcinus orca for killer whale."},
+    {"index": 466, "reason": "Scientific name without context: Panthera pardus orientalis for Amur leopard."},
+    {"index": 491, "reason": "Scientific name without context: Diomedea exulans for wandering albatross."},
+    {"index": 492, "reason": "Scientific name without context: Falco peregrinus for peregrine falcon."},
+    {"index": 493, "reason": "Scientific name without context: Harpia harpyja for harpy eagle."},
+    {"index": 494, "reason": "Scientific name without context: Varanus komodoensis for Komodo dragon."},
+    {"index": 495, "reason": "Scientific name without context: Oxyuranus microlepidotus for inland taipan."},
+    {"index": 496, "reason": "Scientific name without context: Chelonoidis niger for Galapagos tortoise."},
+    {"index": 497, "reason": "Scientific name without context: Ambystoma mexicanum for axolotl."},
+    {"index": 498, "reason": "Scientific name without context: Dendrobates as poison dart frog genus."}
+  ],
+  "rewrite": [
+    {
+      "index": 3,
+      "field": "question",
+      "new_value": "Snakes lost their legs through evolutionary reduction. Which group of reptiles are their closest limbless relatives?",
+      "reason": "The bare fact 'snakes have 0 legs' is trivial. Reframe to teach something about snake evolution."
+    },
+    {
+      "index": 3,
+      "field": "answer",
+      "new_value": "Lizards (snakes evolved from lizard ancestors)",
+      "reason": "Reframed answer to match new conceptual question."
+    },
+    {
+      "index": 3,
+      "field": "choices",
+      "new_value": ["Turtles (from shell-bearing ancestors)", "Lizards (snakes evolved from lizard ancestors)", "Crocodilians (from aquatic ancestors)", "Worms (from invertebrate ancestors)"],
+      "reason": "New choices for reframed question."
+    },
+    {
+      "index": 22,
+      "field": "question",
+      "new_value": "An animal with a backbone (vertebral column) is called a vertebrate. Why did the vertebral column evolve?",
+      "reason": "The bare definition question is fine to keep but can teach WHY. Rewrite to add conceptual value."
+    },
+    {
+      "index": 22,
+      "field": "answer",
+      "new_value": "To support body weight, protect the spinal cord, and enable complex movement",
+      "reason": "Teaches function not just terminology."
+    },
+    {
+      "index": 22,
+      "field": "choices",
+      "new_value": ["To allow filter feeding in water", "To support body weight, protect the spinal cord, and enable complex movement", "To provide a calcium reservoir", "To anchor wing muscles for flight"],
+      "reason": "Conceptual choices that test understanding."
+    },
+    {
+      "index": 23,
+      "field": "question",
+      "new_value": "Invertebrates make up approximately what percentage of all known animal species?",
+      "reason": "Reframe from bare definition to striking ecological fact about invertebrate dominance."
+    },
+    {
+      "index": 23,
+      "field": "answer",
+      "new_value": "About 97%",
+      "reason": "The striking fact that vertebrates are a tiny minority reinforces why invertebrates matter."
+    },
+    {
+      "index": 23,
+      "field": "choices",
+      "new_value": ["About 20%", "About 50%", "About 75%", "About 97%"],
+      "reason": "New choices for reframed question."
+    },
+    {
+      "index": 50,
+      "field": "question",
+      "new_value": "Monotremes are the only mammals that lay eggs. Which two living species are monotremes?",
+      "reason": "Reframe from just the label to the actual animals -- more conceptually useful."
+    },
+    {
+      "index": 50,
+      "field": "answer",
+      "new_value": "Platypus and echidna",
+      "reason": "Tests knowledge of the actual animals, not just the category name."
+    },
+    {
+      "index": 50,
+      "field": "choices",
+      "new_value": ["Platypus and echidna", "Wombat and quoll", "Koala and Tasmanian devil", "Bandicoot and wallaby"],
+      "reason": "All Australian animals to make plausible distractors."
+    },
+    {
+      "index": 92,
+      "field": "question",
+      "new_value": "Insectivores fill an important ecological niche as pest controllers. Which of these mammals is primarily insectivorous?",
+      "reason": "Replace bare vocabulary definition with an applied ecology question."
+    },
+    {
+      "index": 92,
+      "field": "answer",
+      "new_value": "Shrew",
+      "reason": "Shrews are among the most intensely insectivorous mammals, eating their body weight daily."
+    },
+    {
+      "index": 92,
+      "field": "choices",
+      "new_value": ["Rabbit", "Shrew", "Otter", "Meerkat"],
+      "reason": "Tests knowledge of which mammal is actually insectivorous."
+    },
+    {
+      "index": 93,
+      "field": "question",
+      "new_value": "Piscivores are animals that specialize in eating fish. Which of these birds is a classic piscivore that has evolved a spear-like beak for this purpose?",
+      "reason": "Replace bare vocabulary definition with an applied morphology/ecology question."
+    },
+    {
+      "index": 93,
+      "field": "answer",
+      "new_value": "Kingfisher",
+      "reason": "The kingfisher's long sharp bill is a classic adaptation for piscivory."
+    },
+    {
+      "index": 93,
+      "field": "choices",
+      "new_value": ["Sparrow", "Vulture", "Kingfisher", "Hummingbird"],
+      "reason": "Plausible distractors covering different feeding guilds."
+    },
+    {
+      "index": 97,
+      "field": "question",
+      "new_value": "Sharks are fish, but they differ from most fish in a key way: their skeleton is made entirely of ___?",
+      "reason": "Reframe from bare classification to a biologically interesting distinction that distinguishes sharks from bony fish."
+    },
+    {
+      "index": 97,
+      "field": "answer",
+      "new_value": "Cartilage",
+      "reason": "The cartilaginous skeleton is the defining and interesting feature of sharks."
+    },
+    {
+      "index": 97,
+      "field": "choices",
+      "new_value": ["Bone", "Cartilage", "Chitin", "Keratin"],
+      "reason": "New choices for reframed question."
+    },
+    {
+      "index": 98,
+      "field": "question",
+      "new_value": "Dolphins are classified as mammals, not fish. What is the most visible evidence that dolphins are air-breathing mammals?",
+      "reason": "Reframe from bare classification to the observable biological evidence -- more educational."
+    },
+    {
+      "index": 98,
+      "field": "answer",
+      "new_value": "They breathe air through a blowhole and nurse calves with milk",
+      "reason": "Tests understanding of WHY dolphins are mammals, not just the label."
+    },
+    {
+      "index": 98,
+      "field": "choices",
+      "new_value": ["They have scales and cold blood", "They breathe air through a blowhole and nurse calves with milk", "They have external ears and fur coats", "They lay eggs and have webbed feet"],
+      "reason": "Tests mammalian characteristics."
+    },
+    {
+      "index": 99,
+      "field": "question",
+      "new_value": "The seahorse is unique among fish because the male, not the female, ___?",
+      "reason": "The bare 'seahorse is a fish' classification is low-value. The interesting fact is male pregnancy."
+    },
+    {
+      "index": 99,
+      "field": "answer",
+      "new_value": "Carries and gives birth to the young",
+      "reason": "Male pregnancy in seahorses is one of the most remarkable reproductive strategies in nature."
+    },
+    {
+      "index": 99,
+      "field": "choices",
+      "new_value": ["Builds and guards the nest", "Carries and gives birth to the young", "Selects the territory and mate", "Produces the eggs"],
+      "reason": "Tests understanding of the remarkable reversal of typical sex roles."
+    },
+    {
+      "index": 100,
+      "field": "question",
+      "new_value": "The axolotl is an amphibian famous for never completing metamorphosis -- it keeps its external gills as an adult. This condition is called ___?",
+      "reason": "Reframe from bare classification to the biologically interesting concept of neoteny."
+    },
+    {
+      "index": 100,
+      "field": "answer",
+      "new_value": "Neoteny",
+      "reason": "Teaches the concept of neoteny through a compelling example."
+    },
+    {
+      "index": 100,
+      "field": "choices",
+      "new_value": ["Metamorphosis", "Neoteny", "Estivation", "Ecdysis"],
+      "reason": "New choices for reframed question."
+    },
+    {
+      "index": 101,
+      "field": "question",
+      "new_value": "Female sea turtles return to the exact beach where they were born to lay their eggs, sometimes traveling thousands of miles. What guides this navigation?",
+      "reason": "Reframe from bare classification to the remarkable navigation biology of sea turtles."
+    },
+    {
+      "index": 101,
+      "field": "answer",
+      "new_value": "Earth's magnetic field (geomagnetic imprinting)",
+      "reason": "Sea turtle geomagnetic navigation is one of the most striking examples of magnetic sensing in nature."
+    },
+    {
+      "index": 101,
+      "field": "choices",
+      "new_value": ["Smell of their birth beach", "Earth's magnetic field (geomagnetic imprinting)", "Star patterns at night", "Ocean current memory"],
+      "reason": "Plausible distractors; all have been proposed but geomagnetic imprinting is the primary mechanism."
+    },
+    {
+      "index": 102,
+      "field": "question",
+      "new_value": "Seals and sea lions are both pinnipeds, but they differ in a key way: sea lions can walk on land using their flippers, while seals ___?",
+      "reason": "Reframe bare classification to a meaningful biological distinction."
+    },
+    {
+      "index": 102,
+      "field": "answer",
+      "new_value": "Must drag themselves on land using their front flippers",
+      "reason": "Tests the functional anatomical difference between true seals (Phocidae) and sea lions (Otariidae)."
+    },
+    {
+      "index": 102,
+      "field": "choices",
+      "new_value": ["Must drag themselves on land using their front flippers", "Can rotate their hind flippers forward to walk", "Cannot leave the water at all", "Walk upright like penguins"],
+      "reason": "Tests the anatomical distinction."
+    },
+    {
+      "index": 103,
+      "field": "question",
+      "new_value": "Orcas (killer whales) are apex predators classified as mammals. What hunting strategy do orcas use that makes them exceptional among ocean predators?",
+      "reason": "Reframe from bare classification to cooperative hunting behavior."
+    },
+    {
+      "index": 103,
+      "field": "answer",
+      "new_value": "Coordinated cooperative hunting in pods with culturally transmitted techniques",
+      "reason": "Orca culture and cooperative hunting is one of the most remarkable examples of non-human cultural transmission."
+    },
+    {
+      "index": 103,
+      "field": "choices",
+      "new_value": ["Ambush hunting by camouflage", "Coordinated cooperative hunting in pods with culturally transmitted techniques", "Electrical sensing to locate prey", "Stunning prey with sound waves alone"],
+      "reason": "Tests understanding of orca social cognition."
+    },
+    {
+      "index": 104,
+      "field": "question",
+      "new_value": "Lampreys are jawless fish that are considered living fossils. How do they feed as adults?",
+      "reason": "Reframe from bare classification to the parasitic biology which is far more interesting."
+    },
+    {
+      "index": 104,
+      "field": "answer",
+      "new_value": "By attaching to fish with a sucker and rasping through their skin to drink blood",
+      "reason": "Lamprey parasitic feeding is a fascinating example of a primitive feeding strategy."
+    },
+    {
+      "index": 104,
+      "field": "choices",
+      "new_value": ["By filter feeding on plankton like baleen whales", "By attaching to fish with a sucker and rasping through their skin to drink blood", "By burying in sediment and ambushing worms", "By using electroreception to stun prey"],
+      "reason": "Tests knowledge of lamprey biology."
+    },
+    {
+      "index": 177,
+      "field": "question",
+      "new_value": "Homo sapiens means 'wise man' in Latin. In biological taxonomy, 'Homo' is the genus. Which extinct species shared our genus?",
+      "reason": "Reframe scientific name question to teach something about human evolution."
+    },
+    {
+      "index": 177,
+      "field": "answer",
+      "new_value": "Homo neanderthalensis",
+      "reason": "Tests understanding of genus-level classification while teaching about human evolution."
+    },
+    {
+      "index": 177,
+      "field": "choices",
+      "new_value": ["Australopithecus afarensis", "Homo neanderthalensis", "Pan troglodytes", "Ardipithecus ramidus"],
+      "reason": "All hominid-related choices that test understanding of Homo genus membership."
+    },
+    {
+      "index": 181,
+      "field": "question",
+      "new_value": "Chimpanzees (Pan troglodytes) and bonobos (Pan paniscus) are our two closest living relatives. How does bonobo society differ from chimpanzee society?",
+      "reason": "Reframe scientific name question to teach about primate social structures."
+    },
+    {
+      "index": 181,
+      "field": "answer",
+      "new_value": "Bonobo society is female-dominated and uses sex to resolve conflict; chimp society is male-dominated and more aggressive",
+      "reason": "The bonobo/chimp contrast is one of the most instructive examples of how similar genetics can produce different social systems."
+    },
+    {
+      "index": 181,
+      "field": "choices",
+      "new_value": ["Bonobos are solitary; chimps live in groups", "Bonobo society is female-dominated and uses sex to resolve conflict; chimp society is male-dominated and more aggressive", "Bonobos use tools; chimps do not", "Bonobos eat meat; chimps are vegetarian"],
+      "reason": "Tests genuine knowledge of the primate social contrast."
+    },
+    {
+      "index": 182,
+      "field": "question",
+      "new_value": "The gray wolf (Canis lupus) is the ancestor of domestic dogs. Wolves were domesticated approximately how many years ago?",
+      "reason": "Reframe scientific name question to teach about domestication history."
+    },
+    {
+      "index": 182,
+      "field": "answer",
+      "new_value": "About 15,000 to 40,000 years ago",
+      "reason": "The timing of dog domestication is genuinely contested and educational."
+    },
+    {
+      "index": 182,
+      "field": "choices",
+      "new_value": ["About 500 years ago", "About 5,000 years ago", "About 15,000 to 40,000 years ago", "About 100,000 years ago"],
+      "reason": "Range of plausible options spanning human history."
+    },
+    {
+      "index": 399,
+      "field": "question",
+      "new_value": "Cuttlefish are cephalopod mollusks capable of extremely rapid color changes. Unlike octopus color changes, cuttlefish use their skin to ___?",
+      "reason": "Reframe from bare classification to the fascinating neurobiology of cephalopod color change."
+    },
+    {
+      "index": 399,
+      "field": "answer",
+      "new_value": "Display complex moving patterns for camouflage and communication simultaneously",
+      "reason": "Cuttlefish can send different patterns to different sides of their body -- one of the most remarkable sensory displays in nature."
+    },
+    {
+      "index": 399,
+      "field": "choices",
+      "new_value": ["Only warn predators with bright warning colors", "Display complex moving patterns for camouflage and communication simultaneously", "Regulate body temperature through skin tone changes", "Mimic the color of their ink clouds"],
+      "reason": "Tests understanding of the complex function of cephalopod chromatophores."
+    },
+    {
+      "index": 400,
+      "field": "question",
+      "new_value": "The nautilus is a cephalopod mollusk and a 'living fossil' -- its basic form has barely changed for 500 million years. What allows it to control its buoyancy?",
+      "reason": "Reframe from bare classification to the fascinating biology of the nautilus shell."
+    },
+    {
+      "index": 400,
+      "field": "answer",
+      "new_value": "Gas-filled chambers in its coiled shell",
+      "reason": "The chambered shell as a buoyancy device is a key biological feature of the nautilus."
+    },
+    {
+      "index": 400,
+      "field": "choices",
+      "new_value": ["A swim bladder like bony fish", "Gas-filled chambers in its coiled shell", "Muscular contractions to adjust density", "Absorbing water into mantle tissue"],
+      "reason": "Tests knowledge of how cephalopod buoyancy differs from fish buoyancy."
+    },
+    {
+      "index": 274,
+      "field": "question",
+      "new_value": "In binomial nomenclature, why is the genus name capitalized but the species epithet written in lowercase?",
+      "reason": "Reframe from bare formatting rule to the reason behind the convention -- more educational."
+    },
+    {
+      "index": 274,
+      "field": "answer",
+      "new_value": "It is a standardized convention to distinguish genus rank from species rank",
+      "reason": "Understanding that it is a convention, not a rule of language, is the educational insight."
+    },
+    {
+      "index": 274,
+      "field": "choices",
+      "new_value": ["The genus name is an adjective so must be capitalized", "It is a standardized convention to distinguish genus rank from species rank", "Species names are always verbs in Latin", "Linnaeus used lowercase for recently discovered species only"],
+      "reason": "New choices for reframed question."
+    }
+  ],
+  "add": [
+    {
+      "question": "Crows are known to hold 'funerals' -- gathering around dead crows and becoming agitated. Why is this behavior thought to have evolved?",
+      "answer": "To learn about predators or dangers that killed the deceased crow",
+      "choices": ["To mourn the dead as a social ritual", "To learn about predators or dangers that killed the deceased crow", "To determine if the body is safe to eat", "To attract mates by demonstrating empathy"],
+      "tier": 2,
+      "reason": "Replaces the removed 'murder of crows' collective noun with a genuinely fascinating example of crow cognition and predator learning."
+    },
+    {
+      "question": "New Caledonian crows are famous for making and using tools. What makes their tool use particularly remarkable compared to most other tool-using animals?",
+      "answer": "They craft tools by modifying materials to specific shapes, not just using found objects",
+      "choices": ["They use tools while flying at high speed", "They craft tools by modifying materials to specific shapes, not just using found objects", "They use tools only to attract mates", "They pass tools to offspring through genetic instinct"],
+      "tier": 3,
+      "reason": "Teaches the depth of corvid cognition -- manufacture vs. use of tools is a key distinction."
+    },
+    {
+      "question": "The mirror test is used to assess self-awareness in animals. Which of these animals has reliably passed the mirror test?",
+      "answer": "Chimpanzee",
+      "choices": ["Dog", "Chimpanzee", "Cat", "Goldfish"],
+      "tier": 2,
+      "reason": "Introduces animal cognition testing methodology. Great apes, dolphins, elephants, magpies have passed; dogs and cats generally fail."
+    },
+    {
+      "question": "Elephants have passed the mirror self-recognition test, suggesting self-awareness. Elephants also exhibit which other behavior that suggests complex emotional cognition?",
+      "answer": "They visit and touch the bones of dead family members, suggesting grief",
+      "choices": ["They build communal shelters like beavers", "They visit and touch the bones of dead family members, suggesting grief", "They use medicinal plants to treat injuries", "They warn each other of danger using sign language"],
+      "tier": 2,
+      "reason": "Teaches elephant social and emotional intelligence -- replaces removed elephant collective noun."
+    },
+    {
+      "question": "Whale song (particularly humpback whale song) is one of the longest and most complex non-human vocalizations. What is the primary proposed function of humpback whale song?",
+      "answer": "Male mate attraction and competition",
+      "choices": ["Navigation using echo ranging", "Male mate attraction and competition", "Coordinating group feeding behavior", "Warning other pods of predators"],
+      "tier": 2,
+      "reason": "Teaches about animal communication and sexual selection -- replaces removed 'pod of whales' collective noun."
+    },
+    {
+      "question": "Dolphins use a sophisticated form of echolocation that produces clicks via the melon (fatty forehead structure). What additional cognitive ability have dolphins demonstrated that few other non-humans possess?",
+      "answer": "Referential pointing -- understanding when a human points to indicate an object",
+      "choices": ["Counting past 10 using objects", "Referential pointing -- understanding when a human points to indicate an object", "Producing grammatically structured sentences", "Recognizing human faces by name"],
+      "tier": 3,
+      "reason": "Teaches dolphin cognition depth -- referential gesture understanding is rare outside great apes and dogs."
+    },
+    {
+      "question": "Meerkats post sentinels that watch for predators while others forage. What do sentinels use to communicate threat level?",
+      "answer": "Different alarm calls that encode both predator type and urgency level",
+      "choices": ["Visual tail signals only", "Different alarm calls that encode both predator type and urgency level", "Pheromone trails that warn of danger", "Physical contact to alert neighbors"],
+      "tier": 2,
+      "reason": "Replaces removed meerkat collective noun with a compelling example of referential alarm calls -- a key topic in animal communication."
+    },
+    {
+      "question": "The waggle dance of honeybees encodes the direction to a food source relative to the sun. What aspect of the dance encodes the distance to the food?",
+      "answer": "The duration of the waggle phase",
+      "choices": ["The number of bees watching", "The duration of the waggle phase", "The size of the dance circle", "The pitch of the buzzing sound"],
+      "tier": 2,
+      "reason": "Goes deeper on the already-present waggle dance question (index 217) to test more specific knowledge of this remarkable communication system."
+    },
+    {
+      "question": "Some birds, like the great tit, have been observed 'culturally transmitting' a new skill -- opening milk bottle tops -- that spread through wild populations by social learning. This demonstrates ___?",
+      "answer": "Non-genetic cultural transmission of behavior",
+      "choices": ["Genetic mutation for tool use", "Non-genetic cultural transmission of behavior", "Instinctive foraging behavior", "Convergent evolution of foraging techniques"],
+      "tier": 3,
+      "reason": "Teaches a key concept in animal behavior -- cultural evolution in non-primates."
+    },
+    {
+      "question": "Naked mole rats are mammals that live in eusocial colonies like bees, with a single breeding queen. What else makes naked mole rats biologically extraordinary?",
+      "answer": "They are nearly cancer-immune and show negligible senescence (no aging-related decline)",
+      "choices": ["They can photosynthesize through transparent skin", "They are nearly cancer-immune and show negligible senescence (no aging-related decline)", "They can regenerate lost limbs completely", "They reproduce by parthenogenesis like some reptiles"],
+      "tier": 3,
+      "reason": "Naked mole rat biology touches on cancer immunity, aging, and eusociality -- rich educational content."
+    },
+    {
+      "question": "The vampire bat is the only mammal that feeds exclusively on blood. What behavior do vampire bats show that demonstrates reciprocal altruism?",
+      "answer": "Roost-mates that fed well will regurgitate blood to share with hungry neighbors who will return the favor",
+      "choices": ["They sacrifice themselves to distract predators from their young", "Roost-mates that fed well will regurgitate blood to share with hungry neighbors who will return the favor", "They nurse each other's pups even without relatedness", "They alert the colony to good hunting locations using pheromones"],
+      "tier": 3,
+      "reason": "Vampire bat food-sharing is the textbook example of reciprocal altruism in nature."
+    },
+    {
+      "question": "Octopuses are remarkably intelligent for invertebrates. Which feature of their nervous system helps explain their cognitive abilities?",
+      "answer": "About two-thirds of their neurons are located in their arms, not their central brain",
+      "choices": ["They have the largest brain-to-body ratio of any invertebrate", "About two-thirds of their neurons are located in their arms, not their central brain", "They have a hippocampus-like structure for spatial memory", "They form long-term memories in a decentralized liver-like organ"],
+      "tier": 3,
+      "reason": "Octopus distributed nervous system is a fascinating departure from centralized brain paradigms."
+    },
+    {
+      "question": "Cleaner fish (e.g. cleaner wrasse) set up 'cleaning stations' where they remove parasites from larger fish. This is a classic example of what ecological relationship?",
+      "answer": "Mutualism",
+      "choices": ["Parasitism", "Commensalism", "Mutualism", "Predation"],
+      "tier": 1,
+      "reason": "Grounds the abstract mutualism concept in a vivid real-world example."
+    },
+    {
+      "question": "The lyrebird can mimic chainsaws, camera shutters, and other birds with extraordinary accuracy. What is the adaptive function of mimicry in the lyrebird?",
+      "answer": "Impressing females during mate selection -- females prefer males with the most complex song",
+      "choices": ["Frightening predators with unfamiliar sounds", "Impressing females during mate selection -- females prefer males with the most complex song", "Deceiving prey into approaching", "Warning territory rivals by sounding like larger animals"],
+      "tier": 2,
+      "reason": "Grounds the lyrebird's remarkable vocal ability in sexual selection theory."
+    },
+    {
+      "question": "The peregrine falcon achieves speeds over 240 mph in a hunting stoop (dive). What physiological adaptation prevents its lungs from being damaged by the airflow at that speed?",
+      "answer": "Cone-shaped baffles in the nostrils redirect airflow around the lungs",
+      "choices": ["The lungs collapse automatically during a dive", "Cone-shaped baffles in the nostrils redirect airflow around the lungs", "Feathers seal the beak shut during the dive", "The falcon holds its breath for the entire stoop"],
+      "tier": 3,
+      "reason": "Replaces removed peregrine falcon scientific name question with fascinating aerophysiology."
+    },
+    {
+      "question": "Some migratory birds navigate using Earth's magnetic field. In the European robin, which part of the body is thought to detect magnetic fields?",
+      "answer": "The eye (cryptochrome proteins in the retina)",
+      "choices": ["Iron-rich cells in the beak", "The eye (cryptochrome proteins in the retina)", "The inner ear (magnetite crystals)", "The liver (iron-storage mechanism)"],
+      "tier": 4,
+      "reason": "The quantum biology of avian magnetoreception is one of the most exciting current research areas."
+    },
+    {
+      "question": "Tardigrades (water bears) are microscopic animals that can survive extreme conditions including outer space vacuum. What is the state they enter to survive desiccation called?",
+      "answer": "Cryptobiosis (specifically anhydrobiosis for desiccation)",
+      "choices": ["Estivation", "Torpor", "Cryptobiosis (specifically anhydrobiosis for desiccation)", "Diapause"],
+      "tier": 3,
+      "reason": "Tardigrades are a compelling and underrepresented topic that teaches extreme adaptation and survival biology."
+    },
+    {
+      "question": "The electric eel can generate up to 860 volts of electricity. What is the primary evolutionary function of the high-voltage discharge?",
+      "answer": "Hunting: immobilizing prey and navigating in murky water",
+      "choices": ["Defense against large predators only", "Hunting: immobilizing prey and navigating in murky water", "Communication with mates during breeding season", "Charging body heat for thermoregulation"],
+      "tier": 2,
+      "reason": "Teaches the evolutionary function of bioelectricity -- replaces the bare 'electric eel is a fish' classification question."
+    },
+    {
+      "question": "Animals in the order Carnivora include wolves, bears, and seals -- but giant pandas are also in this order despite eating mainly bamboo. What does this tell us about taxonomic classification?",
+      "answer": "Taxonomy reflects evolutionary ancestry, not current diet or behavior",
+      "choices": ["Giant pandas secretly eat meat when unobserved", "Taxonomy reflects evolutionary ancestry, not current diet or behavior", "The order Carnivora is incorrectly named by scientists", "Bamboo contains enough protein to qualify as a carnivore diet"],
+      "tier": 2,
+      "reason": "Uses the panda paradox to teach a key principle about cladistic vs. phenotypic classification."
+    },
+    {
+      "question": "The giraffe's long neck is often cited as a product of sexual selection rather than just reaching high leaves. What evidence supports the sexual selection hypothesis?",
+      "answer": "Males use their necks as weapons in 'necking' combat fights, and longer necks correlate with mating success",
+      "choices": ["Females have equally long necks which would be unnecessary for combat", "Males use their necks as weapons in 'necking' combat fights, and longer necks correlate with mating success", "Fossil giraffes all had equally short necks suggesting no selection pressure", "Giraffes primarily eat low grass rather than tall leaves"],
+      "tier": 3,
+      "reason": "Teaches that well-known adaptations can have multiple or unexpected evolutionary explanations."
+    },
+    {
+      "question": "Zebra stripes have been proposed to serve multiple functions. What does current research suggest is the primary adaptive value of zebra stripes?",
+      "answer": "Confusing biting flies (tabanid flies) which struggle to land on striped surfaces",
+      "choices": ["Camouflage from lions in tall grass", "Confusing biting flies (tabanid flies) which struggle to land on striped surfaces", "Heat regulation through alternating black and white panels", "Species recognition for herd cohesion in mixed herds"],
+      "tier": 3,
+      "reason": "The zebra stripe debate is a classic case study in how scientific hypotheses are tested, with a surprising answer replacing the 'dazzle of zebras' collective noun."
+    },
+    {
+      "question": "Bears in North America were recently reclassified so that the panda is not in the bear family. Actually, what is the current scientific consensus on panda classification?",
+      "answer": "Giant pandas ARE bears (family Ursidae), confirmed by DNA analysis",
+      "choices": ["Giant pandas are raccoon relatives (family Procyonidae)", "Giant pandas ARE bears (family Ursidae), confirmed by DNA analysis", "Giant pandas are their own family with no close living relatives", "Giant pandas are mustelids related to wolverines"],
+      "tier": 2,
+      "reason": "Tests understanding of how molecular phylogenetics has resolved long-standing classification debates."
+    },
+    {
+      "question": "Monarch butterflies migrate from Canada to central Mexico each fall, a journey of up to 4,500 km. No individual butterfly completes the round trip. How many generations does the full cycle take?",
+      "answer": "3 to 4 generations (great-grandchildren return to the starting point)",
+      "choices": ["1 generation (same butterflies return)", "2 generations", "3 to 4 generations (great-grandchildren return to the starting point)", "10 or more generations"],
+      "tier": 2,
+      "reason": "The multigenerational migration mystery is one of the most remarkable puzzles in animal navigation biology."
+    },
+    {
+      "question": "Salmon spend years at sea then return to the exact freshwater stream where they were born to spawn. Which sensory system allows salmon to identify their birth stream?",
+      "answer": "Olfaction (smell) -- they imprint on the chemical signature of their birth stream as juveniles",
+      "choices": ["Magnetic field mapping of the ocean floor", "Olfaction (smell) -- they imprint on the chemical signature of their birth stream as juveniles", "Visual memory of the coastline from their juvenile migration", "Following the salinity gradient back to freshwater"],
+      "tier": 2,
+      "reason": "Grounds the salmon migration (already mentioned in the file) in the specific mechanism -- olfactory imprinting."
+    },
+    {
+      "question": "The mimic octopus can impersonate multiple different venomous species. How does it 'choose' which animal to mimic in a given situation?",
+      "answer": "It appears to select mimicry targets based on the most common local predator threats",
+      "choices": ["It always mimics the same species regardless of context", "It appears to select mimicry targets based on the most common local predator threats", "It mimics whichever species is nearest at the time", "It mimics only when placed in darkness"],
+      "tier": 3,
+      "reason": "The contextual switching of the mimic octopus suggests a level of cognitive flexibility that is remarkable for a short-lived invertebrate."
+    },
+    {
+      "question": "When a stressed octopus or squid releases ink, the ink does more than just obscure vision. What else does cephalopod ink do?",
+      "answer": "It contains chemicals that dull the predator's sense of smell and taste",
+      "choices": ["It is toxic and immediately kills small predators", "It contains chemicals that dull the predator's sense of smell and taste", "It hardens into a solid decoy the shape of the cephalopod", "It carries pheromones to attract other cephalopods for help"],
+      "tier": 3,
+      "reason": "Cephalopod ink as a chemical weapon, not just a smokescreen, is a non-obvious and educational fact."
+    },
+    {
+      "question": "The bombardier beetle defends itself by producing a boiling chemical spray from its abdomen. What two chemicals are combined explosively to produce this spray?",
+      "answer": "Hydroquinone and hydrogen peroxide (catalyzed by enzymes)",
+      "choices": ["Formic acid and water", "Hydroquinone and hydrogen peroxide (catalyzed by enzymes)", "Sulfuric acid and salt", "Oxalic acid and calcium"],
+      "tier": 4,
+      "reason": "The bombardier beetle is the classic example of an exothermic chemical defense reaction in nature."
+    },
+    {
+      "question": "Thorny devil lizards of Australia obtain drinking water from sand and morning dew. How does the water reach their mouths?",
+      "answer": "Capillary action through hygroscopic skin channels that channel water from all over the body to the mouth",
+      "choices": ["They lick dew from plants with a long sticky tongue", "Capillary action through hygroscopic skin channels that channel water from all over the body to the mouth", "They absorb water through their feet and filter it through organs", "They dig to find underground water pockets"],
+      "tier": 4,
+      "reason": "The thorny devil water-harvesting system is an elegant example of biomechanical adaptation to desert life."
+    },
+    {
+      "question": "Extremophile animals like tardigrades and brine shrimp survive conditions lethal to most life. The concept that such organisms inform the search for extraterrestrial life is called ___?",
+      "answer": "Astrobiology",
+      "choices": ["Xenobiology", "Astrobiology", "Extremophile ecology", "Panspermia theory"],
+      "tier": 3,
+      "reason": "Connects animal biology to one of the most compelling current scientific questions."
+    },
+    {
+      "question": "Ants live in supercolonies that function like a single organism. What is the term for societies like ant colonies where individuals are so specialized they cannot survive alone?",
+      "answer": "Eusocial",
+      "choices": ["Parasocial", "Eusocial", "Solitary colonial", "Subsocial"],
+      "tier": 2,
+      "reason": "Replaces the removed 'colony of ants' collective noun with the biologically meaningful concept of eusociality."
+    },
+    {
+      "question": "Leaf-cutter ants bring leaf fragments not to eat, but to cultivate underground fungus gardens. This relationship between ants and fungus is an example of ___?",
+      "answer": "Mutualism (agricultural symbiosis)",
+      "choices": ["Parasitism (ants steal from fungi)", "Commensalism (fungi benefit, ants unaffected)", "Mutualism (agricultural symbiosis)", "Competition (ants and fungi fight for space)"],
+      "tier": 2,
+      "reason": "Ant fungus farming is one of the most sophisticated examples of non-human agriculture and mutualism."
+    },
+    {
+      "question": "Wolf pack social structure is more complex than the simple 'alpha dominates' model. What did wolf biologist David Mech discover about wolf packs in the wild?",
+      "answer": "Wild wolf packs are typically family units led by a breeding pair, not by dominance between unrelated wolves",
+      "choices": ["Alpha wolves are always the largest and most aggressive individuals", "Wild wolf packs are typically family units led by a breeding pair, not by dominance between unrelated wolves", "Wolves rotate pack leadership roles seasonally", "Only male wolves can hold alpha status in any pack"],
+      "tier": 3,
+      "reason": "Replaces the removed 'pack of wolves' collective noun and corrects a common misconception about wolf social structure."
+    },
+    {
+      "question": "Lions are the only truly social big cats, living in groups called prides. What is the main evolutionary advantage of pride living for female lions?",
+      "answer": "Cooperative cub-rearing and coordinated hunting of large prey that single lions cannot kill",
+      "choices": ["Defending territories 10 times larger than solitary cats", "Cooperative cub-rearing and coordinated hunting of large prey that single lions cannot kill", "Males protecting females from rival males of other species", "Sharing body heat in the cold African highlands"],
+      "tier": 2,
+      "reason": "Replaces the removed 'pride of lions' collective noun with the actual biology of lion sociality."
+    },
+    {
+      "question": "The baby kangaroo (joey) is born after only 33 days of gestation -- smaller than a jellybean. Where does the joey complete most of its development?",
+      "answer": "In the mother's external pouch, nursing on milk that changes composition as the joey grows",
+      "choices": ["Inside a specialized egg incubated in a burrow", "In the mother's external pouch, nursing on milk that changes composition as the joey grows", "Clinging to the mother's back fur after birth", "In a communal nest shared among females in the mob"],
+      "tier": 1,
+      "reason": "Replaces removed 'joey' baby name question with biology of marsupial development that teaches why it evolved."
+    },
+    {
+      "question": "Whale populations were decimated by commercial hunting in the 20th century. Since international protections, some species like humpbacks have recovered strongly. This recovery demonstrates ___?",
+      "answer": "The effectiveness of conservation when direct threats are removed and populations retain genetic diversity",
+      "choices": ["That whales reproduce fast enough to recover from any level of hunting", "The effectiveness of conservation when direct threats are removed and populations retain genetic diversity", "That whale populations cycle naturally and hunting had little effect", "That oceanic ecosystems self-regulate through predator-prey balance"],
+      "tier": 2,
+      "reason": "Replaces the removed 'pod of whales' collective noun with a meaningful lesson about conservation biology."
+    },
+    {
+      "question": "The kangaroo is a highly efficient hopper -- it uses less energy at high speeds than at low speeds. What biomechanical mechanism explains this paradox?",
+      "answer": "Elastic tendons in the legs store and release energy like springs with each hop",
+      "choices": ["Slower hops require more muscle work to maintain balance", "Elastic tendons in the legs store and release energy like springs with each hop", "The muscular tail acts as a motor that adds energy at higher speeds", "Aerodynamic lift from the body posture reduces effort at speed"],
+      "tier": 3,
+      "reason": "Kangaroo hopping biomechanics is a beautiful example of elastic energy storage in animal locomotion."
+    },
+    {
+      "question": "Emperor penguins huddle in groups of thousands during Antarctic winter storms at -60 degrees C. What dynamic process maintains even heat distribution within the huddle?",
+      "answer": "Penguins continuously shuffle inward from the cold outer edge, creating a slow rotation through the huddle",
+      "choices": ["The innermost penguins radiate excess heat outward to warm the group", "Penguins continuously shuffle inward from the cold outer edge, creating a slow rotation through the huddle", "The huddle is stratified: females always at the center, males at the edge", "Each penguin takes a fixed position for the entire winter storm"],
+      "tier": 2,
+      "reason": "The penguin huddle rotation is a remarkable emergent behavior that maximizes collective survival."
+    },
+    {
+      "question": "African elephants have demonstrated apparent mourning behavior when encountering the remains of dead elephants. What specific behavior suggests elephants recognize individual identity in death?",
+      "answer": "They spend more time investigating bones of elephants they knew than bones of strangers",
+      "choices": ["They only react to bones of their immediate offspring", "They spend more time investigating bones of elephants they knew than bones of strangers", "They cover bones with leaves in a burial-like ritual", "They react the same to elephant bones as to any large animal remains"],
+      "tier": 3,
+      "reason": "Replaces removed elephant collective noun with elephant cognition biology -- individual recognition after death."
+    },
+    {
+      "question": "The African wild dog (Lycaon pictus) has one of the highest hunting success rates of any large predator -- around 80%. What key behavioral adaptation drives this success?",
+      "answer": "Highly coordinated pack hunting with role specialization and democratic group decision-making",
+      "choices": ["Superior sprinting speed exceeding 70 mph", "Highly coordinated pack hunting with role specialization and democratic group decision-making", "Using scent trails to locate injured prey weeks later", "Ambush hunting by burying themselves in sand"],
+      "tier": 3,
+      "reason": "African wild dog social behavior and cooperative hunting is both fascinating and replaces removed scientific name question."
+    },
+    {
+      "question": "Sperm whales can dive to depths of over 2,000 meters where pressure would crush most animals. What physiological adaptation allows them to manage extreme pressure changes?",
+      "answer": "Collapsible rib cage and flexible lungs that compress without injury; blood-shifting to protect vital organs",
+      "choices": ["A rigid titanium-hard bone structure that resists compression", "Collapsible rib cage and flexible lungs that compress without injury; blood-shifting to protect vital organs", "Inhaling pressurized gas stored in a special bladder before diving", "Releasing all air from lungs at the surface before diving deep"],
+      "tier": 4,
+      "reason": "Cetacean deep-diving physiology is one of the most impressive examples of physiological adaptation in vertebrates -- replaces removed sperm whale scientific name question."
+    },
+    {
+      "question": "The archerfish can spit a precise jet of water to knock insects off branches up to 3 meters above the water surface. What makes this feat optically remarkable?",
+      "answer": "The fish must compensate for light refraction at the water surface to aim accurately from below",
+      "choices": ["The fish must spit upward against gravity without any reference point", "The fish must compensate for light refraction at the water surface to aim accurately from below", "The fish cannot see above the surface so hunts purely by sound", "The jet must travel at exactly the speed of sound to stun the insect"],
+      "tier": 3,
+      "reason": "The archerfish's refraction compensation is a remarkable example of animal physics problem-solving."
+    },
+    {
+      "question": "Kin selection theory (Hamilton's rule) predicts that altruism should be more common when animals are more closely related. Worker bees help raise siblings rather than reproducing. Why does this make genetic sense?",
+      "answer": "Due to haplodiploidy, worker bees share 75% of genes with sisters -- more than their 50% with potential offspring",
+      "choices": ["Worker bees are incapable of reproduction due to castration", "Due to haplodiploidy, worker bees share 75% of genes with sisters -- more than their 50% with potential offspring", "Worker bees receive food rewards that compensate for lost reproduction", "Bees cannot distinguish kin from non-kin within the hive"],
+      "tier": 4,
+      "reason": "The haplodiploidy explanation for bee eusociality is one of the most elegant applications of Hamilton's rule."
+    },
+    {
+      "question": "The 'Red Queen hypothesis' in evolutionary biology (named after Alice in Wonderland) refers to which ongoing evolutionary arms race?",
+      "answer": "The continuous co-evolution between parasites and host immune defenses -- each must keep evolving just to stay even",
+      "choices": ["The race between predator speed and prey escape ability", "The continuous co-evolution between parasites and host immune defenses -- each must keep evolving just to stay even", "The competition between males for the most extreme sexual ornaments", "The drive for species to occupy new ecological niches before competitors"],
+      "tier": 4,
+      "reason": "The Red Queen hypothesis is a foundational concept in evolutionary ecology that illuminates parasite-host dynamics."
+    },
+    {
+      "question": "Planarians (flatworms) can be cut in half and each half regenerates into a complete worm. When the head is removed, the body regenerates a new head. What kind of cells make this possible?",
+      "answer": "Pluripotent stem cells called neoblasts that remain throughout the adult body",
+      "choices": ["Embryonic cells held in reserve in a special organ", "Pluripotent stem cells called neoblasts that remain throughout the adult body", "Cells that de-differentiate from muscle into any needed type", "Specialized regeneration cells triggered only by injury signals"],
+      "tier": 4,
+      "reason": "Planarian neoblasts are scientifically important -- they are being studied for insights into stem cell biology and aging."
+    },
+    {
+      "question": "The mantis shrimp has 16 types of color receptor in its eyes (humans have 3). Despite this, research shows mantis shrimp are actually worse at distinguishing similar colors than humans. What does this paradox reveal?",
+      "answer": "More color receptors do not mean better color discrimination -- the mantis shrimp processes color via a different, faster but less precise mechanism",
+      "choices": ["The mantis shrimp is actually colorblind despite 16 receptors", "More color receptors do not mean better color discrimination -- the mantis shrimp processes color via a different, faster but less precise mechanism", "Scientists measured the wrong species in earlier studies", "The 16 receptors all detect the same wavelength range"],
+      "tier": 4,
+      "reason": "The mantis shrimp visual paradox challenges naive assumptions about sensory complexity and teaches about sensory processing."
+    },
+    {
+      "question": "The electric field sensing organ of sharks (the ampullae of Lorenzini) is so sensitive it can detect the bioelectric field of prey buried under sand. What biological process produces the bioelectric fields sharks detect?",
+      "answer": "Muscle contractions and nerve activity in living animals generate weak electric fields",
+      "choices": ["Chemical reactions in blood producing electromagnetic radiation", "Muscle contractions and nerve activity in living animals generate weak electric fields", "The static charge built up by movement through saltwater", "Heartbeats creating pressure waves that ionize seawater"],
+      "tier": 4,
+      "reason": "Electroreception connects animal sensory biology to the physics of bioelectricity."
+    },
+    {
+      "question": "The bonobo is unique among great apes in resolving social conflicts primarily through sexual behavior rather than aggression. What does this behavioral difference imply about the relationship between social structure and evolutionary pressures?",
+      "answer": "Sexual behavior can evolve as a social bonding mechanism when reducing inter-group conflict has high fitness benefits",
+      "choices": ["Bonobos lack the neural capacity for aggressive behavior due to brain differences", "Sexual behavior can evolve as a social bonding mechanism when reducing inter-group conflict has high fitness benefits", "Bonobos never face resource competition so have no need for aggression", "The behavior is a side effect of captive breeding in zoos and does not occur in the wild"],
+      "tier": 5,
+      "reason": "Bonobo social behavior illustrates how similar species can evolve dramatically different social strategies under different ecological pressures."
+    },
+    {
+      "question": "Eusociality in termites, unlike in Hymenoptera (bees, wasps, ants), cannot be explained by haplodiploidy because termites are diploid. What alternative explanation is proposed for termite eusociality?",
+      "answer": "High genetic relatedness through inbreeding within enclosed nest populations and ecological constraints on independent colony founding",
+      "choices": ["Termites have a unique gene for altruism absent in other insects", "High genetic relatedness through inbreeding within enclosed nest populations and ecological constraints on independent colony founding", "Termite workers are male and benefit from investing in queen reproduction", "Termites have the same haplodiploid genetics as ants through convergent evolution"],
+      "tier": 5,
+      "reason": "Testing understanding that the haplodiploid explanation for eusociality is not universal -- ecological and genetic explanations coexist."
+    },
+    {
+      "question": "In sensory ecology, the 'umwelt' (Uexkull's concept) refers to ___?",
+      "answer": "The subjective perceptual world of an organism defined by its sensory capabilities",
+      "choices": ["The geographic range of an organism's habitat", "The subjective perceptual world of an organism defined by its sensory capabilities", "The total energy budget of an organism in its environment", "The evolutionary history encoded in an organism's genome"],
+      "tier": 5,
+      "reason": "The umwelt concept is foundational in animal cognition and sensory ecology -- teaches that each animal perceives a fundamentally different world."
+    },
+    {
+      "question": "The Zahavian handicap principle proposes that honest signals of quality (like the peacock's tail) are reliable precisely because they ___?",
+      "answer": "Are costly to produce -- only high-quality individuals can afford the cost without dying",
+      "choices": ["Cannot be faked because they are genetically determined", "Are costly to produce -- only high-quality individuals can afford the cost without dying", "Are directly measured by females using chemical analysis", "Evolve faster than cheating strategies can evolve to mimic them"],
+      "tier": 5,
+      "reason": "The handicap principle is a cornerstone of sexual selection theory that explains why honest signals exist."
+    },
+    {
+      "question": "The Cambrian explosion (~540 million years ago) saw a rapid diversification of animal body plans. What is the leading hypothesis for what triggered this event?",
+      "answer": "A combination of rising oxygen levels, ecological feedback loops from new predator-prey dynamics, and possibly snowball Earth thaw",
+      "choices": ["A single mass extinction that cleared ecological space", "A combination of rising oxygen levels, ecological feedback loops from new predator-prey dynamics, and possibly snowball Earth thaw", "The emergence of DNA as the genetic material for the first time", "A single genetic mutation that allowed cell specialization"],
+      "tier": 5,
+      "reason": "The Cambrian explosion is one of the most important events in animal evolutionary history and connects to multiple fields."
+    },
+    {
+      "question": "The coelacanth was believed extinct for 65 million years until a live specimen was caught in 1938. What makes coelacanths biologically significant beyond being a 'living fossil'?",
+      "answer": "Their lobe fins have an internal bone structure homologous to tetrapod limbs, showing the evolutionary link to land vertebrates",
+      "choices": ["They photosynthesize using light-sensitive scales", "Their lobe fins have an internal bone structure homologous to tetrapod limbs, showing the evolutionary link to land vertebrates", "They are the only fish with a warm-blooded metabolism", "They lay eggs that float in freshwater rivers despite being marine fish"],
+      "tier": 4,
+      "reason": "The coelacanth's limb bone homology is directly relevant to understanding the fish-to-tetrapod transition."
+    },
+    {
+      "question": "Many venomous snakes of the Americas and Asia have heat-sensitive pit organs between the eye and nostril. What does this organ detect and what is it used for?",
+      "answer": "Infrared radiation (body heat) from prey -- used to hunt warm-blooded prey in total darkness",
+      "choices": ["Chemical trails left by prey on the ground", "Infrared radiation (body heat) from prey -- used to hunt warm-blooded prey in total darkness", "Vibrations in the ground from approaching prey", "Electrical fields generated by prey heartbeats"],
+      "tier": 3,
+      "reason": "Pit viper infrared sensing is one of the most remarkable non-visual sensory systems in vertebrates."
+    },
+    {
+      "question": "The duck-billed platypus has a bill densely covered with electroreceptors. What does the platypus hunt, and how does electroreception help?",
+      "answer": "It hunts invertebrates underwater with eyes closed, detecting the electric fields produced by muscle movement",
+      "choices": ["It filters plankton through the bill like a whale shark", "It hunts invertebrates underwater with eyes closed, detecting the electric fields produced by muscle movement", "It uses the bill to sense water temperature and find warm springs", "It detects chemical signatures of fish and follows them upstream"],
+      "tier": 2,
+      "reason": "The platypus electroreception hunting strategy is one of the most distinctive examples of sensory ecology in mammals."
+    },
+    {
+      "question": "Wolves use urine, feces, and gland secretions to mark territory boundaries. What information beyond 'I was here' is encoded in these scent marks?",
+      "answer": "The individual's identity, reproductive status, and time since the mark was made",
+      "choices": ["Only the sex of the marking animal", "The individual's identity, reproductive status, and time since the mark was made", "A warning that contains the specific number of pack members", "Nutritional information about recent meals"],
+      "tier": 3,
+      "reason": "Chemical communication in mammals encodes rich multi-dimensional information -- much more than simple territorial markers."
+    },
+    {
+      "question": "Migratory locusts (Schistocerca gregaria) exist as solitary and gregarious phases. What triggers the transformation from solitary to swarming phase?",
+      "answer": "Physical contact and crowding triggers serotonin release, causing physical and behavioral changes to the gregarious form",
+      "choices": ["A specific plant chemical ingested during drought periods", "Physical contact and crowding triggers serotonin release, causing physical and behavioral changes to the gregarious form", "A seasonal hormone cycle tied to monsoon rains", "A pheromone released by a queen locust that converts workers"],
+      "tier": 4,
+      "reason": "The serotonin-mediated locust phase change is a remarkable example of how contact-triggered neurochemistry can transform an entire species' behavior."
+    },
+    {
+      "question": "Group living in animals provides anti-predator benefits. Mathematically, a predator attacking a group where each individual has a 1/N chance of being caught demonstrates which effect?",
+      "answer": "The dilution effect",
+      "choices": ["The confusion effect", "The dilution effect", "The selfish herd effect", "The encounter reduction effect"],
+      "tier": 4,
+      "reason": "Introduces the formal terms for the different anti-predator benefits of group living, building on the general principle."
+    },
+    {
+      "question": "The selfish herd theory (W.D. Hamilton) explains why animals crowd toward the center of a group. What does it predict about the behavior of animals at the group's edge?",
+      "answer": "Edge individuals should try to move inward because predators attack from outside, making edge positions more dangerous",
+      "choices": ["Edge individuals are the strongest and act as guards for the group", "Edge individuals should try to move inward because predators attack from outside, making edge positions more dangerous", "Edge individuals are the least related and so are expendable to the group", "Edge positions are preferred by dominants because of better foraging access"],
+      "tier": 4,
+      "reason": "Selfish herd theory is foundational in understanding animal group dynamics and apparent cooperation that is actually individual selfishness."
+    },
+    {
+      "question": "Island gigantism is the tendency for animals on isolated islands to evolve larger body sizes than their mainland relatives. What ecological factor is the primary driver?",
+      "answer": "Release from mainland predators, allowing evolution of larger size without the usual cost",
+      "choices": ["Higher food availability on tropical islands", "Release from mainland predators, allowing evolution of larger size without the usual cost", "Inbreeding increasing genetic expression of growth genes", "Island soils providing more mineral nutrients"],
+      "tier": 3,
+      "reason": "Island gigantism (and its counterpart, island dwarfism) is a compelling example of how ecology drives evolution."
+    },
+    {
+      "question": "Convergent evolution has produced remarkably similar eye structures in vertebrates (camera eyes) and cephalopods like octopuses (also camera eyes). What key structural difference reveals that these eyes evolved independently?",
+      "answer": "The vertebrate retina is wired 'backwards' (nerves in front of photoreceptors) while the octopus retina has nerves behind the photoreceptors",
+      "choices": ["Vertebrate eyes have color vision; octopus eyes are colorblind", "The vertebrate retina is wired 'backwards' (nerves in front of photoreceptors) while the octopus retina has nerves behind the photoreceptors", "Vertebrate eyes use crystallin proteins; octopus use a completely different lens material", "Cephalopod eyes do not have a fovea or region of sharp focus"],
+      "tier": 4,
+      "reason": "The retina inversion difference is one of the most striking and pedagogically useful examples of convergent evolution producing different solutions to the same problem."
+    },
+    {
+      "question": "The 'dead ant' signal in ant colonies: when an ant dies, chemical signals cause workers to carry the body to a waste pile. What happens if you apply the death chemical to a live ant?",
+      "answer": "Workers carry the live ant to the waste pile even though it is moving and struggling",
+      "choices": ["Workers groom the ant to remove the chemical before it can spread", "Workers carry the live ant to the waste pile even though it is moving and struggling", "The living ant becomes aggressive and drives workers away", "Nothing -- workers can distinguish live from dead ants by movement"],
+      "tier": 3,
+      "reason": "This experiment demonstrates that ant 'communication' is chemical-signal-driven automation rather than social cognition -- a key insight into insect societies."
+    },
+    {
+      "question": "The 10% energy rule means that only about 10% of energy at one trophic level transfers to the next. This limits food chains to roughly how many links?",
+      "answer": "4 to 5 links, because energy becomes too dilute to support predators beyond that point",
+      "choices": ["2 links maximum in all ecosystems", "4 to 5 links, because energy becomes too dilute to support predators beyond that point", "10 links, matching the 10% transfer rate numerically", "Unlimited links in productive tropical ecosystems"],
+      "tier": 3,
+      "reason": "The practical consequence of the 10% rule (already in the file) -- limiting food chain length -- is the more educational point."
+    },
+    {
+      "question": "Many desert rodents like the kangaroo rat never need to drink liquid water. How do they obtain the water they need?",
+      "answer": "Through metabolic water produced as a byproduct of breaking down carbohydrates in dry seeds",
+      "choices": ["From dew condensing on their fur at night", "Through metabolic water produced as a byproduct of breaking down carbohydrates in dry seeds", "By absorbing water vapor through specialized nasal passages", "From moisture in plant tissue they eat at night"],
+      "tier": 3,
+      "reason": "Metabolic water as a survival strategy in desert animals is an elegant example of biochemistry meeting ecology."
+    },
+    {
+      "question": "The Great Barrier Reef is under threat from coral bleaching. When coral bleaches, what is actually happening biologically?",
+      "answer": "The coral expels the photosynthetic algae (zooxanthellae) it depends on for nutrition under heat stress",
+      "choices": ["The coral's calcium carbonate skeleton dissolves in warming acidic water", "The coral expels the photosynthetic algae (zooxanthellae) it depends on for nutrition under heat stress", "UV radiation bleaches the coral's pigment molecules", "Bacterial infections cause the coral polyps to die and leave white skeletons"],
+      "tier": 2,
+      "reason": "Coral bleaching is a globally important topic and the zooxanthellae relationship teaches the biology of coral as a symbiotic organism."
+    },
+    {
+      "question": "A food chain always starts with a producer (plant) because plants capture energy from ___?",
+      "answer": "Sunlight via photosynthesis",
+      "choices": ["Decomposing organic matter in soil", "Sunlight via photosynthesis", "Chemical reactions in volcanic vents", "Water absorbed through roots"],
+      "tier": 1,
+      "reason": "Grounds the food chain concept in the energy source that drives all food chains -- more educational than a bare 'herbivore is a primary consumer' question."
+    },
+    {
+      "question": "Horses and donkeys can mate to produce mules, but mules are almost always sterile. Why can they not reproduce?",
+      "answer": "Horses have 64 chromosomes and donkeys 62 -- mules have 63 and cannot form matched chromosome pairs for reproduction",
+      "choices": ["Mules are too small to survive childbirth", "Horses have 64 chromosomes and donkeys 62 -- mules have 63 and cannot form matched chromosome pairs for reproduction", "Mules have a hormone deficiency that prevents ovulation and sperm production", "The species barrier prevents fertilization in the mule's reproductive system"],
+      "tier": 1,
+      "reason": "The mule sterility question teaches chromosome biology and hybrid incompatibility in a memorable, everyday context."
+    },
+    {
+      "question": "A tiger has stripes and a leopard has spots. What is the key behavioral difference between these two big cats that explains why tigers are solitary ambush hunters?",
+      "answer": "Tigers hunt in dense vegetation where stripes break up their outline; they ambush prey alone rather than running in open terrain",
+      "choices": ["Tigers are faster than leopards so do not need a group", "Tigers hunt in dense vegetation where stripes break up their outline; they ambush prey alone rather than running in open terrain", "Tigers share prey with cubs but leopards must eat alone to avoid theft", "Tiger stripes signal dominance which scares other predators away from their territory"],
+      "tier": 1,
+      "reason": "Connects stripe pattern directly to habitat and hunting strategy -- a conceptual link rather than pure identification."
+    },
+    {
+      "question": "Frogs and salamanders are both amphibians. What key feature makes amphibians dependent on water or moist environments for reproduction?",
+      "answer": "Their eggs have no shell or waterproof membrane, so they dry out quickly without moisture",
+      "choices": ["Adult amphibians must drink water constantly or die within hours", "Their eggs have no shell or waterproof membrane, so they dry out quickly without moisture", "Amphibian larvae breathe only through their skin and need water to breathe", "Amphibians must return to water to fertilize eggs internally"],
+      "tier": 1,
+      "reason": "Explains WHY amphibians need water -- the egg vulnerability -- rather than just stating the fact."
+    },
+    {
+      "question": "All birds are warm-blooded, but birds also have very high body temperatures compared to mammals -- around 40-42 degrees C. Why is this high temperature beneficial for birds?",
+      "answer": "High temperatures support rapid metabolism needed for sustained flight and fast muscle action",
+      "choices": ["It keeps their eggs warm without sitting on them", "High temperatures support rapid metabolism needed for sustained flight and fast muscle action", "It prevents bacterial infections in wounds from hunting", "It allows birds to survive in cold climates without insulating fat"],
+      "tier": 2,
+      "reason": "Links bird thermoregulation to the metabolic demands of flight -- a conceptual connection."
+    },
+    {
+      "question": "Insects have a rigid exoskeleton. This adaptation protects them, but it creates a problem for growth. How do insects solve the growth problem?",
+      "answer": "They periodically shed (moult) the old exoskeleton and expand a new, larger one before it hardens",
+      "choices": ["The exoskeleton stretches elastically as the insect grows", "They periodically shed (moult) the old exoskeleton and expand a new, larger one before it hardens", "Insects stop growing once they reach adult form after metamorphosis", "New skeleton panels are added to the edges as the insect grows"],
+      "tier": 1,
+      "reason": "Insect moulting connects the exoskeleton adaptation to a growth constraint -- conceptual biology."
+    },
+    {
+      "question": "The giraffe is the tallest animal and has an extremely long neck. Despite this, the giraffe has the same number of neck vertebrae as most other mammals. How many?",
+      "answer": "7 vertebrae -- the same as humans, just much longer individually",
+      "choices": ["15 vertebrae -- more than most mammals to allow such height", "7 vertebrae -- the same as humans, just much longer individually", "21 vertebrae with extra joints between each", "4 vertebrae -- fewer but more flexible than other mammals"],
+      "tier": 2,
+      "reason": "The giraffe's 7 cervical vertebrae is a memorable example of anatomical conservation across mammals despite extreme size differences."
+    },
+    {
+      "question": "Cold-blooded reptiles like crocodiles are ectotherms -- they rely on external heat sources. What behavioral strategy do crocodiles use to regulate their body temperature?",
+      "answer": "Basking in the sun to warm up and retreating to water or shade to cool down",
+      "choices": ["Generating heat by rapid tail movements like a warm-up exercise", "Basking in the sun to warm up and retreating to water or shade to cool down", "Covering themselves with mud that retains warmth from the previous day", "Consuming large meals that generate heat through digestion"],
+      "tier": 1,
+      "reason": "Connects ectothermy to concrete behavioral thermoregulation in a familiar animal."
+    },
+    {
+      "question": "Bats are the only flying mammals. How do bats' wings differ structurally from bird wings?",
+      "answer": "Bat wings are formed from a thin skin membrane stretched between elongated finger bones; bird wings are formed by modified arm bones with feathers",
+      "choices": ["Bat wings are made of the same keratin as feathers, just arranged differently", "Bat wings are formed from a thin skin membrane stretched between elongated finger bones; bird wings are formed by modified arm bones with feathers", "Bat wings are attached at the hip like insect wings; bird wings are attached at the shoulder", "Bat wings contain no bones -- they are purely cartilaginous structures"],
+      "tier": 1,
+      "reason": "Contrasting bat and bird wing structure teaches homologous bones with different adaptations -- and why both are true flight."
+    },
+    {
+      "question": "The human appendix was long considered vestigial (functionless), but recent research suggests a possible role. What function has been proposed?",
+      "answer": "A reservoir that repopulates gut bacteria after illness clears the intestines",
+      "choices": ["Producing growth hormones in early childhood", "A reservoir that repopulates gut bacteria after illness clears the intestines", "Synthesizing vitamin B12 from undigested plant matter", "Filtering toxins from the bloodstream like a secondary liver"],
+      "tier": 2,
+      "reason": "The appendix story teaches that 'vestigial' is not the same as 'useless' and shows how scientific consensus can change."
+    },
+    {
+      "question": "Salmon die shortly after spawning in their birth stream. What ecological benefit does this death provide?",
+      "answer": "Their decaying bodies provide marine-derived nutrients (especially nitrogen) that fertilize riverside forests and feed insects",
+      "choices": ["Their bodies block the stream so juvenile salmon cannot be swept back to sea", "Their decaying bodies provide marine-derived nutrients (especially nitrogen) that fertilize riverside forests and feed insects", "The chemical signals from the dying fish trigger the eggs to hatch faster", "Their deaths remove competing adults that would eat the newly hatched juveniles"],
+      "tier": 2,
+      "reason": "Salmon death as nutrient cycling from ocean to forest is a beautiful example of how a single species connects two different ecosystems."
+    },
+    {
+      "question": "Many birds migrate at night and use stars for navigation. Which specific aspect of the night sky do birds use as a directional reference?",
+      "answer": "The rotation point of stars around Polaris (the North Star), which indicates true north",
+      "choices": ["The brightness of the Milky Way band which runs north-south", "The rotation point of stars around Polaris (the North Star), which indicates true north", "The colors of stars at different horizons that encode compass directions", "The number of stars visible in different sectors of the sky"],
+      "tier": 3,
+      "reason": "Bird stellar navigation using the celestial rotation axis teaches an elegant non-magnetic navigation mechanism."
+    },
+    {
+      "question": "The hippopotamus is more closely related to which group of animals than it is to pigs or horses?",
+      "answer": "Whales and dolphins (Cetacea) -- hippos and cetaceans share a common ancestor called Anthracotheriidae",
+      "choices": ["Pigs (Sus scrofa) based on similar body shape", "Rhinos based on large semi-aquatic herbivore lifestyle", "Whales and dolphins (Cetacea) -- hippos and cetaceans share a common ancestor called Anthracotheriidae", "Elephants based on large body size and thick skin"],
+      "tier": 3,
+      "reason": "The hippo-whale connection is one of the most surprising results of molecular phylogenetics and teaches that morphology can mislead."
+    },
+    {
+      "question": "The 'dead zone' in the Gulf of Mexico is a region of very low oxygen where few animals survive. What human activity causes this dead zone?",
+      "answer": "Agricultural fertilizer runoff triggers algal blooms that consume all oxygen when they decompose",
+      "choices": ["Oil spills coat the water surface preventing oxygen absorption", "Agricultural fertilizer runoff triggers algal blooms that consume all oxygen when they decompose", "Industrial heating of coastal water reduces dissolved oxygen capacity", "Overfishing removes the fish that normally oxygenate water through gill activity"],
+      "tier": 2,
+      "reason": "Dead zones are a critically important environmental topic that illustrates eutrophication and human impacts on aquatic ecosystems."
+    },
+    {
+      "question": "Dogs are the only domestic animals that understand human pointing gestures without training. What does this suggest about dog domestication?",
+      "answer": "Dogs evolved specific cognitive adaptations to read human social cues during thousands of years of co-evolution with humans",
+      "choices": ["Dogs are more intelligent than wolves and therefore naturally understand all gestures", "Dogs evolved specific cognitive adaptations to read human social cues during thousands of years of co-evolution with humans", "The skill is simply learned -- any animal trained enough will develop it", "Dogs understand pointing because they use similar gestures among themselves"],
+      "tier": 3,
+      "reason": "Dogs' unique gesture-reading ability is a case study in domestication-driven cognitive evolution."
+    },
+    {
+      "question": "Hippopotamus skin secretes a red fluid once thought to be blood-sweat. What does this secretion actually do?",
+      "answer": "Acts as sunscreen, moisturizer, and antimicrobial agent -- it contains pigments that absorb UV light",
+      "choices": ["It is a hormone that triggers territorial behavior in males", "Acts as sunscreen, moisturizer, and antimicrobial agent -- it contains pigments that absorb UV light", "It is a territorial scent marker released under stress", "It cools the hippo through evaporative heat loss like sweat"],
+      "tier": 3,
+      "reason": "Hippo skin secretion is a fascinating multi-function biological adaptation that replaces the removed 'bloat of hippos' collective noun."
+    },
+    {
+      "question": "The Greenland shark (Somniosus microcephalus) can live over 400 years, making it the longest-lived vertebrate known. What feature of its biology is responsible for this extreme longevity?",
+      "answer": "Extremely slow metabolism and growth rate in near-freezing Arctic waters",
+      "choices": ["It regenerates damaged tissues faster than any other vertebrate", "Extremely slow metabolism and growth rate in near-freezing Arctic waters", "Its cells are immune to oxidative stress damage", "It hibernates for decades at a time reducing total biological age"],
+      "tier": 3,
+      "reason": "Greenland shark longevity illustrates the metabolic rate-longevity relationship in ectotherms."
+    },
+    {
+      "question": "Many deep-sea fish produce their own light (bioluminescence). What is the primary adaptive function of bioluminescence in deep-sea fish like the anglerfish?",
+      "answer": "Luring prey in the absence of sunlight",
+      "choices": ["Navigation using the light as a sonar system", "Luring prey in the absence of sunlight", "Communicating distress signals to distant members of the same species", "Warming the body in near-freezing water"],
+      "tier": 2,
+      "reason": "Grounds the bioluminescence concept (already in the file) in a specific and memorable predatory context."
+    },
+    {
+      "question": "Lungfish can survive for years buried in dried mud during drought by entering a state of metabolic suspension called estivation. What gas do lungfish breathe when their pond dries up?",
+      "answer": "Air (they have functional lungs, unlike most fish)",
+      "choices": ["They absorb dissolved oxygen through their skin", "Air (they have functional lungs, unlike most fish)", "They stop breathing and survive on stored oxygen in blood cells", "CO2 from their own metabolism through a reverse-respiration mechanism"],
+      "tier": 2,
+      "reason": "Expands on the already-present lungfish question with the biological mechanism behind air breathing."
+    }
+  ]
+}

@@ -34,13 +34,13 @@
   },
   {
     "tier": 1,
-    "question": "How many legs does a snake have?",
-    "answer": "0",
+    "question": "Snakes lost their legs through evolutionary reduction. Which group of reptiles are their closest limbless relatives?",
+    "answer": "Lizards (snakes evolved from lizard ancestors)",
     "choices": [
-      "0",
-      "2",
-      "4",
-      "6"
+      "Turtles (from shell-bearing ancestors)",
+      "Lizards (snakes evolved from lizard ancestors)",
+      "Crocodilians (from aquatic ancestors)",
+      "Worms (from invertebrate ancestors)"
     ]
   },
   {
@@ -85,94 +85,6 @@
       "More",
       "The same",
       "None"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "A group of lions is called a ___?",
-    "answer": "Pride",
-    "choices": [
-      "Pack",
-      "Pride",
-      "Herd",
-      "Flock"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "A group of wolves is called a ___?",
-    "answer": "Pack",
-    "choices": [
-      "Pride",
-      "Pack",
-      "Colony",
-      "Mob"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "A group of birds is called a ___?",
-    "answer": "Flock",
-    "choices": [
-      "Herd",
-      "Pack",
-      "Flock",
-      "Pod"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "A group of fish is called a ___?",
-    "answer": "School",
-    "choices": [
-      "Flock",
-      "School",
-      "Pack",
-      "Colony"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "A group of cows is called a ___?",
-    "answer": "Herd",
-    "choices": [
-      "Pack",
-      "Flock",
-      "Herd",
-      "Pride"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "A group of whales is called a ___?",
-    "answer": "Pod",
-    "choices": [
-      "School",
-      "Pod",
-      "Pack",
-      "Herd"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "A group of ants is called a ___?",
-    "answer": "Colony",
-    "choices": [
-      "Herd",
-      "Pack",
-      "Colony",
-      "Flock"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "A group of crows is called a ___?",
-    "answer": "Murder",
-    "choices": [
-      "Flock",
-      "Pack",
-      "Murder",
-      "Colony"
     ]
   },
   {
@@ -243,24 +155,24 @@
   },
   {
     "tier": 1,
-    "question": "An animal with a backbone is called a ___?",
-    "answer": "Vertebrate",
+    "question": "An animal with a backbone (vertebral column) is called a vertebrate. Why did the vertebral column evolve?",
+    "answer": "To support body weight, protect the spinal cord, and enable complex movement",
     "choices": [
-      "Invertebrate",
-      "Vertebrate",
-      "Arthropod",
-      "Mammal"
+      "To allow filter feeding in water",
+      "To support body weight, protect the spinal cord, and enable complex movement",
+      "To provide a calcium reservoir",
+      "To anchor wing muscles for flight"
     ]
   },
   {
     "tier": 1,
-    "question": "An animal without a backbone is called a ___?",
-    "answer": "Invertebrate",
+    "question": "Invertebrates make up approximately what percentage of all known animal species?",
+    "answer": "About 97%",
     "choices": [
-      "Vertebrate",
-      "Invertebrate",
-      "Chordate",
-      "Reptile"
+      "About 20%",
+      "About 50%",
+      "About 75%",
+      "About 97%"
     ]
   },
   {
@@ -419,39 +331,6 @@
   },
   {
     "tier": 1,
-    "question": "A group of geese is called a ___?",
-    "answer": "Gaggle",
-    "choices": [
-      "Flock",
-      "Pack",
-      "Gaggle",
-      "Herd"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "A group of elephants is called a ___?",
-    "answer": "Herd",
-    "choices": [
-      "Pack",
-      "Herd",
-      "Pride",
-      "Colony"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "A group of dolphins is called a ___?",
-    "answer": "Pod",
-    "choices": [
-      "School",
-      "Herd",
-      "Pod",
-      "Flock"
-    ]
-  },
-  {
-    "tier": 1,
     "question": "The spider belongs to which animal class?",
     "answer": "Arachnida",
     "choices": [
@@ -518,17 +397,6 @@
   },
   {
     "tier": 1,
-    "question": "A group of bees is called a ___?",
-    "answer": "Colony",
-    "choices": [
-      "Hive",
-      "Pack",
-      "Colony",
-      "Swarm"
-    ]
-  },
-  {
-    "tier": 1,
     "question": "How many wings does a bee have?",
     "answer": "4",
     "choices": [
@@ -540,24 +408,13 @@
   },
   {
     "tier": 1,
-    "question": "A group of kangaroos is called a ___?",
-    "answer": "Mob",
+    "question": "Monotremes are the only mammals that lay eggs. Which two living species are monotremes?",
+    "answer": "Platypus and echidna",
     "choices": [
-      "Herd",
-      "Pack",
-      "Mob",
-      "Pride"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "A mammal that lays eggs is called a ___?",
-    "answer": "Monotreme",
-    "choices": [
-      "Marsupial",
-      "Monotreme",
-      "Placental",
-      "Lagomorph"
+      "Platypus and echidna",
+      "Wombat and quoll",
+      "Koala and Tasmanian devil",
+      "Bandicoot and wallaby"
     ]
   },
   {
@@ -638,28 +495,6 @@
     ]
   },
   {
-    "tier": 2,
-    "question": "A group of ravens is called a ___?",
-    "answer": "Unkindness",
-    "choices": [
-      "Murder",
-      "Unkindness",
-      "Colony",
-      "Flock"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "A group of owls is called a ___?",
-    "answer": "Parliament",
-    "choices": [
-      "Flock",
-      "Pack",
-      "Parliament",
-      "Colony"
-    ]
-  },
-  {
     "tier": 1,
     "question": "An eagle is classified as a ___?",
     "answer": "Bird",
@@ -690,17 +525,6 @@
       "Hippopotamus",
       "African elephant",
       "White rhino"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "A group of gorillas is called a ___?",
-    "answer": "Troop",
-    "choices": [
-      "Pack",
-      "Troop",
-      "Herd",
-      "Gang"
     ]
   },
   {
@@ -771,17 +595,6 @@
   },
   {
     "tier": 1,
-    "question": "A group of horses is called a ___?",
-    "answer": "Herd",
-    "choices": [
-      "Pack",
-      "Herd",
-      "Flock",
-      "Pod"
-    ]
-  },
-  {
-    "tier": 1,
     "question": "How many eyes does a spider typically have?",
     "answer": "8",
     "choices": [
@@ -800,28 +613,6 @@
       "Hollow",
       "Liquid-filled",
       "Cartilage only"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "A group of sheep is called a ___?",
-    "answer": "Flock",
-    "choices": [
-      "Herd",
-      "Flock",
-      "Pack",
-      "Colony"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "A group of bears is called a ___?",
-    "answer": "Sleuth",
-    "choices": [
-      "Pack",
-      "Herd",
-      "Sleuth",
-      "Mob"
     ]
   },
   {
@@ -848,160 +639,6 @@
   },
   {
     "tier": 1,
-    "question": "A baby cat is called a ___?",
-    "answer": "Kitten",
-    "choices": [
-      "Cub",
-      "Kitten",
-      "Pup",
-      "Foal"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "A baby dog is called a ___?",
-    "answer": "Puppy",
-    "choices": [
-      "Kitten",
-      "Cub",
-      "Puppy",
-      "Foal"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "A baby horse is called a ___?",
-    "answer": "Foal",
-    "choices": [
-      "Colt",
-      "Foal",
-      "Pup",
-      "Cub"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "A baby bear is called a ___?",
-    "answer": "Cub",
-    "choices": [
-      "Pup",
-      "Foal",
-      "Cub",
-      "Kitten"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "A baby kangaroo is called a ___?",
-    "answer": "Joey",
-    "choices": [
-      "Cub",
-      "Pup",
-      "Joey",
-      "Kit"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "A baby cow is called a ___?",
-    "answer": "Calf",
-    "choices": [
-      "Foal",
-      "Pup",
-      "Calf",
-      "Lamb"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "A baby sheep is called a ___?",
-    "answer": "Lamb",
-    "choices": [
-      "Kid",
-      "Calf",
-      "Lamb",
-      "Foal"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "A baby goat is called a ___?",
-    "answer": "Kid",
-    "choices": [
-      "Lamb",
-      "Pup",
-      "Kid",
-      "Calf"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "A baby frog is called a ___?",
-    "answer": "Tadpole",
-    "choices": [
-      "Larva",
-      "Tadpole",
-      "Nymph",
-      "Hatchling"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "A baby deer is called a ___?",
-    "answer": "Fawn",
-    "choices": [
-      "Calf",
-      "Foal",
-      "Fawn",
-      "Kid"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "A baby swan is called a ___?",
-    "answer": "Cygnet",
-    "choices": [
-      "Chick",
-      "Duckling",
-      "Cygnet",
-      "Gosling"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "A baby duck is called a ___?",
-    "answer": "Duckling",
-    "choices": [
-      "Chick",
-      "Gosling",
-      "Cygnet",
-      "Duckling"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "A baby eagle is called a ___?",
-    "answer": "Eaglet",
-    "choices": [
-      "Chick",
-      "Fledgling",
-      "Eaglet",
-      "Hatchling"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "A group of flamingos is called a ___?",
-    "answer": "Flamboyance",
-    "choices": [
-      "Flock",
-      "Colony",
-      "Flamboyance",
-      "Parliament"
-    ]
-  },
-  {
-    "tier": 1,
     "question": "Amphibians typically begin life in ___?",
     "answer": "Water",
     "choices": [
@@ -1013,145 +650,112 @@
   },
   {
     "tier": 1,
-    "question": "An animal that eats insects is called an ___?",
-    "answer": "Insectivore",
+    "question": "Insectivores fill an important ecological niche as pest controllers. Which of these mammals is primarily insectivorous?",
+    "answer": "Shrew",
     "choices": [
-      "Herbivore",
-      "Carnivore",
-      "Insectivore",
-      "Omnivore"
+      "Rabbit",
+      "Shrew",
+      "Otter",
+      "Meerkat"
     ]
   },
   {
     "tier": 1,
-    "question": "An animal that eats fish is called a ___?",
-    "answer": "Piscivore",
+    "question": "Piscivores are animals that specialize in eating fish. Which of these birds is a classic piscivore that has evolved a spear-like beak for this purpose?",
+    "answer": "Kingfisher",
     "choices": [
-      "Herbivore",
-      "Carnivore",
-      "Piscivore",
-      "Omnivore"
+      "Sparrow",
+      "Vulture",
+      "Kingfisher",
+      "Hummingbird"
     ]
   },
   {
     "tier": 2,
-    "question": "A group of jellyfish is called a ___?",
-    "answer": "Bloom",
+    "question": "Sharks are fish, but they differ from most fish in a key way: their skeleton is made entirely of ___?",
+    "answer": "Cartilage",
     "choices": [
-      "School",
-      "Bloom",
-      "Pod",
-      "Colony"
+      "Bone",
+      "Cartilage",
+      "Chitin",
+      "Keratin"
     ]
   },
   {
     "tier": 2,
-    "question": "A group of crocodiles is called a ___?",
-    "answer": "Float",
+    "question": "Dolphins are classified as mammals, not fish. What is the most visible evidence that dolphins are air-breathing mammals?",
+    "answer": "They breathe air through a blowhole and nurse calves with milk",
     "choices": [
-      "Pack",
-      "Float",
-      "Herd",
-      "Colony"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "A group of monkeys is called a ___?",
-    "answer": "Troop",
-    "choices": [
-      "Pack",
-      "Herd",
-      "Troop",
-      "Colony"
+      "They have scales and cold blood",
+      "They breathe air through a blowhole and nurse calves with milk",
+      "They have external ears and fur coats",
+      "They lay eggs and have webbed feet"
     ]
   },
   {
     "tier": 2,
-    "question": "A shark is classified as a ___?",
-    "answer": "Fish",
+    "question": "The seahorse is unique among fish because the male, not the female, ___?",
+    "answer": "Carries and gives birth to the young",
     "choices": [
-      "Mammal",
-      "Reptile",
-      "Fish",
-      "Amphibian"
+      "Builds and guards the nest",
+      "Carries and gives birth to the young",
+      "Selects the territory and mate",
+      "Produces the eggs"
     ]
   },
   {
     "tier": 2,
-    "question": "A dolphin is classified as a ___?",
-    "answer": "Mammal",
+    "question": "The axolotl is an amphibian famous for never completing metamorphosis -- it keeps its external gills as an adult. This condition is called ___?",
+    "answer": "Neoteny",
     "choices": [
-      "Fish",
-      "Reptile",
-      "Mammal",
-      "Amphibian"
+      "Metamorphosis",
+      "Neoteny",
+      "Estivation",
+      "Ecdysis"
     ]
   },
   {
     "tier": 2,
-    "question": "A seahorse is classified as a ___?",
-    "answer": "Fish",
+    "question": "Female sea turtles return to the exact beach where they were born to lay their eggs, sometimes traveling thousands of miles. What guides this navigation?",
+    "answer": "Earth's magnetic field (geomagnetic imprinting)",
     "choices": [
-      "Mammal",
-      "Reptile",
-      "Fish",
-      "Amphibian"
+      "Smell of their birth beach",
+      "Earth's magnetic field (geomagnetic imprinting)",
+      "Star patterns at night",
+      "Ocean current memory"
     ]
   },
   {
     "tier": 2,
-    "question": "An axolotl is classified as a ___?",
-    "answer": "Amphibian",
+    "question": "Seals and sea lions are both pinnipeds, but they differ in a key way: sea lions can walk on land using their flippers, while seals ___?",
+    "answer": "Must drag themselves on land using their front flippers",
     "choices": [
-      "Fish",
-      "Reptile",
-      "Amphibian",
-      "Mammal"
+      "Must drag themselves on land using their front flippers",
+      "Can rotate their hind flippers forward to walk",
+      "Cannot leave the water at all",
+      "Walk upright like penguins"
     ]
   },
   {
     "tier": 2,
-    "question": "A sea turtle is classified as a ___?",
-    "answer": "Reptile",
+    "question": "Orcas (killer whales) are apex predators classified as mammals. What hunting strategy do orcas use that makes them exceptional among ocean predators?",
+    "answer": "Coordinated cooperative hunting in pods with culturally transmitted techniques",
     "choices": [
-      "Amphibian",
-      "Fish",
-      "Reptile",
-      "Mammal"
+      "Ambush hunting by camouflage",
+      "Coordinated cooperative hunting in pods with culturally transmitted techniques",
+      "Electrical sensing to locate prey",
+      "Stunning prey with sound waves alone"
     ]
   },
   {
     "tier": 2,
-    "question": "A seal is classified as a ___?",
-    "answer": "Mammal",
+    "question": "Lampreys are jawless fish that are considered living fossils. How do they feed as adults?",
+    "answer": "By attaching to fish with a sucker and rasping through their skin to drink blood",
     "choices": [
-      "Fish",
-      "Reptile",
-      "Amphibian",
-      "Mammal"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "An orca is classified as a ___?",
-    "answer": "Mammal",
-    "choices": [
-      "Fish",
-      "Shark",
-      "Reptile",
-      "Mammal"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "A lamprey is classified as a ___?",
-    "answer": "Fish",
-    "choices": [
-      "Worm",
-      "Reptile",
-      "Fish",
-      "Amphibian"
+      "By filter feeding on plankton like baleen whales",
+      "By attaching to fish with a sucker and rasping through their skin to drink blood",
+      "By burying in sediment and ambushing worms",
+      "By using electroreception to stun prey"
     ]
   },
   {
@@ -1416,17 +1020,6 @@
       "Hawaii",
       "Mauritius",
       "Galapagos"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "A group of foxes is called a ___?",
-    "answer": "Skulk",
-    "choices": [
-      "Pack",
-      "Den",
-      "Skulk",
-      "Troop"
     ]
   },
   {
@@ -1706,17 +1299,6 @@
   },
   {
     "tier": 2,
-    "question": "A group of flamingos is also called a ___?",
-    "answer": "Colony",
-    "choices": [
-      "Flock",
-      "Colony",
-      "Flamboyance",
-      "Pod"
-    ]
-  },
-  {
-    "tier": 2,
     "question": "The Komodo dragon is native to ___?",
     "answer": "Indonesia",
     "choices": [
@@ -1926,90 +1508,35 @@
   },
   {
     "tier": 3,
-    "question": "The scientific name for the domestic cat is ___?",
-    "answer": "Felis catus",
+    "question": "Homo sapiens means 'wise man' in Latin. In biological taxonomy, 'Homo' is the genus. Which extinct species shared our genus?",
+    "answer": "Homo neanderthalensis",
     "choices": [
-      "Felis silvestris",
-      "Felis catus",
-      "Lynx rufus",
-      "Panthera leo"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "The scientific name for the domestic dog is ___?",
-    "answer": "Canis lupus familiaris",
-    "choices": [
-      "Canis aureus",
-      "Canis lupus familiaris",
-      "Vulpes vulpes",
-      "Canis latrans"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "The scientific name for humans is ___?",
-    "answer": "Homo sapiens",
-    "choices": [
-      "Homo erectus",
-      "Homo habilis",
-      "Homo sapiens",
-      "Homo neanderthalensis"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "The scientific name for the house mouse is ___?",
-    "answer": "Mus musculus",
-    "choices": [
-      "Rattus rattus",
-      "Mus musculus",
-      "Mus domesticus",
-      "Apodemus sylvaticus"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "The scientific name for the lion is ___?",
-    "answer": "Panthera leo",
-    "choices": [
-      "Panthera tigris",
-      "Acinonyx jubatus",
-      "Panthera leo",
-      "Panthera onca"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "The scientific name for the tiger is ___?",
-    "answer": "Panthera tigris",
-    "choices": [
-      "Panthera leo",
-      "Panthera pardus",
-      "Panthera tigris",
-      "Neofelis nebulosa"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "The scientific name for the common chimpanzee is ___?",
-    "answer": "Pan troglodytes",
-    "choices": [
-      "Pan paniscus",
+      "Australopithecus afarensis",
+      "Homo neanderthalensis",
       "Pan troglodytes",
-      "Gorilla gorilla",
-      "Pongo pygmaeus"
+      "Ardipithecus ramidus"
     ]
   },
   {
     "tier": 3,
-    "question": "The scientific name for the gray wolf is ___?",
-    "answer": "Canis lupus",
+    "question": "Chimpanzees (Pan troglodytes) and bonobos (Pan paniscus) are our two closest living relatives. How does bonobo society differ from chimpanzee society?",
+    "answer": "Bonobo society is female-dominated and uses sex to resolve conflict; chimp society is male-dominated and more aggressive",
     "choices": [
-      "Canis latrans",
-      "Canis lupus",
-      "Canis aureus",
-      "Lycaon pictus"
+      "Bonobos are solitary; chimps live in groups",
+      "Bonobo society is female-dominated and uses sex to resolve conflict; chimp society is male-dominated and more aggressive",
+      "Bonobos use tools; chimps do not",
+      "Bonobos eat meat; chimps are vegetarian"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The gray wolf (Canis lupus) is the ancestor of domestic dogs. Wolves were domesticated approximately how many years ago?",
+    "answer": "About 15,000 to 40,000 years ago",
+    "choices": [
+      "About 500 years ago",
+      "About 5,000 years ago",
+      "About 15,000 to 40,000 years ago",
+      "About 100,000 years ago"
     ]
   },
   {
@@ -2256,39 +1783,6 @@
   },
   {
     "tier": 3,
-    "question": "The scientific name for the domestic horse is ___?",
-    "answer": "Equus caballus",
-    "choices": [
-      "Equus asinus",
-      "Equus zebra",
-      "Equus caballus",
-      "Equus quagga"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "The scientific name for the giant panda is ___?",
-    "answer": "Ailuropoda melanoleuca",
-    "choices": [
-      "Ursus americanus",
-      "Ailurus fulgens",
-      "Ailuropoda melanoleuca",
-      "Ursus maritimus"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "The scientific name for the African elephant is ___?",
-    "answer": "Loxodonta africana",
-    "choices": [
-      "Elephas maximus",
-      "Loxodonta cyclotis",
-      "Loxodonta africana",
-      "Mammuthus primigenius"
-    ]
-  },
-  {
-    "tier": 3,
     "question": "Warning coloration in animals is called ___?",
     "answer": "Aposematism",
     "choices": [
@@ -2318,39 +1812,6 @@
       "Regulate temperature",
       "Reduce visibility",
       "Signal dominance"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "The scientific name for the bottlenose dolphin is ___?",
-    "answer": "Tursiops truncatus",
-    "choices": [
-      "Delphinus delphis",
-      "Stenella longirostris",
-      "Tursiops truncatus",
-      "Orcinus orca"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "The scientific name for the great white shark is ___?",
-    "answer": "Carcharodon carcharias",
-    "choices": [
-      "Isurus oxyrinchus",
-      "Galeocerdo cuvier",
-      "Carcharodon carcharias",
-      "Carcharhinus leucas"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "The scientific name for the emperor penguin is ___?",
-    "answer": "Aptenodytes forsteri",
-    "choices": [
-      "Aptenodytes patagonicus",
-      "Pygoscelis adeliae",
-      "Aptenodytes forsteri",
-      "Spheniscus demersus"
     ]
   },
   {
@@ -2395,39 +1856,6 @@
       "Circadian rhythm regulation",
       "Osmoregulation",
       "Photosynthesis"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "The scientific name for the common housefly is ___?",
-    "answer": "Musca domestica",
-    "choices": [
-      "Drosophila melanogaster",
-      "Calliphora vomitoria",
-      "Musca domestica",
-      "Lucilia sericata"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "The scientific name for the European honeybee is ___?",
-    "answer": "Apis mellifera",
-    "choices": [
-      "Apis cerana",
-      "Bombus terrestris",
-      "Apis mellifera",
-      "Vespa crabro"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "The scientific name for the gorilla (western) is ___?",
-    "answer": "Gorilla gorilla",
-    "choices": [
-      "Pan troglodytes",
-      "Gorilla beringei",
-      "Gorilla gorilla",
-      "Pongo abelii"
     ]
   },
   {
@@ -3015,13 +2443,13 @@
   },
   {
     "tier": 4,
-    "question": "The correct format for a scientific name uses ___?",
-    "answer": "Italics, genus capitalized, species lowercase",
+    "question": "In binomial nomenclature, why is the genus name capitalized but the species epithet written in lowercase?",
+    "answer": "It is a standardized convention to distinguish genus rank from species rank",
     "choices": [
-      "All capitals",
-      "All lowercase",
-      "Italics, genus capitalized, species lowercase",
-      "Bold, both capitalized"
+      "The genus name is an adjective so must be capitalized",
+      "It is a standardized convention to distinguish genus rank from species rank",
+      "Species names are always verbs in Latin",
+      "Linnaeus used lowercase for recently discovered species only"
     ]
   },
   {
@@ -3630,39 +3058,6 @@
     ]
   },
   {
-    "tier": 1,
-    "question": "A baby rabbit is called a ___?",
-    "answer": "Kit",
-    "choices": [
-      "Pup",
-      "Cub",
-      "Kit",
-      "Kitten"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "A baby pig is called a ___?",
-    "answer": "Piglet",
-    "choices": [
-      "Cub",
-      "Lamb",
-      "Piglet",
-      "Foal"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "A group of pigs is called a ___?",
-    "answer": "Herd",
-    "choices": [
-      "Pack",
-      "Herd",
-      "Flock",
-      "Litter"
-    ]
-  },
-  {
     "tier": 2,
     "question": "Which animal is the only bird that can swim but cannot fly?",
     "answer": "Penguin",
@@ -3682,39 +3077,6 @@
       "Primate",
       "Carnivore",
       "Marsupial"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "A group of tigers is called a ___?",
-    "answer": "Streak",
-    "choices": [
-      "Pride",
-      "Pack",
-      "Streak",
-      "Coalition"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "A group of cheetahs is called a ___?",
-    "answer": "Coalition",
-    "choices": [
-      "Pride",
-      "Pack",
-      "Streak",
-      "Coalition"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "A group of otters is called a ___?",
-    "answer": "Romp",
-    "choices": [
-      "Pack",
-      "Colony",
-      "Romp",
-      "Sleuth"
     ]
   },
   {
@@ -3748,50 +3110,6 @@
       "Amphibians",
       "Insects",
       "Mammals"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "A group of butterflies is called a ___?",
-    "answer": "Flutter",
-    "choices": [
-      "Colony",
-      "Swarm",
-      "Flutter",
-      "Cluster"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "A group of penguins is called a ___?",
-    "answer": "Colony",
-    "choices": [
-      "Flock",
-      "Pack",
-      "Colony",
-      "Huddle"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "A group of rhinos is called a ___?",
-    "answer": "Crash",
-    "choices": [
-      "Herd",
-      "Pack",
-      "Crash",
-      "Troop"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "A group of hippos is called a ___?",
-    "answer": "Bloat",
-    "choices": [
-      "Herd",
-      "Crash",
-      "Bloat",
-      "Pod"
     ]
   },
   {
@@ -3862,28 +3180,6 @@
   },
   {
     "tier": 2,
-    "question": "A group of giraffes is called a ___?",
-    "answer": "Tower",
-    "choices": [
-      "Herd",
-      "Pack",
-      "Tower",
-      "Troop"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "A group of zebras is called a ___?",
-    "answer": "Dazzle",
-    "choices": [
-      "Herd",
-      "Stripe",
-      "Dazzle",
-      "Pack"
-    ]
-  },
-  {
-    "tier": 2,
     "question": "Which bird is the fastest in level flight?",
     "answer": "Common swift",
     "choices": [
@@ -3902,72 +3198,6 @@
       "Peregrine falcon",
       "Common swift",
       "Gyrfalcon"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "The scientific name for the domestic pig is ___?",
-    "answer": "Sus scrofa domesticus",
-    "choices": [
-      "Sus scrofa domesticus",
-      "Ovis aries",
-      "Bos taurus",
-      "Capra aegagrus hircus"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "The scientific name for the domestic cow is ___?",
-    "answer": "Bos taurus",
-    "choices": [
-      "Sus scrofa",
-      "Bos taurus",
-      "Ovis aries",
-      "Equus caballus"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "The scientific name for the red fox is ___?",
-    "answer": "Vulpes vulpes",
-    "choices": [
-      "Canis lupus",
-      "Vulpes vulpes",
-      "Canis latrans",
-      "Urocyon cinereoargenteus"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "The scientific name for the brown rat is ___?",
-    "answer": "Rattus norvegicus",
-    "choices": [
-      "Mus musculus",
-      "Rattus rattus",
-      "Rattus norvegicus",
-      "Apodemus sylvaticus"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "The scientific name for the African lion is ___?",
-    "answer": "Panthera leo",
-    "choices": [
-      "Panthera tigris",
-      "Panthera leo",
-      "Panthera onca",
-      "Panthera pardus"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "The scientific name for the snow leopard is ___?",
-    "answer": "Panthera uncia",
-    "choices": [
-      "Panthera pardus",
-      "Neofelis nebulosa",
-      "Panthera uncia",
-      "Acinonyx jubatus"
     ]
   },
   {
@@ -4115,50 +3345,6 @@
   },
   {
     "tier": 3,
-    "question": "The scientific name for the common octopus is ___?",
-    "answer": "Octopus vulgaris",
-    "choices": [
-      "Sepia officinalis",
-      "Loligo vulgaris",
-      "Octopus vulgaris",
-      "Enteroctopus dofleini"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "The scientific name for the Nile crocodile is ___?",
-    "answer": "Crocodylus niloticus",
-    "choices": [
-      "Alligator mississippiensis",
-      "Crocodylus porosus",
-      "Crocodylus niloticus",
-      "Gavialis gangeticus"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "The scientific name for the saltwater crocodile is ___?",
-    "answer": "Crocodylus porosus",
-    "choices": [
-      "Crocodylus niloticus",
-      "Crocodylus porosus",
-      "Alligator mississippiensis",
-      "Caiman crocodilus"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "The scientific name for the American alligator is ___?",
-    "answer": "Alligator mississippiensis",
-    "choices": [
-      "Crocodylus acutus",
-      "Alligator sinensis",
-      "Alligator mississippiensis",
-      "Caiman latirostris"
-    ]
-  },
-  {
-    "tier": 3,
     "question": "Social hierarchy in wolves is maintained by ___?",
     "answer": "Alpha wolves",
     "choices": [
@@ -4291,94 +3477,6 @@
   },
   {
     "tier": 3,
-    "question": "The scientific name for the common goldfish is ___?",
-    "answer": "Carassius auratus",
-    "choices": [
-      "Carassius carassius",
-      "Cyprinus carpio",
-      "Carassius auratus",
-      "Danio rerio"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "The scientific name for zebrafish (a model organism) is ___?",
-    "answer": "Danio rerio",
-    "choices": [
-      "Carassius auratus",
-      "Danio rerio",
-      "Brachydanio albolineatus",
-      "Cyprinus carpio"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "A group of stingrays is called a ___?",
-    "answer": "Fever",
-    "choices": [
-      "School",
-      "Pod",
-      "Fever",
-      "Colony"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "A group of sharks is called a ___?",
-    "answer": "Shiver",
-    "choices": [
-      "Pack",
-      "Shiver",
-      "School",
-      "Pod"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "A group of meerkats is called a ___?",
-    "answer": "Mob",
-    "choices": [
-      "Pack",
-      "Troop",
-      "Mob",
-      "Colony"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "A group of badgers is called a ___?",
-    "answer": "Cete",
-    "choices": [
-      "Pack",
-      "Skulk",
-      "Cete",
-      "Colony"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "A group of squirrels is called a ___?",
-    "answer": "Scurry",
-    "choices": [
-      "Pack",
-      "Colony",
-      "Scurry",
-      "Dray"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "A group of hedgehogs is called a ___?",
-    "answer": "Array",
-    "choices": [
-      "Pack",
-      "Array",
-      "Colony",
-      "Prickle"
-    ]
-  },
-  {
-    "tier": 3,
     "question": "An animal that feeds on carrion is called a ___?",
     "answer": "Scavenger",
     "choices": [
@@ -4390,24 +3488,24 @@
   },
   {
     "tier": 3,
-    "question": "The cuttlefish is classified as a ___?",
-    "answer": "Cephalopod mollusk",
+    "question": "Cuttlefish are cephalopod mollusks capable of extremely rapid color changes. Unlike octopus color changes, cuttlefish use their skin to ___?",
+    "answer": "Display complex moving patterns for camouflage and communication simultaneously",
     "choices": [
-      "Crustacean",
-      "Fish",
-      "Cephalopod mollusk",
-      "Echinoderm"
+      "Only warn predators with bright warning colors",
+      "Display complex moving patterns for camouflage and communication simultaneously",
+      "Regulate body temperature through skin tone changes",
+      "Mimic the color of their ink clouds"
     ]
   },
   {
     "tier": 3,
-    "question": "The nautilus is classified as a ___?",
-    "answer": "Cephalopod mollusk",
+    "question": "The nautilus is a cephalopod mollusk and a 'living fossil' -- its basic form has barely changed for 500 million years. What allows it to control its buoyancy?",
+    "answer": "Gas-filled chambers in its coiled shell",
     "choices": [
-      "Gastropod mollusk",
-      "Cephalopod mollusk",
-      "Bivalve mollusk",
-      "Echinoderm"
+      "A swim bladder like bony fish",
+      "Gas-filled chambers in its coiled shell",
+      "Muscular contractions to adjust density",
+      "Absorbing water into mantle tissue"
     ]
   },
   {
@@ -4962,182 +4060,6 @@
   },
   {
     "tier": 5,
-    "question": "The scientific name for the cheetah is ___?",
-    "answer": "Acinonyx jubatus",
-    "choices": [
-      "Panthera leo",
-      "Acinonyx jubatus",
-      "Panthera pardus",
-      "Puma concolor"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "The scientific name for the jaguar is ___?",
-    "answer": "Panthera onca",
-    "choices": [
-      "Panthera pardus",
-      "Puma concolor",
-      "Panthera onca",
-      "Neofelis nebulosa"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "The scientific name for the cougar (puma) is ___?",
-    "answer": "Puma concolor",
-    "choices": [
-      "Panthera onca",
-      "Acinonyx jubatus",
-      "Puma concolor",
-      "Lynx rufus"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "The scientific name for the North American black bear is ___?",
-    "answer": "Ursus americanus",
-    "choices": [
-      "Ursus arctos",
-      "Ursus thibetanus",
-      "Ursus americanus",
-      "Ursus maritimus"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "The scientific name for the grizzly bear is ___?",
-    "answer": "Ursus arctos horribilis",
-    "choices": [
-      "Ursus americanus",
-      "Ursus arctos horribilis",
-      "Ursus arctos middendorffi",
-      "Ursus maritimus"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "The scientific name for the polar bear is ___?",
-    "answer": "Ursus maritimus",
-    "choices": [
-      "Ursus arctos",
-      "Ursus americanus",
-      "Ursus maritimus",
-      "Ailuropoda melanoleuca"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "The scientific name for the red wolf is ___?",
-    "answer": "Canis rufus",
-    "choices": [
-      "Canis lupus",
-      "Canis latrans",
-      "Canis rufus",
-      "Canis aureus"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "The scientific name for the coyote is ___?",
-    "answer": "Canis latrans",
-    "choices": [
-      "Canis lupus",
-      "Canis rufus",
-      "Canis latrans",
-      "Vulpes vulpes"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "The scientific name for the African wild dog is ___?",
-    "answer": "Lycaon pictus",
-    "choices": [
-      "Canis lupus",
-      "Lycaon pictus",
-      "Cuon alpinus",
-      "Speothos venaticus"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "The scientific name for the bonobo is ___?",
-    "answer": "Pan paniscus",
-    "choices": [
-      "Pan troglodytes",
-      "Gorilla beringei",
-      "Pan paniscus",
-      "Pongo pygmaeus"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "The scientific name for the Bornean orangutan is ___?",
-    "answer": "Pongo pygmaeus",
-    "choices": [
-      "Pongo abelii",
-      "Pan troglodytes",
-      "Pongo pygmaeus",
-      "Gorilla gorilla"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "The scientific name for the mountain gorilla is ___?",
-    "answer": "Gorilla beringei beringei",
-    "choices": [
-      "Gorilla gorilla gorilla",
-      "Gorilla beringei beringei",
-      "Pan troglodytes schweinfurthii",
-      "Gorilla gorilla diehli"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "The scientific name for the blue whale is ___?",
-    "answer": "Balaenoptera musculus",
-    "choices": [
-      "Balaenoptera physalus",
-      "Megaptera novaeangliae",
-      "Balaenoptera musculus",
-      "Physeter macrocephalus"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "The scientific name for the sperm whale is ___?",
-    "answer": "Physeter macrocephalus",
-    "choices": [
-      "Balaenoptera musculus",
-      "Physeter macrocephalus",
-      "Orcinus orca",
-      "Kogia breviceps"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "The scientific name for the orca (killer whale) is ___?",
-    "answer": "Orcinus orca",
-    "choices": [
-      "Tursiops truncatus",
-      "Delphinus delphis",
-      "Orcinus orca",
-      "Globicephala melas"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "The scientific name for the Amur leopard is ___?",
-    "answer": "Panthera pardus orientalis",
-    "choices": [
-      "Panthera pardus pardus",
-      "Panthera uncia",
-      "Panthera pardus orientalis",
-      "Neofelis nebulosa"
-    ]
-  },
-  {
-    "tier": 5,
     "question": "Mullerian mimicry differs from Batesian mimicry in that all mimics are ___?",
     "answer": "Genuinely harmful (unpalatable or venomous)",
     "choices": [
@@ -5402,94 +4324,6 @@
   },
   {
     "tier": 5,
-    "question": "The scientific name for the wandering albatross is ___?",
-    "answer": "Diomedea exulans",
-    "choices": [
-      "Phoebastria irrorata",
-      "Thalassarche melanophris",
-      "Diomedea exulans",
-      "Phoebetria palpebrata"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "The scientific name for the peregrine falcon is ___?",
-    "answer": "Falco peregrinus",
-    "choices": [
-      "Falco rusticolus",
-      "Falco columbarius",
-      "Falco peregrinus",
-      "Accipiter gentilis"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "The scientific name for the harpy eagle is ___?",
-    "answer": "Harpia harpyja",
-    "choices": [
-      "Aquila chrysaetos",
-      "Haliaeetus leucocephalus",
-      "Harpia harpyja",
-      "Spizaetus ornatus"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "The scientific name for the Komodo dragon is ___?",
-    "answer": "Varanus komodoensis",
-    "choices": [
-      "Varanus salvator",
-      "Varanus niloticus",
-      "Varanus komodoensis",
-      "Iguana iguana"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "The scientific name for the inland taipan (most venomous snake) is ___?",
-    "answer": "Oxyuranus microlepidotus",
-    "choices": [
-      "Oxyuranus scutellatus",
-      "Pseudonaja textilis",
-      "Oxyuranus microlepidotus",
-      "Notechis scutatus"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "The scientific name for the Galapagos tortoise is ___?",
-    "answer": "Chelonoidis niger",
-    "choices": [
-      "Aldabrachelys gigantea",
-      "Testudo graeca",
-      "Chelonoidis niger",
-      "Geochelone elegans"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "The scientific name for the axolotl is ___?",
-    "answer": "Ambystoma mexicanum",
-    "choices": [
-      "Ambystoma tigrinum",
-      "Salamandra salamandra",
-      "Ambystoma mexicanum",
-      "Necturus maculosus"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "The scientific name for the poison dart frog genus most studied is ___?",
-    "answer": "Dendrobates",
-    "choices": [
-      "Phyllobates",
-      "Oophaga",
-      "Dendrobates",
-      "Ranitomeya"
-    ]
-  },
-  {
-    "tier": 5,
     "question": "Sensory ecology studies how animals ___?",
     "answer": "Perceive and use sensory information in their environment",
     "choices": [
@@ -5498,5 +4332,918 @@
       "Communicate only through chemicals",
       "Navigate using magnetic fields only"
     ]
+  },
+  {
+    "question": "Crows are known to hold 'funerals' -- gathering around dead crows and becoming agitated. Why is this behavior thought to have evolved?",
+    "answer": "To learn about predators or dangers that killed the deceased crow",
+    "choices": [
+      "To mourn the dead as a social ritual",
+      "To learn about predators or dangers that killed the deceased crow",
+      "To determine if the body is safe to eat",
+      "To attract mates by demonstrating empathy"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "New Caledonian crows are famous for making and using tools. What makes their tool use particularly remarkable compared to most other tool-using animals?",
+    "answer": "They craft tools by modifying materials to specific shapes, not just using found objects",
+    "choices": [
+      "They use tools while flying at high speed",
+      "They craft tools by modifying materials to specific shapes, not just using found objects",
+      "They use tools only to attract mates",
+      "They pass tools to offspring through genetic instinct"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "The mirror test is used to assess self-awareness in animals. Which of these animals has reliably passed the mirror test?",
+    "answer": "Chimpanzee",
+    "choices": [
+      "Dog",
+      "Chimpanzee",
+      "Cat",
+      "Goldfish"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Elephants have passed the mirror self-recognition test, suggesting self-awareness. Elephants also exhibit which other behavior that suggests complex emotional cognition?",
+    "answer": "They visit and touch the bones of dead family members, suggesting grief",
+    "choices": [
+      "They build communal shelters like beavers",
+      "They visit and touch the bones of dead family members, suggesting grief",
+      "They use medicinal plants to treat injuries",
+      "They warn each other of danger using sign language"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Whale song (particularly humpback whale song) is one of the longest and most complex non-human vocalizations. What is the primary proposed function of humpback whale song?",
+    "answer": "Male mate attraction and competition",
+    "choices": [
+      "Navigation using echo ranging",
+      "Male mate attraction and competition",
+      "Coordinating group feeding behavior",
+      "Warning other pods of predators"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Dolphins use a sophisticated form of echolocation that produces clicks via the melon (fatty forehead structure). What additional cognitive ability have dolphins demonstrated that few other non-humans possess?",
+    "answer": "Referential pointing -- understanding when a human points to indicate an object",
+    "choices": [
+      "Counting past 10 using objects",
+      "Referential pointing -- understanding when a human points to indicate an object",
+      "Producing grammatically structured sentences",
+      "Recognizing human faces by name"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Meerkats post sentinels that watch for predators while others forage. What do sentinels use to communicate threat level?",
+    "answer": "Different alarm calls that encode both predator type and urgency level",
+    "choices": [
+      "Visual tail signals only",
+      "Different alarm calls that encode both predator type and urgency level",
+      "Pheromone trails that warn of danger",
+      "Physical contact to alert neighbors"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "The waggle dance of honeybees encodes the direction to a food source relative to the sun. What aspect of the dance encodes the distance to the food?",
+    "answer": "The duration of the waggle phase",
+    "choices": [
+      "The number of bees watching",
+      "The duration of the waggle phase",
+      "The size of the dance circle",
+      "The pitch of the buzzing sound"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Some birds, like the great tit, have been observed 'culturally transmitting' a new skill -- opening milk bottle tops -- that spread through wild populations by social learning. This demonstrates ___?",
+    "answer": "Non-genetic cultural transmission of behavior",
+    "choices": [
+      "Genetic mutation for tool use",
+      "Non-genetic cultural transmission of behavior",
+      "Instinctive foraging behavior",
+      "Convergent evolution of foraging techniques"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Naked mole rats are mammals that live in eusocial colonies like bees, with a single breeding queen. What else makes naked mole rats biologically extraordinary?",
+    "answer": "They are nearly cancer-immune and show negligible senescence (no aging-related decline)",
+    "choices": [
+      "They can photosynthesize through transparent skin",
+      "They are nearly cancer-immune and show negligible senescence (no aging-related decline)",
+      "They can regenerate lost limbs completely",
+      "They reproduce by parthenogenesis like some reptiles"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "The vampire bat is the only mammal that feeds exclusively on blood. What behavior do vampire bats show that demonstrates reciprocal altruism?",
+    "answer": "Roost-mates that fed well will regurgitate blood to share with hungry neighbors who will return the favor",
+    "choices": [
+      "They sacrifice themselves to distract predators from their young",
+      "Roost-mates that fed well will regurgitate blood to share with hungry neighbors who will return the favor",
+      "They nurse each other's pups even without relatedness",
+      "They alert the colony to good hunting locations using pheromones"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Octopuses are remarkably intelligent for invertebrates. Which feature of their nervous system helps explain their cognitive abilities?",
+    "answer": "About two-thirds of their neurons are located in their arms, not their central brain",
+    "choices": [
+      "They have the largest brain-to-body ratio of any invertebrate",
+      "About two-thirds of their neurons are located in their arms, not their central brain",
+      "They have a hippocampus-like structure for spatial memory",
+      "They form long-term memories in a decentralized liver-like organ"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Cleaner fish (e.g. cleaner wrasse) set up 'cleaning stations' where they remove parasites from larger fish. This is a classic example of what ecological relationship?",
+    "answer": "Mutualism",
+    "choices": [
+      "Parasitism",
+      "Commensalism",
+      "Mutualism",
+      "Predation"
+    ],
+    "tier": 1
+  },
+  {
+    "question": "The lyrebird can mimic chainsaws, camera shutters, and other birds with extraordinary accuracy. What is the adaptive function of mimicry in the lyrebird?",
+    "answer": "Impressing females during mate selection -- females prefer males with the most complex song",
+    "choices": [
+      "Frightening predators with unfamiliar sounds",
+      "Impressing females during mate selection -- females prefer males with the most complex song",
+      "Deceiving prey into approaching",
+      "Warning territory rivals by sounding like larger animals"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "The peregrine falcon achieves speeds over 240 mph in a hunting stoop (dive). What physiological adaptation prevents its lungs from being damaged by the airflow at that speed?",
+    "answer": "Cone-shaped baffles in the nostrils redirect airflow around the lungs",
+    "choices": [
+      "The lungs collapse automatically during a dive",
+      "Cone-shaped baffles in the nostrils redirect airflow around the lungs",
+      "Feathers seal the beak shut during the dive",
+      "The falcon holds its breath for the entire stoop"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Some migratory birds navigate using Earth's magnetic field. In the European robin, which part of the body is thought to detect magnetic fields?",
+    "answer": "The eye (cryptochrome proteins in the retina)",
+    "choices": [
+      "Iron-rich cells in the beak",
+      "The eye (cryptochrome proteins in the retina)",
+      "The inner ear (magnetite crystals)",
+      "The liver (iron-storage mechanism)"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "Tardigrades (water bears) are microscopic animals that can survive extreme conditions including outer space vacuum. What is the state they enter to survive desiccation called?",
+    "answer": "Cryptobiosis (specifically anhydrobiosis for desiccation)",
+    "choices": [
+      "Estivation",
+      "Torpor",
+      "Cryptobiosis (specifically anhydrobiosis for desiccation)",
+      "Diapause"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "The electric eel can generate up to 860 volts of electricity. What is the primary evolutionary function of the high-voltage discharge?",
+    "answer": "Hunting: immobilizing prey and navigating in murky water",
+    "choices": [
+      "Defense against large predators only",
+      "Hunting: immobilizing prey and navigating in murky water",
+      "Communication with mates during breeding season",
+      "Charging body heat for thermoregulation"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Animals in the order Carnivora include wolves, bears, and seals -- but giant pandas are also in this order despite eating mainly bamboo. What does this tell us about taxonomic classification?",
+    "answer": "Taxonomy reflects evolutionary ancestry, not current diet or behavior",
+    "choices": [
+      "Giant pandas secretly eat meat when unobserved",
+      "Taxonomy reflects evolutionary ancestry, not current diet or behavior",
+      "The order Carnivora is incorrectly named by scientists",
+      "Bamboo contains enough protein to qualify as a carnivore diet"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "The giraffe's long neck is often cited as a product of sexual selection rather than just reaching high leaves. What evidence supports the sexual selection hypothesis?",
+    "answer": "Males use their necks as weapons in 'necking' combat fights, and longer necks correlate with mating success",
+    "choices": [
+      "Females have equally long necks which would be unnecessary for combat",
+      "Males use their necks as weapons in 'necking' combat fights, and longer necks correlate with mating success",
+      "Fossil giraffes all had equally short necks suggesting no selection pressure",
+      "Giraffes primarily eat low grass rather than tall leaves"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Zebra stripes have been proposed to serve multiple functions. What does current research suggest is the primary adaptive value of zebra stripes?",
+    "answer": "Confusing biting flies (tabanid flies) which struggle to land on striped surfaces",
+    "choices": [
+      "Camouflage from lions in tall grass",
+      "Confusing biting flies (tabanid flies) which struggle to land on striped surfaces",
+      "Heat regulation through alternating black and white panels",
+      "Species recognition for herd cohesion in mixed herds"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Bears in North America were recently reclassified so that the panda is not in the bear family. Actually, what is the current scientific consensus on panda classification?",
+    "answer": "Giant pandas ARE bears (family Ursidae), confirmed by DNA analysis",
+    "choices": [
+      "Giant pandas are raccoon relatives (family Procyonidae)",
+      "Giant pandas ARE bears (family Ursidae), confirmed by DNA analysis",
+      "Giant pandas are their own family with no close living relatives",
+      "Giant pandas are mustelids related to wolverines"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Monarch butterflies migrate from Canada to central Mexico each fall, a journey of up to 4,500 km. No individual butterfly completes the round trip. How many generations does the full cycle take?",
+    "answer": "3 to 4 generations (great-grandchildren return to the starting point)",
+    "choices": [
+      "1 generation (same butterflies return)",
+      "2 generations",
+      "3 to 4 generations (great-grandchildren return to the starting point)",
+      "10 or more generations"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Salmon spend years at sea then return to the exact freshwater stream where they were born to spawn. Which sensory system allows salmon to identify their birth stream?",
+    "answer": "Olfaction (smell) -- they imprint on the chemical signature of their birth stream as juveniles",
+    "choices": [
+      "Magnetic field mapping of the ocean floor",
+      "Olfaction (smell) -- they imprint on the chemical signature of their birth stream as juveniles",
+      "Visual memory of the coastline from their juvenile migration",
+      "Following the salinity gradient back to freshwater"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "The mimic octopus can impersonate multiple different venomous species. How does it 'choose' which animal to mimic in a given situation?",
+    "answer": "It appears to select mimicry targets based on the most common local predator threats",
+    "choices": [
+      "It always mimics the same species regardless of context",
+      "It appears to select mimicry targets based on the most common local predator threats",
+      "It mimics whichever species is nearest at the time",
+      "It mimics only when placed in darkness"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "When a stressed octopus or squid releases ink, the ink does more than just obscure vision. What else does cephalopod ink do?",
+    "answer": "It contains chemicals that dull the predator's sense of smell and taste",
+    "choices": [
+      "It is toxic and immediately kills small predators",
+      "It contains chemicals that dull the predator's sense of smell and taste",
+      "It hardens into a solid decoy the shape of the cephalopod",
+      "It carries pheromones to attract other cephalopods for help"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "The bombardier beetle defends itself by producing a boiling chemical spray from its abdomen. What two chemicals are combined explosively to produce this spray?",
+    "answer": "Hydroquinone and hydrogen peroxide (catalyzed by enzymes)",
+    "choices": [
+      "Formic acid and water",
+      "Hydroquinone and hydrogen peroxide (catalyzed by enzymes)",
+      "Sulfuric acid and salt",
+      "Oxalic acid and calcium"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "Thorny devil lizards of Australia obtain drinking water from sand and morning dew. How does the water reach their mouths?",
+    "answer": "Capillary action through hygroscopic skin channels that channel water from all over the body to the mouth",
+    "choices": [
+      "They lick dew from plants with a long sticky tongue",
+      "Capillary action through hygroscopic skin channels that channel water from all over the body to the mouth",
+      "They absorb water through their feet and filter it through organs",
+      "They dig to find underground water pockets"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "Extremophile animals like tardigrades and brine shrimp survive conditions lethal to most life. The concept that such organisms inform the search for extraterrestrial life is called ___?",
+    "answer": "Astrobiology",
+    "choices": [
+      "Xenobiology",
+      "Astrobiology",
+      "Extremophile ecology",
+      "Panspermia theory"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Ants live in supercolonies that function like a single organism. What is the term for societies like ant colonies where individuals are so specialized they cannot survive alone?",
+    "answer": "Eusocial",
+    "choices": [
+      "Parasocial",
+      "Eusocial",
+      "Solitary colonial",
+      "Subsocial"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Leaf-cutter ants bring leaf fragments not to eat, but to cultivate underground fungus gardens. This relationship between ants and fungus is an example of ___?",
+    "answer": "Mutualism (agricultural symbiosis)",
+    "choices": [
+      "Parasitism (ants steal from fungi)",
+      "Commensalism (fungi benefit, ants unaffected)",
+      "Mutualism (agricultural symbiosis)",
+      "Competition (ants and fungi fight for space)"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Wolf pack social structure is more complex than the simple 'alpha dominates' model. What did wolf biologist David Mech discover about wolf packs in the wild?",
+    "answer": "Wild wolf packs are typically family units led by a breeding pair, not by dominance between unrelated wolves",
+    "choices": [
+      "Alpha wolves are always the largest and most aggressive individuals",
+      "Wild wolf packs are typically family units led by a breeding pair, not by dominance between unrelated wolves",
+      "Wolves rotate pack leadership roles seasonally",
+      "Only male wolves can hold alpha status in any pack"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Lions are the only truly social big cats, living in groups called prides. What is the main evolutionary advantage of pride living for female lions?",
+    "answer": "Cooperative cub-rearing and coordinated hunting of large prey that single lions cannot kill",
+    "choices": [
+      "Defending territories 10 times larger than solitary cats",
+      "Cooperative cub-rearing and coordinated hunting of large prey that single lions cannot kill",
+      "Males protecting females from rival males of other species",
+      "Sharing body heat in the cold African highlands"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "The baby kangaroo (joey) is born after only 33 days of gestation -- smaller than a jellybean. Where does the joey complete most of its development?",
+    "answer": "In the mother's external pouch, nursing on milk that changes composition as the joey grows",
+    "choices": [
+      "Inside a specialized egg incubated in a burrow",
+      "In the mother's external pouch, nursing on milk that changes composition as the joey grows",
+      "Clinging to the mother's back fur after birth",
+      "In a communal nest shared among females in the mob"
+    ],
+    "tier": 1
+  },
+  {
+    "question": "Whale populations were decimated by commercial hunting in the 20th century. Since international protections, some species like humpbacks have recovered strongly. This recovery demonstrates ___?",
+    "answer": "The effectiveness of conservation when direct threats are removed and populations retain genetic diversity",
+    "choices": [
+      "That whales reproduce fast enough to recover from any level of hunting",
+      "The effectiveness of conservation when direct threats are removed and populations retain genetic diversity",
+      "That whale populations cycle naturally and hunting had little effect",
+      "That oceanic ecosystems self-regulate through predator-prey balance"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "The kangaroo is a highly efficient hopper -- it uses less energy at high speeds than at low speeds. What biomechanical mechanism explains this paradox?",
+    "answer": "Elastic tendons in the legs store and release energy like springs with each hop",
+    "choices": [
+      "Slower hops require more muscle work to maintain balance",
+      "Elastic tendons in the legs store and release energy like springs with each hop",
+      "The muscular tail acts as a motor that adds energy at higher speeds",
+      "Aerodynamic lift from the body posture reduces effort at speed"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Emperor penguins huddle in groups of thousands during Antarctic winter storms at -60 degrees C. What dynamic process maintains even heat distribution within the huddle?",
+    "answer": "Penguins continuously shuffle inward from the cold outer edge, creating a slow rotation through the huddle",
+    "choices": [
+      "The innermost penguins radiate excess heat outward to warm the group",
+      "Penguins continuously shuffle inward from the cold outer edge, creating a slow rotation through the huddle",
+      "The huddle is stratified: females always at the center, males at the edge",
+      "Each penguin takes a fixed position for the entire winter storm"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "African elephants have demonstrated apparent mourning behavior when encountering the remains of dead elephants. What specific behavior suggests elephants recognize individual identity in death?",
+    "answer": "They spend more time investigating bones of elephants they knew than bones of strangers",
+    "choices": [
+      "They only react to bones of their immediate offspring",
+      "They spend more time investigating bones of elephants they knew than bones of strangers",
+      "They cover bones with leaves in a burial-like ritual",
+      "They react the same to elephant bones as to any large animal remains"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "The African wild dog (Lycaon pictus) has one of the highest hunting success rates of any large predator -- around 80%. What key behavioral adaptation drives this success?",
+    "answer": "Highly coordinated pack hunting with role specialization and democratic group decision-making",
+    "choices": [
+      "Superior sprinting speed exceeding 70 mph",
+      "Highly coordinated pack hunting with role specialization and democratic group decision-making",
+      "Using scent trails to locate injured prey weeks later",
+      "Ambush hunting by burying themselves in sand"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Sperm whales can dive to depths of over 2,000 meters where pressure would crush most animals. What physiological adaptation allows them to manage extreme pressure changes?",
+    "answer": "Collapsible rib cage and flexible lungs that compress without injury; blood-shifting to protect vital organs",
+    "choices": [
+      "A rigid titanium-hard bone structure that resists compression",
+      "Collapsible rib cage and flexible lungs that compress without injury; blood-shifting to protect vital organs",
+      "Inhaling pressurized gas stored in a special bladder before diving",
+      "Releasing all air from lungs at the surface before diving deep"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "The archerfish can spit a precise jet of water to knock insects off branches up to 3 meters above the water surface. What makes this feat optically remarkable?",
+    "answer": "The fish must compensate for light refraction at the water surface to aim accurately from below",
+    "choices": [
+      "The fish must spit upward against gravity without any reference point",
+      "The fish must compensate for light refraction at the water surface to aim accurately from below",
+      "The fish cannot see above the surface so hunts purely by sound",
+      "The jet must travel at exactly the speed of sound to stun the insect"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Kin selection theory (Hamilton's rule) predicts that altruism should be more common when animals are more closely related. Worker bees help raise siblings rather than reproducing. Why does this make genetic sense?",
+    "answer": "Due to haplodiploidy, worker bees share 75% of genes with sisters -- more than their 50% with potential offspring",
+    "choices": [
+      "Worker bees are incapable of reproduction due to castration",
+      "Due to haplodiploidy, worker bees share 75% of genes with sisters -- more than their 50% with potential offspring",
+      "Worker bees receive food rewards that compensate for lost reproduction",
+      "Bees cannot distinguish kin from non-kin within the hive"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "The 'Red Queen hypothesis' in evolutionary biology (named after Alice in Wonderland) refers to which ongoing evolutionary arms race?",
+    "answer": "The continuous co-evolution between parasites and host immune defenses -- each must keep evolving just to stay even",
+    "choices": [
+      "The race between predator speed and prey escape ability",
+      "The continuous co-evolution between parasites and host immune defenses -- each must keep evolving just to stay even",
+      "The competition between males for the most extreme sexual ornaments",
+      "The drive for species to occupy new ecological niches before competitors"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "Planarians (flatworms) can be cut in half and each half regenerates into a complete worm. When the head is removed, the body regenerates a new head. What kind of cells make this possible?",
+    "answer": "Pluripotent stem cells called neoblasts that remain throughout the adult body",
+    "choices": [
+      "Embryonic cells held in reserve in a special organ",
+      "Pluripotent stem cells called neoblasts that remain throughout the adult body",
+      "Cells that de-differentiate from muscle into any needed type",
+      "Specialized regeneration cells triggered only by injury signals"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "The mantis shrimp has 16 types of color receptor in its eyes (humans have 3). Despite this, research shows mantis shrimp are actually worse at distinguishing similar colors than humans. What does this paradox reveal?",
+    "answer": "More color receptors do not mean better color discrimination -- the mantis shrimp processes color via a different, faster but less precise mechanism",
+    "choices": [
+      "The mantis shrimp is actually colorblind despite 16 receptors",
+      "More color receptors do not mean better color discrimination -- the mantis shrimp processes color via a different, faster but less precise mechanism",
+      "Scientists measured the wrong species in earlier studies",
+      "The 16 receptors all detect the same wavelength range"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "The electric field sensing organ of sharks (the ampullae of Lorenzini) is so sensitive it can detect the bioelectric field of prey buried under sand. What biological process produces the bioelectric fields sharks detect?",
+    "answer": "Muscle contractions and nerve activity in living animals generate weak electric fields",
+    "choices": [
+      "Chemical reactions in blood producing electromagnetic radiation",
+      "Muscle contractions and nerve activity in living animals generate weak electric fields",
+      "The static charge built up by movement through saltwater",
+      "Heartbeats creating pressure waves that ionize seawater"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "The bonobo is unique among great apes in resolving social conflicts primarily through sexual behavior rather than aggression. What does this behavioral difference imply about the relationship between social structure and evolutionary pressures?",
+    "answer": "Sexual behavior can evolve as a social bonding mechanism when reducing inter-group conflict has high fitness benefits",
+    "choices": [
+      "Bonobos lack the neural capacity for aggressive behavior due to brain differences",
+      "Sexual behavior can evolve as a social bonding mechanism when reducing inter-group conflict has high fitness benefits",
+      "Bonobos never face resource competition so have no need for aggression",
+      "The behavior is a side effect of captive breeding in zoos and does not occur in the wild"
+    ],
+    "tier": 5
+  },
+  {
+    "question": "Eusociality in termites, unlike in Hymenoptera (bees, wasps, ants), cannot be explained by haplodiploidy because termites are diploid. What alternative explanation is proposed for termite eusociality?",
+    "answer": "High genetic relatedness through inbreeding within enclosed nest populations and ecological constraints on independent colony founding",
+    "choices": [
+      "Termites have a unique gene for altruism absent in other insects",
+      "High genetic relatedness through inbreeding within enclosed nest populations and ecological constraints on independent colony founding",
+      "Termite workers are male and benefit from investing in queen reproduction",
+      "Termites have the same haplodiploid genetics as ants through convergent evolution"
+    ],
+    "tier": 5
+  },
+  {
+    "question": "In sensory ecology, the 'umwelt' (Uexkull's concept) refers to ___?",
+    "answer": "The subjective perceptual world of an organism defined by its sensory capabilities",
+    "choices": [
+      "The geographic range of an organism's habitat",
+      "The subjective perceptual world of an organism defined by its sensory capabilities",
+      "The total energy budget of an organism in its environment",
+      "The evolutionary history encoded in an organism's genome"
+    ],
+    "tier": 5
+  },
+  {
+    "question": "The Zahavian handicap principle proposes that honest signals of quality (like the peacock's tail) are reliable precisely because they ___?",
+    "answer": "Are costly to produce -- only high-quality individuals can afford the cost without dying",
+    "choices": [
+      "Cannot be faked because they are genetically determined",
+      "Are costly to produce -- only high-quality individuals can afford the cost without dying",
+      "Are directly measured by females using chemical analysis",
+      "Evolve faster than cheating strategies can evolve to mimic them"
+    ],
+    "tier": 5
+  },
+  {
+    "question": "The Cambrian explosion (~540 million years ago) saw a rapid diversification of animal body plans. What is the leading hypothesis for what triggered this event?",
+    "answer": "A combination of rising oxygen levels, ecological feedback loops from new predator-prey dynamics, and possibly snowball Earth thaw",
+    "choices": [
+      "A single mass extinction that cleared ecological space",
+      "A combination of rising oxygen levels, ecological feedback loops from new predator-prey dynamics, and possibly snowball Earth thaw",
+      "The emergence of DNA as the genetic material for the first time",
+      "A single genetic mutation that allowed cell specialization"
+    ],
+    "tier": 5
+  },
+  {
+    "question": "The coelacanth was believed extinct for 65 million years until a live specimen was caught in 1938. What makes coelacanths biologically significant beyond being a 'living fossil'?",
+    "answer": "Their lobe fins have an internal bone structure homologous to tetrapod limbs, showing the evolutionary link to land vertebrates",
+    "choices": [
+      "They photosynthesize using light-sensitive scales",
+      "Their lobe fins have an internal bone structure homologous to tetrapod limbs, showing the evolutionary link to land vertebrates",
+      "They are the only fish with a warm-blooded metabolism",
+      "They lay eggs that float in freshwater rivers despite being marine fish"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "Many venomous snakes of the Americas and Asia have heat-sensitive pit organs between the eye and nostril. What does this organ detect and what is it used for?",
+    "answer": "Infrared radiation (body heat) from prey -- used to hunt warm-blooded prey in total darkness",
+    "choices": [
+      "Chemical trails left by prey on the ground",
+      "Infrared radiation (body heat) from prey -- used to hunt warm-blooded prey in total darkness",
+      "Vibrations in the ground from approaching prey",
+      "Electrical fields generated by prey heartbeats"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "The duck-billed platypus has a bill densely covered with electroreceptors. What does the platypus hunt, and how does electroreception help?",
+    "answer": "It hunts invertebrates underwater with eyes closed, detecting the electric fields produced by muscle movement",
+    "choices": [
+      "It filters plankton through the bill like a whale shark",
+      "It hunts invertebrates underwater with eyes closed, detecting the electric fields produced by muscle movement",
+      "It uses the bill to sense water temperature and find warm springs",
+      "It detects chemical signatures of fish and follows them upstream"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Wolves use urine, feces, and gland secretions to mark territory boundaries. What information beyond 'I was here' is encoded in these scent marks?",
+    "answer": "The individual's identity, reproductive status, and time since the mark was made",
+    "choices": [
+      "Only the sex of the marking animal",
+      "The individual's identity, reproductive status, and time since the mark was made",
+      "A warning that contains the specific number of pack members",
+      "Nutritional information about recent meals"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Migratory locusts (Schistocerca gregaria) exist as solitary and gregarious phases. What triggers the transformation from solitary to swarming phase?",
+    "answer": "Physical contact and crowding triggers serotonin release, causing physical and behavioral changes to the gregarious form",
+    "choices": [
+      "A specific plant chemical ingested during drought periods",
+      "Physical contact and crowding triggers serotonin release, causing physical and behavioral changes to the gregarious form",
+      "A seasonal hormone cycle tied to monsoon rains",
+      "A pheromone released by a queen locust that converts workers"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "Group living in animals provides anti-predator benefits. Mathematically, a predator attacking a group where each individual has a 1/N chance of being caught demonstrates which effect?",
+    "answer": "The dilution effect",
+    "choices": [
+      "The confusion effect",
+      "The dilution effect",
+      "The selfish herd effect",
+      "The encounter reduction effect"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "The selfish herd theory (W.D. Hamilton) explains why animals crowd toward the center of a group. What does it predict about the behavior of animals at the group's edge?",
+    "answer": "Edge individuals should try to move inward because predators attack from outside, making edge positions more dangerous",
+    "choices": [
+      "Edge individuals are the strongest and act as guards for the group",
+      "Edge individuals should try to move inward because predators attack from outside, making edge positions more dangerous",
+      "Edge individuals are the least related and so are expendable to the group",
+      "Edge positions are preferred by dominants because of better foraging access"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "Island gigantism is the tendency for animals on isolated islands to evolve larger body sizes than their mainland relatives. What ecological factor is the primary driver?",
+    "answer": "Release from mainland predators, allowing evolution of larger size without the usual cost",
+    "choices": [
+      "Higher food availability on tropical islands",
+      "Release from mainland predators, allowing evolution of larger size without the usual cost",
+      "Inbreeding increasing genetic expression of growth genes",
+      "Island soils providing more mineral nutrients"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Convergent evolution has produced remarkably similar eye structures in vertebrates (camera eyes) and cephalopods like octopuses (also camera eyes). What key structural difference reveals that these eyes evolved independently?",
+    "answer": "The vertebrate retina is wired 'backwards' (nerves in front of photoreceptors) while the octopus retina has nerves behind the photoreceptors",
+    "choices": [
+      "Vertebrate eyes have color vision; octopus eyes are colorblind",
+      "The vertebrate retina is wired 'backwards' (nerves in front of photoreceptors) while the octopus retina has nerves behind the photoreceptors",
+      "Vertebrate eyes use crystallin proteins; octopus use a completely different lens material",
+      "Cephalopod eyes do not have a fovea or region of sharp focus"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "The 'dead ant' signal in ant colonies: when an ant dies, chemical signals cause workers to carry the body to a waste pile. What happens if you apply the death chemical to a live ant?",
+    "answer": "Workers carry the live ant to the waste pile even though it is moving and struggling",
+    "choices": [
+      "Workers groom the ant to remove the chemical before it can spread",
+      "Workers carry the live ant to the waste pile even though it is moving and struggling",
+      "The living ant becomes aggressive and drives workers away",
+      "Nothing -- workers can distinguish live from dead ants by movement"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "The 10% energy rule means that only about 10% of energy at one trophic level transfers to the next. This limits food chains to roughly how many links?",
+    "answer": "4 to 5 links, because energy becomes too dilute to support predators beyond that point",
+    "choices": [
+      "2 links maximum in all ecosystems",
+      "4 to 5 links, because energy becomes too dilute to support predators beyond that point",
+      "10 links, matching the 10% transfer rate numerically",
+      "Unlimited links in productive tropical ecosystems"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Many desert rodents like the kangaroo rat never need to drink liquid water. How do they obtain the water they need?",
+    "answer": "Through metabolic water produced as a byproduct of breaking down carbohydrates in dry seeds",
+    "choices": [
+      "From dew condensing on their fur at night",
+      "Through metabolic water produced as a byproduct of breaking down carbohydrates in dry seeds",
+      "By absorbing water vapor through specialized nasal passages",
+      "From moisture in plant tissue they eat at night"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "The Great Barrier Reef is under threat from coral bleaching. When coral bleaches, what is actually happening biologically?",
+    "answer": "The coral expels the photosynthetic algae (zooxanthellae) it depends on for nutrition under heat stress",
+    "choices": [
+      "The coral's calcium carbonate skeleton dissolves in warming acidic water",
+      "The coral expels the photosynthetic algae (zooxanthellae) it depends on for nutrition under heat stress",
+      "UV radiation bleaches the coral's pigment molecules",
+      "Bacterial infections cause the coral polyps to die and leave white skeletons"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "A food chain always starts with a producer (plant) because plants capture energy from ___?",
+    "answer": "Sunlight via photosynthesis",
+    "choices": [
+      "Decomposing organic matter in soil",
+      "Sunlight via photosynthesis",
+      "Chemical reactions in volcanic vents",
+      "Water absorbed through roots"
+    ],
+    "tier": 1
+  },
+  {
+    "question": "Horses and donkeys can mate to produce mules, but mules are almost always sterile. Why can they not reproduce?",
+    "answer": "Horses have 64 chromosomes and donkeys 62 -- mules have 63 and cannot form matched chromosome pairs for reproduction",
+    "choices": [
+      "Mules are too small to survive childbirth",
+      "Horses have 64 chromosomes and donkeys 62 -- mules have 63 and cannot form matched chromosome pairs for reproduction",
+      "Mules have a hormone deficiency that prevents ovulation and sperm production",
+      "The species barrier prevents fertilization in the mule's reproductive system"
+    ],
+    "tier": 1
+  },
+  {
+    "question": "A tiger has stripes and a leopard has spots. What is the key behavioral difference between these two big cats that explains why tigers are solitary ambush hunters?",
+    "answer": "Tigers hunt in dense vegetation where stripes break up their outline; they ambush prey alone rather than running in open terrain",
+    "choices": [
+      "Tigers are faster than leopards so do not need a group",
+      "Tigers hunt in dense vegetation where stripes break up their outline; they ambush prey alone rather than running in open terrain",
+      "Tigers share prey with cubs but leopards must eat alone to avoid theft",
+      "Tiger stripes signal dominance which scares other predators away from their territory"
+    ],
+    "tier": 1
+  },
+  {
+    "question": "Frogs and salamanders are both amphibians. What key feature makes amphibians dependent on water or moist environments for reproduction?",
+    "answer": "Their eggs have no shell or waterproof membrane, so they dry out quickly without moisture",
+    "choices": [
+      "Adult amphibians must drink water constantly or die within hours",
+      "Their eggs have no shell or waterproof membrane, so they dry out quickly without moisture",
+      "Amphibian larvae breathe only through their skin and need water to breathe",
+      "Amphibians must return to water to fertilize eggs internally"
+    ],
+    "tier": 1
+  },
+  {
+    "question": "All birds are warm-blooded, but birds also have very high body temperatures compared to mammals -- around 40-42 degrees C. Why is this high temperature beneficial for birds?",
+    "answer": "High temperatures support rapid metabolism needed for sustained flight and fast muscle action",
+    "choices": [
+      "It keeps their eggs warm without sitting on them",
+      "High temperatures support rapid metabolism needed for sustained flight and fast muscle action",
+      "It prevents bacterial infections in wounds from hunting",
+      "It allows birds to survive in cold climates without insulating fat"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Insects have a rigid exoskeleton. This adaptation protects them, but it creates a problem for growth. How do insects solve the growth problem?",
+    "answer": "They periodically shed (moult) the old exoskeleton and expand a new, larger one before it hardens",
+    "choices": [
+      "The exoskeleton stretches elastically as the insect grows",
+      "They periodically shed (moult) the old exoskeleton and expand a new, larger one before it hardens",
+      "Insects stop growing once they reach adult form after metamorphosis",
+      "New skeleton panels are added to the edges as the insect grows"
+    ],
+    "tier": 1
+  },
+  {
+    "question": "The giraffe is the tallest animal and has an extremely long neck. Despite this, the giraffe has the same number of neck vertebrae as most other mammals. How many?",
+    "answer": "7 vertebrae -- the same as humans, just much longer individually",
+    "choices": [
+      "15 vertebrae -- more than most mammals to allow such height",
+      "7 vertebrae -- the same as humans, just much longer individually",
+      "21 vertebrae with extra joints between each",
+      "4 vertebrae -- fewer but more flexible than other mammals"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Cold-blooded reptiles like crocodiles are ectotherms -- they rely on external heat sources. What behavioral strategy do crocodiles use to regulate their body temperature?",
+    "answer": "Basking in the sun to warm up and retreating to water or shade to cool down",
+    "choices": [
+      "Generating heat by rapid tail movements like a warm-up exercise",
+      "Basking in the sun to warm up and retreating to water or shade to cool down",
+      "Covering themselves with mud that retains warmth from the previous day",
+      "Consuming large meals that generate heat through digestion"
+    ],
+    "tier": 1
+  },
+  {
+    "question": "Bats are the only flying mammals. How do bats' wings differ structurally from bird wings?",
+    "answer": "Bat wings are formed from a thin skin membrane stretched between elongated finger bones; bird wings are formed by modified arm bones with feathers",
+    "choices": [
+      "Bat wings are made of the same keratin as feathers, just arranged differently",
+      "Bat wings are formed from a thin skin membrane stretched between elongated finger bones; bird wings are formed by modified arm bones with feathers",
+      "Bat wings are attached at the hip like insect wings; bird wings are attached at the shoulder",
+      "Bat wings contain no bones -- they are purely cartilaginous structures"
+    ],
+    "tier": 1
+  },
+  {
+    "question": "The human appendix was long considered vestigial (functionless), but recent research suggests a possible role. What function has been proposed?",
+    "answer": "A reservoir that repopulates gut bacteria after illness clears the intestines",
+    "choices": [
+      "Producing growth hormones in early childhood",
+      "A reservoir that repopulates gut bacteria after illness clears the intestines",
+      "Synthesizing vitamin B12 from undigested plant matter",
+      "Filtering toxins from the bloodstream like a secondary liver"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Salmon die shortly after spawning in their birth stream. What ecological benefit does this death provide?",
+    "answer": "Their decaying bodies provide marine-derived nutrients (especially nitrogen) that fertilize riverside forests and feed insects",
+    "choices": [
+      "Their bodies block the stream so juvenile salmon cannot be swept back to sea",
+      "Their decaying bodies provide marine-derived nutrients (especially nitrogen) that fertilize riverside forests and feed insects",
+      "The chemical signals from the dying fish trigger the eggs to hatch faster",
+      "Their deaths remove competing adults that would eat the newly hatched juveniles"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Many birds migrate at night and use stars for navigation. Which specific aspect of the night sky do birds use as a directional reference?",
+    "answer": "The rotation point of stars around Polaris (the North Star), which indicates true north",
+    "choices": [
+      "The brightness of the Milky Way band which runs north-south",
+      "The rotation point of stars around Polaris (the North Star), which indicates true north",
+      "The colors of stars at different horizons that encode compass directions",
+      "The number of stars visible in different sectors of the sky"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "The hippopotamus is more closely related to which group of animals than it is to pigs or horses?",
+    "answer": "Whales and dolphins (Cetacea) -- hippos and cetaceans share a common ancestor called Anthracotheriidae",
+    "choices": [
+      "Pigs (Sus scrofa) based on similar body shape",
+      "Rhinos based on large semi-aquatic herbivore lifestyle",
+      "Whales and dolphins (Cetacea) -- hippos and cetaceans share a common ancestor called Anthracotheriidae",
+      "Elephants based on large body size and thick skin"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "The 'dead zone' in the Gulf of Mexico is a region of very low oxygen where few animals survive. What human activity causes this dead zone?",
+    "answer": "Agricultural fertilizer runoff triggers algal blooms that consume all oxygen when they decompose",
+    "choices": [
+      "Oil spills coat the water surface preventing oxygen absorption",
+      "Agricultural fertilizer runoff triggers algal blooms that consume all oxygen when they decompose",
+      "Industrial heating of coastal water reduces dissolved oxygen capacity",
+      "Overfishing removes the fish that normally oxygenate water through gill activity"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Dogs are the only domestic animals that understand human pointing gestures without training. What does this suggest about dog domestication?",
+    "answer": "Dogs evolved specific cognitive adaptations to read human social cues during thousands of years of co-evolution with humans",
+    "choices": [
+      "Dogs are more intelligent than wolves and therefore naturally understand all gestures",
+      "Dogs evolved specific cognitive adaptations to read human social cues during thousands of years of co-evolution with humans",
+      "The skill is simply learned -- any animal trained enough will develop it",
+      "Dogs understand pointing because they use similar gestures among themselves"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Hippopotamus skin secretes a red fluid once thought to be blood-sweat. What does this secretion actually do?",
+    "answer": "Acts as sunscreen, moisturizer, and antimicrobial agent -- it contains pigments that absorb UV light",
+    "choices": [
+      "It is a hormone that triggers territorial behavior in males",
+      "Acts as sunscreen, moisturizer, and antimicrobial agent -- it contains pigments that absorb UV light",
+      "It is a territorial scent marker released under stress",
+      "It cools the hippo through evaporative heat loss like sweat"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "The Greenland shark (Somniosus microcephalus) can live over 400 years, making it the longest-lived vertebrate known. What feature of its biology is responsible for this extreme longevity?",
+    "answer": "Extremely slow metabolism and growth rate in near-freezing Arctic waters",
+    "choices": [
+      "It regenerates damaged tissues faster than any other vertebrate",
+      "Extremely slow metabolism and growth rate in near-freezing Arctic waters",
+      "Its cells are immune to oxidative stress damage",
+      "It hibernates for decades at a time reducing total biological age"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Many deep-sea fish produce their own light (bioluminescence). What is the primary adaptive function of bioluminescence in deep-sea fish like the anglerfish?",
+    "answer": "Luring prey in the absence of sunlight",
+    "choices": [
+      "Navigation using the light as a sonar system",
+      "Luring prey in the absence of sunlight",
+      "Communicating distress signals to distant members of the same species",
+      "Warming the body in near-freezing water"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Lungfish can survive for years buried in dried mud during drought by entering a state of metabolic suspension called estivation. What gas do lungfish breathe when their pond dries up?",
+    "answer": "Air (they have functional lungs, unlike most fish)",
+    "choices": [
+      "They absorb dissolved oxygen through their skin",
+      "Air (they have functional lungs, unlike most fish)",
+      "They stop breathing and survive on stored oxygen in blood cells",
+      "CO2 from their own metabolism through a reverse-respiration mechanism"
+    ],
+    "tier": 2
   }
 ]

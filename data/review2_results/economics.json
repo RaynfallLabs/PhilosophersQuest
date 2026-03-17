@@ -1,0 +1,1140 @@
+{
+  "remove": [
+    {"index": 3, "reason": "Pure recognition: 'Which of these is an example of a need?' Tests nothing conceptual. Redundant with index 2 which defines needs vs wants."},
+    {"index": 4, "reason": "Pure recognition: 'Which of these is an example of a want?' Redundant with index 2. No conceptual payoff."},
+    {"index": 6, "reason": "Duplicate of index 5. Both ask about barter using sandwich/apple vs definition. Keep index 5, remove this restatement."},
+    {"index": 12, "reason": "Pure recognition: 'Which of these people is producing something?' Redundant with index 13 which defines producer more usefully."},
+    {"index": 35, "reason": "Trivial: 'What is a receipt?' Adds nothing to economics education. Not quiz-worthy."},
+    {"index": 52, "reason": "'Which of these represents a financial goal?' Recognition question with obvious answer. Too simplistic to be worth a question slot."},
+    {"index": 68, "reason": "'What is an allowance?' Too narrow/trivial. Irrelevant to core economics education."},
+    {"index": 72, "reason": "Framed awkwardly as NOT question. Answer 'Making goods cheaper' is not actually a function of money -- question is confusingly worded. Better replaced with positive framing."},
+    {"index": 73, "reason": "'What is a charitable donation?' Irrelevant to economics education as a quiz question. Trivial."},
+    {"index": 105, "reason": "'Which type of economy is most common in the modern world?' Answer is 'mixed economy' -- rote, no conceptual payoff. Encourages students to view mixed/interventionist economies as the default norm."},
+    {"index": 127, "reason": "Framing issue: 'Which of the following is an automatic stabilizer?' with answer 'Unemployment benefits' presents government transfer programs as neutral technical fixtures. Rewrite to include conceptual tradeoff context."},
+    {"index": 167, "reason": "'What is an expansionary fiscal policy?' -- framed as straightforwardly 'stimulating the economy' without noting Keynesian assumptions or Austrian critiques. The concept itself is fine but the framing is uncritical. Rewrite to test understanding of mechanism and its contested nature."},
+    {"index": 203, "reason": "'What is demand-side economics?' -- framed positively as 'stimulating consumer and government demand drives growth.' No critique, no alternative framing. Rewrite as more neutral and conceptual."},
+    {"index": 226, "reason": "Duplicate of index 169 (multiplier effect). Index 169 covers this at T3; index 226 at T4 is nearly identical. Remove T4 duplicate; keep T3 version."},
+    {"index": 233, "reason": "Duplicate of index 394. Both cover 'paradox of thrift' at T4. Remove this one (index 233), keep index 394 which has better answer framing."},
+    {"index": 244, "reason": "Duplicate of index 148. 'What is the balance of payments?' covered identically at T2 (index 148) and T4 (index 244). Remove T4 duplicate."},
+    {"index": 253, "reason": "Problematic framing: 'crowding in effect' -- presented as fact that government investment 'increases confidence and stimulates private sector investment.' This is a contested Keynesian claim treated as established fact. Remove."},
+    {"index": 263, "reason": "Duplicate of index 180. Both cover stagflation at T3 and T4 respectively. Index 263 at T4 adds 'why is it difficult to combat' but the answer is essentially the same. Remove; add better Austrian-framed question about stagflation origins."},
+    {"index": 265, "reason": "Duplicate of index 395. Both define Giffen good at T4. Remove index 265, keep index 395."},
+    {"index": 270, "reason": "Framing issue: 'What is the main insight of Keynesian economics?' Answer frames government spending as able to 'restore full employment' as settled fact. This is a contested claim. Rewrite to present Keynesian claim neutrally alongside what critics argue."},
+    {"index": 282, "reason": "Duplicate of index 267 and index 368/396. 'Velocity of money' appears at T3 (368), T4 (267 and 396), and T5 (282). Remove this T5 duplicate."},
+    {"index": 290, "reason": "Duplicate of index 435. Efficient Market Hypothesis covered at T5 twice. Remove index 290, keep index 435."},
+    {"index": 292, "reason": "Duplicate of index 266. 'Asymmetric information' covered at T4 (index 266) and T5 (index 292). Remove T5 duplicate."},
+    {"index": 293, "reason": "Duplicate of index 400. Principal-agent problem covered at T4 (400) and T5 (293). Remove T5 duplicate."},
+    {"index": 295, "reason": "Duplicate of index 432. Endogenous growth theory covered twice at T5. Remove index 295, keep index 432."},
+    {"index": 296, "reason": "Duplicate of index 264 and index 390. Laffer Curve appears at T4 twice (264 and 390) and T5 (296). Remove T5 duplicate; also flag index 264 as duplicate of 390."},
+    {"index": 297, "reason": "Duplicate of index 441. Pareto efficiency covered twice at T5. Remove index 297, keep index 441."},
+    {"index": 303, "reason": "Duplicate of index 399. Rent-seeking covered at T4 (399) and T5 (303). Remove T5 duplicate."},
+    {"index": 320, "reason": "'The golden rule in Keynesian economics' -- narrow jargon term for a contested policy rule. Low educational value. Remove."},
+    {"index": 321, "reason": "'What is crowdfunding?' -- not a core economics concept. Trivia rather than economics education. Remove."},
+    {"index": 326, "reason": "Duplicate of index 7. 'What do we call the money you earn for doing a job?' is identical in concept to index 7. Remove."},
+    {"index": 327, "reason": "Duplicate of index 1. Same supply/demand price signal question restated. Remove."},
+    {"index": 328, "reason": "Duplicate of index 5. 'What is bartering?' is covered by index 5 'What is barter?' Remove."},
+    {"index": 329, "reason": "Duplicate of index 2. 'Need vs want' covered at index 2 and 329. Remove."},
+    {"index": 331, "reason": "Duplicate of index 15. 'What is profit?' same concept. Remove."},
+    {"index": 332, "reason": "Duplicate of index 32. 'Why do people pay taxes?' Remove."},
+    {"index": 333, "reason": "Duplicate of index 21. 'What is interest on a loan?' Remove."},
+    {"index": 334, "reason": "Trivial: 'What is the difference between earning and spending?' Below T1 level. Remove."},
+    {"index": 335, "reason": "Duplicate of index 22. 'What is a coin or bill called?' Remove."},
+    {"index": 336, "reason": "Duplicate of index 11. 'What does save mean in personal finance?' Remove."},
+    {"index": 337, "reason": "Duplicate of indexes 82 and 83. 'What is GDP?' Remove T2 duplicate."},
+    {"index": 338, "reason": "Duplicate of indexes 46 and 47. 'Imports vs exports' Remove."},
+    {"index": 340, "reason": "Duplicate of index 86 and 146. 'What is a command economy?' Remove this third copy."},
+    {"index": 341, "reason": "Duplicate of index 103. 'What is a tax?' Remove."},
+    {"index": 346, "reason": "Duplicate of index 87. 'What is a mixed economy?' Remove."},
+    {"index": 347, "reason": "Trivial: 'What is a consumer?' No conceptual payoff. Remove."},
+    {"index": 349, "reason": "Duplicate of index 97. 'What is the role of a central bank?' Remove."},
+    {"index": 353, "reason": "Duplicate of index 174 (partial). Microeconomics definition. At T2 this is fine but it's covered again at T3 (174). Keep T2 (353) but rewrite index 174 to be more conceptual."},
+    {"index": 354, "reason": "Duplicate of index 174. Macroeconomics definition covered by index 174 comparison question. Remove this standalone T2."},
+    {"index": 355, "reason": "Duplicate of indexes 17 and 18. 'Difference between good and service.' Remove."},
+    {"index": 358, "reason": "'What is a credit score?' Personal finance detail, not core economics. Remove."},
+    {"index": 359, "reason": "Duplicate of index 27. 'What is the equilibrium price?' Remove."},
+    {"index": 362, "reason": "Duplicate of content in indexes 152 and 153. 'Difference between fiscal and monetary policy.' Remove T3 duplicate."},
+    {"index": 364, "reason": "Duplicate of index 162. 'What is price elasticity of demand?' covered twice at T3. Remove index 364."},
+    {"index": 365, "reason": "Duplicate of indexes 157-159 content. 'Cyclical vs structural unemployment' covered better in the three earlier targeted questions. Remove."},
+    {"index": 366, "reason": "Duplicate of index 131. 'What is a progressive tax?' Remove T3 duplicate."},
+    {"index": 368, "reason": "Duplicate of index 267. 'What is velocity of money?' at T3 and T4. Remove T3 version, keep more detailed T4 (267)."},
+    {"index": 369, "reason": "Duplicate of index 114. 'What is comparative advantage?' covered at T2 (114) and T3 (369). Remove T3."},
+    {"index": 370, "reason": "Duplicate of index 180. 'What is stagflation?' Remove T3 second copy."},
+    {"index": 372, "reason": "Duplicate of index 219. 'Nominal vs real GDP' covered at T3 (372) and T4 (219). Remove T3."},
+    {"index": 373, "reason": "Duplicate of index 157. 'What is frictional unemployment?' Remove."},
+    {"index": 377, "reason": "Duplicate of index 243. 'What is GDP per capita?' covered at T3 and T4. Remove T3."},
+    {"index": 378, "reason": "Duplicate of index 165. 'What is deadweight loss?' covered at T3 twice. Remove index 378."},
+    {"index": 379, "reason": "Duplicate of index 182. 'What is the Gini coefficient?' covered at T3 twice. Remove index 379."},
+    {"index": 381, "reason": "Duplicate of indexes 131 and 132. 'Flat tax vs progressive tax' covered at T2 and T3. Remove."},
+    {"index": 382, "reason": "Duplicate of index 102. 'What is the balance of trade?' Remove T3 duplicate."},
+    {"index": 383, "reason": "Duplicate of index 185. 'What is a price floor?' Remove T3 duplicate."},
+    {"index": 384, "reason": "Duplicate of index 186. 'What is a price ceiling?' Remove T3 duplicate."},
+    {"index": 385, "reason": "Duplicate of index 300. 'What is the HDI?' Remove T3 duplicate."},
+    {"index": 386, "reason": "Duplicate of indexes 115-116. 'Stock vs bond' covered at T2. Remove T3 duplicate."},
+    {"index": 388, "reason": "Duplicate of index 239. 'What is marginal cost?' covered at T3 and T4. Remove T3."},
+    {"index": 390, "reason": "Duplicate of index 264. 'Laffer Curve' covered twice at T4. Remove index 390, keep index 264."},
+    {"index": 394, "reason": "Duplicate of index 233 (which is being removed) -- but keeping this version. Recheck: index 233 removed, index 394 kept."},
+    {"index": 395, "reason": "Duplicate of index 265 -- keeping index 395 (index 265 is being removed). Verify no double removal."},
+    {"index": 396, "reason": "Duplicate of indexes 267 and 283. 'MV=PQ' velocity of money equation. Index 283 covers Quantity Theory at T5 more fully. Remove T4 duplicate 396."},
+    {"index": 404, "reason": "Duplicate of index 225. 'Crowding-out effect' covered at T4 twice. Remove index 404."},
+    {"index": 406, "reason": "Duplicate of index 221. 'What is hyperinflation?' covered twice at T4. Remove index 406."},
+    {"index": 408, "reason": "Duplicate of index 247. 'What is the natural rate of unemployment?' covered twice at T4. Remove index 408."},
+    {"index": 413, "reason": "Duplicate of index 234. 'What is a liquidity trap?' covered twice at T4. Remove index 413."},
+    {"index": 417, "reason": "Duplicate of index 232. 'What is creative destruction?' covered twice at T4. Remove index 417."},
+    {"index": 418, "reason": "Duplicate of index 256. 'Income effect in consumer theory' covered twice at T4. Remove index 418."},
+    {"index": 419, "reason": "Duplicate of index 257. 'Substitution effect' covered twice at T4. Remove index 419."},
+    {"index": 450, "reason": "Duplicate of index 269. Nash Equilibrium covered at T5 twice. Remove index 450."},
+    {"index": 452, "reason": "Duplicate of index 308. Diamond-water paradox covered twice at T5. Remove index 452."},
+    {"index": 469, "reason": "Duplicate of indexes 82 and 83. 'GDP stands for:' trivial low-effort question appended at end. Remove."},
+    {"index": 470, "reason": "Duplicate of index 23 and index 356. 'Budget deficit occurs when spending exceeds revenue' covered multiple times. Remove."},
+    {"index": 471, "reason": "Duplicate of indexes 267, 368, 396, 283. 'MV = ?' one-liner at T4. Remove."},
+    {"index": 472, "reason": "Duplicate of indexes 182 and 379. 'Gini coefficient measures' one-liner at T5. Remove."}
+  ],
+  "rewrite": [
+    {
+      "index": 86,
+      "field": "question",
+      "new_value": "In a command economy, who makes economic decisions -- and what is the fundamental problem this creates?",
+      "reason": "Conceptual upgrade: teaching the knowledge problem, not just identifying who controls."
+    },
+    {
+      "index": 86,
+      "field": "answer",
+      "new_value": "The government -- but it lacks the dispersed local knowledge that markets use through prices",
+      "reason": "Hayek's knowledge problem is the core critique of command economies."
+    },
+    {
+      "index": 86,
+      "field": "choices",
+      "new_value": ["The government -- but it lacks the dispersed local knowledge that markets use through prices", "The government, which can efficiently direct resources better than markets", "Individual consumers, guided by central bank signals", "Foreign investors, who fund planned projects"],
+      "reason": "Forces player to recognize the knowledge problem, not just identify the controller."
+    },
+    {
+      "index": 100,
+      "field": "question",
+      "new_value": "When a government increases the money supply faster than economic output grows, what happens and why?",
+      "reason": "Make the mechanism explicit and tie it to sound money principles."
+    },
+    {
+      "index": 100,
+      "field": "answer",
+      "new_value": "Prices rise (inflation), because more money is chasing the same goods -- this is why sound money matters",
+      "reason": "Explicitly connects the mechanism to the Austrian/monetarist insight about sound money."
+    },
+    {
+      "index": 100,
+      "field": "choices",
+      "new_value": ["Prices rise (inflation), because more money is chasing the same goods -- this is why sound money matters", "Prices fall because money becomes more available to everyone equally", "Unemployment drops because workers have more to spend", "GDP grows in real terms because spending increases"],
+      "reason": "Corrects false alternatives that reflect MMT-adjacent thinking."
+    },
+    {
+      "index": 111,
+      "field": "question",
+      "new_value": "What is fiat currency, and why is it vulnerable to inflation in a way commodity money is not?",
+      "reason": "Adds the critical dimension: fiat money has no supply constraint, enabling inflation."
+    },
+    {
+      "index": 111,
+      "field": "answer",
+      "new_value": "Money with no commodity backing, declared legal tender -- governments can print it without limit, enabling inflation",
+      "reason": "Teaching the mechanism of fiat money's weakness is the educational goal."
+    },
+    {
+      "index": 111,
+      "field": "choices",
+      "new_value": ["Money with no commodity backing, declared legal tender -- governments can print it without limit, enabling inflation", "Currency backed by gold, ensuring stable purchasing power", "Digital currency issued by private banks", "Coins whose face value equals their metal content"],
+      "reason": "Forces the player to connect fiat to inflationary risk."
+    },
+    {
+      "index": 167,
+      "field": "question",
+      "new_value": "Keynesian 'expansionary fiscal policy' means the government spends more during a downturn. What is the main Austrian/classical critique of this approach?",
+      "reason": "Tests understanding of both the Keynesian claim AND its main critique, not just the definition."
+    },
+    {
+      "index": 167,
+      "field": "answer",
+      "new_value": "Government borrowing crowds out private investment and misallocates resources that markets would direct better",
+      "reason": "Teaches crowding out and the knowledge problem as the core critique."
+    },
+    {
+      "index": 167,
+      "field": "choices",
+      "new_value": ["Government borrowing crowds out private investment and misallocates resources that markets would direct better", "There is no valid critique; stimulus always restores full employment", "The main critique is that it raises taxes too much", "It only works if the central bank also cuts interest rates simultaneously"],
+      "reason": "Conceptual rather than definitional."
+    },
+    {
+      "index": 187,
+      "field": "question",
+      "new_value": "When a government sets a price ceiling below the market equilibrium for a good like housing, what historically results -- and why?",
+      "reason": "Adds historical grounding and the mechanism, making it more conceptual."
+    },
+    {
+      "index": 187,
+      "field": "answer",
+      "new_value": "A shortage develops -- suppliers reduce supply when they cannot earn enough, as seen with rent control in NYC and other cities",
+      "reason": "Historical evidence makes the principle concrete."
+    },
+    {
+      "index": 187,
+      "field": "choices",
+      "new_value": ["A shortage develops -- suppliers reduce supply when they cannot earn enough, as seen with rent control in NYC and other cities", "A surplus develops because demand falls at the lower price", "The market reaches a new stable equilibrium at the lower price", "Quality improves because producers compete harder at lower prices"],
+      "reason": "Tests the mechanism and adds historical grounding."
+    },
+    {
+      "index": 203,
+      "field": "question",
+      "new_value": "Demand-side (Keynesian) economics holds that government spending can stimulate growth. What does the Austrian/supply-side counter-argument say?",
+      "reason": "Present both sides rather than framing demand-side as the answer."
+    },
+    {
+      "index": 203,
+      "field": "answer",
+      "new_value": "Government spending displaces productive private investment and distorts price signals that guide resource allocation",
+      "reason": "Austrian critique is the teaching target here."
+    },
+    {
+      "index": 203,
+      "field": "choices",
+      "new_value": ["Government spending displaces productive private investment and distorts price signals that guide resource allocation", "There is no valid counter-argument; demand-side policy always works", "The counter-argument is that demand-side policy raises taxes too fast", "Supply-siders agree but prefer central bank stimulus over fiscal stimulus"],
+      "reason": "Forces engagement with Austrian/supply-side critique."
+    },
+    {
+      "index": 270,
+      "field": "question",
+      "new_value": "Keynes argued that government spending during recessions can restore full employment. What does the Austrian School say about this claim?",
+      "reason": "Presents Keynesian claim and tests knowledge of its main critique simultaneously."
+    },
+    {
+      "index": 270,
+      "field": "answer",
+      "new_value": "That it ignores the knowledge problem, causes malinvestment, and government cannot efficiently direct resources markets would allocate better",
+      "reason": "Core Austrian critique of Keynesianism."
+    },
+    {
+      "index": 270,
+      "field": "choices",
+      "new_value": ["That it ignores the knowledge problem, causes malinvestment, and government cannot efficiently direct resources markets would allocate better", "There is no valid Austrian critique of Keynesian stimulus", "Austrians agree with stimulus but prefer monetary policy over fiscal", "The Austrian critique is only that stimulus creates budget deficits"],
+      "reason": "Tests conceptual understanding of the Austrian-Keynesian debate."
+    },
+    {
+      "index": 302,
+      "field": "question",
+      "new_value": "What is Hayek's 'knowledge problem' -- the central insight of the Austrian School against central planning?",
+      "reason": "More specific and more educational than the vague current framing."
+    },
+    {
+      "index": 302,
+      "field": "answer",
+      "new_value": "No central authority can collect and process the dispersed local knowledge embedded in market prices -- making central planning inevitably inefficient",
+      "reason": "This is THE key Austrian insight and should be taught explicitly."
+    },
+    {
+      "index": 302,
+      "field": "choices",
+      "new_value": ["No central authority can collect and process the dispersed local knowledge embedded in market prices -- making central planning inevitably inefficient", "Governments should not intervene because it violates individual rights only", "Markets work best when regulated by independent technocrats", "The knowledge problem only applies to command economies, not mixed economies"],
+      "reason": "Forces understanding of Hayek's specific argument, not just a label."
+    },
+    {
+      "index": 405,
+      "field": "question",
+      "new_value": "The Keynesian multiplier claims that $1 of government spending raises GDP by more than $1. What is a key empirical critique of this claim?",
+      "reason": "Conceptual over rote -- tests understanding of the claim and its contested nature."
+    },
+    {
+      "index": 405,
+      "field": "answer",
+      "new_value": "The multiplier is often less than 1 in practice because government borrowing crowds out private investment and may misallocate resources",
+      "reason": "Empirical critique grounds the concept."
+    },
+    {
+      "index": 405,
+      "field": "choices",
+      "new_value": ["The multiplier is often less than 1 in practice because government borrowing crowds out private investment and may misallocate resources", "The multiplier is always exactly 5 regardless of economic conditions", "The multiplier only applies when central banks support the spending with QE", "There is no critique; the Keynesian multiplier is universally accepted"],
+      "reason": "Tests deeper understanding beyond mere definition."
+    },
+    {
+      "index": 455,
+      "field": "question",
+      "new_value": "The Cantillon effect explains why newly created money does not benefit everyone equally. Who benefits most and who is harmed?",
+      "reason": "More conceptual -- tests the mechanism and its distributional consequences."
+    },
+    {
+      "index": 455,
+      "field": "answer",
+      "new_value": "Those closest to the money creation (banks, government contractors, asset owners) gain first; wage earners and savers lose purchasing power as prices rise later",
+      "reason": "The full Cantillon insight including winners and losers."
+    },
+    {
+      "index": 455,
+      "field": "choices",
+      "new_value": ["Those closest to the money creation (banks, government contractors, asset owners) gain first; wage earners and savers lose purchasing power as prices rise later", "New money benefits everyone equally because it raises all prices simultaneously", "The central bank ensures new money reaches the poorest first through targeted programs", "Money creation harms asset owners and benefits wage earners through inflation"],
+      "reason": "Tests the full Cantillon mechanism including distributional injustice."
+    }
+  ],
+  "add": [
+    {
+      "question": "When a government prints money to pay its debts, who is effectively being taxed?",
+      "answer": "Everyone holding that currency, through inflation eroding their purchasing power",
+      "choices": [
+        "Everyone holding that currency, through inflation eroding their purchasing power",
+        "Only wealthy citizens who hold large bank balances",
+        "Only foreign governments that hold the currency as reserves",
+        "No one -- printing money creates value from nothing"
+      ],
+      "tier": 2,
+      "reason": "Core Austrian/sound money concept: inflation as hidden tax on savers."
+    },
+    {
+      "question": "Hayek argued that prices in a free market do something no central planner can replicate. What?",
+      "answer": "Prices aggregate and transmit dispersed knowledge held by millions of individuals, coordinating the economy without central direction",
+      "choices": [
+        "Prices aggregate and transmit dispersed knowledge held by millions of individuals, coordinating the economy without central direction",
+        "Prices ensure that goods are allocated to those who need them most",
+        "Prices maximize total social welfare by balancing supply and demand mathematically",
+        "Prices are set by competition among sellers and have no informational content"
+      ],
+      "tier": 3,
+      "reason": "Hayek's price signal theory is one of the most important insights in economics and is absent from the current set."
+    },
+    {
+      "question": "The Austrian Business Cycle Theory (Mises/Hayek) says that central bank credit expansion causes recessions by:",
+      "answer": "Artificially low interest rates trigger malinvestment in projects that are not sustainable once rates normalize",
+      "choices": [
+        "Artificially low interest rates trigger malinvestment in projects that are not sustainable once rates normalize",
+        "Raising interest rates too quickly, which crushes consumer spending",
+        "Reducing the money supply at the wrong time in the business cycle",
+        "Allowing banks to lend too little, starving entrepreneurs of capital"
+      ],
+      "tier": 3,
+      "reason": "Austrian Business Cycle Theory is completely absent. Core content for the economics category."
+    },
+    {
+      "question": "Stalin's collectivization of Soviet agriculture in the early 1930s caused a famine known as the Holodomor. Approximately how many people died in Ukraine alone?",
+      "answer": "3.5 to 5 million people",
+      "choices": [
+        "3.5 to 5 million people",
+        "Approximately 100,000 people",
+        "Around 500,000 people",
+        "The death toll is disputed but was under 1 million"
+      ],
+      "tier": 3,
+      "reason": "Historical evidence of collectivism's consequences. The Holodomor is documented history and should be in the economics question set."
+    },
+    {
+      "question": "Mao Zedong's Great Leap Forward (1958-1962) collectivized Chinese agriculture and industry. What was the result?",
+      "answer": "An estimated 30-45 million people died from famine caused by forced collectivization and misallocated resources",
+      "choices": [
+        "An estimated 30-45 million people died from famine caused by forced collectivization and misallocated resources",
+        "China's industrial output tripled within three years",
+        "Agricultural yields doubled due to collective farming efficiencies",
+        "Approximately 500,000 died in localized famines before policies were corrected"
+      ],
+      "tier": 3,
+      "reason": "Historical evidence of central planning's consequences. Among the most important facts in 20th century economic history."
+    },
+    {
+      "question": "Venezuela nationalized its oil industry and expanded social programs under Hugo Chavez. By 2019 under Maduro, what had happened?",
+      "answer": "The economy collapsed with hyperinflation exceeding 1,000,000%, widespread food shortages, and mass emigration of millions",
+      "choices": [
+        "The economy collapsed with hyperinflation exceeding 1,000,000%, widespread food shortages, and mass emigration of millions",
+        "Oil nationalization created stable long-term revenue that funded prosperity",
+        "The economy struggled but remained largely stable due to social programs",
+        "GDP fell modestly but food security improved due to government distribution"
+      ],
+      "tier": 3,
+      "reason": "Contemporary evidence of socialist economic mismanagement. Venezuela is the clearest modern case study."
+    },
+    {
+      "question": "Zimbabwe experienced hyperinflation peaking at 89.7 sextillion percent per month in 2008. What primarily caused this?",
+      "answer": "The government printed massive amounts of money to fund spending after seizing and destroying the productive agricultural sector",
+      "choices": [
+        "The government printed massive amounts of money to fund spending after seizing and destroying the productive agricultural sector",
+        "International trade sanctions cut off all exports for five years",
+        "A banking crisis caused private banks to print unauthorized currency",
+        "Drought destroyed crops, causing scarcity that drove prices up naturally"
+      ],
+      "tier": 3,
+      "reason": "Zimbabwe hyperinflation is the clearest modern case of monetary destruction via government policy."
+    },
+    {
+      "question": "Weimar Germany's hyperinflation in 1921-1923 destroyed middle-class savings. What was the main cause?",
+      "answer": "The government printed money to pay war reparations and government expenses, destroying confidence in the mark",
+      "choices": [
+        "The government printed money to pay war reparations and government expenses, destroying confidence in the mark",
+        "Foreign speculators engineered a currency attack to destabilize Germany",
+        "A bank run depleted gold reserves and forced banks to close",
+        "Hyperinflation was caused by excessive private sector lending"
+      ],
+      "tier": 2,
+      "reason": "Historical case of monetary destruction. Already have one Weimar question at T4 but it focuses on reparations; this focuses on the monetary mechanism."
+    },
+    {
+      "question": "Soviet central planners in the 1930s-1980s could not efficiently allocate resources despite having vast data. According to Hayek, why?",
+      "answer": "The knowledge needed for efficient allocation is dispersed among millions of people and cannot be centrally collected -- prices in markets do this automatically",
+      "choices": [
+        "The knowledge needed for efficient allocation is dispersed among millions of people and cannot be centrally collected -- prices in markets do this automatically",
+        "Soviet planners lacked computers, which would have made central planning effective",
+        "Soviet planners were corrupt, but honest planners could have succeeded",
+        "Central planning works for production but not for distribution"
+      ],
+      "tier": 3,
+      "reason": "Hayek's knowledge problem applied to historical case. Makes the abstract theory concrete."
+    },
+    {
+      "question": "Ludwig von Mises argued in 1920 that socialist central planning was theoretically impossible. What was his core argument?",
+      "answer": "Without private property and free prices, planners have no rational way to calculate which goods are worth producing -- the 'economic calculation problem'",
+      "choices": [
+        "Without private property and free prices, planners have no rational way to calculate which goods are worth producing -- the 'economic calculation problem'",
+        "Socialism fails because workers are lazy without ownership incentives",
+        "Central planning requires too many bureaucrats to be cost-effective",
+        "Socialist states always become dictatorships before the economy can be tested"
+      ],
+      "tier": 4,
+      "reason": "Mises's economic calculation problem is a foundational Austrian insight completely absent from the question set."
+    },
+    {
+      "question": "The Cantillon effect explains why quantitative easing (QE) tends to increase wealth inequality. What is the mechanism?",
+      "answer": "New money enters via financial institutions and inflates asset prices first, benefiting asset owners before wages or consumer prices rise",
+      "choices": [
+        "New money enters via financial institutions and inflates asset prices first, benefiting asset owners before wages or consumer prices rise",
+        "QE distributes money directly to citizens, reducing inequality",
+        "Asset prices and wages always rise proportionally with money supply increases",
+        "QE reduces inequality by lowering interest rates, which helps borrowers"
+      ],
+      "tier": 4,
+      "reason": "Direct application of Cantillon effect to modern QE policy. Important for understanding how monetary policy redistributes wealth upward."
+    },
+    {
+      "question": "Gresham's Law states 'bad money drives out good.' What does this mean in practice?",
+      "answer": "When two currencies circulate at the same legal exchange rate, people hoard the more valuable one and spend the cheaper one, driving the better currency out of circulation",
+      "choices": [
+        "When two currencies circulate at the same legal exchange rate, people hoard the more valuable one and spend the cheaper one, driving the better currency out of circulation",
+        "Inferior goods always replace superior ones in free markets over time",
+        "Counterfeit money eventually replaces legitimate currency in all economies",
+        "Bad monetary policy always causes good currencies to depreciate"
+      ],
+      "tier": 2,
+      "reason": "Gresham's Law is mentioned at T4 index 393 but with minimal explanation. Add T2 conceptual version."
+    },
+    {
+      "question": "When a government imposes a price ceiling on a good -- such as rent control -- what does economic theory predict will happen to the quality and quantity of that good?",
+      "answer": "Quantity supplied falls and quality deteriorates because suppliers cannot earn enough to maintain or expand production",
+      "choices": [
+        "Quantity supplied falls and quality deteriorates because suppliers cannot earn enough to maintain or expand production",
+        "Quality improves because landlords must justify lower rents through maintenance",
+        "Supply increases because more people can afford the good at lower prices",
+        "Neither quality nor quantity changes because suppliers are protected by regulation"
+      ],
+      "tier": 2,
+      "reason": "Tests quality deterioration aspect of price controls, which is distinct from the shortage question already present."
+    },
+    {
+      "question": "Friedrich Hayek's 'Road to Serfdom' (1944) argued that central economic planning inevitably leads to what?",
+      "answer": "The concentration of power that produces tyranny, because planning requires overriding individual choices and dissent",
+      "choices": [
+        "The concentration of power that produces tyranny, because planning requires overriding individual choices and dissent",
+        "Efficient allocation of resources if done by expert technocrats",
+        "Short-term pain but long-term prosperity for workers",
+        "Democracy because citizens must vote on each planning decision"
+      ],
+      "tier": 3,
+      "reason": "Hayek's Road to Serfdom is foundational Austrian political economy and entirely absent."
+    },
+    {
+      "question": "Sound money advocates argue gold or commodity-backed currency is superior to fiat money. What is their main argument?",
+      "answer": "Commodity-backed currency limits the government's ability to inflate -- a supply constraint that protects savings and prevents hidden taxation through inflation",
+      "choices": [
+        "Commodity-backed currency limits the government's ability to inflate -- a supply constraint that protects savings and prevents hidden taxation through inflation",
+        "Gold is more valuable than paper money because it has industrial uses",
+        "Commodity-backed currency eliminates trade deficits automatically",
+        "Gold-backed money always produces faster economic growth than fiat"
+      ],
+      "tier": 3,
+      "reason": "Sound money argument is core Austrian/Misesian content entirely missing from the question set."
+    },
+    {
+      "question": "What is the 'spontaneous order' concept in Austrian economics, associated with Hayek?",
+      "answer": "Complex social and economic order can emerge from individual actions following simple rules without any central designer or plan",
+      "choices": [
+        "Complex social and economic order can emerge from individual actions following simple rules without any central designer or plan",
+        "Markets must be designed by economists to function efficiently",
+        "Order in society requires strong government institutions to enforce rules",
+        "Economic systems only work when participants consciously cooperate toward shared goals"
+      ],
+      "tier": 3,
+      "reason": "Spontaneous order is a key Austrian concept not currently in the question set."
+    },
+    {
+      "question": "The subjective theory of value (Austrian economics) holds that value is determined by what?",
+      "answer": "The subjective preferences of individual buyers -- not by the cost of production or the labor required to make it",
+      "choices": [
+        "The subjective preferences of individual buyers -- not by the cost of production or the labor required to make it",
+        "The amount of labor embedded in a good, as Marx argued",
+        "The cost of raw materials plus a standard profit margin",
+        "The average utility the good provides to all consumers in a market"
+      ],
+      "tier": 3,
+      "reason": "Subjective value theory is the cornerstone of Austrian economics and contradicts the labor theory of value. Currently absent."
+    },
+    {
+      "question": "Karl Marx's labor theory of value claimed that all value comes from labor. What is the main Austrian refutation?",
+      "answer": "Value is subjective and set by the marginal buyer -- a painting by an amateur may require more labor than a masterpiece but is worth far less",
+      "choices": [
+        "Value is subjective and set by the marginal buyer -- a painting by an amateur may require more labor than a masterpiece but is worth far less",
+        "Labor creates value but capital multiplies it through technology",
+        "The labor theory is correct but only applies to manufactured goods",
+        "Value is determined by scarcity, not labor, and scarcity is set by government"
+      ],
+      "tier": 3,
+      "reason": "The Austrian refutation of the labor theory of value should be explicitly tested."
+    },
+    {
+      "question": "When interest rates are set artificially low by a central bank, Austrian economists predict what will happen?",
+      "answer": "Businesses over-invest in long-term projects (malinvestment) that become unprofitable when rates rise -- creating a boom-bust cycle",
+      "choices": [
+        "Businesses over-invest in long-term projects (malinvestment) that become unprofitable when rates rise -- creating a boom-bust cycle",
+        "The economy smoothly expands to full employment with no negative side effects",
+        "Inflation rises immediately because consumers borrow and spend more",
+        "Businesses reduce investment because returns on savings fall"
+      ],
+      "tier": 4,
+      "reason": "ABCT mechanism -- the boom-bust cycle from interest rate manipulation. Core Austrian content."
+    },
+    {
+      "question": "Quantitative easing (QE) involves a central bank creating new money to buy assets. What is a key criticism from a sound-money perspective?",
+      "answer": "QE inflates asset prices benefiting the wealthy (Cantillon effect), erodes purchasing power of savings, and enables deficit spending that would otherwise be impossible",
+      "choices": [
+        "QE inflates asset prices benefiting the wealthy (Cantillon effect), erodes purchasing power of savings, and enables deficit spending that would otherwise be impossible",
+        "QE is universally effective with no distributional consequences",
+        "QE only affects bond markets and has no impact on consumer prices",
+        "QE is harmful only when used by developing countries, not advanced economies"
+      ],
+      "tier": 4,
+      "reason": "QE critique integrating Cantillon effect, inflation, and government finance. All three themes combined."
+    },
+    {
+      "question": "The Soviet Union's economy stagnated in the 1970s-80s despite full employment. What does this illustrate about central planning?",
+      "answer": "Full employment and output can coexist with massive inefficiency when prices do not reflect true costs -- the absence of profit signals masks waste",
+      "choices": [
+        "Full employment and output can coexist with massive inefficiency when prices do not reflect true costs -- the absence of profit signals masks waste",
+        "The Soviet economy stagnated because it lacked natural resources",
+        "Central planning works for industry but failed only because of Cold War sanctions",
+        "Soviet stagnation was caused by corruption, not the planning system itself"
+      ],
+      "tier": 4,
+      "reason": "Applies economic calculation problem to historical Soviet case."
+    },
+    {
+      "question": "What did Murray Rothbard argue about fractional reserve banking?",
+      "answer": "It is inherently inflationary and creates artificial credit booms that inevitably end in busts -- sound banking requires 100% reserves",
+      "choices": [
+        "It is inherently inflationary and creates artificial credit booms that inevitably end in busts -- sound banking requires 100% reserves",
+        "Fractional reserve banking is stable as long as the central bank regulates it",
+        "Fractional reserve banking increases efficiency and should be expanded",
+        "Rothbard supported fractional reserve banking as a free market institution"
+      ],
+      "tier": 4,
+      "reason": "Rothbard's Austrian monetary theory and the critique of fractional reserve banking."
+    },
+    {
+      "question": "Historical price controls during wartime (e.g., World War II, Nixon's 1971 price freeze) consistently produced what outcome?",
+      "answer": "Shortages and black markets, as price controls prevented the price signals that allocate scarce goods",
+      "choices": [
+        "Shortages and black markets, as price controls prevented the price signals that allocate scarce goods",
+        "Stable prices with no reduction in supply during the control period",
+        "Reduced inequality because goods became affordable to lower-income buyers",
+        "Temporary disruption followed by permanent price stability"
+      ],
+      "tier": 3,
+      "reason": "Historical evidence for price control failures across multiple cases."
+    },
+    {
+      "question": "The Misesian 'regression theorem' explains the origin of money. What does it say?",
+      "answer": "Money always originates as a commodity with independent use value -- no purely fiat currency could come into existence from scratch without prior commodity money",
+      "choices": [
+        "Money always originates as a commodity with independent use value -- no purely fiat currency could come into existence from scratch without prior commodity money",
+        "Money is created by government decree and has always required legal authority",
+        "Money emerged through barter by community agreement, not commodity use",
+        "The origin of money is irrelevant to its current function or value"
+      ],
+      "tier": 5,
+      "reason": "Mises regression theorem is important Austrian monetary theory absent from the set."
+    },
+    {
+      "question": "What does Milton Friedman's statement 'inflation is always and everywhere a monetary phenomenon' mean?",
+      "answer": "Sustained inflation can only occur if the money supply grows faster than economic output -- it is not caused by 'greedy businesses' or 'supply shocks' alone",
+      "choices": [
+        "Sustained inflation can only occur if the money supply grows faster than economic output -- it is not caused by 'greedy businesses' or 'supply shocks' alone",
+        "Inflation is primarily caused by corporate price-gouging in monopolized markets",
+        "Inflation results from oil price shocks and supply chain disruptions",
+        "Friedman meant that inflation affects all countries simultaneously due to global trade"
+      ],
+      "tier": 3,
+      "reason": "Friedman monetarism applied practically -- teaches what does and does not cause inflation."
+    },
+    {
+      "question": "Mao's Great Leap Forward set grain production quotas far above actual yields, and local officials falsely reported meeting targets. What economic principle does this illustrate?",
+      "answer": "Central planners cannot know local conditions, and subordinates have incentives to report false data -- the knowledge problem makes planning self-defeating",
+      "choices": [
+        "Central planners cannot know local conditions, and subordinates have incentives to report false data -- the knowledge problem makes planning self-defeating",
+        "Agricultural collectivization requires more time to show benefits",
+        "Local corruption can undermine otherwise effective central planning",
+        "The failure shows that planning works only when enforced with stricter penalties"
+      ],
+      "tier": 4,
+      "reason": "Connects historical Great Leap Forward to economic principles (knowledge problem, incentive distortion)."
+    },
+    {
+      "question": "Venezuela under Chavez imposed price controls on food and medicine. By 2015-2018, what had happened to these goods?",
+      "answer": "Severe shortages developed as producers found it unprofitable to supply at controlled prices -- supermarket shelves emptied and rationing was imposed",
+      "choices": [
+        "Severe shortages developed as producers found it unprofitable to supply at controlled prices -- supermarket shelves emptied and rationing was imposed",
+        "Supply improved because price controls made goods affordable, increasing demand and production",
+        "Food security improved initially before shortages appeared after 2019",
+        "Only luxury goods became scarce; basic food remained available throughout"
+      ],
+      "tier": 3,
+      "reason": "Venezuelan price controls -- recent, clear historical case linking policy to shortage."
+    },
+    {
+      "question": "What is the 'economic calculation problem' identified by Ludwig von Mises?",
+      "answer": "Without market prices for capital goods, socialist planners have no rational basis for allocating resources -- they cannot know which production methods are efficient",
+      "choices": [
+        "Without market prices for capital goods, socialist planners have no rational basis for allocating resources -- they cannot know which production methods are efficient",
+        "The problem of calculating GDP accurately in mixed economies",
+        "The difficulty of measuring productivity growth in developing countries",
+        "The challenge of estimating the multiplier effect of government spending"
+      ],
+      "tier": 4,
+      "reason": "Mises economic calculation problem is the theoretical foundation for why socialism fails -- currently absent from the question set."
+    },
+    {
+      "question": "When inflation is 8% per year, approximately how many years does it take for the purchasing power of money to be cut in half?",
+      "answer": "About 9 years (using the Rule of 72: 72 / 8 = 9)",
+      "choices": [
+        "About 9 years (using the Rule of 72: 72 / 8 = 9)",
+        "About 25 years",
+        "About 4 years",
+        "About 18 years"
+      ],
+      "tier": 2,
+      "reason": "Rule of 72 applied to inflation makes the cost of inflation viscerally clear. Conceptual and practical."
+    },
+    {
+      "question": "If a government funds its spending by printing money rather than taxing, who bears the cost?",
+      "answer": "All holders of that currency, through inflation that erodes purchasing power -- this is called the 'inflation tax'",
+      "choices": [
+        "All holders of that currency, through inflation that erodes purchasing power -- this is called the 'inflation tax'",
+        "Only future taxpayers who must repay the printed money",
+        "Only wealthy citizens who hold large financial assets",
+        "No one bears a cost because money printing creates new wealth"
+      ],
+      "tier": 2,
+      "reason": "Inflation as hidden tax is a core concept. Slightly different framing than existing question, focusing on the 'who pays' dimension explicitly."
+    },
+    {
+      "question": "Hayek won the 1974 Nobel Prize in Economics partly for his theory of business cycles. What was his main contribution?",
+      "answer": "Credit expansion by central banks causes artificial booms by distorting the interest rate signal, leading to malinvestment and inevitable busts",
+      "choices": [
+        "Credit expansion by central banks causes artificial booms by distorting the interest rate signal, leading to malinvestment and inevitable busts",
+        "Business cycles are caused by animal spirits and can be tamed by fiscal stimulus",
+        "Recessions are always caused by falling aggregate demand that government must replace",
+        "Business cycles are random and cannot be predicted or explained theoretically"
+      ],
+      "tier": 4,
+      "reason": "ABCT with historical attribution to Hayek and Nobel Prize context."
+    },
+    {
+      "question": "What does comparative advantage tell us about why free trade is beneficial even if one country can produce everything more efficiently than another?",
+      "answer": "Each country still gains by specializing in what it produces at lowest relative opportunity cost -- both countries end up with more goods than under autarky",
+      "choices": [
+        "Each country still gains by specializing in what it produces at lowest relative opportunity cost -- both countries end up with more goods than under autarky",
+        "The weaker country always loses in free trade because it cannot compete",
+        "Free trade only benefits both parties when they have equal productivity levels",
+        "Comparative advantage only applies to goods, not services or labor"
+      ],
+      "tier": 2,
+      "reason": "Reframes comparative advantage as an argument FOR free trade, making the policy implication explicit."
+    },
+    {
+      "question": "Between 1991 and 2000, former Soviet countries transitioned to market economies. Those that liberalized fastest (e.g., Poland, Estonia) versus slowest (e.g., Ukraine, Belarus) showed what pattern?",
+      "answer": "Faster liberalizers recovered sooner and achieved higher growth, demonstrating that market mechanisms allocate resources more effectively than planned systems",
+      "choices": [
+        "Faster liberalizers recovered sooner and achieved higher growth, demonstrating that market mechanisms allocate resources more effectively than planned systems",
+        "All transition countries performed identically regardless of speed of reform",
+        "Slower liberalizers performed better because they protected workers from market shocks",
+        "All transition economies collapsed equally, showing markets cannot replace planning"
+      ],
+      "tier": 4,
+      "reason": "Natural experiment in economic systems -- empirical evidence for market superiority over planning."
+    },
+    {
+      "question": "What is the 'time preference' theory in Austrian economics?",
+      "answer": "People value goods available now more than the same goods in the future -- the interest rate reflects this, and artificially suppressing it distorts investment decisions",
+      "choices": [
+        "People value goods available now more than the same goods in the future -- the interest rate reflects this, and artificially suppressing it distorts investment decisions",
+        "People prefer to invest for the future rather than consume in the present",
+        "Time preference is irrelevant because interest rates are set by central banks",
+        "The theory states that time has no effect on the value of goods"
+      ],
+      "tier": 4,
+      "reason": "Time preference theory explains the origin of interest rates in Austrian economics -- absent from the set."
+    },
+    {
+      "question": "North Korea maintains central planning while South Korea operates a market economy. How does their GDP per capita compare?",
+      "answer": "South Korea's GDP per capita is approximately 25-30 times higher than North Korea's, despite starting from similar conditions in 1950",
+      "choices": [
+        "South Korea's GDP per capita is approximately 25-30 times higher than North Korea's, despite starting from similar conditions in 1950",
+        "North Korea is roughly equal to South Korea because it has prioritized industrial output",
+        "South Korea is wealthier but only by about 50% because North Korea has mineral resources",
+        "The difference is entirely due to sanctions, not economic system"
+      ],
+      "tier": 3,
+      "reason": "Korea comparison is the clearest natural experiment in economic systems. Critical historical fact absent from question set."
+    },
+    {
+      "question": "What does Robert Nozick's 'Wilt Chamberlain argument' demonstrate about wealth redistribution?",
+      "answer": "That voluntary exchanges will always recreate inequality even after redistribution, making any end-state equality unstable without continuous interference in free choices",
+      "choices": [
+        "That voluntary exchanges will always recreate inequality even after redistribution, making any end-state equality unstable without continuous interference in free choices",
+        "That wealth redistribution is mathematically impossible to implement fairly",
+        "That athletes deserve their high incomes because they work harder than others",
+        "That only government intervention can prevent wealth concentration in free markets"
+      ],
+      "tier": 5,
+      "reason": "Nozick's Wilt Chamberlain argument is a key philosophical argument against forced redistribution -- relevant to philosophy-economics overlap in this game."
+    },
+    {
+      "question": "What is 'malinvestment' in Austrian economics?",
+      "answer": "Investment in capital projects that appear profitable due to artificially low interest rates but are revealed as wasteful when rates normalize",
+      "choices": [
+        "Investment in capital projects that appear profitable due to artificially low interest rates but are revealed as wasteful when rates normalize",
+        "Any investment that results in a business loss",
+        "Government spending on projects with negative returns",
+        "Investment by foreign companies in a domestic economy"
+      ],
+      "tier": 3,
+      "reason": "Malinvestment is a core Austrian concept explaining business cycles. Currently absent."
+    },
+    {
+      "question": "What happened to the purchasing power of the U.S. dollar between 1913 (when the Federal Reserve was created) and 2023?",
+      "answer": "It lost approximately 97% of its purchasing power -- $1 in 1913 is equivalent to roughly $30 today",
+      "choices": [
+        "It lost approximately 97% of its purchasing power -- $1 in 1913 is equivalent to roughly $30 today",
+        "It roughly maintained its value with only minor fluctuations",
+        "It lost about 50% of its value over that period",
+        "It actually gained value because the U.S. economy grew so much"
+      ],
+      "tier": 2,
+      "reason": "Concrete historical data on fiat currency erosion. Makes the abstract concept visceral."
+    },
+    {
+      "question": "Why does inflation disproportionately harm people on fixed incomes, retirees, and savers compared to debtors?",
+      "answer": "Fixed incomes and savings lose real value as prices rise; debtors repay loans with depreciated currency worth less than when borrowed",
+      "choices": [
+        "Fixed incomes and savings lose real value as prices rise; debtors repay loans with depreciated currency worth less than when borrowed",
+        "Inflation harms all groups equally since all prices rise at the same rate",
+        "Retirees are protected because Social Security automatically adjusts for inflation",
+        "Debtors are harmed most because they owe more money in real terms"
+      ],
+      "tier": 2,
+      "reason": "Distributional impact of inflation -- who wins and who loses -- is fundamental to understanding the inflation tax."
+    },
+    {
+      "question": "What is the 'broken window fallacy' identified by Frederic Bastiat?",
+      "answer": "Destruction does not create net wealth -- the money spent replacing a broken window is money that cannot be spent on something new, so the economy is worse off overall",
+      "choices": [
+        "Destruction does not create net wealth -- the money spent replacing a broken window is money that cannot be spent on something new, so the economy is worse off overall",
+        "War and disaster always stimulate economic activity and should not be viewed as purely negative",
+        "Government spending creates wealth because breaking things employs people to fix them",
+        "The fallacy means that all visible economic activity is productive"
+      ],
+      "tier": 2,
+      "reason": "Bastiat's broken window fallacy is foundational to understanding the seen vs unseen in economics. Directly counters stimulus arguments."
+    },
+    {
+      "question": "Bastiat's concept of 'the seen and the unseen' warns against what error in economic reasoning?",
+      "answer": "Judging policies only by their visible, immediate effects while ignoring the hidden costs and foregone opportunities they create",
+      "choices": [
+        "Judging policies only by their visible, immediate effects while ignoring the hidden costs and foregone opportunities they create",
+        "Using statistics that cannot be verified by direct observation",
+        "Trusting government economic data over private sector analysis",
+        "Focusing on long-term effects at the expense of short-term humanitarian needs"
+      ],
+      "tier": 3,
+      "reason": "Bastiat's seen/unseen is one of the most important concepts in economics and directly challenges deficit spending and stimulus arguments."
+    },
+    {
+      "question": "When the U.S. government ran large deficits during the 2020-2021 pandemic and simultaneously expanded the money supply, what followed by 2022?",
+      "answer": "The highest inflation in 40 years (peaking above 9%), consistent with the monetary theory that money-financed deficits cause inflation",
+      "choices": [
+        "The highest inflation in 40 years (peaking above 9%), consistent with the monetary theory that money-financed deficits cause inflation",
+        "Stable prices because the spending was offset by increased productivity",
+        "Deflation because consumers saved rather than spent stimulus checks",
+        "Moderate inflation of about 2% because the Fed controlled the money supply carefully"
+      ],
+      "tier": 3,
+      "reason": "Recent historical evidence connecting money creation to inflation. Validates Friedman's monetarist prediction."
+    },
+    {
+      "question": "What is the Misesian critique of central bank interest rate setting?",
+      "answer": "Interest rates are prices that should reflect time preferences and real savings -- artificial suppression below market rates distorts investment and causes boom-bust cycles",
+      "choices": [
+        "Interest rates are prices that should reflect time preferences and real savings -- artificial suppression below market rates distorts investment and causes boom-bust cycles",
+        "Central banks should set rates lower to maximize economic growth permanently",
+        "The problem with central bank rates is only that they are set too high",
+        "Interest rate setting is neutral as long as central banks are independent"
+      ],
+      "tier": 4,
+      "reason": "Mises critique of interest rate manipulation -- connects ABCT to central bank policy directly."
+    },
+    {
+      "question": "Cambodia under the Khmer Rouge (1975-1979) abolished money and markets, forcibly collectivized agriculture, and evacuated cities. The result was:",
+      "answer": "The deaths of approximately 1.5-2 million people (25% of Cambodia's population) from famine, forced labor, and execution",
+      "choices": [
+        "The deaths of approximately 1.5-2 million people (25% of Cambodia's population) from famine, forced labor, and execution",
+        "A rapid industrialization that transformed Cambodia into a regional power",
+        "Agricultural self-sufficiency that insulated Cambodia from global food prices",
+        "Short-term disruption followed by stable rural economic growth"
+      ],
+      "tier": 3,
+      "reason": "Most extreme case of abolishing markets and money -- the Khmer Rouge experiment is historical evidence at its starkest."
+    },
+    {
+      "question": "What is the 'denationalization of money' concept proposed by Friedrich Hayek?",
+      "answer": "Hayek argued that competing private currencies would outperform government monopoly currencies -- sound money would win in the market and inflation would be disciplined",
+      "choices": [
+        "Hayek argued that competing private currencies would outperform government monopoly currencies -- sound money would win in the market and inflation would be disciplined",
+        "Hayek supported central banks but wanted them run by private banks",
+        "Hayek proposed replacing gold with a new international reserve currency",
+        "The concept refers to ending the gold standard and allowing floating exchange rates"
+      ],
+      "tier": 4,
+      "reason": "Hayek's currency competition proposal is important Austrian monetary theory and relates to modern cryptocurrency debates."
+    },
+    {
+      "question": "What does the 'debasement' of currency mean historically?",
+      "answer": "Governments reducing the precious metal content of coins while maintaining their face value -- an ancient form of inflation to fund spending",
+      "choices": [
+        "Governments reducing the precious metal content of coins while maintaining their face value -- an ancient form of inflation to fund spending",
+        "Making coins smaller so they fit in pockets more easily",
+        "Replacing gold coins with silver coins to standardize currency",
+        "The legal process of declaring old coins invalid and requiring new ones"
+      ],
+      "tier": 2,
+      "reason": "Historical context for fiat money and inflation as government revenue tool -- ancient precedent for modern money printing."
+    },
+    {
+      "question": "Argentina has experienced repeated hyperinflation crises (1989, 2002, 2023). What pattern do economists observe in the cause?",
+      "answer": "Government spending consistently exceeds revenue; deficits are financed by printing money; the resulting inflation destroys the currency and savings",
+      "choices": [
+        "Government spending consistently exceeds revenue; deficits are financed by printing money; the resulting inflation destroys the currency and savings",
+        "Argentina's crises are primarily caused by foreign exchange speculation",
+        "Each crisis has different causes with no common pattern",
+        "The crises result from trade deficits that deplete foreign currency reserves"
+      ],
+      "tier": 3,
+      "reason": "Argentina provides multiple data points for the same policy mistake -- powerful case study."
+    },
+    {
+      "question": "What is the 'interventionism' critique in Austrian economics (Mises)?",
+      "answer": "Each government intervention creates new distortions that generate calls for further intervention -- the logic of interventionism leads inevitably toward full socialism or chaos",
+      "choices": [
+        "Each government intervention creates new distortions that generate calls for further intervention -- the logic of interventionism leads inevitably toward full socialism or chaos",
+        "Government intervention is sometimes necessary and can be limited to specific sectors",
+        "Interventionism only fails in developing countries with weak institutions",
+        "The critique applies only to price controls, not to other forms of regulation"
+      ],
+      "tier": 4,
+      "reason": "Mises's interventionism argument -- why 'mixed economy' interventions tend to expand rather than stay limited."
+    },
+    {
+      "question": "What did Adam Smith argue about the division of labor in 'The Wealth of Nations'?",
+      "answer": "Specialization dramatically increases output per worker -- his pin factory example showed workers producing thousands of times more when each performs one task rather than all tasks",
+      "choices": [
+        "Specialization dramatically increases output per worker -- his pin factory example showed workers producing thousands of times more when each performs one task rather than all tasks",
+        "Division of labor exploits workers by reducing their skills and autonomy",
+        "Specialization only increases output in manufacturing, not services or agriculture",
+        "Smith argued that workers should rotate tasks to prevent boredom and errors"
+      ],
+      "tier": 2,
+      "reason": "Smith's pin factory is the most famous economic illustration -- teaching what is IN 'The Wealth of Nations' not just who wrote it."
+    },
+    {
+      "question": "What economic argument explains why the Soviet Union eventually collapsed despite apparent full employment?",
+      "answer": "Without price signals, resources were allocated by political priority rather than need; inefficiency compounded over decades until the system could no longer produce competitive goods",
+      "choices": [
+        "Without price signals, resources were allocated by political priority rather than need; inefficiency compounded over decades until the system could no longer produce competitive goods",
+        "The USSR collapsed purely due to military overspending, not economic failure",
+        "Socialism worked economically but failed politically -- it was not an economic collapse",
+        "The collapse was caused by falling oil prices, which was an external shock unrelated to the system"
+      ],
+      "tier": 4,
+      "reason": "Soviet collapse through the lens of the economic calculation problem and price signal theory."
+    },
+    {
+      "question": "What is 'regulatory capture'?",
+      "answer": "When government regulatory agencies come to serve the interests of the industries they regulate rather than the public interest",
+      "choices": [
+        "When government regulatory agencies come to serve the interests of the industries they regulate rather than the public interest",
+        "When businesses comply with all regulations to avoid penalties",
+        "When governments take ownership of regulated industries",
+        "When courts overturn regulations that harm competition"
+      ],
+      "tier": 3,
+      "reason": "Regulatory capture is a key public choice concept explaining why government intervention often makes things worse, not better."
+    },
+    {
+      "question": "Public choice theory (Buchanan/Tullock) applies economic analysis to government. What does it predict about politicians and bureaucrats?",
+      "answer": "Like all economic actors, politicians and bureaucrats act in their own self-interest -- they seek votes, power, and budgets rather than the public good",
+      "choices": [
+        "Like all economic actors, politicians and bureaucrats act in their own self-interest -- they seek votes, power, and budgets rather than the public good",
+        "Politicians in democracies reliably serve the public interest because voters hold them accountable",
+        "Bureaucrats are neutral technocrats who implement policy without self-interest",
+        "Government failure is rare; market failure is the primary source of economic problems"
+      ],
+      "tier": 3,
+      "reason": "Public choice theory is essential for understanding why government intervention often fails -- currently absent."
+    },
+    {
+      "question": "What is 'government failure' in economics?",
+      "answer": "When government intervention makes outcomes worse than the market would have produced -- due to incentive problems, lack of information, or special interest capture",
+      "choices": [
+        "When government intervention makes outcomes worse than the market would have produced -- due to incentive problems, lack of information, or special interest capture",
+        "Any instance of a government budget deficit",
+        "When a government program fails to meet its stated objectives",
+        "Government failure only occurs in corrupt developing countries"
+      ],
+      "tier": 3,
+      "reason": "Government failure as a concept parallel to market failure -- currently the set only mentions market failure without the symmetric concept."
+    },
+    {
+      "question": "What does empirical evidence show about the relationship between economic freedom (Heritage Index, Fraser Index) and prosperity?",
+      "answer": "Countries with greater economic freedom consistently have higher GDP per capita, longer life expectancy, and lower poverty rates",
+      "choices": [
+        "Countries with greater economic freedom consistently have higher GDP per capita, longer life expectancy, and lower poverty rates",
+        "Economic freedom is uncorrelated with prosperity; outcomes depend on culture",
+        "Economic freedom increases inequality and reduces welfare for the poor",
+        "The relationship is negative; planned economies outperform free markets in income equality"
+      ],
+      "tier": 3,
+      "reason": "Empirical evidence connecting economic freedom to prosperity -- factual and directly relevant."
+    },
+    {
+      "question": "What is the 'ratchet effect' in government spending?",
+      "answer": "Government spending rises during crises but rarely returns to pre-crisis levels -- each emergency creates a new baseline for future spending",
+      "choices": [
+        "Government spending rises during crises but rarely returns to pre-crisis levels -- each emergency creates a new baseline for future spending",
+        "Government spending naturally cycles up and down with the business cycle",
+        "The ratchet effect refers to automatic stabilizers that prevent spending from falling",
+        "Government spending always returns to its pre-crisis level within five years"
+      ],
+      "tier": 3,
+      "reason": "Ratchet effect explains the long-term growth of government -- important for understanding fiscal sustainability."
+    },
+    {
+      "question": "What is 'sound money' and why do Austrian economists consider it essential?",
+      "answer": "Money with stable purchasing power, ideally commodity-backed or supply-constrained -- without it, inflation quietly transfers wealth from savers to debtors and government",
+      "choices": [
+        "Money with stable purchasing power, ideally commodity-backed or supply-constrained -- without it, inflation quietly transfers wealth from savers to debtors and government",
+        "Any currency that is widely accepted and legally recognized",
+        "Sound money refers to digital currency because it cannot be counterfeited",
+        "Sound money is a monetary policy where central banks target 2% inflation"
+      ],
+      "tier": 2,
+      "reason": "Sound money definition -- core Austrian concept that should be explicitly in the question set."
+    },
+    {
+      "question": "What is the 'seen vs unseen' principle applied to minimum wage laws?",
+      "answer": "The seen effect is higher wages for some workers; the unseen effect is jobs that are never created and workers who are never hired because the cost rose above their productivity",
+      "choices": [
+        "The seen effect is higher wages for some workers; the unseen effect is jobs that are never created and workers who are never hired because the cost rose above their productivity",
+        "Minimum wages have only positive effects because they raise consumer spending",
+        "The unseen effect of minimum wage is that it encourages employers to train workers more",
+        "Bastiat's principle does not apply to labor markets, only to goods markets"
+      ],
+      "tier": 3,
+      "reason": "Bastiat applied to minimum wage -- tests understanding of both the concept and its practical application."
+    },
+    {
+      "question": "What does economic history show about the effectiveness of tariffs in protecting domestic industries long-term?",
+      "answer": "Protected industries rarely become competitive -- tariffs typically increase prices for consumers and lock resources in inefficient uses while preventing gains from comparative advantage",
+      "choices": [
+        "Protected industries rarely become competitive -- tariffs typically increase prices for consumers and lock resources in inefficient uses while preventing gains from comparative advantage",
+        "Tariffs reliably build competitive industries within 10 years in every documented case",
+        "Tariffs are effective for infant industries but harmful for mature ones",
+        "Historical evidence shows tariffs are economically neutral in the long run"
+      ],
+      "tier": 3,
+      "reason": "Historical evidence on tariff effectiveness -- grounds comparative advantage and free trade arguments in evidence."
+    },
+    {
+      "question": "What happened in Ireland during the Great Famine (1845-1852), when the British government maintained free trade policies and continued exporting food from Ireland?",
+      "answer": "Approximately 1 million died and 2 million emigrated while food was exported -- a case study in market outcomes under political constraints and absentee property rights",
+      "choices": [
+        "Approximately 1 million died and 2 million emigrated while food was exported -- a case study in market outcomes under political constraints and absentee property rights",
+        "Free trade policies relieved the famine by bringing in imported grain from Britain",
+        "The famine was entirely caused by the potato blight with no policy component",
+        "British intervention successfully prevented mass starvation through food distribution"
+      ],
+      "tier": 3,
+      "reason": "Irish Famine as a case study where property rights and political economy intersect -- nuanced historical example."
+    },
+    {
+      "question": "What is the core insight of 'public goods' theory that justifies government provision?",
+      "answer": "Non-excludable, non-rivalrous goods (like national defense) will be under-provided by markets because of the free-rider problem",
+      "choices": [
+        "Non-excludable, non-rivalrous goods (like national defense) will be under-provided by markets because of the free-rider problem",
+        "Public goods should be provided by government because they are too expensive for the private sector",
+        "Any good that benefits the public qualifies as a public good requiring government provision",
+        "Public goods are goods owned by the government and rented to citizens"
+      ],
+      "tier": 2,
+      "reason": "Clarifies when the public goods argument genuinely applies vs when it is misused to justify broader government provision."
+    },
+    {
+      "question": "Economists distinguish between the 'seen' cost of government programs (budget line items) and the 'unseen' cost. What is an example of the unseen cost?",
+      "answer": "The productive private activity that would have occurred if the tax revenue had remained with citizens instead of being directed by government",
+      "choices": [
+        "The productive private activity that would have occurred if the tax revenue had remained with citizens instead of being directed by government",
+        "Administrative overhead and government employee salaries",
+        "The interest paid on government bonds that fund the program",
+        "There are no unseen costs to government programs -- all costs are reported in budgets"
+      ],
+      "tier": 3,
+      "reason": "Bastiat's opportunity cost applied to government spending -- tests deeper understanding."
+    },
+    {
+      "question": "In 1971 President Nixon ended the Bretton Woods system by closing the gold window. What was the consequence for U.S. inflation?",
+      "answer": "Inflation surged through the 1970s, reaching double digits by 1979-1980, as dollar creation was no longer constrained by gold reserves",
+      "choices": [
+        "Inflation surged through the 1970s, reaching double digits by 1979-1980, as dollar creation was no longer constrained by gold reserves",
+        "Inflation fell because removing gold backing freed the Fed to control prices more precisely",
+        "Inflation remained stable because the Fed immediately adopted inflation targeting",
+        "There was no notable change in inflation after 1971"
+      ],
+      "tier": 3,
+      "reason": "Nixon shock and the 1970s inflation wave -- historical evidence that removing gold constraint enables inflation."
+    },
+    {
+      "question": "What is the economic argument FOR allowing prices to rise during a natural disaster (disaster pricing or 'price gouging')?",
+      "answer": "Higher prices signal where goods are most needed, attract supply from distant areas, and discourage hoarding -- restrictions create shortages and slower recovery",
+      "choices": [
+        "Higher prices signal where goods are most needed, attract supply from distant areas, and discourage hoarding -- restrictions create shortages and slower recovery",
+        "There is no valid economic argument -- price gouging is pure exploitation",
+        "Higher prices are justified only for luxury goods, not for essential supplies",
+        "The only benefit is increased profit for sellers with no social value"
+      ],
+      "tier": 3,
+      "reason": "Price gouging economics illustrates price signals in a context where the intuition is strongest against it -- important conceptual challenge."
+    },
+    {
+      "question": "What economic principle explains why communist countries historically developed high-quality weapons while struggling to produce consumer goods?",
+      "answer": "Central planning can concentrate resources on specific political priorities but lacks the price signals to efficiently allocate resources across the whole economy",
+      "choices": [
+        "Central planning can concentrate resources on specific political priorities but lacks the price signals to efficiently allocate resources across the whole economy",
+        "Military goods require less innovation than consumer goods, making them easier to produce centrally",
+        "Communist countries deliberately chose not to produce consumer goods",
+        "International sanctions prevented the import of consumer technology"
+      ],
+      "tier": 4,
+      "reason": "Explains the selective competence of command economies -- nuanced application of the knowledge problem."
+    },
+    {
+      "question": "What is the key difference between a market-determined interest rate and a centrally-set one?",
+      "answer": "A market rate reflects the actual supply of savings and time preferences of borrowers; a centrally-set rate is a political decision that distorts investment signals",
+      "choices": [
+        "A market rate reflects the actual supply of savings and time preferences of borrowers; a centrally-set rate is a political decision that distorts investment signals",
+        "Market rates are higher; central bank rates are lower",
+        "There is no meaningful difference in their economic effects",
+        "Market rates are more volatile; central rates are more stable, which is always better"
+      ],
+      "tier": 3,
+      "reason": "Contrasts Austrian natural rate concept with central bank rate-setting -- tests understanding of price signal distortion."
+    },
+    {
+      "question": "What is a 'negative real interest rate' and why is it problematic from a sound money perspective?",
+      "answer": "When inflation exceeds the nominal interest rate, saving is penalized -- holders of money and bonds see their real wealth decrease, encouraging speculation over prudent saving",
+      "choices": [
+        "When inflation exceeds the nominal interest rate, saving is penalized -- holders of money and bonds see their real wealth decrease, encouraging speculation over prudent saving",
+        "A negative real rate means the economy is growing, which is always a good sign",
+        "Negative real rates only affect foreign currency holders, not domestic savers",
+        "Negative real rates are impossible because nominal rates cannot fall below zero"
+      ],
+      "tier": 3,
+      "reason": "Negative real rates -- currently common in many countries -- represent the punishment of saving and encouragement of risk-taking."
+    },
+    {
+      "question": "What is 'inflation targeting' as practiced by most central banks today, and what is a key criticism?",
+      "answer": "Central banks target 2% annual inflation as an explicit goal -- critics argue this means deliberately eroding purchasing power by 2% per year, benefiting debtors at savers' expense",
+      "choices": [
+        "Central banks target 2% annual inflation as an explicit goal -- critics argue this means deliberately eroding purchasing power by 2% per year, benefiting debtors at savers' expense",
+        "Inflation targeting aims to keep inflation at zero to protect purchasing power",
+        "The policy targets a range of 0-5% and is universally supported by economists",
+        "Inflation targeting was proposed by Keynes and has no critics among economists"
+      ],
+      "tier": 3,
+      "reason": "Presents the mainstream view (inflation targeting) alongside the Austrian critique of why 2% inflation is itself a form of harm."
+    },
+    {
+      "question": "What is the connection between fiat money and the ability of governments to fight wars without directly taxing citizens?",
+      "answer": "Fiat money allows governments to print currency to fund military spending, inflating their way out of debt rather than seeking explicit voter approval through taxation",
+      "choices": [
+        "Fiat money allows governments to print currency to fund military spending, inflating their way out of debt rather than seeking explicit voter approval through taxation",
+        "Fiat money has no relationship to war finance; military spending is always funded by tax revenue",
+        "Commodity-backed money enables more war spending than fiat because gold holds its value",
+        "Fiat money prevents wars by making them too expensive to finance"
+      ],
+      "tier": 3,
+      "reason": "Connects fiat money to political economy -- shows why inflation is preferred by governments over honest taxation."
+    },
+    {
+      "question": "What did Hong Kong's laissez-faire economic policy under John Cowperthwaite demonstrate between 1950 and 1997?",
+      "answer": "With minimal government intervention, low taxes, and free trade, Hong Kong transformed from a poor entrepot into one of the world's wealthiest economies per capita",
+      "choices": [
+        "With minimal government intervention, low taxes, and free trade, Hong Kong transformed from a poor entrepot into one of the world's wealthiest economies per capita",
+        "Hong Kong's success was due to large government investments in infrastructure",
+        "Free trade policies failed; Hong Kong succeeded because of its geographic location only",
+        "Hong Kong's growth was average for the region -- Singapore grew just as fast with more intervention"
+      ],
+      "tier": 3,
+      "reason": "Hong Kong as a case study in laissez-faire success -- historical evidence for free market policies."
+    },
+    {
+      "question": "What is the 'knowledge problem' as applied to modern healthcare pricing set by government or insurers?",
+      "answer": "Without market prices, providers and patients lack information about real costs, leading to overuse of some services, underuse of others, and overall inefficiency",
+      "choices": [
+        "Without market prices, providers and patients lack information about real costs, leading to overuse of some services, underuse of others, and overall inefficiency",
+        "Healthcare is a special case where government pricing always outperforms markets",
+        "The knowledge problem only applies to manufacturing, not to services like healthcare",
+        "Insurance eliminates the need for price signals in healthcare completely"
+      ],
+      "tier": 4,
+      "reason": "Applies knowledge problem to contemporary healthcare debate -- shows the abstract principle has practical applications."
+    },
+    {
+      "question": "What did the repeal of the Corn Laws in Britain (1846) demonstrate?",
+      "answer": "Removing tariffs on grain imports lowered food prices for workers and increased overall prosperity -- demonstrating that protection benefits producers at consumers' expense",
+      "choices": [
+        "Removing tariffs on grain imports lowered food prices for workers and increased overall prosperity -- demonstrating that protection benefits producers at consumers' expense",
+        "Corn Law repeal destroyed British agriculture and caused unemployment",
+        "The repeal had no effect on food prices because domestic production adjusted immediately",
+        "Corn Laws were removed to help Britain's colonies, not for economic reasons"
+      ],
+      "tier": 3,
+      "reason": "Historical evidence that free trade reduces consumer prices -- the Corn Laws case is the canonical example."
+    },
+    {
+      "question": "What is the 'concentration of benefits and dispersion of costs' problem in public choice economics?",
+      "answer": "When a regulation benefits a small organized group greatly but harms many consumers a little each, the organized group lobbies effectively while harmed consumers stay rationally ignorant",
+      "choices": [
+        "When a regulation benefits a small organized group greatly but harms many consumers a little each, the organized group lobbies effectively while harmed consumers stay rationally ignorant",
+        "Government always spreads costs and benefits evenly across all citizens",
+        "The problem refers to income inequality growing over time in capitalist economies",
+        "Benefits concentrate in cities while costs fall on rural areas"
+      ],
+      "tier": 4,
+      "reason": "Explains why rent-seeking and bad regulation persist despite being net-negative for society -- public choice mechanism."
+    }
+  ]
+}

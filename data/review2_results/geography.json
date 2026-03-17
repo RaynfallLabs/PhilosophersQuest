@@ -1,0 +1,824 @@
+{
+  "remove": [
+    {"index": 369, "reason": "Duplicate answer: India appears twice in choices. Also the answer is now debatable (India surpassed China recently)."},
+    {"index": 585, "reason": "Capital of Indonesia = Nusantara is the newly designated but not yet fully operational capital. Jakarta was the capital for decades and this will confuse players. Either rewrite to ask about the old capital or the reason for the move."},
+    {"index": 1025, "reason": "Capital of Jamaica is low-value rote for a minor island nation. No conceptual payoff at T1."},
+    {"index": 1036, "reason": "Capital of Ecuador is marginal for T1; Ecuador is not a major node in Western or world history."},
+    {"index": 1047, "reason": "Capital of Bolivia (Sucre vs La Paz) is a trick question with very limited payoff; confusing even for educated adults."},
+    {"index": 1058, "reason": "Capital of Uruguay is low-value rote at T1. Uruguay plays no major role in topics a general player would care about."},
+    {"index": 1082, "reason": "Capital of North Korea is trivia with no conceptual payoff; purely rote."},
+    {"index": 1091, "reason": "Capital of Mongolia (Ulaanbaatar) is low-value rote at T1."},
+    {"index": 1224, "reason": "Capital of Senegal (Dakar) at T2 is marginal rote; no conceptual payoff beyond knowing it exists."},
+    {"index": 1234, "reason": "Capital of Cameroon (Yaounde) is pure rote with no conceptual payoff."},
+    {"index": 1280, "reason": "Capital of Mozambique (Maputo) is pure rote; minor nation with no conceptual payoff at T2."},
+    {"index": 1289, "reason": "Capital of Paraguay (Asuncion) is borderline; Paraguay is a landlocked minor nation with little conceptual geography payoff."},
+    {"index": 1300, "reason": "Capital of Haiti (Port-au-Prince) is marginal rote; low conceptual payoff."},
+    {"index": 1311, "reason": "Capital of Dominican Republic (Santo Domingo) is low-value rote at T2."},
+    {"index": 1809, "reason": "Capital of Papua New Guinea (Port Moresby) is pure rote with no meaningful conceptual payoff at T2."},
+    {"index": 1818, "reason": "Capital of South Sudan (Juba) is low-value rote; the nation is extremely obscure for general geography."},
+    {"index": 1884, "reason": "Capital of Cambodia (Phnom Penh) is borderline; rewrite preferred (see rewrite list) but if kept pure, low payoff."},
+    {"index": 1894, "reason": "Capital of Laos (Vientiane) is pure rote with no payoff."},
+    {"index": 1918, "reason": "Capital of Costa Rica (San Jose) is borderline rote at T2; low payoff."},
+    {"index": 1928, "reason": "Capital of Honduras (Tegucigalpa) is pure rote at T2."},
+    {"index": 1939, "reason": "Capital of El Salvador (San Salvador) is pure rote at T2."},
+    {"index": 1950, "reason": "Capital of Nicaragua (Managua) is pure rote at T2."},
+    {"index": 1971, "reason": "Capital of Guatemala (Guatemala City) is pure rote at T2."},
+    {"index": 2004, "reason": "Capital of Botswana (Gaborone) is pure rote; minor African nation with no conceptual payoff at T2."},
+    {"index": 2037, "reason": "Capital of Ivory Coast (Yamoussoukro) is a trick question (Abidjan is the actual seat of government) and pure rote."},
+    {"index": 3062, "reason": "Capital of Vanuatu (Port Vila) is pure rote; minor Pacific island with no conceptual payoff at T4."},
+    {"index": 3073, "reason": "Capital of Tonga (Nuku'alofa) is pure rote at T4; duplicates T5 question that asks the reverse."},
+    {"index": 3084, "reason": "Capital of Samoa (Apia) is pure rote at T4 with no conceptual payoff."},
+    {"index": 3095, "reason": "Capital of Solomon Islands (Honiara) is pure rote; very minor Pacific nation."},
+    {"index": 3238, "reason": "Exact duplicate of question at index 3226 (Russia shares borders with 14 countries). Remove this one."},
+    {"index": 3259, "reason": "Capital of Djibouti City is pure rote at T4; the strategic importance of Djibouti Strait is worth asking about but not this."},
+    {"index": 3281, "reason": "Capital of Niger (Niamey) is pure rote at T4; no conceptual payoff."},
+    {"index": 3302, "reason": "Capital of Burkina Faso (Ouagadougou) is the quintessential example of rote-capital memorization with no payoff."},
+    {"index": 3314, "reason": "Capital of Chad (N'Djamena) is pure rote at T4."},
+    {"index": 3325, "reason": "Capital of Central African Republic (Bangui) is pure rote at T4."},
+    {"index": 3335, "reason": "Capital of Gabon (Libreville) is pure rote at T4."},
+    {"index": 3347, "reason": "Capital of Republic of Congo (Brazzaville) is pure rote at T4."},
+    {"index": 3357, "reason": "Capital of Mauritius (Port Louis) is pure rote at T4; minor island nation."},
+    {"index": 3567, "reason": "Capital of Bahrain (Manama) is pure rote at T4."},
+    {"index": 3578, "reason": "Capital of Comoros (Moroni) is pure rote at T4; very obscure island nation."},
+    {"index": 3589, "reason": "Capital of Benin (Porto-Novo) is pure rote at T4."},
+    {"index": 3600, "reason": "Capital of Togo (Lome) is pure rote at T4."},
+    {"index": 3610, "reason": "Capital of Guinea (Conakry) is pure rote at T4."},
+    {"index": 3621, "reason": "Capital of Guinea-Bissau (Bissau) is pure rote at T4."},
+    {"index": 3643, "reason": "Capital of Liberia (Monrovia) -- Monrovia has historical value (named after Monroe) but the question is still pure rote."},
+    {"index": 3654, "reason": "Capital of Gambia (Banjul) is pure rote at T4."},
+    {"index": 3665, "reason": "Capital of Cape Verde (Praia) is pure rote at T4."},
+    {"index": 3677, "reason": "Capital of Equatorial Guinea is pure rote at T4; also the answer 'Ciudad de la Paz' is disputed/new."},
+    {"index": 3687, "reason": "Capital of Burundi (Gitega) is pure rote at T4; Bujumbura was the former capital making this a confusing trick question."},
+    {"index": 3698, "reason": "Capital of Lesotho (Maseru) -- Lesotho itself is more interesting as an enclave (covered in T4/T5), but this specific capital is rote."},
+    {"index": 3710, "reason": "Capital of Eswatini/Swaziland (Mbabane) is pure rote at T4."},
+    {"index": 3721, "reason": "Capital of Seychelles (Victoria) is pure rote at T4."},
+    {"index": 3732, "reason": "Capital of Mauritania (Nouakchott) is pure rote at T4."},
+    {"index": 3743, "reason": "Capital of Nauru (Yaren) is pure rote at T4; Nauru is one of the world's most obscure nations."},
+    {"index": 3754, "reason": "Capital of Tuvalu (Funafuti) is pure rote at T4; duplicates the T5 reverse-question format."},
+    {"index": 3765, "reason": "Capital of Kiribati (South Tarawa) is pure rote at T4."},
+    {"index": 3776, "reason": "Capital of Marshall Islands (Majuro) is pure rote at T4."},
+    {"index": 3786, "reason": "Capital of Micronesia (Palikir) is pure rote at T4."},
+    {"index": 3797, "reason": "Capital of Palau (Ngerulmud) is pure rote at T4."},
+    {"index": 3876, "reason": "Capital of Sao Tome and Principe is pure rote at T4; extremely obscure nation."},
+    {"index": 3453, "reason": "Capital of Eritrea (Asmara) is pure rote at T4; no conceptual payoff."},
+    {"index": 3464, "reason": "Capital of Kosovo (Pristina) is pure rote at T4; borderline given Kosovo's recent history, but still low payoff."},
+    {"index": 3852, "reason": "Capital of Malawi (Lilongwe) is pure rote at T4."},
+    {"index": 3862, "reason": "Capital of Madagascar (Antananarivo) is pure rote at T4; Madagascar the geography (largest island off Africa, unique biome) is interesting but the capital is not."},
+    {"index": 4062, "reason": "Capital of Fiji (Suva) at T4 can be removed; Fiji has no special conceptual payoff that a capital quiz unlocks."},
+    {"index": 5119, "reason": "Duplicate: Pamir and Tibetan Plateau both called 'Roof of the World.' The Tibetan Plateau question (T5 index 4470) is the more accurate and standard usage; remove the Pamir duplicate."},
+    {"index": 4447, "reason": "The Hindu Kush question at T5 index 4447 is a duplicate concept with the T5 question at index 5128 (Hindu Kush ranges from Afghanistan into Pakistan). Remove the earlier one (index 4447) since index 5128 is more precise."}
+  ],
+  "rewrite": [
+    {
+      "index": 585,
+      "field": "question",
+      "new_value": "Indonesia is building a new capital called Nusantara to replace Jakarta primarily because Jakarta is ___?",
+      "reason": "Transform a confusing rote-capital question into a meaningful question about why capitals move (Jakarta is sinking due to groundwater extraction and is flooding)"
+    },
+    {
+      "index": 585,
+      "field": "answer",
+      "new_value": "Sinking and flooding due to groundwater depletion",
+      "reason": "Make answer conceptually meaningful"
+    },
+    {
+      "index": 585,
+      "field": "choices",
+      "new_value": ["Too small for the population", "Sinking and flooding due to groundwater depletion", "Too far from the center of the country", "Damaged by a major earthquake"],
+      "reason": "Make choices conceptually meaningful"
+    },
+    {
+      "index": 369,
+      "field": "choices",
+      "new_value": ["China", "India", "United States", "Indonesia"],
+      "reason": "Fix duplicate 'India' in choices array"
+    },
+    {
+      "index": 369,
+      "field": "question",
+      "new_value": "The most populous country as of 2023 is ___?",
+      "reason": "Clarify timing since China held this title until recently; add date context"
+    },
+    {
+      "index": 1082,
+      "field": "question",
+      "new_value": "Why is Pyongyang significant as North Korea's capital?",
+      "reason": "Reframe to conceptual; keep if rewritten"
+    },
+    {
+      "index": 1082,
+      "field": "answer",
+      "new_value": "It was rebuilt entirely by Kim Il-sung after WWII as a showcase socialist city",
+      "reason": "Add historical/conceptual value"
+    },
+    {
+      "index": 1082,
+      "field": "choices",
+      "new_value": ["It is Korea's oldest continuously inhabited city", "It was rebuilt entirely by Kim Il-sung after WWII as a showcase socialist city", "It sits at the geographic center of the Korean peninsula", "It was the capital of ancient Joseon dynasty"],
+      "reason": "Make choices reflect real conceptual options"
+    },
+    {
+      "index": 1047,
+      "field": "question",
+      "new_value": "Bolivia is unusual among South American nations because it has two capitals. What are they?",
+      "reason": "Turn the trick into a conceptual question about Bolivia's unusual dual-capital arrangement"
+    },
+    {
+      "index": 1047,
+      "field": "answer",
+      "new_value": "Sucre (constitutional) and La Paz (seat of government)",
+      "reason": "The dual capital is genuinely interesting geography"
+    },
+    {
+      "index": 1047,
+      "field": "choices",
+      "new_value": ["Santa Cruz and Cochabamba", "Sucre (constitutional) and La Paz (seat of government)", "La Paz and Oruro", "Potosi and Sucre"],
+      "reason": "Make choices meaningful"
+    },
+    {
+      "index": 2103,
+      "field": "question",
+      "new_value": "Why is Austin the capital of Texas rather than Houston or Dallas?",
+      "reason": "The conceptual question is more interesting than rote capital recall"
+    },
+    {
+      "index": 2103,
+      "field": "answer",
+      "new_value": "It was established as the capital before Houston and Dallas grew to prominence",
+      "reason": "Historical geography payoff: capitals were often chosen before large cities existed"
+    },
+    {
+      "index": 2103,
+      "field": "choices",
+      "new_value": ["It is the geographic center of Texas", "It was established as the capital before Houston and Dallas grew to prominence", "It has the largest population in Texas", "It was chosen for its central location on the Gulf Coast"],
+      "reason": "Meaningful distractors"
+    },
+    {
+      "index": 1016,
+      "field": "question",
+      "new_value": "The Yangtze River is historically important to China primarily because it ___?",
+      "reason": "Reframe simple location question into conceptual geography"
+    },
+    {
+      "index": 1016,
+      "field": "answer",
+      "new_value": "Connects China's interior to the coast, enabling trade and rice agriculture",
+      "reason": "The Yangtze as economic and agricultural spine of China"
+    },
+    {
+      "index": 1016,
+      "field": "choices",
+      "new_value": ["Is the longest river in Asia", "Connects China's interior to the coast, enabling trade and rice agriculture", "Forms China's northern border with Russia", "Is the source of China's drinking water"],
+      "reason": "Conceptual distractors"
+    },
+    {
+      "index": 1334,
+      "field": "question",
+      "new_value": "The Mississippi River was economically vital to early American development because it ___?",
+      "reason": "Transform location fact into conceptual economic geography"
+    },
+    {
+      "index": 1334,
+      "field": "answer",
+      "new_value": "Provided a highway to the Gulf of Mexico, making New Orleans the export hub of the interior",
+      "reason": "The conceptual importance of the Mississippi system"
+    },
+    {
+      "index": 1334,
+      "field": "choices",
+      "new_value": ["Formed a natural border between the eastern US and western territories", "Provided a highway to the Gulf of Mexico, making New Orleans the export hub of the interior", "Supplied fresh water to the entire eastern seaboard", "Enabled direct Atlantic trade from the midwest"],
+      "reason": "Meaningful distractors about the Mississippi's role"
+    },
+    {
+      "index": 1610,
+      "field": "question",
+      "new_value": "Why was the Rhine River historically called the backbone of European trade?",
+      "reason": "Reframe simple location into economic geography question"
+    },
+    {
+      "index": 1610,
+      "field": "answer",
+      "new_value": "It connects Switzerland, Germany, and the Netherlands to the North Sea, linking Alpine trade to Atlantic ports",
+      "reason": "The Rhine's actual economic significance"
+    },
+    {
+      "index": 1610,
+      "field": "choices",
+      "new_value": ["It is the longest river in Western Europe", "It connects Switzerland, Germany, and the Netherlands to the North Sea, linking Alpine trade to Atlantic ports", "It forms the border between France and Germany for its entire length", "It flows through the most densely populated part of Europe"],
+      "reason": "Meaningful conceptual distractors"
+    },
+    {
+      "index": 2378,
+      "field": "question",
+      "new_value": "The Bosphorus Strait in Turkey is geopolitically vital because it ___?",
+      "reason": "Transform location fact into conceptual geopolitics"
+    },
+    {
+      "index": 2378,
+      "field": "answer",
+      "new_value": "Controls the only sea route between the Black Sea and the Mediterranean",
+      "reason": "The strategic importance of the Bosphorus"
+    },
+    {
+      "index": 2378,
+      "field": "choices",
+      "new_value": ["Separates Europe from Asia at Istanbul", "Controls the only sea route between the Black Sea and the Mediterranean", "Is the world's busiest shipping strait by volume", "Formed the eastern boundary of the Byzantine Empire"],
+      "reason": "Meaningful distractors about the Bosphorus's significance"
+    },
+    {
+      "index": 2500,
+      "field": "question",
+      "new_value": "The Suez Canal, opened in 1869, transformed world trade by ___?",
+      "reason": "Turn location fact into conceptual economic geography"
+    },
+    {
+      "index": 2500,
+      "field": "answer",
+      "new_value": "Eliminating the need to sail around Africa, cutting the Europe-Asia route by thousands of miles",
+      "reason": "The actual economic significance of the Suez Canal"
+    },
+    {
+      "index": 2500,
+      "field": "choices",
+      "new_value": ["Connecting the Nile River to the Mediterranean Sea", "Eliminating the need to sail around Africa, cutting the Europe-Asia route by thousands of miles", "Providing fresh water to the Sinai desert", "Establishing British control over the Arabian Peninsula"],
+      "reason": "Meaningful conceptual distractors"
+    },
+    {
+      "index": 1795,
+      "field": "question",
+      "new_value": "The Panama Canal, completed in 1914, was strategically important to the US primarily because it ___?",
+      "reason": "Reframe to conceptual rather than simple geography"
+    },
+    {
+      "index": 1795,
+      "field": "answer",
+      "new_value": "Allowed the US Navy to move fleets between Atlantic and Pacific without sailing around South America",
+      "reason": "The US strategic reason for building the canal"
+    },
+    {
+      "index": 1795,
+      "field": "choices",
+      "new_value": ["Connected the Amazon River to the Pacific Ocean", "Allowed the US Navy to move fleets between Atlantic and Pacific without sailing around South America", "Provided a land route through Central America for trade", "Reduced the cost of shipping coffee from Colombia"],
+      "reason": "Meaningful historical distractors"
+    },
+    {
+      "index": 3204,
+      "field": "question",
+      "new_value": "Why is the Strait of Malacca one of the world's most strategically important waterways?",
+      "reason": "Reframe to conceptual economic/strategic geography"
+    },
+    {
+      "index": 3204,
+      "field": "answer",
+      "new_value": "It is the main shipping lane between the Indian Ocean and Pacific, carrying a third of world trade",
+      "reason": "The Strait of Malacca's actual global trade significance"
+    },
+    {
+      "index": 3204,
+      "field": "choices",
+      "new_value": ["It is the deepest natural waterway in Southeast Asia", "It is the main shipping lane between the Indian Ocean and Pacific, carrying a third of world trade", "It provides the only route between the South China Sea and the Bay of Bengal", "It was the primary route of Chinese treasure fleets in the 15th century"],
+      "reason": "Meaningful conceptual distractors"
+    },
+    {
+      "index": 1905,
+      "field": "question",
+      "new_value": "The Ganges River is sacred in Hinduism partly because it ___?",
+      "reason": "Reframe location question into cultural/conceptual geography"
+    },
+    {
+      "index": 1905,
+      "field": "answer",
+      "new_value": "Flows from the Himalayas through the most densely populated agricultural plain in India",
+      "reason": "The Ganges as both sacred and agricultural/geographic foundation"
+    },
+    {
+      "index": 1905,
+      "field": "choices",
+      "new_value": ["Is the longest river in Asia", "Flows from the Himalayas through the most densely populated agricultural plain in India", "Empties into the Arabian Sea near Mumbai", "Provides hydroelectric power to northern India"],
+      "reason": "Conceptual distractors"
+    },
+    {
+      "index": 3633,
+      "field": "question",
+      "new_value": "Freetown, capital of Sierra Leone, was historically significant as ___?",
+      "reason": "The name 'Freetown' has a meaningful historical story worth asking about"
+    },
+    {
+      "index": 3633,
+      "field": "answer",
+      "new_value": "A settlement founded by freed slaves and abolitionists in 1792",
+      "reason": "Freetown's name and founding are historically meaningful"
+    },
+    {
+      "index": 3633,
+      "field": "choices",
+      "new_value": ["The main British trading port on the West African coast", "A settlement founded by freed slaves and abolitionists in 1792", "The site where the Berlin Conference divided Africa", "A Portuguese colony captured by the British in 1800"],
+      "reason": "Meaningful historical distractors"
+    },
+    {
+      "index": 3644,
+      "field": "question",
+      "new_value": "Monrovia, capital of Liberia, was named after US President James Monroe because ___?",
+      "reason": "Historical payoff for what was pure rote"
+    },
+    {
+      "index": 3644,
+      "field": "answer",
+      "new_value": "Liberia was founded as a colony for freed American slaves under Monroe's administration",
+      "reason": "The historical connection between Liberia, Monrovia, and US slavery policy"
+    },
+    {
+      "index": 3644,
+      "field": "choices",
+      "new_value": ["Monroe was the first US president to visit Africa", "Liberia was founded as a colony for freed American slaves under Monroe's administration", "Monroe signed the treaty granting Liberia independence", "Monroe funded the construction of the city's harbor"],
+      "reason": "Meaningful historical distractors"
+    },
+    {
+      "index": 4019,
+      "field": "question",
+      "new_value": "Kaliningrad is a Russian enclave on the Baltic Sea bordering Poland and Lithuania. Why is its location geopolitically sensitive?",
+      "reason": "Add conceptual depth to what is a good factual question"
+    },
+    {
+      "index": 4019,
+      "field": "answer",
+      "new_value": "It is cut off from the Russian mainland by NATO members, giving Russia a strategic Baltic military presence",
+      "reason": "The strategic significance of Kaliningrad"
+    },
+    {
+      "index": 4019,
+      "field": "choices",
+      "new_value": ["It contains Russia's largest naval shipyard", "It is cut off from the Russian mainland by NATO members, giving Russia a strategic Baltic military presence", "It was the site of the Potsdam Conference in 1945", "It controls access to the Baltic Sea for all Russian shipping"],
+      "reason": "Meaningful strategic distractors"
+    },
+    {
+      "index": 4096,
+      "field": "question",
+      "new_value": "The Himalayas were formed by the collision of the Indian and Eurasian tectonic plates. This collision is still ongoing, meaning ___?",
+      "reason": "Add conceptual depth beyond the basic tectonic fact"
+    },
+    {
+      "index": 4096,
+      "field": "answer",
+      "new_value": "The Himalayas are still rising in height by a few millimeters per year",
+      "reason": "The ongoing nature of Himalayan uplift is a meaningful extension of the tectonic concept"
+    },
+    {
+      "index": 4096,
+      "field": "choices",
+      "new_value": ["The Indian subcontinent will eventually separate from Asia", "The Himalayas are still rising in height by a few millimeters per year", "Earthquakes in the region will stop within a million years", "The Tibetan Plateau will collapse as the plates slow"],
+      "reason": "Conceptual distractors about plate tectonics"
+    },
+    {
+      "index": 3380,
+      "field": "question",
+      "new_value": "The Niger River is economically important to West Africa primarily because it ___?",
+      "reason": "Reframe location question into economic geography"
+    },
+    {
+      "index": 3380,
+      "field": "answer",
+      "new_value": "Provides water and an inland navigation route through the Sahel and into the Gulf of Guinea",
+      "reason": "The Niger's actual economic and geographic role"
+    },
+    {
+      "index": 3380,
+      "field": "choices",
+      "new_value": ["Is the longest river in Africa", "Provides water and an inland navigation route through the Sahel and into the Gulf of Guinea", "Forms the border between Nigeria and Niger", "Is the primary source of oil in West Africa"],
+      "reason": "Meaningful distractors"
+    },
+    {
+      "index": 4020,
+      "field": "question",
+      "new_value": "The Tigris and Euphrates rivers in Iraq are historically significant because ___?",
+      "reason": "Turn a location question into a civilization-origins question"
+    },
+    {
+      "index": 4020,
+      "field": "answer",
+      "new_value": "Their valley (Mesopotamia) is where the world's first urban civilizations arose around 3500 BCE",
+      "reason": "The rivers as cradle of civilization is the conceptual payoff"
+    },
+    {
+      "index": 4020,
+      "field": "choices",
+      "new_value": ["They form the borders of modern Iraq with Iran and Syria", "Their valley (Mesopotamia) is where the world's first urban civilizations arose around 3500 BCE", "They are the source of all fresh water in the Arabian Peninsula", "They were the main supply routes for the Ottoman Empire"],
+      "reason": "Meaningful historical distractors"
+    }
+  ],
+  "add": [
+    {
+      "question": "What geographic feature made ancient Athens and other Greek city-states develop as independent units rather than a single empire?",
+      "answer": "The rugged, mountainous terrain that isolated communities from each other",
+      "choices": ["The absence of navigable rivers", "The rugged, mountainous terrain that isolated communities from each other", "The small size of the Greek peninsula", "Frequent earthquakes that destroyed large settlements"],
+      "tier": 2,
+      "reason": "Western civilization geography: how Greek physical geography shaped political development"
+    },
+    {
+      "question": "Why did the Mediterranean Sea serve as the foundation of Western civilization rather than the Atlantic or Pacific?",
+      "answer": "Its calm waters, predictable winds, and lack of tides made navigation safe for early sailors, enabling trade between three continents",
+      "choices": ["It was the largest sea known to ancient peoples", "Its calm waters, predictable winds, and lack of tides made navigation safe for early sailors, enabling trade between three continents", "It contained the most fish and natural resources in the ancient world", "It was surrounded by flat coastal plains ideal for agriculture"],
+      "tier": 2,
+      "reason": "Core Western civilization geography: why the Mediterranean enabled ancient trade and cultural exchange"
+    },
+    {
+      "question": "What geographic advantage allowed Rome to dominate the Mediterranean world?",
+      "answer": "Its central position on the Italian peninsula gave it access to all parts of the Mediterranean while natural barriers protected it from invasion",
+      "choices": ["Rome sat at the mouth of the Tiber River where it meets the Mediterranean", "Its central position on the Italian peninsula gave it access to all parts of the Mediterranean while natural barriers protected it from invasion", "Rome controlled the narrowest crossing point of the Mediterranean Sea", "The Alps formed an impenetrable barrier on all sides"],
+      "tier": 2,
+      "reason": "Western civilization geography: how geography enabled Roman expansion"
+    },
+    {
+      "question": "The Silk Road was a network of trade routes connecting China to Europe. What geographic obstacle made the sea route around Africa preferable when Portugal discovered it in the 1490s?",
+      "answer": "The Silk Road required crossing deserts, mountains, and hostile territories controlled by middlemen who taxed the trade",
+      "choices": ["The Silk Road had been destroyed by the Mongol invasions", "The Silk Road required crossing deserts, mountains, and hostile territories controlled by middlemen who taxed the trade", "The Silk Road goods were of lower quality than goods available by sea", "The Ottoman Empire had physically blocked all land routes"],
+      "tier": 2,
+      "reason": "Economic geography: why geography drove the Age of Exploration"
+    },
+    {
+      "question": "Britain became the center of the Industrial Revolution partly because of its geography. Which geographic advantage was most important?",
+      "answer": "Abundant coal deposits near navigable rivers and ports, enabling cheap fuel and easy transport of goods",
+      "choices": ["Britain had the largest population in Europe at the time", "Abundant coal deposits near navigable rivers and ports, enabling cheap fuel and easy transport of goods", "Britain's mild climate was ideal for factory workers", "Britain controlled the most colonies providing raw materials"],
+      "tier": 2,
+      "reason": "Economic geography: how British physical geography enabled the Industrial Revolution"
+    },
+    {
+      "question": "Why did the Netherlands become a major trading empire in the 17th century despite being a small nation with few natural resources?",
+      "answer": "Its position at the mouths of major European rivers (Rhine, Meuse, Scheldt) made it the natural entrepot for continental trade",
+      "choices": ["It had the strongest navy in Europe at the time", "Its position at the mouths of major European rivers (Rhine, Meuse, Scheldt) made it the natural entrepot for continental trade", "It possessed the largest gold and silver reserves in Europe", "Its flat geography made it easy to build roads and canals"],
+      "tier": 3,
+      "reason": "Economic geography: how geography shaped Dutch commercial dominance"
+    },
+    {
+      "question": "The location of Constantinople (modern Istanbul) was chosen by the Roman Emperor Constantine because it ___?",
+      "answer": "Sat at the crossing point between Europe and Asia, controlling trade between the Black Sea and Mediterranean",
+      "choices": ["Was the birthplace of Constantine", "Sat at the crossing point between Europe and Asia, controlling trade between the Black Sea and Mediterranean", "Had natural harbor defenses on all sides", "Was the geographic center of the Roman Empire"],
+      "tier": 2,
+      "reason": "Western civilization geography: why geography made Constantinople the center of the Eastern Roman Empire"
+    },
+    {
+      "question": "Why did the Cape of Good Hope route around Africa, pioneered by Portugal, transform world trade patterns after 1498?",
+      "answer": "It allowed European ships to bypass Ottoman-controlled Middle Eastern trade routes and trade directly with Asia",
+      "choices": ["It was shorter than the overland Silk Road route", "It allowed European ships to bypass Ottoman-controlled Middle Eastern trade routes and trade directly with Asia", "It gave Portugal access to African gold mines previously unknown to Europeans", "It established the first permanent European colonies in Asia"],
+      "tier": 2,
+      "reason": "Economic geography: how the Cape route changed global trade"
+    },
+    {
+      "question": "David Ricardo's theory of comparative advantage in trade is fundamentally a geographic argument. It holds that nations should ___?",
+      "answer": "Specialize in producing what they can make most efficiently given their resources and geography, and trade for the rest",
+      "choices": ["Build economic independence by producing all necessary goods domestically", "Specialize in producing what they can make most efficiently given their resources and geography, and trade for the rest", "Control as many natural resources as possible to gain trade leverage", "Focus on manufacturing rather than agriculture to grow wealthy"],
+      "tier": 3,
+      "reason": "Economic geography: introducing comparative advantage as a geographic concept"
+    },
+    {
+      "question": "Why is free trade between nations generally beneficial according to economic geography?",
+      "answer": "It allows each nation to specialize in goods it can produce most efficiently, increasing total output for all trading partners",
+      "choices": ["It prevents any single nation from dominating world resources", "It allows each nation to specialize in goods it can produce most efficiently, increasing total output for all trading partners", "It ensures that poor countries can export more than rich countries", "It reduces the need for geographic exploration"],
+      "tier": 2,
+      "reason": "Economic geography: the geographic basis of free trade theory"
+    },
+    {
+      "question": "What made the Nile River valley uniquely suited for supporting one of the earliest and most stable civilizations?",
+      "answer": "Annual floods deposited rich silt, creating predictable fertile farmland in the desert; the river also provided a highway for transport and trade",
+      "choices": ["The Nile was the world's longest river, providing water across thousands of miles of desert", "Annual floods deposited rich silt, creating predictable fertile farmland in the desert; the river also provided a highway for transport and trade", "The Nile delta contained vast mineral wealth including gold and iron ore", "Desert barriers on all sides protected Egypt from invasion while the Nile provided water"],
+      "tier": 2,
+      "reason": "Western civilization geography: why the Nile enabled Egyptian civilization"
+    },
+    {
+      "question": "The Roman road network connected Britain to Mesopotamia at its height. What was the primary strategic purpose of this road system?",
+      "answer": "Rapid movement of legions to trouble spots and efficient collection of taxes and tribute from the provinces",
+      "choices": ["Facilitating trade between the wealthy eastern and western parts of the empire", "Rapid movement of legions to trouble spots and efficient collection of taxes and tribute from the provinces", "Connecting Rome to its grain supply in North Africa", "Enabling citizens to travel freely throughout the empire"],
+      "tier": 3,
+      "reason": "Western civilization geography: how infrastructure shaped Roman imperial control"
+    },
+    {
+      "question": "Why did the discovery of the Americas by Columbus in 1492 ultimately destroy the Portuguese advantage in Eastern trade?",
+      "answer": "Silver from the Americas flooded European economies, allowing Spain and others to buy Eastern goods directly rather than relying on Portuguese trade routes",
+      "choices": ["Spanish ships were faster than Portuguese caravels", "Silver from the Americas flooded European economies, allowing Spain and others to buy Eastern goods directly rather than relying on Portuguese trade routes", "Columbus discovered a shorter route to Asia than Vasco da Gama", "The Pope granted Spain control of all new lands discovered in the West"],
+      "tier": 3,
+      "reason": "Economic geography: how the Americas changed global trade dynamics"
+    },
+    {
+      "question": "The Hanseatic League (1200s-1600s) was a trading alliance of cities along the Baltic and North Sea coasts. What geographic feature united these cities?",
+      "answer": "Control of the North Sea and Baltic trade routes connecting Scandinavian fish and fur, Russian grain, and Flemish cloth",
+      "choices": ["They all lay within the borders of the Holy Roman Empire", "Control of the North Sea and Baltic trade routes connecting Scandinavian fish and fur, Russian grain, and Flemish cloth", "They shared access to the Rhine River as an internal highway", "They were all located at river mouths where goods could be transferred between ships and wagons"],
+      "tier": 3,
+      "reason": "Economic geography: how geography shaped medieval European trade networks"
+    },
+    {
+      "question": "Why did the Appalachian Mountains pose such a significant barrier to early American westward expansion?",
+      "answer": "They had few passes, creating a wall that kept early settlement in the coastal plain until the Cumberland Gap and river routes were discovered",
+      "choices": ["They were too high for horses to cross with wagons", "They had few passes, creating a wall that kept early settlement in the coastal plain until the Cumberland Gap and river routes were discovered", "Native American tribes used them as a natural defensive barrier against settlers", "The British government forbade settlement west of the Appalachians"],
+      "tier": 3,
+      "reason": "Western civilization geography: how Appalachian geography shaped American expansion"
+    },
+    {
+      "question": "Why did New Orleans become the most important port city in North America in the early 19th century?",
+      "answer": "It sat at the mouth of the Mississippi River system, giving it a monopoly on exports from the entire American interior",
+      "choices": ["It had the deepest natural harbor on the Gulf of Mexico", "It sat at the mouth of the Mississippi River system, giving it a monopoly on exports from the entire American interior", "It was the closest American port to European markets", "The Louisiana Purchase gave the US control of all Mississippi River trade"],
+      "tier": 3,
+      "reason": "Economic geography: how river geography shaped American economic development"
+    },
+    {
+      "question": "What geographic advantage did Britain possess that allowed it to maintain dominance of world trade even after losing the American colonies in 1783?",
+      "answer": "Its island position gave the Royal Navy the ability to blockade rivals while its ports could reach any ocean without passing through hostile territory",
+      "choices": ["Britain had more colonies than any other European power", "Its island position gave the Royal Navy the ability to blockade rivals while its ports could reach any ocean without passing through hostile territory", "British coal and iron resources were larger than those of any continental rival", "Britain controlled the strategic chokepoints of Gibraltar and the English Channel"],
+      "tier": 3,
+      "reason": "Western civilization geography: British maritime geography and trade dominance"
+    },
+    {
+      "question": "The location of Venice made it the dominant trading city of medieval Europe because it ___?",
+      "answer": "Sat in a lagoon providing natural defense while controlling the head of the Adriatic Sea, the gateway between Western Europe and Byzantine trade routes",
+      "choices": ["Had the largest population in medieval Europe", "Sat in a lagoon providing natural defense while controlling the head of the Adriatic Sea, the gateway between Western Europe and Byzantine trade routes", "Possessed the only deep-water port on the Italian peninsula", "Controlled access to Alpine passes connecting Italy to Northern Europe"],
+      "tier": 3,
+      "reason": "Western civilization geography: how Venice's geography created its trading empire"
+    },
+    {
+      "question": "Why did the discovery of gold and silver in the Americas in the 1500s ultimately weaken Spain rather than making it permanently dominant?",
+      "answer": "Massive bullion imports caused inflation (the Price Revolution) in Spain, making Spanish goods expensive and destroying domestic industry",
+      "choices": ["The silver was used to fund religious wars that exhausted Spain's treasury", "Massive bullion imports caused inflation (the Price Revolution) in Spain, making Spanish goods expensive and destroying domestic industry", "Other European nations seized Spanish silver convoys on the Atlantic", "The cost of administering the colonies exceeded the value of precious metals extracted"],
+      "tier": 4,
+      "reason": "Economic geography: the geographic consequences of American silver on European economies"
+    },
+    {
+      "question": "Which geographic feature of England meant that no English town was more than 70 miles from the sea or a navigable river, making the Industrial Revolution possible?",
+      "answer": "England's compact shape and highly indented coastline with navigable river systems penetrating deep inland",
+      "choices": ["England's flat topography allowed roads to be built cheaply across the whole country", "England's compact shape and highly indented coastline with navigable river systems penetrating deep inland", "England's position in the North Atlantic gave it access to American raw materials", "England had more natural harbors per mile of coastline than any other European nation"],
+      "tier": 4,
+      "reason": "Economic geography: the specific geographic conditions enabling British industrialization"
+    },
+    {
+      "question": "The term 'heartland theory,' formulated by Halford Mackinder in 1904, argued that whoever controlled the Eurasian heartland would dominate world power. What geographic area is the 'heartland'?",
+      "answer": "The interior of Eurasia, roughly modern Russia and Central Asia, which is inaccessible to sea power",
+      "choices": ["The fertile plains of China and India", "The interior of Eurasia, roughly modern Russia and Central Asia, which is inaccessible to sea power", "The area between the Tigris and Euphrates rivers", "The high plateau of Tibet and the Himalayas"],
+      "tier": 4,
+      "reason": "Economic/strategic geography: classical geopolitical theory linking geography to power"
+    },
+    {
+      "question": "What geographic factor explains why the Industrial Revolution began in the coal fields of northern England and the Ruhr Valley in Germany rather than in France or Spain?",
+      "answer": "Surface coal deposits accessible by water transport, combined with iron ore deposits nearby, enabled cheap steam power and metal production",
+      "choices": ["Northern England and Germany had larger populations to supply factory workers", "Surface coal deposits accessible by water transport, combined with iron ore deposits nearby, enabled cheap steam power and metal production", "The climate of northern Europe was better suited to factory work than southern Europe", "France and Spain lacked the Protestant work ethic that drove industrialization"],
+      "tier": 3,
+      "reason": "Economic geography: the geographic conditions that determined where industrialization occurred"
+    },
+    {
+      "question": "Why did the Atlantic slave trade route form a triangle between Europe, West Africa, and the Americas rather than more direct routes?",
+      "answer": "Prevailing winds and ocean currents made a triangular route (Europe to Africa to Americas to Europe) faster than direct routes against the wind",
+      "choices": ["Three separate trading companies held monopolies on each leg of the route", "Prevailing winds and ocean currents made a triangular route (Europe to Africa to Americas to Europe) faster than direct routes against the wind", "The triangular route allowed ships to take on fresh water at three separate continents", "European powers divided the Atlantic into zones to avoid naval conflict"],
+      "tier": 3,
+      "reason": "Economic geography: how wind and currents shaped trade routes"
+    },
+    {
+      "question": "The concept of 'natural borders' holds that rivers and mountains create defensible boundaries. Which European border is the classic example of a river as a natural boundary?",
+      "answer": "The Rhine River as a border between Germanic and Roman/French territory",
+      "choices": ["The Danube as the boundary of the Habsburg Empire", "The Rhine River as a border between Germanic and Roman/French territory", "The Vistula as the eastern boundary of Western civilization", "The Elbe as the boundary between Catholic and Protestant Germany"],
+      "tier": 3,
+      "reason": "Western civilization geography: how rivers shaped European borders"
+    },
+    {
+      "question": "Why did the Black Death (1347-1353) spread so rapidly across Europe from its entry point at Sicilian ports?",
+      "answer": "The dense Mediterranean trade network that made European commerce possible also created a fast-moving highway for the plague along ship and trade routes",
+      "choices": ["Ships carrying the plague were deliberately sent to enemy ports as biological warfare", "The dense Mediterranean trade network that made European commerce possible also created a fast-moving highway for the plague along ship and trade routes", "Rats carrying the plague could travel overland using the Roman road system", "The prevailing westerly winds carried plague-infected air masses from Asia to Europe"],
+      "tier": 3,
+      "reason": "Western civilization geography: how trade geography spread the Black Death"
+    },
+    {
+      "question": "The location of Gibraltar, controlled by Britain since 1704, gives Britain strategic control over ___?",
+      "answer": "The only sea entrance to the Mediterranean from the Atlantic Ocean",
+      "choices": ["The Atlantic trade routes between Europe and the Americas", "The only sea entrance to the Mediterranean from the Atlantic Ocean", "The Strait between Morocco and Spain used by African migration", "Access to the Canary Islands and Atlantic island chains"],
+      "tier": 2,
+      "reason": "Western civilization geography: strategic geography of Gibraltar"
+    },
+    {
+      "question": "Venice, Genoa, and Pisa competed fiercely for Mediterranean trade in the Middle Ages. What geographic advantage gave Venice the ultimate edge?",
+      "answer": "Venice's position at the head of the Adriatic gave it the shortest overland route to the Alpine passes connecting to Northern European markets",
+      "choices": ["Venice had more ships than Genoa and Pisa combined", "Venice's position at the head of the Adriatic gave it the shortest overland route to the Alpine passes connecting to Northern European markets", "Venice controlled the Bosphorus Strait and could tax all Black Sea trade", "Venice's lagoon made it impossible to besiege from land or sea"],
+      "tier": 4,
+      "reason": "Western civilization geography: competitive geography of Italian city-states"
+    },
+    {
+      "question": "Why are resource-rich countries in the tropics often poorer than resource-poor temperate countries? This phenomenon is sometimes called the ___?",
+      "answer": "Resource curse: nations dependent on commodity exports often develop corrupt institutions and fail to diversify",
+      "choices": ["Comparative disadvantage theory: tropical resources are less valuable than manufactured goods", "Resource curse: nations dependent on commodity exports often develop corrupt institutions and fail to diversify", "The geography of poverty: tropical diseases reduce productivity below temperate levels", "The colonial trap: Western countries extracted all value, leaving nothing for development"],
+      "tier": 4,
+      "reason": "Economic geography: the resource curse as a geographic-economic concept"
+    },
+    {
+      "question": "What geographic feature enabled the Dutch East India Company (VOC) to dominate Asian trade in the 17th century?",
+      "answer": "The discovery of the 'Roaring Forties' wind pattern that allowed fast passage from the Cape of Good Hope directly to Indonesia",
+      "choices": ["The Netherlands possessed the largest merchant fleet in Europe", "The discovery of the 'Roaring Forties' wind pattern that allowed fast passage from the Cape of Good Hope directly to Indonesia", "Dutch ships were lighter and faster than Portuguese or Spanish vessels", "The Netherlands controlled the Strait of Malacca through its colony in Batavia"],
+      "tier": 4,
+      "reason": "Economic geography: how wind patterns shaped Dutch trading empire"
+    },
+    {
+      "question": "The phrase 'whoever rules the sea rules trade; whoever rules trade rules the world's riches' was associated with which classical concept of maritime power?",
+      "answer": "Thalassocracy: rule through control of sea lanes rather than land territory",
+      "choices": ["Mercantilism: accumulate gold by exporting more than you import", "Thalassocracy: rule through control of sea lanes rather than land territory", "Geopolitics: control of heartland territory determines global power", "Imperialism: control of territory determines access to resources"],
+      "tier": 4,
+      "reason": "Economic geography: the concept of sea power as economic power"
+    },
+    {
+      "question": "Why did the construction of the transcontinental railroad (completed 1869) dramatically reduce the economic importance of San Francisco compared to what geography alone would predict?",
+      "answer": "It bypassed San Francisco's geographic advantage as a Pacific port by connecting the Midwest directly to the Atlantic coast by land",
+      "choices": ["The railroad was built through Los Angeles instead of San Francisco", "It bypassed San Francisco's geographic advantage as a Pacific port by connecting the Midwest directly to the Atlantic coast by land", "San Francisco's harbor was too shallow for the large ships used after the railroad era", "The railroad ended California's isolation, reducing the premium on its gold and crops"],
+      "tier": 4,
+      "reason": "Economic geography: how railroads changed the value of geographic position"
+    },
+    {
+      "question": "The Strait of Hormuz, through which about 20% of global oil passes, is strategically controlled by which two nations?",
+      "answer": "Iran and Oman",
+      "choices": ["Saudi Arabia and UAE", "Iran and Oman", "Qatar and Bahrain", "Iraq and Kuwait"],
+      "tier": 3,
+      "reason": "Economic geography: strategic oil chokepoint geography"
+    },
+    {
+      "question": "Why did ancient Phoenicia (modern Lebanon) develop as a major trading civilization despite its small size?",
+      "answer": "It had excellent natural harbors on the eastern Mediterranean coast and forests of cedar for shipbuilding, making it ideal for sea trade",
+      "choices": ["Phoenicia controlled the Nile delta and all Egyptian trade", "It had excellent natural harbors on the eastern Mediterranean coast and forests of cedar for shipbuilding, making it ideal for sea trade", "Phoenicia sat at the crossroads of land trade between Egypt and Mesopotamia", "Its mountainous interior forced Phoenicians to seek wealth through commerce rather than agriculture"],
+      "tier": 3,
+      "reason": "Western civilization geography: Phoenician geography as origin of Western alphabet and sea trade"
+    },
+    {
+      "question": "What geographic conditions made Britain the world's leading exporter of cotton textiles in the early Industrial Revolution, despite producing no cotton itself?",
+      "answer": "Britain imported raw cotton cheaply from colonies, used coal-powered mills in humid Lancashire weather ideal for spinning, and exported via its ports",
+      "choices": ["Britain had developed superior weaving technology that worked best in cold climates", "Britain imported raw cotton cheaply from colonies, used coal-powered mills in humid Lancashire weather ideal for spinning, and exported via its ports", "British workers were paid less than workers in other countries, making textiles cheaper", "Britain's wool industry had already built the infrastructure needed for textile manufacturing"],
+      "tier": 4,
+      "reason": "Economic geography: how geographic factors combined to enable British textile dominance"
+    },
+    {
+      "question": "The economic geography concept of 'agglomeration' refers to why industries cluster in cities. The main benefit is ___?",
+      "answer": "Firms near each other can share workers, suppliers, and knowledge, reducing costs for all participants",
+      "choices": ["Urban land is cheaper than rural land for large factories", "Firms near each other can share workers, suppliers, and knowledge, reducing costs for all participants", "Governments provide subsidies to businesses that locate in cities", "Cities provide access to the ports needed for international trade"],
+      "tier": 4,
+      "reason": "Economic geography: agglomeration as a geographic-economic concept"
+    },
+    {
+      "question": "Why did the fall of Constantinople to the Ottomans in 1453 have such a significant impact on European trade?",
+      "answer": "It cut off the traditional land route to Asia, making European powers desperate to find sea routes and directly spurring the Age of Exploration",
+      "choices": ["It destroyed the main center of Byzantine scholarship and art", "It cut off the traditional land route to Asia, making European powers desperate to find sea routes and directly spurring the Age of Exploration", "It gave the Ottomans control of all Mediterranean shipping for the next century", "It forced Christian merchants to abandon the spice trade entirely"],
+      "tier": 3,
+      "reason": "Western civilization geography: how Constantinople's fall shaped the Age of Exploration"
+    },
+    {
+      "question": "What geographic factor best explains why Sub-Saharan Africa was the last major region to be colonized and industrialized by Europeans?",
+      "answer": "Rivers with falls and cataracts near the coast blocked inland navigation, preventing European penetration; tropical diseases also decimated European explorers",
+      "choices": ["Sub-Saharan Africa had no valuable resources Europeans wanted before the 19th century", "Rivers with falls and cataracts near the coast blocked inland navigation, preventing European penetration; tropical diseases also decimated European explorers", "African military technology was sufficient to repel European invasion until the 19th century", "The Sahara Desert formed an impenetrable barrier between North and Sub-Saharan Africa"],
+      "tier": 3,
+      "reason": "Economic geography: why geography delayed African colonization"
+    },
+    {
+      "question": "The geographic concept of 'chokepoints' refers to narrow passages in trade routes. Which chokepoint most threatens global oil supply if blocked?",
+      "answer": "The Strait of Hormuz, which carries oil from Saudi Arabia, Iraq, Kuwait, and Iran to world markets",
+      "choices": ["The Strait of Malacca, through which all East Asian imports pass", "The Strait of Hormuz, which carries oil from Saudi Arabia, Iraq, Kuwait, and Iran to world markets", "The Suez Canal, which handles half of all Europe-Asia trade", "The Bosphorus Strait, which controls Russian energy exports to Europe"],
+      "tier": 3,
+      "reason": "Economic geography: strategic chokepoints and global energy security"
+    },
+    {
+      "question": "Which of these best explains why Switzerland, a landlocked country with no natural resources, became one of the world's wealthiest nations?",
+      "answer": "Its central Alpine position made it the crossroads of European trade and a neutral banking center, while mountain geography encouraged precision industries requiring skilled labor",
+      "choices": ["Switzerland received large development aid from neighboring Germany and France", "Its central Alpine position made it the crossroads of European trade and a neutral banking center, while mountain geography encouraged precision industries requiring skilled labor", "Swiss neutrality allowed it to trade with all sides during European wars without disruption", "Switzerland's small population meant per-capita wealth was high even with modest total GDP"],
+      "tier": 3,
+      "reason": "Economic geography: how Switzerland overcame geographic disadvantages through specialization"
+    },
+    {
+      "question": "The Amazon basin contains approximately 10% of all species on Earth. Why does this region have such extraordinary biodiversity?",
+      "answer": "The combination of year-round heat, abundant rainfall, and geographic isolation created stable conditions for millions of years of independent evolution",
+      "choices": ["The Amazon has unusually fertile soil that supports more plant life than any other region", "The combination of year-round heat, abundant rainfall, and geographic isolation created stable conditions for millions of years of independent evolution", "The Amazon contains the highest concentration of freshwater in the world, supporting aquatic species", "Rivers fragmenting the forest into islands allowed many species to evolve independently"],
+      "tier": 3,
+      "reason": "Physical geography: why tropical geography creates biodiversity"
+    },
+    {
+      "question": "The European Plain stretching from France to Russia enabled which recurring pattern in European history?",
+      "answer": "Invasions from the east: armies could advance across the flat terrain without geographic obstacles, from the Mongols to Napoleon to Hitler",
+      "choices": ["Trade networks that connected Atlantic and Baltic coasts without crossing mountains", "Invasions from the east: armies could advance across the flat terrain without geographic obstacles, from the Mongols to Napoleon to Hitler", "Agricultural abundance that fed Western Europe's industrial population", "Migration routes that spread Indo-European languages across the continent"],
+      "tier": 3,
+      "reason": "Western civilization geography: how the European Plain shaped military and political history"
+    },
+    {
+      "question": "The geographic term 'landlocked' describes a country with no sea access. Landlocked developing countries face a particular economic challenge because ___?",
+      "answer": "They must rely on neighboring countries' ports and infrastructure for trade, adding costs and political dependencies",
+      "choices": ["They cannot develop fishing industries that provide food security", "They must rely on neighboring countries' ports and infrastructure for trade, adding costs and political dependencies", "They are cut off from international investment because investors prefer coastal locations", "They cannot receive foreign aid by sea, limiting disaster relief"],
+      "tier": 2,
+      "reason": "Economic geography: the economic costs of being landlocked"
+    },
+    {
+      "question": "Why did Portugal establish its colonial empire by sailing around Africa to Asia rather than sailing west like Spain?",
+      "answer": "Portuguese sailors had been systematically exploring the African coast since the 1420s and had developed the caravel specifically for coastal navigation; the western route was believed shorter only after Columbus",
+      "choices": ["The Pope divided the world between Portugal (east) and Spain (west) before Columbus sailed", "Portuguese sailors had been systematically exploring the African coast since the 1420s and had developed the caravel specifically for coastal navigation; the western route was believed shorter only after Columbus", "Portugal lacked the financial backing for a transatlantic voyage that Spain provided to Columbus", "The Atlantic winds made westward sailing from Portugal impossible with the technology of the time"],
+      "tier": 3,
+      "reason": "Western civilization geography: Portuguese geographic strategy in the Age of Exploration"
+    },
+    {
+      "question": "What is the main reason the Sahara Desert expanded northward into what is now called the Sahel region during the 20th century?",
+      "answer": "Overgrazing and deforestation removed vegetation that held soil moisture, combined with reduced rainfall, causing desertification",
+      "choices": ["Global warming alone shifted rainfall patterns southward", "Overgrazing and deforestation removed vegetation that held soil moisture, combined with reduced rainfall, causing desertification", "The Nile River changed course, reducing water flow into the Sahel", "European colonial land clearing removed native trees that previously blocked desert expansion"],
+      "tier": 3,
+      "reason": "Physical geography: human-caused geographic change through desertification"
+    },
+    {
+      "question": "The term 'maritime climate' describes regions near large water bodies. What geographic effect causes cities like London and Seattle to be warmer in winter than inland cities at the same latitude?",
+      "answer": "Ocean water stores heat and releases it slowly, moderating temperature extremes in nearby coastal areas",
+      "choices": ["Cities generate heat from industry and buildings that prevents freezing", "Ocean water stores heat and releases it slowly, moderating temperature extremes in nearby coastal areas", "Prevailing westerly winds carry warm air from the tropics to western coasts", "Coastal cities receive more direct sunlight because sea air has less cloud cover"],
+      "tier": 2,
+      "reason": "Physical geography: how oceans moderate coastal climates"
+    },
+    {
+      "question": "Why does the Gulf Stream give Northwestern Europe a climate far milder than its latitude would suggest?",
+      "answer": "The Gulf Stream carries warm tropical water from the Gulf of Mexico across the North Atlantic, warming air masses that blow onshore over Western Europe",
+      "choices": ["Western European mountains trap warm air from the Mediterranean Sea", "The Gulf Stream carries warm tropical water from the Gulf of Mexico across the North Atlantic, warming air masses that blow onshore over Western Europe", "Western Europe lies in a low-pressure zone that draws warm air from the south", "The Atlantic Ocean releases stored solar heat more efficiently than the Pacific"],
+      "tier": 3,
+      "reason": "Physical geography: the Gulf Stream and European climate -- directly relevant to Western civilization geography"
+    },
+    {
+      "question": "What geographic factor most explains why ancient Mesopotamia (modern Iraq) struggled to maintain stable civilization compared to Egypt?",
+      "answer": "The Tigris and Euphrates flooded unpredictably and provided no natural desert barriers, leaving Mesopotamia vulnerable to invasion from multiple directions",
+      "choices": ["Mesopotamia had poorer soil than Egypt's Nile valley", "The Tigris and Euphrates flooded unpredictably and provided no natural desert barriers, leaving Mesopotamia vulnerable to invasion from multiple directions", "Mesopotamia lacked the stone needed to build permanent monuments and cities", "The Mesopotamian climate was more arid than Egypt, limiting agricultural output"],
+      "tier": 3,
+      "reason": "Western civilization geography: comparing Nile and Mesopotamian geography"
+    },
+    {
+      "question": "The term 'rimland theory,' proposed by Nicholas Spykman in 1944 as a response to Mackinder's heartland theory, held that global power was controlled by ___?",
+      "answer": "Coastal regions encircling Eurasia, because sea power could project force anywhere along the rim",
+      "choices": ["Island nations that could not be invaded by land armies", "Coastal regions encircling Eurasia, because sea power could project force anywhere along the rim", "Nations controlling the Silk Road's eastern terminus in China", "Countries with access to both the Atlantic and Pacific Oceans"],
+      "tier": 5,
+      "reason": "Strategic geography: rimland theory as counterpoint to heartland theory"
+    },
+    {
+      "question": "Why did the invention of refrigerated shipping in the 1880s transform the economic geography of South America?",
+      "answer": "It allowed Argentina and Uruguay to export beef and mutton to Europe, turning the Pampas grasslands into one of the world's most productive agricultural export regions",
+      "choices": ["It enabled tropical fruits like bananas to reach European markets for the first time", "It allowed Argentina and Uruguay to export beef and mutton to Europe, turning the Pampas grasslands into one of the world's most productive agricultural export regions", "It reduced the cost of transporting silver and gold from South American mines", "It allowed South American wines and crops to compete with European products"],
+      "tier": 4,
+      "reason": "Economic geography: how technology interacted with physical geography to reshape trade"
+    },
+    {
+      "question": "The term 'choke point geography' explains why small countries like Singapore and Panama punch above their economic weight. What is the common geographic feature?",
+      "answer": "They sit astride major shipping routes and can charge for transit, generating wealth disproportionate to their size or resources",
+      "choices": ["They have large populations relative to their land area, creating dense markets", "They sit astride major shipping routes and can charge for transit, generating wealth disproportionate to their size or resources", "They were colonized by Britain or the Netherlands, inheriting good institutions", "They lack resources and were forced to develop service economies"],
+      "tier": 3,
+      "reason": "Economic geography: chokepoint geography and economic development"
+    },
+    {
+      "question": "Why did the Erie Canal (completed 1825) make New York City the dominant commercial city in North America within a decade of its opening?",
+      "answer": "It linked the Great Lakes interior to the Hudson River and New York Harbor, giving interior producers the cheapest route to Atlantic markets",
+      "choices": ["It was the longest canal in the world, demonstrating American engineering superiority", "It linked the Great Lakes interior to the Hudson River and New York Harbor, giving interior producers the cheapest route to Atlantic markets", "It allowed New York merchants to bypass Boston and Philadelphia's established trading networks", "It connected the Mississippi River system to the Atlantic coast for the first time"],
+      "tier": 3,
+      "reason": "Economic geography: how canals transformed geographic advantage into economic dominance"
+    },
+    {
+      "question": "The geographic isolation of Japan from mainland Asia (separated by 120 miles of sea) had what primary historical consequence?",
+      "answer": "It allowed Japan to selectively absorb Chinese culture while remaining politically independent, and protected it from Mongol invasion",
+      "choices": ["It prevented Japan from developing sea trade because its people feared the open ocean", "It allowed Japan to selectively absorb Chinese culture while remaining politically independent, and protected it from Mongol invasion", "It made Japan dependent on fishing rather than agriculture as a food source", "It isolated Japan so completely that it developed a unique civilization with no Asian influences"],
+      "tier": 3,
+      "reason": "Geographic influence on civilization: Japan's island geography and historical development"
+    },
+    {
+      "question": "In economic geography, the 'gravity model of trade' predicts that trade between two countries is proportional to their economic size and inversely proportional to their distance. This model predicts that ___?",
+      "answer": "Neighboring countries will trade more with each other than distant countries of equal size",
+      "choices": ["Small countries will specialize in exports to large neighbors", "Neighboring countries will trade more with each other than distant countries of equal size", "Countries on the same latitude have more in common and trade more", "Trade increases as countries become richer regardless of distance"],
+      "tier": 4,
+      "reason": "Economic geography: the gravity model as a fundamental geographic-economic concept"
+    },
+    {
+      "question": "What geographic factor made Amsterdam the center of the Dutch Golden Age economy in the 17th century?",
+      "answer": "Its position on the IJ estuary connected to the North Sea, with the Rhine and Meuse delivering goods from deep in Europe's interior",
+      "choices": ["Amsterdam had the largest harbor in Europe at the time", "Its position on the IJ estuary connected to the North Sea, with the Rhine and Meuse delivering goods from deep in Europe's interior", "Amsterdam sat at the center of Dutch colonial empire connecting East Indies and Americas", "The Dutch government deliberately chose Amsterdam as a free trading port"],
+      "tier": 4,
+      "reason": "Economic geography: Amsterdam's geographic basis for commercial dominance"
+    },
+    {
+      "question": "The 'North-South divide' in global economics refers to the general pattern that wealthy nations are in the Northern Hemisphere and poor ones in the South. Which of these geographic explanations for this pattern is most widely accepted?",
+      "answer": "Temperate climates, abundant navigable rivers, and early access to domesticable animals and crops gave northern regions developmental advantages going back thousands of years",
+      "choices": ["Northern nations were able to colonize the south and extract its wealth", "Temperate climates, abundant navigable rivers, and early access to domesticable animals and crops gave northern regions developmental advantages going back thousands of years", "Northern nations had more coal and industrial resources than southern ones", "Trade winds and ocean currents naturally directed global commerce toward Northern Hemisphere ports"],
+      "tier": 4,
+      "reason": "Economic geography: geographic explanations for global inequality (Guns, Germs, and Steel framework)"
+    },
+    {
+      "question": "Alfred Thayer Mahan's 1890 book 'The Influence of Sea Power upon History' argued that national greatness depended on ___?",
+      "answer": "Control of the sea lanes of commerce, which required a strong navy, merchant fleet, and overseas bases",
+      "choices": ["Territorial size and population rather than naval power", "Control of the sea lanes of commerce, which required a strong navy, merchant fleet, and overseas bases", "Industrial production capacity as the basis for military and economic power", "Alliance networks that prevented any single nation from achieving dominance"],
+      "tier": 4,
+      "reason": "Strategic geography: sea power theory that influenced American and European naval strategy"
+    },
+    {
+      "question": "What physical geographic feature explains why Western Europe has proportionally more navigable rivers than Eastern Europe, contributing to its faster economic development?",
+      "answer": "Western European rivers flow toward the Atlantic from the Alps and central highlands, while Eastern European rivers flow toward inland seas or frozen Arctic waters",
+      "choices": ["Western Europe receives more rainfall than Eastern Europe due to Atlantic weather patterns", "Western European rivers flow toward the Atlantic from the Alps and central highlands, while Eastern European rivers flow toward inland seas or frozen Arctic waters", "Western European rivers were engineered by the Romans with canals and locks", "Eastern European rivers are slower and shallower due to flatter topography"],
+      "tier": 4,
+      "reason": "Western civilization geography: why Western European rivers enabled commerce better than Eastern European ones"
+    },
+    {
+      "question": "The geographic concept of 'corridor states' describes small nations positioned between great powers. Historically, which European nation best illustrates this concept?",
+      "answer": "Belgium, positioned between Germany, France, Britain, and the Netherlands, became a perpetual battlefield for great power conflicts",
+      "choices": ["Switzerland, which used its mountain geography to enforce neutrality", "Belgium, positioned between Germany, France, Britain, and the Netherlands, became a perpetual battlefield for great power conflicts", "Poland, which repeatedly ceased to exist as great powers partitioned it", "Austria, which formed the center of the Habsburg Empire connecting Eastern and Western Europe"],
+      "tier": 4,
+      "reason": "Western civilization geography: corridor state geography and European conflict"
+    },
+    {
+      "question": "What geographic principle explains why most of the world's great ancient civilizations (Egypt, Mesopotamia, Indus Valley, Yellow River) arose in river valleys?",
+      "answer": "Rivers provided irrigation for agriculture, transport for trade, and annual floods that renewed soil fertility, supporting dense populations",
+      "choices": ["River valleys were naturally protected from invasion by water on multiple sides", "Rivers provided irrigation for agriculture, transport for trade, and annual floods that renewed soil fertility, supporting dense populations", "Settlements near rivers had access to fish, reducing dependence on uncertain agriculture", "River valleys were the only locations with clay for pottery and writing tablets"],
+      "tier": 2,
+      "reason": "Western civilization geography: the geographic foundation of all ancient river civilizations"
+    }
+  ]
+}

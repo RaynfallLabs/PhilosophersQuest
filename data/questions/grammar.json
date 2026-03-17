@@ -1,17 +1,6 @@
 [
   {
     "tier": 1,
-    "question": "'Run' is a ___?",
-    "answer": "Verb",
-    "choices": [
-      "Noun",
-      "Verb",
-      "Adjective",
-      "Adverb"
-    ]
-  },
-  {
-    "tier": 1,
     "question": "A word that names a person, place, or thing is a ___?",
     "answer": "Noun",
     "choices": [
@@ -23,68 +12,13 @@
   },
   {
     "tier": 1,
-    "question": "'Quickly' is a ___?",
-    "answer": "Adverb",
-    "choices": [
-      "Adjective",
-      "Adverb",
-      "Verb",
-      "Noun"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "'Beautiful' is a ___?",
-    "answer": "Adjective",
-    "choices": [
-      "Adverb",
-      "Adjective",
-      "Noun",
-      "Verb"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "'She' is a ___?",
+    "question": "Which word below is a personal pronoun?",
     "answer": "Pronoun",
     "choices": [
-      "Noun",
-      "Pronoun",
-      "Conjunction",
-      "Preposition"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "'And' is a ___?",
-    "answer": "Conjunction",
-    "choices": [
-      "Preposition",
-      "Conjunction",
-      "Interjection",
-      "Pronoun"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "'On' is a ___?",
-    "answer": "Preposition",
-    "choices": [
-      "Conjunction",
-      "Preposition",
-      "Adverb",
-      "Adjective"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "'Wow' is a ___?",
-    "answer": "Interjection",
-    "choices": [
-      "Conjunction",
-      "Adverb",
-      "Interjection",
-      "Pronoun"
+      "She",
+      "Run",
+      "Tall",
+      "Quickly"
     ]
   },
   {
@@ -250,17 +184,6 @@
       "Predicate",
       "Clause",
       "Phrase"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "The plural of 'cat' is ___?",
-    "answer": "Cats",
-    "choices": [
-      "Cats",
-      "Cates",
-      "Cat's",
-      "Catis"
     ]
   },
   {
@@ -496,28 +419,6 @@
   },
   {
     "tier": 1,
-    "question": "'Or' is a ___?",
-    "answer": "Conjunction",
-    "choices": [
-      "Preposition",
-      "Conjunction",
-      "Adverb",
-      "Pronoun"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "'Beneath' is a ___?",
-    "answer": "Preposition",
-    "choices": [
-      "Conjunction",
-      "Preposition",
-      "Adjective",
-      "Adverb"
-    ]
-  },
-  {
-    "tier": 1,
     "question": "'He', 'she', and 'it' are examples of ___?",
     "answer": "Pronouns",
     "choices": [
@@ -573,17 +474,6 @@
   },
   {
     "tier": 1,
-    "question": "'Nor' is a ___?",
-    "answer": "Conjunction",
-    "choices": [
-      "Preposition",
-      "Conjunction",
-      "Interjection",
-      "Adverb"
-    ]
-  },
-  {
-    "tier": 1,
     "question": "Which punctuation is used in a contraction like \"don't\"?",
     "answer": "Apostrophe",
     "choices": [
@@ -602,61 +492,6 @@
       "Noun and adjective",
       "Verb and adverb",
       "Noun and preposition"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What part of speech is 'very' in 'very fast'?",
-    "answer": "Adverb",
-    "choices": [
-      "Adverb",
-      "Adjective",
-      "Verb",
-      "Pronoun"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What part of speech is 'blue' in 'a blue sky'?",
-    "answer": "Adjective",
-    "choices": [
-      "Adverb",
-      "Adjective",
-      "Noun",
-      "Verb"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What part of speech is 'ocean' in 'the ocean is deep'?",
-    "answer": "Noun",
-    "choices": [
-      "Noun",
-      "Verb",
-      "Adjective",
-      "Adverb"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What part of speech is 'swims' in 'she swims daily'?",
-    "answer": "Verb",
-    "choices": [
-      "Noun",
-      "Verb",
-      "Adjective",
-      "Adverb"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What part of speech is 'with' in 'a book with pictures'?",
-    "answer": "Preposition",
-    "choices": [
-      "Conjunction",
-      "Preposition",
-      "Adjective",
-      "Adverb"
     ]
   },
   {
@@ -705,28 +540,6 @@
   },
   {
     "tier": 1,
-    "question": "What part of speech is 'I' in 'I am here'?",
-    "answer": "Pronoun",
-    "choices": [
-      "Noun",
-      "Pronoun",
-      "Verb",
-      "Adjective"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What part of speech is 'slowly' in 'she walked slowly'?",
-    "answer": "Adverb",
-    "choices": [
-      "Adjective",
-      "Adverb",
-      "Verb",
-      "Noun"
-    ]
-  },
-  {
-    "tier": 1,
     "question": "A word used before a noun to limit or define it, like 'a' or 'the,' is a(n) ___?",
     "answer": "Article",
     "choices": [
@@ -771,28 +584,6 @@
   },
   {
     "tier": 1,
-    "question": "What part of speech is 'tall' in 'a tall tree'?",
-    "answer": "Adjective",
-    "choices": [
-      "Noun",
-      "Adjective",
-      "Adverb",
-      "Verb"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What part of speech is 'loudly' in 'she sings loudly'?",
-    "answer": "Adverb",
-    "choices": [
-      "Adjective",
-      "Adverb",
-      "Noun",
-      "Verb"
-    ]
-  },
-  {
-    "tier": 1,
     "question": "A noun names a person, place, thing, or ___?",
     "answer": "Idea",
     "choices": [
@@ -811,39 +602,6 @@
       "Conjunction",
       "Adjective",
       "Adverb"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What part of speech is 'above' in 'above the clouds'?",
-    "answer": "Preposition",
-    "choices": [
-      "Conjunction",
-      "Preposition",
-      "Adverb",
-      "Adjective"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What part of speech is 'Oops' in 'Oops! I dropped it.'?",
-    "answer": "Interjection",
-    "choices": [
-      "Conjunction",
-      "Interjection",
-      "Adverb",
-      "Adjective"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What part of speech is 'we' in 'We won the game'?",
-    "answer": "Pronoun",
-    "choices": [
-      "Noun",
-      "Pronoun",
-      "Verb",
-      "Adjective"
     ]
   },
   {
@@ -870,46 +628,13 @@
   },
   {
     "tier": 1,
-    "question": "Which part of speech does 'an adverb' modify?",
-    "answer": "Verb",
+    "question": "An adverb can modify a verb, an adjective, or ___?",
+    "answer": "Another adverb",
     "choices": [
-      "Noun",
-      "Verb",
-      "Preposition",
-      "Article"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What part of speech is 'for' in 'a gift for you'?",
-    "answer": "Preposition",
-    "choices": [
-      "Conjunction",
-      "Preposition",
-      "Adverb",
-      "Adjective"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "The plural of 'box' is ___?",
-    "answer": "Boxes",
-    "choices": [
-      "Boxs",
-      "Boxes",
-      "Box",
-      "Boxen"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "The plural of 'fish' (same species) is ___?",
-    "answer": "Fish",
-    "choices": [
-      "Fishs",
-      "Fishes",
-      "Fish",
-      "Fishies"
+      "A noun",
+      "Another adverb",
+      "A preposition",
+      "A conjunction"
     ]
   },
   {
@@ -921,17 +646,6 @@
       "Verb",
       "Adjective or adverb",
       "Preposition"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What part of speech is 'behind' in 'behind the door'?",
-    "answer": "Preposition",
-    "choices": [
-      "Conjunction",
-      "Preposition",
-      "Adverb",
-      "Adjective"
     ]
   },
   {
@@ -991,50 +705,6 @@
   },
   {
     "tier": 1,
-    "question": "What part of speech is 'yet' in 'tired yet happy'?",
-    "answer": "Conjunction",
-    "choices": [
-      "Preposition",
-      "Conjunction",
-      "Adverb",
-      "Interjection"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What part of speech is 'gracefully' in 'she danced gracefully'?",
-    "answer": "Adverb",
-    "choices": [
-      "Adjective",
-      "Adverb",
-      "Noun",
-      "Conjunction"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What part of speech is 'cold' in 'the cold wind'?",
-    "answer": "Adjective",
-    "choices": [
-      "Noun",
-      "Adjective",
-      "Adverb",
-      "Verb"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What part of speech is 'sings' in 'she sings'?",
-    "answer": "Verb",
-    "choices": [
-      "Noun",
-      "Adjective",
-      "Verb",
-      "Adverb"
-    ]
-  },
-  {
-    "tier": 1,
     "question": "The subject of a sentence performs the ___?",
     "answer": "Action",
     "choices": [
@@ -1057,35 +727,13 @@
   },
   {
     "tier": 2,
-    "question": "Past tense of 'go'?",
+    "question": "Which form of 'go' correctly completes: 'She ___ to the market yesterday'?",
     "answer": "Went",
     "choices": [
+      "Goes",
       "Goed",
       "Went",
-      "Gone",
-      "Goes"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Past tense of 'run'?",
-    "answer": "Ran",
-    "choices": [
-      "Runned",
-      "Ran",
-      "Run",
-      "Ranned"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Past tense of 'see'?",
-    "answer": "Saw",
-    "choices": [
-      "Seed",
-      "Saw",
-      "Seen",
-      "Sawed"
+      "Gone"
     ]
   },
   {
@@ -1118,7 +766,7 @@
       "Teached",
       "Taught",
       "Tought",
-      "Taught"
+      "Taugh"
     ]
   },
   {
@@ -1129,7 +777,7 @@
       "Buyed",
       "Bought",
       "Boughted",
-      "Buyed"
+      "Boughten"
     ]
   },
   {
@@ -1196,39 +844,6 @@
       "Began",
       "Begun",
       "Beguned"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Past tense of 'drive'?",
-    "answer": "Drove",
-    "choices": [
-      "Drived",
-      "Drove",
-      "Driven",
-      "Droven"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Past tense of 'fly'?",
-    "answer": "Flew",
-    "choices": [
-      "Flyed",
-      "Flew",
-      "Flown",
-      "Flewed"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Past tense of 'know'?",
-    "answer": "Knew",
-    "choices": [
-      "Knowed",
-      "Knew",
-      "Known",
-      "Knewn"
     ]
   },
   {
@@ -1486,35 +1101,13 @@
   },
   {
     "tier": 2,
-    "question": "Past tense of 'take'?",
-    "answer": "Took",
-    "choices": [
-      "Taked",
-      "Took",
-      "Taken",
-      "Tooken"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Past tense of 'find'?",
-    "answer": "Found",
-    "choices": [
-      "Finded",
-      "Found",
-      "Found",
-      "Finned"
-    ]
-  },
-  {
-    "tier": 2,
     "question": "Past tense of 'make'?",
     "answer": "Made",
     "choices": [
       "Maked",
       "Made",
       "Maden",
-      "Maked"
+      "Makened"
     ]
   },
   {
@@ -1526,39 +1119,6 @@
       "Came",
       "Come",
       "Camen"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Past tense of 'sit'?",
-    "answer": "Sat",
-    "choices": [
-      "Sitted",
-      "Sat",
-      "Sitten",
-      "Sate"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Past tense of 'stand'?",
-    "answer": "Stood",
-    "choices": [
-      "Standed",
-      "Stood",
-      "Standed",
-      "Stond"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Past tense of 'hold'?",
-    "answer": "Held",
-    "choices": [
-      "Holded",
-      "Held",
-      "Holden",
-      "Heled"
     ]
   },
   {
@@ -1581,17 +1141,6 @@
       "Threw",
       "Thrown",
       "Threwed"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "'He run fast' is wrong because of a ___ error?",
-    "answer": "Subject-verb agreement",
-    "choices": [
-      "Tense",
-      "Subject-verb agreement",
-      "Pronoun case",
-      "Modifier"
     ]
   },
   {
@@ -1629,17 +1178,6 @@
   },
   {
     "tier": 2,
-    "question": "A linking verb connects a subject to a ___?",
-    "answer": "Predicate adjective or noun",
-    "choices": [
-      "Direct object",
-      "Predicate adjective or noun",
-      "Indirect object",
-      "Adverb"
-    ]
-  },
-  {
-    "tier": 2,
     "question": "In 'She seems tired,' 'seems' is a ___ verb?",
     "answer": "Linking",
     "choices": [
@@ -1651,79 +1189,13 @@
   },
   {
     "tier": 2,
-    "question": "A verb that takes a direct object is ___?",
-    "answer": "Transitive",
-    "choices": [
-      "Intransitive",
-      "Transitive",
-      "Linking",
-      "Helping"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "A verb that does not take a direct object is ___?",
-    "answer": "Intransitive",
-    "choices": [
-      "Intransitive",
-      "Transitive",
-      "Linking",
-      "Helping"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Past tense of 'sing'?",
-    "answer": "Sang",
-    "choices": [
-      "Singed",
-      "Sang",
-      "Sung",
-      "Sanged"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Past tense of 'ring'?",
-    "answer": "Rang",
-    "choices": [
-      "Ringed",
-      "Rang",
-      "Rung",
-      "Ranged"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Past tense of 'wear'?",
-    "answer": "Wore",
-    "choices": [
-      "Weared",
-      "Wore",
-      "Worn",
-      "Worned"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Past tense of 'choose'?",
-    "answer": "Chose",
-    "choices": [
-      "Choosed",
-      "Chose",
-      "Chosen",
-      "Chosed"
-    ]
-  },
-  {
-    "tier": 2,
     "question": "Past tense of 'freeze'?",
     "answer": "Froze",
     "choices": [
       "Freezed",
       "Froze",
       "Frozen",
-      "Freezed"
+      "Frooze"
     ]
   },
   {
@@ -1734,7 +1206,7 @@
       "Stealed",
       "Stole",
       "Stolen",
-      "Stealed"
+      "Stolt"
     ]
   },
   {
@@ -1745,40 +1217,7 @@
       "Hided",
       "Hid",
       "Hidden",
-      "Hided"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Past tense of 'shake'?",
-    "answer": "Shook",
-    "choices": [
-      "Shaked",
-      "Shook",
-      "Shaken",
-      "Shoke"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Past tense of 'forget'?",
-    "answer": "Forgot",
-    "choices": [
-      "Forgeted",
-      "Forgot",
-      "Forgotten",
-      "Forgave"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Past tense of 'wake'?",
-    "answer": "Woke",
-    "choices": [
-      "Waked",
-      "Woke",
-      "Woken",
-      "Woded"
+      "Hidded"
     ]
   },
   {
@@ -1789,29 +1228,7 @@
       "Bited",
       "Bit",
       "Bitten",
-      "Bited"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Past tense of 'ride'?",
-    "answer": "Rode",
-    "choices": [
-      "Rided",
-      "Rode",
-      "Ridden",
-      "Roded"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Past tense of 'win'?",
-    "answer": "Won",
-    "choices": [
-      "Winned",
-      "Won",
-      "Wonne",
-      "Wun"
+      "Bitte"
     ]
   },
   {
@@ -1849,90 +1266,13 @@
   },
   {
     "tier": 2,
-    "question": "Past tense of 'tell'?",
-    "answer": "Told",
+    "question": "The word 'read' in 'She read the book yesterday' is pronounced to rhyme with ___?",
+    "answer": "Red (past tense pronunciation)",
     "choices": [
-      "Telled",
-      "Told",
-      "Tolden",
-      "Tolled"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Past tense of 'sell'?",
-    "answer": "Sold",
-    "choices": [
-      "Selled",
-      "Sold",
-      "Solden",
-      "Solt"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Past tense of 'feel'?",
-    "answer": "Felt",
-    "choices": [
-      "Feeled",
-      "Felt",
-      "Felten",
-      "Fealt"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Past tense of 'keep'?",
-    "answer": "Kept",
-    "choices": [
-      "Keeped",
-      "Kept",
-      "Keepen",
-      "Kep"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Past tense of 'sleep'?",
-    "answer": "Slept",
-    "choices": [
-      "Sleeped",
-      "Slept",
-      "Sleepen",
-      "Slep"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Past tense of 'leave'?",
-    "answer": "Left",
-    "choices": [
-      "Leaved",
-      "Left",
-      "Leften",
-      "Leaft"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Past tense of 'send'?",
-    "answer": "Sent",
-    "choices": [
-      "Sended",
-      "Sent",
-      "Senten",
-      "Sendt"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Past tense of 'spend'?",
-    "answer": "Spent",
-    "choices": [
-      "Spended",
-      "Spent",
-      "Spenten",
-      "Spende"
+      "Reed (same as present tense)",
+      "Red (past tense pronunciation)",
+      "Redd (an alternate spelling)",
+      "Reede (archaic form)"
     ]
   },
   {
@@ -3059,17 +2399,6 @@
   },
   {
     "tier": 4,
-    "question": "Breaking expected parallel structure deliberately is ___?",
-    "answer": "Anacoluthon",
-    "choices": [
-      "Anacoluthon",
-      "Anacoluthon",
-      "Asyndeton",
-      "Aposiopesis"
-    ]
-  },
-  {
-    "tier": 4,
     "question": "Mentioning something by saying you will not mention it is ___?",
     "answer": "Paralipsis",
     "choices": [
@@ -3169,28 +2498,6 @@
   },
   {
     "tier": 5,
-    "question": "A morpheme that cannot stand alone is a ___ morpheme?",
-    "answer": "Bound",
-    "choices": [
-      "Free",
-      "Bound",
-      "Derivational",
-      "Lexical"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "A morpheme that can stand alone as a word is a ___ morpheme?",
-    "answer": "Free",
-    "choices": [
-      "Free",
-      "Bound",
-      "Inflectional",
-      "Derivational"
-    ]
-  },
-  {
-    "tier": 5,
     "question": "A morpheme that changes the grammatical form of a word (e.g., '-ed', '-s') is ___?",
     "answer": "Inflectional",
     "choices": [
@@ -3209,17 +2516,6 @@
       "Derivational",
       "Lexical",
       "Bound"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "The smallest unit of meaning in a language is a ___?",
-    "answer": "Morpheme",
-    "choices": [
-      "Phoneme",
-      "Morpheme",
-      "Lexeme",
-      "Grapheme"
     ]
   },
   {
@@ -3246,17 +2542,6 @@
   },
   {
     "tier": 5,
-    "question": "The study of meaning in language is ___?",
-    "answer": "Semantics",
-    "choices": [
-      "Semantics",
-      "Pragmatics",
-      "Syntax",
-      "Morphology"
-    ]
-  },
-  {
-    "tier": 5,
     "question": "The study of how context shapes meaning is ___?",
     "answer": "Pragmatics",
     "choices": [
@@ -3270,28 +2555,6 @@
     "tier": 5,
     "question": "The study of sentence structure is ___?",
     "answer": "Syntax",
-    "choices": [
-      "Morphology",
-      "Phonology",
-      "Syntax",
-      "Pragmatics"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "The study of word formation and structure is ___?",
-    "answer": "Morphology",
-    "choices": [
-      "Morphology",
-      "Phonology",
-      "Syntax",
-      "Semantics"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "The study of sound systems in language is ___?",
-    "answer": "Phonology",
     "choices": [
       "Morphology",
       "Phonology",
@@ -3334,13 +2597,13 @@
   },
   {
     "tier": 5,
-    "question": "The hypothesis that language shapes thought is the ___?",
-    "answer": "Sapir-Whorf hypothesis",
+    "question": "The Sapir-Whorf hypothesis holds that the language you speak ___ the way you think?",
+    "answer": "Influences or determines",
     "choices": [
-      "Sapir-Whorf hypothesis",
-      "Universal Grammar",
-      "Chomsky hypothesis",
-      "Linguistic relativity only"
+      "Has no effect on",
+      "Influences or determines",
+      "Perfectly mirrors",
+      "Is completely separate from"
     ]
   },
   {
@@ -3367,17 +2630,6 @@
   },
   {
     "tier": 5,
-    "question": "Switching between languages or dialects in conversation is ___?",
-    "answer": "Code-switching",
-    "choices": [
-      "Code-switching",
-      "Diglossia",
-      "Register shift",
-      "Bilingualism"
-    ]
-  },
-  {
-    "tier": 5,
     "question": "The variety of language used in a specific social situation is a ___?",
     "answer": "Register",
     "choices": [
@@ -3396,17 +2648,6 @@
       "Register",
       "Idiolect",
       "Creole"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "A person's individual unique language variety is their ___?",
-    "answer": "Idiolect",
-    "choices": [
-      "Dialect",
-      "Register",
-      "Idiolect",
-      "Sociolect"
     ]
   },
   {
@@ -3466,13 +2707,13 @@
   },
   {
     "tier": 5,
-    "question": "The principle that linguistic signs are arbitrary (no natural connection between sound and meaning) was proposed by ___?",
-    "answer": "Saussure",
+    "question": "Saussure argued that the connection between a word's sound and its meaning is ___?",
+    "answer": "Arbitrary (no natural link)",
     "choices": [
-      "Chomsky",
-      "Saussure",
-      "Bloomfield",
-      "Jakobson"
+      "Natural and motivated",
+      "Arbitrary (no natural link)",
+      "Based on etymology always",
+      "Determined by phonetics"
     ]
   },
   {
@@ -3532,7 +2773,7 @@
   },
   {
     "tier": 5,
-    "question": "The number of inflectional morphemes in English?",
+    "question": "How many inflectional morphemes does English have (e.g., -s plural, -s possessive, -ed past, -ing, -en, -er, -est, -s third person)?",
     "answer": "Eight",
     "choices": [
       "Six",
@@ -3609,17 +2850,6 @@
   },
   {
     "tier": 5,
-    "question": "Speech act theory was pioneered by ___?",
-    "answer": "Austin",
-    "choices": [
-      "Austin",
-      "Grice",
-      "Searle",
-      "Saussure"
-    ]
-  },
-  {
-    "tier": 5,
     "question": "Grice's cooperative principle includes four maxims: quantity, quality, relation, and ___?",
     "answer": "Manner",
     "choices": [
@@ -3631,39 +2861,6 @@
   },
   {
     "tier": 5,
-    "question": "An indirect speech act in which something is requested without a direct command is a ___?",
-    "answer": "Indirect speech act",
-    "choices": [
-      "Direct speech act",
-      "Indirect speech act",
-      "Illocutionary act",
-      "Performative"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "The study of language acquisition in children is part of ___?",
-    "answer": "Developmental linguistics",
-    "choices": [
-      "Developmental linguistics",
-      "Applied linguistics",
-      "Cognitive linguistics",
-      "Neurolinguistics"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "Chomsky's 'poverty of the stimulus' argument supports ___?",
-    "answer": "Universal Grammar",
-    "choices": [
-      "Behaviourism",
-      "Universal Grammar",
-      "Sapir-Whorf hypothesis",
-      "Cognitive linguistics"
-    ]
-  },
-  {
-    "tier": 5,
     "question": "The claim that all human languages share structural universals is ___?",
     "answer": "Linguistic universals",
     "choices": [
@@ -3671,17 +2868,6 @@
       "Linguistic universals",
       "Linguistic relativity",
       "Universal phonetics"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "The principle that words in different languages can have systematically different structures is ___?",
-    "answer": "Typological variation",
-    "choices": [
-      "Sapir-Whorf hypothesis",
-      "Typological variation",
-      "Universal Grammar",
-      "Structural isomorphism"
     ]
   },
   {
@@ -3768,7 +2954,7 @@
       "Knifes",
       "Knives",
       "Knieves",
-      "Knifes"
+      "Knivs"
     ],
     "answer": "Knives"
   },
@@ -4940,28 +4126,6 @@
   },
   {
     "tier": 5,
-    "question": "The grammatical term for the base form of a verb is ___?",
-    "choices": [
-      "Gerund",
-      "Participle",
-      "Infinitive",
-      "Supine"
-    ],
-    "answer": "Infinitive"
-  },
-  {
-    "tier": 5,
-    "question": "A verb form used as a noun is a ___?",
-    "choices": [
-      "Participle",
-      "Gerund",
-      "Infinitive",
-      "Verbal adjective"
-    ],
-    "answer": "Gerund"
-  },
-  {
-    "tier": 5,
     "question": "The Latin term 'ad verbum' means ___?",
     "choices": [
       "To the noun",
@@ -5347,14 +4511,14 @@
   },
   {
     "tier": 5,
-    "question": "Government and Binding theory was developed by ___?",
+    "question": "Chomsky's Government and Binding theory proposes that syntax is governed by universal ___ that vary by language?",
     "choices": [
-      "Ferdinand de Saussure",
-      "Noam Chomsky",
-      "Leonard Bloomfield",
-      "Edward Sapir"
+      "Vocabulary lists",
+      "Principles and parameters",
+      "Phonological rules only",
+      "Pragmatic conventions"
     ],
-    "answer": "Noam Chomsky"
+    "answer": "Principles and parameters"
   },
   {
     "tier": 5,
@@ -5476,5 +4640,709 @@
       "Place name only"
     ],
     "answer": "Person's name"
+  },
+  {
+    "question": "The expression 'beating around the bush' is an example of ___?",
+    "answer": "Idiom",
+    "choices": [
+      "Metaphor",
+      "Proverb",
+      "Idiom",
+      "Euphemism"
+    ],
+    "tier": 1
+  },
+  {
+    "question": "A proverb is a short traditional saying that ___?",
+    "answer": "Expresses a general truth or piece of wisdom",
+    "choices": [
+      "Names a specific person",
+      "Expresses a general truth or piece of wisdom",
+      "Describes a grammar rule",
+      "Tells a complete story"
+    ],
+    "tier": 1
+  },
+  {
+    "question": "The suffix '-ful' (as in 'hopeful,' 'careful') means ___?",
+    "answer": "Full of or characterized by",
+    "choices": [
+      "Without",
+      "Full of or characterized by",
+      "Capable of being",
+      "Relating to"
+    ],
+    "tier": 1
+  },
+  {
+    "question": "The suffix '-less' (as in 'hopeless,' 'careless') means ___?",
+    "answer": "Without",
+    "choices": [
+      "Full of",
+      "Without",
+      "Capable of",
+      "Resembling"
+    ],
+    "tier": 1
+  },
+  {
+    "question": "Which word choice is correct? 'The company will ___ its policy next month.'",
+    "answer": "Revise",
+    "choices": [
+      "Revise",
+      "Revision",
+      "Revisory",
+      "Revised"
+    ],
+    "tier": 1
+  },
+  {
+    "question": "Which sentence corrects a comma splice?",
+    "answer": "She ran fast; she won the race.",
+    "choices": [
+      "She ran fast, she won the race.",
+      "She ran fast; she won the race.",
+      "She ran fast she won the race.",
+      "She ran fast, and, she won."
+    ],
+    "tier": 2
+  },
+  {
+    "question": "A thesis statement in an essay should express ___?",
+    "answer": "The main argument in a specific, debatable statement",
+    "choices": [
+      "A broad topic area only",
+      "The main argument in a specific, debatable statement",
+      "A list of all points to be discussed",
+      "A question to be answered"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Topic sentences in body paragraphs serve to ___?",
+    "answer": "State the main point of the paragraph and link it to the thesis",
+    "choices": [
+      "Introduce a new essay",
+      "State the main point of the paragraph and link it to the thesis",
+      "Provide evidence only",
+      "Summarize the previous paragraph"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "A transition word like 'however' signals a ___?",
+    "answer": "Contrast or contradiction",
+    "choices": [
+      "Addition of a similar point",
+      "Contrast or contradiction",
+      "Cause-and-effect relationship",
+      "Time sequence"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "A transition word like 'therefore' signals ___?",
+    "answer": "A conclusion that follows from the previous statement",
+    "choices": [
+      "A new example",
+      "A contradiction",
+      "A conclusion that follows from the previous statement",
+      "A change of topic"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Which sentence uses the subjunctive mood correctly?",
+    "answer": "I wish I were taller.",
+    "choices": [
+      "I wish I was taller.",
+      "I wish I am taller.",
+      "I wish I will be taller.",
+      "I wish I were taller."
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Which sentence demonstrates correct pronoun-antecedent agreement?",
+    "answer": "Each student must submit their assignment.",
+    "choices": [
+      "Each student must submit his assignment.",
+      "Each student must submit their assignment.",
+      "Each student must submit its assignment.",
+      "Each student must submit our assignment."
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Which sentence uses 'fewer' correctly?",
+    "answer": "There are fewer students in this class than last year.",
+    "choices": [
+      "There is less students in this class.",
+      "There are fewer students in this class than last year.",
+      "There are less students in this class than last year.",
+      "There is fewer students in this class."
+    ],
+    "tier": 2
+  },
+  {
+    "question": "The phrase 'between you and I' is grammatically incorrect because 'I' should be ___?",
+    "answer": "Me (objective case after a preposition)",
+    "choices": [
+      "Myself (reflexive for emphasis)",
+      "Me (objective case after a preposition)",
+      "My (possessive form)",
+      "Mine (standalone possessive)"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "The denotation of a word is its ___?",
+    "answer": "Literal dictionary definition",
+    "choices": [
+      "Emotional associations",
+      "Literal dictionary definition",
+      "Grammatical function",
+      "Etymological origin"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "When a politician uses 'passed away' instead of 'died,' this is an example of ___?",
+    "answer": "Euphemism",
+    "choices": [
+      "Hyperbole",
+      "Euphemism",
+      "Litotes",
+      "Irony"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Which of the following best describes the connotation of 'stench' compared to 'smell'?",
+    "answer": "Stench has a strongly negative connotation; smell is neutral",
+    "choices": [
+      "Both have identical connotations",
+      "Stench has a strongly negative connotation; smell is neutral",
+      "Smell has a more negative connotation than stench",
+      "Stench is formal; smell is informal"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Which correctly completes: 'The new law will ___ your ability to appeal.'",
+    "answer": "Affect",
+    "choices": [
+      "Effect",
+      "Affect",
+      "Affective",
+      "Effecting"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "The prefix 'mis-' (as in 'misplace,' 'mistake') means ___?",
+    "answer": "Wrongly or badly",
+    "choices": [
+      "Before",
+      "Wrongly or badly",
+      "Again",
+      "Not"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Past tense of 'hang' when referring to suspending an object?",
+    "answer": "Hung",
+    "choices": [
+      "Hung",
+      "Hanged",
+      "Hangs",
+      "Hange"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Past tense of 'hang' when referring to an execution?",
+    "answer": "Hanged",
+    "choices": [
+      "Hung",
+      "Hanged",
+      "Hangs",
+      "Hange"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "In 'She has been waiting for an hour,' the verb phrase is in which tense?",
+    "answer": "Present perfect progressive",
+    "choices": [
+      "Simple present",
+      "Present perfect",
+      "Present perfect progressive",
+      "Past progressive"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Which is NOT one of the three modes of classical persuasion (the rhetorical triangle)?",
+    "answer": "Kairos (timing is a context, not one of the three appeal modes)",
+    "choices": [
+      "Ethos (credibility)",
+      "Pathos (emotion)",
+      "Logos (logic)",
+      "Kairos (timing is a context, not one of the three appeal modes)"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Ethos, as a rhetorical mode, persuades by appealing to the speaker's ___?",
+    "answer": "Credibility and character",
+    "choices": [
+      "Credibility and character",
+      "Logic and evidence",
+      "Audience's emotions",
+      "Cultural traditions"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Pathos persuades by appealing to the audience's ___?",
+    "answer": "Emotions and sympathies",
+    "choices": [
+      "Credibility and trust",
+      "Emotions and sympathies",
+      "Logic and reason",
+      "Cultural authority"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Logos persuades by appealing to ___?",
+    "answer": "Logic, evidence, and reason",
+    "choices": [
+      "Logic, evidence, and reason",
+      "The speaker's reputation",
+      "Emotional impact",
+      "Religious authority"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "A straw man fallacy means the speaker ___?",
+    "answer": "Misrepresents the opponent's position to make it easier to attack",
+    "choices": [
+      "Provides too much evidence",
+      "Misrepresents the opponent's position to make it easier to attack",
+      "Uses too many emotional appeals",
+      "Repeats the same point too often"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "An ad hominem argument attacks the ___?",
+    "answer": "Person making the argument rather than the argument itself",
+    "choices": [
+      "Evidence presented",
+      "Person making the argument rather than the argument itself",
+      "Conclusion of the argument",
+      "Structure of the argument"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "A false dichotomy presents a situation as having only ___?",
+    "answer": "Two options when more exist",
+    "choices": [
+      "No options at all",
+      "Two options when more exist",
+      "Too many options to evaluate",
+      "Options that are all correct"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "A red herring in an argument is ___?",
+    "answer": "An irrelevant point introduced to distract from the main issue",
+    "choices": [
+      "A strong counterargument",
+      "An irrelevant point introduced to distract from the main issue",
+      "A repeated claim for emphasis",
+      "An appeal to emotion"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "The Greek prefix 'poly-' (as in 'polysyndeton') means ___?",
+    "answer": "Many",
+    "choices": [
+      "Single",
+      "Two",
+      "Many",
+      "None"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "The Greek root 'logos' (as in 'dialogue,' 'monologue') primarily means ___?",
+    "answer": "Word, reason, or discourse",
+    "choices": [
+      "Sound or voice",
+      "Word, reason, or discourse",
+      "Image or picture",
+      "Form or shape"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Which suffix changes a verb into a noun meaning 'the act of' or 'the state of,' as in 'satisfaction'?",
+    "answer": "-tion / -ation",
+    "choices": [
+      "-ment",
+      "-tion / -ation",
+      "-ness",
+      "-ible"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Which prefix means 'not' or 'opposite,' as in 'illogical,' 'immoral,' and 'impossible'?",
+    "answer": "In- (with variants il-, im-, ir-)",
+    "choices": [
+      "Un- only",
+      "In- (with variants il-, im-, ir-)",
+      "Dis- only",
+      "Non- only"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Which sentence avoids a dangling modifier?",
+    "answer": "Having studied all night, she passed the exam.",
+    "choices": [
+      "Having studied all night, the exam was easy.",
+      "Having studied all night, she passed the exam.",
+      "Having studied, the results were good.",
+      "Studied all night, she passed."
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Which sentence demonstrates a misplaced modifier?",
+    "answer": "She almost drove her children to school every day.",
+    "choices": [
+      "She drove her children to school almost every day.",
+      "She almost drove her children to school every day.",
+      "Almost every day, she drove her children to school.",
+      "She drove almost all her children to school."
+    ],
+    "tier": 3
+  },
+  {
+    "question": "An active voice sentence is preferred over passive voice because it is ___?",
+    "answer": "More direct and clearer about who performs the action",
+    "choices": [
+      "Longer and more formal",
+      "More direct and clearer about who performs the action",
+      "Harder to understand",
+      "Always grammatically required"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Which sentence uses 'imply' and 'infer' correctly?",
+    "answer": "The speaker implied guilt; the jury inferred it from the evidence.",
+    "choices": [
+      "The speaker inferred guilt; the jury implied it.",
+      "The speaker implied guilt; the jury inferred it from the evidence.",
+      "Both imply and infer mean the same thing.",
+      "The jury implied the verdict from the evidence."
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Which is the correct punctuation for a conjunctive adverb joining two independent clauses?",
+    "answer": "She was tired; however, she finished the work.",
+    "choices": [
+      "She was tired, however she finished the work.",
+      "She was tired however she finished the work.",
+      "She was tired; however, she finished the work.",
+      "She was tired: however, she finished the work."
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Which sentence uses a colon incorrectly?",
+    "answer": "She wants: to travel the world.",
+    "choices": [
+      "Bring the following: pen, paper, and ruler.",
+      "She wants: to travel the world.",
+      "He had one goal: to succeed.",
+      "The problem was clear: no one had planned ahead."
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Which sentence correctly uses a restrictive clause without commas?",
+    "answer": "Students who study regularly tend to succeed.",
+    "choices": [
+      "Students, who study regularly, tend to succeed.",
+      "Students who study regularly tend to succeed.",
+      "The students, who study regularly, succeed.",
+      "All students who, study regularly, succeed."
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Which rhetorical device is used in: 'Government of the people, by the people, for the people'?",
+    "answer": "Anaphora combined with epistrophe (symploce)",
+    "choices": [
+      "Anaphora only",
+      "Epistrophe only",
+      "Anaphora combined with epistrophe (symploce)",
+      "Chiasmus"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Which is an example of an oxymoron?",
+    "answer": "Living death",
+    "choices": [
+      "The sun rose at dawn.",
+      "Living death",
+      "She ran very quickly.",
+      "He was a tall man."
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Which type of irony occurs when the audience knows something the character does not?",
+    "answer": "Dramatic irony",
+    "choices": [
+      "Verbal irony",
+      "Situational irony",
+      "Dramatic irony",
+      "Sarcasm"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "Situational irony occurs when ___?",
+    "answer": "What happens is the opposite of what was expected",
+    "choices": [
+      "A speaker says the opposite of what they mean",
+      "What happens is the opposite of what was expected",
+      "The audience knows more than the character",
+      "A character is unaware of their own flaw"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "The logical fallacy of concluding that because A preceded B, A caused B is called ___?",
+    "answer": "Post hoc ergo propter hoc",
+    "choices": [
+      "Ad hominem",
+      "Post hoc ergo propter hoc",
+      "Circular reasoning",
+      "Red herring"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "Circular reasoning (begging the question) occurs when the conclusion ___?",
+    "answer": "Is assumed in the premise rather than proved",
+    "choices": [
+      "Contradicts the evidence",
+      "Is assumed in the premise rather than proved",
+      "Is stated too strongly",
+      "Is supported by too many examples"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "A slippery slope argument claims that one step will inevitably lead to ___?",
+    "answer": "A chain of increasingly negative consequences",
+    "choices": [
+      "An immediate contradiction",
+      "A chain of increasingly negative consequences",
+      "A logical proof",
+      "A stronger argument"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "Etymology is the study of ___?",
+    "answer": "The historical origins and development of words",
+    "choices": [
+      "Sentence structure rules",
+      "The historical origins and development of words",
+      "How sounds are produced",
+      "How words are classified by part of speech"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "The Latin prefix 'bene-' (as in 'benefit,' 'benevolent') means ___?",
+    "answer": "Well or good",
+    "choices": [
+      "Bad or wrong",
+      "Well or good",
+      "Under or below",
+      "Over or above"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "The Latin root 'dict-' (as in 'dictate,' 'predict,' 'verdict') means ___?",
+    "answer": "To say or speak",
+    "choices": [
+      "To write",
+      "To say or speak",
+      "To lead",
+      "To do"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "In 'Caesar came, saw, and conquered' (veni, vidi, vici), the lack of conjunctions is ___?",
+    "answer": "Asyndeton",
+    "choices": [
+      "Polysyndeton",
+      "Asyndeton",
+      "Chiasmus",
+      "Anaphora"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "In 'I am tired and hungry and cold and wet,' the repeated 'and' is ___?",
+    "answer": "Polysyndeton",
+    "choices": [
+      "Asyndeton",
+      "Polysyndeton",
+      "Anaphora",
+      "Epistrophe"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "Prolepsis as a rhetorical device anticipates and answers a potential ___?",
+    "answer": "Objection before it is raised",
+    "choices": [
+      "Question about evidence",
+      "Objection before it is raised",
+      "Conclusion of the argument",
+      "Definition of key terms"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "Aporia is a rhetorical device in which a speaker expresses ___?",
+    "answer": "Deliberate doubt or uncertainty about which course to take",
+    "choices": [
+      "Exaggerated certainty",
+      "Deliberate doubt or uncertainty about which course to take",
+      "Sudden emotional outburst",
+      "Praise through seeming blame"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "The word 'literally' used as an intensifier ('I literally died laughing') is an example of ___?",
+    "answer": "Semantic bleaching (loss of original meaning through overuse)",
+    "choices": [
+      "Correct literal usage",
+      "Hyperbole only",
+      "Semantic bleaching (loss of original meaning through overuse)",
+      "Metaphor"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "Which sentence best demonstrates kairos (the rhetorical principle of timeliness)?",
+    "answer": "The senator spoke on the anniversary of the disaster, making the argument especially resonant.",
+    "choices": [
+      "The speech used many statistics.",
+      "The senator spoke on the anniversary of the disaster, making the argument especially resonant.",
+      "The argument used strong emotional appeals.",
+      "The speaker had excellent credentials."
+    ],
+    "tier": 4
+  },
+  {
+    "question": "Which is an example of a portmanteau formed from 'smoke' and 'fog'?",
+    "answer": "Smog",
+    "choices": [
+      "Smoke-fog",
+      "Smog",
+      "Fogsmoke",
+      "Smoggy"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "A hasty generalization fallacy occurs when a conclusion is drawn from ___?",
+    "answer": "Too few examples or an unrepresentative sample",
+    "choices": [
+      "Contradictory evidence",
+      "Too few examples or an unrepresentative sample",
+      "A famous authority figure",
+      "Multiple valid studies"
+    ],
+    "tier": 5
+  },
+  {
+    "question": "An appeal to authority fallacy occurs when someone argues a claim is true because ___?",
+    "answer": "An authority figure believes it, regardless of their relevant expertise",
+    "choices": [
+      "Multiple studies support it",
+      "The evidence is overwhelming",
+      "An authority figure believes it, regardless of their relevant expertise",
+      "The logic is airtight"
+    ],
+    "tier": 5
+  },
+  {
+    "question": "In classical rhetoric, 'dispositio' refers to ___?",
+    "answer": "The arrangement or organization of a speech",
+    "choices": [
+      "Word choice and style",
+      "The arrangement or organization of a speech",
+      "Delivery and pronunciation",
+      "The speaker's character"
+    ],
+    "tier": 5
+  },
+  {
+    "question": "Which is NOT one of the five classical canons of rhetoric?",
+    "answer": "Dialectica (logic was considered separate from rhetoric in classical theory)",
+    "choices": [
+      "Inventio (invention of arguments)",
+      "Memoria (memory)",
+      "Actio (delivery)",
+      "Dialectica (logic was considered separate from rhetoric in classical theory)"
+    ],
+    "tier": 5
+  },
+  {
+    "question": "Zeugma is rhetorically effective because it ___?",
+    "answer": "Creates humor or surprise by joining incongruous objects under one verb",
+    "choices": [
+      "Adds formal weight to a sentence",
+      "Creates humor or surprise by joining incongruous objects under one verb",
+      "Makes the sentence longer and more complex",
+      "Shows the speaker's vocabulary range"
+    ],
+    "tier": 5
+  },
+  {
+    "question": "The term 'hapax legomenon' refers to a word that ___?",
+    "answer": "Appears only once in a corpus or author's works",
+    "choices": [
+      "Has multiple conflicting meanings",
+      "Appears only once in a corpus or author's works",
+      "Cannot be traced to any root language",
+      "Is used only in formal writing"
+    ],
+    "tier": 5
   }
 ]

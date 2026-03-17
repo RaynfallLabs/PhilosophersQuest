@@ -1,0 +1,1066 @@
+{
+  "remove": [
+    {"index": 1, "reason": "Pure symbol lookup H2O - trivially obvious, tested by knowing 'water is H and O'"},
+    {"index": 2, "reason": "Pure symbol lookup for H2O - rote formula, no conceptual value"},
+    {"index": 3, "reason": "Pure symbol lookup for CO2 - rote formula, no conceptual value"},
+    {"index": 4, "reason": "Pure symbol lookup for O2 - trivially obvious"},
+    {"index": 35, "reason": "Chemical symbol for H - trivially obvious at tier 1"},
+    {"index": 36, "reason": "Chemical symbol for C - trivially obvious at tier 1"},
+    {"index": 37, "reason": "Chemical symbol for N - trivially obvious at tier 1"},
+    {"index": 50, "reason": "Chemical symbol for He - trivially obvious at tier 1; He stands for helium"},
+    {"index": 58, "reason": "Chemical symbol for Au - duplicate of index 59 in tier 2"},
+    {"index": 59, "reason": "Chemical symbol for Ag - duplicate of index 60 in tier 2"},
+    {"index": 61, "reason": "Duplicate: conductor definition already covered by index 23 (Electricity flows through a conductor)"},
+    {"index": 71, "reason": "Kelvin question has duplicate answer in choices ('Kelvin' appears twice) - broken question"},
+    {"index": 89, "reason": "Tier 2 - Chemical symbol for gold: pure rote symbol lookup with no conceptual content"},
+    {"index": 90, "reason": "Tier 2 - Chemical symbol for iron: pure rote symbol lookup"},
+    {"index": 91, "reason": "Tier 2 - Chemical symbol for sodium: pure rote symbol lookup"},
+    {"index": 92, "reason": "Tier 2 - Chemical symbol for potassium: pure rote symbol lookup"},
+    {"index": 93, "reason": "Tier 2 - Chemical symbol for lead: pure rote symbol lookup"},
+    {"index": 94, "reason": "Tier 2 - Chemical symbol for mercury: pure rote symbol lookup"},
+    {"index": 95, "reason": "Tier 2 - Chemical symbol for copper: pure rote symbol lookup"},
+    {"index": 96, "reason": "Tier 2 - Chemical symbol for silver: duplicate of tier 1 question"},
+    {"index": 97, "reason": "Tier 2 - Chemical symbol for tin: pure rote symbol lookup"},
+    {"index": 98, "reason": "Tier 2 - Chemical symbol for tungsten: pure rote symbol lookup"},
+    {"index": 101, "reason": "Tier 2 - Atomic number of hydrogen = 1: pure rote number memorization"},
+    {"index": 102, "reason": "Tier 2 - Atomic number of helium = 2: pure rote number memorization"},
+    {"index": 103, "reason": "Tier 2 - Atomic number of carbon = 6: pure rote number memorization"},
+    {"index": 104, "reason": "Tier 2 - Atomic number of nitrogen = 7: pure rote number memorization"},
+    {"index": 105, "reason": "Tier 2 - Atomic number of oxygen = 8: pure rote number memorization"},
+    {"index": 106, "reason": "Tier 2 - Atomic number of fluorine = 9: pure rote number memorization"},
+    {"index": 107, "reason": "Tier 2 - Atomic number of neon = 10: pure rote number memorization"},
+    {"index": 108, "reason": "Tier 2 - Atomic number of sodium = 11: pure rote number memorization"},
+    {"index": 109, "reason": "Tier 2 - Atomic number of magnesium = 12: pure rote number memorization"},
+    {"index": 110, "reason": "Tier 2 - Atomic number of calcium = 20: pure rote number memorization"},
+    {"index": 129, "reason": "Tier 2 - Chemical symbol for lithium: pure rote symbol lookup"},
+    {"index": 130, "reason": "Tier 2 - Chemical symbol for calcium: pure rote symbol lookup"},
+    {"index": 131, "reason": "Tier 2 - Chemical symbol for chlorine: pure rote symbol lookup"},
+    {"index": 132, "reason": "Tier 2 - Chemical symbol for aluminum: pure rote symbol lookup"},
+    {"index": 133, "reason": "Tier 2 - Chemical symbol for phosphorus: pure rote symbol lookup"},
+    {"index": 134, "reason": "Tier 2 - Chemical symbol for sulfur: pure rote symbol lookup"},
+    {"index": 135, "reason": "Tier 2 - Chemical symbol for magnesium: pure rote symbol lookup"},
+    {"index": 136, "reason": "Tier 2 - Chemical symbol for zinc: pure rote symbol lookup"},
+    {"index": 137, "reason": "Tier 2 - Chemical symbol for fluorine: pure rote symbol lookup"},
+    {"index": 138, "reason": "Tier 2 - Chemical symbol for neon: pure rote symbol lookup"},
+    {"index": 139, "reason": "Tier 2 - Chemical symbol for argon: pure rote symbol lookup"},
+    {"index": 140, "reason": "Tier 2 - Chemical symbol for uranium: pure rote symbol lookup"},
+    {"index": 141, "reason": "Tier 2 - Atomic number of lithium = 3: pure rote number memorization"},
+    {"index": 142, "reason": "Tier 2 - Atomic number of beryllium = 4: pure rote number memorization"},
+    {"index": 143, "reason": "Tier 2 - Atomic number of boron = 5: pure rote number memorization"},
+    {"index": 144, "reason": "Tier 2 - Atomic number of aluminum = 13: pure rote number memorization"},
+    {"index": 145, "reason": "Tier 2 - Atomic number of silicon = 14: pure rote number memorization"},
+    {"index": 146, "reason": "Tier 2 - Atomic number of phosphorus = 15: pure rote number memorization"},
+    {"index": 147, "reason": "Tier 2 - Atomic number of sulfur = 16: pure rote number memorization"},
+    {"index": 148, "reason": "Tier 2 - Atomic number of chlorine = 17: pure rote number memorization"},
+    {"index": 149, "reason": "Tier 2 - Atomic number of argon = 18: pure rote number memorization"},
+    {"index": 150, "reason": "Tier 2 - Atomic number of potassium = 19: pure rote number memorization"},
+    {"index": 162, "reason": "Tier 2 - Unit of electrical resistance is Ohm: duplicate of tier 3 question"},
+    {"index": 163, "reason": "Tier 2 - Unit of electric current is Ampere: duplicate of tier 3 question"},
+    {"index": 178, "reason": "Tier 2 - Boiling point of water in Kelvin 373K: conversion fact, not conceptual"},
+    {"index": 179, "reason": "Tier 2 - Freezing point of water in Kelvin 273K: conversion fact, not conceptual"},
+    {"index": 185, "reason": "Tier 2 - Mole = 6.022x10^23: pure constant memorization at tier 2; duplicate of tier 5 Avogadro's number question"},
+    {"index": 195, "reason": "Tier 2 - Chemical symbol for manganese: pure rote symbol lookup"},
+    {"index": 196, "reason": "Tier 2 - Chemical symbol for chromium: pure rote symbol lookup"},
+    {"index": 197, "reason": "Tier 2 - Chemical symbol for cobalt: pure rote symbol lookup"},
+    {"index": 198, "reason": "Tier 2 - Chemical symbol for nickel: pure rote symbol lookup"},
+    {"index": 199, "reason": "Tier 2 - Chemical symbol for bromine: pure rote symbol lookup"},
+    {"index": 200, "reason": "Tier 2 - Chemical symbol for iodine: pure rote symbol lookup"},
+    {"index": 201, "reason": "Tier 2 - Chemical symbol for barium: pure rote symbol lookup"},
+    {"index": 202, "reason": "Tier 2 - Atomic number of iron = 26: pure rote number memorization"},
+    {"index": 203, "reason": "Tier 2 - Atomic number of copper = 29: pure rote number memorization"},
+    {"index": 204, "reason": "Tier 2 - Atomic number of zinc = 30: pure rote number memorization"},
+    {"index": 211, "reason": "Tier 3 - Unit of electrical resistance is Ohm: duplicate question (also at tier 2)"},
+    {"index": 212, "reason": "Tier 3 - Unit of electric current is Ampere: duplicate question (also at tier 2)"},
+    {"index": 237, "reason": "Tier 3 - Net force = mass x acceleration: this is simply Newton's 2nd law restated, already in tier 2 as F=ma"},
+    {"index": 266, "reason": "Tier 4 - Coulomb's Law F proportional to r^2: duplicate of tier 3 Coulomb's Law question"},
+    {"index": 277, "reason": "Tier 4 - Entropy symbol is S: pure symbol memorization, not conceptual"},
+    {"index": 278, "reason": "Tier 4 - Enthalpy symbol is H: pure symbol memorization, not conceptual"},
+    {"index": 301, "reason": "Tier 4 - Lorentz force F=qvxB: pure formula recall with single-letter answer, not quiz-consumable"},
+    {"index": 319, "reason": "Tier 4 - Arrhenius equation k=Ae^(-Ea/RT): pure formula variable recall, not conceptual"},
+    {"index": 339, "reason": "Tier 5 - Second law of thermodynamics entropy increases: duplicate of tier 4 question"},
+    {"index": 340, "reason": "Tier 5 - Avogadro's number 6.022x10^23: duplicate of tier 2 mole question"},
+    {"index": 341, "reason": "Tier 5 - mRNA produced from DNA is transcription: duplicate of tier 4 question"},
+    {"index": 342, "reason": "Tier 5 - Proteins assembled from mRNA is translation: duplicate of tier 4 question"},
+    {"index": 350, "reason": "Tier 5 - Spontaneous reaction DeltaG<0: duplicate of tier 4 question"},
+    {"index": 351, "reason": "Tier 5 - Planck's constant numerical value: pure constant memorization, not conceptual"},
+    {"index": 352, "reason": "Tier 5 - Boltzmann's constant numerical value: pure constant memorization, not conceptual"},
+    {"index": 353, "reason": "Tier 5 - Charge of electron numerical value: pure constant memorization, not conceptual"},
+    {"index": 354, "reason": "Tier 5 - Mass of electron numerical value: pure constant memorization, not conceptual"},
+    {"index": 355, "reason": "Tier 5 - Mass of proton numerical value: pure constant memorization, not conceptual"},
+    {"index": 357, "reason": "Tier 5 - Four quantum numbers n,l,ml,ms: answer choices are all 'm?' due to subscript corruption - broken question"},
+    {"index": 369, "reason": "Tier 5 - Speed of light in vacuum: duplicate of tier 3 question"},
+    {"index": 383, "reason": "Tier 5 - Wien's Displacement Law numerical constant: pure constant memorization"},
+    {"index": 384, "reason": "Tier 5 - Uncertainty principle exact inequality form: pure formula memorization, not conceptual"},
+    {"index": 397, "reason": "Tier 5 - Fine structure constant 1/137: pure constant memorization"},
+    {"index": 400, "reason": "Tier 5 - Ground state energy of hydrogen -13.6 eV: pure constant memorization"},
+    {"index": 402, "reason": "Tier 5 - Faraday's constant 96485 C/mol: pure constant memorization"},
+    {"index": 415, "reason": "Tier 5 - Snell's Law formula n1 sin theta1 = n2 sin theta2: choices are all garbled due to subscript corruption"}
+  ],
+  "rewrite": [
+    {
+      "index": 5,
+      "field": "question",
+      "new_value": "Gravity pulls objects toward Earth because of Earth's ___?",
+      "reason": "Original is fine but too trivial; improved to frame gravity as caused by mass"
+    },
+    {
+      "index": 5,
+      "field": "choices",
+      "new_value": ["Mass", "Rotation", "Magnetic field", "Atmosphere"],
+      "reason": "New choices match improved question framing"
+    },
+    {
+      "index": 5,
+      "field": "answer",
+      "new_value": "Mass",
+      "reason": "Mass is what causes gravitational pull"
+    },
+    {
+      "index": 6,
+      "field": "question",
+      "new_value": "The Sun produces energy through nuclear fusion, which means it converts ___ into helium?",
+      "reason": "Replaces trivial 'Sun is a star' with conceptual question about stellar fusion"
+    },
+    {
+      "index": 6,
+      "field": "answer",
+      "new_value": "Hydrogen",
+      "reason": "The Sun fuses hydrogen into helium"
+    },
+    {
+      "index": 6,
+      "field": "choices",
+      "new_value": ["Hydrogen", "Carbon", "Oxygen", "Nitrogen"],
+      "reason": "Choices for fusion question"
+    },
+    {
+      "index": 14,
+      "field": "question",
+      "new_value": "Burning wood is a chemical change because new ___ are formed?",
+      "reason": "Adds the 'why' - new substances are the key criterion for chemical change"
+    },
+    {
+      "index": 14,
+      "field": "choices",
+      "new_value": ["Substances", "Temperatures", "Shapes", "Colors"],
+      "reason": "Substances is the defining criterion"
+    },
+    {
+      "index": 14,
+      "field": "answer",
+      "new_value": "Substances",
+      "reason": "Chemical changes produce new substances"
+    },
+    {
+      "index": 13,
+      "field": "question",
+      "new_value": "Ice melting is a physical change because the ___ of water does not change?",
+      "reason": "Adds the 'why' - chemical identity is preserved in physical changes"
+    },
+    {
+      "index": 13,
+      "field": "choices",
+      "new_value": ["Chemical composition", "Volume", "Shape", "Color"],
+      "reason": "Chemical composition is key to distinguishing physical from chemical change"
+    },
+    {
+      "index": 13,
+      "field": "answer",
+      "new_value": "Chemical composition",
+      "reason": "Physical changes do not alter chemical identity"
+    },
+    {
+      "index": 23,
+      "field": "question",
+      "new_value": "Metals are good electrical conductors because their electrons are ___?",
+      "reason": "Tests the mechanism (free/delocalized electrons) rather than just the definition"
+    },
+    {
+      "index": 23,
+      "field": "answer",
+      "new_value": "Free to move",
+      "reason": "Delocalized free electrons are why metals conduct"
+    },
+    {
+      "index": 23,
+      "field": "choices",
+      "new_value": ["Free to move", "Tightly bound", "Negatively charged only", "Shared covalently"],
+      "reason": "Tests understanding of why conduction occurs"
+    },
+    {
+      "index": 24,
+      "field": "question",
+      "new_value": "Rubber is a good electrical insulator because its electrons are ___?",
+      "reason": "Tests the mechanism behind insulation"
+    },
+    {
+      "index": 24,
+      "field": "answer",
+      "new_value": "Tightly bound",
+      "reason": "Insulators have no free electrons"
+    },
+    {
+      "index": 24,
+      "field": "choices",
+      "new_value": ["Tightly bound", "Free to move", "Positively charged", "Shared between atoms"],
+      "reason": "Tests why rubber insulates"
+    },
+    {
+      "index": 29,
+      "field": "question",
+      "new_value": "The Sun's energy reaches Earth mainly as electromagnetic radiation rather than conduction because space is ___?",
+      "reason": "Adds conceptual reasoning about why radiation is the transfer mechanism"
+    },
+    {
+      "index": 29,
+      "field": "answer",
+      "new_value": "A vacuum",
+      "reason": "Conduction and convection require matter; radiation can travel through vacuum"
+    },
+    {
+      "index": 29,
+      "field": "choices",
+      "new_value": ["A vacuum", "Too cold", "Too far away", "Filled with gas"],
+      "reason": "Tests understanding of heat transfer in vacuum"
+    },
+    {
+      "index": 42,
+      "field": "question",
+      "new_value": "A comet's tail always points away from the Sun because it is pushed by ___?",
+      "reason": "Adds the causal mechanism - solar wind and radiation pressure"
+    },
+    {
+      "index": 42,
+      "field": "answer",
+      "new_value": "Solar wind and radiation pressure",
+      "reason": "Solar wind and radiation pressure push the tail away regardless of direction of travel"
+    },
+    {
+      "index": 42,
+      "field": "choices",
+      "new_value": ["Solar wind and radiation pressure", "The comet's velocity", "Earth's gravity", "Jupiter's magnetic field"],
+      "reason": "Tests the mechanism behind comet tail direction"
+    },
+    {
+      "index": 46,
+      "field": "question",
+      "new_value": "Objects in orbit do not fall to Earth because their forward speed causes them to ___?",
+      "reason": "Tests understanding of orbital mechanics, not just the vocabulary 'free fall'"
+    },
+    {
+      "index": 46,
+      "field": "answer",
+      "new_value": "Curve around Earth as fast as Earth curves away",
+      "reason": "This is the true orbital mechanics explanation"
+    },
+    {
+      "index": 46,
+      "field": "choices",
+      "new_value": ["Curve around Earth as fast as Earth curves away", "Escape gravity entirely", "Slow down and stop falling", "Float in zero gravity"],
+      "reason": "Tests correct conceptual model of orbits"
+    },
+    {
+      "index": 111,
+      "field": "question",
+      "new_value": "Newton's First Law is called the law of inertia because objects resist changes to their ___?",
+      "reason": "Rewrites formula-completion into conceptual explanation of why the law matters"
+    },
+    {
+      "index": 111,
+      "field": "answer",
+      "new_value": "State of motion",
+      "reason": "Inertia is resistance to change in state of motion"
+    },
+    {
+      "index": 111,
+      "field": "choices",
+      "new_value": ["State of motion", "Mass", "Position", "Energy"],
+      "reason": "Tests understanding of inertia concept"
+    },
+    {
+      "index": 112,
+      "field": "question",
+      "new_value": "Newton's Second Law (F=ma) means that doubling an object's mass while keeping force constant will ___ its acceleration?",
+      "reason": "Tests application of F=ma rather than just reciting it"
+    },
+    {
+      "index": 112,
+      "field": "answer",
+      "new_value": "Halve",
+      "reason": "If mass doubles and F is constant, a = F/m so a halves"
+    },
+    {
+      "index": 112,
+      "field": "choices",
+      "new_value": ["Halve", "Double", "Have no effect on", "Quadruple"],
+      "reason": "Tests proportional reasoning with Newton's second law"
+    },
+    {
+      "index": 113,
+      "field": "question",
+      "new_value": "Newton's Third Law explains how a rocket moves: exhaust gases push backward, so the rocket is pushed ___?",
+      "reason": "Tests understanding of Newton's Third Law via a real application"
+    },
+    {
+      "index": 113,
+      "field": "answer",
+      "new_value": "Forward",
+      "reason": "Equal and opposite reaction pushes rocket forward"
+    },
+    {
+      "index": 113,
+      "field": "choices",
+      "new_value": ["Forward", "Sideways", "Backward", "In a circle"],
+      "reason": "Tests application of action-reaction principle"
+    },
+    {
+      "index": 160,
+      "field": "question",
+      "new_value": "The cell membrane controls what enters and exits a cell using a process called selective ___?",
+      "reason": "Adds the mechanism term 'selective permeability' to the question"
+    },
+    {
+      "index": 160,
+      "field": "answer",
+      "new_value": "Permeability",
+      "reason": "Selective permeability is the key biological concept"
+    },
+    {
+      "index": 160,
+      "field": "choices",
+      "new_value": ["Permeability", "Absorption", "Diffusion", "Osmosis"],
+      "reason": "Tests the technical term for membrane function"
+    },
+    {
+      "index": 168,
+      "field": "question",
+      "new_value": "The mitochondria is called the 'powerhouse of the cell' because it produces ___?",
+      "reason": "Adds the 'why' - ATP production is the actual function"
+    },
+    {
+      "index": 168,
+      "field": "answer",
+      "new_value": "ATP",
+      "reason": "Mitochondria produces ATP through cellular respiration"
+    },
+    {
+      "index": 168,
+      "field": "choices",
+      "new_value": ["ATP", "DNA", "Glucose", "Oxygen"],
+      "reason": "Tests understanding of mitochondrial function"
+    },
+    {
+      "index": 172,
+      "field": "question",
+      "new_value": "Photosynthesis takes place in the chloroplast specifically because chloroplasts contain ___?",
+      "reason": "Tests the mechanism - chlorophyll absorbs light energy"
+    },
+    {
+      "index": 172,
+      "field": "answer",
+      "new_value": "Chlorophyll",
+      "reason": "Chlorophyll in chloroplasts captures light energy"
+    },
+    {
+      "index": 172,
+      "field": "choices",
+      "new_value": ["Chlorophyll", "Mitochondria", "DNA only", "Ribosomes"],
+      "reason": "Tests why chloroplasts are the site of photosynthesis"
+    },
+    {
+      "index": 182,
+      "field": "question",
+      "new_value": "Absolute zero (-273 degrees Celsius) is the temperature at which particles have ___?",
+      "reason": "Tests the physical meaning of absolute zero, not just the number"
+    },
+    {
+      "index": 182,
+      "field": "answer",
+      "new_value": "Minimum possible motion",
+      "reason": "At absolute zero, thermal motion is at its theoretical minimum"
+    },
+    {
+      "index": 182,
+      "field": "choices",
+      "new_value": ["Minimum possible motion", "No charge", "Maximum density", "No mass"],
+      "reason": "Tests conceptual meaning of absolute zero"
+    },
+    {
+      "index": 186,
+      "field": "question",
+      "new_value": "A catalyst speeds up a chemical reaction without being consumed because it provides an alternative pathway with lower ___?",
+      "reason": "Adds the mechanism - lower activation energy"
+    },
+    {
+      "index": 186,
+      "field": "answer",
+      "new_value": "Activation energy",
+      "reason": "Catalysts work by lowering the activation energy barrier"
+    },
+    {
+      "index": 186,
+      "field": "choices",
+      "new_value": ["Activation energy", "Temperature", "Concentration", "Reaction enthalpy"],
+      "reason": "Tests the mechanism behind catalysis"
+    },
+    {
+      "index": 188,
+      "field": "question",
+      "new_value": "Exothermic reactions feel warm because chemical bonds broken in reactants are ___ than bonds formed in products?",
+      "reason": "Tests the bond-energy mechanism behind exothermic reactions"
+    },
+    {
+      "index": 188,
+      "field": "answer",
+      "new_value": "Weaker",
+      "reason": "More energy is released forming products than absorbed breaking reactants"
+    },
+    {
+      "index": 188,
+      "field": "choices",
+      "new_value": ["Weaker", "Stronger", "Equal", "Absent"],
+      "reason": "Tests the bond energy basis of exothermic vs endothermic"
+    },
+    {
+      "index": 270,
+      "field": "question",
+      "new_value": "Half-life is useful for carbon dating because carbon-14 decays at a ___?",
+      "reason": "Tests application of half-life concept to a real-world use case"
+    },
+    {
+      "index": 270,
+      "field": "answer",
+      "new_value": "Predictable constant rate",
+      "reason": "The predictable constant decay rate makes radiocarbon dating possible"
+    },
+    {
+      "index": 270,
+      "field": "choices",
+      "new_value": ["Predictable constant rate", "Variable rate depending on temperature", "Rate that doubles with age", "Rate controlled by the organism"],
+      "reason": "Tests understanding of why half-life enables dating"
+    },
+    {
+      "index": 283,
+      "field": "question",
+      "new_value": "Alpha radiation is the least penetrating because alpha particles are relatively ___ and highly charged?",
+      "reason": "Tests the why behind alpha's low penetration"
+    },
+    {
+      "index": 283,
+      "field": "answer",
+      "new_value": "Large and slow",
+      "reason": "Alpha particles (helium nuclei) are large and massive, losing energy quickly"
+    },
+    {
+      "index": 283,
+      "field": "choices",
+      "new_value": ["Large and slow", "Small and fast", "Neutral", "Composed of photons"],
+      "reason": "Tests understanding of why alpha radiation is stopped by paper"
+    },
+    {
+      "index": 291,
+      "field": "question",
+      "new_value": "The Sun generates energy through nuclear fusion rather than fission because fusion of light nuclei ___?",
+      "reason": "Tests comparative understanding of fusion vs fission"
+    },
+    {
+      "index": 291,
+      "field": "answer",
+      "new_value": "Releases more energy per unit mass",
+      "reason": "Fusion yields more energy per unit mass than fission for light elements"
+    },
+    {
+      "index": 291,
+      "field": "choices",
+      "new_value": ["Releases more energy per unit mass", "Requires less heat to start", "Produces radioactive waste", "Is controlled by gravity alone"],
+      "reason": "Tests conceptual understanding of why fusion powers stars"
+    },
+    {
+      "index": 309,
+      "field": "question",
+      "new_value": "Le Chatelier's Principle predicts that adding more reactant to an equilibrium will shift the reaction toward ___?",
+      "reason": "Rewrites to test application rather than pure definition"
+    },
+    {
+      "index": 309,
+      "field": "answer",
+      "new_value": "Products",
+      "reason": "Adding reactant drives the equilibrium toward products to reduce the stress"
+    },
+    {
+      "index": 309,
+      "field": "choices",
+      "new_value": ["Products", "Reactants", "Equilibrium (no shift)", "Catalysis"],
+      "reason": "Tests Le Chatelier's principle in a specific application"
+    }
+  ],
+  "add": [
+    {
+      "question": "The scientific method requires that a hypothesis must be testable and ___?",
+      "answer": "Falsifiable",
+      "choices": ["Falsifiable", "True", "Published", "Complicated"],
+      "tier": 1,
+      "reason": "Philosophy of science: Karl Popper's falsifiability criterion is fundamental to scientific literacy"
+    },
+    {
+      "question": "Why do scientists repeat experiments before accepting a result?",
+      "answer": "To confirm the result is reproducible and not a fluke",
+      "choices": ["To confirm the result is reproducible and not a fluke", "To waste time", "Because the first result is always wrong", "To generate more data for publication"],
+      "tier": 1,
+      "reason": "Philosophy of science: reproducibility is a cornerstone of scientific validity"
+    },
+    {
+      "question": "In a controlled experiment, the factor that the scientist deliberately changes is the ___?",
+      "answer": "Independent variable",
+      "choices": ["Independent variable", "Dependent variable", "Controlled variable", "Constant"],
+      "tier": 1,
+      "reason": "Scientific method: understanding experimental design is core scientific literacy"
+    },
+    {
+      "question": "In an experiment, the result you measure to see the effect of your change is the ___?",
+      "answer": "Dependent variable",
+      "choices": ["Dependent variable", "Independent variable", "Control", "Hypothesis"],
+      "tier": 1,
+      "reason": "Scientific method: understanding what is measured vs what is changed"
+    },
+    {
+      "question": "A scientific theory differs from a guess because it is supported by ___?",
+      "answer": "A large body of tested evidence",
+      "choices": ["A large body of tested evidence", "One successful experiment", "Expert opinion", "Logical reasoning alone"],
+      "tier": 1,
+      "reason": "Philosophy of science: corrects common misconception that 'theory' means uncertain guess"
+    },
+    {
+      "question": "Why does a rainbow form when sunlight passes through raindrops?",
+      "answer": "Different colors of light bend by different amounts when they slow down",
+      "choices": ["Different colors of light bend by different amounts when they slow down", "Water absorbs some colors and reflects others", "Raindrops emit their own colored light", "The sky reflects colors from the ground"],
+      "tier": 1,
+      "reason": "Conceptual physics: dispersion as a mechanism for a familiar natural phenomenon"
+    },
+    {
+      "question": "Why does ice float on water rather than sinking?",
+      "answer": "Ice is less dense than liquid water because its crystal structure spaces molecules farther apart",
+      "choices": ["Ice is less dense than liquid water because its crystal structure spaces molecules farther apart", "Ice is heavier than water", "Ice has no mass", "Surface tension holds ice up"],
+      "tier": 1,
+      "reason": "Conceptual science: water's anomalous density is a critical concept with huge environmental significance"
+    },
+    {
+      "question": "Why does a pressure cooker cook food faster than a normal pot?",
+      "answer": "Trapped steam raises the pressure, which raises the boiling point of water above 100 degrees C",
+      "choices": ["Trapped steam raises the pressure, which raises the boiling point of water above 100 degrees C", "The sealed lid conducts more heat", "Less water is used", "The metal is thicker"],
+      "tier": 2,
+      "reason": "Conceptual chemistry: pressure-boiling point relationship applied to everyday technology"
+    },
+    {
+      "question": "Peer review improves scientific research by having other experts check for ___?",
+      "answer": "Errors, bias, and unsupported conclusions",
+      "choices": ["Errors, bias, and unsupported conclusions", "Interesting writing style", "Sufficient citations", "Agreement with existing theories"],
+      "tier": 2,
+      "reason": "Philosophy of science: peer review is the quality-control mechanism of science"
+    },
+    {
+      "question": "The placebo effect means patients can improve just from ___?",
+      "answer": "Believing they received treatment",
+      "choices": ["Believing they received treatment", "Taking any pill", "Resting more", "Natural immunity"],
+      "tier": 2,
+      "reason": "Philosophy of science: understanding why double-blind trials are necessary for valid medical research"
+    },
+    {
+      "question": "A double-blind clinical trial keeps both patients and doctors unaware of who receives the real drug to eliminate ___?",
+      "answer": "Bias from expectations",
+      "choices": ["Bias from expectations", "Side effects", "Costs", "Placebo production"],
+      "tier": 2,
+      "reason": "Philosophy of science: understanding the purpose of double-blind design"
+    },
+    {
+      "question": "Why does the sky appear blue on a clear day?",
+      "answer": "Air molecules scatter short-wavelength blue light more than red light",
+      "choices": ["Air molecules scatter short-wavelength blue light more than red light", "The ocean reflects blue light upward", "The atmosphere absorbs red light", "Ozone is blue"],
+      "tier": 2,
+      "reason": "Conceptual physics: Rayleigh scattering explains a universally familiar phenomenon"
+    },
+    {
+      "question": "Acids release ___ ions when dissolved in water, making solutions corrosive?",
+      "answer": "Hydrogen (H+)",
+      "choices": ["Hydrogen (H+)", "Hydroxide (OH-)", "Sodium (Na+)", "Chloride (Cl-)"],
+      "tier": 2,
+      "reason": "Conceptual chemistry: mechanistic definition of acids, not just pH number"
+    },
+    {
+      "question": "Bases release ___ ions when dissolved in water, giving them a slippery feel?",
+      "answer": "Hydroxide (OH-)",
+      "choices": ["Hydroxide (OH-)", "Hydrogen (H+)", "Sodium (Na+)", "Chloride (Cl-)"],
+      "tier": 2,
+      "reason": "Conceptual chemistry: mechanistic definition of bases"
+    },
+    {
+      "question": "Evolution by natural selection works because individuals with traits better suited to their environment are more likely to ___?",
+      "answer": "Survive and reproduce",
+      "choices": ["Survive and reproduce", "Mutate further", "Migrate", "Grow larger"],
+      "tier": 2,
+      "reason": "Core biology concept: the mechanism of natural selection, not just the name"
+    },
+    {
+      "question": "DNA mutations are the ultimate source of genetic variation because they create ___?",
+      "answer": "New alleles that may be passed to offspring",
+      "choices": ["New alleles that may be passed to offspring", "Identical copies of existing genes", "Protein destruction", "Epigenetic changes only"],
+      "tier": 2,
+      "reason": "Conceptual genetics: links mutation to variation to evolution"
+    },
+    {
+      "question": "Why is the greenhouse effect getting stronger due to human activity?",
+      "answer": "Burning fossil fuels releases CO2 that traps more heat in the atmosphere",
+      "choices": ["Burning fossil fuels releases CO2 that traps more heat in the atmosphere", "The Sun is getting hotter", "The ozone layer is expanding", "Deforestation increases oxygen"],
+      "tier": 2,
+      "reason": "Conceptual science: mechanism of anthropogenic climate change"
+    },
+    {
+      "question": "Correlation in data does not prove causation because ___?",
+      "answer": "Both variables could be caused by a third hidden factor",
+      "choices": ["Both variables could be caused by a third hidden factor", "Correlations are always wrong", "Science never uses statistics", "Only experiments count as data"],
+      "tier": 2,
+      "reason": "Philosophy of science: one of the most important critical-thinking concepts in science"
+    },
+    {
+      "question": "Enzymes work by providing an active site where the substrate fits, lowering the reaction's ___?",
+      "answer": "Activation energy",
+      "choices": ["Activation energy", "Temperature", "pH", "Gibbs free energy"],
+      "tier": 3,
+      "reason": "Conceptual biochemistry: enzyme mechanism rather than just 'enzymes are catalysts'"
+    },
+    {
+      "question": "When a virus infects a cell, it hijacks the cell's machinery to copy its own ___?",
+      "answer": "Genetic material",
+      "choices": ["Genetic material", "Cell membrane", "Mitochondria", "Ribosomes"],
+      "tier": 3,
+      "reason": "Conceptual biology: mechanism of viral replication"
+    },
+    {
+      "question": "Vaccines work by training the immune system to recognize a pathogen without causing ___?",
+      "answer": "Full disease",
+      "choices": ["Full disease", "Any immune response", "Antibody production", "T-cell activation"],
+      "tier": 3,
+      "reason": "Conceptual immunology: mechanism of vaccine immunity"
+    },
+    {
+      "question": "The ozone layer protects Earth by absorbing most of the Sun's ___?",
+      "answer": "Ultraviolet radiation",
+      "choices": ["Ultraviolet radiation", "Infrared radiation", "Visible light", "X-rays"],
+      "tier": 3,
+      "reason": "Conceptual atmospheric science: function of ozone layer"
+    },
+    {
+      "question": "Antibiotics treat bacterial infections but not viral infections because they target structures found only in ___?",
+      "answer": "Bacteria",
+      "choices": ["Bacteria", "Viruses", "Human cells", "All pathogens"],
+      "tier": 3,
+      "reason": "Conceptual biology: explains why antibiotics cannot treat colds and flu"
+    },
+    {
+      "question": "Antibiotic resistance evolves when bacteria that survive a course of antibiotics ___?",
+      "answer": "Pass their resistance genes to offspring",
+      "choices": ["Pass their resistance genes to offspring", "Become viruses", "Strengthen their cell walls temporarily", "Acquire human DNA"],
+      "tier": 3,
+      "reason": "Conceptual evolution: mechanism of antibiotic resistance development"
+    },
+    {
+      "question": "In natural selection, a trait spreads through a population only if it is ___?",
+      "answer": "Heritable and improves reproductive success",
+      "choices": ["Heritable and improves reproductive success", "Large and visible", "Beneficial to the species as a whole", "Random and neutral"],
+      "tier": 3,
+      "reason": "Conceptual evolution: the two necessary conditions for a trait to be selected for"
+    },
+    {
+      "question": "Scientists use the term 'paradigm shift' to describe when a scientific field ___?",
+      "answer": "Fundamentally replaces its previous framework with a new one",
+      "choices": ["Fundamentally replaces its previous framework with a new one", "Publishes a new textbook", "Conducts a major experiment", "Gains government funding"],
+      "tier": 3,
+      "reason": "Philosophy of science: Thomas Kuhn's concept of how science actually changes over time"
+    },
+    {
+      "question": "The Doppler effect is why an ambulance siren sounds higher-pitched as it approaches you because sound waves are ___?",
+      "answer": "Compressed together in front of the moving source",
+      "choices": ["Compressed together in front of the moving source", "Traveling faster toward you", "Louder at close range", "Reflecting off surrounding buildings"],
+      "tier": 3,
+      "reason": "Conceptual physics: explains the Doppler effect mechanistically"
+    },
+    {
+      "question": "A concave lens causes parallel light rays to ___?",
+      "answer": "Diverge",
+      "choices": ["Diverge", "Converge", "Reflect", "Polarize"],
+      "tier": 3,
+      "reason": "Conceptual optics: behavior of concave vs convex lenses"
+    },
+    {
+      "question": "Entropy tends to increase in isolated systems because disordered states are ___?",
+      "answer": "Far more numerous than ordered ones",
+      "choices": ["Far more numerous than ordered ones", "More energetically stable", "Required by Newton's laws", "Caused by gravity"],
+      "tier": 4,
+      "reason": "Conceptual thermodynamics: statistical interpretation of entropy rather than just stating the law"
+    },
+    {
+      "question": "In quantum mechanics, the electron's position is described as a probability cloud because ___?",
+      "answer": "Its exact position cannot be known until measured",
+      "choices": ["Its exact position cannot be known until measured", "Electrons move too fast to track", "Electrons are not real particles", "All matter is a wave at large scales"],
+      "tier": 4,
+      "reason": "Conceptual quantum mechanics: the measurement problem and uncertainty principle applied"
+    },
+    {
+      "question": "Covalent bonds are stronger than hydrogen bonds, which is why DNA base pairs can be easily ___?",
+      "answer": "Separated for replication",
+      "choices": ["Separated for replication", "Repaired by ribosomes", "Copied by tRNA", "Stored in mitochondria"],
+      "tier": 4,
+      "reason": "Conceptual biochemistry: links bond strength to function in DNA replication"
+    },
+    {
+      "question": "General relativity predicts that massive objects curve spacetime, which we observe as ___?",
+      "answer": "Gravity",
+      "choices": ["Gravity", "Magnetism", "Nuclear force", "Radiation"],
+      "tier": 4,
+      "reason": "Conceptual physics: Einstein's geometric interpretation of gravity"
+    },
+    {
+      "question": "The periodic table is organized so that elements in the same group have similar chemical properties because they have the same number of ___?",
+      "answer": "Valence electrons",
+      "choices": ["Valence electrons", "Protons", "Neutrons", "Electron shells"],
+      "tier": 4,
+      "reason": "Conceptual chemistry: explains why the periodic table has predictive power"
+    },
+    {
+      "question": "Transcription occurs in the cell nucleus because that is where ___?",
+      "answer": "DNA is stored",
+      "choices": ["DNA is stored", "Ribosomes are located", "ATP is produced", "Proteins are folded"],
+      "tier": 4,
+      "reason": "Conceptual cell biology: links cellular location to function in gene expression"
+    },
+    {
+      "question": "Natural selection cannot directly act on genotype, only phenotype, because ___?",
+      "answer": "The environment interacts with the organism's physical traits, not its DNA directly",
+      "choices": ["The environment interacts with the organism's physical traits, not its DNA directly", "Genotypes are invisible to predators", "DNA is always recessive", "Phenotypes are always heritable"],
+      "tier": 4,
+      "reason": "Conceptual genetics: an important subtlety about how natural selection actually works"
+    },
+    {
+      "question": "The concept of falsifiability distinguishes science from pseudoscience because a claim that cannot be proven wrong ___?",
+      "answer": "Provides no way to test whether it is false",
+      "choices": ["Provides no way to test whether it is false", "Is automatically true", "Must be true by elimination", "Can still be tested statistically"],
+      "tier": 4,
+      "reason": "Philosophy of science: Popper's demarcation criterion at a college level"
+    },
+    {
+      "question": "Quantum tunneling allows nuclear fusion to occur in the Sun at temperatures lower than classically predicted because particles can ___?",
+      "answer": "Pass through energy barriers they classically cannot overcome",
+      "choices": ["Pass through energy barriers they classically cannot overcome", "Move faster than light briefly", "Bypass conservation of energy", "Fuse without any contact"],
+      "tier": 5,
+      "reason": "Conceptual quantum physics: tunneling is a key mechanism for stellar fusion"
+    },
+    {
+      "question": "Einstein's special relativity showed that mass and energy are equivalent because ___?",
+      "answer": "Mass is a form of stored energy (E=mc^2)",
+      "choices": ["Mass is a form of stored energy (E=mc^2)", "Energy has no mass", "Light has infinite mass", "Velocity and mass are interchangeable"],
+      "tier": 5,
+      "reason": "Conceptual relativity: the physical meaning of E=mc^2 rather than just the formula"
+    },
+    {
+      "question": "The discovery of the Higgs boson in 2012 mattered because it ___?",
+      "answer": "Confirmed the mechanism by which fundamental particles acquire mass",
+      "choices": ["Confirmed the mechanism by which fundamental particles acquire mass", "Proved string theory", "Showed particles can travel faster than light", "Unified gravity with quantum mechanics"],
+      "tier": 5,
+      "reason": "Conceptual particle physics: explains why the Higgs discovery was scientifically significant"
+    },
+    {
+      "question": "Decoherence explains why quantum superpositions are not observed in everyday objects because interaction with the environment ___?",
+      "answer": "Collapses quantum states into definite classical outcomes",
+      "choices": ["Collapses quantum states into definite classical outcomes", "Amplifies quantum effects", "Destroys all particles", "Makes objects invisible"],
+      "tier": 5,
+      "reason": "Conceptual quantum mechanics: explains the quantum-to-classical transition"
+    },
+    {
+      "question": "The Big Bang theory is supported by cosmic microwave background radiation because this radiation is ___?",
+      "answer": "The afterglow of the early universe's intense heat",
+      "choices": ["The afterglow of the early universe's intense heat", "Emitted by black holes", "Produced by distant galaxies only", "A result of stellar explosions"],
+      "tier": 5,
+      "reason": "Conceptual cosmology: explains the physical significance of CMB evidence"
+    },
+    {
+      "question": "The expanding universe was discovered because distant galaxies show a ___ shift in their light?",
+      "answer": "Red",
+      "choices": ["Red", "Blue", "Green", "Ultraviolet"],
+      "tier": 3,
+      "reason": "Conceptual astronomy: redshift as evidence for cosmic expansion, links Doppler effect to cosmology"
+    },
+    {
+      "question": "Why does a metal spoon feel colder than a wooden spoon at the same room temperature?",
+      "answer": "Metal conducts heat away from your hand faster than wood",
+      "choices": ["Metal conducts heat away from your hand faster than wood", "Metal has a lower temperature than wood", "Wood stores heat better", "Metal reflects body heat"],
+      "tier": 2,
+      "reason": "Conceptual thermodynamics: thermal conductivity as the explanation for a universal everyday experience"
+    },
+    {
+      "question": "Why does a sealed gas exert higher pressure when heated at constant volume?",
+      "answer": "The molecules move faster and collide with the walls more forcefully",
+      "choices": ["The molecules move faster and collide with the walls more forcefully", "The gas expands and pushes outward", "The molecules multiply in number", "The container gets weaker"],
+      "tier": 2,
+      "reason": "Conceptual gas laws: kinetic molecular theory applied to Gay-Lussac's Law"
+    },
+    {
+      "question": "The scientific consensus on evolution is accepted because it has ___?",
+      "answer": "Been confirmed by independent evidence from genetics, fossils, and comparative anatomy",
+      "choices": ["Been confirmed by independent evidence from genetics, fossils, and comparative anatomy", "Never been questioned", "Been voted on by scientists", "Not been falsified despite attempts"],
+      "tier": 3,
+      "reason": "Philosophy of science: convergence of multiple independent lines of evidence as the standard for strong scientific consensus"
+    },
+    {
+      "question": "Confirmation bias in science is dangerous because it causes researchers to ___?",
+      "answer": "Notice evidence that supports their hypothesis and ignore contradicting evidence",
+      "choices": ["Notice evidence that supports their hypothesis and ignore contradicting evidence", "Design experiments too carefully", "Publish results too quickly", "Over-rely on statistics"],
+      "tier": 3,
+      "reason": "Philosophy of science: one of the most important cognitive biases affecting scientific practice"
+    },
+    {
+      "question": "The replication crisis in psychology and medicine showed that many findings failed to hold up because studies were ___?",
+      "answer": "Too small, underpowered, or used flexible analysis methods",
+      "choices": ["Too small, underpowered, or used flexible analysis methods", "Conducted by dishonest scientists", "Published in the wrong journals", "Based on animal models only"],
+      "tier": 4,
+      "reason": "Philosophy of science: the replication crisis and what it revealed about statistical power and p-hacking"
+    },
+    {
+      "question": "Mitosis produces two genetically identical cells while meiosis produces four genetically unique cells because meiosis includes ___?",
+      "answer": "Crossing over and two rounds of division",
+      "choices": ["Crossing over and two rounds of division", "One round of DNA replication only", "Protein synthesis between divisions", "Chromosome doubling twice"],
+      "tier": 3,
+      "reason": "Conceptual cell biology: explains mechanistically why mitosis and meiosis have different outcomes"
+    },
+    {
+      "question": "The electron transport chain produces most of a cell's ATP by using a flow of protons to drive ___?",
+      "answer": "ATP synthase",
+      "choices": ["ATP synthase", "DNA polymerase", "Helicase", "Glycolysis"],
+      "tier": 4,
+      "reason": "Conceptual biochemistry: chemiosmosis as the mechanism of ATP production"
+    },
+    {
+      "question": "Type 2 diabetes involves insulin resistance, meaning cells fail to ___?",
+      "answer": "Respond to insulin signals to absorb glucose",
+      "choices": ["Respond to insulin signals to absorb glucose", "Produce insulin", "Digest sugar", "Store glycogen in the liver"],
+      "tier": 4,
+      "reason": "Conceptual medicine/biology: mechanism of type 2 diabetes vs type 1"
+    },
+    {
+      "question": "Why does a hot air balloon rise?",
+      "answer": "Heated air is less dense than cooler surrounding air, creating buoyancy",
+      "choices": ["Heated air is less dense than cooler surrounding air, creating buoyancy", "Hot air weighs more and pushes down on the balloon", "Combustion gases push the balloon up", "Air pressure inside the balloon increases"],
+      "tier": 1,
+      "reason": "Conceptual physics: buoyancy and density as the mechanism behind a familiar phenomenon"
+    },
+    {
+      "question": "Lightning travels from cloud to ground because clouds build up electric charge through ___?",
+      "answer": "Friction between ice crystals and water droplets",
+      "choices": ["Friction between ice crystals and water droplets", "Solar radiation", "Magnetic fields from Earth", "Chemical reactions in rain"],
+      "tier": 2,
+      "reason": "Conceptual physics: electrostatic charge buildup and discharge"
+    },
+    {
+      "question": "Why does saltwater have a lower freezing point than pure water?",
+      "answer": "Dissolved salt ions disrupt the formation of ice crystals",
+      "choices": ["Dissolved salt ions disrupt the formation of ice crystals", "Salt raises the boiling point, which lowers the freezing point", "Salt absorbs cold from the water", "Saltwater is denser so it freezes later"],
+      "tier": 2,
+      "reason": "Conceptual chemistry: freezing point depression as a colligative property"
+    },
+    {
+      "question": "Nuclear power plants use fission rather than fusion because fusion requires ___?",
+      "answer": "Extremely high temperatures that are difficult to sustain",
+      "choices": ["Extremely high temperatures that are difficult to sustain", "Radioactive fuel we have not discovered yet", "More neutrons than are available", "A vacuum that cannot be created"],
+      "tier": 2,
+      "reason": "Conceptual physics: explains the practical barrier to fusion power"
+    },
+    {
+      "question": "Osmosis moves water across a membrane from a region of ___ solute concentration to ___?",
+      "answer": "Low; high",
+      "choices": ["Low; high", "High; low", "Equal; unequal", "High; equal"],
+      "tier": 2,
+      "reason": "Conceptual biology: osmosis direction, important for understanding dehydration and cell biology"
+    },
+    {
+      "question": "The immune system produces antibodies that are specific to one pathogen because each antibody matches a particular ___?",
+      "answer": "Antigen shape",
+      "choices": ["Antigen shape", "Pathogen size", "Blood type", "Infection location"],
+      "tier": 2,
+      "reason": "Conceptual immunology: specificity of antibody-antigen binding"
+    },
+    {
+      "question": "Photovoltaic solar cells generate electricity when photons knock electrons free in ___?",
+      "answer": "Semiconductor material",
+      "choices": ["Semiconductor material", "Copper wire", "Glass panels", "Mirrors"],
+      "tier": 2,
+      "reason": "Conceptual technology: mechanism of how solar panels work, links to photoelectric effect"
+    },
+    {
+      "question": "Radiocarbon dating works only on organic material because carbon-14 is absorbed by living things from ___?",
+      "answer": "The atmosphere during life",
+      "choices": ["The atmosphere during life", "The soil after death", "Sunlight", "Water only"],
+      "tier": 3,
+      "reason": "Conceptual science: why radiocarbon dating is limited to organic material"
+    },
+    {
+      "question": "The reason mammals maintain a constant body temperature is that enzyme reactions work best within a ___?",
+      "answer": "Narrow temperature range",
+      "choices": ["Narrow temperature range", "Wide temperature range", "Very cold range only", "Very hot range only"],
+      "tier": 2,
+      "reason": "Conceptual biology: links endothermy to enzyme function"
+    },
+    {
+      "question": "Genetic engineering uses restriction enzymes to cut DNA at specific sequences so that ___?",
+      "answer": "Foreign genes can be inserted precisely",
+      "choices": ["Foreign genes can be inserted precisely", "DNA replication is stopped", "Proteins are destroyed", "Chromosomes are duplicated"],
+      "tier": 3,
+      "reason": "Conceptual biotechnology: mechanism of restriction enzyme use in genetic engineering"
+    },
+    {
+      "question": "MRI machines image the body using magnetic fields to align ___?",
+      "answer": "Hydrogen nuclei in water molecules",
+      "choices": ["Hydrogen nuclei in water molecules", "Iron atoms in blood", "Calcium in bones", "Electrical signals in nerves"],
+      "tier": 3,
+      "reason": "Conceptual technology: how MRI works at a conceptual level"
+    },
+    {
+      "question": "The key insight of germ theory was that many diseases are caused by ___?",
+      "answer": "Microscopic organisms (pathogens)",
+      "choices": ["Microscopic organisms (pathogens)", "Imbalances in body humors", "Poisonous air (miasma)", "Genetic defects only"],
+      "tier": 2,
+      "reason": "History of science with conceptual impact: germ theory replaced miasma theory and transformed medicine"
+    },
+    {
+      "question": "Fleming's discovery of penicillin in 1928 mattered because it showed that ___?",
+      "answer": "Mold could produce chemicals that kill bacteria",
+      "choices": ["Mold could produce chemicals that kill bacteria", "Antibiotics existed naturally in blood", "Bacteria could not survive in air", "Viruses were destroyed by fungal spores"],
+      "tier": 2,
+      "reason": "History of science: the conceptual breakthrough of penicillin - a biological molecule as antibiotic"
+    },
+    {
+      "question": "Continental drift was initially rejected by scientists because Alfred Wegener could not explain ___?",
+      "answer": "What force was powerful enough to move continents",
+      "choices": ["What force was powerful enough to move continents", "Why continents had coastlines", "Whether maps were accurate", "Why fossils existed at all"],
+      "tier": 3,
+      "reason": "History and philosophy of science: scientific consensus requires a mechanism, not just pattern matching"
+    },
+    {
+      "question": "Plate tectonics was eventually accepted because it explained earthquakes, volcanoes, and mountain formation with a single ___?",
+      "answer": "Unifying mechanism",
+      "choices": ["Unifying mechanism", "Mathematical formula", "Observation from space", "New type of rock"],
+      "tier": 3,
+      "reason": "Philosophy of science: a theory gains power when it unifies previously separate observations"
+    },
+    {
+      "question": "When a star more massive than the Sun exhausts its fuel, its core collapses and can form a ___?",
+      "answer": "Neutron star or black hole",
+      "choices": ["Neutron star or black hole", "White dwarf", "Red giant", "Planetary nebula"],
+      "tier": 3,
+      "reason": "Conceptual astrophysics: stellar evolution outcomes based on mass"
+    },
+    {
+      "question": "The genetic code is described as universal because nearly all living organisms use ___?",
+      "answer": "The same codons to specify the same amino acids",
+      "choices": ["The same codons to specify the same amino acids", "Identical genes", "The same number of chromosomes", "The same proteins"],
+      "tier": 3,
+      "reason": "Conceptual biology: universality of the genetic code as evidence for common ancestry"
+    },
+    {
+      "question": "Epigenetic changes can be passed to offspring because they alter ___?",
+      "answer": "How genes are expressed without changing the DNA sequence",
+      "choices": ["How genes are expressed without changing the DNA sequence", "The number of chromosomes", "The DNA sequence directly", "Ribosome structure"],
+      "tier": 4,
+      "reason": "Conceptual genetics: epigenetics as heritable changes that extend beyond classic Mendelian genetics"
+    },
+    {
+      "question": "In the kinetic theory of gases, temperature is a measure of the average ___ of gas molecules?",
+      "answer": "Kinetic energy",
+      "choices": ["Kinetic energy", "Potential energy", "Speed only", "Momentum"],
+      "tier": 3,
+      "reason": "Conceptual thermodynamics: what temperature physically means at the molecular level"
+    },
+    {
+      "question": "Superposition in quantum mechanics means a particle exists in multiple states simultaneously until ___?",
+      "answer": "It is observed or measured",
+      "choices": ["It is observed or measured", "It absorbs a photon", "It collides with another particle", "It reaches absolute zero"],
+      "tier": 4,
+      "reason": "Conceptual quantum mechanics: superposition and measurement as core quantum concepts"
+    },
+    {
+      "question": "The discovery that the universe's expansion is accelerating led to the hypothesis of ___?",
+      "answer": "Dark energy",
+      "choices": ["Dark energy", "Dark matter", "Antimatter", "Cosmic inflation only"],
+      "tier": 4,
+      "reason": "Conceptual cosmology: dark energy as the proposed explanation for accelerating expansion"
+    },
+    {
+      "question": "Dark matter is thought to exist because galaxy rotation curves show stars orbiting too ___ to be explained by visible mass?",
+      "answer": "Fast",
+      "choices": ["Fast", "Slow", "Irregularly", "In opposite directions"],
+      "tier": 4,
+      "reason": "Conceptual astrophysics: the observational evidence for dark matter"
+    },
+    {
+      "question": "CRISPR-Cas9 acts like molecular scissors because the guide RNA directs it to cut at a specific ___?",
+      "answer": "DNA sequence",
+      "choices": ["DNA sequence", "Protein", "RNA strand", "Chromosome location"],
+      "tier": 4,
+      "reason": "Conceptual biotechnology: the targeting mechanism of CRISPR, not just what it edits"
+    },
+    {
+      "question": "The observer effect in quantum mechanics means the act of measuring a particle necessarily ___?",
+      "answer": "Disturbs the system being measured",
+      "choices": ["Disturbs the system being measured", "Improves measurement accuracy", "Creates the particle", "Eliminates all uncertainty"],
+      "tier": 5,
+      "reason": "Conceptual quantum mechanics: the observer effect as a physical constraint, not an artifact of technology"
+    },
+    {
+      "question": "String theory proposes that fundamental particles are actually vibrating ___?",
+      "answer": "One-dimensional strings of energy",
+      "choices": ["One-dimensional strings of energy", "Two-dimensional membranes", "Three-dimensional fields", "Point particles with spin"],
+      "tier": 5,
+      "reason": "Conceptual physics: string theory as the leading attempt to unify quantum mechanics and gravity"
+    },
+    {
+      "question": "Information paradox: Stephen Hawking initially claimed black holes violate quantum mechanics because they appeared to destroy ___?",
+      "answer": "Information",
+      "choices": ["Information", "Mass", "Charge", "Angular momentum"],
+      "tier": 5,
+      "reason": "Conceptual physics: the black hole information paradox connects general relativity and quantum mechanics"
+    },
+    {
+      "question": "The Many-Worlds interpretation of quantum mechanics proposes that every quantum event causes the universe to ___?",
+      "answer": "Branch into separate parallel outcomes",
+      "choices": ["Branch into separate parallel outcomes", "Collapse into a single outcome", "Reverse in time", "Merge with other universes"],
+      "tier": 5,
+      "reason": "Philosophy of physics: the Many-Worlds interpretation as an alternative to Copenhagen"
+    },
+    {
+      "question": "Negative feedback in biological systems tends to ___ a change, maintaining homeostasis?",
+      "answer": "Oppose",
+      "choices": ["Oppose", "Amplify", "Reverse", "Stop all processes"],
+      "tier": 3,
+      "reason": "Conceptual biology: negative feedback as the mechanism of biological stability and homeostasis"
+    },
+    {
+      "question": "Positive feedback in biological systems tends to ___ a change, driving a process to completion?",
+      "answer": "Amplify",
+      "choices": ["Amplify", "Oppose", "Stabilize", "Reverse"],
+      "tier": 3,
+      "reason": "Conceptual biology: positive feedback such as in childbirth contractions and nerve firing"
+    },
+    {
+      "question": "The scientific consensus on vaccine safety is based on studies of millions of people rather than individual case reports because ___?",
+      "answer": "Large populations can reveal rare effects that anecdotes cannot",
+      "choices": ["Large populations can reveal rare effects that anecdotes cannot", "Individual cases are always fabricated", "Anecdotal reports are illegal", "Statistics are more believable than doctors"],
+      "tier": 3,
+      "reason": "Philosophy of science: population studies vs anecdote in medical science"
+    },
+    {
+      "question": "Occam's Razor is a scientific principle that says, when two theories explain data equally well, prefer the one that ___?",
+      "answer": "Makes fewer assumptions",
+      "choices": ["Makes fewer assumptions", "Is more dramatic", "Was proposed first", "Uses more mathematics"],
+      "tier": 3,
+      "reason": "Philosophy of science: parsimony as a practical scientific heuristic"
+    }
+  ]
+}

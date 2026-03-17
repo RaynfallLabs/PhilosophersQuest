@@ -34,28 +34,6 @@
   },
   {
     "tier": 1,
-    "question": "Which of these is an example of a 'need'?",
-    "answer": "Food",
-    "choices": [
-      "Food",
-      "Video games",
-      "Designer shoes",
-      "A swimming pool"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "Which of these is an example of a 'want'?",
-    "answer": "A new bicycle",
-    "choices": [
-      "A new bicycle",
-      "Drinking water",
-      "Shelter",
-      "Clothing"
-    ]
-  },
-  {
-    "tier": 1,
     "question": "What is barter?",
     "answer": "Trading goods or services without using money",
     "choices": [
@@ -63,17 +41,6 @@
       "Borrowing money from a bank",
       "Paying taxes to the government",
       "Saving money in a jar"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "If you trade your sandwich for your friend's apple, that is called:",
-    "answer": "Barter",
-    "choices": [
-      "Barter",
-      "Inflation",
-      "Taxation",
-      "Investment"
     ]
   },
   {
@@ -129,17 +96,6 @@
       "To spend money immediately",
       "To borrow money from a friend",
       "To exchange money for goods"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "Which of these people is producing something?",
-    "answer": "A baker making bread",
-    "choices": [
-      "A baker making bread",
-      "A child watching TV",
-      "A student reading a book",
-      "A person sleeping"
     ]
   },
   {
@@ -386,17 +342,6 @@
   },
   {
     "tier": 1,
-    "question": "What is a receipt?",
-    "answer": "A written record of a purchase",
-    "choices": [
-      "A written record of a purchase",
-      "A type of currency",
-      "A form of tax",
-      "A government regulation"
-    ]
-  },
-  {
-    "tier": 1,
     "question": "When a business sells goods for less than they cost to make, the business has a:",
     "answer": "Loss",
     "choices": [
@@ -573,17 +518,6 @@
   },
   {
     "tier": 1,
-    "question": "Which of these represents a financial goal?",
-    "answer": "Saving $500 to buy a new phone in three months",
-    "choices": [
-      "Saving $500 to buy a new phone in three months",
-      "Spending all your allowance every week",
-      "Borrowing money from many friends",
-      "Ignoring prices when shopping"
-    ]
-  },
-  {
-    "tier": 1,
     "question": "A person who lends money to a bank by keeping it in a savings account is called a:",
     "answer": "Depositor",
     "choices": [
@@ -749,17 +683,6 @@
   },
   {
     "tier": 1,
-    "question": "What is an allowance?",
-    "answer": "A regular amount of money given to a child, usually for chores or expenses",
-    "choices": [
-      "A regular amount of money given to a child, usually for chores or expenses",
-      "A tax refund",
-      "A government grant for adults",
-      "Interest earned on a savings account"
-    ]
-  },
-  {
-    "tier": 1,
     "question": "What is the meaning of 'supply' in economics?",
     "answer": "The amount of a product that producers are willing and able to sell",
     "choices": [
@@ -789,28 +712,6 @@
       "The money they save",
       "The taxes they pay",
       "The goods they consume"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "Which of these is NOT a function of money?",
-    "answer": "Making goods cheaper",
-    "choices": [
-      "Making goods cheaper",
-      "Medium of exchange",
-      "Store of value",
-      "Unit of account"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What is a charitable donation?",
-    "answer": "Money given freely to help others without expecting payment in return",
-    "choices": [
-      "Money given freely to help others without expecting payment in return",
-      "A loan that must be repaid",
-      "A government tax",
-      "Interest on savings"
     ]
   },
   {
@@ -947,13 +848,13 @@
   },
   {
     "tier": 2,
-    "question": "In a command economy, who controls economic decisions?",
-    "answer": "The government",
+    "question": "In a command economy, who makes economic decisions -- and what is the fundamental problem this creates?",
+    "answer": "The government -- but it lacks the dispersed local knowledge that markets use through prices",
     "choices": [
-      "The government",
-      "Private businesses",
-      "Individual consumers",
-      "Foreign investors"
+      "The government -- but it lacks the dispersed local knowledge that markets use through prices",
+      "The government, which can efficiently direct resources better than markets",
+      "Individual consumers, guided by central bank signals",
+      "Foreign investors, who fund planned projects"
     ]
   },
   {
@@ -1101,13 +1002,13 @@
   },
   {
     "tier": 2,
-    "question": "What causes inflation when the money supply increases too fast?",
-    "answer": "More money chasing the same amount of goods pushes prices up",
+    "question": "When a government increases the money supply faster than economic output grows, what happens and why?",
+    "answer": "Prices rise (inflation), because more money is chasing the same goods -- this is why sound money matters",
     "choices": [
-      "More money chasing the same amount of goods pushes prices up",
-      "Prices fall because money is more available",
-      "Unemployment drops to zero",
-      "The GDP shrinks automatically"
+      "Prices rise (inflation), because more money is chasing the same goods -- this is why sound money matters",
+      "Prices fall because money becomes more available to everyone equally",
+      "Unemployment drops because workers have more to spend",
+      "GDP grows in real terms because spending increases"
     ]
   },
   {
@@ -1152,17 +1053,6 @@
       "Per year",
       "Per country",
       "Per household"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Which type of economy is most common in the modern world?",
-    "answer": "Mixed economy",
-    "choices": [
-      "Mixed economy",
-      "Command economy",
-      "Traditional economy",
-      "Pure market economy"
     ]
   },
   {
@@ -1222,13 +1112,13 @@
   },
   {
     "tier": 2,
-    "question": "What is fiat currency?",
-    "answer": "Money not backed by a physical commodity, declared legal tender by government",
+    "question": "What is fiat currency, and why is it vulnerable to inflation in a way commodity money is not?",
+    "answer": "Money with no commodity backing, declared legal tender -- governments can print it without limit, enabling inflation",
     "choices": [
-      "Money not backed by a physical commodity, declared legal tender by government",
-      "Currency backed by gold",
-      "Digital cryptocurrency",
-      "Coins made of silver"
+      "Money with no commodity backing, declared legal tender -- governments can print it without limit, enabling inflation",
+      "Currency backed by gold, ensuring stable purchasing power",
+      "Digital currency issued by private banks",
+      "Coins whose face value equals their metal content"
     ]
   },
   {
@@ -1394,17 +1284,6 @@
       "The average wage in an economy",
       "The wage paid to government workers",
       "The maximum wage in a country"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Which of the following is an automatic stabilizer in the economy?",
-    "answer": "Unemployment benefits",
-    "choices": [
-      "Unemployment benefits",
-      "Building new highways",
-      "Cutting income tax rates",
-      "Printing more money"
     ]
   },
   {
@@ -1838,17 +1717,6 @@
   },
   {
     "tier": 3,
-    "question": "What is an expansionary fiscal policy?",
-    "answer": "Increasing government spending or cutting taxes to stimulate the economy",
-    "choices": [
-      "Increasing government spending or cutting taxes to stimulate the economy",
-      "Raising taxes and cutting spending to reduce inflation",
-      "Raising interest rates to slow the economy",
-      "Selling government bonds to reduce money supply"
-    ]
-  },
-  {
-    "tier": 3,
     "question": "What is a contractionary monetary policy?",
     "answer": "Raising interest rates or reducing money supply to slow inflation",
     "choices": [
@@ -2058,13 +1926,13 @@
   },
   {
     "tier": 3,
-    "question": "What typically happens when a price ceiling is set below equilibrium?",
-    "answer": "A shortage develops",
+    "question": "When a government sets a price ceiling below the market equilibrium for a good like housing, what historically results -- and why?",
+    "answer": "A shortage develops -- suppliers reduce supply when they cannot earn enough, as seen with rent control in NYC and other cities",
     "choices": [
-      "A shortage develops",
-      "A surplus develops",
-      "The market reaches a new equilibrium",
-      "Inflation increases"
+      "A shortage develops -- suppliers reduce supply when they cannot earn enough, as seen with rent control in NYC and other cities",
+      "A surplus develops because demand falls at the lower price",
+      "The market reaches a new stable equilibrium at the lower price",
+      "Quality improves because producers compete harder at lower prices"
     ]
   },
   {
@@ -2230,17 +2098,6 @@
       "When the government fails to provide public goods",
       "When a monopoly hoards all productive resources",
       "When trade barriers destroy market competition"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "What is 'demand-side economics'?",
-    "answer": "The view that stimulating consumer and government demand drives economic growth",
-    "choices": [
-      "The view that stimulating consumer and government demand drives economic growth",
-      "The belief that only supply determines output",
-      "The idea that only investment drives growth",
-      "The view that exports are the key to prosperity"
     ]
   },
   {
@@ -2487,17 +2344,6 @@
   },
   {
     "tier": 4,
-    "question": "What does the 'multiplier' in Keynesian economics represent?",
-    "answer": "The ratio of GDP change to the initial change in autonomous spending",
-    "choices": [
-      "The ratio of GDP change to the initial change in autonomous spending",
-      "The interest rate multiple set by the central bank",
-      "The ratio of exports to imports",
-      "The compound interest rate on government bonds"
-    ]
-  },
-  {
-    "tier": 4,
     "question": "What is the marginal propensity to consume (MPC)?",
     "answer": "The fraction of additional income that a consumer spends rather than saves",
     "choices": [
@@ -2560,17 +2406,6 @@
       "Governments destroy barriers to competition",
       "Monopolies that break up after antitrust action",
       "Recessions that clear out inefficient firms only"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "What is the 'paradox of thrift'?",
-    "answer": "If everyone saves more simultaneously, total savings may fall because of reduced income",
-    "choices": [
-      "If everyone saves more simultaneously, total savings may fall because of reduced income",
-      "Saving money always reduces economic growth",
-      "Thrifty consumers always earn higher returns",
-      "Higher savings rates cause inflation"
     ]
   },
   {
@@ -2685,17 +2520,6 @@
   },
   {
     "tier": 4,
-    "question": "What is the 'balance of payments'?",
-    "answer": "A record of all economic transactions between a country and the rest of the world",
-    "choices": [
-      "A record of all economic transactions between a country and the rest of the world",
-      "The difference between tax revenues and government spending",
-      "The total value of exports minus imports",
-      "A measure of national debt"
-    ]
-  },
-  {
-    "tier": 4,
     "question": "What is 'economic rent' in economics?",
     "answer": "Payment to a factor of production above the minimum needed to keep it in use",
     "choices": [
@@ -2780,17 +2604,6 @@
       "Lower output and lower price levels",
       "Higher output and lower prices",
       "Lower output and higher prices"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "What is the 'crowding in' effect?",
-    "answer": "Government investment increases confidence and stimulates private sector investment",
-    "choices": [
-      "Government investment increases confidence and stimulates private sector investment",
-      "Government borrowing reduces private investment",
-      "Tax cuts encourage government spending",
-      "Exports replace domestic consumption"
     ]
   },
   {
@@ -2894,17 +2707,6 @@
   },
   {
     "tier": 4,
-    "question": "What is 'stagflation' and why is it difficult to combat?",
-    "answer": "It combines high inflation and high unemployment, making standard policy tools counterproductive",
-    "choices": [
-      "It combines high inflation and high unemployment, making standard policy tools counterproductive",
-      "It is a mild recession that central banks can cure with low interest rates",
-      "It occurs only in developing economies",
-      "It is caused solely by trade deficits"
-    ]
-  },
-  {
-    "tier": 4,
     "question": "What is the 'Laffer Curve' used to illustrate?",
     "answer": "That beyond a certain point, raising tax rates reduces total tax revenue",
     "choices": [
@@ -2912,17 +2714,6 @@
       "That lower wages always increase employment",
       "That trade deficits always harm GDP growth",
       "That inflation rises with money supply at a constant rate"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "What is 'Giffen good'?",
-    "answer": "An inferior good for which demand rises as price rises, violating the law of demand",
-    "choices": [
-      "An inferior good for which demand rises as price rises, violating the law of demand",
-      "A luxury good with perfectly inelastic demand",
-      "A good whose supply is completely fixed",
-      "A good that only wealthy consumers buy"
     ]
   },
   {
@@ -2967,17 +2758,6 @@
       "The outcome where all players cooperate perfectly",
       "A strategy where the first player always wins",
       "The point where supply equals demand"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "What is the main insight of Keynesian economics?",
-    "answer": "In recessions, government spending can stimulate demand and restore full employment",
-    "choices": [
-      "In recessions, government spending can stimulate demand and restore full employment",
-      "Free markets always self-correct without intervention",
-      "The money supply is the only driver of economic output",
-      "Long-run growth depends solely on capital accumulation"
     ]
   },
   {
@@ -3103,17 +2883,6 @@
   },
   {
     "tier": 5,
-    "question": "What is 'velocity of money'?",
-    "answer": "The rate at which money circulates through the economy",
-    "choices": [
-      "The rate at which money circulates through the economy",
-      "The speed at which central banks print currency",
-      "The rate of GDP growth per year",
-      "The turnover rate of government bonds"
-    ]
-  },
-  {
-    "tier": 5,
     "question": "What is the Quantity Theory of Money?",
     "answer": "MV = PQ: money supply times velocity equals price level times real output",
     "choices": [
@@ -3191,17 +2960,6 @@
   },
   {
     "tier": 5,
-    "question": "What does the efficient market hypothesis (EMH) claim?",
-    "answer": "Stock prices reflect all available information, making it impossible to consistently beat the market",
-    "choices": [
-      "Stock prices reflect all available information, making it impossible to consistently beat the market",
-      "Markets always reach equilibrium quickly",
-      "All firms compete perfectly in financial markets",
-      "Investor behavior is always rational"
-    ]
-  },
-  {
-    "tier": 5,
     "question": "What is 'behavioral economics'?",
     "answer": "The study of how psychological biases affect economic decision-making",
     "choices": [
@@ -3213,28 +2971,6 @@
   },
   {
     "tier": 5,
-    "question": "What is 'asymmetric information'?",
-    "answer": "When one party in a transaction has more or better information than the other",
-    "choices": [
-      "When one party in a transaction has more or better information than the other",
-      "When two parties have equal information",
-      "When markets lack any price signals",
-      "When governments withhold economic data"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "What is the 'principal-agent problem'?",
-    "answer": "When an agent acts in their own interest rather than the principal's, due to information gaps",
-    "choices": [
-      "When an agent acts in their own interest rather than the principal's, due to information gaps",
-      "When a buyer and seller disagree on price",
-      "When a government fails to enforce contracts",
-      "When workers strike against employers"
-    ]
-  },
-  {
-    "tier": 5,
     "question": "What caused the 2008 financial crisis?",
     "answer": "A collapse in the U.S. housing market fueled by risky mortgage lending and complex financial products",
     "choices": [
@@ -3242,39 +2978,6 @@
       "A sudden spike in oil prices",
       "A default by European governments on their debt",
       "A trade war between the U.S. and China"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "What is 'endogenous growth theory'?",
-    "answer": "Growth is driven by internal factors like innovation and human capital, not just external inputs",
-    "choices": [
-      "Growth is driven by internal factors like innovation and human capital, not just external inputs",
-      "Growth depends only on investment in physical capital",
-      "Economic growth stops naturally when resources run out",
-      "Growth is determined by international trade alone"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "What is the 'Laffer Curve'?",
-    "answer": "A model showing that tax revenue first rises then falls as tax rates increase beyond an optimal point",
-    "choices": [
-      "A model showing that tax revenue first rises then falls as tax rates increase beyond an optimal point",
-      "A curve showing the relationship between inflation and growth",
-      "A model of supply and demand equilibrium",
-      "A graph of historical GDP growth rates"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "What is 'Pareto efficiency'?",
-    "answer": "An allocation where no one can be made better off without making someone else worse off",
-    "choices": [
-      "An allocation where no one can be made better off without making someone else worse off",
-      "When all citizens earn the same income",
-      "The most equal distribution of resources",
-      "When markets maximize total consumer spending"
     ]
   },
   {
@@ -3323,24 +3026,13 @@
   },
   {
     "tier": 5,
-    "question": "What is the 'Austrian School' of economics known for?",
-    "answer": "Emphasizing individual choice, spontaneous market order, and criticism of central planning",
+    "question": "What is Hayek's 'knowledge problem' -- the central insight of the Austrian School against central planning?",
+    "answer": "No central authority can collect and process the dispersed local knowledge embedded in market prices -- making central planning inevitably inefficient",
     "choices": [
-      "Emphasizing individual choice, spontaneous market order, and criticism of central planning",
-      "Advocating for strong government intervention in markets",
-      "Developing the quantity theory of money",
-      "Promoting free trade with fixed exchange rates"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "What is 'rent-seeking'?",
-    "answer": "Using resources to gain wealth by manipulating the political or economic environment rather than creating value",
-    "choices": [
-      "Using resources to gain wealth by manipulating the political or economic environment rather than creating value",
-      "Earning income from rental properties",
-      "Seeking better returns through financial investment",
-      "Lobbying for lower business taxes"
+      "No central authority can collect and process the dispersed local knowledge embedded in market prices -- making central planning inevitably inefficient",
+      "Governments should not intervene because it violates individual rights only",
+      "Markets work best when regulated by independent technocrats",
+      "The knowledge problem only applies to command economies, not mixed economies"
     ]
   },
   {
@@ -3521,28 +3213,6 @@
   },
   {
     "tier": 5,
-    "question": "What is the 'golden rule' in Keynesian economics?",
-    "answer": "Governments should only borrow to invest, not to fund current spending",
-    "choices": [
-      "Governments should only borrow to invest, not to fund current spending",
-      "Tax rates should equal the rate of economic growth",
-      "Interest rates should always exceed inflation",
-      "Budget deficits should never exceed 3% of GDP"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "What is 'crowdfunding' as an economic phenomenon?",
-    "answer": "Raising small amounts of capital from a large number of people, typically via the internet",
-    "choices": [
-      "Raising small amounts of capital from a large number of people, typically via the internet",
-      "When central banks fund government deficits",
-      "When many small firms merge to form a large company",
-      "A collective bargaining strategy used by labor unions"
-    ]
-  },
-  {
-    "tier": 5,
     "question": "What does the term 'secular stagnation' describe?",
     "answer": "A prolonged period of low growth, low inflation, and low interest rates in a mature economy",
     "choices": [
@@ -3587,50 +3257,6 @@
   },
   {
     "tier": 1,
-    "question": "What do we call the money you earn for doing a job?",
-    "answer": "Wages",
-    "choices": [
-      "Tax",
-      "Wages",
-      "Profit",
-      "Savings"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What happens to the price of something if there are very few of them but many people want it?",
-    "answer": "The price goes up",
-    "choices": [
-      "The price goes down",
-      "The price stays the same",
-      "The price goes up",
-      "The price becomes free"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What is bartering?",
-    "answer": "Trading goods or services directly without using money",
-    "choices": [
-      "Borrowing money from a bank",
-      "Trading goods or services directly without using money",
-      "Saving money for later",
-      "Paying taxes to the government"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What is a 'need' versus a 'want'?",
-    "answer": "Needs are essential for survival; wants are things we desire but don't need",
-    "choices": [
-      "Needs are expensive; wants are cheap",
-      "Needs are essential for survival; wants are things we desire but don't need",
-      "Needs are for adults; wants are for children",
-      "There is no difference"
-    ]
-  },
-  {
-    "tier": 1,
     "question": "What does a bank do with the money you deposit?",
     "answer": "Lends it to other customers and pays you interest",
     "choices": [
@@ -3638,94 +3264,6 @@
       "Lends it to other customers and pays you interest",
       "Invests it in the stock market for you",
       "Sends it to the government"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What is profit?",
-    "answer": "The money left over after all costs are paid",
-    "choices": [
-      "The total sales a business makes",
-      "The money spent to run a business",
-      "The money left over after all costs are paid",
-      "The money borrowed to start a business"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "Why do people pay taxes?",
-    "answer": "To fund government services like roads, schools, and hospitals",
-    "choices": [
-      "To pay bank fees",
-      "To fund government services like roads, schools, and hospitals",
-      "Because businesses require it",
-      "To invest in the stock market"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What is interest on a loan?",
-    "answer": "The extra money you pay back on top of the amount you borrowed",
-    "choices": [
-      "The amount you originally borrowed",
-      "The extra money you pay back on top of the amount you borrowed",
-      "A fee for opening a bank account",
-      "The profit a bank makes from investments"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What is the difference between earning and spending?",
-    "answer": "Earning means receiving money; spending means using it to buy things",
-    "choices": [
-      "They mean the same thing",
-      "Earning means receiving money; spending means using it to buy things",
-      "Earning is for businesses; spending is for individuals",
-      "Earning is always more than spending"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What is a coin or bill called as a form of money?",
-    "answer": "Currency",
-    "choices": [
-      "Capital",
-      "Revenue",
-      "Currency",
-      "Commodity"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What does 'save' mean in personal finance?",
-    "answer": "To keep money rather than spending it",
-    "choices": [
-      "To borrow money from a bank",
-      "To invest in the stock market",
-      "To keep money rather than spending it",
-      "To earn more money than you need"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "What is GDP?",
-    "answer": "The total value of all goods and services produced in a country in a year",
-    "choices": [
-      "The government's annual spending budget",
-      "The total value of all goods and services produced in a country in a year",
-      "The average income of citizens",
-      "The total money in circulation"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "What is the difference between imports and exports?",
-    "answer": "Imports are goods brought into a country; exports are goods sent out",
-    "choices": [
-      "Imports are manufactured goods; exports are raw materials",
-      "Imports are goods brought into a country; exports are goods sent out",
-      "Exports are bought locally; imports are sold abroad",
-      "They mean the same thing"
     ]
   },
   {
@@ -3737,28 +3275,6 @@
       "An economy where prices and production are determined by supply and demand",
       "An economy based only on agriculture",
       "An economy with no foreign trade"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "What is a command economy?",
-    "answer": "An economy where the government makes all economic decisions",
-    "choices": [
-      "An economy where individuals make all economic decisions",
-      "An economy where the government makes all economic decisions",
-      "An economy based on free trade",
-      "An economy with very high taxes"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "What is a tax?",
-    "answer": "Money collected by the government from individuals and businesses to fund public services",
-    "choices": [
-      "A bank fee",
-      "Money collected by the government from individuals and businesses to fund public services",
-      "Interest paid on a loan",
-      "A payment for using a company's service"
     ]
   },
   {
@@ -3807,28 +3323,6 @@
   },
   {
     "tier": 2,
-    "question": "What is a mixed economy?",
-    "answer": "An economy with both private enterprise and government involvement",
-    "choices": [
-      "An economy that trades with many countries",
-      "An economy with both private enterprise and government involvement",
-      "An economy that produces both goods and services",
-      "An economy with no central bank"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "What is a consumer?",
-    "answer": "A person who buys goods and services",
-    "choices": [
-      "A business that makes goods",
-      "A worker who makes things",
-      "A person who buys goods and services",
-      "The government when it spends money"
-    ]
-  },
-  {
-    "tier": 2,
     "question": "What is purchasing power?",
     "answer": "The amount of goods and services that can be bought with a given amount of money",
     "choices": [
@@ -3836,17 +3330,6 @@
       "The amount of goods and services that can be bought with a given amount of money",
       "The buying habits of a consumer",
       "The total spending of a country"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "What is the role of a central bank?",
-    "answer": "To manage a country's money supply, set interest rates, and oversee the banking system",
-    "choices": [
-      "To collect taxes for the government",
-      "To manage a country's money supply, set interest rates, and oversee the banking system",
-      "To fund government spending",
-      "To regulate international trade"
     ]
   },
   {
@@ -3884,39 +3367,6 @@
   },
   {
     "tier": 2,
-    "question": "What is microeconomics?",
-    "answer": "The study of individual economic units like households, firms, and markets",
-    "choices": [
-      "The study of the overall economy",
-      "The study of international trade",
-      "The study of individual economic units like households, firms, and markets",
-      "The study of government economic policy"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "What is macroeconomics?",
-    "answer": "The study of the economy as a whole, including inflation, unemployment, and growth",
-    "choices": [
-      "The study of individual firms",
-      "The study of the economy as a whole, including inflation, unemployment, and growth",
-      "The study of consumer behavior",
-      "The study of financial markets"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "What is the difference between a good and a service?",
-    "answer": "A good is a physical product; a service is an action performed for someone",
-    "choices": [
-      "Goods are more valuable than services",
-      "A good is a physical product; a service is an action performed for someone",
-      "Services are provided by the government; goods are sold by businesses",
-      "There is no meaningful difference"
-    ]
-  },
-  {
-    "tier": 2,
     "question": "What is a budget deficit?",
     "answer": "When a government spends more than it collects in revenue",
     "choices": [
@@ -3935,28 +3385,6 @@
       "Saving stores money safely; investing puts money to work to earn returns with some risk",
       "Saving earns more than investing",
       "Investing is only for wealthy people"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "What is a credit score?",
-    "answer": "A number that represents your history of repaying debts",
-    "choices": [
-      "The amount you can borrow from a bank",
-      "A number that represents your history of repaying debts",
-      "Your net worth",
-      "The interest rate on your loan"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "What is the equilibrium price?",
-    "answer": "The price at which the quantity supplied equals the quantity demanded",
-    "choices": [
-      "The average price in a market",
-      "The price set by the government",
-      "The price at which the quantity supplied equals the quantity demanded",
-      "The lowest possible price in a market"
     ]
   },
   {
@@ -3983,17 +3411,6 @@
   },
   {
     "tier": 3,
-    "question": "What is the difference between fiscal policy and monetary policy?",
-    "answer": "Fiscal policy involves government spending and taxes; monetary policy involves money supply and interest rates",
-    "choices": [
-      "They are the same thing",
-      "Fiscal policy involves government spending and taxes; monetary policy involves money supply and interest rates",
-      "Fiscal policy is for developing countries; monetary policy is for developed countries",
-      "Monetary policy involves government spending; fiscal policy involves interest rates"
-    ]
-  },
-  {
-    "tier": 3,
     "question": "What is a monopolistic competition?",
     "answer": "A market with many firms selling similar but differentiated products",
     "choices": [
@@ -4001,39 +3418,6 @@
       "A market with two competing firms",
       "A market with many firms selling similar but differentiated products",
       "A government-regulated market"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "What is price elasticity of demand?",
-    "answer": "How sensitive the quantity demanded is to a change in price",
-    "choices": [
-      "The maximum price consumers will pay",
-      "How sensitive the quantity demanded is to a change in price",
-      "The rate at which prices change over time",
-      "The level of competition in a market"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "What is the difference between cyclical and structural unemployment?",
-    "answer": "Cyclical unemployment is due to economic downturns; structural is due to mismatches between skills and jobs",
-    "choices": [
-      "They are the same type",
-      "Cyclical unemployment is due to economic downturns; structural is due to mismatches between skills and jobs",
-      "Structural unemployment is temporary; cyclical is permanent",
-      "Cyclical unemployment only happens in developing countries"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "What is a progressive tax?",
-    "answer": "A tax where higher earners pay a higher percentage of their income",
-    "choices": [
-      "A tax that increases every year",
-      "A tax where all people pay the same amount",
-      "A tax where higher earners pay a higher percentage of their income",
-      "A tax on luxury goods only"
     ]
   },
   {
@@ -4049,39 +3433,6 @@
   },
   {
     "tier": 3,
-    "question": "What is the velocity of money?",
-    "answer": "The rate at which money changes hands in an economy",
-    "choices": [
-      "The speed at which central banks print money",
-      "The rate at which money changes hands in an economy",
-      "The speed of inflation",
-      "The pace of economic growth"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "What is comparative advantage?",
-    "answer": "The ability to produce a good at a lower opportunity cost than another producer",
-    "choices": [
-      "Producing more of a good than any other country",
-      "The ability to produce a good at a lower opportunity cost than another producer",
-      "Having the best technology for production",
-      "Controlling the most natural resources"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "What is stagflation?",
-    "answer": "A combination of high inflation and high unemployment with low economic growth",
-    "choices": [
-      "A long period of deflation",
-      "A combination of high inflation and high unemployment with low economic growth",
-      "Rapid economic growth followed by a recession",
-      "Low inflation combined with low unemployment"
-    ]
-  },
-  {
-    "tier": 3,
     "question": "What is the money supply?",
     "answer": "The total amount of money circulating in an economy",
     "choices": [
@@ -4089,28 +3440,6 @@
       "The total amount of money circulating in an economy",
       "The total assets of all banks",
       "The amount of foreign currency held by the central bank"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "What is the difference between nominal and real GDP?",
-    "answer": "Nominal GDP is measured in current prices; real GDP is adjusted for inflation",
-    "choices": [
-      "Nominal GDP includes services; real GDP does not",
-      "Nominal GDP is measured in current prices; real GDP is adjusted for inflation",
-      "Real GDP measures wealth; nominal GDP measures output",
-      "They are calculated the same way"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "What is frictional unemployment?",
-    "answer": "Temporary unemployment while workers transition between jobs",
-    "choices": [
-      "Unemployment caused by automation",
-      "Temporary unemployment while workers transition between jobs",
-      "Unemployment due to seasonal changes",
-      "Long-term unemployment in declining industries"
     ]
   },
   {
@@ -4148,39 +3477,6 @@
   },
   {
     "tier": 3,
-    "question": "What is GDP per capita?",
-    "answer": "GDP divided by the population, representing average economic output per person",
-    "choices": [
-      "The total value of exports per citizen",
-      "GDP divided by the population, representing average economic output per person",
-      "The average wage in a country",
-      "The GDP of the capital city"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "What is deadweight loss?",
-    "answer": "The loss of economic efficiency when the equilibrium is not achieved",
-    "choices": [
-      "The cost of transporting goods",
-      "The loss of economic efficiency when the equilibrium is not achieved",
-      "Money lost to government taxes",
-      "The cost of unsold inventory"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "What is the Gini coefficient?",
-    "answer": "A measure of income inequality within a country, from 0 (perfect equality) to 1 (perfect inequality)",
-    "choices": [
-      "A measure of economic growth rate",
-      "A measure of income inequality within a country, from 0 (perfect equality) to 1 (perfect inequality)",
-      "The percentage of GDP spent on welfare",
-      "A country's debt-to-GDP ratio"
-    ]
-  },
-  {
-    "tier": 3,
     "question": "What is monetary base?",
     "answer": "The total amount of currency in circulation plus bank reserves held at the central bank",
     "choices": [
@@ -4188,72 +3484,6 @@
       "The total amount of currency in circulation plus bank reserves held at the central bank",
       "The gold reserves backing a currency",
       "The government's annual money supply target"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "What is the difference between a flat tax and a progressive tax?",
-    "answer": "A flat tax charges the same rate for all; a progressive tax increases the rate as income rises",
-    "choices": [
-      "A flat tax is always lower than a progressive tax",
-      "A flat tax charges the same rate for all; a progressive tax increases the rate as income rises",
-      "Flat taxes only apply to goods; progressive taxes apply to income",
-      "A progressive tax charges less as income rises"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "What is the balance of trade?",
-    "answer": "The difference between a country's exports and imports of goods",
-    "choices": [
-      "The amount of money a country owes abroad",
-      "The difference between a country's exports and imports of goods",
-      "The value of a country's currency",
-      "The ratio of government spending to GDP"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "What is a price floor?",
-    "answer": "A government-set minimum price below which a good cannot be sold",
-    "choices": [
-      "The natural price in a free market",
-      "A government-set minimum price below which a good cannot be sold",
-      "The maximum price the market will bear",
-      "A price that changes with demand"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "What is a price ceiling?",
-    "answer": "A government-set maximum price above which a good cannot be sold",
-    "choices": [
-      "The price set by market competition",
-      "The maximum cost to produce a good",
-      "A government-set maximum price above which a good cannot be sold",
-      "The price above which demand falls to zero"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "What is the human development index (HDI)?",
-    "answer": "A composite measure of life expectancy, education, and income per capita",
-    "choices": [
-      "A country's GDP per capita",
-      "A composite measure of life expectancy, education, and income per capita",
-      "A measure of political freedom",
-      "The average wage in a country"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "What is the difference between a stock and a bond?",
-    "answer": "A stock represents ownership in a company; a bond is a loan to a company or government",
-    "choices": [
-      "Stocks are safer than bonds",
-      "A stock represents ownership in a company; a bond is a loan to a company or government",
-      "A bond gives voting rights; a stock does not",
-      "They are the same type of investment"
     ]
   },
   {
@@ -4269,17 +3499,6 @@
   },
   {
     "tier": 3,
-    "question": "What is the marginal cost?",
-    "answer": "The additional cost of producing one more unit of a good or service",
-    "choices": [
-      "The total cost divided by the number of units",
-      "The additional cost of producing one more unit of a good or service",
-      "The cost of raw materials per unit",
-      "The price at which profit is maximized"
-    ]
-  },
-  {
-    "tier": 3,
     "question": "What is the difference between economic growth and economic development?",
     "answer": "Growth measures GDP increase; development measures improvements in living standards and well-being",
     "choices": [
@@ -4287,17 +3506,6 @@
       "Growth measures GDP increase; development measures improvements in living standards and well-being",
       "Development is only about infrastructure",
       "Economic growth is for rich countries; development is for poor ones"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "What is the Laffer Curve?",
-    "answer": "A theory showing that there is an optimal tax rate that maximizes revenue; rates too high or too low reduce revenue",
-    "choices": [
-      "A graph showing the relationship between inflation and unemployment",
-      "A theory showing that there is an optimal tax rate that maximizes revenue; rates too high or too low reduce revenue",
-      "A model predicting stock market movements",
-      "A curve describing diminishing returns in production"
     ]
   },
   {
@@ -4331,39 +3539,6 @@
       "Bad money drives out good money when both have the same face value",
       "Inflation always follows an increase in money supply",
       "Economies naturally move toward equilibrium"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "What is the paradox of thrift?",
-    "answer": "If everyone saves more during a downturn, total savings may fall as the economy shrinks",
-    "choices": [
-      "Saving is always beneficial for individuals and the economy",
-      "If everyone saves more during a downturn, total savings may fall as the economy shrinks",
-      "Spending always stimulates the economy",
-      "Thrift only benefits wealthy individuals"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "What is a Giffen good?",
-    "answer": "An inferior good for which demand increases as price rises, violating the law of demand",
-    "choices": [
-      "A luxury good with price-inelastic demand",
-      "An inferior good for which demand increases as price rises, violating the law of demand",
-      "A good whose supply increases with price",
-      "A good with perfectly elastic demand"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "What is the velocity of money equation (quantity theory)?",
-    "answer": "MV = PQ, where M is money supply, V is velocity, P is price level, Q is output",
-    "choices": [
-      "GDP = C + I + G + NX",
-      "MV = PQ, where M is money supply, V is velocity, P is price level, Q is output",
-      "Y = C + S",
-      "P = MV/Q only"
     ]
   },
   {
@@ -4445,35 +3620,13 @@
   },
   {
     "tier": 4,
-    "question": "What is the crowding-out effect?",
-    "answer": "Government borrowing raises interest rates, reducing private sector investment",
+    "question": "The Keynesian multiplier claims that $1 of government spending raises GDP by more than $1. What is a key empirical critique of this claim?",
+    "answer": "The multiplier is often less than 1 in practice because government borrowing crowds out private investment and may misallocate resources",
     "choices": [
-      "Tax increases reduce consumer spending",
-      "Government borrowing raises interest rates, reducing private sector investment",
-      "Public spending displaces private consumption",
-      "Government programs replace private charities"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "What is the Keynesian multiplier?",
-    "answer": "An increase in government spending leads to a proportionally larger increase in GDP",
-    "choices": [
-      "Tax cuts always stimulate more growth than spending increases",
-      "An increase in government spending leads to a proportionally larger increase in GDP",
-      "Savings equal investment in all economies",
-      "The money supply determines GDP"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "What is hyperinflation?",
-    "answer": "Extremely rapid inflation, typically exceeding 50% per month",
-    "choices": [
-      "Inflation above 10% per year",
-      "Extremely rapid inflation, typically exceeding 50% per month",
-      "Deflation that continues for more than a year",
-      "Inflation caused by rising wages"
+      "The multiplier is often less than 1 in practice because government borrowing crowds out private investment and may misallocate resources",
+      "The multiplier is always exactly 5 regardless of economic conditions",
+      "The multiplier only applies when central banks support the spending with QE",
+      "There is no critique; the Keynesian multiplier is universally accepted"
     ]
   },
   {
@@ -4485,17 +3638,6 @@
       "Absolute advantage means producing more efficiently; comparative advantage means lower opportunity cost",
       "Comparative advantage is more important in trade",
       "Absolute advantage always determines trade patterns"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "What is the natural rate of unemployment?",
-    "answer": "The rate of unemployment consistent with a stable inflation rate, including frictional and structural unemployment",
-    "choices": [
-      "Zero percent unemployment",
-      "The rate of unemployment consistent with a stable inflation rate, including frictional and structural unemployment",
-      "The lowest unemployment ever recorded",
-      "The average unemployment over a business cycle"
     ]
   },
   {
@@ -4544,17 +3686,6 @@
   },
   {
     "tier": 4,
-    "question": "What is a liquidity trap?",
-    "answer": "When monetary policy becomes ineffective because interest rates are near zero and people hoard cash",
-    "choices": [
-      "When a bank runs out of cash reserves",
-      "When monetary policy becomes ineffective because interest rates are near zero and people hoard cash",
-      "When investors prefer bonds over stocks",
-      "When a country cannot borrow internationally"
-    ]
-  },
-  {
-    "tier": 4,
     "question": "What is the output gap?",
     "answer": "The difference between actual GDP and potential GDP",
     "choices": [
@@ -4584,39 +3715,6 @@
       "Firms pay above-market wages to increase worker productivity and reduce turnover",
       "Wages naturally equal the marginal product of labor",
       "Government intervention is needed to set fair wages"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "What is creative destruction?",
-    "answer": "The process by which new innovations replace old industries and methods",
-    "choices": [
-      "Government breaking up monopolies",
-      "The process by which new innovations replace old industries and methods",
-      "Inflation eroding the value of savings",
-      "Business cycles eliminating inefficient firms"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "What is the income effect in consumer theory?",
-    "answer": "When the price of a good falls, the consumer's real purchasing power increases, changing consumption",
-    "choices": [
-      "Higher income always increases demand for all goods",
-      "When the price of a good falls, the consumer's real purchasing power increases, changing consumption",
-      "Consumers always buy more when prices rise",
-      "Income tax changes consumer spending proportionally"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "What is the substitution effect?",
-    "answer": "When the price of a good falls, consumers substitute it for relatively more expensive alternatives",
-    "choices": [
-      "Consumers always prefer the cheapest option",
-      "When the price of a good falls, consumers substitute it for relatively more expensive alternatives",
-      "People substitute goods when their income falls",
-      "Businesses find cheaper production methods when wages rise"
     ]
   },
   {
@@ -4951,17 +4049,6 @@
   },
   {
     "tier": 5,
-    "question": "What is the Nash Equilibrium?",
-    "answer": "A state where no player can benefit by changing their strategy given the other players' strategies",
-    "choices": [
-      "The outcome that maximizes total welfare",
-      "A state where no player can benefit by changing their strategy given the other players' strategies",
-      "The point at which all players earn equal payoffs",
-      "The strategy that dominates all others"
-    ]
-  },
-  {
-    "tier": 5,
     "question": "What is the difference between autarky and free trade?",
     "answer": "Autarky means no international trade; free trade means no barriers to trade",
     "choices": [
@@ -4969,17 +4056,6 @@
       "Autarky means no international trade; free trade means no barriers to trade",
       "Free trade includes government subsidies",
       "Autarky is a form of protectionism using tariffs"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "What is the diamond-water paradox?",
-    "answer": "Water is essential but cheap; diamonds are trivial but expensive -- explained by marginal utility",
-    "choices": [
-      "Essential goods are always priced lower than luxury goods",
-      "Water is essential but cheap; diamonds are trivial but expensive -- explained by marginal utility",
-      "Natural resources are always underpriced",
-      "The price of a good reflects its total utility"
     ]
   },
   {
@@ -5006,13 +4082,13 @@
   },
   {
     "tier": 5,
-    "question": "What is the Cantillon effect?",
-    "answer": "New money injected into an economy benefits those who receive it first, before prices rise",
+    "question": "The Cantillon effect explains why newly created money does not benefit everyone equally. Who benefits most and who is harmed?",
+    "answer": "Those closest to the money creation (banks, government contractors, asset owners) gain first; wage earners and savers lose purchasing power as prices rise later",
     "choices": [
-      "Inflation benefits debtors at the expense of creditors",
-      "New money injected into an economy benefits those who receive it first, before prices rise",
-      "Central bank policy always distributes wealth equally",
-      "Monetary expansion has no real effects"
+      "Those closest to the money creation (banks, government contractors, asset owners) gain first; wage earners and savers lose purchasing power as prices rise later",
+      "New money benefits everyone equally because it raises all prices simultaneously",
+      "The central bank ensures new money reaches the poorest first through targeted programs",
+      "Money creation harms asset owners and benefits wage earners through inflation"
     ]
   },
   {
@@ -5159,47 +4235,795 @@
     ]
   },
   {
-    "tier": 1,
-    "question": "GDP stands for:",
+    "question": "When a government prints money to pay its debts, who is effectively being taxed?",
+    "answer": "Everyone holding that currency, through inflation eroding their purchasing power",
     "choices": [
-      "Gross Domestic Product",
-      "General Debt Policy",
-      "Gross Deposit Payment",
-      "General Domestic Price"
+      "Everyone holding that currency, through inflation eroding their purchasing power",
+      "Only wealthy citizens who hold large bank balances",
+      "Only foreign governments that hold the currency as reserves",
+      "No one -- printing money creates value from nothing"
     ],
-    "answer": "Gross Domestic Product"
+    "tier": 2
   },
   {
-    "tier": 1,
-    "question": "A budget deficit occurs when spending:",
+    "question": "Hayek argued that prices in a free market do something no central planner can replicate. What?",
+    "answer": "Prices aggregate and transmit dispersed knowledge held by millions of individuals, coordinating the economy without central direction",
     "choices": [
-      "Exceeds revenue",
-      "Equals revenue",
-      "Falls below revenue",
-      "Doubles revenue"
+      "Prices aggregate and transmit dispersed knowledge held by millions of individuals, coordinating the economy without central direction",
+      "Prices ensure that goods are allocated to those who need them most",
+      "Prices maximize total social welfare by balancing supply and demand mathematically",
+      "Prices are set by competition among sellers and have no informational content"
     ],
-    "answer": "Exceeds revenue"
+    "tier": 3
   },
   {
-    "tier": 4,
-    "question": "The velocity of money equation is MV =:",
+    "question": "The Austrian Business Cycle Theory (Mises/Hayek) says that central bank credit expansion causes recessions by:",
+    "answer": "Artificially low interest rates trigger malinvestment in projects that are not sustainable once rates normalize",
     "choices": [
-      "PQ",
-      "PR",
-      "PT",
-      "PI"
+      "Artificially low interest rates trigger malinvestment in projects that are not sustainable once rates normalize",
+      "Raising interest rates too quickly, which crushes consumer spending",
+      "Reducing the money supply at the wrong time in the business cycle",
+      "Allowing banks to lend too little, starving entrepreneurs of capital"
     ],
-    "answer": "PQ"
+    "tier": 3
   },
   {
-    "tier": 5,
-    "question": "The Gini coefficient measures:",
+    "question": "Stalin's collectivization of Soviet agriculture in the early 1930s caused a famine known as the Holodomor. Approximately how many people died in Ukraine alone?",
+    "answer": "3.5 to 5 million people",
     "choices": [
-      "Income inequality",
-      "Price levels",
-      "Trade balance",
-      "Unemployment rate"
+      "3.5 to 5 million people",
+      "Approximately 100,000 people",
+      "Around 500,000 people",
+      "The death toll is disputed but was under 1 million"
     ],
-    "answer": "Income inequality"
+    "tier": 3
+  },
+  {
+    "question": "Mao Zedong's Great Leap Forward (1958-1962) collectivized Chinese agriculture and industry. What was the result?",
+    "answer": "An estimated 30-45 million people died from famine caused by forced collectivization and misallocated resources",
+    "choices": [
+      "An estimated 30-45 million people died from famine caused by forced collectivization and misallocated resources",
+      "China's industrial output tripled within three years",
+      "Agricultural yields doubled due to collective farming efficiencies",
+      "Approximately 500,000 died in localized famines before policies were corrected"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Venezuela nationalized its oil industry and expanded social programs under Hugo Chavez. By 2019 under Maduro, what had happened?",
+    "answer": "The economy collapsed with hyperinflation exceeding 1,000,000%, widespread food shortages, and mass emigration of millions",
+    "choices": [
+      "The economy collapsed with hyperinflation exceeding 1,000,000%, widespread food shortages, and mass emigration of millions",
+      "Oil nationalization created stable long-term revenue that funded prosperity",
+      "The economy struggled but remained largely stable due to social programs",
+      "GDP fell modestly but food security improved due to government distribution"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Zimbabwe experienced hyperinflation peaking at 89.7 sextillion percent per month in 2008. What primarily caused this?",
+    "answer": "The government printed massive amounts of money to fund spending after seizing and destroying the productive agricultural sector",
+    "choices": [
+      "The government printed massive amounts of money to fund spending after seizing and destroying the productive agricultural sector",
+      "International trade sanctions cut off all exports for five years",
+      "A banking crisis caused private banks to print unauthorized currency",
+      "Drought destroyed crops, causing scarcity that drove prices up naturally"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Weimar Germany's hyperinflation in 1921-1923 destroyed middle-class savings. What was the main cause?",
+    "answer": "The government printed money to pay war reparations and government expenses, destroying confidence in the mark",
+    "choices": [
+      "The government printed money to pay war reparations and government expenses, destroying confidence in the mark",
+      "Foreign speculators engineered a currency attack to destabilize Germany",
+      "A bank run depleted gold reserves and forced banks to close",
+      "Hyperinflation was caused by excessive private sector lending"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Soviet central planners in the 1930s-1980s could not efficiently allocate resources despite having vast data. According to Hayek, why?",
+    "answer": "The knowledge needed for efficient allocation is dispersed among millions of people and cannot be centrally collected -- prices in markets do this automatically",
+    "choices": [
+      "The knowledge needed for efficient allocation is dispersed among millions of people and cannot be centrally collected -- prices in markets do this automatically",
+      "Soviet planners lacked computers, which would have made central planning effective",
+      "Soviet planners were corrupt, but honest planners could have succeeded",
+      "Central planning works for production but not for distribution"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Ludwig von Mises argued in 1920 that socialist central planning was theoretically impossible. What was his core argument?",
+    "answer": "Without private property and free prices, planners have no rational way to calculate which goods are worth producing -- the 'economic calculation problem'",
+    "choices": [
+      "Without private property and free prices, planners have no rational way to calculate which goods are worth producing -- the 'economic calculation problem'",
+      "Socialism fails because workers are lazy without ownership incentives",
+      "Central planning requires too many bureaucrats to be cost-effective",
+      "Socialist states always become dictatorships before the economy can be tested"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "The Cantillon effect explains why quantitative easing (QE) tends to increase wealth inequality. What is the mechanism?",
+    "answer": "New money enters via financial institutions and inflates asset prices first, benefiting asset owners before wages or consumer prices rise",
+    "choices": [
+      "New money enters via financial institutions and inflates asset prices first, benefiting asset owners before wages or consumer prices rise",
+      "QE distributes money directly to citizens, reducing inequality",
+      "Asset prices and wages always rise proportionally with money supply increases",
+      "QE reduces inequality by lowering interest rates, which helps borrowers"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "Gresham's Law states 'bad money drives out good.' What does this mean in practice?",
+    "answer": "When two currencies circulate at the same legal exchange rate, people hoard the more valuable one and spend the cheaper one, driving the better currency out of circulation",
+    "choices": [
+      "When two currencies circulate at the same legal exchange rate, people hoard the more valuable one and spend the cheaper one, driving the better currency out of circulation",
+      "Inferior goods always replace superior ones in free markets over time",
+      "Counterfeit money eventually replaces legitimate currency in all economies",
+      "Bad monetary policy always causes good currencies to depreciate"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "When a government imposes a price ceiling on a good -- such as rent control -- what does economic theory predict will happen to the quality and quantity of that good?",
+    "answer": "Quantity supplied falls and quality deteriorates because suppliers cannot earn enough to maintain or expand production",
+    "choices": [
+      "Quantity supplied falls and quality deteriorates because suppliers cannot earn enough to maintain or expand production",
+      "Quality improves because landlords must justify lower rents through maintenance",
+      "Supply increases because more people can afford the good at lower prices",
+      "Neither quality nor quantity changes because suppliers are protected by regulation"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Friedrich Hayek's 'Road to Serfdom' (1944) argued that central economic planning inevitably leads to what?",
+    "answer": "The concentration of power that produces tyranny, because planning requires overriding individual choices and dissent",
+    "choices": [
+      "The concentration of power that produces tyranny, because planning requires overriding individual choices and dissent",
+      "Efficient allocation of resources if done by expert technocrats",
+      "Short-term pain but long-term prosperity for workers",
+      "Democracy because citizens must vote on each planning decision"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Sound money advocates argue gold or commodity-backed currency is superior to fiat money. What is their main argument?",
+    "answer": "Commodity-backed currency limits the government's ability to inflate -- a supply constraint that protects savings and prevents hidden taxation through inflation",
+    "choices": [
+      "Commodity-backed currency limits the government's ability to inflate -- a supply constraint that protects savings and prevents hidden taxation through inflation",
+      "Gold is more valuable than paper money because it has industrial uses",
+      "Commodity-backed currency eliminates trade deficits automatically",
+      "Gold-backed money always produces faster economic growth than fiat"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "What is the 'spontaneous order' concept in Austrian economics, associated with Hayek?",
+    "answer": "Complex social and economic order can emerge from individual actions following simple rules without any central designer or plan",
+    "choices": [
+      "Complex social and economic order can emerge from individual actions following simple rules without any central designer or plan",
+      "Markets must be designed by economists to function efficiently",
+      "Order in society requires strong government institutions to enforce rules",
+      "Economic systems only work when participants consciously cooperate toward shared goals"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "The subjective theory of value (Austrian economics) holds that value is determined by what?",
+    "answer": "The subjective preferences of individual buyers -- not by the cost of production or the labor required to make it",
+    "choices": [
+      "The subjective preferences of individual buyers -- not by the cost of production or the labor required to make it",
+      "The amount of labor embedded in a good, as Marx argued",
+      "The cost of raw materials plus a standard profit margin",
+      "The average utility the good provides to all consumers in a market"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Karl Marx's labor theory of value claimed that all value comes from labor. What is the main Austrian refutation?",
+    "answer": "Value is subjective and set by the marginal buyer -- a painting by an amateur may require more labor than a masterpiece but is worth far less",
+    "choices": [
+      "Value is subjective and set by the marginal buyer -- a painting by an amateur may require more labor than a masterpiece but is worth far less",
+      "Labor creates value but capital multiplies it through technology",
+      "The labor theory is correct but only applies to manufactured goods",
+      "Value is determined by scarcity, not labor, and scarcity is set by government"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "When interest rates are set artificially low by a central bank, Austrian economists predict what will happen?",
+    "answer": "Businesses over-invest in long-term projects (malinvestment) that become unprofitable when rates rise -- creating a boom-bust cycle",
+    "choices": [
+      "Businesses over-invest in long-term projects (malinvestment) that become unprofitable when rates rise -- creating a boom-bust cycle",
+      "The economy smoothly expands to full employment with no negative side effects",
+      "Inflation rises immediately because consumers borrow and spend more",
+      "Businesses reduce investment because returns on savings fall"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "Quantitative easing (QE) involves a central bank creating new money to buy assets. What is a key criticism from a sound-money perspective?",
+    "answer": "QE inflates asset prices benefiting the wealthy (Cantillon effect), erodes purchasing power of savings, and enables deficit spending that would otherwise be impossible",
+    "choices": [
+      "QE inflates asset prices benefiting the wealthy (Cantillon effect), erodes purchasing power of savings, and enables deficit spending that would otherwise be impossible",
+      "QE is universally effective with no distributional consequences",
+      "QE only affects bond markets and has no impact on consumer prices",
+      "QE is harmful only when used by developing countries, not advanced economies"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "The Soviet Union's economy stagnated in the 1970s-80s despite full employment. What does this illustrate about central planning?",
+    "answer": "Full employment and output can coexist with massive inefficiency when prices do not reflect true costs -- the absence of profit signals masks waste",
+    "choices": [
+      "Full employment and output can coexist with massive inefficiency when prices do not reflect true costs -- the absence of profit signals masks waste",
+      "The Soviet economy stagnated because it lacked natural resources",
+      "Central planning works for industry but failed only because of Cold War sanctions",
+      "Soviet stagnation was caused by corruption, not the planning system itself"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "What did Murray Rothbard argue about fractional reserve banking?",
+    "answer": "It is inherently inflationary and creates artificial credit booms that inevitably end in busts -- sound banking requires 100% reserves",
+    "choices": [
+      "It is inherently inflationary and creates artificial credit booms that inevitably end in busts -- sound banking requires 100% reserves",
+      "Fractional reserve banking is stable as long as the central bank regulates it",
+      "Fractional reserve banking increases efficiency and should be expanded",
+      "Rothbard supported fractional reserve banking as a free market institution"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "Historical price controls during wartime (e.g., World War II, Nixon's 1971 price freeze) consistently produced what outcome?",
+    "answer": "Shortages and black markets, as price controls prevented the price signals that allocate scarce goods",
+    "choices": [
+      "Shortages and black markets, as price controls prevented the price signals that allocate scarce goods",
+      "Stable prices with no reduction in supply during the control period",
+      "Reduced inequality because goods became affordable to lower-income buyers",
+      "Temporary disruption followed by permanent price stability"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "The Misesian 'regression theorem' explains the origin of money. What does it say?",
+    "answer": "Money always originates as a commodity with independent use value -- no purely fiat currency could come into existence from scratch without prior commodity money",
+    "choices": [
+      "Money always originates as a commodity with independent use value -- no purely fiat currency could come into existence from scratch without prior commodity money",
+      "Money is created by government decree and has always required legal authority",
+      "Money emerged through barter by community agreement, not commodity use",
+      "The origin of money is irrelevant to its current function or value"
+    ],
+    "tier": 5
+  },
+  {
+    "question": "What does Milton Friedman's statement 'inflation is always and everywhere a monetary phenomenon' mean?",
+    "answer": "Sustained inflation can only occur if the money supply grows faster than economic output -- it is not caused by 'greedy businesses' or 'supply shocks' alone",
+    "choices": [
+      "Sustained inflation can only occur if the money supply grows faster than economic output -- it is not caused by 'greedy businesses' or 'supply shocks' alone",
+      "Inflation is primarily caused by corporate price-gouging in monopolized markets",
+      "Inflation results from oil price shocks and supply chain disruptions",
+      "Friedman meant that inflation affects all countries simultaneously due to global trade"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Mao's Great Leap Forward set grain production quotas far above actual yields, and local officials falsely reported meeting targets. What economic principle does this illustrate?",
+    "answer": "Central planners cannot know local conditions, and subordinates have incentives to report false data -- the knowledge problem makes planning self-defeating",
+    "choices": [
+      "Central planners cannot know local conditions, and subordinates have incentives to report false data -- the knowledge problem makes planning self-defeating",
+      "Agricultural collectivization requires more time to show benefits",
+      "Local corruption can undermine otherwise effective central planning",
+      "The failure shows that planning works only when enforced with stricter penalties"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "Venezuela under Chavez imposed price controls on food and medicine. By 2015-2018, what had happened to these goods?",
+    "answer": "Severe shortages developed as producers found it unprofitable to supply at controlled prices -- supermarket shelves emptied and rationing was imposed",
+    "choices": [
+      "Severe shortages developed as producers found it unprofitable to supply at controlled prices -- supermarket shelves emptied and rationing was imposed",
+      "Supply improved because price controls made goods affordable, increasing demand and production",
+      "Food security improved initially before shortages appeared after 2019",
+      "Only luxury goods became scarce; basic food remained available throughout"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "What is the 'economic calculation problem' identified by Ludwig von Mises?",
+    "answer": "Without market prices for capital goods, socialist planners have no rational basis for allocating resources -- they cannot know which production methods are efficient",
+    "choices": [
+      "Without market prices for capital goods, socialist planners have no rational basis for allocating resources -- they cannot know which production methods are efficient",
+      "The problem of calculating GDP accurately in mixed economies",
+      "The difficulty of measuring productivity growth in developing countries",
+      "The challenge of estimating the multiplier effect of government spending"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "When inflation is 8% per year, approximately how many years does it take for the purchasing power of money to be cut in half?",
+    "answer": "About 9 years (using the Rule of 72: 72 / 8 = 9)",
+    "choices": [
+      "About 9 years (using the Rule of 72: 72 / 8 = 9)",
+      "About 25 years",
+      "About 4 years",
+      "About 18 years"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "If a government funds its spending by printing money rather than taxing, who bears the cost?",
+    "answer": "All holders of that currency, through inflation that erodes purchasing power -- this is called the 'inflation tax'",
+    "choices": [
+      "All holders of that currency, through inflation that erodes purchasing power -- this is called the 'inflation tax'",
+      "Only future taxpayers who must repay the printed money",
+      "Only wealthy citizens who hold large financial assets",
+      "No one bears a cost because money printing creates new wealth"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Hayek won the 1974 Nobel Prize in Economics partly for his theory of business cycles. What was his main contribution?",
+    "answer": "Credit expansion by central banks causes artificial booms by distorting the interest rate signal, leading to malinvestment and inevitable busts",
+    "choices": [
+      "Credit expansion by central banks causes artificial booms by distorting the interest rate signal, leading to malinvestment and inevitable busts",
+      "Business cycles are caused by animal spirits and can be tamed by fiscal stimulus",
+      "Recessions are always caused by falling aggregate demand that government must replace",
+      "Business cycles are random and cannot be predicted or explained theoretically"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "What does comparative advantage tell us about why free trade is beneficial even if one country can produce everything more efficiently than another?",
+    "answer": "Each country still gains by specializing in what it produces at lowest relative opportunity cost -- both countries end up with more goods than under autarky",
+    "choices": [
+      "Each country still gains by specializing in what it produces at lowest relative opportunity cost -- both countries end up with more goods than under autarky",
+      "The weaker country always loses in free trade because it cannot compete",
+      "Free trade only benefits both parties when they have equal productivity levels",
+      "Comparative advantage only applies to goods, not services or labor"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Between 1991 and 2000, former Soviet countries transitioned to market economies. Those that liberalized fastest (e.g., Poland, Estonia) versus slowest (e.g., Ukraine, Belarus) showed what pattern?",
+    "answer": "Faster liberalizers recovered sooner and achieved higher growth, demonstrating that market mechanisms allocate resources more effectively than planned systems",
+    "choices": [
+      "Faster liberalizers recovered sooner and achieved higher growth, demonstrating that market mechanisms allocate resources more effectively than planned systems",
+      "All transition countries performed identically regardless of speed of reform",
+      "Slower liberalizers performed better because they protected workers from market shocks",
+      "All transition economies collapsed equally, showing markets cannot replace planning"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "What is the 'time preference' theory in Austrian economics?",
+    "answer": "People value goods available now more than the same goods in the future -- the interest rate reflects this, and artificially suppressing it distorts investment decisions",
+    "choices": [
+      "People value goods available now more than the same goods in the future -- the interest rate reflects this, and artificially suppressing it distorts investment decisions",
+      "People prefer to invest for the future rather than consume in the present",
+      "Time preference is irrelevant because interest rates are set by central banks",
+      "The theory states that time has no effect on the value of goods"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "North Korea maintains central planning while South Korea operates a market economy. How does their GDP per capita compare?",
+    "answer": "South Korea's GDP per capita is approximately 25-30 times higher than North Korea's, despite starting from similar conditions in 1950",
+    "choices": [
+      "South Korea's GDP per capita is approximately 25-30 times higher than North Korea's, despite starting from similar conditions in 1950",
+      "North Korea is roughly equal to South Korea because it has prioritized industrial output",
+      "South Korea is wealthier but only by about 50% because North Korea has mineral resources",
+      "The difference is entirely due to sanctions, not economic system"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "What does Robert Nozick's 'Wilt Chamberlain argument' demonstrate about wealth redistribution?",
+    "answer": "That voluntary exchanges will always recreate inequality even after redistribution, making any end-state equality unstable without continuous interference in free choices",
+    "choices": [
+      "That voluntary exchanges will always recreate inequality even after redistribution, making any end-state equality unstable without continuous interference in free choices",
+      "That wealth redistribution is mathematically impossible to implement fairly",
+      "That athletes deserve their high incomes because they work harder than others",
+      "That only government intervention can prevent wealth concentration in free markets"
+    ],
+    "tier": 5
+  },
+  {
+    "question": "What is 'malinvestment' in Austrian economics?",
+    "answer": "Investment in capital projects that appear profitable due to artificially low interest rates but are revealed as wasteful when rates normalize",
+    "choices": [
+      "Investment in capital projects that appear profitable due to artificially low interest rates but are revealed as wasteful when rates normalize",
+      "Any investment that results in a business loss",
+      "Government spending on projects with negative returns",
+      "Investment by foreign companies in a domestic economy"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "What happened to the purchasing power of the U.S. dollar between 1913 (when the Federal Reserve was created) and 2023?",
+    "answer": "It lost approximately 97% of its purchasing power -- $1 in 1913 is equivalent to roughly $30 today",
+    "choices": [
+      "It lost approximately 97% of its purchasing power -- $1 in 1913 is equivalent to roughly $30 today",
+      "It roughly maintained its value with only minor fluctuations",
+      "It lost about 50% of its value over that period",
+      "It actually gained value because the U.S. economy grew so much"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Why does inflation disproportionately harm people on fixed incomes, retirees, and savers compared to debtors?",
+    "answer": "Fixed incomes and savings lose real value as prices rise; debtors repay loans with depreciated currency worth less than when borrowed",
+    "choices": [
+      "Fixed incomes and savings lose real value as prices rise; debtors repay loans with depreciated currency worth less than when borrowed",
+      "Inflation harms all groups equally since all prices rise at the same rate",
+      "Retirees are protected because Social Security automatically adjusts for inflation",
+      "Debtors are harmed most because they owe more money in real terms"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "What is the 'broken window fallacy' identified by Frederic Bastiat?",
+    "answer": "Destruction does not create net wealth -- the money spent replacing a broken window is money that cannot be spent on something new, so the economy is worse off overall",
+    "choices": [
+      "Destruction does not create net wealth -- the money spent replacing a broken window is money that cannot be spent on something new, so the economy is worse off overall",
+      "War and disaster always stimulate economic activity and should not be viewed as purely negative",
+      "Government spending creates wealth because breaking things employs people to fix them",
+      "The fallacy means that all visible economic activity is productive"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Bastiat's concept of 'the seen and the unseen' warns against what error in economic reasoning?",
+    "answer": "Judging policies only by their visible, immediate effects while ignoring the hidden costs and foregone opportunities they create",
+    "choices": [
+      "Judging policies only by their visible, immediate effects while ignoring the hidden costs and foregone opportunities they create",
+      "Using statistics that cannot be verified by direct observation",
+      "Trusting government economic data over private sector analysis",
+      "Focusing on long-term effects at the expense of short-term humanitarian needs"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "When the U.S. government ran large deficits during the 2020-2021 pandemic and simultaneously expanded the money supply, what followed by 2022?",
+    "answer": "The highest inflation in 40 years (peaking above 9%), consistent with the monetary theory that money-financed deficits cause inflation",
+    "choices": [
+      "The highest inflation in 40 years (peaking above 9%), consistent with the monetary theory that money-financed deficits cause inflation",
+      "Stable prices because the spending was offset by increased productivity",
+      "Deflation because consumers saved rather than spent stimulus checks",
+      "Moderate inflation of about 2% because the Fed controlled the money supply carefully"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "What is the Misesian critique of central bank interest rate setting?",
+    "answer": "Interest rates are prices that should reflect time preferences and real savings -- artificial suppression below market rates distorts investment and causes boom-bust cycles",
+    "choices": [
+      "Interest rates are prices that should reflect time preferences and real savings -- artificial suppression below market rates distorts investment and causes boom-bust cycles",
+      "Central banks should set rates lower to maximize economic growth permanently",
+      "The problem with central bank rates is only that they are set too high",
+      "Interest rate setting is neutral as long as central banks are independent"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "Cambodia under the Khmer Rouge (1975-1979) abolished money and markets, forcibly collectivized agriculture, and evacuated cities. The result was:",
+    "answer": "The deaths of approximately 1.5-2 million people (25% of Cambodia's population) from famine, forced labor, and execution",
+    "choices": [
+      "The deaths of approximately 1.5-2 million people (25% of Cambodia's population) from famine, forced labor, and execution",
+      "A rapid industrialization that transformed Cambodia into a regional power",
+      "Agricultural self-sufficiency that insulated Cambodia from global food prices",
+      "Short-term disruption followed by stable rural economic growth"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "What is the 'denationalization of money' concept proposed by Friedrich Hayek?",
+    "answer": "Hayek argued that competing private currencies would outperform government monopoly currencies -- sound money would win in the market and inflation would be disciplined",
+    "choices": [
+      "Hayek argued that competing private currencies would outperform government monopoly currencies -- sound money would win in the market and inflation would be disciplined",
+      "Hayek supported central banks but wanted them run by private banks",
+      "Hayek proposed replacing gold with a new international reserve currency",
+      "The concept refers to ending the gold standard and allowing floating exchange rates"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "What does the 'debasement' of currency mean historically?",
+    "answer": "Governments reducing the precious metal content of coins while maintaining their face value -- an ancient form of inflation to fund spending",
+    "choices": [
+      "Governments reducing the precious metal content of coins while maintaining their face value -- an ancient form of inflation to fund spending",
+      "Making coins smaller so they fit in pockets more easily",
+      "Replacing gold coins with silver coins to standardize currency",
+      "The legal process of declaring old coins invalid and requiring new ones"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Argentina has experienced repeated hyperinflation crises (1989, 2002, 2023). What pattern do economists observe in the cause?",
+    "answer": "Government spending consistently exceeds revenue; deficits are financed by printing money; the resulting inflation destroys the currency and savings",
+    "choices": [
+      "Government spending consistently exceeds revenue; deficits are financed by printing money; the resulting inflation destroys the currency and savings",
+      "Argentina's crises are primarily caused by foreign exchange speculation",
+      "Each crisis has different causes with no common pattern",
+      "The crises result from trade deficits that deplete foreign currency reserves"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "What is the 'interventionism' critique in Austrian economics (Mises)?",
+    "answer": "Each government intervention creates new distortions that generate calls for further intervention -- the logic of interventionism leads inevitably toward full socialism or chaos",
+    "choices": [
+      "Each government intervention creates new distortions that generate calls for further intervention -- the logic of interventionism leads inevitably toward full socialism or chaos",
+      "Government intervention is sometimes necessary and can be limited to specific sectors",
+      "Interventionism only fails in developing countries with weak institutions",
+      "The critique applies only to price controls, not to other forms of regulation"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "What did Adam Smith argue about the division of labor in 'The Wealth of Nations'?",
+    "answer": "Specialization dramatically increases output per worker -- his pin factory example showed workers producing thousands of times more when each performs one task rather than all tasks",
+    "choices": [
+      "Specialization dramatically increases output per worker -- his pin factory example showed workers producing thousands of times more when each performs one task rather than all tasks",
+      "Division of labor exploits workers by reducing their skills and autonomy",
+      "Specialization only increases output in manufacturing, not services or agriculture",
+      "Smith argued that workers should rotate tasks to prevent boredom and errors"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "What economic argument explains why the Soviet Union eventually collapsed despite apparent full employment?",
+    "answer": "Without price signals, resources were allocated by political priority rather than need; inefficiency compounded over decades until the system could no longer produce competitive goods",
+    "choices": [
+      "Without price signals, resources were allocated by political priority rather than need; inefficiency compounded over decades until the system could no longer produce competitive goods",
+      "The USSR collapsed purely due to military overspending, not economic failure",
+      "Socialism worked economically but failed politically -- it was not an economic collapse",
+      "The collapse was caused by falling oil prices, which was an external shock unrelated to the system"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "What is 'regulatory capture'?",
+    "answer": "When government regulatory agencies come to serve the interests of the industries they regulate rather than the public interest",
+    "choices": [
+      "When government regulatory agencies come to serve the interests of the industries they regulate rather than the public interest",
+      "When businesses comply with all regulations to avoid penalties",
+      "When governments take ownership of regulated industries",
+      "When courts overturn regulations that harm competition"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Public choice theory (Buchanan/Tullock) applies economic analysis to government. What does it predict about politicians and bureaucrats?",
+    "answer": "Like all economic actors, politicians and bureaucrats act in their own self-interest -- they seek votes, power, and budgets rather than the public good",
+    "choices": [
+      "Like all economic actors, politicians and bureaucrats act in their own self-interest -- they seek votes, power, and budgets rather than the public good",
+      "Politicians in democracies reliably serve the public interest because voters hold them accountable",
+      "Bureaucrats are neutral technocrats who implement policy without self-interest",
+      "Government failure is rare; market failure is the primary source of economic problems"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "What is 'government failure' in economics?",
+    "answer": "When government intervention makes outcomes worse than the market would have produced -- due to incentive problems, lack of information, or special interest capture",
+    "choices": [
+      "When government intervention makes outcomes worse than the market would have produced -- due to incentive problems, lack of information, or special interest capture",
+      "Any instance of a government budget deficit",
+      "When a government program fails to meet its stated objectives",
+      "Government failure only occurs in corrupt developing countries"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "What does empirical evidence show about the relationship between economic freedom (Heritage Index, Fraser Index) and prosperity?",
+    "answer": "Countries with greater economic freedom consistently have higher GDP per capita, longer life expectancy, and lower poverty rates",
+    "choices": [
+      "Countries with greater economic freedom consistently have higher GDP per capita, longer life expectancy, and lower poverty rates",
+      "Economic freedom is uncorrelated with prosperity; outcomes depend on culture",
+      "Economic freedom increases inequality and reduces welfare for the poor",
+      "The relationship is negative; planned economies outperform free markets in income equality"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "What is the 'ratchet effect' in government spending?",
+    "answer": "Government spending rises during crises but rarely returns to pre-crisis levels -- each emergency creates a new baseline for future spending",
+    "choices": [
+      "Government spending rises during crises but rarely returns to pre-crisis levels -- each emergency creates a new baseline for future spending",
+      "Government spending naturally cycles up and down with the business cycle",
+      "The ratchet effect refers to automatic stabilizers that prevent spending from falling",
+      "Government spending always returns to its pre-crisis level within five years"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "What is 'sound money' and why do Austrian economists consider it essential?",
+    "answer": "Money with stable purchasing power, ideally commodity-backed or supply-constrained -- without it, inflation quietly transfers wealth from savers to debtors and government",
+    "choices": [
+      "Money with stable purchasing power, ideally commodity-backed or supply-constrained -- without it, inflation quietly transfers wealth from savers to debtors and government",
+      "Any currency that is widely accepted and legally recognized",
+      "Sound money refers to digital currency because it cannot be counterfeited",
+      "Sound money is a monetary policy where central banks target 2% inflation"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "What is the 'seen vs unseen' principle applied to minimum wage laws?",
+    "answer": "The seen effect is higher wages for some workers; the unseen effect is jobs that are never created and workers who are never hired because the cost rose above their productivity",
+    "choices": [
+      "The seen effect is higher wages for some workers; the unseen effect is jobs that are never created and workers who are never hired because the cost rose above their productivity",
+      "Minimum wages have only positive effects because they raise consumer spending",
+      "The unseen effect of minimum wage is that it encourages employers to train workers more",
+      "Bastiat's principle does not apply to labor markets, only to goods markets"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "What does economic history show about the effectiveness of tariffs in protecting domestic industries long-term?",
+    "answer": "Protected industries rarely become competitive -- tariffs typically increase prices for consumers and lock resources in inefficient uses while preventing gains from comparative advantage",
+    "choices": [
+      "Protected industries rarely become competitive -- tariffs typically increase prices for consumers and lock resources in inefficient uses while preventing gains from comparative advantage",
+      "Tariffs reliably build competitive industries within 10 years in every documented case",
+      "Tariffs are effective for infant industries but harmful for mature ones",
+      "Historical evidence shows tariffs are economically neutral in the long run"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "What happened in Ireland during the Great Famine (1845-1852), when the British government maintained free trade policies and continued exporting food from Ireland?",
+    "answer": "Approximately 1 million died and 2 million emigrated while food was exported -- a case study in market outcomes under political constraints and absentee property rights",
+    "choices": [
+      "Approximately 1 million died and 2 million emigrated while food was exported -- a case study in market outcomes under political constraints and absentee property rights",
+      "Free trade policies relieved the famine by bringing in imported grain from Britain",
+      "The famine was entirely caused by the potato blight with no policy component",
+      "British intervention successfully prevented mass starvation through food distribution"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "What is the core insight of 'public goods' theory that justifies government provision?",
+    "answer": "Non-excludable, non-rivalrous goods (like national defense) will be under-provided by markets because of the free-rider problem",
+    "choices": [
+      "Non-excludable, non-rivalrous goods (like national defense) will be under-provided by markets because of the free-rider problem",
+      "Public goods should be provided by government because they are too expensive for the private sector",
+      "Any good that benefits the public qualifies as a public good requiring government provision",
+      "Public goods are goods owned by the government and rented to citizens"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Economists distinguish between the 'seen' cost of government programs (budget line items) and the 'unseen' cost. What is an example of the unseen cost?",
+    "answer": "The productive private activity that would have occurred if the tax revenue had remained with citizens instead of being directed by government",
+    "choices": [
+      "The productive private activity that would have occurred if the tax revenue had remained with citizens instead of being directed by government",
+      "Administrative overhead and government employee salaries",
+      "The interest paid on government bonds that fund the program",
+      "There are no unseen costs to government programs -- all costs are reported in budgets"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "In 1971 President Nixon ended the Bretton Woods system by closing the gold window. What was the consequence for U.S. inflation?",
+    "answer": "Inflation surged through the 1970s, reaching double digits by 1979-1980, as dollar creation was no longer constrained by gold reserves",
+    "choices": [
+      "Inflation surged through the 1970s, reaching double digits by 1979-1980, as dollar creation was no longer constrained by gold reserves",
+      "Inflation fell because removing gold backing freed the Fed to control prices more precisely",
+      "Inflation remained stable because the Fed immediately adopted inflation targeting",
+      "There was no notable change in inflation after 1971"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "What is the economic argument FOR allowing prices to rise during a natural disaster (disaster pricing or 'price gouging')?",
+    "answer": "Higher prices signal where goods are most needed, attract supply from distant areas, and discourage hoarding -- restrictions create shortages and slower recovery",
+    "choices": [
+      "Higher prices signal where goods are most needed, attract supply from distant areas, and discourage hoarding -- restrictions create shortages and slower recovery",
+      "There is no valid economic argument -- price gouging is pure exploitation",
+      "Higher prices are justified only for luxury goods, not for essential supplies",
+      "The only benefit is increased profit for sellers with no social value"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "What economic principle explains why communist countries historically developed high-quality weapons while struggling to produce consumer goods?",
+    "answer": "Central planning can concentrate resources on specific political priorities but lacks the price signals to efficiently allocate resources across the whole economy",
+    "choices": [
+      "Central planning can concentrate resources on specific political priorities but lacks the price signals to efficiently allocate resources across the whole economy",
+      "Military goods require less innovation than consumer goods, making them easier to produce centrally",
+      "Communist countries deliberately chose not to produce consumer goods",
+      "International sanctions prevented the import of consumer technology"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "What is the key difference between a market-determined interest rate and a centrally-set one?",
+    "answer": "A market rate reflects the actual supply of savings and time preferences of borrowers; a centrally-set rate is a political decision that distorts investment signals",
+    "choices": [
+      "A market rate reflects the actual supply of savings and time preferences of borrowers; a centrally-set rate is a political decision that distorts investment signals",
+      "Market rates are higher; central bank rates are lower",
+      "There is no meaningful difference in their economic effects",
+      "Market rates are more volatile; central rates are more stable, which is always better"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "What is a 'negative real interest rate' and why is it problematic from a sound money perspective?",
+    "answer": "When inflation exceeds the nominal interest rate, saving is penalized -- holders of money and bonds see their real wealth decrease, encouraging speculation over prudent saving",
+    "choices": [
+      "When inflation exceeds the nominal interest rate, saving is penalized -- holders of money and bonds see their real wealth decrease, encouraging speculation over prudent saving",
+      "A negative real rate means the economy is growing, which is always a good sign",
+      "Negative real rates only affect foreign currency holders, not domestic savers",
+      "Negative real rates are impossible because nominal rates cannot fall below zero"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "What is 'inflation targeting' as practiced by most central banks today, and what is a key criticism?",
+    "answer": "Central banks target 2% annual inflation as an explicit goal -- critics argue this means deliberately eroding purchasing power by 2% per year, benefiting debtors at savers' expense",
+    "choices": [
+      "Central banks target 2% annual inflation as an explicit goal -- critics argue this means deliberately eroding purchasing power by 2% per year, benefiting debtors at savers' expense",
+      "Inflation targeting aims to keep inflation at zero to protect purchasing power",
+      "The policy targets a range of 0-5% and is universally supported by economists",
+      "Inflation targeting was proposed by Keynes and has no critics among economists"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "What is the connection between fiat money and the ability of governments to fight wars without directly taxing citizens?",
+    "answer": "Fiat money allows governments to print currency to fund military spending, inflating their way out of debt rather than seeking explicit voter approval through taxation",
+    "choices": [
+      "Fiat money allows governments to print currency to fund military spending, inflating their way out of debt rather than seeking explicit voter approval through taxation",
+      "Fiat money has no relationship to war finance; military spending is always funded by tax revenue",
+      "Commodity-backed money enables more war spending than fiat because gold holds its value",
+      "Fiat money prevents wars by making them too expensive to finance"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "What did Hong Kong's laissez-faire economic policy under John Cowperthwaite demonstrate between 1950 and 1997?",
+    "answer": "With minimal government intervention, low taxes, and free trade, Hong Kong transformed from a poor entrepot into one of the world's wealthiest economies per capita",
+    "choices": [
+      "With minimal government intervention, low taxes, and free trade, Hong Kong transformed from a poor entrepot into one of the world's wealthiest economies per capita",
+      "Hong Kong's success was due to large government investments in infrastructure",
+      "Free trade policies failed; Hong Kong succeeded because of its geographic location only",
+      "Hong Kong's growth was average for the region -- Singapore grew just as fast with more intervention"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "What is the 'knowledge problem' as applied to modern healthcare pricing set by government or insurers?",
+    "answer": "Without market prices, providers and patients lack information about real costs, leading to overuse of some services, underuse of others, and overall inefficiency",
+    "choices": [
+      "Without market prices, providers and patients lack information about real costs, leading to overuse of some services, underuse of others, and overall inefficiency",
+      "Healthcare is a special case where government pricing always outperforms markets",
+      "The knowledge problem only applies to manufacturing, not to services like healthcare",
+      "Insurance eliminates the need for price signals in healthcare completely"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "What did the repeal of the Corn Laws in Britain (1846) demonstrate?",
+    "answer": "Removing tariffs on grain imports lowered food prices for workers and increased overall prosperity -- demonstrating that protection benefits producers at consumers' expense",
+    "choices": [
+      "Removing tariffs on grain imports lowered food prices for workers and increased overall prosperity -- demonstrating that protection benefits producers at consumers' expense",
+      "Corn Law repeal destroyed British agriculture and caused unemployment",
+      "The repeal had no effect on food prices because domestic production adjusted immediately",
+      "Corn Laws were removed to help Britain's colonies, not for economic reasons"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "What is the 'concentration of benefits and dispersion of costs' problem in public choice economics?",
+    "answer": "When a regulation benefits a small organized group greatly but harms many consumers a little each, the organized group lobbies effectively while harmed consumers stay rationally ignorant",
+    "choices": [
+      "When a regulation benefits a small organized group greatly but harms many consumers a little each, the organized group lobbies effectively while harmed consumers stay rationally ignorant",
+      "Government always spreads costs and benefits evenly across all citizens",
+      "The problem refers to income inequality growing over time in capitalist economies",
+      "Benefits concentrate in cities while costs fall on rural areas"
+    ],
+    "tier": 4
   }
 ]

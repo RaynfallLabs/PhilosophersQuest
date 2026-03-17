@@ -12,29 +12,7 @@
   },
   {
     "tier": 1,
-    "question": "Who wrote 'The Republic'?",
-    "answer": "Plato",
-    "choices": [
-      "Socrates",
-      "Aristotle",
-      "Plato",
-      "Cicero"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "Which philosopher said 'I think, therefore I am'?",
-    "answer": "Rene Descartes",
-    "choices": [
-      "Immanuel Kant",
-      "Rene Descartes",
-      "John Locke",
-      "Voltaire"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "Who was Plato's most famous student?",
+    "question": "Descartes doubted everything until he found one certain truth. What did he conclude he could not doubt?",
     "answer": "Aristotle",
     "choices": [
       "Socrates",
@@ -45,40 +23,18 @@
   },
   {
     "tier": 1,
-    "question": "Which ancient Chinese philosopher taught the importance of family and social harmony?",
-    "answer": "Confucius",
+    "question": "Confucius taught that social harmony flows from proper roles within family and society. What is the term for this Confucian concept of correct role-fulfillment?",
+    "answer": "Li (ritual propriety and correct roles)",
     "choices": [
-      "Laozi",
-      "Confucius",
-      "Sun Tzu",
-      "Mencius"
+      "Wu wei (non-action)",
+      "Li (ritual propriety and correct roles)",
+      "Ren (benevolence)",
+      "Dao (the Way)"
     ]
   },
   {
     "tier": 1,
-    "question": "Who was Socrates's most famous student?",
-    "answer": "Plato",
-    "choices": [
-      "Aristotle",
-      "Plato",
-      "Xenophon",
-      "Antisthenes"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "Which philosopher is famous for his allegory of the cave?",
-    "answer": "Plato",
-    "choices": [
-      "Aristotle",
-      "Socrates",
-      "Plato",
-      "Heraclitus"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What did Socrates claim to know?",
+    "question": "In Plato's allegory of the cave, prisoners see only shadows on a wall. What does the cave represent?",
     "answer": "That he knew nothing",
     "choices": [
       "The meaning of life",
@@ -100,161 +56,84 @@
   },
   {
     "tier": 1,
-    "question": "Who said 'The unexamined life is not worth living'?",
-    "answer": "Socrates",
+    "question": "Socrates said 'The unexamined life is not worth living.' What philosophical practice does this statement defend?",
+    "answer": "Critical self-reflection as the core of a worthwhile human life",
     "choices": [
-      "Plato",
-      "Aristotle",
-      "Socrates",
-      "Marcus Aurelius"
+      "Following religious commandments",
+      "Critical self-reflection as the core of a worthwhile human life",
+      "Pursuing pleasure and avoiding pain",
+      "Achieving political power"
     ]
   },
   {
     "tier": 1,
-    "question": "Which philosopher wrote the 'Nicomachean Ethics'?",
-    "answer": "Aristotle",
+    "question": "Plato's Republic argues that only philosopher-kings should rule. What philosophical justification does Plato give for this?",
+    "answer": "Only those who understand the Form of the Good can make just decisions",
     "choices": [
-      "Plato",
-      "Socrates",
-      "Aristotle",
-      "Epicurus"
+      "Rulers chosen by lottery are most fair",
+      "Only those who understand the Form of the Good can make just decisions",
+      "Strength and military skill justify rule",
+      "The will of the majority determines justice"
     ]
   },
   {
     "tier": 1,
-    "question": "What is the main topic of Plato's 'Republic'?",
-    "answer": "Justice and the ideal state",
+    "question": "Confucianism emphasizes 'ren' as the highest virtue. What does 'ren' mean?",
+    "answer": "Benevolence or humaneness toward others",
     "choices": [
-      "The nature of knowledge",
-      "Justice and the ideal state",
-      "The existence of God",
-      "The meaning of beauty"
+      "Strict obedience to law",
+      "Benevolence or humaneness toward others",
+      "Ritual ceremony and etiquette",
+      "Loyalty to the state above family"
     ]
   },
   {
     "tier": 1,
-    "question": "Who is credited with the saying 'Know thyself'?",
-    "answer": "Socrates",
+    "question": "Plato argued the soul survives death because it knows eternal truths before birth. What is the name of this doctrine?",
+    "answer": "The theory of recollection (anamnesis)",
     "choices": [
-      "Aristotle",
-      "Plato",
-      "Socrates",
-      "Pythagoras"
+      "The theory of recollection (anamnesis)",
+      "The doctrine of original sin",
+      "The materialist theory of mind",
+      "Epicurean dissolution of the soul"
     ]
   },
   {
     "tier": 1,
-    "question": "Confucius is the founder of which philosophical tradition?",
-    "answer": "Confucianism",
+    "question": "The Socratic method proceeds by asking probing questions that expose contradictions in a person's beliefs. What is the name for the part of this process that reveals false beliefs?",
+    "answer": "Elenchus (refutation through questioning)",
     "choices": [
-      "Taoism",
-      "Buddhism",
-      "Confucianism",
-      "Legalism"
+      "Dialectic synthesis",
+      "Elenchus (refutation through questioning)",
+      "Deductive proof",
+      "Syllogistic argument"
     ]
   },
   {
     "tier": 1,
-    "question": "Who founded Taoism and wrote the Tao Te Ching?",
-    "answer": "Laozi",
+    "question": "Aristotle argued that happiness (eudaimonia) requires living in accordance with virtue. What distinguishes his view from simple pleasure-seeking?",
+    "answer": "Eudaimonia is achieved through virtuous activity, not passive enjoyment",
     "choices": [
-      "Confucius",
-      "Laozi",
-      "Zhuangzi",
-      "Mencius"
+      "Happiness means maximizing pleasure",
+      "Eudaimonia is achieved through virtuous activity, not passive enjoyment",
+      "Happiness requires divine favor",
+      "True happiness is found only in contemplation of God"
     ]
   },
   {
     "tier": 1,
-    "question": "Which philosopher believed that the soul is immortal?",
-    "answer": "Plato",
+    "question": "Socrates was condemned for impiety and corrupting youth. What does his willingness to accept the death penalty rather than flee reveal about his philosophy?",
+    "answer": "He believed one must accept lawful punishment rather than undermine the rule of law",
     "choices": [
-      "Aristotle",
-      "Plato",
-      "Epicurus",
-      "Democritus"
+      "He was too weak to escape",
+      "He believed one must accept lawful punishment rather than undermine the rule of law",
+      "He thought death would let him reach the realm of Forms",
+      "He was indifferent to physical survival"
     ]
   },
   {
     "tier": 1,
-    "question": "What is the name for the method Socrates used to find truth by asking questions?",
-    "answer": "The Socratic method",
-    "choices": [
-      "The dialectic method",
-      "The Socratic method",
-      "The empirical method",
-      "The logical method"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "Who said 'Happiness is the meaning and the purpose of life'?",
-    "answer": "Aristotle",
-    "choices": [
-      "Plato",
-      "Aristotle",
-      "Socrates",
-      "Epicurus"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "Which philosopher was sentenced to death and forced to drink hemlock?",
-    "answer": "Socrates",
-    "choices": [
-      "Plato",
-      "Aristotle",
-      "Socrates",
-      "Pythagoras"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What does the word 'philosophy' literally mean?",
-    "answer": "Love of wisdom",
-    "choices": [
-      "Study of truth",
-      "Love of wisdom",
-      "Search for meaning",
-      "Science of mind"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "Who wrote the 'Analects', a collection of Confucian teachings?",
-    "answer": "Confucius",
-    "choices": [
-      "Laozi",
-      "Confucius",
-      "Mencius",
-      "Sun Tzu"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "Which philosopher founded the Academy in Athens?",
-    "answer": "Plato",
-    "choices": [
-      "Socrates",
-      "Plato",
-      "Aristotle",
-      "Pythagoras"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "Who founded the Lyceum school in Athens?",
-    "answer": "Aristotle",
-    "choices": [
-      "Plato",
-      "Socrates",
-      "Aristotle",
-      "Epicurus"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What did Aristotle call the highest form of human happiness?",
+    "question": "Aristotle defined 'eudaimonia' as the highest human good. Which of the following best explains why he rejected pure pleasure as insufficient?",
     "answer": "Eudaimonia",
     "choices": [
       "Virtue",
@@ -265,24 +144,24 @@
   },
   {
     "tier": 1,
-    "question": "Which ancient philosopher said 'You cannot step in the same river twice'?",
-    "answer": "Heraclitus",
+    "question": "Heraclitus said 'You cannot step in the same river twice.' What philosophical claim about reality does this illustrate?",
+    "answer": "Reality is in constant flux; nothing stays the same",
     "choices": [
-      "Plato",
-      "Aristotle",
-      "Heraclitus",
-      "Parmenides"
+      "Motion is an illusion created by our senses",
+      "Reality is in constant flux; nothing stays the same",
+      "Rivers symbolize the passage of time only",
+      "Physical objects have no permanent identity"
     ]
   },
   {
     "tier": 1,
-    "question": "Who believed everything is made of water?",
-    "answer": "Thales",
+    "question": "Thales proposed that everything is made of water. Why is this historically significant as a philosophical move?",
+    "answer": "It was the first attempt to explain the world through a single natural principle, not myth",
     "choices": [
-      "Aristotle",
-      "Plato",
-      "Thales",
-      "Pythagoras"
+      "It was scientifically accurate",
+      "It was the first attempt to explain the world through a single natural principle, not myth",
+      "It disproved the existence of the gods",
+      "It was the basis of modern chemistry"
     ]
   },
   {
@@ -298,24 +177,24 @@
   },
   {
     "tier": 1,
-    "question": "Who said 'Man is the measure of all things'?",
-    "answer": "Protagoras",
+    "question": "Protagoras said 'Man is the measure of all things.' What philosophical position does this express?",
+    "answer": "Relativism: truth and value depend on the perspective of the individual",
     "choices": [
-      "Socrates",
-      "Plato",
-      "Protagoras",
-      "Aristotle"
+      "Humanism: humans are the most important beings in the cosmos",
+      "Relativism: truth and value depend on the perspective of the individual",
+      "Rationalism: human reason can grasp all truths",
+      "Empiricism: only human senses yield knowledge"
     ]
   },
   {
     "tier": 1,
-    "question": "Which philosopher wrote 'Meditations' while serving as Roman Emperor?",
-    "answer": "Marcus Aurelius",
+    "question": "Marcus Aurelius wrote 'Meditations' as a private journal of Stoic practice. What is the core Stoic teaching illustrated by his distinguishing what is 'up to us' from what is not?",
+    "answer": "We should focus only on what is within our control: our judgments and responses",
     "choices": [
-      "Cicero",
-      "Seneca",
-      "Marcus Aurelius",
-      "Epictetus"
+      "All events are predetermined by fate and cannot be changed",
+      "We should focus only on what is within our control: our judgments and responses",
+      "An emperor must use force to maintain order",
+      "Pleasure is the only true good available to us"
     ]
   },
   {
@@ -331,17 +210,6 @@
   },
   {
     "tier": 1,
-    "question": "Which philosopher is associated with the phrase 'cogito ergo sum'?",
-    "answer": "Descartes",
-    "choices": [
-      "Locke",
-      "Kant",
-      "Descartes",
-      "Hume"
-    ]
-  },
-  {
-    "tier": 1,
     "question": "What branch of philosophy deals with the study of knowledge?",
     "answer": "Epistemology",
     "choices": [
@@ -353,24 +221,13 @@
   },
   {
     "tier": 1,
-    "question": "Who wrote 'The Prince', a book on political philosophy?",
-    "answer": "Machiavelli",
+    "question": "Berkeley argued 'To be is to be perceived.' What philosophical position does this defend?",
+    "answer": "Idealism: material objects exist only as perceptions in a mind",
     "choices": [
-      "Hobbes",
-      "Locke",
-      "Machiavelli",
-      "Plato"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "Who wrote the philosophical text 'Beyond Good and Evil'?",
-    "answer": "Friedrich Nietzsche",
-    "choices": [
-      "Arthur Schopenhauer",
-      "Friedrich Nietzsche",
-      "Immanuel Kant",
-      "Georg Hegel"
+      "Materialism: only physical matter exists",
+      "Idealism: material objects exist only as perceptions in a mind",
+      "Skepticism: we cannot know whether anything exists",
+      "Rationalism: reason is the source of all knowledge"
     ]
   },
   {
@@ -397,24 +254,13 @@
   },
   {
     "tier": 1,
-    "question": "Who wrote 'Thus Spoke Zarathustra'?",
-    "answer": "Friedrich Nietzsche",
+    "question": "Democritus proposed that reality consists entirely of atoms moving in a void. Which philosophical problem does this atomic theory attempt to solve?",
+    "answer": "How change and diversity in the world can be explained without supernatural causes",
     "choices": [
-      "Karl Marx",
-      "Friedrich Nietzsche",
-      "Georg Hegel",
-      "Arthur Schopenhauer"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "Which ancient Greek philosopher believed the atom was the basic unit of all matter?",
-    "answer": "Democritus",
-    "choices": [
-      "Aristotle",
-      "Pythagoras",
-      "Democritus",
-      "Thales"
+      "How the soul achieves immortality",
+      "How change and diversity in the world can be explained without supernatural causes",
+      "Why the gods created the world",
+      "How mathematical truths apply to physical reality"
     ]
   },
   {
@@ -441,17 +287,6 @@
   },
   {
     "tier": 1,
-    "question": "What is logic?",
-    "answer": "The study of valid reasoning",
-    "choices": [
-      "The study of emotions",
-      "The study of valid reasoning",
-      "The study of nature",
-      "The study of the mind"
-    ]
-  },
-  {
-    "tier": 1,
     "question": "Who was Confucius's most influential follower who extended his teachings?",
     "answer": "Mencius",
     "choices": [
@@ -463,35 +298,13 @@
   },
   {
     "tier": 1,
-    "question": "Which philosopher believed that 'knowledge is virtue'?",
-    "answer": "Socrates",
+    "question": "Hobbes argued the natural condition of mankind is war of 'every man against every man.' What does he conclude governments must do to prevent this?",
+    "answer": "Create a powerful sovereign whose authority cannot be challenged",
     "choices": [
-      "Aristotle",
-      "Plato",
-      "Socrates",
-      "Epicurus"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What does metaphysics study?",
-    "answer": "The fundamental nature of reality",
-    "choices": [
-      "The study of the mind",
-      "The study of beauty",
-      "The fundamental nature of reality",
-      "The study of right and wrong"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "Who said 'The life of man is solitary, poor, nasty, brutish, and short'?",
-    "answer": "Thomas Hobbes",
-    "choices": [
-      "John Locke",
-      "Thomas Hobbes",
-      "Jean-Jacques Rousseau",
-      "Voltaire"
+      "Establish a democracy to represent the people's will",
+      "Create a powerful sovereign whose authority cannot be challenged",
+      "Appeal to natural law and God's authority",
+      "Trust in individual virtue and self-restraint"
     ]
   },
   {
@@ -507,7 +320,7 @@
   },
   {
     "tier": 1,
-    "question": "What is the main question of philosophy of religion?",
+    "question": "The 'categorical imperative' is Kant's supreme principle of morality. Which formulation best captures it?",
     "answer": "Whether God exists and what God is like",
     "choices": [
       "How religions developed historically",
@@ -518,13 +331,13 @@
   },
   {
     "tier": 1,
-    "question": "Who is associated with the golden rule: 'Do to others as you would have them do to you'?",
-    "answer": "Jesus of Nazareth",
+    "question": "Nietzsche declared 'God is dead' in The Gay Science. What did he mean by this philosophical claim?",
+    "answer": "The traditional moral framework grounded in Christianity has lost its authority in modern culture",
     "choices": [
-      "Aristotle",
-      "Jesus of Nazareth",
-      "Jesus of Nazareth",
-      "Kant"
+      "God literally does not exist",
+      "The traditional moral framework grounded in Christianity has lost its authority in modern culture",
+      "Religious institutions have become corrupt",
+      "Science has disproved all religious claims"
     ]
   },
   {
@@ -536,17 +349,6 @@
       "Augustine",
       "John the Evangelist",
       "Aristotle"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "Who is known as the first woman philosopher in Western history?",
-    "answer": "Hypatia",
-    "choices": [
-      "Aspasia",
-      "Hypatia",
-      "Diotima",
-      "Sappho"
     ]
   },
   {
@@ -573,17 +375,6 @@
   },
   {
     "tier": 2,
-    "question": "Which school of philosophy taught that pleasure is the highest good?",
-    "answer": "Epicureanism",
-    "choices": [
-      "Stoicism",
-      "Epicureanism",
-      "Cynicism",
-      "Skepticism"
-    ]
-  },
-  {
-    "tier": 2,
     "question": "What is the Trolley Problem?",
     "answer": "A thought experiment about sacrificing one person to save many",
     "choices": [
@@ -595,46 +386,24 @@
   },
   {
     "tier": 2,
-    "question": "What is the Ship of Theseus thought experiment about?",
-    "answer": "Whether a thing remains the same if all its parts are replaced",
+    "question": "John Locke argued people are born as a 'tabula rasa' (blank slate). What does this imply about the source of human knowledge?",
+    "answer": "All knowledge is acquired through experience, not inborn",
     "choices": [
-      "Whether ships should be owned privately",
-      "Whether a thing remains the same if all its parts are replaced",
-      "Whether motion is an illusion",
-      "Whether gods exist"
+      "The soul carries knowledge from a previous existence",
+      "All knowledge is acquired through experience, not inborn",
+      "God implants moral knowledge at birth",
+      "Reason alone can derive all truths without experience"
     ]
   },
   {
     "tier": 2,
-    "question": "What does 'empiricism' mean?",
-    "answer": "Knowledge comes from sensory experience",
+    "question": "Nietzsche's concept of the Ubermensch (Superman) was his proposed response to nihilism. What was the Ubermensch supposed to do?",
+    "answer": "Create new values to replace the old God-given morality that had collapsed",
     "choices": [
-      "Knowledge comes from reason alone",
-      "Knowledge comes from sensory experience",
-      "Knowledge is impossible",
-      "Knowledge comes from God"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "What does 'rationalism' mean in philosophy?",
-    "answer": "Knowledge comes primarily from reason",
-    "choices": [
-      "Knowledge comes from experience",
-      "Knowledge comes primarily from reason",
-      "All beliefs are equally valid",
-      "Reality is rational"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Which philosopher wrote 'Leviathan'?",
-    "answer": "Thomas Hobbes",
-    "choices": [
-      "John Locke",
-      "Thomas Hobbes",
-      "Jean-Jacques Rousseau",
-      "Voltaire"
+      "Conquer other nations through superior willpower",
+      "Create new values to replace the old God-given morality that had collapsed",
+      "Return humanity to ancient Greek virtues",
+      "Submit to determinism and accept fate"
     ]
   },
   {
@@ -661,13 +430,13 @@
   },
   {
     "tier": 2,
-    "question": "Which Buddhist concept refers to the end of suffering and desire?",
-    "answer": "Nirvana",
+    "question": "Descartes used mind-body dualism to separate the thinking mind from physical matter. What major philosophical problem did this create?",
+    "answer": "How can two completely different substances (mind and body) causally interact?",
     "choices": [
-      "Karma",
-      "Dharma",
-      "Nirvana",
-      "Samsara"
+      "How can we know other minds exist?",
+      "How can two completely different substances (mind and body) causally interact?",
+      "Why do some people lack a rational mind?",
+      "How can the same mind hold contradictory beliefs?"
     ]
   },
   {
@@ -749,17 +518,6 @@
   },
   {
     "tier": 2,
-    "question": "Which philosophical school held that all conventional values should be questioned?",
-    "answer": "Cynicism",
-    "choices": [
-      "Stoicism",
-      "Cynicism",
-      "Epicureanism",
-      "Skepticism"
-    ]
-  },
-  {
-    "tier": 2,
     "question": "Who was the most famous Cynic philosopher?",
     "answer": "Diogenes of Sinope",
     "choices": [
@@ -778,17 +536,6 @@
       "The apparent impossibility of motion through infinite divisible steps",
       "The problem of evil",
       "The nature of justice"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Which philosopher argued that humans are naturally good but corrupted by society?",
-    "answer": "Jean-Jacques Rousseau",
-    "choices": [
-      "Thomas Hobbes",
-      "John Locke",
-      "Jean-Jacques Rousseau",
-      "Voltaire"
     ]
   },
   {
@@ -826,13 +573,13 @@
   },
   {
     "tier": 2,
-    "question": "Who is associated with the idea that 'existence precedes essence'?",
-    "answer": "Jean-Paul Sartre",
+    "question": "Hegel's dialectic describes how history and thought progress through thesis, antithesis, and synthesis. What does Marx claim to have done with this method?",
+    "answer": "Inverted it: Hegel's dialectic was 'idealist'; Marx made it materialist, driven by economic forces",
     "choices": [
-      "Albert Camus",
-      "Jean-Paul Sartre",
-      "Simone de Beauvoir",
-      "Martin Heidegger"
+      "Rejected it entirely as mystical speculation",
+      "Inverted it: Hegel's dialectic was 'idealist'; Marx made it materialist, driven by economic forces",
+      "Applied it only to moral philosophy",
+      "Used it to justify individual rights over the collective"
     ]
   },
   {
@@ -866,17 +613,6 @@
       "The simplest explanation is usually correct",
       "All problems have solutions",
       "Truth requires evidence"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "What is the 'golden mean' in Aristotle's ethics?",
-    "answer": "Virtue as a balance between extremes",
-    "choices": [
-      "The value of gold as currency",
-      "Virtue as a balance between extremes",
-      "The best path to happiness",
-      "A mathematical principle"
     ]
   },
   {
@@ -921,28 +657,6 @@
       "Francis Bacon",
       "David Hume",
       "George Berkeley"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "What did Epicurus believe was the goal of life?",
-    "answer": "Tranquility and freedom from pain",
-    "choices": [
-      "Wealth and power",
-      "Tranquility and freedom from pain",
-      "Duty and virtue",
-      "Knowledge and wisdom"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "What does 'a priori' mean in philosophy?",
-    "answer": "Knowledge independent of experience",
-    "choices": [
-      "Knowledge from experience",
-      "Knowledge independent of experience",
-      "Knowledge from the senses",
-      "Knowledge from authority"
     ]
   },
   {
@@ -1002,17 +716,6 @@
   },
   {
     "tier": 2,
-    "question": "Which ancient Greek thinker believed all things are made of fire?",
-    "answer": "Heraclitus",
-    "choices": [
-      "Thales",
-      "Heraclitus",
-      "Democritus",
-      "Anaximenes"
-    ]
-  },
-  {
-    "tier": 2,
     "question": "What is the 'veil of ignorance' in political philosophy?",
     "answer": "Choosing principles of justice without knowing your social position",
     "choices": [
@@ -1046,28 +749,6 @@
   },
   {
     "tier": 2,
-    "question": "What does 'agnostic' mean in philosophy?",
-    "answer": "Not knowing whether God exists",
-    "choices": [
-      "Believing God does not exist",
-      "Not knowing whether God exists",
-      "Believing in multiple gods",
-      "Believing God exists"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Which philosopher is known for the saying 'an unexamined life is not worth living'?",
-    "answer": "Socrates",
-    "choices": [
-      "Plato",
-      "Aristotle",
-      "Socrates",
-      "Confucius"
-    ]
-  },
-  {
-    "tier": 2,
     "question": "Who said 'I only know that I know nothing'?",
     "answer": "Socrates",
     "choices": [
@@ -1079,24 +760,13 @@
   },
   {
     "tier": 2,
-    "question": "What is 'hedonism' in philosophy?",
-    "answer": "The view that pleasure is the highest good",
+    "question": "Kant argued that moral duty requires treating persons as ends in themselves, never merely as means. What political implication follows from this principle?",
+    "answer": "Using individuals as tools for social goals violates their fundamental dignity",
     "choices": [
-      "The pursuit of pain and suffering",
-      "The view that pleasure is the highest good",
-      "The study of human desires",
-      "The worship of physical beauty"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Which school of philosophy taught that one should accept fate with equanimity?",
-    "answer": "Stoicism",
-    "choices": [
-      "Epicureanism",
-      "Cynicism",
-      "Stoicism",
-      "Skepticism"
+      "Governments may sacrifice individuals for the greater good",
+      "Using individuals as tools for social goals violates their fundamental dignity",
+      "Only consequences matter in evaluating political actions",
+      "Moral duty requires following whatever the majority decides"
     ]
   },
   {
@@ -1145,17 +815,6 @@
   },
   {
     "tier": 3,
-    "question": "Which philosopher argued that all knowledge comes from sensory experience?",
-    "answer": "John Locke",
-    "choices": [
-      "Rene Descartes",
-      "John Locke",
-      "Immanuel Kant",
-      "Gottfried Leibniz"
-    ]
-  },
-  {
-    "tier": 3,
     "question": "What is Kant's 'categorical imperative'?",
     "answer": "Act only according to rules you would want to be universal laws",
     "choices": [
@@ -1189,18 +848,7 @@
   },
   {
     "tier": 3,
-    "question": "What is 'existentialism'?",
-    "answer": "The view that individuals create their own meaning",
-    "choices": [
-      "The view that God defines human purpose",
-      "The view that individuals create their own meaning",
-      "The view that nature determines all",
-      "The view that reason is supreme"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "Who is considered the 'father of existentialism'?",
+    "question": "What does Rawls's 'difference principle' require of economic inequalities?",
     "answer": "Soren Kierkegaard",
     "choices": [
       "Jean-Paul Sartre",
@@ -1233,17 +881,6 @@
   },
   {
     "tier": 3,
-    "question": "What is 'virtue ethics'?",
-    "answer": "Ethics focused on developing good character traits",
-    "choices": [
-      "Ethics focused on consequences",
-      "Ethics focused on duties and rules",
-      "Ethics focused on developing good character traits",
-      "Ethics focused on social contracts"
-    ]
-  },
-  {
-    "tier": 3,
     "question": "Who is most associated with virtue ethics in ancient Greece?",
     "answer": "Aristotle",
     "choices": [
@@ -1251,17 +888,6 @@
       "John Stuart Mill",
       "Aristotle",
       "Plato"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "What is 'consequentialism'?",
-    "answer": "Ethics based on the outcomes of actions",
-    "choices": [
-      "Ethics based on duties",
-      "Ethics based on the outcomes of actions",
-      "Ethics based on character",
-      "Ethics based on divine command"
     ]
   },
   {
@@ -1295,17 +921,6 @@
       "Georg Hegel",
       "Karl Marx",
       "Aristotle"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "What is 'Hegel's dialectic'?",
-    "answer": "Thesis, antithesis, synthesis",
-    "choices": [
-      "Cause and effect in history",
-      "Thesis, antithesis, synthesis",
-      "Action and reaction in nature",
-      "Question and answer in logic"
     ]
   },
   {
@@ -1354,17 +969,6 @@
   },
   {
     "tier": 3,
-    "question": "Who founded phenomenology?",
-    "answer": "Edmund Husserl",
-    "choices": [
-      "Martin Heidegger",
-      "Edmund Husserl",
-      "Maurice Merleau-Ponty",
-      "Jean-Paul Sartre"
-    ]
-  },
-  {
-    "tier": 3,
     "question": "What does 'ontology' study?",
     "answer": "The nature of being and existence",
     "choices": [
@@ -1394,17 +998,6 @@
       "Martin Heidegger",
       "Edmund Husserl",
       "Albert Camus"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "Who wrote 'The Myth of Sisyphus', exploring the absurd?",
-    "answer": "Albert Camus",
-    "choices": [
-      "Jean-Paul Sartre",
-      "Albert Camus",
-      "Simone de Beauvoir",
-      "Martin Heidegger"
     ]
   },
   {
@@ -1464,17 +1057,6 @@
   },
   {
     "tier": 3,
-    "question": "What is 'pragmatism' in philosophy?",
-    "answer": "Truth is determined by practical consequences",
-    "choices": [
-      "The view that actions should be practical",
-      "Truth is determined by practical consequences",
-      "The view that politics should be practical",
-      "The view that art should be useful"
-    ]
-  },
-  {
-    "tier": 3,
     "question": "Who founded philosophical pragmatism in America?",
     "answer": "Charles Sanders Peirce",
     "choices": [
@@ -1486,35 +1068,24 @@
   },
   {
     "tier": 3,
-    "question": "What is 'dualism' in philosophy of mind?",
-    "answer": "The view that mind and body are distinct substances",
+    "question": "Isaiah Berlin distinguished 'negative liberty' (freedom from interference) from 'positive liberty' (capacity to act). Why did Berlin warn that 'positive liberty' could justify totalitarianism?",
+    "answer": "Governments can claim to 'liberate' people by overriding their choices for their 'true' interests",
     "choices": [
-      "The view that matter is the only reality",
-      "The view that mind and body are distinct substances",
-      "The view that everything is mental",
-      "The view that duality is an illusion"
+      "Positive liberty requires too much taxation",
+      "Governments can claim to 'liberate' people by overriding their choices for their 'true' interests",
+      "Positive liberty is impossible to define clearly",
+      "Freedom must always be negative to be meaningful"
     ]
   },
   {
     "tier": 3,
-    "question": "Who is most associated with mind-body dualism?",
-    "answer": "Rene Descartes",
+    "question": "'Positive liberty' means the capacity to act on your free will. Critics argue this concept can be misused. Which of the following best illustrates the danger?",
+    "answer": "A state claiming it 'truly frees' citizens by removing their choice to behave immorally",
     "choices": [
-      "John Locke",
-      "Rene Descartes",
-      "George Berkeley",
-      "Baruch Spinoza"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "What is 'pantheism'?",
-    "answer": "The belief that God and the universe are identical",
-    "choices": [
-      "The belief in many gods",
-      "The belief that God and the universe are identical",
-      "The belief that God created the universe",
-      "The belief that nature is divine"
+      "A government building roads to enable travel",
+      "A state claiming it 'truly frees' citizens by removing their choice to behave immorally",
+      "An individual choosing to develop their skills",
+      "A market that expands options through competition"
     ]
   },
   {
@@ -1537,17 +1108,6 @@
       "Ludwig Wittgenstein",
       "Gottlob Frege",
       "Rudolf Carnap"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "What is the 'is-ought problem' in ethics?",
-    "answer": "You cannot derive moral duties from factual statements",
-    "choices": [
-      "The problem of defining 'is'",
-      "You cannot derive moral duties from factual statements",
-      "The question of whether morality is real",
-      "The gap between knowing and doing"
     ]
   },
   {
@@ -1629,17 +1189,6 @@
   },
   {
     "tier": 3,
-    "question": "What is 'logical positivism'?",
-    "answer": "Only empirically verifiable statements are meaningful",
-    "choices": [
-      "Logic should guide all decisions",
-      "Only empirically verifiable statements are meaningful",
-      "Positive thinking leads to truth",
-      "Logic and ethics are inseparable"
-    ]
-  },
-  {
-    "tier": 3,
     "question": "Who proposed the philosophical concept of the 'eternal recurrence'?",
     "answer": "Friedrich Nietzsche",
     "choices": [
@@ -1684,24 +1233,13 @@
   },
   {
     "tier": 3,
-    "question": "What is 'eudaimonia' in Aristotelian ethics?",
-    "answer": "Human flourishing or well-being",
+    "question": "J.L. Austin identified 'performative utterances' in speech act theory. Which example below is a performative rather than a descriptive statement?",
+    "answer": "'I promise to pay you back' (the saying creates the obligation)",
     "choices": [
-      "Simple pleasure",
-      "Human flourishing or well-being",
-      "Following divine law",
-      "Freedom from desire"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "What does Plato call the world of perfect, eternal forms?",
-    "answer": "The realm of Forms (or Ideas)",
-    "choices": [
-      "The world of shadows",
-      "The realm of Forms (or Ideas)",
-      "The ideal republic",
-      "The realm of the divine"
+      "'The sky is blue today'",
+      "'I promise to pay you back' (the saying creates the obligation)",
+      "'Water boils at 100 degrees Celsius'",
+      "'Napoleon was defeated at Waterloo'"
     ]
   },
   {
@@ -1713,17 +1251,6 @@
       "The study of the fundamental nature of reality",
       "The study of supernatural events",
       "The study of abstract mathematics"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "What is the 'hard problem of consciousness'?",
-    "answer": "Why physical processes give rise to subjective experience",
-    "choices": [
-      "How consciousness evolved",
-      "Why physical processes give rise to subjective experience",
-      "How the brain stores memories",
-      "Why humans are self-aware"
     ]
   },
   {
@@ -1772,17 +1299,6 @@
   },
   {
     "tier": 4,
-    "question": "Who is the main proponent of 'absolute idealism'?",
-    "answer": "Georg Hegel",
-    "choices": [
-      "Immanuel Kant",
-      "Georg Hegel",
-      "Johann Fichte",
-      "Friedrich Schelling"
-    ]
-  },
-  {
-    "tier": 4,
     "question": "What is Hobbes's 'state of nature'?",
     "answer": "A hypothetical condition of humanity before organized government",
     "choices": [
@@ -1794,24 +1310,13 @@
   },
   {
     "tier": 4,
-    "question": "What is Locke's 'state of nature' characterized by?",
-    "answer": "A state of equality and freedom governed by natural law",
+    "question": "Foucault's 'panopticon' describes a prison where inmates cannot know when they are watched, so they self-regulate. What is Foucault's broader philosophical point about modern society?",
+    "answer": "Modern power operates through internalized surveillance and self-discipline, not just force",
     "choices": [
-      "Constant warfare and violence",
-      "A state of equality and freedom governed by natural law",
-      "Peaceful cooperation without rules",
-      "Divine monarchy and order"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "Who wrote 'A Theory of Justice'?",
-    "answer": "John Rawls",
-    "choices": [
-      "Robert Nozick",
-      "John Rawls",
-      "Ronald Dworkin",
-      "Michael Sandel"
+      "Modern prisons are more humane than ancient punishment",
+      "Modern power operates through internalized surveillance and self-discipline, not just force",
+      "All social institutions function like prisons",
+      "The state uses architecture to control the poor"
     ]
   },
   {
@@ -1823,17 +1328,6 @@
       "Inequalities are just only if they benefit the least advantaged",
       "Economic differences should be small",
       "Differences in talent justify inequality"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "Who wrote 'Anarchy, State, and Utopia' defending libertarianism?",
-    "answer": "Robert Nozick",
-    "choices": [
-      "John Rawls",
-      "Robert Nozick",
-      "Friedrich Hayek",
-      "Isaiah Berlin"
     ]
   },
   {
@@ -1856,17 +1350,6 @@
       "How mental states relate to physical brain states",
       "How the brain processes information",
       "How emotions affect physical health"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "What is 'functionalism' in philosophy of mind?",
-    "answer": "Mental states are defined by their functional roles",
-    "choices": [
-      "The mind functions like a computer",
-      "Mental states are defined by their functional roles",
-      "Mental functions evolved by natural selection",
-      "The brain functions mechanically"
     ]
   },
   {
@@ -1900,17 +1383,6 @@
       "The view that artistic value lies in formal properties alone",
       "The view that art should follow strict rules",
       "The belief that formulas determine beauty"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "Who is associated with 'the sublime' in philosophical aesthetics?",
-    "answer": "Immanuel Kant",
-    "choices": [
-      "Edmund Burke",
-      "Immanuel Kant",
-      "Friedrich Schiller",
-      "Arthur Schopenhauer"
     ]
   },
   {
@@ -1959,17 +1431,6 @@
   },
   {
     "tier": 4,
-    "question": "What is 'liberalism' in political philosophy?",
-    "answer": "The priority of individual liberty and rights",
-    "choices": [
-      "Left-wing political policies",
-      "The priority of individual liberty and rights",
-      "Support for free markets",
-      "The belief in social equality"
-    ]
-  },
-  {
-    "tier": 4,
     "question": "Who is associated with 'negative liberty'?",
     "answer": "Isaiah Berlin",
     "choices": [
@@ -1999,17 +1460,6 @@
       "The capacity to act upon one's free will",
       "Freedom granted by government",
       "Logical positive statements about freedom"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "Who wrote 'The Subjection of Women'?",
-    "answer": "John Stuart Mill",
-    "choices": [
-      "Mary Wollstonecraft",
-      "John Stuart Mill",
-      "Harriet Taylor Mill",
-      "Simone de Beauvoir"
     ]
   },
   {
@@ -2091,17 +1541,6 @@
   },
   {
     "tier": 4,
-    "question": "What is 'Platonism' in mathematics?",
-    "answer": "Mathematical objects exist independently of human minds",
-    "choices": [
-      "The use of Platonic forms in math",
-      "Mathematical objects exist independently of human minds",
-      "Mathematics is a form of art",
-      "Mathematical truth is uncertain"
-    ]
-  },
-  {
-    "tier": 4,
     "question": "What is the 'correspondence theory of truth'?",
     "answer": "A statement is true if it corresponds to reality",
     "choices": [
@@ -2157,17 +1596,6 @@
   },
   {
     "tier": 4,
-    "question": "What is 'Kant's Copernican revolution' in philosophy?",
-    "answer": "Knowledge conforms to the mind's structures, not the other way around",
-    "choices": [
-      "The universe revolves around reason",
-      "Knowledge conforms to the mind's structures, not the other way around",
-      "Philosophy must follow scientific revolution",
-      "The mind adapts to objective reality"
-    ]
-  },
-  {
-    "tier": 4,
     "question": "What is 'analytic philosophy'?",
     "answer": "A tradition emphasizing logical analysis of concepts and language",
     "choices": [
@@ -2201,17 +1629,6 @@
   },
   {
     "tier": 4,
-    "question": "What is 'philosophy of language'?",
-    "answer": "The study of how language relates to thought and reality",
-    "choices": [
-      "The study of the history of language",
-      "The study of how language relates to thought and reality",
-      "The study of grammar and syntax",
-      "The study of foreign language acquisition"
-    ]
-  },
-  {
-    "tier": 4,
     "question": "Who wrote 'On Liberty', defending freedom of speech?",
     "answer": "John Stuart Mill",
     "choices": [
@@ -2234,17 +1651,6 @@
   },
   {
     "tier": 4,
-    "question": "What is 'Leibniz's principle of sufficient reason'?",
-    "answer": "Everything that exists has a reason or cause for its existence",
-    "choices": [
-      "Sufficient evidence is required for all beliefs",
-      "Everything that exists has a reason or cause for its existence",
-      "Reason is sufficient for gaining knowledge",
-      "Every effect has a sufficient cause"
-    ]
-  },
-  {
-    "tier": 4,
     "question": "What is 'Leibniz's monadology'?",
     "answer": "Reality is composed of simple, indivisible substances called monads",
     "choices": [
@@ -2252,17 +1658,6 @@
       "Reality is composed of simple, indivisible substances called monads",
       "The universe is a single divine substance",
       "Matter is composed of indivisible atoms"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "What is 'Schopenhauer's concept of the will'?",
-    "answer": "A blind, striving force underlying all of reality",
-    "choices": [
-      "The rational will of God",
-      "A blind, striving force underlying all of reality",
-      "Human desire for happiness",
-      "The moral will following reason"
     ]
   },
   {
@@ -2296,17 +1691,6 @@
       "Attacking the person making an argument rather than the argument itself",
       "Making an argument about people",
       "Appealing to human nature"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "What is the 'straw man fallacy'?",
-    "answer": "Misrepresenting an opponent's argument to make it easier to attack",
-    "choices": [
-      "Using weak evidence in an argument",
-      "Misrepresenting an opponent's argument to make it easier to attack",
-      "Changing the subject during a debate",
-      "Appealing to false authority"
     ]
   },
   {
@@ -5212,5 +4596,643 @@
       "Nihilism"
     ],
     "answer": "Utilitarianism"
+  },
+  {
+    "question": "John Locke argued that people have natural rights to life, liberty, and property that no government may violate. Where do these rights come from, according to Locke?",
+    "answer": "They are pre-political rights grounded in natural law and God-given reason",
+    "choices": [
+      "They are granted by the social contract",
+      "They are pre-political rights grounded in natural law and God-given reason",
+      "They derive from the consent of the majority",
+      "They are created by constitutional law"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Locke argued that government derives its legitimate authority from the consent of the governed. What right do people retain if a government violates their natural rights?",
+    "answer": "The right to revolution: to dissolve and replace the government",
+    "choices": [
+      "The right to petition the courts",
+      "The right to revolution: to dissolve and replace the government",
+      "The right to appeal to a higher authority",
+      "The right to emigrate to a better country"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "According to Locke's labor theory of property, how does a person legitimately acquire ownership of something from nature?",
+    "answer": "By mixing their labor with it, adding value through their own effort",
+    "choices": [
+      "By receiving it as a gift from the state",
+      "By mixing their labor with it, adding value through their own effort",
+      "By purchasing it from its previous owner",
+      "By occupying it and declaring ownership publicly"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Locke argued property rights include a 'sufficiency proviso': one may appropriate from nature only if there is 'enough and as good left for others.' What philosophical purpose does this limitation serve?",
+    "answer": "It ensures individual rights do not harm others by leaving them without means to survive",
+    "choices": [
+      "It gives the state the right to redistribute all property",
+      "It ensures individual rights do not harm others by leaving them without means to survive",
+      "It prohibits accumulation of wealth beyond basic needs",
+      "It requires government approval before any appropriation"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "Hobbes argued that in the social contract, people surrender natural liberty to a sovereign in exchange for security. How did Locke's social contract differ from Hobbes's?",
+    "answer": "Locke's contract is limited: government holds power in trust and loses authority if it violates natural rights",
+    "choices": [
+      "Locke agreed with Hobbes that the sovereign's power is absolute",
+      "Locke's contract is limited: government holds power in trust and loses authority if it violates natural rights",
+      "Locke believed no social contract was necessary",
+      "Locke required unanimous consent rather than majority consent"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Hobbes argued people surrender their rights to a sovereign to escape the state of nature. What did he call the political entity that results?",
+    "answer": "The Leviathan: an artificial person representing the unified will of all",
+    "choices": [
+      "The Republic: the rule of the most just",
+      "The Leviathan: an artificial person representing the unified will of all",
+      "The Commonwealth of the majority",
+      "The Divine Monarchy ordained by God"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Mill's harm principle states that the only justification for society to restrict individual liberty is to prevent harm to others. Which of the following does Mill explicitly say is NOT sufficient justification for restricting freedom?",
+    "answer": "That an action harms only the person doing it (self-regarding actions)",
+    "choices": [
+      "That an action physically harms another person",
+      "That an action harms only the person doing it (self-regarding actions)",
+      "That an action constitutes fraud against others",
+      "That an action prevents others from exercising their rights"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Mill defended freedom of speech even for false and harmful opinions. What was his primary justification?",
+    "answer": "False views, when challenged, sharpen our understanding of why true views are correct",
+    "choices": [
+      "All opinions are equally valid and deserve respect",
+      "False views, when challenged, sharpen our understanding of why true views are correct",
+      "The state cannot reliably determine which views are false",
+      "Freedom of speech is a natural right given by God"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Hayek argued that economic central planning must fail because of what he called the 'knowledge problem.' What is the knowledge problem?",
+    "answer": "Knowledge about prices and resources is dispersed among millions of individuals and cannot be centralized",
+    "choices": [
+      "Central planners lack the education to run an economy",
+      "Knowledge about prices and resources is dispersed among millions of individuals and cannot be centralized",
+      "Governments cannot keep economic knowledge secret from citizens",
+      "Central planning produces too much knowledge for any one person to use"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Hayek described the price system as a mechanism for transmitting information. What makes prices superior to central planning for allocating resources?",
+    "answer": "Prices encode dispersed local knowledge about supply and demand without any central authority needing to possess it",
+    "choices": [
+      "Prices are always set fairly by market competition",
+      "Prices encode dispersed local knowledge about supply and demand without any central authority needing to possess it",
+      "Prices are regulated by the state to reflect true social value",
+      "Market prices reflect only the desires of wealthy buyers"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "Hayek's concept of 'spontaneous order' describes how complex beneficial patterns emerge without central direction. Which of the following is his primary example?",
+    "answer": "The market: prices and production patterns emerge from individual decisions without anyone designing them",
+    "choices": [
+      "Language: governments design vocabulary and grammar rules",
+      "The market: prices and production patterns emerge from individual decisions without anyone designing them",
+      "Science: a central body coordinates all research programs",
+      "Law: all useful rules are created by deliberate legislation"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Hayek warned in 'The Road to Serfdom' that economic central planning leads to totalitarianism. What was his philosophical argument?",
+    "answer": "Planning requires coercion at every step; those willing to use the most force will inevitably rise to the top",
+    "choices": [
+      "Socialist economies always collapse from inefficiency alone",
+      "Planning requires coercion at every step; those willing to use the most force will inevitably rise to the top",
+      "Central planners always intend to become dictators",
+      "Economic freedom and political freedom are unrelated"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "Karl Popper argued that Marxism is not a science but a pseudoscience. What was his criterion for making this distinction?",
+    "answer": "A genuine scientific theory must be falsifiable: it must be possible to prove it wrong",
+    "choices": [
+      "Scientific theories must be supported by majority expert opinion",
+      "A genuine scientific theory must be falsifiable: it must be possible to prove it wrong",
+      "Marxism has not been tested enough times to be scientific",
+      "Scientific theories must produce useful technologies"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Popper criticized Marxism and Freudianism as pseudosciences because they could explain any outcome after the fact. What does Popper call a theory that can account for every possible result?",
+    "answer": "Unfalsifiable: it makes no specific predictions that could be proven wrong",
+    "choices": [
+      "Comprehensive: it covers all possible cases",
+      "Unfalsifiable: it makes no specific predictions that could be proven wrong",
+      "Tautological: it is true by definition",
+      "Holistic: it considers the whole system"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Popper's 'Open Society and Its Enemies' argued against 'historicism.' What is historicism as Popper defines it?",
+    "answer": "The view that history follows inevitable laws leading to a predetermined end, used to justify totalitarianism",
+    "choices": [
+      "The study of historical events and their causes",
+      "The view that history follows inevitable laws leading to a predetermined end, used to justify totalitarianism",
+      "The belief that past cultures should be preserved",
+      "The practice of learning moral lessons from history"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "Popper argued that Plato's ideal state in the 'Republic' was a blueprint for totalitarianism. What feature of Plato's state did Popper most object to?",
+    "answer": "The subordination of all individual lives to the collective good of the state as determined by rulers",
+    "choices": [
+      "The presence of a merchant class in Plato's society",
+      "The subordination of all individual lives to the collective good of the state as determined by rulers",
+      "Plato's reliance on mystical Forms to justify governance",
+      "The exclusion of women from the ruling philosopher class"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "Frederic Bastiat described 'legal plunder' as a perversion of the law. What does he mean by this term?",
+    "answer": "When the law is used to take from some and give to others rather than to protect everyone's rights equally",
+    "choices": [
+      "Criminals who use legal loopholes to steal property",
+      "When the law is used to take from some and give to others rather than to protect everyone's rights equally",
+      "The practice of legislators enriching themselves through corruption",
+      "Laws that create unfair advantages in commercial contracts"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Bastiat argued that the proper purpose of the law is limited to one function. What is that function?",
+    "answer": "To protect individuals' pre-existing natural rights to life, liberty, and property",
+    "choices": [
+      "To promote the general welfare and redistribute resources fairly",
+      "To protect individuals' pre-existing natural rights to life, liberty, and property",
+      "To enforce the social contract and collective decisions",
+      "To maximize the greatest happiness of the greatest number"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Robert Nozick argued in 'Anarchy, State, and Utopia' that the only just state is a minimal state. What did he mean by a 'minimal state'?",
+    "answer": "A state limited to protecting individuals against force, theft, and fraud, and enforcing contracts",
+    "choices": [
+      "A state with the smallest possible population",
+      "A state limited to protecting individuals against force, theft, and fraud, and enforcing contracts",
+      "A state that provides only basic food and shelter",
+      "A state with a small but efficient bureaucracy"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Nozick used the 'Wilt Chamberlain argument' to challenge Rawls's egalitarianism. What does this argument show?",
+    "answer": "Any pattern of distribution will be upset by free exchanges, so maintaining equality requires constant coercive interference",
+    "choices": [
+      "Athletes deserve higher pay than philosophers",
+      "Any pattern of distribution will be upset by free exchanges, so maintaining equality requires constant coercive interference",
+      "Talented individuals create more value and deserve greater rewards",
+      "The free market naturally produces fair outcomes over time"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "Nozick argued that taxation for redistribution is equivalent to forced labor. What is his philosophical argument for this claim?",
+    "answer": "Taking the fruits of a person's labor without consent treats that person as a means to others' ends",
+    "choices": [
+      "All taxation is inherently corrupt and wasteful",
+      "Taking the fruits of a person's labor without consent treats that person as a means to others' ends",
+      "Labor produces no legitimate private claims on its output",
+      "Redistribution is only wrong when it harms economic growth"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "Rawls's 'veil of ignorance' asks us to choose principles of justice without knowing our place in society. What type of principles does Rawls believe rational people would choose?",
+    "answer": "Principles that maximize the position of the worst-off group in society",
+    "choices": [
+      "Principles that maximize total social wealth",
+      "Principles that maximize the position of the worst-off group in society",
+      "Principles that preserve existing property rights",
+      "Principles that give everyone an exactly equal share"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Ayn Rand argued that rational self-interest is the highest virtue. How does she respond to the objection that selfishness is destructive to society?",
+    "answer": "Genuine self-interest requires productive achievement and voluntary trade, not exploitation of others",
+    "choices": [
+      "Selfish people simply do not care about the harm they cause",
+      "Genuine self-interest requires productive achievement and voluntary trade, not exploitation of others",
+      "Society itself is an illusion; only individuals exist",
+      "Destruction of society is acceptable if it serves the individual"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Ayn Rand called her philosophy 'Objectivism.' What did she argue is the foundation of all knowledge?",
+    "answer": "Objective reality exists independently of consciousness; reason is the only tool for grasping it",
+    "choices": [
+      "Consciousness creates reality through observation",
+      "Objective reality exists independently of consciousness; reason is the only tool for grasping it",
+      "Knowledge comes from collective social experience",
+      "Faith and reason are equal sources of truth"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Hannah Arendt argued in 'The Origins of Totalitarianism' that both Nazism and Stalinism shared a defining feature. What was it?",
+    "answer": "Both used ideology and terror to destroy the capacity for independent thought and spontaneous human action",
+    "choices": [
+      "Both were caused by economic inequality and class conflict",
+      "Both used ideology and terror to destroy the capacity for independent thought and spontaneous human action",
+      "Both emerged from democratic systems that failed to redistribute wealth",
+      "Both relied on the same propaganda techniques developed in World War I"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "Arendt described the 'banality of evil' after observing Adolf Eichmann's trial. What philosophical claim does this phrase make?",
+    "answer": "Ordinary people can commit great evils not from malice but from thoughtlessness and failure to exercise moral judgment",
+    "choices": [
+      "Evil actions are always committed by mentally ill individuals",
+      "Ordinary people can commit great evils not from malice but from thoughtlessness and failure to exercise moral judgment",
+      "Evil is banal because it is common in everyday life",
+      "Nazi ideology was no different from ordinary authoritarian governance"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "The philosophical distinction between 'negative rights' and 'positive rights' is crucial in political philosophy. What is a negative right?",
+    "answer": "A right that requires others to refrain from interference, such as the right not to be killed",
+    "choices": [
+      "A right that has been denied or negated by law",
+      "A right that requires others to refrain from interference, such as the right not to be killed",
+      "A right that produces bad outcomes when exercised",
+      "A right that requires government to provide resources"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "A 'positive right' requires someone to actively provide something to the rights-holder. Critics of positive rights argue they are problematic. Why?",
+    "answer": "Positive rights impose obligations on others, potentially infringing their liberty to meet the rights-holder's needs",
+    "choices": [
+      "Positive rights are too expensive for governments to fund",
+      "Positive rights impose obligations on others, potentially infringing their liberty to meet the rights-holder's needs",
+      "Positive rights cannot be written into law clearly",
+      "Positive rights conflict with natural law theory"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Utilitarianism judges actions solely by their consequences for overall happiness. What is the main philosophical objection from a rights-based perspective?",
+    "answer": "Utilitarianism can justify serious harm to an individual if it increases net happiness for the majority",
+    "choices": [
+      "Utilitarianism is too difficult to calculate in practice",
+      "Utilitarianism can justify serious harm to an individual if it increases net happiness for the majority",
+      "Utilitarianism ignores God's commands about right and wrong",
+      "Utilitarianism is only valid when everyone's happiness counts equally"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "The 'utility monster' thought experiment critiques utilitarianism. What does it illustrate?",
+    "answer": "A being that gets enormous pleasure from consuming resources could justify taking everything from everyone else",
+    "choices": [
+      "That some people enjoy causing others pain",
+      "A being that gets enormous pleasure from consuming resources could justify taking everything from everyone else",
+      "That monsters in fiction always maximize their happiness",
+      "That utility calculations favor powerful over weak"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Marx argued history is driven by 'historical materialism': the material conditions of production determine consciousness. What does this imply about ideas such as justice or liberty?",
+    "answer": "They are ideological superstructures that reflect and serve the interests of the dominant economic class",
+    "choices": [
+      "They are universal truths accessible to all rational beings",
+      "They are ideological superstructures that reflect and serve the interests of the dominant economic class",
+      "They are products of individual rational reflection",
+      "They are religious concepts invented to control the poor"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Popper's critique of Marx as a pseudoscientist rests on what observation about Marxist predictions?",
+    "answer": "When Marxist predictions failed (e.g., revolution in wealthy countries), Marxists revised the theory rather than abandoning it",
+    "choices": [
+      "Marx never made any specific predictions about history",
+      "When Marxist predictions failed (e.g., revolution in wealthy countries), Marxists revised the theory rather than abandoning it",
+      "Marxist economics was never formalized mathematically",
+      "Marx relied on Hegel's mysticism rather than observation"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "The 'economic calculation problem' (Mises-Hayek) holds that socialist central planning cannot work. What is the core argument?",
+    "answer": "Without market prices, central planners have no rational way to allocate scarce resources efficiently",
+    "choices": [
+      "Socialists are too corrupt to manage resources honestly",
+      "Without market prices, central planners have no rational way to allocate scarce resources efficiently",
+      "Central planning produces too much of some goods and not enough of others by chance",
+      "Socialism requires technology that does not yet exist"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "What is the 'ad hominem' fallacy, and why is it relevant to evaluating political and philosophical arguments?",
+    "answer": "Attacking the person rather than the argument; it is a fallacy because personal flaws do not make an argument false",
+    "choices": [
+      "Appealing to authority to settle a debate",
+      "Attacking the person rather than the argument; it is a fallacy because personal flaws do not make an argument false",
+      "Using emotional appeals instead of logic",
+      "Changing the subject when losing a debate"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Popper argued that the proper scientific method is not to verify theories but to try to falsify them. What is the name of the logical form that demonstrates why verification alone is insufficient?",
+    "answer": "The problem of induction: no finite number of confirming cases can prove a universal claim",
+    "choices": [
+      "The problem of deduction: conclusions cannot exceed premises",
+      "The problem of induction: no finite number of confirming cases can prove a universal claim",
+      "The Gettier problem: justified true belief is not knowledge",
+      "Hume's fork: analytic and synthetic truths are different"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "John Stuart Mill distinguished between 'higher' and 'lower' pleasures in his version of utilitarianism. What did he argue about intellectual versus physical pleasures?",
+    "answer": "Intellectual pleasures are qualitatively superior, not just quantitatively greater, than physical ones",
+    "choices": [
+      "Physical pleasures are more intense and therefore count more",
+      "Intellectual pleasures are qualitatively superior, not just quantitatively greater, than physical ones",
+      "All pleasures are equal and must be measured only by duration",
+      "Only spiritual pleasures contribute to true happiness"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Edmund Burke defended tradition against the French Revolution. What was his philosophical argument for why inherited institutions deserve respect?",
+    "answer": "Accumulated wisdom embedded in traditions far exceeds what any individual or generation can reason out from scratch",
+    "choices": [
+      "God revealed the proper social order through history",
+      "Accumulated wisdom embedded in traditions far exceeds what any individual or generation can reason out from scratch",
+      "Revolution always produces more violence than reform",
+      "Tradition is justified because it has survived competition"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "The 'is-ought gap' (Hume) and the naturalistic fallacy (G.E. Moore) both concern deriving values from facts. Why does this matter for collectivist political arguments?",
+    "answer": "Arguments that claim collective welfare 'naturally' justifies overriding rights commit the naturalistic fallacy",
+    "choices": [
+      "Historical patterns of collectivism show it is natural and therefore right",
+      "Arguments that claim collective welfare 'naturally' justifies overriding rights commit the naturalistic fallacy",
+      "The gap means we cannot make any moral claims at all",
+      "Hume showed that collectivism is philosophically incoherent"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "Classical liberalism holds that governments are instituted to protect pre-existing rights, not to create them. Which philosopher most clearly stated this principle?",
+    "answer": "John Locke: legitimate government protects natural rights that exist prior to any political arrangement",
+    "choices": [
+      "Jean-Jacques Rousseau: the general will creates all rights",
+      "John Locke: legitimate government protects natural rights that exist prior to any political arrangement",
+      "Thomas Hobbes: the sovereign grants all rights by law",
+      "John Rawls: rights are constructed through rational agreement"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "The 'slippery slope' fallacy occurs when someone claims that one step inevitably leads to extreme consequences without justification. Which of the following is a legitimate philosophical concern, not a fallacy?",
+    "answer": "Hayek's argument that economic planning creates institutional pressures toward ever-greater state control",
+    "choices": [
+      "Claiming that legalizing marijuana will lead inevitably to heroin use",
+      "Hayek's argument that economic planning creates institutional pressures toward ever-greater state control",
+      "Arguing that allowing any tax increase will destroy all economic freedom",
+      "Claiming that any gun restriction will lead to total confiscation"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "What logical fallacy occurs when someone argues that because something has always been done a certain way, it must be correct?",
+    "answer": "Appeal to tradition (argumentum ad antiquitatem)",
+    "choices": [
+      "Argument from authority",
+      "Appeal to tradition (argumentum ad antiquitatem)",
+      "False dilemma",
+      "Circular reasoning"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "What logical fallacy occurs when someone dismisses an argument by claiming the speaker is acting from self-interest?",
+    "answer": "Genetic fallacy: judging a claim by its source rather than its merit",
+    "choices": [
+      "Ad hominem: attacking the person directly",
+      "Genetic fallacy: judging a claim by its source rather than its merit",
+      "Strawman: misrepresenting the argument",
+      "Appeal to authority: citing an expert"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Which of the following is an example of a 'false dilemma' (either-or fallacy) in political philosophy?",
+    "answer": "'Either you support total government healthcare or you want people to die in the streets'",
+    "choices": [
+      "'Taxation without representation is tyranny'",
+      "'Either you support total government healthcare or you want people to die in the streets'",
+      "'Natural rights exist independently of government'",
+      "'The minimal state is insufficient to address market failures'"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "What is the 'motte and bailey' fallacy, common in philosophical and political debate?",
+    "answer": "Defending a bold controversial claim by retreating to a weaker obvious claim when challenged, then advancing the bold claim again",
+    "choices": [
+      "Building an argument on false premises",
+      "Defending a bold controversial claim by retreating to a weaker obvious claim when challenged, then advancing the bold claim again",
+      "Using military metaphors in philosophical arguments",
+      "Alternating between two contradictory positions"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "Nietzsche rejected both Christian morality and utilitarianism as 'slave moralities.' What did he mean by this term?",
+    "answer": "Moral systems that exalt weakness, suffering, and self-abnegation because they serve those who cannot compete",
+    "choices": [
+      "Morality enforced through physical punishment",
+      "Moral systems that exalt weakness, suffering, and self-abnegation because they serve those who cannot compete",
+      "Ethics designed by slaves to control their masters",
+      "Any morality based on obedience to authority"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "Aristotle argued in the 'Politics' that humans are by nature 'political animals.' What does this mean?",
+    "answer": "Humans can only fulfill their nature and achieve eudaimonia within a community with others",
+    "choices": [
+      "Humans are naturally drawn to seek power over others",
+      "Humans can only fulfill their nature and achieve eudaimonia within a community with others",
+      "Political activity is the highest form of virtue",
+      "Humans are inherently competitive and form factions"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Kant's categorical imperative includes the 'formula of humanity': treat humanity, in yourself or others, never merely as a means, but always also as an end. What does this rule out?",
+    "answer": "Using people as mere instruments for others' benefit, even for a greater social good",
+    "choices": [
+      "All forms of paid employment and economic exchange",
+      "Using people as mere instruments for others' benefit, even for a greater social good",
+      "Asking for help from others under any circumstances",
+      "Making decisions that affect other people without their knowledge"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Popper's falsifiability criterion distinguishes science from pseudoscience. According to Popper, which of the following would make a theory genuinely scientific?",
+    "answer": "The theory makes specific predictions that experiments could in principle prove wrong",
+    "choices": [
+      "The theory is supported by a large body of confirming evidence",
+      "The theory makes specific predictions that experiments could in principle prove wrong",
+      "The theory is accepted by a consensus of experts",
+      "The theory is logically consistent and internally coherent"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "What is the 'appeal to authority' fallacy, and when is it NOT a fallacy?",
+    "answer": "It is a fallacy when the authority is not relevant; citing genuine domain experts on matters within their expertise is legitimate",
+    "choices": [
+      "It is always a fallacy to cite experts in debate",
+      "It is a fallacy when the authority is not relevant; citing genuine domain experts on matters within their expertise is legitimate",
+      "It is only a fallacy when the authority is famous rather than credentialed",
+      "It is a fallacy unless the authority agrees with the majority"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "What is 'confirmation bias' in epistemology, and why is it a threat to good reasoning?",
+    "answer": "The tendency to seek and favor evidence that supports existing beliefs, causing us to overlook disconfirming evidence",
+    "choices": [
+      "The tendency to confirm what others believe to fit in socially",
+      "The tendency to seek and favor evidence that supports existing beliefs, causing us to overlook disconfirming evidence",
+      "The tendency to trust sources that are familiar and recognizable",
+      "The bias introduced by having a personal stake in a conclusion"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "What is a 'circular argument' (begging the question), and why does it fail as proof?",
+    "answer": "It assumes the conclusion in the premises, so it proves nothing beyond what was already assumed",
+    "choices": [
+      "It is an argument that goes around in circles forever",
+      "It assumes the conclusion in the premises, so it proves nothing beyond what was already assumed",
+      "It is an argument that returns to its starting point after refutation",
+      "It relies on two premises that contradict each other"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Epictetus taught that we should distinguish between what is 'up to us' and what is not. According to Stoicism, what is truly 'up to us'?",
+    "answer": "Only our own judgments, desires, and responses to events",
+    "choices": [
+      "Our health, wealth, and social reputation",
+      "Only our own judgments, desires, and responses to events",
+      "The outcomes of our actions in the world",
+      "The laws and customs of our society"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Why did classical liberals like Locke insist that legitimate government requires the 'consent of the governed'?",
+    "answer": "Without consent, government is no different from conquest: it rules by force rather than right",
+    "choices": [
+      "Majority vote is the only reliable way to make wise decisions",
+      "Without consent, government is no different from conquest: it rules by force rather than right",
+      "People naturally choose the best rulers if allowed to vote",
+      "Consent ensures that rulers share the interests of the ruled"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "What did Socrates mean by claiming that 'no one does wrong willingly'?",
+    "answer": "All wrongdoing stems from ignorance: people who truly knew the good would choose it",
+    "choices": [
+      "People always have good intentions even when they do bad things",
+      "All wrongdoing stems from ignorance: people who truly knew the good would choose it",
+      "Wrongdoing requires deliberate malicious intent to count as blameworthy",
+      "Free will is an illusion; we are all compelled by circumstances"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "What is the 'naturalistic fallacy' as identified by G.E. Moore, and how does it relate to collectivist political arguments?",
+    "answer": "Defining 'good' in terms of natural facts (e.g., 'natural' social harmony) commits this fallacy",
+    "choices": [
+      "Claiming that nature proves human rights exist",
+      "Defining 'good' in terms of natural facts (e.g., 'natural' social harmony) commits this fallacy",
+      "Using environmental arguments in moral debates",
+      "Arguing that natural selection defines what is good"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "Thomas Paine argued in 'Common Sense' that government even at its best is a 'necessary evil.' What was his philosophical reasoning?",
+    "answer": "Government exists only because humans are not virtuous enough to govern themselves; its power should be strictly limited",
+    "choices": [
+      "Government is evil because rulers are always corrupt",
+      "Government exists only because humans are not virtuous enough to govern themselves; its power should be strictly limited",
+      "The best government is absolute monarchy because it imposes order",
+      "Government should be avoided entirely through anarchism"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Alexis de Tocqueville warned of 'soft despotism' in democratic societies. What did he mean?",
+    "answer": "A tutelary government that provides for every need, keeping citizens dependent and passive while hollowing out their liberty",
+    "choices": [
+      "Authoritarian governments that are less violent than traditional tyrannies",
+      "A tutelary government that provides for every need, keeping citizens dependent and passive while hollowing out their liberty",
+      "Democracies that become corrupt through bribery",
+      "The tendency of majorities to bully minorities through social pressure"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "John Stuart Mill's 'On Liberty' argues that the only legitimate use of power over a free person is to prevent harm to others. What kind of authority does this argument limit?",
+    "answer": "Both state power and social tyranny: the tyranny of prevailing opinion is as dangerous as law",
+    "choices": [
+      "Only the power of the state through laws and punishment",
+      "Both state power and social tyranny: the tyranny of prevailing opinion is as dangerous as law",
+      "Only private individuals acting without legal authority",
+      "Only foreign governments exercising power over citizens"
+    ],
+    "tier": 3
   }
 ]

@@ -1,0 +1,644 @@
+{
+  "remove": [
+    {"index": 0, "reason": "1 x 1 = 1 is trivially obvious, not a meaningful quiz challenge even at T1"},
+    {"index": 1, "reason": "1 x 2 = 2 is trivially obvious (any number times 1)"},
+    {"index": 2, "reason": "1 x 3 = 3 trivially obvious"},
+    {"index": 3, "reason": "1 x 4 = 4 trivially obvious"},
+    {"index": 4, "reason": "1 x 5 = 5 trivially obvious"},
+    {"index": 324, "reason": "Volume of box 4 x 4 x 4 is a functional duplicate of 'Volume of cube with side 4' (index 272), same answer 64"},
+    {"index": 325, "reason": "Volume of box 5 x 3 x 4 is a functional duplicate of 'Volume of box 3 x 4 x 5' (index 276), same numbers different order"},
+    {"index": 330, "reason": "Fully corrupted: '? + 1/2 = ?' with answer '?' and all choices '?' -- unrecoverable, topic unknown"},
+    {"index": 341, "reason": "Fully corrupted: '3?? = ?' with answer '?' -- unrecoverable, exponent stripped"},
+    {"index": 383, "reason": "Fully corrupted: '2?^3 = ?' with answer '?' and first choice '?' -- cannot determine intended question"},
+    {"index": 441, "reason": "Fully corrupted: '? - ? = ?' with answer '?' -- completely meaningless, all content stripped"},
+    {"index": 490, "reason": "tan(30 deg) expressed as a decimal ~= 0.577 is pure rote memorization of a decimal approximation, not conceptual math knowledge"},
+    {"index": 491, "reason": "cos(45) = sin(45) is a trivial identity that requires no understanding; the answer is identical to the input angle, making it feel like a trick rather than a math concept"}
+  ],
+  "rewrite": [
+    {
+      "index": 153,
+      "field": "question",
+      "new_value": "1/3 of 90 = ?",
+      "reason": "Corrupted fraction 'of 90' -- context from answer=30 indicates this was '1/3 of 90'"
+    },
+    {
+      "index": 154,
+      "field": "question",
+      "new_value": "1/3 of 60 = ?",
+      "reason": "Corrupted fraction 'of 60' -- context from answer=20 indicates this was '1/3 of 60'"
+    },
+    {
+      "index": 308,
+      "field": "choices",
+      "new_value": ["3/4", "1/2", "2/4", "1"],
+      "reason": "Two choices are '?' due to corruption; replaced with plausible distractors 2/4 and 1"
+    },
+    {
+      "index": 310,
+      "field": "choices",
+      "new_value": ["1/2", "3/4", "2/4", "1/4"],
+      "reason": "One choice is '?' due to corruption; replaced with 2/4 as plausible distractor"
+    },
+    {
+      "index": 312,
+      "field": "choices",
+      "new_value": ["1/4", "1/2", "3/4", "0"],
+      "reason": "Two choices are '?' due to corruption; replaced with plausible distractors 3/4 and 0"
+    },
+    {
+      "index": 316,
+      "field": "question",
+      "new_value": "3^4 = ?",
+      "reason": "Corrupted exponent notation '3? = ?' -- answer 81 confirms this is 3^4"
+    },
+    {
+      "index": 350,
+      "field": "question",
+      "new_value": "log10(100) = ?",
+      "reason": "Corrupted base subscript 'log??' -- this is log base 10 of 100"
+    },
+    {
+      "index": 351,
+      "field": "question",
+      "new_value": "log10(1000) = ?",
+      "reason": "Corrupted base subscript -- this is log base 10 of 1000"
+    },
+    {
+      "index": 352,
+      "field": "question",
+      "new_value": "log10(10) = ?",
+      "reason": "Corrupted base subscript -- this is log base 10 of 10"
+    },
+    {
+      "index": 353,
+      "field": "question",
+      "new_value": "log10(1) = ?",
+      "reason": "Corrupted base subscript -- this is log base 10 of 1"
+    },
+    {
+      "index": 354,
+      "field": "question",
+      "new_value": "log2(8) = ?",
+      "reason": "Corrupted base subscript 'log?' -- answer 3 confirms this is log base 2 of 8"
+    },
+    {
+      "index": 355,
+      "field": "question",
+      "new_value": "log2(16) = ?",
+      "reason": "Corrupted base subscript -- this is log base 2 of 16"
+    },
+    {
+      "index": 356,
+      "field": "question",
+      "new_value": "log2(4) = ?",
+      "reason": "Corrupted base subscript -- this is log base 2 of 4"
+    },
+    {
+      "index": 357,
+      "field": "question",
+      "new_value": "log2(32) = ?",
+      "reason": "Corrupted base subscript -- this is log base 2 of 32"
+    },
+    {
+      "index": 358,
+      "field": "question",
+      "new_value": "log2(1) = ?",
+      "reason": "Corrupted base subscript -- this is log base 2 of 1"
+    },
+    {
+      "index": 366,
+      "field": "question",
+      "new_value": "Distance formula = sqrt((x2-x1)^2 + ___^2)?",
+      "reason": "Subscript notation corrupted to '?'; rewritten with x2, x1 ASCII notation"
+    },
+    {
+      "index": 366,
+      "field": "answer",
+      "new_value": "(y2-y1)",
+      "reason": "Answer had corrupted subscript notation"
+    },
+    {
+      "index": 366,
+      "field": "choices",
+      "new_value": ["(y2-y1)", "(y2+y1)", "(x2-x1)", "(y1-y2)"],
+      "reason": "All choices had corrupted subscript '?' notation; rewritten with ASCII subscripts"
+    },
+    {
+      "index": 370,
+      "field": "question",
+      "new_value": "Slope formula = (y2 - y1) / ___?",
+      "reason": "Subscript notation corrupted to '?'; rewritten with ASCII"
+    },
+    {
+      "index": 370,
+      "field": "answer",
+      "new_value": "(x2 - x1)",
+      "reason": "Answer had corrupted subscript notation"
+    },
+    {
+      "index": 370,
+      "field": "choices",
+      "new_value": ["(x2 - x1)", "(y2 - y1)", "(x2 + x1)", "(y2 + y1)"],
+      "reason": "All choices had corrupted subscript '?' notation"
+    },
+    {
+      "index": 381,
+      "field": "question",
+      "new_value": "2^(-1) = ?",
+      "reason": "Corrupted negative exponent notation '2??' -- answer 1/2 confirms this is 2^(-1)"
+    },
+    {
+      "index": 382,
+      "field": "question",
+      "new_value": "2^(-2) = ?",
+      "reason": "Corrupted notation -- answer 1/4 confirms this is 2^(-2)"
+    },
+    {
+      "index": 384,
+      "field": "question",
+      "new_value": "10^(-1) = ?",
+      "reason": "Corrupted notation '10??' -- answer 0.1 confirms this is 10^(-1)"
+    },
+    {
+      "index": 385,
+      "field": "question",
+      "new_value": "10^(-2) = ?",
+      "reason": "Corrupted notation -- answer 0.01 confirms this is 10^(-2)"
+    },
+    {
+      "index": 396,
+      "field": "question",
+      "new_value": "log10(10000) = ?",
+      "reason": "Corrupted base subscript 'log??' -- this is log base 10 of 10000"
+    },
+    {
+      "index": 399,
+      "field": "question",
+      "new_value": "log2(64) = ?",
+      "reason": "Corrupted base subscript 'log?' -- answer 6 confirms log base 2 of 64"
+    },
+    {
+      "index": 440,
+      "field": "choices",
+      "new_value": ["1/2", "1/4", "2/8", "3/4"],
+      "reason": "One choice is '?' due to corruption; replaced with 2/8 (equivalent to 1/4) as distractor"
+    },
+    {
+      "index": 455,
+      "field": "choices",
+      "new_value": ["1/4", "1/2", "1", "2"],
+      "reason": "One choice is '?' due to corruption; replaced with 2 as plausible distractor"
+    },
+    {
+      "index": 456,
+      "field": "choices",
+      "new_value": ["1/2", "6/12", "3/4", "2/3"],
+      "reason": "Two choices are '?' due to corruption; replaced with 6/12 and 2/3 as plausible distractors"
+    },
+    {
+      "index": 460,
+      "field": "question",
+      "new_value": "(-2)^4 = ?",
+      "reason": "Corrupted exponent notation '(-2)?' -- answer 16 confirms this is (-2)^4"
+    },
+    {
+      "index": 472,
+      "field": "question",
+      "new_value": "log10(0.1) = ?",
+      "reason": "Corrupted base subscript 'log??' -- this is log base 10 of 0.1"
+    },
+    {
+      "index": 473,
+      "field": "question",
+      "new_value": "log2(1/2) = ?",
+      "reason": "Corrupted base subscript 'log?' -- answer -1 confirms log base 2 of 1/2"
+    },
+    {
+      "index": 483,
+      "field": "question",
+      "new_value": "3^(-1) = ?",
+      "reason": "Corrupted notation '3??' -- answer 1/3 expected (but shown as '?' which is also corrupted)"
+    },
+    {
+      "index": 483,
+      "field": "answer",
+      "new_value": "1/3",
+      "reason": "Answer was corrupted '?' -- 3^(-1) = 1/3"
+    },
+    {
+      "index": 483,
+      "field": "choices",
+      "new_value": ["1/3", "-3", "3", "-1/3"],
+      "reason": "First and last choices were '?' and '-?' -- corrected to 1/3 and -1/3"
+    },
+    {
+      "index": 484,
+      "field": "question",
+      "new_value": "4^(-1) = ?",
+      "reason": "Corrupted notation '4??' -- answer 1/4 confirms this is 4^(-1)"
+    },
+    {
+      "index": 485,
+      "field": "question",
+      "new_value": "5^0 = ?",
+      "reason": "Corrupted notation '5?' -- answer 1 confirms this is 5^0; last choice '?' also corrupted"
+    },
+    {
+      "index": 485,
+      "field": "choices",
+      "new_value": ["1", "0", "5", "1/5"],
+      "reason": "Last choice was '?' due to corruption; replaced with 1/5 as plausible distractor"
+    },
+    {
+      "index": 486,
+      "field": "question",
+      "new_value": "log3(9) = ?",
+      "reason": "Corrupted base subscript 'log?' -- answer 2 confirms log base 3 of 9"
+    },
+    {
+      "index": 487,
+      "field": "question",
+      "new_value": "log3(27) = ?",
+      "reason": "Corrupted base subscript -- answer 3 confirms log base 3 of 27"
+    },
+    {
+      "index": 496,
+      "field": "question",
+      "new_value": "log10(0.01) = ?",
+      "reason": "Corrupted base subscript 'log??' -- this is log base 10 of 0.01"
+    }
+  ],
+  "add": [
+    {
+      "question": "What property says a + b = b + a?",
+      "answer": "Commutative",
+      "choices": ["Commutative", "Associative", "Distributive", "Transitive"],
+      "tier": 1,
+      "reason": "T1 conceptual: names a fundamental arithmetic property every student should know"
+    },
+    {
+      "question": "What property says (a + b) + c = a + (b + c)?",
+      "answer": "Associative",
+      "choices": ["Associative", "Commutative", "Distributive", "Identity"],
+      "tier": 1,
+      "reason": "T1 conceptual: grouping property of addition, core math literacy"
+    },
+    {
+      "question": "What is the value of zero added to any number?",
+      "answer": "The number itself",
+      "choices": ["The number itself", "Zero", "One", "Double the number"],
+      "tier": 1,
+      "reason": "T1 conceptual: the additive identity property"
+    },
+    {
+      "question": "What is any number multiplied by zero?",
+      "answer": "0",
+      "choices": ["0", "1", "The number itself", "Undefined"],
+      "tier": 1,
+      "reason": "T1 conceptual: the zero product property"
+    },
+    {
+      "question": "What is any nonzero number divided by itself?",
+      "answer": "1",
+      "choices": ["1", "0", "2", "The number itself"],
+      "tier": 1,
+      "reason": "T1 conceptual: division identity"
+    },
+    {
+      "question": "Is the sum of two even numbers always even, odd, or neither?",
+      "answer": "Even",
+      "choices": ["Even", "Odd", "Neither", "It depends"],
+      "tier": 1,
+      "reason": "T1 conceptual: parity rule, understanding even/odd structure"
+    },
+    {
+      "question": "Is the sum of two odd numbers always even or odd?",
+      "answer": "Even",
+      "choices": ["Even", "Odd", "It depends", "Prime"],
+      "tier": 1,
+      "reason": "T1 conceptual: parity rule for odd+odd"
+    },
+    {
+      "question": "Which is larger: 3/4 or 2/3?",
+      "answer": "3/4",
+      "choices": ["3/4", "2/3", "They are equal", "Cannot tell"],
+      "tier": 1,
+      "reason": "T1 mental math: comparing fractions by reasoning about size"
+    },
+    {
+      "question": "What is the next prime number after 7?",
+      "answer": "11",
+      "choices": ["11", "9", "10", "13"],
+      "tier": 1,
+      "reason": "T1 conceptual: knowledge of primes and what prime means"
+    },
+    {
+      "question": "How many sides does a hexagon have?",
+      "answer": "6",
+      "choices": ["6", "5", "7", "8"],
+      "tier": 1,
+      "reason": "T1: basic geometric vocabulary"
+    },
+    {
+      "question": "25% of 60 = ?",
+      "answer": "15",
+      "choices": ["15", "20", "12", "25"],
+      "tier": 2,
+      "reason": "T2 mental math: quarter of 60, practical percentage calculation"
+    },
+    {
+      "question": "20% of 150 = ?",
+      "answer": "30",
+      "choices": ["30", "25", "35", "15"],
+      "tier": 2,
+      "reason": "T2 mental math: 20% is 1/5, practical percentage"
+    },
+    {
+      "question": "What is 15% of 200?",
+      "answer": "30",
+      "choices": ["30", "25", "40", "15"],
+      "tier": 2,
+      "reason": "T2 mental math: 10% + 5% strategy"
+    },
+    {
+      "question": "A number is divisible by 9 if the sum of its digits is divisible by ___?",
+      "answer": "9",
+      "choices": ["9", "3", "6", "18"],
+      "tier": 2,
+      "reason": "T2 conceptual: divisibility rule for 9, understanding digit-sum properties"
+    },
+    {
+      "question": "A number is divisible by 3 if the sum of its digits is divisible by ___?",
+      "answer": "3",
+      "choices": ["3", "2", "9", "6"],
+      "tier": 2,
+      "reason": "T2 conceptual: divisibility rule for 3"
+    },
+    {
+      "question": "What makes a number even?",
+      "answer": "It is divisible by 2",
+      "choices": ["It is divisible by 2", "It ends in 0", "It is divisible by 4", "It has an even number of digits"],
+      "tier": 2,
+      "reason": "T2 conceptual: definition of even number"
+    },
+    {
+      "question": "What is a prime number?",
+      "answer": "A number with exactly two factors: 1 and itself",
+      "choices": ["A number with exactly two factors: 1 and itself", "An odd number", "A number not divisible by 2", "A number greater than 1"],
+      "tier": 2,
+      "reason": "T2 conceptual: definition of prime -- tests mathematical literacy not just recall"
+    },
+    {
+      "question": "What is the least common multiple of 4 and 6?",
+      "answer": "12",
+      "choices": ["12", "24", "6", "10"],
+      "tier": 2,
+      "reason": "T2 mental math: LCM concept, practically useful"
+    },
+    {
+      "question": "What is the greatest common factor of 12 and 18?",
+      "answer": "6",
+      "choices": ["6", "3", "9", "12"],
+      "tier": 2,
+      "reason": "T2 mental math: GCF concept, tests factor understanding"
+    },
+    {
+      "question": "What is the reciprocal of 4?",
+      "answer": "1/4",
+      "choices": ["1/4", "4", "-4", "0"],
+      "tier": 2,
+      "reason": "T2 conceptual: understanding reciprocals"
+    },
+    {
+      "question": "If you double a number and get 30, what is the number?",
+      "answer": "15",
+      "choices": ["15", "60", "14", "16"],
+      "tier": 2,
+      "reason": "T2 mental math: algebraic reasoning framed as a word problem"
+    },
+    {
+      "question": "What does PEMDAS (or BODMAS) stand for in math?",
+      "answer": "The order of operations",
+      "choices": ["The order of operations", "A type of equation", "A division rule", "A fraction method"],
+      "tier": 2,
+      "reason": "T2 conceptual: understanding that PEMDAS is an order-of-operations convention"
+    },
+    {
+      "question": "What is the perimeter of an equilateral triangle with side 8?",
+      "answer": "24",
+      "choices": ["24", "16", "32", "64"],
+      "tier": 3,
+      "reason": "T3 mental math: perimeter = 3 x side for equilateral triangle"
+    },
+    {
+      "question": "A square has area 64. What is its side length?",
+      "answer": "8",
+      "choices": ["8", "16", "4", "32"],
+      "tier": 3,
+      "reason": "T3 conceptual: working backwards from area to side using square roots"
+    },
+    {
+      "question": "What is the sum of interior angles of any triangle?",
+      "answer": "180 degrees",
+      "choices": ["180 degrees", "90 degrees", "360 degrees", "270 degrees"],
+      "tier": 3,
+      "reason": "T3 conceptual: fundamental geometric fact"
+    },
+    {
+      "question": "What is the sum of interior angles of a quadrilateral?",
+      "answer": "360 degrees",
+      "choices": ["360 degrees", "180 degrees", "270 degrees", "540 degrees"],
+      "tier": 3,
+      "reason": "T3 conceptual: extends angle-sum understanding to 4-sided figures"
+    },
+    {
+      "question": "An isosceles triangle has two angles of 70 degrees. What is the third angle?",
+      "answer": "40 degrees",
+      "choices": ["40 degrees", "70 degrees", "50 degrees", "20 degrees"],
+      "tier": 3,
+      "reason": "T3 mental math: angle-sum = 180, 70+70=140, so third = 40"
+    },
+    {
+      "question": "What does a negative exponent mean? For example, what is x^(-n)?",
+      "answer": "1 / x^n",
+      "choices": ["1 / x^n", "-x^n", "x^n - 1", "0"],
+      "tier": 3,
+      "reason": "T3 conceptual: the meaning of negative exponents as reciprocals"
+    },
+    {
+      "question": "What is a^0 for any nonzero a?",
+      "answer": "1",
+      "choices": ["1", "0", "a", "undefined"],
+      "tier": 3,
+      "reason": "T3 conceptual: zero exponent rule and why it equals 1 (pattern of dividing by base)"
+    },
+    {
+      "question": "If f(x) = x + 3, what is f(7)?",
+      "answer": "10",
+      "choices": ["10", "4", "21", "7"],
+      "tier": 3,
+      "reason": "T3 conceptual: function notation, substitution"
+    },
+    {
+      "question": "What does the absolute value |x| represent?",
+      "answer": "The distance from x to zero on the number line",
+      "choices": ["The distance from x to zero on the number line", "The square of x", "The opposite of x", "The integer part of x"],
+      "tier": 3,
+      "reason": "T3 conceptual: geometric meaning of absolute value"
+    },
+    {
+      "question": "Which number is NOT prime: 11, 17, 21, 23?",
+      "answer": "21",
+      "choices": ["21", "11", "17", "23"],
+      "tier": 3,
+      "reason": "T3 conceptual: identifying prime vs composite by testing factors"
+    },
+    {
+      "question": "What is the formula for the area of a circle with radius r?",
+      "answer": "pi * r^2",
+      "choices": ["pi * r^2", "2 * pi * r", "pi * d", "r^2"],
+      "tier": 3,
+      "reason": "T3 conceptual: distinguishing area formula from circumference formula"
+    },
+    {
+      "question": "A line with slope 0 is ___?",
+      "answer": "Horizontal",
+      "choices": ["Horizontal", "Vertical", "Diagonal", "Curved"],
+      "tier": 4,
+      "reason": "T4 conceptual: understanding what slope=0 means geometrically"
+    },
+    {
+      "question": "Two lines are parallel if they have ___ slopes?",
+      "answer": "Equal",
+      "choices": ["Equal", "Opposite", "Reciprocal", "Zero"],
+      "tier": 4,
+      "reason": "T4 conceptual: definition of parallel lines in terms of slope"
+    },
+    {
+      "question": "Two lines are perpendicular if the product of their slopes is ___?",
+      "answer": "-1",
+      "choices": ["-1", "0", "1", "undefined"],
+      "tier": 4,
+      "reason": "T4 conceptual: perpendicular slope relationship -- key analytic geometry fact"
+    },
+    {
+      "question": "What is log(a) + log(b) equal to, using the same base?",
+      "answer": "log(a*b)",
+      "choices": ["log(a*b)", "log(a+b)", "log(a) * log(b)", "log(a-b)"],
+      "tier": 4,
+      "reason": "T4 conceptual: the product rule for logarithms"
+    },
+    {
+      "question": "What is log(a) - log(b) equal to, using the same base?",
+      "answer": "log(a/b)",
+      "choices": ["log(a/b)", "log(a-b)", "log(a)/log(b)", "log(a*b)"],
+      "tier": 4,
+      "reason": "T4 conceptual: the quotient rule for logarithms"
+    },
+    {
+      "question": "What is n * log(a) equal to?",
+      "answer": "log(a^n)",
+      "choices": ["log(a^n)", "log(n*a)", "n + log(a)", "log(a)/n"],
+      "tier": 4,
+      "reason": "T4 conceptual: the power rule for logarithms"
+    },
+    {
+      "question": "What does it mean for two fractions to have a common denominator?",
+      "answer": "Their bottom numbers are equal",
+      "choices": ["Their bottom numbers are equal", "Their top numbers are equal", "They equal the same decimal", "They are both less than 1"],
+      "tier": 4,
+      "reason": "T4 conceptual: understanding why common denominators are needed for fraction addition"
+    },
+    {
+      "question": "In the expression a^m * a^n, what is the simplified exponent?",
+      "answer": "m + n",
+      "choices": ["m + n", "m * n", "m - n", "m^n"],
+      "tier": 4,
+      "reason": "T4 conceptual: the product of powers rule"
+    },
+    {
+      "question": "What does it mean for a function to be one-to-one?",
+      "answer": "Each output corresponds to exactly one input",
+      "choices": ["Each output corresponds to exactly one input", "The function passes through the origin", "The function has only positive values", "Every input maps to the same output"],
+      "tier": 5,
+      "reason": "T5 conceptual: definition of injective/one-to-one functions"
+    },
+    {
+      "question": "What is the geometric meaning of the derivative of f(x) at a point?",
+      "answer": "The slope of the tangent line at that point",
+      "choices": ["The slope of the tangent line at that point", "The area under the curve", "The value of f at that point", "The rate of curvature"],
+      "tier": 5,
+      "reason": "T5 conceptual: fundamental interpretation of derivative without calculation"
+    },
+    {
+      "question": "What does the integral of a function represent geometrically?",
+      "answer": "The area under the curve",
+      "choices": ["The area under the curve", "The slope at each point", "The maximum value", "The period of the function"],
+      "tier": 5,
+      "reason": "T5 conceptual: fundamental interpretation of the integral"
+    },
+    {
+      "question": "A probability must always be between ___ and ___?",
+      "answer": "0 and 1",
+      "choices": ["0 and 1", "-1 and 1", "0 and 100", "0 and infinity"],
+      "tier": 5,
+      "reason": "T5 conceptual: axiom of probability, foundational understanding"
+    },
+    {
+      "question": "If two events are mutually exclusive, can they both occur at the same time?",
+      "answer": "No",
+      "choices": ["No", "Yes", "Only if independent", "Only if correlated"],
+      "tier": 5,
+      "reason": "T5 conceptual: definition of mutually exclusive events"
+    },
+    {
+      "question": "What is the probability of rolling a 3 on a fair six-sided die?",
+      "answer": "1/6",
+      "choices": ["1/6", "1/3", "1/2", "3/6"],
+      "tier": 5,
+      "reason": "T5 conceptual: basic probability as favorable outcomes / total outcomes"
+    },
+    {
+      "question": "What does it mean for a sequence to converge?",
+      "answer": "It approaches a finite limit",
+      "choices": ["It approaches a finite limit", "It increases without bound", "Its terms become negative", "It repeats a pattern"],
+      "tier": 5,
+      "reason": "T5 conceptual: definition of convergent sequence, core analysis concept"
+    },
+    {
+      "question": "What is a rational number?",
+      "answer": "A number expressible as a ratio of two integers",
+      "choices": ["A number expressible as a ratio of two integers", "A number that is not prime", "A positive decimal", "A whole number"],
+      "tier": 5,
+      "reason": "T5 conceptual: precise definition of rational number"
+    },
+    {
+      "question": "Is sqrt(2) rational or irrational?",
+      "answer": "Irrational",
+      "choices": ["Irrational", "Rational", "Imaginary", "Undefined"],
+      "tier": 5,
+      "reason": "T5 conceptual: classic result, understanding that sqrt(2) cannot be expressed as p/q"
+    },
+    {
+      "question": "In a normal distribution, roughly what percentage of data falls within one standard deviation of the mean?",
+      "answer": "68%",
+      "choices": ["68%", "50%", "95%", "99%"],
+      "tier": 5,
+      "reason": "T5 conceptual: the 68-95-99.7 rule for normal distributions"
+    },
+    {
+      "question": "What is a mathematical proof by contradiction?",
+      "answer": "Assuming the opposite is true and showing it leads to a contradiction",
+      "choices": ["Assuming the opposite is true and showing it leads to a contradiction", "Proving something by testing many examples", "Using a formula to compute a result", "Showing two things are equal by substitution"],
+      "tier": 5,
+      "reason": "T5 conceptual: proof technique -- tests understanding of mathematical reasoning itself"
+    },
+    {
+      "question": "What is mathematical induction used to prove?",
+      "answer": "Statements that hold for all positive integers",
+      "choices": ["Statements that hold for all positive integers", "That a function is continuous", "That a number is prime", "That two sets are equal"],
+      "tier": 5,
+      "reason": "T5 conceptual: understanding the scope and purpose of induction as a proof method"
+    }
+  ]
+}

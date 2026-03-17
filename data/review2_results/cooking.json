@@ -1,0 +1,882 @@
+{
+  "remove": [
+    {
+      "index": 5,
+      "reason": "Pure dish-origin geography trivia ('What country is sushi originally from?') -- no conceptual cooking value. Removed in favor of questions about the techniques involved."
+    },
+    {
+      "index": 8,
+      "reason": "Paella cuisine origin is pure geography trivia with no teaching value about cooking technique or science."
+    },
+    {
+      "index": 11,
+      "reason": "Kimchi country-of-origin is pure geography trivia. A question about kimchi's fermentation process is already present and far more valuable."
+    },
+    {
+      "index": 16,
+      "reason": "Mole sauce cuisine origin is pure geography trivia. No conceptual cooking value."
+    },
+    {
+      "index": 54,
+      "reason": "Haute cuisine historical origin (17th-century French courts) is food history trivia with no practical cooking knowledge value."
+    },
+    {
+      "index": 57,
+      "reason": "Ancient civilizations growing cacao -- archaeology trivia, not cooking knowledge. Does not help anyone cook better."
+    },
+    {
+      "index": 81,
+      "reason": "Duplicate of index 5 -- both ask which country sushi is from."
+    },
+    {
+      "index": 113,
+      "reason": "Asks 'What is pasta made from?' (flour and water) -- near-duplicate of index 13 which asks 'What is pasta traditionally made from?' (durum wheat semolina). Index 13 is more educational."
+    },
+    {
+      "index": 125,
+      "reason": "Saucepan purpose ('Heating liquids and making sauces on the stove') is too basic to have quiz value -- it is a self-evident naming question with no conceptual content."
+    },
+    {
+      "index": 189,
+      "reason": "Pain perdu = French toast is a pure name-association question with no cooking concept behind it."
+    }
+  ],
+  "rewrite": [
+    {
+      "index": 2,
+      "field": "question",
+      "new_value": "Why is wheat the primary grain for bread-making rather than rice or corn?",
+      "reason": "Original question ('What grain is used to make most bread?') is factual recall. Reframing to 'why' teaches that wheat contains the right gluten-forming proteins for trapping CO2."
+    },
+    {
+      "index": 2,
+      "field": "answer",
+      "new_value": "Wheat contains glutenin and gliadin that form gluten, trapping CO2 bubbles from yeast",
+      "reason": "Answer must match the conceptual rewrite of the question."
+    },
+    {
+      "index": 2,
+      "field": "choices",
+      "new_value": ["Wheat contains glutenin and gliadin that form gluten, trapping CO2 bubbles from yeast", "Wheat has the highest starch content of any grain", "Wheat has more calories per gram than other grains", "Wheat flour dissolves better in water than other flours"],
+      "reason": "Choices updated to match new conceptual framing."
+    },
+    {
+      "index": 8,
+      "field": "question",
+      "new_value": "What makes Arborio rice ideal for risotto compared to long-grain rice?",
+      "reason": "Replaces the removed paella-origin question. Teaches the concept of starch release in short-grain rice. (Note: this entry replaces the removed index 8 slot with a new question about Arborio.)"
+    },
+    {
+      "index": 9,
+      "field": "question",
+      "new_value": "Why does butter burn at lower temperatures than refined vegetable oils?",
+      "reason": "Original ('What type of fat is butter?') is nutritional classification trivia. Reframing to explain butter's low smoke point due to milk solids teaches practical cooking knowledge."
+    },
+    {
+      "index": 9,
+      "field": "answer",
+      "new_value": "Butter contains milk solids that burn around 150 degC, well below most refined oils",
+      "reason": "Answer matches the conceptual rewrite."
+    },
+    {
+      "index": 9,
+      "field": "choices",
+      "new_value": ["Butter contains milk solids that burn around 150 degC, well below most refined oils", "Butter has a higher water content than oils", "Butter is a saturated fat which oxidizes quickly", "Butter produces more smoke because it is an animal fat"],
+      "reason": "Choices updated to match conceptual framing."
+    },
+    {
+      "index": 9,
+      "field": "tier",
+      "new_value": 2,
+      "reason": "The conceptual rewrite is more appropriate for tier 2 (educated adult) than tier 1."
+    },
+    {
+      "index": 15,
+      "field": "question",
+      "new_value": "Why is olive oil not ideal for high-heat frying?",
+      "reason": "Original ('What is olive oil extracted from?') is self-evident naming trivia -- the word 'olive' is in the name. Reframing to its smoke point teaches practical knowledge."
+    },
+    {
+      "index": 15,
+      "field": "answer",
+      "new_value": "It has a relatively low smoke point (especially extra virgin) and burns, producing bitter flavors",
+      "reason": "Answer matches the rewrite."
+    },
+    {
+      "index": 15,
+      "field": "choices",
+      "new_value": ["It has a relatively low smoke point (especially extra virgin) and burns, producing bitter flavors", "Olive oil makes food taste too strongly of olives", "Olive oil solidifies at frying temperatures", "Olive oil is too thick to coat food evenly"],
+      "reason": "Choices updated to match new framing."
+    },
+    {
+      "index": 15,
+      "field": "tier",
+      "new_value": 2,
+      "reason": "Smoke point concept is tier 2 level."
+    },
+    {
+      "index": 17,
+      "field": "question",
+      "new_value": "Which of these foods is classified as a dairy product?",
+      "reason": "Original framing is fine but answer 'Parmesan' is slightly ambiguous as a single example. Minor wording improvement."
+    },
+    {
+      "index": 22,
+      "field": "question",
+      "new_value": "Why does blanching vegetables in boiling water then plunging into ice water preserve their bright color?",
+      "reason": "Original states the method without asking why. Reframing to the WHY teaches that rapid chilling halts enzyme activity that would otherwise degrade chlorophyll."
+    },
+    {
+      "index": 22,
+      "field": "answer",
+      "new_value": "The heat briefly deactivates enzymes that destroy color; ice water stops cooking before color degrades",
+      "reason": "Answer matches the conceptual rewrite."
+    },
+    {
+      "index": 22,
+      "field": "choices",
+      "new_value": ["The heat briefly deactivates enzymes that destroy color; ice water stops cooking before color degrades", "Boiling water adds minerals that fix green pigments", "Ice water causes chlorophyll to crystalize and stay bright", "Blanching removes the bitter compounds that make vegetables look dull"],
+      "reason": "Choices updated to match conceptual framing."
+    },
+    {
+      "index": 22,
+      "field": "tier",
+      "new_value": 2,
+      "reason": "The 'why' version is tier 2 (the original was also tier 2 so this is a content improvement only)."
+    },
+    {
+      "index": 23,
+      "field": "question",
+      "new_value": "What does the Maillard reaction require that caramelization does not?",
+      "reason": "Original is a good question but the answer 'Browning and new flavors' is too vague. The distinguishing feature (amino acids + sugars, not just heat on sugar) is what makes this worth knowing."
+    },
+    {
+      "index": 23,
+      "field": "answer",
+      "new_value": "Amino acids (proteins) -- caramelization only needs sugar; Maillard needs both amino acids and sugars",
+      "reason": "This answer teaches the actual chemistry distinction."
+    },
+    {
+      "index": 23,
+      "field": "choices",
+      "new_value": ["Amino acids (proteins) -- caramelization only needs sugar; Maillard needs both amino acids and sugars", "A higher temperature than caramelization", "The presence of water to start the reaction", "Direct flame rather than oven heat"],
+      "reason": "Choices updated to highlight the conceptual distinction."
+    },
+    {
+      "index": 26,
+      "field": "question",
+      "new_value": "Why does braising tough cuts of meat produce tender results?",
+      "reason": "Original states what braising is. Asking WHY it works teaches collagen-to-gelatin conversion with long, moist heat."
+    },
+    {
+      "index": 26,
+      "field": "answer",
+      "new_value": "Long moist heat converts tough collagen in connective tissue into gelatin, tenderizing the meat",
+      "reason": "Answer teaches the mechanism rather than just defining the technique."
+    },
+    {
+      "index": 26,
+      "field": "choices",
+      "new_value": ["Long moist heat converts tough collagen in connective tissue into gelatin, tenderizing the meat", "Braising boils away the proteins that make meat tough", "The sear at the start caramelizes the surface to seal in moisture", "Slow cooking at low heat prevents water loss from muscle fibers"],
+      "reason": "Choices updated to match conceptual framing."
+    },
+    {
+      "index": 26,
+      "field": "tier",
+      "new_value": 2,
+      "reason": "The mechanism question is appropriate at tier 2 -- same original tier."
+    },
+    {
+      "index": 28,
+      "field": "tier",
+      "new_value": 1,
+      "reason": "Index 28 (al dente meaning, tier 2) duplicates index 113 (al dente at tier 1). The tier 2 version should stay but its tier should be 1 since the identical concept is already at tier 1 at index 113. Actually, since the tier 1 question at index 113 IS the duplicate, the tier 2 version at index 28 is better phrased. Recommend removing the tier 1 duplicate at index 113 instead. See removal of index 113."
+    },
+    {
+      "index": 33,
+      "field": "question",
+      "new_value": "Why does sourdough bread rise without commercial yeast?",
+      "reason": "Original states the ingredient (wild yeast and lactic acid bacteria). Asking WHY it rises teaches the fermentation mechanism."
+    },
+    {
+      "index": 33,
+      "field": "answer",
+      "new_value": "Wild yeast in the starter ferments sugars in the flour, producing CO2 gas that leavens the dough",
+      "reason": "Answer now explains the mechanism of rising."
+    },
+    {
+      "index": 33,
+      "field": "choices",
+      "new_value": ["Wild yeast in the starter ferments sugars in the flour, producing CO2 gas that leavens the dough", "Lactic acid bacteria produce gases that make the dough expand", "The acidic environment of sourdough causes gluten to stretch further", "Sourdough dough contains more gluten than regular bread dough"],
+      "reason": "Choices updated to test understanding of fermentation leavening mechanism."
+    },
+    {
+      "index": 112,
+      "field": "question",
+      "new_value": "Why does kneading develop gluten in bread dough?",
+      "reason": "Original states that kneading 'develops gluten for structure and texture' but doesn't explain why. Adding the mechanism makes this more educational."
+    },
+    {
+      "index": 112,
+      "field": "answer",
+      "new_value": "Mechanical work aligns and cross-links glutenin and gliadin proteins into a continuous elastic network",
+      "reason": "Explains the protein chemistry behind kneading."
+    },
+    {
+      "index": 112,
+      "field": "choices",
+      "new_value": ["Mechanical work aligns and cross-links glutenin and gliadin proteins into a continuous elastic network", "Kneading heats the dough, activating gluten proteins", "Kneading dissolves the flour proteins into the water evenly", "Kneading expels air pockets that would otherwise weaken the dough"],
+      "reason": "Choices updated to match the mechanistic answer."
+    },
+    {
+      "index": 112,
+      "field": "tier",
+      "new_value": 2,
+      "reason": "The protein mechanism explanation is tier 2 level. (Original was tier 1 with a simpler answer -- that simpler version is now captured by a new ADD question.)"
+    },
+    {
+      "index": 120,
+      "field": "question",
+      "new_value": "Why does caramelization require higher temperatures than the Maillard reaction?",
+      "reason": "Original ('What does caramelize mean?') is a definition question. Reframing to WHY it needs high heat (160+ degC vs 140 degC for Maillard) teaches temperature science."
+    },
+    {
+      "index": 120,
+      "field": "answer",
+      "new_value": "Caramelization is purely thermal decomposition of sugar bonds, requiring 160 degC or higher without any protein involvement",
+      "reason": "Answer teaches the distinct chemistry of caramelization."
+    },
+    {
+      "index": 120,
+      "field": "choices",
+      "new_value": ["Caramelization is purely thermal decomposition of sugar bonds, requiring 160 degC or higher without any protein involvement", "Caramelization needs moisture to start, which must first evaporate", "Sugar must dissolve completely in fat before it can caramelize", "Caramelization only occurs in the presence of acid or alkali"],
+      "reason": "Choices updated to test understanding of the chemistry."
+    },
+    {
+      "index": 120,
+      "field": "tier",
+      "new_value": 2,
+      "reason": "The mechanistic rewrite is tier 2 level."
+    },
+    {
+      "index": 144,
+      "field": "question",
+      "new_value": "What is the cooking purpose of egg wash on pastry before baking?",
+      "reason": "Original ('What is used to glaze pastries?') is pure recall. Reframing asks WHY egg wash works -- protein browning via Maillard reaction."
+    },
+    {
+      "index": 144,
+      "field": "answer",
+      "new_value": "Proteins and sugars in egg brown through the Maillard reaction under oven heat, creating a golden gloss",
+      "reason": "Explains the chemistry behind egg wash browning."
+    },
+    {
+      "index": 144,
+      "field": "choices",
+      "new_value": ["Proteins and sugars in egg brown through the Maillard reaction under oven heat, creating a golden gloss", "Egg wash seals the pastry surface preventing moisture loss", "The fat in egg yolk fries the surface of the pastry", "Egg albumen sets hard and creates the glossy finish"],
+      "reason": "Choices test understanding of the mechanism."
+    },
+    {
+      "index": 144,
+      "field": "tier",
+      "new_value": 2,
+      "reason": "The mechanism explanation is tier 2 level."
+    },
+    {
+      "index": 160,
+      "field": "question",
+      "new_value": "Why does the Maillard reaction not occur when boiling meat in water?",
+      "reason": "Original Maillard question at tier 2 is a good concept but this angle -- why it DOESN'T happen in moist heat -- is more practically useful and tests deeper understanding."
+    },
+    {
+      "index": 160,
+      "field": "answer",
+      "new_value": "Water caps the surface temperature at 100 degC, well below the 140+ degC threshold needed for Maillard browning",
+      "reason": "This teaches the critical temperature threshold concept and why dry-heat methods produce browning that moist methods cannot."
+    },
+    {
+      "index": 160,
+      "field": "choices",
+      "new_value": ["Water caps the surface temperature at 100 degC, well below the 140+ degC threshold needed for Maillard browning", "Boiling water washes away the amino acids needed for Maillard browning", "The pressure of boiling water prevents the reaction from occurring", "Maillard reaction requires fat, which is absent in water"],
+      "reason": "Choices test understanding of the temperature requirement."
+    },
+    {
+      "index": 174,
+      "field": "question",
+      "new_value": "Why does salt suppress bitterness and enhance perceived sweetness in food?",
+      "reason": "Original ('What is the purpose of salt in cooking?') answers 'Enhance flavor' which is too vague. The actual mechanism -- ion competition at bitter taste receptors -- is a genuinely interesting cooking science concept."
+    },
+    {
+      "index": 174,
+      "field": "answer",
+      "new_value": "Sodium ions suppress bitter taste receptor signals while allowing sweet and savory signals to come through more strongly",
+      "reason": "Explains the neurochemical basis of salt's flavor-enhancing effect."
+    },
+    {
+      "index": 174,
+      "field": "choices",
+      "new_value": ["Sodium ions suppress bitter taste receptor signals while allowing sweet and savory signals to come through more strongly", "Salt simply adds its own flavor on top of existing flavors", "Salt dehydrates the tongue, concentrating other taste compounds", "Salt raises the boiling point of food, concentrating flavors during cooking"],
+      "reason": "Choices test understanding of the mechanism."
+    },
+    {
+      "index": 174,
+      "field": "tier",
+      "new_value": 2,
+      "reason": "The mechanism is tier 2 level -- appropriate for an educated adult."
+    },
+    {
+      "index": 204,
+      "field": "question",
+      "new_value": "What does the Scoville scale actually measure, and what is its unit?",
+      "reason": "Original at tier 5 asks 'What is the Scoville scale used to measure?' which is a tier 1-2 question at best. Reframing to include the unit (Scoville Heat Units, SHU) and the measurement method brings it to an appropriate tier 5 level."
+    },
+    {
+      "index": 204,
+      "field": "answer",
+      "new_value": "The concentration of capsaicinoids -- measured in Scoville Heat Units (SHU) using HPLC chromatography in modern testing",
+      "reason": "Adds the specific unit and modern measurement method, making it genuinely tier 5."
+    },
+    {
+      "index": 204,
+      "field": "choices",
+      "new_value": ["The concentration of capsaicinoids -- measured in Scoville Heat Units (SHU) using HPLC chromatography in modern testing", "The capsaicin dilution ratio detected by taste panels -- measured in arbitrary heat units", "The pH of a pepper extract -- the more acidic, the higher the Scoville rating", "The weight of capsaicin per gram of dried pepper"],
+      "reason": "Choices updated to reflect the specialist-level precision of the answer."
+    },
+    {
+      "index": 254,
+      "field": "question",
+      "new_value": "Why does adding cream of tartar stabilize whipped egg whites?",
+      "reason": "Index 254 (role of cream of tartar in meringue) has a good answer already. The question framing asks 'what is the role' but could more precisely ask WHY to match tier 4."
+    }
+  ],
+  "add": [
+    {
+      "question": "Why does fat make pastry crumbly (short) rather than elastic?",
+      "answer": "Fat coats flour proteins and starches, physically preventing them from hydrating and forming long gluten strands",
+      "choices": [
+        "Fat coats flour proteins and starches, physically preventing them from hydrating and forming long gluten strands",
+        "Fat absorbs water, leaving less for gluten development",
+        "Fat adds weight that breaks gluten strands as they form",
+        "Fat reacts chemically with gluten to weaken it"
+      ],
+      "tier": 2,
+      "reason": "Fills a gap on the science of fat in pastry -- important concept connecting shortcrust to gluten chemistry."
+    },
+    {
+      "question": "Why does adding vinegar or lemon juice to water help poached eggs hold their shape?",
+      "answer": "Acid accelerates protein coagulation in the egg white, causing it to set more quickly before dispersing in the water",
+      "choices": [
+        "Acid accelerates protein coagulation in the egg white, causing it to set more quickly before dispersing in the water",
+        "Acid lowers the water temperature, cooking the egg more gently",
+        "Acid prevents the water from boiling and disturbing the egg",
+        "Acid flavors the egg white so it tastes better when set"
+      ],
+      "tier": 2,
+      "reason": "Practical technique question with a clear chemical mechanism -- acid-induced protein denaturation."
+    },
+    {
+      "question": "Why does toasting bread make it drier and crunchier than the untoasted loaf?",
+      "answer": "Heat drives out moisture and partially dextrinizes surface starch into shorter, crispier chains via dry heat",
+      "choices": [
+        "Heat drives out moisture and partially dextrinizes surface starch into shorter, crispier chains via dry heat",
+        "Toasting compresses the bread structure, making it denser",
+        "Heat breaks down gluten, causing the crumb to firm up",
+        "Browning reactions produce hard, rigid sugar crystals on the surface"
+      ],
+      "tier": 2,
+      "reason": "Teaches dextrinization of starch -- an important mechanism -- through a universally familiar example."
+    },
+    {
+      "question": "Why does adding salt to pasta water improve the final dish, even though salt barely raises the boiling point?",
+      "answer": "Salt seasons the pasta from within during cooking -- it cannot be effectively added after the pasta is cooked through",
+      "choices": [
+        "Salt seasons the pasta from within during cooking -- it cannot be effectively added after the pasta is cooked through",
+        "Salt significantly raises the boiling point, cooking pasta faster",
+        "Salt prevents pasta from sticking together",
+        "Salt improves the texture of the pasta by strengthening gluten"
+      ],
+      "tier": 1,
+      "reason": "Practical knowledge with mild scientific nuance. Dispels the boiling-point myth and explains the real reason for salting water."
+    },
+    {
+      "question": "What causes onions to turn sweet and soft when cooked slowly over low heat?",
+      "answer": "Long gentle heat breaks down cell walls and converts complex starches to simple sugars, while Maillard reactions add sweetness and color",
+      "choices": [
+        "Long gentle heat breaks down cell walls and converts complex starches to simple sugars, while Maillard reactions add sweetness and color",
+        "Boiling water inside the onion cells escapes, concentrating existing sugar",
+        "The sulfur compounds that make onions sharp are slowly cooked away",
+        "Onion proteins caramelize at low temperature, producing sweetness"
+      ],
+      "tier": 2,
+      "reason": "Teaches cell wall breakdown and sugar conversion during caramelization of onions -- very practical and conceptually rich."
+    },
+    {
+      "question": "Why does resting meat after cooking retain more juice when cut?",
+      "answer": "During cooking, muscle fibers contract and push juices to the center; resting allows fibers to relax and reabsorb the liquid",
+      "choices": [
+        "During cooking, muscle fibers contract and push juices to the center; resting allows fibers to relax and reabsorb the liquid",
+        "Resting allows the crust to harden and seal in moisture",
+        "The meat cools enough that juice becomes too thick to flow out when cut",
+        "Carryover cooking finishes the center while the surface cools"
+      ],
+      "tier": 2,
+      "reason": "Adds the mechanistic WHY that makes resting practical advice, teaching muscle fiber behavior."
+    },
+    {
+      "question": "Why does cream whip into foam but milk cannot be whipped the same way?",
+      "answer": "Cream has enough fat (35%+) to form a stable network around air bubbles; milk's low fat content cannot stabilize the foam",
+      "choices": [
+        "Cream has enough fat (35%+) to form a stable network around air bubbles; milk's low fat content cannot stabilize the foam",
+        "Cream contains more protein than milk for building foam structure",
+        "Milk contains more water that collapses foam instantly",
+        "Cream is thicker and traps air mechanically through viscosity alone"
+      ],
+      "tier": 2,
+      "reason": "Teaches fat's role in foam stabilization -- an important emulsion/foam science concept using familiar examples."
+    },
+    {
+      "question": "Why does fat added to boiling pasta water help prevent the pasta from sticking together?",
+      "answer": "It does not -- oil floats on water and coats pasta after draining, preventing sauce from adhering; tossing pasta immediately is the real solution",
+      "choices": [
+        "It does not -- oil floats on water and coats pasta after draining, preventing sauce from adhering; tossing pasta immediately is the real solution",
+        "Oil raises the boiling point of water slightly, cooking pasta more evenly",
+        "Oil emulsifies around pasta starch, forming a protective coating",
+        "Oil prevents pasta proteins from cross-linking when hot"
+      ],
+      "tier": 2,
+      "reason": "Dispels a very common cooking myth with a clear explanation of why oil-in-water is actually counterproductive for pasta."
+    },
+    {
+      "question": "Why does baking soda alone make baked goods taste soapy if too much is used?",
+      "answer": "Excess unreacted baking soda (sodium bicarbonate) remains alkaline and produces a soapy, metallic off-flavor",
+      "choices": [
+        "Excess unreacted baking soda (sodium bicarbonate) remains alkaline and produces a soapy, metallic off-flavor",
+        "Excess baking soda over-ferments and produces alcohol off-flavors",
+        "High amounts of baking soda cause gluten to break down and taste bitter",
+        "Baking soda reacts with eggs to produce sulfur-tasting compounds"
+      ],
+      "tier": 2,
+      "reason": "Practical baking knowledge explaining why over-use of baking soda fails -- connects to acid-base chemistry."
+    },
+    {
+      "question": "Why is bread flour higher in protein content than cake flour, and why does this matter?",
+      "answer": "Higher protein (12-14%) forms more gluten for structure and chew; cake flour's lower protein (7-9%) produces a tender, fine crumb",
+      "choices": [
+        "Higher protein (12-14%) forms more gluten for structure and chew; cake flour's lower protein (7-9%) produces a tender, fine crumb",
+        "Bread flour has more starch which absorbs water and creates chew",
+        "Cake flour is bleached, which reduces its protein -- the bleaching is what matters, not protein",
+        "They are identical except bread flour is coarser in grind"
+      ],
+      "tier": 2,
+      "reason": "Foundational flour knowledge connecting protein content to gluten development and texture outcomes."
+    },
+    {
+      "question": "Why does a hollandaise sauce break (separate) when it gets too hot?",
+      "answer": "Egg yolk proteins overcook and coagulate, losing their ability to emulsify fat -- the oil separates from the protein network",
+      "choices": [
+        "Egg yolk proteins overcook and coagulate, losing their ability to emulsify fat -- the oil separates from the protein network",
+        "The butter boils inside the sauce, pushing the emulsion apart",
+        "Acid from lemon juice denatures the proteins when hot",
+        "Hollandaise breaks because the fat crystallizes at high temperature"
+      ],
+      "tier": 3,
+      "reason": "Teaches emulsion stability and protein denaturation through a classic sauce application."
+    },
+    {
+      "question": "Why does adding a small amount of cornstarch to egg whites before whipping improve meringue stability?",
+      "answer": "Starch absorbs water that would otherwise weep out of the meringue, reducing syneresis during and after baking",
+      "choices": [
+        "Starch absorbs water that would otherwise weep out of the meringue, reducing syneresis during and after baking",
+        "Starch reacts with egg proteins to form stronger cross-links",
+        "Cornstarch acts as an emulsifier between water and egg fat",
+        "Starch raises the temperature at which egg white proteins set"
+      ],
+      "tier": 3,
+      "reason": "Teaches starch-water interaction (syneresis prevention) in an applied context -- connecting food science to practical baking."
+    },
+    {
+      "question": "Why does flambeing a dish with alcohol improve the final flavor?",
+      "answer": "Burning off most of the alcohol concentrates pan juices and causes rapid caramelization, adding depth without raw alcohol taste",
+      "choices": [
+        "Burning off most of the alcohol concentrates pan juices and causes rapid caramelization, adding depth without raw alcohol taste",
+        "Alcohol flames sterilize the pan, removing any bitter burnt residue",
+        "The fire physically breaks down tough proteins in the sauce",
+        "Flambeing is purely dramatic -- no flavor changes occur from ignition"
+      ],
+      "tier": 3,
+      "reason": "Practical technique question explaining the actual flavor mechanism of flambeing beyond spectacle."
+    },
+    {
+      "question": "Why does an acid like lemon juice prevent apple slices from browning?",
+      "answer": "Ascorbic acid reduces the quinone compounds back to colorless phenols before they polymerize into brown pigments, and low pH inhibits polyphenol oxidase",
+      "choices": [
+        "Ascorbic acid reduces the quinone compounds back to colorless phenols before they polymerize into brown pigments, and low pH inhibits polyphenol oxidase",
+        "Lemon juice forms a waterproof barrier preventing oxygen contact",
+        "The citric acid kills the enzymes by denaturing all proteins",
+        "Lemon juice bleaches the brown pigments that have already formed"
+      ],
+      "tier": 3,
+      "reason": "Deeper enzymatic browning question explaining the ascorbic acid mechanism -- complements index 4932 which covers similar ground but at tier 4."
+    },
+    {
+      "question": "What is the purpose of 'punching down' bread dough during the bulk fermentation?",
+      "answer": "It expels accumulated CO2, redistributes yeast nutrients and fermentation by-products, and equalizes dough temperature",
+      "choices": [
+        "It expels accumulated CO2, redistributes yeast nutrients and fermentation by-products, and equalizes dough temperature",
+        "It strengthens gluten by mechanically aligning protein strands",
+        "It adds more air into the dough to improve the final rise",
+        "It prevents the dough from fermenting too quickly by cooling it"
+      ],
+      "tier": 3,
+      "reason": "Practical bread technique with a specific multi-part reason -- tests understanding of fermentation mechanics."
+    },
+    {
+      "question": "Why does adding cold butter bit by bit to a hot reduction create a creamy, stable sauce (beurre blanc)?",
+      "answer": "Cold butter emulsifies gradually -- fat droplets are suspended in the liquid before each piece fully melts, maintained by the pan's residual heat and constant movement",
+      "choices": [
+        "Cold butter emulsifies gradually -- fat droplets are suspended in the liquid before each piece fully melts, maintained by the pan's residual heat and constant movement",
+        "Cold butter lowers the sauce temperature enough to prevent browning",
+        "Adding cold butter adds lecithin that stabilizes the emulsion chemically",
+        "Cold butter dissolves slowly, giving the reduction time to thicken naturally"
+      ],
+      "tier": 3,
+      "reason": "Teaches butter mounting technique with an explanation of the emulsification mechanism -- connects to beurre blanc production."
+    },
+    {
+      "question": "Why does pressure cooking reduce cooking times so dramatically?",
+      "answer": "Higher pressure raises the boiling point of water above 100 degC (to ~120 degC), cooking food at a higher temperature without steam escaping",
+      "choices": [
+        "Higher pressure raises the boiling point of water above 100 degC (to ~120 degC), cooking food at a higher temperature without steam escaping",
+        "Pressure compresses food fibers, making them tender faster",
+        "Sealed steam is forced into food under pressure, heating from inside",
+        "Reduced oxygen inside the pressure cooker prevents nutrient loss during cooking"
+      ],
+      "tier": 2,
+      "reason": "Fills a gap in the question pool -- boiling point elevation under pressure is a fundamental physics concept with immediate cooking application."
+    },
+    {
+      "question": "Why do egg yolks make ice cream creamier than ice cream made without them?",
+      "answer": "Lecithin in egg yolks acts as an emulsifier, keeping fat droplets dispersed and preventing large ice crystals from forming during freezing",
+      "choices": [
+        "Lecithin in egg yolks acts as an emulsifier, keeping fat droplets dispersed and preventing large ice crystals from forming during freezing",
+        "Egg yolks add more fat, which simply coats the tongue more thickly",
+        "Egg yolks contain proteins that form a gel network trapping air",
+        "The cholesterol in egg yolks acts as a natural thickener for cream"
+      ],
+      "tier": 3,
+      "reason": "Practical application of emulsification science to ice cream making -- connects lecithin function to texture outcomes."
+    },
+    {
+      "question": "Why does a wet brine improve the moisture of roasted chicken compared to no brine?",
+      "answer": "Osmosis drives salt into cells initially, then water follows to equalize concentration -- the salt also dissolves and reorganizes some muscle proteins, increasing water retention",
+      "choices": [
+        "Osmosis drives salt into cells initially, then water follows to equalize concentration -- the salt also dissolves and reorganizes some muscle proteins, increasing water retention",
+        "The chicken absorbs water directly by soaking, adding physical moisture",
+        "Salt breaks down muscle fibers so they release less juice during cooking",
+        "Brine forms a water-permeable coating that prevents juice from escaping"
+      ],
+      "tier": 3,
+      "reason": "Teaches the two-phase osmosis and protein-swelling mechanism of wet brining -- goes beyond the simpler osmosis explanation elsewhere."
+    },
+    {
+      "question": "Why does a sauce made from a white roux taste pasty if the flour is not cooked enough?",
+      "answer": "Raw starch granules retain a raw, floury taste -- cooking the roux for several minutes gelatinizes and dextrinizes the starch, eliminating the raw flavor",
+      "choices": [
+        "Raw starch granules retain a raw, floury taste -- cooking the roux for several minutes gelatinizes and dextrinizes the starch, eliminating the raw flavor",
+        "Uncooked flour contains enzymes that give a bitter taste in sauce",
+        "The fat in an undercooked roux separates, producing a greasy flavor",
+        "Protein in the flour must coagulate before the sauce can taste clean"
+      ],
+      "tier": 3,
+      "reason": "Practical technique question about roux cooking time with an explanation of the starch chemistry behind it."
+    },
+    {
+      "question": "Why does deep-frying food produce a crispy crust rather than a soggy one, if the oil temperature is maintained correctly?",
+      "answer": "Moisture rapidly vaporizes from the surface, creating a steam barrier that prevents oil absorption; the surface starch and protein dry and set into a crisp shell",
+      "choices": [
+        "Moisture rapidly vaporizes from the surface, creating a steam barrier that prevents oil absorption; the surface starch and protein dry and set into a crisp shell",
+        "Hot oil seals the food surface instantly, locking in moisture and creating crispness",
+        "The high temperature burns the outer layer into a crisp carbon coating",
+        "Oil replaces all the water in the outer layer, creating a dry, hard surface"
+      ],
+      "tier": 3,
+      "reason": "Explains the physics of deep-frying crispness including steam barrier and surface drying -- important technique science."
+    },
+    {
+      "question": "Why does adding starch to a stir-fry sauce cause it to thicken only when heated?",
+      "answer": "Starch granules absorb water and swell (gelatinize) when heated above ~65 degC, thickening the sauce as the swollen granules disrupt flow",
+      "choices": [
+        "Starch granules absorb water and swell (gelatinize) when heated above ~65 degC, thickening the sauce as the swollen granules disrupt flow",
+        "Heat causes the starch chains to form crosslinks with the sauce proteins",
+        "Starch dries out in the heat, forming a solid network in the sauce",
+        "Heat activates enzymes in the starch that polymerize the liquid"
+      ],
+      "tier": 2,
+      "reason": "Teaches starch gelatinization -- one of the most important thickening mechanisms -- through a very common cooking example."
+    },
+    {
+      "question": "What physical property of sugar prevents ice cream from freezing rock-solid?",
+      "answer": "Dissolved sugar lowers the freezing point of the mixture (freezing point depression), so it remains semi-solid at freezer temperatures",
+      "choices": [
+        "Dissolved sugar lowers the freezing point of the mixture (freezing point depression), so it remains semi-solid at freezer temperatures",
+        "Sugar is hygroscopic and keeps the mixture moist, preventing full crystallization",
+        "Sugar reacts with cream proteins to produce an anti-freeze effect",
+        "Sugar adds viscosity that physically resists freezing"
+      ],
+      "tier": 3,
+      "reason": "Teaches freezing point depression through a universally familiar example -- ice cream. Fills a gap in the temperature physics questions."
+    },
+    {
+      "question": "Why does searing meat NOT seal in juices, despite the popular belief?",
+      "answer": "Seared meat loses just as much moisture during cooking as unseared meat -- searing creates flavor through the Maillard reaction, not a moisture barrier",
+      "choices": [
+        "Seared meat loses just as much moisture during cooking as unseared meat -- searing creates flavor through the Maillard reaction, not a moisture barrier",
+        "Searing does seal moisture -- studies confirm 15% less moisture loss",
+        "Searing works only for thick cuts, not thin ones",
+        "The crust formed by searing is physically impermeable to liquid"
+      ],
+      "tier": 3,
+      "reason": "Dispels one of cooking's most persistent myths with scientific backing -- teaches Maillard reaction as the actual purpose of searing."
+    },
+    {
+      "question": "Why does adding a copper bowl improve the stability of whipped egg whites?",
+      "answer": "Copper ions bond with conalbumin in egg whites, forming a complex that stabilizes the protein foam and prevents over-whipping",
+      "choices": [
+        "Copper ions bond with conalbumin in egg whites, forming a complex that stabilizes the protein foam and prevents over-whipping",
+        "Copper is non-stick so the whites do not stick and deflate",
+        "The thermal conductivity of copper keeps the egg whites cool during whipping",
+        "Copper reacts with oxygen in the air to create a natural leavening effect"
+      ],
+      "tier": 4,
+      "reason": "Specialist-level knowledge about copper's specific interaction with egg protein -- genuinely educational and surprising."
+    },
+    {
+      "question": "What is 'sugar's role as a tenderizer' in cake baking?",
+      "answer": "Sugar delays gluten development and protein coagulation by competing for water, keeping the crumb tender even when baked",
+      "choices": [
+        "Sugar delays gluten development and protein coagulation by competing for water, keeping the crumb tender even when baked",
+        "Sugar reacts with baking powder to produce extra CO2 for a lighter crumb",
+        "Sugar coats fat particles that physically interrupt gluten strand formation",
+        "Sugar provides energy for yeast fermentation, speeding the rise"
+      ],
+      "tier": 3,
+      "reason": "Teaches sugar's structural role in baking beyond just sweetness -- a frequently misunderstood but important baking science concept."
+    },
+    {
+      "question": "Why does scalding milk before adding it to bread dough improve the final loaf?",
+      "answer": "Scalding denatures whey proteins (especially glutathione) that would otherwise weaken gluten by breaking its disulfide bonds",
+      "choices": [
+        "Scalding denatures whey proteins (especially glutathione) that would otherwise weaken gluten by breaking its disulfide bonds",
+        "Hot milk activates yeast faster than cold milk",
+        "Scalding sterilizes the milk so it does not interfere with fermentation",
+        "Hot milk dissolves flour more effectively than cold milk"
+      ],
+      "tier": 4,
+      "reason": "Explains the specific protein chemistry (glutathione and disulfide bond degradation) behind scalding milk -- important specialist bread knowledge."
+    },
+    {
+      "question": "Why does a reverse sear produce more even doneness than a traditional high-heat sear first?",
+      "answer": "Low oven cooking creates a gradual, even temperature gradient from edge to center; a high initial sear causes a thick overcooked band around the edges",
+      "choices": [
+        "Low oven cooking creates a gradual, even temperature gradient from edge to center; a high initial sear causes a thick overcooked band around the edges",
+        "The reverse sear allows the crust to form before juices are pushed to the center",
+        "Starting in a low oven allows carryover cooking to finish the center after the sear",
+        "The sear is more flavorful when done last because the surface is dry from oven cooking"
+      ],
+      "tier": 4,
+      "reason": "Explains heat gradient physics in thick-cut meat cookery -- teaches the science behind a widely adopted modern technique."
+    },
+    {
+      "question": "What is the role of 'amylase enzymes' in bread fermentation?",
+      "answer": "Amylases break down starch chains in flour into fermentable sugars that yeast can convert to CO2 and alcohol",
+      "choices": [
+        "Amylases break down starch chains in flour into fermentable sugars that yeast can convert to CO2 and alcohol",
+        "Amylases activate gluten proteins during the mixing stage",
+        "Amylases produce the acids responsible for sourdough flavor",
+        "Amylases are added to dough to increase protein content"
+      ],
+      "tier": 4,
+      "reason": "Fills a gap on enzyme activity in bread baking -- connects to why diastatic malt is used and why fermentation works even in lean doughs."
+    },
+    {
+      "question": "Why does high-altitude baking require adjustments to leavening and liquid amounts?",
+      "answer": "Lower air pressure means CO2 expands more, causing over-rise and collapse; reduced boiling point means baked goods dry out faster and need more liquid",
+      "choices": [
+        "Lower air pressure means CO2 expands more, causing over-rise and collapse; reduced boiling point means baked goods dry out faster and need more liquid",
+        "High altitude causes more Maillard reaction, so less browning agent is needed",
+        "Less oxygen at altitude prevents yeast from producing enough CO2",
+        "Cold mountain temperatures slow yeast activity, requiring more leavening"
+      ],
+      "tier": 4,
+      "reason": "Applies gas laws and boiling point reduction to practical baking adjustments -- a true specialist question with clear practical value."
+    },
+    {
+      "question": "What is 'the paradox of cooking tough collagen-rich cuts at high temperature'?",
+      "answer": "High dry heat tightens muscle proteins and dries out the meat before collagen converts to gelatin -- slow moist heat is needed for collagen conversion",
+      "choices": [
+        "High dry heat tightens muscle proteins and dries out the meat before collagen converts to gelatin -- slow moist heat is needed for collagen conversion",
+        "High heat is better because it breaks collagen faster through denaturation",
+        "Tough cuts require high heat to break through the dense fat marbling",
+        "High temperature and short time produce the best results for any cut"
+      ],
+      "tier": 3,
+      "reason": "Explains why you cannot rush a braise -- connects muscle protein, collagen, and cooking method in one conceptual question."
+    },
+    {
+      "question": "How does glutamate (MSG) activate umami taste receptors differently from salt activating saltiness?",
+      "answer": "Glutamate binds to T1R1/T1R3 taste receptors specifically tuned to detect free amino acids signaling protein-rich food; sodium activates entirely different ion-channel based receptors",
+      "choices": [
+        "Glutamate binds to T1R1/T1R3 taste receptors specifically tuned to detect free amino acids signaling protein-rich food; sodium activates entirely different ion-channel based receptors",
+        "Glutamate and salt both work on the same sodium receptor pathway",
+        "MSG amplifies the saltiness signal rather than creating a new taste",
+        "Glutamate works by blocking bitter receptors, making food taste richer by contrast"
+      ],
+      "tier": 5,
+      "reason": "Expert-level taste receptor biology for the umami pathway -- genuinely specialist knowledge about why umami is a distinct fifth taste."
+    },
+    {
+      "question": "What is 'the water holding capacity paradox' in pale soft exudative (PSE) pork?",
+      "answer": "Rapid post-slaughter pH drop while muscle temperature is still high causes protein denaturation, collapsing the protein network and releasing water, producing pale, soft, wet meat",
+      "choices": [
+        "Rapid post-slaughter pH drop while muscle temperature is still high causes protein denaturation, collapsing the protein network and releasing water, producing pale, soft, wet meat",
+        "PSE pork results from the animal being over-hydrated before slaughter",
+        "High pH in the muscle causes proteins to over-retain water and swell",
+        "PSE pork is caused by excess fat content diluting the muscle protein network"
+      ],
+      "tier": 5,
+      "reason": "Expert meat science -- teaches the pH-temperature interaction that causes PSE, connecting food science to muscle biochemistry."
+    },
+    {
+      "question": "What does 'knife steel' (honing rod) actually do to a blade edge at the microscopic level?",
+      "answer": "It realigns the microscopic teeth of the blade edge that fold over during use, restoring sharpness without removing metal",
+      "choices": [
+        "It realigns the microscopic teeth of the blade edge that fold over during use, restoring sharpness without removing metal",
+        "It grinds away a thin layer of metal to expose a fresh sharp edge",
+        "It polishes the blade surface to reduce friction during cutting",
+        "It magnetizes the blade edge to attract and hold food particles"
+      ],
+      "tier": 2,
+      "reason": "Practical and conceptually interesting knife care question teaching what honing actually does -- fills a gap in the knife skills questions."
+    },
+    {
+      "question": "Why does dry-aging beef develop a more intense flavor than fresh or wet-aged beef?",
+      "answer": "Enzymatic breakdown of proteins and fats produces amino acids and short-chain fatty acids; moisture evaporation concentrates these flavors further",
+      "choices": [
+        "Enzymatic breakdown of proteins and fats produces amino acids and short-chain fatty acids; moisture evaporation concentrates these flavors further",
+        "Dry aging allows beneficial mold to grow that creates new flavor compounds",
+        "Bacteria on the surface produce fermented flavors that penetrate the meat",
+        "Oxygen exposure causes controlled oxidation that creates deep beefy flavors"
+      ],
+      "tier": 3,
+      "reason": "Fills a gap in the meat aging questions -- explains the enzyme and concentration mechanism behind dry-aged flavor development."
+    },
+    {
+      "question": "What is 'the science of mayonnaise stability' -- why does it stay emulsified?",
+      "answer": "Lecithin in egg yolk has hydrophilic and hydrophobic ends that coat oil droplets, keeping them suspended in the water phase indefinitely when properly made",
+      "choices": [
+        "Lecithin in egg yolk has hydrophilic and hydrophobic ends that coat oil droplets, keeping them suspended in the water phase indefinitely when properly made",
+        "The high viscosity of the oil prevents separation by slowing droplet movement",
+        "Mustard proteins cross-link with egg proteins to form a rigid network",
+        "Salt lowers the water activity enough to prevent phase separation"
+      ],
+      "tier": 3,
+      "reason": "Deep-dives into mayonnaise emulsion chemistry beyond the basic emulsification definition already present in the pool."
+    },
+    {
+      "question": "Why does refrigerating potatoes cause them to taste sweeter?",
+      "answer": "Cold temperatures activate phosphorylase enzymes that convert starch into sugars -- a process called cold-induced sweetening",
+      "choices": [
+        "Cold temperatures activate phosphorylase enzymes that convert starch into sugars -- a process called cold-induced sweetening",
+        "Refrigeration causes water inside the potato to partially freeze, concentrating natural sugars",
+        "Cold slows respiration, allowing more sugar to accumulate from outside sources",
+        "Low temperature breaks down the cell walls, releasing trapped sucrose"
+      ],
+      "tier": 3,
+      "reason": "Interesting and counterintuitive food science -- cold-induced sweetening of potatoes is a specific enzymatic reaction worth knowing."
+    },
+    {
+      "question": "Why does cooking garlic whole, sliced, and minced produce different levels of pungency?",
+      "answer": "More cell damage releases more alliinase enzyme to convert alliin into allicin -- mincing produces the most, whole cloves the least pungency",
+      "choices": [
+        "More cell damage releases more alliinase enzyme to convert alliin into allicin -- mincing produces the most, whole cloves the least pungency",
+        "Heat destroys pungency equally regardless of cut size",
+        "Larger pieces retain more sulfur compounds because less surface area is exposed to air",
+        "The outer membrane of garlic cells contains the pungent compounds, so peeling releases them"
+      ],
+      "tier": 3,
+      "reason": "Teaches the alliin-alliinase enzyme system in garlic -- explains a practical observation every cook has made about different cuts of garlic."
+    },
+    {
+      "question": "What is 'the stall' in barbecue low-and-slow cooking of large cuts of meat?",
+      "answer": "The internal temperature plateaus around 65-75 degC as evaporative cooling from surface moisture exactly balances the heat input",
+      "choices": [
+        "The internal temperature plateaus around 65-75 degC as evaporative cooling from surface moisture exactly balances the heat input",
+        "The meat temporarily stops absorbing smoke flavor at high internal temperature",
+        "Fat renders suddenly, flooding the meat and temporarily cooling it",
+        "Connective tissue absorbs heat energy as it converts to gelatin during this period"
+      ],
+      "tier": 4,
+      "reason": "Explains the physics of evaporative cooling in barbecue -- a very practical concept for pitmasters that involves thermodynamics."
+    },
+    {
+      "question": "Why does adding a pinch of salt to chocolate desserts enhance chocolate flavor?",
+      "answer": "Salt suppresses the bitter taste receptors that respond to cocoa's polyphenols, while umami-like glutamate interactions make the chocolate flavor seem richer and more rounded",
+      "choices": [
+        "Salt suppresses the bitter taste receptors that respond to cocoa's polyphenols, while umami-like glutamate interactions make the chocolate flavor seem richer and more rounded",
+        "Salt chemically reacts with cocoa solids to release additional flavor compounds",
+        "Salt raises the melting point of cocoa butter, intensifying chocolate mouthfeel",
+        "Salt masks any remaining dairy off-flavors from milk chocolate"
+      ],
+      "tier": 3,
+      "reason": "Practical technique tip grounded in taste receptor physiology -- explains the salt-in-chocolate phenomenon many bakers use intuitively."
+    },
+    {
+      "question": "What is 'fermentation temperature control' critical for in producing different beer styles?",
+      "answer": "Lower temperatures favor clean lager yeast character; higher temperatures produce esters and fusel alcohols from ale yeasts, creating fruity or spicy notes",
+      "choices": [
+        "Lower temperatures favor clean lager yeast character; higher temperatures produce esters and fusel alcohols from ale yeasts, creating fruity or spicy notes",
+        "Temperature only affects the speed of fermentation, not the flavor",
+        "Higher temperature is always better for yeast activity and beer flavor",
+        "Fermentation temperature must always be exactly 20 degC for any yeast"
+      ],
+      "tier": 4,
+      "reason": "Connects fermentation temperature to yeast metabolism and ester production -- important for understanding flavor development in fermented foods."
+    },
+    {
+      "question": "What is 'the leavening mechanism of baking powder' -- specifically a double-acting powder?",
+      "answer": "Double-acting baking powder releases CO2 twice: once when wet (from tartrate salts) and again when heated (from sodium aluminum sulfate), ensuring leavening continues in the oven",
+      "choices": [
+        "Double-acting baking powder releases CO2 twice: once when wet (from tartrate salts) and again when heated (from sodium aluminum sulfate), ensuring leavening continues in the oven",
+        "Baking powder releases all its CO2 at once when it contacts moisture",
+        "Double-acting refers to it working in both baking and frying applications",
+        "The two actions are leavening and flavoring -- it releases CO2 and neutralizes acid"
+      ],
+      "tier": 4,
+      "reason": "Fills a gap on the chemistry of chemical leavening -- the double-acting mechanism is widely used but rarely understood."
+    },
+    {
+      "question": "What happens to capsaicin when cream or full-fat milk is consumed after eating very spicy food?",
+      "answer": "Casein protein in dairy binds to and strips capsaicin from TRPV1 receptors, providing relief -- water cannot do this as capsaicin is not water-soluble",
+      "choices": [
+        "Casein protein in dairy binds to and strips capsaicin from TRPV1 receptors, providing relief -- water cannot do this as capsaicin is not water-soluble",
+        "The cold temperature of dairy numbs the pain receptors temporarily",
+        "Dairy fat dissolves the capsaicin molecules, diluting them chemically",
+        "The alkalinity of milk neutralizes capsaicin's acidic properties"
+      ],
+      "tier": 4,
+      "reason": "Teaches capsaicin's oil-solubility and casein's role as a detergent -- explains a universal experience with a clear biochemical mechanism."
+    },
+    {
+      "question": "What is the 'smoke point' dependent on chemically in an oil?",
+      "answer": "Free fatty acid content -- more free fatty acids (from oxidation or impurities) lower the smoke point; refined oils have fewer free fatty acids and higher smoke points",
+      "choices": [
+        "Free fatty acid content -- more free fatty acids (from oxidation or impurities) lower the smoke point; refined oils have fewer free fatty acids and higher smoke points",
+        "The degree of saturation -- saturated fats always have higher smoke points",
+        "The viscosity of the oil -- thicker oils smoke at higher temperatures",
+        "The color of the oil -- lighter oils always have higher smoke points"
+      ],
+      "tier": 4,
+      "reason": "Explains the chemistry behind smoke point differences -- free fatty acid content is the key variable, not the type of fat. Fills a conceptual gap."
+    }
+  ]
+}

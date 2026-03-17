@@ -12,68 +12,24 @@
   },
   {
     "tier": 1,
-    "question": "The chemical symbol for water is ___?",
-    "answer": "H?O",
+    "question": "Gravity pulls objects toward Earth because of Earth's ___?",
+    "answer": "Mass",
     "choices": [
-      "H?O",
-      "HO",
-      "H?O?",
-      "CO?"
+      "Mass",
+      "Rotation",
+      "Magnetic field",
+      "Atmosphere"
     ]
   },
   {
     "tier": 1,
-    "question": "The chemical symbol for carbon dioxide is ___?",
-    "answer": "CO?",
+    "question": "The Sun produces energy through nuclear fusion, which means it converts ___ into helium?",
+    "answer": "Hydrogen",
     "choices": [
-      "CO?",
-      "CO",
-      "C?O",
-      "CO?"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "The chemical symbol for oxygen gas is ___?",
-    "answer": "O?",
-    "choices": [
-      "O?",
-      "O",
-      "O?",
-      "O?"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "What force pulls objects toward Earth?",
-    "answer": "Gravity",
-    "choices": [
-      "Gravity",
-      "Friction",
-      "Magnetism",
-      "Tension"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "The Sun is a ___?",
-    "answer": "Star",
-    "choices": [
-      "Star",
-      "Planet",
-      "Moon",
-      "Comet"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "The basic unit of life is the ___?",
-    "answer": "Cell",
-    "choices": [
-      "Cell",
-      "Atom",
-      "Gene",
-      "Organ"
+      "Hydrogen",
+      "Carbon",
+      "Oxygen",
+      "Nitrogen"
     ]
   },
   {
@@ -144,24 +100,24 @@
   },
   {
     "tier": 1,
-    "question": "What gas do plants release during photosynthesis?",
-    "answer": "Oxygen",
+    "question": "Ice melting is a physical change because the ___ of water does not change?",
+    "answer": "Chemical composition",
     "choices": [
-      "Oxygen",
-      "Carbon dioxide",
-      "Nitrogen",
-      "Hydrogen"
+      "Chemical composition",
+      "Volume",
+      "Shape",
+      "Color"
     ]
   },
   {
     "tier": 1,
-    "question": "Ice melting is an example of a ___ change?",
-    "answer": "Physical",
+    "question": "Burning wood is a chemical change because new ___ are formed?",
+    "answer": "Substances",
     "choices": [
-      "Physical",
-      "Chemical",
-      "Nuclear",
-      "Thermal"
+      "Substances",
+      "Temperatures",
+      "Shapes",
+      "Colors"
     ]
   },
   {
@@ -254,24 +210,24 @@
   },
   {
     "tier": 1,
-    "question": "Electricity flows through a ___?",
-    "answer": "Conductor",
+    "question": "Metals are good electrical conductors because their electrons are ___?",
+    "answer": "Free to move",
     "choices": [
-      "Conductor",
-      "Insulator",
-      "Magnet",
-      "Resistor"
+      "Free to move",
+      "Tightly bound",
+      "Negatively charged only",
+      "Shared covalently"
     ]
   },
   {
     "tier": 1,
-    "question": "Rubber and plastic are ___?",
-    "answer": "Insulators",
+    "question": "Rubber is a good electrical insulator because its electrons are ___?",
+    "answer": "Tightly bound",
     "choices": [
-      "Insulators",
-      "Conductors",
-      "Magnets",
-      "Semiconductors"
+      "Tightly bound",
+      "Free to move",
+      "Positively charged",
+      "Shared between atoms"
     ]
   },
   {
@@ -320,13 +276,13 @@
   },
   {
     "tier": 1,
-    "question": "Water boils at ___ degrees Celsius?",
-    "answer": "100",
+    "question": "The Sun's energy reaches Earth mainly as electromagnetic radiation rather than conduction because space is ___?",
+    "answer": "A vacuum",
     "choices": [
-      "100",
-      "90",
-      "50",
-      "212"
+      "A vacuum",
+      "Too cold",
+      "Too far away",
+      "Filled with gas"
     ]
   },
   {
@@ -386,39 +342,6 @@
   },
   {
     "tier": 1,
-    "question": "The chemical symbol for hydrogen is ___?",
-    "answer": "H",
-    "choices": [
-      "H",
-      "Hy",
-      "Hd",
-      "He"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "The chemical symbol for carbon is ___?",
-    "answer": "C",
-    "choices": [
-      "C",
-      "Ca",
-      "Co",
-      "Cr"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "The chemical symbol for nitrogen is ___?",
-    "answer": "N",
-    "choices": [
-      "N",
-      "Ni",
-      "Nt",
-      "Na"
-    ]
-  },
-  {
-    "tier": 1,
     "question": "Humans are classified as ___?",
     "answer": "Mammals",
     "choices": [
@@ -463,13 +386,13 @@
   },
   {
     "tier": 1,
-    "question": "Which planet is largest in our solar system?",
-    "answer": "Jupiter",
+    "question": "A comet's tail always points away from the Sun because it is pushed by ___?",
+    "answer": "Solar wind and radiation pressure",
     "choices": [
-      "Jupiter",
-      "Saturn",
-      "Neptune",
-      "Earth"
+      "Solar wind and radiation pressure",
+      "The comet's velocity",
+      "Earth's gravity",
+      "Jupiter's magnetic field"
     ]
   },
   {
@@ -507,13 +430,13 @@
   },
   {
     "tier": 1,
-    "question": "The process by which living things produce offspring is ___?",
-    "answer": "Reproduction",
+    "question": "Objects in orbit do not fall to Earth because their forward speed causes them to ___?",
+    "answer": "Curve around Earth as fast as Earth curves away",
     "choices": [
-      "Reproduction",
-      "Respiration",
-      "Digestion",
-      "Evolution"
+      "Curve around Earth as fast as Earth curves away",
+      "Escape gravity entirely",
+      "Slow down and stop falling",
+      "Float in zero gravity"
     ]
   },
   {
@@ -547,17 +470,6 @@
       "H",
       "Hm",
       "Hl"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "Magnets have a north and ___ pole?",
-    "answer": "South",
-    "choices": [
-      "South",
-      "East",
-      "West",
-      "Negative"
     ]
   },
   {
@@ -639,28 +551,6 @@
   },
   {
     "tier": 1,
-    "question": "A shooting star is actually a ___?",
-    "answer": "Meteor",
-    "choices": [
-      "Meteor",
-      "Comet",
-      "Asteroid",
-      "Satellite"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "The speed of sound is ___ than the speed of light?",
-    "answer": "Slower",
-    "choices": [
-      "Slower",
-      "Faster",
-      "Equal",
-      "Identical"
-    ]
-  },
-  {
-    "tier": 1,
     "question": "Plants need ___ for photosynthesis?",
     "answer": "Sunlight",
     "choices": [
@@ -668,17 +558,6 @@
       "Moonlight",
       "Wind",
       "Sound"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "Chlorophyll gives plants their ___ color?",
-    "answer": "Green",
-    "choices": [
-      "Green",
-      "Red",
-      "Blue",
-      "Yellow"
     ]
   },
   {
@@ -778,17 +657,6 @@
       "Physical",
       "Nuclear",
       "Biological only"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "The unit we use to measure temperature in science is ___?",
-    "answer": "Kelvin",
-    "choices": [
-      "Kelvin",
-      "Fahrenheit",
-      "Kelvin",
-      "Rankine"
     ]
   },
   {
@@ -979,116 +847,6 @@
     ]
   },
   {
-    "tier": 1,
-    "question": "Objects in orbit are in a constant state of ___?",
-    "answer": "Free fall",
-    "choices": [
-      "Free fall",
-      "Rest",
-      "Suspension",
-      "Floating"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "A solid changes to liquid by ___?",
-    "answer": "Melting",
-    "choices": [
-      "Melting",
-      "Freezing",
-      "Evaporation",
-      "Condensation"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "A liquid changes to solid by ___?",
-    "answer": "Freezing",
-    "choices": [
-      "Freezing",
-      "Melting",
-      "Evaporation",
-      "Boiling"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "A liquid changes to gas by ___?",
-    "answer": "Evaporation",
-    "choices": [
-      "Evaporation",
-      "Freezing",
-      "Melting",
-      "Condensation"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "A gas changes to liquid by ___?",
-    "answer": "Condensation",
-    "choices": [
-      "Condensation",
-      "Evaporation",
-      "Melting",
-      "Sublimation"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "Solid going directly to gas without melting is called ___?",
-    "answer": "Sublimation",
-    "choices": [
-      "Sublimation",
-      "Evaporation",
-      "Condensation",
-      "Deposition"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "Bones are connected to each other at ___?",
-    "answer": "Joints",
-    "choices": [
-      "Joints",
-      "Tendons",
-      "Ligaments",
-      "Cartilage"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "Muscles are attached to bones by ___?",
-    "answer": "Tendons",
-    "choices": [
-      "Tendons",
-      "Ligaments",
-      "Joints",
-      "Cartilage"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "The colored part of the eye is the ___?",
-    "answer": "Iris",
-    "choices": [
-      "Iris",
-      "Pupil",
-      "Retina",
-      "Cornea"
-    ]
-  },
-  {
-    "tier": 1,
-    "question": "Light enters the eye through the ___?",
-    "answer": "Pupil",
-    "choices": [
-      "Pupil",
-      "Iris",
-      "Retina",
-      "Lens"
-    ]
-  },
-  {
     "tier": 2,
     "question": "Chemical symbol for gold?",
     "answer": "Au",
@@ -1112,145 +870,35 @@
   },
   {
     "tier": 2,
-    "question": "Chemical symbol for sodium?",
-    "answer": "Na",
+    "question": "Newton's First Law is called the law of inertia because objects resist changes to their ___?",
+    "answer": "State of motion",
     "choices": [
-      "Na",
-      "So",
-      "Sd",
-      "Sn"
+      "State of motion",
+      "Mass",
+      "Position",
+      "Energy"
     ]
   },
   {
     "tier": 2,
-    "question": "Chemical symbol for potassium?",
-    "answer": "K",
+    "question": "Newton's Second Law (F=ma) means that doubling an object's mass while keeping force constant will ___ its acceleration?",
+    "answer": "Halve",
     "choices": [
-      "K",
-      "Po",
-      "Pt",
-      "Pm"
+      "Halve",
+      "Double",
+      "Have no effect on",
+      "Quadruple"
     ]
   },
   {
     "tier": 2,
-    "question": "Chemical symbol for lead?",
-    "answer": "Pb",
+    "question": "Newton's Third Law explains how a rocket moves: exhaust gases push backward, so the rocket is pushed ___?",
+    "answer": "Forward",
     "choices": [
-      "Pb",
-      "Le",
-      "Ld",
-      "Pl"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Chemical symbol for mercury?",
-    "answer": "Hg",
-    "choices": [
-      "Hg",
-      "Me",
-      "Mr",
-      "Mc"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Chemical symbol for copper?",
-    "answer": "Cu",
-    "choices": [
-      "Cu",
-      "Co",
-      "Cp",
-      "Cr"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Chemical symbol for silver?",
-    "answer": "Ag",
-    "choices": [
-      "Ag",
-      "Si",
-      "Sv",
-      "Au"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Chemical symbol for tin?",
-    "answer": "Sn",
-    "choices": [
-      "Sn",
-      "Ti",
-      "Tn",
-      "St"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Chemical symbol for tungsten?",
-    "answer": "W",
-    "choices": [
-      "W",
-      "Tu",
-      "Tg",
-      "Wn"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Atomic number of hydrogen?",
-    "answer": "1",
-    "choices": [
-      "1",
-      "2",
-      "3",
-      "4"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Atomic number of helium?",
-    "answer": "2",
-    "choices": [
-      "2",
-      "1",
-      "3",
-      "4"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Atomic number of carbon?",
-    "answer": "6",
-    "choices": [
-      "6",
-      "4",
-      "8",
-      "12"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Atomic number of nitrogen?",
-    "answer": "7",
-    "choices": [
-      "7",
-      "6",
-      "8",
-      "14"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Atomic number of oxygen?",
-    "answer": "8",
-    "choices": [
-      "8",
-      "6",
-      "16",
-      "10"
+      "Forward",
+      "Sideways",
+      "Backward",
+      "In a circle"
     ]
   },
   {
@@ -1420,248 +1068,6 @@
   },
   {
     "tier": 2,
-    "question": "pH equal to 7 is ___?",
-    "answer": "Neutral",
-    "choices": [
-      "Neutral",
-      "Acidic",
-      "Basic",
-      "Ionic"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Atoms of the same element with different neutrons are ___?",
-    "answer": "Isotopes",
-    "choices": [
-      "Isotopes",
-      "Ions",
-      "Alloys",
-      "Isomers"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "An atom that has gained or lost electrons is an ___?",
-    "answer": "Ion",
-    "choices": [
-      "Ion",
-      "Isotope",
-      "Isomer",
-      "Alloy"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Newton's First Law: an object at rest stays at rest unless acted on by a ___?",
-    "answer": "Net force",
-    "choices": [
-      "Net force",
-      "Velocity",
-      "Mass",
-      "Friction"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Newton's Second Law: F = ___?",
-    "answer": "ma",
-    "choices": [
-      "ma",
-      "mv",
-      "mg",
-      "m/a"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Newton's Third Law: every action has an equal and ___ reaction?",
-    "answer": "Opposite",
-    "choices": [
-      "Opposite",
-      "Greater",
-      "Lesser",
-      "Parallel"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "The number of protons in an atom's nucleus is the ___?",
-    "answer": "Atomic number",
-    "choices": [
-      "Atomic number",
-      "Mass number",
-      "Valence",
-      "Period number"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "The total number of protons and neutrons in a nucleus is the ___?",
-    "answer": "Mass number",
-    "choices": [
-      "Mass number",
-      "Atomic number",
-      "Atomic mass",
-      "Period number"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Elements in the same column of the periodic table are in the same ___?",
-    "answer": "Group",
-    "choices": [
-      "Group",
-      "Period",
-      "Series",
-      "Block"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Elements in the same row of the periodic table are in the same ___?",
-    "answer": "Period",
-    "choices": [
-      "Period",
-      "Group",
-      "Series",
-      "Block"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Chemical symbol for lithium?",
-    "answer": "Li",
-    "choices": [
-      "Li",
-      "Lt",
-      "Lm",
-      "La"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Chemical symbol for calcium?",
-    "answer": "Ca",
-    "choices": [
-      "Ca",
-      "Cm",
-      "Cl",
-      "Cs"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Chemical symbol for chlorine?",
-    "answer": "Cl",
-    "choices": [
-      "Cl",
-      "Ch",
-      "Cr",
-      "Cs"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Chemical symbol for aluminum?",
-    "answer": "Al",
-    "choices": [
-      "Al",
-      "Am",
-      "Ac",
-      "At"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Chemical symbol for phosphorus?",
-    "answer": "P",
-    "choices": [
-      "P",
-      "Ph",
-      "Ps",
-      "Pi"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Chemical symbol for sulfur?",
-    "answer": "S",
-    "choices": [
-      "S",
-      "Su",
-      "Sf",
-      "Sr"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Chemical symbol for magnesium?",
-    "answer": "Mg",
-    "choices": [
-      "Mg",
-      "Ma",
-      "Mn",
-      "Mt"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Chemical symbol for zinc?",
-    "answer": "Zn",
-    "choices": [
-      "Zn",
-      "Zi",
-      "Ze",
-      "Zc"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Chemical symbol for fluorine?",
-    "answer": "F",
-    "choices": [
-      "F",
-      "Fl",
-      "Fr",
-      "Fn"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Chemical symbol for neon?",
-    "answer": "Ne",
-    "choices": [
-      "Ne",
-      "No",
-      "Nm",
-      "Ni"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Chemical symbol for argon?",
-    "answer": "Ar",
-    "choices": [
-      "Ar",
-      "Ag",
-      "At",
-      "An"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "Chemical symbol for uranium?",
-    "answer": "U",
-    "choices": [
-      "U",
-      "Ur",
-      "Um",
-      "Un"
-    ]
-  },
-  {
-    "tier": 2,
     "question": "Atomic number of lithium?",
     "answer": "3",
     "choices": [
@@ -1761,13 +1167,13 @@
   },
   {
     "tier": 2,
-    "question": "Atomic number of potassium?",
-    "answer": "19",
+    "question": "The cell membrane controls what enters and exits a cell using a process called selective ___?",
+    "answer": "Permeability",
     "choices": [
-      "19",
-      "17",
-      "21",
-      "39"
+      "Permeability",
+      "Absorption",
+      "Diffusion",
+      "Osmosis"
     ]
   },
   {
@@ -1778,28 +1184,6 @@
       "Ampere",
       "Volt",
       "Ohm",
-      "Watt"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "The unit of measuring voltage is the ___?",
-    "answer": "Volt",
-    "choices": [
-      "Volt",
-      "Ampere",
-      "Ohm",
-      "Watt"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "The unit of measuring electrical resistance is the ___?",
-    "answer": "Ohm",
-    "choices": [
-      "Ohm",
-      "Volt",
-      "Ampere",
       "Watt"
     ]
   },
@@ -1849,13 +1233,13 @@
   },
   {
     "tier": 2,
-    "question": "Lysosomes contain ___ that break down waste?",
-    "answer": "Enzymes",
+    "question": "The mitochondria is called the 'powerhouse of the cell' because it produces ___?",
+    "answer": "ATP",
     "choices": [
-      "Enzymes",
+      "ATP",
       "DNA",
-      "RNA",
-      "Lipids"
+      "Glucose",
+      "Oxygen"
     ]
   },
   {
@@ -1893,13 +1277,13 @@
   },
   {
     "tier": 2,
-    "question": "Weight = Mass x ___?",
-    "answer": "g",
+    "question": "Photosynthesis takes place in the chloroplast specifically because chloroplasts contain ___?",
+    "answer": "Chlorophyll",
     "choices": [
-      "g",
-      "a",
-      "v",
-      "F"
+      "Chlorophyll",
+      "Mitochondria",
+      "DNA only",
+      "Ribosomes"
     ]
   },
   {
@@ -1959,28 +1343,6 @@
   },
   {
     "tier": 2,
-    "question": "Absolute zero is ___ degrees Celsius?",
-    "answer": "-273",
-    "choices": [
-      "-273",
-      "-100",
-      "-373",
-      "0"
-    ]
-  },
-  {
-    "tier": 2,
-    "question": "The noble gases are in Group ___ of the periodic table?",
-    "answer": "18",
-    "choices": [
-      "18",
-      "1",
-      "17",
-      "2"
-    ]
-  },
-  {
-    "tier": 2,
     "question": "Alkali metals are in Group ___ of the periodic table?",
     "answer": "1",
     "choices": [
@@ -2003,13 +1365,13 @@
   },
   {
     "tier": 2,
-    "question": "The mole is a unit that represents ___ particles?",
-    "answer": "6.022 x 10^2^3",
+    "question": "Absolute zero (-273 degrees Celsius) is the temperature at which particles have ___?",
+    "answer": "Minimum possible motion",
     "choices": [
-      "6.022 x 10^2^3",
-      "6.022 x 10^2^2",
-      "3.011 x 10^2^3",
-      "1.000 x 10^2^3"
+      "Minimum possible motion",
+      "No charge",
+      "Maximum density",
+      "No mass"
     ]
   },
   {
@@ -2035,25 +1397,14 @@
     ]
   },
   {
-    "tier": 2,
-    "question": "A chemical reaction that absorbs heat is ___?",
-    "answer": "Endothermic",
-    "choices": [
-      "Endothermic",
-      "Exothermic",
-      "Endergonic",
-      "Isothermal"
-    ]
-  },
-  {
     "tier": 3,
-    "question": "Work = Force x ___?",
-    "answer": "Distance",
+    "question": "A catalyst speeds up a chemical reaction without being consumed because it provides an alternative pathway with lower ___?",
+    "answer": "Activation energy",
     "choices": [
-      "Distance",
-      "Time",
-      "Mass",
-      "Speed"
+      "Activation energy",
+      "Temperature",
+      "Concentration",
+      "Reaction enthalpy"
     ]
   },
   {
@@ -2069,13 +1420,13 @@
   },
   {
     "tier": 3,
-    "question": "Kinetic energy = 1/2 x mass x ___^2?",
-    "answer": "Velocity",
+    "question": "Exothermic reactions feel warm because chemical bonds broken in reactants are ___ than bonds formed in products?",
+    "answer": "Weaker",
     "choices": [
-      "Velocity",
-      "Force",
-      "Distance",
-      "Acceleration"
+      "Weaker",
+      "Stronger",
+      "Equal",
+      "Absent"
     ]
   },
   {
@@ -2146,116 +1497,6 @@
   },
   {
     "tier": 3,
-    "question": "An ionic bond forms when electrons are ___?",
-    "answer": "Transferred",
-    "choices": [
-      "Transferred",
-      "Shared",
-      "Removed",
-      "Added"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "A covalent bond forms when electrons are ___?",
-    "answer": "Shared",
-    "choices": [
-      "Shared",
-      "Transferred",
-      "Gained",
-      "Lost"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "Photosynthesis equation produces glucose and ___?",
-    "answer": "O?",
-    "choices": [
-      "O?",
-      "CO?",
-      "H?O?",
-      "O?"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "Pressure = Force / ___?",
-    "answer": "Area",
-    "choices": [
-      "Area",
-      "Volume",
-      "Mass",
-      "Length"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "The unit of pressure is the ___?",
-    "answer": "Pascal",
-    "choices": [
-      "Pascal",
-      "Newton",
-      "Joule",
-      "Watt"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "Electrical power P = Voltage x ___?",
-    "answer": "Current",
-    "choices": [
-      "Current",
-      "Resistance",
-      "Charge",
-      "Capacitance"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "Electrical power P = I^2 x ___?",
-    "answer": "R",
-    "choices": [
-      "R",
-      "V",
-      "C",
-      "E"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "The speed of light in a vacuum is approximately ___?",
-    "answer": "3 x 10? m/s",
-    "choices": [
-      "3 x 10? m/s",
-      "3 x 10? m/s",
-      "3 x 10?? m/s",
-      "1.5 x 10? m/s"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "In RNA, adenine pairs with ___?",
-    "answer": "Uracil",
-    "choices": [
-      "Uracil",
-      "Thymine",
-      "Cytosine",
-      "Guanine"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "Cellular respiration equation: C?H??O? + 6O? -> 6CO? + ___?",
-    "answer": "6H?O + energy",
-    "choices": [
-      "6H?O + energy",
-      "6H?O? + energy",
-      "O? + glucose",
-      "CO? + H?"
-    ]
-  },
-  {
-    "tier": 3,
     "question": "Molar mass of H?O is ___?",
     "answer": "18 g/mol",
     "choices": [
@@ -2318,28 +1559,6 @@
       "2",
       "0",
       "3"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "Carbon has ___ electrons in its outer shell?",
-    "answer": "4",
-    "choices": [
-      "4",
-      "2",
-      "6",
-      "8"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "Oxygen has ___ electrons in its outer shell?",
-    "answer": "6",
-    "choices": [
-      "6",
-      "4",
-      "8",
-      "2"
     ]
   },
   {
@@ -2604,17 +1823,6 @@
       "Mass",
       "Distance",
       "Velocity"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "The law of conservation of momentum applies to ___ systems?",
-    "answer": "Isolated",
-    "choices": [
-      "Isolated",
-      "Open",
-      "Closed only",
-      "Thermal"
     ]
   },
   {
@@ -2927,17 +2135,6 @@
   },
   {
     "tier": 3,
-    "question": "ATP synthesis is powered by a gradient of ___?",
-    "answer": "H? ions",
-    "choices": [
-      "H? ions",
-      "Na? ions",
-      "K? ions",
-      "Ca^2? ions"
-    ]
-  },
-  {
-    "tier": 3,
     "question": "DNA contains the sugar ___?",
     "answer": "Deoxyribose",
     "choices": [
@@ -2971,13 +2168,13 @@
   },
   {
     "tier": 3,
-    "question": "Proteins are polymers of ___?",
-    "answer": "Amino acids",
+    "question": "Half-life is useful for carbon dating because carbon-14 decays at a ___?",
+    "answer": "Predictable constant rate",
     "choices": [
-      "Amino acids",
-      "Nucleotides",
-      "Fatty acids",
-      "Monosaccharides"
+      "Predictable constant rate",
+      "Variable rate depending on temperature",
+      "Rate that doubles with age",
+      "Rate controlled by the organism"
     ]
   },
   {
@@ -3048,28 +2245,6 @@
   },
   {
     "tier": 4,
-    "question": "Momentum = mass x ___?",
-    "answer": "Velocity",
-    "choices": [
-      "Velocity",
-      "Speed",
-      "Acceleration",
-      "Force"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "The first law of thermodynamics states energy is ___?",
-    "answer": "Conserved",
-    "choices": [
-      "Conserved",
-      "Lost",
-      "Created",
-      "Destroyed"
-    ]
-  },
-  {
-    "tier": 4,
     "question": "Half-life is the time for half of a radioactive sample to ___?",
     "answer": "Decay",
     "choices": [
@@ -3114,13 +2289,13 @@
   },
   {
     "tier": 4,
-    "question": "ATP stands for Adenosine TriPhosphate; it stores ___?",
-    "answer": "Energy",
+    "question": "Alpha radiation is the least penetrating because alpha particles are relatively ___ and highly charged?",
+    "answer": "Large and slow",
     "choices": [
-      "Energy",
-      "Oxygen",
-      "Carbon",
-      "Protein"
+      "Large and slow",
+      "Small and fast",
+      "Neutral",
+      "Composed of photons"
     ]
   },
   {
@@ -3202,13 +2377,13 @@
   },
   {
     "tier": 4,
-    "question": "Centripetal force = mv^2 / ___?",
-    "answer": "r",
+    "question": "The Sun generates energy through nuclear fusion rather than fission because fusion of light nuclei ___?",
+    "answer": "Releases more energy per unit mass",
     "choices": [
-      "r",
-      "r^2",
-      "2r",
-      "m"
+      "Releases more energy per unit mass",
+      "Requires less heat to start",
+      "Produces radioactive waste",
+      "Is controlled by gravity alone"
     ]
   },
   {
@@ -3312,17 +2487,6 @@
   },
   {
     "tier": 4,
-    "question": "Gamma radiation requires ___ shielding?",
-    "answer": "Lead",
-    "choices": [
-      "Lead",
-      "Paper",
-      "Aluminum",
-      "Plastic"
-    ]
-  },
-  {
-    "tier": 4,
     "question": "In nuclear fission, a heavy nucleus is ___?",
     "answer": "Split",
     "choices": [
@@ -3400,13 +2564,13 @@
   },
   {
     "tier": 4,
-    "question": "Increasing concentration of reactants in equilibrium ___ the forward reaction?",
-    "answer": "Favors",
+    "question": "Le Chatelier's Principle predicts that adding more reactant to an equilibrium will shift the reaction toward ___?",
+    "answer": "Products",
     "choices": [
-      "Favors",
-      "Opposes",
-      "Stops",
-      "Reverses"
+      "Products",
+      "Reactants",
+      "Equilibrium (no shift)",
+      "Catalysis"
     ]
   },
   {
@@ -3506,17 +2670,6 @@
       "[H?]",
       "[OH?]",
       "[A]"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "DNA replication is ___-conservative?",
-    "answer": "Semi",
-    "choices": [
-      "Semi",
-      "Full",
-      "Non",
-      "Dis"
     ]
   },
   {
@@ -3729,50 +2882,6 @@
     ]
   },
   {
-    "tier": 4,
-    "question": "Arrhenius equation: k = A x e^(-Ea/___)?",
-    "answer": "RT",
-    "choices": [
-      "RT",
-      "kT",
-      "nT",
-      "PT"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "First-order reaction rate = k x ___?",
-    "answer": "[A]",
-    "choices": [
-      "[A]",
-      "[A]^2",
-      "[A]^0",
-      "[A]^1/2"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "Second-order reaction rate = k x ___?",
-    "answer": "[A]^2",
-    "choices": [
-      "[A]^2",
-      "[A]",
-      "[A]^0",
-      "k^2"
-    ]
-  },
-  {
-    "tier": 4,
-    "question": "The rate-limiting step is the ___ step in a reaction mechanism?",
-    "answer": "Slowest",
-    "choices": [
-      "Slowest",
-      "Fastest",
-      "First",
-      "Last"
-    ]
-  },
-  {
     "tier": 5,
     "question": "Heisenberg's Uncertainty Principle: you cannot simultaneously know position and ___?",
     "answer": "Momentum",
@@ -3851,72 +2960,6 @@
   },
   {
     "tier": 5,
-    "question": "mRNA is produced from DNA in a process called ___?",
-    "answer": "Transcription",
-    "choices": [
-      "Transcription",
-      "Translation",
-      "Replication",
-      "Transduction"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "Proteins are assembled from mRNA in a process called ___?",
-    "answer": "Translation",
-    "choices": [
-      "Translation",
-      "Transcription",
-      "Replication",
-      "Splicing"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "The Pauli Exclusion Principle states no two electrons can share the same ___?",
-    "answer": "Quantum state",
-    "choices": [
-      "Quantum state",
-      "Orbital",
-      "Shell",
-      "Charge"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "Gibbs free energy: ?G = ?H - ___?",
-    "answer": "T?S",
-    "choices": [
-      "T?S",
-      "T?H",
-      "?ST",
-      "?HT"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "A reaction where ?G < 0 is called ___?",
-    "answer": "Spontaneous",
-    "choices": [
-      "Spontaneous",
-      "Endothermic",
-      "Endergonic",
-      "Reversible"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "Planck's constant h ~= ___?",
-    "answer": "6.626 x 10?^3? J?s",
-    "choices": [
-      "6.626 x 10?^3? J?s",
-      "6.626 x 10?^3^2 J?s",
-      "1.381 x 10?^3? J?s",
-      "9.109 x 10?^3? J?s"
-    ]
-  },
-  {
-    "tier": 5,
     "question": "Boltzmann's constant k ~= ___?",
     "answer": "1.381 x 10?^2^3 J/K",
     "choices": [
@@ -3924,17 +2967,6 @@
       "6.626 x 10?^2^3 J/K",
       "8.314 x 10?^2^3 J/K",
       "1.602 x 10?^2^3 J/K"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "The charge of an electron is approximately ___?",
-    "answer": "1.602 x 10??? C",
-    "choices": [
-      "1.602 x 10??? C",
-      "9.109 x 10??? C",
-      "1.381 x 10??? C",
-      "6.626 x 10??? C"
     ]
   },
   {
@@ -4056,17 +3088,6 @@
       "Low velocities",
       "Constant position",
       "Absolute zero"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "Time dilation factor gamma = 1 / sqrt(1 - v^2/___)?",
-    "answer": "c^2",
-    "choices": [
-      "c^2",
-      "v^2",
-      "c",
-      "2c"
     ]
   },
   {
@@ -4214,28 +3235,6 @@
   },
   {
     "tier": 5,
-    "question": "Noncompetitive inhibition ___ Vmax?",
-    "answer": "Decreases",
-    "choices": [
-      "Decreases",
-      "Increases",
-      "Does not change",
-      "Doubles"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "CRISPR-Cas9 is a tool for editing ___?",
-    "answer": "DNA",
-    "choices": [
-      "DNA",
-      "RNA",
-      "Proteins",
-      "Lipids"
-    ]
-  },
-  {
-    "tier": 5,
     "question": "The polymerase chain reaction (PCR) amplifies ___?",
     "answer": "DNA",
     "choices": [
@@ -4368,17 +3367,6 @@
   },
   {
     "tier": 5,
-    "question": "The electromagnetic force is mediated by ___?",
-    "answer": "Photons",
-    "choices": [
-      "Photons",
-      "Gluons",
-      "W bosons",
-      "Gravitons"
-    ]
-  },
-  {
-    "tier": 5,
     "question": "Quarks come in ___ types (flavors)?",
     "answer": "6",
     "choices": [
@@ -4401,17 +3389,6 @@
   },
   {
     "tier": 5,
-    "question": "A proton consists of 2 up quarks and ___ down quark(s)?",
-    "answer": "1",
-    "choices": [
-      "1",
-      "2",
-      "3",
-      "0"
-    ]
-  },
-  {
-    "tier": 5,
     "question": "General relativity describes gravity as curvature of ___?",
     "answer": "Spacetime",
     "choices": [
@@ -4419,17 +3396,6 @@
       "Space only",
       "Time only",
       "Mass"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "The Chandrasekhar limit is the maximum mass of a ___?",
-    "answer": "White dwarf",
-    "choices": [
-      "White dwarf",
-      "Neutron star",
-      "Black hole",
-      "Red giant"
     ]
   },
   {
@@ -4562,17 +3528,6 @@
       "Trigonal planar",
       "Tetrahedral",
       "Bent"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "The solubility product Ksp applies to ___ equilibria?",
-    "answer": "Dissolution",
-    "choices": [
-      "Dissolution",
-      "Acid-base",
-      "Redox",
-      "Complex ion"
     ]
   },
   {
@@ -5454,5 +4409,896 @@
       "Thermal",
       "Radiation"
     ]
+  },
+  {
+    "question": "The scientific method requires that a hypothesis must be testable and ___?",
+    "answer": "Falsifiable",
+    "choices": [
+      "Falsifiable",
+      "True",
+      "Published",
+      "Complicated"
+    ],
+    "tier": 1
+  },
+  {
+    "question": "Why do scientists repeat experiments before accepting a result?",
+    "answer": "To confirm the result is reproducible and not a fluke",
+    "choices": [
+      "To confirm the result is reproducible and not a fluke",
+      "To waste time",
+      "Because the first result is always wrong",
+      "To generate more data for publication"
+    ],
+    "tier": 1
+  },
+  {
+    "question": "In a controlled experiment, the factor that the scientist deliberately changes is the ___?",
+    "answer": "Independent variable",
+    "choices": [
+      "Independent variable",
+      "Dependent variable",
+      "Controlled variable",
+      "Constant"
+    ],
+    "tier": 1
+  },
+  {
+    "question": "In an experiment, the result you measure to see the effect of your change is the ___?",
+    "answer": "Dependent variable",
+    "choices": [
+      "Dependent variable",
+      "Independent variable",
+      "Control",
+      "Hypothesis"
+    ],
+    "tier": 1
+  },
+  {
+    "question": "A scientific theory differs from a guess because it is supported by ___?",
+    "answer": "A large body of tested evidence",
+    "choices": [
+      "A large body of tested evidence",
+      "One successful experiment",
+      "Expert opinion",
+      "Logical reasoning alone"
+    ],
+    "tier": 1
+  },
+  {
+    "question": "Why does a rainbow form when sunlight passes through raindrops?",
+    "answer": "Different colors of light bend by different amounts when they slow down",
+    "choices": [
+      "Different colors of light bend by different amounts when they slow down",
+      "Water absorbs some colors and reflects others",
+      "Raindrops emit their own colored light",
+      "The sky reflects colors from the ground"
+    ],
+    "tier": 1
+  },
+  {
+    "question": "Why does ice float on water rather than sinking?",
+    "answer": "Ice is less dense than liquid water because its crystal structure spaces molecules farther apart",
+    "choices": [
+      "Ice is less dense than liquid water because its crystal structure spaces molecules farther apart",
+      "Ice is heavier than water",
+      "Ice has no mass",
+      "Surface tension holds ice up"
+    ],
+    "tier": 1
+  },
+  {
+    "question": "Why does a pressure cooker cook food faster than a normal pot?",
+    "answer": "Trapped steam raises the pressure, which raises the boiling point of water above 100 degrees C",
+    "choices": [
+      "Trapped steam raises the pressure, which raises the boiling point of water above 100 degrees C",
+      "The sealed lid conducts more heat",
+      "Less water is used",
+      "The metal is thicker"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Peer review improves scientific research by having other experts check for ___?",
+    "answer": "Errors, bias, and unsupported conclusions",
+    "choices": [
+      "Errors, bias, and unsupported conclusions",
+      "Interesting writing style",
+      "Sufficient citations",
+      "Agreement with existing theories"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "The placebo effect means patients can improve just from ___?",
+    "answer": "Believing they received treatment",
+    "choices": [
+      "Believing they received treatment",
+      "Taking any pill",
+      "Resting more",
+      "Natural immunity"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "A double-blind clinical trial keeps both patients and doctors unaware of who receives the real drug to eliminate ___?",
+    "answer": "Bias from expectations",
+    "choices": [
+      "Bias from expectations",
+      "Side effects",
+      "Costs",
+      "Placebo production"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Why does the sky appear blue on a clear day?",
+    "answer": "Air molecules scatter short-wavelength blue light more than red light",
+    "choices": [
+      "Air molecules scatter short-wavelength blue light more than red light",
+      "The ocean reflects blue light upward",
+      "The atmosphere absorbs red light",
+      "Ozone is blue"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Acids release ___ ions when dissolved in water, making solutions corrosive?",
+    "answer": "Hydrogen (H+)",
+    "choices": [
+      "Hydrogen (H+)",
+      "Hydroxide (OH-)",
+      "Sodium (Na+)",
+      "Chloride (Cl-)"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Bases release ___ ions when dissolved in water, giving them a slippery feel?",
+    "answer": "Hydroxide (OH-)",
+    "choices": [
+      "Hydroxide (OH-)",
+      "Hydrogen (H+)",
+      "Sodium (Na+)",
+      "Chloride (Cl-)"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Evolution by natural selection works because individuals with traits better suited to their environment are more likely to ___?",
+    "answer": "Survive and reproduce",
+    "choices": [
+      "Survive and reproduce",
+      "Mutate further",
+      "Migrate",
+      "Grow larger"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "DNA mutations are the ultimate source of genetic variation because they create ___?",
+    "answer": "New alleles that may be passed to offspring",
+    "choices": [
+      "New alleles that may be passed to offspring",
+      "Identical copies of existing genes",
+      "Protein destruction",
+      "Epigenetic changes only"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Why is the greenhouse effect getting stronger due to human activity?",
+    "answer": "Burning fossil fuels releases CO2 that traps more heat in the atmosphere",
+    "choices": [
+      "Burning fossil fuels releases CO2 that traps more heat in the atmosphere",
+      "The Sun is getting hotter",
+      "The ozone layer is expanding",
+      "Deforestation increases oxygen"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Correlation in data does not prove causation because ___?",
+    "answer": "Both variables could be caused by a third hidden factor",
+    "choices": [
+      "Both variables could be caused by a third hidden factor",
+      "Correlations are always wrong",
+      "Science never uses statistics",
+      "Only experiments count as data"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Enzymes work by providing an active site where the substrate fits, lowering the reaction's ___?",
+    "answer": "Activation energy",
+    "choices": [
+      "Activation energy",
+      "Temperature",
+      "pH",
+      "Gibbs free energy"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "When a virus infects a cell, it hijacks the cell's machinery to copy its own ___?",
+    "answer": "Genetic material",
+    "choices": [
+      "Genetic material",
+      "Cell membrane",
+      "Mitochondria",
+      "Ribosomes"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Vaccines work by training the immune system to recognize a pathogen without causing ___?",
+    "answer": "Full disease",
+    "choices": [
+      "Full disease",
+      "Any immune response",
+      "Antibody production",
+      "T-cell activation"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "The ozone layer protects Earth by absorbing most of the Sun's ___?",
+    "answer": "Ultraviolet radiation",
+    "choices": [
+      "Ultraviolet radiation",
+      "Infrared radiation",
+      "Visible light",
+      "X-rays"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Antibiotics treat bacterial infections but not viral infections because they target structures found only in ___?",
+    "answer": "Bacteria",
+    "choices": [
+      "Bacteria",
+      "Viruses",
+      "Human cells",
+      "All pathogens"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Antibiotic resistance evolves when bacteria that survive a course of antibiotics ___?",
+    "answer": "Pass their resistance genes to offspring",
+    "choices": [
+      "Pass their resistance genes to offspring",
+      "Become viruses",
+      "Strengthen their cell walls temporarily",
+      "Acquire human DNA"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "In natural selection, a trait spreads through a population only if it is ___?",
+    "answer": "Heritable and improves reproductive success",
+    "choices": [
+      "Heritable and improves reproductive success",
+      "Large and visible",
+      "Beneficial to the species as a whole",
+      "Random and neutral"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Scientists use the term 'paradigm shift' to describe when a scientific field ___?",
+    "answer": "Fundamentally replaces its previous framework with a new one",
+    "choices": [
+      "Fundamentally replaces its previous framework with a new one",
+      "Publishes a new textbook",
+      "Conducts a major experiment",
+      "Gains government funding"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "The Doppler effect is why an ambulance siren sounds higher-pitched as it approaches you because sound waves are ___?",
+    "answer": "Compressed together in front of the moving source",
+    "choices": [
+      "Compressed together in front of the moving source",
+      "Traveling faster toward you",
+      "Louder at close range",
+      "Reflecting off surrounding buildings"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "A concave lens causes parallel light rays to ___?",
+    "answer": "Diverge",
+    "choices": [
+      "Diverge",
+      "Converge",
+      "Reflect",
+      "Polarize"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Entropy tends to increase in isolated systems because disordered states are ___?",
+    "answer": "Far more numerous than ordered ones",
+    "choices": [
+      "Far more numerous than ordered ones",
+      "More energetically stable",
+      "Required by Newton's laws",
+      "Caused by gravity"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "In quantum mechanics, the electron's position is described as a probability cloud because ___?",
+    "answer": "Its exact position cannot be known until measured",
+    "choices": [
+      "Its exact position cannot be known until measured",
+      "Electrons move too fast to track",
+      "Electrons are not real particles",
+      "All matter is a wave at large scales"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "Covalent bonds are stronger than hydrogen bonds, which is why DNA base pairs can be easily ___?",
+    "answer": "Separated for replication",
+    "choices": [
+      "Separated for replication",
+      "Repaired by ribosomes",
+      "Copied by tRNA",
+      "Stored in mitochondria"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "General relativity predicts that massive objects curve spacetime, which we observe as ___?",
+    "answer": "Gravity",
+    "choices": [
+      "Gravity",
+      "Magnetism",
+      "Nuclear force",
+      "Radiation"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "The periodic table is organized so that elements in the same group have similar chemical properties because they have the same number of ___?",
+    "answer": "Valence electrons",
+    "choices": [
+      "Valence electrons",
+      "Protons",
+      "Neutrons",
+      "Electron shells"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "Transcription occurs in the cell nucleus because that is where ___?",
+    "answer": "DNA is stored",
+    "choices": [
+      "DNA is stored",
+      "Ribosomes are located",
+      "ATP is produced",
+      "Proteins are folded"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "Natural selection cannot directly act on genotype, only phenotype, because ___?",
+    "answer": "The environment interacts with the organism's physical traits, not its DNA directly",
+    "choices": [
+      "The environment interacts with the organism's physical traits, not its DNA directly",
+      "Genotypes are invisible to predators",
+      "DNA is always recessive",
+      "Phenotypes are always heritable"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "The concept of falsifiability distinguishes science from pseudoscience because a claim that cannot be proven wrong ___?",
+    "answer": "Provides no way to test whether it is false",
+    "choices": [
+      "Provides no way to test whether it is false",
+      "Is automatically true",
+      "Must be true by elimination",
+      "Can still be tested statistically"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "Quantum tunneling allows nuclear fusion to occur in the Sun at temperatures lower than classically predicted because particles can ___?",
+    "answer": "Pass through energy barriers they classically cannot overcome",
+    "choices": [
+      "Pass through energy barriers they classically cannot overcome",
+      "Move faster than light briefly",
+      "Bypass conservation of energy",
+      "Fuse without any contact"
+    ],
+    "tier": 5
+  },
+  {
+    "question": "Einstein's special relativity showed that mass and energy are equivalent because ___?",
+    "answer": "Mass is a form of stored energy (E=mc^2)",
+    "choices": [
+      "Mass is a form of stored energy (E=mc^2)",
+      "Energy has no mass",
+      "Light has infinite mass",
+      "Velocity and mass are interchangeable"
+    ],
+    "tier": 5
+  },
+  {
+    "question": "The discovery of the Higgs boson in 2012 mattered because it ___?",
+    "answer": "Confirmed the mechanism by which fundamental particles acquire mass",
+    "choices": [
+      "Confirmed the mechanism by which fundamental particles acquire mass",
+      "Proved string theory",
+      "Showed particles can travel faster than light",
+      "Unified gravity with quantum mechanics"
+    ],
+    "tier": 5
+  },
+  {
+    "question": "Decoherence explains why quantum superpositions are not observed in everyday objects because interaction with the environment ___?",
+    "answer": "Collapses quantum states into definite classical outcomes",
+    "choices": [
+      "Collapses quantum states into definite classical outcomes",
+      "Amplifies quantum effects",
+      "Destroys all particles",
+      "Makes objects invisible"
+    ],
+    "tier": 5
+  },
+  {
+    "question": "The Big Bang theory is supported by cosmic microwave background radiation because this radiation is ___?",
+    "answer": "The afterglow of the early universe's intense heat",
+    "choices": [
+      "The afterglow of the early universe's intense heat",
+      "Emitted by black holes",
+      "Produced by distant galaxies only",
+      "A result of stellar explosions"
+    ],
+    "tier": 5
+  },
+  {
+    "question": "The expanding universe was discovered because distant galaxies show a ___ shift in their light?",
+    "answer": "Red",
+    "choices": [
+      "Red",
+      "Blue",
+      "Green",
+      "Ultraviolet"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Why does a metal spoon feel colder than a wooden spoon at the same room temperature?",
+    "answer": "Metal conducts heat away from your hand faster than wood",
+    "choices": [
+      "Metal conducts heat away from your hand faster than wood",
+      "Metal has a lower temperature than wood",
+      "Wood stores heat better",
+      "Metal reflects body heat"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Why does a sealed gas exert higher pressure when heated at constant volume?",
+    "answer": "The molecules move faster and collide with the walls more forcefully",
+    "choices": [
+      "The molecules move faster and collide with the walls more forcefully",
+      "The gas expands and pushes outward",
+      "The molecules multiply in number",
+      "The container gets weaker"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "The scientific consensus on evolution is accepted because it has ___?",
+    "answer": "Been confirmed by independent evidence from genetics, fossils, and comparative anatomy",
+    "choices": [
+      "Been confirmed by independent evidence from genetics, fossils, and comparative anatomy",
+      "Never been questioned",
+      "Been voted on by scientists",
+      "Not been falsified despite attempts"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Confirmation bias in science is dangerous because it causes researchers to ___?",
+    "answer": "Notice evidence that supports their hypothesis and ignore contradicting evidence",
+    "choices": [
+      "Notice evidence that supports their hypothesis and ignore contradicting evidence",
+      "Design experiments too carefully",
+      "Publish results too quickly",
+      "Over-rely on statistics"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "The replication crisis in psychology and medicine showed that many findings failed to hold up because studies were ___?",
+    "answer": "Too small, underpowered, or used flexible analysis methods",
+    "choices": [
+      "Too small, underpowered, or used flexible analysis methods",
+      "Conducted by dishonest scientists",
+      "Published in the wrong journals",
+      "Based on animal models only"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "Mitosis produces two genetically identical cells while meiosis produces four genetically unique cells because meiosis includes ___?",
+    "answer": "Crossing over and two rounds of division",
+    "choices": [
+      "Crossing over and two rounds of division",
+      "One round of DNA replication only",
+      "Protein synthesis between divisions",
+      "Chromosome doubling twice"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "The electron transport chain produces most of a cell's ATP by using a flow of protons to drive ___?",
+    "answer": "ATP synthase",
+    "choices": [
+      "ATP synthase",
+      "DNA polymerase",
+      "Helicase",
+      "Glycolysis"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "Type 2 diabetes involves insulin resistance, meaning cells fail to ___?",
+    "answer": "Respond to insulin signals to absorb glucose",
+    "choices": [
+      "Respond to insulin signals to absorb glucose",
+      "Produce insulin",
+      "Digest sugar",
+      "Store glycogen in the liver"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "Why does a hot air balloon rise?",
+    "answer": "Heated air is less dense than cooler surrounding air, creating buoyancy",
+    "choices": [
+      "Heated air is less dense than cooler surrounding air, creating buoyancy",
+      "Hot air weighs more and pushes down on the balloon",
+      "Combustion gases push the balloon up",
+      "Air pressure inside the balloon increases"
+    ],
+    "tier": 1
+  },
+  {
+    "question": "Lightning travels from cloud to ground because clouds build up electric charge through ___?",
+    "answer": "Friction between ice crystals and water droplets",
+    "choices": [
+      "Friction between ice crystals and water droplets",
+      "Solar radiation",
+      "Magnetic fields from Earth",
+      "Chemical reactions in rain"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Why does saltwater have a lower freezing point than pure water?",
+    "answer": "Dissolved salt ions disrupt the formation of ice crystals",
+    "choices": [
+      "Dissolved salt ions disrupt the formation of ice crystals",
+      "Salt raises the boiling point, which lowers the freezing point",
+      "Salt absorbs cold from the water",
+      "Saltwater is denser so it freezes later"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Nuclear power plants use fission rather than fusion because fusion requires ___?",
+    "answer": "Extremely high temperatures that are difficult to sustain",
+    "choices": [
+      "Extremely high temperatures that are difficult to sustain",
+      "Radioactive fuel we have not discovered yet",
+      "More neutrons than are available",
+      "A vacuum that cannot be created"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Osmosis moves water across a membrane from a region of ___ solute concentration to ___?",
+    "answer": "Low; high",
+    "choices": [
+      "Low; high",
+      "High; low",
+      "Equal; unequal",
+      "High; equal"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "The immune system produces antibodies that are specific to one pathogen because each antibody matches a particular ___?",
+    "answer": "Antigen shape",
+    "choices": [
+      "Antigen shape",
+      "Pathogen size",
+      "Blood type",
+      "Infection location"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Photovoltaic solar cells generate electricity when photons knock electrons free in ___?",
+    "answer": "Semiconductor material",
+    "choices": [
+      "Semiconductor material",
+      "Copper wire",
+      "Glass panels",
+      "Mirrors"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Radiocarbon dating works only on organic material because carbon-14 is absorbed by living things from ___?",
+    "answer": "The atmosphere during life",
+    "choices": [
+      "The atmosphere during life",
+      "The soil after death",
+      "Sunlight",
+      "Water only"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "The reason mammals maintain a constant body temperature is that enzyme reactions work best within a ___?",
+    "answer": "Narrow temperature range",
+    "choices": [
+      "Narrow temperature range",
+      "Wide temperature range",
+      "Very cold range only",
+      "Very hot range only"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Genetic engineering uses restriction enzymes to cut DNA at specific sequences so that ___?",
+    "answer": "Foreign genes can be inserted precisely",
+    "choices": [
+      "Foreign genes can be inserted precisely",
+      "DNA replication is stopped",
+      "Proteins are destroyed",
+      "Chromosomes are duplicated"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "MRI machines image the body using magnetic fields to align ___?",
+    "answer": "Hydrogen nuclei in water molecules",
+    "choices": [
+      "Hydrogen nuclei in water molecules",
+      "Iron atoms in blood",
+      "Calcium in bones",
+      "Electrical signals in nerves"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "The key insight of germ theory was that many diseases are caused by ___?",
+    "answer": "Microscopic organisms (pathogens)",
+    "choices": [
+      "Microscopic organisms (pathogens)",
+      "Imbalances in body humors",
+      "Poisonous air (miasma)",
+      "Genetic defects only"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Fleming's discovery of penicillin in 1928 mattered because it showed that ___?",
+    "answer": "Mold could produce chemicals that kill bacteria",
+    "choices": [
+      "Mold could produce chemicals that kill bacteria",
+      "Antibiotics existed naturally in blood",
+      "Bacteria could not survive in air",
+      "Viruses were destroyed by fungal spores"
+    ],
+    "tier": 2
+  },
+  {
+    "question": "Continental drift was initially rejected by scientists because Alfred Wegener could not explain ___?",
+    "answer": "What force was powerful enough to move continents",
+    "choices": [
+      "What force was powerful enough to move continents",
+      "Why continents had coastlines",
+      "Whether maps were accurate",
+      "Why fossils existed at all"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Plate tectonics was eventually accepted because it explained earthquakes, volcanoes, and mountain formation with a single ___?",
+    "answer": "Unifying mechanism",
+    "choices": [
+      "Unifying mechanism",
+      "Mathematical formula",
+      "Observation from space",
+      "New type of rock"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "When a star more massive than the Sun exhausts its fuel, its core collapses and can form a ___?",
+    "answer": "Neutron star or black hole",
+    "choices": [
+      "Neutron star or black hole",
+      "White dwarf",
+      "Red giant",
+      "Planetary nebula"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "The genetic code is described as universal because nearly all living organisms use ___?",
+    "answer": "The same codons to specify the same amino acids",
+    "choices": [
+      "The same codons to specify the same amino acids",
+      "Identical genes",
+      "The same number of chromosomes",
+      "The same proteins"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Epigenetic changes can be passed to offspring because they alter ___?",
+    "answer": "How genes are expressed without changing the DNA sequence",
+    "choices": [
+      "How genes are expressed without changing the DNA sequence",
+      "The number of chromosomes",
+      "The DNA sequence directly",
+      "Ribosome structure"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "In the kinetic theory of gases, temperature is a measure of the average ___ of gas molecules?",
+    "answer": "Kinetic energy",
+    "choices": [
+      "Kinetic energy",
+      "Potential energy",
+      "Speed only",
+      "Momentum"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Superposition in quantum mechanics means a particle exists in multiple states simultaneously until ___?",
+    "answer": "It is observed or measured",
+    "choices": [
+      "It is observed or measured",
+      "It absorbs a photon",
+      "It collides with another particle",
+      "It reaches absolute zero"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "The discovery that the universe's expansion is accelerating led to the hypothesis of ___?",
+    "answer": "Dark energy",
+    "choices": [
+      "Dark energy",
+      "Dark matter",
+      "Antimatter",
+      "Cosmic inflation only"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "Dark matter is thought to exist because galaxy rotation curves show stars orbiting too ___ to be explained by visible mass?",
+    "answer": "Fast",
+    "choices": [
+      "Fast",
+      "Slow",
+      "Irregularly",
+      "In opposite directions"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "CRISPR-Cas9 acts like molecular scissors because the guide RNA directs it to cut at a specific ___?",
+    "answer": "DNA sequence",
+    "choices": [
+      "DNA sequence",
+      "Protein",
+      "RNA strand",
+      "Chromosome location"
+    ],
+    "tier": 4
+  },
+  {
+    "question": "The observer effect in quantum mechanics means the act of measuring a particle necessarily ___?",
+    "answer": "Disturbs the system being measured",
+    "choices": [
+      "Disturbs the system being measured",
+      "Improves measurement accuracy",
+      "Creates the particle",
+      "Eliminates all uncertainty"
+    ],
+    "tier": 5
+  },
+  {
+    "question": "String theory proposes that fundamental particles are actually vibrating ___?",
+    "answer": "One-dimensional strings of energy",
+    "choices": [
+      "One-dimensional strings of energy",
+      "Two-dimensional membranes",
+      "Three-dimensional fields",
+      "Point particles with spin"
+    ],
+    "tier": 5
+  },
+  {
+    "question": "Information paradox: Stephen Hawking initially claimed black holes violate quantum mechanics because they appeared to destroy ___?",
+    "answer": "Information",
+    "choices": [
+      "Information",
+      "Mass",
+      "Charge",
+      "Angular momentum"
+    ],
+    "tier": 5
+  },
+  {
+    "question": "The Many-Worlds interpretation of quantum mechanics proposes that every quantum event causes the universe to ___?",
+    "answer": "Branch into separate parallel outcomes",
+    "choices": [
+      "Branch into separate parallel outcomes",
+      "Collapse into a single outcome",
+      "Reverse in time",
+      "Merge with other universes"
+    ],
+    "tier": 5
+  },
+  {
+    "question": "Negative feedback in biological systems tends to ___ a change, maintaining homeostasis?",
+    "answer": "Oppose",
+    "choices": [
+      "Oppose",
+      "Amplify",
+      "Reverse",
+      "Stop all processes"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Positive feedback in biological systems tends to ___ a change, driving a process to completion?",
+    "answer": "Amplify",
+    "choices": [
+      "Amplify",
+      "Oppose",
+      "Stabilize",
+      "Reverse"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "The scientific consensus on vaccine safety is based on studies of millions of people rather than individual case reports because ___?",
+    "answer": "Large populations can reveal rare effects that anecdotes cannot",
+    "choices": [
+      "Large populations can reveal rare effects that anecdotes cannot",
+      "Individual cases are always fabricated",
+      "Anecdotal reports are illegal",
+      "Statistics are more believable than doctors"
+    ],
+    "tier": 3
+  },
+  {
+    "question": "Occam's Razor is a scientific principle that says, when two theories explain data equally well, prefer the one that ___?",
+    "answer": "Makes fewer assumptions",
+    "choices": [
+      "Makes fewer assumptions",
+      "Is more dramatic",
+      "Was proposed first",
+      "Uses more mathematics"
+    ],
+    "tier": 3
   }
 ]

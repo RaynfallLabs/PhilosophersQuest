@@ -1,0 +1,707 @@
+{
+  "remove": [
+    {"index": 0, "reason": "Trivial single-word identification ('Run' is a ___?). Covered better by contextual and conceptual questions elsewhere in T1."},
+    {"index": 2, "reason": "Trivial single-word ID ('Quickly' is a ___?). Redundant with idx 15 (adverb defined conceptually) and multiple in-context adverb questions."},
+    {"index": 3, "reason": "Trivial single-word ID ('Beautiful' is a ___?). Redundant with idx 14 (adjective definition) and other in-context adjective questions."},
+    {"index": 5, "reason": "Trivial single-word ID ('And' is a ___?). Redundant with idx 17 (conceptual conjunction definition) and idx 38 (Which word is a conjunction?)."},
+    {"index": 6, "reason": "Trivial single-word ID ('On' is a ___?). Redundant with idx 16 (conceptual preposition definition) and idx 39."},
+    {"index": 7, "reason": "Trivial single-word ID ('Wow' is a ___?). Redundant with idx 18 (conceptual interjection definition) and idx 40."},
+    {"index": 45, "reason": "Trivial single-word ID ('Or' is a ___?). Redundant with conjunction coverage; 'or' is no more interesting than 'and'."},
+    {"index": 46, "reason": "Trivial single-word ID ('Beneath' is a ___?). Redundant with preposition coverage at idx 16, 39, 74, 80."},
+    {"index": 52, "reason": "Trivial single-word ID ('Nor' is a ___?). Redundant; better to cover FANBOYS as a set (handled in T3)."},
+    {"index": 55, "reason": "'Very' in 'very fast' is trivial in-context part-of-speech labeling. Redundant with idx 83 and adverb definition at idx 15."},
+    {"index": 56, "reason": "'Blue' in 'a blue sky' is trivial in-context labeling. Redundant with idx 14 (adjective definition) and idx 70 and 92."},
+    {"index": 57, "reason": "'Ocean' in 'the ocean is deep' is trivial in-context labeling. Redundant with idx 1 (noun definition) and idx 72."},
+    {"index": 58, "reason": "'Swims' in 'she swims daily' is trivial in-context labeling. Redundant with idx 13 (verb definition) and idx 93."},
+    {"index": 59, "reason": "'With' in 'a book with pictures' is trivial in-context labeling. Redundant with preposition coverage at idx 16, 74, 80, 84."},
+    {"index": 64, "reason": "'I' in 'I am here' is trivial in-context labeling. Redundant with pronoun coverage at idx 12, 47, 76."},
+    {"index": 65, "reason": "'Slowly' in 'she walked slowly' is trivial in-context labeling. Redundant with adverb coverage at idx 15, 71, 91, 95."},
+    {"index": 70, "reason": "'Tall' in 'a tall tree' is trivial in-context labeling. Redundant with adjective coverage at idx 14, 56, 92."},
+    {"index": 71, "reason": "'Loudly' in 'she sings loudly' is trivial in-context labeling. Redundant with adverb coverage at idx 15, 65, 91."},
+    {"index": 74, "reason": "'Above' in 'above the clouds' is trivial in-context labeling. Redundant with preposition coverage."},
+    {"index": 75, "reason": "'Oops' in 'Oops! I dropped it.' is trivial in-context labeling. Redundant with interjection coverage at idx 18, 40."},
+    {"index": 76, "reason": "'We' in 'We won the game' is trivial in-context labeling. Redundant with pronoun coverage at idx 12, 64."},
+    {"index": 80, "reason": "'For' in 'a gift for you' is trivial in-context labeling. Redundant with preposition coverage."},
+    {"index": 84, "reason": "'Behind' in 'behind the door' is trivial in-context labeling. Redundant with preposition coverage."},
+    {"index": 90, "reason": "'Yet' in 'tired yet happy' is trivial in-context labeling. Redundant with conjunction coverage."},
+    {"index": 91, "reason": "'Gracefully' in 'she danced gracefully' is trivial in-context labeling. Redundant with adverb coverage."},
+    {"index": 92, "reason": "'Cold' in 'the cold wind' is trivial in-context labeling. Redundant with adjective coverage."},
+    {"index": 93, "reason": "'Sings' in 'she sings' is trivial in-context labeling. Redundant with verb coverage."},
+    {"index": 23, "reason": "Plural of 'cat' -> 'cats' is the most trivial plural possible; no educational value beyond literacy. Remove in favor of keeping only irregular and surprising plurals."},
+    {"index": 81, "reason": "Plural of 'box' -> 'boxes' is a basic regular -es plural; low educational value. Space better used elsewhere."},
+    {"index": 82, "reason": "Plural of 'fish' (same species) is 'Fish' --- question wording is awkward and the rule is obscure for no practical gain. Remove."},
+    {"index": 97, "reason": "Past tense of 'run' -> 'ran' is too basic for T2; everyone reading a game knows this. Part of massive 65-question past-tense overrepresentation."},
+    {"index": 98, "reason": "Past tense of 'see' -> 'saw' is too basic. Remove."},
+    {"index": 109, "reason": "Past tense of 'drive' -> 'drove' is too basic; universally known."},
+    {"index": 110, "reason": "Past tense of 'fly' -> 'flew' is too basic."},
+    {"index": 111, "reason": "Past tense of 'know' -> 'knew' is too basic."},
+    {"index": 135, "reason": "Past tense of 'come' -> 'came' is too basic."},
+    {"index": 136, "reason": "Past tense of 'find' -> 'found' also has duplicate choice (Found appears twice in choices). Remove."},
+    {"index": 139, "reason": "Past tense of 'grow' -> 'grew' is too basic."},
+    {"index": 140, "reason": "Past tense of 'stand' -> 'stood' also has duplicate choice (Standed appears twice). Remove."},
+    {"index": 141, "reason": "Past tense of 'throw' -> 'threw' is too basic."},
+    {"index": 144, "reason": "Past tense of 'sit' -> 'sat' is too basic."},
+    {"index": 148, "reason": "Past tense of 'sell' -> 'sold' is too basic."},
+    {"index": 150, "reason": "Past tense of 'sleep' -> 'slept' is too basic."},
+    {"index": 151, "reason": "Past tense of 'leave' -> 'left' is too basic."},
+    {"index": 152, "reason": "Past tense of 'send' -> 'sent' is too basic."},
+    {"index": 153, "reason": "Past tense of 'spend' -> 'spent' is too basic."},
+    {"index": 154, "reason": "Past tense of 'lend' -> 'lent' is too basic."},
+    {"index": 155, "reason": "Past tense of 'bend' -> 'bent' is trivial and low educational value."},
+    {"index": 159, "reason": "Past tense of 'ride' -> 'rode' is too basic."},
+    {"index": 160, "reason": "Past tense of 'win' -> 'won' is too basic."},
+    {"index": 161, "reason": "Past tense of 'meet' -> 'met' is too basic."},
+    {"index": 163, "reason": "Past tense of 'build' -> 'built' is too basic."},
+    {"index": 164, "reason": "Past tense of 'tell' -> 'told' is too basic."},
+    {"index": 168, "reason": "Past tense of 'feel' -> 'felt' is too basic."},
+    {"index": 169, "reason": "Past tense of 'lose' -> 'lost' is too basic."},
+    {"index": 170, "reason": "Past tense of 'cut' -> 'cut' is a null change (same form); no learning value."},
+    {"index": 171, "reason": "Past tense of 'put' -> 'put' is a null change; no learning value."},
+    {"index": 172, "reason": "Past tense of 'hit' -> 'hit' is a null change; no learning value."},
+    {"index": 173, "reason": "Past tense of 'let' -> 'let' is a null change; no learning value."},
+    {"index": 174, "reason": "Past tense of 'set' -> 'set' is a null change; no learning value."},
+    {"index": 278, "reason": "'Breaking expected parallel structure deliberately is ___?' has duplicate choices (Anacoluthon appears twice). Additionally, anacoluthon is already covered at idx 236 and idx 277. Remove this broken duplicate."},
+    {"index": 288, "reason": "T5 duplicate: 'A morpheme that cannot stand alone is a ___ morpheme?' covered identically at idx 460. Remove the earlier instance."},
+    {"index": 289, "reason": "T5 duplicate: 'A morpheme that can stand alone as a word is a ___ morpheme?' covered identically at idx 459. Remove the earlier instance."},
+    {"index": 292, "reason": "T5 duplicate: 'The smallest unit of meaning in a language is a ___?' covered identically at idx 457. Remove the earlier instance."},
+    {"index": 295, "reason": "T5 duplicate: 'The study of meaning in language is ___?' covered identically at idx 454. Remove the earlier instance."},
+    {"index": 298, "reason": "T5 duplicate: 'The study of word formation and structure is ___?' covered identically at idx 455. Remove the earlier instance."},
+    {"index": 299, "reason": "T5 duplicate: 'The study of sound systems in language is ___?' covered identically at idx 456. Remove the earlier instance."},
+    {"index": 306, "reason": "T5 duplicate: 'Switching between languages or dialects in conversation is ___?' covered identically at idx 492. Remove the earlier instance."},
+    {"index": 309, "reason": "T5 duplicate: 'A person's individual unique language variety is their ___?' covered identically at idx 491. Remove the earlier instance."},
+    {"index": 328, "reason": "'Speech act theory was pioneered by ___?' is pure name-association rote with no practical grammar value. Remove."},
+    {"index": 330, "reason": "'An indirect speech act in which something is requested without a direct command is a ___?' The answer 'Indirect speech act' is circular -- the question defines the term and the answer merely repeats it. Remove."},
+    {"index": 331, "reason": "'The study of language acquisition in children is part of ___?' Developmental linguistics is too narrow and obscure for a grammar quiz focused on practical communication skills. Remove."},
+    {"index": 332, "reason": "'Chomsky's poverty of the stimulus argument supports ___?' Pure academic name-association with no practical grammar or rhetoric value. Remove."},
+    {"index": 334, "reason": "'The principle that words in different languages can have systematically different structures is ___?' Answer: 'Typological variation' is an obscure academic term with no practical writing or reading value. Remove."},
+    {"index": 449, "reason": "T5 duplicate: 'The grammatical term for the base form of a verb is ___?' (answer: Infinitive) is covered better at T3 idx 397 which connects the infinitive to 'to + verb'. Remove T5 duplicate."},
+    {"index": 450, "reason": "T5 duplicate: 'A verb form used as a noun is a ___?' (answer: Gerund) is covered better at T3 idx 396. Remove T5 duplicate."}
+  ],
+  "rewrite": [
+    {
+      "index": 4,
+      "field": "question",
+      "new_value": "Which word below is a personal pronoun?",
+      "reason": "Reframe from trivial single-word ID ('She' is a ___?) to a 'which one is a pronoun' format that includes a set of distractors; keeps pronoun concept at T1."
+    },
+    {
+      "index": 4,
+      "field": "choices",
+      "new_value": ["She", "Run", "Tall", "Quickly"],
+      "reason": "Updated choices to match rewritten question format."
+    },
+    {
+      "index": 79,
+      "field": "question",
+      "new_value": "An adverb can modify a verb, an adjective, or ___?",
+      "reason": "Original 'Which part of speech does an adverb modify?' has answer 'Verb' but misses that adverbs also modify adjectives and other adverbs. Reframe to capture the fuller and more useful rule."
+    },
+    {
+      "index": 79,
+      "field": "choices",
+      "new_value": ["A noun", "Another adverb", "A preposition", "A conjunction"],
+      "reason": "Tests the commonly overlooked fact that adverbs can modify other adverbs."
+    },
+    {
+      "index": 79,
+      "field": "answer",
+      "new_value": "Another adverb",
+      "reason": "Tests the less-obvious but important rule: adverbs modify verbs, adjectives, AND other adverbs."
+    },
+    {
+      "index": 96,
+      "field": "question",
+      "new_value": "Which form of 'go' correctly completes: 'She ___ to the market yesterday'?",
+      "reason": "Reframe pure 'Past tense of go?' as a sentence-completion to test in context rather than as a bare vocabulary drill."
+    },
+    {
+      "index": 96,
+      "field": "choices",
+      "new_value": ["Goes", "Goed", "Went", "Gone"],
+      "reason": "Same information, in-context format; went is correct."
+    },
+    {
+      "index": 101,
+      "field": "choices",
+      "new_value": ["Teached", "Taught", "Tought", "Taugh"],
+      "reason": "Duplicate choice 'Taught' appeared twice; replaced second instance with plausible misspelling 'Taugh'."
+    },
+    {
+      "index": 102,
+      "field": "choices",
+      "new_value": ["Buyed", "Bought", "Boughted", "Boughten"],
+      "reason": "Duplicate choice 'Buyed' appeared twice; replaced second instance with 'Boughten' as a plausible distractor."
+    },
+    {
+      "index": 137,
+      "field": "choices",
+      "new_value": ["Maked", "Made", "Maden", "Makened"],
+      "reason": "Duplicate choice 'Maked' appeared twice; replaced second instance with 'Makened'."
+    },
+    {
+      "index": 156,
+      "field": "choices",
+      "new_value": ["Freezed", "Froze", "Frozen", "Frooze"],
+      "reason": "Duplicate choice 'Freezed' appeared twice; replaced second instance with 'Frooze'."
+    },
+    {
+      "index": 157,
+      "field": "choices",
+      "new_value": ["Stealed", "Stole", "Stolen", "Stolt"],
+      "reason": "Duplicate choice 'Stealed' appeared twice; replaced second instance with 'Stolt'."
+    },
+    {
+      "index": 158,
+      "field": "choices",
+      "new_value": ["Hided", "Hid", "Hidden", "Hidded"],
+      "reason": "Duplicate choice 'Hided' appeared twice; replaced second instance with 'Hidded'."
+    },
+    {
+      "index": 162,
+      "field": "choices",
+      "new_value": ["Bited", "Bit", "Bitten", "Bitte"],
+      "reason": "Duplicate choice 'Bited' appeared twice; replaced second instance with 'Bitte'."
+    },
+    {
+      "index": 175,
+      "field": "question",
+      "new_value": "The word 'read' in 'She read the book yesterday' is pronounced to rhyme with ___?",
+      "reason": "The original 'Past tense of read (pronounced red)?' is awkwardly phrased. Reframe to highlight the genuinely confusing read/read homograph: same spelling, different pronunciation by tense."
+    },
+    {
+      "index": 175,
+      "field": "choices",
+      "new_value": ["Reed (same as present tense)", "Red (past tense pronunciation)", "Redd (an alternate spelling)", "Reede (archaic form)"],
+      "reason": "New choices focus on the pronunciation distinction that makes this word genuinely interesting."
+    },
+    {
+      "index": 175,
+      "field": "answer",
+      "new_value": "Red (past tense pronunciation)",
+      "reason": "Correct: past tense 'read' is pronounced like the color 'red'."
+    },
+    {
+      "index": 303,
+      "field": "question",
+      "new_value": "The Sapir-Whorf hypothesis holds that the language you speak ___ the way you think?",
+      "reason": "Original 'The hypothesis that language shapes thought is the ___?' asks only for a proper name. Reframe to test the conceptual content of the hypothesis."
+    },
+    {
+      "index": 303,
+      "field": "choices",
+      "new_value": ["Has no effect on", "Influences or determines", "Perfectly mirrors", "Is completely separate from"],
+      "reason": "Tests understanding of linguistic relativity rather than mere recall of the hypothesis name."
+    },
+    {
+      "index": 303,
+      "field": "answer",
+      "new_value": "Influences or determines",
+      "reason": "The core claim of the Sapir-Whorf hypothesis is that language influences or determines thought."
+    },
+    {
+      "index": 315,
+      "field": "question",
+      "new_value": "Saussure argued that the connection between a word's sound and its meaning is ___?",
+      "reason": "Original question asks who proposed the principle without context. Reframe to test the concept (arbitrariness of the sign) rather than name-attribution alone."
+    },
+    {
+      "index": 315,
+      "field": "choices",
+      "new_value": ["Natural and motivated", "Arbitrary (no natural link)", "Based on etymology always", "Determined by phonetics"],
+      "reason": "New choices make this a conceptual question about the nature of linguistic signs."
+    },
+    {
+      "index": 315,
+      "field": "answer",
+      "new_value": "Arbitrary (no natural link)",
+      "reason": "The arbitrariness of the sign is Saussure's central and most influential insight."
+    },
+    {
+      "index": 321,
+      "field": "question",
+      "new_value": "How many inflectional morphemes does English have (e.g., -s plural, -s possessive, -ed past, -ing, -en, -er, -est, -s third person)?",
+      "reason": "Original 'The number of inflectional morphemes in English?' is pure rote. Reframe by listing the morphemes so the count becomes meaningful rather than arbitrary."
+    },
+    {
+      "index": 342,
+      "field": "choices",
+      "new_value": ["Knifes", "Knives", "Knieves", "Knivs"],
+      "reason": "Duplicate choice 'Knifes' appeared twice; replaced second instance with 'Knivs' as a plausible distractor."
+    },
+    {
+      "index": 486,
+      "field": "question",
+      "new_value": "Chomsky's Government and Binding theory proposes that syntax is governed by universal ___ that vary by language?",
+      "reason": "Original 'Government and Binding theory was developed by ___?' is pure name-association. Reframe to test conceptual content of the theory."
+    },
+    {
+      "index": 486,
+      "field": "choices",
+      "new_value": ["Vocabulary lists", "Principles and parameters", "Phonological rules only", "Pragmatic conventions"],
+      "reason": "Tests the core idea of Government and Binding: principles-and-parameters framework."
+    },
+    {
+      "index": 486,
+      "field": "answer",
+      "new_value": "Principles and parameters",
+      "reason": "The principles-and-parameters model is the defining feature of Government and Binding theory."
+    }
+  ],
+  "add": [
+    {
+      "question": "The expression 'beating around the bush' is an example of ___?",
+      "answer": "Idiom",
+      "choices": ["Metaphor", "Proverb", "Idiom", "Euphemism"],
+      "tier": 1,
+      "reason": "Introduces idioms as a T1 concept; practical language awareness for everyday communication."
+    },
+    {
+      "question": "A proverb is a short traditional saying that ___?",
+      "answer": "Expresses a general truth or piece of wisdom",
+      "choices": ["Names a specific person", "Expresses a general truth or piece of wisdom", "Describes a grammar rule", "Tells a complete story"],
+      "tier": 1,
+      "reason": "Proverbs are a practical T1 concept for language mastery; introduces genre-awareness."
+    },
+    {
+      "question": "The suffix '-ful' (as in 'hopeful,' 'careful') means ___?",
+      "answer": "Full of or characterized by",
+      "choices": ["Without", "Full of or characterized by", "Capable of being", "Relating to"],
+      "tier": 1,
+      "reason": "Common derivational suffix; T1 vocabulary building through morpheme awareness."
+    },
+    {
+      "question": "The suffix '-less' (as in 'hopeless,' 'careless') means ___?",
+      "answer": "Without",
+      "choices": ["Full of", "Without", "Capable of", "Resembling"],
+      "tier": 1,
+      "reason": "Common derivational suffix pair with -ful; T1 morpheme awareness."
+    },
+    {
+      "question": "Which word choice is correct? 'The company will ___ its policy next month.'",
+      "answer": "Revise",
+      "choices": ["Revise", "Revision", "Revisory", "Revised"],
+      "tier": 1,
+      "reason": "Choosing the correct word form (verb vs noun vs adjective) is a basic T1 writing skill."
+    },
+    {
+      "question": "Which sentence corrects a comma splice?",
+      "answer": "She ran fast; she won the race.",
+      "choices": ["She ran fast, she won the race.", "She ran fast; she won the race.", "She ran fast she won the race.", "She ran fast, and, she won."],
+      "tier": 2,
+      "reason": "Comma splice recognition and correction is a high practical value T2 skill."
+    },
+    {
+      "question": "A thesis statement in an essay should express ___?",
+      "answer": "The main argument in a specific, debatable statement",
+      "choices": ["A broad topic area only", "The main argument in a specific, debatable statement", "A list of all points to be discussed", "A question to be answered"],
+      "tier": 2,
+      "reason": "Understanding what makes a good thesis statement is core practical writing knowledge at T2."
+    },
+    {
+      "question": "Topic sentences in body paragraphs serve to ___?",
+      "answer": "State the main point of the paragraph and link it to the thesis",
+      "choices": ["Introduce a new essay", "State the main point of the paragraph and link it to the thesis", "Provide evidence only", "Summarize the previous paragraph"],
+      "tier": 2,
+      "reason": "Topic sentence function is core practical writing knowledge at T2 level."
+    },
+    {
+      "question": "A transition word like 'however' signals a ___?",
+      "answer": "Contrast or contradiction",
+      "choices": ["Addition of a similar point", "Contrast or contradiction", "Cause-and-effect relationship", "Time sequence"],
+      "tier": 2,
+      "reason": "Transition words and their logical roles are highly practical for reading and writing comprehension."
+    },
+    {
+      "question": "A transition word like 'therefore' signals ___?",
+      "answer": "A conclusion that follows from the previous statement",
+      "choices": ["A new example", "A contradiction", "A conclusion that follows from the previous statement", "A change of topic"],
+      "tier": 2,
+      "reason": "Understanding 'therefore' as a signal of logical consequence is practical for argument reading."
+    },
+    {
+      "question": "Which sentence uses the subjunctive mood correctly?",
+      "answer": "I wish I were taller.",
+      "choices": ["I wish I was taller.", "I wish I am taller.", "I wish I will be taller.", "I wish I were taller."],
+      "tier": 2,
+      "reason": "Subjunctive 'were' vs 'was' is a common and practically useful distinction."
+    },
+    {
+      "question": "Which sentence demonstrates correct pronoun-antecedent agreement?",
+      "answer": "Each student must submit their assignment.",
+      "choices": ["Each student must submit his assignment.", "Each student must submit their assignment.", "Each student must submit its assignment.", "Each student must submit our assignment."],
+      "tier": 2,
+      "reason": "Pronoun-antecedent agreement with singular 'each' is a commonly confused and practically important rule."
+    },
+    {
+      "question": "Which sentence uses 'fewer' correctly?",
+      "answer": "There are fewer students in this class than last year.",
+      "choices": ["There is less students in this class.", "There are fewer students in this class than last year.", "There are less students in this class than last year.", "There is fewer students in this class."],
+      "tier": 2,
+      "reason": "Fewer vs less with countable nouns is a very common error with high practical value."
+    },
+    {
+      "question": "The phrase 'between you and I' is grammatically incorrect because 'I' should be ___?",
+      "answer": "Me (objective case after a preposition)",
+      "choices": ["Myself (reflexive for emphasis)", "Me (objective case after a preposition)", "My (possessive form)", "Mine (standalone possessive)"],
+      "tier": 2,
+      "reason": "Hypercorrection 'between you and I' is extremely common; teaches pronoun case after prepositions."
+    },
+    {
+      "question": "The denotation of a word is its ___?",
+      "answer": "Literal dictionary definition",
+      "choices": ["Emotional associations", "Literal dictionary definition", "Grammatical function", "Etymological origin"],
+      "tier": 2,
+      "reason": "Denotation vs connotation distinction belongs at T2; foundational for careful reading."
+    },
+    {
+      "question": "When a politician uses 'passed away' instead of 'died,' this is an example of ___?",
+      "answer": "Euphemism",
+      "choices": ["Hyperbole", "Euphemism", "Litotes", "Irony"],
+      "tier": 2,
+      "reason": "Concrete euphemism example at T2 level; connects abstract concept to real-world usage."
+    },
+    {
+      "question": "Which of the following best describes the connotation of 'stench' compared to 'smell'?",
+      "answer": "Stench has a strongly negative connotation; smell is neutral",
+      "choices": ["Both have identical connotations", "Stench has a strongly negative connotation; smell is neutral", "Smell has a more negative connotation than stench", "Stench is formal; smell is informal"],
+      "tier": 2,
+      "reason": "Concrete connotation comparison teaches word choice as a practical skill."
+    },
+    {
+      "question": "Which correctly completes: 'The new law will ___ your ability to appeal.'",
+      "answer": "Affect",
+      "choices": ["Effect", "Affect", "Affective", "Effecting"],
+      "tier": 2,
+      "reason": "Affect vs effect is one of the most commonly confused word pairs in English; high practical value."
+    },
+    {
+      "question": "The prefix 'mis-' (as in 'misplace,' 'mistake') means ___?",
+      "answer": "Wrongly or badly",
+      "choices": ["Before", "Wrongly or badly", "Again", "Not"],
+      "tier": 2,
+      "reason": "Common derivational prefix with high practical vocabulary value."
+    },
+    {
+      "question": "Past tense of 'hang' when referring to suspending an object?",
+      "answer": "Hung",
+      "choices": ["Hung", "Hanged", "Hangs", "Hange"],
+      "tier": 2,
+      "reason": "Hung vs hanged distinction tests awareness of semantic variation in irregular verbs."
+    },
+    {
+      "question": "Past tense of 'hang' when referring to an execution?",
+      "answer": "Hanged",
+      "choices": ["Hung", "Hanged", "Hangs", "Hange"],
+      "tier": 2,
+      "reason": "Hung vs hanged is a genuine and commonly misused distinction worth knowing."
+    },
+    {
+      "question": "In 'She has been waiting for an hour,' the verb phrase is in which tense?",
+      "answer": "Present perfect progressive",
+      "choices": ["Simple present", "Present perfect", "Present perfect progressive", "Past progressive"],
+      "tier": 2,
+      "reason": "Adds a conceptual tense question that tests understanding of aspect, not just bare conjugation."
+    },
+    {
+      "question": "Which is NOT one of the three modes of classical persuasion (the rhetorical triangle)?",
+      "answer": "Kairos (timing is a context, not one of the three appeal modes)",
+      "choices": ["Ethos (credibility)", "Pathos (emotion)", "Logos (logic)", "Kairos (timing is a context, not one of the three appeal modes)"],
+      "tier": 3,
+      "reason": "Introduces the classical rhetorical triangle (ethos/pathos/logos) which is foundational for analyzing argument."
+    },
+    {
+      "question": "Ethos, as a rhetorical mode, persuades by appealing to the speaker's ___?",
+      "answer": "Credibility and character",
+      "choices": ["Credibility and character", "Logic and evidence", "Audience's emotions", "Cultural traditions"],
+      "tier": 3,
+      "reason": "Ethos is a fundamental concept in rhetoric and argumentation; T3 practical level."
+    },
+    {
+      "question": "Pathos persuades by appealing to the audience's ___?",
+      "answer": "Emotions and sympathies",
+      "choices": ["Credibility and trust", "Emotions and sympathies", "Logic and reason", "Cultural authority"],
+      "tier": 3,
+      "reason": "Pathos is a core rhetorical concept essential for analyzing persuasive texts."
+    },
+    {
+      "question": "Logos persuades by appealing to ___?",
+      "answer": "Logic, evidence, and reason",
+      "choices": ["Logic, evidence, and reason", "The speaker's reputation", "Emotional impact", "Religious authority"],
+      "tier": 3,
+      "reason": "Logos is the third mode of the rhetorical triangle; essential for grammar and rhetoric mastery."
+    },
+    {
+      "question": "A straw man fallacy means the speaker ___?",
+      "answer": "Misrepresents the opponent's position to make it easier to attack",
+      "choices": ["Provides too much evidence", "Misrepresents the opponent's position to make it easier to attack", "Uses too many emotional appeals", "Repeats the same point too often"],
+      "tier": 3,
+      "reason": "Logical fallacies are central to understanding how arguments work or fail in prose; high practical value."
+    },
+    {
+      "question": "An ad hominem argument attacks the ___?",
+      "answer": "Person making the argument rather than the argument itself",
+      "choices": ["Evidence presented", "Person making the argument rather than the argument itself", "Conclusion of the argument", "Structure of the argument"],
+      "tier": 3,
+      "reason": "Ad hominem is one of the most common fallacies; essential critical reading skill."
+    },
+    {
+      "question": "A false dichotomy presents a situation as having only ___?",
+      "answer": "Two options when more exist",
+      "choices": ["No options at all", "Two options when more exist", "Too many options to evaluate", "Options that are all correct"],
+      "tier": 3,
+      "reason": "False dichotomy is extremely common in persuasive writing; high practical value."
+    },
+    {
+      "question": "A red herring in an argument is ___?",
+      "answer": "An irrelevant point introduced to distract from the main issue",
+      "choices": ["A strong counterargument", "An irrelevant point introduced to distract from the main issue", "A repeated claim for emphasis", "An appeal to emotion"],
+      "tier": 3,
+      "reason": "Red herring fallacy is very common in persuasive texts; practical critical reading skill."
+    },
+    {
+      "question": "The Greek prefix 'poly-' (as in 'polysyndeton') means ___?",
+      "answer": "Many",
+      "choices": ["Single", "Two", "Many", "None"],
+      "tier": 3,
+      "reason": "Knowing poly- = many ties vocabulary to rhetorical terms already in the quiz; practical T3 knowledge."
+    },
+    {
+      "question": "The Greek root 'logos' (as in 'dialogue,' 'monologue') primarily means ___?",
+      "answer": "Word, reason, or discourse",
+      "choices": ["Sound or voice", "Word, reason, or discourse", "Image or picture", "Form or shape"],
+      "tier": 3,
+      "reason": "Logos as a root connects etymology to the rhetorical concept of logos; double educational value."
+    },
+    {
+      "question": "Which suffix changes a verb into a noun meaning 'the act of' or 'the state of,' as in 'satisfaction'?",
+      "answer": "-tion / -ation",
+      "choices": ["-ment", "-tion / -ation", "-ness", "-ible"],
+      "tier": 3,
+      "reason": "Derivational suffix -tion is extremely productive in English; practical vocabulary building."
+    },
+    {
+      "question": "Which prefix means 'not' or 'opposite,' as in 'illogical,' 'immoral,' and 'impossible'?",
+      "answer": "In- (with variants il-, im-, ir-)",
+      "choices": ["Un- only", "In- (with variants il-, im-, ir-)", "Dis- only", "Non- only"],
+      "tier": 3,
+      "reason": "The in-/il-/im-/ir- prefix family (allomorphs) is high practical vocabulary value; also ties to morphology."
+    },
+    {
+      "question": "Which sentence avoids a dangling modifier?",
+      "answer": "Having studied all night, she passed the exam.",
+      "choices": ["Having studied all night, the exam was easy.", "Having studied all night, she passed the exam.", "Having studied, the results were good.", "Studied all night, she passed."],
+      "tier": 3,
+      "reason": "Additional dangling modifier practice with a clear contrast between correct and incorrect form."
+    },
+    {
+      "question": "Which sentence demonstrates a misplaced modifier?",
+      "answer": "She almost drove her children to school every day.",
+      "choices": ["She drove her children to school almost every day.", "She almost drove her children to school every day.", "Almost every day, she drove her children to school.", "She drove almost all her children to school."],
+      "tier": 3,
+      "reason": "'Almost drove' vs 'drove almost every day' is a classic and memorable misplaced-modifier example."
+    },
+    {
+      "question": "An active voice sentence is preferred over passive voice because it is ___?",
+      "answer": "More direct and clearer about who performs the action",
+      "choices": ["Longer and more formal", "More direct and clearer about who performs the action", "Harder to understand", "Always grammatically required"],
+      "tier": 3,
+      "reason": "Tests the WHY behind the active voice preference, not just identification of voice."
+    },
+    {
+      "question": "Which sentence uses 'imply' and 'infer' correctly?",
+      "answer": "The speaker implied guilt; the jury inferred it from the evidence.",
+      "choices": ["The speaker inferred guilt; the jury implied it.", "The speaker implied guilt; the jury inferred it from the evidence.", "Both imply and infer mean the same thing.", "The jury implied the verdict from the evidence."],
+      "tier": 3,
+      "reason": "Imply vs infer is a very common and important distinction for precise communication."
+    },
+    {
+      "question": "Which is the correct punctuation for a conjunctive adverb joining two independent clauses?",
+      "answer": "She was tired; however, she finished the work.",
+      "choices": ["She was tired, however she finished the work.", "She was tired however she finished the work.", "She was tired; however, she finished the work.", "She was tired: however, she finished the work."],
+      "tier": 3,
+      "reason": "Correct punctuation with conjunctive adverbs (semicolon before, comma after) is a very common error."
+    },
+    {
+      "question": "Which sentence uses a colon incorrectly?",
+      "answer": "She wants: to travel the world.",
+      "choices": ["Bring the following: pen, paper, and ruler.", "She wants: to travel the world.", "He had one goal: to succeed.", "The problem was clear: no one had planned ahead."],
+      "tier": 3,
+      "reason": "Identifying incorrect colon usage (after an incomplete clause) tests practical punctuation mastery."
+    },
+    {
+      "question": "Which sentence correctly uses a restrictive clause without commas?",
+      "answer": "Students who study regularly tend to succeed.",
+      "choices": ["Students, who study regularly, tend to succeed.", "Students who study regularly tend to succeed.", "The students, who study regularly, succeed.", "All students who, study regularly, succeed."],
+      "tier": 3,
+      "reason": "Restrictive clauses (no commas) vs non-restrictive (commas) is a critical practical punctuation skill."
+    },
+    {
+      "question": "Which rhetorical device is used in: 'Government of the people, by the people, for the people'?",
+      "answer": "Anaphora combined with epistrophe (symploce)",
+      "choices": ["Anaphora only", "Epistrophe only", "Anaphora combined with epistrophe (symploce)", "Chiasmus"],
+      "tier": 3,
+      "reason": "Tests nuanced application of anaphora/epistrophe with a classic example; introduces symploce."
+    },
+    {
+      "question": "Which is an example of an oxymoron?",
+      "answer": "Living death",
+      "choices": ["The sun rose at dawn.", "Living death", "She ran very quickly.", "He was a tall man."],
+      "tier": 3,
+      "reason": "Concrete oxymoron example at T3 to reinforce the definition-only coverage elsewhere."
+    },
+    {
+      "question": "Which type of irony occurs when the audience knows something the character does not?",
+      "answer": "Dramatic irony",
+      "choices": ["Verbal irony", "Situational irony", "Dramatic irony", "Sarcasm"],
+      "tier": 4,
+      "reason": "Distinguishing types of irony is a T4-level skill for sophisticated literary and rhetorical analysis."
+    },
+    {
+      "question": "Situational irony occurs when ___?",
+      "answer": "What happens is the opposite of what was expected",
+      "choices": ["A speaker says the opposite of what they mean", "What happens is the opposite of what was expected", "The audience knows more than the character", "A character is unaware of their own flaw"],
+      "tier": 4,
+      "reason": "Distinguishing situational from verbal and dramatic irony is important for accurate textual analysis."
+    },
+    {
+      "question": "The logical fallacy of concluding that because A preceded B, A caused B is called ___?",
+      "answer": "Post hoc ergo propter hoc",
+      "choices": ["Ad hominem", "Post hoc ergo propter hoc", "Circular reasoning", "Red herring"],
+      "tier": 4,
+      "reason": "Post hoc is one of the most common logical errors; knowing its name and pattern is T4 specialist knowledge."
+    },
+    {
+      "question": "Circular reasoning (begging the question) occurs when the conclusion ___?",
+      "answer": "Is assumed in the premise rather than proved",
+      "choices": ["Contradicts the evidence", "Is assumed in the premise rather than proved", "Is stated too strongly", "Is supported by too many examples"],
+      "tier": 4,
+      "reason": "Circular reasoning is foundational for understanding logical structure in argumentation."
+    },
+    {
+      "question": "A slippery slope argument claims that one step will inevitably lead to ___?",
+      "answer": "A chain of increasingly negative consequences",
+      "choices": ["An immediate contradiction", "A chain of increasingly negative consequences", "A logical proof", "A stronger argument"],
+      "tier": 4,
+      "reason": "Slippery slope is a common fallacy pattern in political and social prose; high practical value."
+    },
+    {
+      "question": "Etymology is the study of ___?",
+      "answer": "The historical origins and development of words",
+      "choices": ["Sentence structure rules", "The historical origins and development of words", "How sounds are produced", "How words are classified by part of speech"],
+      "tier": 4,
+      "reason": "Etymology is a core vocabulary-building concept; knowing it makes one a better reader and communicator."
+    },
+    {
+      "question": "The Latin prefix 'bene-' (as in 'benefit,' 'benevolent') means ___?",
+      "answer": "Well or good",
+      "choices": ["Bad or wrong", "Well or good", "Under or below", "Over or above"],
+      "tier": 4,
+      "reason": "Etymology of common Latin prefixes builds vocabulary systematically; practical T4 knowledge."
+    },
+    {
+      "question": "The Latin root 'dict-' (as in 'dictate,' 'predict,' 'verdict') means ___?",
+      "answer": "To say or speak",
+      "choices": ["To write", "To say or speak", "To lead", "To do"],
+      "tier": 4,
+      "reason": "Common Latin root with many English derivatives; builds vocabulary through etymology."
+    },
+    {
+      "question": "In 'Caesar came, saw, and conquered' (veni, vidi, vici), the lack of conjunctions is ___?",
+      "answer": "Asyndeton",
+      "choices": ["Polysyndeton", "Asyndeton", "Chiasmus", "Anaphora"],
+      "tier": 4,
+      "reason": "Classic historical example of asyndeton reinforces the abstract concept with a memorable case."
+    },
+    {
+      "question": "In 'I am tired and hungry and cold and wet,' the repeated 'and' is ___?",
+      "answer": "Polysyndeton",
+      "choices": ["Asyndeton", "Polysyndeton", "Anaphora", "Epistrophe"],
+      "tier": 4,
+      "reason": "Concrete polysyndeton example to complement the asyndeton example above."
+    },
+    {
+      "question": "Prolepsis as a rhetorical device anticipates and answers a potential ___?",
+      "answer": "Objection before it is raised",
+      "choices": ["Question about evidence", "Objection before it is raised", "Conclusion of the argument", "Definition of key terms"],
+      "tier": 4,
+      "reason": "Prolepsis (anticipating objections) is a sophisticated rhetorical technique worth knowing at T4."
+    },
+    {
+      "question": "Aporia is a rhetorical device in which a speaker expresses ___?",
+      "answer": "Deliberate doubt or uncertainty about which course to take",
+      "choices": ["Exaggerated certainty", "Deliberate doubt or uncertainty about which course to take", "Sudden emotional outburst", "Praise through seeming blame"],
+      "tier": 4,
+      "reason": "Aporia covers rhetorical doubt; complements existing T4 devices and adds argumentative nuance."
+    },
+    {
+      "question": "The word 'literally' used as an intensifier ('I literally died laughing') is an example of ___?",
+      "answer": "Semantic bleaching (loss of original meaning through overuse)",
+      "choices": ["Correct literal usage", "Hyperbole only", "Semantic bleaching (loss of original meaning through overuse)", "Metaphor"],
+      "tier": 4,
+      "reason": "Semantic bleaching is a T4 linguistics concept illustrated by a contemporary and relatable example."
+    },
+    {
+      "question": "Which sentence best demonstrates kairos (the rhetorical principle of timeliness)?",
+      "answer": "The senator spoke on the anniversary of the disaster, making the argument especially resonant.",
+      "choices": ["The speech used many statistics.", "The senator spoke on the anniversary of the disaster, making the argument especially resonant.", "The argument used strong emotional appeals.", "The speaker had excellent credentials."],
+      "tier": 4,
+      "reason": "Kairos (the right moment) is the fourth classical rhetorical concept; complements ethos/pathos/logos."
+    },
+    {
+      "question": "Which is an example of a portmanteau formed from 'smoke' and 'fog'?",
+      "answer": "Smog",
+      "choices": ["Smoke-fog", "Smog", "Fogsmoke", "Smoggy"],
+      "tier": 4,
+      "reason": "Concrete portmanteau example to reinforce the concept with a classic case."
+    },
+    {
+      "question": "A hasty generalization fallacy occurs when a conclusion is drawn from ___?",
+      "answer": "Too few examples or an unrepresentative sample",
+      "choices": ["Contradictory evidence", "Too few examples or an unrepresentative sample", "A famous authority figure", "Multiple valid studies"],
+      "tier": 5,
+      "reason": "Hasty generalization completes a set of logical fallacies at T5; critical for advanced argumentation analysis."
+    },
+    {
+      "question": "An appeal to authority fallacy occurs when someone argues a claim is true because ___?",
+      "answer": "An authority figure believes it, regardless of their relevant expertise",
+      "choices": ["Multiple studies support it", "The evidence is overwhelming", "An authority figure believes it, regardless of their relevant expertise", "The logic is airtight"],
+      "tier": 5,
+      "reason": "Appeal to authority (argumentum ad verecundiam) is a sophisticated logical fallacy; T5 argumentation knowledge."
+    },
+    {
+      "question": "In classical rhetoric, 'dispositio' refers to ___?",
+      "answer": "The arrangement or organization of a speech",
+      "choices": ["Word choice and style", "The arrangement or organization of a speech", "Delivery and pronunciation", "The speaker's character"],
+      "tier": 5,
+      "reason": "The five canons of rhetoric (inventio, dispositio, elocutio, memoria, actio) are T5-level classical knowledge."
+    },
+    {
+      "question": "Which is NOT one of the five classical canons of rhetoric?",
+      "answer": "Dialectica (logic was considered separate from rhetoric in classical theory)",
+      "choices": ["Inventio (invention of arguments)", "Memoria (memory)", "Actio (delivery)", "Dialectica (logic was considered separate from rhetoric in classical theory)"],
+      "tier": 5,
+      "reason": "Tests knowledge of the five canons by identifying what is NOT one of them; expert-level classical rhetoric."
+    },
+    {
+      "question": "Zeugma is rhetorically effective because it ___?",
+      "answer": "Creates humor or surprise by joining incongruous objects under one verb",
+      "choices": ["Adds formal weight to a sentence", "Creates humor or surprise by joining incongruous objects under one verb", "Makes the sentence longer and more complex", "Shows the speaker's vocabulary range"],
+      "tier": 5,
+      "reason": "Tests the WHY of zeugma's rhetorical effect, not just its definition; expert-level rhetorical analysis."
+    },
+    {
+      "question": "The term 'hapax legomenon' refers to a word that ___?",
+      "answer": "Appears only once in a corpus or author's works",
+      "choices": ["Has multiple conflicting meanings", "Appears only once in a corpus or author's works", "Cannot be traced to any root language", "Is used only in formal writing"],
+      "tier": 5,
+      "reason": "Hapax legomenon is a genuine T5 expert term for corpus linguistics and textual scholarship."
+    },
+    {
+      "question": "Synchronic linguistics studies a language ___?",
+      "answer": "At one point in time, without reference to history",
+      "choices": ["Through its historical development", "At one point in time, without reference to history", "Across different social classes", "In written form only"],
+      "tier": 5,
+      "reason": "Synchronic vs diachronic is a foundational distinction in linguistics; T5 level."
+    }
+  ]
+}
