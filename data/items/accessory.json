@@ -3546,7 +3546,7 @@
     "effects": {
       "stat": "WIS",
       "amount": 3,
-      "status": "regeneration",
+      "status": "regenerating",
       "duration": -1
     },
     "unidentified_name": "a necklace of four interlocked golden torcs",
@@ -3674,7 +3674,7 @@
     "equip_threshold": 4,
     "quiz_tier": 4,
     "effects": {
-      "status": "regeneration",
+      "status": "regenerating",
       "duration": -1,
       "stat": "CON",
       "amount": 2
@@ -3825,7 +3825,7 @@
     "equip_threshold": 4,
     "quiz_tier": 4,
     "effects": {
-      "status": "regeneration",
+      "status": "regenerating",
       "duration": -1,
       "stat": "WIS",
       "amount": 2
@@ -3904,7 +3904,7 @@
     "effects": {
       "stat": "CON",
       "amount": 3,
-      "status": "regeneration",
+      "status": "regenerating",
       "duration": -1
     },
     "unidentified_name": "a looped cross of gilded bronze",

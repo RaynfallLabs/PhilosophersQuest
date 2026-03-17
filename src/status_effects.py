@@ -37,6 +37,8 @@ EFFECT_INFO: dict[str, tuple] = {
     'cursed':             ('Cursed',             (120,  40, 160), 'Under a dark curse'),
     'weakened':           ('Weakened',           (150, 150,  80), 'Attack damage halved'),
     'bleeding':           ('Bleeding',           (200,  40,  40), 'Losing HP from wounds each turn'),
+    'doomed':             ('Doomed',             (100,  20,  20), 'A death-curse; losing 1 HP per ~8 turns'),
+    'draining':           ('Draining',           ( 80,  30, 100), 'Ring drains 1 HP per ~6 turns'),
     # ---- Buffs ----
     'hasted':             ('Hasted',             (245, 245,  60), 'Extra action each turn'),
     'invisible':          ('Invisible',          (185, 235, 235), 'Monsters have 30% miss chance'),
@@ -50,6 +52,13 @@ EFFECT_INFO: dict[str, tuple] = {
     'heroism':            ('Heroic',             (255, 200,  40), 'STR +2; surging with battle-strength'),
     'brilliance':         ('Brilliant',          (140, 180, 255), 'INT +1, WIS +1; mind razor-sharp'),
     'hallucinating_pot':  ('Hallucinating',      (210,  85, 230), 'Reality distorted; quiz timer -20%'),
+    # ---- Accessory-granted permanent buffs ----
+    'life_save':          ('Life Save',          (255, 215,  80), 'Survive one killing blow; effect is then spent'),
+    'sustained':          ('Sustained',          (150, 230, 170), 'SP drains at half rate; need less food'),
+    'truesight':          ('True Sight',         (200, 200, 255), 'See all monsters regardless of invisibility; +2 sight'),
+    'dark_vision':        ('Dark Vision',        ( 60,  80, 160), 'Sight radius +4 even in deep darkness'),
+    'identify_sight':     ('Identify Sight',     (220, 200, 150), 'Items auto-identified when picked up'),
+    'spell_turning':      ('Spell Turning',      (210, 175, 255), 'Reflects 100% of monster-cast debuffs back at attacker'),
     # ---- Active buffs (wand/accessory-granted) ----
     'blessed':            ('Blessed',            (200, 240, 160), 'All quiz timers +25%; divine clarity'),
     'shielded':          ('Shielded',           (120, 180, 245), '+2 AC; physical damage halved'),
@@ -73,7 +82,7 @@ DEBUFFS: frozenset = frozenset({
     'paralyzed', 'sleeping', 'stunned', 'confused', 'blinded', 'hallucinating',
     'poisoned', 'diseased', 'petrifying', 'strangulation', 'fumbling',
     'slowed', 'aggravated', 'teleportitis',
-    'feared', 'charmed', 'cursed', 'weakened', 'bleeding',
+    'feared', 'charmed', 'cursed', 'weakened', 'bleeding', 'doomed', 'draining',
 })
 
 BUFFS: frozenset = frozenset({
@@ -82,6 +91,7 @@ BUFFS: frozenset = frozenset({
     'shielded', 'fire_shield', 'cold_shield', 'reflecting', 'phasing', 'time_stopped', 'blessed',
     'fire_resist', 'cold_resist', 'shock_resist', 'poison_resist',
     'sleep_resist', 'magic_resist', 'drain_resist', 'disint_resist',
+    'life_save', 'sustained', 'truesight', 'dark_vision', 'identify_sight', 'spell_turning',
 })
 
 # Resistance effects that block specific debuffs from being applied
@@ -144,6 +154,12 @@ _EXPIRE_MSGS: dict[str, tuple] = {
     'bleeding':       ('Your wounds close.',                     'success'),
     'heroism':        ('The heroic surge fades. STR returns.',   'info'),
     'brilliance':     ('Your mind settles. INT and WIS return.', 'info'),
+    'doomed':         ('The doom curse has lifted.',             'success'),
+    'draining':       ('The ring stops draining your life.',     'success'),
+    'sustained':      ('Your ring of sustenance crumbles.',      'info'),
+    'truesight':      ('Your true sight fades.',                 'info'),
+    'dark_vision':    ('Your dark vision fades.',                'info'),
+    'spell_turning':  ('Your spell turning aura dissipates.',   'info'),
 }
 
 
@@ -225,6 +241,16 @@ def tick_all(player, dungeon=None) -> list[tuple[str, str]]:
             dmg = player.take_damage(1, 'physical')
             if dmg:
                 messages.append(('You are bleeding!', 'danger'))
+
+        elif effect == 'doomed':
+            if random.random() < 0.12:
+                player.hp = max(0, player.hp - 1)
+                messages.append(('The doom curse gnaws at your life force!', 'danger'))
+
+        elif effect == 'draining':
+            if random.random() < 0.17:
+                player.hp = max(0, player.hp - 1)
+                messages.append(('The ring drains your life force!', 'danger'))
 
         elif effect == 'weakened':
             pass  # damage halving is checked at combat time via has_effect('weakened')

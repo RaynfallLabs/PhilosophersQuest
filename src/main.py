@@ -2021,6 +2021,11 @@ class Game:
     # ------------------------------------------------------------------
 
     def _tick_sp(self):
+        # Ring of Sustenance halves SP drain rate (skips every other turn)
+        if self.player.has_effect('sustained'):
+            self._sustained_skip = not getattr(self, '_sustained_skip', False)
+            if self._sustained_skip:
+                return
         if self.player.sp > 0:
             self.player.sp -= 1
             if self.player.sp == 0:
@@ -2103,6 +2108,16 @@ class Game:
         if self.player.add_to_inventory(item):
             self.ground_items.remove(item)
             _snd.play('pickup')
+            # Philosopher's Amulet (identify_sight): auto-identify on pickup
+            if (self.player.has_effect('identify_sight')
+                    and hasattr(item, 'identified') and not item.identified
+                    and item.id not in self.player.known_item_ids):
+                item.identified = True
+                self.player.known_item_ids.add(item.id)
+                self.add_message(f"Your identify sight reveals: {item.name}!", 'info')
+                qs = getattr(self, 'quirk_system', None)
+                if qs:
+                    qs.on_item_identified()
             if isinstance(item, Ammo):
                 self.add_message(f"You pick up {item.count} {self._display_name(item)}s.", 'loot')
             else:
@@ -3672,6 +3687,12 @@ class Game:
                 self.dungeon.explored.add((item.x, item.y))
             self.add_message("A golden shimmer reveals hidden treasures!", 'success')
 
+        elif effect == 'mapping':
+            for y in range(self.dungeon.height):
+                for x in range(self.dungeon.width):
+                    self.dungeon.explored.add((x, y))
+            self.add_message("The wand maps the entire dungeon level into your mind!", 'success')
+
         elif effect == 'clairvoyance':
             for y in range(len(self.dungeon.tiles)):
                 for x in range(len(self.dungeon.tiles[y])):
@@ -3741,6 +3762,30 @@ class Game:
 
         elif effect == 'wish':
             self.add_message("The wand glows brilliantly... but you cannot yet speak your wish.", 'info')
+
+        elif effect == 'iron_mortar':
+            # Baba Yaga's Iron Mortar: the effect is never the same twice
+            _chaos = _rng.choice([
+                ('heal',       lambda: (self.player.restore_hp(25),
+                                        self.add_message("Chaotic healing washes over you! (+25 HP)", 'success'))),
+                ('teleport',   lambda: (self._teleport_player(),
+                                        self.add_message("The mortar warps you across the level!", 'warning'))),
+                ('haste',      lambda: (self.player.add_effect('hasted', 10),
+                                        self.add_message("Baba Yaga's magic hastens your step!", 'success'))),
+                ('confusion',  lambda: (self.player.add_effect('confused', 8),
+                                        self.add_message("The mortar's chaos clouds your mind!", 'danger'))),
+                ('mass_sleep', lambda: (
+                    [m.add_effect('sleeping', 12) for m in self.monsters if m.alive and (m.x, m.y) in self.visible],
+                    self.add_message("The mortar grinds out a sleep-fog over the room!", 'success'))),
+                ('regen',      lambda: (self.player.add_effect('regenerating', 20),
+                                        self.add_message("Ground-up hero bones restore your vitality!", 'success'))),
+                ('blast',      lambda: [
+                    (m.take_damage(_rng.randint(5, 15)), self._on_monster_killed(m) if not m.alive else None)
+                    for m in list(self.monsters) if m.alive and (m.x, m.y) in self.visible
+                ] or self.add_message("Chaotic energy blasts all visible enemies!", 'success')),
+            ])
+            _chaos[1]()
+            self.add_message("Baba Yaga's Iron Mortar churns with unpredictable magic!", 'warning')
 
         # ── Tier 5 wand effects ───────────────────────────────────────────
         elif effect == 'nova':
@@ -4890,6 +4935,15 @@ class Game:
                         m.alive = False
                         self._on_monster_killed(m)
 
+                # Life Save: if the blow was fatal, survive at 1 HP (burns the amulet)
+                if self.player.hp <= 0 and self.player.has_effect('life_save'):
+                    self.player.hp = 1
+                    del self.player.status_effects['life_save']
+                    self.add_message(
+                        "The amulet blazes — death averted! Its life-saving magic is spent.", 'success'
+                    )
+                    _snd.play('player_healed')
+
                 # Reflecting: negate 50% of newly applied status effects
                 _new_effects = set(self.player.status_effects.keys()) - _effects_before
                 if self.player.has_effect('reflecting') and _new_effects:
@@ -4901,6 +4955,18 @@ class Game:
                             _qs_refl = getattr(self, 'quirk_system', None)
                             if _qs_refl:
                                 _qs_refl.on_status_reflected()
+
+                # Spell Turning: reflect 100% of newly applied debuffs back at attacker
+                if self.player.has_effect('spell_turning') and _new_effects:
+                    from status_effects import DEBUFFS as _DEBUFFS
+                    for _new_eff in list(_new_effects):
+                        if _new_eff in _DEBUFFS:
+                            del self.player.status_effects[_new_eff]
+                            m.add_effect(_new_eff, 8)
+                            self.add_message(
+                                f"Your spell turning reflects the {_new_eff.replace('_', ' ')} "
+                                f"back at the {m.name}!", 'info'
+                            )
 
                 if dmg > 0:
                     _snd.play('player_hit')

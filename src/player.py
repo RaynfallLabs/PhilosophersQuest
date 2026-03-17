@@ -189,7 +189,12 @@ class Player:
         """Sight radius in tiles. Blindness caps it at 1."""
         if self.has_effect('blinded'):
             return 1
-        return max(3, self.PER // 2)
+        radius = max(3, self.PER // 2)
+        if self.has_effect('dark_vision'):
+            radius += 4
+        if self.has_effect('truesight'):
+            radius += 2
+        return radius
 
     def get_quiz_timer(self) -> int:
         """Base quiz timer in seconds (before modifiers)."""
