@@ -2839,7 +2839,7 @@
     ],
     "hp": "2d6",
     "speed": 1,
-    "ai_pattern": "cautious",
+    "ai_pattern": "cowardly",
     "min_level": 4,
     "thac0": 16,
     "frequency": 5,
@@ -3010,7 +3010,7 @@
     ],
     "hp": "2d8",
     "speed": 1,
-    "ai_pattern": "cautious",
+    "ai_pattern": "cowardly",
     "min_level": 5,
     "thac0": 15,
     "frequency": 5,
@@ -3192,7 +3192,7 @@
     ],
     "hp": "2d8",
     "speed": 1,
-    "ai_pattern": "cautious",
+    "ai_pattern": "cowardly",
     "min_level": 6,
     "thac0": 14,
     "frequency": 3,
@@ -3263,7 +3263,7 @@
       "physical"
     ],
     "weaknesses": [
-      "lightning"
+      "electric"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -3513,7 +3513,7 @@
       "poison"
     ],
     "weaknesses": [
-      "lightning"
+      "electric"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
@@ -3562,7 +3562,7 @@
       "physical"
     ],
     "weaknesses": [
-      "lightning",
+      "electric",
       "magic"
     ],
     "harvest_tier": 4,
@@ -3654,7 +3654,7 @@
       }
     ],
     "resistances": [
-      "lightning"
+      "electric"
     ],
     "weaknesses": [
       "shadow"
@@ -3700,7 +3700,7 @@
       }
     ],
     "resistances": [
-      "lightning"
+      "electric"
     ],
     "weaknesses": [
       "shadow"
@@ -3864,7 +3864,7 @@
     ],
     "weaknesses": [
       "fire",
-      "lightning"
+      "electric"
     ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
@@ -3909,7 +3909,7 @@
       "physical"
     ],
     "weaknesses": [
-      "lightning"
+      "electric"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
@@ -3960,7 +3960,7 @@
     ],
     "weaknesses": [
       "holy",
-      "lightning"
+      "electric"
     ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
@@ -4207,7 +4207,7 @@
       "cold"
     ],
     "weaknesses": [
-      "lightning"
+      "electric"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
@@ -4403,7 +4403,7 @@
     ],
     "resistances": [],
     "weaknesses": [
-      "lightning"
+      "electric"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -4610,7 +4610,7 @@
     ],
     "weaknesses": [
       "fire",
-      "lightning"
+      "electric"
     ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
@@ -4907,7 +4907,7 @@
       "poison"
     ],
     "weaknesses": [
-      "lightning",
+      "electric",
       "cold"
     ],
     "harvest_tier": 3,
@@ -5055,7 +5055,7 @@
     ],
     "resistances": [
       "magic",
-      "lightning"
+      "electric"
     ],
     "weaknesses": [
       "shadow"
@@ -5156,7 +5156,7 @@
     ],
     "weaknesses": [
       "cold",
-      "lightning"
+      "electric"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
@@ -5259,7 +5259,7 @@
     ],
     "weaknesses": [
       "holy",
-      "lightning"
+      "electric"
     ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
@@ -5361,7 +5361,7 @@
     ],
     "weaknesses": [
       "fire",
-      "lightning"
+      "electric"
     ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
@@ -5559,7 +5559,7 @@
     ],
     "weaknesses": [
       "holy",
-      "lightning"
+      "electric"
     ],
     "harvest_tier": 4,
     "harvest_threshold": 5,
@@ -5713,7 +5713,7 @@
       "cold"
     ],
     "weaknesses": [
-      "lightning",
+      "electric",
       "holy"
     ],
     "harvest_tier": 4,
@@ -5760,7 +5760,7 @@
       }
     ],
     "resistances": [
-      "lightning",
+      "electric",
       "fire"
     ],
     "weaknesses": [
@@ -5816,7 +5816,7 @@
     ],
     "weaknesses": [
       "holy",
-      "lightning"
+      "electric"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
@@ -5866,7 +5866,7 @@
     ],
     "weaknesses": [
       "magic",
-      "lightning"
+      "electric"
     ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
@@ -6210,7 +6210,7 @@
       }
     ],
     "resistances": [
-      "lightning"
+      "electric"
     ],
     "weaknesses": [],
     "harvest_tier": 3,
@@ -6362,7 +6362,7 @@
     ],
     "resistances": [
       "fire",
-      "lightning",
+      "electric",
       "poison"
     ],
     "weaknesses": [
@@ -6476,7 +6476,7 @@
     "resistances": [
       "fire",
       "poison",
-      "lightning"
+      "electric"
     ],
     "weaknesses": [
       "holy",
@@ -7490,7 +7490,7 @@
       "physical"
     ],
     "weaknesses": [
-      "lightning"
+      "electric"
     ],
     "harvest_tier": 4,
     "harvest_threshold": 5,
@@ -7537,7 +7537,7 @@
     ],
     "weaknesses": [
       "fire",
-      "lightning"
+      "electric"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
@@ -7629,7 +7629,7 @@
       "cold"
     ],
     "weaknesses": [
-      "lightning",
+      "electric",
       "magic"
     ],
     "harvest_tier": 2,
@@ -7673,7 +7673,7 @@
       "magic"
     ],
     "weaknesses": [
-      "lightning"
+      "electric"
     ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
@@ -7762,7 +7762,7 @@
       "cold"
     ],
     "weaknesses": [
-      "lightning",
+      "electric",
       "magic"
     ],
     "harvest_tier": 3,
@@ -7899,7 +7899,7 @@
     "resistances": [
       "cold",
       "physical",
-      "lightning"
+      "electric"
     ],
     "weaknesses": [
       "fire"
@@ -7986,7 +7986,7 @@
       }
     ],
     "resistances": [
-      "lightning",
+      "electric",
       "physical"
     ],
     "weaknesses": [
@@ -8347,7 +8347,7 @@
       "physical"
     ],
     "weaknesses": [
-      "lightning",
+      "electric",
       "magic"
     ],
     "harvest_tier": 3,
@@ -8677,7 +8677,7 @@
       "poison"
     ],
     "weaknesses": [
-      "lightning"
+      "electric"
     ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
@@ -8728,7 +8728,7 @@
       }
     ],
     "resistances": [
-      "lightning"
+      "electric"
     ],
     "weaknesses": [
       "cold"
@@ -9014,7 +9014,7 @@
     ],
     "resistances": [],
     "weaknesses": [
-      "lightning"
+      "electric"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
@@ -9979,7 +9979,7 @@
     "resistances": [
       "cold",
       "poison",
-      "lightning",
+      "electric",
       "physical"
     ],
     "weaknesses": [
@@ -10303,7 +10303,7 @@
     "weaknesses": [
       "holy",
       "fire",
-      "lightning"
+      "electric"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
@@ -10410,7 +10410,7 @@
       "poison",
       "magic",
       "fire",
-      "lightning",
+      "electric",
       "physical"
     ],
     "weaknesses": [
@@ -11214,7 +11214,7 @@
       "magic",
       "physical",
       "fire",
-      "lightning"
+      "electric"
     ],
     "weaknesses": [
       "holy"
@@ -11720,7 +11720,7 @@
     ],
     "weaknesses": [
       "holy",
-      "lightning"
+      "electric"
     ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
@@ -11781,7 +11781,7 @@
       "poison",
       "magic",
       "fire",
-      "lightning",
+      "electric",
       "shadow",
       "physical"
     ],
@@ -12112,7 +12112,7 @@
     ],
     "weaknesses": [
       "fire",
-      "lightning"
+      "electric"
     ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
@@ -12300,7 +12300,7 @@
       "magic"
     ],
     "weaknesses": [
-      "lightning"
+      "electric"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
@@ -12471,7 +12471,7 @@
       "physical"
     ],
     "weaknesses": [
-      "lightning"
+      "electric"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 3,
@@ -12711,7 +12711,7 @@
     ],
     "weaknesses": [
       "holy",
-      "lightning"
+      "electric"
     ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
@@ -13654,7 +13654,7 @@
       }
     ],
     "resistances": [
-      "lightning"
+      "electric"
     ],
     "weaknesses": [],
     "harvest_tier": 2,
@@ -13755,7 +13755,7 @@
     ],
     "resistances": [
       "physical",
-      "lightning"
+      "electric"
     ],
     "weaknesses": [],
     "harvest_tier": 5,
@@ -13845,7 +13845,7 @@
       }
     ],
     "resistances": [
-      "lightning"
+      "electric"
     ],
     "weaknesses": [],
     "harvest_tier": 3,
@@ -13892,7 +13892,7 @@
       }
     ],
     "resistances": [
-      "lightning"
+      "electric"
     ],
     "weaknesses": [
       "cold"
@@ -14025,7 +14025,7 @@
     ],
     "resistances": [
       "magic",
-      "lightning",
+      "electric",
       "physical"
     ],
     "weaknesses": [],
@@ -14537,7 +14537,7 @@
     ],
     "weaknesses": [
       "fire",
-      "lightning"
+      "electric"
     ],
     "harvest_tier": 4,
     "harvest_threshold": 5,
@@ -14583,7 +14583,7 @@
       }
     ],
     "resistances": [
-      "lightning",
+      "electric",
       "physical"
     ],
     "weaknesses": [
@@ -14800,7 +14800,7 @@
       }
     ],
     "resistances": [
-      "lightning",
+      "electric",
       "physical",
       "cold"
     ],
@@ -15509,7 +15509,7 @@
       "physical"
     ],
     "weaknesses": [
-      "lightning",
+      "electric",
       "fire"
     ],
     "harvest_tier": 5,
@@ -16131,7 +16131,7 @@
       "physical"
     ],
     "weaknesses": [
-      "lightning"
+      "electric"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
@@ -16177,7 +16177,7 @@
       }
     ],
     "resistances": [
-      "lightning"
+      "electric"
     ],
     "weaknesses": [],
     "harvest_tier": 4,
@@ -16224,7 +16224,7 @@
       }
     ],
     "resistances": [
-      "lightning",
+      "electric",
       "cold"
     ],
     "weaknesses": [],
@@ -16699,7 +16699,7 @@
       }
     ],
     "resistances": [
-      "lightning"
+      "electric"
     ],
     "weaknesses": [],
     "harvest_tier": 5,
@@ -18385,7 +18385,7 @@
     ],
     "weaknesses": [
       "drain",
-      "lightning"
+      "electric"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
@@ -18547,7 +18547,7 @@
     ],
     "weaknesses": [
       "holy",
-      "lightning"
+      "electric"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
@@ -18865,7 +18865,7 @@
       "cold"
     ],
     "weaknesses": [
-      "lightning",
+      "electric",
       "fire"
     ],
     "harvest_tier": 3,
@@ -18920,7 +18920,7 @@
     ],
     "weaknesses": [
       "holy",
-      "lightning"
+      "electric"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
@@ -19025,7 +19025,7 @@
       "blunt"
     ],
     "weaknesses": [
-      "lightning",
+      "electric",
       "fire"
     ],
     "harvest_tier": 3,
@@ -19130,7 +19130,7 @@
         "name": "hunger drain",
         "damage": "2d6",
         "type": "drain",
-        "effect": "starving_effect",
+        "effect": "diseased",
         "effect_chance": 0.55,
         "effect_duration": 6
       }
@@ -19257,7 +19257,7 @@
     ],
     "weaknesses": [
       "fire",
-      "lightning"
+      "electric"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
@@ -19317,7 +19317,7 @@
     ],
     "weaknesses": [
       "holy",
-      "lightning"
+      "electric"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 3,

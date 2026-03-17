@@ -39,6 +39,8 @@ EFFECT_INFO: dict[str, tuple] = {
     'bleeding':           ('Bleeding',           (200,  40,  40), 'Losing HP from wounds each turn'),
     'doomed':             ('Doomed',             (100,  20,  20), 'A death-curse; losing 1 HP per ~8 turns'),
     'draining':           ('Draining',           ( 80,  30, 100), 'Ring drains 1 HP per ~6 turns'),
+    'burning':            ('Burning',            (245, 100,  20), 'On fire! Losing 1 HP per turn'),
+    'frozen':             ('Frozen',             ( 80, 200, 245), 'Encased in ice; movement slowed'),
     # ---- Buffs ----
     'hasted':             ('Hasted',             (245, 245,  60), 'Extra action each turn'),
     'invisible':          ('Invisible',          (185, 235, 235), 'Monsters have 30% miss chance'),
@@ -83,6 +85,7 @@ DEBUFFS: frozenset = frozenset({
     'poisoned', 'diseased', 'petrifying', 'strangulation', 'fumbling',
     'slowed', 'aggravated', 'teleportitis',
     'feared', 'charmed', 'cursed', 'weakened', 'bleeding', 'doomed', 'draining',
+    'burning', 'frozen',
 })
 
 BUFFS: frozenset = frozenset({
@@ -99,6 +102,8 @@ _RESIST_BLOCKS: dict[str, set] = {
     'poison_resist': {'poisoned', 'diseased'},
     'sleep_resist':  {'sleeping', 'paralyzed'},
     'drain_resist':  {'diseased'},
+    'fire_resist':   {'burning'},
+    'cold_resist':   {'frozen'},
 }
 
 # Damage type → immunity status effect (first match wins; fire_shield overrides fire_resist)
@@ -156,6 +161,8 @@ _EXPIRE_MSGS: dict[str, tuple] = {
     'brilliance':     ('Your mind settles. INT and WIS return.', 'info'),
     'doomed':         ('The doom curse has lifted.',             'success'),
     'draining':       ('The ring stops draining your life.',     'success'),
+    'burning':        ('The flames are extinguished.',           'success'),
+    'frozen':         ('The ice cracks — you can move freely!',  'success'),
     'sustained':      ('Your ring of sustenance crumbles.',      'info'),
     'truesight':      ('Your true sight fades.',                 'info'),
     'dark_vision':    ('Your dark vision fades.',                'info'),
@@ -251,6 +258,15 @@ def tick_all(player, dungeon=None) -> list[tuple[str, str]]:
             if random.random() < 0.17:
                 player.hp = max(0, player.hp - 1)
                 messages.append(('The ring drains your life force!', 'danger'))
+
+        elif effect == 'burning':
+            if not player.has_effect('fire_resist') and not player.has_effect('fire_shield'):
+                dmg = player.take_damage(1, 'fire')
+                if dmg:
+                    messages.append(('You are on fire!', 'danger'))
+
+        elif effect == 'frozen':
+            pass  # slowing mechanic handled by caller; cold DOT negligible
 
         elif effect == 'weakened':
             pass  # damage halving is checked at combat time via has_effect('weakened')

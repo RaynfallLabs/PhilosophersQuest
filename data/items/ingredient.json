@@ -13949,5 +13949,58 @@
         "bonus_amount": 1
       }
     }
+  },
+  "frost_sac": {
+    "name": "frost sac",
+    "symbol": ",",
+    "color": [
+      120,
+      210,
+      245
+    ],
+    "weight": 2.0,
+    "min_level": 7,
+    "source_monster": "drake_cold",
+    "recipes": {
+      "0": {
+        "name": "burst frost sac mess",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "frost sac broth",
+        "sp": 30,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "chilled drake essence",
+        "sp": 60,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "frostbite concentrate",
+        "sp": 100,
+        "bonus_type": "status",
+        "bonus_amount": 20,
+        "bonus_effect": "cold_resist"
+      },
+      "4": {
+        "name": "glacial drake reduction",
+        "sp": 145,
+        "bonus_type": "status",
+        "bonus_amount": 35,
+        "bonus_effect": "cold_resist"
+      },
+      "5": {
+        "name": "supreme frost drake elixir",
+        "sp": 200,
+        "bonus_type": "stat",
+        "bonus_amount": 1,
+        "bonus_stat": "CON"
+      }
+    }
   }
 }

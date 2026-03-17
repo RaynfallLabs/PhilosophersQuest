@@ -55,6 +55,7 @@ class Monster:
         """Decrement all active effects by one turn. Apply damage-over-time effects."""
         bleeding_dmg = 0
         poison_dmg   = 0
+        burning_dmg  = 0
         disease_tick = False
         for name in list(self.status_effects):
             val = self.status_effects[name]
@@ -65,6 +66,8 @@ class Monster:
                     poison_dmg = 1
                 elif name == 'diseased':
                     disease_tick = True
+                elif name == 'burning':
+                    burning_dmg = max(1, self.max_hp // 20)
             self.status_effects[name] -= 1
             if self.status_effects[name] <= 0:
                 del self.status_effects[name]
@@ -75,6 +78,8 @@ class Monster:
             self.take_damage(bleeding_dmg)
         if poison_dmg > 0:
             self.take_damage(poison_dmg)
+        if burning_dmg > 0:
+            self.take_damage(burning_dmg)
         if disease_tick and random.random() < 0.08:
             self.take_damage(max(1, self.max_hp // 20))
 

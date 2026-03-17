@@ -8341,6 +8341,9 @@ def main():
     else:
         game = Game(screen, player_name=player_name, secret_build=secret_build)
 
+    global _crash_game_ref
+    _crash_game_ref = game
+
     running = True
 
     while running:
@@ -8359,5 +8362,15 @@ def main():
     sys.exit()
 
 
+_crash_game_ref = None   # set by main() once Game is constructed
+
 if __name__ == "__main__":
-    main()
+    import crash_handler as _crash
+    try:
+        main()
+    except SystemExit:
+        raise
+    except Exception:
+        path = _crash.write_crash_report(*sys.exc_info(), game=_crash_game_ref)
+        print(f"\nCRASH — report written to:\n  {path}", file=sys.stderr)
+        raise
