@@ -7,7 +7,7 @@ Effect durations are stored in player.status_effects as:
   absent / 0 = not active
 
 All NetHack-style effects are registered here even if their
-full mechanics are yet to be wired in — the UI, tick, and
+full mechanics are yet to be wired in -- the UI, tick, and
 resistance systems are fully active for all of them.
 """
 
@@ -26,13 +26,13 @@ EFFECT_INFO: dict[str, tuple] = {
     'hallucinating':      ('Hallucinating',      (210,  85, 230), 'Reality distorted; quiz timer -20%'),
     'poisoned':           ('Poisoned',           ( 80, 210,  60), 'Losing 1 HP per turn'),
     'diseased':           ('Diseased',           (135, 205,  60), 'Slowly drains STR/CON'),
-    'petrifying':         ('Petrifying',         (205, 205, 130), 'Turning to stone — find a cure!'),
+    'petrifying':         ('Petrifying',         (205, 205, 130), 'Turning to stone -- find a cure!'),
     'strangulation':      ('Strangled',          (200,  80,  80), 'Losing 2 HP per turn'),
     'fumbling':           ('Fumbling',           (220, 170,  80), '20% chance actions fail'),
     'slowed':             ('Slowed',             (155, 155, 230), 'Every other action is skipped'),
     'aggravated':         ('Aggravated',         (230, 100,  50), 'All monsters are alerted'),
     'teleportitis':       ('Teleportitis',       (100, 225, 225), 'May randomly teleport (4%/turn)'),
-    'feared':             ('Feared',             (200,  80, 200), 'Fleeing — cannot approach enemies'),
+    'feared':             ('Feared',             (200,  80, 200), 'Fleeing -- cannot approach enemies'),
     'charmed':            ('Charmed',            (255, 160, 200), 'Under enemy influence'),
     'cursed':             ('Cursed',             (120,  40, 160), 'Under a dark curse'),
     'weakened':           ('Weakened',           (150, 150,  80), 'Attack damage halved'),
@@ -68,7 +68,7 @@ EFFECT_INFO: dict[str, tuple] = {
     'cold_shield':        ('Cold Shield',        ( 80, 200, 245), 'Immune to cold; reflects cold attacks'),
     'reflecting':         ('Reflecting',         (220, 220, 180), '50% chance to reflect monster status attacks'),
     'phasing':            ('Phasing',            (180, 180, 220), 'Can walk through walls'),
-    'time_stopped':       ('Time Stop',          (245, 220, 100), 'Time is frozen — monsters cannot act'),
+    'time_stopped':       ('Time Stop',          (245, 220, 100), 'Time is frozen -- monsters cannot act'),
     # ---- Resistances (can be timed or permanent) ----
     'fire_resist':        ('Fire Resist',        (245, 130,  50), 'Immune to fire damage'),
     'cold_resist':        ('Cold Resist',        (100, 195, 245), 'Immune to cold damage'),
@@ -106,7 +106,7 @@ _RESIST_BLOCKS: dict[str, set] = {
     'cold_resist':   {'frozen'},
 }
 
-# Damage type → immunity status effect (first match wins; fire_shield overrides fire_resist)
+# Damage type -> immunity status effect (first match wins; fire_shield overrides fire_resist)
 DAMAGE_IMMUNITY: dict[str, str] = {
     'fire':    'fire_resist',
     'cold':    'cold_resist',
@@ -125,13 +125,13 @@ SHIELD_IMMUNITY: dict[str, str] = {
 _EXPIRE_MSGS: dict[str, tuple] = {
     'paralyzed':      ('You can move again.',                    'info'),
     'sleeping':       ('You wake up!',                           'info'),
-    'stunned':        ('Your head clears — no longer stunned.',  'info'),
+    'stunned':        ('Your head clears -- no longer stunned.',  'info'),
     'confused':       ('Your mind sharpens. Confusion gone.',    'info'),
     'blinded':        ('Your vision returns!',                   'success'),
     'hallucinating':  ('Reality snaps back into focus.',         'info'),
     'poisoned':       ('The poison leaves your body.',           'success'),
     'diseased':       ('You recover from the disease.',          'success'),
-    'strangulation':  ('You gasp free — strangulation ends.',    'success'),
+    'strangulation':  ('You gasp free -- strangulation ends.',    'success'),
     'fumbling':       ('You regain your footing.',               'info'),
     'slowed':         ('You are moving at normal speed.',        'info'),
     'aggravated':     ('The monsters calm down.',                'info'),
@@ -162,7 +162,7 @@ _EXPIRE_MSGS: dict[str, tuple] = {
     'doomed':         ('The doom curse has lifted.',             'success'),
     'draining':       ('The ring stops draining your life.',     'success'),
     'burning':        ('The flames are extinguished.',           'success'),
-    'frozen':         ('The ice cracks — you can move freely!',  'success'),
+    'frozen':         ('The ice cracks -- you can move freely!',  'success'),
     'sustained':      ('Your ring of sustenance crumbles.',      'info'),
     'truesight':      ('Your true sight fades.',                 'info'),
     'dark_vision':    ('Your dark vision fades.',                'info'),
@@ -185,7 +185,7 @@ def apply_effect(player, effect: str, duration: int) -> bool:
 
     current = player.status_effects.get(effect, 0)
     if current == -1:
-        return False  # permanent — can't be changed
+        return False  # permanent -- can't be changed
 
     if duration == -1:
         player.status_effects[effect] = -1
@@ -200,8 +200,8 @@ def tick_all(player, dungeon=None) -> list[tuple[str, str]]:
     Returns list of (message_text, message_type) tuples.
     May mutate player.hp, player stats, and player.status_effects.
     Special signals prefixed with '_' are meant for main.py:
-        '_teleport'      — teleport the player to a random tile
-        '_petrify_death' — player has fully turned to stone (death)
+        '_teleport'      -- teleport the player to a random tile
+        '_petrify_death' -- player has fully turned to stone (death)
     """
     import random
     messages: list[tuple[str, str]] = []
@@ -236,7 +236,7 @@ def tick_all(player, dungeon=None) -> list[tuple[str, str]]:
 
         elif effect == 'petrifying':
             if val <= 3:
-                messages.append(('Your limbs are rigid — death is moments away!', 'danger'))
+                messages.append(('Your limbs are rigid -- death is moments away!', 'danger'))
                 if val == 1:
                     messages.append(('_petrify_death', 'danger'))
             elif val <= 6:

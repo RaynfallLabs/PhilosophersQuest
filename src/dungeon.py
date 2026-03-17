@@ -40,7 +40,7 @@ TRAP_TYPES = [
     {'type': 'arrow',    'damage': '1d6+2', 'damage_type': 'pierce',   'message': 'An arrow fires from the wall!',     'symbol': '^', 'color': (180, 140, 80)},
     {'type': 'alarm',    'damage': '0',     'damage_type': 'none',     'message': 'A pressure plate triggers an alarm!','symbol': '^', 'color': (200, 50, 50)},
     {'type': 'acid',     'damage': '2d4',   'damage_type': 'acid',     'message': 'Acid sprays from a nozzle!',        'symbol': '^', 'color': (100, 200, 50)},
-    {'type': 'teleport', 'damage': '0',     'damage_type': 'none',     'message': 'The floor vanishes — you teleport!','symbol': '^', 'color': (100, 100, 220)},
+    {'type': 'teleport', 'damage': '0',     'damage_type': 'none',     'message': 'The floor vanishes -- you teleport!','symbol': '^', 'color': (100, 100, 220)},
 ]
 
 # ---------------------------------------------------------------------------
@@ -206,7 +206,7 @@ def generate_dungeon(width: int = 80, height: int = 50, level: int = 1) -> Dunge
     rng   = random.Random()
     tiles = [[WALL] * width for _ in range(height)]
 
-    # ── 1. BSP partitioning ──────────────────────────────────────────────────
+    # -- 1. BSP partitioning --------------------------------------------------
     root   = _BSPNode(1, 1, width - 2, height - 2)
     queue  = [root]
     target = min(6 + level * 2, 18)
@@ -220,7 +220,7 @@ def generate_dungeon(width: int = 80, height: int = 50, level: int = 1) -> Dunge
             queue.append(node.left)
             queue.append(node.right)
 
-    # ── 2. Place one room in each BSP leaf ───────────────────────────────────
+    # -- 2. Place one room in each BSP leaf -----------------------------------
     rooms: List[Room] = []
     for leaf in root.leaves():
         room = _room_in_leaf(leaf, rng)
@@ -230,19 +230,19 @@ def generate_dungeon(width: int = 80, height: int = 50, level: int = 1) -> Dunge
             for rx, ry in room.inner_tiles():
                 tiles[ry][rx] = FLOOR
 
-    # ── 3. Connect sibling pairs up the BSP tree ─────────────────────────────
+    # -- 3. Connect sibling pairs up the BSP tree -----------------------------
     _connect_bsp(root, tiles, rng)
 
-    # ── 4. Place doors at room-wall openings ─────────────────────────────────
+    # -- 4. Place doors at room-wall openings ---------------------------------
     _place_doors(tiles, rooms, rng, chance=0.70)
 
-    # ── 5. Place secret doors (shortcuts) ────────────────────────────────────
+    # -- 5. Place secret doors (shortcuts) ------------------------------------
     _place_secret_doors(tiles, width, height, rooms, rng, level)
 
-    # ── 5b. Carve hidden chambers off existing corridors/rooms ───────────────
+    # -- 5b. Carve hidden chambers off existing corridors/rooms ---------------
     hidden_chambers = _place_hidden_chambers(tiles, rooms, width, height, rng, level)
 
-    # ── 6. Place stairs ──────────────────────────────────────────────────────
+    # -- 6. Place stairs ------------------------------------------------------
     if len(rooms) >= 2:
         sx, sy = rooms[0].center
         tiles[sy][sx] = STAIRS_UP
@@ -252,7 +252,7 @@ def generate_dungeon(width: int = 80, height: int = 50, level: int = 1) -> Dunge
         cx, cy = rooms[0].center
         tiles[cy][cx] = STAIRS_UP
 
-    # ── 7. Place altar (one per 15 levels: level 1, 16, 31, 46, ...) ─────────
+    # -- 7. Place altar (one per 15 levels: level 1, 16, 31, 46, ...) ---------
     if level % 15 == 1 and len(rooms) >= 2:
         # Place altar in a random room (not the first room where player starts)
         altar_room = rng.choice(rooms[1:])
@@ -334,13 +334,13 @@ def _carve_v(tiles, y1: int, y2: int, x: int):
 def _place_doors(tiles, rooms: List[Room], rng: random.Random, chance: float = 0.70):
     """
     A corridor enters a room by carving through the room's outer wall.
-    Any room-wall tile that is FLOOR was carved by a corridor — make it a DOOR.
+    Any room-wall tile that is FLOOR was carved by a corridor -- make it a DOOR.
     """
     for room in rooms:
         for wx, wy in room.wall_tiles():
             if tiles[wy][wx] == FLOOR:
                 # Confirm it's a valid 1-tile passage (not a wide opening)
-                # Count orthogonal floor neighbors — a doorway has exactly 2
+                # Count orthogonal floor neighbors -- a doorway has exactly 2
                 floor_nbrs = sum(
                     1 for dx, dy in [(0,-1),(0,1),(-1,0),(1,0)]
                     if 0 <= wx+dx < len(tiles[0]) and 0 <= wy+dy < len(tiles)
@@ -442,7 +442,7 @@ def _place_hidden_chambers(tiles, rooms: List[Room], width: int, height: int,
         rng.shuffle(directions)
 
         for ddx, ddy in directions:
-            # Layout: anchor(FLOOR) → door_tile(must be WALL → SECRET_DOOR) → chamber
+            # Layout: anchor(FLOOR) -> door_tile(must be WALL -> SECRET_DOOR) -> chamber
             door_x = ax + ddx
             door_y = ay + ddy
 
@@ -515,7 +515,7 @@ def _place_hidden_chambers(tiles, rooms: List[Room], width: int, height: int,
 
 
 # ---------------------------------------------------------------------------
-# Spawn helpers  (unchanged signatures — called by level_manager)
+# Spawn helpers  (unchanged signatures -- called by level_manager)
 # ---------------------------------------------------------------------------
 
 def spawn_monsters(rooms: List[Room], level: int, dungeon: Dungeon,
@@ -579,7 +579,7 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
     rng          = random.Random()
     ground_items = []
 
-    # ── Regular items (weapons/armor/shield/accessories/wands/scrolls/ammo) — 33% per room ──
+    # -- Regular items (weapons/armor/shield/accessories/wands/scrolls/ammo) -- 33% per room --
     templates: list = []
     for cls_name in ('weapon', 'armor', 'shield', 'accessory', 'wand', 'scroll', 'spellbook', 'ammo'):
         try:
@@ -594,7 +594,7 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
             continue
         _place_one(eligible, room, dungeon, ground_items, rng)
 
-    # ── Containers — guaranteed minimum 1; diminishing extras ────────────────
+    # -- Containers -- guaranteed minimum 1; diminishing extras ----------------
     try:
         all_containers = load_items('container')
     except FileNotFoundError:
@@ -615,7 +615,7 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
         weights = [c.extra_item_chance for c in eligible_containers]
         chosen  = rng.choices(eligible_containers, weights=weights, k=1)[0]
         inst    = copy.copy(chosen)
-        # Map dungeon level 1-100 to container tier 1-5, with ±1 variance
+        # Map dungeon level 1-100 to container tier 1-5, with +/-1 variance
         base_tier = max(1, min(5, (level - 1) // 20 + 1))
         inst.tier = max(1, min(5, base_tier + rng.randint(-1, 1)))
         inst.is_mimic = rng.random() < _MIMIC_CHANCE
@@ -635,9 +635,9 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
         c = pick_container()
         if c:
             _place_one([c], room, dungeon, ground_items, rng)
-        extra_chance *= 0.45   # 0.55 → 0.25 → 0.11 → …
+        extra_chance *= 0.45   # 0.55 -> 0.25 -> 0.11 -> ...
 
-    # ── Lockpicks — 1-2 per level, in random rooms ─────────────────────────
+    # -- Lockpicks -- 1-2 per level, in random rooms -------------------------
     try:
         all_picks = load_items('lockpick')
     except FileNotFoundError:
@@ -649,7 +649,7 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
     for room in rooms_for_picks:
         _place_one(eligible_picks, room, dungeon, ground_items, rng)
 
-    # ── Food — 1-3 items scattered across rooms ──────────────────────────────
+    # -- Food -- 1-3 items scattered across rooms ------------------------------
     try:
         all_food = load_items('food')
     except FileNotFoundError:
@@ -661,7 +661,7 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
     for room in food_rooms:
         _place_one(eligible_food, room, dungeon, ground_items, rng)
 
-    # ── Potions — 1-2 per level, weighted by floorSpawnWeight ────────────────
+    # -- Potions -- 1-2 per level, weighted by floorSpawnWeight ----------------
     try:
         all_potions = load_items('potion')
     except FileNotFoundError:
@@ -673,7 +673,7 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
     for room in potion_rooms:
         _place_one(eligible_potions, room, dungeon, ground_items, rng)
 
-    # ── Mystery altars ────────────────────────────────────────────────────────
+    # -- Mystery altars --------------------------------------------------------
     try:
         from mystery_system import spawn_mystery_for_level
         mystery_result = spawn_mystery_for_level(level, rooms, dungeon, ground_items, rng)
@@ -685,7 +685,7 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
     except Exception:
         pass  # mystery system is optional; don't crash dungeon gen on error
 
-    # ── Travelling merchant ───────────────────────────────────────────────────
+    # -- Travelling merchant ---------------------------------------------------
     try:
         from mystery_system import spawn_merchant
         merchant = spawn_merchant(level, rooms, dungeon, ground_items, rng)
@@ -694,7 +694,7 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
     except Exception:
         pass  # merchant is optional; don't crash dungeon gen on error
 
-    # ── Special rooms ─────────────────────────────────────────────────────────
+    # -- Special rooms ---------------------------------------------------------
     SPECIAL_ROOM_CHANCE = 0.35
     if rng.random() < SPECIAL_ROOM_CHANCE and len(rooms) > 3:
         special_room = rng.choice(rooms[2:])
@@ -738,7 +738,7 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
         elif room_type == 'monster_den':
             pass  # monster density handled by spawn_monsters seeing the flag
 
-    # ── Floor traps ───────────────────────────────────────────────────────────
+    # -- Floor traps -----------------------------------------------------------
     start_center = rooms[0].center if rooms else (0, 0)
     n_traps = rng.randint(1, min(3, 1 + level // 20))
     trap_candidates = []
@@ -760,11 +760,11 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
 def _item_eligible_weighted(templates: list, level: int) -> list:
     """Build a category-balanced weighted pool for non-food items.
 
-    Items are first grouped by class (Weapon, Armor, Scroll, …) so that each
+    Items are first grouped by class (Weapon, Armor, Scroll, ...) so that each
     category contributes equally regardless of its raw floorSpawnWeight values.
     Within a category, weights are normalised to SLOTS_PER_TYPE total slots so
     that heavily-weighted items (e.g. iron swords at L1) still appear more
-    often than rare items — but weapons can't crowd out armor 100:1.
+    often than rare items -- but weapons can't crowd out armor 100:1.
     """
     from collections import defaultdict
 
@@ -791,12 +791,12 @@ def _item_eligible_weighted(templates: list, level: int) -> list:
         total_w = sum(w for _, w in items_weights) or 1
         n = len(items_weights)
         if n <= SLOTS_PER_TYPE:
-            # Few candidates — give each at least 1 slot, proportional distribution
+            # Few candidates -- give each at least 1 slot, proportional distribution
             for item, w in items_weights:
                 slots = max(1, round(w / total_w * SLOTS_PER_TYPE))
                 eligible.extend([item] * slots)
         else:
-            # Many candidates — sort by weight, take the top SLOTS_PER_TYPE, 1 slot each
+            # Many candidates -- sort by weight, take the top SLOTS_PER_TYPE, 1 slot each
             items_weights.sort(key=lambda x: -x[1])
             for item, _ in items_weights[:SLOTS_PER_TYPE]:
                 eligible.append(item)

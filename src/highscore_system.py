@@ -1,5 +1,5 @@
 """
-highscore_system.py — Persistent high score table for Philosopher's Quest.
+highscore_system.py -- Persistent high score table for Philosopher's Quest.
 
 Stores up to MAX_ENTRIES runs in a JSON file next to the src/ directory.
 Each entry: {name, score, grade, level, kills, turns, date, victory}
@@ -65,7 +65,7 @@ def add_score(
     entries.sort(key=lambda e: e.get('score', 0), reverse=True)
     entries = entries[:MAX_ENTRIES]
     _save(entries)
-    # Find rank of this entry (by score value — may not be unique)
+    # Find rank of this entry (by score value -- may not be unique)
     for i, e in enumerate(entries):
         if e is entry or (e['score'] == score and e['name'] == name and e['date'] == entry['date']):
             return i + 1

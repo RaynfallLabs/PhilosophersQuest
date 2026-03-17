@@ -70,7 +70,7 @@ class Sidebar:
         self.screen = screen
         self.x = x
         self.w = SIDEBAR_W
-        # FANTASY: Grimoire font set — larger for readability
+        # FANTASY: Grimoire font set -- larger for readability
         self._fsm   = get_font('body', 20)
         self._fbold = get_font('body', 20, bold=True)
         self._fhd   = get_font('heading', 19)
@@ -201,7 +201,7 @@ class Sidebar:
             )
             y += 22
 
-        # Prayer cooldown — FANTASY colors
+        # Prayer cooldown -- FANTASY colors
         if player.prayer_cooldown > 0:
             pray_color = (140, 100, 200)   # cooldown: arcane purple
             self.screen.blit(
@@ -229,7 +229,7 @@ class Sidebar:
             )
         y += 22
 
-        # Hunger indicator — FANTASY colors
+        # Hunger indicator -- FANTASY colors
         sp = player.sp
         if sp < 20:
             self.screen.blit(
@@ -324,7 +324,7 @@ class Sidebar:
             iname = self._fit(self._fsm, self._cap(iname), max_name_w)
             self.screen.blit(self._fsm.render(iname, True, ic), (name_x, y))
             y += 22
-        # Philosopher's Amulet — passive carry indicator (not an equip slot)
+        # Philosopher's Amulet -- passive carry indicator (not an equip slot)
         if has_phil:
             phil_surf = self._fsm.render("\u2605 Phil. Amulet", True, (220, 180, 40))
             self.screen.blit(phil_surf, (self.x + self.PAD, y))

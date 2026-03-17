@@ -29,7 +29,7 @@ def write_crash_report(exc_type, exc_value, exc_tb, game=None) -> str:
     Parameters
     ----------
     exc_type, exc_value, exc_tb : exception triple from sys.exc_info()
-    game : Game instance (optional) — used to capture live game state
+    game : Game instance (optional) -- used to capture live game state
     """
     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
     filename  = f"crash_{timestamp}.txt"
@@ -38,7 +38,7 @@ def write_crash_report(exc_type, exc_value, exc_tb, game=None) -> str:
     lines = []
 
     lines.append("=" * 70)
-    lines.append("  PHILOSOPHER'S QUEST — CRASH REPORT")
+    lines.append("  PHILOSOPHER'S QUEST -- CRASH REPORT")
     lines.append("=" * 70)
     lines.append(f"  Time    : {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     lines.append(f"  Platform: {platform.platform()}")

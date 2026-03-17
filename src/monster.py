@@ -110,7 +110,7 @@ class Monster:
 
         atk = random.choice(self.attacks)
 
-        # ── THAC0 Attack Roll ──────────────────────────────────────────────
+        # -- THAC0 Attack Roll ----------------------------------------------
         d20 = random.randint(1, 20)
         player_ac = player.get_ac()
         to_hit = self.thac0 - player_ac   # roll must be >= this to hit
@@ -125,7 +125,7 @@ class Monster:
         if player.has_effect('displacement') and random.random() < 0.30:
             return 0, f"The {self.name} strikes at your displaced image and misses!"
 
-        # ── Hit: roll damage ───────────────────────────────────────────────
+        # -- Hit: roll damage -----------------------------------------------
         dmg = roll(atk['damage'])
         atk_type = atk.get('type', 'physical')
 
@@ -163,7 +163,7 @@ class Monster:
                 # Reflecting: 50% chance to bounce effect back at attacker
                 if player.has_effect('reflecting') and random.random() < 0.50:
                     self.add_effect(effect_id, duration)
-                    msg += f" The effect reflects back — the {self.name} is {effect_id}!"
+                    msg += f" The effect reflects back -- the {self.name} is {effect_id}!"
                 else:
                     applied = player.add_effect(effect_id, duration)
                     if applied:
@@ -258,9 +258,9 @@ class Monster:
 
 
 class DeathMonster(Monster):
-    """The Grim Reaper — invincible pursuer spawned when the player ascends from L100
+    """The Grim Reaper -- invincible pursuer spawned when the player ascends from L100
     with the Philosopher's Stone.  Moves at half speed but always hits and deals
-    heavy damage.  Cannot be killed, dispelled, or escaped — only outrun."""
+    heavy damage.  Cannot be killed, dispelled, or escaped -- only outrun."""
 
     _DEFN = {
         'id': 'death',
@@ -269,7 +269,7 @@ class DeathMonster(Monster):
         'color': [220, 220, 255],
         'ai_pattern': 'aggressive',
         'speed': 1,
-        'hp': '1',          # irrelevant — take_damage is overridden
+        'hp': '1',          # irrelevant -- take_damage is overridden
         'attacks': [{'name': 'reap', 'damage': '2d20+47', 'type': 'physical'}],
         'thac0': -20,       # always hits
         'resistances': [],
@@ -307,7 +307,7 @@ class DeathMonster(Monster):
         return super().take_turn(player, dungeon, all_monsters)
 
     def attack(self, player) -> tuple[int, str]:
-        """Death always hits — no THAC0 roll needed."""
+        """Death always hits -- no THAC0 roll needed."""
         dmg = roll(self._DEFN['attacks'][0]['damage'])
         actual = player.take_damage(dmg, 'physical')
         return actual, f"Death's scythe tears through you for {actual} damage!"

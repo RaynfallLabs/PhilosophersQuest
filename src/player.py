@@ -83,7 +83,7 @@ class Player:
         if shield_effect and self.has_effect(shield_effect):
             return 0
 
-        # Fractional resistance: status/accessory effects × armor resistances
+        # Fractional resistance: status/accessory effects x armor resistances
         resistance = self.resistances.get(damage_type, 1.0)
         resistance *= self.get_armor_resistance(damage_type)
         actual = max(0, int(amount * resistance))
@@ -118,7 +118,7 @@ class Player:
         """Called when player uses a staircase. Grants max HP and stair-rest healing.
 
         The stair-rest heal scales with max HP (5%) so deep-level players recover
-        meaningfully between floors — important for the 200-level gauntlet.
+        meaningfully between floors -- important for the 200-level gauntlet.
         At L1: ~2 HP; at L20: ~9 HP; at L60: ~25 HP; at L100: ~41 HP.
         """
         self.max_hp += self.HP_PER_LEVEL
@@ -157,7 +157,7 @@ class Player:
     # --- Derived stats ---
 
     def get_ac(self) -> int:
-        """Armor class — lower is better (harder for monsters to hit).
+        """Armor class -- lower is better (harder for monsters to hit).
         Base 10, reduced by DEX modifier, armor ac_bonus + enchant_bonus, shield,
         and status effects like invisibility."""
         dex_mod = (self.DEX - 10) // 2
@@ -169,7 +169,7 @@ class Player:
             getattr(self.shield, 'ac_bonus', 0) + getattr(self.shield, 'enchant_bonus', 0)
             if self.shield else 0
         )
-        # Invisibility: harder to hit → lowers AC by 2
+        # Invisibility: harder to hit -> lowers AC by 2
         invisible_bonus = 2 if self.has_effect('invisible') else 0
         # Shielded status effect (from wand of shielding): -2 AC
         shield_effect   = 2 if self.has_effect('shielded') else 0
@@ -312,7 +312,7 @@ class Player:
             if getattr(item, 'two_handed', False) and self.shield:
                 ok, msg = self.try_unequip_slot(self.shield)
                 if not ok:
-                    return  # can't swap — cursed shield blocks
+                    return  # can't swap -- cursed shield blocks
                 self.inventory.append(self.shield)
                 self.shield = None
             self.weapon = item

@@ -3,15 +3,15 @@ Container / lockpicking system.
 
 Flow:
   attempt_lockpick(player, container, quiz_engine, dungeon, monsters, callback)
-    → starts economics threshold quiz
-    → on success: opens container, generates loot, returns items + gold
-    → on failure: triggers trap (first failure only), damages lockpick,
+    -> starts economics threshold quiz
+    -> on success: opens container, generates loot, returns items + gold
+    -> on failure: triggers trap (first failure only), damages lockpick,
                   30% chance to alert nearby monsters
 
 Mimic check:
   check_for_mimic(player, container, monsters)
-    → if container.is_mimic: spawns mimic monster, returns True
-    → else: returns False
+    -> if container.is_mimic: spawns mimic monster, returns True
+    -> else: returns False
 """
 
 import random
@@ -168,7 +168,7 @@ _TIER_LOOT_CFG: dict[int, dict] = {
 
 
 def _item_tier(item) -> int:
-    """Return the effective quiz/difficulty tier of an item (1–5)."""
+    """Return the effective quiz/difficulty tier of an item (1-5)."""
     return int(getattr(item, 'quiz_tier',
                getattr(item, 'tier', 1)))
 
@@ -207,7 +207,7 @@ def _generate_loot(container, dungeon_level: int) -> list:
     if not pool:
         return []
 
-    # Bias toward higher-tier items in higher-tier containers (weight by tier²)
+    # Bias toward higher-tier items in higher-tier containers (weight by tier2)
     if container_tier >= 3:
         weights = [_item_tier(i) ** 2 for i in pool]
     else:

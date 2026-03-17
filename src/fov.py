@@ -1,7 +1,7 @@
 # Recursive shadowcasting FOV
 # Based on: http://www.roguebasin.com/index.php?title=FOV_using_recursive_shadowcasting
 
-# (xx, xy, yx, yy) transform matrices — one per octant
+# (xx, xy, yx, yy) transform matrices -- one per octant
 _OCTANTS = [
     ( 1,  0,  0,  1),
     ( 0,  1,  1,  0),

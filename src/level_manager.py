@@ -41,7 +41,7 @@ class LevelManager:
 
         dungeon = generate_dungeon(80, 50, level_num)
 
-        # Monster count scales with depth — matches balance targets (L1:2-3, L20:3-5, L50:5-9)
+        # Monster count scales with depth -- matches balance targets (L1:2-3, L20:3-5, L50:5-9)
         min_m = min(2 + level_num // 15, 7)
         max_m = min(3 + level_num // 8, 11)
         monsters = spawn_monsters(dungeon.rooms, level_num, dungeon, min_m, max_m)
@@ -142,7 +142,7 @@ def _populate_hidden_chambers(dungeon, monsters: list, items: list, level: int):
     import random as _rng
     from dungeon import spawn_monsters, spawn_items
 
-    # Theme keyword → monster name/id substrings to prefer
+    # Theme keyword -> monster name/id substrings to prefer
     THEME_KEYWORDS = {
         'rat_nest':       ['rat', 'rodent'],
         'spider_den':     ['spider'],
@@ -160,7 +160,7 @@ def _populate_hidden_chambers(dungeon, monsters: list, items: list, level: int):
         'dragon_hoard':   ['dragon', 'drake', 'wyrm'],
         'lich_sanctum':   ['lich', 'skeleton', 'zombie', 'wraith', 'ghost'],
         'chaos_shrine':   ['chaos', 'demon', 'mutant'],
-        'cache':          [],  # treasure — no monsters
+        'cache':          [],  # treasure -- no monsters
     }
 
     for chamber in getattr(dungeon, 'hidden_chambers', []):
@@ -201,7 +201,7 @@ def _populate_hidden_chambers(dungeon, monsters: list, items: list, level: int):
                 non_themed = [m for m in lair_monsters if m not in themed]
 
                 # If we found no themed monsters at all, keep whatever spawned
-                # (level-appropriate fallback) — themed monsters may not exist at this level
+                # (level-appropriate fallback) -- themed monsters may not exist at this level
                 if themed:
                     # Prefer themed: fill remaining slots from themed pool
                     final = themed[:count_target]

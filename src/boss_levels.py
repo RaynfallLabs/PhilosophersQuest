@@ -4,8 +4,8 @@ Static hand-crafted boss level maps for levels 20, 40, 60, 80 and 100.
 Each boss level:
   - Has a unique visual theme
   - Contains a unique named boss monster
-  - STAIRS_UP in the first room (rooms[0]) — player enters here
-  - STAIRS_DOWN in the last room — exit to next level
+  - STAIRS_UP in the first room (rooms[0]) -- player enters here
+  - STAIRS_DOWN in the last room -- exit to next level
   - Boss spawns in the main chamber (second-to-last room)
 """
 import json
@@ -83,7 +83,7 @@ def _spawn_boss(dungeon, boss_id, boss_room):
 
 
 # ---------------------------------------------------------------------------
-# Level 20 — Labyrinth of Asterion (The Minotaur)
+# Level 20 -- Labyrinth of Asterion (The Minotaur)
 # ---------------------------------------------------------------------------
 
 def _level_20_labyrinth():
@@ -132,7 +132,7 @@ def _level_20_labyrinth():
     for ax, ay in [(12, 23), (32, 23), (52, 23), (68, 23)]:
         _fill(tiles, ax - 2, ay - 1, ax + 2, ay + 1)
 
-    # Boss chamber — large central room
+    # Boss chamber -- large central room
     boss_room = _carve_room(tiles, 39, 35, 10, 7)
     rooms.append(boss_room)
     # Dramatic entrance door
@@ -161,7 +161,7 @@ def _level_20_labyrinth():
 
 
 # ---------------------------------------------------------------------------
-# Level 40 — Temple of Medusa
+# Level 40 -- Temple of Medusa
 # ---------------------------------------------------------------------------
 
 def _level_40_temple():
@@ -186,7 +186,7 @@ def _level_40_temple():
     # Altar in center of nave
     tiles[nave.center[1]][nave.center[0]] = ALTAR
 
-    # Pillars (WALL tiles within the nave area — 2×2 solid squares)
+    # Pillars (WALL tiles within the nave area -- 2x2 solid squares)
     for py in [13, 18, 24, 29]:
         for px in [35, 43]:
             tiles[py][px] = WALL
@@ -231,7 +231,7 @@ def _level_40_temple():
 
 
 # ---------------------------------------------------------------------------
-# Level 60 — Fafnir's Dragon Hoard
+# Level 60 -- Fafnir's Dragon Hoard
 # ---------------------------------------------------------------------------
 
 def _level_60_lair():
@@ -280,7 +280,7 @@ def _level_60_lair():
         else:
             _hline(tiles, hoard.x + hoard.width, alcove.x, ay)
 
-    # Dragon's lair (boss room) — deepest part of the cavern
+    # Dragon's lair (boss room) -- deepest part of the cavern
     boss_room = _carve_room(tiles, 42, 43, 12, 5)
     rooms.append(boss_room)
     _vline(tiles, hoard.y + hoard.height, boss_room.y, hoard.center[0])
@@ -297,12 +297,12 @@ def _level_60_lair():
 
 
 # ---------------------------------------------------------------------------
-# Level 80 — Fenrir's Frozen Hall
+# Level 80 -- Fenrir's Frozen Hall
 # ---------------------------------------------------------------------------
 
 def _level_80_hall():
     """
-    Asgard lies in ruins, frozen at the eve of Ragnarök.
+    Asgard lies in ruins, frozen at the eve of Ragnarok.
     Fenrir, the great wolf, paces the collapsed throne room.
     """
     tiles = _blank()
@@ -314,7 +314,7 @@ def _level_80_hall():
     tiles[entry.y + 1][entry.center[0]] = STAIRS_UP
     tiles[entry.y + entry.height - 1][entry.center[0]] = DOOR
 
-    # Grand hall — wide central passage
+    # Grand hall -- wide central passage
     hall = _carve_room(tiles, 39, 17, 12, 6)
     rooms.append(hall)
     _vline(tiles, entry.y + entry.height, hall.y, entry.center[0])
@@ -340,7 +340,7 @@ def _level_80_hall():
         rooms.append(side)
         _connect(tiles, hall2, side)
 
-    # Throne room — boss chamber
+    # Throne room -- boss chamber
     boss_room = _carve_room(tiles, 39, 43, 14, 4)
     rooms.append(boss_room)
     _vline(tiles, hall2.y + hall2.height, boss_room.y, hall2.center[0])
@@ -357,7 +357,7 @@ def _level_80_hall():
 
 
 # ---------------------------------------------------------------------------
-# Level 100 — Abaddon's Abyss
+# Level 100 -- Abaddon's Abyss
 # ---------------------------------------------------------------------------
 
 def _level_100_abyss():
@@ -365,7 +365,7 @@ def _level_100_abyss():
     The bottommost pit of creation. A void ringed by crumbling stone arches,
     converging on the throne of Abaddon, the Destroyer.
 
-    Level 100 has no STAIRS_DOWN — the Philosopher's Stone is placed here
+    Level 100 has no STAIRS_DOWN -- the Philosopher's Stone is placed here
     by the level manager. The player must defeat Abaddon and ascend to victory.
     """
     tiles = _blank()
@@ -419,17 +419,17 @@ def _level_100_abyss():
         if 0 <= ay < _H and 0 <= ax < _W:
             tiles[ay][ax] = ALTAR
 
-    # Boss arena — the Void Throne
+    # Boss arena -- the Void Throne
     boss_room = _carve_room(tiles, center_x, center_y, 10, 7)
     rooms.append(boss_room)
 
-    # Stone bridges (spokes already carved) — add doors
+    # Stone bridges (spokes already carved) -- add doors
     tiles[boss_room.y - 1][boss_room.center[0]] = DOOR
     tiles[boss_room.y + boss_room.height][boss_room.center[0]] = DOOR
     tiles[boss_room.center[1]][boss_room.x - 1] = DOOR
     tiles[boss_room.center[1]][boss_room.x + boss_room.width] = DOOR
 
-    # No STAIRS_DOWN — this is the final level; Philosopher's Stone is spawned here
+    # No STAIRS_DOWN -- this is the final level; Philosopher's Stone is spawned here
     # by LevelManager._place_stone(). We add an exit to the entry for tactical retreat.
 
     dungeon = _make(tiles, rooms, 100)

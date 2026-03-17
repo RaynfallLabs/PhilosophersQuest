@@ -24,7 +24,7 @@ class Item:
         self.x: int = 0
         self.y: int = 0
         self.count: int = 1          # stack size; >1 only for stackable types
-        # Identification system — subclasses set identified=False for hidden items
+        # Identification system -- subclasses set identified=False for hidden items
         self.lore: str          = defn.get('lore', '')
         self.set_id: str        = defn.get('set_id', '')
         self.set_name: str      = defn.get('set_name', '')
@@ -238,7 +238,7 @@ class Ammo(Item):
         self.count:        int = self.count_min   # set at spawn; base class also has count=1 default
         self.floor_spawn_weight: dict = defn.get('floor_spawn_weight', {})
         self.value:        int = int(defn.get('value', 1))
-        # Ammo is always visually obvious — identified by default
+        # Ammo is always visually obvious -- identified by default
         self.identified: bool       = True
         self.unidentified_name: str = defn.get('unidentified_name', self.name)
 
@@ -254,7 +254,7 @@ class Food(Item):
         self.bonus_effect: str = defn.get('bonus_effect', '')
         self.bonus_amount: int = int(defn.get('bonus_amount', 0))
         self.floor_spawn_weight: dict = defn.get('floor_spawn_weight', {})
-        # Food is recognizable by appearance — identified by default
+        # Food is recognizable by appearance -- identified by default
         self.identified: bool       = True
         self.unidentified_name: str = defn.get('unidentified_name', self.name)
 
@@ -331,7 +331,7 @@ def copy_at(item: Item, x: int, y: int) -> Item:
 # ------------------------------------------------------------------
 
 def make_abyssal_shimmer(x: int, y: int) -> Item:
-    """A fixed terrain feature — the ground shimmers with ancient energy."""
+    """A fixed terrain feature -- the ground shimmers with ancient energy."""
     item = Item({
         'id': 'abyssal_shimmer',
         'name': 'Abyssal Shimmer',
@@ -348,7 +348,7 @@ def make_abyssal_shimmer(x: int, y: int) -> Item:
 
 
 def make_tablet_of_second_death(x: int, y: int) -> Item:
-    """A stone tablet with a curious shaped slot — unidentified until examined."""
+    """A stone tablet with a curious shaped slot -- unidentified until examined."""
     item = Artifact({
         'id': 'tablet_of_second_death',
         'name': 'Tablet of Second Death',
@@ -367,7 +367,7 @@ def make_tablet_of_second_death(x: int, y: int) -> Item:
 
 
 def make_scroll_lake_of_fire(x: int, y: int) -> Scroll:
-    """A worn scroll — its contents unknown until read."""
+    """A worn scroll -- its contents unknown until read."""
     item = Scroll({
         'id': 'scroll_lake_of_fire',
         'name': 'Scroll of the Lake of Fire',
@@ -389,7 +389,7 @@ def make_scroll_lake_of_fire(x: int, y: int) -> Scroll:
 
 
 def make_philosophers_wrench(x: int, y: int) -> Wand:
-    """An odd tool — its purpose unclear until the right pieces are in hand."""
+    """An odd tool -- its purpose unclear until the right pieces are in hand."""
     item = Wand({
         'id': 'philosophers_wrench',
         'name': "Philosopher's Wrench",
@@ -415,7 +415,7 @@ def make_philosophers_wrench(x: int, y: int) -> Wand:
 
 
 def make_complete_tablet(x: int, y: int) -> Item:
-    """The Stone set perfectly into the Tablet — ready."""
+    """The Stone set perfectly into the Tablet -- ready."""
     item = Artifact({
         'id': 'complete_tablet_of_second_death',
         'name': 'Complete Tablet of Second Death',
@@ -435,7 +435,7 @@ def make_complete_tablet(x: int, y: int) -> Item:
 
 
 def make_death_bane_scroll(x: int, y: int) -> Scroll:
-    """The sixth boss reward scroll — dropped when Death itself is defeated."""
+    """The sixth boss reward scroll -- dropped when Death itself is defeated."""
     item = Scroll({
         'id': 'scroll_deaths_bane',
         'name': "Scroll of Death's Bane",

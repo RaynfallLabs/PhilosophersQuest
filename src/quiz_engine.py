@@ -96,10 +96,10 @@ class QuizEngine:
                    extra_seconds: int = 0):
         """
         Start a quiz session.
-          threshold     — for threshold modes: number of correct answers needed.
+          threshold     -- for threshold modes: number of correct answers needed.
                           Total questions asked = ceil(threshold * 1.5).
-          max_chain     — for chain modes: auto-succeed after this chain length (None = unlimited).
-          timer_modifier — multiplier on the base timer (e.g. 0.55 when confused).
+          max_chain     -- for chain modes: auto-succeed after this chain length (None = unlimited).
+          timer_modifier -- multiplier on the base timer (e.g. 0.55 when confused).
           callback(QuizResult) is called when the quiz ends.
         """
         if isinstance(mode, str):
@@ -184,7 +184,7 @@ class QuizEngine:
             if self.time_remaining > 0:
                 self.time_remaining = max(0.0, self.time_remaining - dt)
                 if self.time_remaining == 0.0:
-                    # Time's up — count as a wrong answer and advance
+                    # Time's up -- count as a wrong answer and advance
                     self.last_answer = ''
                     self.asked_count += 1
                     self.last_correct = False
@@ -208,7 +208,7 @@ class QuizEngine:
         last = self._last_q.get(deck_key)
 
         if self._pool_idx >= len(self._pool):
-            # Deck exhausted — reshuffle, but don't let the first card equal the last shown.
+            # Deck exhausted -- reshuffle, but don't let the first card equal the last shown.
             random.shuffle(self._pool)
             if last is not None and len(self._pool) > 1 and self._pool[0] is last:
                 swap = random.randint(1, len(self._pool) - 1)
@@ -223,7 +223,7 @@ class QuizEngine:
             self._deck_idx[deck_key] = self._pool_idx
             self._last_q[deck_key]   = self.current_question
 
-        # Timer is set once in start_quiz() and runs continuously — no reset per question
+        # Timer is set once in start_quiz() and runs continuously -- no reset per question
         self.state = QuizState.ASKING
 
         # Always shuffle choice order so correct answer position is randomized

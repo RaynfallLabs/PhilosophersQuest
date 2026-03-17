@@ -94,7 +94,7 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
             if random.random() < weapon.stun_chance:
                 # Monster makes a resistance roll: bigger monsters resist more.
                 # threshold = hp/300 clamped [0.05, 0.95]; roll must BEAT threshold to stun.
-                # e.g. 30 HP → 90% chance, 150 HP → 50%, 300 HP+ → 5%
+                # e.g. 30 HP -> 90% chance, 150 HP -> 50%, 300 HP+ -> 5%
                 resist_threshold = min(0.95, max(0.05, monster.max_hp / 300.0))
                 if random.random() > resist_threshold:
                     current = monster.status_effects.get('paralyzed', 0)

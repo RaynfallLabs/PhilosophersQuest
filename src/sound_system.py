@@ -1,22 +1,22 @@
 """
-sound_system.py — Procedural sound effects for Philosopher's Quest.
+sound_system.py -- Procedural sound effects for Philosopher's Quest.
 
 All sounds are synthesized at runtime using numpy + pygame.sndarray.
 No audio files required.  Call init() once at startup, then play(event_name).
 
 Supported events:
-  quiz_correct   — rising ping (correct answer)
-  quiz_wrong     — low buzzer (wrong answer)
-  player_hit     — dull thud (player takes damage)
-  monster_hit    — sharp crack (monster takes damage)
-  pickup         — soft chime (pick up item)
-  gold           — bright jingle (collect gold)
-  level_change   — swoosh (change dungeon level)
-  death          — descending toll (player dies)
-  trap           — alarm burst (trap triggered)
-  door           — creak (open door)
-  buy            — coin clink (buy from merchant)
-  spell_cast     — arcane hum (cast a spell)
+  quiz_correct   -- rising ping (correct answer)
+  quiz_wrong     -- low buzzer (wrong answer)
+  player_hit     -- dull thud (player takes damage)
+  monster_hit    -- sharp crack (monster takes damage)
+  pickup         -- soft chime (pick up item)
+  gold           -- bright jingle (collect gold)
+  level_change   -- swoosh (change dungeon level)
+  death          -- descending toll (player dies)
+  trap           -- alarm burst (trap triggered)
+  door           -- creak (open door)
+  buy            -- coin clink (buy from merchant)
+  spell_cast     -- arcane hum (cast a spell)
 """
 from __future__ import annotations
 
@@ -131,7 +131,7 @@ def init() -> bool:
     global _ENABLED, _sounds
     try:
         import pygame
-        import numpy  # noqa — just checking availability
+        import numpy  # noqa -- just checking availability
         if not pygame.mixer.get_init():
             pygame.mixer.init(frequency=_SAMPLE_RATE, size=-16, channels=1, buffer=512)
     except Exception:

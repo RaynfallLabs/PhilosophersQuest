@@ -1,5 +1,5 @@
 """
-mystery_system.py — Mystery altars, key items, and encounter logic.
+mystery_system.py -- Mystery altars, key items, and encounter logic.
 
 Each mystery is a special encounter that can appear once per dungeon run
 within a specific floor range. The player must approach an altar, meet
@@ -17,7 +17,7 @@ MYSTERIES = {
     'sphinx': {
         'name': "The Sphinx",
         'floor_range': (22, 35),
-        'symbol': 'Ω',
+        'symbol': 'W',
         'color': (218, 165, 32),  # gold
         'description': "A towering stone sphinx fixes you with ancient eyes. 'Answer my riddles or perish.'",
         'key_item': None,
@@ -31,25 +31,25 @@ MYSTERIES = {
     'pandora': {
         'name': "Pandora's Coffer",
         'floor_range': (20, 30),
-        'symbol': '□',
+        'symbol': '[',
         'color': (180, 30, 30),  # dark red
         'description': "A sealed obsidian coffer. A warning is etched: 'Do not open.' The keyhole glows red.",
-        'key_item': {'name': "Pandora's Key", 'symbol': '¶', 'color': (180, 30, 30), 'weight': 0.5},
+        'key_item': {'name': "Pandora's Key", 'symbol': 'P', 'color': (180, 30, 30), 'weight': 0.5},
         'gold_cost': 0,
         'challenge': {'mode': 'threshold', 'subject': 'economics', 'tier': 2, 'threshold': 4, 'total': 5},
         'reward': {'effects': ['magic_resist', 'displacement'], 'gold': 300},
-        'reward_text': "The box opens wrong — chaos floods out... and so does Hope. Permanent magic resist, displacement, +300 gold.",
-        'fail_text': "You open it 'correctly' — but nothing is inside. Only gold.",
+        'reward_text': "The box opens wrong -- chaos floods out... and so does Hope. Permanent magic resist, displacement, +300 gold.",
+        'fail_text': "You open it 'correctly' -- but nothing is inside. Only gold.",
         'fail_reward': {'gold': 100},
         'invert_result': True,  # INVERTED: failure quiz = actual reward
     },
     'grail': {
         'name': "Chapel of the Grail",
         'floor_range': (45, 55),
-        'symbol': '♦',
+        'symbol': 'U',
         'color': (200, 200, 255),  # silver-blue
         'description': "A ruined chapel. A chalice rests on the altar, glowing faintly.",
-        'key_item': {'name': "A Chalice", 'symbol': '♦', 'color': (200, 200, 255), 'weight': 1.0},
+        'key_item': {'name': "A Chalice", 'symbol': 'U', 'color': (200, 200, 255), 'weight': 1.0},
         'gold_cost': 0,
         'challenge': {'mode': 'threshold', 'subject': 'theology', 'tier': 3, 'threshold': 5, 'total': 7},
         'reward': {'max_hp': 30, 'CON': 2},
@@ -60,10 +60,10 @@ MYSTERIES = {
     'fleece': {
         'name': "The Fleece Altar",
         'floor_range': (38, 50),
-        'symbol': '♣',
+        'symbol': '+',
         'color': (218, 165, 32),  # golden
         'description': "An altar carved with the image of a ram. Hung above it should be the Golden Fleece.",
-        'key_item': {'name': "Golden Fleece", 'symbol': '♣', 'color': (218, 165, 32), 'weight': 2.0},
+        'key_item': {'name': "Golden Fleece", 'symbol': '+', 'color': (218, 165, 32), 'weight': 2.0},
         'gold_cost': 0,
         'challenge': {'mode': 'chain', 'subject': 'animal', 'tier': 3, 'threshold': 5, 'max_chain': None},
         'reward': {'effects': ['regenerating', 'poison_resist']},
@@ -74,7 +74,7 @@ MYSTERIES = {
     'mimir': {
         'name': "Mimir's Well",
         'floor_range': (42, 55),
-        'symbol': '○',
+        'symbol': 'o',
         'color': (50, 120, 200),  # dark teal-blue
         'description': "A dark well with runes carved around its rim. The water below holds all wisdom. A price is implied.",
         'key_item': None,
@@ -89,10 +89,10 @@ MYSTERIES = {
     'mjolnir': {
         'name': "The Dwarven Forge",
         'floor_range': (33, 45),
-        'symbol': '▲',
+        'symbol': '^',
         'color': (255, 140, 0),  # orange
         'description': "A dwarven forge, still hot. The anvil awaits a hammer worthy of reforging.",
-        'key_item': {'name': "Mjolnir (unfinished)", 'symbol': '▲', 'color': (255, 140, 0), 'weight': 8.0},
+        'key_item': {'name': "Mjolnir (unfinished)", 'symbol': '^', 'color': (255, 140, 0), 'weight': 8.0},
         'gold_cost': 0,
         'challenge': {'mode': 'escalator_threshold', 'subject': 'math', 'tier': 3, 'threshold': 4, 'total': 6},
         'reward': {'special': 'forge_mjolnir', 'STR': 2},
@@ -103,10 +103,10 @@ MYSTERIES = {
     'crucible': {
         'name': "Alchemist's Crucible",
         'floor_range': (10, 22),
-        'symbol': '◊',
+        'symbol': 'V',
         'color': (150, 150, 160),  # gray
         'description': "An alchemist's crucible. The inscription reads: 'From base matter, golden truth.'",
-        'key_item': {'name': "Lead Ingot", 'symbol': '◊', 'color': (150, 150, 160), 'weight': 5.0},
+        'key_item': {'name': "Lead Ingot", 'symbol': 'V', 'color': (150, 150, 160), 'weight': 5.0},
         'gold_cost': 0,
         'challenge': {'mode': 'threshold', 'subject': 'philosophy', 'tier': 1, 'threshold': 3, 'total': 4},
         'reward': {'gold': 400},
@@ -117,7 +117,7 @@ MYSTERIES = {
     'oracle': {
         'name': "The Oracle's Rift",
         'floor_range': (25, 35),
-        'symbol': '∆',
+        'symbol': 'D',
         'color': (160, 80, 200),  # purple
         'description': "A smoking rift in the stone, tended by a stone priestess. Visions await those who offer tribute.",
         'key_item': None,
@@ -131,10 +131,10 @@ MYSTERIES = {
     'solomon': {
         'name': "Solomon's Tribunal",
         'floor_range': (30, 42),
-        'symbol': '✦',
+        'symbol': '*',
         'color': (255, 220, 50),  # bright gold
         'description': "A throne room with two doors. A stone inscription reads: 'Judge wisely and be rewarded.'",
-        'key_item': {'name': "Seal of Solomon", 'symbol': '✦', 'color': (255, 220, 50), 'weight': 0.5},
+        'key_item': {'name': "Seal of Solomon", 'symbol': '*', 'color': (255, 220, 50), 'weight': 0.5},
         'gold_cost': 0,
         'challenge': {'mode': 'threshold', 'subject': 'history', 'tier': 3, 'threshold': 6, 'total': 8},
         'reward': {'WIS': 2, 'special': 'ring_of_command'},
@@ -145,10 +145,10 @@ MYSTERIES = {
     'fisher_king': {
         'name': "The Fisher King's Hall",
         'floor_range': (58, 72),
-        'symbol': '†',
+        'symbol': '+',
         'color': (100, 220, 100),  # light green
-        'description': "A desolate hall. A wounded king lies motionless. Something nearby could help — if you ask rightly.",
-        'key_item': {'name': "Healing Herb", 'symbol': '†', 'color': (100, 220, 100), 'weight': 0.5},
+        'description': "A desolate hall. A wounded king lies motionless. Something nearby could help -- if you ask rightly.",
+        'key_item': {'name': "Healing Herb", 'symbol': '+', 'color': (100, 220, 100), 'weight': 0.5},
         'gold_cost': 0,
         'challenge': {'mode': 'threshold', 'subject': 'theology', 'tier': 4, 'threshold': 5, 'total': 7},
         'reward': {'max_hp': 30, 'special': 'fisher_cooldown'},
@@ -159,10 +159,10 @@ MYSTERIES = {
     'sisyphus': {
         'name': "Sisyphus' Hill",
         'floor_range': (78, 92),
-        'symbol': '●',
+        'symbol': '*',
         'color': (140, 140, 140),  # stone gray
         'description': "A steep slope carved into the stone. At its base lies an enormous boulder with a worn handprint.",
-        'key_item': {'name': "The Boulder", 'symbol': '●', 'color': (140, 140, 140), 'weight': 30.0},
+        'key_item': {'name': "The Boulder", 'symbol': '*', 'color': (140, 140, 140), 'weight': 30.0},
         'gold_cost': 0,
         'challenge': {'mode': 'physical', 'tiles': 25},  # walk 25 tiles over carry limit while holding boulder
         'reward': {'STR': 3, 'INT': 1},
@@ -173,10 +173,10 @@ MYSTERIES = {
     'cauldron': {
         'name': "The Black Cauldron",
         'floor_range': (14, 26),
-        'symbol': '⊕',
+        'symbol': 'Q',
         'color': (40, 140, 100),  # dark green
         'description': "A bubbling cauldron of Celtic make. It demands a tribute of three prepared meals.",
-        'key_item': None,  # no key — requires 3 Food items in inventory
+        'key_item': None,  # no key -- requires 3 Food items in inventory
         'gold_cost': 0,
         'challenge': {'mode': 'escalator_chain', 'subject': 'cooking', 'tier': 2, 'threshold': 5, 'max_chain': None},
         'reward': {'effects': ['searching', 'warning']},
@@ -422,7 +422,7 @@ def _oracle_reveal_quirks(player, game):
         'scheherazade':"She read and told stories before anyone knew their name.",
         'merlin':      "Wands were used before they were understood.",
         'prometheus':  "Suffering repeated and survived becomes strength.",
-        'ragnarok':    "Descend so deep, with so little — and survive.",
+        'ragnarok':    "Descend so deep, with so little -- and survive.",
     }
 
     game.add_message("The Oracle speaks:", 'info')
@@ -485,7 +485,7 @@ def apply_mystery_reward(mystery_id: str, player, game, success: bool):
         mjolnir_def = {
             'id': 'mjolnir',
             'name': 'Mjolnir',
-            'symbol': '▲',
+            'symbol': '^',
             'color': [255, 140, 0],
             'weight': 8.0,
             'min_level': 1,

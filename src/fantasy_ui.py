@@ -1,5 +1,5 @@
 """
-fantasy_ui.py — High-fantasy medieval / arcane grimoire UI theme.
+fantasy_ui.py -- High-fantasy medieval / arcane grimoire UI theme.
 # FANTASY: Central theme module. All visual helpers live here so main.py
 #          and ui.py stay logic-focused. Import what you need:
 #
@@ -16,9 +16,9 @@ import random
 import pygame
 from paths import data_path
 
-# ─────────────────────────────────────────────────────────────────────────────
-# FANTASY PALETTE  (FP namespace — "Fantasy Palette")
-# ─────────────────────────────────────────────────────────────────────────────
+# -----------------------------------------------------------------------------
+# FANTASY PALETTE  (FP namespace -- "Fantasy Palette")
+# -----------------------------------------------------------------------------
 class FP:
     """# FANTASY: Antique gold / aged parchment / midnight blue / burgundy palette."""
 
@@ -59,7 +59,7 @@ class FP:
     SHADOW          = (  0,   0,   0)
     WHITE           = (255, 255, 255)
 
-    # ── Semantic aliases (use these in draw code) ──────────────────────────
+    # -- Semantic aliases (use these in draw code) --------------------------
     PANEL_BG        = MIDNIGHT          # modal/panel background
     PANEL_BG_MID    = MIDNIGHT_MID      # slightly lighter panel
     PANEL_BORDER    = GOLD              # main border colour
@@ -67,9 +67,9 @@ class FP:
     HEADER_BG       = MIDNIGHT          # header strip fill
     HEADER_TEXT     = GOLD_BRIGHT       # header text
     BODY_TEXT       = PARCHMENT         # normal body text
-    FADED_TEXT      = (165, 155, 185)   # disabled / secondary text — lavender-grey, ~6:1 on midnight
+    FADED_TEXT      = (165, 155, 185)   # disabled / secondary text -- lavender-grey, ~6:1 on midnight
     ACCENT_TEXT     = GOLD_PALE         # accented label text
-    HINT_TEXT       = (170, 165, 215)   # keyboard hint text — boosted blue-lavender, ~7:1 on midnight
+    HINT_TEXT       = (170, 165, 215)   # keyboard hint text -- boosted blue-lavender, ~7:1 on midnight
     DANGER_TEXT     = BLOOD
     SUCCESS_TEXT    = (110, 220, 100)
     WARNING_TEXT    = (220, 185,  45)
@@ -90,9 +90,9 @@ class FP:
     }
 
 
-# ─────────────────────────────────────────────────────────────────────────────
+# -----------------------------------------------------------------------------
 # FONT LOADING
-# ─────────────────────────────────────────────────────────────────────────────
+# -----------------------------------------------------------------------------
 _FONT_DIR = data_path('assets', 'fonts')
 
 # # FANTASY: TTF filenames expected in assets/fonts/
@@ -108,7 +108,7 @@ _ROLE_FILES = {
 
 _FALLBACK_FAMILIES = 'garamond,palatino linotype,palatino,georgia,book antiqua,times new roman,consolas'
 
-# Unicode-capable font families for symbol/icon rendering (★ ☆ ✗ ∑ Ω ◆ etc.)
+# Unicode-capable font families for symbol/icon rendering (* o x Sum Omega * etc.)
 _SYMBOL_FAMILIES = 'segoe ui symbol,segoe ui emoji,noto sans symbols,dejavu sans,arial unicode ms,unifont'
 _font_cache: dict = {}
 
@@ -116,13 +116,13 @@ _font_cache: dict = {}
 def get_font(role: str, size: int, bold: bool = False) -> pygame.font.Font:
     """
     # FANTASY: Return a themed font.
-    role: 'title'   → Cinzel Bold (large display, all-caps)
-          'heading' → Cinzel Regular (section headers)
-          'body'    → Consolas (crisp readable body text)
-          'small'   → Consolas small
-          'italic'  → IM Fell English Italic
-          'gothic'  → UnifrakturMaguntia (dramatic blackletter)
-          'mono'    → Consolas (monospace — code/numbers)
+    role: 'title'   -> Cinzel Bold (large display, all-caps)
+          'heading' -> Cinzel Regular (section headers)
+          'body'    -> Consolas (crisp readable body text)
+          'small'   -> Consolas small
+          'italic'  -> IM Fell English Italic
+          'gothic'  -> UnifrakturMaguntia (dramatic blackletter)
+          'mono'    -> Consolas (monospace -- code/numbers)
     Falls back gracefully if TTF not installed.
     """
     key = (role, size, bold)
@@ -130,10 +130,10 @@ def get_font(role: str, size: int, bold: bool = False) -> pygame.font.Font:
         return _font_cache[key]
 
     if role == 'symbol':
-        # Unicode-capable font for rendering special characters (★ ☆ ✗ ∑ Ω ◆ etc.)
+        # Unicode-capable font for rendering special characters (* o x Sum Omega * etc.)
         font = pygame.font.SysFont(_SYMBOL_FAMILIES, size, bold=bold)
     elif role in ('mono', 'body', 'small'):
-        # Use Consolas for all body/small roles — crisp and highly readable
+        # Use Consolas for all body/small roles -- crisp and highly readable
         font = pygame.font.SysFont('consolas,courier new,monospace', size, bold=bold)
     else:
         fname = _ROLE_FILES.get(role, 'Cinzel-Regular.ttf')
@@ -150,9 +150,9 @@ def get_font(role: str, size: int, bold: bool = False) -> pygame.font.Font:
     return font
 
 
-# ─────────────────────────────────────────────────────────────────────────────
+# -----------------------------------------------------------------------------
 # PARCHMENT TEXTURE
-# ─────────────────────────────────────────────────────────────────────────────
+# -----------------------------------------------------------------------------
 _parchment_cache: dict = {}
 
 
@@ -191,7 +191,7 @@ def make_parchment(w: int, h: int, dark: bool = False, alpha: int = 255) -> pyga
         c = tuple(max(0, v - shade) for v in base)
         pygame.draw.circle(surf, (*c, rng.randint(50, 120)), (sx, sy), sr)
 
-    # Corner/edge vignette — slightly darker edges
+    # Corner/edge vignette -- slightly darker edges
     vig = pygame.Surface((w, h), pygame.SRCALPHA)
     steps = 18
     for step in range(steps):
@@ -219,9 +219,9 @@ def _try_parchment_png(w: int, h: int, alpha: int = 235) -> pygame.Surface | Non
         return None
 
 
-# ─────────────────────────────────────────────────────────────────────────────
+# -----------------------------------------------------------------------------
 # OVERLAY HELPERS
-# ─────────────────────────────────────────────────────────────────────────────
+# -----------------------------------------------------------------------------
 
 def draw_overlay(surf: pygame.Surface, alpha: int = 185,
                  color: tuple = (0, 0, 0)):
@@ -231,9 +231,9 @@ def draw_overlay(surf: pygame.Surface, alpha: int = 185,
     surf.blit(ov, (0, 0))
 
 
-# ─────────────────────────────────────────────────────────────────────────────
+# -----------------------------------------------------------------------------
 # ORNATE BORDER & PANEL
-# ─────────────────────────────────────────────────────────────────────────────
+# -----------------------------------------------------------------------------
 
 def draw_panel(surf: pygame.Surface, rect: tuple,
                border_color: tuple | None = None,
@@ -346,9 +346,9 @@ def _edge_diamond(surf: pygame.Surface, x: int, y: int,
     pygame.draw.polygon(surf, color, pts)
 
 
-# ─────────────────────────────────────────────────────────────────────────────
+# -----------------------------------------------------------------------------
 # HEADER STRIP
-# ─────────────────────────────────────────────────────────────────────────────
+# -----------------------------------------------------------------------------
 
 def draw_header_bar(surf: pygame.Surface, rect: tuple,
                     text: str = '', font: pygame.font.Font | None = None,
@@ -356,7 +356,7 @@ def draw_header_bar(surf: pygame.Surface, rect: tuple,
                     accent: tuple | None = None) -> None:
     """
     # FANTASY: Decorative header strip inside a panel.
-    rect = (x, y, w, h)  — usually HEADER_H = 44 tall.
+    rect = (x, y, w, h)  -- usually HEADER_H = 44 tall.
     """
     if text_color is None:
         text_color = FP.GOLD_BRIGHT
@@ -385,9 +385,9 @@ def draw_header_bar(surf: pygame.Surface, rect: tuple,
         surf.blit(ts,     (sx,     sy))
 
 
-# ─────────────────────────────────────────────────────────────────────────────
+# -----------------------------------------------------------------------------
 # SECTION DIVIDER
-# ─────────────────────────────────────────────────────────────────────────────
+# -----------------------------------------------------------------------------
 
 def draw_divider(surf: pygame.Surface, x: int, y: int, w: int,
                  color: tuple | None = None) -> None:
@@ -402,9 +402,9 @@ def draw_divider(surf: pygame.Surface, x: int, y: int, w: int,
     pygame.draw.polygon(surf, color, pts)
 
 
-# ─────────────────────────────────────────────────────────────────────────────
+# -----------------------------------------------------------------------------
 # TEXT HELPERS
-# ─────────────────────────────────────────────────────────────────────────────
+# -----------------------------------------------------------------------------
 
 def draw_shadow_text(surf: pygame.Surface, font: pygame.font.Font,
                      text: str, color: tuple, pos: tuple,
@@ -455,15 +455,15 @@ def centered_text(surf: pygame.Surface, font: pygame.font.Font,
     surf.blit(ts, (tx, cy))
 
 
-# ─────────────────────────────────────────────────────────────────────────────
+# -----------------------------------------------------------------------------
 # ILLUMINATED ORNAMENTS
-# ─────────────────────────────────────────────────────────────────────────────
+# -----------------------------------------------------------------------------
 
 def draw_rune_circle(surf: pygame.Surface, cx: int, cy: int,
                      radius: int, color: tuple, t: float = 0.0,
                      segments: int = 12) -> None:
     """
-    # FANTASY: Rotating rune circle — decorative arcane ring.
+    # FANTASY: Rotating rune circle -- decorative arcane ring.
     Draw on victory/death screens for drama.
     t: animation time in seconds.
     """
@@ -510,7 +510,7 @@ def draw_candle_glow(surf: pygame.Surface, cx: int, cy: int,
     """
     # FANTASY: Soft warm candle-light glow circle.
     Use on altars, welcome screen, etc.
-    intensity: 0.0–1.0
+    intensity: 0.0-1.0
     """
     glow = pygame.Surface((200, 200), pygame.SRCALPHA)
     for r in range(90, 0, -8):
@@ -519,9 +519,9 @@ def draw_candle_glow(surf: pygame.Surface, cx: int, cy: int,
     surf.blit(glow, (cx - 100, cy - 100))
 
 
-# ─────────────────────────────────────────────────────────────────────────────
+# -----------------------------------------------------------------------------
 # ITEM CLASS COLOUR MAP  (richer than the old _IC_COLOR in ui.py)
-# ─────────────────────────────────────────────────────────────────────────────
+# -----------------------------------------------------------------------------
 ITEM_COLOR = {
     'weapon':     (225, 155,  65),   # warm bronze
     'armor':      ( 80, 148, 215),   # steel blue
@@ -539,9 +539,9 @@ ITEM_COLOR = {
 }
 
 
-# ─────────────────────────────────────────────────────────────────────────────
+# -----------------------------------------------------------------------------
 # CHOICE BUTTON
-# ─────────────────────────────────────────────────────────────────────────────
+# -----------------------------------------------------------------------------
 
 def draw_choice_button(surf: pygame.Surface, rect: tuple,
                        key_label: str, text: str,

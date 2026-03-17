@@ -1,5 +1,5 @@
 """
-Centralised path resolution — works both during development and when
+Centralised path resolution -- works both during development and when
 frozen by PyInstaller into a standalone Windows executable.
 
 Usage:
@@ -13,7 +13,7 @@ import sys
 
 
 def _root() -> str:
-    """Return the project root — sys._MEIPASS when frozen, otherwise src/.."""
+    """Return the project root -- sys._MEIPASS when frozen, otherwise src/.."""
     if getattr(sys, 'frozen', False):
         return sys._MEIPASS          # PyInstaller extracts everything here
     return os.path.join(os.path.dirname(__file__), '..')
@@ -27,8 +27,8 @@ def data_path(*parts: str) -> str:
 def save_dir() -> str:
     """Writable directory for save files.
 
-    Frozen  → %APPDATA%\\PhilosophersQuest\\
-    Dev     → project root (same behaviour as before)
+    Frozen  -> %APPDATA%\\PhilosophersQuest\\
+    Dev     -> project root (same behaviour as before)
     """
     if getattr(sys, 'frozen', False):
         base = os.path.join(
