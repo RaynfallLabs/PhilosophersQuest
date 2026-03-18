@@ -3475,7 +3475,8 @@
       ],
       "item_chance": 1.0,
       "item_tier": 2,
-      "unique_drop_id": null
+      "unique_drop_id": null,
+      "boss_scroll_id": "scroll_of_lamia"
     }
   },
   "gorgon_warrior": {
@@ -18355,7 +18356,8 @@
       ],
       "item_chance": 1.0,
       "item_tier": 2,
-      "unique_drop_id": "arachne_silk_cloak"
+      "unique_drop_id": "arachne_silk_cloak",
+      "boss_scroll_id": "scroll_of_arachne"
     }
   },
   "talos": {
@@ -18401,7 +18403,8 @@
       ],
       "item_chance": 1.0,
       "item_tier": 3,
-      "unique_drop_id": "bronze_aegis"
+      "unique_drop_id": "bronze_aegis",
+      "boss_scroll_id": "scroll_of_talos"
     }
   },
   "echidna": {
@@ -18455,7 +18458,8 @@
       ],
       "item_chance": 1.0,
       "item_tier": 3,
-      "unique_drop_id": "echidna_fang"
+      "unique_drop_id": "echidna_fang",
+      "boss_scroll_id": "scroll_of_echidna"
     }
   },
   "erlking": {
@@ -18509,7 +18513,8 @@
       ],
       "item_chance": 1.0,
       "item_tier": 3,
-      "unique_drop_id": "erlking_mantle"
+      "unique_drop_id": "erlking_mantle",
+      "boss_scroll_id": "scroll_of_the_erlking"
     }
   },
   "camazotz": {
@@ -18563,7 +18568,8 @@
       ],
       "item_chance": 1.0,
       "item_tier": 3,
-      "unique_drop_id": "obsidian_talisman"
+      "unique_drop_id": "obsidian_talisman",
+      "boss_scroll_id": "scroll_of_camazotz"
     }
   },
   "cacus": {
@@ -18614,7 +18620,8 @@
       ],
       "item_chance": 1.0,
       "item_tier": 3,
-      "unique_drop_id": "vulcans_brand"
+      "unique_drop_id": "vulcans_brand",
+      "boss_scroll_id": "scroll_of_cacus"
     }
   },
   "the_sphinx": {
@@ -18664,7 +18671,8 @@
       ],
       "item_chance": 1.0,
       "item_tier": 4,
-      "unique_drop_id": "sphinx_crown"
+      "unique_drop_id": "sphinx_crown",
+      "boss_scroll_id": "scroll_of_the_sphinx"
     }
   },
   "rangda": {
@@ -18718,7 +18726,8 @@
       ],
       "item_chance": 1.0,
       "item_tier": 4,
-      "unique_drop_id": null
+      "unique_drop_id": null,
+      "boss_scroll_id": "scroll_of_rangda"
     }
   },
   "nemean_lion": {
@@ -18768,7 +18777,8 @@
       ],
       "item_chance": 1.0,
       "item_tier": 4,
-      "unique_drop_id": "nemean_pelt"
+      "unique_drop_id": "nemean_pelt",
+      "boss_scroll_id": "scroll_of_the_lion"
     }
   },
   "baba_yaga": {
@@ -18825,7 +18835,8 @@
       ],
       "item_chance": 1.0,
       "item_tier": 4,
-      "unique_drop_id": "iron_mortar_wand"
+      "unique_drop_id": "iron_mortar_wand",
+      "boss_scroll_id": "scroll_of_baba_yaga"
     }
   },
   "jormungandr_juvenile": {
@@ -18882,7 +18893,8 @@
       ],
       "item_chance": 1.0,
       "item_tier": 4,
-      "unique_drop_id": "serpent_scale_mail"
+      "unique_drop_id": "serpent_scale_mail",
+      "boss_scroll_id": "scroll_of_jormungandr"
     }
   },
   "sets_jackal": {
@@ -18936,7 +18948,8 @@
       ],
       "item_chance": 1.0,
       "item_tier": 4,
-      "unique_drop_id": "anubis_scales"
+      "unique_drop_id": "anubis_scales",
+      "boss_scroll_id": "scroll_of_set"
     }
   },
   "green_knight": {
@@ -18990,7 +19003,8 @@
       ],
       "item_chance": 1.0,
       "item_tier": 5,
-      "unique_drop_id": "green_knights_plate"
+      "unique_drop_id": "green_knights_plate",
+      "boss_scroll_id": "scroll_of_the_green"
     }
   },
   "charybdis": {
@@ -19042,7 +19056,8 @@
       ],
       "item_chance": 1.0,
       "item_tier": 5,
-      "unique_drop_id": "sailors_amulet"
+      "unique_drop_id": "sailors_amulet",
+      "boss_scroll_id": "scroll_of_charybdis"
     }
   },
   "ravanas_arm": {
@@ -19101,7 +19116,8 @@
       ],
       "item_chance": 1.0,
       "item_tier": 5,
-      "unique_drop_id": "ring_of_iron_grip"
+      "unique_drop_id": "ring_of_iron_grip",
+      "boss_scroll_id": "scroll_of_ravana"
     }
   },
   "wendigo": {
@@ -19158,7 +19174,8 @@
       ],
       "item_chance": 1.0,
       "item_tier": 5,
-      "unique_drop_id": "wendigo_fang"
+      "unique_drop_id": "wendigo_fang",
+      "boss_scroll_id": "scroll_of_the_wendigo"
     }
   },
   "wild_hunt_captain": {
@@ -19216,7 +19233,8 @@
       ],
       "item_chance": 1.0,
       "item_tier": 5,
-      "unique_drop_id": "hunt_captains_sword"
+      "unique_drop_id": "hunt_captains_sword",
+      "boss_scroll_id": "scroll_of_the_hunt"
     }
   },
   "anansi": {
@@ -19273,7 +19291,8 @@
       ],
       "item_chance": 1.0,
       "item_tier": 5,
-      "unique_drop_id": "anansi_web_cloak"
+      "unique_drop_id": "anansi_web_cloak",
+      "boss_scroll_id": "scroll_of_anansi"
     }
   },
   "nidhoggr_fragment": {
@@ -19333,7 +19352,8 @@
       ],
       "item_chance": 1.0,
       "item_tier": 5,
-      "unique_drop_id": "nidhoggr_scale"
+      "unique_drop_id": "nidhoggr_scale",
+      "boss_scroll_id": "scroll_of_nidhoggr"
     }
   }
 }

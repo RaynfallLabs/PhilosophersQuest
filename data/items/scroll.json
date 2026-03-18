@@ -436,5 +436,405 @@
       180,
       140
     ]
+  },
+  "scroll_of_arachne": {
+    "name": "Scroll of Arachne",
+    "symbol": "?",
+    "color": [
+      255,
+      200,
+      80
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 1,
+    "quiz_tier": 1,
+    "quiz_threshold": 1,
+    "effect": "boss_reward",
+    "power": "QUEST-WEAVER-I",
+    "unidentified_name": "Scroll of Arachne",
+    "identified": true,
+    "lore": "Sealed with a strand of unbreakable silk. A reward scroll from Dad — show him this code!",
+    "read_threshold": 2
+  },
+  "scroll_of_lamia": {
+    "name": "Scroll of Lamia",
+    "symbol": "?",
+    "color": [
+      255,
+      200,
+      80
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 1,
+    "quiz_tier": 1,
+    "quiz_threshold": 1,
+    "effect": "boss_reward",
+    "power": "QUEST-SERPENT-II",
+    "unidentified_name": "Scroll of Lamia",
+    "identified": true,
+    "lore": "Sealed with a serpent's tear. A reward scroll from Dad — show him this code!",
+    "read_threshold": 2
+  },
+  "scroll_of_talos": {
+    "name": "Scroll of Talos",
+    "symbol": "?",
+    "color": [
+      255,
+      200,
+      80
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 1,
+    "quiz_tier": 1,
+    "quiz_threshold": 1,
+    "effect": "boss_reward",
+    "power": "QUEST-BRONZE-III",
+    "unidentified_name": "Scroll of Talos",
+    "identified": true,
+    "lore": "Sealed with molten bronze. A reward scroll from Dad — show him this code!",
+    "read_threshold": 2
+  },
+  "scroll_of_echidna": {
+    "name": "Scroll of Echidna",
+    "symbol": "?",
+    "color": [
+      255,
+      200,
+      80
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 1,
+    "quiz_tier": 1,
+    "quiz_threshold": 1,
+    "effect": "boss_reward",
+    "power": "QUEST-MOTHER-IV",
+    "unidentified_name": "Scroll of Echidna",
+    "identified": true,
+    "lore": "Sealed with the mark of the Mother of Monsters. A reward scroll from Dad — show him this code!",
+    "read_threshold": 2
+  },
+  "scroll_of_the_erlking": {
+    "name": "Scroll of the Erlking",
+    "symbol": "?",
+    "color": [
+      255,
+      200,
+      80
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 1,
+    "quiz_tier": 1,
+    "quiz_threshold": 1,
+    "effect": "boss_reward",
+    "power": "QUEST-FOREST-V",
+    "unidentified_name": "Scroll of the Erlking",
+    "identified": true,
+    "lore": "Sealed with a frozen leaf that never wilts. A reward scroll from Dad — show him this code!",
+    "read_threshold": 2
+  },
+  "scroll_of_camazotz": {
+    "name": "Scroll of Camazotz",
+    "symbol": "?",
+    "color": [
+      255,
+      200,
+      80
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 1,
+    "quiz_tier": 1,
+    "quiz_threshold": 1,
+    "effect": "boss_reward",
+    "power": "QUEST-NIGHT-VI",
+    "unidentified_name": "Scroll of Camazotz",
+    "identified": true,
+    "lore": "Sealed with a bat's wing pressed in wax. A reward scroll from Dad — show him this code!",
+    "read_threshold": 2
+  },
+  "scroll_of_cacus": {
+    "name": "Scroll of Cacus",
+    "symbol": "?",
+    "color": [
+      255,
+      200,
+      80
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 1,
+    "quiz_tier": 1,
+    "quiz_threshold": 1,
+    "effect": "boss_reward",
+    "power": "QUEST-FLAME-VII",
+    "unidentified_name": "Scroll of Cacus",
+    "identified": true,
+    "lore": "Sealed with a scorch mark that still smolders. A reward scroll from Dad — show him this code!",
+    "read_threshold": 2
+  },
+  "scroll_of_the_sphinx": {
+    "name": "Scroll of the Sphinx",
+    "symbol": "?",
+    "color": [
+      255,
+      200,
+      80
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 1,
+    "quiz_tier": 1,
+    "quiz_threshold": 1,
+    "effect": "boss_reward",
+    "power": "QUEST-RIDDLE-VIII",
+    "unidentified_name": "Scroll of the Sphinx",
+    "identified": true,
+    "lore": "Sealed with a riddle that answers itself. A reward scroll from Dad — show him this code!",
+    "read_threshold": 2
+  },
+  "scroll_of_rangda": {
+    "name": "Scroll of Rangda",
+    "symbol": "?",
+    "color": [
+      255,
+      200,
+      80
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 1,
+    "quiz_tier": 1,
+    "quiz_threshold": 1,
+    "effect": "boss_reward",
+    "power": "QUEST-WITCH-IX",
+    "unidentified_name": "Scroll of Rangda",
+    "identified": true,
+    "lore": "Sealed with a lock of white hair. A reward scroll from Dad — show him this code!",
+    "read_threshold": 2
+  },
+  "scroll_of_the_lion": {
+    "name": "Scroll of the Nemean Lion",
+    "symbol": "?",
+    "color": [
+      255,
+      200,
+      80
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 1,
+    "quiz_tier": 1,
+    "quiz_threshold": 1,
+    "effect": "boss_reward",
+    "power": "QUEST-LION-X",
+    "unidentified_name": "Scroll of the Nemean Lion",
+    "identified": true,
+    "lore": "Sealed with an impenetrable golden hair. A reward scroll from Dad — show him this code!",
+    "read_threshold": 2
+  },
+  "scroll_of_baba_yaga": {
+    "name": "Scroll of Baba Yaga",
+    "symbol": "?",
+    "color": [
+      255,
+      200,
+      80
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 1,
+    "quiz_tier": 1,
+    "quiz_threshold": 1,
+    "effect": "boss_reward",
+    "power": "QUEST-CRONE-XI",
+    "unidentified_name": "Scroll of Baba Yaga",
+    "identified": true,
+    "lore": "Sealed with iron teeth marks. A reward scroll from Dad — show him this code!",
+    "read_threshold": 2
+  },
+  "scroll_of_jormungandr": {
+    "name": "Scroll of Jörmungandr",
+    "symbol": "?",
+    "color": [
+      255,
+      200,
+      80
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 1,
+    "quiz_tier": 1,
+    "quiz_threshold": 1,
+    "effect": "boss_reward",
+    "power": "QUEST-WYRM-XII",
+    "unidentified_name": "Scroll of Jörmungandr",
+    "identified": true,
+    "lore": "Sealed with a scale from the World Serpent. A reward scroll from Dad — show him this code!",
+    "read_threshold": 2
+  },
+  "scroll_of_set": {
+    "name": "Scroll of Set",
+    "symbol": "?",
+    "color": [
+      255,
+      200,
+      80
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 1,
+    "quiz_tier": 1,
+    "quiz_threshold": 1,
+    "effect": "boss_reward",
+    "power": "QUEST-CHAOS-XIII",
+    "unidentified_name": "Scroll of Set",
+    "identified": true,
+    "lore": "Sealed with red sand from the desert of storms. A reward scroll from Dad — show him this code!",
+    "read_threshold": 2
+  },
+  "scroll_of_the_green": {
+    "name": "Scroll of the Green Knight",
+    "symbol": "?",
+    "color": [
+      255,
+      200,
+      80
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 1,
+    "quiz_tier": 1,
+    "quiz_threshold": 1,
+    "effect": "boss_reward",
+    "power": "QUEST-GREEN-XIV",
+    "unidentified_name": "Scroll of the Green Knight",
+    "identified": true,
+    "lore": "Sealed with a holly branch that bleeds sap. A reward scroll from Dad — show him this code!",
+    "read_threshold": 2
+  },
+  "scroll_of_charybdis": {
+    "name": "Scroll of Charybdis",
+    "symbol": "?",
+    "color": [
+      255,
+      200,
+      80
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 1,
+    "quiz_tier": 1,
+    "quiz_threshold": 1,
+    "effect": "boss_reward",
+    "power": "QUEST-MAELSTROM-XV",
+    "unidentified_name": "Scroll of Charybdis",
+    "identified": true,
+    "lore": "Sealed with salt water that never dries. A reward scroll from Dad — show him this code!",
+    "read_threshold": 2
+  },
+  "scroll_of_ravana": {
+    "name": "Scroll of Ravana",
+    "symbol": "?",
+    "color": [
+      255,
+      200,
+      80
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 1,
+    "quiz_tier": 1,
+    "quiz_threshold": 1,
+    "effect": "boss_reward",
+    "power": "QUEST-DEMON-XVI",
+    "unidentified_name": "Scroll of Ravana",
+    "identified": true,
+    "lore": "Sealed with the sigil of Lanka. A reward scroll from Dad — show him this code!",
+    "read_threshold": 2
+  },
+  "scroll_of_the_wendigo": {
+    "name": "Scroll of the Wendigo",
+    "symbol": "?",
+    "color": [
+      255,
+      200,
+      80
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 1,
+    "quiz_tier": 1,
+    "quiz_threshold": 1,
+    "effect": "boss_reward",
+    "power": "QUEST-HUNGER-XVII",
+    "unidentified_name": "Scroll of the Wendigo",
+    "identified": true,
+    "lore": "Sealed with frost that bites the fingers. A reward scroll from Dad — show him this code!",
+    "read_threshold": 2
+  },
+  "scroll_of_the_hunt": {
+    "name": "Scroll of the Wild Hunt",
+    "symbol": "?",
+    "color": [
+      255,
+      200,
+      80
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 1,
+    "quiz_tier": 1,
+    "quiz_threshold": 1,
+    "effect": "boss_reward",
+    "power": "QUEST-HUNT-XVIII",
+    "unidentified_name": "Scroll of the Wild Hunt",
+    "identified": true,
+    "lore": "Sealed with a horn blast frozen in wax. A reward scroll from Dad — show him this code!",
+    "read_threshold": 2
+  },
+  "scroll_of_anansi": {
+    "name": "Scroll of Anansi",
+    "symbol": "?",
+    "color": [
+      255,
+      200,
+      80
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 1,
+    "quiz_tier": 1,
+    "quiz_threshold": 1,
+    "effect": "boss_reward",
+    "power": "QUEST-SPIDER-XIX",
+    "unidentified_name": "Scroll of Anansi",
+    "identified": true,
+    "lore": "Sealed with a web that glints like gold. A reward scroll from Dad — show him this code!",
+    "read_threshold": 2
+  },
+  "scroll_of_nidhoggr": {
+    "name": "Scroll of Níðhöggr",
+    "symbol": "?",
+    "color": [
+      255,
+      200,
+      80
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 1,
+    "quiz_tier": 1,
+    "quiz_threshold": 1,
+    "effect": "boss_reward",
+    "power": "QUEST-ROOT-XX",
+    "unidentified_name": "Scroll of Níðhöggr",
+    "identified": true,
+    "lore": "Sealed with bark from the World Tree. A reward scroll from Dad — show him this code!",
+    "read_threshold": 2
   }
 }
