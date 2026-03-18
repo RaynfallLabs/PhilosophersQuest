@@ -524,6 +524,62 @@ def draw_scroll(P, L, D):
     apply_highlight(img); return img
 
 # ---------------------------------------------------------------------------
+# POTION drawing function
+# ---------------------------------------------------------------------------
+
+def draw_potion(P, L, D):
+    img = new_canvas(); d = ImageDraw.Draw(img,'RGBA')
+    glass = _c(200, 210, 220, 160)
+    # Bottle body — rounded flask
+    ell(d, 8,14,24,28, dk(P,0.5), BLK)
+    ell(d, 9,15,23,27, P)
+    ell(d, 10,16,20,24, L)
+    # Neck
+    rect(d, 13,8,19,16, glass, BLK)
+    rect(d, 14,9,18,15, (*P[:3],140))
+    # Cork/stopper
+    rect(d, 12,5,20,9, _c(160,120,70), dk(_c(160,120,70),0.6))
+    rect(d, 13,6,19,8, _c(180,140,90))
+    # Liquid highlight
+    ell(d, 11,18,16,23, lt(L,1.3))
+    # Glass shine
+    shine(d,12,17)
+    shine(d,15,10)
+    apply_highlight(img); return img
+
+# ---------------------------------------------------------------------------
+# SPELLBOOK drawing function
+# ---------------------------------------------------------------------------
+
+def draw_spellbook(P, L, D):
+    img = new_canvas(); d = ImageDraw.Draw(img,'RGBA')
+    # Book cover
+    rect(d, 5,4,27,28, P, BLK)
+    rect(d, 7,6,25,26, dk(P,0.8))
+    # Spine
+    rect(d, 5,4,9,28, dk(P,0.6), BLK)
+    rect(d, 6,6,8,26, dk(P,0.7))
+    # Pages (visible edge)
+    rect(d, 9,6,25,26, _c(240,235,220))
+    rect(d, 10,7,24,25, _c(230,225,210))
+    # Page lines
+    for y in range(9,24,3):
+        d.line([(12,y),(22,y)], fill=_c(200,195,180), width=1)
+    # Cover overlay (front)
+    rect(d, 10,6,26,27, P, BLK)
+    rect(d, 12,8,24,25, L)
+    # Decorative rune/symbol in center
+    ell(d, 14,12,22,21, lt(L,1.3), D)
+    ell(d, 15,13,21,20, lt(L,1.5))
+    # Corner accents
+    for cx,cy in [(12,8),(24,8),(12,25),(24,25)]:
+        d.point((cx,cy), fill=GOLD)
+    # Spine detail
+    d.line([(10,6),(10,27)], fill=dk(P,0.5), width=1)
+    shine(d,14,10)
+    apply_highlight(img); return img
+
+# ---------------------------------------------------------------------------
 # WAND drawing function
 # ---------------------------------------------------------------------------
 
@@ -1310,6 +1366,18 @@ def _make_sprite(category, item_id, item):
             return fn(col, lt(col,1.35), dk(col,0.55))
         return fn(P, L, D)
 
+    if category == 'potion':
+        if json_col:
+            col = C(json_col)
+            return draw_potion(col, lt(col,1.35), dk(col,0.55))
+        return draw_potion(P, L, D)
+
+    if category == 'spellbook':
+        if json_col:
+            col = C(json_col)
+            return draw_spellbook(col, lt(col,1.35), dk(col,0.55))
+        return draw_spellbook(P, L, D)
+
     return None
 
 
@@ -1318,6 +1386,7 @@ def main():
         'weapon','armor','shield','scroll','wand',
         'food','artifact','accessory','ammo',
         'container','lockpick','ingredient',
+        'potion','spellbook',
     ]
     ok = err = 0
     for cat in categories:

@@ -1021,13 +1021,14 @@ def main():
 
         fn = DRAW_FN.get(sil, draw_humanoid)
         try:
+            # Draw glow aura FIRST so sprite renders on top
+            if 'glow' in feats and sil != 'undead_ghost':
+                add_glow_aura(img, S//2, S//2, int(14*size), P)
+
             if sil == 'undead_ghost':
                 fn(d, P, L, D_, H, feats, size=size, img=img)
             else:
                 fn(d, P, L, D_, H, feats, size=size)
-
-            if 'glow' in feats and sil != 'undead_ghost':
-                add_glow_aura(img, S//2, S//2, int(14*size), P)
 
             apply_highlight(img)
         except Exception as e:

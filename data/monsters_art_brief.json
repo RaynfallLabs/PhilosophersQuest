@@ -13382,5 +13382,912 @@
     },
     "level": 78,
     "symbol": "W"
+  },
+  "asterion_minotaur": {
+    "name": "Asterion the Minotaur",
+    "silhouette": "humanoid_large",
+    "size": 1.4,
+    "features": [
+      "horns",
+      "tail"
+    ],
+    "palette": {
+      "primary": [
+        180,
+        80,
+        50
+      ],
+      "secondary": [
+        234,
+        104,
+        65
+      ],
+      "dark": [
+        72,
+        32,
+        20
+      ],
+      "highlight": [
+        255,
+        136,
+        85
+      ],
+      "saturated": [
+        234,
+        56,
+        35
+      ]
+    },
+    "level": 20,
+    "symbol": "M"
+  },
+  "medusa_gorgon": {
+    "name": "Medusa the Gorgon",
+    "silhouette": "humanoid_caster",
+    "size": 1.3,
+    "features": [
+      "tail"
+    ],
+    "palette": {
+      "primary": [
+        80,
+        180,
+        80
+      ],
+      "secondary": [
+        104,
+        234,
+        104
+      ],
+      "dark": [
+        32,
+        72,
+        32
+      ],
+      "highlight": [
+        136,
+        255,
+        136
+      ],
+      "saturated": [
+        56,
+        234,
+        56
+      ]
+    },
+    "level": 40,
+    "symbol": "G"
+  },
+  "fafnir_dragon": {
+    "name": "Fafnir the Dragon",
+    "silhouette": "dragon_large",
+    "size": 1.5,
+    "features": [
+      "flames",
+      "horns",
+      "tail",
+      "wings"
+    ],
+    "palette": {
+      "primary": [
+        200,
+        100,
+        20
+      ],
+      "secondary": [
+        255,
+        130,
+        26
+      ],
+      "dark": [
+        80,
+        40,
+        8
+      ],
+      "highlight": [
+        255,
+        170,
+        34
+      ],
+      "saturated": [
+        255,
+        70,
+        14
+      ]
+    },
+    "level": 60,
+    "symbol": "D"
+  },
+  "fenrir_wolf": {
+    "name": "Fenrir, Wolf of Ragnarok",
+    "silhouette": "quadruped_large",
+    "size": 1.45,
+    "features": [
+      "tail"
+    ],
+    "palette": {
+      "primary": [
+        180,
+        200,
+        240
+      ],
+      "secondary": [
+        234,
+        255,
+        255
+      ],
+      "dark": [
+        72,
+        80,
+        96
+      ],
+      "highlight": [
+        255,
+        255,
+        255
+      ],
+      "saturated": [
+        125,
+        140,
+        255
+      ]
+    },
+    "level": 80,
+    "symbol": "W"
+  },
+  "abaddon_destroyer": {
+    "name": "Abaddon the Destroyer",
+    "silhouette": "demon_winged",
+    "size": 1.5,
+    "features": [
+      "flames",
+      "glow",
+      "horns",
+      "tail",
+      "wings"
+    ],
+    "palette": {
+      "primary": [
+        160,
+        60,
+        220
+      ],
+      "secondary": [
+        208,
+        78,
+        255
+      ],
+      "dark": [
+        64,
+        24,
+        88
+      ],
+      "highlight": [
+        255,
+        102,
+        255
+      ],
+      "saturated": [
+        112,
+        42,
+        255
+      ]
+    },
+    "level": 100,
+    "symbol": "A"
+  },
+  "arachne": {
+    "name": "Arachne",
+    "silhouette": "insect_spider",
+    "size": 1.0,
+    "features": [
+      "web"
+    ],
+    "palette": {
+      "primary": [
+        180,
+        140,
+        80
+      ],
+      "secondary": [
+        234,
+        182,
+        104
+      ],
+      "dark": [
+        72,
+        56,
+        32
+      ],
+      "highlight": [
+        255,
+        238,
+        136
+      ],
+      "saturated": [
+        234,
+        98,
+        56
+      ]
+    },
+    "level": 3,
+    "symbol": "s"
+  },
+  "talos": {
+    "name": "Talos",
+    "silhouette": "construct_golem",
+    "size": 1.2,
+    "features": [
+      "glow"
+    ],
+    "palette": {
+      "primary": [
+        180,
+        160,
+        100
+      ],
+      "secondary": [
+        234,
+        208,
+        130
+      ],
+      "dark": [
+        72,
+        64,
+        40
+      ],
+      "highlight": [
+        255,
+        255,
+        170
+      ],
+      "saturated": [
+        234,
+        112,
+        70
+      ]
+    },
+    "level": 12,
+    "symbol": "T"
+  },
+  "echidna": {
+    "name": "Echidna",
+    "silhouette": "serpent_snake",
+    "size": 1.1,
+    "features": [
+      "tail"
+    ],
+    "palette": {
+      "primary": [
+        140,
+        100,
+        160
+      ],
+      "secondary": [
+        182,
+        130,
+        208
+      ],
+      "dark": [
+        56,
+        40,
+        64
+      ],
+      "highlight": [
+        238,
+        170,
+        255
+      ],
+      "saturated": [
+        98,
+        70,
+        208
+      ]
+    },
+    "level": 15,
+    "symbol": "E"
+  },
+  "erlking": {
+    "name": "Erlking",
+    "silhouette": "humanoid_caster",
+    "size": 1.1,
+    "features": [
+      "crown",
+      "staff"
+    ],
+    "palette": {
+      "primary": [
+        80,
+        140,
+        80
+      ],
+      "secondary": [
+        104,
+        182,
+        104
+      ],
+      "dark": [
+        32,
+        56,
+        32
+      ],
+      "highlight": [
+        136,
+        238,
+        136
+      ],
+      "saturated": [
+        56,
+        182,
+        56
+      ]
+    },
+    "level": 20,
+    "symbol": "E"
+  },
+  "camazotz": {
+    "name": "Camazotz",
+    "silhouette": "bat",
+    "size": 1.15,
+    "features": [
+      "wings"
+    ],
+    "palette": {
+      "primary": [
+        100,
+        60,
+        120
+      ],
+      "secondary": [
+        130,
+        78,
+        156
+      ],
+      "dark": [
+        40,
+        24,
+        48
+      ],
+      "highlight": [
+        170,
+        102,
+        204
+      ],
+      "saturated": [
+        70,
+        42,
+        156
+      ]
+    },
+    "level": 25,
+    "symbol": "B"
+  },
+  "cacus": {
+    "name": "Cacus",
+    "silhouette": "humanoid_large",
+    "size": 1.3,
+    "features": [
+      "flames"
+    ],
+    "palette": {
+      "primary": [
+        200,
+        100,
+        40
+      ],
+      "secondary": [
+        255,
+        130,
+        52
+      ],
+      "dark": [
+        80,
+        40,
+        16
+      ],
+      "highlight": [
+        255,
+        170,
+        68
+      ],
+      "saturated": [
+        255,
+        70,
+        28
+      ]
+    },
+    "level": 30,
+    "symbol": "C"
+  },
+  "the_sphinx": {
+    "name": "The Sphinx",
+    "silhouette": "quadruped_large",
+    "size": 1.25,
+    "features": [
+      "crown",
+      "tail",
+      "wings"
+    ],
+    "palette": {
+      "primary": [
+        200,
+        180,
+        100
+      ],
+      "secondary": [
+        255,
+        234,
+        130
+      ],
+      "dark": [
+        80,
+        72,
+        40
+      ],
+      "highlight": [
+        255,
+        255,
+        170
+      ],
+      "saturated": [
+        255,
+        125,
+        70
+      ]
+    },
+    "level": 35,
+    "symbol": "S"
+  },
+  "rangda": {
+    "name": "Rangda",
+    "silhouette": "humanoid_caster",
+    "size": 1.15,
+    "features": [
+      "flames",
+      "skull",
+      "staff"
+    ],
+    "palette": {
+      "primary": [
+        180,
+        60,
+        180
+      ],
+      "secondary": [
+        234,
+        78,
+        234
+      ],
+      "dark": [
+        72,
+        24,
+        72
+      ],
+      "highlight": [
+        255,
+        102,
+        255
+      ],
+      "saturated": [
+        234,
+        42,
+        234
+      ]
+    },
+    "level": 40,
+    "symbol": "W"
+  },
+  "nemean_lion": {
+    "name": "Nemean Lion",
+    "silhouette": "quadruped_large",
+    "size": 1.25,
+    "features": [
+      "glow",
+      "tail"
+    ],
+    "palette": {
+      "primary": [
+        220,
+        180,
+        80
+      ],
+      "secondary": [
+        255,
+        234,
+        104
+      ],
+      "dark": [
+        88,
+        72,
+        32
+      ],
+      "highlight": [
+        255,
+        255,
+        136
+      ],
+      "saturated": [
+        255,
+        125,
+        56
+      ]
+    },
+    "level": 45,
+    "symbol": "L"
+  },
+  "baba_yaga": {
+    "name": "Baba Yaga",
+    "silhouette": "humanoid_caster",
+    "size": 1.05,
+    "features": [
+      "staff"
+    ],
+    "palette": {
+      "primary": [
+        160,
+        120,
+        80
+      ],
+      "secondary": [
+        208,
+        156,
+        104
+      ],
+      "dark": [
+        64,
+        48,
+        32
+      ],
+      "highlight": [
+        255,
+        204,
+        136
+      ],
+      "saturated": [
+        208,
+        84,
+        56
+      ]
+    },
+    "level": 50,
+    "symbol": "W"
+  },
+  "jormungandr_juvenile": {
+    "name": "J\u00f6rmungandr (Juvenile)",
+    "silhouette": "serpent_worm",
+    "size": 1.2,
+    "features": [
+      "glow"
+    ],
+    "palette": {
+      "primary": [
+        60,
+        160,
+        100
+      ],
+      "secondary": [
+        78,
+        208,
+        130
+      ],
+      "dark": [
+        24,
+        64,
+        40
+      ],
+      "highlight": [
+        102,
+        255,
+        170
+      ],
+      "saturated": [
+        42,
+        208,
+        70
+      ]
+    },
+    "level": 55,
+    "symbol": "S"
+  },
+  "sets_jackal": {
+    "name": "Set's Jackal",
+    "silhouette": "humanoid_medium",
+    "size": 1.1,
+    "features": [
+      "staff"
+    ],
+    "palette": {
+      "primary": [
+        180,
+        100,
+        40
+      ],
+      "secondary": [
+        234,
+        130,
+        52
+      ],
+      "dark": [
+        72,
+        40,
+        16
+      ],
+      "highlight": [
+        255,
+        170,
+        68
+      ],
+      "saturated": [
+        234,
+        70,
+        28
+      ]
+    },
+    "level": 58,
+    "symbol": "J"
+  },
+  "green_knight": {
+    "name": "The Green Knight",
+    "silhouette": "humanoid_large",
+    "size": 1.25,
+    "features": [
+      "armor",
+      "glow"
+    ],
+    "palette": {
+      "primary": [
+        80,
+        180,
+        80
+      ],
+      "secondary": [
+        104,
+        234,
+        104
+      ],
+      "dark": [
+        32,
+        72,
+        32
+      ],
+      "highlight": [
+        136,
+        255,
+        136
+      ],
+      "saturated": [
+        56,
+        234,
+        56
+      ]
+    },
+    "level": 63,
+    "symbol": "K"
+  },
+  "charybdis": {
+    "name": "Charybdis",
+    "silhouette": "blob_ooze",
+    "size": 1.2,
+    "features": [
+      "tentacles"
+    ],
+    "palette": {
+      "primary": [
+        40,
+        100,
+        200
+      ],
+      "secondary": [
+        52,
+        130,
+        255
+      ],
+      "dark": [
+        16,
+        40,
+        80
+      ],
+      "highlight": [
+        68,
+        170,
+        255
+      ],
+      "saturated": [
+        28,
+        70,
+        255
+      ]
+    },
+    "level": 68,
+    "symbol": "C"
+  },
+  "ravanas_arm": {
+    "name": "Ravana's Arm",
+    "silhouette": "humanoid_medium",
+    "size": 1.1,
+    "features": [
+      "flames"
+    ],
+    "palette": {
+      "primary": [
+        200,
+        60,
+        60
+      ],
+      "secondary": [
+        255,
+        78,
+        78
+      ],
+      "dark": [
+        80,
+        24,
+        24
+      ],
+      "highlight": [
+        255,
+        102,
+        102
+      ],
+      "saturated": [
+        255,
+        42,
+        42
+      ]
+    },
+    "level": 70,
+    "symbol": "A"
+  },
+  "wendigo": {
+    "name": "Wendigo",
+    "silhouette": "undead_zombie",
+    "size": 1.2,
+    "features": [
+      "horns",
+      "ice"
+    ],
+    "palette": {
+      "primary": [
+        200,
+        220,
+        255
+      ],
+      "secondary": [
+        255,
+        255,
+        255
+      ],
+      "dark": [
+        80,
+        88,
+        102
+      ],
+      "highlight": [
+        255,
+        255,
+        255
+      ],
+      "saturated": [
+        140,
+        154,
+        255
+      ]
+    },
+    "level": 75,
+    "symbol": "W"
+  },
+  "wild_hunt_captain": {
+    "name": "Wild Hunt Captain",
+    "silhouette": "humanoid_medium",
+    "size": 1.15,
+    "features": [
+      "armor",
+      "glow"
+    ],
+    "palette": {
+      "primary": [
+        180,
+        180,
+        220
+      ],
+      "secondary": [
+        234,
+        234,
+        255
+      ],
+      "dark": [
+        72,
+        72,
+        88
+      ],
+      "highlight": [
+        255,
+        255,
+        255
+      ],
+      "saturated": [
+        125,
+        125,
+        255
+      ]
+    },
+    "level": 80,
+    "symbol": "H"
+  },
+  "anansi": {
+    "name": "Anansi",
+    "silhouette": "insect_spider",
+    "size": 1.15,
+    "features": [
+      "glow",
+      "web"
+    ],
+    "palette": {
+      "primary": [
+        220,
+        180,
+        40
+      ],
+      "secondary": [
+        255,
+        234,
+        52
+      ],
+      "dark": [
+        88,
+        72,
+        16
+      ],
+      "highlight": [
+        255,
+        255,
+        68
+      ],
+      "saturated": [
+        255,
+        125,
+        28
+      ]
+    },
+    "level": 85,
+    "symbol": "A"
+  },
+  "nidhoggr_fragment": {
+    "name": "N\u00ed\u00f0h\u00f6ggr Fragment",
+    "silhouette": "dragon_small",
+    "size": 1.1,
+    "features": [
+      "glow",
+      "tail"
+    ],
+    "palette": {
+      "primary": [
+        80,
+        200,
+        80
+      ],
+      "secondary": [
+        104,
+        255,
+        104
+      ],
+      "dark": [
+        32,
+        80,
+        32
+      ],
+      "highlight": [
+        136,
+        255,
+        136
+      ],
+      "saturated": [
+        56,
+        255,
+        56
+      ]
+    },
+    "level": 90,
+    "symbol": "D"
   }
 }
