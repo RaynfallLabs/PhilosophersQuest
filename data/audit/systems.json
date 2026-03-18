@@ -1,0 +1,142 @@
+{
+  "critical": [
+    {
+      "location": "src/quiz_engine.py:188",
+      "issue": "Timer expiry check uses `== 0.0` on a float produced by `max(0.0, remaining - dt)`. Because dt is a variable-length frame delta and floating-point subtraction is imprecise, `time_remaining` may underflow to a tiny negative number that is clamped to 0.0, but the very next frame it is already 0.0 and the branch fires normally — HOWEVER the real danger is the opposite: the subtraction may produce a value like 2.22e-16 instead of exactly 0.0, so the condition `time_remaining == 0.0` is never True and the timer never fires. The player gets an infinite timer on that question.",
+      "fix": "Replace `if self.time_remaining == 0.0:` with `if self.time_remaining <= 0.0:` (line 188). The `max(0.0, ...)` on line 187 guarantees it cannot go negative, so `<= 0.0` is equivalent to `== 0.0` mathematically but is safe against floating-point imprecision."
+    },
+    {
+      "location": "src/status_effects.py:193",
+      "issue": "apply_effect() caps stacked duration at 60 turns (`min(current + duration, 60)`) for every effect, including heroism and brilliance. If heroism is still active and the player drinks a second heroism potion, apply_effect() returns True and the stat bonus in drink_potion() (food_system.py:372) is applied again (+2 STR), but when the effect eventually expires, tick_all() only reverses it once (-2 STR). Each re-application of a still-active heroism/brilliance potion permanently corrupts player stats by the bonus amount (net +2 STR never reversed).",
+      "fix": "In drink_potion(), before calling player.add_effect('heroism') check whether heroism is already active; if so, only refresh the duration without re-applying the stat bonus. The cleanest fix is: check `player.has_effect('heroism')` before the `player.apply_stat_bonus('STR', 2)` call, and only apply the bonus if the effect was not previously active. Same logic applies to brilliance (INT+1, WIS+1)."
+    },
+    {
+      "location": "src/food_system.py:371-373 and src/food_system.py:375-379",
+      "issue": "Heroism and brilliance potion effects call player.add_effect() AND player.apply_stat_bonus() unconditionally. If the player already has heroism/brilliance active, add_effect() returns True (it just caps/refreshes the duration per status_effects.py:193), the stat bonus is applied a second time, but the expiry handler in tick_all() only reverses it once. This is the same stacking bug described above but called out at its source location in food_system.py.",
+      "fix": "Guard the stat bonus application: `if not player.has_effect('heroism'): player.apply_stat_bonus('STR', 2)` before calling `player.add_effect('heroism', duration)`. Apply the same guard to brilliance."
+    }
+  ],
+  "bugs": [
+    {
+      "location": "src/quiz_engine.py:257-272 (_advance, threshold branch)",
+      "issue": "In threshold/escalator_threshold mode, when the player answers WRONG the quiz ends immediately with success=False (line 260). This is correct for threshold mode per the CLAUDE.md design, but it means a player only needs to get ONE wrong answer to fail — yet `total_qs = ceil(threshold * 1.5)` implies there should be enough slack for some wrong answers. The result is that threshold mode is effectively 'get ALL correct or instantly fail', which is inconsistent with the stated design of 'must answer X correct out of Y total'. The player never gets the full allocation of questions after a wrong answer.",
+      "fix": "Replace the early exit on wrong answer with a check against the number of remaining questions vs the number correct needed: only end with failure if there are not enough questions left to reach the threshold. Remove the `if not self.last_correct: self._end(success=False); return` early exit and instead let the loop continue until either the threshold is reached or questions run out."
+    },
+    {
+      "location": "src/quiz_engine.py:129",
+      "issue": "WIS bonus calculation: `timer_seconds = round((10 + wisdom) * timer_modifier) + extra_seconds`. Per CLAUDE.md the WIS bonus is '+1 second per point' above a base of 10, meaning WIS 10 = 10s, WIS 11 = 11s, WIS 20 = 20s. But the formula adds the FULL wisdom value (not the bonus above 10), so WIS 10 gives 10+10=20s base (before modifier), WIS 20 gives 10+20=30s base. The player always gets 10 extra seconds that are unearned. The correct formula should be `round((10 + max(0, wisdom - 10)) * timer_modifier) + extra_seconds`, matching player.py:201's `get_quiz_timer()` method which also uses `BASE_TIMER + max(0, WIS - 10)`.",
+      "fix": "Change line 129 to: `self.timer_seconds = round((10 + max(0, wisdom - 10)) * timer_modifier) + extra_seconds`. This aligns quiz_engine with get_quiz_timer() in player.py."
+    },
+    {
+      "location": "src/food_system.py:166-167",
+      "issue": "cook_ingredient() uses `ingredient.recipes.get(str(quality), ingredient.recipes.get('0', {}))` to look up the recipe for a given quality. When quality > 0 but the specific quality key is absent from the recipes dict, it silently falls back to quality-0 (the ruined recipe), naming and serving the worst result even though the player cooked successfully. This is an incorrect fallback for a partial cook (e.g. quality 3 but only keys '0','1','5' exist).",
+      "fix": "Use a nearest-lower-key fallback: iterate from quality down to 0 and return the first key found. Alternatively, ensure the JSON data always includes all 6 quality keys (0-5) for every ingredient."
+    },
+    {
+      "location": "src/status_effects.py:279-284",
+      "issue": "tick_all() decrements effect duration by 1 each turn, then checks `if new_val <= 0: to_expire.append(effect)`. But the per-turn side-effect code (e.g. poisoned, bleeding) runs BEFORE the decrement. On the final turn (val == 1), the side effect fires, then the effect is expired. This is correct. However, when val == 0 at entry (line 211-213), the effect is immediately scheduled for expiry with NO per-turn damage that turn. This means an effect that was set to 0 externally (e.g. by cure_poison popping 'poisoned') will show the expire message even though the effect was already removed. The pop() on line 288 uses pop(effect, None) so it won't crash, but the expire message will display for an already-removed effect.",
+      "fix": "In the cure_poison / cure_disease / cure_all handlers in drink_potion(), also note that tick_all() will still show the expire message next turn if the effect is removed mid-turn via pop(). This is cosmetically wrong (e.g. 'The poison leaves your body' shown even after 'The poison is purged from your blood'). Fix by skipping the expire message in _EXPIRE_MSGS lookup if the effect was already absent when the expiry loop runs — check if `player.status_effects.get(effect)` is None before popping (but the effect is already gone so pop is a no-op). The real fix is: when curing via potion, add the effect key to a 'silenced_expiry' set so tick_all doesn't emit the redundant message."
+    },
+    {
+      "location": "src/container_system.py:217",
+      "issue": "_generate_loot() calls `copy.copy(random.choices(...)[0])` (shallow copy) to produce loot items. For Item subclasses with mutable attributes (e.g. Armor.damage_resistances dict, Accessory.effects dict), a shallow copy means all loot instances from the same pool entry share the same mutable sub-objects. Mutating one loot item (e.g. adding an enchant_bonus, cursing it) would affect every other copy drawn from the same pool object in future container opens.",
+      "fix": "Change `copy.copy(...)` to `copy.deepcopy(...)` on line 217 to ensure each loot item is fully independent."
+    },
+    {
+      "location": "src/container_system.py:81 vs 106",
+      "issue": "On success, _handle_success() inserts the 'lock clicks open' message at index 0 AFTER appending the 'Pick used' message (line 90 insert, line 83 append). On failure, _handle_failure() appends 'Pick damaged' after the failure message (line 108). In the success path this works correctly (open message first), but it's fragile — if more messages are added before the insert, ordering breaks. Not a crash bug but a logic fragility.",
+      "fix": "Construct messages in natural order: build the 'lock clicks open' message first, then append 'Pick used'. Remove the insert(0, ...) pattern."
+    },
+    {
+      "location": "src/food_system.py:509-510",
+      "issue": "drink_potion() handles 'restore_mp' with `amt = int(power) if power else 15`. If `potion.power` is a dice string like '2d6' (as used for heal/extra_heal potions), int('2d6') will raise ValueError and crash. The heal branch correctly uses `roll_dice(power)` but this branch does not.",
+      "fix": "Change to: `from dice import roll as roll_dice; amt = roll_dice(power) if power else 15` to match the pattern used for heal effects."
+    },
+    {
+      "location": "src/food_system.py:519",
+      "issue": "The 'brilliance_mp' effect branch also uses `amt = int(power) if power else 40`, same dice-string crash risk as restore_mp.",
+      "fix": "Same fix: use roll_dice(power) instead of int(power)."
+    },
+    {
+      "location": "src/quiz_engine.py:114-119",
+      "issue": "When building the initial deck for a (subject, tier) pair, the fallback `or all_qs[:]` fires when no questions match the exact tier. This means if escalation pushes tier to 6+ (which is possible since _escalate() increments self.tier with no upper bound), the deck will be built from ALL questions across ALL tiers, including lower tiers that may have already been seen. This causes tier confusion and easy questions appearing at escalated difficulty levels.",
+      "fix": "Clamp tier in _escalate() to the maximum available tier: after `self.tier += 1`, add `max_tier = max((q.get('tier',1) for q in self._cache.get(self.subject,[])), default=5); self.tier = min(self.tier, max_tier)`."
+    },
+    {
+      "location": "src/quiz_engine.py:243-245",
+      "issue": "In CHAIN and ESCALATOR_CHAIN modes, _advance() calls `self._end(success=True)` when `not self.last_correct`. Chain mode always 'succeeds'; the score is the chain length. But if the very first question in a chain quiz is answered wrong (chain length = 0), the quiz ends with success=True and score=0. Callers that interpret score=0 as meaningful (e.g. cook_ingredient quality=0 ruins the food) will work correctly, but callers relying on `result.success` being False to indicate 'nothing happened' will incorrectly treat a chain-of-zero as a success. This is by design per CLAUDE.md but should be documented — and cook_compound_recipe correctly handles quality=0 as a failure message while marking result.success=True.",
+      "fix": "No code change needed if all callers correctly inspect result.score rather than result.success for chain modes. Document this invariant in the QuizResult docstring."
+    }
+  ],
+  "warnings": [
+    {
+      "location": "src/food_system.py:85 and 90",
+      "issue": "cook_compound_recipe() restores SP immediately in the callback without removing the food item from the world (there is no food item — ingredients are already consumed). However, the function calls player.restore_sp() directly rather than producing a Food item and calling eat_food(). This means compound recipes bypass all Food-item bonus logic and also skip the HP restore path. This is intentional but means compound recipe bonuses (stat bonuses) are the only non-SP benefit — no HP heal even at high quality.",
+      "fix": "Consider adding an HP heal for high-quality compound recipes (quality >= 3) consistent with cook_ingredient's _cooking_hp_bonus() call, or document that compound recipes are SP-only."
+    },
+    {
+      "location": "src/food_system.py:272-295 (eat_food)",
+      "issue": "eat_food() always applies the bonus from bonus_recipe regardless of food HP. Late-game food items with hp_restore of 2-10 HP (vs 500-800 player max HP) provide negligible healing. This is noted in MEMORY.md as a known design concern ('Food/recipe HP values are tiny'). The actual game balance relies on stair-rest healing, so this is not a bug but the HP restore path of eat_food() is effectively vestigial at mid/late game.",
+      "fix": "No code change required; document as a design decision."
+    },
+    {
+      "location": "src/status_effects.py:83-88 (DEBUFFS frozenset)",
+      "issue": "'hallucinating_pot' is defined in EFFECT_INFO (line 56) but is NOT included in DEBUFFS. If a potion applies 'hallucinating_pot' effect, it will not be cleared by cure_all (which iterates DEBUFFS) and will not benefit from Perseus quirk's debuff duration halving. The effect is also absent from _EXPIRE_MSGS so no expiry message will be shown.",
+      "fix": "Either remove 'hallucinating_pot' as a separate effect and reuse 'hallucinating', or add 'hallucinating_pot' to DEBUFFS and _EXPIRE_MSGS."
+    },
+    {
+      "location": "src/status_effects.py:192-193",
+      "issue": "apply_effect() caps combined duration at 60 turns for all effects. This hardcoded cap is not configurable per effect and may be too low for long-duration permanent-feeling buffs (fire_resist, cold_resist etc.) that are meant to last a long time when granted by potions with duration=100+.",
+      "fix": "Consider making the cap effect-specific, or raising/removing the cap for resist and beneficial effects."
+    },
+    {
+      "location": "src/container_system.py:150-151",
+      "issue": "_alert_nearby() only flips monsters from ai_pattern=='sessile' to 'aggressive'. Non-sessile but currently-idle or passive monsters are not alerted by the lockpick noise. This likely undercuts the intended 30% alert mechanic for most monster types.",
+      "fix": "Consider altering patrol/idle AI patterns to alert as well, or set a 'noticed_player' flag that the AI system checks."
+    },
+    {
+      "location": "src/food_system.py:43-51 (get_available_compound_recipes)",
+      "issue": "held_ids uses a set comprehension over inventory, but Ingredient items are stackable (count > 1). The check `all(ing in held_ids for ing in recipe['ingredients'])` only tests presence, not count. A recipe requiring two of the same ingredient (e.g. ['wolf_meat', 'wolf_meat']) would appear available if the player has only 1 wolf_meat.",
+      "fix": "Use a Counter: `from collections import Counter; held_counts = Counter(item.id for item in inventory if isinstance(item, Ingredient)); return [...recipe if all(held_counts[ing] >= recipe['ingredients'].count(ing) for ing in set(recipe['ingredients']))]`."
+    },
+    {
+      "location": "src/quiz_engine.py:215",
+      "issue": "On deck reshuffle, the anti-repeat check uses `self._pool[0] is last` (identity check). Since questions are plain dicts loaded from JSON, all references to the same dict object in the pool are the same object, so `is` works correctly here. However, if the JSON were ever reloaded or questions rebuilt, `is` would fail silently. A safer check would be `self._pool[0] == last` (equality) or compare a unique field like question text.",
+      "fix": "Low priority: change `is` to `==` for robustness."
+    },
+    {
+      "location": "src/quiz_engine.py:73",
+      "issue": "on_answer hook is documented as `callable(is_correct: bool)` but timer expiry (lines 190-195) sets last_correct=False and does NOT call on_answer. Timer-expired questions are therefore not counted in wrong_answers tracking, understating the player's error rate in the scoring/grade system.",
+      "fix": "After line 195 (`self.result_timer = self.RESULT_DISPLAY_TIME`), add: `if self.on_answer: self.on_answer(False)`."
+    },
+    {
+      "location": "src/player.py:263-274 (apply_stat_bonus)",
+      "issue": "apply_stat_bonus() adjusts max_hp when CON changes but does NOT increase current hp proportionally. This means a CON drain (-1) reduces max_hp and may clip current hp (line 268), but a CON restoration potion restores max_hp without any current hp benefit. This is standard roguelike behavior but means 'restore_con' type potions (not currently implemented) would only benefit max_hp, not heal the player. Also: when CON is drained repeatedly, hp = min(hp, max_hp) prevents hp from exceeding the new lower maximum — correct — but if hp was already below the new maximum there is no extra damage from the drain (CON drain is only a max_hp reduction, not direct damage). This is probably intentional.",
+      "fix": "Document the CON drain behavior. Consider whether CON drain should also deal direct damage equal to the HP lost from the max reduction."
+    },
+    {
+      "location": "src/container_system.py:36-37",
+      "issue": "attempt_lockpick() checks `player.lockpick_charges <= 0` before starting the quiz. However the lockpick_charges system in container_system.py deducts a charge on both success AND failure (lines 81, 106). The Lockpick item class in items.py has its own durability/durability_loss fields (lines 168-171) that are never referenced in container_system.py. There is a mismatch: the Lockpick item class tracks durability per-item, but the player has a flat `lockpick_charges` integer. The per-item durability system is dead code.",
+      "fix": "Either remove Lockpick.durability / durability_loss_success / durability_loss_failure fields from items.py since they are unused, or wire them up in container_system.py instead of the flat charges system."
+    }
+  ],
+  "dead_code": [
+    {
+      "location": "src/items.py:168-171 (Lockpick.durability, durability_loss_success, durability_loss_failure)",
+      "issue": "Lockpick item has per-item durability fields that are never read or decremented anywhere in the codebase. The container_system.py uses a flat player.lockpick_charges integer instead."
+    },
+    {
+      "location": "src/player.py:199-201 (get_quiz_timer)",
+      "issue": "get_quiz_timer() returns `BASE_TIMER + max(0, WIS - 10)` but is never called anywhere in the codebase. The quiz timer is computed inline in quiz_engine.py:129 using a different formula `(10 + wisdom)`. These two formulas disagree (see bug at quiz_engine.py:129). The method exists but is unused."
+    },
+    {
+      "location": "src/status_effects.py:56 (hallucinating_pot effect key)",
+      "issue": "The 'hallucinating_pot' entry in EFFECT_INFO is defined but never referenced by any potion effect handler in drink_potion(), never added to DEBUFFS, and never added to _EXPIRE_MSGS. It appears to be a placeholder that was never completed."
+    },
+    {
+      "location": "src/quiz_engine.py:63-64 (_pool, _pool_idx instance vars)",
+      "issue": "_pool and _pool_idx are set as instance variables in __init__ but are immediately overwritten in start_quiz() before being used. The initialization values ([] and 0) serve no functional purpose since start_quiz() must be called before any question is served."
+    }
+  ],
+  "summary": "4 critical/high-severity issues found: (1) Float equality timer check that can silently hang the timer permanently on a question. (2+3) Heroism/brilliance potion re-application permanently corrupts player STR/INT/WIS stats due to double stat bonus application with single reversal on expiry. (4) WIS timer bonus formula adds full WIS value instead of the bonus above 10, giving players ~10 extra seconds they should not have. Additional bugs include: threshold quiz mode ends immediately on any wrong answer rather than allowing the full question allocation; _generate_loot uses shallow copy risking shared mutable state between loot items; dice strings in restore_mp/brilliance_mp potion effects will crash with ValueError; tier escalation has no upper bound causing fallback to all-tier question pools; timer expiry does not fire on_answer hook so wrong_answers counter is understated. Warnings include: duplicate-ingredient compound recipe availability check is wrong (uses set membership not count), hallucinating_pot effect is orphaned, Lockpick per-item durability fields are dead code never used by the container system, and sessile-only alert logic in lockpicking misses most monster AI patterns."
+}

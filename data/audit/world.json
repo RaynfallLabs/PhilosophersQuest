@@ -1,0 +1,113 @@
+{
+  "critical": [
+    {
+      "location": "src/main.py:4884-4985 (see also src/monster.py:54-84)",
+      "issue": "Monster tick_effects() is never called from the game loop. Monster.tick_effects() exists and applies bleeding, poison, burning, and petrifying damage-over-time, but the game loop (_do_monster_turns and the post-turn update block) never calls m.tick_effects() for any monster in self.monsters. As a result, status effects applied to monsters never tick down, never deal DOT damage, and never expire. The 'petrifying' kill path (monster.py:74-76) that sets alive=False is also dead code.",
+      "fix": "In _do_monster_turns (main.py:4904 loop), after m.take_turn(), add: m.tick_effects(); if not m.alive: self.level_mgr.monsters_killed += 1; self._on_monster_killed(m); continue. Or add a dedicated post-turn monster tick loop."
+    },
+    {
+      "location": "src/dungeon.py:246-253",
+      "issue": "If the BSP generator produces only one room (theoretically possible if all but one leaf fails the _room_in_leaf size check), only STAIRS_UP is placed and STAIRS_DOWN is omitted. The player has no way to descend, and the level is silently broken. Additionally, if rooms is empty, rooms[0].center access in _change_level (main.py:1053) crashes with IndexError.",
+      "fix": "After room generation, assert len(rooms) >= 2 or force-generate a second room. At minimum: if len(rooms) == 1: place STAIRS_DOWN in rooms[0] at an offset from STAIRS_UP (or in a newly carved emergency room). Also guard against rooms=[] in _change_level."
+    }
+  ],
+  "bugs": [
+    {
+      "location": "src/dungeon.py:610",
+      "issue": "total_freq is computed but never used. The comment says 'Weight containers by frequency field' but pick_container() uses extra_item_chance (the open probability float) as the weight, not a frequency field. The total_freq variable built from quiz_threshold values is dead code that silently misrepresents the weighting logic.",
+      "fix": "Either remove total_freq entirely and update the comment, or replace weights=[c.extra_item_chance ...] with a proper frequency field from the container definition."
+    },
+    {
+      "location": "src/dungeon.py:625 and 632",
+      "issue": "rng.sample(rooms[1:], min(len(rooms)-1, len(rooms)-1)) — the min() call always evaluates to len(rooms)-1 since both arguments are identical. This is a no-op redundancy that obscures intent. More importantly, if rooms has exactly 1 room, rooms[1:] is empty and rng.sample([], 0) returns [] silently, so the 'guaranteed first container' loop body never executes. The container guarantee is silently broken for single-room dungeons.",
+      "fix": "Change to rng.sample(rooms[1:], min(len(rooms)-1, max_desired_rooms)) with an explicit cap, and guard against empty room list."
+    },
+    {
+      "location": "src/dungeon.py:611 (pick_container closure uses extra_item_chance)",
+      "issue": "extra_item_chance is a float (default 0.40) representing the probability of an extra item drop from a container when opened. Using it as a spawn-weight means all containers with default value are equally weighted regardless of their intended rarity. This accidentally treats open-loot-chance as a frequency weight.",
+      "fix": "Add a 'spawn_weight' or 'frequency' field to container JSON definitions and use that as the weight in rng.choices()."
+    },
+    {
+      "location": "src/level_manager.py:85",
+      "issue": "Mini-boss eligibility filter uses mdata.get('max_level', 0) as a default. If a monster has no 'max_level' field, the condition level_num <= 0 is always False, silently excluding all mini-bosses that lack a max_level key. The default should be a large number (e.g. 9999) not 0.",
+      "fix": "Change mdata.get('max_level', 0) to mdata.get('max_level', 9999) so monsters without a max_level cap are eligible at all levels up to their min_level."
+    },
+    {
+      "location": "src/boss_levels.py:75-82 (_spawn_boss)",
+      "issue": "_spawn_boss places the boss at boss_room.center, but boss_room.center may not be a walkable FLOOR tile. For instance, a door or wall tile could exist at the center if _carve_room's carved area is later modified (e.g., DOOR placed at boss_room.y-1 on the same row as center). While rare given the hand-crafted layouts, _spawn_boss performs no walkability check.",
+      "fix": "Add a walkability scan in _spawn_boss: if not dungeon.is_walkable(cx, cy), search boss_room.inner_tiles() for a walkable tile."
+    },
+    {
+      "location": "src/level_manager.py:140-213 (_populate_hidden_chambers)",
+      "issue": "Treasure chamber population calls spawn_items([room, room], level, dungeon). spawn_items skips rooms[0] and only populates rooms[1:], so the trick of passing [room, room] correctly causes items to land in the chamber. However, spawn_items also places containers, lockpicks, food, potions, and runs the full item pipeline targeting the same single room repeatedly. A small chamber (5x7 interior = 35 tiles) will be flooded with items, filling all floor tiles and leaving no room for monsters or player movement. Items beyond the room capacity are silently dropped (no error), but the chamber always receives an excessive item load.",
+      "fix": "Pass a small explicit item_count cap, or use a dedicated spawn_items_limited() that places at most N items total in the chamber."
+    },
+    {
+      "location": "src/fov.py:42",
+      "issue": "r_slope = (dx + 0.5) / (dy - 0.5). When j=1 (the first scan row), dy=-1 so dy-0.5=-1.5 — no division by zero. However, the player tile (px, py) is pre-seeded as visible without going through the octant scan. Opaque tiles at the player's own position are still added to visible, which means a player standing inside a wall (edge case via teleportation or knockback bugs) will see through the wall they are inside. The in_bounds check (fov.py:49) prevents out-of-bounds adds but does not gate opaque tiles.",
+      "fix": "This is standard shadowcasting behavior (the origin is always visible). It is only an issue if the player can be placed inside a wall tile — fix the placement code rather than the FOV algorithm."
+    },
+    {
+      "location": "src/main.py:4922-4936",
+      "issue": "Fire shield reflect damage: m.hp -= reflect_dmg at line 4924 directly manipulates hp without calling m.take_damage(). This bypasses resistances, the sleep-wake logic in take_damage(), and any future damage hooks. The cold shield path at line 4932 has the same issue.",
+      "fix": "Replace m.hp -= reflect_dmg with actual = m.take_damage(reflect_dmg) for both fire and cold shield reflect paths."
+    },
+    {
+      "location": "src/dungeon.py:209-220 (generate_dungeon, random.Random() unseeded)",
+      "issue": "All three RNG instances in generate_dungeon(), spawn_monsters(), and spawn_items() are created with random.Random() (no seed). This is correct for gameplay variety, but means two successive calls to generate() for the same level_num (e.g., if has_visited() fails) would produce different dungeons. This is unlikely in practice (level_manager.save() is called before every level change) but is a latent consistency risk.",
+      "fix": "No immediate action needed, but document the design decision. Consider seeding with level_num + run_id for reproducibility in testing."
+    }
+  ],
+  "warnings": [
+    {
+      "location": "src/main.py:1639-1653 (_place_death_on_level)",
+      "issue": "Death is placed near dungeon.rooms[-1].center, which is also where the ascending player lands (main.py:1056). The guard (nx, ny) != (self.player.x, self.player.y) prevents exact overlap, but Death starts at dist=1 — one tile away — from the player on every floor transition during the pursuit. With Death's movement and attack executing before the player can act (it goes first in _do_monster_turns), the player may be attacked immediately on arrival. This is very punishing and likely unintentional on narrow corridors.",
+      "fix": "Increase the minimum distance: start the dist loop at 5 or 6 and fall back to smaller values only if no tile is available. Also consider placing Death at rooms[0].center (far end of level) instead of rooms[-1].center (player landing zone)."
+    },
+    {
+      "location": "src/dungeon.py:369",
+      "issue": "target = max(2, 2 + level // 4) at level 100 yields target=27, which exceeds the BSP iteration cap of target*4=108 attempts. At high levels, the generator aims for more leaves than the BSP splitting can reliably produce within its loop, meaning the actual room count plateaus well below 27. The target comment mentions 18 max leaf nodes, but the BSP for loop only caps leaf growth at 18 while secret doors target scales unboundedly. No crash results but the expected room count is silently incorrect at levels > 64.",
+      "fix": "Cap secret door target: target = min(max(2, 2 + level // 4), 26) to avoid meaningless over-targeting, or document that the function will simply place fewer secret doors than target at high levels (which is benign)."
+    },
+    {
+      "location": "src/dungeon.py:743",
+      "issue": "n_traps = rng.randint(1, min(3, 1 + level // 20)). At levels 1-19 this evaluates to randint(1, 1) — always exactly 1 trap. The floor doesn't gain a second trap until level 20+, and the maximum of 3 traps is not reached until level 40+. This is a very gradual and flat scaling that may be intentional but is worth verifying against design intent.",
+      "fix": "If more traps are desired early: change formula to rng.randint(1, min(5, 1 + level // 10))."
+    },
+    {
+      "location": "src/boss_levels.py:100 (_level_20_labyrinth, STAIRS_UP placement)",
+      "issue": "tiles[entry.y + 1][entry.center[0]] = STAIRS_UP places the up-stair one row below the room's top-left corner, not at the room center. The player on descend is placed at dungeon.rooms[0].center (main.py:1053), which is a different tile from the STAIRS_UP tile. This is cosmetically inconsistent: the player appears on a FLOOR tile adjacent to STAIRS_UP rather than on the stairs themselves.",
+      "fix": "Place STAIRS_UP at entry.center: tiles[entry.center[1]][entry.center[0]] = STAIRS_UP, consistent with normal dungeon gen."
+    },
+    {
+      "location": "src/boss_levels.py:153 and 227 and 293 and 353",
+      "issue": "Level 40/60/80 exit rooms place STAIRS_DOWN using tiles[exit_room.center[1]][exit_room.x + exit_room.width // 2], which happens to equal exit_room.center[0] for rooms where width is even. But player ascends from dungeon.rooms[-1].center (main.py:1056), which IS exit_room.center — so placement matches. However, level 20 exit room has STAIRS_DOWN at tiles[exit_room.y + exit_room.height - 2][exit_room.center[0]], which is one row above center — again inconsistent with where the player appears.",
+      "fix": "Standardize: always place STAIRS_DOWN at exit_room.center for all boss levels to match where the ascending player is placed."
+    },
+    {
+      "location": "src/dungeon.py:592 (spawn_items, rooms[1:] loop)",
+      "issue": "Items are placed in rooms[1:] but the last room (rooms[-1]) contains STAIRS_DOWN at its center. Items can be placed at any inner tile of rooms[-1] via inner_tiles(), including directly on top of STAIRS_DOWN. is_walkable() returns True for STAIRS tiles, so items can stack on the down staircase. While not a crash, it creates invisible item clutter on the exit tile.",
+      "fix": "In _place_one(), add a check: if dungeon.tiles[ty][tx] in (STAIRS_UP, STAIRS_DOWN): continue."
+    },
+    {
+      "location": "src/level_manager.py:178 (_populate_hidden_chambers treasure branch)",
+      "issue": "spawn_items([room, room], level, dungeon) — the second call to spawn_items on a chamber that is part of the main dungeon tiles may place items on tiles that dungeon.traps already occupies (traps are not tracked in ground_items), since spawn_items only checks ground_items for collision. Items and traps can silently coexist on the same tile.",
+      "fix": "Extend the collision check in _place_one to also exclude tiles in dungeon.traps."
+    }
+  ],
+  "dead_code": [
+    {
+      "location": "src/dungeon.py:610",
+      "issue": "total_freq = sum(getattr(c, 'quiz_threshold', 1) for c in eligible_containers) or 1 — computed but never referenced. The variable exists in the outer scope of spawn_items() but pick_container() does not use it."
+    },
+    {
+      "location": "src/monster.py:54-84 (tick_effects body for DOT effects)",
+      "issue": "bleeding_dmg, poison_dmg, burning_dmg, disease_tick logic in Monster.tick_effects() is effectively dead code because tick_effects() is never called for any monster in the main game loop (src/main.py). Only player.tick_effects() is called. The petrifying kill path (lines 74-76) is also unreachable for the same reason."
+    },
+    {
+      "location": "src/dungeon.py:858-865 (_weighted_choice)",
+      "issue": "The fallback return next(iter(pool)) at the end of _weighted_choice is dead code: the while loop guarantees r starts at random()*total (positive) and decreases by each entry's weight. The loop always exhausts the pool and returns before the fallback, unless total==0 (which is guarded by eligible check before calling). This is harmless but the fallback is unreachable."
+    }
+  ],
+  "summary": "Seven files audited. Two critical bugs found: (1) monster.tick_effects() is never called from the game loop, making all monster status effects (bleeding, poison, burning, petrifying) completely non-functional — monsters cannot die from DOT; (2) if BSP produces only one room, STAIRS_DOWN is never placed, stranding the player. Key bugs: the mini-boss max_level default of 0 silently excludes all mini-bosses without a max_level cap; fire/cold shield reflect bypasses take_damage(); total_freq is a dead variable misrepresenting container weight logic. Death Pursuer spawns 1 tile from the player on every floor entry, which is extremely punishing. Boss level stair placement is inconsistent with the player's landing coordinates in two levels (20 and 40). Monster spawning density is correct (L1:2-3, L20:3-5, L50:5-9 confirmed). BSP guarantees connectivity. FOV has no division-by-zero risk. monsters_killed counter is correctly incremented across all direct-kill code paths but misses DOT kills (which are also blocked by the tick_effects bug). Level save/restore is sound: deferred save works correctly for boss levels. No infinite loop risk found in BSP generation."
+}

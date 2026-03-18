@@ -23,16 +23,18 @@ def save_game(game) -> bool:
     """Serialize the full game state to disk. Returns True on success."""
     try:
         state = {
-            'player':        game.player,
-            'player_name':   game.player_name,
-            'secret_build':  game.secret_build,
-            'turn_count':    game.turn_count,
-            'dungeon_level': game.dungeon_level,
-            'player_gold':   game.player_gold,
-            'level_mgr':     game.level_mgr,
-            'dungeon':       game.dungeon,
-            'monsters':      game.monsters,
-            'ground_items':  game.ground_items,
+            'player':           game.player,
+            'player_name':      game.player_name,
+            'secret_build':     game.secret_build,
+            'turn_count':       game.turn_count,
+            'dungeon_level':    game.dungeon_level,
+            'player_gold':      game.player_gold,
+            'level_mgr':        game.level_mgr,
+            'dungeon':          game.dungeon,
+            'monsters':         game.monsters,
+            'ground_items':     game.ground_items,
+            'correct_answers':  game.correct_answers,
+            'wrong_answers':    game.wrong_answers,
         }
         with open(_save_path(game.player_name), 'wb') as f:
             pickle.dump(state, f, protocol=pickle.HIGHEST_PROTOCOL)

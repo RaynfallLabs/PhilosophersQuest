@@ -368,15 +368,23 @@ def drink_potion(player, potion) -> list[str]:
         messages.append(f"You feel an uncanny resilience -- Regenerating ({duration} turns).")
 
     elif effect == 'heroism':
+        already_active = player.has_effect('heroism')
         player.add_effect('heroism', duration)
-        player.apply_stat_bonus('STR', 2)
-        messages.append(f"Surging strength fills your limbs! STR +2, Heroic ({duration} turns).")
+        if not already_active:
+            player.apply_stat_bonus('STR', 2)
+            messages.append(f"Surging strength fills your limbs! STR +2, Heroic ({duration} turns).")
+        else:
+            messages.append(f"The heroic surge is renewed ({duration} turns).")
 
     elif effect == 'brilliance':
+        already_active = player.has_effect('brilliance')
         player.add_effect('brilliance', duration)
-        player.apply_stat_bonus('INT', 1)
-        player.apply_stat_bonus('WIS', 1)
-        messages.append(f"Your mind blazes with clarity! INT +1, WIS +1, Brilliant ({duration} turns).")
+        if not already_active:
+            player.apply_stat_bonus('INT', 1)
+            player.apply_stat_bonus('WIS', 1)
+            messages.append(f"Your mind blazes with clarity! INT +1, WIS +1, Brilliant ({duration} turns).")
+        else:
+            messages.append(f"Your mental clarity is renewed ({duration} turns).")
 
     elif effect == 'levitation':
         player.add_effect('levitating', duration)
@@ -506,7 +514,11 @@ def drink_potion(player, potion) -> list[str]:
         messages.append(f"Electricity crackles and disperses. Shock Resist ({duration} turns).")
 
     elif effect == 'restore_mp':
-        amt = int(power) if power else 15
+        try:
+            amt = int(power) if power else 15
+        except (ValueError, TypeError):
+            from dice import roll
+            amt = roll(str(power))
         before = player.mp
         player.restore_mp(amt)
         gained = player.mp - before
@@ -516,7 +528,11 @@ def drink_potion(player, potion) -> list[str]:
             messages.append("Your mana is already full.")
 
     elif effect == 'brilliance_mp':
-        amt = int(power) if power else 40
+        try:
+            amt = int(power) if power else 40
+        except (ValueError, TypeError):
+            from dice import roll
+            amt = roll(str(power))
         before = player.mp
         player.restore_mp(amt)
         gained = player.mp - before

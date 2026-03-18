@@ -1002,6 +1002,8 @@ class Game:
         self.dungeon       = state['dungeon']
         self.monsters      = state['monsters']
         self.ground_items  = state['ground_items']
+        self.correct_answers = state.get('correct_answers', 0)
+        self.wrong_answers   = state.get('wrong_answers', 0)
         self.renderer.set_dungeon(self.dungeon.width, self.dungeon.height, GAME_W, GAME_H)
         self._refresh_fov()
         self.add_message("Welcome back, seeker. Your journey continues...", 'success')
@@ -1841,6 +1843,14 @@ class Game:
         if self.player.recall_lore_cooldown > 0:
             self.player.recall_lore_cooldown -= 1
 
+        # Tick monster status effects (DOT damage, duration expiry)
+        for m in self.monsters:
+            if m.alive:
+                m_msgs = m.tick_effects()
+                if not m.alive:
+                    self._on_monster_killed(m)
+                    self.add_message(f"The {m.name} succumbs to its wounds!", 'combat')
+
         # Tick all player status effects
         effect_msgs = self.player.tick_effects()
         for text, mtype in effect_msgs:
@@ -2117,7 +2127,7 @@ class Game:
                 self.add_message(f"Your identify sight reveals: {item.name}!", 'info')
                 qs = getattr(self, 'quirk_system', None)
                 if qs:
-                    qs.on_item_identified()
+                    qs.on_item_identified(item.id)
             if isinstance(item, Ammo):
                 self.add_message(f"You pick up {item.count} {self._display_name(item)}s.", 'loot')
             else:
@@ -3183,9 +3193,14 @@ class Game:
         self._equip_accessory(self.accessory_menu_items[idx])
 
     def _equip_accessory(self, item: 'Accessory'):
-        # Check for a free slot
-        if all(s is not None for s in self.player.accessory_slots):
-            self.add_message("All accessory slots are full!", 'warning')
+        # Check for a free slot (amulets use separate amulet_slot, not ring slots)
+        is_amulet = getattr(item, 'slot', '') == 'amulet'
+        if is_amulet:
+            if self.player.amulet_slot is not None:
+                self.add_message("You are already wearing an amulet!", 'warning')
+                return
+        elif all(s is not None for s in self.player.accessory_slots):
+            self.add_message("All ring slots are full!", 'warning')
             return
 
         item_name = self._display_name(item)
@@ -6279,9 +6294,12 @@ class Game:
                         parts.append(f"STR/CON+{item.bonus_amount}")
                 detail_text = "  ".join(parts)
             else:
-                best_q = max(item.recipes.keys(), key=int)
-                best_sp = item.recipes[best_q].get('sp', 0)
-                raw_sp = item.recipes.get('1', item.recipes.get('0', {})).get('sp', 5)
+                if item.recipes:
+                    best_q = max(item.recipes.keys(), key=int)
+                    best_sp = item.recipes[best_q].get('sp', 0)
+                else:
+                    best_sp = 0
+                raw_sp = item.recipes.get('1', item.recipes.get('0', {})).get('sp', 5) if item.recipes else 5
                 detail_text = f"raw: {raw_sp} SP  |  cooked: up to {best_sp} SP"
             detail_surf = self.font_sm.render(detail_text, True, FP.FADED_TEXT)
             if detail_surf.get_width() > max_detail_w:
@@ -7921,7 +7939,8 @@ class Game:
                 self.encyclopedia_entries = []
                 return
             entries = []
-            for entry in all_items:
+            item_list = list(all_items.values()) if isinstance(all_items, dict) else all_items
+            for entry in item_list:
                 iid = entry.get('id', '')
                 if iid in known_ids:
                     entries.append(entry)
@@ -8336,6 +8355,7 @@ def main():
     # If a save exists for this name, load it; otherwise start fresh
     state = load_game(player_name) if save_exists(player_name) else None
     if state:
+        delete_save(player_name)   # permadeath: delete save immediately on load
         game = Game(screen,
                     player_name=state.get('player_name', player_name),
                     secret_build=state.get('secret_build'))

@@ -126,7 +126,7 @@ class QuizEngine:
         self.max_chain = max_chain
         self.callback = callback
         self._timer_modifier = timer_modifier
-        self.timer_seconds = round((10 + wisdom) * timer_modifier) + extra_seconds
+        self.timer_seconds = round((10 + max(0, wisdom - 10)) * timer_modifier) + extra_seconds
         self.time_remaining = float(self.timer_seconds)
 
         self.score = 0
@@ -185,7 +185,7 @@ class QuizEngine:
         if self.state == QuizState.ASKING:
             if self.time_remaining > 0:
                 self.time_remaining = max(0.0, self.time_remaining - dt)
-                if self.time_remaining == 0.0:
+                if self.time_remaining <= 0.0:
                     # Time's up -- count as a wrong answer and advance
                     self.last_answer = ''
                     self.asked_count += 1
@@ -193,6 +193,8 @@ class QuizEngine:
                     self.chain = 0
                     self.state = QuizState.RESULT
                     self.result_timer = self.RESULT_DISPLAY_TIME
+                    if self.on_answer:
+                        self.on_answer(False)
 
         elif self.state == QuizState.RESULT:
             self.result_timer -= dt
@@ -255,24 +257,25 @@ class QuizEngine:
                 self._next_question()
 
         else:  # threshold / escalator_threshold
-            # End immediately on wrong answer
-            if not self.last_correct:
-                self._end(success=False)
-                return
             # End immediately when threshold reached
             if self.correct_count >= self.required:
                 self._end(success=True)
                 return
-            # Still have questions left
+            # Early-exit if it's now mathematically impossible to reach threshold
+            remaining = self.total_qs - self.asked_count
+            if self.correct_count + remaining < self.required:
+                self._end(success=False)
+                return
+            # Ran out of questions without reaching threshold
             if self.asked_count >= self.total_qs:
-                self._end(success=False)   # ran out before hitting threshold
+                self._end(success=False)
             else:
                 if mode == QuizMode.ESCALATOR_THRESHOLD:
                     self._escalate()
                 self._next_question()
 
     def _escalate(self):
-        self.tier += 1
+        self.tier = min(self.tier + 1, 5)
         all_qs = self._cache.get(self.subject, [])
         deck_key = (self.subject, self.tier)
 

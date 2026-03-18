@@ -1,0 +1,153 @@
+{
+  "critical": [
+    {
+      "location": "src/player.py:99-101",
+      "issue": "is_dead() has a logic error: the immortal snap-back sets hp to max_hp, then immediately evaluates 'return self.hp <= 0', which is now False (correct), BUT if hp was already 0 before the snap-back and immortal=False, the snap-back never happens yet the function still returns True. The real bug is that for the immortal=True branch the snap-back fires inside the 'if self.immortal and self.hp <= 0' block, so the return is correct. However, the method returns True on the SAME call that triggered the snap-back, even though the player was just healed to full. Any caller that acts on 'True' (e.g., triggers death screen) will kill an immortal player. The snap-back and the return should be separated so callers see False after the heal.",
+      "fix": "Restructure: if self.immortal and self.hp <= 0: self.hp = self.max_hp; return False. return self.hp <= 0. This ensures immortal players always return False from is_dead()."
+    },
+    {
+      "location": "src/food_system.py:371-373 and src/status_effects.py:287-294",
+      "issue": "Heroism double-applies STR+2. drink_potion() calls player.apply_stat_bonus('STR', 2) AND player.add_effect('heroism', duration). When heroism expires, tick_all() calls player.apply_stat_bonus('STR', -2) to reverse it. This is correct IF only one STR+2 was applied. However, if a player drinks a second heroism potion while already heroic, apply_effect() in status_effects.py (line 193) will extend the duration (capped at 60), but drink_potion() will apply ANOTHER STR+2 on top. Now the effect will only reverse -2 on expiry but the stat is +4, leaving a permanent STR+2 corruption.",
+      "fix": "In drink_potion(), only apply stat bonuses when the effect was not already active. Check 'if not player.has_effect(\"heroism\")' before calling apply_stat_bonus for heroism (and similarly for brilliance). The same double-apply risk exists for brilliance (INT+1/WIS+1) at food_system.py:376-378."
+    },
+    {
+      "location": "src/player.py:339-347",
+      "issue": "Amulet swap does not check for cursed flag before unequipping. try_unequip_slot() is called for weapons, armor, and shields before swapping, but the amulet swap at line 339 directly appends the old amulet to inventory without any cursed check. A cursed amulet can be freely unequipped, breaking the curse mechanic.",
+      "fix": "Before 'self.inventory.append(old)' at line 340, call 'ok, msg = self.try_unequip_slot(old)' and return early if not ok, the same pattern used for weapons/armor/shields."
+    }
+  ],
+  "bugs": [
+    {
+      "location": "src/player.py:19",
+      "issue": "max_hp initialization uses BASE_HP + CON (10+10=20), but CLAUDE.md and the balance simulator treat BASE_HP=20 as the flat base. The formula produces a correct starting value of 30 hp (20+10), but this does not match BASE_HP=20 meaning 'starting max HP at CON 10'. If CON is 10 and BASE_HP is 20, the intended formula is likely just BASE_HP + (CON - 10) or simply BASE_HP, not BASE_HP + CON. At default stats this gives 30 instead of 20, inflating early HP by 10.",
+      "fix": "Decide canonical intent: if BASE_HP=20 is the absolute floor, use 'self.max_hp = self.BASE_HP + max(0, self.CON - 10)'. The same issue applies to max_sp (line 21: BASE_SP + STR gives 210 at default instead of 200) and max_mp (line 23: BASE_MP + INT gives 20 at default instead of 10). Each resource base is inflated by the raw stat value rather than just the bonus above 10."
+    },
+    {
+      "location": "src/player.py:21",
+      "issue": "max_sp = BASE_SP + STR gives 200+10=210 at default stats. If the design intent is BASE_SP=200 at STR=10 (as documented in MEMORY.md 'BASE_SP=200'), the formula should be BASE_SP + (STR - 10) * CARRY_PER_STR or a simpler per-point bonus. As written, even a STR=0 character would get BASE_SP+0=200 SP, but a STR=10 character gets 210 — the stat does not function as a modifier.",
+      "fix": "Use 'self.max_sp = self.BASE_SP + max(0, self.STR - 10)' (or whatever per-point bonus is intended) to make STR 10 the neutral baseline."
+    },
+    {
+      "location": "src/player.py:23",
+      "issue": "max_mp = BASE_MP + INT gives 10+10=20 at default stats. MEMORY.md states BASE_MP=10. Same category as the HP/SP issue: INT 10 should be neutral, not additive.",
+      "fix": "Use 'self.max_mp = self.BASE_MP + max(0, self.INT - 10)' for INT-as-modifier semantics."
+    },
+    {
+      "location": "src/player.py:237-249",
+      "issue": "add_to_inventory() weight check uses strict greater-than: 'if item_weight + self.get_current_weight() > self.get_carry_limit()'. This means a player can carry exactly up to (but not exceeding) the limit, which is correct. However, stackable items are stacked AFTER the weight check passes. When stacking, existing.count is incremented but the weight check was against the NEW item's count — correct. But get_current_weight() counts all items including the to-be-stacked one's weight×count, while the new item being added already exists nowhere yet, so the check is accurate. No bug here — flagged as a false positive. Actual issue: when count > 1 items are stacked the return True at line 246 bypasses the sort at line 249, leaving the inventory unsorted after a stack.",
+      "fix": "Move 'self.inventory.sort(key=lambda i: i.name.lower())' before the 'return True' at line 246, or add a sort inside the stacking branch."
+    },
+    {
+      "location": "src/player.py:302-317",
+      "issue": "_apply_equip() for Weapon: when a two-handed weapon is equipped and the cursed shield check fails (line 313-315), the old weapon has already been appended back to inventory (line 310) but the shield was not unequipped. The function returns early, leaving the new weapon unequipped. This is correct behavior, but the old weapon was still moved from the weapon slot to inventory — the weapon slot is now empty. The player loses their old weapon from the slot without equipping the new one.",
+      "fix": "Move the old weapon back to the weapon slot before returning: 'self.weapon = item; self.inventory.remove(item)' is not done yet, but the old weapon was already removed from the slot by the 'self.inventory.append(self.weapon)' at line 310 without setting self.weapon = None first. Add 'self.weapon = None' only after confirming the shield can be unequipped, or restructure to only commit the weapon swap once all preconditions pass."
+    },
+    {
+      "location": "src/combat.py:44",
+      "issue": "weapon.base_damage truthiness check: 'if weapon and weapon.base_damage' will skip a weapon whose base_damage is legitimately 0. Integer 0 is falsy in Python. Any weapon defined with baseDamage=0 in JSON will fall through to the dice-string branch (line 47). If weapon.damage is also None, it falls through to the default '1d4' roll — silent unintended behavior.",
+      "fix": "Use 'if weapon and weapon.base_damage is not None' or 'if weapon and weapon.base_damage > 0'."
+    },
+    {
+      "location": "src/combat.py:54",
+      "issue": "chain_multipliers fallback: if weapon is None, multipliers is set to _DEFAULT_MULTIPLIERS. But if weapon is not None and weapon.chain_multipliers is an empty list, 'multipliers[min(chain - 1, len(multipliers) - 1)]' will raise IndexError because len([]) - 1 = -1 and multipliers[-1] accesses the last element of an empty list causing IndexError.",
+      "fix": "Guard against empty chain_multipliers: 'if weapon and weapon.chain_multipliers else _DEFAULT_MULTIPLIERS'."
+    },
+    {
+      "location": "src/combat.py:72-76",
+      "issue": "Weapon.max_chain_length is a @property that always returns len(self.chain_multipliers) (items.py line 66-67). The 'weapon.max_chain_length or len(weapon.chain_multipliers)' at line 73 can never evaluate to the right side because a property that returns len() will return 0 only if chain_multipliers is empty, which also makes len(weapon.chain_multipliers) == 0. The 'or' fallback is dead code for the non-empty case and gives the same 0 for the empty case.",
+      "fix": "Remove the dead 'or len(weapon.chain_multipliers)' fallback; use 'weapon.max_chain_length' directly. More importantly, guard against max_c == 0 before the 'chain >= max_c' crit check."
+    },
+    {
+      "location": "src/status_effects.py:252-255",
+      "issue": "'doomed' effect tick: 'player.hp = max(0, player.hp - 1)' bypasses player.take_damage(), skipping resistance checks, immunity effects, and the sleeping-wake logic. A player with fire_resist or similar should still take doom damage, but a player in a 'shielded' state or with 'disint_resist' that halves physical damage would logically not affect doom — this is debatable. More importantly, bypassing take_damage() means the 'sleeping' wake-up check is skipped: a doomed sleeping player won't be woken when doom damage ticks.",
+      "fix": "Use 'player.take_damage(1, \"doom\")' and register doom as a damage type, or at minimum replicate the sleeping-wake logic: 'if player.hp > 0 and \"sleeping\" in player.status_effects: del player.status_effects[\"sleeping\"]'."
+    },
+    {
+      "location": "src/status_effects.py:257-259",
+      "issue": "'draining' effect tick has the same bypass issue as doomed: 'player.hp = max(0, player.hp - 1)' bypasses take_damage(). Additionally, the sleeping wake-up check is not applied.",
+      "fix": "Same as doomed fix: use take_damage() or replicate sleeping wake logic."
+    },
+    {
+      "location": "src/player.py:349-360",
+      "issue": "Ring equip does not check for a full ring slot array. The loop finds the first None slot (line 351-354). If all 4 ring slots are occupied the loop exits without equipping or returning a failure message. The item is removed from inventory by the caller before _apply_equip() is called (this must be verified in main.py), but if the caller assumes equip always succeeds, the ring is silently lost.",
+      "fix": "Add a check before the loop: 'if all(s is not None for s in self.accessory_slots): return False (or raise)'. Return a success/failure tuple similar to try_unequip_slot()."
+    },
+    {
+      "location": "src/items.py:238",
+      "issue": "Ammo.__init__ sets 'self.count = self.count_min' (line 238), but Item.__init__ (line 26) already sets 'self.count = 1'. The Ammo constructor overrides this correctly. However, if count_min is 0 or negative (malformed JSON), ammo will have a count of 0 or less, which could cause issues in stacking logic (add_to_inventory uses getattr(item, 'count', 1) so 0-count stacks would pass weight checks as zero-weight items but still exist in inventory).",
+      "fix": "Clamp count_min and count to at least 1: 'self.count = max(1, self.count_min)'."
+    },
+    {
+      "location": "src/dice.py:21-22",
+      "issue": "The validation 'if count < 1: raise ValueError' can never trigger for the '0d6' case because the regex '(\\d*)d(\\d+)' with count_str='' results in count=1 (line 17: 'int(count_str) if count_str else 1'). But if count_str='0', then int('0')=0 and the check correctly raises. However, the regex matches '0d6', so the error path is reachable. If count_str is empty string (bare 'd6'), count defaults to 1 — this is intended and fine. No actual bug, but the check at line 21 could also be 'count < 1' when count_str is explicitly '0'. This edge case is handled correctly.",
+      "fix": "No fix needed for dice.py — the validation is correct for all reachable inputs."
+    }
+  ],
+  "warnings": [
+    {
+      "location": "src/player.py:163",
+      "issue": "get_ac() DEX modifier: '(self.DEX - 10) // 2' uses integer floor division. For DEX=9, this gives (9-10)//2 = -1//2 = -1 in Python (floors toward negative infinity). This means DEX 9 gives a -1 mod (i.e., AC goes UP by 1, making the player easier to hit), which is the standard D&D behavior. DEX 11 gives (11-10)//2 = 0 mod. This is correct and intentional — just worth noting the asymmetry: DEX 11 and 12 both give 0 mod, but DEX 9 and 8 give -1 and -1. Standard D&D uses (DEX-10)/2 with rounding toward zero; Python // rounds toward negative infinity, so odd low DEX values are slightly punished more than intended.",
+      "fix": "Use 'int((self.DEX - 10) / 2)' (truncation toward zero) instead of '//' to match standard D&D modifier tables, or document that Python floor division is intentional."
+    },
+    {
+      "location": "src/player.py:266-268",
+      "issue": "apply_stat_bonus() for CON: 'self.max_hp += amount' preserves scaling but does NOT clip current hp when max_hp decreases. Line 268 does 'self.hp = min(self.hp, self.max_hp)', which is correct for reductions. However, when CON is raised, hp stays where it was (not healed to the new max). This is consistent with standard roguelike behavior, but when CON is drained via potion ('drain_con' in food_system.py line 464), if the player is at full HP (hp == max_hp) and max_hp drops, hp is correctly clamped. If CON drops below 0, max_hp could go negative — no floor is enforced.",
+      "fix": "Add 'self.max_hp = max(1, self.max_hp)' after the += to prevent max_hp going to 0 or negative from aggressive stat draining."
+    },
+    {
+      "location": "src/player.py:271-272",
+      "issue": "apply_stat_bonus() for STR updates max_sp but not the current sp. Unlike INT (which clips mp at line 273) and CON (which clips hp at line 268), there is no 'self.sp = min(self.sp, self.max_sp)' after max_sp changes. If STR is drained, max_sp drops but sp could exceed max_sp. This won't cause immediate harm (restore_sp clips at max_sp) but sp could be above max_sp after a STR drain.",
+      "fix": "Add 'self.sp = min(self.sp, self.max_sp)' after 'self.max_sp += amount' (line 270)."
+    },
+    {
+      "location": "src/combat.py:87-88",
+      "issue": "STR factor formula: 'str_factor = 1.0 + max(0, player.STR - 10) * 0.03'. At STR 20 this gives 1.30x damage. If heroism grants STR+2 temporarily, a player at STR 18 becomes STR 20 and gets an extra 6% damage bonus, which is then lost when heroism expires. This works correctly because str_factor is recalculated each attack. No bug, but STR factor is uncapped — a STR 30+ player (from stacked potions/quirks) could have 1.60x+ str_factor multiplied on top of chain and dtype multipliers, potentially producing very large damage values. This is a balance concern rather than a bug.",
+      "fix": "Consider capping str_factor: 'str_factor = min(2.0, 1.0 + max(0, player.STR - 10) * 0.03)' to prevent extreme outliers."
+    },
+    {
+      "location": "src/food_system.py:385-392",
+      "issue": "restore_str effect uses '_base_STR' attribute (line 387: 'getattr(player, \"_base_STR\", player.STR)') but this attribute is never set anywhere in player.py. The fallback is player.STR, which means 'loss = base_str - player.STR' == 0, so the potion does nothing if the player has never had _base_STR set. The 'restore strength' potion is silently useless.",
+      "fix": "Set 'self._base_STR = self.STR' in Player.__init__(), and update it in apply_stat_bonus when STR improves (but not when it is drained). Alternatively, track STR drain separately."
+    },
+    {
+      "location": "src/status_effects.py:193",
+      "issue": "apply_effect() caps stacked duration at 60 turns: 'min(current + duration, 60)'. This prevents duration from exceeding 60 but does not warn the caller. For heroism/brilliance, the cap at 60 means a second potion extends at most to 60 turns but the stat bonus is still re-applied in drink_potion() (the critical bug). For benign buffs like hasted, capping at 60 is fine. The cap is asymmetric: beneficial effects cap at 60 but debuffs also cap at 60 — a heavily-debuffed player cannot be debuffed past 60 turns total.",
+      "fix": "No fix needed for the cap itself, but document the interaction with drink_potion's stat application."
+    },
+    {
+      "location": "src/combat.py:96-102",
+      "issue": "Stun resist threshold: 'resist_threshold = min(0.95, max(0.05, monster.max_hp / 300.0))'. The code says 'roll must BEAT threshold to stun' and uses 'random.random() > resist_threshold'. For a 30 HP monster: threshold = 0.10, so 90% stun chance — the comment says '90% chance' which matches. For a 300 HP monster: threshold = min(0.95, 1.0) = 0.95, so 5% stun chance — the comment says '5%' which also matches. Logic is correct. However, monster.max_hp is accessed without checking if the attribute exists; if a monster object lacks max_hp (e.g., a boss with a custom class), AttributeError would crash.",
+      "fix": "Use 'getattr(monster, \"max_hp\", 100)' as a safe fallback."
+    },
+    {
+      "location": "src/player.py:291-293",
+      "issue": "can_equip_shield() returns False when a two-handed weapon is equipped. But _apply_equip() for a new Shield does not call can_equip_shield() — it only calls try_unequip_slot on the existing shield. If a player has a two-handed weapon equipped and tries to equip a shield, _apply_equip() will succeed: self.shield = item. The two-handed enforcement is only checked when equipping a two-handed weapon (line 312), not when equipping a shield over a two-handed weapon.",
+      "fix": "In the Shield branch of _apply_equip() (around line 328), add: 'if not self.can_equip_shield(): return' before proceeding."
+    },
+    {
+      "location": "src/player.py:336-360",
+      "issue": "Accessory equip: when equipping a ring accessory (not amulet), the old ring being displaced is not returned to inventory and its effects are not reversed. The first None slot is simply replaced. If the player wants to swap a ring in slot 2, there is no mechanism to unequip the existing ring — the loop only fills empty slots. Rings can be acquired but never removed once all slots are filled (short of the amulet path which does handle swapping).",
+      "fix": "If no empty ring slot exists, implement a swap mechanism similar to the amulet branch: prompt the player to choose which ring to remove, reverse its effects, return it to inventory, and equip the new one."
+    },
+    {
+      "location": "src/food_system.py:413-414",
+      "issue": "Poison potion effect hard-codes duration 20 turns ('player.add_effect(\"poisoned\", 20)') instead of using the potion's duration field. All other timed effects use the duration variable (line 307, passed through from potion.duration). This inconsistency means poison potions cannot be tuned via JSON.",
+      "fix": "Use 'player.add_effect(\"poisoned\", duration or 20)' to respect the JSON duration field."
+    }
+  ],
+  "dead_code": [
+    {
+      "location": "src/combat.py:118",
+      "issue": "'if _max_chain and weapon:' — the weapon None check is redundant here because _max_chain is set to 'weapon.max_chain_length if weapon else None' on line 117. If weapon is None, _max_chain is None (falsy), so the 'and weapon' part of the condition can never be True when weapon is None. The 'and weapon' check is dead."
+    },
+    {
+      "location": "src/combat.py:73",
+      "issue": "'weapon.max_chain_length or len(weapon.chain_multipliers)' — max_chain_length is a @property that returns len(self.chain_multipliers) directly (items.py:66-67), so 'or len(weapon.chain_multipliers)' is always identical to max_chain_length and is dead code."
+    },
+    {
+      "location": "src/player.py:33",
+      "issue": "'self.armor_slots = [None] * 8' — 8 slots defined, but ARMOR_SLOTS in items.py has exactly 8 entries: ['head', 'body', 'arms', 'hands', 'legs', 'feet', 'cloak', 'shirt']. These match, but the magic number 8 should reference len(ARMOR_SLOTS) to stay in sync."
+    }
+  ],
+  "summary": "Three critical bugs found: (1) is_dead() returns True on the same call that snaps an immortal player back to full health — death screen triggers for immortal players. (2) Drinking heroism or brilliance potions while already under those effects permanently corrupts STR/INT/WIS, because drink_potion() unconditionally applies the stat bonus but tick_all() only reverses it once on expiry. (3) Cursed amulets can be freely unequipped, breaking the curse mechanic. Key bugs include: base stat initialization inflating starting max_hp/sp/mp by 10/10/10 above documented values; weapon base_damage==0 being silently ignored due to Python truthiness; empty chain_multipliers causing an IndexError; a shield being equippable alongside a two-handed weapon; rings being permanently unremovable once all slots are full; doom/drain DoT effects bypassing take_damage() and therefore missing sleeping-wake logic; and restore_str potion being silently useless due to a missing _base_STR attribute. The dice parser (dice.py) is correct and robust. The AC formula (player.py get_ac) exactly matches the CLAUDE.md specification. The THAC0 combat system in combat.py uses the quiz chain score correctly as a damage multiplier (not a to-hit roll — there is no explicit to-hit roll in this system; hitting is gated by answering at least 1 quiz question correctly). The item identification system (known_item_ids set) is correctly maintained via add_effect/apply_stat_bonus patterns. The heroism/brilliance reversal in tick_all() is architecturally correct but becomes a corruption vector when stacked with the drink_potion direct-application pattern."
+}

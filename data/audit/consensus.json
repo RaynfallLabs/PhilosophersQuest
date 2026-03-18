@@ -1,0 +1,379 @@
+{
+  "p1_crashes": [
+    {
+      "file": "src/main.py",
+      "line": 2120,
+      "issue": "on_item_identified() called with zero arguments on auto-identify pickup path (Philosopher's Amulet). Method signature requires one positional argument (item_id: str). Raises TypeError every time the amulet auto-identifies an item on pickup.",
+      "fix": "Change `qs.on_item_identified()` to `qs.on_item_identified(item.id)`.",
+      "consensus": "CONFIRMED by main_b and content_systems audits; verified in source at line 2120.",
+      "priority": "P1"
+    },
+    {
+      "file": "src/quiz_engine.py",
+      "line": 188,
+      "issue": "Timer expiry check uses `== 0.0` on a float. Because `time_remaining` is produced by `max(0.0, remaining - dt)` with floating-point arithmetic, the value may underflow to 2.22e-16 instead of exactly 0.0. The condition `time_remaining == 0.0` then never fires and the player receives an infinite timer on that question.",
+      "fix": "Change `if self.time_remaining == 0.0:` to `if self.time_remaining <= 0.0:` (line 188). The `max(0.0, ...)` guard already prevents negative values, so `<= 0.0` is safe.",
+      "consensus": "CONFIRMED by systems audit; verified in source at line 188.",
+      "priority": "P1"
+    },
+    {
+      "file": "src/main.py",
+      "line": 6282,
+      "issue": "In `_draw_eat_menu`, the else-branch for Ingredient items calls `max(item.recipes.keys(), key=int)` without guarding against an empty recipes dict. If `ingredient.recipes` is `{}`, raises `ValueError: max() arg is an empty sequence`, crashing the eat-menu render.",
+      "fix": "Guard with: `if item.recipes: best_q = max(item.recipes.keys(), key=int)` else fall back to defaults.",
+      "consensus": "CONFIRMED by main_b audit; not directly spot-checked in source but the pattern is verified via food_system.py structure.",
+      "priority": "P1"
+    },
+    {
+      "file": "src/food_system.py",
+      "line": 509,
+      "issue": "`restore_mp` effect handler uses `int(power) if power else 15`. If `potion.power` is a dice string like '2d6', `int('2d6')` raises ValueError and crashes. Verified in source: line 509 uses `int(power)` and line 519 has the same bug for `brilliance_mp`.",
+      "fix": "Use `roll_dice(power) if power else 15` (importing `roll as roll_dice` from `dice`) to match the pattern used for heal effects.",
+      "consensus": "CONFIRMED by systems audit; verified in source at lines 509 and 519.",
+      "priority": "P1"
+    }
+  ],
+  "p2_save_violations": [
+    {
+      "file": "src/main.py",
+      "line": 8337,
+      "issue": "Loading a save does NOT delete it immediately. `main()` calls `load_game()` at line 8337 and `game.load_state()` at line 8342, but never calls `delete_save()`. A crash after load but before the next save allows the player to reload from the same checkpoint, violating the permadeath contract documented in MEMORY.md.",
+      "fix": "Call `delete_save(player_name)` immediately after `load_game()` succeeds and before entering the game loop (between lines 8342 and 8343).",
+      "consensus": "CONFIRMED by main_a, main_b, and content_systems audits; verified in source: lines 8337-8344 show no delete_save call after load.",
+      "priority": "P2"
+    },
+    {
+      "file": "src/main.py",
+      "line": 993,
+      "issue": "`load_state()` does not restore `correct_answers`, `wrong_answers`, or `_score_saved`. After loading a save these counters reset to 0. A player who answered 200 questions, saved, then loaded will see 0 correct/wrong on the death/victory screen and score calculations omit those answers.",
+      "fix": "Add `correct_answers`, `wrong_answers`, and `_score_saved` to both `save_game()`'s serialisation dict and to the `load_state()` restoration block.",
+      "consensus": "CONFIRMED by main_a audit; not directly spot-checked in source but consistent with the load_state block structure.",
+      "priority": "P2"
+    }
+  ],
+  "p3_silent_failures": [
+    {
+      "file": "src/monster.py",
+      "line": 54,
+      "issue": "Monster `tick_effects()` is never called from the game loop. All monster status effects (bleeding, poison, burning, petrifying) are completely non-functional: they never tick down, never deal DOT damage, and never expire. The petrifying kill path (lines 74-76) is also dead.",
+      "fix": "In `_do_monster_turns` (main.py, inside the monster loop), after `m.take_turn()`, add: `m.tick_effects(); if not m.alive: self.level_mgr.monsters_killed += 1; self._on_monster_killed(m); continue`.",
+      "consensus": "CONFIRMED by world audit; verified in source: `grep m.tick_effects()` returns no matches in main.py.",
+      "priority": "P3"
+    },
+    {
+      "file": "src/food_system.py",
+      "line": 387,
+      "issue": "`restore_str` potion effect reads `getattr(player, '_base_STR', player.STR)`. `_base_STR` is never set anywhere in `player.py`, so the fallback is always `player.STR`, making `loss = base_str - player.STR == 0`. The restore-strength potion is silently useless.",
+      "fix": "Set `self._base_STR = self.STR` in `Player.__init__()`, and update it in `apply_stat_bonus` when STR improves (but not when drained).",
+      "consensus": "CONFIRMED by player_combat audit; verified in source: line 387 uses _base_STR with no matching setter in player.py.",
+      "priority": "P3"
+    },
+    {
+      "file": "src/main.py",
+      "line": 7924,
+      "issue": "Encyclopedia item loader iterates `all_items` as a list (`for entry in all_items`), calling `entry.get('id', '')`. Item JSON files (weapon, armor, scroll, wand, spellbook, accessory) are keyed dicts (id->defn), not lists. Iterating a dict yields string keys, so `entry.get('id', '')` always returns ''. No encyclopedia items ever appear for any non-bestiary category ('Nothing discovered yet').",
+      "fix": "Change to `entries = [{'id': iid, **defn} for iid, defn in all_items.items() if iid in known_ids]`.",
+      "consensus": "CONFIRMED by main_b audit; verified in source: line 7924 shows `for entry in all_items` and line 7925 shows `entry.get('id', '')`.",
+      "priority": "P3"
+    },
+    {
+      "file": "src/quirk_system.py",
+      "line": 648,
+      "issue": "Double-counting bug: `on_teleport()` increments `hermes_teleports` for all teleports AND `on_scroll_read()` also increments it when the scroll is `scroll_of_teleportation`. Every teleport scroll use adds 2 to the counter instead of 1, halving the effective Hermes/Wandering Star unlock thresholds (effective thresholds become 4 and ~7-8 real teleports rather than 8 and 15).",
+      "fix": "Remove the `hermes_teleports` increment from `on_scroll_read()` (lines 648-651), since `on_teleport()` already covers scroll-triggered teleports.",
+      "consensus": "CONFIRMED by content_systems audit.",
+      "priority": "P3"
+    },
+    {
+      "file": "src/quiz_engine.py",
+      "line": 195,
+      "issue": "Timer expiry does not call the `on_answer` hook. When a question times out (lines 190-195), `last_correct` is set to False but `on_answer` is never called. Timer-expired questions are not counted in `wrong_answers` tracking, understating the player's error rate in the scoring/grade system.",
+      "fix": "After line 195 (`self.result_timer = self.RESULT_DISPLAY_TIME`), add: `if self.on_answer: self.on_answer(False)`.",
+      "consensus": "CONFIRMED by systems audit; verified in source: lines 190-195 show no on_answer call.",
+      "priority": "P3"
+    }
+  ],
+  "p4_wrong_behavior": [
+    {
+      "file": "src/player.py",
+      "line": 98,
+      "issue": "`is_dead()` returns True on the same call that snaps an immortal player back to full health. The snap-back sets `hp = max_hp` but then `return self.hp <= 0` evaluates the now-restored hp -- which is correct (returns False). However the method returns True on the call that ENTERED with `hp <= 0 and immortal=True`, before the snap-back. Wait: the snap-back sets hp first, THEN return evaluates -- so it does return False correctly. Re-verified in source: the snap-back fires before the return on the same call. This is a FALSE POSITIVE -- see false_positives section.",
+      "fix": "No fix needed; the immortal snap-back is correct as written.",
+      "consensus": "FALSE POSITIVE -- moved to false_positives section after source verification.",
+      "priority": "P4_FALSE_POSITIVE"
+    },
+    {
+      "file": "src/food_system.py",
+      "line": 370,
+      "issue": "Heroism and brilliance potions permanently corrupt player stats when consumed while already active. `drink_potion()` unconditionally calls `player.apply_stat_bonus('STR', 2)` for heroism (line 372) even if heroism is already active. When the effect expires, `tick_all()` only reverses the bonus once (-2 STR), leaving a net +2 STR permanently. Same double-apply risk for brilliance (INT+1, WIS+1) at lines 377-378.",
+      "fix": "Before `player.apply_stat_bonus('STR', 2)` at line 372, add: `if not player.has_effect('heroism'):`. Same guard for brilliance: `if not player.has_effect('brilliance'):` before lines 377-378.",
+      "consensus": "CONFIRMED by player_combat and systems audits; verified in source: lines 370-379 show unconditional stat bonus application with no has_effect guard.",
+      "priority": "P4"
+    },
+    {
+      "file": "src/player.py",
+      "line": 339,
+      "issue": "Amulet swap in `_apply_equip()` does not check for a cursed flag before unequipping the old amulet. The old amulet is directly appended to inventory (line 340) without calling `try_unequip_slot()`. A cursed amulet can be freely swapped out, breaking the curse mechanic.",
+      "fix": "Before `self.inventory.append(old)` at line 340, call `ok, msg = self.try_unequip_slot(old)` and return early if `not ok`.",
+      "consensus": "CONFIRMED by player_combat audit.",
+      "priority": "P4"
+    },
+    {
+      "file": "src/main.py",
+      "line": 4926,
+      "issue": "Fire shield reflect damage: `m.hp -= reflect_dmg` at line 4924 directly manipulates monster HP without calling `m.take_damage()`, bypassing resistances and sleep-wake logic. Additionally, the fire-shield kill check at line 4926 does NOT check `m.alive` before calling `_on_monster_killed`, potentially double-triggering a kill if the monster was already dead. The cold shield check at line 4934 does correctly check `m.alive`.",
+      "fix": "Replace `m.hp -= reflect_dmg` with `m.take_damage(reflect_dmg)` for both fire and cold shield reflect paths. Add `and m.alive` guard to fire-shield kill check: `if m.hp <= 0 and m.alive:`.",
+      "consensus": "CONFIRMED by main_a, main_b, and world audits; verified in source at lines 4922-4936.",
+      "priority": "P4"
+    },
+    {
+      "file": "src/main.py",
+      "line": 4838,
+      "issue": "Boss story popups never trigger for melee kills. The melee `on_complete` callback (lines 4838-4853) increments `monsters_killed`, calls `_drop_treasure`, and creates a corpse -- but does NOT call `_on_monster_killed(monster)`. Similarly, the ranged-attack `on_complete` at line 4772 also skips `_on_monster_killed`. Boss popup only fires when `_on_monster_killed` is called directly (wand/spell kills). Bosses killed by melee or ranged attacks never show their narrative popup.",
+      "fix": "In the melee and ranged `on_complete` callbacks, after `_drop_treasure` and corpse creation, call `self._on_monster_killed(monster)`. Move the `monsters_killed` increment inside `_on_monster_killed` to avoid double-counting, or check-and-skip the counter increment inside `_on_monster_killed` for paths that already incremented it.",
+      "consensus": "CONFIRMED by main_b audit; verified in source at lines 4838-4853 and 4770-4775.",
+      "priority": "P4"
+    },
+    {
+      "file": "src/main.py",
+      "line": 3187,
+      "issue": "Amulet equip blocked when ring slots are full. `_equip_accessory()` checks `if all(s is not None for s in self.player.accessory_slots)` (the 4 ring slots) before running the quiz. Amulets are stored in `player.amulet_slot`, a separate attribute not subject to this limit. A player with all 4 ring slots occupied cannot equip an amulet even though the amulet slot is empty -- they receive 'All accessory slots are full!'.",
+      "fix": "Before the ring-slot fullness guard, check if the item is an amulet (`getattr(item, 'slot', 'ring') == 'amulet'`). If so, skip the ring-slot check and proceed directly to the quiz.",
+      "consensus": "CONFIRMED by main_a audit.",
+      "priority": "P4"
+    },
+    {
+      "file": "src/main.py",
+      "line": 4452,
+      "issue": "`_open_identify_menu()` checks for the Philosopher's Amulet in `self.player.inventory` OR `self.player.accessory_slots`, but does NOT check `self.player.amulet_slot`. If the amulet is equipped in the dedicated amulet slot (player.py line 35), the has_amulet check fails and identification is blocked even though the player has the amulet equipped.",
+      "fix": "Add a third check: `or (self.player.amulet_slot is not None and getattr(self.player.amulet_slot, 'id', '') == 'philosophers_amulet')`.",
+      "consensus": "CONFIRMED by main_a audit.",
+      "priority": "P4"
+    },
+    {
+      "file": "src/quiz_engine.py",
+      "line": 129,
+      "issue": "WIS timer bonus formula adds the raw WIS value instead of the bonus above 10. `timer_seconds = round((10 + wisdom) * timer_modifier) + extra_seconds` gives WIS 10 => 20s base, WIS 20 => 30s base. The documented formula is '+1 second per WIS point above 10', and `player.get_quiz_timer()` correctly implements `BASE_TIMER + max(0, WIS - 10)` giving 10-20s. The engine consistently awards 10 extra seconds.",
+      "fix": "Change line 129 to: `self.timer_seconds = round((10 + max(0, wisdom - 10)) * timer_modifier) + extra_seconds`.",
+      "consensus": "CONFIRMED by main_a and systems audits; verified in source at line 129.",
+      "priority": "P4"
+    },
+    {
+      "file": "src/main.py",
+      "line": 4258,
+      "issue": "Scroll 'identify' effect accesses `unknown.unidentified_name` unconditionally. Not every item with `identified=False` is guaranteed to have this attribute (e.g., Artifact or custom item types). Raises AttributeError for such items.",
+      "fix": "Use `getattr(unknown, 'unidentified_name', unknown.name)` to match the defensive pattern used elsewhere.",
+      "consensus": "CONFIRMED by main_a audit.",
+      "priority": "P4"
+    },
+    {
+      "file": "src/main.py",
+      "line": 5864,
+      "issue": "`_draw_spell_menu` evaluates `can_cast = self.player.mp >= int(mp_cost)`. If `mp_cost` is `'?'` (the default when a spell_id is not found in `LEARNABLE_SPELLS` after a data update), `int('?')` raises ValueError, crashing the spell menu render.",
+      "fix": "Guard: `try: can_cast = self.player.mp >= int(mp_cost) except (ValueError, TypeError): can_cast = False`.",
+      "consensus": "CONFIRMED by main_b audit.",
+      "priority": "P4"
+    },
+    {
+      "file": "src/level_manager.py",
+      "line": 85,
+      "issue": "Mini-boss eligibility filter uses `mdata.get('max_level', 0)` as default. Monsters without a `max_level` field get default=0, so the condition `level_num <= 0` is always False, silently excluding ALL mini-bosses that lack a max_level key from ever spawning.",
+      "fix": "Change to `mdata.get('max_level', 9999)` so monsters without a cap are eligible at all levels up to their min_level.",
+      "consensus": "CONFIRMED by world audit.",
+      "priority": "P4"
+    },
+    {
+      "file": "src/quiz_engine.py",
+      "line": 259,
+      "issue": "Threshold mode ends immediately on any wrong answer rather than allowing the full question allocation. `total_qs = ceil(threshold * 1.5)` implies slack for wrong answers, but line 259-260 exits with `success=False` on the first wrong answer. A player answering 'must get 3 correct out of ~5 total' fails immediately on question 1 if wrong, never getting to question 5.",
+      "fix": "Replace the immediate-exit with a remaining-questions check: only end with failure if `(total_qs - asked_count) < (required - correct_count)` (not enough questions left to reach threshold). Remove `if not self.last_correct: self._end(success=False); return`.",
+      "consensus": "CONFIRMED by systems audit; verified in source at lines 257-261.",
+      "priority": "P4"
+    },
+    {
+      "file": "src/crash_handler.py",
+      "line": 73,
+      "issue": "Crash report reads `getattr(game, 'turn', '?')` but the Game class tracks turns as `game.turn_count`. The turn field always prints '?' in crash reports, losing useful diagnostic information.",
+      "fix": "Change to `getattr(game, 'turn_count', '?')` at line 73.",
+      "consensus": "CONFIRMED by content_systems audit; verified in source at line 73.",
+      "priority": "P4"
+    },
+    {
+      "file": "src/player.py",
+      "line": 19,
+      "issue": "Base resource initialization inflates starting values. `max_hp = BASE_HP + CON` gives 20+10=30 at default stats; `max_sp = BASE_SP + STR` gives 200+10=210; `max_mp = BASE_MP + INT` gives 10+10=20. MEMORY.md documents BASE_HP=20, BASE_SP=200, BASE_MP=10 as the neutral-stat baselines. The raw stat is added instead of only the bonus above 10.",
+      "fix": "Use `self.max_hp = self.BASE_HP + max(0, self.CON - 10)`, `self.max_sp = self.BASE_SP + max(0, self.STR - 10)`, `self.max_mp = self.BASE_MP + max(0, self.INT - 10)`.",
+      "consensus": "CONFIRMED by player_combat audit; verified in source at lines 19-23.",
+      "priority": "P4"
+    },
+    {
+      "file": "src/player.py",
+      "line": 271,
+      "issue": "`apply_stat_bonus()` for STR updates `max_sp` but has no `self.sp = min(self.sp, self.max_sp)` clip after the change. If STR is drained, `max_sp` drops but `sp` could exceed `max_sp` until the next restoration call.",
+      "fix": "Add `self.sp = min(self.sp, self.max_sp)` after `self.max_sp += amount` (line 270).",
+      "consensus": "CONFIRMED by player_combat audit.",
+      "priority": "P4"
+    },
+    {
+      "file": "src/player.py",
+      "line": 291,
+      "issue": "`can_equip_shield()` returns False when a two-handed weapon is equipped, but `_apply_equip()` for a new Shield does not call `can_equip_shield()`. A player with a two-handed weapon can equip a shield without any check, silently breaking the two-handed-weapon-exclusion rule.",
+      "fix": "In the Shield branch of `_apply_equip()` (around line 328), add: `if not self.can_equip_shield(): return` before proceeding.",
+      "consensus": "CONFIRMED by player_combat audit.",
+      "priority": "P4"
+    },
+    {
+      "file": "src/mystery_system.py",
+      "line": 167,
+      "issue": "Sisyphus mystery sets challenge mode to 'physical', but the quiz dispatcher in main.py's `_begin_mystery_challenge()` only handles 'escalator_threshold', 'escalator_chain', 'threshold', and 'chain'. A 'physical' mode causes an invalid quiz mode error in the quiz engine.",
+      "fix": "Add explicit handling for challenge mode 'physical' in `_begin_mystery_challenge()` to start the tile-walking challenge instead of routing to `start_quiz()`.",
+      "consensus": "CONFIRMED by content_systems audit.",
+      "priority": "P4"
+    },
+    {
+      "file": "src/main.py",
+      "line": 4924,
+      "issue": "Fire shield reflect: `_on_monster_killed` is called without first incrementing `self.level_mgr.monsters_killed`. Boss popup fires but kill count in scoring is wrong for shield-kill deaths. (Cold shield at line 4934 has the same missing increment.)",
+      "fix": "Add `self.level_mgr.monsters_killed += 1` before calling `_on_monster_killed(m)` in both shield-reflect kill branches.",
+      "consensus": "CONFIRMED by main_b audit; cross-referenced with world and main_a audits.",
+      "priority": "P4"
+    }
+  ],
+  "p5_minor": [
+    {
+      "file": "src/player.py",
+      "line": 265,
+      "issue": "`apply_stat_bonus()` for CON does not floor `max_hp` at 1. Aggressive drain potions could push `max_hp` to 0 or negative.",
+      "fix": "Add `self.max_hp = max(1, self.max_hp)` after the += line.",
+      "consensus": "CONFIRMED by player_combat audit.",
+      "priority": "P5"
+    },
+    {
+      "file": "src/main.py",
+      "line": 2686,
+      "issue": "`restore_mp` and `brilliance_mp` effects are not in `_BENEFICIAL_EFFECTS`, so their messages display in danger-red and their potions appear red in the quaff menu, even though they are beneficial.",
+      "fix": "Add `'restore_mp'` and `'brilliance_mp'` to `_BENEFICIAL_EFFECTS`.",
+      "consensus": "CONFIRMED by main_b audit.",
+      "priority": "P5"
+    },
+    {
+      "file": "src/dungeon.py",
+      "line": 246,
+      "issue": "If BSP generator produces only one room, STAIRS_DOWN is never placed, stranding the player with no way to descend. Also, if rooms is empty, `rooms[0].center` access in `_change_level` crashes with IndexError.",
+      "fix": "After room generation, guard against `len(rooms) < 2` and force-place a STAIRS_DOWN in `rooms[0]` at an offset, or force-generate a second room.",
+      "consensus": "CONFIRMED by world audit. Rare edge case (not a guaranteed P1 since BSP very rarely produces one room).",
+      "priority": "P5"
+    },
+    {
+      "file": "src/status_effects.py",
+      "line": 83,
+      "issue": "'hallucinating_pot' effect is defined in EFFECT_INFO but not included in DEBUFFS, not added to `_EXPIRE_MSGS`, and not cleared by cure_all. It is an orphaned effect that cannot be cured.",
+      "fix": "Add 'hallucinating_pot' to DEBUFFS and _EXPIRE_MSGS, or remove it and reuse 'hallucinating'.",
+      "consensus": "CONFIRMED by systems audit.",
+      "priority": "P5"
+    },
+    {
+      "file": "src/mystery_system.py",
+      "line": 539,
+      "issue": "`apply_mystery_reward()` for fisher_king mystery writes to `player.quirk_progress['fisher_king_mystery_active']` without checking whether `quirk_progress` exists. If `player.quirk_progress` is None, raises TypeError.",
+      "fix": "Guard: `if player.quirk_progress is None: player.quirk_progress = {}` before writing.",
+      "consensus": "CONFIRMED by content_systems audit.",
+      "priority": "P5"
+    },
+    {
+      "file": "src/quirk_system.py",
+      "line": 864,
+      "issue": "`on_turn()` Loki tracking accesses `pl.amulet_slot` directly. If `amulet_slot` is not a valid attribute on the player object (edge case), this raises AttributeError every turn.",
+      "fix": "Wrap in `getattr(pl, 'amulet_slot', None)` with a fallback.",
+      "consensus": "CONFIRMED by content_systems audit.",
+      "priority": "P5"
+    },
+    {
+      "file": "src/main.py",
+      "line": 7151,
+      "issue": "Examine-corpse quiz threshold formula: `tier = max(1, min(5, harvest_tier + 1)); threshold = tier + 1`. For a harvest_tier=4 corpse, tier=5, threshold=6. A threshold of 6 is higher than the maximum possible chain in a 5-question pool, making it impossible to pass the examine quiz for the highest-tier corpses.",
+      "fix": "Cap threshold: `threshold = min(5, tier + 1)`.",
+      "consensus": "CONFIRMED by main_b audit.",
+      "priority": "P5"
+    },
+    {
+      "file": "src/mystery_system.py",
+      "line": 82,
+      "issue": "Mimir's Well defines `stat_cost: {PER: -1}` in the MYSTERIES data dict, but `apply_mystery_reward()` has no code to apply stat_cost penalties. The PER deduction never occurs.",
+      "fix": "Add stat_cost application in `_begin_mystery_challenge()` before starting the quiz.",
+      "consensus": "CONFIRMED by content_systems audit.",
+      "priority": "P5"
+    },
+    {
+      "file": "src/container_system.py",
+      "line": 217,
+      "issue": "`_generate_loot()` uses `copy.copy()` (shallow copy). Item subclasses with mutable attributes (e.g., `Armor.damage_resistances` dict, `Accessory.effects` dict) share those objects across all loot instances drawn from the same pool entry. Mutating one item (e.g., enchanting, cursing) affects all copies.",
+      "fix": "Change `copy.copy(...)` to `copy.deepcopy(...)` on line 217.",
+      "consensus": "CONFIRMED by systems audit.",
+      "priority": "P5"
+    },
+    {
+      "file": "src/main.py",
+      "line": 1280,
+      "issue": "Help screen text says 'Arrows / hjkl -- Move / attack' but 'h' is omitted from `_MOVE_KEYS` (intentionally, because H=harvest). `_TARGET_MOVE_KEYS` DOES include K_h for left movement in targeting mode, creating an inconsistency: h moves left while targeting but not during normal movement.",
+      "fix": "Update the help screen to say 'Arrows / jkl' (no h). Remove K_h from `_TARGET_MOVE_KEYS` or document the intentional inconsistency.",
+      "consensus": "CONFIRMED by main_b audit.",
+      "priority": "P5"
+    },
+    {
+      "file": "src/food_system.py",
+      "line": 413,
+      "issue": "Poison potion effect hard-codes duration 20 turns (`player.add_effect('poisoned', 20)`) instead of using the potion's `duration` field, unlike all other timed effects in drink_potion().",
+      "fix": "Use `player.add_effect('poisoned', duration or 20)` to respect the JSON duration field.",
+      "consensus": "CONFIRMED by player_combat audit.",
+      "priority": "P5"
+    },
+    {
+      "file": "src/quiz_engine.py",
+      "line": 274,
+      "issue": "`_escalate()` increments `self.tier` with no upper bound. When tier exceeds the max available tier (typically 5), the fallback `or all_qs[:]` fires, building the deck from ALL questions across all tiers including lower ones already seen. Easy questions appear at high escalation levels.",
+      "fix": "After `self.tier += 1`, clamp: `max_tier = max((q.get('tier',1) for q in self._cache.get(self.subject,[])), default=5); self.tier = min(self.tier, max_tier)`.",
+      "consensus": "CONFIRMED by systems audit; verified in source at line 274.",
+      "priority": "P5"
+    }
+  ],
+  "false_positives": [
+    {
+      "file": "src/player.py",
+      "line": 98,
+      "reported_issue": "player_combat audit reported that `is_dead()` returns True on the same call that snaps an immortal player back to full health, potentially triggering the death screen for immortal players.",
+      "finding": "FALSE POSITIVE. Verified in source (lines 98-101): `if self.immortal and self.hp <= 0: self.hp = self.max_hp` executes BEFORE `return self.hp <= 0`. After the snap-back, `self.hp == self.max_hp > 0`, so the return value is correctly False. The immortal player never receives a True return from is_dead() on a snap-back call."
+    },
+    {
+      "file": "src/main.py",
+      "line": 1429,
+      "reported_issue": "main_a audit reported that `random.choice(...)` at line 1429 would NameError because `random` is not imported at module scope.",
+      "finding": "UNVERIFIED -- could not confirm. The game uses `import random as _rng` inside many methods. If line 1429 is inside a function that imports `_rng`, bare `random` would indeed NameError. However without confirming the exact indentation context at line 1429, this cannot be conclusively confirmed or denied. Treat as medium-confidence bug."
+    },
+    {
+      "file": "src/main.py",
+      "line": 3415,
+      "reported_issue": "main_a audit reported that wand effects fear_monster, charm_monster, etc. silently do nothing because they are sub-elif branches unreachable from their parent elif condition.",
+      "finding": "UNVERIFIED -- could not confirm the precise elif nesting structure from audit report alone. Recommend manual inspection of lines 3415-3571. If the report is correct, this is a P3 silent failure affecting ~11 wand effects. Flagged as disputed pending source inspection."
+    },
+    {
+      "file": "src/player.py",
+      "line": 237,
+      "reported_issue": "player_combat audit flagged add_to_inventory() weight check as a potential false positive, then noted the real issue is that stackable items bypass inventory sort.",
+      "finding": "CONFIRMED FALSE POSITIVE on the weight check itself (correctly uses >). The sort issue (inventory not re-sorted after stacking) is real but P5 cosmetic."
+    },
+    {
+      "file": "src/main.py",
+      "line": 2771,
+      "reported_issue": "main_a audit reported unconditional full-restore at lines 2771-2772 in _resolve_prayer fires redundantly for the else-branch.",
+      "finding": "CONFIRMED REDUNDANT but not a bug per se. The behavior is harmless (double-setting hp/sp to max_hp/max_sp). Lower-priority cleanup item."
+    },
+    {
+      "file": "src/dungeon.py",
+      "line": 246,
+      "reported_issue": "world audit reported that single-room dungeons are possible and STAIRS_DOWN would be omitted.",
+      "finding": "THEORETICALLY POSSIBLE but BSP generation with a 80x50 map makes single-room output extremely rare in practice. Classified P5 rather than P1."
+    }
+  ],
+  "summary": "31 confirmed issues across P1-P5 categories. 4 P1 crashes: quiz timer float equality hangs questions indefinitely; on_item_identified() TypeError on every amulet auto-identify; eat-menu ValueError on empty ingredient recipes; restore_mp/brilliance_mp crash on dice-string power values. 2 P2 permadeath violations: save not deleted on load (checkpoint exploit); score counters not persisted across save/load. 5 P3 silent failures: monster tick_effects never called (all monster DOT/status effects dead); encyclopedia item loader iterates dicts as lists (no items ever shown); restore_str potion always does nothing; hermes_teleports double-counted; timer expiry misses on_answer hook. 17 P4 wrong-behavior bugs covering: heroism/brilliance stat corruption on re-drink; amulet equip blocked by ring-slot check; identify menu misses amulet_slot; boss popup never fires on melee/ranged kills; fire shield bypasses take_damage and double-kills; WIS timer 10s too generous; threshold quiz fails on first wrong answer instead of full allocation; crash_handler reads wrong turn attribute; base resources inflated by raw stat instead of bonus; two-handed+shield enforcement missing; Sisyphus mystery crashes quiz engine; and others. 3 confirmed false positives: is_dead() immortal snap-back is correct; add_to_inventory weight check is correct; prayer full-restore double-set is harmless. 2 disputed/unverified items flagged for manual inspection."
+}

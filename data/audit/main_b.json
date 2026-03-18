@@ -1,0 +1,118 @@
+{
+  "critical": [
+    {
+      "location": "src/main.py:7924",
+      "issue": "_encyclopedia_load_entries iterates 'all_items' expecting a list of dicts with an 'id' key, but item JSON files (weapon.json, armor.json, scroll.json, wand.json, spellbook.json, accessory.json) are all keyed dicts (id->defn), not lists. `for entry in all_items` iterates over the string keys, so `entry.get('id', '')` always returns '' and no entries are ever populated. The encyclopedia for every category except bestiary shows 'Nothing discovered yet' even when items are known.",
+      "fix": "Change the loader to handle the dict-of-dicts format: `entries = [{'id': iid, **defn} for iid, defn in all_items.items() if iid in known_ids]`. This mirrors how items.py/load_items() works."
+    },
+    {
+      "location": "src/main.py:1533 vs 4609",
+      "issue": "There are two definitions of `_display_name` on the Game class. The first (line 1533) is a simple instance method that uses `getattr(item, 'identified', True)` and falls back to `item.name` -- it does NOT honour the `_fix_name_case` wrapper and does not show stack counts. The second (line 4609) is the authoritative, full-featured version. Python keeps only the second definition (last wins in class body), so the first is silently overridden, but the duplication is a maintenance hazard: any edits made to the simpler copy at 1533 will be silently ignored at runtime.",
+      "fix": "Remove the duplicate definition at line 1533-1540. All callers should rely on the version at 4609."
+    },
+    {
+      "location": "src/main.py:4758-4788 (_fire_ranged on_complete)",
+      "issue": "In the ranged-attack `on_complete` callback, a monster kill increments `self.level_mgr.monsters_killed` and calls `_drop_treasure` and appends a corpse -- but it does NOT call `self._on_monster_killed(monster)`, which is the method that fires the boss story popup (via `_BOSS_STORY_KEYS`). Killing a boss with a ranged shot will not trigger the narrative popup, and monsters killed by ranged attacks will never have their boss story shown. Contrast with melee `_start_combat` on_complete (line 4838-4852) which also skips `_on_monster_killed`, meaning boss popup is only triggered via wand/spell paths that call `_on_monster_killed` directly.",
+      "fix": "In the ranged and melee `on_complete` callbacks, after `_drop_treasure` and corpse creation, call `self._on_monster_killed(monster)` (or inline the boss-popup check). Alternatively, factor the boss popup out of `_on_monster_killed` into `_drop_treasure` so it runs in all kill paths."
+    }
+  ],
+  "bugs": [
+    {
+      "location": "src/main.py:4925-4936 (_do_monster_turns -- fire_shield / cold_shield kill path)",
+      "issue": "When a fire_shield or cold_shield reflect kills a monster, `self._on_monster_killed(m)` is called but the monster kill counter `self.level_mgr.monsters_killed` is NOT incremented (unlike the melee/ranged kill paths). Boss story popup fires but kill count is wrong.",
+      "fix": "Add `self.level_mgr.monsters_killed += 1` before calling `_on_monster_killed(m)` in both shield-reflect kill branches, or move the counter increment inside `_on_monster_killed`."
+    },
+    {
+      "location": "src/main.py:6282",
+      "issue": "In `_draw_eat_menu`, the else-branch for Ingredient items calls `max(item.recipes.keys(), key=int)` without guarding against an empty recipes dict. If `ingredient.recipes` is `{}`, this raises `ValueError: max() arg is an empty sequence`, crashing the eat menu render.",
+      "fix": "Guard with: `if item.recipes: best_q = max(item.recipes.keys(), key=int); ...` else fall back to defaults."
+    },
+    {
+      "location": "src/main.py:2686-2688 (_quaff_menu_input)",
+      "issue": "`is_good` is computed from `item.effect` AFTER `drink_potion` has already been called. The potion's `identified` flag is set to True by `drink_potion` at line 2665 (before the call), which is correct. However, `restore_mp` and `brilliance_mp` effects are not in `_BENEFICIAL_EFFECTS` (line 2627-2634), so their messages are printed in 'danger' red even though they are beneficial. Additionally, the `gain_level` and `teleport` sentinel strings are stripped from messages but their removal only checks `in messages` (str-in-list), so if those strings appear as substrings in other messages and are list entries, the logic works correctly -- but `gain_level` IS in `_BENEFICIAL_EFFECTS` so that is fine.",
+      "fix": "Add `'restore_mp'` and `'brilliance_mp'` to `_BENEFICIAL_EFFECTS`."
+    },
+    {
+      "location": "src/main.py:1194-1207 (handle_event ESC handler)",
+      "issue": "STATE_PRAY is defined at line 773 but is never used as the game state during prayer -- prayer correctly uses STATE_QUIZ. However, STATE_PRAY is not listed in the ESC handler's tuple of menu states (line 1195-1204), meaning if STATE_PRAY were ever set as a state it would fall through to `return False` (line 1217), terminating the game. The constant is dead but its presence alongside no draw/input method for it is misleading.",
+      "fix": "Remove the unused STATE_PRAY constant, or document that prayer uses STATE_QUIZ directly."
+    },
+    {
+      "location": "src/main.py:5864 (_draw_spell_menu)",
+      "issue": "Line `can_cast = self.player.mp >= int(mp_cost)` will raise `ValueError` if `mp_cost` is `'?'` (the default when `spell` is not found in `LEARNABLE_SPELLS`). If a spell_id stored in `player.known_spells` no longer exists in `LEARNABLE_SPELLS` (e.g., after a data update), the spell menu crashes on render.",
+      "fix": "Guard the cast: `try: can_cast = self.player.mp >= int(mp_cost) except (ValueError, TypeError): can_cast = False`."
+    },
+    {
+      "location": "src/main.py:7773 (_shop_input)",
+      "issue": "After buying the last item, `m.stock.pop(sel)` and `m.prices.pop(sel)` are called and then `self._shop_selection = min(sel, len(m.stock) - 1)`. When the list becomes empty, `len(m.stock) - 1 = -1`, so `_shop_selection` is set to -1. If the shop state is somehow re-entered before `sold_out` is set, `_draw_shop` would use `sel = -1` and `is_sel = (i == -1)` would never be True, which is harmless, but `stock[-1]` access patterns elsewhere could be an issue. The state transitions to `STATE_PLAYER` immediately, so this is low-severity but worth fixing.",
+      "fix": "After clearing stock: `self._shop_selection = 0`."
+    },
+    {
+      "location": "src/main.py:3783",
+      "issue": "The expression `(m.take_damage(_rng.randint(5, 15)), self._on_monster_killed(m) if not m.alive else None)` uses tuple evaluation to conditionally call `_on_monster_killed`. This works, but `take_damage` return value is discarded and `_on_monster_killed` is also called without first incrementing `monsters_killed`, same as the shield-reflect bug above. `_on_monster_killed` docstring says 'Handle a monster killed by a wand bolt' but it increments the counter itself (line 3860), so this path is correct -- however `level_mgr.monsters_killed` IS incremented at 3860, so this path is fine. Flagging for readability: tuple-as-control-flow is an unusual pattern prone to misread.",
+      "fix": "Replace the tuple pattern with explicit if-block for clarity."
+    }
+  ],
+  "warnings": [
+    {
+      "location": "src/main.py:5392 (_draw_quiz)",
+      "issue": "`selected = qe.last_answer.strip().lower()` -- if `last_answer` is None or not a string, `.strip()` will raise AttributeError. This would crash the quiz render.",
+      "fix": "Guard as: `selected = (qe.last_answer or '').strip().lower()`."
+    },
+    {
+      "location": "src/main.py:5300 (_draw_quiz)",
+      "issue": "`max_c_lines = max((len(w) for w in c_wrapped), default=1)` -- if `display_choices` is empty (a question with no choices), `c_wrapped` is also empty and the default=1 guard triggers. However, the subsequent loop `for i, (choice, wrapped_lines) in enumerate(zip(display_choices, c_wrapped))` would be a no-op, but `max_c_lines = 1` means the quiz panel would render with extra whitespace. More critically, if a question has fewer than 4 choices, the 2x2 grid will have empty cells (no crash, just visual gap).",
+      "fix": "This is acceptable behavior, but worth documenting."
+    },
+    {
+      "location": "src/main.py:4504 (_identify_menu_input)",
+      "issue": "The identify menu supports up to 9 items (keys 1-9) but `identify_menu_items` can theoretically hold more than 9 entries (large inventories + ground items + corpses). Items beyond index 8 are silently inaccessible with no UI indication.",
+      "fix": "Clamp `identify_menu_items` to 9 at population time, or add a scroll indicator and PAGE key support. The same issue exists in `_draw_identify_menu` which renders all entries but input only handles 9."
+    },
+    {
+      "location": "src/main.py:5581-5587 (_draw_equip_menu)",
+      "issue": "`total_rows = n_equip + n_unequip + (1 if n_equip and n_unequip else 0)` adds 1 for a separator, but the height calculation at line 5587 adds `sep_h` SEPARATELY from the extra row count: `bh = min(88 + total_rows * row_h + (sep_h if n_equip and n_unequip else 0) + 64, ...)`. This double-counts the separator in height when both sections are present (adds `1 * row_h` for the row count AND `sep_h` for the separator label). The panel will be slightly taller than needed but won't overflow.",
+      "fix": "Remove the separator from `total_rows` count: `total_rows = n_equip + n_unequip`."
+    },
+    {
+      "location": "src/main.py:6098-6103 (_draw_cook_menu compound header truncation)",
+      "issue": "The compound recipe header truncation loop `while len(hdr) > 1 and self.font_sm.size(hdr + '...')[0] > max_header_w: hdr = hdr[:-1]` truncates `hdr` but `max_header_w = bw - 36`. The value being tested after truncation is `hdr + '...'` not `hdr + '\u2026'` (ellipsis), while the render at 6101 appends `'...'`. Inconsistency: other truncation loops in the file use `'\u2026'` (single char). Not a crash, but the width measurement could be slightly off.",
+      "fix": "Use `'\u2026'` consistently in both the size test and the render."
+    },
+    {
+      "location": "src/main.py:7151-7161 (_examine_corpse_direct) and 7204-7214 (_examine_corpse)",
+      "issue": "Both `_examine_corpse_direct` and `_examine_corpse` set `tier = max(1, min(5, harvest_tier + 1))` and use that as both the quiz tier AND the threshold: `threshold = tier + 1`. For a harvest_tier 4 corpse, tier = 5, threshold = 6. The philosophy quiz is threshold mode with threshold=6 but questions are tiered 1-5. A threshold of 6 is higher than the max chain, making it impossible to pass. `threshold` should likely cap at 5 or use a separate formula.",
+      "fix": "Cap threshold: `threshold = min(5, tier + 1)` or use a fixed formula like `threshold = id_tier + 1` capped at 5, matching `_identify_item`."
+    },
+    {
+      "location": "src/main.py:8114 (_draw_encyclopedia list view)",
+      "issue": "When encyclopedia entries > 14 (visible_rows) and `sel` is near the end, `start = max(0, min(sel - visible_rows // 2, n - visible_rows))` could produce `start` such that `start + visible_rows > n` when `n < visible_rows` (handled by `min(n, 14)`) but the `n - visible_rows` minimum could be negative when `n < visible_rows`, causing `max(0, negative)` = 0 which is correct. No crash, but with exactly 14 entries the scroll window is anchored at 0 always, hiding the selection highlight if it moves past visible_rows. With n=0 the else block does nothing (correct).",
+      "fix": "Low priority. Consider `visible_rows = min(n, 14)` then `start = max(0, min(sel - visible_rows // 2, n - visible_rows))` ensures start >= 0 always."
+    },
+    {
+      "location": "src/main.py:1280-1285 (_MOVE_KEYS dict)",
+      "issue": "The vi-key 'h' (pygame.K_h) is NOT in `_MOVE_KEYS` -- it is intentionally omitted because 'H' is used for Harvest. This means left-movement via vi-keys requires only `K_LEFT`, not `K_h`. The CLAUDE.md documents 'hjkl (vi-keys; h used for harvest)' but the help screen (line 8240) says 'Arrows / hjkl -- Move / attack', which misleads the player into thinking 'h' moves left. The `_TARGET_MOVE_KEYS` dict at line 4685 DOES include K_h for left movement in targeting mode, creating an inconsistency: h moves left in targeting but not in normal movement.",
+      "fix": "Update the help screen to say 'Arrows / jkl' (no h). Optionally add a note that h=harvest. Also remove K_h from `_TARGET_MOVE_KEYS` or accept the inconsistency."
+    },
+    {
+      "location": "src/main.py:6344 (_draw_quaff_menu)",
+      "issue": "In the quaff menu render, `detail_col = FP.DANGER_TEXT` is used for non-beneficial potions including `restore_mp` and `brilliance_mp` (which are not in `_BENEFICIAL_EFFECTS`). This causes those potions to display in red even when they are beneficial. Cosmetic only but misleads players.",
+      "fix": "Expand `_BENEFICIAL_EFFECTS` to include `'restore_mp'` and `'brilliance_mp'` (also fixes the message colour bug above)."
+    }
+  ],
+  "dead_code": [
+    {
+      "location": "src/main.py:773",
+      "issue": "STATE_PRAY = 'pray' is defined but never assigned as self.state anywhere in the codebase. Prayer uses STATE_QUIZ directly (line 2708). No draw method, no input handler, and no ESC handler entry exists for STATE_PRAY. The constant is completely unused."
+    },
+    {
+      "location": "src/main.py:1533-1540",
+      "issue": "First definition of `_display_name` is shadowed by the second definition at line 4609. Python class body execution means the second definition overwrites the first; the code at 1533-1540 is never executed. The first version also lacks stack-count support and `_fix_name_case`, so it was an older incomplete version."
+    },
+    {
+      "location": "src/main.py:2761-2772 (_resolve_prayer effective >= 8 branch)",
+      "issue": "When `effective >= 8` and `prayer_boon_count < 3`, the code applies WIS+1 at line 2764, then at line 2771-2772 sets `p.hp = p.max_hp` and `p.sp = p.max_sp`. But lines 2775-2777 (the `elif effective >= 7` branch) also do full HP/SP restore, and when both the if-branch (count>=3) and elif would run full restore, the hp/sp assignment at 2771-2772 outside the inner if always runs for ALL effective>=8 cases regardless of boon count. The code works but the indentation structure means the full-restore at 2771-2772 is unconditional for effective>=8 (outside the inner if/else), making the else-branch at 2768-2770 also do a full restore AND then immediately overwrite with another full restore at 2771-2772. This is redundant but not wrong."
+    }
+  ],
+  "summary": "The most critical bug is in `_encyclopedia_load_entries` (line 7924): item JSON files are keyed dicts but the code iterates them as a list, so `entry.get('id')` always returns '' and no encyclopedia items ever appear for weapon/armor/scroll/wand/spellbook/accessory categories. The second critical issue is the duplicate `_display_name` method (lines 1533 and 4609), where the first definition is silently dead. Third, boss story popups are never triggered for melee kills or ranged kills because those code paths call `_drop_treasure` and append the corpse directly without going through `_on_monster_killed`. Significant bugs include: fire/cold shield kills not incrementing the monster kill counter; the examine-corpse quiz threshold formula allowing threshold=6 which exceeds the max quiz chain; `restore_mp`/`brilliance_mp` potion effects displaying in danger-red; and the eat menu crashing if an ingredient has an empty recipes dict. A notable design inconsistency is that 'h' (vi-key for left) is in targeting movement but not in normal movement, contradicting the help screen text. STATE_PRAY is defined but completely unused. Overall the draw methods handle None/empty states safely with guards, state transitions back to STATE_PLAYER after quiz completion are consistent, and index bounds are validated in all menu input handlers."
+}

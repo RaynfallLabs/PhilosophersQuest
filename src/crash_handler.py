@@ -70,7 +70,7 @@ def write_crash_report(exc_type, exc_value, exc_tb, game=None) -> str:
             lines.append(f"  Player name  : {getattr(game, 'player_name', '?')}")
             lines.append(f"  Dungeon level: {getattr(game, 'dungeon_level', '?')}")
             lines.append(f"  Game state   : {getattr(game, 'state', '?')}")
-            lines.append(f"  Turn         : {getattr(game, 'turn', '?')}")
+            lines.append(f"  Turn         : {getattr(game, 'turn_count', '?')}")
             lines.append(f"  HP           : {p.hp} / {p.max_hp}")
             lines.append(f"  SP           : {p.sp} / {p.max_sp}")
             lines.append(f"  MP           : {p.mp} / {p.max_mp}")

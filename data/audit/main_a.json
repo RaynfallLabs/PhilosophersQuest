@@ -1,0 +1,127 @@
+{
+  "critical": [
+    {
+      "location": "src/main.py:3187",
+      "issue": "_equip_accessory() blocks amulet equip when ring slots are full. The guard `if all(s is not None for s in self.player.accessory_slots)` checks only the 4 ring slots (accessory_slots). Amulets are stored in player.amulet_slot (a separate attribute) and are never subject to this limit. If all 4 ring slots are occupied and the player tries to equip an amulet-type Accessory via this path, they get 'All accessory slots are full!' and cannot equip the amulet even though the amulet slot is empty.",
+      "fix": "Before the guard, check if the item is an amulet (getattr(item, 'slot', 'ring') == 'amulet'). If it is, skip the ring-slot fullness check entirely and proceed directly to the quiz."
+    },
+    {
+      "location": "src/quiz_engine.py:129  vs  src/player.py:199-201",
+      "issue": "Quiz timer formula mismatch. quiz_engine.start_quiz() computes timer as `round((10 + wisdom) * timer_modifier) + extra_seconds` — i.e. it adds the raw WIS value (10..20) to 10, giving 20–30 s at default WIS. But player.get_quiz_timer() returns `BASE_TIMER + max(0, WIS - 10)` (10s base + WIS bonus above 10), giving 10–20 s. The engine consistently awards 10 s more per WIS than the documented formula. At WIS=10 the timer is 20 s (engine) vs the documented 10 s. The engine's formula is effectively `10 + WIS`, not `BASE_TIMER + max(0, WIS-10)`. Player.get_quiz_timer() is therefore dead code — it is never called.",
+      "fix": "Align the engine formula with the documented behaviour: `self.timer_seconds = round((self.BASE_TIMER + max(0, wisdom - 10)) * timer_modifier) + extra_seconds`. If the current (doubled) timer is intentional, delete player.get_quiz_timer() and update CLAUDE.md."
+    },
+    {
+      "location": "src/main.py:993-1007",
+      "issue": "load_state() does not restore correct_answers, wrong_answers, or _score_saved. After loading a save these counters reset to 0 (set in __init__). A player who answers 200 questions, saves, then loads will see 0 correct/wrong on the death/victory screen and the score formula omits those answers. The save_game() call (in main() at line 8361) also presumably does not serialise them, so they are silently lost every session.",
+      "fix": "Add correct_answers, wrong_answers, and _score_saved to both save_game()'s serialisation dict and to the load_state() restoration block."
+    },
+    {
+      "location": "src/main.py:8336-8342",
+      "issue": "Loading a save does NOT delete it immediately. The memory file documents the permadeath rule: 'Loading a save DELETES it immediately'. The main() function calls load_game() at line 8337 and then game.load_state() at line 8342, but never calls delete_save(). A crash after load_state() but before the next save_game() call allows the player to reload from the same save (checkpoint exploit).",
+      "fix": "Call delete_save(player_name) immediately after load_game() succeeds and before entering the game loop, matching the stated permadeath contract."
+    }
+  ],
+  "bugs": [
+    {
+      "location": "src/main.py:1429",
+      "issue": "`random.choice(...)` is called at line 1429 (confused direction randomisation in _do_move) using the bare `random` module, but this module is never imported at the top level of main.py. The file imports `random as _rng` or `import random as _lore_rng` only inside functions. The top-level `import random` is absent; all top-level imports are listed at lines 1-28 and `random` is not among them. This will raise `NameError: name 'random' is not defined` the first time a confused player tries to move.",
+      "fix": "Add `import random` at the top of the file, or change line 1429 to use `_rng.choice(...)` after importing `import random as _rng` at the top of _do_move (the local import on line 1288 is `import random as _rng`, but it is in scope only for that function call; line 1429 is inside a different branch that already returned `_rng`)."
+    },
+    {
+      "location": "src/main.py:4258",
+      "issue": "Scroll 'identify' effect at line 4258 accesses `unknown.unidentified_name` unconditionally, but not every item that has `identified=False` is guaranteed to have an `unidentified_name` attribute (e.g. Artifact or custom item types). This will raise AttributeError if such an item is in inventory.",
+      "fix": "Use `getattr(unknown, 'unidentified_name', unknown.name)` to match the pattern used elsewhere (line 1539)."
+    },
+    {
+      "location": "src/main.py:2771",
+      "issue": "In _resolve_prayer(), when effective >= 8 and prayer_boon_count < 3, the code applies `p.hp = p.max_hp` and `p.sp = p.max_sp` BOTH inside the if-branch at lines 2767-2768 AND again unconditionally at lines 2771-2772, after the if/else. The unconditional restoration at 2771-2772 also fires when prayer_boon_count >= 3 (the else branch), which already sets hp and sp. This is redundant but harmless. However, the WIS+1 bonus branch (if prayer_boon_count < 3) doubly restores even though the message already covers it; in the else branch the message says 'fully restored' and hp/sp are set once, then set again at 2771 — correct. This is a logic duplication, not a crash, but the full-restore (lines 2771-2772) is unconditional and will fire even when chain >= 8 falls into the 'stat bonus already granted, now also full-restore' path unexpectedly.",
+      "fix": "Move lines 2771-2772 (the unconditional full restore) inside the `if effective >= 8` block only, removing the duplication."
+    },
+    {
+      "location": "src/main.py:3563-3566",
+      "issue": "Wand effects 'fear_monster' and 'charm_monster' (lines 3563-3571) are handled inside the `elif effect in (...)` branch that begins at line 3415, which targets only the effects listed in that elif. 'fear_monster' and 'charm_monster' are NOT in the set at line 3415-3419. They will silently fall through and do nothing because they are inside the block reached when effect IS in the set, yet they are additional elif branches that can never be reached when `effect` is 'fear_monster' or 'charm_monster'. The same applies to 'poison_monster', 'disease_monster', 'curse_monster', 'teleport_monster', 'drain_life', 'disintegrate', 'weaken_monster', 'drain_magic', and 'dispel_magic' — none of these are listed in the elif condition at line 3415-3419 but are handled inside the if-block as sub-elifs.",
+      "fix": "Add all target-required effect IDs to the set at line 3415: 'fear_monster', 'charm_monster', 'poison_monster', 'disease_monster', 'curse_monster', 'teleport_monster', 'drain_life', 'disintegrate', 'weaken_monster', 'drain_magic', 'dispel_magic'. Or restructure to a flat if/elif chain at the same indentation level."
+    },
+    {
+      "location": "src/main.py:4924-4928 and 4929-4936",
+      "issue": "Fire shield and cold shield reflect damage by directly setting `m.hp -= reflect_dmg` (line 4924, 4931) instead of calling `m.take_damage()`. This bypasses monster resistances and the alive-check. If reflect damage kills the monster, `_on_monster_killed()` is called (lines 4927-4928, 4934-4936) but the fire-shield check at 4927 sets `m.alive = False` without checking if m is already dead (from a prior effect this same turn). The cold shield check at 4934 has `if m.hp <= 0 and m.alive` which is correct. The fire-shield check at line 4927 does NOT check `m.alive` before calling `_on_monster_killed`, potentially double-counting a kill.",
+      "fix": "At line 4927, add `and m.alive` guard: `if m.hp <= 0 and m.alive:` before setting `m.alive = False` and calling `_on_monster_killed`."
+    },
+    {
+      "location": "src/main.py:2174",
+      "issue": "In the lockpick on_complete callback (line 2174), `self.state = STATE_PLAYER` is set at the top of the function, but attempt_lockpick() (line 2205) internally calls quiz_engine.start_quiz() which sets self.state = STATE_QUIZ. The on_complete callback is only called AFTER the quiz ends, so by the time on_complete runs, state will already be STATE_QUIZ (set by lockpick internals). Setting STATE_PLAYER in on_complete is correct, but the `self.state = STATE_QUIZ` at line 2172 is set before the quiz starts — and attempt_lockpick itself also sets it. This is not a crash but creates a pattern where the quiz state flip happens in two places for lockpicking, unlike the rest of the code.",
+      "fix": "Verify that attempt_lockpick() (in container_system.py) sets STATE_QUIZ itself; if so, remove the redundant `self.state = STATE_QUIZ` at line 2172 from main.py."
+    },
+    {
+      "location": "src/main.py:4019-4025 (spell on_complete)",
+      "issue": "Spell quiz uses mode='chain' (line 4028), so result.score is the chain length. When chain == 0, the spell fizzles and MP is already spent (line 4009: `self.player.mp -= mp_cost`). This is documented as intentional ('MP wasted'). However if the quiz timer expires before a single correct answer (chain stays 0), the on_complete fires with result.score=0 and the message says 'fizzles' — correct. No bug, but the MP expenditure before the quiz means a crash during the quiz (window close) would lose MP without any effect. Low-severity design note.",
+      "fix": "No code change needed; behaviour is intentional per design."
+    }
+  ],
+  "warnings": [
+    {
+      "location": "src/main.py:72",
+      "issue": "MSG_H = 200 is defined at line 72, inside the body of a module-level function `_cook_menu_bonus_label` that was defined starting at line 51. The assignment appears to be at module scope (after the function body ends) but its indentation relative to the function is ambiguous in the source. If Python reads it as inside the function, GAME_H and VIEWPORT_W/H computed at lines 73-76 would never be set at module level. Inspection of lines 51-76 shows that `MSG_H` on line 72 and the constants through line 76 are at column 0 — they ARE module-level — but they are physically placed inside the docstring-less function body block. This is not a bug (Python uses indentation, and they appear to be at col 0) but is extremely confusing and error-prone.",
+      "fix": "Move MSG_H, GAME_H, VIEWPORT_W, VIEWPORT_H to before the function definition or to a clearly separate constants block."
+    },
+    {
+      "location": "src/main.py:3261-3267",
+      "issue": "The Philosopher's Wrench is typed as a Wand (shown in _open_wand_menu) and is handled specially in _invoke_wand at line 3262. It fires the wrench tool action without deducting charges and calls `_advance_turn()`. However the 'wand' menu description says 'ZAP WAND — Nearest visible monster: auto-targeted', so the Wrench will appear in this menu even though it is a combination tool. There is no harm but the UX is unexpected and the effect description is misleading. If the wrench also has no charges it will still appear.",
+      "fix": "Consider filtering the Philosopher's Wrench out of wand_menu_items in _open_wand_menu, or adding a separate inventory action for it."
+    },
+    {
+      "location": "src/main.py:3160-3168",
+      "issue": "_open_accessory_menu() filters out 'philosophers_amulet' from the accessory menu (line 3163). However, _equip_item() at line 3062 calls _equip_accessory() directly for any Accessory — including the Philosopher's Amulet — when selected from the equip menu (E key). This means the amulet can be equipped via the E key equip menu but not via the S key accessory menu, creating an inconsistency.",
+      "fix": "Either also filter the amulet from the E-key equip path in _equip_item(), or allow it in the S-key accessory menu and filter it out after equipping it once."
+    },
+    {
+      "location": "src/main.py:2089-2090",
+      "issue": "`if not hasattr(self, 'player_gold'): self.player_gold = 0` in _pickup() (line 2089) is a defensive check that should never trigger because player_gold is always set in __init__ (line 897) and restored in load_state() (line 1000). This is dead defensive code that papers over a potential initialisation gap.",
+      "fix": "Remove the hasattr guard; if it were ever needed it would indicate a missing initialisation that should be fixed at the source."
+    },
+    {
+      "location": "src/main.py:903",
+      "issue": "`import random as _lore_rng` inside __init__ at line 903 imports random only to use it for _lore_levels setup, then is never used again. The assignment at line 904 uses `_lore_rng.randint(...)` but the name is local to __init__ and cannot be referenced outside. This pattern is fragile and the module is re-imported in many methods as `import random as _rng` each time. A single top-level `import random` would be cleaner.",
+      "fix": "Add a single `import random` at the module top level and use `random.randint(...)` throughout."
+    },
+    {
+      "location": "src/main.py:5562 (approx, _equip_item Weapon branch)",
+      "issue": "When equipping a Weapon via the E key, _equip_item() calls `self.player._apply_equip(item)` and then `self.player.remove_from_inventory(item)`. Inside _apply_equip() for weapons, the old weapon is appended back to inventory (player.py line 310). If the old weapon and the new weapon are the same object (impossible under normal play but possible with a save-load edge case), the item could be removed from inventory before the old weapon is re-added, leaving the inventory one item short.",
+      "fix": "No immediate code change needed but ensure _apply_equip() is called before remove_from_inventory() (it already is), and document this ordering requirement."
+    },
+    {
+      "location": "src/main.py:4452-4459",
+      "issue": "_open_identify_menu() checks for the Philosopher's Amulet in `self.player.inventory` OR in `self.player.accessory_slots`. However it does not check `self.player.amulet_slot`. If the player equips the amulet into the dedicated amulet_slot (line 348 of player.py), the has_amulet check fails and identification is blocked even though the player has the amulet equipped.",
+      "fix": "Add a third check: `or (self.player.amulet_slot is not None and getattr(self.player.amulet_slot, 'id', '') == 'philosophers_amulet')`"
+    },
+    {
+      "location": "src/main.py:5127",
+      "issue": "The render() method's state dispatch at lines 5077-5127 handles most states but does not render STATE_PRAY. While STATE_PRAY appears in the CLAUDE.md state list, it has no entry in the render() elif chain and no draw method. If the game ever enters STATE_PRAY without immediately switching to STATE_QUIZ, the screen will show only the game world with no overlay — a silent visual gap.",
+      "fix": "Verify whether STATE_PRAY is ever set; if it is transitional only (immediately replaced by STATE_QUIZ), document that. If it can persist, add a _draw_pray() stub."
+    },
+    {
+      "location": "src/main.py:1356-1358",
+      "issue": "The '?' (help) key is handled via `event.unicode == '?'` at line 1227 AND also via `key == pygame.K_SLASH or key == pygame.K_QUESTION` at lines 1356-1358 inside _player_input(). The unicode check at line 1227 fires first (before _player_input is called), so the K_SLASH/K_QUESTION check at lines 1356-1358 is unreachable dead code for the '?' key.",
+      "fix": "Remove the duplicate check at lines 1356-1358 (or consolidate both into one place)."
+    }
+  ],
+  "dead_code": [
+    {
+      "location": "src/player.py:199-201",
+      "issue": "player.get_quiz_timer() is defined but never called anywhere. All quiz timer computation is done directly in quiz_engine.start_quiz() using the raw wisdom parameter. The function correctly documents the intended formula (BASE_TIMER + max(0, WIS-10)) but is never invoked."
+    },
+    {
+      "location": "src/main.py:1356-1358",
+      "issue": "The `if key == pygame.K_SLASH or key == pygame.K_QUESTION: self.state = STATE_HELP` branch inside _player_input() is unreachable because the '?' character is intercepted by the unicode check at line 1227 in handle_event() before _player_input() is ever called for that key."
+    },
+    {
+      "location": "src/main.py:2089-2090",
+      "issue": "`if not hasattr(self, 'player_gold'): self.player_gold = 0` — player_gold is always initialised in __init__ and load_state(); this guard never fires."
+    },
+    {
+      "location": "src/main.py:7157-7210 (approx, lockpick quiz in main vs container_system)",
+      "issue": "The STATE_LOCKPICK state is listed in CLAUDE.md's game state table, but there is no STATE_LOCKPICK = 'lockpick' definition at the module level (only STATE_LOCKPICK appears in the memory doc, not the code). The lockpicking action uses STATE_QUIZ directly via attempt_lockpick(). STATE_LOCKPICK is unused/removed but remains referenced in memory documentation."
+    }
+  ],
+  "summary": "Four critical issues found: (1) Amulet equip incorrectly blocked when ring slots are full. (2) Quiz timer formula in quiz_engine doubles the WIS contribution vs the documented player formula — timers are consistently 10s longer than intended, and player.get_quiz_timer() is dead code. (3) load_state() does not restore correct_answers/wrong_answers/score counters, causing stat-screen inaccuracy after load. (4) Loading a save does not immediately delete it, violating the permadeath contract and enabling a checkpoint exploit. Key bugs: a bare `random.choice` call that will NameError when the player is confused (random not imported at module scope), several wand target effects (fear_monster, charm_monster, etc.) that silently do nothing because they are sub-elif branches unreachable from their parent elif condition, and the identify-menu amulet check missing the dedicated amulet_slot. The _score_saved/_calc_score logic itself is correct once the counter restoration bug is fixed. SECRET_BUILDS all appear structurally valid with correct stat keys and metadata. The state machine has no true stuck states — every state has an ESC → STATE_PLAYER exit — but STATE_PRAY is listed in docs without a render handler."
+}

@@ -1,0 +1,153 @@
+{
+  "critical": [
+    {
+      "location": "src/main.py:2120",
+      "issue": "on_item_identified() called with zero arguments on auto-identify pickup path, but the method signature requires one positional argument (item_id: str). This raises a TypeError every time the Philosopher's Amulet auto-identifies an item.",
+      "fix": "Change `qs.on_item_identified()` at line 2120 to `qs.on_item_identified(item.id)`."
+    },
+    {
+      "location": "src/quirk_system.py:978 and src/quirk_system.py:648",
+      "issue": "Double-counting bug: on_teleport() increments 'hermes_teleports' for all teleports, and on_scroll_read() also increments 'hermes_teleports' when the scroll is scroll_of_teleportation. Using a teleport scroll therefore adds 2 to the counter instead of 1, inflating both the Hermes quirk threshold and the Wandering Star threshold.",
+      "fix": "Remove the hermes_teleports increment from on_scroll_read() (lines 648-651) since on_teleport() is already called for scroll-triggered teleports. Alternatively, remove it from on_teleport() and only track it in on_scroll_read(), but the former is safer given on_teleport() covers wand and teleportitis cases."
+    }
+  ],
+  "bugs": [
+    {
+      "location": "src/quirk_system.py:983",
+      "issue": "Wandering Star (#85) checks `hermes_teleports >= 15` but Hermes (#35) already fires at `hermes_teleports >= 8`. Due to the double-counting bug above, the effective threshold for Wandering Star is only 7-8 actual teleports rather than 15. Even without the double-count, the check at line 983 uses the same already-incremented counter without re-reading it, so if the player hits exactly 15 teleports on the same event that triggers Hermes (at 8), Wandering Star will never trigger because the check at line 983 fires only after the counter already passed 8-14. The check needs to be inside the on_teleport() method but it is, so the issue is purely the double-counting.",
+      "fix": "Fix the double-counting bug described in critical issue above. Wandering Star will then correctly fire at 15 unique teleport events."
+    },
+    {
+      "location": "src/mystery_system.py:539",
+      "issue": "apply_mystery_reward() for the fisher_king mystery writes to `player.quirk_progress['fisher_king_mystery_active']` without checking whether quirk_progress exists. If player.quirk_progress is None (e.g., on a fresh player before any quirk tracking), this will raise a TypeError.",
+      "fix": "Use `getattr(player, 'quirk_progress', None) or {}` pattern, or guard with `if player.quirk_progress is None: player.quirk_progress = {}` before writing."
+    },
+    {
+      "location": "src/mystery_system.py:283-313",
+      "issue": "spawn_mystery_for_level() returns a 2-tuple `(altar, key_item)` on success, but returns `None` on failure. Callers that destructure the result without checking the type first will crash with a TypeError (cannot unpack None). The function is documented as returning either (altar, key) or None, so callers must check, but there is no contract enforcement.",
+      "fix": "Document clearly and verify all call sites unpack only after checking `if result is not None`. Alternatively return a consistent type (e.g., always a tuple, with key_item being None)."
+    },
+    {
+      "location": "src/quirk_system.py:204-212",
+      "issue": "on_stair_use() resets 'eye_storm_damage_this_floor' to False AND on_floor_entered() also resets it (line 219). The Atalanta fast-escape check (lines 203-209) uses the 'ariadne_entry_turn' counter, which is set in on_floor_entered() (line 218), but on_stair_use() is presumably called BEFORE on_floor_entered() for the new level. This means the Atalanta check in on_stair_use() compares turn_count against the entry turn of the previous floor, which is correct, but the 'ariadne_entry_turn' only gets updated in on_floor_entered(). If on_stair_use and on_floor_entered are always called sequentially without the turn advancing between them, the result is correct. However, if a bug or refactor changes the call order, Atalanta tracking will silently break.",
+      "fix": "Add an assertion or comment documenting that on_stair_use() must be called before on_floor_entered() for the Atalanta check to work correctly."
+    },
+    {
+      "location": "src/quirk_system.py:864-880",
+      "issue": "on_turn() Loki tracking accesses `pl.amulet_slot` as a single item (line 869), but equipment APIs may differ (amulet slot may be named differently or part of accessory_slots). If amulet_slot is not a valid attribute, this raises AttributeError every turn.",
+      "fix": "Wrap in a try/except or use `getattr(pl, 'amulet_slot', None)` with a fallback."
+    },
+    {
+      "location": "src/save_system.py:45-52",
+      "issue": "load_game() does NOT delete the save file after loading. The permadeath rule requires the save to be deleted immediately on load to prevent checkpointing (see MEMORY.md). The game relies on the caller (main.py) to call delete_save() after load_game(), but there is no such call in the main() function after the load_game() call at line 8337.",
+      "fix": "Add `delete_save(player_name)` immediately after `state = load_game(player_name)` succeeds in main.py (around line 8338), before the Game object is constructed."
+    },
+    {
+      "location": "src/highscore_system.py:69-72",
+      "issue": "The rank-finding loop after add_score() uses `e is entry` (identity check) to find the newly inserted entry. After the `entries[:MAX_ENTRIES]` slice on line 66, the list is a new list; the 'entry' dict object reference is still valid as long as it survived the slice. However, if the score is too low to survive the top-100 cut (i.e., it fell off the end after sorting), the loop returns 0, which is correct. But the identity check `e is entry` is fragile: if the list is ever deep-copied (e.g., via json round-trip), it will fail to match. The fallback on line 70 `(e['score'] == score and e['name'] == name and e['date'] == entry['date'])` only matches if score+name+date are unique; two runs by the same player on the same day with the same score would return the wrong rank.",
+      "fix": "Use a unique run ID (e.g., add a microsecond timestamp or UUID) to entries so the rank lookup is unambiguous."
+    },
+    {
+      "location": "src/sound_system.py:67-70",
+      "issue": "The mono/stereo reshape logic is inverted. When _CHANNELS == 1 (mono), the code reshapes to (-1, 1), which produces a 2D array with one column -- this is actually a stereo format for pygame.sndarray.make_sound when the mixer was initialized with channels=1 (mono). pygame's sndarray expects a 1D array for mono. This may cause audio initialization to fail or play incorrectly.",
+      "fix": "For mono (_CHANNELS == 1), pass a 1D array: `numpy.array(buf, dtype='int16')`. Only reshape to (-1, 1) if the mixer is stereo."
+    },
+    {
+      "location": "src/mystery_system.py:167-171",
+      "issue": "Sisyphus mystery challenge mode is 'physical' (line 167), but the quiz dispatcher in main.py's _begin_mystery_challenge() only handles 'escalator_threshold', 'escalator_chain', 'threshold', and 'chain' modes (it passes the mode directly to quiz_engine.start_quiz). A physical challenge with mode='physical' will cause an invalid quiz mode error in the quiz engine.",
+      "fix": "Add explicit handling for challenge mode 'physical' in _begin_mystery_challenge() to start the tile-walking challenge instead of routing to start_quiz()."
+    },
+    {
+      "location": "src/mystery_system.py:82",
+      "issue": "Mimir's Well applies `stat_cost: {PER: -1}` before the quiz starts (documented in the data dict), but apply_mystery_reward() does not apply stat_cost penalties -- it only applies the reward. The stat_cost mechanism is defined in the MYSTERIES data but has no corresponding application code in either mystery_system.py or main.py.",
+      "fix": "Add stat_cost application in _begin_mystery_challenge() (before starting the quiz) to deduct the PER point from the player when they accept the Mimir challenge."
+    },
+    {
+      "location": "src/crash_handler.py:73",
+      "issue": "Crash report reads `game.turn` (line 73) but the Game class tracks turns as `game.turn_count` (not `game.turn`). This will print '?' for the turn count in every crash report, losing useful diagnostic information.",
+      "fix": "Change `getattr(game, 'turn', '?')` to `getattr(game, 'turn_count', '?')` at line 73."
+    },
+    {
+      "location": "src/quirk_system.py:175-183",
+      "issue": "wanderlust_q (line 175) checks `tile_moves >= 20000`, and iron_ration (line 182) checks `tile_moves >= 15000`. ahasverus (line 171) also checks `tile_moves >= 15000`. This means iron_ration and ahasverus fire at the same tile count. While this is probably intentional design, the wanderlust_q check at 20000 is always evaluated even after it has fired, causing a redundant is_unlocked check every move after 20000 tiles. This is a minor inefficiency.",
+      "fix": "Minor optimization: add an early return or break after the wanderlust_q award fires. Not a crash-level bug."
+    }
+  ],
+  "warnings": [
+    {
+      "location": "src/ui.py:234-245",
+      "issue": "Hunger thresholds (Starving < 20, Hungry < 60) match MEMORY.md specification. However, the SP bar color in _vitals() uses thresholds of 0.50 and 0.25 (line 138-142), which correspond to sp/max_sp ratios, not the absolute SP values used for hunger display (lines 234-245). The two systems are consistent with each other but a player with high max_sp (e.g., max_sp=200) would see the Hungry warning at sp=60 while the SP bar only turns orange at sp=50. This is a visual inconsistency rather than a bug.",
+      "fix": "Consider aligning the SP bar color thresholds to match the hunger warning thresholds, or document the intentional distinction."
+    },
+    {
+      "location": "src/fantasy_ui.py:430-437",
+      "issue": "draw_glow_text() creates a new full-screen Surface (surf.get_size()) for every glow render call (line 430). On a 1600x900 window this allocates a 5.5 MB SRCALPHA surface per call. If called frequently (e.g., every frame in a title animation loop), this will cause significant GC pressure.",
+      "fix": "Cache the glow surface or limit draw_glow_text to non-per-frame contexts."
+    },
+    {
+      "location": "src/fantasy_ui.py:159-205",
+      "issue": "make_parchment() uses a fixed random seed (0xF4F457) so the texture is deterministic. However, the nested loop at line 176 iterates h*3 times calling rng methods, and for large panels (e.g., full-screen 1600x900) this is 2430 iterations plus foxing spots. First call is slow; subsequent calls are cached. If make_parchment is called with a size that was not previously cached (e.g., after a window resize), it recomputes from scratch. This may cause a brief stutter on resize.",
+      "fix": "Acceptable given the cache, but consider clearing _parchment_cache on resize to avoid stale cached surfaces at wrong sizes."
+    },
+    {
+      "location": "src/paths.py:17-19",
+      "issue": "When not frozen, _root() returns `os.path.join(os.path.dirname(__file__), '..')` without normalizing the path. This works correctly but produces paths like `C:\\Users\\...\\PhilosophersQuest\\src\\..` rather than `C:\\Users\\...\\PhilosophersQuest`. The data_path() function calls os.path.normpath, which fixes this for data files, but save_dir() calls _root() directly via base = _root() in dev mode (line 39), and os.makedirs is called on the unnormalized path. This is fine on Windows but cosmetically noisy in debugging.",
+      "fix": "Add os.path.normpath() in _root() itself for cleaner paths."
+    },
+    {
+      "location": "src/save_system.py:22-42",
+      "issue": "save_game() pickles the entire game object graph including all monsters, items, the dungeon map, etc. There is no version field in the saved state dict. If the codebase changes (new fields added to Player, Monster, etc.), loading an old save with pickle will silently succeed but may have missing attributes. This can cause AttributeError on first access of the new field.",
+      "fix": "Add a `'save_version': 1` key to the state dict, and check it in load_game() to detect and reject stale saves gracefully."
+    },
+    {
+      "location": "src/highscore_system.py:15-18",
+      "issue": "_SCORE_FILE is computed at module import time using os.path.abspath(__file__). If the module is imported before the working directory is set correctly (e.g., frozen executable), the path may resolve to the wrong location. paths.py already has a robust _root() function for exactly this purpose.",
+      "fix": "Replace the _SCORE_FILE computation with `from paths import data_path; _SCORE_FILE = data_path('highscores.json')` (or use save_dir() if scores should be user-writable in a frozen build)."
+    },
+    {
+      "location": "src/mystery_system.py:397-431",
+      "issue": "_oracle_reveal_quirks() imports _QUIRK_EFFECTS from quirk_system (line 400) and then uses a hardcoded _HINTS dict with only 12 quirk IDs (lines 413-426). The game has 100 quirks, so for 88 of them the hint will fall back to 'A hidden path remains unexplored.' This is weak UX but not a crash.",
+      "fix": "Expand _HINTS to cover more quirk IDs, or remove the hardcoded dict and use _QUIRK_TRIGGER entries from quirk_system.py instead."
+    },
+    {
+      "location": "src/mystery_system.py:606-667",
+      "issue": "spawn_merchant() uses `dungeon.tiles[ry][rx] == 3` (line 659) to check for floor tiles, hardcoding the FLOOR constant value 3. If the FLOOR constant is ever changed in dungeon.py, this check silently breaks.",
+      "fix": "Import and use the FLOOR constant from dungeon.py instead of the magic number 3."
+    },
+    {
+      "location": "src/quirk_system.py:110-137",
+      "issue": "_award_power() initializes power_cooldowns[qid] = 0 when the power has a cooldown > 0 (line 129), making the power immediately ready. This is correct, but if a quirk is awarded mid-game after the player has already saved and reloaded, the power_cooldowns dict is restored from the pickle, and _award_power() is never called again (the quirk is already in unlocked_quirks). This means the cooldown dict is correctly preserved across saves. No bug here, but the initialization path is only traversed once.",
+      "fix": "No fix needed, documenting for clarity."
+    },
+    {
+      "location": "src/sound_system.py:136",
+      "issue": "init() attempts pygame.mixer.init() with buffer=512. On some systems (particularly Windows WASAPI), a buffer of 512 samples at 22050 Hz is extremely small (~23ms) and may cause audio underruns and stuttering. The except Exception silently disables sound if init fails, which is correct graceful degradation. However, no fallback buffer size is tried.",
+      "fix": "Try larger buffer sizes (1024, 2048) in a loop if the first init fails, before disabling sound entirely."
+    },
+    {
+      "location": "src/ui.py:248-257",
+      "issue": "The lockpick durability display (lines 248-257) imports Lockpick from items inside the draw method every frame. This is a repeated module import in a hot rendering path.",
+      "fix": "Move the import to the top of ui.py."
+    },
+    {
+      "location": "src/ui.py:169",
+      "issue": "The status_effects import from status_effects module happens inside the _status() draw method on every frame (line 169). Same repeated hot-path import issue as above.",
+      "fix": "Move to top-level import in ui.py."
+    }
+  ],
+  "dead_code": [
+    {
+      "location": "src/highscore_system.py:12",
+      "issue": "`from typing import Optional` is imported but `Optional` is never used in the file."
+    },
+    {
+      "location": "src/mystery_system.py:549-567",
+      "issue": "_MERCHANT_STOCK_COUNTS and _PRICE_MULT are defined in mystery_system.py rather than in a dedicated merchant module. The MerchantNPC class and spawn_merchant() function are placed in mystery_system.py, which is primarily about mystery altars. This is a separation-of-concerns issue, not dead code per se, but worth noting for maintainability."
+    },
+    {
+      "location": "src/fantasy_ui.py:208-219",
+      "issue": "_try_parchment_png() attempts to load a parchment.png texture that does not appear to exist in the assets directory. The function always returns None in practice. It is called on every draw_panel() call, adding a redundant file existence check each time (mitigated by os.path.exists being O(1) on a cached FS)."
+    }
+  ],
+  "summary": "Audit of 9 files covering quirk_system.py, mystery_system.py, sound_system.py, ui.py, fantasy_ui.py, save_system.py, highscore_system.py, crash_handler.py, and paths.py.\n\nCRITICAL (2): (1) on_item_identified() is called without its required item_id argument at the auto-identify pickup path (main.py:2120), causing a TypeError crash every time the Philosopher's Amulet identifies an item. (2) hermes_teleports counter is incremented in both on_scroll_read() and on_teleport(), meaning every teleport scroll use adds 2 to the counter, halving the effective Hermes/Wandering Star unlock thresholds.\n\nBUGS (9): save_game loads but never deletes the save file (violating permadeath rules); Sisyphus mystery uses an unimplemented 'physical' challenge mode; Mimir stat_cost has no application code; crash_handler reads 'game.turn' instead of 'game.turn_count'; sound mono/stereo reshape is inverted; fisher_king_mystery_active written to possibly-None quirk_progress; highscore rank lookup is fragile on duplicate name+score+date; Loki on_turn may crash on missing amulet_slot attribute; mystery spawn returns inconsistent type.\n\nWARNINGS (10): no save file versioning; _SCORE_FILE uses non-portable path computation; small audio buffer may underrun; make_parchment allocation on resize; parchment PNG always missing; Oracle hints only cover 12 of 100 quirks; repeated per-frame imports in ui.py; merchant floor tile hardcoded as magic number 3; draw_glow_text full-screen allocation per call; paths.py unnormalized root path.\n\nDEAD CODE (3): unused Optional import; merchant NPC code misplaced in mystery_system.py; _try_parchment_png always returns None."
+}

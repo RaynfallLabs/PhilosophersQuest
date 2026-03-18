@@ -643,12 +643,7 @@ class QuirkSystem:
                 self._award('scheherazade', "Scheherazade's Tongue",
                             self._timer_bonus('grammar', 5))
 
-        # Hermes (#35): use scroll_of_teleportation 8 times
-        if scroll_id == 'scroll_of_teleportation':
-            self._inc('hermes_teleports')
-            if self._p('hermes_teleports') >= 8 and not self.is_unlocked('hermes'):
-                self._award('hermes', "Hermes' Wings",
-                            lambda pl: pl.quirk_progress.update({'hermes_active': True}))
+        # Hermes (#35): tracked via on_teleport() to avoid double-counting scroll + teleport hooks
 
         # Shakespeare (#68): read 50 scrolls successfully
         self._inc('shakespeare_scrolls')
