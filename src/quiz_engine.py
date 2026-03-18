@@ -126,7 +126,7 @@ class QuizEngine:
         self.max_chain = max_chain
         self.callback = callback
         self._timer_modifier = timer_modifier
-        self.timer_seconds = round((10 + max(0, wisdom - 10)) * timer_modifier) + extra_seconds
+        self.timer_seconds = round((10 + wisdom) * timer_modifier) + extra_seconds
         self.time_remaining = float(self.timer_seconds)
 
         self.score = 0

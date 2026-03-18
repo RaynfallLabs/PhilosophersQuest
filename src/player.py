@@ -307,6 +307,10 @@ class Player:
                 ok, msg = self.try_unequip_slot(self.weapon)
                 if not ok:
                     return  # cursed weapon blocks swap
+                # Remove old weapon's on-equip status
+                old_status = getattr(self.weapon, 'on_equip_status', '')
+                if old_status:
+                    self.status_effects.pop(old_status, None)
                 self.inventory.append(self.weapon)
             # Unequip shield if switching to 2H
             if getattr(item, 'two_handed', False) and self.shield:
@@ -316,6 +320,10 @@ class Player:
                 self.inventory.append(self.shield)
                 self.shield = None
             self.weapon = item
+            # Grant new weapon's on-equip status
+            new_status = getattr(item, 'on_equip_status', '')
+            if new_status:
+                self.add_effect(new_status, -1)
         elif isinstance(item, Armor):
             idx = ARMOR_SLOTS.index(item.slot) if item.slot in ARMOR_SLOTS else 0
             old = self.armor_slots[idx]
@@ -323,8 +331,16 @@ class Player:
             if not ok:
                 return
             if old:
+                # Remove old armor's on-equip status
+                old_status = getattr(old, 'on_equip_status', '')
+                if old_status:
+                    self.status_effects.pop(old_status, None)
                 self.inventory.append(old)
             self.armor_slots[idx] = item
+            # Grant new armor's on-equip status
+            new_status = getattr(item, 'on_equip_status', '')
+            if new_status:
+                self.add_effect(new_status, -1)
         elif isinstance(item, Shield):
             old = self.shield
             ok, _ = self.try_unequip_slot(old)

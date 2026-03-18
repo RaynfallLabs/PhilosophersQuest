@@ -2243,7 +2243,7 @@
       "81-100": 2
     },
     "value": 9000,
-    "lore": "The Nemean Lion's hide could not be cut by any weapon — that was the point of the first Labour. Heracles strangled it. The lion's own claws were the only things sharp enough to skin it. He wore the hide thereafter. Every subsequent monster he faced had to find a way to harm a man armoured in the unskinnable. Most didn't manage it."
+    "lore": "The Nemean Lion's hide could not be cut by any weapon — that was the point of the first Labour. Heracles strangled it. The lion's own claws were the only things sharp enough to skin it. He wore the hide thereafter. Every subsequent monster he faced had to find a way to harm a man armoured in the unskinnable. Most didn't manage it. The hide renders its wearer virtually invulnerable to conventional weapons — only magical or divine arms can pierce it."
   },
   "carapace_of_the_hydra": {
     "name": "Carapace of the Hydra",
@@ -2342,7 +2342,8 @@
       "81-100": 2
     },
     "value": 9000,
-    "lore": "After killing Fafnir, Sigurd bathed in the dragon's blood and became invulnerable — except for a leaf that fell between his shoulder blades. His eventual murder came from a spear through exactly that spot, thrown by a man told about it by a woman who loved him and was told by another man who needed Sigurd dead. The weak point was the information, not the armour."
+    "lore": "After killing Fafnir, Sigurd bathed in the dragon's blood and became invulnerable — except for a leaf that fell between his shoulder blades. His eventual murder came from a spear through exactly that spot, thrown by a man told about it by a woman who loved him and was told by another man who needed Sigurd dead. The weak point was the information, not the armour.",
+    "onEquipStatus": "fire_resist"
   },
   "breastplate_of_joan": {
     "name": "Breastplate of Joan of Arc",
@@ -2375,7 +2376,8 @@
       "81-100": 2
     },
     "value": 8000,
-    "lore": "Joan of Arc described her armour as 'very good' — white-painted steel made specifically for her. She was wounded multiple times and fought on. She told her judges at her trial that her armour had been made by command of God and could not protect against what God willed. They burned her anyway. Twenty-five years later Charles VII had the verdict annulled. Joan had been dead for twenty-five years."
+    "lore": "Joan of Arc described her armour as 'very good' — white-painted steel made specifically for her. She was wounded multiple times and fought on. She told her judges at her trial that her armour had been made by command of God and could not protect against what God willed. They burned her anyway. Twenty-five years later Charles VII had the verdict annulled. Joan had been dead for twenty-five years.",
+    "onEquipStatus": "blessed"
   },
   "lorica_hamata_of_caesar": {
     "name": "Lorica of Caesar",
@@ -2472,7 +2474,8 @@
       "81-100": 2
     },
     "value": 9000,
-    "lore": "The Helm of Hades was made by the Cyclopes in the same forging that made Poseidon's trident and Zeus's lightning. Perseus borrowed it to approach the Gorgons unseen. Hermes lent it to Athena during the Trojan War. It did not grant invisibility — it prevented perception. The distinction seems technical until you realize the Helm worked on gods. No one can look away from nothing."
+    "lore": "The Helm of Hades was made by the Cyclopes in the same forging that made Poseidon's trident and Zeus's lightning. Perseus borrowed it to approach the Gorgons unseen. Hermes lent it to Athena during the Trojan War. It did not grant invisibility — it prevented perception. The distinction seems technical until you realize the Helm worked on gods. No one can look away from nothing.",
+    "onEquipStatus": "invisible"
   },
   "helm_of_achilles": {
     "name": "Helm of Achilles",
@@ -2797,7 +2800,8 @@
       "81-100": 2
     },
     "value": 7000,
-    "lore": "In European folklore, seven-league boots take their wearer seven leagues — about 35 km — per step. Hop-o'-My-Thumb stole them from an ogre. Puss in Boots wore them. They appear across French, German, and Scandinavian tales with minor variation: the boots are always disproportionately large on their original owner and always fit the hero perfectly. The folklore does not explain the sizing mechanism."
+    "lore": "In European folklore, seven-league boots take their wearer seven leagues — about 35 km — per step. Hop-o'-My-Thumb stole them from an ogre. Puss in Boots wore them. They appear across French, German, and Scandinavian tales with minor variation: the boots are always disproportionately large on their original owner and always fit the hero perfectly. The folklore does not explain the sizing mechanism.",
+    "onEquipStatus": "hasted"
   },
   "brigandine_of_william_wallace": {
     "name": "Brigandine of Wallace",
@@ -2913,7 +2917,8 @@
     "enchant_bonus": 0,
     "unidentified_name": "eerily green plate armor",
     "lore": "Forged from enchanted iron that grows with the wearer, the Green Knight's Plate absorbs blows that would kill a lesser man. The wearer heals slowly but continuously.",
-    "special_effect": "regen_2"
+    "special_effect": "regen_2",
+    "onEquipStatus": "life_save"
   },
   "serpent_scale_mail": {
     "name": "Serpent Scale Mail",
@@ -3037,5 +3042,103 @@
     "enchant_bonus": 0,
     "unidentified_name": "a vast dark-green scale",
     "lore": "A single scale from Níðhöggr's body, imbued with the rot of ages. Nothing corrodes it. Wearing it grants the wearer immunity to acid and strong resistance to all decay-based attacks."
+  },
+  "aegishjalmr": {
+    "name": "Aegishjalmr",
+    "slot": "head",
+    "tier": 4,
+    "material": "mithril",
+    "ac_bonus": 4,
+    "enchant_bonus": 0,
+    "equip_threshold": 4,
+    "quiz_tier": 4,
+    "damage_resistances": {
+      "fire": 0.4,
+      "magic": 0.3
+    },
+    "weight": 3.0,
+    "value": 5000,
+    "min_level": 28,
+    "identified": false,
+    "unidentified_name": "a helm inscribed with a terrifying rune",
+    "lore": "The Helm of Awe, ægishjálmr, was worn by the dragon Fafnir. All who looked upon it were struck with dread. The Volsunga saga records that Sigurd took it from the dragon's hoard, and with it gained the power to terrify armies with a glance.",
+    "containerLootTier": "rare",
+    "can_be_cursed": false,
+    "symbol": "[",
+    "color": [
+      180,
+      180,
+      220
+    ],
+    "floorSpawnWeight": {
+      "1-27": 0,
+      "28-60": 15,
+      "61-100": 8
+    }
+  },
+  "winged_sandals_of_hermes": {
+    "name": "Winged Sandals of Hermes",
+    "slot": "feet",
+    "tier": 4,
+    "material": "gold",
+    "ac_bonus": 1,
+    "enchant_bonus": 0,
+    "equip_threshold": 3,
+    "quiz_tier": 3,
+    "damage_resistances": {
+      "magic": 0.2
+    },
+    "weight": 0.5,
+    "value": 5500,
+    "min_level": 25,
+    "identified": false,
+    "unidentified_name": "sandals with small golden wings at the ankles",
+    "lore": "The talaria of Hermes, messenger of the gods, allowed him to fly between Olympus, Earth, and the Underworld in moments. Perseus borrowed them to approach Medusa. These sandals carry their wearer with divine swiftness — each step covers ground that would take mortals three.",
+    "onEquipStatus": "hasted",
+    "containerLootTier": "rare",
+    "can_be_cursed": false,
+    "symbol": "[",
+    "color": [
+      255,
+      215,
+      0
+    ],
+    "floorSpawnWeight": {
+      "1-24": 0,
+      "25-60": 12,
+      "61-100": 6
+    }
+  },
+  "hermes_sandals_early": {
+    "name": "Hermes's Sandals",
+    "slot": "feet",
+    "tier": 1,
+    "material": "leather",
+    "ac_bonus": 0,
+    "enchant_bonus": 0,
+    "equip_threshold": 1,
+    "quiz_tier": 1,
+    "damage_resistances": {},
+    "weight": 0.5,
+    "value": 400,
+    "min_level": 5,
+    "identified": false,
+    "unidentified_name": "a pair of sandals with tiny wing motifs",
+    "lore": "A mortal imitation of Hermes's divine talaria. The wings are decorative, but the sandals carry a fragment of the messenger god's speed. They will not carry you between worlds, but they will carry you faster than your enemies expect.",
+    "onEquipStatus": "hasted",
+    "containerLootTier": "uncommon",
+    "can_be_cursed": false,
+    "symbol": "[",
+    "color": [
+      200,
+      180,
+      140
+    ],
+    "floorSpawnWeight": {
+      "1-5": 5,
+      "6-20": 15,
+      "21-40": 8,
+      "41-100": 2
+    }
   }
 }

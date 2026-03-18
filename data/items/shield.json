@@ -243,7 +243,8 @@
     "damage_resistances": {
       "fire": 0.35,
       "magic": 0.4,
-      "cold": 0.2
+      "cold": 0.2,
+      "petrifying": 1.0
     },
     "can_be_cursed": false,
     "cursed": false,

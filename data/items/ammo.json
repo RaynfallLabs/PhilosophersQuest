@@ -2,7 +2,11 @@
   "iron_arrow": {
     "name": "iron arrow",
     "symbol": "\\",
-    "color": [180, 180, 190],
+    "color": [
+      180,
+      180,
+      190
+    ],
     "weight": 0.05,
     "min_level": 1,
     "ammo_type": "arrow",
@@ -10,7 +14,13 @@
     "damage_bonus": 0,
     "count_min": 10,
     "count_max": 30,
-    "floor_spawn_weight": {"1-20": 100, "21-40": 60, "41-60": 20, "61-80": 5, "81-100": 2},
+    "floor_spawn_weight": {
+      "1-20": 100,
+      "21-40": 60,
+      "41-60": 20,
+      "61-80": 5,
+      "81-100": 2
+    },
     "value": 1,
     "unidentified_name": "arrows",
     "lore": "Simple shafts of ash-wood tipped with hammered iron heads. Cheap to produce and reliable enough for hunting, these arrows have brought down game and men alike across countless battlefields."
@@ -18,7 +28,11 @@
   "steel_arrow": {
     "name": "steel arrow",
     "symbol": "\\",
-    "color": [200, 210, 230],
+    "color": [
+      200,
+      210,
+      230
+    ],
     "weight": 0.05,
     "min_level": 21,
     "ammo_type": "arrow",
@@ -26,7 +40,13 @@
     "damage_bonus": 1,
     "count_min": 8,
     "count_max": 24,
-    "floor_spawn_weight": {"1-20": 10, "21-40": 100, "41-60": 60, "61-80": 20, "81-100": 5},
+    "floor_spawn_weight": {
+      "1-20": 10,
+      "21-40": 100,
+      "41-60": 60,
+      "61-80": 20,
+      "81-100": 5
+    },
     "value": 3,
     "unidentified_name": "arrows",
     "lore": "Fletcher-grade steel points affixed to straight-grained cedar shafts with silk thread. The tempered tips hold their edge through stone and bone alike, punching through light armor with ease."
@@ -34,7 +54,11 @@
   "hardened_gold_arrow": {
     "name": "hardened gold arrow",
     "symbol": "\\",
-    "color": [220, 190, 80],
+    "color": [
+      220,
+      190,
+      80
+    ],
     "weight": 0.05,
     "min_level": 41,
     "ammo_type": "arrow",
@@ -42,7 +66,13 @@
     "damage_bonus": 2,
     "count_min": 6,
     "count_max": 18,
-    "floor_spawn_weight": {"1-20": 0, "21-40": 10, "41-60": 100, "61-80": 60, "81-100": 20},
+    "floor_spawn_weight": {
+      "1-20": 0,
+      "21-40": 10,
+      "41-60": 100,
+      "61-80": 60,
+      "81-100": 20
+    },
     "value": 8,
     "unidentified_name": "arrows",
     "lore": "Alchemically hardened gold conducts magical energy more efficiently than common metals, making these arrows ideal against creatures with spell resistance. The gleaming heads catch light like tiny suns in flight."
@@ -50,7 +80,11 @@
   "diamond_arrow": {
     "name": "diamond arrow",
     "symbol": "\\",
-    "color": [160, 220, 255],
+    "color": [
+      160,
+      220,
+      255
+    ],
     "weight": 0.04,
     "min_level": 61,
     "ammo_type": "arrow",
@@ -58,7 +92,13 @@
     "damage_bonus": 3,
     "count_min": 5,
     "count_max": 15,
-    "floor_spawn_weight": {"1-20": 0, "21-40": 0, "41-60": 10, "61-80": 100, "81-100": 60},
+    "floor_spawn_weight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 10,
+      "61-80": 100,
+      "81-100": 60
+    },
     "value": 20,
     "unidentified_name": "arrows",
     "lore": "Diamond points ground to molecular sharpness pierce through enchanted armor as though it were wet paper. Only the wealthiest archers can afford to loose these arrows and not retrieve them afterward."
@@ -66,7 +106,11 @@
   "dragonbone_arrow": {
     "name": "dragonbone arrow",
     "symbol": "\\",
-    "color": [200, 160, 80],
+    "color": [
+      200,
+      160,
+      80
+    ],
     "weight": 0.04,
     "min_level": 81,
     "ammo_type": "arrow",
@@ -74,7 +118,13 @@
     "damage_bonus": 5,
     "count_min": 4,
     "count_max": 12,
-    "floor_spawn_weight": {"1-20": 0, "21-40": 0, "41-60": 0, "61-80": 10, "81-100": 100},
+    "floor_spawn_weight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 10,
+      "81-100": 100
+    },
     "value": 50,
     "unidentified_name": "arrows",
     "lore": "Shafts carved from the hollow bones of ancient dragons retain a whisper of draconic essence. They strike with the weight of legend, and even the wound they leave behind smolders faintly for hours."
@@ -82,7 +132,11 @@
   "iron_bolt": {
     "name": "iron bolt",
     "symbol": "-",
-    "color": [170, 170, 180],
+    "color": [
+      170,
+      170,
+      180
+    ],
     "weight": 0.06,
     "min_level": 1,
     "ammo_type": "bolt",
@@ -90,7 +144,13 @@
     "damage_bonus": 0,
     "count_min": 10,
     "count_max": 25,
-    "floor_spawn_weight": {"1-20": 100, "21-40": 60, "41-60": 20, "61-80": 5, "81-100": 2},
+    "floor_spawn_weight": {
+      "1-20": 100,
+      "21-40": 60,
+      "41-60": 20,
+      "61-80": 5,
+      "81-100": 2
+    },
     "value": 1,
     "unidentified_name": "bolts",
     "lore": "Short, stout iron bolts designed for crossbow use. Their stubby profile sacrifices range for punching power, making them favored by dungeon fighters who need to stop a charging enemy fast."
@@ -98,7 +158,11 @@
   "steel_bolt": {
     "name": "steel bolt",
     "symbol": "-",
-    "color": [190, 200, 220],
+    "color": [
+      190,
+      200,
+      220
+    ],
     "weight": 0.06,
     "min_level": 21,
     "ammo_type": "bolt",
@@ -106,7 +170,13 @@
     "damage_bonus": 1,
     "count_min": 8,
     "count_max": 20,
-    "floor_spawn_weight": {"1-20": 10, "21-40": 100, "41-60": 60, "61-80": 20, "81-100": 5},
+    "floor_spawn_weight": {
+      "1-20": 10,
+      "21-40": 100,
+      "41-60": 60,
+      "61-80": 20,
+      "81-100": 5
+    },
     "value": 3,
     "unidentified_name": "bolts",
     "lore": "Precision-ground steel bolts with quarrel-cut fletching for stable flight in close quarters. The hardened heads deform on impact to maximize wound channel, making them brutally effective against unarmored foes."
@@ -114,7 +184,11 @@
   "hardened_gold_bolt": {
     "name": "hardened gold bolt",
     "symbol": "-",
-    "color": [210, 180, 70],
+    "color": [
+      210,
+      180,
+      70
+    ],
     "weight": 0.06,
     "min_level": 41,
     "ammo_type": "bolt",
@@ -122,7 +196,13 @@
     "damage_bonus": 2,
     "count_min": 6,
     "count_max": 16,
-    "floor_spawn_weight": {"1-20": 0, "21-40": 10, "41-60": 100, "61-80": 60, "81-100": 20},
+    "floor_spawn_weight": {
+      "1-20": 0,
+      "21-40": 10,
+      "41-60": 100,
+      "61-80": 60,
+      "81-100": 20
+    },
     "value": 8,
     "unidentified_name": "bolts",
     "lore": "These gleaming bolts carry a faint anti-magical charge locked into the gold during the hardening process. Spellcasters struck by them find their concentration disrupted, making these prized by monster hunters."
@@ -130,7 +210,11 @@
   "diamond_bolt": {
     "name": "diamond bolt",
     "symbol": "-",
-    "color": [140, 210, 255],
+    "color": [
+      140,
+      210,
+      255
+    ],
     "weight": 0.05,
     "min_level": 61,
     "ammo_type": "bolt",
@@ -138,7 +222,13 @@
     "damage_bonus": 3,
     "count_min": 5,
     "count_max": 12,
-    "floor_spawn_weight": {"1-20": 0, "21-40": 0, "41-60": 10, "61-80": 100, "81-100": 60},
+    "floor_spawn_weight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 10,
+      "61-80": 100,
+      "81-100": 60
+    },
     "value": 20,
     "unidentified_name": "bolts",
     "lore": "Diamond-tipped bolts that can shear through the thickest plate armor. The crystalline tips shatter on impact, sending razor shards into the wound — a gruesome but devastatingly effective design."
@@ -146,7 +236,11 @@
   "adamantine_bolt": {
     "name": "adamantine bolt",
     "symbol": "-",
-    "color": [100, 200, 150],
+    "color": [
+      100,
+      200,
+      150
+    ],
     "weight": 0.05,
     "min_level": 81,
     "ammo_type": "bolt",
@@ -154,9 +248,93 @@
     "damage_bonus": 5,
     "count_min": 4,
     "count_max": 10,
-    "floor_spawn_weight": {"1-20": 0, "21-40": 0, "41-60": 0, "61-80": 10, "81-100": 100},
+    "floor_spawn_weight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 10,
+      "81-100": 100
+    },
     "value": 50,
     "unidentified_name": "bolts",
     "lore": "Forged from the rarest metal in the known world, these bolts are virtually indestructible and can be recovered after almost every shot. Dragon hide, golem plating, and enchanted barriers alike offer no meaningful protection against them."
+  },
+  "arrows_of_eros": {
+    "name": "Arrows of Eros",
+    "ammo_type": "arrow",
+    "tier": 3,
+    "damage_bonus": 3,
+    "count_min": 3,
+    "count_max": 4,
+    "value": 2000,
+    "min_level": 20,
+    "identified": false,
+    "unidentified_name": "golden-tipped arrows that feel warm",
+    "lore": "Eros, whom the Romans called Cupid, carried two kinds of arrows: gold-tipped to inspire love, lead-tipped to inspire revulsion. Ovid tells how Eros shot Apollo with gold and Daphne with lead, creating the first unrequited love. These golden arrows charm their targets — struck creatures forget their hostility and become docile.",
+    "floorSpawnWeight": {
+      "1-19": 0,
+      "20-45": 6,
+      "46-100": 3
+    },
+    "containerLootTier": "rare",
+    "symbol": "(",
+    "color": [
+      255,
+      200,
+      50
+    ],
+    "weight": 0.2
+  },
+  "arrows_of_artemis": {
+    "name": "Arrows of Artemis",
+    "ammo_type": "arrow",
+    "tier": 5,
+    "damage_bonus": 8,
+    "count_min": 4,
+    "count_max": 6,
+    "value": 5000,
+    "min_level": 30,
+    "identified": false,
+    "unidentified_name": "silver arrows fletched with white feathers",
+    "lore": "Artemis the Huntress never missed. In the Iliad, she is 'the lady of wild things.' Her silver arrows brought swift, painless death — Homer describes women dying suddenly as 'slain by the gentle shafts of Artemis.' Callimachus records that she forged them herself on the island of Lipara. Six arrows. Make them count.",
+    "floorSpawnWeight": {
+      "1-29": 0,
+      "30-60": 4,
+      "61-100": 5
+    },
+    "containerLootTier": "legendary",
+    "symbol": "(",
+    "color": [
+      200,
+      200,
+      255
+    ],
+    "weight": 0.2
+  },
+  "bolts_of_zeus": {
+    "name": "Bolts of Zeus",
+    "ammo_type": "bolt",
+    "tier": 5,
+    "damage_bonus": 15,
+    "count_min": 2,
+    "count_max": 3,
+    "value": 7000,
+    "min_level": 55,
+    "identified": false,
+    "unidentified_name": "crackling bolts of compressed energy",
+    "lore": "The Cyclopes — Brontes, Steropes, and Arges — forged Zeus's thunderbolts in the furnaces beneath Mount Etna. Hesiod's Theogony describes them as having 'thunder and lightning and bright thunderbolt.' With these, Zeus overthrew the Titans and established the order of Olympus. Three bolts. Each one shakes the earth.",
+    "floorSpawnWeight": {
+      "1-54": 0,
+      "55-80": 3,
+      "81-100": 4
+    },
+    "containerLootTier": "legendary",
+    "symbol": "(",
+    "color": [
+      100,
+      150,
+      255
+    ],
+    "weight": 0.3
   }
 }

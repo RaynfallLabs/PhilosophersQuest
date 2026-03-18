@@ -3399,7 +3399,8 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "Plato's thought experiment made physical. A shepherd found it in a chasm opened by earthquake, wore it, discovered its power, seduced the queen, killed the king, and took the throne. Plato used it to ask: would a just man behave differently if invisible? The Ring doesn't answer the question. It only enables it."
+    "lore": "Plato's thought experiment made physical. A shepherd found it in a chasm opened by earthquake, wore it, discovered its power, seduced the queen, killed the king, and took the throne. Plato used it to ask: would a just man behave differently if invisible? The Ring doesn't answer the question. It only enables it.",
+    "cursed": true
   },
   "ring_of_the_nibelung": {
     "name": "Ring of the Nibelung",
@@ -3467,7 +3468,7 @@
     "quiz_tier": 5,
     "effects": {
       "stat": "INT",
-      "amount": 4
+      "amount": 2
     },
     "unidentified_name": "a golden arm-ring of extraordinary weight",
     "floorSpawnWeight": {
@@ -3702,14 +3703,17 @@
     "quiz_tier": 5,
     "effects": {
       "stat": "WIS",
-      "amount": 4
+      "amount": 4,
+      "second_stat": "CON",
+      "second_amount": -2
     },
     "unidentified_name": "a golden necklace of impossible craftsmanship",
     "floorSpawnWeight": {
       "81-100": 2
     },
     "identified": false,
-    "lore": "Hephaestus forged it as a wedding gift for Harmonia when she married Cadmus — and cursed it, because Harmonia's mother was Aphrodite, who had cuckolded him with Ares. Every woman who wore it suffered catastrophe: Jocasta, Eriphyle (who betrayed her husband for it), Jocasta again, Callirhoe. The necklace destroyed houses. It is still beautiful."
+    "lore": "Hephaestus forged it as a wedding gift for Harmonia when she married Cadmus — and cursed it, because Harmonia's mother was Aphrodite, who had cuckolded him with Ares. Every woman who wore it suffered catastrophe: Jocasta, Eriphyle (who betrayed her husband for it), Jocasta again, Callirhoe. The necklace destroyed houses. It is still beautiful.",
+    "cursed": true
   },
   "menat_of_hathor": {
     "name": "Menat of Hathor",
@@ -4613,5 +4617,126 @@
     "can_be_cursed": false,
     "unidentified_name": "a jagged black stone",
     "lore": "Carved from sacrificial obsidian used in Xibalba, the Mayan underworld. It grants the wearer sight in magical darkness and resistance to fear effects from undead."
+  },
+  "ariadnes_thread": {
+    "name": "Ariadne's Thread",
+    "slot": "amulet",
+    "effects": {
+      "status": "searching",
+      "duration": -1,
+      "stat": "WIS",
+      "amount": 2
+    },
+    "equip_threshold": 3,
+    "quiz_tier": 3,
+    "weight": 0.2,
+    "value": 3000,
+    "min_level": 22,
+    "identified": false,
+    "unidentified_name": "a silver thread wound into a pendant",
+    "lore": "Ariadne gave this thread to Theseus so he could find his way out of the Labyrinth. The thread remembers every path it has traveled and guides its bearer toward the exit. In the myth, Theseus abandoned Ariadne on Naxos — but the thread remained faithful.",
+    "containerLootTier": "rare",
+    "symbol": "=",
+    "color": [
+      220,
+      220,
+      255
+    ]
+  },
+  "eponas_charm": {
+    "name": "Epona's Charm",
+    "slot": "amulet",
+    "effects": {
+      "status": "searching",
+      "duration": -1,
+      "stat": "PER",
+      "amount": 1
+    },
+    "equip_threshold": 2,
+    "quiz_tier": 1,
+    "weight": 0.3,
+    "value": 800,
+    "min_level": 8,
+    "identified": false,
+    "unidentified_name": "a small horse-shaped charm",
+    "lore": "Epona was the Celtic goddess of horses, travelers, and safe journeys. Her charm ensures the traveler always arrives in safe harbor — never in a dead end, never in an ambush. The Romans adopted her worship, unique among Gaulish deities.",
+    "containerLootTier": "uncommon",
+    "symbol": "=",
+    "color": [
+      180,
+      140,
+      100
+    ]
+  },
+  "anansis_thread": {
+    "name": "Anansi's Thread",
+    "slot": "ring",
+    "effects": {
+      "stat": "INT",
+      "amount": 2
+    },
+    "equip_threshold": 2,
+    "quiz_tier": 2,
+    "weight": 0.1,
+    "value": 1500,
+    "min_level": 10,
+    "identified": false,
+    "unidentified_name": "a ring woven from spider silk",
+    "lore": "Anansi the spider-god of the Akan people earned all the stories in the world by outwitting the sky-god Nyame. His thread connects all knowledge — what you learn once, you never lose. The Ashanti say that every story belongs to Anansi.",
+    "containerLootTier": "uncommon",
+    "symbol": "=",
+    "color": [
+      255,
+      215,
+      0
+    ]
+  },
+  "rope_of_izanagi": {
+    "name": "Rope of Izanagi",
+    "slot": "amulet",
+    "effects": {
+      "status": "searching",
+      "duration": -1,
+      "stat": "CON",
+      "amount": 2
+    },
+    "equip_threshold": 4,
+    "quiz_tier": 4,
+    "weight": 0.5,
+    "value": 6000,
+    "min_level": 52,
+    "identified": false,
+    "unidentified_name": "a shimenawa rope that hums with spiritual energy",
+    "lore": "When Izanagi fled the underworld of Yomi, he sealed the entrance with a great boulder and a sacred rope. The rope divides the world of the living from the dead. Its bearer can feel the boundary thinning — every trap, every hidden passage, every secret door reveals itself to one who knows where life ends and death begins.",
+    "containerLootTier": "legendary",
+    "symbol": "=",
+    "color": [
+      255,
+      255,
+      200
+    ]
+  },
+  "girdle_of_hippolyta": {
+    "name": "Girdle of Hippolyta",
+    "slot": "amulet",
+    "effects": {
+      "stat": "STR",
+      "amount": 3
+    },
+    "equip_threshold": 3,
+    "quiz_tier": 3,
+    "weight": 1.0,
+    "value": 4000,
+    "min_level": 22,
+    "identified": false,
+    "unidentified_name": "a wide golden war-belt",
+    "lore": "Hippolyta, queen of the Amazons, wore this girdle as proof of her supremacy among warriors. Ares himself gave it to her. Heracles took it as his ninth labor — though whether by force or diplomacy depends on which version you trust. The belt makes its wearer formidable in close combat.",
+    "containerLootTier": "rare",
+    "symbol": "=",
+    "color": [
+      255,
+      200,
+      50
+    ]
   }
 }

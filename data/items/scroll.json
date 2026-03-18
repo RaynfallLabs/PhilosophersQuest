@@ -386,5 +386,55 @@
     "unidentified_name": "glowing scroll",
     "lore": "Written by an anonymous enchanter of the Alexandrian school, this scroll channels raw magical force into whatever equipment the reader wears. The ink shimmers gold as the spell takes hold, permanently strengthening one piece of equipment.",
     "read_threshold": 3
+  },
+  "scroll_of_thoth": {
+    "name": "Scroll of Thoth",
+    "effect": "identify_all",
+    "power": "thoth_blessing",
+    "quiz_tier": 4,
+    "quiz_threshold": 4,
+    "weight": 0.5,
+    "value": 4000,
+    "min_level": 35,
+    "identified": false,
+    "unidentified_name": "a papyrus scroll with hieratic script",
+    "lore": "Thoth, ibis-headed god of knowledge, inscribed all wisdom into forty-two books. The priest Setna Khamwas stole this scroll from the tomb of Neferkaptah and was haunted by the dead for his theft. Those who read it understand all languages and see through all illusions — but knowledge stolen from the dead carries a price.",
+    "containerLootTier": "rare",
+    "floorSpawnWeight": {
+      "1-34": 0,
+      "35-60": 5,
+      "61-100": 3
+    },
+    "symbol": "?",
+    "color": [
+      255,
+      215,
+      100
+    ]
+  },
+  "dead_sea_scroll": {
+    "name": "Dead Sea Scroll",
+    "effect": "mapping",
+    "power": "dead_sea_blessing",
+    "quiz_tier": 3,
+    "quiz_threshold": 3,
+    "weight": 0.3,
+    "value": 3000,
+    "min_level": 30,
+    "identified": false,
+    "unidentified_name": "a brittle parchment sealed in a clay jar",
+    "lore": "In 1947, a Bedouin shepherd threw a stone into a cave near Qumran and heard the sound of breaking pottery. Inside the jars were scrolls preserved for two thousand years. The War Scroll describes the final battle between the Sons of Light and the Sons of Darkness. Reading it reveals the battlefield — every corridor, every room, every enemy position.",
+    "containerLootTier": "rare",
+    "floorSpawnWeight": {
+      "1-29": 0,
+      "30-55": 6,
+      "56-100": 3
+    },
+    "symbol": "?",
+    "color": [
+      200,
+      180,
+      140
+    ]
   }
 }

@@ -60,6 +60,20 @@ class Weapon(Item):
         self.enchant_bonus: int         = 0
         self.identified: bool           = bool(defn.get('identified', False))
         self.unidentified_name: str     = defn.get('unidentified_name', 'an unknown weapon')
+        # On-hit effect properties
+        self.poison_chance: float       = float(defn.get('poisonChance', defn.get('poison_chance', 0.0)))
+        self.burn_chance: float         = float(defn.get('burnChance', defn.get('burn_chance', 0.0)))
+        self.confuse_chance: float      = float(defn.get('confuseChance', defn.get('confuse_chance', 0.0)))
+        self.lifesteal_percent: float   = float(defn.get('lifestealPercent', defn.get('lifesteal_percent', 0.0)))
+        self.cursed_miss_backlash: int  = int(defn.get('cursedMissBacklash', defn.get('cursed_miss_backlash', 0)))
+        self.petrify_on_crit: bool      = bool(defn.get('petrifyOnCrit', defn.get('petrify_on_crit', False)))
+        self.counter_attack_chance: float = float(defn.get('counterAttackChance', defn.get('counter_attack_chance', 0.0)))
+        self.kill_heal_amount: int      = int(defn.get('killHealAmount', defn.get('kill_heal_amount', 0)))
+        self.growing_power: bool        = bool(defn.get('growingPower', defn.get('growing_power', False)))
+        self.kills_to_grow: int         = int(defn.get('killsToGrow', defn.get('kills_to_grow', 10)))
+        self.on_equip_status: str       = defn.get('onEquipStatus', defn.get('on_equip_status', ''))
+        # Runtime-only tracking for growing power
+        self.kill_count: int            = 0
 
     @property
     def max_chain_length(self) -> int:
@@ -83,6 +97,7 @@ class Armor(Item):
         self.identified: bool    = bool(defn.get('identified', False))
         self.unidentified_name: str = defn.get('unidentified_name', 'unknown armor')
         self.container_loot_tier: str = defn.get('container_loot_tier', 'common')
+        self.on_equip_status: str    = defn.get('onEquipStatus', defn.get('on_equip_status', ''))
 
 
 class Shield(Item):

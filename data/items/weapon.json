@@ -8,11 +8,12 @@
     "mathTier": 1,
     "baseDamage": 6,
     "chainMultipliers": [
-      0.5,
+      0.6,
       1.0,
       1.5,
       2.0,
-      2.5
+      2.6,
+      3.2
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -53,10 +54,12 @@
     "mathTier": 1,
     "baseDamage": 9,
     "chainMultipliers": [
-      0.5,
-      1.0,
+      0.7,
+      1.2,
       1.8,
-      2.5
+      2.5,
+      3.2,
+      4.0
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -97,14 +100,15 @@
     "mathTier": 2,
     "baseDamage": 8,
     "chainMultipliers": [
-      0.5,
+      0.6,
       1.0,
       1.5,
-      2.0,
-      2.5,
-      3.0
+      2.1,
+      2.7,
+      3.4,
+      4.2
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 7,
     "damageTypes": [
       "slash",
       "pierce"
@@ -143,13 +147,15 @@
     "mathTier": 2,
     "baseDamage": 12,
     "chainMultipliers": [
-      0.5,
-      1.0,
+      0.7,
+      1.2,
       1.8,
       2.5,
-      3.2
+      3.3,
+      4.2,
+      5.0
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 7,
     "damageTypes": [
       "slash",
       "pierce"
@@ -188,15 +194,15 @@
     "mathTier": 3,
     "baseDamage": 10,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.5,
-      2.0,
-      2.5,
-      3.0,
-      3.5
+      0.6,
+      1.1,
+      1.6,
+      2.2,
+      2.9,
+      3.7,
+      4.5
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 7,
     "damageTypes": [
       "slash",
       "pierce"
@@ -235,14 +241,15 @@
     "mathTier": 3,
     "baseDamage": 15,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.8,
-      2.5,
-      3.2,
-      4.0
+      0.7,
+      1.2,
+      1.9,
+      2.6,
+      3.5,
+      4.5,
+      5.5
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 7,
     "damageTypes": [
       "slash",
       "pierce"
@@ -281,16 +288,15 @@
     "mathTier": 4,
     "baseDamage": 12,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.5,
-      2.0,
-      2.5,
+      0.7,
+      1.1,
+      1.7,
+      2.3,
       3.0,
-      3.5,
-      4.0
+      3.8,
+      4.8
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 7,
     "damageTypes": [
       "slash",
       "pierce"
@@ -329,15 +335,15 @@
     "mathTier": 4,
     "baseDamage": 18,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.8,
-      2.5,
-      3.2,
-      4.0,
-      4.8
+      0.8,
+      1.3,
+      2.0,
+      2.8,
+      3.6,
+      4.6,
+      5.8
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 7,
     "damageTypes": [
       "slash",
       "pierce"
@@ -376,18 +382,15 @@
     "mathTier": 5,
     "baseDamage": 15,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.5,
-      2.0,
+      0.7,
+      1.2,
+      1.8,
       2.5,
-      3.0,
-      3.5,
+      3.2,
       4.0,
-      4.5,
       5.0
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 7,
     "damageTypes": [
       "slash",
       "pierce"
@@ -426,16 +429,15 @@
     "mathTier": 5,
     "baseDamage": 22,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.8,
-      2.5,
-      3.2,
-      4.0,
+      0.8,
+      1.4,
+      2.1,
+      2.9,
+      3.8,
       4.8,
-      5.5
+      6.0
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 7,
     "damageTypes": [
       "slash",
       "pierce"
@@ -474,13 +476,13 @@
     "mathTier": 1,
     "baseDamage": 3,
     "chainMultipliers": [
-      0.3,
+      0.25,
+      0.4,
       0.6,
       1.0,
-      1.4,
       1.8,
-      2.2,
-      2.5
+      3.0,
+      4.5
     ],
     "maxChainLength": 7,
     "damageTypes": [
@@ -520,14 +522,13 @@
     "mathTier": 2,
     "baseDamage": 4,
     "chainMultipliers": [
-      0.3,
-      0.6,
-      1.0,
-      1.4,
-      1.8,
-      2.2,
-      2.6,
-      3.0
+      0.25,
+      0.4,
+      0.65,
+      1.1,
+      2.0,
+      3.2,
+      5.0
     ],
     "maxChainLength": 7,
     "damageTypes": [
@@ -568,16 +569,15 @@
     "baseDamage": 5,
     "chainMultipliers": [
       0.3,
-      0.6,
-      1.0,
-      1.4,
-      1.8,
+      0.5,
+      0.8,
+      1.3,
       2.2,
-      2.6,
-      3.0,
-      3.5
+      3.5,
+      5.0,
+      6.5
     ],
-    "maxChainLength": 7,
+    "maxChainLength": 8,
     "damageTypes": [
       "pierce"
     ],
@@ -616,17 +616,15 @@
     "baseDamage": 6,
     "chainMultipliers": [
       0.3,
-      0.6,
-      1.0,
-      1.4,
-      1.8,
-      2.2,
-      2.6,
-      3.0,
-      3.5,
-      4.0
+      0.5,
+      0.8,
+      1.3,
+      2.4,
+      3.8,
+      5.5,
+      7.5
     ],
-    "maxChainLength": 7,
+    "maxChainLength": 8,
     "damageTypes": [
       "pierce"
     ],
@@ -664,19 +662,16 @@
     "mathTier": 5,
     "baseDamage": 8,
     "chainMultipliers": [
-      0.3,
-      0.6,
-      1.0,
+      0.35,
+      0.55,
+      0.85,
       1.4,
-      1.8,
-      2.2,
       2.6,
-      3.0,
-      3.5,
       4.0,
-      4.5
+      6.0,
+      8.0
     ],
-    "maxChainLength": 7,
+    "maxChainLength": 8,
     "damageTypes": [
       "pierce"
     ],
@@ -716,13 +711,13 @@
     "mathTier": 1,
     "baseDamage": 8,
     "chainMultipliers": [
-      0.5,
       1.0,
       1.5,
       2.0,
-      2.5
+      2.4,
+      2.8
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 5,
     "damageTypes": [
       "slash"
     ],
@@ -760,12 +755,13 @@
     "mathTier": 1,
     "baseDamage": 12,
     "chainMultipliers": [
-      0.5,
-      1.0,
+      1.2,
       1.8,
-      2.5
+      2.4,
+      3.0,
+      3.5
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 5,
     "damageTypes": [
       "slash"
     ],
@@ -803,12 +799,12 @@
     "mathTier": 2,
     "baseDamage": 10,
     "chainMultipliers": [
-      0.5,
       1.0,
       1.5,
       2.0,
       2.5,
-      3.0
+      2.9,
+      3.3
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -848,11 +844,12 @@
     "mathTier": 2,
     "baseDamage": 15,
     "chainMultipliers": [
-      0.5,
-      1.0,
+      1.2,
       1.8,
       2.5,
-      3.2
+      3.1,
+      3.6,
+      4.2
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -892,13 +889,12 @@
     "mathTier": 3,
     "baseDamage": 12,
     "chainMultipliers": [
-      0.5,
       1.0,
-      1.5,
-      2.0,
-      2.5,
-      3.0,
-      3.5
+      1.6,
+      2.1,
+      2.6,
+      3.1,
+      3.6
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -938,12 +934,12 @@
     "mathTier": 3,
     "baseDamage": 18,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.8,
-      2.5,
+      1.2,
+      1.9,
+      2.6,
       3.2,
-      4.0
+      3.8,
+      4.5
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -983,14 +979,12 @@
     "mathTier": 4,
     "baseDamage": 15,
     "chainMultipliers": [
-      0.5,
       1.0,
-      1.5,
-      2.0,
-      2.5,
-      3.0,
-      3.5,
-      4.0
+      1.6,
+      2.2,
+      2.7,
+      3.2,
+      3.8
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -1030,11 +1024,10 @@
     "mathTier": 4,
     "baseDamage": 22,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.8,
-      2.5,
-      3.2,
+      1.3,
+      2.0,
+      2.7,
+      3.4,
       4.0,
       4.8
     ],
@@ -1076,16 +1069,12 @@
     "mathTier": 5,
     "baseDamage": 18,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.5,
-      2.0,
-      2.5,
-      3.0,
+      1.1,
+      1.7,
+      2.3,
+      2.9,
       3.5,
-      4.0,
-      4.5,
-      5.0
+      4.2
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -1125,14 +1114,12 @@
     "mathTier": 5,
     "baseDamage": 27,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.8,
-      2.5,
-      3.2,
-      4.0,
-      4.8,
-      5.5
+      1.3,
+      2.0,
+      2.8,
+      3.5,
+      4.2,
+      5.0
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -1172,13 +1159,12 @@
     "mathTier": 1,
     "baseDamage": 5,
     "chainMultipliers": [
-      0.5,
       1.0,
       1.5,
       2.0,
       2.5
     ],
-    "maxChainLength": 5,
+    "maxChainLength": 4,
     "damageTypes": [
       "blunt"
     ],
@@ -1205,7 +1191,8 @@
     "min_level": 1,
     "unidentified_name": "a rough wooden bludgeon",
     "lore": "The humble wooden club has defended lives since before metallurgy. There is something philosophically satisfying about a weapon so ancient and so immediate. Its effectiveness is primitive and unsubtle, which makes it no less effective.",
-    "quiz_tier": 1
+    "quiz_tier": 1,
+    "knockback": true
   },
   "wood_hammer": {
     "name": "wood hammer",
@@ -1216,13 +1203,12 @@
     "mathTier": 1,
     "baseDamage": 6,
     "chainMultipliers": [
-      0.5,
       1.0,
       1.5,
       2.0,
       2.5
     ],
-    "maxChainLength": 5,
+    "maxChainLength": 4,
     "damageTypes": [
       "blunt"
     ],
@@ -1249,7 +1235,8 @@
     "min_level": 1,
     "unidentified_name": "a crude wooden mallet",
     "lore": "A wooden hammer transmits force differently from a metal one — the grain absorbs some energy, then releases it in a slightly delayed pulse that can crack bone without necessarily breaking skin. Some fighters find this effect particularly useful against armored opponents.",
-    "quiz_tier": 1
+    "quiz_tier": 1,
+    "knockback": true
   },
   "hardwood_club": {
     "name": "hardwood club",
@@ -1260,7 +1247,6 @@
     "mathTier": 2,
     "baseDamage": 7,
     "chainMultipliers": [
-      0.5,
       1.0,
       1.5,
       2.0,
@@ -1294,7 +1280,8 @@
     "min_level": 21,
     "unidentified_name": "a dense dark-grained club",
     "lore": "Dense hardwood clubs cut from the heartwood of iron-oak trees are nearly as heavy as iron while remaining organic. They flex slightly on impact, adding a whip-snap to blows that catches opponents off-guard.",
-    "quiz_tier": 2
+    "quiz_tier": 2,
+    "knockback": true
   },
   "hardwood_hammer": {
     "name": "hardwood hammer",
@@ -1305,7 +1292,6 @@
     "mathTier": 2,
     "baseDamage": 8,
     "chainMultipliers": [
-      0.5,
       1.0,
       1.5,
       2.0,
@@ -1339,7 +1325,8 @@
     "min_level": 21,
     "unidentified_name": "a dense dark-grained hammer",
     "lore": "The iron-oak hardwood hammer was the weapon of choice for dwarven forge-workers before they adopted metal tools. The dense grain transmits vibrations in unusual ways — strikes feel dull but the force penetrates shields with remarkable efficiency.",
-    "quiz_tier": 2
+    "quiz_tier": 2,
+    "knockback": true
   },
   "ironwood_club": {
     "name": "ironwood club",
@@ -1350,13 +1337,11 @@
     "mathTier": 3,
     "baseDamage": 9,
     "chainMultipliers": [
-      0.5,
       1.0,
-      1.5,
-      2.0,
-      2.5,
-      3.0,
-      3.5
+      1.6,
+      2.1,
+      2.6,
+      3.2
     ],
     "maxChainLength": 5,
     "damageTypes": [
@@ -1385,7 +1370,8 @@
     "min_level": 41,
     "unidentified_name": "an iron-banded cudgel",
     "lore": "Ironwood clubs are reinforced at striking surfaces with iron bands, converting the organic impact of wood into something approaching a metal bludgeon. The hybrid nature makes them resist the rust and enchantment-stripping properties of some dungeon environments.",
-    "quiz_tier": 3
+    "quiz_tier": 3,
+    "knockback": true
   },
   "ironwood_hammer": {
     "name": "ironwood hammer",
@@ -1396,13 +1382,11 @@
     "mathTier": 3,
     "baseDamage": 10,
     "chainMultipliers": [
-      0.5,
       1.0,
-      1.5,
-      2.0,
-      2.5,
-      3.0,
-      3.5
+      1.6,
+      2.1,
+      2.6,
+      3.2
     ],
     "maxChainLength": 5,
     "damageTypes": [
@@ -1431,7 +1415,8 @@
     "min_level": 41,
     "unidentified_name": "an iron-banded maul",
     "lore": "The iron-banded ironwood maul combines the best properties of both materials. The wooden haft absorbs hand-shock on impact; the iron cap focuses force on a small point. Smiths and warriors alike respect its thoughtful engineering.",
-    "quiz_tier": 3
+    "quiz_tier": 3,
+    "knockback": true
   },
   "diamond_club": {
     "name": "diamond club",
@@ -1442,14 +1427,11 @@
     "mathTier": 4,
     "baseDamage": 11,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.5,
-      2.0,
-      2.5,
-      3.0,
-      3.5,
-      4.0
+      1.1,
+      1.7,
+      2.2,
+      2.8,
+      3.5
     ],
     "maxChainLength": 5,
     "damageTypes": [
@@ -1478,7 +1460,8 @@
     "min_level": 61,
     "unidentified_name": "a crystalline bludgeon",
     "lore": "A crystalline bludgeon of diamond-lattice construction transmits force with almost no energy loss. The material does not compress — every joule of swing energy reaches the target. This makes diamond clubs disproportionately damaging for their apparent weight.",
-    "quiz_tier": 4
+    "quiz_tier": 4,
+    "knockback": true
   },
   "diamond_hammer": {
     "name": "diamond hammer",
@@ -1489,14 +1472,11 @@
     "mathTier": 4,
     "baseDamage": 12,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.5,
-      2.0,
-      2.5,
-      3.0,
-      3.5,
-      4.0
+      1.1,
+      1.7,
+      2.2,
+      2.8,
+      3.5
     ],
     "maxChainLength": 5,
     "damageTypes": [
@@ -1525,7 +1505,8 @@
     "min_level": 61,
     "unidentified_name": "a crystalline warhammer",
     "lore": "Diamond warhammers are forged by growing crystal around a weighted core. They can shatter stone, crack enchanted materials, and stun targets through heavy armor. Several dungeon bosses have met their end from the stunning blows of a diamond warhammer.",
-    "quiz_tier": 4
+    "quiz_tier": 4,
+    "knockback": true
   },
   "dragonbone_club": {
     "name": "dragonbone club",
@@ -1536,16 +1517,11 @@
     "mathTier": 5,
     "baseDamage": 14,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.5,
-      2.0,
-      2.5,
+      1.1,
+      1.7,
+      2.3,
       3.0,
-      3.5,
-      4.0,
-      4.5,
-      5.0
+      3.8
     ],
     "maxChainLength": 5,
     "damageTypes": [
@@ -1574,7 +1550,8 @@
     "min_level": 81,
     "unidentified_name": "a pale ivory bludgeon",
     "lore": "Dragonbone clubs are carved from the arm-bones of dragons — nearly as strong as metal, lighter, and warm to the touch. They retain a trace of the dragon's elemental nature; those made from fire dragon bones occasionally spark on heavy impact.",
-    "quiz_tier": 5
+    "quiz_tier": 5,
+    "knockback": true
   },
   "dragonbone_hammer": {
     "name": "dragonbone hammer",
@@ -1585,16 +1562,11 @@
     "mathTier": 5,
     "baseDamage": 16,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.5,
-      2.0,
-      2.5,
+      1.1,
+      1.7,
+      2.3,
       3.0,
-      3.5,
-      4.0,
-      4.5,
-      5.0
+      3.8
     ],
     "maxChainLength": 5,
     "damageTypes": [
@@ -1623,7 +1595,8 @@
     "min_level": 81,
     "unidentified_name": "a pale ivory warhammer",
     "lore": "A dragonbone warhammer carries the dragon's weight in every sense. The density of dragon bone, combined with the immense striking surface of the hammer head, creates a weapon capable of physically stunning creatures far larger than its wielder.",
-    "quiz_tier": 5
+    "quiz_tier": 5,
+    "knockback": true
   },
   "wood_staff": {
     "name": "wood staff",
@@ -1636,10 +1609,11 @@
     "chainMultipliers": [
       0.5,
       1.0,
-      1.8,
-      2.5
+      1.6,
+      2.2,
+      2.8
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 5,
     "damageTypes": [
       "blunt"
     ],
@@ -1652,7 +1626,7 @@
     "weight": 4,
     "twoHanded": true,
     "reach": 2,
-    "stunChance": 0.1,
+    "stunChance": 0.12,
     "requiresAmmo": null,
     "floorSpawnWeight": {
       "1-20": 100,
@@ -1679,11 +1653,11 @@
     "chainMultipliers": [
       0.5,
       1.0,
-      1.8,
-      2.5,
-      3.2
+      1.7,
+      2.4,
+      3.0
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 5,
     "damageTypes": [
       "blunt"
     ],
@@ -1696,7 +1670,7 @@
     "weight": 4,
     "twoHanded": true,
     "reach": 2,
-    "stunChance": 0.12,
+    "stunChance": 0.15,
     "requiresAmmo": null,
     "floorSpawnWeight": {
       "1-20": 20,
@@ -1722,11 +1696,11 @@
     "baseDamage": 9,
     "chainMultipliers": [
       0.5,
-      1.0,
+      1.1,
       1.8,
       2.5,
       3.2,
-      4.0
+      3.8
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -1741,7 +1715,7 @@
     "weight": 4,
     "twoHanded": true,
     "reach": 2,
-    "stunChance": 0.15,
+    "stunChance": 0.18,
     "requiresAmmo": null,
     "floorSpawnWeight": {
       "1-20": 5,
@@ -1766,13 +1740,12 @@
     "mathTier": 4,
     "baseDamage": 11,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.8,
-      2.5,
-      3.2,
-      4.0,
-      4.8
+      0.6,
+      1.2,
+      1.9,
+      2.6,
+      3.4,
+      4.2
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -1787,7 +1760,7 @@
     "weight": 4,
     "twoHanded": true,
     "reach": 2,
-    "stunChance": 0.18,
+    "stunChance": 0.2,
     "requiresAmmo": null,
     "floorSpawnWeight": {
       "1-20": 1,
@@ -1814,14 +1787,12 @@
     "mathTier": 5,
     "baseDamage": 14,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.8,
-      2.5,
-      3.2,
-      4.0,
-      4.8,
-      5.5
+      0.6,
+      1.2,
+      2.0,
+      2.8,
+      3.6,
+      4.5
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -1836,7 +1807,7 @@
     "weight": 4,
     "twoHanded": true,
     "reach": 2,
-    "stunChance": 0.2,
+    "stunChance": 0.22,
     "requiresAmmo": null,
     "floorSpawnWeight": {
       "1-20": 0,
@@ -1861,12 +1832,13 @@
     "mathTier": 1,
     "baseDamage": 7,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.8,
-      2.5
+      0.6,
+      1.2,
+      2.0,
+      2.6,
+      3.2
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 5,
     "damageTypes": [
       "pierce"
     ],
@@ -1904,11 +1876,12 @@
     "mathTier": 2,
     "baseDamage": 9,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.8,
-      2.5,
-      3.2
+      0.6,
+      1.2,
+      2.0,
+      2.7,
+      3.3,
+      3.9
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -1948,11 +1921,12 @@
     "mathTier": 2,
     "baseDamage": 10,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.8,
-      2.5,
-      3.2
+      0.6,
+      1.2,
+      2.0,
+      2.7,
+      3.3,
+      3.9
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -1993,12 +1967,12 @@
     "mathTier": 3,
     "baseDamage": 12,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.8,
-      2.5,
-      3.2,
-      4.0
+      0.7,
+      1.3,
+      2.1,
+      2.8,
+      3.5,
+      4.2
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -2039,12 +2013,12 @@
     "mathTier": 3,
     "baseDamage": 14,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.8,
-      2.5,
-      3.2,
-      4.0
+      0.7,
+      1.3,
+      2.1,
+      2.8,
+      3.5,
+      4.2
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -2085,13 +2059,12 @@
     "mathTier": 4,
     "baseDamage": 17,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.8,
-      2.5,
-      3.2,
-      4.0,
-      4.8
+      0.7,
+      1.4,
+      2.2,
+      3.0,
+      3.7,
+      4.5
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -2132,14 +2105,12 @@
     "mathTier": 5,
     "baseDamage": 21,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.8,
-      2.5,
-      3.2,
-      4.0,
-      4.8,
-      5.5
+      0.8,
+      1.5,
+      2.3,
+      3.1,
+      3.9,
+      4.8
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -2180,14 +2151,12 @@
     "mathTier": 5,
     "baseDamage": 20,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.8,
-      2.5,
-      3.2,
-      4.0,
-      4.8,
-      5.5
+      0.8,
+      1.5,
+      2.3,
+      3.1,
+      3.9,
+      4.8
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -2229,11 +2198,11 @@
     "baseDamage": 4,
     "chainMultipliers": [
       0.5,
-      1.0,
-      1.8,
-      2.5
+      1.2,
+      2.0,
+      3.0
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 4,
     "damageTypes": [
       "pierce"
     ],
@@ -2271,12 +2240,12 @@
     "mathTier": 1,
     "baseDamage": 6,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.8,
-      2.5
+      0.6,
+      1.3,
+      2.2,
+      3.2
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 4,
     "damageTypes": [
       "pierce"
     ],
@@ -2315,12 +2284,12 @@
     "baseDamage": 5,
     "chainMultipliers": [
       0.5,
-      1.0,
-      1.8,
-      2.5,
-      3.2
+      1.2,
+      2.0,
+      3.0,
+      4.0
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 5,
     "damageTypes": [
       "pierce"
     ],
@@ -2358,13 +2327,13 @@
     "mathTier": 2,
     "baseDamage": 8,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.8,
-      2.5,
-      3.2
+      0.6,
+      1.3,
+      2.2,
+      3.2,
+      4.3
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 5,
     "damageTypes": [
       "pierce"
     ],
@@ -2402,14 +2371,13 @@
     "mathTier": 3,
     "baseDamage": 6,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.8,
-      2.5,
+      0.6,
+      1.3,
+      2.2,
       3.2,
-      4.0
+      4.3
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 5,
     "damageTypes": [
       "pierce"
     ],
@@ -2447,14 +2415,13 @@
     "mathTier": 3,
     "baseDamage": 10,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.8,
-      2.5,
-      3.2,
-      4.0
+      0.7,
+      1.4,
+      2.3,
+      3.4,
+      4.6
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 5,
     "damageTypes": [
       "pierce"
     ],
@@ -2492,15 +2459,13 @@
     "mathTier": 4,
     "baseDamage": 8,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.8,
-      2.5,
-      3.2,
-      4.0,
-      4.8
+      0.6,
+      1.4,
+      2.3,
+      3.4,
+      4.6
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 5,
     "damageTypes": [
       "pierce"
     ],
@@ -2538,15 +2503,13 @@
     "mathTier": 4,
     "baseDamage": 12,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.8,
+      0.7,
+      1.5,
       2.5,
-      3.2,
-      4.0,
-      4.8
+      3.6,
+      5.0
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 5,
     "damageTypes": [
       "pierce"
     ],
@@ -2584,16 +2547,13 @@
     "mathTier": 5,
     "baseDamage": 15,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.8,
-      2.5,
-      3.2,
-      4.0,
-      4.8,
-      5.5
+      0.8,
+      1.6,
+      2.7,
+      3.8,
+      5.3
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 5,
     "damageTypes": [
       "pierce"
     ],
@@ -2631,12 +2591,12 @@
     "mathTier": 1,
     "baseDamage": 7,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.8,
-      2.5
+      0.8,
+      1.5,
+      2.3,
+      3.2
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 4,
     "damageTypes": [
       "pierce"
     ],
@@ -2674,13 +2634,13 @@
     "mathTier": 2,
     "baseDamage": 9,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.8,
-      2.5,
-      3.2
+      0.8,
+      1.5,
+      2.3,
+      3.2,
+      4.2
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 5,
     "damageTypes": [
       "pierce"
     ],
@@ -2718,14 +2678,13 @@
     "mathTier": 3,
     "baseDamage": 11,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.8,
+      0.8,
+      1.6,
       2.5,
-      3.2,
-      4.0
+      3.4,
+      4.5
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 5,
     "damageTypes": [
       "pierce"
     ],
@@ -2763,15 +2722,13 @@
     "mathTier": 4,
     "baseDamage": 14,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.8,
-      2.5,
-      3.2,
-      4.0,
+      0.9,
+      1.7,
+      2.6,
+      3.6,
       4.8
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 5,
     "damageTypes": [
       "pierce"
     ],
@@ -2809,16 +2766,13 @@
     "mathTier": 5,
     "baseDamage": 18,
     "chainMultipliers": [
-      0.5,
-      1.0,
+      0.9,
       1.8,
-      2.5,
-      3.2,
-      4.0,
-      4.8,
-      5.5
+      2.8,
+      3.8,
+      5.0
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 5,
     "damageTypes": [
       "pierce"
     ],
@@ -2856,13 +2810,13 @@
     "mathTier": 1,
     "baseDamage": 5,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.5,
+      0.7,
+      1.2,
       2.0,
-      2.5
+      2.6,
+      3.0
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 5,
     "damageTypes": [
       "crush"
     ],
@@ -2905,13 +2859,13 @@
     "mathTier": 1,
     "baseDamage": 7,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.5,
+      0.7,
+      1.2,
       2.0,
-      2.5
+      2.6,
+      3.0
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 5,
     "damageTypes": [
       "crush"
     ],
@@ -2924,7 +2878,7 @@
     "weight": 3,
     "twoHanded": false,
     "reach": 1,
-    "stunChance": 0.22,
+    "stunChance": 0.15,
     "bleedChance": 0.0,
     "knockback": false,
     "ignoreShield": false,
@@ -2954,12 +2908,12 @@
     "mathTier": 2,
     "baseDamage": 10,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.5,
+      0.7,
+      1.2,
       2.0,
-      2.5,
-      3.0
+      2.7,
+      3.2,
+      3.6
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -2974,7 +2928,7 @@
     "weight": 3,
     "twoHanded": false,
     "reach": 1,
-    "stunChance": 0.26,
+    "stunChance": 0.2,
     "bleedChance": 0.0,
     "knockback": false,
     "ignoreShield": false,
@@ -3004,13 +2958,12 @@
     "mathTier": 3,
     "baseDamage": 13,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.5,
-      2.0,
-      2.5,
-      3.0,
-      3.5
+      0.7,
+      1.3,
+      2.1,
+      2.8,
+      3.4,
+      4.0
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -3025,7 +2978,7 @@
     "weight": 3,
     "twoHanded": false,
     "reach": 1,
-    "stunChance": 0.3,
+    "stunChance": 0.22,
     "bleedChance": 0.0,
     "knockback": false,
     "ignoreShield": false,
@@ -3055,14 +3008,12 @@
     "mathTier": 4,
     "baseDamage": 16,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.5,
-      2.0,
-      2.5,
+      0.8,
+      1.4,
+      2.2,
       3.0,
-      3.5,
-      4.0
+      3.6,
+      4.3
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -3077,7 +3028,7 @@
     "weight": 3,
     "twoHanded": false,
     "reach": 1,
-    "stunChance": 0.33,
+    "stunChance": 0.26,
     "bleedChance": 0.0,
     "knockback": false,
     "ignoreShield": false,
@@ -3107,16 +3058,12 @@
     "mathTier": 5,
     "baseDamage": 20,
     "chainMultipliers": [
-      0.5,
-      1.0,
+      0.8,
       1.5,
-      2.0,
-      2.5,
-      3.0,
-      3.5,
-      4.0,
-      4.5,
-      5.0
+      2.4,
+      3.2,
+      3.8,
+      4.5
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -3131,7 +3078,7 @@
     "weight": 3,
     "twoHanded": false,
     "reach": 1,
-    "stunChance": 0.36,
+    "stunChance": 0.3,
     "bleedChance": 0.0,
     "knockback": false,
     "ignoreShield": false,
@@ -3161,12 +3108,12 @@
     "mathTier": 1,
     "baseDamage": 11,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.8,
-      2.5
+      1.3,
+      2.0,
+      2.5,
+      3.0
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 4,
     "damageTypes": [
       "crush"
     ],
@@ -3209,13 +3156,13 @@
     "mathTier": 2,
     "baseDamage": 15,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.8,
-      2.5,
-      3.2
+      1.3,
+      2.0,
+      2.6,
+      3.1,
+      3.5
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 5,
     "damageTypes": [
       "crush"
     ],
@@ -3228,7 +3175,7 @@
     "weight": 5,
     "twoHanded": true,
     "reach": 1,
-    "stunChance": 0.32,
+    "stunChance": 0.3,
     "bleedChance": 0.0,
     "knockback": false,
     "ignoreShield": false,
@@ -3258,14 +3205,13 @@
     "mathTier": 3,
     "baseDamage": 19,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.8,
-      2.5,
-      3.2,
-      4.0
+      1.4,
+      2.1,
+      2.7,
+      3.3,
+      3.8
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 5,
     "damageTypes": [
       "crush"
     ],
@@ -3278,9 +3224,9 @@
     "weight": 5,
     "twoHanded": true,
     "reach": 1,
-    "stunChance": 0.35,
+    "stunChance": 0.32,
     "bleedChance": 0.0,
-    "knockback": false,
+    "knockback": true,
     "ignoreShield": false,
     "critMultiplier": 1.0,
     "requiresAmmo": null,
@@ -3308,15 +3254,13 @@
     "mathTier": 4,
     "baseDamage": 23,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.8,
-      2.5,
-      3.2,
-      4.0,
-      4.8
+      1.4,
+      2.2,
+      2.9,
+      3.5,
+      4.1
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 5,
     "damageTypes": [
       "crush"
     ],
@@ -3329,9 +3273,9 @@
     "weight": 5,
     "twoHanded": true,
     "reach": 1,
-    "stunChance": 0.38,
+    "stunChance": 0.35,
     "bleedChance": 0.0,
-    "knockback": false,
+    "knockback": true,
     "ignoreShield": false,
     "critMultiplier": 1.0,
     "requiresAmmo": null,
@@ -3359,16 +3303,13 @@
     "mathTier": 5,
     "baseDamage": 28,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.8,
-      2.5,
-      3.2,
-      4.0,
-      4.8,
-      5.5
+      1.5,
+      2.3,
+      3.0,
+      3.7,
+      4.5
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 5,
     "damageTypes": [
       "crush"
     ],
@@ -3381,9 +3322,9 @@
     "weight": 5,
     "twoHanded": true,
     "reach": 1,
-    "stunChance": 0.4,
+    "stunChance": 0.38,
     "bleedChance": 0.0,
-    "knockback": false,
+    "knockback": true,
     "ignoreShield": false,
     "critMultiplier": 1.0,
     "requiresAmmo": null,
@@ -3411,13 +3352,13 @@
     "mathTier": 1,
     "baseDamage": 8,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.5,
-      2.0,
-      2.5
+      0.85,
+      1.3,
+      1.8,
+      2.3,
+      2.7
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 5,
     "damageTypes": [
       "crush",
       "pierce"
@@ -3461,12 +3402,12 @@
     "mathTier": 2,
     "baseDamage": 11,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.5,
-      2.0,
-      2.5,
-      3.0
+      0.85,
+      1.3,
+      1.8,
+      2.3,
+      2.7,
+      3.2
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -3512,12 +3453,11 @@
     "mathTier": 3,
     "baseDamage": 14,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.5,
-      2.0,
-      2.5,
-      3.0,
+      0.85,
+      1.4,
+      1.9,
+      2.45,
+      2.95,
       3.5
     ],
     "maxChainLength": 6,
@@ -3564,14 +3504,12 @@
     "mathTier": 4,
     "baseDamage": 17,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.5,
+      0.9,
+      1.45,
       2.0,
-      2.5,
-      3.0,
-      3.5,
-      4.0
+      2.55,
+      3.1,
+      3.7
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -3617,16 +3555,12 @@
     "mathTier": 5,
     "baseDamage": 22,
     "chainMultipliers": [
-      0.5,
-      1.0,
+      0.95,
       1.5,
-      2.0,
-      2.5,
-      3.0,
-      3.5,
-      4.0,
-      4.5,
-      5.0
+      2.1,
+      2.65,
+      3.25,
+      3.9
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -3674,11 +3608,11 @@
     "chainMultipliers": [
       0.5,
       1.0,
-      1.5,
-      2.0,
-      2.5
+      1.6,
+      2.4,
+      3.2
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 5,
     "damageTypes": [
       "crush"
     ],
@@ -3723,10 +3657,10 @@
     "chainMultipliers": [
       0.5,
       1.0,
-      1.5,
-      2.0,
-      2.5,
-      3.0
+      1.6,
+      2.4,
+      3.2,
+      4.2
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -3772,12 +3706,11 @@
     "baseDamage": 13,
     "chainMultipliers": [
       0.5,
-      1.0,
-      1.5,
-      2.0,
+      1.1,
+      1.7,
       2.5,
-      3.0,
-      3.5
+      3.4,
+      4.5
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -3822,14 +3755,12 @@
     "mathTier": 4,
     "baseDamage": 16,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.5,
-      2.0,
-      2.5,
-      3.0,
-      3.5,
-      4.0
+      0.6,
+      1.1,
+      1.8,
+      2.6,
+      3.6,
+      4.8
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -3874,15 +3805,11 @@
     "mathTier": 5,
     "baseDamage": 20,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.5,
-      2.0,
-      2.5,
-      3.0,
-      3.5,
-      4.0,
-      4.5,
+      0.6,
+      1.2,
+      1.9,
+      2.8,
+      3.8,
       5.0
     ],
     "maxChainLength": 6,
@@ -3928,11 +3855,12 @@
     "mathTier": 1,
     "baseDamage": 5,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.5,
+      0.4,
+      0.8,
+      1.3,
       2.0,
-      2.5
+      2.8,
+      3.8
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -3977,14 +3905,15 @@
     "mathTier": 2,
     "baseDamage": 7,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.5,
+      0.4,
+      0.8,
+      1.3,
       2.0,
-      2.5,
-      3.0
+      2.8,
+      3.8,
+      5.0
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 7,
     "damageTypes": [
       "pierce"
     ],
@@ -4027,15 +3956,15 @@
     "mathTier": 3,
     "baseDamage": 9,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.5,
-      2.0,
-      2.5,
+      0.4,
+      0.85,
+      1.4,
+      2.1,
       3.0,
-      3.5
+      4.0,
+      5.5
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 7,
     "damageTypes": [
       "pierce"
     ],
@@ -4078,16 +4007,15 @@
     "mathTier": 4,
     "baseDamage": 12,
     "chainMultipliers": [
-      0.5,
-      1.0,
+      0.45,
+      0.9,
       1.5,
-      2.0,
-      2.5,
-      3.0,
-      3.5,
-      4.0
+      2.2,
+      3.2,
+      4.3,
+      6.0
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 7,
     "damageTypes": [
       "pierce"
     ],
@@ -4132,16 +4060,13 @@
     "chainMultipliers": [
       0.5,
       1.0,
-      1.5,
-      2.0,
-      2.5,
-      3.0,
+      1.6,
+      2.4,
       3.5,
-      4.0,
-      4.5,
-      5.0
+      4.8,
+      6.5
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 7,
     "damageTypes": [
       "pierce"
     ],
@@ -4186,9 +4111,10 @@
     "chainMultipliers": [
       0.5,
       1.0,
-      1.5,
-      2.0,
-      2.5
+      1.4,
+      1.8,
+      2.8,
+      3.8
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -4235,12 +4161,13 @@
     "chainMultipliers": [
       0.5,
       1.0,
-      1.5,
-      2.0,
-      2.5,
-      3.0
+      1.4,
+      1.8,
+      2.8,
+      3.8,
+      5.0
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 7,
     "damageTypes": [
       "slash"
     ],
@@ -4286,12 +4213,12 @@
       0.5,
       1.0,
       1.5,
-      2.0,
-      2.5,
+      1.9,
       3.0,
-      3.5
+      4.2,
+      5.5
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 7,
     "damageTypes": [
       "slash"
     ],
@@ -4334,16 +4261,15 @@
     "mathTier": 4,
     "baseDamage": 15,
     "chainMultipliers": [
-      0.5,
-      1.0,
+      0.55,
+      1.1,
       1.5,
       2.0,
-      2.5,
-      3.0,
-      3.5,
-      4.0
+      3.2,
+      4.5,
+      6.0
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 7,
     "damageTypes": [
       "slash"
     ],
@@ -4386,18 +4312,15 @@
     "mathTier": 5,
     "baseDamage": 18,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.5,
-      2.0,
-      2.5,
-      3.0,
+      0.6,
+      1.2,
+      1.6,
+      2.1,
       3.5,
-      4.0,
-      4.5,
-      5.0
+      5.0,
+      6.5
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 7,
     "damageTypes": [
       "slash"
     ],
@@ -4440,12 +4363,13 @@
     "mathTier": 1,
     "baseDamage": 13,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.8,
-      2.5
+      0.8,
+      1.4,
+      2.2,
+      3.0,
+      3.8
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 5,
     "damageTypes": [
       "slash",
       "pierce"
@@ -4489,11 +4413,12 @@
     "mathTier": 2,
     "baseDamage": 17,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.8,
-      2.5,
-      3.2
+      0.8,
+      1.4,
+      2.2,
+      3.0,
+      3.8,
+      4.5
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -4539,12 +4464,12 @@
     "mathTier": 3,
     "baseDamage": 21,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.8,
-      2.5,
+      0.8,
+      1.5,
+      2.3,
       3.2,
-      4.0
+      4.0,
+      4.8
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -4590,13 +4515,12 @@
     "mathTier": 4,
     "baseDamage": 26,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.8,
-      2.5,
-      3.2,
-      4.0,
-      4.8
+      0.9,
+      1.6,
+      2.4,
+      3.3,
+      4.2,
+      5.2
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -4642,13 +4566,11 @@
     "mathTier": 5,
     "baseDamage": 32,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.8,
+      0.9,
+      1.6,
       2.5,
-      3.2,
-      4.0,
-      4.8,
+      3.5,
+      4.5,
       5.5
     ],
     "maxChainLength": 6,
@@ -4695,11 +4617,12 @@
     "mathTier": 1,
     "baseDamage": 7,
     "chainMultipliers": [
-      0.5,
+      0.6,
       1.0,
       1.5,
       2.0,
-      2.5
+      2.6,
+      3.2
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -4745,15 +4668,15 @@
     "mathTier": 1,
     "baseDamage": 4,
     "chainMultipliers": [
-      0.3,
+      0.25,
+      0.4,
       0.6,
       1.0,
-      1.4,
       1.8,
-      2.2,
-      2.5
+      3.0,
+      4.5
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 7,
     "damageTypes": [
       "pierce",
       "slash"
@@ -4799,9 +4722,10 @@
     "chainMultipliers": [
       0.5,
       1.0,
-      1.5,
-      2.0,
-      2.5
+      1.4,
+      1.8,
+      2.8,
+      3.8
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -4846,13 +4770,13 @@
     "mathTier": 1,
     "baseDamage": 9,
     "chainMultipliers": [
-      0.5,
       1.0,
       1.5,
       2.0,
-      2.5
+      2.4,
+      2.8
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 5,
     "damageTypes": [
       "slash"
     ],
@@ -4895,15 +4819,15 @@
     "mathTier": 1,
     "baseDamage": 4,
     "chainMultipliers": [
-      0.3,
+      0.25,
+      0.4,
       0.6,
       1.0,
-      1.4,
       1.8,
-      2.2,
-      2.5
+      3.0,
+      4.5
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 7,
     "damageTypes": [
       "slash",
       "pierce"
@@ -4947,14 +4871,15 @@
     "mathTier": 2,
     "baseDamage": 11,
     "chainMultipliers": [
-      0.5,
+      0.6,
       1.0,
       1.5,
-      2.0,
-      2.5,
-      3.0
+      2.1,
+      2.7,
+      3.4,
+      4.2
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 7,
     "damageTypes": [
       "slash"
     ],
@@ -4997,16 +4922,15 @@
     "mathTier": 2,
     "baseDamage": 7,
     "chainMultipliers": [
-      0.3,
-      0.6,
-      1.0,
-      1.4,
-      1.8,
-      2.2,
-      2.6,
-      3.0
+      0.25,
+      0.4,
+      0.65,
+      1.1,
+      2.0,
+      3.2,
+      5.0
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 7,
     "damageTypes": [
       "slash",
       "pierce"
@@ -5050,14 +4974,15 @@
     "mathTier": 2,
     "baseDamage": 9,
     "chainMultipliers": [
-      0.5,
+      0.6,
       1.0,
       1.5,
-      2.0,
-      2.5,
-      3.0
+      2.1,
+      2.7,
+      3.4,
+      4.2
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 7,
     "damageTypes": [
       "pierce"
     ],
@@ -5100,16 +5025,15 @@
     "mathTier": 2,
     "baseDamage": 8,
     "chainMultipliers": [
-      0.3,
-      0.6,
-      1.0,
-      1.4,
-      1.8,
-      2.2,
-      2.6,
-      3.0
+      0.25,
+      0.4,
+      0.65,
+      1.1,
+      2.0,
+      3.2,
+      5.0
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 7,
     "damageTypes": [
       "slash"
     ],
@@ -5152,11 +5076,12 @@
     "mathTier": 2,
     "baseDamage": 13,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.8,
-      2.5,
-      3.2
+      0.6,
+      1.2,
+      2.0,
+      2.7,
+      3.3,
+      3.9
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -5202,13 +5127,15 @@
     "mathTier": 2,
     "baseDamage": 14,
     "chainMultipliers": [
-      0.5,
-      1.0,
+      0.7,
+      1.2,
       1.8,
       2.5,
-      3.2
+      3.3,
+      4.2,
+      5.0
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 7,
     "damageTypes": [
       "slash",
       "pierce"
@@ -5252,15 +5179,15 @@
     "mathTier": 3,
     "baseDamage": 13,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.5,
-      2.0,
-      2.5,
-      3.0,
-      3.5
+      0.6,
+      1.1,
+      1.6,
+      2.2,
+      2.9,
+      3.7,
+      4.5
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 7,
     "damageTypes": [
       "slash"
     ],
@@ -5306,12 +5233,12 @@
       0.5,
       1.0,
       1.5,
-      2.0,
-      2.5,
+      1.9,
       3.0,
-      3.5
+      4.2,
+      5.5
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 7,
     "damageTypes": [
       "slash"
     ],
@@ -5354,12 +5281,12 @@
     "mathTier": 3,
     "baseDamage": 15,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.8,
-      2.5,
-      3.2,
-      4.0
+      0.7,
+      1.3,
+      2.1,
+      2.8,
+      3.5,
+      4.2
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -5405,12 +5332,12 @@
     "mathTier": 3,
     "baseDamage": 21,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.8,
-      2.5,
+      0.8,
+      1.5,
+      2.3,
       3.2,
-      4.0
+      4.0,
+      4.8
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -5456,12 +5383,12 @@
     "mathTier": 3,
     "baseDamage": 14,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.8,
-      2.5,
-      3.2,
-      4.0
+      0.7,
+      1.3,
+      2.1,
+      2.8,
+      3.5,
+      4.2
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -5507,16 +5434,15 @@
     "mathTier": 4,
     "baseDamage": 16,
     "chainMultipliers": [
-      0.5,
-      1.0,
+      0.55,
+      1.1,
       1.5,
       2.0,
-      2.5,
-      3.0,
-      3.5,
-      4.0
+      3.2,
+      4.5,
+      6.0
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 7,
     "damageTypes": [
       "slash"
     ],
@@ -5559,13 +5485,12 @@
     "mathTier": 4,
     "baseDamage": 25,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.8,
-      2.5,
-      3.2,
-      4.0,
-      4.8
+      0.9,
+      1.6,
+      2.4,
+      3.3,
+      4.2,
+      5.2
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -5611,15 +5536,15 @@
     "mathTier": 4,
     "baseDamage": 18,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.8,
-      2.5,
-      3.2,
-      4.0,
-      4.8
+      0.8,
+      1.3,
+      2.0,
+      2.8,
+      3.6,
+      4.6,
+      5.8
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 7,
     "damageTypes": [
       "slash"
     ],
@@ -5673,7 +5598,7 @@
       4.5,
       5.0
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 10,
     "damageTypes": [
       "slash",
       "pierce"
@@ -5706,7 +5631,8 @@
     "unidentified_name": "a dark whispering curved blade",
     "lore": "Few who have held the Soul Reaver remember doing so willingly. The blade selects its wielders, and the criteria are opaque. What is known: wounds it inflicts do not heal without magic; the blade whispers between kills; and it grows heavier if used against the innocent. Its origin is attributed variously to a dying god, a betrayed archmage, and a particularly vengeful plague.",
     "quiz_tier": 5,
-    "identified": false
+    "identified": false,
+    "lifestealPercent": 0.15
   },
   "dawnbreaker": {
     "name": "Dawnbreaker",
@@ -5719,16 +5645,19 @@
     "chainMultipliers": [
       0.5,
       1.0,
-      1.8,
-      2.5,
-      3.2,
+      1.5,
+      2.2,
+      3.0,
       4.0,
-      4.8,
-      5.5
+      5.5,
+      7.0,
+      9.0
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 9,
     "damageTypes": [
-      "crush"
+      "slash",
+      "fire",
+      "holy"
     ],
     "symbol": ")",
     "color": [
@@ -5743,7 +5672,7 @@
     "bleedChance": 0.0,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 1.4,
+    "critMultiplier": 2.0,
     "requiresAmmo": null,
     "floorSpawnWeight": {
       "1-20": 0,
@@ -5758,7 +5687,8 @@
     "unidentified_name": "a radiant two-handed hammer",
     "lore": "Dawnbreaker is the weapon that ended the First Darkness — at least, that is the oldest story. The hammer's adamantine head contains a shard of preserved dawn light, visible as a faint golden gleam even in pitch darkness. Undead creatures struck by it take triple damage from the light component, in addition to the physical devastation.",
     "quiz_tier": 5,
-    "identified": false
+    "identified": false,
+    "burnChance": 0.3
   },
   "venomfang": {
     "name": "Venomfang",
@@ -5772,15 +5702,14 @@
       0.5,
       1.0,
       1.5,
-      2.0,
-      2.5,
+      2.2,
       3.0,
-      3.5,
       4.0,
-      4.5,
-      5.0
+      5.5,
+      7.0,
+      9.0
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 9,
     "damageTypes": [
       "crush",
       "pierce"
@@ -5795,10 +5724,10 @@
     "twoHanded": false,
     "reach": 1,
     "stunChance": 0.0,
-    "bleedChance": 0.35,
+    "bleedChance": 0.15,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 1.0,
+    "critMultiplier": 2.5,
     "requiresAmmo": null,
     "floorSpawnWeight": {
       "1-20": 0,
@@ -5813,7 +5742,8 @@
     "unidentified_name": "a darkly gleaming spiked weapon",
     "lore": "A master poisoner's commission from an earlier age. The spikes of Venomfang are hollow, filled with a venom that was synthesized from the distilled suffering of a hundred different creatures. The weapon weeps a thin dark ichor when hungry, which is often. The bleed it inflicts does not merely cut — it corrupts.",
     "quiz_tier": 5,
-    "identified": false
+    "identified": false,
+    "poisonChance": 0.6
   },
   "excalibur": {
     "name": "Excalibur",
@@ -5824,16 +5754,16 @@
     "mathTier": 5,
     "baseDamage": 22,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.5,
-      2.0,
-      2.8,
-      3.6,
+      0.3,
+      0.7,
+      1.2,
+      1.8,
+      2.5,
+      3.4,
       4.5,
-      5.5,
-      6.5,
-      8.0
+      5.8,
+      7.5,
+      10.0
     ],
     "maxChainLength": 10,
     "damageTypes": [
@@ -5849,11 +5779,11 @@
     "weight": 3,
     "twoHanded": false,
     "reach": 1,
-    "stunChance": 0.15,
+    "stunChance": 0.05,
     "bleedChance": 0.0,
-    "knockback": true,
+    "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 1.8,
+    "critMultiplier": 2.5,
     "requiresAmmo": null,
     "floorSpawnWeight": {
       "61-80": 1,
@@ -5865,7 +5795,9 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "an ornate golden-hilted blade",
-    "lore": "The sword in the stone was not merely a test of strength but of worthiness — a distinction Arthur understood only after he had already proven himself in other ways. The blade predates its legend; Merlin admitted he found it. An inscription along the fuller reads in a language older than Latin: 'Take me up; cast me away.' Most kings have trouble with the second part."
+    "lore": "The sword in the stone was not merely a test of strength but of worthiness — a distinction Arthur understood only after he had already proven himself in other ways. The blade predates its legend; Merlin admitted he found it. An inscription along the fuller reads in a language older than Latin: 'Take me up; cast me away.' Most kings have trouble with the second part.",
+    "onEquipStatus": "life_save",
+    "killHealAmount": 5
   },
   "durendal": {
     "name": "Durendal",
@@ -5879,12 +5811,12 @@
       0.5,
       1.0,
       1.5,
-      2.0,
-      2.8,
-      3.6,
-      4.5,
+      2.2,
+      3.0,
+      4.0,
       5.5,
-      6.5
+      7.0,
+      9.0
     ],
     "maxChainLength": 9,
     "damageTypes": [
@@ -5904,7 +5836,7 @@
     "bleedChance": 0.0,
     "knockback": false,
     "ignoreShield": true,
-    "critMultiplier": 2.0,
+    "critMultiplier": 2.2,
     "requiresAmmo": null,
     "floorSpawnWeight": {
       "61-80": 1,
@@ -5930,12 +5862,12 @@
       0.5,
       1.0,
       1.5,
-      2.0,
-      2.8,
-      3.6,
-      4.5,
+      2.2,
+      3.0,
+      4.0,
       5.5,
-      6.5
+      7.0,
+      9.0
     ],
     "maxChainLength": 9,
     "damageTypes": [
@@ -5976,16 +5908,16 @@
     "tier": 5,
     "material": "adamantine",
     "mathTier": 5,
-    "baseDamage": 32,
+    "baseDamage": 36,
     "chainMultipliers": [
       0.5,
       1.0,
-      1.5,
-      2.0,
+      1.8,
       2.8,
-      3.6,
-      4.5,
-      5.5
+      3.8,
+      5.0,
+      6.5,
+      8.5
     ],
     "maxChainLength": 8,
     "damageTypes": [
@@ -6005,7 +5937,7 @@
     "bleedChance": 0.3,
     "knockback": false,
     "ignoreShield": true,
-    "critMultiplier": 2.0,
+    "critMultiplier": 2.5,
     "requiresAmmo": null,
     "floorSpawnWeight": {
       "81-100": 2
@@ -6016,7 +5948,8 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "a sword that vibrates with cold malice",
-    "lore": "The dwarves Dvalinn and Durin forged Tyrfing under duress and cursed it: it would kill a man every time unsheathed. The blade never rusts, never dulls, cuts through iron and stone. Three kings of the Hervarar line died by it. The curse is intrinsic to those who lack the wisdom to set it down."
+    "lore": "The dwarves Dvalinn and Durin forged Tyrfing under duress and cursed it: it would kill a man every time unsheathed. The blade never rusts, never dulls, cuts through iron and stone. Three kings of the Hervarar line died by it. The curse is intrinsic to those who lack the wisdom to set it down.",
+    "cursedMissBacklash": 5
   },
   "fragarach": {
     "name": "Fragarach",
@@ -6030,17 +5963,18 @@
       0.5,
       1.0,
       1.5,
-      2.0,
-      2.8,
-      3.6,
-      4.5,
+      2.2,
+      3.0,
+      4.0,
       5.5,
-      6.5
+      7.0,
+      9.0
     ],
     "maxChainLength": 9,
     "damageTypes": [
       "pierce",
-      "magic"
+      "magic",
+      "holy"
     ],
     "symbol": ")",
     "color": [
@@ -6051,11 +5985,11 @@
     "weight": 2,
     "twoHanded": false,
     "reach": 1,
-    "stunChance": 0.0,
+    "stunChance": 0.25,
     "bleedChance": 0.0,
     "knockback": false,
     "ignoreShield": true,
-    "critMultiplier": 1.8,
+    "critMultiplier": 2.0,
     "requiresAmmo": null,
     "floorSpawnWeight": {
       "61-80": 1,
@@ -6076,16 +6010,16 @@
     "tier": 5,
     "material": "adamantine",
     "mathTier": 5,
-    "baseDamage": 30,
+    "baseDamage": 34,
     "chainMultipliers": [
       0.5,
       1.0,
-      1.5,
-      2.0,
+      1.8,
       2.8,
-      3.6,
-      4.5,
-      5.5
+      3.8,
+      5.0,
+      6.5,
+      8.5
     ],
     "maxChainLength": 8,
     "damageTypes": [
@@ -6099,12 +6033,12 @@
     ],
     "weight": 8,
     "twoHanded": true,
-    "reach": 1,
-    "stunChance": 0.2,
-    "bleedChance": 0.1,
+    "reach": 2,
+    "stunChance": 0.0,
+    "bleedChance": 0.3,
     "knockback": true,
     "ignoreShield": false,
-    "critMultiplier": 1.8,
+    "critMultiplier": 2.5,
     "requiresAmmo": null,
     "floorSpawnWeight": {
       "61-80": 1,
@@ -6182,12 +6116,12 @@
       0.5,
       1.0,
       1.5,
-      2.0,
-      2.8,
-      3.6,
-      4.5,
+      2.2,
+      3.0,
+      4.0,
       5.5,
-      6.5
+      7.0,
+      9.0
     ],
     "maxChainLength": 9,
     "damageTypes": [
@@ -6204,7 +6138,7 @@
     "twoHanded": true,
     "reach": 1,
     "stunChance": 0.0,
-    "bleedChance": 0.2,
+    "bleedChance": 0.4,
     "knockback": false,
     "ignoreShield": false,
     "critMultiplier": 1.8,
@@ -6233,12 +6167,12 @@
       0.5,
       1.0,
       1.5,
-      2.0,
-      2.8,
-      3.6,
-      4.5,
+      2.2,
+      3.0,
+      4.0,
       5.5,
-      6.5
+      7.0,
+      9.0
     ],
     "maxChainLength": 9,
     "damageTypes": [
@@ -6280,7 +6214,7 @@
     "mathTier": 5,
     "baseDamage": 24,
     "chainMultipliers": [
-      0.5,
+      0.7,
       1.0,
       1.5,
       2.0,
@@ -6304,11 +6238,11 @@
     "weight": 4,
     "twoHanded": false,
     "reach": 2,
-    "stunChance": 0.1,
-    "bleedChance": 0.1,
+    "stunChance": 0.0,
+    "bleedChance": 0.0,
     "knockback": false,
     "ignoreShield": true,
-    "critMultiplier": 1.8,
+    "critMultiplier": 2.2,
     "requiresAmmo": null,
     "floorSpawnWeight": {
       "61-80": 1,
@@ -6338,7 +6272,7 @@
       2.8,
       3.6,
       4.5,
-      5.5
+      6.0
     ],
     "maxChainLength": 8,
     "damageTypes": [
@@ -6353,11 +6287,11 @@
     "weight": 3,
     "twoHanded": false,
     "reach": 2,
-    "stunChance": 0.0,
-    "bleedChance": 0.6,
+    "stunChance": 0.15,
+    "bleedChance": 0.8,
     "knockback": false,
-    "ignoreShield": false,
-    "critMultiplier": 1.5,
+    "ignoreShield": true,
+    "critMultiplier": 2.2,
     "requiresAmmo": null,
     "floorSpawnWeight": {
       "61-80": 1,
@@ -6383,12 +6317,12 @@
       0.5,
       1.0,
       1.5,
-      2.0,
-      2.8,
-      3.6,
-      4.5,
+      2.2,
+      3.0,
+      4.0,
       5.5,
-      6.5
+      7.0,
+      9.0
     ],
     "maxChainLength": 9,
     "damageTypes": [
@@ -6434,16 +6368,17 @@
       1.0,
       1.5,
       2.0,
-      2.8,
-      3.6,
-      4.5,
+      3.0,
+      4.0,
       5.5,
-      6.5
+      7.0,
+      9.0
     ],
     "maxChainLength": 9,
     "damageTypes": [
       "crush",
-      "shock"
+      "shock",
+      "holy"
     ],
     "symbol": "T",
     "color": [
@@ -6454,11 +6389,11 @@
     "weight": 5,
     "twoHanded": false,
     "reach": 1,
-    "stunChance": 0.3,
+    "stunChance": 0.35,
     "bleedChance": 0.0,
     "knockback": true,
     "ignoreShield": false,
-    "critMultiplier": 1.8,
+    "critMultiplier": 2.0,
     "requiresAmmo": null,
     "floorSpawnWeight": {
       "61-80": 1,
@@ -6535,12 +6470,12 @@
       0.5,
       1.0,
       1.5,
-      2.0,
-      2.8,
-      3.6,
-      4.5,
+      2.2,
+      3.0,
+      4.0,
       5.5,
-      6.5
+      7.0,
+      9.0
     ],
     "maxChainLength": 9,
     "damageTypes": [
@@ -6554,12 +6489,12 @@
     ],
     "weight": 9,
     "twoHanded": true,
-    "reach": 1,
-    "stunChance": 0.2,
+    "reach": 3,
+    "stunChance": 0.25,
     "bleedChance": 0.0,
     "knockback": true,
     "ignoreShield": false,
-    "critMultiplier": 1.8,
+    "critMultiplier": 2.2,
     "requiresAmmo": null,
     "floorSpawnWeight": {
       "61-80": 1,
@@ -6580,17 +6515,17 @@
     "tier": 5,
     "material": "adamantine",
     "mathTier": 5,
-    "baseDamage": 20,
+    "baseDamage": 22,
     "chainMultipliers": [
       0.5,
       1.0,
       1.5,
-      2.0,
-      2.8,
-      3.6,
-      4.5,
+      2.2,
+      3.0,
+      4.0,
       5.5,
-      6.5
+      7.0,
+      9.0
     ],
     "maxChainLength": 9,
     "damageTypes": [
@@ -6606,12 +6541,12 @@
     "weight": 3,
     "twoHanded": true,
     "reach": 2,
-    "stunChance": 0.0,
-    "bleedChance": 0.0,
+    "stunChance": 0.1,
+    "bleedChance": 0.15,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 2.5,
-    "requiresAmmo": "arrow",
+    "critMultiplier": 2.8,
+    "requiresAmmo": null,
     "floorSpawnWeight": {
       "61-80": 1,
       "81-100": 2
@@ -6633,16 +6568,16 @@
     "mathTier": 5,
     "baseDamage": 18,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.5,
-      2.0,
-      2.8,
-      3.6,
+      0.2,
+      0.6,
+      1.2,
+      1.8,
+      2.5,
+      3.5,
       4.5,
-      5.5,
-      6.5,
-      8.0
+      6.0,
+      8.0,
+      11.0
     ],
     "maxChainLength": 10,
     "damageTypes": [
@@ -6656,12 +6591,12 @@
     ],
     "weight": 2,
     "twoHanded": true,
-    "reach": 2,
+    "reach": 20,
     "stunChance": 0.0,
     "bleedChance": 0.0,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 2.8,
+    "critMultiplier": 3.2,
     "requiresAmmo": "arrow",
     "floorSpawnWeight": {
       "61-80": 1,
@@ -6687,17 +6622,18 @@
       0.5,
       1.0,
       1.5,
-      2.0,
-      2.8,
-      3.6,
-      4.5,
+      2.2,
+      3.0,
+      4.0,
       5.5,
-      6.5
+      7.0,
+      9.0
     ],
     "maxChainLength": 9,
     "damageTypes": [
       "slash",
-      "magic"
+      "magic",
+      "wind"
     ],
     "symbol": ")",
     "color": [
@@ -6707,12 +6643,12 @@
     ],
     "weight": 3,
     "twoHanded": false,
-    "reach": 1,
+    "reach": 2,
     "stunChance": 0.0,
     "bleedChance": 0.0,
     "knockback": true,
     "ignoreShield": false,
-    "critMultiplier": 1.8,
+    "critMultiplier": 2.2,
     "requiresAmmo": null,
     "floorSpawnWeight": {
       "61-80": 1,
@@ -6738,12 +6674,12 @@
       0.5,
       1.0,
       1.5,
-      2.0,
-      2.8,
-      3.6,
-      4.5,
+      2.2,
+      3.0,
+      4.0,
       5.5,
-      6.5
+      7.0,
+      9.0
     ],
     "maxChainLength": 9,
     "damageTypes": [
@@ -6789,12 +6725,12 @@
       0.5,
       1.0,
       1.5,
-      2.0,
-      2.8,
-      3.6,
-      4.5,
+      2.2,
+      3.0,
+      4.2,
       5.5,
-      6.5
+      7.0,
+      9.0
     ],
     "maxChainLength": 9,
     "damageTypes": [
@@ -6811,10 +6747,10 @@
     "twoHanded": false,
     "reach": 1,
     "stunChance": 0.0,
-    "bleedChance": 0.0,
+    "bleedChance": 0.2,
     "knockback": false,
     "ignoreShield": true,
-    "critMultiplier": 2.0,
+    "critMultiplier": 2.5,
     "requiresAmmo": null,
     "floorSpawnWeight": {
       "61-80": 1,
@@ -6826,7 +6762,8 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "a curved blade with a small hooked back-edge",
-    "lore": "Given to Perseus by Hermes to slay Medusa. Forged with an adamantine edge. Perseus used it while looking at Medusa's reflection in his shield. Some myths say Cronus used its predecessor to castrate Uranus. The weapon has a history of separating very important things."
+    "lore": "Given to Perseus by Hermes to slay Medusa. Forged with an adamantine edge. Perseus used it while looking at Medusa's reflection in his shield. Some myths say Cronus used its predecessor to castrate Uranus. The weapon has a history of separating very important things.",
+    "petrifyOnCrit": true
   },
   "trident_of_poseidon": {
     "name": "Trident of Poseidon",
@@ -6850,7 +6787,8 @@
     "maxChainLength": 9,
     "damageTypes": [
       "pierce",
-      "cold"
+      "cold",
+      "magic"
     ],
     "symbol": "/",
     "color": [
@@ -6888,16 +6826,16 @@
     "mathTier": 5,
     "baseDamage": 14,
     "chainMultipliers": [
-      0.5,
-      1.0,
+      0.4,
+      0.8,
       1.5,
-      2.0,
-      2.8,
-      3.6,
-      4.5,
+      2.2,
+      3.0,
+      4.0,
       5.5,
-      6.5,
-      8.0
+      7.0,
+      9.0,
+      12.0
     ],
     "maxChainLength": 10,
     "damageTypes": [
@@ -6917,7 +6855,7 @@
     "bleedChance": 0.0,
     "knockback": false,
     "ignoreShield": true,
-    "critMultiplier": 3.2,
+    "critMultiplier": 3.5,
     "requiresAmmo": null,
     "floorSpawnWeight": {
       "61-80": 1,
@@ -6929,7 +6867,8 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "a small white-handled knife with no visible edge",
-    "lore": "Arthur's dagger that could shroud its wielder in shadow. Arthur used it to kill the Very Black Witch in the Valley of Grief after Kei and Bedivere had both tried and failed. The Mabinogion records this without elaboration."
+    "lore": "Arthur's dagger that could shroud its wielder in shadow. Arthur used it to kill the Very Black Witch in the Valley of Grief after Kei and Bedivere had both tried and failed. The Mabinogion records this without elaboration.",
+    "onEquipStatus": "invisible"
   },
   "mistilteinn": {
     "name": "Mistilteinn",
@@ -6943,12 +6882,12 @@
       0.5,
       1.0,
       1.5,
-      2.0,
-      2.8,
-      3.6,
-      4.5,
+      2.2,
+      3.0,
+      4.0,
       5.5,
-      6.5
+      7.0,
+      9.0
     ],
     "maxChainLength": 9,
     "damageTypes": [
@@ -6995,10 +6934,10 @@
       1.0,
       1.5,
       2.0,
-      2.8,
-      3.6,
-      4.5,
-      5.5
+      2.5,
+      3.2,
+      4.0,
+      5.0
     ],
     "maxChainLength": 8,
     "damageTypes": [
@@ -7041,15 +6980,15 @@
     "mathTier": 5,
     "baseDamage": 22,
     "chainMultipliers": [
-      0.5,
       1.0,
-      1.5,
-      2.0,
+      1.6,
+      2.2,
       2.8,
-      3.6,
-      4.5,
-      5.5,
-      6.5
+      3.4,
+      4.0,
+      4.8,
+      5.8,
+      7.0
     ],
     "maxChainLength": 9,
     "damageTypes": [
@@ -7092,15 +7031,15 @@
     "mathTier": 5,
     "baseDamage": 20,
     "chainMultipliers": [
-      0.5,
       1.0,
-      1.5,
-      2.0,
+      1.6,
+      2.2,
       2.8,
-      3.6,
-      4.5,
-      5.5,
-      6.5
+      3.4,
+      4.0,
+      4.8,
+      5.8,
+      7.0
     ],
     "maxChainLength": 9,
     "damageTypes": [
@@ -7145,17 +7084,18 @@
       0.5,
       1.0,
       1.5,
-      2.0,
-      2.8,
-      3.6,
+      2.2,
+      3.5,
       4.5,
-      5.5,
-      6.5
+      3.8,
+      3.0,
+      2.5
     ],
     "maxChainLength": 9,
     "damageTypes": [
       "slash",
-      "cold"
+      "cold",
+      "holy"
     ],
     "symbol": ")",
     "color": [
@@ -7196,17 +7136,18 @@
       0.5,
       1.0,
       1.5,
-      2.0,
-      2.8,
-      3.6,
-      4.5,
+      2.2,
+      3.0,
+      4.0,
       5.5,
-      6.5
+      7.0,
+      9.0
     ],
     "maxChainLength": 9,
     "damageTypes": [
       "magic",
-      "fire"
+      "fire",
+      "holy"
     ],
     "symbol": "|",
     "color": [
@@ -7217,11 +7158,11 @@
     "weight": 5,
     "twoHanded": true,
     "reach": 1,
-    "stunChance": 0.25,
+    "stunChance": 0.3,
     "bleedChance": 0.0,
     "knockback": false,
-    "ignoreShield": false,
-    "critMultiplier": 1.5,
+    "ignoreShield": true,
+    "critMultiplier": 2.0,
     "requiresAmmo": null,
     "floorSpawnWeight": {
       "61-80": 1,
@@ -7269,7 +7210,7 @@
     "weight": 3,
     "twoHanded": true,
     "reach": 1,
-    "stunChance": 0.4,
+    "stunChance": 0.0,
     "bleedChance": 0.0,
     "knockback": false,
     "ignoreShield": false,
@@ -7285,7 +7226,8 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "a giant fennel stalk topped with a pine cone",
-    "lore": "The Maenads carried the thyrsus. In the Bacchae, Agave kills her son Pentheus with it, believing in her madness he is a lion. Dionysus watched. This is the instrument of a god who believed experience was the teacher."
+    "lore": "The Maenads carried the thyrsus. In the Bacchae, Agave kills her son Pentheus with it, believing in her madness he is a lion. Dionysus watched. This is the instrument of a god who believed experience was the teacher.",
+    "confuseChance": 0.5
   },
   "rod_of_moses": {
     "name": "Rod of Moses",
@@ -7320,7 +7262,7 @@
     ],
     "weight": 3,
     "twoHanded": true,
-    "reach": 1,
+    "reach": 3,
     "stunChance": 0.15,
     "bleedChance": 0.0,
     "knockback": true,
@@ -7336,7 +7278,8 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "a plain shepherd's crook of ancient wood",
-    "lore": "The rod became a serpent in Pharaoh's court; parted the Red Sea; struck the rock at Horeb. Jewish tradition gives it a provenance from Adam through Noah through Abraham. Moses used it. Aaron used it. No one is certain what happened to it afterward."
+    "lore": "The rod became a serpent in Pharaoh's court; parted the Red Sea; struck the rock at Horeb. Jewish tradition gives it a provenance from Adam through Noah through Abraham. Moses used it. Aaron used it. No one is certain what happened to it afterward.",
+    "poisonChance": 0.3
   },
   "amenonuhoko": {
     "name": "Amenonuhoko",
@@ -7360,7 +7303,8 @@
     "maxChainLength": 9,
     "damageTypes": [
       "pierce",
-      "holy"
+      "holy",
+      "magic"
     ],
     "symbol": "/",
     "color": [
@@ -7412,7 +7356,8 @@
     "maxChainLength": 10,
     "damageTypes": [
       "slash",
-      "fire"
+      "fire",
+      "holy"
     ],
     "symbol": ")",
     "color": [
@@ -7427,7 +7372,7 @@
     "bleedChance": 0.0,
     "knockback": true,
     "ignoreShield": false,
-    "critMultiplier": 2.2,
+    "critMultiplier": 2.5,
     "requiresAmmo": null,
     "floorSpawnWeight": {
       "61-80": 1,
@@ -7439,7 +7384,8 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "a spinning disc of burning light",
-    "lore": "Vishnu's spinning discus. Forged from the effulgence of the sun itself. When Shiva asked to test Vishnu's most powerful weapon, Vishnu threw it without warning and cut off one of Shiva's heads. Shiva grew a new one. They considered this a satisfactory test."
+    "lore": "Vishnu's spinning discus. Forged from the effulgence of the sun itself. When Shiva asked to test Vishnu's most powerful weapon, Vishnu threw it without warning and cut off one of Shiva's heads. Shiva grew a new one. They considered this a satisfactory test.",
+    "burnChance": 0.2
   },
   "ridill": {
     "name": "Ridill",
@@ -7450,16 +7396,16 @@
     "mathTier": 5,
     "baseDamage": 16,
     "chainMultipliers": [
-      0.5,
-      1.0,
+      0.4,
+      0.8,
       1.5,
-      2.0,
-      2.8,
-      3.6,
-      4.5,
+      2.2,
+      3.0,
+      4.0,
       5.5,
-      6.5,
-      8.0
+      7.0,
+      9.0,
+      12.0
     ],
     "maxChainLength": 10,
     "damageTypes": [
@@ -7505,12 +7451,12 @@
       0.5,
       1.0,
       1.5,
-      2.0,
-      2.8,
-      3.6,
-      4.5,
+      2.2,
+      3.0,
+      4.0,
       5.5,
-      6.5
+      7.0,
+      9.0
     ],
     "maxChainLength": 9,
     "damageTypes": [
@@ -7542,7 +7488,8 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "a blade that seems to move before you do",
-    "lore": "The Self-Swinger of Slavic fairy tales fights on its own. It is found in underground kingdoms guarded by Koschei or a serpent. Heroes who find it never quite understand it. The sword fights; they survive. The sword's autonomy is treated not as alarming but as practical."
+    "lore": "The Self-Swinger of Slavic fairy tales fights on its own. It is found in underground kingdoms guarded by Koschei or a serpent. Heroes who find it never quite understand it. The sword fights; they survive. The sword's autonomy is treated not as alarming but as practical.",
+    "counterAttackChance": 0.25
   },
   "shamshir_e_zomorrodnegar": {
     "name": "Shamshir-e Zomorrodnegar",
@@ -7556,17 +7503,18 @@
       0.5,
       1.0,
       1.5,
-      2.0,
-      2.8,
-      3.6,
-      4.5,
+      2.2,
+      3.0,
+      4.0,
       5.5,
-      6.5
+      7.0,
+      9.0
     ],
     "maxChainLength": 9,
     "damageTypes": [
       "slash",
-      "magic"
+      "magic",
+      "holy"
     ],
     "symbol": ")",
     "color": [
@@ -7577,11 +7525,11 @@
     "weight": 3,
     "twoHanded": false,
     "reach": 1,
-    "stunChance": 0.2,
+    "stunChance": 0.3,
     "bleedChance": 0.0,
     "knockback": false,
-    "ignoreShield": false,
-    "critMultiplier": 1.5,
+    "ignoreShield": true,
+    "critMultiplier": 2.0,
     "requiresAmmo": null,
     "floorSpawnWeight": {
       "81-100": 2
@@ -7606,12 +7554,12 @@
       0.5,
       1.0,
       1.5,
-      2.0,
-      2.8,
-      3.6,
-      4.5,
+      2.2,
+      3.0,
+      4.0,
       5.5,
-      6.5
+      7.0,
+      9.0
     ],
     "maxChainLength": 9,
     "damageTypes": [
@@ -7657,12 +7605,12 @@
       0.5,
       1.0,
       1.5,
-      2.0,
-      2.8,
-      3.6,
-      4.5,
+      2.2,
+      3.0,
+      4.0,
       5.5,
-      6.5
+      7.0,
+      9.0
     ],
     "maxChainLength": 9,
     "damageTypes": [
@@ -7693,7 +7641,9 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "a plain but perfectly balanced blade",
-    "lore": "Some scholars distinguish Caliburn — the sword in the stone — from Excalibur, the sword from the lake. Geoffrey of Monmouth uses the name Caliburnus and has it forged in Avalon. In later tradition it became a single weapon. The distinction matters because the stone-sword test and the lake-gift are morally opposite stories: one is earned, one is given. Arthur had both."
+    "lore": "Some scholars distinguish Caliburn — the sword in the stone — from Excalibur, the sword from the lake. Geoffrey of Monmouth uses the name Caliburnus and has it forged in Avalon. In later tradition it became a single weapon. The distinction matters because the stone-sword test and the lake-gift are morally opposite stories: one is earned, one is given. Arthur had both.",
+    "growingPower": true,
+    "killsToGrow": 10
   },
   "brisingr": {
     "name": "Brisingr",
@@ -7707,12 +7657,12 @@
       0.5,
       1.0,
       1.5,
-      2.0,
-      2.8,
-      3.6,
-      4.5,
+      2.2,
+      3.0,
+      4.0,
       5.5,
-      6.5
+      7.0,
+      9.0
     ],
     "maxChainLength": 9,
     "damageTypes": [
@@ -7728,7 +7678,7 @@
     "weight": 3,
     "twoHanded": false,
     "reach": 1,
-    "stunChance": 0.1,
+    "stunChance": 0.0,
     "bleedChance": 0.0,
     "knockback": false,
     "ignoreShield": false,
@@ -7744,7 +7694,8 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "a blade that runs warm to the touch",
-    "lore": "The word for fire in Old Norse. A sword that shares its name with the ancient word for flame was found in a Norse burial mound in Gotland, its blade still faintly warm centuries later. The metallurgists who examined it in 1947 published their findings in a paper that was subsequently lost. Three colleagues confirmed its content before it vanished. The sword itself remains in a private collection."
+    "lore": "The word for fire in Old Norse. A sword that shares its name with the ancient word for flame was found in a Norse burial mound in Gotland, its blade still faintly warm centuries later. The metallurgists who examined it in 1947 published their findings in a paper that was subsequently lost. Three colleagues confirmed its content before it vanished. The sword itself remains in a private collection.",
+    "burnChance": 0.35
   },
   "fragarach_the_whisperer": {
     "name": "Whisperer",
@@ -7755,16 +7706,16 @@
     "mathTier": 5,
     "baseDamage": 14,
     "chainMultipliers": [
-      0.5,
-      1.0,
+      0.4,
+      0.8,
       1.5,
-      2.0,
-      2.8,
-      3.6,
-      4.5,
+      2.2,
+      3.0,
+      4.0,
       5.5,
-      6.5,
-      8.0
+      7.0,
+      9.0,
+      12.0
     ],
     "maxChainLength": 10,
     "damageTypes": [
@@ -7807,14 +7758,14 @@
     "mathTier": 5,
     "baseDamage": 21,
     "chainMultipliers": [
-      0.5,
       1.0,
-      1.5,
-      2.0,
+      1.6,
+      2.2,
       2.8,
-      3.6,
-      4.5,
-      5.5
+      3.4,
+      4.0,
+      4.8,
+      5.8
     ],
     "maxChainLength": 8,
     "damageTypes": [
@@ -7903,7 +7854,9 @@
       1.8,
       2.8,
       4.0,
-      5.5
+      5.5,
+      7.5,
+      10.0
     ],
     "maxChainLength": 8,
     "damageTypes": [
@@ -7944,7 +7897,9 @@
       1.0,
       2.0,
       3.0,
-      4.5
+      4.5,
+      6.5,
+      9.0
     ],
     "maxChainLength": 7,
     "damageTypes": [
@@ -7981,12 +7936,16 @@
     "mathTier": 3,
     "baseDamage": 8,
     "chainMultipliers": [
+      0.3,
       0.5,
-      1.0,
-      1.8,
-      2.8
+      0.8,
+      1.3,
+      2.2,
+      3.5,
+      5.0,
+      6.5
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 8,
     "damageTypes": [
       "pierce",
       "poison"
@@ -8021,13 +7980,15 @@
     "mathTier": 3,
     "baseDamage": 11,
     "chainMultipliers": [
-      0.5,
-      1.0,
-      1.7,
-      2.5,
-      3.5
+      0.6,
+      1.1,
+      1.6,
+      2.2,
+      2.9,
+      3.7,
+      4.5
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 7,
     "damageTypes": [
       "slash",
       "fire"
@@ -8052,5 +8013,496 @@
       "effect_chance": 0.35,
       "effect_duration": 4
     }
+  },
+  "sling_of_david": {
+    "name": "Sling of David",
+    "class": "ranged",
+    "variant": "1h",
+    "tier": 1,
+    "material": "leather",
+    "mathTier": 1,
+    "baseDamage": 6,
+    "chainMultipliers": [
+      0.5,
+      1.2,
+      2.0,
+      3.0,
+      4.5
+    ],
+    "maxChainLength": 5,
+    "damageTypes": [
+      "blunt"
+    ],
+    "symbol": ")",
+    "color": [
+      160,
+      120,
+      80
+    ],
+    "weight": 0.5,
+    "twoHanded": false,
+    "reach": 12,
+    "stunChance": 0.2,
+    "bleedChance": 0.0,
+    "knockback": true,
+    "ignoreShield": false,
+    "critMultiplier": 3.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-5": 8,
+      "6-15": 15,
+      "16-30": 5,
+      "31-100": 0
+    },
+    "containerLootTier": "uncommon",
+    "value": 300,
+    "min_level": 5,
+    "unidentified_name": "a worn leather strap with a pouch",
+    "lore": "The shepherd boy David faced the giant Goliath with nothing but a sling and five smooth stones. One stone was enough. The sling is the weapon of the underestimated — it asks only for courage and accuracy. Against the mighty, it is devastating.",
+    "quiz_tier": 1
+  },
+  "prometheus_torch": {
+    "name": "Prometheus's Torch",
+    "class": "staff",
+    "variant": "2h",
+    "tier": 1,
+    "material": "wood",
+    "mathTier": 2,
+    "baseDamage": 8,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.7,
+      2.5,
+      3.5
+    ],
+    "maxChainLength": 5,
+    "damageTypes": [
+      "crush",
+      "fire"
+    ],
+    "symbol": "/",
+    "color": [
+      255,
+      140,
+      0
+    ],
+    "weight": 2.0,
+    "twoHanded": true,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.5,
+    "burnChance": 0.4,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-8": 5,
+      "9-20": 12,
+      "21-40": 5,
+      "41-100": 0
+    },
+    "containerLootTier": "uncommon",
+    "value": 500,
+    "min_level": 8,
+    "unidentified_name": "a smoldering wooden staff",
+    "lore": "Prometheus stole fire from the gods and gave it to humanity, earning eternal punishment chained to a rock where an eagle devoured his liver daily. This torch carries that stolen fire. It cannot be extinguished, and it cannot be refused — fire is humanity's birthright.",
+    "quiz_tier": 2
+  },
+  "sword_of_damocles": {
+    "name": "Sword of Damocles",
+    "class": "sword",
+    "variant": "1h",
+    "tier": 2,
+    "material": "gold",
+    "mathTier": 2,
+    "baseDamage": 28,
+    "chainMultipliers": [
+      0.6,
+      1.1,
+      1.6,
+      2.2,
+      2.9,
+      3.7,
+      4.5
+    ],
+    "maxChainLength": 7,
+    "damageTypes": [
+      "slash",
+      "pierce"
+    ],
+    "symbol": ")",
+    "color": [
+      255,
+      215,
+      0
+    ],
+    "weight": 3.0,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 1.5,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-11": 0,
+      "12-30": 8,
+      "31-50": 3,
+      "51-100": 0
+    },
+    "containerLootTier": "rare",
+    "value": 2000,
+    "min_level": 12,
+    "unidentified_name": "a jeweled blade suspended by a single horsehair",
+    "lore": "Dionysius II of Syracuse invited the courtier Damocles to sit on his throne and enjoy the luxuries of power. Above the throne hung a sword, suspended by a single horsehair. Damocles understood immediately: power comes with constant peril. This blade cuts magnificently, but the thread grows thinner with every swing.",
+    "quiz_tier": 2
+  },
+  "robin_hoods_longbow": {
+    "name": "Robin Hood's Longbow",
+    "class": "ranged",
+    "variant": "2h",
+    "tier": 2,
+    "material": "yew",
+    "mathTier": 2,
+    "baseDamage": 14,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.8,
+      2.8,
+      4.0,
+      5.5
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "pierce"
+    ],
+    "symbol": "}",
+    "color": [
+      34,
+      139,
+      34
+    ],
+    "weight": 2.5,
+    "twoHanded": true,
+    "reach": 20,
+    "stunChance": 0.0,
+    "bleedChance": 0.15,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 2.0,
+    "requiresAmmo": "arrow",
+    "floorSpawnWeight": {
+      "1-13": 0,
+      "14-35": 10,
+      "36-60": 5,
+      "61-100": 0
+    },
+    "containerLootTier": "rare",
+    "value": 1800,
+    "min_level": 14,
+    "unidentified_name": "a weathered yew longbow wrapped in green cloth",
+    "lore": "Robin of Loxley, the outlaw of Sherwood Forest, could split an arrow at two hundred paces. His longbow was cut from a yew tree in the heart of the forest. It favors those who strike from the shadows — enemies that cannot see you cannot hear its string.",
+    "quiz_tier": 2
+  },
+  "achilles_spear": {
+    "name": "Achilles's Spear",
+    "class": "spear",
+    "variant": "2h",
+    "tier": 3,
+    "material": "bronze",
+    "mathTier": 3,
+    "baseDamage": 18,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.5,
+      2.2,
+      3.0,
+      4.0,
+      5.0,
+      6.5
+    ],
+    "maxChainLength": 8,
+    "damageTypes": [
+      "pierce"
+    ],
+    "symbol": "/",
+    "color": [
+      205,
+      127,
+      50
+    ],
+    "weight": 4.0,
+    "twoHanded": true,
+    "reach": 2,
+    "stunChance": 0.0,
+    "bleedChance": 0.15,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 2.0,
+    "killHealAmount": 15,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-19": 0,
+      "20-45": 10,
+      "46-70": 5,
+      "71-100": 0
+    },
+    "containerLootTier": "rare",
+    "value": 3500,
+    "min_level": 20,
+    "unidentified_name": "a bronze-tipped ash spear with a worn grip",
+    "lore": "The spear of Achilles, son of Peleus, forged by Hephaestus. In the myth of Telephus, the spear that wounded also healed — rust scraped from its tip cured the very wound it had made. Those slain by this spear restore vigor to their killer. At Troy, no warrior could stand before it.",
+    "quiz_tier": 3
+  },
+  "gilgamesh_axe": {
+    "name": "Gilgamesh's Axe",
+    "class": "axe",
+    "variant": "2h",
+    "tier": 3,
+    "material": "bronze",
+    "mathTier": 3,
+    "baseDamage": 22,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.8,
+      2.8,
+      3.8,
+      5.0,
+      6.5
+    ],
+    "maxChainLength": 7,
+    "damageTypes": [
+      "slash"
+    ],
+    "symbol": ")",
+    "color": [
+      205,
+      133,
+      63
+    ],
+    "weight": 6.0,
+    "twoHanded": true,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.2,
+    "knockback": false,
+    "ignoreShield": false,
+    "critMultiplier": 2.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-34": 0,
+      "35-60": 8,
+      "61-80": 5,
+      "81-100": 2
+    },
+    "containerLootTier": "rare",
+    "value": 4500,
+    "min_level": 35,
+    "unidentified_name": "a heavy bronze axe with cuneiform inscriptions",
+    "lore": "Enkidu dreamed of an axe that fell from the sky — Gilgamesh's equal, his brother in arms. This is that axe: the weapon of the king who sought immortality and found friendship instead. In the Cedar Forest, Gilgamesh and Enkidu fought Humbaba together. The axe remembers that bond — it strikes harder after its wielder has been wounded.",
+    "quiz_tier": 3
+  },
+  "cronus_scythe": {
+    "name": "Cronus's Scythe",
+    "class": "scimitar",
+    "variant": "2h",
+    "tier": 4,
+    "material": "adamantine",
+    "mathTier": 4,
+    "baseDamage": 20,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.8,
+      2.8,
+      3.8,
+      5.0,
+      6.5
+    ],
+    "maxChainLength": 7,
+    "damageTypes": [
+      "slash",
+      "magic"
+    ],
+    "symbol": ")",
+    "color": [
+      128,
+      0,
+      128
+    ],
+    "weight": 5.0,
+    "twoHanded": true,
+    "reach": 2,
+    "stunChance": 0.0,
+    "bleedChance": 0.25,
+    "knockback": false,
+    "ignoreShield": true,
+    "critMultiplier": 2.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-37": 0,
+      "38-65": 6,
+      "66-100": 3
+    },
+    "containerLootTier": "rare",
+    "value": 5500,
+    "min_level": 38,
+    "unidentified_name": "a curved blade that distorts the air around it",
+    "lore": "Gaia gave this adamantine scythe to Cronus to overthrow his father Uranus. With it, Cronus castrated the sky itself — from the blood sprang the Giants and the Furies, and from the severed flesh arose Aphrodite. The scythe cuts through time and matter alike. Those it wounds age visibly, their vitality draining with each passing moment.",
+    "quiz_tier": 4
+  },
+  "spear_of_lugh": {
+    "name": "Spear of Lugh",
+    "class": "spear",
+    "variant": "2h",
+    "tier": 5,
+    "material": "adamantine",
+    "mathTier": 5,
+    "baseDamage": 26,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.5,
+      2.2,
+      3.0,
+      4.0,
+      5.5,
+      7.0,
+      9.0
+    ],
+    "maxChainLength": 9,
+    "damageTypes": [
+      "pierce",
+      "fire",
+      "magic"
+    ],
+    "symbol": "/",
+    "color": [
+      255,
+      100,
+      0
+    ],
+    "weight": 4.0,
+    "twoHanded": true,
+    "reach": 2,
+    "stunChance": 0.1,
+    "bleedChance": 0.4,
+    "knockback": false,
+    "ignoreShield": true,
+    "critMultiplier": 2.0,
+    "burnChance": 0.3,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-49": 0,
+      "50-80": 5,
+      "81-100": 8
+    },
+    "containerLootTier": "legendary",
+    "value": 9000,
+    "min_level": 50,
+    "unidentified_name": "a spear radiating intense heat",
+    "lore": "One of the Four Treasures of the Tuatha De Danann. The Spear of Lugh was so bloodthirsty it had to be kept submerged in a cauldron of poison to prevent it from igniting everything nearby. No battle was ever sustained against it. Lugh used it to slay Balor of the Evil Eye at the Second Battle of Mag Tuired, striking through his eye and out the back of his head.",
+    "quiz_tier": 5
+  },
+  "gae_dearg": {
+    "name": "Gae Dearg",
+    "class": "spear",
+    "variant": "1h",
+    "tier": 5,
+    "material": "adamantine",
+    "mathTier": 5,
+    "baseDamage": 24,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.5,
+      2.2,
+      3.0,
+      4.0,
+      5.5,
+      7.0
+    ],
+    "maxChainLength": 8,
+    "damageTypes": [
+      "pierce"
+    ],
+    "symbol": "/",
+    "color": [
+      200,
+      30,
+      30
+    ],
+    "weight": 3.0,
+    "twoHanded": false,
+    "reach": 2,
+    "stunChance": 0.0,
+    "bleedChance": 0.9,
+    "knockback": false,
+    "ignoreShield": true,
+    "critMultiplier": 1.8,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-51": 0,
+      "52-80": 4,
+      "81-100": 6
+    },
+    "containerLootTier": "legendary",
+    "value": 8500,
+    "min_level": 52,
+    "unidentified_name": "a crimson-stained spear that weeps red",
+    "lore": "The Red Spear of Diarmuid Ua Duibhne, champion of the Fianna. Diarmuid carried two spears: Gae Buidhe the Yellow, which wounded but could not kill, and Gae Dearg the Red, from which no wound could ever heal. The distinction mattered — Diarmuid chose his spear based on whether mercy was warranted. Gae Dearg offers no mercy.",
+    "quiz_tier": 5
+  },
+  "net_of_hephaestus": {
+    "name": "Net of Hephaestus",
+    "class": "ranged",
+    "variant": "1h",
+    "tier": 3,
+    "material": "mithril",
+    "mathTier": 3,
+    "baseDamage": 2,
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.5,
+      2.0
+    ],
+    "maxChainLength": 4,
+    "damageTypes": [
+      "blunt"
+    ],
+    "symbol": ")",
+    "color": [
+      200,
+      200,
+      200
+    ],
+    "weight": 1.5,
+    "twoHanded": false,
+    "reach": 5,
+    "stunChance": 0.8,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": true,
+    "critMultiplier": 1.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-29": 0,
+      "30-55": 6,
+      "56-80": 4,
+      "81-100": 2
+    },
+    "containerLootTier": "rare",
+    "value": 4000,
+    "min_level": 30,
+    "unidentified_name": "a tightly woven metallic mesh",
+    "lore": "Hephaestus forged this net to catch Ares and Aphrodite in their affair. It was so fine it was invisible, so strong not even Ares could break free. In the Odyssey, Demodocus sings of how Hephaestus dragged the ensnared lovers before all the gods of Olympus. This net does almost no damage — but nothing escapes it.",
+    "quiz_tier": 3
   }
 }

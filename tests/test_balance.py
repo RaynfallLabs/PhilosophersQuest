@@ -158,7 +158,7 @@ def test_economics_question_format():
 def test_food_count():
     from items import load_items
     foods = load_items('food')
-    assert len(foods) == 12, f"Expected 12 food items, got {len(foods)}"
+    assert len(foods) == 16, f"Expected 16 food items, got {len(foods)}"
 
 
 def test_new_deep_food_items():

@@ -36,8 +36,16 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
 
     def _callback(result):
         chain = result.score
-        if chain == 0 or monster.is_dead():
+
+        # Cursed weapon backlash on miss (Tyrfing)
+        if chain == 0:
+            if weapon and getattr(weapon, 'cursed_miss_backlash', 0) > 0:
+                player.hp -= weapon.cursed_miss_backlash
             on_complete(0, monster.is_dead(), chain)
+            return
+
+        if monster.is_dead():
+            on_complete(0, True, chain)
             return
 
         # Base damage: new integer field preferred over legacy dice string
@@ -74,6 +82,10 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
             if chain >= max_c:
                 mult *= weapon.crit_multiplier
                 crit = True
+                # Petrify on crit (Harpe)
+                if weapon.petrify_on_crit:
+                    current_pet = monster.status_effects.get('petrifying', 0)
+                    monster.status_effects['petrifying'] = max(current_pet, 3)
 
         # Beowulf quirk: unarmed attacks deal +5 base damage
         if weapon is None:
@@ -106,15 +118,56 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
             if random.random() < weapon.bleed_chance:
                 monster.status_effects['bleeding'] = monster.status_effects.get('bleeding', 0) + 3
 
+        # Poison mechanic
+        poisoned = False
+        if weapon and getattr(weapon, 'poison_chance', 0) > 0 and actual > 0:
+            if random.random() < weapon.poison_chance:
+                monster.status_effects['poisoned'] = monster.status_effects.get('poisoned', 0) + 5
+                poisoned = True
+
+        # Burn mechanic
+        burned = False
+        if weapon and getattr(weapon, 'burn_chance', 0) > 0 and actual > 0:
+            if random.random() < weapon.burn_chance:
+                monster.status_effects['burning'] = max(monster.status_effects.get('burning', 0), 4)
+                burned = True
+
+        # Confuse mechanic (Thyrsus-style)
+        confused = False
+        if weapon and getattr(weapon, 'confuse_chance', 0) > 0 and actual > 0:
+            if random.random() < weapon.confuse_chance:
+                monster.status_effects['confused'] = max(monster.status_effects.get('confused', 0), 4)
+                confused = True
+
+        # Lifesteal mechanic (Soul Reaver)
+        healed = False
+        if weapon and getattr(weapon, 'lifesteal_percent', 0) > 0 and actual > 0:
+            heal = max(1, int(actual * weapon.lifesteal_percent))
+            player.hp = min(player.max_hp, player.hp + heal)
+            healed = True
+
+        # Kill heal mechanic (Excalibur, Achilles's Spear)
+        if monster.is_dead() and weapon and getattr(weapon, 'kill_heal_amount', 0) > 0:
+            player.hp = min(player.max_hp, player.hp + weapon.kill_heal_amount)
+            healed = True
+
+        # Growing power mechanic (Caliburn)
+        if monster.is_dead() and weapon and getattr(weapon, 'growing_power', False):
+            weapon.kill_count = getattr(weapon, 'kill_count', 0) + 1
+            if weapon.kill_count % weapon.kills_to_grow == 0:
+                weapon.base_damage += 1
+
         # Knockback mechanic (handled by caller via return value; flag via on_complete extra)
         knocked = False
         if weapon and weapon.knockback and actual > 0:
             knocked = True
 
-        on_complete(actual, monster.is_dead(), chain, stunned=stunned, knocked=knocked, crit=crit)
+        petrified = crit and weapon and getattr(weapon, 'petrify_on_crit', False)
+        on_complete(actual, monster.is_dead(), chain, stunned=stunned, knocked=knocked, crit=crit,
+                    poisoned=poisoned, burned=burned, confused=confused, petrified=petrified, healed=healed)
 
     # Jormungandr quirk: +1 max chain for repeatedly-equipped weapon
-    _max_chain = weapon.max_chain_length if weapon else None
+    _max_chain = weapon.max_chain_length if weapon else len(_DEFAULT_MULTIPLIERS)
     if _max_chain and weapon:
         if getattr(player, 'quirk_progress', {}).get('jormungandr_weapon_id') == weapon.id:
             _max_chain += 1

@@ -645,26 +645,26 @@
   },
   "potion_of_brilliance": {
     "name": "potion of brilliance",
-    "unidentified_name": "crystalline blue vial",
+    "unidentified_name": "crystalline vial",
     "symbol": "!",
     "color": [
-      100,
-      160,
+      140,
+      200,
       255
     ],
     "weight": 0.4,
-    "min_level": 10,
-    "effect": "brilliance",
-    "power": "",
-    "duration": 50,
+    "min_level": 20,
+    "effect": "brilliance_mp",
+    "power": "40",
+    "duration": 0,
     "floorSpawnWeight": {
       "1-20": 0,
-      "21-40": 20,
-      "41-60": 40,
-      "61-80": 50,
-      "81-100": 45
+      "21-40": 6,
+      "41-60": 12,
+      "61-80": 14,
+      "81-100": 12
     },
-    "lore": "Philosophers have long sought the formula for this crystalline draught, which briefly accelerates the intellect to speeds the unenhanced mind cannot follow. Under its effect, patterns emerge in everything — the cracks in dungeon walls spell out theorems, the movement of shadows encodes solutions. The insight fades with the potion, but those who take careful notes while under its influence have produced remarkable scholarship."
+    "lore": "A concentrated masterwork of alchemical art, this shimmering potion floods the drinker's arcane pathways with a torrent of pure magical energy. Unlike the milder mana potion, brilliance fully saturates every magical channel, restoring a far greater portion of MP. It is said the formula was devised by a philosopher who mapped the inner architecture of the human soul."
   },
   "potion_of_brilliance_ii": {
     "name": "potion of brilliance",
@@ -2303,7 +2303,11 @@
     "name": "potion of mana",
     "unidentified_name": "azure vial",
     "symbol": "!",
-    "color": [80, 120, 255],
+    "color": [
+      80,
+      120,
+      255
+    ],
     "weight": 0.4,
     "min_level": 5,
     "effect": "restore_mp",
@@ -2318,23 +2322,77 @@
     },
     "lore": "Distilled from luminescent cave fungi and alchemised under the light of a new moon, this azure liquid restores a substantial portion of magical reserves. Philosophers of the arcane tradition have long argued whether it merely accelerates natural mana recovery or taps into a deeper metaphysical reservoir — either way, the effect on an exhausted mage is profoundly welcome."
   },
-  "potion_of_brilliance": {
-    "name": "potion of brilliance",
-    "unidentified_name": "crystalline vial",
-    "symbol": "!",
-    "color": [140, 200, 255],
-    "weight": 0.4,
-    "min_level": 20,
-    "effect": "brilliance_mp",
-    "power": "40",
-    "duration": 0,
+  "soma": {
+    "name": "Soma",
+    "effect": "full_heal",
+    "power": 999,
+    "duration": 30,
+    "weight": 0.5,
+    "value": 5000,
+    "min_level": 25,
+    "identified": false,
+    "unidentified_name": "a pale golden elixir smelling of honey",
+    "lore": "The Rigveda devotes an entire book — 114 hymns — to Soma, the sacred drink of the Vedic gods. It was pressed from a plant, mixed with milk, and offered to Indra before battle. Scholars have debated its identity for centuries: ephedra, fly agaric, cannabis. Whatever it was, it made gods of men. One drink restores what was broken.",
     "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 6,
-      "41-60": 12,
-      "61-80": 14,
-      "81-100": 12
+      "1-24": 0,
+      "25-50": 3,
+      "51-80": 5,
+      "81-100": 3
     },
-    "lore": "A concentrated masterwork of alchemical art, this shimmering potion floods the drinker's arcane pathways with a torrent of pure magical energy. Unlike the milder mana potion, brilliance fully saturates every magical channel, restoring a far greater portion of MP. It is said the formula was devised by a philosopher who mapped the inner architecture of the human soul."
+    "containerLootTier": "rare",
+    "symbol": "!",
+    "color": [
+      255,
+      215,
+      100
+    ]
+  },
+  "water_of_lethe": {
+    "name": "Water of Lethe",
+    "effect": "cure_all",
+    "power": 0,
+    "duration": 0,
+    "weight": 0.5,
+    "value": 2000,
+    "min_level": 30,
+    "identified": false,
+    "unidentified_name": "perfectly clear water with no smell",
+    "lore": "The River Lethe flows through the underworld. In Virgil's Aeneid, souls drink from it to forget their former lives before reincarnation. In Plato's Republic, the dead drink from the Plain of Forgetfulness. This water cures all afflictions of the mind — confusion, fear, madness — by simply erasing them. What you cannot remember cannot hurt you.",
+    "floorSpawnWeight": {
+      "1-29": 0,
+      "30-55": 4,
+      "56-100": 3
+    },
+    "containerLootTier": "rare",
+    "symbol": "!",
+    "color": [
+      200,
+      220,
+      255
+    ]
+  },
+  "elixir_of_gilgamesh": {
+    "name": "Elixir of Gilgamesh",
+    "effect": "gain_level",
+    "power": 2,
+    "duration": 0,
+    "weight": 0.5,
+    "value": 8000,
+    "min_level": 45,
+    "identified": false,
+    "unidentified_name": "a murky green liquid with something plant-like inside",
+    "lore": "At the bottom of the sea, Gilgamesh found the plant of immortality. He called it 'The Old Man Becomes a Young Man.' On his way home, he stopped to bathe in a pool, and a serpent ate the plant — which is why snakes shed their skin and are reborn, while humans grow old and die. The eleventh tablet of the Epic is the oldest meditation on mortality in human literature.",
+    "floorSpawnWeight": {
+      "1-44": 0,
+      "45-70": 2,
+      "71-100": 3
+    },
+    "containerLootTier": "legendary",
+    "symbol": "!",
+    "color": [
+      50,
+      150,
+      50
+    ]
   }
 }
