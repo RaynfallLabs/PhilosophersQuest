@@ -2,9 +2,27 @@ class Player:
     BASE_HP = 20
     BASE_SP = 200
     BASE_MP = 10
-    BASE_TIMER = 10      # seconds for quiz timer
+    BASE_TIMER = 10      # seconds for quiz timer (legacy default)
     CARRY_BASE = 50
     CARRY_PER_STR = 5
+
+    # Per-subject quiz timer tuning: (base_seconds, wis_scale_per_point)
+    # base_seconds: fixed reading time floor for the category
+    # wis_scale: seconds gained per point of WIS (e.g. 0.8 means WIS 15 adds 12s)
+    SUBJECT_TIMER = {
+        'math':       ( 8, 0.8),   # flashcard arithmetic — fast reads
+        'science':    (10, 1.0),   # short concept questions
+        'grammar':    (10, 1.0),   # short sentence questions
+        'trivia':     (12, 1.0),   # general knowledge, slightly longer
+        'geography':  (12, 1.0),   # moderate reading, some long choices
+        'history':    (14, 1.2),   # paragraph-length context
+        'animal':     (14, 1.2),   # descriptive species questions
+        'ai':         (16, 1.2),   # technical concepts, longer choices
+        'philosophy': (16, 1.2),   # abstract reasoning, dense text
+        'cooking':    (18, 1.4),   # full-sentence choices, recipe context
+        'theology':   (20, 1.4),   # dense doctrinal text, long choices
+        'economics':  (20, 1.4),   # heaviest reading burden
+    }
 
     def __init__(self):
         # Primary stats
@@ -43,6 +61,10 @@ class Player:
 
         # Recall Lore system
         self.recall_lore_cooldown: int = 0  # turns remaining until next lore recall
+
+        # Hack Reality system
+        self.hack_reality_cooldown: int = 0  # turns remaining until next hack
+        self.hack_reality_count: int = 0     # permanent bonuses received (diminishing returns)
 
         # Special build flags
         self.immortal: bool = False         # Dad: cannot die
@@ -196,9 +218,12 @@ class Player:
             radius += 2
         return radius
 
-    def get_quiz_timer(self) -> int:
-        """Base quiz timer in seconds (before modifiers)."""
-        return self.BASE_TIMER + max(0, self.WIS - 10)
+    def get_quiz_timer(self, subject: str = 'math') -> int:
+        """Base quiz timer in seconds (before status modifiers).
+        Uses per-subject base + WIS scaling so text-heavy categories
+        give enough reading time without making flashcard math trivial."""
+        base, wis_scale = self.SUBJECT_TIMER.get(subject, (10, 1.0))
+        return round(base + self.WIS * wis_scale)
 
     def get_quiz_timer_modifier(self) -> float:
         """Multiplier applied to quiz timer based on active effects.

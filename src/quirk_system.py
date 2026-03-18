@@ -71,6 +71,59 @@ class QuirkSystem:
     def is_unlocked(self, qid: str) -> bool:
         return qid in getattr(self._pl, 'unlocked_quirks', set())
 
+    def get_quirk_progress(self, qid: str) -> float:
+        """Return 0.0–1.0 progress toward unlocking a quirk."""
+        if self.is_unlocked(qid):
+            return 1.0
+        info = _QUIRK_PROGRESS.get(qid)
+        if not info:
+            return 0.0
+        key, threshold, is_set = info
+        if threshold <= 0:
+            # Special multi-condition quirks — approximate
+            if qid == 'ragnarok':
+                return 0.0  # can't track "arrive at L100 with <=10 HP"
+            if qid == 'archimedes':
+                sci = min(self._p('science_correct_total', 0), 50)
+                eco = min(self._p('economics_correct_total', 0), 50)
+                return (sci + eco) / 100.0
+            if qid == 'hypatia':
+                math_v = min(self._p('math_correct_run', 0), 50)
+                sci = min(self._p('science_correct_total', 0), 50)
+                return (math_v + sci) / 100.0
+            return 0.0
+        # Special: athena uses player.known_monster_ids directly
+        if qid == 'athena':
+            val = len(getattr(self._pl, 'known_monster_ids', set()))
+            return min(1.0, val / threshold)
+        # Dict-based quirks (thor, hephaestus, jormungandr, kali) — use max value
+        if key in ('thor_weapon_combats', 'hephaestus_counts', 'jormungandr_counts', 'kali_kills'):
+            d = self._p(key, {})
+            if isinstance(d, dict) and d:
+                val = max(d.values())
+            else:
+                val = 0
+            return min(1.0, val / threshold)
+        if is_set:
+            val = self._set_len(key) if isinstance(self._p(key, None), set) else len(self._p(key, set()))
+        else:
+            val = self._p(key, 0)
+        if not isinstance(val, (int, float)):
+            return 0.0
+        return min(1.0, val / threshold)
+
+    def get_all_quirk_info(self):
+        """Return list of (qid, name, progress_pct, unlocked, effect, trigger) for display."""
+        result = []
+        for qid in _QUIRK_ORDER:
+            name = _QUIRK_NAMES.get(qid, qid)
+            unlocked = self.is_unlocked(qid)
+            pct = self.get_quirk_progress(qid)
+            effect = _QUIRK_EFFECTS.get(qid, '') if unlocked else ''
+            trigger = _QUIRK_TRIGGER.get(qid, '') if unlocked else ''
+            result.append((qid, name, pct, unlocked, effect, trigger))
+        return result
+
     def _award(self, qid: str, name: str, apply_fn):
         if self.is_unlocked(qid):
             return
@@ -1019,6 +1072,171 @@ _ACTIVE_POWER_DEFS: dict[str, dict] = {
 
 
 # What the player did to earn this trait
+# Progress tracking: quirk_id -> (progress_key, threshold, is_set)
+# is_set=True means progress is len(set), not a plain counter
+# Special cases (multi-key, conditional) use threshold=-1 and are handled in get_quirk_progress()
+_QUIRK_PROGRESS = {
+    'mithridates':   ('mithridates_eaten', 5, True),
+    'tiresias':      ('correct_while_blinded', 25, False),
+    'odin':          ('wait_total', 12960, False),
+    'scheherazade':  ('scheherazade_scrolls', 12, True),
+    'paracelsus':    ('disease_drain_total', 5, False),
+    'siegfried':     ('siegfried_effect_types_eaten', 5, True),
+    'musashi':       ('chain1_kills', 30, False),
+    'rasputin':      ('rasputin_survivals', 5, False),
+    'merlin':        ('merlin_wands', 10, True),
+    'buddha':        ('wait_near_monsters', 500, False),
+    'hephaestus':    ('hephaestus_counts', 15, False),   # dict-based, uses max value
+    'cassandra':     ('cassandra_scrapes', 10, False),
+    'sisyphus':      ('sisyphus_chests', 10, True),
+    'job':           ('job_trap_types', 5, True),
+    'orpheus':       ('orpheus_sessions', 5, False),
+    'tantalus':      ('ruined_meals', 15, False),
+    'asclepius':     ('asclepius_species', 15, True),
+    'fisher_king':   ('fisher_king_prayers', 6, False),
+    'anansi':        ('correct_while_confused', 20, False),
+    'prometheus':    ('prometheus_episodes', 10, False),
+    'penelope':      ('penelope_count', 100, False),
+    'dionysus':      ('potions_while_hallucinating', 10, False),
+    'apollo':        ('max_chain_hits', 10, False),
+    'athena':        ('known_monster_ids', 50, True),     # uses player.known_monster_ids
+    'loki':          ('loki_done_items', 5, True),
+    'thor':          ('thor_weapon_combats', 30, False),  # dict-based, uses max value
+    'beowulf':       ('unarmed_wins', 10, False),
+    'norns':         ('recall_lore_uses', 20, False),
+    'jormungandr':   ('jormungandr_counts', 20, False),   # dict-based, uses max value
+    'shiva':         ('hallucinating_turns', 100, False),
+    'enkidu':        ('enkidu_harvested', 20, True),
+    'perseus':       ('perseus_blocks', 5, False),
+    'theseus':       ('theseus_explored_floors', 5, True),
+    'persephone':    ('persephone_quality5', 5, True),
+    'hermes':        ('hermes_teleports', 8, False),
+    'sibyl':         ('total_correct_answers', 500, False),  # also requires level < 20
+    'valkyrie':      ('ranged_kills', 25, False),
+    'ahasverus':     ('tile_moves', 15000, False),
+    'circe':         ('circe_bonus_types', 5, True),
+    'gawain':        ('gawain_wins', 6, False),
+    'ariadne':       ('ariadne_fast_exits', 10, False),
+    'morgan':        ('morgan_spells', 6, False),
+    'cuchulainn':    ('cuchulainn_wins', 5, False),
+    'fenrir':        ('fenrir_debuff_turns', 150, False),
+    'kali':          ('kali_kills', 100, False),          # dict-based, uses max value
+    'medusa':        ('medusa_episodes_answered', 5, False),
+    'green_knight':  ('green_knight_survivals', 5, False),
+    'narcissus':     ('narcissus_examines', 30, False),
+    'cerberus':      ('stair_uses', 300, False),
+    'ragnarok':      ('_special', -1, False),             # conditional: level 100 + <=10 HP
+    'spartacus':     ('spartacus_kills', 20, False),
+    'ramanujan':     ('math_correct_run', 500, False),
+    'ibn_battuta':   ('theseus_explored_floors', 30, True),
+    'tesla':         ('tesla_zaps', 50, False),
+    'de_medici':     ('de_medici_picks', 20, False),
+    'leonidas':      ('leonidas_kill_floors', 30, True),
+    'confucius':     ('confucius_blessed_philosophy', 50, False),
+    'zoroaster':     ('zoroaster_pray_floors', 15, True),
+    'boudicca':      ('boudicca_kills', 50, False),
+    'solomon_q':     ('philosophy_correct_total', 100, False),
+    'atalanta':      ('atalanta_fast25', 10, False),
+    'galileo':       ('science_correct_total', 100, False),
+    'caesar':        ('caesar_kills', 300, False),
+    'shakespeare':   ('shakespeare_scrolls', 50, False),
+    'wanderlust_q':  ('tile_moves', 20000, False),
+    'nostradamus':   ('nostradamus_lore', 10, False),
+    'archimedes':    ('_special', -1, False),             # needs sci>=50 AND eco>=50
+    'machiavelli':   ('machiavelli_run_correct', 500, False),
+    'darwin':        ('darwin_debuff_types', 8, True),
+    'hypatia':       ('_special', -1, False),             # needs math>=50 AND sci>=50
+    # Power quirks
+    'philosophers_stone': ('items_identified', 200, False),
+    'atlas_burden':  ('atlas_burden_turns', 100, False),
+    'zeus_bolt':     ('zeus_bolt_hasted', 15, False),
+    'gorgon_ward':   ('gorgon_ward_petrify', 3, False),
+    'phoenix_rising': ('phoenix_survivals', 10, False),
+    'eye_storm':     ('eye_storm_clean_floors', 5, False),
+    'iron_will':     ('iron_will_paralyzed_hits', 10, False),
+    'battle_trance': ('battle_trance_kills', 200, False),
+    'second_sight':  ('second_sight_blind_lore', 5, False),
+    'iron_ration':   ('tile_moves', 15000, False),
+    'shadow_step':   ('invisible_moves', 2500, False),
+    'focused_scholar': ('total_correct_answers', 500, False),
+    'arcane_surge':  ('arcane_surge_casts', 20, False),
+    'death_wish':    ('death_wish_kills', 10, False),
+    'wandering_star': ('hermes_teleports', 15, False),
+    'time_dilation': ('consecutive_correct', 25, False),
+    'mirror_mind':   ('items_identified', 100, False),
+    'metabolic':     ('tile_moves', 5000, False),
+    'venom_lore':    ('venom_lore_turns', 5, False),
+    'war_cry':       ('war_cry_kills', 15, False),
+    'mind_fortress': ('mental_debuff_correct', 30, False),
+    'temporal_shield': ('temporal_shield_hits', 50, False),
+    'ancestral_q':   ('theseus_explored_floors', 10, True),
+    'mystic_eye':    ('mystic_eye_floors', 10, True),
+    'life_drain':    ('life_drain_kills', 25, False),
+    'reality_anchor': ('reality_anchor_turns', 5, False),
+    'runic_armor':   ('runic_armor_turns', 10, False),
+    'astral_form':   ('astral_form_invisible_turns', 100, False),
+    'sage_counsel':  ('history_correct_total', 50, False),
+    'ouroboros':     ('total_correct_answers', 1000, False),
+}
+
+# Canonical display order and names for all quirks
+_QUIRK_NAMES = {
+    'mithridates': "The Mithridates Protocol", 'tiresias': "Tiresias' Gift",
+    'odin': "Odin's Vigil", 'scheherazade': "Scheherazade's Tongue",
+    'paracelsus': "Paracelsus' Doctrine", 'siegfried': "Siegfried's Bath",
+    'musashi': "Musashi's Empty Strike", 'rasputin': "Rasputin's Constitution",
+    'merlin': "Merlin's Apprenticeship", 'buddha': "The Buddha's Stillness",
+    'hephaestus': "Hephaestus' Obsession", 'cassandra': "Cassandra's Persistence",
+    'sisyphus': "Sisyphus' Mastery", 'job': "Job's Endurance",
+    'orpheus': "Orpheus' Lyre", 'tantalus': "Tantalus' Resolve",
+    'asclepius': "Asclepius' Serpent", 'fisher_king': "The Fisher King's Vigil",
+    'anansi': "Anansi's Clarity", 'prometheus': "Prometheus Unbound",
+    'penelope': "Penelope's Mastery", 'dionysus': "Dionysus' Vision",
+    'apollo': "Apollo's Perfection", 'athena': "Athena's Owl",
+    'loki': "Loki's Gambit", 'thor': "Thor's Oath",
+    'beowulf': "Beowulf's Vow", 'norns': "The Norns' Thread",
+    'jormungandr': "Jormungandr's Cycle", 'shiva': "Shiva's Third Eye",
+    'enkidu': "Enkidu's Wildness", 'perseus': "Perseus' Reflection",
+    'theseus': "Theseus in the Labyrinth", 'persephone': "Persephone's Descent",
+    'hermes': "Hermes' Wings", 'sibyl': "The Sibyl of Cumae",
+    'valkyrie': "The Valkyrie's Eye", 'ahasverus': "Ahasverus",
+    'circe': "Circe's Cauldron", 'gawain': "Gawain's Bargain",
+    'ariadne': "Ariadne's Thread", 'morgan': "Morgan le Fay",
+    'cuchulainn': "Cu Chulainn's Riastrad", 'fenrir': "Fenrir's Chains",
+    'kali': "Kali's Dance", 'medusa': "Medusa's Gaze",
+    'green_knight': "The Green Knight", 'narcissus': "Narcissus",
+    'cerberus': "Cerberus", 'ragnarok': "Ragnarok's Survivor",
+    'spartacus': "The Gladiator's Defiance", 'ramanujan': "The Infinite Sum",
+    'ibn_battuta': "Ibn Battuta's Road", 'tesla': "Tesla's Circuit",
+    'de_medici': "De Medici's Treasury", 'leonidas': "The Last Stand",
+    'confucius': "The Analects", 'zoroaster': "The Prophet's Vigil",
+    'boudicca': "Boudicca's Fury", 'solomon_q': "Wisdom of Solomon",
+    'atalanta': "Winged Feet", 'galileo': "Galileo's Heresy",
+    'caesar': "Veni Vidi Vici", 'shakespeare': "The Bard's Tongue",
+    'wanderlust_q': "The Endless Wanderer", 'nostradamus': "The Prophet's Eye",
+    'archimedes': "Give Me a Lever", 'machiavelli': "The Prince",
+    'darwin': "Survival of the Fittest", 'hypatia': "Hypatia's Legacy",
+    'philosophers_stone': "Philosopher's Stone", 'atlas_burden': "Atlas' Burden",
+    'zeus_bolt': "Zeus' Bolt", 'gorgon_ward': "Gorgon Ward",
+    'phoenix_rising': "Phoenix Rising", 'eye_storm': "Eye of the Storm",
+    'iron_will': "Iron Will", 'battle_trance': "Battle Trance",
+    'second_sight': "Second Sight", 'iron_ration': "Iron Ration",
+    'shadow_step': "Shadow Step", 'focused_scholar': "Scholar's Focus",
+    'arcane_surge': "Arcane Surge", 'death_wish': "Death Wish",
+    'wandering_star': "Wandering Star", 'time_dilation': "Time Dilation",
+    'mirror_mind': "Mirror Mind", 'metabolic': "Metabolic Surge",
+    'venom_lore': "Venom Lore", 'war_cry': "War Cry",
+    'mind_fortress': "Mind Fortress", 'temporal_shield': "Temporal Shield",
+    'ancestral_q': "Ancestral Memory", 'mystic_eye': "Mystic Eye",
+    'life_drain': "Life Drain", 'reality_anchor': "Reality Anchor",
+    'runic_armor': "Runic Armor", 'astral_form': "Astral Form",
+    'sage_counsel': "Sage's Counsel", 'ouroboros': "The Infinite Circle",
+}
+
+# Canonical display order
+_QUIRK_ORDER = list(_QUIRK_NAMES.keys())
+
+
 _QUIRK_TRIGGER = {
     'mithridates':   "You ate 5 monster types that had previously poisoned you.",
     'tiresias':      "You answered 25 questions correctly while blinded.",

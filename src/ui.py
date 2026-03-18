@@ -177,7 +177,7 @@ class Sidebar:
             (f"Turns  {turn_count}",                  FP.BODY_TEXT),
             (f"Gold   {gold:,}",                      FP.GOLD_PALE),
             (f"Sight  {player.get_sight_radius()}",   FP.BODY_TEXT),
-            (f"Timer  {player.get_quiz_timer()}s",    FP.WARNING_TEXT),
+            (f"Timer  {player.get_quiz_timer('math')}s",  FP.WARNING_TEXT),
         ]:
             self.screen.blit(self._fsm.render(text, True, color),
                              (self.x + self.PAD, y))
@@ -225,6 +225,20 @@ class Sidebar:
         else:
             self.screen.blit(
                 self._fsm.render("Lore:   Ready", True, (120, 200, 240)),
+                (self.x + self.PAD, y)
+            )
+        y += 22
+
+        # Hack Reality cooldown
+        if player.hack_reality_cooldown > 0:
+            hack_cd_color = (0, 160, 80)   # matrix green: cooldown
+            self.screen.blit(
+                self._fsm.render(f"Hack:   {player.hack_reality_cooldown}t", True, hack_cd_color),
+                (self.x + self.PAD, y)
+            )
+        else:
+            self.screen.blit(
+                self._fsm.render("Hack:   Ready", True, (0, 220, 120)),
                 (self.x + self.PAD, y)
             )
         y += 22

@@ -181,6 +181,7 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
         wisdom=player.WIS,
         timer_modifier=player.get_quiz_timer_modifier(),
         extra_seconds=getattr(player, 'get_quiz_extra_seconds', lambda s: 0)('math'),
+        base_seconds=player.get_quiz_timer('math'),
     )
 
 

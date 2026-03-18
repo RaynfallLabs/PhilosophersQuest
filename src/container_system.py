@@ -54,6 +54,7 @@ def attempt_lockpick(player, container, quiz_engine, dungeon, monsters, on_compl
         wisdom=player.WIS,
         timer_modifier=player.get_quiz_timer_modifier(),
         extra_seconds=getattr(player, 'get_quiz_extra_seconds', lambda s: 0)('economics'),
+        base_seconds=player.get_quiz_timer('economics'),
     )
 
 

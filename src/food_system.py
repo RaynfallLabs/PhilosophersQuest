@@ -104,6 +104,7 @@ def cook_compound_recipe(player, recipe: dict, inventory: list, quiz_engine, on_
         wisdom=player.WIS,
         timer_modifier=player.get_quiz_timer_modifier(),
         extra_seconds=getattr(player, 'get_quiz_extra_seconds', lambda s: 0)('cooking'),
+        base_seconds=player.get_quiz_timer('cooking'),
     )
 
 
@@ -146,6 +147,7 @@ def harvest_corpse(player, corpse, quiz_engine, on_complete):
         wisdom=player.WIS,
         timer_modifier=player.get_quiz_timer_modifier(),
         extra_seconds=getattr(player, 'get_quiz_extra_seconds', lambda s: 0)('animal'),
+        base_seconds=player.get_quiz_timer('animal'),
     )
 
 
@@ -206,6 +208,7 @@ def cook_ingredient(player, ingredient, quiz_engine, on_complete, max_chain: int
         wisdom=player.WIS,
         timer_modifier=player.get_quiz_timer_modifier(),
         extra_seconds=getattr(player, 'get_quiz_extra_seconds', lambda s: 0)('cooking'),
+        base_seconds=player.get_quiz_timer('cooking'),
     )
 
 

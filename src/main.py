@@ -781,6 +781,9 @@ STATE_STORY_POPUP    = 'story_popup'     # Narrative popup (quest intro, boss de
 STATE_MYSTERY_APPROACH = 'mystery_approach'  # Player is approaching a mystery altar
 STATE_SHOP             = 'shop'              # Merchant shop overlay
 STATE_POWER_MENU       = 'power_menu'        # Active powers menu (V key)
+STATE_HACK_REALITY     = 'hack_reality'      # Hack Reality result display
+STATE_QUIRKS           = 'quirks'            # Quirks progress browser
+STATE_CHARACTER_SHEET  = 'character_sheet'   # Detailed character info
 
 # ---------------------------------------------------------------------------
 # Spells learnable from spellbooks  (spell_id -> attributes)
@@ -1199,7 +1202,8 @@ class Game:
                               STATE_IDENTIFY_MENU, STATE_COOK_MENU,
                               STATE_CONFIRM_EXIT, STATE_TARGET,
                               STATE_EAT_MENU, STATE_QUAFF_MENU, STATE_HELP, STATE_LORE,
-                              STATE_SPELL_MENU, STATE_HINT,
+                              STATE_SPELL_MENU, STATE_HINT, STATE_HACK_REALITY, STATE_QUIRKS,
+                              STATE_CHARACTER_SHEET,
                               STATE_EXAMINE, STATE_ENCYCLOPEDIA,
                               STATE_DROP_MENU, STATE_DROP_GOLD_INPUT,
                               STATE_MYSTERY_APPROACH, STATE_SHOP,
@@ -1228,6 +1232,9 @@ class Game:
                 return True
             if event.unicode == '?':
                 self.state = STATE_HELP
+                return True
+            if event.unicode == '@':
+                self._open_character_sheet()
                 return True
             self._player_input(key)
         elif self.state == STATE_TARGET:
@@ -1262,6 +1269,12 @@ class Game:
             self._encyclopedia_input(key)
         elif self.state == STATE_HINT:
             self.state = STATE_PLAYER   # any key dismisses hint overlay
+        elif self.state == STATE_HACK_REALITY:
+            self.state = STATE_PLAYER   # any key dismisses hack reality overlay
+        elif self.state == STATE_QUIRKS:
+            self._quirks_input(key)
+        elif self.state == STATE_CHARACTER_SHEET:
+            self._character_sheet_input(key)
         elif self.state == STATE_DROP_MENU:
             self._drop_menu_input(key)
         elif self.state == STATE_DROP_GOLD_INPUT:
@@ -1372,6 +1385,12 @@ class Game:
             return
         if key == pygame.K_v:
             self._open_power_menu()
+            return
+        if key == pygame.K_w:
+            self._start_hack_reality()
+            return
+        if key == pygame.K_o:
+            self._open_quirks_screen()
             return
 
         if key not in self._MOVE_KEYS:
@@ -1842,6 +1861,10 @@ class Game:
         # Decrement recall lore cooldown
         if self.player.recall_lore_cooldown > 0:
             self.player.recall_lore_cooldown -= 1
+
+        # Decrement hack reality cooldown
+        if self.player.hack_reality_cooldown > 0:
+            self.player.hack_reality_cooldown -= 1
 
         # Tick monster status effects (DOT damage, duration expiry)
         for m in self.monsters:
@@ -2348,6 +2371,7 @@ class Game:
             'wisdom':         self.player.WIS,
             'timer_modifier': self.player.get_quiz_timer_modifier(),
             'extra_seconds':  self.player.get_quiz_extra_seconds(ch['subject']),
+            'base_seconds':   self.player.get_quiz_timer(ch['subject']),
         }
         if 'max_chain' in ch:
             quiz_kwargs['max_chain'] = ch['max_chain']
@@ -2736,6 +2760,7 @@ class Game:
             wisdom=self.player.WIS,
             timer_modifier=self.player.get_quiz_timer_modifier(),
             extra_seconds=self.player.get_quiz_extra_seconds('theology'),
+            base_seconds=self.player.get_quiz_timer('theology'),
         )
 
     def _resolve_prayer(self, chain: int, at_altar: bool = False):
@@ -2928,6 +2953,7 @@ class Game:
             wisdom=self.player.WIS,
             timer_modifier=self.player.get_quiz_timer_modifier(),
             extra_seconds=self.player.get_quiz_extra_seconds('trivia'),
+            base_seconds=self.player.get_quiz_timer('trivia'),
         )
 
     def _resolve_recall_lore(self, chain: int):
@@ -2966,6 +2992,625 @@ class Game:
         hint = _rng.choice(pool)
         self._lore_hint_text = hint
         self._lore_hint_chain = chain
+
+    # ------------------------------------------------------------------
+    # Hack Reality
+    # ------------------------------------------------------------------
+
+    def _start_hack_reality(self):
+        """Begin a Hack Reality session -- escalator chain AI quiz. Cooldown-gated."""
+        if self.player.hack_reality_cooldown > 0:
+            self.add_message(
+                f"Reality is still stabilizing. "
+                f"({self.player.hack_reality_cooldown} turns remain)", 'warning'
+            )
+            return
+        self.add_message("You reach into the code of reality itself...", 'info')
+        self.quiz_title = "HACK REALITY -- AI"
+        self.state = STATE_QUIZ
+
+        def on_complete(result):
+            chain = result.score
+            self._resolve_hack_reality(chain)
+            self.state = STATE_HACK_REALITY
+            self._advance_turn()
+
+        self.quiz_engine.start_quiz(
+            mode='escalator_chain',
+            subject='ai',
+            tier=1,
+            callback=on_complete,
+            max_chain=5,
+            wisdom=self.player.WIS,
+            timer_modifier=self.player.get_quiz_timer_modifier(),
+            extra_seconds=self.player.get_quiz_extra_seconds('ai'),
+            base_seconds=self.player.get_quiz_timer('ai'),
+        )
+
+    def _resolve_hack_reality(self, chain: int):
+        """Apply hack reality rewards based on chain score. Set cooldown."""
+        import random as _rng
+        p = self.player
+
+        # Cooldown: long (150-300 turns); longer for better rewards
+        if chain == 0:
+            p.hack_reality_cooldown = 100
+            self.add_message("SEGFAULT. Reality rejects your probe.", 'warning')
+            self._hack_result_lines = [("SYSTEM CRASH", (255, 60, 60))]
+            self._hack_result_chain = 0
+            return
+
+        p.hack_reality_cooldown = 150 + chain * 30   # 180 .. 300 turns
+
+        msgs = []
+        result_lines = []
+
+        _HACK_LABELS = {
+            1: "BUFFER OVERFLOW",
+            2: "PRIVILEGE ESCALATION",
+            3: "ROOT ACCESS",
+            4: "KERNEL EXPLOIT",
+            5: "SINGULARITY",
+        }
+        result_lines.append((_HACK_LABELS.get(chain, "HACK"), (0, 255, 180)))
+
+        # Chain 1+: Restore 30% HP + 30% SP
+        if chain >= 1:
+            hp_heal = max(1, int(p.max_hp * 0.30))
+            sp_heal = max(1, int(p.max_sp * 0.30))
+            p.hp = min(p.max_hp, p.hp + hp_heal)
+            p.sp = min(p.max_sp, p.sp + sp_heal)
+            result_lines.append((f"HP restored +{hp_heal}, SP restored +{sp_heal}", (100, 255, 160)))
+            msgs.append(f"Reality patches your body. (+{hp_heal} HP, +{sp_heal} SP)")
+
+        # Chain 2+: Remove all negative status effects + grant hasted
+        if chain >= 2:
+            _NEGATIVES = ['poisoned', 'paralyzed', 'confused', 'bleeding',
+                          'blinded', 'sleeping', 'slowed', 'weakened', 'cursed']
+            removed = []
+            for neg in _NEGATIVES:
+                if p.status_effects.get(neg, 0) > 0:
+                    p.status_effects.pop(neg, None)
+                    removed.append(neg)
+            p.add_effect('hasted', 15)
+            if removed:
+                result_lines.append((f"Purged: {', '.join(removed)}", (180, 255, 180)))
+            result_lines.append(("Haste protocol engaged (15 turns)", (100, 200, 255)))
+            msgs.append("All debuffs purged. Haste protocol engaged!")
+
+        # Chain 3+: Full HP/SP restore + shielded + regenerating
+        if chain >= 3:
+            p.hp = p.max_hp
+            p.sp = p.max_sp
+            p.mp = p.max_mp
+            p.add_effect('shielded', 20)
+            p.add_effect('regenerating', 20)
+            result_lines.append(("Full system restore: HP/SP/MP maximized", (0, 255, 200)))
+            result_lines.append(("Shield matrix active (20 turns)", (100, 180, 255)))
+            result_lines.append(("Auto-repair engaged (20 turns)", (100, 255, 180)))
+            msgs.append("Full system restore! Shield matrix and auto-repair online.")
+
+        # Chain 4+: Permanent +1 to random stat
+        if chain >= 4:
+            stat = _rng.choice(['STR', 'CON', 'DEX', 'INT', 'WIS', 'PER'])
+            p.apply_stat_bonus(stat, 1)
+            p.hack_reality_count += 1
+            result_lines.append((f"Kernel rewrite: {stat} permanently +1", (255, 220, 80)))
+            msgs.append(f"Kernel-level rewrite: {stat} permanently increased!")
+
+        # Chain 5: Spawn a legendary item
+        if chain >= 5:
+            item = self._hack_reality_spawn_legendary()
+            if item:
+                result_lines.append((f"Materialized: {item.name}", (255, 180, 255)))
+                msgs.append(f"Reality bends -- {item.name} materializes at your feet!")
+            else:
+                # Fallback: extra stat bonus if no legendaries found
+                stat2 = _rng.choice(['STR', 'CON', 'DEX', 'INT', 'WIS', 'PER'])
+                p.apply_stat_bonus(stat2, 1)
+                result_lines.append((f"Bonus rewrite: {stat2} permanently +1", (255, 220, 80)))
+                msgs.append(f"Reality overflow -- {stat2} permanently increased!")
+
+        for msg in msgs:
+            self.add_message(msg, 'good')
+
+        self._hack_result_lines = result_lines
+        self._hack_result_chain = chain
+
+    def _hack_reality_spawn_legendary(self):
+        """Spawn a random named-legendary item at the player's feet."""
+        import random as _rng
+        from items import load_items, copy_at
+        _MATERIAL_PREFIXES = ('iron_', 'steel_', 'mithril_', 'adamantine_',
+                              'dragonbone_', 'bronze_', 'elven_', 'orcish_', 'dwarven_')
+        p = self.player
+        legendary_pool = []
+        for cls_name in ('weapon', 'armor', 'shield', 'accessory', 'wand', 'scroll', 'ammo'):
+            try:
+                for item in load_items(cls_name):
+                    if getattr(item, 'container_loot_tier', '') == 'legendary':
+                        if not any(item.id.startswith(pfx) for pfx in _MATERIAL_PREFIXES):
+                            legendary_pool.append(item)
+            except FileNotFoundError:
+                pass
+        if not legendary_pool:
+            return None
+        template = _rng.choice(legendary_pool)
+        item = copy_at(template, p.x, p.y)
+        self.ground_items.append(item)
+        return item
+
+    def _draw_hack_reality_screen(self):
+        """Display the Hack Reality result -- cyberpunk terminal overlay."""
+        from fantasy_ui import FP, get_font
+        result_lines = getattr(self, '_hack_result_lines', None)
+        chain = getattr(self, '_hack_result_chain', 0)
+        if result_lines is None:
+            self.state = STATE_PLAYER
+            return
+
+        overlay = pygame.Surface((WINDOW_W, WINDOW_H), pygame.SRCALPHA)
+        overlay.fill((0, 0, 0, 200))
+        self.screen.blit(overlay, (0, 0))
+
+        bw, bh = 760, 340
+        bx = (GAME_W - bw) // 2
+        by = (WINDOW_H - bh) // 2
+
+        # Dark terminal background with green border
+        pygame.draw.rect(self.screen, (8, 16, 8), (bx, by, bw, bh), border_radius=6)
+        pygame.draw.rect(self.screen, (0, 200, 80), (bx, by, bw, bh), 2, border_radius=6)
+        pygame.draw.rect(self.screen, (0, 100, 40), (bx+3, by+3, bw-6, bh-6), 1, border_radius=4)
+
+        font_title = get_font('heading', 22)
+        font_body  = get_font('body', 18)
+        font_small = get_font('body', 15)
+
+        # Title with chain rating
+        _CHAIN_LABELS = {
+            0: "ACCESS DENIED",
+            1: "Level 1 Breach",
+            2: "Level 2 Breach",
+            3: "Level 3 Breach",
+            4: "Level 4 Breach",
+            5: "FULL PENETRATION",
+        }
+        label = _CHAIN_LABELS.get(chain, "Breach")
+        bar = '>' * chain + '_' * (5 - chain)
+        title_color = (0, 255, 120) if chain > 0 else (255, 60, 60)
+        title_surf = font_title.render(f"HACK REALITY  //  {label}", True, title_color)
+        self.screen.blit(title_surf, (bx + (bw - title_surf.get_width()) // 2, by + 14))
+
+        bar_surf = font_small.render(f"[{bar}]  depth={chain}/5", True, (0, 180, 80))
+        self.screen.blit(bar_surf, (bx + (bw - bar_surf.get_width()) // 2, by + 42))
+
+        pygame.draw.line(self.screen, (0, 120, 50),
+                         (bx + 20, by + 62), (bx + bw - 20, by + 62))
+
+        # Result lines (word-wrapped)
+        y = by + 76
+        for text, color in result_lines:
+            wrapped = self._wrap_text("> " + text, font_body, 710)
+            for wl in wrapped:
+                surf = font_body.render(wl, True, color)
+                self.screen.blit(surf, (bx + 24, y))
+                y += font_body.get_height() + 4
+
+        # Cooldown notice
+        cd = self.player.hack_reality_cooldown
+        cd_surf = font_small.render(
+            f"Reality stabilizes in {cd} turns  //  [ any key ] to close",
+            True, (0, 100, 50)
+        )
+        self.screen.blit(cd_surf, (bx + (bw - cd_surf.get_width()) // 2, by + bh - 24))
+
+    # ------------------------------------------------------------------
+    # Quirks screen
+    # ------------------------------------------------------------------
+
+    def _open_quirks_screen(self):
+        self._quirks_scroll = 0
+        qs = getattr(self, 'quirk_system', None)
+        if qs:
+            self._quirks_data = qs.get_all_quirk_info()
+        else:
+            self._quirks_data = []
+        self.state = STATE_QUIRKS
+
+    def _quirks_input(self, key: int):
+        if key in (pygame.K_ESCAPE, pygame.K_o, pygame.K_RETURN, pygame.K_SPACE):
+            self.state = STATE_PLAYER
+            return
+        if key in (pygame.K_UP, pygame.K_k):
+            self._quirks_scroll = max(0, self._quirks_scroll - 1)
+        elif key in (pygame.K_DOWN, pygame.K_j):
+            self._quirks_scroll += 1
+        elif key == pygame.K_PAGEUP:
+            self._quirks_scroll = max(0, self._quirks_scroll - 10)
+        elif key == pygame.K_PAGEDOWN:
+            self._quirks_scroll += 10
+        elif key == pygame.K_HOME:
+            self._quirks_scroll = 0
+        elif key == pygame.K_END:
+            self._quirks_scroll = max(0, len(self._quirks_data) - 1)
+
+    def _draw_quirks_screen(self):
+        from fantasy_ui import FP, get_font
+        data = getattr(self, '_quirks_data', [])
+        scroll = getattr(self, '_quirks_scroll', 0)
+
+        overlay = pygame.Surface((WINDOW_W, WINDOW_H), pygame.SRCALPHA)
+        overlay.fill((0, 0, 0, 210))
+        self.screen.blit(overlay, (0, 0))
+
+        bw, bh = 900, 700
+        bx = (GAME_W - bw) // 2
+        by = (WINDOW_H - bh) // 2
+
+        # Panel background
+        pygame.draw.rect(self.screen, (16, 12, 24), (bx, by, bw, bh), border_radius=8)
+        pygame.draw.rect(self.screen, (140, 100, 200), (bx, by, bw, bh), 2, border_radius=8)
+        pygame.draw.rect(self.screen, (70, 50, 100), (bx+3, by+3, bw-6, bh-6), 1, border_radius=6)
+
+        font_title = get_font('heading', 20)
+        font_name  = get_font('body', 16)
+        font_small = get_font('body', 13)
+
+        unlocked_count = sum(1 for _, _, _, u, _, _ in data if u)
+        title_surf = font_title.render(
+            f"QUIRKS  ({unlocked_count}/{len(data)} unlocked)", True, (200, 170, 255))
+        self.screen.blit(title_surf, (bx + (bw - title_surf.get_width()) // 2, by + 10))
+
+        pygame.draw.line(self.screen, (100, 70, 140),
+                         (bx + 20, by + 36), (bx + bw - 20, by + 36))
+
+        # Calculate how many entries fit
+        # Unlocked entries: 3 lines (name+bar, effect, trigger) = ~48px
+        # Locked entries: 2 lines (name, bar) = ~32px
+        # Use fixed row height for scrolling simplicity
+        ROW_H_LOCKED = 30
+        ROW_H_UNLOCKED = 54
+        content_top = by + 42
+        content_bot = by + bh - 28
+        avail_h = content_bot - content_top
+
+        # Clamp scroll
+        max_scroll = max(0, len(data) - 1)
+        scroll = min(scroll, max_scroll)
+        self._quirks_scroll = scroll
+
+        # Render entries
+        y = content_top
+        for idx in range(scroll, len(data)):
+            if y >= content_bot:
+                break
+            qid, name, pct, unlocked, effect, trigger = data[idx]
+            pct_int = int(pct * 100)
+
+            if unlocked:
+                # Name in gold
+                name_surf = font_name.render(f"{name}", True, (255, 220, 100))
+                # Wrap reward and trigger lines
+                wrap_w = bw - 48
+                eff_lines = self._wrap_text(f"  Reward: {effect}", font_small, wrap_w)
+                trig_lines = self._wrap_text(f"  How: {trigger}", font_small, wrap_w)
+                needed_h = 18 + len(eff_lines) * 16 + len(trig_lines) * 16 + 4
+                if y + needed_h > content_bot:
+                    break
+                self.screen.blit(name_surf, (bx + 24, y))
+                # "UNLOCKED" badge
+                badge = font_small.render("UNLOCKED", True, (100, 255, 120))
+                self.screen.blit(badge, (bx + bw - 100, y + 2))
+                y += 18
+                # Effect text (wrapped)
+                for el in eff_lines:
+                    self.screen.blit(font_small.render(el, True, (180, 220, 180)), (bx + 24, y))
+                    y += 16
+                # Trigger text (wrapped)
+                for tl in trig_lines:
+                    self.screen.blit(font_small.render(tl, True, (150, 150, 170)), (bx + 24, y))
+                    y += 16
+                y += 4
+            else:
+                needed_h = ROW_H_LOCKED
+                if y + needed_h > content_bot:
+                    break
+                # Name in dim white
+                name_surf = font_name.render(self._fit_text(f"{name}", font_name, 650), True, (160, 150, 180))
+                self.screen.blit(name_surf, (bx + 24, y))
+                # Progress bar
+                bar_x = bx + bw - 220
+                bar_w = 150
+                bar_h = 10
+                bar_y = y + 5
+                pygame.draw.rect(self.screen, (40, 30, 60), (bar_x, bar_y, bar_w, bar_h))
+                fill_w = int(bar_w * pct)
+                if fill_w > 0:
+                    bar_color = (140, 100, 200) if pct < 1.0 else (100, 255, 120)
+                    pygame.draw.rect(self.screen, bar_color, (bar_x, bar_y, fill_w, bar_h))
+                pygame.draw.rect(self.screen, (80, 60, 120), (bar_x, bar_y, bar_w, bar_h), 1)
+                # Percentage text
+                pct_surf = font_small.render(f"{pct_int}%", True, (120, 110, 150))
+                self.screen.blit(pct_surf, (bar_x + bar_w + 6, y + 1))
+                y += ROW_H_LOCKED
+
+        # Footer
+        footer = font_small.render(
+            "Up/Down: scroll   PgUp/PgDn: jump   ESC: close", True, (90, 80, 120))
+        self.screen.blit(footer, (bx + (bw - footer.get_width()) // 2, by + bh - 22))
+
+    # ------------------------------------------------------------------
+    # Character sheet  (@)
+    # ------------------------------------------------------------------
+
+    def _open_character_sheet(self):
+        self._charsheet_scroll = 0
+        self.state = STATE_CHARACTER_SHEET
+
+    def _character_sheet_input(self, key):
+        if key in (pygame.K_ESCAPE, pygame.K_RETURN, pygame.K_SPACE):
+            self.state = STATE_PLAYER
+            return
+        if key in (pygame.K_UP, pygame.K_k):
+            self._charsheet_scroll = max(0, self._charsheet_scroll - 1)
+        elif key in (pygame.K_DOWN, pygame.K_j):
+            self._charsheet_scroll += 1
+        elif key == pygame.K_PAGEUP:
+            self._charsheet_scroll = max(0, self._charsheet_scroll - 10)
+        elif key == pygame.K_PAGEDOWN:
+            self._charsheet_scroll += 10
+        elif key == pygame.K_HOME:
+            self._charsheet_scroll = 0
+        elif key == pygame.K_END:
+            self._charsheet_scroll = 9999
+
+    def _draw_character_sheet(self):
+        from fantasy_ui import FP, get_font
+        from items import ARMOR_SLOTS
+        from status_effects import EFFECT_INFO
+
+        p = self.player
+
+        overlay = pygame.Surface((WINDOW_W, WINDOW_H), pygame.SRCALPHA)
+        overlay.fill((0, 0, 0, 210))
+        self.screen.blit(overlay, (0, 0))
+
+        bw, bh = 920, 720
+        bx = (GAME_W - bw) // 2
+        by = (WINDOW_H - bh) // 2
+
+        # Panel background
+        pygame.draw.rect(self.screen, (12, 14, 22), (bx, by, bw, bh), border_radius=8)
+        pygame.draw.rect(self.screen, (100, 140, 200), (bx, by, bw, bh), 2, border_radius=8)
+        pygame.draw.rect(self.screen, (50, 70, 100), (bx+3, by+3, bw-6, bh-6), 1, border_radius=6)
+
+        font_title = get_font('heading', 20)
+        font_head  = get_font('heading', 15)
+        font_body  = get_font('body', 14)
+        font_small = get_font('body', 12)
+        max_text_w = bw - 48
+
+        # Build lines: list of (text, color, font, is_section_header)
+        lines = []
+        GOLD   = (255, 220, 100)
+        WHITE  = (220, 220, 230)
+        DIM    = (150, 150, 170)
+        GREEN  = (100, 230, 120)
+        RED    = (230, 100, 100)
+        CYAN   = (120, 210, 240)
+        PURPLE = (200, 170, 255)
+
+        # --- Stats ---
+        lines.append(("PRIMARY STATS", GOLD, font_head, True))
+        stat_names = [('STR', 'Strength'), ('CON', 'Constitution'), ('DEX', 'Dexterity'),
+                      ('INT', 'Intelligence'), ('WIS', 'Wisdom'), ('PER', 'Perception')]
+        for abbr, full in stat_names:
+            val = getattr(p, abbr)
+            color = GREEN if val > 10 else RED if val < 10 else WHITE
+            lines.append((f"  {abbr} {val:>3}  ({full})", color, font_body, False))
+
+        # --- Resources ---
+        lines.append(("", DIM, font_small, False))
+        lines.append(("RESOURCES", GOLD, font_head, True))
+        lines.append((f"  HP:  {p.hp} / {p.max_hp}", GREEN if p.hp > p.max_hp * 0.5 else RED, font_body, False))
+        lines.append((f"  SP:  {p.sp} / {p.max_sp}", GREEN if p.sp > 60 else RED, font_body, False))
+        lines.append((f"  MP:  {p.mp} / {p.max_mp}", CYAN, font_body, False))
+        lines.append((f"  AC:  {p.get_ac()}  (lower is better)", WHITE, font_body, False))
+        lines.append((f"  Gold: {self.player_gold}", (255, 215, 80), font_body, False))
+
+        # --- Carry weight ---
+        cur_w = p.get_current_weight()
+        max_w = p.get_carry_limit()
+        pct = cur_w / max_w if max_w > 0 else 0
+        w_color = GREEN if pct < 0.7 else (255, 200, 60) if pct < 0.9 else RED
+        lines.append((f"  Weight: {cur_w:.1f} / {max_w}  ({pct*100:.0f}%)", w_color, font_body, False))
+
+        # --- Derived stats ---
+        lines.append(("", DIM, font_small, False))
+        lines.append(("DERIVED STATS", GOLD, font_head, True))
+        lines.append((f"  Sight radius:  {p.get_sight_radius()} tiles", WHITE, font_body, False))
+        timer_mod = p.get_quiz_timer_modifier()
+        math_t = round(p.get_quiz_timer('math') * timer_mod, 1)
+        econ_t = round(p.get_quiz_timer('economics') * timer_mod, 1)
+        lines.append((f"  Quiz timer:    {math_t}s (combat) to {econ_t}s (text-heavy)  x{timer_mod}", WHITE, font_body, False))
+        int_bonus = p.get_int_quiz_bonus()
+        if int_bonus > 0:
+            lines.append((f"    +{int_bonus}s on magic subjects (INT bonus)", DIM, font_small, False))
+
+        # --- Equipment ---
+        lines.append(("", DIM, font_small, False))
+        lines.append(("EQUIPMENT", GOLD, font_head, True))
+        slot_items = [
+            ('Weapon', p.weapon),
+            ('Shield', p.shield),
+        ]
+        for i, slot_name in enumerate(ARMOR_SLOTS):
+            slot_items.append((slot_name.title(), p.armor_slots[i]))
+        for i, acc in enumerate(p.accessory_slots):
+            slot_items.append((f"Ring {i+1}", acc))
+        slot_items.append(('Amulet', p.amulet_slot))
+
+        for label, item in slot_items:
+            if item:
+                name = self._display_name(item)
+                enchant = getattr(item, 'enchant_bonus', 0)
+                cursed = getattr(item, 'cursed', False)
+                suffix = ""
+                if enchant != 0:
+                    suffix += f" +{enchant}" if enchant > 0 else f" {enchant}"
+                if cursed:
+                    suffix += " {cursed}"
+                lines.append((f"  {label:8s}: {name}{suffix}", WHITE, font_body, False))
+            else:
+                lines.append((f"  {label:8s}: (empty)", DIM, font_body, False))
+
+        # --- Status Effects ---
+        active_effects = [(eid, dur) for eid, dur in p.status_effects.items() if dur != 0]
+        if active_effects:
+            lines.append(("", DIM, font_small, False))
+            lines.append(("STATUS EFFECTS", GOLD, font_head, True))
+            for eid, dur in sorted(active_effects, key=lambda x: x[0]):
+                info = EFFECT_INFO.get(eid)
+                if info:
+                    display_name, color, desc = info
+                else:
+                    display_name, color, desc = eid.replace('_', ' ').title(), WHITE, ''
+                dur_str = "permanent" if dur == -1 else f"{dur} turns"
+                # Try to find source
+                source = self._get_effect_source(eid)
+                src_str = f"  ({source})" if source else ""
+                lines.append((f"  {display_name}: {dur_str}{src_str}", color, font_body, False))
+                if desc:
+                    lines.append((f"    {desc}", DIM, font_small, False))
+
+        # --- Resistances ---
+        if p.resistances:
+            lines.append(("", DIM, font_small, False))
+            lines.append(("DAMAGE RESISTANCES", GOLD, font_head, True))
+            for dtype, mult in sorted(p.resistances.items()):
+                if mult == 0.0:
+                    r_str = "Immune"
+                    r_color = GREEN
+                elif mult < 1.0:
+                    r_str = f"{(1.0-mult)*100:.0f}% reduction"
+                    r_color = (120, 200, 160)
+                else:
+                    r_str = f"{(mult-1.0)*100:.0f}% vulnerability"
+                    r_color = RED
+                lines.append((f"  {dtype.title():12s}: {r_str}  (x{mult:.2f})", r_color, font_body, False))
+
+        # --- Spells ---
+        if p.known_spells:
+            lines.append(("", DIM, font_small, False))
+            lines.append(("KNOWN SPELLS", GOLD, font_head, True))
+            for spell_id, cost in sorted(p.known_spells.items()):
+                spell_name = spell_id.replace('_', ' ').title()
+                lines.append((f"  {spell_name}  ({cost} MP)", PURPLE, font_body, False))
+
+        # --- Cooldowns ---
+        cds = []
+        if p.prayer_cooldown > 0:
+            cds.append(f"Prayer: {p.prayer_cooldown}t")
+        if p.recall_lore_cooldown > 0:
+            cds.append(f"Recall Lore: {p.recall_lore_cooldown}t")
+        if p.hack_reality_cooldown > 0:
+            cds.append(f"Hack Reality: {p.hack_reality_cooldown}t")
+        if cds:
+            lines.append(("", DIM, font_small, False))
+            lines.append(("COOLDOWNS", GOLD, font_head, True))
+            for cd in cds:
+                lines.append((f"  {cd}", (200, 180, 100), font_body, False))
+
+        # --- Game stats ---
+        lines.append(("", DIM, font_small, False))
+        lines.append(("GAME STATISTICS", GOLD, font_head, True))
+        lines.append((f"  Dungeon level:   {self.dungeon_level}", WHITE, font_body, False))
+        lines.append((f"  Turns elapsed:   {self.turn_count}", WHITE, font_body, False))
+        correct = getattr(self, 'correct_answers', 0)
+        wrong = getattr(self, 'wrong_answers', 0)
+        total_q = correct + wrong
+        acc = (correct / total_q * 100) if total_q > 0 else 0
+        lines.append((f"  Questions:       {correct}/{total_q} correct ({acc:.0f}%)", WHITE, font_body, False))
+        kills = getattr(self, 'monsters_killed', 0)
+        lines.append((f"  Monsters slain:  {kills}", WHITE, font_body, False))
+        lines.append((f"  Quirks unlocked: {len(p.unlocked_quirks)}", WHITE, font_body, False))
+
+        # --- Render with scrolling ---
+        scroll = getattr(self, '_charsheet_scroll', 0)
+        content_top = by + 42
+        content_bot = by + bh - 28
+        avail_h = content_bot - content_top
+        line_h = 18
+
+        max_scroll = max(0, len(lines) - avail_h // line_h)
+        scroll = min(scroll, max_scroll)
+        self._charsheet_scroll = scroll
+
+        # Title
+        title_surf = font_title.render("CHARACTER SHEET", True, (160, 200, 255))
+        self.screen.blit(title_surf, (bx + (bw - title_surf.get_width()) // 2, by + 10))
+        pygame.draw.line(self.screen, (60, 80, 140),
+                         (bx + 20, by + 36), (bx + bw - 20, by + 36))
+
+        # Clip and render lines (word-wrapped)
+        y = content_top
+        for idx in range(scroll, len(lines)):
+            if y + line_h > content_bot:
+                break
+            text, color, font, is_header = lines[idx]
+            if not text:
+                y += 6  # spacer
+                continue
+            wrapped = self._wrap_text(text, font, max_text_w)
+            for wl in wrapped:
+                if y + line_h > content_bot:
+                    break
+                surf = font.render(wl, True, color)
+                self.screen.blit(surf, (bx + 24, y))
+                y += line_h
+            if is_header:
+                y += 4
+
+        # Scroll indicator
+        if max_scroll > 0:
+            pct = scroll / max_scroll if max_scroll > 0 else 0
+            track_h = content_bot - content_top - 20
+            thumb_h = max(20, int(track_h * avail_h / (len(lines) * line_h)))
+            thumb_y = content_top + int(pct * (track_h - thumb_h))
+            pygame.draw.rect(self.screen, (40, 50, 70), (bx + bw - 18, content_top, 8, track_h))
+            pygame.draw.rect(self.screen, (100, 140, 200), (bx + bw - 18, thumb_y, 8, thumb_h), border_radius=3)
+
+        # Footer
+        footer = font_small.render(
+            "Up/Down: scroll   PgUp/PgDn: jump   ESC: close", True, (70, 90, 130))
+        self.screen.blit(footer, (bx + (bw - footer.get_width()) // 2, by + bh - 22))
+
+    def _get_effect_source(self, effect_id: str) -> str:
+        """Try to determine what's causing a status effect."""
+        p = self.player
+        # Check weapon on_equip_status
+        if p.weapon and getattr(p.weapon, 'on_equip_status', '') == effect_id:
+            return p.weapon.name
+        # Check armor on_equip_status
+        for slot in p.armor_slots:
+            if slot and getattr(slot, 'on_equip_status', '') == effect_id:
+                return slot.name
+        # Check shield
+        if p.shield and getattr(p.shield, 'on_equip_status', '') == effect_id:
+            return p.shield.name
+        # Check accessories (ring/amulet effects)
+        for acc in p.accessory_slots:
+            if acc and hasattr(acc, 'effects'):
+                if acc.effects.get('status') == effect_id:
+                    return acc.name
+        if p.amulet_slot and hasattr(p.amulet_slot, 'effects'):
+            if p.amulet_slot.effects.get('status') == effect_id:
+                return p.amulet_slot.name
+        # Timed effects are likely from potions/wands/monsters
+        dur = p.status_effects.get(effect_id, 0)
+        if dur == -1:
+            return "permanent"
+        return ""
 
     # ------------------------------------------------------------------
     # Equip menu
@@ -3161,6 +3806,7 @@ class Game:
             wisdom=self.player.WIS,
             timer_modifier=self.player.get_quiz_timer_modifier(),
             extra_seconds=self.player.get_quiz_extra_seconds('geography'),
+            base_seconds=self.player.get_quiz_timer('geography'),
         )
 
     # ------------------------------------------------------------------
@@ -3240,6 +3886,7 @@ class Game:
             wisdom=self.player.WIS,
             timer_modifier=self.player.get_quiz_timer_modifier(),
             extra_seconds=self.player.get_quiz_extra_seconds('history'),
+            base_seconds=self.player.get_quiz_timer('history'),
         )
 
     # ------------------------------------------------------------------
@@ -3328,6 +3975,7 @@ class Game:
             timer_modifier=self.player.get_quiz_timer_modifier(),
             extra_seconds=self.player.get_int_quiz_bonus() +
                           self.player.get_quiz_extra_seconds('science'),
+            base_seconds=self.player.get_quiz_timer('science'),
         )
 
     def _apply_wand_effect(self, wand: 'Wand'):
@@ -4049,6 +4697,7 @@ class Game:
             timer_modifier=self.player.get_quiz_timer_modifier(),
             extra_seconds=self.player.get_int_quiz_bonus() +
                           self.player.get_quiz_extra_seconds('science'),
+            base_seconds=self.player.get_quiz_timer('science'),
         )
 
     def _apply_spell_effect(self, spell: dict, chain: int, target=None):
@@ -4232,6 +4881,7 @@ class Game:
             timer_modifier=self.player.get_quiz_timer_modifier(),
             extra_seconds=self.player.get_int_quiz_bonus() +
                           self.player.get_quiz_extra_seconds('grammar'),
+            base_seconds=self.player.get_quiz_timer('grammar'),
         )
 
     def _apply_scroll_effect(self, scroll: 'Scroll'):
@@ -4564,6 +5214,7 @@ class Game:
             wisdom=self.player.WIS,
             timer_modifier=self.player.get_quiz_timer_modifier(),
             extra_seconds=self.player.get_int_quiz_bonus(),
+            base_seconds=self.player.get_quiz_timer('philosophy'),
         )
 
     def _learn_from_spellbook(self, book: 'Spellbook'):
@@ -4599,6 +5250,7 @@ class Game:
             wisdom=self.player.WIS,
             timer_modifier=self.player.get_quiz_timer_modifier(),
             extra_seconds=self.player.get_int_quiz_bonus(),
+            base_seconds=self.player.get_quiz_timer('grammar'),
         )
 
     def _propagate_identification(self, item_id: str):
@@ -5125,6 +5777,12 @@ class Game:
             self._draw_lore_screen()
         elif self.state == STATE_HINT:
             self._draw_hint_screen()
+        elif self.state == STATE_HACK_REALITY:
+            self._draw_hack_reality_screen()
+        elif self.state == STATE_QUIRKS:
+            self._draw_quirks_screen()
+        elif self.state == STATE_CHARACTER_SHEET:
+            self._draw_character_sheet()
         elif self.state == STATE_EXAMINE:
             self._draw_examine_menu()
         elif self.state == STATE_ENCYCLOPEDIA:
@@ -5248,6 +5906,15 @@ class Game:
         'theology':   (200, 170,  80),
         'trivia':     (255, 200, 100),
     }
+
+    @staticmethod
+    def _fit_text(text: str, font: pygame.font.Font, max_w: int) -> str:
+        """Truncate text with '...' if it exceeds max_w pixels."""
+        if font.size(text)[0] <= max_w:
+            return text
+        while len(text) > 1 and font.size(text + '...')[0] > max_w:
+            text = text[:-1]
+        return text + '...'
 
     @staticmethod
     def _wrap_text(text: str, font: pygame.font.Font, max_w: int) -> list[str]:
@@ -5641,7 +6308,7 @@ class Game:
                     self.font_md.render(f"[{i+1}]", True, FP.GOLD_BRIGHT), (bx + 18, iy + 12)
                 )
                 self.screen.blit(
-                    self.font_md.render(self._display_name(item), True, FP.BODY_TEXT),
+                    self.font_md.render(self._fit_text(self._display_name(item), self.font_md, bw - 70 - 20), True, FP.BODY_TEXT),
                     (bx + 70, iy + 12)
                 )
                 if isinstance(item, Weapon):
@@ -5696,7 +6363,7 @@ class Game:
                 cursed = getattr(item, 'cursed', False)
                 name_col = FP.DANGER_TEXT if cursed else FP.GOLD_PALE
                 self.screen.blit(
-                    self.font_md.render(self._display_name(item), True, name_col),
+                    self.font_md.render(self._fit_text(self._display_name(item), self.font_md, bw - 70 - 20), True, name_col),
                     (bx + 70, iy + 12)
                 )
                 detail_text = f"[{slot_name}]"
@@ -5762,7 +6429,7 @@ class Game:
                 self.font_md.render(f"[{i+1}]", True, FP.GOLD_BRIGHT), (bx + 18, iy + 14)
             )
             self.screen.blit(
-                self.font_md.render(dname, True, FP.BODY_TEXT), (bx + 70, iy + 14)
+                self.font_md.render(self._fit_text(dname, self.font_md, bw - 70 - 20), True, FP.BODY_TEXT), (bx + 70, iy + 14)
             )
             if item.identified or item.id in self.player.known_item_ids:
                 fx = item.effects
@@ -5829,7 +6496,7 @@ class Game:
                 self.font_md.render(f"[{i+1}]", True, FP.GOLD_BRIGHT), (bx + 18, iy + 14)
             )
             self.screen.blit(
-                self.font_md.render(dname, True, FP.BODY_TEXT), (bx + 70, iy + 14)
+                self.font_md.render(self._fit_text(dname, self.font_md, bw - 70 - 20), True, FP.BODY_TEXT), (bx + 70, iy + 14)
             )
             charge_surf = self.font_sm.render(f"charges: {item.charges}/{item.max_charges}",
                                               True, charge_color)
@@ -5837,7 +6504,7 @@ class Game:
             if item.identified or item.id in self.player.known_item_ids:
                 effect_x = bx + 70 + charge_surf.get_width() + 24
                 self.screen.blit(
-                    self.font_sm.render(f"effect: {item.effect}", True, FP.GOLD_PALE),
+                    self.font_sm.render(self._fit_text(f"effect: {item.effect}", self.font_sm, bw - (70 + charge_surf.get_width() + 24) - 20), True, FP.GOLD_PALE),
                     (effect_x, iy + 40)
                 )
 
@@ -5890,15 +6557,12 @@ class Game:
                 self.font_md.render(f"[{key_lbl}]", True, FP.GOLD_BRIGHT), (bx + 18, iy + 12)
             )
             self.screen.blit(
-                self.font_md.render(spell.get('name', '?'), True, name_color), (bx + 70, iy + 12)
+                self.font_md.render(self._fit_text(spell.get('name', '?'), self.font_md, bw - 70 - 20), True, name_color), (bx + 70, iy + 12)
             )
             detail_text = f"tier {tier}  |  {mp_cost} MP  |  {spell.get('desc','')}"
-            detail_surf = self.font_sm.render(detail_text, True, tier_color)
-            if detail_surf.get_width() > max_detail_w:
-                while len(detail_text) > 1 and self.font_sm.size(detail_text + '\u2026')[0] > max_detail_w:
-                    detail_text = detail_text[:-1]
-                detail_surf = self.font_sm.render(detail_text + '\u2026', True, tier_color)
-            self.screen.blit(detail_surf, (bx + 70, iy + 38))
+            detail_wrapped = self._wrap_text(detail_text, self.font_sm, max_detail_w)
+            for di, dl in enumerate(detail_wrapped[:2]):
+                self.screen.blit(self.font_sm.render(dl, True, tier_color), (bx + 70, iy + 38 + di * 14))
             cy += ROW_H
         hint_y = by + bh - 34
         draw_divider(self.screen, bx + 10, hint_y - 8, bw - 20)
@@ -5946,7 +6610,7 @@ class Game:
             is_book = isinstance(item, Spellbook)
             name_color = (100, 200, 255) if is_book else FP.BODY_TEXT
             self.screen.blit(
-                self.font_md.render(dname, True, name_color), (bx + 70, iy + 14)
+                self.font_md.render(self._fit_text(dname, self.font_md, bw - 70 - 20), True, name_color), (bx + 70, iy + 14)
             )
             if is_book:
                 known = item.spell_id in self.player.known_spells
@@ -6025,7 +6689,7 @@ class Game:
                                  (bx + 10, iy, bw - 20, ROW_H - 8), border_radius=6)
                 dname = self._display_name(item)
                 self.screen.blit(self.font_md.render(f"[{i+1}]", True, FP.GOLD_BRIGHT), (bx + 18, iy + 10))
-                self.screen.blit(self.font_md.render(dname, True, name_color), (bx + 70, iy + 10))
+                self.screen.blit(self.font_md.render(self._fit_text(dname, self.font_md, bw - 70 - 20), True, name_color), (bx + 70, iy + 10))
                 if isinstance(item, Corpse):
                     lore_status = "[EXAMINED]" if item.lore_identified else "[UNEXAMINED]"
                     detail_text = f"Corpse  {lore_status}"
@@ -6141,7 +6805,7 @@ class Game:
                     (bx + 18, iy + 10)
                 )
                 self.screen.blit(
-                    self.font_md.render(recipe['name'], True, FP.GOLD_PALE),
+                    self.font_md.render(self._fit_text(recipe['name'], self.font_md, bw - 70 - 20), True, FP.GOLD_PALE),
                     (bx + 70, iy + 10)
                 )
                 for li, dl in enumerate(detail_lines):
@@ -6174,7 +6838,7 @@ class Game:
                     (bx + 18, iy + 10)
                 )
                 self.screen.blit(
-                    self.font_md.render(self._display_name(item), True, FP.BODY_TEXT),
+                    self.font_md.render(self._fit_text(self._display_name(item), self.font_md, bw - 70 - 20), True, FP.BODY_TEXT),
                     (bx + 70, iy + 10)
                 )
                 best = item.recipes.get('5', item.recipes.get('3', {}))
@@ -6234,7 +6898,7 @@ class Game:
                 dname = self._display_name(item)
                 col   = FP.PARCHMENT_LIGHT
             line   = f"  {letter})  {dname}"
-            surf   = self.font_md.render(line, True, col)
+            surf   = self.font_md.render(self._fit_text(line, self.font_md, bw - 16 - 20), True, col)
             self.screen.blit(surf, (bx + 16, y_off + i * row_h))
         esc_surf = self.font_sm.render("ESC to cancel", True, FP.FADED_TEXT)
         self.screen.blit(esc_surf, (bx + (bw - esc_surf.get_width()) // 2, by + bh - 24))
@@ -6278,7 +6942,7 @@ class Game:
                 (bx + 18, iy + 14)
             )
             self.screen.blit(
-                self.font_md.render(self._display_name(item), True, FP.BODY_TEXT),
+                self.font_md.render(self._fit_text(self._display_name(item), self.font_md, bw - 70 - 20), True, FP.BODY_TEXT),
                 (bx + 70, iy + 14)
             )
             if isinstance(item, Food):
@@ -6347,7 +7011,7 @@ class Game:
                 (bx + 50, iy + 14)
             )
             self.screen.blit(
-                self.font_md.render(self._display_name(item), True, FP.BODY_TEXT),
+                self.font_md.render(self._fit_text(self._display_name(item), self.font_md, bw - 100 - 20), True, FP.BODY_TEXT),
                 (bx + 100, iy + 14)
             )
             # Detail line
@@ -6361,7 +7025,7 @@ class Game:
             else:
                 detail_text = "effect unknown -- identify to reveal"
                 detail_col = FP.FADED_TEXT
-            detail_surf = self.font_sm.render(detail_text, True, detail_col)
+            detail_surf = self.font_sm.render(self._fit_text(detail_text, self.font_sm, bw - 100 - 20), True, detail_col)
             self.screen.blit(detail_surf, (bx + 100, iy + 40))
         hint_y = by + bh - 34
         draw_divider(self.screen, bx + 10, hint_y - 8, bw - 20)
@@ -6621,7 +7285,7 @@ class Game:
             )
             label_col = FP.BODY_TEXT if ready else FP.FADED_TEXT
             self.screen.blit(
-                self.font_md.render(pdef.get('label', pid), True, label_col),
+                self.font_md.render(self._fit_text(pdef.get('label', pid), self.font_md, 620), True, label_col),
                 (bx + 56, iy + 12)
             )
             # Uses / cooldown badge
@@ -6633,9 +7297,10 @@ class Game:
                 badge_col = FP.SUCCESS_TEXT if cooldown == 0 else (200, 160, 80)
             badge_surf = self.font_sm.render(badge_txt, True, badge_col)
             self.screen.blit(badge_surf, (bx + bw - badge_surf.get_width() - 18, iy + 14))
-            # Description line
-            desc_surf = self.font_sm.render(pdef.get('desc', ''), True, FP.FADED_TEXT)
-            self.screen.blit(desc_surf, (bx + 56, iy + 38))
+            # Description line(s) — word-wrapped
+            desc_lines = self._wrap_text(pdef.get('desc', ''), self.font_sm, bw - 76)
+            for di, dl in enumerate(desc_lines[:2]):
+                self.screen.blit(self.font_sm.render(dl, True, FP.FADED_TEXT), (bx + 56, iy + 38 + di * 14))
         hint_y = by + bh - 34
         draw_divider(self.screen, bx + 10, hint_y - 8, bw - 20)
         self.screen.blit(
@@ -6654,7 +7319,7 @@ class Game:
                         font=self.font_lg, text_color=FP.GOLD_BRIGHT)
 
         sub = "Your run will be saved so you can resume it later."
-        sub_surf = self.font_md.render(sub, True, FP.BODY_TEXT)
+        sub_surf = self.font_md.render(self._fit_text(sub, self.font_md, 520), True, FP.BODY_TEXT)
         self.screen.blit(sub_surf, (bx + (bw - sub_surf.get_width()) // 2, by + 58))
 
         draw_divider(self.screen, bx + 20, by + 96, bw - 40)
@@ -6685,7 +7350,7 @@ class Game:
             'title': 'THE PHILOSOPHER\'S QUEST',
             'accent': (80, 120, 200),
             'lines': [
-                "Your village of Aethon is dying.",
+                "Your village of Amber is dying.",
                 "",
                 "A magical plague -- born of corruption and forgotten wisdom -- has spread",
                 "through every home, every hearth, every life you have ever known.",
@@ -6801,7 +7466,7 @@ class Game:
                 "You descended into the darkness, faced and defeated five legendary adversaries,",
                 "claimed the Philosopher's Stone, and returned to the light.",
                 "",
-                "Your village of Aethon will be saved.",
+                "Your village of Amber will be saved.",
                 "The plague will lift. The children will recover.",
                 "The elders will weep with relief.",
                 "The people who counted on you -- who believed in you --",
@@ -6831,7 +7496,7 @@ class Game:
                 "The Philosopher's Stone remains at the bottom of the dungeon.",
                 "Unreached. Unclaimed. Its wisdom wasted on the dark.",
                 "",
-                "The village of Aethon will not see another spring.",
+                "The village of Amber will not see another spring.",
                 "",
                 "You were not overcome by the dungeon.",
                 "You overcame yourself -- and chose retreat.",
@@ -7176,6 +7841,7 @@ class Game:
             timer_modifier=self.player.get_quiz_timer_modifier(),
             extra_seconds=self.player.get_int_quiz_bonus() +
                           self.player.get_quiz_extra_seconds('philosophy'),
+            base_seconds=self.player.get_quiz_timer('philosophy'),
         )
 
     def _examine_corpse(self):
@@ -7229,6 +7895,7 @@ class Game:
             timer_modifier=self.player.get_quiz_timer_modifier(),
             extra_seconds=self.player.get_int_quiz_bonus() +
                           self.player.get_quiz_extra_seconds('philosophy'),
+            base_seconds=self.player.get_quiz_timer('philosophy'),
         )
 
     def _lore_input(self, key: int):
@@ -7712,7 +8379,7 @@ class Game:
                 self.font_md.render(f"[{i+1}]", True, FP.GOLD_BRIGHT), (bx + 18, iy + 10)
             )
             self.screen.blit(
-                self.font_md.render(dname, True, FP.BODY_TEXT), (bx + 70, iy + 10)
+                self.font_md.render(self._fit_text(dname, self.font_md, bw - 70 - 20), True, FP.BODY_TEXT), (bx + 70, iy + 10)
             )
             if type_label:
                 type_surf = self.font_sm.render(f"[{type_label}]", True, FP.GOLD_PALE)
@@ -7831,7 +8498,7 @@ class Game:
                     bg_surf.fill(bg_col)
                     self.screen.blit(bg_surf, bg_r.topleft)
                 prefix = "> " if is_sel else "  "
-                line_s = self.font_md.render(prefix + line, True, fg)
+                line_s = self.font_md.render(self._fit_text(prefix + line, self.font_md, 500), True, fg)
                 self.screen.blit(line_s, (cx - 260, row_y))
                 row_y += row_h
 
@@ -8145,7 +8812,7 @@ class Game:
                 entry_name = entry.get('name', entry.get('_id', '?'))
                 name_col = FP.GOLD_PALE if is_sel else FP.BODY_TEXT
                 self.screen.blit(
-                    self.font_md.render(self._fix_name_case(entry_name), True, name_col),
+                    self.font_md.render(self._fit_text(self._fix_name_case(entry_name), self.font_md, 600), True, name_col),
                     (bx + 20, iy + 8)
                 )
                 # Brief extra info on same row
@@ -8278,7 +8945,9 @@ class Game:
             ("T",              "Visit merchant shop",              FP.BODY_TEXT),
             ("INFORMATION", None, FP.GOLD_PALE),
             ("X",              "Examine inventory items",          FP.BODY_TEXT),
+            ("@",              "Character sheet",                  FP.BODY_TEXT),
             ("B",              "Encyclopedia",                     FP.BODY_TEXT),
+            ("O",              "Quirks progress",                  FP.BODY_TEXT),
             ("V",              "Activate quirk power",             FP.BODY_TEXT),
             ("KNOWLEDGE", None, FP.GOLD_PALE),
             ("\\",             "Pray at altar",                    (200, 180, 255)),

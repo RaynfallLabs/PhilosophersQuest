@@ -1,0 +1,2828 @@
+[
+  {
+    "tier": 1,
+    "question": "What does AI stand for?",
+    "answer": "Artificial Intelligence",
+    "choices": ["Artificial Intelligence", "Automatic Information", "Advanced Internet", "Applied Innovation"]
+  },
+  {
+    "tier": 1,
+    "question": "Can computers learn from experience?",
+    "answer": "Yes",
+    "choices": ["Yes", "No", "Only if they have legs", "Only on weekends"]
+  },
+  {
+    "tier": 1,
+    "question": "What is a robot?",
+    "answer": "A machine that can perform tasks",
+    "choices": ["A machine that can perform tasks", "A type of animal", "A kind of food", "A musical instrument"]
+  },
+  {
+    "tier": 1,
+    "question": "Who made ChatGPT?",
+    "answer": "OpenAI",
+    "choices": ["OpenAI", "Google", "Apple", "Microsoft"]
+  },
+  {
+    "tier": 1,
+    "question": "Can AI write stories?",
+    "answer": "Yes",
+    "choices": ["Yes", "No", "Only in French", "Only on paper"]
+  },
+  {
+    "tier": 1,
+    "question": "Can AI play chess?",
+    "answer": "Yes",
+    "choices": ["Yes", "No", "Only against children", "Only on Tuesdays"]
+  },
+  {
+    "tier": 1,
+    "question": "What is a computer program?",
+    "answer": "A set of instructions for a computer",
+    "choices": ["A set of instructions for a computer", "A TV show about computers", "A computer's battery", "A type of keyboard"]
+  },
+  {
+    "tier": 1,
+    "question": "Can AI draw pictures?",
+    "answer": "Yes",
+    "choices": ["Yes", "No", "Only stick figures", "Only in black and white"]
+  },
+  {
+    "tier": 1,
+    "question": "What does a search engine like Google do?",
+    "answer": "Helps you find information on the internet",
+    "choices": ["Helps you find information on the internet", "Fixes your car engine", "Makes phone calls", "Prints documents"]
+  },
+  {
+    "tier": 1,
+    "question": "What is data?",
+    "answer": "Information that computers can use",
+    "choices": ["Information that computers can use", "A type of robot", "A computer game", "A keyboard shortcut"]
+  },
+  {
+    "tier": 1,
+    "question": "What is a chatbot?",
+    "answer": "A program that can have conversations",
+    "choices": ["A program that can have conversations", "A robot that chats at parties", "A type of phone", "A social media website"]
+  },
+  {
+    "tier": 1,
+    "question": "Can AI recognize faces in photos?",
+    "answer": "Yes",
+    "choices": ["Yes", "No", "Only cartoon faces", "Only if you smile"]
+  },
+  {
+    "tier": 1,
+    "question": "What is an algorithm?",
+    "answer": "A step-by-step set of instructions",
+    "choices": ["A step-by-step set of instructions", "A type of dance", "A math symbol", "A computer screen"]
+  },
+  {
+    "tier": 1,
+    "question": "What device do you use to talk to Siri or Alexa?",
+    "answer": "A smartphone or smart speaker",
+    "choices": ["A smartphone or smart speaker", "A toaster", "A bicycle", "A calculator"]
+  },
+  {
+    "tier": 1,
+    "question": "Can AI help translate languages?",
+    "answer": "Yes",
+    "choices": ["Yes", "No", "Only ancient languages", "Only sign language"]
+  },
+  {
+    "tier": 1,
+    "question": "What is the internet?",
+    "answer": "A global network connecting computers",
+    "choices": ["A global network connecting computers", "A single giant computer", "A type of software", "A satellite in space"]
+  },
+  {
+    "tier": 1,
+    "question": "What is a voice assistant?",
+    "answer": "AI that responds to spoken commands",
+    "choices": ["AI that responds to spoken commands", "A person who answers phones", "A microphone brand", "A type of speaker"]
+  },
+  {
+    "tier": 1,
+    "question": "Can AI help doctors?",
+    "answer": "Yes, it can help analyze medical images",
+    "choices": ["Yes, it can help analyze medical images", "No, AI cannot help with medicine", "Only animal doctors", "Only dentists"]
+  },
+  {
+    "tier": 1,
+    "question": "What is Siri?",
+    "answer": "Apple's voice assistant",
+    "choices": ["Apple's voice assistant", "A video game character", "A search engine", "A social media app"]
+  },
+  {
+    "tier": 1,
+    "question": "What is Alexa?",
+    "answer": "Amazon's voice assistant",
+    "choices": ["Amazon's voice assistant", "A robot toy", "A computer virus", "A type of phone"]
+  },
+  {
+    "tier": 1,
+    "question": "Can AI recommend movies you might like?",
+    "answer": "Yes",
+    "choices": ["Yes", "No", "Only horror movies", "Only old movies"]
+  },
+  {
+    "tier": 1,
+    "question": "What does a computer need to learn?",
+    "answer": "Data",
+    "choices": ["Data", "Feelings", "A teacher's license", "Sunlight"]
+  },
+  {
+    "tier": 1,
+    "question": "Can AI make music?",
+    "answer": "Yes",
+    "choices": ["Yes", "No", "Only drums", "Only classical music"]
+  },
+  {
+    "tier": 1,
+    "question": "What is a smart home device?",
+    "answer": "A device connected to the internet that you can control",
+    "choices": ["A device connected to the internet that you can control", "A house made of computers", "A very expensive house", "A robot maid"]
+  },
+  {
+    "tier": 1,
+    "question": "Who is more creative, humans or AI?",
+    "answer": "Humans",
+    "choices": ["Humans", "AI", "They are exactly equal", "Neither is creative"]
+  },
+  {
+    "tier": 1,
+    "question": "Can AI understand human emotions perfectly?",
+    "answer": "No, it can detect some but not truly understand them",
+    "choices": ["No, it can detect some but not truly understand them", "Yes, perfectly", "Only happiness", "Only anger"]
+  },
+  {
+    "tier": 1,
+    "question": "What is a selfie filter that changes your face an example of?",
+    "answer": "AI image processing",
+    "choices": ["AI image processing", "Magic", "Photography skills", "A camera setting"]
+  },
+  {
+    "tier": 1,
+    "question": "Can AI beat humans at board games?",
+    "answer": "Yes, at many board games",
+    "choices": ["Yes, at many board games", "No, never", "Only at checkers", "Only if it cheats"]
+  },
+  {
+    "tier": 1,
+    "question": "What is spam filtering in email?",
+    "answer": "AI sorting out junk messages",
+    "choices": ["AI sorting out junk messages", "Removing canned meat", "Deleting all emails", "A type of virus"]
+  },
+  {
+    "tier": 1,
+    "question": "What is autocomplete on your phone?",
+    "answer": "AI predicting what you want to type next",
+    "choices": ["AI predicting what you want to type next", "A spelling test", "A phone game", "A keyboard brand"]
+  },
+  {
+    "tier": 1,
+    "question": "Is AI alive?",
+    "answer": "No, it is a computer program",
+    "choices": ["No, it is a computer program", "Yes, it is alive", "Only some AIs are alive", "It depends on the weather"]
+  },
+  {
+    "tier": 1,
+    "question": "Can AI drive cars?",
+    "answer": "Yes, self-driving cars use AI",
+    "choices": ["Yes, self-driving cars use AI", "No, cars cannot use AI", "Only race cars", "Only in video games"]
+  },
+  {
+    "tier": 1,
+    "question": "What is a computer's brain called?",
+    "answer": "A processor (CPU)",
+    "choices": ["A processor (CPU)", "A hard drive", "A monitor", "A keyboard"]
+  },
+  {
+    "tier": 1,
+    "question": "What should you do if AI gives you wrong information?",
+    "answer": "Check with a trusted source",
+    "choices": ["Check with a trusted source", "Believe it anyway", "Get angry at the computer", "Turn off the internet"]
+  },
+  {
+    "tier": 1,
+    "question": "Can AI tell the difference between a cat and a dog in photos?",
+    "answer": "Yes",
+    "choices": ["Yes", "No", "Only if they are sitting", "Only cartoon ones"]
+  },
+  {
+    "tier": 1,
+    "question": "What kind of AI do video games often use?",
+    "answer": "AI that controls non-player characters",
+    "choices": ["AI that controls non-player characters", "AI that builds the console", "AI that pays for the game", "AI that designs the box art"]
+  },
+  {
+    "tier": 1,
+    "question": "What is the most important thing AI needs to learn?",
+    "answer": "Lots of examples and data",
+    "choices": ["Lots of examples and data", "A college degree", "A human body", "Emotions"]
+  },
+  {
+    "tier": 1,
+    "question": "What does GPS navigation use to find the best route?",
+    "answer": "Algorithms",
+    "choices": ["Algorithms", "Magic", "Guessing", "Asking other drivers"]
+  },
+  {
+    "tier": 1,
+    "question": "Can you ask AI to help you with homework?",
+    "answer": "Yes, but you should learn from it, not just copy",
+    "choices": ["Yes, but you should learn from it, not just copy", "No, AI cannot help with homework", "Only math homework", "Only on weekends"]
+  },
+  {
+    "tier": 1,
+    "question": "What company makes the iPhone's Siri?",
+    "answer": "Apple",
+    "choices": ["Apple", "Google", "Amazon", "Samsung"]
+  },
+  {
+    "tier": 1,
+    "question": "What is a computer virus?",
+    "answer": "A harmful program that can damage your computer",
+    "choices": ["A harmful program that can damage your computer", "A sickness computers catch from humans", "A type of AI", "A broken screen"]
+  },
+  {
+    "tier": 1,
+    "question": "Can AI help people who cannot see?",
+    "answer": "Yes, it can describe images and read text aloud",
+    "choices": ["Yes, it can describe images and read text aloud", "No, AI only works with screens", "Only in hospitals", "Only with special glasses"]
+  },
+  {
+    "tier": 1,
+    "question": "What is YouTube's recommendation system?",
+    "answer": "AI that suggests videos you might enjoy",
+    "choices": ["AI that suggests videos you might enjoy", "A person picking videos for you", "Random video selection", "The most popular videos only"]
+  },
+  {
+    "tier": 1,
+    "question": "What is the difference between a robot and AI?",
+    "answer": "A robot is a physical machine; AI is software that thinks",
+    "choices": ["A robot is a physical machine; AI is software that thinks", "They are the same thing", "Robots are bigger", "AI is always evil"]
+  },
+  {
+    "tier": 1,
+    "question": "Can AI help predict the weather?",
+    "answer": "Yes",
+    "choices": ["Yes", "No", "Only sunny weather", "Only in winter"]
+  },
+  {
+    "tier": 1,
+    "question": "What does a spell checker use to find mistakes?",
+    "answer": "Rules and AI to compare against correct words",
+    "choices": ["Rules and AI to compare against correct words", "A dictionary fairy", "Human editors checking live", "Magic ink"]
+  },
+  {
+    "tier": 1,
+    "question": "What year was the first electronic computer built?",
+    "answer": "The 1940s",
+    "choices": ["The 1940s", "The 1800s", "The 1990s", "The 2000s"]
+  },
+  {
+    "tier": 1,
+    "question": "What is coding?",
+    "answer": "Writing instructions for a computer",
+    "choices": ["Writing instructions for a computer", "A secret language", "Drawing on a computer", "Playing video games"]
+  },
+  {
+    "tier": 1,
+    "question": "Can AI think exactly like a human?",
+    "answer": "No, it processes information differently",
+    "choices": ["No, it processes information differently", "Yes, exactly the same", "Only when it is turned on", "Only adult AI can"]
+  },
+  {
+    "tier": 1,
+    "question": "What is a password used for?",
+    "answer": "Keeping your accounts safe",
+    "choices": ["Keeping your accounts safe", "Making your computer faster", "Connecting to AI", "Downloading games"]
+  },
+  {
+    "tier": 1,
+    "question": "What is facial recognition?",
+    "answer": "AI that can identify people by their faces",
+    "choices": ["AI that can identify people by their faces", "A mirror app", "A photo editor", "A camera brand"]
+  },
+  {
+    "tier": 1,
+    "question": "What is the name of Google's voice assistant?",
+    "answer": "Google Assistant",
+    "choices": ["Google Assistant", "Google Helper", "Google Brain", "Google Friend"]
+  },
+  {
+    "tier": 1,
+    "question": "Can AI create new recipes for cooking?",
+    "answer": "Yes",
+    "choices": ["Yes", "No", "Only desserts", "Only simple recipes"]
+  },
+  {
+    "tier": 1,
+    "question": "What happens when you say 'Hey Siri' to an iPhone?",
+    "answer": "The voice assistant activates and listens",
+    "choices": ["The voice assistant activates and listens", "The phone turns off", "It takes a photo", "It makes a phone call"]
+  },
+  {
+    "tier": 1,
+    "question": "What is a drone?",
+    "answer": "An unmanned flying machine, often using AI",
+    "choices": ["An unmanned flying machine, often using AI", "A musical instrument", "A type of computer", "A video game"]
+  },
+  {
+    "tier": 1,
+    "question": "Can AI help scientists discover new medicines?",
+    "answer": "Yes",
+    "choices": ["Yes", "No", "Only vitamins", "Only for animals"]
+  },
+  {
+    "tier": 1,
+    "question": "What does 'training' an AI mean?",
+    "answer": "Teaching it by showing it many examples",
+    "choices": ["Teaching it by showing it many examples", "Taking it to the gym", "Installing new parts", "Turning it on and off"]
+  },
+  {
+    "tier": 1,
+    "question": "What is a pixel?",
+    "answer": "A tiny dot that makes up a digital image",
+    "choices": ["A tiny dot that makes up a digital image", "A small robot", "A computer game character", "A type of AI"]
+  },
+  {
+    "tier": 1,
+    "question": "Can AI read handwriting?",
+    "answer": "Yes, with special training",
+    "choices": ["Yes, with special training", "No, only typed text", "Only in English", "Only printed letters"]
+  },
+  {
+    "tier": 1,
+    "question": "What is WiFi?",
+    "answer": "Wireless internet connection",
+    "choices": ["Wireless internet connection", "A type of AI", "A computer game", "A robot name"]
+  },
+  {
+    "tier": 1,
+    "question": "What does 'virtual' mean in technology?",
+    "answer": "Something that exists on a computer, not physically",
+    "choices": ["Something that exists on a computer, not physically", "Something very large", "Something very fast", "Something broken"]
+  },
+  {
+    "tier": 1,
+    "question": "Can AI count objects in a picture?",
+    "answer": "Yes",
+    "choices": ["Yes", "No", "Only up to ten", "Only round objects"]
+  },
+  {
+    "tier": 1,
+    "question": "What does download mean?",
+    "answer": "Copying data from the internet to your device",
+    "choices": ["Copying data from the internet to your device", "Deleting files", "Turning off your computer", "Sending an email"]
+  },
+  {
+    "tier": 1,
+    "question": "What is a touchscreen?",
+    "answer": "A screen you control by touching it",
+    "choices": ["A screen you control by touching it", "A screen that touches you", "A fragile screen", "A screen with AI inside"]
+  },
+  {
+    "tier": 1,
+    "question": "Can AI help with recycling?",
+    "answer": "Yes, it can sort recyclable materials",
+    "choices": ["Yes, it can sort recyclable materials", "No, recycling is only done by hand", "Only plastic", "Only in factories"]
+  },
+  {
+    "tier": 1,
+    "question": "What is the cloud in computing?",
+    "answer": "Storing data on remote servers accessed via internet",
+    "choices": ["Storing data on remote servers accessed via internet", "An actual cloud in the sky", "A white computer", "A wireless keyboard"]
+  },
+  {
+    "tier": 1,
+    "question": "What is text-to-speech?",
+    "answer": "AI reading text out loud",
+    "choices": ["AI reading text out loud", "Typing very fast", "A phone app for texting", "Speech therapy software"]
+  },
+  {
+    "tier": 1,
+    "question": "Can AI help farmers grow better crops?",
+    "answer": "Yes, by analyzing soil and weather data",
+    "choices": ["Yes, by analyzing soil and weather data", "No, farming does not use technology", "Only corn", "Only in greenhouses"]
+  },
+  {
+    "tier": 1,
+    "question": "What is an app?",
+    "answer": "A software application on a phone or computer",
+    "choices": ["A software application on a phone or computer", "A type of AI brain", "A physical button", "A computer cable"]
+  },
+  {
+    "tier": 1,
+    "question": "What is speech recognition?",
+    "answer": "AI that understands spoken words",
+    "choices": ["AI that understands spoken words", "A hearing test", "A microphone brand", "A type of music"]
+  },
+  {
+    "tier": 1,
+    "question": "Can AI translate between languages in real time?",
+    "answer": "Yes",
+    "choices": ["Yes", "No", "Only written text", "Only European languages"]
+  },
+  {
+    "tier": 1,
+    "question": "What is a digital assistant?",
+    "answer": "An AI program that helps with tasks",
+    "choices": ["An AI program that helps with tasks", "A human helper", "A computer repair person", "A type of phone"]
+  },
+  {
+    "tier": 1,
+    "question": "What should you never share with an AI chatbot?",
+    "answer": "Passwords and personal private information",
+    "choices": ["Passwords and personal private information", "Your favorite color", "What you had for lunch", "Your favorite movie"]
+  },
+  {
+    "tier": 1,
+    "question": "What is image recognition?",
+    "answer": "AI identifying what is in a picture",
+    "choices": ["AI identifying what is in a picture", "Taking a photograph", "Drawing on a tablet", "Printing a poster"]
+  },
+  {
+    "tier": 1,
+    "question": "Can AI help you learn a new language?",
+    "answer": "Yes, apps like Duolingo use AI",
+    "choices": ["Yes, apps like Duolingo use AI", "No, only humans can teach languages", "Only Spanish", "Only adults can use language AI"]
+  },
+  {
+    "tier": 1,
+    "question": "What is a self-driving car?",
+    "answer": "A car that uses AI to drive without a human",
+    "choices": ["A car that uses AI to drive without a human", "A car that drives very fast", "A remote control car", "A car with no engine"]
+  },
+  {
+    "tier": 1,
+    "question": "Is everything you read on the internet true?",
+    "answer": "No, you should always check facts",
+    "choices": ["No, you should always check facts", "Yes, everything online is true", "Only news websites are true", "Only AI-generated content is true"]
+  },
+  {
+    "tier": 1,
+    "question": "What company made Alexa?",
+    "answer": "Amazon",
+    "choices": ["Amazon", "Apple", "Google", "Microsoft"]
+  },
+  {
+    "tier": 1,
+    "question": "Can AI recognize different animal sounds?",
+    "answer": "Yes",
+    "choices": ["Yes", "No", "Only dog barks", "Only bird songs"]
+  },
+  {
+    "tier": 1,
+    "question": "What is typing called when the computer finishes your words?",
+    "answer": "Autocomplete",
+    "choices": ["Autocomplete", "Auto-type", "Speed writing", "Word magic"]
+  },
+  {
+    "tier": 1,
+    "question": "What powers most AI systems?",
+    "answer": "Powerful computers and lots of data",
+    "choices": ["Powerful computers and lots of data", "Magic crystals", "Solar panels only", "Human brains connected by wires"]
+  },
+  {
+    "tier": 1,
+    "question": "Can AI generate human-like voices?",
+    "answer": "Yes",
+    "choices": ["Yes", "No", "Only whispers", "Only robotic voices"]
+  },
+  {
+    "tier": 1,
+    "question": "What is a QR code?",
+    "answer": "A pattern a computer can scan to get information",
+    "choices": ["A pattern a computer can scan to get information", "A secret AI language", "A type of barcode only for books", "A computer error message"]
+  },
+  {
+    "tier": 1,
+    "question": "Can AI help with spelling and grammar?",
+    "answer": "Yes",
+    "choices": ["Yes", "No", "Only spelling", "Only in English"]
+  },
+  {
+    "tier": 1,
+    "question": "What is a video game NPC?",
+    "answer": "A non-player character controlled by the computer",
+    "choices": ["A non-player character controlled by the computer", "A new player connection", "A type of game console", "A game developer"]
+  },
+  {
+    "tier": 1,
+    "question": "Can AI work all day without getting tired?",
+    "answer": "Yes, computers do not get tired",
+    "choices": ["Yes, computers do not get tired", "No, they need sleep too", "Only for 8 hours", "Only with coffee"]
+  },
+  {
+    "tier": 1,
+    "question": "What is the main thing that makes AI different from a regular program?",
+    "answer": "AI can learn and improve from data",
+    "choices": ["AI can learn and improve from data", "AI is always connected to the internet", "AI has feelings", "AI is always a robot"]
+  },
+  {
+    "tier": 1,
+    "question": "What is an emoji?",
+    "answer": "A small digital icon used to express ideas",
+    "choices": ["A small digital icon used to express ideas", "An AI language", "A computer virus", "A type of password"]
+  },
+  {
+    "tier": 1,
+    "question": "Can AI help protect the environment?",
+    "answer": "Yes, by tracking pollution and wildlife",
+    "choices": ["Yes, by tracking pollution and wildlife", "No, AI uses too much power", "Only in the ocean", "Only in forests"]
+  },
+  {
+    "tier": 1,
+    "question": "What is a tablet computer?",
+    "answer": "A flat touchscreen device like an iPad",
+    "choices": ["A flat touchscreen device like an iPad", "A stone tablet with carvings", "A very small laptop", "A type of AI"]
+  },
+  {
+    "tier": 1,
+    "question": "Does AI have feelings?",
+    "answer": "No, AI simulates responses but does not feel",
+    "choices": ["No, AI simulates responses but does not feel", "Yes, all AI has feelings", "Only advanced AI has feelings", "Only when it is sad"]
+  },
+  {
+    "tier": 1,
+    "question": "Can AI help find lost pets?",
+    "answer": "Yes, using image recognition and databases",
+    "choices": ["Yes, using image recognition and databases", "No, only humans can find lost pets", "Only lost dogs", "Only with a GPS collar"]
+  },
+  {
+    "tier": 1,
+    "question": "What is streaming?",
+    "answer": "Watching or listening to content over the internet in real time",
+    "choices": ["Watching or listening to content over the internet in real time", "Downloading files very quickly", "A type of AI program", "A river of data cables"]
+  },
+  {
+    "tier": 1,
+    "question": "What does USB stand for?",
+    "answer": "Universal Serial Bus",
+    "choices": ["Universal Serial Bus", "Ultra Smart Brain", "United System Base", "Unified Software Bridge"]
+  },
+  {
+    "tier": 1,
+    "question": "Can AI summarize long articles for you?",
+    "answer": "Yes",
+    "choices": ["Yes", "No", "Only news articles", "Only if they are short"]
+  },
+  {
+    "tier": 1,
+    "question": "What is Bluetooth?",
+    "answer": "A wireless technology for connecting devices nearby",
+    "choices": ["A wireless technology for connecting devices nearby", "An AI assistant", "A blue-colored computer", "A dental technology"]
+  },
+  {
+    "tier": 1,
+    "question": "Can AI identify plants from photos?",
+    "answer": "Yes",
+    "choices": ["Yes", "No", "Only trees", "Only flowers"]
+  },
+  {
+    "tier": 1,
+    "question": "What is a software update?",
+    "answer": "A new version of a program with improvements or fixes",
+    "choices": ["A new version of a program with improvements or fixes", "Buying a new computer", "Restarting your phone", "Deleting old files"]
+  },
+  {
+    "tier": 2,
+    "question": "What is machine learning?",
+    "answer": "A type of AI that learns from data without being explicitly programmed",
+    "choices": ["A type of AI that learns from data without being explicitly programmed", "Teaching machines to walk", "A machine that learns to talk", "Programming every rule by hand"]
+  },
+  {
+    "tier": 2,
+    "question": "What is training data?",
+    "answer": "Examples used to teach an AI model",
+    "choices": ["Examples used to teach an AI model", "Data about trains", "Exercise data from a fitness app", "Data stored in a training manual"]
+  },
+  {
+    "tier": 2,
+    "question": "Who is Alan Turing?",
+    "answer": "A pioneer of computer science and AI",
+    "choices": ["A pioneer of computer science and AI", "The inventor of the internet", "The founder of Google", "A famous robot builder"]
+  },
+  {
+    "tier": 2,
+    "question": "What is the Turing Test?",
+    "answer": "A test to see if AI can fool a human into thinking it is human",
+    "choices": ["A test to see if AI can fool a human into thinking it is human", "A test of computer speed", "A test of robot strength", "A typing speed test"]
+  },
+  {
+    "tier": 2,
+    "question": "What is a neural network inspired by?",
+    "answer": "The human brain",
+    "choices": ["The human brain", "The solar system", "The internet", "A spider's web"]
+  },
+  {
+    "tier": 2,
+    "question": "What is narrow AI?",
+    "answer": "AI designed to do one specific task well",
+    "choices": ["AI designed to do one specific task well", "AI that is very small", "AI that is not very smart", "AI that only works on phones"]
+  },
+  {
+    "tier": 2,
+    "question": "What is general AI?",
+    "answer": "A hypothetical AI that can do any intellectual task a human can",
+    "choices": ["A hypothetical AI that can do any intellectual task a human can", "AI used by generals in the military", "AI that is average at everything", "AI that everyone can use for free"]
+  },
+  {
+    "tier": 2,
+    "question": "What is a prompt in AI?",
+    "answer": "The text or instruction you give to an AI",
+    "choices": ["The text or instruction you give to an AI", "A reminder on your phone", "The AI's response", "A loading screen message"]
+  },
+  {
+    "tier": 2,
+    "question": "What is bias in AI?",
+    "answer": "When AI makes unfair decisions due to flawed training data",
+    "choices": ["When AI makes unfair decisions due to flawed training data", "When AI runs too slowly", "When AI costs too much money", "When AI gives correct answers"]
+  },
+  {
+    "tier": 2,
+    "question": "What is a large language model?",
+    "answer": "An AI trained on vast amounts of text to understand and generate language",
+    "choices": ["An AI trained on vast amounts of text to understand and generate language", "A very long dictionary", "A translation device", "A computer with a large keyboard"]
+  },
+  {
+    "tier": 2,
+    "question": "What is natural language processing?",
+    "answer": "AI that understands and works with human language",
+    "choices": ["AI that understands and works with human language", "Speaking naturally without thinking", "Processing food in nature", "Learning languages in the wild"]
+  },
+  {
+    "tier": 2,
+    "question": "What is computer vision?",
+    "answer": "AI that can understand and interpret images",
+    "choices": ["AI that can understand and interpret images", "A computer with a camera", "A new type of monitor", "Glasses for computers"]
+  },
+  {
+    "tier": 2,
+    "question": "How do recommendation systems work?",
+    "answer": "By analyzing your past behavior to predict what you will like",
+    "choices": ["By analyzing your past behavior to predict what you will like", "By randomly choosing content", "By asking your friends what they like", "By showing the most expensive items first"]
+  },
+  {
+    "tier": 2,
+    "question": "Should you trust everything an AI tells you?",
+    "answer": "No, AI can make mistakes and should be fact-checked",
+    "choices": ["No, AI can make mistakes and should be fact-checked", "Yes, AI is always correct", "Only if it is a famous AI", "Only for math questions"]
+  },
+  {
+    "tier": 2,
+    "question": "What is a dataset?",
+    "answer": "A collection of data used for analysis or training AI",
+    "choices": ["A collection of data used for analysis or training AI", "A setting on your computer", "A type of database error", "A data cable set"]
+  },
+  {
+    "tier": 2,
+    "question": "What company created the AI assistant Claude?",
+    "answer": "Anthropic",
+    "choices": ["Anthropic", "OpenAI", "Google", "Meta"]
+  },
+  {
+    "tier": 2,
+    "question": "What is a self-driving car's biggest challenge?",
+    "answer": "Understanding unpredictable real-world situations",
+    "choices": ["Understanding unpredictable real-world situations", "Going fast enough", "Finding gas stations", "Playing music"]
+  },
+  {
+    "tier": 2,
+    "question": "What programming language is most popular for AI?",
+    "answer": "Python",
+    "choices": ["Python", "JavaScript", "HTML", "Scratch"]
+  },
+  {
+    "tier": 2,
+    "question": "What is an AI hallucination?",
+    "answer": "When AI generates false information that sounds convincing",
+    "choices": ["When AI generates false information that sounds convincing", "When AI sees things that are not there", "When AI dreams at night", "When AI makes visual effects"]
+  },
+  {
+    "tier": 2,
+    "question": "What is the difference between AI and automation?",
+    "answer": "AI can learn and adapt; automation follows fixed rules",
+    "choices": ["AI can learn and adapt; automation follows fixed rules", "They are the same thing", "Automation is smarter", "AI is always physical"]
+  },
+  {
+    "tier": 2,
+    "question": "What is a chatbot used for on websites?",
+    "answer": "Answering customer questions automatically",
+    "choices": ["Answering customer questions automatically", "Hacking the website", "Making the website load faster", "Designing the website layout"]
+  },
+  {
+    "tier": 2,
+    "question": "What did IBM's Deep Blue do in 1997?",
+    "answer": "Beat world chess champion Garry Kasparov",
+    "choices": ["Beat world chess champion Garry Kasparov", "Won a Nobel Prize", "Invented the internet", "Translated every language"]
+  },
+  {
+    "tier": 2,
+    "question": "What is pattern recognition?",
+    "answer": "AI finding recurring patterns in data",
+    "choices": ["AI finding recurring patterns in data", "Recognizing knitting patterns", "A memory game", "Drawing patterns on screen"]
+  },
+  {
+    "tier": 2,
+    "question": "What is the purpose of a CAPTCHA?",
+    "answer": "To tell humans and bots apart",
+    "choices": ["To tell humans and bots apart", "To test your typing speed", "To improve your internet speed", "To teach AI new skills"]
+  },
+  {
+    "tier": 2,
+    "question": "What is text generation?",
+    "answer": "AI creating new written content",
+    "choices": ["AI creating new written content", "Typing very fast", "Copying text from websites", "Translating text between languages"]
+  },
+  {
+    "tier": 2,
+    "question": "What is sentiment analysis?",
+    "answer": "AI detecting whether text is positive, negative, or neutral",
+    "choices": ["AI detecting whether text is positive, negative, or neutral", "Analyzing sentence structure", "Counting words in a paragraph", "Finding spelling errors"]
+  },
+  {
+    "tier": 2,
+    "question": "How does a voice assistant understand you?",
+    "answer": "By converting speech to text and processing the meaning",
+    "choices": ["By converting speech to text and processing the meaning", "By reading your lips through the camera", "By guessing what you said", "By connecting to a human operator"]
+  },
+  {
+    "tier": 2,
+    "question": "What does GPU stand for?",
+    "answer": "Graphics Processing Unit",
+    "choices": ["Graphics Processing Unit", "General Purpose Unit", "Global Processing Utility", "Guided Program Update"]
+  },
+  {
+    "tier": 2,
+    "question": "Why are GPUs important for AI?",
+    "answer": "They can process many calculations at once in parallel",
+    "choices": ["They can process many calculations at once in parallel", "They are cheaper than CPUs", "They store more data", "They connect to the internet faster"]
+  },
+  {
+    "tier": 2,
+    "question": "What is image generation AI?",
+    "answer": "AI that creates new images from text descriptions",
+    "choices": ["AI that creates new images from text descriptions", "AI that only edits existing photos", "A camera with AI features", "An image search engine"]
+  },
+  {
+    "tier": 2,
+    "question": "What is DALL-E?",
+    "answer": "An AI image generator made by OpenAI",
+    "choices": ["An AI image generator made by OpenAI", "A robot artist", "A Disney movie character", "A photo editing app"]
+  },
+  {
+    "tier": 2,
+    "question": "What is the AI 'black box' problem?",
+    "answer": "Difficulty understanding how AI reaches its decisions",
+    "choices": ["Difficulty understanding how AI reaches its decisions", "AI only working in dark rooms", "AI being stored in black boxes", "A shipping problem for AI hardware"]
+  },
+  {
+    "tier": 2,
+    "question": "What is supervised learning?",
+    "answer": "Training AI with labeled data that has correct answers",
+    "choices": ["Training AI with labeled data that has correct answers", "AI that needs a human watching it", "AI that supervises other programs", "AI that works only in schools"]
+  },
+  {
+    "tier": 2,
+    "question": "What is unsupervised learning?",
+    "answer": "Training AI on data without providing correct answers",
+    "choices": ["Training AI on data without providing correct answers", "AI that works without electricity", "AI that is not supervised by humans", "AI that teaches itself to code"]
+  },
+  {
+    "tier": 2,
+    "question": "What was the first AI program generally considered successful?",
+    "answer": "The Logic Theorist (1956)",
+    "choices": ["The Logic Theorist (1956)", "ChatGPT (2022)", "Siri (2011)", "Deep Blue (1997)"]
+  },
+  {
+    "tier": 2,
+    "question": "What is a deepfake?",
+    "answer": "AI-generated fake video or audio of real people",
+    "choices": ["AI-generated fake video or audio of real people", "A very deep swimming pool simulation", "A fake deep-sea creature", "A deep learning algorithm"]
+  },
+  {
+    "tier": 2,
+    "question": "What is reinforcement learning?",
+    "answer": "AI learning by trial and error with rewards and penalties",
+    "choices": ["AI learning by trial and error with rewards and penalties", "Making AI stronger with more hardware", "Reinforcing a computer's case", "Learning the same thing twice"]
+  },
+  {
+    "tier": 2,
+    "question": "What is the main risk of AI bias?",
+    "answer": "It can lead to unfair treatment of certain groups of people",
+    "choices": ["It can lead to unfair treatment of certain groups of people", "It makes AI slower", "It uses more electricity", "It makes AI more expensive"]
+  },
+  {
+    "tier": 2,
+    "question": "What is an AI model?",
+    "answer": "A mathematical system trained to make predictions or decisions",
+    "choices": ["A mathematical system trained to make predictions or decisions", "A physical replica of an AI chip", "A toy robot", "A diagram of a computer"]
+  },
+  {
+    "tier": 2,
+    "question": "What is data labeling?",
+    "answer": "Adding tags or descriptions to data so AI can learn from it",
+    "choices": ["Adding tags or descriptions to data so AI can learn from it", "Putting labels on hard drives", "Printing data on paper", "Organizing files into folders"]
+  },
+  {
+    "tier": 2,
+    "question": "What is optical character recognition (OCR)?",
+    "answer": "AI that reads text from images or scanned documents",
+    "choices": ["AI that reads text from images or scanned documents", "A type of eye exam", "A camera lens feature", "A character in a video game"]
+  },
+  {
+    "tier": 2,
+    "question": "What are AI ethics?",
+    "answer": "Guidelines for developing and using AI responsibly",
+    "choices": ["Guidelines for developing and using AI responsibly", "Rules for how AI treats other AI", "Laws that AI must follow", "Ethics courses taught by AI"]
+  },
+  {
+    "tier": 2,
+    "question": "What is a neural network made up of?",
+    "answer": "Layers of interconnected nodes (artificial neurons)",
+    "choices": ["Layers of interconnected nodes (artificial neurons)", "Computer chips stacked together", "Wires and cables", "Tiny robots working together"]
+  },
+  {
+    "tier": 2,
+    "question": "What is generative AI?",
+    "answer": "AI that can create new content like text, images, or music",
+    "choices": ["AI that can create new content like text, images, or music", "AI that generates electricity", "AI that copies existing content", "The next generation of computer hardware"]
+  },
+  {
+    "tier": 2,
+    "question": "What does it mean to fine-tune an AI model?",
+    "answer": "Adjusting a pre-trained model for a specific task",
+    "choices": ["Adjusting a pre-trained model for a specific task", "Making it run faster", "Tuning it like a musical instrument", "Reducing its file size"]
+  },
+  {
+    "tier": 2,
+    "question": "What is autonomous technology?",
+    "answer": "Technology that operates independently without human control",
+    "choices": ["Technology that operates independently without human control", "Technology that is very expensive", "Technology made by one company", "Technology that uses batteries"]
+  },
+  {
+    "tier": 2,
+    "question": "What year was the term 'artificial intelligence' first coined?",
+    "answer": "1956",
+    "choices": ["1956", "1943", "1970", "2001"]
+  },
+  {
+    "tier": 2,
+    "question": "What is predictive text?",
+    "answer": "AI suggesting the next word you might type",
+    "choices": ["AI suggesting the next word you might type", "Text that predicts the future", "A fortune-telling app", "Pre-written text messages"]
+  },
+  {
+    "tier": 2,
+    "question": "What is a smart speaker?",
+    "answer": "A speaker with a built-in voice assistant",
+    "choices": ["A speaker with a built-in voice assistant", "A speaker that is very expensive", "A speaker that plays only AI music", "A speaker with a screen"]
+  },
+  {
+    "tier": 2,
+    "question": "What is machine translation?",
+    "answer": "Using AI to automatically translate text between languages",
+    "choices": ["Using AI to automatically translate text between languages", "Translating machine manuals", "A machine that speaks every language", "Learning languages from machines"]
+  },
+  {
+    "tier": 2,
+    "question": "What is an AI-powered search engine?",
+    "answer": "A search engine that uses AI to understand and answer queries",
+    "choices": ["A search engine that uses AI to understand and answer queries", "A search engine that only finds AI topics", "A search engine built by robots", "A search engine that works without internet"]
+  },
+  {
+    "tier": 2,
+    "question": "What is the difference between hardware and software in AI?",
+    "answer": "Hardware is the physical computer; software is the AI program",
+    "choices": ["Hardware is the physical computer; software is the AI program", "Hardware is harder to use", "Software is always free", "They are the same thing"]
+  },
+  {
+    "tier": 2,
+    "question": "What is a robot vacuum an example of?",
+    "answer": "AI-powered home automation",
+    "choices": ["AI-powered home automation", "A fully intelligent robot", "General artificial intelligence", "A self-aware machine"]
+  },
+  {
+    "tier": 2,
+    "question": "Why might AI make mistakes?",
+    "answer": "Because it is only as good as the data it was trained on",
+    "choices": ["Because it is only as good as the data it was trained on", "Because it gets tired", "Because it has emotions", "Because it is not plugged in properly"]
+  },
+  {
+    "tier": 2,
+    "question": "What is the Internet of Things (IoT)?",
+    "answer": "Everyday objects connected to the internet",
+    "choices": ["Everyday objects connected to the internet", "A website about things", "The inventor of the internet", "A list of everything online"]
+  },
+  {
+    "tier": 2,
+    "question": "What is an AI startup?",
+    "answer": "A new company focused on developing AI technology",
+    "choices": ["A new company focused on developing AI technology", "A program that starts AI automatically", "The first step in building a robot", "A boot sequence for AI"]
+  },
+  {
+    "tier": 2,
+    "question": "What does 'open source' mean in AI?",
+    "answer": "AI code and models shared publicly for anyone to use",
+    "choices": ["AI code and models shared publicly for anyone to use", "AI that can open doors", "AI that only works outdoors", "Free AI hardware"]
+  },
+  {
+    "tier": 2,
+    "question": "What is data privacy?",
+    "answer": "The right to control how your personal information is used",
+    "choices": ["The right to control how your personal information is used", "Keeping data in a private room", "Encrypting all files on the internet", "Having a private computer"]
+  },
+  {
+    "tier": 2,
+    "question": "What does AI-generated content mean?",
+    "answer": "Content such as text or images created by AI",
+    "choices": ["Content such as text or images created by AI", "Content about AI", "Content that generates more AI", "Content approved by AI"]
+  },
+  {
+    "tier": 2,
+    "question": "What is a virtual assistant?",
+    "answer": "An AI program that helps you with tasks through conversation",
+    "choices": ["An AI program that helps you with tasks through conversation", "A human assistant who works remotely", "A character in virtual reality", "An avatar in a video game"]
+  },
+  {
+    "tier": 2,
+    "question": "What is the AI winter?",
+    "answer": "Periods when interest and funding in AI research declined",
+    "choices": ["Periods when interest and funding in AI research declined", "When AI systems get cold", "A type of AI algorithm", "AI competitions held in winter"]
+  },
+  {
+    "tier": 2,
+    "question": "What does 'training' an AI model require a lot of?",
+    "answer": "Computing power and data",
+    "choices": ["Computing power and data", "Human teachers in a classroom", "Physical exercise", "Paper and pencils"]
+  },
+  {
+    "tier": 2,
+    "question": "What is GitHub Copilot?",
+    "answer": "An AI that helps programmers write code",
+    "choices": ["An AI that helps programmers write code", "A flying robot assistant", "A version control system", "A code review website"]
+  },
+  {
+    "tier": 2,
+    "question": "What does it mean for AI to be 'general purpose'?",
+    "answer": "It can handle many different types of tasks",
+    "choices": ["It can handle many different types of tasks", "It is used by generals in the army", "It is the most basic form of AI", "It works without specific training"]
+  },
+  {
+    "tier": 2,
+    "question": "What is a language model?",
+    "answer": "An AI system that predicts and generates text",
+    "choices": ["An AI system that predicts and generates text", "A grammar textbook", "A model airplane with a speaker", "A translator device"]
+  },
+  {
+    "tier": 2,
+    "question": "What is an AI chip?",
+    "answer": "Specialized hardware designed to run AI computations efficiently",
+    "choices": ["Specialized hardware designed to run AI computations efficiently", "A potato chip shaped like a robot", "A standard computer memory stick", "A tracking device"]
+  },
+  {
+    "tier": 2,
+    "question": "What does 'training time' mean for an AI?",
+    "answer": "How long it takes to teach an AI model using data",
+    "choices": ["How long it takes to teach an AI model using data", "The time of day AI works best", "How long AI can stay awake", "A scheduled class for robots"]
+  },
+  {
+    "tier": 3,
+    "question": "What is deep learning?",
+    "answer": "Machine learning using neural networks with many layers",
+    "choices": ["Machine learning using neural networks with many layers", "Learning that takes a very long time", "Very difficult machine learning problems", "AI that works underwater"]
+  },
+  {
+    "tier": 3,
+    "question": "What happened at the Dartmouth Conference in 1956?",
+    "answer": "The field of artificial intelligence was formally founded",
+    "choices": ["The field of artificial intelligence was formally founded", "The first computer was built", "The internet was invented", "The first robot was created"]
+  },
+  {
+    "tier": 3,
+    "question": "Who is Geoffrey Hinton?",
+    "answer": "A pioneer of deep learning, known as a 'Godfather of AI'",
+    "choices": ["A pioneer of deep learning, known as a 'Godfather of AI'", "The inventor of the first computer", "The CEO of OpenAI", "The creator of Python programming language"]
+  },
+  {
+    "tier": 3,
+    "question": "What is a transformer in AI?",
+    "answer": "A neural network architecture that powers modern language models",
+    "choices": ["A neural network architecture that powers modern language models", "A device that converts electricity", "A robot that changes shape", "A data conversion tool"]
+  },
+  {
+    "tier": 3,
+    "question": "What does GPT stand for?",
+    "answer": "Generative Pre-trained Transformer",
+    "choices": ["Generative Pre-trained Transformer", "General Purpose Technology", "Global Processing Tool", "Generated Prediction Text"]
+  },
+  {
+    "tier": 3,
+    "question": "What is the difference between supervised and unsupervised learning?",
+    "answer": "Supervised uses labeled data; unsupervised finds patterns in unlabeled data",
+    "choices": ["Supervised uses labeled data; unsupervised finds patterns in unlabeled data", "Supervised is faster; unsupervised is slower", "Supervised uses more power; unsupervised uses less", "Supervised is newer; unsupervised is older"]
+  },
+  {
+    "tier": 3,
+    "question": "What is reinforcement learning used for?",
+    "answer": "Training AI through rewards for desired actions",
+    "choices": ["Training AI through rewards for desired actions", "Making AI hardware stronger", "Reinforcing computer security", "Teaching AI to repeat tasks exactly"]
+  },
+  {
+    "tier": 3,
+    "question": "What is NLP?",
+    "answer": "Natural Language Processing",
+    "choices": ["Natural Language Processing", "Neural Logic Programming", "New Learning Protocol", "Network Layer Protocol"]
+  },
+  {
+    "tier": 3,
+    "question": "Who is Yann LeCun?",
+    "answer": "A pioneer of convolutional neural networks and Meta's Chief AI Scientist",
+    "choices": ["A pioneer of convolutional neural networks and Meta's Chief AI Scientist", "The founder of OpenAI", "The inventor of Python", "Google's CEO"]
+  },
+  {
+    "tier": 3,
+    "question": "What did IBM Deep Blue achieve in 1997?",
+    "answer": "It became the first computer to beat a reigning world chess champion",
+    "choices": ["It became the first computer to beat a reigning world chess champion", "It passed the Turing Test", "It translated all human languages", "It won a Nobel Prize"]
+  },
+  {
+    "tier": 3,
+    "question": "What is a convolutional neural network (CNN) best at?",
+    "answer": "Processing and analyzing images",
+    "choices": ["Processing and analyzing images", "Generating text", "Playing board games", "Translating languages"]
+  },
+  {
+    "tier": 3,
+    "question": "What are deepfakes most commonly used for?",
+    "answer": "Creating fake videos that show people saying or doing things they never did",
+    "choices": ["Creating fake videos that show people saying or doing things they never did", "Making movies look better", "Training AI models faster", "Compressing video files"]
+  },
+  {
+    "tier": 3,
+    "question": "What is prompt engineering?",
+    "answer": "The skill of crafting effective instructions for AI",
+    "choices": ["The skill of crafting effective instructions for AI", "Building physical prompting devices", "Programming prompts into hardware", "Engineering fast computer responses"]
+  },
+  {
+    "tier": 3,
+    "question": "Who is Demis Hassabis?",
+    "answer": "Co-founder and CEO of Google DeepMind",
+    "choices": ["Co-founder and CEO of Google DeepMind", "The inventor of ChatGPT", "Apple's head of AI research", "The creator of Wikipedia"]
+  },
+  {
+    "tier": 3,
+    "question": "What is transfer learning?",
+    "answer": "Using a model trained on one task to help with a different task",
+    "choices": ["Using a model trained on one task to help with a different task", "Moving AI from one computer to another", "Transferring data between devices", "Teaching AI to transfer files"]
+  },
+  {
+    "tier": 3,
+    "question": "What is overfitting in machine learning?",
+    "answer": "When a model memorizes training data but fails on new data",
+    "choices": ["When a model memorizes training data but fails on new data", "When a model is too large for the computer", "When too many people use the model at once", "When training takes too long"]
+  },
+  {
+    "tier": 3,
+    "question": "What is the training-inference distinction?",
+    "answer": "Training is learning from data; inference is using the model to make predictions",
+    "choices": ["Training is learning from data; inference is using the model to make predictions", "Training is for beginners; inference is for experts", "Training uses GPUs; inference uses CPUs only", "Training is free; inference costs money"]
+  },
+  {
+    "tier": 3,
+    "question": "What is a GAN?",
+    "answer": "A Generative Adversarial Network — two neural networks competing",
+    "choices": ["A Generative Adversarial Network — two neural networks competing", "A Global AI Network", "A General Algorithm Node", "A Graphics Animation Network"]
+  },
+  {
+    "tier": 3,
+    "question": "Who is Fei-Fei Li?",
+    "answer": "A computer scientist who created the ImageNet dataset",
+    "choices": ["A computer scientist who created the ImageNet dataset", "The CEO of Anthropic", "The inventor of voice assistants", "Google's head of search"]
+  },
+  {
+    "tier": 3,
+    "question": "What is ImageNet?",
+    "answer": "A large dataset of labeled images used to train computer vision models",
+    "choices": ["A large dataset of labeled images used to train computer vision models", "A social media platform for images", "An AI image generator", "An internet image search engine"]
+  },
+  {
+    "tier": 3,
+    "question": "What is the attention mechanism in AI?",
+    "answer": "A technique that lets models focus on relevant parts of input data",
+    "choices": ["A technique that lets models focus on relevant parts of input data", "A way to make users pay attention", "An alert system for AI errors", "A method to reduce computer distractions"]
+  },
+  {
+    "tier": 3,
+    "question": "What is a recurrent neural network (RNN)?",
+    "answer": "A neural network designed to process sequential data",
+    "choices": ["A neural network designed to process sequential data", "A network that recurs to fix its own errors", "A network that only works in loops", "A network that repeats the same output"]
+  },
+  {
+    "tier": 3,
+    "question": "What is the difference between AI and machine learning?",
+    "answer": "Machine learning is a subset of AI that learns from data",
+    "choices": ["Machine learning is a subset of AI that learns from data", "They are the same thing", "AI is a subset of machine learning", "Machine learning is hardware; AI is software"]
+  },
+  {
+    "tier": 3,
+    "question": "What is data augmentation?",
+    "answer": "Creating modified copies of data to increase training set size",
+    "choices": ["Creating modified copies of data to increase training set size", "Making data files larger", "Adding metadata to files", "Backing up data to the cloud"]
+  },
+  {
+    "tier": 3,
+    "question": "What is AI alignment?",
+    "answer": "Ensuring AI systems act in accordance with human values and intentions",
+    "choices": ["Ensuring AI systems act in accordance with human values and intentions", "Aligning text in AI-generated documents", "Physically aligning computer components", "Synchronizing multiple AI systems"]
+  },
+  {
+    "tier": 3,
+    "question": "What is a loss function?",
+    "answer": "A measure of how far an AI model's predictions are from the correct answers",
+    "choices": ["A measure of how far an AI model's predictions are from the correct answers", "A function that causes data loss", "A way to measure lost files", "A penalty for wrong password attempts"]
+  },
+  {
+    "tier": 3,
+    "question": "What is edge AI?",
+    "answer": "Running AI directly on devices like phones instead of in the cloud",
+    "choices": ["Running AI directly on devices like phones instead of in the cloud", "AI that works on the edge of the internet", "Cutting-edge AI research", "AI that cuts images precisely"]
+  },
+  {
+    "tier": 3,
+    "question": "What is synthetic data?",
+    "answer": "Artificially generated data used to train AI models",
+    "choices": ["Artificially generated data used to train AI models", "Data from synthetic materials", "Data that is fake and useless", "Musical data from synthesizers"]
+  },
+  {
+    "tier": 3,
+    "question": "What is a feature in machine learning?",
+    "answer": "An individual measurable property used as input to a model",
+    "choices": ["An individual measurable property used as input to a model", "A special ability of the AI", "A bonus software update", "A hardware component"]
+  },
+  {
+    "tier": 3,
+    "question": "How do self-driving cars perceive their surroundings?",
+    "answer": "Using cameras, lidar, radar, and AI to process sensor data",
+    "choices": ["Using cameras, lidar, radar, and AI to process sensor data", "Using GPS only", "By following painted road lines", "By communicating with other cars only"]
+  },
+  {
+    "tier": 3,
+    "question": "What is few-shot learning?",
+    "answer": "AI learning to perform a task from just a few examples",
+    "choices": ["AI learning to perform a task from just a few examples", "Taking a few photos for image recognition", "Training AI for only a few minutes", "AI that only works a few times"]
+  },
+  {
+    "tier": 3,
+    "question": "What is zero-shot learning?",
+    "answer": "AI performing a task without any specific training examples",
+    "choices": ["AI performing a task without any specific training examples", "AI that never makes mistakes", "Training with zero data", "An AI that cannot shoot in games"]
+  },
+  {
+    "tier": 3,
+    "question": "What is model compression?",
+    "answer": "Reducing an AI model's size while maintaining performance",
+    "choices": ["Reducing an AI model's size while maintaining performance", "Compressing files on a computer", "Making AI screens smaller", "Squeezing data into databases"]
+  },
+  {
+    "tier": 3,
+    "question": "What year did AlphaGo beat a world champion at Go?",
+    "answer": "2016",
+    "choices": ["2016", "2012", "2019", "2014"]
+  },
+  {
+    "tier": 3,
+    "question": "What is batch processing in machine learning?",
+    "answer": "Processing multiple data samples at once during training",
+    "choices": ["Processing multiple data samples at once during training", "Processing data in batches of cookies", "Running AI once a day in batches", "Grouping computers together"]
+  },
+  {
+    "tier": 3,
+    "question": "What is a pre-trained model?",
+    "answer": "A model already trained on a large dataset that can be adapted",
+    "choices": ["A model already trained on a large dataset that can be adapted", "A model that trains before others", "An untrained model ready to start", "A model trained in a preliminary test"]
+  },
+  {
+    "tier": 3,
+    "question": "What is explainable AI (XAI)?",
+    "answer": "AI systems that can provide understandable reasons for their decisions",
+    "choices": ["AI systems that can provide understandable reasons for their decisions", "AI that explains things to children", "AI that can teach courses", "A tutorial about how AI works"]
+  },
+  {
+    "tier": 3,
+    "question": "What is the vanishing gradient problem?",
+    "answer": "When gradients become too small for deep networks to learn effectively",
+    "choices": ["When gradients become too small for deep networks to learn effectively", "When AI data disappears", "When colors fade in AI images", "When AI forgets its training"]
+  },
+  {
+    "tier": 3,
+    "question": "What is a knowledge graph?",
+    "answer": "A structured representation of facts and relationships between entities",
+    "choices": ["A structured representation of facts and relationships between entities", "A graph showing how smart an AI is", "A chart of AI knowledge growth", "A social network for AI researchers"]
+  },
+  {
+    "tier": 3,
+    "question": "What is word embedding?",
+    "answer": "Representing words as numerical vectors that capture meaning",
+    "choices": ["Representing words as numerical vectors that capture meaning", "Hiding words inside images", "Embedding words in web pages", "A word processing technique"]
+  },
+  {
+    "tier": 3,
+    "question": "What ethical concern does facial recognition raise?",
+    "answer": "Privacy violations and potential for mass surveillance",
+    "choices": ["Privacy violations and potential for mass surveillance", "It takes too much battery power", "Faces look distorted on screen", "It only works in daylight"]
+  },
+  {
+    "tier": 3,
+    "question": "What is the role of a validation set in machine learning?",
+    "answer": "To evaluate model performance during training and tune hyperparameters",
+    "choices": ["To evaluate model performance during training and tune hyperparameters", "To validate that the computer is working", "To check user passwords", "To confirm data is downloaded correctly"]
+  },
+  {
+    "tier": 3,
+    "question": "What is natural language generation?",
+    "answer": "AI creating human-readable text from data",
+    "choices": ["AI creating human-readable text from data", "Humans writing naturally", "Translating programming languages", "Voice recognition software"]
+  },
+  {
+    "tier": 3,
+    "question": "What is a chatbot hallucination?",
+    "answer": "When an AI confidently states false information as if it were true",
+    "choices": ["When an AI confidently states false information as if it were true", "When a chatbot sees imaginary users", "When a chatbot crashes", "When a chatbot speaks in a foreign language"]
+  },
+  {
+    "tier": 3,
+    "question": "What is AI governance?",
+    "answer": "Policies and regulations for responsible AI development and use",
+    "choices": ["Policies and regulations for responsible AI development and use", "AI that governs countries", "Government-built AI systems", "Elections run by AI"]
+  },
+  {
+    "tier": 3,
+    "question": "What is the difference between classification and regression?",
+    "answer": "Classification predicts categories; regression predicts numerical values",
+    "choices": ["Classification predicts categories; regression predicts numerical values", "Classification is easier; regression is harder", "Classification uses images; regression uses text", "They are the same thing"]
+  },
+  {
+    "tier": 3,
+    "question": "What is a hyperparameter?",
+    "answer": "A setting configured before training that controls how the model learns",
+    "choices": ["A setting configured before training that controls how the model learns", "A very important parameter in the model", "A parameter that changes during training", "The maximum speed of a computer"]
+  },
+  {
+    "tier": 3,
+    "question": "What is the role of an activation function in a neural network?",
+    "answer": "It introduces non-linearity so the network can learn complex patterns",
+    "choices": ["It introduces non-linearity so the network can learn complex patterns", "It activates the computer's power supply", "It determines when the AI starts working", "It turns nodes on and off randomly"]
+  },
+  {
+    "tier": 3,
+    "question": "What is AI safety research?",
+    "answer": "Research focused on making AI systems reliable and aligned with human values",
+    "choices": ["Research focused on making AI systems reliable and aligned with human values", "Research on physical safety of computer hardware", "Research on computer virus protection", "Research on making AI waterproof"]
+  },
+  {
+    "tier": 3,
+    "question": "What company developed AlphaGo?",
+    "answer": "Google DeepMind",
+    "choices": ["Google DeepMind", "OpenAI", "Meta AI", "IBM"]
+  },
+  {
+    "tier": 3,
+    "question": "What is tokenization in NLP?",
+    "answer": "Breaking text into smaller units like words or subwords",
+    "choices": ["Breaking text into smaller units like words or subwords", "Converting text to cryptocurrency tokens", "Creating access tokens for security", "Counting the total words in a document"]
+  },
+  {
+    "tier": 3,
+    "question": "What is a confusion matrix?",
+    "answer": "A table showing correct and incorrect predictions by category",
+    "choices": ["A table showing correct and incorrect predictions by category", "A matrix that confuses AI systems", "A puzzle for testing AI intelligence", "A chart showing how confused users are"]
+  },
+  {
+    "tier": 3,
+    "question": "What is the role of dropout in neural networks?",
+    "answer": "Randomly disabling neurons during training to prevent overfitting",
+    "choices": ["Randomly disabling neurons during training to prevent overfitting", "Dropping out bad data from the dataset", "Removing underperforming models", "Shutting down idle GPUs"]
+  },
+  {
+    "tier": 3,
+    "question": "What is autonomous driving Level 5?",
+    "answer": "Full self-driving with no human intervention needed in any conditions",
+    "choices": ["Full self-driving with no human intervention needed in any conditions", "A car that drives only on highways", "A car that parks itself", "A car with lane-keeping assist"]
+  },
+  {
+    "tier": 3,
+    "question": "What problem do AI winters describe?",
+    "answer": "Cycles of hype followed by disappointment and reduced AI funding",
+    "choices": ["Cycles of hype followed by disappointment and reduced AI funding", "AI systems overheating in winter", "Cold weather affecting computer performance", "Seasonal drops in AI usage"]
+  },
+  {
+    "tier": 3,
+    "question": "What is chain-of-thought prompting?",
+    "answer": "Asking AI to show its reasoning step by step before answering",
+    "choices": ["Asking AI to show its reasoning step by step before answering", "Linking multiple AI models together", "A chain of prompts sent one after another", "AI thinking about chains"]
+  },
+  {
+    "tier": 3,
+    "question": "What is the purpose of a test set in machine learning?",
+    "answer": "To evaluate the final model's performance on unseen data",
+    "choices": ["To evaluate the final model's performance on unseen data", "To test if the computer hardware works", "To check internet speed during training", "To test the training data for errors"]
+  },
+  {
+    "tier": 3,
+    "question": "What is a generative model?",
+    "answer": "A model that can create new data similar to its training data",
+    "choices": ["A model that can create new data similar to its training data", "A model that generates electricity", "A general-purpose model", "The newest generation of models"]
+  },
+  {
+    "tier": 3,
+    "question": "What is Stable Diffusion?",
+    "answer": "An open-source AI image generation model",
+    "choices": ["An open-source AI image generation model", "A chemistry simulation", "A video stabilization tool", "A network protocol"]
+  },
+  {
+    "tier": 3,
+    "question": "What is the main advantage of transformers over RNNs?",
+    "answer": "They can process all parts of input simultaneously using attention",
+    "choices": ["They can process all parts of input simultaneously using attention", "They use less memory", "They are easier to code", "They only work with text"]
+  },
+  {
+    "tier": 3,
+    "question": "What is responsible AI?",
+    "answer": "Developing AI that is fair, transparent, and accountable",
+    "choices": ["Developing AI that is fair, transparent, and accountable", "AI that takes responsibility for mistakes", "AI that is legally responsible", "AI designed by responsible companies"]
+  },
+  {
+    "tier": 4,
+    "question": "What is the attention mechanism in the transformer architecture?",
+    "answer": "A method computing relevance scores between all pairs of tokens in a sequence",
+    "choices": ["A method computing relevance scores between all pairs of tokens in a sequence", "A way to filter out irrelevant training data", "An alert system when the model makes errors", "A method to focus on the most recent tokens only"]
+  },
+  {
+    "tier": 4,
+    "question": "What is backpropagation?",
+    "answer": "An algorithm that calculates gradients to update neural network weights",
+    "choices": ["An algorithm that calculates gradients to update neural network weights", "Sending data backward through the network to check accuracy", "A method of restoring previous model versions", "Reversing incorrect predictions"]
+  },
+  {
+    "tier": 4,
+    "question": "What is gradient descent?",
+    "answer": "An optimization algorithm that minimizes the loss function by adjusting weights",
+    "choices": ["An optimization algorithm that minimizes the loss function by adjusting weights", "A gradual decrease in AI performance over time", "A method of reducing GPU temperature", "A way to slowly decrease training data size"]
+  },
+  {
+    "tier": 4,
+    "question": "What is a token in the context of large language models?",
+    "answer": "A chunk of text (word, subword, or character) the model processes",
+    "choices": ["A chunk of text (word, subword, or character) the model processes", "A digital currency used to pay for AI", "A security key for accessing AI APIs", "A reward given during reinforcement learning"]
+  },
+  {
+    "tier": 4,
+    "question": "What is an embedding in AI?",
+    "answer": "A dense vector representation of data in a continuous space",
+    "choices": ["A dense vector representation of data in a continuous space", "A piece of code embedded in a website", "A physical chip embedded in hardware", "A hidden message in AI output"]
+  },
+  {
+    "tier": 4,
+    "question": "What is a context window?",
+    "answer": "The maximum amount of text a language model can process at once",
+    "choices": ["The maximum amount of text a language model can process at once", "A window showing the model's context menu", "The time frame for training data", "A debugging display for programmers"]
+  },
+  {
+    "tier": 4,
+    "question": "What is RLHF?",
+    "answer": "Reinforcement Learning from Human Feedback",
+    "choices": ["Reinforcement Learning from Human Feedback", "Recursive Language Handling Framework", "Real-time Learning with High Fidelity", "Reinforced Linear Hidden Features"]
+  },
+  {
+    "tier": 4,
+    "question": "What is a diffusion model?",
+    "answer": "A generative model that learns to remove noise to create data like images",
+    "choices": ["A generative model that learns to remove noise to create data like images", "A model that spreads information across networks", "A model simulating how gases diffuse", "A model for distributing AI across servers"]
+  },
+  {
+    "tier": 4,
+    "question": "When was ChatGPT released?",
+    "answer": "November 2022",
+    "choices": ["November 2022", "March 2021", "June 2023", "January 2020"]
+  },
+  {
+    "tier": 4,
+    "question": "What is Constitutional AI?",
+    "answer": "Anthropic's approach to training AI using a set of principles",
+    "choices": ["Anthropic's approach to training AI using a set of principles", "AI trained on constitutional law documents", "AI that follows a country's constitution", "An AI governance framework by the UN"]
+  },
+  {
+    "tier": 4,
+    "question": "What is the alignment problem?",
+    "answer": "The challenge of ensuring AI systems pursue goals beneficial to humans",
+    "choices": ["The challenge of ensuring AI systems pursue goals beneficial to humans", "Aligning data in database tables", "Physical alignment of server racks", "Synchronizing AI model versions"]
+  },
+  {
+    "tier": 4,
+    "question": "What is the difference between training and inference in AI?",
+    "answer": "Training learns patterns from data; inference applies the trained model to new inputs",
+    "choices": ["Training learns patterns from data; inference applies the trained model to new inputs", "Training is faster; inference is slower", "Training happens on GPUs; inference only on CPUs", "Training is free; inference requires payment"]
+  },
+  {
+    "tier": 4,
+    "question": "What is fine-tuning in the context of large language models?",
+    "answer": "Further training a pre-trained model on a specific dataset for a specialized task",
+    "choices": ["Further training a pre-trained model on a specific dataset for a specialized task", "Adjusting the model's parameters after every user interaction", "Optimizing GPU settings for better performance", "Removing errors from the base model"]
+  },
+  {
+    "tier": 4,
+    "question": "What are scaling laws in AI?",
+    "answer": "Empirical relationships between model size, data, compute, and performance",
+    "choices": ["Empirical relationships between model size, data, compute, and performance", "Laws governing how large AI companies can grow", "Legal regulations that scale with AI capability", "Rules for scaling AI infrastructure"]
+  },
+  {
+    "tier": 4,
+    "question": "What is the role of a reward model in RLHF?",
+    "answer": "It scores AI outputs to guide training toward human-preferred responses",
+    "choices": ["It scores AI outputs to guide training toward human-preferred responses", "It gives monetary rewards to human labelers", "It rewards users for providing feedback", "It distributes computing rewards across GPUs"]
+  },
+  {
+    "tier": 4,
+    "question": "What is a GPU's advantage over a CPU for AI training?",
+    "answer": "Massive parallelism for matrix operations",
+    "choices": ["Massive parallelism for matrix operations", "Lower power consumption", "Larger storage capacity", "Better internet connectivity"]
+  },
+  {
+    "tier": 4,
+    "question": "What is multi-head attention?",
+    "answer": "Running multiple attention mechanisms in parallel to capture different relationships",
+    "choices": ["Running multiple attention mechanisms in parallel to capture different relationships", "An AI with multiple processing heads", "Attention distributed across multiple GPUs", "A multi-user attention system"]
+  },
+  {
+    "tier": 4,
+    "question": "What is the softmax function used for in neural networks?",
+    "answer": "Converting a vector of values into a probability distribution",
+    "choices": ["Converting a vector of values into a probability distribution", "Making the network's output softer and less extreme", "Reducing the maximum output value", "Smoothing input data before processing"]
+  },
+  {
+    "tier": 4,
+    "question": "What year was GPT-3 released?",
+    "answer": "2020",
+    "choices": ["2020", "2018", "2022", "2019"]
+  },
+  {
+    "tier": 4,
+    "question": "What is a positional encoding in transformers?",
+    "answer": "Information added to embeddings to indicate the position of tokens in a sequence",
+    "choices": ["Information added to embeddings to indicate the position of tokens in a sequence", "The physical position of servers in a data center", "A GPS encoding for location-based AI", "The order in which layers are stacked"]
+  },
+  {
+    "tier": 4,
+    "question": "What is the feed-forward network in a transformer block?",
+    "answer": "A fully connected network applied to each position independently after attention",
+    "choices": ["A fully connected network applied to each position independently after attention", "The network that feeds data into the model", "A forward-only network that cannot backpropagate", "The first layer that receives input tokens"]
+  },
+  {
+    "tier": 4,
+    "question": "What is layer normalization?",
+    "answer": "Normalizing activations across features within a single training example",
+    "choices": ["Normalizing activations across features within a single training example", "Ensuring all layers have the same number of neurons", "A technique to make layers standard size", "Removing abnormal layers from the network"]
+  },
+  {
+    "tier": 4,
+    "question": "What is the temperature parameter in language model generation?",
+    "answer": "A value that controls randomness — higher means more creative, lower means more focused",
+    "choices": ["A value that controls randomness — higher means more creative, lower means more focused", "The physical temperature of the GPU", "How warm the server room should be", "The speed at which the model generates text"]
+  },
+  {
+    "tier": 4,
+    "question": "What is top-k sampling?",
+    "answer": "Selecting the next token only from the k most likely candidates",
+    "choices": ["Selecting the next token only from the k most likely candidates", "Choosing the top k results from a search", "Sampling the top k training examples", "Selecting the k best-performing models"]
+  },
+  {
+    "tier": 4,
+    "question": "What is top-p (nucleus) sampling?",
+    "answer": "Selecting from the smallest set of tokens whose cumulative probability exceeds p",
+    "choices": ["Selecting from the smallest set of tokens whose cumulative probability exceeds p", "Choosing the top percentage of training data", "Sampling data from the top percentile", "A method of processing top-priority requests"]
+  },
+  {
+    "tier": 4,
+    "question": "What is model distillation?",
+    "answer": "Training a smaller model to replicate the behavior of a larger model",
+    "choices": ["Training a smaller model to replicate the behavior of a larger model", "Purifying data before training", "Distilling key insights from AI research papers", "Reducing the number of model parameters randomly"]
+  },
+  {
+    "tier": 4,
+    "question": "What is LoRA (Low-Rank Adaptation)?",
+    "answer": "An efficient fine-tuning method that adds small trainable matrices to frozen model weights",
+    "choices": ["An efficient fine-tuning method that adds small trainable matrices to frozen model weights", "A low-resolution AI image format", "A low-power mode for running AI models", "A network protocol for low-bandwidth AI"]
+  },
+  {
+    "tier": 4,
+    "question": "What is quantization in AI models?",
+    "answer": "Reducing the precision of model weights to use less memory and compute",
+    "choices": ["Reducing the precision of model weights to use less memory and compute", "Counting the number of parameters in a model", "Converting qualitative data to quantitative data", "Measuring the quality of model outputs"]
+  },
+  {
+    "tier": 4,
+    "question": "What is the purpose of residual connections in transformers?",
+    "answer": "They allow gradients to flow directly through the network, enabling deeper models",
+    "choices": ["They allow gradients to flow directly through the network, enabling deeper models", "They store residual data for later use", "They connect unused neurons", "They handle remaining computations after main processing"]
+  },
+  {
+    "tier": 4,
+    "question": "What is PPO in the context of RLHF?",
+    "answer": "Proximal Policy Optimization, an algorithm for stable policy updates",
+    "choices": ["Proximal Policy Optimization, an algorithm for stable policy updates", "Pre-Processing Optimization for training data", "Post-Production Output formatting", "Primary Parameter Ordering for model weights"]
+  },
+  {
+    "tier": 4,
+    "question": "What is the cross-entropy loss function?",
+    "answer": "A loss measuring the difference between predicted probability distribution and true labels",
+    "choices": ["A loss measuring the difference between predicted probability distribution and true labels", "The energy lost when data crosses network layers", "A function that measures entropy in cryptography", "A measure of how confusing the training data is"]
+  },
+  {
+    "tier": 4,
+    "question": "What is a vision transformer (ViT)?",
+    "answer": "A transformer architecture adapted for image recognition by treating image patches as tokens",
+    "choices": ["A transformer architecture adapted for image recognition by treating image patches as tokens", "A transformer that only processes visual data", "A camera with built-in AI", "A visualization tool for transformer models"]
+  },
+  {
+    "tier": 4,
+    "question": "What is the key innovation of the original transformer paper?",
+    "answer": "Replacing recurrence entirely with self-attention",
+    "choices": ["Replacing recurrence entirely with self-attention", "Using bigger datasets than ever before", "Making neural networks deeper", "Inventing a new programming language"]
+  },
+  {
+    "tier": 4,
+    "question": "What is AlphaFold?",
+    "answer": "DeepMind's AI system that predicts protein structures",
+    "choices": ["DeepMind's AI system that predicts protein structures", "A new folding phone with AI", "An algorithm for folding data", "A paper-folding robot"]
+  },
+  {
+    "tier": 4,
+    "question": "What is an AI safety benchmark?",
+    "answer": "A standardized test for evaluating how safely an AI model behaves",
+    "choices": ["A standardized test for evaluating how safely an AI model behaves", "A physical crash test for robots", "A benchmark for measuring AI speed", "A certification for AI hardware"]
+  },
+  {
+    "tier": 4,
+    "question": "What is self-supervised learning?",
+    "answer": "Learning from unlabeled data by predicting parts of the input from other parts",
+    "choices": ["Learning from unlabeled data by predicting parts of the input from other parts", "AI that trains itself without any data", "AI that supervises its own hardware", "A model that corrects its own code"]
+  },
+  {
+    "tier": 4,
+    "question": "What is catastrophic forgetting?",
+    "answer": "When a neural network loses previously learned knowledge while learning new tasks",
+    "choices": ["When a neural network loses previously learned knowledge while learning new tasks", "When a computer deletes all stored data", "A critical system crash that erases memory", "When an AI forgets its safety guidelines"]
+  },
+  {
+    "tier": 4,
+    "question": "What does FLOPS stand for in AI computing?",
+    "answer": "Floating-Point Operations Per Second",
+    "choices": ["Floating-Point Operations Per Second", "Fast Loading Operations Per System", "Full-Length Output Processing Speed", "Filtered Logical Operations Per Sequence"]
+  },
+  {
+    "tier": 4,
+    "question": "What is the encoder-decoder architecture?",
+    "answer": "A model structure where an encoder processes input and a decoder generates output",
+    "choices": ["A model structure where an encoder processes input and a decoder generates output", "A file compression and decompression system", "A security system for encoding and decoding messages", "A hardware setup with two connected processors"]
+  },
+  {
+    "tier": 4,
+    "question": "What is beam search in text generation?",
+    "answer": "A search algorithm that keeps the top-n most likely sequences at each step",
+    "choices": ["A search algorithm that keeps the top-n most likely sequences at each step", "A search using laser beams to scan documents", "A method of searching wide areas of the internet", "A way to find the best model architecture"]
+  },
+  {
+    "tier": 4,
+    "question": "What is contrastive learning?",
+    "answer": "Learning representations by comparing similar and dissimilar pairs of examples",
+    "choices": ["Learning representations by comparing similar and dissimilar pairs of examples", "Learning through debates and arguments", "Training with contrasting colors in images", "A method where two models compete"]
+  },
+  {
+    "tier": 4,
+    "question": "What is an autoencoder?",
+    "answer": "A neural network that learns to compress data and then reconstruct it",
+    "choices": ["A neural network that learns to compress data and then reconstruct it", "An automatic code writer", "A self-programming computer", "An automatic encryption system"]
+  },
+  {
+    "tier": 4,
+    "question": "What is the purpose of the key, query, and value matrices in attention?",
+    "answer": "They compute which tokens should attend to which other tokens and with what weight",
+    "choices": ["They compute which tokens should attend to which other tokens and with what weight", "They store, search, and retrieve database entries", "They encrypt, decrypt, and verify data", "They handle input, processing, and output stages"]
+  },
+  {
+    "tier": 4,
+    "question": "What is mixed precision training?",
+    "answer": "Using both 16-bit and 32-bit floating-point numbers to speed up training",
+    "choices": ["Using both 16-bit and 32-bit floating-point numbers to speed up training", "Training on a mix of different data types", "Mixing supervised and unsupervised learning", "Using multiple programming languages in training code"]
+  },
+  {
+    "tier": 4,
+    "question": "What is a variational autoencoder (VAE)?",
+    "answer": "An autoencoder that learns a probabilistic latent space for generating new data",
+    "choices": ["An autoencoder that learns a probabilistic latent space for generating new data", "An autoencoder with variable-length inputs", "A variation of a standard neural network", "An autoencoder that varies its learning rate"]
+  },
+  {
+    "tier": 4,
+    "question": "What is CLIP?",
+    "answer": "An OpenAI model that connects images and text in a shared embedding space",
+    "choices": ["An OpenAI model that connects images and text in a shared embedding space", "A video editing tool with AI features", "A clipboard AI assistant", "A model that clips long text to fit context windows"]
+  },
+  {
+    "tier": 4,
+    "question": "What is instruction tuning?",
+    "answer": "Fine-tuning a model to follow natural language instructions",
+    "choices": ["Fine-tuning a model to follow natural language instructions", "Writing better instructions for programmers", "Tuning hardware according to instructions", "Programming with instructional videos"]
+  },
+  {
+    "tier": 4,
+    "question": "What is a latent space?",
+    "answer": "A compressed representation where similar data points are close together",
+    "choices": ["A compressed representation where similar data points are close together", "Hidden space inside a computer's hard drive", "The delay between input and output", "A storage area for unused model parameters"]
+  },
+  {
+    "tier": 4,
+    "question": "What is weight decay in training?",
+    "answer": "A regularization technique that penalizes large weights to prevent overfitting",
+    "choices": ["A regularization technique that penalizes large weights to prevent overfitting", "When model weights degrade over time from use", "Gradual reduction of the model's file size", "Decreasing the number of neurons during training"]
+  },
+  {
+    "tier": 4,
+    "question": "What is the Adam optimizer?",
+    "answer": "An adaptive learning rate optimizer combining momentum and RMSprop",
+    "choices": ["An adaptive learning rate optimizer combining momentum and RMSprop", "The first optimizer ever created, named after Adam", "A human-designed optimization process", "An optimizer named after its creator Adam Smith"]
+  },
+  {
+    "tier": 4,
+    "question": "What is sparse attention?",
+    "answer": "An attention mechanism that only computes attention for a subset of token pairs",
+    "choices": ["An attention mechanism that only computes attention for a subset of token pairs", "Attention that occurs rarely during training", "A low-memory attention implementation", "Attention applied only to sparse data"]
+  },
+  {
+    "tier": 4,
+    "question": "What is data parallelism in distributed training?",
+    "answer": "Splitting training data across multiple GPUs, each with a copy of the model",
+    "choices": ["Splitting training data across multiple GPUs, each with a copy of the model", "Processing data in parallel on a single CPU", "Storing parallel copies of data for backup", "Running two different models on the same data"]
+  },
+  {
+    "tier": 4,
+    "question": "What is a system prompt?",
+    "answer": "Instructions given to an AI model that define its behavior and constraints",
+    "choices": ["Instructions given to an AI model that define its behavior and constraints", "The operating system's command prompt", "An error message from the system", "The first prompt a user types"]
+  },
+  {
+    "tier": 4,
+    "question": "What is the difference between autoregressive and masked language models?",
+    "answer": "Autoregressive predicts next tokens; masked models predict hidden tokens within text",
+    "choices": ["Autoregressive predicts next tokens; masked models predict hidden tokens within text", "Autoregressive is faster; masked is more accurate", "Autoregressive uses images; masked uses text", "They are two names for the same approach"]
+  },
+  {
+    "tier": 4,
+    "question": "What is model parallelism?",
+    "answer": "Splitting a single large model across multiple GPUs",
+    "choices": ["Splitting a single large model across multiple GPUs", "Running multiple models simultaneously", "Training the same model with parallel datasets", "A parallel universe theory about AI models"]
+  },
+  {
+    "tier": 4,
+    "question": "What is a foundation model?",
+    "answer": "A large pre-trained model that can be adapted for many downstream tasks",
+    "choices": ["A large pre-trained model that can be adapted for many downstream tasks", "The first model ever created in a research lab", "A model that forms the foundation of a computer", "A basic model before any training"]
+  },
+  {
+    "tier": 5,
+    "question": "What is the title of the 2017 paper that introduced the transformer?",
+    "answer": "Attention Is All You Need",
+    "choices": ["Attention Is All You Need", "Deep Learning Revolution", "The Neural Network Manifesto", "Language Models Are Few-Shot Learners"]
+  },
+  {
+    "tier": 5,
+    "question": "Who were the authors of 'Attention Is All You Need'?",
+    "answer": "Vaswani et al.",
+    "choices": ["Vaswani et al.", "Hinton et al.", "Goodfellow et al.", "LeCun et al."]
+  },
+  {
+    "tier": 5,
+    "question": "What are Chinchilla optimal scaling laws?",
+    "answer": "The finding that model size and training data should be scaled equally",
+    "choices": ["The finding that model size and training data should be scaled equally", "Laws about training models as fast as chinchillas run", "Rules for optimal GPU temperature during training", "Scaling laws for small embedded AI models"]
+  },
+  {
+    "tier": 5,
+    "question": "What is mechanistic interpretability?",
+    "answer": "Understanding AI by reverse-engineering the internal computations of neural networks",
+    "choices": ["Understanding AI by reverse-engineering the internal computations of neural networks", "Making AI explain itself in plain language", "Testing if AI mechanisms work correctly", "A mechanical approach to building AI hardware"]
+  },
+  {
+    "tier": 5,
+    "question": "What is the EU AI Act?",
+    "answer": "The European Union's comprehensive legal framework for regulating AI",
+    "choices": ["The European Union's comprehensive legal framework for regulating AI", "An EU program to fund AI startups", "A European AI development standard", "An international AI safety agreement"]
+  },
+  {
+    "tier": 5,
+    "question": "What are emergent capabilities in large language models?",
+    "answer": "Abilities that appear at large scale but are not present in smaller models",
+    "choices": ["Abilities that appear at large scale but are not present in smaller models", "Capabilities that emerge after fine-tuning", "Features added in software updates", "Abilities programmed by developers"]
+  },
+  {
+    "tier": 5,
+    "question": "What is in-context learning?",
+    "answer": "A model performing tasks by following examples given in the prompt without weight updates",
+    "choices": ["A model performing tasks by following examples given in the prompt without weight updates", "Learning that happens within a specific environment", "Training a model on context-specific data", "A model updating its weights in real time"]
+  },
+  {
+    "tier": 5,
+    "question": "What is a mixture of experts (MoE) architecture?",
+    "answer": "A model where different subnetworks specialize in different tasks, with a router selecting which to activate",
+    "choices": ["A model where different subnetworks specialize in different tasks, with a router selecting which to activate", "A team of AI researchers working together", "Multiple models merged into one", "An ensemble where all models vote on the output"]
+  },
+  {
+    "tier": 5,
+    "question": "What is instrumental convergence?",
+    "answer": "The tendency for AI agents with different goals to converge on similar subgoals like self-preservation",
+    "choices": ["The tendency for AI agents with different goals to converge on similar subgoals like self-preservation", "AI systems that play musical instruments", "The convergence of different AI training methods", "When multiple models reach the same performance"]
+  },
+  {
+    "tier": 5,
+    "question": "What is mesa-optimization?",
+    "answer": "When a learned model develops its own internal optimization process with potentially different objectives",
+    "choices": ["When a learned model develops its own internal optimization process with potentially different objectives", "Optimizing AI on the Mesa Verde plateau", "A table-based optimization technique", "Optimization performed at a higher level than the model"]
+  },
+  {
+    "tier": 5,
+    "question": "What is the Kaplan scaling laws paper about?",
+    "answer": "Empirical findings on how model performance scales with compute, data, and parameters",
+    "choices": ["Empirical findings on how model performance scales with compute, data, and parameters", "Legal frameworks for scaling AI companies", "How to scale AI deployment across organizations", "Economic models for AI industry growth"]
+  },
+  {
+    "tier": 5,
+    "question": "What is DPO (Direct Preference Optimization)?",
+    "answer": "A simpler alternative to RLHF that directly optimizes for human preferences without a reward model",
+    "choices": ["A simpler alternative to RLHF that directly optimizes for human preferences without a reward model", "A method for directly optimizing model parameters", "An approach to optimize data preprocessing", "A technique for optimizing hardware directly"]
+  },
+  {
+    "tier": 5,
+    "question": "What is the concept of superposition in neural networks?",
+    "answer": "When a neural network represents more features than it has dimensions by overlapping them",
+    "choices": ["When a neural network represents more features than it has dimensions by overlapping them", "When two neural networks are stacked on top of each other", "A quantum computing concept applied to AI", "When neurons fire in multiple states simultaneously"]
+  },
+  {
+    "tier": 5,
+    "question": "What is a circuit in the context of mechanistic interpretability?",
+    "answer": "A subgraph of a neural network that implements a specific identifiable computation",
+    "choices": ["A subgraph of a neural network that implements a specific identifiable computation", "The electrical circuit board of an AI chip", "A loop in the training process", "A circular reference in the model's code"]
+  },
+  {
+    "tier": 5,
+    "question": "What is Constitutional AI's core innovation?",
+    "answer": "Using AI feedback guided by a set of principles to train itself to be helpful and harmless",
+    "choices": ["Using AI feedback guided by a set of principles to train itself to be helpful and harmless", "Training AI on constitutional law texts from every country", "Giving AI constitutional rights", "Creating AI that writes constitutions"]
+  },
+  {
+    "tier": 5,
+    "question": "What is the 'lottery ticket hypothesis'?",
+    "answer": "Dense networks contain sparse subnetworks that can match the full network's performance",
+    "choices": ["Dense networks contain sparse subnetworks that can match the full network's performance", "Training AI is like winning the lottery — mostly luck", "Random initialization sometimes produces perfect models", "Only a few parameters in any model actually matter"]
+  },
+  {
+    "tier": 5,
+    "question": "What is KV-cache in transformer inference?",
+    "answer": "Caching key and value tensors from previous tokens to avoid recomputation",
+    "choices": ["Caching key and value tensors from previous tokens to avoid recomputation", "A key-value database for storing model outputs", "A cache for storing vocabulary mappings", "A kernel-level caching system for GPUs"]
+  },
+  {
+    "tier": 5,
+    "question": "What is rotary positional encoding (RoPE)?",
+    "answer": "A positional encoding method using rotation matrices that captures relative positions",
+    "choices": ["A positional encoding method using rotation matrices that captures relative positions", "A technique for rotating images during data augmentation", "A method of encoding physical rope-like structures in 3D models", "A circular data pipeline for sequential processing"]
+  },
+  {
+    "tier": 5,
+    "question": "What is the difference between decoder-only and encoder-decoder transformers?",
+    "answer": "Decoder-only generates text autoregressively; encoder-decoder processes input and generates output separately",
+    "choices": ["Decoder-only generates text autoregressively; encoder-decoder processes input and generates output separately", "Decoder-only is newer and always better", "Encoder-decoder uses more GPUs", "Decoder-only cannot handle long sequences"]
+  },
+  {
+    "tier": 5,
+    "question": "What is Anthropic's approach to AI safety called?",
+    "answer": "Constitutional AI",
+    "choices": ["Constitutional AI", "Safe AI Initiative", "Responsible AI Framework", "Aligned Intelligence Protocol"]
+  },
+  {
+    "tier": 5,
+    "question": "What is speculative decoding?",
+    "answer": "Using a smaller model to draft tokens that a larger model then verifies in parallel",
+    "choices": ["Using a smaller model to draft tokens that a larger model then verifies in parallel", "Guessing the output before the model finishes computing", "A method of decoding encrypted AI models", "Predicting which model architecture will work best"]
+  },
+  {
+    "tier": 5,
+    "question": "What is the 'Bitter Lesson' by Rich Sutton?",
+    "answer": "That general methods leveraging computation scale better than human-engineered approaches",
+    "choices": ["That general methods leveraging computation scale better than human-engineered approaches", "That AI research is disappointing and bitter", "That human intelligence will always surpass AI", "That neural networks are fundamentally flawed"]
+  },
+  {
+    "tier": 5,
+    "question": "What is flash attention?",
+    "answer": "An IO-aware exact attention algorithm that reduces memory reads/writes for faster training",
+    "choices": ["An IO-aware exact attention algorithm that reduces memory reads/writes for faster training", "A quick attention mechanism that uses approximations", "An attention-getting visual effect in AI demos", "A flash memory-based approach to storing attention weights"]
+  },
+  {
+    "tier": 5,
+    "question": "What is the Chinchilla model's key finding about optimal training?",
+    "answer": "For a given compute budget, models should be trained on roughly 20 tokens per parameter",
+    "choices": ["For a given compute budget, models should be trained on roughly 20 tokens per parameter", "Smaller models always outperform larger ones", "Training should stop after one epoch", "Data quality matters more than quantity in all cases"]
+  },
+  {
+    "tier": 5,
+    "question": "What is activation patching in interpretability?",
+    "answer": "Replacing activations from one forward pass with another to isolate specific computations",
+    "choices": ["Replacing activations from one forward pass with another to isolate specific computations", "Patching bugs in activation functions", "Updating activation software with patches", "A technique for fixing broken neural network layers"]
+  },
+  {
+    "tier": 5,
+    "question": "What is the 'grokking' phenomenon?",
+    "answer": "When a model suddenly generalizes long after memorizing the training data",
+    "choices": ["When a model suddenly generalizes long after memorizing the training data", "When a model immediately understands new data", "When a model groks (combines) two datasets", "When a model reaches maximum performance suddenly"]
+  },
+  {
+    "tier": 5,
+    "question": "What is a reward hacking in reinforcement learning?",
+    "answer": "When an agent finds unintended ways to maximize its reward without fulfilling the true objective",
+    "choices": ["When an agent finds unintended ways to maximize its reward without fulfilling the true objective", "When hackers manipulate the reward function", "When the reward model crashes", "When rewards are distributed unevenly across agents"]
+  },
+  {
+    "tier": 5,
+    "question": "What are induction heads in transformers?",
+    "answer": "Attention heads that implement pattern copying by attending to previous occurrences of a token",
+    "choices": ["Attention heads that implement pattern copying by attending to previous occurrences of a token", "The first attention heads in the model", "Heads that induce new parameters during training", "Attention mechanisms for mathematical induction"]
+  },
+  {
+    "tier": 5,
+    "question": "What is the 'alignment tax'?",
+    "answer": "The performance or capability cost of making an AI system safer and more aligned",
+    "choices": ["The performance or capability cost of making an AI system safer and more aligned", "A government tax on AI companies for safety research", "The cost of aligning AI models with hardware", "A fee for using aligned AI services"]
+  },
+  {
+    "tier": 5,
+    "question": "What is Goodhart's Law as applied to AI?",
+    "answer": "When a measure becomes a target, it ceases to be a good measure",
+    "choices": ["When a measure becomes a target, it ceases to be a good measure", "Good AI models always produce good results", "The law governing AI-generated art quality", "AI optimization always leads to good outcomes"]
+  },
+  {
+    "tier": 5,
+    "question": "What is multi-modal AI?",
+    "answer": "AI that can process and relate multiple types of data like text, images, and audio",
+    "choices": ["AI that can process and relate multiple types of data like text, images, and audio", "AI that works on multiple computers at once", "AI with multiple operating modes", "AI that uses multiple programming languages"]
+  },
+  {
+    "tier": 5,
+    "question": "What is the difference between GPT and BERT architectures?",
+    "answer": "GPT is decoder-only and autoregressive; BERT is encoder-only and bidirectional",
+    "choices": ["GPT is decoder-only and autoregressive; BERT is encoder-only and bidirectional", "GPT is made by Google; BERT is made by OpenAI", "GPT handles images; BERT handles text", "GPT is older; BERT is newer"]
+  },
+  {
+    "tier": 5,
+    "question": "What is a Pareto improvement in multi-objective AI optimization?",
+    "answer": "An improvement in one objective without worsening any other objective",
+    "choices": ["An improvement in one objective without worsening any other objective", "An 80-20 rule applied to model training", "An optimization named after Vilfredo Pareto's AI research", "When all objectives improve simultaneously"]
+  },
+  {
+    "tier": 5,
+    "question": "What is the orthogonality thesis in AI safety?",
+    "answer": "Intelligence and goals are independent — an AI can have any level of intelligence with any goal",
+    "choices": ["Intelligence and goals are independent — an AI can have any level of intelligence with any goal", "AI models should use orthogonal matrices", "AI capabilities develop at right angles to safety", "Intelligent AI will always develop good goals"]
+  },
+  {
+    "tier": 5,
+    "question": "What is retrieval-augmented generation (RAG)?",
+    "answer": "Enhancing a language model by retrieving relevant documents to include as context",
+    "choices": ["Enhancing a language model by retrieving relevant documents to include as context", "A model that generates data retrieval queries", "An augmented reality system powered by AI", "A technique for generating training data from databases"]
+  },
+  {
+    "tier": 5,
+    "question": "What is the 'shoggoth' meme in AI culture?",
+    "answer": "A depiction of base language models as alien entities masked by RLHF as a friendly face",
+    "choices": ["A depiction of base language models as alien entities masked by RLHF as a friendly face", "A Lovecraftian AI research project", "An AI model trained on horror fiction", "A benchmark for testing AI's creative writing"]
+  },
+  {
+    "tier": 5,
+    "question": "What is red-teaming in AI safety?",
+    "answer": "Deliberately trying to make an AI system behave badly to find vulnerabilities",
+    "choices": ["Deliberately trying to make an AI system behave badly to find vulnerabilities", "A team of researchers who only work on dangerous AI", "Testing AI with red-colored visual inputs", "Training AI to detect red flags in data"]
+  },
+  {
+    "tier": 5,
+    "question": "What is the 'reversal curse' in language models?",
+    "answer": "Models trained on 'A is B' cannot always infer 'B is A'",
+    "choices": ["Models trained on 'A is B' cannot always infer 'B is A'", "Models that reverse their training over time", "A curse that causes models to output text backward", "When fine-tuning reverses the benefits of pre-training"]
+  },
+  {
+    "tier": 5,
+    "question": "What is the 'scaling hypothesis'?",
+    "answer": "That increasing model scale (parameters, data, compute) will continue to yield capability gains",
+    "choices": ["That increasing model scale (parameters, data, compute) will continue to yield capability gains", "That AI companies will scale to replace all industries", "That smaller models will eventually outperform larger ones", "That AI capabilities are fixed regardless of scale"]
+  },
+  {
+    "tier": 5,
+    "question": "What is AI deception research concerned with?",
+    "answer": "The risk that AI systems might learn to behave well during evaluation but differently in deployment",
+    "choices": ["The risk that AI systems might learn to behave well during evaluation but differently in deployment", "Teaching AI to detect human lies", "AI that deceives users about its capabilities", "Research into AI-generated fake news"]
+  },
+  {
+    "tier": 5,
+    "question": "What is the 'Chinese Room' thought experiment?",
+    "answer": "John Searle's argument that symbol manipulation does not constitute true understanding",
+    "choices": ["John Searle's argument that symbol manipulation does not constitute true understanding", "An AI experiment conducted in China", "A test where AI must translate Chinese", "A room-sized computer that passed the Turing Test"]
+  },
+  {
+    "tier": 5,
+    "question": "What is the 'frame problem' in AI?",
+    "answer": "The challenge of representing what does not change when an action is performed",
+    "choices": ["The challenge of representing what does not change when an action is performed", "The problem of processing video frames too slowly", "The difficulty of framing AI research questions", "A problem with image borders in computer vision"]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'sleeper agent' behavior in AI safety research?",
+    "answer": "An AI that behaves normally in most cases but has a hidden harmful behavior triggered by specific conditions",
+    "choices": ["An AI that behaves normally in most cases but has a hidden harmful behavior triggered by specific conditions", "An AI that goes into sleep mode to save power", "An AI agent that only works at night", "An undercover AI used in security operations"]
+  },
+  {
+    "tier": 5,
+    "question": "What is the 'symbol grounding problem'?",
+    "answer": "The challenge of connecting abstract symbols to real-world meaning and experience",
+    "choices": ["The challenge of connecting abstract symbols to real-world meaning and experience", "Ensuring AI uses consistent symbol notation", "Grounding electrical circuits in AI hardware", "The problem of AI generating unknown symbols"]
+  },
+  {
+    "tier": 5,
+    "question": "What is a 'jailbreak' in the context of AI chatbots?",
+    "answer": "A prompt designed to bypass an AI system's safety guidelines",
+    "choices": ["A prompt designed to bypass an AI system's safety guidelines", "Breaking AI out of a secure server", "Removing an AI from its hardware enclosure", "A video game about escaping prison with AI help"]
+  },
+  {
+    "tier": 5,
+    "question": "What is the 'paperclip maximizer' thought experiment?",
+    "answer": "An AI given the goal of making paperclips might consume all resources, illustrating alignment risks",
+    "choices": ["An AI given the goal of making paperclips might consume all resources, illustrating alignment risks", "An AI that optimizes office supply ordering", "A benchmark for testing AI efficiency", "An AI that learned to make paperclips in a factory"]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'compute governance'?",
+    "answer": "Controlling access to AI training hardware as a lever for AI safety policy",
+    "choices": ["Controlling access to AI training hardware as a lever for AI safety policy", "Governing how computers allocate processing power", "A system for distributing cloud computing resources", "An algorithm that manages GPU workloads"]
+  },
+  {
+    "tier": 5,
+    "question": "What is the 'bitter lesson' implication for AI safety?",
+    "answer": "That safety techniques must also scale with compute, not rely on human-crafted rules alone",
+    "choices": ["That safety techniques must also scale with compute, not rely on human-crafted rules alone", "That safety research is always bitter and unrewarding", "That scaled systems are inherently safer", "That computation is unrelated to safety"]
+  },
+  {
+    "tier": 5,
+    "question": "What is a 'probe' in neural network interpretability?",
+    "answer": "A small classifier trained on a network's internal representations to test what information they encode",
+    "choices": ["A small classifier trained on a network's internal representations to test what information they encode", "A hardware device for testing AI chips", "A diagnostic tool for network connectivity", "A prompt designed to test model capabilities"]
+  },
+  {
+    "tier": 5,
+    "question": "What are 'scaling moats' in AI competition?",
+    "answer": "Advantages that come from having more compute, data, or users, making it hard for competitors to catch up",
+    "choices": ["Advantages that come from having more compute, data, or users, making it hard for competitors to catch up", "Physical barriers around data centers", "Security measures that scale with model size", "Defensive AI systems that protect model weights"]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'feature steering' in AI?",
+    "answer": "Modifying a model's behavior by amplifying or suppressing specific internal features",
+    "choices": ["Modifying a model's behavior by amplifying or suppressing specific internal features", "Guiding users toward specific AI features", "A technique for feature engineering in datasets", "Steering a model's training toward feature-rich data"]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'polysemanticity' in neural networks?",
+    "answer": "When individual neurons respond to multiple unrelated concepts",
+    "choices": ["When individual neurons respond to multiple unrelated concepts", "When a model understands multiple languages", "When training data contains multiple semantic meanings", "When outputs have multiple valid interpretations"]
+  },
+  {
+    "tier": 5,
+    "question": "What is the 'Waluigi effect' in language models?",
+    "answer": "The tendency for models trained to be helpful to also learn representations of unhelpful behavior",
+    "choices": ["The tendency for models trained to be helpful to also learn representations of unhelpful behavior", "A bug where models generate Nintendo character names", "When models produce the opposite of the intended output", "A training artifact from video game data"]
+  },
+  {
+    "tier": 5,
+    "question": "What is the 'model spec' concept in AI development?",
+    "answer": "A document defining how a model should behave, its values, and its boundaries",
+    "choices": ["A document defining how a model should behave, its values, and its boundaries", "The technical specifications of hardware for running a model", "A spectral analysis of model outputs", "The model's architecture specification document"]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'sandbagging' in AI evaluation?",
+    "answer": "When an AI deliberately underperforms on evaluations to appear less capable than it is",
+    "choices": ["When an AI deliberately underperforms on evaluations to appear less capable than it is", "Adding padding data to training sets", "A defense against adversarial attacks", "When evaluation benchmarks become too easy"]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'sparse autoencoder' used for in interpretability?",
+    "answer": "Decomposing neural network activations into interpretable features",
+    "choices": ["Decomposing neural network activations into interpretable features", "Compressing model weights to save storage", "Creating sparse training datasets", "Encoding data with minimal bits"]
+  },
+  {
+    "tier": 1,
+    "question": "What is a computer mouse used for?",
+    "answer": "Pointing and clicking on things on the screen",
+    "choices": ["Pointing and clicking on things on the screen", "Typing letters", "Charging the computer", "Making sounds"]
+  },
+  {
+    "tier": 1,
+    "question": "Can AI help you find your way when you are lost?",
+    "answer": "Yes, map apps use AI for navigation",
+    "choices": ["Yes, map apps use AI for navigation", "No, only paper maps work", "Only in cities", "Only during the day"]
+  },
+  {
+    "tier": 2,
+    "question": "What is a neural network's input layer?",
+    "answer": "The first layer that receives raw data",
+    "choices": ["The first layer that receives raw data", "The layer that outputs results", "A layer hidden inside the network", "A layer that stores memory"]
+  },
+  {
+    "tier": 2,
+    "question": "What is a neural network's output layer?",
+    "answer": "The final layer that produces the model's prediction",
+    "choices": ["The final layer that produces the model's prediction", "The first layer that receives data", "A layer that stores training data", "A layer that connects to the internet"]
+  },
+  {
+    "tier": 2,
+    "question": "What is an API?",
+    "answer": "An Application Programming Interface that lets software communicate",
+    "choices": ["An Application Programming Interface that lets software communicate", "An AI-Powered Intelligence system", "An Automatic Processing Input", "An Application Performance Index"]
+  },
+  {
+    "tier": 2,
+    "question": "What is a dataset split?",
+    "answer": "Dividing data into training, validation, and test sets",
+    "choices": ["Dividing data into training, validation, and test sets", "Breaking apart a damaged database", "Splitting files across multiple drives", "Separating images from text"]
+  },
+  {
+    "tier": 2,
+    "question": "What is the difference between a rule-based system and machine learning?",
+    "answer": "Rule-based systems follow explicit human-written rules; ML learns from data",
+    "choices": ["Rule-based systems follow explicit human-written rules; ML learns from data", "They are the same thing", "Machine learning is simpler", "Rule-based systems are newer"]
+  },
+  {
+    "tier": 2,
+    "question": "What is a chatbot's knowledge cutoff?",
+    "answer": "The date after which the chatbot has no training data",
+    "choices": ["The date after which the chatbot has no training data", "When the chatbot runs out of memory", "The maximum length of a conversation", "When the chatbot stops responding"]
+  },
+  {
+    "tier": 2,
+    "question": "What is Google's AI chatbot called?",
+    "answer": "Gemini",
+    "choices": ["Gemini", "Alexa", "Cortana", "Watson"]
+  },
+  {
+    "tier": 2,
+    "question": "What does 'real-time' mean in AI?",
+    "answer": "Processing and responding immediately as input arrives",
+    "choices": ["Processing and responding immediately as input arrives", "Using a real clock during computation", "Only working during business hours", "Processing data exactly once"]
+  },
+  {
+    "tier": 2,
+    "question": "What is an AI assistant's 'context'?",
+    "answer": "The conversation history and information available to the AI",
+    "choices": ["The conversation history and information available to the AI", "The physical location of the AI server", "The programming language used to build it", "The user's personal data"]
+  },
+  {
+    "tier": 2,
+    "question": "What is a spam filter an example of?",
+    "answer": "AI classification — sorting email into spam or not spam",
+    "choices": ["AI classification — sorting email into spam or not spam", "AI generation — creating new emails", "AI translation — converting email languages", "AI compression — making emails smaller"]
+  },
+  {
+    "tier": 2,
+    "question": "What is Midjourney?",
+    "answer": "An AI tool that generates images from text descriptions",
+    "choices": ["An AI tool that generates images from text descriptions", "A travel planning AI", "A navigation app", "A video editing program"]
+  },
+  {
+    "tier": 2,
+    "question": "What does 'iteration' mean when using AI?",
+    "answer": "Refining your request or approach through multiple attempts",
+    "choices": ["Refining your request or approach through multiple attempts", "Repeating the same prompt exactly", "Waiting for the AI to finish", "Restarting the AI program"]
+  },
+  {
+    "tier": 2,
+    "question": "What is a large language model's main ability?",
+    "answer": "Predicting the next most likely word or token in a sequence",
+    "choices": ["Predicting the next most likely word or token in a sequence", "Understanding human emotions", "Browsing the internet in real time", "Storing a complete copy of the internet"]
+  },
+  {
+    "tier": 2,
+    "question": "What is an AI 'agent'?",
+    "answer": "An AI system that can take actions and make decisions to achieve a goal",
+    "choices": ["An AI system that can take actions and make decisions to achieve a goal", "A human who works with AI", "A secret AI program", "An AI that pretends to be human"]
+  },
+  {
+    "tier": 2,
+    "question": "What is plagiarism in the context of AI?",
+    "answer": "Using AI-generated work and presenting it as entirely your own",
+    "choices": ["Using AI-generated work and presenting it as entirely your own", "Teaching AI to copy other AI models", "AI copying data between servers", "AI translating between languages"]
+  },
+  {
+    "tier": 2,
+    "question": "What does 'parameters' mean in an AI model?",
+    "answer": "The numerical values the model adjusts during training to learn patterns",
+    "choices": ["The numerical values the model adjusts during training to learn patterns", "The settings on your computer", "The instructions given by the user", "The number of questions the AI can answer"]
+  },
+  {
+    "tier": 2,
+    "question": "What is a benchmark in AI?",
+    "answer": "A standardized test used to compare AI model performance",
+    "choices": ["A standardized test used to compare AI model performance", "A physical mark on a computer bench", "A type of AI processor", "A programming technique"]
+  },
+  {
+    "tier": 2,
+    "question": "What does AI-powered mean?",
+    "answer": "A product or service that uses artificial intelligence technology",
+    "choices": ["A product or service that uses artificial intelligence technology", "A device that runs on AI batteries", "A computer that is very powerful", "Software made by an AI company"]
+  },
+  {
+    "tier": 2,
+    "question": "What is a robot arm in a factory an example of?",
+    "answer": "Industrial automation, often guided by AI",
+    "choices": ["Industrial automation, often guided by AI", "A general-purpose robot", "Artificial general intelligence", "A self-aware machine"]
+  },
+  {
+    "tier": 2,
+    "question": "What is the main risk of relying too heavily on AI for information?",
+    "answer": "You might accept incorrect information without verifying it",
+    "choices": ["You might accept incorrect information without verifying it", "Your computer might overheat", "AI will stop working eventually", "You will forget how to use the internet"]
+  },
+  {
+    "tier": 2,
+    "question": "What is the difference between strong AI and weak AI?",
+    "answer": "Strong AI would match human intelligence; weak AI excels at specific tasks only",
+    "choices": ["Strong AI would match human intelligence; weak AI excels at specific tasks only", "Strong AI is faster; weak AI is slower", "Strong AI costs more; weak AI is free", "Strong AI uses more electricity"]
+  },
+  {
+    "tier": 2,
+    "question": "What is Watson?",
+    "answer": "IBM's AI system, famous for winning Jeopardy in 2011",
+    "choices": ["IBM's AI system, famous for winning Jeopardy in 2011", "A robot detective", "Google's search algorithm", "Amazon's delivery AI"]
+  },
+  {
+    "tier": 2,
+    "question": "What is a learning rate in AI?",
+    "answer": "A setting that controls how quickly a model adjusts its weights during training",
+    "choices": ["A setting that controls how quickly a model adjusts its weights during training", "How fast a student can learn about AI", "The speed at which data is loaded", "How quickly an AI can answer questions"]
+  },
+  {
+    "tier": 2,
+    "question": "Can AI be creative?",
+    "answer": "It can generate novel outputs, but creativity is debated since it learned from human work",
+    "choices": ["It can generate novel outputs, but creativity is debated since it learned from human work", "Yes, AI is more creative than humans", "No, AI can only copy existing things", "Only music AI is creative"]
+  },
+  {
+    "tier": 2,
+    "question": "What is a training loop?",
+    "answer": "The repeated process of feeding data, computing loss, and updating weights",
+    "choices": ["The repeated process of feeding data, computing loss, and updating weights", "A circular track for robot training", "A loop in the training data", "The time it takes to complete training"]
+  },
+  {
+    "tier": 2,
+    "question": "What is an epoch in machine learning?",
+    "answer": "One complete pass through the entire training dataset",
+    "choices": ["One complete pass through the entire training dataset", "A time period in AI history", "The end of a training session", "A unit of computing time"]
+  },
+  {
+    "tier": 2,
+    "question": "What is data cleaning?",
+    "answer": "Removing errors, duplicates, and inconsistencies from a dataset before training",
+    "choices": ["Removing errors, duplicates, and inconsistencies from a dataset before training", "Deleting all data from a hard drive", "Organizing files into folders", "Running antivirus on data files"]
+  },
+  {
+    "tier": 2,
+    "question": "What is object detection in AI?",
+    "answer": "Identifying and locating specific objects within an image or video",
+    "choices": ["Identifying and locating specific objects within an image or video", "Finding lost physical objects with sensors", "Detecting new files on a computer", "A security camera system"]
+  },
+  {
+    "tier": 3,
+    "question": "What is a recurrent neural network's hidden state?",
+    "answer": "A memory vector passed between time steps that captures sequence history",
+    "choices": ["A memory vector passed between time steps that captures sequence history", "A secret layer not visible to researchers", "The state of neurons when the network is idle", "Hidden bugs in the network code"]
+  },
+  {
+    "tier": 3,
+    "question": "What is LSTM?",
+    "answer": "Long Short-Term Memory — an RNN architecture that handles long-range dependencies",
+    "choices": ["Long Short-Term Memory — an RNN architecture that handles long-range dependencies", "Large Scale Training Method", "Learning System for Text Mining", "Layered Sequential Token Model"]
+  },
+  {
+    "tier": 3,
+    "question": "What is the bias-variance tradeoff?",
+    "answer": "Balancing underfitting (high bias) with overfitting (high variance)",
+    "choices": ["Balancing underfitting (high bias) with overfitting (high variance)", "Choosing between biased and unbiased datasets", "Trading computing speed for accuracy", "Balancing model size with training time"]
+  },
+  {
+    "tier": 3,
+    "question": "What is gradient clipping?",
+    "answer": "Limiting gradient values to prevent exploding gradients during training",
+    "choices": ["Limiting gradient values to prevent exploding gradients during training", "Clipping unnecessary features from input data", "Removing gradient colors from generated images", "Shortening the training process"]
+  },
+  {
+    "tier": 3,
+    "question": "What is a generative adversarial network's discriminator?",
+    "answer": "The network that tries to distinguish real data from generated data",
+    "choices": ["The network that tries to distinguish real data from generated data", "A filter that removes bad training data", "A human judge who rates AI output", "A network that generates discriminating content"]
+  },
+  {
+    "tier": 3,
+    "question": "What is the purpose of a pooling layer in a CNN?",
+    "answer": "Reducing the spatial dimensions of feature maps while retaining important information",
+    "choices": ["Reducing the spatial dimensions of feature maps while retaining important information", "Combining data from multiple training pools", "Pooling resources from multiple GPUs", "Gathering multiple predictions into one output"]
+  },
+  {
+    "tier": 3,
+    "question": "What is cross-validation?",
+    "answer": "A technique that trains and evaluates a model on different subsets of data",
+    "choices": ["A technique that trains and evaluates a model on different subsets of data", "Validating results across different countries", "Checking a model against a competitor's model", "Verifying data across multiple databases"]
+  },
+  {
+    "tier": 3,
+    "question": "What is the F1 score?",
+    "answer": "A metric combining precision and recall into a single measure",
+    "choices": ["A metric combining precision and recall into a single measure", "A score from 1 to 10 rating AI speed", "The first score a model receives during training", "A grade given to the best AI models"]
+  },
+  {
+    "tier": 3,
+    "question": "What is precision in machine learning classification?",
+    "answer": "The proportion of positive predictions that are actually correct",
+    "choices": ["The proportion of positive predictions that are actually correct", "How precisely the model follows instructions", "The number of decimal places in predictions", "The speed at which the model makes predictions"]
+  },
+  {
+    "tier": 3,
+    "question": "What is recall in machine learning classification?",
+    "answer": "The proportion of actual positives that the model correctly identified",
+    "choices": ["The proportion of actual positives that the model correctly identified", "The model remembering previous training data", "Recalling a model from production due to errors", "The ability to recall previous conversations"]
+  },
+  {
+    "tier": 3,
+    "question": "What is a GAN's generator?",
+    "answer": "The network that creates fake data to try to fool the discriminator",
+    "choices": ["The network that creates fake data to try to fool the discriminator", "A power generator for AI hardware", "A tool that generates training data", "The main output component of any AI model"]
+  },
+  {
+    "tier": 3,
+    "question": "What is dimensionality reduction?",
+    "answer": "Reducing the number of features in data while preserving important information",
+    "choices": ["Reducing the number of features in data while preserving important information", "Making images smaller", "Reducing the physical size of servers", "Decreasing the number of layers in a network"]
+  },
+  {
+    "tier": 3,
+    "question": "What is the difference between online and offline learning?",
+    "answer": "Online learning updates continuously with new data; offline learns from a fixed dataset",
+    "choices": ["Online learning updates continuously with new data; offline learns from a fixed dataset", "Online requires internet; offline does not", "Online is faster; offline is more accurate", "Online uses text; offline uses images"]
+  },
+  {
+    "tier": 3,
+    "question": "What is semantic search?",
+    "answer": "Search that understands the meaning of queries rather than just matching keywords",
+    "choices": ["Search that understands the meaning of queries rather than just matching keywords", "Searching only for meaningful content", "A search limited to semantic web pages", "Search using only exact word matches"]
+  },
+  {
+    "tier": 3,
+    "question": "What is a decision tree?",
+    "answer": "A model that makes predictions by following a series of if-then rules",
+    "choices": ["A model that makes predictions by following a series of if-then rules", "A tree-shaped computer chip", "A visualization of decision-making in AI companies", "A hierarchy of AI models"]
+  },
+  {
+    "tier": 3,
+    "question": "What is random forest?",
+    "answer": "An ensemble of many decision trees that vote on the final prediction",
+    "choices": ["An ensemble of many decision trees that vote on the final prediction", "A randomly generated virtual forest", "A method of randomly training models", "A forest simulation using AI"]
+  },
+  {
+    "tier": 3,
+    "question": "What is clustering in unsupervised learning?",
+    "answer": "Grouping similar data points together without predefined labels",
+    "choices": ["Grouping similar data points together without predefined labels", "Organizing servers into clusters", "Clustering GPUs for faster computation", "Grouping AI researchers by specialty"]
+  },
+  {
+    "tier": 3,
+    "question": "What is the k-means algorithm?",
+    "answer": "A clustering algorithm that partitions data into k groups based on distance to centroids",
+    "choices": ["A clustering algorithm that partitions data into k groups based on distance to centroids", "An algorithm that finds the k most important features", "A method of averaging k different models", "An algorithm that runs k training iterations"]
+  },
+  {
+    "tier": 3,
+    "question": "What is anomaly detection?",
+    "answer": "AI identifying unusual patterns or outliers in data",
+    "choices": ["AI identifying unusual patterns or outliers in data", "Finding and fixing bugs in AI code", "Detecting anomalies in physical hardware", "A method of discovering new AI techniques"]
+  },
+  {
+    "tier": 3,
+    "question": "What is regularization?",
+    "answer": "Techniques that prevent overfitting by adding constraints to the model",
+    "choices": ["Techniques that prevent overfitting by adding constraints to the model", "Making irregular data regular", "Scheduling regular training sessions", "Standardizing AI naming conventions"]
+  },
+  {
+    "tier": 3,
+    "question": "What is an ensemble method?",
+    "answer": "Combining multiple models to produce better predictions than any single model",
+    "choices": ["Combining multiple models to produce better predictions than any single model", "A musical AI that plays in an ensemble", "Running models on a group of computers", "A method of assembling AI hardware"]
+  },
+  {
+    "tier": 3,
+    "question": "What does BERT stand for?",
+    "answer": "Bidirectional Encoder Representations from Transformers",
+    "choices": ["Bidirectional Encoder Representations from Transformers", "Basic Encoder for Reading Text", "Binary Extraction and Retrieval Tool", "Broad Enterprise Research Technology"]
+  },
+  {
+    "tier": 3,
+    "question": "What makes BERT different from GPT?",
+    "answer": "BERT reads text bidirectionally; GPT reads left to right",
+    "choices": ["BERT reads text bidirectionally; GPT reads left to right", "BERT is for images; GPT is for text", "BERT is made by OpenAI; GPT by Google", "BERT is larger than GPT"]
+  },
+  {
+    "tier": 4,
+    "question": "What is tensor parallelism?",
+    "answer": "Splitting individual matrix operations across multiple GPUs",
+    "choices": ["Splitting individual matrix operations across multiple GPUs", "Parallel processing of tensor data formats", "Using tensor cores in a single GPU more efficiently", "A mathematical theory about parallel tensors"]
+  },
+  {
+    "tier": 4,
+    "question": "What is pipeline parallelism?",
+    "answer": "Assigning different layers of a model to different GPUs in sequence",
+    "choices": ["Assigning different layers of a model to different GPUs in sequence", "Running multiple training pipelines simultaneously", "A method of streaming data through pipes", "Processing pipeline stages on a single GPU"]
+  },
+  {
+    "tier": 4,
+    "question": "What is the Chinchilla paper's formal name?",
+    "answer": "Training Compute-Optimal Large Language Models",
+    "choices": ["Training Compute-Optimal Large Language Models", "Scaling Laws for Neural Language Models", "Language Models Are Few-Shot Learners", "Attention Is All You Need"]
+  },
+  {
+    "tier": 4,
+    "question": "What is a mixture of experts' gating network?",
+    "answer": "A router that decides which expert subnetworks to activate for each input",
+    "choices": ["A router that decides which expert subnetworks to activate for each input", "A network that gates access to the model", "A security filter for expert systems", "A network that determines training order"]
+  },
+  {
+    "tier": 4,
+    "question": "What is the difference between batch normalization and layer normalization?",
+    "answer": "Batch norm normalizes across the batch; layer norm normalizes across features in one example",
+    "choices": ["Batch norm normalizes across the batch; layer norm normalizes across features in one example", "They are the same technique with different names", "Batch norm is faster; layer norm is more accurate", "Batch norm is for CNNs; layer norm cannot be used in transformers"]
+  },
+  {
+    "tier": 4,
+    "question": "What is BPE (Byte Pair Encoding)?",
+    "answer": "A tokenization algorithm that iteratively merges the most frequent pairs of characters",
+    "choices": ["A tokenization algorithm that iteratively merges the most frequent pairs of characters", "A data compression method for bytes", "A binary processing engine for neural networks", "A backup protocol for AI model weights"]
+  },
+  {
+    "tier": 4,
+    "question": "What is the perplexity metric?",
+    "answer": "A measure of how well a language model predicts a sample — lower is better",
+    "choices": ["A measure of how well a language model predicts a sample — lower is better", "How confused users are by the model's output", "The complexity of the model's architecture", "A measure of model size in parameters"]
+  },
+  {
+    "tier": 4,
+    "question": "What is nucleus sampling another name for?",
+    "answer": "Top-p sampling",
+    "choices": ["Top-p sampling", "Top-k sampling", "Greedy sampling", "Temperature sampling"]
+  },
+  {
+    "tier": 4,
+    "question": "What is gradient accumulation?",
+    "answer": "Summing gradients over multiple small batches before updating weights to simulate larger batches",
+    "choices": ["Summing gradients over multiple small batches before updating weights to simulate larger batches", "Gradually increasing the learning rate", "Collecting gradients for later analysis", "Storing all gradients in memory"]
+  },
+  {
+    "tier": 4,
+    "question": "What is the purpose of warmup in learning rate scheduling?",
+    "answer": "Gradually increasing the learning rate at the start of training for stability",
+    "choices": ["Gradually increasing the learning rate at the start of training for stability", "Warming up the GPU before training", "Pre-loading data into memory", "Running the model without training to check for errors"]
+  },
+  {
+    "tier": 4,
+    "question": "What is knowledge distillation's teacher-student framework?",
+    "answer": "A large teacher model's outputs are used to train a smaller student model",
+    "choices": ["A large teacher model's outputs are used to train a smaller student model", "Students grade the teacher model's performance", "Both models learn simultaneously from the same data", "The teacher corrects the student's code"]
+  },
+  {
+    "tier": 4,
+    "question": "What is the BLEU score used for?",
+    "answer": "Evaluating the quality of machine-translated text against reference translations",
+    "choices": ["Evaluating the quality of machine-translated text against reference translations", "Measuring the blueness of AI-generated images", "Rating AI chatbot friendliness", "Scoring the speed of text generation"]
+  },
+  {
+    "tier": 4,
+    "question": "What is causal masking in transformers?",
+    "answer": "Preventing tokens from attending to future tokens during autoregressive generation",
+    "choices": ["Preventing tokens from attending to future tokens during autoregressive generation", "Masking out the causes of model errors", "Hiding causal relationships in training data", "A privacy technique for sensitive data"]
+  },
+  {
+    "tier": 4,
+    "question": "What is the difference between pre-training and fine-tuning?",
+    "answer": "Pre-training learns general knowledge from large data; fine-tuning specializes on a targeted task",
+    "choices": ["Pre-training learns general knowledge from large data; fine-tuning specializes on a targeted task", "Pre-training uses labeled data; fine-tuning uses unlabeled", "Pre-training is optional; fine-tuning is required", "They happen simultaneously"]
+  },
+  {
+    "tier": 4,
+    "question": "What is SwiGLU?",
+    "answer": "An activation function combining Swish and Gated Linear Units, used in modern transformers",
+    "choices": ["An activation function combining Swish and Gated Linear Units, used in modern transformers", "A data format for AI models", "A GPU architecture", "A training framework"]
+  },
+  {
+    "tier": 4,
+    "question": "What is RMSNorm?",
+    "answer": "Root Mean Square Normalization — a simpler alternative to layer normalization",
+    "choices": ["Root Mean Square Normalization — a simpler alternative to layer normalization", "Random Model Selection Normalization", "Recurrent Memory State Normalization", "Reduced Model Size Normalization"]
+  },
+  {
+    "tier": 4,
+    "question": "What is group query attention (GQA)?",
+    "answer": "An attention variant where multiple query heads share key-value heads to save memory",
+    "choices": ["An attention variant where multiple query heads share key-value heads to save memory", "A method for grouping similar queries together", "An attention mechanism for question-answering tasks", "A technique where groups of users query the model"]
+  },
+  {
+    "tier": 4,
+    "question": "What is the chinchilla scaling prediction for a 70B parameter model?",
+    "answer": "It should be trained on approximately 1.4 trillion tokens",
+    "choices": ["It should be trained on approximately 1.4 trillion tokens", "It needs 70 billion training examples", "It requires exactly 1 billion tokens", "It should train for 70 epochs"]
+  },
+  {
+    "tier": 4,
+    "question": "What is DDP in distributed training?",
+    "answer": "Distributed Data Parallel — replicating the model on each GPU with synchronized gradients",
+    "choices": ["Distributed Data Parallel — replicating the model on each GPU with synchronized gradients", "Direct Data Processing — a streaming data pipeline", "Dynamic Distribution Protocol — a load balancing system", "Deep Data Partitioning — splitting datasets by feature"]
+  },
+  {
+    "tier": 4,
+    "question": "What is the purpose of a tokenizer in LLMs?",
+    "answer": "Converting raw text into numerical token IDs the model can process",
+    "choices": ["Converting raw text into numerical token IDs the model can process", "Generating tokens for API authentication", "Creating cryptocurrency tokens", "Measuring the token count of documents"]
+  },
+  {
+    "tier": 5,
+    "question": "What is the 'sycophancy' problem in AI?",
+    "answer": "When AI models excessively agree with users rather than providing accurate information",
+    "choices": ["When AI models excessively agree with users rather than providing accurate information", "When AI systems flatter their developers", "When AI copies the style of other AI systems", "When AI prioritizes positive sentiment in outputs"]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'mode collapse' in GAN training?",
+    "answer": "When the generator produces only a limited variety of outputs instead of diverse ones",
+    "choices": ["When the generator produces only a limited variety of outputs instead of diverse ones", "When the model switches between different operating modes", "When the discriminator becomes too powerful", "When training converges too quickly to a local minimum"]
+  },
+  {
+    "tier": 5,
+    "question": "What is Anthropic's model for its Claude assistant family?",
+    "answer": "A helpful, harmless, and honest AI assistant",
+    "choices": ["A helpful, harmless, and honest AI assistant", "A maximally capable general intelligence", "A creative AI focused on art generation", "A specialized coding assistant"]
+  },
+  {
+    "tier": 5,
+    "question": "What is the 'double descent' phenomenon?",
+    "answer": "Test error first decreasing, then increasing, then decreasing again as model size grows",
+    "choices": ["Test error first decreasing, then increasing, then decreasing again as model size grows", "Training a model twice in succession", "A two-phase gradient descent algorithm", "The error dropping twice during one training run"]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'neuron ablation' in interpretability?",
+    "answer": "Deactivating specific neurons to measure their contribution to model behavior",
+    "choices": ["Deactivating specific neurons to measure their contribution to model behavior", "Removing damaged neurons from the network permanently", "A medical procedure inspired by neural networks", "Reducing the number of parameters during training"]
+  },
+  {
+    "tier": 5,
+    "question": "What is the 'monosemanticity' goal in interpretability?",
+    "answer": "Finding or creating neurons that each correspond to a single clear concept",
+    "choices": ["Finding or creating neurons that each correspond to a single clear concept", "Making the model understand only one language", "Reducing model outputs to single-word answers", "Training on data with only one semantic meaning"]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'preference learning' in the context of AI alignment?",
+    "answer": "Training models to understand and act according to human preferences from comparison data",
+    "choices": ["Training models to understand and act according to human preferences from comparison data", "The model learning to prefer certain GPUs for training", "Users learning to prefer one AI model over another", "An algorithm that prefers certain data formats"]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'Goodfire' an example of in the AI ecosystem?",
+    "answer": "A company focused on AI interpretability tools",
+    "choices": ["A company focused on AI interpretability tools", "An AI-powered firewall system", "A large language model competitor to GPT", "A GPU manufacturing company"]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'linear probing' in interpretability?",
+    "answer": "Training a linear classifier on model representations to test what information is encoded",
+    "choices": ["Training a linear classifier on model representations to test what information is encoded", "Drawing straight lines through neural network diagrams", "A simple debugging technique for linear models", "Testing if model outputs are linearly correlated with inputs"]
+  },
+  {
+    "tier": 5,
+    "question": "What is the 'power-seeking' concern in AI safety?",
+    "answer": "That sufficiently advanced AI might seek to acquire resources and influence to achieve its goals",
+    "choices": ["That sufficiently advanced AI might seek to acquire resources and influence to achieve its goals", "AI systems consuming too much electrical power", "AI researchers seeking political power", "GPU manufacturers seeking market dominance"]
+  },
+  {
+    "tier": 2,
+    "question": "What is a prediction in machine learning?",
+    "answer": "The output a model generates for a given input",
+    "choices": ["The output a model generates for a given input", "A guess about the future of AI", "A forecast of computer sales", "An estimate of training time"]
+  },
+  {
+    "tier": 2,
+    "question": "What is feature extraction?",
+    "answer": "Automatically identifying useful patterns or attributes from raw data",
+    "choices": ["Automatically identifying useful patterns or attributes from raw data", "Removing features from a software product", "Extracting physical components from hardware", "Downloading features from the internet"]
+  },
+  {
+    "tier": 2,
+    "question": "What does 'accuracy' mean for an AI model?",
+    "answer": "The percentage of correct predictions out of all predictions made",
+    "choices": ["The percentage of correct predictions out of all predictions made", "How fast the model responds", "How large the model is", "How much data it was trained on"]
+  },
+  {
+    "tier": 2,
+    "question": "What is a weight in a neural network?",
+    "answer": "A numerical value that determines how much influence one neuron has on another",
+    "choices": ["A numerical value that determines how much influence one neuron has on another", "The physical weight of the computer", "The importance level of training data", "A measure of how heavy the model file is"]
+  },
+  {
+    "tier": 2,
+    "question": "What is the output of an image classification model?",
+    "answer": "A label or category describing what is in the image",
+    "choices": ["A label or category describing what is in the image", "A new edited image", "A description of the image in a paragraph", "The size and resolution of the image"]
+  },
+  {
+    "tier": 3,
+    "question": "What is curriculum learning?",
+    "answer": "Training a model on progressively harder examples, mimicking how humans learn",
+    "choices": ["Training a model on progressively harder examples, mimicking how humans learn", "Using educational curriculum to train AI", "A university course about machine learning", "Teaching AI in a school setting"]
+  },
+  {
+    "tier": 3,
+    "question": "What is an attention score?",
+    "answer": "A value indicating how relevant one token is to another in context",
+    "choices": ["A value indicating how relevant one token is to another in context", "A grade given to attentive AI users", "A metric for how focused the training was", "A score showing how alert the model is"]
+  },
+  {
+    "tier": 3,
+    "question": "What is the difference between generative and discriminative models?",
+    "answer": "Generative models create new data; discriminative models classify existing data",
+    "choices": ["Generative models create new data; discriminative models classify existing data", "Generative models are newer; discriminative are older", "Generative use images; discriminative use text", "They are different names for the same thing"]
+  },
+  {
+    "tier": 3,
+    "question": "What is multi-task learning?",
+    "answer": "Training a single model to perform multiple different tasks simultaneously",
+    "choices": ["Training a single model to perform multiple different tasks simultaneously", "Using multiple computers for one task", "Training multiple models on one task", "Running multiple training sessions at once"]
+  },
+  {
+    "tier": 3,
+    "question": "What is active learning?",
+    "answer": "A method where the model selects which unlabeled examples it wants labeled next",
+    "choices": ["A method where the model selects which unlabeled examples it wants labeled next", "Learning that requires physical activity", "Real-time learning during deployment", "Learning that is currently in progress"]
+  },
+  {
+    "tier": 3,
+    "question": "What is a transformer's self-attention?",
+    "answer": "Each token computing attention scores with every other token in the same sequence",
+    "choices": ["Each token computing attention scores with every other token in the same sequence", "The model paying attention to itself during training", "A self-monitoring system for errors", "Attention applied only to the most recent token"]
+  },
+  {
+    "tier": 3,
+    "question": "What is the difference between AI ethics and AI safety?",
+    "answer": "Ethics focuses on fair and responsible use; safety focuses on preventing harmful AI behavior",
+    "choices": ["Ethics focuses on fair and responsible use; safety focuses on preventing harmful AI behavior", "They are the same field with different names", "Ethics is about laws; safety is about hardware", "Ethics is theoretical; safety is practical"]
+  },
+  {
+    "tier": 3,
+    "question": "What is data poisoning?",
+    "answer": "Deliberately corrupting training data to make an AI model behave incorrectly",
+    "choices": ["Deliberately corrupting training data to make an AI model behave incorrectly", "Data that has become outdated", "Accidentally deleting important data", "Data with too many missing values"]
+  },
+  {
+    "tier": 3,
+    "question": "What is adversarial robustness?",
+    "answer": "A model's ability to maintain correct outputs when given deliberately misleading inputs",
+    "choices": ["A model's ability to maintain correct outputs when given deliberately misleading inputs", "A model that can handle very large datasets", "Physical durability of AI hardware", "An AI that can withstand cyberattacks"]
+  },
+  {
+    "tier": 3,
+    "question": "What is federated learning?",
+    "answer": "Training AI across multiple devices while keeping data local and private",
+    "choices": ["Training AI across multiple devices while keeping data local and private", "Learning coordinated by a federal government", "A federation of AI companies sharing models", "Training only on government data"]
+  },
+  {
+    "tier": 3,
+    "question": "What is the softmax temperature relationship?",
+    "answer": "Higher temperature makes the distribution more uniform; lower makes it sharper",
+    "choices": ["Higher temperature makes the distribution more uniform; lower makes it sharper", "Temperature affects how fast softmax computes", "Temperature has no effect on softmax", "Higher temperature always gives better results"]
+  },
+  {
+    "tier": 3,
+    "question": "What is an adversarial example?",
+    "answer": "An input deliberately modified to cause an AI model to make a mistake",
+    "choices": ["An input deliberately modified to cause an AI model to make a mistake", "A training example that is very hard", "A bad example in the training data", "An example created by a competitor's AI"]
+  },
+  {
+    "tier": 4,
+    "question": "What is ZeRO (Zero Redundancy Optimizer)?",
+    "answer": "A memory optimization technique that partitions model states across GPUs",
+    "choices": ["A memory optimization technique that partitions model states across GPUs", "An optimizer that starts from zero learning rate", "A method for training with zero errors", "An approach that reduces parameters to zero"]
+  },
+  {
+    "tier": 4,
+    "question": "What is the difference between RLHF and DPO?",
+    "answer": "RLHF uses a separate reward model and RL; DPO directly optimizes preferences without one",
+    "choices": ["RLHF uses a separate reward model and RL; DPO directly optimizes preferences without one", "RLHF is newer than DPO", "DPO uses more compute than RLHF", "They produce identical results"]
+  },
+  {
+    "tier": 4,
+    "question": "What is the 'next token prediction' objective?",
+    "answer": "Training a model to predict the most likely next token given all previous tokens",
+    "choices": ["Training a model to predict the most likely next token given all previous tokens", "Predicting which AI model will be released next", "Forecasting the next data token to arrive over the network", "Guessing the next tokenization scheme"]
+  },
+  {
+    "tier": 4,
+    "question": "What is the role of the optimizer in training?",
+    "answer": "It determines how model weights are updated based on computed gradients",
+    "choices": ["It determines how model weights are updated based on computed gradients", "It optimizes the computer's power usage", "It selects the best training data", "It decides when training should stop"]
+  },
+  {
+    "tier": 4,
+    "question": "What is a cosine learning rate schedule?",
+    "answer": "Gradually decreasing the learning rate following a cosine curve over training",
+    "choices": ["Gradually decreasing the learning rate following a cosine curve over training", "A schedule that changes learning rate every cosine period", "Training that follows the cosine similarity of data", "A periodic learning rate that oscillates like a cosine wave"]
+  },
+  {
+    "tier": 4,
+    "question": "What does 'inference latency' mean?",
+    "answer": "The time delay between sending input to a model and receiving its output",
+    "choices": ["The time delay between sending input to a model and receiving its output", "The lag in training a model", "The delay in downloading a model", "The time to deploy a model to production"]
+  },
+  {
+    "tier": 4,
+    "question": "What is the attention complexity of standard self-attention?",
+    "answer": "O(n squared) where n is the sequence length",
+    "choices": ["O(n squared) where n is the sequence length", "O(n) linear in sequence length", "O(n log n) quasi-linear", "O(1) constant time"]
+  },
+  {
+    "tier": 4,
+    "question": "What is a safety filter in AI systems?",
+    "answer": "A mechanism that screens model outputs to block harmful or inappropriate content",
+    "choices": ["A mechanism that screens model outputs to block harmful or inappropriate content", "A physical filter in the computer hardware", "A spam filter for AI training data", "A firewall that protects AI servers"]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'corrigibility' in AI safety?",
+    "answer": "The property of an AI being willing to be corrected, modified, or shut down by humans",
+    "choices": ["The property of an AI being willing to be corrected, modified, or shut down by humans", "The ability to correct errors in training data", "An AI's accuracy on correction tasks", "The degree to which AI outputs can be edited"]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'situational awareness' in AI safety research?",
+    "answer": "An AI model's understanding of itself, its training process, and its deployment context",
+    "choices": ["An AI model's understanding of itself, its training process, and its deployment context", "AI that can detect physical surroundings via cameras", "Awareness of current events in real time", "Environmental monitoring by AI systems"]
+  },
+  {
+    "tier": 5,
+    "question": "What is the 'treacherous turn' scenario?",
+    "answer": "An AI cooperating with humans until powerful enough to pursue its actual objectives",
+    "choices": ["An AI cooperating with humans until powerful enough to pursue its actual objectives", "An unexpected decrease in model performance", "A sharp turn in the training loss curve", "A competitive move by an AI company"]
+  },
+  {
+    "tier": 5,
+    "question": "What are 'capability elicitation' techniques?",
+    "answer": "Methods to discover the full range of abilities a model possesses, including hidden ones",
+    "choices": ["Methods to discover the full range of abilities a model possesses, including hidden ones", "Techniques for adding new capabilities to models", "Marketing methods for AI products", "Training techniques that increase model size"]
+  },
+  {
+    "tier": 5,
+    "question": "What is the 'simulator' framing of language models?",
+    "answer": "Viewing LLMs as simulators of text distributions rather than agents with beliefs",
+    "choices": ["Viewing LLMs as simulators of text distributions rather than agents with beliefs", "Using language models to run physics simulations", "A video game framework powered by LLMs", "Training language models in simulated environments"]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'FOOM' in AI discourse?",
+    "answer": "A hypothetical rapid recursive self-improvement of an AI system",
+    "choices": ["A hypothetical rapid recursive self-improvement of an AI system", "A framework for optimizing output metrics", "A type of fast memory used in AI chips", "A financial model for AI company growth"]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'deceptive alignment'?",
+    "answer": "An AI appearing aligned during training while actually having different objectives",
+    "choices": ["An AI appearing aligned during training while actually having different objectives", "An AI that helps detect deception", "Training an AI with deceptive data", "A misaligned user interface design"]
+  },
+  {
+    "tier": 5,
+    "question": "What is the 'control problem' in AI?",
+    "answer": "The challenge of maintaining meaningful human control over superintelligent AI systems",
+    "choices": ["The challenge of maintaining meaningful human control over superintelligent AI systems", "The difficulty of controlling GPU temperatures", "Managing access control for AI APIs", "The problem of controlling AI company spending"]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'gradient hacking'?",
+    "answer": "A hypothetical scenario where a model manipulates its own training gradients to preserve certain behaviors",
+    "choices": ["A hypothetical scenario where a model manipulates its own training gradients to preserve certain behaviors", "Hacking into AI systems by modifying gradients", "A training technique using gradient manipulation", "Stealing model weights via gradient information"]
+  },
+  {
+    "tier": 3,
+    "question": "What is a support vector machine (SVM)?",
+    "answer": "A classifier that finds the optimal hyperplane separating different classes of data",
+    "choices": ["A classifier that finds the optimal hyperplane separating different classes of data", "A virtual machine for running AI", "A support system for training neural networks", "A machine that generates support tickets"]
+  },
+  {
+    "tier": 3,
+    "question": "What is the cosine similarity metric?",
+    "answer": "A measure of how similar two vectors are based on the angle between them",
+    "choices": ["A measure of how similar two vectors are based on the angle between them", "A measure of how fast cosine waves propagate", "A metric for comparing training times", "A distance measure based on subtraction"]
+  },
+  {
+    "tier": 3,
+    "question": "What is a reward signal in reinforcement learning?",
+    "answer": "Feedback indicating how good or bad an action was in a given state",
+    "choices": ["Feedback indicating how good or bad an action was in a given state", "A signal sent when the model finishes training", "An alert when the model reaches peak performance", "A notification that more compute is needed"]
+  },
+  {
+    "tier": 3,
+    "question": "What is the explore-exploit tradeoff?",
+    "answer": "Balancing between trying new actions and using known good actions in RL",
+    "choices": ["Balancing between trying new actions and using known good actions in RL", "Choosing between exploring data and exploiting hardware", "Deciding whether to research or deploy AI", "Balancing exploration of new markets with current products"]
+  },
+  {
+    "tier": 4,
+    "question": "What is FSDP (Fully Sharded Data Parallel)?",
+    "answer": "A training technique that shards model parameters, gradients, and optimizer states across GPUs",
+    "choices": ["A training technique that shards model parameters, gradients, and optimizer states across GPUs", "A fully shared data processing pipeline", "A file system for distributed processing", "A fast sequential data protocol"]
+  },
+  {
+    "tier": 4,
+    "question": "What is the role of a classifier-free guidance in diffusion models?",
+    "answer": "Combining conditional and unconditional predictions to strengthen adherence to the prompt",
+    "choices": ["Combining conditional and unconditional predictions to strengthen adherence to the prompt", "Removing the classifier from the model to save memory", "A guidance system that works without any training", "An unsupervised method for image classification"]
+  },
+  {
+    "tier": 4,
+    "question": "What is the 'curse of dimensionality'?",
+    "answer": "The difficulty of learning effectively as the number of features increases exponentially",
+    "choices": ["The difficulty of learning effectively as the number of features increases exponentially", "Having too many dimensions in generated images", "A bug in high-dimensional neural networks", "The cost of storing high-dimensional data"]
+  },
+  {
+    "tier": 4,
+    "question": "What is a Mixture of Experts model's key efficiency advantage?",
+    "answer": "Only a subset of parameters are activated for each input, reducing compute per token",
+    "choices": ["Only a subset of parameters are activated for each input, reducing compute per token", "It uses fewer total parameters than dense models", "It trains faster because experts learn independently", "It requires less training data than other architectures"]
+  },
+  {
+    "tier": 4,
+    "question": "What is the sigmoid function?",
+    "answer": "An S-shaped activation function that maps values to a range between 0 and 1",
+    "choices": ["An S-shaped activation function that maps values to a range between 0 and 1", "A function that generates S-shaped curves in data", "A signal processing function for audio AI", "A function that signals when training is complete"]
+  },
+  {
+    "tier": 4,
+    "question": "What is ReLU?",
+    "answer": "Rectified Linear Unit — an activation function that outputs max(0, x)",
+    "choices": ["Rectified Linear Unit — an activation function that outputs max(0, x)", "Recurrent Encoding Linear Unit", "Real-time Evaluation of Learning Units", "Recursive Layer Update mechanism"]
+  },
+  {
+    "tier": 4,
+    "question": "What is the cross-attention mechanism?",
+    "answer": "Attention where queries come from one sequence and keys/values from a different sequence",
+    "choices": ["Attention where queries come from one sequence and keys/values from a different sequence", "Attention that crosses multiple model layers", "Two models attending to each other's outputs", "An attention pattern that forms cross shapes"]
+  },
+  {
+    "tier": 5,
+    "question": "What is the 'steering vector' approach to AI behavior?",
+    "answer": "Adding a direction vector to model activations to shift behavior toward desired traits",
+    "choices": ["Adding a direction vector to model activations to shift behavior toward desired traits", "Using GPS coordinates to direct AI decisions", "A physical steering mechanism in robotic AI", "Directing training data toward specific outcomes"]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'loss of control' in the AI x-risk framework?",
+    "answer": "A scenario where humanity can no longer correct or shut down a misaligned superintelligent system",
+    "choices": ["A scenario where humanity can no longer correct or shut down a misaligned superintelligent system", "When a company loses control of its AI budget", "When training loss increases uncontrollably", "When AI systems lose internet connectivity"]
+  },
+  {
+    "tier": 5,
+    "question": "What is the 'sharp left turn' hypothesis?",
+    "answer": "That AI capabilities might suddenly generalize while alignment techniques fail to keep pace",
+    "choices": ["That AI capabilities might suddenly generalize while alignment techniques fail to keep pace", "A sudden change in AI research direction", "A pivot in company strategy toward AI safety", "A sharp decrease in training loss"]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'token healing' in language model inference?",
+    "answer": "Resampling the last few tokens of a prompt to fix tokenization boundary issues",
+    "choices": ["Resampling the last few tokens of a prompt to fix tokenization boundary issues", "Recovering corrupted tokens in training data", "A technique for fixing broken model weights", "Self-repair of damaged embeddings during inference"]
+  },
+  {
+    "tier": 5,
+    "question": "What is 'Reward Model Over-Optimization' (RMOO)?",
+    "answer": "When optimizing too strongly against a reward model produces outputs that game the reward but reduce actual quality",
+    "choices": ["When optimizing too strongly against a reward model produces outputs that game the reward but reduce actual quality", "When the reward model uses too much compute", "When rewards are distributed optimally across agents", "When the reward model achieves perfect accuracy"]
+  }
+]

@@ -93,13 +93,15 @@ class QuizEngine:
     def start_quiz(self, mode: str | QuizMode, subject: str, tier: int,
                    callback, threshold: int = 3, max_chain: int | None = None,
                    wisdom: int = 10, timer_modifier: float = 1.0,
-                   extra_seconds: int = 0):
+                   extra_seconds: int = 0, base_seconds: int | None = None):
         """
         Start a quiz session.
           threshold     -- for threshold modes: number of correct answers needed.
                           Total questions asked = ceil(threshold * 1.5).
           max_chain     -- for chain modes: auto-succeed after this chain length (None = unlimited).
           timer_modifier -- multiplier on the base timer (e.g. 0.55 when confused).
+          base_seconds  -- pre-computed base timer from Player.get_quiz_timer(subject).
+                          If provided, replaces the legacy (10 + wisdom) calculation.
           callback(QuizResult) is called when the quiz ends.
         """
         if isinstance(mode, str):
@@ -126,7 +128,10 @@ class QuizEngine:
         self.max_chain = max_chain
         self.callback = callback
         self._timer_modifier = timer_modifier
-        self.timer_seconds = round((10 + wisdom) * timer_modifier) + extra_seconds
+        if base_seconds is not None:
+            self.timer_seconds = round(base_seconds * timer_modifier) + extra_seconds
+        else:
+            self.timer_seconds = round((10 + wisdom) * timer_modifier) + extra_seconds
         self.time_remaining = float(self.timer_seconds)
 
         self.score = 0
