@@ -41,6 +41,7 @@ EFFECT_INFO: dict[str, tuple] = {
     'draining':           ('Draining',           ( 80,  30, 100), 'Ring drains 1 HP per ~6 turns'),
     'burning':            ('Burning',            (245, 100,  20), 'On fire! Losing 1 HP per turn'),
     'frozen':             ('Frozen',             ( 80, 200, 245), 'Encased in ice; movement slowed'),
+    'corroding':          ('Corroding',          (180, 200,  50), 'Acid eats at your gear; defense weakened'),
     # ---- Buffs ----
     'hasted':             ('Hasted',             (245, 245,  60), 'Extra action each turn'),
     'invisible':          ('Invisible',          (185, 235, 235), 'Monsters have 30% miss chance'),
@@ -85,7 +86,7 @@ DEBUFFS: frozenset = frozenset({
     'poisoned', 'diseased', 'petrifying', 'strangulation', 'fumbling',
     'slowed', 'aggravated', 'teleportitis',
     'feared', 'charmed', 'cursed', 'weakened', 'bleeding', 'doomed', 'draining',
-    'burning', 'frozen',
+    'burning', 'frozen', 'corroding',
 })
 
 BUFFS: frozenset = frozenset({
@@ -110,7 +111,7 @@ _RESIST_BLOCKS: dict[str, set] = {
 DAMAGE_IMMUNITY: dict[str, str] = {
     'fire':    'fire_resist',
     'cold':    'cold_resist',
-    'electric':'shock_resist',
+    'lightning':'shock_resist',
     'poison':  'poison_resist',
     'drain':   'drain_resist',
 }

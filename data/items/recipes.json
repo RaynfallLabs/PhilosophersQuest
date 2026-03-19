@@ -1489,5 +1489,2203 @@
     "bonus_stat": "DEX",
     "bonus_amount": 2,
     "description": "Snake, wyvern, dragon - the reptilian line from humble to apex. Their agility is ancestral."
+  },
+  "bronze_feather_and_dragon_salt_stew": {
+    "name": "Bronze Feather & Dragon Salt Stew",
+    "ingredients": [
+      "bronze_feather",
+      "dragon_salt"
+    ],
+    "tier": 1,
+    "sp": 78,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 1,
+    "description": "A simple dish combining bronze feather with dragon salt."
+  },
+  "cured_quasit_claw_with_rosemary_sprig": {
+    "name": "Cured Quasit Claw with Rosemary Sprig",
+    "ingredients": [
+      "quasit_claw",
+      "rosemary_sprig"
+    ],
+    "tier": 1,
+    "sp": 97,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining quasit claw with rosemary sprig."
+  },
+  "green_slime_extract_and_wild_thyme_skewer": {
+    "name": "Green Slime Extract & Wild Thyme Skewer",
+    "ingredients": [
+      "green_slime_extract",
+      "wild_thyme"
+    ],
+    "tier": 1,
+    "sp": 108,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining green slime extract with wild thyme."
+  },
+  "wild_thyme_infused_satyr_horn": {
+    "name": "Wild Thyme-Infused Satyr Horn",
+    "ingredients": [
+      "satyr_horn",
+      "wild_thyme"
+    ],
+    "tier": 1,
+    "sp": 84,
+    "bonus_type": "random_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining satyr horn with wild thyme."
+  },
+  "scarab_shell_and_ember_spice_ragout": {
+    "name": "Scarab Shell & Ember Spice Ragout",
+    "ingredients": [
+      "scarab_shell",
+      "ember_spice"
+    ],
+    "tier": 1,
+    "sp": 91,
+    "bonus_type": "random_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining scarab shell with ember spice."
+  },
+  "smoked_dretch_gland_with_mandrake_root": {
+    "name": "Smoked Dretch Gland with Mandrake Root",
+    "ingredients": [
+      "dretch_gland",
+      "mandrake_root"
+    ],
+    "tier": 1,
+    "sp": 94,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 1,
+    "description": "A simple dish combining dretch gland with mandrake root."
+  },
+  "glazed_imp_stinger_broth": {
+    "name": "Glazed Imp Stinger Broth",
+    "ingredients": [
+      "imp_stinger",
+      "rosemary_sprig"
+    ],
+    "tier": 1,
+    "sp": 116,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 1,
+    "description": "A simple dish combining imp stinger with rosemary sprig."
+  },
+  "fire_roasted_troglodyte_musk_with_ember_spice": {
+    "name": "Fire-Roasted Troglodyte Musk with Ember Spice",
+    "ingredients": [
+      "troglodyte_musk",
+      "ember_spice"
+    ],
+    "tier": 1,
+    "sp": 88,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining troglodyte musk with ember spice."
+  },
+  "bone_marrow_and_dragon_salt_broth": {
+    "name": "Bone Marrow & Dragon Salt Broth",
+    "ingredients": [
+      "bone_marrow",
+      "dragon_salt"
+    ],
+    "tier": 1,
+    "sp": 72,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 1,
+    "description": "A simple dish combining bone marrow with dragon salt."
+  },
+  "yellow_spores_and_dragon_salt_goulash": {
+    "name": "Yellow Spores & Dragon Salt Goulash",
+    "ingredients": [
+      "yellow_spores",
+      "dragon_salt"
+    ],
+    "tier": 1,
+    "sp": 94,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 1,
+    "description": "A simple dish combining yellow spores with dragon salt."
+  },
+  "beetle_shell_and_mandrake_root_hotpot": {
+    "name": "Beetle Shell & Mandrake Root Hotpot",
+    "ingredients": [
+      "beetle_shell",
+      "mandrake_root"
+    ],
+    "tier": 1,
+    "sp": 92,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 1,
+    "description": "A simple dish combining beetle shell with mandrake root."
+  },
+  "cured_sea_snake_venom_with_nightshade_leaf": {
+    "name": "Cured Sea Snake Venom with Nightshade Leaf",
+    "ingredients": [
+      "sea_snake_venom",
+      "nightshade_leaf"
+    ],
+    "tier": 1,
+    "sp": 110,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining sea snake venom with nightshade leaf."
+  },
+  "pixie_dust_and_valerian_root_banquet": {
+    "name": "Pixie Dust & Valerian Root Banquet",
+    "ingredients": [
+      "pixie_dust",
+      "valerian_root"
+    ],
+    "tier": 1,
+    "sp": 94,
+    "bonus_type": "random_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining pixie dust with valerian root."
+  },
+  "mandrake_root_infused_myconid_spore": {
+    "name": "Mandrake Root-Infused Myconid Spore",
+    "ingredients": [
+      "myconid_spore",
+      "mandrake_root"
+    ],
+    "tier": 1,
+    "sp": 113,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 1,
+    "description": "A simple dish combining myconid spore with mandrake root."
+  },
+  "cavern_baked_empusa_ichor_with_cave_mushroom": {
+    "name": "Cavern-Baked Empusa Ichor with Cave Mushroom",
+    "ingredients": [
+      "empusa_ichor",
+      "cave_mushroom"
+    ],
+    "tier": 1,
+    "sp": 95,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 1,
+    "description": "A simple dish combining empusa ichor with cave mushroom."
+  },
+  "grilled_grave_dust_hash": {
+    "name": "Grilled Grave Dust Hash",
+    "ingredients": [
+      "grave_dust",
+      "mandrake_root"
+    ],
+    "tier": 1,
+    "sp": 111,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 1,
+    "description": "A simple dish combining grave dust with mandrake root."
+  },
+  "demon_claw_and_ember_spice_hotpot": {
+    "name": "Demon Claw & Ember Spice Hotpot",
+    "ingredients": [
+      "demon_claw",
+      "ember_spice"
+    ],
+    "tier": 1,
+    "sp": 78,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 1,
+    "description": "A simple dish combining demon claw with ember spice."
+  },
+  "honey_glazed_homunculus_blood_roulade": {
+    "name": "Honey-Glazed Homunculus Blood Roulade",
+    "ingredients": [
+      "homunculus_blood",
+      "nightshade_leaf"
+    ],
+    "tier": 1,
+    "sp": 97,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining homunculus blood with nightshade leaf."
+  },
+  "gray_slime_and_void_salt_broth": {
+    "name": "Gray Slime & Void Salt Broth",
+    "ingredients": [
+      "gray_slime",
+      "void_salt"
+    ],
+    "tier": 1,
+    "sp": 101,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining gray slime with void salt."
+  },
+  "piercer_shell_and_rosemary_sprig_roast": {
+    "name": "Piercer Shell & Rosemary Sprig Roast",
+    "ingredients": [
+      "piercer_shell",
+      "rosemary_sprig"
+    ],
+    "tier": 1,
+    "sp": 120,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 1,
+    "description": "A simple dish combining piercer shell with rosemary sprig."
+  },
+  "savory_lizardfolk_pottage": {
+    "name": "Savory Lizardfolk Pottage",
+    "ingredients": [
+      "lizardfolk_scale",
+      "dragon_salt"
+    ],
+    "tier": 1,
+    "sp": 108,
+    "bonus_type": "random_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining lizardfolk scale with dragon salt."
+  },
+  "ember_kissed_frost_with_ember_spice": {
+    "name": "Ember-Kissed Frost with Ember Spice",
+    "ingredients": [
+      "frost_bone",
+      "ember_spice"
+    ],
+    "tier": 1,
+    "sp": 113,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 1,
+    "description": "A simple dish combining frost bone with ember spice."
+  },
+  "flame_seared_plague_ragout": {
+    "name": "Flame-Seared Plague Ragout",
+    "ingredients": [
+      "plague_flesh",
+      "serpent_pepper"
+    ],
+    "tier": 1,
+    "sp": 88,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 1,
+    "description": "A simple dish combining plague flesh with serpent pepper."
+  },
+  "stewed_brown_mold_patch_medallions": {
+    "name": "Stewed Brown Mold Patch Medallions",
+    "ingredients": [
+      "brown_mold_patch",
+      "petrified_mushroom"
+    ],
+    "tier": 1,
+    "sp": 118,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining brown mold patch with petrified mushroom."
+  },
+  "ember_kissed_wasp_venom_pie": {
+    "name": "Ember-Kissed Wasp Venom Pie",
+    "ingredients": [
+      "wasp_venom",
+      "valerian_root"
+    ],
+    "tier": 1,
+    "sp": 108,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining wasp venom with valerian root."
+  },
+  "nightshade_leaf_infused_mud_crawler": {
+    "name": "Nightshade Leaf-Infused Mud Crawler",
+    "ingredients": [
+      "mud_crawler_hide",
+      "nightshade_leaf"
+    ],
+    "tier": 1,
+    "sp": 70,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining mud crawler hide with nightshade leaf."
+  },
+  "baked_lucky_clover_with_void_salt": {
+    "name": "Baked Lucky Clover with Void Salt",
+    "ingredients": [
+      "lucky_clover",
+      "void_salt"
+    ],
+    "tier": 1,
+    "sp": 89,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 1,
+    "description": "A simple dish combining lucky clover with void salt."
+  },
+  "braised_toxic_thorn_with_nightshade_leaf": {
+    "name": "Braised Toxic Thorn with Nightshade Leaf",
+    "ingredients": [
+      "toxic_thorn",
+      "nightshade_leaf"
+    ],
+    "tier": 1,
+    "sp": 116,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 1,
+    "description": "A simple dish combining toxic thorn with nightshade leaf."
+  },
+  "spore_cloud_vial_and_ember_spice_skewer": {
+    "name": "Spore Cloud Vial & Ember Spice Skewer",
+    "ingredients": [
+      "spore_cloud_vial",
+      "ember_spice"
+    ],
+    "tier": 1,
+    "sp": 112,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 1,
+    "description": "A simple dish combining spore cloud vial with ember spice."
+  },
+  "ember_spice_infused_goblin_crown_dust": {
+    "name": "Ember Spice-Infused Goblin Crown Dust",
+    "ingredients": [
+      "goblin_crown_dust",
+      "ember_spice"
+    ],
+    "tier": 1,
+    "sp": 97,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining goblin crown dust with ember spice."
+  },
+  "khepri_carapace_and_nightshade_leaf_roulade": {
+    "name": "Khepri Carapace & Nightshade Leaf Roulade",
+    "ingredients": [
+      "khepri_carapace",
+      "nightshade_leaf"
+    ],
+    "tier": 1,
+    "sp": 95,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 1,
+    "description": "A simple dish combining khepri carapace with nightshade leaf."
+  },
+  "dragon_salt_infused_enchanted_wood": {
+    "name": "Dragon Salt-Infused Enchanted Wood",
+    "ingredients": [
+      "enchanted_wood",
+      "dragon_salt"
+    ],
+    "tier": 1,
+    "sp": 77,
+    "bonus_type": "random_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining enchanted wood with dragon salt."
+  },
+  "charred_kobold_with_nightshade_leaf": {
+    "name": "Charred Kobold with Nightshade Leaf",
+    "ingredients": [
+      "kobold_scale",
+      "nightshade_leaf"
+    ],
+    "tier": 1,
+    "sp": 105,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining kobold scale with nightshade leaf."
+  },
+  "slow_cooked_darkmantle_membrane_with_nightshade_leaf": {
+    "name": "Slow-Cooked Darkmantle Membrane with Nightshade Leaf",
+    "ingredients": [
+      "darkmantle_membrane",
+      "nightshade_leaf"
+    ],
+    "tier": 1,
+    "sp": 84,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 1,
+    "description": "A simple dish combining darkmantle membrane with nightshade leaf."
+  },
+  "wild_herbed_cairn_stone_with_rosemary_sprig": {
+    "name": "Wild-Herbed Cairn Stone with Rosemary Sprig",
+    "ingredients": [
+      "cairn_stone",
+      "rosemary_sprig"
+    ],
+    "tier": 1,
+    "sp": 85,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining cairn stone with rosemary sprig."
+  },
+  "mandrake_root_infused_bone_arrow": {
+    "name": "Mandrake Root-Infused Bone Arrow",
+    "ingredients": [
+      "bone_arrow",
+      "mandrake_root"
+    ],
+    "tier": 1,
+    "sp": 116,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 1,
+    "description": "A simple dish combining bone arrow with mandrake root."
+  },
+  "primal_crystal_residue_cutlets": {
+    "name": "Primal Crystal Residue Cutlets",
+    "ingredients": [
+      "crystal_residue",
+      "void_salt"
+    ],
+    "tier": 1,
+    "sp": 82,
+    "bonus_type": "random_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining crystal residue with void salt."
+  },
+  "seared_toxic_jelly_sac_feast": {
+    "name": "Seared Toxic Jelly Sac Feast",
+    "ingredients": [
+      "toxic_jelly_sac",
+      "rosemary_sprig"
+    ],
+    "tier": 1,
+    "sp": 96,
+    "bonus_type": "random_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining toxic jelly sac with rosemary sprig."
+  },
+  "torch_seared_scorpion_venom_sac_with_ember_spice": {
+    "name": "Torch-Seared Scorpion Venom Sac with Ember Spice",
+    "ingredients": [
+      "scorpion_venom_sac",
+      "ember_spice"
+    ],
+    "tier": 1,
+    "sp": 95,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 1,
+    "description": "A simple dish combining scorpion venom sac with ember spice."
+  },
+  "swamp_serpent_fang_and_cave_mushroom_pie": {
+    "name": "Swamp Serpent Fang & Cave Mushroom Pie",
+    "ingredients": [
+      "swamp_serpent_fang",
+      "cave_mushroom"
+    ],
+    "tier": 1,
+    "sp": 104,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 1,
+    "description": "A simple dish combining swamp serpent fang with cave mushroom."
+  },
+  "smoked_violet_fungus_cap_fricassee": {
+    "name": "Smoked Violet Fungus Cap Fricassee",
+    "ingredients": [
+      "violet_fungus_cap",
+      "ember_spice"
+    ],
+    "tier": 1,
+    "sp": 85,
+    "bonus_type": "random_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining violet fungus cap with ember spice."
+  },
+  "herbed_lamia_scales_with_rosemary_sprig": {
+    "name": "Herbed Lamia Scales with Rosemary Sprig",
+    "ingredients": [
+      "lamia_scales",
+      "rosemary_sprig"
+    ],
+    "tier": 1,
+    "sp": 70,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining lamia scales with rosemary sprig."
+  },
+  "mystical_wolf_pelt_tartare": {
+    "name": "Mystical Wolf Pelt Tartare",
+    "ingredients": [
+      "wolf_pelt",
+      "rosemary_sprig"
+    ],
+    "tier": 1,
+    "sp": 100,
+    "bonus_type": "random_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining wolf pelt with rosemary sprig."
+  },
+  "nothic_eye_and_nightshade_leaf_chowder": {
+    "name": "Nothic Eye & Nightshade Leaf Chowder",
+    "ingredients": [
+      "nothic_eye",
+      "nightshade_leaf"
+    ],
+    "tier": 1,
+    "sp": 70,
+    "bonus_type": "random_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining nothic eye with nightshade leaf."
+  },
+  "wild_enchanted_plate_medallions": {
+    "name": "Wild Enchanted Plate Medallions",
+    "ingredients": [
+      "enchanted_plate",
+      "petrified_mushroom"
+    ],
+    "tier": 1,
+    "sp": 112,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining enchanted plate with petrified mushroom."
+  },
+  "shaman_totem_and_ember_spice_hash": {
+    "name": "Shaman Totem & Ember Spice Hash",
+    "ingredients": [
+      "shaman_totem",
+      "ember_spice"
+    ],
+    "tier": 1,
+    "sp": 107,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 1,
+    "description": "A simple dish combining shaman totem with ember spice."
+  },
+  "braised_kuo_toa_slime_with_serpent_pepper": {
+    "name": "Braised Kuo-Toa Slime with Serpent Pepper",
+    "ingredients": [
+      "kuo_toa_slime",
+      "serpent_pepper"
+    ],
+    "tier": 1,
+    "sp": 107,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 1,
+    "description": "A simple dish combining kuo-toa slime with serpent pepper."
+  },
+  "ember_kissed_cockatrice_beak_with_ember_spice": {
+    "name": "Ember-Kissed Cockatrice Beak with Ember Spice",
+    "ingredients": [
+      "cockatrice_beak",
+      "ember_spice"
+    ],
+    "tier": 1,
+    "sp": 75,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining cockatrice beak with ember spice."
+  },
+  "grick_and_valerian_root_pottage": {
+    "name": "Grick & Valerian Root Pottage",
+    "ingredients": [
+      "grick_hide",
+      "valerian_root"
+    ],
+    "tier": 1,
+    "sp": 77,
+    "bonus_type": "random_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining grick hide with valerian root."
+  },
+  "charred_ghast_ichor_with_void_salt": {
+    "name": "Charred Ghast Ichor with Void Salt",
+    "ingredients": [
+      "ghast_ichor",
+      "void_salt"
+    ],
+    "tier": 1,
+    "sp": 75,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining ghast ichor with void salt."
+  },
+  "petrified_mushroom_infused_false_holy_relic": {
+    "name": "Petrified Mushroom-Infused False Holy Relic",
+    "ingredients": [
+      "false_holy_relic",
+      "petrified_mushroom"
+    ],
+    "tier": 1,
+    "sp": 86,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 1,
+    "description": "A simple dish combining false holy relic with petrified mushroom."
+  },
+  "heartwood_sap_and_nightshade_leaf_platter": {
+    "name": "Heartwood Sap & Nightshade Leaf Platter",
+    "ingredients": [
+      "heartwood_sap",
+      "nightshade_leaf"
+    ],
+    "tier": 1,
+    "sp": 95,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 1,
+    "description": "A simple dish combining heartwood sap with nightshade leaf."
+  },
+  "wild_assassin_vine_sap_hotpot": {
+    "name": "Wild Assassin Vine Sap Hotpot",
+    "ingredients": [
+      "assassin_vine_sap",
+      "valerian_root"
+    ],
+    "tier": 1,
+    "sp": 118,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 1,
+    "description": "A simple dish combining assassin vine sap with valerian root."
+  },
+  "rosemary_sprig_infused_carbuncle_gem": {
+    "name": "Rosemary Sprig-Infused Carbuncle Gem",
+    "ingredients": [
+      "carbuncle_gem",
+      "rosemary_sprig"
+    ],
+    "tier": 1,
+    "sp": 74,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 1,
+    "description": "A simple dish combining carbuncle gem with rosemary sprig."
+  },
+  "bronze_hide_strip_and_serpent_pepper_kebab": {
+    "name": "Bronze Hide Strip & Serpent Pepper Kebab",
+    "ingredients": [
+      "bronze_hide_strip",
+      "serpent_pepper"
+    ],
+    "tier": 1,
+    "sp": 74,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 1,
+    "description": "A simple dish combining bronze hide strip with serpent pepper."
+  },
+  "mystical_world_serpent_goulash": {
+    "name": "Mystical World Serpent Goulash",
+    "ingredients": [
+      "world_serpent_scale",
+      "nightshade_leaf"
+    ],
+    "tier": 1,
+    "sp": 115,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining world serpent scale with nightshade leaf."
+  },
+  "caramelized_solar_venom_with_mandrake_root": {
+    "name": "Caramelized Solar Venom with Mandrake Root",
+    "ingredients": [
+      "solar_venom",
+      "mandrake_root"
+    ],
+    "tier": 1,
+    "sp": 89,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining solar venom with mandrake root."
+  },
+  "seared_hero_hound_pelt_with_dragon_salt": {
+    "name": "Seared Hero Hound Pelt with Dragon Salt",
+    "ingredients": [
+      "hero_hound_pelt",
+      "dragon_salt"
+    ],
+    "tier": 1,
+    "sp": 117,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 1,
+    "description": "A simple dish combining hero hound pelt with dragon salt."
+  },
+  "serpent_pepper_infused_ochre_extract": {
+    "name": "Serpent Pepper-Infused Ochre Extract",
+    "ingredients": [
+      "ochre_extract",
+      "serpent_pepper"
+    ],
+    "tier": 1,
+    "sp": 115,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 1,
+    "description": "A simple dish combining ochre extract with serpent pepper."
+  },
+  "pan_fried_pack_lord_skull_feast": {
+    "name": "Pan-Fried Pack Lord Skull Feast",
+    "ingredients": [
+      "pack_lord_skull",
+      "cave_mushroom"
+    ],
+    "tier": 1,
+    "sp": 101,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining pack lord skull with cave mushroom."
+  },
+  "savory_ettercap_silk_roast": {
+    "name": "Savory Ettercap Silk Roast",
+    "ingredients": [
+      "ettercap_silk",
+      "mandrake_root"
+    ],
+    "tier": 1,
+    "sp": 72,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 1,
+    "description": "A simple dish combining ettercap silk with mandrake root."
+  },
+  "baked_jiangshi_essence_soup": {
+    "name": "Baked Jiangshi Essence Soup",
+    "ingredients": [
+      "jiangshi_essence",
+      "wild_thyme"
+    ],
+    "tier": 1,
+    "sp": 117,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 1,
+    "description": "A simple dish combining jiangshi essence with wild thyme."
+  },
+  "ember_spice_infused_hollow_essence": {
+    "name": "Ember Spice-Infused Hollow Essence",
+    "ingredients": [
+      "hollow_essence",
+      "ember_spice"
+    ],
+    "tier": 1,
+    "sp": 77,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 1,
+    "description": "A simple dish combining hollow essence with ember spice."
+  },
+  "rosemary_sprig_infused_charnel_fang": {
+    "name": "Rosemary Sprig-Infused Charnel Fang",
+    "ingredients": [
+      "charnel_fang",
+      "rosemary_sprig"
+    ],
+    "tier": 1,
+    "sp": 93,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 1,
+    "description": "A simple dish combining charnel fang with rosemary sprig."
+  },
+  "mantis_foreleg_and_void_salt_soup": {
+    "name": "Mantis Foreleg & Void Salt Soup",
+    "ingredients": [
+      "mantis_foreleg",
+      "void_salt"
+    ],
+    "tier": 1,
+    "sp": 89,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 1,
+    "description": "A simple dish combining mantis foreleg with void salt."
+  },
+  "winter_wolf_pelt_and_cave_mushroom_roast": {
+    "name": "Winter Wolf Pelt & Cave Mushroom Roast",
+    "ingredients": [
+      "winter_wolf_pelt",
+      "cave_mushroom"
+    ],
+    "tier": 1,
+    "sp": 112,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 1,
+    "description": "A simple dish combining winter wolf pelt with cave mushroom."
+  },
+  "rosemary_sprig_infused_death_dog_fang": {
+    "name": "Rosemary Sprig-Infused Death Dog Fang",
+    "ingredients": [
+      "death_dog_fang",
+      "rosemary_sprig"
+    ],
+    "tier": 1,
+    "sp": 85,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 1,
+    "description": "A simple dish combining death dog fang with rosemary sprig."
+  },
+  "ash_smoked_tengu_feather_with_valerian_root": {
+    "name": "Ash-Smoked Tengu Feather with Valerian Root",
+    "ingredients": [
+      "tengu_feather",
+      "valerian_root"
+    ],
+    "tier": 1,
+    "sp": 117,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 1,
+    "description": "A simple dish combining tengu feather with valerian root."
+  },
+  "musk_pollen_and_cave_mushroom_fricassee": {
+    "name": "Musk Pollen & Cave Mushroom Fricassee",
+    "ingredients": [
+      "musk_pollen",
+      "cave_mushroom"
+    ],
+    "tier": 1,
+    "sp": 80,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 1,
+    "description": "A simple dish combining musk pollen with cave mushroom."
+  },
+  "cyclops_eye_and_rosemary_sprig_roast": {
+    "name": "Cyclops Eye & Rosemary Sprig Roast",
+    "ingredients": [
+      "cyclops_eye",
+      "rosemary_sprig"
+    ],
+    "tier": 1,
+    "sp": 99,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 1,
+    "description": "A simple dish combining cyclops eye with rosemary sprig."
+  },
+  "poached_corrupted_elf_dust_with_cave_mushroom": {
+    "name": "Poached Corrupted Elf Dust with Cave Mushroom",
+    "ingredients": [
+      "corrupted_elf_dust",
+      "cave_mushroom"
+    ],
+    "tier": 1,
+    "sp": 95,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 1,
+    "description": "A simple dish combining corrupted elf dust with cave mushroom."
+  },
+  "simmered_crocodile_skewer": {
+    "name": "Simmered Crocodile Skewer",
+    "ingredients": [
+      "crocodile_hide",
+      "cave_mushroom"
+    ],
+    "tier": 1,
+    "sp": 95,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining crocodile hide with cave mushroom."
+  },
+  "cavern_baked_desert_sand_essence_with_dragon_salt": {
+    "name": "Cavern-Baked Desert Sand Essence with Dragon Salt",
+    "ingredients": [
+      "desert_sand_essence",
+      "dragon_salt"
+    ],
+    "tier": 1,
+    "sp": 86,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 1,
+    "description": "A simple dish combining desert sand essence with dragon salt."
+  },
+  "slow_cooked_demon_ichor_with_valerian_root": {
+    "name": "Slow-Cooked Demon Ichor with Valerian Root",
+    "ingredients": [
+      "demon_ichor",
+      "valerian_root"
+    ],
+    "tier": 1,
+    "sp": 97,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining demon ichor with valerian root."
+  },
+  "cave_mushroom_infused_mouther_ichor": {
+    "name": "Cave Mushroom-Infused Mouther Ichor",
+    "ingredients": [
+      "mouther_ichor",
+      "cave_mushroom"
+    ],
+    "tier": 1,
+    "sp": 77,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining mouther ichor with cave mushroom."
+  },
+  "wild_herbed_clockwork_gear_terrine": {
+    "name": "Wild-Herbed Clockwork Gear Terrine",
+    "ingredients": [
+      "clockwork_gear",
+      "petrified_mushroom"
+    ],
+    "tier": 1,
+    "sp": 115,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 1,
+    "description": "A simple dish combining clockwork gear with petrified mushroom."
+  },
+  "otyugh_organ_and_petrified_mushroom_kebab": {
+    "name": "Otyugh Organ & Petrified Mushroom Kebab",
+    "ingredients": [
+      "otyugh_organ",
+      "petrified_mushroom"
+    ],
+    "tier": 1,
+    "sp": 97,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 1,
+    "description": "A simple dish combining otyugh organ with petrified mushroom."
+  },
+  "cured_phase_spider_venom_curry": {
+    "name": "Cured Phase Spider Venom Curry",
+    "ingredients": [
+      "phase_spider_venom",
+      "rosemary_sprig"
+    ],
+    "tier": 1,
+    "sp": 116,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 1,
+    "description": "A simple dish combining phase spider venom with rosemary sprig."
+  },
+  "deep_vrykolakas_heart_goulash": {
+    "name": "Deep Vrykolakas Heart Goulash",
+    "ingredients": [
+      "vrykolakas_heart",
+      "mandrake_root"
+    ],
+    "tier": 1,
+    "sp": 95,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 1,
+    "description": "A simple dish combining vrykolakas heart with mandrake root."
+  },
+  "arcane_thrall_soup": {
+    "name": "Arcane Thrall Soup",
+    "ingredients": [
+      "thrall_bone",
+      "mandrake_root"
+    ],
+    "tier": 1,
+    "sp": 113,
+    "bonus_type": "random_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining thrall bone with mandrake root."
+  },
+  "wild_witch_terrine": {
+    "name": "Wild Witch Terrine",
+    "ingredients": [
+      "witch_bone",
+      "valerian_root"
+    ],
+    "tier": 1,
+    "sp": 70,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining witch bone with valerian root."
+  },
+  "mandrake_root_infused_crypt_dust": {
+    "name": "Mandrake Root-Infused Crypt Dust",
+    "ingredients": [
+      "crypt_dust",
+      "mandrake_root"
+    ],
+    "tier": 1,
+    "sp": 111,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining crypt dust with mandrake root."
+  },
+  "guardian_and_cave_mushroom_medallions": {
+    "name": "Guardian & Cave Mushroom Medallions",
+    "ingredients": [
+      "guardian_bone",
+      "cave_mushroom"
+    ],
+    "tier": 1,
+    "sp": 100,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining guardian bone with cave mushroom."
+  },
+  "valerian_root_infused_gibbering_essence": {
+    "name": "Valerian Root-Infused Gibbering Essence",
+    "ingredients": [
+      "gibbering_essence",
+      "valerian_root"
+    ],
+    "tier": 1,
+    "sp": 91,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining gibbering essence with valerian root."
+  },
+  "cavern_baked_komodo_venom_gland_tartare": {
+    "name": "Cavern-Baked Komodo Venom Gland Tartare",
+    "ingredients": [
+      "komodo_venom_gland",
+      "rosemary_sprig"
+    ],
+    "tier": 1,
+    "sp": 82,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 1,
+    "description": "A simple dish combining komodo venom gland with rosemary sprig."
+  },
+  "primal_roc_egg_fragment_roast": {
+    "name": "Primal Roc Egg Fragment Roast",
+    "ingredients": [
+      "roc_egg_fragment",
+      "valerian_root"
+    ],
+    "tier": 1,
+    "sp": 119,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining roc egg fragment with valerian root."
+  },
+  "rosemary_sprig_infused_redcap_blood": {
+    "name": "Rosemary Sprig-Infused Redcap Blood",
+    "ingredients": [
+      "redcap_blood",
+      "rosemary_sprig"
+    ],
+    "tier": 1,
+    "sp": 115,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 1,
+    "description": "A simple dish combining redcap blood with rosemary sprig."
+  },
+  "elemental_air_core_and_petrified_mushroom_chowder": {
+    "name": "Elemental Air Core & Petrified Mushroom Chowder",
+    "ingredients": [
+      "elemental_air_core",
+      "petrified_mushroom"
+    ],
+    "tier": 1,
+    "sp": 118,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 1,
+    "description": "A simple dish combining elemental air core with petrified mushroom."
+  },
+  "peryton_antler_and_rosemary_sprig_fricassee": {
+    "name": "Peryton Antler & Rosemary Sprig Fricassee",
+    "ingredients": [
+      "peryton_antler",
+      "rosemary_sprig"
+    ],
+    "tier": 1,
+    "sp": 99,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining peryton antler with rosemary sprig."
+  },
+  "rustic_giant_marrow_tartare": {
+    "name": "Rustic Giant Marrow Tartare",
+    "ingredients": [
+      "giant_marrow",
+      "wild_thyme"
+    ],
+    "tier": 1,
+    "sp": 99,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 1,
+    "description": "A simple dish combining giant marrow with wild thyme."
+  },
+  "ember_kissed_yuan_ti_venom_sac_roulade": {
+    "name": "Ember-Kissed Yuan-Ti Venom Sac Roulade",
+    "ingredients": [
+      "yuan_ti_venom_sac",
+      "dragon_salt"
+    ],
+    "tier": 1,
+    "sp": 109,
+    "bonus_type": "random_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining yuan-ti venom sac with dragon salt."
+  },
+  "winged_mane_and_serpent_pepper_roulade": {
+    "name": "Winged Mane & Serpent Pepper Roulade",
+    "ingredients": [
+      "winged_mane",
+      "serpent_pepper"
+    ],
+    "tier": 1,
+    "sp": 98,
+    "bonus_type": "random_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining winged mane with serpent pepper."
+  },
+  "flame_seared_lindworm_skin_tartare": {
+    "name": "Flame-Seared Lindworm Skin Tartare",
+    "ingredients": [
+      "lindworm_skin",
+      "mandrake_root"
+    ],
+    "tier": 1,
+    "sp": 101,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining lindworm skin with mandrake root."
+  },
+  "charred_each_uisce_mane_with_dragon_salt": {
+    "name": "Charred Each Uisce Mane with Dragon Salt",
+    "ingredients": [
+      "each_uisce_mane",
+      "dragon_salt"
+    ],
+    "tier": 1,
+    "sp": 85,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 1,
+    "description": "A simple dish combining each uisce mane with dragon salt."
+  },
+  "baked_ugallu_claw_with_mandrake_root": {
+    "name": "Baked Ugallu Claw with Mandrake Root",
+    "ingredients": [
+      "ugallu_claw",
+      "mandrake_root"
+    ],
+    "tier": 1,
+    "sp": 79,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 1,
+    "description": "A simple dish combining ugallu claw with mandrake root."
+  },
+  "kusarikku_horn_and_nightshade_leaf_platter": {
+    "name": "Kusarikku Horn & Nightshade Leaf Platter",
+    "ingredients": [
+      "kusarikku_horn",
+      "nightshade_leaf"
+    ],
+    "tier": 1,
+    "sp": 96,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 1,
+    "description": "A simple dish combining kusarikku horn with nightshade leaf."
+  },
+  "iron_grell_tentacle_roulade": {
+    "name": "Iron Grell Tentacle Roulade",
+    "ingredients": [
+      "grell_tentacle",
+      "petrified_mushroom"
+    ],
+    "tier": 1,
+    "sp": 83,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 1,
+    "description": "A simple dish combining grell tentacle with petrified mushroom."
+  },
+  "blackened_infernal_perfume_with_petrified_mushroom": {
+    "name": "Blackened Infernal Perfume with Petrified Mushroom",
+    "ingredients": [
+      "infernal_perfume",
+      "petrified_mushroom"
+    ],
+    "tier": 1,
+    "sp": 94,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining infernal perfume with petrified mushroom."
+  },
+  "wild_devil_glaive_shard_broth": {
+    "name": "Wild Devil Glaive Shard Broth",
+    "ingredients": [
+      "devil_glaive_shard",
+      "ember_spice"
+    ],
+    "tier": 1,
+    "sp": 104,
+    "bonus_type": "random_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining devil glaive shard with ember spice."
+  },
+  "primal_lurker_skin_pottage": {
+    "name": "Primal Lurker Skin Pottage",
+    "ingredients": [
+      "lurker_skin",
+      "serpent_pepper"
+    ],
+    "tier": 1,
+    "sp": 87,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 1,
+    "description": "A simple dish combining lurker skin with serpent pepper."
+  },
+  "peppered_mineral_shard_stew": {
+    "name": "Peppered Mineral Shard Stew",
+    "ingredients": [
+      "mineral_shard",
+      "petrified_mushroom"
+    ],
+    "tier": 1,
+    "sp": 116,
+    "bonus_type": "random_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining mineral shard with petrified mushroom."
+  },
+  "valerian_root_infused_hook_horror_hook": {
+    "name": "Valerian Root-Infused Hook Horror Hook",
+    "ingredients": [
+      "hook_horror_hook",
+      "valerian_root"
+    ],
+    "tier": 1,
+    "sp": 71,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining hook horror hook with valerian root."
+  },
+  "slow_cooked_strigoi_fang_with_petrified_mushroom": {
+    "name": "Slow-Cooked Strigoi Fang with Petrified Mushroom",
+    "ingredients": [
+      "strigoi_fang",
+      "petrified_mushroom"
+    ],
+    "tier": 1,
+    "sp": 111,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 1,
+    "description": "A simple dish combining strigoi fang with petrified mushroom."
+  },
+  "smoked_death_mage_phylactery_with_petrified_mushroom": {
+    "name": "Smoked Death Mage Phylactery with Petrified Mushroom",
+    "ingredients": [
+      "death_mage_phylactery",
+      "petrified_mushroom"
+    ],
+    "tier": 1,
+    "sp": 94,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 1,
+    "description": "A simple dish combining death mage phylactery with petrified mushroom."
+  },
+  "pan_fried_mohrg_organ_medallions": {
+    "name": "Pan-Fried Mohrg Organ Medallions",
+    "ingredients": [
+      "mohrg_organ",
+      "cave_mushroom"
+    ],
+    "tier": 1,
+    "sp": 87,
+    "bonus_type": "random_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining mohrg organ with cave mushroom."
+  },
+  "simmered_death_beetle_ichor_with_petrified_mushroom": {
+    "name": "Simmered Death Beetle Ichor with Petrified Mushroom",
+    "ingredients": [
+      "death_beetle_ichor",
+      "petrified_mushroom"
+    ],
+    "tier": 1,
+    "sp": 73,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining death beetle ichor with petrified mushroom."
+  },
+  "charred_hag_eye_with_cave_mushroom": {
+    "name": "Charred Hag Eye with Cave Mushroom",
+    "ingredients": [
+      "hag_eye",
+      "cave_mushroom"
+    ],
+    "tier": 1,
+    "sp": 85,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 1,
+    "description": "A simple dish combining hag eye with cave mushroom."
+  },
+  "elemental_water_core_and_nightshade_leaf_stew": {
+    "name": "Elemental Water Core & Nightshade Leaf Stew",
+    "ingredients": [
+      "elemental_water_core",
+      "nightshade_leaf"
+    ],
+    "tier": 1,
+    "sp": 78,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 1,
+    "description": "A simple dish combining elemental water core with nightshade leaf."
+  },
+  "minotaur_horn_and_ember_spice_pie": {
+    "name": "Minotaur Horn & Ember Spice Pie",
+    "ingredients": [
+      "minotaur_horn",
+      "ember_spice"
+    ],
+    "tier": 1,
+    "sp": 114,
+    "bonus_type": "random_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining Minotaur Horn with ember spice."
+  },
+  "mandrake_root_infused_sphinx_mane": {
+    "name": "Mandrake Root-Infused Sphinx Mane",
+    "ingredients": [
+      "sphinx_mane",
+      "mandrake_root"
+    ],
+    "tier": 1,
+    "sp": 117,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining sphinx mane with mandrake root."
+  },
+  "flame_seared_corruption_with_rosemary_sprig": {
+    "name": "Flame-Seared Corruption with Rosemary Sprig",
+    "ingredients": [
+      "corruption_scale",
+      "rosemary_sprig"
+    ],
+    "tier": 1,
+    "sp": 71,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining corruption scale with rosemary sprig."
+  },
+  "golden_sphinx_dust_gold_feast": {
+    "name": "Golden Sphinx Dust Gold Feast",
+    "ingredients": [
+      "sphinx_dust_gold",
+      "mandrake_root"
+    ],
+    "tier": 1,
+    "sp": 74,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 1,
+    "description": "A simple dish combining sphinx dust gold with mandrake root."
+  },
+  "salt_crusted_thoth_ink_with_void_salt": {
+    "name": "Salt-Crusted Thoth Ink with Void Salt",
+    "ingredients": [
+      "thoth_ink",
+      "void_salt"
+    ],
+    "tier": 1,
+    "sp": 113,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 1,
+    "description": "A simple dish combining thoth ink with void salt."
+  },
+  "ash_smoked_fomorian_with_void_salt": {
+    "name": "Ash-Smoked Fomorian with Void Salt",
+    "ingredients": [
+      "fomorian_bone",
+      "void_salt"
+    ],
+    "tier": 1,
+    "sp": 104,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 1,
+    "description": "A simple dish combining fomorian bone with void salt."
+  },
+  "petrified_mushroom_infused_cath_palug_claw": {
+    "name": "Petrified Mushroom-Infused Cath Palug Claw",
+    "ingredients": [
+      "cath_palug_claw",
+      "petrified_mushroom"
+    ],
+    "tier": 1,
+    "sp": 70,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 1,
+    "description": "A simple dish combining cath palug claw with petrified mushroom."
+  },
+  "rustic_primordial_clay_cutlets": {
+    "name": "Rustic Primordial Clay Cutlets",
+    "ingredients": [
+      "primordial_clay",
+      "petrified_mushroom"
+    ],
+    "tier": 1,
+    "sp": 110,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 1,
+    "description": "A simple dish combining primordial clay with petrified mushroom."
+  },
+  "brain_lobe_and_ember_spice_soup": {
+    "name": "Brain Lobe & Ember Spice Soup",
+    "ingredients": [
+      "brain_lobe",
+      "ember_spice"
+    ],
+    "tier": 1,
+    "sp": 111,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining brain lobe with ember spice."
+  },
+  "silver_cloaker_roulade": {
+    "name": "Silver Cloaker Roulade",
+    "ingredients": [
+      "cloaker_hide",
+      "mandrake_root"
+    ],
+    "tier": 1,
+    "sp": 116,
+    "bonus_type": "random_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining cloaker hide with mandrake root."
+  },
+  "simmered_enchanted_clay_with_void_salt": {
+    "name": "Simmered Enchanted Clay with Void Salt",
+    "ingredients": [
+      "enchanted_clay",
+      "void_salt"
+    ],
+    "tier": 1,
+    "sp": 98,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 1,
+    "description": "A simple dish combining enchanted clay with void salt."
+  },
+  "nightshade_leaf_infused_displacer": {
+    "name": "Nightshade Leaf-Infused Displacer",
+    "ingredients": [
+      "displacer_hide",
+      "nightshade_leaf"
+    ],
+    "tier": 1,
+    "sp": 91,
+    "bonus_type": "random_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining displacer hide with nightshade leaf."
+  },
+  "mystical_black_ooze_curry": {
+    "name": "Mystical Black Ooze Curry",
+    "ingredients": [
+      "black_ooze",
+      "wild_thyme"
+    ],
+    "tier": 1,
+    "sp": 92,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 1,
+    "description": "A simple dish combining black ooze with wild thyme."
+  },
+  "baked_trapper_membrane_ragout": {
+    "name": "Baked Trapper Membrane Ragout",
+    "ingredients": [
+      "trapper_membrane",
+      "mandrake_root"
+    ],
+    "tier": 1,
+    "sp": 70,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining trapper membrane with mandrake root."
+  },
+  "primal_revenant_heart_skewer": {
+    "name": "Primal Revenant Heart Skewer",
+    "ingredients": [
+      "revenant_heart",
+      "serpent_pepper"
+    ],
+    "tier": 1,
+    "sp": 105,
+    "bonus_type": "random_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining revenant heart with serpent pepper."
+  },
+  "mountain_tomb_stone_fragment_cutlets": {
+    "name": "Mountain Tomb Stone Fragment Cutlets",
+    "ingredients": [
+      "tomb_stone_fragment",
+      "nightshade_leaf"
+    ],
+    "tier": 1,
+    "sp": 120,
+    "bonus_type": "random_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining tomb stone fragment with nightshade leaf."
+  },
+  "primal_elemental_ice_core_goulash": {
+    "name": "Primal Elemental Ice Core Goulash",
+    "ingredients": [
+      "elemental_ice_core",
+      "wild_thyme"
+    ],
+    "tier": 1,
+    "sp": 89,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 1,
+    "description": "A simple dish combining elemental ice core with wild thyme."
+  },
+  "dragon_salt_infused_mound_mulch": {
+    "name": "Dragon Salt-Infused Mound Mulch",
+    "ingredients": [
+      "mound_mulch",
+      "dragon_salt"
+    ],
+    "tier": 1,
+    "sp": 92,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining mound mulch with dragon salt."
+  },
+  "honey_glazed_corrupted_wing_feather_roulade": {
+    "name": "Honey-Glazed Corrupted Wing Feather Roulade",
+    "ingredients": [
+      "corrupted_wing_feather",
+      "petrified_mushroom"
+    ],
+    "tier": 1,
+    "sp": 87,
+    "bonus_type": "random_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining corrupted wing feather with petrified mushroom."
+  },
+  "nue_tail_quill_and_mandrake_root_tartare": {
+    "name": "Nue Tail Quill & Mandrake Root Tartare",
+    "ingredients": [
+      "nue_tail_quill",
+      "mandrake_root"
+    ],
+    "tier": 1,
+    "sp": 77,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 1,
+    "description": "A simple dish combining nue tail quill with mandrake root."
+  },
+  "ember_ash_and_serpent_pepper_platter": {
+    "name": "Ember Ash & Serpent Pepper Platter",
+    "ingredients": [
+      "ember_ash",
+      "serpent_pepper"
+    ],
+    "tier": 1,
+    "sp": 117,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 1,
+    "description": "A simple dish combining ember ash with serpent pepper."
+  },
+  "ember_spice_infused_sea_serpent_oil": {
+    "name": "Ember Spice-Infused Sea Serpent Oil",
+    "ingredients": [
+      "sea_serpent_oil",
+      "ember_spice"
+    ],
+    "tier": 1,
+    "sp": 88,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining sea serpent oil with ember spice."
+  },
+  "anzu_feather_and_rosemary_sprig_hash": {
+    "name": "Anzu Feather & Rosemary Sprig Hash",
+    "ingredients": [
+      "anzu_feather",
+      "rosemary_sprig"
+    ],
+    "tier": 1,
+    "sp": 81,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 1,
+    "description": "A simple dish combining anzu feather with rosemary sprig."
+  },
+  "eyestalk_and_mandrake_root_platter": {
+    "name": "Eyestalk & Mandrake Root Platter",
+    "ingredients": [
+      "eyestalk",
+      "mandrake_root"
+    ],
+    "tier": 1,
+    "sp": 72,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 1,
+    "description": "A simple dish combining eyestalk with mandrake root."
+  },
+  "devil_chain_link_and_wild_thyme_goulash": {
+    "name": "Devil Chain Link & Wild Thyme Goulash",
+    "ingredients": [
+      "devil_chain_link",
+      "wild_thyme"
+    ],
+    "tier": 1,
+    "sp": 76,
+    "bonus_type": "random_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining devil chain link with wild thyme."
+  },
+  "silver_shield_guardian_core_goulash": {
+    "name": "Silver Shield Guardian Core Goulash",
+    "ingredients": [
+      "shield_core",
+      "wild_thyme"
+    ],
+    "tier": 1,
+    "sp": 91,
+    "bonus_type": "random_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining shield guardian core with wild thyme."
+  },
+  "braised_roper_strand_with_valerian_root": {
+    "name": "Braised Roper Strand with Valerian Root",
+    "ingredients": [
+      "roper_strand",
+      "valerian_root"
+    ],
+    "tier": 1,
+    "sp": 95,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 1,
+    "description": "A simple dish combining roper strand with valerian root."
+  },
+  "grilled_pale_master_essence_with_ember_spice": {
+    "name": "Grilled Pale Master Essence with Ember Spice",
+    "ingredients": [
+      "pale_master_essence",
+      "ember_spice"
+    ],
+    "tier": 1,
+    "sp": 79,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 1,
+    "description": "A simple dish combining pale master essence with ember spice."
+  },
+  "poached_wight_essence_with_void_salt": {
+    "name": "Poached Wight Essence with Void Salt",
+    "ingredients": [
+      "wight_essence",
+      "void_salt"
+    ],
+    "tier": 1,
+    "sp": 118,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining wight essence with void salt."
+  },
+  "dread_plate_fragment_and_petrified_mushroom_pottage": {
+    "name": "Dread Plate Fragment & Petrified Mushroom Pottage",
+    "ingredients": [
+      "dread_plate",
+      "petrified_mushroom"
+    ],
+    "tier": 1,
+    "sp": 94,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining dread plate fragment with petrified mushroom."
+  },
+  "ember_spice_infused_storm_feather": {
+    "name": "Ember Spice-Infused Storm Feather",
+    "ingredients": [
+      "storm_feather",
+      "ember_spice"
+    ],
+    "tier": 1,
+    "sp": 89,
+    "bonus_type": "random_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining storm feather with ember spice."
+  },
+  "caramelized_sovereign_spore_cap_with_void_salt": {
+    "name": "Caramelized Sovereign Spore Cap with Void Salt",
+    "ingredients": [
+      "sovereign_spore_cap",
+      "void_salt"
+    ],
+    "tier": 1,
+    "sp": 110,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 1,
+    "description": "A simple dish combining sovereign spore cap with void salt."
+  },
+  "sphinx_claw_and_nightshade_leaf_feast": {
+    "name": "Sphinx Claw & Nightshade Leaf Feast",
+    "ingredients": [
+      "sphinx_claw",
+      "nightshade_leaf"
+    ],
+    "tier": 1,
+    "sp": 81,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 1,
+    "description": "A simple dish combining sphinx claw with nightshade leaf."
+  },
+  "hearty_stone_giant_core_casserole": {
+    "name": "Hearty Stone Giant Core Casserole",
+    "ingredients": [
+      "stone_giant_core",
+      "serpent_pepper"
+    ],
+    "tier": 1,
+    "sp": 114,
+    "bonus_type": "random_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining stone giant core with serpent pepper."
+  },
+  "black_dragon_and_void_salt_goulash": {
+    "name": "Black Dragon & Void Salt Goulash",
+    "ingredients": [
+      "black_dragon_scale",
+      "void_salt"
+    ],
+    "tier": 1,
+    "sp": 115,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 1,
+    "description": "A simple dish combining black dragon scale with void salt."
+  },
+  "hydra_bile_and_mandrake_root_medallions": {
+    "name": "Hydra Bile & Mandrake Root Medallions",
+    "ingredients": [
+      "hydra_bile",
+      "mandrake_root"
+    ],
+    "tier": 2,
+    "sp": 150,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 1,
+    "description": "A hearty dish combining hydra bile with mandrake root."
+  },
+  "arcane_devil_barb_feast": {
+    "name": "Arcane Devil Barb Feast",
+    "ingredients": [
+      "devil_barb",
+      "dragon_salt"
+    ],
+    "tier": 1,
+    "sp": 104,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 1,
+    "description": "A simple dish combining devil barb with dragon salt."
+  },
+  "golem_stone_and_nightshade_leaf_soup": {
+    "name": "Golem Stone & Nightshade Leaf Soup",
+    "ingredients": [
+      "golem_stone",
+      "nightshade_leaf"
+    ],
+    "tier": 1,
+    "sp": 73,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 1,
+    "description": "A simple dish combining golem stone with nightshade leaf."
+  },
+  "valerian_root_infused_catoblepas_horn": {
+    "name": "Valerian Root-Infused Catoblepas Horn",
+    "ingredients": [
+      "catoblepas_horn",
+      "valerian_root"
+    ],
+    "tier": 1,
+    "sp": 98,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 1,
+    "description": "A simple dish combining catoblepas horn with valerian root."
+  },
+  "wild_nightshade_spawn_essence_platter": {
+    "name": "Wild Nightshade Spawn Essence Platter",
+    "ingredients": [
+      "nightshade_essence",
+      "rosemary_sprig"
+    ],
+    "tier": 1,
+    "sp": 102,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 1,
+    "description": "A simple dish combining nightshade spawn essence with rosemary sprig."
+  },
+  "serpent_pepper_infused_spider_queen_venom_gland": {
+    "name": "Serpent Pepper-Infused Spider Queen Venom Gland",
+    "ingredients": [
+      "queen_venom_gland",
+      "serpent_pepper"
+    ],
+    "tier": 1,
+    "sp": 97,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 1,
+    "description": "A simple dish combining spider queen venom gland with serpent pepper."
+  },
+  "caramelized_magma_elemental_core_with_cave_mushroom": {
+    "name": "Caramelized Magma Elemental Core with Cave Mushroom",
+    "ingredients": [
+      "elemental_magma_core",
+      "cave_mushroom"
+    ],
+    "tier": 1,
+    "sp": 113,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 1,
+    "description": "A simple dish combining magma elemental core with cave mushroom."
+  },
+  "slow_cooked_corrupted_unicorn_horn_stew": {
+    "name": "Slow-Cooked Corrupted Unicorn Horn Stew",
+    "ingredients": [
+      "corrupted_horn_fragment",
+      "void_salt"
+    ],
+    "tier": 1,
+    "sp": 72,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining corrupted unicorn horn with void salt."
+  },
+  "mountain_red_dragon_kebab": {
+    "name": "Mountain Red Dragon Kebab",
+    "ingredients": [
+      "red_dragon_scale",
+      "valerian_root"
+    ],
+    "tier": 1,
+    "sp": 81,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 1,
+    "description": "A simple dish combining red dragon scale with valerian root."
+  },
+  "spiced_scylla_fang_with_void_salt": {
+    "name": "Spiced Scylla Fang with Void Salt",
+    "ingredients": [
+      "scylla_fang",
+      "void_salt"
+    ],
+    "tier": 1,
+    "sp": 92,
+    "bonus_type": "random_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining scylla fang with void salt."
+  },
+  "baked_titanspawn_essence_with_petrified_mushroom": {
+    "name": "Baked Titanspawn Essence with Petrified Mushroom",
+    "ingredients": [
+      "titan_essence",
+      "petrified_mushroom"
+    ],
+    "tier": 2,
+    "sp": 121,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "description": "A hearty dish combining titanspawn essence with petrified mushroom."
+  },
+  "wild_vrock_feather_cutlets": {
+    "name": "Wild Vrock Feather Cutlets",
+    "ingredients": [
+      "vrock_feather",
+      "petrified_mushroom"
+    ],
+    "tier": 1,
+    "sp": 72,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining vrock feather with petrified mushroom."
+  },
+  "grilled_erinyes_feather_curry": {
+    "name": "Grilled Erinyes Feather Curry",
+    "ingredients": [
+      "erinyes_feather",
+      "ember_spice"
+    ],
+    "tier": 1,
+    "sp": 119,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 1,
+    "description": "A simple dish combining erinyes feather with ember spice."
+  },
+  "petrified_mushroom_infused_behir": {
+    "name": "Petrified Mushroom-Infused Behir",
+    "ingredients": [
+      "behir_scale",
+      "petrified_mushroom"
+    ],
+    "tier": 2,
+    "sp": 126,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 1,
+    "description": "A hearty dish combining behir scale with petrified mushroom."
+  },
+  "wild_thyme_infused_ossuary_shard": {
+    "name": "Wild Thyme-Infused Ossuary Shard",
+    "ingredients": [
+      "ossuary_shard",
+      "wild_thyme"
+    ],
+    "tier": 1,
+    "sp": 110,
+    "bonus_type": "random_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining ossuary shard with wild thyme."
+  },
+  "flame_seared_alpha_lycanthrope_blood_roast": {
+    "name": "Flame-Seared Alpha Lycanthrope Blood Roast",
+    "ingredients": [
+      "alpha_lycanthrope_blood",
+      "ember_spice"
+    ],
+    "tier": 1,
+    "sp": 78,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining alpha lycanthrope blood with ember spice."
+  },
+  "herbed_greater_wyvern_venom_gland_with_mandrake_root": {
+    "name": "Herbed Greater Wyvern Venom Gland with Mandrake Root",
+    "ingredients": [
+      "wyvern_venom_gland",
+      "mandrake_root"
+    ],
+    "tier": 1,
+    "sp": 110,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 1,
+    "description": "A simple dish combining greater wyvern venom gland with mandrake root."
+  },
+  "aboleth_mucus_and_void_salt_tartare": {
+    "name": "Aboleth Mucus & Void Salt Tartare",
+    "ingredients": [
+      "aboleth_mucus",
+      "void_salt"
+    ],
+    "tier": 1,
+    "sp": 105,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 1,
+    "description": "A simple dish combining aboleth mucus with void salt."
+  },
+  "bone_devil_venom_and_wild_thyme_fricassee": {
+    "name": "Bone Devil Venom & Wild Thyme Fricassee",
+    "ingredients": [
+      "devil_venom",
+      "wild_thyme"
+    ],
+    "tier": 1,
+    "sp": 99,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 1,
+    "description": "A simple dish combining bone devil venom with wild thyme."
+  },
+  "marinated_skeletal_giant_soup": {
+    "name": "Marinated Skeletal Giant Soup",
+    "ingredients": [
+      "giant_bone",
+      "rosemary_sprig"
+    ],
+    "tier": 1,
+    "sp": 115,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining skeletal giant bone with rosemary sprig."
+  },
+  "sea_dragon_and_mandrake_root_cutlets": {
+    "name": "Sea Dragon & Mandrake Root Cutlets",
+    "ingredients": [
+      "sea_dragon_scale",
+      "mandrake_root"
+    ],
+    "tier": 2,
+    "sp": 135,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 1,
+    "description": "A hearty dish combining sea dragon scale with mandrake root."
+  },
+  "valerian_root_infused_night_hag_heartstone": {
+    "name": "Valerian Root-Infused Night Hag Heartstone",
+    "ingredients": [
+      "night_hag_heartstone",
+      "valerian_root"
+    ],
+    "tier": 1,
+    "sp": 74,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 1,
+    "description": "A simple dish combining night hag heartstone with valerian root."
+  },
+  "mandrake_root_infused_cloudstuff": {
+    "name": "Mandrake Root-Infused Cloudstuff",
+    "ingredients": [
+      "cloudstuff",
+      "mandrake_root"
+    ],
+    "tier": 1,
+    "sp": 70,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 1,
+    "description": "A simple dish combining cloudstuff with mandrake root."
+  },
+  "mandrake_root_infused_cerberus_saliva": {
+    "name": "Mandrake Root-Infused Cerberus Saliva",
+    "ingredients": [
+      "cerberus_saliva",
+      "mandrake_root"
+    ],
+    "tier": 2,
+    "sp": 131,
+    "bonus_type": "stat",
+    "bonus_stat": "INT",
+    "bonus_amount": 1,
+    "description": "A hearty dish combining cerberus saliva with mandrake root."
+  },
+  "herbed_marilith_demon_scales_roulade": {
+    "name": "Herbed Marilith Demon Scales Roulade",
+    "ingredients": [
+      "demon_scales",
+      "valerian_root"
+    ],
+    "tier": 2,
+    "sp": 135,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 1,
+    "description": "A hearty dish combining marilith demon scales with valerian root."
+  },
+  "undead_dragon_and_serpent_pepper_medallions": {
+    "name": "Undead Dragon & Serpent Pepper Medallions",
+    "ingredients": [
+      "lesser_draco_bone",
+      "serpent_pepper"
+    ],
+    "tier": 2,
+    "sp": 115,
+    "bonus_type": "stat",
+    "bonus_stat": "INT",
+    "bonus_amount": 1,
+    "description": "A hearty dish combining undead dragon bone with serpent pepper."
+  },
+  "blackened_demi_lich_skull_with_void_salt": {
+    "name": "Blackened Demi-Lich Skull with Void Salt",
+    "ingredients": [
+      "demi_lich_skull",
+      "void_salt"
+    ],
+    "tier": 2,
+    "sp": 147,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 1,
+    "description": "A hearty dish combining demi-lich skull with void salt."
+  },
+  "nightwing_membrane_and_ember_spice_chowder": {
+    "name": "Nightwing Membrane & Ember Spice Chowder",
+    "ingredients": [
+      "nightwing_membrane",
+      "ember_spice"
+    ],
+    "tier": 2,
+    "sp": 102,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 1,
+    "description": "A hearty dish combining nightwing membrane with ember spice."
+  },
+  "ember_kissed_roc_talon_with_valerian_root": {
+    "name": "Ember-Kissed Roc Talon with Valerian Root",
+    "ingredients": [
+      "roc_talon",
+      "valerian_root"
+    ],
+    "tier": 2,
+    "sp": 106,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 1,
+    "description": "A hearty dish combining roc talon with valerian root."
+  },
+  "lich_dragon_and_serpent_pepper_medallions": {
+    "name": "Lich Dragon & Serpent Pepper Medallions",
+    "ingredients": [
+      "lich_dragon_scale",
+      "serpent_pepper"
+    ],
+    "tier": 3,
+    "sp": 149,
+    "bonus_type": "combat_stat",
+    "bonus_amount": 1,
+    "description": "A complex dish combining lich dragon scale with serpent pepper."
+  },
+  "rosemary_sprig_infused_battle_ration": {
+    "name": "Rosemary Sprig-Infused Battle Ration",
+    "ingredients": [
+      "battle_ration",
+      "rosemary_sprig"
+    ],
+    "tier": 1,
+    "sp": 111,
+    "bonus_type": "random_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining battle ration with rosemary sprig."
+  },
+  "rosemary_sprig_infused_frost_sac": {
+    "name": "Rosemary Sprig-Infused Frost Sac",
+    "ingredients": [
+      "frost_sac",
+      "rosemary_sprig"
+    ],
+    "tier": 1,
+    "sp": 90,
+    "bonus_type": "random_stat",
+    "bonus_amount": 1,
+    "description": "A simple dish combining frost sac with rosemary sprig."
   }
 }

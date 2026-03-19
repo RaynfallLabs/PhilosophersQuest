@@ -19,7 +19,13 @@
     "can_be_cursed": false,
     "enchant_bonus": 0,
     "unidentified_name": "a rough-sewn hood",
-    "lore": "A close-fitting cap of quilted linen stuffed with sheep's wool, designed to cushion the skull without impeding movement. Favored by those who prefer swift thinking over heavy protection — it offers little defense but weighs almost nothing."
+    "lore": "A close-fitting cap of quilted linen stuffed with sheep's wool, designed to cushion the skull without impeding movement. Favored by those who prefer swift thinking over heavy protection — it offers little defense but weighs almost nothing.",
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "leather_cap": {
     "name": "leather cap",
@@ -41,7 +47,13 @@
     "can_be_cursed": false,
     "enchant_bonus": 0,
     "unidentified_name": "a supple leather cap",
-    "lore": "A close-cropped leather cap, hardened with oil and shaped on a wooden form. Popular among scouts and rogues, it keeps the hair back without clanking and provides a genuine measure of protection against glancing blows."
+    "lore": "A close-cropped leather cap, hardened with oil and shaped on a wooden form. Popular among scouts and rogues, it keeps the hair back without clanking and provides a genuine measure of protection against glancing blows.",
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "iron_helm": {
     "name": "iron helm",
@@ -63,7 +75,14 @@
     "can_be_cursed": false,
     "enchant_bonus": 0,
     "unidentified_name": "a dull-metal pot helm",
-    "lore": "A simple iron pot helm with a fixed nasal guard and cheek plates. The design dates back centuries and has never been improved because it has never needed to be — it protects what matters and costs little enough to leave behind if you must run."
+    "lore": "A simple iron pot helm with a fixed nasal guard and cheek plates. The design dates back centuries and has never been improved because it has never needed to be — it protects what matters and costs little enough to leave behind if you must run.",
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 3,
+      "41-60": 2,
+      "61-80": 1,
+      "81-100": 1
+    }
   },
   "chain_coif": {
     "name": "chain coif",
@@ -85,7 +104,14 @@
     "can_be_cursed": false,
     "enchant_bonus": 0,
     "unidentified_name": "an interlocked-rings coif",
-    "lore": "Thousands of hand-riveted rings form this close-fitting hood, which conforms perfectly to the skull and neck. The chain drape is uncomfortable in sustained wearing but provides excellent protection against slashing attacks to the head and throat."
+    "lore": "Thousands of hand-riveted rings form this close-fitting hood, which conforms perfectly to the skull and neck. The chain drape is uncomfortable in sustained wearing but provides excellent protection against slashing attacks to the head and throat.",
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 3,
+      "41-60": 2,
+      "61-80": 1,
+      "81-100": 1
+    }
   },
   "steel_helm": {
     "name": "steel helm",
@@ -107,7 +133,13 @@
     "can_be_cursed": true,
     "enchant_bonus": 0,
     "unidentified_name": "a polished-metal spangenhelm",
-    "lore": "A segmented steel spangenhelm with a riveted brow band and hinged cheek guards. The polished surface deflects glancing blows with impressive efficiency, and the thoughtful ventilation prevents the overheating that plagues lesser designs."
+    "lore": "A segmented steel spangenhelm with a riveted brow band and hinged cheek guards. The polished surface deflects glancing blows with impressive efficiency, and the thoughtful ventilation prevents the overheating that plagues lesser designs.",
+    "floorSpawnWeight": {
+      "1-40": 0,
+      "41-60": 3,
+      "61-80": 2,
+      "81-100": 1
+    }
   },
   "great_helm": {
     "name": "great helm",
@@ -131,7 +163,13 @@
     "can_be_cursed": true,
     "enchant_bonus": 0,
     "unidentified_name": "a heavy polished-metal great helm",
-    "lore": "The full-face steel great helm encloses the entire head in a shell of tempered metal, with only a narrow vision slit revealing the wearer's eyes. Pierce attacks find no purchase on its seamless exterior; the trade-off is severely restricted peripheral vision and hearing."
+    "lore": "The full-face steel great helm encloses the entire head in a shell of tempered metal, with only a narrow vision slit revealing the wearer's eyes. Pierce attacks find no purchase on its seamless exterior; the trade-off is severely restricted peripheral vision and hearing.",
+    "floorSpawnWeight": {
+      "1-40": 0,
+      "41-60": 3,
+      "61-80": 2,
+      "81-100": 1
+    }
   },
   "plate_helm": {
     "name": "plate helm",
@@ -155,7 +193,12 @@
     "can_be_cursed": true,
     "enchant_bonus": 0,
     "unidentified_name": "a heavy plate visor helm",
-    "lore": "A master armourer's plate helm with a hinged visor and articulated neck guard. The curved surfaces are calculated to deflect sword blows in any direction, and the padding within is shaped memory-leather that conforms to a specific wearer's skull."
+    "lore": "A master armourer's plate helm with a hinged visor and articulated neck guard. The curved surfaces are calculated to deflect sword blows in any direction, and the padding within is shaped memory-leather that conforms to a specific wearer's skull.",
+    "floorSpawnWeight": {
+      "1-60": 0,
+      "61-80": 3,
+      "81-100": 2
+    }
   },
   "crystal_helm": {
     "name": "crystal helm",
@@ -179,7 +222,12 @@
     "can_be_cursed": false,
     "enchant_bonus": 0,
     "unidentified_name": "a translucent faceted helm",
-    "lore": "Faceted from resonant spell-crystal over twelve months of careful work, this helm intercepts magical waves before they reach the mind within. Enchanters who observe it note that spells cast at the wearer seem to slide off its angled faces like water."
+    "lore": "Faceted from resonant spell-crystal over twelve months of careful work, this helm intercepts magical waves before they reach the mind within. Enchanters who observe it note that spells cast at the wearer seem to slide off its angled faces like water.",
+    "floorSpawnWeight": {
+      "1-60": 0,
+      "61-80": 3,
+      "81-100": 2
+    }
   },
   "dragonscale_helm": {
     "name": "dragonscale helm",
@@ -203,7 +251,11 @@
     "can_be_cursed": false,
     "enchant_bonus": 0,
     "unidentified_name": "an iridescent scale helm",
-    "lore": "Constructed from the head-plates of a fire wyrm, this helm carries a vestigial draconic resistance to flame — fire seems simply not to reach the face of whoever wears it. The scales shift between gold and amber as the light changes, beautiful and deadly in equal measure."
+    "lore": "Constructed from the head-plates of a fire wyrm, this helm carries a vestigial draconic resistance to flame — fire seems simply not to reach the face of whoever wears it. The scales shift between gold and amber as the light changes, beautiful and deadly in equal measure.",
+    "floorSpawnWeight": {
+      "1-80": 0,
+      "81-100": 3
+    }
   },
   "adamantine_helm": {
     "name": "adamantine helm",
@@ -227,7 +279,11 @@
     "can_be_cursed": true,
     "enchant_bonus": 0,
     "unidentified_name": "a jet-dark full helm",
-    "lore": "The adamantine full helm is among the most protective headgear ever devised. Blunt impacts that would cave ordinary plate simply transfer their force sideways along the impossibly dense metal, leaving the wearer with a ringing head but an intact skull."
+    "lore": "The adamantine full helm is among the most protective headgear ever devised. Blunt impacts that would cave ordinary plate simply transfer their force sideways along the impossibly dense metal, leaving the wearer with a ringing head but an intact skull.",
+    "floorSpawnWeight": {
+      "1-80": 0,
+      "81-100": 3
+    }
   },
   "cloth_armor": {
     "name": "cloth armor",
@@ -249,7 +305,13 @@
     "can_be_cursed": false,
     "enchant_bonus": 0,
     "unidentified_name": "a rough-sewn tunic",
-    "lore": "A thick-woven garment of sturdy cloth offering minimal protection but maximum freedom of movement. Scholars and mages favor it for exactly this reason — their safety comes from knowing what's coming, not from what they're wearing when it arrives."
+    "lore": "A thick-woven garment of sturdy cloth offering minimal protection but maximum freedom of movement. Scholars and mages favor it for exactly this reason — their safety comes from knowing what's coming, not from what they're wearing when it arrives.",
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "padded_armor": {
     "name": "padded armor",
@@ -271,7 +333,13 @@
     "can_be_cursed": false,
     "enchant_bonus": 0,
     "unidentified_name": "a rough-sewn padded coat",
-    "lore": "Layers of linen stuffed with wool and stitched into a fitted body garment, this armor is the first step beyond bare skin. Soldiers in poorer armies wear nothing else, and it turns aside more attacks than one might expect simply through its bulk and give."
+    "lore": "Layers of linen stuffed with wool and stitched into a fitted body garment, this armor is the first step beyond bare skin. Soldiers in poorer armies wear nothing else, and it turns aside more attacks than one might expect simply through its bulk and give.",
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "leather_armor": {
     "name": "leather armor",
@@ -293,7 +361,13 @@
     "can_be_cursed": false,
     "enchant_bonus": 0,
     "unidentified_name": "a supple fitted cuirass",
-    "lore": "Vegetable-tanned leather hardened in sections and fitted to a standard body form. The supple material moves with the wearer rather than against them, making this the most popular choice among those who need protection without sacrificing agility."
+    "lore": "Vegetable-tanned leather hardened in sections and fitted to a standard body form. The supple material moves with the wearer rather than against them, making this the most popular choice among those who need protection without sacrificing agility.",
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "ring_mail": {
     "name": "ring mail",
@@ -315,7 +389,14 @@
     "can_be_cursed": true,
     "enchant_bonus": 0,
     "unidentified_name": "a linked-ring coat",
-    "lore": "Iron rings punched through a leather backing in overlapping rows, heavier than simple leather but significantly more protective. The distinctive clicking sound of ring mail has warned many a monster that a well-armed opponent approaches."
+    "lore": "Iron rings punched through a leather backing in overlapping rows, heavier than simple leather but significantly more protective. The distinctive clicking sound of ring mail has warned many a monster that a well-armed opponent approaches.",
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 3,
+      "41-60": 2,
+      "61-80": 1,
+      "81-100": 1
+    }
   },
   "scale_mail": {
     "name": "scale mail",
@@ -339,7 +420,14 @@
     "can_be_cursed": true,
     "enchant_bonus": 0,
     "unidentified_name": "an overlapping-plate cuirass",
-    "lore": "Overlapping steel scales riveted to a leather backing, mimicking the natural armor of reptiles. The clever overlapping design causes slashing weapons to glance sideways along the scales rather than finding purchase, much to the frustration of would-be assassins."
+    "lore": "Overlapping steel scales riveted to a leather backing, mimicking the natural armor of reptiles. The clever overlapping design causes slashing weapons to glance sideways along the scales rather than finding purchase, much to the frustration of would-be assassins.",
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 3,
+      "41-60": 2,
+      "61-80": 1,
+      "81-100": 1
+    }
   },
   "chain_mail": {
     "name": "chain mail",
@@ -364,7 +452,14 @@
     "can_be_cursed": true,
     "enchant_bonus": 0,
     "unidentified_name": "an interlocked-rings hauberk",
-    "lore": "Thousands of individually riveted iron rings interlocked in a four-in-one pattern, this hauberk is the backbone of professional soldiers' equipment. Both slashing and piercing weapons struggle to find a gap in the continuously flexible surface."
+    "lore": "Thousands of individually riveted iron rings interlocked in a four-in-one pattern, this hauberk is the backbone of professional soldiers' equipment. Both slashing and piercing weapons struggle to find a gap in the continuously flexible surface.",
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 3,
+      "41-60": 2,
+      "61-80": 1,
+      "81-100": 1
+    }
   },
   "banded_mail": {
     "name": "banded mail",
@@ -388,7 +483,13 @@
     "can_be_cursed": true,
     "enchant_bonus": 0,
     "unidentified_name": "a banded-plate hauberk",
-    "lore": "Horizontal bands of articulated steel plate sewn over a mail foundation, providing considerably more rigid protection while retaining some flexibility. Elite infantry favor it as the best compromise between armor weight and combat endurance."
+    "lore": "Horizontal bands of articulated steel plate sewn over a mail foundation, providing considerably more rigid protection while retaining some flexibility. Elite infantry favor it as the best compromise between armor weight and combat endurance.",
+    "floorSpawnWeight": {
+      "1-40": 0,
+      "41-60": 3,
+      "61-80": 2,
+      "81-100": 1
+    }
   },
   "splint_mail": {
     "name": "splint mail",
@@ -412,7 +513,13 @@
     "can_be_cursed": true,
     "enchant_bonus": 0,
     "unidentified_name": "a banded-plate splint coat",
-    "lore": "Vertical steel splints lashed tightly between layers of heavy leather create a rigid body protection that defies blunt impact far better than chain. Warriors who fight giants and trolls swear by it — the vertical arrangement spreads impact force efficiently across the whole garment."
+    "lore": "Vertical steel splints lashed tightly between layers of heavy leather create a rigid body protection that defies blunt impact far better than chain. Warriors who fight giants and trolls swear by it — the vertical arrangement spreads impact force efficiently across the whole garment.",
+    "floorSpawnWeight": {
+      "1-40": 0,
+      "41-60": 3,
+      "61-80": 2,
+      "81-100": 1
+    }
   },
   "half_plate": {
     "name": "half plate",
@@ -436,7 +543,13 @@
     "can_be_cursed": true,
     "enchant_bonus": 0,
     "unidentified_name": "a heavy-plate cuirass",
-    "lore": "Shaped steel plate covering the torso, shoulders, and upper arms, worn over a chain shirt for gap coverage. Knights errant who cannot afford full plate often settle for this, finding it provides extraordinary protection where the body is most vulnerable."
+    "lore": "Shaped steel plate covering the torso, shoulders, and upper arms, worn over a chain shirt for gap coverage. Knights errant who cannot afford full plate often settle for this, finding it provides extraordinary protection where the body is most vulnerable.",
+    "floorSpawnWeight": {
+      "1-40": 0,
+      "41-60": 3,
+      "61-80": 2,
+      "81-100": 1
+    }
   },
   "full_plate": {
     "name": "full plate",
@@ -461,7 +574,12 @@
     "can_be_cursed": true,
     "enchant_bonus": 0,
     "unidentified_name": "a heavy-plate full harness",
-    "lore": "The pinnacle of conventional armorsmithing — every plate fitted specifically to a single wearer's body, every joint articulated for full combat mobility. A full suit represents months of a master smith's work and costs more than most adventurers earn in a year."
+    "lore": "The pinnacle of conventional armorsmithing — every plate fitted specifically to a single wearer's body, every joint articulated for full combat mobility. A full suit represents months of a master smith's work and costs more than most adventurers earn in a year.",
+    "floorSpawnWeight": {
+      "1-60": 0,
+      "61-80": 3,
+      "81-100": 2
+    }
   },
   "crystal_plate": {
     "name": "crystal plate",
@@ -486,7 +604,12 @@
     "can_be_cursed": false,
     "enchant_bonus": 0,
     "unidentified_name": "a translucent plate harness",
-    "lore": "Grown rather than forged, this armor was cultivated from a single crystal seed over decades in a magically controlled environment. The resulting plates are lighter than steel yet harder, and the lattice structure dissipates both fire and cold energy with remarkable efficiency."
+    "lore": "Grown rather than forged, this armor was cultivated from a single crystal seed over decades in a magically controlled environment. The resulting plates are lighter than steel yet harder, and the lattice structure dissipates both fire and cold energy with remarkable efficiency.",
+    "floorSpawnWeight": {
+      "1-60": 0,
+      "61-80": 3,
+      "81-100": 2
+    }
   },
   "dragonscale_armor": {
     "name": "dragonscale armor",
@@ -513,7 +636,11 @@
     "unidentified_name": "an iridescent scale harness",
     "set_id": "dragonslayer",
     "set_name": "The Dragonslayer's Set",
-    "lore": "Harvested from a dragon of ancient lineage, each scale on this armor is broader than a human palm and harder than forged steel. The draconic essence still saturates the scales, granting the wearer dramatic resistance to fire and acid — the dragon's own weapons turned to defense. This is one of the three pieces of the Dragonslayer's Set. When worn alongside the Dragonbone Longsword and the Dragonslayer's Ring, the wearer gains immunity to fear and +2 to all attacks against dragons."
+    "lore": "Harvested from a dragon of ancient lineage, each scale on this armor is broader than a human palm and harder than forged steel. The draconic essence still saturates the scales, granting the wearer dramatic resistance to fire and acid — the dragon's own weapons turned to defense. This is one of the three pieces of the Dragonslayer's Set. When worn alongside the Dragonbone Longsword and the Dragonslayer's Ring, the wearer gains immunity to fear and +2 to all attacks against dragons.",
+    "floorSpawnWeight": {
+      "1-80": 0,
+      "81-100": 3
+    }
   },
   "adamantine_armor": {
     "name": "adamantine armor",
@@ -538,7 +665,11 @@
     "can_be_cursed": true,
     "enchant_bonus": 0,
     "unidentified_name": "a jet-dark full harness",
-    "lore": "The heaviest wearable armor in existence, forged from the most dense metal known to mortalkind. Both slashing and blunt attacks reduce to a fraction of their normal effect against adamantine — the metal simply refuses to deform. Wearing it requires exceptional strength and constitution, but those who do approach invulnerability against physical assault."
+    "lore": "The heaviest wearable armor in existence, forged from the most dense metal known to mortalkind. Both slashing and blunt attacks reduce to a fraction of their normal effect against adamantine — the metal simply refuses to deform. Wearing it requires exceptional strength and constitution, but those who do approach invulnerability against physical assault.",
+    "floorSpawnWeight": {
+      "1-80": 0,
+      "81-100": 3
+    }
   },
   "leather_bracers": {
     "name": "leather bracers",
@@ -560,7 +691,13 @@
     "can_be_cursed": false,
     "enchant_bonus": 0,
     "unidentified_name": "worn leather arm guards",
-    "lore": "Simple oil-hardened leather strapped over the forearms, protecting the vulnerable tendons and veins from glancing cuts. Archers prize them additionally for the bowstring snap they prevent — a small consideration that saved many an arm over years of practice."
+    "lore": "Simple oil-hardened leather strapped over the forearms, protecting the vulnerable tendons and veins from glancing cuts. Archers prize them additionally for the bowstring snap they prevent — a small consideration that saved many an arm over years of practice.",
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "iron_bracers": {
     "name": "iron bracers",
@@ -582,7 +719,14 @@
     "can_be_cursed": true,
     "enchant_bonus": 0,
     "unidentified_name": "dull-metal arm guards",
-    "lore": "Riveted iron plates encasing the forearm from wrist to elbow. Soldiers wear these when expecting to block weapon strikes with their arms — a maneuver discouraged but sometimes unavoidable in close quarters where shield positioning breaks down."
+    "lore": "Riveted iron plates encasing the forearm from wrist to elbow. Soldiers wear these when expecting to block weapon strikes with their arms — a maneuver discouraged but sometimes unavoidable in close quarters where shield positioning breaks down.",
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 3,
+      "41-60": 2,
+      "61-80": 1,
+      "81-100": 1
+    }
   },
   "steel_bracers": {
     "name": "steel bracers",
@@ -604,7 +748,13 @@
     "can_be_cursed": true,
     "enchant_bonus": 0,
     "unidentified_name": "polished-metal forearm guards",
-    "lore": "Articulated steel plates covering the forearm and upper wrist, hinged at the elbow for mobility. The flared wrist guard is designed to catch and redirect blade strikes, turning parries into counterattack opportunities for a skilled fighter."
+    "lore": "Articulated steel plates covering the forearm and upper wrist, hinged at the elbow for mobility. The flared wrist guard is designed to catch and redirect blade strikes, turning parries into counterattack opportunities for a skilled fighter.",
+    "floorSpawnWeight": {
+      "1-40": 0,
+      "41-60": 3,
+      "61-80": 2,
+      "81-100": 1
+    }
   },
   "plate_bracers": {
     "name": "plate bracers",
@@ -628,7 +778,12 @@
     "can_be_cursed": true,
     "enchant_bonus": 0,
     "unidentified_name": "heavy-plate arm covers",
-    "lore": "Full-coverage plate vambraces from a master armourer's workshop, shaped to follow the arm's musculature precisely. The curved surfaces deflect slashing attacks with geometric precision, and the articulated elbow cowter allows full arm extension without binding."
+    "lore": "Full-coverage plate vambraces from a master armourer's workshop, shaped to follow the arm's musculature precisely. The curved surfaces deflect slashing attacks with geometric precision, and the articulated elbow cowter allows full arm extension without binding.",
+    "floorSpawnWeight": {
+      "1-60": 0,
+      "61-80": 3,
+      "81-100": 2
+    }
   },
   "adamantine_bracers": {
     "name": "adamantine bracers",
@@ -652,7 +807,11 @@
     "can_be_cursed": true,
     "enchant_bonus": 0,
     "unidentified_name": "jet-dark heavy vambraces",
-    "lore": "Adamantine vambraces so dense that blocking a maul strike with them is effectively the same as blocking with a wall. Fighters wearing these will sometimes deliberately absorb blows to the forearms that would have been problematic to parry, exploiting the metal's almost supernatural durability."
+    "lore": "Adamantine vambraces so dense that blocking a maul strike with them is effectively the same as blocking with a wall. Fighters wearing these will sometimes deliberately absorb blows to the forearms that would have been problematic to parry, exploiting the metal's almost supernatural durability.",
+    "floorSpawnWeight": {
+      "1-80": 0,
+      "81-100": 3
+    }
   },
   "cloth_gloves": {
     "name": "cloth gloves",
@@ -674,7 +833,13 @@
     "can_be_cursed": false,
     "enchant_bonus": 0,
     "unidentified_name": "thin woven hand wraps",
-    "lore": "Knitted from tight-spun wool, these gloves offer almost no physical protection but keep the hands warm and improve grip in damp dungeon passages. Scholars wear them to protect sensitive fingertips during extended reading sessions underground."
+    "lore": "Knitted from tight-spun wool, these gloves offer almost no physical protection but keep the hands warm and improve grip in damp dungeon passages. Scholars wear them to protect sensitive fingertips during extended reading sessions underground.",
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "leather_gloves": {
     "name": "leather gloves",
@@ -696,7 +861,13 @@
     "can_be_cursed": false,
     "enchant_bonus": 0,
     "unidentified_name": "supple fitted gloves",
-    "lore": "Soft calfskin gloves fitted to exact finger measurements, providing excellent tactile feel and modest protection for the hands. Thieves prize gloves of this quality because they permit lock manipulation without leaving fingerprints — a practical consideration in any profession involving entry without invitation."
+    "lore": "Soft calfskin gloves fitted to exact finger measurements, providing excellent tactile feel and modest protection for the hands. Thieves prize gloves of this quality because they permit lock manipulation without leaving fingerprints — a practical consideration in any profession involving entry without invitation.",
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "chain_gauntlets": {
     "name": "chain gauntlets",
@@ -718,7 +889,14 @@
     "can_be_cursed": true,
     "enchant_bonus": 0,
     "unidentified_name": "interlocked-ring hand covers",
-    "lore": "Chain link gauntlets with a leather palm lining for grip, covering the hands and extending partway up the forearm. The flexible construction preserves weapon-handling dexterity while protecting the fingers and knuckles from cut damage."
+    "lore": "Chain link gauntlets with a leather palm lining for grip, covering the hands and extending partway up the forearm. The flexible construction preserves weapon-handling dexterity while protecting the fingers and knuckles from cut damage.",
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 3,
+      "41-60": 2,
+      "61-80": 1,
+      "81-100": 1
+    }
   },
   "steel_gauntlets": {
     "name": "steel gauntlets",
@@ -740,7 +918,13 @@
     "can_be_cursed": true,
     "enchant_bonus": 0,
     "unidentified_name": "polished-metal gauntlets",
-    "lore": "Articulated steel gauntlets with segmented finger plates, allowing full grip while protecting the back of the hand completely. Experienced fighters note that the hardened knuckles make unarmed strikes considerably more painful — an unintended but appreciated bonus."
+    "lore": "Articulated steel gauntlets with segmented finger plates, allowing full grip while protecting the back of the hand completely. Experienced fighters note that the hardened knuckles make unarmed strikes considerably more painful — an unintended but appreciated bonus.",
+    "floorSpawnWeight": {
+      "1-40": 0,
+      "41-60": 3,
+      "61-80": 2,
+      "81-100": 1
+    }
   },
   "plate_gauntlets": {
     "name": "plate gauntlets",
@@ -764,7 +948,12 @@
     "can_be_cursed": true,
     "enchant_bonus": 0,
     "unidentified_name": "heavy-plate fist guards",
-    "lore": "Plate gauntlets with fully articulated finger protection and reinforced knuckle guards that distribute blunt impact across the entire hand structure. Blacksmiths who work near forges have been known to covet them simply as heat protection — though their martial applications are considerably more dramatic."
+    "lore": "Plate gauntlets with fully articulated finger protection and reinforced knuckle guards that distribute blunt impact across the entire hand structure. Blacksmiths who work near forges have been known to covet them simply as heat protection — though their martial applications are considerably more dramatic.",
+    "floorSpawnWeight": {
+      "1-60": 0,
+      "61-80": 3,
+      "81-100": 2
+    }
   },
   "adamantine_gauntlets": {
     "name": "adamantine gauntlets",
@@ -786,7 +975,11 @@
     "can_be_cursed": true,
     "enchant_bonus": 0,
     "unidentified_name": "jet-dark full gauntlets",
-    "lore": "Gauntlets of pure adamantine, each finger plate a masterwork of segmented engineering. The metal is so dense that a punch from these gauntlets strikes with the force of a hammer blow; wearing them requires adjusting one's grip on weapons, as the enhanced weight changes every swing's momentum."
+    "lore": "Gauntlets of pure adamantine, each finger plate a masterwork of segmented engineering. The metal is so dense that a punch from these gauntlets strikes with the force of a hammer blow; wearing them requires adjusting one's grip on weapons, as the enhanced weight changes every swing's momentum.",
+    "floorSpawnWeight": {
+      "1-80": 0,
+      "81-100": 3
+    }
   },
   "leather_leggings": {
     "name": "leather leggings",
@@ -808,7 +1001,13 @@
     "can_be_cursed": false,
     "enchant_bonus": 0,
     "unidentified_name": "supple hide leg guards",
-    "lore": "Boiled leather shaped into fitted leg protection, covering thigh to knee in a single articulated piece. Scouts favor these over heavier alternatives because they protect the legs without the weight penalty that turns a sprint into a jog."
+    "lore": "Boiled leather shaped into fitted leg protection, covering thigh to knee in a single articulated piece. Scouts favor these over heavier alternatives because they protect the legs without the weight penalty that turns a sprint into a jog.",
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "chain_leggings": {
     "name": "chain leggings",
@@ -830,7 +1029,14 @@
     "can_be_cursed": true,
     "enchant_bonus": 0,
     "unidentified_name": "interlocked-ring leg covers",
-    "lore": "Chain mail chausses covering leg and thigh, traditionally paired with a full hauberk for complete coverage. The flexible construction allows a full range of kicks and strides while turning aside most cutting attacks to the lower body."
+    "lore": "Chain mail chausses covering leg and thigh, traditionally paired with a full hauberk for complete coverage. The flexible construction allows a full range of kicks and strides while turning aside most cutting attacks to the lower body.",
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 3,
+      "41-60": 2,
+      "61-80": 1,
+      "81-100": 1
+    }
   },
   "steel_greaves": {
     "name": "steel greaves",
@@ -852,7 +1058,13 @@
     "can_be_cursed": true,
     "enchant_bonus": 0,
     "unidentified_name": "polished-metal shin guards",
-    "lore": "Articulated steel greaves covering shin and knee with a hinged poleyn for joint mobility. Infantry commanders discovered that unprotected legs were the primary target of low combat strikes, and the adoption of these greaves dramatically reduced debilitating lower-body wounds."
+    "lore": "Articulated steel greaves covering shin and knee with a hinged poleyn for joint mobility. Infantry commanders discovered that unprotected legs were the primary target of low combat strikes, and the adoption of these greaves dramatically reduced debilitating lower-body wounds.",
+    "floorSpawnWeight": {
+      "1-40": 0,
+      "41-60": 3,
+      "61-80": 2,
+      "81-100": 1
+    }
   },
   "plate_greaves": {
     "name": "plate greaves",
@@ -874,7 +1086,12 @@
     "can_be_cursed": true,
     "enchant_bonus": 0,
     "unidentified_name": "heavy-plate full leg armor",
-    "lore": "Complete plate protection from hip to ankle, with articulated cuisses, poleyns, and greaves working in mechanical harmony. The engineering required to make these move with a wearer without binding represents a century of accumulated armorsmithing refinement."
+    "lore": "Complete plate protection from hip to ankle, with articulated cuisses, poleyns, and greaves working in mechanical harmony. The engineering required to make these move with a wearer without binding represents a century of accumulated armorsmithing refinement.",
+    "floorSpawnWeight": {
+      "1-60": 0,
+      "61-80": 3,
+      "81-100": 2
+    }
   },
   "adamantine_greaves": {
     "name": "adamantine greaves",
@@ -898,7 +1115,11 @@
     "can_be_cursed": true,
     "enchant_bonus": 0,
     "unidentified_name": "jet-dark heavy leg plates",
-    "lore": "Adamantine greaves with a polished-dark surface that seems to absorb light. The material's extreme hardness means slashing attacks aimed at the legs — a classic strategy against armored opponents — simply fail to penetrate, leaving the wearer free to ignore the lower-body strikes most warriors rely upon."
+    "lore": "Adamantine greaves with a polished-dark surface that seems to absorb light. The material's extreme hardness means slashing attacks aimed at the legs — a classic strategy against armored opponents — simply fail to penetrate, leaving the wearer free to ignore the lower-body strikes most warriors rely upon.",
+    "floorSpawnWeight": {
+      "1-80": 0,
+      "81-100": 3
+    }
   },
   "leather_boots": {
     "name": "leather boots",
@@ -920,7 +1141,13 @@
     "can_be_cursed": false,
     "enchant_bonus": 0,
     "unidentified_name": "worn supple boots",
-    "lore": "Hard-soled boots of decent leather, worn smooth at the heel from long travel. They protect the feet from dungeon debris and the constant moisture of stone passages, while the flexible uppers allow silent movement when circumstances demand it."
+    "lore": "Hard-soled boots of decent leather, worn smooth at the heel from long travel. They protect the feet from dungeon debris and the constant moisture of stone passages, while the flexible uppers allow silent movement when circumstances demand it.",
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "iron_boots": {
     "name": "iron boots",
@@ -942,7 +1169,14 @@
     "can_be_cursed": true,
     "enchant_bonus": 0,
     "unidentified_name": "dull-metal sabatons",
-    "lore": "Iron sabatons with articulated toe plates and a riveted ankle guard. The heavy iron construction means underground creatures who try to attack the feet find the experience as productive as attacking a stone floor — though the weight makes running feel like wading through mud."
+    "lore": "Iron sabatons with articulated toe plates and a riveted ankle guard. The heavy iron construction means underground creatures who try to attack the feet find the experience as productive as attacking a stone floor — though the weight makes running feel like wading through mud.",
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 3,
+      "41-60": 2,
+      "61-80": 1,
+      "81-100": 1
+    }
   },
   "steel_boots": {
     "name": "steel boots",
@@ -964,7 +1198,13 @@
     "can_be_cursed": true,
     "enchant_bonus": 0,
     "unidentified_name": "polished-metal pointed sabatons",
-    "lore": "Articulated steel sabatons shaped to follow the foot's natural flex, with reinforced toe caps that have broken more than a few monster ribs when their wearers chose to kick rather than step back. The polished steel exterior is a point of professional pride for every armourer who produces them."
+    "lore": "Articulated steel sabatons shaped to follow the foot's natural flex, with reinforced toe caps that have broken more than a few monster ribs when their wearers chose to kick rather than step back. The polished steel exterior is a point of professional pride for every armourer who produces them.",
+    "floorSpawnWeight": {
+      "1-40": 0,
+      "41-60": 3,
+      "61-80": 2,
+      "81-100": 1
+    }
   },
   "plate_boots": {
     "name": "plate boots",
@@ -986,7 +1226,12 @@
     "can_be_cursed": true,
     "enchant_bonus": 0,
     "unidentified_name": "heavy-plate foot armor",
-    "lore": "Full-coverage plate boots from ankle to toe, with a complex mechanism of overlapping plates that somehow allows normal walking. Worn with full plate, they complete a suit of protection that covers every inch of the body in solid metal."
+    "lore": "Full-coverage plate boots from ankle to toe, with a complex mechanism of overlapping plates that somehow allows normal walking. Worn with full plate, they complete a suit of protection that covers every inch of the body in solid metal.",
+    "floorSpawnWeight": {
+      "1-60": 0,
+      "61-80": 3,
+      "81-100": 2
+    }
   },
   "adamantine_boots": {
     "name": "adamantine boots",
@@ -1008,7 +1253,11 @@
     "can_be_cursed": true,
     "enchant_bonus": 0,
     "unidentified_name": "jet-dark heavy foot plates",
-    "lore": "Adamantine boots so dense that every step leaves faint impressions in stone floors. Floor-level attacks — the trademark of dungeon ambushers who attack from below — find no purchase whatsoever, and the sound of these boots approaching has been known to send intelligent monsters fleeing without combat."
+    "lore": "Adamantine boots so dense that every step leaves faint impressions in stone floors. Floor-level attacks — the trademark of dungeon ambushers who attack from below — find no purchase whatsoever, and the sound of these boots approaching has been known to send intelligent monsters fleeing without combat.",
+    "floorSpawnWeight": {
+      "1-80": 0,
+      "81-100": 3
+    }
   },
   "cloth_cloak": {
     "name": "cloth cloak",
@@ -1030,7 +1279,13 @@
     "can_be_cursed": false,
     "enchant_bonus": 0,
     "unidentified_name": "a rough-sewn traveling cloak",
-    "lore": "A wide, rough-woven woolen cloak that offers little protection but significant warmth. In the cold stone passages of deep dungeons, many adventurers have decided that comfort matters more than combat statistics — these people often survive longer than their more heavily armored companions."
+    "lore": "A wide, rough-woven woolen cloak that offers little protection but significant warmth. In the cold stone passages of deep dungeons, many adventurers have decided that comfort matters more than combat statistics — these people often survive longer than their more heavily armored companions.",
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "leather_cloak": {
     "name": "leather cloak",
@@ -1052,7 +1307,14 @@
     "can_be_cursed": false,
     "enchant_bonus": 0,
     "unidentified_name": "a supple oiled cloak",
-    "lore": "Water-proofed leather, cut wide and hung to the heel, with an inner layer of dense wool. The material turns aside glancing blows that would have opened cuts on an unprotected back, and the dark color makes its wearer less visible in shadowed corridors."
+    "lore": "Water-proofed leather, cut wide and hung to the heel, with an inner layer of dense wool. The material turns aside glancing blows that would have opened cuts on an unprotected back, and the dark color makes its wearer less visible in shadowed corridors.",
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 3,
+      "41-60": 2,
+      "61-80": 1,
+      "81-100": 1
+    }
   },
   "ring_cloak": {
     "name": "ring cloak",
@@ -1074,7 +1336,13 @@
     "can_be_cursed": true,
     "enchant_bonus": 0,
     "unidentified_name": "a linked-ring drape",
-    "lore": "A cape fashioned from interlocking iron rings, heavier than it looks and surprisingly protective against attacks from behind. Cavalry officers pioneered this design to guard their back and flanks during mounted combat; it translated well to dungeon fighting where rearward threats are constant."
+    "lore": "A cape fashioned from interlocking iron rings, heavier than it looks and surprisingly protective against attacks from behind. Cavalry officers pioneered this design to guard their back and flanks during mounted combat; it translated well to dungeon fighting where rearward threats are constant.",
+    "floorSpawnWeight": {
+      "1-40": 0,
+      "41-60": 3,
+      "61-80": 2,
+      "81-100": 1
+    }
   },
   "crystal_cloak": {
     "name": "crystal cloak",
@@ -1098,7 +1366,12 @@
     "can_be_cursed": false,
     "enchant_bonus": 0,
     "unidentified_name": "a shimmering translucent drape",
-    "lore": "Woven from spell-crystal filaments as fine as spider silk, this cloak shimmers like running water in firelight. The crystal lattice is naturally hostile to directed magical energy — spells that strike it lose coherence, dissipating harmlessly before they can affect the wearer."
+    "lore": "Woven from spell-crystal filaments as fine as spider silk, this cloak shimmers like running water in firelight. The crystal lattice is naturally hostile to directed magical energy — spells that strike it lose coherence, dissipating harmlessly before they can affect the wearer.",
+    "floorSpawnWeight": {
+      "1-60": 0,
+      "61-80": 3,
+      "81-100": 2
+    }
   },
   "dragonscale_cloak": {
     "name": "dragonscale cloak",
@@ -1124,7 +1397,11 @@
     "set_id": "shadow_walker",
     "set_name": "The Shadow Walker's Set",
     "lore": "This sleek cloak is fashioned from the wing membrane and smaller scales of a shadow-drake, a draconic subspecies known for their natural stealth and venomous bite. The scales absorb fire and seem to drink in ambient light, making the wearer unusually difficult to spot in dim conditions. This is one of the three pieces of the Shadow Walker's Set. When worn alongside the Adamantine Dagger and the Shadow Walker's Ring, the wearer gains a poison strike on all attacks and moves silently regardless of armor worn.",
-    "unidentified_name": "an iridescent scale cloak"
+    "unidentified_name": "an iridescent scale cloak",
+    "floorSpawnWeight": {
+      "1-80": 0,
+      "81-100": 3
+    }
   },
   "cloth_shirt": {
     "name": "cloth shirt",
@@ -1146,7 +1423,13 @@
     "can_be_cursed": false,
     "enchant_bonus": 0,
     "unidentified_name": "a rough-sewn undergarment",
-    "lore": "A plain linen undershirt, worn beneath armor to prevent chafing and absorb sweat. Adventurers who skip this basic layer quickly develop the kind of skin problems that make donning heavy armor a daily ordeal — comfort matters more than newcomers suspect."
+    "lore": "A plain linen undershirt, worn beneath armor to prevent chafing and absorb sweat. Adventurers who skip this basic layer quickly develop the kind of skin problems that make donning heavy armor a daily ordeal — comfort matters more than newcomers suspect.",
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "padded_shirt": {
     "name": "padded shirt",
@@ -1168,7 +1451,14 @@
     "can_be_cursed": false,
     "enchant_bonus": 0,
     "unidentified_name": "a rough-sewn gambeson",
-    "lore": "A fitted gambeson of quilted canvas stuffed with raw wool, worn as both a standalone garment and as padding beneath heavier armor. The thick quilting distributes impact force across a wide area, making it surprisingly effective against blunt weapons."
+    "lore": "A fitted gambeson of quilted canvas stuffed with raw wool, worn as both a standalone garment and as padding beneath heavier armor. The thick quilting distributes impact force across a wide area, making it surprisingly effective against blunt weapons.",
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 3,
+      "41-60": 2,
+      "61-80": 1,
+      "81-100": 1
+    }
   },
   "chain_shirt": {
     "name": "chain shirt",
@@ -1192,7 +1482,13 @@
     "can_be_cursed": true,
     "enchant_bonus": 0,
     "unidentified_name": "an interlocked-rings undershirt",
-    "lore": "A fine mesh of riveted rings worn beneath outer armor to protect gaps and joints. The shirt's true value is revealed when a blade finds the seam in a breastplate — instead of drawing blood, it meets the chain and glances away, foiled by thousands of interlocking circles of steel."
+    "lore": "A fine mesh of riveted rings worn beneath outer armor to protect gaps and joints. The shirt's true value is revealed when a blade finds the seam in a breastplate — instead of drawing blood, it meets the chain and glances away, foiled by thousands of interlocking circles of steel.",
+    "floorSpawnWeight": {
+      "1-40": 0,
+      "41-60": 3,
+      "61-80": 2,
+      "81-100": 1
+    }
   },
   "mithril_shirt": {
     "name": "mithril shirt",
@@ -1216,7 +1512,12 @@
     "can_be_cursed": false,
     "enchant_bonus": 0,
     "unidentified_name": "an iridescent pale-silver undershirt",
-    "lore": "Lighter than silk, stronger than iron — the legendary mithril shirt has been sought by every warrior who ever heard of it. The silvery rings are impervious to corrosion and naturally hostile to magical energy, deflecting enchantments that would otherwise pass through conventional armor unimpeded."
+    "lore": "Lighter than silk, stronger than iron — the legendary mithril shirt has been sought by every warrior who ever heard of it. The silvery rings are impervious to corrosion and naturally hostile to magical energy, deflecting enchantments that would otherwise pass through conventional armor unimpeded.",
+    "floorSpawnWeight": {
+      "1-60": 0,
+      "61-80": 3,
+      "81-100": 2
+    }
   },
   "adamantine_shirt": {
     "name": "adamantine shirt",
@@ -1240,7 +1541,11 @@
     "can_be_cursed": true,
     "enchant_bonus": 0,
     "unidentified_name": "a jet-dark chain undershirt",
-    "lore": "Adamantine rings fine enough to pass as chain mail, yet possessing all the hardness of the parent metal. Even worn alone it provides extraordinary protection against cutting weapons — slashing attacks that would split lesser mail simply fail to sever the adamantine links, regardless of force applied."
+    "lore": "Adamantine rings fine enough to pass as chain mail, yet possessing all the hardness of the parent metal. Even worn alone it provides extraordinary protection against cutting weapons — slashing attacks that would split lesser mail simply fail to sever the adamantine links, regardless of force applied.",
+    "floorSpawnWeight": {
+      "1-80": 0,
+      "81-100": 3
+    }
   },
   "cloth_hood": {
     "name": "cloth hood",
@@ -1263,7 +1568,13 @@
     "enchant_bonus": 0,
     "unidentified_name": "a plain fabric hood",
     "lore": "A simple hood of rough-woven cloth. It keeps the dust out of your eyes and little else. Every adventurer starts somewhere.",
-    "identified": false
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "bronze_helm": {
     "name": "bronze helm",
@@ -1286,7 +1597,14 @@
     "enchant_bonus": 0,
     "unidentified_name": "an old-looking metal helmet",
     "lore": "Bronze predates iron in human warfare by millennia. A well-cast bronze helmet provides surprising protection; Corinthian bronze helms offered full-face coverage and were worn by Greek hoplites for three centuries.",
-    "identified": false
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-10": 0,
+      "11-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "sallet": {
     "name": "sallet",
@@ -1309,7 +1627,13 @@
     "enchant_bonus": 0,
     "unidentified_name": "an open-faced sweep-brimmed helm",
     "lore": "The sallet was the standard helmet of 15th-century European infantry and cavalry. Its swept-back brim deflected downward sword cuts; its open face allowed clear vision. English archers at Agincourt wore sallets. It represents the high point of practical medieval helmet design.",
-    "identified": false
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-40": 0,
+      "41-60": 3,
+      "61-80": 2,
+      "81-100": 1
+    }
   },
   "bascinet": {
     "name": "bascinet",
@@ -1332,7 +1656,13 @@
     "enchant_bonus": 0,
     "unidentified_name": "a pointed visor helmet",
     "lore": "The bascinet evolved from the simple iron skullcap into a sophisticated piece of armor with an articulated visor. Knights of the 14th century attached chain aventails to the bascinet's edges, protecting the neck and cheeks. The pointed top deflects downward blows laterally.",
-    "identified": false
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-40": 0,
+      "41-60": 3,
+      "61-80": 2,
+      "81-100": 1
+    }
   },
   "armet": {
     "name": "armet",
@@ -1355,7 +1685,12 @@
     "enchant_bonus": 0,
     "unidentified_name": "a fully enclosing tournament helm",
     "lore": "The armet was the pinnacle of 15th and 16th-century helmet craft: a fully enclosing helm that locked around the wearer's head for tournament and field use alike. The hinged cheekpieces created a sealed environment that was both uncomfortably warm and extraordinarily protective.",
-    "identified": false
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-60": 0,
+      "61-80": 3,
+      "81-100": 2
+    }
   },
   "mithril_helm": {
     "name": "mithril helm",
@@ -1380,7 +1715,12 @@
     "enchant_bonus": 0,
     "unidentified_name": "a shimmering lightweight helm",
     "lore": "Mithril, the moonmetal, weighs a third of steel yet provides equivalent protection through an enchantment woven into its crystalline structure. A mithril helm offers a subtle resistance to magical attacks — the metal refracts hostile spells the same way it refracts light.",
-    "identified": false
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-60": 0,
+      "61-80": 3,
+      "81-100": 2
+    }
   },
   "brigandine": {
     "name": "brigandine",
@@ -1403,7 +1743,14 @@
     "enchant_bonus": 0,
     "unidentified_name": "a cloth coat with metal rivets",
     "lore": "The brigandine was the armor of choice for 14th-century mercenary companies: small iron or steel plates riveted to a fabric outer coat, usually velvet or canvas. It combined the flexibility of cloth with reasonable protection and was far cheaper than a full coat of mail.",
-    "identified": false
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 3,
+      "41-60": 2,
+      "61-80": 1,
+      "81-100": 1
+    }
   },
   "hauberk": {
     "name": "hauberk",
@@ -1426,7 +1773,14 @@
     "enchant_bonus": 0,
     "unidentified_name": "a long-skirted chain coat",
     "lore": "The hauberk was the primary body defense of Norman and crusading knights. A full hauberk extended to mid-thigh with skirts split for riding, long sleeves ending in mail mittens, and an attached coif. William the Conqueror's knights wore hauberks at Hastings in 1066.",
-    "identified": false
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 3,
+      "41-60": 2,
+      "61-80": 1,
+      "81-100": 1
+    }
   },
   "coat_of_plates": {
     "name": "coat of plates",
@@ -1449,7 +1803,13 @@
     "enchant_bonus": 0,
     "unidentified_name": "a heavy riveted plate coat",
     "lore": "Transitional armor of the early 14th century: large overlapping iron plates riveted to a heavy fabric foundation. The Black Prince wore a coat of plates over his mail at Crécy. It represents the step between chain and full plate — more protection but heavier and less mobile than later plate armor.",
-    "identified": false
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-40": 0,
+      "41-60": 3,
+      "61-80": 2,
+      "81-100": 1
+    }
   },
   "mithril_plate": {
     "name": "mithril plate",
@@ -1474,7 +1834,12 @@
     "enchant_bonus": 0,
     "unidentified_name": "a shimmering full-body suit",
     "lore": "Mithril plate is the culmination of elven craft and dwarven metallurgy. It weighs half what steel plate does and deflects magical energies with unusual efficiency. A mithril plate suit was reportedly worn by a human wizard who survived a dragon's full breath weapon — though he described the experience as 'thoroughly unpleasant.'",
-    "identified": false
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-60": 0,
+      "61-80": 3,
+      "81-100": 2
+    }
   },
   "cloth_wraps": {
     "name": "cloth arm wraps",
@@ -1497,7 +1862,13 @@
     "enchant_bonus": 0,
     "unidentified_name": "plain wrapped cloth",
     "lore": "Simple strips of linen wrapped around the forearms. They protect against minor abrasions and cold rather than serious weapons.",
-    "identified": false
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "padded_bracers": {
     "name": "padded bracers",
@@ -1520,7 +1891,13 @@
     "enchant_bonus": 0,
     "unidentified_name": "thick padded forearm wraps",
     "lore": "Quilted linen bracers filled with wool provided the common soldier's minimal forearm protection. More importantly, they prevented the abrasion from a mail coat's interior surface.",
-    "identified": false
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "bronze_bracers": {
     "name": "bronze bracers",
@@ -1543,7 +1920,14 @@
     "enchant_bonus": 0,
     "unidentified_name": "old bronze arm guards",
     "lore": "Bronze greaves and bracers preceded iron equivalents in Greek and Roman armies. A pair of Mycenaean bronze bracers found at Dendra represents over 3,000 years of continuous use of this design.",
-    "identified": false
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-10": 0,
+      "11-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "chain_bracers": {
     "name": "chain bracers",
@@ -1566,7 +1950,14 @@
     "enchant_bonus": 0,
     "unidentified_name": "linked metal forearm guards",
     "lore": "Chain mail bracers protect the forearms while allowing the hand full articulation. They are heavier than leather but significantly better at deflecting cuts.",
-    "identified": false
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 3,
+      "41-60": 2,
+      "61-80": 1,
+      "81-100": 1
+    }
   },
   "scale_bracers": {
     "name": "scale bracers",
@@ -1589,7 +1980,14 @@
     "enchant_bonus": 0,
     "unidentified_name": "overlapping plate forearm guards",
     "lore": "Overlapping scales of metal riveted to leather backing create excellent glancing resistance. Scale armor was standard issue in the armies of ancient Egypt and Persia.",
-    "identified": false
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 3,
+      "41-60": 2,
+      "61-80": 1,
+      "81-100": 1
+    }
   },
   "crystal_bracers": {
     "name": "crystal bracers",
@@ -1614,7 +2012,12 @@
     "enchant_bonus": 0,
     "unidentified_name": "glowing forearm guards",
     "lore": "Crystal bracers are grown rather than forged — mage-cultivated mineral formations shaped into armor. They resonate with defensive wards that reflect minor magical attacks harmlessly.",
-    "identified": false
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-60": 0,
+      "61-80": 3,
+      "81-100": 2
+    }
   },
   "dragonscale_bracers": {
     "name": "dragonscale bracers",
@@ -1639,7 +2042,11 @@
     "enchant_bonus": 0,
     "unidentified_name": "scaled exotic forearm guards",
     "lore": "Dragonscale bracers require scales from the foreleg — the most densely armored section of any dragon. The fire resistance they provide is inherent to the scale's structure, not an enchantment.",
-    "identified": false
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-80": 0,
+      "81-100": 3
+    }
   },
   "iron_gauntlets": {
     "name": "iron gauntlets",
@@ -1662,7 +2069,14 @@
     "enchant_bonus": 0,
     "unidentified_name": "heavy fingered iron gloves",
     "lore": "Early iron gauntlets were crude affairs: mitten-shaped iron coverings attached to mail sleeves. By the 13th century, articulated fingers had been developed. These iron examples represent the transitional form.",
-    "identified": false
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 3,
+      "41-60": 2,
+      "61-80": 1,
+      "81-100": 1
+    }
   },
   "bronze_gauntlets": {
     "name": "bronze gauntlets",
@@ -1685,7 +2099,14 @@
     "enchant_bonus": 0,
     "unidentified_name": "old metal hand covers",
     "lore": "Bronze gauntlets were worn by Macedonian cavalry to protect sword hands. Their archaeological record dates to 700 BC. These examples follow the simple mitten form that was practical for three millennia.",
-    "identified": false
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-10": 0,
+      "11-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "mithril_gauntlets": {
     "name": "mithril gauntlets",
@@ -1710,7 +2131,12 @@
     "enchant_bonus": 0,
     "unidentified_name": "shimmering lightweight metal gloves",
     "lore": "Mithril gauntlets are fully articulated at every finger joint and provide complete protection without any loss of weapon control. Master craftspeople take six months to produce a single pair.",
-    "identified": false
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-60": 0,
+      "61-80": 3,
+      "81-100": 2
+    }
   },
   "cloth_leggings": {
     "name": "cloth leggings",
@@ -1733,7 +2159,13 @@
     "enchant_bonus": 0,
     "unidentified_name": "plain fabric leg covers",
     "lore": "Simple cloth leggings provide no real protection but at least insulate against cold stone floors.",
-    "identified": false
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "padded_leggings": {
     "name": "padded leggings",
@@ -1756,7 +2188,13 @@
     "enchant_bonus": 0,
     "unidentified_name": "thick padded leg protection",
     "lore": "Padded leggings were worn under heavier armor throughout the medieval period. They also served as the standalone leg protection of poorer soldiers who could not afford mail.",
-    "identified": false
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "iron_leggings": {
     "name": "iron leggings",
@@ -1779,7 +2217,14 @@
     "enchant_bonus": 0,
     "unidentified_name": "solid iron leg plates",
     "lore": "Iron plate leg armor protected the vulnerable femoral artery from cutting weapons. Medieval surgeons noted that wounds to the upper leg were among the most dangerous — which explains why legionnaires spent so much on this protection.",
-    "identified": false
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 3,
+      "41-60": 2,
+      "61-80": 1,
+      "81-100": 1
+    }
   },
   "scale_greaves": {
     "name": "scale greaves",
@@ -1802,7 +2247,13 @@
     "enchant_bonus": 0,
     "unidentified_name": "overlapping scaled leg guards",
     "lore": "Scale greaves represent the Eastern approach to leg protection: flexible scales that move with the leg while providing good overall coverage. Byzantine cavalry used this pattern throughout the eastern empire.",
-    "identified": false
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-40": 0,
+      "41-60": 3,
+      "61-80": 2,
+      "81-100": 1
+    }
   },
   "crystal_greaves": {
     "name": "crystal greaves",
@@ -1827,7 +2278,12 @@
     "enchant_bonus": 0,
     "unidentified_name": "shimmering crystal leg armor",
     "lore": "Crystal greaves hum faintly when approached by hostile magic, providing both warning and protection. The resonance crystals in the knee joints can detect arcane energies up to 10 feet away.",
-    "identified": false
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-60": 0,
+      "61-80": 3,
+      "81-100": 2
+    }
   },
   "cloth_sandals": {
     "name": "cloth sandals",
@@ -1850,7 +2306,13 @@
     "enchant_bonus": 0,
     "unidentified_name": "simple wrapped sandals",
     "lore": "The simplest footwear imaginable — straps of cloth wrapped around the foot and ankle. Offers no real protection but allows silent movement and is better than going barefoot on dungeon stone.",
-    "identified": false
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "padded_boots": {
     "name": "padded boots",
@@ -1873,7 +2335,13 @@
     "enchant_bonus": 0,
     "unidentified_name": "thick-soled cloth boots",
     "lore": "Padded boots filled with wool provide warmth and limited protection. They are the everyday footwear of merchants, farmers, and beginning adventurers.",
-    "identified": false
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "bronze_boots": {
     "name": "bronze boots",
@@ -1896,7 +2364,14 @@
     "enchant_bonus": 0,
     "unidentified_name": "old bronze foot guards",
     "lore": "Bronze greaves covered the shins and were held in place by the metal's natural spring. Greek hoplites wore bronze greaves without straps; the metal gripped the leg by itself. These boots extend the protection to the foot.",
-    "identified": false
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-10": 0,
+      "11-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "chain_boots": {
     "name": "chain boots",
@@ -1919,7 +2394,14 @@
     "enchant_bonus": 0,
     "unidentified_name": "linked metal boots",
     "lore": "Chain mail feet protection is more common than it might seem — crusading knights wore chain chaussures covering the entire foot in linked rings. They provided excellent protection against slashing while maintaining reasonable flexibility.",
-    "identified": false
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 3,
+      "41-60": 2,
+      "61-80": 1,
+      "81-100": 1
+    }
   },
   "crystal_boots": {
     "name": "crystal boots",
@@ -1944,7 +2426,12 @@
     "enchant_bonus": 0,
     "unidentified_name": "glowing crystalline boots",
     "lore": "Crystal boots grip the floor with surprising stability — the crystalline structure creates a natural adhesion that prevents slipping on wet stone. The magical resistance embedded in each facet extends from toe to calf.",
-    "identified": false
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-60": 0,
+      "61-80": 3,
+      "81-100": 2
+    }
   },
   "mithril_boots": {
     "name": "mithril boots",
@@ -1969,7 +2456,12 @@
     "enchant_bonus": 0,
     "unidentified_name": "shimmering lightweight boots",
     "lore": "Mithril boots are so light that wearers report feeling faster — a subjective effect that tests have confirmed is objectively true. The metal's enchantments reduce impact, allowing quieter movement than any other protective footwear.",
-    "identified": false
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-60": 0,
+      "61-80": 3,
+      "81-100": 2
+    }
   },
   "fur_cloak": {
     "name": "fur cloak",
@@ -1992,7 +2484,13 @@
     "enchant_bonus": 0,
     "unidentified_name": "a thick animal-fur cloak",
     "lore": "A bearskin or wolf-pelt cloak was the mark of a northern warrior — practical insulation against the cold and an intimidating appearance in southern eyes. Several Viking chieftains were described wearing such cloaks over their mail.",
-    "identified": false
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "wool_cloak": {
     "name": "wool cloak",
@@ -2015,7 +2513,13 @@
     "enchant_bonus": 0,
     "unidentified_name": "a heavy grey cloak",
     "lore": "Undyed wool cloaks were the standard traveling garment across the medieval world. The natural lanolin in wool provides mild water resistance; the thickness provides warmth. Not impressive, but reliable.",
-    "identified": false
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "silk_cloak": {
     "name": "silk cloak",
@@ -2040,7 +2544,13 @@
     "enchant_bonus": 0,
     "unidentified_name": "a lustrous smooth cloak",
     "lore": "Silk is surprisingly effective at stopping arrows — the fiber wraps around arrowheads and prevents penetration. Mongol warriors wore silk undergarments precisely because removal of the garment could draw out arrowheads without surgery. A silk cloak extends this protection.",
-    "identified": false
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-40": 0,
+      "41-60": 3,
+      "61-80": 2,
+      "81-100": 1
+    }
   },
   "mithril_cloak": {
     "name": "mithril cloak",
@@ -2065,7 +2575,12 @@
     "enchant_bonus": 0,
     "unidentified_name": "a faintly shimmering cloak",
     "lore": "A mithril-woven cloak is the ultimate magical protection garment. The metal threads form an interference pattern that disrupts incoming spells. Arch-mages who have studied this effect describe it as 'the magic equivalent of signal jamming.'",
-    "identified": false
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-60": 0,
+      "61-80": 3,
+      "81-100": 2
+    }
   },
   "shadowweave_cloak": {
     "name": "shadowweave cloak",
@@ -2091,7 +2606,11 @@
     "enchant_bonus": 0,
     "unidentified_name": "a cloak that seems to absorb light",
     "lore": "Woven from adamantine threads thinner than silk, the shadowweave cloak is barely visible in dim light — it bends shadows around the wearer. Assassins covet these garments; rulers fear them. The cursed variants permanently darken the wearer's reputation in ways that are difficult to explain to historians.",
-    "identified": false
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-80": 0,
+      "81-100": 3
+    }
   },
   "linen_shirt": {
     "name": "linen shirt",
@@ -2114,7 +2633,13 @@
     "enchant_bonus": 0,
     "unidentified_name": "a plain off-white undershirt",
     "lore": "Worn against the skin beneath any other armor. Keeps sweat from rusting the mail and distributes the weight more comfortably. Everyone wears one.",
-    "identified": false
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "wool_shirt": {
     "name": "wool shirt",
@@ -2137,7 +2662,13 @@
     "enchant_bonus": 0,
     "unidentified_name": "a thick undershirt",
     "lore": "Thick wool against the skin in cold dungeons is not luxury — it is survival. Medieval knights wore wool garments under their mail in winter. The padding also reduces the transfer of impact forces from the outer armor.",
-    "identified": false
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "silk_shirt": {
     "name": "silk shirt",
@@ -2162,7 +2693,13 @@
     "enchant_bonus": 0,
     "unidentified_name": "an unexpectedly protective undershirt",
     "lore": "Silk's arrow-stopping properties were well known in the medieval east. A tight-woven silk undergarment catches and wraps arrowheads, preventing deeper penetration. Temur's cavalry reportedly wore silk shirts under their armor for exactly this reason.",
-    "identified": false
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-40": 0,
+      "41-60": 3,
+      "61-80": 2,
+      "81-100": 1
+    }
   },
   "scale_shirt": {
     "name": "scale shirt",
@@ -2185,7 +2722,13 @@
     "enchant_bonus": 0,
     "unidentified_name": "a short-sleeved scale coat",
     "lore": "A scale shirt worn beneath outer armor is an old layering technique. The scales provide a rigid base that distributes the force of impacts, while the outer layer provides coverage. Egyptian and Mesopotamian warriors wore this combination for centuries.",
-    "identified": false
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-40": 0,
+      "41-60": 3,
+      "61-80": 2,
+      "81-100": 1
+    }
   },
   "elven_shirt": {
     "name": "elven shirt",
@@ -2210,7 +2753,12 @@
     "enchant_bonus": 0,
     "unidentified_name": "an impossibly fine mail garment",
     "lore": "Elven craftspeople weave mithril into garments so fine they appear to be fabric rather than armor. An elven shirt can be folded into a package the size of a handkerchief. It weighs nothing and stops almost everything. Those few who have worn one describe feeling simultaneously naked and invincible.",
-    "identified": false
+    "identified": false,
+    "floorSpawnWeight": {
+      "1-60": 0,
+      "61-80": 3,
+      "81-100": 2
+    }
   },
   "hide_of_nemean_lion": {
     "name": "Hide of the Nemean Lion",
@@ -2231,7 +2779,7 @@
     "quiz_tier": 5,
     "damage_resistances": {
       "slash": 0.35,
-      "crush": 0.3,
+      "blunt": 0.3,
       "pierce": 0.25
     },
     "can_be_cursed": false,
@@ -2298,7 +2846,7 @@
     "damage_resistances": {
       "slash": 0.2,
       "pierce": 0.2,
-      "crush": 0.2,
+      "blunt": 0.2,
       "fire": 0.15
     },
     "can_be_cursed": false,
@@ -2593,7 +3141,7 @@
     "equip_threshold": 2,
     "quiz_tier": 4,
     "damage_resistances": {
-      "crush": 0.25,
+      "blunt": 0.25,
       "slash": 0.2
     },
     "can_be_cursed": false,
@@ -2691,7 +3239,7 @@
     "quiz_tier": 4,
     "damage_resistances": {
       "slash": 0.2,
-      "crush": 0.2,
+      "blunt": 0.2,
       "pierce": 0.15
     },
     "can_be_cursed": false,
@@ -2758,7 +3306,7 @@
       "magic": 0.45,
       "fire": 0.15,
       "cold": 0.15,
-      "shock": 0.1
+      "lightning": 0.1
     },
     "can_be_cursed": false,
     "cursed": false,
@@ -2854,7 +3402,7 @@
     "quiz_tier": 4,
     "damage_resistances": {
       "slash": 0.25,
-      "crush": 0.15,
+      "blunt": 0.15,
       "pierce": 0.1
     },
     "can_be_cursed": false,
@@ -2891,7 +3439,13 @@
     "can_be_cursed": false,
     "enchant_bonus": 0,
     "unidentified_name": "thick golden hide",
-    "lore": "The hide of the Nemean Lion, impossible to cut or pierce. Hercules used its own claws to skin it. Wearing it is like wearing the beast itself."
+    "lore": "The hide of the Nemean Lion, impossible to cut or pierce. Hercules used its own claws to skin it. Wearing it is like wearing the beast itself.",
+    "floorSpawnWeight": {
+      "1-44": 0,
+      "45-60": 3,
+      "61-80": 2,
+      "81-100": 1
+    }
   },
   "green_knights_plate": {
     "name": "Green Knight's Plate",
@@ -2918,7 +3472,12 @@
     "unidentified_name": "eerily green plate armor",
     "lore": "Forged from enchanted iron that grows with the wearer, the Green Knight's Plate absorbs blows that would kill a lesser man. The wearer heals slowly but continuously.",
     "special_effect": "regen_2",
-    "onEquipStatus": "life_save"
+    "onEquipStatus": "life_save",
+    "floorSpawnWeight": {
+      "1-62": 0,
+      "63-80": 3,
+      "81-100": 2
+    }
   },
   "serpent_scale_mail": {
     "name": "Serpent Scale Mail",
@@ -2943,7 +3502,13 @@
     "can_be_cursed": false,
     "enchant_bonus": 0,
     "unidentified_name": "iridescent scale hauberk",
-    "lore": "Scales from Jörmungandr's juvenile form, each harder than iron. The poison that suffuses them has been neutralized — but it still repels toxins entirely."
+    "lore": "Scales from Jörmungandr's juvenile form, each harder than iron. The poison that suffuses them has been neutralized — but it still repels toxins entirely.",
+    "floorSpawnWeight": {
+      "1-54": 0,
+      "55-60": 3,
+      "61-80": 2,
+      "81-100": 1
+    }
   },
   "arachne_silk_cloak": {
     "name": "Arachne's Silk Cloak",
@@ -2967,7 +3532,13 @@
     "can_be_cursed": false,
     "enchant_bonus": 0,
     "unidentified_name": "shimmering silk cloak",
-    "lore": "Woven by Arachne before her transformation, this cloak is lighter than air and tougher than leather against piercing weapons. It catches arrows and slows blades."
+    "lore": "Woven by Arachne before her transformation, this cloak is lighter than air and tougher than leather against piercing weapons. It catches arrows and slows blades.",
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "erlking_mantle": {
     "name": "Erlking's Mantle",
@@ -2990,7 +3561,14 @@
     "enchant_bonus": 0,
     "unidentified_name": "a green forest cloak",
     "lore": "Woven from the living branches of the Erlking's forest, this cloak sharpens the senses of the wearer. Sound and sight carry further, and hidden things become easier to discern.",
-    "special_effect": "per_plus_2"
+    "special_effect": "per_plus_2",
+    "floorSpawnWeight": {
+      "1-19": 0,
+      "20-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "anansi_web_cloak": {
     "name": "Anansi's Web Cloak",
@@ -3015,7 +3593,11 @@
     "can_be_cursed": false,
     "enchant_bonus": 0,
     "unidentified_name": "a glittering golden web",
-    "lore": "Spun by Anansi himself from the thread of a thousand stories, this cloak shifts and deceives. Attacks that should land somehow miss. Traps somehow fail to trigger."
+    "lore": "Spun by Anansi himself from the thread of a thousand stories, this cloak shifts and deceives. Attacks that should land somehow miss. Traps somehow fail to trigger.",
+    "floorSpawnWeight": {
+      "1-84": 0,
+      "85-100": 3
+    }
   },
   "nidhoggr_scale": {
     "name": "Níðhöggr's Scale",
@@ -3041,7 +3623,11 @@
     "can_be_cursed": false,
     "enchant_bonus": 0,
     "unidentified_name": "a vast dark-green scale",
-    "lore": "A single scale from Níðhöggr's body, imbued with the rot of ages. Nothing corrodes it. Wearing it grants the wearer immunity to acid and strong resistance to all decay-based attacks."
+    "lore": "A single scale from Níðhöggr's body, imbued with the rot of ages. Nothing corrodes it. Wearing it grants the wearer immunity to acid and strong resistance to all decay-based attacks.",
+    "floorSpawnWeight": {
+      "1-89": 0,
+      "90-100": 3
+    }
   },
   "aegishjalmr": {
     "name": "Aegishjalmr",

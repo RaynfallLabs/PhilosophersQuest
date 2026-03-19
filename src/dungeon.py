@@ -529,16 +529,37 @@ def spawn_monsters(rooms: List[Room], level: int, dungeon: Dungeon,
     with open(monsters_path, encoding='utf-8') as f:
         all_defs = json.load(f)
 
-    # Build weighted pool: monsters past their max_level get fraction of normal weight
+    # Build weighted pool:
+    #  - L1-29: original behavior (freq decays past max_level, floor at 1)
+    #  - L30+: proximity weighting ramps up so deep floors spawn harder monsters
+    #    * Monsters past max_level can decay to 0 (no floor)
+    #    * On-level monsters get weight bonus that grows with depth
     eligible = {}
+    use_proximity = level >= 30
     for k, v in all_defs.items():
-        if v.get('min_level', 1) > level:
+        min_lv = v.get('min_level', 1)
+        if min_lv > level:
             continue
-        max_lv = v.get('max_level', None)
         freq = v.get('frequency', 5)
+        if freq <= 0:
+            continue  # bosses / non-spawning
+        max_lv = v.get('max_level', None)
         if max_lv is not None and level > max_lv:
             over = level - max_lv
-            freq = max(1, freq - over)   # frequency decays by 1 per level over cap
+            if use_proximity:
+                freq = freq - over  # no floor: decays to 0
+                if freq <= 0:
+                    continue
+            else:
+                freq = max(1, freq - over)  # gentle: floor at 1
+        if use_proximity:
+            distance = level - min_lv
+            # Ramp: 0 at L30, 3 at L60, 7 at L100
+            prox_scale = max(0, (level - 30) // 10)
+            if distance <= 5:
+                freq *= (2 + prox_scale)        # on-level
+            elif distance <= 15:
+                freq *= max(1, 1 + prox_scale // 2)  # near-level
         eligible[k] = {**v, '_spawn_freq': freq}
     if not eligible:
         return []
@@ -587,7 +608,7 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
         except FileNotFoundError:
             pass
 
-    eligible = _item_eligible_weighted(templates, level)
+    eligible = _item_eligible_weighted(templates, level, rng)
 
     for room in rooms[1:]:
         if rng.random() > 0.33:
@@ -667,7 +688,7 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
     except FileNotFoundError:
         all_potions = []
 
-    eligible_potions = _item_eligible_weighted(all_potions, level)
+    eligible_potions = _item_eligible_weighted(all_potions, level, rng)
     potion_count = rng.randint(1, 2)
     potion_rooms = rng.sample(rooms[1:], min(potion_count, len(rooms) - 1))
     for room in potion_rooms:
@@ -757,7 +778,8 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
     return ground_items
 
 
-def _item_eligible_weighted(templates: list, level: int) -> list:
+def _item_eligible_weighted(templates: list, level: int,
+                            rng: random.Random | None = None) -> list:
     """Build a category-balanced weighted pool for non-food items.
 
     Items are first grouped by class (Weapon, Armor, Scroll, ...) so that each
@@ -769,6 +791,8 @@ def _item_eligible_weighted(templates: list, level: int) -> list:
     from collections import defaultdict
 
     SLOTS_PER_TYPE = 20   # each item class gets this many weighted slots in the pool
+    if rng is None:
+        rng = random.Random()
 
     by_type: dict[str, list] = defaultdict(list)
     for item in templates:
@@ -796,9 +820,10 @@ def _item_eligible_weighted(templates: list, level: int) -> list:
                 slots = max(1, round(w / total_w * SLOTS_PER_TYPE))
                 eligible.extend([item] * slots)
         else:
-            # Many candidates -- sort by weight, take the top SLOTS_PER_TYPE, 1 slot each
-            items_weights.sort(key=lambda x: -x[1])
-            for item, _ in items_weights[:SLOTS_PER_TYPE]:
+            # Many candidates -- weighted sample to ensure variety across levels
+            weights = [w for _, w in items_weights]
+            selected = rng.choices(items_weights, weights=weights, k=SLOTS_PER_TYPE)
+            for item, _ in selected:
                 eligible.append(item)
     return eligible
 

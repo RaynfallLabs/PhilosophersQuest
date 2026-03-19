@@ -273,8 +273,9 @@
     "lore": "Eros, whom the Romans called Cupid, carried two kinds of arrows: gold-tipped to inspire love, lead-tipped to inspire revulsion. Ovid tells how Eros shot Apollo with gold and Daphne with lead, creating the first unrequited love. These golden arrows charm their targets — struck creatures forget their hostility and become docile.",
     "floorSpawnWeight": {
       "1-19": 0,
-      "20-45": 6,
-      "46-100": 3
+      "20-40": 2,
+      "41-60": 1,
+      "61-100": 1
     },
     "containerLootTier": "rare",
     "symbol": "(",
@@ -299,8 +300,8 @@
     "lore": "Artemis the Huntress never missed. In the Iliad, she is 'the lady of wild things.' Her silver arrows brought swift, painless death — Homer describes women dying suddenly as 'slain by the gentle shafts of Artemis.' Callimachus records that she forged them herself on the island of Lipara. Six arrows. Make them count.",
     "floorSpawnWeight": {
       "1-29": 0,
-      "30-60": 4,
-      "61-100": 5
+      "30-60": 2,
+      "61-100": 1
     },
     "containerLootTier": "legendary",
     "symbol": "(",
@@ -325,8 +326,8 @@
     "lore": "The Cyclopes — Brontes, Steropes, and Arges — forged Zeus's thunderbolts in the furnaces beneath Mount Etna. Hesiod's Theogony describes them as having 'thunder and lightning and bright thunderbolt.' With these, Zeus overthrew the Titans and established the order of Olympus. Three bolts. Each one shakes the earth.",
     "floorSpawnWeight": {
       "1-54": 0,
-      "55-80": 3,
-      "81-100": 4
+      "55-80": 2,
+      "81-100": 1
     },
     "containerLootTier": "legendary",
     "symbol": "(",

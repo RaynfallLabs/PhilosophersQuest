@@ -15,6 +15,22 @@ _STAT_LABELS = {
 _ALL_STATS    = list(_STAT_LABELS.keys())
 _COMBAT_STATS = ['STR', 'CON']
 
+# Permanent +max_hp from compound recipes (tier, quality) -> bonus
+# Only quality 3+ grants max HP.  Primary source of HP growth.
+_COMPOUND_MAX_HP = {
+    (1, 3):  6, (1, 4): 10, (1, 5): 15,
+    (2, 3): 10, (2, 4): 16, (2, 5): 22,
+    (3, 3): 14, (3, 4): 21, (3, 5): 29,
+    (4, 3): 17, (4, 4): 24, (4, 5): 33,
+    (5, 3): 20, (5, 4): 30, (5, 5): 40,
+}
+
+# Permanent +max_hp from single ingredient cooks (T4-T5 only, quality 3+)
+_SINGLE_MAX_HP = {
+    (4, 3):  2, (4, 4):  3, (4, 5):  5,
+    (5, 3):  3, (5, 4):  5, (5, 5):  8,
+}
+
 
 # ------------------------------------------------------------------
 # Data loading
@@ -60,11 +76,13 @@ def get_recipes_for_ingredient(ingredient_id: str) -> list[dict]:
     ]
 
 
-def cook_compound_recipe(player, recipe: dict, inventory: list, quiz_engine, on_complete):
+def cook_compound_recipe(player, recipe: dict, inventory: list, quiz_engine, on_complete,
+                         dungeon_level: int = 1):
     """
     Remove all required ingredients from inventory, then run an escalator_chain
     cooking quiz. Quality 0 = total ruin; 1-2 = partial; 3-5 = full bonus.
     on_complete(messages: list[str]) is called when the quiz ends.
+    dungeon_level: current floor (used to scale max HP bonus tier).
     """
     from items import Ingredient
     # Consume all required ingredients now (before quiz)
@@ -92,6 +110,15 @@ def cook_compound_recipe(player, recipe: dict, inventory: list, quiz_engine, on_
             messages.append(f"You masterfully prepare {meal_name}! (quality {quality}/5)")
             messages.append(f"You savour it and restore {sp} SP.")
             messages.extend(_apply_bonus(player, recipe))
+            # Permanent max HP bonus from compound recipes (Q3+)
+            # Use max of recipe tier and floor tier so deep cooking is always rewarding
+            recipe_tier = recipe.get('tier', 1)
+            floor_tier = max(1, min(5, (dungeon_level - 1) // 20 + 1))
+            tier = max(recipe_tier, floor_tier)
+            hp_bonus = _COMPOUND_MAX_HP.get((tier, quality), 0)
+            if hp_bonus > 0:
+                player.increase_max_hp(hp_bonus)
+                messages.append(f"The nourishing meal strengthens you permanently. (+{hp_bonus} max HP)")
 
         on_complete(messages)
 
@@ -155,7 +182,8 @@ def harvest_corpse(player, corpse, quiz_engine, on_complete):
 # Cooking
 # ------------------------------------------------------------------
 
-def cook_ingredient(player, ingredient, quiz_engine, on_complete, max_chain: int = 5):
+def cook_ingredient(player, ingredient, quiz_engine, on_complete, max_chain: int = 5,
+                    dungeon_level: int = 1):
     """
     Trigger a cooking escalator_chain quiz.
     Chain length 0-5 = meal quality. Single-ingredient meals restore SP + HP (scaled by
@@ -163,6 +191,7 @@ def cook_ingredient(player, ingredient, quiz_engine, on_complete, max_chain: int
     multi-ingredient compound recipes.
     on_complete(messages: list[str]) is called when the quiz ends.
     max_chain: maximum chain length (default 5; pass 6 if Persephone quirk is active).
+    dungeon_level: current floor (used to scale max HP bonus tier).
     """
     def _callback(result):
         quality   = min(5, result.score)
@@ -189,6 +218,14 @@ def cook_ingredient(player, ingredient, quiz_engine, on_complete, max_chain: int
                 if mp_gained > 0:
                     player.restore_mp(mp_gained)
                     messages.append(f"The essence of the ingredient restores {mp_gained} MP.")
+            # Small permanent max HP bonus for high-tier single cooks (T4-T5, Q3+)
+            ing_tier = max(1, min(5, (ingredient.min_level - 1) // 20 + 1))
+            floor_tier = max(1, min(5, (dungeon_level - 1) // 20 + 1))
+            eff_tier = max(ing_tier, floor_tier)
+            hp_bonus = _SINGLE_MAX_HP.get((eff_tier, quality), 0)
+            if hp_bonus > 0:
+                player.increase_max_hp(hp_bonus)
+                messages.append(f"The potent essence fortifies you. (+{hp_bonus} max HP)")
 
         # Status effects (e.g. invisible, regenerating) from ingredient data are still applied
         bonus_type = recipe.get('bonus_type', 'none')

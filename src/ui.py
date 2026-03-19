@@ -290,8 +290,8 @@ class Sidebar:
     def _equipment(self, player, y: int) -> int:
         y = self._header("EQUIPMENT", y)
         equipped = player.get_equipped_items()
-        # Check if player has Philosopher's Amulet in inventory
-        has_phil = any(getattr(i, 'id', '') == 'philosophers_amulet'
+        # Check if player has Philosopher's Shard in inventory
+        has_phil = any(getattr(i, 'id', '') == 'philosophers_shard'
                        for i in player.inventory)
         for label, key in [
             ("Weapon", "weapon"), ("Shield", "shield"),
@@ -338,9 +338,9 @@ class Sidebar:
             iname = self._fit(self._fsm, self._cap(iname), max_name_w)
             self.screen.blit(self._fsm.render(iname, True, ic), (name_x, y))
             y += 22
-        # Philosopher's Amulet -- passive carry indicator (not an equip slot)
+        # Philosopher's Shard -- passive carry indicator (not an equip slot)
         if has_phil:
-            phil_surf = self._fsm.render("\u2605 Phil. Amulet", True, (220, 180, 40))
+            phil_surf = self._fsm.render("\u2605 Phil. Shard", True, (220, 200, 120))
             self.screen.blit(phil_surf, (self.x + self.PAD, y))
             y += 20
         return y + self.SECTION_GAP

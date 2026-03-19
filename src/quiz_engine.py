@@ -247,6 +247,14 @@ class QuizEngine:
     def _advance(self):
         mode = self.mode
 
+        # Timer expired — no more questions; end immediately
+        if self.time_remaining <= 0:
+            if mode in (QuizMode.CHAIN, QuizMode.ESCALATOR_CHAIN):
+                self._end(success=True)  # chain: score = chain length achieved
+            else:
+                self._end(success=self.correct_count >= self.required)
+            return
+
         if mode in (QuizMode.CHAIN, QuizMode.ESCALATOR_CHAIN):
             if not self.last_correct:
                 self._end(success=True)   # chain mode: always "succeeds"; score = chain length

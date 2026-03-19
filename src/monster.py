@@ -270,7 +270,7 @@ class DeathMonster(Monster):
         'ai_pattern': 'aggressive',
         'speed': 1,
         'hp': '1',          # irrelevant -- take_damage is overridden
-        'attacks': [{'name': 'reap', 'damage': '2d20+47', 'type': 'physical'}],
+        'attacks': [{'name': 'reap', 'damage': '3d20+50', 'type': 'physical'}],
         'thac0': -20,       # always hits
         'resistances': [],
         'weaknesses':  [],

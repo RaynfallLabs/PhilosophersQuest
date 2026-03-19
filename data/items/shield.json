@@ -18,7 +18,13 @@
     "can_be_cursed": false,
     "enchant_bonus": 0,
     "unidentified_name": "a battered round shield",
-    "lore": "A rough disc of layered oak planks bound with iron strips at the rim. Though unglamorous, its bulk has turned aside countless blows from claws and rusted blades alike — the scratches and gouges in its face speak of many such meetings."
+    "lore": "A rough disc of layered oak planks bound with iron strips at the rim. Though unglamorous, its bulk has turned aside countless blows from claws and rusted blades alike — the scratches and gouges in its face speak of many such meetings.",
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "hide_shield": {
     "name": "hide shield",
@@ -39,7 +45,14 @@
     "can_be_cursed": false,
     "enchant_bonus": 0,
     "unidentified_name": "a cured beast-hide buckler",
-    "lore": "Layers of thick beast-hide, cured in tallow and stretched over a wicker frame. More resistant to weathering than wood and marginally tougher against animal claws, the hide shield is a common upgrade for explorers who haven't yet found metal."
+    "lore": "Layers of thick beast-hide, cured in tallow and stretched over a wicker frame. More resistant to weathering than wood and marginally tougher against animal claws, the hide shield is a common upgrade for explorers who haven't yet found metal.",
+    "floorSpawnWeight": {
+      "1-10": 0,
+      "11-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "iron_shield": {
     "name": "iron shield",
@@ -60,7 +73,14 @@
     "can_be_cursed": true,
     "enchant_bonus": 0,
     "unidentified_name": "a dented iron shield",
-    "lore": "Hammered iron beaten into a slightly domed profile for strength, with a riveted central boss for grip stability. Standard issue for militia and professional guards, its proven design has remained unchanged for three centuries."
+    "lore": "Hammered iron beaten into a slightly domed profile for strength, with a riveted central boss for grip stability. Standard issue for militia and professional guards, its proven design has remained unchanged for three centuries.",
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 3,
+      "41-60": 2,
+      "61-80": 1,
+      "81-100": 1
+    }
   },
   "bronze_shield": {
     "name": "bronze shield",
@@ -83,7 +103,14 @@
     "can_be_cursed": true,
     "enchant_bonus": 0,
     "unidentified_name": "a tarnished round buckler",
-    "lore": "Cast bronze shaped into a wide convex disc, its curved face designed to deflect thrusting weapons at an angle. The alloy is softer than iron but denser, and its slight give on impact absorbs piercing force that would punch straight through a rigid plate."
+    "lore": "Cast bronze shaped into a wide convex disc, its curved face designed to deflect thrusting weapons at an angle. The alloy is softer than iron but denser, and its slight give on impact absorbs piercing force that would punch straight through a rigid plate.",
+    "floorSpawnWeight": {
+      "1-30": 0,
+      "31-40": 3,
+      "41-60": 2,
+      "61-80": 1,
+      "81-100": 1
+    }
   },
   "steel_shield": {
     "name": "steel shield",
@@ -106,7 +133,13 @@
     "can_be_cursed": true,
     "enchant_bonus": 0,
     "unidentified_name": "a reinforced kite shield",
-    "lore": "Polished steel stretched over a shaped core, this kite shield is tempered to resist glancing blows. The slight flex in its face absorbs slash impacts before they can transfer fully to the wielder's arm."
+    "lore": "Polished steel stretched over a shaped core, this kite shield is tempered to resist glancing blows. The slight flex in its face absorbs slash impacts before they can transfer fully to the wielder's arm.",
+    "floorSpawnWeight": {
+      "1-40": 0,
+      "41-60": 3,
+      "61-80": 2,
+      "81-100": 1
+    }
   },
   "mithril_shield": {
     "name": "mithril shield",
@@ -129,7 +162,13 @@
     "can_be_cursed": false,
     "enchant_bonus": 0,
     "unidentified_name": "a feather-light silvery disc",
-    "lore": "Beaten from a single piece of true mithril — a metal so light it seems to float yet harder than tempered steel — this shield feels almost weightless in the hand. Its crystalline inner structure scatters electrical discharges harmlessly across its surface in pale blue arcs."
+    "lore": "Beaten from a single piece of true mithril — a metal so light it seems to float yet harder than tempered steel — this shield feels almost weightless in the hand. Its crystalline inner structure scatters electrical discharges harmlessly across its surface in pale blue arcs.",
+    "floorSpawnWeight": {
+      "1-50": 0,
+      "51-60": 3,
+      "61-80": 2,
+      "81-100": 1
+    }
   },
   "crystal_shield": {
     "name": "crystal shield",
@@ -152,7 +191,12 @@
     "can_be_cursed": false,
     "enchant_bonus": 0,
     "unidentified_name": "a glassy translucent shield",
-    "lore": "Ground from a single slab of spell-resonant crystal, this shield is almost perfectly transparent. Its lattice structure disperses incoming magical energy harmlessly, making it prized by those who face arcane opponents — and beautiful enough to be displayed in noble halls when not in use."
+    "lore": "Ground from a single slab of spell-resonant crystal, this shield is almost perfectly transparent. Its lattice structure disperses incoming magical energy harmlessly, making it prized by those who face arcane opponents — and beautiful enough to be displayed in noble halls when not in use.",
+    "floorSpawnWeight": {
+      "1-60": 0,
+      "61-80": 3,
+      "81-100": 2
+    }
   },
   "obsidian_shield": {
     "name": "obsidian shield",
@@ -176,7 +220,12 @@
     "can_be_cursed": false,
     "enchant_bonus": 0,
     "unidentified_name": "a volcanic glass war-shield",
-    "lore": "Ground from volcanic obsidian glass and reinforced with a web of iron banding, this shield is as much a magical ward as a physical barrier. The glass lattice partially refracts spell energies before they can cohere into damaging force, and its extreme hardness resists crushing impacts that dent ordinary metals."
+    "lore": "Ground from volcanic obsidian glass and reinforced with a web of iron banding, this shield is as much a magical ward as a physical barrier. The glass lattice partially refracts spell energies before they can cohere into damaging force, and its extreme hardness resists crushing impacts that dent ordinary metals.",
+    "floorSpawnWeight": {
+      "1-70": 0,
+      "71-80": 3,
+      "81-100": 2
+    }
   },
   "dragonscale_shield": {
     "name": "dragonscale shield",
@@ -199,7 +248,11 @@
     "can_be_cursed": false,
     "enchant_bonus": 0,
     "unidentified_name": "an iridescent scale-faced shield",
-    "lore": "Built around overlapping scales from a fire dragon's underbelly — the toughest portion of an already near-indestructible hide. Fire washes over this shield like water off oil, and its iridescent surface shifts colors as though the dragon's spirit still lingers within."
+    "lore": "Built around overlapping scales from a fire dragon's underbelly — the toughest portion of an already near-indestructible hide. Fire washes over this shield like water off oil, and its iridescent surface shifts colors as though the dragon's spirit still lingers within.",
+    "floorSpawnWeight": {
+      "1-80": 0,
+      "81-100": 3
+    }
   },
   "adamantine_shield": {
     "name": "adamantine shield",
@@ -222,7 +275,11 @@
     "can_be_cursed": true,
     "enchant_bonus": 0,
     "unidentified_name": "a jet-dark heavy shield",
-    "lore": "A massive tower shield of pure adamantine, its surface an almost organic dark green-black. The metal is supernaturally dense — blunt weapons simply bounce off as though striking a mountain, though the weight demands exceptional constitution from its bearer."
+    "lore": "A massive tower shield of pure adamantine, its surface an almost organic dark green-black. The metal is supernaturally dense — blunt weapons simply bounce off as though striking a mountain, though the weight demands exceptional constitution from its bearer.",
+    "floorSpawnWeight": {
+      "1-80": 0,
+      "81-100": 3
+    }
   },
   "aegis_of_athena": {
     "name": "Aegis of Athena",
@@ -274,7 +331,7 @@
     "quiz_tier": 5,
     "damage_resistances": {
       "fire": 0.55,
-      "shock": 0.3
+      "lightning": 0.3
     },
     "can_be_cursed": false,
     "cursed": false,
@@ -367,7 +424,7 @@
     "quiz_tier": 5,
     "damage_resistances": {
       "slash": 0.2,
-      "crush": 0.2,
+      "blunt": 0.2,
       "fire": 0.2
     },
     "can_be_cursed": false,
@@ -403,6 +460,13 @@
     "can_be_cursed": false,
     "enchant_bonus": 0,
     "unidentified_name": "ancient bronze shield",
-    "lore": "The ceremonial shield of a bronze giant, engraved with the eye of Hephaestus. Its curved surface deflects crushing blows better than any iron shield of its age."
+    "lore": "The ceremonial shield of a bronze giant, engraved with the eye of Hephaestus. Its curved surface deflects crushing blows better than any iron shield of its age.",
+    "floorSpawnWeight": {
+      "1-11": 0,
+      "12-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   }
 }

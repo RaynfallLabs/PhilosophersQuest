@@ -275,8 +275,8 @@
     "lore": "The food of the Olympian gods. Homer uses the word interchangeably with nectar — sometimes it is food, sometimes drink, sometimes an anointing oil rubbed on the dead to preserve them. Pindar says it conferred immortality. What is certain is that mortals who tasted it were never the same. It restores everything and improves everything — but it is not meant for mortal tongues.",
     "floorSpawnWeight": {
       "1-39": 0,
-      "40-70": 2,
-      "71-100": 3
+      "40-60": 2,
+      "61-100": 1
     },
     "containerLootTier": "legendary",
     "symbol": "%",
@@ -301,8 +301,8 @@
     "lore": "Heracles's eleventh labor sent him to the Garden of the Hesperides at the western edge of the world, guarded by the hundred-headed dragon Ladon, to retrieve the golden apples that Gaia had given Hera as a wedding gift. The apples granted immortality to whoever ate them. Eris later used one inscribed 'For the Fairest' to start the Trojan War. Beauty, immortality, and war — all in one fruit.",
     "floorSpawnWeight": {
       "1-39": 0,
-      "40-65": 3,
-      "66-100": 4
+      "40-60": 2,
+      "61-100": 1
     },
     "containerLootTier": "rare",
     "symbol": "%",
@@ -327,8 +327,8 @@
     "lore": "Xi Wangmu, the Queen Mother of the West, grows these peaches in her garden on Mount Kunlun. They ripen once every three thousand years. Sun Wukong ate them all during his rampage through Heaven, gaining near-immortality. Journey to the West records that the theft of the peaches was one of three offenses that caused Buddha to imprison the Monkey King beneath Five Elements Mountain for five hundred years.",
     "floorSpawnWeight": {
       "1-44": 0,
-      "45-70": 2,
-      "71-100": 3
+      "45-60": 2,
+      "61-100": 1
     },
     "containerLootTier": "legendary",
     "symbol": "%",
@@ -354,9 +354,9 @@
     "lore": "Tantalus served his own son Pelops as a feast for the gods, testing their omniscience. His punishment in Tartarus was eternal hunger and thirst: water receded when he bent to drink, and fruit branches pulled away when he reached. This plum is the fruit he could never grasp — eating it heals greatly but leaves you ravenous.",
     "floorSpawnWeight": {
       "1-11": 0,
-      "12-30": 6,
-      "31-50": 4,
-      "51-100": 2
+      "12-40": 3,
+      "41-60": 2,
+      "61-100": 1
     },
     "containerLootTier": "uncommon",
     "symbol": "%",

@@ -108,7 +108,7 @@
       100
     ],
     "weight": 3.0,
-    "min_level": 1,
+    "min_level": 2,
     "source_monster": "cobra",
     "recipes": {
       "0": {
@@ -214,7 +214,7 @@
       80
     ],
     "weight": 6.0,
-    "min_level": 2,
+    "min_level": 1,
     "source_monster": "gnoll",
     "recipes": {
       "0": {
@@ -422,7 +422,7 @@
       120
     ],
     "weight": 7.0,
-    "min_level": 18,
+    "min_level": 16,
     "source_monster": "basilisk",
     "recipes": {
       "0": {
@@ -473,7 +473,7 @@
       200
     ],
     "weight": 6.0,
-    "min_level": 22,
+    "min_level": 16,
     "source_monster": "chimera",
     "recipes": {
       "0": {
@@ -524,7 +524,7 @@
       240
     ],
     "weight": 3.0,
-    "min_level": 20,
+    "min_level": 35,
     "source_monster": "frost_crawler",
     "recipes": {
       "0": {
@@ -578,7 +578,7 @@
     ],
     "weight": 1.0,
     "item_class": "ingredient",
-    "min_level": 40,
+    "min_level": 35,
     "source_monster": "medusa_gorgon",
     "lore": "The ichor of the Gorgon. From her right side flows poison; from her left, a healing draught.",
     "recipes": {
@@ -633,7 +633,7 @@
     ],
     "weight": 5.0,
     "item_class": "ingredient",
-    "min_level": 60,
+    "min_level": 44,
     "source_monster": "fafnir_dragon",
     "lore": "A gleaming scale of fireproof dragon hide. It smells of sulfur and ancient gold.",
     "recipes": {
@@ -1209,7 +1209,7 @@
       60
     ],
     "weight": 2.0,
-    "min_level": 2,
+    "min_level": 1,
     "source_monster": "dretch",
     "recipes": {
       "0": {
@@ -1936,7 +1936,7 @@
       240
     ],
     "weight": 1.0,
-    "min_level": 3,
+    "min_level": 2,
     "source_monster": "changeling",
     "recipes": {
       "0": {
@@ -2972,7 +2972,7 @@
       160
     ],
     "weight": 1.0,
-    "min_level": 4,
+    "min_level": 3,
     "source_monster": "puca",
     "recipes": {
       "0": {
@@ -3075,7 +3075,7 @@
       60
     ],
     "weight": 2.0,
-    "min_level": 4,
+    "min_level": 1,
     "source_monster": "kobold_sorcerer",
     "recipes": {
       "0": {
@@ -3179,7 +3179,7 @@
       80
     ],
     "weight": 8.0,
-    "min_level": 4,
+    "min_level": 2,
     "source_monster": "zombie_hulk",
     "recipes": {
       "0": {
@@ -3488,7 +3488,7 @@
       80
     ],
     "weight": 3.0,
-    "min_level": 4,
+    "min_level": 2,
     "source_monster": "toxic_jelly",
     "recipes": {
       "0": {
@@ -4658,7 +4658,7 @@
       255
     ],
     "weight": 1.0,
-    "min_level": 4,
+    "min_level": 3,
     "source_monster": "will_o_wisp_lesser",
     "recipes": {
       "0": {
@@ -5020,7 +5020,7 @@
       60
     ],
     "weight": 3.0,
-    "min_level": 5,
+    "min_level": 4,
     "source_monster": "lizardfolk_shaman",
     "recipes": {
       "0": {
@@ -5228,7 +5228,7 @@
       80
     ],
     "weight": 2.0,
-    "min_level": 5,
+    "min_level": 3,
     "source_monster": "ghast",
     "recipes": {
       "0": {
@@ -5799,7 +5799,7 @@
       120
     ],
     "weight": 1.0,
-    "min_level": 6,
+    "min_level": 4,
     "source_monster": "shadow_demon",
     "recipes": {
       "0": {
@@ -6524,7 +6524,7 @@
       50
     ],
     "weight": 5.0,
-    "min_level": 7,
+    "min_level": 10,
     "source_monster": "cyclops",
     "recipes": {
       "0": {
@@ -6679,7 +6679,7 @@
       80
     ],
     "weight": 9.0,
-    "min_level": 7,
+    "min_level": 10,
     "source_monster": "sobek_warrior",
     "recipes": {
       "0": {
@@ -6935,7 +6935,7 @@
       90
     ],
     "weight": 4.0,
-    "min_level": 7,
+    "min_level": 15,
     "source_monster": "owlbear",
     "recipes": {
       "0": {
@@ -7195,7 +7195,7 @@
       220
     ],
     "weight": 2.0,
-    "min_level": 7,
+    "min_level": 6,
     "source_monster": "bone_witch",
     "recipes": {
       "0": {
@@ -7709,7 +7709,7 @@
       140
     ],
     "weight": 6.0,
-    "min_level": 7,
+    "min_level": 10,
     "source_monster": "hill_giant",
     "recipes": {
       "0": {
@@ -7811,7 +7811,7 @@
       200
     ],
     "weight": 2.0,
-    "min_level": 8,
+    "min_level": 10,
     "source_monster": "pegasus_hostile",
     "recipes": {
       "0": {
@@ -7862,7 +7862,7 @@
       80
     ],
     "weight": 7.0,
-    "min_level": 8,
+    "min_level": 10,
     "source_monster": "lindworm",
     "recipes": {
       "0": {
@@ -7913,7 +7913,7 @@
       100
     ],
     "weight": 1.5,
-    "min_level": 8,
+    "min_level": 10,
     "source_monster": "anubis_guardian",
     "recipes": {
       "0": {
@@ -7965,7 +7965,7 @@
       200
     ],
     "weight": 3.0,
-    "min_level": 8,
+    "min_level": 10,
     "source_monster": "each_uisce",
     "recipes": {
       "0": {
@@ -8017,7 +8017,7 @@
       40
     ],
     "weight": 3.0,
-    "min_level": 8,
+    "min_level": 10,
     "source_monster": "ugallu_demon",
     "recipes": {
       "0": {
@@ -8068,7 +8068,7 @@
       90
     ],
     "weight": 4.0,
-    "min_level": 8,
+    "min_level": 10,
     "source_monster": "kusarikku",
     "recipes": {
       "0": {
@@ -8326,7 +8326,7 @@
       160
     ],
     "weight": 4.0,
-    "min_level": 8,
+    "min_level": 7,
     "source_monster": "xorn",
     "recipes": {
       "0": {
@@ -8377,7 +8377,7 @@
       100
     ],
     "weight": 4.0,
-    "min_level": 8,
+    "min_level": 10,
     "source_monster": "hook_horror",
     "recipes": {
       "0": {
@@ -8480,7 +8480,7 @@
       160
     ],
     "weight": 1.0,
-    "min_level": 8,
+    "min_level": 10,
     "source_monster": "death_mage",
     "recipes": {
       "0": {
@@ -8635,7 +8635,7 @@
       60
     ],
     "weight": 1.5,
-    "min_level": 8,
+    "min_level": 5,
     "source_monster": "werewolf",
     "recipes": {
       "0": {
@@ -8686,7 +8686,7 @@
       80
     ],
     "weight": 1.0,
-    "min_level": 8,
+    "min_level": 7,
     "source_monster": "green_hag",
     "recipes": {
       "0": {
@@ -8844,7 +8844,7 @@
     ],
     "weight": 3.0,
     "item_class": "ingredient",
-    "min_level": 20,
+    "min_level": 8,
     "source_monster": "asterion_minotaur",
     "lore": "A massive curved horn from the Minotaur of Knossos. Radiates primal fury.",
     "recipes": {
@@ -8897,7 +8897,7 @@
       100
     ],
     "weight": 3.0,
-    "min_level": 9,
+    "min_level": 10,
     "source_monster": "sphinx",
     "recipes": {
       "0": {
@@ -8948,7 +8948,7 @@
       240
     ],
     "weight": 10.0,
-    "min_level": 9,
+    "min_level": 15,
     "source_monster": "frost_giant",
     "recipes": {
       "0": {
@@ -8999,7 +8999,7 @@
       40
     ],
     "weight": 4.0,
-    "min_level": 9,
+    "min_level": 10,
     "source_monster": "nidhoggr_brood",
     "recipes": {
       "0": {
@@ -9050,7 +9050,7 @@
       80
     ],
     "weight": 0.5,
-    "min_level": 9,
+    "min_level": 14,
     "source_monster": "egyptian_sphinx",
     "recipes": {
       "0": {
@@ -9101,7 +9101,7 @@
       160
     ],
     "weight": 0.5,
-    "min_level": 9,
+    "min_level": 10,
     "source_monster": "thoth_construct",
     "recipes": {
       "0": {
@@ -9153,7 +9153,7 @@
       100
     ],
     "weight": 8.0,
-    "min_level": 9,
+    "min_level": 15,
     "source_monster": "fomorian",
     "recipes": {
       "0": {
@@ -9204,7 +9204,7 @@
       160
     ],
     "weight": 4.0,
-    "min_level": 9,
+    "min_level": 10,
     "source_monster": "cath_palug",
     "recipes": {
       "0": {
@@ -9255,7 +9255,7 @@
       100
     ],
     "weight": 5.0,
-    "min_level": 9,
+    "min_level": 10,
     "source_monster": "lahamu",
     "recipes": {
       "0": {
@@ -9410,7 +9410,7 @@
       130
     ],
     "weight": 6.0,
-    "min_level": 9,
+    "min_level": 6,
     "source_monster": "clay_golem",
     "recipes": {
       "0": {
@@ -9461,7 +9461,7 @@
       100
     ],
     "weight": 5.0,
-    "min_level": 9,
+    "min_level": 10,
     "source_monster": "displacer_beast",
     "recipes": {
       "0": {
@@ -9513,7 +9513,7 @@
       30
     ],
     "weight": 4.0,
-    "min_level": 9,
+    "min_level": 3,
     "source_monster": "black_pudding",
     "recipes": {
       "0": {
@@ -9617,7 +9617,7 @@
       60
     ],
     "weight": 2.0,
-    "min_level": 9,
+    "min_level": 10,
     "source_monster": "revenant",
     "recipes": {
       "0": {
@@ -9669,7 +9669,7 @@
       140
     ],
     "weight": 5.0,
-    "min_level": 9,
+    "min_level": 10,
     "source_monster": "tomb_guardian",
     "recipes": {
       "0": {
@@ -9773,7 +9773,7 @@
       60
     ],
     "weight": 5.0,
-    "min_level": 9,
+    "min_level": 10,
     "source_monster": "shambling_mound",
     "recipes": {
       "0": {
@@ -9926,7 +9926,7 @@
       120
     ],
     "weight": 0.5,
-    "min_level": 9,
+    "min_level": 7,
     "source_monster": "drow_warrior",
     "recipes": {
       "0": {
@@ -9978,7 +9978,7 @@
       40
     ],
     "weight": 1.0,
-    "min_level": 10,
+    "min_level": 15,
     "source_monster": "fire_giant",
     "recipes": {
       "0": {
@@ -10030,7 +10030,7 @@
       240
     ],
     "weight": 0.2,
-    "min_level": 10,
+    "min_level": 2,
     "source_monster": "valkyrie_shade",
     "recipes": {
       "0": {
@@ -10081,7 +10081,7 @@
       200
     ],
     "weight": 2.0,
-    "min_level": 10,
+    "min_level": 14,
     "source_monster": "norse_sea_serpent",
     "recipes": {
       "0": {
@@ -10132,7 +10132,7 @@
       60
     ],
     "weight": 1.5,
-    "min_level": 10,
+    "min_level": 14,
     "source_monster": "anzu_bird",
     "recipes": {
       "0": {
@@ -10493,7 +10493,7 @@
       160
     ],
     "weight": 0.5,
-    "min_level": 10,
+    "min_level": 7,
     "source_monster": "wight_lord",
     "recipes": {
       "0": {
@@ -10596,7 +10596,7 @@
       220
     ],
     "weight": 0.2,
-    "min_level": 10,
+    "min_level": 6,
     "source_monster": "soul_eater_spawn",
     "recipes": {
       "0": {
@@ -10954,7 +10954,7 @@
       80
     ],
     "weight": 3.0,
-    "min_level": 11,
+    "min_level": 22,
     "source_monster": "lernaean_hydra",
     "recipes": {
       "0": {
@@ -11160,7 +11160,7 @@
       80
     ],
     "weight": 6.0,
-    "min_level": 11,
+    "min_level": 15,
     "source_monster": "catoblepas",
     "recipes": {
       "0": {
@@ -11418,7 +11418,7 @@
       120
     ],
     "weight": 1.0,
-    "min_level": 11,
+    "min_level": 7,
     "source_monster": "drow_mage",
     "recipes": {
       "0": {
@@ -11470,7 +11470,7 @@
       40
     ],
     "weight": 8.0,
-    "min_level": 11,
+    "min_level": 15,
     "source_monster": "young_red_dragon",
     "recipes": {
       "0": {
@@ -11521,7 +11521,7 @@
       200
     ],
     "weight": 3.0,
-    "min_level": 12,
+    "min_level": 8,
     "source_monster": "scylla",
     "recipes": {
       "0": {
@@ -11572,7 +11572,7 @@
       200
     ],
     "weight": 2.0,
-    "min_level": 12,
+    "min_level": 22,
     "source_monster": "titanspawn",
     "recipes": {
       "0": {
@@ -11623,7 +11623,7 @@
       60
     ],
     "weight": 2.0,
-    "min_level": 12,
+    "min_level": 14,
     "source_monster": "vrock",
     "recipes": {
       "0": {
@@ -11726,7 +11726,7 @@
       160
     ],
     "weight": 6.0,
-    "min_level": 12,
+    "min_level": 25,
     "source_monster": "lesser_behir",
     "recipes": {
       "0": {
@@ -11777,7 +11777,7 @@
       120
     ],
     "weight": 1.0,
-    "min_level": 12,
+    "min_level": 15,
     "source_monster": "necromancer_lord",
     "recipes": {
       "0": {
@@ -11828,7 +11828,7 @@
       180
     ],
     "weight": 3.0,
-    "min_level": 12,
+    "min_level": 14,
     "source_monster": "ossuary_horror",
     "recipes": {
       "0": {
@@ -11880,7 +11880,7 @@
       100
     ],
     "weight": 0.2,
-    "min_level": 12,
+    "min_level": 4,
     "source_monster": "lesser_death",
     "recipes": {
       "0": {
@@ -11932,7 +11932,7 @@
       60
     ],
     "weight": 1.5,
-    "min_level": 12,
+    "min_level": 15,
     "source_monster": "werewolf_alpha",
     "recipes": {
       "0": {
@@ -12035,7 +12035,7 @@
       140
     ],
     "weight": 3.0,
-    "min_level": 13,
+    "min_level": 14,
     "source_monster": "lesser_aboleth",
     "recipes": {
       "0": {
@@ -12086,7 +12086,7 @@
       60
     ],
     "weight": 2.0,
-    "min_level": 13,
+    "min_level": 14,
     "source_monster": "hezrou",
     "recipes": {
       "0": {
@@ -12137,7 +12137,7 @@
       200
     ],
     "weight": 1.5,
-    "min_level": 13,
+    "min_level": 14,
     "source_monster": "bone_devil",
     "recipes": {
       "0": {
@@ -12189,7 +12189,7 @@
       80
     ],
     "weight": 4.0,
-    "min_level": 13,
+    "min_level": 14,
     "source_monster": "wyvern",
     "recipes": {
       "0": {
@@ -12240,7 +12240,7 @@
       195
     ],
     "weight": 10.0,
-    "min_level": 13,
+    "min_level": 15,
     "source_monster": "skeletal_giant",
     "recipes": {
       "0": {
@@ -12291,7 +12291,7 @@
       200
     ],
     "weight": 7.0,
-    "min_level": 13,
+    "min_level": 25,
     "source_monster": "sea_dragon_spawn",
     "recipes": {
       "0": {
@@ -12343,7 +12343,7 @@
       100
     ],
     "weight": 1.0,
-    "min_level": 14,
+    "min_level": 22,
     "source_monster": "star_spawn",
     "recipes": {
       "0": {
@@ -12445,7 +12445,7 @@
       240
     ],
     "weight": 0.5,
-    "min_level": 14,
+    "min_level": 15,
     "source_monster": "cloud_giant",
     "recipes": {
       "0": {
@@ -12497,7 +12497,7 @@
       80
     ],
     "weight": 1.0,
-    "min_level": 15,
+    "min_level": 35,
     "source_monster": "cerberus",
     "recipes": {
       "0": {
@@ -12548,7 +12548,7 @@
       80
     ],
     "weight": 5.0,
-    "min_level": 15,
+    "min_level": 35,
     "source_monster": "marilith_spawn",
     "recipes": {
       "0": {
@@ -12599,7 +12599,7 @@
       80
     ],
     "weight": 4.0,
-    "min_level": 15,
+    "min_level": 28,
     "source_monster": "lesser_nalfeshnee",
     "recipes": {
       "0": {
@@ -12650,7 +12650,7 @@
       120
     ],
     "weight": 10.0,
-    "min_level": 15,
+    "min_level": 35,
     "source_monster": "lesser_undead_dragon",
     "recipes": {
       "0": {
@@ -12701,7 +12701,7 @@
       60
     ],
     "weight": 1.0,
-    "min_level": 15,
+    "min_level": 28,
     "source_monster": "void_elemental",
     "recipes": {
       "0": {
@@ -12752,7 +12752,7 @@
       200
     ],
     "weight": 1.0,
-    "min_level": 16,
+    "min_level": 35,
     "source_monster": "glabrezu",
     "recipes": {
       "0": {
@@ -12802,7 +12802,7 @@
       160
     ],
     "weight": 3.0,
-    "min_level": 16,
+    "min_level": 35,
     "source_monster": "demi_lich",
     "recipes": {
       "0": {
@@ -12853,7 +12853,7 @@
       60
     ],
     "weight": 3.0,
-    "min_level": 16,
+    "min_level": 40,
     "source_monster": "nightwing",
     "recipes": {
       "0": {
@@ -12905,7 +12905,7 @@
       140
     ],
     "weight": 6.0,
-    "min_level": 16,
+    "min_level": 35,
     "source_monster": "roc_adult",
     "recipes": {
       "0": {
@@ -12956,7 +12956,7 @@
       220
     ],
     "weight": 8.0,
-    "min_level": 16,
+    "min_level": 35,
     "source_monster": "adult_blue_dragon",
     "recipes": {
       "0": {
@@ -13007,7 +13007,7 @@
       160
     ],
     "weight": 9.0,
-    "min_level": 18,
+    "min_level": 45,
     "source_monster": "lich_dragon_spawn",
     "recipes": {
       "0": {
@@ -13058,7 +13058,7 @@
       240
     ],
     "weight": 1.0,
-    "min_level": 18,
+    "min_level": 35,
     "source_monster": "storm_giant",
     "recipes": {
       "0": {
@@ -13110,7 +13110,7 @@
       30
     ],
     "weight": 10.0,
-    "min_level": 18,
+    "min_level": 40,
     "source_monster": "adult_red_dragon",
     "recipes": {
       "0": {
@@ -13161,7 +13161,7 @@
       40
     ],
     "weight": 6.0,
-    "min_level": 20,
+    "min_level": 55,
     "source_monster": "pit_fiend_spawn",
     "recipes": {
       "0": {
@@ -13320,7 +13320,7 @@
       60
     ],
     "weight": 0.3,
-    "min_level": 2,
+    "min_level": 1,
     "source_monster": "floating_eye",
     "floor_spawn_weight": {},
     "unidentified_name": "viscous orb extract",
@@ -13374,7 +13374,7 @@
       80
     ],
     "weight": 4.0,
-    "min_level": 5,
+    "min_level": 10,
     "source_monster": "ogre",
     "floor_spawn_weight": {},
     "unidentified_name": "thick gray hide",
@@ -13428,7 +13428,7 @@
       60
     ],
     "weight": 0.5,
-    "min_level": 2,
+    "min_level": 1,
     "source_monster": "orc_scout",
     "floor_spawn_weight": {},
     "unidentified_name": "foul green ichor",
@@ -13588,7 +13588,7 @@
       100
     ],
     "weight": 1.0,
-    "min_level": 1,
+    "min_level": 4,
     "source_monster": "brigand",
     "floor_spawn_weight": {},
     "unidentified_name": "dried provisions",
@@ -13640,7 +13640,7 @@
       180
     ],
     "weight": 0.3,
-    "min_level": 6,
+    "min_level": 3,
     "source_monster": "dark_cultist",
     "floor_spawn_weight": {},
     "unidentified_name": "dark alchemical powder",
@@ -13855,7 +13855,7 @@
       70
     ],
     "weight": 1.5,
-    "min_level": 4,
+    "min_level": 5,
     "source_monster": "wolf_pack_leader",
     "recipes": {
       "0": {
@@ -13906,7 +13906,7 @@
       80
     ],
     "weight": 0.5,
-    "min_level": 2,
+    "min_level": 1,
     "source_monster": "green_slime",
     "recipes": {
       "0": {

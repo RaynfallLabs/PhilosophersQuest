@@ -2807,36 +2807,6 @@
       "81-100": 20
     }
   },
-  "philosophers_amulet": {
-    "name": "Philosopher's Amulet",
-    "symbol": "\"",
-    "color": [
-      220,
-      180,
-      40
-    ],
-    "weight": 0.1,
-    "min_level": 1,
-    "slot": "amulet",
-    "equip_threshold": 3,
-    "quiz_tier": 1,
-    "effects": {
-      "status": "identify_sight",
-      "duration": -1
-    },
-    "unidentified_name": "Philosopher's Amulet",
-    "identified": true,
-    "set_id": "philosophers",
-    "set_name": "The Philosopher's Set",
-    "lore": "This golden amulet is engraved with the ouroboros — the serpent devouring its own tail, symbol of eternal knowledge. It is said to have belonged to the first philosopher who descended into the dungeon seeking ultimate truth. The amulet resonates with philosophical understanding, allowing its wearer to identify the true nature of unknown items through rigorous examination. As one of the three pieces of the Philosopher's Set, wearing it alongside the Philosopher's Ring and the Diamond Staff of Inquiry is said to grant the ability to identify items simply by touching them.",
-    "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 40,
-      "81-100": 40
-    }
-  },
   "dragonslayer_ring": {
     "name": "Dragonslayer's Ring",
     "symbol": "=",
@@ -2919,7 +2889,7 @@
     "unidentified_name": "a pale etched gold band",
     "set_id": "philosophers",
     "set_name": "The Philosopher's Set",
-    "lore": "Inscribed with a miniature version of the Philosopher's Amulet's ouroboros, this ring was worn by the original dungeon philosopher on the hand that held their quill. As one of the three pieces of the Philosopher's Set, wearing it alongside the Philosopher's Amulet and the Diamond Staff of Inquiry is said to grant the ability to identify items simply by touching them — knowledge flowing naturally as breath.",
+    "lore": "Inscribed with a miniature version of the Philosopher's Shard's ouroboros, this ring was worn by the original dungeon philosopher on the hand that held their quill. As one of the three pieces of the Philosopher's Set, wearing it alongside the Philosopher's Shard and the Diamond Staff of Inquiry is said to grant the ability to identify items simply by touching them — knowledge flowing naturally as breath.",
     "floorSpawnWeight": {
       "1-20": 0,
       "21-40": 0,
@@ -4206,7 +4176,7 @@
     "lore": "Heinrich Cornelius Agrippa published Three Books of Occult Philosophy in 1531, systematizing all of Renaissance magic into a single framework: the elemental world, the celestial world, and the intellectual world. He was accused of heresy, employed by kings, and died in debt. His books were the most widely read magical texts of the 16th century. He himself claimed at the end that they were worthless. He was probably not being entirely honest."
   },
   "philosophers_ring_legendary": {
-    "name": "Philosopher's Ring",
+    "name": "Philosopher's Ring of Mastery",
     "symbol": "=",
     "color": [
       200,
@@ -4306,7 +4276,12 @@
     },
     "identified": false,
     "unidentified_name": "crackling ring",
-    "lore": "Forged in the heart of a perpetual thunderstorm by an Aztec storm-caller, this ring hums with suppressed electrical charge. Lightning that strikes the wearer grounds harmlessly through the stone, while the storm energy sharpens the intellect to razor clarity."
+    "lore": "Forged in the heart of a perpetual thunderstorm by an Aztec storm-caller, this ring hums with suppressed electrical charge. Lightning that strikes the wearer grounds harmlessly through the stone, while the storm energy sharpens the intellect to razor clarity.",
+    "floorSpawnWeight": {
+      "1-20": 5,
+      "21-40": 3,
+      "41-100": 1
+    }
   },
   "amulet_of_the_titan": {
     "name": "Amulet of the Titan",
@@ -4327,7 +4302,13 @@
     },
     "identified": false,
     "unidentified_name": "heavy amulet",
-    "lore": "Cast from ore pulled from the bones of fallen Titans by Hephaestus as a jest, this amulet transfers a sliver of Titanic strength to the wearer. Those with the constitution to bear it find themselves capable of feats of impossible might."
+    "lore": "Cast from ore pulled from the bones of fallen Titans by Hephaestus as a jest, this amulet transfers a sliver of Titanic strength to the wearer. Those with the constitution to bear it find themselves capable of feats of impossible might.",
+    "floorSpawnWeight": {
+      "1-21": 0,
+      "22-40": 5,
+      "41-60": 3,
+      "61-100": 1
+    }
   },
   "ring_of_the_deep": {
     "name": "Ring of the Deep",
@@ -4350,7 +4331,12 @@
     },
     "identified": false,
     "unidentified_name": "cold blue ring",
-    "lore": "Carved from a bioluminescent crystal found only at extreme ocean depth, this ring adapts the wearer's constitution to the crushing cold of the abyss. Divers of the Phoenician coast traded entire fortunes for such rings, which allowed descent to waters where no natural body could survive."
+    "lore": "Carved from a bioluminescent crystal found only at extreme ocean depth, this ring adapts the wearer's constitution to the crushing cold of the abyss. Divers of the Phoenician coast traded entire fortunes for such rings, which allowed descent to waters where no natural body could survive.",
+    "floorSpawnWeight": {
+      "1-20": 5,
+      "21-40": 3,
+      "41-100": 1
+    }
   },
   "amulet_of_insight": {
     "name": "Amulet of Insight",
@@ -4371,7 +4357,12 @@
     },
     "identified": false,
     "unidentified_name": "warm amulet",
-    "lore": "Handed down through thirty-six generations of oracle-priests at Delphi, this focus crystal was used to receive the god's voice without distortion. The priests believed wisdom was not intelligence but receptivity — and this amulet sharpens that receptivity to inhuman degree."
+    "lore": "Handed down through thirty-six generations of oracle-priests at Delphi, this focus crystal was used to receive the god's voice without distortion. The priests believed wisdom was not intelligence but receptivity — and this amulet sharpens that receptivity to inhuman degree.",
+    "floorSpawnWeight": {
+      "1-20": 5,
+      "21-40": 3,
+      "41-100": 1
+    }
   },
   "ring_of_the_assassin": {
     "name": "Ring of the Assassin",
@@ -4394,7 +4385,13 @@
     },
     "identified": false,
     "unidentified_name": "dark ring",
-    "lore": "The signet of the Hashshashin grandmaster, recovered after the sack of Alamut. The ring's stone refracts light around the wearer with unsettling precision. Paired with the supernatural quickness it grants, its bearer becomes effectively impossible to track in dim light."
+    "lore": "The signet of the Hashshashin grandmaster, recovered after the sack of Alamut. The ring's stone refracts light around the wearer with unsettling precision. Paired with the supernatural quickness it grants, its bearer becomes effectively impossible to track in dim light.",
+    "floorSpawnWeight": {
+      "1-24": 0,
+      "25-40": 5,
+      "41-60": 3,
+      "61-100": 1
+    }
   },
   "amulet_of_fortitude": {
     "name": "Amulet of Fortitude",
@@ -4417,7 +4414,13 @@
     },
     "identified": false,
     "unidentified_name": "pulsing amulet",
-    "lore": "A gift from Asclepius to a mortal champion whose constitution had been ravaged by poison. The carved serpent at its centre channels a fraction of divine healing energy into the wearer continuously. Wounds knit, poisons fade, and exhaustion retreats in its presence."
+    "lore": "A gift from Asclepius to a mortal champion whose constitution had been ravaged by poison. The carved serpent at its centre channels a fraction of divine healing energy into the wearer continuously. Wounds knit, poisons fade, and exhaustion retreats in its presence.",
+    "floorSpawnWeight": {
+      "1-23": 0,
+      "24-40": 5,
+      "41-60": 3,
+      "61-100": 1
+    }
   },
   "ring_of_far_sight": {
     "name": "Ring of Far Sight",
@@ -4440,7 +4443,13 @@
     },
     "identified": false,
     "unidentified_name": "pale green ring",
-    "lore": "Fashioned by the eagle-eyed sentinels of the Watchtower of Rhodes, worn by scouts who needed to perceive threats at inhuman range. The iris of its gem dilates and contracts like an eye, and something in that motion transmits itself to the wearer — both sight and instinct are magnified."
+    "lore": "Fashioned by the eagle-eyed sentinels of the Watchtower of Rhodes, worn by scouts who needed to perceive threats at inhuman range. The iris of its gem dilates and contracts like an eye, and something in that motion transmits itself to the wearer — both sight and instinct are magnified.",
+    "floorSpawnWeight": {
+      "1-21": 0,
+      "22-40": 5,
+      "41-60": 3,
+      "61-100": 1
+    }
   },
   "amulet_of_the_archmage": {
     "name": "Amulet of the Archmage",
@@ -4463,7 +4472,13 @@
     },
     "identified": false,
     "unidentified_name": "hot amulet",
-    "lore": "The ceremonial amulet of the Dean of the Arcane Faculty — a position first held by Thales, who wore it when demonstrating that fire could not harm a mind that understood its nature. Since then it has passed through the hands of thirty-seven archmages, each adding a layer of heat-resistant enchantment."
+    "lore": "The ceremonial amulet of the Dean of the Arcane Faculty — a position first held by Thales, who wore it when demonstrating that fire could not harm a mind that understood its nature. Since then it has passed through the hands of thirty-seven archmages, each adding a layer of heat-resistant enchantment.",
+    "floorSpawnWeight": {
+      "1-27": 0,
+      "28-40": 5,
+      "41-60": 3,
+      "61-100": 1
+    }
   },
   "ring_of_displacement": {
     "name": "Ring of Displacement",
@@ -4486,7 +4501,13 @@
     },
     "identified": false,
     "unidentified_name": "blurring ring",
-    "lore": "The gem in this ring is a shard of a displacer beast's crystallized nervous tissue — the organ responsible for the beast's light-bending ability. It projects a constant false image approximately one step from the wearer's true position, causing every attack to land on air."
+    "lore": "The gem in this ring is a shard of a displacer beast's crystallized nervous tissue — the organ responsible for the beast's light-bending ability. It projects a constant false image approximately one step from the wearer's true position, causing every attack to land on air.",
+    "floorSpawnWeight": {
+      "1-25": 0,
+      "26-40": 5,
+      "41-60": 3,
+      "61-100": 1
+    }
   },
   "amulet_of_protection": {
     "name": "Amulet of Protection",
@@ -4509,7 +4530,13 @@
     },
     "identified": false,
     "unidentified_name": "cool amulet",
-    "lore": "Blessed by the last high priest of Esagila, the great ziggurat of Babylon, this amulet projects an invisible ward that absorbs and dissipates magical energy before it can take hold. Even the most precisely aimed enchantments fray and fail against its steady resistance."
+    "lore": "Blessed by the last high priest of Esagila, the great ziggurat of Babylon, this amulet projects an invisible ward that absorbs and dissipates magical energy before it can take hold. Even the most precisely aimed enchantments fray and fail against its steady resistance.",
+    "floorSpawnWeight": {
+      "1-21": 0,
+      "22-40": 5,
+      "41-60": 3,
+      "61-100": 1
+    }
   },
   "sphinx_crown": {
     "name": "Sphinx's Crown",
@@ -4530,7 +4557,13 @@
     },
     "can_be_cursed": false,
     "unidentified_name": "a golden riddle-crown",
-    "lore": "The crown of the Sphinx, imbued with millennia of accumulated riddle-wisdom. Wearing it sharpens the mind and extends the time available for all mental challenges."
+    "lore": "The crown of the Sphinx, imbued with millennia of accumulated riddle-wisdom. Wearing it sharpens the mind and extends the time available for all mental challenges.",
+    "floorSpawnWeight": {
+      "1-34": 0,
+      "35-40": 5,
+      "41-60": 3,
+      "61-100": 1
+    }
   },
   "sailors_amulet": {
     "name": "Sailor's Amulet",
@@ -4553,7 +4586,12 @@
     },
     "can_be_cursed": false,
     "unidentified_name": "a driftwood amulet",
-    "lore": "Carved from the wood of a ship that survived Charybdis, this amulet carries the protection of calm water. The wearer reads the currents of danger before they arrive."
+    "lore": "Carved from the wood of a ship that survived Charybdis, this amulet carries the protection of calm water. The wearer reads the currents of danger before they arrive.",
+    "floorSpawnWeight": {
+      "1-67": 0,
+      "68-80": 5,
+      "81-100": 3
+    }
   },
   "anubis_scales": {
     "name": "Anubis's Scales",
@@ -4574,7 +4612,13 @@
     },
     "can_be_cursed": false,
     "unidentified_name": "balanced golden scales",
-    "lore": "A miniature of the scales Anubis uses to weigh hearts against the feather of Ma'at. Wearing them steadies the pulse and hardens the bearer against the drain of undead."
+    "lore": "A miniature of the scales Anubis uses to weigh hearts against the feather of Ma'at. Wearing them steadies the pulse and hardens the bearer against the drain of undead.",
+    "floorSpawnWeight": {
+      "1-57": 0,
+      "58-60": 5,
+      "61-80": 3,
+      "81-100": 1
+    }
   },
   "ring_of_iron_grip": {
     "name": "Ring of Iron Grip",
@@ -4595,7 +4639,12 @@
     },
     "can_be_cursed": false,
     "unidentified_name": "a crude iron band",
-    "lore": "Crushed from a finger of Ravana himself, this ring channels the demon king's immense physical power into whoever wears it. The grip becomes unbreakable."
+    "lore": "Crushed from a finger of Ravana himself, this ring channels the demon king's immense physical power into whoever wears it. The grip becomes unbreakable.",
+    "floorSpawnWeight": {
+      "1-69": 0,
+      "70-80": 5,
+      "81-100": 3
+    }
   },
   "obsidian_talisman": {
     "name": "Obsidian Talisman",
@@ -4616,7 +4665,13 @@
     },
     "can_be_cursed": false,
     "unidentified_name": "a jagged black stone",
-    "lore": "Carved from sacrificial obsidian used in Xibalba, the Mayan underworld. It grants the wearer sight in magical darkness and resistance to fear effects from undead."
+    "lore": "Carved from sacrificial obsidian used in Xibalba, the Mayan underworld. It grants the wearer sight in magical darkness and resistance to fear effects from undead.",
+    "floorSpawnWeight": {
+      "1-24": 0,
+      "25-40": 5,
+      "41-60": 3,
+      "61-100": 1
+    }
   },
   "ariadnes_thread": {
     "name": "Ariadne's Thread",
@@ -4641,7 +4696,13 @@
       220,
       220,
       255
-    ]
+    ],
+    "floorSpawnWeight": {
+      "1-21": 0,
+      "22-40": 5,
+      "41-60": 3,
+      "61-100": 1
+    }
   },
   "eponas_charm": {
     "name": "Epona's Charm",
@@ -4666,7 +4727,12 @@
       180,
       140,
       100
-    ]
+    ],
+    "floorSpawnWeight": {
+      "1-20": 5,
+      "21-40": 3,
+      "41-100": 1
+    }
   },
   "anansis_thread": {
     "name": "Anansi's Thread",
@@ -4689,7 +4755,12 @@
       255,
       215,
       0
-    ]
+    ],
+    "floorSpawnWeight": {
+      "1-20": 5,
+      "21-40": 3,
+      "41-100": 1
+    }
   },
   "rope_of_izanagi": {
     "name": "Rope of Izanagi",
@@ -4714,7 +4785,13 @@
       255,
       255,
       200
-    ]
+    ],
+    "floorSpawnWeight": {
+      "1-51": 0,
+      "52-60": 5,
+      "61-80": 3,
+      "81-100": 1
+    }
   },
   "girdle_of_hippolyta": {
     "name": "Girdle of Hippolyta",
@@ -4737,6 +4814,12 @@
       255,
       200,
       50
-    ]
+    ],
+    "floorSpawnWeight": {
+      "1-21": 0,
+      "22-40": 5,
+      "41-60": 3,
+      "61-100": 1
+    }
   }
 }

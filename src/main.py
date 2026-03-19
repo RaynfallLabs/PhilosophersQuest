@@ -223,16 +223,19 @@ class WelcomeScreen:
 
     # (label, base_angle_deg, EGA-style color, quiz subject symbol)
     _DOMAINS = [
-        ("MATH",       0,   (85, 255, 255), "S"),
-        ("GEOGRAPHY",  40,  (85, 255, 85),  "G"),
-        ("HISTORY",    80,  (255, 215, 0),  "H"),
-        ("ANIMAL",     120, (255, 140, 0),  "A"),
-        ("COOKING",    160, (255, 85, 255), "C"),
-        ("SCIENCE",    200, (85, 85, 255),  "?"),
-        ("PHILOSOPHY", 240, (200, 200, 255),"P"),
-        ("GRAMMAR",    280, (255, 85, 85),  "G"),
-        ("ECONOMICS",  320, (170, 255, 0),  "$"),
-        ("THEOLOGY",   355, (200, 170, 80), "+"),
+        # (label, degree_offset, color, symbol) — 12 subjects, 30° apart
+        ("MATH",        0, (85, 255, 255),  "#"),
+        ("GEOGRAPHY",  30, (85, 255, 85),   "G"),
+        ("HISTORY",    60, (255, 215, 0),   "H"),
+        ("ANIMAL",     90, (255, 140, 0),   "A"),
+        ("COOKING",   120, (255, 85, 255),  "C"),
+        ("SCIENCE",   150, (85, 85, 255),   "?"),
+        ("PHILOSOPHY",180, (200, 200, 255), "P"),
+        ("GRAMMAR",   210, (255, 85, 85),   "Q"),
+        ("ECONOMICS", 240, (170, 255, 0),   "$"),
+        ("THEOLOGY",  270, (200, 170, 80),  "+"),
+        ("TRIVIA",    300, (255, 200, 100), "T"),
+        ("AI",        330, (0, 220, 120),   "W"),
     ]
 
     def __init__(self, screen: pygame.Surface):
@@ -445,6 +448,27 @@ class WelcomeScreen:
             pygame.draw.ellipse(self.screen, color, (cx-9, cy+15, 18, 8), 1)
             pygame.draw.ellipse(self.screen, dim,   (cx-9, cy+10, 18, 8))
             pygame.draw.ellipse(self.screen, color, (cx-9, cy+10, 18, 8), 1)
+        elif label == "THEOLOGY":
+            # Cross
+            pygame.draw.rect(self.screen, dim, (cx-2, cy+8, 4, 16))
+            pygame.draw.rect(self.screen, dim, (cx-7, cy+12, 14, 4))
+            pygame.draw.rect(self.screen, color, (cx-2, cy+8, 4, 16), 1)
+            pygame.draw.rect(self.screen, color, (cx-7, cy+12, 14, 4), 1)
+        elif label == "TRIVIA":
+            # Question mark dot + arc
+            pygame.draw.arc(self.screen, color, (cx-7, cy+6, 14, 12),
+                            0.3, 3.14, 2)
+            pygame.draw.circle(self.screen, bright, (cx, cy+22), 2)
+        elif label == "AI":
+            # Circuit brain (small grid of dots connected by lines)
+            for dx, dy in [(-6, 10), (6, 10), (-6, 20), (6, 20), (0, 15)]:
+                pygame.draw.circle(self.screen, bright, (cx+dx, cy+dy), 2)
+            pygame.draw.line(self.screen, dim, (cx-6, cy+10), (cx+6, cy+10), 1)
+            pygame.draw.line(self.screen, dim, (cx-6, cy+20), (cx+6, cy+20), 1)
+            pygame.draw.line(self.screen, dim, (cx-6, cy+10), (cx-6, cy+20), 1)
+            pygame.draw.line(self.screen, dim, (cx+6, cy+10), (cx+6, cy+20), 1)
+            pygame.draw.line(self.screen, dim, (cx, cy+15), (cx-6, cy+10), 1)
+            pygame.draw.line(self.screen, dim, (cx, cy+15), (cx+6, cy+20), 1)
 
     def _draw_vortex(self, cx, cy, t):
         """Rotating spiral arms -- the knowledge vortex."""
@@ -930,11 +954,12 @@ class Game:
         self._move_hold_timer   = 0.0      # countdown until next repeated move
         self._move_hold_delay   = 0.18     # seconds before repeat kicks in
         self._move_hold_first   = True     # True = waiting for initial delay
-        # Targeting state (ranged attacks)
+        # Targeting state (ranged and melee attacks)
         self.target_cursor_x    = 0        # world tile position of targeting cursor
         self.target_cursor_y    = 0
         self._target_candidates: list = [] # visible monsters sorted by distance
         self._target_idx        = 0        # which candidate is selected
+        self._melee_targeting   = False    # True when using A-key melee targeting
         # Mystery system state
         self._active_mystery_altar = None  # MysteryAltar being interacted with
 
@@ -983,8 +1008,8 @@ class Game:
         self.renderer.set_dungeon(dungeon.width, dungeon.height, GAME_W, GAME_H)
         self._refresh_fov()
 
-        # Give the player their Philosopher's Amulet and build-specific starting kit
-        self._give_starting_amulet()
+        # Give the player their Philosopher's Shard and build-specific starting kit
+        self._give_starting_kit()
 
         # Greeting
         if b.get('_greeting'):
@@ -1037,6 +1062,18 @@ class Game:
         self._notified_rooms = set()   # reset per-floor special room notifications
         self.renderer.set_dungeon(dungeon.width, dungeon.height, GAME_W, GAME_H)
 
+        # Track levels without Philosopher's Shard (Diogenes quirk)
+        has_shard = any(getattr(i, 'id', '') == 'philosophers_shard'
+                        for i in self.player.inventory)
+        if not has_shard and self.player.quirk_progress.get('shard_dropped'):
+            self.player.quirk_progress['levels_without_shard'] = (
+                self.player.quirk_progress.get('levels_without_shard', 0) + 1
+            )
+        elif has_shard:
+            # Reset if they picked it back up
+            self.player.quirk_progress['shard_dropped'] = False
+            self.player.quirk_progress['levels_without_shard'] = 0
+
         # Notify quirk system of stair use and floor entry
         _qs_stair = getattr(self, 'quirk_system', None)
         if _qs_stair:
@@ -1049,8 +1086,8 @@ class Game:
                         m.status_effects['slowed'] = max(
                             m.status_effects.get('slowed', 0), 5)
 
-        # Grant HP on every level transition
-        self.player.on_level_change()
+        # Grant HP on every level transition (reduced on ascent)
+        self.player.on_level_change(ascending=not enter_from_top)
 
         # Place player at the stairs they came through
         _snd.play('level_change')
@@ -1071,21 +1108,25 @@ class Game:
 
         self._refresh_fov()
 
-    def _give_starting_amulet(self):
+    def _give_starting_kit(self):
         """Give the player their starting kit, adjusted for their secret build."""
-        from items import load_items, Ammo
+        from items import load_items, Ammo, Item
         b = self.secret_build or {}
 
-        # -- Always: Philosopher's Amulet ----------------------------------
-        try:
-            accessories = load_items('accessory')
-            amulet = next((a for a in accessories if a.id == 'philosophers_amulet'), None)
-            if amulet:
-                amulet.identified = True
-                self.player.inventory.append(amulet)
-                self.player.known_item_ids.add('philosophers_amulet')
-        except Exception:
-            pass
+        # -- Always: Philosopher's Shard ------------------------------------
+        shard = Item({
+            'id': 'philosophers_shard',
+            'name': "Philosopher's Shard",
+            'symbol': '*',
+            'color': [220, 200, 120],
+            'weight': 0.1,
+            'item_class': 'shard',
+            'min_level': 1,
+            'lore': "A tiny fragment of the Philosopher's Stone, warm to the touch and faintly luminous. It resonates with philosophical understanding, allowing its bearer to perceive the true nature of unknown items through rigorous examination. Ancient texts warn that those who abandon it walk blind through the dungeon — but some say that blindness teaches its own kind of wisdom.",
+        })
+        shard.identified = True
+        self.player.inventory.append(shard)
+        self.player.known_item_ids.add('philosophers_shard')
 
         # -- Weapon: default dagger OR build override ----------------------
         no_dagger     = b.get('_no_dagger', False)
@@ -1357,7 +1398,7 @@ class Game:
             self._lockpick()
             return
         if key == pygame.K_a:
-            self._attack_container()
+            self._open_melee_targeting()
             return
         if key == pygame.K_f:
             self._open_targeting()
@@ -2141,16 +2182,6 @@ class Game:
         if self.player.add_to_inventory(item):
             self.ground_items.remove(item)
             _snd.play('pickup')
-            # Philosopher's Amulet (identify_sight): auto-identify on pickup
-            if (self.player.has_effect('identify_sight')
-                    and hasattr(item, 'identified') and not item.identified
-                    and item.id not in self.player.known_item_ids):
-                item.identified = True
-                self.player.known_item_ids.add(item.id)
-                self.add_message(f"Your identify sight reveals: {item.name}!", 'info')
-                qs = getattr(self, 'quirk_system', None)
-                if qs:
-                    qs.on_item_identified(item.id)
             if isinstance(item, Ammo):
                 self.add_message(f"You pick up {item.count} {self._display_name(item)}s.", 'loot')
             else:
@@ -2254,30 +2285,49 @@ class Game:
                 return item
         return None
 
-    def _attack_container(self):
-        """Press 'a' to interact with an adjacent mystery altar or probe a container for mimics."""
-        # Check for mystery altar first
-        altar = self._find_adjacent_mystery_altar()
-        if altar is not None:
-            self._start_mystery(altar)
-            return
+    def _open_melee_targeting(self):
+        """Press 'a' to enter melee targeting mode — attack adjacent tiles (or further with reach weapons)."""
+        from combat import can_melee_attack
+        weapon = self.player.weapon
+        reach = weapon.reach if weapon else 1
 
-        container = self._find_adjacent_container()
-        if container is None:
-            self.add_message("There is nothing to interact with nearby.", 'info')
-            return
-        if container.is_mimic:
+        px, py = self.player.x, self.player.y
+
+        # Build candidate list: alive monsters within melee reach
+        candidates = [
+            m for m in self.monsters
+            if m.alive
+            and abs(m.x - px) <= reach and abs(m.y - py) <= reach
+            and not (m.x == px and m.y == py)
+        ]
+        candidates.sort(key=lambda m: abs(m.x - px) + abs(m.y - py))
+
+        self._target_candidates = candidates
+        self._target_idx = 0
+        self._melee_targeting = True
+        self._melee_reach = reach
+
+        if candidates:
+            m = candidates[0]
+            self.target_cursor_x = m.x
+            self.target_cursor_y = m.y
+        else:
+            # Default cursor one tile to the right (or clamp)
+            self.target_cursor_x = min(px + 1, self.dungeon.width - 1)
+            self.target_cursor_y = py
+
+        self.state = STATE_TARGET
+        weapon_name = weapon.name if weapon else "fists"
+        if candidates:
             self.add_message(
-                f"The {container.name} springs to life -- it's a MIMIC!", 'danger'
+                f"Melee targeting with {weapon_name} -- arrow keys to aim, TAB to cycle, ENTER to strike, ESC to cancel.",
+                'info'
             )
-            from container_system import _spawn_mimic
-            _spawn_mimic(container, self.monsters)
-            self.ground_items.remove(container)
         else:
             self.add_message(
-                f"You strike the {container.name}. It's solid -- just a chest.", 'info'
+                f"Melee targeting with {weapon_name} -- arrow keys to aim, ENTER to strike, ESC to cancel.",
+                'info'
             )
-        self._advance_turn()
 
     # ------------------------------------------------------------------
     # Mystery system
@@ -2594,7 +2644,8 @@ class Game:
         # Check Persephone quirk: max chain 6
         _persephone = getattr(self.player, 'quirk_progress', {}).get('persephone_active', False)
         cook_ingredient(self.player, ingredient, self.quiz_engine, on_complete,
-                        max_chain=6 if _persephone else 5)
+                        max_chain=6 if _persephone else 5,
+                        dungeon_level=self.dungeon_level)
 
     def _cook_compound(self, recipe: dict):
         ing_names = ', '.join(recipe.get('ingredients', []))
@@ -2607,7 +2658,8 @@ class Game:
                 self.add_message(msg, 'warning' if (i == 0 and ('ruin' in msg.lower() or 'mediocre' in msg.lower())) else 'success')
             self._advance_turn()
 
-        cook_compound_recipe(self.player, recipe, self.player.inventory, self.quiz_engine, on_complete)
+        cook_compound_recipe(self.player, recipe, self.player.inventory, self.quiz_engine, on_complete,
+                             dungeon_level=self.dungeon_level)
 
     # ------------------------------------------------------------------
     # Eat menu  (z key)
@@ -3816,7 +3868,7 @@ class Game:
     def _open_accessory_menu(self):
         self.accessory_menu_items = [
             i for i in self.player.inventory
-            if isinstance(i, Accessory) and i.id != 'philosophers_amulet'
+            if isinstance(i, Accessory)
         ]
         if not self.accessory_menu_items:
             self.add_message("You have no rings or amulets to equip.", 'info')
@@ -4079,7 +4131,11 @@ class Game:
                         'paralyze_monster', 'blind_monster', 'stoning',
                         'fire_bolt', 'cold_bolt', 'lightning_bolt',
                         'acid_spray', 'magic_missile', 'striking',
-                        'death_ray', 'cancellation', 'polymorph_monster'):
+                        'death_ray', 'cancellation', 'polymorph_monster',
+                        'fear_monster', 'charm_monster', 'poison_monster',
+                        'disease_monster', 'curse_monster', 'teleport_monster',
+                        'drain_life', 'disintegrate', 'weaken_monster',
+                        'drain_magic', 'dispel_magic'):
             target = self._nearest_visible_monster()
             if target is None:
                 self.add_message("The wand hums but finds no target.", 'info')
@@ -5113,17 +5169,13 @@ class Game:
     # ------------------------------------------------------------------
 
     def _open_identify_menu(self):
-        # Require the Philosopher's Amulet in inventory
-        has_amulet = any(
-            getattr(i, 'id', '') == 'philosophers_amulet'
+        # Require the Philosopher's Shard in inventory
+        has_shard = any(
+            getattr(i, 'id', '') == 'philosophers_shard'
             for i in self.player.inventory
-        ) or any(
-            getattr(i, 'id', '') == 'philosophers_amulet'
-            for slot in self.player.accessory_slots if slot is not None
-            for i in [slot]
         )
-        if not has_amulet:
-            self.add_message("You need the Philosopher's Amulet to identify items.", 'warning')
+        if not has_shard:
+            self.add_message("You need the Philosopher's Shard to identify items.", 'warning')
             return
         inv_items = [
             i for i in self.player.inventory
@@ -5323,6 +5375,7 @@ class Game:
 
         self._target_candidates = candidates
         self._target_idx = 0
+        self._melee_targeting = False
 
         if candidates:
             m = candidates[0]
@@ -5356,7 +5409,7 @@ class Game:
     }
 
     def _target_input(self, key: int):
-        """Handle key input while in targeting mode."""
+        """Handle key input while in targeting mode (ranged or melee)."""
         # TAB / t -- cycle through valid monster targets
         if key in (pygame.K_TAB, pygame.K_t) and self._target_candidates:
             self._target_idx = (self._target_idx + 1) % len(self._target_candidates)
@@ -5365,33 +5418,105 @@ class Game:
             self.target_cursor_y = m.y
             return
 
-        # Arrow / vi keys -- free cursor movement
+        # Arrow / vi keys -- cursor movement
         if key in self._TARGET_MOVE_KEYS:
             dx, dy = self._TARGET_MOVE_KEYS[key]
-            self.target_cursor_x += dx
-            self.target_cursor_y += dy
+            nx = self.target_cursor_x + dx
+            ny = self.target_cursor_y + dy
             # Clamp to dungeon bounds
-            self.target_cursor_x = max(0, min(self.target_cursor_x, self.dungeon.width - 1))
-            self.target_cursor_y = max(0, min(self.target_cursor_y, self.dungeon.height - 1))
+            nx = max(0, min(nx, self.dungeon.width - 1))
+            ny = max(0, min(ny, self.dungeon.height - 1))
+            # Melee targeting: clamp to weapon reach (Chebyshev distance)
+            if self._melee_targeting:
+                px, py = self.player.x, self.player.y
+                reach = getattr(self, '_melee_reach', 1)
+                if max(abs(nx - px), abs(ny - py)) > reach:
+                    return  # don't move cursor beyond reach
+                if nx == px and ny == py:
+                    return  # can't target own tile
+            self.target_cursor_x = nx
+            self.target_cursor_y = ny
             return
 
-        # ENTER / SPACE / f -- confirm shot
-        if key in (pygame.K_RETURN, pygame.K_KP_ENTER, pygame.K_SPACE, pygame.K_f):
-            # Find monster at cursor
-            target = next(
-                (m for m in self.monsters
-                 if m.alive and m.x == self.target_cursor_x and m.y == self.target_cursor_y),
-                None
-            )
-            self.state = STATE_PLAYER
-            if target:
-                from combat import can_ranged_attack
-                if can_ranged_attack(self.player, target, self.dungeon):
-                    self._fire_ranged(target)
-                else:
-                    self.add_message("No clear line of sight to that target.", 'warning')
+        # ENTER / SPACE / f / a -- confirm target
+        confirm_keys = (pygame.K_RETURN, pygame.K_KP_ENTER, pygame.K_SPACE, pygame.K_f)
+        if self._melee_targeting:
+            confirm_keys = confirm_keys + (pygame.K_a,)
+        if key in confirm_keys:
+            if self._melee_targeting:
+                self._confirm_melee_target()
             else:
-                self.add_message("No target there -- shot cancelled.", 'warning')
+                self._confirm_ranged_target()
+
+    def _confirm_ranged_target(self):
+        """Confirm a ranged shot at the cursor position."""
+        target = next(
+            (m for m in self.monsters
+             if m.alive and m.x == self.target_cursor_x and m.y == self.target_cursor_y),
+            None
+        )
+        self.state = STATE_PLAYER
+        if target:
+            from combat import can_ranged_attack
+            if can_ranged_attack(self.player, target, self.dungeon):
+                self._fire_ranged(target)
+            else:
+                self.add_message("No clear line of sight to that target.", 'warning')
+        else:
+            self.add_message("No target there -- shot cancelled.", 'warning')
+
+    def _confirm_melee_target(self):
+        """Confirm a melee strike at the cursor position."""
+        cx, cy = self.target_cursor_x, self.target_cursor_y
+        self.state = STATE_PLAYER
+
+        # 1. Monster at cursor -- melee combat
+        target = next(
+            (m for m in self.monsters
+             if m.alive and m.x == cx and m.y == cy),
+            None
+        )
+        if target:
+            self._start_combat(target)
+            return
+
+        # 2. Mystery altar at cursor
+        from mystery_system import MysteryAltar
+        altar = next(
+            (item for item in self.ground_items
+             if isinstance(item, MysteryAltar) and not item.activated
+             and item.x == cx and item.y == cy),
+            None
+        )
+        if altar is not None:
+            self._start_mystery(altar)
+            return
+
+        # 3. Container at cursor -- mimic check / bash
+        from container_system import Container, _spawn_mimic
+        container = next(
+            (item for item in self.ground_items
+             if isinstance(item, Container) and not item.opened
+             and item.x == cx and item.y == cy),
+            None
+        )
+        if container is not None:
+            if container.is_mimic:
+                self.add_message(
+                    f"The {container.name} springs to life -- it's a MIMIC!", 'danger'
+                )
+                _spawn_mimic(container, self.monsters)
+                self.ground_items.remove(container)
+            else:
+                self.add_message(
+                    f"You strike the {container.name}. It's solid -- just a chest.", 'info'
+                )
+            self._advance_turn()
+            return
+
+        # 4. Empty tile -- swing at air (costs a turn; may reveal invisible monsters)
+        self.add_message("You swing at the empty space!", 'info')
+        self._advance_turn()
 
     def _fire_ranged(self, monster):
         """Consume one ammo and launch the math chain quiz for a ranged shot."""
@@ -5423,7 +5548,7 @@ class Game:
         )
 
         def on_complete(damage: int, killed: bool, chain: int, stunned: bool = False,
-                        knocked: bool = False, crit: bool = False):
+                        knocked: bool = False, crit: bool = False, **kwargs):
             self.state = STATE_PLAYER
             self.combat_target = None
             if chain == 0:
@@ -5479,7 +5604,7 @@ class Game:
             self.add_message("The floating eye's gaze paralyzes you!", 'danger')
 
         def on_complete(damage: int, killed: bool, chain: int, stunned: bool = False,
-                        knocked: bool = False, crit: bool = False):
+                        knocked: bool = False, crit: bool = False, **kwargs):
             self.state = STATE_PLAYER
             self.combat_target = None
             if chain == 0:
@@ -5501,6 +5626,16 @@ class Game:
                     from combat import apply_knockback
                     apply_knockback(self.player, monster, self.dungeon, self.monsters)
                     msg += f" The {monster.name} is knocked back!"
+                if kwargs.get('poisoned'):
+                    msg += f" The {monster.name} is poisoned!"
+                if kwargs.get('burned'):
+                    msg += f" The {monster.name} is burning!"
+                if kwargs.get('confused'):
+                    msg += f" The {monster.name} is confused!"
+                if kwargs.get('petrified'):
+                    msg += f" The {monster.name} is turning to stone!"
+                if kwargs.get('healed'):
+                    msg += " You absorb life energy!"
                 self.add_message(msg, 'success')
                 if killed:
                     self.level_mgr.monsters_killed += 1
@@ -5808,6 +5943,55 @@ class Game:
     # ------------------------------------------------------------------
 
     def _draw_targeting(self, cam_x: int, cam_y: int):
+        """Draw targeting overlay for ranged or melee targeting."""
+        if self._melee_targeting:
+            self._draw_melee_targeting(cam_x, cam_y)
+        else:
+            self._draw_ranged_targeting(cam_x, cam_y)
+
+    def _draw_melee_targeting(self, cam_x: int, cam_y: int):
+        """Draw reach radius and cursor for melee targeting."""
+        T   = self.renderer.map_tile_size
+        w2s = self.renderer.world_to_screen
+        px, py = self.player.x, self.player.y
+        cx, cy = self.target_cursor_x, self.target_cursor_y
+        reach = getattr(self, '_melee_reach', 1)
+
+        # Highlight all tiles within reach
+        reach_surf = pygame.Surface((T, T), pygame.SRCALPHA)
+        reach_surf.fill((100, 180, 255, 35))
+        for ry in range(py - reach, py + reach + 1):
+            for rx in range(px - reach, px + reach + 1):
+                if rx == px and ry == py:
+                    continue
+                if not self.dungeon.in_bounds(rx, ry):
+                    continue
+                scr_x, scr_y = w2s(rx, ry)
+                if 0 <= scr_x < GAME_W and 0 <= scr_y < GAME_H:
+                    self.screen.blit(reach_surf, (scr_x, scr_y))
+
+        # Highlight monsters in range
+        for m in self._target_candidates:
+            scr_x, scr_y = w2s(m.x, m.y)
+            if 0 <= scr_x < GAME_W and 0 <= scr_y < GAME_H:
+                hl = pygame.Surface((T, T), pygame.SRCALPHA)
+                hl.fill((255, 100, 60, 70))
+                self.screen.blit(hl, (scr_x, scr_y))
+                pygame.draw.rect(self.screen, (255, 100, 60), (scr_x, scr_y, T, T), 1)
+
+        # Check if there's a valid target at cursor
+        target_monster = next(
+            (m for m in self.monsters if m.alive and m.x == cx and m.y == cy), None
+        )
+        has_target = target_monster is not None
+
+        # Cursor highlight
+        scr_cx, scr_cy = w2s(cx, cy)
+        if 0 <= scr_cx < GAME_W and 0 <= scr_cy < GAME_H:
+            cur_color = (80, 255, 80) if has_target else (255, 220, 60)
+            pygame.draw.rect(self.screen, cur_color, (scr_cx, scr_cy, T, T), 2)
+
+    def _draw_ranged_targeting(self, cam_x: int, cam_y: int):
         """Draw trajectory line and cursor highlight for ranged targeting."""
         from combat import _line_of_sight
         T   = self.renderer.map_tile_size
@@ -5905,6 +6089,7 @@ class Game:
         'economics':  (160, 220,   0),
         'theology':   (200, 170,  80),
         'trivia':     (255, 200, 100),
+        'ai':         (0,   220, 120),
     }
 
     @staticmethod
@@ -6660,7 +6845,7 @@ class Game:
                         font=self.font_md, text_color=FP.GOLD_BRIGHT)
 
         self.screen.blit(
-            self.font_sm.render("Requires Philosopher's Amulet",
+            self.font_sm.render("Requires Philosopher's Shard",
                                 True, FP.BODY_TEXT),
             (bx + 20, by + 48)
         )
@@ -8181,6 +8366,15 @@ class Game:
         self.ground_items.append(item)
         self.add_message(f"You drop the {self._display_name(item)}.", 'info')
 
+        # Track shard drop for Diogenes' Lantern quirk
+        if getattr(item, 'id', '') == 'philosophers_shard':
+            self.player.quirk_progress['shard_dropped'] = True
+            self.player.quirk_progress['shard_drop_level'] = self.dungeon_level
+            self.player.quirk_progress.setdefault('levels_without_shard', 0)
+            self.add_message(
+                "You abandon the Shard. The dungeon's secrets grow darker without it...", 'warning'
+            )
+
         # Check if Complete Tablet was dropped on the Abyssal Shimmer
         if item.id == 'complete_tablet_of_second_death':
             shimmer = next(
@@ -8939,7 +9133,7 @@ class Game:
             ("H",              "Harvest monster corpse",           FP.BODY_TEXT),
             ("C",              "Cook ingredient",                  FP.BODY_TEXT),
             ("F",              "Fire ranged weapon",               FP.BODY_TEXT),
-            ("A",              "Attack / bash container",          FP.BODY_TEXT),
+            ("A",              "Melee target (attack / interact)",  FP.BODY_TEXT),
             ("P",              "Pick lock",                        FP.BODY_TEXT),
             (">  or  <",       "Use stairs",                       FP.BODY_TEXT),
             ("T",              "Visit merchant shop",              FP.BODY_TEXT),

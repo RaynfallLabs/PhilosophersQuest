@@ -98,6 +98,7 @@ class Armor(Item):
         self.unidentified_name: str = defn.get('unidentified_name', 'unknown armor')
         self.container_loot_tier: str = defn.get('container_loot_tier', 'common')
         self.on_equip_status: str    = defn.get('onEquipStatus', defn.get('on_equip_status', ''))
+        self.floor_spawn_weight: dict = defn.get('floorSpawnWeight', defn.get('floor_spawn_weight', {}))
 
 
 class Shield(Item):
@@ -115,6 +116,7 @@ class Shield(Item):
         self.identified: bool    = bool(defn.get('identified', False))
         self.unidentified_name: str = defn.get('unidentified_name', 'an unknown shield')
         self.container_loot_tier: str = defn.get('container_loot_tier', 'common')
+        self.floor_spawn_weight: dict = defn.get('floorSpawnWeight', defn.get('floor_spawn_weight', {}))
 
 
 class Accessory(Item):
@@ -127,6 +129,7 @@ class Accessory(Item):
         self.unidentified_name = defn.get('unidentified_name', defn['name'])
         self.identified       = bool(defn.get('identified', False))
         self.container_loot_tier: str = defn.get('container_loot_tier', 'common')
+        self.floor_spawn_weight: dict = defn.get('floorSpawnWeight', defn.get('floor_spawn_weight', {}))
 
 
 class Wand(Item):
@@ -144,6 +147,7 @@ class Wand(Item):
         self.unidentified_name = defn.get('unidentified_name', defn['name'])
         self.identified       = bool(defn.get('identified', False))
         self.container_loot_tier: str = defn.get('containerLootTier', defn.get('container_loot_tier', 'common'))
+        self.floor_spawn_weight: dict = defn.get('floorSpawnWeight', defn.get('floor_spawn_weight', {}))
 
 
 class Scroll(Item):
@@ -156,6 +160,7 @@ class Scroll(Item):
         self.unidentified_name = defn.get('unidentified_name', defn['name'])
         self.identified       = bool(defn.get('identified', False))
         self.container_loot_tier: str = defn.get('container_loot_tier', 'common')
+        self.floor_spawn_weight: dict = defn.get('floorSpawnWeight', defn.get('floor_spawn_weight', {}))
 
 
 class Spellbook(Item):
@@ -168,7 +173,7 @@ class Spellbook(Item):
         self.quiz_threshold    = int(defn.get('quiz_threshold', 1))
         self.unidentified_name = defn.get('unidentified_name', defn['name'])
         self.identified        = bool(defn.get('identified', False))
-        self.floor_spawn_weight: dict = defn.get('floor_spawn_weight', {})
+        self.floor_spawn_weight: dict = defn.get('floorSpawnWeight', defn.get('floor_spawn_weight', {}))
         self.container_loot_tier: str = defn.get('container_loot_tier', 'common')
 
 
@@ -209,7 +214,7 @@ class Ingredient(Item):
         self.source_monster = defn.get('source_monster', '')
         # recipes: str(quality 0-5) -> {name, sp, bonus_type, bonus_amount}
         self.recipes: dict  = defn.get('recipes', {})
-        self.floor_spawn_weight: dict = defn.get('floor_spawn_weight', {})
+        self.floor_spawn_weight: dict = defn.get('floorSpawnWeight', defn.get('floor_spawn_weight', {}))
         self.identified: bool       = True   # raw ingredients are obvious
         self.unidentified_name: str = defn.get('unidentified_name', self.name)
         self.mp_restore: int        = int(defn.get('mp_restore', 0))
@@ -251,7 +256,7 @@ class Ammo(Item):
         self.count_min:    int = int(defn.get('count_min', 10))
         self.count_max:    int = int(defn.get('count_max', 20))
         self.count:        int = self.count_min   # set at spawn; base class also has count=1 default
-        self.floor_spawn_weight: dict = defn.get('floor_spawn_weight', {})
+        self.floor_spawn_weight: dict = defn.get('floorSpawnWeight', defn.get('floor_spawn_weight', {}))
         self.value:        int = int(defn.get('value', 1))
         # Ammo is always visually obvious -- identified by default
         self.identified: bool       = True
@@ -268,7 +273,7 @@ class Food(Item):
         self.bonus_stat:  str  = defn.get('bonus_stat', '')
         self.bonus_effect: str = defn.get('bonus_effect', '')
         self.bonus_amount: int = int(defn.get('bonus_amount', 0))
-        self.floor_spawn_weight: dict = defn.get('floor_spawn_weight', {})
+        self.floor_spawn_weight: dict = defn.get('floorSpawnWeight', defn.get('floor_spawn_weight', {}))
         # Food is recognizable by appearance -- identified by default
         self.identified: bool       = True
         self.unidentified_name: str = defn.get('unidentified_name', self.name)

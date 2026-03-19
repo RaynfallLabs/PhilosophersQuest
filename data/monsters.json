@@ -392,7 +392,7 @@
     "hp": "1d8",
     "speed": 2,
     "ai_pattern": "cowardly",
-    "min_level": 3,
+    "min_level": 4,
     "thac0": 17,
     "frequency": 3,
     "attacks": [
@@ -667,7 +667,7 @@
     "hp": "2d6",
     "speed": 1,
     "ai_pattern": "aggressive",
-    "min_level": 3,
+    "min_level": 4,
     "thac0": 17,
     "frequency": 5,
     "attacks": [
@@ -838,7 +838,7 @@
     "speed": 1,
     "ai_pattern": "aggressive",
     "min_level": 7,
-    "thac0": 13,
+    "thac0": 16,
     "frequency": 4,
     "attacks": [
       {
@@ -883,7 +883,7 @@
     "speed": 1,
     "ai_pattern": "aggressive",
     "min_level": 7,
-    "thac0": 13,
+    "thac0": 16,
     "frequency": 6,
     "attacks": [
       {
@@ -920,7 +920,7 @@
     "speed": 2,
     "ai_pattern": "aggressive",
     "min_level": 7,
-    "thac0": 13,
+    "thac0": 16,
     "frequency": 4,
     "attacks": [
       {
@@ -960,7 +960,7 @@
     "speed": 1,
     "ai_pattern": "aggressive",
     "min_level": 7,
-    "thac0": 13,
+    "thac0": 16,
     "frequency": 3,
     "attacks": [
       {
@@ -1006,7 +1006,7 @@
     "speed": 1,
     "ai_pattern": "cowardly",
     "min_level": 7,
-    "thac0": 13,
+    "thac0": 16,
     "frequency": 3,
     "attacks": [
       {
@@ -1046,7 +1046,7 @@
     "speed": 1,
     "ai_pattern": "aggressive",
     "min_level": 7,
-    "thac0": 13,
+    "thac0": 16,
     "frequency": 4,
     "attacks": [
       {
@@ -1087,8 +1087,8 @@
     "hp": "4d8",
     "speed": 1,
     "ai_pattern": "aggressive",
-    "min_level": 10,
-    "thac0": 10,
+    "min_level": 12,
+    "thac0": 14,
     "frequency": 3,
     "attacks": [
       {
@@ -1126,8 +1126,8 @@
     "hp": "3d6",
     "speed": 1,
     "ai_pattern": "aggressive",
-    "min_level": 10,
-    "thac0": 10,
+    "min_level": 14,
+    "thac0": 14,
     "frequency": 3,
     "attacks": [
       {
@@ -1173,8 +1173,8 @@
     "hp": "4d8",
     "speed": 1,
     "ai_pattern": "aggressive",
-    "min_level": 10,
-    "thac0": 10,
+    "min_level": 13,
+    "thac0": 14,
     "frequency": 3,
     "attacks": [
       {
@@ -1228,7 +1228,7 @@
     "speed": 1,
     "ai_pattern": "aggressive",
     "min_level": 10,
-    "thac0": 10,
+    "thac0": 14,
     "frequency": 4,
     "attacks": [
       {
@@ -1276,7 +1276,7 @@
     "speed": 1,
     "ai_pattern": "aggressive",
     "min_level": 16,
-    "thac0": 4,
+    "thac0": 12,
     "frequency": 2,
     "attacks": [
       {
@@ -1321,7 +1321,7 @@
     "speed": 1,
     "ai_pattern": "aggressive",
     "min_level": 16,
-    "thac0": 4,
+    "thac0": 12,
     "frequency": 3,
     "attacks": [
       {
@@ -1366,7 +1366,7 @@
     "speed": 1,
     "ai_pattern": "aggressive",
     "min_level": 16,
-    "thac0": 4,
+    "thac0": 12,
     "frequency": 2,
     "attacks": [
       {
@@ -1422,7 +1422,7 @@
     "speed": 1,
     "ai_pattern": "aggressive",
     "min_level": 16,
-    "thac0": 4,
+    "thac0": 12,
     "frequency": 2,
     "attacks": [
       {
@@ -1469,7 +1469,7 @@
     "speed": 1,
     "ai_pattern": "aggressive",
     "min_level": 16,
-    "thac0": 4,
+    "thac0": 12,
     "frequency": 2,
     "attacks": [
       {
@@ -1803,14 +1803,14 @@
       {
         "name": "lightning",
         "damage": "3d6",
-        "type": "shock",
+        "type": "lightning",
         "effect": "stunned",
         "effect_chance": 0.4,
         "effect_duration": 3
       }
     ],
     "resistances": [
-      "shock",
+      "lightning",
       "slash"
     ],
     "weaknesses": [
@@ -2416,7 +2416,7 @@
     "resistances": [
       "fire",
       "cold",
-      "shock",
+      "lightning",
       "blunt",
       "slash",
       "pierce",
@@ -2642,7 +2642,7 @@
       "pierce",
       "fire",
       "acid",
-      "shock"
+      "lightning"
     ],
     "weaknesses": [],
     "harvest_tier": 1,
@@ -2810,7 +2810,7 @@
       "slash",
       "pierce",
       "fire",
-      "shock"
+      "lightning"
     ],
     "weaknesses": [
       "acid"
@@ -2841,7 +2841,7 @@
     "speed": 1,
     "ai_pattern": "cowardly",
     "min_level": 4,
-    "thac0": 16,
+    "thac0": 17,
     "frequency": 5,
     "attacks": [
       {
@@ -2880,7 +2880,7 @@
     "speed": 2,
     "ai_pattern": "aggressive",
     "min_level": 4,
-    "thac0": 16,
+    "thac0": 17,
     "frequency": 6,
     "attacks": [
       {
@@ -2924,7 +2924,7 @@
     "speed": 1,
     "ai_pattern": "aggressive",
     "min_level": 4,
-    "thac0": 16,
+    "thac0": 17,
     "frequency": 5,
     "attacks": [
       {
@@ -2966,7 +2966,7 @@
     "speed": 1,
     "ai_pattern": "aggressive",
     "min_level": 5,
-    "thac0": 15,
+    "thac0": 17,
     "frequency": 5,
     "attacks": [
       {
@@ -3012,7 +3012,7 @@
     "speed": 1,
     "ai_pattern": "cowardly",
     "min_level": 5,
-    "thac0": 15,
+    "thac0": 17,
     "frequency": 5,
     "attacks": [
       {
@@ -3054,7 +3054,7 @@
     "speed": 2,
     "ai_pattern": "aggressive",
     "min_level": 5,
-    "thac0": 15,
+    "thac0": 17,
     "frequency": 4,
     "attacks": [
       {
@@ -3101,7 +3101,7 @@
     "speed": 1,
     "ai_pattern": "aggressive",
     "min_level": 6,
-    "thac0": 14,
+    "thac0": 16,
     "frequency": 3,
     "attacks": [
       {
@@ -3150,7 +3150,7 @@
     "speed": 2,
     "ai_pattern": "aggressive",
     "min_level": 6,
-    "thac0": 14,
+    "thac0": 16,
     "frequency": 4,
     "attacks": [
       {
@@ -3194,7 +3194,7 @@
     "speed": 1,
     "ai_pattern": "cowardly",
     "min_level": 6,
-    "thac0": 14,
+    "thac0": 16,
     "frequency": 3,
     "attacks": [
       {
@@ -3263,7 +3263,7 @@
       "physical"
     ],
     "weaknesses": [
-      "electric"
+      "lightning"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -3334,9 +3334,9 @@
     "hp": "2d8",
     "speed": 2,
     "ai_pattern": "aggressive",
-    "min_level": 3,
+    "min_level": 5,
     "max_level": 8,
-    "thac0": 16,
+    "thac0": 17,
     "frequency": 5,
     "attacks": [
       {
@@ -3386,7 +3386,7 @@
     "ai_pattern": "aggressive",
     "min_level": 4,
     "max_level": 9,
-    "thac0": 15,
+    "thac0": 17,
     "frequency": 5,
     "attacks": [
       {
@@ -3492,7 +3492,7 @@
     "ai_pattern": "aggressive",
     "min_level": 6,
     "max_level": 11,
-    "thac0": 13,
+    "thac0": 16,
     "frequency": 4,
     "attacks": [
       {
@@ -3514,7 +3514,7 @@
       "poison"
     ],
     "weaknesses": [
-      "electric"
+      "lightning"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
@@ -3542,7 +3542,7 @@
     "ai_pattern": "aggressive",
     "min_level": 10,
     "max_level": 13,
-    "thac0": 8,
+    "thac0": 14,
     "frequency": 2,
     "attacks": [
       {
@@ -3563,7 +3563,7 @@
       "physical"
     ],
     "weaknesses": [
-      "electric",
+      "lightning",
       "magic"
     ],
     "harvest_tier": 4,
@@ -3590,9 +3590,9 @@
     "hp": "4d12+8",
     "speed": 1,
     "ai_pattern": "sessile",
-    "min_level": 10,
+    "min_level": 13,
     "max_level": null,
-    "thac0": 6,
+    "thac0": 14,
     "frequency": 1,
     "attacks": [
       {
@@ -3640,7 +3640,7 @@
     "ai_pattern": "aggressive",
     "min_level": 7,
     "max_level": 13,
-    "thac0": 9,
+    "thac0": 16,
     "frequency": 3,
     "attacks": [
       {
@@ -3655,7 +3655,7 @@
       }
     ],
     "resistances": [
-      "electric"
+      "lightning"
     ],
     "weaknesses": [
       "shadow"
@@ -3684,9 +3684,9 @@
     "hp": "3d10+6",
     "speed": 3,
     "ai_pattern": "aggressive",
-    "min_level": 10,
+    "min_level": 13,
     "max_level": 14,
-    "thac0": 8,
+    "thac0": 14,
     "frequency": 2,
     "attacks": [
       {
@@ -3701,7 +3701,7 @@
       }
     ],
     "resistances": [
-      "electric"
+      "lightning"
     ],
     "weaknesses": [
       "shadow"
@@ -3865,7 +3865,7 @@
     ],
     "weaknesses": [
       "fire",
-      "electric"
+      "lightning"
     ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
@@ -3891,9 +3891,9 @@
     "hp": "3d10+5",
     "speed": 0,
     "ai_pattern": "sessile",
-    "min_level": 8,
+    "min_level": 14,
     "max_level": 13,
-    "thac0": 9,
+    "thac0": 14,
     "frequency": 2,
     "attacks": [
       {
@@ -3910,7 +3910,7 @@
       "physical"
     ],
     "weaknesses": [
-      "electric"
+      "lightning"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
@@ -3961,7 +3961,7 @@
     ],
     "weaknesses": [
       "holy",
-      "electric"
+      "lightning"
     ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
@@ -3989,7 +3989,7 @@
     "ai_pattern": "aggressive",
     "min_level": 15,
     "max_level": 15,
-    "thac0": 5,
+    "thac0": 14,
     "frequency": 3,
     "attacks": [
       {
@@ -4038,7 +4038,7 @@
     "ai_pattern": "aggressive",
     "min_level": 15,
     "max_level": null,
-    "thac0": 4,
+    "thac0": 14,
     "frequency": 2,
     "attacks": [
       {
@@ -4087,7 +4087,7 @@
     "ai_pattern": "aggressive",
     "min_level": 14,
     "max_level": null,
-    "thac0": 5,
+    "thac0": 14,
     "frequency": 2,
     "attacks": [
       {
@@ -4139,7 +4139,7 @@
     "ai_pattern": "aggressive",
     "min_level": 5,
     "max_level": 10,
-    "thac0": 13,
+    "thac0": 17,
     "frequency": 5,
     "attacks": [
       {
@@ -4183,7 +4183,7 @@
     "ai_pattern": "aggressive",
     "min_level": 6,
     "max_level": 11,
-    "thac0": 12,
+    "thac0": 16,
     "frequency": 4,
     "attacks": [
       {
@@ -4208,7 +4208,7 @@
       "cold"
     ],
     "weaknesses": [
-      "electric"
+      "lightning"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
@@ -4234,14 +4234,14 @@
     "hp": "2d8+2",
     "speed": 1,
     "ai_pattern": "aggressive",
-    "min_level": 3,
+    "min_level": 4,
     "max_level": 8,
-    "thac0": 16,
+    "thac0": 18,
     "frequency": 7,
     "attacks": [
       {
         "name": "rotting claw",
-        "damage": "1d8",
+        "damage": "1d6",
         "type": "physical"
       },
       {
@@ -4286,9 +4286,9 @@
     "hp": "3d10+4",
     "speed": 1,
     "ai_pattern": "aggressive",
-    "min_level": 10,
+    "min_level": 14,
     "max_level": 13,
-    "thac0": 8,
+    "thac0": 14,
     "frequency": 3,
     "attacks": [
       {
@@ -4337,9 +4337,9 @@
     "hp": "3d10+5",
     "speed": 1,
     "ai_pattern": "aggressive",
-    "min_level": 10,
+    "min_level": 14,
     "max_level": 14,
-    "thac0": 7,
+    "thac0": 14,
     "frequency": 2,
     "attacks": [
       {
@@ -4404,7 +4404,7 @@
     ],
     "resistances": [],
     "weaknesses": [
-      "electric"
+      "lightning"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -4432,7 +4432,7 @@
     "ai_pattern": "aggressive",
     "min_level": 10,
     "max_level": 13,
-    "thac0": 7,
+    "thac0": 14,
     "frequency": 3,
     "attacks": [
       {
@@ -4483,9 +4483,9 @@
     "hp": "3d10+6",
     "speed": 2,
     "ai_pattern": "aggressive",
-    "min_level": 10,
+    "min_level": 12,
     "max_level": 12,
-    "thac0": 9,
+    "thac0": 14,
     "frequency": 3,
     "attacks": [
       {
@@ -4535,7 +4535,7 @@
     "ai_pattern": "aggressive",
     "min_level": 7,
     "max_level": 12,
-    "thac0": 10,
+    "thac0": 16,
     "frequency": 3,
     "attacks": [
       {
@@ -4585,7 +4585,7 @@
     "ai_pattern": "aggressive",
     "min_level": 14,
     "max_level": null,
-    "thac0": 5,
+    "thac0": 14,
     "frequency": 1,
     "attacks": [
       {
@@ -4611,7 +4611,7 @@
     ],
     "weaknesses": [
       "fire",
-      "electric"
+      "lightning"
     ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
@@ -4639,7 +4639,7 @@
     "ai_pattern": "aggressive",
     "min_level": 10,
     "max_level": null,
-    "thac0": 7,
+    "thac0": 14,
     "frequency": 2,
     "attacks": [
       {
@@ -4688,7 +4688,7 @@
     "ai_pattern": "aggressive",
     "min_level": 6,
     "max_level": 11,
-    "thac0": 12,
+    "thac0": 16,
     "frequency": 4,
     "attacks": [
       {
@@ -4784,7 +4784,7 @@
     "ai_pattern": "sessile",
     "min_level": 14,
     "max_level": null,
-    "thac0": 5,
+    "thac0": 14,
     "frequency": 1,
     "attacks": [
       {
@@ -4833,9 +4833,9 @@
     "hp": "4d10+8",
     "speed": 1,
     "ai_pattern": "aggressive",
-    "min_level": 10,
+    "min_level": 12,
     "max_level": null,
-    "thac0": 6,
+    "thac0": 14,
     "frequency": 2,
     "attacks": [
       {
@@ -4884,9 +4884,9 @@
     "hp": "3d10+5",
     "speed": 1,
     "ai_pattern": "aggressive",
-    "min_level": 10,
+    "min_level": 13,
     "max_level": 12,
-    "thac0": 10,
+    "thac0": 14,
     "frequency": 3,
     "attacks": [
       {
@@ -4908,7 +4908,7 @@
       "poison"
     ],
     "weaknesses": [
-      "electric",
+      "lightning",
       "cold"
     ],
     "harvest_tier": 3,
@@ -4937,7 +4937,7 @@
     "ai_pattern": "cowardly",
     "min_level": 5,
     "max_level": 10,
-    "thac0": 13,
+    "thac0": 17,
     "frequency": 4,
     "attacks": [
       {
@@ -4987,7 +4987,7 @@
     "ai_pattern": "aggressive",
     "min_level": 4,
     "max_level": 8,
-    "thac0": 15,
+    "thac0": 17,
     "frequency": 5,
     "attacks": [
       {
@@ -5035,9 +5035,9 @@
     "hp": "4d10+8",
     "speed": 1,
     "ai_pattern": "aggressive",
-    "min_level": 10,
+    "min_level": 14,
     "max_level": 14,
-    "thac0": 6,
+    "thac0": 14,
     "frequency": 2,
     "attacks": [
       {
@@ -5056,7 +5056,7 @@
     ],
     "resistances": [
       "magic",
-      "electric"
+      "lightning"
     ],
     "weaknesses": [
       "shadow"
@@ -5087,7 +5087,7 @@
     "ai_pattern": "aggressive",
     "min_level": 6,
     "max_level": 11,
-    "thac0": 11,
+    "thac0": 16,
     "frequency": 4,
     "attacks": [
       {
@@ -5133,7 +5133,7 @@
     "ai_pattern": "aggressive",
     "min_level": 7,
     "max_level": 13,
-    "thac0": 10,
+    "thac0": 16,
     "frequency": 3,
     "attacks": [
       {
@@ -5157,7 +5157,7 @@
     ],
     "weaknesses": [
       "cold",
-      "electric"
+      "lightning"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
@@ -5183,9 +5183,9 @@
     "hp": "3d10+5",
     "speed": 2,
     "ai_pattern": "aggressive",
-    "min_level": 10,
+    "min_level": 14,
     "max_level": null,
-    "thac0": 7,
+    "thac0": 14,
     "frequency": 2,
     "attacks": [
       {
@@ -5237,7 +5237,7 @@
     "ai_pattern": "aggressive",
     "min_level": 15,
     "max_level": 14,
-    "thac0": 6,
+    "thac0": 14,
     "frequency": 2,
     "attacks": [
       {
@@ -5260,7 +5260,7 @@
     ],
     "weaknesses": [
       "holy",
-      "electric"
+      "lightning"
     ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
@@ -5286,9 +5286,9 @@
     "hp": "2d8+2",
     "speed": 1,
     "ai_pattern": "cowardly",
-    "min_level": 3,
+    "min_level": 4,
     "max_level": 8,
-    "thac0": 16,
+    "thac0": 17,
     "frequency": 5,
     "attacks": [
       {
@@ -5339,7 +5339,7 @@
     "ai_pattern": "aggressive",
     "min_level": 10,
     "max_level": 13,
-    "thac0": 8,
+    "thac0": 14,
     "frequency": 3,
     "attacks": [
       {
@@ -5362,7 +5362,7 @@
     ],
     "weaknesses": [
       "fire",
-      "electric"
+      "lightning"
     ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
@@ -5388,9 +5388,9 @@
     "hp": "4d10+6",
     "speed": 3,
     "ai_pattern": "aggressive",
-    "min_level": 10,
+    "min_level": 14,
     "max_level": 14,
-    "thac0": 6,
+    "thac0": 14,
     "frequency": 2,
     "attacks": [
       {
@@ -5440,7 +5440,7 @@
     "ai_pattern": "aggressive",
     "min_level": 6,
     "max_level": 11,
-    "thac0": 11,
+    "thac0": 16,
     "frequency": 4,
     "attacks": [
       {
@@ -5489,7 +5489,7 @@
     "ai_pattern": "cowardly",
     "min_level": 4,
     "max_level": 9,
-    "thac0": 15,
+    "thac0": 17,
     "frequency": 5,
     "attacks": [
       {
@@ -5533,7 +5533,7 @@
     "ai_pattern": "aggressive",
     "min_level": 14,
     "max_level": null,
-    "thac0": 5,
+    "thac0": 14,
     "frequency": 2,
     "attacks": [
       {
@@ -5560,7 +5560,7 @@
     ],
     "weaknesses": [
       "holy",
-      "electric"
+      "lightning"
     ],
     "harvest_tier": 4,
     "harvest_threshold": 5,
@@ -5588,7 +5588,7 @@
     "ai_pattern": "aggressive",
     "min_level": 7,
     "max_level": 12,
-    "thac0": 9,
+    "thac0": 16,
     "frequency": 3,
     "attacks": [
       {
@@ -5640,7 +5640,7 @@
     "ai_pattern": "aggressive",
     "min_level": 7,
     "max_level": 12,
-    "thac0": 10,
+    "thac0": 16,
     "frequency": 4,
     "attacks": [
       {
@@ -5689,9 +5689,9 @@
     "hp": "4d10+8",
     "speed": 1,
     "ai_pattern": "aggressive",
-    "min_level": 10,
+    "min_level": 12,
     "max_level": 14,
-    "thac0": 6,
+    "thac0": 14,
     "frequency": 2,
     "attacks": [
       {
@@ -5714,7 +5714,7 @@
       "cold"
     ],
     "weaknesses": [
-      "electric",
+      "lightning",
       "holy"
     ],
     "harvest_tier": 4,
@@ -5743,7 +5743,7 @@
     "ai_pattern": "aggressive",
     "min_level": 14,
     "max_level": null,
-    "thac0": 4,
+    "thac0": 14,
     "frequency": 2,
     "attacks": [
       {
@@ -5761,7 +5761,7 @@
       }
     ],
     "resistances": [
-      "electric",
+      "lightning",
       "fire"
     ],
     "weaknesses": [
@@ -5794,7 +5794,7 @@
     "ai_pattern": "aggressive",
     "min_level": 10,
     "max_level": 13,
-    "thac0": 8,
+    "thac0": 14,
     "frequency": 3,
     "attacks": [
       {
@@ -5817,7 +5817,7 @@
     ],
     "weaknesses": [
       "holy",
-      "electric"
+      "lightning"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
@@ -5845,7 +5845,7 @@
     "ai_pattern": "aggressive",
     "min_level": 10,
     "max_level": 13,
-    "thac0": 7,
+    "thac0": 14,
     "frequency": 3,
     "attacks": [
       {
@@ -5867,7 +5867,7 @@
     ],
     "weaknesses": [
       "magic",
-      "electric"
+      "lightning"
     ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
@@ -5895,7 +5895,7 @@
     "ai_pattern": "aggressive",
     "min_level": 10,
     "max_level": null,
-    "thac0": 8,
+    "thac0": 14,
     "frequency": 3,
     "attacks": [
       {
@@ -5940,9 +5940,9 @@
     "hp": "4d8+12",
     "speed": 1,
     "ai_pattern": "aggressive",
-    "min_level": 11,
+    "min_level": 14,
     "max_level": null,
-    "thac0": 6,
+    "thac0": 14,
     "frequency": 2,
     "attacks": [
       {
@@ -5995,7 +5995,7 @@
     "ai_pattern": "aggressive",
     "min_level": 14,
     "max_level": null,
-    "thac0": 4,
+    "thac0": 14,
     "frequency": 2,
     "attacks": [
       {
@@ -6048,7 +6048,7 @@
     "ai_pattern": "aggressive",
     "min_level": 7,
     "max_level": 13,
-    "thac0": 12,
+    "thac0": 16,
     "frequency": 4,
     "attacks": [
       {
@@ -6099,7 +6099,7 @@
     "ai_pattern": "aggressive",
     "min_level": 9,
     "max_level": null,
-    "thac0": 10,
+    "thac0": 16,
     "frequency": 3,
     "attacks": [
       {
@@ -6146,7 +6146,7 @@
     "ai_pattern": "cowardly",
     "min_level": 5,
     "max_level": 10,
-    "thac0": 13,
+    "thac0": 17,
     "frequency": 5,
     "attacks": [
       {
@@ -6191,9 +6191,9 @@
     "hp": "3d8+9",
     "speed": 2,
     "ai_pattern": "aggressive",
-    "min_level": 8,
+    "min_level": 12,
     "max_level": 14,
-    "thac0": 11,
+    "thac0": 14,
     "frequency": 4,
     "attacks": [
       {
@@ -6211,7 +6211,7 @@
       }
     ],
     "resistances": [
-      "electric"
+      "lightning"
     ],
     "weaknesses": [],
     "harvest_tier": 3,
@@ -6240,7 +6240,7 @@
     "ai_pattern": "cowardly",
     "min_level": 9,
     "max_level": 15,
-    "thac0": 10,
+    "thac0": 16,
     "frequency": 3,
     "attacks": [
       {
@@ -6363,7 +6363,7 @@
     ],
     "resistances": [
       "fire",
-      "electric",
+      "lightning",
       "poison"
     ],
     "weaknesses": [
@@ -6452,7 +6452,7 @@
     "ai_pattern": "aggressive",
     "min_level": 14,
     "max_level": null,
-    "thac0": 5,
+    "thac0": 14,
     "frequency": 3,
     "attacks": [
       {
@@ -6477,7 +6477,7 @@
     "resistances": [
       "fire",
       "poison",
-      "electric"
+      "lightning"
     ],
     "weaknesses": [
       "holy",
@@ -6509,7 +6509,7 @@
     "ai_pattern": "aggressive",
     "min_level": 14,
     "max_level": null,
-    "thac0": 4,
+    "thac0": 14,
     "frequency": 3,
     "attacks": [
       {
@@ -6778,7 +6778,7 @@
     "ai_pattern": "cowardly",
     "min_level": 6,
     "max_level": 12,
-    "thac0": 13,
+    "thac0": 16,
     "frequency": 5,
     "attacks": [
       {
@@ -6824,9 +6824,9 @@
     "hp": "3d8+9",
     "speed": 2,
     "ai_pattern": "cowardly",
-    "min_level": 8,
+    "min_level": 10,
     "max_level": 14,
-    "thac0": 11,
+    "thac0": 14,
     "frequency": 4,
     "attacks": [
       {
@@ -6882,7 +6882,7 @@
     "ai_pattern": "cowardly",
     "min_level": 9,
     "max_level": 15,
-    "thac0": 10,
+    "thac0": 16,
     "frequency": 3,
     "attacks": [
       {
@@ -6938,7 +6938,7 @@
     "ai_pattern": "aggressive",
     "min_level": 3,
     "max_level": 8,
-    "thac0": 16,
+    "thac0": 17,
     "frequency": 8,
     "attacks": [
       {
@@ -7034,9 +7034,9 @@
     "hp": "4d8+16",
     "speed": 1,
     "ai_pattern": "aggressive",
-    "min_level": 10,
+    "min_level": 12,
     "max_level": null,
-    "thac0": 9,
+    "thac0": 14,
     "frequency": 4,
     "attacks": [
       {
@@ -7088,9 +7088,9 @@
     "hp": "3d8+12",
     "speed": 1,
     "ai_pattern": "aggressive",
-    "min_level": 8,
-    "max_level": 14,
-    "thac0": 11,
+    "min_level": 14,
+    "max_level": 18,
+    "thac0": 14,
     "frequency": 5,
     "attacks": [
       {
@@ -7144,7 +7144,7 @@
     "ai_pattern": "aggressive",
     "min_level": 11,
     "max_level": null,
-    "thac0": 7,
+    "thac0": 14,
     "frequency": 4,
     "attacks": [
       {
@@ -7200,7 +7200,7 @@
     "ai_pattern": "aggressive",
     "min_level": 14,
     "max_level": null,
-    "thac0": 4,
+    "thac0": 14,
     "frequency": 3,
     "attacks": [
       {
@@ -7254,9 +7254,9 @@
     "hp": "4d8+16",
     "speed": 2,
     "ai_pattern": "aggressive",
-    "min_level": 12,
+    "min_level": 16,
     "max_level": null,
-    "thac0": 6,
+    "thac0": 12,
     "frequency": 3,
     "attacks": [
       {
@@ -7465,9 +7465,9 @@
     "hp": "5d10+20",
     "speed": 0,
     "ai_pattern": "aggressive",
-    "min_level": 11,
+    "min_level": 14,
     "max_level": null,
-    "thac0": 6,
+    "thac0": 14,
     "frequency": 3,
     "attacks": [
       {
@@ -7491,7 +7491,7 @@
       "physical"
     ],
     "weaknesses": [
-      "electric"
+      "lightning"
     ],
     "harvest_tier": 4,
     "harvest_threshold": 5,
@@ -7519,7 +7519,7 @@
     "ai_pattern": "aggressive",
     "min_level": 9,
     "max_level": 15,
-    "thac0": 9,
+    "thac0": 16,
     "frequency": 3,
     "attacks": [
       {
@@ -7538,7 +7538,7 @@
     ],
     "weaknesses": [
       "fire",
-      "electric"
+      "lightning"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
@@ -7566,7 +7566,7 @@
     "ai_pattern": "sessile",
     "min_level": 4,
     "max_level": 9,
-    "thac0": 15,
+    "thac0": 17,
     "frequency": 5,
     "attacks": [
       {
@@ -7608,7 +7608,7 @@
     "ai_pattern": "aggressive",
     "min_level": 5,
     "max_level": 11,
-    "thac0": 14,
+    "thac0": 17,
     "frequency": 6,
     "attacks": [
       {
@@ -7630,7 +7630,7 @@
       "cold"
     ],
     "weaknesses": [
-      "electric",
+      "lightning",
       "magic"
     ],
     "harvest_tier": 2,
@@ -7657,9 +7657,9 @@
     "hp": "5d10+20",
     "speed": 1,
     "ai_pattern": "sessile",
-    "min_level": 10,
+    "min_level": 12,
     "max_level": null,
-    "thac0": 8,
+    "thac0": 14,
     "frequency": 3,
     "attacks": [
       {
@@ -7674,7 +7674,7 @@
       "magic"
     ],
     "weaknesses": [
-      "electric"
+      "lightning"
     ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
@@ -7700,7 +7700,7 @@
     "hp": "1d4+1",
     "speed": 2,
     "ai_pattern": "cowardly",
-    "min_level": 3,
+    "min_level": 4,
     "max_level": 7,
     "thac0": 18,
     "frequency": 7,
@@ -7744,7 +7744,7 @@
     "ai_pattern": "aggressive",
     "min_level": 7,
     "max_level": 13,
-    "thac0": 12,
+    "thac0": 16,
     "frequency": 4,
     "attacks": [
       {
@@ -7763,7 +7763,7 @@
       "cold"
     ],
     "weaknesses": [
-      "electric",
+      "lightning",
       "magic"
     ],
     "harvest_tier": 3,
@@ -7790,9 +7790,9 @@
     "hp": "4d10+8",
     "speed": 2,
     "ai_pattern": "aggressive",
-    "min_level": 10,
+    "min_level": 12,
     "max_level": null,
-    "thac0": 10,
+    "thac0": 14,
     "frequency": 4,
     "attacks": [
       {
@@ -7841,7 +7841,7 @@
     "ai_pattern": "aggressive",
     "min_level": 15,
     "max_level": 13,
-    "thac0": 11,
+    "thac0": 14,
     "frequency": 5,
     "attacks": [
       {
@@ -7888,7 +7888,7 @@
     "ai_pattern": "aggressive",
     "min_level": 9,
     "max_level": null,
-    "thac0": 10,
+    "thac0": 16,
     "frequency": 4,
     "attacks": [
       {
@@ -7900,7 +7900,7 @@
     "resistances": [
       "cold",
       "physical",
-      "electric"
+      "lightning"
     ],
     "weaknesses": [
       "fire"
@@ -7931,7 +7931,7 @@
     "ai_pattern": "sessile",
     "min_level": 3,
     "max_level": 8,
-    "thac0": 16,
+    "thac0": 17,
     "frequency": 7,
     "attacks": [
       {
@@ -7974,7 +7974,7 @@
     "ai_pattern": "aggressive",
     "min_level": 6,
     "max_level": 12,
-    "thac0": 13,
+    "thac0": 16,
     "frequency": 6,
     "attacks": [
       {
@@ -7987,7 +7987,7 @@
       }
     ],
     "resistances": [
-      "electric",
+      "lightning",
       "physical"
     ],
     "weaknesses": [
@@ -8018,14 +8018,14 @@
     "hp": "1d6+1",
     "speed": 0,
     "ai_pattern": "sessile",
-    "min_level": 3,
+    "min_level": 5,
     "max_level": 8,
-    "thac0": 17,
-    "frequency": 8,
+    "thac0": 18,
+    "frequency": 6,
     "attacks": [
       {
         "name": "drops",
-        "damage": "2d6",
+        "damage": "1d6",
         "type": "physical"
       }
     ],
@@ -8055,14 +8055,14 @@
     "hp": "4d10+12",
     "speed": 0,
     "ai_pattern": "sessile",
-    "min_level": 8,
-    "max_level": 14,
-    "thac0": 11,
+    "min_level": 14,
+    "max_level": 18,
+    "thac0": 14,
     "frequency": 4,
     "attacks": [
       {
         "name": "smothers",
-        "damage": "2d8+4",
+        "damage": "2d6+2",
         "type": "physical",
         "effect": "paralyzed",
         "effect_chance": 0.4,
@@ -8099,7 +8099,7 @@
     "ai_pattern": "sessile",
     "min_level": 9,
     "max_level": 15,
-    "thac0": 10,
+    "thac0": 16,
     "frequency": 4,
     "attacks": [
       {
@@ -8140,9 +8140,9 @@
     "hp": "5d10+20",
     "speed": 0,
     "ai_pattern": "sessile",
-    "min_level": 10,
+    "min_level": 13,
     "max_level": null,
-    "thac0": 8,
+    "thac0": 14,
     "frequency": 3,
     "attacks": [
       {
@@ -8190,18 +8190,18 @@
     "hp": "2d8+4",
     "speed": 2,
     "ai_pattern": "aggressive",
-    "min_level": 3,
+    "min_level": 4,
     "max_level": 8,
-    "thac0": 16,
-    "frequency": 9,
+    "thac0": 17,
+    "frequency": 6,
     "attacks": [
       {
         "name": "tentacles",
         "damage": "1d2",
         "type": "physical",
         "effect": "paralyzed",
-        "effect_chance": 0.5,
-        "effect_duration": 8
+        "effect_chance": 0.3,
+        "effect_duration": 5
       },
       {
         "name": "bite",
@@ -8281,7 +8281,7 @@
     "ai_pattern": "sessile",
     "min_level": 7,
     "max_level": 13,
-    "thac0": 12,
+    "thac0": 16,
     "frequency": 5,
     "attacks": [
       {
@@ -8326,9 +8326,9 @@
     "hp": "3d8+15",
     "speed": 1,
     "ai_pattern": "cowardly",
-    "min_level": 10,
+    "min_level": 12,
     "max_level": 14,
-    "thac0": 11,
+    "thac0": 14,
     "frequency": 4,
     "attacks": [
       {
@@ -8348,7 +8348,7 @@
       "physical"
     ],
     "weaknesses": [
-      "electric",
+      "lightning",
       "magic"
     ],
     "harvest_tier": 3,
@@ -8375,9 +8375,9 @@
     "hp": "4d8+12",
     "speed": 1,
     "ai_pattern": "aggressive",
-    "min_level": 6,
+    "min_level": 8,
     "max_level": 11,
-    "thac0": 13,
+    "thac0": 16,
     "frequency": 5,
     "attacks": [
       {
@@ -8419,17 +8419,17 @@
     "ai_pattern": "aggressive",
     "min_level": 3,
     "max_level": 7,
-    "thac0": 15,
-    "frequency": 9,
+    "thac0": 17,
+    "frequency": 7,
     "attacks": [
       {
         "name": "club",
-        "damage": "1d6+2",
+        "damage": "1d4+1",
         "type": "physical"
       },
       {
         "name": "bite",
-        "damage": "1d6+1",
+        "damage": "1d4",
         "type": "physical"
       }
     ],
@@ -8463,7 +8463,7 @@
     "ai_pattern": "cowardly",
     "min_level": 5,
     "max_level": 10,
-    "thac0": 14,
+    "thac0": 17,
     "frequency": 5,
     "attacks": [
       {
@@ -8512,26 +8512,18 @@
     "ai_pattern": "aggressive",
     "min_level": 2,
     "max_level": 7,
-    "thac0": 16,
+    "thac0": 17,
     "frequency": 10,
     "attacks": [
       {
-        "name": "club",
-        "damage": "1d6+1",
-        "type": "physical"
-      },
-      {
         "name": "claw",
-        "damage": "1d4",
+        "damage": "1d4+1",
         "type": "physical"
       },
       {
-        "name": "stench aura",
+        "name": "bite",
         "damage": "1d4",
-        "type": "poison",
-        "effect": "poisoned",
-        "effect_chance": 0.35,
-        "effect_duration": 4
+        "type": "physical"
       }
     ],
     "resistances": [],
@@ -8564,7 +8556,7 @@
     "ai_pattern": "cowardly",
     "min_level": 4,
     "max_level": 9,
-    "thac0": 16,
+    "thac0": 17,
     "frequency": 7,
     "attacks": [
       {
@@ -8611,7 +8603,7 @@
     "ai_pattern": "aggressive",
     "min_level": 2,
     "max_level": 6,
-    "thac0": 16,
+    "thac0": 17,
     "frequency": 9,
     "attacks": [
       {
@@ -8657,7 +8649,7 @@
     "ai_pattern": "aggressive",
     "min_level": 5,
     "max_level": 11,
-    "thac0": 14,
+    "thac0": 17,
     "frequency": 7,
     "attacks": [
       {
@@ -8678,7 +8670,7 @@
       "poison"
     ],
     "weaknesses": [
-      "electric"
+      "lightning"
     ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
@@ -8729,7 +8721,7 @@
       }
     ],
     "resistances": [
-      "electric"
+      "lightning"
     ],
     "weaknesses": [
       "cold"
@@ -8760,7 +8752,7 @@
     "ai_pattern": "aggressive",
     "min_level": 15,
     "max_level": null,
-    "thac0": 8,
+    "thac0": 14,
     "frequency": 3,
     "attacks": [
       {
@@ -8809,7 +8801,7 @@
     "ai_pattern": "aggressive",
     "min_level": 5,
     "max_level": 10,
-    "thac0": 14,
+    "thac0": 17,
     "frequency": 6,
     "attacks": [
       {
@@ -8849,7 +8841,7 @@
     "ai_pattern": "cowardly",
     "min_level": 4,
     "max_level": 9,
-    "thac0": 15,
+    "thac0": 17,
     "frequency": 7,
     "attacks": [
       {
@@ -8896,7 +8888,7 @@
     "ai_pattern": "cowardly",
     "min_level": 6,
     "max_level": 12,
-    "thac0": 13,
+    "thac0": 16,
     "frequency": 6,
     "attacks": [
       {
@@ -8953,17 +8945,17 @@
     "ai_pattern": "cowardly",
     "min_level": 5,
     "max_level": 10,
-    "thac0": 13,
+    "thac0": 17,
     "frequency": 6,
     "attacks": [
       {
         "name": "tentacles",
-        "damage": "1d6+3",
+        "damage": "1d6+1",
         "type": "physical"
       },
       {
         "name": "beak",
-        "damage": "2d4+3",
+        "damage": "1d4+1",
         "type": "physical"
       }
     ],
@@ -8997,9 +8989,9 @@
     "hp": "3d10+9",
     "speed": 2,
     "ai_pattern": "aggressive",
-    "min_level": 10,
+    "min_level": 12,
     "max_level": 14,
-    "thac0": 11,
+    "thac0": 14,
     "frequency": 5,
     "attacks": [
       {
@@ -9015,7 +9007,7 @@
     ],
     "resistances": [],
     "weaknesses": [
-      "electric"
+      "lightning"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
@@ -9043,7 +9035,7 @@
     "ai_pattern": "cowardly",
     "min_level": 7,
     "max_level": 13,
-    "thac0": 12,
+    "thac0": 16,
     "frequency": 5,
     "attacks": [
       {
@@ -9086,7 +9078,7 @@
     "ai_pattern": "aggressive",
     "min_level": 14,
     "max_level": null,
-    "thac0": 5,
+    "thac0": 14,
     "frequency": 3,
     "attacks": [
       {
@@ -9233,14 +9225,14 @@
     "hp": "1d8",
     "speed": 1,
     "ai_pattern": "cowardly",
-    "min_level": 3,
+    "min_level": 4,
     "max_level": 6,
-    "thac0": 17,
+    "thac0": 18,
     "frequency": 7,
     "attacks": [
       {
         "name": "cast",
-        "damage": "2d6",
+        "damage": "1d6",
         "type": "magic",
         "effect": null,
         "effect_chance": 0.0,
@@ -9303,10 +9295,10 @@
       },
       {
         "name": "immolate",
-        "damage": "1d8",
+        "damage": "1d4",
         "type": "fire",
         "effect": "burning",
-        "effect_chance": 0.3,
+        "effect_chance": 0.25,
         "effect_duration": 3
       }
     ],
@@ -9399,24 +9391,18 @@
     "ai_pattern": "aggressive",
     "min_level": 4,
     "max_level": 8,
-    "thac0": 15,
+    "thac0": 17,
     "frequency": 6,
     "attacks": [
       {
-        "name": "pummel",
-        "damage": "2d8",
-        "type": "physical",
-        "effect": "slowed",
-        "effect_chance": 0.35,
-        "effect_duration": 3
+        "name": "slam",
+        "damage": "1d8+1",
+        "type": "physical"
       },
       {
         "name": "crush",
-        "damage": "1d10",
-        "type": "physical",
-        "effect": null,
-        "effect_chance": 0.0,
-        "effect_duration": 0
+        "damage": "1d6",
+        "type": "physical"
       }
     ],
     "resistances": [
@@ -9453,7 +9439,7 @@
     "ai_pattern": "aggressive",
     "min_level": 3,
     "max_level": 6,
-    "thac0": 16,
+    "thac0": 17,
     "frequency": 8,
     "attacks": [
       {
@@ -9553,7 +9539,7 @@
     "ai_pattern": "aggressive",
     "min_level": 5,
     "max_level": 9,
-    "thac0": 14,
+    "thac0": 17,
     "frequency": 5,
     "attacks": [
       {
@@ -9607,7 +9593,7 @@
     "ai_pattern": "aggressive",
     "min_level": 2,
     "max_level": 5,
-    "thac0": 16,
+    "thac0": 17,
     "frequency": 7,
     "attacks": [
       {
@@ -9653,7 +9639,7 @@
     "ai_pattern": "aggressive",
     "min_level": 3,
     "max_level": 7,
-    "thac0": 16,
+    "thac0": 17,
     "frequency": 6,
     "attacks": [
       {
@@ -9708,7 +9694,7 @@
     "ai_pattern": "aggressive",
     "min_level": 10,
     "max_level": 14,
-    "thac0": 8,
+    "thac0": 14,
     "frequency": 3,
     "attacks": [
       {
@@ -9762,7 +9748,7 @@
     "ai_pattern": "aggressive",
     "min_level": 6,
     "max_level": 10,
-    "thac0": 12,
+    "thac0": 16,
     "frequency": 4,
     "attacks": [
       {
@@ -9863,7 +9849,7 @@
     "ai_pattern": "aggressive",
     "min_level": 5,
     "max_level": 9,
-    "thac0": 14,
+    "thac0": 17,
     "frequency": 5,
     "attacks": [
       {
@@ -9918,7 +9904,7 @@
     "ai_pattern": "cowardly",
     "min_level": 4,
     "max_level": 8,
-    "thac0": 15,
+    "thac0": 17,
     "frequency": 6,
     "attacks": [
       {
@@ -9965,7 +9951,7 @@
     "ai_pattern": "cowardly",
     "min_level": 5,
     "max_level": 10,
-    "thac0": 13,
+    "thac0": 17,
     "frequency": 4,
     "attacks": [
       {
@@ -9980,7 +9966,7 @@
     "resistances": [
       "cold",
       "poison",
-      "electric",
+      "lightning",
       "physical"
     ],
     "weaknesses": [
@@ -10012,7 +9998,7 @@
     "ai_pattern": "aggressive",
     "min_level": 7,
     "max_level": 11,
-    "thac0": 11,
+    "thac0": 16,
     "frequency": 4,
     "attacks": [
       {
@@ -10068,7 +10054,7 @@
     "ai_pattern": "sessile",
     "min_level": 4,
     "max_level": 7,
-    "thac0": 15,
+    "thac0": 17,
     "frequency": 5,
     "attacks": [
       {
@@ -10114,7 +10100,7 @@
     "ai_pattern": "aggressive",
     "min_level": 4,
     "max_level": 8,
-    "thac0": 15,
+    "thac0": 17,
     "frequency": 6,
     "attacks": [
       {
@@ -10168,7 +10154,7 @@
     "ai_pattern": "aggressive",
     "min_level": 10,
     "max_level": 15,
-    "thac0": 7,
+    "thac0": 14,
     "frequency": 3,
     "attacks": [
       {
@@ -10221,9 +10207,9 @@
     "hp": "3d10",
     "speed": 2,
     "ai_pattern": "aggressive",
-    "min_level": 8,
+    "min_level": 12,
     "max_level": 13,
-    "thac0": 9,
+    "thac0": 14,
     "frequency": 3,
     "attacks": [
       {
@@ -10277,7 +10263,7 @@
     "ai_pattern": "aggressive",
     "min_level": 6,
     "max_level": 11,
-    "thac0": 11,
+    "thac0": 16,
     "frequency": 4,
     "attacks": [
       {
@@ -10304,7 +10290,7 @@
     "weaknesses": [
       "holy",
       "fire",
-      "electric"
+      "lightning"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
@@ -10332,7 +10318,7 @@
     "ai_pattern": "aggressive",
     "min_level": 7,
     "max_level": 12,
-    "thac0": 10,
+    "thac0": 16,
     "frequency": 3,
     "attacks": [
       {
@@ -10411,7 +10397,7 @@
       "poison",
       "magic",
       "fire",
-      "electric",
+      "lightning",
       "physical"
     ],
     "weaknesses": [
@@ -10443,7 +10429,7 @@
     "ai_pattern": "aggressive",
     "min_level": 7,
     "max_level": 12,
-    "thac0": 11,
+    "thac0": 16,
     "frequency": 4,
     "attacks": [
       {
@@ -10495,9 +10481,9 @@
     "hp": "3d8",
     "speed": 1,
     "ai_pattern": "cowardly",
-    "min_level": 10,
+    "min_level": 13,
     "max_level": 13,
-    "thac0": 10,
+    "thac0": 14,
     "frequency": 3,
     "attacks": [
       {
@@ -10552,7 +10538,7 @@
     "ai_pattern": "cowardly",
     "min_level": 7,
     "max_level": 12,
-    "thac0": 11,
+    "thac0": 16,
     "frequency": 3,
     "attacks": [
       {
@@ -10606,7 +10592,7 @@
     "ai_pattern": "cowardly",
     "min_level": 15,
     "max_level": 17,
-    "thac0": 5,
+    "thac0": 14,
     "frequency": 2,
     "attacks": [
       {
@@ -10660,7 +10646,7 @@
     "ai_pattern": "cowardly",
     "min_level": 10,
     "max_level": 15,
-    "thac0": 7,
+    "thac0": 14,
     "frequency": 2,
     "attacks": [
       {
@@ -10713,9 +10699,9 @@
     "hp": "4d10",
     "speed": 1,
     "ai_pattern": "aggressive",
-    "min_level": 10,
+    "min_level": 13,
     "max_level": 15,
-    "thac0": 7,
+    "thac0": 14,
     "frequency": 3,
     "attacks": [
       {
@@ -10769,7 +10755,7 @@
     "ai_pattern": "sessile",
     "min_level": 6,
     "max_level": 10,
-    "thac0": 12,
+    "thac0": 16,
     "frequency": 4,
     "attacks": [
       {
@@ -10823,7 +10809,7 @@
     "ai_pattern": "sessile",
     "min_level": 4,
     "max_level": 8,
-    "thac0": 14,
+    "thac0": 17,
     "frequency": 5,
     "attacks": [
       {
@@ -10869,7 +10855,7 @@
     "ai_pattern": "sessile",
     "min_level": 7,
     "max_level": 12,
-    "thac0": 11,
+    "thac0": 16,
     "frequency": 4,
     "attacks": [
       {
@@ -10923,7 +10909,7 @@
     "ai_pattern": "sessile",
     "min_level": 7,
     "max_level": 11,
-    "thac0": 10,
+    "thac0": 16,
     "frequency": 4,
     "attacks": [
       {
@@ -10978,7 +10964,7 @@
     "ai_pattern": "sessile",
     "min_level": 10,
     "max_level": 14,
-    "thac0": 8,
+    "thac0": 14,
     "frequency": 3,
     "attacks": [
       {
@@ -11033,7 +11019,7 @@
     "ai_pattern": "aggressive",
     "min_level": 14,
     "max_level": 17,
-    "thac0": 5,
+    "thac0": 14,
     "frequency": 2,
     "attacks": [
       {
@@ -11087,9 +11073,9 @@
     "hp": "3d8+3",
     "speed": 2,
     "ai_pattern": "aggressive",
-    "min_level": 8,
+    "min_level": 12,
     "max_level": 13,
-    "thac0": 9,
+    "thac0": 14,
     "frequency": 3,
     "attacks": [
       {
@@ -11143,7 +11129,7 @@
     "ai_pattern": "aggressive",
     "min_level": 5,
     "max_level": 9,
-    "thac0": 13,
+    "thac0": 17,
     "frequency": 5,
     "attacks": [
       {
@@ -11189,7 +11175,7 @@
     "ai_pattern": "aggressive",
     "min_level": 15,
     "max_level": 17,
-    "thac0": 5,
+    "thac0": 14,
     "frequency": 2,
     "attacks": [
       {
@@ -11215,7 +11201,7 @@
       "magic",
       "physical",
       "fire",
-      "electric"
+      "lightning"
     ],
     "weaknesses": [
       "holy"
@@ -11246,7 +11232,7 @@
     "ai_pattern": "aggressive",
     "min_level": 10,
     "max_level": 15,
-    "thac0": 8,
+    "thac0": 14,
     "frequency": 3,
     "attacks": [
       {
@@ -11300,9 +11286,9 @@
     "hp": "4d10",
     "speed": 2,
     "ai_pattern": "aggressive",
-    "min_level": 11,
+    "min_level": 13,
     "max_level": 16,
-    "thac0": 6,
+    "thac0": 14,
     "frequency": 2,
     "attacks": [
       {
@@ -11358,7 +11344,7 @@
     "ai_pattern": "aggressive",
     "min_level": 4,
     "max_level": 8,
-    "thac0": 15,
+    "thac0": 17,
     "frequency": 6,
     "attacks": [
       {
@@ -11412,7 +11398,7 @@
     "ai_pattern": "aggressive",
     "min_level": 6,
     "max_level": 10,
-    "thac0": 12,
+    "thac0": 16,
     "frequency": 5,
     "attacks": [
       {
@@ -11466,7 +11452,7 @@
     "ai_pattern": "aggressive",
     "min_level": 6,
     "max_level": 11,
-    "thac0": 11,
+    "thac0": 16,
     "frequency": 4,
     "attacks": [
       {
@@ -11518,9 +11504,9 @@
     "hp": "4d10",
     "speed": 1,
     "ai_pattern": "aggressive",
-    "min_level": 10,
+    "min_level": 13,
     "max_level": 15,
-    "thac0": 7,
+    "thac0": 14,
     "frequency": 3,
     "attacks": [
       {
@@ -11575,7 +11561,7 @@
     "ai_pattern": "cowardly",
     "min_level": 4,
     "max_level": 8,
-    "thac0": 15,
+    "thac0": 17,
     "frequency": 6,
     "attacks": [
       {
@@ -11629,7 +11615,7 @@
     "ai_pattern": "aggressive",
     "min_level": 15,
     "max_level": 18,
-    "thac0": 4,
+    "thac0": 14,
     "frequency": 2,
     "attacks": [
       {
@@ -11721,7 +11707,7 @@
     ],
     "weaknesses": [
       "holy",
-      "electric"
+      "lightning"
     ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
@@ -11782,7 +11768,7 @@
       "poison",
       "magic",
       "fire",
-      "electric",
+      "lightning",
       "shadow",
       "physical"
     ],
@@ -11815,7 +11801,7 @@
     "ai_pattern": "cowardly",
     "min_level": 5,
     "max_level": 9,
-    "thac0": 13,
+    "thac0": 17,
     "frequency": 4,
     "attacks": [
       {
@@ -11862,7 +11848,7 @@
     "ai_pattern": "aggressive",
     "min_level": 9,
     "max_level": 14,
-    "thac0": 9,
+    "thac0": 16,
     "frequency": 3,
     "attacks": [
       {
@@ -11916,9 +11902,9 @@
     "hp": "3d10",
     "speed": 2,
     "ai_pattern": "aggressive",
-    "min_level": 10,
+    "min_level": 12,
     "max_level": 15,
-    "thac0": 8,
+    "thac0": 14,
     "frequency": 2,
     "attacks": [
       {
@@ -12095,7 +12081,7 @@
     "ai_pattern": "aggressive",
     "min_level": 4,
     "max_level": 8,
-    "thac0": 16,
+    "thac0": 17,
     "frequency": 6,
     "attacks": [
       {
@@ -12113,7 +12099,7 @@
     ],
     "weaknesses": [
       "fire",
-      "electric"
+      "lightning"
     ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
@@ -12276,7 +12262,7 @@
     "ai_pattern": "aggressive",
     "min_level": 7,
     "max_level": 12,
-    "thac0": 13,
+    "thac0": 16,
     "frequency": 4,
     "attacks": [
       {
@@ -12301,7 +12287,7 @@
       "magic"
     ],
     "weaknesses": [
-      "electric"
+      "lightning"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
@@ -12329,7 +12315,7 @@
     "ai_pattern": "aggressive",
     "min_level": 4,
     "max_level": 9,
-    "thac0": 16,
+    "thac0": 17,
     "frequency": 6,
     "attacks": [
       {
@@ -12374,7 +12360,7 @@
     "ai_pattern": "aggressive",
     "min_level": 4,
     "max_level": 9,
-    "thac0": 15,
+    "thac0": 17,
     "frequency": 6,
     "attacks": [
       {
@@ -12417,7 +12403,7 @@
     "hp": "1d8",
     "speed": 2,
     "ai_pattern": "aggressive",
-    "min_level": 3,
+    "min_level": 5,
     "max_level": 7,
     "thac0": 17,
     "frequency": 7,
@@ -12472,7 +12458,7 @@
       "physical"
     ],
     "weaknesses": [
-      "electric"
+      "lightning"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 3,
@@ -12500,7 +12486,7 @@
     "ai_pattern": "aggressive",
     "min_level": 6,
     "max_level": 11,
-    "thac0": 14,
+    "thac0": 16,
     "frequency": 5,
     "attacks": [
       {
@@ -12545,7 +12531,7 @@
     "ai_pattern": "aggressive",
     "min_level": 11,
     "max_level": 16,
-    "thac0": 8,
+    "thac0": 14,
     "frequency": 3,
     "attacks": [
       {
@@ -12597,7 +12583,7 @@
     "ai_pattern": "aggressive",
     "min_level": 5,
     "max_level": 10,
-    "thac0": 15,
+    "thac0": 17,
     "frequency": 6,
     "attacks": [
       {
@@ -12687,14 +12673,14 @@
     "hp": "3d8+3",
     "speed": 1,
     "ai_pattern": "aggressive",
-    "min_level": 8,
+    "min_level": 12,
     "max_level": 14,
-    "thac0": 12,
+    "thac0": 14,
     "frequency": 4,
     "attacks": [
       {
         "name": "crushing bite",
-        "damage": "3d6",
+        "damage": "2d6",
         "type": "physical"
       },
       {
@@ -12712,7 +12698,7 @@
     ],
     "weaknesses": [
       "holy",
-      "electric"
+      "lightning"
     ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
@@ -12784,7 +12770,7 @@
     "ai_pattern": "aggressive",
     "min_level": 6,
     "max_level": 11,
-    "thac0": 14,
+    "thac0": 16,
     "frequency": 5,
     "attacks": [
       {
@@ -12831,7 +12817,7 @@
     "ai_pattern": "aggressive",
     "min_level": 5,
     "max_level": 10,
-    "thac0": 15,
+    "thac0": 17,
     "frequency": 6,
     "attacks": [
       {
@@ -12878,7 +12864,7 @@
     "ai_pattern": "aggressive",
     "min_level": 7,
     "max_level": 12,
-    "thac0": 13,
+    "thac0": 16,
     "frequency": 4,
     "attacks": [
       {
@@ -12968,7 +12954,7 @@
     "hp": "2d6",
     "speed": 0,
     "ai_pattern": "aggressive",
-    "min_level": 3,
+    "min_level": 5,
     "max_level": 7,
     "thac0": 17,
     "frequency": 7,
@@ -13015,7 +13001,7 @@
     "ai_pattern": "aggressive",
     "min_level": 4,
     "max_level": 9,
-    "thac0": 16,
+    "thac0": 17,
     "frequency": 7,
     "attacks": [
       {
@@ -13099,7 +13085,7 @@
     "ai_pattern": "aggressive",
     "min_level": 7,
     "max_level": 13,
-    "thac0": 13,
+    "thac0": 16,
     "frequency": 4,
     "attacks": [
       {
@@ -13144,7 +13130,7 @@
     "ai_pattern": "aggressive",
     "min_level": 9,
     "max_level": 15,
-    "thac0": 11,
+    "thac0": 16,
     "frequency": 3,
     "attacks": [
       {
@@ -13189,7 +13175,7 @@
     "ai_pattern": "aggressive",
     "min_level": 5,
     "max_level": 9,
-    "thac0": 14,
+    "thac0": 17,
     "frequency": 5,
     "attacks": [
       {
@@ -13232,19 +13218,19 @@
     "hp": "4d8",
     "speed": 2,
     "ai_pattern": "aggressive",
-    "min_level": 8,
-    "max_level": 13,
-    "thac0": 12,
+    "min_level": 14,
+    "max_level": 15,
+    "thac0": 14,
     "frequency": 4,
     "attacks": [
       {
         "name": "claw",
-        "damage": "2d6",
+        "damage": "1d6+1",
         "type": "physical"
       },
       {
         "name": "bite",
-        "damage": "2d6+2",
+        "damage": "1d8+1",
         "type": "physical",
         "effect": "poisoned",
         "effect_chance": 0.25,
@@ -13284,7 +13270,7 @@
     "ai_pattern": "aggressive",
     "min_level": 15,
     "max_level": 17,
-    "thac0": 8,
+    "thac0": 14,
     "frequency": 2,
     "attacks": [
       {
@@ -13343,7 +13329,7 @@
     "ai_pattern": "aggressive",
     "min_level": 10,
     "max_level": 15,
-    "thac0": 10,
+    "thac0": 14,
     "frequency": 3,
     "attacks": [
       {
@@ -13392,7 +13378,7 @@
     "ai_pattern": "cowardly",
     "min_level": 5,
     "max_level": 10,
-    "thac0": 15,
+    "thac0": 17,
     "frequency": 6,
     "attacks": [
       {
@@ -13441,7 +13427,7 @@
     "ai_pattern": "aggressive",
     "min_level": 15,
     "max_level": 18,
-    "thac0": 7,
+    "thac0": 14,
     "frequency": 2,
     "attacks": [
       {
@@ -13499,7 +13485,7 @@
     "ai_pattern": "aggressive",
     "min_level": 6,
     "max_level": 11,
-    "thac0": 13,
+    "thac0": 16,
     "frequency": 5,
     "attacks": [
       {
@@ -13548,7 +13534,7 @@
     "ai_pattern": "aggressive",
     "min_level": 4,
     "max_level": 9,
-    "thac0": 16,
+    "thac0": 17,
     "frequency": 6,
     "attacks": [
       {
@@ -13587,7 +13573,7 @@
     "ai_pattern": "aggressive",
     "min_level": 6,
     "max_level": 11,
-    "thac0": 14,
+    "thac0": 16,
     "frequency": 5,
     "attacks": [
       {
@@ -13640,7 +13626,7 @@
     "ai_pattern": "aggressive",
     "min_level": 4,
     "max_level": 9,
-    "thac0": 16,
+    "thac0": 17,
     "frequency": 5,
     "attacks": [
       {
@@ -13655,7 +13641,7 @@
       }
     ],
     "resistances": [
-      "electric"
+      "lightning"
     ],
     "weaknesses": [],
     "harvest_tier": 2,
@@ -13684,7 +13670,7 @@
     "ai_pattern": "aggressive",
     "min_level": 7,
     "max_level": 12,
-    "thac0": 13,
+    "thac0": 16,
     "frequency": 4,
     "attacks": [
       {
@@ -13756,7 +13742,7 @@
     ],
     "resistances": [
       "physical",
-      "electric"
+      "lightning"
     ],
     "weaknesses": [],
     "harvest_tier": 5,
@@ -13828,7 +13814,7 @@
     "ai_pattern": "aggressive",
     "min_level": 6,
     "max_level": 11,
-    "thac0": 14,
+    "thac0": 16,
     "frequency": 5,
     "attacks": [
       {
@@ -13846,7 +13832,7 @@
       }
     ],
     "resistances": [
-      "electric"
+      "lightning"
     ],
     "weaknesses": [],
     "harvest_tier": 3,
@@ -13873,9 +13859,9 @@
     "hp": "4d10",
     "speed": 3,
     "ai_pattern": "aggressive",
-    "min_level": 10,
+    "min_level": 12,
     "max_level": 16,
-    "thac0": 10,
+    "thac0": 14,
     "frequency": 3,
     "attacks": [
       {
@@ -13893,7 +13879,7 @@
       }
     ],
     "resistances": [
-      "electric"
+      "lightning"
     ],
     "weaknesses": [
       "cold"
@@ -13966,7 +13952,7 @@
     "ai_pattern": "aggressive",
     "min_level": 7,
     "max_level": 12,
-    "thac0": 12,
+    "thac0": 16,
     "frequency": 4,
     "attacks": [
       {
@@ -14012,7 +13998,7 @@
     "ai_pattern": "cowardly",
     "min_level": 4,
     "max_level": 9,
-    "thac0": 16,
+    "thac0": 17,
     "frequency": 6,
     "attacks": [
       {
@@ -14026,7 +14012,7 @@
     ],
     "resistances": [
       "magic",
-      "electric",
+      "lightning",
       "physical"
     ],
     "weaknesses": [],
@@ -14054,19 +14040,19 @@
     "hp": "4d8+4",
     "speed": 1,
     "ai_pattern": "aggressive",
-    "min_level": 8,
-    "max_level": 13,
-    "thac0": 12,
+    "min_level": 13,
+    "max_level": 15,
+    "thac0": 14,
     "frequency": 4,
     "attacks": [
       {
         "name": "claw",
-        "damage": "2d6",
+        "damage": "1d6+1",
         "type": "physical"
       },
       {
         "name": "weakening curse",
-        "damage": "1d6",
+        "damage": "1d4",
         "type": "magic",
         "effect": "slowed",
         "effect_chance": 0.5,
@@ -14106,7 +14092,7 @@
     "ai_pattern": "aggressive",
     "min_level": 7,
     "max_level": 12,
-    "thac0": 13,
+    "thac0": 16,
     "frequency": 4,
     "attacks": [
       {
@@ -14154,9 +14140,9 @@
     "hp": "5d10+5",
     "speed": 1,
     "ai_pattern": "aggressive",
-    "min_level": 10,
+    "min_level": 13,
     "max_level": 15,
-    "thac0": 10,
+    "thac0": 14,
     "frequency": 3,
     "attacks": [
       {
@@ -14215,7 +14201,7 @@
     "ai_pattern": "aggressive",
     "min_level": 14,
     "max_level": null,
-    "thac0": 5,
+    "thac0": 14,
     "frequency": 2,
     "attacks": [
       {
@@ -14269,7 +14255,7 @@
     "ai_pattern": "cowardly",
     "min_level": 5,
     "max_level": 10,
-    "thac0": 15,
+    "thac0": 17,
     "frequency": 6,
     "attacks": [
       {
@@ -14316,7 +14302,7 @@
     "ai_pattern": "cowardly",
     "min_level": 5,
     "max_level": 10,
-    "thac0": 15,
+    "thac0": 17,
     "frequency": 5,
     "attacks": [
       {
@@ -14367,7 +14353,7 @@
     "hp": "1d6",
     "speed": 3,
     "ai_pattern": "cowardly",
-    "min_level": 3,
+    "min_level": 5,
     "max_level": 7,
     "thac0": 17,
     "frequency": 6,
@@ -14416,7 +14402,7 @@
     "ai_pattern": "aggressive",
     "min_level": 4,
     "max_level": 9,
-    "thac0": 16,
+    "thac0": 17,
     "frequency": 6,
     "attacks": [
       {
@@ -14510,9 +14496,9 @@
     "hp": "4d10",
     "speed": 1,
     "ai_pattern": "aggressive",
-    "min_level": 8,
+    "min_level": 10,
     "max_level": 14,
-    "thac0": 12,
+    "thac0": 14,
     "frequency": 4,
     "attacks": [
       {
@@ -14538,7 +14524,7 @@
     ],
     "weaknesses": [
       "fire",
-      "electric"
+      "lightning"
     ],
     "harvest_tier": 4,
     "harvest_threshold": 5,
@@ -14566,7 +14552,7 @@
     "ai_pattern": "aggressive",
     "min_level": 7,
     "max_level": 13,
-    "thac0": 13,
+    "thac0": 16,
     "frequency": 4,
     "attacks": [
       {
@@ -14584,7 +14570,7 @@
       }
     ],
     "resistances": [
-      "electric",
+      "lightning",
       "physical"
     ],
     "weaknesses": [
@@ -14617,7 +14603,7 @@
     "ai_pattern": "aggressive",
     "min_level": 9,
     "max_level": 15,
-    "thac0": 11,
+    "thac0": 16,
     "frequency": 3,
     "attacks": [
       {
@@ -14668,9 +14654,9 @@
     "hp": "5d10+5",
     "speed": 0,
     "ai_pattern": "aggressive",
-    "min_level": 11,
+    "min_level": 13,
     "max_level": 17,
-    "thac0": 9,
+    "thac0": 14,
     "frequency": 2,
     "attacks": [
       {
@@ -14778,9 +14764,9 @@
     "hp": "5d10",
     "speed": 0,
     "ai_pattern": "aggressive",
-    "min_level": 10,
+    "min_level": 12,
     "max_level": 15,
-    "thac0": 11,
+    "thac0": 14,
     "frequency": 3,
     "attacks": [
       {
@@ -14801,7 +14787,7 @@
       }
     ],
     "resistances": [
-      "electric",
+      "lightning",
       "physical",
       "cold"
     ],
@@ -14834,7 +14820,7 @@
     "ai_pattern": "sessile",
     "min_level": 5,
     "max_level": 10,
-    "thac0": 15,
+    "thac0": 17,
     "frequency": 6,
     "attacks": [
       {
@@ -14970,9 +14956,9 @@
     "hp": "5d10+5",
     "speed": 1,
     "ai_pattern": "aggressive",
-    "min_level": 10,
+    "min_level": 14,
     "max_level": 16,
-    "thac0": 10,
+    "thac0": 14,
     "frequency": 3,
     "attacks": [
       {
@@ -15030,7 +15016,7 @@
     "ai_pattern": "sessile",
     "min_level": 6,
     "max_level": 11,
-    "thac0": 15,
+    "thac0": 16,
     "frequency": 5,
     "attacks": [
       {
@@ -15081,18 +15067,18 @@
     "hp": "1d4",
     "speed": 1,
     "ai_pattern": "aggressive",
-    "min_level": 3,
+    "min_level": 4,
     "max_level": 8,
     "thac0": 18,
-    "frequency": 8,
+    "frequency": 5,
     "attacks": [
       {
         "name": "explode",
-        "damage": "3d6",
+        "damage": "2d4",
         "type": "poison",
         "effect": "poisoned",
-        "effect_chance": 0.55,
-        "effect_duration": 6
+        "effect_chance": 0.45,
+        "effect_duration": 5
       }
     ],
     "resistances": [
@@ -15128,7 +15114,7 @@
     "ai_pattern": "sessile",
     "min_level": 4,
     "max_level": 9,
-    "thac0": 16,
+    "thac0": 17,
     "frequency": 7,
     "attacks": [
       {
@@ -15178,7 +15164,7 @@
     "ai_pattern": "aggressive",
     "min_level": 9,
     "max_level": 14,
-    "thac0": 11,
+    "thac0": 16,
     "frequency": 3,
     "attacks": [
       {
@@ -15229,7 +15215,7 @@
     "ai_pattern": "aggressive",
     "min_level": 11,
     "max_level": 16,
-    "thac0": 9,
+    "thac0": 14,
     "frequency": 2,
     "attacks": [
       {
@@ -15282,7 +15268,7 @@
     "ai_pattern": "aggressive",
     "min_level": 10,
     "max_level": 16,
-    "thac0": 10,
+    "thac0": 14,
     "frequency": 3,
     "attacks": [
       {
@@ -15329,7 +15315,7 @@
     "ai_pattern": "aggressive",
     "min_level": 9,
     "max_level": 14,
-    "thac0": 11,
+    "thac0": 16,
     "frequency": 3,
     "attacks": [
       {
@@ -15382,7 +15368,7 @@
     "ai_pattern": "aggressive",
     "min_level": 7,
     "max_level": 12,
-    "thac0": 13,
+    "thac0": 16,
     "frequency": 4,
     "attacks": [
       {
@@ -15431,7 +15417,7 @@
     "ai_pattern": "cowardly",
     "min_level": 5,
     "max_level": 10,
-    "thac0": 15,
+    "thac0": 17,
     "frequency": 5,
     "attacks": [
       {
@@ -15510,7 +15496,7 @@
       "physical"
     ],
     "weaknesses": [
-      "electric",
+      "lightning",
       "fire"
     ],
     "harvest_tier": 5,
@@ -15579,9 +15565,9 @@
     "hp": "3d6",
     "speed": 1,
     "ai_pattern": "aggressive",
-    "min_level": 3,
+    "min_level": 4,
     "max_level": 8,
-    "thac0": 16,
+    "thac0": 17,
     "frequency": 2,
     "attacks": [
       {
@@ -15626,7 +15612,7 @@
     "ai_pattern": "aggressive",
     "min_level": 5,
     "max_level": 10,
-    "thac0": 15,
+    "thac0": 17,
     "frequency": 3,
     "attacks": [
       {
@@ -15669,14 +15655,14 @@
     "hp": "5d10",
     "speed": 1,
     "ai_pattern": "aggressive",
-    "min_level": 8,
-    "max_level": 14,
-    "thac0": 11,
+    "min_level": 14,
+    "max_level": 18,
+    "thac0": 14,
     "frequency": 2,
     "attacks": [
       {
         "name": "great axe",
-        "damage": "2d8",
+        "damage": "2d6",
         "type": "physical"
       },
       {
@@ -15716,7 +15702,7 @@
     "ai_pattern": "aggressive",
     "min_level": 4,
     "max_level": 9,
-    "thac0": 16,
+    "thac0": 17,
     "frequency": 4,
     "attacks": [
       {
@@ -15756,7 +15742,7 @@
     "ai_pattern": "aggressive",
     "min_level": 7,
     "max_level": 12,
-    "thac0": 13,
+    "thac0": 16,
     "frequency": 2,
     "attacks": [
       {
@@ -15801,7 +15787,7 @@
     "ai_pattern": "aggressive",
     "min_level": 4,
     "max_level": 9,
-    "thac0": 15,
+    "thac0": 17,
     "frequency": 4,
     "attacks": [
       {
@@ -15836,14 +15822,14 @@
     "hp": "6d10",
     "speed": 1,
     "ai_pattern": "aggressive",
-    "min_level": 8,
+    "min_level": 14,
     "max_level": null,
-    "thac0": 11,
+    "thac0": 14,
     "frequency": 2,
     "attacks": [
       {
         "name": "war hammer",
-        "damage": "2d8+2",
+        "damage": "2d6+2",
         "type": "physical"
       },
       {
@@ -15883,7 +15869,7 @@
     "ai_pattern": "aggressive",
     "min_level": 4,
     "max_level": 9,
-    "thac0": 15,
+    "thac0": 17,
     "frequency": 3,
     "attacks": [
       {
@@ -15974,7 +15960,7 @@
     "ai_pattern": "aggressive",
     "min_level": 6,
     "max_level": 12,
-    "thac0": 13,
+    "thac0": 16,
     "frequency": 3,
     "attacks": [
       {
@@ -16019,7 +16005,7 @@
     "ai_pattern": "cowardly",
     "min_level": 7,
     "max_level": null,
-    "thac0": 14,
+    "thac0": 16,
     "frequency": 3,
     "attacks": [
       {
@@ -16067,9 +16053,9 @@
     "hp": "6d10",
     "speed": 1,
     "ai_pattern": "aggressive",
-    "min_level": 10,
+    "min_level": 12,
     "max_level": 13,
-    "thac0": 13,
+    "thac0": 14,
     "frequency": 3,
     "attacks": [
       {
@@ -16109,9 +16095,9 @@
     "hp": "8d10",
     "speed": 1,
     "ai_pattern": "aggressive",
-    "min_level": 10,
+    "min_level": 13,
     "max_level": 17,
-    "thac0": 9,
+    "thac0": 14,
     "frequency": 2,
     "attacks": [
       {
@@ -16132,7 +16118,7 @@
       "physical"
     ],
     "weaknesses": [
-      "electric"
+      "lightning"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
@@ -16160,7 +16146,7 @@
     "ai_pattern": "aggressive",
     "min_level": 15,
     "max_level": null,
-    "thac0": 5,
+    "thac0": 14,
     "frequency": 2,
     "attacks": [
       {
@@ -16178,7 +16164,7 @@
       }
     ],
     "resistances": [
-      "electric"
+      "lightning"
     ],
     "weaknesses": [],
     "harvest_tier": 4,
@@ -16225,7 +16211,7 @@
       }
     ],
     "resistances": [
-      "electric",
+      "lightning",
       "cold"
     ],
     "weaknesses": [],
@@ -16255,7 +16241,7 @@
     "ai_pattern": "aggressive",
     "min_level": 10,
     "max_level": 15,
-    "thac0": 12,
+    "thac0": 14,
     "frequency": 2,
     "attacks": [
       {
@@ -16297,7 +16283,7 @@
     "ai_pattern": "aggressive",
     "min_level": 10,
     "max_level": 13,
-    "thac0": 13,
+    "thac0": 14,
     "frequency": 2,
     "attacks": [
       {
@@ -16337,9 +16323,9 @@
     "hp": "5d8",
     "speed": 1,
     "ai_pattern": "aggressive",
-    "min_level": 8,
+    "min_level": 14,
     "max_level": 14,
-    "thac0": 13,
+    "thac0": 14,
     "frequency": 3,
     "attacks": [
       {
@@ -16388,7 +16374,7 @@
     "ai_pattern": "aggressive",
     "min_level": 9,
     "max_level": null,
-    "thac0": 14,
+    "thac0": 16,
     "frequency": 4,
     "attacks": [
       {
@@ -16435,7 +16421,7 @@
     "ai_pattern": "cowardly",
     "min_level": 11,
     "max_level": null,
-    "thac0": 15,
+    "thac0": 14,
     "frequency": 2,
     "attacks": [
       {
@@ -16488,7 +16474,7 @@
     "ai_pattern": "aggressive",
     "min_level": 13,
     "max_level": null,
-    "thac0": 12,
+    "thac0": 14,
     "frequency": 2,
     "attacks": [
       {
@@ -16539,9 +16525,9 @@
     "hp": "4d10",
     "speed": 1,
     "ai_pattern": "aggressive",
-    "min_level": 8,
+    "min_level": 13,
     "max_level": 15,
-    "thac0": 13,
+    "thac0": 14,
     "frequency": 3,
     "attacks": [
       {
@@ -16586,7 +16572,7 @@
     "ai_pattern": "aggressive",
     "min_level": 10,
     "max_level": 17,
-    "thac0": 9,
+    "thac0": 14,
     "frequency": 2,
     "attacks": [
       {
@@ -16633,7 +16619,7 @@
     "ai_pattern": "aggressive",
     "min_level": 15,
     "max_level": 18,
-    "thac0": 8,
+    "thac0": 14,
     "frequency": 2,
     "attacks": [
       {
@@ -16700,7 +16686,7 @@
       }
     ],
     "resistances": [
-      "electric"
+      "lightning"
     ],
     "weaknesses": [],
     "harvest_tier": 5,
@@ -16783,7 +16769,7 @@
     "ai_pattern": "aggressive",
     "min_level": 7,
     "max_level": 13,
-    "thac0": 13,
+    "thac0": 16,
     "frequency": 3,
     "attacks": [
       {
@@ -16832,7 +16818,7 @@
     "ai_pattern": "aggressive",
     "min_level": 7,
     "max_level": 13,
-    "thac0": 13,
+    "thac0": 16,
     "frequency": 3,
     "attacks": [
       {
@@ -16881,7 +16867,7 @@
     "ai_pattern": "aggressive",
     "min_level": 7,
     "max_level": null,
-    "thac0": 14,
+    "thac0": 16,
     "frequency": 3,
     "attacks": [
       {
@@ -16927,9 +16913,9 @@
     "hp": "9d10",
     "speed": 2,
     "ai_pattern": "aggressive",
-    "min_level": 12,
+    "min_level": 14,
     "max_level": null,
-    "thac0": 8,
+    "thac0": 14,
     "frequency": 2,
     "attacks": [
       {
@@ -16974,9 +16960,9 @@
     "hp": "6d10",
     "speed": 1,
     "ai_pattern": "aggressive",
-    "min_level": 10,
+    "min_level": 13,
     "max_level": null,
-    "thac0": 11,
+    "thac0": 14,
     "frequency": 2,
     "attacks": [
       {
@@ -17148,7 +17134,7 @@
     ],
     "resistances": [
       "fire",
-      "shock"
+      "lightning"
     ],
     "weaknesses": [
       "cold"
@@ -18074,7 +18060,7 @@
     ],
     "min_level": 20,
     "frequency": 0,
-    "hp": 240,
+    "hp": 170,
     "thac0": 4,
     "speed": 1,
     "attacks": [
@@ -18084,12 +18070,12 @@
       },
       {
         "damage": "1d8",
-        "type": "crush"
+        "type": "blunt"
       }
     ],
     "ai_pattern": "aggressive",
     "resistances": [
-      "crush"
+      "blunt"
     ],
     "weaknesses": [
       "pierce"
@@ -18118,8 +18104,8 @@
     ],
     "min_level": 40,
     "frequency": 0,
-    "hp": 900,
-    "thac0": 2,
+    "hp": 1200,
+    "thac0": 1,
     "speed": 1,
     "attacks": [
       {
@@ -18127,8 +18113,12 @@
         "type": "pierce"
       },
       {
-        "damage": "1d6",
+        "damage": "2d6",
         "type": "poison"
+      },
+      {
+        "damage": "1d8",
+        "type": "magic"
       }
     ],
     "ai_pattern": "aggressive",
@@ -18162,20 +18152,20 @@
     ],
     "min_level": 60,
     "frequency": 0,
-    "hp": 800,
-    "thac0": 0,
+    "hp": 2200,
+    "thac0": -2,
     "speed": 1,
     "attacks": [
       {
-        "damage": "3d12",
+        "damage": "4d12",
         "type": "slash"
       },
       {
-        "damage": "2d10",
+        "damage": "3d10",
         "type": "fire"
       },
       {
-        "damage": "1d8",
+        "damage": "2d8",
         "type": "poison"
       }
     ],
@@ -18183,7 +18173,7 @@
     "resistances": [
       "fire",
       "poison",
-      "crush"
+      "blunt"
     ],
     "weaknesses": [
       "pierce"
@@ -18212,21 +18202,21 @@
     ],
     "min_level": 80,
     "frequency": 0,
-    "hp": 1720,
-    "thac0": -6,
+    "hp": 3000,
+    "thac0": -8,
     "speed": 2,
     "attacks": [
       {
-        "damage": "4d10",
+        "damage": "5d10",
         "type": "slash"
       },
       {
-        "damage": "2d8",
+        "damage": "3d8",
         "type": "cold"
       },
       {
-        "damage": "2d6",
-        "type": "crush"
+        "damage": "2d8",
+        "type": "blunt"
       }
     ],
     "ai_pattern": "aggressive",
@@ -18261,25 +18251,29 @@
     ],
     "min_level": 100,
     "frequency": 0,
-    "hp": 2200,
-    "thac0": -8,
+    "hp": 3800,
+    "thac0": -10,
     "speed": 1,
     "attacks": [
       {
-        "damage": "5d10",
+        "damage": "6d10",
         "type": "magic"
       },
       {
-        "damage": "3d8",
+        "damage": "4d8",
         "type": "fire"
       },
       {
-        "damage": "2d10",
+        "damage": "3d10",
         "type": "poison"
       },
       {
-        "damage": "2d8",
+        "damage": "3d8",
         "type": "cold"
+      },
+      {
+        "damage": "2d10",
+        "type": "slash"
       }
     ],
     "ai_pattern": "aggressive",
@@ -18288,7 +18282,7 @@
       "cold",
       "fire",
       "slash",
-      "crush"
+      "blunt"
     ],
     "weaknesses": [
       "holy"
@@ -18387,7 +18381,7 @@
     ],
     "weaknesses": [
       "drain",
-      "electric"
+      "lightning"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
@@ -18552,7 +18546,7 @@
     ],
     "weaknesses": [
       "holy",
-      "electric"
+      "lightning"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
@@ -18837,7 +18831,14 @@
       "item_tier": 4,
       "unique_drop_id": "iron_mortar_wand",
       "boss_scroll_id": "scroll_of_baba_yaga"
-    }
+    },
+    "attack_effects": [
+      {
+        "effect": "bleeding",
+        "chance": 0.3
+      }
+    ],
+    "regen": 3
   },
   "jormungandr_juvenile": {
     "name": "Jörmungandr (Juvenile)",
@@ -18876,7 +18877,7 @@
       "cold"
     ],
     "weaknesses": [
-      "electric",
+      "lightning",
       "fire"
     ],
     "harvest_tier": 3,
@@ -18932,7 +18933,7 @@
     ],
     "weaknesses": [
       "holy",
-      "electric"
+      "lightning"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
@@ -19005,7 +19006,8 @@
       "item_tier": 5,
       "unique_drop_id": "green_knights_plate",
       "boss_scroll_id": "scroll_of_the_green"
-    }
+    },
+    "regen": 5
   },
   "charybdis": {
     "name": "Charybdis",
@@ -19029,7 +19031,7 @@
       {
         "name": "crushing maw",
         "damage": "3d10",
-        "type": "crush"
+        "type": "blunt"
       }
     ],
     "ai_pattern": "aggressive",
@@ -19039,7 +19041,7 @@
       "blunt"
     ],
     "weaknesses": [
-      "electric",
+      "lightning",
       "fire"
     ],
     "harvest_tier": 3,
@@ -19090,7 +19092,7 @@
       {
         "name": "crush",
         "damage": "2d10",
-        "type": "crush"
+        "type": "blunt"
       }
     ],
     "ai_pattern": "aggressive",
@@ -19118,7 +19120,14 @@
       "item_tier": 5,
       "unique_drop_id": "ring_of_iron_grip",
       "boss_scroll_id": "scroll_of_ravana"
-    }
+    },
+    "attack_effects": [
+      {
+        "effect": "paralyzed",
+        "chance": 0.2,
+        "duration": 3
+      }
+    ]
   },
   "wendigo": {
     "name": "Wendigo",
@@ -19275,7 +19284,7 @@
     ],
     "weaknesses": [
       "fire",
-      "electric"
+      "lightning"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
@@ -19293,7 +19302,19 @@
       "item_tier": 5,
       "unique_drop_id": "anansi_web_cloak",
       "boss_scroll_id": "scroll_of_anansi"
-    }
+    },
+    "attack_effects": [
+      {
+        "effect": "confused",
+        "chance": 0.25,
+        "duration": 5
+      },
+      {
+        "effect": "poisoned",
+        "chance": 0.2,
+        "duration": 8
+      }
+    ]
   },
   "nidhoggr_fragment": {
     "name": "Níðhöggr Fragment",
@@ -19336,7 +19357,7 @@
     ],
     "weaknesses": [
       "holy",
-      "electric"
+      "lightning"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 3,

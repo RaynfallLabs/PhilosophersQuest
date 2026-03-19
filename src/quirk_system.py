@@ -253,6 +253,12 @@ class QuirkSystem:
             self._award('ragnarok', "Ragnarok's Survivor",
                         lambda pl: pl.apply_stat_bonus('CON', 5))
 
+        # Diogenes' Lantern: drop the shard and survive 10 levels without it
+        if (self._p('levels_without_shard') >= 10
+                and not self.is_unlocked('diogenes')):
+            self._award('diogenes', "Diogenes' Lantern",
+                        lambda pl: pl.apply_stat_bonus('WIS', 2))
+
         # Atalanta (#65): escape 10 floors within 25 turns
         entry = self._p('ariadne_entry_turn', -9999)
         if self.game.turn_count - entry <= 25:
@@ -1177,6 +1183,7 @@ _QUIRK_PROGRESS = {
     'astral_form':   ('astral_form_invisible_turns', 100, False),
     'sage_counsel':  ('history_correct_total', 50, False),
     'ouroboros':     ('total_correct_answers', 1000, False),
+    'diogenes':     ('levels_without_shard', 10, False),
 }
 
 # Canonical display order and names for all quirks
@@ -1231,6 +1238,7 @@ _QUIRK_NAMES = {
     'life_drain': "Life Drain", 'reality_anchor': "Reality Anchor",
     'runic_armor': "Runic Armor", 'astral_form': "Astral Form",
     'sage_counsel': "Sage's Counsel", 'ouroboros': "The Infinite Circle",
+    'diogenes': "Diogenes' Lantern",
 }
 
 # Canonical display order
@@ -1340,6 +1348,7 @@ _QUIRK_TRIGGER = {
     'astral_form':   "You spent 100 turns invisible.",
     'sage_counsel':  "You answered 50 history questions correctly.",
     'ouroboros':     "You answered 1,000 questions correctly in one run.",
+    'diogenes':     "You dropped the Philosopher's Shard and survived 10 levels without it.",
 }
 
 # Flavor quote shown on unlock -- captures the spirit of the achievement
@@ -1446,6 +1455,7 @@ _QUIRK_FLAVOR = {
     'astral_form':   "The body is a guest. The self is the host. Invisibility is the host stepping outside.",
     'sage_counsel':  "History is not what happened. It is what we learned from what happened.",
     'ouroboros':     "The serpent swallows its own tail and is never diminished. -- Hermetic Corpus",
+    'diogenes':     "I am looking for an honest man. I do not need a lantern -- I need only my eyes. -- Diogenes",
 }
 
 # Map quirk IDs to short effect descriptions shown on unlock
@@ -1552,4 +1562,5 @@ _QUIRK_EFFECTS = {
     'astral_form':   "[POWER x2] Levitate + Invisible + Phase for 8 turns.",
     'sage_counsel':  "[POWER x3] Blessed for 15 turns (+25% quiz timer).",
     'ouroboros':     "[POWER x1] Hasted + Shielded + Regenerating for 20 turns.",
+    'diogenes':     "WIS +2",
 }

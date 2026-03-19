@@ -15,7 +15,13 @@
     "power": "3d6",
     "unidentified_name": "crumpled scroll",
     "lore": "Inscribed in the flowing script of ancient temple healers, this scroll channels divine restorative energy into the reader's body. The words dissolve into warm golden light as they are spoken aloud, leaving the parchment blank and the reader mended.",
-    "read_threshold": 2
+    "read_threshold": 2,
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "scroll_of_mapping": {
     "name": "scroll of mapping",
@@ -33,7 +39,13 @@
     "power": "",
     "unidentified_name": "yellowed scroll",
     "lore": "Cartographers of the old empire inscribed these scrolls with a sympathetic mapping enchantment. Upon reading, the dungeon's layout floods into the reader's mind as a complete spatial memory — every corridor, chamber, and stairwell within range suddenly known.",
-    "read_threshold": 2
+    "read_threshold": 2,
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "scroll_of_identify": {
     "name": "scroll of identify",
@@ -51,7 +63,13 @@
     "power": "",
     "unidentified_name": "torn scroll",
     "lore": "The text of this scroll, penned in ink derived from truth-speaking crystals, vibrates with revealing energy. When read aloud over an unknown object, the scroll's magic strips away all disguise and false appearance, revealing the item's true name and nature.",
-    "read_threshold": 2
+    "read_threshold": 2,
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "scroll_of_enchant_weapon": {
     "name": "scroll of enchant weapon",
@@ -69,7 +87,13 @@
     "power": "",
     "unidentified_name": "silver scroll",
     "lore": "Written in fire-silver ink by weaponsmith-mages of the dwarven academies, this scroll bonds an additional layer of enchantment into any held weapon. The runes crawl up the blade as they're spoken, burning themselves permanently into the metal.",
-    "read_threshold": 3
+    "read_threshold": 3,
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "scroll_of_remove_curse": {
     "name": "scroll of remove curse",
@@ -87,7 +111,13 @@
     "power": "",
     "unidentified_name": "pale scroll",
     "lore": "A liturgical text drawn from the Egyptian Book of Coming Forth by Day. When read aloud with proper pronunciation, the words sever any magical binding or malevolent enchantment attached to the reader's person or possessions, purifying them completely.",
-    "read_threshold": 3
+    "read_threshold": 3,
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "scroll_of_confuse_monsters": {
     "name": "scroll of confusion",
@@ -105,7 +135,13 @@
     "power": "",
     "unidentified_name": "swirling scroll",
     "lore": "This scroll was used by arena tamers to disorient multiple beasts simultaneously. The text is written in a spiraling pattern that, when read, projects a psychic dissonance affecting every creature in range — their senses scramble, their movements become erratic, and their intent is lost in confusion.",
-    "read_threshold": 3
+    "read_threshold": 3,
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "scroll_of_the_labyrinth": {
     "name": "Scroll of the Labyrinth",
@@ -125,7 +161,14 @@
     "unidentified_name": "Scroll of the Labyrinth",
     "identified": true,
     "lore": "Sealed with the mark of the Cretan Labyrinth. A reward scroll from Dad -- show him this code!",
-    "read_threshold": 2
+    "read_threshold": 2,
+    "floorSpawnWeight": {
+      "1-19": 0,
+      "20-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "scroll_of_the_gorgon": {
     "name": "Scroll of the Gorgon",
@@ -145,7 +188,14 @@
     "unidentified_name": "Scroll of the Gorgon",
     "identified": true,
     "lore": "Sealed with a serpent's eye. A reward scroll from Dad -- show him this code!",
-    "read_threshold": 2
+    "read_threshold": 2,
+    "floorSpawnWeight": {
+      "1-39": 0,
+      "40-40": 3,
+      "41-60": 2,
+      "61-80": 1,
+      "81-100": 1
+    }
   },
   "scroll_of_the_hoard": {
     "name": "Scroll of the Dragon Hoard",
@@ -165,7 +215,13 @@
     "unidentified_name": "Scroll of the Dragon Hoard",
     "identified": true,
     "lore": "Sealed with a golden dragon scale. A reward scroll from Dad -- show him this code!",
-    "read_threshold": 2
+    "read_threshold": 2,
+    "floorSpawnWeight": {
+      "1-59": 0,
+      "60-60": 3,
+      "61-80": 2,
+      "81-100": 1
+    }
   },
   "scroll_of_ragnarok": {
     "name": "Scroll of Ragnarok",
@@ -185,7 +241,12 @@
     "unidentified_name": "Scroll of Ragnarok",
     "identified": true,
     "lore": "Sealed with the howl of the World-Wolf. A reward scroll from Dad -- show him this code!",
-    "read_threshold": 2
+    "read_threshold": 2,
+    "floorSpawnWeight": {
+      "1-79": 0,
+      "80-80": 3,
+      "81-100": 2
+    }
   },
   "scroll_of_the_abyss": {
     "name": "Scroll of the Abyss",
@@ -205,7 +266,11 @@
     "unidentified_name": "Scroll of the Abyss",
     "identified": true,
     "lore": "Sealed with the mark of the Bottomless Pit. A reward scroll from Dad -- show him this code!",
-    "read_threshold": 2
+    "read_threshold": 2,
+    "floorSpawnWeight": {
+      "1-99": 0,
+      "100-100": 3
+    }
   },
   "scroll_of_sleep": {
     "name": "scroll of sleep",
@@ -223,7 +288,13 @@
     "power": "",
     "unidentified_name": "drowsy scroll",
     "lore": "Penned by the dream-weavers of Morpheus in ink distilled from poppy essence, this scroll releases a wave of irresistible somnolence. Every creature in sight is swept into deep slumber — only the reader, having spoken the words aloud, remains awake and free to act.",
-    "read_threshold": 3
+    "read_threshold": 3,
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "scroll_of_haste": {
     "name": "scroll of haste",
@@ -241,7 +312,14 @@
     "power": "15",
     "unidentified_name": "blurred scroll",
     "lore": "Written in quicksilver ink by fleet-footed Hermes himself — or so the seller claimed — this scroll binds the speed-essence of the divine messenger into the reader's limbs. For a short time, reality slows around you while you move at twice the natural pace.",
-    "read_threshold": 3
+    "read_threshold": 3,
+    "floorSpawnWeight": {
+      "1-7": 0,
+      "8-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "scroll_of_enchant_armor": {
     "name": "scroll of enchant armor",
@@ -259,7 +337,14 @@
     "power": "",
     "unidentified_name": "gleaming scroll",
     "lore": "The armorers' guilds of three ages of the world spent centuries perfecting this scroll. Reading it aloud over a worn piece of armor causes the metal (or leather, or hide) to tighten, harden, and align — one permanent layer of reinforcement added to whatever protection you bear.",
-    "read_threshold": 3
+    "read_threshold": 3,
+    "floorSpawnWeight": {
+      "1-5": 0,
+      "6-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "scroll_of_teleportation": {
     "name": "scroll of teleportation",
@@ -277,7 +362,14 @@
     "power": "",
     "unidentified_name": "trembling scroll",
     "lore": "The spatial theorists of Alexandria considered this scroll a philosophical as much as a practical achievement. Reading it dissolves your relationship with the current point in space and reconstitutes you at some other floor tile, selected at the whim of the dungeon.",
-    "read_threshold": 4
+    "read_threshold": 4,
+    "floorSpawnWeight": {
+      "1-11": 0,
+      "12-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "scroll_of_charging": {
     "name": "scroll of charging",
@@ -295,7 +387,14 @@
     "power": "",
     "unidentified_name": "crackling scroll",
     "lore": "Inscribed by the artificers who first learned to trap raw magical force in crystalline matrices, this scroll rekindles exhausted power. Upon reading, ambient magical energy floods into every wand in the reader's possession, refreshing their reserves by one full charge each.",
-    "read_threshold": 4
+    "read_threshold": 4,
+    "floorSpawnWeight": {
+      "1-14": 0,
+      "15-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "scroll_of_identify_all": {
     "name": "scroll of mass identify",
@@ -313,7 +412,14 @@
     "power": "",
     "unidentified_name": "revealing scroll",
     "lore": "A far more powerful version of the common identification scroll. This text requires the reader to articulate the true name of knowledge itself. Upon completion, every obscured, unnamed, and unexamined item in one's possession is simultaneously revealed in full.",
-    "read_threshold": 4
+    "read_threshold": 4,
+    "floorSpawnWeight": {
+      "1-13": 0,
+      "14-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "scroll_of_annihilation": {
     "name": "scroll of annihilation",
@@ -331,7 +437,14 @@
     "power": "",
     "unidentified_name": "scorched scroll",
     "lore": "The most feared text in the dungeon archivist's catalogue. Its words were first spoken on the day the great library of Carthage burned. Reading it perfectly causes every creature in sight to dissolve in a flash of obliterating white energy, leaving only silence and ash.",
-    "read_threshold": 5
+    "read_threshold": 5,
+    "floorSpawnWeight": {
+      "1-29": 0,
+      "30-40": 3,
+      "41-60": 2,
+      "61-80": 1,
+      "81-100": 1
+    }
   },
   "scroll_of_time_stop": {
     "name": "scroll of time stop",
@@ -349,7 +462,14 @@
     "power": "10",
     "unidentified_name": "frozen scroll",
     "lore": "The theoretical framework for this scroll was laid by Zeno of Elea, who proved logically that motion is an illusion. Ten turns of absolute stillness surround the reader: monsters freeze mid-stride, arrows hang in mid-air, the dungeon holds its breath.",
-    "read_threshold": 5
+    "read_threshold": 5,
+    "floorSpawnWeight": {
+      "1-39": 0,
+      "40-40": 3,
+      "41-60": 2,
+      "61-80": 1,
+      "81-100": 1
+    }
   },
   "scroll_of_great_power": {
     "name": "scroll of great power",
@@ -367,7 +487,13 @@
     "power": "",
     "unidentified_name": "blazing scroll",
     "lore": "The capstone work of the philosopher Porphyry, who spent forty years distilling the essence of Aristotle's categories into a single transformative incantation. Those few who have read it perfectly emerge changed: stronger, hardier, swifter, keener, wiser, more perceptive. Every faculty permanently elevated by one degree.",
-    "read_threshold": 5
+    "read_threshold": 5,
+    "floorSpawnWeight": {
+      "1-49": 0,
+      "50-60": 3,
+      "61-80": 2,
+      "81-100": 1
+    }
   },
   "scroll_of_enchantment": {
     "name": "scroll of enchantment",
@@ -385,7 +511,14 @@
     "power": "",
     "unidentified_name": "glowing scroll",
     "lore": "Written by an anonymous enchanter of the Alexandrian school, this scroll channels raw magical force into whatever equipment the reader wears. The ink shimmers gold as the spell takes hold, permanently strengthening one piece of equipment.",
-    "read_threshold": 3
+    "read_threshold": 3,
+    "floorSpawnWeight": {
+      "1-9": 0,
+      "10-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "scroll_of_thoth": {
     "name": "Scroll of Thoth",
@@ -410,7 +543,8 @@
       255,
       215,
       100
-    ]
+    ],
+    "read_threshold": 4
   },
   "dead_sea_scroll": {
     "name": "Dead Sea Scroll",
@@ -435,7 +569,8 @@
       200,
       180,
       140
-    ]
+    ],
+    "read_threshold": 3
   },
   "scroll_of_arachne": {
     "name": "Scroll of Arachne",
@@ -455,7 +590,13 @@
     "unidentified_name": "Scroll of Arachne",
     "identified": true,
     "lore": "Sealed with a strand of unbreakable silk. A reward scroll from Dad — show him this code!",
-    "read_threshold": 2
+    "read_threshold": 2,
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "scroll_of_lamia": {
     "name": "Scroll of Lamia",
@@ -475,7 +616,13 @@
     "unidentified_name": "Scroll of Lamia",
     "identified": true,
     "lore": "Sealed with a serpent's tear. A reward scroll from Dad — show him this code!",
-    "read_threshold": 2
+    "read_threshold": 2,
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "scroll_of_talos": {
     "name": "Scroll of Talos",
@@ -495,7 +642,13 @@
     "unidentified_name": "Scroll of Talos",
     "identified": true,
     "lore": "Sealed with molten bronze. A reward scroll from Dad — show him this code!",
-    "read_threshold": 2
+    "read_threshold": 2,
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "scroll_of_echidna": {
     "name": "Scroll of Echidna",
@@ -515,7 +668,13 @@
     "unidentified_name": "Scroll of Echidna",
     "identified": true,
     "lore": "Sealed with the mark of the Mother of Monsters. A reward scroll from Dad — show him this code!",
-    "read_threshold": 2
+    "read_threshold": 2,
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "scroll_of_the_erlking": {
     "name": "Scroll of the Erlking",
@@ -535,7 +694,13 @@
     "unidentified_name": "Scroll of the Erlking",
     "identified": true,
     "lore": "Sealed with a frozen leaf that never wilts. A reward scroll from Dad — show him this code!",
-    "read_threshold": 2
+    "read_threshold": 2,
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "scroll_of_camazotz": {
     "name": "Scroll of Camazotz",
@@ -555,7 +720,13 @@
     "unidentified_name": "Scroll of Camazotz",
     "identified": true,
     "lore": "Sealed with a bat's wing pressed in wax. A reward scroll from Dad — show him this code!",
-    "read_threshold": 2
+    "read_threshold": 2,
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "scroll_of_cacus": {
     "name": "Scroll of Cacus",
@@ -575,7 +746,13 @@
     "unidentified_name": "Scroll of Cacus",
     "identified": true,
     "lore": "Sealed with a scorch mark that still smolders. A reward scroll from Dad — show him this code!",
-    "read_threshold": 2
+    "read_threshold": 2,
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "scroll_of_the_sphinx": {
     "name": "Scroll of the Sphinx",
@@ -595,7 +772,13 @@
     "unidentified_name": "Scroll of the Sphinx",
     "identified": true,
     "lore": "Sealed with a riddle that answers itself. A reward scroll from Dad — show him this code!",
-    "read_threshold": 2
+    "read_threshold": 2,
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "scroll_of_rangda": {
     "name": "Scroll of Rangda",
@@ -615,7 +798,13 @@
     "unidentified_name": "Scroll of Rangda",
     "identified": true,
     "lore": "Sealed with a lock of white hair. A reward scroll from Dad — show him this code!",
-    "read_threshold": 2
+    "read_threshold": 2,
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "scroll_of_the_lion": {
     "name": "Scroll of the Nemean Lion",
@@ -635,7 +824,13 @@
     "unidentified_name": "Scroll of the Nemean Lion",
     "identified": true,
     "lore": "Sealed with an impenetrable golden hair. A reward scroll from Dad — show him this code!",
-    "read_threshold": 2
+    "read_threshold": 2,
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "scroll_of_baba_yaga": {
     "name": "Scroll of Baba Yaga",
@@ -655,7 +850,13 @@
     "unidentified_name": "Scroll of Baba Yaga",
     "identified": true,
     "lore": "Sealed with iron teeth marks. A reward scroll from Dad — show him this code!",
-    "read_threshold": 2
+    "read_threshold": 2,
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "scroll_of_jormungandr": {
     "name": "Scroll of Jörmungandr",
@@ -675,7 +876,13 @@
     "unidentified_name": "Scroll of Jörmungandr",
     "identified": true,
     "lore": "Sealed with a scale from the World Serpent. A reward scroll from Dad — show him this code!",
-    "read_threshold": 2
+    "read_threshold": 2,
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "scroll_of_set": {
     "name": "Scroll of Set",
@@ -695,7 +902,13 @@
     "unidentified_name": "Scroll of Set",
     "identified": true,
     "lore": "Sealed with red sand from the desert of storms. A reward scroll from Dad — show him this code!",
-    "read_threshold": 2
+    "read_threshold": 2,
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "scroll_of_the_green": {
     "name": "Scroll of the Green Knight",
@@ -715,7 +928,13 @@
     "unidentified_name": "Scroll of the Green Knight",
     "identified": true,
     "lore": "Sealed with a holly branch that bleeds sap. A reward scroll from Dad — show him this code!",
-    "read_threshold": 2
+    "read_threshold": 2,
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "scroll_of_charybdis": {
     "name": "Scroll of Charybdis",
@@ -735,7 +954,13 @@
     "unidentified_name": "Scroll of Charybdis",
     "identified": true,
     "lore": "Sealed with salt water that never dries. A reward scroll from Dad — show him this code!",
-    "read_threshold": 2
+    "read_threshold": 2,
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "scroll_of_ravana": {
     "name": "Scroll of Ravana",
@@ -755,7 +980,13 @@
     "unidentified_name": "Scroll of Ravana",
     "identified": true,
     "lore": "Sealed with the sigil of Lanka. A reward scroll from Dad — show him this code!",
-    "read_threshold": 2
+    "read_threshold": 2,
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "scroll_of_the_wendigo": {
     "name": "Scroll of the Wendigo",
@@ -775,7 +1006,13 @@
     "unidentified_name": "Scroll of the Wendigo",
     "identified": true,
     "lore": "Sealed with frost that bites the fingers. A reward scroll from Dad — show him this code!",
-    "read_threshold": 2
+    "read_threshold": 2,
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "scroll_of_the_hunt": {
     "name": "Scroll of the Wild Hunt",
@@ -795,7 +1032,13 @@
     "unidentified_name": "Scroll of the Wild Hunt",
     "identified": true,
     "lore": "Sealed with a horn blast frozen in wax. A reward scroll from Dad — show him this code!",
-    "read_threshold": 2
+    "read_threshold": 2,
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "scroll_of_anansi": {
     "name": "Scroll of Anansi",
@@ -815,7 +1058,13 @@
     "unidentified_name": "Scroll of Anansi",
     "identified": true,
     "lore": "Sealed with a web that glints like gold. A reward scroll from Dad — show him this code!",
-    "read_threshold": 2
+    "read_threshold": 2,
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   },
   "scroll_of_nidhoggr": {
     "name": "Scroll of Níðhöggr",
@@ -835,6 +1084,12 @@
     "unidentified_name": "Scroll of Níðhöggr",
     "identified": true,
     "lore": "Sealed with bark from the World Tree. A reward scroll from Dad — show him this code!",
-    "read_threshold": 2
+    "read_threshold": 2,
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
   }
 }

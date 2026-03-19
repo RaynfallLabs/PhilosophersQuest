@@ -134,20 +134,25 @@ class Player:
     def restore_hp(self, amount: int):
         self.hp = min(self.max_hp, self.hp + amount)
 
-    HP_PER_LEVEL = 8  # max HP gained per dungeon level (staircase use)
+    HP_PER_LEVEL = 8  # legacy constant (HP growth now comes from cooking)
 
-    def on_level_change(self):
-        """Called when player uses a staircase. Grants max HP and stair-rest healing.
+    def on_level_change(self, ascending: bool = False):
+        """Called when player uses a staircase. Stair-rest healing only.
 
-        The stair-rest heal scales with max HP (5%) so deep-level players recover
-        meaningfully between floors -- important for the 200-level gauntlet.
-        At L1: ~2 HP; at L20: ~9 HP; at L60: ~25 HP; at L100: ~41 HP.
+        No automatic max HP growth -- that comes from cooking compound recipes
+        and high-tier single ingredient cooks (Q3+).
+        Stair-rest heal scales with max HP; reduced on ascent (Death pursuit).
         """
-        self.max_hp += self.HP_PER_LEVEL
-        rest_heal = max(self.HP_PER_LEVEL, int(self.max_hp * 0.05))
+        rest_pct = 0.04 if ascending else 0.05
+        rest_heal = max(self.HP_PER_LEVEL, int(self.max_hp * rest_pct))
         self.hp = min(self.hp + rest_heal, self.max_hp)
         mp_restore = max(2, self.INT // 5)
         self.restore_mp(mp_restore)
+
+    def increase_max_hp(self, amount: int):
+        """Permanently increase max HP (from cooking). Also heals the amount."""
+        self.max_hp += amount
+        self.hp = min(self.hp + amount, self.max_hp)
 
     def restore_mp(self, amount: int):
         self.mp = min(self.max_mp, self.mp + amount)

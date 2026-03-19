@@ -16,6 +16,7 @@ Model assumptions:
   - Quiz: Bernoulli success parameterised by (tier, WIS, skill preset)
   - Combat: one CHAIN quiz per attack turn; monster retaliates if alive
   - THAC0: monster hits if d20 >= THAC0 - player_AC  (natural 1 always misses)
+  - STR scaling: str_factor = 1.0 + max(0, STR-10)*0.03 applied to player damage
   - Armor equip: gated by geography THRESHOLD quiz using item's quiz_tier
   - Accessories: history THRESHOLD quiz; beneficial effects modelled
   - Wands/scrolls: found per level, healing wands add to HP bank
@@ -23,13 +24,20 @@ Model assumptions:
   - Mini-bosses: up to one per eligible level range; spawn_chance per monster.json
   - Death Pursuer: spawned on ascent from L100 with Stone; attacks every level, always hits
   - Flee: player can flee when HP < 25% max (60% success rate)
-  - HP scaling: player gains HP_PER_LEVEL max HP each dungeon level descended
-  - Stair-rest heal: max(HP_PER_LEVEL, 5% max_hp) on each stair use
+  - HP scaling: cooking-based (compound recipes + T4-T5 single cooks at Q3+)
+  - Stair-rest heal: max(8, 5% max_hp) on each stair use (no auto max HP)
   - SP: 25/level exploration + 2/combat turn; SP=0 -> 1 HP starvation/turn
   - Scoring: turns*10 + max_level*1000 + kills*100 + 50000 stone bonus
   - Two-phase run: descent then ascent after defeating Abaddon
   - Quirk system: key passive/active quirks modelled (eye_storm, runic_armor,
       ramanujan, battle_trance, life_drain, metabolic, iron_ration, phoenix_rising)
+  - Monster status effects: poison/burn DoT, disease stat drain, paralysis/confuse lost turns
+  - Mystery system: 12 mysteries with stat/HP/item rewards, 60% spawn chance
+  - Scroll effects: enchant armor, great power, healing, annihilate
+  - Container loot: 1+ per level with gold and item drops
+  - Special rooms: 35% chance (treasury, library, shrine)
+  - Spell system: 13 spells, science chain quiz, chain-scaled effects
+  - Prayer system: theology escalator chain, HP/SP restore + stat blessings
 
 Calibration (2026-03-16, seed=42, 3000 runs):
   - generic build, skill=high: ~3.7% (baseline 3.47% + quirks add ~0.3%)
@@ -49,8 +57,8 @@ DATA = ROOT / 'data'
 # Tunable constants (game-balance levers)
 # ---------------------------------------------------------------------------
 
-HP_PER_LEVEL         = 8      # Max HP gained per dungeon level descended
-                              # (matches player.py HP_PER_LEVEL = 8)
+HP_PER_LEVEL         = 0      # No auto max HP on stairs (HP comes from cooking)
+HP_PER_LEVEL_REST    = 8      # Floor for stair-rest healing calculation
 FLEE_THRESHOLD       = 0.25   # Attempt flee when HP < this fraction of max
 FLEE_SUCCESS_RATE    = 0.60   # Probability of escaping successfully
 HEAL_FIND_CHANCE     = 0.35   # Per-level chance of finding a healing scroll/wand
@@ -135,8 +143,89 @@ POTION_NEG_DAMAGE_MIN  = 8    # Min HP damage from a negative potion (poison, pa
 POTION_NEG_DAMAGE_MAX  = 25   # Max HP damage from a negative potion
 
 # Death Pursuer (spawned when ascending from L100 with Philosopher's Stone)
-DEATH_ATTACK_DICE     = '2d20+47'   # Attack per level (avg ~68 HP); net -15 HP/floor after 6.5% heal
-DEATH_ASCENT_REST_PCT = 0.065       # Stair-rest heal fraction on ascent
+DEATH_ATTACK_DICE     = '3d20+50'   # Attack per level (avg ~81.5 HP)
+DEATH_ASCENT_REST_PCT = 0.04        # Stair-rest heal fraction on ascent
+
+# ---------------------------------------------------------------------------
+# NEW SYSTEMS: Status effects, mysteries, scrolls, containers, spells, prayer
+# ---------------------------------------------------------------------------
+
+# Monster status effects (applied to player during combat)
+# Fraction of monsters that have status effects on their attacks
+STATUS_POISON_FRAC   = 0.19   # ~69/368 monsters inflict poison
+STATUS_BURN_FRAC     = 0.06   # ~23/368 monsters inflict burning
+STATUS_DISEASE_FRAC  = 0.01   # ~4/368 monsters inflict disease
+STATUS_CONFUSE_FRAC  = 0.21   # ~76/368 monsters inflict confused
+STATUS_PARALYZE_FRAC = 0.14   # ~50/368 monsters inflict paralyzed
+STATUS_EFFECT_CHANCE = 0.35   # Average effect proc chance per hit
+POISON_DMG_PER_TURN  = 1      # Player poison DoT
+BURN_DMG_PER_TURN    = 1      # Player burn DoT
+DISEASE_STAT_LOSS_P  = 0.08   # Per-turn chance disease reduces STR or CON by 1
+STATUS_AVG_DURATION  = 6      # Average turns a status effect lasts
+CONFUSE_MISS_CHANCE  = 0.30   # Confused player misses 30% of attacks
+PARALYZE_LOST_TURNS  = 3      # Average turns lost to paralysis per proc
+
+# Container system
+CONTAINER_GUARANTEED  = 1     # Guaranteed containers per level
+CONTAINER_EXTRA_CHANCE = 0.55 # Chance for each additional container
+CONTAINER_EXTRA_DECAY  = 0.45 # Multiplier for successive extra containers
+CONTAINER_LOCKPICK_P   = 0.65 # Average chance of successfully picking a lock
+CONTAINER_GOLD_BASE    = 20   # Base gold per container (scales with level)
+CONTAINER_GOLD_LEVEL_SCALE = 5  # Additional gold per level
+CONTAINER_ITEM_CHANCE  = 0.70 # Chance container holds a useful item (weapon/armor/scroll)
+CONTAINER_TRAP_CHANCE  = 0.30 # Chance trapped container deals damage on failure
+CONTAINER_TRAP_DMG     = 8    # Average trap damage
+MIMIC_CHANCE           = 0.08 # 8% of containers are mimics
+
+# Special rooms (35% chance per level)
+SPECIAL_ROOM_CHANCE   = 0.35
+# Room types: treasury(33%), library(33%), shrine(17%), monster_den(17%)
+TREASURY_EXTRA_CONTAINERS = 2
+TREASURY_GOLD_MULT    = 5     # level * this for treasury gold
+LIBRARY_SCROLLS       = 3
+LIBRARY_SPELLBOOK_CHANCE = 0.50
+
+# Mystery system (12 mysteries, 60% spawn chance on eligible floors)
+MYSTERY_SPAWN_CHANCE  = 0.60
+# Mysteries: (id, floor_min, floor_max, quiz_subject, quiz_mode, tier, threshold,
+#             reward_type, reward_value)
+MYSTERY_TABLE = [
+    # Early game
+    ('crucible',  10, 22, 'philosophy', 'threshold', 1, 3, 'gold', 400),
+    ('cauldron',  14, 26, 'cooking', 'escalator_chain', 2, 5, 'effects', ('searching', 'warning')),
+    ('pandora',   20, 30, 'economics', 'threshold', 2, 4, 'effects_inverted', ('magic_resist', 'displacement')),
+    ('sphinx',    22, 35, 'philosophy', 'escalator_threshold', 3, 4, 'stats', {'WIS': 2, 'INT': 1}),
+    ('oracle',    25, 35, 'theology', 'threshold', 3, 5, 'quirk_reveal', 3),
+    # Mid game
+    ('solomon',   30, 42, 'history', 'threshold', 3, 6, 'stats', {'WIS': 2}),
+    ('forge',     33, 45, 'math', 'escalator_threshold', 3, 4, 'stats_weapon', {'STR': 2, 'weapon_enchant': 4}),
+    ('fleece',    38, 50, 'animal', 'chain', 3, 5, 'effects', ('regenerating', 'poison_resist')),
+    ('mimir',     42, 55, 'philosophy', 'chain', 4, 6, 'stats', {'INT': 3}),
+    ('grail',     45, 55, 'theology', 'threshold', 3, 5, 'stats_hp', {'CON': 2, 'max_hp': 30}),
+    # Late game
+    ('fisher',    58, 72, 'theology', 'threshold', 4, 5, 'stats_hp', {'max_hp': 30}),
+    ('sisyphus',  78, 92, 'physical', 'physical', 0, 0, 'stats', {'STR': 3, 'INT': 1}),
+]
+
+# Scroll effect system (beyond basic healing/enchant weapon already modelled)
+SCROLL_ENCHANT_ARMOR_FIND  = 0.08  # Per-level chance to find enchant armor scroll
+SCROLL_GREAT_POWER_FIND    = 0.03  # Per-level chance (min_level=50)
+SCROLL_HEAL_FIND           = 0.10  # Per-level chance (already partially covered by HEAL_FIND_CHANCE)
+SCROLL_ANNIHILATE_FIND     = 0.02  # Per-level chance (min_level=30)
+SCROLL_GRAMMAR_P_BASE      = 0.70  # Base read success chance
+
+# Spell system
+SPELLBOOK_FIND_CHANCE  = 0.12  # Per-level chance to find a spellbook
+SPELL_LEARN_CHANCE     = 0.60  # Chance to pass grammar threshold to learn
+SPELL_CAST_CHAIN_AVG   = 2.5   # Average chain score when casting (out of 5)
+SPELL_CAST_SCALE       = 0.50  # Average chain_scale = avg_chain / 5
+# MP pool
+SPELL_MP_REGEN         = 0     # No natural MP regen
+SPELL_AVG_CAST_COST    = 7     # Average MP cost across all spells
+
+# Prayer system
+PRAYER_CHANCE_PER_LEVEL = 0.07  # ~1 altar per 15 levels = 6.7% per level
+PRAYER_CHAIN_AVG        = 2.0   # Average theology escalator chain (conservative)
 
 # Bosses (freq=0 monsters placed at fixed milestone levels)
 BOSS_LEVELS = {20: 'asterion_minotaur',
@@ -198,7 +287,8 @@ def load_data():
     wands       = _load(DATA / 'items' / 'wand.json')
     ingredients = _load(DATA / 'items' / 'ingredient.json')
     recipes     = _load(DATA / 'items' / 'recipes.json')
-    return monsters, weapons, armor, shields, food, accessories, wands, ingredients, recipes
+    scrolls     = _load(DATA / 'items' / 'scroll.json')
+    return monsters, weapons, armor, shields, food, accessories, wands, ingredients, recipes, scrolls
 
 # Pre-compute mini-boss table from monsters.json
 def _build_miniboss_table(monsters: dict) -> list:
@@ -325,17 +415,44 @@ def _cooking_hp_bonus(ingredient_min_level: int, quality: int) -> int:
     table = {1: (3, 5, 8), 2: (5, 8, 12), 3: (8, 12, 18), 4: (12, 18, 25), 5: (18, 25, 35)}
     return table[tier][quality - 3]
 
+# Permanent +max_hp from compound recipes (tier, quality) -> bonus
+_COMPOUND_MAX_HP = {
+    (1, 3):  6, (1, 4): 10, (1, 5): 15,
+    (2, 3): 10, (2, 4): 16, (2, 5): 22,
+    (3, 3): 14, (3, 4): 21, (3, 5): 29,
+    (4, 3): 17, (4, 4): 24, (4, 5): 33,
+    (5, 3): 20, (5, 4): 30, (5, 5): 40,
+}
+# Permanent +max_hp from T4-T5 single ingredient cooks (Q3+)
+_SINGLE_MAX_HP = {
+    (4, 3):  2, (4, 4):  3, (4, 5):  5,
+    (5, 3):  3, (5, 4):  5, (5, 5):  8,
+}
+
+# Compound recipe availability: fraction of cooked monsters that also have
+# a compound recipe available (depends on recipe coverage and ingredient pairing)
+COMPOUND_RECIPE_CHANCE = 0.70  # ~70% of cooked ingredients also yield a compound recipe
+                               # (assumes 90%+ recipe coverage + multi-recipe ingredients)
+
 def simulate_cooking(player_wis: int, skill: str, level: int) -> tuple:
     """
     Simulate one cooking attempt (escalator_chain).
-    Returns (sp_restored, hp_restored, quality).
-    ingredient tier approximated by dungeon level.
+    Returns (sp_restored, hp_restored, quality, max_hp_gained).
+    Max HP bonus tier is based on dungeon floor (not ingredient min_level),
+    since most ingredients are T1 but deep cooking should yield higher bonuses.
     """
-    base_p = p_correct(max(1, min(5, (level - 1) // 20 + 1)), player_wis, skill)
+    floor_tier = max(1, min(5, (level - 1) // 20 + 1))
+    base_p = p_correct(floor_tier, player_wis, skill)
     quality = roll_escalator_chain(base_p)
     sp = max(0, COOKED_SP_BASE + quality * COOKED_SP_PER_QUALITY)
     hp = _cooking_hp_bonus(max(1, level), quality)
-    return sp, hp, quality
+    max_hp_gain = 0
+    # Single ingredient max HP (T4-T5 floor tier, Q3+)
+    max_hp_gain += _SINGLE_MAX_HP.get((floor_tier, quality), 0)
+    # Compound recipe chance
+    if quality >= 3 and random.random() < COMPOUND_RECIPE_CHANCE:
+        max_hp_gain += _COMPOUND_MAX_HP.get((floor_tier, quality), 0)
+    return sp, hp, quality, max_hp_gain
 
 # ---------------------------------------------------------------------------
 # Quirk unlock checker
@@ -595,6 +712,31 @@ class SimPlayer:
         self._regen_turn    = 0    # tracks fractional turns for regen tick
         self.passive_regen_interval = max(10, 20 - max(0, self.CON - 12))
 
+        # Status effect tracking (simplified: just turn counters)
+        self.status_poison_turns   = 0
+        self.status_burn_turns     = 0
+        self.status_disease_turns  = 0
+        self.status_confused_turns = 0
+        self.status_paralyzed_turns = 0
+        self.has_poison_resist     = False
+        self.has_fire_resist       = False
+
+        # Spell system
+        self.max_mp    = 10 + self.INT
+        self.mp        = self.max_mp
+        self.known_spells = 0  # number of spells learned (simplified)
+        self.has_shield_spell = False
+        self.has_heal_spell   = False
+
+        # Mystery tracking
+        self.mysteries_solved = set()
+
+        # Prayer cooldown
+        self.prayer_cooldown = 0
+
+        # Container tracking
+        self.lockpick_charges = 5  # Start with basic lockpick
+
         # Quirk system tracking
         self.quirk_unlocked    = set()   # set of unlocked quirk IDs
         self.hits_taken        = 0       # monster attacks landed (for runic_armor)
@@ -614,9 +756,8 @@ class SimPlayer:
         return base
 
     def descend(self):
-        """Called on each stair: gain HP_PER_LEVEL max HP + stair-rest heal."""
-        self.max_hp += self.hp_per_level
-        rest_heal = max(self.hp_per_level, int(self.max_hp * 0.05))
+        """Called on each stair: stair-rest heal only (no auto max HP)."""
+        rest_heal = max(HP_PER_LEVEL_REST, int(self.max_hp * 0.05))
         self.hp   = min(self.hp + rest_heal, self.max_hp)
         # Regen: also tick during movement between levels
         if self.has_regen:
@@ -757,9 +898,14 @@ def simulate_combat(player: SimPlayer, monster: dict,
                 fled = True
                 break
 
-        # --- Player attacks ---
+        # --- Player attacks (with STR scaling) ---
+        str_factor = 1.0 + max(0, player.STR - 10) * 0.03
         n_attacks = 2 if player.has_haste else 1
         for _ in range(n_attacks):
+            # Confused: 30% chance to miss entirely
+            if player.status_confused_turns > 0 and random.random() < CONFUSE_MISS_CHANCE:
+                chains.append(0)
+                continue
             chain = roll_chain(p_cor, player.weapon_max_chain)
             chains.append(chain)
             player.quests_correct += chain
@@ -767,7 +913,7 @@ def simulate_combat(player: SimPlayer, monster: dict,
                 idx  = min(chain - 1, len(player.weapon_mults) - 1)
                 mult = player.weapon_mults[idx]
                 raw  = player.weapon_base_dmg + player.weapon_enchant
-                dmg  = max(1, int(raw * mult * dmult))
+                dmg  = max(1, int(raw * mult * dmult * str_factor))
                 m_hp -= dmg
             if m_hp <= 0:
                 break
@@ -808,6 +954,59 @@ def simulate_combat(player: SimPlayer, monster: dict,
                 if player.take_damage(total_mdmg):
                     break
 
+                # --- Status effect application from monster attacks ---
+                if random.random() < STATUS_EFFECT_CHANCE:
+                    # Determine which effect based on monster type distribution
+                    eff_roll = random.random()
+                    total_frac = (STATUS_POISON_FRAC + STATUS_BURN_FRAC +
+                                  STATUS_DISEASE_FRAC + STATUS_CONFUSE_FRAC +
+                                  STATUS_PARALYZE_FRAC)
+                    if eff_roll < STATUS_POISON_FRAC / total_frac:
+                        if not player.has_poison_resist:
+                            player.status_poison_turns = max(player.status_poison_turns,
+                                                            STATUS_AVG_DURATION)
+                    elif eff_roll < (STATUS_POISON_FRAC + STATUS_BURN_FRAC) / total_frac:
+                        if not player.has_fire_resist:
+                            player.status_burn_turns = max(player.status_burn_turns,
+                                                          STATUS_AVG_DURATION)
+                    elif eff_roll < (STATUS_POISON_FRAC + STATUS_BURN_FRAC +
+                                     STATUS_DISEASE_FRAC) / total_frac:
+                        if not player.has_poison_resist:
+                            player.status_disease_turns = max(player.status_disease_turns,
+                                                             STATUS_AVG_DURATION)
+                    elif eff_roll < (STATUS_POISON_FRAC + STATUS_BURN_FRAC +
+                                     STATUS_DISEASE_FRAC + STATUS_CONFUSE_FRAC) / total_frac:
+                        player.status_confused_turns = max(player.status_confused_turns,
+                                                          STATUS_AVG_DURATION)
+                    else:
+                        player.status_paralyzed_turns = max(player.status_paralyzed_turns,
+                                                           PARALYZE_LOST_TURNS)
+
+        # --- Status effect ticks (DoT applied per combat turn) ---
+        if player.status_poison_turns > 0:
+            player.take_damage(POISON_DMG_PER_TURN)
+            player.status_poison_turns -= 1
+            if player.hp <= 0:
+                break
+        if player.status_burn_turns > 0:
+            player.take_damage(BURN_DMG_PER_TURN)
+            player.status_burn_turns -= 1
+            if player.hp <= 0:
+                break
+        if player.status_disease_turns > 0:
+            if random.random() < DISEASE_STAT_LOSS_P:
+                stat = random.choice(['STR', 'CON'])
+                if stat == 'STR' and player.STR > 3:
+                    player.STR -= 1
+                elif stat == 'CON' and player.CON > 3:
+                    player.CON -= 1
+            player.status_disease_turns -= 1
+        if player.status_confused_turns > 0:
+            player.status_confused_turns -= 1
+        if player.status_paralyzed_turns > 0:
+            player.status_paralyzed_turns -= 1
+            continue  # Skip this turn entirely (paralyzed)
+
     won = (m_hp <= 0 and not fled and not pursuer)
     if won:
         player.kills += 1
@@ -823,6 +1022,123 @@ def simulate_combat(player: SimPlayer, monster: dict,
         'chains':    chains,
         'starv_dmg': starvation_dmg,
     }
+
+# ---------------------------------------------------------------------------
+# Mystery, prayer, and spell helpers
+# ---------------------------------------------------------------------------
+
+def _attempt_mystery(player: SimPlayer, subject: str, mode: str,
+                     tier: int, threshold: int) -> bool:
+    """Simulate a mystery quiz attempt. Returns True if solved."""
+    if mode == 'physical':
+        # Sisyphus: STR-based physical challenge, ~50% success
+        return player.STR >= 14 or random.random() < 0.40
+
+    p = p_correct(tier, player.WIS, player.skill)
+
+    if mode == 'threshold':
+        total_qs = max(threshold, int(threshold * 1.4))
+        return random.random() < p_threshold(threshold, total_qs, p)
+    elif mode == 'escalator_threshold':
+        # Escalator: questions get harder, need threshold correct
+        chain = roll_escalator_chain(p, max_q=threshold + 2, drop_per_q=0.06)
+        return chain >= threshold
+    elif mode in ('chain', 'escalator_chain'):
+        chain = roll_escalator_chain(p, max_q=threshold + 2, drop_per_q=0.05)
+        return chain >= threshold
+    return False
+
+
+def _apply_mystery_reward(player: SimPlayer, rtype: str, rval) -> None:
+    """Apply mystery rewards to player."""
+    if rtype == 'gold':
+        player.gold += rval
+    elif rtype == 'stats':
+        for stat, bonus in rval.items():
+            if stat == 'WIS':
+                player.WIS += bonus
+            elif stat == 'INT':
+                player.INT += bonus
+                player.max_mp = 10 + player.INT
+            elif stat == 'STR':
+                player.STR += bonus
+            elif stat == 'CON':
+                player.CON += bonus
+                player.max_hp += bonus
+                player.hp = min(player.hp + bonus, player.max_hp)
+    elif rtype == 'stats_hp':
+        for stat, bonus in rval.items():
+            if stat == 'CON':
+                player.CON += bonus
+                player.max_hp += bonus
+                player.hp = min(player.hp + bonus, player.max_hp)
+            elif stat == 'max_hp':
+                player.max_hp += bonus
+                player.hp = min(player.hp + bonus, player.max_hp)
+    elif rtype == 'stats_weapon':
+        for stat, bonus in rval.items():
+            if stat == 'STR':
+                player.STR += bonus
+            elif stat == 'weapon_enchant':
+                player.weapon_enchant += bonus
+    elif rtype == 'effects':
+        for eff in rval:
+            if eff == 'regenerating':
+                player.has_regen = True
+            elif eff == 'poison_resist':
+                player.has_poison_resist = True
+            elif eff == 'searching' or eff == 'warning':
+                pass  # Map awareness, minor benefit
+    elif rtype == 'effects_inverted':
+        # Pandora: failing grants the reward (inverted quiz)
+        for eff in rval:
+            if eff == 'magic_resist':
+                pass  # Minor damage reduction
+            elif eff == 'displacement':
+                pass  # 30% dodge, minor
+
+
+def _simulate_prayer(player: SimPlayer, level: int) -> None:
+    """Simulate a prayer at an altar. Theology escalator chain."""
+    floor_tier = max(1, min(5, (level - 1) // 20 + 1))
+    p = p_correct(floor_tier, player.WIS, player.skill)
+    chain = roll_escalator_chain(p, max_q=8, drop_per_q=0.06)
+
+    if chain <= 0:
+        return
+    elif chain == 1:
+        # Minor comfort: +5% SP or remove minor status
+        player.restore_sp(int(player.max_sp * 0.05))
+        player.status_confused_turns = 0
+        player.status_poison_turns = 0
+    elif chain == 2:
+        # Major cleansing
+        player.restore_sp(int(player.max_sp * 0.10))
+        player.status_disease_turns = 0
+        player.status_paralyzed_turns = 0
+    elif chain == 3:
+        # Full purification
+        player.restore_sp(int(player.max_sp * 0.20))
+        player.hp = min(player.hp + int(player.max_hp * 0.20), player.max_hp)
+        player.status_poison_turns = 0
+        player.status_burn_turns = 0
+        player.status_disease_turns = 0
+        player.status_confused_turns = 0
+        player.status_paralyzed_turns = 0
+    elif chain == 4:
+        player.restore_sp(int(player.max_sp * 0.30))
+    elif chain == 5:
+        player.restore_sp(int(player.max_sp * 0.60))
+        player.hp = min(player.hp + int(player.max_hp * 0.20), player.max_hp)
+    elif chain == 6:
+        player.sp = player.max_sp
+        player.hp = min(player.hp + int(player.max_hp * 0.50), player.max_hp)
+    elif chain >= 7:
+        player.sp = player.max_sp
+        player.hp = player.max_hp
+        if chain >= 8 and player.WIS < 23:  # WIS+1 cap at +3
+            player.WIS += 1
+
 
 # ---------------------------------------------------------------------------
 # Single level simulation
@@ -987,6 +1303,178 @@ def simulate_level(player: SimPlayer, level: int,
         if random.random() < gram_p * ENCHANT_SCROLL_GRAMMAR_P:
             player.weapon_enchant = getattr(player, 'weapon_enchant', 0) + 1
 
+    # --- Scroll of Enchant Armor (+1 AC) ---
+    if not death_pursues and random.random() < SCROLL_ENCHANT_ARMOR_FIND * _item_scale:
+        gram_p = p_correct(3, player.WIS, player.skill)
+        if random.random() < gram_p * SCROLL_GRAMMAR_P_BASE:
+            if player.armor_ac > 0:  # must have armor equipped
+                player.armor_ac += 1
+
+    # --- Scroll of Great Power (+1 all stats, min_level=50) ---
+    if not death_pursues and level >= 50 and random.random() < SCROLL_GREAT_POWER_FIND * _item_scale:
+        gram_p = p_correct(5, player.WIS, player.skill)
+        if random.random() < gram_p * SCROLL_GRAMMAR_P_BASE:
+            player.STR += 1
+            player.CON += 1
+            player.DEX += 1
+            player.INT += 1
+            player.WIS += 1
+            player.PER += 1
+            # CON bonus: +1 max HP
+            player.max_hp += 1
+            player.hp = min(player.hp + 1, player.max_hp)
+
+    # --- Scroll of Healing (3d6 HP, stacks with existing heal find) ---
+    if random.random() < SCROLL_HEAL_FIND * _item_scale:
+        gram_p = p_correct(1, player.WIS, player.skill)
+        if random.random() < gram_p * SCROLL_GRAMMAR_P_BASE:
+            player.healing_bank += roll_dice('3d6')
+
+    # --- Scroll of Annihilate (kills visible monsters, min_level=30) ---
+    # Modelled as: saves ~1 combat encounter worth of HP damage
+    if not death_pursues and level >= 30 and random.random() < SCROLL_ANNIHILATE_FIND * _item_scale:
+        gram_p = p_correct(5, player.WIS, player.skill)
+        if random.random() < gram_p * SCROLL_GRAMMAR_P_BASE:
+            # Effectively prevents one combat's worth of damage
+            player.healing_bank += int(player.max_hp * 0.15)
+
+    # --- Container loot system ---
+    n_containers = CONTAINER_GUARANTEED
+    extra_chance = CONTAINER_EXTRA_CHANCE
+    while random.random() < extra_chance:
+        n_containers += 1
+        extra_chance *= CONTAINER_EXTRA_DECAY
+    n_containers = max(0, int(n_containers * _item_scale + 0.5))
+    for _ in range(n_containers):
+        # Mimic check
+        if random.random() < MIMIC_CHANCE:
+            # Mimic fight: treat as a regular monster of appropriate level
+            mimic_hp = 10 + level * 2
+            mimic_monster = {'hp': str(mimic_hp), 'thac0': max(5, 20 - level // 5),
+                            'attacks': [{'damage': f'2d{min(8, 4 + level // 20)}'}],
+                            'resistances': [], 'weaknesses': [], 'treasure': {'gold': [10, 30]}}
+            result = simulate_combat(player, mimic_monster)
+            if player.hp <= 0:
+                return {
+                    'combats': 1, 'won': 0, 'fled': 0, 'boss_killed': False,
+                    'hp_lost': result['hp_lost'], 'sp_drained': 0,
+                    'death': 'combat', 'chains': result['chains'],
+                    'starv_dmg': 0, 'miniboss_killed': False,
+                }
+            continue
+
+        # Lockpick attempt
+        if player.lockpick_charges > 0:
+            lock_tier = max(1, min(5, (level - 1) // 20 + 1))
+            lock_p = p_correct(lock_tier, player.WIS, player.skill)
+            if random.random() < CONTAINER_LOCKPICK_P * lock_p:
+                # Success: get gold + possible item
+                gold = CONTAINER_GOLD_BASE + level * CONTAINER_GOLD_LEVEL_SCALE
+                gold = random.randint(int(gold * 0.5), int(gold * 1.5))
+                player.gold += gold
+                if random.random() < CONTAINER_ITEM_CHANCE:
+                    # Useful item: weapon/armor/scroll - modelled as small healing bank boost
+                    player.healing_bank += random.randint(5, 15)
+                player.lockpick_charges -= 1
+            else:
+                # Failed: possible trap damage (scales with container tier)
+                if random.random() < CONTAINER_TRAP_CHANCE:
+                    trap_base = max(2, CONTAINER_TRAP_DMG * lock_tier // 3)
+                    trap_dmg = random.randint(max(1, trap_base - 2), trap_base + 3)
+                    player.take_damage(trap_dmg)
+                    if player.hp <= 0:
+                        return {
+                            'combats': 0, 'won': 0, 'fled': 0, 'boss_killed': False,
+                            'hp_lost': trap_dmg, 'sp_drained': 0,
+                            'death': 'trap', 'chains': [],
+                            'starv_dmg': 0, 'miniboss_killed': False,
+                        }
+                player.lockpick_charges -= 1
+
+    # Replenish lockpicks (find ~1 per 3 levels)
+    if random.random() < 0.33:
+        player.lockpick_charges += random.randint(3, 8)
+
+    # --- Special rooms (35% chance) ---
+    if not death_pursues and random.random() < SPECIAL_ROOM_CHANCE:
+        room_roll = random.random()
+        if room_roll < 0.33:
+            # Treasury: extra containers + gold
+            for _ in range(TREASURY_EXTRA_CONTAINERS):
+                gold = level * TREASURY_GOLD_MULT
+                player.gold += random.randint(int(gold * 0.5), int(gold * 1.5))
+                if random.random() < CONTAINER_ITEM_CHANCE:
+                    player.healing_bank += random.randint(5, 15)
+        elif room_roll < 0.66:
+            # Library: scrolls + possible spellbook
+            for _ in range(LIBRARY_SCROLLS):
+                # Each scroll has a chance to be useful (heal, enchant, etc.)
+                if random.random() < 0.30:
+                    player.healing_bank += roll_dice('3d6')
+                elif random.random() < 0.20:
+                    player.weapon_enchant += 1
+            if random.random() < LIBRARY_SPELLBOOK_CHANCE:
+                # Learn a spell
+                gram_p = p_correct(2, player.WIS, player.skill)
+                if random.random() < SPELL_LEARN_CHANCE * gram_p:
+                    player.known_spells += 1
+                    if player.known_spells >= 3:
+                        player.has_heal_spell = True
+                    if player.known_spells >= 2:
+                        player.has_shield_spell = True
+        else:
+            # Shrine: prayer opportunity
+            if player.prayer_cooldown <= 0:
+                _simulate_prayer(player, level)
+                player.prayer_cooldown = 100
+
+    # --- Spellbook find (standard) ---
+    if not death_pursues and random.random() < SPELLBOOK_FIND_CHANCE * _item_scale:
+        gram_p = p_correct(2, player.WIS, player.skill)
+        if random.random() < SPELL_LEARN_CHANCE * gram_p:
+            player.known_spells += 1
+            if player.known_spells >= 3:
+                player.has_heal_spell = True
+            if player.known_spells >= 2:
+                player.has_shield_spell = True
+
+    # --- Spell usage (pre-combat buffs + healing between fights) ---
+    if player.known_spells > 0 and player.mp >= SPELL_AVG_CAST_COST:
+        # Use heal spell if available and HP < 60%
+        if player.has_heal_spell and player.hp < player.max_hp * 0.60:
+            sci_p = p_correct(3, player.WIS, player.skill)
+            chain = roll_chain(sci_p, 5)
+            if chain > 0:
+                heal = int(roll_dice('3d8') * chain / 5.0)
+                player.hp = min(player.hp + heal, player.max_hp)
+            player.mp -= 8
+        # Use shield spell for tough fights
+        elif player.has_shield_spell and player.mp >= 5:
+            # Shield effectively reduces incoming damage ~20% for next combat
+            player.healing_bank += int(player.max_hp * 0.05)
+            player.mp -= 5
+
+    # --- Mystery system ---
+    if not death_pursues:
+        for mid, m_min, m_max, m_subj, m_mode, m_tier, m_thresh, m_rtype, m_rval in MYSTERY_TABLE:
+            if mid in player.mysteries_solved:
+                continue
+            if m_min <= level <= m_max:
+                if random.random() < MYSTERY_SPAWN_CHANCE:
+                    # Attempt to solve the mystery
+                    solved = _attempt_mystery(player, m_subj, m_mode, m_tier, m_thresh)
+                    if solved:
+                        player.mysteries_solved.add(mid)
+                        _apply_mystery_reward(player, m_rtype, m_rval)
+                    break  # At most one mystery per level
+
+    # --- Prayer at altar (natural altars every 15 levels) ---
+    if player.prayer_cooldown > 0:
+        player.prayer_cooldown -= 1
+    if not death_pursues and level % 15 == 1 and player.prayer_cooldown <= 0:
+        _simulate_prayer(player, level)
+        player.prayer_cooldown = 100
+
     # --- Exploration SP drain ---
     player.drain_sp(SP_EXPLORATION_PER_LEVEL)
 
@@ -996,10 +1484,13 @@ def simulate_level(player: SimPlayer, level: int,
         player.metabolic_uses -= 1
 
     # --- Death Pursuer attack on ascent levels ---
-    # Death attacks once per level during ascent (half-speed, but always present).
-    # This happens after regular-floor combat but before the stair-rest heal.
+    # Death attacks once per level during ascent. Damage escalates as Death
+    # gets angrier (floors_chased increases as player ascends from L99 to L1).
+    # Base damage + 1% per floor chased (so +50% by L50, +99% by L1).
     if death_pursues:
-        death_atk = roll_dice(DEATH_ATTACK_DICE)
+        floors_chased = 100 - level
+        escalation = 1.0 + floors_chased * 0.007  # +0.7% per floor
+        death_atk = int(roll_dice(DEATH_ATTACK_DICE) * escalation)
         if player.take_damage(death_atk):
             return {
                 'combats': 0, 'won': 0, 'fled': 0, 'boss_killed': False,
@@ -1069,11 +1560,26 @@ def simulate_level(player: SimPlayer, level: int,
             continue
         if m.get('is_mini_boss'):
             continue  # mini-bosses handled separately
-        if m.get('min_level', 1) > level:
+        min_lv = m.get('min_level', 1)
+        if min_lv > level:
             continue
         max_lv = m.get('max_level')
+        use_proximity = level >= 30
         if max_lv and level > max_lv:
-            freq = max(1, freq - (level - max_lv))
+            over = level - max_lv
+            if use_proximity:
+                freq = freq - over
+                if freq <= 0:
+                    continue
+            else:
+                freq = max(1, freq - over)
+        if use_proximity:
+            distance = level - min_lv
+            prox_scale = max(0, (level - 30) // 10)
+            if distance <= 5:
+                freq *= (2 + prox_scale)
+            elif distance <= 15:
+                freq *= max(1, 1 + prox_scale // 2)
         pool.extend([mid] * freq)
 
     if not pool:
@@ -1103,10 +1609,13 @@ def simulate_level(player: SimPlayer, level: int,
             # Cooking pipeline: harvest corpse, attempt to cook
             if random.random() < HARVEST_CHANCE:
                 if random.random() < COOK_ATTEMPT_CHANCE:
-                    sp_r, hp_r, _ = simulate_cooking(player.WIS, player.skill, level)
+                    sp_r, hp_r, _, max_hp_r = simulate_cooking(player.WIS, player.skill, level)
                     player.restore_sp(sp_r)
                     if hp_r > 0:
                         player.healing_bank += hp_r
+                    if max_hp_r > 0:
+                        player.max_hp += max_hp_r
+                        player.hp = min(player.hp + max_hp_r, player.max_hp)
         elif result['fled']:
             combats_fled += 1
         elif player.hp <= 0:
@@ -1205,7 +1714,7 @@ def simulate_run(max_level: int, monsters: dict, weapons: dict,
             death_pursues=death_pursues,
         )
         # No descend() on ascent; stair-rest heal is reduced (player is rushing up)
-        rest_heal = max(hp_per_level, int(player.max_hp * DEATH_ASCENT_REST_PCT))
+        rest_heal = max(HP_PER_LEVEL_REST, int(player.max_hp * DEATH_ASCENT_REST_PCT))
         player.hp = min(player.hp + rest_heal, player.max_hp)
 
         if stats.get('miniboss_killed'):
@@ -1230,6 +1739,11 @@ def simulate_run(max_level: int, monsters: dict, weapons: dict,
 
 def _run_result(survived, died_on, phase, death_cause, per_lv, player, miniboss_kills):
     score = _calc_score(player, survived)
+    # Find max HP when player reached L100
+    max_hp_100 = None
+    for s in per_lv:
+        if s['phase'] == 'descent' and s['level'] == 100:
+            max_hp_100 = s.get('player_max_hp')
     return {
         'survived':      survived,
         'died_on':       died_on,
@@ -1246,6 +1760,8 @@ def _run_result(survived, died_on, phase, death_cause, per_lv, player, miniboss_
         'deepest_level': max((s['level'] for s in per_lv if s['phase'] == 'descent'),
                              default=0),
         'quirks':        set(player.quirk_unlocked),
+        'mysteries':     set(player.mysteries_solved),
+        'max_hp_at_100': max_hp_100,
     }
 
 
@@ -1279,7 +1795,7 @@ def run_simulation(runs: int, max_level: int, seed: int, skill: str,
                    compare_builds: bool = False):
 
     random.seed(seed)
-    monsters, weapons, armor, shields, food, accessories, wands, ingr, recipes = load_data()
+    monsters, weapons, armor, shields, food, accessories, wands, ingr, recipes, scrolls = load_data()
     miniboss_table = _build_miniboss_table(monsters)
 
     if compare_builds:
@@ -1296,6 +1812,7 @@ def run_simulation(runs: int, max_level: int, seed: int, skill: str,
     d_died         = defaultdict(int)
     d_death_cause  = defaultdict(lambda: defaultdict(int))
     d_hp_lost      = defaultdict(list)
+    d_max_hp       = defaultdict(list)  # track actual player max HP at each level
     d_sp_rem       = defaultdict(list)
     d_chains       = defaultdict(list)
     d_won          = defaultdict(int)
@@ -1321,6 +1838,10 @@ def run_simulation(runs: int, max_level: int, seed: int, skill: str,
     grade_counts        = defaultdict(int)
     death_pursuer_kills = 0
     quirk_unlock_counts = defaultdict(int)  # quirk_id -> runs that unlocked it
+    mystery_solve_counts = defaultdict(int)  # mystery_id -> runs that solved it
+    max_hp_at_l100      = []  # track max HP at L100 for cooking HP analysis
+    trap_deaths         = 0
+    mimic_deaths        = 0
 
     for _ in range(runs):
         result = simulate_run(
@@ -1341,8 +1862,14 @@ def run_simulation(runs: int, max_level: int, seed: int, skill: str,
         grade_counts[_grade(result['score'])] += 1
         if result['death_cause'] == 'death_pursuer':
             death_pursuer_kills += 1
+        if result['death_cause'] == 'trap':
+            trap_deaths += 1
         for qid in result.get('quirks', set()):
             quirk_unlock_counts[qid] += 1
+        for mid in result.get('mysteries', set()):
+            mystery_solve_counts[mid] += 1
+        if result.get('max_hp_at_100'):
+            max_hp_at_l100.append(result['max_hp_at_100'])
 
         for s in result['per_level']:
             lv    = s['level']
@@ -1351,6 +1878,7 @@ def run_simulation(runs: int, max_level: int, seed: int, skill: str,
             if phase == 'descent':
                 d_reached[lv]   += 1
                 d_hp_lost[lv].append(s['hp_lost'])
+                d_max_hp[lv].append(s.get('player_max_hp', 30))
                 d_sp_rem[lv].append(s['sp_remaining'])
                 d_chains[lv].extend(s['chains'])
                 d_won[lv]       += s['won']
@@ -1398,6 +1926,8 @@ def run_simulation(runs: int, max_level: int, seed: int, skill: str,
     print(f'  Build stats: STR={bstat["STR"]} CON={bstat["CON"]} DEX={bstat["DEX"]} '
           f'INT={bstat["INT"]} WIS={bstat["WIS"]} PER={bstat["PER"]}')
     print(f'  Mini-bosses: {len(miniboss_table)} total, each spawns at most once per run')
+    print(f'  Systems: combat+STR scaling, status effects, mysteries, scrolls, containers,')
+    print(f'           special rooms, spells, prayer, quirks, cooking HP, merchants, potions')
     print('=' * W)
 
     red_flags = []
@@ -1416,7 +1946,7 @@ def run_simulation(runs: int, max_level: int, seed: int, skill: str,
         died     = d_died.get(lv, 0)
         surv_pct = 100.0 * (reached - died) / reached
         avg_hl   = sum(d_hp_lost[lv]) / len(d_hp_lost[lv])
-        approx_max_hp = (20 + bstat['CON']) + hp_per_level * (lv - 1)
+        approx_max_hp = int(sum(d_max_hp[lv]) / len(d_max_hp[lv])) if d_max_hp[lv] else 30
         hp_pct   = 100.0 * avg_hl / max(1, approx_max_hp)
         avg_sp   = sum(d_sp_rem[lv]) / len(d_sp_rem[lv])
         win_pct  = 100.0 * d_won[lv] / max(1, d_combats[lv])
@@ -1464,7 +1994,7 @@ def run_simulation(runs: int, max_level: int, seed: int, skill: str,
             died    = a_died.get(lv, 0)
             surv    = 100.0 * (reached - died) / reached
             avg_hl  = sum(a_hp_lost[lv]) / len(a_hp_lost[lv]) if a_hp_lost[lv] else 0
-            approx_max = (20 + bstat['CON']) + hp_per_level * lv
+            approx_max = 800  # rough estimate for endgame max HP
             hp_pct  = 100.0 * avg_hl / max(1, approx_max)
             causes  = '  '.join(f'{c}={n}' for c, n in a_death_cause[lv].items())
             if died > 0 or lv % 10 == 0 or lv <= 5:
@@ -1602,6 +2132,41 @@ def run_simulation(runs: int, max_level: int, seed: int, skill: str,
         pct = 100.0 * cnt / runs
         bar = '#' * max(0, int(pct / 2))
         print(f'  {label:<55} {cnt:>6}  {pct:>6.1f}%  {bar}')
+
+    # Mystery solve rates
+    print(f'\nMYSTERY SOLVE RATES (skill={skill}):')
+    print(f'  {"MYSTERY":<20} {"FLOOR":>8} {"SOLVED":>7} {"PCT":>7}')
+    print(f'  {"-"*20}  {"-"*8} {"-"*7} {"-"*7}')
+    for mid, m_min, m_max, *_ in MYSTERY_TABLE:
+        cnt = mystery_solve_counts.get(mid, 0)
+        pct = 100.0 * cnt / runs
+        print(f'  {mid:<20} L{m_min:>2}-{m_max:<3}  {cnt:>6}  {pct:>6.1f}%')
+    total_mysteries = sum(mystery_solve_counts.values())
+    avg_mysteries = total_mysteries / runs
+    print(f'  Average mysteries solved per run: {avg_mysteries:.2f}')
+
+    # Max HP at L100 analysis (cooking HP growth)
+    if max_hp_at_l100:
+        avg_max_hp = sum(max_hp_at_l100) / len(max_hp_at_l100)
+        max_hp_at_l100.sort()
+        med_hp = max_hp_at_l100[len(max_hp_at_l100) // 2]
+        min_hp = max_hp_at_l100[0]
+        max_hp = max_hp_at_l100[-1]
+        print(f'\nMAX HP AT L100 (cooking-based growth, {len(max_hp_at_l100)} runs reached):')
+        print(f'  Average: {avg_max_hp:.0f}  Median: {med_hp}  Min: {min_hp}  Max: {max_hp}')
+        if avg_max_hp < 500:
+            red_flags.append(f'Max HP at L100 only {avg_max_hp:.0f} avg (target 800-900)')
+        elif avg_max_hp > 1200:
+            red_flags.append(f'Max HP at L100 is {avg_max_hp:.0f} avg (too high, target 800-900)')
+
+    # New system summary
+    print(f'\nNEW SYSTEMS SUMMARY:')
+    print(f'  Trap deaths      : {trap_deaths}/{runs} ({100*trap_deaths/runs:.2f}%)')
+    print(f'  Status effects   : Modelled (poison/burn DoT, disease stat drain, confuse/paralyze)')
+    print(f'  Containers       : {CONTAINER_GUARANTEED}+ per level, lockpick-gated')
+    print(f'  Special rooms    : {SPECIAL_ROOM_CHANCE*100:.0f}% per level (treasury/library/shrine)')
+    print(f'  Spell system     : {SPELLBOOK_FIND_CHANCE*100:.0f}% spellbook/lv, science chain casting')
+    print(f'  Prayer system    : Altars every 15 levels + shrine rooms')
 
     # Red flags
     if red_flags:
