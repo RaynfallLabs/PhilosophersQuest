@@ -107,6 +107,58 @@ _RESIST_BLOCKS: dict[str, set] = {
     'cold_resist':   {'frozen'},
 }
 
+# Material immunity to acid/rust — materials that cannot corrode or rust
+_RUSTPROOF = frozenset({
+    'diamond', 'mithril', 'adamantine', 'dragonbone', 'dragonscale', 'dragon scale',
+    'crystal', 'obsidian', 'divine', 'divine silk', 'enchanted plate', 'spectral iron',
+})
+_ORGANIC = frozenset({
+    'cloth', 'leather', 'hide', 'fur', 'silk', 'linen', 'wool', 'padded',
+    'enchanted cloth', 'wood', 'hardwood', 'yew', 'ironwood', 'bone', 'fang',
+})
+# Organic materials don't rust but CAN be damaged by acid
+# Rustproof materials are immune to both rust AND acid
+
+
+def _can_corrode(item) -> bool:
+    """Return True if an item can be damaged by acid/corrosion."""
+    mat = getattr(item, 'material', '')
+    return mat not in _RUSTPROOF
+
+def _can_rust(item) -> bool:
+    """Return True if an item can be damaged by rust (metals only)."""
+    mat = getattr(item, 'material', '')
+    if mat in _RUSTPROOF:
+        return False
+    if mat in _ORGANIC:
+        return False  # organic materials don't rust
+    return True  # iron, steel, bronze, gold, etc. can rust
+
+
+def _corrode_random_gear(player) -> tuple[str, str] | None:
+    """Acid eats at one random equipped item. Returns a message or None."""
+    import random
+    targets = []
+    # Collect all equipped items that can corrode
+    if player.weapon and _can_corrode(player.weapon):
+        targets.append(('weapon', player.weapon))
+    if player.shield and _can_corrode(player.shield):
+        targets.append(('shield', player.shield))
+    for i, slot in enumerate(player.armor_slots):
+        if slot and _can_corrode(slot):
+            targets.append((f'armor_{i}', slot))
+    if not targets:
+        return None
+    # 25% chance per tick to actually degrade something
+    if random.random() > 0.25:
+        return None
+    _, item = random.choice(targets)
+    eb = getattr(item, 'enchant_bonus', 0)
+    if eb > -3:
+        item.enchant_bonus = eb - 1
+        return (f'Acid eats at your {item.name}! (-1 enchantment)', 'danger')
+    return (f'Acid sizzles on your {item.name}, but it holds.', 'warning')
+
 # Damage type -> immunity status effect (first match wins; fire_shield overrides fire_resist)
 DAMAGE_IMMUNITY: dict[str, str] = {
     'fire':    'fire_resist',
@@ -265,6 +317,12 @@ def tick_all(player, dungeon=None) -> list[tuple[str, str]]:
                 dmg = player.take_damage(1, 'fire')
                 if dmg:
                     messages.append(('You are on fire!', 'danger'))
+
+        elif effect == 'corroding':
+            # Acid eats at a random equipped metal item each turn
+            result = _corrode_random_gear(player)
+            if result:
+                messages.append(result)
 
         elif effect == 'frozen':
             pass  # slowing mechanic handled by caller; cold DOT negligible

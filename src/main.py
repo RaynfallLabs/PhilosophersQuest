@@ -2702,10 +2702,23 @@ class Game:
                     m.status_effects.pop('sleeping', None)
             self.add_message("Every creature on the floor heard that!", 'danger')
         elif trap_type == 'rust':
-            equipped_armor = self.player.equipment.get('body')
-            if equipped_armor and hasattr(equipped_armor, 'enchant_bonus'):
-                equipped_armor.enchant_bonus = max(-3, equipped_armor.enchant_bonus - 1)
-                self.add_message(f"Your {equipped_armor.name} rusts! (-1 enchantment)", 'danger')
+            from status_effects import _can_rust
+            # Collect all equipped items that can rust
+            rust_targets = []
+            if self.player.weapon and _can_rust(self.player.weapon):
+                rust_targets.append(self.player.weapon)
+            if self.player.shield and _can_rust(self.player.shield):
+                rust_targets.append(self.player.shield)
+            for slot in self.player.armor_slots:
+                if slot and _can_rust(slot):
+                    rust_targets.append(slot)
+            if rust_targets:
+                victim = random.choice(rust_targets)
+                if getattr(victim, 'enchant_bonus', 0) > -3:
+                    victim.enchant_bonus = getattr(victim, 'enchant_bonus', 0) - 1
+                    self.add_message(f"Your {victim.name} rusts! (-1 enchantment)", 'danger')
+                else:
+                    self.add_message(f"Your {victim.name} is corroded but holds together.", 'warning')
             else:
                 self.add_message("The water washes over you harmlessly.", 'info')
         elif trap_type == 'polymorph':
