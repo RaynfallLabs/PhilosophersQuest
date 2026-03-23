@@ -1104,7 +1104,7 @@
     ],
     "weight": 1.0,
     "min_level": 2,
-    "source_monster": "huginn_raven",
+    "source_monster": "hugin_raven",
     "recipes": {
       "0": {
         "name": "singed raven ash",
@@ -2664,7 +2664,7 @@
     ],
     "weight": 0.5,
     "min_level": 3,
-    "source_monster": "hostile_leprechaun",
+    "source_monster": "leprechaun_hostile",
     "recipes": {
       "0": {
         "name": "wilted clover mulch",
@@ -2868,7 +2868,7 @@
     ],
     "weight": 4.0,
     "min_level": 4,
-    "source_monster": "hecates_hound",
+    "source_monster": "hecate_hound",
     "recipes": {
       "0": {
         "name": "shadow-burnt pelt scraps",
@@ -6265,7 +6265,7 @@
     ],
     "weight": 2.5,
     "min_level": 6,
-    "source_monster": "lesser_basilisk",
+    "source_monster": "basilisk_lesser",
     "recipes": {
       "0": {
         "name": "clouded basilisk eye",
@@ -6628,7 +6628,7 @@
     ],
     "weight": 1.0,
     "min_level": 7,
-    "source_monster": "corrupted_light_elf",
+    "source_monster": "light_elf_hostile",
     "recipes": {
       "0": {
         "name": "tainted faerie ash",
@@ -7812,7 +7812,7 @@
     ],
     "weight": 2.0,
     "min_level": 10,
-    "source_monster": "pegasus_hostile",
+    "source_monster": "pegasus_corrupted",
     "recipes": {
       "0": {
         "name": "tangled sky-mane mess",
@@ -9000,7 +9000,7 @@
     ],
     "weight": 4.0,
     "min_level": 10,
-    "source_monster": "nidhoggr_brood",
+    "source_monster": "nidhogg_brood",
     "recipes": {
       "0": {
         "name": "crumbled corruption dust",
@@ -9051,7 +9051,7 @@
     ],
     "weight": 0.5,
     "min_level": 14,
-    "source_monster": "egyptian_sphinx",
+    "source_monster": "sphinx_guardian",
     "recipes": {
       "0": {
         "name": "scattered gold dust",
@@ -9826,7 +9826,7 @@
     ],
     "weight": 1.0,
     "min_level": 9,
-    "source_monster": "corrupted_pegasus",
+    "source_monster": "pegasus_corrupted",
     "recipes": {
       "0": {
         "name": "crumbling corrupted feather",
@@ -10082,7 +10082,7 @@
     ],
     "weight": 2.0,
     "min_level": 14,
-    "source_monster": "norse_sea_serpent",
+    "source_monster": "sea_serpent_norse",
     "recipes": {
       "0": {
         "name": "rancid sea serpent fat",
@@ -10648,7 +10648,7 @@
     ],
     "weight": 1.0,
     "min_level": 10,
-    "source_monster": "lesser_thunderbird",
+    "source_monster": "thunderbird_lesser",
     "recipes": {
       "0": {
         "name": "singed storm feather",
@@ -10751,7 +10751,7 @@
     ],
     "weight": 3.0,
     "min_level": 10,
-    "source_monster": "lesser_sphinx",
+    "source_monster": "sphinx_lesser",
     "recipes": {
       "0": {
         "name": "blunted sphinx talon",
@@ -10955,7 +10955,7 @@
     ],
     "weight": 3.0,
     "min_level": 22,
-    "source_monster": "lernaean_hydra",
+    "source_monster": "hydra",
     "recipes": {
       "0": {
         "name": "corrosive hydra bile",
@@ -11110,7 +11110,7 @@
     ],
     "weight": 8.0,
     "min_level": 11,
-    "source_monster": "lesser_stone_golem",
+    "source_monster": "stone_golem_lesser",
     "recipes": {
       "0": {
         "name": "crumbled golem rubble",
@@ -11369,7 +11369,7 @@
     ],
     "weight": 2.0,
     "min_level": 11,
-    "source_monster": "corrupted_unicorn",
+    "source_monster": "unicorn_corrupted",
     "recipes": {
       "0": {
         "name": "tainted alicorn dust",
@@ -11676,7 +11676,7 @@
     ],
     "weight": 1.5,
     "min_level": 12,
-    "source_monster": "lesser_erinyes",
+    "source_monster": "erinyes_lesser",
     "recipes": {
       "0": {
         "name": "tattered fury feather",
@@ -11727,7 +11727,7 @@
     ],
     "weight": 6.0,
     "min_level": 25,
-    "source_monster": "lesser_behir",
+    "source_monster": "behir_lesser",
     "recipes": {
       "0": {
         "name": "crumbled serpent-dragon scale",
@@ -11984,7 +11984,7 @@
     ],
     "weight": 3.0,
     "min_level": 12,
-    "source_monster": "greater_wyvern",
+    "source_monster": "wyvern_greater",
     "recipes": {
       "0": {
         "name": "burst wyvern venom sac",
@@ -12036,7 +12036,7 @@
     ],
     "weight": 3.0,
     "min_level": 14,
-    "source_monster": "lesser_aboleth",
+    "source_monster": "aboleth_lesser",
     "recipes": {
       "0": {
         "name": "putrid aboleth slime",
@@ -12600,7 +12600,7 @@
     ],
     "weight": 4.0,
     "min_level": 28,
-    "source_monster": "lesser_nalfeshnee",
+    "source_monster": "nalfeshnee_lesser",
     "recipes": {
       "0": {
         "name": "rancid demon organ",
@@ -12651,7 +12651,7 @@
     ],
     "weight": 10.0,
     "min_level": 35,
-    "source_monster": "lesser_undead_dragon",
+    "source_monster": "undead_dragon_lesser",
     "recipes": {
       "0": {
         "name": "crumbled undead scale dust",
@@ -14000,6 +14000,1358 @@
         "bonus_type": "stat",
         "bonus_amount": 1,
         "bonus_stat": "CON"
+      }
+    }
+  },
+  "arachne_silk_gland": {
+    "name": "arachne silk gland",
+    "symbol": ",",
+    "color": [
+      200,
+      200,
+      220
+    ],
+    "weight": 1.0,
+    "min_level": 3,
+    "source_monster": "arachne",
+    "floor_spawn_weight": {},
+    "recipes": {
+      "0": {
+        "name": "ruined silk glob",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "boiled silk threads",
+        "sp": 12,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "silk thread broth",
+        "sp": 25,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "weaver's consomme",
+        "sp": 45,
+        "bonus_type": "stat",
+        "bonus_stat": "DEX",
+        "bonus_amount": 1
+      },
+      "4": {
+        "name": "Athena's loom bisque",
+        "sp": 65,
+        "bonus_type": "combat_stat",
+        "bonus_amount": 1
+      },
+      "5": {
+        "name": "tapestry of the gods",
+        "sp": 90,
+        "bonus_type": "two_stats",
+        "bonus_amount": 2
+      }
+    }
+  },
+  "talos_bronze_shard": {
+    "name": "talos bronze shard",
+    "symbol": ",",
+    "color": [
+      180,
+      140,
+      60
+    ],
+    "weight": 3.0,
+    "min_level": 12,
+    "source_monster": "talos",
+    "floor_spawn_weight": {},
+    "recipes": {
+      "0": {
+        "name": "charred bronze scrap",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "melted bronze soup",
+        "sp": 35,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "bronze reduction",
+        "sp": 65,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "colossus broth",
+        "sp": 100,
+        "bonus_type": "stat",
+        "bonus_stat": "STR",
+        "bonus_amount": 1
+      },
+      "4": {
+        "name": "Hephaestus' forge stew",
+        "sp": 140,
+        "bonus_type": "combat_stat",
+        "bonus_amount": 2
+      },
+      "5": {
+        "name": "ichor of the automaton",
+        "sp": 180,
+        "bonus_type": "two_stats",
+        "bonus_amount": 2
+      }
+    }
+  },
+  "echidna_venom_sac": {
+    "name": "echidna venom sac",
+    "symbol": ",",
+    "color": [
+      130,
+      180,
+      50
+    ],
+    "weight": 2.0,
+    "min_level": 15,
+    "source_monster": "echidna",
+    "floor_spawn_weight": {},
+    "recipes": {
+      "0": {
+        "name": "ruined venom slurry",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "neutralized venom broth",
+        "sp": 40,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "mother-of-monsters soup",
+        "sp": 75,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "broodmother's elixir",
+        "sp": 110,
+        "bonus_type": "stat",
+        "bonus_stat": "CON",
+        "bonus_amount": 1
+      },
+      "4": {
+        "name": "serpent queen's feast",
+        "sp": 150,
+        "bonus_type": "two_stats",
+        "bonus_amount": 2
+      },
+      "5": {
+        "name": "primordial genesis broth",
+        "sp": 200,
+        "bonus_type": "all_stats",
+        "bonus_amount": 1
+      }
+    }
+  },
+  "erlking_crown_twig": {
+    "name": "erlking crown twig",
+    "symbol": ",",
+    "color": [
+      60,
+      140,
+      40
+    ],
+    "weight": 1.0,
+    "min_level": 20,
+    "source_monster": "erlking",
+    "floor_spawn_weight": {},
+    "recipes": {
+      "0": {
+        "name": "charred bark scraps",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "forest king tea",
+        "sp": 50,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "wild hunt broth",
+        "sp": 90,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "sovereign of the wood stew",
+        "sp": 130,
+        "bonus_type": "stat",
+        "bonus_stat": "WIS",
+        "bonus_amount": 1
+      },
+      "4": {
+        "name": "Erlkonig's dark feast",
+        "sp": 170,
+        "bonus_type": "combat_stat",
+        "bonus_amount": 2
+      },
+      "5": {
+        "name": "throne of thorns banquet",
+        "sp": 220,
+        "bonus_type": "two_stats",
+        "bonus_amount": 2
+      }
+    }
+  },
+  "camazotz_wing_membrane": {
+    "name": "camazotz wing membrane",
+    "symbol": ",",
+    "color": [
+      80,
+      40,
+      60
+    ],
+    "weight": 1.5,
+    "min_level": 25,
+    "source_monster": "camazotz",
+    "floor_spawn_weight": {},
+    "recipes": {
+      "0": {
+        "name": "ruined bat leather",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "smoked death-bat jerky",
+        "sp": 60,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "cave lord's broth",
+        "sp": 100,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "Xibalba midnight stew",
+        "sp": 145,
+        "bonus_type": "stat",
+        "bonus_stat": "DEX",
+        "bonus_amount": 2
+      },
+      "4": {
+        "name": "death bat's blood feast",
+        "sp": 190,
+        "bonus_type": "combat_stat",
+        "bonus_amount": 2
+      },
+      "5": {
+        "name": "lord of the dark sky banquet",
+        "sp": 240,
+        "bonus_type": "two_stats",
+        "bonus_amount": 2
+      }
+    }
+  },
+  "cacus_ember_gut": {
+    "name": "cacus ember gut",
+    "symbol": ",",
+    "color": [
+      220,
+      100,
+      30
+    ],
+    "weight": 2.5,
+    "min_level": 30,
+    "source_monster": "cacus",
+    "floor_spawn_weight": {},
+    "recipes": {
+      "0": {
+        "name": "charred giant offal",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "fire-giant gut stew",
+        "sp": 70,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "Aventine hill roast",
+        "sp": 120,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "cattle-thief's hearty stew",
+        "sp": 165,
+        "bonus_type": "stat",
+        "bonus_stat": "STR",
+        "bonus_amount": 2
+      },
+      "4": {
+        "name": "Herculean flame feast",
+        "sp": 210,
+        "bonus_type": "combat_stat",
+        "bonus_amount": 2
+      },
+      "5": {
+        "name": "pyre of the Palatine",
+        "sp": 260,
+        "bonus_type": "two_stats",
+        "bonus_amount": 2
+      }
+    }
+  },
+  "sphinx_riddle_stone": {
+    "name": "sphinx riddle stone",
+    "symbol": ",",
+    "color": [
+      210,
+      190,
+      120
+    ],
+    "weight": 2.0,
+    "min_level": 35,
+    "source_monster": "the_sphinx",
+    "floor_spawn_weight": {},
+    "recipes": {
+      "0": {
+        "name": "crumbled riddle dust",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "riddler's tea",
+        "sp": 80,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "enigma broth",
+        "sp": 130,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "Theban oracle stew",
+        "sp": 180,
+        "bonus_type": "stat",
+        "bonus_stat": "INT",
+        "bonus_amount": 2
+      },
+      "4": {
+        "name": "riddle of the ages feast",
+        "sp": 230,
+        "bonus_type": "random_stat",
+        "bonus_amount": 3
+      },
+      "5": {
+        "name": "answer to all things",
+        "sp": 280,
+        "bonus_type": "all_stats",
+        "bonus_amount": 1
+      }
+    }
+  },
+  "rangda_mask_splinter": {
+    "name": "rangda mask splinter",
+    "symbol": ",",
+    "color": [
+      180,
+      50,
+      50
+    ],
+    "weight": 1.5,
+    "min_level": 40,
+    "source_monster": "rangda",
+    "floor_spawn_weight": {},
+    "recipes": {
+      "0": {
+        "name": "cursed wood shavings",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "boiled demon-queen bark",
+        "sp": 90,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "Balinese witch broth",
+        "sp": 140,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "leyak queen's stew",
+        "sp": 195,
+        "bonus_type": "stat",
+        "bonus_stat": "INT",
+        "bonus_amount": 2
+      },
+      "4": {
+        "name": "dance of Barong feast",
+        "sp": 245,
+        "bonus_type": "two_stats",
+        "bonus_amount": 2
+      },
+      "5": {
+        "name": "mask of the demon queen",
+        "sp": 300,
+        "bonus_type": "all_stats",
+        "bonus_amount": 1
+      }
+    }
+  },
+  "nemean_pelt_scrap": {
+    "name": "nemean pelt scrap",
+    "symbol": ",",
+    "color": [
+      200,
+      170,
+      80
+    ],
+    "weight": 2.5,
+    "min_level": 45,
+    "source_monster": "nemean_lion",
+    "floor_spawn_weight": {},
+    "recipes": {
+      "0": {
+        "name": "ruined golden hide",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "boiled lion leather",
+        "sp": 100,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "nemean broth",
+        "sp": 155,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "Heracles' lion stew",
+        "sp": 210,
+        "bonus_type": "stat",
+        "bonus_stat": "STR",
+        "bonus_amount": 2
+      },
+      "4": {
+        "name": "invulnerable hide feast",
+        "sp": 260,
+        "bonus_type": "combat_stat",
+        "bonus_amount": 2
+      },
+      "5": {
+        "name": "golden mane banquet",
+        "sp": 320,
+        "bonus_type": "two_stats",
+        "bonus_amount": 3
+      }
+    }
+  },
+  "baba_yaga_mortar_dust": {
+    "name": "baba yaga mortar dust",
+    "symbol": ",",
+    "color": [
+      150,
+      130,
+      110
+    ],
+    "weight": 1.5,
+    "min_level": 50,
+    "source_monster": "baba_yaga",
+    "floor_spawn_weight": {},
+    "recipes": {
+      "0": {
+        "name": "ruined witch powder",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "hag's pestle broth",
+        "sp": 110,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "chicken-leg hut stew",
+        "sp": 170,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "grandmother witch's brew",
+        "sp": 230,
+        "bonus_type": "stat",
+        "bonus_stat": "WIS",
+        "bonus_amount": 2
+      },
+      "4": {
+        "name": "iron teeth feast",
+        "sp": 280,
+        "bonus_type": "random_stat",
+        "bonus_amount": 3
+      },
+      "5": {
+        "name": "flying mortar grand stew",
+        "sp": 340,
+        "bonus_type": "all_stats",
+        "bonus_amount": 1
+      }
+    }
+  },
+  "jormungandr_scale": {
+    "name": "jormungandr scale",
+    "symbol": ",",
+    "color": [
+      60,
+      120,
+      100
+    ],
+    "weight": 3.0,
+    "min_level": 55,
+    "source_monster": "jormungandr_juvenile",
+    "floor_spawn_weight": {},
+    "recipes": {
+      "0": {
+        "name": "ruined world-serpent chip",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "boiled midgard scale",
+        "sp": 120,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "world serpent soup",
+        "sp": 180,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "Ragnarok reduction",
+        "sp": 240,
+        "bonus_type": "stat",
+        "bonus_stat": "CON",
+        "bonus_amount": 2
+      },
+      "4": {
+        "name": "Midgard encircler's feast",
+        "sp": 295,
+        "bonus_type": "two_stats",
+        "bonus_amount": 3
+      },
+      "5": {
+        "name": "tail-biter's apocalypse stew",
+        "sp": 360,
+        "bonus_type": "all_stats",
+        "bonus_amount": 1
+      }
+    }
+  },
+  "sets_jackal_fang": {
+    "name": "set's jackal fang",
+    "symbol": ",",
+    "color": [
+      180,
+      150,
+      80
+    ],
+    "weight": 1.5,
+    "min_level": 58,
+    "source_monster": "sets_jackal",
+    "floor_spawn_weight": {},
+    "recipes": {
+      "0": {
+        "name": "charred desert fang",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "roasted jackal tooth",
+        "sp": 125,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "desert god's broth",
+        "sp": 185,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "chaos lord's stew",
+        "sp": 250,
+        "bonus_type": "stat",
+        "bonus_stat": "STR",
+        "bonus_amount": 2
+      },
+      "4": {
+        "name": "Set's red desert feast",
+        "sp": 305,
+        "bonus_type": "combat_stat",
+        "bonus_amount": 3
+      },
+      "5": {
+        "name": "deshret storm banquet",
+        "sp": 370,
+        "bonus_type": "two_stats",
+        "bonus_amount": 3
+      }
+    }
+  },
+  "green_knight_sap": {
+    "name": "green knight sap",
+    "symbol": ",",
+    "color": [
+      40,
+      180,
+      60
+    ],
+    "weight": 2.0,
+    "min_level": 63,
+    "source_monster": "green_knight",
+    "floor_spawn_weight": {},
+    "recipes": {
+      "0": {
+        "name": "ruined viridian ooze",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "boiled green ichor",
+        "sp": 130,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "chapel green broth",
+        "sp": 195,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "Gawain's challenge stew",
+        "sp": 260,
+        "bonus_type": "stat",
+        "bonus_stat": "CON",
+        "bonus_amount": 2
+      },
+      "4": {
+        "name": "beheading game feast",
+        "sp": 320,
+        "bonus_type": "combat_stat",
+        "bonus_amount": 3
+      },
+      "5": {
+        "name": "verdant immortality banquet",
+        "sp": 390,
+        "bonus_type": "two_stats",
+        "bonus_amount": 3
+      }
+    }
+  },
+  "charybdis_brine": {
+    "name": "charybdis brine",
+    "symbol": ",",
+    "color": [
+      40,
+      80,
+      160
+    ],
+    "weight": 2.0,
+    "min_level": 68,
+    "source_monster": "charybdis",
+    "floor_spawn_weight": {},
+    "recipes": {
+      "0": {
+        "name": "ruined whirlpool slurry",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "boiled maelstrom brine",
+        "sp": 140,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "strait of Messina soup",
+        "sp": 200,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "Odyssean tempest stew",
+        "sp": 270,
+        "bonus_type": "stat",
+        "bonus_stat": "DEX",
+        "bonus_amount": 2
+      },
+      "4": {
+        "name": "maelstrom's maw feast",
+        "sp": 330,
+        "bonus_type": "two_stats",
+        "bonus_amount": 3
+      },
+      "5": {
+        "name": "daughter of Poseidon's banquet",
+        "sp": 400,
+        "bonus_type": "all_stats",
+        "bonus_amount": 1
+      }
+    }
+  },
+  "ravanas_knuckle": {
+    "name": "ravana's knuckle",
+    "symbol": ",",
+    "color": [
+      160,
+      60,
+      40
+    ],
+    "weight": 2.5,
+    "min_level": 70,
+    "source_monster": "ravanas_arm",
+    "floor_spawn_weight": {},
+    "recipes": {
+      "0": {
+        "name": "charred demon-king finger",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "roasted rakshasa knuckle",
+        "sp": 145,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "Lanka siege broth",
+        "sp": 210,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "ten-headed king's stew",
+        "sp": 280,
+        "bonus_type": "stat",
+        "bonus_stat": "STR",
+        "bonus_amount": 3
+      },
+      "4": {
+        "name": "Rama's triumph feast",
+        "sp": 340,
+        "bonus_type": "combat_stat",
+        "bonus_amount": 3
+      },
+      "5": {
+        "name": "siege of Lanka grand banquet",
+        "sp": 410,
+        "bonus_type": "two_stats",
+        "bonus_amount": 3
+      }
+    }
+  },
+  "wendigo_heart": {
+    "name": "wendigo heart",
+    "symbol": ",",
+    "color": [
+      140,
+      160,
+      180
+    ],
+    "weight": 2.0,
+    "min_level": 75,
+    "source_monster": "wendigo",
+    "floor_spawn_weight": {},
+    "recipes": {
+      "0": {
+        "name": "ruined frozen heart",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "thawed hunger-spirit broth",
+        "sp": 150,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "northern wilds stew",
+        "sp": 220,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "frostbite spirit's stew",
+        "sp": 290,
+        "bonus_type": "stat",
+        "bonus_stat": "CON",
+        "bonus_amount": 3
+      },
+      "4": {
+        "name": "eternal hunger feast",
+        "sp": 350,
+        "bonus_type": "two_stats",
+        "bonus_amount": 3
+      },
+      "5": {
+        "name": "cannibal spirit banquet",
+        "sp": 420,
+        "bonus_type": "all_stats",
+        "bonus_amount": 1
+      }
+    }
+  },
+  "wild_hunt_horn": {
+    "name": "wild hunt horn",
+    "symbol": ",",
+    "color": [
+      100,
+      110,
+      130
+    ],
+    "weight": 2.0,
+    "min_level": 80,
+    "source_monster": "wild_hunt_captain",
+    "floor_spawn_weight": {},
+    "recipes": {
+      "0": {
+        "name": "ruined spectral horn",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "boiled hunt-horn shavings",
+        "sp": 155,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "midnight ride broth",
+        "sp": 230,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "Odin's hunt stew",
+        "sp": 300,
+        "bonus_type": "stat",
+        "bonus_stat": "DEX",
+        "bonus_amount": 3
+      },
+      "4": {
+        "name": "storm rider's feast",
+        "sp": 365,
+        "bonus_type": "combat_stat",
+        "bonus_amount": 3
+      },
+      "5": {
+        "name": "ride of the Einherjar",
+        "sp": 430,
+        "bonus_type": "two_stats",
+        "bonus_amount": 3
+      }
+    }
+  },
+  "anansi_story_thread": {
+    "name": "anansi story thread",
+    "symbol": ",",
+    "color": [
+      200,
+      180,
+      50
+    ],
+    "weight": 1.0,
+    "min_level": 85,
+    "source_monster": "anansi",
+    "floor_spawn_weight": {},
+    "recipes": {
+      "0": {
+        "name": "ruined story silk",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "trickster's tea",
+        "sp": 160,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "spider god broth",
+        "sp": 240,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "keeper of stories stew",
+        "sp": 310,
+        "bonus_type": "stat",
+        "bonus_stat": "WIS",
+        "bonus_amount": 3
+      },
+      "4": {
+        "name": "web of all tales feast",
+        "sp": 380,
+        "bonus_type": "random_stat",
+        "bonus_amount": 3
+      },
+      "5": {
+        "name": "Nyame's sky-god banquet",
+        "sp": 450,
+        "bonus_type": "all_stats",
+        "bonus_amount": 2
+      }
+    }
+  },
+  "nidhoggr_root_shard": {
+    "name": "nidhoggr root shard",
+    "symbol": ",",
+    "color": [
+      80,
+      50,
+      80
+    ],
+    "weight": 3.0,
+    "min_level": 90,
+    "source_monster": "nidhoggr_fragment",
+    "floor_spawn_weight": {},
+    "recipes": {
+      "0": {
+        "name": "ruined yggdrasil splinter",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "boiled root-gnawer bark",
+        "sp": 170,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "world-tree root soup",
+        "sp": 250,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "corpse shore stew",
+        "sp": 325,
+        "bonus_type": "stat",
+        "bonus_stat": "CON",
+        "bonus_amount": 3
+      },
+      "4": {
+        "name": "Yggdrasil's bane feast",
+        "sp": 400,
+        "bonus_type": "two_stats",
+        "bonus_amount": 3
+      },
+      "5": {
+        "name": "Ragnarok root banquet",
+        "sp": 480,
+        "bonus_type": "all_stats",
+        "bonus_amount": 2
+      }
+    }
+  },
+  "amon_wrath_ember": {
+    "name": "amon's wrath ember",
+    "symbol": ",",
+    "color": [
+      220,
+      80,
+      40
+    ],
+    "weight": 1.5,
+    "min_level": 83,
+    "source_monster": "seal_demon_wrath",
+    "floor_spawn_weight": {},
+    "recipes": {
+      "0": {
+        "name": "ruined rage cinder",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "smoldering fury broth",
+        "sp": 160,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "wrath-fire soup",
+        "sp": 240,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "demon of wrath stew",
+        "sp": 310,
+        "bonus_type": "status",
+        "bonus_effect": "fire_shield",
+        "bonus_amount": 3
+      },
+      "4": {
+        "name": "Amon's inferno feast",
+        "sp": 380,
+        "bonus_type": "combat_stat",
+        "bonus_amount": 3
+      },
+      "5": {
+        "name": "seal of wrath banquet",
+        "sp": 450,
+        "bonus_type": "two_stats",
+        "bonus_amount": 3
+      }
+    }
+  },
+  "buer_plague_gland": {
+    "name": "buer's plague gland",
+    "symbol": ",",
+    "color": [
+      100,
+      160,
+      50
+    ],
+    "weight": 1.5,
+    "min_level": 85,
+    "source_monster": "seal_demon_pestilence",
+    "floor_spawn_weight": {},
+    "recipes": {
+      "0": {
+        "name": "ruined plague node",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "neutralized pestilence broth",
+        "sp": 165,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "plague-touched soup",
+        "sp": 245,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "demon of pestilence stew",
+        "sp": 315,
+        "bonus_type": "status",
+        "bonus_effect": "regenerating",
+        "bonus_amount": 3
+      },
+      "4": {
+        "name": "Buer's cure feast",
+        "sp": 385,
+        "bonus_type": "random_stat",
+        "bonus_amount": 3
+      },
+      "5": {
+        "name": "seal of pestilence banquet",
+        "sp": 460,
+        "bonus_type": "two_stats",
+        "bonus_amount": 3
+      }
+    }
+  },
+  "mammon_hunger_crystal": {
+    "name": "mammon's hunger crystal",
+    "symbol": ",",
+    "color": [
+      180,
+      160,
+      80
+    ],
+    "weight": 1.0,
+    "min_level": 87,
+    "source_monster": "seal_demon_famine",
+    "floor_spawn_weight": {},
+    "recipes": {
+      "0": {
+        "name": "ruined greed shard",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "dissolved avarice broth",
+        "sp": 168,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "famine's bounty soup",
+        "sp": 250,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "demon of famine stew",
+        "sp": 320,
+        "bonus_type": "stat",
+        "bonus_stat": "CON",
+        "bonus_amount": 3
+      },
+      "4": {
+        "name": "Mammon's golden feast",
+        "sp": 390,
+        "bonus_type": "two_stats",
+        "bonus_amount": 3
+      },
+      "5": {
+        "name": "seal of famine banquet",
+        "sp": 465,
+        "bonus_type": "all_stats",
+        "bonus_amount": 2
+      }
+    }
+  },
+  "bael_war_shard": {
+    "name": "bael's war shard",
+    "symbol": ",",
+    "color": [
+      200,
+      40,
+      40
+    ],
+    "weight": 2.0,
+    "min_level": 89,
+    "source_monster": "seal_demon_war",
+    "floor_spawn_weight": {},
+    "recipes": {
+      "0": {
+        "name": "ruined battle fragment",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "boiled war-iron",
+        "sp": 170,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "war demon's broth",
+        "sp": 255,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "demon of war stew",
+        "sp": 325,
+        "bonus_type": "stat",
+        "bonus_stat": "STR",
+        "bonus_amount": 3
+      },
+      "4": {
+        "name": "Bael's conquest feast",
+        "sp": 395,
+        "bonus_type": "combat_stat",
+        "bonus_amount": 3
+      },
+      "5": {
+        "name": "seal of war banquet",
+        "sp": 470,
+        "bonus_type": "two_stats",
+        "bonus_amount": 3
+      }
+    }
+  },
+  "samael_death_vial": {
+    "name": "samael's death vial",
+    "symbol": ",",
+    "color": [
+      60,
+      60,
+      90
+    ],
+    "weight": 1.0,
+    "min_level": 91,
+    "source_monster": "seal_demon_death",
+    "floor_spawn_weight": {},
+    "recipes": {
+      "0": {
+        "name": "ruined death essence",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "diluted death draught",
+        "sp": 172,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "angel of death's broth",
+        "sp": 258,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "demon of death stew",
+        "sp": 330,
+        "bonus_type": "status",
+        "bonus_effect": "invisible",
+        "bonus_amount": 3
+      },
+      "4": {
+        "name": "Samael's reaping feast",
+        "sp": 400,
+        "bonus_type": "two_stats",
+        "bonus_amount": 3
+      },
+      "5": {
+        "name": "seal of death banquet",
+        "sp": 475,
+        "bonus_type": "all_stats",
+        "bonus_amount": 2
+      }
+    }
+  },
+  "beleth_quake_stone": {
+    "name": "beleth's quake stone",
+    "symbol": ",",
+    "color": [
+      160,
+      110,
+      50
+    ],
+    "weight": 3.0,
+    "min_level": 93,
+    "source_monster": "seal_demon_earthquake",
+    "floor_spawn_weight": {},
+    "recipes": {
+      "0": {
+        "name": "ruined tremor rock",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "crushed quake-stone broth",
+        "sp": 175,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "earthquake demon soup",
+        "sp": 260,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "demon of earthquakes stew",
+        "sp": 335,
+        "bonus_type": "stat",
+        "bonus_stat": "STR",
+        "bonus_amount": 3
+      },
+      "4": {
+        "name": "Beleth's tremor feast",
+        "sp": 405,
+        "bonus_type": "combat_stat",
+        "bonus_amount": 3
+      },
+      "5": {
+        "name": "seal of earthquake banquet",
+        "sp": 480,
+        "bonus_type": "two_stats",
+        "bonus_amount": 3
+      }
+    }
+  },
+  "abyzou_silence_dust": {
+    "name": "abyzou's silence dust",
+    "symbol": ",",
+    "color": [
+      180,
+      180,
+      210
+    ],
+    "weight": 1.0,
+    "min_level": 97,
+    "source_monster": "seal_demon_silence",
+    "floor_spawn_weight": {},
+    "recipes": {
+      "0": {
+        "name": "ruined mute powder",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "dissolved silence broth",
+        "sp": 178,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "voiceless soup",
+        "sp": 265,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "demon of silence stew",
+        "sp": 340,
+        "bonus_type": "stat",
+        "bonus_stat": "WIS",
+        "bonus_amount": 3
+      },
+      "4": {
+        "name": "Abyzou's stillness feast",
+        "sp": 410,
+        "bonus_type": "random_stat",
+        "bonus_amount": 3
+      },
+      "5": {
+        "name": "seal of silence banquet",
+        "sp": 485,
+        "bonus_type": "all_stats",
+        "bonus_amount": 2
       }
     }
   }

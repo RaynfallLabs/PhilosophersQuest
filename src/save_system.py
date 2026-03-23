@@ -35,6 +35,29 @@ def save_game(game) -> bool:
             'ground_items':     game.ground_items,
             'correct_answers':  game.correct_answers,
             'wrong_answers':    game.wrong_answers,
+            'pets':             game.pets,
+            'seals_broken':     game.seals_broken,
+            'heavenly_host_active': getattr(game, 'heavenly_host_active', False),
+            'abaddon_resist_removed_turns': getattr(game, 'abaddon_resist_removed_turns', 0),
+            '_l100_altars_used': getattr(game, '_l100_altars_used', set()),
+            'karma': getattr(game, 'karma', 0),
+            '_npc_encounter_levels': getattr(game, '_npc_encounter_levels', {}),
+            '_encountered_npcs': getattr(game, '_encountered_npcs', set()),
+            '_abaddon_empowered': getattr(game, '_abaddon_empowered', False),
+            '_locusts_strengthened': getattr(game, '_locusts_strengthened', False),
+            '_judgment_resolved': getattr(game, '_judgment_resolved', False),
+            '_npc_triggered_items': getattr(game, '_npc_triggered_items', set()),
+            '_npc_trigger_item_levels': getattr(game, '_npc_trigger_item_levels', {}),
+            '_npc_trigger_items_placed': getattr(game, '_npc_trigger_items_placed', set()),
+            'player_title': getattr(game, 'player_title', ''),
+            # Ascent / Death Pursuer state
+            'death_pursues': getattr(game, 'death_pursues', False),
+            'death_monster': getattr(game, 'death_monster', None),
+            # Deep-lore item spawn tracking
+            '_lore_levels': getattr(game, '_lore_levels', {}),
+            '_lore_placed': getattr(game, '_lore_placed', set()),
+            # Quirk system (full object with progress, unlocks, cooldowns)
+            'quirk_system': getattr(game, 'quirk_system', None),
         }
         with open(_save_path(game.player_name), 'wb') as f:
             pickle.dump(state, f, protocol=pickle.HIGHEST_PROTOCOL)

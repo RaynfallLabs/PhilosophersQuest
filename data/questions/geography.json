@@ -368,14 +368,14 @@
     "answer": "India",
     "choices": [
       "India",
-      "India",
+      "China",
       "United States",
       "Indonesia"
     ]
   },
   {
     "tier": 1,
-    "question": "The longest river in the world is the ___?",
+    "question": "The longest river in Africa is the ___?",
     "answer": "Nile",
     "choices": [
       "Amazon",
@@ -585,11 +585,11 @@
   {
     "tier": 1,
     "question": "Capital of Indonesia?",
-    "answer": "Nusantara",
+    "answer": "Jakarta",
     "choices": [
       "Surabaya",
       "Bandung",
-      "Nusantara",
+      "Jakarta",
       "Bali"
     ]
   },
@@ -1981,7 +1981,7 @@
   },
   {
     "tier": 2,
-    "question": "Which country borders China to the north?",
+    "question": "Which landlocked country borders China to the north?",
     "answer": "Mongolia",
     "choices": [
       "Russia",
@@ -3180,7 +3180,7 @@
   },
   {
     "tier": 4,
-    "question": "Which country has the most islands?",
+    "question": "Which Scandinavian country has the most islands?",
     "answer": "Sweden",
     "choices": [
       "Indonesia",
@@ -3378,7 +3378,7 @@
   },
   {
     "tier": 4,
-    "question": "The Niger River flows through ___?",
+    "question": "The Niger River empties into the sea in ___?",
     "answer": "Nigeria",
     "choices": [
       "Niger",
@@ -3389,8 +3389,8 @@
   },
   {
     "tier": 4,
-    "question": "The Zambezi River flows through ___?",
-    "answer": "Zambia",
+    "question": "The Zambezi River empties into the sea in ___?",
+    "answer": "Mozambique",
     "choices": [
       "Zimbabwe",
       "Zambia",
@@ -3676,10 +3676,10 @@
   {
     "tier": 4,
     "question": "Capital of Equatorial Guinea?",
-    "answer": "Ciudad de la Paz",
+    "answer": "Malabo",
     "choices": [
       "Bata",
-      "Ciudad de la Paz",
+      "Malabo",
       "Ebibeyin",
       "Ebebiyin"
     ]
@@ -5105,13 +5105,13 @@
   },
   {
     "tier": 5,
-    "question": "The Pamir mountain range is sometimes called ___?",
-    "answer": "The Roof of the World",
+    "question": "The Pamir Mountains are primarily located in which country?",
+    "answer": "Tajikistan",
     "choices": [
-      "The Heart of Asia",
-      "The Roof of the World",
-      "The Crown of Asia",
-      "The Top of the World"
+      "Tajikistan",
+      "Nepal",
+      "Mongolia",
+      "Turkey"
     ]
   },
   {
@@ -5204,7 +5204,7 @@
   },
   {
     "tier": 5,
-    "question": "Death Valley in California holds the record for ___?",
+    "question": "Death Valley in California holds the world temperature record for ___?",
     "answer": "Highest air temperature recorded on Earth",
     "choices": [
       "Lowest elevation in North America",

@@ -981,12 +981,12 @@
   {
     "tier": 2,
     "question": "Which animal has the largest brain relative to its body size?",
-    "answer": "Dolphin",
+    "answer": "Human",
     "choices": [
       "Elephant",
-      "Dolphin",
+      "Human",
       "Sperm whale (largest overall)",
-      "Human"
+      "Dolphin"
     ]
   },
   {
@@ -1123,7 +1123,7 @@
   },
   {
     "tier": 2,
-    "question": "Which animal has the most hearts?",
+    "question": "Which marine animal has three hearts?",
     "answer": "Octopus (3 hearts)",
     "choices": [
       "Earthworm",
@@ -1211,7 +1211,7 @@
   },
   {
     "tier": 2,
-    "question": "Which is the largest species of bear?",
+    "question": "Which bear species is the largest marine mammal predator?",
     "answer": "Polar bear",
     "choices": [
       "Grizzly bear",
@@ -1387,7 +1387,7 @@
   },
   {
     "tier": 2,
-    "question": "Which desert animal stores water in its hump?",
+    "question": "Which desert animal stores fat (not water) in its hump?",
     "answer": "Camel (stores fat, not water)",
     "choices": [
       "Camel (stores fat, not water)",
@@ -1578,7 +1578,7 @@
     "answer": "Ecdysis",
     "choices": [
       "Metamorphosis",
-      "Moulting",
+      "Hibernation",
       "Ecdysis",
       "Estivation"
     ]
@@ -1850,10 +1850,10 @@
   {
     "tier": 3,
     "question": "The process by which animals adjust behavior seasonally is called ___?",
-    "answer": "Circadian rhythm regulation",
+    "answer": "Photoperiodism",
     "choices": [
       "Homeostasis",
-      "Circadian rhythm regulation",
+      "Photoperiodism",
       "Osmoregulation",
       "Photosynthesis"
     ]
@@ -3059,7 +3059,7 @@
   },
   {
     "tier": 2,
-    "question": "Which animal is the only bird that can swim but cannot fly?",
+    "question": "Which flightless bird is best known for its swimming ability?",
     "answer": "Penguin",
     "choices": [
       "Ostrich",

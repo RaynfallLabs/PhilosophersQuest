@@ -837,7 +837,7 @@
   },
   {
     "tier": 2,
-    "question": "The Mongol Empire reached its greatest extent under ___?",
+    "question": "Under which Khan was the Mongol Empire last unified before it fragmented into khanates?",
     "answer": "Mongke Khan",
     "choices": [
       "Genghis Khan",
@@ -1508,8 +1508,8 @@
   },
   {
     "tier": 3,
-    "question": "Emperor Theodosius I made Christianity the official religion of the Roman Empire. In what year?",
-    "answer": "380 AD",
+    "question": "Emperor Theodosius I made Christianity the official religion of which empire?",
+    "answer": "Rome",
     "choices": [
       "Greece",
       "Rome",
@@ -1586,11 +1586,11 @@
   {
     "tier": 3,
     "question": "The War of 1812 ended in ___?",
-    "answer": "1815",
+    "answer": "1814",
     "choices": [
+      "1812",
       "1813",
       "1814",
-      "1815",
       "1816"
     ]
   },
@@ -1717,7 +1717,7 @@
   },
   {
     "tier": 3,
-    "question": "Charlemagne was crowned Holy Roman Emperor in ___?",
+    "question": "Charlemagne was crowned Emperor of the Romans in ___?",
     "answer": "800 AD",
     "choices": [
       "771 AD",
@@ -2036,7 +2036,7 @@
   },
   {
     "tier": 4,
-    "question": "Who was the first Holy Roman Emperor?",
+    "question": "Who was crowned 'Emperor of the Romans' by Pope Leo III in 800 AD?",
     "answer": "Charlemagne",
     "choices": [
       "Otto I",
@@ -2323,11 +2323,11 @@
   {
     "tier": 4,
     "question": "The Italian unification (Risorgimento) was completed in ___?",
-    "answer": "1871",
+    "answer": "1861",
     "choices": [
       "1848",
+      "1855",
       "1861",
-      "1871",
       "1880"
     ]
   },
@@ -2399,7 +2399,7 @@
   },
   {
     "tier": 4,
-    "question": "The Geneva Conventions were updated most recently in ___?",
+    "question": "The four Geneva Conventions were adopted in ___?",
     "answer": "1949",
     "choices": [
       "1929",

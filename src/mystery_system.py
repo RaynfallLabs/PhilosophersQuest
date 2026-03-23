@@ -568,13 +568,14 @@ _PRICE_MULT = {
 _BASE_PRICE = 20
 
 
-def _merchant_price(item, level: int) -> int:
-    """Compute a gold cost for one merchant item."""
+def _merchant_price(item) -> int:
+    """Compute a gold cost for one merchant item.  Price is intrinsic to the
+    item (tier, class, weight) — better items cost more naturally."""
     weight = max(0.1, getattr(item, 'weight', 1.0))
     tier   = getattr(item, 'quiz_tier', 1) or 1
     ic     = getattr(item, 'item_class', 'misc')
     mult   = _PRICE_MULT.get(ic, 1.0)
-    price  = int(_BASE_PRICE * mult * tier * (1 + level / 30) * weight)
+    price  = int(_BASE_PRICE * mult * tier * weight)
     return max(5, price)
 
 
@@ -588,16 +589,17 @@ class MerchantNPC:
         self.x            = x
         self.y            = y
         self.id           = 'merchant_npc'
-        self.name         = "Travelling Merchant"
+        self.name         = "Svirfneblin Trader"
         self.symbol       = '@'
-        self.color        = (255, 215, 0)   # gold
+        self.color        = (180, 180, 220)   # pale grey-blue (deep gnome skin)
         self.weight       = 0
         self.min_level    = 1
         self.count        = 1
         self.not_pickable = True
         self.identified   = True
         self.item_class   = 'merchant'
-        self.lore         = "A wise travelling merchant bearing fine wares from distant lands."
+        self.lore         = "A deep gnome trader who navigates the subterranean passages with ease, "\
+                            "hauling wares between settlements no surface-dweller has ever seen."
         self.stock        = stock     # list of Item objects for sale
         self.prices       = prices    # parallel list of int prices
         self.sold_out     = False
@@ -628,6 +630,23 @@ def spawn_merchant(level: int, rooms, dungeon, ground_items: list,
         except Exception:
             pass
 
+    # 15% chance merchant has a Soul Sphere
+    if rng.random() < 0.15:
+        from items import Artifact
+        sphere = Artifact({
+            'id': 'soul_sphere',
+            'name': 'Soul Sphere',
+            'symbol': 'O',
+            'color': [255, 80, 80],
+            'item_class': 'artifact',
+            'weight': 0.5,
+            'min_level': 1,
+            'lore': 'A sphere of crimson and ivory that hums with trapped souls. '
+                    'Ancient texts say these vessels were used to bind creature spirits. '
+                    'One wonders what might happen if it were hurled with force...',
+        })
+        stock_items.append(sphere)
+
     if not stock_items:
         return None
 
@@ -648,7 +667,7 @@ def spawn_merchant(level: int, rooms, dungeon, ground_items: list,
             break
     rng.shuffle(unique_stock)
     stock = unique_stock[:n_stock]
-    prices = [_merchant_price(it, level) for it in stock]
+    prices = [_merchant_price(it) for it in stock]
 
     # Place in a non-starting room
     candidate_rooms = rooms[1:]

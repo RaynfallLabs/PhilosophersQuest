@@ -229,19 +229,7 @@ class Sidebar:
             )
         y += 22
 
-        # Hack Reality cooldown
-        if player.hack_reality_cooldown > 0:
-            hack_cd_color = (0, 160, 80)   # matrix green: cooldown
-            self.screen.blit(
-                self._fsm.render(f"Hack:   {player.hack_reality_cooldown}t", True, hack_cd_color),
-                (self.x + self.PAD, y)
-            )
-        else:
-            self.screen.blit(
-                self._fsm.render("Hack:   Ready", True, (0, 220, 120)),
-                (self.x + self.PAD, y)
-            )
-        y += 22
+        # Hack Reality cooldown intentionally hidden from sidebar
 
         # Hunger indicator -- FANTASY colors
         sp = player.sp
@@ -294,10 +282,11 @@ class Sidebar:
         has_phil = any(getattr(i, 'id', '') == 'philosophers_shard'
                        for i in player.inventory)
         for label, key in [
-            ("Weapon", "weapon"), ("Shield", "shield"),
+            ("Weapon", "weapon"), ("Ranged", "ranged_weapon"), ("Shield", "shield"),
             ("Head",   "head"),   ("Body",   "body"),
-            ("Hands",  "hands"),  ("Legs",   "legs"),
-            ("Feet",   "feet"),
+            ("Arms",   "arms"),   ("Hands",  "hands"),
+            ("Legs",   "legs"),   ("Feet",   "feet"),
+            ("Cloak",  "cloak"),  ("Shirt",  "shirt"),
             ("Amulet", "amulet"),
             ("Ring 1", "ring_1"), ("Ring 2", "ring_2"),
             ("Ring 3", "ring_3"), ("Ring 4", "ring_4"),
@@ -310,7 +299,7 @@ class Sidebar:
                          or item.id in player.known_item_ids)
                 iname = item.name if known else getattr(item, 'unidentified_name', item.name)
                 # Show ammo count for ranged weapons
-                if key == "weapon" and getattr(item, 'requires_ammo', None):
+                if key == "ranged_weapon" and getattr(item, 'requires_ammo', None):
                     ammo_type = item.requires_ammo
                     total = sum(
                         i.count for i in player.inventory
@@ -340,7 +329,7 @@ class Sidebar:
             y += 22
         # Philosopher's Shard -- passive carry indicator (not an equip slot)
         if has_phil:
-            phil_surf = self._fsm.render("\u2605 Phil. Shard", True, (220, 200, 120))
+            phil_surf = self._fsm.render("* Phil. Shard", True, (220, 200, 120))
             self.screen.blit(phil_surf, (self.x + self.PAD, y))
             y += 20
         return y + self.SECTION_GAP

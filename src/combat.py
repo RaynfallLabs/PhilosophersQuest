@@ -32,7 +32,7 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
     Applies enchant_bonus, ammo damage_bonus, damage type multipliers, and stun chance on hit.
     ammo: optional Ammo item whose damage_bonus is added to base damage.
     """
-    weapon = player.weapon
+    weapon = player.ranged_weapon if ammo else player.weapon
 
     def _callback(result):
         chain = result.score
@@ -66,8 +66,11 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
             mult = multipliers[min(1, len(multipliers) - 1)]
 
         # Damage type advantage vs monster resistances/weaknesses
+        # Gram (reforged) ignores all resistances
         dtype_mult = 1.0
-        if weapon:
+        if weapon and getattr(weapon, 'ignore_resistances', False):
+            dtype_mult = 1.0  # bypass all resistance/weakness checks
+        elif weapon:
             dtype_mult = _damage_multiplier(weapon.damage_types, monster)
 
         # Shield bypass: ignore_shield weapons deal full damage through monster's shielded effect
@@ -96,8 +99,32 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
         if getattr(player, 'status_effects', {}).get('weakened', 0):
             base = max(1, base // 2)
 
+        # BUC weapon bonus: blessed +1, cursed -1
+        buc_bonus = 0
+        if weapon:
+            wbuc = getattr(weapon, 'buc', 'uncursed')
+            if wbuc == 'blessed':
+                buc_bonus = 1
+            elif wbuc == 'cursed':
+                buc_bonus = -1
+
         str_factor = 1.0 + max(0, player.STR - 10) * 0.03
-        damage = max(1, int((base + enchant + ammo_bonus) * mult * dtype_mult * str_factor))
+        damage = max(1, int((base + enchant + ammo_bonus + buc_bonus) * mult * dtype_mult * str_factor))
+
+        # Dragon scales: massive damage reduction (bypassed by ignore_resistances or player in pit)
+        dragon_scales = getattr(monster, 'dragon_scales', 0)
+        if dragon_scales > 0 and not getattr(weapon, 'ignore_resistances', False):
+            if player.has_effect('in_pit'):
+                damage = damage * 2  # double damage from below!
+            else:
+                damage = max(1, int(damage * (1.0 - dragon_scales)))
+
+        # Sword of Michael vs Abaddon: bonus holy damage
+        if weapon and getattr(weapon, 'abaddon_bonus_damage', '') and monster.kind == 'abaddon_destroyer':
+            from dice import roll as _ab_roll
+            bonus = _ab_roll(weapon.abaddon_bonus_damage)
+            damage += bonus
+
         actual = monster.take_damage(damage)
 
         # Stun mechanic (staves only, or any weapon with stunChance > 0)
@@ -214,7 +241,7 @@ def can_melee_attack(player, monster) -> bool:
 
 def can_ranged_attack(player, monster, dungeon) -> bool:
     """Return True if the player has a ranged weapon, ammo, and line of sight."""
-    weapon = player.weapon
+    weapon = player.ranged_weapon
     if not weapon or not weapon.requires_ammo:
         return False
     reach = weapon.reach + max(0, player.PER - 10) // 3

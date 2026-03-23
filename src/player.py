@@ -46,7 +46,8 @@ class Player:
         self.y = 0
 
         # Equipment slots
-        self.weapon = None
+        self.weapon = None          # melee weapon
+        self.ranged_weapon = None   # ranged weapon (bows, crossbows)
         self.shield = None
         self.armor_slots = [None] * 8     # head, body, arms, hands, legs, feet, cloak, shirt
         self.accessory_slots = [None] * 4  # ring slots
@@ -65,6 +66,7 @@ class Player:
         # Hack Reality system
         self.hack_reality_cooldown: int = 0  # turns remaining until next hack
         self.hack_reality_count: int = 0     # permanent bonuses received (diminishing returns)
+        self.hack_tiers_claimed: set[int] = set()  # XYZZY reward tiers already claimed (2-5 are once-only)
 
         # Special build flags
         self.immortal: bool = False         # Dad: cannot die
@@ -90,6 +92,9 @@ class Player:
         # Active power system (earned via quirks)
         self.power_cooldowns: dict = {}    # power_id -> turns until usable again (0 = ready)
         self.power_uses: dict = {}         # power_id -> uses remaining this run
+
+        # Cooking HP balance: diminishing returns tracking
+        self.cooking_hp_gained: int = 0    # total max HP gained from cooking (for softcap)
 
     # --- Resources ---
 
@@ -134,7 +139,9 @@ class Player:
     def restore_hp(self, amount: int):
         self.hp = min(self.max_hp, self.hp + amount)
 
-    HP_PER_LEVEL = 8  # legacy constant (HP growth now comes from cooking)
+    HP_PER_LEVEL = 0   # No auto max HP on stairs (HP comes from cooking)
+    STAIR_REST_CAP_DESC = 0    # NO stair-rest HP healing on descent (damage accumulates)
+    STAIR_REST_CAP_ASC  = 22   # max HP restored per stair on ascent
 
     def on_level_change(self, ascending: bool = False):
         """Called when player uses a staircase. Stair-rest healing only.
@@ -142,15 +149,31 @@ class Player:
         No automatic max HP growth -- that comes from cooking compound recipes
         and high-tier single ingredient cooks (Q3+).
         Stair-rest heal scales with max HP; reduced on ascent (Death pursuit).
+        Capped to prevent trivialising damage at very high max HP.
         """
-        rest_pct = 0.04 if ascending else 0.05
-        rest_heal = max(self.HP_PER_LEVEL, int(self.max_hp * rest_pct))
+        if ascending:
+            rest_heal = min(self.STAIR_REST_CAP_ASC,
+                            max(self.HP_PER_LEVEL, int(self.max_hp * 0.04)))
+        else:
+            rest_heal = min(self.STAIR_REST_CAP_DESC,
+                            max(self.HP_PER_LEVEL, int(self.max_hp * 0.05)))
         self.hp = min(self.hp + rest_heal, self.max_hp)
+        self.sp = min(self.max_sp, self.sp + 15)
         mp_restore = max(2, self.INT // 5)
         self.restore_mp(mp_restore)
 
-    def increase_max_hp(self, amount: int):
-        """Permanently increase max HP (from cooking). Also heals the amount."""
+    COOKING_HP_SOFTCAP = 1000  # diminishing returns on cooking-gained max HP
+
+    def increase_max_hp(self, amount: int, from_cooking: bool = False):
+        """Permanently increase max HP. Also heals the amount.
+
+        If from_cooking=True, applies diminishing returns: as total cooking HP
+        gained approaches COOKING_HP_SOFTCAP, the bonus shrinks (floor 20%).
+        """
+        if from_cooking:
+            cap_factor = max(0.20, 1.0 - self.cooking_hp_gained / self.COOKING_HP_SOFTCAP)
+            amount = max(1, int(amount * cap_factor))
+            self.cooking_hp_gained += amount
         self.max_hp += amount
         self.hp = min(self.hp + amount, self.max_hp)
 
@@ -196,11 +219,18 @@ class Player:
             getattr(self.shield, 'ac_bonus', 0) + getattr(self.shield, 'enchant_bonus', 0)
             if self.shield else 0
         )
+        # Blessed armor/shield: +1 AC per blessed piece
+        blessed_bonus = sum(
+            1 for s in self.armor_slots
+            if s is not None and getattr(s, 'buc', 'uncursed') == 'blessed'
+        )
+        if self.shield and getattr(self.shield, 'buc', 'uncursed') == 'blessed':
+            blessed_bonus += 1
         # Invisibility: harder to hit -> lowers AC by 2
         invisible_bonus = 2 if self.has_effect('invisible') else 0
         # Shielded status effect (from wand of shielding): -2 AC
         shield_effect   = 2 if self.has_effect('shielded') else 0
-        return 10 - dex_mod - armor_bonus - shield_bonus - invisible_bonus - shield_effect
+        return 10 - dex_mod - armor_bonus - shield_bonus - blessed_bonus - invisible_bonus - shield_effect
 
     def get_armor_resistance(self, damage_type: str) -> float:
         """Combined damage resistance multiplier from all equipped armor/shield."""
@@ -213,7 +243,11 @@ class Player:
         return mult
 
     def get_sight_radius(self) -> int:
-        """Sight radius in tiles. Blindness caps it at 1."""
+        """Sight radius in tiles. Blindfold = 0 (total darkness), blindness = 1."""
+        # Blindfold equipped in head slot: total darkness (can't see anything)
+        head = self.armor_slots[0] if self.armor_slots else None
+        if head and getattr(head, 'id', '') == 'blindfold':
+            return 0
         if self.has_effect('blinded'):
             return 1
         radius = max(3, self.PER // 2)
@@ -270,7 +304,8 @@ class Player:
             return False
         # Stack identical items for stackable types (same id)
         if isinstance(item, Item._STACKABLE_CLASSES):
-            existing = next((i for i in self.inventory if i.id == item.id), None)
+            existing = next((i for i in self.inventory if i.id == item.id
+                             and getattr(i, 'buc', 'uncursed') == getattr(item, 'buc', 'uncursed')), None)
             if existing is not None:
                 existing.count = getattr(existing, 'count', 1) + getattr(item, 'count', 1)
                 return True
@@ -306,7 +341,8 @@ class Player:
 
     def get_equipped_items(self) -> dict:
         from items import ARMOR_SLOTS
-        slots = {'weapon': self.weapon, 'shield': self.shield}
+        slots = {'weapon': self.weapon, 'ranged_weapon': self.ranged_weapon,
+                 'shield': self.shield}
         for i, name in enumerate(ARMOR_SLOTS):
             slots[name] = self.armor_slots[i]
         for i, item in enumerate(self.accessory_slots):
@@ -332,28 +368,42 @@ class Player:
     def _apply_equip(self, item):
         from items import Weapon, Armor, Shield, Accessory, ARMOR_SLOTS
         if isinstance(item, Weapon):
-            # Return old weapon to inventory (check for cursed)
-            if self.weapon:
-                ok, msg = self.try_unequip_slot(self.weapon)
-                if not ok:
-                    return  # cursed weapon blocks swap
-                # Remove old weapon's on-equip status
-                old_status = getattr(self.weapon, 'on_equip_status', '')
-                if old_status:
-                    self.status_effects.pop(old_status, None)
-                self.inventory.append(self.weapon)
-            # Unequip shield if switching to 2H
-            if getattr(item, 'two_handed', False) and self.shield:
-                ok, msg = self.try_unequip_slot(self.shield)
-                if not ok:
-                    return  # can't swap -- cursed shield blocks
-                self.inventory.append(self.shield)
-                self.shield = None
-            self.weapon = item
-            # Grant new weapon's on-equip status
-            new_status = getattr(item, 'on_equip_status', '')
-            if new_status:
-                self.add_effect(new_status, -1)
+            is_ranged = getattr(item, 'requires_ammo', None) is not None
+            if is_ranged:
+                # --- Ranged weapon slot ---
+                if self.ranged_weapon:
+                    ok, msg = self.try_unequip_slot(self.ranged_weapon)
+                    if not ok:
+                        return
+                    old_status = getattr(self.ranged_weapon, 'on_equip_status', '')
+                    if old_status:
+                        self.status_effects.pop(old_status, None)
+                    self.inventory.append(self.ranged_weapon)
+                self.ranged_weapon = item
+                new_status = getattr(item, 'on_equip_status', '')
+                if new_status:
+                    self.add_effect(new_status, -1)
+            else:
+                # --- Melee weapon slot ---
+                if self.weapon:
+                    ok, msg = self.try_unequip_slot(self.weapon)
+                    if not ok:
+                        return  # cursed weapon blocks swap
+                    old_status = getattr(self.weapon, 'on_equip_status', '')
+                    if old_status:
+                        self.status_effects.pop(old_status, None)
+                    self.inventory.append(self.weapon)
+                # Unequip shield if switching to 2H melee
+                if getattr(item, 'two_handed', False) and self.shield:
+                    ok, msg = self.try_unequip_slot(self.shield)
+                    if not ok:
+                        return
+                    self.inventory.append(self.shield)
+                    self.shield = None
+                self.weapon = item
+                new_status = getattr(item, 'on_equip_status', '')
+                if new_status:
+                    self.add_effect(new_status, -1)
         elif isinstance(item, Armor):
             idx = ARMOR_SLOTS.index(item.slot) if item.slot in ARMOR_SLOTS else 0
             old = self.armor_slots[idx]
@@ -391,6 +441,8 @@ class Player:
                         self.status_effects.pop(old_fx['status'], None)
                     if 'stat' in old_fx:
                         self.apply_stat_bonus(old_fx['stat'], -old_fx.get('amount', 0))
+                    if 'stat2' in old_fx:
+                        self.apply_stat_bonus(old_fx['stat2'], -old_fx.get('amount2', 0))
                 self.amulet_slot = item
             else:
                 # Find first empty ring slot
@@ -404,5 +456,7 @@ class Player:
                 self.add_effect(fx['status'], fx.get('duration', -1))
             if 'stat' in fx:
                 self.apply_stat_bonus(fx['stat'], fx.get('amount', 0))
+            if 'stat2' in fx:
+                self.apply_stat_bonus(fx['stat2'], fx.get('amount2', 0))
         # Re-sort inventory after any equipment swap that returned items
         self.inventory.sort(key=lambda i: i.name.lower())

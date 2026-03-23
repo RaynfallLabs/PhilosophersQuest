@@ -309,6 +309,262 @@ def gen_altar():
 
 
 # ---------------------------------------------------------------------------
+# TILE: water
+# ---------------------------------------------------------------------------
+def gen_water():
+    """Dark pool of water — rippling surface with blue-green tones."""
+    img, d = new_canvas(bg=_c(12, 20, 32))
+    DEEP   = _c(18, 35, 60)
+    MID    = _c(30, 55, 85)
+    LIGHT  = _c(55, 90, 130)
+    FOAM   = _c(100, 140, 180, 140)
+
+    # Base water fill
+    d.rectangle([0, 0, 31, 31], fill=DEEP)
+
+    # Ripple bands (horizontal wavy lines)
+    for row in range(4):
+        y0 = 3 + row * 8
+        for col in range(8):
+            x0 = col * 4 + (row % 2) * 2
+            shade = MID if (row + col) % 3 else LIGHT
+            d.line([(x0, y0), (x0+3, y0)], fill=shade, width=1)
+        # Secondary ripple offset
+        y1 = y0 + 3
+        for col in range(8):
+            x0 = col * 4 + ((row+1) % 2) * 2
+            d.line([(x0, y1), (x0+2, y1)], fill=dk(MID, 0.7), width=1)
+
+    # Specular highlights (scattered bright dots)
+    for hx, hy in [(6,5),(19,9),(10,18),(25,22),(14,28),(4,14)]:
+        d.point((hx, hy), fill=FOAM)
+        d.point((hx+1, hy), fill=(*FOAM[:3], 80))
+
+    return img
+
+
+# ---------------------------------------------------------------------------
+# TILE: lava
+# ---------------------------------------------------------------------------
+def gen_lava():
+    """Bubbling lava pool — molten orange with dark crust patches."""
+    img, d = new_canvas(bg=_c(45, 8, 2))
+    MOLTEN    = _c(220, 100, 20)
+    BRIGHT    = _c(255, 180, 40)
+    HOT_WHITE = _c(255, 230, 140)
+    CRUST     = _c(60, 15, 5)
+    CRUST_DK  = _c(35, 8, 2)
+
+    # Base molten fill
+    d.rectangle([0, 0, 31, 31], fill=MOLTEN)
+
+    # Dark cooled crust patches
+    for (x0,y0,x1,y1) in [(0,0,8,6),(18,2,26,8),(4,16,14,22),(20,18,30,26),(8,26,18,31)]:
+        d.rectangle([x0,y0,x1,y1], fill=CRUST)
+        d.line([(x0,y0),(x1,y0)], fill=CRUST_DK, width=1)
+
+    # Bright molten veins between crusts
+    for vy in [7, 15, 25]:
+        for vx in range(0, 32, 3):
+            shade = BRIGHT if (vx + vy) % 5 < 3 else MOLTEN
+            d.line([(vx, vy), (vx+2, vy)], fill=shade, width=1)
+
+    # Hot spots (white-yellow centers)
+    for hx, hy in [(12,10),(24,14),(6,24),(28,6)]:
+        d.ellipse([hx-2, hy-2, hx+2, hy+2], fill=BRIGHT)
+        d.point((hx, hy), fill=HOT_WHITE)
+
+    # Bubble
+    ell(d, 15, 4, 19, 8, lt(MOLTEN, 1.3))
+    d.point((16, 5), fill=HOT_WHITE)
+
+    return img
+
+
+# ---------------------------------------------------------------------------
+# TILE: fountain
+# ---------------------------------------------------------------------------
+def gen_fountain():
+    """Stone fountain basin with sparkling water jet."""
+    img, d = new_canvas(bg=_c(18, 16, 14))
+    STONE    = _c(85, 80, 90)
+    STONE_LT = _c(110, 105, 118)
+    STONE_DK = _c(55, 50, 60)
+    WATER    = _c(60, 110, 180)
+    WATER_LT = _c(100, 160, 220)
+    SPRAY    = _c(160, 200, 240, 180)
+
+    cx = S // 2
+
+    # Basin (oval bowl)
+    d.ellipse([3, 18, 28, 30], fill=STONE_DK)
+    d.ellipse([4, 19, 27, 29], fill=STONE)
+    d.ellipse([6, 20, 25, 28], fill=WATER)
+    # Water surface highlights
+    d.line([(8, 23), (14, 23)], fill=WATER_LT, width=1)
+    d.line([(18, 24), (23, 24)], fill=WATER_LT, width=1)
+
+    # Central pillar
+    rect(d, cx-2, 10, cx+2, 22, STONE, STONE_DK)
+    d.line([(cx-2, 10), (cx+2, 10)], fill=STONE_LT, width=1)
+
+    # Water jet (vertical spray upward)
+    d.line([(cx, 3), (cx, 10)], fill=WATER_LT, width=1)
+    d.line([(cx-1, 5), (cx-1, 10)], fill=WATER, width=1)
+
+    # Spray droplets
+    for dx, dy in [(-3, 6), (3, 7), (-4, 9), (4, 8), (-2, 4), (2, 3)]:
+        d.point((cx+dx, dy), fill=SPRAY)
+
+    # Sparkle on water surface
+    shine(d, 10, 22)
+    shine(d, 20, 23)
+    shine(d, cx, 3, _c(200, 230, 255))
+
+    # Rim highlight
+    d.arc([3, 18, 28, 30], 200, 340, fill=STONE_LT, width=1)
+
+    return img
+
+
+# ---------------------------------------------------------------------------
+# TILE: grave
+# ---------------------------------------------------------------------------
+def gen_grave():
+    """Tombstone with carved cross — dark earth beneath."""
+    img, d = new_canvas(bg=_c(22, 18, 14))
+    STONE    = _c(120, 115, 125)
+    STONE_LT = _c(150, 145, 158)
+    STONE_DK = _c(75, 70, 80)
+    EARTH    = _c(50, 35, 22)
+    EARTH_DK = _c(32, 22, 14)
+    MOSS     = _c(45, 65, 35)
+
+    # Dirt mound
+    d.ellipse([2, 22, 29, 31], fill=EARTH)
+    d.ellipse([4, 24, 27, 30], fill=EARTH_DK)
+    # Scattered dirt texture
+    for dx, dy in [(5,25),(12,27),(22,24),(18,26),(8,28)]:
+        d.point((dx, dy), fill=lt(EARTH, 1.2))
+
+    # Tombstone (rounded top rectangle)
+    d.rectangle([9, 10, 22, 24], fill=STONE)
+    d.arc([9, 4, 22, 16], 0, 180, fill=STONE, width=8)
+    d.ellipse([9, 4, 22, 16], fill=STONE)
+    # Highlight left edge + top
+    d.line([(9, 10), (9, 24)], fill=STONE_LT, width=1)
+    d.arc([9, 4, 22, 16], 120, 180, fill=STONE_LT, width=1)
+    # Shadow right edge
+    d.line([(22, 10), (22, 24)], fill=STONE_DK, width=1)
+
+    # Carved cross on tombstone
+    cx = 15
+    for py in range(8, 20):
+        d.point((cx, py), fill=STONE_DK)
+    for px in range(12, 19):
+        d.point((px, 12), fill=STONE_DK)
+
+    # Moss at base
+    for mx in [9, 11, 20, 22]:
+        d.point((mx, 23), fill=MOSS)
+        d.point((mx+1, 22), fill=MOSS)
+
+    return img
+
+
+# ---------------------------------------------------------------------------
+# TILE: throne
+# ---------------------------------------------------------------------------
+def gen_throne():
+    """Golden throne — ornate high-backed chair with gem."""
+    img, d = new_canvas(bg=_c(18, 16, 14))
+    GOLD_    = _c(200, 170, 40)
+    GOLD_LT  = _c(240, 210, 80)
+    GOLD_DK  = _c(140, 110, 20)
+    VELVET   = _c(120, 20, 30)
+    VELVET_LT= _c(160, 40, 50)
+    GEM      = _c(60, 180, 255)
+
+    cx = S // 2
+
+    # High back (tall rectangle with pointed top)
+    d.rectangle([8, 6, 23, 22], fill=GOLD_)
+    d.line([(8,6),(23,6)], fill=GOLD_LT, width=1)
+    d.line([(8,6),(8,22)], fill=GOLD_LT, width=1)
+    d.line([(23,6),(23,22)], fill=GOLD_DK, width=1)
+
+    # Crown-like top spires
+    for sx_ in [9, 12, 15, 18, 21]:
+        poly(d, [(sx_, 6), (sx_+1, 2), (sx_+2, 6)], GOLD_LT)
+        d.point((sx_+1, 3), fill=GOLD_)
+
+    # Velvet cushion on back
+    d.rectangle([10, 9, 21, 18], fill=VELVET)
+    d.line([(10,9),(21,9)], fill=VELVET_LT, width=1)
+    d.line([(cx, 9),(cx, 18)], fill=VELVET_LT, width=1)
+
+    # Gem at top center
+    ell(d, cx-2, 4, cx+2, 8, GEM, dk(GEM, 0.5))
+    shine(d, cx-1, 5)
+
+    # Seat (horizontal slab)
+    d.rectangle([6, 22, 25, 26], fill=GOLD_)
+    d.line([(6,22),(25,22)], fill=GOLD_LT, width=1)
+    d.rectangle([8, 23, 23, 25], fill=VELVET)
+
+    # Armrests
+    rect(d, 5, 16, 8, 24, GOLD_, GOLD_DK)
+    rect(d, 23, 16, 26, 24, GOLD_, GOLD_DK)
+    # Armrest knobs
+    ell(d, 5, 15, 8, 18, GOLD_LT, GOLD_DK)
+    ell(d, 23, 15, 26, 18, GOLD_LT, GOLD_DK)
+
+    # Legs
+    rect(d, 6, 26, 9, 30, GOLD_DK)
+    rect(d, 22, 26, 25, 30, GOLD_DK)
+
+    return img
+
+
+# ---------------------------------------------------------------------------
+# TILE: ice
+# ---------------------------------------------------------------------------
+def gen_ice():
+    """Frozen ice floor — pale blue with cracks and frost."""
+    img, d = new_canvas(bg=_c(160, 200, 230))
+    ICE      = _c(180, 215, 240)
+    ICE_LT   = _c(210, 235, 250)
+    ICE_DK   = _c(120, 160, 195)
+    CRACK    = _c(80, 120, 160)
+    FROST    = _c(230, 245, 255, 160)
+
+    # Ice base with subtle variation
+    for row in range(4):
+        for col in range(4):
+            x0, y0 = col * 8, row * 8
+            v = (row * 5 + col * 7) % 20 - 10
+            fill = _c(ICE[0]+v, ICE[1]+v, ICE[2]+v)
+            d.rectangle([x0, y0, x0+7, y0+7], fill=fill)
+
+    # Cracks (jagged lines)
+    d.line([(4, 2), (8, 8), (12, 6), (18, 12)], fill=CRACK, width=1)
+    d.line([(20, 18), (24, 22), (28, 20)], fill=CRACK, width=1)
+    d.line([(2, 20), (6, 26), (10, 24)], fill=CRACK, width=1)
+
+    # Frost patches (bright spots)
+    for fx, fy in [(3,4),(14,2),(26,8),(8,16),(22,14),(16,26),(4,28),(28,28)]:
+        d.point((fx, fy), fill=FROST)
+        d.point((fx+1, fy), fill=(*ICE_LT[:3], 120))
+
+    # Specular highlight (top-left bright area)
+    d.rectangle([1, 1, 6, 5], fill=ICE_LT)
+    shine(d, 3, 2)
+    shine(d, 4, 3)
+
+    return img
+
+
+# ---------------------------------------------------------------------------
 # SPRITE: player
 # ---------------------------------------------------------------------------
 def gen_player():
@@ -408,6 +664,12 @@ GENERATORS = {
     'stairs_down': gen_stairs_down,
     'door':        gen_door,
     'altar':       gen_altar,
+    'water':       gen_water,
+    'lava':        gen_lava,
+    'fountain':    gen_fountain,
+    'grave':       gen_grave,
+    'throne':      gen_throne,
+    'ice':         gen_ice,
     'player':      gen_player,
 }
 

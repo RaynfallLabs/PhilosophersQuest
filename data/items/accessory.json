@@ -1,4 +1,18 @@
 {
+  "elaras_silver_ring": {
+    "name": "plain silver ring",
+    "symbol": "=",
+    "color": [192, 192, 210],
+    "weight": 0.1,
+    "min_level": 1,
+    "slot": "ring",
+    "equip_threshold": 1,
+    "quiz_tier": 1,
+    "effects": {},
+    "unidentified_name": "burnished silver ring",
+    "lore": "A small ring of tarnished silver, polished smooth by a child's restless fingers. It holds no enchantment, no hidden power — only the fierce love of a little girl who believed it was the most precious thing in the world. And perhaps, in a way, she was right.",
+    "floorSpawnWeight": {}
+  },
   "ring_warning_oak": {
     "name": "ring of warning",
     "symbol": "=",
@@ -4821,5 +4835,92 @@
       "41-60": 3,
       "61-100": 1
     }
+  },
+
+  "silverlight_pendant": {
+    "name": "Silverlight Pendant",
+    "slot": "amulet",
+    "effects": {
+      "stat": "WIS",
+      "amount": 2,
+      "stat2": "PER",
+      "amount2": 1
+    },
+    "equip_threshold": 1,
+    "quiz_tier": 1,
+    "weight": 0.3,
+    "value": 800,
+    "min_level": 3,
+    "unidentified_name": "delicate silver pendant",
+    "lore": "A small silver pendant on a fine chain. The metal is warm to the touch, as though someone held it very recently. The name 'ELARA' is engraved on the back in a child's unsteady hand.",
+    "symbol": "=",
+    "color": [200, 200, 230],
+    "floorSpawnWeight": {}
+  },
+
+  "saints_reliquary": {
+    "name": "Saint's Reliquary",
+    "slot": "amulet",
+    "effects": {
+      "stat": "WIS",
+      "amount": 1,
+      "stat2": "CON",
+      "amount2": 1
+    },
+    "equip_threshold": 1,
+    "quiz_tier": 1,
+    "weight": 0.5,
+    "value": 1200,
+    "min_level": 9999,
+    "identified": true,
+    "unidentified_name": "a silver reliquary containing a saint's fingerbone",
+    "lore": "A silver reliquary containing the fingerbone of a saint, set in gold. The monk who carried it crawled through the dungeon on his hands and knees to keep it safe. It radiates a quiet warmth.",
+    "symbol": "=",
+    "color": [200, 190, 160],
+    "floorSpawnWeight": {}
+  },
+
+  "officers_signet": {
+    "name": "Officer's Signet",
+    "slot": "ring",
+    "effects": {
+      "stat": "STR",
+      "amount": 1,
+      "stat2": "DEX",
+      "amount2": 1
+    },
+    "equip_threshold": 1,
+    "quiz_tier": 2,
+    "weight": 0.1,
+    "value": 2000,
+    "min_level": 9999,
+    "identified": true,
+    "unidentified_name": "a heavy gold signet ring stamped with the Legion crest",
+    "lore": "A solid gold signet ring bearing the crest of the Legion. Officer-grade — only issued to those who have earned command. The previous owner pulled it off his own finger and said he didn't deserve it.",
+    "symbol": "=",
+    "color": [218, 180, 50],
+    "floorSpawnWeight": {}
+  },
+
+  "prophets_amulet": {
+    "name": "Prophet's Amulet",
+    "slot": "amulet",
+    "effects": {
+      "stat": "WIS",
+      "amount": 2,
+      "stat2": "PER",
+      "amount2": 1
+    },
+    "equip_threshold": 1,
+    "quiz_tier": 4,
+    "weight": 0.3,
+    "value": 8000,
+    "min_level": 9999,
+    "identified": true,
+    "unidentified_name": "an amulet pulsing with gathered visions",
+    "lore": "An amulet worn by a dying prophet who spent his last years carving warnings into stone tablets. It pulses with accumulated foresight — visions of the Destroyer, the Seven Seals, and the final battle. The clarity it grants is almost painful.",
+    "symbol": "=",
+    "color": [200, 200, 220],
+    "floorSpawnWeight": {}
   }
 }

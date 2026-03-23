@@ -413,7 +413,7 @@
     "choices": [
       "Osiris",
       "Ra",
-      "Osiris",
+      "Anubis",
       "Horus"
     ]
   },
@@ -628,7 +628,7 @@
   },
   {
     "tier": 1,
-    "question": "Which animal is Odin associated with (he has two)?",
+    "question": "What are the names Huginn and Muninn associated with in Norse mythology?",
     "answer": "Ravens",
     "choices": [
       "Ravens",
@@ -640,7 +640,7 @@
   {
     "tier": 1,
     "question": "What instrument was David famous for playing?",
-    "answer": "The harp",
+    "answer": "The lyre",
     "choices": [
       "The harp",
       "The trumpet",
@@ -1853,7 +1853,7 @@
     "answer": "Hades",
     "choices": [
       "Hades",
-      "Hades",
+      "Elysium",
       "Tartarus",
       "Gehenna"
     ]
@@ -2234,7 +2234,7 @@
   },
   {
     "tier": 4,
-    "question": "Who is considered the father of modern philosophy of religion (argued for God from design)?",
+    "question": "Who is famous for the 'watchmaker analogy' argument for God's existence?",
     "answer": "William Paley",
     "choices": [
       "William Paley",
@@ -5133,39 +5133,6 @@
       "The common good means everyone must have the same amount of wealth",
       "It refers only to the spiritual goods of the church, not to material conditions",
       "The common good requires suppressing individual rights for the sake of majority preferences"
-    ],
-    "tier": 3
-  },
-  {
-    "question": "What theological argument did Dietrich Bonhoeffer make about 'cheap grace'?",
-    "answer": "Cheap grace is forgiveness without repentance, grace without discipleship -- it uses Christian theology to excuse comfortable compromise with evil rather than demanding costly obedience",
-    "choices": [
-      "Cheap grace is forgiveness without repentance, grace without discipleship -- it uses Christian theology to excuse comfortable compromise with evil rather than demanding costly obedience",
-      "Cheap grace means God's grace is available to everyone equally without cost",
-      "Bonhoeffer used the term to describe Protestant emphasis on faith alone without works",
-      "Cheap grace refers to quick absolution offered by priests in exchange for money"
-    ],
-    "tier": 4
-  },
-  {
-    "question": "What is the significance of the concept of 'stewardship' in Christian theology for human relationships to property?",
-    "answer": "Humans are caretakers, not absolute owners, of what God has entrusted to them -- ownership carries moral obligations toward others and creation",
-    "choices": [
-      "Humans are caretakers, not absolute owners, of what God has entrusted to them -- ownership carries moral obligations toward others and creation",
-      "Stewardship means giving all property to the church",
-      "The concept teaches that accumulating wealth is inherently sinful",
-      "Stewardship applies only to environmental care, not to wealth or social obligations"
-    ],
-    "tier": 2
-  },
-  {
-    "question": "What is the significance of Augustine's statement 'Our heart is restless until it rests in Thee'?",
-    "answer": "Humans have an innate longing for God that no worldly achievement can fully satisfy -- transcendent purpose is built into human nature itself",
-    "choices": [
-      "Humans have an innate longing for God that no worldly achievement can fully satisfy -- transcendent purpose is built into human nature itself",
-      "Augustine meant that Christians should avoid all worldly rest and comfort",
-      "It describes the anxiety of those who have not yet been baptized",
-      "The statement refers only to Augustine's personal experience, not a universal claim"
     ],
     "tier": 3
   }

@@ -1,5 +1,6 @@
 import math
 import os
+import random
 import sys
 import pygame
 
@@ -11,10 +12,12 @@ from fantasy_ui import (FP, get_font, draw_panel, draw_dark_panel,
                          draw_choice_button, ITEM_COLOR, make_parchment)
 
 from combat import player_attack
+from pet_system import Pet, FenrirPet, random_species as random_pet_species
 from quirk_system import QuirkSystem
 from container_system import attempt_lockpick, check_for_mimic
 from dungeon import (generate_dungeon, spawn_monsters, spawn_items,
-                     STAIRS_UP, STAIRS_DOWN, DOOR, SECRET_DOOR, ALTAR)
+                     WALL, FLOOR, STAIRS_UP, STAIRS_DOWN, DOOR, SECRET_DOOR,
+                     ALTAR, WATER, LAVA, FOUNTAIN, GRAVE, THRONE, ICE)
 from food_system import (harvest_corpse, cook_ingredient, eat_food, eat_raw,
                          get_available_compound_recipes, cook_compound_recipe,
                          get_recipes_for_ingredient)
@@ -80,84 +83,105 @@ VIEWPORT_H = GAME_H // TILE_SIZE    # 18
 # Stat keys (STR/CON/DEX/INT/WIS/PER) override player defaults.
 # _-prefixed keys are build metadata (ignored by the stat loop):
 #   _sprite       -> env sprite name (assets/tiles/env/{_sprite}.png)
-#   _start_weapon -> weapon item ID replacing the default iron_dagger
-#   _start_wand   -> wand item ID given at start
-#   _start_book   -> spellbook item ID given at start
-#   _no_dagger    -> True: skip the default iron_dagger
-#   _immortal     -> True: player cannot die
-#   _greeting     -> custom welcome message line (None = default)
+#   _start_weapon    -> weapon item ID replacing the default iron_dagger
+#   _start_wand      -> wand item ID given at start
+#   _start_book      -> spellbook item ID given at start
+#   _start_accessory -> accessory item ID given at start
+#   _start_shield    -> shield item ID given at start
+#   _no_dagger       -> True: skip the default iron_dagger
+#   _immortal        -> True: player cannot die
+#   _greeting        -> custom welcome message line (None = default)
 # ------------------------------------------------------------------
 SECRET_BUILDS: dict[str, dict] = {
     # -- Great philosophers -- INT/WIS focused, physically frail --------------
-    "aristotle": {
+    "aristotle of stagira": {
         "INT": 18, "WIS": 16, "PER": 14, "STR": 6, "CON": 8, "DEX": 8,
         "_sprite": "player_aristotle",
+        "_start_accessory": "ring_intellect_amethyst",
         "_greeting": "Aristotle the Philosopher enters the dungeon with calm reason.",
     },
-    "socrates": {
+    "socrates of athens": {
         "WIS": 20, "INT": 14, "PER": 16, "STR": 8, "CON": 10, "DEX": 7,
         "_sprite": "player_socrates",
+        "_start_accessory": "ring_wisdom_opal",
         "_greeting": "Socrates asks the dungeon a question. It does not answer.",
     },
-    "plato": {
+    "plato of athens": {
         "INT": 17, "WIS": 17, "PER": 12, "STR": 7, "CON": 9, "DEX": 9,
         "_sprite": "player_plato",
+        "_start_wand": "wand_of_light",
         "_greeting": "Plato descends into the cave and finds it uncomfortably on-the-nose.",
     },
-    "nietzsche": {
+    "friedrich nietzsche": {
         "INT": 16, "WIS": 8, "PER": 14, "STR": 14, "CON": 12, "DEX": 10,
         "_sprite": "player_nietzsche",
+        "_start_accessory": "ring_strength_iron",
         "_greeting": "Nietzsche stares into the dungeon. The dungeon stares back.",
     },
-    "pythagoras": {
+    "pythagoras of samos": {
         "INT": 18, "WIS": 14, "PER": 10, "STR": 7, "CON": 8, "DEX": 9,
         "_sprite": "player_pythagoras",
+        "_start_accessory": "ring_intellect_amethyst",
         "_greeting": "Pythagoras calculates the optimal descent angle.",
     },
-    "prometheus": {
+    "prometheus the firebearer": {
         "INT": 15, "WIS": 15, "CON": 15, "STR": 10, "DEX": 10, "PER": 10,
         "_sprite": "player_prometheus",
+        "_start_wand": "wand_of_fire",
         "_greeting": "Prometheus brings fire into the dungeon. The monsters are unimpressed.",
     },
-    "diogenes": {
+    "diogenes of sinope": {
         "WIS": 18, "PER": 16, "STR": 5, "CON": 5, "DEX": 5, "INT": 5,
         "_sprite": "player_diogenes",
+        "_no_dagger": True,
         "_greeting": "Diogenes enters the dungeon. He needs nothing. He wants nothing. He is still going to die.",
     },
     # -- Warriors -- brawn over brain -----------------------------------------
-    "achilles": {
+    "achilles son of peleus": {
         "STR": 18, "DEX": 16, "CON": 16, "INT": 8, "WIS": 6, "PER": 10,
         "_sprite": "player_achilles",
+        "_start_weapon": "iron_spear",
+        "_start_shield": "wooden_shield",
         "_greeting": "Achilles charges in. His heel tingles ominously.",
     },
-    "leonidas": {
+    "leonidas of sparta": {
         "STR": 17, "CON": 18, "DEX": 12, "INT": 9, "WIS": 10, "PER": 8,
         "_sprite": "player_leonidas",
+        "_start_weapon": "iron_spear",
+        "_start_shield": "wooden_shield",
         "_greeting": "Leonidas has 299 fewer soldiers than he would like.",
     },
-    "alexander": {
+    "alexander the great": {
         "STR": 16, "DEX": 14, "CON": 14, "INT": 14, "WIS": 10, "PER": 12,
         "_sprite": "player_alexander",
+        "_start_weapon": "iron_longsword",
         "_greeting": "Alexander the Great descends. He intends to conquer this too.",
     },
-    "theseus": {
+    "theseus of athens": {
         "STR": 14, "DEX": 14, "CON": 14, "INT": 12, "WIS": 12, "PER": 12,
         "_sprite": "player_theseus",
+        "_start_weapon": "gladius",
+        "_start_shield": "wooden_shield",
         "_greeting": "Theseus enters the dungeon. He has done this before.",
     },
     # -- Rogues -- speed and perception ---------------------------------------
-    "hermes": {
+    "hermes trismegistus": {
         "DEX": 18, "PER": 18, "INT": 12, "WIS": 10, "STR": 8, "CON": 7,
         "_sprite": "player_hermes",
+        "_no_dagger": True,
+        "_start_weapon": "iron_rapier",
         "_greeting": "Hermes was here, delivered something, and left. He returned because he forgot to sign.",
     },
-    "odysseus": {
+    "odysseus of ithaca": {
         "DEX": 14, "INT": 16, "PER": 16, "WIS": 14, "STR": 10, "CON": 10,
         "_sprite": "player_odysseus",
+        "_no_dagger": True,
+        "_start_weapon": "wood_longbow",
+        "_start_ammo": "iron_arrow",
         "_greeting": "Odysseus descends. He expects this to take ten years.",
     },
     # -- Mages -- pure arcane power --------------------------------------------
-    "merlin": {
+    "merlin ambrosius": {
         "INT": 20, "WIS": 14, "PER": 12, "STR": 5, "CON": 7, "DEX": 8,
         "_sprite": "player_merlin",
         "_no_dagger": True,
@@ -167,7 +191,7 @@ SECRET_BUILDS: dict[str, dict] = {
     },
     # -- New characters --------------------------------------------------------
     "corwin": {
-        "STR": 11, "CON": 11, "DEX": 12, "INT": 8, "WIS": 10, "PER": 14,
+        "STR": 11, "CON": 10, "DEX": 11, "INT": 9, "WIS": 10, "PER": 12,
         "_sprite": "player_ranger",
         "_no_dagger": True,
         "_start_weapon": "wood_shortbow",
@@ -175,15 +199,14 @@ SECRET_BUILDS: dict[str, dict] = {
         "_greeting": "Corwin the Ranger nocks an arrow and descends into the dark.",
     },
     "fianna": {
-        "STR": 6, "CON": 8, "DEX": 12, "INT": 16, "WIS": 12, "PER": 10,
+        "STR": 7, "CON": 9, "DEX": 10, "INT": 14, "WIS": 11, "PER": 10,
         "_sprite": "player_wizard_f",
         "_no_dagger": True,
         "_start_wand": "wand_of_magic_missile",
-        "_start_book": "spellbook_magic_missile",
         "_greeting": "Fianna the Wizard weaves a sigil in the air and descends.",
     },
     "fluffs": {
-        "STR": 7, "CON": 10, "DEX": 10, "INT": 18, "WIS": 14, "PER": 12,
+        "STR": 7, "CON": 9, "DEX": 10, "INT": 15, "WIS": 12, "PER": 10,
         "_sprite": "player_wizard_f",   # same sprite as Fianna
         "_no_dagger": True,
         "_start_wand": "wand_of_magic_missile",
@@ -206,6 +229,18 @@ SECRET_BUILDS: dict[str, dict] = {
         "_start_ammo": "iron_arrow",
         "_start_book": "spellbook_sleep",
         "_greeting": "Robyn descends -- sharp-eyed, soft-footed, and sharper-tongued than most.",
+    },
+    # -- QA ----------------------------------------------------------------
+    "titivillus": {
+        "STR": 12, "CON": 12, "DEX": 12, "INT": 12, "WIS": 12, "PER": 12,
+        "_sprite": "player_dad",
+        "_start_weapon": "iron_longsword",
+        "_start_shield": "wooden_shield",
+        "_start_wand": "wand_of_fire",
+        "_start_book": "spellbook_magic_missile",
+        "_start_ammo": "iron_arrow",
+        "_start_accessory": "ring_protection_silver",
+        "_greeting": "The Scribe of Errors descends, quill in hand, to document every flaw.",
     },
 }
 
@@ -257,6 +292,7 @@ class WelcomeScreen:
         self._has_save   = False
         self._delete_flash = 0.0
         self._show_alltime = False
+        self._god_prompt   = False   # True when showing "Did you mean Dad?" popup
         # Pre-render stone background into a surface
         self._bg = self._make_stone_bg()
 
@@ -303,8 +339,17 @@ class WelcomeScreen:
                         # Any key closes the all-time overlay
                         self._show_alltime = False
                         continue
+                    if self._god_prompt:
+                        if event.key == pygame.K_y:
+                            return 'Dad', SECRET_BUILDS.get('dad')
+                        elif event.key in (pygame.K_n, pygame.K_ESCAPE):
+                            self._god_prompt = False
+                        continue
                     if event.key == pygame.K_RETURN and self.name_buf.strip():
                         name  = self.name_buf.strip()
+                        if name.lower() == 'god':
+                            self._god_prompt = True
+                            continue
                         build = SECRET_BUILDS.get(name.lower())
                         return name, build
                     elif event.key == pygame.K_DELETE and self._has_save:
@@ -319,7 +364,7 @@ class WelcomeScreen:
                         sys.exit()
                     elif event.key == pygame.K_h:
                         self._show_alltime = True
-                    elif len(self.name_buf) < 24 and event.unicode.isprintable():
+                    elif len(self.name_buf) < 30 and event.unicode.isprintable():
                         self.name_buf += event.unicode
 
             self._draw()
@@ -343,6 +388,27 @@ class WelcomeScreen:
         self._draw_leaderboard()
         if self._show_alltime:
             self._draw_alltime()
+        if self._god_prompt:
+            self._draw_god_prompt()
+
+    def _draw_god_prompt(self):
+        overlay = pygame.Surface((self.W, self.H), pygame.SRCALPHA)
+        overlay.fill((0, 0, 0, 160))
+        self.screen.blit(overlay, (0, 0))
+
+        bw, bh = 380, 120
+        bx = (self.W - bw) // 2
+        by = (self.H - bh) // 2
+        pygame.draw.rect(self.screen, (12, 10, 25), (bx, by, bw, bh))
+        pygame.draw.rect(self.screen, (200, 170, 80), (bx, by, bw, bh), 2)
+        # Inner bevel
+        pygame.draw.rect(self.screen, (160, 130, 60), (bx+2, by+2, bw-4, bh-4), 1)
+
+        msg = self.font_lg.render("Did you mean, 'Dad'?", True, (255, 240, 200))
+        self.screen.blit(msg, (bx + (bw - msg.get_width()) // 2, by + 25))
+
+        hint = self.font_md.render("(Y)es  /  (N)o", True, (180, 170, 140))
+        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, by + 72))
 
     def _draw_radial_glow(self, cx, cy):
         glow = pygame.Surface((self.W, self.H), pygame.SRCALPHA)
@@ -786,6 +852,9 @@ STATE_SCROLL_MENU    = 'scroll_menu'
 STATE_IDENTIFY_MENU  = 'identify_menu'
 STATE_COOK_MENU      = 'cook_menu'
 STATE_CONFIRM_EXIT   = 'confirm_exit'
+STATE_EXIT_QUEST     = 'exit_quest'      # "Complete your quest?" (has Stone)
+STATE_ABANDON_QUEST  = 'abandon_quest'   # "Abandon your quest?" (no Stone)
+STATE_CHICKEN        = 'chicken'         # McFly popup
 STATE_VICTORY        = 'victory'
 STATE_DEAD           = 'dead'
 STATE_LOCKPICK       = 'lockpick'
@@ -806,8 +875,13 @@ STATE_MYSTERY_APPROACH = 'mystery_approach'  # Player is approaching a mystery a
 STATE_SHOP             = 'shop'              # Merchant shop overlay
 STATE_POWER_MENU       = 'power_menu'        # Active powers menu (V key)
 STATE_HACK_REALITY     = 'hack_reality'      # Hack Reality result display
+STATE_XYZZY_INPUT      = 'xyzzy_input'       # Hidden green terminal text input
+STATE_XYZZY_CONFIRM    = 'xyzzy_confirm'     # "Hack reality?" Yes/No warning
+STATE_THROW_MENU       = 'throw_menu'        # Select potion to throw
 STATE_QUIRKS           = 'quirks'            # Quirks progress browser
 STATE_CHARACTER_SHEET  = 'character_sheet'   # Detailed character info
+STATE_NPC_ENCOUNTER    = 'npc_encounter'     # Moral choice encounter with NPC
+STATE_JUDGMENT         = 'judgment'          # Altar of Last Judgment result
 
 # ---------------------------------------------------------------------------
 # Spells learnable from spellbooks  (spell_id -> attributes)
@@ -960,8 +1034,39 @@ class Game:
         self._target_candidates: list = [] # visible monsters sorted by distance
         self._target_idx        = 0        # which candidate is selected
         self._melee_targeting   = False    # True when using A-key melee targeting
+        self._throw_targeting   = False    # True when throwing a potion
+        self._throw_potion      = None     # Potion being thrown
+        self._throw_reach       = 0        # Throw range based on STR
+        # Map view toggle: 'full' = fit entire dungeon, 'close' = scrolling close-up
+        self.zoom_mode          = 'full'
+        # Pet companion system (Soul Spheres)
+        self.pets: list[Pet]    = []       # active pet companions, persist across floors
         # Mystery system state
         self._active_mystery_altar = None  # MysteryAltar being interacted with
+        # Abaddon quest state
+        self.seals_broken: set = set()     # set of seal artifact IDs collected
+        self.abaddon_resist_removed_turns: int = 0  # turns Abaddon's resistances are stripped
+        self.heavenly_host_active: bool = False      # Scales of Michael activated
+        self._l100_altars_used: set = set()          # (x,y) of altars already prayed at on L100
+        # Morality / NPC encounter system
+        self.karma: int = 0                # cumulative moral score (-10 to +10)
+        self._npc_encounter_levels: dict = {}  # {level: encounter_def} for this run
+        self._npc_encounter_active = None  # current encounter dict being displayed
+        self._npc_encounter_monster = None # monster entity for current NPC
+        self._encountered_npcs: set = set() # tags of NPCs already encountered
+        self._judgment_text: str = ''      # narrative text for judgment result
+        self._npc_encounter_phase: str = 'text'   # 'text', 'options', 'select_item', 'outcome'
+        self._npc_selected_option: dict | None = None  # option dict chosen by player
+        self._npc_outcome_text: str = ''           # outcome text to display
+        self._npc_item_list: list = []             # filtered inventory for item selection
+        self._npc_item_scroll: int = 0             # scroll offset for item list
+        self._npc_triggered_items: set = set()     # item IDs of trigger items player has picked up
+        self.player_title: str = ''                # 'Paladin' etc. from judgment
+        # Pre-select NPC encounter levels for this run
+        from npc_encounters import select_encounter_levels, get_trigger_item_levels
+        self._npc_encounter_levels = select_encounter_levels()
+        self._npc_trigger_item_levels: dict = get_trigger_item_levels(self._npc_encounter_levels)
+        self._npc_trigger_items_placed: set = set()  # item IDs already spawned as floor loot
 
         self._new_level(1)
         self._show_story_popup('dungeon_entrance', STATE_PLAYER)
@@ -1008,6 +1113,10 @@ class Game:
         self.renderer.set_dungeon(dungeon.width, dungeon.height, GAME_W, GAME_H)
         self._refresh_fov()
 
+        # Spawn trigger items and NPC for moral encounters on L1 (if assigned)
+        self._maybe_spawn_trigger_item(level)
+        self._maybe_spawn_npc(level)
+
         # Give the player their Philosopher's Shard and build-specific starting kit
         self._give_starting_kit()
 
@@ -1021,6 +1130,13 @@ class Game:
     def load_state(self, state: dict):
         """Restore all game state from a previously saved dict (pickle)."""
         self.player        = state['player']
+        # Save compat: old saves lack ranged_weapon slot
+        if not hasattr(self.player, 'ranged_weapon'):
+            self.player.ranged_weapon = None
+        if not hasattr(self.player, 'hack_tiers_claimed'):
+            self.player.hack_tiers_claimed = set()
+        # BUC migration: patch buc/buc_known on all items from old saves
+        self._migrate_buc_all(state)
         self.player_name   = state['player_name']
         self.secret_build  = state.get('secret_build')
         self.turn_count    = state['turn_count']
@@ -1032,9 +1148,75 @@ class Game:
         self.ground_items  = state['ground_items']
         self.correct_answers = state.get('correct_answers', 0)
         self.wrong_answers   = state.get('wrong_answers', 0)
+        self.pets            = state.get('pets', [])
+        # Abaddon quest state
+        self.seals_broken   = state.get('seals_broken', set())
+        self.heavenly_host_active = state.get('heavenly_host_active', False)
+        self.abaddon_resist_removed_turns = state.get('abaddon_resist_removed_turns', 0)
+        self._l100_altars_used = state.get('_l100_altars_used', set())
+        # Morality system
+        self.karma = state.get('karma', 0)
+        self._npc_encounter_levels = state.get('_npc_encounter_levels', {})
+        self._encountered_npcs = state.get('_encountered_npcs', set())
+        self._abaddon_empowered = state.get('_abaddon_empowered', False)
+        self._locusts_strengthened = state.get('_locusts_strengthened', False)
+        if state.get('_judgment_resolved', False):
+            self._judgment_resolved = True
+        self._npc_triggered_items = state.get('_npc_triggered_items', set())
+        self._npc_trigger_item_levels = state.get('_npc_trigger_item_levels', {})
+        self._npc_trigger_items_placed = state.get('_npc_trigger_items_placed', set())
+        self.player_title = state.get('player_title', '')
+        # Ascent / Death Pursuer state
+        self.death_pursues = state.get('death_pursues', False)
+        self.death_monster = state.get('death_monster', None)
+        # Deep-lore item spawn tracking
+        if '_lore_levels' in state:
+            self._lore_levels = state['_lore_levels']
+        self._lore_placed = state.get('_lore_placed', set())
+        # Quirk system
+        if state.get('quirk_system') is not None:
+            self.quirk_system = state['quirk_system']
+            self.quirk_system.game = self  # re-bind game reference
         self.renderer.set_dungeon(self.dungeon.width, self.dungeon.height, GAME_W, GAME_H)
         self._refresh_fov()
         self.add_message("Welcome back, seeker. Your journey continues...", 'success')
+
+    @staticmethod
+    def _migrate_buc_item(item):
+        """Patch buc/buc_known onto an item from an old save."""
+        if not hasattr(item, 'buc'):
+            item.buc = 'cursed' if item.__dict__.get('cursed', False) else 'uncursed'
+        if not hasattr(item, 'buc_known'):
+            item.buc_known = False
+
+    def _migrate_buc_all(self, state: dict):
+        """Walk every item in inventory, equipment, ground, and stored levels."""
+        migrate = self._migrate_buc_item
+        # Player inventory
+        for item in getattr(self.player, 'inventory', []):
+            migrate(item)
+        # Equipped slots
+        for slot_item in [self.player.weapon, self.player.ranged_weapon, self.player.shield]:
+            if slot_item:
+                migrate(slot_item)
+        for s in getattr(self.player, 'armor_slots', []):
+            if s:
+                migrate(s)
+        for s in getattr(self.player, 'accessory_slots', []):
+            if s:
+                migrate(s)
+        amulet = getattr(self.player, 'amulet_slot', None)
+        if amulet:
+            migrate(amulet)
+        # Ground items
+        for item in state.get('ground_items', []):
+            migrate(item)
+        # Stored levels in level_mgr
+        lm = state.get('level_mgr')
+        if lm:
+            for lvl_data in getattr(lm, 'levels', {}).values():
+                for item in lvl_data.get('ground_items', []):
+                    migrate(item)
 
     def _change_level(self, new_level: int, enter_from_top: bool):
         """Transition between levels, preserving the player."""
@@ -1061,6 +1243,22 @@ class Game:
         self.dungeon_level = new_level
         self._notified_rooms = set()   # reset per-floor special room notifications
         self.renderer.set_dungeon(dungeon.width, dungeon.height, GAME_W, GAME_H)
+
+        # Spawn trigger items and NPCs for moral encounters (only on first visit)
+        if not saved:
+            self._maybe_spawn_trigger_item(new_level)
+            self._maybe_spawn_npc(new_level)
+
+        # Abaddon empowered by negative karma: boost HP on first entry to L100
+        if new_level == 100 and not saved and getattr(self, '_abaddon_empowered', False):
+            for m in self.monsters:
+                if m.kind == 'abaddon_destroyer' and m.alive:
+                    bonus = int(m.max_hp * 0.5)
+                    m.max_hp += bonus
+                    m.hp += bonus
+                    self.add_message(
+                        "Your sins have given the Destroyer terrible strength!", 'danger')
+                    break
 
         # Track levels without Philosopher's Shard (Diogenes quirk)
         has_shard = any(getattr(i, 'id', '') == 'philosophers_shard'
@@ -1101,12 +1299,71 @@ class Game:
         # Place deep-lore items on their designated levels (once per run)
         self._maybe_place_lore_items(dungeon, new_level)
 
+        # Reposition pets near player on floor change (spread to adjacent tiles)
+        _pet_placed = set()
+        for pet in self.pets:
+            if not pet.alive:
+                continue
+            placed = False
+            for dx in range(0, 3):
+                for dy in range(0, 3):
+                    for sx, sy in [(dx, dy), (-dx, dy), (dx, -dy), (-dx, -dy)]:
+                        nx, ny = self.player.x + sx, self.player.y + sy
+                        if (nx, ny) in _pet_placed:
+                            continue
+                        if (nx, ny) == (self.player.x, self.player.y):
+                            continue
+                        if dungeon.is_walkable(nx, ny) and \
+                           not any(m.alive and m.x == nx and m.y == ny for m in self.monsters):
+                            pet.x, pet.y = nx, ny
+                            _pet_placed.add((nx, ny))
+                            placed = True
+                            break
+                    if placed:
+                        break
+                if placed:
+                    break
+            if not placed:
+                pet.x, pet.y = self.player.x, self.player.y
+
         # Death always enters from the stairs below when pursuing
         if self.death_pursues and self.death_monster is not None:
             self._place_death_on_level(dungeon)
             self.add_message("You hear the scrape of a scythe on stone below you...", 'danger')
 
+        # Special room extra spawns (first visit only)
+        if not saved:
+            for (rcx, rcy), rtype in dungeon.special_rooms.items():
+                if rtype == 'zoo':
+                    for room in dungeon.rooms:
+                        if room.center == (rcx, rcy):
+                            zoo_extra = spawn_monsters([room], new_level, dungeon, min_count=4, max_count=8)
+                            for zm in zoo_extra:
+                                zm.add_effect('sleeping', 999)
+                            monsters.extend(zoo_extra)
+                            break
+                elif rtype == 'graveyard':
+                    for room in dungeon.rooms:
+                        if room.center == (rcx, rcy):
+                            grave_extra = spawn_monsters([room], new_level, dungeon, min_count=2, max_count=4)
+                            for gm in grave_extra:
+                                gm.add_effect('sleeping', 999)
+                            monsters.extend(grave_extra)
+                            break
+                elif rtype == 'barracks':
+                    for room in dungeon.rooms:
+                        if room.center == (rcx, rcy):
+                            bar_extra = spawn_monsters([room], new_level, dungeon, min_count=3, max_count=5)
+                            for bm in bar_extra:
+                                bm.add_effect('sleeping', 999)
+                            monsters.extend(bar_extra)
+                            break
+
         self._refresh_fov()
+
+        # Display atmospheric messages for this level
+        for atmo_msg in getattr(self.dungeon, 'atmosphere_messages', []):
+            self.add_message(atmo_msg, 'info')
 
     def _give_starting_kit(self):
         """Give the player their starting kit, adjusted for their secret build."""
@@ -1181,6 +1438,30 @@ class Game:
             except Exception:
                 pass
 
+        # -- Shield (warriors) ---------------------------------------------
+        start_shield = b.get('_start_shield', None)
+        if start_shield:
+            try:
+                shields = load_items('shield')
+                sh = next((s for s in shields if s.id == start_shield), None)
+                if sh:
+                    sh.identified = True
+                    self.player.inventory.append(sh)
+            except Exception:
+                pass
+
+        # -- Accessory (rings/amulets) ------------------------------------
+        start_acc = b.get('_start_accessory', None)
+        if start_acc:
+            try:
+                accs = load_items('accessory')
+                acc = next((a for a in accs if a.id == start_acc), None)
+                if acc:
+                    acc.identified = True
+                    self.player.inventory.append(acc)
+            except Exception:
+                pass
+
         # -- Always: starting lockpick charges ----------------------------
         self.player.lockpick_charges += 5   # equivalent to one basic lockpick
 
@@ -1209,6 +1490,25 @@ class Game:
             explored = len(self.dungeon.explored)
             if total > 0:
                 qs.on_floor_explored(explored / total)
+
+        # Dark rooms: restrict visibility to 1 tile radius
+        dark_centers = getattr(self.dungeon, 'dark_rooms', set())
+        if dark_centers:
+            px, py = self.player.x, self.player.y
+            in_dark = False
+            for room in self.dungeon.rooms:
+                cx, cy = room.center
+                if (cx, cy) in dark_centers:
+                    if (room.x <= px < room.x + room.width and
+                            room.y <= py < room.y + room.height):
+                        in_dark = True
+                        break
+            if in_dark and not self.player.has_effect('see_invisible'):
+                dark_radius = 1 + max(0, (self.player.PER - 10) // 5)
+                self.visible = {
+                    (vx, vy) for vx, vy in self.visible
+                    if abs(vx - px) <= dark_radius and abs(vy - py) <= dark_radius
+                }
 
     # ------------------------------------------------------------------
     # Event handling
@@ -1242,8 +1542,11 @@ class Game:
                               STATE_WAND_MENU, STATE_SCROLL_MENU,
                               STATE_IDENTIFY_MENU, STATE_COOK_MENU,
                               STATE_CONFIRM_EXIT, STATE_TARGET,
-                              STATE_EAT_MENU, STATE_QUAFF_MENU, STATE_HELP, STATE_LORE,
-                              STATE_SPELL_MENU, STATE_HINT, STATE_HACK_REALITY, STATE_QUIRKS,
+                              STATE_EXIT_QUEST, STATE_ABANDON_QUEST, STATE_CHICKEN,
+                              STATE_EAT_MENU, STATE_QUAFF_MENU, STATE_THROW_MENU,
+                              STATE_HELP, STATE_LORE,
+                              STATE_SPELL_MENU, STATE_HINT, STATE_HACK_REALITY,
+                              STATE_XYZZY_INPUT, STATE_XYZZY_CONFIRM, STATE_QUIRKS,
                               STATE_CHARACTER_SHEET,
                               STATE_EXAMINE, STATE_ENCYCLOPEDIA,
                               STATE_DROP_MENU, STATE_DROP_GOLD_INPUT,
@@ -1251,6 +1554,9 @@ class Game:
                               STATE_POWER_MENU):
                 if self.state == STATE_MYSTERY_APPROACH:
                     self._active_mystery_altar = None
+                if self.state == STATE_TARGET:
+                    self._throw_targeting = False
+                    self._throw_potion = None
                 self.state = STATE_PLAYER
                 return True
             if self.state == STATE_STORY_POPUP:
@@ -1300,6 +1606,8 @@ class Game:
             self._eat_menu_input(key)
         elif self.state == STATE_QUAFF_MENU:
             self._quaff_menu_input(key)
+        elif self.state == STATE_THROW_MENU:
+            self._throw_menu_input(key)
         elif self.state == STATE_HELP:
             self._help_input(key)
         elif self.state == STATE_LORE:
@@ -1312,6 +1620,10 @@ class Game:
             self.state = STATE_PLAYER   # any key dismisses hint overlay
         elif self.state == STATE_HACK_REALITY:
             self.state = STATE_PLAYER   # any key dismisses hack reality overlay
+        elif self.state == STATE_XYZZY_INPUT:
+            self._xyzzy_input(key, event.unicode)
+        elif self.state == STATE_XYZZY_CONFIRM:
+            self._xyzzy_confirm_input(key)
         elif self.state == STATE_QUIRKS:
             self._quirks_input(key)
         elif self.state == STATE_CHARACTER_SHEET:
@@ -1324,12 +1636,22 @@ class Game:
             self.state = self.popup_next_state   # any key advances
         elif self.state == STATE_CONFIRM_EXIT:
             self._confirm_exit_input(key)
+        elif self.state == STATE_EXIT_QUEST:
+            self._exit_quest_input(key)
+        elif self.state == STATE_ABANDON_QUEST:
+            self._abandon_quest_input(key)
+        elif self.state == STATE_CHICKEN:
+            self._chicken_input(key)
         elif self.state == STATE_MYSTERY_APPROACH:
             self._mystery_approach_input(key, event.unicode)
         elif self.state == STATE_SHOP:
             self._shop_input(key)
         elif self.state == STATE_POWER_MENU:
             self._power_menu_input(key)
+        elif self.state == STATE_NPC_ENCOUNTER:
+            self._npc_encounter_input(key)
+        elif self.state == STATE_JUDGMENT:
+            self._judgment_input(key)
 
         return True
 
@@ -1403,6 +1725,9 @@ class Game:
         if key == pygame.K_f:
             self._open_targeting()
             return
+        if key == pygame.K_t:
+            self._open_throw_menu()
+            return
         if key == pygame.K_BACKSLASH:
             self._start_pray()
             return
@@ -1419,19 +1744,47 @@ class Game:
             self._open_encyclopedia()
             return
         if key == pygame.K_d:
-            self._open_drop_menu()
+            tile = self.dungeon.tiles[self.player.y][self.player.x]
+            # On a fountain with Bronze Bull: open drop menu so player can offer it
+            if tile == FOUNTAIN and any(
+                    getattr(i, 'id', '') == 'bronze_bull' for i in self.player.inventory):
+                self._open_drop_menu()
+            # On an altar with quest items: open drop menu so player can offer
+            elif tile == ALTAR and any(
+                    getattr(i, 'id', '') in (
+                        'eye_of_graeae', 'broken_gram', 'leather_scrap',
+                        'cats_footstep', 'womans_beard', 'mountain_root',
+                        'fish_breath', 'bird_spittle', 'bear_sinew',
+                    )
+                    for i in self.player.inventory):
+                self._open_drop_menu()
+            elif tile in (FOUNTAIN, GRAVE, THRONE):
+                self._interact_tile()
+            elif tile == ALTAR:
+                self._altar_buc_identify()
+            else:
+                # Adjacent to Odin's Altar with items — allow drop for throw-over
+                self._open_drop_menu()
             return
-        if key == pygame.K_t:
+        if key == pygame.K_y:
             self._open_shop()
             return
         if key == pygame.K_v:
             self._open_power_menu()
             return
-        if key == pygame.K_w:
-            self._start_hack_reality()
+        if key == pygame.K_BACKQUOTE:
+            self._open_xyzzy_input()
             return
         if key == pygame.K_o:
             self._open_quirks_screen()
+            return
+        if key == pygame.K_TAB:
+            if self.zoom_mode == 'full':
+                self.zoom_mode = 'close'
+                self.add_message("Close-up view. [Tab] to zoom out.", 'info')
+            else:
+                self.zoom_mode = 'full'
+                self.add_message("Full map view. [Tab] to zoom in.", 'info')
             return
 
         if key not in self._MOVE_KEYS:
@@ -1466,6 +1819,12 @@ class Game:
             self._advance_turn()
             return
 
+        # Immobilized (bear trap): skip turn
+        if self.player.has_effect('immobilized'):
+            self.add_message("You're stuck and cannot move!", 'danger')
+            self._advance_turn()
+            return
+
         # Slowed: skip every other turn
         if self.player.has_effect('slowed'):
             self._slow_skip = not self._slow_skip
@@ -1483,6 +1842,14 @@ class Game:
         # Stunned: 25% chance to fail
         if self.player.has_effect('stunned') and _rng.random() < 0.25:
             self.add_message("You are too dazed to act!", 'warning')
+            self._advance_turn()
+            return
+
+        # In a pit: movement = climb out (stay in place, costs a turn)
+        if self.player.has_effect('in_pit'):
+            del self.player.status_effects['in_pit']
+            self.add_message("You climb out of the pit.", 'info')
+            self._tick_sp()
             self._advance_turn()
             return
 
@@ -1504,6 +1871,10 @@ class Game:
         tile_at_dest = self.dungeon.tiles[ny][nx]
 
         if target:
+            # NPC encounter: open moral choice instead of combat
+            if getattr(target, '_npc_encounter_tag', None):
+                self._start_npc_encounter(target)
+                return
             self._start_combat(target)
         elif tile_at_dest == DOOR:
             # Bump-to-open: open the door and step through in one action
@@ -1533,9 +1904,43 @@ class Game:
             self._advance_turn()
         elif self.dungeon.is_walkable(nx, ny) or (
             self.player.has_effect('phasing') and self.dungeon.in_bounds(nx, ny)
+            and self.dungeon.tiles[ny][nx] not in (WATER, LAVA)
         ):
             self.player.x, self.player.y = nx, ny
-            self._check_floor_trap(nx, ny)
+            # Ice sliding: keep moving in the same direction until hitting non-ice
+            if self.dungeon.tiles[ny][nx] == ICE and not self.player.has_effect('levitating'):
+                # Check trap on entry tile first
+                self._check_floor_trap(nx, ny)
+                if self.player.is_dead():
+                    return
+                slide_count = 0
+                while slide_count < 5:  # max 5 tiles slide
+                    sx, sy = self.player.x + dx, self.player.y + dy
+                    if not self.dungeon.in_bounds(sx, sy):
+                        break
+                    slide_tile = self.dungeon.tiles[sy][sx]
+                    if slide_tile in (WATER, LAVA, WALL, DOOR, SECRET_DOOR):
+                        break
+                    if any(m.alive and m.x == sx and m.y == sy for m in self.monsters):
+                        break
+                    self.player.x, self.player.y = sx, sy
+                    slide_count += 1
+                    # Check traps on each intermediate tile
+                    self._check_floor_trap(sx, sy)
+                    if self.player.is_dead():
+                        return
+                    if slide_tile != ICE:
+                        break
+                if slide_count > 0:
+                    self.add_message(f"You slide across the ice! ({slide_count} tiles)", 'warning')
+            else:
+                self._check_floor_trap(self.player.x, self.player.y)
+            # Check for dug pits (separate from traps)
+            px, py = self.player.x, self.player.y
+            if (px, py) in self.dungeon.pits:
+                self._player_fall_in_pit(px, py)
+                if self.player.is_dead():
+                    return
             _qs_walk = getattr(self, 'quirk_system', None)
             if _qs_walk:
                 _qs_walk.on_move()
@@ -1569,8 +1974,8 @@ class Game:
             self._refresh_fov()
             self._tick_sp()
             if self.state != STATE_DEAD:
-                self._notify_stairs(nx, ny)
-                self._notify_ground(nx, ny)
+                self._notify_stairs(self.player.x, self.player.y)
+                self._notify_ground(self.player.x, self.player.y)
                 self._advance_turn()
                 # Haste: grant a free second step in the same direction
                 if (self.player.has_effect('hasted') and self.state == STATE_PLAYER
@@ -1591,6 +1996,12 @@ class Game:
                 self.add_message("Stairs lead up here  --  press '<' to ascend.", 'info')
         elif tile == ALTAR:
             self.add_message("A sacred altar stands here. Press '\\' to pray with divine bonus.", 'info')
+        elif tile == FOUNTAIN:
+            self.add_message("A shimmering fountain bubbles here. Press 'D' to drink.", 'info')
+        elif tile == GRAVE:
+            self.add_message("A weathered gravestone stands here. Press 'D' to dig.", 'info')
+        elif tile == THRONE:
+            self.add_message("An ancient throne sits here. Press 'D' to sit upon it.", 'info')
 
     def _display_name(self, item) -> str:
         """Return the name to show for an item -- unidentified name if not yet identified."""
@@ -1609,6 +2020,12 @@ class Game:
             'library':     ("You enter an ancient library -- scrolls line the walls.", 'info'),
             'shrine':      ("You enter a sacred shrine -- you feel the presence of higher powers.", 'info'),
             'monster_den': ("You enter a monster den -- the stench of creatures fills the air!", 'danger'),
+            'zoo':         ("Welcome to the treasure zoo! Sleeping creatures surround you!", 'danger'),
+            'graveyard':   ("The air grows deathly cold. Graves stretch before you...", 'danger'),
+            'beehive':     ("A low buzzing fills the air. You've disturbed a hive!", 'danger'),
+            'barracks':    ("Soldiers' quarters -- weapons and armor are stacked neatly.", 'info'),
+            'swamp':       ("Murky water and marsh gas fill this chamber.", 'warning'),
+            'throne_room': ("An aura of ancient authority radiates from a throne.", 'info'),
         }
         for (rcx, rcy), rtype in self.dungeon.special_rooms.items():
             if (rcx, rcy) not in self._notified_rooms:
@@ -1665,6 +2082,14 @@ class Game:
         if self.dungeon.tiles[py][px] != STAIRS_DOWN:
             self.add_message("There are no stairs leading down here.", 'info')
             return
+        # Seven Seals gate: all 7 must be broken before descending to L100
+        if self.dungeon_level == 99 and len(self.seals_broken) < 7:
+            remaining = 7 - len(self.seals_broken)
+            self.add_message(
+                f"Seven seals hold the Pit closed. {remaining} remain unbroken.", 'warning')
+            self.add_message(
+                "You must slay the seven guardians before the way opens.", 'info')
+            return
         self._change_level(self.dungeon_level + 1, enter_from_top=True)
 
     def _ascend_stairs(self):
@@ -1673,7 +2098,12 @@ class Game:
             self.add_message("There are no stairs leading up here.", 'info')
             return
         if self.dungeon_level == 1:
-            self.state = STATE_CONFIRM_EXIT
+            has_stone = any(
+                isinstance(i, Artifact) and i.id in ('philosophers_stone',
+                                                       'complete_tablet_of_second_death')
+                for i in self.player.inventory
+            )
+            self.state = STATE_EXIT_QUEST if has_stone else STATE_ABANDON_QUEST
         else:
             # Trigger Death the moment the player leaves L100 carrying the Stone
             # (either the raw stone or the stone embedded in the complete tablet)
@@ -1836,6 +2266,60 @@ class Game:
         elif key in (pygame.K_ESCAPE, pygame.K_c):
             self.state = STATE_PLAYER
 
+    def _exit_quest_input(self, key: int):
+        """Player has the Stone and is at the L1 exit."""
+        if key == pygame.K_y:
+            self._do_exit()
+        elif key in (pygame.K_n, pygame.K_ESCAPE):
+            self.state = STATE_PLAYER
+
+    def _abandon_quest_input(self, key: int):
+        """Player does NOT have the Stone and is at the L1 exit."""
+        if key == pygame.K_y:
+            self.state = STATE_CHICKEN
+        elif key in (pygame.K_n, pygame.K_ESCAPE):
+            self.state = STATE_PLAYER
+
+    def _chicken_input(self, key: int):
+        """McFly chicken popup — Y to flee, N to stay and get Flux Capacitor."""
+        if key == pygame.K_1:
+            # "Yes, I am a coward."
+            self.defeat_reason = 'fled'
+            self._on_game_over()
+            self._show_story_popup('exit_without_stone', STATE_DEAD)
+        elif key == pygame.K_2:
+            # "Nobody calls me chicken!"
+            self.state = STATE_PLAYER
+            self._spawn_flux_capacitor()
+
+    def _spawn_flux_capacitor(self):
+        """Drop the Flux Capacitor on the ground at the player's feet."""
+        flux = Wand({
+            'id': 'flux_capacitor',
+            'item_class': 'wand',
+            'name': 'Flux Capacitor',
+            'symbol': 'Y',
+            'color': [255, 200, 50],
+            'weight': 1.0,
+            'min_level': 9999,
+            'charges': 1,
+            'charges_min': 1,
+            'charges_max': 1,
+            'max_charges': 1,
+            'quiz_tier': 1,
+            'quiz_threshold': 1,
+            'effect': 'time_stop',
+            'power': '10',
+            'unidentified_name': 'Flux Capacitor',
+            'lore': "A device of impossible origin. Its single charge can freeze "
+                    "time itself for 10 turns. Use it wisely -- there are no second chances.",
+        })
+        flux.identified = True
+        flux.x = self.player.x
+        flux.y = self.player.y
+        self.ground_items.append(flux)
+        self.add_message("Something materializes at your feet...", 'loot')
+
     def _do_exit(self):
         has_stone = any(
             isinstance(i, Artifact) and i.id in ('philosophers_stone',
@@ -1903,6 +2387,17 @@ class Game:
         if self.player.recall_lore_cooldown > 0:
             self.player.recall_lore_cooldown -= 1
 
+        # Abaddon holy fire resistance removal timer
+        if self.abaddon_resist_removed_turns > 0:
+            self.abaddon_resist_removed_turns -= 1
+            if self.abaddon_resist_removed_turns == 0:
+                abaddon = next((m for m in self.monsters
+                                if m.alive and m.kind == 'abaddon_destroyer'), None)
+                if abaddon:
+                    abaddon.resistances = list(getattr(abaddon, 'base_resistances', []))
+                    self.add_message(
+                        "The holy fire fades. Abaddon's dark armor reforms.", 'danger')
+
         # Decrement hack reality cooldown
         if self.player.hack_reality_cooldown > 0:
             self.player.hack_reality_cooldown -= 1
@@ -1946,6 +2441,7 @@ class Game:
                         self.dungeon.explored.add((cx, cy))
 
         self._do_monster_turns()
+        self._do_pet_turns()
         self._maybe_wander_spawn()
         self._death_proximity_warning()
         self._tick_hp_regen()
@@ -1954,7 +2450,7 @@ class Game:
         """Periodically spawn a wandering monster to keep pressure on the player."""
         import random as _rng
         # Spawn every 18-30 turns; more frequently at deeper levels
-        interval = max(12, 28 - self.dungeon_level // 5)
+        interval = max(10, 22 - self.dungeon_level // 4)
         if self.turn_count % interval != 0:
             return
         # Cap active monsters: don't overpopulate
@@ -1965,6 +2461,7 @@ class Game:
         # Spawn on an explored but currently non-visible tile, away from player
         px, py = self.player.x, self.player.y
         occupied = {(m.x, m.y) for m in self.monsters if m.alive}
+        occupied |= {(p.x, p.y) for p in self.pets if p.alive}
         candidates = [
             (x, y) for (x, y) in self.dungeon.explored
             if self.dungeon.is_walkable(x, y)
@@ -2016,6 +2513,60 @@ class Game:
             self.add_message("You feel acid eating at your equipment!", 'danger')
         elif trap_type == 'teleport':
             self._teleport_player()
+        elif trap_type == 'fire':
+            if self.player.has_effect('fire_resist'):
+                self.add_message("You resist most of the flames!", 'info')
+            else:
+                self.player.add_effect('burning', 3)
+        elif trap_type == 'sleep_gas':
+            if self.player.has_effect('sleep_resist'):
+                self.add_message("You resist the sleeping gas!", 'info')
+            else:
+                self.player.add_effect('sleeping', random.randint(3, 8))
+                self.add_message("You fall asleep!", 'danger')
+        elif trap_type == 'bear_trap':
+            self.player.add_effect('immobilized', random.randint(2, 4))
+            self.add_message("You're stuck! Struggle to break free!", 'danger')
+        elif trap_type == 'squeaky_board':
+            for m in self.monsters:
+                if m.alive:
+                    m._alerted = True
+                    m.status_effects.pop('sleeping', None)
+            self.add_message("Every creature on the floor heard that!", 'danger')
+        elif trap_type == 'rust':
+            equipped_armor = self.player.equipment.get('body')
+            if equipped_armor and hasattr(equipped_armor, 'enchant_bonus'):
+                equipped_armor.enchant_bonus = max(-3, equipped_armor.enchant_bonus - 1)
+                self.add_message(f"Your {equipped_armor.name} rusts! (-1 enchantment)", 'danger')
+            else:
+                self.add_message("The water washes over you harmlessly.", 'info')
+        elif trap_type == 'polymorph':
+            import copy as _copy
+            from items import load_items as _load
+            transformable = [i for i in self.player.inventory
+                             if not getattr(i, 'id', '').startswith('philosopher')]
+            if transformable:
+                victim = random.choice(transformable)
+                old_name = victim.name
+                cls_name = type(victim).__name__.lower()
+                try:
+                    pool = [t for t in _load(cls_name) if t.min_level <= self.dungeon_level]
+                    if pool:
+                        replacement = _copy.copy(random.choice(pool))
+                        replacement.x = getattr(victim, 'x', 0)
+                        replacement.y = getattr(victim, 'y', 0)
+                        idx = self.player.inventory.index(victim)
+                        for slot, eq in list(self.player.equipment.items()):
+                            if eq is victim:
+                                self.player.equipment[slot] = None
+                        self.player.inventory[idx] = replacement
+                        self.add_message(f"Your {old_name} transforms into a {replacement.name}!", 'warning')
+                    else:
+                        self.add_message("The energy dissipates harmlessly.", 'info')
+                except FileNotFoundError:
+                    self.add_message("The energy dissipates harmlessly.", 'info')
+            else:
+                self.add_message("The energy dissipates harmlessly.", 'info')
         qs = getattr(self, 'quirk_system', None)
         if qs and hasattr(qs, 'on_trap_triggered'):
             qs.on_trap_triggered(trap_type)
@@ -2031,6 +2582,7 @@ class Game:
             for x in range(self.dungeon.width)
             if self.dungeon.is_walkable(x, y)
             and not any(m.alive and m.x == x and m.y == y for m in self.monsters)
+            and not any(p.alive and p.x == x and p.y == y for p in self.pets)
         ]
         if floors:
             self.player.x, self.player.y = _rng.choice(floors)
@@ -2039,6 +2591,21 @@ class Game:
             _qs_tp = getattr(self, 'quirk_system', None)
             if _qs_tp:
                 _qs_tp.on_teleport()
+
+    def _spawn_at(self, x: int, y: int):
+        """Spawn a single level-appropriate monster near (x, y)."""
+        new_monsters = spawn_monsters(self.dungeon.rooms, self.dungeon_level,
+                                      self.dungeon, min_count=1, max_count=1)
+        if new_monsters:
+            m = new_monsters[0]
+            for dx2 in range(-2, 3):
+                for dy2 in range(-2, 3):
+                    nx2, ny2 = x + dx2, y + dy2
+                    if self.dungeon.is_walkable(nx2, ny2) and \
+                       not any(om.alive and om.x == nx2 and om.y == ny2 for om in self.monsters):
+                        m.x, m.y = nx2, ny2
+                        self.monsters.append(m)
+                        return
 
     def _do_warning(self):
         """Warn if monsters are within 5 tiles when player has the warning effect."""
@@ -2095,11 +2662,12 @@ class Game:
     # ------------------------------------------------------------------
 
     def _tick_sp(self):
-        # Ring of Sustenance halves SP drain rate (skips every other turn)
-        if self.player.has_effect('sustained'):
-            self._sustained_skip = not getattr(self, '_sustained_skip', False)
-            if self._sustained_skip:
-                return
+        # Base SP drain: 1 per 2 moves (0.5/move effective)
+        # Ring of Sustenance halves again (1 per 4 moves)
+        self._sp_drain_tick = getattr(self, '_sp_drain_tick', 0) + 1
+        drain_interval = 4 if self.player.has_effect('sustained') else 2
+        if self._sp_drain_tick % drain_interval != 0:
+            return
         if self.player.sp > 0:
             self.player.sp -= 1
             if self.player.sp == 0:
@@ -2190,6 +2758,19 @@ class Game:
                 self.add_message(
                     "The Philosopher's Stone! Return to the surface to win!", 'loot'
                 )
+            # Track trigger items for NPC moral encounters
+            trigger_levels = getattr(self, '_npc_trigger_item_levels', {})
+            if getattr(item, 'id', '') in trigger_levels:
+                self._npc_triggered_items.add(item.id)
+            # Auto-reveal BUC at dungeon level 30+ with WIS >= 14
+            if (self.dungeon_level >= 30 and self.player.WIS >= 14
+                    and hasattr(item, 'buc') and not getattr(item, 'buc_known', False)):
+                item.buc_known = True
+                _buc = item.buc
+                if _buc == 'blessed':
+                    self.add_message("Your wisdom senses a holy aura.", 'success')
+                elif _buc == 'cursed':
+                    self.add_message("Your wisdom senses a dark aura.", 'warning')
             self._advance_turn()
         else:
             self.add_message("You are carrying too much to pick that up.", 'warning')
@@ -2538,6 +3119,9 @@ class Game:
             return
 
         self.ground_items.remove(corpse)
+        # +5s harvest timer bonus if monster has been lore-identified
+        _lore_known = getattr(self.player, 'lore_known_monster_ids', set())
+        _lore_bonus = 5 if getattr(corpse, 'monster_id', '') in _lore_known else 0
         self.quiz_title = f"HARVESTING {corpse.name.upper()}  --  ANIMAL LORE"
         self.state = STATE_QUIZ
 
@@ -2568,7 +3152,8 @@ class Game:
                     )
             self._advance_turn()
 
-        harvest_corpse(self.player, corpse, self.quiz_engine, on_complete)
+        harvest_corpse(self.player, corpse, self.quiz_engine, on_complete,
+                       extra_seconds=_lore_bonus)
 
     # ------------------------------------------------------------------
     # Cook menu
@@ -2644,8 +3229,7 @@ class Game:
         # Check Persephone quirk: max chain 6
         _persephone = getattr(self.player, 'quirk_progress', {}).get('persephone_active', False)
         cook_ingredient(self.player, ingredient, self.quiz_engine, on_complete,
-                        max_chain=6 if _persephone else 5,
-                        dungeon_level=self.dungeon_level)
+                        max_chain=6 if _persephone else 5)
 
     def _cook_compound(self, recipe: dict):
         ing_names = ', '.join(recipe.get('ingredients', []))
@@ -2658,8 +3242,7 @@ class Game:
                 self.add_message(msg, 'warning' if (i == 0 and ('ruin' in msg.lower() or 'mediocre' in msg.lower())) else 'success')
             self._advance_turn()
 
-        cook_compound_recipe(self.player, recipe, self.player.inventory, self.quiz_engine, on_complete,
-                             dungeon_level=self.dungeon_level)
+        cook_compound_recipe(self.player, recipe, self.player.inventory, self.quiz_engine, on_complete)
 
     # ------------------------------------------------------------------
     # Eat menu  (z key)
@@ -2711,7 +3294,7 @@ class Game:
     # ------------------------------------------------------------------
 
     _BENEFICIAL_EFFECTS = frozenset({
-        'heal', 'extra_heal', 'full_heal', 'restore_sp',
+        'heal', 'extra_heal', 'full_heal', 'restore_sp', 'restore_mp', 'brilliance_mp',
         'cure_poison', 'cure_disease', 'cure_all',
         'haste', 'invisibility', 'regeneration',
         'heroism', 'brilliance', 'levitation',
@@ -2775,11 +3358,890 @@ class Game:
         self._advance_turn()
 
     # ------------------------------------------------------------------
+    # Throw Potion  (T key)
+    # ------------------------------------------------------------------
+
+    # Weapon classes that can be thrown, with throw damage multiplier
+    @staticmethod
+    def _throw_crosses_tile(px, py, tx, ty, ax, ay) -> bool:
+        """Check if a thrown item's path from (px,py) to (tx,ty) passes through (ax,ay).
+        Uses Bresenham line to check if the altar tile is on the path."""
+        # Simple check: altar must be between player and target
+        dx, dy = abs(tx - px), abs(ty - py)
+        sx = 1 if tx > px else -1
+        sy = 1 if ty > py else -1
+        err = dx - dy
+        cx, cy = px, py
+        while True:
+            if (cx, cy) == (ax, ay):
+                return True
+            if cx == tx and cy == ty:
+                break
+            e2 = 2 * err
+            if e2 > -dy:
+                err -= dy
+                cx += sx
+            if e2 < dx:
+                err += dx
+                cy += sy
+        return False
+
+    _THROWABLE_CLASSES = {
+        'dagger':      1.0,    # designed for throwing
+        'axe':         0.75,   # franciscas, hand axes
+        'spear':       0.9,    # javelin-like
+        'mace':        0.6,    # heavy but compact
+        'flail':       0.5,    # awkward spin
+        'morningstar': 0.5,    # awkward but heavy impact
+        'rapier':      0.4,    # fragile, not designed for it
+        'scimitar':    0.5,    # curved blade, poor aerodynamics
+        'sword':       0.4,    # not designed for throwing
+    }
+
+    # Break chance by material (higher = more fragile when thrown)
+    _THROW_BREAK_CHANCE = {
+        'bone':           0.50,
+        'iron':           0.35,
+        'steel':          0.25,
+        'hardened_gold':  0.20,
+        'diamond':        0.10,
+        'adamantine':     0.05,
+    }
+    _THROW_BREAK_LEGENDARY = 0.05  # named/legendary weapons
+
+    @staticmethod
+    def _is_throwable_weapon(weapon) -> bool:
+        """Can this weapon be thrown? Must be 1h, throwable class, and not a ranged weapon."""
+        if weapon.requires_ammo:
+            return False
+        if weapon.two_handed:
+            return False
+        if weapon.weight > 5.0:
+            return False
+        return weapon.weapon_class in Game._THROWABLE_CLASSES
+
+    def _get_weapon_throw_damage(self, weapon) -> int:
+        """Calculate throw damage: base_damage * class_mult * STR_factor."""
+        mult = self._THROWABLE_CLASSES.get(weapon.weapon_class, 0.5)
+        str_factor = 1.0 + max(0, self.player.STR - 10) * 0.03
+        return max(1, int(weapon.base_damage * mult * str_factor))
+
+    def _get_weapon_break_chance(self, weapon) -> float:
+        """Return probability [0-1] that this weapon breaks on throw."""
+        material = weapon.material.lower()
+        base = self._THROW_BREAK_CHANCE.get(material, self._THROW_BREAK_LEGENDARY)
+        return base
+
+    # Map potion effect names to monster status effect names (debuffs)
+    _THROW_DEBUFF_MAP = {
+        'poison':        'poisoned',
+        'paralysis':     'paralyzed',
+        'confusion':     'confused',
+        'blindness':     'blinded',
+        'sleep':         'sleeping',
+        'weakness':      'weakened',
+        'slow':          'slowed',
+        'sickness':      'diseased',
+        'fumbling':      'fumbling',
+        'fear':          'feared',
+        'hallucination': 'hallucinating',
+    }
+
+    # Map potion effect names to monster buff status effects
+    _THROW_BUFF_MAP = {
+        'haste':         'hasted',
+        'invisibility':  'invisible',
+        'regeneration':  'regenerating',
+        'levitation':    'levitating',
+        'fire_resist':   'fire_resist',
+        'cold_resist':   'cold_resist',
+        'shock_resist':  'shock_resist',
+    }
+
+    def _get_throw_range(self) -> int:
+        """Throw range: 3 + (STR - 10) // 2, clamped to [3, 8]."""
+        return max(3, min(8, 3 + (self.player.STR - 10) // 2))
+
+    def _open_throw_menu(self):
+        """Open menu to select a potion, throwable weapon, or Soul Sphere."""
+        potions = [i for i in self.player.inventory if isinstance(i, Potion)]
+        weapons = [
+            i for i in self.player.inventory
+            if isinstance(i, Weapon) and self._is_throwable_weapon(i)
+            and i is not self.player.weapon and i is not self.player.ranged_weapon
+        ]
+        spheres = [i for i in self.player.inventory
+                   if isinstance(i, Artifact) and i.id == 'soul_sphere']
+        self.throw_menu_items = potions + weapons + spheres
+        if not self.throw_menu_items:
+            self.add_message("You have nothing to throw.", 'info')
+            return
+        self.state = STATE_THROW_MENU
+
+    def _throw_menu_input(self, key: int):
+        key_to_idx = {
+            pygame.K_1: 0, pygame.K_KP1: 0,
+            pygame.K_2: 1, pygame.K_KP2: 1,
+            pygame.K_3: 2, pygame.K_KP3: 2,
+            pygame.K_4: 3, pygame.K_KP4: 3,
+            pygame.K_5: 4, pygame.K_KP5: 4,
+            pygame.K_6: 5, pygame.K_KP6: 5,
+            pygame.K_7: 6, pygame.K_KP7: 6,
+            pygame.K_8: 7, pygame.K_KP8: 7,
+            pygame.K_9: 8, pygame.K_KP9: 8,
+        }
+        idx = key_to_idx.get(key)
+        if idx is None or idx >= len(self.throw_menu_items):
+            return
+        potion = self.throw_menu_items[idx]
+        self.state = STATE_PLAYER
+        self._open_throw_targeting(potion)
+
+    def _open_throw_targeting(self, potion):
+        """Enter targeting mode for throwing a potion."""
+        self._throw_targeting = True
+        self._melee_targeting = False
+        self._throw_potion = potion
+        self._throw_reach = self._get_throw_range()
+
+        px, py = self.player.x, self.player.y
+        reach = self._throw_reach
+
+        # Build candidate list: visible alive monsters within throw range
+        from combat import _line_of_sight
+        candidates = [
+            m for m in self.monsters
+            if m.alive and (m.x, m.y) in self.visible
+            and max(abs(m.x - px), abs(m.y - py)) <= reach
+            and _line_of_sight(px, py, m.x, m.y, self.dungeon)
+        ]
+        candidates.sort(key=lambda m: abs(m.x - px) + abs(m.y - py))
+
+        self._target_candidates = candidates
+        self._target_idx = 0
+
+        if candidates:
+            m = candidates[0]
+            self.target_cursor_x = m.x
+            self.target_cursor_y = m.y
+        else:
+            self.target_cursor_x = px
+            self.target_cursor_y = py
+
+        self.state = STATE_TARGET
+        display = self._display_name(potion)
+        self.add_message(
+            f"Throw {display} (range {reach}) -- arrows to aim, TAB to cycle, ENTER to throw, ESC to cancel.",
+            'info'
+        )
+
+    def _confirm_throw_target(self):
+        """Throw the selected item at cursor position."""
+        item = self._throw_potion
+        self._throw_targeting = False
+        self._throw_potion = None
+        self.state = STATE_PLAYER
+
+        px, py = self.player.x, self.player.y
+        tx, ty = self.target_cursor_x, self.target_cursor_y
+
+        hit_monster = self._find_first_monster_in_path(px, py, tx, ty)
+
+        if isinstance(item, Artifact) and item.id == 'soul_sphere':
+            self._throw_soul_sphere(item, hit_monster, tx, ty)
+        elif isinstance(item, Weapon):
+            self._throw_weapon(item, hit_monster, tx, ty)
+        else:
+            # Potion throw
+            self.player.remove_from_inventory(item)
+            item.identified = True
+            self.player.known_item_ids.add(item.id)
+            display = item.name
+            if hit_monster:
+                self._apply_thrown_potion(item, hit_monster, display)
+            else:
+                self.add_message(
+                    f"The {display} shatters on the ground. Nothing happens.", 'info'
+                )
+
+        self._advance_turn()
+
+    def _throw_weapon(self, weapon, monster, tx: int, ty: int):
+        """Throw a weapon at a target. Deals damage, may break."""
+        import random as _rng
+
+        # --- Odin's Altar secret: throw Broken Gram over the altar ---
+        odin_pos = getattr(self.dungeon, 'odin_altar_pos', None)
+        if odin_pos:
+            ax, ay = odin_pos
+            px, py = self.player.x, self.player.y
+            # Check if the thrown path crosses over the altar:
+            # player on one side, target on the other side (altar between them)
+            if weapon.id == 'broken_gram':
+                crosses_altar = self._throw_crosses_tile(px, py, tx, ty, ax, ay)
+                if crosses_altar:
+                    self.player.remove_from_inventory(weapon)
+                    self._activate_odin_shrine(weapon, reforge=True)
+                    self._advance_turn()
+                    return
+            elif self._throw_crosses_tile(px, py, tx, ty, ax, ay):
+                self.add_message(
+                    "A rumble of distant thunder... but nothing happens. "
+                    "Odin will not reforge this.", 'info')
+
+        self.player.remove_from_inventory(weapon)
+        display = weapon.name
+        dmg = self._get_weapon_throw_damage(weapon)
+        break_chance = self._get_weapon_break_chance(weapon)
+
+        if monster:
+            actual = monster.take_damage(dmg)
+            self.add_message(
+                f"You hurl the {display} at {monster.name}! ({actual} damage)", 'success'
+            )
+            if monster.is_dead():
+                self._on_monster_killed(monster)
+            land_x, land_y = monster.x, monster.y
+        else:
+            self.add_message(
+                f"The {display} clatters to the ground.", 'info'
+            )
+            land_x, land_y = tx, ty
+
+        # Break check
+        if _rng.random() < break_chance:
+            self.add_message(f"The {display} shatters on impact!", 'warning')
+        else:
+            # Weapon survives -- drop it on the ground
+            weapon.x = land_x
+            weapon.y = land_y
+            self.ground_items.append(weapon)
+
+    def _throw_soul_sphere(self, sphere, hit_monster, tx: int, ty: int):
+        """Throw a Soul Sphere — releases a random pet creature at the landing spot."""
+        self.player.remove_from_inventory(sphere)
+
+        # Landing tile: if a monster was hit, land one tile before; else target tile
+        if hit_monster:
+            # Land at the monster's tile (pet spawns there, monster is not displaced)
+            land_x, land_y = hit_monster.x, hit_monster.y
+        else:
+            land_x, land_y = tx, ty
+
+        # Find a walkable tile near the landing spot for the pet
+        spawn_x, spawn_y = land_x, land_y
+        if not self.dungeon.is_walkable(spawn_x, spawn_y) or \
+           any(m.alive and m.x == spawn_x and m.y == spawn_y for m in self.monsters) or \
+           (spawn_x == self.player.x and spawn_y == self.player.y) or \
+           any(p.alive and p.x == spawn_x and p.y == spawn_y for p in self.pets):
+            # Try adjacent tiles
+            found = False
+            for dx in range(-1, 2):
+                for dy in range(-1, 2):
+                    nx, ny = land_x + dx, land_y + dy
+                    if not self.dungeon.is_walkable(nx, ny):
+                        continue
+                    if nx == self.player.x and ny == self.player.y:
+                        continue
+                    if any(m.alive and m.x == nx and m.y == ny for m in self.monsters):
+                        continue
+                    if any(p.alive and p.x == nx and p.y == ny for p in self.pets):
+                        continue
+                    spawn_x, spawn_y = nx, ny
+                    found = True
+                    break
+                if found:
+                    break
+            if not found:
+                # No room — sphere is wasted
+                self.add_message("The sphere shatters but there is no room for a creature!", 'warning')
+                return
+
+        species = random_pet_species()
+        pet = Pet(species, spawn_x, spawn_y)
+        self.pets.append(pet)
+        self.add_message(pet.species['stages'][0]['msg'], 'success')
+        _snd.play('player_healed')
+
+    def _find_first_monster_in_path(self, x0, y0, x1, y1):
+        """Walk Bresenham line from (x0,y0) to (x1,y1). Return first alive monster hit, or None."""
+        dx, dy = abs(x1 - x0), abs(y1 - y0)
+        sx = 1 if x1 > x0 else -1
+        sy = 1 if y1 > y0 else -1
+        err = dx - dy
+        cx, cy = x0, y0
+        while True:
+            if (cx, cy) != (x0, y0):
+                # Check for monster at this tile
+                for m in self.monsters:
+                    if m.alive and m.x == cx and m.y == cy:
+                        return m
+                # Check for wall (potion shatters on wall)
+                if not self.dungeon.is_walkable(cx, cy):
+                    return None
+            if cx == x1 and cy == y1:
+                break
+            e2 = 2 * err
+            if e2 > -dy:
+                err -= dy
+                cx += sx
+            if e2 < dx:
+                err += dx
+                cy += sy
+        # Check target tile for monster
+        for m in self.monsters:
+            if m.alive and m.x == x1 and m.y == y1:
+                return m
+        return None
+
+    def _apply_thrown_potion(self, potion, monster, display: str):
+        """Apply a thrown potion's effect to a monster."""
+        if not monster.alive:
+            self.add_message(f"The {display} shatters harmlessly.", 'info')
+            return
+        from status_effects import _RESIST_BLOCKS
+        from dice import roll as roll_dice
+        effect = potion.effect
+        duration = potion.duration if potion.duration > 0 else 10
+
+        # --- Debuff effects ---
+        debuff = self._THROW_DEBUFF_MAP.get(effect)
+        if debuff:
+            # Check resistance via status effects
+            for resist, blocked in _RESIST_BLOCKS.items():
+                if debuff in blocked and monster.has_effect(resist):
+                    self.add_message(
+                        f"The {display} splashes {monster.name}, but it resists!", 'warning'
+                    )
+                    return
+            # Check monster resistances list for thematic immunity
+            mon_resists = getattr(monster, 'resistances', [])
+            if ('poison' in mon_resists and debuff in ('poisoned', 'diseased')) or \
+               ('magic' in mon_resists and debuff in ('confused', 'hallucinating', 'feared')):
+                self.add_message(
+                    f"The {display} splashes {monster.name}, but it seems immune!", 'warning'
+                )
+                return
+            monster.add_effect(debuff, duration)
+            label = debuff.replace('_', ' ').title()
+            self.add_message(
+                f"The {display} splashes {monster.name}! It is {label}!", 'success'
+            )
+            return
+
+        # --- Buff effects (heals/buffs the monster -- bad idea!) ---
+        buff = self._THROW_BUFF_MAP.get(effect)
+        if buff:
+            monster.add_effect(buff, duration)
+            label = buff.replace('_', ' ').title()
+            self.add_message(
+                f"The {display} splashes {monster.name}. It looks {label}!", 'danger'
+            )
+            return
+
+        # --- Healing effects (restore monster HP) ---
+        if effect in ('heal', 'extra_heal', 'full_heal'):
+            if effect == 'full_heal':
+                healed = monster.max_hp - monster.hp
+                monster.hp = monster.max_hp
+            else:
+                amt = roll_dice(potion.power) if potion.power else 10
+                if effect == 'extra_heal':
+                    amt += 10
+                healed = min(amt, monster.max_hp - monster.hp)
+                monster.hp = min(monster.max_hp, monster.hp + amt)
+            if healed > 0:
+                self.add_message(
+                    f"The {display} splashes {monster.name}. It heals {healed} HP!", 'danger'
+                )
+            else:
+                self.add_message(
+                    f"The {display} splashes {monster.name}. It looks unaffected.", 'info'
+                )
+            return
+
+        # --- Teleport (relocate monster randomly) ---
+        if effect == 'teleport':
+            import random as _rng
+            walkable = [
+                (x, y)
+                for y in range(self.dungeon.height)
+                for x in range(self.dungeon.width)
+                if self.dungeon.is_walkable(x, y)
+                and not any(m.alive and m.x == x and m.y == y for m in self.monsters)
+                and not any(p.alive and p.x == x and p.y == y for p in self.pets)
+                and (x, y) != (self.player.x, self.player.y)
+            ]
+            if walkable:
+                nx, ny = _rng.choice(walkable)
+                monster.x, monster.y = nx, ny
+                self.add_message(
+                    f"The {display} splashes {monster.name} -- it vanishes!", 'success'
+                )
+            else:
+                self.add_message(
+                    f"The {display} splashes {monster.name} but nothing happens.", 'info'
+                )
+            return
+
+        # --- Stat drain (damage the monster instead) ---
+        if effect in ('drain_str', 'drain_con', 'drain_int', 'drain_wis'):
+            dmg = max(1, monster.max_hp // 20)
+            actual = monster.take_damage(dmg)
+            self.add_message(
+                f"The {display} saps {monster.name}'s vitality! ({actual} damage)", 'success'
+            )
+            return
+
+        # --- Everything else: no meaningful effect on monsters ---
+        self.add_message(
+            f"The {display} splashes {monster.name} but has no effect.", 'info'
+        )
+
+    # ------------------------------------------------------------------
+    # Tile interactions  (D key -- fountain/grave/throne)
+    # ------------------------------------------------------------------
+
+    def _altar_buc_identify(self):
+        """Stand on an altar and attempt to divine the BUC status of an item."""
+        # Gather items that have BUC but it's not yet known
+        candidates = [i for i in self.player.inventory
+                      if hasattr(i, 'buc') and not getattr(i, 'buc_known', False)]
+        if not candidates:
+            self.add_message("You kneel at the altar, but sense nothing to divine.", 'info')
+            return
+        # Use the first unidentified-BUC item (simple approach -- could add a menu later)
+        item = candidates[0]
+        display = self._display_name(item)
+        self.add_message(f"You place the {display} upon the altar and pray...", 'info')
+        self.quiz_title = f"ALTAR DIVINATION  --  THEOLOGY"
+        self.state = STATE_QUIZ
+
+        def on_complete(result):
+            self.state = STATE_PLAYER
+            if result.success:
+                item.buc_known = True
+                _buc = item.buc
+                if _buc == 'blessed':
+                    self.add_message(
+                        f"The {display} glows with a warm golden light. It is blessed!", 'success'
+                    )
+                elif _buc == 'cursed':
+                    self.add_message(
+                        f"The {display} exudes a dark miasma. It is cursed!", 'warning'
+                    )
+                else:
+                    self.add_message(
+                        f"The {display} shows no special aura. It is uncursed.", 'info'
+                    )
+            else:
+                self.add_message("The altar remains silent. Your prayer goes unanswered.", 'warning')
+            self._advance_turn()
+
+        self.quiz_engine.start_quiz(
+            mode='threshold',
+            subject='theology',
+            tier=1,
+            callback=on_complete,
+            threshold=1,
+            wisdom=self.player.WIS,
+            timer_modifier=self.player.get_quiz_timer_modifier(),
+            extra_seconds=self.player.get_int_quiz_bonus(),
+            base_seconds=self.player.get_quiz_timer('theology'),
+        )
+
+    def _interact_tile(self):
+        """Interact with the tile the player is standing on (fountain/grave/throne)."""
+        tile = self.dungeon.tiles[self.player.y][self.player.x]
+        if tile == FOUNTAIN:
+            self._drink_fountain()
+        elif tile == GRAVE:
+            self._dig_grave()
+        elif tile == THRONE:
+            self._sit_throne()
+        else:
+            self.add_message("There's nothing to interact with here.", 'info')
+
+    def _drink_fountain(self):
+        """Drink from a fountain -- trivia quiz determines outcome."""
+        self.add_message("You cup your hands and drink from the fountain...", 'info')
+        self.quiz_title = "FOUNTAIN -- TRIVIA"
+        self.state = STATE_QUIZ
+
+        def on_complete(result):
+            chain = result.score
+            self._resolve_fountain(chain)
+            self.state = STATE_PLAYER
+            self._advance_turn()
+
+        self.quiz_engine.start_quiz(
+            mode='escalator_chain',
+            subject='trivia',
+            tier=1,
+            callback=on_complete,
+            max_chain=6,
+            wisdom=self.player.WIS,
+            timer_modifier=self.player.get_quiz_timer_modifier(),
+            extra_seconds=self.player.get_quiz_extra_seconds('trivia'),
+            base_seconds=self.player.get_quiz_timer('trivia'),
+        )
+
+    def _resolve_fountain(self, chain: int):
+        """Apply fountain effects based on chain score."""
+        import random as _rng
+        px, py = self.player.x, self.player.y
+
+        if chain == 0:
+            outcome = _rng.choice(['poison', 'monster', 'nothing'])
+            if outcome == 'poison':
+                self.player.add_effect('poisoned', 10)
+                self.add_message("The water tastes foul! You feel poisoned!", 'danger')
+            elif outcome == 'monster':
+                self.add_message("Something rises from the fountain!", 'danger')
+                self._spawn_at(px, py)
+            else:
+                self.add_message("The water tastes stale. Nothing happens.", 'info')
+        elif chain == 1:
+            self.add_message("The cool water refreshes you slightly.", 'info')
+            self.player.heal(max(5, self.player.max_hp // 20))
+        elif chain == 2:
+            self.add_message("The blessed water restores your health!", 'success')
+            self.player.heal(max(15, self.player.max_hp // 8))
+        elif chain == 3:
+            self.add_message("The magical water restores you fully!", 'success')
+            self.player.heal(self.player.max_hp)
+            self.player.restore_sp(50)
+        elif chain == 4:
+            self.player.heal(self.player.max_hp)
+            self.player.restore_sp(self.player.max_sp)
+            for eff in list(self.player.status_effects.keys()):
+                if eff in ('poisoned', 'diseased', 'bleeding', 'burning', 'confused', 'blinded', 'corroding'):
+                    del self.player.status_effects[eff]
+            self.add_message("Divine water purifies you! All ailments are cured!", 'success')
+        elif chain >= 5:
+            stat = _rng.choice(['STR', 'CON', 'DEX', 'INT', 'WIS', 'PER'])
+            self.player.apply_stat_bonus(stat, 1)
+            self.player.heal(self.player.max_hp)
+            self.add_message(f"The fountain glows with divine light! +1 {stat}!", 'success')
+
+        # 33% chance fountain dries up after use
+        if _rng.random() < 0.33:
+
+            self.dungeon.tiles[py][px] = FLOOR
+            self.add_message("The fountain dries up.", 'info')
+
+    def _activate_ariadne_shrine(self, bull_item):
+        """Player dropped the Bronze Bull into a fountain -- activate Ariadne's shrine."""
+        shrine_door = getattr(self.dungeon, 'ariadne_shrine_door', None)
+        if not shrine_door:
+            # Wrong level — don't consume the item
+            return
+
+        # Consume the bull (remove from ground)
+        if bull_item in self.ground_items:
+            self.ground_items.remove(bull_item)
+
+        self.add_message(
+            "The bronze bull sinks into the fountain waters...", 'info')
+        self.add_message(
+            "The water shimmers gold! A voice whispers from the depths:", 'info')
+        self.add_message(
+            '"I wove salvation from a simple thread. Take it, and the beast '
+            'shall have no walls to hide behind."', 'success')
+
+        dx, dy = shrine_door
+        self.dungeon.tiles[dy][dx] = DOOR
+        self.add_message(
+            "A hidden passage opens in a nearby wall!", 'success')
+
+    def _activate_athena_shrine(self, eye_item):
+        """Player dropped the Eye of the Graeae at an altar -- activate Athena's shrine."""
+        shrine_door = getattr(self.dungeon, 'athena_shrine_door', None)
+        if not shrine_door:
+            # Wrong level — don't consume the item
+            return
+
+        if eye_item in self.ground_items:
+            self.ground_items.remove(eye_item)
+
+        self.add_message(
+            "You place the milky eye upon the altar. It dissolves into pale light...", 'info')
+        self.add_message(
+            "A divine presence fills the room! Athena speaks:", 'info')
+        self.add_message(
+            '"The Grey Sisters paid for their secret. Take my shield, '
+            'and let the Gorgon see what she truly is."', 'success')
+
+        dx, dy = shrine_door
+        self.dungeon.tiles[dy][dx] = DOOR
+        self.add_message(
+            "A hidden passage opens in a nearby wall!", 'success')
+
+    def _activate_odin_shrine(self, gram_item, reforge: bool = False):
+        """Player offered the Broken Blade of Gram at Odin's Altar."""
+        odin_pos = self.dungeon.odin_altar_pos
+        shrine_door = getattr(self.dungeon, 'odin_shrine_door', None)
+        if not shrine_door and not reforge:
+            return  # wrong level, no shrine
+
+        # Consume the broken blade
+        if gram_item in self.ground_items:
+            self.ground_items.remove(gram_item)
+
+        if reforge:
+            # SECRET: throw-over reforges Gram!
+            self.add_message(
+                "You hurl the broken blade over the altar...", 'info')
+            self.add_message(
+                "CRACK! A bolt of lightning strikes the altar! "
+                "Thunder shakes the dungeon to its foundations!", 'danger')
+            self.add_message(
+                "Odin's voice booms: \"You have thrown your weapon over the enemy, "
+                "as I threw Gungnir. I name you worthy.\"", 'success')
+            self.add_message(
+                "The shattered fragments of Gram fuse together in white-hot light. "
+                "A reforged blade rests upon the altar, whole and gleaming.", 'success')
+            # Spawn reforged Gram on the altar
+            from items import load_items, copy_at
+            weapons = load_items('weapon')
+            gram_t = next((w for w in weapons if w.id == 'gram'), None)
+            if gram_t:
+                ax, ay = odin_pos
+                gram = copy_at(gram_t, ax, ay)
+                gram.identified = True
+                self.ground_items.append(gram)
+        else:
+            # Normal path: blade dissolves, Odin speaks
+            self.add_message(
+                "The broken blade dissolves into the altar stone...", 'info')
+            self.add_message(
+                "Odin speaks: \"The blade is spent. But the earth holds secrets "
+                "that steel cannot reach. Dig, as Sigurd dug.\"", 'success')
+
+        # Always open the shrine (contains the shovel)
+        if shrine_door:
+            dx, dy = shrine_door
+            self.dungeon.tiles[dy][dx] = DOOR
+            self.add_message(
+                "A hidden passage opens in a nearby wall!", 'success')
+
+    # ------------------------------------------------------------------
+    # Fenrir quest: Gleipnir forging, binding, and Vidar's Altar
+    # ------------------------------------------------------------------
+
+    _GLEIPNIR_COMPONENT_IDS = frozenset([
+        'cats_footstep', 'womans_beard', 'mountain_root',
+        'fish_breath', 'bird_spittle', 'bear_sinew',
+    ])
+
+    def _check_gleipnir_forge(self, fx, fy):
+        """Check if all 6 Gleipnir components are at the Dwarven Forge position."""
+        on_forge = [i for i in self.ground_items
+                    if getattr(i, 'id', '') in self._GLEIPNIR_COMPONENT_IDS
+                    and i.x == fx and i.y == fy]
+        found_ids = {i.id for i in on_forge}
+        if found_ids == self._GLEIPNIR_COMPONENT_IDS:
+            # All 6 present — forge Gleipnir!
+            for comp in on_forge:
+                self.ground_items.remove(comp)
+            from items import Artifact
+            gleipnir = Artifact({
+                'id': 'gleipnir', 'name': 'Gleipnir',
+                'symbol': '&', 'color': [220, 220, 255],
+                'item_class': 'artifact', 'weight': 0.1, 'min_level': 60,
+            })
+            gleipnir.identified = True
+            gleipnir.x, gleipnir.y = fx, fy
+            self.ground_items.append(gleipnir)
+            self.add_message(
+                "The six impossible ingredients dissolve into the forge's flames...", 'info')
+            self.add_message(
+                "A shimmering ribbon materializes, thin as silk but unbreakable — "
+                "GLEIPNIR, the binding that held the World-Wolf!", 'success')
+            _snd.play('equip')
+
+    def _check_vidar_altar(self, vx, vy):
+        """Check if 10 leather scraps are at Vidar's Altar."""
+        on_altar = [i for i in self.ground_items
+                    if getattr(i, 'id', '') == 'leather_scrap'
+                    and i.x == vx and i.y == vy]
+        if len(on_altar) >= 10:
+            # Consume all scraps, create Vidar's Sandal
+            for scrap in on_altar[:10]:
+                self.ground_items.remove(scrap)
+            from items import load_items, copy_at
+            armors = load_items('armor')
+            sandal_t = next((a for a in armors if a.id == 'vidars_sandal'), None)
+            if sandal_t:
+                sandal = copy_at(sandal_t, vx, vy)
+                sandal.identified = True
+                self.ground_items.append(sandal)
+                self.add_message(
+                    "The leather scraps melt together on the ancient altar...", 'info')
+                self.add_message(
+                    "They reshape into a massive sandal of primordial leather — "
+                    "VIDAR'S SANDAL. The Silent God's weapon against the World-Wolf.", 'success')
+                _snd.play('equip')
+
+    def _dig_grave(self):
+        """Dig up a grave -- geography quiz determines outcome."""
+        self.add_message("You begin disturbing the grave...", 'info')
+        self.quiz_title = "GRAVE -- GEOGRAPHY"
+        self.state = STATE_QUIZ
+
+        def on_complete(result):
+            chain = result.score
+            self._resolve_grave(chain)
+            self.state = STATE_PLAYER
+            self._advance_turn()
+
+        self.quiz_engine.start_quiz(
+            mode='escalator_chain',
+            subject='geography',
+            tier=1,
+            callback=on_complete,
+            max_chain=5,
+            wisdom=self.player.WIS,
+            timer_modifier=self.player.get_quiz_timer_modifier(),
+            extra_seconds=self.player.get_quiz_extra_seconds('geography'),
+            base_seconds=self.player.get_quiz_timer('geography'),
+        )
+
+    def _resolve_grave(self, chain: int):
+        """Apply grave-digging effects based on chain score."""
+        import random as _rng
+        px, py = self.player.x, self.player.y
+
+        if chain == 0:
+            self.add_message("A restless spirit emerges from the grave!", 'danger')
+            self._spawn_at(px, py)
+        elif chain == 1:
+            gold = _rng.randint(5, 30)
+            self.player_gold += gold
+            self.add_message(f"You find {gold} gold coins buried with the dead.", 'success')
+        elif chain == 2:
+            self.add_message("You unearth a buried item!", 'success')
+            self._spawn_grave_item(px, py)
+        elif chain >= 3:
+            gold = _rng.randint(20, 80)
+            self.player_gold += gold
+            self._spawn_grave_item(px, py)
+            self.add_message(f"A rich burial! You find {gold} gold and a buried treasure!", 'success')
+
+        # Grave is consumed
+        self.dungeon.tiles[py][px] = FLOOR
+        self.add_message("The grave has been disturbed.", 'info')
+
+    def _spawn_grave_item(self, x: int, y: int):
+        """Spawn a random level-appropriate item at (x, y) from the grave."""
+        import copy
+        from items import load_items
+        templates = []
+        for cls_name in ('weapon', 'armor', 'shield', 'accessory', 'scroll', 'potion'):
+            try:
+                templates += [t for t in load_items(cls_name)
+                              if getattr(t, 'min_level', 1) <= self.dungeon_level]
+            except FileNotFoundError:
+                pass
+        if templates:
+            item = copy.copy(random.choice(templates))
+            item.x, item.y = x, y
+            self.ground_items.append(item)
+
+    def _sit_throne(self):
+        """Sit upon the throne -- history quiz determines outcome."""
+        self.add_message("You settle onto the ancient throne...", 'info')
+        self.quiz_title = "THRONE -- HISTORY"
+        self.state = STATE_QUIZ
+
+        def on_complete(result):
+            chain = result.score
+            self._resolve_throne(chain)
+            self.state = STATE_PLAYER
+            self._advance_turn()
+
+        self.quiz_engine.start_quiz(
+            mode='escalator_chain',
+            subject='history',
+            tier=1,
+            callback=on_complete,
+            max_chain=6,
+            wisdom=self.player.WIS,
+            timer_modifier=self.player.get_quiz_timer_modifier(),
+            extra_seconds=self.player.get_quiz_extra_seconds('history'),
+            base_seconds=self.player.get_quiz_timer('history'),
+        )
+
+    def _resolve_throne(self, chain: int):
+        """Apply throne effects based on chain score."""
+        import random as _rng
+        px, py = self.player.x, self.player.y
+
+        if chain == 0:
+            outcome = _rng.choice(['shock', 'curse', 'summon'])
+            if outcome == 'shock':
+                dmg = _rng.randint(5, 15)
+                self.player.take_damage(dmg, 'lightning')
+                self.add_message(f"The throne shocks you for {dmg} damage!", 'danger')
+            elif outcome == 'curse':
+                self.player.add_effect('weakened', 20)
+                self.add_message("A curse settles over you! You feel weakened.", 'danger')
+            else:
+                self.add_message("Guards materialize to defend the throne!", 'danger')
+                for _ in range(2):
+                    self._spawn_at(px, py)
+        elif chain == 1:
+            gold = _rng.randint(10, 50)
+            self.player_gold += gold
+            self.add_message(f"You find {gold} gold wedged in the cushions.", 'success')
+        elif chain == 2:
+            self.player.heal(max(20, self.player.max_hp // 5))
+            self.add_message("The throne's enchantment heals your wounds!", 'success')
+        elif chain == 3:
+            count = 0
+            for item in self.player.inventory:
+                if not getattr(item, 'identified', True):
+                    item.identified = True
+                    self.player.known_item_ids.add(item.id)
+                    count += 1
+            if count:
+                self.add_message(f"Royal insight! {count} items identified!", 'success')
+            else:
+                self.add_message("Royal insight fills you, but all your items are known.", 'info')
+        elif chain == 4:
+            bonus = _rng.randint(5, 15)
+            self.player.max_hp += bonus
+            self.player.hp = min(self.player.hp + bonus, self.player.max_hp)
+            self.add_message(f"The throne's blessing strengthens you! +{bonus} max HP!", 'success')
+        elif chain >= 5:
+            stats = _rng.sample(['STR', 'CON', 'DEX', 'INT', 'WIS', 'PER'], 2)
+            for s in stats:
+                self.player.apply_stat_bonus(s, 1)
+            self.add_message(f"The throne crowns you worthy! +1 {stats[0]}, +1 {stats[1]}!", 'success')
+
+        # 33% chance throne crumbles
+        if _rng.random() < 0.33:
+
+            self.dungeon.tiles[py][px] = FLOOR
+            self.add_message("The ancient throne crumbles to dust.", 'info')
+
+    # ------------------------------------------------------------------
     # Prayer  (\ key -- theology escalator_chain quiz)
     # ------------------------------------------------------------------
 
     def _start_pray(self):
         """Begin a prayer -- escalator chain quiz (theology). Cooldown-gated."""
+        # Altar of the Last Judgment on L99: special one-time judgment
+        if self.dungeon_level == 99:
+            jpos = getattr(self.dungeon, 'judgment_altar_pos', None)
+            if jpos and (self.player.x, self.player.y) == jpos:
+                if hasattr(self, '_judgment_resolved'):
+                    self.add_message("The altar is silent. It has already spoken.", 'info')
+                    return
+                self._judgment_resolved = True
+                self._resolve_judgment()
+                return
+
         if self.player.prayer_cooldown > 0:
             self.add_message(
                 f"You cannot pray yet. ({self.player.prayer_cooldown} turns remain)",
@@ -2806,7 +4268,7 @@ class Game:
         self.quiz_engine.start_quiz(
             mode='escalator_chain',
             subject='theology',
-            tier=min(5, max(1, (self.dungeon_level - 1) // 20 + 1)),
+            tier=1,
             callback=on_complete,
             max_chain=8,
             wisdom=self.player.WIS,
@@ -2830,6 +4292,36 @@ class Game:
         }
         p = self.player
         effective = chain + (1 if at_altar else 0)
+
+        # L100 altar: holy fire strips Abaddon's resistances
+        if self.dungeon_level == 100 and at_altar:
+            pos = (p.x, p.y)
+            if pos in self._l100_altars_used:
+                self.add_message("This altar's holy power has been spent.", 'info')
+            elif chain > 0:
+                turns = chain * 2
+                self.abaddon_resist_removed_turns += turns
+                abaddon = next((m for m in self.monsters
+                                if m.alive and m.kind == 'abaddon_destroyer'), None)
+                if abaddon:
+                    abaddon.resistances = []
+                    self.add_message(
+                        f"Holy fire surges around the Destroyer! "
+                        f"His defenses crumble for {turns} turns!", 'success')
+                else:
+                    self.add_message(
+                        "Holy fire blazes forth but finds no target.", 'info')
+                self._l100_altars_used.add(pos)
+                # Show verse
+                verse = _PRAYER_VERSES.get(min(chain, 8))
+                if verse:
+                    self.add_message(f'"{verse[0]}" \u2014 {verse[1]}', 'info')
+                p.prayer_cooldown = max(100, 80 + effective * 25)
+                return
+            else:
+                self.add_message("The heavens are silent.", 'info')
+                self._l100_altars_used.add(pos)
+                return
 
         # Cooldown scales with how powerful a prayer was answered
         p.prayer_cooldown = max(100, 80 + effective * 25)
@@ -2905,13 +4397,21 @@ class Game:
             else:
                 cursed_items = []
                 for slot in p.armor_slots:
-                    if slot and getattr(slot, 'cursed', False):
+                    if slot and getattr(slot, 'buc', 'uncursed') == 'cursed':
                         cursed_items.append(slot)
-                if p.shield and getattr(p.shield, 'cursed', False):
+                if p.shield and getattr(p.shield, 'buc', 'uncursed') == 'cursed':
                     cursed_items.append(p.shield)
+                if p.weapon and getattr(p.weapon, 'buc', 'uncursed') == 'cursed':
+                    cursed_items.append(p.weapon)
+                if p.ranged_weapon and getattr(p.ranged_weapon, 'buc', 'uncursed') == 'cursed':
+                    cursed_items.append(p.ranged_weapon)
+                for acc in getattr(p, 'accessory_slots', []):
+                    if acc and getattr(acc, 'buc', 'uncursed') == 'cursed':
+                        cursed_items.append(acc)
                 if cursed_items:
                     target = cursed_items[0]
-                    target.cursed = False
+                    target.buc = 'uncursed'
+                    target.buc_known = True
                     msgs.append(f"The curse on your {target.name} is broken!")
                 else:
                     minor = ['confused', 'bleeding', 'slowed', 'sleeping']
@@ -3046,18 +4546,58 @@ class Game:
         self._lore_hint_chain = chain
 
     # ------------------------------------------------------------------
-    # Hack Reality
+    # XYZZY — Hack Reality (hidden feature)
     # ------------------------------------------------------------------
+
+    def _open_xyzzy_input(self):
+        """Open the hidden green terminal for entering the magic word."""
+        self._xyzzy_text = ''
+        self._xyzzy_blink = 0
+        self.state = STATE_XYZZY_INPUT
+
+    def _xyzzy_input(self, key, unicode_char):
+        """Handle typing in the XYZZY terminal."""
+        if key == pygame.K_ESCAPE:
+            self.state = STATE_PLAYER
+            return
+        if key == pygame.K_RETURN:
+            if self._xyzzy_text.strip().lower() == 'xyzzy':
+                self.state = STATE_XYZZY_CONFIRM
+                self._xyzzy_confirm_sel = 0  # 0=Yes, 1=No
+            else:
+                self.add_message("Nothing happens.", 'info')
+                self.state = STATE_PLAYER
+            return
+        if key == pygame.K_BACKSPACE:
+            self._xyzzy_text = self._xyzzy_text[:-1]
+            return
+        # Accept printable characters (max 20 chars)
+        if unicode_char and len(unicode_char) == 1 and unicode_char.isprintable() and len(self._xyzzy_text) < 20:
+            self._xyzzy_text += unicode_char
+
+    def _xyzzy_confirm_input(self, key):
+        """Handle the Yes/No confirmation dialog."""
+        if key == pygame.K_ESCAPE or key == pygame.K_n:
+            self.add_message("You step back from the edge of reality.", 'info')
+            self.state = STATE_PLAYER
+            return
+        if key in (pygame.K_LEFT, pygame.K_RIGHT):
+            self._xyzzy_confirm_sel = 1 - self._xyzzy_confirm_sel
+            return
+        if key == pygame.K_y or (key == pygame.K_RETURN and self._xyzzy_confirm_sel == 0):
+            self._start_hack_reality()
+            return
+        if key == pygame.K_RETURN and self._xyzzy_confirm_sel == 1:
+            self.add_message("You step back from the edge of reality.", 'info')
+            self.state = STATE_PLAYER
 
     def _start_hack_reality(self):
         """Begin a Hack Reality session -- escalator chain AI quiz. Cooldown-gated."""
         if self.player.hack_reality_cooldown > 0:
-            self.add_message(
-                f"Reality is still stabilizing. "
-                f"({self.player.hack_reality_cooldown} turns remain)", 'warning'
-            )
+            self.add_message("Reality is still stabilizing...", 'warning')
+            self.state = STATE_PLAYER
             return
-        self.add_message("You reach into the code of reality itself...", 'info')
+        self.add_message("You speak the First Word. Reality shudders...", 'info')
         self.quiz_title = "HACK REALITY -- AI"
         self.state = STATE_QUIZ
 
@@ -3080,15 +4620,15 @@ class Game:
         )
 
     def _resolve_hack_reality(self, chain: int):
-        """Apply hack reality rewards based on chain score. Set cooldown."""
+        """Apply XYZZY hack reality rewards. Tier 1 always granted; tiers 2-5 once only."""
         import random as _rng
         p = self.player
 
         # Cooldown: long (150-300 turns); longer for better rewards
         if chain == 0:
             p.hack_reality_cooldown = 100
-            self.add_message("SEGFAULT. Reality rejects your probe.", 'warning')
-            self._hack_result_lines = [("SYSTEM CRASH", (255, 60, 60))]
+            self.add_message("SEGFAULT. Reality rejects your invocation.", 'warning')
+            self._hack_result_lines = [("XYZZY FAILED", (255, 60, 60))]
             self._hack_result_chain = 0
             return
 
@@ -3098,70 +4638,85 @@ class Game:
         result_lines = []
 
         _HACK_LABELS = {
-            1: "BUFFER OVERFLOW",
-            2: "PRIVILEGE ESCALATION",
-            3: "ROOT ACCESS",
-            4: "KERNEL EXPLOIT",
+            1: "ECHO",
+            2: "RESONANCE",
+            3: "CONVERGENCE",
+            4: "TRANSCENDENCE",
             5: "SINGULARITY",
         }
-        result_lines.append((_HACK_LABELS.get(chain, "HACK"), (0, 255, 180)))
+        result_lines.append((_HACK_LABELS.get(chain, "XYZZY"), (0, 255, 180)))
 
-        # Chain 1+: Restore 30% HP + 30% SP
-        if chain >= 1:
-            hp_heal = max(1, int(p.max_hp * 0.30))
-            sp_heal = max(1, int(p.max_sp * 0.30))
-            p.hp = min(p.max_hp, p.hp + hp_heal)
-            p.sp = min(p.max_sp, p.sp + sp_heal)
-            result_lines.append((f"HP restored +{hp_heal}, SP restored +{sp_heal}", (100, 255, 160)))
-            msgs.append(f"Reality patches your body. (+{hp_heal} HP, +{sp_heal} SP)")
+        # --- Tier 1 (always): Full HP/SP/MP restore, remove ALL status effects ---
+        p.hp = p.max_hp
+        p.sp = p.max_sp
+        p.mp = p.max_mp
+        _ALL_NEGATIVES = ['poisoned', 'paralyzed', 'confused', 'bleeding',
+                          'blinded', 'sleeping', 'slowed', 'weakened', 'cursed',
+                          'feared', 'burning', 'diseased', 'immobilized',
+                          'petrifying', 'aggravated']
+        removed = []
+        for neg in _ALL_NEGATIVES:
+            if p.status_effects.get(neg, 0) > 0:
+                p.status_effects.pop(neg, None)
+                removed.append(neg)
+        result_lines.append(("Reality rewrites your body: HP/SP/MP fully restored", (100, 255, 160)))
+        if removed:
+            result_lines.append((f"Purged: {', '.join(removed)}", (180, 255, 180)))
+        msgs.append("The First Word restores you completely.")
 
-        # Chain 2+: Remove all negative status effects + grant hasted
-        if chain >= 2:
-            _NEGATIVES = ['poisoned', 'paralyzed', 'confused', 'bleeding',
-                          'blinded', 'sleeping', 'slowed', 'weakened', 'cursed']
-            removed = []
-            for neg in _NEGATIVES:
-                if p.status_effects.get(neg, 0) > 0:
-                    p.status_effects.pop(neg, None)
-                    removed.append(neg)
-            p.add_effect('hasted', 15)
-            if removed:
-                result_lines.append((f"Purged: {', '.join(removed)}", (180, 255, 180)))
-            result_lines.append(("Haste protocol engaged (15 turns)", (100, 200, 255)))
-            msgs.append("All debuffs purged. Haste protocol engaged!")
+        # --- Tier 2 (once): Random permanent positive status effect ---
+        if chain >= 2 and 2 not in p.hack_tiers_claimed:
+            p.hack_tiers_claimed.add(2)
+            _POSITIVE_EFFECTS = [
+                ('regenerating', 'Regeneration'),
+                ('hasted', 'Haste'),
+                ('see_invisible', 'See Invisible'),
+                ('fire_shield', 'Fire Shield'),
+                ('cold_shield', 'Cold Shield'),
+                ('reflecting', 'Reflection'),
+                ('displacement', 'Displacement'),
+                ('drain_resist', 'Drain Resistance'),
+            ]
+            eff_id, eff_name = _rng.choice(_POSITIVE_EFFECTS)
+            p.add_effect(eff_id, -1)  # -1 = permanent
+            result_lines.append((f"Permanent effect gained: {eff_name}", (100, 200, 255)))
+            msgs.append(f"Reality grants you permanent {eff_name}!")
 
-        # Chain 3+: Full HP/SP restore + shielded + regenerating
-        if chain >= 3:
-            p.hp = p.max_hp
-            p.sp = p.max_sp
-            p.mp = p.max_mp
-            p.add_effect('shielded', 20)
-            p.add_effect('regenerating', 20)
-            result_lines.append(("Full system restore: HP/SP/MP maximized", (0, 255, 200)))
-            result_lines.append(("Shield matrix active (20 turns)", (100, 180, 255)))
-            result_lines.append(("Auto-repair engaged (20 turns)", (100, 255, 180)))
-            msgs.append("Full system restore! Shield matrix and auto-repair online.")
+        # --- Tier 3 (once): Boost ALL stats by 5 ---
+        if chain >= 3 and 3 not in p.hack_tiers_claimed:
+            p.hack_tiers_claimed.add(3)
+            for stat in ('STR', 'CON', 'DEX', 'INT', 'WIS', 'PER'):
+                p.apply_stat_bonus(stat, 5)
+            result_lines.append(("All stats permanently +5!", (255, 220, 80)))
+            msgs.append("Reality rewrites your very essence — all stats +5!")
 
-        # Chain 4+: Permanent +1 to random stat
-        if chain >= 4:
-            stat = _rng.choice(['STR', 'CON', 'DEX', 'INT', 'WIS', 'PER'])
-            p.apply_stat_bonus(stat, 1)
-            p.hack_reality_count += 1
-            result_lines.append((f"Kernel rewrite: {stat} permanently +1", (255, 220, 80)))
-            msgs.append(f"Kernel-level rewrite: {stat} permanently increased!")
-
-        # Chain 5: Spawn a legendary item
-        if chain >= 5:
+        # --- Tier 4 (once): Random legendary item ---
+        if chain >= 4 and 4 not in p.hack_tiers_claimed:
+            p.hack_tiers_claimed.add(4)
             item = self._hack_reality_spawn_legendary()
             if item:
                 result_lines.append((f"Materialized: {item.name}", (255, 180, 255)))
-                msgs.append(f"Reality bends -- {item.name} materializes at your feet!")
+                msgs.append(f"Reality bends — {item.name} materializes at your feet!")
             else:
-                # Fallback: extra stat bonus if no legendaries found
-                stat2 = _rng.choice(['STR', 'CON', 'DEX', 'INT', 'WIS', 'PER'])
-                p.apply_stat_bonus(stat2, 1)
-                result_lines.append((f"Bonus rewrite: {stat2} permanently +1", (255, 220, 80)))
-                msgs.append(f"Reality overflow -- {stat2} permanently increased!")
+                # Fallback: extra +3 to all stats
+                for stat in ('STR', 'CON', 'DEX', 'INT', 'WIS', 'PER'):
+                    p.apply_stat_bonus(stat, 3)
+                result_lines.append(("No legendary found — all stats +3 instead!", (255, 220, 80)))
+                msgs.append("Reality overflows — all stats +3!")
+
+        # --- Tier 5 (once): Summon Fenrir wolf pet ---
+        if chain >= 5 and 5 not in p.hack_tiers_claimed:
+            p.hack_tiers_claimed.add(5)
+            fenrir = self._spawn_fenrir_pet()
+            if fenrir:
+                result_lines.append(("Fenrir, the World-Devourer, answers your call!", (180, 200, 255)))
+                msgs.append("A colossal wolf tears through the fabric of reality — Fenrir is yours!")
+            else:
+                # Fallback if no room
+                for stat in ('STR', 'CON', 'DEX', 'INT', 'WIS', 'PER'):
+                    p.apply_stat_bonus(stat, 3)
+                result_lines.append(("No room for Fenrir — all stats +3 instead!", (255, 220, 80)))
+                msgs.append("Fenrir's howl echoes but fades — reality compensates with raw power.")
 
         for msg in msgs:
             self.add_message(msg, 'good')
@@ -3192,9 +4747,125 @@ class Game:
         self.ground_items.append(item)
         return item
 
+    def _spawn_fenrir_pet(self):
+        """Spawn Fenrir wolf pet near the player. Returns the pet or None."""
+        px, py = self.player.x, self.player.y
+        # Find a free walkable tile near the player
+        for dx in range(-2, 3):
+            for dy in range(-2, 3):
+                nx, ny = px + dx, py + dy
+                if nx == px and ny == py:
+                    continue
+                if not self.dungeon.is_walkable(nx, ny):
+                    continue
+                if any(m.alive and m.x == nx and m.y == ny for m in self.monsters):
+                    continue
+                if any(p.alive and p.x == nx and p.y == ny for p in self.pets):
+                    continue
+                fenrir = FenrirPet(nx, ny)
+                self.pets.append(fenrir)
+                return fenrir
+        return None
+
+    def _draw_xyzzy_input(self):
+        """Draw the hidden green terminal input — 'Speak the First Word'."""
+        from fantasy_ui import get_font
+        overlay = pygame.Surface((WINDOW_W, WINDOW_H), pygame.SRCALPHA)
+        overlay.fill((0, 0, 0, 220))
+        self.screen.blit(overlay, (0, 0))
+
+        bw, bh = 520, 200
+        bx = (GAME_W - bw) // 2
+        by = (WINDOW_H - bh) // 2
+
+        # Dark terminal background with green border + scanline effect
+        pygame.draw.rect(self.screen, (4, 10, 4), (bx, by, bw, bh), border_radius=6)
+        pygame.draw.rect(self.screen, (0, 180, 60), (bx, by, bw, bh), 2, border_radius=6)
+        pygame.draw.rect(self.screen, (0, 80, 30), (bx+3, by+3, bw-6, bh-6), 1, border_radius=4)
+
+        # Faint scanlines
+        for sy in range(by + 6, by + bh - 6, 3):
+            pygame.draw.line(self.screen, (0, 20, 0, 40), (bx+4, sy), (bx+bw-4, sy))
+
+        font_title = get_font('heading', 20)
+        font_input = get_font('body', 22)
+        font_hint  = get_font('body', 13)
+
+        # Title
+        title = "Speak the First Word"
+        title_surf = font_title.render(title, True, (0, 200, 80))
+        self.screen.blit(title_surf, (bx + (bw - title_surf.get_width()) // 2, by + 24))
+
+        pygame.draw.line(self.screen, (0, 100, 40),
+                         (bx + 30, by + 54), (bx + bw - 30, by + 54))
+
+        # Input field with blinking cursor
+        self._xyzzy_blink = (self._xyzzy_blink + 1) % 60
+        cursor = '_' if self._xyzzy_blink < 30 else ' '
+        display_text = '> ' + self._xyzzy_text + cursor
+
+        input_surf = font_input.render(display_text, True, (0, 255, 120))
+        self.screen.blit(input_surf, (bx + 40, by + 80))
+
+        # Bottom hint
+        hint_surf = font_hint.render("[Enter] to submit  //  [Esc] to cancel", True, (0, 80, 40))
+        self.screen.blit(hint_surf, (bx + (bw - hint_surf.get_width()) // 2, by + bh - 30))
+
+    def _draw_xyzzy_confirm(self):
+        """Draw the 'WARNING: You are about to hack reality' confirmation."""
+        from fantasy_ui import get_font
+        overlay = pygame.Surface((WINDOW_W, WINDOW_H), pygame.SRCALPHA)
+        overlay.fill((0, 0, 0, 220))
+        self.screen.blit(overlay, (0, 0))
+
+        bw, bh = 580, 240
+        bx = (GAME_W - bw) // 2
+        by = (WINDOW_H - bh) // 2
+
+        # Dark terminal background with amber warning border
+        pygame.draw.rect(self.screen, (10, 8, 4), (bx, by, bw, bh), border_radius=6)
+        pygame.draw.rect(self.screen, (220, 160, 0), (bx, by, bw, bh), 2, border_radius=6)
+        pygame.draw.rect(self.screen, (100, 80, 0), (bx+3, by+3, bw-6, bh-6), 1, border_radius=4)
+
+        font_title = get_font('heading', 22)
+        font_body  = get_font('body', 18)
+        font_btn   = get_font('body', 20)
+
+        # Warning title
+        warn_surf = font_title.render("! ! !   W A R N I N G   ! ! !", True, (255, 180, 0))
+        self.screen.blit(warn_surf, (bx + (bw - warn_surf.get_width()) // 2, by + 20))
+
+        pygame.draw.line(self.screen, (180, 120, 0),
+                         (bx + 20, by + 52), (bx + bw - 20, by + 52))
+
+        # Warning text
+        lines = [
+            "You are about to hack reality.",
+            "Are you sure?",
+        ]
+        y = by + 66
+        for line in lines:
+            surf = font_body.render(line, True, (220, 180, 60))
+            self.screen.blit(surf, (bx + (bw - surf.get_width()) // 2, y))
+            y += font_body.get_height() + 6
+
+        # Yes / No buttons
+        sel = getattr(self, '_xyzzy_confirm_sel', 0)
+        btn_y = by + bh - 56
+        for i, label in enumerate(('[ YES ]', '[ NO ]')):
+            bx_btn = bx + bw // 2 - 120 + i * 160
+            if i == sel:
+                color = (0, 255, 120)
+                pygame.draw.rect(self.screen, (0, 60, 30),
+                                 (bx_btn - 10, btn_y - 4, 100, 32), border_radius=4)
+            else:
+                color = (80, 80, 80)
+            surf = font_btn.render(label, True, color)
+            self.screen.blit(surf, (bx_btn, btn_y))
+
     def _draw_hack_reality_screen(self):
-        """Display the Hack Reality result -- cyberpunk terminal overlay."""
-        from fantasy_ui import FP, get_font
+        """Display the Hack Reality result -- green terminal overlay."""
+        from fantasy_ui import get_font
         result_lines = getattr(self, '_hack_result_lines', None)
         chain = getattr(self, '_hack_result_chain', 0)
         if result_lines is None:
@@ -3205,7 +4876,7 @@ class Game:
         overlay.fill((0, 0, 0, 200))
         self.screen.blit(overlay, (0, 0))
 
-        bw, bh = 760, 340
+        bw, bh = 760, 400
         bx = (GAME_W - bw) // 2
         by = (WINDOW_H - bh) // 2
 
@@ -3220,17 +4891,17 @@ class Game:
 
         # Title with chain rating
         _CHAIN_LABELS = {
-            0: "ACCESS DENIED",
-            1: "Level 1 Breach",
-            2: "Level 2 Breach",
-            3: "Level 3 Breach",
-            4: "Level 4 Breach",
-            5: "FULL PENETRATION",
+            0: "XYZZY FAILED",
+            1: "Echo",
+            2: "Resonance",
+            3: "Convergence",
+            4: "Transcendence",
+            5: "SINGULARITY",
         }
-        label = _CHAIN_LABELS.get(chain, "Breach")
-        bar = '>' * chain + '_' * (5 - chain)
+        label = _CHAIN_LABELS.get(chain, "XYZZY")
+        bar = '#' * chain + '.' * (5 - chain)
         title_color = (0, 255, 120) if chain > 0 else (255, 60, 60)
-        title_surf = font_title.render(f"HACK REALITY  //  {label}", True, title_color)
+        title_surf = font_title.render(f"XYZZY  //  {label}", True, title_color)
         self.screen.blit(title_surf, (bx + (bw - title_surf.get_width()) // 2, by + 14))
 
         bar_surf = font_small.render(f"[{bar}]  depth={chain}/5", True, (0, 180, 80))
@@ -3248,13 +4919,12 @@ class Game:
                 self.screen.blit(surf, (bx + 24, y))
                 y += font_body.get_height() + 4
 
-        # Cooldown notice
-        cd = self.player.hack_reality_cooldown
-        cd_surf = font_small.render(
-            f"Reality stabilizes in {cd} turns  //  [ any key ] to close",
+        # Close prompt (no cooldown shown — keep it hidden)
+        close_surf = font_small.render(
+            "[ any key ] to close",
             True, (0, 100, 50)
         )
-        self.screen.blit(cd_surf, (bx + (bw - cd_surf.get_width()) // 2, by + bh - 24))
+        self.screen.blit(close_surf, (bx + (bw - close_surf.get_width()) // 2, by + bh - 24))
 
     # ------------------------------------------------------------------
     # Quirks screen
@@ -3565,8 +5235,7 @@ class Game:
             cds.append(f"Prayer: {p.prayer_cooldown}t")
         if p.recall_lore_cooldown > 0:
             cds.append(f"Recall Lore: {p.recall_lore_cooldown}t")
-        if p.hack_reality_cooldown > 0:
-            cds.append(f"Hack Reality: {p.hack_reality_cooldown}t")
+        # Hack Reality cooldown is intentionally hidden from the UI
         if cds:
             lines.append(("", DIM, font_small, False))
             lines.append(("COOLDOWNS", GOLD, font_head, True))
@@ -3678,6 +5347,8 @@ class Game:
         self.equip_menu_equipped = []
         if self.player.weapon:
             self.equip_menu_equipped.append(('weapon', self.player.weapon))
+        if self.player.ranged_weapon:
+            self.equip_menu_equipped.append(('ranged_weapon', self.player.ranged_weapon))
         if self.player.shield:
             self.equip_menu_equipped.append(('shield', self.player.shield))
         for slot_name, slot_item in zip(ARMOR_SLOTS, self.player.armor_slots):
@@ -3778,6 +5449,8 @@ class Game:
         # Remove from the appropriate slot
         if slot_name == 'weapon':
             self.player.weapon = None
+        elif slot_name == 'ranged_weapon':
+            self.player.ranged_weapon = None
         elif slot_name == 'shield':
             self.player.shield = None
         elif slot_name in ARMOR_SLOTS:
@@ -3791,6 +5464,8 @@ class Game:
                 fx = item.effects
                 if 'stat' in fx:
                     self.player.apply_stat_bonus(fx['stat'], -fx.get('amount', 0))
+                if 'stat2' in fx:
+                    self.player.apply_stat_bonus(fx['stat2'], -fx.get('amount2', 0))
                 if 'status' in fx:
                     self.player.status_effects.pop(fx['status'], None)
         elif slot_name == 'amulet':
@@ -3800,13 +5475,15 @@ class Game:
                 fx = item.effects
                 if 'stat' in fx:
                     self.player.apply_stat_bonus(fx['stat'], -fx.get('amount', 0))
+                if 'stat2' in fx:
+                    self.player.apply_stat_bonus(fx['stat2'], -fx.get('amount2', 0))
                 if 'status' in fx:
                     self.player.status_effects.pop(fx['status'], None)
         self.player.inventory.append(item)
         self.add_message(f"You remove the {self._display_name(item)}.", 'info')
         _qs_uneq = getattr(self, 'quirk_system', None)
         if _qs_uneq:
-            itype = 'weapon' if slot_name == 'weapon' else \
+            itype = 'weapon' if slot_name in ('weapon', 'ranged_weapon') else \
                     'shield' if slot_name == 'shield' else \
                     'armor' if slot_name not in ('amulet',) and not slot_name.startswith('accessory_') else \
                     'accessory'
@@ -3981,6 +5658,17 @@ class Game:
             self._advance_turn()
             return
 
+        # Flux Capacitor: no quiz -- it's a gift from the universe
+        if wand.id == 'flux_capacitor':
+            wand.charges -= 1
+            self.player.add_effect('time_stopped', 10)
+            self.add_message("The Flux Capacitor ignites! Time freezes around you -- 10 turns!", 'success')
+            if wand.charges <= 0:
+                self.add_message("The Flux Capacitor burns out in a shower of sparks.", 'warning')
+                self.player.remove_from_inventory(wand)
+            self._advance_turn()
+            return
+
         if wand.charges <= 0:
             self.add_message("The wand is empty -- it crumbles to dust.", 'warning')
             self.player.remove_from_inventory(wand)
@@ -4007,6 +5695,15 @@ class Game:
                 return
 
             wand.charges -= 1
+            # Cursed wands: 3% chance to misfire (wastes charge, no effect)
+            import random as _rng_wand
+            if getattr(wand, 'buc', 'uncursed') == 'cursed' and _rng_wand.random() < 0.03:
+                self.add_message("The cursed wand misfires! The charge is wasted.", 'warning')
+                if wand.charges <= 0:
+                    self.add_message("The wand crumbles to dust -- it is spent.", 'warning')
+                    self.player.remove_from_inventory(wand)
+                self._advance_turn()
+                return
             self._apply_wand_effect(wand)
             if wand.charges <= 0:
                 self.add_message("The wand crumbles to dust -- it is spent.", 'warning')
@@ -4309,7 +6006,10 @@ class Game:
                 open_tiles = [(x, y)
                               for y in range(len(self.dungeon.tiles))
                               for x in range(len(self.dungeon.tiles[y]))
-                              if self.dungeon.is_walkable(x, y)]
+                              if self.dungeon.is_walkable(x, y)
+                              and not any(m.alive and m.x == x and m.y == y for m in self.monsters)
+                              and not any(p.alive and p.x == x and p.y == y for p in self.pets)
+                              and (x, y) != (self.player.x, self.player.y)]
                 if open_tiles:
                     tx, ty = _rng.choice(open_tiles)
                     old_name = target.name
@@ -4429,10 +6129,15 @@ class Game:
                 self.add_message("Everything you carry is already known.", 'info')
 
         elif effect == 'enchant_weapon':
-            w = self.player.weapon
+            from items import ENCHANT_CAP
+            w = self.player.weapon or self.player.ranged_weapon
             if w:
-                w.enchant_bonus += 1
-                self.add_message(f"Your {w.name} glows! Enchantment +{w.enchant_bonus}.", 'success')
+                cap = ENCHANT_CAP.get('weapon', 5)
+                if w.enchant_bonus < cap:
+                    w.enchant_bonus += 1
+                    self.add_message(f"Your {w.name} glows! Enchantment +{w.enchant_bonus}.", 'success')
+                else:
+                    self.add_message(f"Your {w.name} shudders but can hold no more enchantment.", 'info')
             else:
                 self.add_message("You wield no weapon to enchant.", 'warning')
 
@@ -4583,6 +6288,19 @@ class Game:
         story_key = self._BOSS_STORY_KEYS.get(monster.kind)
         if story_key:
             self._show_story_popup(story_key, STATE_PLAYER)
+        # Fafnir drops a unique blood potion with a hint about the throw-over reforge
+        if monster.kind == 'fafnir_dragon':
+            self._spawn_fafnir_blood(monster.x, monster.y)
+        # Seal demon: track broken seal
+        if getattr(monster, 'is_seal_demon', False):
+            seal_id = 'seal_of_' + monster.kind.replace('seal_demon_', '')
+            self.seals_broken.add(seal_id)
+            count = len(self.seals_broken)
+            self.add_message(
+                f"The {monster.name} falls! A seal is broken! ({count}/7)", 'success')
+            if count == 7:
+                self.add_message(
+                    "ALL SEVEN SEALS ARE BROKEN. The way to the Pit stands open.", 'danger')
         self.ground_items.append(self._make_corpse(monster))
 
     def _drop_treasure(self, monster):
@@ -4637,7 +6355,8 @@ class Game:
     def _spawn_unique_item(self, x: int, y: int, item_id: str):
         """Place a named unique item at (x, y), searching all item categories."""
         from items import load_items, copy_at
-        categories = ('weapon', 'armor', 'shield', 'accessory', 'wand', 'scroll')
+        categories = ('weapon', 'armor', 'shield', 'accessory', 'wand', 'scroll',
+                      'artifact', 'potion')
         for cat in categories:
             try:
                 items = load_items(cat)
@@ -4664,6 +6383,779 @@ class Game:
                 self.add_message("[LOOT] The boss drops a REWARD SCROLL!", 'loot')
         except Exception:
             pass
+
+    def _spawn_fafnir_blood(self, x: int, y: int):
+        """Drop Fafnir's Blood potion at (x, y) — contains a hint about the secret reforge."""
+        from items import load_items, copy_at
+        try:
+            potions = load_items('potion')
+            template = next((p for p in potions if p.id == 'fafnirs_blood'), None)
+            if template:
+                pot = copy_at(template, x, y)
+                pot.identified = True
+                self.ground_items.append(pot)
+                self.add_message("A vial of shimmering dragon blood pools at your feet!", 'loot')
+        except Exception:
+            pass
+
+    def _spawn_abaddon_locusts(self, abaddon):
+        """Spawn a swarm of locusts near Abaddon. If Heavenly Host is active, spawn matching angels."""
+        import json as _json
+        from monster import Monster as _Mon
+        from paths import data_path as _dp
+
+        try:
+            with open(_dp('data', 'monsters.json'), encoding='utf-8') as f:
+                _all = _json.load(f)
+        except Exception:
+            return
+
+        lo, hi = abaddon.locust_count
+        # Negative karma: larger swarms
+        if getattr(self, '_locusts_strengthened', False):
+            lo += 2
+            hi += 3
+        count = random.randint(lo, hi)
+
+        locust_def = _all.get('abyssal_locust')
+        angel_def = _all.get('heavenly_angel')
+        if not locust_def:
+            return
+
+        occupied = {(m.x, m.y) for m in self.monsters if m.alive}
+        occupied.add((self.player.x, self.player.y))
+
+        # Find walkable tiles near Abaddon for locusts
+        def _nearby_tiles(cx, cy, radius=4):
+            tiles = []
+            for dy in range(-radius, radius + 1):
+                for dx in range(-radius, radius + 1):
+                    nx, ny = cx + dx, cy + dy
+                    if self.dungeon.in_bounds(nx, ny) and self.dungeon.is_walkable(nx, ny):
+                        if (nx, ny) not in occupied:
+                            tiles.append((nx, ny))
+            random.shuffle(tiles)
+            return tiles
+
+        locust_tiles = _nearby_tiles(abaddon.x, abaddon.y)
+        spawned = 0
+        for tx, ty in locust_tiles:
+            if spawned >= count:
+                break
+            ld = dict(locust_def)
+            ld['id'] = 'abyssal_locust'
+            loc = _Mon(ld, tx, ty)
+            self.monsters.append(loc)
+            occupied.add((tx, ty))
+            spawned += 1
+
+        if spawned > 0:
+            self.add_message(
+                "Abaddon raises his hand \u2014 a swarm of locusts erupts from the void!", 'danger')
+
+        # Heavenly Host counter-spawn: one angel per locust
+        if self.heavenly_host_active and angel_def and spawned > 0:
+            px, py = self.player.x, self.player.y
+            angel_tiles = _nearby_tiles(px, py, radius=3)
+            angel_count = 0
+            for tx, ty in angel_tiles:
+                if angel_count >= spawned:
+                    break
+                ad = dict(angel_def)
+                ad['id'] = 'heavenly_angel'
+                ang = _Mon(ad, tx, ty)
+                self.monsters.append(ang)
+                occupied.add((tx, ty))
+                angel_count += 1
+            if angel_count > 0:
+                self.add_message(
+                    f"{angel_count} angels of the Heavenly Host descend to answer!", 'success')
+
+    # ------------------------------------------------------------------
+    # NPC moral encounter system
+    # ------------------------------------------------------------------
+
+    def _maybe_spawn_trigger_item(self, level: int):
+        """Spawn a triggered encounter item as floor loot if this is its designated level."""
+        import random as _rng
+        from items import load_items, copy_at
+        trigger_levels = getattr(self, '_npc_trigger_item_levels', {})
+        placed = getattr(self, '_npc_trigger_items_placed', set())
+        # Map trigger item IDs to their JSON category
+        _TRIGGER_ITEM_CATEGORIES = {
+            'silverlight_pendant': 'accessory',
+            'oathkeeper_sword': 'weapon',
+            'lionheart_shield': 'shield',
+        }
+        for item_id, spawn_level in trigger_levels.items():
+            if spawn_level != level or item_id in placed:
+                continue
+            category = _TRIGGER_ITEM_CATEGORIES.get(item_id)
+            if not category:
+                continue
+            # Find the item template
+            template = None
+            for it in load_items(category):
+                if it.id == item_id:
+                    template = it
+                    break
+            if template is None:
+                continue
+            # Place in a non-start room on a walkable tile
+            rooms = self.dungeon.rooms[1:] if len(self.dungeon.rooms) > 1 else self.dungeon.rooms
+            for room in _rng.sample(rooms, min(len(rooms), 5)):
+                tiles = list(room.inner_tiles())
+                _rng.shuffle(tiles)
+                for tx, ty in tiles:
+                    if self.dungeon.is_walkable(tx, ty):
+                        spawned = copy_at(template, tx, ty)
+                        self.ground_items.append(spawned)
+                        placed.add(item_id)
+                        break
+                if item_id in placed:
+                    break
+        self._npc_trigger_items_placed = placed
+
+    def _maybe_spawn_npc(self, level: int):
+        """Spawn an NPC on this level if one is assigned and hasn't been encountered."""
+        enc = self._npc_encounter_levels.get(level)
+        if enc is None:
+            return
+        if enc['tag'] in self._encountered_npcs:
+            return
+        # For triggered encounters, only spawn if the player has the trigger item
+        if enc.get('trigger_item'):
+            if enc['trigger_item'] not in self._npc_triggered_items:
+                return
+
+        from monster import Monster
+        # Create a fake "monster" for the NPC so it renders and blocks tiles
+        npc_def = {
+            'id': f"npc_{enc['tag']}",
+            'name': enc['name'],
+            'symbol': enc['symbol'],
+            'color': list(enc['color']),
+            'hp': 1,
+            'thac0': 20,
+            'speed': 0,
+            'attacks': [],
+            'ai_pattern': 'sessile',
+            'resistances': [],
+            'weaknesses': [],
+            'min_level': level,
+            'is_allied': True,
+            'harvest_tier': 0,
+            'harvest_threshold': 99,
+            'ingredient_id': None,
+        }
+        # Place in a non-start room
+        occupied = {(m.x, m.y) for m in self.monsters}
+        occupied.add((self.player.x, self.player.y))
+        rooms = self.dungeon.rooms[1:] if len(self.dungeon.rooms) > 1 else self.dungeon.rooms
+        import random as _rng
+        for room in _rng.sample(rooms, min(len(rooms), 5)):
+            tiles = list(room.inner_tiles())
+            _rng.shuffle(tiles)
+            for tx, ty in tiles:
+                if self.dungeon.is_walkable(tx, ty) and (tx, ty) not in occupied:
+                    npc = Monster(npc_def, tx, ty)
+                    npc._npc_encounter_tag = enc['tag']
+                    self.monsters.append(npc)
+                    return
+
+    def _start_npc_encounter(self, monster):
+        """Begin a moral encounter when the player bumps an NPC."""
+        tag = getattr(monster, '_npc_encounter_tag', None)
+        if tag is None:
+            return False
+
+        # Find the encounter definition
+        enc = None
+        for lvl_enc in self._npc_encounter_levels.values():
+            if lvl_enc['tag'] == tag:
+                enc = lvl_enc
+                break
+        if enc is None:
+            return False
+
+        self._npc_encounter_active = enc
+        self._npc_encounter_monster = monster
+        self._npc_encounter_phase = 'text'
+        self._npc_selected_option = None
+        self._npc_outcome_text = ''
+        self._npc_item_list = []
+        self._npc_item_scroll = 0
+        self.state = STATE_NPC_ENCOUNTER
+        return True
+
+    def _npc_encounter_input(self, key: int):
+        """Handle input during NPC encounter — multi-phase flow."""
+        enc = self._npc_encounter_active
+        if enc is None:
+            self.state = STATE_PLAYER
+            return
+
+        phase = self._npc_encounter_phase
+
+        # ── Phase: TEXT (encounter description) ───────────────────
+        if phase == 'text':
+            if key in (pygame.K_RETURN, pygame.K_SPACE):
+                self._npc_encounter_phase = 'options'
+            elif key == pygame.K_ESCAPE:
+                self._close_npc_encounter(resolved=False)
+            return
+
+        # ── Phase: OPTIONS (choose 1-3) ──────────────────────────
+        if phase == 'options':
+            if key == pygame.K_ESCAPE:
+                self._close_npc_encounter(resolved=False)
+                return
+
+            key_to_idx = {
+                pygame.K_1: 0, pygame.K_KP1: 0,
+                pygame.K_2: 1, pygame.K_KP2: 1,
+                pygame.K_3: 2, pygame.K_KP3: 2,
+            }
+            idx = key_to_idx.get(key)
+            if idx is None or idx >= len(enc['options']):
+                return
+
+            opt = enc['options'][idx]
+            cost = opt.get('cost')
+
+            # Check if player can pay the cost
+            from npc_encounters import can_pay_cost, get_inventory_filter
+            can_pay, fail_msg = can_pay_cost(self.player, cost, self.player_gold)
+            if not can_pay:
+                self.add_message(fail_msg, 'warning')
+                return
+
+            self._npc_selected_option = opt
+
+            # If cost requires inventory selection, show item picker
+            inv_filter = get_inventory_filter(cost)
+            if inv_filter:
+                self._npc_item_list = self._get_filtered_inventory(inv_filter)
+                if not self._npc_item_list:
+                    self.add_message(fail_msg or "You don't have what's needed.", 'warning')
+                    self._npc_selected_option = None
+                    return
+                self._npc_item_scroll = 0
+                self._npc_encounter_phase = 'select_item'
+                return
+
+            # No item selection needed — apply immediately
+            self._apply_npc_choice(opt, selected_item=None)
+            return
+
+        # ── Phase: SELECT_ITEM (pick from filtered inventory) ────
+        if phase == 'select_item':
+            if key == pygame.K_ESCAPE:
+                # Go back to options
+                self._npc_encounter_phase = 'options'
+                self._npc_selected_option = None
+                return
+
+            items = self._npc_item_list
+            key_to_idx = {
+                pygame.K_1: 0, pygame.K_KP1: 0,
+                pygame.K_2: 1, pygame.K_KP2: 1,
+                pygame.K_3: 2, pygame.K_KP3: 2,
+                pygame.K_4: 3, pygame.K_KP4: 3,
+                pygame.K_5: 4, pygame.K_KP5: 4,
+                pygame.K_6: 5, pygame.K_KP6: 5,
+                pygame.K_7: 6, pygame.K_KP7: 6,
+                pygame.K_8: 7, pygame.K_KP8: 7,
+                pygame.K_9: 8, pygame.K_KP9: 8,
+            }
+            idx = key_to_idx.get(key)
+            if idx is not None:
+                actual = idx + self._npc_item_scroll
+                if 0 <= actual < len(items):
+                    self._apply_npc_choice(self._npc_selected_option,
+                                           selected_item=items[actual])
+                    return
+
+            # Scroll
+            if key in (pygame.K_DOWN, pygame.K_j) and self._npc_item_scroll + 9 < len(items):
+                self._npc_item_scroll += 1
+            elif key in (pygame.K_UP, pygame.K_k) and self._npc_item_scroll > 0:
+                self._npc_item_scroll -= 1
+            return
+
+        # ── Phase: OUTCOME (show result) ─────────────────────────
+        if phase == 'outcome':
+            if key in (pygame.K_RETURN, pygame.K_SPACE, pygame.K_ESCAPE):
+                self._close_npc_encounter(resolved=True)
+            return
+
+    def _get_filtered_inventory(self, filter_type: str) -> list:
+        """Return inventory items matching the cost filter type."""
+        from items import Food, Potion, Scroll, Weapon
+        inv = self.player.inventory
+        if filter_type == 'food':
+            return [i for i in inv if isinstance(i, Food)]
+        if filter_type == 'healing_potion':
+            return [i for i in inv if isinstance(i, Potion)
+                    and getattr(i, 'effect', '') == 'heal']
+        if filter_type == 'potion':
+            return [i for i in inv if isinstance(i, Potion)]
+        if filter_type == 'scroll':
+            return [i for i in inv if isinstance(i, Scroll)]
+        if filter_type == 'weapon':
+            return [i for i in inv if isinstance(i, Weapon)]
+        return []
+
+    def _apply_npc_choice(self, opt: dict, selected_item=None):
+        """Apply the cost, reward, and karma for the chosen option."""
+        cost = opt.get('cost')
+        reward = opt.get('reward')
+        karma_delta = opt['karma']
+
+        # ── Apply cost ────────────────────────────────────────────
+        if cost:
+            ctype = cost['type']
+            if ctype in ('food', 'healing_potion', 'potion', 'scroll', 'weapon'):
+                if selected_item:
+                    self.player.remove_from_inventory(selected_item)
+            elif ctype == 'gold':
+                self.player_gold -= cost['amount']
+            elif ctype == 'hp_percent':
+                loss = max(5, int(self.player.hp * cost['amount'] / 100))
+                self.player.hp -= loss
+            elif ctype == 'max_hp':
+                self.player.max_hp -= cost['amount']
+                self.player.hp = min(self.player.hp, self.player.max_hp)
+            elif ctype == 'sp':
+                self.player.sp = max(0, self.player.sp - cost['amount'])
+            elif ctype == 'triggered_item':
+                # Remove the trigger item from inventory OR equipment slots
+                enc = self._npc_encounter_active
+                item_id = enc.get('trigger_item', '')
+                removed = False
+                # Check inventory first
+                for it in self.player.inventory:
+                    if getattr(it, 'id', '') == item_id:
+                        self.player.remove_from_inventory(it)
+                        removed = True
+                        break
+                # Check equipment slots if not found in inventory
+                if not removed:
+                    p = self.player
+                    if p.weapon and getattr(p.weapon, 'id', '') == item_id:
+                        p.weapon = None
+                        removed = True
+                    elif p.shield and getattr(p.shield, 'id', '') == item_id:
+                        p.shield = None
+                        removed = True
+                    elif p.amulet_slot and getattr(p.amulet_slot, 'id', '') == item_id:
+                        # Reverse accessory stat bonuses
+                        fx = p.amulet_slot.effects
+                        if 'stat' in fx:
+                            p.apply_stat_bonus(fx['stat'], -fx.get('amount', 0))
+                        if 'stat2' in fx:
+                            p.apply_stat_bonus(fx['stat2'], -fx.get('amount2', 0))
+                        if 'status' in fx:
+                            p.status_effects.pop(fx['status'], None)
+                        p.amulet_slot = None
+                        removed = True
+                    else:
+                        for i, slot in enumerate(p.accessory_slots):
+                            if slot and getattr(slot, 'id', '') == item_id:
+                                fx = slot.effects
+                                if 'stat' in fx:
+                                    p.apply_stat_bonus(fx['stat'], -fx.get('amount', 0))
+                                if 'stat2' in fx:
+                                    p.apply_stat_bonus(fx['stat2'], -fx.get('amount2', 0))
+                                if 'status' in fx:
+                                    p.status_effects.pop(fx['status'], None)
+                                p.accessory_slots[i] = None
+                                removed = True
+                                break
+            elif ctype == 'accept_item':
+                # Give the player a burden/cursed item
+                self._grant_burden_item(cost['item_id'])
+
+        # ── Apply reward ──────────────────────────────────────────
+        if reward:
+            self._apply_npc_reward(reward)
+
+        # ── Apply karma ───────────────────────────────────────────
+        self.karma = max(-10, min(10, self.karma + karma_delta))
+
+        # Show outcome
+        self._npc_outcome_text = opt['outcome']
+        self._npc_encounter_phase = 'outcome'
+
+    def _apply_npc_reward(self, reward: dict):
+        """Grant a reward from an NPC encounter choice."""
+        rtype = reward['type']
+
+        if rtype == 'gold':
+            amount = random.randint(reward['min'], reward['max'])
+            self.player_gold += amount
+
+        elif rtype in ('random_weapon', 'random_armor', 'random_shield',
+                        'random_accessory', 'random_potion', 'random_scroll',
+                        'random_food'):
+            count = reward.get('count', 1)
+            for _ in range(count):
+                item = self._generate_npc_reward_item(rtype)
+                if item:
+                    self.player.inventory.append(item)
+
+        elif rtype == 'stat':
+            stat = reward['stat']
+            amount = reward['amount']
+            current = getattr(self.player, stat, 10)
+            setattr(self.player, stat, current + amount)
+            self.add_message(f"+{amount} {stat}!", 'success')
+
+        elif rtype == 'specific_item':
+            item = self._create_specific_npc_item(
+                reward['item_type'], reward['item_id'],
+                no_auto_identify=reward.get('no_auto_identify', False))
+            if item:
+                self.player.inventory.append(item)
+
+        elif rtype == 'multi':
+            for sub_reward in reward['rewards']:
+                self._apply_npc_reward(sub_reward)
+
+    def _generate_npc_reward_item(self, rtype: str):
+        """Generate a random item of the given reward type at current level."""
+        from items import load_items, copy_at
+        type_map = {
+            'random_weapon': 'weapon',
+            'random_armor': 'armor',
+            'random_shield': 'shield',
+            'random_accessory': 'accessory',
+            'random_potion': 'potion',
+            'random_scroll': 'scroll',
+            'random_food': 'food',
+        }
+        cls_name = type_map.get(rtype)
+        if not cls_name:
+            return None
+        try:
+            candidates = []
+            for item in load_items(cls_name):
+                ml = getattr(item, 'min_level', 1)
+                if ml <= self.dungeon_level and ml < 9999:
+                    candidates.append(item)
+            if candidates:
+                template = random.choice(candidates)
+                result = copy_at(template, self.player.x, self.player.y)
+                result.identified = True
+                return result
+        except Exception:
+            pass
+        return None
+
+    def _create_specific_npc_item(self, item_type: str, item_id: str,
+                                   no_auto_identify: bool = False):
+        """Create a specific named item for an NPC reward."""
+        from items import load_items, copy_at
+        try:
+            for item in load_items(item_type):
+                if item.id == item_id:
+                    result = copy_at(item, self.player.x, self.player.y)
+                    if not no_auto_identify:
+                        result.identified = True
+                    return result
+        except Exception:
+            pass
+        return None
+
+    def _grant_burden_item(self, item_id: str):
+        """Grant a cursed/burden item to the player (lodestone, dispatch, etc.)."""
+        from items import load_items, copy_at
+        try:
+            for item in load_items('artifact'):
+                if item.id == item_id:
+                    result = copy_at(item, self.player.x, self.player.y)
+                    result.identified = True
+                    self.player.inventory.append(result)
+                    return
+        except Exception:
+            pass
+
+    def _close_npc_encounter(self, resolved: bool):
+        """Close the NPC encounter overlay."""
+        if resolved:
+            # Remove the NPC
+            npc = self._npc_encounter_monster
+            if npc:
+                npc.alive = False
+                npc.hp = 0
+            enc = self._npc_encounter_active
+            if enc:
+                self._encountered_npcs.add(enc['tag'])
+
+        self._npc_encounter_active = None
+        self._npc_encounter_monster = None
+        self._npc_encounter_phase = 'text'
+        self._npc_selected_option = None
+        self._npc_outcome_text = ''
+        self._npc_item_list = []
+        self.state = STATE_PLAYER
+        if resolved:
+            self._advance_turn()
+
+    def _draw_npc_encounter(self):
+        """Draw the NPC moral encounter overlay — multi-phase."""
+        from fantasy_ui import FP, get_font, draw_overlay, draw_dark_panel, draw_header_bar
+
+        enc = self._npc_encounter_active
+        if enc is None:
+            return
+
+        draw_overlay(self.screen, 180)
+
+        bw, bh = min(780, GAME_W - 40), 440
+        bx = (GAME_W - bw) // 2
+        by = (WINDOW_H - bh) // 2
+
+        draw_dark_panel(self.screen, (bx, by, bw, bh),
+                        border_color=tuple(enc['color']))
+        draw_header_bar(self.screen, (bx, by, bw, 44),
+                        text=enc['name'].upper(),
+                        font=get_font('heading', 20),
+                        text_color=tuple(enc['color']))
+
+        font = get_font('body', 17)
+        font_sm = get_font('body', 15)
+        max_w = bw - 50
+
+        phase = self._npc_encounter_phase
+
+        if phase == 'text':
+            self._draw_npc_wordwrap(enc['text'], font, bx + 25, by + 54,
+                                    max_w, (220, 210, 190), line_h=22)
+            footer = font_sm.render("Press ENTER to continue",
+                                    True, (120, 120, 120))
+            self.screen.blit(footer,
+                             (bx + (bw - footer.get_width()) // 2, by + bh - 35))
+
+        elif phase == 'options':
+            y = by + 54
+            # Options — all same color, no karma hints
+            for i, opt in enumerate(enc['options']):
+                label = opt['label']
+                col = (210, 200, 180)
+                prefix = f"[{i+1}] "
+                opt_text = f"{prefix}{label}"
+                # Word-wrap long labels
+                wrapped = self._wordwrap_text(opt_text, font_sm, max_w - 10)
+                for wline in wrapped:
+                    surf = font_sm.render(wline, True, col)
+                    self.screen.blit(surf, (bx + 30, y))
+                    y += 20
+                y += 8
+
+            footer = font_sm.render("Press 1-3 to choose, ESC to walk away",
+                                    True, (120, 120, 120))
+            self.screen.blit(footer,
+                             (bx + (bw - footer.get_width()) // 2, by + bh - 35))
+
+        elif phase == 'select_item':
+            y = by + 54
+            header = font.render("Choose an item to give:", True, (220, 210, 190))
+            self.screen.blit(header, (bx + 25, y))
+            y += 30
+
+            items = self._npc_item_list
+            visible = items[self._npc_item_scroll:self._npc_item_scroll + 9]
+            for i, item in enumerate(visible):
+                num = i + 1
+                dname = self._display_name(item)
+                txt = f"[{num}] {dname}"
+                surf = font_sm.render(txt, True, (210, 200, 180))
+                self.screen.blit(surf, (bx + 30, y))
+                y += 22
+
+            if len(items) > 9:
+                scroll_hint = font_sm.render(
+                    f"({self._npc_item_scroll + 1}-"
+                    f"{min(self._npc_item_scroll + 9, len(items))}"
+                    f" of {len(items)}, arrows to scroll)",
+                    True, (120, 120, 120))
+                self.screen.blit(scroll_hint, (bx + 30, y + 8))
+
+            footer = font_sm.render("Press 1-9 to select, ESC to go back",
+                                    True, (120, 120, 120))
+            self.screen.blit(footer,
+                             (bx + (bw - footer.get_width()) // 2, by + bh - 35))
+
+        elif phase == 'outcome':
+            self._draw_npc_wordwrap(self._npc_outcome_text, font,
+                                    bx + 25, by + 54, max_w,
+                                    (220, 210, 190), line_h=22)
+            footer = font_sm.render("Press ENTER to continue",
+                                    True, (120, 120, 120))
+            self.screen.blit(footer,
+                             (bx + (bw - footer.get_width()) // 2, by + bh - 35))
+
+    def _draw_npc_wordwrap(self, text: str, font, x: int, y: int,
+                            max_w: int, color: tuple, line_h: int = 22):
+        """Helper: word-wrap and draw text for NPC encounter screens."""
+        words = text.split()
+        lines, line = [], []
+        for word in words:
+            test = ' '.join(line + [word])
+            if font.size(test)[0] > max_w:
+                if line:
+                    lines.append(' '.join(line))
+                line = [word]
+            else:
+                line.append(word)
+        if line:
+            lines.append(' '.join(line))
+        for txt_line in lines:
+            surf = font.render(txt_line, True, color)
+            self.screen.blit(surf, (x, y))
+            y += line_h
+
+    def _wordwrap_text(self, text: str, font, max_w: int) -> list[str]:
+        """Return a list of word-wrapped lines for the given text."""
+        words = text.split()
+        lines, line = [], []
+        for word in words:
+            test = ' '.join(line + [word])
+            if font.size(test)[0] > max_w:
+                if line:
+                    lines.append(' '.join(line))
+                line = [word]
+            else:
+                line.append(word)
+        if line:
+            lines.append(' '.join(line))
+        return lines
+
+    def _resolve_judgment(self):
+        """Resolve the Altar of the Last Judgment on L99."""
+        from npc_encounters import judge_karma
+        outcome, text = judge_karma(self.karma)
+
+        self._judgment_text = text
+        self.state = STATE_JUDGMENT
+
+        if outcome == 'sword_and_scales':
+            # Grant both Sword and Scales of Michael + Paladin title
+            self.player_title = 'Paladin'
+            from items import load_items, copy_at
+            px, py = self.player.x, self.player.y
+            try:
+                weapons = load_items('weapon')
+                sword = next((w for w in weapons if w.id == 'sword_of_michael'), None)
+                if sword:
+                    sw = copy_at(sword, px, py)
+                    sw.identified = True
+                    self.player.inventory.append(sw)
+                    self.add_message("The Sword of Michael materializes in your hands!", 'success')
+            except Exception:
+                pass
+            try:
+                artifacts = load_items('artifact')
+                scales = next((a for a in artifacts if a.id == 'scales_of_michael'), None)
+                if scales:
+                    sc = copy_at(scales, px, py)
+                    sc.identified = True
+                    self.player.inventory.append(sc)
+                    self.add_message("The Scales of Michael float into your grasp!", 'success')
+            except Exception:
+                pass
+
+        elif outcome == 'scales_granted':
+            from items import load_items, copy_at
+            px, py = self.player.x, self.player.y
+            try:
+                artifacts = load_items('artifact')
+                scales = next((a for a in artifacts if a.id == 'scales_of_michael'), None)
+                if scales:
+                    sc = copy_at(scales, px, py)
+                    sc.identified = True
+                    self.player.inventory.append(sc)
+                    self.add_message("The Scales of Michael float into your grasp!", 'success')
+            except Exception:
+                pass
+
+        elif outcome == 'abaddon_empowered':
+            # Abaddon gets 50% more HP and extra attack
+            self.add_message("A dark power surges into the depths below...", 'danger')
+            # Store flag for when L100 is generated
+            self._abaddon_empowered = True
+
+        elif outcome == 'locusts_strengthened':
+            # Larger locust swarms
+            self.add_message("The buzzing of locusts grows louder in the deep...", 'danger')
+            self._locusts_strengthened = True
+
+    def _judgment_input(self, key: int):
+        """Dismiss the judgment result overlay."""
+        if key in (pygame.K_ESCAPE, pygame.K_RETURN, pygame.K_SPACE):
+            self.state = STATE_PLAYER
+
+    def _draw_judgment(self):
+        """Draw the Altar of the Last Judgment result overlay."""
+        from fantasy_ui import FP, get_font, draw_overlay, draw_dark_panel, draw_header_bar
+
+        draw_overlay(self.screen, 200)
+
+        bw, bh = min(780, GAME_W - 40), 360
+        bx = (GAME_W - bw) // 2
+        by = (WINDOW_H - bh) // 2
+
+        # Gold border for positive, red for negative
+        if self.karma > 0:
+            border = (255, 220, 100)
+        elif self.karma < 0:
+            border = (200, 60, 60)
+        else:
+            border = (140, 140, 160)
+
+        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=border)
+        draw_header_bar(self.screen, (bx, by, bw, 44),
+                        text="THE ALTAR OF THE LAST JUDGMENT",
+                        font=get_font('heading', 20),
+                        text_color=border)
+
+        font = get_font('body', 18)
+        y = by + 60
+
+        # Karma score
+        score_text = f"Karma: {self.karma}"
+        score_surf = font.render(score_text, True, border)
+        self.screen.blit(score_surf, (bx + (bw - score_surf.get_width()) // 2, y))
+        y += 30
+
+        # Narrative text (word-wrapped)
+        max_w = bw - 60
+        for paragraph in self._judgment_text.split('\n'):
+            words = paragraph.split()
+            lines, line = [], []
+            for word in words:
+                test = ' '.join(line + [word])
+                if font.size(test)[0] > max_w:
+                    if line:
+                        lines.append(' '.join(line))
+                    line = [word]
+                else:
+                    line.append(word)
+            if line:
+                lines.append(' '.join(line))
+            for txt_line in lines:
+                col = border if txt_line.isupper() else (210, 200, 180)
+                surf = font.render(txt_line, True, col)
+                self.screen.blit(surf, (bx + 30, y))
+                y += 24
+            y += 6
+
+        # Footer
+        y = by + bh - 35
+        font_sm = get_font('body', 14)
+        footer = font_sm.render("Press ENTER to continue", True, (120, 120, 120))
+        self.screen.blit(footer, (bx + (bw - footer.get_width()) // 2, y))
 
     def _spawn_treasure_item(self, x: int, y: int, tier: int):
         """Place a random item of up to `tier` at (x,y)."""
@@ -4943,6 +7435,7 @@ class Game:
     def _apply_scroll_effect(self, scroll: 'Scroll'):
         from dice import roll
         effect = scroll.effect
+        _scroll_buc = getattr(scroll, 'buc', 'uncursed')
 
         if effect == 'heal':
             amount = roll(scroll.power) if scroll.power else 10
@@ -4965,61 +7458,117 @@ class Game:
             self.add_message("The dungeon layout floods your mind!", 'success')
 
         elif effect == 'identify':
-            # Auto-identify first unknown item in inventory
-            unknown = next(
-                (i for i in self.player.inventory
-                 if hasattr(i, 'identified') and not i.identified
-                    and i.id not in self.player.known_item_ids),
-                None
-            )
-            if unknown:
-                unknown.identified = True
-                self.player.known_item_ids.add(unknown.id)
-                self._propagate_identification(unknown.id)
-                self.add_message(f"The {unknown.unidentified_name} is revealed: {unknown.name}!", 'success')
-                if unknown.lore:
-                    self._lore_subject = unknown
-                    self.state = STATE_LORE
+            if _scroll_buc == 'cursed':
+                self.add_message("The scroll's words dissolve into nonsense.", 'warning')
+            elif _scroll_buc == 'blessed':
+                # Blessed: identify ALL unknown items
+                unknowns = [i for i in self.player.inventory
+                            if hasattr(i, 'identified') and not i.identified
+                            and i.id not in self.player.known_item_ids]
+                if unknowns:
+                    for u in unknowns:
+                        u.identified = True
+                        u.buc_known = True
+                        self.player.known_item_ids.add(u.id)
+                        self._propagate_identification(u.id)
+                    self.add_message(f"Brilliant light reveals all {len(unknowns)} items!", 'success')
+                else:
+                    self.add_message("All your items are already identified.", 'info')
             else:
-                self.add_message("All your items are already identified.", 'info')
+                # Uncursed: identify one item
+                unknown = next(
+                    (i for i in self.player.inventory
+                     if hasattr(i, 'identified') and not i.identified
+                        and i.id not in self.player.known_item_ids),
+                    None
+                )
+                if unknown:
+                    unknown.identified = True
+                    unknown.buc_known = True
+                    self.player.known_item_ids.add(unknown.id)
+                    self._propagate_identification(unknown.id)
+                    self.add_message(f"The {unknown.unidentified_name} is revealed: {unknown.name}!", 'success')
+                    if unknown.lore:
+                        self._lore_subject = unknown
+                        self.state = STATE_LORE
+                else:
+                    self.add_message("All your items are already identified.", 'info')
 
         elif effect == 'enchant_weapon':
-            if self.player.weapon:
-                self.player.weapon.enchant_bonus += 1
-                self.add_message(
-                    f"Your {self.player.weapon.name} glows -- enchant +{self.player.weapon.enchant_bonus}!",
-                    'success'
-                )
+            from items import ENCHANT_CAP
+            w = self.player.weapon or self.player.ranged_weapon
+            if w:
+                cap = ENCHANT_CAP.get('weapon', 5)
+                delta = 2 if _scroll_buc == 'blessed' else (-1 if _scroll_buc == 'cursed' else 1)
+                old_val = w.enchant_bonus
+                w.enchant_bonus = max(-3, min(cap, w.enchant_bonus + delta))
+                actual = w.enchant_bonus - old_val
+                if actual > 0:
+                    self.add_message(
+                        f"Your {w.name} glows -- enchant +{w.enchant_bonus}!",
+                        'success'
+                    )
+                elif actual < 0:
+                    self.add_message(
+                        f"Your {w.name} dims -- enchant {w.enchant_bonus:+d}!",
+                        'warning'
+                    )
+                else:
+                    self.add_message(
+                        f"Your {w.name} shudders but can hold no more enchantment.",
+                        'info'
+                    )
             else:
                 self.add_message("You have no weapon to enchant.", 'info')
 
         elif effect == 'remove_curse':
-            from status_effects import DEBUFFS
-            removed = [e for e in list(self.player.status_effects) if e in DEBUFFS]
-            for e in removed:
-                del self.player.status_effects[e]
-            # Also remove the cursed flag from any equipped items
-            cursed_items = []
-            all_equipped = []
-            if self.player.weapon:
-                all_equipped.append(self.player.weapon)
-            all_equipped.extend(s for s in self.player.armor_slots if s)
-            if self.player.shield:
-                all_equipped.append(self.player.shield)
-            all_equipped.extend(s for s in getattr(self.player, 'accessory_slots', []) if s)
-            for eq in all_equipped:
-                if getattr(eq, 'cursed', False):
-                    eq.cursed = False
-                    cursed_items.append(eq.name)
-            if removed or cursed_items:
-                parts = []
-                if removed:
-                    parts.append(f"status effects: {', '.join(removed)}")
-                if cursed_items:
-                    parts.append(f"cursed items: {', '.join(cursed_items)}")
-                self.add_message(f"A cleansing light removes {' and '.join(parts)}.", 'success')
+            if _scroll_buc == 'cursed':
+                self.add_message("The scroll's power fizzles. Nothing happens.", 'warning')
             else:
-                self.add_message("You feel purified (no curses to remove).", 'info')
+                from status_effects import DEBUFFS
+                removed = [e for e in list(self.player.status_effects) if e in DEBUFFS]
+                for e in removed:
+                    del self.player.status_effects[e]
+                cursed_items = []
+                if _scroll_buc == 'blessed':
+                    # Blessed: uncurse ALL inventory items too
+                    all_items = list(self.player.inventory)
+                    if self.player.weapon:
+                        all_items.append(self.player.weapon)
+                    if self.player.ranged_weapon:
+                        all_items.append(self.player.ranged_weapon)
+                    all_items.extend(s for s in self.player.armor_slots if s)
+                    if self.player.shield:
+                        all_items.append(self.player.shield)
+                    all_items.extend(s for s in getattr(self.player, 'accessory_slots', []) if s)
+                    amulet = getattr(self.player, 'amulet_slot', None)
+                    if amulet:
+                        all_items.append(amulet)
+                else:
+                    # Uncursed: equipped items only
+                    all_items = []
+                    if self.player.weapon:
+                        all_items.append(self.player.weapon)
+                    if self.player.ranged_weapon:
+                        all_items.append(self.player.ranged_weapon)
+                    all_items.extend(s for s in self.player.armor_slots if s)
+                    if self.player.shield:
+                        all_items.append(self.player.shield)
+                    all_items.extend(s for s in getattr(self.player, 'accessory_slots', []) if s)
+                for eq in all_items:
+                    if getattr(eq, 'buc', 'uncursed') == 'cursed':
+                        eq.buc = 'uncursed'
+                        eq.buc_known = True
+                        cursed_items.append(eq.name)
+                if removed or cursed_items:
+                    parts = []
+                    if removed:
+                        parts.append(f"status effects: {', '.join(removed)}")
+                    if cursed_items:
+                        parts.append(f"cursed items: {', '.join(cursed_items)}")
+                    self.add_message(f"A cleansing light removes {' and '.join(parts)}.", 'success')
+                else:
+                    self.add_message("You feel purified (no curses to remove).", 'info')
 
         elif effect == 'confuse_monsters':
             count = 0
@@ -5048,38 +7597,67 @@ class Game:
             self.add_message(f"Energy surges through you -- hasted for {duration} turns!", 'success')
 
         elif effect == 'enchant_armor':
-            # Find the best-slotted armor piece to enchant
-            equipped = [s for s in self.player.armor_slots if s is not None]
+            from items import ENCHANT_CAP, ARMOR_SLOTS
+            equipped = [(s, ARMOR_SLOTS[i]) for i, s in enumerate(self.player.armor_slots) if s is not None]
             if equipped:
-                target = equipped[0]
-                target.enchant_bonus = getattr(target, 'enchant_bonus', 0) + 1
-                self.add_message(
-                    f"Your {target.name} shines -- enchant +{target.enchant_bonus}!", 'success'
-                )
+                target, slot_name = equipped[0]
+                cap = ENCHANT_CAP.get(slot_name, 1)
+                delta = 2 if _scroll_buc == 'blessed' else (-1 if _scroll_buc == 'cursed' else 1)
+                old_val = getattr(target, 'enchant_bonus', 0)
+                target.enchant_bonus = max(-3, min(cap, old_val + delta))
+                actual = target.enchant_bonus - old_val
+                if actual > 0:
+                    self.add_message(
+                        f"Your {target.name} shines -- enchant +{target.enchant_bonus}!", 'success'
+                    )
+                elif actual < 0:
+                    self.add_message(
+                        f"Your {target.name} tarnishes -- enchant {target.enchant_bonus:+d}!", 'warning'
+                    )
+                else:
+                    self.add_message(
+                        f"Your {target.name} shudders but can hold no more enchantment.", 'info'
+                    )
             else:
                 self.add_message("You wear no armor to enchant.", 'info')
 
         elif effect == 'enchant_item':
-            # Enchant any single equipped item -- apply highest bonus to most important slot
+            from items import ENCHANT_CAP, ARMOR_SLOTS
             candidates = []
             if self.player.weapon:
-                candidates.append(self.player.weapon)
-            for s in self.player.armor_slots:
+                candidates.append((self.player.weapon, 'weapon'))
+            if self.player.ranged_weapon:
+                candidates.append((self.player.ranged_weapon, 'weapon'))
+            for i, s in enumerate(self.player.armor_slots):
                 if s:
-                    candidates.append(s)
+                    candidates.append((s, ARMOR_SLOTS[i]))
             if self.player.shield:
-                candidates.append(self.player.shield)
+                candidates.append((self.player.shield, 'shield'))
             for s in getattr(self.player, 'accessory_slots', []):
                 if s:
-                    candidates.append(s)
+                    candidates.append((s, 'accessory'))
             if candidates:
-                # Auto-pick: prefer weapon if available, otherwise first armor
-                target = candidates[0]
-                target.enchant_bonus = getattr(target, 'enchant_bonus', 0) + 1
-                self.add_message(
-                    f"A golden light infuses your {target.name} -- enchant +{target.enchant_bonus}!",
-                    'success'
-                )
+                target, slot_key = candidates[0]
+                cap = ENCHANT_CAP.get(slot_key, 1)
+                delta = 2 if _scroll_buc == 'blessed' else (-1 if _scroll_buc == 'cursed' else 1)
+                old_val = getattr(target, 'enchant_bonus', 0)
+                target.enchant_bonus = max(-3, min(cap, old_val + delta))
+                actual = target.enchant_bonus - old_val
+                if actual > 0:
+                    self.add_message(
+                        f"A golden light infuses your {target.name} -- enchant +{target.enchant_bonus}!",
+                        'success'
+                    )
+                elif actual < 0:
+                    self.add_message(
+                        f"A dark energy corrupts your {target.name} -- enchant {target.enchant_bonus:+d}!",
+                        'warning'
+                    )
+                else:
+                    self.add_message(
+                        f"Your {target.name} shudders but can hold no more enchantment.",
+                        'info'
+                    )
             else:
                 self.add_message("You have no equipped items to enchant.", 'info')
 
@@ -5189,10 +7767,13 @@ class Game:
                and i.id not in self.player.known_item_ids
         ]
         # Corpses on the current tile that haven't been lore-identified yet
+        _lore_known = getattr(self.player, 'lore_known_monster_ids', set())
         corpses = [
             i for i in self.ground_items
             if i.x == self.player.x and i.y == self.player.y
                and isinstance(i, Corpse)
+               and not i.lore_identified
+               and getattr(i, 'monster_id', '') not in _lore_known
         ]
         # Store as (item, is_ground, is_corpse) tuples
         self.identify_menu_items = (
@@ -5236,12 +7817,19 @@ class Game:
             self.state = STATE_PLAYER
             if result.success:
                 item.identified = True
+                item.buc_known = True  # BUC revealed on identification
                 self.player.known_item_ids.add(item.id)
                 # Propagate to ALL items: inventory, ground, and every stored level
                 self._propagate_identification(item.id)
                 self.add_message(
                     f"The {display} is revealed: {item.name}!", 'success'
                 )
+                # Show BUC status if non-uncursed
+                _buc = getattr(item, 'buc', 'uncursed')
+                if _buc == 'blessed':
+                    self.add_message("It radiates a holy aura.", 'success')
+                elif _buc == 'cursed':
+                    self.add_message("A dark aura clings to it.", 'warning')
                 _qs_id = getattr(self, 'quirk_system', None)
                 if _qs_id:
                     _qs_id.on_item_identified(item.id)
@@ -5330,8 +7918,7 @@ class Game:
 
         Type known  (item.id in known_item_ids OR item.identified) -> item.name
         Type unknown                                                -> item.unidentified_name
-        Modifier info (+N, {C}) is NEVER shown here -- only the sidebar
-        shows modifiers, and only when item.identified (instance examined).
+        BUC tag shown when buc_known=True: {blessed} or {cursed}. Uncursed = no tag.
         """
         if not hasattr(item, 'identified'):
             base = self._fix_name_case(item.name)
@@ -5339,6 +7926,11 @@ class Game:
             base = self._fix_name_case(item.name)
         else:
             base = self._fix_name_case(getattr(item, 'unidentified_name', item.name))
+        # BUC prefix when known
+        buc = getattr(item, 'buc', 'uncursed')
+        buc_known = getattr(item, 'buc_known', False)
+        if buc_known and buc != 'uncursed':
+            base = f"{{{buc}}} {base}"
         count = getattr(item, 'count', 1)
         return f"{base} x{count}" if count > 1 else base
 
@@ -5348,7 +7940,7 @@ class Game:
 
     def _open_targeting(self):
         """Enter targeting mode for ranged attacks (f key)."""
-        weapon = self.player.weapon
+        weapon = self.player.ranged_weapon
         if not weapon or not weapon.requires_ammo:
             self.add_message("You have no ranged weapon equipped.", 'warning')
             return
@@ -5434,16 +8026,27 @@ class Game:
                     return  # don't move cursor beyond reach
                 if nx == px and ny == py:
                     return  # can't target own tile
+            # Throw targeting: clamp to throw range
+            if self._throw_targeting:
+                px, py = self.player.x, self.player.y
+                if max(abs(nx - px), abs(ny - py)) > self._throw_reach:
+                    return
+                if nx == px and ny == py:
+                    return
             self.target_cursor_x = nx
             self.target_cursor_y = ny
             return
 
-        # ENTER / SPACE / f / a -- confirm target
+        # ENTER / SPACE / f / a / y -- confirm target
         confirm_keys = (pygame.K_RETURN, pygame.K_KP_ENTER, pygame.K_SPACE, pygame.K_f)
         if self._melee_targeting:
             confirm_keys = confirm_keys + (pygame.K_a,)
+        if self._throw_targeting:
+            confirm_keys = confirm_keys + (pygame.K_y,)
         if key in confirm_keys:
-            if self._melee_targeting:
+            if self._throw_targeting:
+                self._confirm_throw_target()
+            elif self._melee_targeting:
                 self._confirm_melee_target()
             else:
                 self._confirm_ranged_target()
@@ -5514,13 +8117,54 @@ class Game:
             self._advance_turn()
             return
 
-        # 4. Empty tile -- swing at air (costs a turn; may reveal invisible monsters)
+        # 4. Dig pit -- shovel equipped, targeting walkable floor with no pit
+        weapon = self.player.weapon
+        if weapon and getattr(weapon, 'can_dig', False):
+            tile = self.dungeon.tiles[cy][cx]
+            from dungeon import FLOOR
+            if tile == FLOOR and (cx, cy) not in self.dungeon.pits:
+                self._dig_pit(cx, cy)
+                return
+            elif (cx, cy) in self.dungeon.pits:
+                self.add_message("There's already a pit there.", 'info')
+                return
+
+        # 5. Empty tile -- swing at air (costs a turn; may reveal invisible monsters)
         self.add_message("You swing at the empty space!", 'info')
         self._advance_turn()
 
+    def _dig_pit(self, x: int, y: int):
+        """Dig a pit at (x, y). Costs 30 SP and 3 turns."""
+        sp_cost = 30
+        if self.player.sp < sp_cost:
+            self.add_message("You're too exhausted to dig! (need 30 SP)", 'warning')
+            return
+        self.player.sp -= sp_cost
+        self.dungeon.pits.add((x, y))
+        self.add_message("You dig a pit in the floor!", 'success')
+        _snd.play('trap')
+        # Costs 3 turns (advancing turn 3 times — monsters get 3 actions)
+        for _ in range(3):
+            self._advance_turn()
+            if self.state == STATE_DEAD:
+                return
+
+    def _player_fall_in_pit(self, x: int, y: int):
+        """Player walks onto a pit and falls in. Applies in_pit effect."""
+        if self.player.has_effect('levitating'):
+            self.add_message("You float over a pit.", 'info')
+            return
+        if self.player.has_effect('in_pit'):
+            return  # already in a pit
+        from dice import roll as _dice_roll
+        dmg = _dice_roll('1d4')
+        actual = self.player.take_damage(dmg, 'physical')
+        self.player.add_effect('in_pit', 1)  # duration 1 = cleared on next move
+        self.add_message(f"You fall into a pit! ({actual} damage)", 'danger')
+
     def _fire_ranged(self, monster):
         """Consume one ammo and launch the math chain quiz for a ranged shot."""
-        weapon = self.player.weapon
+        weapon = self.player.ranged_weapon
         ammo_type = weapon.requires_ammo
 
         # Consume one ammo item from inventory
@@ -5611,6 +8255,30 @@ class Game:
                 self.add_message(
                     f"You swing wildly at the {monster.name} and miss!", 'warning'
                 )
+            elif (chain >= 1 and monster.kind == 'fenrir_wolf' and monster.alive
+                  and any(getattr(i, 'id', '') == 'vidars_sandal'
+                          for i in self.player.inventory)):
+                # Vidar's Sandal instant kill!
+                monster.hp = 0
+                monster.alive = False
+                _snd.play('monster_hit')
+                self.add_message(
+                    "You plant Vidar's Sandal against Fenrir's lower jaw!", 'combat')
+                self.add_message(
+                    "With impossible strength, you wrench the great wolf's mouth apart!", 'combat')
+                self.add_message(
+                    "FENRIR, THE WORLD-WOLF, IS TORN ASUNDER!", 'success')
+                self.level_mgr.monsters_killed += 1
+                self._drop_treasure(monster)
+                self.ground_items.append(self._make_corpse(monster))
+                story_key = self._BOSS_STORY_KEYS.get(monster.kind)
+                if story_key:
+                    self._show_story_popup(story_key, STATE_PLAYER)
+                _qs_kill = getattr(self, 'quirk_system', None)
+                if _qs_kill:
+                    _qs_kill.on_monster_killed(monster.kind)
+                self._advance_turn()
+                return
             else:
                 if damage > 0:
                     _snd.play('monster_hit')
@@ -5692,7 +8360,9 @@ class Game:
         if self.death_pursues and self.death_monster is not None:
             dm = self.death_monster
             all_m = self.monsters + [dm]
-            did_attack = dm.take_turn(self.player, self.dungeon, all_m)
+            _pet_occ_d = {(p.x, p.y) for p in self.pets if p.alive}
+            did_attack = dm.take_turn(self.player, self.dungeon, all_m,
+                                      extra_occupied=_pet_occ_d)
             if did_attack:
                 dmg, msg = dm.attack(self.player)
                 self.add_message(msg, 'danger')
@@ -5703,13 +8373,67 @@ class Game:
                     self.add_message("You have died! Press ESC to quit.", 'danger')
                     return
 
+        # --- Ariadne's Thread: neutralize wall-phasing monsters ---
+        has_thread = any(getattr(i, 'id', '') == 'ariadnes_thread'
+                         for i in self.player.inventory)
+        for m in self.monsters:
+            if getattr(m, 'can_phase_walls', False):
+                if has_thread:
+                    m.can_phase_walls = False
+                    m.speed = min(m.speed, 6)  # slowed by the Thread's power
+                    if m.ai_pattern == 'hit_and_run':
+                        m.ai_pattern = 'aggressive'  # can't hide anymore
+
         for m in self.monsters:
             if not m.alive:
+                continue
+            # Allied monsters (angels): handle separately
+            if getattr(m, 'is_allied', False):
+                m.take_turn(self.player, self.dungeon, self.monsters,
+                            extra_occupied={(_p.x, _p.y) for _p in self.pets if _p.alive})
+                _ann = getattr(m, '_annihilate_target', None)
+                if _ann and _ann.alive:
+                    _ann.alive = False
+                    _ann.hp = 0
+                    m.alive = False
+                    m.hp = 0
+                    if (m.x, m.y) in self.visible or (_ann.x, _ann.y) in self.visible:
+                        self.add_message(
+                            "An angel meets a locust in a blaze of holy fire! Both are consumed!",
+                            'success')
                 continue
             # Track monsters the player has seen (for encyclopedia bestiary)
             if (m.x, m.y) in self.visible:
                 self.player.known_monster_ids.add(m.kind)
-            did_attack = m.take_turn(self.player, self.dungeon, self.monsters)
+            _pet_occ = {(p.x, p.y) for p in self.pets if p.alive}
+            _was_in_pit = m.has_effect('stuck_in_pit')
+            _pos_before = (m.x, m.y)
+            did_attack = m.take_turn(self.player, self.dungeon, self.monsters,
+                                     extra_occupied=_pet_occ)
+            # Abaddon locust swarm spawning
+            if getattr(m, '_wants_locust_spawn', False) and m.kind == 'abaddon_destroyer':
+                m._wants_locust_spawn = False
+                self._spawn_abaddon_locusts(m)
+            # Fenrir rage escalation message
+            rage_msg = getattr(m, '_rage_message', '')
+            if rage_msg and (m.x, m.y) in self.visible:
+                self.add_message(rage_msg, 'danger')
+            # Check if monster moved onto a dug pit
+            if (not _was_in_pit and not m.has_effect('stuck_in_pit')
+                    and not m.has_effect('levitating')
+                    and (m.x, m.y) != _pos_before
+                    and (m.x, m.y) in self.dungeon.pits):
+                from dice import roll as _pit_roll
+                pit_dmg = _pit_roll('1d4')
+                m.hp -= pit_dmg
+                if m.hp <= 0:
+                    m.alive = False
+                m.status_effects['stuck_in_pit'] = random.randint(3, 4)
+                if (m.x, m.y) in self.visible:
+                    self.add_message(f"The {m.name} falls into a pit!", 'info')
+                if not m.alive:
+                    self._on_monster_killed(m)
+                continue  # can't attack this turn — just fell
             if did_attack:
                 # Displacement: 30% miss chance
                 if self.player.has_effect('displacement') and random.random() < 0.30:
@@ -5719,6 +8443,13 @@ class Game:
                 _effects_before = set(self.player.status_effects.keys())
                 dmg, msg = m.attack(self.player)
                 self.add_message(msg, 'danger')
+
+                # SP drain (locusts, famine demon)
+                _sp_drain = getattr(m, 'sp_drain', 0)
+                if _sp_drain > 0 and dmg > 0:
+                    self.player.sp = max(0, self.player.sp - _sp_drain)
+                    self.add_message(
+                        f"The {m.name}'s attack drains your stamina! (-{_sp_drain} SP)", 'danger')
 
                 # Fire shield: reflect melee damage back
                 if self.player.has_effect('fire_shield') and dmg > 0:
@@ -5786,6 +8517,70 @@ class Game:
                     self.add_message("You have died! Press ESC to quit.", 'danger')
                     return
 
+    def _do_pet_turns(self):
+        """Process pet AI, XP, regen, cooldowns, and monster attacks on pets."""
+        if not self.pets:
+            return
+
+        # Compute quiz accuracy for pet damage scaling
+        total_q = self.correct_answers + self.wrong_answers
+        quiz_acc = self.correct_answers / max(1, total_q)
+
+        for pet in self.pets:
+            if not pet.alive:
+                continue
+
+            # Pet AI turn
+            result = pet.take_turn(self.player, self.dungeon, self.monsters, self.pets, self.ground_items)
+            if result:
+                action, target = result
+                if action == 'special' and target.alive:
+                    dmg = pet.get_special_damage(quiz_acc)
+                    actual = target.take_damage(dmg)
+                    pet.use_special()
+                    sp = pet.species
+                    self.add_message(
+                        f"{pet.name} uses {sp['special_name']} on {target.name}! ({actual} damage)",
+                        'combat'
+                    )
+                    # Apply special status effect
+                    if random.random() < sp['special_status_chance'] and target.alive:
+                        target.status_effects[sp['special_status']] = \
+                            max(target.status_effects.get(sp['special_status'], 0), 4)
+                    if not target.alive:
+                        self._on_monster_killed(target)
+                elif action == 'attack' and target.alive:
+                    dmg = pet.get_attack_damage(quiz_acc)
+                    actual = target.take_damage(dmg)
+                    self.add_message(
+                        f"{pet.name} attacks {target.name}! ({actual} damage)", 'combat'
+                    )
+                    if not target.alive:
+                        self._on_monster_killed(target)
+
+            # XP, regen, cooldown
+            msgs = pet.gain_xp(1)
+            for msg in msgs:
+                self.add_message(msg, 'success')
+            pet.tick_regen()
+            pet.tick_cooldown()
+
+        # Monsters attack adjacent pets (each monster can swipe at one pet per turn)
+        for m in self.monsters:
+            if not m.alive:
+                continue
+            for pet in self.pets:
+                if not pet.alive:
+                    continue
+                if max(abs(m.x - pet.x), abs(m.y - pet.y)) <= 1:
+                    # Monster swipes at pet — use a fraction of its normal damage
+                    from dice import roll as _dice_roll
+                    pet_dmg = max(1, _dice_roll(m.attacks[0]['damage']) // 2) if m.attacks else 1
+                    pet.take_damage(pet_dmg)
+                    if not pet.alive:
+                        self.add_message(f"{pet.name} has been slain by {m.name}!", 'danger')
+                    break  # one pet swipe per monster per turn
+
     # ------------------------------------------------------------------
     # Update
     # ------------------------------------------------------------------
@@ -5831,6 +8626,17 @@ class Game:
         cam_x, cam_y = self._camera()
         self.screen.fill((0, 0, 0))
 
+        # Set up renderer view mode each frame
+        if self.zoom_mode == 'close':
+            self.renderer.set_close_up(
+                self.player.x, self.player.y,
+                self.dungeon.width, self.dungeon.height,
+                GAME_W, GAME_H)
+        else:
+            self.renderer.set_dungeon(
+                self.dungeon.width, self.dungeon.height,
+                GAME_W, GAME_H)
+
         game_clip = pygame.Rect(0, 0, GAME_W, GAME_H)
         self.screen.set_clip(game_clip)
         self.renderer.draw_dungeon(self.dungeon, self.visible, cam_x, cam_y)
@@ -5839,6 +8645,10 @@ class Game:
         for m in self.monsters:
             if m.alive:
                 self.renderer.draw_entity(m.x, m.y, m.color, cam_x, cam_y, self.visible, mid=m.kind)
+        # Pet companions: draw with species sprite or color fallback
+        for pet in self.pets:
+            if pet.alive and (pet.x, pet.y) in self.visible:
+                self.renderer.draw_entity(pet.x, pet.y, pet.color, cam_x, cam_y, self.visible, mid=pet.name.lower())
         # Telepathy: render unseen monsters as dim dots
         if self.player.has_effect('telepathy'):
             for m in self.monsters:
@@ -5898,10 +8708,18 @@ class Game:
             self._draw_eat_menu()
         elif self.state == STATE_QUAFF_MENU:
             self._draw_quaff_menu()
+        elif self.state == STATE_THROW_MENU:
+            self._draw_throw_menu()
         elif self.state == STATE_POWER_MENU:
             self._draw_power_menu()
         elif self.state == STATE_CONFIRM_EXIT:
             self._draw_confirm_exit()
+        elif self.state == STATE_EXIT_QUEST:
+            self._draw_exit_quest()
+        elif self.state == STATE_ABANDON_QUEST:
+            self._draw_abandon_quest()
+        elif self.state == STATE_CHICKEN:
+            self._draw_chicken()
         elif self.state == STATE_VICTORY:
             self._draw_victory_screen()
         elif self.state == STATE_DEAD:
@@ -5914,6 +8732,10 @@ class Game:
             self._draw_hint_screen()
         elif self.state == STATE_HACK_REALITY:
             self._draw_hack_reality_screen()
+        elif self.state == STATE_XYZZY_INPUT:
+            self._draw_xyzzy_input()
+        elif self.state == STATE_XYZZY_CONFIRM:
+            self._draw_xyzzy_confirm()
         elif self.state == STATE_QUIRKS:
             self._draw_quirks_screen()
         elif self.state == STATE_CHARACTER_SHEET:
@@ -5932,6 +8754,10 @@ class Game:
             self._draw_mystery_approach()
         elif self.state == STATE_SHOP:
             self._draw_shop()
+        elif self.state == STATE_NPC_ENCOUNTER:
+            self._draw_npc_encounter()
+        elif self.state == STATE_JUDGMENT:
+            self._draw_judgment()
 
         pygame.display.flip()
 
@@ -5943,9 +8769,11 @@ class Game:
     # ------------------------------------------------------------------
 
     def _draw_targeting(self, cam_x: int, cam_y: int):
-        """Draw targeting overlay for ranged or melee targeting."""
+        """Draw targeting overlay for ranged, melee, or throw targeting."""
         if self._melee_targeting:
             self._draw_melee_targeting(cam_x, cam_y)
+        elif self._throw_targeting:
+            self._draw_throw_targeting(cam_x, cam_y)
         else:
             self._draw_ranged_targeting(cam_x, cam_y)
 
@@ -5991,6 +8819,91 @@ class Game:
             cur_color = (80, 255, 80) if has_target else (255, 220, 60)
             pygame.draw.rect(self.screen, cur_color, (scr_cx, scr_cy, T, T), 2)
 
+    def _draw_throw_targeting(self, cam_x: int, cam_y: int):
+        """Draw trajectory arc and cursor for throw targeting."""
+        from combat import _line_of_sight
+        T   = self.renderer.map_tile_size
+        w2s = self.renderer.world_to_screen
+        px, py = self.player.x, self.player.y
+        cx, cy = self.target_cursor_x, self.target_cursor_y
+
+        reach = self._throw_reach
+        has_los = _line_of_sight(px, py, cx, cy, self.dungeon)
+        in_range = max(abs(cx - px), abs(cy - py)) <= reach
+        target_monster = next(
+            (m for m in self.monsters if m.alive and m.x == cx and m.y == cy), None
+        )
+        # Check if a monster blocks the path before the cursor
+        blocker = self._find_first_monster_in_path(px, py, cx, cy)
+        will_hit_blocker = blocker is not None and (blocker.x != cx or blocker.y != cy)
+        valid = has_los and in_range
+
+        # Draw trajectory dots
+        traj_surf = pygame.Surface((T, T), pygame.SRCALPHA)
+        dot_color = (180, 80, 255, 180) if valid else (200, 80, 80, 160)
+        pygame.draw.circle(traj_surf, dot_color, (T // 2, T // 2), max(2, T // 8))
+
+        x0, y0, x1, y1 = px, py, cx, cy
+        dx, dy = abs(x1 - x0), abs(y1 - y0)
+        sx = 1 if x1 > x0 else -1
+        sy = 1 if y1 > y0 else -1
+        err = dx - dy
+        tx, ty = x0, y0
+        while True:
+            if (tx, ty) != (x0, y0) and (tx, ty) != (x1, y1):
+                scr_x, scr_y = w2s(tx, ty)
+                if 0 <= scr_x < GAME_W and 0 <= scr_y < GAME_H:
+                    self.screen.blit(traj_surf, (scr_x, scr_y))
+            if tx == x1 and ty == y1:
+                break
+            e2 = 2 * err
+            if e2 > -dy:
+                err -= dy
+                tx += sx
+            if e2 < dx:
+                err += dx
+                ty += sy
+
+        # Highlight candidates
+        for m in self._target_candidates:
+            scr_x, scr_y = w2s(m.x, m.y)
+            if 0 <= scr_x < GAME_W and 0 <= scr_y < GAME_H:
+                hl = pygame.Surface((T, T), pygame.SRCALPHA)
+                hl.fill((180, 80, 255, 60))
+                self.screen.blit(hl, (scr_x, scr_y))
+                pygame.draw.rect(self.screen, (180, 80, 255), (scr_x, scr_y, T, T), 1)
+
+        # Cursor
+        scr_cx, scr_cy = w2s(cx, cy)
+        if 0 <= scr_cx < GAME_W and 0 <= scr_cy < GAME_H:
+            cur_color = (180, 80, 255) if valid and target_monster else (255, 80, 80)
+            pygame.draw.rect(self.screen, cur_color, (scr_cx, scr_cy, T, T), 2)
+
+        # HUD label
+        item_name = self._throw_potion.name if self._throw_potion else "item"
+        if will_hit_blocker:
+            label = f"{blocker.name} blocks the path! {item_name} will hit it instead."
+            label_color = (255, 200, 60)
+        elif valid and target_monster:
+            label = f"THROW {item_name} at {target_monster.name}  [ENTER=throw  TAB=next  ESC=cancel]"
+            label_color = (180, 80, 255)
+        elif valid and not target_monster:
+            label = f"THROW {item_name} at empty tile  [ENTER=throw  ESC=cancel]"
+            label_color = (200, 200, 200)
+        elif not in_range:
+            label = f"Out of throw range ({reach} tiles)  [ESC=cancel]"
+            label_color = (255, 160, 40)
+        else:
+            label = f"No line of sight  [ESC=cancel]"
+            label_color = (255, 80, 80)
+
+        label_surf = self.font_sm.render(label, True, label_color)
+        label_bg = pygame.Surface((label_surf.get_width() + 16, label_surf.get_height() + 8),
+                                  pygame.SRCALPHA)
+        label_bg.fill((0, 0, 0, 180))
+        self.screen.blit(label_bg, (8, GAME_H - label_surf.get_height() - 16))
+        self.screen.blit(label_surf, (16, GAME_H - label_surf.get_height() - 12))
+
     def _draw_ranged_targeting(self, cam_x: int, cam_y: int):
         """Draw trajectory line and cursor highlight for ranged targeting."""
         from combat import _line_of_sight
@@ -6004,7 +8917,7 @@ class Game:
         target_monster = next(
             (m for m in self.monsters if m.alive and m.x == cx and m.y == cy), None
         )
-        weapon = self.player.weapon
+        weapon = self.player.ranged_weapon
         in_reach = weapon and (max(abs(cx - px), abs(cy - py)) <= weapon.reach)
         valid_shot = has_los and in_reach and target_monster is not None
 
@@ -6360,7 +9273,9 @@ class Game:
         """Draw monster HP bar + chain damage preview inside the quiz modal."""
         from combat import _damage_multiplier
         monster = self.combat_target
-        weapon  = self.player.weapon
+        # Use ranged weapon for damage preview if this is a ranged attack
+        is_ranged_attack = getattr(self, 'quiz_title', '').startswith('FIRE ')
+        weapon = self.player.ranged_weapon if is_ranged_attack else self.player.weapon
 
         # Separator
         pygame.draw.line(self.screen, accent,
@@ -6462,10 +9377,11 @@ class Game:
                         font=self.font_md, text_color=FP.GOLD_BRIGHT)
 
         p = self.player
-        weapon_name = self._display_name(p.weapon) if p.weapon else 'none'
+        melee_name = self._display_name(p.weapon) if p.weapon else 'none'
+        ranged_name = self._display_name(p.ranged_weapon) if p.ranged_weapon else 'none'
         self.screen.blit(
             self.font_sm.render(
-                f"Weapon: {weapon_name}   AC: {p.get_ac()}",
+                f"Melee: {melee_name}  Ranged: {ranged_name}  AC: {p.get_ac()}",
                 True, FP.BODY_TEXT
             ),
             (bx + 20, by + 48)
@@ -6551,7 +9467,8 @@ class Game:
                     self.font_md.render(self._fit_text(self._display_name(item), self.font_md, bw - 70 - 20), True, name_col),
                     (bx + 70, iy + 12)
                 )
-                detail_text = f"[{slot_name}]"
+                display_slot = slot_name.replace('_', ' ')
+                detail_text = f"[{display_slot}]"
                 if cursed:
                     detail_text += "  CURSED -- cannot remove"
                 detail_col = FP.DANGER_TEXT if cursed else FP.FADED_TEXT
@@ -7219,6 +10136,68 @@ class Game:
             (bx + (bw - self.font_sm.size("1-9: quaff  |  ESC: cancel")[0]) // 2, hint_y)
         )
 
+    def _draw_throw_menu(self):
+        draw_overlay(self.screen, 160)
+        items = getattr(self, 'throw_menu_items', [])
+        bw = min(760, GAME_W - 40)
+        bh = min(90 + len(items) * 66 + 70, WINDOW_H - 40)
+        bx = (GAME_W - bw) // 2
+        by = (WINDOW_H - bh) // 2
+        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.WARNING_TEXT)
+        draw_header_bar(self.screen, (bx, by, bw, 44), text="THROW",
+                        font=self.font_md, text_color=FP.GOLD_BRIGHT)
+        rng = self._get_throw_range()
+        sub = self.font_sm.render(
+            f"Select an item to throw  (range: {rng} tiles)",
+            True, (200, 150, 80)
+        )
+        self.screen.blit(sub, (bx + (bw - sub.get_width()) // 2, by + 50))
+        draw_divider(self.screen, bx + 10, by + 72, bw - 20)
+        max_detail_w = bw - 100 - 20
+        for i, item in enumerate(items[:9]):
+            iy = by + 82 + i * 66
+            pygame.draw.rect(
+                self.screen,
+                FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
+                (bx + 10, iy, bw - 20, 60), border_radius=6
+            )
+            pygame.draw.rect(self.screen, tuple(item.color),
+                             (bx + 18, iy + 18, 24, 24), border_radius=4)
+            self.screen.blit(
+                self.font_md.render(f"[{i+1}]", True, FP.GOLD_BRIGHT),
+                (bx + 50, iy + 14)
+            )
+            self.screen.blit(
+                self.font_md.render(self._fit_text(self._display_name(item), self.font_md, bw - 100 - 20), True, FP.BODY_TEXT),
+                (bx + 100, iy + 14)
+            )
+            # Detail line depends on item type
+            if isinstance(item, Weapon):
+                dmg = self._get_weapon_throw_damage(item)
+                brk = int(self._get_weapon_break_chance(item) * 100)
+                detail_text = f"{dmg} dmg  |  {brk}% break chance"
+                detail_col = FP.FADED_TEXT
+            elif isinstance(item, Potion):
+                known = item.identified or item.id in self.player.known_item_ids
+                if known:
+                    eff = item.effect.replace('_', ' ')
+                    dur = f"  ({item.duration} turns)" if item.duration else ""
+                    detail_text = f"{eff}{dur}"
+                else:
+                    detail_text = "unknown effect"
+                detail_col = FP.FADED_TEXT
+            else:
+                detail_text = ""
+                detail_col = FP.FADED_TEXT
+            detail_surf = self.font_sm.render(self._fit_text(detail_text, self.font_sm, max_detail_w), True, detail_col)
+            self.screen.blit(detail_surf, (bx + 100, iy + 40))
+        hint_y = by + bh - 34
+        draw_divider(self.screen, bx + 10, hint_y - 8, bw - 20)
+        self.screen.blit(
+            self.font_sm.render("1-9: select  |  ESC: cancel", True, FP.HINT_TEXT),
+            (bx + (bw - self.font_sm.size("1-9: select  |  ESC: cancel")[0]) // 2, hint_y)
+        )
+
     # ------------------------------------------------------------------
     # Power menu  (V key)
     # ------------------------------------------------------------------
@@ -7240,6 +10219,26 @@ class Game:
             else:
                 cd = power_cds.get(pid, 0)
                 powers.append((pid, pdef, 0, cd))
+
+        # Gleipnir grants "Bind Odinkiller" when carried
+        if any(getattr(i, 'id', '') == 'gleipnir' for i in pl.inventory):
+            _bind_def = {
+                'label': 'Bind Odinkiller',
+                'desc': 'Reset Fenrir\'s rage and paralyze him briefly. Costs 1 permanent stat point.',
+                'cooldown': 0, 'uses': 0,
+            }
+            powers.append(('bind_odinkiller', _bind_def, 0, 0))
+
+        # Scales of Michael grants "Summon the Heavenly Host"
+        if (any(getattr(i, 'id', '') == 'scales_of_michael' for i in pl.inventory)
+                and not getattr(self, 'heavenly_host_active', False)):
+            _scales_def = {
+                'label': 'Summon the Heavenly Host',
+                'desc': 'While active, for every locust Abaddon summons, an angel descends to oppose it.',
+                'cooldown': 0, 'uses': 1,
+            }
+            powers.append(('summon_heavenly_host', _scales_def, 1, 0))
+
         if not powers:
             self.add_message("You have no active powers. Earn quirks to unlock them!", 'info')
             return
@@ -7436,6 +10435,43 @@ class Game:
             pl.add_effect('phasing', 8)
             self.add_message(f"{label}: You transcend the physical -- Levitate + Invisible + Phase 8t.", 'success')
 
+        elif pid == 'bind_odinkiller':
+            fenrir = next((m for m in self.monsters
+                           if m.alive and m.kind == 'fenrir_wolf'), None)
+            if not fenrir:
+                self.add_message("Bind Odinkiller: Fenrir is not here.", 'warning')
+                return
+            fenrir.reset_rage()
+            fenrir.status_effects['paralyzed'] = 2
+            self.add_message(
+                "You hurl the shimmering ribbon at Fenrir!", 'info')
+            self.add_message(
+                "Gleipnir wraps around the World-Wolf's massive jaws! "
+                "He strains, but the binding holds!", 'success')
+            self.add_message(
+                "Fenrir's rage subsides -- for now.", 'success')
+            # Rotating stat cost: STR -> DEX -> CON
+            _stat_cycle = ['STR', 'DEX', 'CON']
+            _stat_names = {'STR': 'strength', 'DEX': 'agility', 'CON': 'vitality'}
+            bind_count = getattr(self, '_gleipnir_bind_count', 0)
+            stat = _stat_cycle[bind_count % 3]
+            current = getattr(pl, stat)
+            if current > 1:
+                setattr(pl, stat, current - 1)
+                self.add_message(
+                    f"The binding tears something from you... "
+                    f"your {_stat_names[stat]} diminishes permanently. ({stat} -1)",
+                    'danger')
+            self._gleipnir_bind_count = bind_count + 1
+
+        elif pid == 'summon_heavenly_host':
+            self.heavenly_host_active = True
+            self.add_message(
+                "You raise the Scales of Michael toward the heavens!", 'info')
+            self.add_message(
+                "A choir of light answers! The Heavenly Host will counter "
+                "the Destroyer's locusts!", 'success')
+
         else:
             self.add_message(f"Used {label}.", 'info')
 
@@ -7524,6 +10560,83 @@ class Game:
             self.screen.blit(key_surf,  (rx, oy))
             self.screen.blit(desc_surf, (rx + key_surf.get_width() + 12, oy))
             oy += key_surf.get_height() + 6
+
+    def _draw_exit_quest(self):
+        draw_overlay(self.screen, 170)
+        bw, bh = min(600, GAME_W - 40), 180
+        bx = (GAME_W - bw) // 2
+        by = (WINDOW_H - bh) // 2
+        draw_dark_panel(self.screen, (bx, by, bw, bh))
+        draw_header_bar(self.screen, (bx, by, bw, 40),
+                        text="COMPLETE YOUR QUEST?",
+                        font=self.font_lg, text_color=FP.GOLD_BRIGHT)
+
+        sub = "You carry the Philosopher's Stone. Leave the dungeon?"
+        sub_surf = self.font_sm.render(sub, True, FP.BODY_TEXT)
+        self.screen.blit(sub_surf, (bx + (bw - sub_surf.get_width()) // 2, by + 55))
+
+        draw_divider(self.screen, bx + 20, by + 85, bw - 40)
+        opts = [("Y", "Complete quest", FP.GOLD_BRIGHT),
+                ("N / ESC", "Keep playing", FP.HINT_TEXT)]
+        oy = by + 100
+        for key_label, desc, col in opts:
+            key_surf  = self.font_md.render(f"[ {key_label} ]", True, col)
+            desc_surf = self.font_md.render(desc, True, FP.BODY_TEXT)
+            total_w   = key_surf.get_width() + 12 + desc_surf.get_width()
+            rx = bx + (bw - total_w) // 2
+            self.screen.blit(key_surf,  (rx, oy))
+            self.screen.blit(desc_surf, (rx + key_surf.get_width() + 12, oy))
+            oy += key_surf.get_height() + 8
+
+    def _draw_abandon_quest(self):
+        draw_overlay(self.screen, 170)
+        bw, bh = min(560, GAME_W - 40), 180
+        bx = (GAME_W - bw) // 2
+        by = (WINDOW_H - bh) // 2
+        draw_dark_panel(self.screen, (bx, by, bw, bh))
+        draw_header_bar(self.screen, (bx, by, bw, 40),
+                        text="ABANDON YOUR QUEST?",
+                        font=self.font_lg, text_color=FP.WARNING_TEXT)
+
+        sub = "You have not found the Philosopher's Stone."
+        sub_surf = self.font_sm.render(sub, True, FP.BODY_TEXT)
+        self.screen.blit(sub_surf, (bx + (bw - sub_surf.get_width()) // 2, by + 55))
+
+        draw_divider(self.screen, bx + 20, by + 85, bw - 40)
+        opts = [("Y", "Abandon quest", FP.WARNING_TEXT),
+                ("N / ESC", "Keep playing", FP.HINT_TEXT)]
+        oy = by + 100
+        for key_label, desc, col in opts:
+            key_surf  = self.font_md.render(f"[ {key_label} ]", True, col)
+            desc_surf = self.font_md.render(desc, True, FP.BODY_TEXT)
+            total_w   = key_surf.get_width() + 12 + desc_surf.get_width()
+            rx = bx + (bw - total_w) // 2
+            self.screen.blit(key_surf,  (rx, oy))
+            self.screen.blit(desc_surf, (rx + key_surf.get_width() + 12, oy))
+            oy += key_surf.get_height() + 8
+
+    def _draw_chicken(self):
+        draw_overlay(self.screen, 190)
+        bw, bh = min(600, GAME_W - 40), 190
+        bx = (GAME_W - bw) // 2
+        by = (WINDOW_H - bh) // 2
+        draw_dark_panel(self.screen, (bx, by, bw, bh))
+        draw_header_bar(self.screen, (bx, by, bw, 44),
+                        text="What's wrong, McFly? Chicken?",
+                        font=self.font_lg, text_color=(255, 220, 80))
+
+        draw_divider(self.screen, bx + 20, by + 56, bw - 40)
+        opts = [("1", "Yes, I am a coward.",       FP.WARNING_TEXT),
+                ("2", "Nobody calls me chicken!",  FP.GOLD_BRIGHT)]
+        oy = by + 78
+        for key_label, desc, col in opts:
+            key_surf  = self.font_md.render(f"[ {key_label} ]", True, col)
+            desc_surf = self.font_md.render(desc, True, col)
+            total_w   = key_surf.get_width() + 12 + desc_surf.get_width()
+            rx = bx + (bw - total_w) // 2
+            self.screen.blit(key_surf,  (rx, oy))
+            self.screen.blit(desc_surf, (rx + key_surf.get_width() + 12, oy))
+            oy += key_surf.get_height() + 16
 
     # ------------------------------------------------------------------
     # Story popup  (narrative events: entrance, boss victories, endings)
@@ -7847,6 +10960,14 @@ class Game:
                      f"  ({self.level_mgr.monsters_killed}x100)  +  50 000 stone bonus")
         b_surf = self.font_sm.render(breakdown, True, FP.FADED_TEXT)
         self.screen.blit(b_surf, (cx - b_surf.get_width() // 2, row_y + 14))
+
+        # Show player title if earned (e.g., "Paladin")
+        title = getattr(self, 'player_title', '')
+        if title:
+            title_line = f"{self.player_name} the {title}"
+            ts = self.font_md.render(title_line, True, FP.GOLD_BRIGHT)
+            self.screen.blit(ts, (cx - ts.get_width() // 2, row_y + 10))
+            row_y += 26
 
         # High score: save once, then display top 5
         from highscore_system import add_score, get_top
@@ -8360,6 +11481,10 @@ class Game:
         self._do_drop_item(item)
 
     def _do_drop_item(self, item):
+        # Cursed items cannot be dropped
+        if getattr(item, 'cursed', False) or getattr(item, 'buc', '') == 'cursed':
+            self.add_message(f"The {self._display_name(item)} is bound to you by a curse!", 'warning')
+            return
         if not self.player.remove_from_inventory(item):
             return
         item.x, item.y = self.player.x, self.player.y
@@ -8390,6 +11515,41 @@ class Game:
                 self.add_message(
                     "The Complete Tablet resonates with the Abyssal Shimmer.", 'info'
                 )
+
+        # --- Ariadne quest: drop Bronze Bull at a fountain ---
+        if getattr(item, 'id', '') == 'bronze_bull':
+            tile = self.dungeon.tiles[self.player.y][self.player.x]
+            if tile == FOUNTAIN:
+                self._activate_ariadne_shrine(item)
+
+        # --- Athena quest: drop Eye of the Graeae at an altar ---
+        if getattr(item, 'id', '') == 'eye_of_graeae':
+            tile = self.dungeon.tiles[self.player.y][self.player.x]
+            if tile == ALTAR:
+                self._activate_athena_shrine(item)
+
+        # --- Odin quest: drop Broken Gram on Odin's Altar ---
+        odin_pos = getattr(self.dungeon, 'odin_altar_pos', None)
+        if odin_pos and getattr(item, 'id', '') == 'broken_gram':
+            px, py = self.player.x, self.player.y
+            ax, ay = odin_pos
+            tile = self.dungeon.tiles[py][px]
+            if tile == ALTAR and (px, py) == (ax, ay):
+                self._activate_odin_shrine(item, reforge=False)
+
+        # --- Fenrir quest: drop Gleipnir component at Dwarven Forge ---
+        forge_pos = getattr(self.dungeon, 'dwarven_forge_pos', None)
+        if forge_pos:
+            px, py = self.player.x, self.player.y
+            if (px, py) == forge_pos:
+                self._check_gleipnir_forge(px, py)
+
+        # --- Vidar secret: drop leather scraps at Vidar's Altar ---
+        vidar_pos = getattr(self.dungeon, 'vidar_altar_pos', None)
+        if vidar_pos and getattr(item, 'id', '') == 'leather_scrap':
+            px, py = self.player.x, self.player.y
+            if (px, py) == vidar_pos:
+                self._check_vidar_altar(px, py)
 
         self._advance_turn()
 
@@ -8462,6 +11622,9 @@ class Game:
         if self.player.weapon and self._item_is_known(self.player.weapon):
             if self.player.weapon not in items:
                 items.append(self.player.weapon)
+        if self.player.ranged_weapon and self._item_is_known(self.player.ranged_weapon):
+            if self.player.ranged_weapon not in items:
+                items.append(self.player.ranged_weapon)
         if self.player.shield and self._item_is_known(self.player.shield):
             if self.player.shield not in items:
                 items.append(self.player.shield)
@@ -9128,15 +12291,16 @@ class Game:
             ("Z",              "Zap wand",                         FP.BODY_TEXT),
             ("U",              "Eat food",                         FP.BODY_TEXT),
             ("Q",              "Quaff potion",                     FP.BODY_TEXT),
-            ("D",              "Drop item",                        FP.BODY_TEXT),
+            ("D",              "Drop item / Interact (fountain/grave/throne)", FP.BODY_TEXT),
             ("COMBAT & EXPLORATION", None, FP.GOLD_PALE),
             ("H",              "Harvest monster corpse",           FP.BODY_TEXT),
             ("C",              "Cook ingredient",                  FP.BODY_TEXT),
             ("F",              "Fire ranged weapon",               FP.BODY_TEXT),
+            ("T",              "Throw item (potion / weapon / sphere)", FP.BODY_TEXT),
             ("A",              "Melee target (attack / interact)",  FP.BODY_TEXT),
             ("P",              "Pick lock",                        FP.BODY_TEXT),
             (">  or  <",       "Use stairs",                       FP.BODY_TEXT),
-            ("T",              "Visit merchant shop",              FP.BODY_TEXT),
+            ("Y",              "Visit merchant shop",              FP.BODY_TEXT),
             ("INFORMATION", None, FP.GOLD_PALE),
             ("X",              "Examine inventory items",          FP.BODY_TEXT),
             ("@",              "Character sheet",                  FP.BODY_TEXT),
@@ -9149,6 +12313,7 @@ class Game:
             ("QUIZ", None, FP.GOLD_PALE),
             ("1  2  3  4",     "Answer question during quiz",      FP.GOLD_BRIGHT),
             ("SYSTEM", None, FP.GOLD_PALE),
+            ("Tab",            "Toggle full map / close-up view",  FP.BODY_TEXT),
             ("?",              "This help screen",                 FP.BODY_TEXT),
             ("ESC",            "Cancel / close menu",              FP.BODY_TEXT),
         ]

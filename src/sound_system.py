@@ -17,6 +17,8 @@ Supported events:
   door           -- creak (open door)
   buy            -- coin clink (buy from merchant)
   spell_cast     -- arcane hum (cast a spell)
+  equip          -- metallic click (equip gear)
+  player_healed  -- gentle chime (player heals)
 """
 from __future__ import annotations
 
@@ -151,6 +153,8 @@ def init() -> bool:
         'door':         lambda: _make_tone(180, 0.15, wave='sawtooth', volume=0.22, decay=0.10),
         'buy':          lambda: _make_sweep(600, 800, 0.15, volume=0.22, decay=0.10),
         'spell_cast':   lambda: _make_sweep(300, 700, 0.28, volume=0.28, decay=0.20),
+        'equip':        lambda: _make_tone(350, 0.10, wave='square', volume=0.18, decay=0.06),
+        'player_healed': lambda: _make_sweep(440, 660, 0.22, volume=0.22, decay=0.15),
     }
 
     ok = 0

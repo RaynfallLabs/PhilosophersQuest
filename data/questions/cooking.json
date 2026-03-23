@@ -8,7 +8,7 @@
       "120 degC"
     ],
     "answer": "100 degC",
-    "tier": 1
+    "tier": 2
   },
   {
     "question": "What herb is traditionally used in pesto?",
@@ -30,7 +30,7 @@
       "Wheat flour dissolves better in water than other flours"
     ],
     "answer": "Wheat contains glutenin and gliadin that form gluten, trapping CO2 bubbles from yeast",
-    "tier": 1
+    "tier": 2
   },
   {
     "question": "What is the main ingredient in hummus?",
@@ -129,7 +129,7 @@
       "80 degC"
     ],
     "answer": "74 degC",
-    "tier": 1
+    "tier": 2
   },
   {
     "question": "Why is olive oil not ideal for high-heat frying?",
@@ -272,7 +272,7 @@
       "Half-moon slices"
     ],
     "answer": "Thin matchstick strips",
-    "tier": 1
+    "tier": 2
   },
   {
     "question": "What country does 'kimchi' come from?",
@@ -1001,7 +1001,7 @@
     ]
   },
   {
-    "tier": 1,
+    "tier": 2,
     "question": "What does it mean to 'fold' ingredients in baking?",
     "answer": "Gently combine them to keep air in the mixture",
     "choices": [
@@ -1166,7 +1166,7 @@
     ]
   },
   {
-    "tier": 1,
+    "tier": 2,
     "question": "What is a 'roux'?",
     "answer": "A cooked mixture of equal parts fat and flour used to thicken sauces",
     "choices": [
@@ -1188,7 +1188,7 @@
     ]
   },
   {
-    "tier": 1,
+    "tier": 2,
     "question": "What does 'caramelize' mean in cooking?",
     "answer": "Cook sugar (or natural sugars in vegetables) until golden and sweet",
     "choices": [
@@ -1199,7 +1199,7 @@
     ]
   },
   {
-    "tier": 1,
+    "tier": 2,
     "question": "What is 'blanching'?",
     "answer": "Briefly boiling food then plunging it into ice water to stop cooking",
     "choices": [
@@ -1243,7 +1243,7 @@
     ]
   },
   {
-    "tier": 1,
+    "tier": 2,
     "question": "What type of heat cooks food from the inside in a microwave?",
     "answer": "Microwave radiation heating water molecules",
     "choices": [
@@ -1254,7 +1254,7 @@
     ]
   },
   {
-    "tier": 1,
+    "tier": 2,
     "question": "What is 'searing'?",
     "answer": "Cooking meat over very high heat to brown the outside quickly",
     "choices": [
@@ -1353,7 +1353,7 @@
     ]
   },
   {
-    "tier": 1,
+    "tier": 2,
     "question": "What does 'deglaze' mean in cooking?",
     "answer": "Adding liquid to a hot pan to loosen browned bits stuck to the bottom",
     "choices": [
@@ -1364,7 +1364,7 @@
     ]
   },
   {
-    "tier": 1,
+    "tier": 2,
     "question": "What is 'reduction' in cooking?",
     "answer": "Simmering a liquid to evaporate water and concentrate flavor",
     "choices": [
@@ -1375,7 +1375,7 @@
     ]
   },
   {
-    "tier": 1,
+    "tier": 2,
     "question": "Which cooking fat has the highest smoke point?",
     "answer": "Refined avocado oil",
     "choices": [
@@ -1397,7 +1397,7 @@
     ]
   },
   {
-    "tier": 1,
+    "tier": 2,
     "question": "What does 'julienne' mean in knife skills?",
     "answer": "Cut into thin matchstick-shaped strips",
     "choices": [
@@ -1408,7 +1408,7 @@
     ]
   },
   {
-    "tier": 1,
+    "tier": 2,
     "question": "What is a 'coulis'?",
     "answer": "A smooth, thin sauce made from pureed fruit or vegetables",
     "choices": [
@@ -1463,7 +1463,7 @@
     ]
   },
   {
-    "tier": 1,
+    "tier": 2,
     "question": "What is a 'chiffonade' cut?",
     "answer": "Herbs or leafy greens rolled and sliced into thin ribbons",
     "choices": [
@@ -1496,7 +1496,7 @@
     ]
   },
   {
-    "tier": 1,
+    "tier": 2,
     "question": "What does 'render' mean in cooking?",
     "answer": "Slowly cooking fatty meat until the fat melts out",
     "choices": [
@@ -5354,7 +5354,7 @@
       "Salt prevents pasta from sticking together",
       "Salt improves the texture of the pasta by strengthening gluten"
     ],
-    "tier": 1
+    "tier": 2
   },
   {
     "question": "What causes onions to turn sweet and soft when cooked slowly over low heat?",
@@ -5795,5 +5795,2315 @@
       "The color of the oil -- lighter oils always have higher smoke points"
     ],
     "tier": 4
+  },
+  {
+    "question": "What country does pizza originate from?",
+    "choices": [
+      "France",
+      "Italy",
+      "Spain",
+      "Greece"
+    ],
+    "answer": "Italy",
+    "tier": 1
+  },
+  {
+    "question": "Sushi is a traditional dish from which country?",
+    "choices": [
+      "China",
+      "Korea",
+      "Japan",
+      "Thailand"
+    ],
+    "answer": "Japan",
+    "tier": 1
+  },
+  {
+    "question": "Fish and chips is associated with which country?",
+    "choices": [
+      "Australia",
+      "England",
+      "Ireland",
+      "Scotland"
+    ],
+    "answer": "England",
+    "tier": 1
+  },
+  {
+    "question": "Tacos are a staple of which cuisine?",
+    "choices": [
+      "Mexican",
+      "Spanish",
+      "Brazilian",
+      "Argentinian"
+    ],
+    "answer": "Mexican",
+    "tier": 1
+  },
+  {
+    "question": "Where does the croissant originate from?",
+    "choices": [
+      "Italy",
+      "Belgium",
+      "France",
+      "Switzerland"
+    ],
+    "answer": "France",
+    "tier": 1
+  },
+  {
+    "question": "Pad Thai is a dish from which country?",
+    "choices": [
+      "Vietnam",
+      "Thailand",
+      "Malaysia",
+      "Cambodia"
+    ],
+    "answer": "Thailand",
+    "tier": 1
+  },
+  {
+    "question": "Kimchi is a traditional food from which country?",
+    "choices": [
+      "Japan",
+      "China",
+      "South Korea",
+      "Vietnam"
+    ],
+    "answer": "South Korea",
+    "tier": 1
+  },
+  {
+    "question": "Which country is famous for paella?",
+    "choices": [
+      "Portugal",
+      "Italy",
+      "Spain",
+      "Mexico"
+    ],
+    "answer": "Spain",
+    "tier": 1
+  },
+  {
+    "question": "Dim sum is a dining tradition from which country?",
+    "choices": [
+      "Japan",
+      "China",
+      "Thailand",
+      "Korea"
+    ],
+    "answer": "China",
+    "tier": 1
+  },
+  {
+    "question": "Which country is known for curry dishes?",
+    "choices": [
+      "Egypt",
+      "Turkey",
+      "India",
+      "Morocco"
+    ],
+    "answer": "India",
+    "tier": 1
+  },
+  {
+    "question": "Bratwurst is a sausage from which country?",
+    "choices": [
+      "Austria",
+      "Germany",
+      "Poland",
+      "Denmark"
+    ],
+    "answer": "Germany",
+    "tier": 1
+  },
+  {
+    "question": "Gyros is a popular street food from which country?",
+    "choices": [
+      "Turkey",
+      "Greece",
+      "Lebanon",
+      "Italy"
+    ],
+    "answer": "Greece",
+    "tier": 1
+  },
+  {
+    "question": "Which country is baklava most associated with?",
+    "choices": [
+      "Egypt",
+      "Iran",
+      "Turkey",
+      "Greece"
+    ],
+    "answer": "Turkey",
+    "tier": 1
+  },
+  {
+    "question": "Pho is a soup from which country?",
+    "choices": [
+      "Thailand",
+      "Vietnam",
+      "Laos",
+      "Cambodia"
+    ],
+    "answer": "Vietnam",
+    "tier": 1
+  },
+  {
+    "question": "Hamburgers are most associated with which country?",
+    "choices": [
+      "Germany",
+      "England",
+      "United States",
+      "Canada"
+    ],
+    "answer": "United States",
+    "tier": 1
+  },
+  {
+    "question": "Falafel is a dish originally from which region?",
+    "choices": [
+      "South Asia",
+      "East Asia",
+      "Middle East",
+      "North Africa"
+    ],
+    "answer": "Middle East",
+    "tier": 1
+  },
+  {
+    "question": "Maple syrup is famously produced in which country?",
+    "choices": [
+      "United States",
+      "Canada",
+      "Sweden",
+      "Norway"
+    ],
+    "answer": "Canada",
+    "tier": 1
+  },
+  {
+    "question": "Jerk chicken is a dish from which country?",
+    "choices": [
+      "Cuba",
+      "Jamaica",
+      "Trinidad",
+      "Barbados"
+    ],
+    "answer": "Jamaica",
+    "tier": 1
+  },
+  {
+    "question": "Which country is the origin of pasta?",
+    "choices": [
+      "Greece",
+      "Spain",
+      "Italy",
+      "France"
+    ],
+    "answer": "Italy",
+    "tier": 1
+  },
+  {
+    "question": "Borscht is a beet soup from which region?",
+    "choices": [
+      "Scandinavia",
+      "Eastern Europe",
+      "Central Asia",
+      "South America"
+    ],
+    "answer": "Eastern Europe",
+    "tier": 1
+  },
+  {
+    "question": "Croissants and baguettes are from which country?",
+    "choices": [
+      "Italy",
+      "France",
+      "Belgium",
+      "Spain"
+    ],
+    "answer": "France",
+    "tier": 1
+  },
+  {
+    "question": "Which cuisine features dishes like bibimbap?",
+    "choices": [
+      "Japanese",
+      "Chinese",
+      "Thai",
+      "Korean"
+    ],
+    "answer": "Korean",
+    "tier": 1
+  },
+  {
+    "question": "Moussaka is a traditional dish from which country?",
+    "choices": [
+      "Italy",
+      "Turkey",
+      "Greece",
+      "Lebanon"
+    ],
+    "answer": "Greece",
+    "tier": 1
+  },
+  {
+    "question": "Which country is famous for chocolate?",
+    "choices": [
+      "Belgium",
+      "Spain",
+      "Italy",
+      "France"
+    ],
+    "answer": "Belgium",
+    "tier": 1
+  },
+  {
+    "question": "Naan bread comes from which cuisine?",
+    "choices": [
+      "Middle Eastern",
+      "Indian",
+      "Chinese",
+      "Japanese"
+    ],
+    "answer": "Indian",
+    "tier": 1
+  },
+  {
+    "question": "Which country is known for barbecue brisket?",
+    "choices": [
+      "Australia",
+      "Argentina",
+      "United States",
+      "Brazil"
+    ],
+    "answer": "United States",
+    "tier": 1
+  },
+  {
+    "question": "Spring rolls are associated with which cuisine?",
+    "choices": [
+      "Japanese",
+      "Indian",
+      "Chinese",
+      "Korean"
+    ],
+    "answer": "Chinese",
+    "tier": 1
+  },
+  {
+    "question": "Churros are a fried pastry from which country?",
+    "choices": [
+      "Mexico",
+      "Spain",
+      "Portugal",
+      "Brazil"
+    ],
+    "answer": "Spain",
+    "tier": 1
+  },
+  {
+    "question": "Which country is known for pierogi dumplings?",
+    "choices": [
+      "Russia",
+      "Poland",
+      "Germany",
+      "Czech Republic"
+    ],
+    "answer": "Poland",
+    "tier": 1
+  },
+  {
+    "question": "Kebabs are most associated with which cuisine?",
+    "choices": [
+      "Indian",
+      "Turkish",
+      "Egyptian",
+      "Greek"
+    ],
+    "answer": "Turkish",
+    "tier": 1
+  },
+  {
+    "question": "What is bread usually made from?",
+    "choices": [
+      "Rice",
+      "Corn",
+      "Flour",
+      "Oats"
+    ],
+    "answer": "Flour",
+    "tier": 1
+  },
+  {
+    "question": "What fruit is wine typically made from?",
+    "choices": [
+      "Apples",
+      "Grapes",
+      "Plums",
+      "Cherries"
+    ],
+    "answer": "Grapes",
+    "tier": 1
+  },
+  {
+    "question": "What is chocolate made from?",
+    "choices": [
+      "Coffee beans",
+      "Cocoa beans",
+      "Vanilla beans",
+      "Soy beans"
+    ],
+    "answer": "Cocoa beans",
+    "tier": 1
+  },
+  {
+    "question": "What is the main ingredient in peanut butter?",
+    "choices": [
+      "Almonds",
+      "Cashews",
+      "Peanuts",
+      "Walnuts"
+    ],
+    "answer": "Peanuts",
+    "tier": 1
+  },
+  {
+    "question": "What plant does rice come from?",
+    "choices": [
+      "Wheat plant",
+      "Barley plant",
+      "Rice plant",
+      "Corn plant"
+    ],
+    "answer": "Rice plant",
+    "tier": 1
+  },
+  {
+    "question": "What is the main ingredient in oatmeal?",
+    "choices": [
+      "Wheat",
+      "Barley",
+      "Oats",
+      "Rice"
+    ],
+    "answer": "Oats",
+    "tier": 1
+  },
+  {
+    "question": "What is ketchup primarily made from?",
+    "choices": [
+      "Beets",
+      "Tomatoes",
+      "Peppers",
+      "Carrots"
+    ],
+    "answer": "Tomatoes",
+    "tier": 1
+  },
+  {
+    "question": "What is the main ingredient in an omelette?",
+    "choices": [
+      "Milk",
+      "Eggs",
+      "Flour",
+      "Cheese"
+    ],
+    "answer": "Eggs",
+    "tier": 1
+  },
+  {
+    "question": "What is olive oil made from?",
+    "choices": [
+      "Sunflowers",
+      "Olives",
+      "Coconuts",
+      "Corn"
+    ],
+    "answer": "Olives",
+    "tier": 1
+  },
+  {
+    "question": "What is the main ingredient in mashed potatoes?",
+    "choices": [
+      "Sweet potatoes",
+      "Turnips",
+      "Potatoes",
+      "Parsnips"
+    ],
+    "answer": "Potatoes",
+    "tier": 1
+  },
+  {
+    "question": "What nut is used to make almond milk?",
+    "choices": [
+      "Cashews",
+      "Hazelnuts",
+      "Almonds",
+      "Walnuts"
+    ],
+    "answer": "Almonds",
+    "tier": 1
+  },
+  {
+    "question": "What is yogurt made from?",
+    "choices": [
+      "Cream",
+      "Milk",
+      "Eggs",
+      "Butter"
+    ],
+    "answer": "Milk",
+    "tier": 1
+  },
+  {
+    "question": "What is the main ingredient in a cheese sandwich?",
+    "choices": [
+      "Bread and cheese",
+      "Rice and cheese",
+      "Crackers and cheese",
+      "Tortilla and cheese"
+    ],
+    "answer": "Bread and cheese",
+    "tier": 1
+  },
+  {
+    "question": "What is maple syrup made from?",
+    "choices": [
+      "Honey",
+      "Sugar cane",
+      "Tree sap",
+      "Corn syrup"
+    ],
+    "answer": "Tree sap",
+    "tier": 1
+  },
+  {
+    "question": "What is tofu made from?",
+    "choices": [
+      "Rice",
+      "Wheat",
+      "Soybeans",
+      "Corn"
+    ],
+    "answer": "Soybeans",
+    "tier": 1
+  },
+  {
+    "question": "What is the base of most smoothies?",
+    "choices": [
+      "Water",
+      "Fruit",
+      "Ice cream",
+      "Yogurt"
+    ],
+    "answer": "Fruit",
+    "tier": 1
+  },
+  {
+    "question": "What is jam typically made from?",
+    "choices": [
+      "Vegetables",
+      "Fruit and sugar",
+      "Honey",
+      "Milk"
+    ],
+    "answer": "Fruit and sugar",
+    "tier": 1
+  },
+  {
+    "question": "What is coconut milk made from?",
+    "choices": [
+      "Cow milk",
+      "Almonds",
+      "Coconut flesh",
+      "Soy"
+    ],
+    "answer": "Coconut flesh",
+    "tier": 1
+  },
+  {
+    "question": "What spice comes from dried chili peppers?",
+    "choices": [
+      "Cinnamon",
+      "Paprika",
+      "Nutmeg",
+      "Turmeric"
+    ],
+    "answer": "Paprika",
+    "tier": 1
+  },
+  {
+    "question": "What is the main ingredient in a salad?",
+    "choices": [
+      "Bread",
+      "Meat",
+      "Leafy greens",
+      "Pasta"
+    ],
+    "answer": "Leafy greens",
+    "tier": 1
+  },
+  {
+    "question": "What is butter made from?",
+    "choices": [
+      "Vegetable oil",
+      "Cream",
+      "Eggs",
+      "Lard"
+    ],
+    "answer": "Cream",
+    "tier": 1
+  },
+  {
+    "question": "What sweetener do bees produce?",
+    "choices": [
+      "Sugar",
+      "Honey",
+      "Syrup",
+      "Molasses"
+    ],
+    "answer": "Honey",
+    "tier": 1
+  },
+  {
+    "question": "What is the main ingredient in cornbread?",
+    "choices": [
+      "Wheat flour",
+      "Rice flour",
+      "Cornmeal",
+      "Oat flour"
+    ],
+    "answer": "Cornmeal",
+    "tier": 1
+  },
+  {
+    "question": "What fruit is orange juice made from?",
+    "choices": [
+      "Lemons",
+      "Grapefruits",
+      "Oranges",
+      "Tangerines"
+    ],
+    "answer": "Oranges",
+    "tier": 1
+  },
+  {
+    "question": "What is soy sauce made from?",
+    "choices": [
+      "Soybeans",
+      "Rice",
+      "Wheat",
+      "Corn"
+    ],
+    "answer": "Soybeans",
+    "tier": 1
+  },
+  {
+    "question": "What is the main ingredient in french fries?",
+    "choices": [
+      "Sweet potatoes",
+      "Potatoes",
+      "Turnips",
+      "Carrots"
+    ],
+    "answer": "Potatoes",
+    "tier": 1
+  },
+  {
+    "question": "What is mustard made from?",
+    "choices": [
+      "Turmeric",
+      "Mustard seeds",
+      "Pepper",
+      "Ginger"
+    ],
+    "answer": "Mustard seeds",
+    "tier": 1
+  },
+  {
+    "question": "What is the main grain in most breakfast cereals?",
+    "choices": [
+      "Rice",
+      "Corn",
+      "Wheat",
+      "All of these"
+    ],
+    "answer": "All of these",
+    "tier": 1
+  },
+  {
+    "question": "What is popcorn made from?",
+    "choices": [
+      "Wheat",
+      "Rice",
+      "Corn kernels",
+      "Barley"
+    ],
+    "answer": "Corn kernels",
+    "tier": 1
+  },
+  {
+    "question": "What is vinegar made from?",
+    "choices": [
+      "Fermented liquid",
+      "Lemon juice",
+      "Salt water",
+      "Sugar water"
+    ],
+    "answer": "Fermented liquid",
+    "tier": 1
+  },
+  {
+    "question": "What is the main protein in a BLT sandwich?",
+    "choices": [
+      "Turkey",
+      "Bacon",
+      "Ham",
+      "Chicken"
+    ],
+    "answer": "Bacon",
+    "tier": 1
+  },
+  {
+    "question": "What type of pasta is shaped like tubes?",
+    "choices": [
+      "Spaghetti",
+      "Penne",
+      "Fettuccine",
+      "Linguine"
+    ],
+    "answer": "Penne",
+    "tier": 1
+  },
+  {
+    "question": "What is a croissant?",
+    "choices": [
+      "A bread roll",
+      "A pastry",
+      "A cake",
+      "A biscuit"
+    ],
+    "answer": "A pastry",
+    "tier": 1
+  },
+  {
+    "question": "What is on a traditional margherita pizza?",
+    "choices": [
+      "Pepperoni",
+      "Mushrooms",
+      "Mozzarella and tomato",
+      "Sausage"
+    ],
+    "answer": "Mozzarella and tomato",
+    "tier": 1
+  },
+  {
+    "question": "What is the filling in a traditional apple pie?",
+    "choices": [
+      "Pears",
+      "Peaches",
+      "Apples",
+      "Cherries"
+    ],
+    "answer": "Apples",
+    "tier": 1
+  },
+  {
+    "question": "What type of food is a bagel?",
+    "choices": [
+      "A cake",
+      "A bread",
+      "A pastry",
+      "A cookie"
+    ],
+    "answer": "A bread",
+    "tier": 1
+  },
+  {
+    "question": "What is the main ingredient in a Caesar salad?",
+    "choices": [
+      "Spinach",
+      "Romaine lettuce",
+      "Arugula",
+      "Kale"
+    ],
+    "answer": "Romaine lettuce",
+    "tier": 1
+  },
+  {
+    "question": "What is inside a burrito?",
+    "choices": [
+      "Only cheese",
+      "Only rice",
+      "Various fillings in a tortilla",
+      "Bread and butter"
+    ],
+    "answer": "Various fillings in a tortilla",
+    "tier": 1
+  },
+  {
+    "question": "What is a hot dog served in?",
+    "choices": [
+      "A bowl",
+      "A bun",
+      "A wrap",
+      "A plate"
+    ],
+    "answer": "A bun",
+    "tier": 1
+  },
+  {
+    "question": "What is the main ingredient in chicken soup?",
+    "choices": [
+      "Beef",
+      "Fish",
+      "Chicken",
+      "Pork"
+    ],
+    "answer": "Chicken",
+    "tier": 1
+  },
+  {
+    "question": "What type of bread is used for a hamburger?",
+    "choices": [
+      "Sliced bread",
+      "A bun",
+      "Pita",
+      "Baguette"
+    ],
+    "answer": "A bun",
+    "tier": 1
+  },
+  {
+    "question": "What are pancakes typically served with?",
+    "choices": [
+      "Ketchup",
+      "Syrup",
+      "Mustard",
+      "Soy sauce"
+    ],
+    "answer": "Syrup",
+    "tier": 1
+  },
+  {
+    "question": "What is a waffle?",
+    "choices": [
+      "A type of bread",
+      "A gridded batter cake",
+      "A cookie",
+      "A muffin"
+    ],
+    "answer": "A gridded batter cake",
+    "tier": 1
+  },
+  {
+    "question": "What is spaghetti?",
+    "choices": [
+      "Short pasta",
+      "Long thin pasta",
+      "Filled pasta",
+      "Flat pasta"
+    ],
+    "answer": "Long thin pasta",
+    "tier": 1
+  },
+  {
+    "question": "What goes on top of a traditional birthday cake?",
+    "choices": [
+      "Candles",
+      "Fruit",
+      "Whipped cream",
+      "Chocolate chips"
+    ],
+    "answer": "Candles",
+    "tier": 1
+  },
+  {
+    "question": "What is a taco shell made from?",
+    "choices": [
+      "Wheat or corn tortilla",
+      "Rice paper",
+      "Bread",
+      "Pastry dough"
+    ],
+    "answer": "Wheat or corn tortilla",
+    "tier": 1
+  },
+  {
+    "question": "What is the main ingredient in a fruit salad?",
+    "choices": [
+      "Vegetables",
+      "Mixed fruits",
+      "Grains",
+      "Nuts"
+    ],
+    "answer": "Mixed fruits",
+    "tier": 1
+  },
+  {
+    "question": "What is lasagna?",
+    "choices": [
+      "A soup",
+      "A layered pasta dish",
+      "A sandwich",
+      "A salad"
+    ],
+    "answer": "A layered pasta dish",
+    "tier": 1
+  },
+  {
+    "question": "What is the crust of a pie made from?",
+    "choices": [
+      "Rice",
+      "Pastry dough",
+      "Bread",
+      "Tortilla"
+    ],
+    "answer": "Pastry dough",
+    "tier": 1
+  },
+  {
+    "question": "What is a quesadilla filled with?",
+    "choices": [
+      "Fruit",
+      "Cheese",
+      "Ice cream",
+      "Soup"
+    ],
+    "answer": "Cheese",
+    "tier": 1
+  },
+  {
+    "question": "What is the main topping on a pepperoni pizza?",
+    "choices": [
+      "Ham",
+      "Sausage",
+      "Pepperoni",
+      "Bacon"
+    ],
+    "answer": "Pepperoni",
+    "tier": 1
+  },
+  {
+    "question": "What type of food is a pretzel?",
+    "choices": [
+      "A candy",
+      "A baked bread snack",
+      "A fruit",
+      "A dairy product"
+    ],
+    "answer": "A baked bread snack",
+    "tier": 1
+  },
+  {
+    "question": "What is coleslaw made from?",
+    "choices": [
+      "Lettuce",
+      "Shredded cabbage",
+      "Spinach",
+      "Kale"
+    ],
+    "answer": "Shredded cabbage",
+    "tier": 1
+  },
+  {
+    "question": "What is the main ingredient in fried rice?",
+    "choices": [
+      "Noodles",
+      "Bread",
+      "Rice",
+      "Quinoa"
+    ],
+    "answer": "Rice",
+    "tier": 1
+  },
+  {
+    "question": "What is a doughnut?",
+    "choices": [
+      "A bread",
+      "A fried sweet dough",
+      "A cake",
+      "A cookie"
+    ],
+    "answer": "A fried sweet dough",
+    "tier": 1
+  },
+  {
+    "question": "What is the main ingredient in clam chowder?",
+    "choices": [
+      "Lobster",
+      "Shrimp",
+      "Clams",
+      "Crab"
+    ],
+    "answer": "Clams",
+    "tier": 1
+  },
+  {
+    "question": "What is a muffin similar to?",
+    "choices": [
+      "A pie",
+      "A cupcake",
+      "A cookie",
+      "A crepe"
+    ],
+    "answer": "A cupcake",
+    "tier": 1
+  },
+  {
+    "question": "What is a wrap made with?",
+    "choices": [
+      "A tortilla",
+      "Sliced bread",
+      "A bun",
+      "Rice paper"
+    ],
+    "answer": "A tortilla",
+    "tier": 1
+  },
+  {
+    "question": "What is the base of most soups?",
+    "choices": [
+      "Milk",
+      "Broth or stock",
+      "Juice",
+      "Oil"
+    ],
+    "answer": "Broth or stock",
+    "tier": 1
+  },
+  {
+    "question": "What is a grilled cheese sandwich made with?",
+    "choices": [
+      "Meat and cheese",
+      "Bread and cheese",
+      "Cheese and rice",
+      "Cheese and crackers"
+    ],
+    "answer": "Bread and cheese",
+    "tier": 1
+  },
+  {
+    "question": "What animal does beef come from?",
+    "choices": [
+      "Pig",
+      "Cow",
+      "Sheep",
+      "Chicken"
+    ],
+    "answer": "Cow",
+    "tier": 1
+  },
+  {
+    "question": "Is a tomato a fruit or a vegetable?",
+    "choices": [
+      "Vegetable",
+      "Fruit",
+      "Grain",
+      "Legume"
+    ],
+    "answer": "Fruit",
+    "tier": 1
+  },
+  {
+    "question": "What meal is typically eaten first in the morning?",
+    "choices": [
+      "Lunch",
+      "Dinner",
+      "Breakfast",
+      "Supper"
+    ],
+    "answer": "Breakfast",
+    "tier": 1
+  },
+  {
+    "question": "What color is a ripe banana?",
+    "choices": [
+      "Green",
+      "Red",
+      "Yellow",
+      "Brown"
+    ],
+    "answer": "Yellow",
+    "tier": 1
+  },
+  {
+    "question": "What animal does pork come from?",
+    "choices": [
+      "Cow",
+      "Pig",
+      "Sheep",
+      "Goat"
+    ],
+    "answer": "Pig",
+    "tier": 1
+  },
+  {
+    "question": "What color is milk?",
+    "choices": [
+      "Yellow",
+      "Blue",
+      "White",
+      "Clear"
+    ],
+    "answer": "White",
+    "tier": 1
+  },
+  {
+    "question": "How many meals do most people eat per day?",
+    "choices": [
+      "One",
+      "Two",
+      "Three",
+      "Five"
+    ],
+    "answer": "Three",
+    "tier": 1
+  },
+  {
+    "question": "Where do you store milk to keep it fresh?",
+    "choices": [
+      "Pantry",
+      "Refrigerator",
+      "Oven",
+      "Counter"
+    ],
+    "answer": "Refrigerator",
+    "tier": 1
+  },
+  {
+    "question": "What does a freezer do to food?",
+    "choices": [
+      "Cooks it",
+      "Freezes it",
+      "Dries it",
+      "Ferments it"
+    ],
+    "answer": "Freezes it",
+    "tier": 1
+  },
+  {
+    "question": "What utensil do you use to eat soup?",
+    "choices": [
+      "Fork",
+      "Knife",
+      "Spoon",
+      "Chopsticks"
+    ],
+    "answer": "Spoon",
+    "tier": 1
+  },
+  {
+    "question": "Which of these is a fruit?",
+    "choices": [
+      "Carrot",
+      "Potato",
+      "Strawberry",
+      "Onion"
+    ],
+    "answer": "Strawberry",
+    "tier": 1
+  },
+  {
+    "question": "Which of these is a vegetable?",
+    "choices": [
+      "Apple",
+      "Banana",
+      "Broccoli",
+      "Grape"
+    ],
+    "answer": "Broccoli",
+    "tier": 1
+  },
+  {
+    "question": "What is the most popular pizza topping?",
+    "choices": [
+      "Mushrooms",
+      "Pepperoni",
+      "Olives",
+      "Onions"
+    ],
+    "answer": "Pepperoni",
+    "tier": 1
+  },
+  {
+    "question": "What animal produces eggs commonly eaten at breakfast?",
+    "choices": [
+      "Cow",
+      "Pig",
+      "Chicken",
+      "Duck"
+    ],
+    "answer": "Chicken",
+    "tier": 1
+  },
+  {
+    "question": "What appliance is used to bake a cake?",
+    "choices": [
+      "Microwave",
+      "Oven",
+      "Toaster",
+      "Blender"
+    ],
+    "answer": "Oven",
+    "tier": 1
+  },
+  {
+    "question": "What do you use to boil water?",
+    "choices": [
+      "Frying pan",
+      "Pot or kettle",
+      "Baking sheet",
+      "Colander"
+    ],
+    "answer": "Pot or kettle",
+    "tier": 1
+  },
+  {
+    "question": "What food group does cheese belong to?",
+    "choices": [
+      "Grains",
+      "Protein",
+      "Dairy",
+      "Vegetables"
+    ],
+    "answer": "Dairy",
+    "tier": 1
+  },
+  {
+    "question": "Which of these is a type of meat?",
+    "choices": [
+      "Rice",
+      "Lamb",
+      "Lettuce",
+      "Bread"
+    ],
+    "answer": "Lamb",
+    "tier": 1
+  },
+  {
+    "question": "What shape is most sandwich bread?",
+    "choices": [
+      "Round",
+      "Square",
+      "Triangular",
+      "Oval"
+    ],
+    "answer": "Square",
+    "tier": 1
+  },
+  {
+    "question": "What is the yellow part of an egg called?",
+    "choices": [
+      "Albumen",
+      "Shell",
+      "Yolk",
+      "Membrane"
+    ],
+    "answer": "Yolk",
+    "tier": 1
+  },
+  {
+    "question": "What season is associated with barbecue and grilling?",
+    "choices": [
+      "Winter",
+      "Spring",
+      "Summer",
+      "Fall"
+    ],
+    "answer": "Summer",
+    "tier": 1
+  },
+  {
+    "question": "What animal does chicken meat come from?",
+    "choices": [
+      "Turkey",
+      "Duck",
+      "Chicken",
+      "Goose"
+    ],
+    "answer": "Chicken",
+    "tier": 1
+  },
+  {
+    "question": "Which meal is traditionally the largest of the day?",
+    "choices": [
+      "Breakfast",
+      "Brunch",
+      "Lunch",
+      "Dinner"
+    ],
+    "answer": "Dinner",
+    "tier": 1
+  },
+  {
+    "question": "What do you call someone who does not eat meat?",
+    "choices": [
+      "Vegan",
+      "Vegetarian",
+      "Pescatarian",
+      "Carnivore"
+    ],
+    "answer": "Vegetarian",
+    "tier": 1
+  },
+  {
+    "question": "What is the outer covering of an egg called?",
+    "choices": [
+      "Yolk",
+      "Shell",
+      "Skin",
+      "Husk"
+    ],
+    "answer": "Shell",
+    "tier": 1
+  },
+  {
+    "question": "What color are most oranges?",
+    "choices": [
+      "Red",
+      "Yellow",
+      "Orange",
+      "Green"
+    ],
+    "answer": "Orange",
+    "tier": 1
+  },
+  {
+    "question": "What appliance keeps food cold?",
+    "choices": [
+      "Oven",
+      "Toaster",
+      "Refrigerator",
+      "Stove"
+    ],
+    "answer": "Refrigerator",
+    "tier": 1
+  },
+  {
+    "question": "Which of these is a seafood?",
+    "choices": [
+      "Chicken",
+      "Pork",
+      "Shrimp",
+      "Beef"
+    ],
+    "answer": "Shrimp",
+    "tier": 1
+  },
+  {
+    "question": "What do you call the midday meal?",
+    "choices": [
+      "Breakfast",
+      "Lunch",
+      "Dinner",
+      "Snack"
+    ],
+    "answer": "Lunch",
+    "tier": 1
+  },
+  {
+    "question": "What animal does lamb meat come from?",
+    "choices": [
+      "Cow",
+      "Pig",
+      "Sheep",
+      "Goat"
+    ],
+    "answer": "Sheep",
+    "tier": 1
+  },
+  {
+    "question": "What is espresso?",
+    "choices": [
+      "A type of tea",
+      "A concentrated coffee",
+      "A soft drink",
+      "A juice"
+    ],
+    "answer": "A concentrated coffee",
+    "tier": 1
+  },
+  {
+    "question": "What is the main ingredient in ice cream?",
+    "choices": [
+      "Eggs",
+      "Cream or milk",
+      "Flour",
+      "Butter"
+    ],
+    "answer": "Cream or milk",
+    "tier": 1
+  },
+  {
+    "question": "What fruit gives lemonade its flavor?",
+    "choices": [
+      "Lime",
+      "Lemon",
+      "Orange",
+      "Grapefruit"
+    ],
+    "answer": "Lemon",
+    "tier": 1
+  },
+  {
+    "question": "What is tea made from?",
+    "choices": [
+      "Coffee beans",
+      "Tea leaves",
+      "Flower petals",
+      "Bark"
+    ],
+    "answer": "Tea leaves",
+    "tier": 1
+  },
+  {
+    "question": "What is the most popular flavor of ice cream?",
+    "choices": [
+      "Chocolate",
+      "Vanilla",
+      "Strawberry",
+      "Mint"
+    ],
+    "answer": "Vanilla",
+    "tier": 1
+  },
+  {
+    "question": "What is hot chocolate made with?",
+    "choices": [
+      "Coffee",
+      "Cocoa and milk",
+      "Tea",
+      "Juice"
+    ],
+    "answer": "Cocoa and milk",
+    "tier": 1
+  },
+  {
+    "question": "What is a milkshake?",
+    "choices": [
+      "A tea drink",
+      "A blended milk and ice cream drink",
+      "A juice",
+      "A soda"
+    ],
+    "answer": "A blended milk and ice cream drink",
+    "tier": 1
+  },
+  {
+    "question": "What is the main ingredient in brownies?",
+    "choices": [
+      "Vanilla",
+      "Chocolate",
+      "Caramel",
+      "Strawberry"
+    ],
+    "answer": "Chocolate",
+    "tier": 1
+  },
+  {
+    "question": "What drink is made by brewing coffee beans?",
+    "choices": [
+      "Tea",
+      "Coffee",
+      "Cocoa",
+      "Cider"
+    ],
+    "answer": "Coffee",
+    "tier": 1
+  },
+  {
+    "question": "What is a smoothie typically made with?",
+    "choices": [
+      "Soda and ice",
+      "Blended fruit",
+      "Coffee and cream",
+      "Tea and honey"
+    ],
+    "answer": "Blended fruit",
+    "tier": 1
+  },
+  {
+    "question": "What is the main ingredient in a chocolate cake?",
+    "choices": [
+      "Vanilla",
+      "Lemon",
+      "Chocolate",
+      "Cinnamon"
+    ],
+    "answer": "Chocolate",
+    "tier": 1
+  },
+  {
+    "question": "What is apple cider made from?",
+    "choices": [
+      "Oranges",
+      "Grapes",
+      "Apples",
+      "Pears"
+    ],
+    "answer": "Apples",
+    "tier": 1
+  },
+  {
+    "question": "What is the frozen treat on a stick called?",
+    "choices": [
+      "Ice cream cone",
+      "Popsicle",
+      "Sundae",
+      "Parfait"
+    ],
+    "answer": "Popsicle",
+    "tier": 1
+  },
+  {
+    "question": "What is whipped cream made from?",
+    "choices": [
+      "Milk",
+      "Heavy cream",
+      "Butter",
+      "Yogurt"
+    ],
+    "answer": "Heavy cream",
+    "tier": 1
+  },
+  {
+    "question": "What is a cookie?",
+    "choices": [
+      "A bread",
+      "A small sweet baked treat",
+      "A cake",
+      "A candy"
+    ],
+    "answer": "A small sweet baked treat",
+    "tier": 1
+  },
+  {
+    "question": "What do you typically spread on toast?",
+    "choices": [
+      "Ketchup",
+      "Butter",
+      "Mustard",
+      "Soy sauce"
+    ],
+    "answer": "Butter",
+    "tier": 1
+  },
+  {
+    "question": "What condiment is commonly served with french fries?",
+    "choices": [
+      "Mayonnaise",
+      "Ketchup",
+      "Mustard",
+      "Hot sauce"
+    ],
+    "answer": "Ketchup",
+    "tier": 1
+  },
+  {
+    "question": "What do you typically dip sushi in?",
+    "choices": [
+      "Ketchup",
+      "Mustard",
+      "Soy sauce",
+      "Ranch dressing"
+    ],
+    "answer": "Soy sauce",
+    "tier": 1
+  },
+  {
+    "question": "What is traditionally served with Thanksgiving turkey?",
+    "choices": [
+      "Sushi",
+      "Cranberry sauce",
+      "Pasta",
+      "Tacos"
+    ],
+    "answer": "Cranberry sauce",
+    "tier": 1
+  },
+  {
+    "question": "What topping goes on a traditional hot dog?",
+    "choices": [
+      "Jam",
+      "Mustard",
+      "Maple syrup",
+      "Honey"
+    ],
+    "answer": "Mustard",
+    "tier": 1
+  },
+  {
+    "question": "What is commonly eaten with milk and a bowl?",
+    "choices": [
+      "Steak",
+      "Cereal",
+      "Pizza",
+      "Salad"
+    ],
+    "answer": "Cereal",
+    "tier": 1
+  },
+  {
+    "question": "What sauce is most often served with pasta?",
+    "choices": [
+      "Soy sauce",
+      "Tomato sauce",
+      "Barbecue sauce",
+      "Fish sauce"
+    ],
+    "answer": "Tomato sauce",
+    "tier": 1
+  },
+  {
+    "question": "What do you put in a sandwich besides bread?",
+    "choices": [
+      "Only butter",
+      "Fillings like meat or cheese",
+      "Only lettuce",
+      "Only mustard"
+    ],
+    "answer": "Fillings like meat or cheese",
+    "tier": 1
+  },
+  {
+    "question": "What is the traditional side dish with steak?",
+    "choices": [
+      "Rice",
+      "Baked potato",
+      "Noodles",
+      "Bread"
+    ],
+    "answer": "Baked potato",
+    "tier": 1
+  },
+  {
+    "question": "What is commonly drizzled on salad?",
+    "choices": [
+      "Ketchup",
+      "Dressing",
+      "Syrup",
+      "Soda"
+    ],
+    "answer": "Dressing",
+    "tier": 1
+  },
+  {
+    "question": "What do Italians commonly drink with dinner?",
+    "choices": [
+      "Beer",
+      "Tea",
+      "Wine",
+      "Juice"
+    ],
+    "answer": "Wine",
+    "tier": 1
+  },
+  {
+    "question": "What is served with chips at a Mexican restaurant?",
+    "choices": [
+      "Ketchup",
+      "Salsa",
+      "Mustard",
+      "Gravy"
+    ],
+    "answer": "Salsa",
+    "tier": 1
+  },
+  {
+    "question": "What do the British traditionally have in the afternoon?",
+    "choices": [
+      "Coffee",
+      "Tea",
+      "Juice",
+      "Soda"
+    ],
+    "answer": "Tea",
+    "tier": 1
+  },
+  {
+    "question": "What is the traditional breakfast drink?",
+    "choices": [
+      "Soda",
+      "Wine",
+      "Orange juice",
+      "Lemonade"
+    ],
+    "answer": "Orange juice",
+    "tier": 1
+  },
+  {
+    "question": "What do you usually eat with a bowl of chili?",
+    "choices": [
+      "Sushi",
+      "Cornbread",
+      "Pasta",
+      "Cake"
+    ],
+    "answer": "Cornbread",
+    "tier": 1
+  },
+  {
+    "question": "What makes bread rise?",
+    "choices": [
+      "Sugar",
+      "Salt",
+      "Yeast",
+      "Butter"
+    ],
+    "answer": "Yeast",
+    "tier": 2
+  },
+  {
+    "question": "What is a chinois used for in the kitchen?",
+    "choices": [
+      "Chopping herbs",
+      "Fine straining liquids",
+      "Measuring flour",
+      "Peeling fruit"
+    ],
+    "answer": "Fine straining liquids",
+    "tier": 2
+  },
+  {
+    "question": "What dairy product is butter churned from?",
+    "choices": [
+      "Milk",
+      "Cream",
+      "Yogurt",
+      "Whey"
+    ],
+    "answer": "Cream",
+    "tier": 2
+  },
+  {
+    "question": "What gives curry its yellow color?",
+    "choices": [
+      "Saffron",
+      "Paprika",
+      "Turmeric",
+      "Mustard"
+    ],
+    "answer": "Turmeric",
+    "tier": 2
+  },
+  {
+    "question": "What is the purpose of kneading dough?",
+    "choices": [
+      "Add flavor",
+      "Develop gluten",
+      "Remove air",
+      "Cool it down"
+    ],
+    "answer": "Develop gluten",
+    "tier": 2
+  },
+  {
+    "question": "What herb is the key ingredient in traditional pesto?",
+    "choices": [
+      "Parsley",
+      "Cilantro",
+      "Basil",
+      "Mint"
+    ],
+    "answer": "Basil",
+    "tier": 2
+  },
+  {
+    "question": "What does 'sauteing' mean?",
+    "choices": [
+      "Boiling in water",
+      "Cooking quickly in hot oil",
+      "Steaming in a pot",
+      "Baking in an oven"
+    ],
+    "answer": "Cooking quickly in hot oil",
+    "tier": 2
+  },
+  {
+    "question": "What is a roux used for?",
+    "choices": [
+      "Flavoring meat",
+      "Thickening sauces",
+      "Marinating fish",
+      "Glazing pastries"
+    ],
+    "answer": "Thickening sauces",
+    "tier": 2
+  },
+  {
+    "question": "What cut of meat is used for bacon?",
+    "choices": [
+      "Pork belly",
+      "Pork loin",
+      "Pork shoulder",
+      "Pork leg"
+    ],
+    "answer": "Pork belly",
+    "tier": 2
+  },
+  {
+    "question": "What is baking soda also known as?",
+    "choices": [
+      "Sodium chloride",
+      "Sodium bicarbonate",
+      "Sodium nitrate",
+      "Sodium sulfate"
+    ],
+    "answer": "Sodium bicarbonate",
+    "tier": 2
+  },
+  {
+    "question": "What does 'braising' involve?",
+    "choices": [
+      "Deep frying",
+      "Slow cooking in liquid",
+      "Grilling over flame",
+      "Steaming in foil"
+    ],
+    "answer": "Slow cooking in liquid",
+    "tier": 2
+  },
+  {
+    "question": "What makes brown sugar different from white sugar?",
+    "choices": [
+      "Brown has molasses",
+      "Brown has honey",
+      "White is sweeter",
+      "They are identical"
+    ],
+    "answer": "Brown has molasses",
+    "tier": 2
+  },
+  {
+    "question": "What type of flour is best for making pasta?",
+    "choices": [
+      "All-purpose",
+      "Semolina",
+      "Cake flour",
+      "Bread flour"
+    ],
+    "answer": "Semolina",
+    "tier": 2
+  },
+  {
+    "question": "What is the purpose of cream of tartar in meringue?",
+    "choices": [
+      "Add flavor",
+      "Stabilize egg whites",
+      "Add sweetness",
+      "Prevent burning"
+    ],
+    "answer": "Stabilize egg whites",
+    "tier": 2
+  },
+  {
+    "question": "What does 'proofing' yeast mean?",
+    "choices": [
+      "Testing if it is alive",
+      "Grinding it finely",
+      "Drying it out",
+      "Freezing it"
+    ],
+    "answer": "Testing if it is alive",
+    "tier": 2
+  },
+  {
+    "question": "What is a bain-marie?",
+    "choices": [
+      "A type of knife",
+      "A water bath for gentle heating",
+      "A French pastry",
+      "A meat marinade"
+    ],
+    "answer": "A water bath for gentle heating",
+    "tier": 2
+  },
+  {
+    "question": "What does 'emulsify' mean in cooking?",
+    "choices": [
+      "To freeze",
+      "To combine unmixable liquids",
+      "To strain",
+      "To ferment"
+    ],
+    "answer": "To combine unmixable liquids",
+    "tier": 2
+  },
+  {
+    "question": "What is the Maillard reaction?",
+    "choices": [
+      "Meat tenderizing",
+      "Browning from heat",
+      "Fermentation",
+      "Caramelization"
+    ],
+    "answer": "Browning from heat",
+    "tier": 2
+  },
+  {
+    "question": "What is the purpose of marinating meat?",
+    "choices": [
+      "Drying it out",
+      "Adding flavor and tenderizing",
+      "Preserving it",
+      "Cooling it down"
+    ],
+    "answer": "Adding flavor and tenderizing",
+    "tier": 2
+  },
+  {
+    "question": "What does 'dice' mean as a cutting technique?",
+    "choices": [
+      "Cut into strips",
+      "Cut into small cubes",
+      "Cut into slices",
+      "Mash into paste"
+    ],
+    "answer": "Cut into small cubes",
+    "tier": 2
+  },
+  {
+    "question": "What is the difference between stock and broth?",
+    "choices": [
+      "Stock uses bones",
+      "Broth uses bones",
+      "They are identical",
+      "Stock uses cream"
+    ],
+    "answer": "Stock uses bones",
+    "tier": 2
+  },
+  {
+    "question": "What is a Dutch oven?",
+    "choices": [
+      "An outdoor grill",
+      "A heavy lidded pot",
+      "A microwave",
+      "A toaster oven"
+    ],
+    "answer": "A heavy lidded pot",
+    "tier": 2
+  },
+  {
+    "question": "What does 'reduce' mean when making a sauce?",
+    "choices": [
+      "Add water",
+      "Simmer to thicken",
+      "Strain solids",
+      "Cool it down"
+    ],
+    "answer": "Simmer to thicken",
+    "tier": 2
+  },
+  {
+    "question": "What makes buttermilk different from regular milk?",
+    "choices": [
+      "It has butter in it",
+      "It is fermented and tangy",
+      "It is thicker",
+      "It has more fat"
+    ],
+    "answer": "It is fermented and tangy",
+    "tier": 2
+  },
+  {
+    "question": "What is the smoke point of an oil?",
+    "choices": [
+      "When it boils",
+      "When it starts to smoke and burn",
+      "When it solidifies",
+      "When it changes color"
+    ],
+    "answer": "When it starts to smoke and burn",
+    "tier": 2
+  },
+  {
+    "question": "What is a mandoline used for in the kitchen?",
+    "choices": [
+      "Playing music",
+      "Slicing uniformly",
+      "Measuring spices",
+      "Opening cans"
+    ],
+    "answer": "Slicing uniformly",
+    "tier": 2
+  },
+  {
+    "question": "What does 'blanch and shock' mean?",
+    "choices": [
+      "Season and rest",
+      "Boil briefly then ice bath",
+      "Fry then refrigerate",
+      "Grill then sauce"
+    ],
+    "answer": "Boil briefly then ice bath",
+    "tier": 2
+  },
+  {
+    "question": "What is clarified butter?",
+    "choices": [
+      "Butter with salt added",
+      "Butter with milk solids removed",
+      "Melted butter",
+      "Whipped butter"
+    ],
+    "answer": "Butter with milk solids removed",
+    "tier": 2
+  },
+  {
+    "question": "What is umami?",
+    "choices": [
+      "A spice",
+      "A savory taste",
+      "A cooking method",
+      "A type of knife"
+    ],
+    "answer": "A savory taste",
+    "tier": 2
+  },
+  {
+    "question": "What does 'fold' mean in baking?",
+    "choices": [
+      "Knead vigorously",
+      "Gently combine to keep air",
+      "Whisk until smooth",
+      "Press flat"
+    ],
+    "answer": "Gently combine to keep air",
+    "tier": 2
+  },
+  {
+    "question": "What is the purpose of a double boiler?",
+    "choices": [
+      "Boil water faster",
+      "Heat gently without direct heat",
+      "Steam vegetables",
+      "Make stock"
+    ],
+    "answer": "Heat gently without direct heat",
+    "tier": 2
+  },
+  {
+    "question": "What does 'confit' mean?",
+    "choices": [
+      "Deep fry in oil",
+      "Slow cook in its own fat",
+      "Smoke over wood",
+      "Freeze dry"
+    ],
+    "answer": "Slow cook in its own fat",
+    "tier": 2
+  },
+  {
+    "question": "What is gluten?",
+    "choices": [
+      "A sugar",
+      "A protein in wheat",
+      "A type of fat",
+      "A vitamin"
+    ],
+    "answer": "A protein in wheat",
+    "tier": 2
+  },
+  {
+    "question": "Why do you let meat rest after cooking?",
+    "choices": [
+      "To add flavor",
+      "To redistribute juices",
+      "To cool for safety",
+      "To firm up the crust"
+    ],
+    "answer": "To redistribute juices",
+    "tier": 2
+  },
+  {
+    "question": "What is the purpose of deglazing a pan?",
+    "choices": [
+      "Cleaning it",
+      "Lifting browned bits for sauce",
+      "Cooling it down",
+      "Removing oil"
+    ],
+    "answer": "Lifting browned bits for sauce",
+    "tier": 2
+  },
+  {
+    "question": "What is a bouquet garni?",
+    "choices": [
+      "A flower arrangement",
+      "A bundle of herbs for cooking",
+      "A French salad",
+      "A dessert garnish"
+    ],
+    "answer": "A bundle of herbs for cooking",
+    "tier": 2
+  },
+  {
+    "question": "Why do you salt eggplant before cooking?",
+    "choices": [
+      "Add flavor",
+      "Draw out bitterness",
+      "Prevent browning",
+      "Soften it"
+    ],
+    "answer": "Draw out bitterness",
+    "tier": 2
+  },
+  {
+    "question": "What does 'caramelize onions' mean?",
+    "choices": [
+      "Fry quickly",
+      "Cook slowly until sweet and brown",
+      "Boil in water",
+      "Add sugar to them"
+    ],
+    "answer": "Cook slowly until sweet and brown",
+    "tier": 2
+  },
+  {
+    "question": "What is a cartouche in cooking?",
+    "choices": [
+      "A type of knife",
+      "A parchment paper lid",
+      "A French pan",
+      "A spice blend"
+    ],
+    "answer": "A parchment paper lid",
+    "tier": 2
+  },
+  {
+    "question": "What is the purpose of sifting flour?",
+    "choices": [
+      "Remove insects",
+      "Add air and remove lumps",
+      "Measure accurately",
+      "Bleach it"
+    ],
+    "answer": "Add air and remove lumps",
+    "tier": 2
+  },
+  {
+    "question": "What does 'baste' mean when roasting?",
+    "choices": [
+      "Cut into pieces",
+      "Pour juices over the food",
+      "Wrap in foil",
+      "Season with salt"
+    ],
+    "answer": "Pour juices over the food",
+    "tier": 2
+  },
+  {
+    "question": "What is the difference between jam and jelly?",
+    "choices": [
+      "Jam has fruit pieces",
+      "Jelly has fruit pieces",
+      "They are the same",
+      "Jam uses honey"
+    ],
+    "answer": "Jam has fruit pieces",
+    "tier": 2
+  },
+  {
+    "question": "What does 'zest' a lemon mean?",
+    "choices": [
+      "Squeeze the juice",
+      "Grate the outer peel",
+      "Cut it in half",
+      "Remove the seeds"
+    ],
+    "answer": "Grate the outer peel",
+    "tier": 2
+  },
+  {
+    "question": "What is a sourdough starter?",
+    "choices": [
+      "A type of bread",
+      "A fermented flour and water culture",
+      "A yeast packet",
+      "A bread machine"
+    ],
+    "answer": "A fermented flour and water culture",
+    "tier": 2
+  },
+  {
+    "question": "What does 'cure' meat mean?",
+    "choices": [
+      "Cook it thoroughly",
+      "Preserve with salt or smoke",
+      "Freeze it",
+      "Tenderize it"
+    ],
+    "answer": "Preserve with salt or smoke",
+    "tier": 2
+  },
+  {
+    "question": "What is the difference between baking and roasting?",
+    "choices": [
+      "Different temperatures",
+      "Baking is for dough, roasting for meat",
+      "Different ovens",
+      "No difference"
+    ],
+    "answer": "Baking is for dough, roasting for meat",
+    "tier": 2
+  },
+  {
+    "question": "What is pectin used for?",
+    "choices": [
+      "Flavoring",
+      "Setting jams and jellies",
+      "Preserving meat",
+      "Rising bread"
+    ],
+    "answer": "Setting jams and jellies",
+    "tier": 2
+  },
+  {
+    "question": "What does 'sweat' vegetables mean?",
+    "choices": [
+      "Wash them",
+      "Cook slowly without browning",
+      "Grill at high heat",
+      "Marinate overnight"
+    ],
+    "answer": "Cook slowly without browning",
+    "tier": 2
+  },
+  {
+    "question": "What is leavening?",
+    "choices": [
+      "Flavoring food",
+      "Making dough rise",
+      "Thickening sauce",
+      "Preserving food"
+    ],
+    "answer": "Making dough rise",
+    "tier": 2
+  },
+  {
+    "question": "What is the purpose of a rolling pin?",
+    "choices": [
+      "Mix ingredients",
+      "Flatten dough",
+      "Cut vegetables",
+      "Stir soup"
+    ],
+    "answer": "Flatten dough",
+    "tier": 2
+  },
+  {
+    "question": "What is the difference between braising and stewing?",
+    "choices": [
+      "Braising uses whole cuts",
+      "Stewing uses whole cuts",
+      "No difference",
+      "Braising is faster"
+    ],
+    "answer": "Braising uses whole cuts",
+    "tier": 2
+  },
+  {
+    "question": "What is the purpose of cornstarch in cooking?",
+    "choices": [
+      "Add flavor",
+      "Thicken liquids",
+      "Leaven bread",
+      "Preserve food"
+    ],
+    "answer": "Thicken liquids",
+    "tier": 2
+  },
+  {
+    "question": "What is a wok best used for?",
+    "choices": [
+      "Baking",
+      "Stir-frying",
+      "Boiling pasta",
+      "Making soup"
+    ],
+    "answer": "Stir-frying",
+    "tier": 2
+  },
+  {
+    "question": "What is the purpose of acid in a marinade?",
+    "choices": [
+      "Add color",
+      "Tenderize the meat",
+      "Preserve it",
+      "Add sweetness"
+    ],
+    "answer": "Tenderize the meat",
+    "tier": 2
+  },
+  {
+    "question": "What does 'flambe' mean?",
+    "choices": [
+      "Freeze",
+      "Ignite alcohol on food",
+      "Deep fry",
+      "Smoke"
+    ],
+    "answer": "Ignite alcohol on food",
+    "tier": 2
+  },
+  {
+    "question": "What is a springform pan used for?",
+    "choices": [
+      "Frying",
+      "Baking cakes that need easy removal",
+      "Boiling",
+      "Steaming"
+    ],
+    "answer": "Baking cakes that need easy removal",
+    "tier": 2
+  },
+  {
+    "question": "What does 'score' meat or bread mean?",
+    "choices": [
+      "Rate its quality",
+      "Make shallow cuts on the surface",
+      "Weigh it",
+      "Season it"
+    ],
+    "answer": "Make shallow cuts on the surface",
+    "tier": 2
+  },
+  {
+    "question": "What is a gastrique?",
+    "choices": [
+      "A stomach remedy",
+      "A caramelized sugar and vinegar sauce",
+      "A type of soup",
+      "A salad dressing"
+    ],
+    "answer": "A caramelized sugar and vinegar sauce",
+    "tier": 2
+  },
+  {
+    "question": "What is the purpose of a candy thermometer?",
+    "choices": [
+      "Measure room temperature",
+      "Measure sugar syrup stages",
+      "Measure oven temperature",
+      "Measure meat doneness"
+    ],
+    "answer": "Measure sugar syrup stages",
+    "tier": 2
+  },
+  {
+    "question": "What does 'dock' mean when making pastry?",
+    "choices": [
+      "Shape it",
+      "Poke holes to prevent puffing",
+      "Fold it",
+      "Roll it thin"
+    ],
+    "answer": "Poke holes to prevent puffing",
+    "tier": 2
   }
 ]

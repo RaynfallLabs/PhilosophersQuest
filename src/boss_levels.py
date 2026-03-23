@@ -11,7 +11,7 @@ Each boss level:
 import json
 import os
 
-from dungeon import Dungeon, Room, WALL, FLOOR, STAIRS_UP, STAIRS_DOWN, DOOR, ALTAR
+from dungeon import Dungeon, Room, WALL, FLOOR, STAIRS_UP, STAIRS_DOWN, DOOR, ALTAR, ICE
 
 BOSS_LEVELS = {20, 40, 60, 80, 100}
 
@@ -79,7 +79,9 @@ def _spawn_boss(dungeon, boss_id, boss_room):
     if defn is None:
         return []
     cx, cy = boss_room.center
-    return [Monster(defn, cx, cy)]
+    boss = Monster(defn, cx, cy)
+    boss.is_boss = True
+    return [boss]
 
 
 # ---------------------------------------------------------------------------
@@ -111,13 +113,16 @@ def _level_20_labyrinth():
         _vline(tiles, 20, 26, cx)
 
     # Wall off some connectors to create a proper maze (dead ends)
-    for cx in [16, 32, 48, 64]:
+    # Note: first block on each corridor is omitted so the player has a
+    # solvable path through the labyrinth (entry→C1→C2→C3→boss room).
+    # Asterion still has phasing-wall shortcuts everywhere.
+    for cx in [32, 48, 64]:
         tiles[14][cx] = WALL
         tiles[14][cx + 1] = WALL
-    for cx in [20, 36, 52, 68]:
+    for cx in [36, 52, 68]:
         tiles[20][cx] = WALL
         tiles[20][cx + 1] = WALL
-    for cx in [24, 40, 56]:
+    for cx in [40, 56]:
         tiles[26][cx] = WALL
         tiles[26][cx + 1] = WALL
 
@@ -157,6 +162,35 @@ def _level_20_labyrinth():
     _connect(tiles, boss_room, exit_room)
 
     dungeon = _make(tiles, rooms, 20)
+
+    # --- Phasing walls: secret passages only Asterion knows ---
+    # These are WALL tiles that Asterion can walk through (hit-and-run AI).
+    # Placed at strategic points between corridors so he can ambush from any direction.
+    dungeon.phasing_walls = set()
+    # Vertical shortcuts between the three horizontal corridors
+    for cx in [10, 22, 34, 46, 58, 70]:
+        for y in range(15, 20):   # between corridor 1 and 2
+            if tiles[y][cx] == WALL:
+                dungeon.phasing_walls.add((cx, y))
+        for y in range(21, 26):   # between corridor 2 and 3
+            if tiles[y][cx] == WALL:
+                dungeon.phasing_walls.add((cx, y))
+    # Horizontal shortcuts along blocked connectors
+    for cx in [16, 17, 32, 33, 48, 49, 64, 65]:
+        if tiles[14][cx] == WALL:
+            dungeon.phasing_walls.add((cx, 14))
+    for cx in [20, 21, 36, 37, 52, 53, 68, 69]:
+        if tiles[20][cx] == WALL:
+            dungeon.phasing_walls.add((cx, 20))
+    for cx in [24, 25, 40, 41, 56, 57]:
+        if tiles[26][cx] == WALL:
+            dungeon.phasing_walls.add((cx, 26))
+    # Shortcut from corridor 3 to boss chamber area
+    for y in range(27, 35):
+        for cx in [30, 50]:
+            if tiles[y][cx] == WALL:
+                dungeon.phasing_walls.add((cx, y))
+
     return dungeon, _spawn_boss(dungeon, 'asterion_minotaur', boss_room), []
 
 
@@ -220,6 +254,10 @@ def _level_40_temple():
     tiles[boss_room.y - 1][boss_room.center[0]] = DOOR
     _vline(tiles, nave.y + nave.height, boss_room.y, nave.center[0])
 
+    # Pillars in boss room — LOS blockers against Medusa's gaze
+    for px, py in [(35, 41), (43, 41), (35, 45), (43, 45)]:
+        tiles[py][px] = WALL
+
     # Exit passage
     exit_room = _carve_room(tiles, 68, 43, 4, 3)
     rooms.append(exit_room)
@@ -271,6 +309,10 @@ def _level_60_lair():
     _connect(tiles, ante3, hoard)
     tiles[hoard.y - 1][hoard.center[0]] = DOOR
 
+    # Stalagmites / treasure piles in the hoard
+    for sx, sy in [(35, 25), (50, 30), (38, 33)]:
+        tiles[sy][sx] = WALL
+
     # Treasure alcoves
     for ax, ay in [(20, 28), (20, 34), (64, 28), (64, 34)]:
         alcove = _carve_room(tiles, ax, ay, 4, 3)
@@ -285,6 +327,10 @@ def _level_60_lair():
     rooms.append(boss_room)
     _vline(tiles, hoard.y + hoard.height, boss_room.y, hoard.center[0])
     tiles[boss_room.y - 1][boss_room.center[0]] = DOOR
+
+    # Rock formations -- cover to dig pits behind
+    for rx, ry in [(36, 41), (36, 42), (48, 44), (48, 45)]:
+        tiles[ry][rx] = WALL
 
     # Exit tunnel (narrow passage to the right)
     exit_room = _carve_room(tiles, 70, 43, 5, 3)
@@ -345,6 +391,16 @@ def _level_80_hall():
     rooms.append(boss_room)
     _vline(tiles, hall2.y + hall2.height, boss_room.y, hall2.center[0])
     tiles[boss_room.y - 1][boss_room.center[0]] = DOOR
+
+    # Frozen pillars -- crumbled ice columns for tactical cover
+    for px, py in [(31, 42), (35, 44), (43, 44), (47, 42)]:
+        tiles[py][px] = WALL
+
+    # Ice patches -- slippery terrain (left, center, right)
+    for ix, iy in [(27, 42), (27, 43), (28, 42), (28, 43), (28, 44),  # left patch
+                   (38, 40), (39, 40), (40, 40), (38, 41), (39, 41), (40, 41),  # center
+                   (49, 43), (49, 44), (50, 43), (50, 44), (50, 45), (51, 43)]:  # right
+        tiles[iy][ix] = ICE
 
     # Collapsed exit (narrow opening on the right)
     exit_room = _carve_room(tiles, 70, 43, 4, 3)
@@ -409,12 +465,14 @@ def _level_100_abyss():
         _hline(tiles, rcx, center_x, rcy)
         _vline(tiles, rcy, center_y, center_x)
 
-    # Altar ring around the boss chamber
+    # Altar ring around the boss chamber (6 altars for holy fire prayers)
     for ax, ay in [
         (center_x - 8, center_y),
         (center_x + 8, center_y),
         (center_x, center_y - 8),
         (center_x, center_y + 8),
+        (center_x - 6, center_y - 6),
+        (center_x + 6, center_y - 6),
     ]:
         if 0 <= ay < _H and 0 <= ax < _W:
             tiles[ay][ax] = ALTAR
@@ -422,6 +480,10 @@ def _level_100_abyss():
     # Boss arena -- the Void Throne
     boss_room = _carve_room(tiles, center_x, center_y, 10, 7)
     rooms.append(boss_room)
+
+    # Crumbled void-throne remnants -- minimal cover against locust swarms
+    tiles[27][37] = WALL
+    tiles[29][41] = WALL
 
     # Stone bridges (spokes already carved) -- add doors
     tiles[boss_room.y - 1][boss_room.center[0]] = DOOR

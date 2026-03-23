@@ -5,5 +5,194 @@
     "color": [255, 215, 0],
     "weight": 1.0,
     "min_level": 3
+  },
+  "bronze_bull": {
+    "name": "Bronze Bull Idol",
+    "symbol": "!",
+    "color": [180, 120, 60],
+    "weight": 0.5,
+    "min_level": 10,
+    "lore": "A small bronze figure of a bull, worn smooth by centuries of prayer. King Minos was given such a bull by Poseidon \u2014 and his refusal to sacrifice it at the sacred waters cursed his bloodline forever. The idol still smells faintly of sea-foam."
+  },
+  "ariadnes_thread": {
+    "name": "Ariadne's Thread",
+    "symbol": "&",
+    "color": [255, 215, 100],
+    "weight": 0.1,
+    "min_level": 15,
+    "lore": "A spool of shimmering golden thread. Ariadne gave this to Theseus so he could navigate the labyrinth and escape after slaying the Minotaur. It reveals all hidden paths."
+  },
+  "eye_of_graeae": {
+    "name": "Eye of the Graeae",
+    "symbol": "o",
+    "color": [200, 200, 220],
+    "weight": 0.2,
+    "min_level": 25,
+    "lore": "A single milky eye, cold as sea-stone. The three Grey Sisters \u2014 Deino, Enyo, and Pemphredo \u2014 shared this one eye between them. Perseus stole it and refused to return it until they revealed the secret of slaying Medusa. It still seems to watch you, even from your pack. The gods rewarded his cunning at a sacred place."
+  },
+  "cats_footstep": {
+    "name": "Sound of a Cat's Footstep",
+    "symbol": "~",
+    "color": [180, 160, 200],
+    "weight": 0.2,
+    "min_level": 60,
+    "identified": true,
+    "lore": "A tiny glass vial that makes no sound when shaken. The dwarves of Svartalfheim harvested the silence of a cat's paw to forge Gleipnir, the binding that held Fenrir."
+  },
+  "womans_beard": {
+    "name": "Roots of a Woman's Beard",
+    "symbol": "~",
+    "color": [200, 170, 140],
+    "weight": 0.2,
+    "min_level": 60,
+    "identified": true,
+    "lore": "Fine filaments of something that shouldn't exist. The dwarves used them because they are impossible — and impossible things make the strongest chains."
+  },
+  "mountain_root": {
+    "name": "Root of a Mountain",
+    "symbol": "~",
+    "color": [140, 130, 120],
+    "weight": 0.2,
+    "min_level": 60,
+    "identified": true,
+    "lore": "A gnarled tendril of grey stone that pulses faintly with geologic patience. Mountains have roots that reach to the earth's core. The dwarves knew where to dig."
+  },
+  "fish_breath": {
+    "name": "Breath of a Fish",
+    "symbol": "~",
+    "color": [140, 200, 220],
+    "weight": 0.2,
+    "min_level": 60,
+    "identified": true,
+    "lore": "A sealed bubble of impossibility — air exhaled by a creature that has no lungs. It smells of deep water and cold currents."
+  },
+  "bird_spittle": {
+    "name": "Spittle of a Bird",
+    "symbol": "~",
+    "color": [220, 220, 180],
+    "weight": 0.2,
+    "min_level": 60,
+    "identified": true,
+    "lore": "A single drop of moisture from a creature with no salivary glands. It glistens on its own, independent of any light source."
+  },
+  "bear_sinew": {
+    "name": "Sinew of a Bear's Sensitivity",
+    "symbol": "~",
+    "color": [180, 140, 100],
+    "weight": 0.2,
+    "min_level": 60,
+    "identified": true,
+    "lore": "A thread of something between nerve and tendon, harvested from the concept of a bear's awareness. It twitches occasionally, sensing things you cannot."
+  },
+  "gleipnir": {
+    "name": "Gleipnir",
+    "symbol": "&",
+    "color": [220, 220, 255],
+    "weight": 0.1,
+    "min_level": 60,
+    "identified": true,
+    "lore": "A ribbon as thin as silk and as light as nothing. It cannot be broken by any force in the Nine Realms. The dwarves of Svartalfheim forged it from six impossible things, and it held the Wolf of Ragnarok until the end of days. It whispers of binding."
+  },
+  "leather_scrap": {
+    "name": "leather scrap",
+    "symbol": ",",
+    "color": [120, 90, 60],
+    "weight": 2.0,
+    "min_level": 1,
+    "identified": true,
+    "lore": "Useless scrap left over from leather-working. Too small for armor, too stiff for bandages. You can't imagine why anyone would keep this."
+  },
+  "seal_of_wrath": {
+    "name": "Seal of Wrath",
+    "symbol": "*",
+    "color": [200, 60, 60],
+    "weight": 0.1,
+    "min_level": 83,
+    "identified": true,
+    "lore": "A blood-red sigil torn from the first guardian of the Abyss. It burns with infernal heat and smells of brimstone. One of seven seals that hold the Pit closed."
+  },
+  "seal_of_pestilence": {
+    "name": "Seal of Pestilence",
+    "symbol": "*",
+    "color": [120, 160, 40],
+    "weight": 0.1,
+    "min_level": 85,
+    "identified": true,
+    "lore": "A sickly green sigil that weeps a foul ichor. The air around it hums with plague. One of seven seals that hold the Pit closed."
+  },
+  "seal_of_famine": {
+    "name": "Seal of Famine",
+    "symbol": "*",
+    "color": [180, 160, 100],
+    "weight": 0.1,
+    "min_level": 87,
+    "identified": true,
+    "lore": "A withered sigil the color of dead grain. Holding it makes you feel hollow, as though you have not eaten in days. One of seven seals that hold the Pit closed."
+  },
+  "seal_of_war": {
+    "name": "Seal of War",
+    "symbol": "*",
+    "color": [180, 40, 40],
+    "weight": 0.1,
+    "min_level": 89,
+    "identified": true,
+    "lore": "A crimson sigil etched with crossed swords. It vibrates with the memory of a thousand battlefields. One of seven seals that hold the Pit closed."
+  },
+  "seal_of_death": {
+    "name": "Seal of Death",
+    "symbol": "*",
+    "color": [60, 60, 80],
+    "weight": 0.1,
+    "min_level": 91,
+    "identified": true,
+    "lore": "A pale sigil cold as the grave. Your shadow darkens when you hold it. One of seven seals that hold the Pit closed."
+  },
+  "seal_of_earthquake": {
+    "name": "Seal of the Earthquake",
+    "symbol": "*",
+    "color": [140, 100, 60],
+    "weight": 0.1,
+    "min_level": 93,
+    "identified": true,
+    "lore": "A cracked sigil that trembles in your hand. The stone beneath your feet groans when you carry it. One of seven seals that hold the Pit closed."
+  },
+  "seal_of_silence": {
+    "name": "Seal of Silence",
+    "symbol": "*",
+    "color": [180, 180, 200],
+    "weight": 0.1,
+    "min_level": 97,
+    "identified": true,
+    "lore": "A sigil of pale silver that absorbs all sound around it. In its presence, even your breathing is muffled. The last and most terrible of the seven seals that hold the Pit closed."
+  },
+  "scales_of_michael": {
+    "name": "Scales of Michael",
+    "symbol": "=",
+    "color": [255, 240, 200],
+    "weight": 0.5,
+    "min_level": 9999,
+    "identified": true,
+    "lore": "The golden scales of the Archangel Michael, Weigher of Souls and Prince of the Heavenly Host. In the final battle against the Destroyer, the Host answers the call of these scales. For every locust of the Abyss, an angel descends."
+  },
+
+  "cursed_lodestone": {
+    "name": "Cursed Lodestone",
+    "symbol": "*",
+    "color": [60, 60, 80],
+    "weight": 20.0,
+    "min_level": 9999,
+    "identified": true,
+    "cursed": true,
+    "lore": "A massive black stone that drinks the light around it. You accepted it willingly to save a knight's dying wife. It weighs twenty pounds and cannot be put down — the curse binds it to whoever takes it freely. Only a scroll of Remove Curse can break the bond."
+  },
+
+  "sealed_dispatch": {
+    "name": "Sealed Dispatch",
+    "symbol": "*",
+    "color": [140, 120, 100],
+    "weight": 8.0,
+    "min_level": 9999,
+    "identified": true,
+    "lore": "An iron-bound scroll case sealed with the sigil of the City Watch. It contains troop positions for an ongoing siege — thousands of lives depend on its delivery. A dying courier asked you to carry it to the surface. It is heavy and useless to you, but it is a promise."
   }
 }

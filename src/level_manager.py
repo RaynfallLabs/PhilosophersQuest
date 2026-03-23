@@ -48,8 +48,15 @@ class LevelManager:
 
         items = spawn_items(dungeon.rooms, level_num, dungeon)
 
+        # Spawn extra monsters in monster_den special rooms
+        # (must run after spawn_items which creates special rooms)
+        _spawn_monster_den_extras(dungeon, monsters, level_num)
+
         # Try to spawn a mini-boss on this level
         self._try_spawn_mini_boss(dungeon, monsters, level_num)
+
+        # Forced seal demon spawn (Abaddon quest — guaranteed on their specific levels)
+        self._try_spawn_seal_demon(dungeon, monsters, level_num)
 
         # Populate hidden chambers with themed monsters/items
         _populate_hidden_chambers(dungeon, monsters, items, level_num)
@@ -137,6 +144,86 @@ class LevelManager:
             pass
 
 
+    _SEAL_DEMON_LEVELS = {
+        83: 'seal_demon_wrath',
+        85: 'seal_demon_pestilence',
+        87: 'seal_demon_famine',
+        89: 'seal_demon_war',
+        91: 'seal_demon_death',
+        93: 'seal_demon_earthquake',
+        97: 'seal_demon_silence',
+    }
+
+    def _try_spawn_seal_demon(self, dungeon, monsters: list, level_num: int):
+        """Force-spawn a seal demon on its designated level (guaranteed, always)."""
+        demon_id = self._SEAL_DEMON_LEVELS.get(level_num)
+        if not demon_id:
+            return
+        if demon_id in self._placed_mini_bosses:
+            return  # already placed on a prior visit
+
+        import json as _json
+        import random as _rng
+        from paths import data_path as _dp
+
+        try:
+            with open(_dp('data', 'monsters.json'), encoding='utf-8') as f:
+                all_defs = _json.load(f)
+        except Exception:
+            return
+
+        demon_data = all_defs.get(demon_id)
+        if not demon_data:
+            return
+
+        # Pick a room (not start room) and find a free tile
+        candidate_rooms = dungeon.rooms[1:-1] if len(dungeon.rooms) > 2 else dungeon.rooms[1:]
+        if not candidate_rooms:
+            candidate_rooms = dungeon.rooms
+        _rng.shuffle(candidate_rooms)
+
+        occupied = {(m.x, m.y) for m in monsters}
+        for room in candidate_rooms:
+            tiles = list(room.inner_tiles())
+            _rng.shuffle(tiles)
+            for tx, ty in tiles:
+                if dungeon.is_walkable(tx, ty) and (tx, ty) not in occupied:
+                    from monster import Monster
+                    defn = dict(demon_data)
+                    defn['id'] = demon_id
+                    mb = Monster(defn, tx, ty)
+                    monsters.append(mb)
+                    self._placed_mini_bosses.add(demon_id)
+                    return
+
+
+def _spawn_monster_den_extras(dungeon, monsters: list, level_num: int):
+    """Spawn 3-5 extra monsters in each monster_den special room."""
+    from dungeon import spawn_monsters
+
+    den_centers = [
+        center for center, rtype in dungeon.special_rooms.items()
+        if rtype == 'monster_den'
+    ]
+    if not den_centers:
+        return
+
+    for cx, cy in den_centers:
+        # Find the Room object whose center matches
+        den_room = None
+        for room in dungeon.rooms:
+            if room.center == (cx, cy):
+                den_room = room
+                break
+        if den_room is None:
+            continue
+
+        # spawn_monsters skips rooms[0], so pass [dummy, den_room]
+        extras = spawn_monsters([den_room, den_room], level_num, dungeon,
+                                min_count=3, max_count=5)
+        monsters.extend(extras)
+
+
 def _populate_hidden_chambers(dungeon, monsters: list, items: list, level: int):
     """Populate each hidden chamber with themed monsters or treasure items."""
     import random as _rng
@@ -170,7 +257,6 @@ def _populate_hidden_chambers(dungeon, monsters: list, items: list, level: int):
 
         if ctype == 'treasure':
             # Spawn 3-5 items inside the chamber
-            tier = min(5, 1 + level // 12)
             count_target = _rng.randint(3, 5)
             placed = 0
             # Re-use spawn_items on the single chamber room, then keep only

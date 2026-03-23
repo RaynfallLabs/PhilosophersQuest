@@ -281,8 +281,8 @@
       "81-100": 3
     }
   },
-  "aegis_of_athena": {
-    "name": "Aegis of Athena",
+  "greater_aegis_of_athena": {
+    "name": "Greater Aegis of Athena",
     "symbol": ")",
     "color": [
       200,
@@ -468,5 +468,44 @@
       "41-60": 1,
       "61-100": 1
     }
+  },
+  "aegis_of_athena": {
+    "name": "Aegis of Athena",
+    "symbol": ")",
+    "color": [220, 200, 140],
+    "weight": 4.0,
+    "min_level": 36,
+    "tier": 4,
+    "material": "bronze",
+    "ac_bonus": 4,
+    "equip_threshold": 3,
+    "quiz_tier": 3,
+    "damage_resistances": {
+      "magic": 0.50
+    },
+    "can_be_cursed": false,
+    "enchant_bonus": 0,
+    "unidentified_name": "mirror-bright bronze shield",
+    "lore": "Athena's own shield, polished to a mirror-bright sheen. She lent it to Perseus so he could face the Gorgon without meeting her eyes. In its reflection, the monster sees only herself — and is turned to stone by her own terrible gaze.",
+    "floorSpawnWeight": {}
+  },
+
+  "lionheart_shield": {
+    "name": "Lionheart Shield",
+    "symbol": ")",
+    "color": [200, 180, 100],
+    "weight": 5.0,
+    "min_level": 9999,
+    "tier": 4,
+    "material": "steel",
+    "ac_bonus": 4,
+    "equip_threshold": 3,
+    "quiz_tier": 3,
+    "damage_resistances": {},
+    "can_be_cursed": false,
+    "enchant_bonus": 1,
+    "unidentified_name": "battered lion shield",
+    "lore": "A steel shield engraved with a roaring lion and the motto DUTY UNTO DEATH. The name MARTEN OF THE IRON VALE is inscribed on the inside rim. It was carried into the dungeon four months ago by a knight who promised his wife he would be back for supper.",
+    "floorSpawnWeight": {}
   }
 }

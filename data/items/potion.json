@@ -2394,5 +2394,18 @@
       150,
       50
     ]
+  },
+  "fafnirs_blood": {
+    "name": "Fafnir's Blood",
+    "unidentified_name": "Fafnir's Blood",
+    "symbol": "!",
+    "color": [255, 60, 20],
+    "weight": 0.5,
+    "min_level": 9999,
+    "effect": "fafnirs_blood",
+    "power": "0",
+    "duration": 0,
+    "floorSpawnWeight": {},
+    "lore": "The scalding blood of the dragon Fafnir, said to grant understanding of the speech of birds and visions of hidden truths. In the old tales, Sigurd tasted the blood and gained wisdom beyond mortal ken — including knowledge of how the gods reforge what is broken. Those who drink deeply may glimpse echoes of that ancient craft: a blade unmade, hurled skyward over a sacred place, and caught by divine hands."
   }
 }

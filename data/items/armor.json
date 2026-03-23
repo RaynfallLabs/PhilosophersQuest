@@ -3726,5 +3726,47 @@
       "21-40": 8,
       "41-100": 2
     }
+  },
+  "blindfold": {
+    "name": "blindfold",
+    "slot": "head",
+    "tier": 1,
+    "material": "cloth",
+    "ac_bonus": 0,
+    "equip_threshold": 2,
+    "quiz_tier": 1,
+    "damage_resistances": {},
+    "can_be_cursed": false,
+    "enchant_bonus": 0,
+    "identified": true,
+    "unidentified_name": "strip of dark cloth",
+    "lore": "A strip of heavy black cloth. Wearing it plunges you into total darkness — you cannot see anything at all. A desperate measure, but sometimes not seeing is the only way to survive what lurks in the dark.",
+    "symbol": "[",
+    "color": [40, 40, 50],
+    "floorSpawnWeight": {
+      "1-29": 0,
+      "30-38": 8,
+      "39-100": 3
+    }
+  },
+  "vidars_sandal": {
+    "name": "Vidar's Sandal",
+    "symbol": "[",
+    "color": [160, 130, 80],
+    "weight": 1.0,
+    "min_level": 9999,
+    "slot": "feet",
+    "tier": 5,
+    "material": "divine",
+    "ac_bonus": 3,
+    "equip_threshold": 3,
+    "quiz_tier": 4,
+    "damage_resistances": {"slash": 0.25, "blunt": 0.25},
+    "can_be_cursed": false,
+    "enchant_bonus": 0,
+    "identified": true,
+    "unidentified_name": "thick leather sandal",
+    "lore": "A sandal of impossible thickness, reinforced with leather scraps collected over an entire lifetime. Vidar the Silent, son of Odin, wore it when he avenged his father — planting his foot on the lower jaw of the World-Wolf and tearing the beast apart with his bare hands.",
+    "floorSpawnWeight": {}
   }
 }

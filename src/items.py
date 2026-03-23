@@ -8,6 +8,15 @@ _DATA_DIR = data_path('data', 'items')
 # Armor slot index map (matches Player.armor_slots order)
 ARMOR_SLOTS = ['head', 'body', 'arms', 'hands', 'legs', 'feet', 'cloak', 'shirt']
 
+# Per-slot enchantment caps (max enchant_bonus allowed)
+ENCHANT_CAP = {
+    'head': 2, 'body': 3, 'arms': 1, 'hands': 1,
+    'legs': 1, 'feet': 1, 'cloak': 2, 'shirt': 1,
+    'shield': 2, 'weapon': 5,
+}
+# Random spawn enchant is capped at +1 for armor/shield; scrolls can push to slot cap
+SPAWN_ENCHANT_CAP_ARMOR = 1
+
 
 class Item:
     # Item types where identical instances (same id) merge into a stack
@@ -58,6 +67,8 @@ class Weapon(Item):
         self.container_loot_tier: str   = defn.get('containerLootTier', defn.get('container_loot_tier', 'common'))
         self.value: int                 = int(defn.get('value', 50))
         self.enchant_bonus: int         = 0
+        self.buc: str                   = 'uncursed'
+        self.buc_known: bool            = False
         self.identified: bool           = bool(defn.get('identified', False))
         self.unidentified_name: str     = defn.get('unidentified_name', 'an unknown weapon')
         # On-hit effect properties
@@ -72,6 +83,9 @@ class Weapon(Item):
         self.growing_power: bool        = bool(defn.get('growingPower', defn.get('growing_power', False)))
         self.kills_to_grow: int         = int(defn.get('killsToGrow', defn.get('kills_to_grow', 10)))
         self.on_equip_status: str       = defn.get('onEquipStatus', defn.get('on_equip_status', ''))
+        self.can_dig: bool              = bool(defn.get('can_dig', False))
+        self.ignore_resistances: bool   = bool(defn.get('ignore_resistances', False))
+        self.abaddon_bonus_damage: str  = defn.get('abaddon_bonus_damage', '')
         # Runtime-only tracking for growing power
         self.kill_count: int            = 0
 
@@ -79,6 +93,14 @@ class Weapon(Item):
     def max_chain_length(self) -> int:
         """Always derived from chain_multipliers so old pickled weapons stay correct."""
         return len(self.chain_multipliers)
+
+    @property
+    def cursed(self) -> bool:
+        return getattr(self, 'buc', 'uncursed') == 'cursed'
+
+    @cursed.setter
+    def cursed(self, value: bool):
+        self.buc = 'cursed' if value else 'uncursed'
 
 
 class Armor(Item):
@@ -93,12 +115,21 @@ class Armor(Item):
         self.quiz_tier: int      = int(defn.get('quiz_tier', 1))
         self.damage_resistances: dict = defn.get('damage_resistances', {})
         self.can_be_cursed: bool = bool(defn.get('can_be_cursed', False))
-        self.cursed: bool        = False   # set at spawn time
+        self.buc: str            = 'uncursed'
+        self.buc_known: bool     = False
         self.identified: bool    = bool(defn.get('identified', False))
         self.unidentified_name: str = defn.get('unidentified_name', 'unknown armor')
         self.container_loot_tier: str = defn.get('container_loot_tier', 'common')
         self.on_equip_status: str    = defn.get('onEquipStatus', defn.get('on_equip_status', ''))
         self.floor_spawn_weight: dict = defn.get('floorSpawnWeight', defn.get('floor_spawn_weight', {}))
+
+    @property
+    def cursed(self) -> bool:
+        return getattr(self, 'buc', 'uncursed') == 'cursed'
+
+    @cursed.setter
+    def cursed(self, value: bool):
+        self.buc = 'cursed' if value else 'uncursed'
 
 
 class Shield(Item):
@@ -112,11 +143,20 @@ class Shield(Item):
         self.quiz_tier: int      = int(defn.get('quiz_tier', 1))
         self.damage_resistances: dict = defn.get('damage_resistances', {})
         self.can_be_cursed: bool = bool(defn.get('can_be_cursed', False))
-        self.cursed: bool        = False
+        self.buc: str            = 'uncursed'
+        self.buc_known: bool     = False
         self.identified: bool    = bool(defn.get('identified', False))
         self.unidentified_name: str = defn.get('unidentified_name', 'an unknown shield')
         self.container_loot_tier: str = defn.get('container_loot_tier', 'common')
         self.floor_spawn_weight: dict = defn.get('floorSpawnWeight', defn.get('floor_spawn_weight', {}))
+
+    @property
+    def cursed(self) -> bool:
+        return getattr(self, 'buc', 'uncursed') == 'cursed'
+
+    @cursed.setter
+    def cursed(self, value: bool):
+        self.buc = 'cursed' if value else 'uncursed'
 
 
 class Accessory(Item):
@@ -128,8 +168,18 @@ class Accessory(Item):
         self.quiz_tier        = int(defn.get('quiz_tier', 1))
         self.unidentified_name = defn.get('unidentified_name', defn['name'])
         self.identified       = bool(defn.get('identified', False))
+        self.buc: str            = 'uncursed'
+        self.buc_known: bool     = False
         self.container_loot_tier: str = defn.get('container_loot_tier', 'common')
         self.floor_spawn_weight: dict = defn.get('floorSpawnWeight', defn.get('floor_spawn_weight', {}))
+
+    @property
+    def cursed(self) -> bool:
+        return getattr(self, 'buc', 'uncursed') == 'cursed'
+
+    @cursed.setter
+    def cursed(self, value: bool):
+        self.buc = 'cursed' if value else 'uncursed'
 
 
 class Wand(Item):
@@ -146,8 +196,18 @@ class Wand(Item):
         self.power            = defn.get('power', '')
         self.unidentified_name = defn.get('unidentified_name', defn['name'])
         self.identified       = bool(defn.get('identified', False))
+        self.buc: str            = 'uncursed'
+        self.buc_known: bool     = False
         self.container_loot_tier: str = defn.get('containerLootTier', defn.get('container_loot_tier', 'common'))
         self.floor_spawn_weight: dict = defn.get('floorSpawnWeight', defn.get('floor_spawn_weight', {}))
+
+    @property
+    def cursed(self) -> bool:
+        return getattr(self, 'buc', 'uncursed') == 'cursed'
+
+    @cursed.setter
+    def cursed(self, value: bool):
+        self.buc = 'cursed' if value else 'uncursed'
 
 
 class Scroll(Item):
@@ -159,8 +219,18 @@ class Scroll(Item):
         self.power            = defn.get('power', '')
         self.unidentified_name = defn.get('unidentified_name', defn['name'])
         self.identified       = bool(defn.get('identified', False))
+        self.buc: str            = 'uncursed'
+        self.buc_known: bool     = False
         self.container_loot_tier: str = defn.get('container_loot_tier', 'common')
         self.floor_spawn_weight: dict = defn.get('floorSpawnWeight', defn.get('floor_spawn_weight', {}))
+
+    @property
+    def cursed(self) -> bool:
+        return getattr(self, 'buc', 'uncursed') == 'cursed'
+
+    @cursed.setter
+    def cursed(self, value: bool):
+        self.buc = 'cursed' if value else 'uncursed'
 
 
 class Spellbook(Item):
@@ -289,6 +359,16 @@ class Potion(Item):
         self.floor_spawn_weight: dict = defn.get('floorSpawnWeight', {})
         self.identified: bool       = False
         self.unidentified_name: str = defn.get('unidentified_name', self.name)
+        self.buc: str            = 'uncursed'
+        self.buc_known: bool     = False
+
+    @property
+    def cursed(self) -> bool:
+        return getattr(self, 'buc', 'uncursed') == 'cursed'
+
+    @cursed.setter
+    def cursed(self, value: bool):
+        self.buc = 'cursed' if value else 'uncursed'
 
 
 class GoldPile:
