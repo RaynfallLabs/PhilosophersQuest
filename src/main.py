@@ -7609,6 +7609,9 @@ class Game:
     # ------------------------------------------------------------------
 
     def _open_spell_menu(self):
+        if self.player.has_effect('silenced'):
+            self.add_message("You are silenced and cannot cast spells!", 'warning')
+            return
         if not self.player.known_spells:
             self.add_message("You have not learned any spells.", 'warning')
             return
@@ -7800,6 +7803,9 @@ class Game:
     # ------------------------------------------------------------------
 
     def _open_scroll_menu(self):
+        if self.player.has_effect('silenced'):
+            self.add_message("You are silenced and cannot read!", 'warning')
+            return
         self.scroll_menu_items = [
             i for i in self.player.inventory if isinstance(i, (Scroll, Spellbook))
         ]

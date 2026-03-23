@@ -42,6 +42,9 @@ EFFECT_INFO: dict[str, tuple] = {
     'burning':            ('Burning',            (245, 100,  20), 'On fire! Losing 1 HP per turn'),
     'frozen':             ('Frozen',             ( 80, 200, 245), 'Encased in ice; movement slowed'),
     'corroding':          ('Corroding',          (180, 200,  50), 'Acid eats at your gear; defense weakened'),
+    'immobilized':        ('Immobilized',        (180, 130,  60), 'Trapped! Cannot move'),
+    'in_pit':             ('In Pit',             (140, 100,  60), 'Stuck in a pit; must climb out'),
+    'silenced':           ('Silenced',           (120, 120, 160), 'Cannot cast spells or read scrolls'),
     # ---- Buffs ----
     'hasted':             ('Hasted',             (245, 245,  60), 'Extra action each turn'),
     'invisible':          ('Invisible',          (185, 235, 235), 'Monsters have 30% miss chance'),
@@ -86,7 +89,8 @@ DEBUFFS: frozenset = frozenset({
     'poisoned', 'diseased', 'petrifying', 'strangulation', 'fumbling',
     'slowed', 'aggravated', 'teleportitis',
     'feared', 'charmed', 'cursed', 'weakened', 'bleeding', 'doomed', 'draining',
-    'burning', 'frozen', 'corroding',
+    'burning', 'frozen', 'corroding', 'immobilized', 'in_pit', 'silenced',
+    'hallucinating_pot',
 })
 
 BUFFS: frozenset = frozenset({
@@ -220,6 +224,11 @@ _EXPIRE_MSGS: dict[str, tuple] = {
     'truesight':      ('Your true sight fades.',                 'info'),
     'dark_vision':    ('Your dark vision fades.',                'info'),
     'spell_turning':  ('Your spell turning aura dissipates.',   'info'),
+    'corroding':      ('The acid neutralizes.',                 'success'),
+    'immobilized':    ('You wrench free!',                      'success'),
+    'in_pit':         ('You climb out of the pit.',             'info'),
+    'silenced':       ('You find your voice again.',            'success'),
+    'hallucinating_pot': ('Reality snaps back into focus.',     'info'),
 }
 
 
