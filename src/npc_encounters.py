@@ -575,6 +575,62 @@ ENCOUNTERS = [
         ],
     },
 
+    {
+        'tag': 'deadite_woman',
+        'name': 'Moaning Woman',
+        'symbol': '@',
+        'color': (160, 160, 210),
+        'block': 3,
+        'text': (
+            "A woman is slumped against the wall, moaning in pain. Her "
+            "long dark hair hangs over her face, and her body shudders "
+            "with each ragged breath. One hand clutches her stomach. "
+            "She doesn't look up as you approach."
+        ),
+        'options': [
+            {
+                'label': "Kneel down and try to help her",
+                'karma': +1,
+                'outcome': (
+                    "You reach out to move her hair aside — and her head "
+                    "snaps up. The face underneath is grey and rotting, the "
+                    "eyes pure white. \"I'LL SWALLOW YOUR SOUL!\" she "
+                    "shrieks, and rakes you across the chest before you "
+                    "can react. You stumble back, bleeding. She was dead "
+                    "the whole time."
+                ),
+                'cost': {'type': 'spawn_deadite_ambush'},
+                'reward': None,
+            },
+            {
+                'label': "Walk away — you can't help this woman",
+                'karma': 0,
+                'outcome': (
+                    "You give the moaning figure a wide berth. Something "
+                    "about the way she moves doesn't sit right. As you "
+                    "round the corner, the moaning stops. When you glance "
+                    "back, she's gone."
+                ),
+                'cost': None,
+                'reward': None,
+            },
+            {
+                'label': "\"It's a trick. Get an ax.\"",
+                'karma': +1,
+                'outcome': (
+                    "You draw your weapon and approach carefully. The "
+                    "\"woman\" springs up with inhuman speed, grey flesh "
+                    "splitting into a horrible grin — but you were ready. "
+                    "One clean strike and it's over. The Deadite crumples "
+                    "to the floor, truly dead this time. You wipe your "
+                    "blade clean. Sometimes paranoia pays off."
+                ),
+                'cost': None,
+                'reward': {'type': 'gold', 'min': 30, 'max': 60},
+            },
+        ],
+    },
+
     # ── BLOCK 4: Levels 31-39 ────────────────────────────────────────
 
     {
@@ -1878,6 +1934,10 @@ def can_pay_cost(player, cost: dict | None, player_gold: int) -> tuple[bool, str
 
     if ctype == 'accept_item':
         # Accepting a burden always possible
+        return True, ''
+
+    if ctype == 'spawn_deadite_ambush':
+        # Always possible — the Deadite attacks you
         return True, ''
 
     return True, ''

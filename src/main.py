@@ -195,8 +195,19 @@ SECRET_BUILDS: dict[str, dict] = {
         "_sprite": "player_ranger",
         "_no_dagger": True,
         "_start_weapon": "wood_shortbow",
+        "_start_melee": "iron_sword",
         "_start_ammo": "iron_arrow",
         "_greeting": "Corwin the Ranger nocks an arrow and descends into the dark.",
+    },
+    "cain": {
+        "STR": 12, "CON": 11, "DEX": 12, "INT": 9, "WIS": 11, "PER": 13,
+        "_sprite": "player_ranger",   # same sprite as Corwin
+        "_no_dagger": True,
+        "_start_weapon": "hardwood_shortbow",
+        "_start_melee": "iron_sword",
+        "_start_ammo": "iron_arrow",
+        "_start_accessory": "ring_protection_silver",
+        "_greeting": "Cain the Hunter moves silently into the dark. Nothing escapes him.",
     },
     "fianna": {
         "STR": 7, "CON": 9, "DEX": 10, "INT": 14, "WIS": 11, "PER": 10,
@@ -229,6 +240,18 @@ SECRET_BUILDS: dict[str, dict] = {
         "_start_ammo": "iron_arrow",
         "_start_book": "spellbook_sleep",
         "_greeting": "Robyn descends -- sharp-eyed, soft-footed, and sharper-tongued than most.",
+    },
+    # -- Special ---------------------------------------------------------------
+    "ash williams": {
+        "STR": 16, "CON": 16, "DEX": 14, "INT": 6, "WIS": 6, "PER": 10,
+        "_sprite": "player_dad",
+        "_no_dagger": True,
+        "_start_weapon": "boomstick",
+        "_start_melee": "chainsaw_prosthetic",
+        "_start_ammo": "shotgun_shell",
+        "_start_book": "necronomicon",
+        "_lock_melee": True,
+        "_greeting": "Good. Bad. I'm the guy with the gun.",
     },
     # -- QA ----------------------------------------------------------------
     "titivillus": {
@@ -362,7 +385,7 @@ class WelcomeScreen:
                     elif event.key == pygame.K_ESCAPE:
                         pygame.quit()
                         sys.exit()
-                    elif event.key == pygame.K_h:
+                    elif event.key == pygame.K_F2:
                         self._show_alltime = True
                     elif len(self.name_buf) < 30 and event.unicode.isprintable():
                         self.name_buf += event.unicode
@@ -742,7 +765,7 @@ class WelcomeScreen:
         # Footer hint
         pygame.draw.line(self.screen, FP.GOLD_DARK,
                          (bx + 8, y + 2), (bx + bw - 8, y + 2))
-        hint = self.font_tiny.render("[ H ]  View All-Time Top 100", True, FP.HINT_TEXT)
+        hint = self.font_tiny.render("[ F2 ]  View All-Time Top 100", True, FP.HINT_TEXT)
         self.screen.blit(hint, (bx + bw // 2 - hint.get_width() // 2, y + 6))
 
     def _draw_alltime(self):
@@ -952,6 +975,11 @@ LEARNABLE_SPELLS: dict[str, dict] = {
         'mp_cost': 12, 'quiz_tier': 4, 'needs_target': True,
         'desc': 'Paralyze a monster for 8 turns.',
     },
+    'army_of_darkness_spell': {
+        'name': 'Army of Darkness', 'effect': 'summon_undead_horde', 'power': '',
+        'mp_cost': 15, 'quiz_tier': 1, 'needs_target': False,
+        'desc': 'Summon a horde of undead minions to fight for you. Give me some sugar, baby.',
+    },
 }
 
 
@@ -1144,6 +1172,8 @@ class Game:
         self.player_gold   = state['player_gold']
         self.level_mgr     = state['level_mgr']
         self.dungeon       = state['dungeon']
+        if not hasattr(self.dungeon, 'pits'):
+            self.dungeon.pits = set()
         self.monsters      = state['monsters']
         self.ground_items  = state['ground_items']
         self.correct_answers = state.get('correct_answers', 0)
@@ -1396,9 +1426,9 @@ class Game:
                     w.identified = True
                     self.player.inventory.append(w)
             elif not no_dagger:
-                dagger = next((x for x in weapons if x.id == 'iron_dagger'), None)
-                if dagger:
-                    self.player.inventory.append(dagger)
+                sword = next((x for x in weapons if x.id == 'iron_sword'), None)
+                if sword:
+                    self.player.inventory.append(sword)
         except Exception:
             pass
 
@@ -1411,6 +1441,22 @@ class Game:
                 if ammo:
                     ammo.count = 20
                     self.player.inventory.append(ammo)
+            except Exception:
+                pass
+
+        # -- Secondary melee weapon (rangers with bows) ----------------------
+        start_melee = b.get('_start_melee', None)
+        if start_melee:
+            try:
+                melee_w = next((x for x in weapons if x.id == start_melee), None)
+                if melee_w:
+                    melee_w.identified = True
+                    if b.get('_lock_melee'):
+                        # Auto-equip and lock (can't be removed)
+                        melee_w.cursed = True
+                        self.player.weapon = melee_w
+                    else:
+                        self.player.inventory.append(melee_w)
             except Exception:
                 pass
 
@@ -1471,6 +1517,16 @@ class Game:
             ration = next((f for f in foods if f.id == 'bread_ration'), None)
             if ration:
                 self.player.inventory.append(ration)
+        except Exception:
+            pass
+
+        # -- Always: healing potion ----------------------------------------
+        try:
+            potions = load_items('potion')
+            heal_pot = next((p for p in potions if p.id == 'potion_of_healing'), None)
+            if heal_pot:
+                heal_pot.identified = True
+                self.player.inventory.append(heal_pot)
         except Exception:
             pass
         self.player.inventory.sort(key=lambda i: i.name.lower())
@@ -1937,7 +1993,7 @@ class Game:
                 self._check_floor_trap(self.player.x, self.player.y)
             # Check for dug pits (separate from traps)
             px, py = self.player.x, self.player.y
-            if (px, py) in self.dungeon.pits:
+            if (px, py) in getattr(self.dungeon, 'pits', set()):
                 self._player_fall_in_pit(px, py)
                 if self.player.is_dead():
                     return
@@ -6775,6 +6831,12 @@ class Game:
             elif ctype == 'accept_item':
                 # Give the player a burden/cursed item
                 self._grant_burden_item(cost['item_id'])
+            elif ctype == 'spawn_deadite_ambush':
+                # Free hit: 10% HP, then spawn a hostile Deadite
+                loss = max(5, int(self.player.hp * 10 / 100))
+                self.player.hp -= loss
+                self.add_message(f"The Deadite rakes you for {loss} damage!", 'danger')
+                self._spawn_npc_deadite()
 
         # ── Apply reward ──────────────────────────────────────────
         if reward:
@@ -7286,6 +7348,15 @@ class Game:
             healed = max(1, int(base * chain_scale))
             self.player.restore_hp(healed)
             self.add_message(f"You are healed for {healed} HP! (chain {chain})", 'success')
+            return
+
+        # Army of Darkness: summon undead pet horde
+        if effect == 'summon_undead_horde':
+            count = max(3, int(5 * chain_scale))
+            self._summon_undead_pets(count)
+            self.add_message(
+                f"The dead rise to serve you! {count} undead minions summoned! (chain {chain})",
+                'success')
             return
 
         # Scale status durations for self-buff spells
@@ -7857,11 +7928,36 @@ class Game:
             base_seconds=self.player.get_quiz_timer('philosophy'),
         )
 
+    # -- Necronomicon custom quiz data -----------------------------------------
+    _NECRONOMICON_QUESTIONS = [
+        {
+            'question': 'What is the first word?',
+            'choices': ['Klaatu', 'Kla-tu', 'Clawtoo?'],
+            'answer': 'Klaatu',
+        },
+        {
+            'question': 'What is the second word?',
+            'choices': ['Barada', 'Barracuda', 'Barba'],
+            'answer': 'Barada',
+        },
+        {
+            'question': 'What is the final word?',
+            'choices': ['N-cnghnhhnh', 'Nicotine', 'Nada'],
+            'answer': 'Nikto',           # hidden 4th option via key "4"
+            '_hidden_4': 'Nikto',         # marker for the draw code
+        },
+    ]
+
     def _learn_from_spellbook(self, book: 'Spellbook'):
         """Try to learn the spell in a spellbook via grammar threshold quiz."""
         spell_id = book.spell_id
         if spell_id in self.player.known_spells:
             self.add_message(f"You already know {book.spell_name}.", 'info')
+            return
+
+        # Necronomicon: custom "Say The Words" quiz
+        if book.id == 'necronomicon':
+            self._necronomicon_quiz(book)
             return
 
         self.state = STATE_QUIZ
@@ -7892,6 +7988,255 @@ class Game:
             extra_seconds=self.player.get_int_quiz_bonus(),
             base_seconds=self.player.get_quiz_timer('grammar'),
         )
+
+    def _necronomicon_quiz(self, book: 'Spellbook'):
+        """The Necronomicon: recite The Words (Klaatu Barada Nikto).
+        Three threshold questions with a hidden correct answer on Q3.
+        Success: learn Army of Darkness. Failure: undead horde spawns."""
+        import copy
+        qs = [copy.deepcopy(q) for q in self._NECRONOMICON_QUESTIONS]
+        # Inject into quiz engine as a custom pool
+        qe = self.quiz_engine
+        qe.state = QuizState.IDLE
+        self.state = STATE_QUIZ
+        self.quiz_title = "RECITE THE WORDS -- NECRONOMICON"
+        self._necro_book = book
+        self._necro_qs = qs
+        self._necro_idx = 0
+        self._necro_correct = 0
+        self._necro_show_result = False
+        self._necro_result_timer = 0.0
+        self._necro_last_correct = None
+        self._necro_ask_next()
+
+    def _necro_ask_next(self):
+        """Load the next Necronomicon question into the quiz engine display."""
+        qe = self.quiz_engine
+        q = self._necro_qs[self._necro_idx]
+        qe.current_question = q
+        qe.confused_order = None  # don't shuffle these
+        qe.state = QuizState.ASKING
+        qe.mode = QuizMode.THRESHOLD
+        qe.subject = 'grammar'
+        qe.time_remaining = 999.0   # no time pressure for The Words
+        qe.timer_seconds = 999
+        qe.last_answer = ''
+        qe.last_correct = False
+        qe.correct_count = self._necro_correct
+        qe.required = 3
+        qe.tier = 1
+        self._necro_show_result = False
+
+    def _necro_answer(self, key: int):
+        """Handle answer input for the Necronomicon quiz."""
+        if self._necro_show_result:
+            return  # waiting for result display to clear
+
+        key_map = {
+            pygame.K_1: 0, pygame.K_KP1: 0,
+            pygame.K_2: 1, pygame.K_KP2: 1,
+            pygame.K_3: 2, pygame.K_KP3: 2,
+            pygame.K_4: 3, pygame.K_KP4: 3,
+        }
+        idx = key_map.get(key)
+        if idx is None:
+            return
+
+        q = self._necro_qs[self._necro_idx]
+        choices = q['choices']
+        correct_answer = q['answer']
+
+        # Hidden 4th option: "Nikto" on Q3 — only way to get it right
+        if idx == 3 and '_hidden_4' in q:
+            chosen = q['_hidden_4']
+        elif idx < len(choices):
+            chosen = choices[idx]
+        else:
+            return
+
+        is_correct = chosen.strip().lower() == correct_answer.strip().lower()
+        if is_correct:
+            self._necro_correct += 1
+            self.quiz_engine.correct_count = self._necro_correct
+
+        # Show result briefly
+        self._necro_last_correct = is_correct
+        self._necro_show_result = True
+        self._necro_result_timer = 0.6
+
+        # Update quiz engine display for result feedback
+        qe = self.quiz_engine
+        qe.last_correct = is_correct
+        qe.last_answer = chosen
+        qe.state = QuizState.RESULT
+        qe.result_timer = 0.6
+
+        # If hidden 4th option was picked, add it to visible choices for result display
+        if idx == 3 and '_hidden_4' in q:
+            q['choices'].append(chosen)
+
+    def _necro_update(self, dt: float):
+        """Tick the Necronomicon result display timer."""
+        if not self._necro_show_result:
+            return
+        self._necro_result_timer -= dt
+        if self._necro_result_timer <= 0:
+            self._necro_show_result = False
+            self._necro_idx += 1
+            if self._necro_idx >= len(self._necro_qs):
+                self._necro_complete()
+            else:
+                self._necro_ask_next()
+
+    def _necro_complete(self):
+        """Resolve the Necronomicon quiz."""
+        book = self._necro_book
+        self.quiz_engine.state = QuizState.IDLE
+        self.quiz_engine.current_question = None
+        self.state = STATE_PLAYER
+
+        if self._necro_correct == 3:
+            # Perfect: learn Army of Darkness
+            spell_id = book.spell_id
+            mp_cost = book.mp_cost
+            self.player.known_spells[spell_id] = mp_cost
+            book.identified = True
+            self.player.remove_from_inventory(book)
+            self.add_message(
+                "The words echo through the dungeon. The dead hear you. "
+                "Army of Darkness learned!", 'success')
+            _snd.play('spell_cast')
+        else:
+            # Failure: spawn hostile undead
+            self.add_message(
+                "Hey, I said the words! Maybe not every single little tiny "
+                "syllable, but I said them!", 'danger')
+            self._spawn_necronomicon_undead()
+        self._necro_qs = None
+        self._advance_turn()
+
+    def _spawn_necronomicon_undead(self):
+        """Spawn hostile Deadites when the Necronomicon quiz is failed."""
+        import random
+        from monster import Monster
+        count = random.randint(4, 7)
+        px, py = self.player.x, self.player.y
+        occupied = {(m.x, m.y) for m in self.monsters if m.alive}
+        lvl = max(1, self.dungeon_level)
+        spawned = 0
+        for _ in range(count):
+            for _attempt in range(20):
+                dx = random.randint(-3, 3)
+                dy = random.randint(-3, 3)
+                nx, ny = px + dx, py + dy
+                if (nx, ny) in occupied or (nx, ny) == (px, py):
+                    continue
+                if not self.dungeon.in_bounds(nx, ny):
+                    continue
+                if self.dungeon.tiles[ny][nx] not in (1, 4):  # FLOOR or DOOR
+                    continue
+                defn = {
+                    'id': 'deadite',
+                    'name': 'Deadite',
+                    'symbol': 'z',
+                    'color': [160, 160, 210],
+                    'ai_pattern': 'aggressive',
+                    'hp': str(10 + lvl * 2),
+                    'min_level': lvl,
+                    'thac0': max(0, 18 - lvl // 5),
+                    'attacks': [
+                        {'name': 'claw', 'damage': f'1d4+{lvl // 10}', 'type': 'slash'},
+                        {'name': 'bite', 'damage': f'1d3+{lvl // 15}', 'type': 'pierce'},
+                    ],
+                    'resistances': ['drain'],
+                    'weaknesses': ['fire', 'holy'],
+                    'lore': 'A shambling corpse raised by the Necronomicon. It knows only hunger.',
+                }
+                m = Monster(defn, nx, ny)
+                self.monsters.append(m)
+                occupied.add((nx, ny))
+                spawned += 1
+                break
+        if spawned:
+            self.add_message(
+                f"{spawned} Deadites claw their way out of the ground!", 'danger')
+
+    def _spawn_npc_deadite(self):
+        """Spawn a single hostile Deadite where the NPC encounter was."""
+        from monster import Monster
+        npc_m = self._npc_encounter_monster
+        if npc_m is None:
+            return
+        nx, ny = npc_m.x, npc_m.y
+        lvl = max(1, self.dungeon_level)
+        defn = {
+            'id': 'deadite',
+            'name': 'Deadite',
+            'symbol': 'z',
+            'color': [160, 160, 210],
+            'ai_pattern': 'aggressive',
+            'hp': str(20 + lvl * 3),
+            'min_level': lvl,
+            'thac0': max(0, 16 - lvl // 4),
+            'attacks': [
+                {'name': 'claw', 'damage': f'1d6+{lvl // 8}', 'type': 'slash'},
+                {'name': 'bite', 'damage': f'1d4+{lvl // 10}', 'type': 'pierce'},
+            ],
+            'resistances': ['drain'],
+            'weaknesses': ['fire', 'holy'],
+            'lore': 'A shambling corpse raised by dark forces. It knows only hunger.',
+        }
+        m = Monster(defn, nx, ny)
+        self.monsters.append(m)
+        # Remove the NPC monster so it doesn't remain
+        if npc_m in self.monsters:
+            self.monsters.remove(npc_m)
+
+    def _summon_undead_pets(self, count: int):
+        """Summon friendly undead minions (pets) from Army of Darkness spell."""
+        from pet_system import Pet
+        px, py = self.player.x, self.player.y
+        occupied = {(m.x, m.y) for m in self.monsters if m.alive}
+        if hasattr(self, 'pets'):
+            occupied |= {(p.x, p.y) for p in self.pets if p.alive}
+        else:
+            self.pets = []
+        import random
+        spawned = 0
+        for _ in range(count):
+            for _attempt in range(20):
+                dx = random.randint(-3, 3)
+                dy = random.randint(-3, 3)
+                nx, ny = px + dx, py + dy
+                if (nx, ny) in occupied or (nx, ny) == (px, py):
+                    continue
+                if not self.dungeon.in_bounds(nx, ny):
+                    continue
+                if self.dungeon.tiles[ny][nx] not in (1, 4):
+                    continue
+                # Create an undead pet using the existing Pet class
+                pet = Pet('fire', nx, ny)  # reuse fire type as base
+                pet.species = {
+                    'element': 'shadow', 'damage_type': 'drain',
+                    'color': (160, 160, 210),
+                    'stages': [
+                        {'name': 'Deadite', 'symbol': 'z',
+                         'msg': 'A shambling deadite claws its way from the earth!'},
+                        {'name': 'Deadite', 'symbol': 'z', 'msg': ''},
+                        {'name': 'Deadite', 'symbol': 'z', 'msg': ''},
+                    ],
+                    'special_name': 'Drain Touch',
+                    'special_status': 'slowed',
+                    'special_status_chance': 0.3,
+                }
+                pet.level = max(1, self.dungeon_level // 10)
+                pet.max_hp = 15 + self.dungeon_level
+                pet.hp = pet.max_hp
+                pet._refresh_stats()
+                self.pets.append(pet)
+                occupied.add((nx, ny))
+                spawned += 1
+                break
 
     def _propagate_identification(self, item_id: str):
         """Record that the player now recognises this item type by ID.
@@ -8122,10 +8467,11 @@ class Game:
         if weapon and getattr(weapon, 'can_dig', False):
             tile = self.dungeon.tiles[cy][cx]
             from dungeon import FLOOR
-            if tile == FLOOR and (cx, cy) not in self.dungeon.pits:
+            _pits = getattr(self.dungeon, 'pits', set())
+            if tile == FLOOR and (cx, cy) not in _pits:
                 self._dig_pit(cx, cy)
                 return
-            elif (cx, cy) in self.dungeon.pits:
+            elif (cx, cy) in _pits:
                 self.add_message("There's already a pit there.", 'info')
                 return
 
@@ -8140,6 +8486,8 @@ class Game:
             self.add_message("You're too exhausted to dig! (need 30 SP)", 'warning')
             return
         self.player.sp -= sp_cost
+        if not hasattr(self.dungeon, 'pits'):
+            self.dungeon.pits = set()
         self.dungeon.pits.add((x, y))
         self.add_message("You dig a pit in the floor!", 'success')
         _snd.play('trap')
@@ -8325,6 +8673,11 @@ class Game:
         player_attack(self.player, monster, self.quiz_engine, on_complete)
 
     def _quiz_input(self, key: int):
+        # Necronomicon custom quiz intercept
+        if hasattr(self, '_necro_qs') and self._necro_qs is not None:
+            self._necro_answer(key)
+            return
+
         if self.quiz_engine.state != QuizState.ASKING:
             return
         q = self.quiz_engine.current_question
@@ -8422,7 +8775,7 @@ class Game:
             if (not _was_in_pit and not m.has_effect('stuck_in_pit')
                     and not m.has_effect('levitating')
                     and (m.x, m.y) != _pos_before
-                    and (m.x, m.y) in self.dungeon.pits):
+                    and (m.x, m.y) in getattr(self.dungeon, 'pits', set())):
                 from dice import roll as _pit_roll
                 pit_dmg = _pit_roll('1d4')
                 m.hp -= pit_dmg
@@ -8596,7 +8949,10 @@ class Game:
 
     def update(self, dt: float):
         if self.state == STATE_QUIZ:
-            self.quiz_engine.update(dt)
+            if hasattr(self, '_necro_qs') and self._necro_qs is not None:
+                self._necro_update(dt)
+            else:
+                self.quiz_engine.update(dt)
 
         if self.state == STATE_PLAYER:
             pressed = pygame.key.get_pressed()

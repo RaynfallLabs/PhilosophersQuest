@@ -337,5 +337,24 @@
       255
     ],
     "weight": 0.3
+  },
+  "shotgun_shell": {
+    "name": "shotgun shell",
+    "symbol": "\\",
+    "color": [
+      200,
+      50,
+      40
+    ],
+    "weight": 0.1,
+    "min_level": 9999,
+    "ammo_type": "shell",
+    "tier": 3,
+    "damage_bonus": 4,
+    "count_min": 10,
+    "count_max": 20,
+    "value": 5,
+    "unidentified_name": "red shotgun shells",
+    "lore": "Twelve-gauge buckshot shells. Each one contains nine lead pellets that spread into a devastating pattern at close range. The red plastic hull and brass base are unmistakable. S-Mart brand."
   }
 }

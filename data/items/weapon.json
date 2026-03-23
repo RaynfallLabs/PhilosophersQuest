@@ -8675,5 +8675,77 @@
     "identified": true,
     "unidentified_name": "a dark iron dagger stained with old blood",
     "lore": "A wickedly sharp dagger of dark iron, carried for twenty years by a man who used it to kill. The blade drinks blood — wounds dealt with it restore the wielder's vitality, as though the weapon is trying to balance its ledger."
+  },
+  "boomstick": {
+    "name": "Boomstick",
+    "class": "ranged",
+    "variant": "1h",
+    "tier": 3,
+    "material": "iron",
+    "mathTier": 3,
+    "baseDamage": 18,
+    "chainMultipliers": [
+      0.8,
+      1.5,
+      2.5,
+      3.5
+    ],
+    "maxChainLength": 4,
+    "damageTypes": [
+      "physical",
+      "pierce"
+    ],
+    "symbol": "}",
+    "color": [
+      120,
+      90,
+      60
+    ],
+    "weight": 4.0,
+    "twoHanded": false,
+    "reach": 5,
+    "stunChance": 0.3,
+    "requiresAmmo": "shell",
+    "min_level": 9999,
+    "value": 500,
+    "identified": true,
+    "unidentified_name": "a sawed-off double-barreled shotgun",
+    "lore": "This is my BOOMSTICK! It's a twelve-gauge double-barreled Remington. S-Mart's top of the line. You can find this in the sporting goods department. That's right, this sweet baby was made in Grand Rapids, Michigan. Retails for about $109.95. It's got a walnut stock, cobalt blue steel, and a hair trigger. That's right. Shop smart. Shop S-Mart.",
+    "quiz_tier": 3
+  },
+  "chainsaw_prosthetic": {
+    "name": "Chainsaw Prosthetic",
+    "class": "sword",
+    "variant": "1h",
+    "tier": 3,
+    "material": "iron",
+    "mathTier": 3,
+    "baseDamage": 14,
+    "chainMultipliers": [
+      0.7,
+      1.2,
+      2.0,
+      3.0,
+      4.0
+    ],
+    "maxChainLength": 5,
+    "damageTypes": [
+      "slash"
+    ],
+    "symbol": "(",
+    "color": [
+      180,
+      80,
+      30
+    ],
+    "weight": 5.0,
+    "twoHanded": false,
+    "stunChance": 0.15,
+    "min_level": 9999,
+    "value": 666,
+    "identified": true,
+    "unidentified_name": "a chainsaw bolted to an arm stump",
+    "lore": "A Homelite XL chainsaw, permanently bolted to the stump of a severed right hand. The original owner attached it in a moment of desperate improvisation in a remote cabin in Tennessee. It has since carved through more deadites than anyone cares to count. Groovy.",
+    "quiz_tier": 3
   }
 }

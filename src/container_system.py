@@ -129,12 +129,13 @@ def _trigger_trap(player, trap: dict, messages: list):
 
     effect     = trap.get('effect')
     effect_dur = int(trap.get('effect_duration', 5))
-    effect_ch  = float(trap.get('effect_chance', 0.5))
 
-    if effect and random.random() < effect_ch:
+    if effect:
         applied = player.add_effect(effect, effect_dur)
         if applied:
             messages.append((f'You are {effect}!', 'danger'))
+        else:
+            messages.append((f'You resist the {effect} effect!', 'info'))
 
 
 def _alert_nearby(player, dungeon, monsters) -> bool:

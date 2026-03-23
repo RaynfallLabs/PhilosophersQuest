@@ -309,5 +309,30 @@
     },
     "lore": "Locks a monster in magical stasis. Even the most fearsome creatures cannot move while paralyzed.",
     "read_threshold": 5
+  },
+  "necronomicon": {
+    "name": "The Necronomicon",
+    "symbol": "+",
+    "color": [
+      100,
+      40,
+      40
+    ],
+    "weight": 3.0,
+    "min_level": 20,
+    "quiz_tier": 1,
+    "quiz_threshold": 3,
+    "spell_id": "army_of_darkness_spell",
+    "spell_name": "Army of Darkness",
+    "mp_cost": 15,
+    "unidentified_name": "a book bound in human flesh",
+    "floor_spawn_weight": {
+      "1-19": 0,
+      "20-50": 3,
+      "51-80": 5,
+      "81-100": 4
+    },
+    "lore": "Naturom Demonto — roughly translated, the Book of the Dead. Bound in human flesh and inked in blood, this ancient Sumerian text contains funeral incantations, demon resurrection passages, and prophecies. It is NOT to be read aloud. Seriously. Don't.",
+    "read_threshold": 3
   }
 }
