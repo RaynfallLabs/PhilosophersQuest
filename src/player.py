@@ -304,10 +304,14 @@ class Player:
         if item_weight + self.get_current_weight() > self.get_carry_limit():
             return False
         # Stack identical items for stackable types (same id)
+        # BUC must match only if known on both; hidden BUC stacks freely
         if isinstance(item, Item._STACKABLE_CLASSES):
-            existing = next((i for i in self.inventory if i.id == item.id
-                             and getattr(i, 'buc', 'uncursed') == getattr(item, 'buc', 'uncursed')), None)
-            if existing is not None:
+            for existing in self.inventory:
+                if existing.id != item.id:
+                    continue
+                both_known = getattr(existing, 'buc_known', False) and getattr(item, 'buc_known', False)
+                if both_known and getattr(existing, 'buc', 'uncursed') != getattr(item, 'buc', 'uncursed'):
+                    continue  # known-different BUC: separate stacks
                 existing.count = getattr(existing, 'count', 1) + getattr(item, 'count', 1)
                 return True
         self.inventory.append(item)

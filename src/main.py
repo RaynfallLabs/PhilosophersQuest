@@ -1456,10 +1456,12 @@ class Game:
                 w = next((x for x in weapons if x.id == start_weapon), None)
                 if w:
                     w.identified = True
+                    self.player.known_item_ids.add(w.id)
                     self.player.inventory.append(w)
             elif not no_dagger:
                 sword = next((x for x in weapons if x.id == 'iron_sword'), None)
                 if sword:
+                    self.player.known_item_ids.add(sword.id)
                     self.player.inventory.append(sword)
         except Exception:
             pass
@@ -1472,6 +1474,7 @@ class Game:
                 ammo = next((a for a in ammo_items if a.id == start_ammo), None)
                 if ammo:
                     ammo.count = 20
+                    self.player.known_item_ids.add(ammo.id)
                     self.player.inventory.append(ammo)
             except Exception:
                 pass
@@ -1483,6 +1486,7 @@ class Game:
                 melee_w = next((x for x in weapons if x.id == start_melee), None)
                 if melee_w:
                     melee_w.identified = True
+                    self.player.known_item_ids.add(melee_w.id)
                     if b.get('_lock_melee'):
                         # Auto-equip and lock (can't be removed)
                         melee_w.cursed = True
@@ -1500,6 +1504,7 @@ class Game:
                 wand = next((w for w in wands if w.id == start_wand), None)
                 if wand:
                     wand.identified = True
+                    self.player.known_item_ids.add(wand.id)
                     self.player.inventory.append(wand)
             except Exception:
                 pass
@@ -1512,6 +1517,7 @@ class Game:
                 book = next((bk for bk in books if bk.id == start_book), None)
                 if book:
                     book.identified = True
+                    self.player.known_item_ids.add(book.id)
                     self.player.inventory.append(book)
             except Exception:
                 pass
@@ -1524,6 +1530,7 @@ class Game:
                 sh = next((s for s in shields if s.id == start_shield), None)
                 if sh:
                     sh.identified = True
+                    self.player.known_item_ids.add(sh.id)
                     self.player.inventory.append(sh)
             except Exception:
                 pass
@@ -1536,6 +1543,7 @@ class Game:
                 acc = next((a for a in accs if a.id == start_acc), None)
                 if acc:
                     acc.identified = True
+                    self.player.known_item_ids.add(acc.id)
                     self.player.inventory.append(acc)
             except Exception:
                 pass
@@ -1548,6 +1556,7 @@ class Game:
                 arm = next((a for a in armors if a.id == start_armor), None)
                 if arm:
                     arm.identified = True
+                    self.player.known_item_ids.add(arm.id)
                     if b.get('_equip_armor'):
                         from items import ARMOR_SLOTS
                         idx = ARMOR_SLOTS.index(arm.slot) if arm.slot in ARMOR_SLOTS else 0
@@ -1575,6 +1584,7 @@ class Game:
                             'One wonders what might happen if it were hurled with force...',
                 })
                 sphere.identified = True
+                self.player.known_item_ids.add('soul_sphere')
                 self.player.inventory.append(sphere)
 
         # -- Always: starting lockpick charges ----------------------------
@@ -1595,6 +1605,8 @@ class Game:
             heal_pot = next((p for p in potions if p.id == 'potion_of_healing'), None)
             if heal_pot:
                 heal_pot.identified = True
+                heal_pot.buc_known = True
+                self.player.known_item_ids.add(heal_pot.id)
                 self.player.inventory.append(heal_pot)
         except Exception:
             pass
@@ -2138,15 +2150,6 @@ class Game:
             self.add_message("A weathered gravestone stands here. Press 'D' to dig.", 'info')
         elif tile == THRONE:
             self.add_message("An ancient throne sits here. Press 'D' to sit upon it.", 'info')
-
-    def _display_name(self, item) -> str:
-        """Return the name to show for an item -- unidentified name if not yet identified."""
-        if not getattr(item, 'identified', True):
-            # Also treat as identified if this item type has been seen before this run
-            if hasattr(self, 'player') and item.id in self.player.known_item_ids:
-                return item.name
-            return getattr(item, 'unidentified_name', item.name)
-        return item.name
 
     def _notify_ground(self, x: int, y: int):
         """Print messages about items and notable features at (x, y)."""
@@ -8566,8 +8569,12 @@ class Game:
         We do NOT set item.identified = True on other instances -- that flag
         means 'this specific copy has been examined and modifiers are known'.
         Type recognition is tracked solely via player.known_item_ids.
+        Also propagate buc_known to all same-id items in inventory.
         """
         self.player.known_item_ids.add(item_id)
+        for inv_item in self.player.inventory:
+            if inv_item.id == item_id and hasattr(inv_item, 'buc_known'):
+                inv_item.buc_known = True
 
     # ------------------------------------------------------------------
     # Display name helper
