@@ -14,7 +14,7 @@ from fantasy_ui import (FP, get_font, draw_panel, draw_dark_panel,
 from combat import player_attack
 from pet_system import Pet, FenrirPet, random_species as random_pet_species
 from quirk_system import QuirkSystem
-from container_system import attempt_lockpick, check_for_mimic
+from container_system import attempt_lockpick
 from dungeon import (generate_dungeon, spawn_monsters, spawn_items,
                      WALL, FLOOR, STAIRS_UP, STAIRS_DOWN, DOOR, SECRET_DOOR,
                      ALTAR, WATER, LAVA, FOUNTAIN, GRAVE, THRONE, ICE)
@@ -2194,6 +2194,22 @@ class Game:
                 self.add_message("The ground shimmers with ancient power.", 'info')
                 self.add_message("\u201cRevelation 20:14\u201d", 'info')
             here = [i for i in here if i is not shimmer]   # don't double-list it
+        # Mimic detection: PER check on containers
+        from items import Container
+        for item in here:
+            if isinstance(item, Container) and getattr(item, 'is_mimic', False):
+                import random as _prng
+                per_chance = min(0.80, 0.10 + self.player.PER * 0.04)
+                if _prng.random() < per_chance:
+                    _MIMIC_HINTS = [
+                        f"You see a {item.name} here. Something seems off\u2026 is that a tooth?",
+                        f"You see a {item.name} here. It glistens with what looks like saliva.",
+                        f"You see a {item.name} here. Was that\u2026 breathing?",
+                        f"You see a {item.name} here. The hinges look oddly organic.",
+                        f"You see a {item.name} here. You notice a faint, predatory smell.",
+                    ]
+                    self.add_message(_prng.choice(_MIMIC_HINTS), 'warning')
+
         if len(here) == 1:
             item = here[0]
             dname = self._display_name(item)
@@ -2947,14 +2963,24 @@ class Game:
             self.add_message("There is no container to pick nearby.", 'info')
             return
 
-        # Mimic springs out on first interaction
+        # Mimic springs out on first interaction — surprise attack!
         if container.is_mimic:
-            self.add_message(
-                f"The {container.name} springs to life -- it's a MIMIC!", 'danger'
-            )
             from container_system import _spawn_mimic
-            _spawn_mimic(container, self.monsters)
+            mimic = _spawn_mimic(container, self.monsters, self.dungeon_level)
             self.ground_items.remove(container)
+            # Surprise attack: 10-20% of player's max HP
+            import random as _rng
+            surprise_pct = _rng.uniform(0.10, 0.20)
+            surprise_dmg = max(1, int(self.player.max_hp * surprise_pct))
+            self.player.hp = max(1, self.player.hp - surprise_dmg)
+            mname = mimic.name if mimic else 'mimic'
+            self.add_message(
+                f"The {container.name} springs to life -- it's a {mname}!", 'danger'
+            )
+            self.add_message(
+                f"It strikes before you can react! ({surprise_dmg} damage)", 'danger'
+            )
+            _snd.play('monster_hit')
             self._advance_turn()
             return
 
@@ -2977,7 +3003,15 @@ class Game:
                 # Remove container, scatter loot at its position
                 cx, cy = container.x, container.y
                 self.ground_items.remove(container)
+                # Bash damage: potions and scrolls shattered
+                _FRAGILE = ('potion', 'scroll')
                 for loot_item in result['loot']:
+                    if getattr(container, 'bash_damaged', False) \
+                            and getattr(loot_item, 'item_class', '') in _FRAGILE:
+                        self.add_message(
+                            f"A shattered {self._display_name(loot_item)} lies in the wreckage.", 'warning'
+                        )
+                        continue
                     loot_item.x, loot_item.y = cx, cy
                     self.ground_items.append(loot_item)
                     self.add_message(f"You find {self._display_name(loot_item)}!", 'loot')
@@ -3053,7 +3087,6 @@ class Game:
 
     def _open_melee_targeting(self):
         """Press 'a' to enter melee targeting mode — attack adjacent tiles (or further with reach weapons)."""
-        from combat import can_melee_attack
         weapon = self.player.weapon
         reach = weapon.reach if weapon else 1
 
@@ -7634,7 +7667,6 @@ class Game:
 
     def _apply_spell_effect(self, spell: dict, chain: int, target=None):
         """Apply a learned spell's effect. Chain 1-5 scales damage/duration."""
-        import types
         effect = spell['effect']
         power  = spell.get('power', '')
 
@@ -8766,10 +8798,24 @@ class Game:
             found = True
 
         # Items at cursor
+        from items import Container
         items_here = [i for i in self.ground_items if i.x == cx and i.y == cy]
         for item in items_here[:5]:
             dname = self._display_name(item)
             self.add_message(f"You see {dname} on the ground.", 'info')
+            # Mimic detection via Observe — PER check
+            if isinstance(item, Container) and getattr(item, 'is_mimic', False):
+                import random as _prng
+                per_chance = min(0.85, 0.15 + self.player.PER * 0.04)
+                if _prng.random() < per_chance:
+                    _OBSERVE_HINTS = [
+                        "Something seems off\u2026 is that a tooth?",
+                        "It glistens with what looks like saliva.",
+                        "You could swear it just moved.",
+                        "The hinges look oddly organic.",
+                        "You notice a faint, predatory smell.",
+                    ]
+                    self.add_message(_prng.choice(_OBSERVE_HINTS), 'warning')
             found = True
         if len(items_here) > 5:
             self.add_message(f"...and {len(items_here) - 5} more items.", 'info')
@@ -8860,15 +8906,25 @@ class Game:
         )
         if container is not None:
             if container.is_mimic:
-                self.add_message(
-                    f"The {container.name} springs to life -- it's a MIMIC!", 'danger'
-                )
-                _spawn_mimic(container, self.monsters)
+                # Bash hits the mimic — player gets a free 10% HP strike
+                mimic = _spawn_mimic(container, self.monsters, self.dungeon_level)
                 self.ground_items.remove(container)
-            else:
+                mname = mimic.name if mimic else 'mimic'
+                bash_dmg = max(1, int(mimic.max_hp * 0.10))
+                mimic.hp -= bash_dmg
                 self.add_message(
-                    f"You strike the {container.name}. It's solid -- just a chest.", 'info'
+                    f"You bash the {container.name} -- it shrieks! It's a {mname}!", 'danger'
                 )
+                self.add_message(
+                    f"Your blow connects before it can react! ({bash_dmg} damage)", 'success'
+                )
+                _snd.play('monster_hit')
+            else:
+                # Bashing a real chest damages fragile contents
+                self.add_message(
+                    f"You bash the {container.name}. You hear something shatter inside.", 'warning'
+                )
+                container.bash_damaged = True
             self._advance_turn()
             return
 

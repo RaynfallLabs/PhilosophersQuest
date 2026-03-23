@@ -14,7 +14,6 @@ After BSP placement the generator runs post-processing passes for:
 
 import copy
 import json
-import os
 import random
 from dataclasses import dataclass
 from typing import List, Optional, Set, Tuple
@@ -1152,13 +1151,11 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
     if not eligible_containers:
         eligible_containers = all_containers[:]
 
-    # Weight containers by frequency field
-    total_freq = sum(getattr(c, 'quiz_threshold', 1) for c in eligible_containers) or 1
-
     def pick_container() -> Optional[Container]:
         if not eligible_containers:
             return None
-        weights = [c.extra_item_chance for c in eligible_containers]
+        # Weight by inverse tier: lower-tier containers spawn more often
+        weights = [max(1, 6 - getattr(c, 'tier', 1)) for c in eligible_containers]
         chosen  = rng.choices(eligible_containers, weights=weights, k=1)[0]
         inst    = copy.copy(chosen)
         # Map dungeon level 1-100 to container tier 1-5, with +/-1 variance

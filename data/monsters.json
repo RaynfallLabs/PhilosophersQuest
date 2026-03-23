@@ -406,7 +406,89 @@
       "item_chance": 0.5,
       "item_tier": 3
     },
-    "lore": "Mimics are shapeshifting predators that disguise themselves as treasure chests, doors, or dungeon furnishings. Their digestive acid can dissolve iron. The oldest mimics have survived for centuries by perfecting their camouflage, accumulating wealth from victims who mistook them for a lucky find."
+    "lore": "Mimics are shapeshifting predators that disguise themselves as treasure chests, doors, or dungeon furnishings. Their digestive acid can dissolve iron. Young mimics are clumsy deceivers, but even a novice mimic can ruin an adventurer's day."
+  },
+  "greater_mimic": {
+    "name": "Greater Mimic",
+    "symbol": "&",
+    "color": [160, 80, 40],
+    "hp": 120,
+    "speed": 10,
+    "ai_pattern": "ambush",
+    "min_level": 21,
+    "max_level": 50,
+    "thac0": 6,
+    "frequency": 0,
+    "attacks": [
+      {
+        "name": "crushing maw",
+        "damage": "3d8+4",
+        "type": "physical",
+        "effect": "paralyzed",
+        "effect_chance": 0.25,
+        "effect_duration": 3
+      },
+      {
+        "name": "venomous tongue",
+        "damage": "2d6+2",
+        "type": "poison",
+        "effect": "poisoned",
+        "effect_chance": 0.40,
+        "effect_duration": 8
+      }
+    ],
+    "resistances": ["blunt", "poison"],
+    "weaknesses": ["fire"],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": "changeling_glamour",
+    "treasure": {
+      "gold": [50, 150],
+      "item_chance": 0.6,
+      "item_tier": 3
+    },
+    "lore": "A mature mimic that has fed for decades, growing large enough to impersonate entire wardrobes or treasure vaults. Its adhesive secretions are nearly impossible to escape, and its venom causes hallucinations that make victims mistake agony for ecstasy."
+  },
+  "abyssal_mimic": {
+    "name": "Abyssal Mimic",
+    "symbol": "&",
+    "color": [100, 40, 60],
+    "hp": 280,
+    "speed": 10,
+    "ai_pattern": "ambush",
+    "min_level": 51,
+    "max_level": 100,
+    "thac0": -2,
+    "frequency": 0,
+    "attacks": [
+      {
+        "name": "devouring embrace",
+        "damage": "4d8+8",
+        "type": "physical",
+        "effect": "paralyzed",
+        "effect_chance": 0.35,
+        "effect_duration": 4
+      },
+      {
+        "name": "soul drain",
+        "damage": "3d6+4",
+        "type": "necrotic",
+        "effect": "weakened",
+        "effect_chance": 0.50,
+        "effect_duration": 10
+      }
+    ],
+    "resistances": ["blunt", "poison", "cold", "necrotic"],
+    "weaknesses": ["fire", "holy"],
+    "harvest_tier": 4,
+    "harvest_threshold": 4,
+    "ingredient_id": "changeling_glamour",
+    "treasure": {
+      "gold": [100, 300],
+      "item_chance": 0.8,
+      "item_tier": 4
+    },
+    "lore": "An ancient mimic that has absorbed so many souls it has developed a malevolent intelligence. It no longer merely imitates objects — it reads minds to become whatever its victim most desires. Its embrace drains not just life, but the will to resist."
   },
   "leprechaun": {
     "name": "leprechaun",

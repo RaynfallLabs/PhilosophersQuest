@@ -119,7 +119,7 @@ class Armor(Item):
         self.buc_known: bool     = False
         self.identified: bool    = bool(defn.get('identified', False))
         self.unidentified_name: str = defn.get('unidentified_name', 'unknown armor')
-        self.container_loot_tier: str = defn.get('container_loot_tier', 'common')
+        self.container_loot_tier: str = defn.get('containerLootTier', defn.get('container_loot_tier', 'common'))
         self.on_equip_status: str    = defn.get('onEquipStatus', defn.get('on_equip_status', ''))
         self.floor_spawn_weight: dict = defn.get('floorSpawnWeight', defn.get('floor_spawn_weight', {}))
         self.pet_regen_bonus: int    = int(defn.get('pet_regen_bonus', 0))
@@ -149,7 +149,7 @@ class Shield(Item):
         self.buc_known: bool     = False
         self.identified: bool    = bool(defn.get('identified', False))
         self.unidentified_name: str = defn.get('unidentified_name', 'an unknown shield')
-        self.container_loot_tier: str = defn.get('container_loot_tier', 'common')
+        self.container_loot_tier: str = defn.get('containerLootTier', defn.get('container_loot_tier', 'common'))
         self.floor_spawn_weight: dict = defn.get('floorSpawnWeight', defn.get('floor_spawn_weight', {}))
 
     @property
@@ -172,7 +172,7 @@ class Accessory(Item):
         self.identified       = bool(defn.get('identified', False))
         self.buc: str            = 'uncursed'
         self.buc_known: bool     = False
-        self.container_loot_tier: str = defn.get('container_loot_tier', 'common')
+        self.container_loot_tier: str = defn.get('containerLootTier', defn.get('container_loot_tier', 'common'))
         self.floor_spawn_weight: dict = defn.get('floorSpawnWeight', defn.get('floor_spawn_weight', {}))
 
     @property
@@ -223,7 +223,7 @@ class Scroll(Item):
         self.identified       = bool(defn.get('identified', False))
         self.buc: str            = 'uncursed'
         self.buc_known: bool     = False
-        self.container_loot_tier: str = defn.get('container_loot_tier', 'common')
+        self.container_loot_tier: str = defn.get('containerLootTier', defn.get('container_loot_tier', 'common'))
         self.floor_spawn_weight: dict = defn.get('floorSpawnWeight', defn.get('floor_spawn_weight', {}))
 
     @property
@@ -246,7 +246,7 @@ class Spellbook(Item):
         self.unidentified_name = defn.get('unidentified_name', defn['name'])
         self.identified        = bool(defn.get('identified', False))
         self.floor_spawn_weight: dict = defn.get('floorSpawnWeight', defn.get('floor_spawn_weight', {}))
-        self.container_loot_tier: str = defn.get('container_loot_tier', 'common')
+        self.container_loot_tier: str = defn.get('containerLootTier', defn.get('container_loot_tier', 'common'))
 
 
 class Artifact(Item):

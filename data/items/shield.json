@@ -507,5 +507,24 @@
     "unidentified_name": "battered lion shield",
     "lore": "A steel shield engraved with a roaring lion and the motto DUTY UNTO DEATH. The name MARTEN OF THE IRON VALE is inscribed on the inside rim. It was carried into the dungeon four months ago by a knight who promised his wife he would be back for supper.",
     "floorSpawnWeight": {}
+  },
+  "shield_of_the_spartans": {
+    "name": "Shield of the Spartans",
+    "symbol": ")",
+    "color": [180, 40, 40],
+    "weight": 6.0,
+    "min_level": 12,
+    "tier": 2,
+    "material": "bronze",
+    "ac_bonus": 3,
+    "equip_threshold": 2,
+    "quiz_tier": 2,
+    "damage_resistances": {"pierce": 0.15},
+    "can_be_cursed": false,
+    "enchant_bonus": 0,
+    "unidentified_name": "a heavy bronze shield with a lambda",
+    "lore": "The aspis of the Spartans — the great round shield that formed the backbone of the phalanx. The inverted lambda on its face marks it as Lacedaemonian. A Spartan mother's farewell to her son: 'Return with your shield, or on it.' The shield that held at Thermopylae, where three hundred stood against a million. Heavy, unyielding, and utterly reliable.",
+    "containerLootTier": "rare",
+    "floorSpawnWeight": {"1-11": 0, "12-30": 8, "31-45": 3, "46-100": 0}
   }
 }

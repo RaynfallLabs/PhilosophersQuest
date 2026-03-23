@@ -9,9 +9,7 @@ Flow:
                   30% chance to alert nearby monsters
 
 Mimic check:
-  check_for_mimic(player, container, monsters)
-    -> if container.is_mimic: spawns mimic monster, returns True
-    -> else: returns False
+  Handled directly in main.py via _spawn_mimic(container, monsters)
 """
 
 import random
@@ -57,18 +55,6 @@ def attempt_lockpick(player, container, quiz_engine, dungeon, monsters, on_compl
         base_seconds=player.get_quiz_timer('economics'),
     )
 
-
-def check_for_mimic(player, container, monsters) -> bool:
-    """
-    Attack a container to check for a mimic.
-    If it is a mimic, spawn the mimic monster and return True.
-    Returns False if it's a normal container.
-    """
-    if not container.is_mimic:
-        return False
-
-    _spawn_mimic(container, monsters)
-    return True
 
 
 # ---------------------------------------------------------------------------
@@ -140,7 +126,6 @@ def _trigger_trap(player, trap: dict, messages: list):
 
 def _alert_nearby(player, dungeon, monsters) -> bool:
     """Wake up monsters within 8 tiles. Returns True if any were alerted."""
-    from status_effects import apply_effect
     alerted = False
     px, py  = player.x, player.y
     for m in monsters:
@@ -156,15 +141,15 @@ def _alert_nearby(player, dungeon, monsters) -> bool:
 # Per container tier: which item categories to draw from, max quiz tier
 # allowed, and whether legendary (containerLootTier='legendary') items can appear.
 _TIER_LOOT_CFG: dict[int, dict] = {
-    1: {'classes': ['weapon', 'armor', 'ammo'],
+    1: {'classes': ['weapon', 'armor', 'ammo', 'potion'],
         'max_tier': 2, 'legendary': False},
-    2: {'classes': ['weapon', 'armor', 'ammo', 'accessory'],
+    2: {'classes': ['weapon', 'armor', 'ammo', 'accessory', 'shield', 'potion'],
         'max_tier': 3, 'legendary': False},
-    3: {'classes': ['weapon', 'armor', 'accessory', 'scroll', 'wand'],
+    3: {'classes': ['weapon', 'armor', 'accessory', 'shield', 'potion', 'scroll', 'wand'],
         'max_tier': 4, 'legendary': False},
-    4: {'classes': ['weapon', 'armor', 'accessory', 'scroll', 'wand'],
+    4: {'classes': ['weapon', 'armor', 'accessory', 'shield', 'potion', 'scroll', 'wand', 'spellbook'],
         'max_tier': 5, 'legendary': False},
-    5: {'classes': ['weapon', 'armor', 'accessory', 'scroll', 'wand'],
+    5: {'classes': ['weapon', 'armor', 'accessory', 'shield', 'potion', 'scroll', 'wand', 'spellbook'],
         'max_tier': 5, 'legendary': True},
 }
 
@@ -180,12 +165,19 @@ def _generate_loot(container, dungeon_level: int) -> list:
     Pick 1+ items whose tier and class match the container's tier.
     Higher-tier containers draw from more categories, allow higher-tier
     items, and bias toward the best items in the pool.
+
+    Chests give loot from up to 10 levels ahead of floor spawns — the
+    bonus scales with container tier (T1: +2, T2: +4, T3: +6, T4: +8, T5: +10).
     """
     import copy
     from items import load_items
 
     container_tier = max(1, min(5, getattr(container, 'tier', 1)))
     cfg = _TIER_LOOT_CFG[container_tier]
+
+    # Chest bonus: items can come from ahead of the current dungeon level
+    level_bonus = container_tier * 2  # T1: +2, T2: +4, ... T5: +10
+    effective_level = dungeon_level + level_bonus
 
     pool = []
     for cls_name in cfg['classes']:
@@ -199,8 +191,8 @@ def _generate_loot(container, dungeon_level: int) -> list:
                 if getattr(item, 'container_loot_tier', 'common') == 'legendary' \
                         and not cfg['legendary']:
                     continue
-                # Must have spawned by this dungeon level
-                if item.min_level > max(1, dungeon_level):
+                # Chest bonus: items available sooner than floor spawns
+                if item.min_level > max(1, effective_level):
                     continue
                 pool.append(item)
         except FileNotFoundError:
@@ -209,11 +201,9 @@ def _generate_loot(container, dungeon_level: int) -> list:
     if not pool:
         return []
 
-    # Bias toward higher-tier items in higher-tier containers (weight by tier2)
-    if container_tier >= 3:
-        weights = [_item_tier(i) ** 2 for i in pool]
-    else:
-        weights = [1] * len(pool)
+    # Bias toward higher-tier items — weight by tier squared, scaled by container tier
+    weights = [max(1, _item_tier(i) ** 2) if container_tier >= 3
+               else max(1, _item_tier(i)) for i in pool]
 
     def pick_one():
         return copy.copy(random.choices(pool, weights=weights, k=1)[0])
@@ -227,9 +217,9 @@ def _generate_loot(container, dungeon_level: int) -> list:
     return chosen
 
 
-def _spawn_mimic(container, monsters: list):
-    """Replace a mimic container with a live mimic monster."""
-    import json, os
+def _spawn_mimic(container, monsters: list, dungeon_level: int = 1):
+    """Replace a mimic container with a level-appropriate mimic monster."""
+    import json
     from monster import Monster
 
     from paths import data_path
@@ -237,9 +227,20 @@ def _spawn_mimic(container, monsters: list):
     with open(monsters_path, encoding='utf-8') as f:
         all_defs = json.load(f)
 
-    defn = all_defs.get('mimic')
-    if defn is None:
-        return
+    # Pick mimic tier based on dungeon level
+    if dungeon_level >= 51:
+        mid = 'abyssal_mimic'
+    elif dungeon_level >= 21:
+        mid = 'greater_mimic'
+    else:
+        mid = 'mimic'
 
-    mimic = Monster({**defn, 'id': 'mimic'}, container.x, container.y)
+    defn = all_defs.get(mid)
+    if defn is None:
+        defn = all_defs.get('mimic')
+    if defn is None:
+        return None
+
+    mimic = Monster({**defn, 'id': mid}, container.x, container.y)
     monsters.append(mimic)
+    return mimic

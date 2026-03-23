@@ -2700,5 +2700,39 @@
       "61-80": 2,
       "81-100": 1
     }
+  },
+  "lantern_of_diogenes": {
+    "name": "Lantern of Diogenes",
+    "symbol": "/",
+    "color": [240, 220, 100],
+    "weight": 0.5,
+    "effect": "light",
+    "power": "",
+    "charges_min": 20,
+    "charges_max": 25,
+    "quiz_tier": 1,
+    "min_level": 10,
+    "unidentified_name": "a battered bronze lantern",
+    "identified": false,
+    "lore": "Diogenes of Sinope carried a lantern through the streets of Athens in broad daylight. When asked why, he said: 'I am looking for an honest man.' He lived in a barrel, owned nothing, and told Alexander the Great to move because he was blocking the sun. This lantern still burns with that relentless search for truth — its light reveals hidden things and never seems to run out.",
+    "containerLootTier": "rare",
+    "floorSpawnWeight": {"1-9": 0, "10-25": 6, "26-40": 2, "41-100": 0}
+  },
+  "caduceus_wand": {
+    "name": "Caduceus of Hermes",
+    "symbol": "/",
+    "color": [200, 180, 80],
+    "weight": 0.5,
+    "effect": "heal",
+    "power": "",
+    "charges_min": 10,
+    "charges_max": 12,
+    "quiz_tier": 2,
+    "min_level": 14,
+    "unidentified_name": "a golden rod entwined with two serpents",
+    "identified": false,
+    "lore": "The caduceus — two serpents wound around a winged staff — was carried by Hermes, messenger of the gods. Often confused with the Rod of Asclepius (the true medical symbol, with one snake), the caduceus nonetheless became the emblem of healing across the Western world. This wand channels that borrowed authority: each charge restores the body as if guided by divine medicine.",
+    "containerLootTier": "rare",
+    "floorSpawnWeight": {"1-13": 0, "14-30": 6, "31-45": 2, "46-100": 0}
   }
 }
