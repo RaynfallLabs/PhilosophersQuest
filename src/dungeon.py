@@ -820,20 +820,45 @@ def _carve_v(tiles, y1: int, y2: int, x: int):
 def _place_doors(tiles, rooms: List[Room], rng: random.Random, chance: float = 0.70):
     """
     A corridor enters a room by carving through the room's outer wall.
-    Any room-wall tile that is FLOOR was carved by a corridor -- make it a DOOR.
+    Any room-wall tile that is FLOOR was carved by a corridor -- make it a DOOR,
+    but only if it forms a valid 1-tile-wide passage (walls on two opposite sides,
+    floor on the other two opposite sides).
     """
+    _WALKABLE = (FLOOR, STAIRS_UP, STAIRS_DOWN)
+    placed: Set[Tuple[int, int]] = set()
+
     for room in rooms:
         for wx, wy in room.wall_tiles():
-            if tiles[wy][wx] == FLOOR:
-                # Confirm it's a valid 1-tile passage (not a wide opening)
-                # Count orthogonal floor neighbors -- a doorway has exactly 2
-                floor_nbrs = sum(
-                    1 for dx, dy in [(0,-1),(0,1),(-1,0),(1,0)]
-                    if 0 <= wx+dx < len(tiles[0]) and 0 <= wy+dy < len(tiles)
-                    and tiles[wy+dy][wx+dx] in (FLOOR, STAIRS_UP, STAIRS_DOWN)
-                )
-                if floor_nbrs >= 1 and rng.random() < chance:
-                    tiles[wy][wx] = DOOR
+            if tiles[wy][wx] != FLOOR:
+                continue
+
+            w = len(tiles[0])
+            h = len(tiles)
+
+            # Check orthogonal neighbors
+            n = tiles[wy-1][wx] if wy > 0     else WALL
+            s = tiles[wy+1][wx] if wy < h - 1 else WALL
+            e = tiles[wy][wx+1] if wx < w - 1 else WALL
+            ww = tiles[wy][wx-1] if wx > 0     else WALL
+
+            # Valid doorway: floor on two OPPOSITE sides, wall on the other two.
+            # This ensures a 1-tile-wide passage with a proper wall frame.
+            ns_passage = (n in _WALKABLE and s in _WALKABLE
+                          and ww == WALL and e == WALL)
+            ew_passage = (e in _WALKABLE and ww in _WALKABLE
+                          and n == WALL and s == WALL)
+
+            if not (ns_passage or ew_passage):
+                continue
+
+            # Prevent adjacent doors (no stacking)
+            if any((wx+dx, wy+dy) in placed
+                   for dx, dy in [(0,-1),(0,1),(-1,0),(1,0)]):
+                continue
+
+            if rng.random() < chance:
+                tiles[wy][wx] = DOOR
+                placed.add((wx, wy))
 
 
 # ---------------------------------------------------------------------------
@@ -1690,7 +1715,8 @@ def _create_athena_shrine(dungeon: Dungeon, rooms, ground_items, rng):
                         # Place Aegis of Athena inside the shrine
                         from items import Shield
                         import json as _json
-                        _shield_path = Path(__file__).parent / '..' / 'data' / 'items' / 'shield.json'
+                        from paths import data_path as _dp
+                        _shield_path = _dp('data', 'items', 'shield.json')
                         with open(_shield_path, encoding='utf-8') as _f:
                             _shield_data = _json.load(_f)
                         aegis_defn = {**_shield_data['aegis_of_athena'],

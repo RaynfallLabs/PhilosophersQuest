@@ -3768,5 +3768,26 @@
     "unidentified_name": "thick leather sandal",
     "lore": "A sandal of impossible thickness, reinforced with leather scraps collected over an entire lifetime. Vidar the Silent, son of Odin, wore it when he avenged his father — planting his foot on the lower jaw of the World-Wolf and tearing the beast apart with his bare hands.",
     "floorSpawnWeight": {}
+  },
+  "trainers_cap": {
+    "name": "Trainer's Cap",
+    "symbol": "[",
+    "color": [255, 40, 40],
+    "weight": 0.2,
+    "min_level": 9999,
+    "slot": "head",
+    "tier": 1,
+    "material": "cloth",
+    "ac_bonus": 0,
+    "equip_threshold": 1,
+    "quiz_tier": 1,
+    "damage_resistances": {},
+    "can_be_cursed": false,
+    "enchant_bonus": 0,
+    "identified": true,
+    "unidentified_name": "red and white cap",
+    "pet_regen_bonus": 2,
+    "lore": "A well-worn red and white cap, its brim shaped by countless adventures. It radiates a warm, encouraging energy that invigorates companion creatures, helping them recover from wounds more quickly. The inside of the brim reads: 'I choose you.'",
+    "floorSpawnWeight": {}
   }
 }

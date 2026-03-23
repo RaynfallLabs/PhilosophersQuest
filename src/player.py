@@ -230,7 +230,8 @@ class Player:
         invisible_bonus = 2 if self.has_effect('invisible') else 0
         # Shielded status effect (from wand of shielding): -2 AC
         shield_effect   = 2 if self.has_effect('shielded') else 0
-        return 10 - dex_mod - armor_bonus - shield_bonus - blessed_bonus - invisible_bonus - shield_effect
+        acc_bonus = getattr(self, '_accessory_ac_bonus', 0)
+        return 10 - dex_mod - armor_bonus - shield_bonus - blessed_bonus - invisible_bonus - shield_effect - acc_bonus
 
     def get_armor_resistance(self, damage_type: str) -> float:
         """Combined damage resistance multiplier from all equipped armor/shield."""
@@ -327,6 +328,10 @@ class Player:
 
     def apply_stat_bonus(self, stat: str, amount: int):
         """Permanently change a stat and update derived maximums."""
+        if stat == 'AC':
+            # AC is computed, not stored directly — accumulate in a bonus field
+            self._accessory_ac_bonus = getattr(self, '_accessory_ac_bonus', 0) + amount
+            return
         setattr(self, stat, getattr(self, stat) + amount)
         if stat == 'CON':
             self.max_hp += amount   # preserve level scaling

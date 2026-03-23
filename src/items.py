@@ -122,6 +122,7 @@ class Armor(Item):
         self.container_loot_tier: str = defn.get('container_loot_tier', 'common')
         self.on_equip_status: str    = defn.get('onEquipStatus', defn.get('on_equip_status', ''))
         self.floor_spawn_weight: dict = defn.get('floorSpawnWeight', defn.get('floor_spawn_weight', {}))
+        self.pet_regen_bonus: int    = int(defn.get('pet_regen_bonus', 0))
 
     @property
     def cursed(self) -> bool:

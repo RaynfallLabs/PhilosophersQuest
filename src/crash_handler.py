@@ -84,6 +84,19 @@ def write_crash_report(exc_type, exc_value, exc_tb, game=None) -> str:
         except Exception as inner:
             lines.append(f"  (error while reading game state: {inner})")
 
+    # ---- Emergency save --------------------------------------------------
+    save_ok = False
+    if game is not None:
+        try:
+            from save_system import save_game
+            save_ok = save_game(game)
+        except Exception as save_err:
+            lines.append("")
+            lines.append(f"  EMERGENCY SAVE FAILED: {save_err}")
+
+    if save_ok:
+        lines.append("")
+        lines.append("  Emergency save written -- your progress has been preserved.")
     lines.append("=" * 70)
     lines.append("  Please send this file to the developer. Thank you!")
     lines.append("=" * 70)

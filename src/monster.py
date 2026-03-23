@@ -221,6 +221,8 @@ class Monster:
         _RANGED_WORDS = {'shoot', 'arrow', 'bolt', 'dart', 'spit', 'hurl',
                          'volley', 'ray', 'blast', 'breath', 'spike', 'gaze',
                          'song', 'wail', 'charm', 'psionic', 'disintegrat'}
+        if not self.attacks:
+            return 0, f"The {self.name} flails helplessly!"
         if self.ai_pattern == 'ranged' and not self._adjacent_to(player) and len(self.attacks) > 1:
             ranged_atks = [a for a in self.attacks
                           if any(w in a.get('name', '').lower() for w in _RANGED_WORDS)]

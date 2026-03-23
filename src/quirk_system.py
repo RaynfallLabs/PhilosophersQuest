@@ -24,6 +24,16 @@ class QuirkSystem:
     def __init__(self, game: 'Game'):
         self.game = game
 
+    def __getstate__(self):
+        # Exclude the game reference (unpicklable pygame Surfaces)
+        state = self.__dict__.copy()
+        state.pop('game', None)
+        return state
+
+    def __setstate__(self, state):
+        self.__dict__.update(state)
+        self.game = None  # re-bound by load_state()
+
     # ------------------------------------------------------------------ helpers
     @property
     def _pl(self):

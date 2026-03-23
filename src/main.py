@@ -88,6 +88,8 @@ VIEWPORT_H = GAME_H // TILE_SIZE    # 18
 #   _start_book      -> spellbook item ID given at start
 #   _start_accessory -> accessory item ID given at start
 #   _start_shield    -> shield item ID given at start
+#   _start_armor     -> armor item ID given at start
+#   _start_soul_spheres -> int: number of Soul Spheres given at start
 #   _no_dagger       -> True: skip the default iron_dagger
 #   _immortal        -> True: player cannot die
 #   _greeting        -> custom welcome message line (None = default)
@@ -253,6 +255,15 @@ SECRET_BUILDS: dict[str, dict] = {
         "_lock_melee": True,
         "_greeting": "Good. Bad. I'm the guy with the gun.",
     },
+    "ash ketchum": {
+        "PER": 18, "INT": 16, "WIS": 12, "DEX": 10, "CON": 8, "STR": 6,
+        "_sprite": "player_ash_ketchum",
+        "_no_dagger": True,
+        "_start_armor": "trainers_cap",
+        "_equip_armor": True,
+        "_start_soul_spheres": 4,
+        "_greeting": "Ash Ketchum adjusts his cap. Gotta catch 'em all.",
+    },
     # -- QA ----------------------------------------------------------------
     "titivillus": {
         "STR": 12, "CON": 12, "DEX": 12, "INT": 12, "WIS": 12, "PER": 12,
@@ -357,6 +368,12 @@ class WelcomeScreen:
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
+                if event.type == pygame.WINDOWRESIZED:
+                    self.W, self.H = event.x, event.y
+                    self.cx = self.W // 2
+                    self.cy = self.H // 2
+                    self._bg = self._make_stone_bg()
+                    continue
                 if event.type == pygame.KEYDOWN:
                     if self._show_alltime:
                         # Any key closes the all-time overlay
@@ -416,7 +433,7 @@ class WelcomeScreen:
 
     def _draw_god_prompt(self):
         overlay = pygame.Surface((self.W, self.H), pygame.SRCALPHA)
-        overlay.fill((0, 0, 0, 160))
+        overlay.fill((0, 0, 0, 190))
         self.screen.blit(overlay, (0, 0))
 
         bw, bh = 380, 120
@@ -1063,6 +1080,7 @@ class Game:
         self._target_idx        = 0        # which candidate is selected
         self._melee_targeting   = False    # True when using A-key melee targeting
         self._throw_targeting   = False    # True when throwing a potion
+        self._observe_targeting = False    # True when using O-key observe
         self._throw_potion      = None     # Potion being thrown
         self._throw_reach       = 0        # Throw range based on STR
         # Map view toggle: 'full' = fit entire dungeon, 'close' = scrolling close-up
@@ -1508,6 +1526,43 @@ class Game:
             except Exception:
                 pass
 
+        # -- Armor (headgear, etc.) -----------------------------------------
+        start_armor = b.get('_start_armor', None)
+        if start_armor:
+            try:
+                armors = load_items('armor')
+                arm = next((a for a in armors if a.id == start_armor), None)
+                if arm:
+                    arm.identified = True
+                    if b.get('_equip_armor'):
+                        from items import ARMOR_SLOTS
+                        idx = ARMOR_SLOTS.index(arm.slot) if arm.slot in ARMOR_SLOTS else 0
+                        self.player.armor_slots[idx] = arm
+                    else:
+                        self.player.inventory.append(arm)
+            except Exception:
+                pass
+
+        # -- Soul Spheres ---------------------------------------------------
+        soul_sphere_count = b.get('_start_soul_spheres', 0)
+        if soul_sphere_count > 0:
+            from items import Artifact
+            for _ in range(soul_sphere_count):
+                sphere = Artifact({
+                    'id': 'soul_sphere',
+                    'name': 'Soul Sphere',
+                    'symbol': 'O',
+                    'color': [255, 80, 80],
+                    'item_class': 'artifact',
+                    'weight': 0.5,
+                    'min_level': 1,
+                    'lore': 'A sphere of crimson and ivory that hums with trapped souls. '
+                            'Ancient texts say these vessels were used to bind creature spirits. '
+                            'One wonders what might happen if it were hurled with force...',
+                })
+                sphere.identified = True
+                self.player.inventory.append(sphere)
+
         # -- Always: starting lockpick charges ----------------------------
         self.player.lockpick_charges += 5   # equivalent to one basic lockpick
 
@@ -1613,6 +1668,7 @@ class Game:
                 if self.state == STATE_TARGET:
                     self._throw_targeting = False
                     self._throw_potion = None
+                    self._observe_targeting = False
                 self.state = STATE_PLAYER
                 return True
             if self.state == STATE_STORY_POPUP:
@@ -1831,8 +1887,11 @@ class Game:
         if key == pygame.K_BACKQUOTE:
             self._open_xyzzy_input()
             return
-        if key == pygame.K_o:
+        if key == pygame.K_w:
             self._open_quirks_screen()
+            return
+        if key == pygame.K_o:
+            self._start_observe()
             return
         if key == pygame.K_TAB:
             if self.zoom_mode == 'full':
@@ -2146,7 +2205,11 @@ class Game:
             self.add_message(
                 "You must slay the seven guardians before the way opens.", 'info')
             return
-        self._change_level(self.dungeon_level + 1, enter_from_top=True)
+        try:
+            self._change_level(self.dungeon_level + 1, enter_from_top=True)
+        except Exception as e:
+            self.add_message(f"Error descending: {e}", 'danger')
+            import traceback; traceback.print_exc()
 
     def _ascend_stairs(self):
         px, py = self.player.x, self.player.y
@@ -2171,7 +2234,11 @@ class Game:
                 )
                 if has_stone:
                     self._trigger_death_pursuit()
-            self._change_level(self.dungeon_level - 1, enter_from_top=False)
+            try:
+                self._change_level(self.dungeon_level - 1, enter_from_top=False)
+            except Exception as e:
+                self.add_message(f"Error ascending: {e}", 'danger')
+                import traceback; traceback.print_exc()
 
     def _trigger_death_pursuit(self):
         from monster import DeathMonster
@@ -2921,6 +2988,39 @@ class Game:
             if abs(item.x - px) <= 1 and abs(item.y - py) <= 1:
                 return item
         return None
+
+    def _start_observe(self):
+        """Press 'o' to enter observe mode — look at monsters, items, or terrain."""
+        px, py = self.player.x, self.player.y
+        sight = self.player.get_sight_radius()
+
+        # Build candidate list: visible monsters
+        candidates = [
+            m for m in self.monsters
+            if m.alive and (m.x, m.y) in self.visible
+        ]
+        candidates.sort(key=lambda m: abs(m.x - px) + abs(m.y - py))
+
+        self._target_candidates = candidates
+        self._target_idx = 0
+        self._observe_targeting = True
+        self._melee_targeting = False
+        self._throw_targeting = False
+        self._observe_reach = sight
+
+        if candidates:
+            m = candidates[0]
+            self.target_cursor_x = m.x
+            self.target_cursor_y = m.y
+        else:
+            self.target_cursor_x = px
+            self.target_cursor_y = py
+
+        self.state = STATE_TARGET
+        self.add_message(
+            "Observe -- arrow keys to look, TAB to cycle targets, ENTER to examine, ESC to cancel.",
+            'info'
+        )
 
     def _open_melee_targeting(self):
         """Press 'a' to enter melee targeting mode — attack adjacent tiles (or further with reach weapons)."""
@@ -4774,6 +4874,11 @@ class Game:
                 result_lines.append(("No room for Fenrir — all stats +3 instead!", (255, 220, 80)))
                 msgs.append("Fenrir's howl echoes but fades — reality compensates with raw power.")
 
+        # Re-restore to full after stat bonuses may have raised maximums
+        p.hp = p.max_hp
+        p.sp = p.max_sp
+        p.mp = p.max_mp
+
         for msg in msgs:
             self.add_message(msg, 'good')
 
@@ -4929,7 +5034,7 @@ class Game:
             return
 
         overlay = pygame.Surface((WINDOW_W, WINDOW_H), pygame.SRCALPHA)
-        overlay.fill((0, 0, 0, 200))
+        overlay.fill((0, 0, 0, 190))
         self.screen.blit(overlay, (0, 0))
 
         bw, bh = 760, 400
@@ -4996,7 +5101,7 @@ class Game:
         self.state = STATE_QUIRKS
 
     def _quirks_input(self, key: int):
-        if key in (pygame.K_ESCAPE, pygame.K_o, pygame.K_RETURN, pygame.K_SPACE):
+        if key in (pygame.K_ESCAPE, pygame.K_w, pygame.K_RETURN, pygame.K_SPACE):
             self.state = STATE_PLAYER
             return
         if key in (pygame.K_UP, pygame.K_k):
@@ -5018,7 +5123,7 @@ class Game:
         scroll = getattr(self, '_quirks_scroll', 0)
 
         overlay = pygame.Surface((WINDOW_W, WINDOW_H), pygame.SRCALPHA)
-        overlay.fill((0, 0, 0, 210))
+        overlay.fill((0, 0, 0, 190))
         self.screen.blit(overlay, (0, 0))
 
         bw, bh = 900, 700
@@ -5150,31 +5255,29 @@ class Game:
         p = self.player
 
         overlay = pygame.Surface((WINDOW_W, WINDOW_H), pygame.SRCALPHA)
-        overlay.fill((0, 0, 0, 210))
+        overlay.fill((0, 0, 0, 190))
         self.screen.blit(overlay, (0, 0))
 
         bw, bh = 920, 720
         bx = (GAME_W - bw) // 2
         by = (WINDOW_H - bh) // 2
 
-        # Panel background
-        pygame.draw.rect(self.screen, (12, 14, 22), (bx, by, bw, bh), border_radius=8)
-        pygame.draw.rect(self.screen, (100, 140, 200), (bx, by, bw, bh), 2, border_radius=8)
-        pygame.draw.rect(self.screen, (50, 70, 100), (bx+3, by+3, bw-6, bh-6), 1, border_radius=6)
+        # Panel background — consistent gold/midnight theme
+        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.GOLD)
 
-        font_title = get_font('heading', 20)
-        font_head  = get_font('heading', 15)
-        font_body  = get_font('body', 14)
-        font_small = get_font('body', 12)
+        font_title = get_font('heading', 24)
+        font_head  = get_font('heading', 18)
+        font_body  = get_font('body', 16)
+        font_small = get_font('body', 14)
         max_text_w = bw - 48
 
         # Build lines: list of (text, color, font, is_section_header)
         lines = []
-        GOLD   = (255, 220, 100)
-        WHITE  = (220, 220, 230)
-        DIM    = (150, 150, 170)
-        GREEN  = (100, 230, 120)
-        RED    = (230, 100, 100)
+        GOLD   = FP.GOLD_BRIGHT
+        WHITE  = FP.BODY_TEXT
+        DIM    = FP.FADED_TEXT
+        GREEN  = FP.SUCCESS_TEXT
+        RED    = FP.DANGER_TEXT
         CYAN   = (120, 210, 240)
         PURPLE = (200, 170, 255)
 
@@ -5314,20 +5417,20 @@ class Game:
 
         # --- Render with scrolling ---
         scroll = getattr(self, '_charsheet_scroll', 0)
-        content_top = by + 42
+        content_top = by + 58
         content_bot = by + bh - 28
         avail_h = content_bot - content_top
-        line_h = 18
+        line_h = 20
 
         max_scroll = max(0, len(lines) - avail_h // line_h)
         scroll = min(scroll, max_scroll)
         self._charsheet_scroll = scroll
 
-        # Title
-        title_surf = font_title.render("CHARACTER SHEET", True, (160, 200, 255))
-        self.screen.blit(title_surf, (bx + (bw - title_surf.get_width()) // 2, by + 10))
-        pygame.draw.line(self.screen, (60, 80, 140),
-                         (bx + 20, by + 36), (bx + bw - 20, by + 36))
+        # Title — consistent gold header
+        draw_header_bar(self.screen, (bx, by, bw, 44),
+                        text="CHARACTER SHEET",
+                        font=font_title, text_color=FP.GOLD_BRIGHT)
+        draw_divider(self.screen, bx + 20, by + 50, bw - 40)
 
         # Clip and render lines (word-wrapped)
         y = content_top
@@ -5354,12 +5457,12 @@ class Game:
             track_h = content_bot - content_top - 20
             thumb_h = max(20, int(track_h * avail_h / (len(lines) * line_h)))
             thumb_y = content_top + int(pct * (track_h - thumb_h))
-            pygame.draw.rect(self.screen, (40, 50, 70), (bx + bw - 18, content_top, 8, track_h))
-            pygame.draw.rect(self.screen, (100, 140, 200), (bx + bw - 18, thumb_y, 8, thumb_h), border_radius=3)
+            pygame.draw.rect(self.screen, FP.MIDNIGHT_MID, (bx + bw - 18, content_top, 8, track_h))
+            pygame.draw.rect(self.screen, FP.GOLD_DARK, (bx + bw - 18, thumb_y, 8, thumb_h), border_radius=3)
 
         # Footer
         footer = font_small.render(
-            "Up/Down: scroll   PgUp/PgDn: jump   ESC: close", True, (70, 90, 130))
+            "Up/Down: scroll   PgUp/PgDn: jump   ESC: close", True, FP.HINT_TEXT)
         self.screen.blit(footer, (bx + (bw - footer.get_width()) // 2, by + bh - 22))
 
     def _get_effect_source(self, effect_id: str) -> str:
@@ -5461,8 +5564,6 @@ class Game:
             dname = self._display_name(item)
             self.player._apply_equip(item)
             self.player.remove_from_inventory(item)
-            item.identified = True
-            self.player.known_item_ids.add(item.id)
             suffix = " (two-handed)" if getattr(item, 'two_handed', False) else ""
             self.add_message(f"You equip the {dname}{suffix}.", 'success')
             _qs_eq = getattr(self, 'quirk_system', None)
@@ -5558,8 +5659,6 @@ class Game:
             if result.success:
                 self.player._apply_equip(item)
                 self.player.remove_from_inventory(item)
-                item.identified = True
-                self.player.known_item_ids.add(item.id)
                 ac = self.player.get_ac()
                 msg = f"You equip the {item_name}{cursed_tag}. AC is now {ac}."
                 if getattr(item, 'cursed', False):
@@ -5643,8 +5742,6 @@ class Game:
             if result.success:
                 self.player._apply_equip(item)
                 self.player.remove_from_inventory(item)
-                item.identified = True
-                self.player.known_item_ids.add(item.id)
                 fx = item.effects
                 if 'status' in fx:
                     self.add_message(
@@ -6972,7 +7069,7 @@ class Game:
         if enc is None:
             return
 
-        draw_overlay(self.screen, 180)
+        draw_overlay(self.screen, 190)
 
         bw, bh = min(780, GAME_W - 40), 440
         bx = (GAME_W - bw) // 2
@@ -7162,7 +7259,7 @@ class Game:
         """Draw the Altar of the Last Judgment result overlay."""
         from fantasy_ui import FP, get_font, draw_overlay, draw_dark_panel, draw_header_bar
 
-        draw_overlay(self.screen, 200)
+        draw_overlay(self.screen, 190)
 
         bw, bh = min(780, GAME_W - 40), 360
         bx = (GAME_W - bw) // 2
@@ -8378,6 +8475,11 @@ class Game:
                     return
                 if nx == px and ny == py:
                     return
+            # Observe targeting: clamp to sight range (own tile allowed)
+            if self._observe_targeting:
+                px, py = self.player.x, self.player.y
+                if max(abs(nx - px), abs(ny - py)) > getattr(self, '_observe_reach', 99):
+                    return
             self.target_cursor_x = nx
             self.target_cursor_y = ny
             return
@@ -8388,13 +8490,88 @@ class Game:
             confirm_keys = confirm_keys + (pygame.K_a,)
         if self._throw_targeting:
             confirm_keys = confirm_keys + (pygame.K_y,)
+        if self._observe_targeting:
+            confirm_keys = confirm_keys + (pygame.K_o,)
         if key in confirm_keys:
-            if self._throw_targeting:
+            if self._observe_targeting:
+                self._confirm_observe()
+            elif self._throw_targeting:
                 self._confirm_throw_target()
             elif self._melee_targeting:
                 self._confirm_melee_target()
             else:
                 self._confirm_ranged_target()
+
+    def _confirm_observe(self):
+        """Describe whatever is at the cursor position. Free action."""
+        cx, cy = self.target_cursor_x, self.target_cursor_y
+
+        # Check if the tile is visible
+        if (cx, cy) not in self.visible:
+            self.add_message("You can't see that location.", 'info')
+            self.state = STATE_PLAYER
+            self._observe_targeting = False
+            return
+
+        found = False
+
+        # Monster at cursor
+        monster = next(
+            (m for m in self.monsters if m.alive and m.x == cx and m.y == cy), None
+        )
+        if monster:
+            hp_pct = monster.hp / max(1, monster.max_hp)
+            condition = (
+                "uninjured" if hp_pct >= 1.0 else
+                "lightly wounded" if hp_pct >= 0.7 else
+                "wounded" if hp_pct >= 0.4 else
+                "badly wounded" if hp_pct >= 0.15 else
+                "near death"
+            )
+            self.add_message(
+                f"You see {monster.name} ({condition}).", 'info'
+            )
+            found = True
+
+        # Items at cursor
+        items_here = [i for i in self.ground_items if i.x == cx and i.y == cy]
+        for item in items_here[:5]:
+            dname = self._display_name(item)
+            self.add_message(f"You see {dname} on the ground.", 'info')
+            found = True
+        if len(items_here) > 5:
+            self.add_message(f"...and {len(items_here) - 5} more items.", 'info')
+
+        # Player's own tile
+        if cx == self.player.x and cy == self.player.y and not found:
+            if not items_here:
+                self.add_message("You see yourself standing here.", 'info')
+            found = True
+
+        # Tile features
+        tile = self.dungeon.tiles[cy][cx]
+        _TILE_DESC = {
+            STAIRS_UP:   "Stairs leading up.",
+            STAIRS_DOWN: "Stairs leading down.",
+            ALTAR:       "A sacred altar.",
+            FOUNTAIN:    "A shimmering fountain.",
+            GRAVE:       "A weathered gravestone.",
+            THRONE:      "An ancient throne.",
+            WATER:       "A pool of water.",
+            LAVA:        "A pool of molten lava.",
+            ICE:         "An icy floor.",
+        }
+        desc = _TILE_DESC.get(tile)
+        if desc:
+            self.add_message(desc, 'info')
+            found = True
+
+        if not found:
+            self.add_message("You see nothing of interest.", 'info')
+
+        # Return to player state — no turn cost
+        self.state = STATE_PLAYER
+        self._observe_targeting = False
 
     def _confirm_ranged_target(self):
         """Confirm a ranged shot at the cursor position."""
@@ -8441,7 +8618,8 @@ class Game:
             return
 
         # 3. Container at cursor -- mimic check / bash
-        from container_system import Container, _spawn_mimic
+        from items import Container
+        from container_system import _spawn_mimic
         container = next(
             (item for item in self.ground_items
              if isinstance(item, Container) and not item.opened
@@ -8915,7 +9093,12 @@ class Game:
             msgs = pet.gain_xp(1)
             for msg in msgs:
                 self.add_message(msg, 'success')
-            pet.tick_regen()
+            # Trainer's Cap: pet_regen_bonus from head armor
+            _prb = 0
+            _head = self.player.armor_slots[0] if self.player.armor_slots else None
+            if _head:
+                _prb = getattr(_head, 'pet_regen_bonus', 0)
+            pet.tick_regen(bonus=_prb)
             pet.tick_cooldown()
 
         # Monsters attack adjacent pets (each monster can swipe at one pet per turn)
@@ -9363,12 +9546,12 @@ class Game:
 
     @staticmethod
     def _fit_text(text: str, font: pygame.font.Font, max_w: int) -> str:
-        """Truncate text with '...' if it exceeds max_w pixels."""
+        """Truncate text with ellipsis if it exceeds max_w pixels."""
         if font.size(text)[0] <= max_w:
             return text
-        while len(text) > 1 and font.size(text + '...')[0] > max_w:
+        while len(text) > 1 and font.size(text + '\u2026')[0] > max_w:
             text = text[:-1]
-        return text + '...'
+        return text + '\u2026'
 
     @staticmethod
     def _wrap_text(text: str, font: pygame.font.Font, max_w: int) -> list[str]:
@@ -9404,7 +9587,7 @@ class Game:
 
         # -- Overlay ----------------------------------------------------
         overlay = pygame.Surface((WINDOW_W, WINDOW_H), pygame.SRCALPHA)
-        overlay.fill((0, 0, 0, 185))
+        overlay.fill((0, 0, 0, 190))
         self.screen.blit(overlay, (0, 0))
 
         # -- Modal geometry ---------------------------------------------
@@ -9714,7 +9897,7 @@ class Game:
 
     def _draw_equip_menu(self):
         # FANTASY: Grimoire-themed equip menu
-        draw_overlay(self.screen, 160)
+        draw_overlay(self.screen, 190)
 
         n_equip   = len(self.equip_menu_items)
         n_unequip = len(self.equip_menu_equipped)
@@ -9851,7 +10034,7 @@ class Game:
 
     def _draw_accessory_menu(self):
         # FANTASY: Grimoire-themed accessory menu
-        draw_overlay(self.screen, 160)
+        draw_overlay(self.screen, 190)
 
         bw = min(760, GAME_W - 40)
         bh = min(90 + len(self.accessory_menu_items) * 66 + 70, WINDOW_H - 40)
@@ -9917,7 +10100,7 @@ class Game:
 
     def _draw_wand_menu(self):
         # FANTASY: Grimoire-themed wand menu
-        draw_overlay(self.screen, 160)
+        draw_overlay(self.screen, 190)
 
         bw = min(760, GAME_W - 40)
         bh = min(90 + len(self.wand_menu_items) * 66 + 70, WINDOW_H - 40)
@@ -9978,7 +10161,7 @@ class Game:
     # ------------------------------------------------------------------
 
     def _draw_spell_menu(self):
-        draw_overlay(self.screen, 160)
+        draw_overlay(self.screen, 190)
         n_spells = len(self.spell_menu_items)
         ROW_H = 66
         bw = min(820, GAME_W - 40)
@@ -10033,7 +10216,7 @@ class Game:
 
     def _draw_scroll_menu(self):
         # FANTASY: Grimoire-themed scroll menu
-        draw_overlay(self.screen, 160)
+        draw_overlay(self.screen, 190)
 
         bw = min(760, GAME_W - 40)
         bh = min(90 + len(self.scroll_menu_items) * 66 + 70, WINDOW_H - 40)
@@ -10103,7 +10286,7 @@ class Game:
 
     def _draw_identify_menu(self):
         # FANTASY: Grimoire-themed identify menu
-        draw_overlay(self.screen, 160)
+        draw_overlay(self.screen, 190)
 
         n_items = len(self.identify_menu_items)
         ROW_H = 66
@@ -10180,7 +10363,7 @@ class Game:
 
     def _draw_cook_menu(self):
         # FANTASY: Grimoire-themed cook menu
-        draw_overlay(self.screen, 160)
+        draw_overlay(self.screen, 190)
 
         n_compound = len(self.cook_compound_recipes)
         n_single   = len(self.cook_menu_items)
@@ -10233,9 +10416,9 @@ class Game:
             hdr = "COMPOUND RECIPES"
             hdr_surf = self.font_sm.render(hdr, True, FP.GOLD_BRIGHT)
             if hdr_surf.get_width() > max_header_w:
-                while len(hdr) > 1 and self.font_sm.size(hdr + '...')[0] > max_header_w:
+                while len(hdr) > 1 and self.font_sm.size(hdr + '\u2026')[0] > max_header_w:
                     hdr = hdr[:-1]
-                hdr_surf = self.font_sm.render(hdr + '...', True, FP.GOLD_BRIGHT)
+                hdr_surf = self.font_sm.render(hdr + '\u2026', True, FP.GOLD_BRIGHT)
             self.screen.blit(hdr_surf, (bx + 18, cy))
             cy += compound_header_h
             from food_system import _raw_ingredients as _ri
@@ -10333,7 +10516,7 @@ class Game:
     # ------------------------------------------------------------------
 
     def _draw_drop_menu(self):
-        draw_overlay(self.screen, 160)
+        draw_overlay(self.screen, 190)
         bw = min(600, GAME_W - 40)
         items = self.drop_menu_items
         row_h = 22
@@ -10363,7 +10546,7 @@ class Game:
 
     def _draw_eat_menu(self):
         # FANTASY: Grimoire-themed eat menu
-        draw_overlay(self.screen, 160)
+        draw_overlay(self.screen, 190)
 
         bw = min(760, GAME_W - 40)
         bh = min(90 + len(self.eat_menu_items) * 66 + 70, WINDOW_H - 40)
@@ -10438,7 +10621,7 @@ class Game:
         self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
 
     def _draw_quaff_menu(self):
-        draw_overlay(self.screen, 160)
+        draw_overlay(self.screen, 190)
         items = self.quaff_menu_items
         bw = min(760, GAME_W - 40)
         bh = min(90 + len(items) * 66 + 70, WINDOW_H - 40)
@@ -10493,7 +10676,7 @@ class Game:
         )
 
     def _draw_throw_menu(self):
-        draw_overlay(self.screen, 160)
+        draw_overlay(self.screen, 190)
         items = getattr(self, 'throw_menu_items', [])
         bw = min(760, GAME_W - 40)
         bh = min(90 + len(items) * 66 + 70, WINDOW_H - 40)
@@ -10839,7 +11022,7 @@ class Game:
         bh = min(90 + n * row_h + 44, WINDOW_H - 40)
         bx = (GAME_W - bw) // 2
         by = (WINDOW_H - bh) // 2
-        draw_overlay(self.screen, 160)
+        draw_overlay(self.screen, 190)
         draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=(160, 120, 255))
         draw_header_bar(self.screen, (bx, by, bw, 44), text="ACTIVE POWERS  [V]",
                         font=self.font_md, text_color=FP.GOLD_BRIGHT)
@@ -10886,12 +11069,12 @@ class Game:
         )
 
     def _draw_confirm_exit(self):
-        draw_overlay(self.screen, 170)
+        draw_overlay(self.screen, 190)
         bw, bh = min(560, GAME_W - 40), 230
         bx = (GAME_W - bw) // 2
         by = (WINDOW_H - bh) // 2
         draw_dark_panel(self.screen, (bx, by, bw, bh))
-        draw_header_bar(self.screen, (bx, by, bw, 40),
+        draw_header_bar(self.screen, (bx, by, bw, 44),
                         text="SAVE YOUR PROGRESS?",
                         font=self.font_lg, text_color=FP.GOLD_BRIGHT)
 
@@ -10918,7 +11101,7 @@ class Game:
             oy += key_surf.get_height() + 6
 
     def _draw_exit_quest(self):
-        draw_overlay(self.screen, 170)
+        draw_overlay(self.screen, 190)
         bw, bh = min(600, GAME_W - 40), 180
         bx = (GAME_W - bw) // 2
         by = (WINDOW_H - bh) // 2
@@ -10945,7 +11128,7 @@ class Game:
             oy += key_surf.get_height() + 8
 
     def _draw_abandon_quest(self):
-        draw_overlay(self.screen, 170)
+        draw_overlay(self.screen, 190)
         bw, bh = min(560, GAME_W - 40), 180
         bx = (GAME_W - bw) // 2
         by = (WINDOW_H - bh) // 2
@@ -11184,7 +11367,7 @@ class Game:
         d = self.popup_data
 
         # -- Background ------------------------------------------------
-        draw_overlay(self.screen, 200, (8, 6, 2))
+        draw_overlay(self.screen, 190, (8, 6, 2))
 
         accent = d['accent']
         raw_lines = d['lines']
@@ -11195,15 +11378,27 @@ class Game:
         pad_x   = 36   # horizontal padding inside box
         max_txt = bw - pad_x * 2
 
-        # Pre-wrap every line so we know the true rendered line count
-        wrapped_lines = []  # list of (rendered_text, is_blank, is_quoted)
+        # Join consecutive non-blank lines into paragraphs, then word-wrap
+        paragraphs = []  # list of (full_text, is_blank, is_quoted)
+        buf = ''
         for line in raw_lines:
             if line == '':
+                if buf:
+                    paragraphs.append((buf, False, buf.startswith('"')))
+                    buf = ''
+                paragraphs.append(('', True, False))
+            else:
+                buf = (buf + ' ' + line).strip() if buf else line
+        if buf:
+            paragraphs.append((buf, False, buf.startswith('"')))
+
+        wrapped_lines = []  # list of (rendered_text, is_blank, is_quoted)
+        for text, is_blank, is_quoted in paragraphs:
+            if is_blank:
                 wrapped_lines.append(('', True, False))
             else:
-                quoted = line.startswith('"')
-                for wl in self._wrap_text(line, self.font_md, max_txt):
-                    wrapped_lines.append((wl, False, quoted))
+                for wl in self._wrap_text(text, self.font_md, max_txt):
+                    wrapped_lines.append((wl, False, is_quoted))
 
         # -- Box sizing (based on real wrapped line count) -------------
         bh = 80 + len(wrapped_lines) * row + (row * 3 if code else 0) + 64
@@ -11259,7 +11454,7 @@ class Game:
 
     def _draw_victory_screen(self):
         # FANTASY: Illuminated manuscript victory screen
-        draw_overlay(self.screen, 210, (12, 10, 0))
+        draw_overlay(self.screen, 190, (12, 10, 0))
         score = self._calc_score()
         grade, grade_col = self._get_grade(score)
         cx    = GAME_W // 2
@@ -11574,7 +11769,7 @@ class Game:
         is_corpse = isinstance(subject, Corpse)
 
         overlay = pygame.Surface((WINDOW_W, WINDOW_H), pygame.SRCALPHA)
-        overlay.fill((0, 0, 0, 200))
+        overlay.fill((0, 0, 0, 190))
         self.screen.blit(overlay, (0, 0))
 
         bw, bh = min(1000, GAME_W - 40), min(640, WINDOW_H - 40)
@@ -11933,7 +12128,7 @@ class Game:
 
     def _draw_drop_gold_input(self):
         """Draw a numeric entry overlay to choose how much gold to drop."""
-        draw_overlay(self.screen, 160)
+        draw_overlay(self.screen, 190)
         bw, bh = 400, 160
         bx = (GAME_W - bw) // 2
         by = (GAME_H - bh) // 2
@@ -12057,7 +12252,7 @@ class Game:
         return item.item_class.replace('_', ' ').title()
 
     def _draw_examine_menu(self):
-        draw_overlay(self.screen, 160)
+        draw_overlay(self.screen, 190)
 
         n_items = len(self.examine_menu_items)
         ROW_H = 64
@@ -12182,7 +12377,7 @@ class Game:
             return
         cx = GAME_W // 2
         cy = WINDOW_H // 2
-        draw_overlay(self.screen, 200, (10, 8, 2))
+        draw_overlay(self.screen, 190, (10, 8, 2))
         draw_filigree_bar(self.screen, cx - 280, cy - 180, 560, FP.GOLD)
         centered_text(self.screen, self.font_lg, "TRAVELLING MERCHANT", FP.GOLD_BRIGHT, cy - 165, shadow=True)
         draw_filigree_bar(self.screen, cx - 280, cy - 145, 560, FP.GOLD_DARK)
@@ -12329,7 +12524,7 @@ class Game:
 
     def _draw_encyclopedia(self):
         """Draw the encyclopedia overlay -- category, list, or detail view."""
-        draw_overlay(self.screen, 160)
+        draw_overlay(self.screen, 190)
 
         bw = min(900, GAME_W - 40)
         by_base = 60
@@ -12568,7 +12763,7 @@ class Game:
             return
 
         overlay = pygame.Surface((WINDOW_W, WINDOW_H), pygame.SRCALPHA)
-        overlay.fill((0, 0, 0, 180))
+        overlay.fill((0, 0, 0, 190))
         self.screen.blit(overlay, (0, 0))
 
         bw, bh = 760, 280
@@ -12630,7 +12825,7 @@ class Game:
 
     def _draw_help_screen(self):
         overlay = pygame.Surface((WINDOW_W, WINDOW_H), pygame.SRCALPHA)
-        overlay.fill((0, 0, 0, 195))
+        overlay.fill((0, 0, 0, 190))
         self.screen.blit(overlay, (0, 0))
 
         _COMMANDS = [
@@ -12658,10 +12853,11 @@ class Game:
             (">  or  <",       "Use stairs",                       FP.BODY_TEXT),
             ("Y",              "Visit merchant shop",              FP.BODY_TEXT),
             ("INFORMATION", None, FP.GOLD_PALE),
+            ("O",              "Observe (look at things)",          FP.BODY_TEXT),
             ("X",              "Examine inventory items",          FP.BODY_TEXT),
             ("@",              "Character sheet",                  FP.BODY_TEXT),
             ("B",              "Encyclopedia",                     FP.BODY_TEXT),
-            ("O",              "Quirks progress",                  FP.BODY_TEXT),
+            ("W",              "Quirks progress",                  FP.BODY_TEXT),
             ("V",              "Activate quirk power",             FP.BODY_TEXT),
             ("KNOWLEDGE", None, FP.GOLD_PALE),
             ("\\",             "Pray at altar",                    (200, 180, 255)),
@@ -12707,9 +12903,9 @@ class Game:
                 dsurf = self.font_sm.render(desc, True, color)
                 if dsurf.get_width() > desc_max_w:
                     trunc = desc
-                    while len(trunc) > 1 and self.font_sm.size(trunc + '...')[0] > desc_max_w:
+                    while len(trunc) > 1 and self.font_sm.size(trunc + '\u2026')[0] > desc_max_w:
                         trunc = trunc[:-1]
-                    dsurf = self.font_sm.render(trunc + '...', True, color)
+                    dsurf = self.font_sm.render(trunc + '\u2026', True, color)
                 self.screen.blit(ksurf, (cx_, cy_))
                 self.screen.blit(dsurf, (cx_ + 160, cy_))
 
@@ -12736,6 +12932,10 @@ def main():
     welcome = WelcomeScreen(screen)
     player_name, secret_build = welcome.run(clock)
 
+    # Sync layout to actual window size (may have been resized during welcome)
+    _cur_w, _cur_h = screen.get_size()
+    _update_layout(_cur_w, _cur_h)
+
     # If a save exists for this name, load it; otherwise start fresh
     state = load_game(player_name) if save_exists(player_name) else None
     if state:
@@ -12755,9 +12955,19 @@ def main():
     while running:
         dt = clock.tick(FPS) / 1000.0
         for event in pygame.event.get():
-            if not game.handle_event(event):
-                running = False
-        game.update(dt)
+            try:
+                if not game.handle_event(event):
+                    running = False
+            except Exception as _evt_err:
+                game.add_message(f"Error: {_evt_err}", 'danger')
+                game.state = STATE_PLAYER  # recover to playable state
+                import traceback; traceback.print_exc()
+        try:
+            game.update(dt)
+        except Exception as _upd_err:
+            game.add_message(f"Error: {_upd_err}", 'danger')
+            game.state = STATE_PLAYER
+            import traceback; traceback.print_exc()
         game.render()
 
     # Save on clean exit if the game is still in progress and player chose to save

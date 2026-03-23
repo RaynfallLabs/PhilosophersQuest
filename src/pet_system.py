@@ -179,15 +179,15 @@ class Pet:
 
     # --- HP Regen ------------------------------------------------------------
 
-    def tick_regen(self):
-        """Regen 1 HP every 3 turns."""
+    def tick_regen(self, bonus: int = 0):
+        """Regen 1+bonus HP every 3 turns."""
         if not self.alive:
             return
         self._regen_timer += 1
         if self._regen_timer >= 3:
             self._regen_timer = 0
             if self.hp < self.max_hp:
-                self.hp = min(self.max_hp, self.hp + 1)
+                self.hp = min(self.max_hp, self.hp + 1 + bonus)
 
     # --- Take damage ---------------------------------------------------------
 
@@ -313,12 +313,12 @@ class FenrirPet(Pet):
     def gain_xp(self, amount: int = 1) -> list[str]:
         return []   # Fenrir doesn't level
 
-    def tick_regen(self):
-        """Regen 3 HP every turn (very fast)."""
+    def tick_regen(self, bonus: int = 0):
+        """Regen 3+bonus HP every turn (very fast)."""
         if not self.alive:
             return
         if self.hp < self.max_hp:
-            self.hp = min(self.max_hp, self.hp + 3)
+            self.hp = min(self.max_hp, self.hp + 3 + bonus)
 
     def take_turn(self, player, dungeon, monsters, pets, ground_items=None) -> tuple[str, object] | None:
         """Fenrir moves at double speed — gets two attempts to move/attack per turn."""

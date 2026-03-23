@@ -30,6 +30,24 @@ class MessageLog:
         if len(self.entries) > self.MAX:
             self.entries.pop(0)
 
+    @staticmethod
+    def _wrap(text: str, font: pygame.font.Font, max_w: int) -> list[str]:
+        """Word-wrap text to fit within max_w pixels."""
+        words = text.split()
+        lines = []
+        cur = ''
+        for word in words:
+            test = (cur + ' ' + word).strip()
+            if font.size(test)[0] <= max_w:
+                cur = test
+            else:
+                if cur:
+                    lines.append(cur)
+                cur = word
+        if cur:
+            lines.append(cur)
+        return lines or ['']
+
     def draw(self, screen: pygame.Surface, x: int, y: int, w: int, h: int):
         # FANTASY: Midnight background + gold-dark top border
         pygame.draw.rect(screen, FP.MIDNIGHT, (x, y, w, h))
@@ -37,7 +55,16 @@ class MessageLog:
 
         line_h = 26
         max_lines = (h - 8) // line_h
-        visible = self.entries[-max_lines:]
+        text_w = w - 16  # 8px padding each side
+
+        # Pre-wrap all entries into display lines (text, msg_type)
+        all_lines: list[tuple[str, str]] = []
+        for text, msg_type in self.entries:
+            wrapped = self._wrap(text, self._font, text_w)
+            for wl in wrapped:
+                all_lines.append((wl, msg_type))
+
+        visible = all_lines[-max_lines:]
 
         for i, (text, msg_type) in enumerate(visible):
             age = len(visible) - 1 - i

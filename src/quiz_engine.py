@@ -33,7 +33,8 @@ _QUESTIONS_DIR = data_path('data', 'questions')
 
 
 class QuizEngine:
-    RESULT_DISPLAY_TIME = 0.8   # seconds to show correct/wrong feedback
+    RESULT_DISPLAY_TIME = 0.8       # seconds to show correct answer feedback
+    WRONG_DISPLAY_TIME  = 3.0       # seconds to show wrong answer (player reads correct)
 
     def __init__(self):
         self._cache: dict[str, list] = {}
@@ -172,7 +173,7 @@ class QuizEngine:
             self.chain = 0
 
         self.state = QuizState.RESULT
-        self.result_timer = self.RESULT_DISPLAY_TIME
+        self.result_timer = self.RESULT_DISPLAY_TIME if is_correct else self.WRONG_DISPLAY_TIME
         if self.on_answer:
             self.on_answer(is_correct)
         return is_correct
@@ -197,7 +198,7 @@ class QuizEngine:
                     self.last_correct = False
                     self.chain = 0
                     self.state = QuizState.RESULT
-                    self.result_timer = self.RESULT_DISPLAY_TIME
+                    self.result_timer = self.WRONG_DISPLAY_TIME
                     if self.on_answer:
                         self.on_answer(False)
 
