@@ -20128,5 +20128,83 @@
     "harvest_threshold": 99,
     "ingredient_id": null,
     "lore": "An angel of the Heavenly Host, summoned by the Scales of Michael. It descends in a pillar of light with single-minded purpose — to meet the locusts of the Abyss in mutual annihilation. Where angel meets locust, both are consumed in holy fire."
+  },
+  "hell_bovine": {
+    "name": "Hell Bovine",
+    "symbol": "h",
+    "color": [180, 140, 80],
+    "min_level": 30,
+    "max_level": 39,
+    "hp": 85,
+    "thac0": 6,
+    "speed": 10,
+    "attacks": [
+      {
+        "name": "halberd swing",
+        "damage": "3d6+4",
+        "type": "slash"
+      },
+      {
+        "name": "gore",
+        "damage": "2d6+3",
+        "type": "pierce"
+      }
+    ],
+    "ai_pattern": "aggressive",
+    "resistances": ["blunt"],
+    "weaknesses": ["fire"],
+    "harvest_tier": 2,
+    "harvest_threshold": 2,
+    "ingredient_id": "prime_beef",
+    "frequency": 0,
+    "pack": true,
+    "treasure": {
+      "gold": [15, 45],
+      "item_chance": 0.15,
+      "item_tier": 2
+    },
+    "lore": "An upright bovine warrior from the hellish pastures beyond the veil. It wields a crude halberd with surprising skill and charges with lowered horns. Moo."
+  },
+  "cow_king": {
+    "name": "Cow King",
+    "symbol": "H",
+    "color": [255, 215, 0],
+    "min_level": 30,
+    "max_level": 39,
+    "hp": 450,
+    "thac0": 2,
+    "speed": 10,
+    "attacks": [
+      {
+        "name": "royal halberd",
+        "damage": "4d6+8",
+        "type": "slash"
+      },
+      {
+        "name": "thunderous charge",
+        "damage": "3d8+5",
+        "type": "physical",
+        "effect": "stunned",
+        "effect_chance": 0.30,
+        "effect_duration": 3
+      }
+    ],
+    "ai_pattern": "aggressive",
+    "resistances": ["blunt", "cold"],
+    "weaknesses": ["fire"],
+    "harvest_tier": 4,
+    "harvest_threshold": 4,
+    "ingredient_id": "royal_beef",
+    "frequency": 0,
+    "is_mini_boss": true,
+    "spawn_chance": 0,
+    "treasure": {
+      "gold": [200, 500],
+      "item_chance": 1.0,
+      "item_tier": 3,
+      "unique_drop_id": "cow_kings_horns",
+      "boss_scroll_id": "scroll_of_the_pasture"
+    },
+    "lore": "The undisputed sovereign of the Moo Moo Farm. Crowned with golden horns and draped in a tattered royal cape, the Cow King rules his herd of Hell Bovines with an iron hoof. His thunderous charge has ended many an adventurer's farming run. Moo."
   }
 }

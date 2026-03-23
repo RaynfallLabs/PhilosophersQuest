@@ -25,9 +25,9 @@ class LevelManager:
 
     def generate(self, level_num: int):
         """Create a fresh level, spawn monsters/items, save, and return it."""
-        from boss_levels import BOSS_LEVELS, generate_boss_level
+        from boss_levels import BOSS_LEVELS, COW_LEVEL, generate_boss_level
 
-        if level_num in BOSS_LEVELS:
+        if level_num in BOSS_LEVELS or level_num == COW_LEVEL:
             dungeon, monsters, items = generate_boss_level(level_num)
             # Place Philosopher's Stone on level 100
             if level_num == STONE_LEVEL:

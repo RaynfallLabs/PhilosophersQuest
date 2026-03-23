@@ -15354,5 +15354,109 @@
         "bonus_amount": 2
       }
     }
+  },
+  "prime_beef": {
+    "name": "prime beef",
+    "symbol": ",",
+    "color": [200, 100, 80],
+    "weight": 3.0,
+    "item_class": "ingredient",
+    "min_level": 30,
+    "source_monster": "hell_bovine",
+    "lore": "A thick cut of marbled beef from a Hell Bovine. Despite its infernal origins, it smells absolutely delicious. Moo.",
+    "recipes": {
+      "0": {
+        "name": "seared hell steak",
+        "sp": 80,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "peppered hell steak",
+        "sp": 120,
+        "bonus_type": "stat",
+        "bonus_stat": "STR",
+        "bonus_amount": 1
+      },
+      "2": {
+        "name": "hell beef wellington",
+        "sp": 180,
+        "bonus_type": "stat",
+        "bonus_stat": "CON",
+        "bonus_amount": 1
+      },
+      "3": {
+        "name": "infernal beef bourguignon",
+        "sp": 250,
+        "bonus_type": "two_stats",
+        "bonus_stat": "STR",
+        "bonus_stat2": "CON",
+        "bonus_amount": 1
+      },
+      "4": {
+        "name": "prime beef feast",
+        "sp": 340,
+        "bonus_type": "combat_stat",
+        "bonus_amount": 2
+      },
+      "5": {
+        "name": "legendary wagyu hellfire roast",
+        "sp": 450,
+        "bonus_type": "all_stats",
+        "bonus_amount": 2
+      }
+    }
+  },
+  "royal_beef": {
+    "name": "royal beef",
+    "symbol": ",",
+    "color": [255, 200, 80],
+    "weight": 4.0,
+    "item_class": "ingredient",
+    "min_level": 30,
+    "source_monster": "cow_king",
+    "lore": "An exquisite cut of beef from the Cow King himself. The meat shimmers with a faint golden hue. Fit for royalty. Moo.",
+    "recipes": {
+      "0": {
+        "name": "royal steak tartare",
+        "sp": 120,
+        "bonus_type": "stat",
+        "bonus_stat": "STR",
+        "bonus_amount": 1
+      },
+      "1": {
+        "name": "king's roast beef",
+        "sp": 180,
+        "bonus_type": "stat",
+        "bonus_stat": "CON",
+        "bonus_amount": 1
+      },
+      "2": {
+        "name": "crown roast of bovine royalty",
+        "sp": 260,
+        "bonus_type": "two_stats",
+        "bonus_stat": "STR",
+        "bonus_stat2": "CON",
+        "bonus_amount": 1
+      },
+      "3": {
+        "name": "regal beef tenderloin",
+        "sp": 350,
+        "bonus_type": "combat_stat",
+        "bonus_amount": 2
+      },
+      "4": {
+        "name": "sovereign's feast",
+        "sp": 450,
+        "bonus_type": "all_stats",
+        "bonus_amount": 2
+      },
+      "5": {
+        "name": "divine bovine banquet",
+        "sp": 550,
+        "bonus_type": "all_stats",
+        "bonus_amount": 3
+      }
+    }
   }
 }

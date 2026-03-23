@@ -921,6 +921,7 @@ STATE_THROW_MENU       = 'throw_menu'        # Select potion to throw
 STATE_QUIRKS           = 'quirks'            # Quirks progress browser
 STATE_CHARACTER_SHEET  = 'character_sheet'   # Detailed character info
 STATE_NPC_ENCOUNTER    = 'npc_encounter'     # Moral choice encounter with NPC
+STATE_COW_ENCOUNTER    = 'cow_encounter'     # Secret cow dialog
 STATE_JUDGMENT         = 'judgment'          # Altar of Last Judgment result
 
 # ---------------------------------------------------------------------------
@@ -1054,6 +1055,13 @@ class Game:
             'tablet':      _lore_rng.randint(80, 99),
         }
         self._lore_placed: set = set()   # which have been placed this run
+        # Secret cow level state
+        self._cow_poke_count: int = 0        # poke counter for the cow NPC
+        self._cow_level_done: bool = False   # True once cow level completed
+        self._cow_spawned: bool = False       # True once cow placed this run
+        self._cow_return_level: int = 0       # level to return to from cow level
+        self._cow_npc = None                  # reference to the cow monster entity
+        self._cow_level: int = _lore_rng.randint(30, 39)  # which floor gets the cow
         self._notified_rooms: set = set()  # (cx, cy) of special rooms already notified
         # Drop-item state
         self.drop_menu_items: list = []
@@ -1225,6 +1233,11 @@ class Game:
         if state.get('quirk_system') is not None:
             self.quirk_system = state['quirk_system']
             self.quirk_system.game = self  # re-bind game reference
+        # Secret cow level
+        self._cow_poke_count = state.get('_cow_poke_count', 0)
+        self._cow_level_done = state.get('_cow_level_done', False)
+        self._cow_spawned = state.get('_cow_spawned', False)
+        self._cow_level = state.get('_cow_level', 35)
         self.renderer.set_dungeon(self.dungeon.width, self.dungeon.height, GAME_W, GAME_H)
         self._refresh_fov()
         self.add_message("Welcome back, seeker. Your journey continues...", 'success')
@@ -1296,6 +1309,7 @@ class Game:
         if not saved:
             self._maybe_spawn_trigger_item(new_level)
             self._maybe_spawn_npc(new_level)
+            self._maybe_spawn_cow(new_level)
 
         # Abaddon empowered by negative karma: boost HP on first entry to L100
         if new_level == 100 and not saved and getattr(self, '_abaddon_empowered', False):
@@ -1658,6 +1672,7 @@ class Game:
                               STATE_HELP, STATE_LORE,
                               STATE_SPELL_MENU, STATE_HINT, STATE_HACK_REALITY,
                               STATE_XYZZY_INPUT, STATE_XYZZY_CONFIRM, STATE_QUIRKS,
+                              STATE_COW_ENCOUNTER,
                               STATE_CHARACTER_SHEET,
                               STATE_EXAMINE, STATE_ENCYCLOPEDIA,
                               STATE_DROP_MENU, STATE_DROP_GOLD_INPUT,
@@ -1738,6 +1753,8 @@ class Game:
             self._xyzzy_confirm_input(key)
         elif self.state == STATE_QUIRKS:
             self._quirks_input(key)
+        elif self.state == STATE_COW_ENCOUNTER:
+            self._cow_encounter_input(key)
         elif self.state == STATE_CHARACTER_SHEET:
             self._character_sheet_input(key)
         elif self.state == STATE_DROP_MENU:
@@ -1986,6 +2003,10 @@ class Game:
         tile_at_dest = self.dungeon.tiles[ny][nx]
 
         if target:
+            # Secret cow dialog
+            if getattr(target, '_npc_encounter_tag', None) == '_cow_dialog':
+                self._start_cow_encounter(target)
+                return
             # NPC encounter: open moral choice instead of combat
             if getattr(target, '_npc_encounter_tag', None):
                 self._start_npc_encounter(target)
@@ -2193,9 +2214,14 @@ class Game:
     # ------------------------------------------------------------------
 
     def _descend_stairs(self):
+        from boss_levels import COW_LEVEL
         px, py = self.player.x, self.player.y
         if self.dungeon.tiles[py][px] != STAIRS_DOWN:
             self.add_message("There are no stairs leading down here.", 'info')
+            return
+        # Cow level portal: return to the dungeon
+        if self.dungeon_level == COW_LEVEL:
+            self._exit_cow_level()
             return
         # Seven Seals gate: all 7 must be broken before descending to L100
         if self.dungeon_level == 99 and len(self.seals_broken) < 7:
@@ -6669,6 +6695,202 @@ class Game:
                     break
         self._npc_trigger_items_placed = placed
 
+    # ------------------------------------------------------------------
+    # Secret Cow Level — Moo Moo Farm
+    # ------------------------------------------------------------------
+
+    def _maybe_spawn_cow(self, level: int):
+        """Spawn the secret cow NPC on its designated level (once per run)."""
+        if self._cow_spawned or self._cow_level_done:
+            return
+        if level != self._cow_level:
+            return
+        from monster import Monster
+        cow_def = {
+            'id': 'secret_cow',
+            'name': 'a cow',
+            'symbol': 'C',
+            'color': [180, 140, 80],
+            'hp': 1,
+            'thac0': 20,
+            'speed': 0,
+            'attacks': [],
+            'ai_pattern': 'sessile',
+            'resistances': [],
+            'weaknesses': [],
+            'min_level': level,
+            'is_allied': True,
+            'harvest_tier': 0,
+            'harvest_threshold': 99,
+            'ingredient_id': None,
+        }
+        import random as _rng
+        rooms = self.dungeon.rooms[1:] if len(self.dungeon.rooms) > 1 else self.dungeon.rooms
+        occupied = {(m.x, m.y) for m in self.monsters}
+        occupied.add((self.player.x, self.player.y))
+        for room in _rng.sample(rooms, min(len(rooms), 5)):
+            for tx, ty in room.inner_tiles():
+                if self.dungeon.is_walkable(tx, ty) and (tx, ty) not in occupied:
+                    cow = Monster(cow_def, tx, ty)
+                    cow._npc_encounter_tag = '_cow_dialog'
+                    self.monsters.append(cow)
+                    self._cow_npc = cow
+                    self._cow_spawned = True
+                    return
+
+    _COW_MOO_MESSAGES = [
+        "Moo.",
+        "The cow stares at you blankly. Moo.",
+        "The cow chews its cud thoughtfully. Moo.",
+        "Moo. Moo moo.",
+        "The cow blinks. Moo.",
+        "The cow seems unimpressed. Moo.",
+        "The cow flicks its tail. Moo.",
+        "Mooooooo.",
+        "The cow shifts its weight. Moo.",
+        "The cow looks at you expectantly. Moo?",
+    ]
+
+    _COW_POKE_MESSAGES = [
+        "You poke the cow. Nothing happens. Moo.",
+        "You poke the cow again. It moos indignantly.",
+        "You poke the cow. It takes a step back. Moo.",
+        "You poke the cow. It snorts. Moo.",
+        "You poke the cow. It moos louder this time.",
+        "You poke the cow firmly. It stamps a hoof. Moo!",
+        "You poke the cow. It glares at you. MOO.",
+        "You poke the cow. The ground trembles slightly.",
+        "You poke the cow. The air crackles with bovine energy.",
+    ]
+
+    def _start_cow_encounter(self, cow_monster):
+        """Open the cow dialog when player bumps the cow NPC."""
+        self._active_cow = cow_monster
+        self._cow_dialog_phase = 'options'
+        self.state = STATE_COW_ENCOUNTER
+
+    def _cow_encounter_input(self, key: int):
+        """Handle input for cow dialog."""
+        if self._cow_dialog_phase == 'result':
+            if key in (pygame.K_RETURN, pygame.K_SPACE, pygame.K_ESCAPE):
+                self.state = STATE_PLAYER
+            return
+
+        if key == pygame.K_1:
+            # Feed the cow (costs an ingredient)
+            from items import Ingredient
+            ingredient = next(
+                (i for i in self.player.inventory if isinstance(i, Ingredient)), None
+            )
+            if ingredient:
+                self.player.remove_from_inventory(ingredient)
+                self.add_message(
+                    f"You feed the cow your {self._display_name(ingredient)}. "
+                    "The cow chews contentedly. Moo.", 'success'
+                )
+            else:
+                self.add_message("You have nothing to feed the cow. Moo.", 'info')
+            self._cow_dialog_phase = 'result'
+        elif key == pygame.K_2:
+            # Walk away
+            import random as _rng
+            self.add_message(
+                _rng.choice(self._COW_MOO_MESSAGES), 'info'
+            )
+            self.state = STATE_PLAYER
+        elif key == pygame.K_3:
+            # Poke the cow
+            self._cow_poke_count += 1
+            if self._cow_poke_count >= 10:
+                self._enter_cow_level()
+            else:
+                import random as _rng
+                msg = self._COW_POKE_MESSAGES[
+                    min(self._cow_poke_count - 1, len(self._COW_POKE_MESSAGES) - 1)
+                ]
+                self.add_message(msg, 'info')
+                self._cow_dialog_phase = 'result'
+        elif key == pygame.K_ESCAPE:
+            self.state = STATE_PLAYER
+
+    def _enter_cow_level(self):
+        """Teleport the player to the Moo Moo Farm."""
+        from boss_levels import COW_LEVEL
+        self.add_message(
+            "The cow's eyes glow red. The ground splits open beneath you!", 'danger'
+        )
+        self.add_message("MOO MOO MOO MOO MOO!", 'danger')
+        self._cow_return_level = self.dungeon_level
+        # Remove the cow from the current level
+        if self._cow_npc and self._cow_npc in self.monsters:
+            self.monsters.remove(self._cow_npc)
+        self._cow_npc = None
+        self.state = STATE_PLAYER
+        try:
+            self._change_level(COW_LEVEL, enter_from_top=True)
+        except Exception as e:
+            self.add_message(f"Error entering cow level: {e}", 'danger')
+            import traceback; traceback.print_exc()
+
+    def _exit_cow_level(self):
+        """Return from Moo Moo Farm to the level where the cow was."""
+        self._cow_level_done = True
+        self.add_message("You step through the portal. The pasture fades behind you.", 'info')
+        self.add_message("The cow is gone. The portal closes. Moo.", 'info')
+        try:
+            self._change_level(self._cow_return_level, enter_from_top=False)
+        except Exception as e:
+            self.add_message(f"Error exiting cow level: {e}", 'danger')
+            import traceback; traceback.print_exc()
+
+    def _draw_cow_encounter(self):
+        """Draw the cow dialog overlay."""
+        draw_overlay(self.screen, 190)
+
+        bw, bh = 600, 320
+        bx = (GAME_W - bw) // 2
+        by = (WINDOW_H - bh) // 2
+
+        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=(180, 140, 80))
+        draw_header_bar(self.screen, (bx, by, bw, 44),
+                        text="A COW",
+                        font=self.font_lg, text_color=(255, 215, 80))
+        draw_divider(self.screen, bx + 20, by + 50, bw - 40)
+
+        font = get_font('body', 18)
+        y = by + 62
+
+        desc_lines = self._wrap_text(
+            "A cow stands here, alone in the dungeon. It stares at you with "
+            "large brown eyes, chewing slowly. This is deeply unusual. Moo.",
+            font, bw - 50
+        )
+        for line in desc_lines:
+            self.screen.blit(font.render(line, True, FP.BODY_TEXT), (bx + 25, y))
+            y += 24
+
+        y += 12
+
+        if self._cow_dialog_phase == 'options':
+            options = [
+                ("[1] Feed the cow (costs an ingredient)", FP.SUCCESS_TEXT),
+                ("[2] Walk away. That was weird.", FP.HINT_TEXT),
+                ("[3] Poke the cow.", FP.WARNING_TEXT),
+            ]
+            for text, color in options:
+                self.screen.blit(font.render(text, True, color), (bx + 30, y))
+                y += 28
+
+            if self._cow_poke_count > 0:
+                poke_hint = font.render(
+                    f"(You have poked this cow {self._cow_poke_count} time{'s' if self._cow_poke_count != 1 else ''})",
+                    True, FP.FADED_TEXT
+                )
+                self.screen.blit(poke_hint, (bx + 30, y + 8))
+        else:
+            hint = font.render("Press ENTER to continue", True, FP.HINT_TEXT)
+            self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, by + bh - 40))
+
     def _maybe_spawn_npc(self, level: int):
         """Spawn an NPC on this level if one is assigned and hasn't been encountered."""
         enc = self._npc_encounter_levels.get(level)
@@ -8115,8 +8337,11 @@ class Game:
         qe.state = QuizState.ASKING
         qe.mode = QuizMode.THRESHOLD
         qe.subject = 'grammar'
-        qe.time_remaining = 999.0   # no time pressure for The Words
-        qe.timer_seconds = 999
+        # Timer set once on first question, runs continuously (like all quizzes)
+        if self._necro_idx == 0:
+            _necro_timer = 10 + self.player.WIS
+            qe.time_remaining = float(_necro_timer)
+            qe.timer_seconds = _necro_timer
         qe.last_answer = ''
         qe.last_correct = False
         qe.correct_count = self._necro_correct
@@ -9295,6 +9520,8 @@ class Game:
             self._draw_shop()
         elif self.state == STATE_NPC_ENCOUNTER:
             self._draw_npc_encounter()
+        elif self.state == STATE_COW_ENCOUNTER:
+            self._draw_cow_encounter()
         elif self.state == STATE_JUDGMENT:
             self._draw_judgment()
 

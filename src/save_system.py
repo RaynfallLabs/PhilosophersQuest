@@ -58,6 +58,11 @@ def save_game(game) -> bool:
             '_lore_placed': getattr(game, '_lore_placed', set()),
             # Quirk system (full object with progress, unlocks, cooldowns)
             'quirk_system': getattr(game, 'quirk_system', None),
+            # Secret cow level
+            '_cow_poke_count': getattr(game, '_cow_poke_count', 0),
+            '_cow_level_done': getattr(game, '_cow_level_done', False),
+            '_cow_spawned': getattr(game, '_cow_spawned', False),
+            '_cow_level': getattr(game, '_cow_level', 35),
         }
         with open(_save_path(game.player_name), 'wb') as f:
             pickle.dump(state, f, protocol=pickle.HIGHEST_PROTOCOL)

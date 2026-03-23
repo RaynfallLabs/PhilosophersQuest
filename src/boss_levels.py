@@ -14,6 +14,7 @@ import os
 from dungeon import Dungeon, Room, WALL, FLOOR, STAIRS_UP, STAIRS_DOWN, DOOR, ALTAR, ICE
 
 BOSS_LEVELS = {20, 40, 60, 80, 100}
+COW_LEVEL = 999   # Moo Moo Farm (secret)
 
 _W, _H = 80, 50
 
@@ -521,4 +522,100 @@ def generate_boss_level(level_num):
         return _level_80_hall()
     if level_num == 100:
         return _level_100_abyss()
+    if level_num == COW_LEVEL:
+        return _level_999_moo_moo_farm()
     raise ValueError(f"No boss level defined for level {level_num}")
+
+
+# ---------------------------------------------------------------------------
+# Level 999 -- Moo Moo Farm (Secret Cow Level)
+# ---------------------------------------------------------------------------
+
+def _level_999_moo_moo_farm():
+    """
+    The Moo Moo Farm. A vast open pasture filled with Hell Bovines.
+    Fenced perimeter, open interior, Cow King in a pen at the far end.
+    Portal back home in the entry area.
+    """
+    import random as rng
+    from monster import Monster
+
+    tiles = _blank()
+    rooms = []
+
+    # --- Main pasture: large open field (most of the map) ---
+    pasture = _carve_room(tiles, 40, 25, 35, 20)
+    rooms.append(pasture)
+
+    # Entry area (bottom-left) — portal back
+    tiles[pasture.y + pasture.height - 2][pasture.x + 3] = STAIRS_DOWN
+
+    # Cow King's pen (top-right corner, walled off with a door)
+    pen = _carve_room(tiles, 68, 8, 6, 4)
+    rooms.append(pen)
+    _connect(tiles, pasture, pen)
+    # Door into the pen
+    _pen_door_x = pen.x + pen.width // 2
+    _pen_door_y = pen.y + pen.height - 1
+    if tiles[_pen_door_y][_pen_door_x] == FLOOR:
+        tiles[_pen_door_y][_pen_door_x] = DOOR
+
+    # Scatter some fence posts (wall pillars) across the pasture for cover
+    _fence_positions = [
+        (15, 12), (25, 12), (35, 12), (55, 12), (65, 12),
+        (15, 25), (25, 25), (45, 25), (55, 25), (65, 25),
+        (15, 38), (30, 38), (45, 38), (60, 38),
+        (20, 18), (40, 18), (60, 18),
+        (20, 32), (40, 32), (60, 32),
+    ]
+    for fx, fy in _fence_positions:
+        if (pasture.x < fx < pasture.x + pasture.width - 1
+                and pasture.y < fy < pasture.y + pasture.height - 1):
+            tiles[fy][fx] = WALL
+
+    dungeon = _make(tiles, rooms, COW_LEVEL)
+
+    # --- Spawn Hell Bovines ---
+    monsters = []
+    bovine_defn = _load_boss('hell_bovine')
+    if bovine_defn:
+        # Place 40-50 bovines in the pasture
+        bovine_count = rng.randint(40, 50)
+        placed = 0
+        inner = list(pasture.inner_tiles())
+        rng.shuffle(inner)
+        for bx, by in inner:
+            if placed >= bovine_count:
+                break
+            if tiles[by][bx] != FLOOR:
+                continue
+            # Don't place on the exit portal
+            if tiles[by][bx] == STAIRS_DOWN:
+                continue
+            if any(m.x == bx and m.y == by for m in monsters):
+                continue
+            m = Monster({**bovine_defn}, bx, by)
+            monsters.append(m)
+            placed += 1
+
+    # --- Spawn Cow King in his pen ---
+    king_defn = _load_boss('cow_king')
+    if king_defn:
+        kcx, kcy = pen.center
+        king = Monster({**king_defn}, kcx, kcy)
+        king.is_boss = True
+        monsters.append(king)
+
+    # Atmosphere
+    dungeon.atmosphere_messages = [
+        "The air smells of hay and brimstone.",
+        "You hear an ominous chorus of mooing.",
+        "Welcome to the Moo Moo Farm.",
+    ]
+
+    return dungeon, monsters, []
+
+
+def _make(tiles, rooms, level):
+    """Create a Dungeon object from tiles and rooms."""
+    return Dungeon(tiles, rooms, _W, _H, level)

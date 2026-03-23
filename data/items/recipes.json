@@ -3938,5 +3938,13 @@
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "Silence crystal dissolved in void essence — the last meal before the end."
+  },
+  "royal_prime_surf_and_turf": {
+    "name": "Royal Surf & Turf",
+    "ingredients": ["prime_beef", "royal_beef"],
+    "sp": 400,
+    "bonus_type": "all_stats",
+    "bonus_amount": 3,
+    "description": "A legendary dish combining prime Hell Bovine beef with the Cow King's royal cut. The flavors are transcendent. Moo."
   }
 }

@@ -37,6 +37,11 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
     def _callback(result):
         chain = result.score
 
+        # Cow King's Horns (or any armor with chain_bonus): free chain head start
+        for slot in getattr(player, 'armor_slots', []):
+            if slot and getattr(slot, 'chain_bonus', 0):
+                chain += slot.chain_bonus
+
         # Cursed weapon backlash on miss (Tyrfing)
         if chain == 0:
             if weapon and getattr(weapon, 'cursed_miss_backlash', 0) > 0:

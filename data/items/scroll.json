@@ -1091,5 +1091,22 @@
       "41-60": 1,
       "61-100": 1
     }
+  },
+  "scroll_of_the_pasture": {
+    "name": "Scroll of the Pasture",
+    "symbol": "?",
+    "color": [180, 140, 80],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 1,
+    "quiz_tier": 1,
+    "quiz_threshold": 1,
+    "effect": "boss_reward",
+    "power": "MOO-MOO-FARM-I",
+    "unidentified_name": "Scroll of the Pasture",
+    "identified": true,
+    "lore": "Sealed with a brand shaped like a cow bell. A reward scroll from Dad — show him this code! Moo.",
+    "read_threshold": 2,
+    "floorSpawnWeight": {}
   }
 }

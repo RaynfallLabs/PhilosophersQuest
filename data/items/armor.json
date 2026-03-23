@@ -3789,5 +3789,26 @@
     "pet_regen_bonus": 2,
     "lore": "A well-worn red and white cap, its brim shaped by countless adventures. It radiates a warm, encouraging energy that invigorates companion creatures, helping them recover from wounds more quickly. The inside of the brim reads: 'I choose you.'",
     "floorSpawnWeight": {}
+  },
+  "cow_kings_horns": {
+    "name": "Cow King's Horns",
+    "symbol": "[",
+    "color": [255, 215, 0],
+    "weight": 1.5,
+    "min_level": 9999,
+    "slot": "head",
+    "tier": 3,
+    "material": "bone",
+    "ac_bonus": 1,
+    "equip_threshold": 2,
+    "quiz_tier": 2,
+    "damage_resistances": {"blunt": 0.15},
+    "can_be_cursed": false,
+    "enchant_bonus": 0,
+    "identified": true,
+    "unidentified_name": "a crown of golden horns",
+    "chain_bonus": 1,
+    "lore": "The gilded horns of the Cow King, ripped from his crowned skull by a victorious adventurer. When worn, the horns channel bovine fury into every strike, granting a free chain hit before the quiz even begins — making it impossible to miss entirely. The left horn is inscribed with a single word: 'Moo.'",
+    "floorSpawnWeight": {}
   }
 }
