@@ -3425,7 +3425,7 @@
       80
     ],
     "weight": 12.0,
-    "min_level": 45,
+    "min_level": 9999,
     "slot": "body",
     "tier": 4,
     "material": "hide",
@@ -3440,12 +3440,7 @@
     "enchant_bonus": 0,
     "unidentified_name": "thick golden hide",
     "lore": "The hide of the Nemean Lion, impossible to cut or pierce. Hercules used its own claws to skin it. Wearing it is like wearing the beast itself.",
-    "floorSpawnWeight": {
-      "1-44": 0,
-      "45-60": 3,
-      "61-80": 2,
-      "81-100": 1
-    }
+    "floorSpawnWeight": {}
   },
   "green_knights_plate": {
     "name": "Green Knight's Plate",
@@ -3456,7 +3451,7 @@
       80
     ],
     "weight": 20.0,
-    "min_level": 63,
+    "min_level": 9999,
     "slot": "body",
     "tier": 5,
     "material": "enchanted plate",
@@ -3473,11 +3468,7 @@
     "lore": "Forged from enchanted iron that grows with the wearer, the Green Knight's Plate absorbs blows that would kill a lesser man. The wearer heals slowly but continuously.",
     "special_effect": "regen_2",
     "onEquipStatus": "life_save",
-    "floorSpawnWeight": {
-      "1-62": 0,
-      "63-80": 3,
-      "81-100": 2
-    }
+    "floorSpawnWeight": {}
   },
   "serpent_scale_mail": {
     "name": "Serpent Scale Mail",
@@ -3488,7 +3479,7 @@
       100
     ],
     "weight": 14.0,
-    "min_level": 55,
+    "min_level": 9999,
     "slot": "body",
     "tier": 4,
     "material": "scale",
@@ -3503,12 +3494,7 @@
     "enchant_bonus": 0,
     "unidentified_name": "iridescent scale hauberk",
     "lore": "Scales from Jörmungandr's juvenile form, each harder than iron. The poison that suffuses them has been neutralized — but it still repels toxins entirely.",
-    "floorSpawnWeight": {
-      "1-54": 0,
-      "55-60": 3,
-      "61-80": 2,
-      "81-100": 1
-    }
+    "floorSpawnWeight": {}
   },
   "arachne_silk_cloak": {
     "name": "Arachne's Silk Cloak",
@@ -3519,7 +3505,7 @@
       80
     ],
     "weight": 1.5,
-    "min_level": 3,
+    "min_level": 9999,
     "slot": "cloak",
     "tier": 2,
     "material": "silk",
@@ -3533,12 +3519,7 @@
     "enchant_bonus": 0,
     "unidentified_name": "shimmering silk cloak",
     "lore": "Woven by Arachne before her transformation, this cloak is lighter than air and tougher than leather against piercing weapons. It catches arrows and slows blades.",
-    "floorSpawnWeight": {
-      "1-20": 3,
-      "21-40": 2,
-      "41-60": 1,
-      "61-100": 1
-    }
+    "floorSpawnWeight": {}
   },
   "erlking_mantle": {
     "name": "Erlking's Mantle",
@@ -3549,7 +3530,7 @@
       80
     ],
     "weight": 2.0,
-    "min_level": 20,
+    "min_level": 9999,
     "slot": "cloak",
     "tier": 3,
     "material": "enchanted cloth",
@@ -3562,13 +3543,7 @@
     "unidentified_name": "a green forest cloak",
     "lore": "Woven from the living branches of the Erlking's forest, this cloak sharpens the senses of the wearer. Sound and sight carry further, and hidden things become easier to discern.",
     "special_effect": "per_plus_2",
-    "floorSpawnWeight": {
-      "1-19": 0,
-      "20-20": 3,
-      "21-40": 2,
-      "41-60": 1,
-      "61-100": 1
-    }
+    "floorSpawnWeight": {}
   },
   "anansi_web_cloak": {
     "name": "Anansi's Web Cloak",
@@ -3579,7 +3554,7 @@
       40
     ],
     "weight": 1.0,
-    "min_level": 85,
+    "min_level": 9999,
     "slot": "cloak",
     "tier": 5,
     "material": "divine silk",
@@ -3594,10 +3569,7 @@
     "enchant_bonus": 0,
     "unidentified_name": "a glittering golden web",
     "lore": "Spun by Anansi himself from the thread of a thousand stories, this cloak shifts and deceives. Attacks that should land somehow miss. Traps somehow fail to trigger.",
-    "floorSpawnWeight": {
-      "1-84": 0,
-      "85-100": 3
-    }
+    "floorSpawnWeight": {}
   },
   "nidhoggr_scale": {
     "name": "Níðhöggr's Scale",
@@ -3608,7 +3580,7 @@
       80
     ],
     "weight": 3.0,
-    "min_level": 90,
+    "min_level": 9999,
     "slot": "cloak",
     "tier": 5,
     "material": "dragon scale",
@@ -3624,10 +3596,7 @@
     "enchant_bonus": 0,
     "unidentified_name": "a vast dark-green scale",
     "lore": "A single scale from Níðhöggr's body, imbued with the rot of ages. Nothing corrodes it. Wearing it grants the wearer immunity to acid and strong resistance to all decay-based attacks.",
-    "floorSpawnWeight": {
-      "1-89": 0,
-      "90-100": 3
-    }
+    "floorSpawnWeight": {}
   },
   "aegishjalmr": {
     "name": "Aegishjalmr",
@@ -3742,7 +3711,11 @@
     "unidentified_name": "strip of dark cloth",
     "lore": "A strip of heavy black cloth. Wearing it plunges you into total darkness — you cannot see anything at all. A desperate measure, but sometimes not seeing is the only way to survive what lurks in the dark.",
     "symbol": "[",
-    "color": [40, 40, 50],
+    "color": [
+      40,
+      40,
+      50
+    ],
     "floorSpawnWeight": {
       "1-29": 0,
       "30-38": 8,
@@ -3752,7 +3725,11 @@
   "vidars_sandal": {
     "name": "Vidar's Sandal",
     "symbol": "[",
-    "color": [160, 130, 80],
+    "color": [
+      160,
+      130,
+      80
+    ],
     "weight": 1.0,
     "min_level": 9999,
     "slot": "feet",
@@ -3761,7 +3738,10 @@
     "ac_bonus": 3,
     "equip_threshold": 3,
     "quiz_tier": 4,
-    "damage_resistances": {"slash": 0.25, "blunt": 0.25},
+    "damage_resistances": {
+      "slash": 0.25,
+      "blunt": 0.25
+    },
     "can_be_cursed": false,
     "enchant_bonus": 0,
     "identified": true,
@@ -3772,7 +3752,11 @@
   "trainers_cap": {
     "name": "Trainer's Cap",
     "symbol": "[",
-    "color": [255, 40, 40],
+    "color": [
+      255,
+      40,
+      40
+    ],
     "weight": 0.2,
     "min_level": 9999,
     "slot": "head",
@@ -3793,7 +3777,11 @@
   "cow_kings_horns": {
     "name": "Cow King's Horns",
     "symbol": "[",
-    "color": [255, 215, 0],
+    "color": [
+      255,
+      215,
+      0
+    ],
     "weight": 1.5,
     "min_level": 9999,
     "slot": "head",
@@ -3802,7 +3790,9 @@
     "ac_bonus": 1,
     "equip_threshold": 2,
     "quiz_tier": 2,
-    "damage_resistances": {"blunt": 0.15},
+    "damage_resistances": {
+      "blunt": 0.15
+    },
     "can_be_cursed": false,
     "enchant_bonus": 0,
     "identified": true,
@@ -3814,7 +3804,11 @@
   "cloth_of_penelope": {
     "name": "Cloth of Penelope",
     "symbol": "[",
-    "color": [220, 200, 160],
+    "color": [
+      220,
+      200,
+      160
+    ],
     "weight": 1.0,
     "min_level": 5,
     "slot": "body",
@@ -3830,12 +3824,21 @@
     "unidentified_name": "an intricately woven robe",
     "lore": "Penelope, wife of Odysseus, waited twenty years for her husband's return from Troy. Each day she wove a funeral shroud; each night she unraveled it, buying time against the suitors who demanded she remarry. This cloth is woven from that same thread — thread that refused to stay finished, that healed itself every night. When worn, the wearer's wounds close slowly but surely, as if time itself is being unwoven.",
     "containerLootTier": "rare",
-    "floorSpawnWeight": {"1-5": 3, "6-20": 6, "21-35": 2, "36-100": 0}
+    "floorSpawnWeight": {
+      "1-5": 3,
+      "6-20": 6,
+      "21-35": 2,
+      "36-100": 0
+    }
   },
   "bracers_of_cu_chulainn": {
     "name": "Bracers of Cu Chulainn",
     "symbol": "[",
-    "color": [140, 80, 40],
+    "color": [
+      140,
+      80,
+      40
+    ],
     "weight": 2.0,
     "min_level": 22,
     "slot": "arms",
@@ -3844,18 +3847,29 @@
     "ac_bonus": 2,
     "equip_threshold": 3,
     "quiz_tier": 3,
-    "damage_resistances": {"slash": 0.10},
+    "damage_resistances": {
+      "slash": 0.1
+    },
     "can_be_cursed": false,
     "enchant_bonus": 1,
     "unidentified_name": "battle-scarred leather bracers",
     "lore": "Cu Chulainn, the Hound of Ulster, was Ireland's greatest warrior — a man who entered such battle frenzy that his body twisted and contorted, one eye bulging, his hair standing like spikes of flame. These bracers are stained with the blood of a hundred battles. They carry the warp-spasm's echo: the wearer strikes harder, bleeds enemies with every blow, and feels no pain from cuts.",
     "containerLootTier": "rare",
-    "floorSpawnWeight": {"1-21": 0, "22-40": 6, "41-55": 2, "56-100": 0}
+    "floorSpawnWeight": {
+      "1-21": 0,
+      "22-40": 6,
+      "41-55": 2,
+      "56-100": 0
+    }
   },
   "cloak_of_sun_wukong": {
     "name": "Cloak of Sun Wukong",
     "symbol": "[",
-    "color": [255, 180, 40],
+    "color": [
+      255,
+      180,
+      40
+    ],
     "weight": 0.5,
     "min_level": 25,
     "slot": "cloak",
@@ -3871,6 +3885,11 @@
     "unidentified_name": "a shimmering golden cloak",
     "lore": "The Monkey King, Sun Wukong, was born from a stone egg on the Mountain of Flowers and Fruit. He stole the peaches of immortality, defied the Jade Emperor, and was imprisoned under a mountain for five hundred years before accompanying the monk Tripitaka westward. His seventy-two transformations made him impossible to pin down. This cloak carries that trickster spirit — the wearer seems to shimmer and shift, making them difficult to strike.",
     "containerLootTier": "rare",
-    "floorSpawnWeight": {"1-24": 0, "25-40": 6, "41-55": 2, "56-100": 0}
+    "floorSpawnWeight": {
+      "1-24": 0,
+      "25-40": 6,
+      "41-55": 2,
+      "56-100": 0
+    }
   }
 }

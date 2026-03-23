@@ -2,7 +2,11 @@
   "elaras_silver_ring": {
     "name": "plain silver ring",
     "symbol": "=",
-    "color": [192, 192, 210],
+    "color": [
+      192,
+      192,
+      210
+    ],
     "weight": 0.1,
     "min_level": 1,
     "slot": "ring",
@@ -3364,27 +3368,28 @@
     "name": "Ring of Gyges",
     "symbol": "=",
     "color": [
-      180,
-      180,
+      160,
+      160,
       180
     ],
     "weight": 0.1,
-    "min_level": 60,
+    "min_level": 28,
     "slot": "ring",
     "equip_threshold": 3,
-    "quiz_tier": 5,
+    "quiz_tier": 3,
     "effects": {
       "status": "invisible",
       "duration": -1
     },
-    "unidentified_name": "a plain iron ring with no markings",
+    "unidentified_name": "a plain band that seems to blur at the edges",
+    "lore": "In Plato's Republic, Glaucon tells the story of Gyges the shepherd, who found a ring that turned him invisible. He used it to seduce the queen, murder the king, and seize the throne. Plato asked: would a just man behave differently from an unjust man if he could act without consequence? The ring itself does not answer. It merely grants the power — and leaves the moral question to you.",
+    "containerLootTier": "rare",
     "floorSpawnWeight": {
-      "61-80": 1,
-      "81-100": 2
-    },
-    "identified": false,
-    "lore": "Plato's thought experiment made physical. A shepherd found it in a chasm opened by earthquake, wore it, discovered its power, seduced the queen, killed the king, and took the throne. Plato used it to ask: would a just man behave differently if invisible? The Ring doesn't answer the question. It only enables it.",
-    "cursed": true
+      "1-27": 0,
+      "28-45": 4,
+      "46-60": 2,
+      "61-100": 0
+    }
   },
   "ring_of_the_nibelung": {
     "name": "Ring of the Nibelung",
@@ -3595,28 +3600,30 @@
   },
   "scarab_of_khepri": {
     "name": "Scarab of Khepri",
-    "symbol": "\"",
+    "symbol": "=",
     "color": [
-      100,
-      200,
-      100
+      60,
+      160,
+      80
     ],
-    "weight": 0.2,
-    "min_level": 55,
-    "slot": "amulet",
-    "equip_threshold": 4,
-    "quiz_tier": 5,
+    "weight": 0.1,
+    "min_level": 16,
+    "slot": "ring",
+    "equip_threshold": 2,
+    "quiz_tier": 2,
     "effects": {
-      "status": "life_save",
+      "status": "regenerating",
       "duration": -1
     },
-    "unidentified_name": "a carved green stone beetle",
+    "unidentified_name": "a jade ring shaped like a beetle",
+    "lore": "Khepri was the Egyptian god of the dawn — the sacred scarab beetle who rolled the sun across the sky each morning, renewing creation daily. The Egyptians saw in the humble dung beetle a cosmic truth: that life renews itself endlessly, that every morning the world is born again. This jade scarab hums with that eternal cycle of renewal. Wounds close. Strength returns. Dawn comes again.",
+    "containerLootTier": "rare",
     "floorSpawnWeight": {
-      "61-80": 1,
-      "81-100": 2
-    },
-    "identified": false,
-    "lore": "Khepri, the scarab god, rolls the sun across the sky each morning — the same motion the dung beetle makes rolling its ball. Egyptian amulets shaped like scarabs were placed over the heart of the dead to prevent it from testifying against its owner at the judgment. The heart was considered the source of moral failure. The scarab, apparently, overruled it."
+      "1-15": 0,
+      "16-30": 6,
+      "31-45": 2,
+      "46-100": 0
+    }
   },
   "hamsa_hand": {
     "name": "Hand of Fatima",
@@ -4561,7 +4568,7 @@
       100
     ],
     "weight": 1.0,
-    "min_level": 35,
+    "min_level": 9999,
     "slot": "amulet",
     "equip_threshold": 4,
     "quiz_tier": 4,
@@ -4572,12 +4579,7 @@
     "can_be_cursed": false,
     "unidentified_name": "a golden riddle-crown",
     "lore": "The crown of the Sphinx, imbued with millennia of accumulated riddle-wisdom. Wearing it sharpens the mind and extends the time available for all mental challenges.",
-    "floorSpawnWeight": {
-      "1-34": 0,
-      "35-40": 5,
-      "41-60": 3,
-      "61-100": 1
-    }
+    "floorSpawnWeight": {}
   },
   "sailors_amulet": {
     "name": "Sailor's Amulet",
@@ -4588,7 +4590,7 @@
       200
     ],
     "weight": 0.5,
-    "min_level": 68,
+    "min_level": 9999,
     "slot": "amulet",
     "equip_threshold": 4,
     "quiz_tier": 4,
@@ -4601,11 +4603,7 @@
     "can_be_cursed": false,
     "unidentified_name": "a driftwood amulet",
     "lore": "Carved from the wood of a ship that survived Charybdis, this amulet carries the protection of calm water. The wearer reads the currents of danger before they arrive.",
-    "floorSpawnWeight": {
-      "1-67": 0,
-      "68-80": 5,
-      "81-100": 3
-    }
+    "floorSpawnWeight": {}
   },
   "anubis_scales": {
     "name": "Anubis's Scales",
@@ -4616,7 +4614,7 @@
       40
     ],
     "weight": 0.8,
-    "min_level": 58,
+    "min_level": 9999,
     "slot": "amulet",
     "equip_threshold": 4,
     "quiz_tier": 4,
@@ -4627,12 +4625,7 @@
     "can_be_cursed": false,
     "unidentified_name": "balanced golden scales",
     "lore": "A miniature of the scales Anubis uses to weigh hearts against the feather of Ma'at. Wearing them steadies the pulse and hardens the bearer against the drain of undead.",
-    "floorSpawnWeight": {
-      "1-57": 0,
-      "58-60": 5,
-      "61-80": 3,
-      "81-100": 1
-    }
+    "floorSpawnWeight": {}
   },
   "ring_of_iron_grip": {
     "name": "Ring of Iron Grip",
@@ -4643,7 +4636,7 @@
       60
     ],
     "weight": 0.2,
-    "min_level": 70,
+    "min_level": 9999,
     "slot": "ring",
     "equip_threshold": 3,
     "quiz_tier": 4,
@@ -4654,11 +4647,7 @@
     "can_be_cursed": false,
     "unidentified_name": "a crude iron band",
     "lore": "Crushed from a finger of Ravana himself, this ring channels the demon king's immense physical power into whoever wears it. The grip becomes unbreakable.",
-    "floorSpawnWeight": {
-      "1-69": 0,
-      "70-80": 5,
-      "81-100": 3
-    }
+    "floorSpawnWeight": {}
   },
   "obsidian_talisman": {
     "name": "Obsidian Talisman",
@@ -4669,7 +4658,7 @@
       120
     ],
     "weight": 0.4,
-    "min_level": 25,
+    "min_level": 9999,
     "slot": "amulet",
     "equip_threshold": 3,
     "quiz_tier": 3,
@@ -4680,12 +4669,7 @@
     "can_be_cursed": false,
     "unidentified_name": "a jagged black stone",
     "lore": "Carved from sacrificial obsidian used in Xibalba, the Mayan underworld. It grants the wearer sight in magical darkness and resistance to fear effects from undead.",
-    "floorSpawnWeight": {
-      "1-24": 0,
-      "25-40": 5,
-      "41-60": 3,
-      "61-100": 1
-    }
+    "floorSpawnWeight": {}
   },
   "ariadnes_thread": {
     "name": "Ariadne's Thread",
@@ -4836,7 +4820,6 @@
       "61-100": 1
     }
   },
-
   "silverlight_pendant": {
     "name": "Silverlight Pendant",
     "slot": "amulet",
@@ -4854,10 +4837,13 @@
     "unidentified_name": "delicate silver pendant",
     "lore": "A small silver pendant on a fine chain. The metal is warm to the touch, as though someone held it very recently. The name 'ELARA' is engraved on the back in a child's unsteady hand.",
     "symbol": "=",
-    "color": [200, 200, 230],
+    "color": [
+      200,
+      200,
+      230
+    ],
     "floorSpawnWeight": {}
   },
-
   "saints_reliquary": {
     "name": "Saint's Reliquary",
     "slot": "amulet",
@@ -4876,10 +4862,13 @@
     "unidentified_name": "a silver reliquary containing a saint's fingerbone",
     "lore": "A silver reliquary containing the fingerbone of a saint, set in gold. The monk who carried it crawled through the dungeon on his hands and knees to keep it safe. It radiates a quiet warmth.",
     "symbol": "=",
-    "color": [200, 190, 160],
+    "color": [
+      200,
+      190,
+      160
+    ],
     "floorSpawnWeight": {}
   },
-
   "officers_signet": {
     "name": "Officer's Signet",
     "slot": "ring",
@@ -4898,10 +4887,13 @@
     "unidentified_name": "a heavy gold signet ring stamped with the Legion crest",
     "lore": "A solid gold signet ring bearing the crest of the Legion. Officer-grade — only issued to those who have earned command. The previous owner pulled it off his own finger and said he didn't deserve it.",
     "symbol": "=",
-    "color": [218, 180, 50],
+    "color": [
+      218,
+      180,
+      50
+    ],
     "floorSpawnWeight": {}
   },
-
   "prophets_amulet": {
     "name": "Prophet's Amulet",
     "slot": "amulet",
@@ -4920,127 +4912,179 @@
     "unidentified_name": "an amulet pulsing with gathered visions",
     "lore": "An amulet worn by a dying prophet who spent his last years carving warnings into stone tablets. It pulses with accumulated foresight — visions of the Destroyer, the Seven Seals, and the final battle. The clarity it grants is almost painful.",
     "symbol": "=",
-    "color": [200, 200, 220],
+    "color": [
+      200,
+      200,
+      220
+    ],
     "floorSpawnWeight": {}
   },
   "aesops_quill": {
     "name": "Aesop's Quill",
     "symbol": "=",
-    "color": [220, 200, 140],
+    "color": [
+      220,
+      200,
+      140
+    ],
     "weight": 0.1,
     "min_level": 3,
     "slot": "ring",
     "equip_threshold": 1,
     "quiz_tier": 1,
-    "effects": {"stat": "WIS", "amount": 2},
+    "effects": {
+      "stat": "WIS",
+      "amount": 2
+    },
     "unidentified_name": "a feather-shaped ring",
     "lore": "Aesop was a slave in ancient Greece who earned his freedom through storytelling. His fables — The Tortoise and the Hare, The Boy Who Cried Wolf, The Fox and the Grapes — taught moral wisdom through animals. This quill-shaped ring carries that legacy: the wisdom to see truth in simple things. +2 WIS.",
     "containerLootTier": "rare",
-    "floorSpawnWeight": {"1-3": 3, "4-15": 6, "16-30": 2, "31-100": 0}
+    "floorSpawnWeight": {
+      "1-3": 3,
+      "4-15": 6,
+      "16-30": 2,
+      "31-100": 0
+    }
   },
   "lyre_of_orpheus": {
     "name": "Lyre of Orpheus",
     "symbol": "=",
-    "color": [180, 140, 220],
+    "color": [
+      180,
+      140,
+      220
+    ],
     "weight": 0.2,
     "min_level": 5,
     "slot": "amulet",
     "equip_threshold": 1,
     "quiz_tier": 1,
-    "effects": {"status": "sleep_resist", "duration": -1},
+    "effects": {
+      "status": "sleep_resist",
+      "duration": -1
+    },
     "unidentified_name": "an amulet shaped like a tiny lyre",
     "lore": "Orpheus, son of Apollo, played music so beautiful that rocks wept, rivers paused, and the trees leaned in to listen. He descended into Hades to retrieve his beloved Eurydice, charming Cerberus and Persephone with his song. He failed only because he looked back. This tiny lyre amulet hums with that impossible music — while you wear it, no enchantment of sleep can reach you. You will never lose consciousness against your will.",
     "containerLootTier": "rare",
-    "floorSpawnWeight": {"1-5": 3, "6-18": 6, "19-30": 2, "31-100": 0}
+    "floorSpawnWeight": {
+      "1-5": 3,
+      "6-18": 6,
+      "19-30": 2,
+      "31-100": 0
+    }
   },
   "tablet_of_gilgamesh": {
     "name": "Tablet of Gilgamesh",
     "symbol": "=",
-    "color": [160, 140, 100],
+    "color": [
+      160,
+      140,
+      100
+    ],
     "weight": 0.3,
     "min_level": 6,
     "slot": "ring",
     "equip_threshold": 1,
     "quiz_tier": 1,
-    "effects": {"stat": "INT", "amount": 1, "stat2": "CON", "amount2": 1},
+    "effects": {
+      "stat": "INT",
+      "amount": 1,
+      "stat2": "CON",
+      "amount2": 1
+    },
     "unidentified_name": "a clay ring inscribed with cuneiform",
     "lore": "The Epic of Gilgamesh is the oldest known work of literature — a Sumerian king's quest for immortality, written on clay tablets four thousand years ago. Gilgamesh was two-thirds god and one-third man, and his story teaches that true immortality lies not in living forever, but in the deeds that outlive you. This ring carries a fragment of that first epic — knowledge and endurance in equal measure. +1 INT, +1 CON.",
     "containerLootTier": "rare",
-    "floorSpawnWeight": {"1-6": 2, "7-18": 5, "19-30": 2, "31-100": 0}
+    "floorSpawnWeight": {
+      "1-6": 2,
+      "7-18": 5,
+      "19-30": 2,
+      "31-100": 0
+    }
   },
   "scales_of_maat": {
     "name": "Scales of Ma'at",
     "symbol": "=",
-    "color": [200, 180, 80],
+    "color": [
+      200,
+      180,
+      80
+    ],
     "weight": 0.1,
     "min_level": 14,
     "slot": "ring",
     "equip_threshold": 2,
     "quiz_tier": 2,
-    "effects": {"stat": "WIS", "amount": 1, "stat2": "PER", "amount2": 1},
+    "effects": {
+      "stat": "WIS",
+      "amount": 1,
+      "stat2": "PER",
+      "amount2": 1
+    },
     "unidentified_name": "a ring with tiny golden scales",
     "lore": "In the Egyptian Hall of Two Truths, the heart of the dead was weighed against the feather of Ma'at, goddess of truth and cosmic order. If the heart was lighter than the feather — free of sin — the soul passed into the Field of Reeds. If heavier, the demon Ammit devoured it. These tiny scales whisper of that judgment: see clearly, judge wisely. +1 WIS, +1 PER.",
     "containerLootTier": "rare",
-    "floorSpawnWeight": {"1-13": 0, "14-30": 6, "31-45": 2, "46-100": 0}
+    "floorSpawnWeight": {
+      "1-13": 0,
+      "14-30": 6,
+      "31-45": 2,
+      "46-100": 0
+    }
   },
   "tablet_of_hammurabi": {
     "name": "Tablet of Hammurabi",
     "symbol": "=",
-    "color": [140, 120, 80],
+    "color": [
+      140,
+      120,
+      80
+    ],
     "weight": 0.3,
     "min_level": 15,
     "slot": "amulet",
     "equip_threshold": 2,
     "quiz_tier": 2,
-    "effects": {"stat": "INT", "amount": 2},
+    "effects": {
+      "stat": "INT",
+      "amount": 2
+    },
     "unidentified_name": "a heavy clay amulet covered in ancient script",
     "lore": "Hammurabi, King of Babylon, created the first comprehensive written law code around 1750 BC — 282 laws carved in stone, establishing the revolutionary principle that justice should be written, public, and consistent rather than arbitrary. 'An eye for an eye' comes from his code. This tablet-shaped amulet carries the weight of that first attempt to replace chaos with order. +2 INT.",
     "containerLootTier": "rare",
-    "floorSpawnWeight": {"1-14": 0, "15-30": 6, "31-45": 2, "46-100": 0}
-  },
-  "scarab_of_khepri": {
-    "name": "Scarab of Khepri",
-    "symbol": "=",
-    "color": [60, 160, 80],
-    "weight": 0.1,
-    "min_level": 16,
-    "slot": "ring",
-    "equip_threshold": 2,
-    "quiz_tier": 2,
-    "effects": {"status": "regenerating", "duration": -1},
-    "unidentified_name": "a jade ring shaped like a beetle",
-    "lore": "Khepri was the Egyptian god of the dawn — the sacred scarab beetle who rolled the sun across the sky each morning, renewing creation daily. The Egyptians saw in the humble dung beetle a cosmic truth: that life renews itself endlessly, that every morning the world is born again. This jade scarab hums with that eternal cycle of renewal. Wounds close. Strength returns. Dawn comes again.",
-    "containerLootTier": "rare",
-    "floorSpawnWeight": {"1-15": 0, "16-30": 6, "31-45": 2, "46-100": 0}
+    "floorSpawnWeight": {
+      "1-14": 0,
+      "15-30": 6,
+      "31-45": 2,
+      "46-100": 0
+    }
   },
   "torc_of_boudicca": {
     "name": "Torc of Boudicca",
     "symbol": "=",
-    "color": [200, 160, 40],
+    "color": [
+      200,
+      160,
+      40
+    ],
     "weight": 0.3,
     "min_level": 22,
     "slot": "amulet",
     "equip_threshold": 2,
     "quiz_tier": 3,
-    "effects": {"stat": "STR", "amount": 2, "stat2": "CON", "amount2": 1},
+    "effects": {
+      "stat": "STR",
+      "amount": 2,
+      "stat2": "CON",
+      "amount2": 1
+    },
     "unidentified_name": "a twisted gold neck ring",
     "lore": "Boudicca was queen of the Iceni tribe in Roman Britain. When the Romans flogged her and assaulted her daughters, she raised an army that burned Londinium to the ground, killed seventy thousand Romans, and nearly drove the Empire from Britain. The twisted gold torc was the Celtic symbol of nobility and warrior status — this one still carries Boudicca's fury. +2 STR, +1 CON.",
     "containerLootTier": "rare",
-    "floorSpawnWeight": {"1-21": 0, "22-35": 6, "36-50": 2, "51-100": 0}
-  },
-  "ring_of_gyges": {
-    "name": "Ring of Gyges",
-    "symbol": "=",
-    "color": [160, 160, 180],
-    "weight": 0.1,
-    "min_level": 28,
-    "slot": "ring",
-    "equip_threshold": 3,
-    "quiz_tier": 3,
-    "effects": {"status": "invisible", "duration": -1},
-    "unidentified_name": "a plain band that seems to blur at the edges",
-    "lore": "In Plato's Republic, Glaucon tells the story of Gyges the shepherd, who found a ring that turned him invisible. He used it to seduce the queen, murder the king, and seize the throne. Plato asked: would a just man behave differently from an unjust man if he could act without consequence? The ring itself does not answer. It merely grants the power — and leaves the moral question to you.",
-    "containerLootTier": "rare",
-    "floorSpawnWeight": {"1-27": 0, "28-45": 4, "46-60": 2, "61-100": 0}
+    "floorSpawnWeight": {
+      "1-21": 0,
+      "22-35": 6,
+      "36-50": 2,
+      "51-100": 0
+    }
   }
 }

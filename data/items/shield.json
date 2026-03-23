@@ -447,7 +447,7 @@
       100
     ],
     "weight": 8.0,
-    "min_level": 12,
+    "min_level": 9999,
     "tier": 2,
     "material": "bronze",
     "ac_bonus": 3,
@@ -461,27 +461,25 @@
     "enchant_bonus": 0,
     "unidentified_name": "ancient bronze shield",
     "lore": "The ceremonial shield of a bronze giant, engraved with the eye of Hephaestus. Its curved surface deflects crushing blows better than any iron shield of its age.",
-    "floorSpawnWeight": {
-      "1-11": 0,
-      "12-20": 3,
-      "21-40": 2,
-      "41-60": 1,
-      "61-100": 1
-    }
+    "floorSpawnWeight": {}
   },
   "aegis_of_athena": {
     "name": "Aegis of Athena",
     "symbol": ")",
-    "color": [220, 200, 140],
+    "color": [
+      220,
+      200,
+      140
+    ],
     "weight": 4.0,
-    "min_level": 36,
+    "min_level": 9999,
     "tier": 4,
     "material": "bronze",
     "ac_bonus": 4,
     "equip_threshold": 3,
     "quiz_tier": 3,
     "damage_resistances": {
-      "magic": 0.50
+      "magic": 0.5
     },
     "can_be_cursed": false,
     "enchant_bonus": 0,
@@ -489,11 +487,14 @@
     "lore": "Athena's own shield, polished to a mirror-bright sheen. She lent it to Perseus so he could face the Gorgon without meeting her eyes. In its reflection, the monster sees only herself — and is turned to stone by her own terrible gaze.",
     "floorSpawnWeight": {}
   },
-
   "lionheart_shield": {
     "name": "Lionheart Shield",
     "symbol": ")",
-    "color": [200, 180, 100],
+    "color": [
+      200,
+      180,
+      100
+    ],
     "weight": 5.0,
     "min_level": 9999,
     "tier": 4,
@@ -511,7 +512,11 @@
   "shield_of_the_spartans": {
     "name": "Shield of the Spartans",
     "symbol": ")",
-    "color": [180, 40, 40],
+    "color": [
+      180,
+      40,
+      40
+    ],
     "weight": 6.0,
     "min_level": 12,
     "tier": 2,
@@ -519,12 +524,19 @@
     "ac_bonus": 3,
     "equip_threshold": 2,
     "quiz_tier": 2,
-    "damage_resistances": {"pierce": 0.15},
+    "damage_resistances": {
+      "pierce": 0.15
+    },
     "can_be_cursed": false,
     "enchant_bonus": 0,
     "unidentified_name": "a heavy bronze shield with a lambda",
     "lore": "The aspis of the Spartans — the great round shield that formed the backbone of the phalanx. The inverted lambda on its face marks it as Lacedaemonian. A Spartan mother's farewell to her son: 'Return with your shield, or on it.' The shield that held at Thermopylae, where three hundred stood against a million. Heavy, unyielding, and utterly reliable.",
     "containerLootTier": "rare",
-    "floorSpawnWeight": {"1-11": 0, "12-30": 8, "31-45": 3, "46-100": 0}
+    "floorSpawnWeight": {
+      "1-11": 0,
+      "12-30": 8,
+      "31-45": 3,
+      "46-100": 0
+    }
   }
 }
