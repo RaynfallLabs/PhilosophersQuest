@@ -411,7 +411,11 @@
   "greater_mimic": {
     "name": "Greater Mimic",
     "symbol": "&",
-    "color": [160, 80, 40],
+    "color": [
+      160,
+      80,
+      40
+    ],
     "hp": 120,
     "speed": 10,
     "ai_pattern": "ambush",
@@ -433,17 +437,25 @@
         "damage": "2d6+2",
         "type": "poison",
         "effect": "poisoned",
-        "effect_chance": 0.40,
+        "effect_chance": 0.4,
         "effect_duration": 8
       }
     ],
-    "resistances": ["blunt", "poison"],
-    "weaknesses": ["fire"],
+    "resistances": [
+      "blunt",
+      "poison"
+    ],
+    "weaknesses": [
+      "fire"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
     "ingredient_id": "changeling_glamour",
     "treasure": {
-      "gold": [50, 150],
+      "gold": [
+        50,
+        150
+      ],
       "item_chance": 0.6,
       "item_tier": 3
     },
@@ -452,7 +464,11 @@
   "abyssal_mimic": {
     "name": "Abyssal Mimic",
     "symbol": "&",
-    "color": [100, 40, 60],
+    "color": [
+      100,
+      40,
+      60
+    ],
     "hp": 280,
     "speed": 10,
     "ai_pattern": "ambush",
@@ -474,17 +490,28 @@
         "damage": "3d6+4",
         "type": "necrotic",
         "effect": "weakened",
-        "effect_chance": 0.50,
+        "effect_chance": 0.5,
         "effect_duration": 10
       }
     ],
-    "resistances": ["blunt", "poison", "cold", "necrotic"],
-    "weaknesses": ["fire", "holy"],
+    "resistances": [
+      "blunt",
+      "poison",
+      "cold",
+      "necrotic"
+    ],
+    "weaknesses": [
+      "fire",
+      "holy"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
     "ingredient_id": "changeling_glamour",
     "treasure": {
-      "gold": [100, 300],
+      "gold": [
+        100,
+        300
+      ],
       "item_chance": 0.8,
       "item_tier": 4
     },
@@ -3628,7 +3655,7 @@
     ],
     "min_level": 8,
     "max_level": 23,
-    "hp": 55,
+    "hp": 250,
     "thac0": 12,
     "speed": 10,
     "attacks": [
@@ -3781,7 +3808,7 @@
       190,
       90
     ],
-    "hp": "4d12+8",
+    "hp": 600,
     "speed": 10,
     "ai_pattern": "sessile",
     "min_level": 13,
@@ -18683,7 +18710,7 @@
     ],
     "min_level": 3,
     "max_level": 15,
-    "hp": 45,
+    "hp": 200,
     "thac0": 14,
     "speed": 10,
     "attacks": [
@@ -18736,7 +18763,7 @@
     ],
     "min_level": 12,
     "max_level": 30,
-    "hp": 90,
+    "hp": 300,
     "thac0": 8,
     "speed": 10,
     "attacks": [
@@ -18783,7 +18810,7 @@
     ],
     "min_level": 15,
     "max_level": 33,
-    "hp": 75,
+    "hp": 300,
     "thac0": 10,
     "speed": 10,
     "attacks": [
@@ -18838,7 +18865,7 @@
     ],
     "min_level": 20,
     "max_level": 38,
-    "hp": 97,
+    "hp": 350,
     "thac0": 10,
     "speed": 10,
     "attacks": [
@@ -18893,7 +18920,7 @@
     ],
     "min_level": 25,
     "max_level": 43,
-    "hp": 140,
+    "hp": 500,
     "thac0": 8,
     "speed": 10,
     "attacks": [
@@ -18948,7 +18975,7 @@
     ],
     "min_level": 30,
     "max_level": 48,
-    "hp": 200,
+    "hp": 550,
     "thac0": 5,
     "speed": 10,
     "attacks": [
@@ -19000,7 +19027,7 @@
     ],
     "min_level": 35,
     "max_level": 53,
-    "hp": 157,
+    "hp": 600,
     "thac0": 0,
     "speed": 10,
     "attacks": [
@@ -19051,7 +19078,7 @@
     ],
     "min_level": 40,
     "max_level": 60,
-    "hp": 355,
+    "hp": 700,
     "thac0": -3,
     "speed": 10,
     "attacks": [
@@ -19106,7 +19133,7 @@
     ],
     "min_level": 45,
     "max_level": 65,
-    "hp": 495,
+    "hp": 800,
     "thac0": -3,
     "speed": 10,
     "attacks": [
@@ -19157,7 +19184,7 @@
     ],
     "min_level": 50,
     "max_level": 70,
-    "hp": 495,
+    "hp": 900,
     "thac0": -3,
     "speed": 10,
     "attacks": [
@@ -19222,7 +19249,7 @@
     ],
     "min_level": 55,
     "max_level": 77,
-    "hp": 657,
+    "hp": 1000,
     "thac0": -7,
     "speed": 10,
     "attacks": [
@@ -19280,7 +19307,7 @@
     ],
     "min_level": 58,
     "max_level": 80,
-    "hp": 510,
+    "hp": 1100,
     "thac0": -9,
     "speed": 10,
     "attacks": [
@@ -19335,7 +19362,7 @@
     ],
     "min_level": 63,
     "max_level": 85,
-    "hp": 820,
+    "hp": 1200,
     "thac0": -13,
     "speed": 10,
     "attacks": [
@@ -19391,7 +19418,7 @@
     ],
     "min_level": 68,
     "max_level": 88,
-    "hp": 730,
+    "hp": 1300,
     "thac0": -15,
     "speed": 10,
     "attacks": [
@@ -19444,7 +19471,7 @@
     ],
     "min_level": 70,
     "max_level": 90,
-    "hp": 840,
+    "hp": 1400,
     "thac0": -16,
     "speed": 10,
     "attacks": [
@@ -19511,7 +19538,7 @@
     ],
     "min_level": 75,
     "max_level": 95,
-    "hp": 1020,
+    "hp": 1500,
     "thac0": -16,
     "speed": 10,
     "attacks": [
@@ -19569,7 +19596,7 @@
     ],
     "min_level": 80,
     "max_level": 100,
-    "hp": 1180,
+    "hp": 1200,
     "thac0": -16,
     "speed": 10,
     "attacks": [
@@ -19628,7 +19655,7 @@
     ],
     "min_level": 85,
     "max_level": 100,
-    "hp": 1032,
+    "hp": 1600,
     "thac0": -16,
     "speed": 10,
     "attacks": [
@@ -19698,7 +19725,7 @@
     ],
     "min_level": 90,
     "max_level": 100,
-    "hp": 1425,
+    "hp": 1800,
     "thac0": -16,
     "speed": 10,
     "attacks": [
@@ -19759,7 +19786,7 @@
     ],
     "min_level": 83,
     "max_level": 83,
-    "hp": 560,
+    "hp": 800,
     "thac0": -16,
     "speed": 10,
     "attacks": [
@@ -19814,7 +19841,7 @@
     ],
     "min_level": 85,
     "max_level": 85,
-    "hp": 595,
+    "hp": 850,
     "thac0": -16,
     "speed": 10,
     "attacks": [
@@ -19869,7 +19896,7 @@
     ],
     "min_level": 87,
     "max_level": 87,
-    "hp": 576,
+    "hp": 900,
     "thac0": -16,
     "speed": 12,
     "attacks": [
@@ -19925,7 +19952,7 @@
     ],
     "min_level": 89,
     "max_level": 89,
-    "hp": 700,
+    "hp": 950,
     "thac0": -16,
     "speed": 10,
     "attacks": [
@@ -19986,7 +20013,7 @@
     ],
     "min_level": 91,
     "max_level": 91,
-    "hp": 646,
+    "hp": 1000,
     "thac0": -16,
     "speed": 10,
     "attacks": [
@@ -20042,7 +20069,7 @@
     ],
     "min_level": 93,
     "max_level": 93,
-    "hp": 681,
+    "hp": 1050,
     "thac0": -16,
     "speed": 8,
     "attacks": [
@@ -20098,7 +20125,7 @@
     ],
     "min_level": 97,
     "max_level": 97,
-    "hp": 630,
+    "hp": 1100,
     "thac0": -16,
     "speed": 12,
     "attacks": [
@@ -20214,7 +20241,11 @@
   "hell_bovine": {
     "name": "Hell Bovine",
     "symbol": "h",
-    "color": [180, 140, 80],
+    "color": [
+      180,
+      140,
+      80
+    ],
     "min_level": 30,
     "max_level": 39,
     "hp": 85,
@@ -20233,15 +20264,22 @@
       }
     ],
     "ai_pattern": "aggressive",
-    "resistances": ["blunt"],
-    "weaknesses": ["fire"],
+    "resistances": [
+      "blunt"
+    ],
+    "weaknesses": [
+      "fire"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 2,
     "ingredient_id": "prime_beef",
     "frequency": 0,
     "pack": true,
     "treasure": {
-      "gold": [15, 45],
+      "gold": [
+        15,
+        45
+      ],
       "item_chance": 0.15,
       "item_tier": 2
     },
@@ -20250,10 +20288,14 @@
   "cow_king": {
     "name": "Cow King",
     "symbol": "H",
-    "color": [255, 215, 0],
+    "color": [
+      255,
+      215,
+      0
+    ],
     "min_level": 30,
     "max_level": 39,
-    "hp": 450,
+    "hp": 550,
     "thac0": 2,
     "speed": 10,
     "attacks": [
@@ -20267,13 +20309,18 @@
         "damage": "3d8+5",
         "type": "physical",
         "effect": "stunned",
-        "effect_chance": 0.30,
+        "effect_chance": 0.3,
         "effect_duration": 3
       }
     ],
     "ai_pattern": "aggressive",
-    "resistances": ["blunt", "cold"],
-    "weaknesses": ["fire"],
+    "resistances": [
+      "blunt",
+      "cold"
+    ],
+    "weaknesses": [
+      "fire"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
     "ingredient_id": "royal_beef",
@@ -20281,7 +20328,10 @@
     "is_mini_boss": true,
     "spawn_chance": 0,
     "treasure": {
-      "gold": [200, 500],
+      "gold": [
+        200,
+        500
+      ],
       "item_chance": 1.0,
       "item_tier": 3,
       "unique_drop_id": "cow_kings_horns",
