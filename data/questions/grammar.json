@@ -368,7 +368,8 @@
       "Run",
       "Blue",
       "Slowly"
-    ]
+    ],
+    "context": "Pronouns are stand-ins that replace nouns so you don't have to keep repeating them like a broken record. 'They' is a third-person plural pronoun, doing the heavy lifting so 'the students' can take a break. Other pronoun families include I/me, he/him, she/her, and the ever-controversial singular 'they.'"
   },
   {
     "tier": 1,
@@ -1711,7 +1712,8 @@
       "Appositive",
       "Gerund phrase",
       "Predicate nominative"
-    ]
+    ],
+    "context": "An appositive sits right next to a noun and essentially says 'let me introduce myself' by restating it in different words. For example, in 'My brother, a doctor, lives in Boston,' the phrase 'a doctor' is the appositive. Appositives are usually set off by commas, dashes, or parentheses."
   },
   {
     "tier": 3,
@@ -5334,7 +5336,8 @@
       "Emotional impact",
       "Religious authority"
     ],
-    "tier": 3
+    "tier": 3,
+    "context": "In Aristotle's rhetorical triangle, logos is the brainy corner — it wins arguments with facts, data, and airtight reasoning. While ethos appeals to the speaker's credibility and pathos tugs at emotions, logos lets the evidence do the talking. The word itself shares a root with 'logic,' which is a handy mnemonic."
   },
   {
     "question": "A straw man fallacy means the speaker ___?",
@@ -5345,7 +5348,8 @@
       "Uses too many emotional appeals",
       "Repeats the same point too often"
     ],
-    "tier": 3
+    "tier": 3,
+    "context": "The straw man fallacy is like building a scarecrow version of your opponent's argument and then triumphantly knocking it down. Instead of addressing what someone actually said, the speaker distorts it into something weaker and easier to attack. It's named for the military practice of training on straw dummies rather than real opponents."
   },
   {
     "question": "An ad hominem argument attacks the ___?",
@@ -5356,7 +5360,8 @@
       "Conclusion of the argument",
       "Structure of the argument"
     ],
-    "tier": 3
+    "tier": 3,
+    "context": "Ad hominem is Latin for 'to the person,' and that's exactly what this fallacy does — it goes after the messenger instead of the message. Saying 'you can't trust his climate data because he's a bad driver' is a classic example. A person's character flaws don't automatically invalidate their arguments."
   },
   {
     "question": "A false dichotomy presents a situation as having only ___?",
@@ -5367,7 +5372,8 @@
       "Too many options to evaluate",
       "Options that are all correct"
     ],
-    "tier": 3
+    "tier": 3,
+    "context": "A false dichotomy, also called a false dilemma, squeezes a complex issue into an either/or box when a whole spectrum of options exists. 'You're either with us or against us' ignores the perfectly reasonable middle ground. Reality rarely comes in just two flavors."
   },
   {
     "question": "A red herring in an argument is ___?",
@@ -5378,7 +5384,8 @@
       "A repeated claim for emphasis",
       "An appeal to emotion"
     ],
-    "tier": 3
+    "tier": 3,
+    "context": "Named after the smoked fish that was supposedly dragged across trails to throw hunting dogs off the scent, a red herring derails a debate with an irrelevant tangent. When someone changes the subject to avoid addressing the actual point, that's the red herring at work. It's one of the most common — and most effective — diversionary tactics in rhetoric."
   },
   {
     "question": "The Greek prefix 'poly-' (as in 'polysyndeton') means ___?",
@@ -5389,7 +5396,8 @@
       "Many",
       "None"
     ],
-    "tier": 3
+    "tier": 3,
+    "context": "'Poly-' comes from Greek 'polus' meaning 'many,' which is why a polygon has many sides, a polyglot speaks many languages, and polysyndeton uses many conjunctions. It shows up everywhere from 'polymath' (many learnings) to 'Polynesia' (many islands). If you see 'poly-' at the start of a word, think abundance."
   },
   {
     "question": "The Greek root 'logos' (as in 'dialogue,' 'monologue') primarily means ___?",
@@ -5400,7 +5408,8 @@
       "Image or picture",
       "Form or shape"
     ],
-    "tier": 3
+    "tier": 3,
+    "context": "Logos is one of the most prolific Greek roots in English, meaning 'word,' 'reason,' or 'discourse.' A 'dialogue' is literally words between two people, a 'monologue' is one person's words, and 'biology' is the discourse of life. The ancient Greeks also used logos to mean rational principle, which is why it became central to philosophy and theology."
   },
   {
     "question": "Which suffix changes a verb into a noun meaning 'the act of' or 'the state of,' as in 'satisfaction'?",
@@ -5411,7 +5420,8 @@
       "-ness",
       "-ible"
     ],
-    "tier": 3
+    "tier": 3,
+    "context": "The suffix -tion (and its variant -ation) is a Latin-derived workhorse that transforms verbs into nouns: 'satisfy' becomes 'satisfaction,' 'create' becomes 'creation.' It's one of the most common suffixes in English, appearing in thousands of everyday words. When you see -tion at the end of a word, you're almost always looking at a noun describing a process or result."
   },
   {
     "question": "Which prefix means 'not' or 'opposite,' as in 'illogical,' 'immoral,' and 'impossible'?",
@@ -5422,7 +5432,8 @@
       "Dis- only",
       "Non- only"
     ],
-    "tier": 3
+    "tier": 3,
+    "context": "The Latin prefix in- means 'not,' but it's a shapeshifter: it becomes il- before 'l,' im- before 'b,' 'm,' and 'p,' and ir- before 'r.' This assimilation happens because saying 'inlogical' or 'inpossible' is a tongue-twister — the sounds naturally blend for easier pronunciation. Despite looking like four different prefixes, they're all the same morpheme in disguise."
   },
   {
     "question": "Which sentence avoids a dangling modifier?",
@@ -5433,7 +5444,8 @@
       "Having studied, the results were good.",
       "Studied all night, she passed."
     ],
-    "tier": 3
+    "tier": 3,
+    "context": "A dangling modifier is a phrase that modifies a word not clearly stated in the sentence, creating absurd readings. 'Having studied all night, she passed the exam' correctly attaches the modifier to 'she' — the person who actually studied. A dangling version like 'Having studied all night, the exam was easy' implies the exam did the studying."
   },
   {
     "question": "Which sentence demonstrates a misplaced modifier?",
@@ -5444,7 +5456,8 @@
       "Almost every day, she drove her children to school.",
       "She drove almost all her children to school."
     ],
-    "tier": 3
+    "tier": 3,
+    "context": "'She almost drove her children to school every day' misplaces 'almost' so it modifies 'drove' instead of 'every day,' implying she nearly drove but never actually did. The intended meaning — that she drove most days but not all — requires 'She drove her children to school almost every day.' Modifier placement in English can completely change meaning, which is why word order matters so much."
   },
   {
     "question": "An active voice sentence is preferred over passive voice because it is ___?",
@@ -5455,7 +5468,8 @@
       "Harder to understand",
       "Always grammatically required"
     ],
-    "tier": 3
+    "tier": 3,
+    "context": "Active voice puts the doer front and center ('The cat ate the fish'), making sentences more direct and vigorous than passive constructions ('The fish was eaten by the cat'). Strunk and White's famous advice to 'use the active voice' has shaped a century of English writing instruction. Passive voice isn't grammatically wrong, but it often hides responsibility and adds unnecessary words."
   },
   {
     "question": "Which sentence uses 'imply' and 'infer' correctly?",
@@ -5466,7 +5480,8 @@
       "Both imply and infer mean the same thing.",
       "The jury implied the verdict from the evidence."
     ],
-    "tier": 3
+    "tier": 3,
+    "context": "Imply and infer are two sides of the same communicative coin: the speaker implies (sends a hint), and the listener infers (picks up the hint). Saying 'The speaker implied guilt; the jury inferred it from the evidence' keeps each verb with its proper actor. A good mnemonic: the Implier is the Inside source, the Inferrer is the Interpreter."
   },
   {
     "question": "Which is the correct punctuation for a conjunctive adverb joining two independent clauses?",
@@ -5477,7 +5492,8 @@
       "She was tired; however, she finished the work.",
       "She was tired: however, she finished the work."
     ],
-    "tier": 3
+    "tier": 3,
+    "context": "When a conjunctive adverb like 'however,' 'therefore,' or 'moreover' joins two independent clauses, you need a semicolon before it and a comma after it. 'She was tired; however, she finished the work' follows this rule perfectly. Using just a comma creates a comma splice, which is one of the most common punctuation errors in English."
   },
   {
     "question": "Which sentence uses a colon incorrectly?",
@@ -5488,7 +5504,8 @@
       "He had one goal: to succeed.",
       "The problem was clear: no one had planned ahead."
     ],
-    "tier": 3
+    "tier": 3,
+    "context": "'She wants: to travel the world' is incorrect because a colon should not separate a verb from its object — the sentence is grammatically complete without the colon. Colons introduce lists, explanations, or elaborations only after a complete independent clause. A corrected version would be 'She wants one thing: to travel the world,' where 'She wants one thing' can stand alone."
   },
   {
     "question": "Which sentence correctly uses a restrictive clause without commas?",
@@ -5499,7 +5516,8 @@
       "The students, who study regularly, succeed.",
       "All students who, study regularly, succeed."
     ],
-    "tier": 3
+    "tier": 3,
+    "context": "'Students who study regularly tend to succeed' uses a restrictive (essential) clause that identifies which students — only those who study regularly. Restrictive clauses narrow down the noun they modify and are never set off by commas because removing them would change the sentence's meaning. Compare the nonrestrictive version: 'Students, who study regularly, tend to succeed' — which implies all students study regularly."
   },
   {
     "question": "Which rhetorical device is used in: 'Government of the people, by the people, for the people'?",
@@ -5510,7 +5528,8 @@
       "Anaphora combined with epistrophe (symploce)",
       "Chiasmus"
     ],
-    "tier": 3
+    "tier": 3,
+    "context": "Lincoln's famous phrase repeats 'the people' at the end of each phrase (epistrophe) and a preposition pattern at the beginning (anaphora). When both devices combine, the technical term is symploce — a rhetorical sandwich that hammers the point from both ends. This triple construction from the Gettysburg Address is one of the most quoted examples of symploce in English."
   },
   {
     "question": "Which is an example of an oxymoron?",
@@ -5521,7 +5540,8 @@
       "She ran very quickly.",
       "He was a tall man."
     ],
-    "tier": 3
+    "tier": 3,
+    "context": "'Living death' smashes two contradictory words together, which is exactly what an oxymoron does — the term itself is an oxymoron, from Greek 'oxus' (sharp) and 'moros' (dull). Other famous oxymora include 'jumbo shrimp,' 'deafening silence,' and 'cruel kindness.' The literary power of oxymorons lies in forcing readers to hold two opposing ideas simultaneously."
   },
   {
     "question": "Which type of irony occurs when the audience knows something the character does not?",
@@ -5532,7 +5552,8 @@
       "Dramatic irony",
       "Sarcasm"
     ],
-    "tier": 4
+    "tier": 4,
+    "context": "Dramatic irony creates tension and suspense by letting the audience in on a secret the character doesn't know. The classic example is Romeo drinking poison at Juliet's side — the audience knows she's merely asleep, but he doesn't. Shakespeare and horror movies both rely heavily on this gap between audience knowledge and character ignorance."
   },
   {
     "question": "Situational irony occurs when ___?",
@@ -5543,7 +5564,8 @@
       "The audience knows more than the character",
       "A character is unaware of their own flaw"
     ],
-    "tier": 4
+    "tier": 4,
+    "context": "Situational irony is when reality pulls the rug out from under expectations — a fire station burns down, or a traffic safety officer gets a speeding ticket. It differs from dramatic irony (audience knows more than characters) and verbal irony (saying the opposite of what you mean). O. Henry built an entire career on situational irony, with 'The Gift of the Magi' being the quintessential example."
   },
   {
     "question": "The logical fallacy of concluding that because A preceded B, A caused B is called ___?",
@@ -5554,7 +5576,8 @@
       "Circular reasoning",
       "Red herring"
     ],
-    "tier": 4
+    "tier": 4,
+    "context": "Post hoc ergo propter hoc — Latin for 'after this, therefore because of this' — is the fallacy of confusing sequence with causation. Just because the rooster crows before sunrise doesn't mean the rooster causes the sun to rise. This fallacy is the engine behind most superstitions: you wore lucky socks, your team won, therefore the socks caused the victory."
   },
   {
     "question": "Circular reasoning (begging the question) occurs when the conclusion ___?",
@@ -5565,7 +5588,8 @@
       "Is stated too strongly",
       "Is supported by too many examples"
     ],
-    "tier": 4
+    "tier": 4,
+    "context": "Circular reasoning sneaks the conclusion into the premise, creating an argument that proves itself with itself — a logical ouroboros. 'The Bible is true because it's the word of God, and we know it's the word of God because the Bible says so' is a textbook example. The Latin name 'petitio principii' literally means 'assuming the starting point.'"
   },
   {
     "question": "A slippery slope argument claims that one step will inevitably lead to ___?",
@@ -5576,7 +5600,8 @@
       "A logical proof",
       "A stronger argument"
     ],
-    "tier": 4
+    "tier": 4,
+    "context": "The slippery slope fallacy imagines a chain of increasingly dire consequences tumbling from a single action, like dominoes of doom. It becomes fallacious when the causal links between steps are asserted without evidence — 'If we allow X, then Y, then Z, then total chaos!' Not all slope arguments are fallacious, though; some genuinely demonstrate a well-evidenced causal chain."
   },
   {
     "question": "Etymology is the study of ___?",
@@ -5587,7 +5612,8 @@
       "How sounds are produced",
       "How words are classified by part of speech"
     ],
-    "tier": 4
+    "tier": 4,
+    "context": "Etymology traces words back through time to their earliest known origins, revealing surprising family connections — like how 'salary' comes from Latin 'salarium' (salt money). The word 'etymology' itself comes from Greek 'etymon' (true sense) + 'logos' (study). It's the linguistic equivalent of ancestry research, but for words instead of people."
   },
   {
     "question": "The Latin prefix 'bene-' (as in 'benefit,' 'benevolent') means ___?",
@@ -5598,7 +5624,8 @@
       "Under or below",
       "Over or above"
     ],
-    "tier": 4
+    "tier": 4,
+    "context": "'Bene-' is Latin for 'well' or 'good,' making a 'benefit' literally a 'good deed' and a 'benevolent' person one who wishes well. Its evil twin is 'male-' (bad), which gives us 'malevolent,' 'malice,' and 'malfunction.' Even 'benediction' is just 'bene' + 'dictio' — a 'good saying,' or blessing."
   },
   {
     "question": "The Latin root 'dict-' (as in 'dictate,' 'predict,' 'verdict') means ___?",
@@ -5609,7 +5636,8 @@
       "To lead",
       "To do"
     ],
-    "tier": 4
+    "tier": 4,
+    "context": "'Dict-' comes from Latin 'dicere,' meaning 'to say or speak.' A 'dictator' originally was one who 'spoke' commands, a 'verdict' is a 'true saying,' and to 'predict' is to 'say before.' This root appears in over 50 common English words, making it one of the most productive Latin roots. Even 'dictionary' is literally a 'book of sayings.'"
   },
   {
     "question": "In 'Caesar came, saw, and conquered' (veni, vidi, vici), the lack of conjunctions is ___?",
@@ -5620,7 +5648,8 @@
       "Chiasmus",
       "Anaphora"
     ],
-    "tier": 4
+    "tier": 4,
+    "context": "Asyndeton is the deliberate omission of conjunctions between words or phrases, creating a rapid-fire, punchy rhythm. Caesar's 'veni, vidi, vici' is the most famous example — no 'and' needed when you're flexing that hard. The technique conveys speed and decisiveness, which is exactly the image Caesar wanted to project."
   },
   {
     "question": "In 'I am tired and hungry and cold and wet,' the repeated 'and' is ___?",
@@ -5631,7 +5660,8 @@
       "Anaphora",
       "Epistrophe"
     ],
-    "tier": 4
+    "tier": 4,
+    "context": "Polysyndeton is asyndeton's chatty opposite — it piles on conjunctions to create a sense of accumulation, exhaustion, or overwhelming abundance. Each repeated 'and' forces the reader to pause, making the list feel heavier and more relentless. Hemingway and the King James Bible both use polysyndeton extensively to build rhythmic, rolling prose."
   },
   {
     "question": "Prolepsis as a rhetorical device anticipates and answers a potential ___?",
@@ -5642,7 +5672,8 @@
       "Conclusion of the argument",
       "Definition of key terms"
     ],
-    "tier": 4
+    "tier": 4,
+    "context": "Prolepsis is the rhetorical equivalent of saying 'I know what you're thinking, and here's my answer' — it neutralizes objections before they're even raised. By addressing counterarguments preemptively, a speaker shows confidence and prevents the audience from mentally checking out. The term comes from Greek 'prolambanein,' meaning 'to anticipate.'"
   },
   {
     "question": "Aporia is a rhetorical device in which a speaker expresses ___?",
@@ -5653,7 +5684,8 @@
       "Sudden emotional outburst",
       "Praise through seeming blame"
     ],
-    "tier": 4
+    "tier": 4,
+    "context": "Aporia is the art of strategic uncertainty — a speaker pretends to be at a loss about how to proceed, which paradoxically draws the audience in. When Hamlet asks 'To be or not to be,' he's performing aporia, expressing genuine-seeming doubt about which path to choose. The Greek word means 'without passage,' suggesting a mental roadblock."
   },
   {
     "question": "The word 'literally' used as an intensifier ('I literally died laughing') is an example of ___?",
@@ -5664,7 +5696,8 @@
       "Semantic bleaching (loss of original meaning through overuse)",
       "Metaphor"
     ],
-    "tier": 4
+    "tier": 4,
+    "context": "Semantic bleaching occurs when a word loses its original meaning through overuse, becoming just a generic intensifier. 'Literally' once meant 'in a literal sense,' but centuries of hyperbolic use have bleached it to mean simply 'really, very much.' The same fate befell 'really' (once meaning 'in reality'), 'truly,' and 'very' (originally meaning 'truthfully')."
   },
   {
     "question": "Which sentence best demonstrates kairos (the rhetorical principle of timeliness)?",
@@ -5675,7 +5708,8 @@
       "The argument used strong emotional appeals.",
       "The speaker had excellent credentials."
     ],
-    "tier": 4
+    "tier": 4,
+    "context": "Kairos is the Greek concept of the 'right moment' — the idea that the same argument can be powerful or pointless depending on when it's delivered. Speaking about disaster preparedness on the anniversary of a disaster leverages kairos because the audience is already emotionally primed. Unlike chronos (sequential time), kairos is about seizing the opportune moment for maximum rhetorical impact."
   },
   {
     "question": "Which is an example of a portmanteau formed from 'smoke' and 'fog'?",
@@ -5686,7 +5720,8 @@
       "Fogsmoke",
       "Smoggy"
     ],
-    "tier": 4
+    "tier": 4,
+    "context": "Lewis Carroll coined the term 'portmanteau word' in 'Through the Looking-Glass,' comparing it to a suitcase with two compartments. 'Smog' blends 'smoke' and 'fog' — it was coined in 1905 London, where coal smoke and fog were a deadly daily reality. Other famous portmanteaux include 'brunch' (breakfast + lunch) and 'motel' (motor + hotel)."
   },
   {
     "question": "A hasty generalization fallacy occurs when a conclusion is drawn from ___?",
@@ -5697,7 +5732,8 @@
       "A famous authority figure",
       "Multiple valid studies"
     ],
-    "tier": 5
+    "tier": 5,
+    "context": "Hasty generalization leaps from a tiny sample to a sweeping conclusion — like visiting one restaurant in Paris and declaring all French food terrible. It's the logical foundation of most stereotypes and prejudices. The antidote is a sufficiently large, representative sample — which is why statistics exists as a discipline."
   },
   {
     "question": "An appeal to authority fallacy occurs when someone argues a claim is true because ___?",
@@ -5708,7 +5744,8 @@
       "An authority figure believes it, regardless of their relevant expertise",
       "The logic is airtight"
     ],
-    "tier": 5
+    "tier": 5,
+    "context": "Citing a relevant expert is perfectly valid reasoning, but the appeal to authority becomes fallacious when the 'expert' has no expertise in the topic at hand. A celebrity endorsing a medical treatment or a physicist opining on economics are classic examples. The Latin name 'argumentum ad verecundiam' literally means 'argument from respect.'"
   },
   {
     "question": "In classical rhetoric, 'dispositio' refers to ___?",
@@ -5719,7 +5756,8 @@
       "Delivery and pronunciation",
       "The speaker's character"
     ],
-    "tier": 5
+    "tier": 5,
+    "context": "Dispositio is the second of the five classical canons of rhetoric, covering how to arrange your arguments for maximum effect. Even the most brilliant ideas (inventio) fall flat without good organization — dispositio is the blueprint that structures a speech from introduction to conclusion. The standard classical arrangement was: exordium, narratio, confirmatio, refutatio, and peroratio."
   },
   {
     "question": "Which is NOT one of the five classical canons of rhetoric?",
@@ -5730,7 +5768,8 @@
       "Actio (delivery)",
       "Dialectica (logic was considered separate from rhetoric in classical theory)"
     ],
-    "tier": 5
+    "tier": 5,
+    "context": "The five classical canons are inventio (invention), dispositio (arrangement), elocutio (style), memoria (memory), and actio (delivery). Dialectica — the art of logical reasoning and debate — was considered a separate discipline in the trivium alongside grammar and rhetoric. While rhetoric and dialectic are close cousins, the Greeks and Romans treated them as distinct arts."
   },
   {
     "question": "Zeugma is rhetorically effective because it ___?",
@@ -5741,7 +5780,8 @@
       "Makes the sentence longer and more complex",
       "Shows the speaker's vocabulary range"
     ],
-    "tier": 5
+    "tier": 5,
+    "context": "Zeugma yokes two unlike things under a single verb, forcing the reader to do a double-take — as in Dickens' 'She lowered her standards and her neckline.' The humor comes from the unexpected shift between literal and figurative meanings sharing the same grammatical structure. The word comes from Greek 'zeugma' meaning 'yoke,' the same device that harnesses two oxen together."
   },
   {
     "question": "The term 'hapax legomenon' refers to a word that ___?",
@@ -5752,6 +5792,7 @@
       "Cannot be traced to any root language",
       "Is used only in formal writing"
     ],
-    "tier": 5
+    "tier": 5,
+    "context": "Hapax legomenon is Greek for 'said once' — these are words that appear exactly once in an entire text or body of work. The Bible and Shakespeare's works are full of them, and they're a nightmare for translators who have zero context for the word's meaning. Some hapax legomena, like Shakespeare's 'honorificabilitudinitatibus,' were probably coined just for fun."
   }
 ]
