@@ -268,23 +268,34 @@ def can_ranged_attack(player, monster, dungeon) -> bool:
 
 
 def _line_of_sight(x0, y0, x1, y1, dungeon) -> bool:
-    """Bresenham line-of-sight check. Returns True if path is clear."""
+    """Bresenham line-of-sight check with corner-cutting prevention.
+    Returns True if path is clear (no walls, doors, or obstacles)."""
     dx, dy = abs(x1 - x0), abs(y1 - y0)
     sx = 1 if x1 > x0 else -1
     sy = 1 if y1 > y0 else -1
     err = dx - dy
     cx, cy = x0, y0
     while True:
-        if (cx, cy) != (x0, y0) and (cx, cy) != (x1, y1):
-            if not dungeon.is_walkable(cx, cy):
-                return False
         if cx == x1 and cy == y1:
             break
         e2 = 2 * err
-        if e2 > -dy:
+        step_x = e2 > -dy
+        step_y = e2 < dx
+        if step_x and step_y:
+            # Diagonal step: check BOTH adjacent tiles to prevent corner-cutting.
+            # An arrow can't pass through a diagonal gap between two walls.
+            adj_x_blocked = not dungeon.is_walkable(cx + sx, cy)
+            adj_y_blocked = not dungeon.is_walkable(cx, cy + sy)
+            if adj_x_blocked and adj_y_blocked:
+                return False  # both corners blocked — no passage
+        if step_x:
             err -= dy
             cx += sx
-        if e2 < dx:
+        if step_y:
             err += dx
             cy += sy
+        # Check the tile we moved to (skip origin and target)
+        if (cx, cy) != (x1, y1):
+            if not dungeon.is_walkable(cx, cy):
+                return False
     return True

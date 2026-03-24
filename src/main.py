@@ -3895,30 +3895,38 @@ class Game:
         _snd.play('player_healed')
 
     def _find_first_monster_in_path(self, x0, y0, x1, y1):
-        """Walk Bresenham line from (x0,y0) to (x1,y1). Return first alive monster hit, or None."""
+        """Walk Bresenham line from (x0,y0) to (x1,y1). Return first alive monster hit, or None.
+        Prevents corner-cutting through diagonal wall gaps."""
         dx, dy = abs(x1 - x0), abs(y1 - y0)
         sx = 1 if x1 > x0 else -1
         sy = 1 if y1 > y0 else -1
         err = dx - dy
         cx, cy = x0, y0
         while True:
-            if (cx, cy) != (x0, y0):
+            if cx == x1 and cy == y1:
+                break
+            e2 = 2 * err
+            step_x = e2 > -dy
+            step_y = e2 < dx
+            # Diagonal step: block if both corners are walls
+            if step_x and step_y:
+                if (not self.dungeon.is_walkable(cx + sx, cy)
+                        and not self.dungeon.is_walkable(cx, cy + sy)):
+                    return None  # blocked by corner
+            if step_x:
+                err -= dy
+                cx += sx
+            if step_y:
+                err += dx
+                cy += sy
+            if (cx, cy) != (x1, y1):
                 # Check for monster at this tile
                 for m in self.monsters:
                     if m.alive and m.x == cx and m.y == cy:
                         return m
-                # Check for wall (potion shatters on wall)
+                # Check for wall (projectile stops)
                 if not self.dungeon.is_walkable(cx, cy):
                     return None
-            if cx == x1 and cy == y1:
-                break
-            e2 = 2 * err
-            if e2 > -dy:
-                err -= dy
-                cx += sx
-            if e2 < dx:
-                err += dx
-                cy += sy
         # Check target tile for monster
         for m in self.monsters:
             if m.alive and m.x == x1 and m.y == y1:
