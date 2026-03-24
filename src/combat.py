@@ -120,7 +120,7 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
         dragon_scales = getattr(monster, 'dragon_scales', 0)
         if dragon_scales > 0 and not getattr(weapon, 'ignore_resistances', False):
             if player.has_effect('in_pit'):
-                damage = damage * 2  # double damage from below!
+                damage = damage * 4  # devastating underbelly strike from below!
             else:
                 damage = max(1, int(damage * (1.0 - dragon_scales)))
 
