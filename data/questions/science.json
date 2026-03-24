@@ -9,7 +9,7 @@
       "Nitrogen",
       "Helium"
     ],
-    "context": "Water is made of two hydrogen atoms bonded to one oxygen atom (H₂O). This simple molecule is essential for all known life. Water is unique because it expands when it freezes — which is why ice floats, insulating lakes and oceans so life can survive beneath the surface."
+    "context": "Water (H2O) is two hydrogen atoms bonded to one oxygen atom. It is the only common substance found naturally in all three states: solid (ice), liquid (water), and gas (steam). Water is essential for all known life."
   },
   {
     "tier": 1,
@@ -21,7 +21,7 @@
       "Magnetic field",
       "Atmosphere"
     ],
-    "context": "Photosynthesis is the process plants use to convert sunlight, water, and carbon dioxide into glucose (sugar) and oxygen. It's the foundation of almost all food chains on Earth — without it, most life would not exist."
+    "context": "Mass is the amount of matter in an object, and gravity is the force of attraction between masses. The more massive an object, the stronger its gravitational pull. Earth's mass is what keeps us on the ground and the Moon in orbit."
   },
   {
     "tier": 1,
@@ -33,7 +33,7 @@
       "Oxygen",
       "Nitrogen"
     ],
-    "context": "Gravity is the force that attracts objects with mass toward each other. On Earth, it pulls everything toward the center of the planet at 9.8 m/s². Isaac Newton famously described it after (allegedly) watching an apple fall from a tree."
+    "context": "The Sun fuses hydrogen atoms into helium at its core, where temperatures reach 15 million degrees Celsius. This nuclear fusion releases enormous energy -- the Sun converts about 600 million tons of hydrogen every second."
   },
   {
     "tier": 1,
@@ -45,7 +45,7 @@
       "Liver",
       "Kidney"
     ],
-    "context": "The speed of light is approximately 299,792,458 meters per second — the fastest anything can travel in the universe. At this speed, light from the Sun takes about 8 minutes and 20 seconds to reach Earth."
+    "context": "The human heart beats about 100,000 times per day, pumping roughly 7,500 liters of blood. It has four chambers and the blood it circulates delivers oxygen and nutrients to every cell in your body."
   },
   {
     "tier": 1,
@@ -57,7 +57,7 @@
       "Digestion",
       "Osmosis"
     ],
-    "context": "DNA (deoxyribonucleic acid) is the molecule that carries the genetic instructions for life. Its famous double-helix structure was discovered by James Watson and Francis Crick in 1953, with crucial X-ray crystallography work by Rosalind Franklin."
+    "context": "Photosynthesis converts sunlight, water, and carbon dioxide into glucose and oxygen. The green pigment chlorophyll in plant leaves captures light energy. Almost all life on Earth depends on photosynthesis."
   },
   {
     "tier": 1,
@@ -853,17 +853,6 @@
   },
   {
     "tier": 2,
-    "question": "Chemical symbol for gold?",
-    "answer": "Au",
-    "choices": [
-      "Au",
-      "Go",
-      "Gd",
-      "Ag"
-    ]
-  },
-  {
-    "tier": 2,
     "question": "Chemical symbol for iron?",
     "answer": "Fe",
     "choices": [
@@ -1458,17 +1447,6 @@
   },
   {
     "tier": 3,
-    "question": "The unit of electric current is the ___?",
-    "answer": "Ampere",
-    "choices": [
-      "Ampere",
-      "Volt",
-      "Watt",
-      "Ohm"
-    ]
-  },
-  {
-    "tier": 3,
     "question": "Frequency x Wavelength = ___?",
     "answer": "Wave speed",
     "choices": [
@@ -2004,17 +1982,6 @@
       "Acceleration",
       "Speed",
       "Distance"
-    ]
-  },
-  {
-    "tier": 3,
-    "question": "Net force = mass x ___?",
-    "answer": "Acceleration",
-    "choices": [
-      "Acceleration",
-      "Velocity",
-      "Speed",
-      "Weight"
     ]
   },
   {
@@ -2928,17 +2895,6 @@
       "m",
       "v",
       "E"
-    ]
-  },
-  {
-    "tier": 5,
-    "question": "Second law of thermodynamics: entropy of an isolated system always ___?",
-    "answer": "Increases",
-    "choices": [
-      "Increases",
-      "Decreases",
-      "Stays constant",
-      "Oscillates"
     ]
   },
   {

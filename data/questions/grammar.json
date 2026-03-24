@@ -573,17 +573,6 @@
   },
   {
     "tier": 1,
-    "question": "Which sentence type gives a command? ",
-    "answer": "Imperative",
-    "choices": [
-      "Declarative",
-      "Interrogative",
-      "Imperative",
-      "Exclamatory"
-    ]
-  },
-  {
-    "tier": 1,
     "question": "A noun names a person, place, thing, or ___?",
     "answer": "Idea",
     "choices": [
@@ -3903,28 +3892,6 @@
       "While/when"
     ],
     "answer": "Neither/nor"
-  },
-  {
-    "tier": 4,
-    "question": "The case of a pronoun used as a subject is ___?",
-    "choices": [
-      "Objective",
-      "Possessive",
-      "Nominative",
-      "Reflexive"
-    ],
-    "answer": "Nominative"
-  },
-  {
-    "tier": 4,
-    "question": "The case of a pronoun used as an object is ___?",
-    "choices": [
-      "Nominative",
-      "Possessive",
-      "Objective",
-      "Reflexive"
-    ],
-    "answer": "Objective"
   },
   {
     "tier": 4,
