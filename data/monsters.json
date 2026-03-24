@@ -3655,7 +3655,7 @@
     ],
     "min_level": 8,
     "max_level": 23,
-    "hp": 250,
+    "hp": 120,
     "thac0": 12,
     "speed": 10,
     "attacks": [
@@ -18710,7 +18710,7 @@
     ],
     "min_level": 3,
     "max_level": 15,
-    "hp": 200,
+    "hp": 100,
     "thac0": 14,
     "speed": 10,
     "attacks": [
@@ -19786,7 +19786,7 @@
     ],
     "min_level": 83,
     "max_level": 83,
-    "hp": 800,
+    "hp": 1200,
     "thac0": -16,
     "speed": 10,
     "attacks": [
