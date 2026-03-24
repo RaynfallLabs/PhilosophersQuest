@@ -45,6 +45,7 @@ EFFECT_INFO: dict[str, tuple] = {
     'immobilized':        ('Immobilized',        (180, 130,  60), 'Trapped! Cannot move'),
     'in_pit':             ('In Pit',             (140, 100,  60), 'Stuck in a pit; must climb out'),
     'silenced':           ('Silenced',           (120, 120, 160), 'Cannot cast spells or read scrolls'),
+    'empowered':          ('Empowered',          (255, 200,  80), 'Next melee attack deals 3x damage'),
     # ---- Buffs ----
     'hasted':             ('Hasted',             (245, 245,  60), 'Extra action each turn'),
     'invisible':          ('Invisible',          (185, 235, 235), 'Monsters have 30% miss chance'),

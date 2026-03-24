@@ -998,6 +998,36 @@ LEARNABLE_SPELLS: dict[str, dict] = {
         'mp_cost': 15, 'quiz_tier': 1, 'needs_target': False,
         'desc': 'Summon a horde of undead minions to fight for you. Give me some sugar, baby.',
     },
+    'cleanse_spell': {
+        'name': 'Cleanse', 'effect': 'cleanse_self', 'power': '',
+        'mp_cost': 4,  'quiz_tier': 1, 'needs_target': False,
+        'desc': 'Remove one negative status effect.',
+    },
+    'empower_spell': {
+        'name': 'Empower', 'effect': 'empower_next', 'power': '',
+        'mp_cost': 8,  'quiz_tier': 2, 'needs_target': False,
+        'desc': 'Next melee attack deals 3x damage.',
+    },
+    'smite_spell': {
+        'name': 'Smite', 'effect': 'smite', 'power': '6d8',
+        'mp_cost': 12, 'quiz_tier': 3, 'needs_target': True,
+        'desc': 'Massive holy damage, 6d8 (scales with chain + INT).',
+    },
+    'summon_guardian_spell': {
+        'name': 'Summon Guardian', 'effect': 'summon_guardian', 'power': '',
+        'mp_cost': 10, 'quiz_tier': 3, 'needs_target': False,
+        'desc': 'Summon a guardian pet for 20 turns.',
+    },
+    'meteor_spell': {
+        'name': 'Meteor', 'effect': 'meteor', 'power': '5d8',
+        'mp_cost': 16, 'quiz_tier': 4, 'needs_target': False,
+        'desc': 'Massive fire AoE, 5d8 to all visible monsters.',
+    },
+    'time_freeze_spell': {
+        'name': 'Time Freeze', 'effect': 'time_freeze', 'power': '',
+        'mp_cost': 20, 'quiz_tier': 5, 'needs_target': False,
+        'desc': 'Freeze all monsters for 5 turns. The ultimate emergency.',
+    },
 }
 
 
@@ -1089,6 +1119,8 @@ class Game:
         self._melee_targeting   = False    # True when using A-key melee targeting
         self._throw_targeting   = False    # True when throwing a potion
         self._observe_targeting = False    # True when using O-key observe
+        self._wand_targeting    = False    # True when aiming a combat wand
+        self._pending_wand      = None     # Wand being aimed
         self._throw_potion      = None     # Potion being thrown
         self._throw_reach       = 0        # Throw range based on STR
         # Map view toggle: 'full' = fit entire dungeon, 'close' = scrolling close-up
@@ -1696,6 +1728,8 @@ class Game:
                     self._throw_targeting = False
                     self._throw_potion = None
                     self._observe_targeting = False
+                    self._wand_targeting = False
+                    self._pending_wand = None
                 self.state = STATE_PLAYER
                 return True
             if self.state == STATE_STORY_POPUP:
@@ -5918,6 +5952,42 @@ class Game:
             self._advance_turn()
             return
 
+        # Combat wands: open targeting cursor first (like ranged weapons)
+        _TARGETED_EFFECTS = {
+            'sleep_monster', 'slow_monster', 'confuse_monster', 'paralyze_monster',
+            'blind_monster', 'stoning', 'fire_bolt', 'cold_bolt', 'lightning_bolt',
+            'acid_spray', 'magic_missile', 'striking', 'death_ray', 'cancellation',
+            'polymorph_monster', 'fear_monster', 'charm_monster', 'poison_monster',
+            'disease_monster', 'curse_monster', 'teleport_monster', 'drain_life',
+            'disintegrate', 'weaken_monster', 'drain_magic', 'dispel_magic',
+        }
+        if wand.effect in _TARGETED_EFFECTS:
+            self._pending_wand = wand
+            self._wand_targeting = True
+            self._melee_targeting = False
+            self._throw_targeting = False
+            self._observe_targeting = False
+            px, py = self.player.x, self.player.y
+            candidates = [
+                m for m in self.monsters
+                if m.alive and (m.x, m.y) in self.visible
+            ]
+            candidates.sort(key=lambda m: abs(m.x - px) + abs(m.y - py))
+            self._target_candidates = candidates
+            self._target_idx = 0
+            if candidates:
+                self.target_cursor_x = candidates[0].x
+                self.target_cursor_y = candidates[0].y
+            else:
+                self.target_cursor_x = px
+                self.target_cursor_y = py
+            self.state = STATE_TARGET
+            self.add_message(
+                "Aim wand -- arrow keys to target, TAB to cycle, ENTER to fire, ESC to cancel.",
+                'info'
+            )
+            return
+
         display = self._display_name(wand)
         self.quiz_title = f"INVOKING {display.upper()}  --  SCIENCE"
         self.state = STATE_QUIZ
@@ -5969,6 +6039,10 @@ class Game:
                           self.player.get_quiz_extra_seconds('science'),
             base_seconds=self.player.get_quiz_timer('science'),
         )
+
+    def _int_scaled_damage(self, base_dmg: int) -> int:
+        """Scale magic damage by INT: 1.0x at INT 0, 2.0x at INT 10, 3.0x at INT 20."""
+        return max(1, int(base_dmg * (1.0 + self.player.INT * 0.1)))
 
     def _apply_wand_effect(self, wand: 'Wand'):
         import random as _rng
@@ -6076,7 +6150,7 @@ class Game:
                         'disease_monster', 'curse_monster', 'teleport_monster',
                         'drain_life', 'disintegrate', 'weaken_monster',
                         'drain_magic', 'dispel_magic'):
-            target = self._nearest_visible_monster()
+            target = getattr(self, '_wand_override_target', None) or self._nearest_visible_monster()
             if target is None:
                 self.add_message("The wand hums but finds no target.", 'info')
                 return
@@ -6113,7 +6187,7 @@ class Game:
                 )
 
             elif effect == 'fire_bolt':
-                dmg = roll(wand.power) if wand.power else 6
+                dmg = self._int_scaled_damage(roll(wand.power) if wand.power else 6)
                 actual = target.take_damage(dmg)
                 self.add_message(
                     f"A bolt of fire strikes the {target.name} for {actual} damage!", 'success'
@@ -6122,7 +6196,7 @@ class Game:
                     self._on_monster_killed(target)
 
             elif effect == 'cold_bolt':
-                dmg = roll(wand.power) if wand.power else 4
+                dmg = self._int_scaled_damage(roll(wand.power) if wand.power else 4)
                 actual = target.take_damage(dmg)
                 target.add_effect('slowed', 4)
                 self.add_message(
@@ -6132,9 +6206,7 @@ class Game:
                     self._on_monster_killed(target)
 
             elif effect == 'lightning_bolt':
-                # Shock resist blocks all damage
-                from status_effects import DAMAGE_IMMUNITY
-                dmg = roll(wand.power) if wand.power else 10
+                dmg = self._int_scaled_damage(roll(wand.power) if wand.power else 10)
                 actual = target.take_damage(dmg)
                 if actual > 0:
                     target.add_effect('stunned', 3)
@@ -6147,7 +6219,7 @@ class Game:
                     self._on_monster_killed(target)
 
             elif effect == 'acid_spray':
-                dmg = roll(wand.power) if wand.power else 4
+                dmg = self._int_scaled_damage(roll(wand.power) if wand.power else 4)
                 actual = target.take_damage(dmg)
                 target.add_effect('diseased', 6)
                 self.add_message(
@@ -6158,7 +6230,7 @@ class Game:
 
             elif effect == 'magic_missile':
                 # Irresistible: bypasses all resistances
-                dmg = roll(wand.power) + 1 if wand.power else 5
+                dmg = self._int_scaled_damage(roll(wand.power) + 1 if wand.power else 5)
                 target.hp = max(0, target.hp - dmg)
                 if target.hp == 0:
                     target.alive = False
@@ -6169,7 +6241,7 @@ class Game:
                     self._on_monster_killed(target)
 
             elif effect == 'striking':
-                dmg = roll(wand.power) if wand.power else 10
+                dmg = self._int_scaled_damage(roll(wand.power) if wand.power else 10)
                 actual = target.take_damage(dmg)
                 self.add_message(
                     f"The wand slams into the {target.name} for {actual} physical damage!", 'success'
@@ -6261,7 +6333,7 @@ class Game:
 
             elif effect == 'drain_life':
                 from dice import roll
-                dmg = roll(wand.power) if wand.power else _rng.randint(3, 10)
+                dmg = self._int_scaled_damage(roll(wand.power) if wand.power else _rng.randint(3, 10))
                 actual = target.take_damage(dmg)
                 heal = min(actual, self.player.max_hp - self.player.hp)
                 self.player.hp += heal
@@ -6388,7 +6460,7 @@ class Game:
             visible_monsters = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
             total_dmg = 0
             for m in visible_monsters:
-                dmg = _rng.randint(5, 20)
+                dmg = self._int_scaled_damage(_rng.randint(5, 20))
                 actual = m.take_damage(dmg)
                 total_dmg += actual
                 if not m.alive:
@@ -6399,7 +6471,7 @@ class Game:
             from dice import roll
             visible_monsters = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
             for m in visible_monsters:
-                dmg = roll(wand.power) if wand.power else _rng.randint(8, 24)
+                dmg = self._int_scaled_damage(roll(wand.power) if wand.power else _rng.randint(8, 24))
                 actual = m.take_damage(dmg)
                 if not m.alive:
                     self._on_monster_killed(m)
@@ -6463,7 +6535,7 @@ class Game:
             else:
                 total = 0
                 for m in all_monsters:
-                    dmg = _roll(wand.power) if wand.power else _rng.randint(15, 30)
+                    dmg = self._int_scaled_damage(_roll(wand.power) if wand.power else _rng.randint(15, 30))
                     actual = m.take_damage(dmg)
                     total += actual
                     if not m.alive:
@@ -7696,12 +7768,20 @@ class Game:
             base_seconds=self.player.get_quiz_timer('science'),
         )
 
+    # Spell chain multipliers — same philosophy as weapon chain multipliers
+    _SPELL_CHAIN_MULTS = [0.5, 1.0, 1.8, 2.8, 4.0]
+
+    def _spell_damage(self, base_dmg: int, chain: int) -> int:
+        """Scale spell damage by chain multiplier AND INT."""
+        mult = self._SPELL_CHAIN_MULTS[min(chain - 1, len(self._SPELL_CHAIN_MULTS) - 1)]
+        return max(1, int(base_dmg * mult * (1.0 + self.player.INT * 0.1)))
+
     def _apply_spell_effect(self, spell: dict, chain: int, target=None):
         """Apply a learned spell's effect. Chain 1-5 scales damage/duration."""
         effect = spell['effect']
         power  = spell.get('power', '')
 
-        # Scale duration/damage with chain
+        # Scale duration with chain (utility/buff spells)
         chain_scale = chain / 5.0   # 0.2 .. 1.0
 
         # Handle the two spell-specific effects not in wand system
@@ -7714,7 +7794,7 @@ class Game:
         if effect == 'mass_ice':
             from dice import roll
             base_dmg = roll(power) if power else 10
-            scaled   = max(1, int(base_dmg * chain_scale))
+            scaled   = self._spell_damage(base_dmg, chain)
             hit = 0
             for m in list(self.monsters):
                 if m.alive and (m.x, m.y) in self.visible:
@@ -7730,7 +7810,7 @@ class Game:
         if effect == 'extra_heal':
             from dice import roll
             base = roll(power) if power else 8
-            healed = max(1, int(base * chain_scale))
+            healed = self._spell_damage(base, chain)
             self.player.restore_hp(healed)
             self.add_message(f"You are healed for {healed} HP! (chain {chain})", 'success')
             return
@@ -7742,6 +7822,77 @@ class Game:
             self.add_message(
                 f"The dead rise to serve you! {count} undead minions summoned! (chain {chain})",
                 'success')
+            return
+
+        # Cleanse: remove one negative status effect
+        if effect == 'cleanse_self':
+            from status_effects import DEBUFFS
+            active = [e for e in self.player.status_effects if e in DEBUFFS]
+            if active:
+                removed = active[0]
+                self.player.status_effects.pop(removed, None)
+                self.add_message(f"Cleansed! {removed.title()} removed.", 'success')
+            else:
+                self.add_message("You have no ailments to cleanse.", 'info')
+            return
+
+        # Empower: next melee attack deals 3x damage
+        if effect == 'empower_next':
+            self.player.status_effects['empowered'] = 1
+            self.add_message("Arcane power surges through your weapon! Next attack deals 3x damage!", 'success')
+            return
+
+        # Summon Guardian: temporary pet ally
+        if effect == 'summon_guardian':
+            from pet_system import Pet, random_species
+            px, py = self.player.x, self.player.y
+            for dx in range(-2, 3):
+                for dy in range(-2, 3):
+                    nx, ny = px + dx, py + dy
+                    if (nx, ny) == (px, py):
+                        continue
+                    if not self.dungeon.is_walkable(nx, ny):
+                        continue
+                    if any(m.alive and m.x == nx and m.y == ny for m in self.monsters):
+                        continue
+                    species = random_species()
+                    pet = Pet(species, nx, ny)
+                    pet.level = max(1, self.dungeon_level // 3)
+                    pet._refresh_stats()
+                    self.pets.append(pet)
+                    self.add_message(
+                        f"A {pet.name} materializes to guard you! (chain {chain})", 'success')
+                    return
+            self.add_message("No room to summon a guardian.", 'warning')
+            return
+
+        # Meteor: massive AoE fire damage
+        if effect == 'meteor':
+            from dice import roll as _roll_m
+            base_dmg = _roll_m(power) if power else 20
+            scaled = self._spell_damage(base_dmg, chain)
+            visible_monsters = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
+            kills = 0
+            for m in visible_monsters:
+                actual = m.take_damage(scaled)
+                if not m.alive:
+                    self._on_monster_killed(m)
+                    kills += 1
+            self.add_message(
+                f"A meteor crashes down! {len(visible_monsters)} creatures take {scaled} fire damage! "
+                f"({kills} slain, chain {chain})", 'success')
+            return
+
+        # Time Freeze: freeze all monsters
+        if effect == 'time_freeze':
+            dur = max(3, int(5 * chain_scale))
+            count = 0
+            for m in self.monsters:
+                if m.alive:
+                    m.add_effect('paralyzed', dur)
+                    count += 1
+            self.add_message(
+                f"TIME FREEZES! {count} creatures locked in place for {dur} turns! (chain {chain})", 'success')
             return
 
         # Scale status durations for self-buff spells
@@ -7764,7 +7915,7 @@ class Game:
             from dice import roll as _roll
             if effect == 'magic_missile':
                 base_dmg = _roll(power) if power else 4
-                scaled = max(1, int(base_dmg * chain_scale))
+                scaled = self._spell_damage(base_dmg, chain)
                 target.hp = max(0, target.hp - scaled)
                 if target.hp == 0:
                     target.alive = False
@@ -7774,7 +7925,7 @@ class Game:
                     self._on_monster_killed(target)
             elif effect == 'fire_bolt':
                 base_dmg = _roll(power) if power else 8
-                scaled = max(1, int(base_dmg * chain_scale))
+                scaled = self._spell_damage(base_dmg, chain)
                 actual = target.take_damage(scaled)
                 self.add_message(
                     f"A bolt of fire strikes the {target.name} for {actual} damage! (chain {chain})", 'success')
@@ -7782,7 +7933,7 @@ class Game:
                     self._on_monster_killed(target)
             elif effect == 'lightning_bolt':
                 base_dmg = _roll(power) if power else 10
-                scaled = max(1, int(base_dmg * chain_scale))
+                scaled = self._spell_damage(base_dmg, chain)
                 actual = target.take_damage(scaled)
                 if actual > 0:
                     target.add_effect('stunned', max(1, int(3 * chain_scale)))
@@ -7804,6 +7955,16 @@ class Game:
                 dur = max(2, int(8 * chain_scale))
                 target.add_effect('paralyzed', dur)
                 self.add_message(f"The {target.name} is paralyzed for {dur} turns! (chain {chain})", 'success')
+            elif effect == 'smite':
+                base_dmg = _roll(power) if power else 20
+                scaled = self._spell_damage(base_dmg, chain)
+                target.hp = max(0, target.hp - scaled)  # holy — bypasses resistances
+                if target.hp == 0:
+                    target.alive = False
+                self.add_message(
+                    f"Holy fire smites the {target.name} for {scaled} damage! (chain {chain})", 'success')
+                if not target.alive:
+                    self._on_monster_killed(target)
             else:
                 # Fallback: generic targeted damage
                 from dice import roll as _r
@@ -8790,8 +8951,12 @@ class Game:
             confirm_keys = confirm_keys + (pygame.K_y,)
         if self._observe_targeting:
             confirm_keys = confirm_keys + (pygame.K_o,)
+        if self._wand_targeting:
+            confirm_keys = confirm_keys + (pygame.K_z,)
         if key in confirm_keys:
-            if self._observe_targeting:
+            if self._wand_targeting:
+                self._confirm_wand_target()
+            elif self._observe_targeting:
                 self._confirm_observe()
             elif self._throw_targeting:
                 self._confirm_throw_target()
@@ -8799,6 +8964,73 @@ class Game:
                 self._confirm_melee_target()
             else:
                 self._confirm_ranged_target()
+
+    def _confirm_wand_target(self):
+        """Confirm wand target, then start the science quiz."""
+        from combat import _line_of_sight
+        cx, cy = self.target_cursor_x, self.target_cursor_y
+        self._wand_targeting = False
+        wand = self._pending_wand
+        self._pending_wand = None
+
+        target = next(
+            (m for m in self.monsters if m.alive and m.x == cx and m.y == cy), None
+        )
+        if not target or (cx, cy) not in self.visible:
+            self.add_message("No valid target.", 'warning')
+            self.state = STATE_PLAYER
+            return
+
+        # Line of sight check
+        if not _line_of_sight(self.player.x, self.player.y, cx, cy, self.dungeon):
+            self.add_message("No clear line of sight!", 'warning')
+            self.state = STATE_PLAYER
+            return
+
+        # Store target for the quiz callback
+        self._wand_target_monster = target
+        display = self._display_name(wand)
+        self.quiz_title = f"INVOKING {display.upper()}  --  SCIENCE"
+        self.state = STATE_QUIZ
+        _was_identified = getattr(wand, 'identified', False) or wand.id in self.player.known_item_ids
+
+        def on_complete(result):
+            self.state = STATE_PLAYER
+            wand.identified = True
+            self.player.known_item_ids.add(wand.id)
+            _qs_wand = getattr(self, 'quirk_system', None)
+            if _qs_wand:
+                _qs_wand.on_wand_zapped(wand.id, was_identified=_was_identified)
+
+            if not result.success:
+                self.add_message("The wand fizzes and fails to fire.", 'warning')
+                self._advance_turn()
+                return
+
+            wand.charges -= 1
+            # Override auto-target with stored target
+            self._wand_override_target = self._wand_target_monster
+            self._apply_wand_effect(wand)
+            self._wand_override_target = None
+            if wand.charges <= 0:
+                self.add_message("The wand crumbles to dust -- it is spent.", 'warning')
+                self.player.remove_from_inventory(wand)
+            else:
+                self.add_message(f"({wand.charges} charges remain)", 'info')
+            self._advance_turn()
+
+        self.quiz_engine.start_quiz(
+            mode='threshold',
+            subject='science',
+            tier=wand.quiz_tier,
+            callback=on_complete,
+            threshold=getattr(wand, 'quiz_threshold', 2),
+            wisdom=self.player.WIS,
+            timer_modifier=self.player.get_quiz_timer_modifier(),
+            extra_seconds=self.player.get_int_quiz_bonus() +
+                          self.player.get_quiz_extra_seconds('science'),
+            base_seconds=self.player.get_quiz_timer('science'),
+        )
 
     def _confirm_observe(self):
         """Describe whatever is at the cursor position. Free action."""

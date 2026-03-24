@@ -116,6 +116,11 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
         str_factor = 1.0 + max(0, player.STR - 10) * 0.03
         damage = max(1, int((base + enchant + ammo_bonus + buc_bonus) * mult * dtype_mult * str_factor))
 
+        # Empower spell: 3x damage on next hit, then clears
+        if player.has_effect('empowered'):
+            damage *= 3
+            player.status_effects.pop('empowered', None)
+
         # Dragon scales: massive damage reduction (bypassed by ignore_resistances or player in pit)
         dragon_scales = getattr(monster, 'dragon_scales', 0)
         if dragon_scales > 0 and not getattr(weapon, 'ignore_resistances', False):
