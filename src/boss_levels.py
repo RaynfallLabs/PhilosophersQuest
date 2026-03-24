@@ -9,7 +9,6 @@ Each boss level:
   - Boss spawns in the main chamber (second-to-last room)
 """
 import json
-import os
 
 from dungeon import Dungeon, Room, WALL, FLOOR, STAIRS_UP, STAIRS_DOWN, DOOR, ALTAR, ICE
 

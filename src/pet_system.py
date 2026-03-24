@@ -2,7 +2,6 @@
 Pet companion system — Soul Sphere creatures that follow and fight alongside the player.
 """
 import random
-import math
 
 # ---------------------------------------------------------------------------
 # Species data: 4 creature types × 3 evolution stages

@@ -1,6 +1,5 @@
 import json
 import math
-import os
 import random
 from paths import data_path
 
