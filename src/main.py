@@ -2670,7 +2670,14 @@ class Game:
             actual = self.player.take_damage(raw, trap.get('damage_type', 'physical'))
             if actual:
                 self.add_message(f"You take {actual} damage!", 'danger')
-        if trap_type == 'alarm':
+        if trap_type == 'pit':
+            # Pit trap creates a permanent pit at this location
+            if not hasattr(self.dungeon, 'pits'):
+                self.dungeon.pits = set()
+            self.dungeon.pits.add((x, y))
+            self.player.add_effect('in_pit', 1)
+            self.add_message("A pit opens beneath you! You must climb out.", 'danger')
+        elif trap_type == 'alarm':
             for m in self.monsters:
                 if m.alive and abs(m.x - x) <= 10 and abs(m.y - y) <= 10:
                     if m.ai_pattern == 'sessile':
