@@ -269,7 +269,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "_sprite": "player_robyn",
         "_no_dagger": True,
         "_start_weapon": "zireael",
-        "_start_spells": ["elder_blink", "elder_charge", "elder_scream"],
+        "_elder_blood": True,
         "_greeting": "Ciri steps through a portal. The Elder Blood sings in her veins.",
     },
     "ash ketchum": {
@@ -11709,6 +11709,29 @@ class Game:
             }
             powers.append(('bind_odinkiller', _bind_def, 0, 0))
 
+        # Elder Blood powers (Ciri build)
+        if (self.secret_build or {}).get('_elder_blood'):
+            _ELDER_POWERS = [
+                ('elder_blink', {
+                    'label': 'Blink',
+                    'desc': 'Teleport to safety. The Elder Blood bends space.',
+                    'cooldown': 8, 'uses': 0,
+                }),
+                ('elder_charge', {
+                    'label': 'Charge',
+                    'desc': 'Channel Elder Blood — next melee attack deals 3x damage.',
+                    'cooldown': 12, 'uses': 0,
+                }),
+                ('elder_scream', {
+                    'label': 'Scream',
+                    'desc': 'Unleash the Elder Blood — cold damage to all visible enemies.',
+                    'cooldown': 20, 'uses': 0,
+                }),
+            ]
+            for epid, epdef in _ELDER_POWERS:
+                cd = power_cds.get(epid, 0)
+                powers.append((epid, epdef, 0, cd))
+
         # Scales of Michael grants "Summon the Heavenly Host"
         if (any(getattr(i, 'id', '') == 'scales_of_michael' for i in pl.inventory)
                 and not getattr(self, 'heavenly_host_active', False)):
@@ -11726,18 +11749,7 @@ class Game:
         self.state = STATE_POWER_MENU
 
     def _power_menu_input(self, key: int):
-        key_to_idx = {
-            pygame.K_1: 0, pygame.K_KP1: 0,
-            pygame.K_2: 1, pygame.K_KP2: 1,
-            pygame.K_3: 2, pygame.K_KP3: 2,
-            pygame.K_4: 3, pygame.K_KP4: 3,
-            pygame.K_5: 4, pygame.K_KP5: 4,
-            pygame.K_6: 5, pygame.K_KP6: 5,
-            pygame.K_7: 6, pygame.K_KP7: 6,
-            pygame.K_8: 7, pygame.K_KP8: 7,
-            pygame.K_9: 8, pygame.K_KP9: 8,
-        }
-        idx = key_to_idx.get(key)
+        idx = self._AZ_KEYS.get(key)
         if idx is None or idx >= len(self._power_menu_list):
             return
         self.state = STATE_PLAYER
@@ -11914,6 +11926,33 @@ class Game:
             pl.add_effect('invisible', 8)
             pl.add_effect('phasing', 8)
             self.add_message(f"{label}: You transcend the physical -- Levitate + Invisible + Phase 8t.", 'success')
+
+        # --- Elder Blood powers (Ciri) ---
+        elif pid == 'elder_blink':
+            self._teleport_player()
+            self.add_message("The Elder Blood bends space — you vanish and reappear!", 'success')
+            pl.power_cooldowns['elder_blink'] = 8
+
+        elif pid == 'elder_charge':
+            pl.status_effects['empowered'] = 1
+            self.add_message("Elder Blood surges through your blade — next strike deals 3x damage!", 'success')
+            pl.power_cooldowns['elder_charge'] = 12
+
+        elif pid == 'elder_scream':
+            from dice import roll as _es_roll
+            base = _es_roll('4d8')
+            scaled = self._int_scaled_damage(base)
+            visible = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
+            kills = 0
+            for m in visible:
+                m.take_damage(scaled)
+                if not m.alive:
+                    self._on_monster_killed(m)
+                    kills += 1
+            self.add_message(
+                f"The Elder Blood SCREAMS! {len(visible)} creatures take {scaled} cold damage! ({kills} slain)",
+                'success')
+            pl.power_cooldowns['elder_scream'] = 20
 
         elif pid == 'bind_odinkiller':
             fenrir = next((m for m in self.monsters
