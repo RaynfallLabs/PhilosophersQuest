@@ -255,6 +255,23 @@ SECRET_BUILDS: dict[str, dict] = {
         "_lock_melee": True,
         "_greeting": "Good. Bad. I'm the guy with the gun.",
     },
+    "geralt of rivia": {
+        "STR": 14, "CON": 14, "DEX": 16, "INT": 10, "WIS": 12, "PER": 14,
+        "_sprite": "player_dad",
+        "_no_dagger": True,
+        "_start_weapon": "witcher_silver_blade",
+        "_start_spells": ["sign_aard", "sign_igni", "sign_quen", "sign_yrden", "sign_axii"],
+        "_start_potions": ["potion_of_healing", "potion_of_haste", "potion_of_fire_resist"],
+        "_greeting": "The Witcher unsheathes his silver blade. Wind's howling.",
+    },
+    "ciri": {
+        "STR": 8, "CON": 10, "DEX": 18, "INT": 14, "WIS": 12, "PER": 16,
+        "_sprite": "player_robyn",
+        "_no_dagger": True,
+        "_start_weapon": "zireael",
+        "_start_spells": ["elder_blink", "elder_charge", "elder_scream"],
+        "_greeting": "Ciri steps through a portal. The Elder Blood sings in her veins.",
+    },
     "ash ketchum": {
         "PER": 18, "INT": 16, "WIS": 12, "DEX": 10, "CON": 8, "STR": 6,
         "_sprite": "player_ash_ketchum",
@@ -1030,6 +1047,48 @@ LEARNABLE_SPELLS: dict[str, dict] = {
         'name': 'Time Freeze', 'effect': 'time_freeze', 'power': '',
         'mp_cost': 20, 'quiz_tier': 5, 'needs_target': False,
         'desc': 'Freeze all monsters for 5 turns. The ultimate emergency.',
+    },
+    # -- Witcher Signs (Geralt) --
+    'sign_aard': {
+        'name': 'Aard', 'effect': 'aard_blast', 'power': '3d6',
+        'mp_cost': 3, 'quiz_tier': 1, 'needs_target': True,
+        'desc': 'Telekinetic blast — damages and stuns a target.',
+    },
+    'sign_igni': {
+        'name': 'Igni', 'effect': 'fire_bolt', 'power': '4d6',
+        'mp_cost': 4, 'quiz_tier': 1, 'needs_target': True,
+        'desc': 'Directed blast of fire. Burns on contact.',
+    },
+    'sign_quen': {
+        'name': 'Quen', 'effect': 'shield_self', 'power': '',
+        'mp_cost': 5, 'quiz_tier': 1, 'needs_target': False,
+        'desc': 'Protective shield absorbs damage for 12 turns.',
+    },
+    'sign_yrden': {
+        'name': 'Yrden', 'effect': 'slow_monster', 'power': '',
+        'mp_cost': 3, 'quiz_tier': 1, 'needs_target': True,
+        'desc': 'Magic trap — slows a target for 8 turns.',
+    },
+    'sign_axii': {
+        'name': 'Axii', 'effect': 'confuse_monster', 'power': '',
+        'mp_cost': 4, 'quiz_tier': 1, 'needs_target': True,
+        'desc': 'Charms the mind — confuses a target for 10 turns.',
+    },
+    # -- Elder Blood (Ciri) --
+    'elder_blink': {
+        'name': 'Blink', 'effect': 'teleport_self', 'power': '',
+        'mp_cost': 3, 'quiz_tier': 1, 'needs_target': False,
+        'desc': 'Teleport to a random safe location. The Elder Blood bends space.',
+    },
+    'elder_charge': {
+        'name': 'Charge', 'effect': 'empower_next', 'power': '',
+        'mp_cost': 6, 'quiz_tier': 1, 'needs_target': False,
+        'desc': 'Channel Elder Blood — next melee attack deals 3x damage.',
+    },
+    'elder_scream': {
+        'name': 'Scream', 'effect': 'mass_ice', 'power': '4d8',
+        'mp_cost': 10, 'quiz_tier': 2, 'needs_target': False,
+        'desc': 'Unleash the Elder Blood — cold damage to all visible enemies.',
     },
 }
 
@@ -1885,6 +1944,29 @@ class Game:
                 sphere.identified = True
                 self.player.known_item_ids.add('soul_sphere')
                 self.player.inventory.append(sphere)
+
+        # -- Pre-learned spells (Witcher Signs, Elder Blood) ----------------
+        start_spells = b.get('_start_spells', [])
+        for spell_id in start_spells:
+            spell = LEARNABLE_SPELLS.get(spell_id)
+            if spell:
+                self.player.known_spells[spell_id] = spell['mp_cost']
+
+        # -- Extra starting potions ------------------------------------------
+        start_potions = b.get('_start_potions', [])
+        if start_potions:
+            try:
+                all_pots = load_items('potion')
+                for pid in start_potions:
+                    pot = next((p for p in all_pots if p.id == pid), None)
+                    if pot:
+                        import copy
+                        p = copy.copy(pot)
+                        p.identified = True
+                        self.player.known_item_ids.add(p.id)
+                        self.player.add_to_inventory(p)
+            except Exception:
+                pass
 
         # -- Always: starting lockpick charges ----------------------------
         self.player.lockpick_charges += 5   # equivalent to one basic lockpick
@@ -8263,6 +8345,22 @@ class Game:
                 dur = max(2, int(8 * chain_scale))
                 target.add_effect('paralyzed', dur)
                 self.add_message(f"The {target.name} is paralyzed for {dur} turns! (chain {chain})", 'success')
+            elif effect == 'aard_blast':
+                base_dmg = _roll(power) if power else 10
+                scaled = self._spell_damage(base_dmg, chain)
+                actual = target.take_damage(scaled)
+                target.add_effect('stunned', max(1, int(3 * chain_scale)))
+                self.add_message(
+                    f"Aard! A telekinetic blast strikes the {target.name} for {actual} damage and stuns it! (chain {chain})", 'success')
+                if not target.alive:
+                    self._on_monster_killed(target)
+            elif effect == 'slow_monster':
+                dur = max(2, int(8 * chain_scale))
+                target.add_effect('slowed', dur)
+                self.add_message(f"The {target.name} is slowed for {dur} turns! (chain {chain})", 'success')
+            elif effect == 'teleport_self':
+                self._teleport_player()
+                self.add_message("The Elder Blood bends space around you!", 'success')
             elif effect == 'smite':
                 base_dmg = _roll(power) if power else 20
                 scaled = self._spell_damage(base_dmg, chain)
