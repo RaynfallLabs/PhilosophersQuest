@@ -82,6 +82,10 @@ class Monster:
         self.is_seal_demon: bool = defn.get('is_seal_demon', False)
         self._annihilate_target = None  # set by seek_locust AI
 
+        # --- Piercing ranged state (set by _ranged_turn for caller to process) ---
+        self._piercing_collateral: list = []   # monsters in projectile path
+        self._force_piercing: bool = False      # next attack must use piercing
+
     # Backward compat: old pickled monsters may lack newer attributes
     _DEFAULTS = {
         '_flee_timer': 0, '_alerted': False, '_slow_skip': False,
@@ -223,7 +227,13 @@ class Monster:
                          'song', 'wail', 'charm', 'psionic', 'disintegrat'}
         if not self.attacks:
             return 0, f"The {self.name} flails helplessly!"
-        if self.ai_pattern == 'ranged' and not self._adjacent_to(player) and len(self.attacks) > 1:
+        if getattr(self, '_force_piercing', False):
+            # Piercing turn: must use a piercing ranged attack
+            self._force_piercing = False
+            piercing_atks = [a for a in self.attacks
+                             if a.get('piercing') and any(w in a.get('name', '').lower() for w in _RANGED_WORDS)]
+            atk = random.choice(piercing_atks) if piercing_atks else random.choice(self.attacks)
+        elif self.ai_pattern == 'ranged' and not self._adjacent_to(player) and len(self.attacks) > 1:
             ranged_atks = [a for a in self.attacks
                           if any(w in a.get('name', '').lower() for w in _RANGED_WORDS)]
             atk = random.choice(ranged_atks) if ranged_atks else random.choice(self.attacks)
@@ -585,15 +595,86 @@ class Monster:
     def _has_los(self, px, py, dungeon) -> bool:
         return _line_of_sight(self.x, self.y, px, py, dungeon)
 
+    def _has_clear_shot(self, px, py, dungeon, all_monsters) -> bool:
+        """True if LOS is clear of walls AND no allied monster blocks the path."""
+        if not _line_of_sight(self.x, self.y, px, py, dungeon):
+            return False
+        # Bresenham walk to check for monsters in the way
+        occupied = {(m.x, m.y) for m in all_monsters if m is not self and m.alive}
+        dx, dy = abs(px - self.x), abs(py - self.y)
+        sx = 1 if px > self.x else -1
+        sy = 1 if py > self.y else -1
+        err = dx - dy
+        cx, cy = self.x, self.y
+        while True:
+            if cx == px and cy == py:
+                break
+            e2 = 2 * err
+            if e2 > -dy:
+                err -= dy
+                cx += sx
+            if e2 < dx:
+                err += dx
+                cy += sy
+            if (cx, cy) != (px, py) and (cx, cy) in occupied:
+                return False
+        return True
+
+    def _monsters_in_path(self, px, py, all_monsters) -> list:
+        """Return monsters standing on tiles between self and (px, py)."""
+        occupied = {}
+        for m in all_monsters:
+            if m is not self and m.alive:
+                occupied[(m.x, m.y)] = m
+        result = []
+        dx, dy = abs(px - self.x), abs(py - self.y)
+        sx = 1 if px > self.x else -1
+        sy = 1 if py > self.y else -1
+        err = dx - dy
+        cx, cy = self.x, self.y
+        while True:
+            if cx == px and cy == py:
+                break
+            e2 = 2 * err
+            if e2 > -dy:
+                err -= dy
+                cx += sx
+            if e2 < dx:
+                err += dx
+                cy += sy
+            if (cx, cy) != (px, py) and (cx, cy) in occupied:
+                result.append(occupied[(cx, cy)])
+        return result
+
+    def _has_piercing_ranged(self) -> bool:
+        """True if this monster has at least one piercing ranged attack."""
+        _RANGED_WORDS = {'shoot', 'arrow', 'bolt', 'dart', 'spit', 'hurl',
+                         'volley', 'ray', 'blast', 'breath', 'spike', 'gaze',
+                         'song', 'wail', 'charm', 'psionic', 'disintegrat'}
+        for a in self.attacks:
+            if a.get('piercing') and any(w in a.get('name', '').lower() for w in _RANGED_WORDS):
+                return True
+        return False
+
     def _ranged_turn(self, player, dungeon, all_monsters, extra_occupied) -> bool:
         """Ranged AI: shoot when player is in LOS within range.
         If too close, try to back away. If too far or no LOS, approach."""
+        self._piercing_collateral = []  # reset each turn
         dist = max(abs(self.x - player.x), abs(self.y - player.y))  # Chebyshev
         has_los = self._has_los(player.x, player.y, dungeon)
 
-        # In range with LOS — shoot (return True so caller triggers attack)
+        # In range with LOS — check for clear shot or piercing override
         if has_los and 2 <= dist <= self._RANGED_MAX:
-            return True
+            if self._has_clear_shot(player.x, player.y, dungeon, all_monsters):
+                return True
+            # Shot blocked by ally — piercing monsters fire anyway
+            if self._has_piercing_ranged():
+                self._piercing_collateral = self._monsters_in_path(
+                    player.x, player.y, all_monsters)
+                self._force_piercing = True
+                return True
+            # No piercing — try to reposition
+            has_los = False  # fall through to approach/reposition
 
         # Adjacent — still attack (melee fallback) but try to retreat next turn
         if self._adjacent_to(player):
@@ -618,7 +699,7 @@ class Monster:
                     self.x, self.y = nx, ny
                     # After retreating, check if we can now shoot
                     new_dist = max(abs(self.x - player.x), abs(self.y - player.y))
-                    if new_dist >= 2 and self._has_los(player.x, player.y, dungeon):
+                    if new_dist >= 2 and self._has_clear_shot(player.x, player.y, dungeon, all_monsters):
                         return True  # retreat + shoot
                     return False
             # Can't retreat — fight in melee

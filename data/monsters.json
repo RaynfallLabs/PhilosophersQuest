@@ -1630,7 +1630,8 @@
       {
         "name": "fire_breath",
         "damage": "3d6",
-        "type": "fire"
+        "type": "fire",
+        "piercing": true
       },
       {
         "name": "goat_gore",
@@ -2065,7 +2066,8 @@
         "type": "physical",
         "effect": "confused",
         "effect_chance": 0.6,
-        "effect_duration": 10
+        "effect_duration": 10,
+        "piercing": true
       },
       {
         "name": "tentacle",
@@ -2314,7 +2316,8 @@
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.6,
-        "effect_duration": 6
+        "effect_duration": 6,
+        "piercing": true
       },
       {
         "name": "bite",
@@ -2566,7 +2569,8 @@
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.7,
-        "effect_duration": 8
+        "effect_duration": 8,
+        "piercing": true
       }
     ],
     "resistances": [
@@ -2662,7 +2666,8 @@
         "type": "cold",
         "effect": "frozen",
         "effect_chance": 0.6,
-        "effect_duration": 8
+        "effect_duration": 8,
+        "piercing": true
       }
     ],
     "resistances": [
@@ -2770,7 +2775,8 @@
         "type": "cold",
         "effect": "frozen",
         "effect_chance": 0.8,
-        "effect_duration": 10
+        "effect_duration": 10,
+        "piercing": true
       },
       {
         "name": "tail strike",
@@ -2844,7 +2850,8 @@
         "type": "cold",
         "effect": "frozen",
         "effect_chance": 0.7,
-        "effect_duration": 10
+        "effect_duration": 10,
+        "piercing": true
       }
     ],
     "resistances": [
@@ -3278,7 +3285,8 @@
       {
         "name": "shadow breath",
         "damage": "1d6",
-        "type": "magic"
+        "type": "magic",
+        "piercing": true
       }
     ],
     "resistances": [
@@ -3727,7 +3735,8 @@
         "type": "physical",
         "effect": "slowed",
         "effect_chance": 0.4,
-        "effect_duration": 5
+        "effect_duration": 5,
+        "piercing": true
       }
     ],
     "resistances": [
@@ -3769,7 +3778,8 @@
       {
         "name": "boulder hurl",
         "damage": "3d6",
-        "type": "physical"
+        "type": "physical",
+        "piercing": true
       },
       {
         "name": "crush",
@@ -3967,7 +3977,8 @@
       {
         "name": "acid spit",
         "damage": "2d8+1",
-        "type": "poison"
+        "type": "poison",
+        "piercing": true
       }
     ],
     "resistances": [
@@ -4173,7 +4184,8 @@
         "type": "magic",
         "effect": "confused",
         "effect_chance": 0.45,
-        "effect_duration": 7
+        "effect_duration": 7,
+        "piercing": true
       }
     ],
     "resistances": [
@@ -4224,7 +4236,8 @@
         "type": "cold",
         "effect": "frozen",
         "effect_chance": 0.45,
-        "effect_duration": 6
+        "effect_duration": 6,
+        "piercing": true
       }
     ],
     "resistances": [
@@ -4273,7 +4286,8 @@
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.5,
-        "effect_duration": 6
+        "effect_duration": 6,
+        "piercing": true
       }
     ],
     "resistances": [
@@ -4574,7 +4588,8 @@
         "type": "shadow",
         "effect": "poisoned",
         "effect_chance": 0.5,
-        "effect_duration": 8
+        "effect_duration": 8,
+        "piercing": true
       }
     ],
     "resistances": [
@@ -5876,7 +5891,8 @@
         "type": "poison",
         "effect": "poisoned",
         "effect_chance": 0.55,
-        "effect_duration": 10
+        "effect_duration": 10,
+        "piercing": true
       }
     ],
     "resistances": [
@@ -5971,7 +5987,8 @@
       {
         "name": "storm talons",
         "damage": "3d8+1",
-        "type": "lightning"
+        "type": "lightning",
+        "piercing": true
       },
       {
         "name": "divine breath",
@@ -5979,7 +5996,8 @@
         "type": "lightning",
         "effect": "paralyzed",
         "effect_chance": 0.4,
-        "effect_duration": 6
+        "effect_duration": 6,
+        "piercing": true
       }
     ],
     "resistances": [
@@ -6186,7 +6204,8 @@
         "type": "magic",
         "effect": "confused",
         "effect_chance": 0.5,
-        "effect_duration": 8
+        "effect_duration": 8,
+        "piercing": true
       },
       {
         "name": "brain_extraction",
@@ -6701,7 +6720,8 @@
         "type": "poison",
         "effect": "poisoned",
         "effect_chance": 0.5,
-        "effect_duration": 8
+        "effect_duration": 8,
+        "piercing": true
       }
     ],
     "resistances": [
@@ -6972,7 +6992,8 @@
         "type": "poison",
         "effect": "poisoned",
         "effect_chance": 0.3,
-        "effect_duration": 3
+        "effect_duration": 3,
+        "piercing": true
       }
     ],
     "resistances": [
@@ -7662,7 +7683,8 @@
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.6,
-        "effect_duration": 5
+        "effect_duration": 5,
+        "piercing": true
       }
     ],
     "resistances": [
@@ -8945,7 +8967,8 @@
       {
         "name": "lightning breath",
         "damage": "4d6+1",
-        "type": "lightning"
+        "type": "lightning",
+        "piercing": true
       },
       {
         "name": "constrict",
@@ -10909,7 +10932,8 @@
         "type": "magic",
         "effect": "slowed",
         "effect_chance": 0.3,
-        "effect_duration": 3
+        "effect_duration": 3,
+        "piercing": true
       }
     ],
     "resistances": [
@@ -11878,7 +11902,8 @@
         "type": "physical",
         "effect": null,
         "effect_chance": 0.0,
-        "effect_duration": 0
+        "effect_duration": 0,
+        "piercing": true
       }
     ],
     "resistances": [
@@ -11933,7 +11958,8 @@
         "type": "magic",
         "effect": "slowed",
         "effect_chance": 0.5,
-        "effect_duration": 5
+        "effect_duration": 5,
+        "piercing": true
       },
       {
         "name": "claw",
@@ -11998,7 +12024,8 @@
         "type": "magic",
         "effect": "frozen",
         "effect_chance": 0.45,
-        "effect_duration": 4
+        "effect_duration": 4,
+        "piercing": true
       },
       {
         "name": "wing_buffet",
@@ -13745,7 +13772,8 @@
         "type": "cold",
         "effect": "frozen",
         "effect_chance": 0.4,
-        "effect_duration": 4
+        "effect_duration": 4,
+        "piercing": true
       }
     ],
     "resistances": [
@@ -14754,7 +14782,8 @@
         "type": "cold",
         "effect": "slowed",
         "effect_chance": 0.4,
-        "effect_duration": 4
+        "effect_duration": 4,
+        "piercing": true
       },
       {
         "name": "drown pull",
@@ -14912,7 +14941,8 @@
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.6,
-        "effect_duration": 5
+        "effect_duration": 5,
+        "piercing": true
       },
       {
         "name": "magma fist",
@@ -15227,7 +15257,8 @@
         "type": "poison",
         "effect": "sleeping",
         "effect_chance": 0.45,
-        "effect_duration": 10
+        "effect_duration": 10,
+        "piercing": true
       }
     ],
     "resistances": [
@@ -15272,7 +15303,8 @@
         "type": "poison",
         "effect": "confused",
         "effect_chance": 0.7,
-        "effect_duration": 8
+        "effect_duration": 8,
+        "piercing": true
       },
       {
         "name": "tendril lash",
@@ -16358,7 +16390,8 @@
         "type": "physical",
         "effect": "slowed",
         "effect_chance": 0.3,
-        "effect_duration": 3
+        "effect_duration": 3,
+        "piercing": true
       }
     ],
     "resistances": [
@@ -16833,7 +16866,8 @@
         "type": "poison",
         "effect": "poisoned",
         "effect_chance": 0.4,
-        "effect_duration": 6
+        "effect_duration": 6,
+        "piercing": true
       },
       {
         "name": "bite",
@@ -16893,7 +16927,8 @@
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.5,
-        "effect_duration": 5
+        "effect_duration": 5,
+        "piercing": true
       },
       {
         "name": "bite",
@@ -16955,7 +16990,8 @@
         "type": "lightning",
         "effect": "slowed",
         "effect_chance": 0.4,
-        "effect_duration": 4
+        "effect_duration": 4,
+        "piercing": true
       },
       {
         "name": "bite",
@@ -17028,7 +17064,8 @@
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.6,
-        "effect_duration": 8
+        "effect_duration": 8,
+        "piercing": true
       },
       {
         "name": "tail strike",
@@ -17142,7 +17179,8 @@
         "type": "cold",
         "effect": "frozen",
         "effect_chance": 0.35,
-        "effect_duration": 4
+        "effect_duration": 4,
+        "piercing": true
       }
     ],
     "resistances": [
@@ -17297,7 +17335,8 @@
         "type": "poison",
         "effect": "poisoned",
         "effect_chance": 0.5,
-        "effect_duration": 8
+        "effect_duration": 8,
+        "piercing": true
       }
     ],
     "resistances": [
@@ -17447,7 +17486,8 @@
         "type": "physical",
         "effect": "confused",
         "effect_chance": 0.3,
-        "effect_duration": 6
+        "effect_duration": 6,
+        "piercing": true
       }
     ],
     "resistances": [
@@ -17494,7 +17534,8 @@
       {
         "name": "necrotic_pulse",
         "damage": "2d8+2",
-        "type": "drain"
+        "type": "drain",
+        "piercing": true
       }
     ],
     "resistances": [
@@ -17790,7 +17831,8 @@
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.6,
-        "effect_duration": 6
+        "effect_duration": 6,
+        "piercing": true
       }
     ],
     "resistances": [
@@ -17834,7 +17876,8 @@
         "type": "physical",
         "effect": "confused",
         "effect_chance": 0.7,
-        "effect_duration": 12
+        "effect_duration": 12,
+        "piercing": true
       },
       {
         "name": "brain_extraction",
@@ -18018,7 +18061,8 @@
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.7,
-        "effect_duration": 8
+        "effect_duration": 8,
+        "piercing": true
       },
       {
         "name": "tail_sweep",
@@ -18133,7 +18177,8 @@
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.8,
-        "effect_duration": 8
+        "effect_duration": 8,
+        "piercing": true
       },
       {
         "name": "tail_crush",
@@ -18270,7 +18315,8 @@
       {
         "name": "chaos_storm",
         "damage": "5d8+5",
-        "type": "physical"
+        "type": "physical",
+        "piercing": true
       }
     ],
     "resistances": [
@@ -18535,7 +18581,8 @@
       {
         "damage": "3d10+3",
         "type": "fire",
-        "name": "fire_breath"
+        "name": "fire_breath",
+        "piercing": true
       },
       {
         "damage": "2d8+2",
@@ -18640,7 +18687,8 @@
       {
         "damage": "6d10+8",
         "type": "magic",
-        "name": "apocalypse_blast"
+        "name": "apocalypse_blast",
+        "piercing": true
       },
       {
         "damage": "4d8+4",
@@ -18650,7 +18698,8 @@
       {
         "damage": "3d10+4",
         "type": "poison",
-        "name": "plague_breath"
+        "name": "plague_breath",
+        "piercing": true
       },
       {
         "damage": "3d8+3",
@@ -18982,7 +19031,8 @@
       {
         "name": "fire breath",
         "damage": "3d8+2",
-        "type": "fire"
+        "type": "fire",
+        "piercing": true
       },
       {
         "name": "slam",
@@ -19259,7 +19309,8 @@
         "type": "poison",
         "effect": "poisoned",
         "effect_chance": 0.6,
-        "effect_duration": 10
+        "effect_duration": 10,
+        "piercing": true
       },
       {
         "name": "constrict",
@@ -19614,7 +19665,8 @@
         "type": "physical",
         "effect": "stunned",
         "effect_chance": 0.35,
-        "effect_duration": 3
+        "effect_duration": 3,
+        "piercing": true
       }
     ],
     "ai_pattern": "aggressive",
@@ -19856,7 +19908,8 @@
       {
         "name": "miasma breath",
         "damage": "2d6+10",
-        "type": "poison"
+        "type": "poison",
+        "piercing": true
       }
     ],
     "ai_pattern": "hit_and_run",
