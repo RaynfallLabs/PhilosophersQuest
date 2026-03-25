@@ -899,6 +899,7 @@ STATE_ABANDON_QUEST  = 'abandon_quest'   # "Abandon your quest?" (no Stone)
 STATE_CHICKEN        = 'chicken'         # McFly popup
 STATE_VICTORY        = 'victory'
 STATE_DEAD           = 'dead'
+STATE_REVIEW_MISSED  = 'review_missed'     # post-death missed question review
 STATE_LOCKPICK       = 'lockpick'
 STATE_TARGET         = 'target'        # ranged targeting cursor
 STATE_EAT_MENU       = 'eat_menu'      # eat food / raw ingredient
@@ -1367,6 +1368,7 @@ class Game:
         self._save_on_quit      = True     # False when player explicitly exits without saving
         self.correct_answers    = 0        # total correct answers this run
         self.wrong_answers      = 0        # total wrong answers this run
+        self.missed_questions: list = []   # [{subject, question, correct, chosen}]
         self._score_saved       = False    # True after high score is written
         self.quiz_engine.on_answer = self._on_quiz_answer
         self.quirk_system = QuirkSystem(self)
@@ -1500,6 +1502,7 @@ class Game:
         self.ground_items  = state['ground_items']
         self.correct_answers = state.get('correct_answers', 0)
         self.wrong_answers   = state.get('wrong_answers', 0)
+        self.missed_questions = state.get('missed_questions', [])
         self.pets            = state.get('pets', [])
         # Abaddon quest state
         self.seals_broken   = state.get('seals_broken', set())
@@ -2002,6 +2005,9 @@ class Game:
             if self.state == STATE_PLAYER:
                 self.state = STATE_CONFIRM_EXIT
                 return True
+            if self.state == STATE_REVIEW_MISSED:
+                self.state = STATE_DEAD
+                return True
             if self.state in (STATE_DEAD, STATE_VICTORY):
                 return False
             return False
@@ -2091,6 +2097,15 @@ class Game:
             self._npc_encounter_input(key)
         elif self.state == STATE_JUDGMENT:
             self._judgment_input(key)
+        elif self.state == STATE_DEAD:
+            if key == pygame.K_r and self.missed_questions:
+                self._review_idx = 0
+                self.state = STATE_REVIEW_MISSED
+        elif self.state == STATE_REVIEW_MISSED:
+            if key in (pygame.K_RIGHT, pygame.K_DOWN, pygame.K_SPACE, pygame.K_RETURN):
+                self._review_idx = min(self._review_idx + 1, len(self.missed_questions) - 1)
+            elif key in (pygame.K_LEFT, pygame.K_UP):
+                self._review_idx = max(0, self._review_idx - 1)
 
         return True
 
@@ -5011,6 +5026,17 @@ class Game:
         else:
             self.wrong_answers += 1
             _snd.play('quiz_wrong')
+            # Store missed question for post-death review
+            qe = self.quiz_engine
+            q = qe.current_question
+            if q:
+                self.missed_questions.append({
+                    'subject': qe.subject,
+                    'question': q.get('question', ''),
+                    'correct': str(q.get('answer', '')),
+                    'chosen': qe.last_answer,
+                    'context': q.get('context', ''),
+                })
         # Quirk notifications
         qe = self.quiz_engine
         qs = getattr(self, 'quirk_system', None)
@@ -10089,6 +10115,8 @@ class Game:
             self._draw_victory_screen()
         elif self.state == STATE_DEAD:
             self._draw_death_screen()
+        elif self.state == STATE_REVIEW_MISSED:
+            self._draw_review_missed()
         elif self.state == STATE_HELP:
             self._draw_help_screen()
         elif self.state == STATE_LORE:
@@ -12459,8 +12487,86 @@ class Game:
             self.screen.blit(hs_s, (cx - hs_s.get_width() // 2, hs_y))
             hs_y += 18
 
+        # Review missed questions option
+        if self.missed_questions:
+            review_text = f"Press R to review {len(self.missed_questions)} missed questions"
+            review_surf = self.font_md.render(review_text, True, FP.GOLD_BRIGHT)
+            self.screen.blit(review_surf, (cx - review_surf.get_width() // 2, hs_y + 8))
+            hs_y += 28
+
         hint = self.font_md.render("Press ESC to close", True, FP.HINT_TEXT)
         self.screen.blit(hint, (cx - hint.get_width() // 2, hs_y + 6))
+
+    # ------------------------------------------------------------------
+    # Post-death missed question review
+    # ------------------------------------------------------------------
+
+    def _draw_review_missed(self):
+        """Page through missed questions with educational context."""
+        draw_overlay(self.screen, 190)
+        missed = self.missed_questions
+        if not missed:
+            self.state = STATE_DEAD
+            return
+
+        idx = getattr(self, '_review_idx', 0)
+        q = missed[idx]
+        W, H = GAME_W, WINDOW_H
+
+        bw = min(800, W - 40)
+        bh = min(600, H - 40)
+        bx = (W - bw) // 2
+        by = (H - bh) // 2
+
+        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.GOLD)
+        draw_header_bar(self.screen, (bx, by, bw, 44),
+                        text=f"REVIEW MISSED QUESTIONS  ({idx + 1}/{len(missed)})",
+                        font=self.font_md, text_color=FP.GOLD_BRIGHT)
+
+        y = by + 58
+
+        # Subject badge
+        subj_text = q['subject'].upper()
+        subj_surf = self.font_sm.render(subj_text, True, FP.FADED_TEXT)
+        self.screen.blit(subj_surf, (bx + 20, y))
+        y += 28
+
+        # Question
+        q_lines = self._wrap_text(q['question'], self.font_md, bw - 50)
+        for line in q_lines:
+            self.screen.blit(self.font_md.render(line, True, FP.PARCHMENT_LIGHT), (bx + 25, y))
+            y += 28
+        y += 10
+
+        # Your answer vs correct
+        self.screen.blit(
+            self.font_sm.render(f"Your answer:    {q['chosen']}", True, FP.DANGER_TEXT),
+            (bx + 25, y))
+        y += 24
+        self.screen.blit(
+            self.font_sm.render(f"Correct answer: {q['correct']}", True, FP.SUCCESS_TEXT),
+            (bx + 25, y))
+        y += 30
+
+        # Context
+        context = q.get('context', '')
+        if context:
+            draw_divider(self.screen, bx + 20, y, bw - 40)
+            y += 14
+            ctx_lines = self._wrap_text(context, self.font_sm, bw - 50)
+            for line in ctx_lines:
+                self.screen.blit(self.font_sm.render(line, True, FP.BODY_TEXT), (bx + 25, y))
+                y += 22
+
+        # Navigation hint
+        hint_parts = []
+        if idx > 0:
+            hint_parts.append("Left: prev")
+        if idx < len(missed) - 1:
+            hint_parts.append("Right: next")
+        hint_parts.append("ESC: back to score")
+        hint = self.font_sm.render("  |  ".join(hint_parts), True, FP.HINT_TEXT)
+        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, by + bh - 30))
 
     # ------------------------------------------------------------------
     # Help screen
