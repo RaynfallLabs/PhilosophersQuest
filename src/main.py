@@ -1316,6 +1316,8 @@ class Game:
         self.quiz_title         = ''
         self.equip_menu_items: list      = []
         self.equip_menu_equipped: list   = []   # (slot_name, item) pairs for unequip section
+        self._menu_tab: int              = 0    # current tab index for tabbed menus
+        self._menu_page: int             = 0    # page offset for paginated menus
         self.accessory_menu_items: list  = []
         self.wand_menu_items: list       = []
         self.scroll_menu_items: list     = []
@@ -3836,6 +3838,48 @@ class Game:
         'fire_resist', 'cold_resist', 'shock_resist',
     })
 
+    # Shared number-key map for all paginated menus
+    _NUM_KEYS = {
+        pygame.K_1: 0, pygame.K_KP1: 0, pygame.K_2: 1, pygame.K_KP2: 1,
+        pygame.K_3: 2, pygame.K_KP3: 2, pygame.K_4: 3, pygame.K_KP4: 3,
+        pygame.K_5: 4, pygame.K_KP5: 4, pygame.K_6: 5, pygame.K_KP6: 5,
+        pygame.K_7: 6, pygame.K_KP7: 6, pygame.K_8: 7, pygame.K_KP8: 7,
+        pygame.K_9: 8, pygame.K_KP9: 8,
+    }
+
+    def _paged_menu_input(self, key, items) -> int | None:
+        """Handle pagination + number selection. Returns absolute index or None."""
+        if key in (pygame.K_DOWN, pygame.K_RIGHT):
+            max_page = max(0, (len(items) - 1) // 9)
+            if self._menu_page < max_page:
+                self._menu_page += 1
+            return None
+        if key in (pygame.K_UP, pygame.K_LEFT):
+            if self._menu_page > 0:
+                self._menu_page -= 1
+            return None
+        idx = self._NUM_KEYS.get(key)
+        if idx is not None:
+            abs_idx = self._menu_page * 9 + idx
+            if abs_idx < len(items):
+                return abs_idx
+        return None
+
+    def _get_page(self, items) -> list:
+        """Return the current page of 9 items."""
+        start = self._menu_page * 9
+        return items[start:start + 9]
+
+    def _draw_page_indicator(self, items, bx, bw, y):
+        """Draw page indicator if items span multiple pages."""
+        total = len(items)
+        if total <= 9:
+            return
+        max_page = (total - 1) // 9
+        page_text = f"Page {self._menu_page + 1}/{max_page + 1}  ({total} items)  Left/Right: page"
+        surf = self.font_sm.render(page_text, True, FP.HINT_TEXT)
+        self.screen.blit(surf, (bx + (bw - surf.get_width()) // 2, y))
+
     def _open_quaff_menu(self):
         self.quaff_menu_items = [
             i for i in self.player.inventory if isinstance(i, Potion)
@@ -3843,22 +3887,12 @@ class Game:
         if not self.quaff_menu_items:
             self.add_message("You have no potions to quaff.", 'info')
             return
+        self._menu_page = 0
         self.state = STATE_QUAFF_MENU
 
     def _quaff_menu_input(self, key: int):
-        key_to_idx = {
-            pygame.K_1: 0, pygame.K_KP1: 0,
-            pygame.K_2: 1, pygame.K_KP2: 1,
-            pygame.K_3: 2, pygame.K_KP3: 2,
-            pygame.K_4: 3, pygame.K_KP4: 3,
-            pygame.K_5: 4, pygame.K_KP5: 4,
-            pygame.K_6: 5, pygame.K_KP6: 5,
-            pygame.K_7: 6, pygame.K_KP7: 6,
-            pygame.K_8: 7, pygame.K_KP8: 7,
-            pygame.K_9: 8, pygame.K_KP9: 8,
-        }
-        idx = key_to_idx.get(key)
-        if idx is None or idx >= len(self.quaff_menu_items):
+        idx = self._paged_menu_input(key, self.quaff_menu_items)
+        if idx is None:
             return
         self.state = STATE_PLAYER
         item = self.quaff_menu_items[idx]
@@ -4010,22 +4044,12 @@ class Game:
         if not self.throw_menu_items:
             self.add_message("You have nothing to throw.", 'info')
             return
+        self._menu_page = 0
         self.state = STATE_THROW_MENU
 
     def _throw_menu_input(self, key: int):
-        key_to_idx = {
-            pygame.K_1: 0, pygame.K_KP1: 0,
-            pygame.K_2: 1, pygame.K_KP2: 1,
-            pygame.K_3: 2, pygame.K_KP3: 2,
-            pygame.K_4: 3, pygame.K_KP4: 3,
-            pygame.K_5: 4, pygame.K_KP5: 4,
-            pygame.K_6: 5, pygame.K_KP6: 5,
-            pygame.K_7: 6, pygame.K_KP7: 6,
-            pygame.K_8: 7, pygame.K_KP8: 7,
-            pygame.K_9: 8, pygame.K_KP9: 8,
-        }
-        idx = key_to_idx.get(key)
-        if idx is None or idx >= len(self.throw_menu_items):
+        idx = self._paged_menu_input(key, self.throw_menu_items)
+        if idx is None:
             return
         potion = self.throw_menu_items[idx]
         self.state = STATE_PLAYER
@@ -5882,6 +5906,15 @@ class Game:
     # Equip menu
     # ------------------------------------------------------------------
 
+    # Equip menu tab definitions: (label, filter_func_or_None)
+    _EQUIP_TABS = [
+        ('Weapons',     lambda i: isinstance(i, Weapon)),
+        ('Armor',       lambda i: isinstance(i, Armor)),
+        ('Shields',     lambda i: isinstance(i, Shield)),
+        ('Accessories', lambda i: isinstance(i, Accessory)),
+        ('Unequip',     None),  # special tab for currently equipped items
+    ]
+
     def _open_equip_menu(self):
         from items import ARMOR_SLOTS
         self.equip_menu_items = [
@@ -5907,10 +5940,33 @@ class Game:
         if not self.equip_menu_items and not self.equip_menu_equipped:
             self.add_message("Nothing to equip or unequip.", 'info')
             return
+        self._menu_tab = 0
+        # Auto-select first tab with items
+        for i, (_, filt) in enumerate(self._EQUIP_TABS):
+            if filt is None:
+                if self.equip_menu_equipped:
+                    self._menu_tab = i; break
+            elif any(filt(item) for item in self.equip_menu_items):
+                self._menu_tab = i; break
         self.state = STATE_EQUIP_MENU
 
+    def _get_equip_tab_items(self):
+        """Return items for the current equip tab."""
+        label, filt = self._EQUIP_TABS[self._menu_tab]
+        if filt is None:
+            return None  # unequip tab
+        return [i for i in self.equip_menu_items if filt(i)]
+
     def _equip_menu_input(self, key: int):
-        # Number keys: equip from inventory
+        # Left/Right: switch tabs
+        if key in (pygame.K_LEFT, pygame.K_h):
+            self._menu_tab = (self._menu_tab - 1) % len(self._EQUIP_TABS)
+            return
+        if key in (pygame.K_RIGHT, pygame.K_l):
+            self._menu_tab = (self._menu_tab + 1) % len(self._EQUIP_TABS)
+            return
+
+        # Number keys: select from current tab
         key_to_idx = {
             pygame.K_1: 0, pygame.K_KP1: 0,
             pygame.K_2: 1, pygame.K_KP2: 1,
@@ -5923,21 +5979,19 @@ class Game:
             pygame.K_9: 8, pygame.K_KP9: 8,
         }
         idx = key_to_idx.get(key)
-        if idx is not None and idx < len(self.equip_menu_items):
-            self.state = STATE_PLAYER
-            self._equip_item(self.equip_menu_items[idx])
-            return
 
-        # Letter keys a-h: unequip currently equipped items
-        letter_to_idx = {
-            pygame.K_a: 0, pygame.K_b: 1, pygame.K_c: 2, pygame.K_d: 3,
-            pygame.K_e: 4, pygame.K_f: 5, pygame.K_g: 6, pygame.K_h: 7,
-        }
-        uidx = letter_to_idx.get(key)
-        if uidx is not None and uidx < len(self.equip_menu_equipped):
-            self.state = STATE_PLAYER
-            slot_name, slot_item = self.equip_menu_equipped[uidx]
-            self._unequip_slot(slot_name, slot_item)
+        tab_items = self._get_equip_tab_items()
+        if tab_items is not None:
+            # Equip tab: number keys select from filtered items
+            if idx is not None and idx < len(tab_items):
+                self.state = STATE_PLAYER
+                self._equip_item(tab_items[idx])
+        else:
+            # Unequip tab: number keys select from equipped items
+            if idx is not None and idx < len(self.equip_menu_equipped):
+                self.state = STATE_PLAYER
+                slot_name, slot_item = self.equip_menu_equipped[idx]
+                self._unequip_slot(slot_name, slot_item)
 
     def _equip_item(self, item):
         if isinstance(item, Weapon):
@@ -6168,21 +6222,11 @@ class Game:
         if not self.wand_menu_items:
             self.add_message("You have no wands to use.", 'info')
             return
+        self._menu_page = 0
         self.state = STATE_WAND_MENU
 
     def _wand_menu_input(self, key: int):
-        key_to_idx = {
-            pygame.K_1: 0, pygame.K_KP1: 0,
-            pygame.K_2: 1, pygame.K_KP2: 1,
-            pygame.K_3: 2, pygame.K_KP3: 2,
-            pygame.K_4: 3, pygame.K_KP4: 3,
-            pygame.K_5: 4, pygame.K_KP5: 4,
-            pygame.K_6: 5, pygame.K_KP6: 5,
-            pygame.K_7: 6, pygame.K_KP7: 6,
-            pygame.K_8: 7, pygame.K_KP8: 7,
-            pygame.K_9: 8, pygame.K_KP9: 8,
-        }
-        idx = key_to_idx.get(key)
+        idx = self._paged_menu_input(key, self.wand_menu_items)
         if idx is None or idx >= len(self.wand_menu_items):
             return
         self.state = STATE_PLAYER
@@ -8666,22 +8710,12 @@ class Game:
         if not self.identify_menu_items:
             self.add_message("Nothing here to identify or examine.", 'info')
             return
+        self._menu_page = 0
         self.state = STATE_IDENTIFY_MENU
 
     def _identify_menu_input(self, key: int):
-        key_to_idx = {
-            pygame.K_1: 0, pygame.K_KP1: 0,
-            pygame.K_2: 1, pygame.K_KP2: 1,
-            pygame.K_3: 2, pygame.K_KP3: 2,
-            pygame.K_4: 3, pygame.K_KP4: 3,
-            pygame.K_5: 4, pygame.K_KP5: 4,
-            pygame.K_6: 5, pygame.K_KP6: 5,
-            pygame.K_7: 6, pygame.K_KP7: 6,
-            pygame.K_8: 7, pygame.K_KP8: 7,
-            pygame.K_9: 8, pygame.K_KP9: 8,
-        }
-        idx = key_to_idx.get(key)
-        if idx is None or idx >= len(self.identify_menu_items):
+        idx = self._paged_menu_input(key, self.identify_menu_items)
+        if idx is None:
             return
         self.state = STATE_PLAYER
         item, is_ground, is_corpse = self.identify_menu_items[idx]
@@ -10714,17 +10748,17 @@ class Game:
     # ------------------------------------------------------------------
 
     def _draw_equip_menu(self):
-        # FANTASY: Grimoire-themed equip menu
         draw_overlay(self.screen, 190)
 
-        n_equip   = len(self.equip_menu_items)
-        n_unequip = len(self.equip_menu_equipped)
-        row_h     = 62
-        sep_h     = 30   # height of section separator label
-        total_rows = n_equip + n_unequip + (1 if n_equip and n_unequip else 0)
+        # Get items for the current tab
+        tab_items = self._get_equip_tab_items()
+        is_unequip = tab_items is None
+        display_items = self.equip_menu_equipped if is_unequip else tab_items
+
+        row_h = 62
+        n_items = len(display_items)
         bw = min(760, GAME_W - 40)
-        bh = min(88 + total_rows * row_h + (sep_h if n_equip and n_unequip else 0) + 64,
-                 WINDOW_H - 40)
+        bh = min(130 + n_items * row_h + 50, WINDOW_H - 40)
         bx = (GAME_W - bw) // 2
         by = (WINDOW_H - bh) // 2
 
@@ -10733,117 +10767,84 @@ class Game:
                         text="EQUIP / UNEQUIP",
                         font=self.font_md, text_color=FP.GOLD_BRIGHT)
 
-        p = self.player
-        melee_name = self._display_name(p.weapon) if p.weapon else 'none'
-        ranged_name = self._display_name(p.ranged_weapon) if p.ranged_weapon else 'none'
-        self.screen.blit(
-            self.font_sm.render(
-                f"Melee: {melee_name}  Ranged: {ranged_name}  AC: {p.get_ac()}",
-                True, FP.BODY_TEXT
-            ),
-            (bx + 20, by + 48)
-        )
-        draw_divider(self.screen, bx + 10, by + 72, bw - 20)
+        # --- Tab bar ---
+        tab_y = by + 50
+        tab_x = bx + 10
+        for i, (label, _) in enumerate(self._EQUIP_TABS):
+            active = i == self._menu_tab
+            tw = self.font_sm.size(label)[0] + 16
+            rect = pygame.Rect(tab_x, tab_y, tw, 26)
+            if active:
+                pygame.draw.rect(self.screen, FP.MIDNIGHT_MID, rect, border_radius=4)
+                pygame.draw.rect(self.screen, FP.GOLD, rect, 2, border_radius=4)
+                col = FP.GOLD_BRIGHT
+            else:
+                col = FP.FADED_TEXT
+            self.screen.blit(self.font_sm.render(label, True, col), (tab_x + 8, tab_y + 3))
+            tab_x += tw + 6
 
+        cy = tab_y + 34
         max_detail_w = bw - 90
-        cy = by + 82
 
-        # -- EQUIP section ---------------------------------------------
-        if n_equip:
+        if not display_items:
             self.screen.blit(
-                self.font_sm.render("EQUIP FROM INVENTORY  (number keys)", True, FP.GOLD_BRIGHT),
-                (bx + 18, cy)
+                self.font_sm.render("(empty)", True, FP.FADED_TEXT), (bx + 30, cy + 10)
             )
-            cy += sep_h
-            for i, item in enumerate(self.equip_menu_items):
+        elif is_unequip:
+            for i, (slot_name, item) in enumerate(display_items[:9]):
                 iy = cy
-                pygame.draw.rect(
-                    self.screen,
+                pygame.draw.rect(self.screen,
                     FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
-                    (bx + 10, iy, bw - 20, 56), border_radius=6
-                )
+                    (bx + 10, iy, bw - 20, 56), border_radius=6)
                 self.screen.blit(
-                    self.font_md.render(f"[{i+1}]", True, FP.GOLD_BRIGHT), (bx + 18, iy + 12)
-                )
-                self.screen.blit(
-                    self.font_md.render(self._fit_text(self._display_name(item), self.font_md, bw - 70 - 20), True, FP.BODY_TEXT),
-                    (bx + 70, iy + 12)
-                )
-                if isinstance(item, Weapon):
-                    dmg_str = f"{item.base_damage}dmg" if item.base_damage else (item.damage or "?")
-                    detail_text = f"{item.weapon_class}  {dmg_str}  chain x{item.max_chain_length or '?'}  tier {item.quiz_tier}"
-                elif isinstance(item, Shield):
-                    detail_text = f"+{item.ac_bonus} AC"
-                elif isinstance(item, Armor):
-                    detail_text = f"{getattr(item, 'slot', 'armor')}  +{item.ac_bonus} AC"
-                elif isinstance(item, Accessory):
-                    if item.identified or item.id in self.player.known_item_ids:
-                        fx = item.effects
-                        if 'status' in fx:
-                            detail_text = f"grants {fx['status']}"
-                        else:
-                            detail_text = f"{fx.get('stat','?')} +{fx.get('amount',0)}"
-                    else:
-                        detail_text = "unidentified accessory"
-                else:
-                    detail_text = item.item_class
-                detail_col = FP.BODY_TEXT if isinstance(item, (Weapon, Armor, Shield, Accessory)) else FP.FADED_TEXT
-                detail_surf = self.font_sm.render(detail_text, True, detail_col)
-                if detail_surf.get_width() > max_detail_w:
-                    while len(detail_text) > 1 and self.font_sm.size(detail_text + '\u2026')[0] > max_detail_w:
-                        detail_text = detail_text[:-1]
-                    detail_surf = self.font_sm.render(detail_text + '\u2026', True, detail_col)
-                self.screen.blit(detail_surf, (bx + 70, iy + 38))
-                cy += row_h
-
-        # -- UNEQUIP section -------------------------------------------
-        if n_unequip:
-            if n_equip:
-                draw_divider(self.screen, bx + 10, cy + 4, bw - 20)
-                cy += 12
-            self.screen.blit(
-                self.font_sm.render("UNEQUIP  (letter keys)", True, FP.WARNING_TEXT),
-                (bx + 18, cy)
-            )
-            cy += sep_h
-            letters = 'abcdefgh'
-            for i, (slot_name, item) in enumerate(self.equip_menu_equipped):
-                iy = cy
-                pygame.draw.rect(
-                    self.screen,
-                    FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
-                    (bx + 10, iy, bw - 20, 56), border_radius=6
-                )
-                lbl = letters[i] if i < len(letters) else '?'
-                self.screen.blit(
-                    self.font_md.render(f"[{lbl}]", True, FP.WARNING_TEXT), (bx + 18, iy + 12)
-                )
+                    self.font_md.render(f"[{i+1}]", True, FP.WARNING_TEXT), (bx + 18, iy + 12))
                 cursed = getattr(item, 'cursed', False)
                 name_col = FP.DANGER_TEXT if cursed else FP.GOLD_PALE
                 self.screen.blit(
-                    self.font_md.render(self._fit_text(self._display_name(item), self.font_md, bw - 70 - 20), True, name_col),
-                    (bx + 70, iy + 12)
-                )
-                display_slot = slot_name.replace('_', ' ')
-                detail_text = f"[{display_slot}]"
+                    self.font_md.render(self._fit_text(self._display_name(item), self.font_md, bw - 90), True, name_col),
+                    (bx + 70, iy + 12))
+                slot_label = slot_name.replace('_', ' ')
+                detail = f"[{slot_label}]"
                 if cursed:
-                    detail_text += "  CURSED -- cannot remove"
-                detail_col = FP.DANGER_TEXT if cursed else FP.FADED_TEXT
+                    detail += "  CURSED"
                 self.screen.blit(
-                    self.font_sm.render(detail_text, True, detail_col),
-                    (bx + 70, iy + 38)
-                )
+                    self.font_sm.render(detail, True, FP.DANGER_TEXT if cursed else FP.FADED_TEXT),
+                    (bx + 70, iy + 38))
+                cy += row_h
+        else:
+            for i, item in enumerate(display_items[:9]):
+                iy = cy
+                pygame.draw.rect(self.screen,
+                    FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
+                    (bx + 10, iy, bw - 20, 56), border_radius=6)
+                self.screen.blit(
+                    self.font_md.render(f"[{i+1}]", True, FP.GOLD_BRIGHT), (bx + 18, iy + 12))
+                self.screen.blit(
+                    self.font_md.render(self._fit_text(self._display_name(item), self.font_md, bw - 90), True, FP.BODY_TEXT),
+                    (bx + 70, iy + 12))
+                if isinstance(item, Weapon):
+                    detail = f"{getattr(item, 'weapon_class', 'weapon')}  {item.base_damage}dmg  chain x{item.max_chain_length or '?'}"
+                elif isinstance(item, Shield):
+                    detail = f"+{item.ac_bonus} AC  {item.material}"
+                elif isinstance(item, Armor):
+                    detail = f"{getattr(item, 'slot', 'armor')}  +{item.ac_bonus} AC  {item.material}"
+                elif isinstance(item, Accessory):
+                    if item.identified or item.id in self.player.known_item_ids:
+                        fx = item.effects
+                        detail = f"grants {fx['status']}" if 'status' in fx else f"{fx.get('stat','?')} +{fx.get('amount',0)}"
+                    else:
+                        detail = "unidentified"
+                else:
+                    detail = item.item_class
+                self.screen.blit(
+                    self.font_sm.render(self._fit_text(detail, self.font_sm, max_detail_w), True, FP.FADED_TEXT),
+                    (bx + 70, iy + 38))
                 cy += row_h
 
         hint_y = by + bh - 36
         draw_divider(self.screen, bx + 10, hint_y - 8, bw - 20)
-        hint_parts = []
-        if n_equip:
-            hint_parts.append("1-9: equip")
-        if n_unequip:
-            hint_parts.append("a-h: unequip")
-        hint_parts.append("ESC: cancel")
-        hint = self.font_sm.render("  |  ".join(hint_parts), True, FP.HINT_TEXT)
+        hint = self.font_sm.render(
+            "Left/Right: tab  |  1-9: select  |  ESC: cancel", True, FP.HINT_TEXT)
         self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
 
     # ------------------------------------------------------------------
@@ -11335,32 +11336,50 @@ class Game:
 
     def _draw_drop_menu(self):
         draw_overlay(self.screen, 190)
+        tab_items = self._get_drop_tab_items()
         bw = min(600, GAME_W - 40)
-        items = self.drop_menu_items
-        row_h = 22
-        bh = min(GAME_H - 80, 80 + len(items) * row_h + 50)
+        row_h = 26
+        n_items = min(9, len(tab_items))
+        bh = min(GAME_H - 80, 130 + n_items * row_h + 50)
         bx = (GAME_W - bw) // 2
         by = (GAME_H - bh) // 2
         draw_dark_panel(self.screen, (bx, by, bw, bh))
-        title_surf = self.font_lg.render("DROP ITEM", True, FP.GOLD_BRIGHT)
-        self.screen.blit(title_surf, (bx + (bw - title_surf.get_width()) // 2, by + 12))
-        sub_surf = self.font_sm.render("Select item to drop at your feet", True, FP.FADED_TEXT)
-        self.screen.blit(sub_surf, (bx + (bw - sub_surf.get_width()) // 2, by + 36))
-        letters = 'abcdefghijklmnopqrstuvwxyz'
-        y_off = by + 60
-        for i, item in enumerate(items[:26]):
-            letter = letters[i]
-            if isinstance(item, self._GoldDropEntry):
-                dname = f"Gold  ({getattr(self, 'player_gold', 0)} coins)"
-                col   = FP.GOLD_BRIGHT
+        draw_header_bar(self.screen, (bx, by, bw, 44),
+                        text="DROP ITEM", font=self.font_md, text_color=FP.GOLD_BRIGHT)
+
+        # Tab bar
+        tab_y = by + 50
+        tab_x = bx + 10
+        for i, (label, _) in enumerate(self._DROP_TABS):
+            active = i == self._menu_tab
+            tw = self.font_sm.size(label)[0] + 14
+            rect = pygame.Rect(tab_x, tab_y, tw, 24)
+            if active:
+                pygame.draw.rect(self.screen, FP.MIDNIGHT_MID, rect, border_radius=4)
+                pygame.draw.rect(self.screen, FP.GOLD, rect, 2, border_radius=4)
+                col = FP.GOLD_BRIGHT
             else:
-                dname = self._display_name(item)
-                col   = FP.PARCHMENT_LIGHT
-            line   = f"  {letter})  {dname}"
-            surf   = self.font_md.render(self._fit_text(line, self.font_md, bw - 16 - 20), True, col)
-            self.screen.blit(surf, (bx + 16, y_off + i * row_h))
-        esc_surf = self.font_sm.render("ESC to cancel", True, FP.FADED_TEXT)
-        self.screen.blit(esc_surf, (bx + (bw - esc_surf.get_width()) // 2, by + bh - 24))
+                col = FP.FADED_TEXT
+            self.screen.blit(self.font_sm.render(label, True, col), (tab_x + 7, tab_y + 3))
+            tab_x += tw + 4
+
+        y_off = tab_y + 32
+        if not tab_items:
+            self.screen.blit(self.font_sm.render("(empty)", True, FP.FADED_TEXT), (bx + 30, y_off))
+        else:
+            for i, item in enumerate(tab_items[:9]):
+                if isinstance(item, self._GoldDropEntry):
+                    dname = f"Gold  ({getattr(self, 'player_gold', 0)} coins)"
+                    col = FP.GOLD_BRIGHT
+                else:
+                    dname = self._display_name(item)
+                    col = FP.PARCHMENT_LIGHT
+                line = f"  [{i+1}]  {dname}"
+                surf = self.font_md.render(self._fit_text(line, self.font_md, bw - 30), True, col)
+                self.screen.blit(surf, (bx + 16, y_off + i * row_h))
+
+        hint = self.font_sm.render("Left/Right: tab  |  1-9: drop  |  ESC: cancel", True, FP.HINT_TEXT)
+        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, by + bh - 24))
 
     def _draw_eat_menu(self):
         # FANTASY: Grimoire-themed eat menu
@@ -12823,25 +12842,49 @@ class Game:
             self.add_message("You have nothing to drop.", 'info')
             return
         self.drop_menu_items = items
+        self._menu_tab = 0
         self.state = STATE_DROP_MENU
 
+    _DROP_TABS = [
+        ('All',         None),
+        ('Equipment',   lambda i: hasattr(i, 'item_class') and getattr(i, 'item_class', '') in ('weapon','armor','shield','accessory','ammo')),
+        ('Consumables', lambda i: hasattr(i, 'item_class') and getattr(i, 'item_class', '') in ('potion','scroll','spellbook','wand','food')),
+        ('Ingredients', lambda i: hasattr(i, 'item_class') and getattr(i, 'item_class', '') == 'ingredient'),
+        ('Other',       lambda i: hasattr(i, 'item_class') and getattr(i, 'item_class', '') not in ('weapon','armor','shield','accessory','ammo','potion','scroll','spellbook','wand','food','ingredient')),
+    ]
+
+    def _get_drop_tab_items(self):
+        _, filt = self._DROP_TABS[self._menu_tab]
+        if filt is None:
+            return self.drop_menu_items
+        return [i for i in self.drop_menu_items if filt(i)]
+
     def _drop_menu_input(self, key: int):
-        key_to_idx = {
-            pygame.K_a: 0,  pygame.K_b: 1,  pygame.K_c: 2,  pygame.K_d: 3,
-            pygame.K_e: 4,  pygame.K_f: 5,  pygame.K_g: 6,  pygame.K_h: 7,
-            pygame.K_i: 8,  pygame.K_j: 9,  pygame.K_k: 10, pygame.K_l: 11,
-            pygame.K_m: 12, pygame.K_n: 13, pygame.K_o: 14, pygame.K_p: 15,
-            pygame.K_q: 16, pygame.K_r: 17, pygame.K_s: 18, pygame.K_t: 19,
-            pygame.K_u: 20, pygame.K_v: 21, pygame.K_w: 22, pygame.K_x: 23,
-            pygame.K_y: 24, pygame.K_z: 25,
-        }
         if key == pygame.K_ESCAPE:
             self.state = STATE_PLAYER
             return
-        idx = key_to_idx.get(key)
-        if idx is None or idx >= len(self.drop_menu_items):
+        if key in (pygame.K_LEFT, pygame.K_h):
+            self._menu_tab = (self._menu_tab - 1) % len(self._DROP_TABS)
             return
-        item = self.drop_menu_items[idx]
+        if key in (pygame.K_RIGHT, pygame.K_l):
+            self._menu_tab = (self._menu_tab + 1) % len(self._DROP_TABS)
+            return
+        key_to_idx = {
+            pygame.K_1: 0, pygame.K_KP1: 0,
+            pygame.K_2: 1, pygame.K_KP2: 1,
+            pygame.K_3: 2, pygame.K_KP3: 2,
+            pygame.K_4: 3, pygame.K_KP4: 3,
+            pygame.K_5: 4, pygame.K_KP5: 4,
+            pygame.K_6: 5, pygame.K_KP6: 5,
+            pygame.K_7: 6, pygame.K_KP7: 6,
+            pygame.K_8: 7, pygame.K_KP8: 7,
+            pygame.K_9: 8, pygame.K_KP9: 8,
+        }
+        idx = key_to_idx.get(key)
+        tab_items = self._get_drop_tab_items()
+        if idx is None or idx >= len(tab_items):
+            return
+        item = tab_items[idx]
         if isinstance(item, self._GoldDropEntry):
             self.drop_gold_input = ''
             self.state = STATE_DROP_GOLD_INPUT
@@ -13010,24 +13053,14 @@ class Game:
             self.add_message("You have no identified items to examine.", 'info')
             return
         self.examine_menu_items = items
+        self._menu_page = 0
         self.state = STATE_EXAMINE
 
     def _examine_menu_input(self, key: int):
-        key_to_idx = {
-            pygame.K_1: 0, pygame.K_KP1: 0,
-            pygame.K_2: 1, pygame.K_KP2: 1,
-            pygame.K_3: 2, pygame.K_KP3: 2,
-            pygame.K_4: 3, pygame.K_KP4: 3,
-            pygame.K_5: 4, pygame.K_KP5: 4,
-            pygame.K_6: 5, pygame.K_KP6: 5,
-            pygame.K_7: 6, pygame.K_KP7: 6,
-            pygame.K_8: 7, pygame.K_KP8: 7,
-            pygame.K_9: 8, pygame.K_KP9: 8,
-        }
         if key == pygame.K_ESCAPE:
             self.state = STATE_PLAYER
             return
-        idx = key_to_idx.get(key)
+        idx = self._paged_menu_input(key, self.examine_menu_items)
         if idx is None or idx >= len(self.examine_menu_items):
             return
         item = self.examine_menu_items[idx]
