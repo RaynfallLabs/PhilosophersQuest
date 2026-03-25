@@ -9,7 +9,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
-    "description": "Rat meat rubbed with ember spice and seared over hot coals. Crude but satisfying."
+    "description": "Rat meat rubbed with ember spice and seared over hot coals. Crude but satisfying.",
+    "sprite_desc": "A wooden skewer of charred rat meat chunks glazed with glowing ember spice, wisps of smoke rising"
   },
   "herbed_serpent_fricassee": {
     "name": "Herbed Serpent Fricassee",
@@ -21,7 +22,8 @@
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
-    "description": "Delicate snake flesh simmered in rosemary-infused oil until tender."
+    "description": "Delicate snake flesh simmered in rosemary-infused oil until tender.",
+    "sprite_desc": "A rustic clay plate of golden-brown serpent pieces in a fragrant rosemary sauce with green herbs"
   },
   "spiced_frog_legs_provencal": {
     "name": "Spiced Frog Legs ProvenÃ§al",
@@ -33,7 +35,8 @@
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
-    "description": "Pan-fried frog legs in a serpent-pepper reduction. Light, crisp, and invigorating."
+    "description": "Pan-fried frog legs in a serpent-pepper reduction. Light, crisp, and invigorating.",
+    "sprite_desc": "Crispy golden frog legs arranged on a dark plate with a drizzle of red pepper reduction"
   },
   "mushroom_goblin_potage": {
     "name": "Cave Mushroom & Goblin Potage",
@@ -45,7 +48,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
-    "description": "A hearty potage of goblin flesh and earthy cave mushrooms. Not pretty, but fortifying."
+    "description": "A hearty potage of goblin flesh and earthy cave mushrooms. Not pretty, but fortifying.",
+    "sprite_desc": "A steaming iron cauldron of thick brown-green stew with mushroom caps floating on top"
   },
   "thyme_bear_haunch": {
     "name": "Wild Thyme Roasted Bear Haunch",
@@ -57,7 +61,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
-    "description": "Slow-roasted bear meat on a bed of wild thyme. Barbaric in name, masterful in result."
+    "description": "Slow-roasted bear meat on a bed of wild thyme. Barbaric in name, masterful in result.",
+    "sprite_desc": "A massive roasted bear leg on a wooden platter surrounded by sprigs of wild thyme"
   },
   "celery_lizard_broth": {
     "name": "Pale Celery Lizard Bouillon",
@@ -69,7 +74,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
-    "description": "A light bouillon made from dungeon lizard and pale celery. Restorative and clean."
+    "description": "A light bouillon made from dungeon lizard and pale celery. Restorative and clean.",
+    "sprite_desc": "A stone bowl filled with smooth verdant broth made from lizard meat and pale celery, wisps of fragrant steam curling above"
   },
   "bullywug_carrot_bisque": {
     "name": "Cave Carrot Bullywug Bisque",
@@ -81,7 +87,8 @@
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
-    "description": "Chunky cave carrots purÃ©ed with tender bullywug leg. Rich, orange, and surprisingly refined."
+    "description": "Chunky cave carrots purÃ©ed with tender bullywug leg. Rich, orange, and surprisingly refined.",
+    "sprite_desc": "A stone bowl filled with smooth verdant broth made from bullywug leg and cave carrot, wisps of fragrant steam curling above"
   },
   "spore_silk_consomme": {
     "name": "Glowing Spore & Spider ConsommÃ©",
@@ -93,7 +100,8 @@
     "bonus_type": "stat",
     "bonus_stat": "INT",
     "bonus_amount": 1,
-    "description": "Spider-silk gelatin clarified with glowing spores. The resulting broth shimmers faintly."
+    "description": "Spider-silk gelatin clarified with glowing spores. The resulting broth shimmers faintly.",
+    "sprite_desc": "A crystal bowl of shimmering translucent broth with faint bioluminescent blue-green glow"
   },
   "gnoll_herb_ragout": {
     "name": "Braised Gnoll Shank with Cave Herbs",
@@ -105,7 +113,8 @@
     "sp": 160,
     "bonus_type": "two_stats",
     "bonus_amount": 1,
-    "description": "Gnoll rendered low and slow with aromatic herbs and root vegetables. A warrior's reward."
+    "description": "Gnoll rendered low and slow with aromatic herbs and root vegetables. A warrior's reward.",
+    "sprite_desc": "A ceramic plate of beautifully prepared gnoll hide, wild thyme, and cave carrot, plated with a warm russet reduction drizzled on top"
   },
   "spriggan_ragout": {
     "name": "Spriggan Thorn Ragout en Cocotte",
@@ -118,7 +127,8 @@
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 2,
-    "description": "Thorny spriggan extract reduced with pepper and mushroom into a nimble-making sauce."
+    "description": "Thorny spriggan extract reduced with pepper and mushroom into a nimble-making sauce.",
+    "sprite_desc": "A bubbling iron pot of thick verdant stew made from spriggan thorn, serpent pepper, and cave mushroom, steam rising from the surface"
   },
   "manticore_bisque": {
     "name": "Manticore Spine Grand Bisque",
@@ -131,7 +141,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 2,
-    "description": "Manticore spine marrow extracted into a bisque fiery with ember spice. Brutally strengthening."
+    "description": "Manticore spine marrow extracted into a bisque fiery with ember spice. Brutally strengthening.",
+    "sprite_desc": "A stone bowl filled with smooth warm russet broth made from manticore spine, ember spice, and pale celery, wisps of fragrant steam curling above"
   },
   "blink_hare_hasenpfeffer": {
     "name": "Blink-Gland Hasenpfeffer",
@@ -144,7 +155,8 @@
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 2,
-    "description": "Blink dog gland dissolved in valerian-mushroom stock. The first spoonful and you feel faster."
+    "description": "Blink dog gland dissolved in valerian-mushroom stock. The first spoonful and you feel faster.",
+    "sprite_desc": "A ceramic plate of beautifully prepared blink gland, valerian root, and cave mushroom, plated with a earthy reduction drizzled on top"
   },
   "troll_tourte": {
     "name": "Braised Troll Shin Tourte",
@@ -157,7 +169,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 2,
-    "description": "Troll hide's regenerative proteins slow-extracted and baked in a celery-rosemary pastry crust."
+    "description": "Troll hide's regenerative proteins slow-extracted and baked in a celery-rosemary pastry crust.",
+    "sprite_desc": "A ceramic plate of beautifully prepared troll hide, pale celery, and rosemary sprig, plated with a verdant reduction drizzled on top"
   },
   "wisp_risotto": {
     "name": "Luminous Wisp Essence Risotto",
@@ -170,7 +183,8 @@
     "bonus_type": "stat",
     "bonus_stat": "INT",
     "bonus_amount": 2,
-    "description": "Wisp essence stirred into a mushroom risotto that glows faintly. Each bite sharpens the mind."
+    "description": "Wisp essence stirred into a mushroom risotto that glows faintly. Each bite sharpens the mind.",
+    "sprite_desc": "A ceramic plate of beautifully prepared wisp essence, glowing spore, and crimson fungus, plated with a pale violet reduction drizzled on top"
   },
   "raven_elixir": {
     "name": "Raven-Black Sage Elixir",
@@ -182,7 +196,8 @@
     "sp": 165,
     "bonus_type": "two_stats",
     "bonus_amount": 1,
-    "description": "Raven feather extract distilled with valerian and nightshade. A scholar's midnight draught."
+    "description": "Raven feather extract distilled with valerian and nightshade. A scholar's midnight draught.",
+    "sprite_desc": "A glass flask of shimmering dark liquid distilled from raven feather, valerian root, and nightshade leaf, tiny bubbles rising within"
   },
   "dragon_scale_pot_au_feu": {
     "name": "Dragon Scale Pot-au-Feu",
@@ -196,7 +211,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 3,
-    "description": "Dragon scale rendered in void-salt brine with bear and thyme. The pot practically growls."
+    "description": "Dragon scale rendered in void-salt brine with bear and thyme. The pot practically growls.",
+    "sprite_desc": "A bubbling bronze pot with dragon-scale fragments, meat, and herbs in a rich amber broth"
   },
   "medusa_bouillabaisse": {
     "name": "Medusa Blood Bouillabaisse",
@@ -209,7 +225,8 @@
     "sp": 265,
     "bonus_type": "two_stats",
     "bonus_amount": 2,
-    "description": "Medusa blood carefully neutralized and simmered with pepper and mushroom. Sharpens eyes and mind alike."
+    "description": "Medusa blood carefully neutralized and simmered with pepper and mushroom. Sharpens eyes and mind alike.",
+    "sprite_desc": "A ceramic plate of beautifully prepared Medusa's Blood, nightshade leaf, serpent pepper, and cave mushroom, plated with a verdant reduction drizzled on top"
   },
   "chimera_heart_royale": {
     "name": "Chimera Heart Royale",
@@ -222,7 +239,8 @@
     "sp": 280,
     "bonus_type": "all_stats",
     "bonus_amount": 1,
-    "description": "The tripartite heart of a chimera reduced with root herbs. Every stat improves. Every sense sharpens."
+    "description": "The tripartite heart of a chimera reduced with root herbs. Every stat improves. Every sense sharpens.",
+    "sprite_desc": "A ceramic plate of beautifully prepared chimera heart, ember spice, mandrake root, and cave carrot, plated with a earthy reduction drizzled on top"
   },
   "basilisk_perpignan": {
     "name": "Basilisk Stone Broth Perpignan",
@@ -235,7 +253,8 @@
     "sp": 255,
     "bonus_type": "two_stats",
     "bonus_amount": 2,
-    "description": "Petrified basilisk gaze dissolved by rosemary acid into a clarified, terrifyingly good broth."
+    "description": "Petrified basilisk gaze dissolved by rosemary acid into a clarified, terrifyingly good broth.",
+    "sprite_desc": "A stone bowl filled with smooth earthy broth made from basilisk stone, rosemary sprig, pale celery, and cave carrot, wisps of fragrant steam curling above"
   },
   "frost_consomme_glace": {
     "name": "Frost-Gland ConsommÃ© GlacÃ©",
@@ -248,7 +267,8 @@
     "sp": 265,
     "bonus_type": "two_stats",
     "bonus_amount": 2,
-    "description": "Frost gland essence crystallized by void salt, balanced by crimson fungus. Clarity in every spoonful."
+    "description": "Frost gland essence crystallized by void salt, balanced by crimson fungus. Clarity in every spoonful.",
+    "sprite_desc": "A stone bowl filled with smooth earthy broth made from frost gland, void salt, crimson fungus, and valerian root, wisps of fragrant steam curling above"
   },
   "eagle_eye_consomme": {
     "name": "Eagle-Eye Summit ConsommÃ©",
@@ -262,7 +282,8 @@
     "bonus_type": "stat",
     "bonus_stat": "PER",
     "bonus_amount": 3,
-    "description": "Eagle feather broth enriched with ancient mushroom and dragon salt. Vision reaches to the horizon."
+    "description": "Eagle feather broth enriched with ancient mushroom and dragon salt. Vision reaches to the horizon.",
+    "sprite_desc": "A stone bowl filled with smooth warm russet broth made from eagle feather, cave carrot, petrified mushroom, and dragon salt, wisps of fragrant steam curling above"
   },
   "philosophers_grand_banquet": {
     "name": "The Philosopher's Grand Banquet",
@@ -274,7 +295,8 @@
     "sp": 500,
     "bonus_type": "all_stats",
     "bonus_amount": 2,
-    "lore": "The apex of dungeon cuisine. Every great cook dreams of this dish. Most die attempting it."
+    "lore": "The apex of dungeon cuisine. Every great cook dreams of this dish. Most die attempting it.",
+    "sprite_desc": "A large ornate platter laden with an elaborate arrangement of chimera heart, Dragon Scale, and necromancer phylactery, garnished with edible flowers and earthy sauce"
   },
   "abyssal_midnight_feast": {
     "name": "Abyssal Midnight Feast",
@@ -288,7 +310,8 @@
     "sp": 380,
     "bonus_type": "two_stats",
     "bonus_amount": 3,
-    "description": "A forbidden dish from the deep places. The ingredients are vile. The result is transcendent."
+    "description": "A forbidden dish from the deep places. The ingredients are vile. The result is transcendent.",
+    "sprite_desc": "A dark obsidian plate with an arrangement of shadowy foods emanating purple eldritch vapors"
   },
   "serpent_king_culmination": {
     "name": "Serpent King's Culmination",
@@ -302,7 +325,8 @@
     "sp": 400,
     "bonus_type": "two_stats",
     "bonus_amount": 2,
-    "description": "The pinnacle of venom-cuisine. Snake, spine, and stone distilled into a sublime crescendo."
+    "description": "The pinnacle of venom-cuisine. Snake, spine, and stone distilled into a sublime crescendo.",
+    "sprite_desc": "A ceramic plate of beautifully prepared manticore spine, Medusa's Blood, serpent pepper, dragon salt, and rosemary sprig, plated with a warm russet reduction drizzled on top"
   },
   "dragon_heart_braisage": {
     "name": "Dragon-Heart Sublime Braisage",
@@ -316,7 +340,8 @@
     "sp": 500,
     "bonus_type": "two_stats",
     "bonus_amount": 3,
-    "description": "The ultimate warrior's feast. A red dragon's heart braised in blue dragon brine. Legendary strength."
+    "description": "The ultimate warrior's feast. A red dragon's heart braised in blue dragon brine. Legendary strength.",
+    "sprite_desc": "A ceramic plate of beautifully prepared red dragon heart, blue dragon scale, dragon salt, ember spice, and mandrake root, plated with a crimson reduction drizzled on top"
   },
   "goblin_rat_stew": {
     "name": "Goblin and Rat Stew",
@@ -328,7 +353,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
-    "lore": "A foul but filling stew. The dungeon has lower standards. Two scrawny survivors â€” the toughness transfers."
+    "lore": "A foul but filling stew. The dungeon has lower standards. Two scrawny survivors â€” the toughness transfers.",
+    "sprite_desc": "A battered tin pot of chunky brown stew with visible meat pieces and a greasy surface"
   },
   "serpent_frog_bisque": {
     "name": "Serpent and Frog Bisque",
@@ -340,7 +366,8 @@
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
-    "lore": "Two slippery creatures make a surprisingly agile meal."
+    "lore": "Two slippery creatures make a surprisingly agile meal.",
+    "sprite_desc": "A smooth creamy pale-green soup in a stone bowl with a coiled garnish of thin snake skin"
   },
   "bat_rat_soup": {
     "name": "Cave Creature Broth",
@@ -352,7 +379,8 @@
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
-    "lore": "The dungeon's most common inhabitants, simmered together."
+    "lore": "The dungeon's most common inhabitants, simmered together.",
+    "sprite_desc": "A stone bowl filled with smooth earthy broth made from bat wing and rat meat, wisps of fragrant steam curling above"
   },
   "chitin_bone_crisps": {
     "name": "Chitin and Bone Crisps",
@@ -364,7 +392,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
-    "lore": "Crunchy. Nutritionally dubious. Surprisingly addictive."
+    "lore": "Crunchy. Nutritionally dubious. Surprisingly addictive.",
+    "sprite_desc": "A ceramic plate of beautifully prepared insect carapace and bone shard, plated with a warm russet reduction drizzled on top"
   },
   "goblin_bone_pottage": {
     "name": "Goblin Bone Pottage",
@@ -376,7 +405,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
-    "lore": "A thick, grim pottage. Goblins eat this themselves, apparently."
+    "lore": "A thick, grim pottage. Goblins eat this themselves, apparently.",
+    "sprite_desc": "A ceramic plate of beautifully prepared goblin flesh and bone shard, plated with a verdant reduction drizzled on top"
   },
   "spider_silk_jelly": {
     "name": "Spider Silk Aspic",
@@ -388,7 +418,8 @@
     "bonus_type": "stat",
     "bonus_stat": "PER",
     "bonus_amount": 1,
-    "lore": "The silk dissolves into a trembling aspic. Enhances perception."
+    "lore": "The silk dissolves into a trembling aspic. Enhances perception.",
+    "sprite_desc": "A ceramic plate of beautifully prepared spider silk and eye jelly, plated with a pale violet reduction drizzled on top"
   },
   "orc_bat_broth": {
     "name": "Orcish Cave Broth",
@@ -400,7 +431,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
-    "lore": "Orcs make this on campaign. It's not good, but it works."
+    "lore": "Orcs make this on campaign. It's not good, but it works.",
+    "sprite_desc": "A stone bowl filled with smooth verdant broth made from orc blood and bat wing, wisps of fragrant steam curling above"
   },
   "gnoll_lion_ragout": {
     "name": "Gnoll and Lion Ragout",
@@ -412,7 +444,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
-    "lore": "Two predators combined. Smells like a pride and a pack of gnolls fighting."
+    "lore": "Two predators combined. Smells like a pride and a pack of gnolls fighting.",
+    "sprite_desc": "A bubbling iron pot of thick warm russet stew made from gnoll hide and lion meat, steam rising from the surface"
   },
   "death_knight_broth": {
     "name": "Death Knight's Black Broth",
@@ -424,7 +457,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
-    "lore": "The Spartans had their black broth. This is darker."
+    "lore": "The Spartans had their black broth. This is darker.",
+    "sprite_desc": "A stone bowl filled with smooth dark broth made from charred bone and zombie flesh, wisps of fragrant steam curling above"
   },
   "hobgoblin_orc_stew": {
     "name": "Regimental Stew",
@@ -436,7 +470,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
-    "lore": "When goblinoid armies march, both bloods end up in the pot. Soldier's strength."
+    "lore": "When goblinoid armies march, both bloods end up in the pot. Soldier's strength.",
+    "sprite_desc": "A bubbling iron pot of thick warm russet stew made from hobgoblin blood and orc blood, steam rising from the surface"
   },
   "lizard_frog_ragout": {
     "name": "Cave Amphibian Ragout",
@@ -448,7 +483,8 @@
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
-    "lore": "Surprisingly delicate, if you can get past the skin."
+    "lore": "Surprisingly delicate, if you can get past the skin.",
+    "sprite_desc": "A bubbling iron pot of thick verdant stew made from lizard meat and frog legs, steam rising from the surface"
   },
   "bear_troll_haunch": {
     "name": "Monstrous Meat Haunch",
@@ -460,7 +496,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 2,
-    "lore": "Troll flesh regenerates even during cooking. The combined vitality is extraordinary."
+    "lore": "Troll flesh regenerates even during cooking. The combined vitality is extraordinary.",
+    "sprite_desc": "A wooden platter bearing a glistening roast of bear meat and troll hide, seared to a warm russet crust with herb garnish"
   },
   "hobgoblin_ogre_feast": {
     "name": "Warlord's War Feast",
@@ -472,7 +509,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 2,
-    "lore": "The spoils of two brutal commanders, cooked together. Raw dominance in every bite."
+    "lore": "The spoils of two brutal commanders, cooked together. Raw dominance in every bite.",
+    "sprite_desc": "A large ornate platter laden with an elaborate arrangement of hobgoblin blood and ogre hide, garnished with edible flowers and warm russet sauce"
   },
   "spectral_eye_consomme": {
     "name": "Spectral Eye ConsommÃ©",
@@ -484,7 +522,8 @@
     "bonus_type": "stat",
     "bonus_stat": "WIS",
     "bonus_amount": 2,
-    "lore": "You can see beyond the veil after eating this. The dead share what the living cannot know."
+    "lore": "You can see beyond the veil after eating this. The dead share what the living cannot know.",
+    "sprite_desc": "A stone bowl filled with smooth pale violet broth made from spectral essence and eye jelly, wisps of fragrant steam curling above"
   },
   "shadow_crystal_broth": {
     "name": "Shadow-Walker's Broth",
@@ -496,7 +535,8 @@
     "bonus_type": "status",
     "bonus_effect": "invisible",
     "bonus_amount": 10,
-    "lore": "Solid shadows dissolved in darkness. Grants brief invisibility."
+    "lore": "Solid shadows dissolved in darkness. Grants brief invisibility.",
+    "sprite_desc": "A stone bowl filled with smooth earthy broth made from shadow essence and shadow crystal, wisps of fragrant steam curling above"
   },
   "wisp_soul_risotto": {
     "name": "Will-o-Wisp Risotto",
@@ -508,7 +548,8 @@
     "bonus_type": "stat",
     "bonus_stat": "INT",
     "bonus_amount": 2,
-    "lore": "Ethereal ingredients merge at the boundary of thought and existence. Understanding comes unbidden."
+    "lore": "Ethereal ingredients merge at the boundary of thought and existence. Understanding comes unbidden.",
+    "sprite_desc": "A ceramic plate of beautifully prepared wisp essence and soul fragment, plated with a pale violet reduction drizzled on top"
   },
   "bugbear_troll_roast": {
     "name": "Brute's Double Roast",
@@ -520,7 +561,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 2,
-    "lore": "Two of the dungeon's most feared brutes, slow-roasted until the rage leaves them and enters you."
+    "lore": "Two of the dungeon's most feared brutes, slow-roasted until the rage leaves them and enters you.",
+    "sprite_desc": "A wooden platter bearing a glistening roast of bugbear pelt and troll hide, seared to a warm russet crust with herb garnish"
   },
   "spider_phase_silk_dish": {
     "name": "Phased Silk Noodles",
@@ -532,7 +574,8 @@
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 2,
-    "lore": "Normal and phase silk twined together. Your movements become as fluid as the phasing itself."
+    "lore": "Normal and phase silk twined together. Your movements become as fluid as the phasing itself.",
+    "sprite_desc": "A ceramic plate of beautifully prepared spider silk and phase silk, plated with a pale violet reduction drizzled on top"
   },
   "demon_heart_roast": {
     "name": "Demon Heart Roast",
@@ -543,7 +586,8 @@
     "sp": 180,
     "bonus_type": "two_stats",
     "bonus_amount": 2,
-    "lore": "You should not be cooking this. And yet here you are. Infernal power floods through you."
+    "lore": "You should not be cooking this. And yet here you are. Infernal power floods through you.",
+    "sprite_desc": "A wooden platter bearing a glistening roast of nalfeshnee heart and hezrou demon bile, seared to a warm russet crust with herb garnish"
   },
   "elder_vampire_phylactery_elixir": {
     "name": "Undeath Synthesis Elixir",
@@ -555,7 +599,8 @@
     "bonus_type": "stat",
     "bonus_stat": "WIS",
     "bonus_amount": 2,
-    "lore": "Centuries of accumulated vampire cunning and a lich's distilled intellect. Ancient wisdom absorbed."
+    "lore": "Centuries of accumulated vampire cunning and a lich's distilled intellect. Ancient wisdom absorbed.",
+    "sprite_desc": "A glass flask of shimmering warm russet liquid distilled from elder vampire blood and necromancer phylactery, tiny bubbles rising within"
   },
   "cerebral_eye_pudding": {
     "name": "Mind Flayer's Pudding",
@@ -567,7 +612,8 @@
     "bonus_type": "stat",
     "bonus_stat": "INT",
     "bonus_amount": 3,
-    "lore": "Mind flayers eat brains. You eat their fluid. The alien intelligence floods your thoughts, and you are sharper for it."
+    "lore": "Mind flayers eat brains. You eat their fluid. The alien intelligence floods your thoughts, and you are sharper for it.",
+    "sprite_desc": "A ceramic plate of beautifully prepared cerebral fluid and eye jelly, plated with a earthy reduction drizzled on top"
   },
   "death_essence_soul_stew": {
     "name": "Death's Harvest Stew",
@@ -579,7 +625,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 2,
-    "lore": "Harvested from the boundary of life and death. Reinforces your hold on existence."
+    "lore": "Harvested from the boundary of life and death. Reinforces your hold on existence.",
+    "sprite_desc": "A bubbling iron pot of thick earthy stew made from death essence and soul fragment, steam rising from the surface"
   },
   "troll_ogre_regeneration_broth": {
     "name": "Regeneration Broth",
@@ -591,7 +638,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 2,
-    "lore": "The troll gland still twitches in the pot. That's how you know it's working."
+    "lore": "The troll gland still twitches in the pot. That's how you know it's working.",
+    "sprite_desc": "A stone bowl filled with smooth verdant broth made from troll regeneration gland and ogre hide, wisps of fragrant steam curling above"
   },
   "dragon_fire_gland_elixir": {
     "name": "Dragon Blood Elixir",
@@ -602,7 +650,8 @@
     "sp": 220,
     "bonus_type": "two_stats",
     "bonus_amount": 2,
-    "lore": "Fire and scale â€” the draconic essence distilled into one supremely dangerous drink."
+    "lore": "Fire and scale â€” the draconic essence distilled into one supremely dangerous drink.",
+    "sprite_desc": "A glass flask of shimmering warm russet liquid distilled from Dragon Scale and fire gland, tiny bubbles rising within"
   },
   "chaos_void_brew": {
     "name": "Void Chaos Brew",
@@ -613,7 +662,8 @@
     "sp": 200,
     "bonus_type": "random_stat",
     "bonus_amount": 2,
-    "lore": "The effects are unpredictable, like everything touched by chaos and void."
+    "lore": "The effects are unpredictable, like everything touched by chaos and void.",
+    "sprite_desc": "A ceramic plate of beautifully prepared chaos essence and void shard, plated with a earthy reduction drizzled on top"
   },
   "cultist_arcane_tincture": {
     "name": "Arcane Cultist Tincture",
@@ -625,7 +675,8 @@
     "bonus_type": "stat",
     "bonus_stat": "INT",
     "bonus_amount": 2,
-    "lore": "Dark sorcery and ancient bone powder. The forbidden knowledge seeps in with every drop."
+    "lore": "Dark sorcery and ancient bone powder. The forbidden knowledge seeps in with every drop.",
+    "sprite_desc": "A ceramic plate of beautifully prepared cultist reagent and arcane bone dust, plated with a earthy reduction drizzled on top"
   },
   "changeling_puca_illusion_soup": {
     "name": "Fae Illusion Soup",
@@ -637,7 +688,8 @@
     "bonus_type": "status",
     "bonus_effect": "invisible",
     "bonus_amount": 8,
-    "lore": "The fae have always known secrets of concealment. This soup smells of both mischief and magic."
+    "lore": "The fae have always known secrets of concealment. This soup smells of both mischief and magic.",
+    "sprite_desc": "A stone bowl filled with smooth pale violet broth made from changeling glamour and puca hair, wisps of fragrant steam curling above"
   },
   "drow_venom_tincture": {
     "name": "Drow Venom Tincture",
@@ -649,7 +701,8 @@
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 2,
-    "lore": "Drow spend centuries perfecting their venoms. Neutralized and taken as a tincture, the body learns their precision."
+    "lore": "Drow spend centuries perfecting their venoms. Neutralized and taken as a tincture, the body learns their precision.",
+    "sprite_desc": "A ceramic plate of beautifully prepared drow poison extract and paralytic venom, plated with a earthy reduction drizzled on top"
   },
   "basilisk_medusa_grand_feast": {
     "name": "Gorgon's Grand Feast",
@@ -660,7 +713,8 @@
     "sp": 240,
     "bonus_type": "two_stats",
     "bonus_amount": 2,
-    "lore": "Both creatures turn things to stone with a glance. Cooked together, they give you eyes like theirs."
+    "lore": "Both creatures turn things to stone with a glance. Cooked together, they give you eyes like theirs.",
+    "sprite_desc": "A large ornate platter laden with an elaborate arrangement of basilisk eye and Medusa's Blood, garnished with edible flowers and warm russet sauce"
   },
   "chimera_dragon_roast": {
     "name": "Chimera and Dragon Roast",
@@ -671,7 +725,8 @@
     "sp": 280,
     "bonus_type": "all_stats",
     "bonus_amount": 1,
-    "lore": "Two of the most terrible predators in the deep. Their flesh combined is beyond transcendent."
+    "lore": "Two of the most terrible predators in the deep. Their flesh combined is beyond transcendent.",
+    "sprite_desc": "A wooden platter bearing a glistening roast of chimera heart and Dragon Scale, seared to a earthy crust with herb garnish"
   },
   "lich_vampire_death_banquet": {
     "name": "The Undying Banquet",
@@ -682,7 +737,8 @@
     "sp": 300,
     "bonus_type": "all_stats",
     "bonus_amount": 1,
-    "lore": "Lich and vampire â€” two forms of cheating death. Together they may share their secret with you."
+    "lore": "Lich and vampire â€” two forms of cheating death. Together they may share their secret with you.",
+    "sprite_desc": "A large ornate platter laden with an elaborate arrangement of necromancer phylactery and elder vampire blood, garnished with edible flowers and earthy sauce"
   },
   "devourer_soul_judges_feast": {
     "name": "Ammit's Judgment Feast",
@@ -693,7 +749,8 @@
     "sp": 320,
     "bonus_type": "all_stats",
     "bonus_amount": 1,
-    "lore": "The Egyptian devourer weighs souls. Consuming her tooth alongside one grants the wisdom of judgment."
+    "lore": "The Egyptian devourer weighs souls. Consuming her tooth alongside one grants the wisdom of judgment.",
+    "sprite_desc": "A large ornate platter laden with an elaborate arrangement of devourer tooth and soul fragment, garnished with edible flowers and warm russet sauce"
   },
   "pit_fiend_void_supremacy": {
     "name": "Infernal Void Supremacy",
@@ -704,7 +761,8 @@
     "sp": 350,
     "bonus_type": "all_stats",
     "bonus_amount": 1,
-    "lore": "The deepest evil and the deepest void. Those who survive eating this are changed forever."
+    "lore": "The deepest evil and the deepest void. Those who survive eating this are changed forever.",
+    "sprite_desc": "A ceramic plate of beautifully prepared pit fiend scale and void ichor, plated with a warm russet reduction drizzled on top"
   },
   "troll_demon_brain_undying": {
     "name": "The Undying Formula",
@@ -716,7 +774,8 @@
     "sp": 400,
     "bonus_type": "all_stats",
     "bonus_amount": 2,
-    "lore": "Regeneration, infernal fire, and the essence of death itself. The ultimate tonic of survival."
+    "lore": "Regeneration, infernal fire, and the essence of death itself. The ultimate tonic of survival.",
+    "sprite_desc": "A ceramic plate of beautifully prepared troll regeneration gland, nalfeshnee heart, and death essence, plated with a verdant reduction drizzled on top"
   },
   "shadow_bat_stew": {
     "name": "Cave Shadow Stew",
@@ -728,7 +787,8 @@
     "bonus_type": "status",
     "bonus_effect": "invisible",
     "bonus_amount": 6,
-    "lore": "Shadow hound and bat â€” both creatures of darkness. Their essence grants temporary concealment."
+    "lore": "Shadow hound and bat â€” both creatures of darkness. Their essence grants temporary concealment.",
+    "sprite_desc": "A bubbling iron pot of thick dark stew made from shadow fur and bat wing, steam rising from the surface"
   },
   "grub_goblin_bake": {
     "name": "Grub and Goblin Bake",
@@ -740,7 +800,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
-    "lore": "Goblins eat grubs regularly. You're just cutting out the middleman."
+    "lore": "Goblins eat grubs regularly. You're just cutting out the middleman.",
+    "sprite_desc": "A ceramic plate of beautifully prepared insect carapace and goblin flesh, plated with a warm russet reduction drizzled on top"
   },
   "lycan_troll_broth": {
     "name": "Feral Broth",
@@ -751,7 +812,8 @@
     "sp": 175,
     "bonus_type": "two_stats",
     "bonus_amount": 2,
-    "lore": "Werewolf ferocity and troll vitality. Two natures of unstoppable savagery, one broth."
+    "lore": "Werewolf ferocity and troll vitality. Two natures of unstoppable savagery, one broth.",
+    "sprite_desc": "A stone bowl filled with smooth warm russet broth made from lycanthrope blood and troll hide, wisps of fragrant steam curling above"
   },
   "raven_eagle_consomme": {
     "name": "Sky Hunter's ConsommÃ©",
@@ -763,7 +825,8 @@
     "bonus_type": "stat",
     "bonus_stat": "PER",
     "bonus_amount": 2,
-    "lore": "The raven sees omens. The eagle sees clearly. Both feathers boiled grant exceptional sight."
+    "lore": "The raven sees omens. The eagle sees clearly. Both feathers boiled grant exceptional sight.",
+    "sprite_desc": "A stone bowl filled with smooth dark broth made from raven feather and eagle feather, wisps of fragrant steam curling above"
   },
   "naga_python_scales": {
     "name": "Serpent Scales Supreme",
@@ -775,7 +838,8 @@
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 2,
-    "lore": "Two magnificent serpents. One divine, one natural. Their serpentine grace becomes yours."
+    "lore": "Two magnificent serpents. One divine, one natural. Their serpentine grace becomes yours.",
+    "sprite_desc": "A ceramic plate of beautifully prepared naga scale and python scales, plated with a verdant reduction drizzled on top"
   },
   "owlbear_griffin_feast": {
     "name": "Chimeric Predator Feast",
@@ -786,7 +850,8 @@
     "sp": 200,
     "bonus_type": "two_stats",
     "bonus_amount": 2,
-    "lore": "Two hybrid predators that shouldn't exist â€” their impossible power becomes inexplicably yours."
+    "lore": "Two hybrid predators that shouldn't exist â€” their impossible power becomes inexplicably yours.",
+    "sprite_desc": "A large ornate platter laden with an elaborate arrangement of owlbear feather and griffin feather, garnished with edible flowers and warm russet sauce"
   },
   "barrow_embalming_stew": {
     "name": "Tomb Guardian Stew",
@@ -798,7 +863,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 2,
-    "lore": "Ancient preservatives that kept corpses intact for centuries. Renders the living nearly as indestructible."
+    "lore": "Ancient preservatives that kept corpses intact for centuries. Renders the living nearly as indestructible.",
+    "sprite_desc": "A bubbling iron pot of thick warm russet stew made from barrow dust and embalming resin, steam rising from the surface"
   },
   "wisp_shadow_brew": {
     "name": "Twilight Brew",
@@ -810,7 +876,8 @@
     "bonus_type": "stat",
     "bonus_stat": "WIS",
     "bonus_amount": 2,
-    "lore": "Light and shadow at the boundary between worlds. Only the wise understand both â€” and after this, you will."
+    "lore": "Light and shadow at the boundary between worlds. Only the wise understand both â€” and after this, you will.",
+    "sprite_desc": "A ceramic plate of beautifully prepared wisp essence and shadow essence, plated with a pale violet reduction drizzled on top"
   },
   "orc_bugbear_conquest": {
     "name": "Conqueror's Pottage",
@@ -822,7 +889,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
-    "lore": "Goblinoid warriors eat together before battle. You eat them after. Conqueror's strength."
+    "lore": "Goblinoid warriors eat together before battle. You eat them after. Conqueror's strength.",
+    "sprite_desc": "A ceramic plate of beautifully prepared orc blood and bugbear pelt, plated with a verdant reduction drizzled on top"
   },
   "spider_web_stew": {
     "name": "Spider-Silk Mushroom Stew",
@@ -834,7 +902,8 @@
     "bonus_type": "status",
     "bonus_effect": "invisible",
     "bonus_amount": 12,
-    "description": "Silk threads dissolved into mushroom broth bend light around the drinker."
+    "description": "Silk threads dissolved into mushroom broth bend light around the drinker.",
+    "sprite_desc": "A bubbling iron pot of thick pale violet stew made from spider silk and cave mushroom, steam rising from the surface"
   },
   "bat_wing_cracklings": {
     "name": "Bat Wing Cracklings",
@@ -846,7 +915,8 @@
     "bonus_type": "status",
     "bonus_effect": "haste",
     "bonus_amount": 15,
-    "description": "Crisped bat wing with thyme. Something about the hollowness of the bones quickens the legs."
+    "description": "Crisped bat wing with thyme. Something about the hollowness of the bones quickens the legs.",
+    "sprite_desc": "A wooden platter bearing a glistening roast of bat wing and wild thyme, seared to a earthy crust with herb garnish"
   },
   "slime_brined_goblin": {
     "name": "Slime-Brined Goblin Shank",
@@ -858,7 +928,8 @@
     "bonus_type": "status",
     "bonus_effect": "poison_resist",
     "bonus_amount": 40,
-    "description": "The acidic slime brine permeates the goblin meat, building gut resistance to toxins."
+    "description": "The acidic slime brine permeates the goblin meat, building gut resistance to toxins.",
+    "sprite_desc": "A ceramic plate of beautifully prepared goblin flesh and slime core, plated with a verdant reduction drizzled on top"
   },
   "fallen_bone_broth": {
     "name": "Fallen Warrior's Bone Broth",
@@ -870,7 +941,8 @@
     "bonus_type": "status",
     "bonus_effect": "regenerating",
     "bonus_amount": 30,
-    "description": "Marrow coaxed from shattered bones with root vegetables. The dead still nourish the living."
+    "description": "Marrow coaxed from shattered bones with root vegetables. The dead still nourish the living.",
+    "sprite_desc": "A stone bowl filled with smooth warm russet broth made from bone shard and cave carrot, wisps of fragrant steam curling above"
   },
   "rat_goblin_street_pot": {
     "name": "Rat and Goblin Street Pot",
@@ -881,7 +953,8 @@
     "sp": 130,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
-    "description": "The foundational recipe of the dungeon underclass. Filling, cheap, and surprisingly nutritious."
+    "description": "The foundational recipe of the dungeon underclass. Filling, cheap, and surprisingly nutritious.",
+    "sprite_desc": "A ceramic plate of beautifully prepared rat meat and goblin flesh, plated with a warm russet reduction drizzled on top"
   },
   "cold_cave_jelly": {
     "name": "Cold Cave Jelly",
@@ -893,7 +966,8 @@
     "bonus_type": "status",
     "bonus_effect": "cold_shield",
     "bonus_amount": 25,
-    "description": "Slime set cold in a frost gland casing. Numb to the cold before you're numb for good."
+    "description": "Slime set cold in a frost gland casing. Numb to the cold before you're numb for good.",
+    "sprite_desc": "A ceramic plate of beautifully prepared slime core and frost gland, plated with a verdant reduction drizzled on top"
   },
   "ember_rat_fire_fusion": {
     "name": "Ember-Fused Rat Broth",
@@ -905,7 +979,8 @@
     "bonus_type": "status",
     "bonus_effect": "fire_shield",
     "bonus_amount": 25,
-    "description": "The fire beetle's gland renders the rat fat volcanic. Provides temporary fire resistance."
+    "description": "The fire beetle's gland renders the rat fat volcanic. Provides temporary fire resistance.",
+    "sprite_desc": "A stone bowl filled with smooth warm russet broth made from rat meat and fire gland, wisps of fragrant steam curling above"
   },
   "troll_regen_chowder": {
     "name": "Troll Regeneration Chowder",
@@ -917,7 +992,8 @@
     "bonus_type": "status",
     "bonus_effect": "regenerating",
     "bonus_amount": 60,
-    "description": "Two of the dungeon's most resilient creatures combined in a hearty chowder. Wounds knit themselves."
+    "description": "Two of the dungeon's most resilient creatures combined in a hearty chowder. Wounds knit themselves.",
+    "sprite_desc": "A bubbling iron pot of thick verdant stew made from troll hide and bear meat, steam rising from the surface"
   },
   "wolf_herb_hunters_roast": {
     "name": "Wolf and Herb Hunter's Roast",
@@ -929,7 +1005,8 @@
     "sp": 160,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "A woodland hunter's meal of slow-roasted wolf with aromatic mountain herbs. Strengthens the body for battle."
+    "description": "A woodland hunter's meal of slow-roasted wolf with aromatic mountain herbs. Strengthens the body for battle.",
+    "sprite_desc": "A wooden platter bearing a glistening roast of wolf meat, wild thyme, and rosemary sprig, seared to a warm russet crust with herb garnish"
   },
   "harpy_wing_bisque": {
     "name": "Harpy Wing Bisque",
@@ -941,7 +1018,8 @@
     "bonus_type": "status",
     "bonus_effect": "haste",
     "bonus_amount": 30,
-    "description": "Hollow harpy bones dissolved in root vegetable broth. The lightness of flight passes to the eater."
+    "description": "Hollow harpy bones dissolved in root vegetable broth. The lightness of flight passes to the eater.",
+    "sprite_desc": "A stone bowl filled with smooth warm russet broth made from hollow bone and cave carrot, wisps of fragrant steam curling above"
   },
   "snake_troll_fortifier": {
     "name": "Snake-Troll Fortifier",
@@ -953,7 +1031,8 @@
     "bonus_type": "status",
     "bonus_effect": "poison_resist",
     "bonus_amount": 50,
-    "description": "Snake venom proteins rendered harmless by troll resilience. The body learns to endure."
+    "description": "Snake venom proteins rendered harmless by troll resilience. The body learns to endure.",
+    "sprite_desc": "A ceramic plate of beautifully prepared snake meat and troll hide, plated with a verdant reduction drizzled on top"
   },
   "bear_claw_stew": {
     "name": "Bear Claw Stew",
@@ -966,7 +1045,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 2,
-    "description": "Two apex predators of the caves combined with fungi. The strength of both flows into the eater."
+    "description": "Two apex predators of the caves combined with fungi. The strength of both flows into the eater.",
+    "sprite_desc": "A bubbling iron pot of thick warm russet stew made from bear meat, gnoll hide, and cave mushroom, steam rising from the surface"
   },
   "goblin_slime_ferment": {
     "name": "Goblin-Slime Ferment",
@@ -979,7 +1059,8 @@
     "bonus_type": "status",
     "bonus_effect": "arcane_shield",
     "bonus_amount": 25,
-    "description": "The alchemical properties of slime, tempered by goblin constitution and root herbs, resist magical forces."
+    "description": "The alchemical properties of slime, tempered by goblin constitution and root herbs, resist magical forces.",
+    "sprite_desc": "A ceramic plate of beautifully prepared goblin flesh, slime core, and valerian root, plated with a verdant reduction drizzled on top"
   },
   "frost_fire_paradox": {
     "name": "Frost-Fire Paradox Soup",
@@ -990,7 +1071,8 @@
     "sp": 130,
     "bonus_type": "random_stat",
     "bonus_amount": 2,
-    "description": "Opposing elements in one pot create chaotic energy. The resulting meal unpredictably strengthens the body."
+    "description": "Opposing elements in one pot create chaotic energy. The resulting meal unpredictably strengthens the body.",
+    "sprite_desc": "A stone bowl filled with smooth warm russet broth made from fire gland and frost gland, wisps of fragrant steam curling above"
   },
   "corrupted_bone_risotto": {
     "name": "Corrupted Bone Risotto",
@@ -1003,7 +1085,8 @@
     "bonus_type": "stat",
     "bonus_stat": "INT",
     "bonus_amount": 1,
-    "description": "The accumulated memories of undead warriors seep into the mushroom risotto. Their knowledge becomes yours."
+    "description": "The accumulated memories of undead warriors seep into the mushroom risotto. Their knowledge becomes yours.",
+    "sprite_desc": "A ceramic plate of beautifully prepared bone shard, warrior bone, and cave mushroom, plated with a warm russet reduction drizzled on top"
   },
   "manticore_spine_reduction": {
     "name": "Manticore Spine Reduction",
@@ -1016,7 +1099,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 2,
-    "description": "Ground manticore spine slow-reduced with bear meat in void-salt brine. Brutally effective."
+    "description": "Ground manticore spine slow-reduced with bear meat in void-salt brine. Brutally effective.",
+    "sprite_desc": "A ceramic plate of beautifully prepared manticore spine, bear meat, and void salt, plated with a warm russet reduction drizzled on top"
   },
   "basilisk_stone_bisque": {
     "name": "Basilisk Stone Bisque",
@@ -1029,7 +1113,8 @@
     "bonus_type": "status",
     "bonus_effect": "blind_resist",
     "bonus_amount": 80,
-    "description": "The stone gaze of the basilisk, processed with herbs, teaches the eyes to resist petrifying sight."
+    "description": "The stone gaze of the basilisk, processed with herbs, teaches the eyes to resist petrifying sight.",
+    "sprite_desc": "A stone bowl filled with smooth earthy broth made from basilisk stone, cave carrot, and wild thyme, wisps of fragrant steam curling above"
   },
   "wyvern_frost_broth": {
     "name": "Wyvern Frost Broth",
@@ -1041,7 +1126,8 @@
     "sp": 200,
     "bonus_type": "two_stats",
     "bonus_amount": 1,
-    "description": "Wyvern venom neutralized by frost creates a potent double-tonic. Two attributes improve at once."
+    "description": "Wyvern venom neutralized by frost creates a potent double-tonic. Two attributes improve at once.",
+    "sprite_desc": "A stone bowl filled with smooth verdant broth made from wyvern stinger, frost gland, and cave carrot, wisps of fragrant steam curling above"
   },
   "vampire_consomme": {
     "name": "Vampire Consomme",
@@ -1053,7 +1139,8 @@
     "bonus_type": "status",
     "bonus_effect": "arcane_shield",
     "bonus_amount": 40,
-    "description": "Clarified vampire blood with nightshade. Darkly beautiful. Provides resistance to magical forces."
+    "description": "Clarified vampire blood with nightshade. Darkly beautiful. Provides resistance to magical forces.",
+    "sprite_desc": "A stone bowl filled with smooth warm russet broth made from thrall blood and nightshade leaf, wisps of fragrant steam curling above"
   },
   "shadow_reduction": {
     "name": "Shadow Reduction",
@@ -1065,7 +1152,8 @@
     "bonus_type": "status",
     "bonus_effect": "invisible",
     "bonus_amount": 30,
-    "description": "Shadow distilled into void salt brine. The eater becomes difficult to perceive."
+    "description": "Shadow distilled into void salt brine. The eater becomes difficult to perceive.",
+    "sprite_desc": "A ceramic plate of beautifully prepared shadow essence and void salt, plated with a earthy reduction drizzled on top"
   },
   "troll_manticore_fortifier": {
     "name": "Troll-Manticore Fortifier",
@@ -1076,7 +1164,8 @@
     "sp": 210,
     "bonus_type": "two_stats",
     "bonus_amount": 1,
-    "description": "Regenerative troll hide combined with venomous manticore spine. Two attributes improve permanently."
+    "description": "Regenerative troll hide combined with venomous manticore spine. Two attributes improve permanently.",
+    "sprite_desc": "A ceramic plate of beautifully prepared troll hide and manticore spine, plated with a verdant reduction drizzled on top"
   },
   "chimera_chaos_pot": {
     "name": "Chimera's Chaos Pot",
@@ -1088,7 +1177,8 @@
     "sp": 280,
     "bonus_type": "all_stats",
     "bonus_amount": 1,
-    "description": "Three-natured chimera heart with predatory spine and spice. Every aspect of the body improves."
+    "description": "Three-natured chimera heart with predatory spine and spice. Every aspect of the body improves.",
+    "sprite_desc": "A ceramic plate of beautifully prepared chimera heart, manticore spine, and ember spice, plated with a earthy reduction drizzled on top"
   },
   "lich_bone_extract": {
     "name": "Lich Bone Extract",
@@ -1101,7 +1191,8 @@
     "bonus_type": "stat",
     "bonus_stat": "INT",
     "bonus_amount": 2,
-    "description": "Distilled essence of undead spellcasters. Their arcane knowledge, now yours."
+    "description": "Distilled essence of undead spellcasters. Their arcane knowledge, now yours.",
+    "sprite_desc": "A ceramic plate of beautifully prepared arcane bone dust, warrior bone, and nightshade leaf, plated with a earthy reduction drizzled on top"
   },
   "frost_giant_stew": {
     "name": "Frost Giant's Marrow Stew",
@@ -1113,7 +1204,8 @@
     "sp": 230,
     "bonus_type": "two_stats",
     "bonus_amount": 1,
-    "description": "The marrow of giants rendered with bear meat in frost. Imparts some of their tremendous constitution."
+    "description": "The marrow of giants rendered with bear meat in frost. Imparts some of their tremendous constitution.",
+    "sprite_desc": "A bubbling iron pot of thick pale violet stew made from frost giant bone, bear meat, and frost gland, steam rising from the surface"
   },
   "medusa_blood_elixir": {
     "name": "Medusa Blood Elixir",
@@ -1125,7 +1217,8 @@
     "bonus_type": "stat",
     "bonus_stat": "WIS",
     "bonus_amount": 2,
-    "description": "Two creatures whose gaze transforms others. Drinking their combined essence grants insight beyond sight."
+    "description": "Two creatures whose gaze transforms others. Drinking their combined essence grants insight beyond sight.",
+    "sprite_desc": "A glass flask of shimmering verdant liquid distilled from Medusa's Blood and basilisk stone, tiny bubbles rising within"
   },
   "dragon_scale_tartare": {
     "name": "Dragon Scale Tartare",
@@ -1138,7 +1231,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 2,
-    "description": "Raw dragon scale cured in void-salt and ember spice. The hardness of dragonhide seeps into the flesh."
+    "description": "Raw dragon scale cured in void-salt and ember spice. The hardness of dragonhide seeps into the flesh.",
+    "sprite_desc": "A golden-brown pastry shell filled with Dragon Scale, void salt, and ember spice, the crust golden-brown and flaky with warm russet filling peeking through slits"
   },
   "elder_vampire_reduction": {
     "name": "Elder Vampire's Blood Reduction",
@@ -1151,7 +1245,8 @@
     "bonus_type": "stat",
     "bonus_stat": "INT",
     "bonus_amount": 2,
-    "description": "Centuries of accumulated arcane knowledge flow from elder vampire blood. The mind expands."
+    "description": "Centuries of accumulated arcane knowledge flow from elder vampire blood. The mind expands.",
+    "sprite_desc": "A ceramic plate of beautifully prepared elder vampire blood, nightshade leaf, and valerian root, plated with a warm russet reduction drizzled on top"
   },
   "storm_tempest_stew": {
     "name": "Storm Tempest Stew",
@@ -1163,7 +1258,8 @@
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 2,
-    "description": "Elemental storm power condensed in void salt. The speed and reflexes of lightning."
+    "description": "Elemental storm power condensed in void salt. The speed and reflexes of lightning.",
+    "sprite_desc": "A bubbling iron pot of thick pale violet stew made from storm essence and void salt, steam rising from the surface"
   },
   "medusa_dragon_elixir": {
     "name": "Medusa-Dragon Elixir",
@@ -1175,7 +1271,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 3,
-    "description": "Two of the dungeon's most feared creatures. Both are nearly impossible to harm. Drinking this makes you harder to harm too."
+    "description": "Two of the dungeon's most feared creatures. Both are nearly impossible to harm. Drinking this makes you harder to harm too.",
+    "sprite_desc": "A glass flask of shimmering verdant liquid distilled from Medusa's Blood and Dragon Scale, tiny bubbles rising within"
   },
   "wraith_essence_broth": {
     "name": "Wraith Essence Broth",
@@ -1188,7 +1285,8 @@
     "bonus_type": "status",
     "bonus_effect": "death_ward",
     "bonus_amount": 40,
-    "description": "A spirit dissolved in void-salt brine with calming herbs. Temporarily wards against death itself."
+    "description": "A spirit dissolved in void-salt brine with calming herbs. Temporarily wards against death itself.",
+    "sprite_desc": "A stone bowl filled with smooth pale violet broth made from spectral essence, void salt, and valerian root, wisps of fragrant steam curling above"
   },
   "chimera_basilisk_vision": {
     "name": "Chimera-Basilisk Vision Soup",
@@ -1200,7 +1298,8 @@
     "bonus_type": "stat",
     "bonus_stat": "PER",
     "bonus_amount": 2,
-    "description": "Two creatures defined by extraordinary senses. Combined, they grant remarkable perception."
+    "description": "Two creatures defined by extraordinary senses. Combined, they grant remarkable perception.",
+    "sprite_desc": "A stone bowl filled with smooth earthy broth made from chimera heart and basilisk stone, wisps of fragrant steam curling above"
   },
   "abyssal_fenrir_roast": {
     "name": "Abyssal Fenrir Roast",
@@ -1212,7 +1311,8 @@
     "sp": 400,
     "bonus_type": "two_stats",
     "bonus_amount": 3,
-    "lore": "The fang of the world-ender with dragon scale. Two apex predators. Two attributes improve by three."
+    "lore": "The fang of the world-ender with dragon scale. Two apex predators. Two attributes improve by three.",
+    "sprite_desc": "A wooden platter bearing a glistening roast of Fenrir's Fang, Dragon Scale, and void salt, seared to a pale violet crust with herb garnish"
   },
   "void_destroyer_feast": {
     "name": "Void Destroyer's Feast",
@@ -1224,7 +1324,8 @@
     "sp": 480,
     "bonus_type": "all_stats",
     "bonus_amount": 2,
-    "lore": "The destroyer of worlds, the king of beasts, the chimera of creation. All stats improve."
+    "lore": "The destroyer of worlds, the king of beasts, the chimera of creation. All stats improve.",
+    "sprite_desc": "A large ornate platter laden with an elaborate arrangement of Void Essence, Dragon Scale, and chimera heart, garnished with edible flowers and earthy sauce"
   },
   "destroyers_arcane_essence": {
     "name": "Destroyer's Arcane Essence",
@@ -1237,7 +1338,8 @@
     "bonus_type": "status",
     "bonus_effect": "arcane_shield",
     "bonus_amount": 150,
-    "lore": "The raw force of Abaddon with the lich's immortal will. Magic cannot touch you for a very long time."
+    "lore": "The raw force of Abaddon with the lich's immortal will. Magic cannot touch you for a very long time.",
+    "sprite_desc": "A ceramic plate of beautifully prepared Void Essence, necromancer phylactery, and void salt, plated with a earthy reduction drizzled on top"
   },
   "death_march_reduction": {
     "name": "Death March Reduction",
@@ -1248,7 +1350,8 @@
     "sp": 420,
     "bonus_type": "all_stats",
     "bonus_amount": 1,
-    "lore": "The wolf who ends the world and the destroyer of worlds. A meal for the truly fearless."
+    "lore": "The wolf who ends the world and the destroyer of worlds. A meal for the truly fearless.",
+    "sprite_desc": "A ceramic plate of beautifully prepared Fenrir's Fang and Void Essence, plated with a pale violet reduction drizzled on top"
   },
   "rat_dragon_paradox": {
     "name": "Rat-Dragon Paradox Broth",
@@ -1260,7 +1363,8 @@
     "sp": 280,
     "bonus_type": "all_stats",
     "bonus_amount": 1,
-    "lore": "The humblest creature and the mightiest combined. Even a rat's meat, prepared with dragon scale, holds wonder. All stats improve."
+    "lore": "The humblest creature and the mightiest combined. Even a rat's meat, prepared with dragon scale, holds wonder. All stats improve.",
+    "sprite_desc": "A stone bowl filled with smooth warm russet broth made from rat meat, Dragon Scale, and void salt, wisps of fragrant steam curling above"
   },
   "snake_medusa_lineage": {
     "name": "Serpent Lineage Consomme",
@@ -1271,7 +1375,8 @@
     "sp": 230,
     "bonus_type": "two_stats",
     "bonus_amount": 1,
-    "description": "The lowly snake and its ancient cousin the gorgon, bound by blood. Their combined wisdom flows inward."
+    "description": "The lowly snake and its ancient cousin the gorgon, bound by blood. Their combined wisdom flows inward.",
+    "sprite_desc": "A stone bowl filled with smooth verdant broth made from snake meat and Medusa's Blood, wisps of fragrant steam curling above"
   },
   "fire_ice_transcendence": {
     "name": "Fire-Ice Transcendence",
@@ -1284,7 +1389,8 @@
     "sp": 300,
     "bonus_type": "all_stats",
     "bonus_amount": 1,
-    "lore": "Fire and frost, predator and beast, elemental and ancient. To balance all opposites is to transcend them."
+    "lore": "Fire and frost, predator and beast, elemental and ancient. To balance all opposites is to transcend them.",
+    "sprite_desc": "A ceramic plate of beautifully prepared fire gland, frost gland, manticore spine, and Dragon Scale, plated with a warm russet reduction drizzled on top"
   },
   "goblin_chimera_revelation": {
     "name": "Goblin-Chimera Revelation",
@@ -1296,7 +1402,8 @@
     "sp": 250,
     "bonus_type": "two_stats",
     "bonus_amount": 2,
-    "description": "The first creature you faced and the chimera of later depths. Combining beginning and middle reveals hidden potential."
+    "description": "The first creature you faced and the chimera of later depths. Combining beginning and middle reveals hidden potential.",
+    "sprite_desc": "A ceramic plate of beautifully prepared goblin flesh, slime core, and chimera heart, plated with a verdant reduction drizzled on top"
   },
   "first_and_last": {
     "name": "The First and the Last",
@@ -1308,7 +1415,8 @@
     "sp": 450,
     "bonus_type": "all_stats",
     "bonus_amount": 2,
-    "lore": "The first creature of the dungeon and its final guardian. Alpha and omega. Cooking this takes mastery beyond reason."
+    "lore": "The first creature of the dungeon and its final guardian. Alpha and omega. Cooking this takes mastery beyond reason.",
+    "sprite_desc": "A ceramic plate of beautifully prepared rat meat, Void Essence, and void salt, plated with a warm russet reduction drizzled on top"
   },
   "bone_of_ages": {
     "name": "Bone of Ages",
@@ -1321,7 +1429,8 @@
     "bonus_type": "stat",
     "bonus_stat": "INT",
     "bonus_amount": 3,
-    "lore": "Bone from levels one, ten, and sixty. The dead across all depths share their accumulated wisdom."
+    "lore": "Bone from levels one, ten, and sixty. The dead across all depths share their accumulated wisdom.",
+    "sprite_desc": "A ceramic plate of beautifully prepared bone shard, warrior bone, and necromancer phylactery, plated with a warm russet reduction drizzled on top"
   },
   "hunters_trophy_roast": {
     "name": "Hunter's Trophy Roast",
@@ -1335,7 +1444,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 3,
-    "description": "Rat, wolf, bear, manticore - four levels of predatory escalation in one roast. The progression of strength incarnate."
+    "description": "Rat, wolf, bear, manticore - four levels of predatory escalation in one roast. The progression of strength incarnate.",
+    "sprite_desc": "A wooden platter bearing a glistening roast of rat meat, wolf meat, bear meat, and manticore spine, seared to a warm russet crust with herb garnish"
   },
   "alchemists_base": {
     "name": "The Alchemist's Base",
@@ -1349,7 +1459,8 @@
     "bonus_type": "stat",
     "bonus_stat": "WIS",
     "bonus_amount": 2,
-    "lore": "Four transformative substances - the ooze that dissolves, the stone that petrifies, the heart that merges, the blood that turns. Wisdom distilled."
+    "lore": "Four transformative substances - the ooze that dissolves, the stone that petrifies, the heart that merges, the blood that turns. Wisdom distilled.",
+    "sprite_desc": "A ceramic plate of beautifully prepared slime core, basilisk stone, chimera heart, and Medusa's Blood, plated with a verdant reduction drizzled on top"
   },
   "elemental_triad": {
     "name": "Elemental Triad Soup",
@@ -1362,7 +1473,8 @@
     "bonus_type": "stat",
     "bonus_stat": "PER",
     "bonus_amount": 2,
-    "description": "Fire, frost, and storm. Commanding all three elements sharpens every sense."
+    "description": "Fire, frost, and storm. Commanding all three elements sharpens every sense.",
+    "sprite_desc": "A stone bowl filled with smooth warm russet broth made from fire gland, frost gland, and storm essence, wisps of fragrant steam curling above"
   },
   "predator_lineage": {
     "name": "Predator's Lineage",
@@ -1375,7 +1487,8 @@
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 2,
-    "description": "Snake, wyvern, dragon - the reptilian line from humble to apex. Their agility is ancestral."
+    "description": "Snake, wyvern, dragon - the reptilian line from humble to apex. Their agility is ancestral.",
+    "sprite_desc": "A ceramic plate of beautifully prepared snake meat, wyvern stinger, and Dragon Scale, plated with a verdant reduction drizzled on top"
   },
   "bronze_feather_and_dragon_salt_stew": {
     "name": "Bronze Feather & Dragon Salt Stew",
@@ -1387,7 +1500,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
-    "description": "A simple dish combining bronze feather with dragon salt."
+    "description": "A simple dish combining bronze feather with dragon salt.",
+    "sprite_desc": "A bubbling iron pot of thick warm russet stew made from bronze feather and dragon salt, steam rising from the surface"
   },
   "cured_quasit_claw_with_rosemary_sprig": {
     "name": "Cured Quasit Claw with Rosemary Sprig",
@@ -1398,7 +1512,8 @@
     "sp": 97,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining quasit claw with rosemary sprig."
+    "description": "A simple dish combining quasit claw with rosemary sprig.",
+    "sprite_desc": "A ceramic plate of beautifully prepared quasit claw and rosemary sprig, plated with a earthy reduction drizzled on top"
   },
   "green_slime_extract_and_wild_thyme_skewer": {
     "name": "Green Slime Extract & Wild Thyme Skewer",
@@ -1409,7 +1524,8 @@
     "sp": 108,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining green slime extract with wild thyme."
+    "description": "A simple dish combining green slime extract with wild thyme.",
+    "sprite_desc": "A wooden skewer threaded with chunks of green slime extract and wild thyme, charred at the edges with verdant glaze dripping down"
   },
   "wild_thyme_infused_satyr_horn": {
     "name": "Wild Thyme-Infused Satyr Horn",
@@ -1420,7 +1536,8 @@
     "sp": 84,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining satyr horn with wild thyme."
+    "description": "A simple dish combining satyr horn with wild thyme.",
+    "sprite_desc": "A ceramic plate of beautifully prepared satyr horn and wild thyme, plated with a warm russet reduction drizzled on top"
   },
   "scarab_shell_and_ember_spice_ragout": {
     "name": "Scarab Shell & Ember Spice Ragout",
@@ -1431,7 +1548,8 @@
     "sp": 91,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining scarab shell with ember spice."
+    "description": "A simple dish combining scarab shell with ember spice.",
+    "sprite_desc": "A bubbling iron pot of thick verdant stew made from scarab shell and ember spice, steam rising from the surface"
   },
   "smoked_dretch_gland_with_mandrake_root": {
     "name": "Smoked Dretch Gland with Mandrake Root",
@@ -1443,7 +1561,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
-    "description": "A simple dish combining dretch gland with mandrake root."
+    "description": "A simple dish combining dretch gland with mandrake root.",
+    "sprite_desc": "A ceramic plate of beautifully prepared dretch gland and mandrake root, plated with a warm russet reduction drizzled on top"
   },
   "glazed_imp_stinger_broth": {
     "name": "Glazed Imp Stinger Broth",
@@ -1455,7 +1574,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
-    "description": "A simple dish combining imp stinger with rosemary sprig."
+    "description": "A simple dish combining imp stinger with rosemary sprig.",
+    "sprite_desc": "A stone bowl filled with smooth warm russet broth made from imp stinger and rosemary sprig, wisps of fragrant steam curling above"
   },
   "fire_roasted_troglodyte_musk_with_ember_spice": {
     "name": "Fire-Roasted Troglodyte Musk with Ember Spice",
@@ -1466,7 +1586,8 @@
     "sp": 88,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining troglodyte musk with ember spice."
+    "description": "A simple dish combining troglodyte musk with ember spice.",
+    "sprite_desc": "A wooden platter bearing a glistening roast of troglodyte musk and ember spice, seared to a verdant crust with herb garnish"
   },
   "bone_marrow_and_dragon_salt_broth": {
     "name": "Bone Marrow & Dragon Salt Broth",
@@ -1478,7 +1599,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
-    "description": "A simple dish combining bone marrow with dragon salt."
+    "description": "A simple dish combining bone marrow with dragon salt.",
+    "sprite_desc": "A stone bowl filled with smooth warm russet broth made from bone marrow and dragon salt, wisps of fragrant steam curling above"
   },
   "yellow_spores_and_dragon_salt_goulash": {
     "name": "Yellow Spores & Dragon Salt Goulash",
@@ -1490,7 +1612,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
-    "description": "A simple dish combining yellow spores with dragon salt."
+    "description": "A simple dish combining yellow spores with dragon salt.",
+    "sprite_desc": "A bubbling iron pot of thick golden stew made from yellow spores and dragon salt, steam rising from the surface"
   },
   "beetle_shell_and_mandrake_root_hotpot": {
     "name": "Beetle Shell & Mandrake Root Hotpot",
@@ -1502,7 +1625,8 @@
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
-    "description": "A simple dish combining beetle shell with mandrake root."
+    "description": "A simple dish combining beetle shell with mandrake root.",
+    "sprite_desc": "A bubbling iron pot of thick verdant stew made from beetle shell and mandrake root, steam rising from the surface"
   },
   "cured_sea_snake_venom_with_nightshade_leaf": {
     "name": "Cured Sea Snake Venom with Nightshade Leaf",
@@ -1513,7 +1637,8 @@
     "sp": 110,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining sea snake venom with nightshade leaf."
+    "description": "A simple dish combining sea snake venom with nightshade leaf.",
+    "sprite_desc": "A ceramic plate of beautifully prepared sea snake venom and nightshade leaf, plated with a teal reduction drizzled on top"
   },
   "pixie_dust_and_valerian_root_banquet": {
     "name": "Pixie Dust & Valerian Root Banquet",
@@ -1524,7 +1649,8 @@
     "sp": 94,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining pixie dust with valerian root."
+    "description": "A simple dish combining pixie dust with valerian root.",
+    "sprite_desc": "A large ornate platter laden with an elaborate arrangement of pixie dust and valerian root, garnished with edible flowers and pale violet sauce"
   },
   "mandrake_root_infused_myconid_spore": {
     "name": "Mandrake Root-Infused Myconid Spore",
@@ -1536,7 +1662,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
-    "description": "A simple dish combining myconid spore with mandrake root."
+    "description": "A simple dish combining myconid spore with mandrake root.",
+    "sprite_desc": "A ceramic plate of beautifully prepared myconid spore and mandrake root, plated with a earthy reduction drizzled on top"
   },
   "cavern_baked_empusa_ichor_with_cave_mushroom": {
     "name": "Cavern-Baked Empusa Ichor with Cave Mushroom",
@@ -1548,7 +1675,8 @@
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
-    "description": "A simple dish combining empusa ichor with cave mushroom."
+    "description": "A simple dish combining empusa ichor with cave mushroom.",
+    "sprite_desc": "A ceramic plate of beautifully prepared empusa ichor and cave mushroom, plated with a warm russet reduction drizzled on top"
   },
   "grilled_grave_dust_hash": {
     "name": "Grilled Grave Dust Hash",
@@ -1560,7 +1688,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
-    "description": "A simple dish combining grave dust with mandrake root."
+    "description": "A simple dish combining grave dust with mandrake root.",
+    "sprite_desc": "A ceramic plate of beautifully prepared grave dust and mandrake root, plated with a warm russet reduction drizzled on top"
   },
   "demon_claw_and_ember_spice_hotpot": {
     "name": "Demon Claw & Ember Spice Hotpot",
@@ -1572,7 +1701,8 @@
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
-    "description": "A simple dish combining demon claw with ember spice."
+    "description": "A simple dish combining demon claw with ember spice.",
+    "sprite_desc": "A bubbling iron pot of thick warm russet stew made from demon claw and ember spice, steam rising from the surface"
   },
   "honey_glazed_homunculus_blood_roulade": {
     "name": "Honey-Glazed Homunculus Blood Roulade",
@@ -1583,7 +1713,8 @@
     "sp": 97,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining homunculus blood with nightshade leaf."
+    "description": "A simple dish combining homunculus blood with nightshade leaf.",
+    "sprite_desc": "A ceramic plate of beautifully prepared homunculus blood and nightshade leaf, plated with a earthy reduction drizzled on top"
   },
   "gray_slime_and_void_salt_broth": {
     "name": "Gray Slime & Void Salt Broth",
@@ -1594,7 +1725,8 @@
     "sp": 101,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining gray slime with void salt."
+    "description": "A simple dish combining gray slime with void salt.",
+    "sprite_desc": "A stone bowl filled with smooth earthy broth made from gray slime and void salt, wisps of fragrant steam curling above"
   },
   "piercer_shell_and_rosemary_sprig_roast": {
     "name": "Piercer Shell & Rosemary Sprig Roast",
@@ -1606,7 +1738,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
-    "description": "A simple dish combining piercer shell with rosemary sprig."
+    "description": "A simple dish combining piercer shell with rosemary sprig.",
+    "sprite_desc": "A wooden platter bearing a glistening roast of piercer shell and rosemary sprig, seared to a warm russet crust with herb garnish"
   },
   "savory_lizardfolk_pottage": {
     "name": "Savory Lizardfolk Pottage",
@@ -1617,7 +1750,8 @@
     "sp": 108,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining lizardfolk scale with dragon salt."
+    "description": "A simple dish combining lizardfolk scale with dragon salt.",
+    "sprite_desc": "A ceramic plate of beautifully prepared lizardfolk scale and dragon salt, plated with a verdant reduction drizzled on top"
   },
   "ember_kissed_frost_with_ember_spice": {
     "name": "Ember-Kissed Frost with Ember Spice",
@@ -1629,7 +1763,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
-    "description": "A simple dish combining frost bone with ember spice."
+    "description": "A simple dish combining frost bone with ember spice.",
+    "sprite_desc": "A ceramic plate of beautifully prepared frost bone and ember spice, plated with a pale violet reduction drizzled on top"
   },
   "flame_seared_plague_ragout": {
     "name": "Flame-Seared Plague Ragout",
@@ -1641,7 +1776,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
-    "description": "A simple dish combining plague flesh with serpent pepper."
+    "description": "A simple dish combining plague flesh with serpent pepper.",
+    "sprite_desc": "A bubbling iron pot of thick verdant stew made from plague flesh and serpent pepper, steam rising from the surface"
   },
   "stewed_brown_mold_patch_medallions": {
     "name": "Stewed Brown Mold Patch Medallions",
@@ -1652,7 +1788,8 @@
     "sp": 118,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining brown mold patch with petrified mushroom."
+    "description": "A simple dish combining brown mold patch with petrified mushroom.",
+    "sprite_desc": "A bubbling iron pot of thick warm russet stew made from brown mold patch and petrified mushroom, steam rising from the surface"
   },
   "ember_kissed_wasp_venom_pie": {
     "name": "Ember-Kissed Wasp Venom Pie",
@@ -1663,7 +1800,8 @@
     "sp": 108,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining wasp venom with valerian root."
+    "description": "A simple dish combining wasp venom with valerian root.",
+    "sprite_desc": "A golden-brown pastry shell filled with wasp venom and valerian root, the crust golden-brown and flaky with golden filling peeking through slits"
   },
   "nightshade_leaf_infused_mud_crawler": {
     "name": "Nightshade Leaf-Infused Mud Crawler",
@@ -1674,7 +1812,8 @@
     "sp": 70,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining mud crawler hide with nightshade leaf."
+    "description": "A simple dish combining mud crawler hide with nightshade leaf.",
+    "sprite_desc": "A ceramic plate of beautifully prepared mud crawler hide and nightshade leaf, plated with a warm russet reduction drizzled on top"
   },
   "baked_lucky_clover_with_void_salt": {
     "name": "Baked Lucky Clover with Void Salt",
@@ -1686,7 +1825,8 @@
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
-    "description": "A simple dish combining lucky clover with void salt."
+    "description": "A simple dish combining lucky clover with void salt.",
+    "sprite_desc": "A ceramic plate of beautifully prepared lucky clover and void salt, plated with a verdant reduction drizzled on top"
   },
   "braised_toxic_thorn_with_nightshade_leaf": {
     "name": "Braised Toxic Thorn with Nightshade Leaf",
@@ -1698,7 +1838,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
-    "description": "A simple dish combining toxic thorn with nightshade leaf."
+    "description": "A simple dish combining toxic thorn with nightshade leaf.",
+    "sprite_desc": "A ceramic plate of beautifully prepared toxic thorn and nightshade leaf, plated with a verdant reduction drizzled on top"
   },
   "spore_cloud_vial_and_ember_spice_skewer": {
     "name": "Spore Cloud Vial & Ember Spice Skewer",
@@ -1710,7 +1851,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
-    "description": "A simple dish combining spore cloud vial with ember spice."
+    "description": "A simple dish combining spore cloud vial with ember spice.",
+    "sprite_desc": "A wooden skewer threaded with chunks of spore cloud vial and ember spice, charred at the edges with verdant glaze dripping down"
   },
   "ember_spice_infused_goblin_crown_dust": {
     "name": "Ember Spice-Infused Goblin Crown Dust",
@@ -1721,7 +1863,8 @@
     "sp": 97,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining goblin crown dust with ember spice."
+    "description": "A simple dish combining goblin crown dust with ember spice.",
+    "sprite_desc": "A ceramic plate of beautifully prepared goblin crown dust and ember spice, plated with a warm russet reduction drizzled on top"
   },
   "khepri_carapace_and_nightshade_leaf_roulade": {
     "name": "Khepri Carapace & Nightshade Leaf Roulade",
@@ -1733,7 +1876,8 @@
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
-    "description": "A simple dish combining khepri carapace with nightshade leaf."
+    "description": "A simple dish combining khepri carapace with nightshade leaf.",
+    "sprite_desc": "A ceramic plate of beautifully prepared khepri carapace and nightshade leaf, plated with a teal reduction drizzled on top"
   },
   "dragon_salt_infused_enchanted_wood": {
     "name": "Dragon Salt-Infused Enchanted Wood",
@@ -1744,7 +1888,8 @@
     "sp": 77,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining enchanted wood with dragon salt."
+    "description": "A simple dish combining enchanted wood with dragon salt.",
+    "sprite_desc": "A ceramic plate of beautifully prepared enchanted wood and dragon salt, plated with a warm russet reduction drizzled on top"
   },
   "charred_kobold_with_nightshade_leaf": {
     "name": "Charred Kobold with Nightshade Leaf",
@@ -1755,7 +1900,8 @@
     "sp": 105,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining kobold scale with nightshade leaf."
+    "description": "A simple dish combining kobold scale with nightshade leaf.",
+    "sprite_desc": "A ceramic plate of beautifully prepared kobold scale and nightshade leaf, plated with a warm russet reduction drizzled on top"
   },
   "slow_cooked_darkmantle_membrane_with_nightshade_leaf": {
     "name": "Slow-Cooked Darkmantle Membrane with Nightshade Leaf",
@@ -1767,7 +1913,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
-    "description": "A simple dish combining darkmantle membrane with nightshade leaf."
+    "description": "A simple dish combining darkmantle membrane with nightshade leaf.",
+    "sprite_desc": "A ceramic plate of beautifully prepared darkmantle membrane and nightshade leaf, plated with a earthy reduction drizzled on top"
   },
   "wild_herbed_cairn_stone_with_rosemary_sprig": {
     "name": "Wild-Herbed Cairn Stone with Rosemary Sprig",
@@ -1778,7 +1925,8 @@
     "sp": 85,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining cairn stone with rosemary sprig."
+    "description": "A simple dish combining cairn stone with rosemary sprig.",
+    "sprite_desc": "A ceramic plate of beautifully prepared cairn stone and rosemary sprig, plated with a warm russet reduction drizzled on top"
   },
   "mandrake_root_infused_bone_arrow": {
     "name": "Mandrake Root-Infused Bone Arrow",
@@ -1790,7 +1938,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
-    "description": "A simple dish combining bone arrow with mandrake root."
+    "description": "A simple dish combining bone arrow with mandrake root.",
+    "sprite_desc": "A ceramic plate of beautifully prepared bone arrow and mandrake root, plated with a warm russet reduction drizzled on top"
   },
   "primal_crystal_residue_cutlets": {
     "name": "Primal Crystal Residue Cutlets",
@@ -1801,7 +1950,8 @@
     "sp": 82,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining crystal residue with void salt."
+    "description": "A simple dish combining crystal residue with void salt.",
+    "sprite_desc": "A ceramic plate of beautifully prepared crystal residue and void salt, plated with a pale violet reduction drizzled on top"
   },
   "seared_toxic_jelly_sac_feast": {
     "name": "Seared Toxic Jelly Sac Feast",
@@ -1812,7 +1962,8 @@
     "sp": 96,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining toxic jelly sac with rosemary sprig."
+    "description": "A simple dish combining toxic jelly sac with rosemary sprig.",
+    "sprite_desc": "A large ornate platter laden with an elaborate arrangement of toxic jelly sac and rosemary sprig, garnished with edible flowers and verdant sauce"
   },
   "torch_seared_scorpion_venom_sac_with_ember_spice": {
     "name": "Torch-Seared Scorpion Venom Sac with Ember Spice",
@@ -1824,7 +1975,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
-    "description": "A simple dish combining scorpion venom sac with ember spice."
+    "description": "A simple dish combining scorpion venom sac with ember spice.",
+    "sprite_desc": "A ceramic plate of beautifully prepared scorpion venom sac and ember spice, plated with a warm russet reduction drizzled on top"
   },
   "swamp_serpent_fang_and_cave_mushroom_pie": {
     "name": "Swamp Serpent Fang & Cave Mushroom Pie",
@@ -1836,7 +1988,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
-    "description": "A simple dish combining swamp serpent fang with cave mushroom."
+    "description": "A simple dish combining swamp serpent fang with cave mushroom.",
+    "sprite_desc": "A golden-brown pastry shell filled with swamp serpent fang and cave mushroom, the crust golden-brown and flaky with verdant filling peeking through slits"
   },
   "smoked_violet_fungus_cap_fricassee": {
     "name": "Smoked Violet Fungus Cap Fricassee",
@@ -1847,7 +2000,8 @@
     "sp": 85,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining violet fungus cap with ember spice."
+    "description": "A simple dish combining violet fungus cap with ember spice.",
+    "sprite_desc": "A sizzling copper pan of violet fungus cap and ember spice tossed with spices, the earthy sauce still bubbling"
   },
   "herbed_lamia_scales_with_rosemary_sprig": {
     "name": "Herbed Lamia Scales with Rosemary Sprig",
@@ -1858,7 +2012,8 @@
     "sp": 70,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining lamia scales with rosemary sprig."
+    "description": "A simple dish combining lamia scales with rosemary sprig.",
+    "sprite_desc": "A ceramic plate of beautifully prepared lamia scales and rosemary sprig, plated with a warm russet reduction drizzled on top"
   },
   "mystical_wolf_pelt_tartare": {
     "name": "Mystical Wolf Pelt Tartare",
@@ -1869,7 +2024,8 @@
     "sp": 100,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining wolf pelt with rosemary sprig."
+    "description": "A simple dish combining wolf pelt with rosemary sprig.",
+    "sprite_desc": "A golden-brown pastry shell filled with wolf pelt and rosemary sprig, the crust golden-brown and flaky with warm russet filling peeking through slits"
   },
   "nothic_eye_and_nightshade_leaf_chowder": {
     "name": "Nothic Eye & Nightshade Leaf Chowder",
@@ -1880,7 +2036,8 @@
     "sp": 70,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining nothic eye with nightshade leaf."
+    "description": "A simple dish combining nothic eye with nightshade leaf.",
+    "sprite_desc": "A bubbling iron pot of thick warm russet stew made from nothic eye and nightshade leaf, steam rising from the surface"
   },
   "wild_enchanted_plate_medallions": {
     "name": "Wild Enchanted Plate Medallions",
@@ -1891,7 +2048,8 @@
     "sp": 112,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining enchanted plate with petrified mushroom."
+    "description": "A simple dish combining enchanted plate with petrified mushroom.",
+    "sprite_desc": "A ceramic plate of beautifully prepared enchanted plate and petrified mushroom, plated with a pale violet reduction drizzled on top"
   },
   "shaman_totem_and_ember_spice_hash": {
     "name": "Shaman Totem & Ember Spice Hash",
@@ -1903,7 +2061,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
-    "description": "A simple dish combining shaman totem with ember spice."
+    "description": "A simple dish combining shaman totem with ember spice.",
+    "sprite_desc": "A ceramic plate of beautifully prepared shaman totem and ember spice, plated with a warm russet reduction drizzled on top"
   },
   "braised_kuo_toa_slime_with_serpent_pepper": {
     "name": "Braised Kuo-Toa Slime with Serpent Pepper",
@@ -1915,7 +2074,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
-    "description": "A simple dish combining kuo-toa slime with serpent pepper."
+    "description": "A simple dish combining kuo-toa slime with serpent pepper.",
+    "sprite_desc": "A ceramic plate of beautifully prepared kuo-toa slime and serpent pepper, plated with a verdant reduction drizzled on top"
   },
   "ember_kissed_cockatrice_beak_with_ember_spice": {
     "name": "Ember-Kissed Cockatrice Beak with Ember Spice",
@@ -1926,7 +2086,8 @@
     "sp": 75,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining cockatrice beak with ember spice."
+    "description": "A simple dish combining cockatrice beak with ember spice.",
+    "sprite_desc": "A ceramic plate of beautifully prepared cockatrice beak and ember spice, plated with a earthy reduction drizzled on top"
   },
   "grick_and_valerian_root_pottage": {
     "name": "Grick & Valerian Root Pottage",
@@ -1937,7 +2098,8 @@
     "sp": 77,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining grick hide with valerian root."
+    "description": "A simple dish combining grick hide with valerian root.",
+    "sprite_desc": "A ceramic plate of beautifully prepared grick hide and valerian root, plated with a verdant reduction drizzled on top"
   },
   "charred_ghast_ichor_with_void_salt": {
     "name": "Charred Ghast Ichor with Void Salt",
@@ -1948,7 +2110,8 @@
     "sp": 75,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining ghast ichor with void salt."
+    "description": "A simple dish combining ghast ichor with void salt.",
+    "sprite_desc": "A ceramic plate of beautifully prepared ghast ichor and void salt, plated with a verdant reduction drizzled on top"
   },
   "petrified_mushroom_infused_false_holy_relic": {
     "name": "Petrified Mushroom-Infused False Holy Relic",
@@ -1960,7 +2123,8 @@
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
-    "description": "A simple dish combining false holy relic with petrified mushroom."
+    "description": "A simple dish combining false holy relic with petrified mushroom.",
+    "sprite_desc": "A ceramic plate of beautifully prepared false holy relic and petrified mushroom, plated with a warm russet reduction drizzled on top"
   },
   "heartwood_sap_and_nightshade_leaf_platter": {
     "name": "Heartwood Sap & Nightshade Leaf Platter",
@@ -1972,7 +2136,8 @@
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
-    "description": "A simple dish combining heartwood sap with nightshade leaf."
+    "description": "A simple dish combining heartwood sap with nightshade leaf.",
+    "sprite_desc": "A large ornate platter laden with an elaborate arrangement of heartwood sap and nightshade leaf, garnished with edible flowers and verdant sauce"
   },
   "wild_assassin_vine_sap_hotpot": {
     "name": "Wild Assassin Vine Sap Hotpot",
@@ -1984,7 +2149,8 @@
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
-    "description": "A simple dish combining assassin vine sap with valerian root."
+    "description": "A simple dish combining assassin vine sap with valerian root.",
+    "sprite_desc": "A bubbling iron pot of thick verdant stew made from assassin vine sap and valerian root, steam rising from the surface"
   },
   "rosemary_sprig_infused_carbuncle_gem": {
     "name": "Rosemary Sprig-Infused Carbuncle Gem",
@@ -1996,7 +2162,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
-    "description": "A simple dish combining carbuncle gem with rosemary sprig."
+    "description": "A simple dish combining carbuncle gem with rosemary sprig.",
+    "sprite_desc": "A ceramic plate of beautifully prepared carbuncle gem and rosemary sprig, plated with a crimson reduction drizzled on top"
   },
   "bronze_hide_strip_and_serpent_pepper_kebab": {
     "name": "Bronze Hide Strip & Serpent Pepper Kebab",
@@ -2008,7 +2175,8 @@
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
-    "description": "A simple dish combining bronze hide strip with serpent pepper."
+    "description": "A simple dish combining bronze hide strip with serpent pepper.",
+    "sprite_desc": "A wooden skewer threaded with chunks of bronze hide strip and serpent pepper, charred at the edges with warm russet glaze dripping down"
   },
   "mystical_world_serpent_goulash": {
     "name": "Mystical World Serpent Goulash",
@@ -2019,7 +2187,8 @@
     "sp": 115,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining world serpent scale with nightshade leaf."
+    "description": "A simple dish combining world serpent scale with nightshade leaf.",
+    "sprite_desc": "A bubbling iron pot of thick verdant stew made from world serpent scale and nightshade leaf, steam rising from the surface"
   },
   "caramelized_solar_venom_with_mandrake_root": {
     "name": "Caramelized Solar Venom with Mandrake Root",
@@ -2030,7 +2199,8 @@
     "sp": 89,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining solar venom with mandrake root."
+    "description": "A simple dish combining solar venom with mandrake root.",
+    "sprite_desc": "A ceramic plate of beautifully prepared solar venom and mandrake root, plated with a golden reduction drizzled on top"
   },
   "seared_hero_hound_pelt_with_dragon_salt": {
     "name": "Seared Hero Hound Pelt with Dragon Salt",
@@ -2042,7 +2212,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
-    "description": "A simple dish combining hero hound pelt with dragon salt."
+    "description": "A simple dish combining hero hound pelt with dragon salt.",
+    "sprite_desc": "A ceramic plate of beautifully prepared hero hound pelt and dragon salt, plated with a warm russet reduction drizzled on top"
   },
   "serpent_pepper_infused_ochre_extract": {
     "name": "Serpent Pepper-Infused Ochre Extract",
@@ -2054,7 +2225,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
-    "description": "A simple dish combining ochre extract with serpent pepper."
+    "description": "A simple dish combining ochre extract with serpent pepper.",
+    "sprite_desc": "A ceramic plate of beautifully prepared ochre extract and serpent pepper, plated with a golden reduction drizzled on top"
   },
   "pan_fried_pack_lord_skull_feast": {
     "name": "Pan-Fried Pack Lord Skull Feast",
@@ -2065,7 +2237,8 @@
     "sp": 101,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining pack lord skull with cave mushroom."
+    "description": "A simple dish combining pack lord skull with cave mushroom.",
+    "sprite_desc": "A large ornate platter laden with an elaborate arrangement of pack lord skull and cave mushroom, garnished with edible flowers and warm russet sauce"
   },
   "savory_ettercap_silk_roast": {
     "name": "Savory Ettercap Silk Roast",
@@ -2077,7 +2250,8 @@
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
-    "description": "A simple dish combining ettercap silk with mandrake root."
+    "description": "A simple dish combining ettercap silk with mandrake root.",
+    "sprite_desc": "A wooden platter bearing a glistening roast of ettercap silk and mandrake root, seared to a earthy crust with herb garnish"
   },
   "baked_jiangshi_essence_soup": {
     "name": "Baked Jiangshi Essence Soup",
@@ -2089,7 +2263,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
-    "description": "A simple dish combining jiangshi essence with wild thyme."
+    "description": "A simple dish combining jiangshi essence with wild thyme.",
+    "sprite_desc": "A stone bowl filled with smooth warm russet broth made from jiangshi essence and wild thyme, wisps of fragrant steam curling above"
   },
   "ember_spice_infused_hollow_essence": {
     "name": "Ember Spice-Infused Hollow Essence",
@@ -2101,7 +2276,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
-    "description": "A simple dish combining hollow essence with ember spice."
+    "description": "A simple dish combining hollow essence with ember spice.",
+    "sprite_desc": "A ceramic plate of beautifully prepared hollow essence and ember spice, plated with a earthy reduction drizzled on top"
   },
   "rosemary_sprig_infused_charnel_fang": {
     "name": "Rosemary Sprig-Infused Charnel Fang",
@@ -2113,7 +2289,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
-    "description": "A simple dish combining charnel fang with rosemary sprig."
+    "description": "A simple dish combining charnel fang with rosemary sprig.",
+    "sprite_desc": "A ceramic plate of beautifully prepared charnel fang and rosemary sprig, plated with a warm russet reduction drizzled on top"
   },
   "mantis_foreleg_and_void_salt_soup": {
     "name": "Mantis Foreleg & Void Salt Soup",
@@ -2125,7 +2302,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
-    "description": "A simple dish combining mantis foreleg with void salt."
+    "description": "A simple dish combining mantis foreleg with void salt.",
+    "sprite_desc": "A stone bowl filled with smooth verdant broth made from mantis foreleg and void salt, wisps of fragrant steam curling above"
   },
   "winter_wolf_pelt_and_cave_mushroom_roast": {
     "name": "Winter Wolf Pelt & Cave Mushroom Roast",
@@ -2137,7 +2315,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
-    "description": "A simple dish combining winter wolf pelt with cave mushroom."
+    "description": "A simple dish combining winter wolf pelt with cave mushroom.",
+    "sprite_desc": "A wooden platter bearing a glistening roast of winter wolf pelt and cave mushroom, seared to a pale violet crust with herb garnish"
   },
   "rosemary_sprig_infused_death_dog_fang": {
     "name": "Rosemary Sprig-Infused Death Dog Fang",
@@ -2149,7 +2328,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
-    "description": "A simple dish combining death dog fang with rosemary sprig."
+    "description": "A simple dish combining death dog fang with rosemary sprig.",
+    "sprite_desc": "A ceramic plate of beautifully prepared death dog fang and rosemary sprig, plated with a warm russet reduction drizzled on top"
   },
   "ash_smoked_tengu_feather_with_valerian_root": {
     "name": "Ash-Smoked Tengu Feather with Valerian Root",
@@ -2161,7 +2341,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
-    "description": "A simple dish combining tengu feather with valerian root."
+    "description": "A simple dish combining tengu feather with valerian root.",
+    "sprite_desc": "A ceramic plate of beautifully prepared tengu feather and valerian root, plated with a dark reduction drizzled on top"
   },
   "musk_pollen_and_cave_mushroom_fricassee": {
     "name": "Musk Pollen & Cave Mushroom Fricassee",
@@ -2173,7 +2354,8 @@
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
-    "description": "A simple dish combining musk pollen with cave mushroom."
+    "description": "A simple dish combining musk pollen with cave mushroom.",
+    "sprite_desc": "A sizzling copper pan of musk pollen and cave mushroom tossed with spices, the warm russet sauce still bubbling"
   },
   "cyclops_eye_and_rosemary_sprig_roast": {
     "name": "Cyclops Eye & Rosemary Sprig Roast",
@@ -2185,7 +2367,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
-    "description": "A simple dish combining cyclops eye with rosemary sprig."
+    "description": "A simple dish combining cyclops eye with rosemary sprig.",
+    "sprite_desc": "A wooden platter bearing a glistening roast of cyclops eye and rosemary sprig, seared to a warm russet crust with herb garnish"
   },
   "poached_corrupted_elf_dust_with_cave_mushroom": {
     "name": "Poached Corrupted Elf Dust with Cave Mushroom",
@@ -2197,7 +2380,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
-    "description": "A simple dish combining corrupted elf dust with cave mushroom."
+    "description": "A simple dish combining corrupted elf dust with cave mushroom.",
+    "sprite_desc": "A ceramic plate of beautifully prepared corrupted elf dust and cave mushroom, plated with a earthy reduction drizzled on top"
   },
   "simmered_crocodile_skewer": {
     "name": "Simmered Crocodile Skewer",
@@ -2208,7 +2392,8 @@
     "sp": 95,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining crocodile hide with cave mushroom."
+    "description": "A simple dish combining crocodile hide with cave mushroom.",
+    "sprite_desc": "A wooden skewer threaded with chunks of crocodile hide and cave mushroom, charred at the edges with verdant glaze dripping down"
   },
   "cavern_baked_desert_sand_essence_with_dragon_salt": {
     "name": "Cavern-Baked Desert Sand Essence with Dragon Salt",
@@ -2220,7 +2405,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
-    "description": "A simple dish combining desert sand essence with dragon salt."
+    "description": "A simple dish combining desert sand essence with dragon salt.",
+    "sprite_desc": "A ceramic plate of beautifully prepared desert sand essence and dragon salt, plated with a warm russet reduction drizzled on top"
   },
   "slow_cooked_demon_ichor_with_valerian_root": {
     "name": "Slow-Cooked Demon Ichor with Valerian Root",
@@ -2231,7 +2417,8 @@
     "sp": 97,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining demon ichor with valerian root."
+    "description": "A simple dish combining demon ichor with valerian root.",
+    "sprite_desc": "A ceramic plate of beautifully prepared demon ichor and valerian root, plated with a warm russet reduction drizzled on top"
   },
   "cave_mushroom_infused_mouther_ichor": {
     "name": "Cave Mushroom-Infused Mouther Ichor",
@@ -2242,7 +2429,8 @@
     "sp": 77,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining mouther ichor with cave mushroom."
+    "description": "A simple dish combining mouther ichor with cave mushroom.",
+    "sprite_desc": "A ceramic plate of beautifully prepared mouther ichor and cave mushroom, plated with a verdant reduction drizzled on top"
   },
   "wild_herbed_clockwork_gear_terrine": {
     "name": "Wild-Herbed Clockwork Gear Terrine",
@@ -2254,7 +2442,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
-    "description": "A simple dish combining clockwork gear with petrified mushroom."
+    "description": "A simple dish combining clockwork gear with petrified mushroom.",
+    "sprite_desc": "A ceramic plate of beautifully prepared clockwork gear and petrified mushroom, plated with a warm russet reduction drizzled on top"
   },
   "otyugh_organ_and_petrified_mushroom_kebab": {
     "name": "Otyugh Organ & Petrified Mushroom Kebab",
@@ -2266,7 +2455,8 @@
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
-    "description": "A simple dish combining otyugh organ with petrified mushroom."
+    "description": "A simple dish combining otyugh organ with petrified mushroom.",
+    "sprite_desc": "A wooden skewer threaded with chunks of otyugh organ and petrified mushroom, charred at the edges with verdant glaze dripping down"
   },
   "cured_phase_spider_venom_curry": {
     "name": "Cured Phase Spider Venom Curry",
@@ -2278,7 +2468,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
-    "description": "A simple dish combining phase spider venom with rosemary sprig."
+    "description": "A simple dish combining phase spider venom with rosemary sprig.",
+    "sprite_desc": "A ceramic plate of beautifully prepared phase spider venom and rosemary sprig, plated with a earthy reduction drizzled on top"
   },
   "deep_vrykolakas_heart_goulash": {
     "name": "Deep Vrykolakas Heart Goulash",
@@ -2290,7 +2481,8 @@
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
-    "description": "A simple dish combining vrykolakas heart with mandrake root."
+    "description": "A simple dish combining vrykolakas heart with mandrake root.",
+    "sprite_desc": "A bubbling iron pot of thick warm russet stew made from vrykolakas heart and mandrake root, steam rising from the surface"
   },
   "arcane_thrall_soup": {
     "name": "Arcane Thrall Soup",
@@ -2301,7 +2493,8 @@
     "sp": 113,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining thrall bone with mandrake root."
+    "description": "A simple dish combining thrall bone with mandrake root.",
+    "sprite_desc": "A stone bowl filled with smooth warm russet broth made from thrall bone and mandrake root, wisps of fragrant steam curling above"
   },
   "wild_witch_terrine": {
     "name": "Wild Witch Terrine",
@@ -2312,7 +2505,8 @@
     "sp": 70,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining witch bone with valerian root."
+    "description": "A simple dish combining witch bone with valerian root.",
+    "sprite_desc": "A ceramic plate of beautifully prepared witch bone and valerian root, plated with a pale violet reduction drizzled on top"
   },
   "mandrake_root_infused_crypt_dust": {
     "name": "Mandrake Root-Infused Crypt Dust",
@@ -2323,7 +2517,8 @@
     "sp": 111,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining crypt dust with mandrake root."
+    "description": "A simple dish combining crypt dust with mandrake root.",
+    "sprite_desc": "A ceramic plate of beautifully prepared crypt dust and mandrake root, plated with a warm russet reduction drizzled on top"
   },
   "guardian_and_cave_mushroom_medallions": {
     "name": "Guardian & Cave Mushroom Medallions",
@@ -2334,7 +2529,8 @@
     "sp": 100,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining guardian bone with cave mushroom."
+    "description": "A simple dish combining guardian bone with cave mushroom.",
+    "sprite_desc": "A ceramic plate of beautifully prepared guardian bone and cave mushroom, plated with a warm russet reduction drizzled on top"
   },
   "valerian_root_infused_gibbering_essence": {
     "name": "Valerian Root-Infused Gibbering Essence",
@@ -2345,7 +2541,8 @@
     "sp": 91,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining gibbering essence with valerian root."
+    "description": "A simple dish combining gibbering essence with valerian root.",
+    "sprite_desc": "A ceramic plate of beautifully prepared gibbering essence and valerian root, plated with a verdant reduction drizzled on top"
   },
   "cavern_baked_komodo_venom_gland_tartare": {
     "name": "Cavern-Baked Komodo Venom Gland Tartare",
@@ -2357,7 +2554,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
-    "description": "A simple dish combining komodo venom gland with rosemary sprig."
+    "description": "A simple dish combining komodo venom gland with rosemary sprig.",
+    "sprite_desc": "A golden-brown pastry shell filled with komodo venom gland and rosemary sprig, the crust golden-brown and flaky with verdant filling peeking through slits"
   },
   "primal_roc_egg_fragment_roast": {
     "name": "Primal Roc Egg Fragment Roast",
@@ -2368,7 +2566,8 @@
     "sp": 119,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining roc egg fragment with valerian root."
+    "description": "A simple dish combining roc egg fragment with valerian root.",
+    "sprite_desc": "A wooden platter bearing a glistening roast of roc egg fragment and valerian root, seared to a warm russet crust with herb garnish"
   },
   "rosemary_sprig_infused_redcap_blood": {
     "name": "Rosemary Sprig-Infused Redcap Blood",
@@ -2380,7 +2579,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
-    "description": "A simple dish combining redcap blood with rosemary sprig."
+    "description": "A simple dish combining redcap blood with rosemary sprig.",
+    "sprite_desc": "A ceramic plate of beautifully prepared redcap blood and rosemary sprig, plated with a warm russet reduction drizzled on top"
   },
   "elemental_air_core_and_petrified_mushroom_chowder": {
     "name": "Elemental Air Core & Petrified Mushroom Chowder",
@@ -2392,7 +2592,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
-    "description": "A simple dish combining elemental air core with petrified mushroom."
+    "description": "A simple dish combining elemental air core with petrified mushroom.",
+    "sprite_desc": "A bubbling iron pot of thick pale violet stew made from elemental air core and petrified mushroom, steam rising from the surface"
   },
   "peryton_antler_and_rosemary_sprig_fricassee": {
     "name": "Peryton Antler & Rosemary Sprig Fricassee",
@@ -2403,7 +2604,8 @@
     "sp": 99,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining peryton antler with rosemary sprig."
+    "description": "A simple dish combining peryton antler with rosemary sprig.",
+    "sprite_desc": "A sizzling copper pan of peryton antler and rosemary sprig tossed with spices, the verdant sauce still bubbling"
   },
   "rustic_giant_marrow_tartare": {
     "name": "Rustic Giant Marrow Tartare",
@@ -2415,7 +2617,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
-    "description": "A simple dish combining giant marrow with wild thyme."
+    "description": "A simple dish combining giant marrow with wild thyme.",
+    "sprite_desc": "A golden-brown pastry shell filled with giant marrow and wild thyme, the crust golden-brown and flaky with warm russet filling peeking through slits"
   },
   "ember_kissed_yuan_ti_venom_sac_roulade": {
     "name": "Ember-Kissed Yuan-Ti Venom Sac Roulade",
@@ -2426,7 +2629,8 @@
     "sp": 109,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining yuan-ti venom sac with dragon salt."
+    "description": "A simple dish combining yuan-ti venom sac with dragon salt.",
+    "sprite_desc": "A ceramic plate of beautifully prepared yuan-ti venom sac and dragon salt, plated with a verdant reduction drizzled on top"
   },
   "winged_mane_and_serpent_pepper_roulade": {
     "name": "Winged Mane & Serpent Pepper Roulade",
@@ -2437,7 +2641,8 @@
     "sp": 98,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining winged mane with serpent pepper."
+    "description": "A simple dish combining winged mane with serpent pepper.",
+    "sprite_desc": "A ceramic plate of beautifully prepared winged mane and serpent pepper, plated with a warm russet reduction drizzled on top"
   },
   "flame_seared_lindworm_skin_tartare": {
     "name": "Flame-Seared Lindworm Skin Tartare",
@@ -2448,7 +2653,8 @@
     "sp": 101,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining lindworm skin with mandrake root."
+    "description": "A simple dish combining lindworm skin with mandrake root.",
+    "sprite_desc": "A golden-brown pastry shell filled with lindworm skin and mandrake root, the crust golden-brown and flaky with verdant filling peeking through slits"
   },
   "charred_each_uisce_mane_with_dragon_salt": {
     "name": "Charred Each Uisce Mane with Dragon Salt",
@@ -2460,7 +2666,8 @@
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
-    "description": "A simple dish combining each uisce mane with dragon salt."
+    "description": "A simple dish combining each uisce mane with dragon salt.",
+    "sprite_desc": "A ceramic plate of beautifully prepared each uisce mane and dragon salt, plated with a earthy reduction drizzled on top"
   },
   "baked_ugallu_claw_with_mandrake_root": {
     "name": "Baked Ugallu Claw with Mandrake Root",
@@ -2472,7 +2679,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
-    "description": "A simple dish combining ugallu claw with mandrake root."
+    "description": "A simple dish combining ugallu claw with mandrake root.",
+    "sprite_desc": "A ceramic plate of beautifully prepared ugallu claw and mandrake root, plated with a warm russet reduction drizzled on top"
   },
   "kusarikku_horn_and_nightshade_leaf_platter": {
     "name": "Kusarikku Horn & Nightshade Leaf Platter",
@@ -2484,7 +2692,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
-    "description": "A simple dish combining kusarikku horn with nightshade leaf."
+    "description": "A simple dish combining kusarikku horn with nightshade leaf.",
+    "sprite_desc": "A large ornate platter laden with an elaborate arrangement of kusarikku horn and nightshade leaf, garnished with edible flowers and warm russet sauce"
   },
   "iron_grell_tentacle_roulade": {
     "name": "Iron Grell Tentacle Roulade",
@@ -2496,7 +2705,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
-    "description": "A simple dish combining grell tentacle with petrified mushroom."
+    "description": "A simple dish combining grell tentacle with petrified mushroom.",
+    "sprite_desc": "A ceramic plate of beautifully prepared grell tentacle and petrified mushroom, plated with a verdant reduction drizzled on top"
   },
   "blackened_infernal_perfume_with_petrified_mushroom": {
     "name": "Blackened Infernal Perfume with Petrified Mushroom",
@@ -2507,7 +2717,8 @@
     "sp": 94,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining infernal perfume with petrified mushroom."
+    "description": "A simple dish combining infernal perfume with petrified mushroom.",
+    "sprite_desc": "A ceramic plate of beautifully prepared infernal perfume and petrified mushroom, plated with a earthy reduction drizzled on top"
   },
   "wild_devil_glaive_shard_broth": {
     "name": "Wild Devil Glaive Shard Broth",
@@ -2518,7 +2729,8 @@
     "sp": 104,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining devil glaive shard with ember spice."
+    "description": "A simple dish combining devil glaive shard with ember spice.",
+    "sprite_desc": "A stone bowl filled with smooth warm russet broth made from devil glaive shard and ember spice, wisps of fragrant steam curling above"
   },
   "primal_lurker_skin_pottage": {
     "name": "Primal Lurker Skin Pottage",
@@ -2530,7 +2742,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
-    "description": "A simple dish combining lurker skin with serpent pepper."
+    "description": "A simple dish combining lurker skin with serpent pepper.",
+    "sprite_desc": "A ceramic plate of beautifully prepared lurker skin and serpent pepper, plated with a earthy reduction drizzled on top"
   },
   "peppered_mineral_shard_stew": {
     "name": "Peppered Mineral Shard Stew",
@@ -2541,7 +2754,8 @@
     "sp": 116,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining mineral shard with petrified mushroom."
+    "description": "A simple dish combining mineral shard with petrified mushroom.",
+    "sprite_desc": "A bubbling iron pot of thick earthy stew made from mineral shard and petrified mushroom, steam rising from the surface"
   },
   "valerian_root_infused_hook_horror_hook": {
     "name": "Valerian Root-Infused Hook Horror Hook",
@@ -2552,7 +2766,8 @@
     "sp": 71,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining hook horror hook with valerian root."
+    "description": "A simple dish combining hook horror hook with valerian root.",
+    "sprite_desc": "A ceramic plate of beautifully prepared hook horror hook and valerian root, plated with a warm russet reduction drizzled on top"
   },
   "slow_cooked_strigoi_fang_with_petrified_mushroom": {
     "name": "Slow-Cooked Strigoi Fang with Petrified Mushroom",
@@ -2564,7 +2779,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
-    "description": "A simple dish combining strigoi fang with petrified mushroom."
+    "description": "A simple dish combining strigoi fang with petrified mushroom.",
+    "sprite_desc": "A ceramic plate of beautifully prepared strigoi fang and petrified mushroom, plated with a warm russet reduction drizzled on top"
   },
   "smoked_death_mage_phylactery_with_petrified_mushroom": {
     "name": "Smoked Death Mage Phylactery with Petrified Mushroom",
@@ -2576,7 +2792,8 @@
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
-    "description": "A simple dish combining death mage phylactery with petrified mushroom."
+    "description": "A simple dish combining death mage phylactery with petrified mushroom.",
+    "sprite_desc": "A ceramic plate of beautifully prepared death mage phylactery and petrified mushroom, plated with a earthy reduction drizzled on top"
   },
   "pan_fried_mohrg_organ_medallions": {
     "name": "Pan-Fried Mohrg Organ Medallions",
@@ -2587,7 +2804,8 @@
     "sp": 87,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining mohrg organ with cave mushroom."
+    "description": "A simple dish combining mohrg organ with cave mushroom.",
+    "sprite_desc": "A ceramic plate of beautifully prepared mohrg organ and cave mushroom, plated with a warm russet reduction drizzled on top"
   },
   "simmered_death_beetle_ichor_with_petrified_mushroom": {
     "name": "Simmered Death Beetle Ichor with Petrified Mushroom",
@@ -2598,7 +2816,8 @@
     "sp": 73,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining death beetle ichor with petrified mushroom."
+    "description": "A simple dish combining death beetle ichor with petrified mushroom.",
+    "sprite_desc": "A ceramic plate of beautifully prepared death beetle ichor and petrified mushroom, plated with a earthy reduction drizzled on top"
   },
   "charred_hag_eye_with_cave_mushroom": {
     "name": "Charred Hag Eye with Cave Mushroom",
@@ -2610,7 +2829,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
-    "description": "A simple dish combining hag eye with cave mushroom."
+    "description": "A simple dish combining hag eye with cave mushroom.",
+    "sprite_desc": "A ceramic plate of beautifully prepared hag eye and cave mushroom, plated with a verdant reduction drizzled on top"
   },
   "elemental_water_core_and_nightshade_leaf_stew": {
     "name": "Elemental Water Core & Nightshade Leaf Stew",
@@ -2622,7 +2842,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
-    "description": "A simple dish combining elemental water core with nightshade leaf."
+    "description": "A simple dish combining elemental water core with nightshade leaf.",
+    "sprite_desc": "A bubbling iron pot of thick earthy stew made from elemental water core and nightshade leaf, steam rising from the surface"
   },
   "minotaur_horn_and_ember_spice_pie": {
     "name": "Minotaur Horn & Ember Spice Pie",
@@ -2633,7 +2854,8 @@
     "sp": 114,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining Minotaur Horn with ember spice."
+    "description": "A simple dish combining Minotaur Horn with ember spice.",
+    "sprite_desc": "A golden-brown pastry shell filled with Minotaur Horn and ember spice, the crust golden-brown and flaky with warm russet filling peeking through slits"
   },
   "mandrake_root_infused_sphinx_mane": {
     "name": "Mandrake Root-Infused Sphinx Mane",
@@ -2644,7 +2866,8 @@
     "sp": 117,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining sphinx mane with mandrake root."
+    "description": "A simple dish combining sphinx mane with mandrake root.",
+    "sprite_desc": "A ceramic plate of beautifully prepared sphinx mane and mandrake root, plated with a warm russet reduction drizzled on top"
   },
   "flame_seared_corruption_with_rosemary_sprig": {
     "name": "Flame-Seared Corruption with Rosemary Sprig",
@@ -2655,7 +2878,8 @@
     "sp": 71,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining corruption scale with rosemary sprig."
+    "description": "A simple dish combining corruption scale with rosemary sprig.",
+    "sprite_desc": "A ceramic plate of beautifully prepared corruption scale and rosemary sprig, plated with a warm russet reduction drizzled on top"
   },
   "golden_sphinx_dust_gold_feast": {
     "name": "Golden Sphinx Dust Gold Feast",
@@ -2667,7 +2891,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
-    "description": "A simple dish combining sphinx dust gold with mandrake root."
+    "description": "A simple dish combining sphinx dust gold with mandrake root.",
+    "sprite_desc": "A large ornate platter laden with an elaborate arrangement of sphinx dust gold and mandrake root, garnished with edible flowers and warm russet sauce"
   },
   "salt_crusted_thoth_ink_with_void_salt": {
     "name": "Salt-Crusted Thoth Ink with Void Salt",
@@ -2679,7 +2904,8 @@
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
-    "description": "A simple dish combining thoth ink with void salt."
+    "description": "A simple dish combining thoth ink with void salt.",
+    "sprite_desc": "A ceramic plate of beautifully prepared thoth ink and void salt, plated with a deep blue reduction drizzled on top"
   },
   "ash_smoked_fomorian_with_void_salt": {
     "name": "Ash-Smoked Fomorian with Void Salt",
@@ -2691,7 +2917,8 @@
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
-    "description": "A simple dish combining fomorian bone with void salt."
+    "description": "A simple dish combining fomorian bone with void salt.",
+    "sprite_desc": "A ceramic plate of beautifully prepared fomorian bone and void salt, plated with a warm russet reduction drizzled on top"
   },
   "petrified_mushroom_infused_cath_palug_claw": {
     "name": "Petrified Mushroom-Infused Cath Palug Claw",
@@ -2703,7 +2930,8 @@
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
-    "description": "A simple dish combining cath palug claw with petrified mushroom."
+    "description": "A simple dish combining cath palug claw with petrified mushroom.",
+    "sprite_desc": "A ceramic plate of beautifully prepared cath palug claw and petrified mushroom, plated with a warm russet reduction drizzled on top"
   },
   "rustic_primordial_clay_cutlets": {
     "name": "Rustic Primordial Clay Cutlets",
@@ -2715,7 +2943,8 @@
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
-    "description": "A simple dish combining primordial clay with petrified mushroom."
+    "description": "A simple dish combining primordial clay with petrified mushroom.",
+    "sprite_desc": "A ceramic plate of beautifully prepared primordial clay and petrified mushroom, plated with a warm russet reduction drizzled on top"
   },
   "brain_lobe_and_ember_spice_soup": {
     "name": "Brain Lobe & Ember Spice Soup",
@@ -2726,7 +2955,8 @@
     "sp": 111,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining brain lobe with ember spice."
+    "description": "A simple dish combining brain lobe with ember spice.",
+    "sprite_desc": "A stone bowl filled with smooth warm russet broth made from brain lobe and ember spice, wisps of fragrant steam curling above"
   },
   "silver_cloaker_roulade": {
     "name": "Silver Cloaker Roulade",
@@ -2737,7 +2967,8 @@
     "sp": 116,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining cloaker hide with mandrake root."
+    "description": "A simple dish combining cloaker hide with mandrake root.",
+    "sprite_desc": "A ceramic plate of beautifully prepared cloaker hide and mandrake root, plated with a dark reduction drizzled on top"
   },
   "simmered_enchanted_clay_with_void_salt": {
     "name": "Simmered Enchanted Clay with Void Salt",
@@ -2749,7 +2980,8 @@
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
-    "description": "A simple dish combining enchanted clay with void salt."
+    "description": "A simple dish combining enchanted clay with void salt.",
+    "sprite_desc": "A ceramic plate of beautifully prepared enchanted clay and void salt, plated with a warm russet reduction drizzled on top"
   },
   "nightshade_leaf_infused_displacer": {
     "name": "Nightshade Leaf-Infused Displacer",
@@ -2760,7 +2992,8 @@
     "sp": 91,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining displacer hide with nightshade leaf."
+    "description": "A simple dish combining displacer hide with nightshade leaf.",
+    "sprite_desc": "A ceramic plate of beautifully prepared displacer hide and nightshade leaf, plated with a earthy reduction drizzled on top"
   },
   "mystical_black_ooze_curry": {
     "name": "Mystical Black Ooze Curry",
@@ -2772,7 +3005,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
-    "description": "A simple dish combining black ooze with wild thyme."
+    "description": "A simple dish combining black ooze with wild thyme.",
+    "sprite_desc": "A ceramic plate of beautifully prepared black ooze and wild thyme, plated with a dark reduction drizzled on top"
   },
   "baked_trapper_membrane_ragout": {
     "name": "Baked Trapper Membrane Ragout",
@@ -2783,7 +3017,8 @@
     "sp": 70,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining trapper membrane with mandrake root."
+    "description": "A simple dish combining trapper membrane with mandrake root.",
+    "sprite_desc": "A bubbling iron pot of thick warm russet stew made from trapper membrane and mandrake root, steam rising from the surface"
   },
   "primal_revenant_heart_skewer": {
     "name": "Primal Revenant Heart Skewer",
@@ -2794,7 +3029,8 @@
     "sp": 105,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining revenant heart with serpent pepper."
+    "description": "A simple dish combining revenant heart with serpent pepper.",
+    "sprite_desc": "A wooden skewer threaded with chunks of revenant heart and serpent pepper, charred at the edges with warm russet glaze dripping down"
   },
   "mountain_tomb_stone_fragment_cutlets": {
     "name": "Mountain Tomb Stone Fragment Cutlets",
@@ -2805,7 +3041,8 @@
     "sp": 120,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining tomb stone fragment with nightshade leaf."
+    "description": "A simple dish combining tomb stone fragment with nightshade leaf.",
+    "sprite_desc": "A ceramic plate of beautifully prepared tomb stone fragment and nightshade leaf, plated with a warm russet reduction drizzled on top"
   },
   "primal_elemental_ice_core_goulash": {
     "name": "Primal Elemental Ice Core Goulash",
@@ -2817,7 +3054,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
-    "description": "A simple dish combining elemental ice core with wild thyme."
+    "description": "A simple dish combining elemental ice core with wild thyme.",
+    "sprite_desc": "A bubbling iron pot of thick pale violet stew made from elemental ice core and wild thyme, steam rising from the surface"
   },
   "dragon_salt_infused_mound_mulch": {
     "name": "Dragon Salt-Infused Mound Mulch",
@@ -2828,7 +3066,8 @@
     "sp": 92,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining mound mulch with dragon salt."
+    "description": "A simple dish combining mound mulch with dragon salt.",
+    "sprite_desc": "A ceramic plate of beautifully prepared mound mulch and dragon salt, plated with a verdant reduction drizzled on top"
   },
   "honey_glazed_corrupted_wing_feather_roulade": {
     "name": "Honey-Glazed Corrupted Wing Feather Roulade",
@@ -2839,7 +3078,8 @@
     "sp": 87,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining corrupted wing feather with petrified mushroom."
+    "description": "A simple dish combining corrupted wing feather with petrified mushroom.",
+    "sprite_desc": "A ceramic plate of beautifully prepared corrupted wing feather and petrified mushroom, plated with a earthy reduction drizzled on top"
   },
   "nue_tail_quill_and_mandrake_root_tartare": {
     "name": "Nue Tail Quill & Mandrake Root Tartare",
@@ -2851,7 +3091,8 @@
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
-    "description": "A simple dish combining nue tail quill with mandrake root."
+    "description": "A simple dish combining nue tail quill with mandrake root.",
+    "sprite_desc": "A golden-brown pastry shell filled with nue tail quill and mandrake root, the crust golden-brown and flaky with earthy filling peeking through slits"
   },
   "ember_ash_and_serpent_pepper_platter": {
     "name": "Ember Ash & Serpent Pepper Platter",
@@ -2863,7 +3104,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
-    "description": "A simple dish combining ember ash with serpent pepper."
+    "description": "A simple dish combining ember ash with serpent pepper.",
+    "sprite_desc": "A large ornate platter laden with an elaborate arrangement of ember ash and serpent pepper, garnished with edible flowers and warm russet sauce"
   },
   "ember_spice_infused_sea_serpent_oil": {
     "name": "Ember Spice-Infused Sea Serpent Oil",
@@ -2874,7 +3116,8 @@
     "sp": 88,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining sea serpent oil with ember spice."
+    "description": "A simple dish combining sea serpent oil with ember spice.",
+    "sprite_desc": "A ceramic plate of beautifully prepared sea serpent oil and ember spice, plated with a teal reduction drizzled on top"
   },
   "anzu_feather_and_rosemary_sprig_hash": {
     "name": "Anzu Feather & Rosemary Sprig Hash",
@@ -2886,7 +3129,8 @@
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
-    "description": "A simple dish combining anzu feather with rosemary sprig."
+    "description": "A simple dish combining anzu feather with rosemary sprig.",
+    "sprite_desc": "A ceramic plate of beautifully prepared anzu feather and rosemary sprig, plated with a warm russet reduction drizzled on top"
   },
   "eyestalk_and_mandrake_root_platter": {
     "name": "Eyestalk & Mandrake Root Platter",
@@ -2898,7 +3142,8 @@
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
-    "description": "A simple dish combining eyestalk with mandrake root."
+    "description": "A simple dish combining eyestalk with mandrake root.",
+    "sprite_desc": "A large ornate platter laden with an elaborate arrangement of eyestalk and mandrake root, garnished with edible flowers and warm russet sauce"
   },
   "devil_chain_link_and_wild_thyme_goulash": {
     "name": "Devil Chain Link & Wild Thyme Goulash",
@@ -2909,7 +3154,8 @@
     "sp": 76,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining devil chain link with wild thyme."
+    "description": "A simple dish combining devil chain link with wild thyme.",
+    "sprite_desc": "A bubbling iron pot of thick warm russet stew made from devil chain link and wild thyme, steam rising from the surface"
   },
   "silver_shield_guardian_core_goulash": {
     "name": "Silver Shield Guardian Core Goulash",
@@ -2920,7 +3166,8 @@
     "sp": 91,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining shield guardian core with wild thyme."
+    "description": "A simple dish combining shield guardian core with wild thyme.",
+    "sprite_desc": "A bubbling iron pot of thick earthy stew made from shield guardian core and wild thyme, steam rising from the surface"
   },
   "braised_roper_strand_with_valerian_root": {
     "name": "Braised Roper Strand with Valerian Root",
@@ -2932,7 +3179,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
-    "description": "A simple dish combining roper strand with valerian root."
+    "description": "A simple dish combining roper strand with valerian root.",
+    "sprite_desc": "A ceramic plate of beautifully prepared roper strand and valerian root, plated with a warm russet reduction drizzled on top"
   },
   "grilled_pale_master_essence_with_ember_spice": {
     "name": "Grilled Pale Master Essence with Ember Spice",
@@ -2944,7 +3192,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
-    "description": "A simple dish combining pale master essence with ember spice."
+    "description": "A simple dish combining pale master essence with ember spice.",
+    "sprite_desc": "A ceramic plate of beautifully prepared pale master essence and ember spice, plated with a pale violet reduction drizzled on top"
   },
   "poached_wight_essence_with_void_salt": {
     "name": "Poached Wight Essence with Void Salt",
@@ -2955,7 +3204,8 @@
     "sp": 118,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining wight essence with void salt."
+    "description": "A simple dish combining wight essence with void salt.",
+    "sprite_desc": "A ceramic plate of beautifully prepared wight essence and void salt, plated with a earthy reduction drizzled on top"
   },
   "dread_plate_fragment_and_petrified_mushroom_pottage": {
     "name": "Dread Plate Fragment & Petrified Mushroom Pottage",
@@ -2966,7 +3216,8 @@
     "sp": 94,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining dread plate fragment with petrified mushroom."
+    "description": "A simple dish combining dread plate fragment with petrified mushroom.",
+    "sprite_desc": "A ceramic plate of beautifully prepared dread plate fragment and petrified mushroom, plated with a earthy reduction drizzled on top"
   },
   "ember_spice_infused_storm_feather": {
     "name": "Ember Spice-Infused Storm Feather",
@@ -2977,7 +3228,8 @@
     "sp": 89,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining storm feather with ember spice."
+    "description": "A simple dish combining storm feather with ember spice.",
+    "sprite_desc": "A ceramic plate of beautifully prepared storm feather and ember spice, plated with a pale violet reduction drizzled on top"
   },
   "caramelized_sovereign_spore_cap_with_void_salt": {
     "name": "Caramelized Sovereign Spore Cap with Void Salt",
@@ -2989,7 +3241,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
-    "description": "A simple dish combining sovereign spore cap with void salt."
+    "description": "A simple dish combining sovereign spore cap with void salt.",
+    "sprite_desc": "A ceramic plate of beautifully prepared sovereign spore cap and void salt, plated with a verdant reduction drizzled on top"
   },
   "sphinx_claw_and_nightshade_leaf_feast": {
     "name": "Sphinx Claw & Nightshade Leaf Feast",
@@ -3001,7 +3254,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
-    "description": "A simple dish combining sphinx claw with nightshade leaf."
+    "description": "A simple dish combining sphinx claw with nightshade leaf.",
+    "sprite_desc": "A large ornate platter laden with an elaborate arrangement of sphinx claw and nightshade leaf, garnished with edible flowers and warm russet sauce"
   },
   "hearty_stone_giant_core_casserole": {
     "name": "Hearty Stone Giant Core Casserole",
@@ -3012,7 +3266,8 @@
     "sp": 114,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining stone giant core with serpent pepper."
+    "description": "A simple dish combining stone giant core with serpent pepper.",
+    "sprite_desc": "A bubbling iron pot of thick warm russet stew made from stone giant core and serpent pepper, steam rising from the surface"
   },
   "black_dragon_and_void_salt_goulash": {
     "name": "Black Dragon & Void Salt Goulash",
@@ -3024,7 +3279,8 @@
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
-    "description": "A simple dish combining black dragon scale with void salt."
+    "description": "A simple dish combining black dragon scale with void salt.",
+    "sprite_desc": "A bubbling iron pot of thick dark stew made from black dragon scale and void salt, steam rising from the surface"
   },
   "hydra_bile_and_mandrake_root_medallions": {
     "name": "Hydra Bile & Mandrake Root Medallions",
@@ -3036,7 +3292,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
-    "description": "A hearty dish combining hydra bile with mandrake root."
+    "description": "A hearty dish combining hydra bile with mandrake root.",
+    "sprite_desc": "A ceramic plate of beautifully prepared hydra bile and mandrake root, plated with a verdant reduction drizzled on top"
   },
   "arcane_devil_barb_feast": {
     "name": "Arcane Devil Barb Feast",
@@ -3048,7 +3305,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
-    "description": "A simple dish combining devil barb with dragon salt."
+    "description": "A simple dish combining devil barb with dragon salt.",
+    "sprite_desc": "A large ornate platter laden with an elaborate arrangement of devil barb and dragon salt, garnished with edible flowers and warm russet sauce"
   },
   "golem_stone_and_nightshade_leaf_soup": {
     "name": "Golem Stone & Nightshade Leaf Soup",
@@ -3060,7 +3318,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
-    "description": "A simple dish combining golem stone with nightshade leaf."
+    "description": "A simple dish combining golem stone with nightshade leaf.",
+    "sprite_desc": "A stone bowl filled with smooth earthy broth made from golem stone and nightshade leaf, wisps of fragrant steam curling above"
   },
   "valerian_root_infused_catoblepas_horn": {
     "name": "Valerian Root-Infused Catoblepas Horn",
@@ -3072,7 +3331,8 @@
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
-    "description": "A simple dish combining catoblepas horn with valerian root."
+    "description": "A simple dish combining catoblepas horn with valerian root.",
+    "sprite_desc": "A ceramic plate of beautifully prepared catoblepas horn and valerian root, plated with a warm russet reduction drizzled on top"
   },
   "wild_nightshade_spawn_essence_platter": {
     "name": "Wild Nightshade Spawn Essence Platter",
@@ -3084,7 +3344,8 @@
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
-    "description": "A simple dish combining nightshade spawn essence with rosemary sprig."
+    "description": "A simple dish combining nightshade spawn essence with rosemary sprig.",
+    "sprite_desc": "A large ornate platter laden with an elaborate arrangement of nightshade spawn essence and rosemary sprig, garnished with edible flowers and dark sauce"
   },
   "serpent_pepper_infused_spider_queen_venom_gland": {
     "name": "Serpent Pepper-Infused Spider Queen Venom Gland",
@@ -3096,7 +3357,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
-    "description": "A simple dish combining spider queen venom gland with serpent pepper."
+    "description": "A simple dish combining spider queen venom gland with serpent pepper.",
+    "sprite_desc": "A ceramic plate of beautifully prepared spider queen venom gland and serpent pepper, plated with a earthy reduction drizzled on top"
   },
   "caramelized_magma_elemental_core_with_cave_mushroom": {
     "name": "Caramelized Magma Elemental Core with Cave Mushroom",
@@ -3108,7 +3370,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
-    "description": "A simple dish combining magma elemental core with cave mushroom."
+    "description": "A simple dish combining magma elemental core with cave mushroom.",
+    "sprite_desc": "A ceramic plate of beautifully prepared magma elemental core and cave mushroom, plated with a warm russet reduction drizzled on top"
   },
   "slow_cooked_corrupted_unicorn_horn_stew": {
     "name": "Slow-Cooked Corrupted Unicorn Horn Stew",
@@ -3119,7 +3382,8 @@
     "sp": 72,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining corrupted unicorn horn with void salt."
+    "description": "A simple dish combining corrupted unicorn horn with void salt.",
+    "sprite_desc": "A bubbling iron pot of thick warm russet stew made from corrupted unicorn horn and void salt, steam rising from the surface"
   },
   "mountain_red_dragon_kebab": {
     "name": "Mountain Red Dragon Kebab",
@@ -3131,7 +3395,8 @@
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
-    "description": "A simple dish combining red dragon scale with valerian root."
+    "description": "A simple dish combining red dragon scale with valerian root.",
+    "sprite_desc": "A wooden skewer threaded with chunks of red dragon scale and valerian root, charred at the edges with crimson glaze dripping down"
   },
   "spiced_scylla_fang_with_void_salt": {
     "name": "Spiced Scylla Fang with Void Salt",
@@ -3142,7 +3407,8 @@
     "sp": 92,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining scylla fang with void salt."
+    "description": "A simple dish combining scylla fang with void salt.",
+    "sprite_desc": "A ceramic plate of beautifully prepared scylla fang and void salt, plated with a earthy reduction drizzled on top"
   },
   "baked_titanspawn_essence_with_petrified_mushroom": {
     "name": "Baked Titanspawn Essence with Petrified Mushroom",
@@ -3153,7 +3419,8 @@
     "sp": 121,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "A hearty dish combining titanspawn essence with petrified mushroom."
+    "description": "A hearty dish combining titanspawn essence with petrified mushroom.",
+    "sprite_desc": "A ceramic plate of beautifully prepared titanspawn essence and petrified mushroom, plated with a earthy reduction drizzled on top"
   },
   "wild_vrock_feather_cutlets": {
     "name": "Wild Vrock Feather Cutlets",
@@ -3164,7 +3431,8 @@
     "sp": 72,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining vrock feather with petrified mushroom."
+    "description": "A simple dish combining vrock feather with petrified mushroom.",
+    "sprite_desc": "A ceramic plate of beautifully prepared vrock feather and petrified mushroom, plated with a warm russet reduction drizzled on top"
   },
   "grilled_erinyes_feather_curry": {
     "name": "Grilled Erinyes Feather Curry",
@@ -3176,7 +3444,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
-    "description": "A simple dish combining erinyes feather with ember spice."
+    "description": "A simple dish combining erinyes feather with ember spice.",
+    "sprite_desc": "A ceramic plate of beautifully prepared erinyes feather and ember spice, plated with a warm russet reduction drizzled on top"
   },
   "petrified_mushroom_infused_behir": {
     "name": "Petrified Mushroom-Infused Behir",
@@ -3188,7 +3457,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
-    "description": "A hearty dish combining behir scale with petrified mushroom."
+    "description": "A hearty dish combining behir scale with petrified mushroom.",
+    "sprite_desc": "A ceramic plate of beautifully prepared behir scale and petrified mushroom, plated with a earthy reduction drizzled on top"
   },
   "wild_thyme_infused_ossuary_shard": {
     "name": "Wild Thyme-Infused Ossuary Shard",
@@ -3199,7 +3469,8 @@
     "sp": 110,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining ossuary shard with wild thyme."
+    "description": "A simple dish combining ossuary shard with wild thyme.",
+    "sprite_desc": "A ceramic plate of beautifully prepared ossuary shard and wild thyme, plated with a warm russet reduction drizzled on top"
   },
   "flame_seared_alpha_lycanthrope_blood_roast": {
     "name": "Flame-Seared Alpha Lycanthrope Blood Roast",
@@ -3210,7 +3481,8 @@
     "sp": 78,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining alpha lycanthrope blood with ember spice."
+    "description": "A simple dish combining alpha lycanthrope blood with ember spice.",
+    "sprite_desc": "A wooden platter bearing a glistening roast of alpha lycanthrope blood and ember spice, seared to a warm russet crust with herb garnish"
   },
   "herbed_greater_wyvern_venom_gland_with_mandrake_root": {
     "name": "Herbed Greater Wyvern Venom Gland with Mandrake Root",
@@ -3222,7 +3494,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
-    "description": "A simple dish combining greater wyvern venom gland with mandrake root."
+    "description": "A simple dish combining greater wyvern venom gland with mandrake root.",
+    "sprite_desc": "A ceramic plate of beautifully prepared greater wyvern venom gland and mandrake root, plated with a verdant reduction drizzled on top"
   },
   "aboleth_mucus_and_void_salt_tartare": {
     "name": "Aboleth Mucus & Void Salt Tartare",
@@ -3234,7 +3507,8 @@
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
-    "description": "A simple dish combining aboleth mucus with void salt."
+    "description": "A simple dish combining aboleth mucus with void salt.",
+    "sprite_desc": "A golden-brown pastry shell filled with aboleth mucus and void salt, the crust golden-brown and flaky with verdant filling peeking through slits"
   },
   "bone_devil_venom_and_wild_thyme_fricassee": {
     "name": "Bone Devil Venom & Wild Thyme Fricassee",
@@ -3246,7 +3520,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
-    "description": "A simple dish combining bone devil venom with wild thyme."
+    "description": "A simple dish combining bone devil venom with wild thyme.",
+    "sprite_desc": "A sizzling copper pan of bone devil venom and wild thyme tossed with spices, the earthy sauce still bubbling"
   },
   "marinated_skeletal_giant_soup": {
     "name": "Marinated Skeletal Giant Soup",
@@ -3257,7 +3532,8 @@
     "sp": 115,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining skeletal giant bone with rosemary sprig."
+    "description": "A simple dish combining skeletal giant bone with rosemary sprig.",
+    "sprite_desc": "A stone bowl filled with smooth warm russet broth made from skeletal giant bone and rosemary sprig, wisps of fragrant steam curling above"
   },
   "sea_dragon_and_mandrake_root_cutlets": {
     "name": "Sea Dragon & Mandrake Root Cutlets",
@@ -3269,7 +3545,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
-    "description": "A hearty dish combining sea dragon scale with mandrake root."
+    "description": "A hearty dish combining sea dragon scale with mandrake root.",
+    "sprite_desc": "A ceramic plate of beautifully prepared sea dragon scale and mandrake root, plated with a earthy reduction drizzled on top"
   },
   "valerian_root_infused_night_hag_heartstone": {
     "name": "Valerian Root-Infused Night Hag Heartstone",
@@ -3281,7 +3558,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
-    "description": "A simple dish combining night hag heartstone with valerian root."
+    "description": "A simple dish combining night hag heartstone with valerian root.",
+    "sprite_desc": "A ceramic plate of beautifully prepared night hag heartstone and valerian root, plated with a earthy reduction drizzled on top"
   },
   "mandrake_root_infused_cloudstuff": {
     "name": "Mandrake Root-Infused Cloudstuff",
@@ -3293,7 +3571,8 @@
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
-    "description": "A simple dish combining cloudstuff with mandrake root."
+    "description": "A simple dish combining cloudstuff with mandrake root.",
+    "sprite_desc": "A ceramic plate of beautifully prepared cloudstuff and mandrake root, plated with a pale violet reduction drizzled on top"
   },
   "mandrake_root_infused_cerberus_saliva": {
     "name": "Mandrake Root-Infused Cerberus Saliva",
@@ -3305,7 +3584,8 @@
     "bonus_type": "stat",
     "bonus_stat": "INT",
     "bonus_amount": 1,
-    "description": "A hearty dish combining cerberus saliva with mandrake root."
+    "description": "A hearty dish combining cerberus saliva with mandrake root.",
+    "sprite_desc": "A ceramic plate of beautifully prepared cerberus saliva and mandrake root, plated with a warm russet reduction drizzled on top"
   },
   "herbed_marilith_demon_scales_roulade": {
     "name": "Herbed Marilith Demon Scales Roulade",
@@ -3317,7 +3597,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
-    "description": "A hearty dish combining marilith demon scales with valerian root."
+    "description": "A hearty dish combining marilith demon scales with valerian root.",
+    "sprite_desc": "A ceramic plate of beautifully prepared marilith demon scales and valerian root, plated with a warm russet reduction drizzled on top"
   },
   "undead_dragon_and_serpent_pepper_medallions": {
     "name": "Undead Dragon & Serpent Pepper Medallions",
@@ -3329,7 +3610,8 @@
     "bonus_type": "stat",
     "bonus_stat": "INT",
     "bonus_amount": 1,
-    "description": "A hearty dish combining undead dragon bone with serpent pepper."
+    "description": "A hearty dish combining undead dragon bone with serpent pepper.",
+    "sprite_desc": "A ceramic plate of beautifully prepared undead dragon bone and serpent pepper, plated with a earthy reduction drizzled on top"
   },
   "blackened_demi_lich_skull_with_void_salt": {
     "name": "Blackened Demi-Lich Skull with Void Salt",
@@ -3341,7 +3623,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
-    "description": "A hearty dish combining demi-lich skull with void salt."
+    "description": "A hearty dish combining demi-lich skull with void salt.",
+    "sprite_desc": "A ceramic plate of beautifully prepared demi-lich skull and void salt, plated with a earthy reduction drizzled on top"
   },
   "nightwing_membrane_and_ember_spice_chowder": {
     "name": "Nightwing Membrane & Ember Spice Chowder",
@@ -3353,7 +3636,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
-    "description": "A hearty dish combining nightwing membrane with ember spice."
+    "description": "A hearty dish combining nightwing membrane with ember spice.",
+    "sprite_desc": "A bubbling iron pot of thick dark stew made from nightwing membrane and ember spice, steam rising from the surface"
   },
   "ember_kissed_roc_talon_with_valerian_root": {
     "name": "Ember-Kissed Roc Talon with Valerian Root",
@@ -3365,7 +3649,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
-    "description": "A hearty dish combining roc talon with valerian root."
+    "description": "A hearty dish combining roc talon with valerian root.",
+    "sprite_desc": "A ceramic plate of beautifully prepared roc talon and valerian root, plated with a warm russet reduction drizzled on top"
   },
   "lich_dragon_and_serpent_pepper_medallions": {
     "name": "Lich Dragon & Serpent Pepper Medallions",
@@ -3376,7 +3661,8 @@
     "sp": 149,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "A complex dish combining lich dragon scale with serpent pepper."
+    "description": "A complex dish combining lich dragon scale with serpent pepper.",
+    "sprite_desc": "A ceramic plate of beautifully prepared lich dragon scale and serpent pepper, plated with a earthy reduction drizzled on top"
   },
   "rosemary_sprig_infused_battle_ration": {
     "name": "Rosemary Sprig-Infused Battle Ration",
@@ -3387,7 +3673,8 @@
     "sp": 111,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining battle ration with rosemary sprig."
+    "description": "A simple dish combining battle ration with rosemary sprig.",
+    "sprite_desc": "A ceramic plate of beautifully prepared battle ration and rosemary sprig, plated with a warm russet reduction drizzled on top"
   },
   "rosemary_sprig_infused_frost_sac": {
     "name": "Rosemary Sprig-Infused Frost Sac",
@@ -3398,7 +3685,8 @@
     "sp": 90,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
-    "description": "A simple dish combining frost sac with rosemary sprig."
+    "description": "A simple dish combining frost sac with rosemary sprig.",
+    "sprite_desc": "A ceramic plate of beautifully prepared frost sac and rosemary sprig, plated with a earthy reduction drizzled on top"
   },
   "arachne_weaver_bisque": {
     "name": "Weaver's Silk Bisque",
@@ -3410,7 +3698,8 @@
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
-    "description": "Arachne's silk dissolved into a shimmering, thread-thin broth. Nimble fingers guaranteed."
+    "description": "Arachne's silk dissolved into a shimmering, thread-thin broth. Nimble fingers guaranteed.",
+    "sprite_desc": "A stone bowl filled with smooth pale violet broth made from arachne silk gland and spider silk, wisps of fragrant steam curling above"
   },
   "lamia_grecian_stew": {
     "name": "Grecian Beast Stew",
@@ -3421,7 +3710,8 @@
     "sp": 160,
     "bonus_type": "two_stats",
     "bonus_amount": 2,
-    "description": "Two mothers of Greek myth, combined into one fearsome pot. The taste is legendary."
+    "description": "Two mothers of Greek myth, combined into one fearsome pot. The taste is legendary.",
+    "sprite_desc": "A bubbling iron pot of thick warm russet stew made from lamia scales and echidna venom sac, steam rising from the surface"
   },
   "talos_forge_broth": {
     "name": "Forge-God's Bronze Broth",
@@ -3433,7 +3723,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
-    "description": "Bronze shards melted in fire-gland heat. Tastes like molten determination."
+    "description": "Bronze shards melted in fire-gland heat. Tastes like molten determination.",
+    "sprite_desc": "A stone bowl filled with smooth warm russet broth made from talos bronze shard and fire gland, wisps of fragrant steam curling above"
   },
   "echidna_broodmother_soup": {
     "name": "Broodmother's Progeny Soup",
@@ -3445,7 +3736,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 2,
-    "description": "Mother and child reunited in broth. Echidna's venom and manticore spine sing together."
+    "description": "Mother and child reunited in broth. Echidna's venom and manticore spine sing together.",
+    "sprite_desc": "A stone bowl filled with smooth verdant broth made from echidna venom sac and manticore spine, wisps of fragrant steam curling above"
   },
   "erlking_forest_crown_tea": {
     "name": "Forest Crown Royal Tea",
@@ -3457,7 +3749,8 @@
     "bonus_type": "stat",
     "bonus_stat": "WIS",
     "bonus_amount": 2,
-    "description": "Steeped twigs from the king of the forest, enhanced with enchanted heartwood."
+    "description": "Steeped twigs from the king of the forest, enhanced with enchanted heartwood.",
+    "sprite_desc": "A glass flask of shimmering verdant liquid distilled from erlking crown twig and enchanted wood, tiny bubbles rising within"
   },
   "camazotz_midnight_broth": {
     "name": "Xibalba Midnight Broth",
@@ -3469,7 +3762,8 @@
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 2,
-    "description": "Death bat membrane and common bat wing -- the darkness above and below, rendered as soup."
+    "description": "Death bat membrane and common bat wing -- the darkness above and below, rendered as soup.",
+    "sprite_desc": "A stone bowl filled with smooth warm russet broth made from camazotz wing membrane and bat wing, wisps of fragrant steam curling above"
   },
   "cacus_hercules_roast": {
     "name": "Hercules' Victory Roast",
@@ -3480,7 +3774,8 @@
     "sp": 200,
     "bonus_type": "combat_stat",
     "bonus_amount": 2,
-    "description": "The fire-breathing giant's gut roasted with lion meat. A hero's reward after the labor."
+    "description": "The fire-breathing giant's gut roasted with lion meat. A hero's reward after the labor.",
+    "sprite_desc": "A wooden platter bearing a glistening roast of cacus ember gut and lion meat, seared to a warm russet crust with herb garnish"
   },
   "sphinx_oracle_consomme": {
     "name": "Oracle's Riddle Consomme",
@@ -3492,7 +3787,8 @@
     "bonus_type": "stat",
     "bonus_stat": "INT",
     "bonus_amount": 2,
-    "description": "Two sphinx essences clarified into golden consomme. Every sip reveals a small truth."
+    "description": "Two sphinx essences clarified into golden consomme. Every sip reveals a small truth.",
+    "sprite_desc": "A stone bowl filled with smooth warm russet broth made from sphinx riddle stone and sphinx mane, wisps of fragrant steam curling above"
   },
   "rangda_barong_balance_stew": {
     "name": "Barong-Rangda Balance Stew",
@@ -3503,7 +3799,8 @@
     "sp": 230,
     "bonus_type": "two_stats",
     "bonus_amount": 2,
-    "description": "The demon queen's mask balanced with sacred wood. Good and evil find harmony in flavor."
+    "description": "The demon queen's mask balanced with sacred wood. Good and evil find harmony in flavor.",
+    "sprite_desc": "A bubbling iron pot of thick warm russet stew made from rangda mask splinter and enchanted wood, steam rising from the surface"
   },
   "nemean_golden_braise": {
     "name": "Golden Labor Braise",
@@ -3515,7 +3812,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 3,
-    "description": "Invulnerable hide braised with lion loin. The first labor, perfected in the kitchen."
+    "description": "Invulnerable hide braised with lion loin. The first labor, perfected in the kitchen.",
+    "sprite_desc": "A ceramic plate of beautifully prepared nemean pelt scrap and lion meat, plated with a warm russet reduction drizzled on top"
   },
   "baba_yaga_slavic_stew": {
     "name": "Baba Yaga's Slavic Cauldron Stew",
@@ -3527,7 +3825,8 @@
     "bonus_type": "stat",
     "bonus_stat": "WIS",
     "bonus_amount": 3,
-    "description": "Mortar dust and hag's eye simmer in a walking cauldron. Old-world wisdom in every drop."
+    "description": "Mortar dust and hag's eye simmer in a walking cauldron. Old-world wisdom in every drop.",
+    "sprite_desc": "A bubbling iron pot of thick warm russet stew made from baba yaga mortar dust and hag eye, steam rising from the surface"
   },
   "jormungandr_ragnarok_bisque": {
     "name": "Ragnarok Serpent Bisque",
@@ -3538,7 +3837,8 @@
     "sp": 280,
     "bonus_type": "two_stats",
     "bonus_amount": 3,
-    "description": "Juvenile and adult world-serpent scales united. The ocean itself trembles at the aroma."
+    "description": "Juvenile and adult world-serpent scales united. The ocean itself trembles at the aroma.",
+    "sprite_desc": "A stone bowl filled with smooth verdant broth made from jormungandr scale and world serpent scale, wisps of fragrant steam curling above"
   },
   "sets_desert_god_reduction": {
     "name": "Desert God's Red Reduction",
@@ -3549,7 +3849,8 @@
     "sp": 275,
     "bonus_type": "combat_stat",
     "bonus_amount": 3,
-    "description": "Set's fang dissolved in desert essence. The red land's power concentrated to a single drop."
+    "description": "Set's fang dissolved in desert essence. The red land's power concentrated to a single drop.",
+    "sprite_desc": "A ceramic plate of beautifully prepared set's jackal fang and desert sand essence, plated with a warm russet reduction drizzled on top"
   },
   "green_knight_arthurian_pot": {
     "name": "Arthurian Green Pot-au-Feu",
@@ -3561,7 +3862,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 3,
-    "description": "Two saps intertwined -- one of chivalry, one of nature. A knight's meal before the quest."
+    "description": "Two saps intertwined -- one of chivalry, one of nature. A knight's meal before the quest.",
+    "sprite_desc": "A ceramic plate of beautifully prepared green knight sap and heartwood sap, plated with a emerald reduction drizzled on top"
   },
   "charybdis_odyssey_chowder": {
     "name": "Odyssey's Passage Chowder",
@@ -3572,7 +3874,8 @@
     "sp": 300,
     "bonus_type": "two_stats",
     "bonus_amount": 3,
-    "description": "Between Scylla and Charybdis lies this chowder. Surviving both monsters earns you this meal."
+    "description": "Between Scylla and Charybdis lies this chowder. Surviving both monsters earns you this meal.",
+    "sprite_desc": "A bubbling iron pot of thick deep blue stew made from charybdis brine and scylla fang, steam rising from the surface"
   },
   "ravana_lanka_curry": {
     "name": "Siege of Lanka Curry",
@@ -3584,7 +3887,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 3,
-    "description": "Ten-armed demon king's knuckle in fiery spice. Every bite hits like Hanuman's fist."
+    "description": "Ten-armed demon king's knuckle in fiery spice. Every bite hits like Hanuman's fist.",
+    "sprite_desc": "A ceramic plate of beautifully prepared ravana's knuckle and ember spice, plated with a warm russet reduction drizzled on top"
   },
   "wendigo_frostbite_stew": {
     "name": "Frostbite Spirit Stew",
@@ -3596,7 +3900,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 3,
-    "description": "The cannibal spirit's frozen heart thawed by frost gland. Hunger itself, devoured."
+    "description": "The cannibal spirit's frozen heart thawed by frost gland. Hunger itself, devoured.",
+    "sprite_desc": "A bubbling iron pot of thick earthy stew made from wendigo heart and frost gland, steam rising from the surface"
   },
   "wild_hunt_odin_feast": {
     "name": "Odin's Wild Hunt Feast",
@@ -3607,7 +3912,8 @@
     "sp": 340,
     "bonus_type": "combat_stat",
     "bonus_amount": 3,
-    "description": "The horn of the hunt's captain paired with wolf hide. The stormy ride made edible."
+    "description": "The horn of the hunt's captain paired with wolf hide. The stormy ride made edible.",
+    "sprite_desc": "A large ornate platter laden with an elaborate arrangement of wild hunt horn and wolf pelt, garnished with edible flowers and earthy sauce"
   },
   "anansi_trickster_web_soup": {
     "name": "Trickster's Web Soup",
@@ -3619,7 +3925,8 @@
     "bonus_type": "stat",
     "bonus_stat": "WIS",
     "bonus_amount": 3,
-    "description": "Story-silk and common silk interwoven into broth. Every tale ever told flavors the pot."
+    "description": "Story-silk and common silk interwoven into broth. Every tale ever told flavors the pot.",
+    "sprite_desc": "A stone bowl filled with smooth warm russet broth made from anansi story thread and spider silk, wisps of fragrant steam curling above"
   },
   "nidhoggr_yggdrasil_root_stew": {
     "name": "Yggdrasil Root-Gnawer Stew",
@@ -3630,7 +3937,8 @@
     "sp": 400,
     "bonus_type": "all_stats",
     "bonus_amount": 2,
-    "description": "Two Norse apocalypse beasts in one pot. The world-tree shudders at this recipe."
+    "description": "Two Norse apocalypse beasts in one pot. The world-tree shudders at this recipe.",
+    "sprite_desc": "A bubbling iron pot of thick earthy stew made from nidhoggr root shard and jormungandr scale, steam rising from the surface"
   },
   "seven_seals_infernal_broth": {
     "name": "Seven Seals Infernal Broth",
@@ -3642,7 +3950,8 @@
     "sp": 450,
     "bonus_type": "all_stats",
     "bonus_amount": 2,
-    "description": "Three seal demons' essences combined. The Apocalypse, rendered as cuisine."
+    "description": "Three seal demons' essences combined. The Apocalypse, rendered as cuisine.",
+    "sprite_desc": "A stone bowl filled with smooth crimson broth made from amon's wrath ember, bael's war shard, and samael's death vial, wisps of fragrant steam curling above"
   },
   "amon_bael_warlords_stew": {
     "name": "Warlord Demons' Stew",
@@ -3653,7 +3962,8 @@
     "sp": 380,
     "bonus_type": "combat_stat",
     "bonus_amount": 3,
-    "description": "Wrath and war combined. The battlefield itself runs hot with this stew."
+    "description": "Wrath and war combined. The battlefield itself runs hot with this stew.",
+    "sprite_desc": "A bubbling iron pot of thick crimson stew made from amon's wrath ember and bael's war shard, steam rising from the surface"
   },
   "buer_mammon_plague_gold_soup": {
     "name": "Plague-Gold Soup",
@@ -3664,7 +3974,8 @@
     "sp": 385,
     "bonus_type": "two_stats",
     "bonus_amount": 3,
-    "description": "Pestilence and famine -- the twin curses of civilization, now a surprisingly restorative soup."
+    "description": "Pestilence and famine -- the twin curses of civilization, now a surprisingly restorative soup.",
+    "sprite_desc": "A stone bowl filled with smooth verdant broth made from buer's plague gland and mammon's hunger crystal, wisps of fragrant steam curling above"
   },
   "samael_abyzou_void_broth": {
     "name": "Silent Death Void Broth",
@@ -3676,7 +3987,8 @@
     "bonus_type": "stat",
     "bonus_stat": "INT",
     "bonus_amount": 3,
-    "description": "Death and silence intertwined. This broth makes no sound as it heals you."
+    "description": "Death and silence intertwined. This broth makes no sound as it heals you.",
+    "sprite_desc": "A stone bowl filled with smooth earthy broth made from samael's death vial and abyzou's silence dust, wisps of fragrant steam curling above"
   },
   "beleth_quake_reduction": {
     "name": "Earthquake Demon's Reduction",
@@ -3688,7 +4000,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 3,
-    "description": "Tremor-stone dissolved with giant core. The ground shakes with each slurp."
+    "description": "Tremor-stone dissolved with giant core. The ground shakes with each slurp.",
+    "sprite_desc": "A ceramic plate of beautifully prepared beleth's quake stone and stone giant core, plated with a warm russet reduction drizzled on top"
   },
   "arachne_echidna_web_venom": {
     "name": "Mother-Spider's Venomous Web",
@@ -3700,7 +4013,8 @@
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 2,
-    "description": "Arachne's silk soaked in Echidna's venom. Beautiful and deadly, like the best dishes."
+    "description": "Arachne's silk soaked in Echidna's venom. Beautiful and deadly, like the best dishes.",
+    "sprite_desc": "A ceramic plate of beautifully prepared arachne silk gland and echidna venom sac, plated with a pale violet reduction drizzled on top"
   },
   "talos_cacus_titan_stew": {
     "name": "Titan's Forge Stew",
@@ -3712,7 +4026,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 3,
-    "description": "Bronze automaton meets fire giant. Metal and flame forge an unbreakable stew."
+    "description": "Bronze automaton meets fire giant. Metal and flame forge an unbreakable stew.",
+    "sprite_desc": "A bubbling iron pot of thick warm russet stew made from talos bronze shard and cacus ember gut, steam rising from the surface"
   },
   "sphinx_baba_yaga_wisdom_feast": {
     "name": "Crone and Riddler's Wisdom Feast",
@@ -3724,7 +4039,8 @@
     "bonus_type": "stat",
     "bonus_stat": "WIS",
     "bonus_amount": 3,
-    "description": "The sphinx's riddle and the crone's wisdom. East meets West in a philosopher's dream meal."
+    "description": "The sphinx's riddle and the crone's wisdom. East meets West in a philosopher's dream meal.",
+    "sprite_desc": "A large ornate platter laden with an elaborate arrangement of sphinx riddle stone and baba yaga mortar dust, garnished with edible flowers and warm russet sauce"
   },
   "talos_bronze_clay_medallion": {
     "name": "Bronze Automaton Medallion",
@@ -3736,7 +4052,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
-    "description": "Talos bronze fused with enchanted clay, forged into a hearty medallion."
+    "description": "Talos bronze fused with enchanted clay, forged into a hearty medallion.",
+    "sprite_desc": "A ceramic plate of beautifully prepared talos bronze shard and enchanted clay, plated with a warm russet reduction drizzled on top"
   },
   "echidna_serpent_stew": {
     "name": "Mother of Monsters Serpent Stew",
@@ -3748,7 +4065,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
-    "description": "Echidna's primal venom infused into snake meat, a stew of monstrous origin."
+    "description": "Echidna's primal venom infused into snake meat, a stew of monstrous origin.",
+    "sprite_desc": "A bubbling iron pot of thick verdant stew made from echidna venom sac and snake meat, steam rising from the surface"
   },
   "erlking_heartwood_salad": {
     "name": "Erlking's Enchanted Forest Salad",
@@ -3760,7 +4078,8 @@
     "bonus_type": "stat",
     "bonus_stat": "WIS",
     "bonus_amount": 1,
-    "description": "Fey crown leaves dressed in heartwood sap, shimmering with woodland magic."
+    "description": "Fey crown leaves dressed in heartwood sap, shimmering with woodland magic.",
+    "sprite_desc": "A chilled stone plate with delicately arranged raw erlking crown twig and heartwood sap, garnished with verdant drizzle"
   },
   "camazotz_bat_wing_tartare": {
     "name": "Xibalba Bat Wing Tartare",
@@ -3772,7 +4091,8 @@
     "bonus_type": "stat",
     "bonus_stat": "PER",
     "bonus_amount": 1,
-    "description": "Death bat membrane layered with common bat wing, served raw in the style of Xibalba."
+    "description": "Death bat membrane layered with common bat wing, served raw in the style of Xibalba.",
+    "sprite_desc": "A golden-brown pastry shell filled with camazotz wing membrane and bat wing, the crust golden-brown and flaky with warm russet filling peeking through slits"
   },
   "cacus_double_flame_roast": {
     "name": "Cacus Double-Flame Roast",
@@ -3784,7 +4104,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
-    "description": "Twin fire glands seared together, releasing Vulcan's own heat."
+    "description": "Twin fire glands seared together, releasing Vulcan's own heat.",
+    "sprite_desc": "A wooden platter bearing a glistening roast of cacus ember gut and fire gland, seared to a warm russet crust with herb garnish"
   },
   "sphinx_riddle_mane_soup": {
     "name": "Sphinx Riddle & Mane Bisque",
@@ -3796,7 +4117,8 @@
     "bonus_type": "stat",
     "bonus_stat": "INT",
     "bonus_amount": 1,
-    "description": "Riddle stone ground into sphinx mane, a bisque that sharpens the mind."
+    "description": "Riddle stone ground into sphinx mane, a bisque that sharpens the mind.",
+    "sprite_desc": "A stone bowl filled with smooth warm russet broth made from sphinx riddle stone and sphinx mane, wisps of fragrant steam curling above"
   },
   "rangda_witch_hex_stew": {
     "name": "Rangda's Witch-Hex Stew",
@@ -3808,7 +4130,8 @@
     "bonus_type": "stat",
     "bonus_stat": "INT",
     "bonus_amount": 1,
-    "description": "Cursed mask shards simmered with witch bones in a cauldron of dark magic."
+    "description": "Cursed mask shards simmered with witch bones in a cauldron of dark magic.",
+    "sprite_desc": "A bubbling iron pot of thick warm russet stew made from rangda mask splinter and witch bone, steam rising from the surface"
   },
   "nemean_lion_feast": {
     "name": "Herculean Lion Feast",
@@ -3820,7 +4143,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
-    "description": "Nemean pelt wrapped around lion meat, roasted to Olympian perfection."
+    "description": "Nemean pelt wrapped around lion meat, roasted to Olympian perfection.",
+    "sprite_desc": "A large ornate platter laden with an elaborate arrangement of nemean pelt scrap and lion meat, garnished with edible flowers and warm russet sauce"
   },
   "sets_jackal_scarab_reduction": {
     "name": "Set's Chaos Scarab Reduction",
@@ -3832,7 +4156,8 @@
     "bonus_type": "stat",
     "bonus_stat": "PER",
     "bonus_amount": 1,
-    "description": "Shadow fang and sacred scarab shell reduced into a sauce of desert chaos."
+    "description": "Shadow fang and sacred scarab shell reduced into a sauce of desert chaos.",
+    "sprite_desc": "A ceramic plate of beautifully prepared set's jackal fang and scarab shell, plated with a warm russet reduction drizzled on top"
   },
   "green_knight_regeneration_broth": {
     "name": "Green Chapel Regeneration Broth",
@@ -3844,7 +4169,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
-    "description": "Immortal sap blended with troll regeneration gland, a broth of undying vitality."
+    "description": "Immortal sap blended with troll regeneration gland, a broth of undying vitality.",
+    "sprite_desc": "A stone bowl filled with smooth emerald broth made from green knight sap and troll regeneration gland, wisps of fragrant steam curling above"
   },
   "charybdis_sea_serpent_chowder": {
     "name": "Charybdis Sea-Serpent Chowder",
@@ -3856,7 +4182,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
-    "description": "Abyssal brine and sea serpent oil simmered into a chowder of oceanic power."
+    "description": "Abyssal brine and sea serpent oil simmered into a chowder of oceanic power.",
+    "sprite_desc": "A bubbling iron pot of thick deep blue stew made from charybdis brine and sea serpent oil, steam rising from the surface"
   },
   "ravanas_demon_heart_curry": {
     "name": "Lanka Demon Heart Curry",
@@ -3868,7 +4195,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
-    "description": "Ravana's sinew and demon heart slow-cooked in a fiery curry of the demon king's wrath."
+    "description": "Ravana's sinew and demon heart slow-cooked in a fiery curry of the demon king's wrath.",
+    "sprite_desc": "A ceramic plate of beautifully prepared ravana's knuckle and nalfeshnee heart, plated with a warm russet reduction drizzled on top"
   },
   "anansi_storyteller_soup": {
     "name": "Anansi's Storyteller Soup",
@@ -3880,7 +4208,8 @@
     "bonus_type": "stat",
     "bonus_stat": "WIS",
     "bonus_amount": 1,
-    "description": "Story threads woven with common spider silk into a soup that reveals hidden truths."
+    "description": "Story threads woven with common spider silk into a soup that reveals hidden truths.",
+    "sprite_desc": "A stone bowl filled with smooth warm russet broth made from anansi story thread and spider silk, wisps of fragrant steam curling above"
   },
   "nidhoggr_world_tree_roast": {
     "name": "Níðhöggr World-Tree Roast",
@@ -3891,7 +4220,8 @@
     "sp": 150,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "Root-gnawer scale layered with dragon scale, a roast from the base of Yggdrasil."
+    "description": "Root-gnawer scale layered with dragon scale, a roast from the base of Yggdrasil.",
+    "sprite_desc": "A wooden platter bearing a glistening roast of nidhoggr root shard and Dragon Scale, seared to a earthy crust with herb garnish"
   },
   "seal_wrath_pestilence_broth": {
     "name": "Apocalypse Wrath-Plague Broth",
@@ -3902,7 +4232,8 @@
     "sp": 150,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "Wrath embers and pestilence spores boiled into a broth of apocalyptic fury."
+    "description": "Wrath embers and pestilence spores boiled into a broth of apocalyptic fury.",
+    "sprite_desc": "A stone bowl filled with smooth crimson broth made from amon's wrath ember and buer's plague gland, wisps of fragrant steam curling above"
   },
   "seal_famine_war_reduction": {
     "name": "Horsemen's Famine-War Reduction",
@@ -3914,7 +4245,8 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
-    "description": "Famine marrow reduced with war iron into a sauce of apocalyptic strength."
+    "description": "Famine marrow reduced with war iron into a sauce of apocalyptic strength.",
+    "sprite_desc": "A ceramic plate of beautifully prepared mammon's hunger crystal and bael's war shard, plated with a warm russet reduction drizzled on top"
   },
   "seal_death_earthquake_stew": {
     "name": "Cataclysm Death-Quake Stew",
@@ -3926,7 +4258,8 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
-    "description": "Death's chill and seismic stone simmered into a stew of world-ending power."
+    "description": "Death's chill and seismic stone simmered into a stew of world-ending power.",
+    "sprite_desc": "A bubbling iron pot of thick earthy stew made from samael's death vial and beleth's quake stone, steam rising from the surface"
   },
   "seal_silence_void_consomme": {
     "name": "Final Silence Void Consommé",
@@ -3937,14 +4270,19 @@
     "sp": 150,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
-    "description": "Silence crystal dissolved in void essence — the last meal before the end."
+    "description": "Silence crystal dissolved in void essence — the last meal before the end.",
+    "sprite_desc": "A stone bowl filled with smooth pale violet broth made from abyzou's silence dust and Void Essence, wisps of fragrant steam curling above"
   },
   "royal_prime_surf_and_turf": {
     "name": "Royal Surf & Turf",
-    "ingredients": ["prime_beef", "royal_beef"],
+    "ingredients": [
+      "prime_beef",
+      "royal_beef"
+    ],
     "sp": 400,
     "bonus_type": "all_stats",
     "bonus_amount": 3,
-    "description": "A legendary dish combining prime Hell Bovine beef with the Cow King's royal cut. The flavors are transcendent. Moo."
+    "description": "A legendary dish combining prime Hell Bovine beef with the Cow King's royal cut. The flavors are transcendent. Moo.",
+    "sprite_desc": "A ceramic plate of beautifully prepared prime beef and royal beef, plated with a warm russet reduction drizzled on top"
   }
 }
