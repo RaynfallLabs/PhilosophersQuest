@@ -24,6 +24,20 @@ def data_path(*parts: str) -> str:
     return os.path.normpath(os.path.join(_root(), *parts))
 
 
+def fmt_id(raw: str) -> str:
+    """Convert a snake_case identifier to a display string: 'wild_swing' -> 'wild swing'."""
+    return raw.replace('_', ' ')
+
+
+def a_or_an(name: str) -> str:
+    """Return 'a Name' or 'an Name' based on the first letter. Handles proper nouns."""
+    if not name:
+        return name
+    first = name.lstrip('{').lstrip()  # skip BUC tags like {blessed}
+    article = 'an' if first[0:1].lower() in 'aeiou' else 'a'
+    return f"{article} {name}"
+
+
 def save_dir() -> str:
     """Writable directory for save files.
 

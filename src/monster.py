@@ -211,7 +211,7 @@ class Monster:
             if self.has_effect('weakened'):
                 dmg = max(1, dmg // 2)
             actual = player.take_damage(dmg, atk_type)
-            return actual, gaze_msg + f" The {self.name} hits you with {atk['name']} for {actual} damage!"
+            return actual, gaze_msg + f" The {self.name} hits you with {atk['name'].replace('_', ' ')} for {actual} damage!"
 
         # Fenrir rage: at 3+ stacks, use ALL attacks instead of random choice
         if self.rage_stacks >= 3 and len(self.attacks) > 1:
@@ -240,7 +240,7 @@ class Monster:
         # Breath/spit/hurl attacks miss player hiding in a pit
         is_breath = any(w in atk_name for w in ('breath', 'spit', 'hurl', 'volley'))
         if is_breath and player.has_effect('in_pit'):
-            return 0, f"The {self.name}'s {atk['name']} passes harmlessly over your pit!"
+            return 0, f"The {self.name}'s {atk['name'].replace('_', ' ')} passes harmlessly over your pit!"
 
         # -- THAC0 Attack Roll ----------------------------------------------
         d20 = random.randint(1, 20)
@@ -288,7 +288,7 @@ class Monster:
 
         actual = player.take_damage(dmg, atk_type)
 
-        msg = f"The {self.name} hits you with {atk['name']} for {actual} damage!"
+        msg = f"The {self.name} hits you with {atk['name'].replace('_', ' ')} for {actual} damage!"
 
         # Fire/cold shield: if attack was blocked (actual=0), reflect damage back
         if actual == 0 and atk_type == 'fire' and player.has_effect('fire_shield'):
@@ -316,11 +316,11 @@ class Monster:
                 # Reflecting: 50% chance to bounce effect back at attacker
                 if player.has_effect('reflecting') and random.random() < 0.50:
                     self.add_effect(effect_id, duration)
-                    msg += f" The effect reflects back -- the {self.name} is {effect_id}!"
+                    msg += f" The effect reflects back -- the {self.name} is {effect_id.replace('_', ' ')}!"
                 else:
                     applied = player.add_effect(effect_id, duration)
                     if applied:
-                        msg += f" You are {effect_id}!"
+                        msg += f" You are {effect_id.replace('_', ' ')}!"
 
         return actual, msg
 
@@ -820,7 +820,7 @@ class Monster:
                 dmg = max(1, dmg // 2)
             actual = player.take_damage(dmg, atk.get('type', 'physical'))
             total += actual
-            parts.append(f"{atk['name']} {actual}")
+            parts.append(f"{atk['name'].replace('_', ' ')} {actual}")
         hit_str = ", ".join(parts)
         msg = f"The {self.name} attacks in a frenzy! [{hit_str}] ({total} total)"
         return total, msg

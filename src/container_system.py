@@ -119,9 +119,9 @@ def _trigger_trap(player, trap: dict, messages: list):
     if effect:
         applied = player.add_effect(effect, effect_dur)
         if applied:
-            messages.append((f'You are {effect}!', 'danger'))
+            messages.append((f"You are {effect.replace('_', ' ')}!", 'danger'))
         else:
-            messages.append((f'You resist the {effect} effect!', 'info'))
+            messages.append((f"You resist the {effect.replace('_', ' ')} effect!", 'info'))
 
 
 def _alert_nearby(player, dungeon, monsters) -> bool:
