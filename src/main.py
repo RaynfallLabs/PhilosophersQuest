@@ -6002,6 +6002,8 @@ class Game:
     # ------------------------------------------------------------------
 
     # Equip menu tab definitions: (label, filter_func_or_None)
+    _LETTERS = 'abcdefghijklmnopqrstuvwxyz'
+
     _EQUIP_TABS = [
         ('Weapons',     lambda i: isinstance(i, Weapon)),
         ('Armor',       lambda i: isinstance(i, Armor)),
@@ -10893,14 +10895,13 @@ class Game:
                 self.font_sm.render("(empty)", True, FP.FADED_TEXT), (bx + 30, cy + 10)
             )
         elif is_unequip:
-            _letters = 'abcdefghijklmnopqrstuvwxyz'
             for i, (slot_name, item) in enumerate(display_items[:26]):
                 iy = cy
                 pygame.draw.rect(self.screen,
                     FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
                     (bx + 10, iy, bw - 20, 56), border_radius=6)
                 self.screen.blit(
-                    self.font_md.render(f"[{_letters[i]}]", True, FP.WARNING_TEXT), (bx + 18, iy + 12))
+                    self.font_md.render(f"[{self._LETTERS[i]}]", True, FP.WARNING_TEXT), (bx + 18, iy + 12))
                 cursed = getattr(item, 'cursed', False)
                 name_col = FP.DANGER_TEXT if cursed else FP.GOLD_PALE
                 self.screen.blit(
@@ -10915,14 +10916,13 @@ class Game:
                     (bx + 70, iy + 38))
                 cy += row_h
         else:
-            _letters = 'abcdefghijklmnopqrstuvwxyz'
             for i, item in enumerate(display_items[:26]):
                 iy = cy
                 pygame.draw.rect(self.screen,
                     FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
                     (bx + 10, iy, bw - 20, 56), border_radius=6)
                 self.screen.blit(
-                    self.font_md.render(f"[{_letters[i]}]", True, FP.GOLD_BRIGHT), (bx + 18, iy + 12))
+                    self.font_md.render(f"[{self._LETTERS[i]}]", True, FP.GOLD_BRIGHT), (bx + 18, iy + 12))
                 self.screen.blit(
                     self.font_md.render(self._fit_text(self._display_name(item), self.font_md, bw - 90), True, FP.BODY_TEXT),
                     (bx + 70, iy + 12))
@@ -10990,7 +10990,7 @@ class Game:
             )
             dname = self._display_name(item)
             self.screen.blit(
-                self.font_md.render(f"[{i+1}]", True, FP.GOLD_BRIGHT), (bx + 18, iy + 14)
+                self.font_md.render(f"[{self._LETTERS[i]}]", True, FP.GOLD_BRIGHT), (bx + 18, iy + 14)
             )
             self.screen.blit(
                 self.font_md.render(self._fit_text(dname, self.font_md, bw - 70 - 20), True, FP.BODY_TEXT), (bx + 70, iy + 14)
@@ -11013,7 +11013,7 @@ class Game:
         hint_y = by + bh - 34
         draw_divider(self.screen, bx + 10, hint_y - 8, bw - 20)
         hint = self.font_sm.render(
-            "1-9: select  |  ESC: cancel", True, FP.HINT_TEXT
+            "a-z: select  |  ESC: cancel", True, FP.HINT_TEXT
         )
         self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
 
@@ -11057,7 +11057,7 @@ class Game:
                 else FP.DANGER_TEXT
             )
             self.screen.blit(
-                self.font_md.render(f"[{i+1}]", True, FP.GOLD_BRIGHT), (bx + 18, iy + 14)
+                self.font_md.render(f"[{self._LETTERS[i]}]", True, FP.GOLD_BRIGHT), (bx + 18, iy + 14)
             )
             self.screen.blit(
                 self.font_md.render(self._fit_text(dname, self.font_md, bw - 70 - 20), True, FP.BODY_TEXT), (bx + 70, iy + 14)
@@ -11075,7 +11075,7 @@ class Game:
         hint_y = by + bh - 34
         draw_divider(self.screen, bx + 10, hint_y - 8, bw - 20)
         hint = self.font_sm.render(
-            "1-9: select  |  ESC: cancel", True, FP.HINT_TEXT
+            "a-z: select  |  ESC: cancel", True, FP.HINT_TEXT
         )
         self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
 
@@ -11169,7 +11169,7 @@ class Game:
             )
             dname = self._display_name(item)
             self.screen.blit(
-                self.font_md.render(f"[{i+1}]", True, FP.GOLD_BRIGHT), (bx + 18, iy + 14)
+                self.font_md.render(f"[{self._LETTERS[i]}]", True, FP.GOLD_BRIGHT), (bx + 18, iy + 14)
             )
             is_book = isinstance(item, Spellbook)
             name_color = (100, 200, 255) if is_book else FP.BODY_TEXT
@@ -11199,7 +11199,7 @@ class Game:
         hint_y = by + bh - 34
         draw_divider(self.screen, bx + 10, hint_y - 8, bw - 20)
         hint = self.font_sm.render(
-            "1-9: select  |  ESC: cancel", True, FP.HINT_TEXT
+            "a-z: select  |  ESC: cancel", True, FP.HINT_TEXT
         )
         self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
 
@@ -11252,7 +11252,7 @@ class Game:
                 pygame.draw.rect(self.screen, FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
                                  (bx + 10, iy, bw - 20, ROW_H - 8), border_radius=6)
                 dname = self._display_name(item)
-                self.screen.blit(self.font_md.render(f"[{i+1}]", True, FP.GOLD_BRIGHT), (bx + 18, iy + 10))
+                self.screen.blit(self.font_md.render(f"[{self._LETTERS[i]}]", True, FP.GOLD_BRIGHT), (bx + 18, iy + 10))
                 self.screen.blit(self.font_md.render(self._fit_text(dname, self.font_md, bw - 70 - 20), True, name_color), (bx + 70, iy + 10))
                 if isinstance(item, Corpse):
                     lore_status = "[EXAMINED]" if item.lore_identified else "[UNEXAMINED]"
@@ -11276,7 +11276,7 @@ class Game:
         hint_y = by + bh - 34
         draw_divider(self.screen, bx + 10, hint_y - 8, bw - 20)
         hint = self.font_sm.render(
-            "1-9: select  |  ESC: cancel", True, FP.HINT_TEXT
+            "a-z: select  |  ESC: cancel", True, FP.HINT_TEXT
         )
         self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
 
@@ -11398,7 +11398,7 @@ class Game:
                     (bx + 10, iy, bw - 20, row_h - 4), border_radius=6
                 )
                 self.screen.blit(
-                    self.font_md.render(f"[{i+1}]", True, FP.GOLD_BRIGHT),
+                    self.font_md.render(f"[{self._LETTERS[i]}]", True, FP.GOLD_BRIGHT),
                     (bx + 18, iy + 10)
                 )
                 self.screen.blit(
@@ -11471,7 +11471,6 @@ class Game:
         if not tab_items:
             self.screen.blit(self.font_sm.render("(empty)", True, FP.FADED_TEXT), (bx + 30, y_off))
         else:
-            _letters = 'abcdefghijklmnopqrstuvwxyz'
             for i, item in enumerate(tab_items[:26]):
                 if isinstance(item, self._GoldDropEntry):
                     dname = f"Gold  ({getattr(self, 'player_gold', 0)} coins)"
@@ -11479,7 +11478,7 @@ class Game:
                 else:
                     dname = self._display_name(item)
                     col = FP.PARCHMENT_LIGHT
-                line = f"  {_letters[i]})  {dname}"
+                line = f"  {self._LETTERS[i]})  {dname}"
                 surf = self.font_md.render(self._fit_text(line, self.font_md, bw - 30), True, col)
                 self.screen.blit(surf, (bx + 16, y_off + i * row_h))
 
@@ -11521,7 +11520,7 @@ class Game:
                 (bx + 10, iy, bw - 20, 60), border_radius=6
             )
             self.screen.blit(
-                self.font_md.render(f"[{i+1}]", True, FP.GOLD_BRIGHT),
+                self.font_md.render(f"[{self._LETTERS[i]}]", True, FP.GOLD_BRIGHT),
                 (bx + 18, iy + 14)
             )
             self.screen.blit(
@@ -11558,7 +11557,7 @@ class Game:
         hint_y = by + bh - 34
         draw_divider(self.screen, bx + 10, hint_y - 8, bw - 20)
         hint = self.font_sm.render(
-            "1-9: select  |  ESC: cancel", True, FP.HINT_TEXT
+            "a-z: select  |  ESC: cancel", True, FP.HINT_TEXT
         )
         self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
 
@@ -11590,7 +11589,7 @@ class Game:
             pygame.draw.rect(self.screen, tuple(item.color),
                              (bx + 18, iy + 18, 24, 24), border_radius=4)
             self.screen.blit(
-                self.font_md.render(f"[{i+1}]", True, FP.GOLD_BRIGHT),
+                self.font_md.render(f"[{self._LETTERS[i]}]", True, FP.GOLD_BRIGHT),
                 (bx + 50, iy + 14)
             )
             self.screen.blit(
@@ -11613,8 +11612,8 @@ class Game:
         hint_y = by + bh - 34
         draw_divider(self.screen, bx + 10, hint_y - 8, bw - 20)
         self.screen.blit(
-            self.font_sm.render("1-9: quaff  |  ESC: cancel", True, FP.HINT_TEXT),
-            (bx + (bw - self.font_sm.size("1-9: quaff  |  ESC: cancel")[0]) // 2, hint_y)
+            self.font_sm.render("a-z: quaff  |  ESC: cancel", True, FP.HINT_TEXT),
+            (bx + (bw - self.font_sm.size("a-z: quaff  |  ESC: cancel")[0]) // 2, hint_y)
         )
 
     def _draw_throw_menu(self):
@@ -11645,7 +11644,7 @@ class Game:
             pygame.draw.rect(self.screen, tuple(item.color),
                              (bx + 18, iy + 18, 24, 24), border_radius=4)
             self.screen.blit(
-                self.font_md.render(f"[{i+1}]", True, FP.GOLD_BRIGHT),
+                self.font_md.render(f"[{self._LETTERS[i]}]", True, FP.GOLD_BRIGHT),
                 (bx + 50, iy + 14)
             )
             self.screen.blit(
@@ -11675,8 +11674,8 @@ class Game:
         hint_y = by + bh - 34
         draw_divider(self.screen, bx + 10, hint_y - 8, bw - 20)
         self.screen.blit(
-            self.font_sm.render("1-9: select  |  ESC: cancel", True, FP.HINT_TEXT),
-            (bx + (bw - self.font_sm.size("1-9: select  |  ESC: cancel")[0]) // 2, hint_y)
+            self.font_sm.render("a-z: select  |  ESC: cancel", True, FP.HINT_TEXT),
+            (bx + (bw - self.font_sm.size("a-z: select  |  ESC: cancel")[0]) // 2, hint_y)
         )
 
     # ------------------------------------------------------------------
@@ -13297,7 +13296,7 @@ class Game:
 
         max_detail_w = bw - 90
         cy = by + 82
-        for i, item in enumerate(self.examine_menu_items[:9]):
+        for i, item in enumerate(self.examine_menu_items[:26]):
             iy = cy
             pygame.draw.rect(
                 self.screen,
@@ -13307,7 +13306,7 @@ class Game:
             dname = self._display_name(item)
             type_label = item.item_class.replace('_', ' ').title() if hasattr(item, 'item_class') else ''
             self.screen.blit(
-                self.font_md.render(f"[{i+1}]", True, FP.GOLD_BRIGHT), (bx + 18, iy + 10)
+                self.font_md.render(f"[{self._LETTERS[i]}]", True, FP.GOLD_BRIGHT), (bx + 18, iy + 10)
             )
             self.screen.blit(
                 self.font_md.render(self._fit_text(dname, self.font_md, bw - 70 - 20), True, FP.BODY_TEXT), (bx + 70, iy + 10)
@@ -13330,7 +13329,7 @@ class Game:
         hint_y = by + bh - 34
         draw_divider(self.screen, bx + 10, hint_y - 8, bw - 20)
         hint = self.font_sm.render(
-            "1-9: select  |  ESC: close", True, FP.HINT_TEXT
+            "a-z: select  |  ESC: close", True, FP.HINT_TEXT
         )
         self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
 
