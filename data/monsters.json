@@ -3669,8 +3669,8 @@
         "damage": "1d6",
         "type": "physical",
         "effect": "weakened",
-        "effect_chance": 0.35,
-        "effect_duration": 6
+        "effect_chance": 0.25,
+        "effect_duration": 4
       }
     ],
     "ai_pattern": "aggressive",
