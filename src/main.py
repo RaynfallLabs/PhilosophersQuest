@@ -264,7 +264,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "_start_potions": ["potion_of_healing", "potion_of_haste", "potion_of_fire_resist"],
         "_greeting": "The Witcher unsheathes his silver blade. Wind's howling.",
     },
-    "ciri": {
+    "ciri riannon": {
         "STR": 8, "CON": 10, "DEX": 18, "INT": 14, "WIS": 12, "PER": 16,
         "_sprite": "player_robyn",
         "_no_dagger": True,
