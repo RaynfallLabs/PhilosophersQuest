@@ -4,6 +4,8 @@ import random
 import sys
 import pygame
 
+VERSION = "1.5"
+
 # FANTASY: High-fantasy medieval/arcane grimoire UI theme
 from fantasy_ui import (FP, get_font, draw_panel, draw_dark_panel,
                          draw_header_bar, draw_divider, draw_shadow_text,
@@ -725,6 +727,9 @@ class WelcomeScreen:
         text = "[ ENTER ] begin your quest     [ F3 ] study mode     [ ESC ] quit"
         hint = self.font_tiny.render(text, True, FP.HINT_TEXT)
         self.screen.blit(hint, (cx - hint.get_width() // 2, self.H - 28))
+        # Version number — bottom-right corner
+        ver = self.font_tiny.render(f"v{VERSION}", True, (60, 58, 70))
+        self.screen.blit(ver, (self.W - ver.get_width() - 10, self.H - 20))
         # Delete-flash confirmation (shown for 2 seconds after DEL)
         flash = getattr(self, '_delete_flash', 0.0)
         if flash > 0.0:
@@ -10023,6 +10028,24 @@ class Game:
                 dmg, msg = m.attack(self.player)
                 self.add_message(msg, 'danger')
 
+                # Piercing collateral: damage monsters in the projectile path
+                _collateral = getattr(m, '_piercing_collateral', [])
+                if _collateral and dmg > 0:
+                    _coll_frac = random.uniform(0.75, 0.90)
+                    _coll_dmg = max(1, int(dmg * _coll_frac))
+                    for _cv in _collateral:
+                        if not _cv.alive:
+                            continue
+                        _cv.hp -= _coll_dmg
+                        if (m.x, m.y) in self.visible or (_cv.x, _cv.y) in self.visible:
+                            self.add_message(
+                                f"The {m.name}'s attack tears through the {_cv.name} for {_coll_dmg} collateral damage!",
+                                'combat')
+                        if _cv.hp <= 0:
+                            _cv.alive = False
+                            self._on_monster_killed(_cv)
+                    m._piercing_collateral = []
+
                 # SP drain (locusts, famine demon)
                 _sp_drain = getattr(m, 'sp_drain', 0)
                 if _sp_drain > 0 and dmg > 0:
@@ -14227,7 +14250,10 @@ def main():
     pygame.display.set_caption("Philosopher's Quest")
     clock = pygame.time.Clock()
 
+    global _crash_game_ref
+
     while True:
+        # ---------- welcome / study screen ----------
         welcome = WelcomeScreen(screen)
         player_name, secret_build = welcome.run(clock)
 
@@ -14236,49 +14262,53 @@ def main():
             study.run(clock)
             continue  # return to welcome screen after study mode
 
-        break  # got a real player name, proceed to game
+        # Sync layout to actual window size (may have been resized during welcome)
+        _cur_w, _cur_h = screen.get_size()
+        _update_layout(_cur_w, _cur_h)
 
-    # Sync layout to actual window size (may have been resized during welcome)
-    _cur_w, _cur_h = screen.get_size()
-    _update_layout(_cur_w, _cur_h)
+        # ---------- load or create game ----------
+        state = load_game(player_name) if save_exists(player_name) else None
+        if state:
+            delete_save(player_name)   # permadeath: delete save immediately on load
+            game = Game(screen,
+                        player_name=state.get('player_name', player_name),
+                        secret_build=state.get('secret_build'))
+            game.load_state(state)
+        else:
+            game = Game(screen, player_name=player_name, secret_build=secret_build)
 
-    # If a save exists for this name, load it; otherwise start fresh
-    state = load_game(player_name) if save_exists(player_name) else None
-    if state:
-        delete_save(player_name)   # permadeath: delete save immediately on load
-        game = Game(screen,
-                    player_name=state.get('player_name', player_name),
-                    secret_build=state.get('secret_build'))
-        game.load_state(state)
-    else:
-        game = Game(screen, player_name=player_name, secret_build=secret_build)
+        _crash_game_ref = game
 
-    global _crash_game_ref
-    _crash_game_ref = game
-
-    running = True
-
-    while running:
-        dt = clock.tick(FPS) / 1000.0
-        for event in pygame.event.get():
+        # ---------- game loop ----------
+        running = True
+        while running:
+            dt = clock.tick(FPS) / 1000.0
+            for event in pygame.event.get():
+                try:
+                    if not game.handle_event(event):
+                        running = False
+                except Exception as _evt_err:
+                    game.add_message(f"Error: {_evt_err}", 'danger')
+                    game.state = STATE_PLAYER  # recover to playable state
+                    import traceback; traceback.print_exc()
             try:
-                if not game.handle_event(event):
-                    running = False
-            except Exception as _evt_err:
-                game.add_message(f"Error: {_evt_err}", 'danger')
-                game.state = STATE_PLAYER  # recover to playable state
+                game.update(dt)
+            except Exception as _upd_err:
+                game.add_message(f"Error: {_upd_err}", 'danger')
+                game.state = STATE_PLAYER
                 import traceback; traceback.print_exc()
-        try:
-            game.update(dt)
-        except Exception as _upd_err:
-            game.add_message(f"Error: {_upd_err}", 'danger')
-            game.state = STATE_PLAYER
-            import traceback; traceback.print_exc()
-        game.render()
+            game.render()
 
-    # Save on clean exit if the game is still in progress and player chose to save
-    if game.state not in (STATE_DEAD, STATE_VICTORY) and game._save_on_quit:
-        save_game(game)
+        # Save on clean exit if the game is still in progress and player chose to save
+        if game.state not in (STATE_DEAD, STATE_VICTORY) and game._save_on_quit:
+            save_game(game)
+
+        # If game ended by death or victory, loop back to welcome screen
+        if game.state in (STATE_DEAD, STATE_VICTORY):
+            continue
+
+        # Otherwise player quit mid-game — exit for real
+        break
 
     pygame.quit()
     sys.exit()
