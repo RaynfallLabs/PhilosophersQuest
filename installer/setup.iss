@@ -4,7 +4,7 @@
 ; Output: installer\PhilosophersQuest_Setup.exe
 
 #define AppName      "Philosopher's Quest"
-#define AppVersion   "1.3"
+#define AppVersion   "1.5"
 #define AppPublisher "Dad"
 #define AppExeName   "PhilosophersQuest.exe"
 #define BundleDir    "..\dist\PhilosophersQuest"
