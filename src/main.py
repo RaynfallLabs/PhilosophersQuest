@@ -4122,6 +4122,52 @@ class Game:
             surf.blit(glyph_surf, (gx, gy))
             self.screen.blit(surf, (x, y))
 
+    def _draw_tab_bar(self, tabs, active_idx: int, bx: int, by: int, bw: int,
+                      counts: list[int] | None = None):
+        """Draw a tab bar that fits within the panel width.
+        *tabs* is a list of (label, ...) tuples.  *counts* is optional per-tab
+        item counts (empty tabs with count 0 are hidden unless active).
+        Returns the y position below the tab bar."""
+        tab_y = by + 50
+        avail = bw - 20  # horizontal budget
+        PAD = 4
+        # Build visible tab list: (index, label_text)
+        visible = []
+        for i, tab in enumerate(tabs):
+            label = tab[0]
+            c = counts[i] if counts else None
+            if c is not None and c == 0 and i != active_idx:
+                continue
+            text = f"{label} ({c})" if c is not None else label
+            visible.append((i, text))
+        # Measure total width; if too wide, drop counts
+        def _total(entries):
+            return sum(self.font_sm.size(t)[0] + 14 + PAD for _, t in entries) - PAD
+        if _total(visible) > avail and counts:
+            visible = []
+            for i, tab in enumerate(tabs):
+                c = counts[i] if counts else None
+                if c is not None and c == 0 and i != active_idx:
+                    continue
+                visible.append((i, tab[0]))
+        tab_x = bx + 10
+        max_x = bx + bw - 10
+        for idx, text in visible:
+            tw = self.font_sm.size(text)[0] + 14
+            if tab_x + tw > max_x:
+                break
+            rect = pygame.Rect(tab_x, tab_y, tw, 24)
+            active = idx == active_idx
+            if active:
+                pygame.draw.rect(self.screen, FP.MIDNIGHT_MID, rect, border_radius=4)
+                pygame.draw.rect(self.screen, FP.GOLD, rect, 2, border_radius=4)
+                col = FP.GOLD_BRIGHT
+            else:
+                col = FP.FADED_TEXT
+            self.screen.blit(self.font_sm.render(text, True, col), (tab_x + 7, tab_y + 3))
+            tab_x += tw + PAD
+        return tab_y + 28
+
     def _open_quaff_menu(self):
         self.quaff_menu_items = [
             i for i in self.player.inventory if isinstance(i, Potion)
@@ -6238,10 +6284,20 @@ class Game:
     def _equip_menu_input(self, key: int):
         # Up/Down or Left/Right: switch tabs
         if key in (pygame.K_LEFT, pygame.K_UP):
-            self._menu_tab = (self._menu_tab - 1) % len(self._EQUIP_TABS)
+            def _eq_has(t):
+                _, filt = self._EQUIP_TABS[t]
+                if filt is None:
+                    return bool(self.equip_menu_equipped)
+                return any(filt(i) for i in self.equip_menu_items)
+            self._menu_tab = self._cycle_tab(self._menu_tab, -1, len(self._EQUIP_TABS), _eq_has)
             return
         if key in (pygame.K_RIGHT, pygame.K_DOWN):
-            self._menu_tab = (self._menu_tab + 1) % len(self._EQUIP_TABS)
+            def _eq_has(t):
+                _, filt = self._EQUIP_TABS[t]
+                if filt is None:
+                    return bool(self.equip_menu_equipped)
+                return any(filt(i) for i in self.equip_menu_items)
+            self._menu_tab = self._cycle_tab(self._menu_tab, 1, len(self._EQUIP_TABS), _eq_has)
             return
 
         # a-z keys: select from current tab
@@ -11374,23 +11430,14 @@ class Game:
                         text="EQUIP / UNEQUIP",
                         font=self.font_md, text_color=FP.GOLD_BRIGHT)
 
-        # --- Tab bar ---
-        tab_y = by + 50
-        tab_x = bx + 10
-        for i, (label, _) in enumerate(self._EQUIP_TABS):
-            active = i == self._menu_tab
-            tw = self.font_sm.size(label)[0] + 16
-            rect = pygame.Rect(tab_x, tab_y, tw, 26)
-            if active:
-                pygame.draw.rect(self.screen, FP.MIDNIGHT_MID, rect, border_radius=4)
-                pygame.draw.rect(self.screen, FP.GOLD, rect, 2, border_radius=4)
-                col = FP.GOLD_BRIGHT
+        _equip_counts = []
+        for _, filt in self._EQUIP_TABS:
+            if filt is None:
+                _equip_counts.append(len(self.equip_menu_equipped))
             else:
-                col = FP.FADED_TEXT
-            self.screen.blit(self.font_sm.render(label, True, col), (tab_x + 8, tab_y + 3))
-            tab_x += tw + 6
-
-        cy = tab_y + 34
+                _equip_counts.append(sum(1 for it in self.equip_menu_items if filt(it)))
+        tab_end = self._draw_tab_bar(self._EQUIP_TABS, self._menu_tab, bx, by, bw, _equip_counts)
+        cy = tab_end + 6
         max_detail_w = bw - 90
 
         if not display_items:
@@ -11650,28 +11697,11 @@ class Game:
         draw_header_bar(self.screen, (bx, by, bw, 44), text="READ",
                         font=self.font_md, text_color=FP.GOLD_BRIGHT)
 
-        # Tab bar
-        tab_y = by + 50
-        tab_x = bx + 10
-        for i, (label, filt) in enumerate(self._SCROLL_TABS):
-            active = i == self._scroll_tab
-            count = sum(1 for it in self.scroll_menu_items if filt(it))
-            if count == 0 and not active:
-                continue
-            tab_label = f"{label} ({count})"
-            tw = self.font_sm.size(tab_label)[0] + 14
-            rect = pygame.Rect(tab_x, tab_y, tw, 24)
-            if active:
-                pygame.draw.rect(self.screen, FP.MIDNIGHT_MID, rect, border_radius=4)
-                pygame.draw.rect(self.screen, FP.GOLD, rect, 2, border_radius=4)
-                col = FP.GOLD_BRIGHT
-            else:
-                col = FP.FADED_TEXT
-            self.screen.blit(self.font_sm.render(tab_label, True, col), (tab_x + 7, tab_y + 3))
-            tab_x += tw + 4
-
-        draw_divider(self.screen, bx + 10, by + 78, bw - 20)
-        cy = by + 88
+        _scroll_counts = [sum(1 for it in self.scroll_menu_items if filt(it))
+                          for _, filt in self._SCROLL_TABS]
+        tab_end = self._draw_tab_bar(self._SCROLL_TABS, self._scroll_tab, bx, by, bw, _scroll_counts)
+        draw_divider(self.screen, bx + 10, tab_end, bw - 20)
+        cy = tab_end + 10
 
         ICO_Y_OFF = 4
         NAME_Y_OFF = 8
@@ -11858,27 +11888,10 @@ class Game:
             (bx + 20, by + 48)
         )
 
-        # Tab bar
-        tab_y = by + 50
-        tab_x = bx + 200
-        for i, (label, _) in enumerate(self._COOK_TABS):
-            active = i == self._cook_tab
-            count = len(self.cook_menu_items) if _ == 'single' else len(self.cook_compound_recipes)
-            if count == 0 and not active:
-                continue
-            tab_label = f"{label} ({count})"
-            tw = self.font_sm.size(tab_label)[0] + 14
-            rect = pygame.Rect(tab_x, tab_y, tw, 24)
-            if active:
-                pygame.draw.rect(self.screen, FP.MIDNIGHT_MID, rect, border_radius=4)
-                pygame.draw.rect(self.screen, FP.GOLD, rect, 2, border_radius=4)
-                col = FP.GOLD_BRIGHT
-            else:
-                col = FP.FADED_TEXT
-            self.screen.blit(self.font_sm.render(tab_label, True, col), (tab_x + 7, tab_y + 3))
-            tab_x += tw + 4
-
-        draw_divider(self.screen, bx + 10, by + 78, bw - 20)
+        _cook_counts = [len(self.cook_menu_items) if k == 'single' else len(self.cook_compound_recipes)
+                        for _, k in self._COOK_TABS]
+        tab_end = self._draw_tab_bar(self._COOK_TABS, self._cook_tab, bx, by, bw, _cook_counts)
+        draw_divider(self.screen, bx + 10, tab_end, bw - 20)
         cy = by + 88
 
         # Vertical layout: icon at iy+4, label centered with icon, name at iy+8, detail at iy+42
@@ -11990,23 +12003,11 @@ class Game:
         draw_header_bar(self.screen, (bx, by, bw, 44),
                         text="DROP ITEM", font=self.font_md, text_color=FP.GOLD_BRIGHT)
 
-        # Tab bar
-        tab_y = by + 50
-        tab_x = bx + 10
-        for i, (label, _) in enumerate(self._DROP_TABS):
-            active = i == self._menu_tab
-            tw = self.font_sm.size(label)[0] + 14
-            rect = pygame.Rect(tab_x, tab_y, tw, 24)
-            if active:
-                pygame.draw.rect(self.screen, FP.MIDNIGHT_MID, rect, border_radius=4)
-                pygame.draw.rect(self.screen, FP.GOLD, rect, 2, border_radius=4)
-                col = FP.GOLD_BRIGHT
-            else:
-                col = FP.FADED_TEXT
-            self.screen.blit(self.font_sm.render(label, True, col), (tab_x + 7, tab_y + 3))
-            tab_x += tw + 4
-
-        y_off = tab_y + 32
+        _drop_counts = [len(self.drop_menu_items) if filt is None
+                        else sum(1 for it in self.drop_menu_items if filt(it))
+                        for _, filt in self._DROP_TABS]
+        tab_end = self._draw_tab_bar(self._DROP_TABS, self._menu_tab, bx, by, bw, _drop_counts)
+        y_off = tab_end + 4
         if not tab_items:
             self.screen.blit(self.font_sm.render("(empty)", True, FP.FADED_TEXT), (bx + 30, y_off))
         else:
@@ -12050,27 +12051,10 @@ class Game:
             (bx + 20, by + 48)
         )
 
-        # Tab bar
-        tab_y = by + 50
-        tab_x = bx + 200
-        for i, (label, filt) in enumerate(self._EAT_TABS):
-            active = i == self._eat_tab
-            count = sum(1 for it in self.eat_menu_items if filt(it))
-            if count == 0 and not active:
-                continue
-            tab_label = f"{label} ({count})"
-            tw = self.font_sm.size(tab_label)[0] + 14
-            rect = pygame.Rect(tab_x, tab_y, tw, 24)
-            if active:
-                pygame.draw.rect(self.screen, FP.MIDNIGHT_MID, rect, border_radius=4)
-                pygame.draw.rect(self.screen, FP.GOLD, rect, 2, border_radius=4)
-                col = FP.GOLD_BRIGHT
-            else:
-                col = FP.FADED_TEXT
-            self.screen.blit(self.font_sm.render(tab_label, True, col), (tab_x + 7, tab_y + 3))
-            tab_x += tw + 4
-
-        draw_divider(self.screen, bx + 10, by + 78, bw - 20)
+        _eat_counts = [sum(1 for it in self.eat_menu_items if filt(it))
+                       for _, filt in self._EAT_TABS]
+        tab_end = self._draw_tab_bar(self._EAT_TABS, self._eat_tab, bx, by, bw, _eat_counts)
+        draw_divider(self.screen, bx + 10, tab_end, bw - 20)
         cy = by + 88
 
         ICO_Y_OFF = 4
@@ -12199,27 +12183,10 @@ class Game:
         draw_header_bar(self.screen, (bx, by, bw, 44), text="THROW",
                         font=self.font_md, text_color=FP.GOLD_BRIGHT)
 
-        # Tab bar
-        tab_y = by + 50
-        tab_x = bx + 10
-        for i, (label, filt) in enumerate(self._THROW_TABS):
-            active = i == self._throw_tab
-            count = sum(1 for it in self.throw_menu_items if filt(it))
-            if count == 0 and not active:
-                continue
-            tab_label = f"{label} ({count})" if count else label
-            tw = self.font_sm.size(tab_label)[0] + 14
-            rect = pygame.Rect(tab_x, tab_y, tw, 24)
-            if active:
-                pygame.draw.rect(self.screen, FP.MIDNIGHT_MID, rect, border_radius=4)
-                pygame.draw.rect(self.screen, FP.GOLD, rect, 2, border_radius=4)
-                col = FP.GOLD_BRIGHT
-            else:
-                col = FP.FADED_TEXT
-            self.screen.blit(self.font_sm.render(tab_label, True, col), (tab_x + 7, tab_y + 3))
-            tab_x += tw + 4
-
-        draw_divider(self.screen, bx + 10, by + 78, bw - 20)
+        _throw_counts = [sum(1 for it in self.throw_menu_items if filt(it))
+                         for _, filt in self._THROW_TABS]
+        tab_end = self._draw_tab_bar(self._THROW_TABS, self._throw_tab, bx, by, bw, _throw_counts)
+        draw_divider(self.screen, bx + 10, tab_end, bw - 20)
         cy = by + 88
 
         ICO_Y_OFF = 4
@@ -13682,10 +13649,16 @@ class Game:
             self.state = STATE_PLAYER
             return
         if key in (pygame.K_UP,):
-            self._menu_tab = (self._menu_tab - 1) % len(self._DROP_TABS)
+            def _dr_has(t):
+                _, filt = self._DROP_TABS[t]
+                return bool(self.drop_menu_items) if filt is None else any(filt(i) for i in self.drop_menu_items)
+            self._menu_tab = self._cycle_tab(self._menu_tab, -1, len(self._DROP_TABS), _dr_has)
             return
         if key in (pygame.K_DOWN,):
-            self._menu_tab = (self._menu_tab + 1) % len(self._DROP_TABS)
+            def _dr_has(t):
+                _, filt = self._DROP_TABS[t]
+                return bool(self.drop_menu_items) if filt is None else any(filt(i) for i in self.drop_menu_items)
+            self._menu_tab = self._cycle_tab(self._menu_tab, 1, len(self._DROP_TABS), _dr_has)
             return
         tab_items = self._get_drop_tab_items()
         idx = self._AZ_KEYS.get(key)
@@ -13958,27 +13931,10 @@ class Game:
         draw_header_bar(self.screen, (bx, by, bw, 44), text="EXAMINE ITEM",
                         font=self.font_md, text_color=FP.GOLD_BRIGHT)
 
-        # Tab bar
-        tab_y = by + 50
-        tab_x = bx + 10
-        for i, (label, filt) in enumerate(self._EXAMINE_TABS):
-            active = i == self._examine_tab
-            count = sum(1 for it in self.examine_menu_items if filt(it))
-            if count == 0 and not active:
-                continue  # skip empty tabs
-            tab_label = f"{label} ({count})" if count else label
-            tw = self.font_sm.size(tab_label)[0] + 14
-            rect = pygame.Rect(tab_x, tab_y, tw, 24)
-            if active:
-                pygame.draw.rect(self.screen, FP.MIDNIGHT_MID, rect, border_radius=4)
-                pygame.draw.rect(self.screen, FP.GOLD, rect, 2, border_radius=4)
-                col = FP.GOLD_BRIGHT
-            else:
-                col = FP.FADED_TEXT
-            self.screen.blit(self.font_sm.render(tab_label, True, col), (tab_x + 7, tab_y + 3))
-            tab_x += tw + 4
-
-        draw_divider(self.screen, bx + 10, by + 78, bw - 20)
+        _exam_counts = [sum(1 for it in self.examine_menu_items if filt(it))
+                        for _, filt in self._EXAMINE_TABS]
+        tab_end = self._draw_tab_bar(self._EXAMINE_TABS, self._examine_tab, bx, by, bw, _exam_counts)
+        draw_divider(self.screen, bx + 10, tab_end, bw - 20)
         cy = by + 88
 
         ICO_Y_OFF = 4
