@@ -47,7 +47,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A raw slab of pinkish-brown rat meat with visible sinew, sitting on a rough wooden cutting board"
   },
   "goblin_flesh": {
     "name": "goblin flesh",
@@ -97,7 +98,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A chunk of greenish-grey goblin flesh with a leathery hide edge, faintly glistening"
   },
   "snake_meat": {
     "name": "snake meat",
@@ -150,7 +152,8 @@
         "bonus_effect": "poison_resist",
         "bonus_amount": 30
       }
-    }
+    },
+    "sprite_desc": "A pale coil of boneless snake meat with a subtle green sheen, neatly sliced into medallions"
   },
   "fire_gland": {
     "name": "fire gland",
@@ -203,7 +206,8 @@
         "bonus_effect": "fire_shield",
         "bonus_amount": 40
       }
-    }
+    },
+    "sprite_desc": "A glowing orange-red organ sac pulsing with inner heat, tiny embers drifting from its surface"
   },
   "gnoll_hide": {
     "name": "gnoll hide",
@@ -255,7 +259,8 @@
         "bonus_type": "combat_stat",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A patch of coarse tawny fur-covered hide with dark spots, rolled and tied with cord"
   },
   "troll_hide": {
     "name": "troll hide",
@@ -308,7 +313,8 @@
         "bonus_stat": "CON",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A thick slab of mossy green troll hide with visible pores, still faintly regenerating at the edges"
   },
   "bear_meat": {
     "name": "bear meat",
@@ -359,7 +365,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A dark red haunch of bear meat marbled with fat, resting on a bed of wild herbs"
   },
   "manticore_spine": {
     "name": "manticore spine",
@@ -411,7 +418,8 @@
         "bonus_stat": "DEX",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "A wickedly curved venomous spine in deep crimson-purple, barbed at the tip, leaking pale toxin"
   },
   "basilisk_stone": {
     "name": "basilisk stone",
@@ -462,7 +470,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "A smooth petrified stone organ with swirling grey-green mineral veins, cold to the touch"
   },
   "chimera_heart": {
     "name": "chimera heart",
@@ -513,7 +522,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A grotesque three-chambered heart in purple and red, each lobe from a different beast"
   },
   "frost_gland": {
     "name": "frost gland",
@@ -566,7 +576,8 @@
         "bonus_effect": "cold_shield",
         "bonus_amount": 50
       }
-    }
+    },
+    "sprite_desc": "A translucent ice-blue organ encased in a thin shell of frost crystals, radiating cold mist"
   },
   "medusa_blood": {
     "name": "Medusa's Blood",
@@ -621,7 +632,8 @@
         "bonus_amount": 1
       }
     },
-    "floor_spawn_weight": {}
+    "floor_spawn_weight": {},
+    "sprite_desc": "A sealed glass vial of luminous green blood with faint serpentine shapes swirling within"
   },
   "dragon_scale": {
     "name": "Dragon Scale",
@@ -675,7 +687,8 @@
         "bonus_amount": 2
       }
     },
-    "floor_spawn_weight": {}
+    "floor_spawn_weight": {},
+    "sprite_desc": "A single massive scale of burnished orange-gold with a molten shimmer along its razor edge"
   },
   "bronze_feather": {
     "name": "bronze feather",
@@ -728,7 +741,8 @@
         "bonus_effect": "haste",
         "bonus_amount": 20
       }
-    }
+    },
+    "sprite_desc": "A long metallic bronze feather with a lethal serrated edge, gleaming like polished weaponry"
   },
   "quasit_claw": {
     "name": "quasit claw",
@@ -778,7 +792,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A small curved demonic claw in deep purple-black, crackling with residual infernal energy"
   },
   "bone_shard": {
     "name": "bone shard",
@@ -831,7 +846,8 @@
         "bonus_type": "combat_stat",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A jagged shard of yellowed bone with a sharp splintered edge, ancient and dry"
   },
   "rotted_flesh": {
     "name": "rotted flesh",
@@ -884,7 +900,8 @@
         "bonus_stat": "CON",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A decomposing chunk of grey-green flesh wrapped in burial cloth, reeking of undeath"
   },
   "green_slime_extract": {
     "name": "green slime extract",
@@ -935,7 +952,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A bubbling vial of bright green acidic gel with tiny dissolving particles suspended within"
   },
   "spider_silk": {
     "name": "spider silk",
@@ -988,7 +1006,8 @@
         "bonus_effect": "invisible",
         "bonus_amount": 25
       }
-    }
+    },
+    "sprite_desc": "A shimmering bundle of silvery-white spider silk threads, impossibly thin yet strong as steel"
   },
   "frog_legs": {
     "name": "frog legs",
@@ -1041,7 +1060,8 @@
         "bonus_effect": "haste",
         "bonus_amount": 15
       }
-    }
+    },
+    "sprite_desc": "A pair of plump pale-green frog legs tied together at the ankle, fresh and ready to cook"
   },
   "satyr_horn": {
     "name": "satyr horn",
@@ -1092,7 +1112,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A curved ridged horn of pale ivory with a warm amber base, faintly scented with pine resin"
   },
   "raven_feather": {
     "name": "raven feather",
@@ -1145,7 +1166,8 @@
         "bonus_stat": "PER",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A sleek jet-black feather with an iridescent blue-purple sheen along its vane"
   },
   "scarab_shell": {
     "name": "scarab shell",
@@ -1198,7 +1220,8 @@
         "bonus_effect": "fire_shield",
         "bonus_amount": 15
       }
-    }
+    },
+    "sprite_desc": "A polished teal-green scarab carapace with intricate geometric ridges and a golden underside"
   },
   "dretch_gland": {
     "name": "dretch gland",
@@ -1249,7 +1272,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A shriveled brownish-green demonic gland leaking foul yellowish ichor"
   },
   "imp_stinger": {
     "name": "imp stinger",
@@ -1301,7 +1325,8 @@
         "bonus_effect": "fire_shield",
         "bonus_amount": 30
       }
-    }
+    },
+    "sprite_desc": "A needle-thin crimson stinger still glistening with infernal venom at its barbed tip"
   },
   "troglodyte_musk": {
     "name": "troglodyte musk",
@@ -1352,7 +1377,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A sealed clay jar of pungent olive-green musk that shimmers with oily iridescence"
   },
   "bullywug_leg": {
     "name": "bullywug leg",
@@ -1404,7 +1430,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A muscular amphibian leg with mottled green-brown skin and webbed toes"
   },
   "warrior_bone": {
     "name": "warrior bone",
@@ -1456,7 +1483,8 @@
         "bonus_type": "combat_stat",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A polished femur bone from an undead warrior, etched with faded battle runes"
   },
   "bone_marrow": {
     "name": "bone marrow",
@@ -1508,7 +1536,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A cracked bone filled with pale pinkish-cream marrow, rich and gelatinous"
   },
   "yellow_spores": {
     "name": "yellow spores",
@@ -1560,7 +1589,8 @@
         "bonus_stat": "INT",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A glass vial packed with bright golden-yellow fungal spores that drift and swirl"
   },
   "beetle_shell": {
     "name": "beetle shell",
@@ -1612,7 +1642,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A dark emerald beetle carapace with a hard glossy surface and saw-toothed edges"
   },
   "lizard_meat": {
     "name": "lizard meat",
@@ -1663,7 +1694,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A lean slab of pale greenish-white lizard flesh with fine scales still attached"
   },
   "sea_snake_venom": {
     "name": "sea snake venom",
@@ -1716,7 +1748,8 @@
         "bonus_effect": "poison_resist",
         "bonus_amount": 30
       }
-    }
+    },
+    "sprite_desc": "A small blue-glass vial of translucent cyan venom with tiny crystalline flecks"
   },
   "pixie_dust": {
     "name": "pixie dust",
@@ -1769,7 +1802,8 @@
         "bonus_effect": "invisible",
         "bonus_amount": 35
       }
-    }
+    },
+    "sprite_desc": "A pouch of sparkling lavender-pink dust that floats upward when disturbed"
   },
   "myconid_spore": {
     "name": "myconid spore",
@@ -1821,7 +1855,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A soft purple-brown mushroom cap releasing a haze of pale violet spores"
   },
   "empusa_ichor": {
     "name": "empusa ichor",
@@ -1872,7 +1907,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A vial of hot magenta ichor that pulses with a faint seductive warmth"
   },
   "grave_dust": {
     "name": "grave dust",
@@ -1925,7 +1961,8 @@
         "bonus_stat": "CON",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A leather pouch of fine grey-brown dust that smells of ancient earth and decay"
   },
   "changeling_glamour": {
     "name": "changeling glamour",
@@ -1977,7 +2014,8 @@
         "bonus_type": "random_stat",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A shimmering opalescent orb of liquid light that shifts color when tilted"
   },
   "demon_claw": {
     "name": "demon claw",
@@ -2027,7 +2065,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A thick curved claw of blackened red chitin, cracked and still radiating heat"
   },
   "homunculus_blood": {
     "name": "homunculus blood",
@@ -2079,7 +2118,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A tiny flask of deep violet blood that moves with unnatural purpose inside the glass"
   },
   "gray_slime": {
     "name": "gray slime",
@@ -2130,7 +2170,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A sealed jar of thick silvery-grey ooze that slowly shifts and reforms on its own"
   },
   "piercer_shell": {
     "name": "piercer shell",
@@ -2181,7 +2222,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A conical stalactite-shaped shell of striated brown and grey stone, razor-sharp at the tip"
   },
   "paralytic_venom": {
     "name": "paralytic venom",
@@ -2233,7 +2275,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A stoppered vial of pale chartreuse venom that numbs on contact with skin"
   },
   "lizardfolk_scale": {
     "name": "lizardfolk scale",
@@ -2284,7 +2327,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A tough overlapping scale of mottled green and brown, trimmed with a horn edge"
   },
   "arcane_bone_dust": {
     "name": "arcane bone dust",
@@ -2337,7 +2381,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A pouch of finely ground bone powder with faint violet arcane sparks dancing within"
   },
   "charred_bone": {
     "name": "charred bone",
@@ -2390,7 +2435,8 @@
         "bonus_effect": "fire_shield",
         "bonus_amount": 40
       }
-    }
+    },
+    "sprite_desc": "A blackened bone fragment scorched by hellfire, still warm and smelling of ash"
   },
   "frost_bone": {
     "name": "frost bone",
@@ -2443,7 +2489,8 @@
         "bonus_effect": "cold_shield",
         "bonus_amount": 40
       }
-    }
+    },
+    "sprite_desc": "A bone shard encased in a thin shell of permanent ice, cold mist rising from its surface"
   },
   "plague_flesh": {
     "name": "plague flesh",
@@ -2496,7 +2543,8 @@
         "bonus_stat": "CON",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A chunk of sickly grey-green flesh covered in weeping sores and wrapped in cloth"
   },
   "brown_mold_patch": {
     "name": "brown mold patch",
@@ -2549,7 +2597,8 @@
         "bonus_stat": "CON",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A dried patch of fuzzy brown mold on bark, releasing faint warmth-draining cold"
   },
   "wasp_venom": {
     "name": "wasp venom",
@@ -2600,7 +2649,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A bright amber vial of giant wasp venom, viscous and faintly buzzing with energy"
   },
   "mud_crawler_hide": {
     "name": "mud crawler hide",
@@ -2652,7 +2702,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A patch of thick mud-brown hide caked with dried clay and tiny embedded stones"
   },
   "lucky_clover": {
     "name": "lucky clover",
@@ -2702,7 +2753,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A perfect four-leaf clover of vivid emerald green with a faint golden aura"
   },
   "toxic_thorn": {
     "name": "toxic thorn",
@@ -2753,7 +2805,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A long barbed thorn of deep green with black veins, dripping slow purple poison"
   },
   "spore_cloud_vial": {
     "name": "spore cloud vial",
@@ -2806,7 +2859,8 @@
         "bonus_stat": "WIS",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A sealed glass vial of swirling yellow-green gas with tiny spore particles suspended within"
   },
   "goblin_crown_dust": {
     "name": "goblin crown dust",
@@ -2856,7 +2910,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A pouch of glittering gold-green dust scraped from a goblin king's crude crown"
   },
   "shadow_fur": {
     "name": "shadow fur",
@@ -2909,7 +2964,8 @@
         "bonus_stat": "PER",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A tuft of impossibly dark fur that seems to absorb light, cold and silky to the touch"
   },
   "khepri_carapace": {
     "name": "khepri carapace",
@@ -2961,7 +3017,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A sacred scarab shell of brilliant teal-blue with golden hieroglyphic markings"
   },
   "puca_hair": {
     "name": "puca hair",
@@ -3012,7 +3069,8 @@
         "bonus_effect": "invisible",
         "bonus_amount": 30
       }
-    }
+    },
+    "sprite_desc": "A lock of wild purple-black hair that shifts between animal textures: fur, mane, feather"
   },
   "enchanted_wood": {
     "name": "enchanted wood",
@@ -3064,7 +3122,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A chunk of living wood still faintly glowing with green veins of magical sap"
   },
   "kobold_scale": {
     "name": "kobold scale",
@@ -3115,7 +3174,8 @@
         "bonus_type": "combat_stat",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A tiny rust-orange scale with a rough texture, lightweight but surprisingly tough"
   },
   "darkmantle_membrane": {
     "name": "darkmantle membrane",
@@ -3168,7 +3228,8 @@
         "bonus_stat": "PER",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A sheet of thin rubbery dark purple membrane that ripples with residual shadow magic"
   },
   "zombie_flesh": {
     "name": "zombie flesh",
@@ -3220,7 +3281,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A grey-green slab of decomposing flesh held together with black stitching"
   },
   "thrall_blood": {
     "name": "thrall blood",
@@ -3273,7 +3335,8 @@
         "bonus_stat": "CON",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A stoppered crystal vial of deep crimson blood that refuses to coagulate"
   },
   "cairn_stone": {
     "name": "cairn stone",
@@ -3324,7 +3387,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A smooth flat river stone etched with ancient warding symbols, cold as grave earth"
   },
   "hollow_bone": {
     "name": "hollow bone",
@@ -3375,7 +3439,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A thin translucent bone fragment, completely empty inside, light as paper"
   },
   "bone_arrow": {
     "name": "bone arrow",
@@ -3426,7 +3491,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A slender arrow carved entirely from yellowed bone with a needle-sharp tip"
   },
   "crystal_residue": {
     "name": "crystal residue",
@@ -3477,7 +3543,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A glistening cluster of translucent blue-white crystal fragments in a pool of clear gel"
   },
   "toxic_jelly_sac": {
     "name": "toxic jelly sac",
@@ -3530,7 +3597,8 @@
         "bonus_stat": "CON",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A bulging translucent green sac of corrosive jelly, wobbling with each movement"
   },
   "scorpion_venom_sac": {
     "name": "scorpion venom sac",
@@ -3581,7 +3649,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A tough amber-colored venom sac with a sharp stinger still attached at one end"
   },
   "wild_thyme": {
     "name": "wild thyme",
@@ -3642,7 +3711,8 @@
         "bonus_stat": "WIS",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A bundle of delicate green-grey thyme sprigs tied with twine, fragrant and fresh"
   },
   "rosemary_sprig": {
     "name": "rosemary sprig",
@@ -3703,7 +3773,8 @@
         "bonus_stat": "CON",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A woody sprig of dark green rosemary needles with tiny pale blue flowers"
   },
   "valerian_root": {
     "name": "valerian root",
@@ -3764,7 +3835,8 @@
         "bonus_stat": "INT",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A gnarled pale brown root with stringy tendrils, smelling of earth and sleep"
   },
   "nightshade_leaf": {
     "name": "nightshade leaf",
@@ -3824,7 +3896,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A single heart-shaped leaf of deep purple-black with veins that glow faintly violet"
   },
   "mandrake_root": {
     "name": "mandrake root",
@@ -3884,7 +3957,8 @@
         "bonus_type": "combat_stat",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A twisted humanoid-shaped root of pale brown, its surface etched with tiny screaming faces"
   },
   "cave_mushroom": {
     "name": "cave mushroom",
@@ -3942,7 +4016,8 @@
         "bonus_type": "random_stat",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A plump off-white mushroom with a broad cap, speckled with bits of cave sediment"
   },
   "pale_celery": {
     "name": "pale celery",
@@ -4002,7 +4077,8 @@
         "bonus_stat": "CON",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A stalk of ghostly pale celery grown in total darkness, crisp and translucent"
   },
   "cave_carrot": {
     "name": "cave carrot",
@@ -4063,7 +4139,8 @@
         "bonus_stat": "PER",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A stubby bright orange carrot pulled from underground soil, still dusted with dark earth"
   },
   "glowing_spore": {
     "name": "glowing spore",
@@ -4124,7 +4201,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A luminous blue-green spore cluster pulsing with soft bioluminescent light"
   },
   "crimson_fungus": {
     "name": "crimson fungus",
@@ -4186,7 +4264,8 @@
         "bonus_effect": "fire_shield",
         "bonus_amount": 40
       }
-    }
+    },
+    "sprite_desc": "A vivid red mushroom cap with white spots, its underside dripping crimson spores"
   },
   "petrified_mushroom": {
     "name": "petrified mushroom",
@@ -4247,7 +4326,8 @@
         "bonus_type": "combat_stat",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A stone-hard mushroom turned to grey mineral, its cap still showing fossilized gills"
   },
   "ember_spice": {
     "name": "ember spice",
@@ -4308,7 +4388,8 @@
         "bonus_effect": "fire_shield",
         "bonus_amount": 30
       }
-    }
+    },
+    "sprite_desc": "A small clay pot of brilliant orange-red spice powder that smolders with faint heat"
   },
   "serpent_pepper": {
     "name": "serpent pepper",
@@ -4369,7 +4450,8 @@
         "bonus_stat": "DEX",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A twisted dark green pepper pod shaped like a coiled snake, intensely hot"
   },
   "void_salt": {
     "name": "void salt",
@@ -4430,7 +4512,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A pouch of deep indigo-black crystalline salt that seems to swallow nearby light"
   },
   "dragon_salt": {
     "name": "dragon salt",
@@ -4489,7 +4572,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "Brilliant golden crystalline salt that sparkles like molten treasure in any light"
   },
   "swamp_serpent_fang": {
     "name": "swamp serpent fang",
@@ -4542,7 +4626,8 @@
         "bonus_stat": "DEX",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A curved yellow-green fang dripping with brackish swamp venom"
   },
   "blink_gland": {
     "name": "blink gland",
@@ -4595,7 +4680,8 @@
         "bonus_effect": "haste",
         "bonus_amount": 35
       }
-    }
+    },
+    "sprite_desc": "A pulsating lavender organ that flickers in and out of visibility"
   },
   "eagle_feather": {
     "name": "eagle feather",
@@ -4647,7 +4733,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A broad tawny-gold eagle feather with a sharp white tip and powerful barbs"
   },
   "wisp_essence": {
     "name": "wisp essence",
@@ -4700,7 +4787,8 @@
         "bonus_effect": "invisible",
         "bonus_amount": 35
       }
-    }
+    },
+    "sprite_desc": "A tiny glass sphere containing a flickering pale blue-white light that dances within"
   },
   "spriggan_thorn": {
     "name": "spriggan thorn",
@@ -4752,7 +4840,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A woody green thorn the size of a dagger, alive with crawling vine tendrils"
   },
   "violet_fungus_cap": {
     "name": "violet fungus cap",
@@ -4803,7 +4892,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A fleshy purple mushroom cap with writhing tentacle-like gills underneath"
   },
   "lamia_scales": {
     "name": "lamia scales",
@@ -4854,7 +4944,8 @@
         "bonus_type": "combat_stat",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A handful of golden-bronze scales with a hypnotic iridescent pattern"
   },
   "wolf_pelt": {
     "name": "wolf pelt",
@@ -4905,7 +4996,8 @@
         "bonus_type": "combat_stat",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A thick patch of grey-brown wolf fur, dense and warm with a wild musky scent"
   },
   "nothic_eye": {
     "name": "nothic eye",
@@ -4957,7 +5049,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A large bloodshot eye with a slit pupil, still twitching with mad awareness"
   },
   "enchanted_plate": {
     "name": "enchanted plate",
@@ -5009,7 +5102,8 @@
         "bonus_type": "combat_stat",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A shard of animated steel armor plate with faint blue runes still glowing"
   },
   "shaman_totem": {
     "name": "shaman totem",
@@ -5061,7 +5155,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A carved wooden totem of stacked animal heads, daubed with ritual paint"
   },
   "kuo_toa_slime": {
     "name": "kuo-toa slime",
@@ -5113,7 +5208,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A jar of iridescent teal-green fish slime that shifts through rainbow colors"
   },
   "cockatrice_beak": {
     "name": "cockatrice beak",
@@ -5165,7 +5261,8 @@
         "bonus_type": "combat_stat",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A sharp hooked beak of stone-grey keratin with petrifying residue on its edge"
   },
   "grick_hide": {
     "name": "grick hide",
@@ -5217,7 +5314,8 @@
         "bonus_type": "combat_stat",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A rubbery section of mottled grey-green hide covered in tiny suction cups"
   },
   "ghast_ichor": {
     "name": "ghast ichor",
@@ -5269,7 +5367,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A sealed jar of putrid yellow-green fluid that paralyzes living tissue on contact"
   },
   "false_holy_relic": {
     "name": "false holy relic",
@@ -5321,7 +5420,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A tarnished gold medallion radiating false divine warmth, cracked down the center"
   },
   "phase_silk": {
     "name": "phase silk",
@@ -5374,7 +5474,8 @@
         "bonus_effect": "invisible",
         "bonus_amount": 30
       }
-    }
+    },
+    "sprite_desc": "A shimmering fabric of purple-silver silk that phases between solid and translucent"
   },
   "python_scales": {
     "name": "python scales",
@@ -5426,7 +5527,8 @@
         "bonus_type": "combat_stat",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A strip of large overlapping olive-green scales with a muscular hide backing"
   },
   "heartwood_sap": {
     "name": "heartwood sap",
@@ -5479,7 +5581,8 @@
         "bonus_effect": "regenerating",
         "bonus_amount": 30
       }
-    }
+    },
+    "sprite_desc": "A flask of rich amber-gold sap that glows with the vitality of ancient forests"
   },
   "assassin_vine_sap": {
     "name": "assassin vine sap",
@@ -5532,7 +5635,8 @@
         "bonus_effect": "poison_resist",
         "bonus_amount": 40
       }
-    }
+    },
+    "sprite_desc": "A dark green viscous sap that coils and reaches toward nearby warmth"
   },
   "carbuncle_gem": {
     "name": "carbuncle gem",
@@ -5582,7 +5686,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A luminous ruby-red gemstone that was once embedded in a living creature's forehead"
   },
   "bronze_hide_strip": {
     "name": "bronze hide strip",
@@ -5633,7 +5738,8 @@
         "bonus_type": "combat_stat",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "A strip of metallic bronze-scaled hide that rings like metal when struck"
   },
   "world_serpent_scale": {
     "name": "world serpent scale",
@@ -5684,7 +5790,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A large emerald-green scale with shifting cosmic patterns visible in its depth"
   },
   "solar_venom": {
     "name": "solar venom",
@@ -5737,7 +5844,8 @@
         "bonus_stat": "INT",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A radiant golden vial of liquid sunlight venom that burns shadows on contact"
   },
   "hero_hound_pelt": {
     "name": "hero hound pelt",
@@ -5788,7 +5896,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A patch of noble golden-brown hound fur with an aura of loyalty and courage"
   },
   "shadow_essence": {
     "name": "shadow essence",
@@ -5840,7 +5949,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A small black crystal vial containing liquid darkness that writhes and recoils from light"
   },
   "ochre_extract": {
     "name": "ochre extract",
@@ -5892,7 +6002,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A thick amber-yellow gel that slowly dissolves anything organic it touches"
   },
   "pack_lord_skull": {
     "name": "pack lord skull",
@@ -5943,7 +6054,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A large gnoll skull with filed fangs and tribal scarification carved into the bone"
   },
   "ettercap_silk": {
     "name": "ettercap silk",
@@ -5995,7 +6107,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A bundle of strong purple-grey silk webbing with a faint magical shimmer"
   },
   "jiangshi_essence": {
     "name": "jiangshi essence",
@@ -6047,7 +6160,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A paper talisman soaked in pale blue-green ectoplasmic fluid, still twitching"
   },
   "barrow_dust": {
     "name": "barrow dust",
@@ -6099,7 +6213,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "Ancient grey dust from a burial mound, mixed with crumbled gold leaf and bone"
   },
   "hollow_essence": {
     "name": "hollow essence",
@@ -6151,7 +6266,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A glass orb of perfectly clear liquid that weighs nothing and reflects no light"
   },
   "charnel_fang": {
     "name": "charnel fang",
@@ -6202,7 +6318,8 @@
         "bonus_type": "combat_stat",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "A massive yellowed canine tooth stained with old blood and smelling of the charnel pit"
   },
   "mantis_foreleg": {
     "name": "mantis foreleg",
@@ -6253,7 +6370,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A segmented green foreleg with a razor-sharp serrated inner edge for slicing prey"
   },
   "basilisk_eye": {
     "name": "basilisk eye",
@@ -6305,7 +6423,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A clouded amber eye with a vertical pupil, still radiating faint petrification magic"
   },
   "winter_wolf_pelt": {
     "name": "winter wolf pelt",
@@ -6357,7 +6476,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A luxurious coat of pure white fur with ice crystals woven permanently into each strand"
   },
   "death_dog_fang": {
     "name": "death dog fang",
@@ -6409,7 +6529,8 @@
         "bonus_type": "combat_stat",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A double-pointed fang from a two-headed death dog, blackened with necrotic poison"
   },
   "tengu_feather": {
     "name": "tengu feather",
@@ -6460,7 +6581,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A jet-black crow feather with a metallic blue edge, cut like a blade"
   },
   "musk_pollen": {
     "name": "musk pollen",
@@ -6513,7 +6635,8 @@
         "bonus_effect": "haste",
         "bonus_amount": 25
       }
-    }
+    },
+    "sprite_desc": "A pouch of brilliant yellow pollen that induces euphoria and suggestibility when inhaled"
   },
   "cyclops_eye": {
     "name": "cyclops eye",
@@ -6565,7 +6688,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A massive single eye the size of a fist, amber-orange with a horizontal pupil"
   },
   "griffin_feather": {
     "name": "griffin feather",
@@ -6616,7 +6740,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A magnificent golden-brown feather tipped with white, radiating noble pride"
   },
   "corrupted_elf_dust": {
     "name": "corrupted elf dust",
@@ -6668,7 +6793,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A pouch of once-luminous silver dust now tainted with creeping purple corruption"
   },
   "crocodile_hide": {
     "name": "crocodile hide",
@@ -6719,7 +6845,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A section of thick ridged crocodilian hide in dark olive-green, nearly impenetrable"
   },
   "desert_sand_essence": {
     "name": "desert sand essence",
@@ -6771,7 +6898,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A glass vial of golden sand that flows upward and whispers in dead languages"
   },
   "demon_ichor": {
     "name": "demon ichor",
@@ -6822,7 +6950,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A sealed bronze flask of bubbling black-red ichor that corrodes lesser containers"
   },
   "mouther_ichor": {
     "name": "mouther ichor",
@@ -6872,7 +7001,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A jar of grey-pink fleshy fluid with dozens of tiny embedded eyes staring outward"
   },
   "clockwork_gear": {
     "name": "clockwork gear",
@@ -6924,7 +7054,8 @@
         "bonus_type": "combat_stat",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "A precision brass gear with microscopic rune engravings on every tooth"
   },
   "owlbear_feather": {
     "name": "owlbear feather",
@@ -6975,7 +7106,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A large brown feather with a downy base and an owl-like pattern, smelling of musk"
   },
   "otyugh_organ": {
     "name": "otyugh organ",
@@ -7027,7 +7159,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A bloated grey-green organ sac that reeks of refuse and pulses with bacterial life"
   },
   "phase_spider_venom": {
     "name": "phase spider venom",
@@ -7079,7 +7212,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A vial of shimmering purple venom that blinks between dimensions inside the glass"
   },
   "vrykolakas_heart": {
     "name": "vrykolakas heart",
@@ -7131,7 +7265,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A blackened undead heart that still beats slowly, leaking dark blood"
   },
   "thrall_bone": {
     "name": "thrall bone",
@@ -7184,7 +7319,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A thin grey bone inscribed with binding runes, warm to the touch from residual necromancy"
   },
   "witch_bone": {
     "name": "witch bone",
@@ -7236,7 +7372,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A finger bone wrapped in silver wire and tiny charm beads, humming with hex magic"
   },
   "crypt_dust": {
     "name": "crypt dust",
@@ -7288,7 +7425,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A vial of grey teleportation dust from a crypt thing, crackling with spatial energy"
   },
   "guardian_bone": {
     "name": "guardian bone",
@@ -7339,7 +7477,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A thick reinforced bone etched with protective wards, still faintly glowing blue"
   },
   "gibbering_essence": {
     "name": "gibbering essence",
@@ -7389,7 +7528,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A sealed jar of writhing pink flesh-fluid that babbles incoherently when disturbed"
   },
   "komodo_venom_gland": {
     "name": "komodo venom gland",
@@ -7441,7 +7581,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A leathery brown gland packed with bacterial venom that causes rapid infection"
   },
   "lion_meat": {
     "name": "lion meat",
@@ -7492,7 +7633,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A thick slab of dark red lion meat with powerful muscle fibers, rich and gamey"
   },
   "roc_egg_fragment": {
     "name": "roc egg fragment",
@@ -7543,7 +7685,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A curved shard of enormous eggshell, thick as pottery and veined with pale gold"
   },
   "redcap_blood": {
     "name": "redcap blood",
@@ -7594,7 +7737,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A vial of unnaturally bright crimson blood that never dries, constantly wet and fresh"
   },
   "elemental_air_core": {
     "name": "elemental air core",
@@ -7647,7 +7791,8 @@
         "bonus_amount": 30,
         "bonus_effect": "haste"
       }
-    }
+    },
+    "sprite_desc": "A swirling sphere of compressed wind contained in a thin crystal shell, humming"
   },
   "peryton_antler": {
     "name": "peryton antler",
@@ -7698,7 +7843,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A branching antler of pale bone-white with dried blood staining its tines"
   },
   "giant_marrow": {
     "name": "giant marrow",
@@ -7749,7 +7895,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A massive bone cracked open to reveal rich yellow marrow the size of a loaf"
   },
   "yuan_ti_venom_sac": {
     "name": "yuan-ti venom sac",
@@ -7800,7 +7947,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A serpentine venom gland with green-gold scales still attached, dripping clear poison"
   },
   "winged_mane": {
     "name": "winged mane",
@@ -7851,7 +7999,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A flowing lock of pure white horse mane hair that drifts upward as if weightless"
   },
   "lindworm_skin": {
     "name": "lindworm skin",
@@ -7902,7 +8051,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A shed skin of emerald-green dragon-kin, translucent and surprisingly tough"
   },
   "embalming_resin": {
     "name": "embalming resin",
@@ -7954,7 +8104,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A block of golden-brown resin wrapped in linen strips, fragrant with sacred oils"
   },
   "each_uisce_mane": {
     "name": "each uisce mane",
@@ -8006,7 +8157,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A lock of waterlogged black-blue mane hair that drips endlessly and smells of the sea"
   },
   "ugallu_claw": {
     "name": "ugallu claw",
@@ -8057,7 +8209,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A massive curved claw of dark brown horn, cracked and scarred from battle"
   },
   "kusarikku_horn": {
     "name": "kusarikku horn",
@@ -8108,7 +8261,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A heavy ridged horn of deep amber, warm to the touch and carved with Sumerian glyphs"
   },
   "grell_tentacle": {
     "name": "grell tentacle",
@@ -8160,7 +8314,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A severed grey-green tentacle lined with paralytic barbs, still twitching"
   },
   "infernal_perfume": {
     "name": "infernal perfume",
@@ -8212,7 +8367,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "An ornate black bottle of intoxicating perfume that smells different to each person"
   },
   "devil_glaive_shard": {
     "name": "devil glaive shard",
@@ -8263,7 +8419,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A jagged shard of infernal black iron still glowing dull red along its edge"
   },
   "lurker_skin": {
     "name": "lurker skin",
@@ -8315,7 +8472,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A paper-thin membrane of mottled brown that mimics stone and ceiling textures"
   },
   "mineral_shard": {
     "name": "mineral shard",
@@ -8366,7 +8524,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A faceted crystal of mixed precious minerals: gold, silver, and gems fused together"
   },
   "hook_horror_hook": {
     "name": "hook horror hook",
@@ -8417,7 +8576,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A massive bone hook the length of a forearm, curved and wickedly sharp"
   },
   "strigoi_fang": {
     "name": "strigoi fang",
@@ -8469,7 +8629,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "An elongated ivory fang with dried blood in its hollow channel, radiating cold"
   },
   "death_mage_phylactery": {
     "name": "death mage phylactery",
@@ -8520,7 +8681,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A small obsidian box etched with death runes, pulsing with trapped soul energy"
   },
   "mohrg_organ": {
     "name": "mohrg organ",
@@ -8572,7 +8734,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A purple-red muscular tongue-organ studded with paralytic barbs"
   },
   "death_beetle_ichor": {
     "name": "death beetle ichor",
@@ -8624,7 +8787,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A vial of deep purple-black beetle ichor that dims nearby light sources"
   },
   "lycanthrope_blood": {
     "name": "lycanthrope blood",
@@ -8675,7 +8839,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A flask of dark blood that shifts between human red and bestial amber with the light"
   },
   "hag_eye": {
     "name": "hag eye",
@@ -8727,7 +8892,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A milky green eye that still sees, swiveling to track movement when uncovered"
   },
   "elemental_water_core": {
     "name": "elemental water core",
@@ -8779,7 +8945,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A perfect sphere of living water that hovers slightly above any surface"
   },
   "troll_regeneration_gland": {
     "name": "troll regeneration gland",
@@ -8832,7 +8999,8 @@
         "bonus_amount": 2,
         "bonus_stat": "CON"
       }
-    }
+    },
+    "sprite_desc": "A pulsing green organ that visibly regrows damaged tissue before your eyes"
   },
   "minotaur_horn": {
     "name": "Minotaur Horn",
@@ -8886,7 +9054,8 @@
         "bonus_amount": 1
       }
     },
-    "floor_spawn_weight": {}
+    "floor_spawn_weight": {},
+    "sprite_desc": "A massive curved horn of dark crimson-brown, scarred from charging through stone walls"
   },
   "sphinx_mane": {
     "name": "sphinx mane",
@@ -8937,7 +9106,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A lock of luxurious golden lion mane radiating ancient wisdom and desert heat"
   },
   "frost_giant_bone": {
     "name": "frost giant bone",
@@ -8988,7 +9158,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "A femur of pale blue-white bone taller than a human, rimed with permanent frost"
   },
   "corruption_scale": {
     "name": "corruption scale",
@@ -9039,7 +9210,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A blackened dragon scale corroded with creeping purple-red corruption veins"
   },
   "sphinx_dust_gold": {
     "name": "sphinx dust gold",
@@ -9090,7 +9262,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "Sacred golden dust from a sphinx guardian, each grain containing a fragment of a riddle"
   },
   "thoth_ink": {
     "name": "thoth ink",
@@ -9142,7 +9315,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A vial of deep blue-black ink that writes words of power on its own when uncapped"
   },
   "fomorian_bone": {
     "name": "fomorian bone",
@@ -9193,7 +9367,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "A massive twisted bone from a deformed giant, asymmetrical and covered in growths"
   },
   "cath_palug_claw": {
     "name": "cath palug claw",
@@ -9244,7 +9419,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A curved obsidian-black claw from the monstrous cat, still humming with feral power"
   },
   "primordial_clay": {
     "name": "primordial clay",
@@ -9295,7 +9471,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A lump of ancient red-brown clay that reshapes itself when not being observed"
   },
   "brain_lobe": {
     "name": "brain lobe",
@@ -9347,7 +9524,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A glistening pink-grey brain lobe floating in preservative fluid, pulsing with psionic energy"
   },
   "cloaker_hide": {
     "name": "cloaker hide",
@@ -9399,7 +9577,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A dark leathery hide that undulates on its own, mimicking a cloak or shadow"
   },
   "enchanted_clay": {
     "name": "enchanted clay",
@@ -9450,7 +9629,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A block of smooth tan clay inscribed with the word of animation in Hebrew script"
   },
   "displacer_hide": {
     "name": "displacer hide",
@@ -9502,7 +9682,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A sleek dark indigo hide that shimmers and appears several inches from where it actually is"
   },
   "black_ooze": {
     "name": "black ooze",
@@ -9554,7 +9735,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A sealed obsidian jar of pitch-black ooze that dissolves anything except stone and glass"
   },
   "trapper_membrane": {
     "name": "trapper membrane",
@@ -9606,7 +9788,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A wide flat membrane of stone-colored skin that could cover an entire floor tile"
   },
   "revenant_heart": {
     "name": "revenant heart",
@@ -9658,7 +9841,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A blackened heart wrapped in chains, burning with undying vengeance and refusing to stop beating"
   },
   "tomb_stone_fragment": {
     "name": "tomb stone fragment",
@@ -9710,7 +9894,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A chunk of carved tomb stone with hieroglyphic warnings and traces of guardian magic"
   },
   "elemental_ice_core": {
     "name": "elemental ice core",
@@ -9762,7 +9947,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A perfect diamond of living ice that never melts, freezing the air around it white"
   },
   "mound_mulch": {
     "name": "mound mulch",
@@ -9814,7 +10000,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A compressed mass of rotting vegetation, fungus, and absorbed lightning energy"
   },
   "corrupted_wing_feather": {
     "name": "corrupted wing feather",
@@ -9865,7 +10052,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A once-white pegasus feather now streaked with dark purple corruption veins"
   },
   "nue_tail_quill": {
     "name": "nue tail quill",
@@ -9915,7 +10103,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A stiff black quill from a chimeric beast's snake-tail, crackling with storm static"
   },
   "drow_poison_extract": {
     "name": "drow poison extract",
@@ -9967,7 +10156,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A tiny obsidian vial of concentrated purple sleep poison favored by the dark elves"
   },
   "ember_ash": {
     "name": "ember ash",
@@ -10019,7 +10209,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "A pouch of smoldering orange-red ash from a fire giant's forge, perpetually warm"
   },
   "spectral_essence": {
     "name": "spectral essence",
@@ -10070,7 +10261,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A wisp of silvery-blue ectoplasm contained in a spirit bottle, glowing with valkyrie light"
   },
   "sea_serpent_oil": {
     "name": "sea serpent oil",
@@ -10121,7 +10313,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A flask of deep blue-green oil extracted from a Norse sea serpent, smelling of brine and storm"
   },
   "anzu_feather": {
     "name": "anzu feather",
@@ -10173,7 +10366,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A magnificent golden-bronze feather the size of a sword, crackling with stolen divine fire"
   },
   "eyestalk": {
     "name": "eyestalk",
@@ -10224,7 +10418,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A severed beholder eyestalk still swiveling, its tip glowing with residual antimagic"
   },
   "devil_chain_link": {
     "name": "devil chain link",
@@ -10275,7 +10470,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A single link of infernal chain that burns with hellfire and cannot be broken by mortal means"
   },
   "shield_core": {
     "name": "shield guardian core",
@@ -10327,7 +10523,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "A glowing blue-white arcane core that once animated a shield guardian, humming with protective magic"
   },
   "roper_strand": {
     "name": "roper strand",
@@ -10379,7 +10576,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A long sticky grey tentacle-strand with a powerful adhesive that grips like iron"
   },
   "elder_vampire_blood": {
     "name": "elder vampire blood",
@@ -10431,7 +10629,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "An ancient crystal vial of thick black-crimson blood that whispers promises of eternal power"
   },
   "pale_master_essence": {
     "name": "pale master essence",
@@ -10482,7 +10681,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A swirling grey-white essence trapped in a soul gem, radiating deathly cold intellect"
   },
   "wight_essence": {
     "name": "wight essence",
@@ -10534,7 +10734,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A dark blue-grey mist trapped in a sealed jar, draining warmth from everything nearby"
   },
   "dread_plate": {
     "name": "dread plate fragment",
@@ -10585,7 +10786,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "A shard of cursed black plate armor etched with skull motifs, unnaturally heavy"
   },
   "soul_fragment": {
     "name": "soul fragment",
@@ -10636,7 +10838,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A translucent blue crystal shard containing a screaming fragment of a consumed soul"
   },
   "storm_feather": {
     "name": "storm feather",
@@ -10688,7 +10891,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A crackling white-blue feather that arcs with tiny lightning bolts between its barbs"
   },
   "sovereign_spore_cap": {
     "name": "sovereign spore cap",
@@ -10739,7 +10943,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A regal purple-gold mushroom cap the size of a shield, emanating calming telepathic waves"
   },
   "sphinx_claw": {
     "name": "sphinx claw",
@@ -10790,7 +10995,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A curved golden claw with hieroglyphic engravings and sand permanently embedded in its grain"
   },
   "stone_giant_core": {
     "name": "stone giant core",
@@ -10841,7 +11047,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "A dense sphere of living granite with veins of quartz crystal pulsing with earth magic"
   },
   "black_dragon_scale": {
     "name": "black dragon scale",
@@ -10892,7 +11099,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A scale of pure obsidian-black that drips residual acid and dissolves cloth on contact"
   },
   "naga_scale": {
     "name": "naga scale",
@@ -10943,7 +11151,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "An emerald-green scale with a hypnotic spiraling pattern that draws the eye inward"
   },
   "hydra_bile": {
     "name": "hydra bile",
@@ -10995,7 +11204,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "A large flask of caustic green bile that bubbles and multiplies when exposed to blood"
   },
   "cerebral_fluid": {
     "name": "cerebral fluid",
@@ -11047,7 +11257,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "A vial of shimmering pink-purple fluid that induces psychic visions when held near the temple"
   },
   "devil_barb": {
     "name": "devil barb",
@@ -11098,7 +11309,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "A barbed spine of dark red iron that regrows from its base, never fully removable"
   },
   "golem_stone": {
     "name": "golem stone",
@@ -11149,7 +11361,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "A chunk of animate granite with a partially visible command sigil carved into its face"
   },
   "catoblepas_horn": {
     "name": "catoblepas horn",
@@ -11201,7 +11414,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "A heavy downward-curving horn of dark grey bone, its tip stained with death-breath residue"
   },
   "nightshade_essence": {
     "name": "nightshade spawn essence",
@@ -11253,7 +11467,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "A vial of absolute darkness in liquid form, draining color from everything it touches"
   },
   "queen_venom_gland": {
     "name": "spider queen venom gland",
@@ -11305,7 +11520,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "A swollen purple-black venom gland pulsing with the concentrated poison of a spider queen"
   },
   "elemental_magma_core": {
     "name": "magma elemental core",
@@ -11357,7 +11573,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "A molten sphere of living lava encased in a thin obsidian shell, glowing cherry-red"
   },
   "corrupted_horn_fragment": {
     "name": "corrupted unicorn horn",
@@ -11407,7 +11624,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A spiral horn fragment of once-pure white now veined with sickly purple-black corruption"
   },
   "shadow_crystal": {
     "name": "shadow crystal",
@@ -11459,7 +11677,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "A faceted crystal of pure shadow that projects darkness instead of light when illuminated"
   },
   "red_dragon_scale": {
     "name": "red dragon scale",
@@ -11510,7 +11729,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "A large crimson scale that radiates intense heat and glows like a dying ember"
   },
   "scylla_fang": {
     "name": "scylla fang",
@@ -11561,7 +11781,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "A massive serrated fang from one of Scylla's six heads, barnacled and reeking of the deep"
   },
   "titan_essence": {
     "name": "titanspawn essence",
@@ -11612,7 +11833,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A massive crystal containing swirling golden energy, warm with the power of primordial creation"
   },
   "vrock_feather": {
     "name": "vrock feather",
@@ -11664,7 +11886,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "A filthy brown-black vulture feather that releases choking toxic spores when shaken"
   },
   "erinyes_feather": {
     "name": "erinyes feather",
@@ -11715,7 +11938,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A perfect black-and-gold wing feather from a fallen angel, beautiful and deeply unsettling"
   },
   "behir_scale": {
     "name": "behir scale",
@@ -11766,7 +11990,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "A large electric-blue scale that sparks and crackles with stored lightning when rubbed"
   },
   "lord_phylactery": {
     "name": "necromancer phylactery",
@@ -11817,7 +12042,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "An ornate black iron box set with a cracked soul gem, reeking of necromantic power"
   },
   "ossuary_shard": {
     "name": "ossuary shard",
@@ -11869,7 +12095,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "A bone fragment from a structure built entirely of fused skeletons, etched with death prayers"
   },
   "death_essence": {
     "name": "death essence",
@@ -11921,7 +12148,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A tiny black pearl containing the distilled essence of mortality itself"
   },
   "alpha_lycanthrope_blood": {
     "name": "alpha lycanthrope blood",
@@ -11972,7 +12200,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "A flask of silver-flecked blood that boils and shifts form under moonlight"
   },
   "wyvern_venom_gland": {
     "name": "greater wyvern venom gland",
@@ -12024,7 +12253,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "A large leathery venom gland with a visible reservoir of potent green-yellow poison"
   },
   "aboleth_mucus": {
     "name": "aboleth mucus",
@@ -12075,7 +12305,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A jar of translucent teal mucus that allows water-breathing but slowly enslaves the mind"
   },
   "demon_bile": {
     "name": "hezrou demon bile",
@@ -12126,7 +12357,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "A bronze-sealed jar of toxic green-black bile that dissolves most organic matter on contact"
   },
   "devil_venom": {
     "name": "bone devil venom",
@@ -12178,7 +12410,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "A bone-white vial of paralytic venom extracted from an ossified devil's tail stinger"
   },
   "wyvern_stinger": {
     "name": "wyvern stinger",
@@ -12229,7 +12462,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "A curved tail stinger of dark green chitin with a hollow venom channel and barbed tip"
   },
   "giant_bone": {
     "name": "skeletal giant bone",
@@ -12280,7 +12514,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "An enormous yellowed bone from an undead giant, taller than a human and dense as stone"
   },
   "sea_dragon_scale": {
     "name": "sea dragon scale",
@@ -12332,7 +12567,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "A large scale of deep ocean blue with bioluminescent edges that glow in darkness"
   },
   "void_ichor": {
     "name": "void ichor",
@@ -12383,7 +12619,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A sealed lead vial of impossible black fluid from beyond the stars, warping space around it"
   },
   "night_hag_heartstone": {
     "name": "night hag heartstone",
@@ -12434,7 +12671,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A smooth black stone that pulses with a sickly green inner light, warm with trapped nightmares"
   },
   "cloudstuff": {
     "name": "cloudstuff",
@@ -12486,7 +12724,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "A jar of solidified cloud essence, white fluffy and impossibly light, humming with wind"
   },
   "cerberus_saliva": {
     "name": "cerberus saliva",
@@ -12537,7 +12776,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A fireproof flask of thick amber drool from the three-headed guardian, acidic and burning"
   },
   "demon_scales": {
     "name": "marilith demon scales",
@@ -12588,7 +12828,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "Crimson-black scales from a six-armed demon, each one marked with Abyssal script"
   },
   "demon_heart": {
     "name": "nalfeshnee heart",
@@ -12639,7 +12880,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A massive pulsing heart of dark purple-red, split into asymmetrical demonic chambers"
   },
   "lesser_draco_bone": {
     "name": "undead dragon bone",
@@ -12690,7 +12932,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "A bone shard from an undead dragon, blackened with age and crackling with necrotic green energy"
   },
   "void_shard": {
     "name": "void shard",
@@ -12741,7 +12984,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A fragment of crystallized void, pure absence given form, darker than any shadow"
   },
   "chaos_essence": {
     "name": "chaos essence",
@@ -12791,7 +13035,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A jar of reality-warping fluid that changes color, texture, and state unpredictably"
   },
   "demi_lich_skull": {
     "name": "demi-lich skull",
@@ -12842,7 +13087,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A floating gem-encrusted skull fragment with soul gems in the eye sockets, humming with power"
   },
   "nightwing_membrane": {
     "name": "nightwing membrane",
@@ -12894,7 +13140,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "A sheet of absolute darkness in membrane form, cold enough to freeze torchlight itself"
   },
   "roc_talon": {
     "name": "roc talon",
@@ -12945,7 +13192,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "A curved talon the size of a scimitar, bone-white and scored with wind-erosion grooves"
   },
   "blue_dragon_scale": {
     "name": "blue dragon scale",
@@ -12996,7 +13244,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "A brilliant sapphire-blue scale that crackles with arcing electricity between its ridges"
   },
   "lich_dragon_scale": {
     "name": "lich dragon scale",
@@ -13047,7 +13296,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A scale of rotting dark purple-grey that radiates both draconic and undead power"
   },
   "storm_essence": {
     "name": "storm essence",
@@ -13099,7 +13349,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "A sealed crystal sphere containing a miniature thunderstorm with lightning, rain, and wind"
   },
   "adult_dragon_heart": {
     "name": "red dragon heart",
@@ -13150,7 +13401,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A massive crimson heart the size of a barrel, still smoldering with inner dragonfire"
   },
   "pit_fiend_scale": {
     "name": "pit fiend scale",
@@ -13201,7 +13453,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "An enormous blood-red scale from an arch-devil, inscribed with infernal contract law"
   },
   "insect_carapace": {
     "name": "insect carapace",
@@ -13255,7 +13508,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A lightweight chitin plate from a giant insect, segmented and translucent brown"
   },
   "bat_wing": {
     "name": "bat wing",
@@ -13309,7 +13563,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A thin leathery wing membrane stretched over delicate finger-bones, dark grey-purple"
   },
   "eye_jelly": {
     "name": "eye jelly",
@@ -13363,7 +13618,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A wobbly sphere of transparent yellowish jelly with a dark pupil-like core floating inside"
   },
   "ogre_hide": {
     "name": "ogre hide",
@@ -13417,7 +13673,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A thick slab of warty brown-grey hide smelling of sweat and old meat"
   },
   "orc_blood": {
     "name": "orc blood",
@@ -13471,7 +13728,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A crude clay pot of dark green-tinted blood, thick and metallic-smelling"
   },
   "hobgoblin_blood": {
     "name": "hobgoblin blood",
@@ -13524,7 +13782,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A vial of disciplined dark crimson blood with an iron-sharp scent"
   },
   "bugbear_pelt": {
     "name": "bugbear pelt",
@@ -13577,7 +13836,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A patch of coarse brown-orange fur matted with dirt and dried blood"
   },
   "battle_ration": {
     "name": "battle ration",
@@ -13629,7 +13889,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A cloth-wrapped bundle of hardtack, jerky, and dried fruit from a brigand's pack"
   },
   "cultist_reagent": {
     "name": "cultist reagent",
@@ -13683,7 +13944,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A cloth pouch of strange violet ritual powder mixed with crushed gems and bone dust"
   },
   "devourer_tooth": {
     "name": "devourer tooth",
@@ -13736,7 +13998,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A massive serrated tooth of yellowed ivory from a devouring beast, warm and hungry"
   },
   "fenrir_fang": {
     "name": "Fenrir's Fang",
@@ -13790,7 +14053,8 @@
         "bonus_amount": 2
       }
     },
-    "floor_spawn_weight": {}
+    "floor_spawn_weight": {},
+    "sprite_desc": "An enormous ice-blue fang radiating primordial cold and the hunger of the world-ender"
   },
   "void_essence": {
     "name": "Void Essence",
@@ -13844,7 +14108,8 @@
         "bonus_amount": 3
       }
     },
-    "floor_spawn_weight": {}
+    "floor_spawn_weight": {},
+    "sprite_desc": "A sealed divine vessel containing swirling purple-black destroyer essence, humming with apocalypse"
   },
   "wolf_meat": {
     "name": "wolf meat",
@@ -13895,7 +14160,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A lean cut of dark red wolf meat with tough sinew and a wild, gamey scent"
   },
   "slime_core": {
     "name": "slime core",
@@ -13948,7 +14214,8 @@
         "bonus_stat": "CON",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A dense green orb at the center of a dissolved slime, pulsating with acidic energy"
   },
   "frost_sac": {
     "name": "frost sac",
@@ -14001,7 +14268,8 @@
         "bonus_amount": 1,
         "bonus_stat": "CON"
       }
-    }
+    },
+    "sprite_desc": "A swollen ice-blue sac of freezing liquid that chills everything within arm's reach"
   },
   "arachne_silk_gland": {
     "name": "arachne silk gland",
@@ -14053,7 +14321,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A bulbous silver-white gland trailing impossibly fine silk threads of divine craftsmanship"
   },
   "talos_bronze_shard": {
     "name": "talos bronze shard",
@@ -14105,7 +14374,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A jagged shard of ancient bronze automaton plating, still humming with divine engineering"
   },
   "echidna_venom_sac": {
     "name": "echidna venom sac",
@@ -14157,7 +14427,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A mottled green-black venom sac from the mother of monsters, swollen with primordial toxin"
   },
   "erlking_crown_twig": {
     "name": "erlking crown twig",
@@ -14209,7 +14480,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A living twig of pale green wood from the wild hunt king's antler crown, sprouting tiny leaves"
   },
   "camazotz_wing_membrane": {
     "name": "camazotz wing membrane",
@@ -14261,7 +14533,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A dark leathery bat-wing membrane that absorbs all light and drips with cave condensation"
   },
   "cacus_ember_gut": {
     "name": "cacus ember gut",
@@ -14313,7 +14586,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A smoldering orange-red organ that belches smoke and tiny flames when squeezed"
   },
   "sphinx_riddle_stone": {
     "name": "sphinx riddle stone",
@@ -14365,7 +14639,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A golden stone tablet with an ever-shifting riddle carved in hieroglyphics that rearrange themselves"
   },
   "rangda_mask_splinter": {
     "name": "rangda mask splinter",
@@ -14417,7 +14692,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A jagged splinter of a demonic mask, painted red and black, pulsing with dark theatrical magic"
   },
   "nemean_pelt_scrap": {
     "name": "nemean pelt scrap",
@@ -14469,7 +14745,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "A scrap of invulnerable golden lion hide that no blade can cut, warm as sunlight"
   },
   "baba_yaga_mortar_dust": {
     "name": "baba yaga mortar dust",
@@ -14521,7 +14798,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "Grey stone dust from a flying mortar, smelling of ancient Russian forests and impossible magic"
   },
   "jormungandr_scale": {
     "name": "jormungandr scale",
@@ -14573,7 +14851,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A massive sea-green scale from the world serpent, slick with ocean brine and crackling with venom"
   },
   "sets_jackal_fang": {
     "name": "set's jackal fang",
@@ -14625,7 +14904,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "A curved golden-brown jackal fang radiating desert heat and the authority of the god of chaos"
   },
   "green_knight_sap": {
     "name": "green knight sap",
@@ -14677,7 +14957,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "Vivid emerald sap that flows like blood from enchanted wood, smelling of eternal spring"
   },
   "charybdis_brine": {
     "name": "charybdis brine",
@@ -14729,7 +15010,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A sealed flask of supernaturally dense seawater that tries to pull everything into its vortex"
   },
   "ravanas_knuckle": {
     "name": "ravana's knuckle",
@@ -14781,7 +15063,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "A massive dark-skinned knuckle bone from one of ten arms, inscribed with Sanskrit war prayers"
   },
   "wendigo_heart": {
     "name": "wendigo heart",
@@ -14833,7 +15116,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 1
       }
-    }
+    },
+    "sprite_desc": "A frozen black heart encased in ice that radiates insatiable hunger and bitter winter cold"
   },
   "wild_hunt_horn": {
     "name": "wild hunt horn",
@@ -14885,7 +15169,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "A curved hunting horn of ancient grey bone, whispering with the sounds of an eternal chase"
   },
   "anansi_story_thread": {
     "name": "anansi story thread",
@@ -14937,7 +15222,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A single golden spider thread that contains an entire story visible when held to the light"
   },
   "nidhoggr_root_shard": {
     "name": "nidhoggr root shard",
@@ -14989,7 +15275,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A shard of Yggdrasil root gnawed by the world-serpent, dark with corruption and ancient power"
   },
   "amon_wrath_ember": {
     "name": "amon's wrath ember",
@@ -15041,7 +15328,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "A burning coal of pure rage that never cools, glowing angry red with infernal wrath"
   },
   "buer_plague_gland": {
     "name": "buer's plague gland",
@@ -15093,7 +15381,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "A pustulent green gland weeping with every disease known to demonkind"
   },
   "mammon_hunger_crystal": {
     "name": "mammon's hunger crystal",
@@ -15145,7 +15434,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A golden crystal that amplifies greed and hunger in all who behold it"
   },
   "bael_war_shard": {
     "name": "bael's war shard",
@@ -15197,7 +15487,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "A blood-red iron shard from a demon general's blade, still seeking flesh to cut"
   },
   "samael_death_vial": {
     "name": "samael's death vial",
@@ -15249,7 +15540,8 @@
         "bonus_type": "all_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A tiny vial of absolute stillness, the distilled essence of death itself"
   },
   "beleth_quake_stone": {
     "name": "beleth's quake stone",
@@ -15301,7 +15593,8 @@
         "bonus_type": "two_stats",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "A cracked brown stone that trembles constantly, threatening to split the earth beneath it"
   },
   "abyzou_silence_dust": {
     "name": "abyzou's silence dust",
@@ -15353,12 +15646,17 @@
         "bonus_type": "all_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A pouch of pale silver dust that absorbs all sound in its vicinity, eerily silent"
   },
   "prime_beef": {
     "name": "prime beef",
     "symbol": ",",
-    "color": [200, 100, 80],
+    "color": [
+      200,
+      100,
+      80
+    ],
     "weight": 3.0,
     "item_class": "ingredient",
     "min_level": 30,
@@ -15405,12 +15703,17 @@
         "bonus_type": "all_stats",
         "bonus_amount": 2
       }
-    }
+    },
+    "sprite_desc": "A magnificent cut of marbled red beef, perfectly aged and glistening with fat"
   },
   "royal_beef": {
     "name": "royal beef",
     "symbol": ",",
-    "color": [255, 200, 80],
+    "color": [
+      255,
+      200,
+      80
+    ],
     "weight": 4.0,
     "item_class": "ingredient",
     "min_level": 30,
@@ -15457,6 +15760,7 @@
         "bonus_type": "all_stats",
         "bonus_amount": 3
       }
-    }
+    },
+    "sprite_desc": "An extraordinary golden-edged cut of beef wearing a tiny crown, radiating bovine majesty"
   }
 }
