@@ -12010,7 +12010,7 @@ class Game:
         sub_surf = self.font_sm.render(sub_txt, True, FP.FADED_TEXT)
         self.screen.blit(sub_surf, (bx + (bw - sub_surf.get_width()) // 2, by + 50))
         draw_divider(self.screen, bx + 10, by + 68, bw - 20)
-        for i, (pid, pdef, uses_rem, cooldown) in enumerate(powers[:9]):
+        for i, (pid, pdef, uses_rem, cooldown) in enumerate(powers[:26]):
             iy = by + 78 + i * row_h
             pygame.draw.rect(
                 self.screen,
@@ -12020,7 +12020,7 @@ class Game:
             ready = (cooldown == 0) and (pdef.get('uses', 0) == 0 or uses_rem > 0)
             idx_col = FP.GOLD_BRIGHT if ready else FP.FADED_TEXT
             self.screen.blit(
-                self.font_md.render(f"[{i+1}]", True, idx_col),
+                self.font_md.render(f"[{self._LETTERS[i]}]", True, idx_col),
                 (bx + 16, iy + 12)
             )
             label_col = FP.BODY_TEXT if ready else FP.FADED_TEXT
@@ -12044,8 +12044,8 @@ class Game:
         hint_y = by + bh - 34
         draw_divider(self.screen, bx + 10, hint_y - 8, bw - 20)
         self.screen.blit(
-            self.font_sm.render("1-9: use power  |  ESC: close", True, FP.HINT_TEXT),
-            (bx + (bw - self.font_sm.size("1-9: use power  |  ESC: close")[0]) // 2, hint_y)
+            self.font_sm.render("a-z: use power  |  ESC: close", True, FP.HINT_TEXT),
+            (bx + (bw - self.font_sm.size("a-z: use power  |  ESC: close")[0]) // 2, hint_y)
         )
 
     def _draw_confirm_exit(self):
