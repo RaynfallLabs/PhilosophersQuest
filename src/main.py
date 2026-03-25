@@ -246,7 +246,7 @@ SECRET_BUILDS: dict[str, dict] = {
     # -- Special ---------------------------------------------------------------
     "ash williams": {
         "STR": 16, "CON": 16, "DEX": 14, "INT": 6, "WIS": 6, "PER": 10,
-        "_sprite": "player_dad",
+        "_sprite": "player_ash_williams",
         "_no_dagger": True,
         "_start_weapon": "boomstick",
         "_start_melee": "chainsaw_prosthetic",
@@ -257,7 +257,7 @@ SECRET_BUILDS: dict[str, dict] = {
     },
     "geralt of rivia": {
         "STR": 14, "CON": 14, "DEX": 16, "INT": 10, "WIS": 12, "PER": 14,
-        "_sprite": "player_dad",
+        "_sprite": "player_geralt",
         "_no_dagger": True,
         "_start_weapon": "witcher_silver_blade",
         "_start_spells": ["sign_aard", "sign_igni", "sign_quen", "sign_yrden", "sign_axii"],
@@ -266,7 +266,7 @@ SECRET_BUILDS: dict[str, dict] = {
     },
     "ciri riannon": {
         "STR": 8, "CON": 10, "DEX": 18, "INT": 14, "WIS": 12, "PER": 16,
-        "_sprite": "player_robyn",
+        "_sprite": "player_ciri",
         "_no_dagger": True,
         "_start_weapon": "zireael",
         "_elder_blood": True,
