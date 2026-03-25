@@ -1065,6 +1065,65 @@ LEARNABLE_SPELLS: dict[str, dict] = {
         'mp_cost': 20, 'quiz_tier': 5, 'needs_target': False,
         'desc': 'Freeze all monsters for 5 turns. The ultimate emergency.',
     },
+    # -- Tier 2 expansions --
+    'fireball_spell': {
+        'name': 'Fireball', 'effect': 'mass_fire', 'power': '3d6',
+        'mp_cost': 7,  'quiz_tier': 2, 'needs_target': False,
+        'desc': '3d6 fire damage to all visible monsters.',
+    },
+    'slow_spell': {
+        'name': 'Slow Monster', 'effect': 'slow_monster_spell', 'power': '',
+        'mp_cost': 5,  'quiz_tier': 2, 'needs_target': True,
+        'desc': 'Target skips every other turn for 4-10 turns.',
+    },
+    'knock_spell': {
+        'name': 'Knock', 'effect': 'knock_spell', 'power': '',
+        'mp_cost': 4,  'quiz_tier': 2, 'needs_target': False,
+        'desc': 'Magically open the nearest locked container.',
+    },
+    'teleport_away_spell': {
+        'name': 'Teleport Away', 'effect': 'teleport_away_spell', 'power': '',
+        'mp_cost': 6,  'quiz_tier': 2, 'needs_target': False,
+        'desc': 'Teleport nearest monster away, or yourself if none visible.',
+    },
+    # -- Tier 3 expansions --
+    'acid_arrow_spell': {
+        'name': 'Acid Arrow', 'effect': 'acid_arrow', 'power': '3d6',
+        'mp_cost': 8,  'quiz_tier': 3, 'needs_target': True,
+        'desc': '3d6 acid + poison DoT. Chain extends duration.',
+    },
+    'drain_life_spell': {
+        'name': 'Drain Life', 'effect': 'drain_life_spell', 'power': '4d6',
+        'mp_cost': 10, 'quiz_tier': 3, 'needs_target': True,
+        'desc': 'Steal life — damage target, heal yourself for the same.',
+    },
+    'fear_spell': {
+        'name': 'Fear', 'effect': 'fear_monster_spell', 'power': '',
+        'mp_cost': 7,  'quiz_tier': 3, 'needs_target': True,
+        'desc': 'Target flees in terror for chain-scaled turns.',
+    },
+    'detect_spell': {
+        'name': 'Detect Monsters', 'effect': 'detect_monsters_spell', 'power': '',
+        'mp_cost': 6,  'quiz_tier': 3, 'needs_target': False,
+        'desc': 'Reveal all monsters on the level for chain-scaled turns.',
+    },
+    'polymorph_spell': {
+        'name': 'Polymorph', 'effect': 'polymorph_spell', 'power': '',
+        'mp_cost': 9,  'quiz_tier': 3, 'needs_target': True,
+        'desc': 'Transform a monster into a random creature. Risky!',
+    },
+    # -- Tier 4 expansion --
+    'reflect_spell': {
+        'name': 'Reflect', 'effect': 'reflect_self', 'power': '',
+        'mp_cost': 11, 'quiz_tier': 4, 'needs_target': False,
+        'desc': '50% chance to reflect status attacks for chain-scaled turns.',
+    },
+    # -- Tier 5 expansion --
+    'disintegrate_spell': {
+        'name': 'Disintegrate', 'effect': 'disintegrate_spell', 'power': '4d8',
+        'mp_cost': 18, 'quiz_tier': 5, 'needs_target': True,
+        'desc': 'Chain-scaling instant kill (30-90%). Bosses take 4d8 instead.',
+    },
     # -- Witcher Signs (Geralt) --
     'sign_aard': {
         'name': 'Aard', 'effect': 'aard_blast', 'power': '3d6',
@@ -3842,12 +3901,16 @@ class Game:
             return self.cook_menu_items
         return self.cook_compound_recipes
 
+    def _cook_tab_has_items(self, idx):
+        return (self.cook_menu_items if self._COOK_TABS[idx][1] == 'single'
+                else self.cook_compound_recipes)
+
     def _cook_menu_input(self, key: int):
         if key in (pygame.K_LEFT, pygame.K_UP):
-            self._cook_tab = (self._cook_tab - 1) % len(self._COOK_TABS)
+            self._cook_tab = self._cycle_tab(self._cook_tab, -1, len(self._COOK_TABS), self._cook_tab_has_items)
             return
         if key in (pygame.K_RIGHT, pygame.K_DOWN):
-            self._cook_tab = (self._cook_tab + 1) % len(self._COOK_TABS)
+            self._cook_tab = self._cycle_tab(self._cook_tab, 1, len(self._COOK_TABS), self._cook_tab_has_items)
             return
         idx = self._AZ_KEYS.get(key)
         if idx is None:
@@ -3938,10 +4001,12 @@ class Game:
 
     def _eat_menu_input(self, key: int):
         if key in (pygame.K_LEFT, pygame.K_UP):
-            self._eat_tab = (self._eat_tab - 1) % len(self._EAT_TABS)
+            self._eat_tab = self._cycle_tab(self._eat_tab, -1, len(self._EAT_TABS),
+                lambda t: any(self._EAT_TABS[t][1](i) for i in self.eat_menu_items))
             return
         if key in (pygame.K_RIGHT, pygame.K_DOWN):
-            self._eat_tab = (self._eat_tab + 1) % len(self._EAT_TABS)
+            self._eat_tab = self._cycle_tab(self._eat_tab, 1, len(self._EAT_TABS),
+                lambda t: any(self._EAT_TABS[t][1](i) for i in self.eat_menu_items))
             return
         tab_items = self._get_eat_tab_items()
         idx = self._AZ_KEYS.get(key)
@@ -3985,6 +4050,18 @@ class Game:
         pygame.K_u: 20, pygame.K_v: 21, pygame.K_w: 22, pygame.K_x: 23,
         pygame.K_y: 24, pygame.K_z: 25,
     }
+
+    @staticmethod
+    def _cycle_tab(current: int, direction: int, n_tabs: int, has_items) -> int:
+        """Advance *current* tab by *direction* (+1/-1), skipping empty tabs.
+        *has_items* is called with a tab index and must return True if that tab
+        has at least one item.  Returns the new tab index (unchanged if every
+        other tab is empty)."""
+        for _ in range(n_tabs - 1):
+            current = (current + direction) % n_tabs
+            if has_items(current):
+                return current
+        return current  # all others empty — stay put
 
     def _paged_menu_input(self, key, items) -> int | None:
         """Handle a-z selection within items. Returns index or None."""
@@ -4228,10 +4305,12 @@ class Game:
 
     def _throw_menu_input(self, key: int):
         if key in (pygame.K_LEFT, pygame.K_UP):
-            self._throw_tab = (self._throw_tab - 1) % len(self._THROW_TABS)
+            self._throw_tab = self._cycle_tab(self._throw_tab, -1, len(self._THROW_TABS),
+                lambda t: any(self._THROW_TABS[t][1](i) for i in self.throw_menu_items))
             return
         if key in (pygame.K_RIGHT, pygame.K_DOWN):
-            self._throw_tab = (self._throw_tab + 1) % len(self._THROW_TABS)
+            self._throw_tab = self._cycle_tab(self._throw_tab, 1, len(self._THROW_TABS),
+                lambda t: any(self._THROW_TABS[t][1](i) for i in self.throw_menu_items))
             return
         tab_items = self._get_throw_tab_items()
         idx = self._AZ_KEYS.get(key)
@@ -7069,6 +7148,80 @@ class Game:
             if not target and not cleared_player:
                 self.add_message("Nothing to abjure.", 'info')
 
+        elif effect == 'knock':
+            # Open nearest locked container within 5 tiles
+            px, py = self.player.x, self.player.y
+            best, best_d = None, 999
+            for item in self.ground_items:
+                if isinstance(item, Container) and getattr(item, 'locked', False):
+                    d = abs(item.x - px) + abs(item.y - py)
+                    if d <= 5 and d < best_d:
+                        best, best_d = item, d
+            if best:
+                best.locked = False
+                self.add_message(f"Click! The {best.name} unlocks!", 'success')
+            else:
+                self.add_message("The wand hums but finds nothing locked nearby.", 'info')
+
+        elif effect == 'turn_undead':
+            from dice import roll as _roll_tu
+            base_dmg = self._int_scaled_damage(_roll_tu(wand.power) if wand.power else 8)
+            _UNDEAD_WORDS = {'skeleton', 'zombie', 'ghost', 'wraith', 'lich', 'wight',
+                             'spectre', 'vampire', 'mummy', 'revenant', 'death', 'undead',
+                             'ghoul', 'ghast', 'shade', 'banshee', 'draugr', 'barrow',
+                             'bone', 'corpse', 'vrykolakas', 'strigoi', 'mohrg', 'demi_lich'}
+            undead = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible
+                      and any(w in m.kind.lower() for w in _UNDEAD_WORDS)]
+            if undead:
+                for m in undead:
+                    actual = m.take_damage(base_dmg, 'holy')
+                    m.add_effect('feared', 8)
+                    if not m.alive:
+                        self._on_monster_killed(m)
+                self.add_message(
+                    f"Holy light blazes! {len(undead)} undead take {base_dmg} holy damage and flee!",
+                    'success')
+            else:
+                # Minor effect on non-undead: flash of light
+                self.add_message("Holy light flares but no undead are present.", 'info')
+
+        elif effect == 'wonder':
+            _WONDER_EFFECTS = [
+                ('heal', lambda: (self.player.restore_hp(15),
+                    self.add_message("The wand heals you for 15 HP!", 'success'))),
+                ('haste', lambda: (self.player.add_effect('hasted', 8),
+                    self.add_message("The wand makes you supernaturally fast!", 'success'))),
+                ('confuse', lambda: (
+                    [m.add_effect('confused', 8) for m in self.monsters
+                     if m.alive and (m.x, m.y) in self.visible],
+                    self.add_message("A wave of confusion erupts!", 'success'))),
+                ('fireball', lambda: (
+                    [m.take_damage(self._int_scaled_damage(_rng.randint(8, 20)))
+                     for m in self.monsters if m.alive and (m.x, m.y) in self.visible],
+                    self.add_message("A burst of flame erupts from the wand!", 'success'))),
+                ('teleport', lambda: (self._teleport_player(),
+                    self.add_message("The wand teleports you randomly!", 'warning'))),
+                ('shield', lambda: (self.player.add_effect('shielded', 10),
+                    self.add_message("A protective barrier appears!", 'success'))),
+                ('sleep', lambda: (
+                    [m.add_effect('sleeping', 8) for m in self.monsters
+                     if m.alive and (m.x, m.y) in self.visible],
+                    self.add_message("A wave of slumber washes out!", 'success'))),
+                ('invisible', lambda: (self.player.add_effect('invisible', 10),
+                    self.add_message("You vanish from sight!", 'success'))),
+                ('lightning', lambda: (
+                    (lambda t: (t.take_damage(self._int_scaled_damage(_rng.randint(10, 25))),
+                     self.add_message(f"Lightning zaps the {t.name}!", 'success'),
+                     None if t.alive else self._on_monster_killed(t))
+                    )(self._nearest_visible_monster()) if self._nearest_visible_monster() else
+                    self.add_message("Lightning crackles harmlessly.", 'info'))),
+                ('regen', lambda: (self.player.add_effect('regenerating', 15),
+                    self.add_message("Your wounds begin to close on their own!", 'success'))),
+            ]
+            _, fn = _rng.choice(_WONDER_EFFECTS)
+            fn()
+            self.add_message("The wand of wonder crackles with chaotic energy!", 'warning')
+
     def _nearest_visible_monster(self):
         """Return the closest alive monster currently in FOV, or None."""
         px, py = self.player.x, self.player.y
@@ -8280,6 +8433,71 @@ class Game:
                 f"Ice Storm! {hit} monsters take {scaled} cold dmg (chain {chain})", 'success')
             return
 
+        if effect == 'mass_fire':
+            from dice import roll
+            base_dmg = roll(power) if power else 10
+            scaled   = self._spell_damage(base_dmg, chain)
+            hit = 0
+            for m in list(self.monsters):
+                if m.alive and (m.x, m.y) in self.visible:
+                    actual = m.take_damage(scaled, 'fire')
+                    if not m.alive:
+                        self._on_monster_killed(m)
+                    hit += 1
+            self.add_message(
+                f"Fireball! {hit} monsters take {scaled} fire dmg (chain {chain})", 'success')
+            return
+
+        if effect == 'knock_spell':
+            # Find nearest locked container within 3 tiles
+            px, py = self.player.x, self.player.y
+            best, best_d = None, 999
+            for item in self.ground_items:
+                if isinstance(item, Container) and getattr(item, 'locked', False):
+                    d = abs(item.x - px) + abs(item.y - py)
+                    if d <= 3 and d < best_d:
+                        best, best_d = item, d
+            if best:
+                best.locked = False
+                self.add_message(f"Click! The {best.name} unlocks magically! (chain {chain})", 'success')
+            else:
+                self.add_message("No locked containers nearby to open.", 'info')
+            return
+
+        if effect == 'detect_monsters_spell':
+            dur = max(5, int(20 * chain_scale))
+            self.player.add_effect('clairvoyant', dur)
+            count = sum(1 for m in self.monsters if m.alive)
+            self.add_message(
+                f"Your senses expand -- {count} creatures revealed for {dur} turns! (chain {chain})", 'success')
+            return
+
+        if effect == 'teleport_away_spell':
+            # Target nearest visible monster, or self-teleport if none
+            target_m = self._nearest_visible_monster()
+            if target_m:
+                is_boss = getattr(target_m, 'is_boss', False) or target_m.max_hp > 500
+                if is_boss:
+                    self.add_message(f"The {target_m.name} resists the teleportation!", 'warning')
+                    return
+                floors = [(x, y) for y in range(self.dungeon.height)
+                          for x in range(self.dungeon.width)
+                          if self.dungeon.is_walkable(x, y)
+                          and (x, y) != (self.player.x, self.player.y)
+                          and not any(m.alive and m.x == x and m.y == y for m in self.monsters)]
+                if floors:
+                    nx, ny = random.choice(floors)
+                    target_m.x, target_m.y = nx, ny
+                    self.add_message(
+                        f"The {target_m.name} vanishes in a flash of light! (chain {chain})", 'success')
+                else:
+                    self.add_message("The spell fizzles -- no safe destination found.", 'warning')
+            else:
+                # No visible monsters — teleport self
+                self._teleport_player()
+                self.add_message(f"You teleport to a new location! (chain {chain})", 'success')
+            return
+
         # Scale extra_heal duration/amount
         if effect == 'extra_heal':
             from dice import roll
@@ -8375,6 +8593,7 @@ class Game:
             'haste_self':        ('hasted',      10),
             'invisibility_self': ('invisible',   15),
             'light':             ('clairvoyant', 20),
+            'reflect_self':      ('reflecting',  15),
         }
         if effect in _SELF_BUFF_DURATIONS:
             eff_name, base_dur = _SELF_BUFF_DURATIONS[effect]
@@ -8455,6 +8674,91 @@ class Game:
                     f"Holy fire smites the {target.name} for {scaled} damage! (chain {chain})", 'success')
                 if not target.alive:
                     self._on_monster_killed(target)
+            elif effect == 'slow_monster_spell':
+                dur = max(4, int(10 * chain_scale))
+                target.add_effect('slowed', dur)
+                self.add_message(f"The {target.name} is slowed for {dur} turns! (chain {chain})", 'success')
+            elif effect == 'acid_arrow':
+                base_dmg = _roll(power) if power else 8
+                scaled = self._spell_damage(base_dmg, chain)
+                actual = target.take_damage(scaled, 'acid')
+                dot_dur = max(2, int(5 * chain_scale))
+                target.add_effect('poisoned', dot_dur)
+                self.add_message(
+                    f"An acid arrow strikes the {target.name} for {actual} damage! "
+                    f"Acid burns for {dot_dur} turns! (chain {chain})", 'success')
+                if not target.alive:
+                    self._on_monster_killed(target)
+            elif effect == 'drain_life_spell':
+                base_dmg = _roll(power) if power else 10
+                scaled = self._spell_damage(base_dmg, chain)
+                actual = target.take_damage(scaled)
+                healed = self.player.restore_hp(actual)
+                self.add_message(
+                    f"You drain {actual} life from the {target.name} and heal {healed} HP! (chain {chain})", 'success')
+                if not target.alive:
+                    self._on_monster_killed(target)
+            elif effect == 'fear_monster_spell':
+                is_boss = getattr(target, 'is_boss', False) or target.max_hp > 500
+                if is_boss:
+                    self.add_message(f"The {target.name} is too powerful to frighten!", 'warning')
+                else:
+                    dur = max(3, int(10 * chain_scale))
+                    target.add_effect('feared', dur)
+                    target.ai_pattern = 'cowardly'
+                    self.add_message(
+                        f"The {target.name} turns and flees in terror for {dur} turns! (chain {chain})", 'success')
+            elif effect == 'polymorph_spell':
+                is_boss = getattr(target, 'is_boss', False) or target.max_hp > 500
+                if is_boss:
+                    self.add_message(f"The {target.name} resists the polymorph!", 'warning')
+                else:
+                    import json as _pjson, os as _pos
+                    from monster import Monster as _PMon
+                    from paths import data_path as _pdp
+                    try:
+                        with open(_pdp('data', 'monsters.json'), encoding='utf-8') as _pf:
+                            _all_defs = _pjson.load(_pf)
+                        # High chain biases toward weaker result
+                        max_ml = max(1, target.min_level + 10 - chain * 3)
+                        eligible = [k for k, v in _all_defs.items()
+                                    if v.get('min_level', 1) <= max_ml
+                                    and k != target.kind and v.get('frequency', 1) > 0]
+                        if not eligible:
+                            eligible = [k for k, v in _all_defs.items()
+                                        if k != target.kind and v.get('frequency', 1) > 0]
+                        old_name = target.name
+                        kind = random.choice(eligible)
+                        defn = {**_all_defs[kind], 'id': kind}
+                        new_m = _PMon(defn, target.x, target.y)
+                        idx = self.monsters.index(target)
+                        self.monsters[idx] = new_m
+                        self.add_message(
+                            f"The {old_name} warps into {self._a_or_an(new_m.name)}! (chain {chain})", 'success')
+                    except Exception:
+                        self.add_message("The polymorph spell fizzles!", 'warning')
+            elif effect == 'disintegrate_spell':
+                is_boss = getattr(target, 'is_boss', False) or target.max_hp > 500
+                # Chain-scaling kill chance: 30/45/60/75/90%
+                kill_chance = 0.15 + chain * 0.15  # 0.30 at chain 1 .. 0.90 at chain 5
+                if not is_boss and random.random() < kill_chance:
+                    target.hp = 0
+                    target.alive = False
+                    self.add_message(
+                        f"The {target.name} is disintegrated! (chain {chain}, {int(kill_chance*100)}%)", 'success')
+                    self._on_monster_killed(target)
+                else:
+                    base_dmg = _roll(power) if power else 20
+                    scaled = self._spell_damage(base_dmg, chain)
+                    actual = target.take_damage(scaled)
+                    if is_boss:
+                        self.add_message(
+                            f"The {target.name} resists disintegration but takes {actual} damage! (chain {chain})", 'success')
+                    else:
+                        self.add_message(
+                            f"The {target.name} partially resists! {actual} damage! (chain {chain}, {int(kill_chance*100)}% missed)", 'warning')
+                    if not target.alive:
+                        self._on_monster_killed(target)
             else:
                 # Fallback: generic targeted damage
                 from dice import roll as _r
@@ -8496,10 +8800,12 @@ class Game:
 
     def _scroll_menu_input(self, key: int):
         if key in (pygame.K_LEFT, pygame.K_UP):
-            self._scroll_tab = (self._scroll_tab - 1) % len(self._SCROLL_TABS)
+            self._scroll_tab = self._cycle_tab(self._scroll_tab, -1, len(self._SCROLL_TABS),
+                lambda t: any(self._SCROLL_TABS[t][1](i) for i in self.scroll_menu_items))
             return
         if key in (pygame.K_RIGHT, pygame.K_DOWN):
-            self._scroll_tab = (self._scroll_tab + 1) % len(self._SCROLL_TABS)
+            self._scroll_tab = self._cycle_tab(self._scroll_tab, 1, len(self._SCROLL_TABS),
+                lambda t: any(self._SCROLL_TABS[t][1](i) for i in self.scroll_menu_items))
             return
         tab_items = self._get_scroll_tab_items()
         idx = self._AZ_KEYS.get(key)
@@ -8833,6 +9139,84 @@ class Game:
             for stat in ('STR', 'CON', 'DEX', 'INT', 'WIS', 'PER'):
                 self.player.apply_stat_bonus(stat, 1)
             self.add_message("Every faculty within you is elevated! All stats permanently +1!", 'success')
+
+        elif effect == 'earth':
+            from dice import roll as _roll_e
+            base_dmg = _roll_e(scroll.power) if scroll.power else 12
+            scaled = self._int_scaled_damage(base_dmg)
+            victims = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
+            for m in victims:
+                m.take_damage(scaled)
+                if not m.alive:
+                    self._on_monster_killed(m)
+            if victims:
+                self.add_message(
+                    f"Boulders crash from the ceiling! {len(victims)} creature(s) take {scaled} damage!", 'success')
+            else:
+                self.add_message("Rocks tumble from above, but nothing is in the way.", 'info')
+
+        elif effect == 'protection':
+            _buc = getattr(scroll, 'buc', 'uncursed')
+            bonus = 5 if _buc == 'blessed' else (1 if _buc == 'cursed' else 3)
+            dur = 30
+            self.player.add_effect('shielded', dur)
+            self.add_message(f"A protective ward envelops you! +{bonus} AC for {dur} turns!", 'success')
+
+        elif effect == 'enchant_accessory':
+            _buc = getattr(scroll, 'buc', 'uncursed')
+            bonus = 2 if _buc == 'blessed' else (-1 if _buc == 'cursed' else 1)
+            acc = next((s for s in self.player.accessory_slots if s is not None), None)
+            if acc:
+                fx = acc.effects
+                if 'amount' in fx:
+                    fx['amount'] = max(0, fx['amount'] + bonus)
+                    self.add_message(
+                        f"The {acc.name} glows! Bonus {'increased' if bonus > 0 else 'decreased'} by {abs(bonus)}!", 'success')
+                else:
+                    self.add_message(f"The {acc.name} shimmers briefly but nothing happens.", 'info')
+            else:
+                self.add_message("You have no accessory equipped to enchant.", 'warning')
+
+        elif effect == 'genocide':
+            # Kill all monsters of the most common visible type. Bosses/quest immune.
+            visible = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
+            if not visible:
+                self.add_message("No creatures are visible to target.", 'info')
+            else:
+                # Count by kind, excluding bosses and seal demons
+                from collections import Counter
+                kind_counts = Counter(
+                    m.kind for m in visible
+                    if not getattr(m, 'is_boss', False)
+                    and m.max_hp <= 500
+                    and not getattr(m, 'is_seal_demon', False)
+                )
+                if not kind_counts:
+                    self.add_message("The scroll finds no suitable targets among these creatures.", 'warning')
+                else:
+                    target_kind = kind_counts.most_common(1)[0][0]
+                    killed = 0
+                    for m in list(self.monsters):
+                        if m.alive and m.kind == target_kind:
+                            m.hp = 0
+                            m.alive = False
+                            self._on_monster_killed(m)
+                            killed += 1
+                    target_name = next((m.name for m in self.monsters if m.kind == target_kind), target_kind)
+                    self.add_message(
+                        f"A wave of annihilation sweeps the level -- {killed} {target_name}(s) erased from existence!",
+                        'success')
+
+        elif effect == 'full_light':
+            _buc = getattr(scroll, 'buc', 'uncursed')
+            # Reveal entire level layout
+            for y in range(self.dungeon.height):
+                for x in range(self.dungeon.width):
+                    self.dungeon.explored[y][x] = True
+            self.add_message("Brilliant light floods every corner of the level!", 'success')
+            if _buc == 'blessed':
+                self.player.add_effect('clairvoyant', 30)
+                self.add_message("Your vision extends to sense all creatures!", 'success')
 
         elif effect == 'lake_of_fire':
             # The inscription is always revealed
@@ -11350,17 +11734,19 @@ class Game:
     # ------------------------------------------------------------------
 
     def _draw_identify_menu(self):
-        # FANTASY: Grimoire-themed identify menu
         draw_overlay(self.screen, 190)
 
         n_items = len(self.identify_menu_items)
         ROW_H = 66
+        ICO = self.MENU_ICON_SIZE
+        TEXT_X = 70 + ICO + 8
         bw = min(820, GAME_W - 40)
+        max_detail_w = bw - TEXT_X - 20
         bh = min(96 + n_items * ROW_H + 70, WINDOW_H - 40)
         bx = (GAME_W - bw) // 2
         by = (WINDOW_H - bh) // 2
+        tx = bx + TEXT_X
 
-        # FANTASY: Dark panel with arcane border
         draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.ARCANE_BRIGHT)
         draw_header_bar(self.screen, (bx, by, bw, 44), text="IDENTIFY ITEM",
                         font=self.font_md, text_color=FP.GOLD_BRIGHT)
@@ -11372,7 +11758,8 @@ class Game:
         )
         draw_divider(self.screen, bx + 10, by + 72, bw - 20)
 
-        max_detail_w = bw - 90
+        ICO_Y_OFF = 4; NAME_Y_OFF = 8; DET_Y_OFF = ICO_Y_OFF + ICO + 6
+        LBL_Y_OFF = ICO_Y_OFF + (ICO - self.font_md.get_height()) // 2
         cy = by + 82
 
         # Separate into inv, ground, and corpse sections
@@ -11393,9 +11780,12 @@ class Game:
                 iy = cy
                 pygame.draw.rect(self.screen, FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
                                  (bx + 10, iy, bw - 20, ROW_H - 8), border_radius=6)
-                dname = self._display_name(item)
-                self.screen.blit(self.font_md.render(f"[{self._LETTERS[i]}]", True, FP.GOLD_BRIGHT), (bx + 18, iy + 10))
-                self.screen.blit(self.font_md.render(self._fit_text(dname, self.font_md, bw - 70 - 20), True, name_color), (bx + 70, iy + 10))
+                self.screen.blit(self.font_md.render(f"[{self._LETTERS[i]}]", True, FP.GOLD_BRIGHT),
+                                 (bx + 18, iy + LBL_Y_OFF))
+                self._draw_menu_icon(item, bx + 56, iy + ICO_Y_OFF)
+                self.screen.blit(self.font_md.render(
+                    self._fit_text(self._display_name(item), self.font_md, max_detail_w), True, name_color),
+                    (tx, iy + NAME_Y_OFF))
                 if isinstance(item, Corpse):
                     lore_status = "[EXAMINED]" if item.lore_identified else "[UNEXAMINED]"
                     detail_text = f"Corpse  {lore_status}"
@@ -11408,7 +11798,7 @@ class Game:
                     while len(detail_text) > 1 and self.font_sm.size(detail_text + '\u2026')[0] > max_detail_w:
                         detail_text = detail_text[:-1]
                     detail_surf = self.font_sm.render(detail_text + '\u2026', True, FP.FADED_TEXT)
-                self.screen.blit(detail_surf, (bx + 70, iy + 34))
+                self.screen.blit(detail_surf, (tx, iy + DET_Y_OFF))
                 cy += ROW_H
 
         _draw_section(inv_entries,    "INVENTORY:",            FP.GOLD_BRIGHT,   FP.BODY_TEXT)
@@ -13501,10 +13891,12 @@ class Game:
             self.state = STATE_PLAYER
             return
         if key in (pygame.K_LEFT, pygame.K_UP):
-            self._examine_tab = (self._examine_tab - 1) % len(self._EXAMINE_TABS)
+            self._examine_tab = self._cycle_tab(self._examine_tab, -1, len(self._EXAMINE_TABS),
+                lambda t: any(self._EXAMINE_TABS[t][1](i) for i in self.examine_menu_items))
             return
         if key in (pygame.K_RIGHT, pygame.K_DOWN):
-            self._examine_tab = (self._examine_tab + 1) % len(self._EXAMINE_TABS)
+            self._examine_tab = self._cycle_tab(self._examine_tab, 1, len(self._EXAMINE_TABS),
+                lambda t: any(self._EXAMINE_TABS[t][1](i) for i in self.examine_menu_items))
             return
         tab_items = self._get_examine_tab_items()
         idx = self._AZ_KEYS.get(key)

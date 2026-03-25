@@ -988,5 +988,125 @@
     "lore": "Sealed with a brand shaped like a cow bell. A reward scroll from Dad — show him this code! Moo.",
     "read_threshold": 2,
     "floorSpawnWeight": {}
+  },
+  "scroll_of_earth": {
+    "name": "scroll of earth",
+    "symbol": "?",
+    "color": [
+      180,
+      140,
+      80
+    ],
+    "weight": 0.1,
+    "min_level": 20,
+    "quiz_tier": 3,
+    "quiz_threshold": 3,
+    "effect": "earth",
+    "power": "4d6",
+    "unidentified_name": "rumbling scroll",
+    "lore": "Ancient druidic script that calls upon the weight of the earth itself. Boulders crash down upon every visible foe.",
+    "read_threshold": 3,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-60": 2,
+      "61-100": 1
+    },
+    "sprite_desc": "A scroll of rough brown parchment with glowing earth-tone runes and small pebbles embedded in the wax seal"
+  },
+  "scroll_of_protection": {
+    "name": "scroll of protection",
+    "symbol": "?",
+    "color": [
+      160,
+      200,
+      255
+    ],
+    "weight": 0.1,
+    "min_level": 10,
+    "quiz_tier": 2,
+    "quiz_threshold": 2,
+    "effect": "protection",
+    "power": "",
+    "unidentified_name": "warded scroll",
+    "lore": "A prayer of warding inscribed by temple acolytes. The words form a protective shell around the reader.",
+    "read_threshold": 2,
+    "floorSpawnWeight": {
+      "1-10": 0,
+      "11-40": 3,
+      "41-100": 2
+    },
+    "sprite_desc": "A scroll of pale blue parchment with a glowing shield symbol and silver protective sigils"
+  },
+  "scroll_of_enchant_accessory": {
+    "name": "scroll of enchant accessory",
+    "symbol": "?",
+    "color": [
+      200,
+      160,
+      255
+    ],
+    "weight": 0.1,
+    "min_level": 25,
+    "quiz_tier": 3,
+    "quiz_threshold": 3,
+    "effect": "enchant_accessory",
+    "power": "",
+    "unidentified_name": "jeweled scroll",
+    "lore": "Written by enchanter-jewelers of the elven courts, this scroll infuses additional power into a worn accessory.",
+    "read_threshold": 3,
+    "floorSpawnWeight": {
+      "1-25": 0,
+      "26-60": 2,
+      "61-100": 1
+    },
+    "sprite_desc": "A scroll of lavender parchment with tiny gemstone fragments woven into the fibers and purple ink runes"
+  },
+  "scroll_of_genocide": {
+    "name": "scroll of genocide",
+    "symbol": "?",
+    "color": [
+      255,
+      40,
+      40
+    ],
+    "weight": 0.1,
+    "min_level": 40,
+    "quiz_tier": 4,
+    "quiz_threshold": 5,
+    "effect": "genocide",
+    "power": "",
+    "unidentified_name": "blood-red scroll",
+    "lore": "A terrifying scroll of absolute power. Speaking the words erases an entire species from the current level. Even reading it feels like a transgression.",
+    "read_threshold": 5,
+    "floorSpawnWeight": {
+      "1-40": 0,
+      "41-80": 1,
+      "81-100": 1
+    },
+    "sprite_desc": "A scroll of deep crimson parchment with black skull runes and a wax seal shaped like a crossed-out creature"
+  },
+  "scroll_of_light": {
+    "name": "scroll of light",
+    "symbol": "?",
+    "color": [
+      255,
+      255,
+      200
+    ],
+    "weight": 0.1,
+    "min_level": 5,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "full_light",
+    "power": "",
+    "unidentified_name": "glowing scroll",
+    "lore": "A simple but useful invocation that floods the entire level with magical light, revealing its layout.",
+    "read_threshold": 2,
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-60": 2,
+      "61-100": 1
+    },
+    "sprite_desc": "A scroll of warm yellow parchment radiating soft golden light with sun-ray patterns in the ink"
   }
 }

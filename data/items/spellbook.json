@@ -344,7 +344,11 @@
   "spellbook_cleanse": {
     "name": "Spellbook of Cleanse",
     "symbol": "+",
-    "color": [200, 255, 200],
+    "color": [
+      200,
+      255,
+      200
+    ],
     "weight": 1.5,
     "min_level": 5,
     "quiz_tier": 1,
@@ -355,12 +359,21 @@
     "unidentified_name": "pale green tome",
     "lore": "A healer's primer on purification magic. The spells within were developed by temple physicians who needed to cure plague victims without touching them. One incantation removes any single affliction — poison, paralysis, disease, curse. Simple, reliable, life-saving.",
     "read_threshold": 2,
-    "floor_spawn_weight": {"1-10": 3, "11-30": 5, "31-60": 3, "61-100": 2}
+    "floor_spawn_weight": {
+      "1-10": 3,
+      "11-30": 5,
+      "31-60": 3,
+      "61-100": 2
+    }
   },
   "spellbook_empower": {
     "name": "Spellbook of Empower",
     "symbol": "+",
-    "color": [255, 180, 60],
+    "color": [
+      255,
+      180,
+      60
+    ],
     "weight": 1.5,
     "min_level": 20,
     "quiz_tier": 2,
@@ -371,12 +384,21 @@
     "unidentified_name": "gold-edged battle tome",
     "lore": "A war-mage's secret: channel arcane energy into a physical weapon for a single devastating strike. The technique was perfected by the battlemages of Carthage, who could shatter siege gates with an empowered hammer blow. Cast it, then strike — the next melee attack deals triple damage.",
     "read_threshold": 3,
-    "floor_spawn_weight": {"1-19": 0, "20-40": 3, "41-60": 2, "61-100": 1}
+    "floor_spawn_weight": {
+      "1-19": 0,
+      "20-40": 3,
+      "41-60": 2,
+      "61-100": 1
+    }
   },
   "spellbook_smite": {
     "name": "Spellbook of Smite",
     "symbol": "+",
-    "color": [255, 255, 150],
+    "color": [
+      255,
+      255,
+      150
+    ],
     "weight": 2.0,
     "min_level": 35,
     "quiz_tier": 3,
@@ -387,12 +409,21 @@
     "unidentified_name": "radiant ivory tome",
     "lore": "The word of divine judgment, written in letters of fire. This spell calls down holy wrath upon a single target, bypassing all mortal resistances. It was said to be the weapon of archangels against demons — pure righteous force that recognizes no shield, no armor, no magical ward.",
     "read_threshold": 4,
-    "floor_spawn_weight": {"1-34": 0, "35-55": 2, "56-80": 1, "81-100": 1}
+    "floor_spawn_weight": {
+      "1-34": 0,
+      "35-55": 2,
+      "56-80": 1,
+      "81-100": 1
+    }
   },
   "spellbook_summon_guardian": {
     "name": "Spellbook of Summon Guardian",
     "symbol": "+",
-    "color": [100, 200, 160],
+    "color": [
+      100,
+      200,
+      160
+    ],
     "weight": 1.5,
     "min_level": 30,
     "quiz_tier": 3,
@@ -403,12 +434,21 @@
     "unidentified_name": "moss-green tome with claw marks",
     "lore": "Druids of the ancient groves could call spirit-beasts from the aether to fight alongside them. The guardian manifests for a brief time — drawn from the essence of creatures the caster has encountered. It fights, it protects, and then it fades. But in those precious moments, you are not alone.",
     "read_threshold": 3,
-    "floor_spawn_weight": {"1-29": 0, "30-50": 2, "51-70": 2, "71-100": 1}
+    "floor_spawn_weight": {
+      "1-29": 0,
+      "30-50": 2,
+      "51-70": 2,
+      "71-100": 1
+    }
   },
   "spellbook_meteor": {
     "name": "Spellbook of Meteor",
     "symbol": "+",
-    "color": [255, 100, 30],
+    "color": [
+      255,
+      100,
+      30
+    ],
     "weight": 2.0,
     "min_level": 50,
     "quiz_tier": 4,
@@ -419,12 +459,20 @@
     "unidentified_name": "charred obsidian tome",
     "lore": "The most destructive evocation known to mortal spellcraft. A fragment of a dying star is summoned from the void and hurled into the material plane. Everything in sight burns. The original text was recovered from the Library of Alexandria — one of the few scrolls to survive the fire, ironically.",
     "read_threshold": 5,
-    "floor_spawn_weight": {"1-49": 0, "50-70": 1, "71-100": 1}
+    "floor_spawn_weight": {
+      "1-49": 0,
+      "50-70": 1,
+      "71-100": 1
+    }
   },
   "spellbook_time_freeze": {
     "name": "Spellbook of Time Freeze",
     "symbol": "+",
-    "color": [180, 220, 255],
+    "color": [
+      180,
+      220,
+      255
+    ],
     "weight": 2.0,
     "min_level": 60,
     "quiz_tier": 5,
@@ -435,6 +483,285 @@
     "unidentified_name": "crystalline tome that hums faintly",
     "lore": "To freeze time itself — this is the ambition that drove the greatest chronomancers to madness. The spell does not stop time; it suspends causality for all beings except the caster. For five heartbeats, nothing moves, nothing thinks, nothing acts. Use it to flee, to heal, to strike. It is the ultimate emergency — and finding this book may be the rarest stroke of fortune in your entire journey.",
     "read_threshold": 6,
-    "floor_spawn_weight": {"1-59": 0, "60-80": 1, "81-100": 1}
+    "floor_spawn_weight": {
+      "1-59": 0,
+      "60-80": 1,
+      "81-100": 1
+    }
+  },
+  "spellbook_fireball": {
+    "name": "Spellbook of Fireball",
+    "symbol": "+",
+    "color": [
+      255,
+      120,
+      40
+    ],
+    "weight": 1.5,
+    "min_level": 10,
+    "quiz_tier": 2,
+    "quiz_threshold": 3,
+    "spell_id": "fireball_spell",
+    "spell_name": "Fireball",
+    "mp_cost": 7,
+    "unidentified_name": "scorched crimson tome",
+    "floor_spawn_weight": {
+      "1-10": 0,
+      "11-40": 8,
+      "41-100": 4
+    },
+    "lore": "The quintessential battle mage's spell. A rolling sphere of flame engulfs everything in sight.",
+    "read_threshold": 3,
+    "sprite_desc": "A leather-bound spellbook with flame motifs and glowing orange runes on a charred cover"
+  },
+  "spellbook_slow": {
+    "name": "Spellbook of Slow Monster",
+    "symbol": "+",
+    "color": [
+      140,
+      180,
+      220
+    ],
+    "weight": 1.5,
+    "min_level": 10,
+    "quiz_tier": 2,
+    "quiz_threshold": 3,
+    "spell_id": "slow_spell",
+    "spell_name": "Slow Monster",
+    "mp_cost": 5,
+    "unidentified_name": "heavy leaden tome",
+    "floor_spawn_weight": {
+      "1-10": 0,
+      "11-40": 7,
+      "41-100": 3
+    },
+    "lore": "Temporal magic that saps the speed from a creature, leaving it sluggish and vulnerable.",
+    "read_threshold": 3,
+    "sprite_desc": "A slate-blue spellbook with a stylized hourglass embossed in silver on the cover"
+  },
+  "spellbook_knock": {
+    "name": "Spellbook of Knock",
+    "symbol": "+",
+    "color": [
+      200,
+      170,
+      80
+    ],
+    "weight": 1.5,
+    "min_level": 10,
+    "quiz_tier": 2,
+    "quiz_threshold": 3,
+    "spell_id": "knock_spell",
+    "spell_name": "Knock",
+    "mp_cost": 4,
+    "unidentified_name": "brass-clasped tome",
+    "floor_spawn_weight": {
+      "1-10": 0,
+      "11-40": 6,
+      "41-100": 3
+    },
+    "lore": "A locksmith's nightmare. This spell opens any mundane lock with a burst of arcane force.",
+    "read_threshold": 3,
+    "sprite_desc": "A brass-bound spellbook with a skeleton key motif on the cover and glowing keyhole symbol"
+  },
+  "spellbook_teleport_away": {
+    "name": "Spellbook of Teleport Away",
+    "symbol": "+",
+    "color": [
+      160,
+      100,
+      255
+    ],
+    "weight": 1.5,
+    "min_level": 15,
+    "quiz_tier": 2,
+    "quiz_threshold": 3,
+    "spell_id": "teleport_away_spell",
+    "spell_name": "Teleport Away",
+    "mp_cost": 6,
+    "unidentified_name": "shimmering violet tome",
+    "floor_spawn_weight": {
+      "1-15": 0,
+      "16-40": 7,
+      "41-100": 4
+    },
+    "lore": "Spatial magic that hurls a creature to a random location on the level. Or yourself, if you prefer.",
+    "read_threshold": 3,
+    "sprite_desc": "A violet spellbook with swirling portal imagery and silver spatial runes on the cover"
+  },
+  "spellbook_acid_arrow": {
+    "name": "Spellbook of Acid Arrow",
+    "symbol": "+",
+    "color": [
+      120,
+      220,
+      60
+    ],
+    "weight": 1.5,
+    "min_level": 25,
+    "quiz_tier": 3,
+    "quiz_threshold": 4,
+    "spell_id": "acid_arrow_spell",
+    "spell_name": "Acid Arrow",
+    "mp_cost": 8,
+    "unidentified_name": "corroded green tome",
+    "floor_spawn_weight": {
+      "1-25": 0,
+      "26-60": 6,
+      "61-100": 4
+    },
+    "lore": "An arrow of pure acid that burns on impact and continues to corrode flesh over time.",
+    "read_threshold": 4,
+    "sprite_desc": "A green-tinged spellbook with acid-etched designs and bubbling liquid trapped in the cover"
+  },
+  "spellbook_drain_life": {
+    "name": "Spellbook of Drain Life",
+    "symbol": "+",
+    "color": [
+      180,
+      40,
+      80
+    ],
+    "weight": 1.5,
+    "min_level": 30,
+    "quiz_tier": 3,
+    "quiz_threshold": 4,
+    "spell_id": "drain_life_spell",
+    "spell_name": "Drain Life",
+    "mp_cost": 10,
+    "unidentified_name": "blood-red tome",
+    "floor_spawn_weight": {
+      "1-30": 0,
+      "31-60": 6,
+      "61-100": 4
+    },
+    "lore": "Vampiric magic that tears life force from a creature and channels it into the caster.",
+    "read_threshold": 4,
+    "sprite_desc": "A dark crimson spellbook with veins of red light pulsing across its leather binding"
+  },
+  "spellbook_fear": {
+    "name": "Spellbook of Fear",
+    "symbol": "+",
+    "color": [
+      160,
+      80,
+      200
+    ],
+    "weight": 1.5,
+    "min_level": 25,
+    "quiz_tier": 3,
+    "quiz_threshold": 3,
+    "spell_id": "fear_spell",
+    "spell_name": "Fear",
+    "mp_cost": 7,
+    "unidentified_name": "unsettling dark tome",
+    "floor_spawn_weight": {
+      "1-25": 0,
+      "26-60": 6,
+      "61-100": 3
+    },
+    "lore": "Projects raw terror into a creature's mind, sending it fleeing in panic.",
+    "read_threshold": 3,
+    "sprite_desc": "A shadowy purple spellbook with a screaming face embossed in tarnished silver on the cover"
+  },
+  "spellbook_detect": {
+    "name": "Spellbook of Detect Monsters",
+    "symbol": "+",
+    "color": [
+      100,
+      220,
+      200
+    ],
+    "weight": 1.5,
+    "min_level": 25,
+    "quiz_tier": 3,
+    "quiz_threshold": 3,
+    "spell_id": "detect_spell",
+    "spell_name": "Detect Monsters",
+    "mp_cost": 6,
+    "unidentified_name": "luminous teal tome",
+    "floor_spawn_weight": {
+      "1-25": 0,
+      "26-60": 7,
+      "61-100": 4
+    },
+    "lore": "Expands the caster's awareness to sense every living creature on the level.",
+    "read_threshold": 3,
+    "sprite_desc": "A teal spellbook with an open eye symbol radiating concentric circles on the cover"
+  },
+  "spellbook_polymorph": {
+    "name": "Spellbook of Polymorph",
+    "symbol": "+",
+    "color": [
+      220,
+      180,
+      60
+    ],
+    "weight": 1.5,
+    "min_level": 30,
+    "quiz_tier": 3,
+    "quiz_threshold": 4,
+    "spell_id": "polymorph_spell",
+    "spell_name": "Polymorph",
+    "mp_cost": 9,
+    "unidentified_name": "shifting iridescent tome",
+    "floor_spawn_weight": {
+      "1-30": 0,
+      "31-60": 5,
+      "61-100": 4
+    },
+    "lore": "Warps reality around a creature, transforming it into something else entirely. Results vary.",
+    "read_threshold": 4,
+    "sprite_desc": "An iridescent spellbook whose cover shifts between animal shapes when viewed from different angles"
+  },
+  "spellbook_reflect": {
+    "name": "Spellbook of Reflect",
+    "symbol": "+",
+    "color": [
+      200,
+      200,
+      240
+    ],
+    "weight": 1.5,
+    "min_level": 40,
+    "quiz_tier": 4,
+    "quiz_threshold": 5,
+    "spell_id": "reflect_spell",
+    "spell_name": "Reflect",
+    "mp_cost": 11,
+    "unidentified_name": "mirror-bound tome",
+    "floor_spawn_weight": {
+      "1-40": 0,
+      "41-80": 5,
+      "81-100": 4
+    },
+    "lore": "Creates a shimmering aura that bounces hostile magic and status effects back at their source.",
+    "read_threshold": 5,
+    "sprite_desc": "A silver-white spellbook with a polished mirror fragment set into the center of its cover"
+  },
+  "spellbook_disintegrate": {
+    "name": "Spellbook of Disintegrate",
+    "symbol": "+",
+    "color": [
+      255,
+      50,
+      50
+    ],
+    "weight": 1.5,
+    "min_level": 60,
+    "quiz_tier": 5,
+    "quiz_threshold": 6,
+    "spell_id": "disintegrate_spell",
+    "spell_name": "Disintegrate",
+    "mp_cost": 18,
+    "unidentified_name": "ash-flecked obsidian tome",
+    "floor_spawn_weight": {
+      "1-60": 0,
+      "61-90": 4,
+      "91-100": 3
+    },
+    "lore": "The ultimate destruction spell. Reduces a creature to dust with a single word of power.",
+    "read_threshold": 6,
+    "sprite_desc": "A black obsidian spellbook with cracks of molten red light and ash drifting from its pages"
   }
 }

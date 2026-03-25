@@ -2747,5 +2747,161 @@
       "31-45": 2,
       "46-100": 0
     }
+  },
+  "wand_of_opening": {
+    "name": "wand of opening",
+    "symbol": "/",
+    "color": [
+      200,
+      170,
+      80
+    ],
+    "weight": 0.5,
+    "min_level": 5,
+    "charges_min": 4,
+    "charges_max": 7,
+    "max_charges": 7,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "knock",
+    "power": "",
+    "unidentified_name": "brass wand",
+    "lore": "A wand tipped with a miniature golden key. Point it at any lock and the mechanism springs open as if picked by an invisible hand.",
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-100": 1
+    },
+    "sprite_desc": "A polished brass wand with a tiny golden key shape at the tip"
+  },
+  "wand_of_locksmithing": {
+    "name": "wand of locksmithing",
+    "symbol": "/",
+    "color": [
+      220,
+      190,
+      100
+    ],
+    "weight": 0.5,
+    "min_level": 10,
+    "charges_min": 6,
+    "charges_max": 10,
+    "max_charges": 10,
+    "quiz_tier": 2,
+    "quiz_threshold": 3,
+    "effect": "knock",
+    "power": "",
+    "unidentified_name": "ornate gold wand",
+    "lore": "Crafted by the legendary locksmith-mages of the Thieves' Guild, this wand can defeat even the most complex locks with a casual flick.",
+    "floorSpawnWeight": {
+      "1-10": 0,
+      "11-40": 2,
+      "41-100": 1
+    },
+    "sprite_desc": "An ornate gold wand with intricate lock mechanism engravings and a jeweled keyhole at the tip"
+  },
+  "wand_of_turning": {
+    "name": "wand of undead turning",
+    "symbol": "/",
+    "color": [
+      255,
+      240,
+      180
+    ],
+    "weight": 0.5,
+    "min_level": 15,
+    "charges_min": 3,
+    "charges_max": 5,
+    "max_charges": 5,
+    "quiz_tier": 2,
+    "quiz_threshold": 3,
+    "effect": "turn_undead",
+    "power": "3d6",
+    "unidentified_name": "holy wand",
+    "lore": "Blessed by high priests and inscribed with sacred wards. Its light is anathema to the undead, searing their flesh and scattering their will.",
+    "floorSpawnWeight": {
+      "1-15": 0,
+      "16-40": 2,
+      "41-100": 1
+    },
+    "sprite_desc": "A white wooden wand with golden holy symbols and a softly glowing sunburst at the tip"
+  },
+  "wand_of_banishment": {
+    "name": "wand of banishment",
+    "symbol": "/",
+    "color": [
+      255,
+      255,
+      200
+    ],
+    "weight": 0.5,
+    "min_level": 30,
+    "charges_min": 3,
+    "charges_max": 5,
+    "max_charges": 5,
+    "quiz_tier": 3,
+    "quiz_threshold": 4,
+    "effect": "turn_undead",
+    "power": "4d8",
+    "unidentified_name": "radiant wand",
+    "lore": "A relic of the Grand Temple, this wand channels the purest holy energy. Undead caught in its beam are not merely turned but unmade.",
+    "floorSpawnWeight": {
+      "1-30": 0,
+      "31-60": 1,
+      "61-100": 1
+    },
+    "sprite_desc": "A radiant white-gold wand with angelic wings at the hilt and blazing holy light at the tip"
+  },
+  "wand_of_wonder": {
+    "name": "wand of wonder",
+    "symbol": "/",
+    "color": [
+      255,
+      100,
+      200
+    ],
+    "weight": 0.5,
+    "min_level": 10,
+    "charges_min": 5,
+    "charges_max": 10,
+    "max_charges": 10,
+    "quiz_tier": 2,
+    "quiz_threshold": 3,
+    "effect": "wonder",
+    "power": "",
+    "unidentified_name": "chaotic wand",
+    "lore": "Nobody knows what this wand will do next. It might heal you, blast your foes, or do something entirely unexpected. The chaos is the point.",
+    "floorSpawnWeight": {
+      "1-10": 0,
+      "11-40": 2,
+      "41-100": 2
+    },
+    "sprite_desc": "A multicolored swirling wand that shifts hues constantly with question marks floating around the tip"
+  },
+  "rod_of_chaos": {
+    "name": "rod of chaos",
+    "symbol": "/",
+    "color": [
+      200,
+      50,
+      255
+    ],
+    "weight": 0.5,
+    "min_level": 25,
+    "charges_min": 7,
+    "charges_max": 12,
+    "max_charges": 12,
+    "quiz_tier": 3,
+    "quiz_threshold": 4,
+    "effect": "wonder",
+    "power": "",
+    "unidentified_name": "pulsating wand",
+    "lore": "A more potent version of the wand of wonder, crackling with unstable magical energy. Each zap is a gamble with reality itself.",
+    "floorSpawnWeight": {
+      "1-25": 0,
+      "26-60": 1,
+      "61-100": 1
+    },
+    "sprite_desc": "A dark purple rod crackling with chaotic lightning and swirling reality-warping distortions at the tip"
   }
 }
