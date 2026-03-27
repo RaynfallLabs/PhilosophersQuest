@@ -10012,15 +10012,16 @@ class Game:
             self.add_message("You have no ranged weapon equipped.", 'warning')
             return
 
-        # Check ammo
+        # Check ammo (skip for infinite ammo weapons like Sling of David)
         ammo_type = weapon.requires_ammo
-        ammo_items = [i for i in self.player.inventory
-                      if getattr(i, 'ammo_type', None) == ammo_type]
-        if not ammo_items:
-            self.add_message(
-                f"You have no {ammo_type}s! Cannot fire the {weapon.name}.", 'warning'
-            )
-            return
+        if not getattr(weapon, 'infinite_ammo', False):
+            ammo_items = [i for i in self.player.inventory
+                          if getattr(i, 'ammo_type', None) == ammo_type]
+            if not ammo_items:
+                self.add_message(
+                    f"You have no {ammo_type}s! Cannot fire the {weapon.name}.", 'warning'
+                )
+                return
 
         # Build candidate list: visible alive monsters sorted by distance
         px, py = self.player.x, self.player.y
@@ -10549,22 +10550,24 @@ class Game:
         """Consume one ammo and launch the math chain quiz for a ranged shot."""
         weapon = self.player.ranged_weapon
         ammo_type = weapon.requires_ammo
+        ammo_item = None
 
-        # Consume one ammo item from inventory
-        ammo_item = next(
-            (i for i in self.player.inventory
-             if getattr(i, 'ammo_type', None) == ammo_type),
-            None
-        )
-        if not ammo_item:
-            self.add_message(f"Out of {ammo_type}s!", 'warning')
-            return
+        # Consume one ammo item (skip for infinite ammo weapons)
+        if not getattr(weapon, 'infinite_ammo', False):
+            ammo_item = next(
+                (i for i in self.player.inventory
+                 if getattr(i, 'ammo_type', None) == ammo_type),
+                None
+            )
+            if not ammo_item:
+                self.add_message(f"Out of {ammo_type}s!", 'warning')
+                return
 
-        # Decrement stack or remove
-        if getattr(ammo_item, 'count', 1) > 1:
-            ammo_item.count -= 1
-        else:
-            self.player.inventory.remove(ammo_item)
+            # Decrement stack or remove
+            if getattr(ammo_item, 'count', 1) > 1:
+                ammo_item.count -= 1
+            else:
+                self.player.inventory.remove(ammo_item)
 
         self.state = STATE_QUIZ
         self.combat_target = monster

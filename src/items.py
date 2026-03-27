@@ -63,6 +63,7 @@ class Weapon(Item):
         self.ignore_shield: bool        = bool(defn.get('ignoreShield', defn.get('ignore_shield', False)))
         self.crit_multiplier: float     = float(defn.get('critMultiplier', defn.get('crit_multiplier', 1.0)))
         self.requires_ammo: str | None  = defn.get('requiresAmmo', defn.get('requires_ammo', None))
+        self.infinite_ammo: bool        = bool(defn.get('infiniteAmmo', defn.get('infinite_ammo', False)))
         self.floor_spawn_weight: dict   = defn.get('floorSpawnWeight', defn.get('floor_spawn_weight', {}))
         self.container_loot_tier: str   = defn.get('containerLootTier', defn.get('container_loot_tier', 'common'))
         self.value: int                 = int(defn.get('value', 50))
