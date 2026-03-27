@@ -356,25 +356,5 @@
     "value": 5,
     "unidentified_name": "red shotgun shells",
     "lore": "Twelve-gauge buckshot shells. Each one contains nine lead pellets that spread into a devastating pattern at close range. The red plastic hull and brass base are unmistakable. S-Mart brand."
-  },
-  "sling_stone": {
-    "name": "sling stone",
-    "symbol": "o",
-    "color": [160, 150, 130],
-    "weight": 0.1,
-    "min_level": 1,
-    "ammo_type": "stone",
-    "tier": 1,
-    "damage_bonus": 1,
-    "count_min": 10,
-    "count_max": 25,
-    "floor_spawn_weight": {
-      "1-20": 40,
-      "21-40": 20,
-      "41-100": 5
-    },
-    "value": 1,
-    "unidentified_name": "smooth stones",
-    "lore": "River-smoothed stones, each selected for weight and balance. David chose five such stones from the brook before he faced Goliath. A skilled slinger can hurl one with enough force to crack bone."
   }
 }
