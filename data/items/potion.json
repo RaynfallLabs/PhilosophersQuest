@@ -22,75 +22,6 @@
     },
     "lore": "Brewed from cave moss and blessed spring water by wandering hedge-witches, this potion knits torn flesh with a gentle warmth that spreads from the stomach outward. The blue fizz is a sign of freshness — flat potions still work, but carry a faintly sour aftertaste. Adventurers the world over consider it as essential as a good pair of boots."
   },
-  "potion_of_healing_ii": {
-    "name": "potion of healing",
-    "unidentified_name": "pearlescent white draught",
-    "symbol": "!",
-    "color": [
-      230,
-      230,
-      255
-    ],
-    "weight": 0.4,
-    "min_level": 1,
-    "effect": "heal",
-    "power": "2d8+4",
-    "duration": 0,
-    "floorSpawnWeight": {
-      "1-20": 90,
-      "21-40": 60,
-      "41-60": 40,
-      "61-80": 25,
-      "81-100": 15
-    },
-    "lore": "This pearlescent variant of the common healing potion is made by a coastal order of hedge-witches who substitute blessed sea-spray for cave spring water in the base formula. The resulting draught has a faintly luminescent quality and tastes of salt and something floral. Whether it works any better than the blue variety is debated endlessly; the debate is entirely academic when you are bleeding."
-  },
-  "potion_of_healing_iii": {
-    "name": "potion of healing",
-    "unidentified_name": "rose-pink effervescence",
-    "symbol": "!",
-    "color": [
-      255,
-      180,
-      200
-    ],
-    "weight": 0.4,
-    "min_level": 1,
-    "effect": "heal",
-    "power": "2d8+4",
-    "duration": 0,
-    "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 55,
-      "41-60": 35,
-      "61-80": 20,
-      "81-100": 10
-    },
-    "lore": "A third common variant of the healing draught, this one brewed by an order of apothecaries who add pressed rose petals to the fermenting moss slurry. The pink effervescence smells pleasantly of flowers, which makes it the preferred choice of healers who work with anxious or squeamish patients. In the dungeon, the pleasant smell is the only comfort on offer."
-  },
-  "potion_of_healing_iv": {
-    "name": "potion of healing",
-    "unidentified_name": "warm red phial",
-    "symbol": "!",
-    "color": [
-      210,
-      60,
-      60
-    ],
-    "weight": 0.4,
-    "min_level": 2,
-    "effect": "heal",
-    "power": "3d8+6",
-    "duration": 0,
-    "floorSpawnWeight": {
-      "1-20": 60,
-      "21-40": 70,
-      "41-60": 50,
-      "61-80": 30,
-      "81-100": 20
-    },
-    "lore": "This slightly more potent healing variant draws its warmth from a higher concentration of cavebloom extract, which remains faintly warm to the touch even after months in storage. The heat you feel drinking it is real — the compound briefly raises core body temperature by a fraction of a degree, and the accelerated metabolism is what drives the faster healing. Soldiers on campaign carry these in inside pockets to keep them from the cold."
-  },
   "potion_of_extra_healing": {
     "name": "potion of extra healing",
     "unidentified_name": "thick red syrup",
@@ -113,52 +44,6 @@
       "81-100": 30
     },
     "lore": "Where ordinary healing potions merely close wounds, this viscous crimson draught reaches deeper — mending cracked bone, soothing bruised organs, and flooding the blood with stolen vitality. It tastes of iron and overripe cherries, and leaves the throat faintly numb for an hour. Apothecaries who make it regularly develop red-stained fingers that never quite wash clean."
-  },
-  "potion_of_extra_healing_ii": {
-    "name": "potion of extra healing",
-    "unidentified_name": "viscous scarlet liquid",
-    "symbol": "!",
-    "color": [
-      220,
-      40,
-      50
-    ],
-    "weight": 0.4,
-    "min_level": 6,
-    "effect": "extra_heal",
-    "power": "4d8+10",
-    "duration": 0,
-    "floorSpawnWeight": {
-      "1-20": 30,
-      "21-40": 80,
-      "41-60": 70,
-      "61-80": 45,
-      "81-100": 25
-    },
-    "lore": "Indistinguishable in effect from the thick red syrup variant, this scarlet liquid is slightly thinner and pours more quickly — a practical consideration when you are under attack and fumbling with a stopper. The formula was optimised by a battlefield alchemist who noted that the extra two seconds spent pouring cost several soldiers their lives. The dungeon rewards this kind of pragmatic thinking."
-  },
-  "potion_of_extra_healing_iii": {
-    "name": "potion of extra healing",
-    "unidentified_name": "cheerfully bright red phial",
-    "symbol": "!",
-    "color": [
-      240,
-      60,
-      60
-    ],
-    "weight": 0.4,
-    "min_level": 7,
-    "effect": "extra_heal",
-    "power": "5d8+12",
-    "duration": 0,
-    "floorSpawnWeight": {
-      "1-20": 20,
-      "21-40": 60,
-      "41-60": 75,
-      "61-80": 50,
-      "81-100": 30
-    },
-    "lore": "The alarmingly cheerful red of this phial is achieved by adding crushed firefly thorax to the standard extra healing formula, which also marginally increases the healing yield. Dungeon runners have noted that finding one in the middle of a terrible run feels almost comically fortunate, which is why they have taken to calling it 'the universe apologising.' The universe apologises with surprising frequency in the deeper levels."
   },
   "potion_of_full_healing": {
     "name": "potion of full healing",
@@ -183,29 +68,6 @@
     },
     "lore": "Said to contain a single tear wept by a dying god, suspended in distilled sunlight and carried in amber so the radiance does not escape. Drinking it is like swallowing a sunrise — every wound closes, every ache vanishes, and for a moment the drinker glimpses what it feels like to be whole. Theologians argue whether this constitutes a miracle or a theft."
   },
-  "potion_of_full_healing_ii": {
-    "name": "potion of full healing",
-    "unidentified_name": "softly glowing amber",
-    "symbol": "!",
-    "color": [
-      240,
-      165,
-      30
-    ],
-    "weight": 0.4,
-    "min_level": 25,
-    "effect": "full_heal",
-    "power": "",
-    "duration": 0,
-    "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 0,
-      "41-60": 8,
-      "61-80": 18,
-      "81-100": 28
-    },
-    "lore": "A slightly cooler glow than the primary full healing formula marks this variant, brewed by a reclusive order of sun-monks who work only at dawn. They claim the quality of the light captured at sunrise is superior to that of midday, and that this makes the potion's healing deeper and more permanent. No study has confirmed this. No study has been conducted on the deepest dungeon floors, where these matter most."
-  },
   "potion_of_stamina": {
     "name": "potion of stamina",
     "unidentified_name": "bubbling green goo",
@@ -228,52 +90,6 @@
       "81-100": 30
     },
     "lore": "Made from the rendered fat of deep-cave beetles mixed with powdered gingerroot and something the recipe only ever calls 'the green,' this thick, bubbling draught replenishes stamina with startling efficiency. It smells appalling and tastes worse, but dungeon runners swear by it — particularly the ones who survive long enough to swear at all. The bubbles are a byproduct of fermentation and serve no known purpose."
-  },
-  "potion_of_stamina_ii": {
-    "name": "potion of stamina",
-    "unidentified_name": "bitter yellow liquid",
-    "symbol": "!",
-    "color": [
-      220,
-      200,
-      30
-    ],
-    "weight": 0.4,
-    "min_level": 1,
-    "effect": "restore_sp",
-    "power": "3d10+20",
-    "duration": 0,
-    "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 60,
-      "41-60": 50,
-      "61-80": 35,
-      "81-100": 25
-    },
-    "lore": "Fermented from bitter cave-root and enriched with mineral salts scraped from underground hot springs, this yellow draught is the staple ration of dungeon porters and delvers who cannot afford to rest. The taste is legendarily foul — somewhere between strong medicine and something that has given up pretending to be food. It works, though. It always works."
-  },
-  "potion_of_stamina_iii": {
-    "name": "potion of stamina",
-    "unidentified_name": "jade green draught",
-    "symbol": "!",
-    "color": [
-      50,
-      170,
-      70
-    ],
-    "weight": 0.4,
-    "min_level": 3,
-    "effect": "restore_sp",
-    "power": "4d10+30",
-    "duration": 0,
-    "floorSpawnWeight": {
-      "1-20": 60,
-      "21-40": 70,
-      "41-60": 65,
-      "61-80": 45,
-      "81-100": 35
-    },
-    "lore": "The jade tint of this stamina variant comes from the addition of crushed nephrite, a stone the mountain folk use in their endurance rituals before long climbs. Whether the stone's contribution is alchemical or purely symbolic is an argument for scholars; what is not debated is that this formulation restores slightly more stamina than the standard recipe. The crunch is not a defect. It is a feature. Allegedly."
   },
   "potion_of_cure_poison": {
     "name": "potion of cure poison",
@@ -298,29 +114,6 @@
     },
     "lore": "Alchemists discovered this formula by accident when a batch of rose-water cordial was contaminated with antivenom bark from the Thornwood forests. The resulting pink effervescence neutralises most natural venoms within seconds of reaching the bloodstream. It is one of the few potions considered safe to give to children — though the circumstances that make it necessary for a child are considerably less safe."
   },
-  "potion_of_cure_poison_ii": {
-    "name": "potion of cure poison",
-    "unidentified_name": "luminous coral flask",
-    "symbol": "!",
-    "color": [
-      255,
-      120,
-      100
-    ],
-    "weight": 0.4,
-    "min_level": 3,
-    "effect": "cure_poison",
-    "power": "",
-    "duration": 0,
-    "floorSpawnWeight": {
-      "1-20": 60,
-      "21-40": 60,
-      "41-60": 55,
-      "61-80": 45,
-      "81-100": 35
-    },
-    "lore": "Harvested from a reef coral species found only in underground saltwater lakes, the glowing orange-pink compound in this flask disrupts venom molecules with remarkable specificity. Deep-sea dwarves developed the recipe and trade it jealously; the surface versions are pale imitations that work nearly as well and are considerably cheaper. The luminescence, which fades within a day of brewing, is sometimes used as torchlight in desperate circumstances."
-  },
   "potion_of_cure_disease": {
     "name": "potion of cure disease",
     "unidentified_name": "oily green bottle",
@@ -343,29 +136,6 @@
       "81-100": 40
     },
     "lore": "The oily sheen on this liquid comes from the rendered bladder-sac of a marsh lizard, which produces compounds hostile to bacterial and fungal infections alike. Field healers carry these in padded satchels alongside bandages and bone-saws, knowing that in the deep places of the world, disease kills more adventurers than monsters do. It works best administered within the first hour of infection, but late is vastly preferable to never."
-  },
-  "potion_of_cure_disease_ii": {
-    "name": "potion of cure disease",
-    "unidentified_name": "sea-foam green liquid",
-    "symbol": "!",
-    "color": [
-      80,
-      200,
-      160
-    ],
-    "weight": 0.4,
-    "min_level": 4,
-    "effect": "cure_disease",
-    "power": "",
-    "duration": 0,
-    "floorSpawnWeight": {
-      "1-20": 40,
-      "21-40": 55,
-      "41-60": 55,
-      "61-80": 45,
-      "81-100": 35
-    },
-    "lore": "This lighter, more pleasant-tasting disease cure is brewed using fermented sea-grass instead of marsh lizard bile, which makes it significantly more palatable to administer and significantly less profitable to make. It has a faint oceanic smell that dungeon delvers report as the most cheerful thing about their surroundings. The foam that forms when shaken is harmless and indicates proper fermentation."
   },
   "potion_of_cure_all": {
     "name": "potion of cure all",
@@ -390,29 +160,6 @@
     },
     "lore": "No single alchemist claims credit for this formula — it appears in a dozen traditions simultaneously, as if the ingredients themselves decided to cooperate. The silver shimmer comes from dissolved moonstone suspended in purified quicksilver, and drinking it scours the body clean of poison, plague, corruption, and a handful of maladies that do not yet have names. Physicians who have witnessed its effect describe the colour returning to a dying patient's face as the most beautiful thing they have ever seen."
   },
-  "potion_of_cure_all_ii": {
-    "name": "potion of cure all",
-    "unidentified_name": "murky teal concoction",
-    "symbol": "!",
-    "color": [
-      40,
-      140,
-      130
-    ],
-    "weight": 0.4,
-    "min_level": 18,
-    "effect": "cure_all",
-    "power": "",
-    "duration": 0,
-    "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 10,
-      "41-60": 20,
-      "61-80": 35,
-      "81-100": 40
-    },
-    "lore": "Murkier and less refined than its silver cousin, this field-brewed cure-all is made to a recipe passed between dungeon medics in whispered fragments — no one holds the complete formula, and each batch is slightly different. The teal colour suggests kelp extract as a base, and the murk indicates a less thorough filtration process. It works as well as the expensive version, which embarrasses the apothecaries' guild enormously."
-  },
   "potion_of_haste": {
     "name": "potion of haste",
     "unidentified_name": "frothy orange flask",
@@ -435,52 +182,6 @@
       "81-100": 55
     },
     "lore": "Flavoured with citrus peel and frothed by the sheer kinetic energy building inside it, this potion unlocks something in the nervous system that most practitioners consider better left locked. Time does not slow — the drinker simply moves faster through it, heartbeat hammering, thoughts sparking. The crash afterward is legendary: users sleep for twelve hours and wake starving."
-  },
-  "potion_of_haste_ii": {
-    "name": "potion of haste",
-    "unidentified_name": "iridescent teal liquid",
-    "symbol": "!",
-    "color": [
-      40,
-      200,
-      200
-    ],
-    "weight": 0.4,
-    "min_level": 12,
-    "effect": "haste",
-    "power": "",
-    "duration": 40,
-    "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 20,
-      "41-60": 40,
-      "61-80": 55,
-      "81-100": 50
-    },
-    "lore": "Where the orange variety is brash and aggressive, this teal-hued formulation achieves speed through a more elegant mechanism — it does not force the body faster so much as it removes the body's reluctance to move at all. The iridescence is a side effect of the catalyst mineral, which briefly makes the drinker's veins faintly visible through the skin, pulsing with colour. Observers find this either beautiful or deeply unsettling."
-  },
-  "potion_of_haste_iii": {
-    "name": "potion of haste",
-    "unidentified_name": "crackle-charged vial",
-    "symbol": "!",
-    "color": [
-      255,
-      220,
-      60
-    ],
-    "weight": 0.4,
-    "min_level": 14,
-    "effect": "haste",
-    "power": "",
-    "duration": 50,
-    "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 10,
-      "41-60": 30,
-      "61-80": 50,
-      "81-100": 50
-    },
-    "lore": "Visible static electricity crawls across the inside of this vial's glass, and the liquid within vibrates at a frequency perceptible to the fingertips. The formula incorporates storm-elemental essence as a catalyst, and the resulting haste is sharper and more violent than standard recipes — the drinker does not simply move faster but moves as though the world has decided to get out of the way. The crackling in the ears afterward lasts for hours."
   },
   "potion_of_invisibility": {
     "name": "potion of invisibility",
@@ -505,29 +206,6 @@
     },
     "lore": "This liquid is almost impossible to see even before it is drunk — the bottle appears empty, the fluid detectable only by its weight and a faint sparkle when light hits it at precisely the right angle. Rogues who use it regularly report a creeping philosophical unease: if no one can see you, they ask, in what sense are you truly there? The potion does not answer. Neither does anyone else."
   },
-  "potion_of_invisibility_ii": {
-    "name": "potion of invisibility",
-    "unidentified_name": "glass-clear vial with sediment",
-    "symbol": "!",
-    "color": [
-      210,
-      235,
-      250
-    ],
-    "weight": 0.4,
-    "min_level": 10,
-    "effect": "invisibility",
-    "power": "",
-    "duration": 70,
-    "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 15,
-      "41-60": 35,
-      "61-80": 50,
-      "81-100": 45
-    },
-    "lore": "The small sediment at the base of this nearly clear vial is a suspension of light-scattering crystals that have begun to settle out of solution. Shake before drinking, or the first swallow does very little and the second makes you invisible so abruptly it is startling. The extended duration compared to the standard formula makes it the preferred choice of dungeon scouts, who have a professional interest in staying unseen for as long as possible."
-  },
   "potion_of_regeneration": {
     "name": "potion of regeneration",
     "unidentified_name": "deep crimson brew",
@@ -550,29 +228,6 @@
       "81-100": 50
     },
     "lore": "Distilled from the blood of creatures too stubborn to die — cave trolls, deep-sea worms, creatures that regrow limbs with cheerful indifference — this dark brew infuses the drinker's cells with borrowed persistence. Wounds close at the edge of perception, like watching ice melt but in reverse. Those who consume it regularly begin to notice their scars fading, then their old injuries, then sometimes memories attached to both."
-  },
-  "potion_of_regeneration_ii": {
-    "name": "potion of regeneration",
-    "unidentified_name": "blood-red phial",
-    "symbol": "!",
-    "color": [
-      180,
-      20,
-      20
-    ],
-    "weight": 0.4,
-    "min_level": 15,
-    "effect": "regeneration",
-    "power": "1d4",
-    "duration": 80,
-    "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 15,
-      "41-60": 35,
-      "61-80": 50,
-      "81-100": 45
-    },
-    "lore": "This concentrate is made by reducing troll-blood extract down to one tenth of its original volume, resulting in something so aggressively determined to heal that drinking it causes a brief, vivid flash of pain as the body catches up with the potion's ambitions. The colour is almost arterial and the smell is metallic and warm. It works faster than any other regenerative compound known, and nobody who has used it once ever turns down a second."
   },
   "potion_of_heroism": {
     "name": "potion of heroism",
@@ -597,52 +252,6 @@
     },
     "lore": "Thick as honey and nearly as sweet, this golden draught floods the muscles with something between courage and delusion, temporarily granting the kind of brute strength that moves boulders and bends iron bars. Epic poems have been written about battles won while under its influence. Fewer poems celebrate the aftermath, when the potion wears off and the hero is left holding a door they somehow ripped from its hinges."
   },
-  "potion_of_heroism_ii": {
-    "name": "potion of heroism",
-    "unidentified_name": "faintly glowing draught",
-    "symbol": "!",
-    "color": [
-      255,
-      220,
-      100
-    ],
-    "weight": 0.4,
-    "min_level": 12,
-    "effect": "heroism",
-    "power": "",
-    "duration": 50,
-    "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 15,
-      "41-60": 35,
-      "61-80": 45,
-      "81-100": 40
-    },
-    "lore": "This variation on the heroism formula adds phosphorescent compounds from deep-sea jellyfish, giving it a soft radiance that increases as the drinker's strength peaks. In dark corridors a warrior under its influence glows faintly gold — inspiring to allies, unsettling to enemies, and deeply inconvenient for anyone who was hoping to move quietly. No one who makes tactical decisions while drinking this has ever been known for subtlety."
-  },
-  "potion_of_heroism_iii": {
-    "name": "potion of heroism",
-    "unidentified_name": "rippling gold liquid",
-    "symbol": "!",
-    "color": [
-      230,
-      195,
-      20
-    ],
-    "weight": 0.4,
-    "min_level": 14,
-    "effect": "heroism",
-    "power": "",
-    "duration": 60,
-    "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 10,
-      "41-60": 30,
-      "61-80": 45,
-      "81-100": 40
-    },
-    "lore": "The surface of this liquid moves as if disturbed by a current invisible to the eye — a visual artifact of the resonance energy stored within the formula. Of the three common heroism preparations, this one produces the longest-lasting effect and the most dramatic initial surge, which warriors describe as feeling like the world finally making sense. The rippling stops the moment the stopper is removed, which experienced users have learned to interpret as a starting pistol."
-  },
   "potion_of_brilliance": {
     "name": "potion of brilliance",
     "unidentified_name": "crystalline vial",
@@ -665,29 +274,6 @@
       "81-100": 12
     },
     "lore": "A concentrated masterwork of alchemical art, this shimmering potion floods the drinker's arcane pathways with a torrent of pure magical energy. Unlike the milder mana potion, brilliance fully saturates every magical channel, restoring a far greater portion of MP. It is said the formula was devised by a philosopher who mapped the inner architecture of the human soul."
-  },
-  "potion_of_brilliance_ii": {
-    "name": "potion of brilliance",
-    "unidentified_name": "silver-threaded vial",
-    "symbol": "!",
-    "color": [
-      180,
-      180,
-      255
-    ],
-    "weight": 0.4,
-    "min_level": 12,
-    "effect": "brilliance",
-    "power": "",
-    "duration": 50,
-    "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 15,
-      "41-60": 35,
-      "61-80": 45,
-      "81-100": 40
-    },
-    "lore": "The silver threads visible in this vial are strands of dissolved philosopher's wire — an alchemical material made from refined thought-metal found only in veins near magical fonts. When dissolved into the brilliance base, they dramatically amplify the formula's effect on pattern recognition and intuition. Mages who have drunk it describe seeing the underlying grammar of reality, and are either elevated or broken by what they find."
   },
   "potion_of_levitation": {
     "name": "potion of levitation",
@@ -712,29 +298,6 @@
     },
     "lore": "The violet mist inside this vial is not actually liquid — it is a suspension of lighter-than-air particles in a carrier fluid, and drinking it briefly inverts the drinker's relationship with gravity. Used wisely it grants passage over hazards that would be lethal to traverse on foot. Used unwisely, it lifts the drinker to the ceiling where they wait in embarrassed suspension until the effect expires."
   },
-  "potion_of_levitation_ii": {
-    "name": "potion of levitation",
-    "unidentified_name": "aquamarine shimmer",
-    "symbol": "!",
-    "color": [
-      60,
-      200,
-      180
-    ],
-    "weight": 0.4,
-    "min_level": 9,
-    "effect": "levitation",
-    "power": "",
-    "duration": 70,
-    "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 25,
-      "41-60": 45,
-      "61-80": 40,
-      "81-100": 30
-    },
-    "lore": "This formulation of the levitation draught was perfected by a sea-wizard who spent decades studying the way certain sea creatures achieve neutral buoyancy. The aquamarine shimmer reflects that origin — it smells faintly of the ocean and causes the drinker's hair to float for the duration, as if submerged. Those who have experienced both say that floating in the dungeon feels nothing like floating in the sea, and not in a good way."
-  },
   "potion_of_restore_strength": {
     "name": "potion of restore strength",
     "unidentified_name": "rusty bronze potion",
@@ -758,29 +321,6 @@
     },
     "lore": "The bronze tinge comes from trace minerals drawn from iron-rich cave springs, and the potion works by repairing the subtle cellular damage that disease inflicts on muscle tissue. Fighters who have suffered the wasting sickness clutch these with a desperation that goes beyond tactical — there is something uniquely terrible about watching your own strength drain away, and something uniquely comforting about getting it back."
   },
-  "potion_of_restore_strength_ii": {
-    "name": "potion of restore strength",
-    "unidentified_name": "lumpy brown concoction",
-    "symbol": "!",
-    "color": [
-      140,
-      90,
-      50
-    ],
-    "weight": 0.4,
-    "min_level": 6,
-    "effect": "restore_str",
-    "power": "",
-    "duration": 0,
-    "floorSpawnWeight": {
-      "1-20": 20,
-      "21-40": 40,
-      "41-60": 45,
-      "61-80": 40,
-      "81-100": 35
-    },
-    "lore": "This lumpy variant of the strength-restoring formula has not been strained properly, and the brown chunks suspended in it are clots of concentrated mineral compound that dissolve in the stomach rather than the bottle. It is, objectively, less pleasant to drink than the smooth version. Practically speaking, when your muscles are wasting from dungeon rot and you have a choice between lumpy and nothing, lumpy wins every time."
-  },
   "potion_of_gain_level": {
     "name": "potion of gain level",
     "unidentified_name": "starlit blue potion",
@@ -803,29 +343,6 @@
       "81-100": 10
     },
     "lore": "Something in this potion resonates with the invisible threads that bind the dungeon's architecture together, and drinking it severs the ones holding the drinker to the current floor — propelling them upward, closer to daylight, closer to safety. The stars swirling in the depths of the liquid are not a decoration. Scholars who have studied them claim they form a map, but no one has yet determined what it leads to."
-  },
-  "potion_of_gain_level_ii": {
-    "name": "potion of gain level",
-    "unidentified_name": "midnight blue draught",
-    "symbol": "!",
-    "color": [
-      15,
-      20,
-      130
-    ],
-    "weight": 0.4,
-    "min_level": 30,
-    "effect": "gain_level",
-    "power": "",
-    "duration": 0,
-    "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 0,
-      "41-60": 3,
-      "61-80": 6,
-      "81-100": 8
-    },
-    "lore": "Deep as the space between stars and nearly as cold, this dense midnight liquid is made by distilling the essence of an entire dungeon level down into a single mouthful. It tastes of stone and distance and endings. Drinking it feels like falling upward. Wise adventurers who find one deep in the dungeon tuck it away carefully, because a second chance at the surface is worth more than anything else the dungeon has to offer."
   },
   "potion_of_fire_resistance": {
     "name": "potion of fire resistance",
@@ -919,52 +436,6 @@
     },
     "lore": "At some point between brewing and bottling this murky concoction something went terribly wrong — or perhaps terribly right, depending on who prepared it and for whom. The confusion it induces is profound: cardinal directions lose meaning, faces blur into one another, and simple decisions become agonising labyrinths. Unscrupulous merchants have been known to sell it labelled as something else entirely."
   },
-  "potion_of_confusion_ii": {
-    "name": "potion of confusion",
-    "unidentified_name": "neon green ooze",
-    "symbol": "!",
-    "color": [
-      80,
-      255,
-      80
-    ],
-    "weight": 0.4,
-    "min_level": 1,
-    "effect": "confusion",
-    "power": "",
-    "duration": 30,
-    "floorSpawnWeight": {
-      "1-20": 30,
-      "21-40": 30,
-      "41-60": 25,
-      "61-80": 20,
-      "81-100": 15
-    },
-    "lore": "The unsettling luminescence of this ooze is caused by bioluminescent mold spores suspended in a confusion-inducing base, harvested from the deeper fungal gardens where the walls glow and the air tastes of wrongness. Anyone who has spent time in those gardens knows the disorientation the spores produce — the alchemist who first thought to bottle it was either brilliant or deeply unpleasant, possibly both."
-  },
-  "potion_of_confusion_iii": {
-    "name": "potion of confusion",
-    "unidentified_name": "murky chartreuse flask",
-    "symbol": "!",
-    "color": [
-      150,
-      200,
-      50
-    ],
-    "weight": 0.4,
-    "min_level": 2,
-    "effect": "confusion",
-    "power": "",
-    "duration": 35,
-    "floorSpawnWeight": {
-      "1-20": 25,
-      "21-40": 30,
-      "41-60": 30,
-      "61-80": 25,
-      "81-100": 20
-    },
-    "lore": "This foul-smelling chartreuse variant of the confusion compound was developed in a coastal city where the base ingredient — fermented lamprey bile — was plentiful and cheap. The chartreuse colour comes from a secondary fermentation that does nothing to improve the taste or reduce the effect. Anyone who drinks it with the intention of clarity of mind has not read the label, which admittedly is often missing."
-  },
   "potion_of_blindness": {
     "name": "potion of blindness",
     "unidentified_name": "smoky black vial",
@@ -987,52 +458,6 @@
       "81-100": 20
     },
     "lore": "The smoke trapped inside this vial is not decorative — it is the active ingredient, a condensed extract of cave-blind fish eye that, when absorbed through the stomach lining, temporarily disables the optical nerve's ability to interpret light. Assassins use it as a trap, leaving these among valuable items. In the dark of the dungeon, adding blindness to darkness feels like the universe making a particularly cruel joke."
-  },
-  "potion_of_blindness_ii": {
-    "name": "potion of blindness",
-    "unidentified_name": "faintly smoking vial",
-    "symbol": "!",
-    "color": [
-      80,
-      60,
-      100
-    ],
-    "weight": 0.4,
-    "min_level": 2,
-    "effect": "blindness",
-    "power": "",
-    "duration": 25,
-    "floorSpawnWeight": {
-      "1-20": 25,
-      "21-40": 30,
-      "41-60": 25,
-      "61-80": 20,
-      "81-100": 15
-    },
-    "lore": "Unlike its fully black cousin, this vial only faintly smokes — the blindness compound here is derived from an incomplete reduction of cave-blind fish extract, which makes it marginally less terrifying to look at and precisely as terrible to drink. The smoke that curls from the stopper has the faint smell of burnt violet, and alchemists argue whether this means it is safer. It is not."
-  },
-  "potion_of_blindness_iii": {
-    "name": "potion of blindness",
-    "unidentified_name": "smoke-filled transparent bottle",
-    "symbol": "!",
-    "color": [
-      100,
-      90,
-      110
-    ],
-    "weight": 0.4,
-    "min_level": 3,
-    "effect": "blindness",
-    "power": "",
-    "duration": 20,
-    "floorSpawnWeight": {
-      "1-20": 20,
-      "21-40": 25,
-      "41-60": 25,
-      "61-80": 20,
-      "81-100": 15
-    },
-    "lore": "Through the glass of this transparent bottle you can clearly see the oily dark smoke coiled inside, which is either reassuring (you can see what you are getting) or deeply alarming (you can see exactly what you are getting). The shorter duration compared to other blindness formulations is cold comfort when you are in a dungeon full of things trying to eat you."
   },
   "potion_of_poison": {
     "name": "potion of poison",
@@ -1057,52 +482,6 @@
     },
     "lore": "It takes genuine skill to brew something this actively hostile and make it look drinkable, but whoever formulated this slimy concoction was clearly a professional in the worst possible sense. The purple colour comes from concentrated spider toxin, the sliminess from a binder that ensures the poison sticks to whatever it touches. Some dungeon ecologists believe these spawn naturally, as if the dungeon itself wanted to thin the adventurer population."
   },
-  "potion_of_poison_ii": {
-    "name": "potion of poison",
-    "unidentified_name": "ichor-black flask",
-    "symbol": "!",
-    "color": [
-      20,
-      10,
-      20
-    ],
-    "weight": 0.4,
-    "min_level": 3,
-    "effect": "poison",
-    "power": "1d4",
-    "duration": 0,
-    "floorSpawnWeight": {
-      "1-20": 25,
-      "21-40": 30,
-      "41-60": 30,
-      "61-80": 25,
-      "81-100": 20
-    },
-    "lore": "This flask holds something that seems less like a liquid and more like a concentrated absence of life — the ichor-black fluid absorbs light rather than reflecting it, and the bottle feels slightly colder than the air around it. Necromancers prize the residue for rituals. Sensible people leave it where they found it. The fact that it keeps appearing in dungeons suggests that either necromancers are careless or the dungeon has opinions about adventurer survival rates."
-  },
-  "potion_of_poison_iii": {
-    "name": "potion of poison",
-    "unidentified_name": "tightly corked tar phial",
-    "symbol": "!",
-    "color": [
-      30,
-      25,
-      10
-    ],
-    "weight": 0.4,
-    "min_level": 4,
-    "effect": "poison",
-    "power": "1d6",
-    "duration": 0,
-    "floorSpawnWeight": {
-      "1-20": 20,
-      "21-40": 28,
-      "41-60": 28,
-      "61-80": 22,
-      "81-100": 18
-    },
-    "lore": "The tar-like substance in this tightly stoppered phial requires genuine force to pour — when upended it moves with the reluctance of something that knows where it is going and objects to the journey. It is, counterintuitively, a more potent poison than the freely flowing variants: the viscosity reflects a higher concentration of the active compounds. The cork is waxed for a reason. Do not break it."
-  },
   "potion_of_paralysis": {
     "name": "potion of paralysis",
     "unidentified_name": "grey ashen draught",
@@ -1125,52 +504,6 @@
       "81-100": 15
     },
     "lore": "Ground from the ash of a particular deep-cave mushroom that the locals call the Stillness Cap, this draught interrupts signals between brain and body with terrifying efficiency. The effect is mercifully brief — the drinker's mind remains active, aware of every detail of their paralysed predicament, while their body refuses to cooperate. Survivors describe it as the longest eight seconds of their lives."
-  },
-  "potion_of_paralysis_ii": {
-    "name": "potion of paralysis",
-    "unidentified_name": "chalky white potion",
-    "symbol": "!",
-    "color": [
-      220,
-      215,
-      210
-    ],
-    "weight": 0.4,
-    "min_level": 3,
-    "effect": "paralysis",
-    "power": "",
-    "duration": 8,
-    "floorSpawnWeight": {
-      "1-20": 20,
-      "21-40": 25,
-      "41-60": 25,
-      "61-80": 20,
-      "81-100": 15
-    },
-    "lore": "This chalky suspension of mineral salts and neural-inhibiting compounds is the dungeon alchemist's answer to a philosophical question: what is the minimum substance required to produce maximum inconvenience? The chalk settles if left undisturbed, which is why the instructions say to shake before drinking — instructions nobody reads, on a potion nobody should be drinking voluntarily."
-  },
-  "potion_of_paralysis_iii": {
-    "name": "potion of paralysis",
-    "unidentified_name": "bone-white draught",
-    "symbol": "!",
-    "color": [
-      235,
-      228,
-      215
-    ],
-    "weight": 0.4,
-    "min_level": 4,
-    "effect": "paralysis",
-    "power": "",
-    "duration": 10,
-    "floorSpawnWeight": {
-      "1-20": 15,
-      "21-40": 20,
-      "41-60": 22,
-      "61-80": 18,
-      "81-100": 12
-    },
-    "lore": "Made from ground finger-bones of creatures noted for their stillness — cave statues animated by old magic, frozen undead, petrified dungeon fauna — this bone-white liquid carries a supernatural quality of immobility that lingers slightly longer than the mineral variety. Practitioners of necromantic arts find this deeply interesting. Everyone else finds it deeply horrifying."
   },
   "potion_of_hallucination": {
     "name": "potion of hallucination",
@@ -1195,29 +528,6 @@
     },
     "lore": "Every colour of the spectrum is represented in the suspended particles of this flask, which drift and rearrange in patterns that should not be possible in a static liquid. After drinking it, every shadow becomes a lurching creature, every wall a moving tapestry, every monster an ally or vice versa. Long-term users sometimes report that the sober world never quite recovers its ordinary dullness, and are divided on whether this is a gift or a curse."
   },
-  "potion_of_hallucination_ii": {
-    "name": "potion of hallucination",
-    "unidentified_name": "opalescent swirling liquid",
-    "symbol": "!",
-    "color": [
-      220,
-      190,
-      255
-    ],
-    "weight": 0.4,
-    "min_level": 5,
-    "effect": "hallucination",
-    "power": "",
-    "duration": 50,
-    "floorSpawnWeight": {
-      "1-20": 20,
-      "21-40": 25,
-      "41-60": 28,
-      "61-80": 22,
-      "81-100": 18
-    },
-    "lore": "The opalescent swirling of this liquid is caused by hundreds of micro-crystalline compounds refracting light in constantly shifting patterns — beautiful in the bottle, catastrophic in the bloodstream. The dungeon, already a disorienting and hostile environment, becomes under its influence an experience of such overwhelming sensory complexity that navigation becomes a matter of optimistic guesswork. Survivors tend not to describe what they saw."
-  },
   "potion_of_sleep": {
     "name": "potion of sleep",
     "unidentified_name": "oddly warm flask",
@@ -1240,29 +550,6 @@
       "81-100": 15
     },
     "lore": "There is something fundamentally wrong about a flask that is warm to the touch when no fire has touched it — the warmth comes from a slow exothermic reaction between dreamwood extract and poppy reduction, which in combination produce a soporific effect that overwhelms even the most determined effort to remain awake. The warmth is comforting. That is the problem."
-  },
-  "potion_of_sleep_ii": {
-    "name": "potion of sleep",
-    "unidentified_name": "sweetly fragrant vial",
-    "symbol": "!",
-    "color": [
-      200,
-      170,
-      130
-    ],
-    "weight": 0.4,
-    "min_level": 2,
-    "effect": "sleep",
-    "power": "",
-    "duration": 15,
-    "floorSpawnWeight": {
-      "1-20": 30,
-      "21-40": 28,
-      "41-60": 22,
-      "61-80": 18,
-      "81-100": 12
-    },
-    "lore": "The sweetness that escapes even through the sealed stopper of this vial is not coincidental — sleep-inducing compounds are often combined with attractant scents to encourage consumption by unwitting targets. Finding one among dungeon loot is either a fortunate discovery or evidence that someone was expecting you. The fragrance has been described variously as lavender, vanilla, and the childhood memory of safety."
   },
   "potion_of_weakness": {
     "name": "potion of weakness",
@@ -1287,29 +574,6 @@
     },
     "lore": "The smell alone should be sufficient warning — this grey ooze reeks of rot and old iron, and the smell intensifies after consumption as the active compounds propagate through the lymphatic system. Muscles that functioned perfectly well an hour ago begin to feel like they belong to someone else, weaker and reluctant. Scholars who study potion warfare note that this formula has ended more dungeon careers than almost anything else in the catalogue."
   },
-  "potion_of_weakness_ii": {
-    "name": "potion of weakness",
-    "unidentified_name": "dull lead-grey flask",
-    "symbol": "!",
-    "color": [
-      140,
-      140,
-      145
-    ],
-    "weight": 0.4,
-    "min_level": 3,
-    "effect": "weakness",
-    "power": "",
-    "duration": 40,
-    "floorSpawnWeight": {
-      "1-20": 25,
-      "21-40": 28,
-      "41-60": 25,
-      "61-80": 20,
-      "81-100": 15
-    },
-    "lore": "Heavy, flat, and entirely without redeeming aesthetic qualities, this lead-grey liquid drags the drinker toward the same leaden heaviness in every motion they make. The formula is sometimes called 'the carrier's bane' because it was originally developed to incapacitate dungeon porters who tried to run with stolen goods. It has since found a much broader and more unfortunate market."
-  },
   "potion_of_slow": {
     "name": "potion of slow",
     "unidentified_name": "deep violet slow-drip potion",
@@ -1333,29 +597,6 @@
     },
     "lore": "The potion earns its informal name from its behaviour when poured — it moves with agonising slowness, as though time itself has already begun to slow around it before even being consumed. The effect on the drinker is the same: every movement becomes an exercise in frustrated urgency, the body lagging behind the mind's commands by an interval that grows maddening over time. Dungeon creatures that use this on adventurers have learned to be patient."
   },
-  "potion_of_slow_ii": {
-    "name": "potion of slow",
-    "unidentified_name": "wax-sealed bone vial",
-    "symbol": "!",
-    "color": [
-      200,
-      190,
-      160
-    ],
-    "weight": 0.4,
-    "min_level": 4,
-    "effect": "slow",
-    "power": "",
-    "duration": 35,
-    "floorSpawnWeight": {
-      "1-20": 20,
-      "21-40": 25,
-      "41-60": 25,
-      "61-80": 20,
-      "81-100": 15
-    },
-    "lore": "This potion was sealed into its bone vial with wax by someone who wanted to ensure it would not be opened accidentally, which implies they knew what it contained. The wax is yellowish and old, the bone vial carved from something large. Breaking the seal releases an odour of cold stone and deep time. Whatever the maker's intent, it ends up in the dungeon like everything else, waiting."
-  },
   "potion_of_teleportation": {
     "name": "potion of teleportation",
     "unidentified_name": "pulsing magenta flask",
@@ -1378,29 +619,6 @@
       "81-100": 18
     },
     "lore": "The liquid pulses with its own rhythm, as if something inside is trying to get out. Drinking it produces a moment of total spatial disorientation followed by the drinker being elsewhere — where, exactly, depends entirely on the dungeon's mood, which is notoriously poor. Surface alchemists sometimes market these as utility items. Dungeon survivors call them 'the terror in a bottle' and advise carrying them only as a desperate last resort."
-  },
-  "potion_of_teleportation_ii": {
-    "name": "potion of teleportation",
-    "unidentified_name": "violet sparkling cordial",
-    "symbol": "!",
-    "color": [
-      170,
-      80,
-      220
-    ],
-    "weight": 0.4,
-    "min_level": 5,
-    "effect": "teleport",
-    "power": "",
-    "duration": 0,
-    "floorSpawnWeight": {
-      "1-20": 20,
-      "21-40": 25,
-      "41-60": 25,
-      "61-80": 20,
-      "81-100": 15
-    },
-    "lore": "The sparkling of this violet cordial is caused by thousands of micro-planar tears that have not yet destabilised, each one a door waiting to open. The brewer called it a cordial to make it sound pleasant. It is not. The teleportation it induces is slightly less violent than some formulas but no less random — the drinker arrives intact, in a location chosen by mathematics that do not care about their survival."
   },
   "potion_of_drain_strength": {
     "name": "potion of drain strength",
@@ -1517,29 +735,6 @@
     },
     "lore": "The sulfur stench that escapes even through the sealed stopper is not the active ingredient — it is merely a byproduct of the brewing process, which involves cultivating and concentrating dungeon pathogens in a medium of processed alchemical waste. The disease it induces is artificial in origin but indistinguishable in effect from the natural variety. The smell, dungeon runners note grimly, is at least an honest warning."
   },
-  "potion_of_sickness_ii": {
-    "name": "potion of sickness",
-    "unidentified_name": "vomit-yellow potion",
-    "symbol": "!",
-    "color": [
-      200,
-      185,
-      30
-    ],
-    "weight": 0.4,
-    "min_level": 5,
-    "effect": "sickness",
-    "power": "",
-    "duration": 50,
-    "floorSpawnWeight": {
-      "1-20": 20,
-      "21-40": 25,
-      "41-60": 28,
-      "61-80": 22,
-      "81-100": 18
-    },
-    "lore": "The colour is sufficient warning that most experienced delvers can identify this potion on sight, which does not stop it from claiming casualties — usually among those new to the dungeon, those too tired to look carefully, or those who pick things up in the dark. The disease it causes drains strength gradually and yields only to antidisease formulas, cold comfort when you are three floors from the nearest surface trader."
-  },
   "potion_of_fumbling": {
     "name": "potion of fumbling",
     "unidentified_name": "slick turquoise liquid",
@@ -1563,29 +758,6 @@
     },
     "lore": "It is a bitter irony that a potion whose entire purpose is to cause the drinker to drop things is itself extremely slippery. The turquoise slickness is caused by a film-forming compound that coats every surface it touches, including fingers, weapon grips, and dignity. Dungeon runners who have survived a fumbling episode uniformly describe the experience of watching their weapon clatter away during a fight as formative in ways they prefer not to elaborate on."
   },
-  "potion_of_fumbling_ii": {
-    "name": "potion of fumbling",
-    "unidentified_name": "oil-slick bottle",
-    "symbol": "!",
-    "color": [
-      30,
-      130,
-      130
-    ],
-    "weight": 0.4,
-    "min_level": 4,
-    "effect": "fumbling",
-    "power": "",
-    "duration": 35,
-    "floorSpawnWeight": {
-      "1-20": 20,
-      "21-40": 25,
-      "41-60": 25,
-      "61-80": 20,
-      "81-100": 15
-    },
-    "lore": "The oil-slick shimmer on this bottle's surface is caused by its contents — the fumbling formula has a tendency to seep through glass over time, coating the exterior and providing advance warning to anyone perceptive enough to notice. Nobody perceptive enough to notice would be drinking it anyway. The formula is a favourite trap for thieves who coat valuable items in fumbling extract to ensure their pursuers drop their weapons at inopportune moments."
-  },
   "potion_of_fear": {
     "name": "potion of fear",
     "unidentified_name": "dark wine phial",
@@ -1608,696 +780,6 @@
       "81-100": 15
     },
     "lore": "The deep wine colour of this phial is deceptive — it looks like something that might accompany a meal. The fear it induces is neither rational nor controllable: it is pure adrenal terror, the kind that bypasses the higher mind entirely and reaches directly into the oldest parts of the brain. Those who have experienced it report that the worst part is not the fear itself but the absolute certainty, while it is happening, that the fear is completely justified."
-  },
-  "potion_of_fear_ii": {
-    "name": "potion of fear",
-    "unidentified_name": "skull-etched dark vial",
-    "symbol": "!",
-    "color": [
-      80,
-      10,
-      30
-    ],
-    "weight": 0.4,
-    "min_level": 5,
-    "effect": "fear",
-    "power": "",
-    "duration": 20,
-    "floorSpawnWeight": {
-      "1-20": 20,
-      "21-40": 22,
-      "41-60": 22,
-      "61-80": 18,
-      "81-100": 12
-    },
-    "lore": "Someone took the time to etch a small skull into the dark glass of this vial, which represents either a warning, a sense of humour, or an aspiration. The formula within is identical to the unmarked variety — whoever made it simply wanted you to know what you were dealing with. Whether this is an act of mercy or cruelty depends on whether you drink it anyway, and many people do, because the dungeon makes you stop reading labels after a while."
-  },
-  "potion_of_stamina_iv": {
-    "name": "potion of stamina",
-    "unidentified_name": "forest-green syrup",
-    "symbol": "!",
-    "color": [
-      30,
-      130,
-      50
-    ],
-    "weight": 0.4,
-    "min_level": 2,
-    "effect": "restore_sp",
-    "power": "5d10+50",
-    "duration": 0,
-    "floorSpawnWeight": {
-      "1-20": 40,
-      "21-40": 60,
-      "41-60": 55,
-      "61-80": 40,
-      "81-100": 30
-    },
-    "lore": "The deep forest green of this syrup reflects its origin in the densely concentrated extract of surface-world plants — primarily greenwood heart and ironbark moss, distilled together until the result is thick and nearly opaque. Of all the stamina-restoring potions in common circulation, this is the strongest, intended for those in the deep dungeon whose stamina reserves have been fully depleted and who cannot afford to stop moving."
-  },
-  "potion_of_regeneration_iii": {
-    "name": "potion of regeneration",
-    "unidentified_name": "garnet-dark phial",
-    "symbol": "!",
-    "color": [
-      110,
-      10,
-      45
-    ],
-    "weight": 0.4,
-    "min_level": 18,
-    "effect": "regeneration",
-    "power": "1d6",
-    "duration": 100,
-    "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 10,
-      "41-60": 25,
-      "61-80": 45,
-      "81-100": 50
-    },
-    "lore": "This deep variant of the regeneration formula was refined by necromancers studying the boundary between life and death, specifically the mechanisms by which the most persistent undead self-repair. The result heals faster and for longer than any surface-world formula, at the cost of a faint grey pallor the drinker carries for several hours after the effect ends. This has led to some uncomfortable misunderstandings near dungeon exits."
-  },
-  "potion_of_levitation_iii": {
-    "name": "potion of levitation",
-    "unidentified_name": "moth-wing dust suspended flask",
-    "symbol": "!",
-    "color": [
-      200,
-      180,
-      230
-    ],
-    "weight": 0.4,
-    "min_level": 12,
-    "effect": "levitation",
-    "power": "",
-    "duration": 90,
-    "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 15,
-      "41-60": 35,
-      "61-80": 40,
-      "81-100": 30
-    },
-    "lore": "The shimmer of suspended moth-wing scales is visible even in darkness, floating in pale liquid like captured stars. Deep-cave moths are unusual creatures — their wings contain a natural counter-gravity compound that allows them to hover indefinitely with minimal effort. Concentrated and suspended, that compound extends to the drinker, producing the gentlest and longest-lasting levitation of any known formula. The scales also glow faintly, which is either useful navigation or a significant tactical liability."
-  },
-  "potion_of_brilliance_iii": {
-    "name": "potion of brilliance",
-    "unidentified_name": "luminous sea-green vial",
-    "symbol": "!",
-    "color": [
-      40,
-      200,
-      150
-    ],
-    "weight": 0.4,
-    "min_level": 15,
-    "effect": "brilliance",
-    "power": "",
-    "duration": 60,
-    "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 10,
-      "41-60": 28,
-      "61-80": 40,
-      "81-100": 40
-    },
-    "lore": "Sea-witches of the deep coastal caves refined this variant using bioluminescent kelp and the distilled lens fluid of a creature evolved to see in total darkness. The result is a brilliance potion that not only sharpens the intellect but also briefly improves the drinker's ability to perceive hidden patterns — a quality sea-witches use for navigating currents and dungeon scholars use for reading the dungeon itself. The sea-green glow is distinctive and impossible to conceal."
-  },
-  "potion_of_fire_resistance_ii": {
-    "name": "potion of fire resistance",
-    "unidentified_name": "frost-rimed pale blue bottle",
-    "symbol": "!",
-    "color": [
-      170,
-      220,
-      255
-    ],
-    "weight": 0.4,
-    "min_level": 10,
-    "effect": "fire_resist",
-    "power": "",
-    "duration": 90,
-    "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 18,
-      "41-60": 38,
-      "61-80": 50,
-      "81-100": 48
-    },
-    "lore": "Crystals of ice have formed along the outside of this pale blue bottle, though the contents are not frozen — the paradox is intentional, the formula using cold-elemental essence to force the fire-resistance compound into a more stable, longer-lasting configuration. The frost melts immediately upon being opened, and drinking it produces a full-body shiver that gives way to preternatural warmth-tolerance within moments."
-  },
-  "potion_of_cold_resistance_ii": {
-    "name": "potion of cold resistance",
-    "unidentified_name": "burning orange fluid",
-    "symbol": "!",
-    "color": [
-      240,
-      100,
-      20
-    ],
-    "weight": 0.4,
-    "min_level": 10,
-    "effect": "cold_resist",
-    "power": "",
-    "duration": 90,
-    "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 18,
-      "41-60": 38,
-      "61-80": 50,
-      "81-100": 48
-    },
-    "lore": "This variant of the cold resistance formula achieves a longer duration by using fire-elemental essence as a catalyst, burning the cold-resistance compound into the cellular level rather than merely coating it. The orange colour and genuine warmth to the touch give it an appealing quality that most potions lack. Deep-dungeon explorers who face icy corridors and frost-creatures carry these above almost all other preparations."
-  },
-  "potion_of_shock_resistance_ii": {
-    "name": "potion of shock resistance",
-    "unidentified_name": "dull amber with floaters",
-    "symbol": "!",
-    "color": [
-      200,
-      160,
-      60
-    ],
-    "weight": 0.4,
-    "min_level": 10,
-    "effect": "shock_resist",
-    "power": "",
-    "duration": 90,
-    "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 18,
-      "41-60": 38,
-      "61-80": 50,
-      "81-100": 48
-    },
-    "lore": "The amber liquid with its floating flecks of suspended insulating material represents the mature version of the shock-resistance formula, refined after several generations of experimentation by the guild of lightning-cage builders. The floaters are flakes of pure amber — not the colour, but the actual fossilised resin — which dissolve in the stomach and bind to neural tissue, providing insulation at the source rather than at the surface. Practitioners of storm magic regard this formula with particular distaste."
-  },
-  "potion_of_cure_all_iii": {
-    "name": "potion of cure all",
-    "unidentified_name": "silvery-pink shimmer",
-    "symbol": "!",
-    "color": [
-      220,
-      180,
-      230
-    ],
-    "weight": 0.4,
-    "min_level": 20,
-    "effect": "cure_all",
-    "power": "",
-    "duration": 0,
-    "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 8,
-      "41-60": 18,
-      "61-80": 32,
-      "81-100": 38
-    },
-    "lore": "This refined cure-all variant combines the silver moonstone suspension of the premium formula with rose-compound stabilisers borrowed from the coastal healing tradition, producing a pink shimmer that is distinctive and widely recognised among those who have spent time in the dungeon's deeper levels. It is rarer than either of its precursors but reliably present where they are absent — the dungeon, despite itself, tends to leave what is needed."
-  },
-  "potion_of_confusion_iv": {
-    "name": "potion of confusion",
-    "unidentified_name": "gritty tan potion",
-    "symbol": "!",
-    "color": [
-      185,
-      155,
-      100
-    ],
-    "weight": 0.4,
-    "min_level": 1,
-    "effect": "confusion",
-    "power": "",
-    "duration": 25,
-    "floorSpawnWeight": {
-      "1-20": 22,
-      "21-40": 22,
-      "41-60": 20,
-      "61-80": 16,
-      "81-100": 12
-    },
-    "lore": "The grit in this tan liquid is not sediment — it is powdered confusion-crystal, harvested from geological formations in cave systems where the local magic has curdled and crystallised over centuries. The crystals do not dissolve fully, and the drinking experience has been described as chewing fine sand while simultaneously losing the ability to determine which direction you are facing. Short duration, acute onset, catastrophic in tight corridors."
-  },
-  "potion_of_sickness_iii": {
-    "name": "potion of sickness",
-    "unidentified_name": "rust-orange draught",
-    "symbol": "!",
-    "color": [
-      200,
-      100,
-      40
-    ],
-    "weight": 0.4,
-    "min_level": 6,
-    "effect": "sickness",
-    "power": "",
-    "duration": 55,
-    "floorSpawnWeight": {
-      "1-20": 18,
-      "21-40": 22,
-      "41-60": 25,
-      "61-80": 20,
-      "81-100": 16
-    },
-    "lore": "The orange-rust colour comes from iron-oxidising bacteria that form part of the pathogen cocktail in this draught — the same organisms that rust unprotected metal in the deep dungeon. When ingested, they colonise with remarkable speed and proceed to do to the body something similar to what they do to iron. The metaphor is uncomfortable but accurate. Disease of this strain responds only to cure-disease formulations; healing potions do nothing for it."
-  },
-  "potion_of_fear_iii": {
-    "name": "potion of fear",
-    "unidentified_name": "ghost-white mist bottle",
-    "symbol": "!",
-    "color": [
-      230,
-      230,
-      235
-    ],
-    "weight": 0.4,
-    "min_level": 4,
-    "effect": "fear",
-    "power": "",
-    "duration": 25,
-    "floorSpawnWeight": {
-      "1-20": 18,
-      "21-40": 20,
-      "41-60": 20,
-      "61-80": 16,
-      "81-100": 12
-    },
-    "lore": "The white mist that fills this bottle swirls with purpose, as if something inside is looking for a way out. This variant of the fear formula draws on the distilled essence of ghost-haunted places, concentrating ambient supernatural terror into liquid form. The effect is subtly different from the other formulations — it does not induce fear of immediate physical danger but rather a profound, sourceless existential dread. This is considered worse."
-  },
-  "potion_of_sleep_iii": {
-    "name": "potion of sleep",
-    "unidentified_name": "hazy lavender liquid",
-    "symbol": "!",
-    "color": [
-      180,
-      150,
-      210
-    ],
-    "weight": 0.4,
-    "min_level": 3,
-    "effect": "sleep",
-    "power": "",
-    "duration": 18,
-    "floorSpawnWeight": {
-      "1-20": 25,
-      "21-40": 22,
-      "41-60": 18,
-      "61-80": 14,
-      "81-100": 10
-    },
-    "lore": "The lavender tint and dreamy haze of this liquid make it the most aesthetically appealing sleep-inducing potion in common circulation, which is presumably the point. The formula incorporates actual lavender as a scent vehicle for the soporific compound, which ensures the last sensory experience before unconsciousness is pleasant. Merchants who sell this as a legitimate sleep aid are not entirely wrong about its function, merely about its strength."
-  },
-  "potion_of_weakness_iii": {
-    "name": "potion of weakness",
-    "unidentified_name": "eye-watering yellow fluid",
-    "symbol": "!",
-    "color": [
-      210,
-      195,
-      20
-    ],
-    "weight": 0.4,
-    "min_level": 4,
-    "effect": "weakness",
-    "power": "",
-    "duration": 45,
-    "floorSpawnWeight": {
-      "1-20": 20,
-      "21-40": 22,
-      "41-60": 22,
-      "61-80": 18,
-      "81-100": 14
-    },
-    "lore": "The fumes that escape this vial when opened are genuinely eye-watering, and this is considered the mild warning the brewer chose to include. The weakness formula in this variant is derived from a concentrated brassica extract combined with nerve-dampening compounds — the kind that produce, among other effects, an overwhelming desire to put down whatever you are carrying. In a dungeon fight, that desire is lethal."
-  },
-  "potion_of_hallucination_iii": {
-    "name": "potion of hallucination",
-    "unidentified_name": "speckled orange flask",
-    "symbol": "!",
-    "color": [
-      220,
-      140,
-      50
-    ],
-    "weight": 0.4,
-    "min_level": 4,
-    "effect": "hallucination",
-    "power": "",
-    "duration": 40,
-    "floorSpawnWeight": {
-      "1-20": 18,
-      "21-40": 22,
-      "41-60": 25,
-      "61-80": 20,
-      "81-100": 16
-    },
-    "lore": "The orange speckle pattern is caused by reactive compounds that begin cycling through colour-change reactions the moment the bottle is sealed, producing a constantly shifting display that foreshadows the effect on the drinker's perception. Under its influence, monsters take on the appearance of friends, traps become treasure, and the dungeon's geometry develops personality. The speckles in the bottle have been known to distract delvers long enough for the monsters to close the distance."
-  },
-  "potion_of_slow_iii": {
-    "name": "potion of slow",
-    "unidentified_name": "inky indigo fluid",
-    "symbol": "!",
-    "color": [
-      50,
-      30,
-      140
-    ],
-    "weight": 0.4,
-    "min_level": 5,
-    "effect": "slow",
-    "power": "",
-    "duration": 40,
-    "floorSpawnWeight": {
-      "1-20": 18,
-      "21-40": 22,
-      "41-60": 22,
-      "61-80": 18,
-      "81-100": 14
-    },
-    "lore": "This indigo variant of the slowing formula uses a dense, light-absorbing base compound that mirrors in colour the effect it has on the passage of time for the drinker. The liquid moves with visible viscosity even at room temperature, and the slowing effect is correspondingly more intense than the violet variety — movements that should be smooth become stuttering, deliberate, agonised. Dungeon inhabitants who have access to this formula use it as a trap compound on doorknobs and weapon handles."
-  },
-  "potion_of_teleportation_iii": {
-    "name": "potion of teleportation",
-    "unidentified_name": "trembling red vial",
-    "symbol": "!",
-    "color": [
-      200,
-      50,
-      60
-    ],
-    "weight": 0.4,
-    "min_level": 6,
-    "effect": "teleport",
-    "power": "",
-    "duration": 0,
-    "floorSpawnWeight": {
-      "1-20": 15,
-      "21-40": 20,
-      "41-60": 22,
-      "61-80": 18,
-      "81-100": 14
-    },
-    "lore": "The vial shakes slightly even when completely still — the kinetic energy of the contained spatial displacement formula is already expressing itself before the seal is broken. This variant teleports the drinker with more violence than the others: observers report a sound like tearing fabric and a brief visible shimmer where the person was standing. The destination remains equally random. Experienced dungeon explorers carry these as emergency escapes, which requires accepting that 'elsewhere in this dungeon' is preferable to 'here.'"
-  },
-  "potion_of_drain_constitution_ii": {
-    "name": "potion of drain constitution",
-    "unidentified_name": "sharp-smelling blue liquid",
-    "symbol": "!",
-    "color": [
-      60,
-      120,
-      200
-    ],
-    "weight": 0.4,
-    "min_level": 10,
-    "effect": "drain_con",
-    "power": "",
-    "duration": 0,
-    "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 5,
-      "41-60": 10,
-      "61-80": 12,
-      "81-100": 12
-    },
-    "lore": "The chemical sharpness of this blue liquid is noticeable even through glass, a property of the acetic-mineral compound that serves as its base. In small quantities, the smell is almost bracing. In the larger quantity that constitutes a full dose, it removes a permanent measure of the body's resilience with a thoroughness that has disturbed every physician who has documented its effects. The blue colour is universally associated with curative potions, which is entirely the point."
-  },
-  "potion_of_drain_wisdom_ii": {
-    "name": "potion of drain wisdom",
-    "unidentified_name": "crumbling wax-dipped flask",
-    "symbol": "!",
-    "color": [
-      170,
-      140,
-      90
-    ],
-    "weight": 0.4,
-    "min_level": 10,
-    "effect": "drain_wis",
-    "power": "",
-    "duration": 0,
-    "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 5,
-      "41-60": 10,
-      "61-80": 12,
-      "81-100": 12
-    },
-    "lore": "The wax preservative on this flask is crumbling with age, which means it has either been in the dungeon for a very long time or was improperly stored even before it arrived. Neither explanation is reassuring. The wisdom-draining formula inside is unaffected by the degraded exterior — these compounds are remarkably shelf-stable, which is one of the universe's less welcome design choices. Its effect on judgment is permanent and unrecoverable without magical intervention."
-  },
-  "potion_of_drain_intelligence_ii": {
-    "name": "potion of drain intelligence",
-    "unidentified_name": "tar-black ooze",
-    "symbol": "!",
-    "color": [
-      15,
-      10,
-      15
-    ],
-    "weight": 0.4,
-    "min_level": 10,
-    "effect": "drain_int",
-    "power": "",
-    "duration": 0,
-    "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 5,
-      "41-60": 10,
-      "61-80": 12,
-      "81-100": 12
-    },
-    "lore": "Black as thought-extinction, this tarry ooze is the refinement of a formula originally developed by a faction who believed that reducing intelligence reduced suffering. Their logic was, perhaps fittingly, not especially rigorous. The permanent nature of its effect on cognitive capacity makes this one of the most feared items in the dungeon — not because of the damage it deals in the moment, but because of everything the drinker will no longer be able to understand afterward."
-  },
-  "potion_of_full_healing_iii": {
-    "name": "potion of full healing",
-    "unidentified_name": "honey-gold vial",
-    "symbol": "!",
-    "color": [
-      230,
-      170,
-      20
-    ],
-    "weight": 0.4,
-    "min_level": 25,
-    "effect": "full_heal",
-    "power": "",
-    "duration": 0,
-    "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 0,
-      "41-60": 6,
-      "61-80": 15,
-      "81-100": 22
-    },
-    "lore": "Thick as honey and slow-pouring as syrup, this gold variant of the full healing formula uses concentrated beekeeper's mead as its base — bees from a specific ancient hive whose flowers include plants that grow nowhere else. The honey carries a natural healing resonance that amplifies the alchemical formula to remarkable potency. Finding one in the deep dungeon feels like discovering evidence that the world above still exists and is capable of producing beauty."
-  },
-  "potion_of_haste_iv": {
-    "name": "potion of haste",
-    "unidentified_name": "fizzing chartreuse potion",
-    "symbol": "!",
-    "color": [
-      180,
-      230,
-      40
-    ],
-    "weight": 0.4,
-    "min_level": 15,
-    "effect": "haste",
-    "power": "",
-    "duration": 50,
-    "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 10,
-      "41-60": 28,
-      "61-80": 45,
-      "81-100": 45
-    },
-    "lore": "The fizz in this chartreuse liquid is caused by rapid outgassing from the compressed kinetic potential stored in the formula — open the stopper and a spray of fine mist escapes before the potion itself can be poured. This has led to more than one involuntary half-dose among careless users, who report that being only partially hasted produces a deeply unpleasant asymmetry of experience. Consume in one uninterrupted draught for best results."
-  },
-  "potion_of_invisibility_iii": {
-    "name": "potion of invisibility",
-    "unidentified_name": "strangely heavy flask",
-    "symbol": "!",
-    "color": [
-      190,
-      225,
-      245
-    ],
-    "weight": 0.4,
-    "min_level": 12,
-    "effect": "invisibility",
-    "power": "",
-    "duration": 80,
-    "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 10,
-      "41-60": 28,
-      "61-80": 45,
-      "81-100": 42
-    },
-    "lore": "This flask weighs significantly more than its apparent liquid volume should allow, owing to the density of the light-bending compounds suspended within. Extended-formula invisibility potions require a higher concentration of active material, and the added weight is the cost. Adventurers who use this variant note that it lasts noticeably longer than the standard preparations and that the transition out of invisibility is gradual rather than abrupt, which allows for more tactical flexibility in tight situations."
-  },
-  "potion_of_paralysis_iv": {
-    "name": "potion of paralysis",
-    "unidentified_name": "cracked glass vial",
-    "symbol": "!",
-    "color": [
-      180,
-      175,
-      165
-    ],
-    "weight": 0.4,
-    "min_level": 5,
-    "effect": "paralysis",
-    "power": "",
-    "duration": 12,
-    "floorSpawnWeight": {
-      "1-20": 12,
-      "21-40": 18,
-      "41-60": 20,
-      "61-80": 16,
-      "81-100": 12
-    },
-    "lore": "The crack in this glass vial is superficial — the inner sealing membrane remains intact, which is why it has not already spilled its paralysing contents. The crack is old enough to have been there when the vial was left in the dungeon, which raises questions about how it got there and why someone left it rather than drinking it. Those questions become less interesting after you drink it, because thinking becomes difficult."
-  },
-  "potion_of_confusion_v": {
-    "name": "potion of confusion",
-    "unidentified_name": "ashen grey draught",
-    "symbol": "!",
-    "color": [
-      160,
-      155,
-      145
-    ],
-    "weight": 0.4,
-    "min_level": 3,
-    "effect": "confusion",
-    "power": "",
-    "duration": 40,
-    "floorSpawnWeight": {
-      "1-20": 18,
-      "21-40": 20,
-      "41-60": 18,
-      "61-80": 14,
-      "81-100": 10
-    },
-    "lore": "Ash is the residue of things that were once ordered and have been reduced by heat to formlessness, and this grey draught carries that principle as its mechanism of action: it reduces ordered thought to formlessness with the same inexorable certainty. The formula uses fire-reduced crystal-confusion powder as its base — more refined than the gritty tan variant and correspondingly more powerful. The extended duration makes it a favourite among dungeon trappers."
-  },
-  "potion_of_blindness_iv": {
-    "name": "potion of blindness",
-    "unidentified_name": "jet-black ichor",
-    "symbol": "!",
-    "color": [
-      10,
-      5,
-      10
-    ],
-    "weight": 0.4,
-    "min_level": 4,
-    "effect": "blindness",
-    "power": "",
-    "duration": 30,
-    "floorSpawnWeight": {
-      "1-20": 15,
-      "21-40": 20,
-      "41-60": 20,
-      "61-80": 16,
-      "81-100": 12
-    },
-    "lore": "Not a liquid so much as a refined absence, this ichor achieves complete light-abolition both in the bottle and in the drinker's visual field. The extended duration compared to other blindness formulas makes it particularly prized by those who wish to incapacitate without killing — though in the dungeon, blindness and death often become the same appointment, separated only by the time it takes for the monsters to arrive."
-  },
-  "potion_of_poison_iv": {
-    "name": "potion of poison",
-    "unidentified_name": "weeping purple bottle",
-    "symbol": "!",
-    "color": [
-      160,
-      20,
-      180
-    ],
-    "weight": 0.4,
-    "min_level": 5,
-    "effect": "poison",
-    "power": "1d6",
-    "duration": 0,
-    "floorSpawnWeight": {
-      "1-20": 16,
-      "21-40": 22,
-      "41-60": 25,
-      "61-80": 20,
-      "81-100": 16
-    },
-    "lore": "The purple liquid that has seeped through the glass stopper and dried on the neck of this bottle tells you everything you need to know about its contents. The weeping effect is the result of a particularly aggressive poison compound that slowly dissolves lower-quality glass over time, seeking release. Alchemists who work with this formula store it in specially hardened crystal containers. The fact that this example is already leaking is perhaps the dungeon's idea of transparency."
-  },
-  "potion_of_sickness_iv": {
-    "name": "potion of sickness",
-    "unidentified_name": "lurid pea-green brew",
-    "symbol": "!",
-    "color": [
-      160,
-      200,
-      25
-    ],
-    "weight": 0.4,
-    "min_level": 7,
-    "effect": "sickness",
-    "power": "",
-    "duration": 60,
-    "floorSpawnWeight": {
-      "1-20": 12,
-      "21-40": 18,
-      "41-60": 22,
-      "61-80": 18,
-      "81-100": 14
-    },
-    "lore": "The fizz in this lurid green concoction is produced by rapid bacterial activity — the pathogens within are alive and active, and have been fermenting since the potion was brewed. This is either a sign of poor preservation or, in the view of the alchemist who designed it, a feature: more active pathogens, the theory goes, means faster colonisation after ingestion. The theory has not been refuted. The colour also renders it almost impossible to mistake for something safe."
-  },
-  "potion_of_hallucination_iv": {
-    "name": "potion of hallucination",
-    "unidentified_name": "midnight purple viscous liquid",
-    "symbol": "!",
-    "color": [
-      90,
-      20,
-      130
-    ],
-    "weight": 0.4,
-    "min_level": 6,
-    "effect": "hallucination",
-    "power": "",
-    "duration": 60,
-    "floorSpawnWeight": {
-      "1-20": 12,
-      "21-40": 18,
-      "41-60": 22,
-      "61-80": 18,
-      "81-100": 14
-    },
-    "lore": "This violet variant pours with the same reluctance as the slowing potion, but for entirely different reasons — the suspension medium is designed to carry hallucination compounds at maximum concentration, which requires a viscous base. The effect is accordingly more intense than lighter formulas and lasts longer, producing hallucinations with a texture and persistence that survivors consistently describe as 'too real.' The dungeon under its influence is a different dungeon entirely. Usually worse."
-  },
-  "potion_of_slow_iv": {
-    "name": "potion of slow",
-    "unidentified_name": "thick purple syrup",
-    "symbol": "!",
-    "color": [
-      130,
-      50,
-      160
-    ],
-    "weight": 0.4,
-    "min_level": 6,
-    "effect": "slow",
-    "power": "",
-    "duration": 50,
-    "floorSpawnWeight": {
-      "1-20": 12,
-      "21-40": 18,
-      "41-60": 20,
-      "61-80": 16,
-      "81-100": 12
-    },
-    "lore": "This densely concentrated slow-formula syrup achieves its maximum possible duration by suspending the active compound in a time-retarding medium that releases it gradually over an extended period. Drinking it is unpleasant both immediately — the thickness makes it difficult to swallow — and subsequently, as the realisation sets in that the next fifty turns of the drinker's life will be spent in a state of grinding, humiliating slowness."
   },
   "potion_of_mana": {
     "name": "potion of mana",
