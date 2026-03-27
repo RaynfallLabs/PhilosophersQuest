@@ -4126,11 +4126,12 @@ class Game:
         *has_items* is called with a tab index and must return True if that tab
         has at least one item.  Returns the new tab index (unchanged if every
         other tab is empty)."""
+        original = current
         for _ in range(n_tabs - 1):
             current = (current + direction) % n_tabs
             if has_items(current):
                 return current
-        return current  # all others empty — stay put
+        return original  # all others empty — stay on original tab
 
     def _paged_menu_input(self, key, items) -> int | None:
         """Handle a-z selection within items. Returns index or None."""
@@ -12300,13 +12301,11 @@ class Game:
         draw_header_bar(self.screen, (bx, by, bw, 44), text="COOK",
                         font=self.font_md, text_color=FP.GOLD_BRIGHT)
 
-        # SP display
+        # SP display (right-aligned inside header)
         sp = self.player.sp
         sp_color = FP.SUCCESS_TEXT if sp > 30 else FP.WARNING_TEXT if sp > 10 else FP.DANGER_TEXT
-        self.screen.blit(
-            self.font_sm.render(f"SP: {sp}/{self.player.max_sp}", True, sp_color),
-            (bx + 20, by + 48)
-        )
+        sp_surf = self.font_sm.render(f"SP: {sp}/{self.player.max_sp}", True, sp_color)
+        self.screen.blit(sp_surf, (bx + bw - sp_surf.get_width() - 20, by + 14))
 
         _cook_counts = [len(self.cook_menu_items) if k == 'single' else len(self.cook_compound_recipes)
                         for _, k in self._COOK_TABS]
