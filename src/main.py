@@ -11808,7 +11808,7 @@ class Game:
         is_unequip = tab_items is None
         display_items = self.equip_menu_equipped if is_unequip else tab_items
 
-        row_h = 62
+        row_h = 72
         n_items = len(display_items)
         bw = min(760, GAME_W - 40)
         bh = min(130 + n_items * row_h + 50, WINDOW_H - 40)
@@ -11839,7 +11839,7 @@ class Game:
                 iy = cy
                 pygame.draw.rect(self.screen,
                     FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
-                    (bx + 10, iy, bw - 20, 54), border_radius=6)
+                    (bx + 10, iy, bw - 20, row_h - 8), border_radius=6)
                 self.screen.blit(
                     self.font_md.render(f"[{self._LETTERS[i]}]", True, FP.WARNING_TEXT), (bx + 18, iy + 12))
                 cursed = getattr(item, 'cursed', False)
@@ -11860,7 +11860,7 @@ class Game:
                 iy = cy
                 pygame.draw.rect(self.screen,
                     FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
-                    (bx + 10, iy, bw - 20, 54), border_radius=6)
+                    (bx + 10, iy, bw - 20, row_h - 8), border_radius=6)
                 self.screen.blit(
                     self.font_md.render(f"[{self._LETTERS[i]}]", True, FP.GOLD_BRIGHT), (bx + 18, iy + 12))
                 self.screen.blit(
@@ -11897,7 +11897,7 @@ class Game:
 
     def _draw_accessory_menu(self):
         draw_overlay(self.screen, 190)
-        ROW_H = 66
+        ROW_H = 72
         ICO = self.MENU_ICON_SIZE
         TEXT_X = 70 + ICO + 8
         bw = min(760, GAME_W - 40)
@@ -11957,7 +11957,7 @@ class Game:
 
     def _draw_wand_menu(self):
         draw_overlay(self.screen, 190)
-        ROW_H = 66
+        ROW_H = 72
         ICO = self.MENU_ICON_SIZE
         TEXT_X = 70 + ICO + 8
         bw = min(760, GAME_W - 40)
@@ -12017,7 +12017,7 @@ class Game:
     def _draw_spell_menu(self):
         draw_overlay(self.screen, 190)
         n_spells = len(self.spell_menu_items)
-        ROW_H = 66
+        ROW_H = 72
         bw = min(820, GAME_W - 40)
         bh = min(96 + n_spells * ROW_H + 70, WINDOW_H - 40)
         bx = (GAME_W - bw) // 2
@@ -12072,7 +12072,7 @@ class Game:
         draw_overlay(self.screen, 190)
 
         tab_items = self._get_scroll_tab_items()
-        ROW_H = 66
+        ROW_H = 72
         ICO = self.MENU_ICON_SIZE
         TEXT_X = 70 + ICO + 8
         bw = min(760, GAME_W - 40)
@@ -12157,7 +12157,7 @@ class Game:
         draw_overlay(self.screen, 190)
 
         n_items = len(self.identify_menu_items)
-        ROW_H = 66
+        ROW_H = 72
         ICO = self.MENU_ICON_SIZE
         TEXT_X = 70 + ICO + 8
         bw = min(820, GAME_W - 40)
@@ -12241,7 +12241,7 @@ class Game:
 
         tab_items = self._get_cook_tab_items()
         is_compound = self._COOK_TABS[self._cook_tab][1] == 'compound'
-        row_h = 66
+        row_h = 72
         bw = min(800, GAME_W - 40)
         ICO = self.MENU_ICON_SIZE          # 32
         TEXT_X = 70 + ICO + 8              # left edge of text after [a] + icon
@@ -12419,7 +12419,7 @@ class Game:
         draw_overlay(self.screen, 190)
 
         tab_items = self._get_eat_tab_items()
-        ROW_H = 66
+        ROW_H = 72
         ICO = self.MENU_ICON_SIZE
         TEXT_X = 70 + ICO + 8
         bw = min(760, GAME_W - 40)
@@ -12499,7 +12499,7 @@ class Game:
     def _draw_quaff_menu(self):
         draw_overlay(self.screen, 190)
         items = self.quaff_menu_items
-        ROW_H = 66
+        ROW_H = 72
         ICO = self.MENU_ICON_SIZE
         TEXT_X = 70 + ICO + 8
         bw = min(760, GAME_W - 40)
@@ -12558,7 +12558,7 @@ class Game:
     def _draw_throw_menu(self):
         draw_overlay(self.screen, 190)
         tab_items = self._get_throw_tab_items()
-        ROW_H = 66
+        ROW_H = 72
         ICO = self.MENU_ICON_SIZE
         TEXT_X = 70 + ICO + 8
         bw = min(760, GAME_W - 40)
@@ -13024,7 +13024,7 @@ class Game:
         powers = getattr(self, '_power_menu_list', [])
         n = len(powers)
         bw = min(700, GAME_W - 40)
-        row_h = 66
+        row_h = 72
         bh = min(90 + n * row_h + 44, WINDOW_H - 40)
         bx = (GAME_W - bw) // 2
         by = (WINDOW_H - bh) // 2
@@ -14378,7 +14378,7 @@ class Game:
         draw_overlay(self.screen, 190)
 
         tab_items = self._get_examine_tab_items()
-        ROW_H = 64
+        ROW_H = 72
         ICO = self.MENU_ICON_SIZE
         TEXT_X = 70 + ICO + 8
         bw = min(820, GAME_W - 40)
