@@ -12162,7 +12162,13 @@ class Game:
         TEXT_X = 70 + ICO + 8
         bw = min(820, GAME_W - 40)
         max_detail_w = bw - TEXT_X - 20
-        bh = min(96 + n_items * ROW_H + 70, WINDOW_H - 40)
+        # Count sections for accurate height: header(82) + sections + rows + footer(50)
+        inv_n = sum(1 for _, is_g, is_c in self.identify_menu_items if not is_g and not is_c)
+        gnd_n = sum(1 for _, is_g, is_c in self.identify_menu_items if is_g and not is_c)
+        crp_n = sum(1 for _, is_g, is_c in self.identify_menu_items if is_c)
+        n_sections = (1 if inv_n else 0) + (1 if gnd_n else 0) + (1 if crp_n else 0)
+        section_overhead = n_sections * 24 + max(0, n_sections - 1) * 12
+        bh = min(82 + section_overhead + n_items * ROW_H + 50, WINDOW_H - 40)
         bx = (GAME_W - bw) // 2
         by = (WINDOW_H - bh) // 2
         tx = bx + TEXT_X
