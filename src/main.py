@@ -3396,8 +3396,18 @@ class Game:
                         self._refresh_fov()
                         self.add_message("Your keen senses detect a hidden door nearby!", 'success')
 
+    # Disarm difficulty per trap type: (quiz_tier, threshold)
+    _TRAP_DISARM = {
+        'squeaky_board': (1, 1), 'alarm':     (1, 1),
+        'bear_trap':     (1, 2), 'arrow':     (2, 2),
+        'rust':          (2, 2), 'sleep_gas': (2, 3),
+        'acid':          (3, 3), 'teleport':  (3, 3),
+        'pit':           (3, 3), 'fire':      (3, 3),
+        'polymorph':     (4, 4),
+    }
+
     def _try_disarm_trap(self) -> bool:
-        """Try to disarm an adjacent revealed trap. Returns True if handled."""
+        """Try to disarm an adjacent revealed trap via economics quiz. Returns True if handled."""
         px, py = self.player.x, self.player.y
         # Find nearest adjacent revealed trap
         for dy in range(-1, 2):
@@ -3412,13 +3422,38 @@ class Game:
                         self.add_message(
                             "You see the trap but have no lockpick tools to disarm it.", 'warning')
                         return True
-                    self.player.lockpick_charges -= 1
                     trap_name = trap['type'].replace('_', ' ')
-                    del self.dungeon.traps[(nx, ny)]
-                    self.add_message(
-                        f"You carefully disarm the {trap_name} trap. "
-                        f"({self.player.lockpick_charges} picks remaining)", 'success')
-                    self._advance_turn()
+                    tier, threshold = self._TRAP_DISARM.get(trap['type'], (2, 2))
+                    self.quiz_title = f"DISARMING {trap_name.upper()} -- ECONOMICS"
+                    self.state = STATE_QUIZ
+                    _trap_pos = (nx, ny)
+
+                    def _on_disarm(result, pos=_trap_pos, tname=trap_name):
+                        self.state = STATE_PLAYER
+                        self.player.lockpick_charges -= 1
+                        if result.success:
+                            if pos in self.dungeon.traps:
+                                del self.dungeon.traps[pos]
+                            self.add_message(
+                                f"You carefully disarm the {tname} trap. "
+                                f"({self.player.lockpick_charges} picks remaining)", 'success')
+                        else:
+                            self.add_message(
+                                f"You fumble the disarm! The {tname} trap remains. "
+                                f"({self.player.lockpick_charges} picks remaining)", 'warning')
+                        self._advance_turn()
+
+                    self.quiz_engine.start_quiz(
+                        mode='threshold',
+                        subject='economics',
+                        tier=tier,
+                        callback=_on_disarm,
+                        threshold=threshold,
+                        wisdom=self.player.WIS,
+                        timer_modifier=self.player.get_quiz_timer_modifier(),
+                        extra_seconds=self.player.get_quiz_extra_seconds('economics'),
+                        base_seconds=self.player.get_quiz_timer('economics'),
+                    )
                     return True
         return False  # no revealed trap nearby — fall through to lockpick
 
