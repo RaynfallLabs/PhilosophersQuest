@@ -2383,6 +2383,9 @@ class Game:
             self._open_cook_menu()
             return
         if key == pygame.K_p:
+            # Try disarm trap first, then lockpick container
+            if self._try_disarm_trap():
+                return
             self._lockpick()
             return
         if key == pygame.K_a:
@@ -3137,6 +3140,8 @@ class Game:
         self._do_searching()
         # Passive PER-based secret door detection
         self._do_passive_search()
+        # Passive PER-based trap detection
+        self._do_passive_trap_detection()
         # Clairvoyant: reveal tiles within 10-tile radius each turn
         if self.player.has_effect('clairvoyant'):
             px, py = self.player.x, self.player.y
@@ -3195,6 +3200,15 @@ class Game:
         if self.player.has_effect('levitating'):
             trap['revealed'] = True
             self.add_message("You float safely over a trap!", 'info')
+            return
+        # PER-based avoidance: chance to notice and sidestep at the last moment
+        import random as _rng_trap
+        avoid_chance = 0.05 + self.player.PER * 0.02  # PER 10 = 25%, PER 16 = 37%
+        if _rng_trap.random() < avoid_chance:
+            trap['revealed'] = True
+            self.add_message(
+                f"You notice a {trap['type'].replace('_', ' ')} trap just in time and sidestep it!",
+                'success')
             return
         # Trap fires -- remove it from the floor
         del self.dungeon.traps[(x, y)]
@@ -3381,6 +3395,49 @@ class Game:
                         self.dungeon.tiles[ny][nx] = DOOR
                         self._refresh_fov()
                         self.add_message("Your keen senses detect a hidden door nearby!", 'success')
+
+    def _try_disarm_trap(self) -> bool:
+        """Try to disarm an adjacent revealed trap. Returns True if handled."""
+        px, py = self.player.x, self.player.y
+        # Find nearest adjacent revealed trap
+        for dy in range(-1, 2):
+            for dx in range(-1, 2):
+                if dx == 0 and dy == 0:
+                    continue
+                nx, ny = px + dx, py + dy
+                trap = self.dungeon.traps.get((nx, ny))
+                if trap and trap.get('revealed'):
+                    charges = getattr(self.player, 'lockpick_charges', 0)
+                    if charges <= 0:
+                        self.add_message(
+                            "You see the trap but have no lockpick tools to disarm it.", 'warning')
+                        return True
+                    self.player.lockpick_charges -= 1
+                    trap_name = trap['type'].replace('_', ' ')
+                    del self.dungeon.traps[(nx, ny)]
+                    self.add_message(
+                        f"You carefully disarm the {trap_name} trap. "
+                        f"({self.player.lockpick_charges} picks remaining)", 'success')
+                    self._advance_turn()
+                    return True
+        return False  # no revealed trap nearby — fall through to lockpick
+
+    def _do_passive_trap_detection(self):
+        """Passive PER-based detection of adjacent unrevealed traps each turn."""
+        import random as _rng
+        chance = 0.03 + self.player.PER * 0.01  # PER 10 = 13%, PER 16 = 19%
+        px, py = self.player.x, self.player.y
+        for dy in range(-1, 2):
+            for dx in range(-1, 2):
+                if dx == 0 and dy == 0:
+                    continue
+                nx, ny = px + dx, py + dy
+                trap = self.dungeon.traps.get((nx, ny))
+                if trap and not trap.get('revealed'):
+                    if _rng.random() < chance:
+                        trap['revealed'] = True
+                        self.add_message(
+                            f"You spot a {trap['type'].replace('_', ' ')} trap nearby!", 'warning')
 
     # ------------------------------------------------------------------
     # SP starvation

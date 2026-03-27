@@ -222,15 +222,20 @@ class Renderer:
                 else:
                     pygame.draw.rect(self.screen, _UNEXPLORED, (sx, sy, T, T))
 
-        # Draw revealed traps (shown as '^' symbol in warning color when visible)
+        # Draw revealed traps with per-type sprites
         for (tx, ty), trap in getattr(dungeon, 'traps', {}).items():
             if trap.get('revealed') and (tx, ty) in visible:
                 sx, sy = self.world_to_screen(tx, ty)
-                trap_color = trap.get('color', (255, 200, 0))
-                # Draw a small caret symbol for the trap
-                label = self._sym_font.render('^', True, trap_color)
-                lw, lh = label.get_size()
-                self.screen.blit(label, (sx + (T - lw) // 2, sy + (T - lh) // 2))
+                trap_type = trap.get('type', '')
+                sprite = self._get_env_sprite(f'trap_{trap_type}')
+                if sprite:
+                    self.screen.blit(sprite, (sx, sy))
+                else:
+                    # Fallback to colored caret
+                    trap_color = trap.get('color', (255, 200, 0))
+                    label = self._sym_font.render('^', True, trap_color)
+                    lw, lh = label.get_size()
+                    self.screen.blit(label, (sx + (T - lw) // 2, sy + (T - lh) // 2))
 
         # Draw dug pits (dark brown hollow square)
         _PIT_COLOR = (80, 50, 20)
