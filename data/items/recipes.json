@@ -353,7 +353,7 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
-    "lore": "A foul but filling stew. The dungeon has lower standards. Two scrawny survivors â€” the toughness transfers.",
+    "lore": "A foul but filling stew suited to the dungeon's low standards. Two scrawny survivors boiled together — their toughness transfers to whoever is desperate enough to eat.",
     "sprite_desc": "A battered tin pot of chunky brown stew with visible meat pieces and a greasy surface"
   },
   "serpent_frog_bisque": {
@@ -418,7 +418,7 @@
     "bonus_type": "stat",
     "bonus_stat": "PER",
     "bonus_amount": 1,
-    "lore": "The silk dissolves into a trembling aspic. Enhances perception.",
+    "lore": "The silk dissolves into a trembling, iridescent aspic that sharpens the senses to an uncanny edge.",
     "sprite_desc": "A ceramic plate of beautifully prepared spider silk and eye jelly, plated with a pale violet reduction drizzled on top"
   },
   "orc_bat_broth": {
@@ -431,7 +431,7 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
-    "lore": "Orcs make this on campaign. It's not good, but it works.",
+    "lore": "Orcs brew this on long campaigns when rations run dry. It is not good, but it keeps warriors upright and moving.",
     "sprite_desc": "A stone bowl filled with smooth verdant broth made from orc blood and bat wing, wisps of fragrant steam curling above"
   },
   "gnoll_lion_ragout": {
@@ -444,7 +444,7 @@
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
-    "lore": "Two predators combined. Smells like a pride and a pack of gnolls fighting.",
+    "lore": "Two apex predators rendered down together, the ragout smells of blood, musk, and the savage hierarchy of the deep wilds.",
     "sprite_desc": "A bubbling iron pot of thick warm russet stew made from gnoll hide and lion meat, steam rising from the surface"
   },
   "death_knight_broth": {
@@ -457,7 +457,7 @@
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
-    "lore": "The Spartans had their black broth. This is darker.",
+    "lore": "The Spartans drank their black broth to harden themselves for death. This broth is darker, colder, and carries the faint iron taste of something that no longer fears it.",
     "sprite_desc": "A stone bowl filled with smooth dark broth made from charred bone and zombie flesh, wisps of fragrant steam curling above"
   },
   "hobgoblin_orc_stew": {
@@ -737,7 +737,7 @@
     "sp": 300,
     "bonus_type": "all_stats",
     "bonus_amount": 1,
-    "lore": "Lich and vampire â€” two forms of cheating death. Together they may share their secret with you.",
+    "lore": "Lich and vampire — two forms of cheating death. Together they may share their secret with you.",
     "sprite_desc": "A large ornate platter laden with an elaborate arrangement of necromancer phylactery and elder vampire blood, garnished with edible flowers and earthy sauce"
   },
   "devourer_soul_judges_feast": {
@@ -749,7 +749,7 @@
     "sp": 320,
     "bonus_type": "all_stats",
     "bonus_amount": 1,
-    "lore": "The Egyptian devourer weighs souls. Consuming her tooth alongside one grants the wisdom of judgment.",
+    "lore": "Ammit, the Egyptian devourer of unworthy hearts, weighed souls against the feather of Ma'at. To consume her essence alongside her quarry is to inherit the terrible wisdom of judgment.",
     "sprite_desc": "A large ornate platter laden with an elaborate arrangement of devourer tooth and soul fragment, garnished with edible flowers and warm russet sauce"
   },
   "pit_fiend_void_supremacy": {
@@ -787,7 +787,7 @@
     "bonus_type": "status",
     "bonus_effect": "invisible",
     "bonus_amount": 6,
-    "lore": "Shadow hound and bat â€” both creatures of darkness. Their essence grants temporary concealment.",
+    "lore": "Shadow hound and bat — both creatures of darkness. Their essence grants temporary concealment.",
     "sprite_desc": "A bubbling iron pot of thick dark stew made from shadow fur and bat wing, steam rising from the surface"
   },
   "grub_goblin_bake": {
@@ -850,7 +850,7 @@
     "sp": 200,
     "bonus_type": "two_stats",
     "bonus_amount": 2,
-    "lore": "Two hybrid predators that shouldn't exist â€” their impossible power becomes inexplicably yours.",
+    "lore": "Two hybrid predators that shouldn't exist — their impossible power becomes inexplicably yours.",
     "sprite_desc": "A large ornate platter laden with an elaborate arrangement of owlbear feather and griffin feather, garnished with edible flowers and warm russet sauce"
   },
   "barrow_embalming_stew": {
@@ -1311,7 +1311,7 @@
     "sp": 400,
     "bonus_type": "two_stats",
     "bonus_amount": 3,
-    "lore": "The fang of the world-ender with dragon scale. Two apex predators. Two attributes improve by three.",
+    "lore": "The fang of Fenrir, world-ender bound until Ragnarök, fused with the scale of a dragon. Two apex predators whose hunger knows no ceiling — and now, neither does yours.",
     "sprite_desc": "A wooden platter bearing a glistening roast of Fenrir's Fang, Dragon Scale, and void salt, seared to a pale violet crust with herb garnish"
   },
   "void_destroyer_feast": {

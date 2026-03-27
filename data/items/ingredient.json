@@ -48,7 +48,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A raw slab of pinkish-brown rat meat with visible sinew, sitting on a rough wooden cutting board"
+    "sprite_desc": "A raw slab of pinkish-brown rat meat with visible sinew, sitting on a rough wooden cutting board",
+    "lore": "Stringy, grey flesh stripped from the oversized vermin of the upper warrens. Veteran dungeon cooks claim that slow-roasting drives off the disease and leaves behind a lean, gamey meat surprisingly rich in sustaining fat."
   },
   "goblin_flesh": {
     "name": "goblin flesh",
@@ -99,7 +100,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A chunk of greenish-grey goblin flesh with a leathery hide edge, faintly glistening"
+    "sprite_desc": "A chunk of greenish-grey goblin flesh with a leathery hide edge, faintly glistening",
+    "lore": "Tough, acrid meat from a creature that subsists on rot and mischief. Those with the stomach and skill to prepare it properly find it carries a cunning vitality — perhaps an echo of the goblin's wiry, scheming nature."
   },
   "snake_meat": {
     "name": "snake meat",
@@ -153,7 +155,8 @@
         "bonus_amount": 30
       }
     },
-    "sprite_desc": "A pale coil of boneless snake meat with a subtle green sheen, neatly sliced into medallions"
+    "sprite_desc": "A pale coil of boneless snake meat with a subtle green sheen, neatly sliced into medallions",
+    "lore": "Pale, firm flesh coiled from the cave cobra's lightless domain, faintly warm to the touch where venom once coursed. Carefully prepared, it is said to lend the eater something of the serpent's preternatural stillness and heat-sensing awareness."
   },
   "fire_gland": {
     "name": "fire gland",
@@ -207,7 +210,8 @@
         "bonus_amount": 40
       }
     },
-    "sprite_desc": "A glowing orange-red organ sac pulsing with inner heat, tiny embers drifting from its surface"
+    "sprite_desc": "A glowing orange-red organ sac pulsing with inner heat, tiny embers drifting from its surface",
+    "lore": "A small amber sac plucked from behind the fire beetle's carapace, glowing faintly orange and warm as a coal. It pulses with stored bioluminescent fuel that alchemists and cooks alike prize for its fiery, illuminating properties."
   },
   "gnoll_hide": {
     "name": "gnoll hide",
@@ -260,7 +264,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A patch of coarse tawny fur-covered hide with dark spots, rolled and tied with cord"
+    "sprite_desc": "A patch of coarse tawny fur-covered hide with dark spots, rolled and tied with cord",
+    "lore": "Coarse, spotted hide reeking of blood and the open hunt, still bristling with stiff hyena fur along the ridge. Tanners who can stomach the smell produce from it a leather of extraordinary toughness, as though the gnoll's predatory endurance is woven into every fiber."
   },
   "troll_hide": {
     "name": "troll hide",
@@ -314,7 +319,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A thick slab of mossy green troll hide with visible pores, still faintly regenerating at the edges"
+    "sprite_desc": "A thick slab of mossy green troll hide with visible pores, still faintly regenerating at the edges",
+    "lore": "A thick, rubbery slab of grey-green skin that twitches faintly even after death, as though still trying to knit itself back together. Alchemists render it down for a viscous paste said to accelerate the mending of wounds with uncanny speed."
   },
   "bear_meat": {
     "name": "bear meat",
@@ -366,7 +372,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A dark red haunch of bear meat marbled with fat, resting on a bed of wild herbs"
+    "sprite_desc": "A dark red haunch of bear meat marbled with fat, resting on a bed of wild herbs",
+    "lore": "Dense, dark-red flesh from a beast that ruled its level of the dungeon like a king. It carries the iron smell of deep earth and raw strength, and those who feast on it well-prepared feel something of the cave bear's immovable fortitude stir in their bones."
   },
   "manticore_spine": {
     "name": "manticore spine",
@@ -419,7 +426,8 @@
         "bonus_amount": 3
       }
     },
-    "sprite_desc": "A wickedly curved venomous spine in deep crimson-purple, barbed at the tip, leaking pale toxin"
+    "sprite_desc": "A wickedly curved venomous spine in deep crimson-purple, barbed at the tip, leaking pale toxin",
+    "lore": "A barbed spike the length of a finger, ivory-white and hollow at the core, harvested from the manticore's fearsome tail. Persian texts warn that the residual venom within never fully fades — but in precise measure, it is said to sharpen reflexes to a predatory edge."
   },
   "basilisk_stone": {
     "name": "basilisk stone",
@@ -471,7 +479,8 @@
         "bonus_amount": 3
       }
     },
-    "sprite_desc": "A smooth petrified stone organ with swirling grey-green mineral veins, cold to the touch"
+    "sprite_desc": "A smooth petrified stone organ with swirling grey-green mineral veins, cold to the touch",
+    "lore": "A dense, oddly warm nodule found within the basilisk's skull — not quite flesh, not quite mineral, as though its own petrification magic turned inward over centuries. Sages believe it retains a fragment of that transmuting power, capable of hardening whatever it is rendered into."
   },
   "chimera_heart": {
     "name": "chimera heart",
@@ -523,7 +532,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A grotesque three-chambered heart in purple and red, each lobe from a different beast"
+    "sprite_desc": "A grotesque three-chambered heart in purple and red, each lobe from a different beast",
+    "lore": "Three-chambered and still faintly smoldering, the chimera's heart beats with the mingled blood of lion, goat, and serpent. It reeks of char and wild magic, and those who handle it without care find their fingers numb from the conflicting energies warring within."
   },
   "frost_gland": {
     "name": "frost gland",
@@ -577,7 +587,8 @@
         "bonus_amount": 50
       }
     },
-    "sprite_desc": "A translucent ice-blue organ encased in a thin shell of frost crystals, radiating cold mist"
+    "sprite_desc": "A translucent ice-blue organ encased in a thin shell of frost crystals, radiating cold mist",
+    "lore": "A crystalline blue sac harvested from the frost crawler's underbelly, so cold it burns bare skin on contact and exhales a thin mist into warm air. Alchemists seal it in lead-lined vials, knowing the supercooled ichor within can flash-freeze whatever it touches."
   },
   "medusa_blood": {
     "name": "Medusa's Blood",
@@ -742,7 +753,8 @@
         "bonus_amount": 20
       }
     },
-    "sprite_desc": "A long metallic bronze feather with a lethal serrated edge, gleaming like polished weaponry"
+    "sprite_desc": "A long metallic bronze feather with a lethal serrated edge, gleaming like polished weaponry",
+    "lore": "A feather hard as hammered metal, its edge keen enough to draw blood if handled carelessly, still carrying the faint sacred warmth of Ares' favor. Smiths and enchanters covet it, for a blade edged with bronze feather shavings is said to strike with the unerring force of a divine missile."
   },
   "quasit_claw": {
     "name": "quasit claw",
@@ -793,7 +805,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A small curved demonic claw in deep purple-black, crackling with residual infernal energy"
+    "sprite_desc": "A small curved demonic claw in deep purple-black, crackling with residual infernal energy",
+    "lore": "A small, hooked claw of deep violet chitin, still slick with the spite of the creature it came from. Warlocks prize it as a catalyst for minor bindings, claiming the quasit's innate malice lingers in the material and gives enchantments a crueler, more persistent bite."
   },
   "bone_shard": {
     "name": "bone shard",
@@ -847,7 +860,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A jagged shard of yellowed bone with a sharp splintered edge, ancient and dry"
+    "sprite_desc": "A jagged shard of yellowed bone with a sharp splintered edge, ancient and dry",
+    "lore": "A splinter of yellowed bone from an archer animated past death, its surface etched faintly with the dark runes that kept it marching. Necromancers note that the residual animation magic clings stubbornly to the fragment, like an echo of purpose that refuses to be silenced."
   },
   "rotted_flesh": {
     "name": "rotted flesh",
@@ -901,7 +915,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A decomposing chunk of grey-green flesh wrapped in burial cloth, reeking of undeath"
+    "sprite_desc": "A decomposing chunk of grey-green flesh wrapped in burial cloth, reeking of undeath",
+    "lore": "A grey, fetid scrap of decaying sinew that falls apart at rough handling, smelling of grave-damp and dark magic in equal measure. Alchemists who can work past the stench extract from it a foul but potent necrotic essence — the last whisper of life refusing to fully depart."
   },
   "green_slime_extract": {
     "name": "green slime extract",
@@ -953,7 +968,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A bubbling vial of bright green acidic gel with tiny dissolving particles suspended within"
+    "sprite_desc": "A bubbling vial of bright green acidic gel with tiny dissolving particles suspended within",
+    "lore": "A viscous, caustic fluid pressed from the body of the dungeon's most patient ambush predator, glowing a faint, sickly green in darkness. In a skilled alchemist's hands it becomes a controlled corrosive of remarkable potency; in an unskilled one's, it becomes a catastrophe."
   },
   "spider_silk": {
     "name": "spider silk",
@@ -1007,7 +1023,8 @@
         "bonus_amount": 25
       }
     },
-    "sprite_desc": "A shimmering bundle of silvery-white spider silk threads, impossibly thin yet strong as steel"
+    "sprite_desc": "A shimmering bundle of silvery-white spider silk threads, impossibly thin yet strong as steel",
+    "lore": "Gossamer threads of extraordinary tensile strength, harvested from the web spinner's elaborate traps and wound into pale, almost luminous skeins. Weavers and enchanters prize it equally — the silk holds a binding quality that seems to go beyond mere stickiness, as though the web still remembers its purpose."
   },
   "frog_legs": {
     "name": "frog legs",
@@ -1061,7 +1078,8 @@
         "bonus_amount": 15
       }
     },
-    "sprite_desc": "A pair of plump pale-green frog legs tied together at the ankle, fresh and ready to cook"
+    "sprite_desc": "A pair of plump pale-green frog legs tied together at the ankle, fresh and ready to cook",
+    "lore": "Long, muscular limbs from a creature capable of crossing a corridor in a single explosive leap, the flesh pale and faintly sweet-smelling. Dungeon cooks prize them above most other cave meats for their tenderness, and diners often swear they feel something of the giant frog's startling quickness in their own step afterward."
   },
   "satyr_horn": {
     "name": "satyr horn",
@@ -1113,7 +1131,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A curved ridged horn of pale ivory with a warm amber base, faintly scented with pine resin"
+    "sprite_desc": "A curved ridged horn of pale ivory with a warm amber base, faintly scented with pine resin",
+    "lore": "A short, ridged horn still faintly reeking of wine and woodsmoke, broken from a satyr who chose exile and war over revelry. Legend holds that Dionysus' touch never fully leaves his followers — and that the horn, ground into a draught, carries the god's gift of loosened inhibition and reckless, intoxicating courage."
   },
   "raven_feather": {
     "name": "raven feather",
@@ -1167,7 +1186,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A sleek jet-black feather with an iridescent blue-purple sheen along its vane"
+    "sprite_desc": "A sleek jet-black feather with an iridescent blue-purple sheen along its vane",
+    "lore": "A glossy black feather of unnatural iridescence, cool and weightless as a whispered secret, shed from a bird that carries Odin's sight in its hollow bones. Those who burn it and breathe the smoke claim the world grows briefly, brilliantly legible — as though Thought itself had passed through them on dark wings."
   },
   "scarab_shell": {
     "name": "scarab shell",
@@ -1221,7 +1241,8 @@
         "bonus_amount": 15
       }
     },
-    "sprite_desc": "A polished teal-green scarab carapace with intricate geometric ridges and a golden underside"
+    "sprite_desc": "A polished teal-green scarab carapace with intricate geometric ridges and a golden underside",
+    "lore": "A lacquered carapace of deep lapis and gold, sacred to Khepri who rolls the sun across the sky. Corrupted by dark magic, it still hums faintly with transformative energy—alchemists prize it as a catalyst for potions of rebirth."
   },
   "dretch_gland": {
     "name": "dretch gland",
@@ -1273,7 +1294,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A shriveled brownish-green demonic gland leaking foul yellowish ichor"
+    "sprite_desc": "A shriveled brownish-green demonic gland leaking foul yellowish ichor",
+    "lore": "A reeking sac of bilious fluid harvested from the most pitiful rank of demonkind. Its stench alone is a weapon, and even dried to a powder it retains a foul potency that corrodes both flesh and spirit."
   },
   "imp_stinger": {
     "name": "imp stinger",
@@ -1326,7 +1348,8 @@
         "bonus_amount": 30
       }
     },
-    "sprite_desc": "A needle-thin crimson stinger still glistening with infernal venom at its barbed tip"
+    "sprite_desc": "A needle-thin crimson stinger still glistening with infernal venom at its barbed tip",
+    "lore": "A needle-fine barb from the tail of a devil no larger than a cat, slick with infernal venom that carries a trace of hellfire. Cunning poison-crafters covet it, for its malice is concentrated into every drop."
   },
   "troglodyte_musk": {
     "name": "troglodyte musk",
@@ -1378,7 +1401,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A sealed clay jar of pungent olive-green musk that shimmers with oily iridescence"
+    "sprite_desc": "A sealed clay jar of pungent olive-green musk that shimmers with oily iridescence",
+    "lore": "A thick, amber-colored secretion scraped from the glands of a cave lizard-man, so pungent it makes the eyes water at ten paces. In vanishingly small quantities, herbalists claim it can mask all other scents entirely."
   },
   "bullywug_leg": {
     "name": "bullywug leg",
@@ -1431,7 +1455,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A muscular amphibian leg with mottled green-brown skin and webbed toes"
+    "sprite_desc": "A muscular amphibian leg with mottled green-brown skin and webbed toes",
+    "lore": "A long, powerful limb stripped from a swamp-dwelling frog-man, still twitching with residual nervous energy. Rendered down, it yields oils said to grant extraordinary spring and swiftness to the legs."
   },
   "warrior_bone": {
     "name": "warrior bone",
@@ -1484,7 +1509,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A polished femur bone from an undead warrior, etched with faded battle runes"
+    "sprite_desc": "A polished femur bone from an undead warrior, etched with faded battle runes",
+    "lore": "A dense femur from a soldier whose martial discipline outlasted death itself, the bone hardened by decades of undying purpose. Powdered and steeped, it is rumored to impart some ghost of that relentless fighting instinct."
   },
   "bone_marrow": {
     "name": "bone marrow",
@@ -1537,7 +1563,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A cracked bone filled with pale pinkish-cream marrow, rich and gelatinous"
+    "sprite_desc": "A cracked bone filled with pale pinkish-cream marrow, rich and gelatinous",
+    "lore": "Dark, viscous marrow drawn from the hollow leg bones of a grave-hound, cold as the tomb and faintly luminescent. It nourishes with a terrible efficiency, carrying within it the tireless hunger of the undead."
   },
   "yellow_spores": {
     "name": "yellow spores",
@@ -1590,7 +1617,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A glass vial packed with bright golden-yellow fungal spores that drift and swirl"
+    "sprite_desc": "A glass vial packed with bright golden-yellow fungal spores that drift and swirl",
+    "lore": "A fine, sulfur-bright powder that drifts from the mold's broken flesh and clings to everything it touches. Even a pinch breathed in fills the skull with visions—but a cook of precise skill can transform it into something that expands the mind without destroying it."
   },
   "beetle_shell": {
     "name": "beetle shell",
@@ -1643,7 +1671,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A dark emerald beetle carapace with a hard glossy surface and saw-toothed edges"
+    "sprite_desc": "A dark emerald beetle carapace with a hard glossy surface and saw-toothed edges",
+    "lore": "A shard of iridescent carapace that shifts between emerald and violet depending on the angle of light, hard enough to turn a knife blade. Armorers and alchemists alike covet it for its near-impenetrable properties."
   },
   "lizard_meat": {
     "name": "lizard meat",
@@ -1695,7 +1724,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A lean slab of pale greenish-white lizard flesh with fine scales still attached"
+    "sprite_desc": "A lean slab of pale greenish-white lizard flesh with fine scales still attached",
+    "lore": "Dense, pale flesh from a reptile that waited like a painted stone before striking. Lean and mineral-rich, it is slow to spoil and carries a subtle warmth that seems to persist long after cooking."
   },
   "sea_snake_venom": {
     "name": "sea snake venom",
@@ -1749,7 +1779,8 @@
         "bonus_amount": 30
       }
     },
-    "sprite_desc": "A small blue-glass vial of translucent cyan venom with tiny crystalline flecks"
+    "sprite_desc": "A small blue-glass vial of translucent cyan venom with tiny crystalline flecks",
+    "lore": "A small glass-pale drop of neurotoxin milked from the fangs of a sea serpent, almost odorless and perfectly clear. Apothecaries handle it with lead tongs—in the hands of a master, the line between paralysis and preternatural stillness is a question of measure."
   },
   "pixie_dust": {
     "name": "pixie dust",
@@ -1803,7 +1834,8 @@
         "bonus_amount": 35
       }
     },
-    "sprite_desc": "A pouch of sparkling lavender-pink dust that floats upward when disturbed"
+    "sprite_desc": "A pouch of sparkling lavender-pink dust that floats upward when disturbed",
+    "lore": "A shimmering cascade of iridescent motes that smells of honeysuckle and midnight air. Gathered carefully, it retains the enchantment that lures the mind toward sleep—or, in smaller doses, toward dreams while waking."
   },
   "myconid_spore": {
     "name": "myconid spore",
@@ -1856,7 +1888,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A soft purple-brown mushroom cap releasing a haze of pale violet spores"
+    "sprite_desc": "A soft purple-brown mushroom cap releasing a haze of pale violet spores",
+    "lore": "Soft violet-grey spores released in a gentle cloud from the cap of a fungal folk-worker, carrying the memory of vast underground gardens. Cooks who steep them carefully say the resulting broth grants a strange, rootlike communion with one's surroundings."
   },
   "empusa_ichor": {
     "name": "empusa ichor",
@@ -1908,7 +1941,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A vial of hot magenta ichor that pulses with a faint seductive warmth"
+    "sprite_desc": "A vial of hot magenta ichor that pulses with a faint seductive warmth",
+    "lore": "A mercurial fluid that cannot settle on a single color, shifting as the shape-shifting demoness shifted, staining the fingers of Hecate's crossroads crimson then black. Herbalists and witches both claim it has transformative properties—though none agree on what it transforms."
   },
   "grave_dust": {
     "name": "grave dust",
@@ -1962,7 +1996,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A leather pouch of fine grey-brown dust that smells of ancient earth and decay"
+    "sprite_desc": "A leather pouch of fine grey-brown dust that smells of ancient earth and decay",
+    "lore": "Ashen grey powder shed from the body of a Draugr, carrying the cold weight of a Norse barrow and the smell of iron-rich earth. The dust is said to preserve whatever it touches, slowing decay and stubbornly refusing to be washed away."
   },
   "changeling_glamour": {
     "name": "changeling glamour",
@@ -2015,7 +2050,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A shimmering opalescent orb of liquid light that shifts color when tilted"
+    "sprite_desc": "A shimmering opalescent orb of liquid light that shifts color when tilted",
+    "lore": "A faintly iridescent residue left behind when the changeling's false face finally fell away, cool and silky as moonlight on still water. Those who handle it report an unsettling sensation of almost recognizing themselves in a stranger's face."
   },
   "demon_claw": {
     "name": "demon claw",
@@ -2066,7 +2102,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A thick curved claw of blackened red chitin, cracked and still radiating heat"
+    "sprite_desc": "A thick curved claw of blackened red chitin, cracked and still radiating heat",
+    "lore": "A hooked talon wrenched from a Rutterkin's gnarled fist, black as charred bone and still warm with spite. It exudes a faint sulfurous heat and is favored by dark craftsmen who wish to edge their tools with cruelty."
   },
   "homunculus_blood": {
     "name": "homunculus blood",
@@ -2119,7 +2156,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A tiny flask of deep violet blood that moves with unnatural purpose inside the glass"
+    "sprite_desc": "A tiny flask of deep violet blood that moves with unnatural purpose inside the glass",
+    "lore": "A tiny vial of silver-tinged blood from a wizard's crafted servant, still faintly warm and threaded with alchemical compounds that refuse to separate. It carries a ghost of psychic resonance—those who consume it report strange, borrowed dreams."
   },
   "gray_slime": {
     "name": "gray slime",
@@ -2171,7 +2209,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A sealed jar of thick silvery-grey ooze that slowly shifts and reforms on its own"
+    "sprite_desc": "A sealed jar of thick silvery-grey ooze that slowly shifts and reforms on its own",
+    "lore": "A cold, featureless grey gel scraped from the ooze's dissolving body, indistinguishable in color from dungeon stone and nearly odorless. Alchemists prize it as a universal solvent base, though it has a troubling tendency to digest whatever vessel it is stored in."
   },
   "piercer_shell": {
     "name": "piercer shell",
@@ -2223,7 +2262,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A conical stalactite-shaped shell of striated brown and grey stone, razor-sharp at the tip"
+    "sprite_desc": "A conical stalactite-shaped shell of striated brown and grey stone, razor-sharp at the tip",
+    "lore": "A cone of ridged, chalky shell from a creature that spent its entire life pretending to be stone, waiting for the one perfect moment to fall. It is heavier than it looks and holds an uncanny edge when ground to a point—patient, precise, and lethal."
   },
   "paralytic_venom": {
     "name": "paralytic venom",
@@ -2276,7 +2316,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A stoppered vial of pale chartreuse venom that numbs on contact with skin"
+    "sprite_desc": "A stoppered vial of pale chartreuse venom that numbs on contact with skin",
+    "lore": "Milked from the writhing tentacles of the Carrion Crawler, this viscous amber fluid carries the stillness of a tomb. Alchemists prize it for its ability to arrest motion in living tissue—useful in surgery or, in darker hands, in ambush."
   },
   "lizardfolk_scale": {
     "name": "lizardfolk scale",
@@ -2328,7 +2369,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A tough overlapping scale of mottled green and brown, trimmed with a horn edge"
+    "sprite_desc": "A tough overlapping scale of mottled green and brown, trimmed with a horn edge",
+    "lore": "A broad, olive-green scale shed from the hide of a Lizardfolk warrior, smelling faintly of river mud and cold blood. The reptilian pragmatism of its former owner seems to linger in its density—it yields to neither flame nor sentiment."
   },
   "arcane_bone_dust": {
     "name": "arcane bone dust",
@@ -2382,7 +2424,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A pouch of finely ground bone powder with faint violet arcane sparks dancing within"
+    "sprite_desc": "A pouch of finely ground bone powder with faint violet arcane sparks dancing within",
+    "lore": "Ground from the finger bones of wizards who clung to their spellcraft beyond the grave, this pale powder crackles faintly with residual magic. A skilled hand might coax its latent energy into a potion, though the spirits it belonged to do not surrender their power willingly."
   },
   "charred_bone": {
     "name": "charred bone",
@@ -2436,7 +2479,8 @@
         "bonus_amount": 40
       }
     },
-    "sprite_desc": "A blackened bone fragment scorched by hellfire, still warm and smelling of ash"
+    "sprite_desc": "A blackened bone fragment scorched by hellfire, still warm and smelling of ash",
+    "lore": "Bone scorched by hellfire that neither consumes nor cools, its surface a glistening black threaded with ember-orange veins. The heat within is stubborn and strange—even powdered and boiled, it lends whatever it touches a feverish, burning warmth."
   },
   "frost_bone": {
     "name": "frost bone",
@@ -2490,7 +2534,8 @@
         "bonus_amount": 40
       }
     },
-    "sprite_desc": "A bone shard encased in a thin shell of permanent ice, cold mist rising from its surface"
+    "sprite_desc": "A bone shard encased in a thin shell of permanent ice, cold mist rising from its surface",
+    "lore": "Blue-white and cold as a midwinter battlefield, this bone once belonged to a warrior whose spirit merged with the permafrost of some forgotten tundra. It weeps a faint mist in warm air, and herbalists speak of distilling its chill into draughts that slow the blood and steady the nerves."
   },
   "plague_flesh": {
     "name": "plague flesh",
@@ -2544,7 +2589,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A chunk of sickly grey-green flesh covered in weeping sores and wrapped in cloth"
+    "sprite_desc": "A chunk of sickly grey-green flesh covered in weeping sores and wrapped in cloth",
+    "lore": "A foul, glistening strip of flesh still dark with virulent contagion, reeking of rot and iron. Only the most reckless or most learned alchemists handle it without gloves—in infinitesimal, precisely rendered doses, some claim it can teach the body to resist the very sickness it carries."
   },
   "brown_mold_patch": {
     "name": "brown mold patch",
@@ -2598,7 +2644,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A dried patch of fuzzy brown mold on bark, releasing faint warmth-draining cold"
+    "sprite_desc": "A dried patch of fuzzy brown mold on bark, releasing faint warmth-draining cold",
+    "lore": "Scraped from the cavern wall where warmth goes to die, this damp, rust-colored growth drinks heat from the air around it like a living cold-trap. Preserved in an insulated vial, it is sought after for its paradoxical property of drawing fire inward rather than spreading it outward."
   },
   "wasp_venom": {
     "name": "wasp venom",
@@ -2650,7 +2697,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A bright amber vial of giant wasp venom, viscous and faintly buzzing with energy"
+    "sprite_desc": "A bright amber vial of giant wasp venom, viscous and faintly buzzing with energy",
+    "lore": "Extracted from the stinger of a giant wasp, this bright yellow venom carries a sharp, acidic scent like vinegar and burning grass. Even a drop on the tongue brings a creeping paralysis that begins in the jaw and moves inward with patient, merciless purpose."
   },
   "mud_crawler_hide": {
     "name": "mud crawler hide",
@@ -2703,7 +2751,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A patch of thick mud-brown hide caked with dried clay and tiny embedded stones"
+    "sprite_desc": "A patch of thick mud-brown hide caked with dried clay and tiny embedded stones",
+    "lore": "A thick slab of hide from a mud crawler, cured in the very silt that once coated it, smelling of stagnant water and minerals. Its interlocking scales turn away a blade with contemptuous ease, and leatherworkers speak of it in reverent, envious tones."
   },
   "lucky_clover": {
     "name": "lucky clover",
@@ -2754,7 +2803,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A perfect four-leaf clover of vivid emerald green with a faint golden aura"
+    "sprite_desc": "A perfect four-leaf clover of vivid emerald green with a faint golden aura",
+    "lore": "Pulled from the bitter fingers of a leprechaun who had been robbed once too often, this vibrant four-leafed clover still hums with captured fortune. It smells of Irish peat and morning dew, and those who crush it in their palm claim to feel probability itself bend, however briefly, in their favor."
   },
   "toxic_thorn": {
     "name": "toxic thorn",
@@ -2806,7 +2856,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A long barbed thorn of deep green with black veins, dripping slow purple poison"
+    "sprite_desc": "A long barbed thorn of deep green with black veins, dripping slow purple poison",
+    "lore": "A barbed black thorn fired from the body of a Thorn Slinger, its tip still glistening with a resinous, slow-acting venom. The poison works quietly, like a secret kept too long—masters of herbalism have learned to dilute its essence into preparations of alarming potency."
   },
   "spore_cloud_vial": {
     "name": "spore cloud vial",
@@ -2860,7 +2911,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A sealed glass vial of swirling yellow-green gas with tiny spore particles suspended within"
+    "sprite_desc": "A sealed glass vial of swirling yellow-green gas with tiny spore particles suspended within",
+    "lore": "Carefully sealed the moment after the gas spore burst, this clouded vial contains a swirling suspension of fungal spores that pulse with a faint, sickly bioluminescence. Those who study such things warn that the cloud inside is a patient thing, waiting only for glass to become air."
   },
   "goblin_crown_dust": {
     "name": "goblin crown dust",
@@ -2911,7 +2963,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A pouch of glittering gold-green dust scraped from a goblin king's crude crown"
+    "sprite_desc": "A pouch of glittering gold-green dust scraped from a goblin king's crude crown",
+    "lore": "The pulverized remnants of a goblin king's crown—whether bone, bent iron, or stolen gold is now indistinguishable—still carrying the faintest odor of authority and unwashed ambition. Rumor holds that a potion brewed with it grants a crude but undeniable force of presence."
   },
   "shadow_fur": {
     "name": "shadow fur",
@@ -2965,7 +3018,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A tuft of impossibly dark fur that seems to absorb light, cold and silky to the touch"
+    "sprite_desc": "A tuft of impossibly dark fur that seems to absorb light, cold and silky to the touch",
+    "lore": "Clipped from one of Hecate's spectral hounds that roam the crossroads of the living and dead, this fur is cool to the touch and absorbs light rather than reflecting it. It carries the faint scent of cypress and distant torchlight, and those who weave it into preparations speak of an uncanny awareness of thresholds—seen and unseen."
   },
   "khepri_carapace": {
     "name": "khepri carapace",
@@ -3018,7 +3072,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A sacred scarab shell of brilliant teal-blue with golden hieroglyphic markings"
+    "sprite_desc": "A sacred scarab shell of brilliant teal-blue with golden hieroglyphic markings",
+    "lore": "A fragment of iridescent shell from one of Khepri's sacred beetles, shimmering between deep blue and burnished gold like a sunrise caught in stone. The Egyptians believed the scarab's shell held the mystery of rebirth within its curve, and even broken and harvested, this piece radiates a warmth that feels less like heat and more like beginning."
   },
   "puca_hair": {
     "name": "puca hair",
@@ -3070,7 +3125,8 @@
         "bonus_amount": 30
       }
     },
-    "sprite_desc": "A lock of wild purple-black hair that shifts between animal textures: fur, mane, feather"
+    "sprite_desc": "A lock of wild purple-black hair that shifts between animal textures: fur, mane, feather",
+    "lore": "A coarse lock of hair taken from a Púca mid-shift, still uncertain whether it belongs to horse, goat, or something in between—dark as a moonless Irish road and faintly iridescent. Fairy-lore holds that braiding it into a preparation grants fleetness and deception in equal, unreliable measure."
   },
   "enchanted_wood": {
     "name": "enchanted wood",
@@ -3123,7 +3179,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A chunk of living wood still faintly glowing with green veins of magical sap"
+    "sprite_desc": "A chunk of living wood still faintly glowing with green veins of magical sap",
+    "lore": "A splinter of timber from an animated wood golem, still faintly warm with the simple enchantment that once moved it. It smells of pine resin and old runes, and artificers prize it as a vessel for holding minor magical charges the way dead wood holds rainwater."
   },
   "kobold_scale": {
     "name": "kobold scale",
@@ -3175,7 +3232,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A tiny rust-orange scale with a rough texture, lightweight but surprisingly tough"
+    "sprite_desc": "A tiny rust-orange scale with a rough texture, lightweight but surprisingly tough",
+    "lore": "A small, ruddy scale etched with faint draconic markings, shed from a kobold sorcerer elevated by the fire that runs in its blood. It smells of sulfur and ambition—not dragon-great, but tenacious—and alchemists find it a useful if volatile base for fire-aspected preparations."
   },
   "darkmantle_membrane": {
     "name": "darkmantle membrane",
@@ -3229,7 +3287,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A sheet of thin rubbery dark purple membrane that ripples with residual shadow magic"
+    "sprite_desc": "A sheet of thin rubbery dark purple membrane that ripples with residual shadow magic",
+    "lore": "A thin, leathery membrane peeled from a Darkmantle's mantle, dark as a snuffed candle and faintly translucent at the edges. It carries a residue of the magical darkness it once generated—held up to a flame, the light does not pass through so much as disappear."
   },
   "zombie_flesh": {
     "name": "zombie flesh",
@@ -3282,7 +3341,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A grey-green slab of decomposing flesh held together with black stitching"
+    "sprite_desc": "A grey-green slab of decomposing flesh held together with black stitching",
+    "lore": "Bloated and dense with necromantic energy, this grey-green flesh from a Zombie Hulk has a terrible, rubbery resilience even in death. It reeks of charnel corruption and old power, and those who dare render it down speak of extracting a grotesque vitality that the body of the dead refused to surrender."
   },
   "thrall_blood": {
     "name": "thrall blood",
@@ -3336,7 +3396,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A stoppered crystal vial of deep crimson blood that refuses to coagulate"
+    "sprite_desc": "A stoppered crystal vial of deep crimson blood that refuses to coagulate",
+    "lore": "Sluggish and faintly luminescent, this crimson ichor carries the diluted essence of a vampire's gift—enough dark vitality to make a man into a weapon. It smells of iron and midnight roses, and those who handle it too long feel an inexplicable pull toward obedience."
   },
   "cairn_stone": {
     "name": "cairn stone",
@@ -3388,7 +3449,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A smooth flat river stone etched with ancient warding symbols, cold as grave earth"
+    "sprite_desc": "A smooth flat river stone etched with ancient warding symbols, cold as grave earth",
+    "lore": "A rough-hewn fieldstone taken from a roadside cairn, still humming with the spite of the wight it anchored. Grave-scholars say the marks etched into its face are not runes but memories, pressed into rock by decades of restless fury."
   },
   "hollow_bone": {
     "name": "hollow bone",
@@ -3440,7 +3502,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A thin translucent bone fragment, completely empty inside, light as paper"
+    "sprite_desc": "A thin translucent bone fragment, completely empty inside, light as paper",
+    "lore": "A bone drained of marrow and meaning alike, so light it seems to weigh nothing at all—as if something essential was torn from within it. It is cold to the touch even beside open flame, a vessel that once housed a soul and has never forgotten the absence."
   },
   "bone_arrow": {
     "name": "bone arrow",
@@ -3492,7 +3555,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A slender arrow carved entirely from yellowed bone with a needle-sharp tip"
+    "sprite_desc": "A slender arrow carved entirely from yellowed bone with a needle-sharp tip",
+    "lore": "Carved from the archer's own ribs and fletched with splinters of finger-bone, this arrow was never meant for the living. It carries a faint resonance of necromantic purpose, and apothecaries claim its marrow-dust can be rendered into a preparation that sharpens aim beyond mortal limits."
   },
   "crystal_residue": {
     "name": "crystal residue",
@@ -3544,7 +3608,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A glistening cluster of translucent blue-white crystal fragments in a pool of clear gel"
+    "sprite_desc": "A glistening cluster of translucent blue-white crystal fragments in a pool of clear gel",
+    "lore": "A crust of prismatic mineral scraped from the ooze's translucent hide, refracting torchlight into cold rainbows across dungeon walls. Alchemists prize it as a binding agent capable of suspending other compounds in a state of prolonged, crystalline potency."
   },
   "toxic_jelly_sac": {
     "name": "toxic jelly sac",
@@ -3598,7 +3663,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A bulging translucent green sac of corrosive jelly, wobbling with each movement"
+    "sprite_desc": "A bulging translucent green sac of corrosive jelly, wobbling with each movement",
+    "lore": "A small, pulsing membrane of vivid green, swollen with the concentrated venom that saturates every cell of the jelly's body. It weeps a faintly sweet-smelling fluid along its seams, a deceptive perfume that masks the swift corruption within."
   },
   "scorpion_venom_sac": {
     "name": "scorpion venom sac",
@@ -3650,7 +3716,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A tough amber-colored venom sac with a sharp stinger still attached at one end"
+    "sprite_desc": "A tough amber-colored venom sac with a sharp stinger still attached at one end",
+    "lore": "Harvested from the stinger of a beast large enough to shadow a horse, this bulging amber sac holds enough hemotoxin to unmake a company of soldiers. It is warm to the touch, trembling slightly as if the venom within still searches for prey."
   },
   "wild_thyme": {
     "name": "wild thyme",
@@ -4627,7 +4694,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A curved yellow-green fang dripping with brackish swamp venom"
+    "sprite_desc": "A curved yellow-green fang dripping with brackish swamp venom",
+    "lore": "A curved ivory fang still wet with the hemotoxic venom that caused flesh to blacken and blood to thicken in its wake. Held to the light, a faint greenish residue clings to the hollow channel within, patient and purposeful as the serpent itself."
   },
   "blink_gland": {
     "name": "blink gland",
@@ -4681,7 +4749,8 @@
         "bonus_amount": 35
       }
     },
-    "sprite_desc": "A pulsating lavender organ that flickers in and out of visibility"
+    "sprite_desc": "A pulsating lavender organ that flickers in and out of visibility",
+    "lore": "A pearlescent nodule taken from behind the blink dog's shoulder blade, still flickering with residual spatial energy that makes the fingers holding it feel briefly elsewhere. Enchanters speak of distilling it into preparations that let a body slip, for just a heartbeat, between one place and another."
   },
   "eagle_feather": {
     "name": "eagle feather",
@@ -4734,7 +4803,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A broad tawny-gold eagle feather with a sharp white tip and powerful barbs"
+    "sprite_desc": "A broad tawny-gold eagle feather with a sharp white tip and powerful barbs",
+    "lore": "A primary feather from a giant eagle's wing, silver-white at the quill and edged in bronze at the tip, carrying the cold clean scent of high mountain air far above the dungeon's rot. Legends hold that a feather freely given by such a creature grants clarity of vision and purpose—but this one was taken by force, and its counsel may be less generous."
   },
   "wisp_essence": {
     "name": "wisp essence",
@@ -4788,7 +4858,8 @@
         "bonus_amount": 35
       }
     },
-    "sprite_desc": "A tiny glass sphere containing a flickering pale blue-white light that dances within"
+    "sprite_desc": "A tiny glass sphere containing a flickering pale blue-white light that dances within",
+    "lore": "A faintly glowing mote of cold blue-white light trapped in a stoppered vial, the distilled lure of a creature that fed on despair. It pulses rhythmically like a false heartbeat, and alchemists warn that its luminescence is most potent—and most treacherous—in absolute darkness."
   },
   "spriggan_thorn": {
     "name": "spriggan thorn",
@@ -4841,7 +4912,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A woody green thorn the size of a dagger, alive with crawling vine tendrils"
+    "sprite_desc": "A woody green thorn the size of a dagger, alive with crawling vine tendrils",
+    "lore": "A barbed thorn the length of a finger, shed when the spriggan swelled to monstrous size, still rigid with the wild magic of fae expansion. It pricks the palm with a sting disproportionate to its size, as if it remembers the enormity it once belonged to."
   },
   "violet_fungus_cap": {
     "name": "violet fungus cap",
@@ -4893,7 +4965,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A fleshy purple mushroom cap with writhing tentacle-like gills underneath"
+    "sprite_desc": "A fleshy purple mushroom cap with writhing tentacle-like gills underneath",
+    "lore": "A deep amethyst cap ringed with bioluminescent spores that drift lazily upward when disturbed, carrying the sweet, sickly smell of accelerated decay. Herbalists who can stomach the harvest find its flesh, when carefully dried and neutralized, a potent ingredient in preparations that reverse rot and restore what has begun to wither."
   },
   "lamia_scales": {
     "name": "lamia scales",
@@ -4945,7 +5018,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A handful of golden-bronze scales with a hypnotic iridescent pattern"
+    "sprite_desc": "A handful of golden-bronze scales with a hypnotic iridescent pattern",
+    "lore": "Torn from the serpentine coils of Hera's most pitiless curse, these scales shimmer between deep olive and burnished gold, each one edged in grief as old as Olympus. They are said to carry within them a hunger that never fully fades, and those who craft with them must take care not to mistake the ingredient's longing for their own."
   },
   "wolf_pelt": {
     "name": "wolf pelt",
@@ -4997,7 +5071,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A thick patch of grey-brown wolf fur, dense and warm with a wild musky scent"
+    "sprite_desc": "A thick patch of grey-brown wolf fur, dense and warm with a wild musky scent",
+    "lore": "The thick grey pelt of a creature whose lineage traces back to the wolf that will swallow the sun, already unnaturally dense and warm for a beast so young. To wear it is to feel something vast and patient breathing at the edge of your awareness, as though Ragnarök is not an event but a presence that has always been close."
   },
   "nothic_eye": {
     "name": "nothic eye",
@@ -5050,7 +5125,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A large bloodshot eye with a slit pupil, still twitching with mad awareness"
+    "sprite_desc": "A large bloodshot eye with a slit pupil, still twitching with mad awareness",
+    "lore": "A single enormous eye, pale yellow shot through with ruptured red vessels, taken from a thing that once called itself a scholar. It does not decay as flesh should, and those who hold it too long report the creeping certainty that it is still reading them, cataloguing every secret they have tried to forget."
   },
   "enchanted_plate": {
     "name": "enchanted plate",
@@ -5103,7 +5179,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A shard of animated steel armor plate with faint blue runes still glowing"
+    "sprite_desc": "A shard of animated steel armor plate with faint blue runes still glowing",
+    "lore": "A breastplate wrenched from a suit of armor that fought long after its master crumbled to dust, still warm from the animating force that refused to release it. The metal bears no rust and accepts no new dents, as though whatever will inhabited it has left behind only its stubbornness."
   },
   "shaman_totem": {
     "name": "shaman totem",
@@ -5156,7 +5233,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A carved wooden totem of stacked animal heads, daubed with ritual paint"
+    "sprite_desc": "A carved wooden totem of stacked animal heads, daubed with ritual paint",
+    "lore": "A carved effigy of intertwined reptilian spirits, worn smooth by the shaman's grip and stained dark with ritual pigments ground from poisonous roots. It hums faintly when held near venom or open wounds, as if the primal spirits bound within still hunger to be invoked."
   },
   "kuo_toa_slime": {
     "name": "kuo-toa slime",
@@ -5209,7 +5287,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A jar of iridescent teal-green fish slime that shifts through rainbow colors"
+    "sprite_desc": "A jar of iridescent teal-green fish slime that shifts through rainbow colors",
+    "lore": "A thick, iridescent mucus that clings to anything it touches with unsettling persistence, smelling of deep water and something else entirely—something that has no name in any surface language. The kuo-toa secrete it as offering and armor alike, and those of unsound mind sometimes claim it whispers the names of gods that have not yet been dreamed."
   },
   "cockatrice_beak": {
     "name": "cockatrice beak",
@@ -5262,7 +5341,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A sharp hooked beak of stone-grey keratin with petrifying residue on its edge"
+    "sprite_desc": "A sharp hooked beak of stone-grey keratin with petrifying residue on its edge",
+    "lore": "A hooked, ivory-grey beak chipped from the cockatrice's rooster-skull, still carrying a mineral chill that makes the surrounding air taste faintly of turned stone. Even severed and still, a scratch from its serrated edge leaves the skin pale and oddly rigid for hours, as if the flesh cannot quite decide whether to forget what touched it."
   },
   "grick_hide": {
     "name": "grick hide",
@@ -5315,7 +5395,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A rubbery section of mottled grey-green hide covered in tiny suction cups"
+    "sprite_desc": "A rubbery section of mottled grey-green hide covered in tiny suction cups",
+    "lore": "A rubbery, stone-grey hide riddled with the natural striations of cavern rock. So perfectly does it mimic the texture of granite that even a practiced hand, running fingers across it, feels a moment of doubt."
   },
   "ghast_ichor": {
     "name": "ghast ichor",
@@ -5368,7 +5449,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A sealed jar of putrid yellow-green fluid that paralyzes living tissue on contact"
+    "sprite_desc": "A sealed jar of putrid yellow-green fluid that paralyzes living tissue on contact",
+    "lore": "A thin, reeking fluid the color of old bile, weeping from the wounds of a creature that was never quite dead enough to forget cunning. Its stench alone is said to paralyze the senses of those who breathe too deeply."
   },
   "false_holy_relic": {
     "name": "false holy relic",
@@ -5421,7 +5503,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A tarnished gold medallion radiating false divine warmth, cracked down the center"
+    "sprite_desc": "A tarnished gold medallion radiating false divine warmth, cracked down the center",
+    "lore": "A shard of bone or splinter of sanctified wood that radiates a faint, sickly warmth — the ghost of faith long since corrupted. Those who study divine mysteries say it hums with the frequency of a prayer twisted inside out."
   },
   "phase_silk": {
     "name": "phase silk",
@@ -5475,7 +5558,8 @@
         "bonus_amount": 30
       }
     },
-    "sprite_desc": "A shimmering fabric of purple-silver silk that phases between solid and translucent"
+    "sprite_desc": "A shimmering fabric of purple-silver silk that phases between solid and translucent",
+    "lore": "Threads harvested from a spider that exists only half in this world, the silk shimmers and blurs at the edges as if refusing to fully commit to reality. Weavers of the arcane prize it for garments that slip between states of being."
   },
   "python_scales": {
     "name": "python scales",
@@ -5528,7 +5612,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A strip of large overlapping olive-green scales with a muscular hide backing"
+    "sprite_desc": "A strip of large overlapping olive-green scales with a muscular hide backing",
+    "lore": "Broad, earth-brown scales worn smooth against tunnel stone, each one a little shield unto itself. They carry a faint mineral musk from years pressed against cold rock, and still hold the coiled patience of their former owner."
   },
   "heartwood_sap": {
     "name": "heartwood sap",
@@ -5582,7 +5667,8 @@
         "bonus_amount": 30
       }
     },
-    "sprite_desc": "A flask of rich amber-gold sap that glows with the vitality of ancient forests"
+    "sprite_desc": "A flask of rich amber-gold sap that glows with the vitality of ancient forests",
+    "lore": "Golden-green and viscous, this sap bleeds from the heartwood of a tree that was also a woman. It smells of turned earth after spring rain and carries within it the deep, slow memory of centuries of growth."
   },
   "assassin_vine_sap": {
     "name": "assassin vine sap",
@@ -5636,7 +5722,8 @@
         "bonus_amount": 40
       }
     },
-    "sprite_desc": "A dark green viscous sap that coils and reaches toward nearby warmth"
+    "sprite_desc": "A dark green viscous sap that coils and reaches toward nearby warmth",
+    "lore": "A pale jade fluid squeezed from tendrils that knew how to wait. It dries to a tacky film that clings like intention, and those who handle it report a strange stillness settling over their limbs, as if the sap remembers the hunt."
   },
   "carbuncle_gem": {
     "name": "carbuncle gem",
@@ -5687,7 +5774,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A luminous ruby-red gemstone that was once embedded in a living creature's forehead"
+    "sprite_desc": "A luminous ruby-red gemstone that was once embedded in a living creature's forehead",
+    "lore": "A faceted stone torn from the brow of a fox-quick creature, still faintly warm and pulsing with trapped prismatic light. Jewelers and illusionists alike covet it, for it holds sunbursts within its depths like bottled blindness."
   },
   "bronze_hide_strip": {
     "name": "bronze hide strip",
@@ -5739,7 +5827,8 @@
         "bonus_amount": 3
       }
     },
-    "sprite_desc": "A strip of metallic bronze-scaled hide that rings like metal when struck"
+    "sprite_desc": "A strip of metallic bronze-scaled hide that rings like metal when struck",
+    "lore": "A rigid strip of metallic hide from the bull-bodied beasts that ancient sources claimed arose from the earth of Ares. It smells of hot copper and carries a faint petrifying residue that makes the fingers tingle and stiffen at the joints."
   },
   "world_serpent_scale": {
     "name": "world serpent scale",
@@ -5791,7 +5880,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A large emerald-green scale with shifting cosmic patterns visible in its depth"
+    "sprite_desc": "A large emerald-green scale with shifting cosmic patterns visible in its depth",
+    "lore": "A scale the size of a buckler, dark green shading to void-black at the edges, still faintly salted with the brine of world-encircling seas. It is said that anything wrapped in it becomes, briefly, as patient and inexorable as fate itself."
   },
   "solar_venom": {
     "name": "solar venom",
@@ -5845,7 +5935,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A radiant golden vial of liquid sunlight venom that burns shadows on contact"
+    "sprite_desc": "A radiant golden vial of liquid sunlight venom that burns shadows on contact",
+    "lore": "A luminous amber toxin gathered from a serpent that guards the solar barque against the chaos of the outer dark. It burns cold against the skin and smells of desert noon, equal parts brilliant and lethal as the sun it served."
   },
   "hero_hound_pelt": {
     "name": "hero hound pelt",
@@ -5897,7 +5988,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A patch of noble golden-brown hound fur with an aura of loyalty and courage"
+    "sprite_desc": "A patch of noble golden-brown hound fur with an aura of loyalty and courage",
+    "lore": "A pelt of unusual warmth and uncanny softness, the grey-silver of Irish mist, carrying a loyalty in its very fibers that once bound it as much to kin as to hunt. Those who sleep beneath it are said to dream of a green island and the sound of the chase."
   },
   "shadow_essence": {
     "name": "shadow essence",
@@ -5950,7 +6042,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A small black crystal vial containing liquid darkness that writhes and recoils from light"
+    "sprite_desc": "A small black crystal vial containing liquid darkness that writhes and recoils from light",
+    "lore": "A vial of absolute darkness that shifts and presses against the glass as if seeking a way out. Harvested from a demon that chose to surrender its form entirely, it chills the hand that holds it and dims every candle in the room."
   },
   "ochre_extract": {
     "name": "ochre extract",
@@ -6003,7 +6096,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A thick amber-yellow gel that slowly dissolves anything organic it touches"
+    "sprite_desc": "A thick amber-yellow gel that slowly dissolves anything organic it touches",
+    "lore": "A thick, amber-yellow fluid that smells sharply of dissolved stone and digested bone. Even diluted and carefully neutralized by a skilled hand, it retains a faint corrosive tingle on the tongue — a reminder of what it was made to unmake."
   },
   "pack_lord_skull": {
     "name": "pack lord skull",
@@ -6055,7 +6149,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A large gnoll skull with filed fangs and tribal scarification carved into the bone"
+    "sprite_desc": "A large gnoll skull with filed fangs and tribal scarification carved into the bone",
+    "lore": "A massive, battle-scarred skull reeking of blood-iron and old violence, its hyena-broad jaw still locked in the snarl that commanded a warband. Shamans say it pulses with residual dominance, and weaker creatures grow uneasy in its presence."
   },
   "ettercap_silk": {
     "name": "ettercap silk",
@@ -6108,7 +6203,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A bundle of strong purple-grey silk webbing with a faint magical shimmer"
+    "sprite_desc": "A bundle of strong purple-grey silk webbing with a faint magical shimmer",
+    "lore": "Grey-brown cord, hand-spun by fingers that were once almost human, tougher than rope and sticky in a way that soap and water cannot quite resolve. It smells of the midden-floor of a spider's nest and holds knots that seem to tighten of their own accord."
   },
   "jiangshi_essence": {
     "name": "jiangshi essence",
@@ -6161,7 +6257,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A paper talisman soaked in pale blue-green ectoplasmic fluid, still twitching"
+    "sprite_desc": "A paper talisman soaked in pale blue-green ectoplasmic fluid, still twitching",
+    "lore": "A pale, cold mist compressed through dark ritual into viscous droplets that smell faintly of incense and old grave-clay. It carries the stolen vitality of a dozen stolen breaths, and handlers report their own limbs growing briefly stiff and cold."
   },
   "barrow_dust": {
     "name": "barrow dust",
@@ -6214,7 +6311,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "Ancient grey dust from a burial mound, mixed with crumbled gold leaf and bone"
+    "sprite_desc": "Ancient grey dust from a burial mound, mixed with crumbled gold leaf and bone",
+    "lore": "Fine grey-brown powder sifted from the crumbling form of a king who refused to stop keeping watch. It smells of burial earth, corroded bronze, and the specific silence of a sealed tomb, and clings to the skin long after it seems to have been brushed away."
   },
   "hollow_essence": {
     "name": "hollow essence",
@@ -6267,7 +6365,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A glass orb of perfectly clear liquid that weighs nothing and reflects no light"
+    "sprite_desc": "A glass orb of perfectly clear liquid that weighs nothing and reflects no light",
+    "lore": "A colorless, almost weightless residue that evaporates from the remains of one who bartered away the very thing that made them whole. It leaves a faint impression of hunger on any vessel that holds it, as if the container itself begins to want."
   },
   "charnel_fang": {
     "name": "charnel fang",
@@ -6319,7 +6418,8 @@
         "bonus_amount": 3
       }
     },
-    "sprite_desc": "A massive yellowed canine tooth stained with old blood and smelling of the charnel pit"
+    "sprite_desc": "A massive yellowed canine tooth stained with old blood and smelling of the charnel pit",
+    "lore": "A yellowed fang assembled from mismatched bone, still carrying the scent-memory of a hundred trails it was shaped to follow. It is cold to the touch in a way that has nothing to do with temperature, and points subtly toward the nearest dead thing."
   },
   "mantis_foreleg": {
     "name": "mantis foreleg",
@@ -6371,7 +6471,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A segmented green foreleg with a razor-sharp serrated inner edge for slicing prey"
+    "sprite_desc": "A segmented green foreleg with a razor-sharp serrated inner edge for slicing prey",
+    "lore": "The serrated foreleg of a giant mantis, still faintly twitching with predatory reflex. Alchemists prize its tendons for distillations said to gift the drinker with preternatural swiftness and the patience of a perfect hunter."
   },
   "basilisk_eye": {
     "name": "basilisk eye",
@@ -6424,7 +6525,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A clouded amber eye with a vertical pupil, still radiating faint petrification magic"
+    "sprite_desc": "A clouded amber eye with a vertical pupil, still radiating faint petrification magic",
+    "lore": "Plucked from a lesser basilisk, this clouded orb swims with a pale, calcifying light that has not yet learned to fully kill. It is said that one who consumes it prepared correctly gains a gaze of terrible weight—heavy enough to root enemies in momentary dread."
   },
   "winter_wolf_pelt": {
     "name": "winter wolf pelt",
@@ -6477,7 +6579,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A luxurious coat of pure white fur with ice crystals woven permanently into each strand"
+    "sprite_desc": "A luxurious coat of pure white fur with ice crystals woven permanently into each strand",
+    "lore": "A thick, silver-white hide that radiates cold even hours after the beast's death, carrying the faint reek of glacier ice and old blood. Stitched into a cloak by skilled hands, it is rumored to breathe killing frost upon those who threaten the wearer."
   },
   "death_dog_fang": {
     "name": "death dog fang",
@@ -6530,7 +6633,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A double-pointed fang from a two-headed death dog, blackened with necrotic poison"
+    "sprite_desc": "A double-pointed fang from a two-headed death dog, blackened with necrotic poison",
+    "lore": "A curved, yellowed fang from one of the two jaws of a fiendish death dog, streaked black with the supernatural rot it carried. Even cleaned and dried it exudes a faint charnel sweetness—alchemists render it into preparations said to accelerate or arrest decay."
   },
   "tengu_feather": {
     "name": "tengu feather",
@@ -6582,7 +6686,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A jet-black crow feather with a metallic blue edge, cut like a blade"
+    "sprite_desc": "A jet-black crow feather with a metallic blue edge, cut like a blade",
+    "lore": "A glossy black feather from a tengu warrior, iridescent as a crow's wing in candlelight and sharp-edged enough to draw blood. Masters of the culinary blade claim that a broth seasoned with its essence sharpens the reflexes to the edge of a master swordsman's steel."
   },
   "musk_pollen": {
     "name": "musk pollen",
@@ -6636,7 +6741,8 @@
         "bonus_amount": 25
       }
     },
-    "sprite_desc": "A pouch of brilliant yellow pollen that induces euphoria and suggestibility when inhaled"
+    "sprite_desc": "A pouch of brilliant yellow pollen that induces euphoria and suggestibility when inhaled",
+    "lore": "A dense, waxy powder harvested from the yellow musk creeper, glowing faintly amber and sweetly narcotic in scent. Even a pinch inhaled without preparation clouds the mind like warm honey poured over thought—but a trained cook can reverse its stupefying gifts into something clarifying."
   },
   "cyclops_eye": {
     "name": "cyclops eye",
@@ -6689,7 +6795,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A massive single eye the size of a fist, amber-orange with a horizontal pupil"
+    "sprite_desc": "A massive single eye the size of a fist, amber-orange with a horizontal pupil",
+    "lore": "A vast, amber-irised eye from a son of Poseidon, still wet with the sea-smell its owner carried from his coastal cave. Legend holds that the single vision of the Cyclopes pierced illusion and lies—and that something of that brutal clarity survives in the cooling orb."
   },
   "griffin_feather": {
     "name": "griffin feather",
@@ -6741,7 +6848,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A magnificent golden-brown feather tipped with white, radiating noble pride"
+    "sprite_desc": "A magnificent golden-brown feather tipped with white, radiating noble pride",
+    "lore": "A long primary feather from a griffin's wing, gold-tipped and impossibly stiff, smelling of sunlit mountain heights and something faintly divine. Sacred to Apollo, such feathers were once woven into crowns for those deemed worthy of godly favor."
   },
   "corrupted_elf_dust": {
     "name": "corrupted elf dust",
@@ -6794,7 +6902,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A pouch of once-luminous silver dust now tainted with creeping purple corruption"
+    "sprite_desc": "A pouch of once-luminous silver dust now tainted with creeping purple corruption",
+    "lore": "What remains of a Light Elf's radiance after darkness has curdled it—a fine, ash-grey powder that stings the fingers like cold iron and smells of something beautiful gone wrong. In careful measure it is said to carry both illumination and shadow, a balance as treacherous as Loki's counsel."
   },
   "crocodile_hide": {
     "name": "crocodile hide",
@@ -6846,7 +6955,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A section of thick ridged crocodilian hide in dark olive-green, nearly impenetrable"
+    "sprite_desc": "A section of thick ridged crocodilian hide in dark olive-green, nearly impenetrable",
+    "lore": "A plated slab of hide from a warrior of Sobek, dark green and river-smooth on one face, rough as ancient stone on the other. It carries the damp weight of the Nile—power, fertility, and the casual violence of a god who sees little difference between protection and predation."
   },
   "desert_sand_essence": {
     "name": "desert sand essence",
@@ -6899,7 +7009,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A glass vial of golden sand that flows upward and whispers in dead languages"
+    "sprite_desc": "A glass vial of golden sand that flows upward and whispers in dead languages",
+    "lore": "A vial of shimmering reddish dust condensed from a Desert Wraith, smelling of dry heat and the vast silence of the Red Land where Set holds dominion. Those who dare consume it in precise preparation find it burns away impurity and weakness—and sometimes, dangerously, more than that."
   },
   "demon_ichor": {
     "name": "demon ichor",
@@ -6951,7 +7062,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A sealed bronze flask of bubbling black-red ichor that corrodes lesser containers"
+    "sprite_desc": "A sealed bronze flask of bubbling black-red ichor that corrodes lesser containers",
+    "lore": "The viscous, brass-colored ichor of a Pazuzu Spawn, warm to the touch and smelling of scorched wind and dead locusts. Paradoxically, practitioners of apotropaic arts prize it as both bane and ward—for Pazuzu himself was invoked against the very evils he embodied."
   },
   "mouther_ichor": {
     "name": "mouther ichor",
@@ -7002,7 +7114,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A jar of grey-pink fleshy fluid with dozens of tiny embedded eyes staring outward"
+    "sprite_desc": "A jar of grey-pink fleshy fluid with dozens of tiny embedded eyes staring outward",
+    "lore": "A thick, eye-flecked fluid weeping from the gibbering mouther's many wounds, smelling of madness given form—copper, rot, and something that has no name. Alchemists who work with it in sealed chambers report that even its silence afterwards feels like a whisper."
   },
   "clockwork_gear": {
     "name": "clockwork gear",
@@ -7055,7 +7168,8 @@
         "bonus_amount": 3
       }
     },
-    "sprite_desc": "A precision brass gear with microscopic rune engravings on every tooth"
+    "sprite_desc": "A precision brass gear with microscopic rune engravings on every tooth",
+    "lore": "A precise brass gear from a clockwork horror's inner workings, its teeth still clicking faintly as if searching for something to mesh with. Artificers claim it holds a residual animating principle—a tiny, relentless hunger to keep turning long after its maker is gone."
   },
   "owlbear_feather": {
     "name": "owlbear feather",
@@ -7107,7 +7221,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A large brown feather with a downy base and an owl-like pattern, smelling of musk"
+    "sprite_desc": "A large brown feather with a downy base and an owl-like pattern, smelling of musk",
+    "lore": "A coarse, brown-banded feather that is somehow both downy and bristling, carrying the sour musk of bear and the sharp, clean scent of owl. It is the emblem of a creature that knows only rage, and renders into preparations of formidable, if unruly, vigor."
   },
   "otyugh_organ": {
     "name": "otyugh organ",
@@ -7160,7 +7275,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A bloated grey-green organ sac that reeks of refuse and pulses with bacterial life"
+    "sprite_desc": "A bloated grey-green organ sac that reeks of refuse and pulses with bacterial life",
+    "lore": "A glistening internal organ harvested from an otyugh's refuse-fed body, slick and pungent with the concentrated essence of everything the dungeon discards. Remarkably, herbalists who brave the stench find it rich in putrefied compounds that, properly rendered, accelerate the body's own healing processes."
   },
   "phase_spider_venom": {
     "name": "phase spider venom",
@@ -7213,7 +7329,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A vial of shimmering purple venom that blinks between dimensions inside the glass"
+    "sprite_desc": "A vial of shimmering purple venom that blinks between dimensions inside the glass",
+    "lore": "A shimmering, translucent venom that seems to shift between opalescent and invisible depending on the angle of light, smelling faintly of cold static and distant storms. It carries the memory of the ethereal plane within it—and those who survive its preparation claim the boundaries between here and elsewhere grow briefly, terrifyingly thin."
   },
   "vrykolakas_heart": {
     "name": "vrykolakas heart",
@@ -7266,7 +7383,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A blackened undead heart that still beats slowly, leaking dark blood"
+    "sprite_desc": "A blackened undead heart that still beats slowly, leaking dark blood",
+    "lore": "A swollen, dark-red heart from a Greek vrykolakas, still disturbingly warm and heavy with stolen blood that will not properly clot. Ancient rites demanded it be pierced with iron and burned at a crossroads—but cooks of darker persuasion know that its blood, prepared correctly, imparts a dreadful, borrowed vitality."
   },
   "thrall_bone": {
     "name": "thrall bone",
@@ -7320,7 +7438,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A thin grey bone inscribed with binding runes, warm to the touch from residual necromancy"
+    "sprite_desc": "A thin grey bone inscribed with binding runes, warm to the touch from residual necromancy",
+    "lore": "A yellowed bone from a lich's thrall, carved involuntarily with minute channels through which the lich's will once flowed like dark current. It retains a cold, humming intelligence—ground fine, it finds its way into preparations said to sharpen the mind to a terrible, remorseless edge."
   },
   "witch_bone": {
     "name": "witch bone",
@@ -7373,7 +7492,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A finger bone wrapped in silver wire and tiny charm beads, humming with hex magic"
+    "sprite_desc": "A finger bone wrapped in silver wire and tiny charm beads, humming with hex magic",
+    "lore": "A finger bone from a Bone Witch, lacquered dark by centuries of ritual and smelling of grave-wax and old power. These women chose the permanence of death over the frailty of life—and something of that ferocious, calculating will has petrified within the bone itself."
   },
   "crypt_dust": {
     "name": "crypt dust",
@@ -7426,7 +7546,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A vial of grey teleportation dust from a crypt thing, crackling with spatial energy"
+    "sprite_desc": "A vial of grey teleportation dust from a crypt thing, crackling with spatial energy",
+    "lore": "Fine grey powder that settles where a Crypt Thing dissolves, carrying the cold silence of sealed tombs. Alchemists whisper it can obscure a soul's presence from the dead, as though one never passed through at all."
   },
   "guardian_bone": {
     "name": "guardian bone",
@@ -7478,7 +7599,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A thick reinforced bone etched with protective wards, still faintly glowing blue"
+    "sprite_desc": "A thick reinforced bone etched with protective wards, still faintly glowing blue",
+    "lore": "The dense, oath-hardened bone of a warrior who chose eternal vigil over rest. It hums faintly with unbroken purpose, and those who hold it feel the ghost of a sworn duty pressing against their palms."
   },
   "gibbering_essence": {
     "name": "gibbering essence",
@@ -7529,7 +7651,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A sealed jar of writhing pink flesh-fluid that babbles incoherently when disturbed"
+    "sprite_desc": "A sealed jar of writhing pink flesh-fluid that babbles incoherently when disturbed",
+    "lore": "A viscous, iridescent fluid extracted from the half-formed mouths of the gibbering slime, still murmuring fragments of words that never quite resolve into meaning. Even stoppered in a vial, it unsettles the mind of anyone who listens too closely."
   },
   "komodo_venom_gland": {
     "name": "komodo venom gland",
@@ -7582,7 +7705,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A leathery brown gland packed with bacterial venom that causes rapid infection"
+    "sprite_desc": "A leathery brown gland packed with bacterial venom that causes rapid infection",
+    "lore": "A bloated, sour-smelling gland from the komodo brute's pestilent maw, swollen with bacteria so virulent they blur the line between venom and disease. Patient cooks extract trace amounts to craft draughts that endure long after the meal is forgotten."
   },
   "lion_meat": {
     "name": "lion meat",
@@ -7634,7 +7758,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A thick slab of dark red lion meat with powerful muscle fibers, rich and gamey"
+    "sprite_desc": "A thick slab of dark red lion meat with powerful muscle fibers, rich and gamey",
+    "lore": "Dark, iron-rich flesh from the dire lion, carrying the faint electric charge of a beast whose roar once trembled stone ceilings. Those who consume it properly prepared are said to wear the predator's courage like a second skin."
   },
   "roc_egg_fragment": {
     "name": "roc egg fragment",
@@ -7686,7 +7811,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A curved shard of enormous eggshell, thick as pottery and veined with pale gold"
+    "sprite_desc": "A curved shard of enormous eggshell, thick as pottery and veined with pale gold",
+    "lore": "A curved shard of pale shell, thick as a fortress wall and faintly warm, still radiating the unborn storm of a roc's potential. Ground fine, it carries a concentrated vitality that speaks of creatures whose shadows blot out the sun."
   },
   "redcap_blood": {
     "name": "redcap blood",
@@ -7738,7 +7864,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A vial of unnaturally bright crimson blood that never dries, constantly wet and fresh"
+    "sprite_desc": "A vial of unnaturally bright crimson blood that never dries, constantly wet and fresh",
+    "lore": "Shockingly vivid crimson blood that refuses to dry or dull, pulsing with the fey rage that keeps a redcap alive through any wound. It reeks of iron and old murder, and herbalists handle it with lead-lined gloves."
   },
   "elemental_air_core": {
     "name": "elemental air core",
@@ -7792,7 +7919,8 @@
         "bonus_effect": "haste"
       }
     },
-    "sprite_desc": "A swirling sphere of compressed wind contained in a thin crystal shell, humming"
+    "sprite_desc": "A swirling sphere of compressed wind contained in a thin crystal shell, humming",
+    "lore": "A compressed mote of perpetual wind that writhes in the hand like a trapped breath, invisible yet unmistakable—cold, sharp, and smelling of lightning before it strikes. It is the distilled will of a storm given brief, dangerous form."
   },
   "peryton_antler": {
     "name": "peryton antler",
@@ -7844,7 +7972,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A branching antler of pale bone-white with dried blood staining its tines"
+    "sprite_desc": "A branching antler of pale bone-white with dried blood staining its tines",
+    "lore": "A tine shed from the peryton's great rack, casting a shadow shaped like a human hand no matter the angle of the light. Seers covet it as an instrument of ill omen, claiming it points always toward the nearest mortal death."
   },
   "giant_marrow": {
     "name": "giant marrow",
@@ -7896,7 +8025,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A massive bone cracked open to reveal rich yellow marrow the size of a loaf"
+    "sprite_desc": "A massive bone cracked open to reveal rich yellow marrow the size of a loaf",
+    "lore": "Thick, yellowish marrow scooped from the cavernous femur of a hill giant, rich with crude, earthen vitality. A skilled cook renders it into a hearty broth whose restorative warmth spreads to the very roots of the bones."
   },
   "yuan_ti_venom_sac": {
     "name": "yuan-ti venom sac",
@@ -7948,7 +8078,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A serpentine venom gland with green-gold scales still attached, dripping clear poison"
+    "sprite_desc": "A serpentine venom gland with green-gold scales still attached, dripping clear poison",
+    "lore": "A pearl-grey sac of cold, opalescent venom from the yuan-ti, carrying traces of the dead serpent god's fading divinity. Distilled carefully, it is said to temporarily grant the drinker the cold clarity of a mind that has shed all human sentiment."
   },
   "winged_mane": {
     "name": "winged mane",
@@ -8000,7 +8131,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A flowing lock of pure white horse mane hair that drifts upward as if weightless"
+    "sprite_desc": "A flowing lock of pure white horse mane hair that drifts upward as if weightless",
+    "lore": "A hank of coarse, shadow-soaked hair from the corrupted pegasus, once white as cloud but now threaded with veins of absolute black. It carries the ghost of divine swiftness twisted into something predatory and unbound."
   },
   "lindworm_skin": {
     "name": "lindworm skin",
@@ -8052,7 +8184,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A shed skin of emerald-green dragon-kin, translucent and surprisingly tough"
+    "sprite_desc": "A shed skin of emerald-green dragon-kin, translucent and surprisingly tough",
+    "lore": "A vast, interlocking scale-skin from the Norse serpent-dragon, tough as cured iron and reeking of venom and old river water. According to legend, only willing sacrifice can undo a lindworm's curse—and something of that desperate magic still clings to the shed hide."
   },
   "embalming_resin": {
     "name": "embalming resin",
@@ -8105,7 +8238,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A block of golden-brown resin wrapped in linen strips, fragrant with sacred oils"
+    "sprite_desc": "A block of golden-brown resin wrapped in linen strips, fragrant with sacred oils",
+    "lore": "Amber-dark resin harvested from an Anubis Guardian's wrappings, fragrant with natron, cedar, and the dry breath of the underworld. It preserves whatever it touches against decay, as though Ma'at herself has weighed it worthy of eternity."
   },
   "each_uisce_mane": {
     "name": "each uisce mane",
@@ -8158,7 +8292,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A lock of waterlogged black-blue mane hair that drips endlessly and smells of the sea"
+    "sprite_desc": "A lock of waterlogged black-blue mane hair that drips endlessly and smells of the sea",
+    "lore": "A thick lock of kelp-tangled mane from the Each Uisce, perpetually wet and smelling of deep salt water and something older beneath it. Folklore holds that carrying it prevents drowning—though the Water Horse's gifts are rarely given without eventual price."
   },
   "ugallu_claw": {
     "name": "ugallu claw",
@@ -8210,7 +8345,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A massive curved claw of dark brown horn, cracked and scarred from battle"
+    "sprite_desc": "A massive curved claw of dark brown horn, cracked and scarred from battle",
+    "lore": "A hooked, storm-grey talon from the Ugallu's bird-footed leg, still crackling faintly with the authority of Mesopotamian tempests. The servants of Enlil were said to drag the wicked before divine judgment, and something of that compulsion lingers in the curved bone."
   },
   "kusarikku_horn": {
     "name": "kusarikku horn",
@@ -8262,7 +8398,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A heavy ridged horn of deep amber, warm to the touch and carved with Sumerian glyphs"
+    "sprite_desc": "A heavy ridged horn of deep amber, warm to the touch and carved with Sumerian glyphs",
+    "lore": "A broad, polished horn from the Bull-Man of Akkadian legend, once carried by divine gatekeepers who stood between the mortal world and the sacred. It is warm to the touch and resonates with a low, steadying hum—an echo of the threshold it was born to guard."
   },
   "grell_tentacle": {
     "name": "grell tentacle",
@@ -8315,7 +8452,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A severed grey-green tentacle lined with paralytic barbs, still twitching"
+    "sprite_desc": "A severed grey-green tentacle lined with paralytic barbs, still twitching",
+    "lore": "A writhing, barbed limb severed from the floating grell, still twitching with residual paralytic charge long after the creature's death. The colourless fluid weeping from its tip is prized by apothecaries willing to work quickly and without bare skin."
   },
   "infernal_perfume": {
     "name": "infernal perfume",
@@ -8368,7 +8506,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "An ornate black bottle of intoxicating perfume that smells different to each person"
+    "sprite_desc": "An ornate black bottle of intoxicating perfume that smells different to each person",
+    "lore": "An oily, hypnotic essence extracted from the incubus's skin, smelling impossibly of whatever the harvester finds most alluring—warm amber, rain on stone, a remembered embrace. It is beautiful, persuasive, and deeply untrustworthy."
   },
   "devil_glaive_shard": {
     "name": "devil glaive shard",
@@ -8420,7 +8559,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A jagged shard of infernal black iron still glowing dull red along its edge"
+    "sprite_desc": "A jagged shard of infernal black iron still glowing dull red along its edge",
+    "lore": "A jagged fragment of the bearded devil's infernal blade, black iron that never quite cools and edges that fester rather than cut clean. Even separated from the weapon, it resists any magic that would knit wounds shut, as though Hell itself refuses to let go."
   },
   "lurker_skin": {
     "name": "lurker skin",
@@ -8473,7 +8613,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A paper-thin membrane of mottled brown that mimics stone and ceiling textures"
+    "sprite_desc": "A paper-thin membrane of mottled brown that mimics stone and ceiling textures",
+    "lore": "A flat, grey-brown membrane that mimics the texture of dressed stone with unnerving precision, still faintly warm from the body heat it absorbed waiting for prey. Alchemists prize it as a binding material, for nothing adheres more stubbornly—or conceals more perfectly—than the skin of a creature whose entire existence was disguise."
   },
   "mineral_shard": {
     "name": "mineral shard",
@@ -8525,7 +8666,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A faceted crystal of mixed precious minerals: gold, silver, and gems fused together"
+    "sprite_desc": "A faceted crystal of mixed precious minerals: gold, silver, and gems fused together",
+    "lore": "A dense, tri-faceted fragment torn from the body of a creature that phased through solid rock as easily as a fish through water, faintly humming with the resonance of the Elemental Plane. It smells of deep granite and ancient metal, and those who hold it long enough claim to feel veins of ore pulsing beneath the dungeon floor."
   },
   "hook_horror_hook": {
     "name": "hook horror hook",
@@ -8577,7 +8719,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A massive bone hook the length of a forearm, curved and wickedly sharp"
+    "sprite_desc": "A massive bone hook the length of a forearm, curved and wickedly sharp",
+    "lore": "A massive, chitinous hook the color of tarnished iron, serrated along its inner curve and still faintly clicking in the hollow acoustics of the dungeon as though sending messages to kin that will never answer. It is said that a blade edged with shards of this material finds purchase in even the most stubborn stone."
   },
   "strigoi_fang": {
     "name": "strigoi fang",
@@ -8630,7 +8773,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "An elongated ivory fang with dried blood in its hollow channel, radiating cold"
+    "sprite_desc": "An elongated ivory fang with dried blood in its hollow channel, radiating cold",
+    "lore": "A hollow, needle-thin fang from one of the undying wicked, curved like a crescent and perpetually cold to the touch, carrying the faint reek of burial earth and old transgression. Eastern herbalists warn that anything prepared with it inherits a dual nature—capable of sustaining life or slowly, inexorably, draining it."
   },
   "death_mage_phylactery": {
     "name": "death mage phylactery",
@@ -8682,7 +8826,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A small obsidian box etched with death runes, pulsing with trapped soul energy"
+    "sprite_desc": "A small obsidian box etched with death runes, pulsing with trapped soul energy",
+    "lore": "A small, black-lacquered vessel etched with necromantic sigils, warm in a way no dead thing should be, containing something that pulses faintly against its walls like a heartbeat interrupted mid-transformation. It represents a bargain half-made with oblivion—and those who traffic in such things say the other half is always eventually collected."
   },
   "mohrg_organ": {
     "name": "mohrg organ",
@@ -8735,7 +8880,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A purple-red muscular tongue-organ studded with paralytic barbs"
+    "sprite_desc": "A purple-red muscular tongue-organ studded with paralytic barbs",
+    "lore": "A slick, purplish mass of preserved viscera from a creature animated by sheer murderous will rather than any dark god's blessing, still faintly twitching with the impulses that drove its host in life and in death. Necromancers handle it with iron tongs, for the violence compressed within it is said to be contagious."
   },
   "death_beetle_ichor": {
     "name": "death beetle ichor",
@@ -8788,7 +8934,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A vial of deep purple-black beetle ichor that dims nearby light sources"
+    "sprite_desc": "A vial of deep purple-black beetle ichor that dims nearby light sources",
+    "lore": "A thick, lightless fluid that seeps from the obsidian carapace of the death beetle, so deeply black it seems to swallow the glow of any torch brought near it, carrying the cold sweet smell of a tomb sealed for centuries. Poured into flame, it extinguishes it utterly—and in the darkness that follows, things are said to move."
   },
   "lycanthrope_blood": {
     "name": "lycanthrope blood",
@@ -8840,7 +8987,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A flask of dark blood that shifts between human red and bestial amber with the light"
+    "sprite_desc": "A flask of dark blood that shifts between human red and bestial amber with the light",
+    "lore": "A crimson fluid that refuses to fully congeal, still shimmering faintly silver in the light as though the moon herself has left a fingerprint in it. Alchemists have long sought to separate the beast's ferocity from its curse, with results that are, at best, incomplete."
   },
   "hag_eye": {
     "name": "hag eye",
@@ -8893,7 +9041,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A milky green eye that still sees, swiveling to track movement when uncovered"
+    "sprite_desc": "A milky green eye that still sees, swiveling to track movement when uncovered",
+    "lore": "A jaundiced, milky orb plucked from the sunken socket of a green hag, smelling of peat water and spite, swirling with the residue of illusions that made ugliness look like grace. It is said that suspended in oil and held over a flame, it reveals the true face of whatever stands before the one who peers through it."
   },
   "elemental_water_core": {
     "name": "elemental water core",
@@ -8946,7 +9095,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A perfect sphere of living water that hovers slightly above any surface"
+    "sprite_desc": "A perfect sphere of living water that hovers slightly above any surface",
+    "lore": "A sphere of perpetually churning liquid that never spills and never stills, cold enough to burn the hand that holds it, pulled from the churning heart of a wave given terrible sentience. Masters of the cooking arts speak of broth made from it in hushed tones—purifying, they say, but also hungry."
   },
   "troll_regeneration_gland": {
     "name": "troll regeneration gland",
@@ -9000,7 +9150,8 @@
         "bonus_stat": "CON"
       }
     },
-    "sprite_desc": "A pulsing green organ that visibly regrows damaged tissue before your eyes"
+    "sprite_desc": "A pulsing green organ that visibly regrows damaged tissue before your eyes",
+    "lore": "A slippery, pale organ threaded through with vessels that even now attempt to knit themselves closed, harvested from a creature that death could barely persuade to stay dead. Those who prepare it carefully claim the resulting preparation carries a ghost of that stubborn vitality—though only so long as it is kept well away from fire."
   },
   "minotaur_horn": {
     "name": "Minotaur Horn",
@@ -9107,7 +9258,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A lock of luxurious golden lion mane radiating ancient wisdom and desert heat"
+    "sprite_desc": "A lock of luxurious golden lion mane radiating ancient wisdom and desert heat",
+    "lore": "A great rippling lock of tawny hair from the riddler who broke the pride of Thebes, still crackling faintly with the static of divine authority, smelling of desert noon and the copper tang of old blood. It is said that a wreath woven from it lends the wearer a terrible clarity of thought—provided they are willing to pay its price."
   },
   "frost_giant_bone": {
     "name": "frost giant bone",
@@ -9159,7 +9311,8 @@
         "bonus_amount": 3
       }
     },
-    "sprite_desc": "A femur of pale blue-white bone taller than a human, rimed with permanent frost"
+    "sprite_desc": "A femur of pale blue-white bone taller than a human, rimed with permanent frost",
+    "lore": "A massive shard of pale blue-white bone from a descendant of Ymir himself, dense as glacier ice and etched by millennia of cold with natural runes that no scholar has fully translated. It thrums faintly with the memory of Niflheim's howling dark, and those who carry it too long begin to dream of a world before the gods were born."
   },
   "corruption_scale": {
     "name": "corruption scale",
@@ -9211,7 +9364,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A blackened dragon scale corroded with creeping purple-red corruption veins"
+    "sprite_desc": "A blackened dragon scale corroded with creeping purple-red corruption veins",
+    "lore": "A dark, iridescent scale from the brood of Níðhöggr, the gnawer who has never ceased its work at the roots of Yggdrasil, smelling faintly of rot and the slow dissolution of things that were meant to be eternal. Its edges are preternaturally sharp, and alchemists note that substances stored beside it begin, inexplicably, to decay."
   },
   "sphinx_dust_gold": {
     "name": "sphinx dust gold",
@@ -9263,7 +9417,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "Sacred golden dust from a sphinx guardian, each grain containing a fragment of a riddle"
+    "sprite_desc": "Sacred golden dust from a sphinx guardian, each grain containing a fragment of a riddle",
+    "lore": "A fine, luminous powder that sifts from the hide of a creature who has kept vigil over royal tombs since before living memory, tasting of dry desert wind and sacred cedar resin. Unlike its Greek kin who traded in riddles, this dust carries the weight of divine judgment—and those who use it unworthily find fortune turns its back on them with unsettling speed."
   },
   "thoth_ink": {
     "name": "thoth ink",
@@ -9316,7 +9471,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A vial of deep blue-black ink that writes words of power on its own when uncapped"
+    "sprite_desc": "A vial of deep blue-black ink that writes words of power on its own when uncapped",
+    "lore": "A glossy, deep-blue fluid harvested from the construct of the Twice-Great, smelling of papyrus and bitumen, that forms letters of its own accord on any surface it touches before slowly fading. Scribes of the arcane arts believe that a single prepared drop, consumed at the moment of learning, seals the knowledge into the mind as permanently as Thoth's own records."
   },
   "fomorian_bone": {
     "name": "fomorian bone",
@@ -9368,7 +9524,8 @@
         "bonus_amount": 3
       }
     },
-    "sprite_desc": "A massive twisted bone from a deformed giant, asymmetrical and covered in growths"
+    "sprite_desc": "A massive twisted bone from a deformed giant, asymmetrical and covered in growths",
+    "lore": "A vast, asymmetrical bone dense as sea-granite, dredged from one of the Chaos-born who warred against the bright gods before the world settled into its current shape, cold and faintly damp as the Irish winter. It radiates a sullen, primordial weight that dims nearby flames and makes animals refuse to enter rooms where it is kept."
   },
   "cath_palug_claw": {
     "name": "cath palug claw",
@@ -9420,7 +9577,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A curved obsidian-black claw from the monstrous cat, still humming with feral power"
+    "sprite_desc": "A curved obsidian-black claw from the monstrous cat, still humming with feral power",
+    "lore": "A curved, obsidian-black claw from the Clawing Cat that laid waste to Anglesey, broader than a man's palm and still sharp enough to part chainmail like linen, smelling of wild sea-spray and fresh violence. Warriors who have mounted fragments of it to their blades speak of a savage, almost feral precision that comes over them in the thick of battle."
   },
   "primordial_clay": {
     "name": "primordial clay",
@@ -9472,7 +9630,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A lump of ancient red-brown clay that reshapes itself when not being observed"
+    "sprite_desc": "A lump of ancient red-brown clay that reshapes itself when not being observed",
+    "lore": "A heavy, grey-green clod of matter from the body of Lahamu, shaped in the abyss before the sky and earth were yet divided, still faintly moist with the mingled waters of Apsu and Tiamat. It is said to hold the memory of all forms—pressed and baked by a skilled hand, it can become almost anything, though it always retains its taste of the deep and formless dark."
   },
   "brain_lobe": {
     "name": "brain lobe",
@@ -9525,7 +9684,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A glistening pink-grey brain lobe floating in preservative fluid, pulsing with psionic energy"
+    "sprite_desc": "A glistening pink-grey brain lobe floating in preservative fluid, pulsing with psionic energy",
+    "lore": "A glistening, rose-grey lobe that twitches faintly even after separation from its host, carrying the psychic residue of every mind the intellect devourer consumed—a palimpsest of stolen selves. Handled too long without precaution, it whispers fragments of thoughts that were never yours, and some of them are very difficult to give back."
   },
   "cloaker_hide": {
     "name": "cloaker hide",
@@ -9578,7 +9738,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A dark leathery hide that undulates on its own, mimicking a cloak or shadow"
+    "sprite_desc": "A dark leathery hide that undulates on its own, mimicking a cloak or shadow",
+    "lore": "A supple, velvet-dark membrane that shifts color like a living shadow, indistinguishable from fine cloth until it writhes in your hands. Tanners who work it claim it retains some memory of concealment, and cloaks sewn from it seem to drink in lamplight."
   },
   "enchanted_clay": {
     "name": "enchanted clay",
@@ -9630,7 +9791,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A block of smooth tan clay inscribed with the word of animation in Hebrew script"
+    "sprite_desc": "A block of smooth tan clay inscribed with the word of animation in Hebrew script",
+    "lore": "Soft, ruddy clay still warm with the residue of animating magic, threaded through with veins of dull gold that pulse faintly in darkness. Alchemists prize it as a medium that remembers the shape of rage—useful, and deeply unstable."
   },
   "displacer_hide": {
     "name": "displacer hide",
@@ -9683,7 +9845,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A sleek dark indigo hide that shimmers and appears several inches from where it actually is"
+    "sprite_desc": "A sleek dark indigo hide that shimmers and appears several inches from where it actually is",
+    "lore": "The sleek, blue-black pelt of a displacer beast ripples strangely at the edge of vision, as though the hide itself refuses to be looked at directly. It is said that armor lined with it makes the wearer difficult to pin down, body and eye alike deceived."
   },
   "black_ooze": {
     "name": "black ooze",
@@ -9736,7 +9899,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A sealed obsidian jar of pitch-black ooze that dissolves anything except stone and glass"
+    "sprite_desc": "A sealed obsidian jar of pitch-black ooze that dissolves anything except stone and glass",
+    "lore": "A viscous, tar-dark substance that smells of dissolved iron and corroded wood, collected with clay vessels since no metal container survives it long. Even rendered down and neutralized, it retains a hungry quality—useful to those who would unmake rather than make."
   },
   "trapper_membrane": {
     "name": "trapper membrane",
@@ -9789,7 +9953,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A wide flat membrane of stone-colored skin that could cover an entire floor tile"
+    "sprite_desc": "A wide flat membrane of stone-colored skin that could cover an entire floor tile",
+    "lore": "A broad, leathery sheet of grey-beige flesh patterned with the uncanny texture of worked stone, harvested from a creature that was itself a floor. It remains eerily flat no matter how it is folded, and skilled crafters use it to line false walls and pit covers."
   },
   "revenant_heart": {
     "name": "revenant heart",
@@ -9842,7 +10007,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A blackened heart wrapped in chains, burning with undying vengeance and refusing to stop beating"
+    "sprite_desc": "A blackened heart wrapped in chains, burning with undying vengeance and refusing to stop beating",
+    "lore": "A desiccated heart that has not fully stopped beating, each slow contraction driven not by blood but by something older and colder—pure, unresolved purpose. Apothecaries handle it with reverence and dread, for the will preserved within it does not dissolve easily."
   },
   "tomb_stone_fragment": {
     "name": "tomb stone fragment",
@@ -9895,7 +10061,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A chunk of carved tomb stone with hieroglyphic warnings and traces of guardian magic"
+    "sprite_desc": "A chunk of carved tomb stone with hieroglyphic warnings and traces of guardian magic",
+    "lore": "A shard of inscribed limestone carved with royal cartouches and binding glyphs, still faintly warm from the necromantic current that animated the guardian it came from. Scholars say the script on each fragment is unique, the name of the tomb it was sworn to protect."
   },
   "elemental_ice_core": {
     "name": "elemental ice core",
@@ -9948,7 +10115,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A perfect diamond of living ice that never melts, freezing the air around it white"
+    "sprite_desc": "A perfect diamond of living ice that never melts, freezing the air around it white",
+    "lore": "A dense sphere of glacial crystal that never melts, radiating a cold so deep it scorches bare skin white on contact. It hums with the resonance of storms older than recorded seasons, and light passing through it fractures into colours that have no names."
   },
   "mound_mulch": {
     "name": "mound mulch",
@@ -10001,7 +10169,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A compressed mass of rotting vegetation, fungus, and absorbed lightning energy"
+    "sprite_desc": "A compressed mass of rotting vegetation, fungus, and absorbed lightning energy",
+    "lore": "A reeking heap of compressed rot—bark, vine, fungus, and blackened leaf-matter—still faintly crackling with whatever swamp-lightning first gave it purpose. Alchemists find it a rich substrate, bloated with strange nutrients that coax even dead things toward growth."
   },
   "corrupted_wing_feather": {
     "name": "corrupted wing feather",
@@ -10053,7 +10222,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A once-white pegasus feather now streaked with dark purple corruption veins"
+    "sprite_desc": "A once-white pegasus feather now streaked with dark purple corruption veins",
+    "lore": "A long primary feather marbled black and sickly white, soft as silk on one side and barbed like a briar on the other. The shadow magic threaded through its quill resists both flame and light, and it trails a faint scent of storm clouds turned rancid."
   },
   "nue_tail_quill": {
     "name": "nue tail quill",
@@ -10104,7 +10274,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A stiff black quill from a chimeric beast's snake-tail, crackling with storm static"
+    "sprite_desc": "A stiff black quill from a chimeric beast's snake-tail, crackling with storm static",
+    "lore": "A hollow, iridescent quill from the serpent tail of the nue, ringed in scales of deep green that shade to bone-white at the tip. The dread that the nue breathes into its victims seems to linger here, and those who handle it too long report a creeping unease they cannot name."
   },
   "drow_poison_extract": {
     "name": "drow poison extract",
@@ -10157,7 +10328,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A tiny obsidian vial of concentrated purple sleep poison favored by the dark elves"
+    "sprite_desc": "A tiny obsidian vial of concentrated purple sleep poison favored by the dark elves",
+    "lore": "A small crystallized bead of distilled Underdark venom, black at its heart and rimmed with deep violet, harvested before it could dissolve with the rest of drow-made things in surface air. Properly diluted by a skilled hand, it induces a heavy, dreamless stupor—imprecisely applied, it does not."
   },
   "ember_ash": {
     "name": "ember ash",
@@ -10210,7 +10382,8 @@
         "bonus_amount": 3
       }
     },
-    "sprite_desc": "A pouch of smoldering orange-red ash from a fire giant's forge, perpetually warm"
+    "sprite_desc": "A pouch of smoldering orange-red ash from a fire giant's forge, perpetually warm",
+    "lore": "The grey-gold ash left where a Fire Giant has fallen, still smoking hours after death, smelling of a forge-fire hot enough to smelt stars. Surtr's kin carry Múspellsheim in their bones, and this residue retains a furnace-heart that no ordinary water can fully quench."
   },
   "spectral_essence": {
     "name": "spectral essence",
@@ -10262,7 +10435,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A wisp of silvery-blue ectoplasm contained in a spirit bottle, glowing with valkyrie light"
+    "sprite_desc": "A wisp of silvery-blue ectoplasm contained in a spirit bottle, glowing with valkyrie light",
+    "lore": "A cool, silver-blue vapour sealed in a vial, condensed from the dissolution of a Valkyrie Shade—it shimmers like moonlight on a battlefield and carries the distant sound of war-horns. Those who breathe it speak of feeling briefly, terribly chosen."
   },
   "sea_serpent_oil": {
     "name": "sea serpent oil",
@@ -10314,7 +10488,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A flask of deep blue-green oil extracted from a Norse sea serpent, smelling of brine and storm"
+    "sprite_desc": "A flask of deep blue-green oil extracted from a Norse sea serpent, smelling of brine and storm",
+    "lore": "A thick, brine-dark oil rendered from the fat of a Norse sea serpent, smelling of deep ocean trenches and old salt-storms. Viking healers rubbed it into rope-burned hands and frostbitten limbs, and sailors claim it keeps wood from rotting even in the grip of Ægir's storms."
   },
   "anzu_feather": {
     "name": "anzu feather",
@@ -10367,7 +10542,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A magnificent golden-bronze feather the size of a sword, crackling with stolen divine fire"
+    "sprite_desc": "A magnificent golden-bronze feather the size of a sword, crackling with stolen divine fire",
+    "lore": "A massive bronze-gold pinion stripped from the wing of the great lion-eagle, stiff enough to use as a blade and faintly etched with cuneiform lines—as if fate itself left its mark where the Tablet of Destinies was so long grasped. To hold it is to feel briefly, dizzyingly, that the future is a thing that can be stolen."
   },
   "eyestalk": {
     "name": "eyestalk",
@@ -10419,7 +10595,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A severed beholder eyestalk still swiveling, its tip glowing with residual antimagic"
+    "sprite_desc": "A severed beholder eyestalk still swiveling, its tip glowing with residual antimagic",
+    "lore": "A rubbery, cream-coloured stalk tipped with a clouded iris that still twitches toward movement even after death, leaking a faintly iridescent fluid. Wizards who dare to use it in their work find that even a dead beholder's eye resists being deceived."
   },
   "devil_chain_link": {
     "name": "devil chain link",
@@ -10471,7 +10648,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A single link of infernal chain that burns with hellfire and cannot be broken by mortal means"
+    "sprite_desc": "A single link of infernal chain that burns with hellfire and cannot be broken by mortal means",
+    "lore": "A single link of black iron from a chain devil's writhing coils, cold to the touch despite the infernal warmth it should carry, its edges worn sharp by years of animated motion. The metal does not rust—it aches, faintly, as though it remembers every wrist it closed around."
   },
   "shield_core": {
     "name": "shield guardian core",
@@ -10524,7 +10702,8 @@
         "bonus_amount": 3
       }
     },
-    "sprite_desc": "A glowing blue-white arcane core that once animated a shield guardian, humming with protective magic"
+    "sprite_desc": "A glowing blue-white arcane core that once animated a shield guardian, humming with protective magic",
+    "lore": "A fist-sized arcane gemstone extracted from the chest cavity of a shield guardian, warm and faintly humming with stored protective magic. It pulses steadily like a mechanical heart, and artificers say the resonance inside it will attune itself, given time, to whoever carries it longest."
   },
   "roper_strand": {
     "name": "roper strand",
@@ -10577,7 +10756,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A long sticky grey tentacle-strand with a powerful adhesive that grips like iron"
+    "sprite_desc": "A long sticky grey tentacle-strand with a powerful adhesive that grips like iron",
+    "lore": "A tough, pale tendril of adhesive sinew, glutinous at the tip and fibrous as rope at the root, smelling of wet stone and something faintly animal. Even severed from its source it clings with stubborn purpose, and those who work with it often find their fingers stuck together long after they thought they had washed it clean."
   },
   "elder_vampire_blood": {
     "name": "elder vampire blood",
@@ -10630,7 +10810,8 @@
         "bonus_amount": 3
       }
     },
-    "sprite_desc": "An ancient crystal vial of thick black-crimson blood that whispers promises of eternal power"
+    "sprite_desc": "An ancient crystal vial of thick black-crimson blood that whispers promises of eternal power",
+    "lore": "Viscous and almost black, this ancient ichor reeks of turned earth and centuries of predation. The nosferatu's debased bloodline carries a feral potency that aristocratic vampire blood lacks — rawer, hungrier, and far less refined."
   },
   "pale_master_essence": {
     "name": "pale master essence",
@@ -10682,7 +10863,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A swirling grey-white essence trapped in a soul gem, radiating deathly cold intellect"
+    "sprite_desc": "A swirling grey-white essence trapped in a soul gem, radiating deathly cold intellect",
+    "lore": "A waxy residue scraped from flesh that is neither fully alive nor fully dead, smelling faintly of formaldehyde and grave-dust. The pale master's obsessive grafting of undead tissue has saturated this essence with a cold necromantic energy that blurs the boundary between the living and the corpse."
   },
   "wight_essence": {
     "name": "wight essence",
@@ -10735,7 +10917,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A dark blue-grey mist trapped in a sealed jar, draining warmth from everything nearby"
+    "sprite_desc": "A dark blue-grey mist trapped in a sealed jar, draining warmth from everything nearby",
+    "lore": "A cold, faintly luminous vapor condensed into a dark crystalline shard, humming with the accumulated hatred of centuries. The wight lord's long dominion over the dead has concentrated within it a will so corrosive it can leech warmth from bare skin through a leather pouch."
   },
   "dread_plate": {
     "name": "dread plate fragment",
@@ -10787,7 +10970,8 @@
         "bonus_amount": 3
       }
     },
-    "sprite_desc": "A shard of cursed black plate armor etched with skull motifs, unnaturally heavy"
+    "sprite_desc": "A shard of cursed black plate armor etched with skull motifs, unnaturally heavy",
+    "lore": "A jagged shard of blackened armor plate wrenched from a fallen paladin's corrupted shell, cold as a tomb and faintly etched with holy symbols now scoured half-away by decades of unholy corruption. The metal hums with a discordant resonance — as though the divine consecration and the darkness that overthrew it are still locked in silent, endless war within the iron."
   },
   "soul_fragment": {
     "name": "soul fragment",
@@ -10839,7 +11023,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A translucent blue crystal shard containing a screaming fragment of a consumed soul"
+    "sprite_desc": "A translucent blue crystal shard containing a screaming fragment of a consumed soul",
+    "lore": "A translucent sliver of stolen spirit, cool and weightless as a moth's wing, that pulses with a faint borrowed light. The soul eater spawn tore this from some forgotten living thing, and it retains a ghost of that creature's last desperate vitality."
   },
   "storm_feather": {
     "name": "storm feather",
@@ -10892,7 +11077,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A crackling white-blue feather that arcs with tiny lightning bolts between its barbs"
+    "sprite_desc": "A crackling white-blue feather that arcs with tiny lightning bolts between its barbs",
+    "lore": "A long, iridescent primary feather that snaps with static discharge when handled, leaving the fingertips tingling and smelling of ozone. Alchemists prize it as a conduit for lightning-working, for the thunderbird's storm is not merely summoned — it is woven into every barb and quill."
   },
   "sovereign_spore_cap": {
     "name": "sovereign spore cap",
@@ -10944,7 +11130,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A regal purple-gold mushroom cap the size of a shield, emanating calming telepathic waves"
+    "sprite_desc": "A regal purple-gold mushroom cap the size of a shield, emanating calming telepathic waves",
+    "lore": "A broad, dense cap ringed in deep violet and pale gold, still venting a faint haze of psychoactive spores that drift like luminous smoke. The myconid sovereign governed its kingdom through this crown alone, and even severed, the cap pulses with the ghost of a vast hive-mind."
   },
   "sphinx_claw": {
     "name": "sphinx claw",
@@ -10996,7 +11183,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A curved golden claw with hieroglyphic engravings and sand permanently embedded in its grain"
+    "sprite_desc": "A curved golden claw with hieroglyphic engravings and sand permanently embedded in its grain",
+    "lore": "A curved, tawny talon worn smooth by ages of stone and riddled flesh, faintly warm as though the riddle-heat of the sphinx's gaze still lingers within. Those who hold it too long report unbidden questions rising in their minds — problems with no clean answer."
   },
   "stone_giant_core": {
     "name": "stone giant core",
@@ -11048,7 +11236,8 @@
         "bonus_amount": 3
       }
     },
-    "sprite_desc": "A dense sphere of living granite with veins of quartz crystal pulsing with earth magic"
+    "sprite_desc": "A dense sphere of living granite with veins of quartz crystal pulsing with earth magic",
+    "lore": "A dense, fist-sized nodule of granite-grey mineral pulled from deep within a stone giant's chest, banded with veins of quartz that glow dimly in darkness. It carries the immense geological patience of its former host, radiating a steadiness that seems to slow the trembling of exhausted hands."
   },
   "black_dragon_scale": {
     "name": "black dragon scale",
@@ -11100,7 +11289,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A scale of pure obsidian-black that drips residual acid and dissolves cloth on contact"
+    "sprite_desc": "A scale of pure obsidian-black that drips residual acid and dissolves cloth on contact",
+    "lore": "An obsidian-dark scale edged with a faint green iridescence, slick with residual acid that slowly etches whatever surface it rests on. The young black dragon's cruelty is encoded in its very hide — alchemists handle it with tongs and a grudging respect."
   },
   "naga_scale": {
     "name": "naga scale",
@@ -11152,7 +11342,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "An emerald-green scale with a hypnotic spiraling pattern that draws the eye inward"
+    "sprite_desc": "An emerald-green scale with a hypnotic spiraling pattern that draws the eye inward",
+    "lore": "A broad, iridescent scale whose inner surface bears faint runic whorls, as though the naga's ancient magical charge has been pressed into the keratin itself. It smells of deep water and old incense, a relic of a guardian that measured its vigil in millennia."
   },
   "hydra_bile": {
     "name": "hydra bile",
@@ -11205,7 +11396,8 @@
         "bonus_amount": 3
       }
     },
-    "sprite_desc": "A large flask of caustic green bile that bubbles and multiplies when exposed to blood"
+    "sprite_desc": "A large flask of caustic green bile that bubbles and multiplies when exposed to blood",
+    "lore": "A caustic, brackish fluid drawn from the Lernaean Hydra's severed neck, dark as swamp water and faintly luminous at the edges. Heracles learned that only fire could stop what blade could not — this bile carries that same terrible regenerative will, as dangerous to contain as it is invaluable to the learned."
   },
   "cerebral_fluid": {
     "name": "cerebral fluid",
@@ -11258,7 +11450,8 @@
         "bonus_amount": 3
       }
     },
-    "sprite_desc": "A vial of shimmering pink-purple fluid that induces psychic visions when held near the temple"
+    "sprite_desc": "A vial of shimmering pink-purple fluid that induces psychic visions when held near the temple",
+    "lore": "A thin, opalescent liquid extracted from the skull of a mind once belonging to someone else, carrying the faint psychic residue of foreign thoughts. The illithid's domination has so thoroughly marinated this fluid in psionic energy that a drop on the tongue reportedly floods the mind with alien, crystalline clarity."
   },
   "devil_barb": {
     "name": "devil barb",
@@ -11310,7 +11503,8 @@
         "bonus_amount": 3
       }
     },
-    "sprite_desc": "A barbed spine of dark red iron that regrows from its base, never fully removable"
+    "sprite_desc": "A barbed spine of dark red iron that regrows from its base, never fully removable",
+    "lore": "A hooked spine the color of old blood, still burning faintly at the tip with hellfire that neither chars the hand nor quite goes out. The hamatula grew these barbs as instruments of eternal torment, and the cruelty of their purpose has been calcified into the bone itself."
   },
   "golem_stone": {
     "name": "golem stone",
@@ -11362,7 +11556,8 @@
         "bonus_amount": 3
       }
     },
-    "sprite_desc": "A chunk of animate granite with a partially visible command sigil carved into its face"
+    "sprite_desc": "A chunk of animate granite with a partially visible command sigil carved into its face",
+    "lore": "A smooth, palm-sized chunk of animated granite extracted from the golem's chest cavity, still faintly warm and pulsing with the residual rhythm of its animating rune. It carries within it the golem's absolute, unhurried momentum — an inertia that feels almost philosophical."
   },
   "catoblepas_horn": {
     "name": "catoblepas horn",
@@ -11415,7 +11610,8 @@
         "bonus_amount": 3
       }
     },
-    "sprite_desc": "A heavy downward-curving horn of dark grey bone, its tip stained with death-breath residue"
+    "sprite_desc": "A heavy downward-curving horn of dark grey bone, its tip stained with death-breath residue",
+    "lore": "A heavy, matte-black horn riddled with small fissures that weep a thin, odorless vapor known to wither small plants on contact. The catoblepas could not lift its gaze to meet your eyes, yet this horn concentrates that lethal downward weight into a single terrible point."
   },
   "nightshade_essence": {
     "name": "nightshade spawn essence",
@@ -11468,7 +11664,8 @@
         "bonus_amount": 3
       }
     },
-    "sprite_desc": "A vial of absolute darkness in liquid form, draining color from everything it touches"
+    "sprite_desc": "A vial of absolute darkness in liquid form, draining color from everything it touches",
+    "lore": "A cold, smoke-like residue that pools at the bottom of a vial and refuses to fully dissolve in any solvent, carrying the absolute darkness of creatures born where no light has ever reached. Even this lesser spawn's essence smells of extinguished stars and the silence between heartbeats."
   },
   "queen_venom_gland": {
     "name": "spider queen venom gland",
@@ -11521,7 +11718,8 @@
         "bonus_amount": 3
       }
     },
-    "sprite_desc": "A swollen purple-black venom gland pulsing with the concentrated poison of a spider queen"
+    "sprite_desc": "A swollen purple-black venom gland pulsing with the concentrated poison of a spider queen",
+    "lore": "A pearlescent sac the size of a fist, taut and warm, filled with venom so concentrated it has begun to crystallize at the edges into pale amber nodes. The spider queen's brood-mother poison is engineered for utter subjugation — it does not merely kill, it unmakes the will to resist."
   },
   "elemental_magma_core": {
     "name": "magma elemental core",
@@ -11574,7 +11772,8 @@
         "bonus_amount": 3
       }
     },
-    "sprite_desc": "A molten sphere of living lava encased in a thin obsidian shell, glowing cherry-red"
+    "sprite_desc": "A molten sphere of living lava encased in a thin obsidian shell, glowing cherry-red",
+    "lore": "A pulsing sphere of cooling basalt encasing a still-molten heart that glows deep red through its cracks, radiating waves of dry heat that make the air above it shimmer. The magma elemental's essence is the patience of stone broken open by the impatience of fire — volatile, primordial, and hungry to return to form."
   },
   "corrupted_horn_fragment": {
     "name": "corrupted unicorn horn",
@@ -11625,7 +11824,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A spiral horn fragment of once-pure white now veined with sickly purple-black corruption"
+    "sprite_desc": "A spiral horn fragment of once-pure white now veined with sickly purple-black corruption",
+    "lore": "A jagged shard of what was once milk-white horn, now spiraled black and weeping a slow iridescent ichor that smells of scorched violets and shadow. The corruption has not destroyed the unicorn's power — it has inverted it, and whatever this fragment once purified, it now quietly poisons."
   },
   "shadow_crystal": {
     "name": "shadow crystal",
@@ -11678,7 +11878,8 @@
         "bonus_amount": 3
       }
     },
-    "sprite_desc": "A faceted crystal of pure shadow that projects darkness instead of light when illuminated"
+    "sprite_desc": "A faceted crystal of pure shadow that projects darkness instead of light when illuminated",
+    "lore": "A sliver of crystallized darkness harvested from the aura of a slain drow mage, it hums faintly with absorbed shadow-light and feels colder than stone should. Alchemists prize it as a conduit for illusion-work, believing it holds the border between what is seen and what is merely believed."
   },
   "red_dragon_scale": {
     "name": "red dragon scale",
@@ -11730,7 +11931,8 @@
         "bonus_amount": 3
       }
     },
-    "sprite_desc": "A large crimson scale that radiates intense heat and glows like a dying ember"
+    "sprite_desc": "A large crimson scale that radiates intense heat and glows like a dying ember",
+    "lore": "A plate of deep crimson hide edged in orange, still warm to the touch as if banked coals smolder beneath its surface. It smells of scorched iron and arrogance, and those who carry it are said to feel an unfamiliar contempt stirring in their chest."
   },
   "scylla_fang": {
     "name": "scylla fang",
@@ -11782,7 +11984,8 @@
         "bonus_amount": 3
       }
     },
-    "sprite_desc": "A massive serrated fang from one of Scylla's six heads, barnacled and reeking of the deep"
+    "sprite_desc": "A massive serrated fang from one of Scylla's six heads, barnacled and reeking of the deep",
+    "lore": "One of dozens of serrated teeth shed by the six-headed terror of the straits, yellowed like old ivory and notched from centuries of grinding ship-timber and sailor bone. It weeps a faint brine that never quite dries, as though the sea itself has not yet relinquished its claim."
   },
   "titan_essence": {
     "name": "titanspawn essence",
@@ -11834,7 +12037,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A massive crystal containing swirling golden energy, warm with the power of primordial creation"
+    "sprite_desc": "A massive crystal containing swirling golden energy, warm with the power of primordial creation",
+    "lore": "A thick, luminous fluid that pulses like a slow heartbeat, distilled from the shattered fragment of a being older than Olympus itself. It reeks of deep earth and iron-hot lightning, a smell that triggers an inexplicable ancestral dread in all who draw near."
   },
   "vrock_feather": {
     "name": "vrock feather",
@@ -11887,7 +12091,8 @@
         "bonus_amount": 3
       }
     },
-    "sprite_desc": "A filthy brown-black vulture feather that releases choking toxic spores when shaken"
+    "sprite_desc": "A filthy brown-black vulture feather that releases choking toxic spores when shaken",
+    "lore": "A long, greasy primary feather stripped from the wing of a vulture-headed demon, its quill etched with hairline cracks that still vibrate at the frequency of a screech. Crushed and rendered, it is rumored to lend a terrible, ragged energy to the body—at the cost of a creeping savagery."
   },
   "erinyes_feather": {
     "name": "erinyes feather",
@@ -11939,7 +12144,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A perfect black-and-gold wing feather from a fallen angel, beautiful and deeply unsettling"
+    "sprite_desc": "A perfect black-and-gold wing feather from a fallen angel, beautiful and deeply unsettling",
+    "lore": "A flight feather from a Fury's wing, black at the shaft fading to a deep blood-red at the vane, beautiful and perfectly formed despite its infernal origin. It carries the faint scent of copper and divine law perverted, and hedge-mages whisper it is key to binding oaths that cannot be broken."
   },
   "behir_scale": {
     "name": "behir scale",
@@ -11991,7 +12197,8 @@
         "bonus_amount": 3
       }
     },
-    "sprite_desc": "A large electric-blue scale that sparks and crackles with stored lightning when rubbed"
+    "sprite_desc": "A large electric-blue scale that sparks and crackles with stored lightning when rubbed",
+    "lore": "A rigid, iridescent plate from the flanks of the twelve-legged serpent, threaded with fine filaments that once carried electrical charge from spine to scale. Even separated from the beast, it crackles faintly against the fingertips and smells of a storm trapped underground."
   },
   "lord_phylactery": {
     "name": "necromancer phylactery",
@@ -12043,7 +12250,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "An ornate black iron box set with a cracked soul gem, reeking of necromantic power"
+    "sprite_desc": "An ornate black iron box set with a cracked soul gem, reeking of necromantic power",
+    "lore": "A small lacquered vessel of bone and tarnished silver, faintly warm, housing the fragmented soul of a mage who refused the mercy of a natural death. It whispers at the edge of hearing in a language older than the dungeon itself, offering nothing and demanding everything."
   },
   "ossuary_shard": {
     "name": "ossuary shard",
@@ -12096,7 +12304,8 @@
         "bonus_amount": 3
       }
     },
-    "sprite_desc": "A bone fragment from a structure built entirely of fused skeletons, etched with death prayers"
+    "sprite_desc": "A bone fragment from a structure built entirely of fused skeletons, etched with death prayers",
+    "lore": "A splinter of bone that is somehow many bones at once, its grain shifting under careful examination from femur to rib to skull-plate. It carries the residual grief of thousands of disturbed dead, and those who hold it too long report hearing a low, toneless communal moan."
   },
   "death_essence": {
     "name": "death essence",
@@ -12149,7 +12358,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A tiny black pearl containing the distilled essence of mortality itself"
+    "sprite_desc": "A tiny black pearl containing the distilled essence of mortality itself",
+    "lore": "A small vial of colorless vapor that refuses to dissipate, harvested from the dimming presence of a minor avatar of ending. It carries no scent, no warmth, and no cold—only a profound absence that makes the pulse feel suddenly loud and important."
   },
   "alpha_lycanthrope_blood": {
     "name": "alpha lycanthrope blood",
@@ -12201,7 +12411,8 @@
         "bonus_amount": 3
       }
     },
-    "sprite_desc": "A flask of silver-flecked blood that boils and shifts form under moonlight"
+    "sprite_desc": "A flask of silver-flecked blood that boils and shifts form under moonlight",
+    "lore": "Dark arterial blood drawn from a centuries-old alpha, it refuses to fully clot and swirls with a silver luminescence beneath the surface. Those who work with it feel an unwelcome sharpening of the senses—a hunter's hunger for something they cannot name."
   },
   "wyvern_venom_gland": {
     "name": "greater wyvern venom gland",
@@ -12254,7 +12465,8 @@
         "bonus_amount": 3
       }
     },
-    "sprite_desc": "A large leathery venom gland with a visible reservoir of potent green-yellow poison"
+    "sprite_desc": "A large leathery venom gland with a visible reservoir of potent green-yellow poison",
+    "lore": "A pale, sac-like organ swollen with toxin, slick to the touch and smelling of acid-laced musk. Master poisoners prize the greater wyvern's gland above all others, its venom holding a concentrated lethality that lesser specimens cannot match."
   },
   "aboleth_mucus": {
     "name": "aboleth mucus",
@@ -12306,7 +12518,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A jar of translucent teal mucus that allows water-breathing but slowly enslaves the mind"
+    "sprite_desc": "A jar of translucent teal mucus that allows water-breathing but slowly enslaves the mind",
+    "lore": "A thick, opalescent slime harvested from a creature that remembers the world before gods learned their names. It clings to everything it touches with a possessive weight, and those exposed to it unprotected begin to dream of lightless oceans and a hunger that predates hunger itself."
   },
   "demon_bile": {
     "name": "hezrou demon bile",
@@ -12358,7 +12571,8 @@
         "bonus_amount": 3
       }
     },
-    "sprite_desc": "A bronze-sealed jar of toxic green-black bile that dissolves most organic matter on contact"
+    "sprite_desc": "A bronze-sealed jar of toxic green-black bile that dissolves most organic matter on contact",
+    "lore": "A viscous, greenish-black fluid extracted from the gut of a toad-demon, its stench so caustic that the very air around the vial shimmers. In vanishingly small doses, alchemists claim it can scour poisons from the blood—though the cure is difficult to distinguish from a fresh catastrophe."
   },
   "devil_venom": {
     "name": "bone devil venom",
@@ -12411,7 +12625,8 @@
         "bonus_amount": 3
       }
     },
-    "sprite_desc": "A bone-white vial of paralytic venom extracted from an ossified devil's tail stinger"
+    "sprite_desc": "A bone-white vial of paralytic venom extracted from an ossified devil's tail stinger",
+    "lore": "A crystalline yellow ichor harvested from the segmented tail of an osyluth, it smells of brimstone and old parchment and leaves a faint burn wherever it touches bare skin. Those who have studied infernal toxicology speak of it in hushed tones, equal parts terror and admiration for its elegant, hierarchical lethality."
   },
   "wyvern_stinger": {
     "name": "wyvern stinger",
@@ -12463,7 +12678,8 @@
         "bonus_amount": 3
       }
     },
-    "sprite_desc": "A curved tail stinger of dark green chitin with a hollow venom channel and barbed tip"
+    "sprite_desc": "A curved tail stinger of dark green chitin with a hollow venom channel and barbed tip",
+    "lore": "The barbed terminus of a wyvern's tail, curved like a boar-spear and still slick with the dark venom pooled in its hollow core. Stripped and dried, it serves both as a weapon and a vessel, its natural channel repurposed by clever hands to carry any toxin the dungeon can offer."
   },
   "giant_bone": {
     "name": "skeletal giant bone",
@@ -12515,7 +12731,8 @@
         "bonus_amount": 3
       }
     },
-    "sprite_desc": "An enormous yellowed bone from an undead giant, taller than a human and dense as stone"
+    "sprite_desc": "An enormous yellowed bone from an undead giant, taller than a human and dense as stone",
+    "lore": "A femur as long as a grown man is tall, its surface the yellowed white of ancient ivory and grooved where necromantic energies once coursed through the marrow. Ground to powder by those with the strength to manage it, it is said to impart a terrible, borrowed resilience."
   },
   "sea_dragon_scale": {
     "name": "sea dragon scale",
@@ -12568,7 +12785,8 @@
         "bonus_amount": 3
       }
     },
-    "sprite_desc": "A large scale of deep ocean blue with bioluminescent edges that glow in darkness"
+    "sprite_desc": "A large scale of deep ocean blue with bioluminescent edges that glow in darkness",
+    "lore": "A wide, blue-green scale edged in silver, still faintly damp, with a surface so dense it deflects a knife's edge like tempered steel. It carries the smell of deep salt water and crushing pressure, as though the abyss of the ocean floor is an inch beneath its surface."
   },
   "void_ichor": {
     "name": "void ichor",
@@ -12620,7 +12838,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A sealed lead vial of impossible black fluid from beyond the stars, warping space around it"
+    "sprite_desc": "A sealed lead vial of impossible black fluid from beyond the stars, warping space around it",
+    "lore": "A liquid that seems to absorb light at its edges rather than reflect it, collected from the wound of a creature that should not exist within coherent reality. It has no smell the mind can retain—only the unsettling certainty, once you set it down, that you have forgotten what you were just thinking."
   },
   "night_hag_heartstone": {
     "name": "night hag heartstone",
@@ -12672,7 +12891,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A smooth black stone that pulses with a sickly green inner light, warm with trapped nightmares"
+    "sprite_desc": "A smooth black stone that pulses with a sickly green inner light, warm with trapped nightmares",
+    "lore": "A smooth, dark gem pulled from the chest cavity of a night hag, warm as a sleeping body and faintly luminescent with the compressed anguish of stolen souls. Apothecaries claim it can pierce the veil between waking and dreaming, though none speak lightly of what is sometimes found on the other side."
   },
   "cloudstuff": {
     "name": "cloudstuff",
@@ -12725,7 +12945,8 @@
         "bonus_amount": 3
       }
     },
-    "sprite_desc": "A jar of solidified cloud essence, white fluffy and impossibly light, humming with wind"
+    "sprite_desc": "A jar of solidified cloud essence, white fluffy and impossibly light, humming with wind",
+    "lore": "A fistful of compressed stormcloud, torn from the very foundations of a cloud giant's floating keep. It hums faintly against the skin, cold and electric, and dissipates slowly like a sigh if not sealed in glass."
   },
   "cerberus_saliva": {
     "name": "cerberus saliva",
@@ -12777,7 +12998,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A fireproof flask of thick amber drool from the three-headed guardian, acidic and burning"
+    "sprite_desc": "A fireproof flask of thick amber drool from the three-headed guardian, acidic and burning",
+    "lore": "Venom-laced foam scraped from one of the three jaws of Hades' eternal sentinel, reeking of asphodel and cold stone. Those who have tasted even its diluted form report hearing the distant wailing of shades."
   },
   "demon_scales": {
     "name": "marilith demon scales",
@@ -12829,7 +13051,8 @@
         "bonus_amount": 3
       }
     },
-    "sprite_desc": "Crimson-black scales from a six-armed demon, each one marked with Abyssal script"
+    "sprite_desc": "Crimson-black scales from a six-armed demon, each one marked with Abyssal script",
+    "lore": "Iridescent scales shed from the serpentine flanks of a six-armed demoness, each one honed to a razor edge by centuries of infernal war. They chime softly against one another, as though counting the battles they have survived."
   },
   "demon_heart": {
     "name": "nalfeshnee heart",
@@ -12881,7 +13104,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A massive pulsing heart of dark purple-red, split into asymmetrical demonic chambers"
+    "sprite_desc": "A massive pulsing heart of dark purple-red, split into asymmetrical demonic chambers",
+    "lore": "A swollen, bile-dark organ ripped from a judge of the infernal courts, still faintly warm and pulsing with corrupt authority. Those who cook it claim it carries the weight of verdicts rendered in planes mortals were never meant to see."
   },
   "lesser_draco_bone": {
     "name": "undead dragon bone",
@@ -12933,7 +13157,8 @@
         "bonus_amount": 3
       }
     },
-    "sprite_desc": "A bone shard from an undead dragon, blackened with age and crackling with necrotic green energy"
+    "sprite_desc": "A bone shard from an undead dragon, blackened with age and crackling with necrotic green energy",
+    "lore": "A bone leached of warmth and marrow by necromantic art, yet still faintly luminous with the memory of draconic fire. It is lighter than it should be, as though whatever once animated it left even its mass behind."
   },
   "void_shard": {
     "name": "void shard",
@@ -12985,7 +13210,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A fragment of crystallized void, pure absence given form, darker than any shadow"
+    "sprite_desc": "A fragment of crystallized void, pure absence given form, darker than any shadow",
+    "lore": "A sliver of absolute nothing made somehow solid, cold beyond cold, that swallows light at its edges and deadens sound in its immediate vicinity. Alchemists covet it as a catalyst for unmaking, though none who handle it long remain entirely whole."
   },
   "chaos_essence": {
     "name": "chaos essence",
@@ -13036,7 +13262,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A jar of reality-warping fluid that changes color, texture, and state unpredictably"
+    "sprite_desc": "A jar of reality-warping fluid that changes color, texture, and state unpredictably",
+    "lore": "A viscous, color-shifting ichor distilled from the essence of a glabrezu, smelling of burning promises and corrupted silver. It writhes in its vial as though still whispering bargains to anyone foolish enough to listen."
   },
   "demi_lich_skull": {
     "name": "demi-lich skull",
@@ -13088,7 +13315,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A floating gem-encrusted skull fragment with soul gems in the eye sockets, humming with power"
+    "sprite_desc": "A floating gem-encrusted skull fragment with soul gems in the eye sockets, humming with power",
+    "lore": "The crumbling cranium of a consciousness so old it outlasted its own body, its empty sockets still flickering with the cold violet light of transcended will. Sages warn that even fragments of it retain enough awareness to be dangerous."
   },
   "nightwing_membrane": {
     "name": "nightwing membrane",
@@ -13141,7 +13369,8 @@
         "bonus_amount": 3
       }
     },
-    "sprite_desc": "A sheet of absolute darkness in membrane form, cold enough to freeze torchlight itself"
+    "sprite_desc": "A sheet of absolute darkness in membrane form, cold enough to freeze torchlight itself",
+    "lore": "A thin, impossibly dark membrane stretched between finger-bones of shadow, that absorbs candlelight like a starless sky. Run across the skin it leaves no mark, only a creeping certainty that something immense has noticed you."
   },
   "roc_talon": {
     "name": "roc talon",
@@ -13193,7 +13422,8 @@
         "bonus_amount": 3
       }
     },
-    "sprite_desc": "A curved talon the size of a scimitar, bone-white and scored with wind-erosion grooves"
+    "sprite_desc": "A curved talon the size of a scimitar, bone-white and scored with wind-erosion grooves",
+    "lore": "A curved ivory talon the length of a short sword, grooved by the wind of a thousand hunting dives through storm-wracked heights. It smells of ozone and the thin cold air of peaks no human foot has ever reached."
   },
   "blue_dragon_scale": {
     "name": "blue dragon scale",
@@ -13245,7 +13475,8 @@
         "bonus_amount": 3
       }
     },
-    "sprite_desc": "A brilliant sapphire-blue scale that crackles with arcing electricity between its ridges"
+    "sprite_desc": "A brilliant sapphire-blue scale that crackles with arcing electricity between its ridges",
+    "lore": "A storm-blue scale crackling with residual static, its surface etched in fractal patterns that seem almost deliberate — as though catalogued by the dragon itself. Electricians and artificers prize it above nearly any other material."
   },
   "lich_dragon_scale": {
     "name": "lich dragon scale",
@@ -13297,7 +13528,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A scale of rotting dark purple-grey that radiates both draconic and undead power"
+    "sprite_desc": "A scale of rotting dark purple-grey that radiates both draconic and undead power",
+    "lore": "A scale from a creature that achieved both draconic supremacy and undying immortality, its surface the color of old bone dusted with grave-frost. It radiates an aura of cold command, the distilled ambition of a being that refused every limit mortality imposed."
   },
   "storm_essence": {
     "name": "storm essence",
@@ -13350,7 +13582,8 @@
         "bonus_amount": 3
       }
     },
-    "sprite_desc": "A sealed crystal sphere containing a miniature thunderstorm with lightning, rain, and wind"
+    "sprite_desc": "A sealed crystal sphere containing a miniature thunderstorm with lightning, rain, and wind",
+    "lore": "Bottled tempest drawn from the blood of a storm giant, a being old enough to have watched coastlines change. It swirls endlessly in its container, smelling of salt and lightning and the deep patience of geological time."
   },
   "adult_dragon_heart": {
     "name": "red dragon heart",
@@ -13402,7 +13635,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A massive crimson heart the size of a barrel, still smoldering with inner dragonfire"
+    "sprite_desc": "A massive crimson heart the size of a barrel, still smoldering with inner dragonfire",
+    "lore": "A massive, heat-radiating organ torn from the chest of a creature whose greed and cruelty became indistinguishable from elemental force. Even cooling, it scorches the hand that holds it, and its blood dries to a crimson lacquer nothing seems to dissolve."
   },
   "pit_fiend_scale": {
     "name": "pit fiend scale",
@@ -13454,7 +13688,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "An enormous blood-red scale from an arch-devil, inscribed with infernal contract law"
+    "sprite_desc": "An enormous blood-red scale from an arch-devil, inscribed with infernal contract law",
+    "lore": "A thick obsidian-red plate stripped from a general of the Nine Hells, its underside etched with binding sigils the fiend carved into its own flesh as a testament to infernal discipline. It resists flame entirely and grows faintly warm when held near anything unholy."
   },
   "insect_carapace": {
     "name": "insect carapace",
@@ -13509,7 +13744,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A lightweight chitin plate from a giant insect, segmented and translucent brown"
+    "sprite_desc": "A lightweight chitin plate from a giant insect, segmented and translucent brown",
+    "lore": "The brittle geometric shell of a grid bug, its surface patterned in unnervingly regular angles as though grown according to some invisible magical diagram. Enchanters suspect its structure resonates with forces of spatial order."
   },
   "bat_wing": {
     "name": "bat wing",
@@ -13564,7 +13800,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A thin leathery wing membrane stretched over delicate finger-bones, dark grey-purple"
+    "sprite_desc": "A thin leathery wing membrane stretched over delicate finger-bones, dark grey-purple",
+    "lore": "A leathery membrane threaded with fine black veins, still twitching faintly with the echolocation instinct of its former owner. Boiled down it yields an oil said to sharpen hearing to an almost unbearable keenness."
   },
   "eye_jelly": {
     "name": "eye jelly",
@@ -13619,7 +13856,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A wobbly sphere of transparent yellowish jelly with a dark pupil-like core floating inside"
+    "sprite_desc": "A wobbly sphere of transparent yellowish jelly with a dark pupil-like core floating inside",
+    "lore": "A trembling, translucent mass harvested from a floating eye, faintly luminescent and cool as river water. Alchemists prize it as a base for sight-enhancing preparations, though it has the unsettling habit of remaining oriented toward the nearest living face."
   },
   "ogre_hide": {
     "name": "ogre hide",
@@ -13674,7 +13912,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A thick slab of warty brown-grey hide smelling of sweat and old meat"
+    "sprite_desc": "A thick slab of warty brown-grey hide smelling of sweat and old meat",
+    "lore": "Thick, scarred hide the color of old mud, tough enough to turn a poorly aimed blade and reeking of sweat and old marrow. Tanners who work it claim it takes dye badly, as though even cured leather retains the ogre's stubborn ill temper."
   },
   "orc_blood": {
     "name": "orc blood",
@@ -13729,7 +13968,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A crude clay pot of dark green-tinted blood, thick and metallic-smelling"
+    "sprite_desc": "A crude clay pot of dark green-tinted blood, thick and metallic-smelling",
+    "lore": "Dark, iron-rich blood from a scout bred for endurance and violence, drying quickly to a rust-brown crust with a sharp, mineral bite. Warriors of certain northern traditions drink it mixed with mead before battle, swearing it lends the legs a tireless urgency."
   },
   "hobgoblin_blood": {
     "name": "hobgoblin blood",
@@ -13783,7 +14023,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A vial of disciplined dark crimson blood with an iron-sharp scent"
+    "sprite_desc": "A vial of disciplined dark crimson blood with an iron-sharp scent",
+    "lore": "The dark, iron-rich blood of a goblinoid warrior-caste, thick as brine and faintly copper on the tongue. Those who know its properties claim it carries the disciplined fury of a soldier's last stand."
   },
   "bugbear_pelt": {
     "name": "bugbear pelt",
@@ -13837,7 +14078,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A patch of coarse brown-orange fur matted with dirt and dried blood"
+    "sprite_desc": "A patch of coarse brown-orange fur matted with dirt and dried blood",
+    "lore": "A coarse, matted hide that still smells of damp forest and predatory musk. The fur stands perpetually on end, as though the terror its former owner inflicted has been preserved within the follicles."
   },
   "battle_ration": {
     "name": "battle ration",
@@ -13890,7 +14132,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A cloth-wrapped bundle of hardtack, jerky, and dried fruit from a brigand's pack"
+    "sprite_desc": "A cloth-wrapped bundle of hardtack, jerky, and dried fruit from a brigand's pack",
+    "lore": "Hard tack and salted meat wrapped in waxed cloth, carried by someone who once knew real war. It tastes of desperation and long marches, but it will keep a body moving when nothing else will."
   },
   "cultist_reagent": {
     "name": "cultist reagent",
@@ -13945,7 +14188,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A cloth pouch of strange violet ritual powder mixed with crushed gems and bone dust"
+    "sprite_desc": "A cloth pouch of strange violet ritual powder mixed with crushed gems and bone dust",
+    "lore": "A stoppered vial of viscous fluid that shifts between deep violet and absolute black, humming faintly with borrowed shadow-prayers. Alchemists handle it with lead-lined gloves, aware that the entities it was offered to may still be listening."
   },
   "devourer_tooth": {
     "name": "devourer tooth",
@@ -13999,7 +14243,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A massive serrated tooth of yellowed ivory from a devouring beast, warm and hungry"
+    "sprite_desc": "A massive serrated tooth of yellowed ivory from a devouring beast, warm and hungry",
+    "lore": "A serrated ivory fang from a spawn of Ammit, still faintly warm and reeking of the embalming oils of the Egyptian dead. It is said that meat touched by such a tooth is weighed, somewhere beyond the veil, against a feather."
   },
   "fenrir_fang": {
     "name": "Fenrir's Fang",
@@ -14161,7 +14406,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A lean cut of dark red wolf meat with tough sinew and a wild, gamey scent"
+    "sprite_desc": "A lean cut of dark red wolf meat with tough sinew and a wild, gamey scent",
+    "lore": "Dense, dark muscle from a creature that commanded obedience through howl and gaze alone. Roasted over open flame it carries a wild, almost electric vitality — the kind earned through a thousand coordinated hunts."
   },
   "slime_core": {
     "name": "slime core",
@@ -14215,7 +14461,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A dense green orb at the center of a dissolved slime, pulsating with acidic energy"
+    "sprite_desc": "A dense green orb at the center of a dissolved slime, pulsating with acidic energy",
+    "lore": "A quivering, translucent sphere of concentrated acid suspended in gelatinous membrane, faintly luminescent green. Alchemists treasure it as a universal solvent base, though it must be neutralized before it dissolves the vessel holding it."
   },
   "frost_sac": {
     "name": "frost sac",
@@ -14269,7 +14516,8 @@
         "bonus_stat": "CON"
       }
     },
-    "sprite_desc": "A swollen ice-blue sac of freezing liquid that chills everything within arm's reach"
+    "sprite_desc": "A swollen ice-blue sac of freezing liquid that chills everything within arm's reach",
+    "lore": "A pale, membrane-wrapped gland taken from deep within a frost drake's throat, still cold enough to numb bare fingers on contact. It weeps a crystalline fluid that refuses to thaw, even held over an open flame."
   },
   "arachne_silk_gland": {
     "name": "arachne silk gland",
@@ -14322,7 +14570,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A bulbous silver-white gland trailing impossibly fine silk threads of divine craftsmanship"
+    "sprite_desc": "A bulbous silver-white gland trailing impossibly fine silk threads of divine craftsmanship",
+    "lore": "Harvested from the spinnerets of a weaver cursed by Athena herself, this gland produces thread finer than any mortal loom could fashion. The silk it yields is said to show, in its woven patterns, the true shapes of things hidden from the eye."
   },
   "talos_bronze_shard": {
     "name": "talos bronze shard",
@@ -14375,7 +14624,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A jagged shard of ancient bronze automaton plating, still humming with divine engineering"
+    "sprite_desc": "A jagged shard of ancient bronze automaton plating, still humming with divine engineering",
+    "lore": "A fragment of divine bronze from Hephaestus's greatest automated creation, its surface still traced with veins of dried ichor. Metallurgists marvel that it shows no oxidation, as though the god's craft refuses to yield to time."
   },
   "echidna_venom_sac": {
     "name": "echidna venom sac",
@@ -14428,7 +14678,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A mottled green-black venom sac from the mother of monsters, swollen with primordial toxin"
+    "sprite_desc": "A mottled green-black venom sac from the mother of monsters, swollen with primordial toxin",
+    "lore": "A leathery, fist-sized sac taken from the Mother of Monsters herself, swollen with a venom that carries the essence of every terrible creature she ever birthed. It pulses faintly, as though something within it has not yet decided what it will become."
   },
   "erlking_crown_twig": {
     "name": "erlking crown twig",
@@ -14481,7 +14732,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A living twig of pale green wood from the wild hunt king's antler crown, sprouting tiny leaves"
+    "sprite_desc": "A living twig of pale green wood from the wild hunt king's antler crown, sprouting tiny leaves",
+    "lore": "A slender branch of pale wood woven from the Erlking's antlered crown, still carrying the ghost of a melody that makes listeners feel inexplicably compelled to follow. Wreathed in cold forest air, it withers iron nails driven near it."
   },
   "camazotz_wing_membrane": {
     "name": "camazotz wing membrane",
@@ -14534,7 +14786,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A dark leathery bat-wing membrane that absorbs all light and drips with cave condensation"
+    "sprite_desc": "A dark leathery bat-wing membrane that absorbs all light and drips with cave condensation",
+    "lore": "A thin, midnight-dark membrane stretched between hollow bones, smelling of cave stone and sacrificial smoke from the depths of Xibalba. Held against a flame it reveals no shadow — as though the darkness it belongs to cannot be cast aside."
   },
   "cacus_ember_gut": {
     "name": "cacus ember gut",
@@ -14587,7 +14840,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A smoldering orange-red organ that belches smoke and tiny flames when squeezed"
+    "sprite_desc": "A smoldering orange-red organ that belches smoke and tiny flames when squeezed",
+    "lore": "A length of charred viscera from a fire-breathing son of Vulcan, still smoldering at the edges with a heat that no water can fully extinguish. Smiths have been known to use it as a forge bellows, claiming it burns hotter than any bellows of leather."
   },
   "sphinx_riddle_stone": {
     "name": "sphinx riddle stone",
@@ -14640,7 +14894,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A golden stone tablet with an ever-shifting riddle carved in hieroglyphics that rearrange themselves"
+    "sprite_desc": "A golden stone tablet with an ever-shifting riddle carved in hieroglyphics that rearrange themselves",
+    "lore": "A smooth, pale stone found in the Sphinx's gullet, worn glossy by centuries of patience and the swallowed bones of those who answered wrong. Sages claim it grows warm in the hand of someone who carries an unanswered question."
   },
   "rangda_mask_splinter": {
     "name": "rangda mask splinter",
@@ -14693,7 +14948,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A jagged splinter of a demonic mask, painted red and black, pulsing with dark theatrical magic"
+    "sprite_desc": "A jagged splinter of a demonic mask, painted red and black, pulsing with dark theatrical magic",
+    "lore": "A jagged sliver of lacquered wood from the demon queen's ceremonial mask, painted in crimson and white with a leer that seems to shift in peripheral vision. Those who hold it too long report hearing Leyak laughter from the corners of silent rooms."
   },
   "nemean_pelt_scrap": {
     "name": "nemean pelt scrap",
@@ -14746,7 +15002,8 @@
         "bonus_amount": 3
       }
     },
-    "sprite_desc": "A scrap of invulnerable golden lion hide that no blade can cut, warm as sunlight"
+    "sprite_desc": "A scrap of invulnerable golden lion hide that no blade can cut, warm as sunlight",
+    "lore": "A scrap of hide from the lion whose skin turned every blade in Greece, still impossibly tough to the touch and warm as living flesh. No mortal knife can cut it further — it must be worked, as Hercules worked it, by other means entirely."
   },
   "baba_yaga_mortar_dust": {
     "name": "baba yaga mortar dust",
@@ -14799,7 +15056,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "Grey stone dust from a flying mortar, smelling of ancient Russian forests and impossible magic"
+    "sprite_desc": "Grey stone dust from a flying mortar, smelling of ancient Russian forests and impossible magic",
+    "lore": "A grey-white powder scraped from the grinding bowl of Baba Yaga, saturated with centuries of enchanted forest and the residue of every hero and fool she has ever processed. It smells of pine resin, old iron, and something that might be wisdom."
   },
   "jormungandr_scale": {
     "name": "jormungandr scale",
@@ -14852,7 +15110,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A massive sea-green scale from the world serpent, slick with ocean brine and crackling with venom"
+    "sprite_desc": "A massive sea-green scale from the world serpent, slick with ocean brine and crackling with venom",
+    "lore": "A palm-wide scale from the World Serpent's juvenile coils, iridescent as deep ocean and cold as the void between stars. Even in this small fragment, the venom that will one day kill a god seeps faintly at the edges, staining the fingers a bruised purple."
   },
   "sets_jackal_fang": {
     "name": "set's jackal fang",
@@ -14905,7 +15164,8 @@
         "bonus_amount": 3
       }
     },
-    "sprite_desc": "A curved golden-brown jackal fang radiating desert heat and the authority of the god of chaos"
+    "sprite_desc": "A curved golden-brown jackal fang radiating desert heat and the authority of the god of chaos",
+    "lore": "A long, yellowed fang from an enforcer of chaos, still carrying the dry-desert heat of Set's displeasure. Unlike the gentle guidance of Anubis, what this tooth touches it marks for disorder — scholars of the old rites bury such fangs in iron boxes at crossroads."
   },
   "green_knight_sap": {
     "name": "green knight sap",
@@ -14958,7 +15218,8 @@
         "bonus_amount": 3
       }
     },
-    "sprite_desc": "Vivid emerald sap that flows like blood from enchanted wood, smelling of eternal spring"
+    "sprite_desc": "Vivid emerald sap that flows like blood from enchanted wood, smelling of eternal spring",
+    "lore": "A thick, viridian ichor that weeps from the Green Knight's severed neck, smelling of deep forest and fresh-turned earth. It pulses faintly even after his death, as though the bargain of the beheading game has never truly been fulfilled."
   },
   "charybdis_brine": {
     "name": "charybdis brine",
@@ -15011,7 +15272,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A sealed flask of supernaturally dense seawater that tries to pull everything into its vortex"
+    "sprite_desc": "A sealed flask of supernaturally dense seawater that tries to pull everything into its vortex",
+    "lore": "Saltwater drawn from the throat of the great whirlpool herself, still swirling in its vial as if remembering the ships it swallowed. Sailors who have survived her say this brine tastes of the bottom of the world."
   },
   "ravanas_knuckle": {
     "name": "ravana's knuckle",
@@ -15064,7 +15326,8 @@
         "bonus_amount": 3
       }
     },
-    "sprite_desc": "A massive dark-skinned knuckle bone from one of ten arms, inscribed with Sanskrit war prayers"
+    "sprite_desc": "A massive dark-skinned knuckle bone from one of ten arms, inscribed with Sanskrit war prayers",
+    "lore": "A dense, bronze-dark knuckle bone from the crawling arm of the demon king, still warm with Ravana's inexhaustible life-force. Even severed from its master, it clenches and unclenches with a slow, furious will."
   },
   "wendigo_heart": {
     "name": "wendigo heart",
@@ -15117,7 +15380,8 @@
         "bonus_amount": 1
       }
     },
-    "sprite_desc": "A frozen black heart encased in ice that radiates insatiable hunger and bitter winter cold"
+    "sprite_desc": "A frozen black heart encased in ice that radiates insatiable hunger and bitter winter cold",
+    "lore": "A heart of black ice encased in frost-bleached muscle, beating with a cold hunger that never satisfied itself in life. To hold it too long is to feel the first gnawing thought — that whatever you have, it is not enough."
   },
   "wild_hunt_horn": {
     "name": "wild hunt horn",
@@ -15170,7 +15434,8 @@
         "bonus_amount": 3
       }
     },
-    "sprite_desc": "A curved hunting horn of ancient grey bone, whispering with the sounds of an eternal chase"
+    "sprite_desc": "A curved hunting horn of ancient grey bone, whispering with the sounds of an eternal chase",
+    "lore": "A curved horn of pale bone, etched with the names of souls taken across a hundred winter skies. It no longer sounds a note, but those nearby feel the hairs rise on their necks, as though something vast has turned its gaze toward them."
   },
   "anansi_story_thread": {
     "name": "anansi story thread",
@@ -15223,7 +15488,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A single golden spider thread that contains an entire story visible when held to the light"
+    "sprite_desc": "A single golden spider thread that contains an entire story visible when held to the light",
+    "lore": "A single silken strand spun by the spider god himself, shimmering between gold and shadow, that seems to tie itself in subtle knots around whatever question you are holding in your mind. Stories are said to live inside it, coiled and waiting."
   },
   "nidhoggr_root_shard": {
     "name": "nidhoggr root shard",
@@ -15276,7 +15542,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A shard of Yggdrasil root gnawed by the world-serpent, dark with corruption and ancient power"
+    "sprite_desc": "A shard of Yggdrasil root gnawed by the world-serpent, dark with corruption and ancient power",
+    "lore": "A splinter of the World-Gnawer's body — dark as rot, smelling of ancient bark and ruin — that endlessly worries at whatever surface it rests upon with microscopic, patient hunger. It carries within it the slow certainty that all things come apart."
   },
   "amon_wrath_ember": {
     "name": "amon's wrath ember",
@@ -15329,7 +15596,8 @@
         "bonus_amount": 3
       }
     },
-    "sprite_desc": "A burning coal of pure rage that never cools, glowing angry red with infernal wrath"
+    "sprite_desc": "A burning coal of pure rage that never cools, glowing angry red with infernal wrath",
+    "lore": "A coal-red ember carved from Amon's smoldering flesh, radiating a heat that has nothing to do with warmth and everything to do with rage. It dims only slightly in shadow, as though fury itself refuses to be extinguished."
   },
   "buer_plague_gland": {
     "name": "buer's plague gland",
@@ -15382,7 +15650,8 @@
         "bonus_amount": 3
       }
     },
-    "sprite_desc": "A pustulent green gland weeping with every disease known to demonkind"
+    "sprite_desc": "A pustulent green gland weeping with every disease known to demonkind",
+    "lore": "A glistening, pale-green gland that weeps a viscous fluid thick with the memory of a thousand contagions. Paradoxically, Buer's own lore of herbs is said to be encoded within it — poison and cure folded together in the same terrible organ."
   },
   "mammon_hunger_crystal": {
     "name": "mammon's hunger crystal",
@@ -15435,7 +15704,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A golden crystal that amplifies greed and hunger in all who behold it"
+    "sprite_desc": "A golden crystal that amplifies greed and hunger in all who behold it",
+    "lore": "A hollow crystal of tarnished gold that devours the light around it rather than refracting it, leaving a cold absence where brightness should be. Even sealed tight, it makes provisions stored nearby taste faintly of nothing."
   },
   "bael_war_shard": {
     "name": "bael's war shard",
@@ -15488,7 +15758,8 @@
         "bonus_amount": 3
       }
     },
-    "sprite_desc": "A blood-red iron shard from a demon general's blade, still seeking flesh to cut"
+    "sprite_desc": "A blood-red iron shard from a demon general's blade, still seeking flesh to cut",
+    "lore": "A jagged fragment of iron forged from fallen swords and broken by divine force, smelling of old blood and the acrid bite of battlefield smoke. It hums with the memory of sixty-six legions, a sound just below hearing that sets the teeth on edge."
   },
   "samael_death_vial": {
     "name": "samael's death vial",
@@ -15541,7 +15812,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A tiny vial of absolute stillness, the distilled essence of death itself"
+    "sprite_desc": "A tiny vial of absolute stillness, the distilled essence of death itself",
+    "lore": "A slender vial of shadow-dark fluid collected from the angel of death himself — neither fully poison nor fully blessing, neither fully damned nor fully divine. It rests in the palm with the strange lightness of something that has passed through the boundary between worlds."
   },
   "beleth_quake_stone": {
     "name": "beleth's quake stone",
@@ -15594,7 +15866,8 @@
         "bonus_amount": 3
       }
     },
-    "sprite_desc": "A cracked brown stone that trembles constantly, threatening to split the earth beneath it"
+    "sprite_desc": "A cracked brown stone that trembles constantly, threatening to split the earth beneath it",
+    "lore": "A pale grey stone that vibrates with a deep, subsonic tremor, as though the fault lines of the earth still remember the touch of Beleth's pale horse. Set upon a table, it will slowly walk toward the edge, patient as a crumbling cliff."
   },
   "abyzou_silence_dust": {
     "name": "abyzou's silence dust",
@@ -15647,7 +15920,8 @@
         "bonus_amount": 2
       }
     },
-    "sprite_desc": "A pouch of pale silver dust that absorbs all sound in its vicinity, eerily silent"
+    "sprite_desc": "A pouch of pale silver dust that absorbs all sound in its vicinity, eerily silent",
+    "lore": "A fine, colorless ash that makes no sound when it falls, muffling even the whisper of breath in the throat of whoever holds it. It is said to be the ground remnant of the silence before the final word is spoken — the stillness that precedes an ending."
   },
   "prime_beef": {
     "name": "prime beef",

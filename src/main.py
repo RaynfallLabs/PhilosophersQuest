@@ -4,7 +4,7 @@ import random
 import sys
 import pygame
 
-VERSION = "1.5"
+VERSION = "1.6"
 
 # FANTASY: High-fantasy medieval/arcane grimoire UI theme
 from fantasy_ui import (FP, get_font, draw_panel, draw_dark_panel,
@@ -1678,6 +1678,10 @@ class Game:
         self._cow_level_done = state.get('_cow_level_done', False)
         self._cow_spawned = state.get('_cow_spawned', False)
         self._cow_level = state.get('_cow_level', 35)
+        # Quiz deck state — restore shuffle positions so questions don't repeat on reload
+        quiz_deck_state = state.get('quiz_deck_state')
+        if quiz_deck_state:
+            self.quiz_engine.restore_deck_state(quiz_deck_state)
         self.renderer.set_dungeon(self.dungeon.width, self.dungeon.height, GAME_W, GAME_H)
         self._refresh_fov()
         self.add_message("Welcome back, seeker. Your journey continues...", 'success')

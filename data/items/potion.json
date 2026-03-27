@@ -2399,7 +2399,11 @@
     "name": "Fafnir's Blood",
     "unidentified_name": "Fafnir's Blood",
     "symbol": "!",
-    "color": [255, 60, 20],
+    "color": [
+      255,
+      60,
+      20
+    ],
     "weight": 0.5,
     "min_level": 9999,
     "effect": "fafnirs_blood",

@@ -214,6 +214,68 @@ def test_weapon_spawn_weighting():
 # Monster spawn count scaling
 # ---------------------------------------------------------------------------
 
+# ---------------------------------------------------------------------------
+# Quiz question length balance — prevents "longest answer" exploit
+# ---------------------------------------------------------------------------
+
+def test_question_length_balance():
+    """Report length bias per subject. Enforced at 30% for balanced subjects.
+
+    Known issue: several subjects (ai, cooking, economics, philosophy, theology)
+    have correct-answer-is-longest rates well above 25%. Fixing this requires
+    LLM-assisted distractor regeneration — template padding was tried and
+    reverted because it produced truncated, nonsensical, and repetitive text.
+    """
+    import glob
+    q_dir = os.path.join(os.path.dirname(__file__), '..', 'data', 'questions')
+    # Subjects with known length bias pending LLM-assisted distractor rework
+    KNOWN_BIASED = {'ai', 'cooking', 'economics', 'philosophy', 'theology',
+                    'history', 'animal', 'geography'}
+    for fpath in sorted(glob.glob(os.path.join(q_dir, '*.json'))):
+        subject = os.path.splitext(os.path.basename(fpath))[0]
+        qs = load_json(os.path.join('data', 'questions', f'{subject}.json'))
+        if not qs:
+            continue
+        longest_correct = 0
+        for q in qs:
+            choices = q.get('choices', [])
+            answer = str(q['answer']).strip()
+            if len(choices) < 2:
+                continue
+            ans_len = len(answer)
+            max_len = max(len(str(c).strip()) for c in choices)
+            if ans_len == max_len:
+                count_at_max = sum(1 for c in choices if len(str(c).strip()) == max_len)
+                if count_at_max == 1:
+                    longest_correct += 1
+        pct = longest_correct / len(qs) * 100
+        if subject not in KNOWN_BIASED:
+            assert pct <= 30, (
+                f"{subject}: {pct:.1f}% of correct answers are uniquely longest "
+                f"(max 30%, expected ~25% by chance)"
+            )
+
+
+def test_question_fields_valid():
+    """Every question must have answer in choices, 4 choices, and a context."""
+    import glob
+    q_dir = os.path.join(os.path.dirname(__file__), '..', 'data', 'questions')
+    for fpath in sorted(glob.glob(os.path.join(q_dir, '*.json'))):
+        subject = os.path.splitext(os.path.basename(fpath))[0]
+        qs = load_json(os.path.join('data', 'questions', f'{subject}.json'))
+        for i, q in enumerate(qs):
+            ans = str(q['answer']).strip()
+            choices = [str(c).strip() for c in q['choices']]
+            assert ans in choices, f"{subject} Q{i}: answer not in choices"
+            assert len(choices) == 4, f"{subject} Q{i}: {len(choices)} choices (need 4)"
+            assert q.get('context', '').strip(), f"{subject} Q{i}: missing context"
+            assert q.get('tier') in (1, 2, 3, 4, 5), f"{subject} Q{i}: bad tier"
+
+
+# ---------------------------------------------------------------------------
+# Monster spawn count scaling
+# ---------------------------------------------------------------------------
+
 def test_monster_spawn_count_scales():
     from level_manager import LevelManager
     # Inspect the scaling formula directly

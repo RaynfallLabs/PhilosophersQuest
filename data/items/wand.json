@@ -1967,7 +1967,7 @@
     "effect": "enchant_weapon",
     "power": "",
     "unidentified_name": "gilded wood wand",
-    "lore": "A wand that adds a magical bonus to any item it strikes. The enchantment is additive with existing magical properties. Artificers prize these wands for equipment improvement.",
+    "lore": "A wand that imbues any item it strikes with a potent magical bonus, its tip trailing motes of silver light. The enchantment layers atop existing properties, deepening their power rather than supplanting them. Artificers covet these wands above all tools of their craft.",
     "floorSpawnWeight": {
       "1-20": 3,
       "21-40": 2,
@@ -1993,7 +1993,7 @@
     "effect": "curse_monster",
     "power": "",
     "unidentified_name": "scorched wood wand",
-    "lore": "A wand that binds a malefic enchantment to a targeted item or creature. Cursed items cannot be removed by normal means; cursed creatures suffer ongoing penalties.",
+    "lore": "A wand wreathed in a sickly aura that binds malefic enchantments to whatever it touches. Items so cursed cling to their bearer with an unnatural tenacity, resisting all mundane attempts at removal; creatures struck suffer grinding, relentless penalties.",
     "floorSpawnWeight": {
       "1-20": 3,
       "21-40": 2,
@@ -2019,7 +2019,7 @@
     "effect": "teleport_monster",
     "power": "",
     "unidentified_name": "frozen wood wand",
-    "lore": "A repositioning wand that moves a targeted monster to a random location. Useful for separating grouped enemies or removing a specific threat from immediate range.",
+    "lore": "A wand that tears a monster from its place and casts it to some distant, random corner of the dungeon. Invaluable for shattering the cohesion of a pack or banishing a singular terror before it can close the distance.",
     "floorSpawnWeight": {
       "1-20": 3,
       "21-40": 2,
@@ -2045,7 +2045,7 @@
     "effect": "poison_monster",
     "power": "",
     "unidentified_name": "painted wood wand",
-    "lore": "A toxin wand that injects magical poison into its target, causing ongoing damage. The poison bypasses physical armor entirely — it must be resisted biochemically.",
+    "lore": "A venomous wand that drives magical toxin into its target, igniting a slow burn of ongoing damage that no suit of armor can deflect. The poison works from within, and only a sufficiently resilient constitution can hope to resist it.",
     "floorSpawnWeight": {
       "1-20": 3,
       "21-40": 2,
@@ -2071,7 +2071,7 @@
     "effect": "poison_monster",
     "power": "",
     "unidentified_name": "weathered wood wand",
-    "lore": "An intensified poison wand producing more virulent toxins. Targets that resist normal poison sometimes succumb to venom wand effects.",
+    "lore": "An intensified poison wand that produces far more virulent toxins than its lesser kin, overwhelming resistances that would shrug off common venom. Even those who walk unscathed through ordinary poison sometimes find venom's bite inescapable.",
     "floorSpawnWeight": {
       "1-20": 3,
       "21-40": 2,
@@ -2097,7 +2097,7 @@
     "effect": "poison_monster",
     "power": "",
     "unidentified_name": "notched stick wand",
-    "lore": "The extreme poison wand introduces a magically-induced disease state rather than simple toxin. The disease progresses over multiple turns.",
+    "lore": "Where lesser wands deliver simple toxins, this wand seeds a magically induced plague that progresses with grim purpose over many turns. The disease is not merely injected but cultivated, spreading through the target's body like rot through timber.",
     "floorSpawnWeight": {
       "1-20": 3,
       "21-40": 2,
@@ -2123,7 +2123,7 @@
     "effect": "disease_monster",
     "power": "",
     "unidentified_name": "hollow reed wand",
-    "lore": "A wand that induces specific disease states rather than simple poison. Different disease effects target different biological systems.",
+    "lore": "A wand that conjures specific, targeted afflictions rather than blunt poison — each disease a precisely crafted assault on a different biological system. Its victims may not feel the full horror of its work until it is far too late.",
     "floorSpawnWeight": {
       "1-20": 3,
       "21-40": 2,
@@ -2149,7 +2149,7 @@
     "effect": "disease_monster",
     "power": "",
     "unidentified_name": "driftwood wand",
-    "lore": "A wand that accelerates biological decay in living targets. Against undead this effect is irrelevant; against living creatures it is deeply unpleasant.",
+    "lore": "A wand that commands the laws of decay to accelerate without mercy, reducing living flesh to ruin with shocking speed. The undead take no notice, but for any creature that yet breathes, the sensation is reported to be deeply, primally horrifying.",
     "floorSpawnWeight": {
       "1-20": 3,
       "21-40": 2,
@@ -2175,7 +2175,7 @@
     "effect": "regeneration_self",
     "power": "",
     "unidentified_name": "serpentine wand",
-    "lore": "A healing wand that operates continuously over time rather than instantly, allowing the body to rebuild at an accelerated rate. The regeneration can close wounds faster than combat opens them.",
+    "lore": "A healing wand that works not in a single brilliant flash but in a steady, persistent tide, coaxing the body to rebuild itself at remarkable speed. In the hands of the patient, it can close wounds faster than even a desperate fight can open them.",
     "floorSpawnWeight": {
       "1-20": 3,
       "21-40": 2,
@@ -2201,7 +2201,7 @@
     "effect": "regeneration_self",
     "power": "",
     "unidentified_name": "zircon wand",
-    "lore": "An intensified regeneration wand that produces faster healing and also counteracts ongoing negative effects like poison and disease.",
+    "lore": "An intensified regeneration wand that surges with restorative energy, mending injuries at a breathtaking rate while simultaneously purging poisons and disease from the body. Where the wand of regeneration heals, this one restores.",
     "floorSpawnWeight": {
       "1-20": 3,
       "21-40": 2,
@@ -2227,7 +2227,7 @@
     "effect": "earthquake",
     "power": "",
     "unidentified_name": "pyrite wand",
-    "lore": "A devastating environmental wand that induces ground tremors in the target area. In dungeon environments this can cause structural collapse, making it extremely dangerous to use.",
+    "lore": "A devastating wand that sets the very ground shuddering and groaning, sending cracks racing through dungeon floors and bringing ancient stonework crashing down. In enclosed spaces its use is an act of reckless courage — or simple madness.",
     "floorSpawnWeight": {
       "1-20": 3,
       "21-40": 2,
@@ -2253,7 +2253,7 @@
     "effect": "explosion",
     "power": "3d8",
     "unidentified_name": "magnetite wand",
-    "lore": "An area-effect force wand that produces a small explosion centered on the target point. The blast affects everything in range regardless of allegiance.",
+    "lore": "A wand that births a concussive bloom of force at whatever point it is aimed, scattering friend and foe alike in a wave of indiscriminate destruction. It does not distinguish between allegiances, and neither do its consequences.",
     "floorSpawnWeight": {
       "1-20": 3,
       "21-40": 2,
@@ -2279,7 +2279,7 @@
     "effect": "drain_magic",
     "power": "",
     "unidentified_name": "petrified wood wand",
-    "lore": "A wand that absorbs magical energy from targets, depleting wands, scrolls, and enchantments they carry. Against magically-sustained creatures it deals direct damage.",
+    "lore": "A wand that hungers for magical energy, drinking it from wands, scrolls, and enchantments with equal appetite. Against creatures sustained by sorcery alone, this feeding translates directly into grievous harm.",
     "floorSpawnWeight": {
       "1-20": 3,
       "21-40": 2,
@@ -2305,7 +2305,7 @@
     "effect": "dispel_magic",
     "power": "",
     "unidentified_name": "arcane oak wand",
-    "lore": "An intensified magic drain that completely removes ongoing enchantments from targets. Useful for dispelling beneficial effects on enemies or removing curses.",
+    "lore": "An amplified drain that tears ongoing enchantments away entirely rather than merely diminishing them, leaving its targets bare and mundane. It strips the war-blessings from enemies as readily as it unravels a long-carried curse.",
     "floorSpawnWeight": {
       "1-20": 3,
       "21-40": 2,
@@ -2331,7 +2331,7 @@
     "effect": "weaken_monster",
     "power": "",
     "unidentified_name": "runed birch wand",
-    "lore": "A disturbing wand that accelerates the aging process in living targets. Aging effects manifest as progressive weakening.",
+    "lore": "A disturbing wand that seizes upon the natural passage of time and twists it to murderous purpose, forcing years — sometimes decades — upon its target in a matter of moments. The ravages manifest as progressive, terrible weakening, as though life itself is being steadily withdrawn.",
     "floorSpawnWeight": {
       "1-20": 3,
       "21-40": 2,

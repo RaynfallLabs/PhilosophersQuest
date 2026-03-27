@@ -45,6 +45,7 @@ class QuizEngine:
         self._decks:    dict[tuple, list] = {}   # (subject, tier) -> shuffled question list
         self._deck_idx: dict[tuple, int]  = {}   # (subject, tier) -> next position in deck
         self._last_q:   dict[tuple, dict | None] = {}  # (subject, tier) -> last question shown
+        self._seen:     dict[tuple, set]  = {}   # (subject, tier) -> set of seen question texts
 
         self.state = QuizState.IDLE
         self.mode: QuizMode | None = None
@@ -116,7 +117,7 @@ class QuizEngine:
         # flood higher-tier decks and cause frequent repeats.
         if deck_key not in self._decks:
             pool = [q for q in all_qs if q.get('tier', 1) == tier] or all_qs[:]
-            random.shuffle(pool)
+            pool = self._shuffle_unseen_first(deck_key, pool)
             self._decks[deck_key]    = pool
             self._deck_idx[deck_key] = 0
             self._last_q[deck_key]   = None
@@ -218,8 +219,9 @@ class QuizEngine:
         last = self._last_q.get(deck_key)
 
         if self._pool_idx >= len(self._pool):
-            # Deck exhausted -- reshuffle, but don't let the first card equal the last shown.
-            random.shuffle(self._pool)
+            # Deck exhausted -- reshuffle with unseen questions first.
+            reshuffled = self._shuffle_unseen_first(deck_key, self._pool)
+            self._pool[:] = reshuffled
             if last is not None and len(self._pool) > 1 and self._pool[0] is last:
                 swap = random.randint(1, len(self._pool) - 1)
                 self._pool[0], self._pool[swap] = self._pool[swap], self._pool[0]
@@ -227,6 +229,11 @@ class QuizEngine:
 
         self.current_question = self._pool[self._pool_idx]
         self._pool_idx += 1
+
+        # Track this question as seen.
+        if deck_key not in self._seen:
+            self._seen[deck_key] = set()
+        self._seen[deck_key].add(self.current_question['question'])
 
         # Persist deck position immediately so _end() doesn't need to duplicate it.
         if deck_key in self._decks:
@@ -295,13 +302,43 @@ class QuizEngine:
 
         if deck_key not in self._decks:
             new_pool = [q for q in all_qs if q.get('tier', 1) == self.tier] or all_qs[:]
-            random.shuffle(new_pool)
+            new_pool = self._shuffle_unseen_first(deck_key, new_pool)
             self._decks[deck_key]    = new_pool
             self._deck_idx[deck_key] = 0
             self._last_q[deck_key]   = None
 
         self._pool     = self._decks[deck_key]
         self._pool_idx = self._deck_idx[deck_key]
+
+    def _shuffle_unseen_first(self, deck_key: tuple, pool: list) -> list:
+        """Shuffle pool with unseen questions placed before seen ones."""
+        seen = self._seen.get(deck_key, set())
+        if not seen:
+            random.shuffle(pool)
+            return pool
+        unseen = [q for q in pool if q['question'] not in seen]
+        rest   = [q for q in pool if q['question'] in seen]
+        random.shuffle(unseen)
+        random.shuffle(rest)
+        return unseen + rest
+
+    def get_deck_state(self) -> dict:
+        """Return serializable deck state for save system."""
+        return {
+            'decks':    self._decks,
+            'deck_idx': self._deck_idx,
+            'last_q':   self._last_q,
+            'seen':     self._seen,
+        }
+
+    def restore_deck_state(self, state: dict):
+        """Restore deck state from a previously saved dict."""
+        if not state:
+            return
+        self._decks    = state.get('decks', {})
+        self._deck_idx = state.get('deck_idx', {})
+        self._last_q   = state.get('last_q', {})
+        self._seen     = state.get('seen', {})
 
     def _end(self, success: bool):
         self.state = QuizState.COMPLETE
