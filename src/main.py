@@ -233,6 +233,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "STR": 7, "CON": 9, "DEX": 10, "INT": 14, "WIS": 11, "PER": 10,
         "_sprite": "player_wizard_f",
         "_no_dagger": True,
+        "_start_weapon": "wood_staff",
         "_start_wand": "wand_of_magic_missile",
         "_start_extra_acc": ["dreamspun_sketchbook"],
         "_start_unusual_sphere": True,
@@ -1030,9 +1031,9 @@ LEARNABLE_SPELLS: dict[str, dict] = {
         'desc': 'Attackers miss you 30% of time for 20 turns.',
     },
     'ice_storm_spell': {
-        'name': 'Ice Storm', 'effect': 'mass_ice', 'power': '3d6',
+        'name': 'Ice Storm', 'effect': 'mass_ice', 'power': '4d8',
         'mp_cost': 14, 'quiz_tier': 4, 'needs_target': False,
-        'desc': '3d6 cold damage to all visible monsters.',
+        'desc': '4d8 cold damage to all visible monsters.',
     },
     'paralyze_spell': {
         'name': 'Paralysis', 'effect': 'paralyze_monster', 'power': '',
@@ -6755,10 +6756,20 @@ class Game:
             if _qs_wand:
                 _qs_wand.on_wand_zapped(wand.id, was_identified=_was_identified_before)
 
-            if not result.success:
-                self.add_message("The wand fizzes and fails to fire.", 'warning')
-                self._advance_turn()
-                return
+            _is_mm = getattr(wand, 'effect', '') == 'magic_missile'
+            if _is_mm:
+                # Magic missile: chain score = number of missiles
+                if result.score == 0:
+                    self.add_message("The wand fizzes and fails to fire.", 'warning')
+                    self._advance_turn()
+                    return
+                self._wand_chain_score = result.score
+            else:
+                if not result.success:
+                    self.add_message("The wand fizzes and fails to fire.", 'warning')
+                    self._advance_turn()
+                    return
+                self._wand_chain_score = 1
 
             wand.charges -= 1
             # Cursed wands: 3% chance to misfire (wastes charge, no effect)
@@ -6771,6 +6782,7 @@ class Game:
                 self._advance_turn()
                 return
             self._apply_wand_effect(wand)
+            self._wand_chain_score = 1  # reset
             if wand.charges <= 0:
                 self.add_message("The wand crumbles to dust -- it is spent.", 'warning')
                 self.player.remove_from_inventory(wand)
@@ -6780,18 +6792,34 @@ class Game:
                 )
             self._advance_turn()
 
-        self.quiz_engine.start_quiz(
-            mode='threshold',
-            subject='science',
-            tier=wand.quiz_tier,
-            callback=on_complete,
-            threshold=wand.quiz_threshold,
-            wisdom=self.player.WIS,
-            timer_modifier=self.player.get_quiz_timer_modifier(),
-            extra_seconds=self.player.get_int_quiz_bonus() +
-                          self.player.get_quiz_extra_seconds('science'),
-            base_seconds=self.player.get_quiz_timer('science'),
-        )
+        # Magic missile wands use escalator_chain; all others use threshold
+        _wand_is_mm = getattr(wand, 'effect', '') == 'magic_missile'
+        if _wand_is_mm:
+            self.quiz_engine.start_quiz(
+                mode='escalator_chain',
+                subject='ai',
+                tier=1,
+                callback=on_complete,
+                max_chain=5,
+                wisdom=self.player.WIS,
+                timer_modifier=self.player.get_quiz_timer_modifier(),
+                extra_seconds=self.player.get_int_quiz_bonus() +
+                              self.player.get_quiz_extra_seconds('ai'),
+                base_seconds=self.player.get_quiz_timer('ai'),
+            )
+        else:
+            self.quiz_engine.start_quiz(
+                mode='threshold',
+                subject='science',
+                tier=wand.quiz_tier,
+                callback=on_complete,
+                threshold=wand.quiz_threshold,
+                wisdom=self.player.WIS,
+                timer_modifier=self.player.get_quiz_timer_modifier(),
+                extra_seconds=self.player.get_int_quiz_bonus() +
+                              self.player.get_quiz_extra_seconds('science'),
+                base_seconds=self.player.get_quiz_timer('science'),
+            )
 
     def _int_scaled_damage(self, base_dmg: int) -> int:
         """Scale magic damage by INT: 1.0x at INT 0, 2.0x at INT 10, 3.0x at INT 20."""
@@ -6992,14 +7020,21 @@ class Game:
                     self._on_monster_killed(target)
 
             elif effect == 'magic_missile':
-                # Irresistible: bypasses all resistances
-                dmg = self._int_scaled_damage(roll(wand.power) + 1 if wand.power else 5)
-                target.hp = max(0, target.hp - dmg)
-                if target.hp == 0:
-                    target.alive = False
+                # Irresistible: bypasses all resistances. Multiple missiles from chain.
+                missiles = max(1, getattr(self, '_wand_chain_score', 1))
+                total_dmg = 0
+                for _ in range(missiles):
+                    if not target.alive:
+                        break
+                    dmg = self._int_scaled_damage(roll(wand.power) + 1 if wand.power else 5)
+                    target.hp = max(0, target.hp - dmg)
+                    if target.hp == 0:
+                        target.alive = False
+                    total_dmg += dmg
                 self.add_message(
-                    f"A magic missile unerringly strikes the {target.name} for {dmg} damage!", 'success'
-                )
+                    f"{missiles} magic missile{'s' if missiles > 1 else ''} "
+                    f"unerringly strike{'s' if missiles == 1 else ''} the "
+                    f"{target.name} for {total_dmg} total damage!", 'success')
                 if not target.alive:
                     self._on_monster_killed(target)
 
@@ -7013,8 +7048,9 @@ class Game:
                     self._on_monster_killed(target)
 
             elif effect == 'death_ray':
-                # 70% chance instant kill; remaining HP otherwise
-                if _rng.random() < 0.70:
+                # 70% chance instant kill; remaining HP otherwise. Bosses immune to instant kill.
+                is_boss = getattr(target, 'is_boss', False) or target.max_hp > 500
+                if not is_boss and _rng.random() < 0.70:
                     target.hp = 0
                     target.alive = False
                     self.add_message(f"The {target.name} is slain instantly by the death ray!", 'success')
@@ -7022,9 +7058,13 @@ class Game:
                 else:
                     dmg = max(1, target.max_hp // 2)
                     actual = target.take_damage(dmg)
-                    self.add_message(
-                        f"The death ray grazes the {target.name} for {actual} damage!", 'success'
-                    )
+                    if is_boss:
+                        self.add_message(
+                            f"The death ray strikes the {target.name} for {actual} damage! "
+                            f"The creature is too powerful for an instant kill.", 'success')
+                    else:
+                        self.add_message(
+                            f"The death ray grazes the {target.name} for {actual} damage!", 'success')
                     if not target.alive:
                         self._on_monster_killed(target)
 
@@ -7107,14 +7147,21 @@ class Game:
                     self._on_monster_killed(target)
 
             elif effect == 'disintegrate':
-                if _rng.random() < 0.85:
+                # 85% instant kill. Bosses immune to instant kill, take max_hp/3 instead.
+                is_boss = getattr(target, 'is_boss', False) or target.max_hp > 500
+                if not is_boss and _rng.random() < 0.85:
                     target.hp = 0
                     target.alive = False
                     self.add_message(f"The {target.name} is disintegrated!", 'success')
                     self._on_monster_killed(target)
                 else:
                     actual = target.take_damage(target.max_hp // 3)
-                    self.add_message(f"The {target.name} is partially disintegrated! ({actual} dmg)", 'success')
+                    if is_boss:
+                        self.add_message(
+                            f"The {target.name} resists disintegration but takes {actual} damage!", 'success')
+                    else:
+                        self.add_message(
+                            f"The {target.name} is partially disintegrated! ({actual} dmg)", 'success')
                     if not target.alive:
                         self._on_monster_killed(target)
 
@@ -8805,13 +8852,22 @@ class Game:
         if target is not None:
             from dice import roll as _roll
             if effect == 'magic_missile':
-                base_dmg = _roll(power) if power else 4
-                scaled = self._spell_damage(base_dmg, chain)
-                target.hp = max(0, target.hp - scaled)
-                if target.hp == 0:
-                    target.alive = False
+                # Fire one missile per chain link (1-5 missiles)
+                missiles = max(1, chain)
+                total_dmg = 0
+                for _ in range(missiles):
+                    if not target.alive:
+                        break
+                    base_dmg = _roll(power) if power else 4
+                    per_missile = self._int_scaled_damage(base_dmg)
+                    target.hp = max(0, target.hp - per_missile)
+                    if target.hp == 0:
+                        target.alive = False
+                    total_dmg += per_missile
                 self.add_message(
-                    f"A magic missile strikes the {target.name} for {scaled} damage! (chain {chain})", 'success')
+                    f"{missiles} magic missile{'s' if missiles > 1 else ''} "
+                    f"strike{'s' if missiles == 1 else ''} the {target.name} "
+                    f"for {total_dmg} total damage! (chain {chain})", 'success')
                 if not target.alive:
                     self._on_monster_killed(target)
             elif effect == 'fire_bolt':
@@ -10114,16 +10170,26 @@ class Game:
             if _qs_wand:
                 _qs_wand.on_wand_zapped(wand.id, was_identified=_was_identified)
 
-            if not result.success:
-                self.add_message("The wand fizzes and fails to fire.", 'warning')
-                self._advance_turn()
-                return
+            _is_mm = getattr(wand, 'effect', '') == 'magic_missile'
+            if _is_mm:
+                if result.score == 0:
+                    self.add_message("The wand fizzes and fails to fire.", 'warning')
+                    self._advance_turn()
+                    return
+                self._wand_chain_score = result.score
+            else:
+                if not result.success:
+                    self.add_message("The wand fizzes and fails to fire.", 'warning')
+                    self._advance_turn()
+                    return
+                self._wand_chain_score = 1
 
             wand.charges -= 1
             # Override auto-target with stored target
             self._wand_override_target = self._wand_target_monster
             self._apply_wand_effect(wand)
             self._wand_override_target = None
+            self._wand_chain_score = 1  # reset
             if wand.charges <= 0:
                 self.add_message("The wand crumbles to dust -- it is spent.", 'warning')
                 self.player.remove_from_inventory(wand)
@@ -10131,18 +10197,33 @@ class Game:
                 self.add_message(f"({wand.charges} charges remain)", 'info')
             self._advance_turn()
 
-        self.quiz_engine.start_quiz(
-            mode='threshold',
-            subject='science',
-            tier=wand.quiz_tier,
-            callback=on_complete,
-            threshold=getattr(wand, 'quiz_threshold', 2),
-            wisdom=self.player.WIS,
-            timer_modifier=self.player.get_quiz_timer_modifier(),
-            extra_seconds=self.player.get_int_quiz_bonus() +
-                          self.player.get_quiz_extra_seconds('science'),
-            base_seconds=self.player.get_quiz_timer('science'),
-        )
+        _wand_is_mm = getattr(wand, 'effect', '') == 'magic_missile'
+        if _wand_is_mm:
+            self.quiz_engine.start_quiz(
+                mode='escalator_chain',
+                subject='ai',
+                tier=1,
+                callback=on_complete,
+                max_chain=5,
+                wisdom=self.player.WIS,
+                timer_modifier=self.player.get_quiz_timer_modifier(),
+                extra_seconds=self.player.get_int_quiz_bonus() +
+                              self.player.get_quiz_extra_seconds('ai'),
+                base_seconds=self.player.get_quiz_timer('ai'),
+            )
+        else:
+            self.quiz_engine.start_quiz(
+                mode='threshold',
+                subject='science',
+                tier=wand.quiz_tier,
+                callback=on_complete,
+                threshold=getattr(wand, 'quiz_threshold', 2),
+                wisdom=self.player.WIS,
+                timer_modifier=self.player.get_quiz_timer_modifier(),
+                extra_seconds=self.player.get_int_quiz_bonus() +
+                              self.player.get_quiz_extra_seconds('science'),
+                base_seconds=self.player.get_quiz_timer('science'),
+            )
 
     def _confirm_power_target(self):
         """Confirm targeted power (e.g. Fire Breath)."""
