@@ -166,11 +166,12 @@ def _corrode_random_gear(player) -> tuple[str, str] | None:
 
 # Damage type -> immunity status effect (first match wins; fire_shield overrides fire_resist)
 DAMAGE_IMMUNITY: dict[str, str] = {
-    'fire':    'fire_resist',
-    'cold':    'cold_resist',
-    'lightning':'shock_resist',
-    'poison':  'poison_resist',
-    'drain':   'drain_resist',
+    'fire':      'fire_resist',
+    'cold':      'cold_resist',
+    'lightning': 'shock_resist',
+    'poison':    'poison_resist',
+    'drain':     'drain_resist',
+    'magic':     'magic_resist',
 }
 
 # Additional damage-type immunities granted by shield effects (checked separately)
