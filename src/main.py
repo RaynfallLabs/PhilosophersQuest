@@ -4163,7 +4163,10 @@ class Game:
         import os
         from paths import data_path
         SZ = self.MENU_ICON_SIZE
-        path = os.path.join(data_path('assets', 'tiles', 'items'), f"{item_id}.png")
+        items_dir = data_path('assets', 'tiles', 'items')
+        path = os.path.join(items_dir, f"{item_id}.png")
+        if not os.path.exists(path) and item_id.startswith('corpse_'):
+            path = os.path.join(items_dir, "corpse.png")
         if os.path.exists(path):
             raw = pygame.image.load(path).convert_alpha()
             surf = pygame.transform.smoothscale(raw, (SZ, SZ))
