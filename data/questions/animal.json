@@ -38,10 +38,10 @@
   {
     "tier": 1,
     "question": "Snakes lost their legs through evolutionary reduction. Which group of reptiles are their closest limbless relatives?",
-    "answer": "Lizards, from which snakes descended through gradual limb reduction",
+    "answer": "Lizards, from which snakes are believed to have directly descended",
     "choices": [
       "Turtles, which also developed unique skeletal modifications over time",
-      "Lizards, from which snakes descended through gradual limb reduction",
+      "Lizards, from which snakes are believed to have directly descended",
       "Crocodilians, which share a common archosaur ancestor with snakes",
       "Tuataras, an ancient and genetically distinct reptile lineage from New Zealand"
     ],
@@ -708,7 +708,7 @@
     "context": "Amphibians typically begin life in water, hatching from eggs and going through an aquatic larval stage — such as tadpoles in frogs — before metamorphosing and adapting to life on land. This two-phase life cycle is the defining feature of amphibians."
   },
   {
-    "tier": 1,
+    "tier": 2,
     "question": "Insectivores fill an important ecological niche as pest controllers. Which of these mammals is primarily insectivorous?",
     "answer": "Shrew, which consumes insects and invertebrates daily",
     "choices": [
@@ -721,12 +721,12 @@
   },
   {
     "tier": 1,
-    "question": "Piscivores are animals that specialize in eating fish. Which of these birds is a classic piscivore that has evolved a spear-like beak for this purpose?",
-    "answer": "Kingfisher, which dives beak-first to spear fish from water",
+    "question": "Piscivores are animals that specialize in eating fish. Which of these birds is a classic piscivore that has evolved a pointed, elongated beak for this purpose?",
+    "answer": "Kingfisher, which dives beak-first to catch fish from water",
     "choices": [
       "Osprey, which dives feet-first to catch fish",
       "Vulture, which soars on thermals scanning for carrion",
-      "Kingfisher, which dives beak-first to spear fish from water",
+      "Kingfisher, which dives beak-first to catch fish from water",
       "Hummingbird, which hovers to feed on flower nectar"
     ],
     "context": "Kingfishers are classic piscivores with sharp, spear-like beaks adapted for diving into water and catching fish. Their hunting strategy involves perching over water, spotting prey, then plunging rapidly to snatch fish with precision."
@@ -794,9 +794,9 @@
   {
     "tier": 2,
     "question": "Seals and sea lions are both pinnipeds, but they differ in a key way: sea lions can walk on land using their flippers, while seals ___?",
-    "answer": "Must drag themselves on land using their front flippers",
+    "answer": "Must drag themselves along the ground with their front flippers",
     "choices": [
-      "Must drag themselves on land using their front flippers",
+      "Must drag themselves along the ground with their front flippers",
       "Can rotate their hind flippers forward to walk",
       "Use their tail for support when moving on shore",
       "Shuffle upright by balancing on their hind flippers"
@@ -805,7 +805,7 @@
   },
   {
     "tier": 2,
-    "question": "Orcas (killer whales) are apex predators classified as mammals. What hunting strategy do orcas use that makes them exceptional among ocean predators?",
+    "question": "Orcas (killer whales) are apex predators classified as mammals. What strategy do orcas use that makes them exceptional among ocean predators?",
     "answer": "Coordinated cooperative hunting in pods with culturally transmitted techniques",
     "choices": [
       "Herding fish into tight bait balls by circling at high speed",
@@ -1117,7 +1117,7 @@
   },
   {
     "tier": 2,
-    "question": "The kiwi bird is native to ___?",
+    "question": "The kiwi bird is found naturally in which country?",
     "answer": "New Zealand, its native island habitat",
     "choices": [
       "Australia, home to many other flightless birds",
@@ -1321,7 +1321,7 @@
   },
   {
     "tier": 2,
-    "question": "Which bear species is the largest marine mammal predator?",
+    "question": "Which bear species is considered the largest apex predator of marine environments?",
     "answer": "Polar bear, the apex predator of Arctic sea ice",
     "choices": [
       "Grizzly bear, a large omnivore of North American forests",
@@ -1429,7 +1429,7 @@
   },
   {
     "tier": 2,
-    "question": "Which fish can survive out of water for extended periods?",
+    "question": "Which fish can live out of water for extended periods?",
     "answer": "Lungfish, which can survive on land for months by entering estivation",
     "choices": [
       "Clownfish, which can tolerate low-oxygen tide pools",
@@ -1670,11 +1670,11 @@
   {
     "tier": 3,
     "question": "The gray wolf (Canis lupus) is the ancestor of domestic dogs. Wolves were domesticated approximately how many years ago?",
-    "answer": "About 15,000 to 40,000 years ago, making dogs the first domesticated animal",
+    "answer": "About 15,000 to 40,000 years ago, making dogs the first tamed animal species",
     "choices": [
       "About 500 to 2,000 years ago, during early agricultural civilizations",
       "About 5,000 to 8,000 years ago, alongside the domestication of livestock",
-      "About 15,000 to 40,000 years ago, making dogs the first domesticated animal",
+      "About 15,000 to 40,000 years ago, making dogs the first tamed animal species",
       "About 100,000 years ago, when modern humans first emerged in Africa"
     ],
     "context": "Genetic and archaeological evidence suggests dogs were domesticated from gray wolves (Canis lupus) somewhere between 15,000 and 40,000 years ago, likely in Eurasia. This makes the dog the first domesticated animal, predating the domestication of livestock and crops. The exact timing and location remain debated, with different studies pointing to Europe, Central Asia, or East Asia as the origin point."
@@ -1696,10 +1696,10 @@
     "question": "An animal that gives birth to live young is ___?",
     "answer": "Viviparous — nourishes young internally and births live offspring",
     "choices": [
-      "Oviparous — lays eggs that develop externally",
-      "Ovoviviparous — retains eggs internally until hatching",
+      "Oviparous — lays eggs whose young develop externally after hatching",
+      "Ovoviviparous — retains eggs internally until young emerge",
       "Viviparous — nourishes young internally and births live offspring",
-      "Larviparous — gives birth to larval-stage offspring"
+      "Larviparous — gives birth to larval-stage young before full development"
     ],
     "context": "Viviparous animals give birth to live young that develop internally, typically nourished through a placenta or similar structure. Most mammals, some sharks, and certain reptiles are viviparous."
   },
@@ -1708,10 +1708,10 @@
     "question": "An animal that retains eggs inside until hatching is ___?",
     "answer": "Ovoviviparous — retains eggs inside the body until they hatch",
     "choices": [
-      "Oviparous — lays eggs that develop externally",
-      "Viviparous — nourishes young internally via placenta",
+      "Oviparous — lays eggs that develop externally until they hatch",
+      "Viviparous — retains nutrients inside the body via placenta",
       "Ovoviviparous — retains eggs inside the body until they hatch",
-      "Placental — nourishes embryos through a true placenta"
+      "Placental — retains embryos inside the womb through a true placenta"
     ],
     "context": "Ovoviviparous animals retain fertilized eggs inside the body, where they hatch internally before birth. Unlike viviparous animals, the embryo is nourished by the egg yolk rather than the mother's body. Many sharks and some snakes use this strategy."
   },
@@ -1720,7 +1720,7 @@
     "question": "The process of shedding skin or exoskeleton is called ___?",
     "answer": "Ecdysis — the shedding of skin or exoskeleton for growth",
     "choices": [
-      "Metamorphosis — a dramatic transformation of body form",
+      "Metamorphosis — a dramatic transformation involving shedding of larval exoskeleton",
       "Hibernation — a period of winter dormancy to conserve energy",
       "Ecdysis — the shedding of skin or exoskeleton for growth",
       "Estivation — a period of summer dormancy in dry conditions"
@@ -1898,11 +1898,11 @@
   {
     "tier": 3,
     "question": "A carnivore that eats herbivores is a ___?",
-    "answer": "Secondary consumer, an organism that feeds on herbivores at the third trophic level",
+    "answer": "Secondary consumer, an organism that feeds on plant-eaters at the third trophic level",
     "choices": [
       "Apex predator, an organism at the top of the food chain that is not hunted by others",
       "Primary consumer, an organism that feeds directly on plants and producers",
-      "Secondary consumer, an organism that feeds on herbivores at the third trophic level",
+      "Secondary consumer, an organism that feeds on plant-eaters at the third trophic level",
       "Tertiary consumer, an organism that feeds on other carnivores higher up the food chain"
     ],
     "context": "A carnivore that feeds on herbivores occupies the third trophic level as a secondary consumer. Diet classification reveals how animals fit into food webs and how energy flows through ecosystems, with each level retaining only about 10% of the energy from the level below."
@@ -2185,7 +2185,7 @@
   },
   {
     "tier": 4,
-    "question": "Spiders belong to order ___?",
+    "question": "Spiders belong to which taxonomic order?",
     "answer": "Araneae, the order containing all true spiders",
     "choices": [
       "Scorpiones, the order containing all true scorpions",
@@ -2413,7 +2413,7 @@
   },
   {
     "tier": 4,
-    "question": "In predator-prey cycles, predator population peaks ___ prey population peak?",
+    "question": "In predator-prey cycles, when does the predator population peak relative to the prey population peak?",
     "answer": "After, once increased prey availability drives predator reproduction",
     "choices": [
       "Before, as predators deplete prey and trigger the prey's decline",
@@ -2654,11 +2654,11 @@
   {
     "tier": 4,
     "question": "In binomial nomenclature, the second name is the ___?",
-    "answer": "Species epithet, the lowercase second term unique to that species",
+    "answer": "Species epithet, the lowercase term unique to that species within the genus",
     "choices": [
       "Genus name, identifying the broader taxonomic group the species belongs to",
       "Family name, shared across all related genera within that grouping",
-      "Species epithet, the lowercase second term unique to that species",
+      "Species epithet, the lowercase term unique to that species within the genus",
       "Order name, a higher rank that encompasses multiple related families"
     ],
     "context": "In binomial nomenclature, the first part is the genus name (capitalized) and the second is the species epithet (lowercase), together forming a unique identifier for every species. For example, in Homo sapiens, 'Homo' is the genus and 'sapiens' is the species epithet."
@@ -3194,10 +3194,10 @@
   {
     "tier": 5,
     "question": "An antigen is a molecule that triggers ___?",
-    "answer": "An immune response targeting the foreign molecule",
+    "answer": "An immune response targeting the foreign substance",
     "choices": [
       "Rapid cellular mitosis and new tissue growth",
-      "An immune response targeting the foreign molecule",
+      "An immune response targeting the foreign substance",
       "Hormonal release from the endocrine glands",
       "Programmed cell death in damaged tissue"
     ],
@@ -3338,10 +3338,10 @@
   {
     "tier": 2,
     "question": "Which flightless bird is best known for its swimming ability?",
-    "answer": "Penguin, adapted with flipper-like wings for high-speed underwater swimming",
+    "answer": "Penguin, adapted with flipper-like wings for high-speed underwater movement",
     "choices": [
       "Ostrich, renowned for powerful running speed on the African savanna",
-      "Penguin, adapted with flipper-like wings for high-speed underwater swimming",
+      "Penguin, adapted with flipper-like wings for high-speed underwater movement",
       "Emu, a large cursorial bird native to the Australian outback",
       "Kiwi, a nocturnal ground-dwelling bird endemic to New Zealand"
     ],
@@ -3412,7 +3412,7 @@
     "question": "The African elephant has ___ ears compared to the Asian elephant?",
     "answer": "Larger, acting as heat-radiating fans suited to the hot African savanna",
     "choices": [
-      "Smaller, as Asian elephants evolved in hotter, more open savanna environments",
+      "Smaller, as Asian elephants evolved in hotter, more open African-style savanna environments",
       "Larger, acting as heat-radiating fans suited to the hot African savanna",
       "Identical in size, though distinctly different in shape and texture",
       "Narrower and more elongated, giving them a taller overall ear profile"
@@ -3458,18 +3458,18 @@
   {
     "tier": 2,
     "question": "The electric eel is actually classified as a ___?",
-    "answer": "Knifefish, classified within the order Gymnotiformes",
+    "answer": "Knifefish, belonging to the order Gymnotiformes",
     "choices": [
       "True eel, belonging to the order Anguilliformes",
       "Amphibian capable of breathing both air and water",
-      "Knifefish, classified within the order Gymnotiformes",
+      "Knifefish, belonging to the order Gymnotiformes",
       "Reptile with a highly elongated body plan"
     ],
     "context": "Despite its name and eel-like appearance, the electric eel is actually a knifefish, classified within the order Gymnotiformes. It is more closely related to carp and catfish than to true eels, and it breathes air at the surface to survive in low-oxygen waters."
   },
   {
     "tier": 2,
-    "question": "Which bird is the fastest in level flight?",
+    "question": "Which bird holds the record for the fastest sustained level flight?",
     "answer": "Common swift, which holds the record for fastest sustained level flight",
     "choices": [
       "Peregrine falcon, which reaches top speeds only during a dive",
@@ -3523,18 +3523,18 @@
       "Arboreal, meaning adapted for life in the treetops",
       "Fossorial, meaning adapted for burrowing underground",
       "Cursorial, meaning adapted for sustained running on land",
-      "Natatorial, meaning adapted for an aquatic lifestyle"
+      "Natatorial, meaning adapted for an aquatic lifestyle and swift running through shallow water"
     ],
     "context": "The term 'cursorial' describes animals whose limbs and body plan are adapted for sustained running, such as cheetahs, ostriches, and pronghorn antelopes. Related locomotion terms include arboreal (trees), fossorial (underground), and natatorial (swimming)."
   },
   {
     "tier": 3,
     "question": "An animal adapted for swimming is described as ___?",
-    "answer": "Natatorial, meaning adapted for swimming through water",
+    "answer": "Natatorial, meaning adapted for an aquatic lifestyle",
     "choices": [
       "Cursorial, meaning adapted primarily for running on land",
-      "Natatorial, meaning adapted for swimming through water",
-      "Volant, meaning adapted for flight through the air",
+      "Natatorial, meaning adapted for an aquatic lifestyle",
+      "Volant, meaning adapted for swimming-like gliding through the air",
       "Fossorial, meaning adapted for burrowing underground"
     ],
     "context": "The term 'natatorial' describes animals adapted for swimming, such as seals, otters, and ducks. Related locomotion terms include cursorial (running), volant (flying), and fossorial (burrowing). Many animals exhibit overlapping abilities but are classified by their primary adaptation."
@@ -3546,7 +3546,7 @@
     "choices": [
       "Visual communication using color or posture displays",
       "Chemical communication using pheromones or scent signals",
-      "Acoustic communication through vocalizations or sounds",
+      "Acoustic communication through vocalizations or scent-triggered sounds",
       "Tactile communication involving physical contact between animals"
     ],
     "context": "Territory marking with scent glands or urine is a classic example of chemical communication, where animals release pheromones or other chemical signals to convey information to others of their species."
@@ -3628,7 +3628,7 @@
     "question": "The three stages of incomplete metamorphosis are egg, nymph, and ___?",
     "answer": "Adult, the fully developed reproductive stage that follows the nymph",
     "choices": [
-      "Pupa, a resting stage where larval tissue is reorganized into adult form",
+      "Pupa, a resting stage where the nymph's tissue is reorganized into adult form",
       "Larva, an early feeding stage that looks nothing like the adult",
       "Adult, the fully developed reproductive stage that follows the nymph",
       "Instar, the phase between successive molts during nymphal development"
@@ -3757,7 +3757,7 @@
   },
   {
     "tier": 3,
-    "question": "A saltwater fish must constantly ___ water to avoid dehydration?",
+    "question": "A saltwater fish must ___ water to avoid dehydration?",
     "answer": "Drink seawater constantly to replace lost fluids",
     "choices": [
       "Excrete salt continuously through specialized gill cells",
@@ -3796,9 +3796,9 @@
     "question": "An animal that feeds on carrion is called a ___?",
     "answer": "Scavenger, an animal that feeds on the dead or decaying flesh of other animals",
     "choices": [
-      "Detritivore, an organism that consumes decomposing plant and animal matter",
+      "Detritivore, an organism that feeds on decomposing plant and animal matter",
       "Scavenger, an animal that feeds on the dead or decaying flesh of other animals",
-      "Obligate predator, a carnivore that must actively hunt all of its prey",
+      "Obligate predator, a carnivore that feeds only on freshly killed prey",
       "Saprophyte, an organism that absorbs nutrients from decaying organic material"
     ],
     "context": "A scavenger is an animal that primarily feeds on carrion — the decaying flesh of dead animals. Vultures, hyenas, and certain beetles are classic examples. Scavengers play a critical ecological role by recycling nutrients and reducing the spread of disease. Detritivores, by contrast, consume fragmented dead organic matter including plant debris, while saprophytes are decomposers that absorb nutrients chemically."
@@ -4117,7 +4117,7 @@
   },
   {
     "tier": 4,
-    "question": "Oxygenated blood is carried from the lungs to the heart by the ___?",
+    "question": "Blood returning from the lungs to the heart is carried by the ___?",
     "answer": "Pulmonary veins, which carry oxygenated blood from the lungs",
     "choices": [
       "Pulmonary arteries, which carry deoxygenated blood to the lungs",
@@ -4192,7 +4192,7 @@
     "question": "A species extinct in the wild but surviving in captivity is classified as ___?",
     "answer": "EW (Extinct in the Wild) — survives only in captivity or cultivation",
     "choices": [
-      "EX (Extinct) — no individuals survive in any setting",
+      "EX (Extinct) — no individuals survive in any setting, wild or captive",
       "CR (Critically Endangered) — fewer than 250 mature individuals remain",
       "EW (Extinct in the Wild) — survives only in captivity or cultivation",
       "EN (Endangered) — faces very high risk of extinction in the wild"
@@ -4465,11 +4465,11 @@
   },
   {
     "tier": 5,
-    "question": "Punctuated equilibrium proposes that evolution proceeds by ___?",
-    "answer": "Long periods of stasis punctuated by geologically rapid bursts of change",
+    "question": "The theory of punctuated equilibrium proposes that evolution proceeds by ___?",
+    "answer": "Long periods of stasis interrupted by geologically rapid bursts of change",
     "choices": [
       "Constant gradual change accumulating incrementally over millions of years",
-      "Long periods of stasis punctuated by geologically rapid bursts of change",
+      "Long periods of stasis interrupted by geologically rapid bursts of change",
       "Successive turnovers driven solely by mass extinction and recolonization",
       "Steady directional selection acting uniformly across all lineages over time"
     ],
@@ -4645,7 +4645,7 @@
   },
   {
     "tier": 5,
-    "question": "The Hardy-Weinberg p + q = 1 equation assumes ___ alleles at a locus?",
+    "question": "The Hardy-Weinberg p + q = 1 equation assumes how many alleles at a locus?",
     "answer": "Two, designated p and q, representing alleles at a diploid locus",
     "choices": [
       "One, representing a single fixed allele per locus in the population",
@@ -4741,9 +4741,9 @@
   },
   {
     "question": "New Caledonian crows are famous for making and using tools. What makes their tool use particularly remarkable compared to most other tool-using animals?",
-    "answer": "They craft tools by modifying materials to specific shapes, not just using found objects",
+    "answer": "They craft tools by modifying materials to specific shapes, not just picking up found objects",
     "choices": [
-      "They craft tools by modifying materials to specific shapes, not just using found objects",
+      "They craft tools by modifying materials to specific shapes, not just picking up found objects",
       "They use tools cooperatively in coordinated group hunts with assigned roles",
       "They select and store tools in advance, anticipating future problem-solving needs",
       "They pass learned tool techniques across generations through direct demonstration"
@@ -4764,11 +4764,11 @@
     "context": "The mirror test, developed by Gordon Gallup Jr. in 1970, measures whether an animal recognizes its own reflection as itself rather than another individual. Chimpanzees reliably pass this test, as do other great apes, dolphins, elephants, and magpies. Dogs, cats, and most other animals investigated have not demonstrated reliable self-recognition in mirrors."
   },
   {
-    "question": "Elephants have passed the mirror self-recognition test, suggesting self-awareness. Elephants also exhibit which other behavior that suggests complex emotional cognition?",
-    "answer": "They visit and touch the bones of dead family members, suggesting grief",
+    "question": "Elephants have passed the mirror self-recognition test, indicating self-awareness. Elephants also exhibit which other behavior that indicates complex emotional cognition?",
+    "answer": "They visit and touch the bones of dead family members, appearing to mourn their loss",
     "choices": [
       "They form long-term alliances by exchanging gifts with rival herds to reduce conflict",
-      "They visit and touch the bones of dead family members, suggesting grief",
+      "They visit and touch the bones of dead family members, appearing to mourn their loss",
       "They seek out and consume specific medicinal plants when sick or injured",
       "They stand motionless in apparent vigils over the bodies of dying companions"
     ],
@@ -4800,7 +4800,7 @@
     "context": "Dolphins produce clicks through specialized nasal structures and focus them via the melon, a fatty forehead organ, for echolocation. Beyond this, dolphins have demonstrated referential pointing comprehension — understanding that a human's pointing gesture directs attention to a distant object. This joint attention ability is considered a key building block of language and theory of mind, and is rare outside of humans and great apes."
   },
   {
-    "question": "Meerkats post sentinels that watch for predators while others forage. What do sentinels use to communicate threat level?",
+    "question": "Meerkats post sentinels that watch for predators while others forage. What do sentinels use to communicate the urgency and type of threat?",
     "answer": "Different alarm calls that encode both predator type and urgency level",
     "choices": [
       "Distinct body postures held at elevated lookout positions",
@@ -4853,7 +4853,7 @@
     "choices": [
       "They take turns standing guard at roost entrances to protect unrelated colony members from predators",
       "Roost-mates that fed well will regurgitate blood to share with hungry neighbors who will return the favor",
-      "They groom and provide wound care for injured bats outside their immediate kin group",
+      "They groom and provide wound care for injured bats outside their immediate kin group, expecting future blood-sharing in return",
       "They share echolocation call patterns with unfamiliar bats to cooperatively locate prey"
     ],
     "tier": 3,
@@ -4880,7 +4880,7 @@
       "Mutualism, where both the cleaner fish and the host fish gain a clear benefit from the interaction",
       "Predation, where the relationship is a precursor to the larger fish eventually consuming its cleaner"
     ],
-    "tier": 1,
+    "tier": 2,
     "context": "Mutualism is an ecological relationship where both species benefit. Cleaner wrasse remove harmful parasites from larger fish (benefiting the host) while gaining a reliable food source (benefiting themselves). Cleaning stations are a textbook example of mutualistic symbiosis in marine ecosystems."
   },
   {
@@ -4896,7 +4896,7 @@
     "context": "The lyrebird's mimicry is a product of sexual selection. Males incorporate an extraordinary range of sounds — including other bird species, human machinery, and environmental noises — into their courtship displays. Females preferentially mate with males whose songs are most complex and varied, driving the evolution of ever more elaborate vocal repertoires."
   },
   {
-    "question": "The peregrine falcon achieves speeds over 240 mph in a hunting stoop (dive). What physiological adaptation prevents its lungs from being damaged by the airflow at that speed?",
+    "question": "The peregrine falcon achieves speeds over 240 mph in a hunting stoop (dive). What physiological adaptation prevents its lungs from being damaged by the rush of air at that speed?",
     "answer": "Cone-shaped baffles in the nostrils redirect airflow around the lungs",
     "choices": [
       "Reinforced tracheal rings that prevent airway compression and collapse during high-speed dives",
@@ -4908,7 +4908,7 @@
     "context": "At dive speeds exceeding 240 mph, the force of incoming air could rupture a bird's lungs. The peregrine falcon has small cone-shaped tubercles (baffles) inside its nostrils that deflect and slow the airflow before it reaches the respiratory system. This adaptation inspired the design of jet engine intake cones used in aviation."
   },
   {
-    "question": "Some migratory birds navigate using Earth's magnetic field. In the European robin, which part of the body is thought to detect magnetic fields?",
+    "question": "Some migratory birds navigate using Earth's magnetic field. In the European robin, which part of the body is thought to sense magnetic field orientation?",
     "answer": "The eye, where cryptochrome proteins in the retina detect magnetic field orientation via light-dependent reactions",
     "choices": [
       "Iron-rich magnetite crystals concentrated in the upper beak, which act as a biological compass needle",
@@ -4920,7 +4920,7 @@
     "context": "Research on the European robin suggests that magnetoreception occurs in the eye, specifically via cryptochrome proteins in the retina. These proteins are thought to undergo light-dependent chemical reactions sensitive to magnetic field orientation, giving the bird a visual sense of magnetic direction. This 'quantum compass' hypothesis is distinct from magnetite-based detection proposed for other species."
   },
   {
-    "question": "Tardigrades (water bears) are microscopic animals that can survive extreme conditions including outer space vacuum. What is the state they enter to survive desiccation called?",
+    "question": "Tardigrades (water bears) are microscopic animals that can survive extreme conditions including outer space vacuum. What is the state they enter to survive extreme drying out called?",
     "answer": "Cryptobiosis — a reversible suspension of all metabolic activity upon desiccation",
     "choices": [
       "Estivation — dormancy triggered by heat and drought in many invertebrates",
@@ -5004,7 +5004,7 @@
     "context": "The monarch butterfly migration is multigenerational: southbound fall migrants overwinter in Mexico, then spring and summer produce 2 to 3 short-lived generations that move northward. The final summer generation is long-lived and makes the full journey back south, meaning great-grandchildren return to where their ancestors started."
   },
   {
-    "question": "Salmon spend years at sea then return to the exact freshwater stream where they were born to spawn. Which sensory system allows salmon to identify their birth stream?",
+    "question": "Salmon spend years at sea then return to the exact freshwater stream where they hatched to spawn. Which sensory system allows salmon to identify that natal stream?",
     "answer": "Olfaction (smell) — they imprint on the chemical signature of their birth stream as juveniles",
     "choices": [
       "Magnetoreception — they detect geomagnetic field gradients unique to each river network",
@@ -5040,7 +5040,7 @@
     "context": "Cephalopod ink contains tyrosinase and other compounds that interfere with a predator's chemoreceptors, dulling their ability to smell and taste — not just obscuring their vision. This chemical interference gives the octopus or squid precious extra seconds to escape, and the ink may also mimic the cephalopod's shape to confuse the attacker."
   },
   {
-    "question": "The bombardier beetle defends itself by producing a boiling chemical spray from its abdomen. What two chemicals are combined explosively to produce this spray?",
+    "question": "The bombardier beetle defends itself by producing a boiling chemical spray from its abdomen. What two chemicals react explosively to produce this spray?",
     "answer": "Hydroquinone and hydrogen peroxide, combined in a reaction chamber",
     "choices": [
       "Hydroquinone and hydrogen peroxide, combined in a reaction chamber",
@@ -5088,7 +5088,7 @@
     "context": "Eusociality is the highest level of social organization in the animal kingdom, characterized by cooperative brood care, overlapping generations, and reproductive division of labor. In eusocial species like ants, bees, and termites, workers are so specialized that they cannot survive or reproduce independently outside the colony."
   },
   {
-    "question": "Leaf-cutter ants bring leaf fragments not to eat, but to cultivate underground fungus gardens. This relationship between ants and fungus is an example of ___?",
+    "question": "Leaf-cutter ants bring leaf fragments not to eat, but to cultivate underground fungus gardens. This interaction between ants and fungus is an example of ___?",
     "answer": "Mutualism, where both the ants and fungus derive essential benefits from the relationship",
     "choices": [
       "Parasitism, where the ants exploit the fungus as a resource without providing any benefit in return",
@@ -5113,10 +5113,10 @@
   },
   {
     "question": "Lions are the only truly social big cats, living in groups called prides. What is the main evolutionary advantage of pride living for female lions?",
-    "answer": "Cooperative cub-rearing and coordinated hunting of large prey that single lions cannot kill",
+    "answer": "Cooperative cub-rearing and coordinated hunting of large prey that solitary individuals cannot kill",
     "choices": [
       "Maintaining territories up to ten times larger than any solitary lioness could defend alone",
-      "Cooperative cub-rearing and coordinated hunting of large prey that single lions cannot kill",
+      "Cooperative cub-rearing and coordinated hunting of large prey that solitary individuals cannot kill",
       "Diluting predation risk by overwhelming rival predators with the pride's collective size and coordinated defense",
       "Synchronized reproductive cycles that allow all females to give birth and nurse young at the same time"
     ],
@@ -5132,7 +5132,7 @@
       "Clinging to the fur on the mother's back, absorbing nutrients through specialized skin contact",
       "In a communal nest den shared and warmed cooperatively by other females in the mob"
     ],
-    "tier": 1,
+    "tier": 2,
     "context": "Marsupials like kangaroos give birth to extremely underdeveloped young. The tiny joey crawls unaided through the mother's fur to reach the pouch, where it latches onto a nipple. The milk it receives actually changes in fat and protein composition over months to match the joey's developmental needs — a remarkable biological feat."
   },
   {
@@ -5148,7 +5148,7 @@
     "context": "Humpback whale populations in the Southern Hemisphere dropped to just a few thousand before protections were enacted. Decades after the 1986 International Whaling Commission moratorium, some populations have rebounded to near pre-hunting levels, demonstrating that wildlife can recover when hunting pressure is lifted and sufficient genetic diversity remains in the surviving population."
   },
   {
-    "question": "The kangaroo is a highly efficient hopper -- it uses less energy at high speeds than at low speeds. What biomechanical mechanism explains this paradox?",
+    "question": "The kangaroo is a highly efficient hopper -- it uses less metabolic effort at high speeds than at low speeds. What biomechanical mechanism explains this paradox?",
     "answer": "Elastic tendons in the legs store and release energy like springs with each hop",
     "choices": [
       "Slow hops require sustained, continuous muscle contractions to maintain balance that high-speed hops avoid entirely",
@@ -5172,7 +5172,7 @@
     "context": "Emperor penguin huddles are not static — individuals on the cold outer edge gradually shuffle inward, while warmer central penguins shift outward, creating a slow, continuous rotation that ensures every bird spends time in the warm center. This collective thermoregulation is a remarkable example of emergent group behavior."
   },
   {
-    "question": "African elephants have demonstrated apparent mourning behavior when encountering the remains of dead elephants. What specific behavior suggests elephants recognize individual identity in death?",
+    "question": "African elephants have demonstrated apparent mourning behavior when encountering the remains of deceased members of their species. What specific behavior suggests they recognize individual identity in death?",
     "answer": "They spend more time investigating bones of elephants they knew than bones of strangers",
     "choices": [
       "They vocalize unique calls reserved exclusively for the remains of known individuals",
@@ -5184,11 +5184,11 @@
     "context": "Research by Cynthia Moss and others found that elephants spend significantly more time investigating and touching the bones of elephants from their own family group compared to strangers, suggesting they can recognize individuals even after death — a remarkable indicator of long-term social memory."
   },
   {
-    "question": "The African wild dog (Lycaon pictus) has one of the highest hunting success rates of any large predator -- around 80%. What key behavioral adaptation drives this success?",
-    "answer": "Highly coordinated pack hunting with role specialization and democratic group decision-making",
+    "question": "The African wild dog (Lycaon pictus) has one of the highest success rates of any large predator -- around 80%. What key behavioral adaptation drives this success?",
+    "answer": "Highly coordinated pack strategies with role specialization and democratic group decision-making",
     "choices": [
       "Superior endurance that lets the entire pack outlast prey across marathon pursuit distances",
-      "Highly coordinated pack hunting with role specialization and democratic group decision-making",
+      "Highly coordinated pack strategies with role specialization and democratic group decision-making",
       "Robust jaws that subdue large prey almost instantly, minimizing the need for prolonged chases",
       "Sophisticated scent-marking strategies that systematically herd prey toward terrain-based ambush points"
     ],
@@ -5280,11 +5280,11 @@
     "context": "All living animals produce weak electric fields as a byproduct of normal physiology -- nerve impulses and muscle contractions involve ion movement that generates measurable electrical gradients. The shark's ampullae of Lorenzini are jelly-filled canals sensitive enough to detect fields as weak as 5 nanovolts per centimeter, allowing them to locate prey hidden beneath the seafloor."
   },
   {
-    "question": "The bonobo is unique among great apes in resolving social conflicts primarily through sexual behavior rather than aggression. What does this behavioral difference imply about the relationship between social structure and evolutionary pressures?",
-    "answer": "Sexual behavior can evolve as a social bonding mechanism when reducing inter-group conflict has high fitness benefits",
+    "question": "The bonobo is unique among great apes in resolving social conflicts primarily through intimate physical behavior rather than aggression. What does this behavioral difference imply about the relationship between social structure and evolutionary pressures?",
+    "answer": "Intimate physical contact can evolve as a social bonding mechanism when reducing inter-group conflict has high fitness benefits",
     "choices": [
       "Bonobos evolved reduced testosterone levels, eliminating the neurological basis for aggression entirely",
-      "Sexual behavior can evolve as a social bonding mechanism when reducing inter-group conflict has high fitness benefits",
+      "Intimate physical contact can evolve as a social bonding mechanism when reducing inter-group conflict has high fitness benefits",
       "Resource abundance in bonobo habitats removes all selection pressure for competitive behavior",
       "The behavior reflects a derived matriarchal social hierarchy that suppresses male dominance displays through female coalitions"
     ],
@@ -5316,7 +5316,7 @@
     "context": "Jakob von Uexküll introduced the concept of 'umwelt' to describe the unique sensory and perceptual universe that each species inhabits. Because different animals have different sensory receptors — some see ultraviolet light, some detect magnetic fields, some hear ultrasound — each species experiences a fundamentally different slice of physical reality. This concept is foundational to sensory ecology and challenges anthropocentric assumptions about perception, reminding us that the 'world' is not one universal experience but many species-specific ones."
   },
   {
-    "question": "The Zahavian handicap principle proposes that honest signals of quality (like the peacock's tail) are reliable precisely because they ___?",
+    "question": "The Zahavian handicap principle proposes that honest signals of mate value (like the peacock's tail) are reliable precisely because they ___?",
     "answer": "Are costly to produce — only high-quality individuals can afford the cost without dying",
     "choices": [
       "Cannot be faked because they are genetically hardwired and cannot be altered by environmental or physiological condition",
@@ -5388,7 +5388,7 @@
     "context": "Wolf scent marks are rich chemical signals containing information about the individual's identity, sex, reproductive condition (including estrus status in females), and age of the mark. Other wolves can assess how recently a boundary was marked by how much the volatile compounds have degraded — effectively reading a chemical 'timestamp' left behind."
   },
   {
-    "question": "Migratory locusts (Schistocerca gregaria) exist as solitary and gregarious phases. What triggers the transformation from solitary to swarming phase?",
+    "question": "Migratory locusts (Schistocerca gregaria) exist as solitary and swarming phases. What triggers the transformation from solitary to swarming phase?",
     "answer": "Physical contact and crowding triggers serotonin release, causing physical and behavioral changes to the gregarious form",
     "choices": [
       "A specific plant chemical ingested during drought periods triggers a hormonal cascade promoting aggregation",
@@ -5400,7 +5400,7 @@
     "context": "When solitary desert locusts are crowded together — typically after vegetation concentrates them in small areas — mechanoreceptors on their hind legs detect repeated physical contact. This stimulates serotonin release, triggering a remarkable transformation: locusts become darker, more active, socially attracted to one another, and begin forming the massive migratory swarms that can devastate crops across entire regions."
   },
   {
-    "question": "Group living in animals provides anti-predator benefits. Mathematically, a predator attacking a group where each individual has a 1/N chance of being caught demonstrates which effect?",
+    "question": "Group living in animals provides anti-predator benefits. Mathematically, a predator attacking a group where each member faces a 1/N probability of capture demonstrates which effect?",
     "answer": "The dilution effect, where each individual's chance of capture is reduced to 1/N in a group of N",
     "choices": [
       "The confusion effect, where overlapping prey movements overwhelm a predator's targeting ability",
@@ -5448,7 +5448,7 @@
     "context": "The inverted retina of vertebrates — where nerve fibers and blood vessels sit in front of the photoreceptors, requiring a blind spot — is a structural quirk inherited from early chordate ancestors. Octopus eyes, evolving independently, have a 'correct' wiring with photoreceptors facing the light. This difference is strong evidence of independent evolutionary origins despite the strikingly similar camera-eye design."
   },
   {
-    "question": "The 'dead ant' signal in ant colonies: when an ant dies, chemical signals cause workers to carry the body to a waste pile. What happens if you apply the death chemical to a live ant?",
+    "question": "The 'dead ant' signal in ant colonies: when an ant dies, chemical signals cause workers to remove the body to a waste pile. What happens if you apply the death chemical to a live ant?",
     "answer": "Workers carry the live ant to the waste pile even though it is moving and struggling",
     "choices": [
       "Workers intensify allogrooming of the treated ant in an attempt to neutralize the chemical signal before it spreads to others",
@@ -5504,7 +5504,7 @@
       "Minerals and nitrogen compounds absorbed through root systems",
       "Chemical energy stored in water molecules drawn up from the ground"
     ],
-    "tier": 1,
+    "tier": 2,
     "context": "Plants are autotrophs — they convert solar energy into chemical energy stored in glucose through photosynthesis. This makes them the foundation of almost all food chains, as they are the only major group that can capture new energy and make it available to consumers."
   },
   {
@@ -5520,7 +5520,7 @@
     "context": "Mules are hybrid offspring of a male donkey (62 chromosomes) and a female horse (64 chromosomes), giving mules 63 chromosomes. During meiosis, chromosomes must pair up to form gametes, but 63 chromosomes cannot divide evenly into matched pairs, making functional egg or sperm cells essentially impossible to produce."
   },
   {
-    "question": "A tiger has stripes and a leopard has spots. What is the key behavioral difference between these two big cats that explains why tigers are solitary ambush hunters?",
+    "question": "A tiger has stripes and a leopard has spots. What is the key behavioral difference between these two big cats in their hunting strategies?",
     "answer": "Tigers hunt in dense vegetation where stripes break up their outline; they ambush prey alone rather than running in open terrain",
     "choices": [
       "Leopards climb trees to cache food, while tigers cache food underground",
@@ -5540,7 +5540,7 @@
       "Amphibians rely on external water to regulate body temperature, since they cannot generate internal heat",
       "Amphibians lack internal fertilization, requiring males to release sperm directly into standing water to reach eggs"
     ],
-    "tier": 1,
+    "tier": 2,
     "context": "Unlike reptile eggs, which have leathery or hard shells that resist desiccation, amphibian eggs are surrounded only by a gelatinous coating that provides no waterproof barrier. This means they must be laid in or near water to prevent drying out, tethering amphibians to moist environments for reproduction even if adults can venture onto land."
   },
   {
@@ -5564,7 +5564,7 @@
       "Insects grow only during the larval stage, after which the exoskeleton permanently fuses and stops expanding",
       "Specialized growth zones at the joints continuously secrete new chitin layers, slowly pushing the old shell outward"
     ],
-    "tier": 1,
+    "tier": 2,
     "context": "Moulting, or ecdysis, allows insects to escape the rigid constraints of their exoskeleton at intervals. After shedding, the insect rapidly expands its soft new cuticle by taking in air or water before it hardens into a larger casing. During this vulnerable window, the insect is soft-bodied and at greater risk from predators."
   },
   {
@@ -5616,7 +5616,7 @@
     "context": "Once dismissed as a functionless vestigial organ, the appendix is now hypothesized to serve as a 'safe house' for beneficial gut microbiota. After diarrheal illness flushes the intestines, bacteria sheltered in the appendix's biofilm may help recolonize the gut. This proposed function is supported by the appendix's rich lymphoid tissue and its presence across many mammal lineages."
   },
   {
-    "question": "Salmon die shortly after spawning in their birth stream. What ecological benefit does this death provide?",
+    "question": "Salmon die shortly after spawning in their birth stream. What ecological benefit does this death bring to the surrounding environment?",
     "answer": "Their decaying bodies provide marine-derived nutrients (especially nitrogen) that fertilize riverside forests and feed insects",
     "choices": [
       "Their decaying bodies provide marine-derived nutrients (especially nitrogen) that fertilize riverside forests and feed insects",
@@ -5628,7 +5628,7 @@
     "context": "Pacific salmon transport ocean-derived nutrients deep into freshwater ecosystems. Their decomposing bodies release nitrogen, phosphorus, and other marine nutrients absorbed by riparian trees, aquatic insects, and scavengers like bears and eagles. Studies have found elevated nitrogen isotopes characteristic of marine origin in streamside vegetation, directly linking forest health to salmon runs."
   },
   {
-    "question": "Many birds migrate at night and use stars for navigation. Which specific aspect of the night sky do birds use as a directional reference?",
+    "question": "Many birds migrate at night and use the night sky for navigation. Which specific aspect of the night sky do birds use as a directional reference?",
     "answer": "The rotation point of stars around Polaris (the North Star), which indicates true north",
     "choices": [
       "The rising and setting positions of prominent constellations along the eastern and western horizons",

@@ -285,6 +285,12 @@ class Sidebar:
             self.screen.blit(self._fsm.render(lp_text, True, lp_color), (self.x + self.PAD, y))
             y += 22
 
+        # Item-granted passives (not status effects)
+        if any(getattr(i, 'id', '') == 'charmander_stuffie' for i in player.inventory):
+            label = "[Fire Protect]"
+            self.screen.blit(self._fbold.render(label, True, (245, 150, 60)), (self.x + self.PAD, y))
+            y += 22
+
         # Active status effects in a 2-column grid
         active = [(eid, val) for eid, val in player.status_effects.items() if val != 0]
         if active:

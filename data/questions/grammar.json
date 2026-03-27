@@ -133,7 +133,7 @@
   },
   {
     "tier": 1,
-    "question": "A word that joins words, phrases, or clauses is a ___?",
+    "question": "Which part of speech connects words, phrases, or clauses together?",
     "answer": "Conjunction, which joins words, phrases, or clauses",
     "choices": [
       "Preposition, which connects a noun to another word",
@@ -145,7 +145,7 @@
   },
   {
     "tier": 1,
-    "question": "An exclamation expressing emotion is a ___?",
+    "question": "Which part of speech is used to express a sudden feeling or reaction?",
     "answer": "Interjection, which expresses a burst of emotion",
     "choices": [
       "Conjunction, which links two clauses or ideas",
@@ -289,7 +289,7 @@
   },
   {
     "tier": 1,
-    "question": "A sentence that gives a command is ___?",
+    "question": "A sentence that issues a directive or instruction is ___?",
     "answer": "Imperative, which gives a command or makes a request",
     "choices": [
       "Declarative, which states a fact or opinion",
@@ -1117,7 +1117,7 @@
   },
   {
     "tier": 2,
-    "question": "A singular subject takes a ___ verb?",
+    "question": "In subject-verb agreement, what form does a verb take when the subject is third-person singular?",
     "answer": "Singular, agreeing with the number of the subject",
     "choices": [
       "Singular, agreeing with the number of the subject",
@@ -1129,7 +1129,7 @@
   },
   {
     "tier": 2,
-    "question": "A plural subject takes a ___ verb?",
+    "question": "In subject-verb agreement, what form does a verb take when the subject refers to more than one person or thing?",
     "answer": "Plural, agreeing with the number of the subject",
     "choices": [
       "Singular, since the action applies to one shared event",
@@ -1237,7 +1237,7 @@
   },
   {
     "tier": 2,
-    "question": "The helping verb used to form future tense is ___?",
+    "question": "Which helping verb is used to indicate that an action will happen later or has not yet occurred?",
     "answer": "Will (used to form future tense constructions)",
     "choices": [
       "Will (used to form future tense constructions)",
@@ -1442,10 +1442,10 @@
   {
     "tier": 2,
     "question": "Past tense of 'hit'?",
-    "answer": "Hit (same form in present and past tense)",
+    "answer": "Hit (unchanged in past tense, same form as present)",
     "choices": [
       "Hitted (common learner error, but incorrect)",
-      "Hit (same form in present and past tense)",
+      "Hit (unchanged in past tense, same form as present)",
       "Was hitten by irregular verb change",
       "Struck (a different verb, not the past of 'hit')"
     ],
@@ -1454,10 +1454,10 @@
   {
     "tier": 2,
     "question": "Past tense of 'let'?",
-    "answer": "Let (same form in present and past tense)",
+    "answer": "Let (unchanged in past tense, same form as present)",
     "choices": [
       "Letted (following the regular -ed pattern)",
-      "Let (same form in present and past tense)",
+      "Let (unchanged in past tense, same form as present)",
       "Letten (borrowing from Germanic past forms)",
       "Lett (doubling the final consonant like 'stopped')"
     ],
@@ -1513,11 +1513,11 @@
   },
   {
     "tier": 3,
-    "question": "A clause that can stand alone is a ___ clause?",
-    "answer": "Independent, able to express a complete thought alone",
+    "question": "A clause that can stand alone as a complete thought is a ___ clause?",
+    "answer": "Independent, able to express a complete thought without support",
     "choices": [
       "Dependent, requiring attachment to a main clause",
-      "Independent, able to express a complete thought alone",
+      "Independent, able to express a complete thought without support",
       "Subordinate, introduced by a connecting word like 'because'",
       "Relative, modifying a noun using 'who,' 'which,' or 'that'"
     ],
@@ -1573,7 +1573,7 @@
   },
   {
     "tier": 3,
-    "question": "Placing contrasting ideas in parallel structure is ___?",
+    "question": "What rhetorical device sets contrasting ideas against each other in a balanced structure?",
     "answer": "Antithesis — placing contrasting ideas in balanced parallel structure",
     "choices": [
       "Anaphora — repeating a word or phrase at the start of successive clauses",
@@ -1585,7 +1585,7 @@
   },
   {
     "tier": 3,
-    "question": "Reversing the grammatical structure in successive phrases is ___?",
+    "question": "What rhetorical device inverts the grammatical order of repeated elements across two clauses?",
     "answer": "Chiasmus — reversing grammatical structure across successive phrases",
     "choices": [
       "Anaphora — repeating a word or phrase at the start of each clause",
@@ -1597,7 +1597,7 @@
   },
   {
     "tier": 3,
-    "question": "Exaggeration for emphasis is ___?",
+    "question": "Which literary term refers to extreme overstatement used for dramatic effect?",
     "answer": "Hyperbole — exaggeration beyond truth for dramatic emphasis",
     "choices": [
       "Litotes — deliberate understatement expressed through negation",
@@ -1609,7 +1609,7 @@
   },
   {
     "tier": 3,
-    "question": "Understatement using negation ('not bad' for 'good') is ___?",
+    "question": "Which figure of speech uses a double negative to imply a positive, as in 'not bad' meaning 'good'?",
     "answer": "Litotes — understatement through negation, implying a positive via double negative",
     "choices": [
       "Litotes — understatement through negation, implying a positive via double negative",
@@ -1621,7 +1621,7 @@
   },
   {
     "tier": 3,
-    "question": "A mild or indirect word substituted for a harsh one is a ___?",
+    "question": "A polite or gentle word substituted for one considered harsh or blunt is a ___?",
     "answer": "Euphemism — a mild or indirect word replacing a harsh one",
     "choices": [
       "Litotes — an understatement expressed through negation",
@@ -1633,7 +1633,7 @@
   },
   {
     "tier": 3,
-    "question": "The repetition of initial consonant sounds is ___?",
+    "question": "The repetition of consonant sounds at the start of nearby words is ___?",
     "answer": "Alliteration — the repetition of initial consonant sounds in words",
     "choices": [
       "Assonance — the repetition of vowel sounds in nearby words",
@@ -1645,7 +1645,7 @@
   },
   {
     "tier": 3,
-    "question": "The repetition of vowel sounds within words is ___?",
+    "question": "Which term describes the repetition of similar sound patterns formed by the middle syllables of nearby words?",
     "answer": "Assonance — the repetition of vowel sounds within or across words",
     "choices": [
       "Assonance — the repetition of vowel sounds within or across words",
@@ -1674,7 +1674,7 @@
     "choices": [
       "Infinitive — a phrase built around 'to' plus a base verb form, acting as a noun or modifier",
       "Gerund — a phrase built around a present participle functioning as a noun",
-      "Participial — a phrase using an '-ing' or '-ed' verb form as an adjective",
+      "Participial — a phrase using a present or past participle as an adjective to modify a noun",
       "Prepositional — a phrase beginning with a preposition followed by its object"
     ],
     "context": "Gerund phrases use '-ing' verb forms functioning as nouns: 'Running marathons requires dedication.' If you can replace the phrase with 'it' or 'something,' it's functioning as a gerund. Participial phrases look identical but modify nouns instead."
@@ -1711,7 +1711,7 @@
       "Infinitive phrase, using 'to + verb' to describe or name something",
       "Appositive, a noun phrase that restates or identifies the noun beside it",
       "Gerund phrase, using an '-ing' verb form to name an action as a noun",
-      "Predicate nominative, a noun that follows a linking verb to rename the subject"
+      "Predicate nominative, a noun placed beside a linking verb to rename the subject"
     ],
     "context": "An appositive sits right next to a noun and essentially restates it in different words. For example, in 'My brother, a doctor, lives in Boston,' the phrase 'a doctor' is the appositive. Appositives are usually set off by commas, dashes, or parentheses."
   },
@@ -1975,18 +1975,18 @@
       "Dangling, which has no logical subject to attach to in the sentence",
       "Misplaced, which sits too far from the noun it is meant to modify",
       "Squinting, which could plausibly modify either a preceding or following word",
-      "Absolute, which modifies the entire clause rather than a single noun"
+      "Absolute, which modifies the entire clause rather than a single noun or logical subject"
     ],
     "context": "'Walking to school, the rain started.' Who was walking? Not the rain! Dangling modifiers lack a logical subject to attach to in the sentence, creating absurd or unintended images."
   },
   {
     "tier": 3,
     "question": "The repetition of consonant sounds throughout a phrase (not just at the start) is ___?",
-    "answer": "Consonance, the repetition of consonant sounds anywhere in words",
+    "answer": "Consonance, which echoes consonant sounds anywhere within words",
     "choices": [
       "Alliteration, limited to repeated sounds at word beginnings",
       "Assonance, which repeats vowel sounds rather than consonants",
-      "Consonance, the repetition of consonant sounds anywhere in words",
+      "Consonance, which echoes consonant sounds anywhere within words",
       "Onomatopoeia, where a word imitates the sound it describes"
     ],
     "context": "Consonance repeats consonant sounds anywhere in words: 'pitter-patter' repeats the 't' sound. Unlike alliteration (initial sounds only), consonance can occur at the beginning, middle, or end of words."
@@ -2065,7 +2065,7 @@
   },
   {
     "tier": 3,
-    "question": "Giving human qualities to non-human things is ___?",
+    "question": "Giving non-human things the traits and characteristics of people is ___?",
     "answer": "Personification, which attributes human qualities to non-human things",
     "choices": [
       "Metaphor, which equates two unlike things directly",
@@ -2077,7 +2077,7 @@
   },
   {
     "tier": 3,
-    "question": "A statement that contradicts itself but reveals a truth is a ___?",
+    "question": "A statement that seems impossible or absurd yet expresses a meaningful insight is a ___?",
     "answer": "Paradox, which contradicts itself yet reveals a deeper truth",
     "choices": [
       "Oxymoron, which pairs two contradictory words together",
@@ -2089,7 +2089,7 @@
   },
   {
     "tier": 3,
-    "question": "Two contradictory words placed together ('deafening silence') is a(n) ___?",
+    "question": "Two opposing words placed together to form a single striking expression, like 'deafening silence', is a(n) ___?",
     "answer": "Oxymoron, two contradictory words fused into one expression",
     "choices": [
       "Oxymoron, two contradictory words fused into one expression",
@@ -2101,7 +2101,7 @@
   },
   {
     "tier": 3,
-    "question": "Saying the opposite of what you mean is ___?",
+    "question": "Which literary device involves expressing the opposite of what you actually mean?",
     "answer": "Irony, saying the opposite of what you actually mean",
     "choices": [
       "Paradox, a statement that contradicts itself yet reveals a truth",
@@ -2125,7 +2125,7 @@
   },
   {
     "tier": 4,
-    "question": "A figure of speech where a part represents the whole ('all hands on deck') is ___?",
+    "question": "A figure of speech where a part represents the entirety ('all hands on deck') is ___?",
     "answer": "Synecdoche, using a part of something to represent the whole",
     "choices": [
       "Metonymy, substituting a closely related concept for the original thing",
@@ -2137,7 +2137,7 @@
   },
   {
     "tier": 4,
-    "question": "Substituting a related concept for a thing ('the Crown' for the monarchy) is ___?",
+    "question": "Using an associated term for a thing ('the Crown' for the monarchy) is ___?",
     "answer": "Metonymy, substituting a related concept or association for the thing itself",
     "choices": [
       "Metonymy, substituting a related concept or association for the thing itself",
@@ -2149,7 +2149,7 @@
   },
   {
     "tier": 4,
-    "question": "A single verb governing two different objects with different meanings is ___?",
+    "question": "A single verb governing two different objects with distinct grammatical or logical effects is ___?",
     "answer": "Zeugma, where a single verb governs two objects with different meanings",
     "choices": [
       "Syllepsis, where one word applies to two others in different grammatical senses",
@@ -2173,7 +2173,7 @@
   },
   {
     "tier": 4,
-    "question": "A sentence that trails off unfinished, indicated by a dash or ellipsis, is ___?",
+    "question": "A sentence that trails off unfinished, indicated by a dash or a trailing punctuation mark, is ___?",
     "answer": "Aposiopesis — a sentence that halts mid-thought, marked by a dash or ellipsis",
     "choices": [
       "Aposiopesis — a sentence that halts mid-thought, marked by a dash or ellipsis",
@@ -2185,7 +2185,7 @@
   },
   {
     "tier": 4,
-    "question": "A sentence that shifts grammatical construction midway is ___?",
+    "question": "What is the rhetorical term for a sentence that abruptly shifts its grammatical construction partway through?",
     "answer": "Anacoluthon — a sentence that abandons its original grammatical structure midway",
     "choices": [
       "Aposiopesis — a sentence that trails off unfinished, marked by a dash or ellipsis",
@@ -2197,7 +2197,7 @@
   },
   {
     "tier": 4,
-    "question": "Expressing a single idea through two nouns joined by 'and' ('nice and warm' for 'nicely warm') is ___?",
+    "question": "Which rhetorical device uses two coordinated nouns linked by 'and' to convey what would normally be an adjective-noun phrase, as in 'nice and warm' for 'nicely warm'?",
     "answer": "Hendiadys — expressing one idea through two coordinated nouns joined by 'and'",
     "choices": [
       "Aposiopesis — a deliberate trailing off before a sentence is completed",
@@ -2281,7 +2281,7 @@
   },
   {
     "tier": 4,
-    "question": "The grammatical mood used for commands is ___?",
+    "question": "The grammatical mood used for directives and instructions is ___?",
     "answer": "Imperative, used for commands",
     "choices": [
       "Indicative, used for stating facts",
@@ -2365,7 +2365,7 @@
   },
   {
     "tier": 4,
-    "question": "A modifier placed too far from the word it modifies is ___?",
+    "question": "A modifier placed too far from the word it is meant to describe is ___?",
     "answer": "Misplaced — positioned too far from the word it actually modifies",
     "choices": [
       "Dangling — its implied subject doesn't match the sentence subject",
@@ -2389,7 +2389,7 @@
   },
   {
     "tier": 4,
-    "question": "A participial phrase whose implied subject differs from the sentence subject is a ___ modifier?",
+    "question": "A participial phrase whose logical actor does not match the grammatical subject of the main clause is a ___ modifier?",
     "answer": "Dangling — its implied subject differs from the actual sentence subject",
     "choices": [
       "Dangling — its implied subject differs from the actual sentence subject",
@@ -2425,7 +2425,7 @@
   },
   {
     "tier": 4,
-    "question": "The rhetorical device of addressing an absent person or abstract idea is ___?",
+    "question": "The rhetorical device of directly speaking to an entity that cannot respond is ___?",
     "answer": "Apostrophe, directly addressing an absent or abstract entity",
     "choices": [
       "Personification, attributing human traits to a nonhuman thing",
@@ -2437,7 +2437,7 @@
   },
   {
     "tier": 4,
-    "question": "A question asked not for information but for effect is a ___ question?",
+    "question": "A question posed not to receive an answer but purely for dramatic or persuasive impact is a ___ question?",
     "answer": "Rhetorical, asked for effect rather than to obtain information",
     "choices": [
       "Rhetorical, asked for effect rather than to obtain information",
@@ -2449,7 +2449,7 @@
   },
   {
     "tier": 4,
-    "question": "Using a specific name for a general type ('a Kleenex' for any tissue) is ___?",
+    "question": "Using a specific brand name to refer to any product of that type ('a Kleenex' for any tissue) is ___?",
     "answer": "Antonomasia, using a proper or brand name to denote a general type",
     "choices": [
       "Metonymy, replacing a concept with a closely associated term",
@@ -2461,7 +2461,7 @@
   },
   {
     "tier": 4,
-    "question": "Describing something through a roundabout phrase is ___?",
+    "question": "Using a wordy or indirect phrase in place of a single word or name is ___?",
     "answer": "Periphrasis — describing something through a roundabout or wordy phrase",
     "choices": [
       "Metonymy — substituting a related term for the thing meant",
@@ -2485,7 +2485,7 @@
   },
   {
     "tier": 4,
-    "question": "A word formed by combining parts of two words ('brunch') is a ___?",
+    "question": "A word formed by blending two existing words together ('brunch' from breakfast and lunch) is a ___?",
     "answer": "Portmanteau — a word formed by blending parts of two source words",
     "choices": [
       "Compound word — two full, unaltered words joined together",
@@ -2497,7 +2497,7 @@
   },
   {
     "tier": 4,
-    "question": "The grammatical case of a pronoun used as a subject is ___?",
+    "question": "The grammatical case of a pronoun used as the doer of an action is ___?",
     "answer": "Nominative — the case used when a pronoun acts as the subject",
     "choices": [
       "Nominative — the case used when a pronoun acts as the subject",
@@ -2551,13 +2551,13 @@
       "Restrictive — identifies the noun by limiting which one is meant",
       "Non-restrictive — adds extra detail without limiting which noun is meant",
       "Nominal — functions as a noun rather than modifying one",
-      "Adverbial — modifies a verb or adjective rather than a noun"
+      "Adverbial — identifies a verb or adjective it modifies rather than a noun"
     ],
     "context": "Restrictive clauses are essential identifiers: 'The students who studied passed.' Remove it and you change the meaning — which students? All of them? Only some? The clause tells us."
   },
   {
     "tier": 4,
-    "question": "A clause that adds extra (removable) information about the noun is a ___ clause?",
+    "question": "A clause that adds parenthetical information about the noun, set off by commas, is a ___ clause?",
     "answer": "Non-restrictive — adds removable detail without changing which noun is meant",
     "choices": [
       "Restrictive — essential to identifying which specific noun is meant",
@@ -2569,7 +2569,7 @@
   },
   {
     "tier": 4,
-    "question": "Grammar that describes how language is actually used is called ___?",
+    "question": "Grammar that describes how language is used in practice, rather than prescribing rules, is called ___?",
     "answer": "Descriptive grammar — documents how language is actually used by speakers",
     "choices": [
       "Prescriptive grammar — sets rules for how language ought to be used",
@@ -2593,7 +2593,7 @@
   },
   {
     "tier": 4,
-    "question": "Repeating the same grammatical structure in successive phrases is ___?",
+    "question": "Repeating the same grammatical pattern in successive phrases is ___?",
     "answer": "Parallelism, the repetition of the same grammatical structure across successive phrases",
     "choices": [
       "Anaphora, the repetition of a word or phrase at the start of successive clauses",
@@ -2606,12 +2606,12 @@
   {
     "tier": 4,
     "question": "Mentioning something by saying you will not mention it is ___?",
-    "answer": "Paralipsis, the device of highlighting something by claiming to pass over it",
+    "answer": "Paralipsis, the device of highlighting a subject by claiming to pass over it",
     "choices": [
       "Apophasis, another term for the same rhetorical device of strategic omission",
-      "Paralipsis, the device of highlighting something by claiming to pass over it",
-      "Litotes, the use of understatement by negating the opposite of what is meant",
-      "Irony, the expression of meaning through language that signals the opposite"
+      "Paralipsis, the device of highlighting a subject by claiming to pass over it",
+      "Litotes, the use of understatement by negating the opposite of something meant",
+      "Irony, the expression of something through language that signals the opposite"
     ],
     "context": "Paralipsis is the art of strategic denial: 'I won't even mention his criminal record.' By claiming to skip it, you've actually highlighted it. Politicians love this trick."
   },
@@ -2632,9 +2632,9 @@
     "question": "Combining contradictory terms into a single expression is a(n) ___?",
     "answer": "Oxymoron, a compressed phrase that joins two contradictory terms",
     "choices": [
-      "Paradox, a statement that seems self-contradictory but may reveal a deeper truth",
+      "Paradox, a statement using contradictory terms that may reveal a deeper truth",
       "Oxymoron, a compressed phrase that joins two contradictory terms",
-      "Antithesis, the rhetorical contrast of opposing ideas in parallel grammatical structures",
+      "Antithesis, the rhetorical contrast of opposing terms in parallel grammatical structures",
       "Irony, the use of language to convey a meaning opposite to its literal sense"
     ],
     "context": "Oxymorons compress contradiction into a phrase: 'bittersweet,' 'deafening silence,' 'virtual reality.' The tension between opposites creates meanings neither word could achieve alone."
@@ -2656,10 +2656,10 @@
     "question": "A conjunctive adverb connects two independent clauses with a ___ before it?",
     "answer": "Semicolon, which correctly separates the two independent clauses",
     "choices": [
-      "Comma, which alone creates a comma splice error",
+      "Comma, which alone creates a comma splice between two independent clauses",
       "Semicolon, which correctly separates the two independent clauses",
-      "Colon, which introduces elaboration rather than linking clauses",
-      "Em dash, which signals interruption or a strong parenthetical break"
+      "Colon, which introduces elaboration rather than linking independent clauses",
+      "Em dash, which signals interruption or a strong parenthetical break between independent clauses"
     ],
     "context": "Conjunctive adverbs (however, therefore, moreover) need a semicolon before them, not just a comma. 'I studied hard; therefore, I passed.' A comma alone creates a comma splice."
   },
@@ -2680,10 +2680,10 @@
     "question": "When a single verb applies to two objects in different senses ('She lost her keys and her temper'), this is ___?",
     "answer": "Zeugma — yoking a single verb to two objects in mismatched senses",
     "choices": [
-      "Syllepsis — applying one word to two others in different grammatical senses",
+      "Syllepsis — applying one word to two objects in different grammatical senses",
       "Zeugma — yoking a single verb to two objects in mismatched senses",
-      "Hendiadys — expressing one idea through two coordinated nouns",
-      "Polysyndeton — using many conjunctions in rapid succession"
+      "Hendiadys — expressing a single idea through two coordinated nouns",
+      "Polysyndeton — using many conjunctions in rapid succession across single and multiple clauses"
     ],
     "context": "Zeugma creates wit by yoking different meanings with a single verb: 'She lowered her standards and her neckline.' The verb 'lost' applies literally to keys and figuratively to temper. Note: some linguists treat syllepsis as a subtype of zeugma, but here zeugma is the broader rhetorical term."
   },
@@ -2692,10 +2692,10 @@
     "question": "A word that sounds like another but differs in meaning ('to/two/too') is a ___?",
     "answer": "Homophone — a word that sounds like another but differs in spelling and meaning",
     "choices": [
-      "Homonym — a word that shares spelling and sound but differs in meaning",
+      "Homonym — a word that shares spelling and sounds the same but differs in meaning",
       "Homophone — a word that sounds like another but differs in spelling and meaning",
-      "Homograph — a word spelled the same as another but with different pronunciation",
-      "Heteronym — a word spelled identically but pronounced differently with a distinct meaning"
+      "Homograph — a word spelled the same as another but sounds different in pronunciation",
+      "Heteronym — a word spelled identically but sounds different and carries a distinct meaning"
     ],
     "context": "Homophones sound identical but have different meanings and often different spellings, like 'to,' 'two,' and 'too.' English is full of them because spelling was standardized long after pronunciation shifted."
   },
@@ -2726,10 +2726,10 @@
   {
     "tier": 5,
     "question": "A morpheme that creates a new word or changes word class (e.g., '-ness', '-ify') is ___?",
-    "answer": "Derivational — a morpheme that creates a new word or changes its word class entirely",
+    "answer": "Derivational — a morpheme that produces a new word or shifts its grammatical category entirely",
     "choices": [
       "Inflectional — a morpheme that adjusts tense, number, or degree without creating new words",
-      "Derivational — a morpheme that creates a new word or changes its word class entirely",
+      "Derivational — a morpheme that produces a new word or shifts its grammatical category entirely",
       "Agglutinative — describing a language type that chains many morphemes onto a single stem",
       "Free morpheme — a morpheme that can stand alone as an independent word with its own meaning"
     ],
@@ -2953,7 +2953,7 @@
   },
   {
     "tier": 5,
-    "question": "Saussure called the sound image of a word the ___?",
+    "question": "Saussure called the acoustic representation of a word the ___?",
     "answer": "Signifier, the acoustic or sound image of a word",
     "choices": [
       "Signifier, the acoustic or sound image of a word",
@@ -2980,16 +2980,16 @@
     "question": "The study of signs and symbols in communication is ___?",
     "answer": "Semiotics, the study of signs and symbols in all communication",
     "choices": [
-      "Semantics, the study of meaning in language",
+      "Semantics, the study of meaning in language and its signs",
       "Semiotics, the study of signs and symbols in all communication",
-      "Pragmatics, the study of language use in context",
-      "Syntax, the study of grammatical sentence structure"
+      "Pragmatics, the study of language use and symbolic context",
+      "Syntax, the study of grammatical sentence structure and symbols"
     ],
     "context": "Semiotics goes beyond language to study all sign systems: road signs, body language, fashion, film. Charles Peirce and Ferdinand de Saussure independently founded the field."
   },
   {
     "tier": 5,
-    "question": "A language that has developed from a pidgin as a native language is a ___?",
+    "question": "A language that emerged from a pidgin and is acquired as a native language is a ___?",
     "answer": "Creole, a full language that developed from a pidgin as a mother tongue",
     "choices": [
       "Pidgin, a simplified contact language with no native speakers",
@@ -3005,7 +3005,7 @@
     "answer": "Pidgin, a simplified contact language with no native speakers",
     "choices": [
       "Pidgin, a simplified contact language with no native speakers",
-      "Creole, a fully developed language that evolved from a pidgin",
+      "Creole, a fully developed language that evolved from a simplified pidgin",
       "Lingua franca, a shared language adopted by established speech communities",
       "Koine, a standardized dialect that spreads across a broader region"
     ],
@@ -3026,10 +3026,10 @@
   {
     "tier": 5,
     "question": "The inflectional suffix marking third-person singular present is ___?",
-    "answer": "-s, marking third-person singular present tense",
+    "answer": "-s, as in 'she runs' or 'he walks'",
     "choices": [
       "-ed, marking a completed past tense action",
-      "-s, marking third-person singular present tense",
+      "-s, as in 'she runs' or 'he walks'",
       "-ing, marking a progressive ongoing action",
       "-en, marking a past participial form like 'fallen'"
     ],
@@ -3050,11 +3050,11 @@
   {
     "tier": 5,
     "question": "The inflectional suffix marking progressive aspect is ___?",
-    "answer": "-ing, which marks an ongoing progressive action like 'running'",
+    "answer": "-ing, which marks an ongoing action like 'running'",
     "choices": [
       "-ed, which signals a completed past tense action like 'walked'",
       "-s, which marks the third-person singular present tense",
-      "-ing, which marks an ongoing progressive action like 'running'",
+      "-ing, which marks an ongoing action like 'running'",
       "-en, which forms irregular past participles like 'fallen'"
     ],
     "context": "'-Ing' marks an ongoing action: 'I am running.' Combined with forms of 'be,' it creates all progressive tenses. Without the helper verb, '-ing' forms can serve as nouns (gerunds) or adjectives (participles)."
@@ -3062,10 +3062,10 @@
   {
     "tier": 5,
     "question": "A word's meaning in relation to other words in the same field is its ___ meaning?",
-    "answer": "Semantic field, defined by a word's relation to others in the same domain",
+    "answer": "Semantic field, defined by a word's membership in a shared domain of vocabulary",
     "choices": [
       "Connotative meaning, tied to emotional and cultural associations",
-      "Semantic field, defined by a word's relation to others in the same domain",
+      "Semantic field, defined by a word's membership in a shared domain of vocabulary",
       "Denotative meaning, based on the objective dictionary definition",
       "Pragmatic meaning, shaped by the social context of use"
     ],
@@ -3074,10 +3074,10 @@
   {
     "tier": 5,
     "question": "A word's literal dictionary meaning is its ___ meaning?",
-    "answer": "Denotative, referring to the objective dictionary meaning of a word",
+    "answer": "Denotative, referring to the straightforward, objective definition of a word",
     "choices": [
       "Connotative, covering emotional and cultural weight beyond the definition",
-      "Denotative, referring to the objective dictionary meaning of a word",
+      "Denotative, referring to the straightforward, objective definition of a word",
       "Pragmatic, depending on the situational context of an utterance",
       "Inferential, derived from reasoning about speaker intent"
     ],
@@ -3086,10 +3086,10 @@
   {
     "tier": 5,
     "question": "The emotional associations of a word beyond its literal meaning are its ___?",
-    "answer": "Connotations, the emotional associations beyond a word's literal meaning",
+    "answer": "Connotations, the cultural and affective overtones a word carries",
     "choices": [
       "Denotations, the literal and objective dictionary definitions",
-      "Connotations, the emotional associations beyond a word's literal meaning",
+      "Connotations, the cultural and affective overtones a word carries",
       "Etymological roots, the historical origins of a word's form",
       "Pragmatic implications, meanings derived from context of use"
     ],
@@ -3138,8 +3138,8 @@
     "choices": [
       "Psycholinguistics, which studies mental language processing",
       "Sociolinguistics, which studies how social factors shape language use",
-      "Neurolinguistics, which studies language and the brain",
-      "Applied linguistics, which focuses on practical language instruction"
+      "Neurolinguistics, which studies language and brain anatomy",
+      "Applied linguistics, which focuses on practical language instruction and social integration"
     ],
     "context": "Sociolinguistics reveals that language varies by class, gender, ethnicity, and context. William Labov's famous study of New York department stores showed that even 'r' pronunciation signals social class."
   },
@@ -3148,7 +3148,7 @@
     "question": "The study of language and the brain is ___?",
     "answer": "Neurolinguistics, which studies language and brain anatomy",
     "choices": [
-      "Psycholinguistics, which studies mental language processing",
+      "Psycholinguistics, which studies mental language processing and brain-based models",
       "Neurolinguistics, which studies language and brain anatomy",
       "Sociolinguistics, which studies language variation across social groups",
       "Cognitive linguistics, which studies how language reflects conceptual structure"
@@ -3205,7 +3205,7 @@
   },
   {
     "tier": 2,
-    "question": "The plural of 'knife' is ___?",
+    "question": "What is the correct plural form of the word 'knife'?",
     "choices": [
       "Knifes (used only as a verb, as in 'he knifes through water')",
       "Knives (the correct plural, following the f-to-v spelling rule)",
@@ -3232,11 +3232,11 @@
     "question": "Which word is the correct homophone? 'I can ___ the sea from here.'",
     "choices": [
       "sea (the body of salt water; a homophone that fits the setting but not the meaning)",
-      "see (to perceive with the eyes; the correct verb for this sentence)",
+      "see (to perceive with the eyes; the right verb for this sentence)",
       "si (a solfège syllable for a musical note, also spelled 'ti' in some systems)",
       "cee (the spoken name of the letter C, rarely used in standard writing)"
     ],
-    "answer": "see (to perceive with the eyes; the correct verb for this sentence)",
+    "answer": "see (to perceive with the eyes; the right verb for this sentence)",
     "context": "'See' (to perceive with eyes) and 'sea' (body of water) sound identical but have completely different meanings and origins. 'Cee' is the spoken name of the letter C, and 'si' is a solfège syllable — all four are homophones, but only 'see' fits the sentence's meaning."
   },
   {
@@ -3281,8 +3281,8 @@
     "choices": [
       "Drawed, an incorrect regularization of this irregular verb",
       "Drew, the correct simple past tense form",
-      "Drawn, the past participle requiring a helping verb",
-      "Drawing, the present participle used in progressive tenses"
+      "Drawn, the past participle requiring a helping verb — not a past tense form",
+      "Drawing, the present participle used in progressive tenses — not a past tense form"
     ],
     "answer": "Drew, the correct simple past tense form",
     "context": "'Drew' follows the aw/ew pattern seen in grow/grew. The past participle 'drawn' requires a helping verb: 'She drew a picture' (simple past) vs. 'She has drawn many pictures' (present perfect). 'Drawed' is a common but incorrect regularization of this irregular verb."
@@ -3292,9 +3292,9 @@
     "question": "Past tense of 'blow'?",
     "choices": [
       "Blowed, an incorrect regularization of this irregular verb",
-      "Blown, the past participle that requires a helping verb",
+      "Blown, the past participle that requires a helping verb — not a past tense form",
       "Blew, the correct simple past tense form",
-      "Blowing, the present participle used in progressive tenses"
+      "Blowing, the present participle used in progressive tenses — not a past tense form"
     ],
     "answer": "Blew, the correct simple past tense form",
     "context": "'Blew' matches the pattern of grow/grew, know/knew, and throw/threw. These '-ow' verbs consistently shift to '-ew' in the past tense. The past participle 'blown' requires a helping verb, as in 'The wind has blown all night,' while 'blew' stands alone as the simple past tense."
@@ -3375,10 +3375,10 @@
     "tier": 3,
     "question": "A comma splice occurs when two independent clauses are joined with only a ___?",
     "choices": [
-      "Semicolon, which correctly links independent clauses",
+      "Semicolon, which correctly links independent clauses but does not create a splice",
       "Comma, which cannot legally join two independent clauses",
-      "Coordinating conjunction like 'and' or 'but'",
-      "Period, which ends one sentence and starts another"
+      "Coordinating conjunction like 'and' or 'but', which avoids a comma splice",
+      "Period, which ends one sentence and starts another, preventing a splice"
     ],
     "answer": "Comma, which cannot legally join two independent clauses",
     "context": "A comma alone can't join two complete sentences — that error is called a comma splice. You need a semicolon, a period, or a comma plus a coordinating conjunction. 'I ran, I won' is a splice; 'I ran, and I won' fixes it."
@@ -3519,7 +3519,7 @@
     "tier": 3,
     "question": "Which word typically introduces a restrictive relative clause?",
     "choices": [
-      "Which, used to introduce non-essential relative clauses",
+      "Which, used to introduce non-essential or restrictive relative clauses",
       "That, used to introduce essential restrictive clauses",
       "Whom, used for essential references to people as objects",
       "Whose, when the clause defines by showing possession"
@@ -3629,8 +3629,8 @@
     "choices": [
       "Indicative, the mood used for stating facts and reality",
       "Subjunctive, the mood used for wishes and hypotheticals",
-      "Imperative, the mood used for commands and directives",
-      "Interrogative, the mood used for forming direct questions"
+      "Imperative, the mood used for commands and hypothetical directives",
+      "Interrogative, the mood used for forming direct questions and wishes"
     ],
     "answer": "Subjunctive, the mood used for wishes and hypotheticals",
     "context": "Subjunctive mood handles unreal situations: 'If I were rich' (not 'was'). It's fading from casual English but survives in phrases like 'God save the Queen' and 'come what may.'"
@@ -3651,10 +3651,10 @@
     "tier": 3,
     "question": "An appositive is a noun phrase that renames the ___ next to it?",
     "choices": [
-      "Verb it follows in the predicate of the clause",
+      "Verb it follows in the predicate, which it renames or restates",
       "Adjective it modifies within the same clause",
       "Noun or pronoun that it sits beside and renames",
-      "Adverb it qualifies elsewhere in the sentence"
+      "Adverb it qualifies and renames elsewhere in the sentence"
     ],
     "answer": "Noun or pronoun that it sits beside and renames",
     "context": "Appositives are renaming machines: 'My friend, a talented musician, performed.' 'A talented musician' gives us a new label for the same noun without using a separate sentence. Appositives can be restrictive or non-restrictive, the latter set off by commas."
@@ -3808,11 +3808,11 @@
     "question": "The past participle of 'break' is ___?",
     "choices": [
       "Broke, the simple past form used without a helping verb",
-      "Broken, the past participle used with auxiliary verbs like 'have' or 'be'",
+      "Broken, used with auxiliary verbs like 'have' or 'be'",
       "Had broke, an attempt at past perfect using the simple past",
       "Was breaking, the past progressive describing an ongoing action"
     ],
-    "answer": "Broken, the past participle used with auxiliary verbs like 'have' or 'be'",
+    "answer": "Broken, used with auxiliary verbs like 'have' or 'be'",
     "context": "'Broken' is used with 'have' or 'be': 'The window has been broken.' The simple past 'broke' doesn't need a helper verb: 'She broke the window.' This three-part irregular pattern (break/broke/broken) is common in English."
   },
   {
@@ -3820,11 +3820,11 @@
     "question": "The past participle of 'speak' is ___?",
     "choices": [
       "Spoke, the simple past form requiring no auxiliary verb",
-      "Spoken, the past participle used with auxiliary verbs like 'have' or 'be'",
+      "Spoken, used with auxiliary verbs like 'have' or 'be'",
       "Had spoke, a past perfect attempt using the simple past form",
       "Was speaking, the past progressive for ongoing speech"
     ],
-    "answer": "Spoken, the past participle used with auxiliary verbs like 'have' or 'be'",
+    "answer": "Spoken, used with auxiliary verbs like 'have' or 'be'",
     "context": "'Spoken' pairs with 'have' or 'be': 'She has spoken.' The pattern speak/spoke/spoken follows the classic three-form irregular verb model, where each principal part has a distinct form."
   },
   {
@@ -3832,11 +3832,11 @@
     "question": "The past participle of 'give' is ___?",
     "choices": [
       "Gave, the simple past form used without an auxiliary verb",
-      "Given, the past participle used with auxiliary verbs like 'have' or 'be'",
+      "Given, used with auxiliary verbs like 'have' or 'be'",
       "Had gave, a past perfect attempt using the simple past form",
       "Was giving, the past progressive describing a continuous action"
     ],
-    "answer": "Given, the past participle used with auxiliary verbs like 'have' or 'be'",
+    "answer": "Given, used with auxiliary verbs like 'have' or 'be'",
     "context": "'Given' is the past participle: 'She has given generously.' Don't confuse it with the simple past 'gave': 'She gave generously last year.' The three-part irregular pattern give/gave/given is one of the most commonly used in English."
   },
   {
@@ -4045,7 +4045,7 @@
   },
   {
     "tier": 4,
-    "question": "The subjunctive form in 'I recommend that he ___ on time' is ___?",
+    "question": "Which form correctly completes 'I recommend that he ___ on time' and reflects a formal grammatical mood?",
     "choices": [
       "is, the standard indicative present-tense form",
       "are, the plural indicative present-tense form",
@@ -4374,14 +4374,14 @@
       "Semicolon, which typically joins two independent clauses",
       "Colon, which usually introduces a list or formal explanation",
       "Comma, which separates coordinate adjectives of equal weight",
-      "Hyphen, which links words together into compound modifiers"
+      "Hyphen, which links words together into compound modifiers or paired adjectives"
     ],
     "answer": "Comma, which separates coordinate adjectives of equal weight",
     "context": "Coordinate adjectives get commas between them: 'a bright, cheerful day.' Test: if you can swap their order or insert 'and' between them, they're coordinate and need a comma."
   },
   {
     "tier": 4,
-    "question": "Which is correct for cumulative adjectives?",
+    "question": "Which example demonstrates the correct use of cumulative adjectives?",
     "choices": [
       "A, large red barn — incorrect comma after the article",
       "A large, red barn — comma wrongly treats these as coordinate adjectives",
@@ -4393,7 +4393,7 @@
   },
   {
     "tier": 4,
-    "question": "The rhetorical device of asking a question not meant to be answered is a(n) ___?",
+    "question": "Asking a question not meant to be answered is an example of which literary technique?",
     "choices": [
       "Aporia, a figure expressing genuine doubt or uncertainty about a problem",
       "Rhetorical question, a device that asserts a point without expecting an answer",
@@ -4405,7 +4405,7 @@
   },
   {
     "tier": 4,
-    "question": "A sentence where the main clause comes before subordinate details is ___?",
+    "question": "A sentence where the main clause appears before subordinate elements is called ___?",
     "choices": [
       "Periodic, where suspense builds to a delayed main clause at the end",
       "Loose, where the main clause comes first and details follow after",
@@ -4417,7 +4417,7 @@
   },
   {
     "tier": 4,
-    "question": "A periodic sentence builds toward its main clause at the ___?",
+    "question": "A periodic sentence builds to its climax at which point?",
     "choices": [
       "Beginning, making the main idea immediately prominent before any modifiers",
       "Middle, flanked symmetrically by dependent clauses on both sides",
@@ -4429,7 +4429,7 @@
   },
   {
     "tier": 4,
-    "question": "A balanced sentence has two parts that are ___ in structure?",
+    "question": "A balanced sentence has two parts that mirror each other in what way?",
     "choices": [
       "Strictly identical in word count, vocabulary, and exact phrasing throughout",
       "Contrasting in meaning but deliberately unrelated in grammatical form",
@@ -4515,7 +4515,7 @@
     "tier": 5,
     "question": "The study of word formation and structure is called ___?",
     "choices": [
-      "Syntax, the study of how sentences are structured and arranged",
+      "Syntax, the study of how sentence structure and word arrangement is analyzed",
       "Semantics, the study of meaning in words and sentences",
       "Phonology, the study of sound systems and patterns in language",
       "Morphology, the study of word formation and internal structure"
@@ -4530,7 +4530,7 @@
       "Morphology, the study of word formation and internal structure",
       "Phonology, the study of sound systems and patterns in language",
       "Semantics, the study of meaning in words and sentences",
-      "Syntax, the study of how sentences are structured and arranged"
+      "Syntax, the study of how language structures sentences and clauses"
     ],
     "answer": "Phonology, the study of sound systems and patterns in language",
     "context": "Phonology studies how sounds function within a particular language. English treats 'p' in 'pin' and 'spin' as the same phoneme, even though they're physically different sounds."
@@ -4552,7 +4552,7 @@
     "question": "A variant pronunciation of a phoneme in a specific context is a(n) ___?",
     "choices": [
       "Morpheme, a minimal unit of meaning that cannot be further divided",
-      "Grapheme, a written symbol representing a single sound or phoneme",
+      "Grapheme, a written symbol representing a sound in a specific script context",
       "Phoneme, an abstract sound unit that distinguishes meaning between words",
       "Allophone, a variant pronunciation of a phoneme in a specific context"
     ],
@@ -4563,7 +4563,7 @@
     "tier": 5,
     "question": "A morpheme that can stand alone as a word is ___?",
     "choices": [
-      "Bound, requiring attachment to a host word",
+      "Bound, requiring attachment to a host word and unable to stand alone",
       "Inflectional, marking grammatical categories like tense",
       "Free, able to stand alone as an independent word",
       "Derivational, creating new words from existing ones"
@@ -4626,7 +4626,7 @@
       "Ellipsis — deliberately omitting words from a sentence",
       "Pleonasm — deliberately using more words than necessary",
       "Asyndeton — omitting conjunctions between successive clauses",
-      "Periphrasis — using a phrase where one word would suffice"
+      "Periphrasis — using a phrase where fewer words would suffice"
     ],
     "answer": "Pleonasm — deliberately using more words than necessary",
     "context": "Pleonasm adds redundant words for emphasis or clarity: 'I saw it with my own eyes' or 'free gift.' Sometimes it's a stylistic choice; sometimes it's just wordy writing."
@@ -4669,7 +4669,7 @@
   },
   {
     "tier": 5,
-    "question": "The rhetorical term for a sudden, digressive address to an absent person or abstraction is ___?",
+    "question": "The rhetorical term for an address to an absent person or abstraction, often as a digression, is ___?",
     "choices": [
       "Apostrophe — a sudden address directed at an absent person or abstraction",
       "Anaphora — repetition of words at the opening of successive clauses",
@@ -4693,7 +4693,7 @@
   },
   {
     "tier": 5,
-    "question": "Hendiadys expresses a single idea through ___ coordinated nouns or adjectives?",
+    "question": "Hendiadys expresses a single idea through two coordinated nouns or ___?",
     "choices": [
       "Three coordinated nouns, each modifying a central idea",
       "Two coordinated nouns or adjectives expressing a single idea",
@@ -4825,7 +4825,7 @@
   },
   {
     "tier": 5,
-    "question": "Ergative-absolutive languages mark the subject of a transitive verb differently from ___?",
+    "question": "In ergative-absolutive languages, which grammatical role is marked the same way as the object of a transitive verb?",
     "choices": [
       "The object of a transitive verb in the same clause",
       "The subject of an intransitive verb",
@@ -4852,11 +4852,11 @@
     "question": "A pseudo-cleft sentence begins with a ___?",
     "choices": [
       "A fronted relative clause that modifies the subject",
-      "A wh-nominal clause as the sentence subject",
+      "A wh-nominal clause as the subject position",
       "A passive construction with an implicit agent phrase",
       "A subordinating conjunction introducing an adverbial clause"
     ],
-    "answer": "A wh-nominal clause as the sentence subject",
+    "answer": "A wh-nominal clause as the subject position",
     "context": "Pseudo-clefts use a wh-clause to create focus: 'What I need is coffee.' The wh-clause sets up expectations, and the complement delivers the focused element -- like a grammatical drumroll. Also referred to as: 'What I want is...'."
   },
   {
@@ -4971,7 +4971,7 @@
     "tier": 5,
     "question": "A portmanteau word blends the sounds and meanings of ___ words?",
     "choices": [
-      "Three or more source words combined sequentially",
+      "Three or more source words combined sequentially, each contributing sounds and meanings",
       "Two source words, merging their sounds and meanings",
       "Antonymous words to create ironic new contrast",
       "Synonymous words drawn from different language families"
@@ -5101,10 +5101,10 @@
   },
   {
     "question": "A thesis statement in an essay should express ___?",
-    "answer": "The main argument in a specific, debatable statement",
+    "answer": "The main argument in a specific, debatable claim",
     "choices": [
       "A general subject area without a clear position taken",
-      "The main argument in a specific, debatable statement",
+      "The main argument in a specific, debatable claim",
       "Every supporting point that will appear in the essay",
       "An open-ended question the reader should consider"
     ],
@@ -5245,10 +5245,10 @@
   },
   {
     "question": "The prefix 'mis-' (as in 'misplace,' 'mistake') means ___?",
-    "answer": "Wrongly or badly, as in 'misplace' or 'mistake'",
+    "answer": "Wrongly or badly, indicating an error or incorrect action",
     "choices": [
       "Before or in front of something, as in 'precede'",
-      "Wrongly or badly, as in 'misplace' or 'mistake'",
+      "Wrongly or badly, indicating an error or incorrect action",
       "Again or once more, as in 'redo' or 'replay'",
       "Not or the opposite of, as in 'unable' or 'unfair'"
     ],
@@ -5257,9 +5257,9 @@
   },
   {
     "question": "Past tense of 'hang' when referring to suspending an object?",
-    "answer": "Hung, the standard past tense for suspending objects",
+    "answer": "Hung, the standard past tense for raising or holding objects aloft",
     "choices": [
-      "Hung, the standard past tense for suspending objects",
+      "Hung, the standard past tense for raising or holding objects aloft",
       "Hanged, reserved for execution by hanging",
       "Hangs, the present-tense third-person singular form",
       "Was hanging, a past progressive construction"
@@ -5316,7 +5316,7 @@
     "context": "Ethos builds trust through the speaker's character, expertise, and reputation. A doctor citing medical research uses ethos — we believe them because of who they are."
   },
   {
-    "question": "Pathos persuades by appealing to the audience's ___?",
+    "question": "Pathos persuades by appealing to the ___?",
     "answer": "Emotions and sympathies of the audience",
     "choices": [
       "The speaker's expertise and established credibility",
@@ -5400,7 +5400,7 @@
     "context": "'Poly-' comes from Greek 'polus' meaning 'many,' which is why a polygon has many sides, a polyglot speaks many languages, and polysyndeton uses many conjunctions. It shows up everywhere from 'polymath' (many learnings) to 'Polynesia' (many islands). If you see 'poly-' at the start of a word, think abundance."
   },
   {
-    "question": "The Greek root 'logos' (as in 'dialogue,' 'monologue') primarily means ___?",
+    "question": "The Greek root 'logos' (as in 'monologue,' 'biology') primarily means ___?",
     "answer": "Word, reason, or discourse, as found in 'dialogue' or 'biology'",
     "choices": [
       "Sound or voice, as found in 'phonograph' or 'megaphone'",
@@ -5412,7 +5412,7 @@
     "context": "Logos is one of the most prolific Greek roots in English, meaning 'word,' 'reason,' or 'discourse.' A 'dialogue' is literally words between two people, a 'monologue' is one person's words, and 'biology' is the discourse of life. The ancient Greeks also used logos to mean rational principle, which is why it became central to philosophy and theology."
   },
   {
-    "question": "Which suffix changes a verb into a noun meaning 'the act of' or 'the state of,' as in 'satisfaction'?",
+    "question": "Which suffix changes a verb into a noun meaning 'the act of' or 'the condition of,' as in 'creation'?",
     "answer": "-tion / -ation, converting verbs to nouns meaning 'the act or state of,' as in 'satisfaction' or 'creation'",
     "choices": [
       "-ment, converting verbs to nouns meaning 'the result of,' as in 'movement' or 'agreement'",
@@ -5544,7 +5544,7 @@
     "context": "'Living death' smashes two contradictory words together, which is exactly what an oxymoron does — the term itself is an oxymoron, from Greek 'oxus' (sharp) and 'moros' (dull). Other famous oxymora include 'jumbo shrimp,' 'deafening silence,' and 'cruel kindness.' The literary power of oxymorons lies in forcing readers to hold two opposing ideas simultaneously."
   },
   {
-    "question": "Which type of irony occurs when the audience knows something the character does not?",
+    "question": "Which type of irony occurs when a character is unaware of information that others already possess?",
     "answer": "Dramatic irony, where the audience knows something the character does not",
     "choices": [
       "Verbal irony, where a speaker means the opposite of what they say",

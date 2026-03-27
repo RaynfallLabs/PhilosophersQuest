@@ -276,7 +276,7 @@
     "context": "Demand reflects consumers' willingness and ability to purchase a good at a given price. Note both conditions: you might want a Ferrari, but unless you can afford one, you don't count as part of the demand."
   },
   {
-    "tier": 1,
+    "tier": 2,
     "question": "When supply and demand are balanced, the price is called the:",
     "answer": "Equilibrium price",
     "choices": [
@@ -413,7 +413,7 @@
     "answer": "Buy fewer apples as the higher price makes them less attractive",
     "choices": [
       "Buy fewer apples as the higher price makes them less attractive",
-      "Buy more apples to stock up before prices rise even further",
+      "Buy more apples to stock up before the higher price rises even further",
       "Switch entirely to vegetables since all fruit becomes too costly",
       "Demand that the government intervene and regulate apple prices"
     ],
@@ -739,7 +739,7 @@
       "Price falls as sellers compete to attract fewer buyers",
       "Price rises as sellers try to recover lost revenue",
       "Price stays the same since supply has not changed",
-      "Supply automatically shrinks to restore the original price"
+      "Supply automatically falls to restore the original price"
     ],
     "context": "With fewer buyers competing for the same goods, sellers must lower prices to attract purchases. It's like an auction in reverse -- when nobody's bidding, the price drops."
   },
@@ -763,7 +763,7 @@
       "The price rises to preserve producer profit margins",
       "The price falls to attract more buyers to the market",
       "The price stays the same as efficiency gains offset costs",
-      "Producers expand output to spread costs across more units"
+      "Producers expand output as revenue rises from higher volume"
     ],
     "context": "Higher production costs squeeze profit margins, so producers raise prices to maintain profitability. When oil prices surge, everything shipped by truck gets more expensive -- costs ripple through the entire supply chain."
   },
@@ -1361,7 +1361,7 @@
     "answer": "Inflation, by tracking price changes in a standard basket of consumer goods",
     "choices": [
       "Inflation, by tracking price changes in a standard basket of consumer goods",
-      "Total consumer spending volume across all major retail sectors",
+      "Total consumer spending volume across all major retail sectors, based on price survey data",
       "Real GDP growth after adjusting for seasonal and cyclical fluctuations",
       "Changes in household borrowing costs set by the central bank each quarter"
     ],
@@ -1517,7 +1517,7 @@
     "answer": "Providing financial assistance and promoting monetary cooperation between countries",
     "choices": [
       "Providing financial assistance and promoting monetary cooperation between countries",
-      "Regulating stock exchanges and financial markets worldwide",
+      "Regulating stock exchanges and financial markets worldwide through monetary oversight rules",
       "Issuing a global reserve currency used in international transactions",
       "Negotiating and enforcing international trade agreements between nations"
     ],
@@ -1757,9 +1757,9 @@
     "answer": "Frictional unemployment, caused by workers in transition between jobs",
     "choices": [
       "Frictional unemployment, caused by workers in transition between jobs",
-      "Structural unemployment, caused by a mismatch between skills and available positions",
-      "Cyclical unemployment, caused by downturns in the broader business cycle",
-      "Seasonal unemployment, caused by predictable fluctuations in demand across the year"
+      "Structural unemployment, caused by a mismatch between skills and available positions for workers",
+      "Cyclical unemployment, caused by downturns in the broader business cycle affecting workers",
+      "Seasonal unemployment, caused by predictable fluctuations in demand across the year for workers"
     ],
     "context": "Frictional unemployment is the natural churn of the labor market -- people quitting to find better jobs, recent graduates job-hunting, or workers relocating. It exists even in the healthiest economies because matching workers to jobs takes time."
   },
@@ -1770,8 +1770,8 @@
     "choices": [
       "Structural unemployment, arising from a skills mismatch as industries evolve",
       "Frictional unemployment, arising from the normal time it takes workers to find new jobs",
-      "Cyclical unemployment, arising from reduced demand for labor during economic downturns",
-      "Technological unemployment, arising specifically from automation replacing entire job categories"
+      "Cyclical unemployment, arising from reduced demand for labor during economic downturns affecting skills needs",
+      "Technological unemployment, arising from automation creating a mismatch between old skills and new job requirements"
     ],
     "context": "Structural unemployment happens when industries evolve faster than workers can retrain. Coal miners displaced by renewable energy or factory workers replaced by robots face structural unemployment -- their old skills no longer match available jobs."
   },
@@ -1781,9 +1781,9 @@
     "answer": "Cyclical unemployment, which rises and falls with the business cycle",
     "choices": [
       "Cyclical unemployment, which rises and falls with the business cycle",
-      "Frictional unemployment, which reflects workers voluntarily searching for better positions",
-      "Structural unemployment, which reflects long-term shifts in the skills the economy demands",
-      "Seasonal unemployment, which follows predictable patterns tied to time of year"
+      "Frictional unemployment, which rises slightly as workers voluntarily search for better positions",
+      "Structural unemployment, which rises over the long term due to shifts in skills the economy demands",
+      "Seasonal unemployment, which rises and falls following predictable patterns tied to time of year"
     ],
     "context": "Cyclical unemployment tracks the business cycle: it rises in recessions as demand shrinks and companies lay off workers, then falls during expansions as businesses hire again. It's the type that fiscal and monetary policy most directly target."
   },
@@ -2414,9 +2414,9 @@
   {
     "tier": 4,
     "question": "If the price elasticity of demand for a good is -2, a 10% price rise causes quantity demanded to:",
-    "answer": "Fall by 20%, since quantity moves twice as much as the price change",
+    "answer": "Fall by 20%, since the change is twice as large as the percentage price increase",
     "choices": [
-      "Fall by 20%, since quantity moves twice as much as the price change",
+      "Fall by 20%, since the change is twice as large as the percentage price increase",
       "Fall by 10%, matching the price change in a one-to-one ratio",
       "Rise by 20%, as higher prices signal producers to increase output",
       "Fall by 2%, reflecting only the base elasticity coefficient applied directly"
@@ -2513,7 +2513,7 @@
     "answer": "Germany, where reparations and money-printing sent prices into freefall",
     "choices": [
       "Germany, where reparations and money-printing sent prices into freefall",
-      "Austria, whose postwar debt obligations triggered a currency collapse",
+      "Austria, whose postwar debt obligations and reparations triggered a currency collapse",
       "France, which printed money to finance reconstruction after World War I",
       "Poland, which faced severe monetary instability after gaining independence in 1918"
     ],
@@ -2538,7 +2538,7 @@
     "choices": [
       "Records international transfers of capital assets such as FDI, portfolio investment, and loans",
       "Tracks all trade in goods, services, and factor incomes between trading partners",
-      "Measures the total accumulated stock of foreign debt obligations owed by a country",
+      "Measures the total accumulated stock of foreign capital debt obligations owed by a country",
       "Records the net flow of government revenues raised through foreign-denominated bonds"
     ],
     "context": "The capital account tracks international transfers of capital assets — foreign direct investment, portfolio investment, and loans. If a country runs a current account deficit, its capital account must show a surplus to balance the books."
@@ -3278,12 +3278,12 @@
   {
     "tier": 5,
     "question": "What does the Human Development Index (HDI) measure?",
-    "answer": "A composite of income, education, and life expectancy to measure development beyond GDP",
+    "answer": "A composite of income, education, and life expectancy to assess development beyond GDP",
     "choices": [
-      "A composite of income, education, and life expectancy to measure development beyond GDP",
+      "A composite of income, education, and life expectancy to assess development beyond GDP",
       "An index tracking annual GDP per capita growth rates adjusted for purchasing power and population size",
-      "A composite score rating countries by poverty rates, unemployment levels, and income inequality",
-      "An index combining trade openness, institutional quality, and infrastructure investment across nations"
+      "A composite score rating countries by poverty rates, unemployment levels, and income inequality measures",
+      "An index combining trade openness, institutional quality, and infrastructure development across nations"
     ],
     "context": "Developed by Mahbub ul Haq and Amartya Sen for the UNDP, the HDI combines income, education, and life expectancy into a single score, capturing development beyond GDP. Norway consistently tops the list because it excels in all three dimensions, while some oil-rich nations rank lower despite high incomes due to poor education or health outcomes."
   },
@@ -3317,7 +3317,7 @@
     "answer": "Rapid movement of financial assets or capital out of a country due to instability or unfavorable conditions",
     "choices": [
       "Rapid movement of financial assets or capital out of a country due to instability or unfavorable conditions",
-      "A sharp decline in domestic business investment triggered by rising corporate tax rates and regulatory burdens",
+      "A sharp decline in domestic capital investment triggered by rising corporate tax rates and regulatory burdens",
       "Repatriation of foreign-held sovereign assets by a central bank to rebuild depleted currency reserves",
       "Coordinated speculative attacks on a currency that force a government to abandon its fixed exchange rate regime"
     ],
@@ -3366,7 +3366,7 @@
     "choices": [
       "Water is essential but cheap while diamonds are not essential yet expensive, showing price reflects marginal utility not total utility",
       "Goods with the highest total utility always command the highest prices in competitive markets, since buyers pay for overall usefulness",
-      "Essential goods become expensive when supply falls, contradicting the theory that intrinsic value determines market price",
+      "Essential goods like water become expensive when supply falls, contradicting the theory that intrinsic value determines market price",
       "Markets systematically overprice luxuries relative to necessities because status signaling distorts rational consumer preferences"
     ],
     "context": "Water is essential for life yet cheap; diamonds are frivolous yet expensive. The resolution lies in marginal utility: water is abundant, so the last glass provides little extra satisfaction. Diamonds are scarce, so each one provides enormous marginal utility. Price reflects the margin, not total usefulness."
@@ -3904,10 +3904,10 @@
     "question": "What is the principal-agent problem?",
     "answer": "When an agent acts in their own interest rather than that of the principal they represent",
     "choices": [
-      "A misalignment between a manager's authority and their accountability, creating governance gaps",
+      "A misalignment between a manager's authority and their accountability within a principal hierarchy",
       "When an agent acts in their own interest rather than that of the principal they represent",
       "The difficulty of coordinating decisions across organizational hierarchies with competing incentives",
-      "When contracts fail to fully specify the obligations of an authorized representative"
+      "When contracts fail to fully specify the obligations of an authorized agent or representative"
     ],
     "context": "When you hire someone to act on your behalf, their interests may diverge from yours. A CEO (agent) may pursue empire-building rather than maximizing shareholder (principal) value. Aligning incentives through compensation design is the standard solution."
   },
@@ -3949,10 +3949,10 @@
   },
   {
     "tier": 4,
-    "question": "The Keynesian multiplier claims that $1 of government spending raises GDP by more than $1. What is a key empirical critique of this claim?",
-    "answer": "The multiplier is often less than 1 in practice because government borrowing crowds out private investment and may misallocate resources",
+    "question": "The Keynesian multiplier claims that $1 of spending raises GDP by more than $1. What is a key empirical critique of this claim?",
+    "answer": "The multiplier is often less than 1 in practice because borrowing crowds out private investment and may misallocate resources",
     "choices": [
-      "The multiplier is often less than 1 in practice because government borrowing crowds out private investment and may misallocate resources",
+      "The multiplier is often less than 1 in practice because borrowing crowds out private investment and may misallocate resources",
       "The multiplier approaches infinity under full employment when the central bank simultaneously expands the money supply",
       "The multiplier only functions during deep recessions when monetary policy is constrained by the zero lower bound",
       "Critics contend the multiplier underestimates exchange rate appreciation effects but otherwise holds consistently across economies"
@@ -4632,7 +4632,7 @@
     "context": "Printing money creates inflation, which erodes the purchasing power of every person holding that currency. Economists call this the 'inflation tax' -- it's invisible, regressive, and requires no vote to impose."
   },
   {
-    "question": "Hayek argued that prices in a free market do something no central planner can replicate. What?",
+    "question": "Hayek argued that prices in a free market do something no top-down planner can replicate. What?",
     "answer": "Prices aggregate and transmit dispersed knowledge held by millions of individuals, coordinating the economy without central direction",
     "choices": [
       "Prices aggregate and transmit dispersed knowledge held by millions of individuals, coordinating the economy without central direction",
@@ -4656,10 +4656,10 @@
     "context": "When central banks push interest rates below what savers and borrowers would naturally agree on, businesses launch projects that can't be sustained once rates normalize. The boom feels great, but the bust -- when reality catches up -- is the hangover."
   },
   {
-    "question": "Stalin's collectivization of Soviet agriculture in the early 1930s caused a famine known as the Holodomor. Approximately how many people died in Ukraine alone?",
-    "answer": "Between 3.5 and 5 million people died in Ukraine alone",
+    "question": "Stalin's collectivization of Soviet agriculture in the early 1930s caused a famine known as the Holodomor. Approximately how many people died in Ukraine?",
+    "answer": "Between 3.5 and 5 million people died in Ukraine, making it one of the deadliest famines of the 20th century",
     "choices": [
-      "Between 3.5 and 5 million people died in Ukraine alone",
+      "Between 3.5 and 5 million people died in Ukraine, making it one of the deadliest famines of the 20th century",
       "Between 150,000 and 300,000 people died in the hardest-hit Ukrainian regions",
       "Between 800,000 and 1.2 million people died across Soviet Ukraine",
       "Between 1.5 and 2 million people died, though many historians dispute even these figures"
@@ -4764,10 +4764,10 @@
     "context": "When two currencies circulate at the same legal value but one has more intrinsic worth (say, silver content), people hoard the good money and spend the bad. This principle, named after Sir Thomas Gresham, has been observed since ancient Rome. It explains why clipped or debased coins historically drove full-weight coins out of everyday circulation."
   },
   {
-    "question": "When a government imposes a price ceiling on a good -- such as rent control -- what does economic theory predict will happen to the quality and quantity of that good?",
-    "answer": "Quantity supplied falls and quality deteriorates because suppliers cannot earn enough to maintain or expand production",
+    "question": "When a government imposes a price ceiling on a good -- such as rent control -- what does economic theory predict will happen to the supply and quality of that good?",
+    "answer": "Supply falls and quality deteriorates because suppliers cannot earn enough to maintain or expand production",
     "choices": [
-      "Quantity supplied falls and quality deteriorates because suppliers cannot earn enough to maintain or expand production",
+      "Supply falls and quality deteriorates because suppliers cannot earn enough to maintain or expand production",
       "Quality improves temporarily as landlords compete for tenants through upgrades, but total housing supply contracts as new construction becomes unprofitable",
       "Supply increases in the short term as developers rush to lock in regulated returns before the market adjusts to the ceiling price",
       "Shortages emerge mainly in markets with inelastic demand, while markets with more elastic demand self-correct around the ceiling price over time"
@@ -4812,13 +4812,13 @@
     "context": "Language, common law, money, and markets all emerged without anyone designing them. Hayek showed that complex social order can arise from individuals following simple rules and responding to local conditions -- no master plan required."
   },
   {
-    "question": "The subjective theory of value (Austrian economics) holds that value is determined by what?",
-    "answer": "The subjective preferences of individual buyers -- not by the cost of production or the labor required to make it",
+    "question": "The Austrian school holds that value is determined by individual preferences rather than production costs. What is this called?",
+    "answer": "The subjective theory of value -- value arises from individual buyers' preferences, not from labor or production costs",
     "choices": [
-      "The subjective preferences of individual buyers -- not by the cost of production or the labor required to make it",
-      "The total hours of labor embedded in a good's production process, as classical economists like Ricardo argued",
-      "The cost of raw materials and inputs combined with a standard profit margin applied across the industry",
-      "The aggregate utility a good provides when its benefits are averaged across all consumers in a given market"
+      "The subjective theory of value -- value arises from individual buyers' preferences, not from labor or production costs",
+      "The labor theory of value, as classical economists like Ricardo argued, based on hours of labor embedded in production",
+      "The cost-of-production theory, combining raw material inputs with a standard profit margin applied across industries",
+      "The aggregate utility theory, averaging benefits a good provides across all consumers in a given market"
     ],
     "tier": 3,
     "context": "Value isn't in the object -- it's in the eye of the buyer. A glass of water is nearly worthless at a river but priceless in a desert. This insight, developed by Carl Menger in 1871, overturned the labor theory of value that had dominated economics."
@@ -4860,10 +4860,10 @@
     "context": "QE funnels new money through financial markets first, inflating asset prices that primarily benefit the wealthy. Meanwhile, wages lag behind rising consumer prices. It's a wealth transfer mechanism disguised as neutral monetary policy."
   },
   {
-    "question": "The Soviet Union's economy stagnated in the 1970s-80s despite full employment. What does this illustrate about central planning?",
-    "answer": "Full employment and output can coexist with massive inefficiency when prices do not reflect true costs -- the absence of profit signals masks waste",
+    "question": "The Soviet Union's economy stagnated in the 1970s-80s despite reported full employment. What does this illustrate about central planning?",
+    "answer": "Output and high employment levels can coexist with massive inefficiency when prices do not reflect true costs -- the absence of profit signals masks waste",
     "choices": [
-      "Full employment and output can coexist with massive inefficiency when prices do not reflect true costs -- the absence of profit signals masks waste",
+      "Output and high employment levels can coexist with massive inefficiency when prices do not reflect true costs -- the absence of profit signals masks waste",
       "Central planning fails only at scale -- Soviet-style coordination could succeed in a smaller, simpler economy with fewer goods to manage",
       "State ownership eliminates inefficiency because collective workers optimize for social output rather than individual profit margins",
       "Soviet stagnation shows that political authoritarianism, not central planning itself, is the root cause of economic underperformance"
@@ -4884,10 +4884,10 @@
     "context": "Rothbard contended that lending out depositors' money while promising full availability creates an inherent instability -- banks can never satisfy all withdrawal demands simultaneously. He advocated 100% reserve banking to eliminate this systemic fragility."
   },
   {
-    "question": "Historical price controls during wartime (e.g., World War II, Nixon's 1971 price freeze) consistently produced what outcome?",
-    "answer": "Shortages and black markets, as price controls prevented the price signals that allocate scarce goods",
+    "question": "Wartime price controls (e.g., World War II, Nixon's 1971 price freeze) consistently produced what outcome according to economists?",
+    "answer": "Shortages and black markets, as suppressing prices prevented the signals that normally allocate scarce goods",
     "choices": [
-      "Shortages and black markets, as price controls prevented the price signals that allocate scarce goods",
+      "Shortages and black markets, as suppressing prices prevented the signals that normally allocate scarce goods",
       "Stable prices with reduced consumer choice, as producers shifted output toward unregulated substitute goods",
       "Initial shortages that resolved once businesses adapted their supply chains to the new price environment",
       "Reduced inflation but rising unemployment, as businesses cut labor costs to offset controlled selling prices"
@@ -4933,9 +4933,9 @@
   },
   {
     "question": "Venezuela under Chavez imposed price controls on food and medicine. By 2015-2018, what had happened to these goods?",
-    "answer": "Severe shortages developed as producers found it unprofitable to supply at controlled prices -- supermarket shelves emptied and rationing was imposed",
+    "answer": "Severe shortages developed as producers found it unprofitable to supply at controlled prices -- supermarket shelves emptied and the government introduced rationing",
     "choices": [
-      "Severe shortages developed as producers found it unprofitable to supply at controlled prices -- supermarket shelves emptied and rationing was imposed",
+      "Severe shortages developed as producers found it unprofitable to supply at controlled prices -- supermarket shelves emptied and the government introduced rationing",
       "Supply stabilized as price controls reduced speculative hoarding and made goods more consistently accessible to ordinary citizens",
       "Shortages were confined to imported goods, while domestically produced food and medicine remained adequately stocked",
       "Production initially declined but recovered once the government subsidized manufacturers directly to offset the controlled price ceilings"
@@ -5077,9 +5077,9 @@
   },
   {
     "question": "Why does inflation disproportionately harm people on fixed incomes, retirees, and savers compared to debtors?",
-    "answer": "Fixed incomes and savings lose real value as prices rise, while debtors repay loans with depreciated currency worth less than when borrowed",
+    "answer": "Savings and wages that don't adjust lose real purchasing power as prices rise, while debtors repay loans with depreciated currency worth less than when borrowed",
     "choices": [
-      "Fixed incomes and savings lose real value as prices rise, while debtors repay loans with depreciated currency worth less than when borrowed",
+      "Savings and wages that don't adjust lose real purchasing power as prices rise, while debtors repay loans with depreciated currency worth less than when borrowed",
       "Inflation harms all groups equally, since price increases affect every participant's cost of living at the same rate",
       "Savers are largely insulated because bank deposit rates typically rise in step with inflation, preserving real returns",
       "Debtors suffer most because rising input costs and variable interest rates erode their real ability to repay over time"
@@ -5089,9 +5089,9 @@
   },
   {
     "question": "What is the 'broken window fallacy' identified by Frederic Bastiat?",
-    "answer": "Destruction does not create net wealth — the money spent replacing a broken window is money that cannot be spent on something new, so the economy is worse off overall",
+    "answer": "Destruction does not create net wealth — the money spent on repairs is money that cannot be spent on something new, so the economy is worse off overall",
     "choices": [
-      "Destruction does not create net wealth — the money spent replacing a broken window is money that cannot be spent on something new, so the economy is worse off overall",
+      "Destruction does not create net wealth — the money spent on repairs is money that cannot be spent on something new, so the economy is worse off overall",
       "War and natural disaster always stimulate net economic activity, because the reconstruction spending generates more output than was destroyed",
       "Observers count only the visible economic activity of repair work, while ignoring the invisible opportunity cost of the spending diverted from new goods",
       "Government stimulus programs commit the same logical error by emphasizing visible job creation while ignoring the productive activity crowded out elsewhere"
@@ -5113,9 +5113,9 @@
   },
   {
     "question": "When the U.S. government ran large deficits during the 2020-2021 pandemic and simultaneously expanded the money supply, what followed by 2022?",
-    "answer": "The highest inflation in 40 years (peaking above 9%), consistent with the monetary theory that money-financed deficits cause inflation",
+    "answer": "The highest inflation in 40 years (peaking above 9%), consistent with the monetary theory that money-financed spending causes inflation",
     "choices": [
-      "The highest inflation in 40 years (peaking above 9%), consistent with the monetary theory that money-financed deficits cause inflation",
+      "The highest inflation in 40 years (peaking above 9%), consistent with the monetary theory that money-financed spending causes inflation",
       "Stable prices around 2–3%, as increased productivity from economic reopening largely offset the expanded money supply",
       "A brief deflationary period, as pandemic-era household savings reduced the velocity of money in circulation",
       "Moderate inflation of about 4–5%, partially contained by Federal Reserve forward guidance and early rate signaling"
@@ -5140,7 +5140,7 @@
     "answer": "The deaths of approximately 1.5–2 million people (25% of Cambodia's population) from famine, forced labor, and execution",
     "choices": [
       "The deaths of approximately 1.5–2 million people (25% of Cambodia's population) from famine, forced labor, and execution",
-      "A prolonged civil conflict that severely damaged infrastructure and stalled development, though the overall population remained largely intact",
+      "A prolonged civil conflict that severely damaged Cambodia's infrastructure and stalled development, though the overall population remained largely intact",
       "Mass urban unemployment as evacuated city dwellers lacked agricultural skills, producing hardship but no significant population loss",
       "Short-term food shortages and localized famine, ultimately averted by internationally brokered humanitarian aid and ceasefire negotiations"
     ],
@@ -5152,9 +5152,9 @@
     "answer": "Hayek argued that competing private currencies would outperform government monopoly currencies — sound money would win in the market and inflation would be disciplined",
     "choices": [
       "Hayek argued that competing private currencies would outperform government monopoly currencies — sound money would win in the market and inflation would be disciplined",
-      "Hayek proposed that national currencies be pegged to a commodity basket overseen by an independent international monetary authority",
-      "Hayek called for returning major economies to a strict gold standard, with currency issuance administered directly by national treasuries",
-      "Hayek advocated for regional currency unions among smaller nations as a way to replace volatile individual national currencies"
+      "Hayek proposed that national money supplies be pegged to a commodity basket overseen by an independent international monetary authority",
+      "Hayek called for returning major economies to a strict gold standard, with money issuance administered directly by national treasuries",
+      "Hayek advocated for regional currency unions among smaller nations as a way to replace volatile individual national money systems"
     ],
     "tier": 4,
     "context": "In his 1976 work 'Denationalisation of Money,' Hayek proposed that private banks issue competing currencies, letting consumers choose the most stable one. Bad currencies — those losing value through inflation — would be rejected by market participants, disciplining issuers through competition rather than through government monopoly control."
@@ -5188,9 +5188,9 @@
     "answer": "Each government intervention creates new distortions that generate calls for further intervention -- the logic of interventionism leads inevitably toward full socialism or chaos",
     "choices": [
       "Each government intervention creates new distortions that generate calls for further intervention -- the logic of interventionism leads inevitably toward full socialism or chaos",
-      "Selective government intervention in strategic industries can be permanently contained, never necessarily expanding into broader economic control",
-      "Mixed economies demonstrate that moderate intervention stabilizes markets without triggering the escalating spiral toward central planning that Mises described",
-      "Price controls and regulations undermine efficiency, but each individual policy failure can be corrected in isolation without producing systemic consequences"
+      "Selective government interventionism in strategic industries can be permanently contained, never necessarily expanding into broader economic control",
+      "Mixed economies demonstrate that moderate interventionism stabilizes markets without triggering the escalating spiral toward central planning that Mises described",
+      "Price controls and regulations undermine efficiency, but each individual interventionism failure can be corrected in isolation without producing systemic consequences"
     ],
     "tier": 4,
     "context": "Mises argued that each government intervention creates new problems that generate calls for more intervention. Rent control creates housing shortages, so governments impose construction mandates, which raise costs, leading to subsidies — an ever-expanding spiral of control. Mises concluded there was no stable middle ground between a free market and full central planning, making partial intervention inherently unstable."
@@ -5236,9 +5236,9 @@
     "answer": "Like all economic actors, politicians and bureaucrats act in their own self-interest -- they seek votes, power, and budgets rather than the public good",
     "choices": [
       "Like all economic actors, politicians and bureaucrats act in their own self-interest -- they seek votes, power, and budgets rather than the public good",
-      "Politicians in democracies reliably serve the public interest because competitive elections align their incentives with voter welfare",
-      "Bureaucrats function as neutral technocrats whose professional training and institutional norms consistently override personal incentives",
-      "Elected officials primarily serve party ideology rather than personal self-interest, making their behavior predictably partisan but not self-serving"
+      "Politicians in democracies reliably serve the public interest because competitive elections align their economic incentives with voter welfare",
+      "Bureaucrats function as neutral technocrats whose professional training and institutional norms consistently override personal economic incentives",
+      "Elected officials primarily serve party ideology rather than personal self-interest, making their economic behavior predictably partisan but not self-serving"
     ],
     "tier": 3,
     "context": "Public choice theory applies the same self-interest assumption to politicians that economics applies to everyone else. Politicians maximize votes; bureaucrats maximize budgets. Understanding this helps explain why government programs often serve special interests rather than the public."
@@ -5341,9 +5341,9 @@
   },
   {
     "question": "Economists distinguish between the 'seen' cost of government programs (budget line items) and the 'unseen' cost. What is an example of the unseen cost?",
-    "answer": "The productive private activity that would have occurred if the tax revenue had remained with citizens instead of being directed by government",
+    "answer": "The productive private activity that would have occurred if the tax revenue had remained with citizens rather than redirected through a central authority",
     "choices": [
-      "The productive private activity that would have occurred if the tax revenue had remained with citizens instead of being directed by government",
+      "The productive private activity that would have occurred if the tax revenue had remained with citizens rather than redirected through a central authority",
       "Administrative overhead and bureaucratic inefficiency visible in the program's own budget",
       "The opportunity cost of resources borrowed from future taxpayers via deficit spending",
       "Deadweight loss from the distorting effects of taxation on market behavior"

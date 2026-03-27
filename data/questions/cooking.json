@@ -38,12 +38,12 @@
   {
     "question": "What is the main ingredient in hummus?",
     "choices": [
-      "Chickpeas, blended as the base of traditional hummus",
+      "Chickpeas, blended as the base of this classic Middle Eastern dip",
       "Red lentils, used in some Middle Eastern dips for their creamy texture",
       "White beans, which are mashed into dips in Italian and Levantine cuisines",
       "Fava beans, the legume base of the Egyptian dish ful medames"
     ],
-    "answer": "Chickpeas, blended as the base of traditional hummus",
+    "answer": "Chickpeas, blended as the base of this classic Middle Eastern dip",
     "tier": 1,
     "context": "Chickpeas (garbanzo beans) are the backbone of hummus, blended with tahini, lemon, and garlic. The full Arabic name 'hummus bi tahini' literally means 'chickpeas with tahini.'"
   },
@@ -252,26 +252,26 @@
     "context": "Braising combines two methods: first a high-heat sear for flavor (Maillard reaction), then slow, moist cooking in a covered pot with a small amount of liquid. This dual approach is perfect for tough, collagen-rich cuts like short ribs or brisket."
   },
   {
-    "question": "What is the approximate ratio of flour to fat in a standard shortcrust pastry?",
+    "question": "What is the approximate ratio of flour to fat in shortcrust pastry?",
     "choices": [
       "4:1, used for very crumbly, dry pastry bases",
-      "2:1, the standard ratio for tender, crumbly shortcrust",
+      "2:1, producing tender, crumbly shortcrust pastry",
       "1:1, producing a richer, more pliable pastry dough",
       "3:1, typical for flakier, less tender pastry styles"
     ],
-    "answer": "2:1, the standard ratio for tender, crumbly shortcrust",
+    "answer": "2:1, producing tender, crumbly shortcrust pastry",
     "tier": 2,
     "context": "The 2:1 flour-to-fat ratio creates 'short' (crumbly, tender) pastry. The fat coats flour particles, preventing long gluten strands from forming — more fat means shorter, more tender pastry."
   },
   {
     "question": "Why does braising tough cuts of meat produce tender results?",
     "choices": [
-      "Long moist heat converts tough collagen in connective tissue into gelatin, tenderizing the meat",
+      "Long moist heat converts collagen in connective tissue into gelatin, tenderizing the meat",
       "Sustained moist heat denatures the actin and myosin proteins that cause toughness in muscle fibers",
       "The initial high-heat sear creates a crust that seals in juices, keeping the interior moist and tender",
       "Slow cooking at low temperatures prevents muscle fibers from contracting and expelling their moisture"
     ],
-    "answer": "Long moist heat converts tough collagen in connective tissue into gelatin, tenderizing the meat",
+    "answer": "Long moist heat converts collagen in connective tissue into gelatin, tenderizing the meat",
     "tier": 2,
     "context": "Collagen in connective tissue needs sustained moist heat (around 70–80°C over several hours) to unravel and convert into gelatin. This is why braised brisket practically melts while a quick-seared one would be tough and chewy."
   },
@@ -444,9 +444,9 @@
     "context": "An emulsion suspends tiny droplets of one liquid within another that wouldn't normally mix. Mayonnaise is oil droplets suspended in water (from lemon juice), held stable by lecithin from egg yolks."
   },
   {
-    "question": "What is the French term for cooking vegetables until soft and translucent without browning?",
+    "question": "What is the French term for cooking vegetables until soft without browning?",
     "choices": [
-      "Sauté — cook quickly over high heat to develop color",
+      "Sauté — cook quickly over high heat until slightly translucent and colored",
       "Sweat — cook gently over low heat until soft and translucent",
       "Caramelize — cook over high heat to brown natural sugars",
       "Braise — cook slowly with liquid until fully tender"
@@ -459,7 +459,7 @@
     "question": "Which spice comes from the stigma of the Crocus sativus flower?",
     "choices": [
       "Turmeric, harvested from the rhizome of the Curcuma longa plant",
-      "Cardamom, dried from the seed pods of Elettaria plants",
+      "Cardamom, dried from the seed pods of Elettaria cardamomum flower",
       "Saffron, hand-picked from the stigma of the Crocus sativus flower",
       "Paprika, ground from dried red Capsicum annuum peppers"
     ],
@@ -506,7 +506,7 @@
   {
     "question": "What spice originates from the Moluccas (Spice Islands) and is the dried seed of Myristica fragrans?",
     "choices": [
-      "Clove, the dried flower bud of Syzygium aromaticum, native to the Banda Islands",
+      "Clove, the dried flower bud of Syzygium aromaticum, native to the Moluccas islands region",
       "Nutmeg, the dried seed of Myristica fragrans, native to the Moluccas",
       "Allspice, the dried berry of Pimenta dioica, native to Jamaica and the Caribbean",
       "Mace, the lacy red aril surrounding the seed of the same Myristica fragrans fruit"
@@ -564,7 +564,7 @@
     "context": "The sealed parchment packet traps steam, gently cooking the food in its own juices. When the packet puffs up in the oven and you cut it open at the table, the aromatic steam is part of the dining experience."
   },
   {
-    "question": "What acid is responsible for the sour taste in sourdough bread?",
+    "question": "What acids are responsible for the sour taste in fermented bread made with a wild yeast starter?",
     "choices": [
       "Citric acid, produced by wild yeast fermentation",
       "Lactic acid and acetic acid, from sourdough bacteria",
@@ -592,10 +592,10 @@
     "choices": [
       "Confit, which submerges food in its own rendered fat",
       "Poaching, which simmers food in an open liquid bath",
-      "Sous vide, which seals food in vacuum bags within a water bath",
+      "Sous vide, which seals food in airtight bags within a temperature-controlled bath",
       "Braising, which combines dry and moist heat in a covered pot"
     ],
-    "answer": "Sous vide, which seals food in vacuum bags within a water bath",
+    "answer": "Sous vide, which seals food in airtight bags within a temperature-controlled bath",
     "tier": 4,
     "context": "Sous vide ('under vacuum') gives unprecedented temperature control — the water bath never exceeds the target temp. This means a steak cooked to 55°C is 55°C edge-to-edge, with no gray band."
   },
@@ -914,10 +914,10 @@
   {
     "tier": 1,
     "question": "What is the main ingredient in tomato sauce?",
-    "answer": "Tomatoes, cooked down into a sauce",
+    "answer": "Tomatoes, cooked down with seasoning into a smooth base",
     "choices": [
       "Roasted red peppers blended into a smooth base",
-      "Tomatoes, cooked down into a sauce",
+      "Tomatoes, cooked down with seasoning into a smooth base",
       "Caramelized onions reduced with herbs and wine",
       "Garlic and olive oil emulsified with stock"
     ],
@@ -973,12 +973,12 @@
   },
   {
     "tier": 1,
-    "question": "What kitchen tool is used to beat eggs or cream?",
-    "answer": "Whisk, used to beat eggs or cream",
+    "question": "What kitchen tool is used to beat eggs or whip mixtures?",
+    "answer": "Whisk, used to beat eggs or incorporate air into mixtures",
     "choices": [
       "Spatula, used for flipping and spreading",
       "Ladle, used for scooping soups and stews",
-      "Whisk, used to beat eggs or cream",
+      "Whisk, used to beat eggs or incorporate air into mixtures",
       "Tongs, used for gripping and turning food"
     ],
     "context": "A whisk incorporates air into liquids through its multiple wire loops. Balloon whisks (with wide, round loops) are best for whipping cream; flat whisks excel at making roux and sauces."
@@ -1002,7 +1002,7 @@
     "choices": [
       "Oregano, known for its pungent, earthy aroma",
       "Basil, known for its sweet, clove-like aroma",
-      "Thyme, known for its subtle, minty-woodsy aroma",
+      "Thyme, known for its subtle, sweet and minty-woodsy aroma",
       "Rosemary, known for its sharp, pine-like aroma"
     ],
     "context": "Basil is the king of Italian herbs. The name comes from Greek 'basilikon' meaning 'royal.' Fresh basil should be torn rather than cut with a knife, which bruises the leaves and turns them black. While oregano is also widely used in Italian cuisine, it has a more pungent, earthy aroma rather than a sweet, clove-like one."
@@ -1038,14 +1038,14 @@
     "choices": [
       "Paprika, a red spice made from dried sweet or hot peppers",
       "Turmeric, a vivid yellow root spice common in curry blends",
-      "Cumin, an earthy brown spice from the parsley family",
+      "Cumin, an earthy brown spice often used in curry and chili dishes",
       "Coriander, a warm citrusy spice ground from dried seeds"
     ],
     "context": "Turmeric gets its vivid color from curcumin, a compound studied for anti-inflammatory properties. It's been used in Indian cooking for over 4,000 years and gives American yellow mustard its color too."
   },
   {
     "tier": 1,
-    "question": "What is the name for the process of browning meat or vegetables in oil?",
+    "question": "What is the name for the process of cooking food quickly in a hot pan with a little oil?",
     "answer": "Sauteing — browning food quickly in a hot pan with a little oil",
     "choices": [
       "Poaching — cooking food submerged in barely simmering liquid",
@@ -1240,7 +1240,7 @@
     "question": "Which food is made by curdling and pressing milk?",
     "answer": "Cheese, made by curdling milk and pressing the solid curds",
     "choices": [
-      "Yogurt, made by fermenting milk with live bacterial cultures",
+      "Yogurt, made by curdling milk with live bacterial cultures until set",
       "Butter, made by churning cream to separate fat from liquid",
       "Cheese, made by curdling milk and pressing the solid curds",
       "Cream, skimmed from the top layer of unhomogenized milk"
@@ -1326,7 +1326,7 @@
     "choices": [
       "Paring knife — small blade designed for peeling and intricate detail work",
       "Chef's knife — curved blade ideal for rocking and fast chopping",
-      "Serrated knife — saw-like edge designed primarily for cutting bread",
+      "Serrated knife — saw-like curved edge designed primarily for cutting bread",
       "Boning knife — thin, flexible blade engineered for removing bones from meat"
     ],
     "context": "A chef's knife (typically 20cm/8 inches) has a curved blade that lets you rock it for fast chopping. It's the most versatile knife in any kitchen -- many professional chefs do 90% of their cutting with one."
@@ -1346,9 +1346,9 @@
   {
     "tier": 2,
     "question": "Why does caramelization require higher temperatures than the Maillard reaction?",
-    "answer": "Caramelization is purely thermal decomposition of sugar bonds, requiring 160°C or higher without any protein involvement",
+    "answer": "Caramelization is purely thermal decomposition of sugar bonds, requiring 160°C or more without any protein involvement",
     "choices": [
-      "Caramelization is purely thermal decomposition of sugar bonds, requiring 160°C or higher without any protein involvement",
+      "Caramelization is purely thermal decomposition of sugar bonds, requiring 160°C or more without any protein involvement",
       "Caramelization needs ambient moisture to initiate, which must fully evaporate before sugar bonds can begin to break",
       "Sugar molecules must first dissolve completely into surrounding fats before the caramelization process can begin",
       "Caramelization is pH-dependent and only proceeds in the presence of strongly acidic or alkaline conditions"
@@ -1429,7 +1429,7 @@
   },
   {
     "tier": 1,
-    "question": "Which cooking method wraps food tightly in foil or parchment to cook in its own steam?",
+    "question": "Which cooking method wraps food tightly in foil or paper to cook in its own steam?",
     "answer": "En papillote, which seals food in parchment to cook in its own steam",
     "choices": [
       "Braising, which slow-cooks food in a covered pot with added liquid",
@@ -1513,7 +1513,7 @@
   },
   {
     "tier": 1,
-    "question": "What is the name for a very thin crepe-like pancake from France?",
+    "question": "What is the name for a very thin, delicate pancake from France?",
     "answer": "Crepe — a paper-thin French pancake made from flour, eggs, and milk",
     "choices": [
       "Galette — a savory buckwheat pancake from Brittany",
@@ -1561,7 +1561,7 @@
   },
   {
     "tier": 1,
-    "question": "What is 'buttermilk' used for in baking?",
+    "question": "What role does buttermilk play in recipes that use it?",
     "answer": "Adding moisture and activating baking soda through its acidity",
     "choices": [
       "Adding moisture and activating baking soda through its acidity",
@@ -1684,10 +1684,10 @@
     "question": "Which country is the origin of sushi?",
     "answer": "Japan, where nigiri sushi was invented in Tokyo in the 1820s",
     "choices": [
-      "China, where rice-based dishes have the longest history",
+      "China, where rice-based dishes have the longest recorded culinary history",
       "Japan, where nigiri sushi was invented in Tokyo in the 1820s",
-      "Southeast Asia, where fermenting fish with rice first began",
-      "South Korea, which has a long tradition of fermented foods"
+      "Southeast Asia, where fermenting fish with rice in sushi-like dishes first began",
+      "South Korea, which has a long tradition of fermented rice and fish dishes"
     ],
     "context": "Japan perfected sushi as we know it, though the concept of fermenting fish with rice originated in Southeast Asia. Modern nigiri sushi was invented in Tokyo in the 1820s as a fast food."
   },
@@ -1732,10 +1732,10 @@
     "question": "What is the 'Maillard reaction'?",
     "answer": "A chemical reaction between amino acids and sugars that browns food and creates complex flavors",
     "choices": [
-      "The breakdown of sugars under heat, identical to caramelization",
+      "The breakdown of sugars under heat, a reaction identical to caramelization",
       "A chemical reaction between amino acids and sugars that browns food and creates complex flavors",
-      "The enzymatic browning that occurs when cut fruit is exposed to air",
-      "A controlled charring process used to develop smoky depth in food"
+      "The enzymatic browning reaction that occurs when cut fruit is exposed to air",
+      "A controlled charring reaction used to develop smoky depth in food"
     ],
     "context": "Named after French chemist Louis-Camille Maillard (1912), this reaction between amino acids and sugars creates the flavors associated with seared meat, toasted bread, and roasted coffee. It differs from caramelization, which involves only sugars breaking down under heat, and is arguably the most important flavor-building reaction in cooking."
   },
@@ -1817,8 +1817,8 @@
     "answer": "Water caps the surface temperature at 100 degC, well below the 140+ degC threshold needed for Maillard browning",
     "choices": [
       "Water caps the surface temperature at 100 degC, well below the 140+ degC threshold needed for Maillard browning",
-      "Boiling dilutes surface proteins too much for the browning reaction to proceed at any temperature",
-      "Rapid convection currents in boiling water constantly strip heat from the meat surface",
+      "Boiling dilutes surface proteins too much for the Maillard browning process to proceed at any temperature",
+      "Rapid convection currents in boiling water constantly strip heat needed to trigger Maillard browning",
       "Dissolved minerals and steam pressure in boiling water chemically suppress the browning reaction"
     ],
     "context": "Water can never exceed 100 degC at normal pressure, but the Maillard reaction needs at least 140 degC. This is why boiled meat is grey and bland, while seared meat is brown and flavorful -- it's all about surface temperature."
@@ -2306,10 +2306,10 @@
   {
     "tier": 2,
     "question": "What is 'fond' de veau in French cooking?",
-    "answer": "A rich veal stock used as a base for classical French sauces",
+    "answer": "A rich veal stock used as a base for classical sauces",
     "choices": [
       "A slow-braised veal shoulder served in its own reduced cooking juices",
-      "A rich veal stock used as a base for classical French sauces",
+      "A rich veal stock used as a base for classical sauces",
       "A classical veal forcemeat used to fill pastry cases and terrines",
       "A cream sauce enriched with veal bone marrow and shallots"
     ],
@@ -2390,10 +2390,10 @@
   {
     "tier": 2,
     "question": "What does 'nappe' mean in sauce consistency?",
-    "answer": "The sauce coats the back of a spoon and holds a clear line when drawn through",
+    "answer": "It coats the back of a spoon and holds a clear line when drawn through",
     "choices": [
       "Thin enough to pour freely from a ladle and spread across a plate without resistance",
-      "The sauce coats the back of a spoon and holds a clear line when drawn through",
+      "It coats the back of a spoon and holds a clear line when drawn through",
       "Thick enough to hold a soft ribbon shape when lifted and folded with a spatula",
       "Fully emulsified with a glossy sheen that clings evenly to food when plated"
     ],
@@ -2474,10 +2474,10 @@
   {
     "tier": 2,
     "question": "What is 'clarified stock' called when fully clarified and perfectly clear?",
-    "answer": "Consommé — a crystal-clear stock clarified using a raft of meat and egg whites",
+    "answer": "Consommé — a crystal-clear broth clarified using a raft of meat and egg whites",
     "choices": [
       "Court bouillon — a light aromatic broth used for poaching fish or vegetables",
-      "Consommé — a crystal-clear stock clarified using a raft of meat and egg whites",
+      "Consommé — a crystal-clear broth clarified using a raft of meat and egg whites",
       "Jus — the natural, unthickened juices released from roasted meat",
       "Fumet — a concentrated reduction made from fish bones or mushrooms"
     ],
@@ -2546,10 +2546,10 @@
   {
     "tier": 3,
     "question": "What is 'gelatin bloom strength'?",
-    "answer": "A standardized measure of a gelatin's firmness and setting strength",
+    "answer": "A standardized measure of a gelatin's firmness and gel-setting power",
     "choices": [
       "The degree of foaminess a gelatin produces when dissolved in hot liquid",
-      "A standardized measure of a gelatin's firmness and setting strength",
+      "A standardized measure of a gelatin's firmness and gel-setting power",
       "The optical clarity and transparency of a fully set gelatin gel",
       "The rated time in minutes required for gelatin to achieve a full set"
     ],
@@ -2581,11 +2581,11 @@
   },
   {
     "tier": 3,
-    "question": "What does 'denaturation' mean in protein cooking?",
-    "answer": "Heat or acid unravels protein structure, changing texture (e.g., egg whites turn firm)",
+    "question": "What does 'denaturation' mean in the context of cooking?",
+    "answer": "Heat or acid unravels the molecular structure, changing texture (e.g., egg whites turn firm)",
     "choices": [
       "Proteins losing water-soluble nutrients when overcooked, reducing nutritional value",
-      "Heat or acid unravels protein structure, changing texture (e.g., egg whites turn firm)",
+      "Heat or acid unravels the molecular structure, changing texture (e.g., egg whites turn firm)",
       "The browning reaction between proteins and sugars at high heat, creating new flavors",
       "Proteins breaking into smaller peptide chains through enzymatic action during digestion"
     ],
@@ -2605,7 +2605,7 @@
   },
   {
     "tier": 3,
-    "question": "What is 'koji' in Japanese fermentation?",
+    "question": "What is 'koji' in Japanese cuisine?",
     "answer": "A mold (Aspergillus oryzae) grown on grains to produce enzymes for fermentation",
     "choices": [
       "A fermented fish sauce made from salted, aged seafood layered with salt over months",
@@ -2786,10 +2786,10 @@
   {
     "tier": 3,
     "question": "What is 'the smoke point' of an oil?",
-    "answer": "The temperature at which an oil begins to burn and produce smoke, degrading flavor",
+    "answer": "The temperature at which an oil begins to burn and produce visible fumes, degrading flavor",
     "choices": [
       "The minimum temperature oil must reach before it can safely fry food without undercooking it",
-      "The temperature at which an oil begins to burn and produce smoke, degrading flavor",
+      "The temperature at which an oil begins to burn and produce visible fumes, degrading flavor",
       "The temperature at which an oil's fatty acids break down and become capable of spontaneous combustion",
       "The ideal temperature range for sautéing at which the oil stays hot without oxidizing significantly"
     ],
@@ -3217,7 +3217,7 @@
   },
   {
     "tier": 3,
-    "question": "What is 'Wok Hei' in Chinese cooking?",
+    "question": "What is 'Wok Hei' in Chinese cuisine?",
     "answer": "The smoky, charred flavor imparted to food by cooking in a screaming hot wok over high flames",
     "choices": [
       "The gradual process of seasoning and building up a wok's non-stick patina through repeated high-heat oiling",
@@ -3409,7 +3409,7 @@
   },
   {
     "tier": 4,
-    "question": "What is 'phase transition' in cooking science?",
+    "question": "What is 'phase transition' in culinary science?",
     "answer": "A substance changing state (e.g., water to steam, fat melting) affecting cooking behavior",
     "choices": [
       "The point at which food crosses from raw to cooked and reaches a safe internal temperature",
@@ -3457,7 +3457,7 @@
   },
   {
     "tier": 4,
-    "question": "What is 'cryogenic cooking' or use of liquid nitrogen in gastronomy?",
+    "question": "What is 'cryogenic cooking' or the use of extreme cold in gastronomy?",
     "answer": "Using liquid nitrogen at -196°C to instantly freeze food or create striking textural contrasts",
     "choices": [
       "Sous vide cooking carried out at temperatures just above the freezing point of water for gentle precision",
@@ -4134,8 +4134,8 @@
     "choices": [
       "It ensures even heat distribution across all components of a plated dish during service",
       "It keeps each bite interesting and prevents palate fatigue from single-texture dishes",
-      "It signals freshness and quality by providing the crunch expected from premium ingredients",
-      "It allows a dish to be consumed in stages without components softening or becoming soggy"
+      "It signals freshness and quality by providing the crunch expected from premium ingredients in a varied-texture profile",
+      "It allows a dish to be consumed in stages without components softening or becoming soggy over different textures"
     ],
     "context": "A great dish engages the mouth with multiple textures -- crunchy topping on creamy soup, crispy skin on tender fish, snappy pickle next to rich pâté. Without contrast, even delicious flavors become monotonous after a few bites, a phenomenon known as sensory-specific satiety."
   },
@@ -4576,9 +4576,9 @@
     "question": "What is 'the flavor compound diacetyl' associated with?",
     "answer": "A buttery flavor compound in fermented dairy products and some beers",
     "choices": [
-      "A volatile sulfur compound responsible for the smoky, charred aromatic notes in grilled and smoked meats",
+      "A volatile sulfur compound responsible for the smoky, charred flavor notes in grilled and smoked meats",
       "A buttery flavor compound in fermented dairy products and some beers",
-      "The primary ester responsible for the tangy lactic character in yogurt and cultured sour cream",
+      "The primary ester responsible for the tangy lactic flavor character in yogurt and cultured sour cream",
       "A short-chain aldehyde produced by lipid oxidation that contributes off-flavors in aged or rancid butter"
     ],
     "context": "Diacetyl gives butter its characteristic aroma and is naturally produced during fermentation of dairy products and some beers. In brewing, too much diacetyl is considered a flaw (a 'butter bomb') -- brewers use a diacetyl rest at the end of fermentation to let yeast reabsorb it."
@@ -4694,10 +4694,10 @@
   {
     "tier": 5,
     "question": "What is 'the solubility of gases' in liquids relevant to cooking?",
-    "answer": "Colder liquids dissolve more gas -- relevant to carbonation, and why cold water absorbs more oxygen",
+    "answer": "Colder liquids dissolve more gas, which applies to carbonation and why cold water absorbs more oxygen",
     "choices": [
       "Hot liquids dissolve more gas, which is why boiling water releases carbonation and creates a more oxygenated cooking environment",
-      "Colder liquids dissolve more gas -- relevant to carbonation, and why cold water absorbs more oxygen",
+      "Colder liquids dissolve more gas, which applies to carbonation and why cold water absorbs more oxygen",
       "Dissolved gas primarily affects mouthfeel and flavor but has no measurable impact on batter texture or lift",
       "Gas solubility in cooking liquids depends entirely on pressure but remains unaffected by temperature changes"
     ],
@@ -4816,9 +4816,9 @@
     "question": "What is 'sensory-specific satiety'?",
     "answer": "The decrease in pleasure from a specific food flavor during eating, which encourages dietary variety",
     "choices": [
-      "The brain's progressive desensitization to all flavors and textures over the course of a long meal",
+      "The brain's progressive desensitization to all specific flavors and textures over the course of a long meal",
       "The decrease in pleasure from a specific food flavor during eating, which encourages dietary variety",
-      "The physiological signal that triggers leptin release from fat cells when caloric needs are met",
+      "The physiological signal that triggers leptin release from fat cells when a specific caloric threshold is met",
       "The heightened craving for sweet or salty flavors that develops after prolonged food restriction"
     ],
     "context": "Your brain gets bored with a single flavor or texture during a meal, decreasing your pleasure from eating it. This evolutionary mechanism encourages dietary variety and explains why you're 'too full' for more steak but somehow have room for dessert."
@@ -4852,10 +4852,10 @@
     "question": "What is 'pressure and boiling point' relationship relevant to altitude cooking?",
     "answer": "Lower atmospheric pressure at altitude reduces the boiling point of water, requiring longer cooking times",
     "choices": [
-      "Higher atmospheric pressure at altitude accelerates evaporation, causing water to boil above 100°C",
+      "Higher atmospheric pressure at altitude accelerates evaporation, causing water to boil above 100°C and shortening cooking times",
       "Lower atmospheric pressure at altitude reduces the boiling point of water, requiring longer cooking times",
-      "Reduced humidity at altitude lowers the boiling point, but this only affects baked goods and not boiled foods",
-      "Thinner air at altitude slows convective heat transfer to the pot, effectively raising the boiling point of water"
+      "Reduced humidity at altitude lowers the boiling point, but this only affects baked goods and not other cooking methods",
+      "Thinner air at altitude slows convective heat transfer to the pot, effectively raising the boiling point and speeding cooking times"
     ],
     "context": "At 3,000 meters (roughly Denver's elevation), water boils at about 90°C instead of 100°C. This means longer cooking times for boiled foods, faster evaporation, and baked goods that over-rise because lower pressure lets CO2 expand more aggressively. Recipes need real adjustments above 1,000 meters."
   },
@@ -4897,7 +4897,7 @@
   },
   {
     "tier": 5,
-    "question": "What is 'temperature-time combinations' in food safety (D-value)?",
+    "question": "What is the D-value in food safety temperature-time combinations?",
     "answer": "The D-value is the time at a specific temperature needed to reduce a pathogen population by 90%",
     "choices": [
       "The total elapsed time required for food to reach its target internal temperature during cooking",
@@ -4945,7 +4945,7 @@
   },
   {
     "tier": 1,
-    "question": "Which type of pasta is shaped like small butterflies or bow ties?",
+    "question": "Which type of pasta is shaped like small bow ties or pinched wings?",
     "answer": "Farfalle — the pinched, wing-shaped pasta named for butterflies",
     "choices": [
       "Fusilli — the spiral-shaped pasta that grips chunky sauces",
@@ -5113,11 +5113,11 @@
   },
   {
     "tier": 2,
-    "question": "What is 'a liaison' in sauce making and when is it added?",
-    "answer": "Egg yolks and cream mixture -- added off the heat at the end to thicken and enrich without curdling",
+    "question": "What is 'a liaison' in sauce making and at what stage is it incorporated?",
+    "answer": "Egg yolks and cream mixture — incorporated off the heat at the end to thicken and enrich without curdling",
     "choices": [
       "A butter and flour paste stirred in at the start to build the sauce's initial body",
-      "Egg yolks and cream mixture -- added off the heat at the end to thicken and enrich without curdling",
+      "Egg yolks and cream mixture — incorporated off the heat at the end to thicken and enrich without curdling",
       "A cornstarch slurry whisked in during the final simmer to achieve glossy consistency",
       "Reduced cream folded in while the sauce is still actively boiling to concentrate flavor"
     ],
@@ -5330,10 +5330,10 @@
   {
     "tier": 4,
     "question": "What is 'the plating principle' of negative space?",
-    "answer": "Leaving empty space on a plate draws focus to the food and creates visual balance",
+    "answer": "Leaving empty areas on a plate draws focus to the food and creates visual balance",
     "choices": [
       "Positioning a single large garnish off-center to anchor the composition and create a visual focal point",
-      "Leaving empty space on a plate draws focus to the food and creates visual balance",
+      "Leaving empty areas on a plate draws focus to the food and creates visual balance",
       "Using contrasting sauce colors around the protein to frame it and direct the diner's eye inward",
       "Grouping all components tightly in the plate's center so the eye reads the dish as a unified whole"
     ],
@@ -5474,10 +5474,10 @@
   {
     "tier": 5,
     "question": "What is 'the vapor pressure' of water relevant to cooking sous vide?",
-    "answer": "At precise low temperatures, keeping vapor pressure below boiling point prevents texture damage from excessive moisture loss",
+    "answer": "At precise low temperatures, keeping moisture pressure below boiling point prevents texture damage from excessive moisture loss",
     "choices": [
       "The rate at which dissolved gases escape from a heated water bath during circulation",
-      "At precise low temperatures, keeping vapor pressure below boiling point prevents texture damage from excessive moisture loss",
+      "At precise low temperatures, keeping moisture pressure below boiling point prevents texture damage from excessive moisture loss",
       "The equilibrium between atmospheric pressure and the immersion circulator's pump output",
       "How water molecules migrate through a sealed vacuum bag wall during extended cooking"
     ],
@@ -5546,10 +5546,10 @@
   {
     "tier": 5,
     "question": "What is 'diffusion kinetics' relevant to marinating meat?",
-    "answer": "Flavor molecules move slowly through meat by diffusion -- most penetration is only a few millimeters",
+    "answer": "Flavor molecules move slowly through meat via passive transport — most penetration is only a few millimeters",
     "choices": [
       "The speed at which enzymatic reactions break down muscle proteins during extended marination",
-      "Flavor molecules move slowly through meat by diffusion -- most penetration is only a few millimeters",
+      "Flavor molecules move slowly through meat via passive transport — most penetration is only a few millimeters",
       "How acidic marinades denature surface proteins and form a moisture-retaining barrier on the exterior",
       "The rate at which osmotic pressure equalizes salt concentration across cell membranes in brine"
     ],
@@ -5594,10 +5594,10 @@
   {
     "tier": 5,
     "question": "What is 'the Stickney emulsion test' in food science?",
-    "answer": "A standardized test measuring the stability of an emulsion over time by measuring phase separation",
+    "answer": "A standardized test measuring the stability of a fat-water mixture over time by measuring phase separation",
     "choices": [
       "A sensory evaluation method for detecting off-flavors caused by emulsifier breakdown over time",
-      "A standardized test measuring the stability of an emulsion over time by measuring phase separation",
+      "A standardized test measuring the stability of a fat-water mixture over time by measuring phase separation",
       "A rheological protocol assessing viscosity changes in emulsified food products under shear stress",
       "A centrifugation-based method for determining emulsifier concentration in processed foods"
     ],
@@ -5704,10 +5704,10 @@
     "question": "What is 'hydrophobic interaction' relevant to protein folding in cooking?",
     "answer": "Nonpolar amino acid side chains cluster together away from water when proteins fold or aggregate during cooking",
     "choices": [
-      "Electrostatic repulsion between charged amino acids causes them to orient away from the aqueous environment",
+      "Electrostatic repulsion between charged amino acids causes them to orient away from the aqueous environment during cooking",
       "Nonpolar amino acid side chains cluster together away from water when proteins fold or aggregate during cooking",
-      "Hydrophobic amino acids bind water molecules to form a stable gel matrix during thermal processing",
-      "Fat droplets become trapped within an unfolding protein network as nonpolar regions are exposed by heating"
+      "Hydrophobic amino acids bind water molecules to form a stable gel matrix during thermal processing in cooking",
+      "Fat droplets become trapped within an unfolding protein network as nonpolar regions are exposed by heating during cooking"
     ],
     "context": "In raw meat, nonpolar amino acids hide in the protein's interior, away from water. Heating unfolds the protein, exposing these hydrophobic patches, which then stick to each other and aggregate -- this is protein denaturation, and it's why cooked egg white turns from clear to opaque."
   },
@@ -5716,10 +5716,10 @@
     "question": "What is 'the chemistry of caramel color' in food manufacturing?",
     "answer": "Controlled Maillard reactions and caramelization of sugars with ammonia compounds producing class I-IV caramel colors",
     "choices": [
-      "Heating pure sucrose through distinct temperature stages until it polymerizes into stable brown compounds without any additives",
+      "Heating pure sucrose through distinct temperature stages until it polymerizes into stable brown caramel compounds without any additives",
       "Controlled Maillard reactions and caramelization of sugars with ammonia compounds producing class I-IV caramel colors",
-      "Enzymatic browning of sugar solutions catalyzed by polyphenol oxidase under controlled pH and temperature conditions",
-      "Fermentation of molasses by specific bacteria that produce brown melanoidin pigments under anaerobic conditions"
+      "Enzymatic browning of sugar solutions catalyzed by polyphenol oxidase under controlled pH and temperature to produce caramel-like pigments",
+      "Fermentation of molasses by specific bacteria that produce brown melanoidin pigments used as caramel substitutes under anaerobic conditions"
     ],
     "context": "Industrial caramel color (the world's most widely used food coloring) comes in four classes depending on the reactants used with sugar. Class IV (ammonia sulfite caramel) gives cola its brown color, while Class I (plain caramel) colors soy sauce and gravies."
   },
@@ -5928,7 +5928,7 @@
     "context": "Above about 68°C, egg yolk proteins coagulate into firm clumps instead of maintaining the flexible network that keeps fat droplets suspended. Once the emulsion breaks, the butterfat pools into greasy puddles -- rescue it by whisking a spoonful of the broken sauce into a fresh egg yolk."
   },
   {
-    "question": "Why does adding a small amount of cornstarch to egg whites before whipping improve meringue stability?",
+    "question": "Why does adding a small amount of cornstarch to egg whites before whipping improve foam stability?",
     "answer": "Starch absorbs water that would otherwise weep out of the meringue, reducing syneresis during and after baking",
     "choices": [
       "Starch absorbs water that would otherwise weep out of the meringue, reducing syneresis during and after baking",
@@ -6024,12 +6024,12 @@
     "context": "Salt dissolves myosin proteins at the muscle surface, creating a gel that traps water even during high-heat roasting. Osmosis then draws additional water into the cells to balance the salt concentration, increasing the bird's total moisture by 6-8%."
   },
   {
-    "question": "Why does a sauce made from a white roux taste pasty if the flour is not cooked enough?",
+    "question": "Why does a sauce made from a white roux have a pasty, raw quality if the flour is not cooked enough?",
     "answer": "Raw starch granules retain a raw, floury taste -- cooking the roux for several minutes gelatinizes and dextrinizes the starch, eliminating the raw flavor",
     "choices": [
       "Raw starch granules retain a raw, floury taste -- cooking the roux for several minutes gelatinizes and dextrinizes the starch, eliminating the raw flavor",
       "Undercooked flour contains active amylase enzymes that break down the starch unevenly, producing bitter-tasting sugar fragments in the sauce",
-      "Insufficient heat leaves gluten strands partially hydrated and intact, giving the sauce a distinctly doughy, elastic flavor on the palate",
+      "Insufficient heat leaves gluten strands partially hydrated and intact, giving the sauce a distinctly doughy, elastic taste on the palate",
       "The lipids coating raw flour particles must be rendered off by heat before the starch can integrate cleanly into the liquid base"
     ],
     "tier": 3,
@@ -6048,7 +6048,7 @@
     "context": "Surface moisture flash-vaporizes into steam, creating outward pressure that blocks oil from entering while dehydrating the exterior into a rigid, crispy shell. If the oil is too cool, steam production drops and oil soaks in -- which is why temperature management is the key to great frying."
   },
   {
-    "question": "Why does adding starch to a stir-fry sauce cause it to thicken only when heated?",
+    "question": "Why does adding starch to a stir-fry sauce cause it to thicken only when the sauce is brought to temperature?",
     "answer": "Starch granules absorb water and swell (gelatinize) when heated above ~65°C, thickening the sauce as the swollen granules disrupt flow",
     "choices": [
       "Starch granules absorb water and swell (gelatinize) when heated above ~65°C, thickening the sauce as the swollen granules disrupt flow",
@@ -6064,7 +6064,7 @@
     "answer": "Dissolved sugar lowers the freezing point of the mixture (freezing point depression), so it remains semi-solid at freezer temperatures",
     "choices": [
       "Dissolved sugar lowers the freezing point of the mixture (freezing point depression), so it remains semi-solid at freezer temperatures",
-      "Sugar is hygroscopic and draws water away from ice crystals, keeping the mixture in a semi-liquid gel state",
+      "Sugar is hygroscopic and draws water away from ice crystals, keeping the mixture in a semi-liquid gel state rather than freezing solid",
       "Sugar molecules coat fat globules and prevent them from fully solidifying at sub-zero temperatures",
       "Sugar raises the viscosity of the mixture so dramatically that ice crystal formation is physically blocked"
     ],
@@ -6193,9 +6193,9 @@
   },
   {
     "question": "What does 'knife steel' (honing rod) actually do to a blade edge at the microscopic level?",
-    "answer": "It realigns the microscopic teeth of the blade edge that fold over during use, restoring sharpness without removing metal",
+    "answer": "It realigns the tiny teeth of the blade edge that fold over during use, restoring sharpness without removing metal",
     "choices": [
-      "It realigns the microscopic teeth of the blade edge that fold over during use, restoring sharpness without removing metal",
+      "It realigns the tiny teeth of the blade edge that fold over during use, restoring sharpness without removing metal",
       "It grinds away a thin layer of metal from the bevel to expose a fresh, sharper edge beneath the dulled surface",
       "It compresses and work-hardens the blade edge, making the steel denser and more resistant to further bending or deformation",
       "It polishes out micro-scratches along the bevel, reducing surface drag and improving the blade's overall cutting efficiency"
@@ -6245,7 +6245,7 @@
     "choices": [
       "More cell damage releases more alliinase enzyme to convert alliin into allicin -- mincing produces the most, whole cloves the least pungency",
       "Slicing and mincing expose more surface area to heat, accelerating volatilization of allicin into milder sulfur compounds -- so minced garlic is actually less pungent when cooked",
-      "Larger pieces retain more intact sulfur precursors because less alliinase is activated, concentrating pungency in the interior of the clove",
+      "Larger pieces retain more intact sulfur precursors because less alliinase is activated, concentrating pungency in the whole interior of the clove",
       "Different cut sizes rupture outer versus inner cell layers, which hold varying allicin concentrations -- so sliced garlic is actually the most pungent form"
     ],
     "tier": 3,
@@ -6292,9 +6292,9 @@
     "answer": "Double-acting baking powder releases CO2 twice: once when wet (from monocalcium phosphate) and again when heated (from sodium aluminum sulfate), ensuring leavening continues in the oven",
     "choices": [
       "Double-acting baking powder releases CO2 twice: once when wet (from monocalcium phosphate) and again when heated (from sodium aluminum sulfate), ensuring leavening continues in the oven",
-      "Baking powder releases a partial CO2 charge upon contact with moisture, then a second charge when the batter's pH stabilizes after mixing -- both reactions complete before the batter enters the oven",
+      "Baking powder releases a partial CO2 charge upon contact with moisture, then a second leavening charge when the batter's pH stabilizes after mixing -- both reactions complete before the batter enters the oven",
       "Double-acting refers to CO2 generation combined with simultaneous gluten network stabilization, giving baked goods both lift from gas and structural firmness from the alkaline environment",
-      "The first action neutralizes acidic batter ingredients to balance pH, while the second releases CO2 only after the batter reaches a chemically neutral threshold during baking"
+      "The first action neutralizes acidic batter ingredients to balance pH, while the second leavening step releases CO2 only after the batter reaches a chemically neutral threshold during baking"
     ],
     "tier": 4,
     "context": "The first reaction (room temperature) uses monocalcium phosphate to release CO2 as soon as liquid is added, creating initial lift. The second reaction (oven heat) uses sodium aluminum sulfate, which only activates above 60 degC, providing a crucial second burst of gas that sets the final rise."
@@ -6312,13 +6312,13 @@
     "context": "Casein protein in dairy has a special affinity for capsaicin and physically strips it off the TRPV1 pain receptors on your tongue. Water is useless because capsaicin is hydrophobic and won't dissolve in it -- you'd just be spreading the fire around."
   },
   {
-    "question": "What is the 'smoke point' dependent on chemically in an oil?",
+    "question": "What is the 'smoke point' of an oil chemically dependent on?",
     "answer": "Free fatty acid content -- more free fatty acids (from oxidation or impurities) lower the smoke point; refined oils have fewer free fatty acids and higher smoke points",
     "choices": [
       "Free fatty acid content -- more free fatty acids (from oxidation or impurities) lower the smoke point; refined oils have fewer free fatty acids and higher smoke points",
-      "The degree of unsaturation -- polyunsaturated triglycerides volatilize at lower temperatures than monounsaturated or saturated ones",
-      "Phospholipid concentration -- these polar lipids destabilize at lower temperatures and are the first compounds to break down and smoke",
-      "The chain length of the dominant fatty acids -- shorter carbon chains have lower boiling points and cause earlier thermal breakdown"
+      "The degree of unsaturation -- polyunsaturated triglycerides volatilize at lower temperatures than monounsaturated or saturated ones, affecting the smoke point",
+      "Phospholipid concentration -- these polar lipids destabilize at lower temperatures and are the first compounds to break down and reach the smoke point",
+      "The chain length of the dominant fatty acids -- shorter carbon chains have lower boiling points and cause earlier thermal breakdown at a lower smoke point"
     ],
     "tier": 4,
     "context": "Free fatty acids are the primary culprit -- they volatilize at much lower temperatures than intact triglycerides. Refining oil removes these free fatty acids (along with other impurities like phospholipids and pigments), which is why refined oils smoke at 230-270°C while their unrefined counterparts smoke 40-80 degrees lower."
@@ -6504,7 +6504,7 @@
     "context": "While the name references Hamburg, Germany, the hamburger as a sandwich was born in the United States in the late 1800s. Multiple American towns claim to have served the first hamburger, but White Castle (founded 1921) was the first chain to popularize it nationwide."
   },
   {
-    "question": "Falafel is a dish originally from which region?",
+    "question": "Which region is widely credited as the origin of falafel?",
     "choices": [
       "South Asia, where chickpea fritters have ancient roots",
       "East Asia, known for its diverse bean-based street foods",
@@ -6624,7 +6624,7 @@
     "context": "Naan has been a staple of Indian cuisine since the 1300s, traditionally baked in a tandoor clay oven where it puffs and chars in seconds. The word comes from Persian 'nan' (bread), reflecting the culinary exchange between India and Persia over centuries."
   },
   {
-    "question": "Which country is known for barbecue brisket?",
+    "question": "Which country is most famous for its barbecue beef slow-smoked over wood for many hours?",
     "choices": [
       "Australia, where outdoor grilling and smoked meats are a national pastime",
       "Argentina, famous for its slow-cooked asado beef traditions",
@@ -6636,19 +6636,19 @@
     "context": "Texas-style barbecue brisket, smoked low and slow over post oak for 12-18 hours with just salt and pepper, is an American art form. Central Texas 'meat market' style originated with German and Czech immigrant butchers in the 1800s who smoked unsold meat to preserve it."
   },
   {
-    "question": "Spring rolls are associated with which cuisine?",
+    "question": "Spring rolls are most closely associated with which cuisine?",
     "choices": [
       "Japanese, known for delicate fried dishes like tempura and gyoza",
       "Vietnamese, famous for fresh uncooked rice-paper rolls called goi cuon",
       "Chinese, where spring rolls date back to the Eastern Jin dynasty",
-      "Thai, where crispy fried appetizers and savory pastries are widely popular"
+      "Thai, where crispy fried spring-season appetizers and savory pastries are widely popular"
     ],
     "answer": "Chinese, where spring rolls date back to the Eastern Jin dynasty",
     "tier": 1,
     "context": "Chinese spring rolls date back to the Eastern Jin dynasty (around 400 CE) and were traditionally eaten during the Spring Festival. Fried versions dominate in Cantonese cuisine, while Vietnamese spring rolls (goi cuon) are served fresh and uncooked with rice paper wrappers."
   },
   {
-    "question": "Churros are a fried pastry from which country?",
+    "question": "Churros are a pastry from which country?",
     "choices": [
       "Mexico, where churros are now deeply embedded in street food culture",
       "Spain, where shepherds traditionally fried simple dough over open fires",
@@ -6792,7 +6792,7 @@
     "context": "Olives are simply crushed and the oil is separated from the pulp and water. 'Extra virgin' means the oil was extracted mechanically without heat or chemicals and has acidity below 0.8% -- it's essentially fresh-squeezed olive juice."
   },
   {
-    "question": "What is the main ingredient in mashed potatoes?",
+    "question": "What vegetable is the primary ingredient in the dish known as mashed potatoes?",
     "choices": [
       "Sweet potatoes",
       "Turnips",
@@ -6900,7 +6900,7 @@
     "context": "Fresh coconut flesh is grated and squeezed with water to extract a rich, creamy liquid packed with lauric acid fat. The first pressing yields thick coconut cream; diluting and pressing again gives thinner coconut milk -- both are staples in Southeast Asian and Caribbean cooking."
   },
   {
-    "question": "What spice comes from dried chili peppers?",
+    "question": "What spice is made from dried and ground red peppers?",
     "choices": [
       "Cinnamon, ground from dried tree bark",
       "Paprika, made from dried and ground chili peppers",
@@ -7000,7 +7000,7 @@
     "choices": [
       "Ground turmeric root and vinegar",
       "Mustard seeds",
-      "Dried and powdered hot peppers",
+      "Dried and powdered mustard greens",
       "Fermented ginger and garlic paste"
     ],
     "answer": "Mustard seeds",
@@ -7056,7 +7056,7 @@
     "context": "BLT stands for Bacon, Lettuce, and Tomato — bacon is the defining protein of the sandwich. Its smoky, salty, umami-rich flavor dominates the sandwich, supported by the sweetness of ripe tomato and the crunch of fresh lettuce."
   },
   {
-    "question": "What type of pasta is shaped like tubes?",
+    "question": "What type of pasta is shaped like hollow tubes?",
     "choices": [
       "Spaghetti, a long thin solid strand",
       "Penne, a hollow tube-shaped pasta",
@@ -7356,7 +7356,7 @@
     "context": "Clams provide the briny, oceanic flavor base, cooked in a creamy broth with potatoes, onions, and salt pork. New England-style uses cream (white), Manhattan-style uses tomatoes (red), and Rhode Island-style uses clear broth — each region defends its version passionately."
   },
   {
-    "question": "What is a muffin similar to?",
+    "question": "What is a muffin most closely compared to?",
     "choices": [
       "A cupcake, sharing similar batter but with less sugar",
       "A flaky pastry shell filled with sweet custard",
@@ -7634,24 +7634,24 @@
   {
     "question": "What is the yellow part of an egg called?",
     "choices": [
-      "Yolk, the yellow nutrient-rich center",
+      "Yolk, the nutrient-rich center of an egg",
       "Albumen, the clear white portion surrounding it",
       "Chalaza, the twisted strand anchoring it in place",
       "Cuticle, the thin protective coating on the shell"
     ],
-    "answer": "Yolk, the yellow nutrient-rich center",
+    "answer": "Yolk, the nutrient-rich center of an egg",
     "tier": 1,
     "context": "The yolk is the nutrient-dense center of the egg, containing all of the fat, most of the vitamins (A, D, E, K), and the emulsifier lecithin. Its color comes from carotenoid pigments in the hen's diet -- hens eating marigold petals or yellow corn produce deeper orange yolks."
   },
   {
-    "question": "What season is associated with barbecue and grilling?",
+    "question": "What season is most associated with barbecue and grilling?",
     "choices": [
-      "Summer, the peak season for outdoor cooking",
+      "Summer, the peak time for outdoor cooking",
       "Winter, associated with holiday roasting and indoor feasts",
       "Spring, when outdoor cooking first resumes after cold months",
       "Fall, tied to harvest festivals and tailgate gatherings"
     ],
-    "answer": "Summer, the peak season for outdoor cooking",
+    "answer": "Summer, the peak time for outdoor cooking",
     "tier": 1,
     "context": "Summer's warm weather makes outdoor grilling both practical and enjoyable. In the US, Memorial Day (late May) and Fourth of July are the biggest grilling holidays, with Americans consuming approximately 7 billion hot dogs between Memorial Day and Labor Day."
   },
@@ -7668,11 +7668,11 @@
     "context": "Chickens (Gallus gallus domesticus) are the most numerous bird on Earth, with over 33 billion alive at any given time. They were first domesticated from red junglefowl in Southeast Asia around 8,000 years ago, originally for cockfighting rather than food."
   },
   {
-    "question": "Which meal is traditionally the largest of the day?",
+    "question": "Which meal is traditionally the most substantial of the day?",
     "choices": [
       "Dinner, typically the largest and most elaborate meal",
       "Breakfast, often called the most important meal of the day",
-      "Lunch, the traditional midday meal in many cultures",
+      "Lunch, the largest midday meal in many cultures",
       "Brunch, a late-morning meal combining breakfast and lunch"
     ],
     "answer": "Dinner, typically the largest and most elaborate meal",
@@ -7697,7 +7697,7 @@
       "Yolk — the yellow, nutrient-rich interior sphere of the egg",
       "Shell — the hard, calcified outer layer that encloses the egg",
       "Albumen — the clear, protein-rich white layer inside the egg",
-      "Membrane — the thin, papery film lining the inside of the shell"
+      "Membrane — the thin, papery film lining the outer surface of the egg"
     ],
     "answer": "Shell — the hard, calcified outer layer that encloses the egg",
     "tier": 1,
@@ -7740,7 +7740,7 @@
     "context": "Shrimp are the most popular seafood in the United States by consumption volume. They're technically decapod crustaceans, and the terms 'shrimp' and 'prawn' are used differently around the world — in the US, size determines the name; in the UK and Australia, 'prawn' is more common."
   },
   {
-    "question": "What do you call the midday meal?",
+    "question": "What is the name of the meal eaten in the middle of the day?",
     "choices": [
       "Breakfast, the first meal of the day",
       "Lunch, the meal eaten around midday",
@@ -7860,7 +7860,7 @@
     "context": "Chocolate (melted or cocoa powder) gives brownies their rich, fudgy character. The brownie was reportedly invented by accident in the late 1800s when a chef at Chicago's Palmer House Hotel forgot to add baking powder to a chocolate cake recipe."
   },
   {
-    "question": "What drink is made by brewing coffee beans?",
+    "question": "What hot drink is made by steeping or brewing roasted ground beans?",
     "choices": [
       "Tea, brewed from the dried leaves of the Camellia sinensis plant",
       "Coffee, brewed from roasted and ground coffee beans",
@@ -7884,14 +7884,14 @@
     "context": "Blended fruit creates the base, often thickened with yogurt, banana, or ice. The modern smoothie was popularized in the 1960s-70s by health food stores and juice bars on the American West Coast, evolving from simple fruit blends to protein-packed meal replacements."
   },
   {
-    "question": "What is the main ingredient in a chocolate cake?",
+    "question": "What is the main flavoring ingredient in a chocolate cake?",
     "choices": [
       "Vanilla extract, the base of white and yellow cake varieties",
       "Lemon zest, the key flavoring in citrus sponge cakes",
-      "Chocolate, in the form of cocoa powder or melted chocolate",
+      "Cocoa powder or melted chocolate, giving the cake its rich dark flavor",
       "Cinnamon spice, the defining ingredient in spiced layer cakes"
     ],
-    "answer": "Chocolate, in the form of cocoa powder or melted chocolate",
+    "answer": "Cocoa powder or melted chocolate, giving the cake its rich dark flavor",
     "tier": 1,
     "context": "Chocolate in the form of cocoa powder, melted chocolate, or both provides the signature deep, rich flavor. Dutch-process cocoa (treated with alkali) gives a darker color and mellower flavor, while natural cocoa is lighter and more acidic, often paired with baking soda."
   },
@@ -7908,7 +7908,7 @@
     "context": "Apples are pressed to extract their juice, which can be served fresh (sweet cider) or fermented into alcoholic 'hard cider.' Traditional cider-making blends sweet, sharp, and bitter apple varieties — the best ciders use apples too tannic to eat but perfect for fermenting."
   },
   {
-    "question": "What is the frozen treat on a stick called?",
+    "question": "What is the name of a flavored ice dessert frozen around a flat wooden stick?",
     "choices": [
       "Ice cream cone, a scoop of frozen cream served in a crispy waffle shell",
       "Popsicle, a flavored ice treat frozen around a flat wooden stick",
@@ -8184,7 +8184,7 @@
     "context": "Kneading aligns glutenin and gliadin proteins into an organized, elastic gluten network. Without kneading (or long autolyse rest), these proteins remain tangled and disorganized, producing a crumbly dough that can't trap CO2 or rise properly."
   },
   {
-    "question": "What herb is the key ingredient in traditional pesto?",
+    "question": "What herb is the key ingredient in traditional Italian green herb sauce?",
     "choices": [
       "Parsley, a bright herb common in Italian cooking",
       "Cilantro, widely used in Mediterranean herb sauces",
@@ -8235,11 +8235,11 @@
     "question": "What is baking soda also known as?",
     "choices": [
       "Sodium chloride, the chemical name for table salt",
-      "Sodium bicarbonate, the alkaline leavening compound in baking",
+      "Sodium bicarbonate, an alkaline leavening compound used in cooking",
       "Sodium nitrate, used as a curing agent in meats",
       "Sodium carbonate, a stronger alkaline compound called washing soda"
     ],
-    "answer": "Sodium bicarbonate, the alkaline leavening compound in baking",
+    "answer": "Sodium bicarbonate, an alkaline leavening compound used in cooking",
     "tier": 2,
     "context": "Sodium bicarbonate (NaHCO3) is an alkaline chemical leavener that reacts instantly with acids to produce CO2 gas. It's been used in baking since the 1800s and also works as a cleaning agent, antacid, and deodorizer -- one of the most versatile kitchen chemicals."
   },
@@ -8333,7 +8333,7 @@
       "The breakdown of proteins into gelatin during slow braising",
       "A browning reaction between amino acids and sugars caused by heat",
       "The conversion of sugars into alcohol and CO2 by yeast",
-      "The caramelization of pure sugars when heated above 160 degC"
+      "The caramelization reaction of pure sugars when heated above 160 degC"
     ],
     "answer": "A browning reaction between amino acids and sugars caused by heat",
     "tier": 2,
@@ -8587,7 +8587,7 @@
       "A fine-mesh strainer used to clarify stocks and remove impurities",
       "A parchment paper lid placed over food during cooking"
     ],
-    "answer": "A parchment paper lid placed over food during cooking",
+    "answer": "A circular piece of parchment placed directly on the surface of a simmering liquid",
     "tier": 2,
     "context": "A cartouche is a circle of parchment paper placed directly on the surface of a simmering liquid. It slows evaporation, keeps ingredients submerged, and prevents a skin from forming on sauces -- all while allowing some steam to escape, unlike a full lid."
   },

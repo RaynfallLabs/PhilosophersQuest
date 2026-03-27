@@ -213,6 +213,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "_start_weapon": "wood_shortbow",
         "_start_melee": "iron_sword",
         "_start_ammo": "iron_arrow",
+        "_start_extra_acc": ["charmander_stuffie"],
         "_greeting": "Corwin the Ranger nocks an arrow and descends into the dark.",
     },
     "cain": {
@@ -223,6 +224,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "_start_melee": "iron_sword",
         "_start_ammo": "iron_arrow",
         "_start_accessory": "ring_protection_silver",
+        "_start_extra_acc": ["charmander_stuffie"],
         "_greeting": "Cain the Hunter moves silently into the dark. Nothing escapes him.",
     },
     "fianna": {
@@ -1992,6 +1994,20 @@ class Game:
             except Exception:
                 pass
 
+        # -- Extra accessories (inventory-only items like Charmander Stuffie) --
+        extra_acc_ids = b.get('_start_extra_acc', [])
+        if extra_acc_ids:
+            try:
+                all_accs = load_items('accessory')
+                for eid in extra_acc_ids:
+                    ea = next((a for a in all_accs if a.id == eid), None)
+                    if ea:
+                        ea.identified = True
+                        self.player.known_item_ids.add(ea.id)
+                        self.player.inventory.append(ea)
+            except Exception:
+                pass
+
         # -- Armor (headgear, etc.) -----------------------------------------
         start_armor = b.get('_start_armor', None)
         if start_armor:
@@ -2165,6 +2181,8 @@ class Game:
                     self._observe_targeting = False
                     self._wand_targeting = False
                     self._pending_wand = None
+                    self._power_targeting = False
+                    self._pending_power = None
                 self.state = STATE_PLAYER
                 return True
             if self.state == STATE_STORY_POPUP:
@@ -6100,6 +6118,25 @@ class Game:
                 if desc:
                     lines.append((f"    {desc}", DIM, font_small, False))
 
+        # --- Item Passives (effects from carried items, not status effects) ---
+        item_passives = []
+        if any(getattr(i, 'id', '') == 'charmander_stuffie' for i in p.inventory):
+            item_passives.append(("Fire Protection", (245, 150, 60),
+                                  "50% fire damage reduction (Charmander Stuffie)"))
+            fb_cd = p.power_cooldowns.get('stuffie_fire_breath', 0)
+            if fb_cd > 0:
+                item_passives.append(("Fire Breath", DIM,
+                                      f"Cooling down: {fb_cd} turns"))
+            else:
+                item_passives.append(("Fire Breath", (245, 130, 50),
+                                      "Ready (V key > Fire Breath)"))
+        if item_passives:
+            lines.append(("", DIM, font_small, False))
+            lines.append(("ITEM PASSIVES", GOLD, font_head, True))
+            for name, color, desc in item_passives:
+                lines.append((f"  {name}", color, font_body, False))
+                lines.append((f"    {desc}", DIM, font_small, False))
+
         # --- Resistances ---
         if p.resistances:
             lines.append(("", DIM, font_small, False))
@@ -6831,17 +6868,27 @@ class Game:
                     self._on_monster_killed(target)
 
             elif effect == 'lightning_bolt':
+                from combat import get_line_tiles
                 dmg = self._int_scaled_damage(roll(wand.power) if wand.power else 10)
-                actual = target.take_damage(dmg)
-                if actual > 0:
-                    target.add_effect('stunned', 3)
+                px, py = self.player.x, self.player.y
+                line = get_line_tiles(px, py, target.x, target.y)
+                line_set = set(line)
+                line_hits = [m for m in self.monsters
+                             if m.alive and (m.x, m.y) in line_set and (m.x, m.y) in self.visible]
+                for lm in line_hits:
+                    actual = lm.take_damage(dmg)
+                    if actual > 0:
+                        lm.add_effect('stunned', 3)
+                    if not lm.alive:
+                        self._on_monster_killed(lm)
+                if len(line_hits) > 1:
                     self.add_message(
-                        f"Lightning strikes the {target.name} for {actual} damage -- it is stunned!", 'success'
-                    )
+                        f"Lightning arcs through {len(line_hits)} creatures for {dmg} damage each!", 'success')
+                elif line_hits:
+                    self.add_message(
+                        f"Lightning strikes the {line_hits[0].name} for {dmg} damage -- stunned!", 'success')
                 else:
-                    self.add_message(f"The {target.name} absorbs the lightning harmlessly.", 'info')
-                if not target.alive:
-                    self._on_monster_killed(target)
+                    self.add_message("The lightning dissipates harmlessly.", 'info')
 
             elif effect == 'acid_spray':
                 dmg = self._int_scaled_damage(roll(wand.power) if wand.power else 4)
@@ -8685,17 +8732,29 @@ class Game:
                 if not target.alive:
                     self._on_monster_killed(target)
             elif effect == 'lightning_bolt':
+                from combat import get_line_tiles
                 base_dmg = _roll(power) if power else 10
                 scaled = self._spell_damage(base_dmg, chain)
-                actual = target.take_damage(scaled)
-                if actual > 0:
-                    target.add_effect('stunned', max(1, int(3 * chain_scale)))
+                px, py = self.player.x, self.player.y
+                line = get_line_tiles(px, py, target.x, target.y)
+                line_set = set(line)
+                line_hits = [m for m in self.monsters
+                             if m.alive and (m.x, m.y) in line_set and (m.x, m.y) in self.visible]
+                stun_dur = max(1, int(3 * chain_scale))
+                for lm in line_hits:
+                    actual = lm.take_damage(scaled)
+                    if actual > 0:
+                        lm.add_effect('stunned', stun_dur)
+                    if not lm.alive:
+                        self._on_monster_killed(lm)
+                if len(line_hits) > 1:
                     self.add_message(
-                        f"Lightning strikes the {target.name} for {actual} damage! (chain {chain})", 'success')
+                        f"Lightning arcs through {len(line_hits)} creatures for {scaled} damage! (chain {chain})", 'success')
+                elif line_hits:
+                    self.add_message(
+                        f"Lightning strikes the {line_hits[0].name} for {scaled} damage! (chain {chain})", 'success')
                 else:
-                    self.add_message(f"The {target.name} absorbs the lightning harmlessly.", 'info')
-                if not target.alive:
-                    self._on_monster_killed(target)
+                    self.add_message("The lightning dissipates harmlessly.", 'info')
             elif effect == 'sleep_monster':
                 dur = max(2, int(6 * chain_scale))
                 target.add_effect('sleeping', dur)
@@ -9896,7 +9955,12 @@ class Game:
             confirm_keys = confirm_keys + (pygame.K_o,)
         if self._wand_targeting:
             confirm_keys = confirm_keys + (pygame.K_z,)
+        if getattr(self, '_power_targeting', False):
+            confirm_keys = confirm_keys + (pygame.K_v,)
         if key in confirm_keys:
+            if getattr(self, '_power_targeting', False):
+                self._confirm_power_target()
+                return
             if self._wand_targeting:
                 self._confirm_wand_target()
             elif self._observe_targeting:
@@ -9974,6 +10038,55 @@ class Game:
                           self.player.get_quiz_extra_seconds('science'),
             base_seconds=self.player.get_quiz_timer('science'),
         )
+
+    def _confirm_power_target(self):
+        """Confirm targeted power (e.g. Fire Breath)."""
+        from combat import _line_of_sight
+        cx, cy = self.target_cursor_x, self.target_cursor_y
+        pid = getattr(self, '_pending_power', None)
+        self._power_targeting = False
+        self._pending_power = None
+
+        target = next(
+            (m for m in self.monsters if m.alive and m.x == cx and m.y == cy), None
+        )
+        if not target or (cx, cy) not in self.visible:
+            self.add_message("No valid target.", 'warning')
+            self.state = STATE_PLAYER
+            return
+        if not _line_of_sight(self.player.x, self.player.y, cx, cy, self.dungeon):
+            self.add_message("No clear line of sight!", 'warning')
+            self.state = STATE_PLAYER
+            return
+
+        if pid == 'stuffie_fire_breath':
+            from dice import roll as _fb_roll
+            from combat import get_cone_tiles
+            base = _fb_roll('3d6')
+            scaled = self._int_scaled_damage(base)
+            px, py = self.player.x, self.player.y
+            cone = get_cone_tiles(px, py, cx, cy, max_range=6)
+            # Hit all monsters in the cone that are visible
+            hits = 0
+            kills = 0
+            for m in list(self.monsters):
+                if m.alive and (m.x, m.y) in cone and (m.x, m.y) in self.visible:
+                    actual = m.take_damage(scaled)
+                    hits += 1
+                    if not m.alive:
+                        self._on_monster_killed(m)
+                        kills += 1
+            self.add_message(
+                "The Charmander Stuffie glows white-hot! You breathe a cone of fire!", 'success')
+            if hits:
+                self.add_message(
+                    f"{hits} creatures engulfed for {scaled} fire damage! ({kills} slain)", 'combat')
+            else:
+                self.add_message("The flames find no target.", 'info')
+            self.player.power_cooldowns['stuffie_fire_breath'] = 500
+
+        self.state = STATE_PLAYER
+        self._advance_turn()
 
     def _confirm_observe(self):
         """Describe whatever is at the cursor position. Free action."""
@@ -12268,6 +12381,16 @@ class Game:
                 cd = power_cds.get(pid, 0)
                 powers.append((pid, pdef, 0, cd))
 
+        # Charmander Stuffie grants "Fire Breath" when carried
+        if any(getattr(i, 'id', '') == 'charmander_stuffie' for i in pl.inventory):
+            _fb_cd = power_cds.get('stuffie_fire_breath', 0)
+            _fb_def = {
+                'label': 'Fire Breath',
+                'desc': 'The Stuffie glows and you breathe a cone of fire at all visible enemies.',
+                'cooldown': 500, 'uses': 0,
+            }
+            powers.append(('stuffie_fire_breath', _fb_def, 0, _fb_cd))
+
         # Gleipnir grants "Bind Odinkiller" when carried
         if any(getattr(i, 'id', '') == 'gleipnir' for i in pl.inventory):
             _bind_def = {
@@ -12328,10 +12451,11 @@ class Game:
         if pdef.get('uses', 0) > 0 and uses_remaining <= 0:
             self.add_message(f"{pdef['label']} has no uses remaining.", 'warning')
             return
-        self._activate_power(pid)
-        self._advance_turn()
+        if not self._activate_power(pid):
+            self._advance_turn()
 
-    def _activate_power(self, pid: str):
+    def _activate_power(self, pid: str) -> bool:
+        """Activate a power. Returns True if it defers turn advance (e.g. targeting)."""
         from quirk_system import _ACTIVE_POWER_DEFS
         from status_effects import DEBUFFS
         pdef = _ACTIVE_POWER_DEFS.get(pid, {})
@@ -12522,6 +12646,31 @@ class Game:
                 'success')
             pl.power_cooldowns['elder_scream'] = 20
 
+        elif pid == 'stuffie_fire_breath':
+            # Enter targeting mode — damage applied on confirm
+            px, py = pl.x, pl.y
+            candidates = [
+                m for m in self.monsters
+                if m.alive and (m.x, m.y) in self.visible
+            ]
+            candidates.sort(key=lambda m: abs(m.x - px) + abs(m.y - py))
+            self._target_candidates = candidates
+            self._target_idx = 0
+            self._power_targeting = True
+            self._pending_power = 'stuffie_fire_breath'
+            if candidates:
+                self.target_cursor_x = candidates[0].x
+                self.target_cursor_y = candidates[0].y
+            else:
+                self.target_cursor_x = px
+                self.target_cursor_y = py
+            self.state = STATE_TARGET
+            self.add_message(
+                "The Charmander Stuffie glows warm... aim your fire breath! "
+                "Arrow keys to move, TAB to cycle, ENTER to fire, ESC to cancel.",
+                'info')
+            return True  # defer _advance_turn()
+
         elif pid == 'bind_odinkiller':
             fenrir = next((m for m in self.monsters
                            if m.alive and m.kind == 'fenrir_wolf'), None)
@@ -12561,6 +12710,8 @@ class Game:
 
         else:
             self.add_message(f"Used {label}.", 'info')
+
+        return False  # turn consumed immediately
 
     def _draw_power_menu(self):
         powers = getattr(self, '_power_menu_list', [])

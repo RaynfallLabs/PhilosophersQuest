@@ -5086,5 +5086,21 @@
       "36-50": 2,
       "51-100": 0
     }
+  },
+  "charmander_stuffie": {
+    "name": "Charmander Stuffie",
+    "symbol": "&",
+    "color": [255, 140, 50],
+    "weight": 1.0,
+    "min_level": 999,
+    "slot": "none",
+    "equip_threshold": 0,
+    "quiz_tier": 1,
+    "effects": {},
+    "identified": true,
+    "can_be_cursed": false,
+    "unidentified_name": "stuffed toy dragon",
+    "lore": "A child's favorite toy and oldest friend. It looks like a small orange dragon with a burning ember on the tip of its tail. The love shown to this toy has imbued it with a shimmering magical power that protects and strengthens the bearer.",
+    "floorSpawnWeight": {}
   }
 }

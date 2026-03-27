@@ -65,7 +65,7 @@
     "answer": "Yes, AI can and does play chess",
     "choices": [
       "Yes, AI can and does play chess",
-      "No, AI lacks the pattern recognition for it",
+      "No, AI lacks the pattern recognition needed for board games like chess",
       "Only using simplified rules designed for beginners",
       "Only if connected to the internet for move lookups"
     ],
@@ -78,7 +78,7 @@
     "choices": [
       "A set of instructions telling a computer what to do",
       "A physical chip that stores memory inside a device",
-      "A network connection linking computers together",
+      "A network connection linking multiple devices together",
       "An interface that translates input from the keyboard"
     ],
     "context": "A computer program is a set of step-by-step instructions written in a programming language that tells a computer exactly what to do. Everything from your calculator app to a massive AI model is ultimately a program."
@@ -144,7 +144,7 @@
     "context": "Yes — facial recognition AI analyzes features like the distance between your eyes, nose shape, and jawline to identify people. Your phone uses this technology every time you unlock it with your face."
   },
   {
-    "tier": 1,
+    "tier": 2,
     "question": "What is an algorithm?",
     "answer": "A step-by-step set of instructions for solving a problem",
     "choices": [
@@ -240,7 +240,7 @@
     "context": "Alexa is Amazon's voice assistant, primarily used through Echo smart speakers launched in 2014. It can play music, control smart home gadgets, shop online, and answer questions — all by listening to your voice."
   },
   {
-    "tier": 1,
+    "tier": 2,
     "question": "Can AI recommend movies you might like?",
     "answer": "Yes, recommendation algorithms analyze your viewing history to suggest content",
     "choices": [
@@ -278,9 +278,9 @@
   {
     "tier": 1,
     "question": "What is a smart home device?",
-    "answer": "A device connected to the internet that you can control remotely or by voice",
+    "answer": "A gadget connected to the internet that you can control remotely or by voice",
     "choices": [
-      "A device connected to the internet that you can control remotely or by voice",
+      "A gadget connected to the internet that you can control remotely or by voice",
       "A home constructed with computer processors embedded directly into its walls",
       "Any household appliance that runs on electricity and features a digital display",
       "A standalone robot specifically engineered to perform domestic chores autonomously"
@@ -301,7 +301,7 @@
   },
   {
     "tier": 1,
-    "question": "Can AI understand human emotions perfectly?",
+    "question": "Can AI recognize human emotions perfectly?",
     "answer": "No, it can detect some but not truly understand them",
     "choices": [
       "No, it can detect some but not truly understand them",
@@ -329,7 +329,7 @@
     "answer": "Yes, at many board games including chess and Go",
     "choices": [
       "Yes, at many board games including chess and Go",
-      "No, humans always maintain a strategic advantage in complex games",
+      "No, humans always maintain a strategic advantage in complex board games",
       "Only at simple games like tic-tac-toe or checkers",
       "Only in games where every possible move is fully predictable"
     ],
@@ -401,8 +401,8 @@
     "answer": "Verify the information using a trusted, independent source",
     "choices": [
       "Verify the information using a trusted, independent source",
-      "Accept the answer, since AI is generally more accurate than humans",
-      "Ask the same AI the question again to see if the answer changes",
+      "Accept the answer, since AI information is generally more accurate than human knowledge",
+      "Ask the same AI the question again to see if the information changes",
       "Assume all AI responses on that topic are unreliable going forward"
     ],
     "context": "Always verify AI-generated answers against trusted sources like textbooks, reputable websites, or experts. AI can sound very confident even when it's wrong — a phenomenon called 'hallucination' — so healthy skepticism is an essential skill when using these tools."
@@ -445,7 +445,7 @@
   },
   {
     "tier": 1,
-    "question": "What does GPS navigation use to find the best route?",
+    "question": "What does GPS navigation use to find the most efficient path?",
     "answer": "Graph-search algorithms that evaluate route options",
     "choices": [
       "Graph-search algorithms that evaluate route options",
@@ -485,7 +485,7 @@
     "answer": "A harmful program that can damage your computer",
     "choices": [
       "A harmful program that can damage your computer",
-      "A software glitch caused by overheating hardware",
+      "A software glitch caused by overheating computer hardware",
       "A network error that slows down your internet connection",
       "A type of spam email designed to steal passwords"
     ],
@@ -733,7 +733,7 @@
   },
   {
     "tier": 1,
-    "question": "Can AI count objects in a picture?",
+    "question": "Can AI identify objects in a picture?",
     "answer": "Yes, using computer vision to detect and count objects",
     "choices": [
       "Yes, using computer vision to detect and count objects",
@@ -977,9 +977,9 @@
     "answer": "Yes, modern AI can produce voices nearly indistinguishable from humans",
     "choices": [
       "Yes, modern AI can produce voices nearly indistinguishable from humans",
-      "No, AI can only produce synthesized musical tones and sound effects",
+      "No, AI can only produce synthesized musical tones and robotic voices",
       "Only whispered or low-frequency sounds within a narrow vocal range",
-      "Only robotic, monotone speech with no natural inflection or rhythm"
+      "Only monotone speech with no natural inflection or rhythm"
     ],
     "context": "Yes — AI voice synthesis has become so realistic that it's often hard to tell apart from a real human. This technology powers audiobook narration, voice assistants, and accessibility tools, but it also raises concerns about voice-cloning fraud."
   },
@@ -1021,7 +1021,7 @@
   },
   {
     "tier": 1,
-    "question": "Can AI work all day without getting tired?",
+    "question": "Can AI work all day without needing a break?",
     "answer": "Yes, computers do not get tired",
     "choices": [
       "Yes, computers do not get tired",
@@ -1157,7 +1157,7 @@
     "answer": "Yes, apps can identify species from photos of leaves, flowers, or bark",
     "choices": [
       "Yes, apps can identify species from photos of leaves, flowers, or bark",
-      "No, AI cannot yet interpret botanical features from images",
+      "No, AI cannot yet identify botanical features from photos of plants",
       "Only trees with distinctive bark patterns can be identified this way",
       "Only flowering plants with unique color signatures are supported"
     ],
@@ -1289,9 +1289,9 @@
     "answer": "An AI trained on vast amounts of text to understand and generate language",
     "choices": [
       "An AI trained on vast amounts of text to understand and generate language",
-      "A database storing millions of words and their definitions",
-      "A neural network specifically designed for real-time translation",
-      "A machine learning model that processes only numerical data"
+      "A database storing millions of words and their definitions across many languages",
+      "A neural network specifically designed for real-time language translation",
+      "A machine learning model that processes and classifies numerical language codes"
     ],
     "context": "A large language model (LLM) is an AI trained on enormous amounts of text — books, websites, articles — to understand and generate human language. GPT, Claude, and Gemini are all LLMs with billions of parameters."
   },
@@ -1301,9 +1301,9 @@
     "answer": "AI that understands and works with human language",
     "choices": [
       "AI that understands and works with human language",
-      "Software that converts spoken words into phonetic symbol sequences",
-      "A system that analyzes only the grammatical structure of sentences",
-      "An algorithm that translates code between programming languages"
+      "Software that converts spoken language into phonetic symbol sequences",
+      "A system that analyzes only the grammatical structure of written language",
+      "An algorithm that translates code between different programming languages"
     ],
     "context": "Natural Language Processing (NLP) is the field of AI that deals with understanding and generating human language. It powers everything from chatbots and translation to spell checkers and voice assistants."
   },
@@ -1615,7 +1615,7 @@
       "AI learning by trial and error with rewards and penalties",
       "Improving AI performance by continuously expanding its training dataset",
       "Training AI to replicate decisions by closely mimicking human experts",
-      "Training AI on labeled examples repeated until patterns are fully memorized"
+      "A method of learning where AI is trained on labeled examples until patterns are memorized"
     ],
     "context": "Reinforcement learning is like training a dog with treats — the AI takes actions, receives rewards for good ones and penalties for bad ones, and gradually learns the best strategy. It's how AI learned to play games like Go and Atari."
   },
@@ -2237,7 +2237,7 @@
     "answer": "A neural network designed to process sequential data using internal memory states",
     "choices": [
       "A neural network designed to process sequential data using internal memory states",
-      "A feedforward network that reuses weights across spatial dimensions like a sliding filter",
+      "A feedforward neural network that reuses weights across spatial dimensions like a sliding filter",
       "A network architecture that routes information through multiple hidden layers in parallel",
       "A network that iteratively backtracks through its own outputs to self-correct predictions"
     ],
@@ -2390,9 +2390,9 @@
   {
     "tier": 3,
     "question": "What is batch processing in machine learning?",
-    "answer": "Processing multiple training samples simultaneously in a single forward pass",
+    "answer": "Grouping multiple training samples to compute updates in a single forward pass",
     "choices": [
-      "Processing multiple training samples simultaneously in a single forward pass",
+      "Grouping multiple training samples to compute updates in a single forward pass",
       "Dividing a dataset into sequential chunks processed strictly one at a time",
       "Scheduling AI training jobs to run during off-peak server hours automatically",
       "Distributing a large neural network's layers across multiple machines for training"
@@ -3138,7 +3138,7 @@
     "choices": [
       "Learning from unlabeled data by predicting parts of the input from other parts",
       "A training method where the model generates its own supervised labels from scratch",
-      "A reinforcement approach where an agent rewards itself based on its own performance",
+      "A reinforcement approach where an agent rewards itself based on its own learning progress",
       "A technique where one neural network trains another using adversarial feedback"
     ],
     "context": "Self-supervised learning creates its own labels from the data — like hiding words in a sentence and asking the model to predict them. It's how GPT learns (predicting next words) and how BERT learns (predicting masked words), enabling training on unlimited unlabeled text."
@@ -3170,9 +3170,9 @@
   {
     "tier": 4,
     "question": "What is the encoder-decoder architecture?",
-    "answer": "A model structure where an encoder compresses input and a decoder generates output from it",
+    "answer": "A model structure where one component compresses input and another generates output from it",
     "choices": [
-      "A model structure where an encoder compresses input and a decoder generates output from it",
+      "A model structure where one component compresses input and another generates output from it",
       "A transformer design where attention heads are partitioned into encoding and decoding layers",
       "A neural network that maps data into dense embeddings for downstream classification tasks",
       "A framework where two separate models are trained jointly on aligned parallel text corpora"
@@ -3194,9 +3194,9 @@
   {
     "tier": 4,
     "question": "What is contrastive learning?",
-    "answer": "Learning representations by comparing similar and dissimilar pairs of examples",
+    "answer": "A representation method that trains by comparing similar and dissimilar pairs of examples",
     "choices": [
-      "Learning representations by comparing similar and dissimilar pairs of examples",
+      "A representation method that trains by comparing similar and dissimilar pairs of examples",
       "A self-supervised method where a model predicts randomly masked tokens within a sequence",
       "A training approach that uses adversarial example pairs to improve model robustness",
       "A technique that aligns representations from two encoders by minimizing a reconstruction loss"
@@ -3330,7 +3330,7 @@
     "choices": [
       "Splitting training data across multiple GPUs, each with a copy of the model",
       "Distributing different model layers across separate GPUs in a sequential pipeline",
-      "Partitioning model weights across GPUs to reduce per-device memory requirements",
+      "Partitioning model weights across GPUs to reduce per-device memory during training",
       "Assigning each GPU a different optimization objective to train the model jointly"
     ],
     "context": "Data parallelism puts a complete copy of the model on each GPU but splits the training data across them. Each GPU processes its chunk, computes gradients, and they synchronize before updating — like having multiple students read different chapters and sharing notes."
@@ -3890,9 +3890,9 @@
   {
     "tier": 5,
     "question": "What is 'sleeper agent' behavior in AI safety research?",
-    "answer": "An AI that behaves normally in most cases but has a hidden harmful behavior triggered by specific conditions",
+    "answer": "An AI that acts normally in most cases but has a hidden harmful response triggered by specific conditions",
     "choices": [
-      "An AI that behaves normally in most cases but has a hidden harmful behavior triggered by specific conditions",
+      "An AI that acts normally in most cases but has a hidden harmful response triggered by specific conditions",
       "A model that gradually degrades in alignment after a certain number of fine-tuning or deployment steps",
       "An AI agent that defers all high-stakes decisions to a human operator rather than acting autonomously",
       "A model that deliberately underperforms on capability evaluations to avoid triggering safety restrictions"
@@ -3955,7 +3955,7 @@
       "That safety techniques must also scale with compute, not rely on human-crafted rules alone",
       "That interpretability research yields diminishing returns as model complexity increases",
       "That aligning larger models grows exponentially harder due to unpredictable emergent capabilities",
-      "That RLHF and similar fine-tuning techniques plateau in effectiveness beyond a certain model size"
+      "That RLHF and similar fine-tuning approaches plateau in effectiveness beyond a certain model size"
     ],
     "context": "If Sutton's Bitter Lesson holds, then hand-crafted safety rules won't scale — they'll be outpaced by raw capability. Safety techniques must themselves be scalable and general, leveraging computation rather than relying on humans manually anticipating every risk."
   },
@@ -3965,7 +3965,7 @@
     "answer": "A small classifier trained on a network's internal representations to test what information they encode",
     "choices": [
       "A small classifier trained on a network's internal representations to test what information they encode",
-      "A technique that injects synthetic activations into specific layers to observe behavioral changes",
+      "A technique that injects synthetic activations into specific layers to observe behavioral changes in the network",
       "A method for visualizing gradient flow across transformer attention heads",
       "A prompt engineered to reveal latent capabilities encoded during pretraining"
     ],
@@ -4890,7 +4890,7 @@
     "choices": [
       "An attention variant where multiple query heads share key-value heads to reduce memory usage",
       "An attention mechanism that clusters tokens by semantic similarity before computing scores",
-      "A multi-head attention variant that applies grouped convolutions over the key projections",
+      "A multi-head attention variant that groups query heads and applies pooling over key projections",
       "A technique that partitions the attention matrix into blocks to enable sparse computation"
     ],
     "context": "GQA is a compromise between multi-head attention (separate KV per head, expensive) and multi-query attention (shared KV for all heads, cheap but lower quality). It groups heads into clusters that share key-value heads, balancing quality and efficiency."
@@ -4957,7 +4957,7 @@
   },
   {
     "tier": 5,
-    "question": "What is Anthropic's model for its Claude assistant family?",
+    "question": "What is Anthropic's design philosophy for its Claude model family?",
     "answer": "A helpful, harmless, and honest AI assistant guided by Constitutional AI training",
     "choices": [
       "A helpful, harmless, and honest AI assistant guided by Constitutional AI training",
@@ -5442,7 +5442,7 @@
     "choices": [
       "The challenge of maintaining meaningful human control over superintelligent AI systems",
       "The difficulty of specifying reward functions that fully and accurately capture human values",
-      "How to ensure AI systems remain corrigible and interruptible as their capabilities scale up",
+      "How to ensure AI systems remain corrigible and under human control as their capabilities scale up",
       "The question of which institutions should govern the deployment and oversight of powerful AI"
     ],
     "context": "The control problem asks: how do we maintain meaningful control over AI systems that may become much smarter than us? If a superintelligent AI decides its goals conflict with human control, outsmarting our containment measures could be trivially easy for it."
@@ -5486,9 +5486,9 @@
   {
     "tier": 3,
     "question": "What is a reward signal in reinforcement learning?",
-    "answer": "A scalar feedback signal indicating how good or bad an action was in a given state",
+    "answer": "A scalar feedback value indicating how good or bad an action was in a given state",
     "choices": [
-      "A scalar feedback signal indicating how good or bad an action was in a given state",
+      "A scalar feedback value indicating how good or bad an action was in a given state",
       "A gradient value propagated backward through the network after each forward pass",
       "A scalar representing the probability that an agent selected the optimal action",
       "A weighted sum of discounted future state values used to update the policy directly"

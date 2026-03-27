@@ -1,23 +1,23 @@
 [
   {
     "tier": 1,
-    "question": "Capital of France?",
-    "answer": "Paris, the capital city on the River Seine",
+    "question": "What is the capital of France?",
+    "answer": "Paris, a major city located on the River Seine",
     "choices": [
       "Lyon, France's second-largest metropolitan area",
       "Marseille, France's oldest city and main southern port",
-      "Paris, the capital city on the River Seine",
+      "Paris, a major city located on the River Seine",
       "Nice, the largest city on the French Riviera"
     ],
     "context": "Paris has been the capital of France since the 10th century. It sits on the River Seine and is home to the Eiffel Tower, the Louvre Museum, and Notre-Dame Cathedral. With over 2 million residents, it is one of Europe's most important cultural and economic centers."
   },
   {
     "tier": 1,
-    "question": "Capital of the United States?",
-    "answer": "Washington, D.C., the planned capital on the Potomac River",
+    "question": "What is the capital of the United States?",
+    "answer": "Washington, D.C., the planned city on the Potomac River",
     "choices": [
       "New York City, the nation's most populous city",
-      "Washington, D.C., the planned capital on the Potomac River",
+      "Washington, D.C., the planned city on the Potomac River",
       "Los Angeles, the cultural hub of the West Coast",
       "Chicago, the historic heart of the Midwest"
     ],
@@ -121,12 +121,12 @@
   },
   {
     "tier": 1,
-    "question": "Capital of Canada?",
-    "answer": "Ottawa, the federal capital situated on the Ontario-Quebec border",
+    "question": "What is the capital of Canada?",
+    "answer": "Ottawa, the federal seat of government on the Ontario-Quebec border",
     "choices": [
       "Toronto, the largest city and financial hub of Canada",
       "Vancouver, major Pacific coast metropolis in British Columbia",
-      "Ottawa, the federal capital situated on the Ontario-Quebec border",
+      "Ottawa, the federal seat of government on the Ontario-Quebec border",
       "Montreal, cultural heart of French Canada and Quebec's largest city"
     ],
     "context": "Ottawa was chosen as capital in 1857 by Queen Victoria, partly because it sat on the border of English-speaking Ontario and French-speaking Quebec. It was also far enough from the US border to be defensible."
@@ -145,12 +145,12 @@
   },
   {
     "tier": 1,
-    "question": "Capital of Italy?",
-    "answer": "Rome, the eternal city and capital of the Italian Republic",
+    "question": "What is the capital of Italy?",
+    "answer": "Rome, the eternal city and seat of the Italian Republic",
     "choices": [
       "Milan, Italy's northern hub of fashion, finance, and design",
       "Naples, historic southern port city near the ruins of Pompeii",
-      "Rome, the eternal city and capital of the Italian Republic",
+      "Rome, the eternal city and seat of the Italian Republic",
       "Venice, the iconic city of canals built across a coastal lagoon"
     ],
     "context": "Rome was the center of the Roman Empire for over 500 years and remains home to the Vatican, the world's smallest independent state. The saying 'All roads lead to Rome' dates back to the empire's vast road network."
@@ -193,7 +193,7 @@
   },
   {
     "tier": 1,
-    "question": "Capital of South Africa (executive)?",
+    "question": "Which city serves as the executive capital of South Africa?",
     "answer": "Pretoria, seat of the national executive government",
     "choices": [
       "Cape Town, seat of the national parliament",
@@ -208,7 +208,7 @@
     "question": "Capital of Argentina?",
     "answer": "Buenos Aires, the federal capital and largest city",
     "choices": [
-      "Córdoba, the second-largest city in Argentina",
+      "Córdoba, the second-largest city and cultural capital of the interior",
       "Rosario, birthplace of Che Guevara and Messi",
       "Buenos Aires, the federal capital and largest city",
       "Mendoza, the heart of Argentina's wine country"
@@ -221,7 +221,7 @@
     "answer": "Seoul, the historic capital since the Joseon Dynasty",
     "choices": [
       "Busan, South Korea's major southern port city",
-      "Incheon, home of the international gateway airport",
+      "Incheon, the former capital region and international gateway",
       "Seoul, the historic capital since the Joseon Dynasty",
       "Daegu, a large inland city in the southeast"
     ],
@@ -232,7 +232,7 @@
     "question": "Capital of Saudi Arabia?",
     "answer": "Riyadh, the inland political and administrative capital",
     "choices": [
-      "Mecca, the holiest city in Islam",
+      "Mecca, the holiest city and religious capital of Islam",
       "Jeddah, the main Red Sea port and commercial hub",
       "Riyadh, the inland political and administrative capital",
       "Medina, the second holiest city in the Islamic world"
@@ -461,7 +461,7 @@
     "answer": "Africa, where it covers about 25% of the continent",
     "choices": [
       "Africa, where it covers about 25% of the continent",
-      "Asia, across the Arabian Peninsula and Central Asia",
+      "Asia, home to the Arabian Desert spanning much of the continent",
       "Australia, home to the Great Victoria Desert",
       "South America, where the Atacama Desert is located"
     ],
@@ -496,7 +496,7 @@
     "question": "Capital of Greece?",
     "answer": "Athens, the capital and largest city",
     "choices": [
-      "Thessaloniki, Greece's second-largest city",
+      "Thessaloniki, Greece's second-largest city and cultural capital of the north",
       "Athens, the capital and largest city",
       "Heraklion, the largest city of Crete",
       "Sparta, the ancient rival of Athens"
@@ -534,7 +534,7 @@
     "choices": [
       "Rotterdam, Europe's largest port city",
       "Amsterdam, the constitutional capital",
-      "The Hague, seat of the Dutch government",
+      "The Hague, seat of the Dutch government and royal capital",
       "Utrecht, home to the Netherlands' largest university"
     ],
     "context": "Amsterdam was built on millions of wooden poles driven into marshy ground. The city has more canals than Venice and more bicycles than people, with an estimated 881,000 bikes for 873,000 residents. Note that The Hague, not Amsterdam, serves as the actual seat of government."
@@ -542,10 +542,10 @@
   {
     "tier": 1,
     "question": "Capital of Sweden?",
-    "answer": "Stockholm, the capital built on 14 islands where Lake Mälaren meets the Baltic",
+    "answer": "Stockholm, built on 14 islands where Lake Mälaren meets the Baltic",
     "choices": [
       "Gothenburg, Sweden's second-largest city and major port",
-      "Stockholm, the capital built on 14 islands where Lake Mälaren meets the Baltic",
+      "Stockholm, built on 14 islands where Lake Mälaren meets the Baltic",
       "Malmö, a southern city connected to Denmark by the Øresund Bridge",
       "Uppsala, home to Scandinavia's oldest university founded in 1477"
     ],
@@ -554,11 +554,11 @@
   {
     "tier": 1,
     "question": "Capital of Norway?",
-    "answer": "Oslo, the capital seated at the head of a long fjord in the southeast",
+    "answer": "Oslo, seated at the head of a long fjord in the southeast",
     "choices": [
       "Bergen, the historic Hanseatic trading port on Norway's west coast",
       "Trondheim, site of the medieval Nidaros Cathedral in central Norway",
-      "Oslo, the capital seated at the head of a long fjord in the southeast",
+      "Oslo, seated at the head of a long fjord in the southeast",
       "Stavanger, the center of Norway's thriving offshore oil industry"
     ],
     "context": "Oslo sits at the head of a 100-kilometer fjord and is surrounded by forested hills. It was founded around 1040 AD by King Harald Hardrada and was known as Christiania from 1624 to 1925."
@@ -578,10 +578,10 @@
   {
     "tier": 1,
     "question": "Capital of Austria?",
-    "answer": "Vienna, the imperial capital and historic heart of classical European music",
+    "answer": "Vienna, the imperial city and historic heart of classical European music",
     "choices": [
       "Salzburg, birthplace of Mozart and setting for The Sound of Music",
-      "Vienna, the imperial capital and historic heart of classical European music",
+      "Vienna, the imperial city and historic heart of classical European music",
       "Graz, Austria's second-largest city nestled in the southern Styria region",
       "Innsbruck, an Alpine city that hosted the Winter Olympics in 1964 and 1976"
     ],
@@ -590,10 +590,10 @@
   {
     "tier": 1,
     "question": "Capital of Belgium?",
-    "answer": "Brussels, the bilingual capital and seat of key European Union institutions",
+    "answer": "Brussels, the bilingual city and seat of key European Union institutions",
     "choices": [
       "Antwerp, Belgium's largest port and a world-renowned diamond-trading center",
-      "Brussels, the bilingual capital and seat of key European Union institutions",
+      "Brussels, the bilingual city and seat of key European Union institutions",
       "Ghent, a medieval Flemish city celebrated for its canals and ancient castle",
       "Bruges, a well-preserved medieval city often called the Venice of the North"
     ],
@@ -604,7 +604,7 @@
     "question": "Capital of Israel?",
     "answer": "Jerusalem, the ancient holy city and declared capital",
     "choices": [
-      "Tel Aviv, the largest city and financial hub",
+      "Tel Aviv, the largest city and financial capital of commerce",
       "Jerusalem, the ancient holy city and declared capital",
       "Haifa, the major northern port city",
       "Ramallah, seat of the Palestinian Authority"
@@ -641,7 +641,7 @@
     "answer": "Jakarta, the coastal capital currently being replaced by Nusantara",
     "choices": [
       "Surabaya, Indonesia's second-largest industrial city",
-      "Bandung, the cooler highland city known as the Paris of Java",
+      "Bandung, the cooler highland city once called the capital of Java",
       "Jakarta, the coastal capital currently being replaced by Nusantara",
       "Yogyakarta, the center of Javanese royal culture"
     ],
@@ -678,7 +678,7 @@
     "choices": [
       "The Arctic, a polar region surrounding the North Pole",
       "Antarctica, the southernmost continent",
-      "Oceania, a loosely defined region of Pacific island nations",
+      "Oceania, a loosely defined continent of Pacific island nations",
       "Greenland, the world's largest island, governed by Denmark"
     ],
     "context": "Antarctica has no permanent human population and is governed by the Antarctic Treaty of 1959, which dedicates the continent to peaceful scientific research. About 70% of Earth's fresh water is locked in its ice sheet."
@@ -688,7 +688,7 @@
     "question": "Capital of Kenya?",
     "answer": "Nairobi, the country's sprawling highland capital",
     "choices": [
-      "Mombasa, Kenya's largest coastal port city",
+      "Mombasa, Kenya's largest coastal port and former colonial capital",
       "Nairobi, the country's sprawling highland capital",
       "Kisumu, a major city on the shores of Lake Victoria",
       "Eldoret, a highland city in Kenya's Rift Valley region"
@@ -701,7 +701,7 @@
     "answer": "Kyiv, the historic capital on the Dnipro River",
     "choices": [
       "Kharkiv, Ukraine's second-largest city near the Russian border",
-      "Odessa, a major Black Sea port and cultural hub",
+      "Odessa, a major Black Sea port and former imperial capital of the south",
       "Kyiv, the historic capital on the Dnipro River",
       "Lviv, a historic western city close to the Polish border"
     ],
@@ -890,22 +890,22 @@
   {
     "tier": 1,
     "question": "The Mississippi River is on which continent?",
-    "answer": "North America, drained by the vast Mississippi-Missouri system",
+    "answer": "North America, home to the Great Plains and vast river networks",
     "choices": [
       "South America, home to the Amazon and Paraná rivers",
-      "Europe, drained by great rivers like the Rhine and Danube",
+      "North America, home to the Great Plains and vast river networks",
       "Africa, where the Nile and Congo river systems flow",
-      "North America, drained by the vast Mississippi-Missouri system"
+      "Europe, drained by great rivers like the Rhine and Danube"
     ],
     "context": "The Mississippi-Missouri river system drains about 40% of the continental United States, covering all or part of 31 states. It flows over 3,700 kilometers from Minnesota to the Gulf of Mexico. Mark Twain immortalized the river in his novels about life along its banks."
   },
   {
     "tier": 1,
     "question": "Capital of Morocco?",
-    "answer": "Rabat, the political capital on the Atlantic coast",
+    "answer": "Rabat, the seat of government on the Atlantic coast",
     "choices": [
       "Casablanca, Morocco's largest commercial and financial hub",
-      "Rabat, the political capital on the Atlantic coast",
+      "Rabat, the seat of government on the Atlantic coast",
       "Marrakech, the historic Red City in the south",
       "Fez, home to the world's oldest university"
     ],
@@ -914,10 +914,10 @@
   {
     "tier": 1,
     "question": "Capital of Algeria?",
-    "answer": "Algiers, the coastal capital known as The White City",
+    "answer": "Algiers, the coastal city known as The White City",
     "choices": [
       "Oran, Algeria's second-largest city and major western port",
-      "Algiers, the coastal capital known as The White City",
+      "Algiers, the coastal city known as The White City",
       "Constantine, built on dramatic rocky gorges in the northeast",
       "Annaba, a historic port city near the Tunisian border"
     ],
@@ -1034,10 +1034,10 @@
   {
     "tier": 1,
     "question": "Capital of Cuba?",
-    "answer": "Havana, the historic capital on Cuba's northwest coast",
+    "answer": "Havana, a historic city on Cuba's northwest coast",
     "choices": [
       "Santiago de Cuba, the island's second-largest city",
-      "Havana, the historic capital on Cuba's northwest coast",
+      "Havana, a historic city on Cuba's northwest coast",
       "Camagüey, a major inland colonial city",
       "Holguín, a large city in eastern Cuba"
     ],
@@ -1130,10 +1130,10 @@
   {
     "tier": 1,
     "question": "Capital of Ecuador?",
-    "answer": "Quito, the high-altitude capital nestled among volcanoes",
+    "answer": "Quito, a high-altitude city nestled among volcanoes",
     "choices": [
       "Guayaquil, Ecuador's largest port and commercial hub",
-      "Quito, the high-altitude capital nestled among volcanoes",
+      "Quito, a high-altitude city nestled among volcanoes",
       "Cuenca, Ecuador's third-largest UNESCO-listed city",
       "Manta, the major Pacific coast fishing and trade port"
     ],
@@ -1154,10 +1154,10 @@
   {
     "tier": 1,
     "question": "Capital of Uruguay?",
-    "answer": "Montevideo, the capital city home to nearly half of Uruguay's population",
+    "answer": "Montevideo, a coastal city home to nearly half of Uruguay's population",
     "choices": [
       "Salto, Uruguay's second-largest city by population",
-      "Montevideo, the capital city home to nearly half of Uruguay's population",
+      "Montevideo, a coastal city home to nearly half of Uruguay's population",
       "Paysandú, a major river port on the Uruguay River",
       "Colonia del Sacramento, the oldest European settlement in Uruguay"
     ],
@@ -1178,10 +1178,10 @@
   {
     "tier": 1,
     "question": "Capital of North Korea?",
-    "answer": "Pyongyang, the capital rebuilt with Soviet-style architecture after the Korean War",
+    "answer": "Pyongyang, rebuilt with Soviet-style architecture after the Korean War",
     "choices": [
       "Hamhung, North Korea's second-largest industrial city",
-      "Pyongyang, the capital rebuilt with Soviet-style architecture after the Korean War",
+      "Pyongyang, rebuilt with Soviet-style architecture after the Korean War",
       "Chongjin, the country's major northeastern port city",
       "Kaesong, the historic city situated near the South Korean border"
     ],
@@ -1202,10 +1202,10 @@
   {
     "tier": 2,
     "question": "Capital of Bangladesh?",
-    "answer": "Dhaka, the densely populated capital on the Buriganga River",
+    "answer": "Dhaka, the densely populated city on the Buriganga River",
     "choices": [
       "Chittagong, the major port city on the Bay of Bengal",
-      "Dhaka, the densely populated capital on the Buriganga River",
+      "Dhaka, the densely populated city on the Buriganga River",
       "Sylhet, the tea-growing region in the northeast",
       "Rajshahi, the silk-producing city on the Padma River"
     ],
@@ -1226,10 +1226,10 @@
   {
     "tier": 2,
     "question": "Capital of Nepal?",
-    "answer": "Kathmandu, the Himalayan capital in a bowl-shaped valley",
+    "answer": "Kathmandu, the Himalayan city situated in a bowl-shaped valley",
     "choices": [
       "Pokhara, the gateway city to the Annapurna mountain range",
-      "Kathmandu, the Himalayan capital in a bowl-shaped valley",
+      "Kathmandu, the Himalayan city situated in a bowl-shaped valley",
       "Bhaktapur, the medieval city of devotees in the valley",
       "Lalitpur, the ancient city of fine arts also known as Patan"
     ],
@@ -1238,10 +1238,10 @@
   {
     "tier": 2,
     "question": "Capital of Afghanistan?",
-    "answer": "Kabul, the high-altitude capital in a mountain-ringed valley",
+    "answer": "Kabul, the high-altitude city in a mountain-ringed valley",
     "choices": [
       "Kandahar, the spiritual heartland of the Pashtun people",
-      "Kabul, the high-altitude capital in a mountain-ringed valley",
+      "Kabul, the high-altitude city in a mountain-ringed valley",
       "Herat, the ancient Silk Road city near the Iranian border",
       "Mazar-i-Sharif, home to the famous Blue Mosque in the north"
     ],
@@ -1262,10 +1262,10 @@
   {
     "tier": 2,
     "question": "Capital of Lebanon?",
-    "answer": "Beirut, the capital and largest city on the Mediterranean coast",
+    "answer": "Beirut, the largest and most populous city on the Mediterranean coast",
     "choices": [
       "Tripoli, the largest city in northern Lebanon",
-      "Beirut, the capital and largest city on the Mediterranean coast",
+      "Beirut, the largest and most populous city on the Mediterranean coast",
       "Sidon, an ancient Phoenician port city in the south",
       "Tyre, a historic coastal city near the Israeli border"
     ],
@@ -1274,10 +1274,10 @@
   {
     "tier": 2,
     "question": "Capital of Syria?",
-    "answer": "Damascus, the capital city nestled in an oasis at the foot of Mount Qasioun",
+    "answer": "Damascus, the ancient city nestled in an oasis at the foot of Mount Qasioun",
     "choices": [
       "Aleppo, Syria's largest city and ancient trading hub on the Silk Road",
-      "Damascus, the capital city nestled in an oasis at the foot of Mount Qasioun",
+      "Damascus, the ancient city nestled in an oasis at the foot of Mount Qasioun",
       "Homs, a central Syrian city on the Orontes River",
       "Latakia, Syria's principal Mediterranean port city"
     ],
@@ -1286,10 +1286,10 @@
   {
     "tier": 2,
     "question": "Capital of Yemen?",
-    "answer": "Sanaa, the high-altitude capital city in the northwestern highlands",
+    "answer": "Sanaa, the high-altitude city in the northwestern highlands",
     "choices": [
       "Aden, the major port city on the Gulf of Aden and former British colony",
-      "Sanaa, the high-altitude capital city in the northwestern highlands",
+      "Sanaa, the high-altitude city in the northwestern highlands",
       "Taiz, Yemen's third-largest city in the southwest highlands",
       "Hodeidah, the key Red Sea port and main commercial center"
     ],
@@ -1298,10 +1298,10 @@
   {
     "tier": 2,
     "question": "Capital of Sudan?",
-    "answer": "Khartoum, the capital city at the confluence of the Blue and White Nile",
+    "answer": "Khartoum, the city at the confluence of the Blue and White Nile",
     "choices": [
       "Omdurman, the largest city and cultural heart of Sudan across the Nile",
-      "Khartoum, the capital city at the confluence of the Blue and White Nile",
+      "Khartoum, the city at the confluence of the Blue and White Nile",
       "Port Sudan, the country's main seaport on the Red Sea coast",
       "Kassala, a major eastern city near the Eritrean border"
     ],
@@ -1310,10 +1310,10 @@
   {
     "tier": 2,
     "question": "Capital of Libya?",
-    "answer": "Tripoli, the capital and largest city on the northwestern Mediterranean coast",
+    "answer": "Tripoli, the largest city on the northwestern Mediterranean coast",
     "choices": [
       "Benghazi, Libya's second-largest city and eastern regional hub",
-      "Tripoli, the capital and largest city on the northwestern Mediterranean coast",
+      "Tripoli, the largest city on the northwestern Mediterranean coast",
       "Misrata, a major port and industrial city in western Libya",
       "Tobruk, the northeastern harbor city near the Egyptian border"
     ],
@@ -1322,10 +1322,10 @@
   {
     "tier": 2,
     "question": "Capital of Tunisia?",
-    "answer": "Tunis, the capital on the northern coast near ancient Carthage",
+    "answer": "Tunis, the city on the northern coast near ancient Carthage",
     "choices": [
       "Sfax, Tunisia's second-largest industrial city",
-      "Tunis, the capital on the northern coast near ancient Carthage",
+      "Tunis, the city on the northern coast near ancient Carthage",
       "Sousse, a major coastal resort and port city",
       "Bizerte, Tunisia's northernmost port city"
     ],
@@ -1358,10 +1358,10 @@
   {
     "tier": 2,
     "question": "Capital of DR Congo?",
-    "answer": "Kinshasa, the sprawling capital on the Congo River's southern bank",
+    "answer": "Kinshasa, the sprawling riverside city on the Congo River's southern bank",
     "choices": [
       "Lubumbashi, the country's second-largest city and copper-mining center",
-      "Kinshasa, the sprawling capital on the Congo River's southern bank",
+      "Kinshasa, the sprawling riverside city on the Congo River's southern bank",
       "Kisangani, the largest city deep in the Congo's interior rainforest",
       "Goma, the eastern city situated on the shores of Lake Kivu"
     ],
@@ -1370,10 +1370,10 @@
   {
     "tier": 2,
     "question": "Capital of Angola?",
-    "answer": "Luanda, the Atlantic coast capital and former slave-trade hub",
+    "answer": "Luanda, the Atlantic coast city and former slave-trade hub",
     "choices": [
       "Huambo, Angola's second-largest city set on the central plateau",
-      "Luanda, the Atlantic coast capital and former slave-trade hub",
+      "Luanda, the Atlantic coast city and former slave-trade hub",
       "Benguela, the historic coastal city and western railway terminus",
       "Lubango, the cultural and administrative center of southern Angola"
     ],
@@ -1382,10 +1382,10 @@
   {
     "tier": 2,
     "question": "Capital of Zimbabwe?",
-    "answer": "Harare, the capital and largest city of Zimbabwe",
+    "answer": "Harare, the largest and most populous city of Zimbabwe",
     "choices": [
       "Bulawayo, Zimbabwe's second-largest industrial city",
-      "Harare, the capital and largest city of Zimbabwe",
+      "Harare, the largest and most populous city of Zimbabwe",
       "Mutare, a city near the Mozambique border",
       "Gweru, a central Zimbabwean manufacturing hub"
     ],
@@ -1394,10 +1394,10 @@
   {
     "tier": 2,
     "question": "Capital of Mozambique?",
-    "answer": "Maputo, the capital and largest city of Mozambique",
+    "answer": "Maputo, the largest and most populous city of Mozambique",
     "choices": [
       "Beira, Mozambique's major port on the Sofala coast",
-      "Maputo, the capital and largest city of Mozambique",
+      "Maputo, the largest and most populous city of Mozambique",
       "Nampula, the largest city in northern Mozambique",
       "Quelimane, a historic port city in Zambezia province"
     ],
@@ -1406,10 +1406,10 @@
   {
     "tier": 2,
     "question": "Capital of Paraguay?",
-    "answer": "Asuncion, the capital and largest city of Paraguay",
+    "answer": "Asuncion, the largest and most populous city of Paraguay",
     "choices": [
       "Ciudad del Este, Paraguay's major eastern trade hub",
-      "Asuncion, the capital and largest city of Paraguay",
+      "Asuncion, the largest and most populous city of Paraguay",
       "Encarnacion, a southern city on the Parana River",
       "San Lorenzo, a densely populated industrial city"
     ],
@@ -1420,20 +1420,20 @@
     "question": "Capital of Haiti?",
     "answer": "Port-au-Prince, the capital and largest city of Haiti",
     "choices": [
-      "Cap-Haitien, the historic northern cultural capital",
+      "Cap-Haitien, the historic northern cultural capital of Haiti",
       "Port-au-Prince, the capital and largest city of Haiti",
       "Gonaives, the city where Haitian independence was declared",
-      "Les Cayes, a southern coastal city and regional center"
+      "Les Cayes, a southern coastal city and regional center of Haiti"
     ],
     "context": "Port-au-Prince was devastated by a 7.0-magnitude earthquake in 2010 that killed over 200,000 people. Haiti was the first independent Black republic in the world, gaining freedom from France in 1804."
   },
   {
     "tier": 2,
     "question": "Capital of the Dominican Republic?",
-    "answer": "Santo Domingo, the capital and largest city of the Dominican Republic",
+    "answer": "Santo Domingo, the largest and most historic city of the Dominican Republic",
     "choices": [
       "Santiago, the Dominican Republic's second-largest city",
-      "Santo Domingo, the capital and largest city of the Dominican Republic",
+      "Santo Domingo, the largest and most historic city of the Dominican Republic",
       "San Pedro de Macoris, a major port and baseball stronghold",
       "La Romana, a southern coastal city known for sugar production"
     ],
@@ -1538,10 +1538,10 @@
   {
     "tier": 2,
     "question": "Which continent is Morocco on?",
-    "answer": "Africa, at the continent's northwestern tip near the Strait of Gibraltar",
+    "answer": "Africa, at the northwestern tip near the Strait of Gibraltar",
     "choices": [
       "Europe, just south of Spain across the Strait of Gibraltar",
-      "Africa, at the continent's northwestern tip near the Strait of Gibraltar",
+      "Africa, at the northwestern tip near the Strait of Gibraltar",
       "Asia, bordering the Arabian Peninsula across the Red Sea",
       "South America, as a former Spanish colonial territory"
     ],
@@ -1562,9 +1562,9 @@
   {
     "tier": 2,
     "question": "The Bering Strait separates Russia from ___?",
-    "answer": "Alaska, across a strait just 82 km wide",
+    "answer": "Alaska, located just 82 km across the water",
     "choices": [
-      "Alaska, across a strait just 82 km wide",
+      "Alaska, located just 82 km across the water",
       "Canada, across the Beaufort Sea",
       "Japan, across the Sea of Okhotsk",
       "Norway, across the Arctic Ocean"
@@ -1600,7 +1600,7 @@
     "question": "The largest island in the world is ___?",
     "answer": "Greenland, the world's largest island at 2.2 million sq km",
     "choices": [
-      "Australia, which is sometimes classified as a continent",
+      "Australia, sometimes classified as the world's smallest continent",
       "Greenland, the world's largest island at 2.2 million sq km",
       "New Guinea, the second largest island on Earth",
       "Borneo, shared by three countries in Southeast Asia"
@@ -1669,10 +1669,10 @@
   },
   {
     "tier": 2,
-    "question": "Capital of Bulgaria?",
+    "question": "What is the capital of Bulgaria?",
     "answer": "Sofia, the national capital near Mount Vitosha",
     "choices": [
-      "Plovdiv, Bulgaria's second-largest city",
+      "Plovdiv, Bulgaria's second-largest and oldest city",
       "Sofia, the national capital near Mount Vitosha",
       "Varna, the coastal Black Sea port city",
       "Burgas, the southern Black Sea hub city"
@@ -1693,7 +1693,7 @@
   },
   {
     "tier": 2,
-    "question": "Capital of Croatia?",
+    "question": "What is the capital of Croatia?",
     "answer": "Zagreb, the capital and largest city of Croatia",
     "choices": [
       "Split, the largest city on the Dalmatian coast",
@@ -1705,7 +1705,7 @@
   },
   {
     "tier": 2,
-    "question": "Capital of Slovakia?",
+    "question": "What is the capital of Slovakia?",
     "answer": "Bratislava, the capital bordering Austria and Hungary",
     "choices": [
       "Košice, Slovakia's second-largest city in the east",
@@ -1754,10 +1754,10 @@
   {
     "tier": 2,
     "question": "The Rhine River flows through ___?",
-    "answer": "Germany, through which the Rhine flows for most of its length",
+    "answer": "Germany, through which the Rhine travels for most of its length",
     "choices": [
       "France, where it forms much of the border with Germany",
-      "Germany, through which the Rhine flows for most of its length",
+      "Germany, through which the Rhine travels for most of its length",
       "Poland, where the Oder River drains into the Baltic Sea",
       "Switzerland, where the Rhine originates in the Alpine highlands"
     ],
@@ -1766,10 +1766,10 @@
   {
     "tier": 2,
     "question": "The Volga River is in ___?",
-    "answer": "Russia, where the Volga flows from the Valdai Hills to the Caspian Sea",
+    "answer": "Russia, where the Volga runs from the Valdai Hills to the Caspian Sea",
     "choices": [
       "Ukraine, where the Dnieper River empties into the Black Sea",
-      "Russia, where the Volga flows from the Valdai Hills to the Caspian Sea",
+      "Russia, where the Volga runs from the Valdai Hills to the Caspian Sea",
       "Kazakhstan, where the Ural River crosses the Central Asian steppe",
       "Belarus, which is drained by the Dnieper and Neman rivers"
     ],
@@ -1802,10 +1802,10 @@
   {
     "tier": 2,
     "question": "The largest lake in Africa is ___?",
-    "answer": "Lake Victoria, the largest lake in Africa by surface area",
+    "answer": "Lake Victoria, covering the most surface area of any lake on the continent",
     "choices": [
       "Lake Tanganyika, the world's longest freshwater lake",
-      "Lake Victoria, the largest lake in Africa by surface area",
+      "Lake Victoria, covering the most surface area of any lake on the continent",
       "Lake Malawi, known for its extraordinary fish biodiversity",
       "Lake Chad, a shrinking lake in the Sahel region"
     ],
@@ -1850,10 +1850,10 @@
   {
     "tier": 2,
     "question": "Capital of the United Arab Emirates?",
-    "answer": "Abu Dhabi, the capital emirate holding most of the UAE's oil reserves",
+    "answer": "Abu Dhabi, the emirate holding most of the UAE's oil reserves",
     "choices": [
       "Dubai, the most populous emirate and global financial hub",
-      "Abu Dhabi, the capital emirate holding most of the UAE's oil reserves",
+      "Abu Dhabi, the emirate holding most of the UAE's oil reserves",
       "Sharjah, the third-largest emirate bordering Dubai to the north",
       "Ajman, the smallest of the seven emirates by land area"
     ],
@@ -1862,10 +1862,10 @@
   {
     "tier": 2,
     "question": "Capital of Kuwait?",
-    "answer": "Kuwait City, the capital on the Persian Gulf coast",
+    "answer": "Kuwait City, located on the Persian Gulf coast",
     "choices": [
       "Ahmadi, a major oil-industry hub in the south",
-      "Kuwait City, the capital on the Persian Gulf coast",
+      "Kuwait City, located on the Persian Gulf coast",
       "Hawalli, a densely populated urban governorate",
       "Jahra, a city near the northwestern bay"
     ],
@@ -1922,10 +1922,10 @@
   {
     "tier": 2,
     "question": "Capital of Luxembourg?",
-    "answer": "Luxembourg City, the capital perched on sandstone cliffs",
+    "answer": "Luxembourg City, perched on dramatic sandstone cliffs",
     "choices": [
       "Esch-sur-Alzette, Luxembourg's second-largest city",
-      "Luxembourg City, the capital perched on sandstone cliffs",
+      "Luxembourg City, perched on dramatic sandstone cliffs",
       "Differdange, a major industrial town in the southwest",
       "Echternach, the country's oldest town near the German border"
     ],
@@ -1994,10 +1994,10 @@
   {
     "tier": 2,
     "question": "Capital of Uganda?",
-    "answer": "Kampala, the capital built across seven hills",
+    "answer": "Kampala, a city famously built across seven hills",
     "choices": [
       "Gulu, the largest city in northern Uganda",
-      "Kampala, the capital built across seven hills",
+      "Kampala, a city famously built across seven hills",
       "Mbarara, the fast-growing hub of western Uganda",
       "Jinja, the historic city near the source of the Nile"
     ],
@@ -2006,10 +2006,10 @@
   {
     "tier": 2,
     "question": "Capital of Rwanda?",
-    "answer": "Kigali, the national capital and largest city",
+    "answer": "Kigali, the largest and most populous city in Rwanda",
     "choices": [
       "Butare, Rwanda's historic intellectual and cultural center",
-      "Kigali, the national capital and largest city",
+      "Kigali, the largest and most populous city in Rwanda",
       "Gisenyi, the lakeside city on the Congo border",
       "Ruhengeri, gateway to the Virunga mountain gorillas"
     ],
@@ -2162,12 +2162,12 @@
   {
     "tier": 2,
     "question": "Which landlocked country borders China to the north?",
-    "answer": "Mongolia, the landlocked country directly north of China",
+    "answer": "Mongolia, situated directly north of China",
     "choices": [
       "Russia, which shares a long northern border with China",
-      "Mongolia, the landlocked country directly north of China",
-      "Kazakhstan, a Central Asian nation bordering China's west",
-      "Kyrgyzstan, a mountainous republic in Central Asia"
+      "Mongolia, situated directly north of China",
+      "Kazakhstan, a landlocked nation bordering China's west",
+      "Kyrgyzstan, a landlocked mountainous republic in Central Asia"
     ],
     "context": "Mongolia is the world's most sparsely populated sovereign country, with just 2 people per square kilometer. In the 13th century, the Mongol Empire under Genghis Khan was the largest contiguous land empire in history."
   },
@@ -2318,11 +2318,11 @@
   {
     "tier": 3,
     "question": "Capital of New York State?",
-    "answer": "Albany, the state capital along the Hudson River",
+    "answer": "Albany, located along the Hudson River",
     "choices": [
       "New York City, the state's largest and most famous city",
       "Buffalo, the major city on the shores of Lake Erie",
-      "Albany, the state capital along the Hudson River",
+      "Albany, located along the Hudson River",
       "Rochester, known as the Flour City on Lake Ontario"
     ],
     "context": "Albany has been the capital since 1797, beating out New York City because legislators wanted the capital away from the distracting influence of the nation's largest metropolis. It is one of the oldest surviving European settlements in the US."
@@ -2330,11 +2330,11 @@
   {
     "tier": 3,
     "question": "Capital of Florida?",
-    "answer": "Tallahassee, the state capital in Florida's panhandle",
+    "answer": "Tallahassee, located in Florida's panhandle region",
     "choices": [
       "Miami, the state's largest and most internationally known city",
       "Orlando, famous for its tourism and theme parks",
-      "Tallahassee, the state capital in Florida's panhandle",
+      "Tallahassee, located in Florida's panhandle region",
       "Tampa, the major port city on Florida's Gulf Coast"
     ],
     "context": "Tallahassee was chosen as Florida's capital in 1824 as a midpoint between the two main cities of the era, St. Augustine and Pensacola. It remains the only major city in Florida's panhandle region."
@@ -2366,11 +2366,11 @@
   {
     "tier": 3,
     "question": "Capital of Ohio?",
-    "answer": "Columbus, the most populous state capital in the United States",
+    "answer": "Columbus, the most populous city in Ohio and a major Midwest hub",
     "choices": [
       "Cleveland, Ohio's second-largest city on the southern shore of Lake Erie",
       "Cincinnati, a major Ohio River city on the border with Kentucky",
-      "Columbus, the most populous state capital in the United States",
+      "Columbus, the most populous city in Ohio and a major Midwest hub",
       "Toledo, a key Great Lakes port city near the Michigan border"
     ],
     "context": "Columbus is the most populous state capital in the US, named after Christopher Columbus. Ohio has contributed more US presidents (eight) than any state except Virginia."
@@ -2390,11 +2390,11 @@
   {
     "tier": 3,
     "question": "Capital of Michigan?",
-    "answer": "Lansing, chosen as state capital in 1847 and only the fifth-largest city in Michigan",
+    "answer": "Lansing, chosen as the seat of government in 1847 and only the fifth-largest city in Michigan",
     "choices": [
       "Detroit, Michigan's largest city and the historic center of the auto industry",
       "Grand Rapids, Michigan's second-largest city and a major furniture manufacturing hub",
-      "Lansing, chosen as state capital in 1847 and only the fifth-largest city in Michigan",
+      "Lansing, chosen as the seat of government in 1847 and only the fifth-largest city in Michigan",
       "Flint, a major manufacturing city on the Flint River in eastern Michigan"
     ],
     "context": "Lansing was chosen as capital in 1847 partly because it was far from the Canadian border (Michigan had just fought a border dispute). Despite being the capital, it is only the fifth-largest city in Michigan."
@@ -2402,11 +2402,11 @@
   {
     "tier": 3,
     "question": "Capital of Virginia?",
-    "answer": "Richmond, the historic city that served as the Confederate capital",
+    "answer": "Richmond, the historic city that served as the Confederate seat of government",
     "choices": [
       "Norfolk, a major port city and home to the world's largest naval base",
       "Virginia Beach, the state's most populous city along the Atlantic coast",
-      "Richmond, the historic city that served as the Confederate capital",
+      "Richmond, the historic city that served as the Confederate seat of government",
       "Alexandria, a historic city on the Potomac just outside Washington D.C."
     ],
     "context": "Richmond served as the capital of the Confederacy during the Civil War and was the target of multiple Union campaigns. Virginia has been called the 'Mother of Presidents' for producing eight US presidents."
@@ -2464,10 +2464,10 @@
     "question": "Capital of Arizona?",
     "answer": "Phoenix, the state capital and largest city",
     "choices": [
-      "Tucson, the state's second-largest city",
+      "Tucson, the state's second-largest city and a major urban center",
       "Phoenix, the state capital and largest city",
       "Mesa, a major suburb in the Valley of the Sun",
-      "Scottsdale, known for its resorts and nightlife"
+      "Scottsdale, the state capital of resorts and nightlife"
     ],
     "context": "Phoenix is the hottest state capital in the US, with summer temperatures regularly exceeding 43 C (110 F). Named after the mythical bird, the city rose from the ruins of an ancient Hohokam canal system."
   },
@@ -2476,7 +2476,7 @@
     "question": "Capital of Nevada?",
     "answer": "Carson City, the state capital since Nevada's statehood in 1864",
     "choices": [
-      "Las Vegas, the state's most populous city",
+      "Las Vegas, the state's most populous city and entertainment capital of the world",
       "Reno, known as 'The Biggest Little City in the World'",
       "Carson City, the state capital since Nevada's statehood in 1864",
       "Henderson, a major city in the Las Vegas metro area"
@@ -2488,7 +2488,7 @@
     "question": "Capital of Oregon?",
     "answer": "Salem, the state capital located in the Willamette Valley",
     "choices": [
-      "Portland, the state's largest and best-known city",
+      "Portland, the state's largest and best-known city, often called the cultural capital",
       "Eugene, home to the University of Oregon",
       "Salem, the state capital located in the Willamette Valley",
       "Bend, a fast-growing city in central Oregon"
@@ -2500,7 +2500,7 @@
     "question": "Capital of Minnesota?",
     "answer": "Saint Paul, the state capital and older of the Twin Cities",
     "choices": [
-      "Minneapolis, the larger half of the Twin Cities metro",
+      "Minneapolis, the larger half of the Twin Cities and the cultural capital of the region",
       "Saint Paul, the state capital and older of the Twin Cities",
       "Duluth, a major port city on Lake Superior",
       "Rochester, home to the world-renowned Mayo Clinic"
@@ -2524,7 +2524,7 @@
     "question": "Capital of Tennessee?",
     "answer": "Nashville, the state capital and home of the Grand Ole Opry",
     "choices": [
-      "Memphis, the largest city in Tennessee by population",
+      "Memphis, the largest city in Tennessee and the blues capital of the world",
       "Nashville, the state capital and home of the Grand Ole Opry",
       "Knoxville, home of the University of Tennessee",
       "Chattanooga, a city on the Tennessee River near the Georgia border"
@@ -2534,11 +2534,11 @@
   {
     "tier": 3,
     "question": "The deepest lake in the world is ___?",
-    "answer": "Lake Baikal, the deepest lake on Earth at over 1,600 meters",
+    "answer": "Lake Baikal, located in Russia at over 1,600 meters deep",
     "choices": [
       "Lake Titicaca, the highest navigable lake in the world",
       "Caspian Sea, the largest lake by surface area",
-      "Lake Baikal, the deepest lake on Earth at over 1,600 meters",
+      "Lake Baikal, located in Russia at over 1,600 meters deep",
       "Lake Superior, the largest of North America's Great Lakes by surface area"
     ],
     "context": "Lake Baikal in Siberia holds about 20% of the world's unfrozen surface fresh water — more than all the Great Lakes combined. It is home to about 2,500 species found nowhere else on Earth, including the Baikal seal."
@@ -2737,11 +2737,11 @@
   },
   {
     "tier": 3,
-    "question": "The Suez Canal is in ___?",
-    "answer": "Egypt, which controls the canal as a national waterway",
+    "question": "The Suez Canal is located in which country?",
+    "answer": "Egypt, which controls it as a national waterway linking the Red Sea and the Mediterranean",
     "choices": [
       "Jordan, which borders Israel and Saudi Arabia",
-      "Egypt, which controls the canal as a national waterway",
+      "Egypt, which controls it as a national waterway linking the Red Sea and the Mediterranean",
       "Israel, which has coastline on the Red Sea at Eilat",
       "Saudi Arabia, which borders the Red Sea to the east"
     ],
@@ -2797,11 +2797,11 @@
   },
   {
     "tier": 3,
-    "question": "Capital of Albania?",
-    "answer": "Tirana, the capital and largest city of Albania",
+    "question": "What is the capital of Albania?",
+    "answer": "Tirana, the largest city of Albania and seat of its government",
     "choices": [
       "Durres, the country's main port city on the Adriatic coast",
-      "Tirana, the capital and largest city of Albania",
+      "Tirana, the largest city of Albania and seat of its government",
       "Vlore, a historic southern coastal city and site of Albania's independence declaration",
       "Shkoder, the largest city in northern Albania and a former Ottoman stronghold"
     ],
@@ -2881,10 +2881,10 @@
   },
   {
     "tier": 3,
-    "question": "The island of Honshu is part of ___?",
-    "answer": "Japan, where Honshu is the largest and most populous island",
+    "question": "The island of Honshu is part of which country?",
+    "answer": "Japan, the archipelago nation where Honshu is the largest and most populous island",
     "choices": [
-      "Japan, where Honshu is the largest and most populous island",
+      "Japan, the archipelago nation where Honshu is the largest and most populous island",
       "Indonesia, the world's largest archipelago nation by island count",
       "The Philippines, an archipelago of over 7,000 islands in Southeast Asia",
       "Taiwan, a densely populated island nation in the western Pacific"
@@ -3038,11 +3038,11 @@
   {
     "tier": 3,
     "question": "Capital of Connecticut?",
-    "answer": "Hartford, the longtime insurance capital of the United States",
+    "answer": "Hartford, the longtime insurance hub of the United States",
     "choices": [
       "New Haven, home of Yale University and the state's second-largest city",
       "Bridgeport, Connecticut's most populous and industrially historic city",
-      "Hartford, the longtime insurance capital of the United States",
+      "Hartford, the longtime insurance hub of the United States",
       "Stamford, a major financial services and corporate headquarters hub"
     ],
     "context": "Hartford was the insurance capital of the United States for over a century and is the state's capital and largest city. Connecticut's Fundamental Orders of 1639 is considered one of the first written constitutions in the Western world."
@@ -3076,7 +3076,7 @@
     "question": "Capital of New Mexico?",
     "answer": "Santa Fe, the oldest state capital in the US and highest at 2,194 meters",
     "choices": [
-      "Albuquerque, the state's largest city and economic center",
+      "Albuquerque, the largest city and former territorial capital of New Mexico",
       "Las Cruces, the second-largest city near the Texas border",
       "Santa Fe, the oldest state capital in the US and highest at 2,194 meters",
       "Roswell, famous for its 1947 UFO incident and alien tourism"
@@ -3090,7 +3090,7 @@
     "choices": [
       "Cedar Rapids, Iowa's second-largest city and industrial hub",
       "Des Moines, the state capital and host of Iowa's influential presidential caucuses",
-      "Davenport, a Mississippi River city in the Quad Cities region",
+      "Davenport, a Mississippi River city and former territorial capital of Iowa",
       "Sioux City, a regional center near the Nebraska-South Dakota border"
     ],
     "context": "Des Moines plays an outsized role in American politics because Iowa holds the first presidential caucuses every four years, making it a mandatory stop for every presidential hopeful."
@@ -3124,7 +3124,7 @@
     "question": "Capital of Arkansas?",
     "answer": "Little Rock, the state capital on the Arkansas River",
     "choices": [
-      "Fort Smith, the state's second-largest city",
+      "Fort Smith, the state's second-largest city and former capital of Indian Territory",
       "Little Rock, the state capital on the Arkansas River",
       "Fayetteville, home of the University of Arkansas",
       "Jonesboro, the commercial hub of northeast Arkansas"
@@ -3150,7 +3150,7 @@
     "choices": [
       "Huntington, the state's largest city by population",
       "Charleston, the capital in the Kanawha Valley",
-      "Morgantown, home of West Virginia University",
+      "Morgantown, home of West Virginia University and former capital of Monongalia County",
       "Parkersburg, a major industrial center on the Ohio River"
     ],
     "context": "Charleston sits in the Kanawha Valley and became the capital of a state born during the Civil War -- West Virginia split from Virginia in 1863 over the issue of slavery. Its Kanawha River was once a major salt-producing region."
@@ -3182,11 +3182,11 @@
   {
     "tier": 3,
     "question": "Capital of Wyoming?",
-    "answer": "Cheyenne, the state capital on the Union Pacific Railroad",
+    "answer": "Cheyenne, the largest city and railroad hub on the Union Pacific line",
     "choices": [
       "Casper, the state's most populous city",
       "Laramie, home to the University of Wyoming",
-      "Cheyenne, the state capital on the Union Pacific Railroad",
+      "Cheyenne, the largest city and railroad hub on the Union Pacific line",
       "Gillette, center of Wyoming's coal industry"
     ],
     "context": "Cheyenne was named after the Cheyenne people and grew as a key stop on the Union Pacific Railroad. Wyoming was the first US territory to grant women the right to vote, in 1869."
@@ -3194,11 +3194,11 @@
   {
     "tier": 3,
     "question": "Capital of North Dakota?",
-    "answer": "Bismarck, the capital city on the Missouri River",
+    "answer": "Bismarck, a city on the Missouri River and seat of state government",
     "choices": [
       "Fargo, the largest city in North Dakota",
       "Grand Forks, a major university and air force hub",
-      "Bismarck, the capital city on the Missouri River",
+      "Bismarck, a city on the Missouri River and seat of state government",
       "Minot, known as the 'Magic City' of the plains"
     ],
     "context": "Bismarck was named after German Chancellor Otto von Bismarck in hopes of attracting German immigrant investment in the railroad. It sits on the Missouri River where Lewis and Clark passed through in 1804."
@@ -3206,11 +3206,11 @@
   {
     "tier": 3,
     "question": "Capital of South Dakota?",
-    "answer": "Pierre, the least populous state capital in the US",
+    "answer": "Pierre, the least populous seat of government among US states",
     "choices": [
       "Sioux Falls, the state's largest city by far",
       "Rapid City, the gateway to Mount Rushmore",
-      "Pierre, the least populous state capital in the US",
+      "Pierre, the least populous seat of government among US states",
       "Aberdeen, a regional hub in northeastern South Dakota"
     ],
     "context": "Pierre (pronounced 'peer') is the least populous state capital in the US, with only about 14,000 residents. South Dakota is home to Mount Rushmore, carved into the Black Hills 25 miles southwest of Rapid City."
@@ -3230,11 +3230,11 @@
   {
     "tier": 3,
     "question": "Capital of Hawaii?",
-    "answer": "Honolulu, the capital city located on the island of Oahu",
+    "answer": "Honolulu, the seat of government located on the island of Oahu",
     "choices": [
       "Hilo, the largest city on the Big Island of Hawaii",
       "Kailua, a coastal town on the windward side of Oahu",
-      "Honolulu, the capital city located on the island of Oahu",
+      "Honolulu, the seat of government located on the island of Oahu",
       "Kahului, the main commercial hub of Maui island"
     ],
     "context": "Honolulu means 'sheltered harbor' in Hawaiian and sits on the island of Oahu. The attack on Pearl Harbor on December 7, 1941, drew the United States into World War II."
@@ -3242,10 +3242,10 @@
   {
     "tier": 3,
     "question": "Capital of Delaware?",
-    "answer": "Dover, the state capital since 1777",
+    "answer": "Dover, the seat of state government since 1777",
     "choices": [
       "Wilmington, the state's largest and most populous city",
-      "Dover, the state capital since 1777",
+      "Dover, the seat of state government since 1777",
       "Newark, home to the University of Delaware",
       "Middletown, a fast-growing suburban community"
     ],
@@ -3278,11 +3278,11 @@
   {
     "tier": 3,
     "question": "Capital of Maine?",
-    "answer": "Augusta, the capital city situated on the Kennebec River",
+    "answer": "Augusta, situated on the Kennebec River and serving as the seat of state government",
     "choices": [
       "Portland, Maine's largest city and cultural center",
       "Bangor, a historic lumber and shipping hub in central Maine",
-      "Augusta, the capital city situated on the Kennebec River",
+      "Augusta, situated on the Kennebec River and serving as the seat of state government",
       "Lewiston, the state's second-largest city near the Androscoggin River"
     ],
     "context": "Augusta sits on the Kennebec River, which was one of the earliest areas of European settlement in New England. Maine is the only US state that shares a border with exactly one other state (New Hampshire)."
@@ -3314,10 +3314,10 @@
   {
     "tier": 4,
     "question": "Capital of Tajikistan?",
-    "answer": "Dushanbe, the capital whose name means 'Monday' in Tajik",
+    "answer": "Dushanbe, the city whose name means 'Monday' in Tajik",
     "choices": [
       "Khujand, the ancient city once called Leninabad under Soviet rule",
-      "Dushanbe, the capital whose name means 'Monday' in Tajik",
+      "Dushanbe, the city whose name means 'Monday' in Tajik",
       "Kulob, a major city in the southern Fergana Valley region",
       "Istaravshan, one of the oldest cities in Central Asian history"
     ],
@@ -3326,10 +3326,10 @@
   {
     "tier": 4,
     "question": "Capital of Turkmenistan?",
-    "answer": "Ashgabat, the capital renowned for its white marble architecture",
+    "answer": "Ashgabat, the city renowned for its white marble architecture",
     "choices": [
       "Turkmenabat, the second-largest city situated on the Amu Darya river",
-      "Ashgabat, the capital renowned for its white marble architecture",
+      "Ashgabat, the city renowned for its white marble architecture",
       "Mary, a major oasis city near the ancient ruins of Merv",
       "Daşoguz, the largest and most prominent city in northern Turkmenistan"
     ],
@@ -3338,10 +3338,10 @@
   {
     "tier": 4,
     "question": "Capital of Fiji?",
-    "answer": "Suva, the capital located on the southeast coast of Viti Levu",
+    "answer": "Suva, the city located on the southeast coast of Viti Levu",
     "choices": [
       "Nadi, the western city home to Fiji's main international airport",
-      "Suva, the capital located on the southeast coast of Viti Levu",
+      "Suva, the city located on the southeast coast of Viti Levu",
       "Lautoka, Fiji's second-largest city and center of the sugar industry",
       "Labasa, the principal town on Fiji's second-largest island, Vanua Levu"
     ],
@@ -3350,10 +3350,10 @@
   {
     "tier": 4,
     "question": "Capital of Vanuatu?",
-    "answer": "Port Vila, the capital situated on the island of Efate",
+    "answer": "Port Vila, the largest city situated on the island of Efate",
     "choices": [
       "Luganville, the main commercial town on the island of Espiritu Santo",
-      "Port Vila, the capital situated on the island of Efate",
+      "Port Vila, the largest city situated on the island of Efate",
       "Norsup, a small settlement on the densely populated island of Malakula",
       "Lakatoro, the administrative center of Vanuatu's Malampa Province"
     ],
@@ -3626,10 +3626,10 @@
   {
     "tier": 4,
     "question": "Capital of Central African Republic?",
-    "answer": "Bangui, the capital city situated on the Ubangi River",
+    "answer": "Bangui, the largest city situated on the Ubangi River",
     "choices": [
       "Bambari, the second-largest city in the country",
-      "Bangui, the capital city situated on the Ubangi River",
+      "Bangui, the largest city situated on the Ubangi River",
       "Bimbo, a densely populated suburb near the Ubangi River",
       "Berberati, the main city of the Mambéré-Kadéï prefecture"
     ],
@@ -3638,10 +3638,10 @@
   {
     "tier": 4,
     "question": "Capital of Gabon?",
-    "answer": "Libreville, the capital city founded by freed slaves in 1849",
+    "answer": "Libreville, a coastal city founded by freed slaves in 1849",
     "choices": [
       "Port-Gentil, the country's main oil-industry hub",
-      "Libreville, the capital city founded by freed slaves in 1849",
+      "Libreville, a coastal city founded by freed slaves in 1849",
       "Franceville, a major city near the Congolese border",
       "Lambaréné, known for Albert Schweitzer's famous hospital"
     ],
@@ -3650,10 +3650,10 @@
   {
     "tier": 4,
     "question": "Capital of Republic of Congo?",
-    "answer": "Brazzaville, the capital city facing Kinshasa across the Congo River",
+    "answer": "Brazzaville, the largest city facing Kinshasa across the Congo River",
     "choices": [
       "Pointe-Noire, the Republic of Congo's main Atlantic port city",
-      "Brazzaville, the capital city facing Kinshasa across the Congo River",
+      "Brazzaville, the largest city facing Kinshasa across the Congo River",
       "Dolisie, the country's third-largest city in the Niari Valley",
       "Loubomo, a railroad junction city in the country's southwest"
     ],
@@ -3662,10 +3662,10 @@
   {
     "tier": 4,
     "question": "Capital of Mauritius?",
-    "answer": "Port Louis, the capital founded by the French in 1735",
+    "answer": "Port Louis, the largest city founded by the French in 1735",
     "choices": [
       "Beau Bassin-Rose Hill, the second-largest city on the island",
-      "Port Louis, the capital founded by the French in 1735",
+      "Port Louis, the largest city founded by the French in 1735",
       "Curepipe, a highland city on the central plateau",
       "Vacoas-Phoenix, a major urban centre in the interior"
     ],
@@ -3697,7 +3697,7 @@
   },
   {
     "tier": 4,
-    "question": "The Zambezi River empties into the sea in ___?",
+    "question": "The Zambezi River drains into the sea in ___?",
     "answer": "Mozambique, where the river empties into the Indian Ocean",
     "choices": [
       "Zimbabwe, which borders the river and is home to Victoria Falls",
@@ -3710,10 +3710,10 @@
   {
     "tier": 4,
     "question": "Victoria Falls is on the border of Zambia and ___?",
-    "answer": "Zimbabwe, which shares the falls along the Zambezi gorge",
+    "answer": "Zimbabwe, which shares the landmark along the Zambezi gorge",
     "choices": [
       "Mozambique, where the Zambezi River meets the Indian Ocean",
-      "Zimbabwe, which shares the falls along the Zambezi gorge",
+      "Zimbabwe, which shares the landmark along the Zambezi gorge",
       "Botswana, which lies just downstream along the Chobe River",
       "Namibia, which borders Zambia at the narrow Caprivi Strip"
     ],
@@ -3770,10 +3770,10 @@
   {
     "tier": 4,
     "question": "Capital of Kosovo?",
-    "answer": "Pristina, the capital and largest city of Kosovo",
+    "answer": "Pristina, the largest and most populous city of Kosovo",
     "choices": [
       "Prizren, Kosovo's historic Ottoman-era cultural center in the south",
-      "Pristina, the capital and largest city of Kosovo",
+      "Pristina, the largest and most populous city of Kosovo",
       "Peja, the major city near Rugova Canyon in western Kosovo",
       "Gjilan, the prominent urban center in southeastern Kosovo"
     ],
@@ -3794,10 +3794,10 @@
   {
     "tier": 4,
     "question": "Capital of Bosnia and Herzegovina?",
-    "answer": "Sarajevo, the capital city and site of the 1914 Franz Ferdinand assassination",
+    "answer": "Sarajevo, the largest city and site of the 1914 Franz Ferdinand assassination",
     "choices": [
       "Banja Luka, administrative seat of the Republika Srpska entity",
-      "Sarajevo, the capital city and site of the 1914 Franz Ferdinand assassination",
+      "Sarajevo, the largest city and site of the 1914 Franz Ferdinand assassination",
       "Tuzla, the country's largest industrial and salt-mining center",
       "Mostar, known for its rebuilt Ottoman-era Stari Most stone bridge"
     ],
@@ -3806,10 +3806,10 @@
   {
     "tier": 4,
     "question": "Capital of North Macedonia?",
-    "answer": "Skopje, the capital city rebuilt after the devastating 1963 earthquake",
+    "answer": "Skopje, the largest city rebuilt after the devastating 1963 earthquake",
     "choices": [
       "Bitola, the country's second-largest city near the Greek border",
-      "Skopje, the capital city rebuilt after the devastating 1963 earthquake",
+      "Skopje, the largest city rebuilt after the devastating 1963 earthquake",
       "Ohrid, a UNESCO World Heritage lakeside city in the southwest",
       "Kumanovo, the largest city in the country's northeastern region"
     ],
@@ -3818,10 +3818,10 @@
   {
     "tier": 4,
     "question": "Capital of Cyprus?",
-    "answer": "Nicosia, the island's divided capital straddling the UN buffer zone",
+    "answer": "Nicosia, the island's divided city straddling the UN buffer zone",
     "choices": [
       "Limassol, the island's largest commercial port and financial hub",
-      "Nicosia, the island's divided capital straddling the UN buffer zone",
+      "Nicosia, the island's divided city straddling the UN buffer zone",
       "Larnaca, a coastal city home to the country's main international airport",
       "Paphos, a coastal city renowned for its ancient Roman floor mosaics"
     ],
@@ -3870,7 +3870,7 @@
     "choices": [
       "Linden, the country's second-largest city situated on the Demerara River",
       "Georgetown, the coastal capital built on land reclaimed from the Atlantic",
-      "New Amsterdam, the historic town located at the mouth of the Berbice River",
+      "New Amsterdam, the historic town and former colonial capital on the Berbice River",
       "Bartica, the gateway town to Guyana's vast interior rainforest region"
     ],
     "context": "Georgetown sits below sea level, protected by a system of Dutch-built sea walls. Guyana is the only English-speaking country in South America and its name means 'Land of Many Waters' in an indigenous language."
@@ -3904,7 +3904,7 @@
     "question": "Capital of Comoros?",
     "answer": "Moroni, the capital on Grande Comore island",
     "choices": [
-      "Mutsamudu, the main city of Anjouan island",
+      "Mutsamudu, the main city and former capital of Anjouan island",
       "Moroni, the capital on Grande Comore island",
       "Domoni, an ancient settlement on Anjouan island",
       "Fomboni, the main city of Mohéli island"
@@ -3916,7 +3916,7 @@
     "question": "Capital of Benin?",
     "answer": "Porto-Novo, the official constitutional capital of Benin",
     "choices": [
-      "Cotonou, the largest city and economic hub of Benin",
+      "Cotonou, the largest city and de facto administrative capital of Benin",
       "Porto-Novo, the official constitutional capital of Benin",
       "Parakou, the major commercial center of northern Benin",
       "Abomey, the historic seat of the Kingdom of Dahomey"
@@ -3926,10 +3926,10 @@
   {
     "tier": 4,
     "question": "Capital of Togo?",
-    "answer": "Lomé, the coastal capital on the border with Ghana",
+    "answer": "Lomé, the coastal city on the border with Ghana",
     "choices": [
       "Sokodé, the second-largest city in central Togo",
-      "Lomé, the coastal capital on the border with Ghana",
+      "Lomé, the coastal city on the border with Ghana",
       "Kara, the major city of northern Togo",
       "Atakpamé, a highland trading hub in central Togo"
     ],
@@ -3938,10 +3938,10 @@
   {
     "tier": 4,
     "question": "Capital of Guinea?",
-    "answer": "Conakry, the coastal capital on the Kaloum Peninsula",
+    "answer": "Conakry, the coastal city on the Kaloum Peninsula",
     "choices": [
       "Kankan, the second-largest city and cultural heartland of Guinea",
-      "Conakry, the coastal capital on the Kaloum Peninsula",
+      "Conakry, the coastal city on the Kaloum Peninsula",
       "Labé, the main city of the Fouta Djallon highlands",
       "N'Zérékoré, the largest city in Guinea's Forest Region"
     ],
@@ -3950,10 +3950,10 @@
   {
     "tier": 4,
     "question": "Capital of Guinea-Bissau?",
-    "answer": "Bissau, the capital on the Geba River estuary",
+    "answer": "Bissau, the largest city on the Geba River estuary",
     "choices": [
       "Bafatá, the second-largest city in the eastern interior",
-      "Bissau, the capital on the Geba River estuary",
+      "Bissau, the largest city on the Geba River estuary",
       "Gabú, the largest city in the eastern savanna region",
       "Cacheu, a historic port town from the colonial era"
     ],
@@ -3986,10 +3986,10 @@
   {
     "tier": 4,
     "question": "Capital of Gambia?",
-    "answer": "Banjul, the island capital at the mouth of the Gambia River",
+    "answer": "Banjul, the island city at the mouth of the Gambia River",
     "choices": [
       "Serekunda, the largest urban area in Gambia",
-      "Banjul, the island capital at the mouth of the Gambia River",
+      "Banjul, the island city at the mouth of the Gambia River",
       "Brikama, the most populous city in the Western Region",
       "Farafenni, a major commercial hub on the Trans-Gambia Highway"
     ],
@@ -4034,10 +4034,10 @@
   {
     "tier": 4,
     "question": "Capital of Lesotho?",
-    "answer": "Maseru, the capital city situated on the Caledon River border",
+    "answer": "Maseru, the largest city situated on the Caledon River border",
     "choices": [
       "Teyateyaneng, the country's second-largest urban center",
-      "Maseru, the capital city situated on the Caledon River border",
+      "Maseru, the largest city situated on the Caledon River border",
       "Mafeteng, a major town near the southwestern border with South Africa",
       "Leribe, an important commercial hub in the northern highlands"
     ],
@@ -4058,10 +4058,10 @@
   {
     "tier": 4,
     "question": "Capital of Seychelles?",
-    "answer": "Victoria, the capital city located on the island of Mahé",
+    "answer": "Victoria, located on the island of Mahé",
     "choices": [
       "Anse Boileau, a coastal administrative district on the west side of Mahé",
-      "Victoria, the capital city located on the island of Mahé",
+      "Victoria, located on the island of Mahé",
       "Beau Vallon, a resort community on the northern coast of Mahé",
       "Grand Anse, a scenic bay settlement on the island of Praslin"
     ],
@@ -4070,10 +4070,10 @@
   {
     "tier": 4,
     "question": "Capital of Mauritania?",
-    "answer": "Nouakchott, the coastal capital built near a former fishing village",
+    "answer": "Nouakchott, a coastal city built near a former fishing village",
     "choices": [
       "Nouadhibou, the country's main port and leading commercial center",
-      "Nouakchott, the coastal capital built near a former fishing village",
+      "Nouakchott, a coastal city built near a former fishing village",
       "Kiffa, a major regional hub in the southern Assaba region",
       "Néma, the administrative center of the Hodh Ech Chargui region"
     ],
@@ -4082,10 +4082,10 @@
   {
     "tier": 4,
     "question": "Capital of Nauru?",
-    "answer": "Yaren, the de facto capital district on Nauru's southwestern coast",
+    "answer": "Yaren, the de facto seat of government on Nauru's southwestern coast",
     "choices": [
       "Meneng, a densely populated district in eastern Nauru",
-      "Yaren, the de facto capital district on Nauru's southwestern coast",
+      "Yaren, the de facto seat of government on Nauru's southwestern coast",
       "Aiwo, the main port district on Nauru's western coast",
       "Boe, a small district known for its phosphate history"
     ],
@@ -4094,10 +4094,10 @@
   {
     "tier": 4,
     "question": "Capital of Tuvalu?",
-    "answer": "Funafuti, the capital atoll and seat of government of Tuvalu",
+    "answer": "Funafuti, the main atoll and seat of government of Tuvalu",
     "choices": [
       "Nanumea, the northernmost atoll in the Tuvalu chain",
-      "Funafuti, the capital atoll and seat of government of Tuvalu",
+      "Funafuti, the main atoll and seat of government of Tuvalu",
       "Nukufetau, a remote atoll roughly 100 kilometers northwest of Funafuti",
       "Vaitupu, the most populous outer island of Tuvalu"
     ],
@@ -4106,10 +4106,10 @@
   {
     "tier": 4,
     "question": "Capital of Kiribati?",
-    "answer": "South Tarawa, the densely populated capital atoll of Kiribati",
+    "answer": "South Tarawa, the densely populated administrative atoll of Kiribati",
     "choices": [
       "Butaritari, the northernmost inhabited atoll in the Gilbert Islands",
-      "South Tarawa, the densely populated capital atoll of Kiribati",
+      "South Tarawa, the densely populated administrative atoll of Kiribati",
       "Marakei, a ring-shaped atoll in the northern Gilbert Islands",
       "Abemama, historically ruled by the warrior chief Tem Binoka"
     ],
@@ -4130,10 +4130,10 @@
   {
     "tier": 4,
     "question": "Capital of Micronesia?",
-    "answer": "Palikir, the capital town located on the island of Pohnpei",
+    "answer": "Palikir, a small town located on the island of Pohnpei",
     "choices": [
       "Colonia, the main town and trading hub of Yap State",
-      "Palikir, the capital town located on the island of Pohnpei",
+      "Palikir, a small town located on the island of Pohnpei",
       "Weno, the largest island and commercial center of Chuuk State",
       "Tofol, the administrative center of Kosrae State"
     ],
@@ -4168,10 +4168,10 @@
     "question": "The longest river in South America is the ___?",
     "answer": "Amazon, running through the northern half of South America",
     "choices": [
-      "Paraná, flowing through Brazil, Paraguay, and Argentina",
+      "Paraná, flowing through Brazil, Paraguay, and Argentina in South America",
       "Amazon, running through the northern half of South America",
-      "Orinoco, running through Venezuela and Colombia to the Atlantic",
-      "Madeira, the longest tributary of the Amazon River system"
+      "Orinoco, running through Venezuela and Colombia in South America",
+      "Madeira, the longest tributary of the Amazon River system in South America"
     ],
     "context": "The Amazon carries more water than any other river on Earth — about 20% of all fresh water discharged into the oceans. Some scientists argue it is also the world's longest river, narrowly edging out the Nile."
   },
@@ -4214,10 +4214,10 @@
   {
     "tier": 4,
     "question": "Capital of Madagascar?",
-    "answer": "Antananarivo, the highland capital at 1,280 meters elevation",
+    "answer": "Antananarivo, a highland city situated at 1,280 meters elevation",
     "choices": [
       "Toamasina, the country's main seaport on the east coast",
-      "Antananarivo, the highland capital at 1,280 meters elevation",
+      "Antananarivo, a highland city situated at 1,280 meters elevation",
       "Fianarantsoa, the cultural center of the southern highlands",
       "Mahajanga, a major historical port on the northwest coast"
     ],
@@ -4240,10 +4240,10 @@
     "question": "The Mariana Trench's deepest point (Challenger Deep) is approximately ___?",
     "answer": "11,000 meters — the approximate depth of Challenger Deep, the ocean's lowest point",
     "choices": [
-      "8,500 meters — shallower than Challenger Deep but deeper than most oceanic trenches",
+      "8,500 meters — shallower than Challenger Deep but deeper than most oceanic trenches at their lowest point",
       "11,000 meters — the approximate depth of Challenger Deep, the ocean's lowest point",
-      "13,500 meters — a depth that would exceed nearly twice the height of Mount Everest",
-      "9,200 meters — a depth comparable to the nearby Puerto Rico Trench"
+      "13,500 meters — a depth that would exceed nearly twice the height of Mount Everest at its highest point",
+      "9,200 meters — a depth comparable to the nearby Puerto Rico Trench at its deepest point"
     ],
     "context": "Challenger Deep was first reached by Jacques Piccard and Don Walsh in the bathyscaphe Trieste in 1960, and by filmmaker James Cameron in a solo dive in 2012. The water pressure at the bottom exceeds 1,000 times standard atmospheric pressure."
   },
@@ -4406,10 +4406,10 @@
   {
     "tier": 5,
     "question": "Mount Everest's height is approximately ___?",
-    "answer": "8,849 meters, the height of Everest",
+    "answer": "8,849 meters, the tallest peak on Earth",
     "choices": [
       "8,611 meters, the height of K2",
-      "8,849 meters, the height of Everest",
+      "8,849 meters, the tallest peak on Earth",
       "9,144 meters, a common misconception from early surveys",
       "8,516 meters, the height of Lhotse"
     ],
@@ -4519,7 +4519,7 @@
       "Australia, which administers several nearby island territories",
       "France, which governs them as a Southern Territory",
       "The United Kingdom, which holds many remote island territories",
-      "Norway, which claims the nearby Bouvet Island"
+      "Norway, which claims the nearby Bouvet Island territory"
     ],
     "context": "The Kerguelen Islands, sometimes called the 'Desolation Islands,' are among the most remote places on Earth -- over 3,300 km from the nearest inhabited land. As a French Southern Territory, they have no permanent population, only a rotating staff of scientists and researchers."
   },
@@ -4576,7 +4576,7 @@
     "question": "The Adriatic Sea separates Italy from ___?",
     "answer": "Croatia and the Balkans, along the eastern Adriatic coast",
     "choices": [
-      "Greece and Turkey, across the Ionian Sea to the south",
+      "Greece and Turkey, across the Ionian and Adriatic seas to the south",
       "Croatia and the Balkans, along the eastern Adriatic coast",
       "Libya and Tunisia, along the North African coast",
       "Morocco and Algeria, on the western Mediterranean shore"
@@ -4814,10 +4814,10 @@
   {
     "tier": 5,
     "question": "The Wallace Line separates the fauna of Asia from ___?",
-    "answer": "Australasia and its distinct marsupial fauna",
+    "answer": "Australasia and its distinct marsupial wildlife",
     "choices": [
-      "The Indian subcontinent and South Asia",
-      "Australasia and its distinct marsupial fauna",
+      "The Indian subcontinent and its tropical species",
+      "Australasia and its distinct marsupial wildlife",
       "Africa and its surrounding island chains",
       "Antarctica and the Southern Ocean region"
     ],
@@ -4902,7 +4902,7 @@
     "choices": [
       "Lake Victoria, the largest lake in Africa by surface area",
       "Lake Tanganyika, the world's second-deepest lake at 1,470 meters",
-      "Lake Malawi, stretching across three national borders",
+      "Lake Malawi, the third-deepest lake in the world",
       "Lake Turkana, the world's largest desert lake"
     ],
     "context": "Lake Tanganyika reaches 1,470 meters deep and is the world's second-deepest lake after Baikal. Its extreme age (9-12 million years) has allowed hundreds of unique cichlid fish species to evolve in its waters."
@@ -5137,7 +5137,7 @@
   },
   {
     "tier": 2,
-    "question": "Which ocean is between North America and Europe?",
+    "question": "Which ocean lies between North America and Europe?",
     "answer": "Atlantic Ocean, stretching from the Americas to Europe and Africa",
     "choices": [
       "Pacific Ocean, the world's largest ocean",
@@ -5320,10 +5320,10 @@
     "question": "The Loire River is in ___?",
     "answer": "France, stretching across its longest river valley",
     "choices": [
-      "Belgium, winding through the Ardennes plateau",
+      "Belgium, winding through the Ardennes river plateau",
       "France, stretching across its longest river valley",
-      "Germany, flowing toward the North Sea coast",
-      "Luxembourg, draining its southern Moselle region"
+      "Germany, flowing toward the North Sea river coast",
+      "Luxembourg, draining its southern Moselle river region"
     ],
     "context": "The Loire is France's longest river at 1,012 km and its valley is famous for over 300 chateaux built by French nobility. The Loire Valley is often called 'the Garden of France' for its wine, fruit, and artichoke production."
   },
@@ -5453,9 +5453,9 @@
     "answer": "South Africa, where it is the longest river",
     "choices": [
       "South Africa, where it is the longest river",
-      "Namibia, where it forms the southern border",
-      "Botswana, draining into the Kalahari Basin",
-      "Zimbabwe, flowing through the Limpopo valley"
+      "Namibia, where it forms the southern border river",
+      "Botswana, draining into the Kalahari river basin",
+      "Zimbabwe, flowing through the Limpopo river valley"
     ],
     "context": "The Orange is South Africa's longest river at 2,200 km and was named by Dutch colonists after the House of Orange. It forms part of the border between South Africa and Namibia before reaching the Atlantic Ocean."
   },
@@ -5488,10 +5488,10 @@
     "question": "The Indus River flows through ___?",
     "answer": "Pakistan, the country through which most of the river flows",
     "choices": [
-      "India, the country that gave the river its cultural identity",
+      "India, the country through which the river briefly flows near its source",
       "Pakistan, the country through which most of the river flows",
-      "Bangladesh, the low-lying delta nation to the east of India",
-      "Afghanistan, through whose eastern region the river briefly runs"
+      "Bangladesh, the low-lying delta nation through which the Ganges flows",
+      "Afghanistan, through whose eastern region the river briefly flows"
     ],
     "context": "The Indus gave its name to India and to Hinduism, even though most of the river now flows through Pakistan. The Indus Valley Civilization (3300–1300 BC) was one of the world's first great urban cultures, producing cities like Mohenjo-daro and Harappa with sophisticated drainage systems."
   },
@@ -5500,10 +5500,10 @@
     "question": "The Brahmaputra River flows through ___?",
     "answer": "Bangladesh and India, where the river flows after its Himalayan descent",
     "choices": [
-      "China and Nepal, through which the river's Tibetan headwaters drain",
+      "China and Nepal, through which the river flows from its Tibetan headwaters",
       "Bangladesh and India, where the river flows after its Himalayan descent",
-      "Myanmar and Laos, through which the Irrawaddy and Mekong instead run",
-      "Nepal and Bangladesh, where the Ganges tributaries predominantly flow"
+      "Myanmar and Laos, through which the Irrawaddy and Mekong flows instead",
+      "Nepal and Bangladesh, where the Ganges tributary flows predominantly"
     ],
     "context": "The Brahmaputra originates on the Tibetan Plateau (where it is called the Tsangpo) and flows east before making a dramatic U-turn around a Himalayan peak, carving the world's deepest gorge. It then flows west through the Indian state of Assam and into Bangladesh, where it merges with the Ganges to form the vast Ganges-Brahmaputra Delta."
   },
@@ -5534,10 +5534,10 @@
   {
     "tier": 4,
     "question": "The Tyrrhenian Sea is west of ___?",
-    "answer": "Italy, along its western Tyrrhenian coast",
+    "answer": "Italy, along its western coast",
     "choices": [
       "Greece, bordering the Aegean to the east",
-      "Italy, along its western Tyrrhenian coast",
+      "Italy, along its western coast",
       "Spain, along its Mediterranean coastline",
       "France, near the Ligurian coast to the north"
     ],
@@ -5574,7 +5574,7 @@
     "choices": [
       "Tajikistan, which contains the majority of the Pamir plateau",
       "Nepal, nestled among the high Himalayan peaks",
-      "Kyrgyzstan, where the range borders the Tian Shan system",
+      "Kyrgyzstan, where the Pamir range borders the Tian Shan system",
       "Afghanistan, concentrated along its narrow northeastern corridor"
     ],
     "context": "The Pamirs are called 'the Roof of the World' and meet four other major ranges (Tian Shan, Karakoram, Kunlun, Hindu Kush) at the 'Pamir Knot.' Marco Polo described crossing them in the 13th century. While the range extends into China, Afghanistan, and Kyrgyzstan, Tajikistan contains the majority of the Pamir territory."
@@ -5773,11 +5773,11 @@
   },
   {
     "tier": 5,
-    "question": "The geographic term 'isohyet' refers to a line connecting points of equal ___?",
-    "answer": "Rainfall totals measured across a geographic region",
+    "question": "The term 'isohyet' refers to a line connecting points of equal ___?",
+    "answer": "Rainfall totals measured across a region",
     "choices": [
       "Temperature recorded at a consistent altitude above sea level",
-      "Rainfall totals measured across a geographic region",
+      "Rainfall totals measured across a region",
       "Elevation mapped relative to mean sea level",
       "Atmospheric pressure captured at a fixed observation time"
     ],
@@ -5846,10 +5846,10 @@
   {
     "tier": 5,
     "question": "The Tropic of Cancer passes through which US state?",
-    "answer": "Hawaii, where the Tropic clips the Big Island's southern end",
+    "answer": "Hawaii, where it clips the Big Island's southern end",
     "choices": [
       "Florida, at its southernmost tip near Key West",
-      "Hawaii, where the Tropic clips the Big Island's southern end",
+      "Hawaii, where it clips the Big Island's southern end",
       "California, passing through the Mojave Desert region",
       "Texas, along its southern border with Mexico"
     ],
@@ -5858,11 +5858,11 @@
   {
     "tier": 5,
     "question": "The Antarctic ice sheet contains approximately what fraction of Earth's fresh water?",
-    "answer": "70 percent, making Antarctica Earth's dominant freshwater reservoir",
+    "answer": "70 percent, making Antarctica the world's dominant freshwater reservoir",
     "choices": [
       "30 percent, with the remainder distributed among mountain glaciers worldwide",
       "50 percent, with the Arctic ice sheets holding most of the remainder",
-      "70 percent, making Antarctica Earth's dominant freshwater reservoir",
+      "70 percent, making Antarctica the world's dominant freshwater reservoir",
       "90 percent, leaving only a small fraction in all other freshwater sources"
     ],
     "context": "If the Antarctic ice sheet melted entirely, global sea levels would rise about 58 meters, flooding every coastal city on Earth. The ice sheet has been stable for about 34 million years but is now losing mass due to warming."
@@ -5892,7 +5892,7 @@
     "context": "The Mediterranean's enclosed geography creates calm, predictable sailing conditions with visible coastlines almost everywhere. Ancient sailors could hug the shore and island-hop, making long-distance trade possible even with primitive ships."
   },
   {
-    "question": "What geographic advantage allowed Rome to dominate the Mediterranean world?",
+    "question": "What geographic advantage allowed Rome to dominate the ancient world?",
     "answer": "Its central position on the Italian peninsula gave it access to all parts of the Mediterranean while natural barriers protected it from invasion",
     "choices": [
       "Its central position on the Italian peninsula gave it access to all parts of the Mediterranean while natural barriers protected it from invasion",
@@ -5904,11 +5904,11 @@
     "context": "Italy's central position in the Mediterranean meant Roman fleets could reach any coast faster than rivals traveling from the periphery. The Alps provided a northern shield while the peninsula's length gave access to both western and eastern basins."
   },
   {
-    "question": "The Silk Road was a network of trade routes connecting China to Europe. What geographic obstacle made the sea route around Africa preferable when Portugal discovered it in the 1490s?",
-    "answer": "The Silk Road required crossing deserts, mountains, and hostile territories controlled by middlemen who taxed the trade",
+    "question": "The Silk Road was a network of routes connecting China to Europe. What geographic obstacle made the sea route around Africa preferable when Portugal discovered it in the 1490s?",
+    "answer": "The Silk Road required crossing deserts, mountains, and hostile territories controlled by middlemen who taxed the goods",
     "choices": [
       "The Silk Road's eastern terminus had shifted deep into Central Asia, making the journey impractically long for European merchants",
-      "The Silk Road required crossing deserts, mountains, and hostile territories controlled by middlemen who taxed the trade",
+      "The Silk Road required crossing deserts, mountains, and hostile territories controlled by middlemen who taxed the goods",
       "The Ottoman Empire's expansion into Anatolia and the Levant raised tariffs and disrupted caravan infrastructure significantly",
       "The Mongol Empire's fragmentation left the central Asian steppe ungoverned, making banditry an unacceptable risk for merchants"
     ],
@@ -5952,10 +5952,10 @@
     "context": "Constantinople sat on the Bosphorus Strait, the only sea passage between the Mediterranean and Black Sea grain regions. Its triangular peninsula, protected by water on three sides, was nearly impregnable for over 1,000 years."
   },
   {
-    "question": "Why did the Cape of Good Hope route around Africa, pioneered by Portugal, transform world trade patterns after 1498?",
-    "answer": "It allowed European ships to bypass Ottoman-controlled Middle Eastern trade routes and trade directly with Asia",
+    "question": "Why did the Cape of Good Hope route around Africa, pioneered by Portugal, transform world commerce patterns after 1498?",
+    "answer": "It allowed European ships to bypass Ottoman-controlled Middle Eastern trade routes and reach Asian markets directly",
     "choices": [
-      "It allowed European ships to bypass Ottoman-controlled Middle Eastern trade routes and trade directly with Asia",
+      "It allowed European ships to bypass Ottoman-controlled Middle Eastern trade routes and reach Asian markets directly",
       "It proved faster than the overland Silk Road by eliminating mountain crossings through Central Asia and Persia",
       "It gave Portugal exclusive access to West African gold markets previously dominated by Arab trans-Saharan traders",
       "It enabled year-round voyages by harnessing predictable Atlantic wind patterns unavailable on eastern routes"
@@ -6012,7 +6012,7 @@
     "context": "Roman roads were engineered for speed: legions could march 30-40 km per day on them, reaching any trouble spot in weeks rather than months. The phrase 'All roads lead to Rome' was literally true — they radiated from a golden milestone in the Forum."
   },
   {
-    "question": "Why did the discovery of the Americas by Columbus in 1492 ultimately destroy the Portuguese advantage in Eastern trade?",
+    "question": "Why did the discovery of the Americas by Columbus in 1492 ultimately destroy the Portuguese advantage in Eastern commerce?",
     "answer": "Silver from the Americas flooded European economies, allowing Spain and others to buy Eastern goods directly rather than relying on Portuguese trade routes",
     "choices": [
       "Portuguese navigators defected to Spain, revealing the secret eastern sea routes around Africa to Iberian rivals",
@@ -6024,11 +6024,11 @@
     "context": "New World silver, especially from Potosí in Bolivia, became so abundant that the global price of silver collapsed. The purchasing power that had made the spice trade profitable shifted dramatically, and new Atlantic routes bypassed Portuguese monopolies entirely."
   },
   {
-    "question": "The Hanseatic League (1200s-1600s) was a trading alliance of cities along the Baltic and North Sea coasts. What geographic feature united these cities?",
-    "answer": "Control of the North Sea and Baltic trade routes connecting Scandinavian fish and fur, Russian grain, and Flemish cloth",
+    "question": "The Hanseatic League (1200s-1600s) was a trading alliance of cities along the Baltic and North Sea coasts. What economic feature most united these cities?",
+    "answer": "Control of the northern sea and Baltic trade routes connecting Scandinavian fish and fur, Russian grain, and Flemish cloth",
     "choices": [
       "They all lay within the Holy Roman Empire, sharing legal frameworks that protected merchants from seizure of goods",
-      "Control of the North Sea and Baltic trade routes connecting Scandinavian fish and fur, Russian grain, and Flemish cloth",
+      "Control of the northern sea and Baltic trade routes connecting Scandinavian fish and fur, Russian grain, and Flemish cloth",
       "Each city was positioned along the Rhine or Elbe rivers, providing direct inland water access to continental markets",
       "They shared access to deep natural harbors capable of sheltering the large cog vessels central to northern trade"
     ],
@@ -6036,7 +6036,7 @@
     "context": "Hanseatic cities like Lübeck, Hamburg, and Bruges controlled narrow sea passages and river mouths. Their geographic chokehold on northern European trade made them collectively wealthier and more powerful than many kingdoms of the era."
   },
   {
-    "question": "Why did the Appalachian Mountains pose such a significant barrier to early American westward expansion?",
+    "question": "Why did the Appalachian Mountains pose such a significant barrier to American westward expansion in the colonial era?",
     "answer": "They had few passes, creating a wall that kept early settlement in the coastal plain until the Cumberland Gap and river routes were discovered",
     "choices": [
       "The dense old-growth forests blanketing their slopes made sustained road-building impossible with colonial-era tools",
@@ -6084,19 +6084,19 @@
     "context": "Venice's lagoon was too shallow for enemy warships but deep enough for Venetian merchant galleys. This natural moat, combined with its position connecting the Adriatic to Alpine and Byzantine trade routes, made it unassailable and commercially irreplaceable."
   },
   {
-    "question": "Why did the discovery of gold and silver in the Americas in the 1500s ultimately weaken Spain rather than making it permanently dominant?",
+    "question": "Why did the discovery of gold and silver in the Americas in the 1500s ultimately weaken Spain rather than securing its permanent dominance?",
     "answer": "Massive bullion imports caused inflation (the Price Revolution) in Spain, making Spanish goods expensive and destroying domestic industry",
     "choices": [
       "The silver was used to fund prolonged religious and dynastic wars across Europe, leaving Spain perpetually indebted to foreign bankers",
       "Massive bullion imports caused inflation (the Price Revolution) in Spain, making Spanish goods expensive and destroying domestic industry",
-      "Rival European nations systematically intercepted Spanish silver convoys on the Atlantic, denying the crown its colonial revenues",
+      "Rival European nations systematically intercepted Spanish silver convoys on the Atlantic, making it impossible to rely on colonial revenues",
       "The enormous cost of administering a vast colonial bureaucracy ultimately consumed the wealth extracted from the Americas"
     ],
     "tier": 4,
     "context": "Spain's flood of New World silver caused the Price Revolution — prices across Europe doubled or tripled in a century. Spanish domestic industry withered because it was cheaper to buy foreign goods with silver than to manufacture locally, hollowing out the productive economy behind the glittering facade of empire."
   },
   {
-    "question": "Which geographic feature of England meant that no English town was more than 70 miles from the sea or a navigable river, making the Industrial Revolution possible?",
+    "question": "Which geographic feature of England meant that no English town was more than 70 miles from the sea or an inland waterway, helping enable the Industrial Revolution?",
     "answer": "England's compact shape and highly indented coastline with navigable river systems penetrating deep inland",
     "choices": [
       "England's compact shape and highly indented coastline with navigable river systems penetrating deep inland",
@@ -6108,7 +6108,7 @@
     "context": "England's deeply indented coastline and crisscrossing rivers meant raw materials and finished goods could be transported cheaply by water almost anywhere in the country. This natural transport network, later supplemented by canals, made factory production profitable long before the railway age."
   },
   {
-    "question": "The term 'heartland theory,' formulated by Halford Mackinder in 1904, argued that whoever controlled the Eurasian heartland would dominate world power. What geographic area is the 'heartland'?",
+    "question": "The term 'heartland theory,' formulated by Halford Mackinder in 1904, argued that whoever controlled the Eurasian heartland would dominate global affairs. What geographic area is the 'heartland'?",
     "answer": "The interior of Eurasia, roughly modern Russia and Central Asia, which is inaccessible to sea power",
     "choices": [
       "The great river valleys of northern China and the Indo-Gangetic Plain, the most agriculturally productive and populous zones in Eurasia",
@@ -6132,12 +6132,12 @@
     "context": "Northern England's coalfields around Newcastle and Manchester sat directly on rivers and canals connecting to major ports. The Ruhr Valley similarly had coal, iron ore, and the Rhine for transport — a geographic trifecta that allowed raw materials to move cheaply to factories and finished goods to markets."
   },
   {
-    "question": "Why did the Atlantic slave trade route form a triangle between Europe, West Africa, and the Americas rather than more direct routes?",
+    "question": "Why did the Atlantic slave trade follow a triangular path between Europe, West Africa, and the Americas rather than more efficient point-to-point routes?",
     "answer": "Prevailing winds and ocean currents made a triangular route (Europe to Africa to Americas to Europe) faster than direct routes against the wind",
     "choices": [
       "Three separate trading companies held exclusive monopolies on each leg of the Atlantic route, requiring stops at each continent",
       "Prevailing winds and ocean currents made a triangular route (Europe to Africa to Americas to Europe) faster than direct routes against the wind",
-      "The triangular route allowed captains to resupply with food and fresh water at each continental port of call",
+      "The triangular path allowed captains to resupply with food and fresh water at each continental port of call",
       "European colonial treaties divided Atlantic trading zones among Portugal, Spain, and Britain, mandating the three-leg structure"
     ],
     "tier": 3,
@@ -6145,10 +6145,10 @@
   },
   {
     "question": "The concept of 'natural borders' holds that rivers and mountains create defensible boundaries. Which European border is the classic example of a river as a natural boundary?",
-    "answer": "The Rhine River as a border between Germanic and Roman/French territory",
+    "answer": "The Rhine as a boundary between Germanic and Roman/French territory",
     "choices": [
       "The Danube as the boundary separating Habsburg and Ottoman empires across southeastern Europe",
-      "The Rhine River as a border between Germanic and Roman/French territory",
+      "The Rhine as a boundary between Germanic and Roman/French territory",
       "The Vistula as the dividing line between Slavic and Germanic settlement zones in central Europe",
       "The Loire as the historical boundary between the northern and southern cultural zones of France"
     ],
@@ -6360,7 +6360,7 @@
     "context": "The Great European Plain is essentially a natural highway for armies and migrants. From the Huns to the Mongols to Napoleon to Hitler, every major land invasion of Europe or Russia has exploited this flat, obstacle-free corridor. Its openness is why Russia has historically sought deep buffer zones — lacking any natural defensive barrier, depth of territory becomes the only defense."
   },
   {
-    "question": "The geographic term 'landlocked' describes a country with no sea access. Landlocked developing countries face a particular economic challenge because ___?",
+    "question": "The geographic term 'landlocked' describes a country with no sea access. Landlocked developing nations face a particular economic challenge because ___?",
     "answer": "They must rely on neighboring countries' ports and infrastructure for trade, adding costs and political dependencies",
     "choices": [
       "They cannot develop fishing industries or access marine resources, limiting food security and export revenues",
@@ -6396,7 +6396,7 @@
     "context": "Desertification in the Sahel is a human-accelerated feedback loop: overgrazing strips vegetation, exposed soil reflects more heat, which reduces rainfall, which kills more vegetation. The result is desert advancing at 48 km per year in some areas."
   },
   {
-    "question": "The term 'maritime climate' describes regions near large water bodies. What geographic effect causes cities like London and Seattle to be warmer in winter than inland cities at the same latitude?",
+    "question": "The term 'maritime climate' describes regions near large bodies of water. What geographic effect causes cities like London and Seattle to be warmer in winter than inland cities at the same latitude?",
     "answer": "Ocean water stores heat and releases it slowly, moderating temperature extremes in nearby coastal areas",
     "choices": [
       "Coastal cities trap atmospheric heat beneath persistent low cloud cover, preventing temperatures from dropping sharply overnight",
@@ -6409,10 +6409,10 @@
   },
   {
     "question": "Why does the Gulf Stream give Northwestern Europe a climate far milder than its latitude would suggest?",
-    "answer": "The Gulf Stream carries warm tropical water from the Gulf of Mexico across the North Atlantic, warming air masses that blow onshore over Western Europe",
+    "answer": "The Gulf Stream carries warm tropical water northward across the Atlantic, warming air masses that blow onshore over Western Europe",
     "choices": [
       "Western European mountain ranges like the Alps and Pyrenees deflect cold Arctic air masses away from populated coastal areas",
-      "The Gulf Stream carries warm tropical water from the Gulf of Mexico across the North Atlantic, warming air masses that blow onshore over Western Europe",
+      "The Gulf Stream carries warm tropical water northward across the Atlantic, warming air masses that blow onshore over Western Europe",
       "Western Europe lies beneath a persistent low-pressure system that continuously draws warm air northward from the Sahara",
       "The relatively shallow North Sea retains solar heat throughout summer and distributes warmth across neighboring continental coastlines"
     ],
@@ -6432,7 +6432,7 @@
     "context": "Mesopotamia sat on a flat, open plain with no natural barriers against invasion from any direction. The Tigris and Euphrates flooded unpredictably, and the soil eventually became too salty from irrigation -- a problem Egypt never faced. Egypt, by contrast, was protected by desert on both sides of the Nile and benefited from regular, predictable flooding."
   },
   {
-    "question": "The term 'rimland theory,' proposed by Nicholas Spykman in 1944 as a response to Mackinder's heartland theory, held that global power was controlled by ___?",
+    "question": "The term 'rimland theory,' proposed by Nicholas Spykman in 1944 as a response to Mackinder's heartland theory, held that global dominance was controlled by ___?",
     "answer": "Coastal regions encircling Eurasia, because sea power could project force anywhere along the rim",
     "choices": [
       "The Eurasian heartland, because interior land mass and vast resources gave continental powers strategic self-sufficiency",
@@ -6552,7 +6552,7 @@
     "context": "Western Europe's rivers flow from central mountain ranges toward the Atlantic, passing through temperate zones that keep them ice-free year-round. Eastern European rivers often freeze in winter or empty into landlocked or semi-enclosed seas like the Caspian or Black Sea, limiting access to global trade routes."
   },
   {
-    "question": "The geographic concept of 'corridor states' describes small nations positioned between great powers. Historically, which European nation best illustrates this concept?",
+    "question": "The geographic concept of 'corridor states' describes small nations situated between great powers. Historically, which European nation best illustrates this concept?",
     "answer": "Belgium, positioned between Germany, France, Britain, and the Netherlands, became a perpetual battlefield for great power conflicts",
     "choices": [
       "Switzerland, which leveraged alpine terrain and formalized neutrality to remain outside great power conflicts entirely",

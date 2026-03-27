@@ -2,11 +2,11 @@
   {
     "tier": 1,
     "question": "George Washington's decision to step down after two terms established what crucial precedent?",
-    "answer": "George Washington, who voluntarily stepped down after two terms",
+    "answer": "Washington, who voluntarily relinquished power after two terms",
     "choices": [
       "John Adams, who formally proposed the two-term limit during his presidency",
       "Thomas Jefferson, who first codified the two-term rule in writing",
-      "George Washington, who voluntarily stepped down after two terms",
+      "Washington, who voluntarily relinquished power after two terms",
       "Benjamin Franklin, who championed term limits at the Constitutional Convention"
     ],
     "context": "George Washington voluntarily gave up power after two terms as president (1789-1797), setting a precedent that lasted until Franklin Roosevelt broke it in 1940. His restraint helped establish American democracy as a system of laws, not rulers."
@@ -136,7 +136,7 @@
     "question": "The Gettysburg Address was delivered by ___?",
     "answer": "Abraham Lincoln, at the dedication of the Gettysburg military cemetery",
     "choices": [
-      "Ulysses S. Grant, honoring the fallen at a post-battle commemoration",
+      "Ulysses S. Grant, honoring the fallen at the Gettysburg battlefield ceremony",
       "Frederick Douglass, at a memorial ceremony in Washington in 1863",
       "Abraham Lincoln, at the dedication of the Gettysburg military cemetery",
       "William Seward, who drafted the speech on Lincoln's behalf"
@@ -256,7 +256,7 @@
     "question": "D-Day (the Normandy invasion) occurred in ___?",
     "answer": "1944, the year of the Allied landings in Normandy",
     "choices": [
-      "1942, the year of the Allied landings in North Africa",
+      "1942, the year of the Allied landings in Normandy, Africa",
       "1943, the year of the Allied invasion of Sicily",
       "1944, the year of the Allied landings in Normandy",
       "1945, the year of Germany's final military collapse"
@@ -529,12 +529,12 @@
   },
   {
     "tier": 1,
-    "question": "The Black Death killed approximately what fraction of Europe's population?",
-    "answer": "One third, approximately 25 million people",
+    "question": "The Black Death killed roughly what fraction of Europe's population?",
+    "answer": "One third, roughly 25 million people",
     "choices": [
       "About one tenth, concentrated in coastal trading cities",
       "Roughly one quarter of all Europeans",
-      "One third, approximately 25 million people",
+      "One third, roughly 25 million people",
       "Nearly one half, wiping out entire regions"
     ],
     "context": "The plague wiped out roughly one-third of Europe's population between 1347 and 1353 — approximately 25 million people. The massive labor shortage that followed actually improved conditions for surviving peasants, as their labor became far more valuable."
@@ -858,7 +858,7 @@
     "choices": [
       "George Patton, commander of the U.S. Third Army in France",
       "Dwight D. Eisenhower, Supreme Commander of Allied Forces in Europe",
-      "Douglas MacArthur, Supreme Commander in the Pacific Theater",
+      "Douglas MacArthur, Supreme Commander of Allied Forces in the Pacific",
       "Bernard Montgomery, commander of British ground forces at Normandy"
     ],
     "context": "General Dwight D. Eisenhower commanded the massive invasion from his headquarters in England. Before giving the order to go, he drafted a message accepting full blame in case the invasion failed. He later became the 34th President of the United States."
@@ -904,7 +904,7 @@
     "question": "The founding of Rome is traditionally dated to ___?",
     "answer": "753 BC, the legendary founding by Romulus after slaying his twin Remus",
     "choices": [
-      "509 BC, when the Roman Republic replaced the monarchy",
+      "509 BC, the traditional founding of the Roman Republic after expelling the last king",
       "753 BC, the legendary founding by Romulus after slaying his twin Remus",
       "625 BC, during the reign of the Etruscan king Tarquinius Priscus",
       "1000 BC, when early Latin settlements first appeared on the Palatine Hill"
@@ -1072,10 +1072,10 @@
     "question": "The Boxer Rebellion was against foreign influence in ___?",
     "answer": "China, where martial artists rose up against foreign powers and their influence",
     "choices": [
-      "Japan, where nationalist groups targeted Western trading concessions and missionaries",
+      "Japan, where nationalist groups rose up against foreign trading concessions and their influence",
       "China, where martial artists rose up against foreign powers and their influence",
-      "Korea, where resistance movements opposed Japanese and Russian encroachment",
-      "Vietnam, where anti-colonial uprisings challenged French imperial authority"
+      "Korea, where resistance movements opposed foreign Japanese and Russian encroachment",
+      "Vietnam, where anti-colonial uprisings challenged foreign French imperial authority"
     ],
     "context": "In 1899–1901, the 'Boxers' — Chinese martial artists formally known as the Society of Righteous and Harmonious Fists — rose up against foreign powers and Chinese Christians. An eight-nation alliance crushed the rebellion, further humiliating the declining Qing Dynasty."
   },
@@ -1276,8 +1276,8 @@
     "question": "The Battle of Stalingrad ended in German defeat in ___?",
     "answer": "1943, when the surrounded German Sixth Army finally surrendered",
     "choices": [
-      "1941, the same year Germany launched Operation Barbarossa",
-      "1942, before the full Soviet winter counteroffensive began",
+      "1941, the same year Germany launched Operation Barbarossa into Soviet territory",
+      "1942, before the German forces were fully encircled by the Soviet winter counteroffensive",
       "1943, when the surrounded German Sixth Army finally surrendered",
       "1944, the same year Allied forces landed at Normandy"
     ],
@@ -1454,10 +1454,10 @@
   {
     "tier": 2,
     "question": "Stalin's Great Purge took place primarily in the ___?",
-    "answer": "1930s, when Stalin eliminated rivals and purged the Soviet military and party",
+    "answer": "1930s, when political rivals were eliminated and the Soviet military and party were purged",
     "choices": [
       "1920s, when Lenin was consolidating Bolshevik power after the civil war",
-      "1930s, when Stalin eliminated rivals and purged the Soviet military and party",
+      "1930s, when political rivals were eliminated and the Soviet military and party were purged",
       "1940s, when wartime paranoia intensified Soviet repression of perceived enemies",
       "1950s, when post-war instability prompted renewed waves of political persecution"
     ],
@@ -1651,7 +1651,7 @@
       "The Byzantine Empire, under Emperor Justinian I in the 6th century",
       "The Roman Empire, under Emperor Theodosius I in 380 AD",
       "The Persian Empire, under Cyrus the Great in the 6th century BC",
-      "The Macedonian Empire, under one of Alexander's successor rulers"
+      "The Macedonian Empire, under Emperor Theodosius I's predecessors in the 4th century"
     ],
     "context": "In 380 AD, Theodosius declared Nicene Christianity the state religion of the Roman Empire, banning pagan worship. This decision shaped Western civilization for the next 1,500 years, making Christianity the dominant force in European culture, politics, and art."
   },
@@ -1682,11 +1682,11 @@
   {
     "tier": 3,
     "question": "The Battle of Bunker Hill (1775) actually took place on ___?",
-    "answer": "Breed's Hill, the promontory where most of the fighting took place",
+    "answer": "Breed's Hill, the promontory where most of the fighting occurred",
     "choices": [
       "Dorchester Heights, where colonial forces later placed captured cannon",
-      "Breed's Hill, the promontory where most of the fighting took place",
-      "Lexington Common, where the first shots of the Revolution were fired",
+      "Breed's Hill, the promontory where most of the fighting occurred",
+      "Lexington Common, where the first shots of the Revolution took place",
       "Bunker Hill proper, the higher ground just north of the main battle"
     ],
     "context": "Despite the name, most of the fighting occurred on nearby Breed's Hill. The British won but suffered over 1,000 casualties -- far more than the Americans. The battle proved that colonial militia could stand against professional British soldiers."
@@ -1816,8 +1816,8 @@
     "question": "The Ottoman Empire was dissolved in ___?",
     "answer": "1922, when Ataturk abolished the sultanate and ended the empire",
     "choices": [
-      "1918, when World War I ended and Allied forces occupied Constantinople",
-      "1920, when the Treaty of Sèvres formally partitioned Ottoman lands",
+      "1918, when World War I ended and the empire began to collapse under Allied pressure",
+      "1920, when the Treaty of Sèvres formally partitioned the empire's remaining lands",
       "1922, when Ataturk abolished the sultanate and ended the empire",
       "1924, when the Ottoman caliphate was formally and finally abolished"
     ],
@@ -1873,7 +1873,7 @@
   },
   {
     "tier": 3,
-    "question": "Charlemagne was crowned Emperor of the Romans in ___?",
+    "question": "Charlemagne was declared ruler of the Romans in which year?",
     "answer": "800 AD, when Pope Leo III crowned him Emperor on Christmas Day",
     "choices": [
       "771 AD, when Charlemagne became sole ruler of the Frankish kingdom",
@@ -1921,13 +1921,13 @@
   },
   {
     "tier": 3,
-    "question": "The Raj referred to British rule over ___?",
+    "question": "The Raj referred to colonial rule over which territory?",
     "answer": "India, the crown jewel of the British Empire",
     "choices": [
       "India, the crown jewel of the British Empire",
-      "The vast territories of sub-Saharan Africa",
-      "The settler colonies of Australia and New Zealand",
-      "The dominion of Canada and its provinces"
+      "The vast territories of sub-Saharan Africa under British administration",
+      "The settler colonies of Australia and New Zealand governed by British law",
+      "The dominion of Canada and its British-aligned provinces"
     ],
     "context": "The British Raj (1858-1947) governed the Indian subcontinent as a colony after the Crown took control from the East India Company. At its height, it ruled over 300 million people -- the 'jewel in the crown' of the British Empire."
   },
@@ -1945,13 +1945,13 @@
   },
   {
     "tier": 3,
-    "question": "The Camp David Accords brought peace between Israel and ___?",
+    "question": "The Camp David Accords resulted in a landmark agreement between Israel and which nation?",
     "answer": "Egypt, in the first Arab-Israeli peace treaty",
     "choices": [
-      "Jordan, ending decades of cross-border conflict",
+      "Jordan, ending decades of cross-border conflict and hostilities",
       "Egypt, in the first Arab-Israeli peace treaty",
-      "Syria, following the aftermath of the Yom Kippur War",
-      "Lebanon, amid its devastating civil war"
+      "Syria, following the aftermath of the Yom Kippur War peace negotiations",
+      "Lebanon, amid efforts to resolve its devastating civil war"
     ],
     "context": "Egyptian President Anwar Sadat and Israeli PM Menachem Begin signed the historic peace agreement in 1978, brokered by President Carter. Sadat paid with his life -- he was assassinated in 1981 by Egyptian extremists who opposed peace with Israel."
   },
@@ -2029,12 +2029,12 @@
   },
   {
     "tier": 3,
-    "question": "The Weimar Republic was established in Germany after ___?",
+    "question": "The Weimar Republic was established in Germany after which event?",
     "answer": "World War I, after imperial Germany's defeat and the Kaiser's abdication in 1918",
     "choices": [
       "World War II, when Allied occupation authorities restructured German governance",
       "World War I, after imperial Germany's defeat and the Kaiser's abdication in 1918",
-      "The revolutions of 1848, when liberal reformers briefly challenged Prussian authority",
+      "The revolutions of 1848, when liberal reformers briefly challenged Prussian authority in German states",
       "The Franco-Prussian War, following the collapse of the German Second Empire in 1871"
     ],
     "context": "Germany's first democracy was born from the chaos of WWI's end in 1918. Burdened by the Treaty of Versailles, hyperinflation, and political extremism from both left and right, the Weimar Republic struggled for 14 years before Hitler dismantled it."
@@ -2221,7 +2221,7 @@
   },
   {
     "tier": 4,
-    "question": "Who was crowned 'Emperor of the Romans' by Pope Leo III in 800 AD?",
+    "question": "Who was declared 'Emperor of the Romans' by Pope Leo III in 800 AD?",
     "answer": "Charlemagne, King of the Franks crowned in 800 AD",
     "choices": [
       "Otto I, who became emperor in 962 AD",
@@ -2246,11 +2246,11 @@
   {
     "tier": 4,
     "question": "The Spanish Armada was defeated in ___?",
-    "answer": "1588, when England defeated Spain's naval fleet",
+    "answer": "1588, when England repelled Spain's naval fleet",
     "choices": [
       "1570, the year of the Papal Bull against Elizabeth I",
       "1580, when Philip II united Spain and Portugal",
-      "1588, when England defeated Spain's naval fleet",
+      "1588, when England repelled Spain's naval fleet",
       "1600, the year the East India Company was founded"
     ],
     "context": "In 1588, English fireships scattered the Spanish fleet in the English Channel, and storms finished the job. Only about half of Spain's 130 ships made it home. The defeat marked the decline of Spanish naval power and the rise of England's."
@@ -2320,10 +2320,10 @@
     "question": "The Treaty of Versailles imposed war guilt on ___?",
     "answer": "Germany, held solely responsible under the War Guilt Clause",
     "choices": [
-      "Austria-Hungary, named as the primary instigator of the July Crisis",
+      "Austria-Hungary, assigned partial guilt as a co-instigator of the July Crisis",
       "Germany, held solely responsible under the War Guilt Clause",
       "The Ottoman Empire, penalized for its alliance with the Central Powers",
-      "Bulgaria, blamed for prolonging the conflict through its Balkan campaigns"
+      "Bulgaria, assigned shared guilt for prolonging the conflict through its Balkan campaigns"
     ],
     "context": "Article 231 — the 'War Guilt Clause' — forced Germany to accept sole responsibility for causing WWI. This humiliation, combined with massive reparations, created the resentment and economic desperation that Adolf Hitler would later exploit to rise to power."
   },
@@ -2404,7 +2404,7 @@
     "question": "The Taj Mahal was built by Mughal Emperor ___?",
     "answer": "Shah Jahan, who commissioned it as a tomb for his wife Mumtaz Mahal",
     "choices": [
-      "Akbar, who expanded the Mughal Empire to its greatest territorial extent",
+      "Akbar, who expanded the Mughal Empire and built the Agra Fort complex",
       "Shah Jahan, who commissioned it as a tomb for his wife Mumtaz Mahal",
       "Aurangzeb, who later imprisoned his own father in Agra Fort",
       "Jahangir, known for his patronage of Mughal painting and the arts"
@@ -2465,7 +2465,7 @@
     "answer": "France, halting the German drive toward Paris",
     "choices": [
       "France, halting the German drive toward Paris",
-      "Belgium, stopping the push beyond Brussels",
+      "Belgium, stopping the German push beyond Brussels",
       "Britain, preventing a planned cross-channel invasion",
       "Russia, stalling a coordinated Eastern Front offensive"
     ],
@@ -2476,7 +2476,7 @@
     "question": "The Easter Rising in Ireland occurred in ___?",
     "answer": "1916, on Easter Monday in Dublin",
     "choices": [
-      "1912, during the peak of the Home Rule crisis",
+      "1912, during the peak of the Home Rule crisis in Dublin",
       "1914, coinciding with the outbreak of the First World War",
       "1916, on Easter Monday in Dublin",
       "1918, in the final months of the First World War"
@@ -2545,13 +2545,13 @@
   },
   {
     "tier": 4,
-    "question": "Garibaldi is associated with the unification of ___?",
-    "answer": "Italy, where Garibaldi led his Redshirts to conquer the south",
+    "question": "Which nationalist leader is associated with the unification of a major European nation in the 19th century?",
+    "answer": "Garibaldi, who led his Redshirts to conquer the south and unite Italy",
     "choices": [
-      "Germany, where Bismarck unified rival states through 'blood and iron'",
-      "Italy, where Garibaldi led his Redshirts to conquer the south",
-      "Spain, torn apart by the Carlist Wars of succession in the 1830s",
-      "Greece, which fought a war of independence against Ottoman rule"
+      "Bismarck, who unified rival German states through 'blood and iron'",
+      "Garibaldi, who led his Redshirts to conquer the south and unite Italy",
+      "Don Carlos, who fought for the Spanish throne in the Carlist Wars of the 1830s",
+      "Kapodistrias, who helped lead Greece to independence from Ottoman rule"
     ],
     "context": "Giuseppe Garibaldi, the 'Hero of Two Worlds,' led his volunteer 'Redshirts' to conquer Sicily and southern Italy in 1860. His military genius and romantic idealism made him one of the most admired figures of the 19th century, working alongside statesman Cavour and King Victor Emmanuel II."
   },
@@ -2713,12 +2713,12 @@
   },
   {
     "tier": 4,
-    "question": "The Maastricht Treaty was signed in ___?",
-    "answer": "1992, the year the treaty was signed in the Dutch city of Maastricht",
+    "question": "The Maastricht Treaty was ratified and came into force in ___?",
+    "answer": "1992, the year the treaty was formally adopted by the member states of the European Community",
     "choices": [
       "1988, the year the Single European Act came into full effect",
       "1990, the year German reunification was completed",
-      "1992, the year the treaty was signed in the Dutch city of Maastricht",
+      "1992, the year the treaty was formally adopted by the member states of the European Community",
       "1994, the year the treaty's provisions on monetary union took hold"
     ],
     "context": "The treaty was signed on February 7, 1992, in the Dutch city of Maastricht. It represented the most ambitious step toward European integration since the Treaty of Rome in 1957, creating the three-pillar structure of the European Union."
@@ -2894,10 +2894,10 @@
   {
     "tier": 5,
     "question": "The Fourth Lateran Council (1215) was convened by Pope ___?",
-    "answer": "Innocent III, who summoned over 1,200 bishops to the council",
+    "answer": "Innocent III, who summoned over 1,200 bishops to the assembly",
     "choices": [
       "Gregory IX, who later established the Papal Inquisition in 1231",
-      "Innocent III, who summoned over 1,200 bishops to the council",
+      "Innocent III, who summoned over 1,200 bishops to the assembly",
       "Urban II, who had launched the First Crusade in 1095",
       "Alexander III, who clashed with Emperor Frederick Barbarossa"
     ],
@@ -2905,11 +2905,11 @@
   },
   {
     "tier": 5,
-    "question": "The Edict of Milan (313 AD) was issued by Emperor ___?",
-    "answer": "Constantine, who co-issued the edict after his reported vision at Milvian Bridge",
+    "question": "The Edict of Milan (313 AD) was proclaimed by Emperor ___?",
+    "answer": "Constantine, who co-authored the edict after his reported vision at Milvian Bridge",
     "choices": [
       "Diocletian, who had systematically persecuted Christians before abdicating",
-      "Constantine, who co-issued the edict after his reported vision at Milvian Bridge",
+      "Constantine, who co-authored the edict after his reported vision at Milvian Bridge",
       "Theodosius, who later made Christianity the empire's official state religion",
       "Licinius, Constantine's co-emperor who also signed the edict alongside him"
     ],
@@ -2918,10 +2918,10 @@
   {
     "tier": 5,
     "question": "The Delian League was led by ___?",
-    "answer": "Athens, which founded and eventually dominated the league",
+    "answer": "Athens, which founded and eventually dominated the alliance",
     "choices": [
       "Sparta, the dominant land power following the Persian Wars",
-      "Athens, which founded and eventually dominated the league",
+      "Athens, which founded and eventually dominated the alliance",
       "Corinth, whose powerful navy rivaled Athens across the Aegean",
       "Thebes, which later crushed Spartan dominance at the Battle of Leuctra"
     ],
@@ -2932,9 +2932,9 @@
     "question": "The Spartan constitution was attributed to ___?",
     "answer": "Lycurgus, the legendary lawgiver credited with Sparta's austere constitution",
     "choices": [
-      "Solon, who reformed Athenian law and abolished debt slavery around 594 BC",
+      "Solon, who reformed Athenian law and constitution around 594 BC",
       "Lycurgus, the legendary lawgiver credited with Sparta's austere constitution",
-      "Cleisthenes, who introduced sweeping democratic reforms in Athens around 508 BC",
+      "Cleisthenes, whose democratic constitutional reforms reshaped Athens around 508 BC",
       "Draco, whose harsh Athenian legal code gave us the word 'draconian'"
     ],
     "context": "Lycurgus, whether a real historical figure or a legend, was credited with creating Sparta's famously austere system known as the Great Rhetra. Spartan boys entered military training (the agoge) at age 7, and the entire society was organized around producing the finest warriors in Greece."
@@ -3110,9 +3110,9 @@
   {
     "tier": 5,
     "question": "The Atlantic Charter was signed by Roosevelt and ___?",
-    "answer": "Churchill, meeting Roosevelt aboard warships off Newfoundland",
+    "answer": "Churchill, who met with Roosevelt aboard warships off Newfoundland",
     "choices": [
-      "Churchill, meeting Roosevelt aboard warships off Newfoundland",
+      "Churchill, who met with Roosevelt aboard warships off Newfoundland",
       "Stalin, who joined major Allied summits only later at Tehran in 1943",
       "de Gaulle, representing the Free French government in exile in London",
       "Mackenzie King, as Canada hosted the meeting on Newfoundland territory"
@@ -3172,9 +3172,9 @@
     "question": "The Solidarity trade union movement emerged in ___?",
     "answer": "Poland, where shipyard workers founded the first independent Soviet-bloc union",
     "choices": [
-      "Hungary, where workers' councils had challenged Soviet authority in 1956",
+      "Hungary, where a workers' union movement had challenged Soviet authority in 1956",
       "Poland, where shipyard workers founded the first independent Soviet-bloc union",
-      "Czechoslovakia, already scarred by the Soviet crushing of the Prague Spring",
+      "Czechoslovakia, where an independent union movement preceded the Prague Spring",
       "East Germany, where simmering labor unrest would later topple the Berlin Wall"
     ],
     "context": "Solidarity, founded in Poland's Gdansk shipyard in 1980, became the first independent labor union in the Soviet bloc. At its peak, it had 10 million members. Though crushed by martial law in 1981, it survived underground and led Poland to freedom in 1989."
@@ -3365,19 +3365,19 @@
     "answer": "France, whose Marchand expedition clashed with British forces at Fashoda",
     "choices": [
       "France, whose Marchand expedition clashed with British forces at Fashoda",
-      "Germany, who disputed British control of the Nile Valley",
-      "Russia, who sought access to warm-water ports in East Africa",
-      "Belgium, whose Congo territory bordered the contested Sudanese region"
+      "Germany, who disputed British control of the Nile Valley near Fashoda",
+      "Russia, who sought access to warm-water ports via Fashoda in East Africa",
+      "Belgium, whose Congo territory bordered the contested region around Fashoda"
     ],
     "context": "British and French forces faced off at Fashoda (now Kodok) in Sudan, where competing imperial ambitions collided. France ultimately backed down, avoiding war. The crisis actually helped push the two nations toward the Entente Cordiale alliance of 1904."
   },
   {
     "tier": 3,
     "question": "The Missouri Compromise admitted Missouri as a slave state and ___?",
-    "answer": "Maine as a free state, preserving the balance of slave and free states",
+    "answer": "Maine as a free state, preserving the balance of power in Congress",
     "choices": [
       "Kansas as a free state, balancing the new western territories",
-      "Maine as a free state, preserving the balance of slave and free states",
+      "Maine as a free state, preserving the balance of power in Congress",
       "Ohio as a free state, giving the North an additional vote in Congress",
       "Iowa as a free state, extending the compromise line westward"
     ],
@@ -3520,9 +3520,9 @@
     "question": "The Zulu Kingdom was defeated by Britain at the Battle of ___?",
     "answer": "Ulundi, the decisive battle that ended the Anglo-Zulu War",
     "choices": [
-      "Rorke's Drift, where a small British garrison famously held off a massive Zulu force",
+      "Rorke's Drift, a famous battle where a small British garrison held off a massive Zulu force",
       "Ulundi, the decisive battle that ended the Anglo-Zulu War",
-      "Isandlwana, where the Zulus annihilated an entire British column",
+      "Isandlwana, a battle where the Zulus annihilated an entire British column",
       "Blood River, the site of an earlier Boer victory over the Zulu army"
     ],
     "context": "The decisive Battle of Ulundi on July 4, 1879, ended the Anglo-Zulu War. Earlier, at Isandlwana, the Zulus had inflicted one of the worst defeats in British colonial history. The Zulus' courage and military skill earned the respect of their enemies."
@@ -3578,10 +3578,10 @@
   {
     "tier": 4,
     "question": "The Boxer Protocol (1901) forced China to pay indemnity to ___?",
-    "answer": "The eight-nation alliance that had intervened to crush the Boxer Rebellion",
+    "answer": "The eight-nation alliance that had intervened to suppress the Boxer Uprising",
     "choices": [
       "Britain and France jointly, as the principal powers of the treaty port system",
-      "The eight-nation alliance that had intervened to crush the Boxer Rebellion",
+      "The eight-nation alliance that had intervened to suppress the Boxer Uprising",
       "Japan and Russia, who claimed dominant influence as regional imperial powers",
       "The United States alone, which later redirected its share toward Chinese education"
     ],
@@ -3602,11 +3602,11 @@
   {
     "tier": 4,
     "question": "The Republic of China was founded in ___?",
-    "answer": "1912, when Puyi abdicated and the republic was proclaimed",
+    "answer": "1912, when Puyi abdicated and a new government was proclaimed",
     "choices": [
       "1905, when Sun Yat-sen founded the Tongmenghui",
       "1908, following the death of the Guangxu Emperor",
-      "1912, when Puyi abdicated and the republic was proclaimed",
+      "1912, when Puyi abdicated and a new government was proclaimed",
       "1919, in the aftermath of the May Fourth Movement"
     ],
     "context": "The Qing Dynasty's last emperor, the six-year-old Puyi, abdicated on February 12, 1912. Sun Yat-sen's republic replaced over 2,000 years of imperial rule, though China would face decades of warlordism, civil war, and Japanese invasion before achieving stability."
@@ -3697,11 +3697,11 @@
   },
   {
     "tier": 4,
-    "question": "Ghana's independence in 1957 was the first sub-Saharan African country to gain independence from ___?",
-    "answer": "Britain, the first colonial power to grant sub-Saharan independence",
+    "question": "Ghana's independence in 1957 made it the first sub-Saharan African nation to decolonize from ___?",
+    "answer": "Britain, the first colonial power to relinquish control in that region",
     "choices": [
       "France, whose African colonies followed a different legal and constitutional path",
-      "Britain, the first colonial power to grant sub-Saharan independence",
+      "Britain, the first colonial power to relinquish control in that region",
       "Belgium, which controlled resource-rich territories across Central Africa",
       "Portugal, which remained the last major European power to decolonize Africa"
     ],
@@ -3986,10 +3986,10 @@
   {
     "tier": 5,
     "question": "The Locarno Treaties (1925) guaranteed the western borders of ___?",
-    "answer": "Germany, confirming its borders with France and Belgium",
+    "answer": "Germany, confirming its boundaries with France and Belgium",
     "choices": [
       "France, securing its eastern frontier against future aggression",
-      "Germany, confirming its borders with France and Belgium",
+      "Germany, confirming its boundaries with France and Belgium",
       "Poland, stabilizing its contested western boundary with Germany",
       "Italy, formalizing its northern Alpine frontier with Austria"
     ],
@@ -4044,7 +4044,7 @@
     "context": "The accords divided Vietnam along the 17th parallel, with Ho Chi Minh's communist government in the North and a US-backed government in the South. Reunification elections, promised for 1956, were never held -- the US and South Vietnam feared Ho Chi Minh would win."
   },
   {
-    "question": "The Magna Carta's 'no taxation without consent' clause was the ancestor of what American principle?",
+    "question": "The Magna Carta's clause limiting the crown's power to levy taxes without consent was the ancestor of what American principle?",
     "answer": "No taxation without representation",
     "choices": [
       "Separation of powers among the three branches of government",
@@ -4134,7 +4134,7 @@
       "Foreign spies and aristocratic conspirators had made brutal emergency measures legally necessary",
       "Terror was the price of virtue and revolutionary purity",
       "The survival of the Republic depended on eliminating all moderate factions within the Convention",
-      "Mercy toward enemies of the Republic would only invite further counter-revolutionary violence"
+      "Mercy toward enemies of the Republic would only invite further counter-revolutionary terror"
     ],
     "tier": 3,
     "context": "Robespierre declared that 'Terror is nothing more than speedy, severe, and inflexible justice — it is thus an emanation of virtue.' This chilling logic — that extreme violence is justified in pursuit of a perfect society — has been used by tyrants ever since."
@@ -4452,12 +4452,12 @@
     "context": "When Hungarian students and workers demanded freedom, Soviet tanks rolled into Budapest and killed an estimated 2,500 Hungarians. The West watched but did nothing, revealing that nuclear deterrence made it impossible to liberate nations behind the Iron Curtain."
   },
   {
-    "question": "The Solidarity trade union movement in Poland was significant because it ___?",
+    "question": "The Solidarity trade union in Poland was significant because it ___?",
     "answer": "Was the first mass independent labor movement that communist authorities could not permanently suppress",
     "choices": [
       "Was the first mass independent labor movement that communist authorities could not permanently suppress",
       "Secured immediate democratic elections by organizing a nationwide general strike in 1981",
-      "Functioned primarily as a Western-funded anticommunist front throughout its existence",
+      "Functioned primarily as a Western-funded anticommunist movement throughout its existence",
       "Provoked a Soviet military crackdown comparable to the 1968 Warsaw Pact invasion of Czechoslovakia"
     ],
     "tier": 3,
@@ -4539,9 +4539,9 @@
     "question": "The Chinese Cultural Revolution's campaign against 'the Four Olds' targeted ___?",
     "answer": "Old customs, culture, habits, and ideas -- essentially Chinese civilization itself",
     "choices": [
-      "Four bourgeois social classes — landlords, rich peasants, counter-revolutionaries, and rightists — deemed enemies of the state",
+      "Four bourgeois social classes — landlords, rich peasants, counter-revolutionaries, and rightists — deemed enemies of the Chinese state",
       "Old customs, culture, habits, and ideas -- essentially Chinese civilization itself",
-      "Four reactionary factions within the Communist Party leadership accused of restoring capitalism",
+      "Four reactionary factions within the Chinese Communist Party leadership accused of restoring capitalism",
       "Old religious institutions, their sacred texts, ordained clergy, and places of worship across China"
     ],
     "tier": 3,
@@ -4565,7 +4565,7 @@
     "choices": [
       "Petition parliament for redress of grievances and await legislative remedy",
       "Alter or abolish it and institute new government",
-      "Submit grievances to the Crown through established colonial assemblies",
+      "Submit grievances to the Crown through established colonial government assemblies",
       "Seek arbitration and resolution through neutral foreign diplomatic powers"
     ],
     "tier": 2,
@@ -4865,7 +4865,7 @@
     "choices": [
       "Jefferson's political rivals sued to block the treaty in federal court",
       "The Constitution did not explicitly give the President power to purchase territory",
-      "Spain disputed France's legal right to sell the territory to the United States",
+      "Spain disputed France's legal right to purchase and then sell the territory to the United States",
       "Many Americans feared the vast western lands could never be effectively governed"
     ],
     "tier": 3,
@@ -4887,10 +4887,10 @@
     "question": "Draco's code of laws in ancient Athens (621 BC) was historically notable because ___?",
     "answer": "It was the first written legal code in Athens, replacing arbitrary noble judgment",
     "choices": [
-      "It was exceptionally lenient by ancient standards, emphasizing fines over physical punishment",
+      "It was exceptionally lenient by ancient Athenian standards, emphasizing fines over physical punishment",
       "It was the first written legal code in Athens, replacing arbitrary noble judgment",
-      "It granted the popular assembly power to override rulings made by the noble councils",
-      "It abolished the hereditary archonship and opened the position to any propertied citizen"
+      "It granted the popular assembly in Athens power to override rulings made by the noble councils",
+      "It abolished the hereditary archonship and opened the position to any propertied citizen of Athens"
     ],
     "tier": 4,
     "context": "Draco's code was so harsh that the word 'draconian' entered the language. But its real significance was that for the first time, laws were written down where everyone could see them. Before Draco, justice was whatever the aristocrats said it was."
@@ -4947,9 +4947,9 @@
     "question": "Margaret Thatcher's economic reforms in Britain (1979-1990) reversed ___?",
     "answer": "Decades of socialist nationalization and union power that had produced economic stagnation",
     "choices": [
-      "Postwar austerity policies that had kept Britain financially dependent on American Marshall Plan aid",
+      "Postwar austerity policies that had kept Britain financially dependent on American Marshall Plan aid and slowed economic recovery",
       "Decades of socialist nationalization and union power that had produced economic stagnation",
-      "Imperial trade preferences that had sheltered British industry from global market competition",
+      "Imperial trade preferences that had sheltered British industry from global economic competition",
       "Keynesian demand stimulus programs introduced by successive Labour and Conservative governments"
     ],
     "tier": 3,
@@ -5281,10 +5281,10 @@
   },
   {
     "question": "The 5th Amendment's protection against self-incrimination means that ___?",
-    "answer": "No person can be forced to testify against themselves in a criminal case",
+    "answer": "No person can be compelled to testify against themselves in a criminal case",
     "choices": [
       "Defendants must testify if subpoenaed by the prosecution, since the right only protects voluntary statements",
-      "No person can be forced to testify against themselves in a criminal case",
+      "No person can be compelled to testify against themselves in a criminal case",
       "Evidence obtained through coercive interrogation is admissible if independently corroborated by other evidence",
       "The government must prove guilt beyond a reasonable doubt without relying on any confession at trial"
     ],
@@ -5304,11 +5304,11 @@
     "context": "When federal troops withdrew from the South in 1877 as part of a political compromise, Southern states quickly imposed Jim Crow laws, poll taxes, and literacy tests. The promise of Reconstruction would not be fulfilled for nearly a century."
   },
   {
-    "question": "The Dawes Plan of 1924 restructured German reparations payments in order to ___?",
-    "answer": "Stabilize the German economy and prevent political radicalism from spreading",
+    "question": "The Dawes Plan of 1924 restructured reparations payments from the Weimar Republic in order to ___?",
+    "answer": "Stabilize the struggling economy and prevent political radicalism from spreading",
     "choices": [
       "Transfer oversight of reparations payments from France to a neutral international committee with binding authority",
-      "Stabilize the German economy and prevent political radicalism from spreading",
+      "Stabilize the struggling economy and prevent political radicalism from spreading",
       "Reduce the total reparations burden by renegotiating the liability schedule directly with Allied governments",
       "Fund French reconstruction of war-devastated territories through guaranteed annual payments from the Rhineland"
     ],
@@ -5341,9 +5341,9 @@
   },
   {
     "question": "The League of Nations' failure to stop Italian aggression in Ethiopia (1935) showed that ___?",
-    "answer": "Collective security requires member nations willing to enforce it militarily",
+    "answer": "Collective security requires member states willing to enforce it militarily",
     "choices": [
-      "Collective security requires member nations willing to enforce it militarily",
+      "Collective security requires member states willing to enforce it militarily",
       "Economic sanctions alone are sufficient to halt determined aggressors with vulnerable economies",
       "Regional organizations like the African Union prove more effective than global bodies at keeping peace",
       "International bodies can only succeed when the aggressor lacks major-power backing from allies"
@@ -5365,9 +5365,9 @@
   },
   {
     "question": "The Battle of Britain (1940) was significant because ___?",
-    "answer": "Britain's survival prevented Hitler from controlling all of Western Europe",
+    "answer": "The nation's survival prevented Hitler from controlling all of Western Europe",
     "choices": [
-      "Britain's survival prevented Hitler from controlling all of Western Europe",
+      "The nation's survival prevented Hitler from controlling all of Western Europe",
       "Germany's Luftwaffe was permanently destroyed and never recovered as a strategic fighting force",
       "The victory directly compelled the United States to abandon neutrality and enter the war",
       "It proved that naval supremacy had become strategically obsolete in modern industrial warfare"
@@ -5802,7 +5802,7 @@
       "The 15th Amendment by banning discriminatory voting tests in Southern states",
       "The 14th Amendment by guaranteeing equal protection in voter registration processes",
       "The 13th Amendment by eliminating exploitative labor conditions tied to disenfranchisement",
-      "The 24th Amendment by extending federal oversight to state and local elections"
+      "The 24th Amendment by extending federal oversight to state and local voting elections"
     ],
     "tier": 2,
     "context": "Despite the 15th Amendment (1870) guaranteeing the right to vote regardless of race, Southern states used literacy tests, poll taxes, and intimidation to disenfranchise Black voters. The Voting Rights Act finally gave the federal government the enforcement power to make the constitutional guarantee a reality."

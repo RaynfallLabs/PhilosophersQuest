@@ -161,7 +161,7 @@
     "answer": "The Temple, a permanent house of worship in Jerusalem",
     "choices": [
       "The Temple, a permanent house of worship in Jerusalem",
-      "The Ark of the Covenant, housing the stone tablets of the Law",
+      "The Ark of the Covenant, a sacred chest kept in Jerusalem",
       "The Tabernacle, the portable desert sanctuary built under Moses",
       "The High Place, a hilltop shrine used for sacrificial worship"
     ],
@@ -206,10 +206,10 @@
   {
     "tier": 1,
     "question": "What is the Muslim pilgrimage to Mecca called?",
-    "answer": "Hajj, the pilgrimage to Mecca",
+    "answer": "Hajj, the annual pilgrimage to Mecca",
     "choices": [
-      "Hajj, the pilgrimage to Mecca",
-      "Salah, the ritual of daily prayer",
+      "Hajj, the annual pilgrimage to Mecca",
+      "Salah, the ritual of daily prayer toward Mecca",
       "Zakat, the practice of charitable giving",
       "Sawm, the fasting observed during Ramadan"
     ],
@@ -518,9 +518,9 @@
   {
     "tier": 1,
     "question": "Who is the Norse god associated with healing and beauty?",
-    "answer": "Baldur, beloved god of light, beauty, and purity",
+    "answer": "Baldur, beloved god of light, purity, and graceful appearance",
     "choices": [
-      "Baldur, beloved god of light, beauty, and purity",
+      "Baldur, beloved god of light, purity, and graceful appearance",
       "Freyr, god of fertility, sunshine, and prosperity",
       "Bragi, god of poetry, eloquence, and skaldic arts",
       "Tyr, god of justice, law, and single combat"
@@ -533,7 +533,7 @@
     "answer": "Prometheus, the Titan who stole fire from the gods for humanity",
     "choices": [
       "Prometheus, the Titan who stole fire from the gods for humanity",
-      "Hephaestus, the Olympian smith-god who forged fire in his divine furnace",
+      "Hephaestus, the Olympian smith-god who forged weapons for humanity",
       "Zeus, the king of the gods who originally controlled fire on Olympus",
       "Hermes, the divine messenger who carried gifts between gods and mortals"
     ],
@@ -605,8 +605,8 @@
     "answer": "Atlantic, named for the titan Atlas",
     "choices": [
       "Atlantic, named for the titan Atlas",
-      "Pacific, named for its calm waters by Magellan",
-      "Indian, named for the subcontinent it borders",
+      "Pacific, named for the titan Oceanus who encircled the earth",
+      "Indian, named for the titan Tethys who ruled the seas",
       "Arctic, named for the constellation Ursa Major"
     ],
     "context": "Atlas was condemned by Zeus to hold up the heavens for eternity. The ocean beyond the known western world was named after him, as were the Atlas Mountains in North Africa. The word 'atlas' for a book of maps also derives from his name."
@@ -713,8 +713,8 @@
     "answer": "The founder and prophet of Islam, born in Mecca around 570 CE",
     "choices": [
       "The founder and prophet of Islam, born in Mecca around 570 CE",
-      "Abu Bakr, the first Caliph who led the Muslim community after Muhammad's death",
-      "Ali ibn Abi Talib, Muhammad's cousin and son-in-law revered by Shia Muslims",
+      "Abu Bakr, the first Caliph and prophet-companion who led Muslims after Muhammad's death",
+      "Ali ibn Abi Talib, a prophet-like figure and Muhammad's cousin revered by Shia Muslims",
       "Waraqah ibn Nawfal, the Christian scholar who recognized Muhammad's first revelation"
     ],
     "context": "Muhammad (c. 570-632 CE) received the revelations that became the Quran over 23 years, beginning in a cave near Mecca. He is considered the final prophet in a line that includes Abraham, Moses, and Jesus, delivering God's complete and final message."
@@ -737,7 +737,7 @@
     "answer": "Thomas, who demanded to touch Jesus's wounds before believing",
     "choices": [
       "Thomas, who demanded to touch Jesus's wounds before believing",
-      "Philip, who asked Jesus to show them the Father before he would believe",
+      "Philip, who asked Jesus to show them the Father and heal his wounds of doubt",
       "Nathanael, who initially doubted any good thing could come from Nazareth",
       "Peter, who denied knowing Jesus three times before the rooster crowed"
     ],
@@ -749,8 +749,8 @@
     "answer": "Eleven, making twelve sons of Jacob in total",
     "choices": [
       "Eleven, making twelve sons of Jacob in total",
-      "Ten, the number of older brothers who sold Joseph into slavery",
-      "Twelve, counting Joseph himself as one of the brothers",
+      "Ten, the number of older brothers who sold Joseph, leaving Jacob heartbroken",
+      "Twelve, counting Joseph himself as one of the brothers in Jacob's family",
       "Nine, the number of brothers who initially traveled to Egypt for grain"
     ],
     "context": "Joseph had eleven brothers — the twelve sons of Jacob (Israel) became the twelve tribes of Israel. Joseph's story of betrayal, slavery, and eventual rise to power in Egypt is one of the Bible's great narratives of providence working through human evil."
@@ -781,12 +781,12 @@
   },
   {
     "tier": 2,
-    "question": "What theological concept does the Parable of the Talents illustrate about individual responsibility before God?",
+    "question": "What theological concept does the Parable of the Talents illustrate about how individuals stand before God?",
     "answer": "Each person will be individually accountable for how they used what God gave them -- stewardship and personal responsibility",
     "choices": [
       "Each person will be individually accountable for how they used what God gave them -- stewardship and personal responsibility",
       "Prosperity is a sign of divine favor, rewarding those who accumulate wealth through faithful obedience to God's commands",
-      "The entire community shares collective guilt or merit before God's final judgment, not the individual alone",
+      "The entire community shares collective responsibility before God's final judgment, not the individual alone",
       "God values cautious preservation of gifts over risking them in active service to others"
     ],
     "context": "The master entrusts different amounts to three servants and judges each on their stewardship. The parable teaches that God holds each person individually accountable -- not for having equal gifts, but for faithfully using whatever they were given."
@@ -857,7 +857,7 @@
     "answer": "Samsara, the endless cycle of existence driven by craving",
     "choices": [
       "Samsara, the endless cycle of existence driven by craving",
-      "Nirvana, the state of liberation from suffering and desire",
+      "Nirvana, the state of liberation from the cycle of suffering and desire",
       "Dharma, the moral law and natural order governing all life",
       "Karma, the principle of cause and effect across lifetimes"
     ],
@@ -865,12 +865,12 @@
   },
   {
     "tier": 2,
-    "question": "What does the story of Daniel refusing to worship Nebuchadnezzar's statue say about individual conscience and state authority?",
+    "question": "What does the story of Daniel refusing to worship Nebuchadnezzar's statue say about individual belief and state authority?",
     "answer": "Religious conscience places limits on political obedience — individuals must refuse commands to violate divine law",
     "choices": [
       "Religious conscience places limits on political obedience — individuals must refuse commands to violate divine law",
       "Earthly rulers hold God-given authority that extends over all religious observance",
-      "Divine protection is reserved for those who submit to legitimate governing powers",
+      "Divine protection is reserved for those whose conscience leads them to submit to legitimate governing powers",
       "Faithful people may outwardly conform to state demands while privately keeping their beliefs"
     ],
     "context": "Daniel's defiance established one of the most influential principles in Western thought: there are moral limits to political obedience. When the state demands what God forbids, the individual conscience must resist — a principle later invoked by abolitionists, civil rights leaders, and dissidents worldwide."
@@ -905,8 +905,8 @@
     "answer": "Yata no Kagami, the sacred mirror representing truth and wisdom",
     "choices": [
       "Yata no Kagami, the sacred mirror representing truth and wisdom",
-      "Kusanagi-no-Tsurugi, the legendary sword of the Imperial Regalia",
-      "Yasakani no Magatama, the jeweled necklace of the Imperial Regalia",
+      "Kusanagi-no-Tsurugi, the legendary sacred sword of the Imperial Regalia",
+      "Yasakani no Magatama, the sacred jeweled necklace of the Imperial Regalia",
       "Totsuka-no-Tsurugi, the great sword wielded by the god Susanoo"
     ],
     "context": "Yata no Kagami is one of Japan's three Imperial Regalia, said to have been used to lure the sun goddess Amaterasu out of a cave where she had hidden, plunging the world into darkness. It represents truth and wisdom."
@@ -925,11 +925,11 @@
   },
   {
     "tier": 2,
-    "question": "In Greek myth, what winged horse was born from Medusa's blood?",
+    "question": "In Greek myth, what creature was born from Medusa's blood?",
     "answer": "Pegasus, the winged horse born from Medusa's severed neck",
     "choices": [
       "Pegasus, the winged horse born from Medusa's severed neck",
-      "Sleipnir, the eight-legged steed born of a shape-shifting encounter",
+      "Sleipnir, the eight-legged winged steed born of a shape-shifting encounter",
       "Arion, the divine horse sprung from the union of Poseidon and Demeter",
       "Chrysaor, the golden-sworded giant born alongside Pegasus from Medusa's blood"
     ],
@@ -950,9 +950,9 @@
   {
     "tier": 2,
     "question": "Who are the Japanese creator deities who stirred the sea to create the islands?",
-    "answer": "Izanagi and Izanami, the divine couple who stirred the ocean with a jeweled spear",
+    "answer": "Izanagi and Izanami, the divine couple who used a jeweled spear to churn the primordial ocean",
     "choices": [
-      "Izanagi and Izanami, the divine couple who stirred the ocean with a jeweled spear",
+      "Izanagi and Izanami, the divine couple who used a jeweled spear to churn the primordial ocean",
       "Amaterasu and Tsukuyomi, the sun and moon deities who rule the heavens",
       "Susanoo and Inari, the storm god and harvest deity of earthly domains",
       "Raijin and Fujin, the paired gods commanding thunder and wind"
@@ -998,9 +998,9 @@
   {
     "tier": 2,
     "question": "What is the Hindu concept of the eternal self or soul?",
-    "answer": "Atman — the eternal individual self, ultimately identical with universal reality",
+    "answer": "Atman — the individual self or soul, ultimately identical with universal reality",
     "choices": [
-      "Atman — the eternal individual self, ultimately identical with universal reality",
+      "Atman — the individual self or soul, ultimately identical with universal reality",
       "Brahman — the universal, impersonal absolute reality underlying all existence",
       "Dharma — the cosmic order and an individual's moral duty within that order",
       "Moksha — the liberation from the cycle of death and rebirth, the highest spiritual goal"
@@ -1085,9 +1085,9 @@
     "answer": "Medusa, the Gorgon whose gaze turned men to stone",
     "choices": [
       "Medusa, the Gorgon whose gaze turned men to stone",
-      "Echidna, the mother of monsters who spawned many Greek beasts",
-      "Scylla, the six-headed sea creature who devoured passing sailors",
-      "Hydra, the many-headed serpent slain by Heracles in his labors"
+      "Echidna, the mother of monsters whose offspring terrorized ancient Greece",
+      "Scylla, the six-headed sea creature whose lair lay opposite the whirlpool Charybdis",
+      "Hydra, the many-headed serpent whose blood was used to poison Heracles's arrows"
     ],
     "context": "Medusa, whose gaze turned men to stone, was beheaded by Perseus using Athena's polished shield as a mirror to avoid looking directly at her. He then used her severed head as a weapon, turning his enemies to stone before placing it on Athena's shield."
   },
@@ -1106,9 +1106,9 @@
   {
     "tier": 2,
     "question": "Who is the wife of Zeus and queen of the Olympians?",
-    "answer": "Hera, goddess of marriage and queen of Mount Olympus",
+    "answer": "Hera, goddess of marriage and ruler of Mount Olympus",
     "choices": [
-      "Hera, goddess of marriage and queen of Mount Olympus",
+      "Hera, goddess of marriage and ruler of Mount Olympus",
       "Demeter, goddess of the harvest and fertility of the earth",
       "Athena, goddess of wisdom who sprang fully armed from Zeus's head",
       "Aphrodite, goddess of love said to have risen from the sea-foam"
@@ -1141,10 +1141,10 @@
   },
   {
     "tier": 2,
-    "question": "In the Parable of the Lost Sheep, how many sheep does the shepherd leave to find the one lost?",
-    "answer": "99, the sheep left safely behind",
+    "question": "In the Parable of the Lost Sheep, how many does the shepherd leave behind to find the one lost?",
+    "answer": "99, left safely behind while the shepherd searches",
     "choices": [
-      "99, the sheep left safely behind",
+      "99, left safely behind while the shepherd searches",
       "9, leaving ten behind to search",
       "49, representing exactly half the original flock",
       "11, symbolizing the faithful disciples"
@@ -1205,8 +1205,8 @@
     "answer": "The fleece of a golden ram, sought by Jason and the Argonauts",
     "choices": [
       "The fleece of a golden ram, sought by Jason and the Argonauts",
-      "The enchanted skin of the Nemean Lion, worn by Heracles as armor",
-      "The sacred hide of a white ox sacrificed to Zeus at Olympia",
+      "The enchanted fleece of the Nemean Lion, worn by Heracles as armor",
+      "The sacred fleece of a white ox sacrificed to Zeus at Olympia",
       "The wool of a divine ram offered by Odysseus to appease Poseidon"
     ],
     "context": "The Golden Fleece hung in a sacred grove guarded by a never-sleeping dragon in Colchis (modern Georgia). Jason's quest to retrieve it with the Argonauts is one of the oldest adventure narratives in Western literature."
@@ -1225,13 +1225,13 @@
   },
   {
     "tier": 2,
-    "question": "What is the sacred Taoist text written by Laozi?",
+    "question": "What is the sacred text written by Laozi that forms the foundation of his philosophy?",
     "answer": "The Tao Te Ching, the foundational text of Taoist philosophy",
     "choices": [
       "The Tao Te Ching, the foundational text of Taoist philosophy",
-      "The Analects, a collection of Confucius's sayings and dialogues",
+      "The Analects, a foundational Taoist collection of Confucius's sayings",
       "The I Ching, an ancient divination text also called the Book of Changes",
-      "The Zhuangzi, a collection of parables by the philosopher Zhuangzi"
+      "The Zhuangzi, a collection of Taoist parables by the philosopher Zhuangzi"
     ],
     "context": "The Tao Te Ching is one of the most translated books in history — just 5,000 characters long, yet endlessly deep. Its paradoxical wisdom ('the softest overcomes the hardest') has influenced philosophy, martial arts, and leadership theory for 2,500 years."
   },
@@ -1277,8 +1277,8 @@
     "answer": "His talent is taken away and given to the most productive servant",
     "choices": [
       "His talent is taken away and given to the most productive servant",
-      "He is praised for his prudent and cautious stewardship",
-      "He is required to repay his master the original sum with interest",
+      "He is praised for his prudent and cautious stewardship of his talent",
+      "He is required to repay his master the original talent with interest",
       "He is cast into the outer darkness as punishment for his fear"
     ],
     "context": "The master took away the buried talent and gave it to the servant who had earned the most. The parable's harsh message: God expects active engagement with the gifts we're given. Playing it safe out of fear is itself a failure of faithfulness."
@@ -1321,7 +1321,7 @@
   },
   {
     "tier": 2,
-    "question": "What is the rainbow bridge in Norse mythology?",
+    "question": "In Norse mythology, what is Bifrost?",
     "answer": "Bifrost, the rainbow bridge connecting Asgard to Midgard",
     "choices": [
       "Bifrost, the rainbow bridge connecting Asgard to Midgard",
@@ -1381,7 +1381,7 @@
   },
   {
     "tier": 2,
-    "question": "What is the path of devotion to God in Hinduism?",
+    "question": "What is the path of loving worship and surrender to a personal deity in Hinduism?",
     "answer": "Bhakti yoga, the path of loving devotion to a personal deity",
     "choices": [
       "Bhakti yoga, the path of loving devotion to a personal deity",
@@ -1417,7 +1417,7 @@
   },
   {
     "tier": 2,
-    "question": "Who is the Roman equivalent of Hermes and the messenger god?",
+    "question": "Who is the Roman equivalent of Hermes, serving as a divine intermediary between gods and mortals?",
     "answer": "Mercury, swift messenger and guide of souls",
     "choices": [
       "Mercury, swift messenger and guide of souls",
@@ -1429,7 +1429,7 @@
   },
   {
     "tier": 2,
-    "question": "What is the name of Odin's spear?",
+    "question": "What is the name of Odin's legendary weapon, said to always hit its mark?",
     "answer": "Gungnir, Odin's infallible spear forged by the dwarves",
     "choices": [
       "Gungnir, Odin's infallible spear forged by the dwarves",
@@ -1478,9 +1478,9 @@
   {
     "tier": 3,
     "question": "What are the names of Odin's two ravens?",
-    "answer": "Huginn and Muninn, Odin's ravens representing Thought and Memory",
+    "answer": "Huginn and Muninn, representing Thought and Memory",
     "choices": [
-      "Huginn and Muninn, Odin's ravens representing Thought and Memory",
+      "Huginn and Muninn, representing Thought and Memory",
       "Geri and Freki, Odin's two wolves who accompany him into battle",
       "Skoll and Hati, the wolves fated to chase the sun and moon across the sky",
       "Sleipnir and Svaðilfari, the eight-legged horse and his sire of Norse legend"
@@ -1742,11 +1742,11 @@
   {
     "tier": 3,
     "question": "In Norse myth, who is the god of single combat and heroic glory?",
-    "answer": "Tyr, god of single combat and heroic glory",
+    "answer": "Tyr, god of justice, law, and martial valor",
     "choices": [
-      "Tyr, god of single combat and heroic glory",
-      "Thor, god of thunder and strength",
-      "Odin, the Allfather and god of war",
+      "Tyr, god of justice, law, and martial valor",
+      "Thor, god of thunder, strength, and single combat",
+      "Odin, the Allfather and god of war and heroic glory",
       "Freyr, lord of fertility and prosperity"
     ],
     "context": "Tyr sacrificed his right hand by placing it in the mouth of the wolf Fenrir as a pledge of good faith -- knowing the wolf would bite it off. His sacrifice for the greater good made him the god of justice and self-sacrifice as well as single combat and heroic glory."
@@ -1757,7 +1757,7 @@
     "answer": "Theology, the direct study of the nature and attributes of God",
     "choices": [
       "Theology, the direct study of the nature and attributes of God",
-      "Ecclesiology, the study of the nature and structure of the Church",
+      "Ecclesiology, the study of the nature, attributes, and structure of the Church",
       "Soteriology, the study of salvation and redemptive doctrine",
       "Pneumatology, the study of the Holy Spirit and spiritual phenomena"
     ],
@@ -1781,7 +1781,7 @@
     "answer": "Humans are not morally self-sufficient -- the will is bent toward sin and requires divine grace to choose the good",
     "choices": [
       "Humans are not morally self-sufficient -- the will is bent toward sin and requires divine grace to choose the good",
-      "All humans are fully capable of virtue through education and reason alone, without divine assistance",
+      "All humans are fully capable of virtue through education and reason alone, without divine grace or assistance",
       "Only the original sin of Adam and Eve is morally relevant; all subsequent humans are born in a state of innocence",
       "Sin is a social condition inherited through culture and environment, not transmitted through human nature itself"
     ],
@@ -1985,7 +1985,7 @@
     "answer": "Ren, the virtue of humaneness and benevolence toward others",
     "choices": [
       "Ren, the virtue of humaneness and benevolence toward others",
-      "Li, the system of ritual propriety and social norms",
+      "Li, the system of ritual propriety and social norms reflecting benevolence in outward conduct",
       "Tao, the underlying Way that governs nature and existence",
       "De, the moral power and inner virtue of a cultivated person"
     ],
@@ -2173,7 +2173,7 @@
   },
   {
     "tier": 3,
-    "question": "In Greek mythology, who is the goddess of the harvest and agriculture?",
+    "question": "In Greek mythology, who is the goddess of agriculture and grain?",
     "answer": "Demeter, goddess of the harvest and grain",
     "choices": [
       "Demeter, goddess of the harvest and grain",
@@ -2250,7 +2250,7 @@
     "choices": [
       "The expanded version of the Nicene Creed finalized at the Council of Constantinople (381)",
       "The original creed as formulated at the Council of Nicaea in 325 AD",
-      "A creed exclusively used by the Eastern Orthodox Church, distinct from Roman practice",
+      "A creed exclusively used by the Eastern Orthodox Church, distinct from the Nicene tradition",
       "A medieval expansion of the Apostles' Creed adopted by the Carolingian Church"
     ],
     "context": "The Nicene-Constantinopolitan Creed (381 AD) expanded the original Nicene Creed of 325 AD by adding detailed statements about the Holy Spirit ('who proceeds from the Father, the Lord and giver of life'). It became the standard creed of Christianity worldwide and is still recited in most Christian worship services today."
@@ -2453,7 +2453,7 @@
     "answer": "John Calvin, whose 'Institutes of the Christian Religion' systematized Reformed Protestant theology",
     "choices": [
       "John Calvin, whose 'Institutes of the Christian Religion' systematized Reformed Protestant theology",
-      "Martin Luther, whose Ninety-Five Theses launched the Protestant Reformation in 1517",
+      "Martin Luther, whose theology of grace and Scripture shaped all Protestant traditions",
       "Ulrich Zwingli, who led the early Reformation in Zurich and broke with Rome over church practice",
       "John Knox, who brought Reformed Protestantism to Scotland and founded the Presbyterian church"
     ],
@@ -2514,8 +2514,8 @@
     "choices": [
       "The false theology that approaches God through worldly power and glory rather than the cross",
       "The Eastern Orthodox doctrine of encountering God through divine light and theosis",
-      "The proper celebration of Christ's triumphant resurrection as the culmination of history",
-      "The scholastic method of reasoning upward from creation to God's majestic attributes"
+      "The proper celebration of Christ's triumphant resurrection as the glory and culmination of history",
+      "The scholastic theology of reasoning upward from creation to God's majestic attributes"
     ],
     "context": "Luther contrasted the 'theology of glory' (knowing God through success and power) with the 'theology of the cross' (knowing God through suffering and weakness). The cross reveals that God works through what the world considers failure."
   },
@@ -2550,7 +2550,7 @@
     "choices": [
       "If moral law is discoverable by reason and embedded in human nature, then all people share basic rights regardless of what any government decrees",
       "Natural moral law applies universally only within communities that formally acknowledge divine authority as their political basis",
-      "Rights are contingent on civil law and social contract, since nature alone prescribes no enforceable legal obligations",
+      "Rights are contingent on civil law and social contract, since human nature alone prescribes no enforceable legal obligations",
       "Natural law primarily legitimizes hierarchical political authority, granting rulers sovereignty derived from the divine order"
     ],
     "context": "If moral law is embedded in human nature and discoverable by reason, then rights aren't granted by governments -- they're inherent. This insight traveled from Aquinas through Locke to Jefferson's 'self-evident truths' in the Declaration of Independence."
@@ -2731,7 +2731,7 @@
       "Being declared righteous before God through faith in Christ alone, apart from meritorious works",
       "Being made actually and inwardly holy through an ongoing process of sanctifying grace over a lifetime",
       "Achieving a right standing before God by cultivating moral virtue and fulfilling religious observances",
-      "Entering into covenant relationship with God through the sacramental grace conferred in baptism"
+      "Entering into covenant relationship with God through the sacramental grace conferred in baptism, requiring ongoing faith"
     ],
     "context": "Justification by faith means God declares sinners righteous based on Christ's merits received through faith — not based on their own good works. Luther called it 'the article on which the church stands or falls,' distinguishing Protestant justification (a legal declaration) from Catholic sanctification (an interior transformation)."
   },
@@ -2881,7 +2881,7 @@
   },
   {
     "tier": 4,
-    "question": "Where was Martin Luther excommunicated and asked to recant?",
+    "question": "Where was Martin Luther asked to recant his teachings before Holy Roman Emperor Charles V?",
     "answer": "The Diet of Worms (1521), where Luther refused to recant before Emperor Charles V",
     "choices": [
       "The Diet of Worms (1521), where Luther refused to recant before Emperor Charles V",
@@ -3086,9 +3086,9 @@
   {
     "tier": 4,
     "question": "What are the names of the three main Norns?",
-    "answer": "Urd, Verdandi, and Skuld — the Norns of past, present, and future",
+    "answer": "Urd, Verdandi, and Skuld — goddesses of past, present, and future",
     "choices": [
-      "Urd, Verdandi, and Skuld — the Norns of past, present, and future",
+      "Urd, Verdandi, and Skuld — goddesses of past, present, and future",
       "Frigg, Freya, and Skadi — major goddesses of the Aesir and Vanir traditions",
       "Idunn, Sif, and Ran — divine figures associated with renewal, harvest, and the sea",
       "Hela, Angrboda, and Nott — figures linked to death, the giant-kin, and the night"
@@ -3137,7 +3137,7 @@
     "answer": "Knowing God through suffering and the cross, not through glory and reason",
     "choices": [
       "Knowing God through suffering and the cross, not through glory and reason",
-      "A systematic theology tracing the full arc of salvation through Christ's atoning sacrifice",
+      "A systematic theology tracing the full arc of salvation through Christ's atoning cross and sacrifice",
       "The doctrine that God's true glory is most fully revealed in the triumph of the resurrection",
       "The application of scholastic philosophical reasoning to interpret Christ's passion narratives"
     ],
@@ -3566,9 +3566,9 @@
   {
     "tier": 5,
     "question": "What mystical tradition did Meister Eckhart belong to?",
-    "answer": "Rhineland mysticism, a Dominican tradition emphasizing union with God's ground",
+    "answer": "Rhineland mysticism, a Dominican order emphasizing union with God's ground",
     "choices": [
-      "Rhineland mysticism, a Dominican tradition emphasizing union with God's ground",
+      "Rhineland mysticism, a Dominican order emphasizing union with God's ground",
       "Franciscan mysticism, centered on poverty, nature, and affective love of Christ",
       "Carmelite mysticism, focused on contemplative ascent through interior castles of the soul",
       "Cistercian mysticism, rooted in monastic silence and Bernard of Clairvaux's bridal theology"
@@ -3625,7 +3625,7 @@
   },
   {
     "tier": 5,
-    "question": "What is the Prose Edda's full title and significance?",
+    "question": "What is the full title and significance of Snorri Sturluson's Edda?",
     "answer": "The Prose Edda by Snorri Sturluson — a 13th-century handbook preserving Norse mythology",
     "choices": [
       "The Prose Edda by Snorri Sturluson — a 13th-century handbook preserving Norse mythology",
@@ -3673,13 +3673,13 @@
   },
   {
     "tier": 5,
-    "question": "Who were the Cathars, and why were they considered heretics?",
+    "question": "Who were the Cathars, and why were they condemned by the Catholic Church?",
     "answer": "A 12th-13th century dualist movement that rejected the material world as evil; condemned as heretics by Rome",
     "choices": [
       "A 12th-13th century dualist movement that rejected the material world as evil; condemned as heretics by Rome",
-      "Followers of John Wycliffe who challenged papal authority and translated scripture into the vernacular",
-      "A 13th-century monastic reform movement that embraced voluntary poverty as apostolic witness",
-      "An early Christian sect that rejected the Old Testament as the work of a lesser, wrathful deity"
+      "Followers of John Wycliffe who challenged papal authority and were branded heretics for translating scripture",
+      "A 13th-century monastic reform movement declared heretical for embracing voluntary poverty as apostolic witness",
+      "An early Christian sect deemed heretical for rejecting the Old Testament as the work of a lesser, wrathful deity"
     ],
     "context": "The Cathars believed the material world was created by an evil god and only the spirit was good -- a dualism that rejected the Incarnation, the sacraments, and the Catholic priesthood. The Church launched the Albigensian Crusade (1209-1229) against them, one of the bloodiest episodes in medieval Christian history."
   },
@@ -3710,9 +3710,9 @@
   {
     "tier": 5,
     "question": "What is the mystical concept of the 'coincidentia oppositorum'?",
-    "answer": "The coincidence of opposites in God -- a concept developed by Nicholas of Cusa to describe divine transcendence",
+    "answer": "The coincidence of opposites in God — an idea developed by Nicholas of Cusa to describe divine transcendence",
     "choices": [
-      "The coincidence of opposites in God -- a concept developed by Nicholas of Cusa to describe divine transcendence",
+      "The coincidence of opposites in God — an idea developed by Nicholas of Cusa to describe divine transcendence",
       "The mystical union of the soul with the divine, dissolving all distinction between self and God",
       "The Hegelian dialectical synthesis in which opposing historical forces are resolved into a higher rational unity",
       "The apophatic method of describing God only through systematic negation of all finite attributes"
@@ -3986,9 +3986,9 @@
   {
     "tier": 5,
     "question": "What is the concept of the 'beatific vision' in Catholic theology?",
-    "answer": "The direct, face-to-face vision of God that the blessed experience in heaven",
+    "answer": "The direct, face-to-face encounter with God that the blessed experience in heaven",
     "choices": [
-      "The direct, face-to-face vision of God that the blessed experience in heaven",
+      "The direct, face-to-face encounter with God that the blessed experience in heaven",
       "A mystical state in which the soul perceives uncreated divine light during deep contemplative prayer",
       "The graced awareness of God's presence experienced by the faithful through reception of the Eucharist",
       "The eschatological illumination granted to souls at the moment of final resurrection and judgment"
@@ -4049,8 +4049,8 @@
     "answer": "Angra Mainyu, the destructive spirit and embodiment of evil in cosmic opposition to Ahura Mazda",
     "choices": [
       "Angra Mainyu, the destructive spirit and embodiment of evil in cosmic opposition to Ahura Mazda",
-      "Druj, the cosmic principle of deceit and disorder that opposes Asha, the truth",
-      "Aeshma, the daeva of wrath and violence who leads the faithful astray",
+      "Druj, the cosmic spirit of deceit and disorder that opposes Asha, the truth",
+      "Aeshma, the daeva of wrath and violence who leads the faithful astray and serves Ahura Ahriman",
       "Nasu, the demoness of corruption and pollution who defiles the bodies of the dead"
     ],
     "context": "Angra Mainyu (also called Ahriman) is the destructive spirit locked in cosmic battle with Ahura Mazda. Zoroastrianism's moral dualism — good versus evil as cosmic forces — profoundly influenced later religious thought about Satan, demons, and the struggle between light and darkness. The other choices (Druj, Aeshma, Nasu) are real Zoroastrian evil entities but subordinate to Angra Mainyu."
@@ -4237,7 +4237,7 @@
   },
   {
     "tier": 5,
-    "question": "What was Athanasius's famous saying defending Christ's divinity?",
+    "question": "What famous Latin phrase describes Athanasius's solitary defense of Christ's divinity against widespread opposition?",
     "answer": "Athanasius contra mundum — Athanasius against the world",
     "choices": [
       "Athanasius contra mundum — Athanasius against the world",
@@ -4273,10 +4273,10 @@
   },
   {
     "tier": 5,
-    "question": "Who was Simone Weil, and what theological concept is she known for?",
-    "answer": "A French mystic who developed the concept of 'decreation' -- the self emptying toward God's love",
+    "question": "Who was Simone Weil, and what theological idea is she known for?",
+    "answer": "A French mystic who developed the idea of 'decreation' -- the self emptying toward God's love",
     "choices": [
-      "A French mystic who developed the concept of 'decreation' -- the self emptying toward God's love",
+      "A French mystic who developed the idea of 'decreation' -- the self emptying toward God's love",
       "A German philosopher who proclaimed the death of God and called for a revaluation of all values",
       "An American theologian who developed process theology and emphasized God's relational, evolving nature",
       "A French feminist theologian who reinterpreted Trinitarian doctrine through the lens of gendered language"
@@ -4309,10 +4309,10 @@
   },
   {
     "tier": 5,
-    "question": "Who was Origen, and why was he later considered controversial?",
-    "answer": "An early Church Father who proposed pre-existence of souls and universal salvation; later condemned",
+    "question": "Who was Origen, and why was he considered controversial?",
+    "answer": "An early Church Father who proposed pre-existence of souls and universal salvation; eventually condemned",
     "choices": [
-      "An early Church Father who proposed pre-existence of souls and universal salvation; later condemned",
+      "An early Church Father who proposed pre-existence of souls and universal salvation; eventually condemned",
       "A prominent bishop who denied the Trinity and was condemned at the Council of Nicaea",
       "A celebrated apologist and martyr who wrote extensively against Gnostic heresies and paganism",
       "A monastic theologian who rejected Greek philosophy as fundamentally incompatible with Christian faith"
@@ -4337,9 +4337,9 @@
     "answer": "Hesiod, an early Greek poet writing around 700 BCE",
     "choices": [
       "Hesiod, an early Greek poet writing around 700 BCE",
-      "Homer, the legendary author of the Iliad and Odyssey",
-      "Pindar, the celebrated composer of victory odes",
-      "Aeschylus, the Athenian playwright of tragic dramas"
+      "Homer, the legendary Greek author of the Iliad and Odyssey",
+      "Pindar, the celebrated Greek composer of victory odes",
+      "Aeschylus, the Athenian Greek playwright of tragic dramas"
     ],
     "context": "Hesiod, writing around 700 BCE, composed the Theogony as a systematic account of how the gods came to be -- from primordial Chaos through the Titans to the Olympian gods led by Zeus. His poem gave the Greeks their closest equivalent to a creation scripture and influenced all subsequent mythological writing."
   },
@@ -4429,25 +4429,25 @@
   },
   {
     "tier": 5,
-    "question": "What is 'Madhyamaka' in Buddhist philosophy?",
+    "question": "What is 'Madhyamaka' in Buddhist thought?",
     "answer": "The Middle Way philosophy founded by Nagarjuna, teaching that all phenomena are empty of inherent existence",
     "choices": [
       "The Middle Way philosophy founded by Nagarjuna, teaching that all phenomena are empty of inherent existence",
       "The original path the Buddha prescribed between extreme asceticism and sensual indulgence, outlined in the first sermon",
-      "A Yogacara philosophical school asserting that perceived external reality is merely a projection of mind-only consciousness",
+      "A Yogacara school asserting that perceived external reality is merely a projection of mind-only consciousness",
       "The Theravada Abhidhamma tradition that systematically catalogues dharmas as ultimately real building blocks of experience"
     ],
     "context": "Nagarjuna's Madhyamaka ('Middle Way') avoids two extremes: eternalism (things truly exist) and nihilism (nothing exists at all). Instead, all things arise dependently and are therefore 'empty' of independent essence -- they exist, but not in the solid, self-contained way we habitually assume. This teaching is considered the philosophical pinnacle of Mahayana Buddhism."
   },
   {
     "tier": 5,
-    "question": "What is the Zoroastrian concept of the cosmic battle?",
+    "question": "What is the Zoroastrian concept of the cosmic conflict between good and evil?",
     "answer": "A battle between Ahura Mazda (Good) and Angra Mainyu (Evil) lasting until Good triumphs",
     "choices": [
       "A battle between Ahura Mazda (Good) and Angra Mainyu (Evil) lasting until Good triumphs",
-      "A cosmic struggle between Zurvan (Time) and the twin spirits of light and darkness",
-      "An eternal cycle of destruction and creation governed by the seven Amesha Spentas",
-      "A conflict between righteous human souls and the demonic forces of the Druj"
+      "A cosmic struggle between Zurvan (Time) and the twin spirits of light and darkness in an eternal battle",
+      "An eternal cycle of destruction and creation governed by the seven Amesha Spentas in a cosmic battle",
+      "A conflict between righteous human souls and the demonic forces of the Druj in a spiritual battle"
     ],
     "context": "Zoroastrianism presents history as a battle between Ahura Mazda (Wise Lord, representing truth and order) and Angra Mainyu (Destructive Spirit, representing deceit and chaos). Each human's moral choices contribute to one side or the other, and the tradition promises that good will ultimately triumph in a final renovation of the world."
   },
@@ -4457,9 +4457,9 @@
     "answer": "A Gnostic text describing Sophia's fall and redemption through Christ",
     "choices": [
       "A Gnostic text describing Sophia's fall and redemption through Christ",
-      "A Neoplatonic dialogue on divine wisdom attributed to Valentinus",
-      "A Coptic compendium of creation myths centered on the Demiurge",
-      "A collection of Gnostic prayers and invocations to the Pleroma"
+      "A Neoplatonic dialogue on divine wisdom featuring Sophia as a central figure, attributed to Valentinus",
+      "A Coptic compendium of creation myths in which Sophia acts as the flawed Demiurge",
+      "A collection of Gnostic prayers and invocations honoring Sophia as part of the Pleroma"
     ],
     "context": "The Pistis Sophia ('Faith Wisdom') recounts a Gnostic myth in which Sophia falls from the divine realm through misplaced longing and is trapped in chaos by demonic archons. Christ descends to rescue her, and her repentance and restoration become a model for every soul's journey from ignorance back to divine knowledge."
   },
@@ -4542,7 +4542,7 @@
       "War must have a just cause, be declared by legitimate authority, and be fought with right intention — rulers cannot wage war for plunder or personal glory",
       "Christians may never participate in warfare, since any act of killing categorically violates the divine commandment against murder",
       "Any war formally endorsed by Church authorities qualifies as just, since spiritual sanction overrides the ruler's personal motivation",
-      "Only wars of direct self-defense are morally permissible; all wars of intervention or territorial expansion stand condemned"
+      "Only wars of direct self-defense are morally permissible; all wars of intervention or territorial expansion stand condemned by rulers and clergy alike"
     ],
     "tier": 3,
     "context": "Augustine established that war must have a just cause, legitimate authority, and right intention. These criteria didn't abolish war but placed moral constraints on it — rulers could no longer wage war for plunder or personal glory without theological condemnation."
@@ -4602,7 +4602,7 @@
       "He refused to recant unless shown to be wrong by Scripture or reason, declaring that acting against conscience is neither right nor safe",
       "He appealed to the authority of the Council of Constance, arguing that a general council held higher authority than both Pope and Emperor",
       "He contended that the broad support of German Christians for his reforms granted them sufficient democratic and moral legitimacy",
-      "He offered a conditional recantation, requesting only that the Emperor convene a church council to adjudicate his disputed theses"
+      "He offered a conditional recantation, requesting only that the Emperor convene a church council to adjudicate his disputed theses, leaving his conscience unbound"
     ],
     "tier": 3,
     "context": "Luther's famous declaration -- 'Unless I am convicted by Scripture and plain reason, I cannot and will not recant, for it is neither safe nor right to go against conscience' -- established that individual moral conviction, grounded in reason and revelation, can legitimately defy institutional authority."
@@ -4709,7 +4709,7 @@
     "choices": [
       "By declaring the poor, the meek, and the persecuted as blessed, it inverted the Roman values of strength, honor, and conquest -- power through vulnerability",
       "By affirming civic virtue and communal piety, it recast Roman ideals of duty and honor through the lens of Jewish covenantal law",
-      "By calling followers to pursue a holy kingdom, it reframed political ambition as a spiritual mandate to displace imperial governance with divine rule",
+      "By calling followers to pursue a holy kingdom, it reframed political ambition as a spiritual mandate to displace imperial power with divine rule",
       "By teaching withdrawal from public life and glory-seeking, it rejected the Roman ideal that virtue must be displayed in civic and military service"
     ],
     "tier": 2,
@@ -4720,7 +4720,7 @@
     "answer": "Humans are caretakers, not absolute owners, of what God has entrusted to them -- ownership carries moral obligations toward others and creation",
     "choices": [
       "Humans are caretakers, not absolute owners, of what God has entrusted to them -- ownership carries moral obligations toward others and creation",
-      "Property is a provisional divine gift that must be surrendered entirely to ecclesiastical authority upon the owner's death, returning it to God's community",
+      "Property is a provisional divine gift that must be surrendered entirely to ecclesiastical authority upon the owner's death, returning it to God's creation and community",
       "Wealth accumulation is theologically permissible only when matched by proportional charitable giving that offsets the spiritual dangers of material possession",
       "Church officials bear a sacred duty to manage congregational finances on behalf of the faithful, distributing resources according to communal need and merit"
     ],
@@ -4752,12 +4752,12 @@
     "context": "Prophetic Judaism and Christianity transformed sin from ritual impurity (fixable by ceremonies) into personal moral failure (requiring inner change). Sin damages your relationship with God and others — and only genuine repentance, not ritual, can repair it."
   },
   {
-    "question": "How did early Christianity's concept of the soul's equal worth before God challenge ancient Greco-Roman social hierarchies?",
-    "answer": "If each soul has equal infinite value before God regardless of social rank, then enslaved persons, women, and foreigners have dignity that transcends their legal status",
+    "question": "How did early Christianity's concept of the soul's worth before God challenge ancient Greco-Roman social hierarchies?",
+    "answer": "If each soul has infinite value before God regardless of social rank, then enslaved persons, women, and foreigners have dignity that transcends their legal status",
     "choices": [
-      "If each soul has equal infinite value before God regardless of social rank, then enslaved persons, women, and foreigners have dignity that transcends their legal status",
+      "If each soul has infinite value before God regardless of social rank, then enslaved persons, women, and foreigners have dignity that transcends their legal status",
       "Christianity largely accommodated Roman social hierarchies, treating existing class distinctions as divinely sanctioned expressions of natural law and providential order",
-      "Soul equality was understood to apply only within baptized Christian communities, leaving the dignity and status of outsiders theologically unchanged and unaddressed",
+      "Soul worth was understood to apply only within baptized Christian communities, leaving the dignity and status of outsiders theologically unchanged and unaddressed",
       "Early Christianity relied primarily on the Stoic concept of universal human reason — not a doctrine of the soul — as its basis for questioning inherited social hierarchies"
     ],
     "tier": 3,
@@ -4776,7 +4776,7 @@
     "context": "The Hebrew prophets — Nathan confronting David, Elijah opposing Ahab — established that even kings answer to a higher moral law. No political power is absolute because God's justice stands in judgment over every ruler. This tradition shaped the entire Western concept of accountable government."
   },
   {
-    "question": "What does the theology of the 'image of God' (imago Dei) imply about how criminals and enemies should be treated?",
+    "question": "What does the theology of the 'image of God' (imago Dei) imply about how those who commit serious wrongs should be treated?",
     "answer": "Even criminals and enemies bear God's image, placing limits on how they may be punished — torture, degradation, and execution without fair process violate that dignity",
     "choices": [
       "Even criminals and enemies bear God's image, placing limits on how they may be punished — torture, degradation, and execution without fair process violate that dignity",
@@ -4788,7 +4788,7 @@
     "context": "If even the worst criminal bears God's image, then there are limits on punishment. Torture, degradation, and denial of due process violate the divine image in every person. This principle has been invoked from the abolition of torture to modern human rights declarations."
   },
   {
-    "question": "How did the Puritan concept of 'calling' (vocation) transform the idea that ordinary work has spiritual value?",
+    "question": "How did the Puritan concept of 'calling' (vocation) transform the spiritual value of everyday work?",
     "answer": "Luther and Calvin taught that all honest work is service to God — not just priestly work; this dignified ordinary labor and motivated diligent work as a form of worship",
     "choices": [
       "Luther and Calvin taught that all honest work is service to God — not just priestly work; this dignified ordinary labor and motivated diligent work as a form of worship",
@@ -4824,7 +4824,7 @@
     "context": "Common grace teaches that God's goodness extends to all people, not just believers: rain falls on the just and unjust alike. This means Christians can genuinely learn from non-Christian art, science, and philosophy without compromising their faith -- truth discovered anywhere ultimately has its source in God. Reformed theologians like Abraham Kuyper developed this doctrine to explain why unbelievers can produce genuine wisdom and moral insight."
   },
   {
-    "question": "What did the Anabaptists' insistence on voluntary church membership (believers' baptism) imply about the nature of religious faith?",
+    "question": "What did the Anabaptists' insistence on believers' baptism imply about the nature of religious commitment?",
     "answer": "Faith must be consciously chosen by the individual -- baptizing infants makes church membership a political identity rather than a personal commitment to God",
     "choices": [
       "Faith must be consciously chosen by the individual -- baptizing infants makes church membership a political identity rather than a personal commitment to God",
@@ -4848,7 +4848,7 @@
     "context": "The Exodus -- God delivering enslaved Israel from Pharaoh -- has been invoked by every liberation movement in Western history: American slaves singing 'Go Down, Moses,' civil rights marchers, and Latin American liberation theologians. It's the paradigmatic story of God siding with the oppressed. Notably, both colonizers and the colonized have claimed this narrative, making it one of the most contested and powerful texts in political theology."
   },
   {
-    "question": "What was the theological argument of Martin Luther King Jr. for civil disobedience against unjust laws?",
+    "question": "What was the theological argument of Martin Luther King Jr. for civil disobedience against laws he considered morally illegitimate?",
     "answer": "Following Aquinas: an unjust law is no law at all -- it contradicts the natural moral law and the equal dignity of persons before God, and conscience must resist it",
     "choices": [
       "Following Aquinas: an unjust law is no law at all -- it contradicts the natural moral law and the equal dignity of persons before God, and conscience must resist it",
@@ -4884,7 +4884,7 @@
     "context": "Metanoia means a complete turning around -- not just feeling sorry but fundamentally reorienting your life toward God. It requires personal acknowledgment of specific wrongs, placing moral responsibility squarely on the individual."
   },
   {
-    "question": "How does Buddhism's concept of individual karma differ from the Judeo-Christian concept of individual moral responsibility?",
+    "question": "How does Buddhism's concept of individual karma differ from the Judeo-Christian concept of individual moral accountability?",
     "answer": "Both place moral responsibility on the individual, but karma is automatic and impersonal (consequences following causes); the Judeo-Christian model involves a personal God who forgives and judges",
     "choices": [
       "Both place moral responsibility on the individual, but karma is automatic and impersonal (consequences following causes); the Judeo-Christian model involves a personal God who forgives and judges",
@@ -4896,7 +4896,7 @@
     "context": "Both hold individuals accountable, but karma operates as an impersonal moral law (actions automatically produce consequences), while Judeo-Christian morality involves a personal God who judges, forgives, and restores. The Buddhist path emphasizes understanding and liberation; the Abrahamic path emphasizes personal relationship with God."
   },
   {
-    "question": "What does the Islamic concept of 'ummah' (community of believers) imply about the relationship between individual and collective religious identity, compared to Protestant Christianity?",
+    "question": "What does the Islamic concept of 'ummah' (community of believers) imply about individual versus collective religious identity, compared to Protestant Christianity?",
     "answer": "Islam emphasizes the collective religious community more strongly; Protestant Christianity emphasizes individual direct relationship with God through personal faith and scripture",
     "choices": [
       "Islam emphasizes the collective religious community more strongly; Protestant Christianity emphasizes individual direct relationship with God through personal faith and scripture",
@@ -4944,7 +4944,7 @@
     "context": "Aquinas distinguished between laws that serve the common good (just laws that bind in conscience) and those that serve only the ruler's interest or violate divine law (unjust laws that have 'more the nature of violence than of law'). This distinction became the foundation for all later theories of civil disobedience."
   },
   {
-    "question": "What is the concept of 'theodicy' and what does the problem of evil reveal about the limits of our understanding of God?",
+    "question": "What is the concept of 'theodicy' and what does the problem of evil reveal about human understanding of God?",
     "answer": "If God is all-good and all-powerful, why does evil exist? No fully satisfying answer has been found -- the problem reveals limits of human ability to comprehend divine purposes",
     "choices": [
       "If God is all-good and all-powerful, why does evil exist? No fully satisfying answer has been found -- the problem reveals limits of human ability to comprehend divine purposes",
@@ -5008,9 +5008,9 @@
     "answer": "Both traditions produced periods of relative tolerance and severe persecution; dhimmi status in Islam gave protected but subordinate status, while Christian theocracies alternately protected and expelled Jewish and other minorities",
     "choices": [
       "Both traditions produced periods of relative tolerance and severe persecution; dhimmi status in Islam gave protected but subordinate status, while Christian theocracies alternately protected and expelled Jewish and other minorities",
-      "Islamic governance under the dhimmi system granted non-Muslims full civic equality, while Christian theocratic states uniformly denied political and legal rights to all non-Christian subjects",
-      "Christian theocratic states pioneered formal religious pluralism through canon law, while Islamic caliphates maintained strict conversion requirements for all peoples brought under their rule",
-      "The dhimmi system and the Inquisition were functionally equivalent institutions, both designed to enforce religious conformity through nearly identical legal mechanisms and penalties"
+      "Islamic governance under the dhimmi system granted non-Muslims full civic equality, while Christian theocratic states uniformly denied political and legal rights to all non-Christian minorities",
+      "Christian theocratic states pioneered formal religious pluralism through canon law, while Islamic caliphates maintained strict conversion requirements for all minorities brought under their rule",
+      "The dhimmi system and the Inquisition were functionally equivalent institutions, both designed to enforce religious conformity over minorities through nearly identical legal mechanisms and penalties"
     ],
     "tier": 4,
     "context": "The dhimmi system guaranteed religious freedom and legal protections to Jews and Christians in exchange for a special tax (jizya) and certain social restrictions. This was often more tolerant than contemporary Christian Europe, which expelled Jews and persecuted heretics. However, neither system meets modern standards of full religious equality, and both traditions show significant variation across time and region."
@@ -5034,7 +5034,7 @@
       "The state cannot be the ultimate source of human dignity -- persons have transcendent worth from God that the state cannot grant or revoke, so totalitarianism is always illegitimate",
       "He argued that communist regimes violated natural law primarily by abolishing private property, making their economic structures -- rather than their view of the person -- the core theological problem",
       "His argument held that democratic self-governance uniquely reflects the image of God in humanity, making any form of non-elected government theologically illegitimate on its face",
-      "He maintained that the Church's social teaching required strict political neutrality, and that resistance to communist regimes should be expressed exclusively through prayer and evangelization"
+      "He maintained that the Church's social teaching required strict political neutrality, and that resistance to totalitarianism should be expressed exclusively through prayer and evangelization"
     ],
     "tier": 4,
     "context": "John Paul II argued that human dignity comes from God, not the state. Because the state cannot grant dignity, it cannot revoke it. Totalitarianism -- which claims absolute authority over persons -- is therefore always and everywhere illegitimate. This theological grounding gave his resistance to Soviet communism a depth beyond mere political or economic critique."
@@ -5088,7 +5088,7 @@
     "context": "The Council's decree 'Haec Sancta' asserted that a general council derives its authority directly from Christ and is superior even to the Pope -- a radical claim that ended the Great Western Schism but was never fully accepted by the papacy. The tension between collective and individual authority in the Church continues to this day."
   },
   {
-    "question": "What does the Decalogue's prohibition 'You shall not bear false witness' imply about the social foundations of justice?",
+    "question": "What does the Decalogue's prohibition 'You shall not bear false witness' imply about the social foundations of a fair legal system?",
     "answer": "A just society requires truthful testimony -- without it, courts become instruments of power rather than justice, and the weak cannot be protected from the strong",
     "choices": [
       "A just society requires truthful testimony -- without it, courts become instruments of power rather than justice, and the weak cannot be protected from the strong",
@@ -5172,11 +5172,11 @@
     "context": "Calvin argued that 'inferior magistrates' (lesser rulers) have a duty to resist tyrants on behalf of the people. Absolute obedience to a wicked ruler is idolatry -- putting a human authority in God's place. This doctrine influenced the development of resistance theory in Reformed political thought and had echoes in later revolutionary movements."
   },
   {
-    "question": "What is the theological basis of the Golden Rule ('Do unto others as you would have them do unto you'), and how does it appear across religious traditions?",
+    "question": "What is the theological basis of the Golden Rule ('Do unto others as you would have them do unto you'), and how is it distributed across religious traditions?",
     "answer": "It grounds morality in empathy and reciprocity -- versions appear in Christianity, Judaism, Islam, Confucianism, and Buddhism, suggesting a cross-cultural moral intuition",
     "choices": [
       "It grounds morality in empathy and reciprocity -- versions appear in Christianity, Judaism, Islam, Confucianism, and Buddhism, suggesting a cross-cultural moral intuition",
-      "It is grounded in divine command theory, appearing exclusively in Abrahamic traditions as a revealed obligation binding only on covenant communities",
+      "It is grounded in divine command theory, found exclusively in Abrahamic traditions as a revealed obligation binding only on covenant communities",
       "It reflects a Kantian rational principle of universalizability that religious traditions later adopted to give their ethical codes philosophical grounding",
       "It expresses a natural law framework developed by Aquinas and subsequently spread to non-Western traditions through medieval scholastic influence"
     ],
@@ -5328,11 +5328,11 @@
     "context": "The shepherd's willingness to leave 99 sheep to find one lost lamb reveals a God whose love is not utilitarian. Every individual has irreducible worth. This parable is a standing rebuke to any system that sacrifices persons for the sake of the collective."
   },
   {
-    "question": "What is 'solidarity' in Catholic Social Teaching, and how does it ground obligations to distant strangers?",
+    "question": "What is 'solidarity' in Catholic Social Teaching, and how does it ground duties to distant strangers?",
     "answer": "All people share a common humanity and are therefore morally connected -- solidarity grounds obligations to the poor and oppressed even when they are not personally known to us",
     "choices": [
       "All people share a common humanity and are therefore morally connected -- solidarity grounds obligations to the poor and oppressed even when they are not personally known to us",
-      "Moral obligation extends only as far as one's immediate community, since genuine solidarity requires the trust built through personal relationships and shared history",
+      "Moral duty extends only as far as one's immediate community, since genuine solidarity requires the trust built through personal relationships and shared history",
       "Solidarity demands that the state enforce economic equality through wealth redistribution, making it fundamentally a political program rather than a personal or theological virtue",
       "The principle refers specifically to cross-national worker unity against exploitation, drawing its core meaning from Marxist class analysis rather than theological anthropology"
     ],
@@ -5352,7 +5352,7 @@
     "context": "Most moral systems limit obligations to the in-group. Jesus's command to love enemies breaks this boundary entirely, modeling ethics on God's own character: 'He sends rain on the just and unjust alike.' It's perhaps the most challenging moral demand in any religious tradition."
   },
   {
-    "question": "What does the Book of Job conclude about the relationship between suffering and moral deserving?",
+    "question": "What does the Book of Job conclude about the relationship between suffering and deserving?",
     "answer": "Suffering is not simply punishment for sin -- Job's suffering was undeserved, and God's answer from the whirlwind challenges neat cause-and-effect moral accounting",
     "choices": [
       "Suffering is not simply punishment for sin -- Job's suffering was undeserved, and God's answer from the whirlwind challenges neat cause-and-effect moral accounting",
@@ -5436,7 +5436,7 @@
     "context": "If God is omniscient, he foreknows every human choice; yet if choices are truly free, they cannot be determined in advance. Augustine, Calvin, Arminius, and Molina each proposed different solutions, but the tension between divine sovereignty and human freedom remains theology's most persistent unsolved puzzle."
   },
   {
-    "question": "What is 'fideism' in theology, and what is the main criticism of it?",
+    "question": "What is 'fideism' in theology, and what is the main objection raised against it?",
     "answer": "Fideism holds that faith is independent of and superior to reason; the criticism is that it makes religious claims immune to evaluation and can justify any belief held sincerely",
     "choices": [
       "Fideism holds that faith is independent of and superior to reason; the criticism is that it makes religious claims immune to evaluation and can justify any belief held sincerely",
@@ -5449,9 +5449,9 @@
   },
   {
     "question": "What is the theological concept of 'discernment' in Christian spiritual practice?",
-    "answer": "The practice of prayerfully evaluating thoughts, desires, and situations to identify what is from God -- requiring both reason and spiritual attentiveness",
+    "answer": "The practice of prayerfully evaluating thoughts, desires, and situations to identify what is from God -- requiring both reason and attentiveness to conscience",
     "choices": [
-      "The practice of prayerfully evaluating thoughts, desires, and situations to identify what is from God -- requiring both reason and spiritual attentiveness",
+      "The practice of prayerfully evaluating thoughts, desires, and situations to identify what is from God -- requiring both reason and attentiveness to conscience",
       "The spontaneous surrender to whatever impulse feels most spiritually compelling in the moment, trusting that genuine feeling indicates divine origin",
       "A formal ecclesiastical process reserved for evaluating candidates for ordained ministry, conducted by church authorities rather than individuals",
       "The systematic interpretation of scripture passages and providential signs to map out God's predetermined plan for a believer's specific life choices"
@@ -5484,7 +5484,7 @@
     "context": "Buddhism motivates moral behavior through understanding: clearly seeing reality removes greed, hatred, and delusion. Christianity motivates through love of a personal God and neighbor. Both produce compassionate action, but through fundamentally different inner dynamics."
   },
   {
-    "question": "What does the theological concept of 'lament' in the Psalms reveal about honest faith?",
+    "question": "What does the theological concept of 'lament' in the Psalms reveal about authentic faith?",
     "answer": "Lament is honest expression of grief, anger, and confusion directed to God -- authentic faith includes wrestling with God rather than only praise and thanksgiving",
     "choices": [
       "Lament is honest expression of grief, anger, and confusion directed to God -- authentic faith includes wrestling with God rather than only praise and thanksgiving",
@@ -5496,7 +5496,7 @@
     "context": "The Psalms of lament show that complaining to God is an act of faith, not faithlessness. Bringing your grief, anger, and confusion directly to God presupposes that God is real, present, and able to act. Lament is the prayer of those who take God seriously."
   },
   {
-    "question": "What is the theological concept of the 'incarnation' (God becoming human), and why does it matter for Christian ethics?",
+    "question": "What is the concept of the 'incarnation' (God becoming human), and why does it matter for Christian ethics?",
     "answer": "God's taking on human flesh means material life and embodied relationships are affirmed as the arena of divine activity -- physical needs, suffering, and justice all become theological concerns",
     "choices": [
       "God's taking on human flesh means material life and embodied relationships are affirmed as the arena of divine activity -- physical needs, suffering, and justice all become theological concerns",
@@ -5508,7 +5508,7 @@
     "context": "If God entered material existence as a human being, then bodies, physical needs, and earthly suffering are not mere distractions from spiritual life -- they are the very arena where God chose to act. The incarnation makes all of human life sacred."
   },
   {
-    "question": "What does the Islamic concept of 'khilafa' (human vicegerency) imply about humanity's role toward creation?",
+    "question": "What does the Islamic concept of 'khilafa' (human vicegerency) imply about humanity's relationship to the natural world?",
     "answer": "Humans are God's stewards (khalifa) on earth, responsible for caring for creation -- they hold authority as a trust from God, not as absolute owners",
     "choices": [
       "Humans are God's stewards (khalifa) on earth, responsible for caring for creation -- they hold authority as a trust from God, not as absolute owners",
@@ -5549,7 +5549,7 @@
     "choices": [
       "Human life can be lived for pleasure, for moral duty, or for personal relationship with God -- each stage reveals the insufficiency of the previous one, with the religious requiring a leap of faith",
       "The three stages trace the soul's ascent from sensory experience through rational virtue to mystical union with God, building progressively on one another without rupture",
-      "Kierkegaard argued that the ethical stage is the highest genuinely attainable mode of existence, since authentic faith remains psychologically inaccessible to most individuals",
+      "Kierkegaard argued that the ethical stage is the highest genuinely attainable mode of existence, since authentic religious faith remains psychologically inaccessible to most individuals",
       "The stages represent three competing orientations — self-interest, social contract, and ecclesiastical obedience — that must be dialectically reconciled into a higher synthesis"
     ],
     "tier": 5,
@@ -5592,7 +5592,7 @@
     "context": "Double effect permits actions with harmful side effects IF the good effect is intended, the harm is unintended though foreseen, and the good proportionately outweighs the harm. It is applied in medical ethics (e.g., pain relief that may hasten death), military decisions, and a wide range of everyday moral dilemmas."
   },
   {
-    "question": "What does the concept of the 'common good' in Catholic Social Teaching require of individuals and political institutions?",
+    "question": "What does the concept of the 'common good' in Catholic Social Teaching require of citizens and political institutions?",
     "answer": "Both individuals and the state must pursue conditions in which all persons can flourish — private interests may not be pursued at the expense of those conditions the whole community needs",
     "choices": [
       "Both individuals and the state must pursue conditions in which all persons can flourish — private interests may not be pursued at the expense of those conditions the whole community needs",

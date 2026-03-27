@@ -304,3 +304,83 @@ def _line_of_sight(x0, y0, x1, y1, dungeon) -> bool:
             if not dungeon.is_walkable(cx, cy):
                 return False
     return True
+
+
+def get_line_tiles(x0, y0, x1, y1) -> list[tuple[int, int]]:
+    """Return all tiles on the Bresenham line from (x0,y0) to (x1,y1), excluding origin."""
+    tiles = []
+    dx, dy = abs(x1 - x0), abs(y1 - y0)
+    sx = 1 if x1 > x0 else -1
+    sy = 1 if y1 > y0 else -1
+    err = dx - dy
+    cx, cy = x0, y0
+    while True:
+        if cx == x1 and cy == y1:
+            if (cx, cy) not in tiles:
+                tiles.append((cx, cy))
+            break
+        e2 = 2 * err
+        if e2 > -dy:
+            err -= dy
+            cx += sx
+        if e2 < dx:
+            err += dx
+            cy += sy
+        if (cx, cy) != (x0, y0) and (cx, cy) not in tiles:
+            tiles.append((cx, cy))
+    return tiles
+
+
+def get_cone_tiles(x0, y0, x1, y1, max_range=6) -> set[tuple[int, int]]:
+    """Return tiles in a cone from (x0,y0) in the direction of (x1,y1).
+
+    The cone EXTENDS PAST the target to max_range — fire doesn't stop at
+    the first thing it hits. The direction is determined by the target, but
+    the cone continues through and beyond it.
+
+    Widening with distance:
+      - Distance 1-2: just the center line (width 1)
+      - Distance 3-4: center + 1 perpendicular on each side (width 3)
+      - Distance 5+:  center + 2 perpendicular on each side (width 5)
+    Origin tile is excluded.
+    """
+    dx, dy = x1 - x0, y1 - y0
+    dist = max(abs(dx), abs(dy))
+    if dist == 0:
+        return set()
+
+    # Calculate direction and perpendicular vectors
+    length = (dx * dx + dy * dy) ** 0.5
+    if length == 0:
+        return set()
+    dir_x = dx / length
+    dir_y = dy / length
+    perp_x = -dir_y
+    perp_y = dir_x
+
+    # Extend the line PAST the target to max_range by projecting further
+    # along the same direction
+    far_x = x0 + round(dir_x * max_range)
+    far_y = y0 + round(dir_y * max_range)
+    line = get_line_tiles(x0, y0, far_x, far_y)
+
+    result = set()
+    for i, (tx, ty) in enumerate(line):
+        tile_dist = i + 1
+        if tile_dist > max_range:
+            break
+        result.add((tx, ty))
+
+        # Determine spread at this distance
+        if tile_dist >= 5:
+            spread = 2
+        elif tile_dist >= 3:
+            spread = 1
+        else:
+            spread = 0
+
+        for s in range(1, spread + 1):
+            result.add((tx + round(perp_x * s), ty + round(perp_y * s)))
+            result.add((tx - round(perp_x * s), ty - round(perp_y * s)))
+
+    return result

@@ -1,11 +1,11 @@
 [
   {
-    "tier": 1,
+    "tier": 2,
     "question": "Who is known as the 'Father of Western Philosophy'?",
-    "answer": "Socrates, who pioneered the dialectical method of inquiry",
+    "answer": "Socrates, who pioneered a question-and-answer method of inquiry",
     "choices": [
       "Plato, who systematized his mentor's ideas in writing",
-      "Socrates, who pioneered the dialectical method of inquiry",
+      "Socrates, who pioneered a question-and-answer method of inquiry",
       "Aristotle, who founded the Lyceum school of thought",
       "Pythagoras, known for mathematics and mystical philosophy"
     ],
@@ -14,10 +14,10 @@
   {
     "tier": 1,
     "question": "Who was the tutor of Alexander the Great?",
-    "answer": "Aristotle, who tutored Alexander from age 13 in Macedonia",
+    "answer": "Aristotle, who tutored the young prince from age 13 in Macedonia",
     "choices": [
       "Socrates, who taught through questioning in the Athenian agora",
-      "Aristotle, who tutored Alexander from age 13 in Macedonia",
+      "Aristotle, who tutored the young prince from age 13 in Macedonia",
       "Plato, who founded the Academy in Athens",
       "Epicurus, who taught that pleasure is the highest good"
     ],
@@ -26,10 +26,10 @@
   {
     "tier": 1,
     "question": "Confucius taught that social harmony flows from proper roles within family and society. What is the term for this Confucian concept of correct role-fulfillment?",
-    "answer": "Li (ritual propriety and correct roles)",
+    "answer": "Li (ritual propriety governing social roles and conduct)",
     "choices": [
       "Wu wei (the Taoist principle of effortless non-action)",
-      "Li (ritual propriety and correct roles)",
+      "Li (ritual propriety governing social roles and conduct)",
       "Ren (benevolence and humaneness toward others)",
       "Dao (the underlying natural order of the universe)"
     ],
@@ -72,7 +72,7 @@
     "context": "Socrates made this declaration at his trial, choosing death over a life without questioning. For Socrates, philosophy was not an academic exercise but a way of life -- the daily practice of questioning your own beliefs, assumptions, and values."
   },
   {
-    "tier": 1,
+    "tier": 3,
     "question": "Plato's Republic argues that only philosopher-kings should rule. What philosophical justification does Plato give for this?",
     "answer": "Only those who understand the Form of the Good can make just decisions",
     "choices": [
@@ -110,10 +110,10 @@
   {
     "tier": 1,
     "question": "The Socratic method proceeds by asking probing questions that expose contradictions in a person's beliefs. What is the name for the part of this process that reveals false beliefs?",
-    "answer": "Elenchus, the cross-examination that exposes contradictions in a person's beliefs",
+    "answer": "Elenchus, the cross-examination technique that uncovers flawed assumptions",
     "choices": [
       "Dialectical synthesis, in which opposing ideas are reconciled into a higher truth",
-      "Elenchus, the cross-examination that exposes contradictions in a person's beliefs",
+      "Elenchus, the cross-examination technique that uncovers flawed assumptions",
       "Apodeictic demonstration, proving conclusions forward from self-evident axioms",
       "Syllogistic inference, deriving necessary conclusions from established premises"
     ],
@@ -133,7 +133,7 @@
   },
   {
     "tier": 1,
-    "question": "Socrates was condemned for impiety and corrupting youth. What does his willingness to accept the death penalty rather than flee reveal about his philosophy?",
+    "question": "Socrates was condemned for impiety and corrupting youth. What does his willingness to face the death penalty instead of fleeing reveal about his philosophy?",
     "answer": "He believed one must accept lawful punishment rather than undermine the rule of law",
     "choices": [
       "He believed his soul was immortal and that death held no real threat for a philosopher",
@@ -157,7 +157,7 @@
   },
   {
     "tier": 1,
-    "question": "Heraclitus said 'You cannot step in the same river twice.' What philosophical claim about reality does this illustrate?",
+    "question": "Heraclitus said 'You cannot step in the same river twice.' What philosophical claim does this illustrate?",
     "answer": "Reality is in constant flux; nothing stays the same",
     "choices": [
       "Our senses deceive us, causing permanent underlying things to appear as if they change",
@@ -204,7 +204,7 @@
     "context": "Protagoras was the most famous of the Sophists -- traveling teachers who charged fees for instruction. His claim that truth is relative to the individual was revolutionary and controversial. Plato devoted an entire dialogue (Theaetetus) to arguing against him."
   },
   {
-    "tier": 1,
+    "tier": 3,
     "question": "Marcus Aurelius wrote 'Meditations' as a private journal of Stoic practice. What is the core Stoic teaching illustrated by his distinguishing what is 'up to us' from what is not?",
     "answer": "We should focus only on what is within our control: our judgments and responses",
     "choices": [
@@ -228,7 +228,7 @@
     "context": "Ethics -- from the Greek 'ethos' (character) -- is the branch of philosophy that investigates how we ought to live. It asks questions like: What makes an action right or wrong? What does a good life look like? What do we owe each other?"
   },
   {
-    "tier": 1,
+    "tier": 2,
     "question": "What branch of philosophy deals with the study of knowledge?",
     "answer": "Epistemology",
     "choices": [
@@ -276,7 +276,7 @@
     "context": "George Berkeley (1685-1753), an Irish bishop, argued that material objects are nothing but collections of ideas in the mind. He was not crazy — he was making a profound point about the limits of what we can know about the world outside our perceptions."
   },
   {
-    "tier": 1,
+    "tier": 3,
     "question": "Democritus proposed that reality consists entirely of atoms moving in a void. Which philosophical problem does this atomic theory attempt to solve?",
     "answer": "How change and diversity in the world can be explained without supernatural causes",
     "choices": [
@@ -324,7 +324,7 @@
     "context": "Mencius (372-289 BC) argued that human nature is fundamentally good -- like water naturally flows downhill, humans naturally tend toward virtue. This optimistic view of human nature shaped Confucianism for centuries and contrasted sharply with Xunzi's view that humans are naturally selfish."
   },
   {
-    "tier": 1,
+    "tier": 3,
     "question": "Hobbes argued the natural condition of mankind is war of 'every man against every man.' What does he conclude governments must do to prevent this?",
     "answer": "Create a powerful sovereign whose authority cannot be challenged",
     "choices": [
@@ -673,11 +673,11 @@
   },
   {
     "tier": 2,
-    "question": "Who wrote 'The Art of War', a philosophical military text?",
-    "answer": "Sun Tzu, a Chinese military strategist of the 5th century BC",
+    "question": "Who wrote 'The Art of War', a strategic philosophical text on conflict and tactics?",
+    "answer": "Sun Tzu, a Chinese strategist of the 5th century BC",
     "choices": [
       "Confucius, philosopher of ritual and social virtue",
-      "Sun Tzu, a Chinese military strategist of the 5th century BC",
+      "Sun Tzu, a Chinese strategist of the 5th century BC",
       "Laozi, the founder of Taoist philosophical thought",
       "Mencius, a Confucian thinker known for moral philosophy"
     ],
@@ -703,7 +703,7 @@
       "John Locke, who held that the mind begins as a blank slate at birth",
       "David Hume, who argued all knowledge derives from sensory impressions",
       "Rene Descartes, who held that certain ideas are present in us from birth",
-      "Francis Bacon, who grounded all knowledge in observation and experiment"
+      "Francis Bacon, who grounded all ideas in observation and experiment"
     ],
     "context": "Descartes argued that certain ideas -- like the idea of God, infinity, and mathematical truths -- are 'born with us' rather than learned from experience. This rationalist view put him in direct opposition to empiricists like Locke, who believed the mind begins as a blank slate."
   },
@@ -808,10 +808,10 @@
     "question": "Which philosopher wrote 'The Communist Manifesto' with Friedrich Engels?",
     "answer": "Karl Marx, who co-authored the text with Engels in 1848",
     "choices": [
-      "Georg Hegel, whose dialectical method influenced Marx's thinking",
+      "Georg Hegel, whose dialectical method influenced Engels's thinking",
       "Karl Marx, who co-authored the text with Engels in 1848",
-      "Ludwig Feuerbach, whose materialism Marx later criticized",
-      "Pierre-Joseph Proudhon, the anarchist thinker Marx debated"
+      "Ludwig Feuerbach, whose materialism Engels later criticized",
+      "Pierre-Joseph Proudhon, the anarchist thinker Engels debated"
     ],
     "context": "Karl Marx (1818-1883) and Friedrich Engels published the Manifesto in 1848, calling on workers to overthrow capitalism. Marx spent the rest of his life in London, often in poverty, writing 'Das Kapital.' His ideas inspired revolutions that reshaped the 20th century."
   },
@@ -913,7 +913,7 @@
   },
   {
     "tier": 3,
-    "question": "Who created the thought experiment of the 'evil demon' to doubt all knowledge?",
+    "question": "Who created the thought experiment of the 'evil demon' to cast doubt on all knowledge?",
     "answer": "Rene Descartes, who used radical doubt as a path to certain knowledge",
     "choices": [
       "David Hume, who argued that causation itself is merely a habit of mind",
@@ -976,9 +976,9 @@
     "question": "Who wrote 'Utilitarianism', expanding Bentham's theory?",
     "answer": "John Stuart Mill, who expanded utilitarianism with qualitative distinctions",
     "choices": [
-      "Jeremy Bentham, who first introduced the pleasure calculus",
+      "Jeremy Bentham, who first introduced the utilitarianism pleasure calculus",
       "John Stuart Mill, who expanded utilitarianism with qualitative distinctions",
-      "Immanuel Kant, who critiqued consequentialist reasoning",
+      "Immanuel Kant, who critiqued utilitarianism's consequentialist reasoning",
       "Auguste Comte, who founded positivist social philosophy"
     ],
     "context": "John Stuart Mill (1806-1873) was a child prodigy who had a nervous breakdown at 20 and emerged with a richer understanding of human happiness. His 'Utilitarianism' (1863) argued that intellectual pleasures are qualitatively superior to physical ones, giving utilitarianism a more sophisticated form."
@@ -1144,10 +1144,10 @@
     "question": "Which philosopher first introduced the concept of the 'Ubermensch' (Superman)?",
     "answer": "Friedrich Nietzsche, who introduced the concept in 'Thus Spoke Zarathustra'",
     "choices": [
-      "Arthur Schopenhauer, who influenced Nietzsche's early pessimism",
+      "Arthur Schopenhauer, who introduced the concept of the will as the world's driving force",
       "Friedrich Nietzsche, who introduced the concept in 'Thus Spoke Zarathustra'",
-      "Georg Hegel, whose dialectic shaped 19th-century German philosophy",
-      "Karl Marx, who wrote about human potential and self-realization"
+      "Georg Hegel, who introduced the concept of dialectical reasoning in German philosophy",
+      "Karl Marx, who introduced the concept of human potential and self-realization"
     ],
     "context": "Nietzsche introduced the Ubermensch in 'Thus Spoke Zarathustra' (1883). The Ubermensch creates their own values and meaning in a godless world. Nietzsche would have been horrified by the Nazi appropriation of this concept -- he despised nationalism and antisemitism."
   },
@@ -1252,9 +1252,9 @@
     "question": "Which philosopher argued that humans have natural rights to life, liberty, and property?",
     "answer": "John Locke, who argued life, liberty, and property are natural rights preceding government",
     "choices": [
-      "Thomas Hobbes, who argued rights are granted by a sovereign to ensure social order",
+      "Thomas Hobbes, who argued rights are granted by a sovereign to ensure natural social order",
       "John Locke, who argued life, liberty, and property are natural rights preceding government",
-      "Jean-Jacques Rousseau, who grounded rights in the general will of the people",
+      "Jean-Jacques Rousseau, who grounded rights in the natural general will of the people",
       "Immanuel Kant, who grounded rights in universal rational duties and dignity"
     ],
     "context": "John Locke's argument that rights precede government and cannot be taken away by it became the philosophical foundation of liberal democracy. Jefferson changed 'property' to 'pursuit of happiness' in the Declaration of Independence, but the Lockean framework is unmistakable."
@@ -1429,11 +1429,11 @@
   },
   {
     "tier": 4,
-    "question": "Foucault's 'panopticon' describes a prison where inmates cannot know when they are watched, so they self-regulate. What is Foucault's broader philosophical point about modern society?",
-    "answer": "Modern power operates through internalized surveillance and self-discipline, not just overt force",
+    "question": "Foucault's 'panopticon' describes a prison where inmates cannot know when they are watched, so they self-regulate. What is Foucault's broader philosophical point about contemporary society?",
+    "answer": "Power operates through internalized surveillance and self-discipline, not just overt force",
     "choices": [
       "Thoughtful architectural design can rehabilitate criminals more effectively than corporal punishment ever could",
-      "Modern power operates through internalized surveillance and self-discipline, not just overt force",
+      "Power operates through internalized surveillance and self-discipline, not just overt force",
       "Democratic institutions gradually replace coercive state authority with legitimized popular consent",
       "Bureaucratic rationalization traps individuals in an inescapable iron cage of procedural rules"
     ],
@@ -1561,13 +1561,13 @@
   },
   {
     "tier": 4,
-    "question": "Who is associated with 'negative liberty'?",
+    "question": "Who is associated with the concept of 'negative liberty'?",
     "answer": "Isaiah Berlin, who distinguished negative from positive liberty",
     "choices": [
-      "John Rawls, who developed the concept of justice as fairness",
+      "John Rawls, who developed the concept of justice as fairness and positive freedoms",
       "Isaiah Berlin, who distinguished negative from positive liberty",
-      "John Stuart Mill, who championed individual liberty and utilitarianism",
-      "Immanuel Kant, who grounded freedom in rational autonomy"
+      "John Stuart Mill, who championed individual liberty against negative interference by the state",
+      "Immanuel Kant, who grounded freedom in rational autonomy and negative duties"
     ],
     "context": "Isaiah Berlin (1909-1997) made the distinction between negative and positive liberty famous in his 1958 lecture 'Two Concepts of Liberty.' His defense of negative liberty -- freedom from interference -- was shaped by his experience of totalitarian regimes that promised 'liberation' while crushing freedom."
   },
@@ -1624,10 +1624,10 @@
     "question": "Who invented modern formal logic?",
     "answer": "Gottlob Frege, whose Begriffsschrift introduced symbolic formal logic",
     "choices": [
-      "Bertrand Russell, who extended Frege's logic in Principia Mathematica",
+      "Bertrand Russell, who extended Frege's formal logic in Principia Mathematica",
       "Gottlob Frege, whose Begriffsschrift introduced symbolic formal logic",
-      "Ludwig Wittgenstein, who analyzed logic in the Tractatus Logico-Philosophicus",
-      "Alfred North Whitehead, who co-developed the logical system of Principia Mathematica"
+      "Ludwig Wittgenstein, who analyzed formal logic in the Tractatus Logico-Philosophicus",
+      "Alfred North Whitehead, who co-developed the formal logical system of Principia Mathematica"
     ],
     "context": "Gottlob Frege (1848-1925) created a symbolic language for logic in his 'Begriffsschrift' (1879) that went far beyond Aristotle's syllogisms. His system could express complex reasoning with mathematical precision and became the foundation for all modern logic and computer science."
   },
@@ -2347,7 +2347,7 @@
       "Unfair allocation of epistemic resources like education and information access",
       "Injustice that occurs in someone's capacity as a knower",
       "The weaponization of knowledge to maintain social hierarchies and power",
-      "Systemic bias in how scientific research is conducted and peer-reviewed"
+      "Systemic injustice in how scientific research is conducted and peer-reviewed"
     ],
     "context": "Fricker identified injustice that occurs in our capacity as knowers. When someone is not believed because of their gender or race (testimonial injustice), or when a group lacks concepts to make sense of their experience (hermeneutical injustice), knowledge itself becomes a site of oppression."
   },
@@ -2428,7 +2428,7 @@
     "question": "Who is associated with inferentialism in contemporary philosophy?",
     "answer": "Robert Brandom, who systematically developed inferentialism in 'Making It Explicit' (1994)",
     "choices": [
-      "Wilfrid Sellars, whose 'Empiricism and the Philosophy of Mind' laid the groundwork for inferentialist ideas",
+      "Wilfrid Sellars, whose inferentialist ideas laid the groundwork explored in 'Empiricism and the Philosophy of Mind'",
       "Robert Brandom, who systematically developed inferentialism in 'Making It Explicit' (1994)",
       "Donald Davidson, known for his truth-conditional semantics and the principle of charity",
       "Michael Dummett, who grounded meaning in assertibility conditions rather than truth conditions"
@@ -2455,7 +2455,7 @@
       "Social struggles for recognition as the basis of moral and political development",
       "Rational discourse as the primary mechanism by which societies achieve normative consensus",
       "The redistribution of material resources and economic power as the foundation of social justice",
-      "Intersubjective communication as the transcendental ground of democratic legitimacy"
+      "Intersubjective recognition as the transcendental ground of democratic legitimacy"
     ],
     "context": "Honneth argues that social struggles for recognition -- to be acknowledged as a person, a rights-bearer, and a contributor to society -- drive moral and political development. Disrespect and humiliation are not just unpleasant -- they damage people's ability to form a positive identity. Honneth distinguishes three spheres of recognition: love, legal rights, and social esteem. The distractors reflect positions associated with Habermas (rational discourse), Fraser (redistribution), and discourse ethics more broadly."
   },
@@ -2557,7 +2557,7 @@
   },
   {
     "tier": 5,
-    "question": "What is 'Nancy Fraser's concept of recognition'?",
+    "question": "What is Nancy Fraser's concept of recognition?",
     "answer": "Justice requires both redistribution of resources and recognition of cultural identities",
     "choices": [
       "The Hegelian process by which self-consciousness emerges through encountering and being recognized by others",
@@ -2608,7 +2608,7 @@
     "question": "What is the 'ontological argument' for God's existence?",
     "answer": "God must exist because existence is part of the concept of a perfect being",
     "choices": [
-      "God must exist because the universe requires a first uncaused cause to explain its origin",
+      "God must exist because the universe requires a first uncaused cause to explain its existence",
       "God must exist because existence is part of the concept of a perfect being",
       "God must exist because objective moral laws require a divine lawgiver to ground them",
       "God must exist because the complexity of nature implies a conscious intelligent designer"
@@ -2689,7 +2689,7 @@
   },
   {
     "tier": 5,
-    "question": "What is 'Quine's naturalism' in philosophy?",
+    "question": "What does 'Quine's naturalism' hold about philosophy?",
     "answer": "Philosophy should be continuous with and informed by natural science",
     "choices": [
       "Ontological commitments should be derived exclusively from our best physical theories",
@@ -2869,7 +2869,7 @@
   },
   {
     "tier": 1,
-    "question": "What do we call a statement that cannot be both true and false at the same time?",
+    "question": "What do we call a claim that cannot be both true and false at the same time?",
     "answer": "A logical statement",
     "choices": [
       "A riddle",
@@ -2957,7 +2957,7 @@
     "answer": "Honest, consistently telling the truth in word and deed",
     "choices": [
       "Honest, consistently telling the truth in word and deed",
-      "Courageous, willing to face danger for the sake of others",
+      "Courageous, willing to face danger for the truth and sake of others",
       "Prudent, careful to think before speaking or acting",
       "Loyal, remaining faithful to friends and commitments"
     ],
@@ -3018,7 +3018,7 @@
     "choices": [
       "Evidence or arguments, structured reasons that support a conclusion",
       "Intuitions or gut feelings, arising without conscious reasoning",
-      "Assertions, claims stated boldly without any supporting basis",
+      "Assertions, bold claims stated without reasons or supporting basis",
       "Definitions, clarifications that fix the meaning of key terms"
     ],
     "context": "In philosophy, an argument is not a fight -- it is a structured set of reasons (premises) leading to a conclusion. Good philosophy demands that you give evidence and arguments for your claims, not just assert them."
@@ -3052,7 +3052,7 @@
     "question": "If every person in a group agrees on something, that agreement is called what?",
     "answer": "A consensus, where every member of the group is in agreement",
     "choices": [
-      "A majority vote, where the larger faction overrules the smaller",
+      "A majority vote, where the larger group faction overrules the smaller",
       "A consensus, where every member of the group is in agreement",
       "A compromise, reached when each side surrenders something it wanted",
       "A doctrine, a set of principles imposed by those with authority"
@@ -3156,7 +3156,7 @@
     "context": "These three giants form a chain of teacher and student: Socrates taught Plato, Plato taught Aristotle. Together, they created the foundations of Western philosophy. Alfred North Whitehead said all of Western philosophy is 'a series of footnotes to Plato.'"
   },
   {
-    "tier": 1,
+    "tier": 2,
     "question": "What is a 'hypothesis'?",
     "answer": "A guess or idea to be tested",
     "choices": [
@@ -3194,10 +3194,10 @@
   {
     "tier": 1,
     "question": "What do we call the ability to think about your own thoughts?",
-    "answer": "Self-reflection, the act of consciously examining your own thoughts",
+    "answer": "Self-reflection, the act of consciously examining your own mental states",
     "choices": [
       "Mind wandering, where attention drifts without deliberate direction",
-      "Self-reflection, the act of consciously examining your own thoughts",
+      "Self-reflection, the act of consciously examining your own mental states",
       "Recollection, the process of retrieving past experiences from memory",
       "Imagination, the capacity to form mental images of absent things"
     ],
@@ -3436,10 +3436,10 @@
     "question": "What is the term for a conclusion that follows necessarily from the premises?",
     "answer": "Deduction, where conclusions follow necessarily from the premises",
     "choices": [
-      "Induction, where conclusions are drawn from observed patterns",
+      "Induction, where conclusions are drawn from observed patterns and examples",
       "Deduction, where conclusions follow necessarily from the premises",
-      "Abduction, the inference to the most likely explanation",
-      "Syllogism, a three-part logical structure of argumentation"
+      "Abduction, the inference to the most likely explanation given premises",
+      "Syllogism, a three-part logical structure whose conclusion necessarily holds"
     ],
     "context": "Deduction is the gold standard of logical reasoning: if the premises are true and the argument is valid, the conclusion is guaranteed to be true. 'All humans are mortal; Socrates is human; therefore Socrates is mortal' is a deductive argument."
   },
@@ -3448,10 +3448,10 @@
     "question": "What do we call reasoning from specific examples to a general rule?",
     "answer": "Inductive reasoning, which draws general rules from specific examples",
     "choices": [
-      "Deductive reasoning, which derives certain conclusions from given premises",
+      "Deductive reasoning, which moves from general principles to specific conclusions",
       "Inductive reasoning, which draws general rules from specific examples",
-      "Abductive reasoning, which infers the most plausible explanation",
-      "Circular reasoning, where the conclusion merely restates a premise"
+      "Abductive reasoning, which infers the most plausible explanation from specific clues",
+      "Circular reasoning, where the conclusion merely restates a general premise"
     ],
     "context": "Inductive reasoning moves from particular observations to general conclusions: 'Every swan I have seen is white, therefore all swans are white.' It is powerful but risky -- a single black swan can overturn the conclusion. Hume showed we can never be certain that induction will work."
   },
@@ -3556,10 +3556,10 @@
     "question": "Which philosopher created the concept of the 'Forms' -- perfect versions of things?",
     "answer": "Plato, who argued that perfect eternal Forms underlie all things",
     "choices": [
-      "Aristotle, who systematized logic and natural philosophy",
+      "Aristotle, who studied the forms of things found in the natural world",
       "Descartes, who grounded knowledge in the thinking self",
       "Plato, who argued that perfect eternal Forms underlie all things",
-      "Kant, who explored the mind's role in shaping experience"
+      "Kant, who explored the mind's role in shaping how we perceive things"
     ],
     "context": "Plato argued that behind every imperfect physical object lies a perfect, eternal Form. The circles we draw are imperfect copies of the Form of the Circle. The just acts we see are imperfect reflections of the Form of Justice. True knowledge is knowledge of the Forms."
   },
@@ -3580,7 +3580,7 @@
     "question": "What fallacy occurs when you attack the person rather than their argument?",
     "answer": "Ad hominem — attacking the person making the argument rather than the argument itself",
     "choices": [
-      "False dilemma — presenting only two options when more exist",
+      "False dilemma — presenting only two options rather than acknowledging all alternatives",
       "Slippery slope — assuming one event will inevitably lead to extreme consequences",
       "Ad hominem — attacking the person making the argument rather than the argument itself",
       "Red herring — introducing irrelevant information to distract from the real issue"
@@ -3709,7 +3709,7 @@
   },
   {
     "tier": 2,
-    "question": "What fallacy is committed when a small first step is said to inevitably lead to extreme consequences?",
+    "question": "What fallacy is committed when a small first step is said to lead to extreme, far-reaching consequences?",
     "answer": "Slippery slope — claiming a first step will inevitably lead to extreme consequences",
     "choices": [
       "Ad hominem — attacking the person making the argument rather than the argument itself",
@@ -3733,7 +3733,7 @@
   },
   {
     "tier": 2,
-    "question": "What did Plato call people who mistake shadows for reality?",
+    "question": "In Plato's allegory, what term describes those who confuse mere appearances with true reality?",
     "answer": "Prisoners in the cave who mistake shadows for reality",
     "choices": [
       "Sophists skilled at arguing both sides of any issue",
@@ -3808,7 +3808,7 @@
     "question": "Which philosopher identified 'happiness' (eudaimonia) as the highest human goal?",
     "answer": "Aristotle, who defined eudaimonia as the ultimate end of human activity",
     "choices": [
-      "Plato, who placed happiness in contemplation of the eternal Forms",
+      "Plato, who placed the highest human good in contemplation of the eternal Forms",
       "Aristotle, who defined eudaimonia as the ultimate end of human activity",
       "Epicurus, who equated happiness with the calm absence of pain and distress",
       "Kant, who grounded the good life in rational adherence to moral duty"
@@ -4417,11 +4417,11 @@
   },
   {
     "tier": 4,
-    "question": "What is 'thick ethical concepts'?",
-    "answer": "Concepts that combine description and evaluation simultaneously, such as 'cruel' or 'brave'",
+    "question": "What are 'thick ethical concepts' in philosophy?",
+    "answer": "Terms that combine descriptive and evaluative meaning simultaneously, such as 'cruel' or 'brave'",
     "choices": [
       "Moral principles that apply universally across all cultures and historical contexts",
-      "Concepts that combine description and evaluation simultaneously, such as 'cruel' or 'brave'",
+      "Terms that combine descriptive and evaluative meaning simultaneously, such as 'cruel' or 'brave'",
       "Ethical frameworks that require extensive philosophical justification before they can be applied",
       "Value judgments so culturally embedded that they resist any cross-cultural moral translation"
     ],
@@ -4850,11 +4850,11 @@
   {
     "tier": 5,
     "question": "What is 'the linguistic turn' in 20th-century philosophy?",
-    "answer": "Philosophy shifted to analyzing language rather than directly studying mind or reality",
+    "answer": "It marked a shift toward analyzing language rather than directly studying mind or reality",
     "choices": [
-      "Philosophy shifted to analyzing language rather than directly studying mind or reality",
+      "It marked a shift toward analyzing language rather than directly studying mind or reality",
       "Phenomenology displaced empiricism as the dominant method of philosophical inquiry across Europe",
-      "Philosophers adopted formal symbolic logic as the sole legitimate framework for all analysis",
+      "Philosophers adopted formal symbolic logic as the sole legitimate framework for all philosophical analysis",
       "Continental thinkers reframed traditional metaphysical questions in terms of historical and cultural context"
     ],
     "context": "In the early 20th century, many philosophers concluded that traditional philosophical problems were really problems about language. Instead of directly studying mind, reality, or morality, they analyzed the language used to talk about these things. Wittgenstein, Russell, and Carnap led this shift, which came to define much of analytic philosophy and set it apart from continental traditions."
@@ -4914,7 +4914,7 @@
     "choices": [
       "It argues that the subjective quality of experience cannot be fully captured by any physical description",
       "It challenges hedonism by asking if we would plug into a machine giving perfect pleasure",
-      "It tests whether rational agents would surrender freedom in exchange for a guaranteed maximum of happiness",
+      "It tests whether rational agents would surrender freedom for a guaranteed maximum of happiness via a simulated machine",
       "It questions whether a life built entirely on simulated achievements can be genuinely meaningful"
     ],
     "context": "Nozick asks: Would you plug into a machine that gives you any experience you want, perfectly simulated? Most people say no, suggesting we value more than just experiences. We want to actually do things, actually be certain kinds of people, and live in contact with actual reality — a direct challenge to purely hedonistic theories of well-being."
@@ -4948,7 +4948,7 @@
     "question": "What is 'structural realism' in philosophy of science?",
     "answer": "Science reveals the relational structure of reality rather than its intrinsic nature",
     "choices": [
-      "The view that only fundamental physics genuinely describes what exists at the deepest level",
+      "The view that only fundamental physics genuinely describes what exists at the deepest level of science",
       "Science reveals the relational structure of reality rather than its intrinsic nature",
       "Scientific theories function as predictive instruments without deeper ontological commitments",
       "Unobservable theoretical entities should be replaced by purely structural mathematical descriptions"
@@ -5028,11 +5028,11 @@
     "context": "Locke grounded natural rights in God-given reason and natural law. Rights exist before government and independently of it. Government's sole purpose is to protect them -- and if it fails, the people may withdraw their consent."
   },
   {
-    "question": "Locke argued that government derives its legitimate authority from the consent of the governed. What right do people retain if a government violates their natural rights?",
-    "answer": "The right to revolution: to dissolve and replace the government",
+    "question": "Locke argued that legitimate authority requires the consent of the governed. What right do people retain if their rulers violate their fundamental rights?",
+    "answer": "The right to revolution: to dissolve and replace the existing regime",
     "choices": [
       "The right to seek judicial remedy through established courts",
-      "The right to revolution: to dissolve and replace the government",
+      "The right to revolution: to dissolve and replace the existing regime",
       "The right to appeal to an international sovereign authority",
       "The right to civil disobedience within the existing legal framework"
     ],
@@ -5040,7 +5040,7 @@
     "context": "Locke's right of revolution was his most radical claim. He argued that when a government systematically violates natural rights, it breaks the social contract and the people are justified in dissolving it. Jefferson echoed this argument directly in the Declaration of Independence."
   },
   {
-    "question": "According to Locke's labor theory of property, how does a person legitimately acquire ownership of something from nature?",
+    "question": "According to Locke's theory of property, how does a person legitimately acquire ownership of something from nature?",
     "answer": "By mixing their labor with it, adding value through their own effort",
     "choices": [
       "By being the first to discover it and formally register a legal claim",
@@ -5064,7 +5064,7 @@
     "context": "Locke's proviso prevents property rights from becoming a license to harm others. If you fence off the only water supply in a desert, you have not legitimately acquired property -- you have trapped people into dependence. Individual rights have limits where they begin to destroy others' ability to survive."
   },
   {
-    "question": "Hobbes argued that in the social contract, people surrender natural liberty to a sovereign in exchange for security. How did Locke's social contract differ from Hobbes's?",
+    "question": "Hobbes argued that in the social contract, people surrender their liberty to a sovereign in exchange for security. How did Locke's version of the social contract differ from Hobbes's?",
     "answer": "Locke's contract is limited: government holds power in trust and loses authority if it violates natural rights",
     "choices": [
       "Locke placed sovereignty in the monarch alone, removing it from any collective social agreement entirely",
@@ -5124,11 +5124,11 @@
     "context": "Hayek showed that the knowledge needed to run an economy is dispersed among millions of individuals -- each knowing local conditions that no central authority could ever gather. Only the price system, emerging spontaneously from free exchange, can coordinate this scattered information."
   },
   {
-    "question": "Hayek described the price system as a mechanism for transmitting information. What makes prices superior to central planning for allocating resources?",
-    "answer": "Prices encode dispersed local knowledge about supply and demand without any central authority needing to possess it",
+    "question": "Hayek described the price system as a mechanism for transmitting information. What makes prices superior to planned economies for allocating resources?",
+    "answer": "Prices encode dispersed local knowledge about supply and demand without any single authority needing to possess it",
     "choices": [
       "Prices emerge from voluntary exchange, ensuring each transaction reflects mutual benefit and consent",
-      "Prices encode dispersed local knowledge about supply and demand without any central authority needing to possess it",
+      "Prices encode dispersed local knowledge about supply and demand without any single authority needing to possess it",
       "Market competition forces prices toward the true cost of production over time",
       "Prices aggregate consumer preferences more accurately than any political process can"
     ],
@@ -5136,7 +5136,7 @@
     "context": "A price captures enormous amounts of dispersed information in a single number. When copper becomes scarce, its price rises, telling millions of people to use less -- without any of them needing to know why. No central planner could process the information that prices transmit effortlessly."
   },
   {
-    "question": "Hayek's concept of 'spontaneous order' describes how complex beneficial patterns emerge without central direction. Which of the following is his primary example?",
+    "question": "Hayek's concept of 'spontaneous order' describes how complex beneficial structures arise without central direction. Which of the following is his primary example?",
     "answer": "The market: prices and production patterns emerge from individual decisions without anyone designing them",
     "choices": [
       "Language: its grammar and vocabulary evolved through use without any designer or central authority",
@@ -5196,11 +5196,11 @@
     "context": "Popper attacked the idea -- found in Plato, Hegel, and Marx -- that history follows inevitable laws toward a predetermined destination. This thinking, he argued, justifies totalitarianism: if history is heading somewhere inevitable, individuals can be sacrificed to hasten the journey."
   },
   {
-    "question": "Popper argued that Plato's ideal state in the 'Republic' was a blueprint for totalitarianism. What feature of Plato's state did Popper most object to?",
-    "answer": "The subordination of all individual lives to the collective good of the state as determined by rulers",
+    "question": "Popper argued that Plato's ideal republic was a blueprint for totalitarianism. What feature of Plato's vision did Popper most object to?",
+    "answer": "The subordination of all individual lives to the collective good as determined by rulers",
     "choices": [
       "The use of noble myths and deliberate propaganda by philosopher-kings to maintain social harmony and obedience",
-      "The subordination of all individual lives to the collective good of the state as determined by rulers",
+      "The subordination of all individual lives to the collective good as determined by rulers",
       "The rigid class hierarchy that permanently assigns citizens to fixed roles, preventing social mobility",
       "The expulsion of poets and dramatists from public life, eliminating any challenge to official doctrine"
     ],
@@ -5257,10 +5257,10 @@
   },
   {
     "question": "Nozick argued that taxation for redistribution is equivalent to forced labor. What is his philosophical argument for this claim?",
-    "answer": "Taking the fruits of a person's labor without consent treats that person as a means to others' ends",
+    "answer": "Taking the fruits of a person's work without consent treats that person as a means to others' ends",
     "choices": [
       "Taxation erodes the incentive to work productively, making society worse off for everyone over time",
-      "Taking the fruits of a person's labor without consent treats that person as a means to others' ends",
+      "Taking the fruits of a person's work without consent treats that person as a means to others' ends",
       "Coercive redistribution violates the social contract that fully rational citizens would freely endorse",
       "Redistributive taxation ignores the historical entitlements established through legitimate acquisition and transfer"
     ],
@@ -5268,7 +5268,7 @@
     "context": "If the government takes 30% of your earnings to give to others, it is claiming ownership of 30% of your labor time. You worked those hours not for yourself but at the state's direction, for the state's chosen beneficiaries. Nozick argues this is structurally identical to forced labor, violating the Kantian principle of treating persons as ends in themselves."
   },
   {
-    "question": "Rawls's 'veil of ignorance' asks us to choose principles of justice without knowing our place in society. What type of principles does Rawls believe rational people would choose?",
+    "question": "Rawls's 'veil of ignorance' asks us to choose principles of justice without knowing our position in the social order. What type of principles does Rawls believe rational people would choose?",
     "answer": "Principles that maximize the position of the worst-off group in society",
     "choices": [
       "Principles that maximize total social wealth while permitting only strictly necessary inequalities",
@@ -5341,9 +5341,9 @@
   },
   {
     "question": "A 'positive right' requires someone to actively provide something to the rights-holder. Critics of positive rights argue they are problematic. Why?",
-    "answer": "Positive rights impose obligations on others, potentially infringing their liberty to meet the rights-holder's needs",
+    "answer": "Positive rights impose obligations on others, potentially infringing their liberty to satisfy entitlements",
     "choices": [
-      "Positive rights impose obligations on others, potentially infringing their liberty to meet the rights-holder's needs",
+      "Positive rights impose obligations on others, potentially infringing their liberty to satisfy entitlements",
       "They create enforceable duties that compel provision of services, overriding the autonomy of those burdened by the obligation",
       "Negative rights already cover all genuine entitlements, rendering positive rights philosophically redundant and unnecessary",
       "They presuppose unlimited available resources, ignoring the genuine scarcity that constrains any real society"
@@ -5413,10 +5413,10 @@
   },
   {
     "question": "What is the 'ad hominem' fallacy, and why is it relevant to evaluating political and philosophical arguments?",
-    "answer": "Attacking the person rather than the argument; it is a fallacy because personal flaws do not make an argument false",
+    "answer": "Attacking the person rather than the argument; personal flaws do not affect whether an argument is logically valid",
     "choices": [
       "Appealing to the popularity of a view as evidence of its truth, rather than engaging its actual merits",
-      "Attacking the person rather than the argument; it is a fallacy because personal flaws do not make an argument false",
+      "Attacking the person rather than the argument; personal flaws do not affect whether an argument is logically valid",
       "Drawing a conclusion that goes beyond what the premises can actually support, inflating the argument's scope",
       "Shifting the burden of proof onto the person who denies a claim, rather than defending one's own position"
     ],
@@ -5437,10 +5437,10 @@
   },
   {
     "question": "John Stuart Mill distinguished between 'higher' and 'lower' pleasures in his version of utilitarianism. What did he argue about intellectual versus physical pleasures?",
-    "answer": "Intellectual pleasures are qualitatively superior, not just quantitatively greater, than physical ones",
+    "answer": "Higher pleasures are qualitatively superior, not just quantitatively greater, than lower physical ones",
     "choices": [
       "Physical pleasures are more immediate and thus carry greater moral weight when calculating overall well-being",
-      "Intellectual pleasures are qualitatively superior, not just quantitatively greater, than physical ones",
+      "Higher pleasures are qualitatively superior, not just quantitatively greater, than lower physical ones",
       "All pleasures are equal in kind and can only be distinguished by their duration and intensity",
       "Pleasures tied to social harmony outrank those pursued for purely individual satisfaction"
     ],
@@ -5461,10 +5461,10 @@
   },
   {
     "question": "The 'is-ought gap' (Hume) and the naturalistic fallacy (G.E. Moore) both concern deriving values from facts. Why does this matter for collectivist political arguments?",
-    "answer": "Arguments that claim collective welfare 'naturally' justifies overriding rights commit the naturalistic fallacy",
+    "answer": "Collectivist claims that group welfare 'naturally' justifies overriding individual rights illicitly derive an ought from an is",
     "choices": [
       "Collective welfare is an empirical fact, so it automatically generates binding moral obligations for all individuals",
-      "Arguments that claim collective welfare 'naturally' justifies overriding rights commit the naturalistic fallacy",
+      "Collectivist claims that group welfare 'naturally' justifies overriding individual rights illicitly derive an ought from an is",
       "The is-ought gap demonstrates that moral reasoning is fundamentally impossible within any political framework",
       "Hume showed that collectivist social contracts are logically self-contradictory and therefore invalid"
     ],
@@ -5497,10 +5497,10 @@
   },
   {
     "question": "What logical fallacy occurs when someone argues that because something has always been done a certain way, it must be correct?",
-    "answer": "Appeal to tradition: assuming a practice is correct because it has long been established",
+    "answer": "Appeal to tradition: assuming a practice is justified because it has long been established",
     "choices": [
       "Ad hominem: dismissing a claim by attacking the character of the person making it",
-      "Appeal to tradition: assuming a practice is correct because it has long been established",
+      "Appeal to tradition: assuming a practice is justified because it has long been established",
       "False dilemma: presenting only two options when more alternatives exist",
       "Hasty generalization: drawing broad conclusions from insufficient evidence"
     ],
@@ -5557,10 +5557,10 @@
   },
   {
     "question": "Aristotle argued in the 'Politics' that humans are by nature 'political animals.' What does this mean?",
-    "answer": "Humans can only fulfill their nature and achieve eudaimonia within a community with others",
+    "answer": "Humans can only fulfill their purpose and achieve eudaimonia within a community with others",
     "choices": [
       "Humans are naturally inclined to dominate others and must be restrained by civil law and institutional checks",
-      "Humans can only fulfill their nature and achieve eudaimonia within a community with others",
+      "Humans can only fulfill their purpose and achieve eudaimonia within a community with others",
       "Political leadership is the highest expression of human rationality, making the statesman the ideal human type",
       "Humans naturally form hierarchies based on virtue, making political inequality a reflection of natural order"
     ],

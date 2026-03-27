@@ -48,7 +48,7 @@
     "context": "The human heart beats about 100,000 times per day, pumping roughly 7,500 liters of blood. It has four chambers and the blood it circulates delivers oxygen and nutrients to every cell in your body."
   },
   {
-    "tier": 1,
+    "tier": 2,
     "question": "Plants make food using sunlight in a process called ___?",
     "answer": "Photosynthesis",
     "choices": [
@@ -600,7 +600,7 @@
     "context": "Mercury is the smallest planet in our solar system, with a diameter of about 4,880 km. Note that Pluto, once considered a planet, was reclassified as a dwarf planet in 2006 and is no longer counted among the eight official planets."
   },
   {
-    "tier": 1,
+    "tier": 2,
     "question": "Plants need ___ for photosynthesis?",
     "answer": "Sunlight, the primary energy source",
     "choices": [
@@ -806,10 +806,10 @@
   {
     "tier": 1,
     "question": "Plants absorb carbon dioxide through tiny pores called ___?",
-    "answer": "Stomata, the tiny pores that exchange gases in leaves",
+    "answer": "Stomata, the tiny openings that exchange gases in leaves",
     "choices": [
-      "Stomata, the tiny pores that exchange gases in leaves",
-      "Chloroplasts, the organelles where photosynthesis occurs",
+      "Stomata, the tiny openings that exchange gases in leaves",
+      "Chloroplasts, the tiny organelles where photosynthesis occurs",
       "Root hair cells, which absorb water and minerals from soil",
       "Xylem vessels, which transport water upward through the plant"
     ],
@@ -890,11 +890,11 @@
   {
     "tier": 1,
     "question": "Organisms that eat other organisms are called ___?",
-    "answer": "Consumers, which must eat other organisms for energy",
+    "answer": "Consumers, which must obtain energy by eating other living things",
     "choices": [
-      "Consumers, which must eat other organisms for energy",
+      "Consumers, which must obtain energy by eating other living things",
       "Producers, which synthesize food through photosynthesis",
-      "Decomposers, which recycle nutrients from dead matter",
+      "Decomposers, which recycle nutrients from dead organisms",
       "Autotrophs, which generate energy from inorganic sources"
     ],
     "context": "Consumers, also called heterotrophs, cannot produce their own food and must obtain energy by eating other organisms. They occupy higher levels of the food chain and are classified as primary, secondary, or tertiary consumers depending on what they eat."
@@ -902,11 +902,11 @@
   {
     "tier": 1,
     "question": "Fungi and bacteria that break down dead matter are ___?",
-    "answer": "Decomposers, which break down dead organic matter",
+    "answer": "Decomposers, which recycle nutrients from dead organic material",
     "choices": [
-      "Decomposers, which break down dead organic matter",
-      "Producers, which convert sunlight into energy",
-      "Consumers, which feed on living organisms",
+      "Decomposers, which recycle nutrients from dead organic material",
+      "Producers, which convert sunlight into energy to make food",
+      "Consumers, which feed on living organisms to break down nutrients",
       "Parasites, which live on or inside a host organism"
     ],
     "context": "Decomposers such as fungi and bacteria break down dead organic matter into simpler substances, recycling nutrients back into the ecosystem. This makes them essential to nutrient cycles like the carbon and nitrogen cycles."
@@ -1289,9 +1289,9 @@
     "answer": "Watt — the unit of power output or transfer",
     "choices": [
       "Watt — the unit of power output or transfer",
-      "Joule — the unit of energy or work",
-      "Newton — the unit of force",
-      "Ampere — the unit of electric current"
+      "Joule — the unit of energy or work, not power",
+      "Newton — the unit of force, not power",
+      "Ampere — the unit of electric current, not power"
     ],
     "context": "The Watt is the SI unit for power, defined as one joule of energy transferred per second. SI units provide a universal system ensuring experiments worldwide can be compared."
   },
@@ -1445,9 +1445,9 @@
     "answer": "273 K, the freezing point of water",
     "choices": [
       "273 K, the freezing point of water",
-      "0 K, the point of absolute zero",
+      "0 K, the freezing point of absolute zero",
       "373 K, the boiling point of water",
-      "300 K, approximate room temperature"
+      "300 K, approximate room temperature in Kelvin"
     ],
     "context": "Water freezes at 0°C, which corresponds to 273.15 K on the Kelvin scale. The Kelvin scale starts at absolute zero (-273.15°C), making it essential for scientific calculations in thermodynamics and chemistry."
   },
@@ -1861,11 +1861,11 @@
   },
   {
     "tier": 3,
-    "question": "Mitosis produces ___ daughter cells?",
+    "question": "How many cells does mitosis produce?",
     "answer": "2, producing two genetically identical daughter cells",
     "choices": [
       "2, producing two genetically identical daughter cells",
-      "4, the same number produced by meiosis",
+      "4, yielding four genetically unique daughter cells",
       "3, one cell per major phase of division",
       "8, after undergoing three successive division cycles"
     ],
@@ -1873,11 +1873,11 @@
   },
   {
     "tier": 3,
-    "question": "Meiosis produces ___ daughter cells?",
+    "question": "How many cells does meiosis produce?",
     "answer": "4, yielding four genetically unique daughter cells",
     "choices": [
       "4, yielding four genetically unique daughter cells",
-      "2, the same number produced by mitosis",
+      "2, producing two genetically identical daughter cells",
       "8, through two successive rounds of division",
       "1, a single recombined cell with new genetic material"
     ],
@@ -1914,7 +1914,7 @@
     "choices": [
       "Capital letters, such as 'B' for a dominant allele",
       "Lowercase letters, such as 'b' for a recessive allele",
-      "Superscript numbers, such as A¹ to indicate allele dominance",
+      "Superscript numbers, such as A¹ to indicate a dominant allele",
       "Roman numerals, such as I or II to rank allele strength"
     ],
     "context": "In genetics notation, dominant alleles are represented by capital (uppercase) letters, while recessive alleles are represented by lowercase letters. For example, 'B' represents a dominant allele for brown eyes, while 'b' represents the recessive allele."
@@ -1946,9 +1946,9 @@
   {
     "tier": 3,
     "question": "Boyle's Law: at constant temperature, P x V = ___?",
-    "answer": "A constant value (P × V = k)",
+    "answer": "A fixed value k, unchanged as pressure or volume varies",
     "choices": [
-      "A constant value (P × V = k)",
+      "A fixed value k, unchanged as pressure or volume varies",
       "Proportional to the absolute temperature",
       "Zero under standard pressure conditions",
       "Equal to nRT, the ideal gas quantity"
@@ -2006,11 +2006,11 @@
   {
     "tier": 3,
     "question": "Electromagnetic waves require ___ to travel?",
-    "answer": "No medium — they travel through a vacuum",
+    "answer": "No medium — they propagate through a vacuum",
     "choices": [
-      "No medium — they travel through a vacuum",
-      "A solid or liquid medium to propagate",
-      "A gaseous atmosphere such as air",
+      "No medium — they propagate through a vacuum",
+      "A solid or liquid medium to travel through",
+      "A gaseous atmosphere such as air to travel through",
       "A plasma field to sustain oscillation"
     ],
     "context": "Unlike mechanical waves such as sound, electromagnetic waves do not require a medium to travel. They can propagate through the vacuum of space, which is how sunlight and radio signals reach Earth from distant sources."
@@ -2161,7 +2161,7 @@
   },
   {
     "tier": 3,
-    "question": "The angle of incidence equals the angle of ___ in reflection?",
+    "question": "In the law of reflection, the angle of incidence equals the angle of ___?",
     "answer": "Reflection",
     "choices": [
       "Reflection",
@@ -2486,9 +2486,9 @@
   {
     "tier": 4,
     "question": "Gay-Lussac's Law: at constant volume, P / T = ___?",
-    "answer": "Constant, meaning pressure and temperature are directly proportional",
+    "answer": "A fixed ratio, meaning pressure and temperature are directly proportional",
     "choices": [
-      "Constant, meaning pressure and temperature are directly proportional",
+      "A fixed ratio, meaning pressure and temperature are directly proportional",
       "nR/V, derived from rearranging the full ideal gas law equation",
       "T/P, representing the inverse temperature-to-pressure relationship",
       "P²/T, suggesting a quadratic dependence of pressure on temperature"
@@ -2545,7 +2545,7 @@
   },
   {
     "tier": 4,
-    "question": "Circular motion requires a ___ force toward the center?",
+    "question": "Circular motion requires a ___ force directed inward?",
     "answer": "Centripetal, directed inward toward the center of rotation",
     "choices": [
       "Centripetal, directed inward toward the center of rotation",
@@ -2561,8 +2561,8 @@
     "answer": "Releases more energy per unit mass than fission of heavy nuclei",
     "choices": [
       "Releases more energy per unit mass than fission of heavy nuclei",
-      "Requires lower temperatures to initiate than fission reactions",
-      "Produces no long-lived radioactive byproducts unlike fission",
+      "Requires lower temperatures to initiate than fission of heavy nuclei",
+      "Produces no long-lived radioactive byproducts unlike fission of heavy nuclei",
       "Is sustained entirely by gravitational pressure without plasma heating"
     ],
     "context": "The Sun fuses hydrogen into helium through nuclear fusion, releasing enormous energy via E=mc². Fusion of light nuclei releases more energy per unit mass than fission of heavy nuclei. However, fusion requires extreme temperatures (~10 million K) to overcome electrostatic repulsion between protons."
@@ -2749,22 +2749,22 @@
   },
   {
     "tier": 4,
-    "question": "Le Chatelier's Principle: a system in equilibrium ___ to oppose changes?",
-    "answer": "Shifts to oppose the disturbance and restore equilibrium",
+    "question": "Le Chatelier's Principle states that a system at equilibrium will ___?",
+    "answer": "Shift to oppose any disturbance and restore the original equilibrium",
     "choices": [
-      "Shifts to oppose the disturbance and restore equilibrium",
-      "Locks into a permanent new state without opposing the change",
-      "Accelerates only the forward reaction to compensate",
-      "Collapses toward the side with fewer moles of gas"
+      "Shift to oppose any disturbance and restore the original equilibrium",
+      "Lock into a permanent new state without opposing the change",
+      "Accelerate only the forward reaction to compensate for the change",
+      "Collapse toward the side with fewer moles of gas present"
     ],
     "context": "Le Chatelier's Principle states that when a system at equilibrium is disturbed — by changes in concentration, pressure, or temperature — it shifts in a direction that opposes the disturbance and restores a new equilibrium. This principle is fundamental to predicting the behavior of chemical systems."
   },
   {
     "tier": 4,
     "question": "Le Chatelier's Principle predicts that adding more reactant to an equilibrium will shift the reaction toward ___?",
-    "answer": "Products, as the system shifts to consume the added reactant",
+    "answer": "Products, as the system shifts to consume the added substance",
     "choices": [
-      "Products, as the system shifts to consume the added reactant",
+      "Products, as the system shifts to consume the added substance",
       "Reactants, restoring the original concentrations",
       "Neither side, with no net change in composition",
       "The catalyst, increasing the forward reaction rate only"
@@ -2833,25 +2833,25 @@
   },
   {
     "tier": 4,
-    "question": "The unit of capacitance is the ___?",
-    "answer": "Farad, the unit of capacitance named after Michael Faraday",
+    "question": "Which unit measures capacitance, named after a famous scientist?",
+    "answer": "Farad, named after Michael Faraday",
     "choices": [
-      "Farad, the unit of capacitance named after Michael Faraday",
-      "Henry, the unit of inductance named after Joseph Henry",
-      "Tesla, the unit of magnetic flux density named after Nikola Tesla",
-      "Weber, the unit of magnetic flux named after Wilhelm Weber"
+      "Farad, named after Michael Faraday",
+      "Henry, named after Joseph Henry",
+      "Tesla, named after Nikola Tesla",
+      "Weber, named after Wilhelm Weber"
     ],
     "context": "The Farad (F) is the SI unit of capacitance, defined as one coulomb of charge per volt of potential difference. Named after Michael Faraday, it is often encountered in microfarads (µF) or picofarads (pF) in practical circuits."
   },
   {
     "tier": 4,
-    "question": "The unit of inductance is the ___?",
-    "answer": "Henry, the unit of inductance named after Joseph Henry",
+    "question": "Which unit measures inductance, named after a famous scientist?",
+    "answer": "Henry, named after Joseph Henry",
     "choices": [
-      "Henry, the unit of inductance named after Joseph Henry",
-      "Farad, the unit of capacitance named after Michael Faraday",
-      "Tesla, the unit of magnetic flux density named after Nikola Tesla",
-      "Weber, the unit of magnetic flux named after Wilhelm Weber"
+      "Henry, named after Joseph Henry",
+      "Farad, named after Michael Faraday",
+      "Tesla, named after Nikola Tesla",
+      "Weber, named after Wilhelm Weber"
     ],
     "context": "The Henry (H) is the SI unit of inductance, defined as the inductance that produces one volt of electromotive force when the current changes at one ampere per second. Named after Joseph Henry, it characterizes an inductor's opposition to changes in current."
   },
@@ -3097,7 +3097,7 @@
   },
   {
     "tier": 4,
-    "question": "A reaction with ?G < 0 is ___?",
+    "question": "A reaction with ΔG < 0 is ___?",
     "answer": "Spontaneous, releasing free energy as the reaction proceeds",
     "choices": [
       "Spontaneous, releasing free energy as the reaction proceeds",
@@ -3169,12 +3169,12 @@
   },
   {
     "tier": 5,
-    "question": "DNA replication is called ___ because each new strand keeps one original strand?",
+    "question": "DNA replication is called ___ because each new double helix keeps one original parental copy?",
     "answer": "Semi-conservative — each daughter molecule retains one original parental strand",
     "choices": [
       "Semi-conservative — each daughter molecule retains one original parental strand",
       "Conservative — both original strands stay together in one daughter molecule",
-      "Dispersive — original DNA is fragmented and mixed throughout both new strands",
+      "Dispersive — original DNA is fragmented and mixed throughout both new daughter molecules",
       "Bidirectional — replication proceeds outward from multiple origins simultaneously"
     ],
     "context": "Semi-conservative replication means each daughter DNA molecule retains one original (parental) strand and one newly synthesized strand. This was confirmed by the Meselson-Stahl experiment in 1958 using nitrogen isotope labeling, ruling out the conservative and dispersive models."
@@ -3253,7 +3253,7 @@
   },
   {
     "tier": 5,
-    "question": "The azimuthal quantum number l describes the orbital ___?",
+    "question": "The azimuthal quantum number l describes which property of an atomic subshell?",
     "answer": "Shape of the orbital subshell",
     "choices": [
       "Shape of the orbital subshell",
@@ -3265,7 +3265,7 @@
   },
   {
     "tier": 5,
-    "question": "The magnetic quantum number m? describes the orbital ___?",
+    "question": "The magnetic quantum number m? describes which property of an atomic subshell?",
     "answer": "Spatial orientation of the orbital",
     "choices": [
       "Spatial orientation of the orbital",
@@ -3505,7 +3505,7 @@
   },
   {
     "tier": 5,
-    "question": "Gel electrophoresis separates DNA fragments by ___?",
+    "question": "Gel electrophoresis separates DNA by ___?",
     "answer": "Size, as smaller fragments migrate farther",
     "choices": [
       "Size, as smaller fragments migrate farther",
@@ -3661,10 +3661,10 @@
   },
   {
     "tier": 5,
-    "question": "Hawking radiation causes black holes to slowly ___?",
-    "answer": "Evaporate, slowly losing mass over time",
+    "question": "Hawking radiation causes black holes to ___?",
+    "answer": "Evaporate, gradually losing mass over time",
     "choices": [
-      "Evaporate, slowly losing mass over time",
+      "Evaporate, gradually losing mass over time",
       "Expand, gaining energy from the quantum vacuum",
       "Collapse further, compressing into a denser singularity",
       "Stabilize, merging smoothly with surrounding spacetime"
@@ -3677,8 +3677,8 @@
     "answer": "Stars more massive than the Sun, as a hydrogen-fusing process",
     "choices": [
       "Stars more massive than the Sun, as a hydrogen-fusing process",
-      "Tokamak fusion reactors, as a controlled energy source on Earth",
-      "High-energy particle accelerators, as a collision byproduct",
+      "Tokamak fusion reactors, as a controlled energy process on Earth",
+      "High-energy particle accelerators, as a collision byproduct process",
       "Planetary cores, as a source of internal geothermal heating"
     ],
     "context": "The CNO (Carbon-Nitrogen-Oxygen) cycle is a set of nuclear fusion reactions that occurs in stars more massive than the Sun, converting hydrogen into helium using carbon, nitrogen, and oxygen as catalysts."
@@ -3721,7 +3721,7 @@
   },
   {
     "tier": 5,
-    "question": "The molar volume of an ideal gas at STP is approximately ___?",
+    "question": "The molar volume of a perfect gas at STP is approximately ___?",
     "answer": "22.4 L/mol, derived from the ideal gas law at 0°C and 1 atm",
     "choices": [
       "22.4 L/mol, derived from the ideal gas law at 0°C and 1 atm",
@@ -3893,9 +3893,9 @@
     "answer": "Zero, reflecting conservation of energy around the loop",
     "choices": [
       "Zero, reflecting conservation of energy around the loop",
-      "Equal to the net EMF, summing all active voltage sources",
-      "Maximal at resonance, when inductive and capacitive reactances cancel",
-      "Proportional to loop current, scaling linearly with total resistance"
+      "Equal to the net EMF, summing all active voltage sources around the loop",
+      "Maximal at resonance, when inductive and capacitive reactances cancel around the loop",
+      "Proportional to loop current, scaling linearly with total resistance around the loop"
     ],
     "context": "Kirchhoff's Voltage Law (KVL) states that the algebraic sum of all voltages around any closed loop in a circuit equals zero. This is a consequence of conservation of energy — a charge returning to its starting point gains and loses equal amounts of energy."
   },
@@ -4081,13 +4081,13 @@
   },
   {
     "tier": 2,
-    "question": "Water has a higher boiling point than H?S because of ___?",
+    "question": "Water has a higher boiling point than H₂S because of ___?",
     "answer": "Hydrogen bonding between water molecules",
     "choices": [
       "Hydrogen bonding between water molecules",
-      "Ionic bonding between oxygen and hydrogen atoms",
-      "Stronger covalent bonds within H2O molecules",
-      "Greater van der Waals dispersion forces in H2O"
+      "Ionic bonding between oxygen and hydrogen atoms in water",
+      "Stronger covalent bonds within water molecules compared to H₂S",
+      "Greater van der Waals dispersion forces present in water"
     ],
     "context": "Water's unusually high boiling point relative to H2S is due to hydrogen bonding — the strong intermolecular attraction between the partially positive hydrogen of one water molecule and the partially negative oxygen of another. H2S lacks this because sulfur is less electronegative and larger, so these bonds do not form effectively."
   },
@@ -4597,13 +4597,13 @@
   },
   {
     "tier": 5,
-    "question": "Antimatter counterpart to the electron is the ___?",
+    "question": "The antimatter counterpart to the electron is the ___?",
     "answer": "Positron, with equal mass but opposite charge to the electron",
     "choices": [
       "Positron, with equal mass but opposite charge to the electron",
       "Antiproton, the antimatter twin of the proton",
       "Antineutron, which carries reversed quantum numbers",
-      "Muon, a heavier unstable lepton cousin"
+      "Muon, a heavier unstable lepton cousin of the electron"
     ],
     "context": "The positron is the antimatter counterpart of the electron, having the same mass but opposite charge (+1). Predicted by Dirac's equation in 1928, it was experimentally discovered by Carl Anderson in 1932."
   },
@@ -4613,9 +4613,9 @@
     "answer": "Positron, forming an electron-positron pair from the photon's energy",
     "choices": [
       "Positron, forming an electron-positron pair from the photon's energy",
-      "Proton, requiring additional nucleon energy",
-      "Neutron, which pairs with the electron electrically",
-      "Muon, a heavier lepton produced at high energies"
+      "Proton, requiring additional nucleon energy from the photon",
+      "Neutron, which pairs with the electron using the photon's energy",
+      "Muon, a heavier lepton produced at high photon energies"
     ],
     "context": "Pair production is a process where a high-energy photon interacts with a nucleus and converts into an electron-positron pair. This demonstrates mass-energy equivalence and requires the photon to have at least 1.022 MeV of energy."
   },
@@ -4637,9 +4637,9 @@
     "answer": "Fermions — particles with half-integer spin that obey the exclusion principle",
     "choices": [
       "Fermions — particles with half-integer spin that obey the exclusion principle",
-      "Bosons — particles with integer spin that can share quantum states",
-      "Anyons — exotic quasiparticles found in 2D systems",
-      "Hadrons — composite particles made of bound quarks"
+      "Bosons — particles with integer spin that are exempt from the exclusion principle",
+      "Anyons — exotic quasiparticles found in 2D systems with fractional statistics",
+      "Hadrons — composite particles made of bound quarks subject to confinement"
     ],
     "context": "The Pauli Exclusion Principle states that no two fermions (particles with half-integer spin, such as electrons, protons, and neutrons) can occupy the same quantum state simultaneously. This principle explains the structure of atoms and the stability of matter."
   },
@@ -4753,7 +4753,7 @@
   },
   {
     "tier": 5,
-    "question": "Neutron stars are supported against collapse by ___ pressure?",
+    "question": "What mechanism supports neutron stars against gravitational collapse?",
     "answer": "Neutron degeneracy pressure, a quantum effect from the Pauli exclusion principle",
     "choices": [
       "Neutron degeneracy pressure, a quantum effect from the Pauli exclusion principle",
@@ -4772,14 +4772,14 @@
       "Quantifiable, meaning it produces measurable numerical data",
       "Peer-reviewed, meaning it has been vetted by other experts"
     ],
-    "tier": 1,
+    "tier": 2,
     "context": "Karl Popper established falsifiability as a cornerstone of the scientific method. A hypothesis must make predictions that could, in principle, be proven wrong by observation or experiment. This distinguishes science from unfalsifiable claims and pseudoscience."
   },
   {
-    "question": "Why do scientists repeat experiments before accepting a result?",
-    "answer": "To confirm the result is reproducible and not due to random chance",
+    "question": "Why do scientists repeat experiments before accepting a finding?",
+    "answer": "To confirm the finding is reproducible and not due to random chance",
     "choices": [
-      "To confirm the result is reproducible and not due to random chance",
+      "To confirm the finding is reproducible and not due to random chance",
       "To satisfy the funding requirements set by institutional grant bodies",
       "To comply with regulatory mandates specifying a minimum trial count",
       "To systematically eliminate all bias introduced by the researcher"
@@ -4932,10 +4932,10 @@
     "context": "Bases release hydroxide (OH-) ions when dissolved in water, which is why they feel slippery and can neutralize acids. This ion exchange governs processes from soap-making to biochemical reactions inside living cells."
   },
   {
-    "question": "Evolution by natural selection works because individuals with traits better suited to their environment are more likely to ___?",
-    "answer": "Survive and reproduce, passing traits to offspring",
+    "question": "Evolution by natural selection works because individuals better suited to their environment are more likely to ___?",
+    "answer": "Survive and reproduce, passing advantageous characteristics to offspring",
     "choices": [
-      "Survive and reproduce, passing traits to offspring",
+      "Survive and reproduce, passing advantageous characteristics to offspring",
       "Mutate more rapidly than less-adapted individuals",
       "Migrate toward more favorable environmental conditions",
       "Develop heritable immunity to environmental pressures"
@@ -5112,10 +5112,10 @@
     "context": "Entropy increases in isolated systems because the number of possible disordered microstates vastly outnumbers ordered ones — making disorder overwhelmingly probable. This statistical interpretation of entropy, developed by Boltzmann, underlies thermodynamics from steam engines to the fate of the cosmos."
   },
   {
-    "question": "In quantum mechanics, the electron's position is described as a probability cloud because ___?",
-    "answer": "Its exact position cannot be known until measured",
+    "question": "In quantum mechanics, the electron is described as a probability cloud rather than a particle at a fixed location because ___?",
+    "answer": "Its exact location cannot be known until measured",
     "choices": [
-      "Its exact position cannot be known until measured",
+      "Its exact location cannot be known until measured",
       "Electrons continuously orbit in overlapping wave patterns",
       "The uncertainty principle distributes charge across orbitals",
       "Quantum fields prevent electrons from having fixed trajectories"
@@ -5172,7 +5172,7 @@
     "context": "Transcription is the process by which DNA is copied into RNA, and it must occur in the nucleus because that is where the cell's DNA is housed. The resulting mRNA then travels to the cytoplasm for translation."
   },
   {
-    "question": "Natural selection cannot directly act on genotype, only phenotype, because ___?",
+    "question": "Natural selection cannot act on genotype, only phenotype, because ___?",
     "answer": "The environment interacts with the organism's physical traits, not its DNA directly",
     "choices": [
       "The environment interacts with the organism's physical traits, not its DNA directly",
@@ -5196,10 +5196,10 @@
     "context": "Karl Popper introduced falsifiability as the criterion that separates scientific claims from non-scientific ones. A claim must be testable and potentially refutable to be considered scientific; if no observation could ever disprove it, it cannot be evaluated by the scientific method."
   },
   {
-    "question": "Quantum tunneling allows nuclear fusion to occur in the Sun at temperatures lower than classically predicted because particles can ___?",
-    "answer": "Pass through energy barriers they classically cannot overcome",
+    "question": "Quantum tunneling allows nuclear fusion to occur in the Sun at temperatures lower than predicted by classical physics because particles can ___?",
+    "answer": "Pass through energy barriers they would otherwise be unable to overcome",
     "choices": [
-      "Pass through energy barriers they classically cannot overcome",
+      "Pass through energy barriers they would otherwise be unable to overcome",
       "Accelerate beyond thermal velocity by drawing on zero-point energy fluctuations",
       "Borrow energy from virtual particle pairs to momentarily exceed the Coulomb barrier",
       "Achieve resonance tunneling when plasma density causes wave-function overlap"
@@ -5233,9 +5233,9 @@
   },
   {
     "question": "Decoherence explains why quantum superpositions are not observed in everyday objects because interaction with the environment ___?",
-    "answer": "Collapses quantum states into definite classical outcomes through environmental interaction",
+    "answer": "Collapses quantum states into definite classical outcomes through environmental entanglement",
     "choices": [
-      "Collapses quantum states into definite classical outcomes through environmental interaction",
+      "Collapses quantum states into definite classical outcomes through environmental entanglement",
       "Amplifies quantum superpositions until they become observable at macroscopic scales",
       "Entangles all nearby particles into one shared wave function across the system",
       "Redistributes quantum coherence irreversibly into the thermal motion of surrounding particles"
@@ -5248,7 +5248,7 @@
     "answer": "The thermal afterglow of the early universe's intense heat, now redshifted to microwave wavelengths",
     "choices": [
       "The thermal afterglow of the early universe's intense heat, now redshifted to microwave wavelengths",
-      "Radiation continuously emitted by supermassive black holes at galactic centers",
+      "Radiation continuously emitted by supermassive black holes at galactic centers, spanning microwave frequencies",
       "Energy released during the gravitational collapse that formed the first galaxies",
       "A byproduct of nucleosynthesis and nuclear fusion occurring in the earliest stars"
     ],
@@ -5425,9 +5425,9 @@
   },
   {
     "question": "The immune system produces antibodies that are specific to one pathogen because each antibody matches a particular ___?",
-    "answer": "The shape of a specific antigen on the pathogen's surface",
+    "answer": "The shape of an antigen on the pathogen's surface",
     "choices": [
-      "The shape of a specific antigen on the pathogen's surface",
+      "The shape of an antigen on the pathogen's surface",
       "The overall size and mass of the invading pathogen",
       "The host's blood type and immune cell chemistry",
       "Cytokine signals released at the site of infection"
@@ -5581,9 +5581,9 @@
   },
   {
     "question": "In the kinetic theory of gases, temperature is a measure of the average ___ of gas molecules?",
-    "answer": "Kinetic energy of molecular motion",
+    "answer": "Energy of molecular motion",
     "choices": [
-      "Kinetic energy of molecular motion",
+      "Energy of molecular motion",
       "Potential energy stored between molecules",
       "Mean speed of molecules, independent of mass",
       "Mean momentum of the molecular population"
@@ -5620,7 +5620,7 @@
     "answer": "Fast, exceeding what visible mass alone can gravitationally support",
     "choices": [
       "Fast, exceeding what visible mass alone can gravitationally support",
-      "Slow, falling short of Newtonian orbital velocity predictions",
+      "Slow, falling short of what visible mass would gravitationally predict",
       "Irregularly, with erratic clustering near the galactic core",
       "In retrograde, reversing the expected direction of rotation"
     ],

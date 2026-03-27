@@ -5944,8 +5944,8 @@
     "answer": "8, the square root of 64",
     "choices": [
       "8, the square root of 64",
-      "16, since area doubles the side",
-      "4, since area is side divided by 2",
+      "16, since area doubles the side length",
+      "4, since the side is the square root of half the area",
       "32, since 64 divided by 2 equals 32"
     ],
     "tier": 3,
@@ -6088,9 +6088,9 @@
     "answer": "-1, meaning the slopes are negative reciprocals of each other",
     "choices": [
       "-1, meaning the slopes are negative reciprocals of each other",
-      "0, meaning one of the two lines must be horizontal",
-      "1, meaning both lines share the same positive slope",
-      "undefined, meaning one of the lines is perfectly vertical"
+      "0, meaning one line has a slope of zero and is horizontal",
+      "1, meaning both lines have slopes that are equal in magnitude",
+      "undefined, meaning at least one line has an undefined slope and is vertical"
     ],
     "tier": 4,
     "context": "Perpendicular lines have slopes whose product is -1 — they are negative reciprocals. If one line has slope 2, the perpendicular line has slope -1/2. This guarantees a 90-degree angle at their intersection."

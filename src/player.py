@@ -113,6 +113,10 @@ class Player:
         # Fractional resistance: status/accessory effects x armor resistances
         resistance = self.resistances.get(damage_type, 1.0)
         resistance *= self.get_armor_resistance(damage_type)
+        # Charmander Stuffie: 50% fire damage reduction while in inventory
+        if damage_type == 'fire' and any(
+                getattr(i, 'id', '') == 'charmander_stuffie' for i in self.inventory):
+            resistance *= 0.5
         actual = max(0, int(amount * resistance))
         self.hp = max(0, self.hp - actual)
 
