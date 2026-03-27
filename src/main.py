@@ -214,6 +214,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "_start_melee": "iron_sword",
         "_start_ammo": "iron_arrow",
         "_start_extra_acc": ["charmander_stuffie"],
+        "_start_unusual_sphere": True,
         "_greeting": "Corwin the Ranger nocks an arrow and descends into the dark.",
     },
     "cain": {
@@ -225,6 +226,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "_start_ammo": "iron_arrow",
         "_start_accessory": "ring_protection_silver",
         "_start_extra_acc": ["charmander_stuffie"],
+        "_start_unusual_sphere": True,
         "_greeting": "Cain the Hunter moves silently into the dark. Nothing escapes him.",
     },
     "fianna": {
@@ -233,6 +235,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "_no_dagger": True,
         "_start_wand": "wand_of_magic_missile",
         "_start_extra_acc": ["dreamspun_sketchbook"],
+        "_start_unusual_sphere": True,
         "_greeting": "Fianna the Wizard weaves a sigil in the air and descends.",
     },
     "fluffs": {
@@ -242,6 +245,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "_start_wand": "wand_of_magic_missile",
         "_start_book": "spellbook_magic_missile",
         "_start_extra_acc": ["dreamspun_sketchbook"],
+        "_start_unusual_sphere": True,
         "_greeting": "Fluffs the Magnificent makes an entrance. The dungeon is honoured.",
     },
     "dad": {
@@ -2049,6 +2053,24 @@ class Game:
                 sphere.identified = True
                 self.player.known_item_ids.add('soul_sphere')
                 self.player.inventory.append(sphere)
+
+        # -- Unusual Soul Sphere (family builds only) -------------------------
+        if b.get('_start_unusual_sphere'):
+            from items import Artifact
+            usphere = Artifact({
+                'id': 'unusual_soul_sphere',
+                'name': 'Unusual Soul Sphere',
+                'symbol': 'O',
+                'color': [180, 180, 200],
+                'item_class': 'artifact',
+                'weight': 0.5,
+                'min_level': 999,
+                'lore': "An unusual soul sphere. Its colors are black and silver. "
+                        "It pulses with a powerful energy...",
+            })
+            usphere.identified = True
+            self.player.known_item_ids.add('unusual_soul_sphere')
+            self.player.inventory.append(usphere)
 
         # -- Pre-learned spells (Witcher Signs, Elder Blood) ----------------
         start_spells = b.get('_start_spells', [])
@@ -4369,7 +4391,7 @@ class Game:
             and i is not self.player.weapon and i is not self.player.ranged_weapon
         ]
         spheres = [i for i in self.player.inventory
-                   if isinstance(i, Artifact) and i.id == 'soul_sphere']
+                   if isinstance(i, Artifact) and i.id in ('soul_sphere', 'unusual_soul_sphere')]
         self.throw_menu_items = potions + weapons + spheres
         if not self.throw_menu_items:
             self.add_message("You have nothing to throw.", 'info')
@@ -4452,7 +4474,9 @@ class Game:
 
         hit_monster = self._find_first_monster_in_path(px, py, tx, ty)
 
-        if isinstance(item, Artifact) and item.id == 'soul_sphere':
+        if isinstance(item, Artifact) and item.id == 'unusual_soul_sphere':
+            self._throw_unusual_sphere(item, hit_monster, tx, ty)
+        elif isinstance(item, Artifact) and item.id == 'soul_sphere':
             self._throw_soul_sphere(item, hit_monster, tx, ty)
         elif isinstance(item, Weapon):
             self._throw_weapon(item, hit_monster, tx, ty)
@@ -4567,6 +4591,37 @@ class Game:
         self.pets.append(pet)
         self.add_message(pet.species['stages'][0]['msg'], 'success')
         _snd.play('player_healed')
+
+    def _throw_unusual_sphere(self, sphere, hit_monster, tx: int, ty: int):
+        """Throw the Unusual Soul Sphere — summons Dad for 5 turns."""
+        self.player.remove_from_inventory(sphere)
+
+        land_x, land_y = (hit_monster.x, hit_monster.y) if hit_monster else (tx, ty)
+
+        # Find a walkable spawn tile near landing
+        spawn_x, spawn_y = land_x, land_y
+        placed = False
+        for dx in range(-1, 2):
+            for dy in range(-1, 2):
+                nx, ny = land_x + dx, land_y + dy
+                if (self.dungeon.is_walkable(nx, ny)
+                        and (nx, ny) != (self.player.x, self.player.y)
+                        and not any(m.alive and m.x == nx and m.y == ny for m in self.monsters)
+                        and not any(p.alive and p.x == nx and p.y == ny for p in self.pets)):
+                    spawn_x, spawn_y = nx, ny
+                    placed = True
+                    break
+            if placed:
+                break
+        if not placed:
+            self.add_message(
+                "The sphere shatters in a flash of silver light, but there is no room!", 'warning')
+            return
+
+        from pet_system import DadPet
+        dad = DadPet(spawn_x, spawn_y, duration=5)
+        self.pets.append(dad)
+        self.add_message("Dad is here! Everything will be fine now!", 'success')
 
     def _find_first_monster_in_path(self, x0, y0, x1, y1):
         """Walk Bresenham line from (x0,y0) to (x1,y1). Return first alive monster hit, or None.
@@ -10795,9 +10850,13 @@ class Game:
                 elif action == 'attack' and target.alive:
                     dmg = pet.get_attack_damage(quiz_acc)
                     actual = target.take_damage(dmg)
-                    self.add_message(
-                        f"{pet.name} attacks {target.name}! ({actual} damage)", 'combat'
-                    )
+                    if getattr(pet, 'is_dad', False):
+                        self.add_message(
+                            f"Dad punched {target.name} in the face for {actual} damage!",
+                            'success')
+                    else:
+                        self.add_message(
+                            f"{pet.name} attacks {target.name}! ({actual} damage)", 'combat')
                     if not target.alive:
                         self._on_monster_killed(target)
 
@@ -10813,8 +10872,12 @@ class Game:
             pet.tick_regen(bonus=_prb)
             pet.tick_cooldown()
 
-            # Sketched pet duration tick
-            if getattr(pet, 'is_sketch', False) and pet.alive:
+            # Temporary pet duration ticks
+            if getattr(pet, 'is_dad', False) and pet.alive:
+                if pet.tick_duration():
+                    self.add_message(
+                        "Dad smiles at you and fades away. He believes in you!", 'success')
+            elif getattr(pet, 'is_sketch', False) and pet.alive:
                 if pet.tick_duration():
                     self.add_message(
                         f"The Sketched {pet.monster_name} shimmers, fades, and dissolves "

@@ -421,6 +421,68 @@ class SketchedPet(Pet):
         return False
 
 
+class DadPet(Pet):
+    """Dad. Invincible. 9999 damage. 5 turns. Everything will be fine."""
+
+    def __init__(self, x: int, y: int, duration: int = 5):
+        dad_species = {
+            'element': 'dad',
+            'damage_type': 'physical',
+            'color': (255, 220, 100),
+            'stages': [
+                {'name': 'Dad', 'symbol': '@', 'msg': ''},
+                {'name': 'Dad', 'symbol': '@', 'msg': ''},
+                {'name': 'Dad', 'symbol': '@', 'msg': ''},
+            ],
+            'special_name': '',
+            'special_status': '',
+            'special_status_chance': 0,
+        }
+        self.species_key = 'dad'
+        self.species = dad_species
+        self.level = 100
+        self.xp = 0
+        self.x = x
+        self.y = y
+        self.alive = True
+        self._special_cooldown = 999
+        self._regen_timer = 0
+
+        self.max_hp = 99999
+        self.hp = 99999
+        self.base_damage = 9999
+
+        self.is_dad = True
+        self.turns_remaining = duration
+
+    @property
+    def name(self) -> str:
+        return 'Dad'
+
+    def get_attack_damage(self, quiz_accuracy: float = 0.5) -> int:
+        return 9999
+
+    def get_special_damage(self, quiz_accuracy: float = 0.5) -> int:
+        return 9999
+
+    def can_use_special(self) -> bool:
+        return False
+
+    def take_damage(self, amount: int) -> int:
+        return 0  # invincible
+
+    def gain_xp(self, amount: int = 1) -> list[str]:
+        return []
+
+    def tick_duration(self) -> bool:
+        """Decrement timer. Returns True if Dad is leaving."""
+        self.turns_remaining -= 1
+        if self.turns_remaining <= 0:
+            self.alive = False
+            return True
+        return False
+
+
 def random_species() -> str:
     """Pick a random species key with equal probability."""
     return random.choice(list(_SPECIES.keys()))
