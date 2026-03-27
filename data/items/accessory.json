@@ -5087,6 +5087,25 @@
       "51-100": 0
     }
   },
+  "rands_heart": {
+    "name": "Rand's Heart",
+    "symbol": "\"",
+    "color": [200, 200, 220],
+    "weight": 0.2,
+    "min_level": 999,
+    "slot": "amulet",
+    "equip_threshold": 1,
+    "quiz_tier": 1,
+    "effects": {
+      "status": "warning",
+      "duration": -1
+    },
+    "identified": true,
+    "can_be_cursed": false,
+    "unidentified_name": "silver locket",
+    "lore": "A simple silver locket on a leather thong. It is infused with the power of a lover's promise. He knew he could not always be by Robyn's side, but he swore to protect her, always.",
+    "floorSpawnWeight": {}
+  },
   "dreamspun_sketchbook": {
     "name": "Dreamspun Sketchbook",
     "symbol": "+",

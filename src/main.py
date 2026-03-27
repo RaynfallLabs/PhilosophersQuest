@@ -259,6 +259,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "_start_weapon": "hardwood_shortbow",
         "_start_ammo": "iron_arrow",
         "_start_book": "spellbook_sleep",
+        "_start_accessory": "rands_heart",
         "_greeting": "Robyn descends -- sharp-eyed, soft-footed, and sharper-tongued than most.",
     },
     # -- Special ---------------------------------------------------------------
@@ -3043,6 +3044,17 @@ class Game:
 
     def _advance_turn(self):
         self.turn_count += 1
+
+        # Rand's Heart: show dramatic message if death was just prevented
+        if getattr(self.player, '_rands_heart_triggered', False):
+            self.player._rands_heart_triggered = False
+            self.add_message(
+                "Rand's Heart BURSTS with blinding protective light!", 'success')
+            self.add_message(
+                "A lover's promise shields you from death! "
+                "Your wounds close, your mind clears, your strength returns!", 'success')
+            self.add_message(
+                "The silver locket crumbles to dust, its promise fulfilled.", 'info')
 
         qs = getattr(self, 'quirk_system', None)
         if qs and self.player:
@@ -6132,6 +6144,9 @@ class Game:
             else:
                 item_passives.append(("Fire Breath", (245, 130, 50),
                                       "Ready (V key > Fire Breath)"))
+        if getattr(p, 'amulet_slot', None) and getattr(p.amulet_slot, 'id', '') == 'rands_heart':
+            item_passives.append(("Death Ward", (220, 220, 255),
+                                  "Prevents one death, restores full HP/MP/SP, clears debuffs (Rand's Heart)"))
         if any(getattr(i, 'id', '') == 'dreamspun_sketchbook' for i in p.inventory):
             sk_cd = p.power_cooldowns.get('sketch_manifest', 0)
             if sk_cd > 0:
@@ -6295,6 +6310,7 @@ class Game:
         self.equip_menu_items = [
             i for i in self.player.inventory
             if isinstance(i, (Weapon, Armor, Shield, Accessory))
+            and getattr(i, 'slot', '') != 'none'  # exclude carry-only items
         ]
         # Collect currently equipped items for the unequip section
         self.equip_menu_equipped = []

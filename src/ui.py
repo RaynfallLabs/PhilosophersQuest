@@ -294,6 +294,10 @@ class Sidebar:
             label = "[Manifest]"
             self.screen.blit(self._fbold.render(label, True, (200, 170, 240)), (self.x + self.PAD, y))
             y += 22
+        if getattr(player, 'amulet_slot', None) and getattr(player.amulet_slot, 'id', '') == 'rands_heart':
+            label = "[Death Ward]"
+            self.screen.blit(self._fbold.render(label, True, (220, 220, 255)), (self.x + self.PAD, y))
+            y += 22
 
         # Active status effects in a 2-column grid
         active = [(eid, val) for eid, val in player.status_effects.items() if val != 0]

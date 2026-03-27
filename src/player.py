@@ -131,6 +131,26 @@ class Player:
     def is_dead(self) -> bool:
         if self.immortal and self.hp <= 0:
             self.hp = self.max_hp   # snap back to full health instantly
+        # Rand's Heart: prevent death if equipped as amulet
+        if self.hp <= 0 and not self.immortal:
+            amulet = self.amulet_slot
+            if amulet and getattr(amulet, 'id', '') == 'rands_heart':
+                self.hp = self.max_hp
+                self.mp = self.max_mp
+                self.sp = self.max_sp
+                # Clear all debuffs
+                from status_effects import DEBUFFS
+                for eff in list(self.status_effects.keys()):
+                    if eff in DEBUFFS:
+                        del self.status_effects[eff]
+                # Unequip and consume the amulet
+                old_fx = amulet.effects
+                if 'status' in old_fx:
+                    self.status_effects.pop(old_fx['status'], None)
+                self.amulet_slot = None
+                # Do NOT add back to inventory — it is consumed
+                self._rands_heart_triggered = True  # flag for message in main.py
+                return False
         return self.hp <= 0
 
     def spend_sp(self, amount: int) -> bool:
@@ -445,6 +465,8 @@ class Player:
                 self.inventory.append(old)
             self.shield = item
         elif isinstance(item, Accessory):
+            if getattr(item, 'slot', 'ring') == 'none':
+                return  # carry-only items cannot be equipped
             if getattr(item, 'slot', 'ring') == 'amulet':
                 # Swap out existing amulet if present
                 old = self.amulet_slot
