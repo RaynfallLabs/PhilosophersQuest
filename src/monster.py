@@ -88,7 +88,7 @@ class Monster:
 
     # Backward compat: old pickled monsters may lack newer attributes
     _DEFAULTS = {
-        '_flee_timer': 0, '_alerted': False, '_slow_skip': False,
+        '_flee_timer': 0, '_alerted': False, '_aware': False, '_slow_skip': False,
         'speed': 10, 'resistances': [], 'weaknesses': [],
         'treasure': {'gold': [0, 0], 'item_chance': 0.0, 'item_tier': 1},
         'lore': '', 'status_effects': {}, 'thac0': 20,
@@ -409,6 +409,17 @@ class Monster:
             # Player spotted -- switch to aggressive permanently
             self.ai_pattern = 'aggressive'
 
+        # --- Detection range: monsters only hunt within 8 tiles ---
+        # Once a monster spots the player, it stays aware permanently.
+        dist_to_player = abs(self.x - player.x) + abs(self.y - player.y)
+        detection_range = 8
+        if dist_to_player <= detection_range:
+            self._aware = True
+        if not getattr(self, '_aware', False) and not self._alerted:
+            # Beyond detection range and never spotted the player — wander randomly
+            self._wander(dungeon, all_monsters, extra_occupied, player)
+            return False
+
         # --- Call for help: alert same-kind allies within 5 tiles ---
         if self._adjacent_to(player):
             self.alert_nearby(all_monsters)
@@ -497,6 +508,20 @@ class Monster:
 
         return False
 
+    def _wander(self, dungeon, all_monsters, extra_occupied, player):
+        """Random wandering when the monster hasn't detected the player."""
+        occupied = {(m.x, m.y) for m in all_monsters if m is not self and m.alive}
+        if extra_occupied:
+            occupied |= extra_occupied
+        occupied.add((player.x, player.y))
+        dirs = [(0, -1), (0, 1), (-1, 0), (1, 0)]
+        random.shuffle(dirs)
+        for ddx, ddy in dirs:
+            nx, ny = self.x + ddx, self.y + ddy
+            if (nx, ny) not in occupied and self._can_move_to(dungeon, nx, ny):
+                self.x, self.y = nx, ny
+                return
+
     def alert_nearby(self, all_monsters):
         """Wake up same-kind monsters within 5 tiles (call for help)."""
         for m in all_monsters:
@@ -507,6 +532,7 @@ class Monster:
             dist = abs(m.x - self.x) + abs(m.y - self.y)
             if dist <= 5:
                 m._alerted = True
+                m._aware = True
                 # Wake sleeping allies
                 m.status_effects.pop('sleeping', None)
 
