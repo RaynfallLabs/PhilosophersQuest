@@ -11830,6 +11830,12 @@ class Game:
         cy = tab_end + 6
         max_detail_w = bw - 90
 
+        ICO = self.MENU_ICON_SIZE
+        ICO_Y_OFF = 4; NAME_Y_OFF = 8; DET_Y_OFF = ICO_Y_OFF + ICO + 6
+        LBL_Y_OFF = ICO_Y_OFF + (ICO - self.font_md.get_height()) // 2
+        tx = bx + 70 + ICO + 8
+        max_detail_w = bw - (70 + ICO + 8) - 20
+
         if not display_items:
             self.screen.blit(
                 self.font_sm.render("(empty)", True, FP.FADED_TEXT), (bx + 30, cy + 10)
@@ -11841,19 +11847,20 @@ class Game:
                     FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
                     (bx + 10, iy, bw - 20, row_h - 8), border_radius=6)
                 self.screen.blit(
-                    self.font_md.render(f"[{self._LETTERS[i]}]", True, FP.WARNING_TEXT), (bx + 18, iy + 12))
+                    self.font_md.render(f"[{self._LETTERS[i]}]", True, FP.WARNING_TEXT), (bx + 18, iy + LBL_Y_OFF))
+                self._draw_menu_icon(item, bx + 56, iy + ICO_Y_OFF)
                 cursed = getattr(item, 'cursed', False)
                 name_col = FP.DANGER_TEXT if cursed else FP.GOLD_PALE
                 self.screen.blit(
-                    self.font_md.render(self._fit_text(self._display_name(item), self.font_md, bw - 90), True, name_col),
-                    (bx + 70, iy + 12))
+                    self.font_md.render(self._fit_text(self._display_name(item), self.font_md, max_detail_w), True, name_col),
+                    (tx, iy + NAME_Y_OFF))
                 slot_label = slot_name.replace('_', ' ')
                 detail = f"[{slot_label}]"
                 if cursed:
                     detail += "  CURSED"
                 self.screen.blit(
                     self.font_sm.render(detail, True, FP.DANGER_TEXT if cursed else FP.FADED_TEXT),
-                    (bx + 70, iy + 38))
+                    (tx, iy + DET_Y_OFF))
                 cy += row_h
         else:
             for i, item in enumerate(display_items[:26]):
@@ -11862,10 +11869,11 @@ class Game:
                     FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
                     (bx + 10, iy, bw - 20, row_h - 8), border_radius=6)
                 self.screen.blit(
-                    self.font_md.render(f"[{self._LETTERS[i]}]", True, FP.GOLD_BRIGHT), (bx + 18, iy + 12))
+                    self.font_md.render(f"[{self._LETTERS[i]}]", True, FP.GOLD_BRIGHT), (bx + 18, iy + LBL_Y_OFF))
+                self._draw_menu_icon(item, bx + 56, iy + ICO_Y_OFF)
                 self.screen.blit(
-                    self.font_md.render(self._fit_text(self._display_name(item), self.font_md, bw - 90), True, FP.BODY_TEXT),
-                    (bx + 70, iy + 12))
+                    self.font_md.render(self._fit_text(self._display_name(item), self.font_md, max_detail_w), True, FP.BODY_TEXT),
+                    (tx, iy + NAME_Y_OFF))
                 if isinstance(item, Weapon):
                     detail = f"{getattr(item, 'weapon_class', 'weapon')}  {item.base_damage}dmg  chain x{item.max_chain_length or '?'}"
                 elif isinstance(item, Shield):
@@ -11882,10 +11890,10 @@ class Game:
                     detail = item.item_class
                 self.screen.blit(
                     self.font_sm.render(self._fit_text(detail, self.font_sm, max_detail_w), True, FP.FADED_TEXT),
-                    (bx + 70, iy + 38))
+                    (tx, iy + DET_Y_OFF))
                 cy += row_h
 
-        hint_y = by + bh - 36
+        hint_y = by + bh - 34
         draw_divider(self.screen, bx + 10, hint_y - 8, bw - 20)
         hint = self.font_sm.render(
             "Arrows: tab  |  a-z: select  |  ESC: cancel", True, FP.HINT_TEXT)
@@ -12032,8 +12040,13 @@ class Game:
             (bx + 20, by + 48)
         )
         draw_divider(self.screen, bx + 10, by + 72, bw - 20)
+        ICO = self.MENU_ICON_SIZE
+        ICO_Y_OFF = 4; NAME_Y_OFF = 8; DET_Y_OFF = ICO_Y_OFF + ICO + 6
+        LBL_Y_OFF = ICO_Y_OFF + (ICO - self.font_md.get_height()) // 2
+        TEXT_X = 70 + ICO + 8
+        tx = bx + TEXT_X
+        max_detail_w = bw - TEXT_X - 20
         cy = by + 82
-        max_detail_w = bw - 90
         for i, spell_id in enumerate(self.spell_menu_items):
             spell = LEARNABLE_SPELLS.get(spell_id, {})
             key_lbl = chr(ord('a') + i)
@@ -12049,15 +12062,23 @@ class Game:
                 (bx + 10, iy, bw - 20, ROW_H - 8), border_radius=6
             )
             self.screen.blit(
-                self.font_md.render(f"[{key_lbl}]", True, FP.GOLD_BRIGHT), (bx + 18, iy + 12)
+                self.font_md.render(f"[{key_lbl}]", True, FP.GOLD_BRIGHT), (bx + 18, iy + LBL_Y_OFF)
             )
+            # Spell icon (try spellbook sprite, fall back to colored square)
+            book_id = spell_id.replace('_spell', '')
+            spellbook_id = f"spellbook_{book_id}"
+            sprite = self._get_menu_sprite(spellbook_id)
+            if sprite:
+                self.screen.blit(sprite, (bx + 56, iy + ICO_Y_OFF))
+            else:
+                tc = tier_color
+                pygame.draw.rect(self.screen, tc, (bx + 56, iy + ICO_Y_OFF, ICO, ICO), border_radius=4)
             self.screen.blit(
-                self.font_md.render(self._fit_text(spell.get('name', '?'), self.font_md, bw - 70 - 20), True, name_color), (bx + 70, iy + 12)
+                self.font_md.render(self._fit_text(spell.get('name', '?'), self.font_md, max_detail_w), True, name_color), (tx, iy + NAME_Y_OFF)
             )
             detail_text = f"tier {tier}  |  {mp_cost} MP  |  {spell.get('desc','')}"
-            detail_wrapped = self._wrap_text(detail_text, self.font_sm, max_detail_w)
-            for di, dl in enumerate(detail_wrapped[:2]):
-                self.screen.blit(self.font_sm.render(dl, True, tier_color), (bx + 70, iy + 38 + di * 14))
+            detail_surf = self.font_sm.render(self._fit_text(detail_text, self.font_sm, max_detail_w), True, tier_color)
+            self.screen.blit(detail_surf, (tx, iy + DET_Y_OFF))
             cy += ROW_H
         hint_y = by + bh - 34
         draw_divider(self.screen, bx + 10, hint_y - 8, bw - 20)
@@ -12516,7 +12537,7 @@ class Game:
         by = (WINDOW_H - bh) // 2
         tx = bx + TEXT_X
 
-        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=(100, 160, 255))
+        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.ARCANE_BRIGHT)
         draw_header_bar(self.screen, (bx, by, bw, 44), text="QUAFF POTION",
                         font=self.font_md, text_color=FP.GOLD_BRIGHT)
         warning = self.font_sm.render(
@@ -13035,7 +13056,7 @@ class Game:
         bx = (GAME_W - bw) // 2
         by = (WINDOW_H - bh) // 2
         draw_overlay(self.screen, 190)
-        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=(160, 120, 255))
+        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.ARCANE_BRIGHT)
         draw_header_bar(self.screen, (bx, by, bw, 44), text="ACTIVE POWERS  [V]",
                         font=self.font_md, text_color=FP.GOLD_BRIGHT)
         sub_txt = "Earned through quirk mastery -- each power has limited uses."
