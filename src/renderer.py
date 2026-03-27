@@ -141,6 +141,8 @@ class Renderer:
         if item_id in self._item_sprite_cache:
             return self._item_sprite_cache[item_id]
         path = os.path.join(_ITEM_SPRITE_DIR, f"{item_id}.png")
+        if not os.path.exists(path) and item_id.startswith('corpse_'):
+            path = os.path.join(_ITEM_SPRITE_DIR, "corpse.png")
         if os.path.exists(path):
             raw  = pygame.image.load(path).convert_alpha()
             surf = pygame.transform.scale(raw, (self.map_tile_size, self.map_tile_size))

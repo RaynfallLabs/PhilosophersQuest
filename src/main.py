@@ -3474,6 +3474,10 @@ class Game:
         if self.player.add_to_inventory(item):
             self.ground_items.remove(item)
             _snd.play('pickup')
+            # Philosopher's Stone grants identify_sight — auto-identify on pickup
+            if self.player.has_effect('identify_sight'):
+                item.identified = True
+                self.player.known_item_ids.add(item.id)
             if isinstance(item, Ammo):
                 self.add_message(f"You pick up {item.count} {self._display_name(item)}s.", 'loot')
             else:
@@ -3481,6 +3485,12 @@ class Game:
             if isinstance(item, Artifact) and item.id == 'philosophers_stone':
                 self.add_message(
                     "The Philosopher's Stone! Return to the surface to win!", 'loot'
+                )
+                # The Stone's radiance reveals the true nature of all things
+                self.player.add_effect('identify_sight', -1)
+                self._auto_identify_all()
+                self.add_message(
+                    "The Stone's radiance illuminates your mind — all items are revealed!", 'success'
                 )
             # Track trigger items for NPC moral encounters
             trigger_levels = getattr(self, '_npc_trigger_item_levels', {})
@@ -9896,6 +9906,20 @@ class Game:
         first = name.lstrip('{').lstrip()
         article = 'an' if first[0:1].lower() in 'aeiou' else 'a'
         return f"{article} {name}"
+
+    def _auto_identify_all(self):
+        """Identify every item in inventory and on the ground (Philosopher's Stone)."""
+        for item in self.player.inventory:
+            item.identified = True
+            self.player.known_item_ids.add(item.id)
+        for item in self.ground_items:
+            item.identified = True
+            self.player.known_item_ids.add(getattr(item, 'id', ''))
+        # Equipped items too
+        for slot_item in self.player.get_equipped_items():
+            if slot_item:
+                slot_item.identified = True
+                self.player.known_item_ids.add(slot_item.id)
 
     def _display_name(self, item) -> str:
         """Return the name to show for an item, including stack count when > 1.
