@@ -6628,7 +6628,7 @@
     "knockback": false,
     "ignoreShield": false,
     "critMultiplier": 2.8,
-    "requiresAmmo": null,
+    "requiresAmmo": "arrow",
     "floorSpawnWeight": {
       "61-80": 1,
       "81-100": 2
@@ -8130,7 +8130,7 @@
     "knockback": true,
     "ignoreShield": false,
     "critMultiplier": 3.0,
-    "requiresAmmo": null,
+    "requiresAmmo": "stone",
     "floorSpawnWeight": {
       "1-5": 8,
       "6-15": 15,
