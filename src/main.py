@@ -11839,7 +11839,7 @@ class Game:
                 iy = cy
                 pygame.draw.rect(self.screen,
                     FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
-                    (bx + 10, iy, bw - 20, 56), border_radius=6)
+                    (bx + 10, iy, bw - 20, 54), border_radius=6)
                 self.screen.blit(
                     self.font_md.render(f"[{self._LETTERS[i]}]", True, FP.WARNING_TEXT), (bx + 18, iy + 12))
                 cursed = getattr(item, 'cursed', False)
@@ -11860,7 +11860,7 @@ class Game:
                 iy = cy
                 pygame.draw.rect(self.screen,
                     FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
-                    (bx + 10, iy, bw - 20, 56), border_radius=6)
+                    (bx + 10, iy, bw - 20, 54), border_radius=6)
                 self.screen.blit(
                     self.font_md.render(f"[{self._LETTERS[i]}]", True, FP.GOLD_BRIGHT), (bx + 18, iy + 12))
                 self.screen.blit(
@@ -11925,7 +11925,7 @@ class Game:
             iy = cy
             pygame.draw.rect(self.screen,
                 FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
-                (bx + 10, iy, bw - 20, ROW_H - 4), border_radius=6)
+                (bx + 10, iy, bw - 20, ROW_H - 8), border_radius=6)
             self.screen.blit(
                 self.font_md.render(f"[{self._LETTERS[i]}]", True, FP.GOLD_BRIGHT),
                 (bx + 18, iy + LBL_Y_OFF))
@@ -11984,7 +11984,7 @@ class Game:
             iy = cy
             pygame.draw.rect(self.screen,
                 FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
-                (bx + 10, iy, bw - 20, ROW_H - 4), border_radius=6)
+                (bx + 10, iy, bw - 20, ROW_H - 8), border_radius=6)
             charge_color = (
                 FP.SUCCESS_TEXT if item.charges > item.max_charges // 2
                 else FP.WARNING_TEXT if item.charges > 0
@@ -12107,7 +12107,7 @@ class Game:
                 pygame.draw.rect(
                     self.screen,
                     FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
-                    (bx + 10, iy, bw - 20, ROW_H - 4), border_radius=6
+                    (bx + 10, iy, bw - 20, ROW_H - 8), border_radius=6
                 )
                 self.screen.blit(
                     self.font_md.render(f"[{self._LETTERS[i]}]", True, FP.GOLD_BRIGHT),
@@ -12307,7 +12307,7 @@ class Game:
                 pygame.draw.rect(
                     self.screen,
                     FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
-                    (bx + 10, iy, bw - 20, this_row_h - 4), border_radius=6
+                    (bx + 10, iy, bw - 20, this_row_h - 8), border_radius=6
                 )
                 self.screen.blit(
                     self.font_md.render(f"[{self._LETTERS[i]}]", True, FP.GOLD_BRIGHT),
@@ -12341,7 +12341,7 @@ class Game:
                 pygame.draw.rect(
                     self.screen,
                     FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
-                    (bx + 10, iy, bw - 20, row_h - 4), border_radius=6
+                    (bx + 10, iy, bw - 20, row_h - 8), border_radius=6
                 )
                 base = item.recipes.get('1', item.recipes.get('2', {}))
                 dish_name = _cap(base.get('name', '???'))
@@ -12461,7 +12461,7 @@ class Game:
                 pygame.draw.rect(
                     self.screen,
                     FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
-                    (bx + 10, iy, bw - 20, ROW_H - 4), border_radius=6
+                    (bx + 10, iy, bw - 20, ROW_H - 8), border_radius=6
                 )
                 self.screen.blit(
                     self.font_md.render(f"[{self._LETTERS[i]}]", True, FP.GOLD_BRIGHT),
@@ -12527,7 +12527,7 @@ class Game:
             iy = cy
             pygame.draw.rect(self.screen,
                 FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
-                (bx + 10, iy, bw - 20, ROW_H - 4), border_radius=6)
+                (bx + 10, iy, bw - 20, ROW_H - 8), border_radius=6)
             self.screen.blit(
                 self.font_md.render(f"[{self._LETTERS[i]}]", True, FP.GOLD_BRIGHT),
                 (bx + 18, iy + LBL_Y_OFF))
@@ -12593,7 +12593,7 @@ class Game:
                 pygame.draw.rect(
                     self.screen,
                     FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
-                    (bx + 10, iy, bw - 20, ROW_H - 4), border_radius=6
+                    (bx + 10, iy, bw - 20, ROW_H - 8), border_radius=6
                 )
                 self.screen.blit(
                     self.font_md.render(f"[{self._LETTERS[i]}]", True, FP.GOLD_BRIGHT),
@@ -13041,7 +13041,7 @@ class Game:
             pygame.draw.rect(
                 self.screen,
                 FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
-                (bx + 10, iy, bw - 20, row_h - 6), border_radius=6
+                (bx + 10, iy, bw - 20, row_h - 8), border_radius=6
             )
             ready = (cooldown == 0) and (pdef.get('uses', 0) == 0 or uses_rem > 0)
             idx_col = FP.GOLD_BRIGHT if ready else FP.FADED_TEXT
@@ -14413,7 +14413,7 @@ class Game:
                 pygame.draw.rect(
                     self.screen,
                     FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
-                    (bx + 10, iy, bw - 20, ROW_H - 6), border_radius=6
+                    (bx + 10, iy, bw - 20, ROW_H - 8), border_radius=6
                 )
                 self.screen.blit(
                     self.font_md.render(f"[{self._LETTERS[i]}]", True, FP.GOLD_BRIGHT),
@@ -14700,7 +14700,7 @@ class Game:
             ROW_H = 46
             for key_lbl, cat_name, cat_desc in cats:
                 pygame.draw.rect(self.screen, FP.MIDNIGHT_MID,
-                                 (bx + 10, cy, bw - 20, ROW_H - 4), border_radius=6)
+                                 (bx + 10, cy, bw - 20, ROW_H - 8), border_radius=6)
                 self.screen.blit(
                     self.font_md.render(f"[{key_lbl}]", True, FP.GOLD_BRIGHT),
                     (bx + 20, cy + 8)
