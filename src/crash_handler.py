@@ -18,7 +18,10 @@ import datetime
 
 
 def _project_root() -> str:
-    """Return the project root regardless of the current working directory."""
+    """Return a writable directory for crash reports."""
+    if getattr(sys, 'frozen', False):
+        from paths import save_dir
+        return save_dir()
     return os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 

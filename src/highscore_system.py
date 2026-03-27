@@ -12,10 +12,18 @@ from datetime import datetime
 from typing import Optional
 
 MAX_ENTRIES = 100
-_SCORE_FILE = os.path.join(
-    os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-    'highscores.json'
-)
+
+def _score_file_path() -> str:
+    import sys
+    if getattr(sys, 'frozen', False):
+        from paths import save_dir
+        return os.path.join(save_dir(), 'highscores.json')
+    return os.path.join(
+        os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+        'highscores.json'
+    )
+
+_SCORE_FILE = _score_file_path()
 
 
 def _load() -> list[dict]:
