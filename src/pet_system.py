@@ -330,6 +330,97 @@ class FenrirPet(Pet):
         return super().take_turn(player, dungeon, monsters, pets, ground_items)
 
 
+class SketchedPet(Pet):
+    """Temporary pet manifested from the Dreamspun Sketchbook.
+
+    Inherits a monster's appearance and scaled-down stats.
+    Lasts for a fixed number of turns, then dissolves.
+    """
+
+    SCALE = 0.40  # 40% of monster stats
+
+    def __init__(self, monster, px: int, py: int, duration: int):
+        # Build a fake species dict so the Pet base class can function
+        sketch_species = {
+            'element': 'sketch',
+            'damage_type': 'physical',
+            'color': (160, 140, 230),  # lavender tint
+            'stages': [
+                {'name': f'Sketched {monster.name}', 'symbol': monster.symbol, 'msg': ''},
+                {'name': f'Sketched {monster.name}', 'symbol': monster.symbol, 'msg': ''},
+                {'name': f'Sketched {monster.name}', 'symbol': monster.symbol, 'msg': ''},
+            ],
+            'special_name': '',
+            'special_status': '',
+            'special_status_chance': 0,
+        }
+        # Bypass normal __init__ species lookup
+        self.species_key = 'sketch'
+        self.species = sketch_species
+        self.level = max(1, min(100, getattr(monster, 'min_level', 1)))
+        self.xp = 0
+        self.x = px
+        self.y = py
+        self.alive = True
+        self._special_cooldown = 999  # no special attack
+        self._regen_timer = 0
+
+        # Scale from monster stats
+        self.max_hp = max(10, int(monster.max_hp * self.SCALE))
+        self.hp = self.max_hp
+        # Compute base_damage from monster's first attack dice
+        self._attack_dice = '1d4'
+        if hasattr(monster, 'attacks') and monster.attacks:
+            self._attack_dice = monster.attacks[0].get('damage', '1d4')
+        self.base_damage = max(3, int(self._calc_dice_avg(self._attack_dice) * self.SCALE))
+
+        # Monster identity (for sprite rendering and messages)
+        self.monster_kind = monster.kind
+        self.monster_name = monster.name
+        self.is_sketch = True
+
+        # Duration tracking
+        self.turns_remaining = duration
+
+    @staticmethod
+    def _calc_dice_avg(dice_str: str) -> float:
+        """Parse 'NdM+B' and return average roll."""
+        import re
+        m = re.match(r'(\d+)d(\d+)([+-]\d+)?', str(dice_str))
+        if not m:
+            return 5.0
+        n, sides = int(m.group(1)), int(m.group(2))
+        bonus = int(m.group(3)) if m.group(3) else 0
+        return n * (sides + 1) / 2 + bonus
+
+    @property
+    def name(self) -> str:
+        return f'Sketched {self.monster_name}'
+
+    def get_attack_damage(self, quiz_accuracy: float = 0.5) -> int:
+        """Roll the monster's attack dice at 40% power."""
+        from dice import roll
+        raw = roll(self._attack_dice)
+        return max(1, int(raw * self.SCALE))
+
+    def get_special_damage(self, quiz_accuracy: float = 0.5) -> int:
+        return self.get_attack_damage(quiz_accuracy)
+
+    def can_use_special(self) -> bool:
+        return False
+
+    def gain_xp(self, amount: int = 1) -> list[str]:
+        return []  # sketched pets don't level
+
+    def tick_duration(self) -> bool:
+        """Decrement timer. Returns True if expired (pet should dissolve)."""
+        self.turns_remaining -= 1
+        if self.turns_remaining <= 0:
+            self.alive = False
+            return True
+        return False
+
+
 def random_species() -> str:
     """Pick a random species key with equal probability."""
     return random.choice(list(_SPECIES.keys()))

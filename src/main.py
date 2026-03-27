@@ -232,6 +232,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "_sprite": "player_wizard_f",
         "_no_dagger": True,
         "_start_wand": "wand_of_magic_missile",
+        "_start_extra_acc": ["dreamspun_sketchbook"],
         "_greeting": "Fianna the Wizard weaves a sigil in the air and descends.",
     },
     "fluffs": {
@@ -240,6 +241,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "_no_dagger": True,
         "_start_wand": "wand_of_magic_missile",
         "_start_book": "spellbook_magic_missile",
+        "_start_extra_acc": ["dreamspun_sketchbook"],
         "_greeting": "Fluffs the Magnificent makes an entrance. The dungeon is honoured.",
     },
     "dad": {
@@ -6130,6 +6132,14 @@ class Game:
             else:
                 item_passives.append(("Fire Breath", (245, 130, 50),
                                       "Ready (V key > Fire Breath)"))
+        if any(getattr(i, 'id', '') == 'dreamspun_sketchbook' for i in p.inventory):
+            sk_cd = p.power_cooldowns.get('sketch_manifest', 0)
+            if sk_cd > 0:
+                item_passives.append(("Manifest", DIM,
+                                      f"Cooling down: {sk_cd} turns"))
+            else:
+                item_passives.append(("Manifest", (200, 170, 240),
+                                      "Ready (V key > Manifest)"))
         if item_passives:
             lines.append(("", DIM, font_small, False))
             lines.append(("ITEM PASSIVES", GOLD, font_head, True))
@@ -10059,6 +10069,64 @@ class Game:
             self.state = STATE_PLAYER
             return
 
+        if pid == 'sketch_manifest':
+            # Store target for quiz callback, then start AI escalator chain
+            self._sketch_target_monster = target
+            self.add_message(
+                f"You begin sketching the {target.name} with furious concentration...", 'info')
+            self.quiz_title = "MANIFESTING -- AI"
+            self.state = STATE_QUIZ
+            pl = self.player
+
+            def _on_sketch_complete(result):
+                chain = result.score
+                monster = self._sketch_target_monster
+                self._sketch_target_monster = None
+                if chain == 0:
+                    self.add_message(
+                        "The sketch smudges and fades to nothing. The page goes blank.", 'warning')
+                    self.state = STATE_PLAYER
+                    self._advance_turn()
+                    return
+                duration = 5 * chain
+                # Find a walkable tile adjacent to the player for the pet
+                from pet_system import SketchedPet
+                px, py = pl.x, pl.y
+                placed = False
+                for dx, dy in [(-1,0),(1,0),(0,-1),(0,1),(-1,-1),(1,-1),(-1,1),(1,1)]:
+                    nx, ny = px + dx, py + dy
+                    if (self.dungeon.is_walkable(nx, ny)
+                            and not any(m.alive and m.x == nx and m.y == ny for m in self.monsters)
+                            and not any(p.alive and p.x == nx and p.y == ny for p in self.pets)):
+                        pet = SketchedPet(monster, nx, ny, duration)
+                        self.pets.append(pet)
+                        placed = True
+                        break
+                if not placed:
+                    # Fallback: place on player tile
+                    pet = SketchedPet(monster, px, py, duration)
+                    self.pets.append(pet)
+                self.add_message(
+                    f"The sketch shimmers and peels off the page! "
+                    f"A Sketched {monster.name} materializes! ({duration} turns)",
+                    'success')
+                pl.power_cooldowns['sketch_manifest'] = 500
+                self.state = STATE_PLAYER
+                self._advance_turn()
+
+            self.quiz_engine.start_quiz(
+                mode='escalator_chain',
+                subject='ai',
+                tier=1,
+                callback=_on_sketch_complete,
+                max_chain=5,
+                wisdom=pl.WIS,
+                timer_modifier=pl.get_quiz_timer_modifier(),
+                extra_seconds=pl.get_quiz_extra_seconds('ai'),
+                base_seconds=pl.get_quiz_timer('ai'),
+            )
+            return  # don't call _advance_turn or set STATE_PLAYER — quiz handles it
+
         if pid == 'stuffie_fire_breath':
             from dice import roll as _fb_roll
             from combat import get_cone_tiles
@@ -10729,6 +10797,13 @@ class Game:
             pet.tick_regen(bonus=_prb)
             pet.tick_cooldown()
 
+            # Sketched pet duration tick
+            if getattr(pet, 'is_sketch', False) and pet.alive:
+                if pet.tick_duration():
+                    self.add_message(
+                        f"The Sketched {pet.monster_name} shimmers, fades, and dissolves "
+                        f"back into the pages of the sketchbook.", 'info')
+
         # Monsters attack adjacent pets (each monster can swipe at one pet per turn)
         for m in self.monsters:
             if not m.alive:
@@ -10742,7 +10817,12 @@ class Game:
                     pet_dmg = max(1, _dice_roll(m.attacks[0]['damage']) // 2) if m.attacks else 1
                     pet.take_damage(pet_dmg)
                     if not pet.alive:
-                        self.add_message(f"{pet.name} has been slain by {m.name}!", 'danger')
+                        if getattr(pet, 'is_sketch', False):
+                            self.add_message(
+                                f"The Sketched {pet.monster_name} shatters into "
+                                f"fragments of ink and vanishes!", 'danger')
+                        else:
+                            self.add_message(f"{pet.name} has been slain by {m.name}!", 'danger')
                     break  # one pet swipe per monster per turn
 
     # ------------------------------------------------------------------
@@ -10815,7 +10895,13 @@ class Game:
         # Pet companions: draw with species sprite or color fallback
         for pet in self.pets:
             if pet.alive and (pet.x, pet.y) in self.visible:
-                self.renderer.draw_entity(pet.x, pet.y, pet.color, cam_x, cam_y, self.visible, mid=pet.name.lower())
+                if getattr(pet, 'is_sketch', False):
+                    # Sketched pets use the monster's sprite with a lavender tint
+                    self.renderer.draw_entity(
+                        pet.x, pet.y, pet.color, cam_x, cam_y, self.visible,
+                        mid=pet.monster_kind, tint=(160, 140, 230, 160))
+                else:
+                    self.renderer.draw_entity(pet.x, pet.y, pet.color, cam_x, cam_y, self.visible, mid=pet.name.lower())
         # Telepathy: render unseen monsters as dim dots
         if self.player.has_effect('telepathy'):
             for m in self.monsters:
@@ -12391,6 +12477,16 @@ class Game:
             }
             powers.append(('stuffie_fire_breath', _fb_def, 0, _fb_cd))
 
+        # Dreamspun Sketchbook grants "Manifest" when carried
+        if any(getattr(i, 'id', '') == 'dreamspun_sketchbook' for i in pl.inventory):
+            _sk_cd = power_cds.get('sketch_manifest', 0)
+            _sk_def = {
+                'label': 'Manifest',
+                'desc': 'Sketch a visible creature and bring it to life as a temporary ally.',
+                'cooldown': 500, 'uses': 0,
+            }
+            powers.append(('sketch_manifest', _sk_def, 0, _sk_cd))
+
         # Gleipnir grants "Bind Odinkiller" when carried
         if any(getattr(i, 'id', '') == 'gleipnir' for i in pl.inventory):
             _bind_def = {
@@ -12645,6 +12741,30 @@ class Game:
                 f"The Elder Blood SCREAMS! {len(visible)} creatures take {scaled} cold damage! ({kills} slain)",
                 'success')
             pl.power_cooldowns['elder_scream'] = 20
+
+        elif pid == 'sketch_manifest':
+            # Enter targeting mode — quiz + pet spawn on confirm
+            px, py = pl.x, pl.y
+            candidates = [
+                m for m in self.monsters
+                if m.alive and (m.x, m.y) in self.visible
+            ]
+            candidates.sort(key=lambda m: abs(m.x - px) + abs(m.y - py))
+            if not candidates:
+                self.add_message("You open the sketchbook, but there is nothing to draw.", 'warning')
+                return False
+            self._target_candidates = candidates
+            self._target_idx = 0
+            self._power_targeting = True
+            self._pending_power = 'sketch_manifest'
+            self.target_cursor_x = candidates[0].x
+            self.target_cursor_y = candidates[0].y
+            self.state = STATE_TARGET
+            self.add_message(
+                "You flip open the Dreamspun Sketchbook... select a creature to sketch! "
+                "Arrow keys to aim, TAB to cycle, ENTER to begin drawing.",
+                'info')
+            return True  # defer _advance_turn()
 
         elif pid == 'stuffie_fire_breath':
             # Enter targeting mode — damage applied on confirm

@@ -252,8 +252,10 @@ class Renderer:
                              (sx + pad, sy + pad, T - pad * 2, T - pad * 2))
 
     def draw_entity(self, x: int, y: int, color: tuple,
-                    cam_x: int = 0, cam_y: int = 0, visible=None, mid: str = ''):
-        """Draw a monster or dim dot.  Pass visible=None to always draw."""
+                    cam_x: int = 0, cam_y: int = 0, visible=None, mid: str = '',
+                    tint: tuple = None):
+        """Draw a monster or dim dot.  Pass visible=None to always draw.
+        tint: optional (R,G,B,A) overlay applied via BLEND_RGBA_MULT."""
         if visible is not None and (x, y) not in visible:
             return
         T = self.map_tile_size
@@ -261,6 +263,11 @@ class Renderer:
         if mid:
             sprite = self._get_sprite(mid)
             if sprite:
+                if tint:
+                    sprite = sprite.copy()
+                    overlay = pygame.Surface(sprite.get_size(), pygame.SRCALPHA)
+                    overlay.fill(tint)
+                    sprite.blit(overlay, (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
                 self.screen.blit(sprite, (sx, sy))
                 return
         pad  = max(1, T // 7)
