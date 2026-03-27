@@ -10,18 +10,20 @@ class Player:
     # base_seconds: fixed reading time floor for the category
     # wis_scale: seconds gained per point of WIS (e.g. 0.8 means WIS 15 adds 12s)
     SUBJECT_TIMER = {
-        'math':       ( 8, 0.8),   # flashcard arithmetic — fast reads
-        'science':    (10, 1.0),   # short concept questions
-        'grammar':    (10, 1.0),   # short sentence questions
-        'trivia':     (12, 1.0),   # general knowledge, slightly longer
-        'geography':  (12, 1.0),   # moderate reading, some long choices
-        'history':    (14, 1.2),   # paragraph-length context
-        'animal':     (14, 1.2),   # descriptive species questions
-        'ai':         (16, 1.2),   # technical concepts, longer choices
-        'philosophy': (16, 1.2),   # abstract reasoning, dense text
-        'cooking':    (18, 1.4),   # full-sentence choices, recipe context
-        'theology':   (20, 1.4),   # dense doctrinal text, long choices
-        'economics':  (20, 1.4),   # heaviest reading burden
+        # (base_seconds, wis_scale) — timer = base + WIS * scale
+        # Recalibrated after LLM review lengthened choices for balance.
+        'math':       (12, 0.8),   # flashcard arithmetic — still short
+        'science':    (16, 1.0),   # concept questions, medium choices
+        'grammar':    (16, 1.0),   # sentence-level analysis
+        'trivia':     (20, 1.0),   # general knowledge, varied lengths
+        'geography':  (20, 1.0),   # moderate reading, detailed choices
+        'history':    (22, 1.2),   # paragraph-length choices
+        'animal':     (22, 1.2),   # descriptive species questions
+        'ai':         (26, 1.2),   # technical concepts, dense choices
+        'philosophy': (26, 1.2),   # abstract reasoning, dense text
+        'cooking':    (28, 1.4),   # full-sentence choices, recipe context
+        'theology':   (32, 1.4),   # dense doctrinal text, longest choices
+        'economics':  (32, 1.4),   # detailed economic definitions
     }
 
     def __init__(self):
