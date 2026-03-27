@@ -285,7 +285,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "_no_dagger": True,
         "_start_weapon": "witcher_silver_blade",
         "_start_spells": ["sign_aard", "sign_igni", "sign_quen", "sign_yrden", "sign_axii"],
-        "_start_potions": ["potion_of_healing", "potion_of_haste", "potion_of_fire_resist"],
+        "_start_potions": ["potion_of_healing", "potion_of_haste", "potion_of_fire_resistance"],
         "_greeting": "The Witcher unsheathes his silver blade. Wind's howling.",
     },
     "ciri riannon": {
@@ -4321,6 +4321,7 @@ class Game:
         'spear':       0.9,    # javelin-like
         'mace':        0.6,    # heavy but compact
         'flail':       0.5,    # awkward spin
+        'net':         0.3,    # entangle, not damage
         'morningstar': 0.5,    # awkward but heavy impact
         'rapier':      0.4,    # fragile, not designed for it
         'scimitar':    0.5,    # curved blade, poor aerodynamics
@@ -4357,6 +4358,8 @@ class Game:
 
     def _get_weapon_break_chance(self, weapon) -> float:
         """Return probability [0-1] that this weapon breaks on throw."""
+        if weapon.weapon_class == 'net':
+            return 0.0  # nets are designed to be thrown and recovered
         material = weapon.material.lower()
         base = self._THROW_BREAK_CHANCE.get(material, self._THROW_BREAK_LEGENDARY)
         return base
@@ -11887,7 +11890,14 @@ class Game:
                 elif isinstance(item, Accessory):
                     if item.identified or item.id in self.player.known_item_ids:
                         fx = item.effects
-                        detail = f"grants {fx['status']}" if 'status' in fx else f"{fx.get('stat','?')} +{fx.get('amount',0)}"
+                        if 'status' in fx:
+                            detail = f"grants {fx['status']}"
+                        elif 'stat' in fx:
+                            detail = f"{fx['stat']} +{fx.get('amount', 0)}"
+                        elif getattr(item, 'slot', '') == 'none':
+                            detail = "passive (carry-only)"
+                        else:
+                            detail = "accessory"
                     else:
                         detail = "unidentified"
                 else:

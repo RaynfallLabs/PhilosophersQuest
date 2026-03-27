@@ -6592,7 +6592,7 @@
   },
   "gandiva": {
     "name": "Gandiva",
-    "class": "longbow",
+    "class": "ranged",
     "variant": "2h",
     "tier": 5,
     "material": "adamantine",
@@ -6622,7 +6622,7 @@
     ],
     "weight": 3,
     "twoHanded": true,
-    "reach": 2,
+    "reach": 22,
     "stunChance": 0.1,
     "bleedChance": 0.15,
     "knockback": false,
@@ -6643,7 +6643,7 @@
   },
   "fail_not": {
     "name": "Fail-not",
-    "class": "longbow",
+    "class": "ranged",
     "variant": "2h",
     "tier": 5,
     "material": "adamantine",
@@ -8545,7 +8545,7 @@
   },
   "net_of_hephaestus": {
     "name": "Net of Hephaestus",
-    "class": "ranged",
+    "class": "net",
     "variant": "1h",
     "tier": 3,
     "material": "mithril",
@@ -8575,7 +8575,6 @@
     "knockback": false,
     "ignoreShield": true,
     "critMultiplier": 1.0,
-    "requiresAmmo": null,
     "floorSpawnWeight": {
       "1-29": 0,
       "30-55": 6,
@@ -8926,7 +8925,7 @@
   },
   "bow_of_rama": {
     "name": "Bow of Rama",
-    "class": "bow",
+    "class": "ranged",
     "variant": "2h",
     "tier": 2,
     "material": "hardwood",
