@@ -423,8 +423,10 @@ class Monster:
         if dist_to_player <= detection_range or player.has_effect('aggravated'):
             self._aware = True
         if not getattr(self, '_aware', False) and not self._alerted:
-            # Beyond detection range and never spotted the player — wander randomly
-            self._wander(dungeon, all_monsters, extra_occupied, player)
+            # Beyond detection range and never spotted the player.
+            # Behavior depends on base AI: sessile/ambush wait, others wander.
+            if self.ai_pattern not in ('sessile', 'ambush', 'cowardly'):
+                self._wander(dungeon, all_monsters, extra_occupied, player)
             return False
 
         # --- Call for help: alert same-kind allies within 5 tiles ---
