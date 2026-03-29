@@ -208,7 +208,9 @@
         "effect_duration": 8
       }
     ],
-    "resistances": [],
+    "resistances": [
+      "poison"
+    ],
     "weaknesses": [],
     "harvest_tier": 2,
     "harvest_threshold": 3,
@@ -347,7 +349,8 @@
     "resistances": [
       "physical",
       "poison",
-      "cold"
+      "cold",
+      "drain"
     ],
     "weaknesses": [
       "fire",
@@ -626,7 +629,9 @@
         "effect_duration": 6
       }
     ],
-    "resistances": [],
+    "resistances": [
+      "poison"
+    ],
     "weaknesses": [],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -870,7 +875,8 @@
     ],
     "resistances": [
       "cold",
-      "poison"
+      "poison",
+      "drain"
     ],
     "weaknesses": [],
     "harvest_tier": 1,
@@ -1122,7 +1128,8 @@
     "resistances": [
       "cold",
       "poison",
-      "blunt"
+      "blunt",
+      "drain"
     ],
     "weaknesses": [
       "fire"
@@ -1290,7 +1297,8 @@
       "blunt",
       "slash",
       "pierce",
-      "cold"
+      "cold",
+      "drain"
     ],
     "weaknesses": [
       "fire"
@@ -1395,7 +1403,9 @@
         "effect_duration": 8
       }
     ],
-    "resistances": [],
+    "resistances": [
+      "poison"
+    ],
     "weaknesses": [],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -1543,7 +1553,8 @@
       "pierce",
       "blunt",
       "cold",
-      "poison"
+      "poison",
+      "drain"
     ],
     "weaknesses": [
       "fire"
@@ -1619,7 +1630,7 @@
     ],
     "hp": "6d8",
     "speed": 10,
-    "ai_pattern": "aggressive",
+    "ai_pattern": "ranged",
     "min_level": 16,
     "thac0": 12,
     "frequency": 2,
@@ -1850,7 +1861,8 @@
     "resistances": [
       "cold",
       "poison",
-      "blunt"
+      "blunt",
+      "drain"
     ],
     "weaknesses": [
       "fire"
@@ -1969,7 +1981,7 @@
     ],
     "hp": "6d8+54",
     "speed": 12,
-    "ai_pattern": "aggressive",
+    "ai_pattern": "ranged",
     "min_level": 35,
     "thac0": -5,
     "frequency": 2,
@@ -2014,7 +2026,7 @@
     ],
     "hp": "6d8+54",
     "speed": 10,
-    "ai_pattern": "aggressive",
+    "ai_pattern": "ranged",
     "min_level": 35,
     "thac0": -5,
     "frequency": 2,
@@ -2033,7 +2045,8 @@
     "resistances": [
       "cold",
       "poison",
-      "blunt"
+      "blunt",
+      "drain"
     ],
     "weaknesses": [
       "fire"
@@ -2083,7 +2096,8 @@
       }
     ],
     "resistances": [
-      "poison"
+      "poison",
+      "drain"
     ],
     "weaknesses": [],
     "harvest_tier": 1,
@@ -2136,7 +2150,8 @@
       "cold",
       "poison",
       "slash",
-      "pierce"
+      "pierce",
+      "drain"
     ],
     "weaknesses": [
       "fire"
@@ -2186,7 +2201,8 @@
     ],
     "resistances": [
       "cold",
-      "poison"
+      "poison",
+      "drain"
     ],
     "weaknesses": [
       "fire"
@@ -2307,7 +2323,7 @@
     ],
     "hp": "10d8+222",
     "speed": 12,
-    "ai_pattern": "aggressive",
+    "ai_pattern": "ranged",
     "min_level": 45,
     "thac0": -10,
     "frequency": 2,
@@ -2473,7 +2489,8 @@
       "poison",
       "slash",
       "pierce",
-      "blunt"
+      "blunt",
+      "drain"
     ],
     "weaknesses": [
       "fire"
@@ -2502,7 +2519,7 @@
     ],
     "hp": "10d8+222",
     "speed": 10,
-    "ai_pattern": "aggressive",
+    "ai_pattern": "ranged",
     "min_level": 45,
     "thac0": -10,
     "frequency": 1,
@@ -2531,7 +2548,8 @@
       "poison",
       "blunt",
       "slash",
-      "pierce"
+      "pierce",
+      "drain"
     ],
     "weaknesses": [
       "fire"
@@ -2560,7 +2578,7 @@
     ],
     "hp": "14d8+474",
     "speed": 12,
-    "ai_pattern": "aggressive",
+    "ai_pattern": "ranged",
     "min_level": 61,
     "thac0": -12,
     "frequency": 1,
@@ -2662,7 +2680,7 @@
     ],
     "hp": "12d8+403",
     "speed": 10,
-    "ai_pattern": "aggressive",
+    "ai_pattern": "ranged",
     "min_level": 61,
     "thac0": -12,
     "frequency": 1,
@@ -2687,7 +2705,8 @@
       "poison",
       "blunt",
       "slash",
-      "pierce"
+      "pierce",
+      "drain"
     ],
     "weaknesses": [
       "fire"
@@ -2766,7 +2785,7 @@
     ],
     "hp": "20d8+1015",
     "speed": 12,
-    "ai_pattern": "aggressive",
+    "ai_pattern": "ranged",
     "min_level": 81,
     "thac0": -16,
     "frequency": 1,
@@ -2838,7 +2857,7 @@
     ],
     "hp": "18d8+915",
     "speed": 10,
-    "ai_pattern": "aggressive",
+    "ai_pattern": "ranged",
     "min_level": 81,
     "thac0": -16,
     "frequency": 0,
@@ -2874,7 +2893,8 @@
       "pierce",
       "fire",
       "acid",
-      "lightning"
+      "lightning",
+      "drain"
     ],
     "weaknesses": [],
     "harvest_tier": 1,
@@ -2936,7 +2956,8 @@
       "poison",
       "blunt",
       "slash",
-      "pierce"
+      "pierce",
+      "drain"
     ],
     "weaknesses": [
       "fire"
@@ -2986,7 +3007,8 @@
     ],
     "resistances": [
       "blunt",
-      "slash"
+      "slash",
+      "drain"
     ],
     "weaknesses": [],
     "harvest_tier": 1,
@@ -3042,7 +3064,8 @@
       "slash",
       "pierce",
       "fire",
-      "lightning"
+      "lightning",
+      "drain"
     ],
     "weaknesses": [
       "acid"
@@ -3284,7 +3307,7 @@
     ],
     "hp": "3d6",
     "speed": 14,
-    "ai_pattern": "aggressive",
+    "ai_pattern": "ranged",
     "min_level": 5,
     "thac0": 17,
     "frequency": 4,
@@ -3596,7 +3619,8 @@
     ],
     "resistances": [
       "fire",
-      "shadow"
+      "shadow",
+      "drain"
     ],
     "weaknesses": [
       "holy"
@@ -3730,7 +3754,7 @@
     ],
     "hp": "3d8+3",
     "speed": 10,
-    "ai_pattern": "aggressive",
+    "ai_pattern": "ranged",
     "min_level": 6,
     "max_level": 21,
     "thac0": 16,
@@ -3926,7 +3950,7 @@
     ],
     "hp": "3d10+6",
     "speed": 14,
-    "ai_pattern": "aggressive",
+    "ai_pattern": "ranged",
     "min_level": 13,
     "max_level": 31,
     "thac0": 14,
@@ -3972,7 +3996,7 @@
     ],
     "hp": "6d12+60",
     "speed": 10,
-    "ai_pattern": "aggressive",
+    "ai_pattern": "ranged",
     "min_level": 22,
     "max_level": 40,
     "thac0": 3,
@@ -4179,7 +4203,7 @@
     ],
     "hp": "4d12+44",
     "speed": 10,
-    "ai_pattern": "aggressive",
+    "ai_pattern": "ranged",
     "min_level": 22,
     "max_level": 40,
     "thac0": 1,
@@ -4231,7 +4255,7 @@
     ],
     "hp": "4d12+12",
     "speed": 10,
-    "ai_pattern": "aggressive",
+    "ai_pattern": "ranged",
     "min_level": 15,
     "max_level": 33,
     "thac0": 14,
@@ -4354,7 +4378,8 @@
     "resistances": [
       "shadow",
       "cold",
-      "physical"
+      "physical",
+      "drain"
     ],
     "weaknesses": [
       "holy",
@@ -5205,7 +5230,8 @@
     ],
     "resistances": [
       "shadow",
-      "physical"
+      "physical",
+      "drain"
     ],
     "weaknesses": [
       "holy"
@@ -5857,7 +5883,8 @@
     "resistances": [
       "shadow",
       "physical",
-      "cold"
+      "cold",
+      "drain"
     ],
     "weaknesses": [
       "holy",
@@ -5886,7 +5913,7 @@
     ],
     "hp": "3d8+4",
     "speed": 12,
-    "ai_pattern": "aggressive",
+    "ai_pattern": "ranged",
     "min_level": 7,
     "max_level": 22,
     "thac0": 16,
@@ -5990,7 +6017,7 @@
     ],
     "hp": "4d12+10",
     "speed": 12,
-    "ai_pattern": "aggressive",
+    "ai_pattern": "ranged",
     "min_level": 14,
     "max_level": 32,
     "thac0": 14,
@@ -6227,7 +6254,8 @@
     ],
     "resistances": [
       "magic",
-      "poison"
+      "poison",
+      "drain"
     ],
     "weaknesses": [],
     "harvest_tier": 4,
@@ -6378,7 +6406,8 @@
       }
     ],
     "resistances": [
-      "magic"
+      "magic",
+      "drain"
     ],
     "weaknesses": [],
     "harvest_tier": 3,
@@ -7115,7 +7144,8 @@
     "resistances": [
       "fire",
       "poison",
-      "cold"
+      "cold",
+      "drain"
     ],
     "weaknesses": [
       "holy"
@@ -7171,7 +7201,8 @@
     "resistances": [
       "fire",
       "poison",
-      "cold"
+      "cold",
+      "drain"
     ],
     "weaknesses": [
       "holy"
@@ -7662,7 +7693,7 @@
     ],
     "hp": "8d12+756",
     "speed": 10,
-    "ai_pattern": "aggressive",
+    "ai_pattern": "ranged",
     "min_level": 55,
     "max_level": 77,
     "thac0": -10,
@@ -8008,7 +8039,7 @@
     ],
     "hp": "3d10+6",
     "speed": 12,
-    "ai_pattern": "aggressive",
+    "ai_pattern": "ranged",
     "min_level": 7,
     "max_level": 22,
     "thac0": 16,
@@ -8965,7 +8996,7 @@
     ],
     "hp": "5d10+74",
     "speed": 12,
-    "ai_pattern": "aggressive",
+    "ai_pattern": "ranged",
     "min_level": 25,
     "max_level": 43,
     "thac0": 6,
@@ -9328,7 +9359,8 @@
     ],
     "resistances": [
       "magic",
-      "physical"
+      "physical",
+      "poison"
     ],
     "weaknesses": [],
     "harvest_tier": 3,
@@ -10051,7 +10083,8 @@
     "resistances": [
       "cold",
       "poison",
-      "physical"
+      "physical",
+      "drain"
     ],
     "weaknesses": [
       "holy",
@@ -10152,7 +10185,8 @@
     "resistances": [
       "cold",
       "poison",
-      "physical"
+      "physical",
+      "drain"
     ],
     "weaknesses": [
       "holy",
@@ -10302,7 +10336,8 @@
       "cold",
       "poison",
       "shadow",
-      "physical"
+      "physical",
+      "drain"
     ],
     "weaknesses": [
       "holy",
@@ -10457,7 +10492,8 @@
     "resistances": [
       "cold",
       "poison",
-      "magic"
+      "magic",
+      "drain"
     ],
     "weaknesses": [
       "holy",
@@ -10511,7 +10547,8 @@
     ],
     "resistances": [
       "cold",
-      "poison"
+      "poison",
+      "drain"
     ],
     "weaknesses": [
       "holy",
@@ -10565,7 +10602,8 @@
     ],
     "resistances": [
       "cold",
-      "poison"
+      "poison",
+      "drain"
     ],
     "weaknesses": [
       "holy",
@@ -10620,7 +10658,8 @@
     ],
     "resistances": [
       "cold",
-      "poison"
+      "poison",
+      "drain"
     ],
     "weaknesses": [
       "holy",
@@ -10678,7 +10717,8 @@
       "magic",
       "fire",
       "lightning",
-      "physical"
+      "physical",
+      "drain"
     ],
     "weaknesses": [
       "holy"
@@ -10786,7 +10826,8 @@
     "resistances": [
       "cold",
       "poison",
-      "magic"
+      "magic",
+      "drain"
     ],
     "weaknesses": [
       "holy",
@@ -10895,7 +10936,8 @@
     "resistances": [
       "cold",
       "poison",
-      "magic"
+      "magic",
+      "drain"
     ],
     "weaknesses": [
       "holy"
@@ -10950,7 +10992,8 @@
     "resistances": [
       "cold",
       "poison",
-      "magic"
+      "magic",
+      "drain"
     ],
     "weaknesses": [
       "holy",
@@ -11004,7 +11047,8 @@
     ],
     "resistances": [
       "cold",
-      "poison"
+      "poison",
+      "drain"
     ],
     "weaknesses": [
       "holy",
@@ -11058,7 +11102,8 @@
     ],
     "resistances": [
       "cold",
-      "poison"
+      "poison",
+      "drain"
     ],
     "weaknesses": [
       "holy",
@@ -11104,7 +11149,8 @@
     ],
     "resistances": [
       "cold",
-      "poison"
+      "poison",
+      "drain"
     ],
     "weaknesses": [
       "holy",
@@ -11324,7 +11370,8 @@
       "cold",
       "poison",
       "physical",
-      "magic"
+      "magic",
+      "drain"
     ],
     "weaknesses": [
       "holy",
@@ -11482,7 +11529,8 @@
       "magic",
       "physical",
       "fire",
-      "lightning"
+      "lightning",
+      "drain"
     ],
     "weaknesses": [
       "holy"
@@ -11537,7 +11585,8 @@
       "cold",
       "poison",
       "physical",
-      "shadow"
+      "shadow",
+      "drain"
     ],
     "weaknesses": [
       "holy",
@@ -11593,7 +11642,8 @@
       "cold",
       "poison",
       "shadow",
-      "physical"
+      "physical",
+      "drain"
     ],
     "weaknesses": [
       "holy",
@@ -11949,7 +11999,7 @@
     ],
     "hp": "6d12+78",
     "speed": 12,
-    "ai_pattern": "aggressive",
+    "ai_pattern": "ranged",
     "min_level": 35,
     "max_level": 53,
     "thac0": 0,
@@ -12015,7 +12065,7 @@
     ],
     "hp": "8d12+257",
     "speed": 12,
-    "ai_pattern": "aggressive",
+    "ai_pattern": "ranged",
     "min_level": 45,
     "max_level": 65,
     "thac0": -5,
@@ -12054,7 +12104,8 @@
       "fire",
       "lightning",
       "shadow",
-      "physical"
+      "physical",
+      "drain"
     ],
     "weaknesses": [
       "holy"
@@ -12212,7 +12263,8 @@
       "cold",
       "poison",
       "physical",
-      "magic"
+      "magic",
+      "drain"
     ],
     "weaknesses": [
       "holy",
@@ -12268,7 +12320,8 @@
       "cold",
       "poison",
       "physical",
-      "shadow"
+      "shadow",
+      "drain"
     ],
     "weaknesses": [
       "holy",
@@ -12661,7 +12714,9 @@
         "effect_duration": 5
       }
     ],
-    "resistances": [],
+    "resistances": [
+      "poison"
+    ],
     "weaknesses": [],
     "harvest_tier": 2,
     "harvest_threshold": 3,
@@ -12701,7 +12756,9 @@
         "effect_duration": 6
       }
     ],
-    "resistances": [],
+    "resistances": [
+      "poison"
+    ],
     "weaknesses": [],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -12929,7 +12986,9 @@
         "effect_duration": 3
       }
     ],
-    "resistances": [],
+    "resistances": [
+      "poison"
+    ],
     "weaknesses": [
       "fire"
     ],
@@ -13165,7 +13224,9 @@
         "effect_duration": 8
       }
     ],
-    "resistances": [],
+    "resistances": [
+      "poison"
+    ],
     "weaknesses": [
       "cold"
     ],
@@ -13766,7 +13827,7 @@
     ],
     "hp": "3d8+3",
     "speed": 14,
-    "ai_pattern": "aggressive",
+    "ai_pattern": "ranged",
     "min_level": 6,
     "max_level": 21,
     "thac0": 16,
@@ -14068,7 +14129,9 @@
         "effect_duration": 3
       }
     ],
-    "resistances": [],
+    "resistances": [
+      "drain"
+    ],
     "weaknesses": [
       "fire",
       "cold"
@@ -14940,7 +15003,7 @@
     ],
     "hp": "5d10+5",
     "speed": 6,
-    "ai_pattern": "aggressive",
+    "ai_pattern": "ranged",
     "min_level": 13,
     "max_level": 31,
     "thac0": 14,
@@ -14970,7 +15033,7 @@
     ],
     "weaknesses": [
       "cold",
-      "water"
+      "cold"
     ],
     "harvest_tier": 4,
     "harvest_threshold": 5,
@@ -16198,7 +16261,7 @@
     ],
     "hp": "2d6",
     "speed": 10,
-    "ai_pattern": "aggressive",
+    "ai_pattern": "ranged",
     "min_level": 3,
     "max_level": 15,
     "thac0": 17,
@@ -16860,7 +16923,7 @@
     ],
     "hp": "8d10",
     "speed": 12,
-    "ai_pattern": "aggressive",
+    "ai_pattern": "ranged",
     "min_level": 10,
     "max_level": 25,
     "thac0": 14,
@@ -16921,7 +16984,7 @@
     ],
     "hp": "8d10+8",
     "speed": 12,
-    "ai_pattern": "aggressive",
+    "ai_pattern": "ranged",
     "min_level": 15,
     "max_level": 33,
     "thac0": 14,
@@ -16984,7 +17047,7 @@
     ],
     "hp": "12d12+158",
     "speed": 12,
-    "ai_pattern": "aggressive",
+    "ai_pattern": "ranged",
     "min_level": 35,
     "max_level": 53,
     "thac0": 0,
@@ -17053,7 +17116,7 @@
     ],
     "hp": "14d12+381",
     "speed": 12,
-    "ai_pattern": "aggressive",
+    "ai_pattern": "ranged",
     "min_level": 40,
     "max_level": 60,
     "thac0": -3,
@@ -17124,7 +17187,7 @@
     ],
     "hp": "4d10",
     "speed": 12,
-    "ai_pattern": "aggressive",
+    "ai_pattern": "ranged",
     "min_level": 7,
     "max_level": 22,
     "thac0": 16,
@@ -17173,7 +17236,7 @@
     ],
     "hp": "4d10",
     "speed": 12,
-    "ai_pattern": "aggressive",
+    "ai_pattern": "ranged",
     "min_level": 7,
     "max_level": 22,
     "thac0": 16,
@@ -17377,7 +17440,7 @@
     ],
     "hp": "7d8+64",
     "speed": 12,
-    "ai_pattern": "aggressive",
+    "ai_pattern": "ranged",
     "min_level": 35,
     "thac0": -7,
     "frequency": 2,
@@ -17399,7 +17462,8 @@
     "resistances": [
       "cold",
       "slash",
-      "pierce"
+      "pierce",
+      "drain"
     ],
     "weaknesses": [
       "fire"
@@ -17449,7 +17513,8 @@
     ],
     "resistances": [
       "poison",
-      "cold"
+      "cold",
+      "drain"
     ],
     "weaknesses": [
       "fire"
@@ -17478,7 +17543,7 @@
     ],
     "hp": "8d8+72",
     "speed": 12,
-    "ai_pattern": "aggressive",
+    "ai_pattern": "ranged",
     "min_level": 35,
     "thac0": -8,
     "frequency": 1,
@@ -17552,7 +17617,8 @@
     "resistances": [
       "cold",
       "poison",
-      "blunt"
+      "blunt",
+      "drain"
     ],
     "weaknesses": [
       "fire",
@@ -17753,7 +17819,8 @@
       "cold",
       "poison",
       "slash",
-      "pierce"
+      "pierce",
+      "drain"
     ],
     "weaknesses": [
       "fire"
@@ -17826,7 +17893,7 @@
     ],
     "hp": "11d8+234",
     "speed": 12,
-    "ai_pattern": "aggressive",
+    "ai_pattern": "ranged",
     "min_level": 44,
     "thac0": -10,
     "frequency": 1,
@@ -17905,7 +17972,8 @@
       }
     ],
     "resistances": [
-      "poison"
+      "poison",
+      "drain"
     ],
     "weaknesses": [],
     "harvest_tier": 1,
@@ -17953,7 +18021,8 @@
     ],
     "resistances": [
       "poison",
-      "cold"
+      "cold",
+      "drain"
     ],
     "weaknesses": [
       "fire"
@@ -18063,7 +18132,7 @@
     ],
     "hp": "13d8+389",
     "speed": 12,
-    "ai_pattern": "aggressive",
+    "ai_pattern": "ranged",
     "min_level": 56,
     "thac0": -10,
     "frequency": 1,
@@ -18122,7 +18191,7 @@
     ],
     "hp": "12d8+385",
     "speed": 12,
-    "ai_pattern": "aggressive",
+    "ai_pattern": "ranged",
     "min_level": 59,
     "thac0": -10,
     "frequency": 1,
@@ -18152,7 +18221,8 @@
     "resistances": [
       "fire",
       "poison",
-      "cold"
+      "cold",
+      "drain"
     ],
     "weaknesses": [],
     "harvest_tier": 1,
@@ -18179,7 +18249,7 @@
     ],
     "hp": "14d8+495",
     "speed": 12,
-    "ai_pattern": "aggressive",
+    "ai_pattern": "ranged",
     "min_level": 63,
     "thac0": -13,
     "frequency": 1,
@@ -18283,7 +18353,8 @@
       "poison",
       "blunt",
       "slash",
-      "pierce"
+      "pierce",
+      "drain"
     ],
     "weaknesses": [
       "fire"
@@ -18340,7 +18411,8 @@
     "resistances": [
       "fire",
       "poison",
-      "cold"
+      "cold",
+      "drain"
     ],
     "weaknesses": [],
     "harvest_tier": 1,
@@ -18455,7 +18527,8 @@
       "cold",
       "poison",
       "slash",
-      "pierce"
+      "pierce",
+      "drain"
     ],
     "weaknesses": [
       "fire"
@@ -18608,7 +18681,7 @@
         "name": "venomous_bite"
       }
     ],
-    "ai_pattern": "aggressive",
+    "ai_pattern": "ranged",
     "dragon_scales": 0.8,
     "resistances": [
       "fire",
@@ -19008,7 +19081,8 @@
     "ai_pattern": "aggressive",
     "resistances": [
       "cold",
-      "darkness"
+      "shadow",
+      "drain"
     ],
     "weaknesses": [
       "holy",
@@ -19058,14 +19132,14 @@
         "type": "blunt"
       }
     ],
-    "ai_pattern": "aggressive",
+    "ai_pattern": "ranged",
     "resistances": [
       "fire",
       "blunt"
     ],
     "weaknesses": [
       "cold",
-      "water"
+      "cold"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
@@ -19167,7 +19241,8 @@
     "ai_pattern": "aggressive",
     "resistances": [
       "magic",
-      "cold"
+      "cold",
+      "drain"
     ],
     "weaknesses": [
       "holy",
@@ -19397,7 +19472,7 @@
     "ai_pattern": "aggressive",
     "resistances": [
       "drain",
-      "darkness"
+      "shadow"
     ],
     "weaknesses": [
       "holy",
@@ -19504,7 +19579,7 @@
     ],
     "ai_pattern": "aggressive",
     "resistances": [
-      "water",
+      "cold",
       "cold",
       "blunt"
     ],
@@ -19631,7 +19706,8 @@
     "ai_pattern": "aggressive",
     "resistances": [
       "cold",
-      "physical"
+      "physical",
+      "drain"
     ],
     "weaknesses": [
       "fire",
@@ -19687,7 +19763,7 @@
         "piercing": true
       }
     ],
-    "ai_pattern": "aggressive",
+    "ai_pattern": "ranged",
     "resistances": [
       "cold",
       "physical",
@@ -19818,7 +19894,7 @@
         "type": "slash"
       }
     ],
-    "ai_pattern": "aggressive",
+    "ai_pattern": "ranged",
     "resistances": [
       "poison",
       "acid",
@@ -19931,7 +20007,7 @@
         "piercing": true
       }
     ],
-    "ai_pattern": "aggressive",
+    "ai_pattern": "ranged",
     "resistances": [
       "poison"
     ],
@@ -20309,8 +20385,14 @@
     "attacks": [],
     "ai_pattern": "seek_locust",
     "is_allied": true,
-    "resistances": [],
-    "weaknesses": [],
+    "resistances": [
+      "holy",
+      "fire"
+    ],
+    "weaknesses": [
+      "shadow",
+      "necrotic"
+    ],
     "harvest_tier": 0,
     "harvest_threshold": 99,
     "ingredient_id": null,

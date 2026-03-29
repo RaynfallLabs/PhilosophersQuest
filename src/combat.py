@@ -76,7 +76,13 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
         if weapon and getattr(weapon, 'ignore_resistances', False):
             dtype_mult = 1.0  # bypass all resistance/weakness checks
         elif weapon:
-            dtype_mult = _damage_multiplier(weapon.damage_types, monster)
+            # Include weapon material as a damage type so iron weapons
+            # trigger "iron" weakness on fey creatures, etc.
+            dtypes = list(weapon.damage_types)
+            mat = getattr(weapon, 'material', '').lower()
+            if mat and mat not in dtypes:
+                dtypes.append(mat)
+            dtype_mult = _damage_multiplier(dtypes, monster)
 
         # Shield bypass: ignore_shield weapons deal full damage through monster's shielded effect
         if not (weapon and weapon.ignore_shield):
