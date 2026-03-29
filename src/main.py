@@ -8193,13 +8193,33 @@ class Game:
 
     def _get_filtered_inventory(self, filter_type: str) -> list:
         """Return inventory items matching the cost filter type."""
-        from items import Food, Ingredient, Potion, Scroll, Weapon
+        from items import Food, Ingredient, Potion, Scroll, Weapon, Wand
         inv = self.player.inventory
         if filter_type == 'food':
             return [i for i in inv if isinstance(i, (Food, Ingredient))]
         if filter_type == 'healing_potion':
-            return [i for i in inv if isinstance(i, Potion)
-                    and getattr(i, 'effect', '') in ('heal', 'extra_heal', 'full_heal')]
+            items = []
+            # Healing potions
+            items.extend(i for i in inv if isinstance(i, Potion)
+                         and getattr(i, 'effect', '') in ('heal', 'extra_heal', 'full_heal'))
+            # Healing scrolls
+            items.extend(i for i in inv if isinstance(i, Scroll)
+                         and 'heal' in getattr(i, 'effect', '').lower())
+            # Healing wands with charges
+            items.extend(i for i in inv if isinstance(i, Wand)
+                         and 'heal' in getattr(i, 'effect', '').lower()
+                         and getattr(i, 'charges', 0) > 0)
+            # Heal spell (virtual entry — show as a selectable option)
+            if 'heal_spell' in getattr(self.player, 'known_spells', {}):
+                mp_cost = self.player.known_spells.get('heal_spell', 99)
+                if self.player.mp >= mp_cost:
+                    # Create a placeholder for the spell choice
+                    class _SpellChoice:
+                        name = f'Cast Heal ({mp_cost} MP)'
+                        id = '_heal_spell_choice'
+                        item_class = 'spell'
+                    items.append(_SpellChoice())
+            return items
         if filter_type == 'potion':
             return [i for i in inv if isinstance(i, Potion)]
         if filter_type == 'scroll':
@@ -8219,7 +8239,24 @@ class Game:
             ctype = cost['type']
             if ctype in ('food', 'healing_potion', 'potion', 'scroll', 'weapon'):
                 if selected_item:
-                    self.player.remove_from_inventory(selected_item)
+                    if getattr(selected_item, 'id', '') == '_heal_spell_choice':
+                        # Spell: spend MP instead of removing an item
+                        mp_cost = self.player.known_spells.get('heal_spell', 8)
+                        self.player.mp -= mp_cost
+                        self.add_message(f"You cast Heal. (-{mp_cost} MP)", 'info')
+                    elif hasattr(selected_item, 'charges'):
+                        # Wand: spend a charge
+                        from items import Wand
+                        if isinstance(selected_item, Wand):
+                            selected_item.charges -= 1
+                            self.add_message(
+                                f"You use the {selected_item.name}. ({selected_item.charges} charges left)", 'info')
+                            if selected_item.charges <= 0:
+                                self.player.remove_from_inventory(selected_item)
+                        else:
+                            self.player.remove_from_inventory(selected_item)
+                    else:
+                        self.player.remove_from_inventory(selected_item)
             elif ctype == 'gold':
                 self.player_gold -= cost['amount']
             elif ctype == 'hp_percent':

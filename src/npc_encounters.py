@@ -1887,10 +1887,18 @@ def can_pay_cost(player, cost: dict | None, player_gold: int) -> tuple[bool, str
         return (True, '') if has else (False, "You have no food to give.")
 
     if ctype == 'healing_potion':
-        from items import Potion
-        has = any(isinstance(i, Potion) and getattr(i, 'effect', '') in ('heal', 'extra_heal', 'full_heal')
-                  for i in player.inventory)
-        return (True, '') if has else (False, "You have no healing potions.")
+        from items import Potion, Scroll, Wand
+        # Accept: healing potions, heal spell (costs MP), healing scrolls, healing wands
+        has_potion = any(isinstance(i, Potion) and getattr(i, 'effect', '') in ('heal', 'extra_heal', 'full_heal')
+                         for i in player.inventory)
+        has_spell = 'heal_spell' in getattr(player, 'known_spells', {}) and player.mp >= player.known_spells.get('heal_spell', 99)
+        has_scroll = any(isinstance(i, Scroll) and 'heal' in getattr(i, 'effect', '').lower()
+                         for i in player.inventory)
+        has_wand = any(isinstance(i, Wand) and 'heal' in getattr(i, 'effect', '').lower()
+                       and getattr(i, 'charges', 0) > 0
+                       for i in player.inventory)
+        has = has_potion or has_spell or has_scroll or has_wand
+        return (True, '') if has else (False, "You have no way to heal them.")
 
     if ctype == 'potion':
         from items import Potion
