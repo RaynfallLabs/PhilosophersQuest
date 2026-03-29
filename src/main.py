@@ -4981,16 +4981,16 @@ class Game:
                 self.add_message("The water tastes stale. Nothing happens.", 'info')
         elif chain == 1:
             self.add_message("The cool water refreshes you slightly.", 'info')
-            self.player.heal(max(5, self.player.max_hp // 20))
+            self.player.restore_hp(max(5, self.player.max_hp // 20))
         elif chain == 2:
             self.add_message("The blessed water restores your health!", 'success')
-            self.player.heal(max(15, self.player.max_hp // 8))
+            self.player.restore_hp(max(15, self.player.max_hp // 8))
         elif chain == 3:
             self.add_message("The magical water restores you fully!", 'success')
-            self.player.heal(self.player.max_hp)
+            self.player.restore_hp(self.player.max_hp)
             self.player.restore_sp(50)
         elif chain == 4:
-            self.player.heal(self.player.max_hp)
+            self.player.restore_hp(self.player.max_hp)
             self.player.restore_sp(self.player.max_sp)
             for eff in list(self.player.status_effects.keys()):
                 if eff in ('poisoned', 'diseased', 'bleeding', 'burning', 'confused', 'blinded', 'corroding'):
@@ -4999,7 +4999,7 @@ class Game:
         elif chain >= 5:
             stat = _rng.choice(['STR', 'CON', 'DEX', 'INT', 'WIS', 'PER'])
             self.player.apply_stat_bonus(stat, 1)
-            self.player.heal(self.player.max_hp)
+            self.player.restore_hp(self.player.max_hp)
             self.add_message(f"The fountain glows with divine light! +1 {stat}!", 'success')
 
         # 33% chance fountain dries up after use
@@ -5273,7 +5273,7 @@ class Game:
             self.player_gold += gold
             self.add_message(f"You find {gold} gold wedged in the cushions.", 'success')
         elif chain == 2:
-            self.player.heal(max(20, self.player.max_hp // 5))
+            self.player.restore_hp(max(20, self.player.max_hp // 5))
             self.add_message("The throne's enchantment heals your wounds!", 'success')
         elif chain == 3:
             count = 0
