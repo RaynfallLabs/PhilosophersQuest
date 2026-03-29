@@ -93,7 +93,7 @@
       {
         "name": "zap",
         "damage": "1d2",
-        "type": "physical"
+        "type": "lightning"
       }
     ],
     "resistances": [],
@@ -344,8 +344,15 @@
         "effect_duration": 5
       }
     ],
-    "resistances": [],
-    "weaknesses": [],
+    "resistances": [
+      "physical",
+      "poison",
+      "cold"
+    ],
+    "weaknesses": [
+      "fire",
+      "holy"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
     "ingredient_id": "spectral_essence",
@@ -2063,7 +2070,7 @@
       {
         "name": "mind_blast",
         "damage": "2d8+3",
-        "type": "physical",
+        "type": "magic",
         "effect": "confused",
         "effect_chance": 0.6,
         "effect_duration": 10,
@@ -2371,7 +2378,7 @@
       {
         "name": "paralyzing_ray",
         "damage": "3d8+3",
-        "type": "physical",
+        "type": "magic",
         "effect": "paralyzed",
         "effect_chance": 0.4,
         "effect_duration": 5
@@ -2379,7 +2386,7 @@
       {
         "name": "confusion_ray",
         "damage": "2d8+2",
-        "type": "physical",
+        "type": "magic",
         "effect": "confused",
         "effect_chance": 0.5,
         "effect_duration": 8
@@ -2387,7 +2394,7 @@
       {
         "name": "blinding_ray",
         "damage": "2d6+2",
-        "type": "physical",
+        "type": "magic",
         "effect": "blinded",
         "effect_chance": 0.4,
         "effect_duration": 6
@@ -2411,8 +2418,13 @@
         "type": "physical"
       }
     ],
-    "resistances": [],
-    "weaknesses": [],
+    "resistances": [
+      "magic",
+      "poison"
+    ],
+    "weaknesses": [
+      "physical"
+    ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
     "ingredient_id": "eyestalk",
@@ -9572,7 +9584,6 @@
       }
     ],
     "resistances": [
-      "cold",
       "poison",
       "fire"
     ],
@@ -17873,7 +17884,7 @@
       {
         "name": "psionic_blast",
         "damage": "4d8+4",
-        "type": "physical",
+        "type": "magic",
         "effect": "confused",
         "effect_chance": 0.7,
         "effect_duration": 12,
@@ -17979,7 +17990,7 @@
       {
         "name": "death_ray",
         "damage": "6d6+4",
-        "type": "physical",
+        "type": "magic",
         "effect": "paralyzed",
         "effect_chance": 0.6,
         "effect_duration": 8
@@ -17992,7 +18003,7 @@
       {
         "name": "fear_ray",
         "damage": "2d8+2",
-        "type": "physical",
+        "type": "magic",
         "effect": "feared",
         "effect_chance": 0.5,
         "effect_duration": 10
@@ -18019,8 +18030,15 @@
         "type": "physical"
       }
     ],
-    "resistances": [],
-    "weaknesses": [],
+    "resistances": [
+      "magic",
+      "poison",
+      "fire",
+      "cold"
+    ],
+    "weaknesses": [
+      "physical"
+    ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
     "ingredient_id": "eyestalk",
@@ -19881,7 +19899,8 @@
       "item_tier": 4,
       "unique_drop_id": "seal_of_wrath",
       "boss_scroll_id": null
-    }
+    },
+    "is_boss": true
   },
   "seal_demon_pestilence": {
     "name": "Buer, Demon of Pestilence",
@@ -19912,7 +19931,7 @@
         "piercing": true
       }
     ],
-    "ai_pattern": "hit_and_run",
+    "ai_pattern": "aggressive",
     "resistances": [
       "poison"
     ],
@@ -19937,7 +19956,8 @@
       "item_tier": 4,
       "unique_drop_id": "seal_of_pestilence",
       "boss_scroll_id": null
-    }
+    },
+    "is_boss": true
   },
   "seal_demon_famine": {
     "name": "Mammon, Demon of Famine",
@@ -19993,7 +20013,8 @@
       "item_tier": 4,
       "unique_drop_id": "seal_of_famine",
       "boss_scroll_id": null
-    }
+    },
+    "is_boss": true
   },
   "seal_demon_war": {
     "name": "Bael, Demon of War",
@@ -20054,7 +20075,8 @@
       "item_tier": 4,
       "unique_drop_id": "seal_of_war",
       "boss_scroll_id": null
-    }
+    },
+    "is_boss": true
   },
   "seal_demon_death": {
     "name": "Samael, Demon of Death",
@@ -20110,7 +20132,8 @@
       "item_tier": 4,
       "unique_drop_id": "seal_of_death",
       "boss_scroll_id": null
-    }
+    },
+    "is_boss": true
   },
   "seal_demon_earthquake": {
     "name": "Beleth, Demon of the Earthquake",
@@ -20166,7 +20189,8 @@
       "item_tier": 4,
       "unique_drop_id": "seal_of_earthquake",
       "boss_scroll_id": null
-    }
+    },
+    "is_boss": true
   },
   "seal_demon_silence": {
     "name": "Abyzou, Demon of Silence",
@@ -20225,7 +20249,8 @@
       "item_tier": 4,
       "unique_drop_id": "seal_of_silence",
       "boss_scroll_id": null
-    }
+    },
+    "is_boss": true
   },
   "abyssal_locust": {
     "name": "abyssal locust",

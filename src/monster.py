@@ -399,6 +399,12 @@ class Monster:
 
         # --- Ranged AI: shoot from distance, maintain range ---
         if self.ai_pattern == 'ranged':
+            dist_r = abs(self.x - player.x) + abs(self.y - player.y)
+            if dist_r <= 8:
+                self._aware = True
+            if not getattr(self, '_aware', False) and not self._alerted:
+                self._wander(dungeon, all_monsters, extra_occupied, player)
+                return False
             return self._ranged_turn(player, dungeon, all_monsters, extra_occupied)
 
         # --- Ambush AI: stay still until player is within 5 tiles ---
@@ -1010,12 +1016,12 @@ class DeathMonster(Monster):
     def add_effect(self, name: str, duration: int):
         pass
 
-    def take_turn(self, player, dungeon, all_monsters) -> bool:
+    def take_turn(self, player, dungeon, all_monsters, extra_occupied=None) -> bool:
         """Half-speed: acts on alternating turns only."""
         self._half_speed_skip = not self._half_speed_skip
         if self._half_speed_skip:
             return False
-        return super().take_turn(player, dungeon, all_monsters)
+        return super().take_turn(player, dungeon, all_monsters, extra_occupied)
 
     def attack(self, player) -> tuple[int, str]:
         """Death always hits -- no THAC0 roll needed."""
