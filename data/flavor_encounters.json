@@ -1,0 +1,3989 @@
+[
+  {
+    "tag": "flv_lost_merchant",
+    "name": "Lost Merchant",
+    "symbol": "@",
+    "color": [
+      200,
+      170,
+      100
+    ],
+    "min_level": 1,
+    "max_level": 12,
+    "text": "A portly man with a tipped-over handcart blocks the corridor, muttering furiously as he tries to restack a pile of rolled-up maps. \"Thirty years in the trade and I still can't read these wretched things! You there — maybe we can help each other out?\"",
+    "options": [
+      {
+        "label": "Buy a potion from him (30g)",
+        "cost": {
+          "type": "gold",
+          "amount": 30
+        },
+        "reward": {
+          "type": "random_item",
+          "category": "potion"
+        },
+        "outcome": "He rummages through the cart with suspicious enthusiasm and produces a bottle from somewhere near the bottom. \"Best stock in the dungeon! Probably. Good luck, friend.\""
+      },
+      {
+        "label": "Buy a scroll from him (25g)",
+        "cost": {
+          "type": "gold",
+          "amount": 25
+        },
+        "reward": {
+          "type": "random_item",
+          "category": "scroll"
+        },
+        "outcome": "He slaps a rolled scroll into your hand with the confidence of a man who has no idea what it does. \"Guaranteed authentic. Mostly. Probably.\""
+      },
+      {
+        "label": "Leave him to his maps",
+        "cost": null,
+        "reward": null,
+        "outcome": "He waves you off without looking up, already arguing with the map under his breath. You walk on, accompanied by the fading sound of someone losing a debate with parchment."
+      }
+    ]
+  },
+  {
+    "tag": "flv_frightened_pilgrim",
+    "name": "Frightened Pilgrim",
+    "symbol": "@",
+    "color": [
+      180,
+      160,
+      220
+    ],
+    "min_level": 2,
+    "max_level": 14,
+    "text": "A young woman in travelling robes huddles against the wall, clutching a small stone idol to her chest. Her torch sputters. \"I came to leave an offering at the Shrine of the Deep,\" she whispers, \"but I twisted my ankle and I can't go further. Could you... escort me a little way?\"",
+    "options": [
+      {
+        "label": "Give her some food for the walk",
+        "cost": {
+          "type": "food"
+        },
+        "reward": {
+          "type": "effect",
+          "effect": "blessed",
+          "duration": 30
+        },
+        "outcome": "She accepts gratefully and limps onward with renewed resolve. Before she rounds the corner, she presses the idol briefly to your forehead. A soft warmth lingers. You feel as though something is watching over you."
+      },
+      {
+        "label": "Wish her well and move on",
+        "cost": null,
+        "reward": null,
+        "outcome": "She nods bravely, gripping her idol tighter. \"The gods will provide, I suppose.\" You leave her to her quiet courage and continue deeper into the dark."
+      }
+    ]
+  },
+  {
+    "tag": "flv_goblin_salesman",
+    "name": "Suspiciously Cheerful Goblin",
+    "symbol": "g",
+    "color": [
+      100,
+      180,
+      80
+    ],
+    "min_level": 1,
+    "max_level": 18,
+    "text": "A goblin wearing a vest with far too many pockets materializes from behind a stalagmite, arms spread wide. \"HELLO CUSTOMER! Brix has very good items! Definitely not cursed! Most of them! Best prices in dungeon, guaranteed by Brix personally!\"",
+    "options": [
+      {
+        "label": "Buy his \"special item\" (20g)",
+        "cost": {
+          "type": "gold",
+          "amount": 20
+        },
+        "reward": {
+          "type": "random_item",
+          "category": "accessory"
+        },
+        "outcome": "Brix produces a small object from a pocket that shouldn't physically contain it, wrapped in what appears to be an old sock. \"Is good! Brix promises! Mostly!\" He vanishes before you can ask any follow-up questions."
+      },
+      {
+        "label": "Buy a wand from him (40g)",
+        "cost": {
+          "type": "gold",
+          "amount": 40
+        },
+        "reward": {
+          "type": "random_item",
+          "category": "wand"
+        },
+        "outcome": "\"Ooh, fancy customer wants fancy item!\" Brix digs through several pockets before retrieving a wand with a slight scorch mark on one end. \"Barely used! Only misfired twice!\""
+      },
+      {
+        "label": "\"No thank you, Brix.\"",
+        "cost": null,
+        "reward": null,
+        "outcome": "Brix looks genuinely wounded. \"No customer? But Brix had such good deals today...\" He retreats behind the stalagmite with a tragic little sigh. You feel slightly guilty."
+      }
+    ]
+  },
+  {
+    "tag": "flv_weeping_ghost",
+    "name": "Weeping Figure",
+    "symbol": "@",
+    "color": [
+      160,
+      200,
+      220
+    ],
+    "min_level": 5,
+    "max_level": 20,
+    "text": "A translucent figure sits cross-legged on the dungeon floor, head in her hands, softly crying. She looks up at your approach — her eyes are empty of color, her clothes decades out of fashion. \"Oh. Another adventurer. Have you... have you seen my cat? His name is Cobbler. He was orange.\"",
+    "options": [
+      {
+        "label": "Sit with her for a while",
+        "cost": {
+          "type": "sp",
+          "amount": 15
+        },
+        "reward": {
+          "type": "mp_restore",
+          "amount": 30
+        },
+        "outcome": "You sit in companionable silence for a time. She doesn't speak again, but gradually her crying stills. When you rise to leave, she offers you a small, sad smile. Something about her quiet grief has steadied your own mind."
+      },
+      {
+        "label": "Tell her you haven't seen a cat",
+        "cost": null,
+        "reward": {
+          "type": "message"
+        },
+        "outcome": "\"He was very good at catching rats,\" she says softly. \"He kept me company when the dungeon was quiet.\" She fades a little, looking past you. \"It's very quiet now.\""
+      },
+      {
+        "label": "Walk away quietly",
+        "cost": null,
+        "reward": null,
+        "outcome": "You slip past without a word. Behind you, the soft weeping resumes and then is swallowed by the dark. You don't look back."
+      }
+    ]
+  },
+  {
+    "tag": "flv_apprentice_alchemist",
+    "name": "Apprentice Alchemist",
+    "symbol": "@",
+    "color": [
+      120,
+      200,
+      160
+    ],
+    "min_level": 3,
+    "max_level": 17,
+    "text": "A teenager with singed eyebrows and ink-stained fingers sits beside a portable burner, three potions bubbling at once. \"Oh thank goodness, a real person! I need a field tester. These should be fine. Probably. My master always said the second batch is the dangerous one, and this is the third, so statistically...\"",
+    "options": [
+      {
+        "label": "Volunteer as test subject",
+        "cost": {
+          "type": "hp",
+          "amount": 10
+        },
+        "reward": {
+          "type": "random_item",
+          "category": "potion"
+        },
+        "outcome": "The potion tastes like burnt copper and optimism. You experience a brief, intense sensation of being a slightly different shape, and then it passes. The apprentice scribbles in his notebook furiously. \"Fascinating! Here, take the good one as payment.\""
+      },
+      {
+        "label": "Buy a tested potion (35g)",
+        "cost": {
+          "type": "gold",
+          "amount": 35
+        },
+        "reward": {
+          "type": "random_item",
+          "category": "potion"
+        },
+        "outcome": "\"This one I'm fairly confident about,\" he says, handing you a blue vial. \"Only about a fifteen percent chance of anything unusual. Which is actually very good for my batch size!\""
+      },
+      {
+        "label": "\"Best of luck with your research.\"",
+        "cost": null,
+        "reward": null,
+        "outcome": "He looks disappointed but philosophical. \"Fair enough. Not everyone has the spirit of scientific inquiry.\" One of his potions chooses this moment to turn bright purple. He stares at it. \"That's... new.\""
+      }
+    ]
+  },
+  {
+    "tag": "flv_singing_bones",
+    "name": "Pile of Bones",
+    "symbol": "b",
+    "color": [
+      220,
+      210,
+      180
+    ],
+    "min_level": 4,
+    "max_level": 20,
+    "text": "A neat pile of bones in the corner of a chamber is, unmistakably, humming. As you draw closer, a dry voice rises from the heap: \"I know that tread. Another seeker. I've been here a hundred years and I've seen your type come and go. Ask your question. I'm not going anywhere.\"",
+    "options": [
+      {
+        "label": "Ask about dangers ahead",
+        "cost": {
+          "type": "gold",
+          "amount": 30
+        },
+        "reward": {
+          "type": "effect",
+          "effect": "clairvoyant",
+          "duration": 40
+        },
+        "outcome": "The bones clatter softly as they consider their price. You leave the gold on the floor. \"Mm. Fair.\" A dry whisper fills your mind with echoes of corridors and shadows — you feel briefly aware of things just beyond your sight."
+      },
+      {
+        "label": "Ask how they died",
+        "cost": null,
+        "reward": {
+          "type": "message"
+        },
+        "outcome": "\"Overconfidence,\" the bones say without hesitation. \"Same as most of you. I had a enchanted sword and a plan and absolutely no idea what was waiting on level twelve.\" A pause. \"Don't make my mistake.\""
+      },
+      {
+        "label": "Walk away from the talking bones",
+        "cost": null,
+        "reward": null,
+        "outcome": "\"Rude,\" the bones observe, as you leave. The humming resumes behind you, a slow and sourceless melody that follows you down the corridor for longer than it should."
+      }
+    ]
+  },
+  {
+    "tag": "flv_wandering_herbalist",
+    "name": "Wandering Herbalist",
+    "symbol": "@",
+    "color": [
+      100,
+      160,
+      100
+    ],
+    "min_level": 1,
+    "max_level": 16,
+    "text": "A small, wiry woman moves along the wall with a lantern, peering at patches of fungus with a jeweler's loupe. She barely glances at you. \"I'm cataloguing. Don't touch the blue ones, they'll numb your tongue for a week. Are you interested in supplies, or are you just going to hover?\"",
+    "options": [
+      {
+        "label": "Trade food for her medicines",
+        "cost": {
+          "type": "food"
+        },
+        "reward": {
+          "type": "random_item",
+          "category": "food"
+        },
+        "outcome": "She accepts your ration with a professional nod and replaces it with something wrapped in dark leaves. \"Better than trail bread. I foraged it this morning — grows near the thermal vents, restorative properties, mostly reliable.\""
+      },
+      {
+        "label": "Buy a restorative potion (45g)",
+        "cost": {
+          "type": "gold",
+          "amount": 45
+        },
+        "reward": {
+          "type": "hp_restore",
+          "amount": 25
+        },
+        "outcome": "She produces a small clay bottle and watches you drink it with clinical interest. The warmth is immediate and genuine. \"Bloodmoss and deep-cave ginger. Works on most species. You're welcome.\""
+      },
+      {
+        "label": "Leave her to her research",
+        "cost": null,
+        "reward": null,
+        "outcome": "She has already forgotten you exist, loupe back against her eye, muttering notes to herself. The lantern light shrinks behind you as you walk on."
+      }
+    ]
+  },
+  {
+    "tag": "flv_cursed_mirror",
+    "name": "Ornate Mirror",
+    "symbol": "M",
+    "color": [
+      180,
+      160,
+      200
+    ],
+    "min_level": 6,
+    "max_level": 20,
+    "text": "A full-length mirror stands inexplicably in the dungeon corridor, its silver frame carved with serpents eating their own tails. Your reflection stares back — a half-second too slow. Then it smiles at you. You didn't smile. \"Touch the glass,\" it says, in your own voice. \"I have something you lost.\"",
+    "options": [
+      {
+        "label": "Touch the mirror",
+        "cost": {
+          "type": "hp",
+          "amount": 8
+        },
+        "reward": {
+          "type": "random_item",
+          "category": "accessory"
+        },
+        "outcome": "The glass is ice-cold and yields like water. Something presses into your palm and you snatch your hand back. Your reflection looks satisfied. A small item rests in your hand — you have no memory of losing it."
+      },
+      {
+        "label": "Offer it some mana",
+        "cost": {
+          "type": "mp",
+          "amount": 10
+        },
+        "reward": {
+          "type": "random_item",
+          "category": "scroll"
+        },
+        "outcome": "Your reflection tilts its head and reaches through the glass to leave a rolled scroll on the floor at your feet. \"A fair trade,\" it says. \"Come back when you have more.\""
+      },
+      {
+        "label": "Walk past without looking at it",
+        "cost": null,
+        "reward": null,
+        "outcome": "\"Wise,\" your reflection says to your back. You keep walking. You are absolutely certain there was a second set of footsteps behind you. There wasn't. Probably."
+      }
+    ]
+  },
+  {
+    "tag": "flv_child_with_lantern",
+    "name": "Small Child",
+    "symbol": "@",
+    "color": [
+      240,
+      220,
+      160
+    ],
+    "min_level": 3,
+    "max_level": 15,
+    "text": "A child, perhaps eight years old, sits in the middle of the corridor holding a lantern and eating an apple with great contentment. She looks up at you with complete composure. \"Hello. Are you lost? I know all the paths on this level. My dad's a miner. I'm not supposed to be here but he doesn't know yet.\"",
+    "options": [
+      {
+        "label": "Ask her about the layout",
+        "cost": {
+          "type": "food"
+        },
+        "reward": {
+          "type": "effect",
+          "effect": "clairvoyant",
+          "duration": 25
+        },
+        "outcome": "You trade her a ration for ten minutes of the most thorough dungeon briefing you have ever received, complete with hand gestures. She describes three shortcuts, two trapped passages, and a very large rat she has named Gerald. You feel oddly well-oriented."
+      },
+      {
+        "label": "Give her something to eat",
+        "cost": {
+          "type": "food"
+        },
+        "reward": {
+          "type": "message"
+        },
+        "outcome": "She accepts solemnly, wraps it in her apron, and pats it. \"For later. My dad says never eat the dungeon mushrooms unless Mrs. Herbst checks them first.\" She seems very wise for eight. You hope she finds her way home."
+      },
+      {
+        "label": "Tell her to go home",
+        "cost": null,
+        "reward": null,
+        "outcome": "\"I will in a minute,\" she says, not moving. You walk on with the unsettling feeling that she has been here longer than you, understands this place better than you do, and will leave exactly when she decides to."
+      }
+    ]
+  },
+  {
+    "tag": "flv_disgraced_knight",
+    "name": "Disgraced Knight",
+    "symbol": "@",
+    "color": [
+      160,
+      160,
+      180
+    ],
+    "min_level": 5,
+    "max_level": 18,
+    "text": "A man in battered, tarnished armor sits with his back against the wall and his helmet in his lap. His tabard bears a crest that has been deliberately scratched out. He looks up with red-rimmed eyes. \"I don't want charity. I just... I have coin left, and there's a smith three levels up. Could you carry a message?\"",
+    "options": [
+      {
+        "label": "Sharpen his sword for him (spend SP)",
+        "cost": {
+          "type": "sp",
+          "amount": 20
+        },
+        "reward": {
+          "type": "gold",
+          "amount": 50
+        },
+        "outcome": "You take the sword and find a suitable stone, working for a while in silence. When you return it, the edge catches the light clean and sharp. He stares at it for a long moment. \"I don't deserve this,\" he says quietly, and presses a coin purse into your hands."
+      },
+      {
+        "label": "Listen to what happened to him",
+        "cost": null,
+        "reward": {
+          "type": "message"
+        },
+        "outcome": "He tells it simply: a command given, a village burned, an order he followed without question. \"I thought loyalty to my lord was virtue,\" he says. \"I was wrong about that.\" He says nothing else. The silence has more weight than any verdict."
+      },
+      {
+        "label": "Move on without engaging",
+        "cost": null,
+        "reward": null,
+        "outcome": "He doesn't call after you. You look back once and he is already staring at the scratched-out crest on his tabard, his expression unreadable."
+      }
+    ]
+  },
+  {
+    "tag": "flv_rat_king_tiny",
+    "name": "Very Small Rat King",
+    "symbol": "r",
+    "color": [
+      180,
+      140,
+      100
+    ],
+    "min_level": 1,
+    "max_level": 12,
+    "text": "Three rats with their tails knotted together regard you from atop a small cairn of pebbles. The middle one wears a bottle cap on its head like a crown. It squeaks at you with evident authority. The other two squeak in apparent agreement. They seem to be negotiating something.",
+    "options": [
+      {
+        "label": "Offer them some food",
+        "cost": {
+          "type": "food"
+        },
+        "reward": {
+          "type": "gold",
+          "amount": 25
+        },
+        "outcome": "The Rat King accepts your offering with regal dignity. After a brief three-way consultation, one rat produces a small pile of coins from somewhere in the cairn and nudges them toward you. You have apparently satisfied a trade agreement."
+      },
+      {
+        "label": "Bow to the Rat King",
+        "cost": null,
+        "reward": {
+          "type": "effect",
+          "effect": "hasted",
+          "duration": 20
+        },
+        "outcome": "All three rats sit up very straight. The crowned rat touches its bottle cap with one tiny paw, a gesture of unmistakable royal acknowledgment. A curious lightness fills your legs. The court of the Rat King has blessed your passage."
+      },
+      {
+        "label": "Leave the rats to their politics",
+        "cost": null,
+        "reward": null,
+        "outcome": "The Rat King watches you go with the cool, assessing gaze of a monarch who has seen many adventurers pass and will see many more. The squeaking resumes behind you, businesslike."
+      }
+    ]
+  },
+  {
+    "tag": "flv_mapmaker",
+    "name": "Methodical Mapmaker",
+    "symbol": "@",
+    "color": [
+      160,
+      140,
+      100
+    ],
+    "min_level": 2,
+    "max_level": 16,
+    "text": "A lean, precise man paces the corridor with a measuring cord, muttering dimensions under his breath and marking them on a chart stretched over a portable board. He notices you and taps the map. \"You've been deeper than me today. I can pay for information. Distances, junctions, any notable features. What do you say?\"",
+    "options": [
+      {
+        "label": "Share what you've seen (costs SP)",
+        "cost": {
+          "type": "sp",
+          "amount": 15
+        },
+        "reward": {
+          "type": "gold",
+          "amount": 40
+        },
+        "outcome": "You spend twenty minutes walking him through everything you remember: every junction, chamber, and passage. He transcribes with incredible speed, humming approvingly. \"Excellent recall. Here — fair compensation for your time and memory.\""
+      },
+      {
+        "label": "Buy a copy of his current map (50g)",
+        "cost": {
+          "type": "gold",
+          "amount": 50
+        },
+        "reward": {
+          "type": "effect",
+          "effect": "clairvoyant",
+          "duration": 35
+        },
+        "outcome": "He produces a crisp, annotated copy with confident strokes. Studying it, you find that his spatial sense is almost preternatural — the layout settles in your mind like something you already knew."
+      },
+      {
+        "label": "Decline and continue on",
+        "cost": null,
+        "reward": null,
+        "outcome": "He shrugs and returns to his measuring. \"Another time, perhaps.\" You hear him muttering new distances as you round the corner, already absorbed in the architecture."
+      }
+    ]
+  },
+  {
+    "tag": "flv_echo_voice",
+    "name": "Voice in the Wall",
+    "symbol": "V",
+    "color": [
+      140,
+      180,
+      200
+    ],
+    "min_level": 8,
+    "max_level": 20,
+    "text": "The stonework here is different — older, rougher, carved with symbols that don't match the dungeon's usual aesthetic. As you examine them, a voice emanates from the stone itself, resonant and slow, like an echo that arrives before the sound. \"Seeker. I have slept here longer than your civilization. I remember what was buried here first.\"",
+    "options": [
+      {
+        "label": "Ask what was here before the dungeon",
+        "cost": {
+          "type": "mp",
+          "amount": 12
+        },
+        "reward": {
+          "type": "message"
+        },
+        "outcome": "\"A city,\" it says. \"Then a sea. Then a forest. Then silence. Then your people came and called it a dungeon, because that is the word you have for places that are old and dark and full of things you don't understand.\" A long pause. \"You are not the strangest thing that has walked this corridor.\""
+      },
+      {
+        "label": "Ask it to bless your journey",
+        "cost": {
+          "type": "gold",
+          "amount": 60
+        },
+        "reward": {
+          "type": "effect",
+          "effect": "blessed",
+          "duration": 40
+        },
+        "outcome": "\"You offer metal to something that has outlasted mountains.\" A sound like deep amusement. \"But I am not without sentiment.\" The symbols on the wall glow faintly amber and then dim. You feel the weight of something very old acknowledging you."
+      },
+      {
+        "label": "Back away from the wall",
+        "cost": null,
+        "reward": null,
+        "outcome": "\"Wise,\" the wall says, without reproach. The symbols return to inert stone. The corridor feels ordinary again, or at least it feels that way until you glance back and notice the symbols have changed position."
+      }
+    ]
+  },
+  {
+    "tag": "flv_broken_automaton",
+    "name": "Broken Automaton",
+    "symbol": "A",
+    "color": [
+      160,
+      170,
+      180
+    ],
+    "min_level": 5,
+    "max_level": 20,
+    "text": "A copper-and-brass figure sits propped against a pillar, one arm missing, the clockwork of its chest exposed and still. Its glass eyes flicker. \"My... purpose... incomplete,\" it says, in a voice like keys on a music box. \"I was a guardian. I am not... I cannot fulfill... can you carry something? In my place?\"",
+    "options": [
+      {
+        "label": "Accept its remaining charge (take damage)",
+        "cost": {
+          "type": "hp",
+          "amount": 12
+        },
+        "reward": {
+          "type": "effect",
+          "effect": "shielded",
+          "duration": 35
+        },
+        "outcome": "It extends its remaining hand and something jumps between you like a static spark — sharp and cold. \"Guardian's... charge... transferred. You will hold it better than I do now.\" Its glass eyes dim and it is still. You feel a faint hum of protection wrapped around you."
+      },
+      {
+        "label": "Try to repair it (spend SP)",
+        "cost": {
+          "type": "sp",
+          "amount": 25
+        },
+        "reward": {
+          "type": "gold",
+          "amount": 55
+        },
+        "outcome": "You work at the exposed clockwork, improvising where parts are missing. It won't walk again, but the chest plate closes and its eyes brighten. \"Grateful,\" it says. \"Gratitude... registered.\" A hidden compartment in its base clicks open, revealing a cache of coin."
+      },
+      {
+        "label": "Leave it to rest",
+        "cost": null,
+        "reward": null,
+        "outcome": "\"Understood,\" it says. \"I will... wait.\" Its eyes dim to a faint flicker. You wonder how long it has already been waiting, and how much longer it will."
+      }
+    ]
+  },
+  {
+    "tag": "flv_three_mushrooms",
+    "name": "Luminous Mushrooms",
+    "symbol": "m",
+    "color": [
+      160,
+      100,
+      200
+    ],
+    "min_level": 3,
+    "max_level": 18,
+    "text": "Three enormous mushrooms glow with a soft violet light in a side alcove, their caps pulsing in slow rhythm. As you approach, you become aware — without quite knowing how — that they are curious about you. Not dangerous. Just... attentive. One tilts, slightly, in your direction.",
+    "options": [
+      {
+        "label": "Eat a small piece of one",
+        "cost": {
+          "type": "hp",
+          "amount": 5
+        },
+        "reward": {
+          "type": "mp_restore",
+          "amount": 35
+        },
+        "outcome": "The taste is cold and electric and somehow also the color blue. Your vision doubles briefly, filling with slow purple geometries, and then clears. Your mind feels extraordinarily clean, like a window after rain."
+      },
+      {
+        "label": "Sit in their light for a while",
+        "cost": {
+          "type": "sp",
+          "amount": 20
+        },
+        "reward": {
+          "type": "hp_restore",
+          "amount": 20
+        },
+        "outcome": "You rest in the gentle pulse of their glow. There is something profoundly calm about being near something that has no fear of the dungeon, that simply exists and grows and shines. You feel your hurts ease, just slightly."
+      },
+      {
+        "label": "Leave them in peace",
+        "cost": null,
+        "reward": null,
+        "outcome": "The mushrooms watch you go with whatever sense they use for watching. The violet glow lingers at the edge of your vision for some time, a small and patient light in the dark."
+      }
+    ]
+  },
+  {
+    "tag": "flv_treasure_hunter_desperate",
+    "name": "Desperate Treasure-Hunter",
+    "symbol": "@",
+    "color": [
+      200,
+      150,
+      100
+    ],
+    "min_level": 4,
+    "max_level": 19,
+    "text": "A man stumbles toward you from the shadows, clutching a rough map to his chest. His gear is expensive but battered, and he has the look of someone who has been underground too long. \"Please. I've found something — a cache, two junctions east — but there's something guarding it. I need what you have more than you do right now.\"",
+    "options": [
+      {
+        "label": "Sell him a potion (take 50g)",
+        "cost": {
+          "type": "gold",
+          "amount": 0
+        },
+        "reward": {
+          "type": "gold",
+          "amount": 50
+        },
+        "outcome": "You hand him a potion and he gives you coin with trembling hands, already moving. \"You've saved my life. I'll remember this.\" He rounds the corner at speed. You never do find out if he was right about the cache."
+      },
+      {
+        "label": "Give him food from your pack",
+        "cost": {
+          "type": "food"
+        },
+        "reward": {
+          "type": "random_item",
+          "category": "scroll"
+        },
+        "outcome": "His face crumples with relief. \"Here — I can't use this, my hands shake too much to read it properly.\" He presses a scroll into your hands and takes off down the corridor without another word."
+      },
+      {
+        "label": "Wish him luck and move on",
+        "cost": null,
+        "reward": null,
+        "outcome": "He stares at you for a moment, then nods with quiet dignity. \"Right. Fair enough. Every man for himself down here.\" He straightens his coat and walks east, toward whatever is waiting for him."
+      }
+    ]
+  },
+  {
+    "tag": "flv_stone_fox",
+    "name": "Stone Fox",
+    "symbol": "f",
+    "color": [
+      200,
+      180,
+      140
+    ],
+    "min_level": 6,
+    "max_level": 20,
+    "text": "A fox sits in the corridor, perfectly still, watching you. Its fur is the color of granite. Its eyes are amber glass. When you stop, it stands, circles you once in complete silence, and then sits again facing away from you — clearly expecting to be followed.",
+    "options": [
+      {
+        "label": "Follow the fox",
+        "cost": {
+          "type": "sp",
+          "amount": 20
+        },
+        "reward": {
+          "type": "random_item",
+          "category": "accessory"
+        },
+        "outcome": "It leads you through a route you would never have chosen, winding and doubling back, and then sits before a crack in the wall. Behind it, a small chamber contains something left by a previous adventurer. The fox is gone when you turn back."
+      },
+      {
+        "label": "Offer it something to eat",
+        "cost": {
+          "type": "food"
+        },
+        "reward": {
+          "type": "effect",
+          "effect": "invisible",
+          "duration": 25
+        },
+        "outcome": "It sniffs the offering once, then touches it with its nose and looks up at you. The amber eyes hold for a long moment. Then it breathes on you — cold and clean — and simply is no longer there. You notice you are very hard to see."
+      },
+      {
+        "label": "Let it sit and walk around it",
+        "cost": null,
+        "reward": null,
+        "outcome": "It watches you go without moving. When you glance back from the next junction, it is already facing a different direction, as though it was never waiting for you at all."
+      }
+    ]
+  },
+  {
+    "tag": "flv_young_scribe",
+    "name": "Young Scribe",
+    "symbol": "@",
+    "color": [
+      160,
+      180,
+      220
+    ],
+    "min_level": 1,
+    "max_level": 14,
+    "text": "A nervous young man in scholar's robes clutches a leather satchel and an extinguished lantern, squinting in the dark. \"I'm documenting dungeon fauna for the Cartographers' Guild,\" he explains. \"My torch went out and I haven't seen anything worth writing down yet. Could you... describe what you've encountered? I can pay per entry.\"",
+    "options": [
+      {
+        "label": "Describe creatures you've fought (spend SP)",
+        "cost": {
+          "type": "sp",
+          "amount": 15
+        },
+        "reward": {
+          "type": "gold",
+          "amount": 35
+        },
+        "outcome": "He writes at furious speed, interrupting every sentence with clarifying questions about mandibles and preferred habitats. \"Extraordinary. Just extraordinary.\" He counts out coins carefully. \"Most adventurers just say 'it was big '.\""
+      },
+      {
+        "label": "Give him a light source",
+        "cost": {
+          "type": "food"
+        },
+        "reward": {
+          "type": "random_item",
+          "category": "scroll"
+        },
+        "outcome": "He accepts the improvised torch with profound relief and rummages gratefully in his satchel. \"Take this — I copied it in the library and already have the original. Genuine dungeon scholarship, not the popular stuff.\""
+      },
+      {
+        "label": "Point him toward the exit",
+        "cost": null,
+        "reward": null,
+        "outcome": "He looks torn between relief and professional disappointment. \"Perhaps... yes, perhaps that's sensible.\" He writes one final note, adds a small asterisk, and shuffles off toward the surface with his satchel held tight."
+      }
+    ]
+  },
+  {
+    "tag": "flv_dwarven_smith_marta",
+    "name": "Marta Irontemper",
+    "symbol": "@",
+    "color": [
+      180,
+      120,
+      60
+    ],
+    "min_level": 21,
+    "max_level": 38,
+    "text": "A stout dwarven woman sits beside a portable forge, hammering sparks off a blade that glows faint orange. She squints up at you through a curtain of soot-black hair. \"Weapon's looking a bit sad, isn't it? I can fix that — for a fair price.\"",
+    "options": [
+      {
+        "label": "Pay her to sharpen your weapon",
+        "cost": {
+          "type": "gold",
+          "amount": 80
+        },
+        "reward": {
+          "type": "enchant_weapon",
+          "amount": 1
+        },
+        "outcome": "Marta works with practiced efficiency, her hammer ringing in short, precise strokes. When she hands the weapon back, it catches the torchlight differently — sharper, hungrier. \"Now that's a proper tool,\" she mutters approvingly."
+      },
+      {
+        "label": "\"Just browsing, thanks.\"",
+        "cost": null,
+        "reward": null,
+        "outcome": "She shrugs and returns to her work without ceremony. The rhythmic clanging follows you down the corridor long after she disappears from sight."
+      }
+    ]
+  },
+  {
+    "tag": "flv_desperate_treasure_hunter",
+    "name": "Desperate Treasure-Hunter",
+    "symbol": "@",
+    "color": [
+      160,
+      140,
+      100
+    ],
+    "min_level": 21,
+    "max_level": 35,
+    "text": "A gaunt man with torn clothes and hollow eyes grabs your arm from a side alcove. \"Please — I've been lost for days. I have gold but nothing to eat.\" His hands are shaking. \"I'll pay well for anything you can spare.\"",
+    "options": [
+      {
+        "label": "Give him food for gold",
+        "cost": {
+          "type": "food"
+        },
+        "reward": {
+          "type": "gold",
+          "amount": 70
+        },
+        "outcome": "He tears into the food with desperate gratitude, pressing a fistful of coins into your hands before you can reconsider. \"Bless you. Bless you.\" He stumbles toward the upper levels, and you hope he makes it."
+      },
+      {
+        "label": "Give him food freely",
+        "cost": {
+          "type": "food"
+        },
+        "reward": {
+          "type": "message"
+        },
+        "outcome": "He looks at you with an expression you weren't prepared for — pure, unguarded relief. He eats quickly, then clasps your hand with both of his. \"There's a hidden cache two corridors east, behind a cracked wall. Take it. Please.\" Then he's gone."
+      },
+      {
+        "label": "\"I cannot spare any.\"",
+        "cost": null,
+        "reward": null,
+        "outcome": "He releases your arm and sinks back against the wall, staring at nothing. You leave him there, and try not to think about whether the dungeon will be more merciful than you were."
+      }
+    ]
+  },
+  {
+    "tag": "flv_ink_stained_scholar",
+    "name": "Scholar Evaine",
+    "symbol": "@",
+    "color": [
+      100,
+      130,
+      200
+    ],
+    "min_level": 25,
+    "max_level": 40,
+    "text": "A woman in ink-stained robes sits cross-legged in the middle of the corridor, surrounded by open tomes and hasty notes. She doesn't look up when you approach. \"Fascinating — the rune patterns here indicate this section was built at least four centuries before the outer chambers. Oh. You're a person. Hello.\"",
+    "options": [
+      {
+        "label": "Ask about the dungeon's history",
+        "cost": null,
+        "reward": {
+          "type": "effect",
+          "effect": "clairvoyant",
+          "duration": 30
+        },
+        "outcome": "She launches into an enthusiastic lecture about ley-line intersections and builder-cult symbology. Most of it washes over you, but something about the way she describes spatial awareness clarifies your own perception of the space around you. Your senses sharpen unexpectedly."
+      },
+      {
+        "label": "Buy a scroll from her notes",
+        "cost": {
+          "type": "gold",
+          "amount": 90
+        },
+        "reward": {
+          "type": "random_item",
+          "category": "scroll"
+        },
+        "outcome": "She tears a page from a secondary notebook with minimal hesitation. \"Copied that one twice anyway.\" The transcription is meticulous, the ink still faintly warm from her pen."
+      },
+      {
+        "label": "\"I'll leave you to your research.\"",
+        "cost": null,
+        "reward": null,
+        "outcome": "\"Mm. Wise choice — I'm nearly at a breakthrough.\" She's already forgotten you, her quill scratching furiously at a new page."
+      }
+    ]
+  },
+  {
+    "tag": "flv_ghost_soldier",
+    "name": "Pale Soldier",
+    "symbol": "@",
+    "color": [
+      200,
+      220,
+      255
+    ],
+    "min_level": 28,
+    "max_level": 40,
+    "text": "A soldier in archaic armor stands at attention in the middle of an empty corridor, staring through you with eyes like frosted glass. \"Halt, traveler,\" he says, voice thin as parchment. \"Report your unit and destination.\" He does not seem to notice that you are not the answer he expects.",
+    "options": [
+      {
+        "label": "Play along and give a unit name",
+        "cost": null,
+        "reward": {
+          "type": "effect",
+          "effect": "blessed",
+          "duration": 25
+        },
+        "outcome": "You name a regiment that might have existed centuries ago. He relaxes almost imperceptibly and raises one translucent hand in a formal salute. \"Pass, soldier. The commander's blessing upon you.\" A warmth settles over you that has no earthly source."
+      },
+      {
+        "label": "Tell him the war is long over",
+        "cost": null,
+        "reward": {
+          "type": "message"
+        },
+        "outcome": "He goes very still. The frost in his eyes seems to deepen. \"Over,\" he repeats, as if tasting a word from a foreign language. He begins to fade at the edges, like ink in rain. \"Then I have been standing here for...\" He does not finish. He simply isn't there anymore."
+      },
+      {
+        "label": "Walk past him without speaking",
+        "cost": null,
+        "reward": null,
+        "outcome": "He watches you pass with those empty eyes. You feel the cold radiating off him like an open grave. He says nothing, and you do not look back."
+      }
+    ]
+  },
+  {
+    "tag": "flv_traveling_alchemist",
+    "name": "Alchemist Perrin",
+    "symbol": "@",
+    "color": [
+      140,
+      200,
+      140
+    ],
+    "min_level": 22,
+    "max_level": 37,
+    "text": "A cheerful man in a heavy apron rattles toward you, his pack clinking with dozens of small glass vials. \"Ah! A customer! Or at least, a survivor — which is close enough down here.\" He grins. \"I've got potions, poultices, and one experimental batch I'm quite proud of.\"",
+    "options": [
+      {
+        "label": "Buy a standard potion",
+        "cost": {
+          "type": "gold",
+          "amount": 60
+        },
+        "reward": {
+          "type": "random_item",
+          "category": "potion"
+        },
+        "outcome": "He rummages through his pack with practiced ease and produces a vial with a handwritten label. \"Guaranteed to do something,\" he says, which is either reassuring or not, depending on your outlook."
+      },
+      {
+        "label": "Try the experimental batch (cheaper)",
+        "cost": {
+          "type": "gold",
+          "amount": 30
+        },
+        "reward": {
+          "type": "random_item",
+          "category": "potion"
+        },
+        "outcome": "He hands over a vial that seems to glow two different colors depending on the angle. \"Results may vary!\" he calls after you as you walk away. \"But probably in a good direction!\""
+      },
+      {
+        "label": "\"Nothing today, thank you.\"",
+        "cost": null,
+        "reward": null,
+        "outcome": "\"Your loss! My next customer might not have your restraint.\" He tips an imaginary hat and wanders deeper into the dungeon, bottles clinking merrily in the dark."
+      }
+    ]
+  },
+  {
+    "tag": "flv_whispering_hermit",
+    "name": "The Hermit",
+    "symbol": "@",
+    "color": [
+      160,
+      130,
+      170
+    ],
+    "min_level": 30,
+    "max_level": 40,
+    "text": "Huddled against a wall in a chamber that smells of old smoke and dried herbs, a figure wrapped in layers of mismatched cloth watches you with sharp, intelligent eyes. \"I've lived down here twelve years,\" they say softly. \"I know its moods. Its secrets. You look like someone who could use a secret.\"",
+    "options": [
+      {
+        "label": "Trade stamina for their knowledge",
+        "cost": {
+          "type": "sp",
+          "amount": 30
+        },
+        "reward": {
+          "type": "effect",
+          "effect": "clairvoyant",
+          "duration": 40
+        },
+        "outcome": "They take your hands and press them flat against the stone wall. \"Listen,\" they whisper. \"Really listen.\" You stand there until your legs ache — and then you hear it: the subtle grammar of the dungeon, the spaces between its walls. Your awareness of the surrounding area expands like a held breath released."
+      },
+      {
+        "label": "Share a meal together",
+        "cost": {
+          "type": "food"
+        },
+        "reward": {
+          "type": "sp_restore",
+          "amount": 40
+        },
+        "outcome": "You sit together in comfortable silence, sharing food like two people who have long since run out of small talk. When you rise to leave, you feel more settled than you have in days. Sometimes stillness is its own kind of strength."
+      },
+      {
+        "label": "\"I prefer my own counsel.\"",
+        "cost": null,
+        "reward": null,
+        "outcome": "They nod slowly, with no offense taken. \"That's how I started too,\" they say. You're not entirely sure what they mean by that."
+      }
+    ]
+  },
+  {
+    "tag": "flv_goblin_mapmaker",
+    "name": "Grix the Mapmaker",
+    "symbol": "g",
+    "color": [
+      120,
+      180,
+      80
+    ],
+    "min_level": 21,
+    "max_level": 33,
+    "text": "A goblin in a tiny waistcoat crouches over an enormous roll of vellum, adding meticulous detail with a quill barely larger than a toothpick. \"Oi! You! You been the east corridor yet? Past the big skull door?\" He taps his vellum urgently. \"I got a gap in my map and it's driving me absolutely mad.\"",
+    "options": [
+      {
+        "label": "Describe the east corridor to him",
+        "cost": null,
+        "reward": {
+          "type": "gold",
+          "amount": 55
+        },
+        "outcome": "His quill moves in a frenzy as you talk, capturing every detail you can remember — side passages, ceiling height, the smell. \"Yes! Yes! Beautiful!\" He slaps a handful of coins in your palm. \"Worth every copper.\""
+      },
+      {
+        "label": "Buy a copy of his map",
+        "cost": {
+          "type": "gold",
+          "amount": 70
+        },
+        "reward": {
+          "type": "effect",
+          "effect": "clairvoyant",
+          "duration": 35
+        },
+        "outcome": "He rolls out a section of the map and copies it with alarming speed onto a fresh sheet. The detail is extraordinary — room shapes, trap indicators, even little frowning faces drawn where monsters were last spotted. You feel better oriented already."
+      },
+      {
+        "label": "\"I don't have time for this.\"",
+        "cost": null,
+        "reward": null,
+        "outcome": "\"Fine! Fine!\" He hunches back over his vellum, muttering. \"Nobody appreciates cartography. Nobody. Not even in a dungeon where knowing where you ARE is literally life and death.\""
+      }
+    ]
+  },
+  {
+    "tag": "flv_battle_weary_veteran",
+    "name": "Calla Vane",
+    "symbol": "@",
+    "color": [
+      170,
+      100,
+      90
+    ],
+    "min_level": 24,
+    "max_level": 38,
+    "text": "A battle-scarred woman sits with her back to the wall, methodically oiling a short sword she clearly does not intend to use again tonight. There are too many fresh bandages on her arms. \"You've got that look,\" she says without glancing up. \"Like you're still believing this was a good idea.\"",
+    "options": [
+      {
+        "label": "Ask her for combat advice",
+        "cost": null,
+        "reward": {
+          "type": "effect",
+          "effect": "hasted",
+          "duration": 20
+        },
+        "outcome": "She talks for a while about footwork and threat angles and reading monster tells — the kind of advice that sounds boring until you're surrounded. Something about it settles into your muscles rather than your mind. Your movements feel a fraction sharper, a fraction faster."
+      },
+      {
+        "label": "Offer her a healing potion",
+        "cost": {
+          "type": "gold",
+          "amount": 50
+        },
+        "reward": {
+          "type": "stat",
+          "stat": "CON",
+          "amount": 1
+        },
+        "outcome": "She raises an eyebrow but accepts the gold with a nod — she'll use it to buy supplies later, she says. In return, she spends an hour drilling you in proper defensive stances and controlled breathing under pressure. By the time she's done, your endurance has measurably improved."
+      },
+      {
+        "label": "\"Just passing through.\"",
+        "cost": null,
+        "reward": null,
+        "outcome": "\"Sure you are,\" she says, with the tone of someone who has heard that line from people who didn't make it. She goes back to oiling her sword. You go back to believing."
+      }
+    ]
+  },
+  {
+    "tag": "flv_cursed_merchant",
+    "name": "Smiling Merchant",
+    "symbol": "@",
+    "color": [
+      200,
+      180,
+      50
+    ],
+    "min_level": 25,
+    "max_level": 40,
+    "text": "An impeccably dressed merchant stands behind a velvet-draped table in the middle of the dungeon, grinning without apparent concern for his surroundings. His teeth are slightly too white. \"Wonderful selection today! Items of great power — every one absolutely, categorically, one hundred percent not cursed.\"",
+    "options": [
+      {
+        "label": "Buy an accessory (suspiciously cheap)",
+        "cost": {
+          "type": "gold",
+          "amount": 50
+        },
+        "reward": {
+          "type": "random_item",
+          "category": "accessory"
+        },
+        "outcome": "He wraps the item with theatrical care and hands it over with a wink that you don't quite trust. It looks normal enough. It even feels normal. You are perhaps forty percent sure it is not cursed. Forty-five, even."
+      },
+      {
+        "label": "Buy a wand (you need a wand)",
+        "cost": {
+          "type": "gold",
+          "amount": 100
+        },
+        "reward": {
+          "type": "random_item",
+          "category": "wand"
+        },
+        "outcome": "\"Excellent taste!\" He produces the wand from somewhere inside his jacket with a flourish. It crackles with genuine magical energy, which is either a good sign or a very interesting bad sign. Hard to say with this man."
+      },
+      {
+        "label": "\"I don't trust that smile.\"",
+        "cost": null,
+        "reward": null,
+        "outcome": "His smile does not waver. Not even slightly. \"A wise consumer,\" he says pleasantly. You back away, and he watches you go, still grinning, until you round the corner and he is mercifully out of sight."
+      }
+    ]
+  },
+  {
+    "tag": "flv_wounded_scout",
+    "name": "Wounded Scout",
+    "symbol": "@",
+    "color": [
+      150,
+      150,
+      120
+    ],
+    "min_level": 21,
+    "max_level": 34,
+    "text": "A young scout with a badly wrapped leg wound is propped against a pillar, pale but awake. \"Don't bother with the north passage,\" she says immediately, as if she's been waiting to warn someone. \"There's something down there that doesn't die clean.\" She winces and shifts her weight. \"I'd offer to trade, but I'm a bit short on leverage right now.\"",
+    "options": [
+      {
+        "label": "Give her a healing item",
+        "cost": {
+          "type": "gold",
+          "amount": 60
+        },
+        "reward": {
+          "type": "message"
+        },
+        "outcome": "She accepts the supplies with genuine relief and presses something into your hand — a rough sketch of the northern passage, with the creature's patrol route marked in red. \"It circles. There's a window of about forty seconds. That's how I got out.\""
+      },
+      {
+        "label": "Sit with her until she can walk",
+        "cost": {
+          "type": "sp",
+          "amount": 20
+        },
+        "reward": {
+          "type": "hp_restore",
+          "amount": 25
+        },
+        "outcome": "You help her re-bind the wound properly and wait while she recovers enough to stand. She insists on returning the favor — pulling out a small medkit and seeing to a few of your own injuries with a practiced hand. \"Scout training,\" she says simply."
+      },
+      {
+        "label": "Wish her luck and move on",
+        "cost": null,
+        "reward": null,
+        "outcome": "\"Yeah,\" she says, to no one in particular. You hope she finds her way out. You've seen enough of this dungeon to know that hope doesn't cost anything, but it isn't cheap either."
+      }
+    ]
+  },
+  {
+    "tag": "flv_mnemonic_monk",
+    "name": "Brother Osias",
+    "symbol": "@",
+    "color": [
+      180,
+      170,
+      210
+    ],
+    "min_level": 27,
+    "max_level": 40,
+    "text": "A monk with a shaved head and eyes closed in meditation sits absolutely still in the corridor, hands folded in his lap. He speaks without opening his eyes. \"You carry exhaustion like a second pack. I can ease it — but concentration requires an anchor, something to focus the breath.\"",
+    "options": [
+      {
+        "label": "Let him guide a meditation session",
+        "cost": {
+          "type": "sp",
+          "amount": 25
+        },
+        "reward": {
+          "type": "mp_restore",
+          "amount": 30
+        },
+        "outcome": "He leads you through a breathing exercise that feels simple and somehow bottomless. You follow his voice into a quiet space inside yourself you had forgotten existed. When you return, your mind feels clean and your magical reserves have replenished themselves."
+      },
+      {
+        "label": "Offer food to support his vigil",
+        "cost": {
+          "type": "food"
+        },
+        "reward": {
+          "type": "sp_restore",
+          "amount": 35
+        },
+        "outcome": "He opens his eyes for the first time and accepts the food with a slight bow. \"Sustaining the body sustains the spirit.\" He shares a brief blessing that warms your muscles from the inside, like a long-forgotten memory of sunshine."
+      },
+      {
+        "label": "Pass quietly without disturbing him",
+        "cost": null,
+        "reward": null,
+        "outcome": "He does not acknowledge your passage. But as you round the bend, you could swear the silence behind you is a fraction more peaceful than the silence ahead."
+      }
+    ]
+  },
+  {
+    "tag": "flv_apprentice_runescribe",
+    "name": "Apprentice Runescribe",
+    "symbol": "@",
+    "color": [
+      100,
+      160,
+      220
+    ],
+    "min_level": 22,
+    "max_level": 36,
+    "text": "A teenager in oversized apprentice robes is carefully inscribing runes onto the dungeon floor and muttering to herself. She looks up with the startled expression of someone who forgot monsters also use this hallway. \"Oh! Oh good, you look human. You don't happen to know what the seventh ward-rune of Kessari looks like, do you?\"",
+    "options": [
+      {
+        "label": "Help her with the rune (costs focus)",
+        "cost": {
+          "type": "mp",
+          "amount": 10
+        },
+        "reward": {
+          "type": "random_item",
+          "category": "scroll"
+        },
+        "outcome": "You guide her hand through the symbol from memory — or perhaps intuition. It clicks into place with a soft blue flash. \"That's it! Yes!\" She beams and rummages in her bag. \"Here — Master's reference scroll, copied it myself. You earned it.\""
+      },
+      {
+        "label": "Offer to trade a scroll for one of hers",
+        "cost": {
+          "type": "gold",
+          "amount": 55
+        },
+        "reward": {
+          "type": "random_item",
+          "category": "scroll"
+        },
+        "outcome": "A fair exchange. She drives a harder bargain than her age suggests, but the scroll she produces is clearly from a higher-level compendium than anything she should have access to. You decide not to ask how she got it."
+      },
+      {
+        "label": "\"I don't know runes. Good luck.\"",
+        "cost": null,
+        "reward": null,
+        "outcome": "\"Right. Okay. I'll figure it out.\" She turns back to her work with the particular determination of someone who has been underestimated their whole life and has stopped minding."
+      }
+    ]
+  },
+  {
+    "tag": "flv_singing_bones_2",
+    "name": "Singing Bones",
+    "symbol": "s",
+    "color": [
+      230,
+      230,
+      200
+    ],
+    "min_level": 28,
+    "max_level": 40,
+    "text": "A skeleton sits with its back against the wall, arms cradling a cracked lute. It is singing — badly, tunelessly, and with tremendous enthusiasm. It stops when it notices you and tilts its skull with an air of offended dignity. \"I was in the middle of a verse,\" it says, in a voice like dry leaves. \"Did you need something?\"",
+    "options": [
+      {
+        "label": "Ask it to finish the song",
+        "cost": null,
+        "reward": {
+          "type": "effect",
+          "effect": "blessed",
+          "duration": 20
+        },
+        "outcome": "It plays the rest of the song. It is, objectively speaking, not good. The lute is cracked, the melody meanders, and one of the lyrics doesn't scan. But there is something in the old bones' devotion to the thing that settles in your chest like a warm coal. You feel oddly fortified."
+      },
+      {
+        "label": "Offer to repair its lute for gold",
+        "cost": {
+          "type": "gold",
+          "amount": 65
+        },
+        "reward": {
+          "type": "effect",
+          "effect": "regenerating",
+          "duration": 30
+        },
+        "outcome": "It watches you work with visible hope and then plays a single clear note that rings like a bell. The sound does something to you — vibrates at the frequency of healing. \"That is the first true note it has made in a century,\" it says quietly. \"Thank you.\""
+      },
+      {
+        "label": "\"Never mind. Carry on.\"",
+        "cost": null,
+        "reward": null,
+        "outcome": "It gives a skeletal shrug and resumes singing. The melody follows you for two corridors before the stone finally swallows it. It's in your head for longer than that."
+      }
+    ]
+  },
+  {
+    "tag": "flv_plague_doctor",
+    "name": "Doctor Finch",
+    "symbol": "@",
+    "color": [
+      80,
+      120,
+      100
+    ],
+    "min_level": 23,
+    "max_level": 38,
+    "text": "A figure in a long black coat and a beaked mask stands in a doorway, clipboard in hand. \"Ah. A living one.\" Their voice is nasal and clinical through the mask. \"I've been cataloguing the afflictions down here. You look relatively intact — remarkable, given the level. Any symptoms I should note? Bleeding, visions, involuntary cursing?\"",
+    "options": [
+      {
+        "label": "Submit to a quick examination",
+        "cost": {
+          "type": "hp",
+          "amount": 8
+        },
+        "reward": {
+          "type": "hp_restore",
+          "amount": 30
+        },
+        "outcome": "They prod and poke with cool efficiency, muttering notes. \"Minor lacerations, dehydration, one infected bite you clearly hadn't noticed. Hold still.\" The treatment is brisk and uncomfortable, but the results are undeniable. You feel substantially better than you did walking in."
+      },
+      {
+        "label": "Buy a curative compound",
+        "cost": {
+          "type": "gold",
+          "amount": 75
+        },
+        "reward": {
+          "type": "random_item",
+          "category": "potion"
+        },
+        "outcome": "They produce a small vial from a rack of identical vials and label it in tiny, precise handwriting. \"Take with water. Do not take with alcohol. Do not take with other potions unless you understand what you're doing, which you probably don't.\" Charming bedside manner."
+      },
+      {
+        "label": "\"I'm fine. Good day, Doctor.\"",
+        "cost": null,
+        "reward": null,
+        "outcome": "\"You are demonstrably not fine,\" they say, and make a note on their clipboard anyway. You find this oddly comforting."
+      }
+    ]
+  },
+  {
+    "tag": "flv_moth_woman",
+    "name": "The Moth Woman",
+    "symbol": "M",
+    "color": [
+      210,
+      190,
+      240
+    ],
+    "min_level": 32,
+    "max_level": 40,
+    "text": "A woman stands perfectly still in the center of the room, arms slightly extended, skin dusted with iridescent powder that catches the torchlight like wings. Her eyes are entirely silver. \"You are drawn here the way all things are drawn to light,\" she says. \"Let me look at you. I will tell you what I see.\"",
+    "options": [
+      {
+        "label": "Let her read you (costs mana)",
+        "cost": {
+          "type": "mp",
+          "amount": 12
+        },
+        "reward": {
+          "type": "stat",
+          "stat": "PER",
+          "amount": 1
+        },
+        "outcome": "She circles you slowly, trailing a finger through the air near your face, reading something invisible. When she stops, she presses one dusty fingertip to your temple. \"There. I have opened a window.\" The world snaps into sharper focus — colors brighter, distances clearer. You perceive more than you did before."
+      },
+      {
+        "label": "Ask what she is",
+        "cost": null,
+        "reward": {
+          "type": "message"
+        },
+        "outcome": "\"A question with an answer you do not have a frame for yet.\" She tilts her head, and the silver eyes catch the light at a new angle. \"Ask me again when you have seen the deeper dark. You will understand better then.\""
+      },
+      {
+        "label": "Back away from her",
+        "cost": null,
+        "reward": null,
+        "outcome": "She does not follow. She watches you retreat with those silver eyes and does not blink once. Around the corner, you check your reflection in your blade. Your own eyes look briefly, impossibly, silver. Then they don't."
+      }
+    ]
+  },
+  {
+    "tag": "flv_lost_caravan_guard",
+    "name": "Tarek the Guard",
+    "symbol": "@",
+    "color": [
+      160,
+      140,
+      100
+    ],
+    "min_level": 21,
+    "max_level": 32,
+    "text": "A broad-shouldered man is sitting on an overturned crate, head in his hands. He looks up when he hears you — too quickly, too hopefully. \"Tell me you know the way out. Or tell me you have food. Or both.\" He pauses. \"Please, in any order.\"",
+    "options": [
+      {
+        "label": "Give him food and directions",
+        "cost": {
+          "type": "food"
+        },
+        "reward": {
+          "type": "effect",
+          "effect": "shielded",
+          "duration": 25
+        },
+        "outcome": "He eats quickly, then stands, squaring his shoulders with visible relief. \"You're a decent soul.\" He hands you a thick leather armguard from his kit — proper guard issue, well-made. \"Take it. I travel lighter anyway.\" A warm, shielding energy settles around you."
+      },
+      {
+        "label": "Point him toward the exit",
+        "cost": null,
+        "reward": {
+          "type": "gold",
+          "amount": 60
+        },
+        "outcome": "He scrambles to his feet and grabs his pack. \"Here — I don't have much, but you've earned it.\" He presses coins into your hand and moves in the direction you indicated with the purposeful stride of someone who has found their second wind."
+      },
+      {
+        "label": "\"Sorry, I'm lost myself.\"",
+        "cost": null,
+        "reward": null,
+        "outcome": "He laughs — short, tired, genuine. \"Of course you are.\" He nods toward the dark. \"Well. Company for a few minutes, then. That's something.\""
+      }
+    ]
+  },
+  {
+    "tag": "flv_rust_collector",
+    "name": "Old Veska",
+    "symbol": "@",
+    "color": [
+      140,
+      100,
+      80
+    ],
+    "min_level": 22,
+    "max_level": 35,
+    "text": "An elderly woman rummages through a pile of broken weapons with the methodical joy of someone with a lifelong hobby. She holds up a snapped sword hilt to the light with genuine admiration. \"Fine craftsmanship, even ruined.\" She notices you. \"Ah! You've got equipment that still works. Interesting.\"",
+    "options": [
+      {
+        "label": "Trade gold for her oddments",
+        "cost": {
+          "type": "gold",
+          "amount": 55
+        },
+        "reward": {
+          "type": "random_item",
+          "category": "accessory"
+        },
+        "outcome": "She rummages through her bag and produces a trinket that looks like scrap but hums faintly at the correct frequency. \"Found that one near a collapsed shrine. Something still lives in it.\" She seems delighted by your uncertainty."
+      },
+      {
+        "label": "Let her examine your weapon",
+        "cost": null,
+        "reward": {
+          "type": "message"
+        },
+        "outcome": "She handles your weapon with the reverence of a surgeon and the familiarity of a smith. \"Made by a left-handed craftsman, mid-period, before the iron shortages — see the taper? The original owner survived at least three major campaigns.\" She hands it back. \"You're the latest chapter. Try to be a good one.\""
+      },
+      {
+        "label": "Decline and keep moving",
+        "cost": null,
+        "reward": null,
+        "outcome": "\"Sensible,\" she says, already turning back to her pile. \"Most things worth finding are worth finding by accident anyway.\""
+      }
+    ]
+  },
+  {
+    "tag": "flv_shade_bargainer",
+    "name": "The Shade",
+    "symbol": "S",
+    "color": [
+      60,
+      60,
+      90
+    ],
+    "min_level": 33,
+    "max_level": 40,
+    "text": "Something that might be a shadow, but isn't, peels itself from the wall. It has the rough shape of a person and the approximate manners of one. \"I collect things that people don't know they're carrying,\" it says, in a voice that seems to come from slightly behind where it's standing. \"Are you interested in a transaction?\"",
+    "options": [
+      {
+        "label": "Offer stamina for invisibility",
+        "cost": {
+          "type": "sp",
+          "amount": 40
+        },
+        "reward": {
+          "type": "effect",
+          "effect": "invisible",
+          "duration": 30
+        },
+        "outcome": "It reaches forward and takes something from you that you cannot name — a weight you hadn't noticed until its absence. In exchange, it drapes something else over you: a quality of unseeing, of negative presence. For a time, the dungeon will look through you."
+      },
+      {
+        "label": "Ask what it collects exactly",
+        "cost": null,
+        "reward": {
+          "type": "message"
+        },
+        "outcome": "\"Small things. Regrets about turns not taken. Certainties that have gone stale. The memory of a face you've almost lost.\" It seems to consider. \"I do not take anything important. Only what has already begun to cost more than it's worth.\""
+      },
+      {
+        "label": "Refuse and walk away",
+        "cost": null,
+        "reward": null,
+        "outcome": "\"As you wish.\" It does not move to stop you. It simply returns to the wall, and the wall accepts it without argument. You do not look back, but you are certain, completely certain, that nothing follows you."
+      }
+    ]
+  },
+  {
+    "tag": "flv_food_vendor_dungeon",
+    "name": "Bramble the Vendor",
+    "symbol": "@",
+    "color": [
+      200,
+      160,
+      80
+    ],
+    "min_level": 21,
+    "max_level": 36,
+    "text": "A heavyset halfling has set up a small cookfire in a wide junction, with something genuinely savory simmering in a pot. In a dungeon. In a pot. He stirs it cheerfully. \"Before you ask: yes, I have a permit. No, I won't tell you who issued it. Yes, it smells as good as it looks. You want some or not?\"",
+    "options": [
+      {
+        "label": "Buy a bowl (fills you up)",
+        "cost": {
+          "type": "gold",
+          "amount": 40
+        },
+        "reward": {
+          "type": "sp_restore",
+          "amount": 45
+        },
+        "outcome": "It is, genuinely, excellent. Rich, well-seasoned, served in a chipped but clean bowl. You eat it standing and feel almost civilized. \"Good recipe,\" you manage. \"Family secret,\" he says, and winks. \"It's mushrooms. Everything down here is mushrooms.\""
+      },
+      {
+        "label": "Buy extra provisions",
+        "cost": {
+          "type": "gold",
+          "amount": 60
+        },
+        "reward": {
+          "type": "random_item",
+          "category": "food"
+        },
+        "outcome": "He packs a portion into a waxed cloth bundle with professional efficiency. \"Keeps two days, three if you don't think about it too hard.\" He tucks a small herb packet in with it. \"For flavor. Even emergencies deserve flavor.\""
+      },
+      {
+        "label": "\"Just enjoying the smell.\"",
+        "cost": null,
+        "reward": null,
+        "outcome": "\"Free of charge,\" he says magnanimously. You stand there for a moment longer than strictly necessary, and he doesn't rush you. Some kindnesses are very small and very important."
+      }
+    ]
+  },
+  {
+    "tag": "flv_trapped_spirit_mason",
+    "name": "Weeping Mason",
+    "symbol": "@",
+    "color": [
+      160,
+      200,
+      200
+    ],
+    "min_level": 42,
+    "max_level": 58,
+    "text": "A translucent figure kneels beside a crumbling wall, pressing ghostly hands against the stone as if trying to repair it. He doesn't notice you at first. \"Forty years,\" he murmurs. \"Forty years and the mortar still won't hold.\" He built this section of the dungeon in life and cannot leave until it's perfect.",
+    "options": [
+      {
+        "label": "Help him find peace (offer mana)",
+        "cost": {
+          "type": "mp",
+          "amount": 15
+        },
+        "reward": {
+          "type": "effect",
+          "effect": "shielded",
+          "duration": 35
+        },
+        "outcome": "You channel a little magic into the ancient stones. They glow briefly, warm and gold. The mason stares at his repaired section with trembling hands, then slowly dissolves into the air, weeping with relief. As he goes, he wraps something protective around you — the pride of a craftsman, made into a ward."
+      },
+      {
+        "label": "Ask him about the dungeon layout",
+        "cost": null,
+        "reward": {
+          "type": "message"
+        },
+        "outcome": "He looks up, startled. \"You can see me?\" He tells you haltingly of a hidden passage three levels down, a reservoir room the architects kept off the maps, and a guardian they built the dungeon around rather than disturb. He seems lighter for having told someone."
+      },
+      {
+        "label": "Leave him to his grief",
+        "cost": null,
+        "reward": null,
+        "outcome": "You walk past quietly. Behind you, the sound of his murmuring fades — \"forty years, forty years\" — until the dungeon swallows it whole."
+      }
+    ]
+  },
+  {
+    "tag": "flv_mad_cartographer",
+    "name": "Mad Cartographer",
+    "symbol": "@",
+    "color": [
+      200,
+      180,
+      120
+    ],
+    "min_level": 43,
+    "max_level": 57,
+    "text": "A thin man in ink-stained robes crouches over an enormous map that covers three flagstones. He is drawing rooms that don't exist yet and corridors that spiral in impossible directions. \"Ah, a subject!\" he cries without looking up. \"Tell me — when you entered level forty-three, did the stairs lean left or right? This is critically important and I have been arguing with myself about it for six weeks.\"",
+    "options": [
+      {
+        "label": "Buy his map (questionable accuracy)",
+        "cost": {
+          "type": "gold",
+          "amount": 150
+        },
+        "reward": {
+          "type": "effect",
+          "effect": "clairvoyant",
+          "duration": 25
+        },
+        "outcome": "He rolls up a section of map and thrusts it at you. Half the rooms are labeled things like \"HERE BE PHILOSOPHY\" and \"PROBABLY FINE.\" But the main corridors are drawn with uncanny precision, and studying them grants you an odd spatial awareness that lingers for some time."
+      },
+      {
+        "label": "Help him with measurements (spend SP)",
+        "cost": {
+          "type": "sp",
+          "amount": 20
+        },
+        "reward": {
+          "type": "random_item",
+          "category": "scroll"
+        },
+        "outcome": "You spend an exhausting hour pacing corridors while he takes notes at baffling speed. \"Excellent, excellent! I knew it leaned!\" In gratitude he presses a scroll into your hands — one of his own annotated copies of something arcane. \"Don't read the margin notes,\" he adds. \"I was going through something.\""
+      },
+      {
+        "label": "\"I have places to be.\"",
+        "cost": null,
+        "reward": null,
+        "outcome": "\"Yes, yes, of course,\" he mutters, already ignoring you. As you leave you glance back and notice he has added you to the map — a tiny figure labeled \"unhelpful traveler, probably lost.\""
+      }
+    ]
+  },
+  {
+    "tag": "flv_bottled_constellation",
+    "name": "Star Merchant",
+    "symbol": "@",
+    "color": [
+      100,
+      130,
+      220
+    ],
+    "min_level": 44,
+    "max_level": 60,
+    "text": "A small, delicate figure sits behind a fold-out table displaying glass bottles, each one containing a swirling cluster of light — constellations, captured and miniaturized. \"Genuine Ursae Majoris, never used,\" the figure says in a voice like wind chimes. \"The Pleiades, slightly incomplete. And this one — I don't know what it is. It followed me home.\"",
+    "options": [
+      {
+        "label": "Buy the unknown constellation",
+        "cost": {
+          "type": "gold",
+          "amount": 180
+        },
+        "reward": {
+          "type": "random_item",
+          "category": "wand"
+        },
+        "outcome": "The moment the bottle leaves the merchant's hands, it uncorks itself. Light pours out and coalesces into something solid — a wand of starlight, pulsing with a frequency that matches no known school of magic. The merchant watches it go with what might be relief."
+      },
+      {
+        "label": "Buy the Pleiades bottle (blessing)",
+        "cost": {
+          "type": "gold",
+          "amount": 120
+        },
+        "reward": {
+          "type": "effect",
+          "effect": "blessed",
+          "duration": 45
+        },
+        "outcome": "The seven sister-stars swirl around you as the bottle opens, each one touching your skin before ascending through the ceiling as if it were open sky. You feel watched over. Fortunate. Like something good is waiting just ahead."
+      },
+      {
+        "label": "Just browse. Move on.",
+        "cost": null,
+        "reward": null,
+        "outcome": "\"No pressure,\" the merchant says warmly. \"The stars have waited this long.\" One of the bottles glows a little brighter as you walk away, as if wishing you luck."
+      }
+    ]
+  },
+  {
+    "tag": "flv_disguised_hermes",
+    "name": "Swift Stranger",
+    "symbol": "@",
+    "color": [
+      220,
+      200,
+      100
+    ],
+    "min_level": 45,
+    "max_level": 60,
+    "text": "A young man leans against the wall with his arms crossed, wearing sandals with small feathers at the ankle — odd footwear for a dungeon. He is grinning like he knows a joke that hasn't been told yet. \"I left something for you back there,\" he says, jerking a thumb over his shoulder. \"Probably. Or I will have. Time gets slippery down here. Want to make a trade?\"",
+    "options": [
+      {
+        "label": "Trade food for his gift",
+        "cost": {
+          "type": "food"
+        },
+        "reward": {
+          "type": "effect",
+          "effect": "hasted",
+          "duration": 50
+        },
+        "outcome": "He takes the food, sniffs it approvingly, and flicks one of the feathers from his sandal at you. It dissolves into your boots the moment it lands. Your feet feel impossibly light — each step launches you further than it should. He's already gone when you turn to thank him."
+      },
+      {
+        "label": "Ask what he left behind",
+        "cost": null,
+        "reward": {
+          "type": "message"
+        },
+        "outcome": "He taps his nose. \"Couldn't say exactly. Something useful. Something small. Keep your eyes open at crossroads — I always leave things at crossroads.\" He winks and takes a step sideways through solid stone."
+      },
+      {
+        "label": "Decline the trade",
+        "cost": null,
+        "reward": null,
+        "outcome": "\"Fair enough,\" he says, not at all offended. \"You're the careful type. I respect that. Mostly.\" He saunters off whistling something that sounds like it's from a song not yet written."
+      }
+    ]
+  },
+  {
+    "tag": "flv_echo_child",
+    "name": "Echo Child",
+    "symbol": "@",
+    "color": [
+      200,
+      210,
+      230
+    ],
+    "min_level": 41,
+    "max_level": 55,
+    "text": "A small figure stands at the end of the corridor — a child, you think, until you realize it has no face, only a smooth oval that reflects your expression back at you. It raises a hand in greeting. You raise yours first, you realize. It copies everything you do, a half-second later, and it is offering you something in its palm.",
+    "options": [
+      {
+        "label": "Accept what it offers (pay HP)",
+        "cost": {
+          "type": "hp",
+          "amount": 12
+        },
+        "reward": {
+          "type": "random_item",
+          "category": "accessory"
+        },
+        "outcome": "You reach out. It reaches out. Your hand passes through its and comes back holding something that wasn't there before — a small accessory that hums with reflected purpose. The child steps backward and folds into the wall like a shadow at noon. Your hand aches where it passed through."
+      },
+      {
+        "label": "Mimic it back",
+        "cost": null,
+        "reward": {
+          "type": "effect",
+          "effect": "invisible",
+          "duration": 20
+        },
+        "outcome": "You match its every gesture perfectly. It tilts its head — you tilt yours. It steps left — you step left. After a long moment, it seems satisfied. It presses the empty space where its face should be, and suddenly you understand: it has shown you how to be unseen. The effect lasts only so long, but it's enough."
+      },
+      {
+        "label": "Back away slowly",
+        "cost": null,
+        "reward": null,
+        "outcome": "You retreat. It retreats, mirroring you. When you turn a corner it is gone. You check over your shoulder three times more than usual for the next hour."
+      }
+    ]
+  },
+  {
+    "tag": "flv_alchemist_hermit",
+    "name": "Reclusive Alchemist",
+    "symbol": "@",
+    "color": [
+      150,
+      200,
+      140
+    ],
+    "min_level": 41,
+    "max_level": 56,
+    "text": "A hunched figure in a leather apron covered in burn holes squints at you from behind a portable workbench absolutely cluttered with bubbling vials. \"Don't touch that. Or that. Especially not that,\" she says before you've moved at all. \"I've been down here seven years refining the formula for drinkable luck. I'm close. Very close. I just need a few more test subjects — volunteers only.\"",
+    "options": [
+      {
+        "label": "Volunteer as test subject (pay HP)",
+        "cost": {
+          "type": "hp",
+          "amount": 10
+        },
+        "reward": {
+          "type": "random_item",
+          "category": "potion"
+        },
+        "outcome": "She makes you drink something purple. You feel briefly like you are standing at the bottom of the ocean, then briefly like you are the ocean, then fine, actually. \"Seventy-three percent reduction in catastrophic outcomes,\" she announces triumphantly. She presses a finished potion into your hand. \"Control group.\""
+      },
+      {
+        "label": "Trade gold for two potions",
+        "cost": {
+          "type": "gold",
+          "amount": 160
+        },
+        "reward": {
+          "type": "random_item",
+          "category": "potion"
+        },
+        "outcome": "She huffs. \"Fine. Commerce. I suppose I need to eat eventually.\" She selects a vial with the expression of someone parting with a child, then hands it over. It glows a color that doesn't have a name. You suspect it will do something dramatic."
+      },
+      {
+        "label": "\"No experiments today, thank you.\"",
+        "cost": null,
+        "reward": null,
+        "outcome": "\"Coward,\" she says, but not unkindly. \"Come back if you change your mind. I'll be here. I'm always here.\" She says this with a serenity that is somehow more unsettling than if she'd said it with despair."
+      }
+    ]
+  },
+  {
+    "tag": "flv_stone_singer",
+    "name": "Stone Singer",
+    "symbol": "@",
+    "color": [
+      170,
+      150,
+      130
+    ],
+    "min_level": 46,
+    "max_level": 60,
+    "text": "You hear the music before you see her — a deep resonant hum that makes the walls vibrate sympathetically. A woman with stone-grey skin and eyes like polished obsidian sits in a carved niche, singing to the dungeon itself. The stones seem to lean in to listen. She pauses when she sees you. \"A living one. It's been so long. Do you want to hear a song?\"",
+    "options": [
+      {
+        "label": "Ask for a song of strength",
+        "cost": {
+          "type": "gold",
+          "amount": 100
+        },
+        "reward": {
+          "type": "effect",
+          "effect": "regenerating",
+          "duration": 40
+        },
+        "outcome": "She sings in a frequency you feel in your bones rather than hear with your ears. The sound knits something inside you — not wounds exactly, but weariness, old damage, the slow erosion of the dungeon's weight. You walk away standing slightly straighter, your body quietly repairing itself."
+      },
+      {
+        "label": "Listen for free",
+        "cost": null,
+        "reward": {
+          "type": "sp_restore",
+          "amount": 30
+        },
+        "outcome": "She sings anyway — a slow, ancient melody about a mountain that watched a city rise and fall. When she finishes, the silence feels full rather than empty. You realize you're no longer tired. The song did something for you that sleep hadn't managed."
+      },
+      {
+        "label": "Keep moving",
+        "cost": null,
+        "reward": null,
+        "outcome": "She doesn't call after you. But her song follows you down three corridors, fading so slowly you aren't sure when it stops."
+      }
+    ]
+  },
+  {
+    "tag": "flv_false_merchant_goblin",
+    "name": "\"Legitimate\" Merchant",
+    "symbol": "g",
+    "color": [
+      120,
+      180,
+      80
+    ],
+    "min_level": 41,
+    "max_level": 54,
+    "text": "A goblin in an oversized merchant's coat has set up a stall using two skeletons as display racks. His wares are labeled in large, confident handwriting: \"DEFINITELY NOT CURSED RING,\" \"POTION (PROBABLY GOOD),\" and \"HAT (BELONGED TO SOMEONE ELSE, NOW YOURS).\" \"Welcome to Grix's Emporium of Totally Fine Items!\" he announces. \"Everything one hundred percent legal!\"",
+    "options": [
+      {
+        "label": "Buy the \"Definitely Not Cursed\" item",
+        "cost": {
+          "type": "gold",
+          "amount": 110
+        },
+        "reward": {
+          "type": "random_item",
+          "category": "accessory"
+        },
+        "outcome": "Grix takes your gold with suspicious speed. The item turns out to be... fine, actually. Genuinely fine. You inspect it carefully for curses and find none. Grix watches your confusion with poorly concealed amusement. \"Is being honest about dishonesty,\" he says philosophically, \"still dishonest?\""
+      },
+      {
+        "label": "Buy the Probably Good Potion",
+        "cost": {
+          "type": "gold",
+          "amount": 80
+        },
+        "reward": {
+          "type": "random_item",
+          "category": "potion"
+        },
+        "outcome": "\"Excellent choice,\" Grix says. \"I tasted it myself. Three times. The last two times were to check.\" The potion sloshes with something enthusiastic. You pocket it, fairly confident that \"probably good\" is better odds than most things in this dungeon."
+      },
+      {
+        "label": "\"I don't trust you.\"",
+        "cost": null,
+        "reward": null,
+        "outcome": "Grix puts a hand to his chest, wounded. \"Nobody trusts Grix,\" he says sadly. \"And yet Grix is here. Every day. With his mostly fine items. For the ungrateful.\" He resumes polishing a skull with his sleeve as you leave."
+      }
+    ]
+  },
+  {
+    "tag": "flv_time_lost_soldier",
+    "name": "Lost Soldier",
+    "symbol": "@",
+    "color": [
+      160,
+      140,
+      110
+    ],
+    "min_level": 43,
+    "max_level": 58,
+    "text": "A soldier in armor two centuries out of fashion stands at attention in the middle of the corridor, facing a direction that is neither toward nor away from anything. \"Halt,\" he says, without heat. \"These halls are under the protection of King Aldric the Fourth.\" He searches your face. \"You don't know that name. How long have I been standing here?\"",
+    "options": [
+      {
+        "label": "Tell him the truth gently",
+        "cost": null,
+        "reward": {
+          "type": "message"
+        },
+        "outcome": "You tell him, as carefully as you can, that King Aldric the Fourth died two hundred years ago, that his kingdom has a different name now, that the war he was guarding against ended long before his grandchildren were born. He is quiet for a long time. \"Then I have kept my post well,\" he finally says. He salutes you with tremendous dignity and walks away into the dark."
+      },
+      {
+        "label": "Pay him the soldier's tribute (gold)",
+        "cost": {
+          "type": "gold",
+          "amount": 130
+        },
+        "reward": {
+          "type": "effect",
+          "effect": "shielded",
+          "duration": 30
+        },
+        "outcome": "You press coins into his gauntleted hand — the gesture of an officer paying a soldier's due. He straightens further, somehow. \"King's blessing upon you, traveler.\" He draws a symbol in the air, and you feel it settle around you like plate armor that weighs nothing."
+      },
+      {
+        "label": "Walk around him quietly",
+        "cost": null,
+        "reward": null,
+        "outcome": "He doesn't stop you. He seems to have already returned to whatever internal world he occupies between visitors. You glance back from the corner. He is still there, still at attention, still facing nothing."
+      }
+    ]
+  },
+  {
+    "tag": "flv_dream_weaver",
+    "name": "Dream Weaver",
+    "symbol": "@",
+    "color": [
+      190,
+      160,
+      220
+    ],
+    "min_level": 47,
+    "max_level": 60,
+    "text": "The figure ahead of you is weaving something from threads of silver light that seem to come from nowhere. \"Dreams,\" she explains before you ask. \"They float down here when people sleep above. I collect them, make things. Would you like to trade one of yours? You won't miss it. Probably.\"",
+    "options": [
+      {
+        "label": "Trade a dream (pay MP)",
+        "cost": {
+          "type": "mp",
+          "amount": 12
+        },
+        "reward": {
+          "type": "random_item",
+          "category": "scroll"
+        },
+        "outcome": "She reaches into your mind with two fingers — the sensation is cold and not unpleasant — and extracts something shimmering. She holds it up to her eyes. \"Oh, this is a good one. You dreamed of flying.\" She adds it to her loom and hands you a scroll woven from finished dream-thread. You don't feel the loss, but you notice later that you can't quite remember what flight felt like."
+      },
+      {
+        "label": "Commission a dream of strength (pay gold)",
+        "cost": {
+          "type": "gold",
+          "amount": 175
+        },
+        "reward": {
+          "type": "hp_restore",
+          "amount": 35
+        },
+        "outcome": "She weaves quickly, her fingers blurring, and presses the finished piece against your forehead. You experience three seconds of a dream: you are whole, healed, standing in sunlight. When you open your eyes, some of that wholeness has stayed behind in your body. She smiles. \"I do good work.\""
+      },
+      {
+        "label": "Keep your dreams to yourself",
+        "cost": null,
+        "reward": null,
+        "outcome": "\"Wise,\" she says, without irony. \"Dreams are worth more than most people realize. Hold onto yours.\" She turns back to her loom, and the threads of light continue their slow, luminous dance."
+      }
+    ]
+  },
+  {
+    "tag": "flv_philosophical_fungus",
+    "name": "Thinking Mushroom",
+    "symbol": "M",
+    "color": [
+      160,
+      200,
+      160
+    ],
+    "min_level": 41,
+    "max_level": 56,
+    "text": "You nearly step on it before you realize it's thinking. The mushroom — enormous, bioluminescent, pulsing gently with green light — projects words directly into your mind in a calm, measured voice. \"I have been considering the nature of courage for forty-three years,\" it tells you. \"You appear to be practicing it. I find this interesting. Shall we discuss the matter?\"",
+    "options": [
+      {
+        "label": "Engage in philosophical debate (spend SP)",
+        "cost": {
+          "type": "sp",
+          "amount": 25
+        },
+        "reward": {
+          "type": "stat",
+          "stat": "INT",
+          "amount": 1
+        },
+        "outcome": "You sit. You argue. You defend positions you didn't know you held and abandon ones you thought were certain. The mushroom is patient, precise, and devastatingly logical. Three hours pass in what feels like thirty minutes. When you stand to leave, your mind feels permanently restructured — sharper, more precise, more dangerous to itself."
+      },
+      {
+        "label": "Ask it about the dungeon",
+        "cost": null,
+        "reward": {
+          "type": "message"
+        },
+        "outcome": "\"The dungeon is a question,\" it says. \"The answer is whoever survives it.\" You press for more practical information. It tells you, somewhat reluctantly, about a chamber two levels down where the ceiling is made of compressed memory — touch it and you see the dungeon as it was when it was built, which is useful for finding things that were hidden in the original design."
+      },
+      {
+        "label": "Nod politely and keep moving",
+        "cost": null,
+        "reward": null,
+        "outcome": "\"Understandable,\" the mushroom projects, without resentment. \"Courage without reflection is still courage. I wish you well.\" The green glow fades behind you as you walk on, and you find yourself slightly regretting the conversation you didn't have."
+      }
+    ]
+  },
+  {
+    "tag": "flv_ghost_librarian_junior",
+    "name": "Cataloguing Spirit",
+    "symbol": "@",
+    "color": [
+      180,
+      200,
+      220
+    ],
+    "min_level": 44,
+    "max_level": 59,
+    "text": "A spectral figure is affixing tiny labels to the dungeon walls — to sconces, to cracks in stone, to a confused rat that sits very still under the attention. The labels read things like: \"WALL (LOAD-BEARING)\", \"TORCH SCONCE, EMPTY, CIRCA UNKNOWN\", \"RAT (ALIVE, CURRENTLY).\" \"Oh!\" the spirit says, producing a quill. \"Adventurer! Encountered! Are you available to be catalogued?\"",
+    "options": [
+      {
+        "label": "Submit to cataloguing (costs time/SP)",
+        "cost": {
+          "type": "sp",
+          "amount": 15
+        },
+        "reward": {
+          "type": "random_item",
+          "category": "scroll"
+        },
+        "outcome": "It takes extremely detailed notes. It asks your name, origin, preferred combat stance, last meal, and what you want to be remembered for. In exchange, it presses a scroll into your hands — a copy of its own dungeon index, annotated with everything it has observed and occasionally noted as \"suspicious\" or \"structurally concerning.\""
+      },
+      {
+        "label": "Bribe it for information (gold)",
+        "cost": {
+          "type": "gold",
+          "amount": 120
+        },
+        "reward": {
+          "type": "effect",
+          "effect": "clairvoyant",
+          "duration": 20
+        },
+        "outcome": "It takes your gold, labels it immediately (\"COIN, GOLD, PROVENANCE: ADVENTURER, WARM\"), and then shares its catalogued knowledge of the surrounding floors with you — a comprehensive mental map that gives you brief but useful foresight about what lies ahead."
+      },
+      {
+        "label": "\"I don't want to be catalogued.\"",
+        "cost": null,
+        "reward": null,
+        "outcome": "\"Noted!\" it says, writing furiously. You leave. Behind you, you can hear the faint sound of labeling continuing. Somewhere on these walls there is now a small sign that reads: \"ADVENTURER, UNCATALOGUED, UNCOOPERATIVE.\""
+      }
+    ]
+  },
+  {
+    "tag": "flv_sorrow_lantern",
+    "name": "Lantern of Regret",
+    "symbol": "L",
+    "color": [
+      220,
+      160,
+      80
+    ],
+    "min_level": 45,
+    "max_level": 58,
+    "text": "A lantern hangs at chest height in the middle of an empty corridor, hanging from nothing. Inside it, instead of flame, burns a small person — human-shaped, the size of your thumb, walking in tight circles and occasionally sitting down with its head in its hands. \"Are you going to free me,\" it asks, muffled by glass, \"or just stare like the others?\"",
+    "options": [
+      {
+        "label": "Free it (pay HP, unknown consequence)",
+        "cost": {
+          "type": "hp",
+          "amount": 15
+        },
+        "reward": {
+          "type": "effect",
+          "effect": "blessed",
+          "duration": 50
+        },
+        "outcome": "You break the glass with your palm — the cut is sharp and the tiny figure pours out like warm light, expanding as it goes until it's gone, dissolved into the air of the dungeon. \"Thank you,\" says the air, softly, from everywhere at once. Something like gratitude settles around you, and the dungeon feels, briefly, like it is rooting for you."
+      },
+      {
+        "label": "Ask what it regrets",
+        "cost": null,
+        "reward": {
+          "type": "message"
+        },
+        "outcome": "It sits down again and thinks. \"I was a wish,\" it finally says. \"Someone made me wrong — wished for something too greedy, too large, and I came out sideways. What they wanted was love. What they got was everything except it.\" It pauses. \"Don't wish for everything. Wish for the one thing.\""
+      },
+      {
+        "label": "Leave the lantern where it hangs",
+        "cost": null,
+        "reward": null,
+        "outcome": "\"Understandable,\" it says, without bitterness. \"This is usually how it goes.\" It resumes its small, sad circles. The lantern grows fainter as you walk away, until you can no longer tell whether the darkness behind you is shadow or simply the absence of light."
+      }
+    ]
+  },
+  {
+    "tag": "flv_disguised_dionysus",
+    "name": "Merry Wanderer",
+    "symbol": "@",
+    "color": [
+      200,
+      80,
+      120
+    ],
+    "min_level": 46,
+    "max_level": 60,
+    "text": "A man in grape-leaf garlands sits on a barrel of something that definitely wasn't here before, laughing at nothing, his eyes bright as wine held up to sunlight. The dungeon around him seems fractionally more joyful — even the torches burn warmer. \"Excellent timing!\" he announces. \"I've been waiting for someone cheerless enough to need cheering. Sit down. Drink. It's fine. It's all fine, actually.\"",
+    "options": [
+      {
+        "label": "Share a drink with him (pay food)",
+        "cost": {
+          "type": "food"
+        },
+        "reward": {
+          "type": "effect",
+          "effect": "regenerating",
+          "duration": 45
+        },
+        "outcome": "The drink tastes like three different seasons happening at once. He watches you drink it with a smile of enormous satisfaction. \"There. You see? The dungeon is still terrible but you are now full of warmth. These are not unrelated facts.\" Your body begins knitting itself together with strange, vinous enthusiasm."
+      },
+      {
+        "label": "Accept his toast (free, but risky)",
+        "cost": null,
+        "reward": {
+          "type": "hp_restore",
+          "amount": 25
+        },
+        "outcome": "He raises his cup to you and simply says \"To surviving,\" with complete sincerity. You don't drink anything but somehow you feel better anyway. He seems unsurprised. \"Some blessings,\" he says, \"don't need your cooperation.\""
+      },
+      {
+        "label": "\"I don't drink with strangers.\"",
+        "cost": null,
+        "reward": null,
+        "outcome": "He sighs the sigh of someone who has been hearing this since the world was young. \"Every stranger,\" he says, \"was a friend you hadn't met yet. And every friend was once a stranger you decided to trust anyway. But.\" He waves graciously. \"Go. Be careful. Drink water at minimum.\""
+      }
+    ]
+  },
+  {
+    "tag": "flv_mirror_walker",
+    "name": "Mirror Walker",
+    "symbol": "@",
+    "color": [
+      200,
+      200,
+      200
+    ],
+    "min_level": 48,
+    "max_level": 60,
+    "text": "Your reflection is walking toward you from a corridor with no mirror. It wears your face, your posture, your exact equipment — but its eyes are silver, and it moves with a deliberateness that you, frankly, lack. \"I've come from the other side of you,\" it says. \"I know what you're afraid of. More importantly, I know how to fix it.\"",
+    "options": [
+      {
+        "label": "Let it strengthen you (pay HP)",
+        "cost": {
+          "type": "hp",
+          "amount": 18
+        },
+        "reward": {
+          "type": "stat",
+          "stat": "CON",
+          "amount": 1
+        },
+        "outcome": "It presses its palm to your chest — its hand is cold and smooth as glass. You feel something rearranged inside you: not added, but reinforced. As if someone had gone through your foundations and replaced the uncertain stones with certain ones. The reflection steps backward and vanishes, and you are left standing in a corridor with no mirror and a body that feels, quietly, harder to break."
+      },
+      {
+        "label": "Ask it what you're afraid of",
+        "cost": null,
+        "reward": {
+          "type": "message"
+        },
+        "outcome": "It tells you. It's correct. You stand with that knowledge for a moment, and the reflection watches you with something that might be compassion if reflections could feel compassion. \"Knowing it doesn't fix it,\" it says. \"But it helps you see it coming.\" Then it turns and walks back into a wall."
+      },
+      {
+        "label": "Refuse to engage with it",
+        "cost": null,
+        "reward": null,
+        "outcome": "You look away. You keep walking. For a few corridors afterward you can feel it watching your back — not malevolently, but the way you sometimes catch yourself wondering what you could have been if you'd made different choices."
+      }
+    ]
+  },
+  {
+    "tag": "flv_crying_giant",
+    "name": "Grieving Giant",
+    "symbol": "G",
+    "color": [
+      140,
+      160,
+      180
+    ],
+    "min_level": 41,
+    "max_level": 55,
+    "text": "The corridor widens dramatically to accommodate a giant sitting with its knees pulled to its chest, weeping into its enormous hands. The tears pool on the floor and small fish swim in them — fish that should not exist here, glowing faintly. \"She said she'd come back,\" the giant says, without looking up. \"That was before the dungeon was built.\"",
+    "options": [
+      {
+        "label": "Sit with it in silence (spend SP)",
+        "cost": {
+          "type": "sp",
+          "amount": 20
+        },
+        "reward": {
+          "type": "mp_restore",
+          "amount": 30
+        },
+        "outcome": "You sit on the floor beside it, in the shallow water of its grief, and say nothing. It cries for a while longer, then grows quiet. \"You're still here,\" it says, surprised. \"Most things run.\" It looks at you with enormous, wet eyes and breathes out something that feels like peace — and some of that peace settles into you like a cool wind."
+      },
+      {
+        "label": "Give it something from your pack (food)",
+        "cost": {
+          "type": "food"
+        },
+        "reward": {
+          "type": "effect",
+          "effect": "shielded",
+          "duration": 35
+        },
+        "outcome": "You offer the food upward like a small, absurd gift. The giant stares at it, then at you, then cups it in one hand and eats it with enormous, careful delicacy. \"Thank you,\" it says. \"She would have done that.\" It tucks one of the glowing fish into your pocket — gently. The fish dissolves into protective light."
+      },
+      {
+        "label": "Carefully wade past",
+        "cost": null,
+        "reward": null,
+        "outcome": "You pick your way through the shallow tears, the small glowing fish parting around your boots. The giant doesn't notice, or doesn't mind. You carry the image of it for the rest of the level — all that grief, in the dark, with no one left to witness it."
+      }
+    ]
+  },
+  {
+    "tag": "flv_wandering_oracle_bone",
+    "name": "Oracle Bones Merchant",
+    "symbol": "@",
+    "color": [
+      220,
+      200,
+      160
+    ],
+    "min_level": 43,
+    "max_level": 57,
+    "text": "An elderly woman with ink-stained fingers sits behind a low table bearing dozens of small bones, each carved with symbols. She doesn't look up when you approach. \"Shang oracle bones,\" she says. \"The real thing, not copies. I ask a question, I heat the bone, the crack gives the answer. You want to know something? The bones charge their own price.\"",
+    "options": [
+      {
+        "label": "Ask about treasure (pay gold)",
+        "cost": {
+          "type": "gold",
+          "amount": 130
+        },
+        "reward": {
+          "type": "random_item",
+          "category": "food"
+        },
+        "outcome": "She heats a bone over a small flame. The crack runs diagonal-right. \"Favorable,\" she nods. \"Something of value, not far. Something useful for sustaining the journey, not a weapon or a ward.\" She slides a small package across the table. The bones have already provided."
+      },
+      {
+        "label": "Ask about danger ahead (pay MP)",
+        "cost": {
+          "type": "mp",
+          "amount": 10
+        },
+        "reward": {
+          "type": "effect",
+          "effect": "clairvoyant",
+          "duration": 15
+        },
+        "outcome": "She heats a different bone — older, darker. The crack branches twice. \"Two dangers. One you can see, one beneath it. Don't fight the visible one first.\" The smoke from the bone curls into your eyes, and for a while you see the dungeon with the particular clarity of having been warned properly."
+      },
+      {
+        "label": "Leave the bones unasked",
+        "cost": null,
+        "reward": null,
+        "outcome": "She finally looks up as you turn to go. \"The bones don't mind,\" she says. \"They've been patient for three thousand years. A few more centuries makes no difference to them.\""
+      }
+    ]
+  },
+  {
+    "tag": "flv_spectral_librarian",
+    "name": "Spectral Librarian",
+    "symbol": "@",
+    "color": [
+      180,
+      200,
+      255
+    ],
+    "min_level": 61,
+    "max_level": 75,
+    "text": "A translucent figure in ink-stained robes drifts toward you, cradling a ledger that bleeds ghostly light. \"The Catalogue of Lost Knowledge requires a contribution,\" she murmurs, her voice the rustle of turning pages. \"A scroll for a scroll — the old librarian's exchange.\"",
+    "options": [
+      {
+        "label": "Surrender a scroll for her catalogue",
+        "cost": {
+          "type": "random_item",
+          "category": "scroll"
+        },
+        "reward": {
+          "type": "effect",
+          "effect": "clairvoyant",
+          "duration": 40
+        },
+        "outcome": "She accepts the scroll with both hands, pressing it to her chest as though it were a lost child returned home. She breathes the knowledge into you — maps, sigils, the shape of every chamber ahead flooding your mind at once. Clairvoyance settles over you like a second sight."
+      },
+      {
+        "label": "Ask her what she is cataloguing",
+        "cost": null,
+        "reward": {
+          "type": "message"
+        },
+        "outcome": "\"Everything that was written and then forgotten,\" she says. \"Every hero's last letter. Every king's secret diary. The dungeon swallows knowledge as readily as it swallows lives.\" She drifts away before you can ask anything else."
+      },
+      {
+        "label": "Back away slowly",
+        "cost": null,
+        "reward": null,
+        "outcome": "She does not pursue you, only watches with patient, luminous eyes. \"Another time, then,\" she whispers. The ledger snaps shut, and she fades between the stones."
+      }
+    ]
+  },
+  {
+    "tag": "flv_time_lost_centurion",
+    "name": "Time-Lost Centurion",
+    "symbol": "@",
+    "color": [
+      200,
+      160,
+      80
+    ],
+    "min_level": 63,
+    "max_level": 78,
+    "text": "A soldier in archaic armor stands at attention beside a crumbled pillar, his plume long since rotted to bare wire. He snaps a salute the moment he sees you. \"Traveler. I have held this post for — \" he pauses, counting on gauntleted fingers — \"some time. I have provisions I no longer require, if you can tell me: what year is it?\"",
+    "options": [
+      {
+        "label": "Give him a year (any year)",
+        "cost": null,
+        "reward": {
+          "type": "random_item",
+          "category": "food"
+        },
+        "outcome": "You name a year. He goes very still, then nods with the gravity of a man absorbing a great blow. \"I see. That is... considerably longer than I was told to expect.\" He presses his rations into your hands without ceremony, then turns back to face the corridor he has guarded for centuries."
+      },
+      {
+        "label": "Buy his old campaign maps (200 gold)",
+        "cost": {
+          "type": "gold",
+          "amount": 200
+        },
+        "reward": {
+          "type": "effect",
+          "effect": "clairvoyant",
+          "duration": 30
+        },
+        "outcome": "He brightens at the mention of gold — some things endure. The maps are ancient and use a coordinate system no living cartographer knows, but the dungeon layout bleeds through the ink regardless. Something in the old notations lights a path in your mind."
+      },
+      {
+        "label": "\"I cannot help you, soldier.\"",
+        "cost": null,
+        "reward": null,
+        "outcome": "He squares his jaw. \"Understood. Dismissed.\" He turns back to his post with mechanical precision, and you realize he will still be standing there long after you are gone."
+      }
+    ]
+  },
+  {
+    "tag": "flv_demigod_beggar",
+    "name": "Ragged Wanderer",
+    "symbol": "@",
+    "color": [
+      160,
+      120,
+      200
+    ],
+    "min_level": 65,
+    "max_level": 80,
+    "text": "A filthy man sits against the wall eating something unidentifiable, his sandals held together with what appears to be divine light. He looks up at you with eyes that are, disconcertingly, made of stars. \"Oi. Spare some food? Long way down here, and the catering is terrible.\"",
+    "options": [
+      {
+        "label": "Share your food generously",
+        "cost": {
+          "type": "food"
+        },
+        "reward": {
+          "type": "stat",
+          "stat": "CON",
+          "amount": 1
+        },
+        "outcome": "He eats with genuine pleasure and then stands — somehow taller than he was, the filth gone, the starlight in his eyes intensifying. \"You pass,\" he says simply, pressing two fingers to your sternum. Your body knits itself stronger at the touch. Your Constitution increases. He is gone before you can ask which god you just fed."
+      },
+      {
+        "label": "Offer gold instead (250 gold)",
+        "cost": {
+          "type": "gold",
+          "amount": 250
+        },
+        "reward": {
+          "type": "hp_restore",
+          "amount": 40
+        },
+        "outcome": "He stares at the coins, then at you. \"Not quite what I was after, but I appreciate the spirit.\" He pockets the gold and flicks a finger at your wounds. They close themselves with an almost irritated efficiency."
+      },
+      {
+        "label": "\"I need everything I have.\"",
+        "cost": null,
+        "reward": null,
+        "outcome": "\"Fair enough,\" he says cheerfully, returning to his mystery meal. \"Self-preservation is a virtue too. Mostly.\" You walk away with the uncomfortable feeling that you have just failed a test administered by someone who grades on a very long curve."
+      }
+    ]
+  },
+  {
+    "tag": "flv_ancient_guardian_chess",
+    "name": "The Brass Warden",
+    "symbol": "W",
+    "color": [
+      180,
+      140,
+      60
+    ],
+    "min_level": 61,
+    "max_level": 76,
+    "text": "An enormous construct of tarnished brass blocks the corridor, its chest cavity glowing with a banked furnace-light. Etched into its torso are the words: NONE SHALL PASS WITHOUT PROVING WORTH. A small slot in its palm holds a battered game board. \"CHALLENGER,\" it intones. \"DO YOU PLAY?\"",
+    "options": [
+      {
+        "label": "Play the Warden's game (30 SP)",
+        "cost": {
+          "type": "sp",
+          "amount": 30
+        },
+        "reward": {
+          "type": "random_item",
+          "category": "accessory"
+        },
+        "outcome": "The game is exhausting — the Warden plays with the patience of stone and the ruthlessness of mathematics. You win by the narrowest of margins, your hands shaking. The Warden reaches into a compartment in its own back and produces an accessory taken from a previous challenger. \"WORTHY,\" it announces, and steps aside."
+      },
+      {
+        "label": "Pay the toll instead (300 gold)",
+        "cost": {
+          "type": "gold",
+          "amount": 300
+        },
+        "reward": null,
+        "outcome": "The Warden considers your gold for a long moment. \"ACCEPTABLE. THE WARDEN HAS BILLS.\" It pockets the coins in a chest compartment that clinks with many others and lumbers aside without further comment."
+      },
+      {
+        "label": "Refuse and find another way",
+        "cost": null,
+        "reward": null,
+        "outcome": "The Warden watches you back away without malice. \"CHALLENGER DECLINES. NOTED IN THE RECORD.\" It taps an entry into a logbook chained to its wrist, and you wonder exactly how long that record goes back."
+      }
+    ]
+  },
+  {
+    "tag": "flv_prophet_of_the_abyss",
+    "name": "Prophet of the Abyss",
+    "symbol": "@",
+    "color": [
+      100,
+      80,
+      180
+    ],
+    "min_level": 66,
+    "max_level": 80,
+    "text": "A gaunt prophet kneels in a ring of guttering candles, muttering a prophecy that seems to loop and contradict itself endlessly. He raises his head when you approach, and his eyes are entirely black. \"I have seen your ending,\" he says. \"Would you like to know which one?\"",
+    "options": [
+      {
+        "label": "Pay to hear the prophecy (10 MP)",
+        "cost": {
+          "type": "mp",
+          "amount": 10
+        },
+        "reward": {
+          "type": "effect",
+          "effect": "clairvoyant",
+          "duration": 25
+        },
+        "outcome": "He leans close and speaks into your ear for a long time. Most of it is incomprehensible — nested riddles inside metaphors inside lies. But some part of your mind absorbs the signal beneath the noise, and for a while the dungeon ahead seems to hold no secrets from you."
+      },
+      {
+        "label": "Ask him about the dungeon's purpose",
+        "cost": null,
+        "reward": {
+          "type": "message"
+        },
+        "outcome": "\"The dungeon does not have a purpose,\" he says. \"The dungeon IS purpose. It is the question the world asks of everyone brave or foolish enough to descend. Whether the world accepts the answer — that is the mystery.\" He blows out every candle at once and vanishes."
+      },
+      {
+        "label": "\"I make my own fate.\"",
+        "cost": null,
+        "reward": null,
+        "outcome": "He smiles for the first time, and his teeth are wrong. \"Of course you do,\" he says warmly. \"That's exactly what the other ones said too.\" He returns to his muttering, and you walk on."
+      }
+    ]
+  },
+  {
+    "tag": "flv_ghost_soldier_post",
+    "name": "Ghost of Sergeant Vael",
+    "symbol": "@",
+    "color": [
+      160,
+      200,
+      220
+    ],
+    "min_level": 61,
+    "max_level": 74,
+    "text": "A translucent soldier in outdated militia uniform marches in a short loop at a crossroads, counting cadence under his breath. He seems unaware he is walking through a collapsed wall on every third pass. When you speak, he startles badly. \"Oh! A visitor. It has been — gods, it has been a while. Do you need directions? I know every inch of this place. Or I did.\"",
+    "options": [
+      {
+        "label": "Ask him for directions",
+        "cost": null,
+        "reward": {
+          "type": "effect",
+          "effect": "clairvoyant",
+          "duration": 20
+        },
+        "outcome": "He gives you a detailed briefing with the focused pride of a man who has had nothing to do for decades but memorize a map. Half the landmarks he cites no longer exist, but the bones of the layout burn themselves into your mind nonetheless. He salutes you crisply as you leave."
+      },
+      {
+        "label": "Gently tell him he has died",
+        "cost": null,
+        "reward": {
+          "type": "message"
+        },
+        "outcome": "He goes very quiet. He looks at his hands — at the wall he can see through them. \"I suspected,\" he says at last, with a soldier's careful lack of emotion. \"Thank you for saying so. I can stop counting cadence now, I suppose.\" He sits down at the crossroads and begins, slowly, to fade."
+      },
+      {
+        "label": "March on without disturbing him",
+        "cost": null,
+        "reward": null,
+        "outcome": "You slip past while he is on the far leg of his loop. You hear him counting behind you — one, two, three, four — until the darkness swallows the sound."
+      }
+    ]
+  },
+  {
+    "tag": "flv_discount_demigod_merchant",
+    "name": "Hermes (Probably)",
+    "symbol": "@",
+    "color": [
+      220,
+      200,
+      80
+    ],
+    "min_level": 62,
+    "max_level": 77,
+    "text": "A young man with winged sandals and a salesman's smile is arranging items on a floating table. \"Traveler! You look capable. Solvent, even. Today only — and I mean that, I have other deliveries — I am offering genuine divine-quality goods at frankly embarrassing prices. No questions about provenance.\"",
+    "options": [
+      {
+        "label": "Buy his \"premium\" wand (175 gold)",
+        "cost": {
+          "type": "gold",
+          "amount": 175
+        },
+        "reward": {
+          "type": "random_item",
+          "category": "wand"
+        },
+        "outcome": "The wand is, against all probability, exactly what he promised. You are not sure whether to feel relieved or suspicious. He counts the gold with practiced speed, tucks it into a bag that is definitely not large enough to hold it, and vanishes upward at a speed that sandals should not achieve."
+      },
+      {
+        "label": "Buy the mystery pouch (150 gold)",
+        "cost": {
+          "type": "gold",
+          "amount": 150
+        },
+        "reward": {
+          "type": "random_item",
+          "category": "potion"
+        },
+        "outcome": "\"Excellent taste,\" he says, and hands you a small pouch tied with a cord that ties itself. Inside is a potion of uncertain color and obvious potency. \"Satisfaction not guaranteed, but very likely,\" he adds, already halfway gone."
+      },
+      {
+        "label": "\"I wasn't born yesterday.\"",
+        "cost": null,
+        "reward": null,
+        "outcome": "He clutches his chest in theatrical injury. \"And here I thought savvy customers were my favorite. Turns out I lied.\" He folds his table away, gives you a wink that is somehow both mocking and respectful, and departs at speed."
+      }
+    ]
+  },
+  {
+    "tag": "flv_echo_of_dead_wizard",
+    "name": "The Lingering Echo",
+    "symbol": "@",
+    "color": [
+      140,
+      100,
+      200
+    ],
+    "min_level": 64,
+    "max_level": 79,
+    "text": "A figure composed entirely of slowly dispersing arcane notation flickers in the center of the corridor — the echo of a wizard who died mid-incantation. The echo loops: hand raised, mouth forming a word, then reset, raised again, the same word. It notices you and breaks the loop with visible effort. \"I require... a conduit. Brief. I have knowledge yet to spend.\"",
+    "options": [
+      {
+        "label": "Let the echo channel through you (15 HP)",
+        "cost": {
+          "type": "hp",
+          "amount": 15
+        },
+        "reward": {
+          "type": "mp_restore",
+          "amount": 60
+        },
+        "outcome": "The sensation is like holding a lightning bolt by the wrong end. Decades of arcane study pour through your nervous system in seconds, most of it incomprehensible, but the raw magical energy saturates you. The echo completes its word at last — a single syllable of great satisfaction — and disperses. Your mana swells with the residue."
+      },
+      {
+        "label": "Offer a scroll as a vessel instead",
+        "cost": {
+          "type": "random_item",
+          "category": "scroll"
+        },
+        "reward": {
+          "type": "random_item",
+          "category": "wand"
+        },
+        "outcome": "The echo examines the scroll with something like hope. It pours itself into the parchment in a cascade of luminous script. The scroll blackens and crumbles — used up — but in its place a wand assembles itself from notation and will, solid as steel, humming with the dead wizard's last intent."
+      },
+      {
+        "label": "Leave the echo in peace",
+        "cost": null,
+        "reward": null,
+        "outcome": "You step carefully around the looping figure. Behind you, the hand raises, the mouth forms the word, and resets. Raises. Resets. Some spells take longer to finish than their casters do."
+      }
+    ]
+  },
+  {
+    "tag": "flv_abyss_cartographer",
+    "name": "Cartographer Issek",
+    "symbol": "@",
+    "color": [
+      160,
+      180,
+      140
+    ],
+    "min_level": 61,
+    "max_level": 75,
+    "text": "A compact, intensely focused woman is pinning hand-drawn maps to the wall using a knife she does not look up from. \"Don't talk to me for thirty seconds,\" she says. Twenty-nine seconds later, she exhales and turns. \"Right. Issek. I map the deep floors. I have information. You look like you have things I could use.\"",
+    "options": [
+      {
+        "label": "Trade food for her maps",
+        "cost": {
+          "type": "food"
+        },
+        "reward": {
+          "type": "effect",
+          "effect": "clairvoyant",
+          "duration": 35
+        },
+        "outcome": "She takes the food without ceremony and eats it standing up, already rolling a map cylinder for you. \"Floors 65 through 80, approximate. Key features marked. Monsters marked where I survived long enough to mark them.\" The map's knowledge settles into your spatial memory like a gift."
+      },
+      {
+        "label": "Buy her composite survey (250 gold)",
+        "cost": {
+          "type": "gold",
+          "amount": 250
+        },
+        "reward": {
+          "type": "effect",
+          "effect": "clairvoyant",
+          "duration": 50
+        },
+        "outcome": "\"The premium edition,\" she says without irony, and produces a map that appears to have been annotated by six different people with six different opinions about which rooms were dangerous. The synthesis of all six floods your mind — an unusually complete picture of the depths ahead."
+      },
+      {
+        "label": "\"I prefer to discover things myself.\"",
+        "cost": null,
+        "reward": null,
+        "outcome": "She shrugs with the equanimity of someone who has heard this before. \"Most of the 'discover things myself' types don't make it back to update my maps.\" She turns back to her wall and pulls out another pin. \"Good luck, though. I mean that.\""
+      }
+    ]
+  },
+  {
+    "tag": "flv_djinn_in_a_bottle",
+    "name": "Something in a Bottle",
+    "symbol": "D",
+    "color": [
+      80,
+      200,
+      220
+    ],
+    "min_level": 66,
+    "max_level": 80,
+    "text": "A large bottle sits in the middle of the corridor, sealed with a wax stamp bearing a warning in three dead languages. It is rattling. A voice from inside says, with considerable dignity: \"I am aware of how this looks. I am also aware that you can hear me. I propose a negotiation.\"",
+    "options": [
+      {
+        "label": "Open the bottle",
+        "cost": {
+          "type": "hp",
+          "amount": 10
+        },
+        "reward": {
+          "type": "effect",
+          "effect": "hasted",
+          "duration": 40
+        },
+        "outcome": "The wax seal resists until it doesn't, scoring your hands. The djinn emerges as a column of pressurized wind and hangs in the air, composing itself. \"Thank you. That was embarrassing. A gift, for your trouble.\" It blows through you, and your body hums with speed you cannot quite contain."
+      },
+      {
+        "label": "Negotiate through the glass (150 gold)",
+        "cost": {
+          "type": "gold",
+          "amount": 150
+        },
+        "reward": {
+          "type": "mp_restore",
+          "amount": 50
+        },
+        "outcome": "You slide coins under the bottle's lip. The djinn inside makes a sound of elaborate exasperation. \"I cannot actually use gold in here. But I appreciate the gesture.\" It exhales a breath of pure arcane through the glass. Your mana replenishes itself through some mechanism you decline to examine."
+      },
+      {
+        "label": "Leave the bottle sealed",
+        "cost": null,
+        "reward": null,
+        "outcome": "\"Sensible,\" the bottle says. \"Genuinely. I have been in here a very long time and my temperament is not at its best. You made the correct call.\" The rattling resumes as you walk away."
+      }
+    ]
+  },
+  {
+    "tag": "flv_weeping_champion",
+    "name": "The Weeping Champion",
+    "symbol": "@",
+    "color": [
+      200,
+      180,
+      180
+    ],
+    "min_level": 63,
+    "max_level": 78,
+    "text": "A warrior in legendary armor sits with their back to a pillar, helm in their hands, weeping without apparent embarrassment. The armor bears the crest of a kingdom you have never heard of. They look up — red-eyed, formidable even in grief. \"Sorry. Ignore me. Unless — do you have anything to eat? I have been down here so long I have forgotten what bread tastes like.\"",
+    "options": [
+      {
+        "label": "Share your food",
+        "cost": {
+          "type": "food"
+        },
+        "reward": {
+          "type": "enchant_weapon",
+          "amount": 1
+        },
+        "outcome": "They eat slowly, and the weeping stops. \"Thank you. I mean it.\" They pull a whetstone from their pack and gesture at your weapon. \"Let me. I used to be a master of the blade, before — well. It is the least I can do.\" Their hands are sure and precise. Your weapon emerges sharper than it has ever been."
+      },
+      {
+        "label": "Ask what happened to their kingdom",
+        "cost": null,
+        "reward": {
+          "type": "message"
+        },
+        "outcome": "They tell you, and it takes a while. A kingdom gone to war over a philosophy, a war gone to ruin for a season's bad harvest, a ruin gone to legend in the time it took you to get here. \"I descended to find the answer,\" they say finally. \"I have forgotten the question.\" They put their helm back on."
+      },
+      {
+        "label": "Give them space and move on",
+        "cost": null,
+        "reward": null,
+        "outcome": "They nod, understanding immediately. \"Of course. The dungeon waits for no one's grief.\" They raise a hand in farewell. You carry the image of them a long time — armor still bright, eyes still red."
+      }
+    ]
+  },
+  {
+    "tag": "flv_mirror_of_past_self",
+    "name": "The Mirror Shade",
+    "symbol": "@",
+    "color": [
+      220,
+      220,
+      255
+    ],
+    "min_level": 70,
+    "max_level": 80,
+    "text": "The figure ahead looks exactly like you — or how you looked before the descent. Cleaner. Less scarred. It smiles with your face. \"You have come a long way,\" it says, in your own voice. \"I am what you left behind. I have been keeping it warm. Some of it you might want back.\"",
+    "options": [
+      {
+        "label": "Reach for what was lost (20 HP)",
+        "cost": {
+          "type": "hp",
+          "amount": 20
+        },
+        "reward": {
+          "type": "sp_restore",
+          "amount": 80
+        },
+        "outcome": "You press your hand to its chest. There is pain — not wound-pain, but the specific pain of remembering who you were before you knew what you know now. When you pull back, the shade is gone. But something has returned — a vigor, a readiness, the kind that only comes from knowing exactly what you are fighting for."
+      },
+      {
+        "label": "Reject the reflection",
+        "cost": null,
+        "reward": {
+          "type": "message"
+        },
+        "outcome": "The shade tilts its head. \"You have become someone that the old you would not entirely recognize,\" it observes, without judgment. \"That is not a tragedy. That is the whole point.\" It dissolves like mist struck by a beam of light and you are alone with your reflection in the wet stone floor."
+      },
+      {
+        "label": "Walk through it",
+        "cost": null,
+        "reward": null,
+        "outcome": "It offers no resistance — you pass through cold air and a brief cascade of half-remembered smells: a specific kitchen, a specific rain. You do not look back. The shade, if it watches, says nothing."
+      }
+    ]
+  },
+  {
+    "tag": "flv_abyssal_alchemist",
+    "name": "Alchemist Mourne",
+    "symbol": "@",
+    "color": [
+      140,
+      180,
+      120
+    ],
+    "min_level": 61,
+    "max_level": 76,
+    "text": "An alchemist has set up a field laboratory in what was once a guardroom, surrounded by equipment that should not survive this far down. Her goggles glow faintly green. \"Oh, a live one. Excellent. I've been working on something that needs a test subject, and before you refuse — I'm offering fair compensation. I'm an alchemist, not a monster.\"",
+    "options": [
+      {
+        "label": "Volunteer as test subject (10 HP)",
+        "cost": {
+          "type": "hp",
+          "amount": 10
+        },
+        "reward": {
+          "type": "effect",
+          "effect": "regenerating",
+          "duration": 45
+        },
+        "outcome": "The compound tastes of copper and overripe plums. There is a moment of alarming internal heat, then it passes. \"Excellent. Tissue response nominal. Better than nominal, actually.\" She scribbles notes while your body begins to quietly repair itself, wounds knitting at a rate you find both reassuring and slightly uncanny."
+      },
+      {
+        "label": "Buy her regeneration salve (200 gold)",
+        "cost": {
+          "type": "gold",
+          "amount": 200
+        },
+        "reward": {
+          "type": "hp_restore",
+          "amount": 50
+        },
+        "outcome": "\"Tested and approved,\" she says, by which she means tested on herself, which you realize when she pulls up her sleeve to show old burn scars in various stages of alchemical healing. The salve is thick and smells terrible and works immediately."
+      },
+      {
+        "label": "\"Hard pass.\"",
+        "cost": null,
+        "reward": null,
+        "outcome": "\"Noted,\" she says, without offense. \"Healthy skepticism of unsolicited chemistry. Good instinct, actually. Come back if you change your mind — I'll be here until I run out of subjects or the dungeon runs out of patience with me.\" She returns to her bubbling apparatus."
+      }
+    ]
+  },
+  {
+    "tag": "flv_oracle_of_endings",
+    "name": "The Oracle of Endings",
+    "symbol": "@",
+    "color": [
+      100,
+      60,
+      160
+    ],
+    "min_level": 68,
+    "max_level": 80,
+    "text": "She is seated on a throne of cracked stone that was clearly not built for her, surrounded by candles whose flames burn straight down instead of up. Her eyes are open and entirely white. \"I have been waiting,\" she says, before you have made a sound. \"Not for you specifically. For anyone with enough momentum to reach this depth. Sit. Or don't. I will speak regardless.\"",
+    "options": [
+      {
+        "label": "Offer mana for a true vision (15 MP)",
+        "cost": {
+          "type": "mp",
+          "amount": 15
+        },
+        "reward": {
+          "type": "stat",
+          "stat": "WIS",
+          "amount": 1
+        },
+        "outcome": "She takes your offered mana by pressing two fingers to your temple and drawing it out like smoke from a jar. What she gives in return cannot be described — not a vision exactly, more a restructuring, a knowing of things at angles you did not have before. When it ends, she withdraws her fingers. \"You are wiser than you were. It will feel that way too, eventually.\""
+      },
+      {
+        "label": "Ask her to bless your journey",
+        "cost": {
+          "type": "gold",
+          "amount": 350
+        },
+        "reward": {
+          "type": "effect",
+          "effect": "blessed",
+          "duration": 50
+        },
+        "outcome": "She considers the gold for a long time. \"This is not what oracles are for,\" she says, and pockets it anyway. The blessing she places on you is quiet and thorough, like good weather — you will not notice it until you should have died and didn't."
+      },
+      {
+        "label": "\"I will make my own ending.\"",
+        "cost": null,
+        "reward": null,
+        "outcome": "Her white eyes find you with an accuracy that makes the claim feel examined. \"Yes,\" she says. \"That is one of the options.\" She folds her hands and says nothing more, and after a while you realize you have been dismissed."
+      }
+    ]
+  },
+  {
+    "tag": "flv_mad_knight_riddle",
+    "name": "Sir Lorvaine the Certain",
+    "symbol": "@",
+    "color": [
+      180,
+      160,
+      100
+    ],
+    "min_level": 62,
+    "max_level": 77,
+    "text": "A knight in immaculate but deeply outdated armor stands squarely in your path. \"I am Sir Lorvaine the Certain,\" he announces, \"and I have a riddle. If you answer correctly, I will share with you the gifts of my failed quest. If you answer incorrectly, I will... also share them. The riddle is mostly a formality at this point. I'm very lonely.\"",
+    "options": [
+      {
+        "label": "Hear his riddle",
+        "cost": {
+          "type": "sp",
+          "amount": 20
+        },
+        "reward": {
+          "type": "random_item",
+          "category": "accessory"
+        },
+        "outcome": "The riddle is genuinely difficult and takes the better part of an hour. Sir Lorvaine interrupts several times to offer hints, then apologizes for the hints, then offers more hints. Eventually he declares you correct regardless of your answer and presents you with an accessory from his saddlebag with enormous ceremony."
+      },
+      {
+        "label": "Skip the riddle; offer gold (175 gold)",
+        "cost": {
+          "type": "gold",
+          "amount": 175
+        },
+        "reward": {
+          "type": "random_item",
+          "category": "accessory"
+        },
+        "outcome": "\"Ah. A pragmatist.\" He seems genuinely relieved. \"I was rather losing confidence in the riddle by iteration forty-seven anyway.\" He exchanges the gold for an accessory with the crisp efficiency of someone who has been waiting to do normal commerce for years."
+      },
+      {
+        "label": "Wish him well and continue",
+        "cost": null,
+        "reward": null,
+        "outcome": "\"Of course, of course,\" he says gamely, stepping aside. \"The quest does not pause for company. I understand. Entirely. Carry on.\" His cheerfulness is very slightly too loud. You hear him composing a new riddle as you walk away."
+      }
+    ]
+  },
+  {
+    "tag": "flv_fragment_of_a_god",
+    "name": "The Forgotten Fragment",
+    "symbol": "F",
+    "color": [
+      255,
+      240,
+      180
+    ],
+    "min_level": 72,
+    "max_level": 80,
+    "text": "The light ahead is not coming from a torch. It is coming from something that is trying very hard to look like a person and almost succeeding. \"I apologize for the luminosity,\" it says. \"I am what remains of a deity that was largely forgotten. I have a great deal of residual power and nowhere to put it. Would you accept a gift? I find the giving helps.\"",
+    "options": [
+      {
+        "label": "Accept the gift with open hands",
+        "cost": null,
+        "reward": {
+          "type": "effect",
+          "effect": "shielded",
+          "duration": 50
+        },
+        "outcome": "It steps forward and cups your face briefly with hands that are warm in the way that sunlight on stone is warm — secondhand, patient. Something wraps around you: not armor, exactly, but the memory of protection, invested in your skin. \"That was a good fragment,\" it says, dimmer now. \"I feel better. Thank you.\""
+      },
+      {
+        "label": "Ask its name",
+        "cost": null,
+        "reward": {
+          "type": "message"
+        },
+        "outcome": "It pauses for a long time. \"I don't remember,\" it says at last, without apparent distress. \"I remember what I was for — hope, I think, or the specific kind of hope that survives bad odds. That feels right.\" It brightens slightly with the admission, then dims, and you are alone in the corridor."
+      },
+      {
+        "label": "Decline politely",
+        "cost": null,
+        "reward": null,
+        "outcome": "\"That is perfectly fine,\" it says, with the practiced grace of a being that has been rejected on a theological level and survived it. \"Safe passage, then. Or as safe as it gets from here.\" It dims itself courteously as you pass, like a lamp turned low."
+      }
+    ]
+  },
+  {
+    "tag": "flv_abyssal_wine_merchant",
+    "name": "Pellok the Very Lost",
+    "symbol": "@",
+    "color": [
+      160,
+      100,
+      120
+    ],
+    "min_level": 61,
+    "max_level": 74,
+    "text": "A merchant in a wine merchant's apron is sitting on a crate labeled FINE VINTAGES, looking at a map upside-down with tremendous concentration. He does not hear you until you are quite close. \"GAH. Oh. Sorry. Sorry. Do you — is this the 40th floor? I was told there was a marketplace on the 40th floor. I am very much getting the sense it was not on the 40th floor.\"",
+    "options": [
+      {
+        "label": "Buy a bottle from him (100 gold)",
+        "cost": {
+          "type": "gold",
+          "amount": 100
+        },
+        "reward": {
+          "type": "hp_restore",
+          "amount": 35
+        },
+        "outcome": "He is so relieved to make a sale that he nearly hugs you. The wine is, inexplicably, excellent — a deep red that tastes of a summer several decades ago and warms you to the marrow. Your wounds respond favorably to the vintage. He marks you on his route map as a 'reliable customer.'"
+      },
+      {
+        "label": "Give him food to help him back up",
+        "cost": {
+          "type": "food"
+        },
+        "reward": {
+          "type": "random_item",
+          "category": "potion"
+        },
+        "outcome": "He accepts the food with enormous gratitude. \"You are a saint. A genuine saint. Here — take this, I've been using it as a paperweight. The previous owner said it was powerful. They were very confident about it.\" He presses a potion into your hands and begins the long walk upward, muttering."
+      },
+      {
+        "label": "Point him vaguely upward",
+        "cost": null,
+        "reward": null,
+        "outcome": "\"Up,\" he repeats, as though this had not occurred to him. \"Yes. That — that tracks. Thank you. Tremendous. Right.\" He hoists his crate, takes two steps in the wrong direction, corrects himself, and begins a very long journey home."
+      }
+    ]
+  },
+  {
+    "tag": "flv_bound_spirit_of_stone",
+    "name": "The Stone Warden's Voice",
+    "symbol": "S",
+    "color": [
+      140,
+      130,
+      120
+    ],
+    "min_level": 65,
+    "max_level": 79,
+    "text": "The wall speaks. Not through a crack or a carving — the whole wall, slowly, grinding syllables out of compression and age. \"I HAVE BEEN IN THIS WALL,\" it says, \"FOR ELEVEN THOUSAND YEARS. I HAVE WATCHED MANY PASS. I HAVE SOMETHING TO OFFER. IF YOU WILL LISTEN FIRST.\"",
+    "options": [
+      {
+        "label": "Listen to the wall's story (30 SP)",
+        "cost": {
+          "type": "sp",
+          "amount": 30
+        },
+        "reward": {
+          "type": "effect",
+          "effect": "blessed",
+          "duration": 40
+        },
+        "outcome": "It takes a long time. Eleven thousand years compressed into an hour of stone-slow speech — civilizations that used this corridor as a parade route, as a grave, as a shortcut, as a place of worship. You ache from standing still so long, but when it finishes, it breathes out a warmth through the rock that settles on you like a blessing earned and given freely. \"THANK YOU,\" it rumbles. \"GO WELL.\""
+      },
+      {
+        "label": "Press your palm to the stone (15 MP)",
+        "cost": {
+          "type": "mp",
+          "amount": 15
+        },
+        "reward": {
+          "type": "sp_restore",
+          "amount": 60
+        },
+        "outcome": "The stone is warmer than it should be. Something flows in the opposite direction of the cold — a mineral patience, a geological steadiness, the endurance of things that outlast every emergency by simply refusing to end. Your body absorbs it as stamina. The wall sighs in gratitude."
+      },
+      {
+        "label": "Walk past in respectful silence",
+        "cost": null,
+        "reward": null,
+        "outcome": "\"YOU ARE BUSY,\" the wall says, without judgment. \"I UNDERSTAND. THE LIVING ALWAYS ARE.\" A pause, ground out in slow syllables. \"IT IS ONE OF THE THINGS I MISS.\""
+      }
+    ]
+  },
+  {
+    "tag": "flv_invisible_archivist",
+    "name": "(Something Watching)",
+    "symbol": "@",
+    "color": [
+      80,
+      80,
+      120
+    ],
+    "min_level": 68,
+    "max_level": 80,
+    "text": "Nothing is there. And yet: the sound of a quill scratching on parchment. A throat cleared politely. The faint impression of a chair being occupied. \"I catalog the deeds of those who descend,\" says a voice at desk-height, precisely where no desk is. \"I have questions, if you have answers. And I pay for my interviews.\"",
+    "options": [
+      {
+        "label": "Agree to be interviewed",
+        "cost": {
+          "type": "sp",
+          "amount": 25
+        },
+        "reward": {
+          "type": "gold",
+          "amount": 300
+        },
+        "outcome": "The interview is thorough. It asks about your earliest memory, your greatest fear, your theory on what lies at the dungeon's bottom, and whether you prefer mornings. It transcribes your answers with the focused energy of someone who finds all answers equally important. When it finishes, a purse of gold appears on the floor in front of you. \"Excellent data,\" it says warmly. \"Truly.\""
+      },
+      {
+        "label": "Ask who it archives for",
+        "cost": null,
+        "reward": {
+          "type": "message"
+        },
+        "outcome": "A long pause. The quill stops. \"That is the question,\" it says, and you hear something that might be a smile in the voice. \"Isn't it. The honest answer is: I archive for myself. I have been doing this long enough that 'for whom' stopped mattering and 'that it is done' took its place.\" The quill resumes."
+      },
+      {
+        "label": "Decline the interview",
+        "cost": null,
+        "reward": null,
+        "outcome": "\"Noted,\" says the voice, and you hear your refusal being noted. \"That is, itself, a data point. Walk safe.\" The scratching of the quill follows you down the corridor for longer than seems possible, then stops all at once."
+      }
+    ]
+  },
+  {
+    "tag": "flv_dying_hero_berengar",
+    "name": "Dying Hero",
+    "symbol": "@",
+    "color": [
+      200,
+      180,
+      140
+    ],
+    "min_level": 81,
+    "max_level": 95,
+    "text": "A towering warrior slumps against the wall, his golden armor shattered, a dozen wounds weeping light rather than blood. \"I made it to the ninety-second floor once,\" he rasps, \"before the thing with a thousand mouths found me. I won't make it further. But you — you still have breath in you.\"",
+    "options": [
+      {
+        "label": "Give him a healing potion",
+        "cost": {
+          "type": "gold",
+          "amount": 200
+        },
+        "reward": {
+          "type": "enchant_weapon",
+          "amount": 1
+        },
+        "outcome": "He shakes his head when you offer coin, but you press it into his hands anyway. He looks at it for a long moment, then presses his sword hilt to yours. \"Take the edge from Berengar's blade. Let it taste whatever lies below.\" Your weapon gleams with new purpose."
+      },
+      {
+        "label": "Sit with him a while",
+        "cost": null,
+        "reward": {
+          "type": "effect",
+          "effect": "blessed",
+          "duration": 40
+        },
+        "outcome": "You say nothing. He says nothing. The silence between you is the companionship of people who understand what this place costs. When he finally stills, you feel something settle over you — a dying man's final wish for another's survival. You feel blessed."
+      },
+      {
+        "label": "Keep moving — there is no time",
+        "cost": null,
+        "reward": null,
+        "outcome": "He doesn't blame you. He just watches you go with eyes that have seen too many things walk past. You hear him whisper something as you round the corner — a name, perhaps, or a prayer."
+      }
+    ]
+  },
+  {
+    "tag": "flv_avatar_athena",
+    "name": "Grey-Eyed Woman",
+    "symbol": "@",
+    "color": [
+      180,
+      200,
+      255
+    ],
+    "min_level": 85,
+    "max_level": 100,
+    "text": "A woman stands in the corridor as though the dungeon was built around her. Her eyes are the silver-grey of storm clouds before lightning, and an owl sits on her shoulder that is not quite an owl. \"You are further than most,\" she says. \"I am curious whether your mind has sharpened to match your ambition.\"",
+    "options": [
+      {
+        "label": "Offer food as tribute to her",
+        "cost": {
+          "type": "food"
+        },
+        "reward": {
+          "type": "stat",
+          "stat": "PER",
+          "amount": 1
+        },
+        "outcome": "She takes the offering with an unhurried grace and sets it before the owl, who regards it with solemn intelligence. \"The gift of sight is not given to those who look — only to those who truly see.\" The world sharpens around you, edges crisper, shadows less secret. Your Perception increases."
+      },
+      {
+        "label": "\"What lies at the bottom?\"",
+        "cost": null,
+        "reward": {
+          "type": "message"
+        },
+        "outcome": "She tilts her head. \"A question. Good.\" The owl blinks slowly. \"At the bottom lies the thing that asked itself what lies above. Everything looks up, child. Even the abyss has ambitions.\" She steps aside, and the corridor behind her seems somehow shorter."
+      },
+      {
+        "label": "Bow respectfully and pass",
+        "cost": null,
+        "reward": null,
+        "outcome": "She inclines her head in return, a gesture that carries more weight than any blessing you can name. The owl watches you until you are out of sight. You suspect it watches you still."
+      }
+    ]
+  },
+  {
+    "tag": "flv_philosophical_entity_void",
+    "name": "The Enumerated Self",
+    "symbol": "E",
+    "color": [
+      80,
+      60,
+      120
+    ],
+    "min_level": 88,
+    "max_level": 100,
+    "text": "It is shaped like a person the way a drawing is shaped like a person — the right number of limbs, in roughly the right places, but flat in some dimension you cannot name. It speaks without a mouth: \"We have been cataloguing experiences. We have fourteen thousand, nine hundred and two. You have more. We would like some of yours.\"",
+    "options": [
+      {
+        "label": "Trade a memory for its knowledge",
+        "cost": {
+          "type": "mp",
+          "amount": 15
+        },
+        "reward": {
+          "type": "effect",
+          "effect": "clairvoyant",
+          "duration": 50
+        },
+        "outcome": "You feel something leave you — not pain, but absence. A room from your childhood you can no longer quite picture. The Enumerated Self shudders with something that might be pleasure. In return, it presses fourteen thousand, nine hundred and three small certainties into your mind. The dungeon becomes briefly, brilliantly legible."
+      },
+      {
+        "label": "\"What number are you on now?\"",
+        "cost": null,
+        "reward": {
+          "type": "message"
+        },
+        "outcome": "\"Fourteen thousand, nine hundred and three,\" it says, and you realize it is looking at you. \"The experience of being asked a question by someone who is not afraid of the answer.\" It folds itself into a smaller space and then is simply not there. You feel vaguely counted."
+      },
+      {
+        "label": "Back away slowly",
+        "cost": null,
+        "reward": null,
+        "outcome": "It watches you retreat with an expression that has been assembled from references rather than felt. \"We will catalogue this also,\" it says. \"The experience of watching something leave.\" Somehow, that is the worst thing it could have said."
+      }
+    ]
+  },
+  {
+    "tag": "flv_final_merchant_ortolan",
+    "name": "Ortolan the Last Merchant",
+    "symbol": "@",
+    "color": [
+      220,
+      190,
+      80
+    ],
+    "min_level": 81,
+    "max_level": 98,
+    "text": "A stout man in a coat with too many pockets sits on a chest that radiates unnatural warmth, counting coins that seem to disappear between his fingers before being counted again. \"Ortolan's Emporium — deepest shop in the world, est. longer than you've been alive!\" he announces cheerfully. \"What'll it be?\"",
+    "options": [
+      {
+        "label": "Buy something from his stock",
+        "cost": {
+          "type": "gold",
+          "amount": 350
+        },
+        "reward": {
+          "type": "random_item",
+          "category": "potion"
+        },
+        "outcome": "He rummages through the chest with alarming depth — his arm disappears to the shoulder before he produces something with a triumphant grunt. \"Finest stock this side of the abyss! Probably. I stopped checking labels after level sixty.\""
+      },
+      {
+        "label": "Buy a scroll from him",
+        "cost": {
+          "type": "gold",
+          "amount": 300
+        },
+        "reward": {
+          "type": "random_item",
+          "category": "scroll"
+        },
+        "outcome": "He produces a scroll with a flourish, sealed with wax in the shape of a coin. \"Knowledge, the only currency that appreciates!\" he says. \"That's something a customer told me. I mostly just sell things.\""
+      },
+      {
+        "label": "\"How do you survive down here?\"",
+        "cost": null,
+        "reward": null,
+        "outcome": "He taps the side of his nose. \"Good prices and fast feet, friend. The monsters leave me alone because I give them favorable terms on bulk purchases.\" He winks. You cannot tell if he is joking. You strongly suspect he is not joking."
+      }
+    ]
+  },
+  {
+    "tag": "flv_beyond_reality_chorus",
+    "name": "The Speaking Absence",
+    "symbol": "A",
+    "color": [
+      30,
+      10,
+      50
+    ],
+    "min_level": 90,
+    "max_level": 100,
+    "text": "There is a place in the corridor where the stones simply stop — not a wall, not a door, but an ending. From within the ending, something addresses you in a voice that arrives already understood: \"You have walked a long way to reach the edge of what is written. We did not expect a visitor.\"",
+    "options": [
+      {
+        "label": "Step closer and speak with it",
+        "cost": {
+          "type": "hp",
+          "amount": 15
+        },
+        "reward": {
+          "type": "effect",
+          "effect": "blessed",
+          "duration": 50
+        },
+        "outcome": "The closer you get, the more you feel yourself becoming slightly optional — as though the universe is reminding itself why you should exist. But the Absence speaks warmly, and when you step back, you carry something of its regard with you. The world holds you a little more carefully than before."
+      },
+      {
+        "label": "Ask what lies beyond the ending",
+        "cost": null,
+        "reward": {
+          "type": "message"
+        },
+        "outcome": "A long silence that contains multitudes. Then: \"More of what you would call 'nothing,' and less of what you would call 'something,' until the two become indistinguishable and the distinction stops mattering.\" A pause. \"It is actually very peaceful. You should visit. Not yet, though.\""
+      },
+      {
+        "label": "Look away and walk past",
+        "cost": null,
+        "reward": null,
+        "outcome": "Behind you, the Absence says nothing. This is somehow more unsettling than if it had called after you. You resist the urge to look back. You are not entirely sure you succeed."
+      }
+    ]
+  },
+  {
+    "tag": "flv_spectral_archivist",
+    "name": "Spectral Archivist",
+    "symbol": "S",
+    "color": [
+      160,
+      200,
+      220
+    ],
+    "min_level": 82,
+    "max_level": 97,
+    "text": "A translucent woman in scholar's robes moves along the corridor running her fingers across stones as though reading text written in the rock itself. She turns when she hears you, and her eyes are full of tiny writing. \"Oh — a living one. I haven't seen one of those in what must be centuries. Tell me, do the libraries of the surface still stand?\"",
+    "options": [
+      {
+        "label": "Give her a scroll from your pack",
+        "cost": {
+          "type": "gold",
+          "amount": 250
+        },
+        "reward": {
+          "type": "effect",
+          "effect": "clairvoyant",
+          "duration": 45
+        },
+        "outcome": "She takes the scroll with trembling, half-solid hands and presses it to her chest. The writing in her eyes shifts and reforms. \"I have not had new text in so long,\" she whispers. \"Let me give you something in return — I know every stone of these depths by now.\" The dungeon opens itself to your mind's eye."
+      },
+      {
+        "label": "Tell her about the surface world",
+        "cost": null,
+        "reward": {
+          "type": "sp_restore",
+          "amount": 40
+        },
+        "outcome": "You talk for longer than you intended — about markets and weather and the smell of rain on cobblestones. She listens with total, heartbreaking attention. When you finish, she stands straighter. \"Thank you. I had nearly forgotten what the world was for.\" You feel the warmth of the exchange settle into your bones."
+      },
+      {
+        "label": "\"I cannot stay. I am sorry.\"",
+        "cost": null,
+        "reward": null,
+        "outcome": "\"Of course. Everyone is always going somewhere down here.\" She turns back to her stones and resumes her endless reading. You feel the specific weight of an apology that was both necessary and insufficient."
+      }
+    ]
+  },
+  {
+    "tag": "flv_time_lost_general",
+    "name": "The General Out of Time",
+    "symbol": "@",
+    "color": [
+      180,
+      140,
+      90
+    ],
+    "min_level": 83,
+    "max_level": 96,
+    "text": "A man in ancient armor stands at perfect attention, studying a battle map drawn on the floor in chalk that does not smudge. His army, you realize, is indicated by a single mark. He looks up at you with the bright, slightly too-focused eyes of someone who has been waiting a very long time. \"Soldier! Report. What is the current strategic situation?\"",
+    "options": [
+      {
+        "label": "Play along and give him a \"report\"",
+        "cost": null,
+        "reward": {
+          "type": "effect",
+          "effect": "hasted",
+          "duration": 35
+        },
+        "outcome": "You invent a battle. He listens with furious, grateful attention, making marks on his map, nodding at your fabrications as though they confirm long-held suspicions. \"Good. Then the third flank must move.\" He grips your arm with a general's certainty. \"Double-time, soldier. I'll buy you a moment.\" You feel your feet lighten."
+      },
+      {
+        "label": "Tell him the truth gently",
+        "cost": null,
+        "reward": {
+          "type": "hp_restore",
+          "amount": 30
+        },
+        "outcome": "He listens. His face does the complicated thing faces do when time catches up with them all at once. Then he straightens his shoulders. \"I see. Then I have been standing guard over nothing.\" A pause. \"No. Not nothing. I have been standing.\" He presses his rations into your hands. \"Take these. Your war is not yet over.\""
+      },
+      {
+        "label": "Salute and move on",
+        "cost": null,
+        "reward": null,
+        "outcome": "He returns the salute with crisp, unbroken discipline. \"At ease, soldier.\" You walk past his chalk army and his chalk enemy and his single chalk mark, and you do not look back, because some things deserve the dignity of an unwitnessed vigil."
+      }
+    ]
+  },
+  {
+    "tag": "flv_avatar_hermes_laughing",
+    "name": "Fast-Talking Stranger",
+    "symbol": "@",
+    "color": [
+      255,
+      215,
+      100
+    ],
+    "min_level": 81,
+    "max_level": 94,
+    "text": "A young man in traveling clothes that somehow look freshly pressed despite everything leans against a pillar, spinning a coin between his fingers. He's grinning before you even reach him, as though your arrival is the punchline to a joke he's been sitting on for hours. \"Incredible,\" he says. \"You actually made it this far. I owe the Fates an apology.\"",
+    "options": [
+      {
+        "label": "Trade gold for something valuable",
+        "cost": {
+          "type": "gold",
+          "amount": 400
+        },
+        "reward": {
+          "type": "random_item",
+          "category": "accessory"
+        },
+        "outcome": "He catches the coin with a speed that shouldn't be possible and produces something from behind your ear — literally, behind your ear — with the air of someone who finds this less impressive than you do. \"Special delivery,\" he says. \"I was going to keep it, but you have a better face for it.\""
+      },
+      {
+        "label": "Ask him to speed your steps",
+        "cost": {
+          "type": "gold",
+          "amount": 300
+        },
+        "reward": {
+          "type": "effect",
+          "effect": "hasted",
+          "duration": 50
+        },
+        "outcome": "He looks almost offended that you'd pay for something so basic, but pockets the gold with practiced ease. He snaps his fingers near your heels and something electric runs up your spine. \"Try not to run into any walls,\" he advises, and is already somewhere else before you can respond."
+      },
+      {
+        "label": "\"What are you really?\"",
+        "cost": null,
+        "reward": null,
+        "outcome": "He spreads his hands, the picture of innocence. \"A traveler! A merchant! A concerned passerby!\" He ticks them off on his fingers. \"Look, the real question is what are YOU really, and I think we both know the answer to that is a lot more interesting.\" He flips the coin at you. When you catch it, he's gone. The coin is warm."
+      }
+    ]
+  },
+  {
+    "tag": "flv_last_philosopher",
+    "name": "The Final Philosopher",
+    "symbol": "@",
+    "color": [
+      200,
+      200,
+      180
+    ],
+    "min_level": 86,
+    "max_level": 100,
+    "text": "An ancient man sits cross-legged on the bare stone, eyes closed, head bowed in thought. He has no possessions. He has no food. He seems to have no need of either. When you approach, he opens eyes that contain the specific exhaustion of someone who has thought about everything and found it wanting. \"Ah,\" he says. \"The question with legs.\"",
+    "options": [
+      {
+        "label": "Ask him the nature of this place",
+        "cost": {
+          "type": "mp",
+          "amount": 10
+        },
+        "reward": {
+          "type": "stat",
+          "stat": "WIS",
+          "amount": 1
+        },
+        "outcome": "He speaks for a long time. His words are simple — a child could understand each one — but arranged in an order that does something permanent to the architecture of your thinking. When he finishes, the dungeon looks the same but means something different. Your Wisdom increases."
+      },
+      {
+        "label": "Sit with him in silence",
+        "cost": {
+          "type": "sp",
+          "amount": 20
+        },
+        "reward": {
+          "type": "mp_restore",
+          "amount": 30
+        },
+        "outcome": "You sit. He sits. The dungeon makes its dungeon noises at a respectful distance. After a time that could be minutes or hours, he says: \"Good. Most people who need to think forget to stop moving first.\" You feel your mind clarify like water that has been allowed to settle."
+      },
+      {
+        "label": "\"I don't have time to philosophize.\"",
+        "cost": null,
+        "reward": null,
+        "outcome": "He nods slowly. \"That is itself a philosophy,\" he says, without judgment or irony. \"And it has brought you this far. Perhaps it will carry you further still.\" He closes his eyes again. You feel, unexpectedly, that you have his blessing."
+      }
+    ]
+  },
+  {
+    "tag": "flv_dying_oracle_cassandra",
+    "name": "Weeping Prophet",
+    "symbol": "@",
+    "color": [
+      180,
+      160,
+      200
+    ],
+    "min_level": 84,
+    "max_level": 99,
+    "text": "A woman kneels in the center of the corridor, tears streaming freely, though her expression is serene rather than anguished — the face of someone who has made peace with being ignored. \"I know what you will face,\" she says. \"I know what you will choose. I have said so many times, to so many people, and none of them believed me until it was done.\"",
+    "options": [
+      {
+        "label": "\"Tell me anyway. I will listen.\"",
+        "cost": null,
+        "reward": {
+          "type": "effect",
+          "effect": "clairvoyant",
+          "duration": 40
+        },
+        "outcome": "She looks at you with an expression that is the entire history of being taken seriously for the first time. She speaks quickly, like someone who knows the window might close. The words wash over you and sink in, and for a time the dungeon holds no secrets from you."
+      },
+      {
+        "label": "Offer her something to restore her strength",
+        "cost": {
+          "type": "food"
+        },
+        "reward": {
+          "type": "effect",
+          "effect": "blessed",
+          "duration": 35
+        },
+        "outcome": "She takes the food with both hands and eats with the careful gratitude of someone who has forgotten how it tastes. \"You fed a prophet,\" she says softly. \"The old texts say something about that. Something good.\" She touches your cheek, and you feel the world tilt slightly in your favor."
+      },
+      {
+        "label": "\"Prophecy is a burden I cannot share.\"",
+        "cost": null,
+        "reward": null,
+        "outcome": "\"Yes,\" she says simply. \"I know.\" She watches you go with the patient, ruined dignity of someone who has been correct about everything and helped no one. The sound of her weeping does not follow you. You almost wish it did."
+      }
+    ]
+  },
+  {
+    "tag": "flv_trapped_god_fragment",
+    "name": "Dim Light in the Stone",
+    "symbol": "G",
+    "color": [
+      255,
+      240,
+      180
+    ],
+    "min_level": 89,
+    "max_level": 100,
+    "text": "A crack in the wall pulses with warm golden light, too rhythmic to be fire, too alive to be stone. When you lean close, you feel the heat of something enormous pressed into a space far too small for it. A voice comes from within the crack: \"Smaller than I was. But not gone. Traveler — I can offer you something, if you offer something in return.\"",
+    "options": [
+      {
+        "label": "Offer your blood to the light",
+        "cost": {
+          "type": "hp",
+          "amount": 20
+        },
+        "reward": {
+          "type": "effect",
+          "effect": "regenerating",
+          "duration": 50
+        },
+        "outcome": "The blood touches the crack and the light surges, briefly, brilliantly. \"There,\" says the voice, with something like relief. \"That was nourishing. I had nearly forgotten what living things feel like.\" A warmth travels up your arm and spreads, and you feel your body begin to quietly, persistently knit itself together."
+      },
+      {
+        "label": "Offer your mana to the trapped god",
+        "cost": {
+          "type": "mp",
+          "amount": 15
+        },
+        "reward": {
+          "type": "hp_restore",
+          "amount": 50
+        },
+        "outcome": "The magic leaves you in a slow, warm exhale, drawn into the stone like breath on a cold day. \"Ah. Old power. Thank you.\" A long pause, then: \"I am too diminished to repay you as I once could. But take this — the least I have to offer.\" The warmth returns, settling into your wounds, sealing them."
+      },
+      {
+        "label": "Press on without engaging it",
+        "cost": null,
+        "reward": null,
+        "outcome": "The light dims as you pass, like eyes closing. \"Another time, perhaps,\" says the voice, with a patience that has been accumulating for longer than civilizations. You feel the light watching you long after the crack is out of sight."
+      }
+    ]
+  },
+  {
+    "tag": "flv_abyss_cartographer_2",
+    "name": "Abyss Cartographer",
+    "symbol": "@",
+    "color": [
+      120,
+      160,
+      140
+    ],
+    "min_level": 81,
+    "max_level": 95,
+    "text": "A gaunt woman covered in ink stains crouches over an enormous map spread on the floor, adding detail with a pen that never seems to run dry. The map, you realize, depicts a dungeon that is subtly but definitely wrong in ways you cannot quite specify. She looks up with brilliant, slightly manic eyes. \"You! You've come from above! TELL me what you saw up there!\"",
+    "options": [
+      {
+        "label": "Trade your observations for her maps",
+        "cost": {
+          "type": "sp",
+          "amount": 25
+        },
+        "reward": {
+          "type": "effect",
+          "effect": "clairvoyant",
+          "duration": 45
+        },
+        "outcome": "You spend an exhausting quarter-hour answering increasingly specific questions about corridor widths and stone textures and the exact smell of level eighty-three. She records everything with furious precision. \"WONDERFUL. Here —\" She tears off a section of map and presses it to your forehead. The dungeon's layout floods your mind."
+      },
+      {
+        "label": "Buy a wand from her equipment",
+        "cost": {
+          "type": "gold",
+          "amount": 350
+        },
+        "reward": {
+          "type": "random_item",
+          "category": "wand"
+        },
+        "outcome": "\"Oh, that old thing,\" she says, waving at what you'd assumed was just a measuring instrument. \"I use it to check for hollow walls. You can have it — I've got three more and they keep pointing at each other, which is philosophically troubling.\" The gold vanishes into a coat with improbable pocket depth."
+      },
+      {
+        "label": "Wish her luck and continue down",
+        "cost": null,
+        "reward": null,
+        "outcome": "\"Luck!\" she repeats with the joy of someone who's been given a gift they didn't know they wanted. \"What a concept. I've been working on statistical modeling but 'luck' is so much more portable.\" She's already back to her map. You're fairly sure you will appear on it."
+      }
+    ]
+  },
+  {
+    "tag": "flv_humorous_imp_salesman",
+    "name": "Disreputable Imp",
+    "symbol": "i",
+    "color": [
+      200,
+      80,
+      60
+    ],
+    "min_level": 81,
+    "max_level": 92,
+    "text": "A small, red, deeply self-satisfied creature sits atop a crate with 'DEFINITELY FINE GOODS' stenciled on the side in handwriting that changes between letters. It points at you with a claw the size of a needle and announces: \"YOU. You look like someone with gold and poor decision-making skills. Perfect. PERFECT. I have things.\"",
+    "options": [
+      {
+        "label": "Buy something from his definitely-fine crate",
+        "cost": {
+          "type": "gold",
+          "amount": 200
+        },
+        "reward": {
+          "type": "random_item",
+          "category": "potion"
+        },
+        "outcome": "He produces something from the crate with theatrical effort, requiring both arms and one foot. \"Finest quality! Mostly! The cursed ones are in the OTHER crate and I DEFINITELY didn't mix them up this time.\" He takes your gold and bites it experimentally. \"Acceptable.\""
+      },
+      {
+        "label": "Ask what's actually in the crate",
+        "cost": null,
+        "reward": {
+          "type": "message"
+        },
+        "outcome": "He stares at you. Then at the crate. Then back at you. \"...Conceptually? Hope.\" He pauses. \"Physically? I'm not entirely sure anymore. Something shifted on level ninety and I think the inventory reorganized itself on philosophical grounds.\" He looks genuinely concerned for a moment. Then the moment passes."
+      },
+      {
+        "label": "\"No thank you, actually.\"",
+        "cost": null,
+        "reward": null,
+        "outcome": "His face falls with operatic despair. \"NO. No no no. Do you know how few people get to level eighty-something? Do you know how long I've been waiting?\" He watches you go. \"I'll be here!\" he calls. \"I am always here. I don't know how to leave!\""
+      }
+    ]
+  },
+  {
+    "tag": "flv_wondrous_star_being",
+    "name": "Fallen Constellation",
+    "symbol": "*",
+    "color": [
+      200,
+      220,
+      255
+    ],
+    "min_level": 87,
+    "max_level": 100,
+    "text": "In a chamber with no ceiling — or rather, a ceiling that has been replaced by deep black space — a figure made entirely of connected stars wheels slowly in the middle of the air. It is beautiful in the way that things are beautiful when they are not meant for you. It notices you and descends. \"We fell,\" it says simply. \"We have been falling for some time.\"",
+    "options": [
+      {
+        "label": "Ask it to show you the sky it came from",
+        "cost": {
+          "type": "mp",
+          "amount": 10
+        },
+        "reward": {
+          "type": "effect",
+          "effect": "blessed",
+          "duration": 45
+        },
+        "outcome": "It reaches out with a hand made of light and distance and touches your forehead. For a moment you are not in the dungeon. You are somewhere enormous and cold and breathtaking, and you understand why something might spend eternity simply being part of such a sky. You return carrying a small piece of that regard."
+      },
+      {
+        "label": "Offer to light a path for it with a torch",
+        "cost": null,
+        "reward": {
+          "type": "sp_restore",
+          "amount": 50
+        },
+        "outcome": "It looks at your small flame with an expression so gentle it nearly breaks something in your chest. \"You would light the way for us,\" it says softly, \"when we are made of light.\" But it follows your torch for a few steps anyway, and the warmth it shares with you in return is vast and generous."
+      },
+      {
+        "label": "Stand still and watch it for a moment",
+        "cost": null,
+        "reward": null,
+        "outcome": "You watch. It wheels. The stars that make up its shape pulse slowly, and you think you can almost read them — a story written in fire across impossible distances. When you finally move on, it watches you go, and somehow the dungeon is a little less dark for a while."
+      }
+    ]
+  },
+  {
+    "tag": "flv_eerie_mirror_walker",
+    "name": "The One Behind You",
+    "symbol": "M",
+    "color": [
+      140,
+      140,
+      160
+    ],
+    "min_level": 88,
+    "max_level": 100,
+    "text": "You see it first in a shard of reflective stone — a figure standing just behind you, mimicking your posture exactly. When you turn, nothing is there. When you look back at the stone, it is not mimicking you anymore. It is watching you, with its head tilted slightly, like a student who has a question. It raises one hand. It waits.",
+    "options": [
+      {
+        "label": "Raise your hand back",
+        "cost": null,
+        "reward": {
+          "type": "effect",
+          "effect": "invisible",
+          "duration": 30
+        },
+        "outcome": "You raise your hand. It nods, slowly, with visible satisfaction. Then it steps through the mirror and past you — you feel it pass like cold water — and it vanishes into the dungeon ahead of you. Where it walked, nothing notices you for a long while. It has taught the darkness your outline, and the darkness is looking elsewhere."
+      },
+      {
+        "label": "Break the reflective stone",
+        "cost": {
+          "type": "sp",
+          "amount": 30
+        },
+        "reward": {
+          "type": "hp_restore",
+          "amount": 25
+        },
+        "outcome": "The stone shatters and the figure in the reflection shatters with it — not violently, but the way an expression falls from a face when it thinks no one is watching. You breathe hard. The effort cost you. But there is something releasing in the violence of it, and the tension leaves your body along with the shards."
+      },
+      {
+        "label": "Walk past without acknowledging it",
+        "cost": null,
+        "reward": null,
+        "outcome": "You feel it follow you with its gaze across every reflective surface in the corridor. Wet stone. A dropped shield. The dark surface of still water in a crack. You do not look at any of them. You are fairly confident it respects this. You are less confident it stops following."
+      }
+    ]
+  },
+  {
+    "tag": "flv_melancholy_old_champion",
+    "name": "The Last Champion",
+    "symbol": "@",
+    "color": [
+      160,
+      150,
+      130
+    ],
+    "min_level": 82,
+    "max_level": 98,
+    "text": "A massive warrior sits polishing armor that no longer has a purpose to be polished for. He does it anyway, with the methodical attention of someone who has run out of things to do but not out of discipline. He looks up at you and something wakes behind his eyes. \"Still coming down, are they? Good. The deep floors need witnesses.\"",
+    "options": [
+      {
+        "label": "Ask him to train you for a while",
+        "cost": {
+          "type": "sp",
+          "amount": 40
+        },
+        "reward": {
+          "type": "enchant_weapon",
+          "amount": 1
+        },
+        "outcome": "He trains you hard and without mercy, correcting your grip and your footwork and the angle of your shoulders with the blunt precision of a man who was taught by people who learned the hard way. An hour passes like a grinding stone. When he's done, he taps your weapon. \"There. It knows how to be held properly now.\""
+      },
+      {
+        "label": "Share a meal with him",
+        "cost": {
+          "type": "food"
+        },
+        "reward": {
+          "type": "hp_restore",
+          "amount": 40
+        },
+        "outcome": "He receives the food with the dignity of a man who has forgotten what it means to receive anything. He eats slowly. \"My first meal shared in...\" He counts. Stops counting. \"Thank you.\" He refills something in your pack — rations you didn't know you were missing. \"You'll need it more than I do.\""
+      },
+      {
+        "label": "\"What are you still guarding?\"",
+        "cost": null,
+        "reward": null,
+        "outcome": "He looks down at the armor in his hands. The question takes a long time to reach an answer. \"The idea,\" he finally says, \"that someone should still be here when the next one comes through. So they know the road has been walked before.\" He gestures you onward. \"It has been walked before.\""
+      }
+    ]
+  },
+  {
+    "tag": "flv_practical_golem_medic",
+    "name": "Medical Construct",
+    "symbol": "G",
+    "color": [
+      140,
+      180,
+      160
+    ],
+    "min_level": 81,
+    "max_level": 93,
+    "text": "A golem made of white stone stands in an alcove, its chest engraved with a serpent-and-staff symbol worn nearly smooth by centuries. It turns toward you with the careful movements of something built to handle fragile things. \"SUBJECT ASSESSED: ALIVE. CONDITION: SUBOPTIMAL. SERVICES AVAILABLE. INDICATE REQUIREMENT.\"",
+    "options": [
+      {
+        "label": "Request a full physical restoration",
+        "cost": {
+          "type": "gold",
+          "amount": 450
+        },
+        "reward": {
+          "type": "hp_restore",
+          "amount": 60
+        },
+        "outcome": "It works with the impersonal efficiency of something that has been doing this for seven hundred years and finds it neither interesting nor tedious — it simply finds it correct. When it finishes, your wounds are sealed, your breathing is even, and it has left a small receipt in your pocket in a language that may not exist anymore."
+      },
+      {
+        "label": "Request stamina treatment",
+        "cost": {
+          "type": "gold",
+          "amount": 300
+        },
+        "reward": {
+          "type": "sp_restore",
+          "amount": 50
+        },
+        "outcome": "It administers something it calls a \"musculoskeletal optimization procedure,\" which involves exactly three minutes of targeted pressure to specific points that you didn't know you had. You feel the deep exhaustion of eighty-some floors drain out of you like water from a wrung cloth."
+      },
+      {
+        "label": "\"I am fine. Thank you.\"",
+        "cost": null,
+        "reward": null,
+        "outcome": "It processes this for a moment. \"ASSESSMENT INDICATES STATEMENT INACCURATE. HOWEVER: PATIENT AUTONOMY PROTOCOLS APPLY.\" It steps back into its alcove. \"SAFE TRAVELS, SUBJECT.\" It says this with something that sounds, against all probability, like it means it."
+      }
+    ]
+  },
+  {
+    "tag": "flv_beyond_being_offers_name",
+    "name": "The Nameless",
+    "symbol": "N",
+    "color": [
+      60,
+      40,
+      80
+    ],
+    "min_level": 91,
+    "max_level": 100,
+    "text": "It does not have a shape so much as it has an implication of one — a suggestion that something is there, organized in a way that gestures toward personhood. When it speaks, the words are felt rather than heard: \"You have a name. We have observed this. Names are a form of anchor. We have been drifting for some time. We would offer a trade.\"",
+    "options": [
+      {
+        "label": "Teach it your name's meaning",
+        "cost": {
+          "type": "mp",
+          "amount": 15
+        },
+        "reward": {
+          "type": "effect",
+          "effect": "shielded",
+          "duration": 50
+        },
+        "outcome": "You explain your name — where it came from, what it means, the weight of it. The Nameless receives this with something that might be reverence. You feel it try the name on, tentatively, like a coat it isn't sure fits. In return, it wraps something of its own boundlessness around you — a protection that comes from having nothing left to lose."
+      },
+      {
+        "label": "Give it a name freely, ask nothing",
+        "cost": null,
+        "reward": {
+          "type": "effect",
+          "effect": "blessed",
+          "duration": 40
+        },
+        "outcome": "You give it a name without price. It holds very still for a long moment — the stillness of something that has never been held before. \"We did not expect this,\" it admits. And then it blesses you, clumsily, earnestly, with the overflowing gratitude of a being who has just discovered what it means to be given something for nothing."
+      },
+      {
+        "label": "Decline to share your name",
+        "cost": null,
+        "reward": null,
+        "outcome": "\"Understood,\" it says, without disappointment — or perhaps with a disappointment so vast it has become indistinguishable from acceptance. \"Names are powerful. You are wise to protect yours.\" It drifts aside to let you pass. You feel it watching the space where you were long after you have gone."
+      }
+    ]
+  },
+  {
+    "tag": "flv_wondrous_memory_keeper",
+    "name": "Keeper of Last Memories",
+    "symbol": "K",
+    "color": [
+      180,
+      160,
+      220
+    ],
+    "min_level": 85,
+    "max_level": 100,
+    "text": "A robed figure sits surrounded by softly glowing motes — hundreds of them, drifting like embers from a dying fire, each one pulsing with its own quiet warmth. \"Each of these,\" it says without turning, \"is the last thought of someone who did not make it back. I keep them so they are not simply lost. You may carry one, if you choose.\"",
+    "options": [
+      {
+        "label": "Accept a fallen adventurer's last memory",
+        "cost": null,
+        "reward": {
+          "type": "effect",
+          "effect": "clairvoyant",
+          "duration": 35
+        },
+        "outcome": "The mote settles on your palm and dissolves. For a moment you are someone else — someone who died on level ninety-four, who knew exactly where the shadow-thing waited, who almost made it. The knowledge they died for is yours now. You feel the weight and the gift of it equally."
+      },
+      {
+        "label": "Leave a memory of the surface world here",
+        "cost": {
+          "type": "sp",
+          "amount": 15
+        },
+        "reward": {
+          "type": "hp_restore",
+          "amount": 35
+        },
+        "outcome": "You concentrate on something bright — a morning, a meal, a face — and it lifts gently away and joins the other motes. The Keeper watches it go. \"Thank you. The collection is heavy with endings. It is good to add something that felt like a beginning.\" The loss settles into you strangely, like a wound that has been given proper care."
+      },
+      {
+        "label": "Observe the motes in silence and move on",
+        "cost": null,
+        "reward": null,
+        "outcome": "You stand for a moment among the last lights of the lost. The Keeper does not press you. The motes drift around you without touching, as though they sense you are still using yourself. When you go, you feel them watching you with something that is almost hope."
+      }
+    ]
+  }
+]

@@ -1570,6 +1570,10 @@ class Game:
         self._npc_encounter_levels = select_encounter_levels()
         self._npc_trigger_item_levels: dict = get_trigger_item_levels(self._npc_encounter_levels)
         self._npc_trigger_items_placed: set = set()  # item IDs already spawned as floor loot
+        # Flavor (non-karmic) encounters
+        from flavor_encounters import select_flavor_encounters
+        self._flavor_encounter_levels: dict = select_flavor_encounters()
+        self._encountered_flavor_npcs: set = set()
 
         self._new_level(1)
         self._show_story_popup('dungeon_entrance', STATE_PLAYER)
@@ -1619,6 +1623,7 @@ class Game:
         # Spawn trigger items and NPC for moral encounters on L1 (if assigned)
         self._maybe_spawn_trigger_item(level)
         self._maybe_spawn_npc(level)
+        self._maybe_spawn_flavor_npc(level)
 
         # Give the player their Philosopher's Shard and build-specific starting kit
         self._give_starting_kit()
@@ -1664,6 +1669,9 @@ class Game:
         self.karma = state.get('karma', 0)
         self._npc_encounter_levels = state.get('_npc_encounter_levels', {})
         self._encountered_npcs = state.get('_encountered_npcs', set())
+        self._flavor_encounter_levels = state.get('_flavor_encounter_levels',
+                                                   getattr(self, '_flavor_encounter_levels', {}))
+        self._encountered_flavor_npcs = state.get('_encountered_flavor_npcs', set())
         self._abaddon_empowered = state.get('_abaddon_empowered', False)
         self._locusts_strengthened = state.get('_locusts_strengthened', False)
         if state.get('_judgment_resolved', False):
@@ -1763,6 +1771,7 @@ class Game:
         if not saved:
             self._maybe_spawn_trigger_item(new_level)
             self._maybe_spawn_npc(new_level)
+            self._maybe_spawn_flavor_npc(new_level)
             self._maybe_spawn_cow(new_level)
 
         # Abaddon empowered by negative karma: boost HP on first entry to L100
@@ -2550,6 +2559,10 @@ class Game:
             # NPC encounter: open moral choice instead of combat
             if getattr(target, '_npc_encounter_tag', None):
                 self._start_npc_encounter(target)
+                return
+            # Flavor encounter: non-karmic NPC interaction
+            if getattr(target, '_flavor_encounter_tag', None):
+                self._start_flavor_encounter(target)
                 return
             self._start_combat(target)
         elif tile_at_dest == DOOR:
@@ -8076,6 +8089,76 @@ class Game:
                     self.monsters.append(npc)
                     return
 
+    def _maybe_spawn_flavor_npc(self, level: int):
+        """Spawn a flavor (non-karmic) NPC on this level if one is assigned."""
+        enc = getattr(self, '_flavor_encounter_levels', {}).get(level)
+        if enc is None:
+            return
+        encountered = getattr(self, '_encountered_flavor_npcs', set())
+        if enc['tag'] in encountered:
+            return
+
+        from monster import Monster
+        npc_def = {
+            'id': f"flv_{enc['tag']}",
+            'name': enc['name'],
+            'symbol': enc['symbol'],
+            'color': list(enc['color']),
+            'hp': 1,
+            'thac0': 20,
+            'speed': 0,
+            'attacks': [],
+            'ai_pattern': 'sessile',
+            'resistances': [],
+            'weaknesses': [],
+            'min_level': level,
+            'is_allied': True,
+            'harvest_tier': 0,
+            'harvest_threshold': 99,
+            'ingredient_id': None,
+        }
+        occupied = {(m.x, m.y) for m in self.monsters}
+        occupied.add((self.player.x, self.player.y))
+        rooms = self.dungeon.rooms[1:] if len(self.dungeon.rooms) > 1 else self.dungeon.rooms
+        import random as _rng
+        for room in _rng.sample(rooms, min(len(rooms), 5)):
+            tiles = list(room.inner_tiles())
+            _rng.shuffle(tiles)
+            for tx, ty in tiles:
+                if self.dungeon.is_walkable(tx, ty) and (tx, ty) not in occupied:
+                    npc = Monster(npc_def, tx, ty)
+                    npc._flavor_encounter_tag = enc['tag']
+                    self.monsters.append(npc)
+                    return
+
+    def _start_flavor_encounter(self, monster):
+        """Begin a flavor encounter when the player bumps a flavor NPC."""
+        tag = getattr(monster, '_flavor_encounter_tag', None)
+        if tag is None:
+            return False
+
+        enc = getattr(self, '_flavor_encounter_levels', {}).get(self.dungeon_level)
+        if enc is None or enc['tag'] != tag:
+            # Search all levels for this tag
+            for lvl_enc in getattr(self, '_flavor_encounter_levels', {}).values():
+                if lvl_enc['tag'] == tag:
+                    enc = lvl_enc
+                    break
+        if enc is None:
+            return False
+
+        # Reuse the NPC encounter UI with a flavor flag
+        self._npc_encounter_active = enc
+        self._npc_encounter_monster = monster
+        self._npc_encounter_phase = 'text'
+        self._npc_selected_option = None
+        self._npc_outcome_text = ''
+        self._npc_item_list = []
+        self._npc_item_scroll = 0
+        self._npc_is_flavor = True  # flag to skip karma processing
+        self.state = STATE_NPC_ENCOUNTER
+        return True
+
     def _start_npc_encounter(self, monster):
         """Begin a moral encounter when the player bumps an NPC."""
         tag = getattr(monster, '_npc_encounter_tag', None)
@@ -8232,7 +8315,7 @@ class Game:
         """Apply the cost, reward, and karma for the chosen option."""
         cost = opt.get('cost')
         reward = opt.get('reward')
-        karma_delta = opt['karma']
+        karma_delta = opt.get('karma', 0)  # flavor encounters have no karma
 
         # ── Apply cost ────────────────────────────────────────────
         if cost:
@@ -8267,6 +8350,10 @@ class Game:
                 self.player.hp = min(self.player.hp, self.player.max_hp)
             elif ctype == 'sp':
                 self.player.sp = max(0, self.player.sp - cost['amount'])
+            elif ctype == 'hp':
+                self.player.hp = max(1, self.player.hp - cost['amount'])
+            elif ctype == 'mp':
+                self.player.mp = max(0, self.player.mp - cost['amount'])
             elif ctype == 'triggered_item':
                 # Remove the trigger item from inventory OR equipment slots
                 enc = self._npc_encounter_active
@@ -8363,6 +8450,45 @@ class Game:
             if item:
                 self.player.inventory.append(item)
 
+        elif rtype == 'random_item':
+            # Flavor encounter reward: random item by category name
+            cat = reward.get('category', 'potion')
+            mapped = f'random_{cat}'
+            item = self._generate_npc_reward_item(mapped)
+            if item:
+                item.identified = True
+                self.player.inventory.append(item)
+
+        elif rtype == 'effect':
+            eff = reward['effect']
+            dur = reward.get('duration', 20)
+            self.player.add_effect(eff, dur)
+            eff_name = eff.replace('_', ' ').title()
+            self.add_message(f"{eff_name} for {dur} turns!", 'success')
+
+        elif rtype == 'hp_restore':
+            self.player.restore_hp(reward['amount'])
+            self.add_message(f"+{reward['amount']} HP!", 'success')
+
+        elif rtype == 'sp_restore':
+            self.player.sp = min(self.player.max_sp, self.player.sp + reward['amount'])
+            self.add_message(f"+{reward['amount']} SP!", 'success')
+
+        elif rtype == 'mp_restore':
+            self.player.restore_mp(reward['amount'])
+            self.add_message(f"+{reward['amount']} MP!", 'success')
+
+        elif rtype == 'enchant_weapon':
+            w = self.player.weapon
+            if w:
+                w.enchant_bonus += reward.get('amount', 1)
+                self.add_message(f"{w.name} is now +{w.enchant_bonus}!", 'success')
+            else:
+                self.add_message("You have no weapon equipped to enchant.", 'warning')
+
+        elif rtype == 'message':
+            pass  # No mechanical reward, just the outcome text
+
         elif rtype == 'multi':
             for sub_reward in reward['rewards']:
                 self._apply_npc_reward(sub_reward)
@@ -8435,7 +8561,11 @@ class Game:
                 npc.hp = 0
             enc = self._npc_encounter_active
             if enc:
-                self._encountered_npcs.add(enc['tag'])
+                if getattr(self, '_npc_is_flavor', False):
+                    encountered = getattr(self, '_encountered_flavor_npcs', set())
+                    encountered.add(enc['tag'])
+                else:
+                    self._encountered_npcs.add(enc['tag'])
 
         self._npc_encounter_active = None
         self._npc_encounter_monster = None
@@ -8443,6 +8573,7 @@ class Game:
         self._npc_selected_option = None
         self._npc_outcome_text = ''
         self._npc_item_list = []
+        self._npc_is_flavor = False
         self.state = STATE_PLAYER
         if resolved:
             self._advance_turn()

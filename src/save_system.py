@@ -44,6 +44,8 @@ def save_game(game) -> bool:
             'karma': getattr(game, 'karma', 0),
             '_npc_encounter_levels': getattr(game, '_npc_encounter_levels', {}),
             '_encountered_npcs': getattr(game, '_encountered_npcs', set()),
+            '_flavor_encounter_levels': getattr(game, '_flavor_encounter_levels', {}),
+            '_encountered_flavor_npcs': getattr(game, '_encountered_flavor_npcs', set()),
             '_abaddon_empowered': getattr(game, '_abaddon_empowered', False),
             '_locusts_strengthened': getattr(game, '_locusts_strengthened', False),
             '_judgment_resolved': getattr(game, '_judgment_resolved', False),

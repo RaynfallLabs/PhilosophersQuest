@@ -1936,6 +1936,16 @@ def can_pay_cost(player, cost: dict | None, player_gold: int) -> tuple[bool, str
             return True, ''
         return False, "You are too exhausted."
 
+    if ctype == 'hp':
+        if player.hp > cost['amount'] + 5:
+            return True, ''
+        return False, "You are too injured to afford that."
+
+    if ctype == 'mp':
+        if player.mp >= cost['amount']:
+            return True, ''
+        return False, "You don't have enough mana."
+
     if ctype == 'triggered_item':
         # The trigger item should be in inventory — checked by caller
         return True, ''
