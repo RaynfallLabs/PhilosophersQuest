@@ -642,25 +642,27 @@ def _try_place_vault(dungeon: 'Dungeon', level: int, rng: random.Random):
                    for rx in range(vx, vx + VAULT_W)):
             continue
 
-        # Find a FLOOR neighbor just outside one of the 4 faces
+        # Find a FLOOR neighbor just outside one of the 4 faces.
+        # Only check the INNER portion of each face (skip corners) so the
+        # door is orthogonally adjacent to an interior floor tile.
         door_candidates = []
-        # Top face: row vy, columns vx..vx+VAULT_W-1 -> neighbour row vy-1
-        for dx in range(VAULT_W):
+        # Top face: row vy, inner columns only -> neighbour row vy-1
+        for dx in range(1, VAULT_W - 1):
             nx, ny = vx + dx, vy - 1
             if 0 < nx < width - 1 and 0 < ny < height - 1 and tiles[ny][nx] == FLOOR:
                 door_candidates.append(('top', vx + dx, vy, nx, ny))
         # Bottom face
-        for dx in range(VAULT_W):
+        for dx in range(1, VAULT_W - 1):
             nx, ny = vx + dx, vy + VAULT_H
             if 0 < nx < width - 1 and 0 < ny < height - 1 and tiles[ny][nx] == FLOOR:
                 door_candidates.append(('bottom', vx + dx, vy + VAULT_H - 1, nx, ny))
         # Left face
-        for dy in range(VAULT_H):
+        for dy in range(1, VAULT_H - 1):
             nx, ny = vx - 1, vy + dy
             if 0 < nx < width - 1 and 0 < ny < height - 1 and tiles[ny][nx] == FLOOR:
                 door_candidates.append(('left', vx, vy + dy, nx, ny))
         # Right face
-        for dy in range(VAULT_H):
+        for dy in range(1, VAULT_H - 1):
             nx, ny = vx + VAULT_W, vy + dy
             if 0 < nx < width - 1 and 0 < ny < height - 1 and tiles[ny][nx] == FLOOR:
                 door_candidates.append(('right', vx + VAULT_W - 1, vy + dy, nx, ny))

@@ -4704,6 +4704,12 @@ class Game:
 
     def _throw_unusual_sphere(self, sphere, hit_monster, tx: int, ty: int):
         """Throw the Unusual Soul Sphere — summons Dad for 5 turns."""
+        from boss_levels import BOSS_LEVELS
+        if self.dungeon_level in BOSS_LEVELS:
+            self.add_message(
+                "The sphere pulses warmly in your hand, then fades. "
+                "You hear Dad's voice: \"I believe in you. This one's yours.\"", 'info')
+            return  # sphere NOT consumed — player keeps it
         self.player.remove_from_inventory(sphere)
 
         land_x, land_y = (hit_monster.x, hit_monster.y) if hit_monster else (tx, ty)
