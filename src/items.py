@@ -28,7 +28,7 @@ class Item:
         self.symbol     = defn['symbol']
         self.color      = tuple(defn['color'])
         self.weight     = float(defn.get('weight', 1.0))
-        self.item_class = defn['item_class']
+        self.item_class = defn.get('item_class', 'unknown')
         self.min_level  = int(defn.get('min_level', 1))
         self.x: int = 0
         self.y: int = 0
