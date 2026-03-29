@@ -409,11 +409,16 @@ class Monster:
 
         # --- Ambush AI: stay still until player is within 5 tiles ---
         if self.ai_pattern == 'ambush':
-            dist = abs(self.x - player.x) + abs(self.y - player.y)
-            if dist > 5:
-                return False  # lurk silently
-            # Player spotted -- switch to aggressive permanently
-            self.ai_pattern = 'aggressive'
+            if getattr(self, '_aware', False):
+                # Already detected by PER check — switch to aggressive
+                self.ai_pattern = 'aggressive'
+            else:
+                dist = abs(self.x - player.x) + abs(self.y - player.y)
+                if dist > 5:
+                    return False  # lurk silently, invisible
+                # Sprung! Switch to aggressive and become visible
+                self.ai_pattern = 'aggressive'
+                self._aware = True
 
         # --- Detection range: monsters only hunt within 8 tiles ---
         # Once a monster spots the player, it stays aware permanently.

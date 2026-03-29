@@ -3163,6 +3163,8 @@ class Game:
         self._do_passive_search()
         # Passive PER-based trap detection
         self._do_passive_trap_detection()
+        # Passive PER-based ambush detection
+        self._do_passive_ambush_detection()
         # Clairvoyant: reveal tiles within 10-tile radius each turn
         if self.player.has_effect('clairvoyant'):
             px, py = self.player.x, self.player.y
@@ -3403,6 +3405,13 @@ class Game:
                         trap['revealed'] = True
                         self.add_message(
                             f"Searching reveals a {trap['type'].replace('_', ' ')} trap!", 'success')
+        # Also reveal adjacent ambush monsters
+        for m in self.monsters:
+            if (m.alive and m.ai_pattern == 'ambush'
+                    and not getattr(m, '_aware', False)
+                    and abs(m.x - px) <= 1 and abs(m.y - py) <= 1):
+                m._aware = True
+                self.add_message(f"Searching reveals a hidden {m.name}!", 'warning')
 
     def _do_passive_search(self):
         """Passive PER-based detection of adjacent secret doors each turn."""
@@ -3500,6 +3509,23 @@ class Game:
                         trap['revealed'] = True
                         self.add_message(
                             f"You spot a {trap['type'].replace('_', ' ')} trap nearby!", 'warning')
+
+    def _do_passive_ambush_detection(self):
+        """Passive PER-based detection of hidden ambush monsters within sight."""
+        import random as _rng
+        # Higher chance than traps — you're looking at the room, not the floor
+        chance = 0.05 + self.player.PER * 0.015  # PER 10 = 20%, PER 16 = 29%
+        px, py = self.player.x, self.player.y
+        for m in self.monsters:
+            if not m.alive or m.ai_pattern != 'ambush' or getattr(m, '_aware', False):
+                continue
+            if (m.x, m.y) not in self.visible:
+                continue
+            dist = abs(m.x - px) + abs(m.y - py)
+            if dist <= 5 and _rng.random() < chance:
+                m._aware = True
+                self.add_message(
+                    f"Your keen senses detect a {m.name} lying in wait!", 'warning')
 
     # ------------------------------------------------------------------
     # SP starvation
@@ -11390,6 +11416,9 @@ class Game:
             self.renderer.draw_item(item, cam_x, cam_y, self.visible)
         for m in self.monsters:
             if m.alive:
+                # Ambush monsters are invisible until aware
+                if m.ai_pattern == 'ambush' and not getattr(m, '_aware', False):
+                    continue
                 self.renderer.draw_entity(m.x, m.y, m.color, cam_x, cam_y, self.visible, mid=m.kind)
         # Pet companions: draw with species sprite or color fallback
         for pet in self.pets:
