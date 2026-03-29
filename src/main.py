@@ -8193,13 +8193,13 @@ class Game:
 
     def _get_filtered_inventory(self, filter_type: str) -> list:
         """Return inventory items matching the cost filter type."""
-        from items import Food, Potion, Scroll, Weapon
+        from items import Food, Ingredient, Potion, Scroll, Weapon
         inv = self.player.inventory
         if filter_type == 'food':
-            return [i for i in inv if isinstance(i, Food)]
+            return [i for i in inv if isinstance(i, (Food, Ingredient))]
         if filter_type == 'healing_potion':
             return [i for i in inv if isinstance(i, Potion)
-                    and getattr(i, 'effect', '') == 'heal']
+                    and getattr(i, 'effect', '') in ('heal', 'extra_heal', 'full_heal')]
         if filter_type == 'potion':
             return [i for i in inv if isinstance(i, Potion)]
         if filter_type == 'scroll':

@@ -1882,13 +1882,13 @@ def can_pay_cost(player, cost: dict | None, player_gold: int) -> tuple[bool, str
     ctype = cost['type']
 
     if ctype == 'food':
-        from items import Food
-        has = any(isinstance(i, Food) for i in player.inventory)
+        from items import Food, Ingredient
+        has = any(isinstance(i, (Food, Ingredient)) for i in player.inventory)
         return (True, '') if has else (False, "You have no food to give.")
 
     if ctype == 'healing_potion':
         from items import Potion
-        has = any(isinstance(i, Potion) and getattr(i, 'effect', '') == 'heal'
+        has = any(isinstance(i, Potion) and getattr(i, 'effect', '') in ('heal', 'extra_heal', 'full_heal')
                   for i in player.inventory)
         return (True, '') if has else (False, "You have no healing potions.")
 
@@ -2005,13 +2005,13 @@ def judge_karma(karma: int) -> tuple[str, str]:
     for lo, hi, key, text in _JUDGMENT_TIERS:
         if lo <= karma <= hi:
             return key, text
-    # Fallback
+    # Fallback (should be unreachable since loop covers clamped range)
     if karma >= 10:
-        return _JUDGMENT_TIERS[4][1], _JUDGMENT_TIERS[4][3]
+        return _JUDGMENT_TIERS[4][2], _JUDGMENT_TIERS[4][3]
     if karma > 0:
-        return _JUDGMENT_TIERS[3][1], _JUDGMENT_TIERS[3][3]
+        return _JUDGMENT_TIERS[3][2], _JUDGMENT_TIERS[3][3]
     if karma < -5:
-        return _JUDGMENT_TIERS[0][1], _JUDGMENT_TIERS[0][3]
+        return _JUDGMENT_TIERS[0][2], _JUDGMENT_TIERS[0][3]
     if karma < 0:
-        return _JUDGMENT_TIERS[1][1], _JUDGMENT_TIERS[1][3]
-    return _JUDGMENT_TIERS[2][1], _JUDGMENT_TIERS[2][3]
+        return _JUDGMENT_TIERS[1][2], _JUDGMENT_TIERS[1][3]
+    return _JUDGMENT_TIERS[2][2], _JUDGMENT_TIERS[2][3]
