@@ -95,7 +95,8 @@ class QuizEngine:
     def start_quiz(self, mode: str | QuizMode, subject: str, tier: int,
                    callback, threshold: int = 3, max_chain: int | None = None,
                    wisdom: int = 10, timer_modifier: float = 1.0,
-                   extra_seconds: int = 0, base_seconds: int | None = None):
+                   extra_seconds: int = 0, base_seconds: int | None = None,
+                   total_qs: int | None = None):
         """
         Start a quiz session.
           threshold     -- for threshold modes: number of correct answers needed.
@@ -126,7 +127,7 @@ class QuizEngine:
         self.subject = subject
         self.tier = tier
         self.required = threshold
-        self.total_qs = math.ceil(threshold * 1.5)
+        self.total_qs = total_qs if total_qs is not None else math.ceil(threshold * 1.5)
         self.max_chain = max_chain
         self.callback = callback
         self._timer_modifier = timer_modifier

@@ -2641,6 +2641,14 @@ class Game:
                         from mystery_system import apply_mystery_reward
                         apply_mystery_reward('sisyphus', self.player, self, True)
                         self.player.quirk_progress['sisyphus_boulder_active'] = False
+                        # Remove the Sisyphus altar from the floor
+                        from mystery_system import MysteryAltar
+                        sis_altar = next(
+                            (i for i in self.ground_items
+                             if isinstance(i, MysteryAltar) and i.mystery_id == 'sisyphus'), None
+                        )
+                        if sis_altar:
+                            self.ground_items.remove(sis_altar)
                     elif _sis_tiles % 5 == 0:
                         self.add_message(
                             f"The boulder weighs you down. {25 - _sis_tiles} tiles remain.", 'warning'
@@ -3833,8 +3841,8 @@ class Game:
             self.player_gold = getattr(self, 'player_gold', 0) - m['gold_cost']
             self.add_message(f"You offer {m['gold_cost']} gold as tribute.", 'info')
 
-        # Consume key item (if any; not cauldron food)
-        if m['key_item'] is not None and altar.mystery_id not in ('cauldron',):
+        # Consume key item (if any; not cauldron food, not sisyphus boulder)
+        if m['key_item'] is not None and altar.mystery_id not in ('cauldron', 'sisyphus'):
             consume_key_item(altar.mystery_id, self.player)
 
         # For cauldron: consume 3 food items
@@ -3857,7 +3865,7 @@ class Game:
         def _on_mystery_complete(result):
             success = result.success
             # For chain mode, check threshold manually
-            if ch['mode'] == 'chain' and 'threshold' in ch:
+            if ch['mode'] in ('chain', 'escalator_chain') and 'threshold' in ch:
                 success = result.score >= ch['threshold']
             # Pandora inversion
             if m.get('invert_result'):
@@ -3881,6 +3889,8 @@ class Game:
             'extra_seconds':  self.player.get_quiz_extra_seconds(ch['subject']),
             'base_seconds':   self.player.get_quiz_timer(ch['subject']),
         }
+        if 'total' in ch:
+            quiz_kwargs['total_qs'] = ch['total']
         if 'max_chain' in ch:
             quiz_kwargs['max_chain'] = ch['max_chain']
 
@@ -3952,9 +3962,12 @@ class Game:
         y += 8
         req_lines = []
         ch = m['challenge']
-        req_lines.append(
-            f"Challenge: {ch['subject'].capitalize()}  --  {ch['mode'].replace('_', ' ').title()}"
-        )
+        if ch['mode'] == 'physical':
+            req_lines.append("Challenge: Physical endurance")
+        else:
+            req_lines.append(
+                f"Challenge: {ch['subject'].capitalize()}  --  {ch['mode'].replace('_', ' ').title()}"
+            )
         if m['key_item']:
             req_lines.append(f"Requires: {m['key_item']['name']}")
         if m.get('gold_cost', 0) > 0:

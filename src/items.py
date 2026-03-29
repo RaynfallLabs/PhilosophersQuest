@@ -67,7 +67,7 @@ class Weapon(Item):
         self.floor_spawn_weight: dict   = defn.get('floorSpawnWeight', defn.get('floor_spawn_weight', {}))
         self.container_loot_tier: str   = defn.get('containerLootTier', defn.get('container_loot_tier', 'common'))
         self.value: int                 = int(defn.get('value', 50))
-        self.enchant_bonus: int         = 0
+        self.enchant_bonus: int         = int(defn.get('enchant_bonus', defn.get('enchantBonus', 0)))
         self.buc: str                   = 'uncursed'
         self.buc_known: bool            = False
         self.identified: bool           = bool(defn.get('identified', False))
