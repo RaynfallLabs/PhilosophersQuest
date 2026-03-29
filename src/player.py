@@ -12,7 +12,7 @@ class Player:
     SUBJECT_TIMER = {
         # (base_seconds, wis_scale) — timer = base + WIS * scale
         # Recalibrated after LLM review lengthened choices for balance.
-        'math':       (12, 0.8),   # flashcard arithmetic — still short
+        'math':       ( 8, 0.8),   # flashcard arithmetic — short, no reading needed
         'science':    (16, 1.0),   # concept questions, medium choices
         'grammar':    (16, 1.0),   # sentence-level analysis
         'trivia':     (20, 1.0),   # general knowledge, varied lengths

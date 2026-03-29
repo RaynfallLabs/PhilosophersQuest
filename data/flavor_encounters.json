@@ -663,8 +663,8 @@
       {
         "label": "Sell him a potion (take 50g)",
         "cost": {
-          "type": "gold",
-          "amount": 0
+          "type": "random_item",
+          "category": "potion"
         },
         "reward": {
           "type": "gold",

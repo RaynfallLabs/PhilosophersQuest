@@ -417,9 +417,10 @@ class Monster:
 
         # --- Detection range: monsters only hunt within 8 tiles ---
         # Once a monster spots the player, it stays aware permanently.
+        # Aggravated status makes ALL monsters aware immediately.
         dist_to_player = abs(self.x - player.x) + abs(self.y - player.y)
         detection_range = 8
-        if dist_to_player <= detection_range:
+        if dist_to_player <= detection_range or player.has_effect('aggravated'):
             self._aware = True
         if not getattr(self, '_aware', False) and not self._alerted:
             # Beyond detection range and never spotted the player — wander randomly

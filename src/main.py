@@ -3384,7 +3384,7 @@ class Game:
             )
 
     def _do_searching(self):
-        """Auto-reveal adjacent tiles and secret doors when player is searching."""
+        """Auto-reveal adjacent tiles, secret doors, and traps when player is searching."""
         if not self.player.has_effect('searching'):
             return
         px, py = self.player.x, self.player.y
@@ -3397,6 +3397,12 @@ class Game:
                         self.dungeon.tiles[ny][nx] = DOOR
                         self._refresh_fov()
                         self.add_message("Searching reveals a secret door!", 'success')
+                    # Also reveal hidden traps
+                    trap = self.dungeon.traps.get((nx, ny))
+                    if trap and not trap.get('revealed'):
+                        trap['revealed'] = True
+                        self.add_message(
+                            f"Searching reveals a {trap['type'].replace('_', ' ')} trap!", 'success')
 
     def _do_passive_search(self):
         """Passive PER-based detection of adjacent secret doors each turn."""
@@ -8354,6 +8360,18 @@ class Game:
                 self.player.hp = max(1, self.player.hp - cost['amount'])
             elif ctype == 'mp':
                 self.player.mp = max(0, self.player.mp - cost['amount'])
+            elif ctype == 'random_item':
+                # Cost is an item from a category (e.g., scroll sacrifice)
+                from items import Scroll, Potion, Food, Weapon
+                cat = cost.get('category', 'scroll')
+                cat_map = {'scroll': Scroll, 'potion': Potion, 'food': Food, 'weapon': Weapon}
+                cls = cat_map.get(cat)
+                if cls and selected_item and isinstance(selected_item, cls):
+                    self.player.remove_from_inventory(selected_item)
+                elif cls:
+                    item = next((i for i in self.player.inventory if isinstance(i, cls)), None)
+                    if item:
+                        self.player.remove_from_inventory(item)
             elif ctype == 'triggered_item':
                 # Remove the trigger item from inventory OR equipment slots
                 enc = self._npc_encounter_active
@@ -8411,6 +8429,10 @@ class Game:
         # ── Apply reward ──────────────────────────────────────────
         if reward:
             self._apply_npc_reward(reward)
+        # Bonus reward (e.g., Cowering Goblin gives two items)
+        bonus = opt.get('bonus_reward')
+        if bonus:
+            self._apply_npc_reward(bonus)
 
         # ── Apply karma ───────────────────────────────────────────
         self.karma = max(-10, min(10, self.karma + karma_delta))
@@ -8424,12 +8446,16 @@ class Game:
         rtype = reward['type']
 
         if rtype == 'gold':
-            amount = random.randint(reward['min'], reward['max'])
+            if 'amount' in reward:
+                amount = reward['amount']
+            else:
+                amount = random.randint(reward['min'], reward['max'])
             self.player_gold += amount
+            self.add_message(f"+{amount} gold!", 'loot')
 
         elif rtype in ('random_weapon', 'random_armor', 'random_shield',
                         'random_accessory', 'random_potion', 'random_scroll',
-                        'random_food'):
+                        'random_food', 'random_wand'):
             count = reward.get('count', 1)
             for _ in range(count):
                 item = self._generate_npc_reward_item(rtype)
@@ -8453,8 +8479,7 @@ class Game:
         elif rtype == 'random_item':
             # Flavor encounter reward: random item by category name
             cat = reward.get('category', 'potion')
-            mapped = f'random_{cat}'
-            item = self._generate_npc_reward_item(mapped)
+            item = self._generate_npc_reward_item(f'random_{cat}')
             if item:
                 item.identified = True
                 self.player.inventory.append(item)
@@ -8504,6 +8529,7 @@ class Game:
             'random_potion': 'potion',
             'random_scroll': 'scroll',
             'random_food': 'food',
+            'random_wand': 'wand',
         }
         cls_name = type_map.get(rtype)
         if not cls_name:

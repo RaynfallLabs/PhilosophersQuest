@@ -1936,6 +1936,16 @@ def can_pay_cost(player, cost: dict | None, player_gold: int) -> tuple[bool, str
             return True, ''
         return False, "You are too exhausted."
 
+    if ctype == 'random_item':
+        # Used as a cost — check if player has an item of the requested category
+        from items import Scroll, Potion, Food, Weapon
+        cat = cost.get('category', 'scroll')
+        cat_map = {'scroll': Scroll, 'potion': Potion, 'food': Food, 'weapon': Weapon}
+        cls = cat_map.get(cat)
+        if cls and any(isinstance(i, cls) for i in player.inventory):
+            return True, ''
+        return False, f"You have no {cat} to offer."
+
     if ctype == 'hp':
         if player.hp > cost['amount'] + 5:
             return True, ''
