@@ -400,7 +400,7 @@ class Monster:
         # --- Ranged AI: shoot from distance, maintain range ---
         if self.ai_pattern == 'ranged':
             dist_r = abs(self.x - player.x) + abs(self.y - player.y)
-            if dist_r <= 8:
+            if dist_r <= 8 or player.has_effect('aggravated'):
                 self._aware = True
             if not getattr(self, '_aware', False) and not self._alerted:
                 self._wander(dungeon, all_monsters, extra_occupied, player)
