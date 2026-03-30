@@ -4,7 +4,7 @@ import random
 import sys
 import pygame
 
-VERSION = "1.7.1"
+VERSION = "1.8"
 
 # FANTASY: High-fantasy medieval/arcane grimoire UI theme
 from fantasy_ui import (FP, get_font, draw_panel, draw_dark_panel,
