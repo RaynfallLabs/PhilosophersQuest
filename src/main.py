@@ -7582,7 +7582,7 @@ class Game:
                       and any(w in m.kind.lower() for w in _UNDEAD_WORDS)]
             if undead:
                 for m in undead:
-                    actual = m.take_damage(base_dmg, 'holy')
+                    actual = m.take_damage(base_dmg)
                     m.add_effect('feared', 8)
                     if not m.alive:
                         self._on_monster_killed(m)
@@ -8491,8 +8491,7 @@ class Game:
         elif rtype == 'stat':
             stat = reward['stat']
             amount = reward['amount']
-            current = getattr(self.player, stat, 10)
-            setattr(self.player, stat, current + amount)
+            self.player.apply_stat_bonus(stat, amount)
             self.add_message(f"+{amount} {stat}!", 'success')
 
         elif rtype == 'specific_item':
@@ -9023,7 +9022,7 @@ class Game:
             hit = 0
             for m in list(self.monsters):
                 if m.alive and (m.x, m.y) in self.visible:
-                    actual = m.take_damage(scaled, 'fire')
+                    actual = m.take_damage(scaled)
                     if not m.alive:
                         self._on_monster_killed(m)
                     hit += 1
@@ -9285,7 +9284,7 @@ class Game:
             elif effect == 'acid_arrow':
                 base_dmg = _roll(power) if power else 8
                 scaled = self._spell_damage(base_dmg, chain)
-                actual = target.take_damage(scaled, 'acid')
+                actual = target.take_damage(scaled)
                 dot_dur = max(2, int(5 * chain_scale))
                 target.add_effect('poisoned', dot_dur)
                 self.add_message(

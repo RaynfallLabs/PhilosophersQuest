@@ -251,8 +251,11 @@ def select_flavor_encounters(level_count: int = 100) -> dict[int, dict]:
     """Select which floors get flavor encounters for this run.
     Returns {level: encounter_dict} for ~40% of floors.
     """
+    BOSS_LEVELS = {20, 40, 60, 80, 100}
     eligible_by_level = {}
     for level in range(1, level_count + 1):
+        if level in BOSS_LEVELS:
+            continue  # no flavor NPCs on boss floors
         pool = [e for e in FLAVOR_ENCOUNTERS
                 if e['min_level'] <= level <= e['max_level']]
         if pool:
