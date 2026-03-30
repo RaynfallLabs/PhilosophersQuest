@@ -3460,7 +3460,7 @@ class Game:
                         return True
                     trap_name = trap['type'].replace('_', ' ')
                     tier, threshold = self._TRAP_DISARM.get(trap['type'], (2, 2))
-                    self.quiz_title = f"DISARMING {trap_name.upper()} -- ECONOMICS"
+                    self.quiz_title = f"DISARMING {trap_name.upper()} -- AI"
                     self.state = STATE_QUIZ
                     _trap_pos = (nx, ny)
 
@@ -3481,14 +3481,14 @@ class Game:
 
                     self.quiz_engine.start_quiz(
                         mode='threshold',
-                        subject='economics',
+                        subject='ai',
                         tier=tier,
                         callback=_on_disarm,
                         threshold=threshold,
                         wisdom=self.player.WIS,
                         timer_modifier=self.player.get_quiz_timer_modifier(),
-                        extra_seconds=self.player.get_quiz_extra_seconds('economics'),
-                        base_seconds=self.player.get_quiz_timer('economics'),
+                        extra_seconds=self.player.get_quiz_extra_seconds('ai'),
+                        base_seconds=self.player.get_quiz_timer('ai'),
                     )
                     return True
         return False  # no revealed trap nearby — fall through to lockpick
@@ -5005,9 +5005,9 @@ class Game:
             self.add_message("There's nothing to interact with here.", 'info')
 
     def _drink_fountain(self):
-        """Drink from a fountain -- trivia quiz determines outcome."""
+        """Drink from a fountain -- AI quiz determines outcome."""
         self.add_message("You cup your hands and drink from the fountain...", 'info')
-        self.quiz_title = "FOUNTAIN -- TRIVIA"
+        self.quiz_title = "FOUNTAIN -- AI"
         self.state = STATE_QUIZ
 
         def on_complete(result):
@@ -5018,14 +5018,14 @@ class Game:
 
         self.quiz_engine.start_quiz(
             mode='escalator_chain',
-            subject='trivia',
+            subject='ai',
             tier=1,
             callback=on_complete,
             max_chain=6,
             wisdom=self.player.WIS,
             timer_modifier=self.player.get_quiz_timer_modifier(),
-            extra_seconds=self.player.get_quiz_extra_seconds('trivia'),
-            base_seconds=self.player.get_quiz_timer('trivia'),
+            extra_seconds=self.player.get_quiz_extra_seconds('ai'),
+            base_seconds=self.player.get_quiz_timer('ai'),
         )
 
     def _resolve_fountain(self, chain: int):
@@ -6960,15 +6960,15 @@ class Game:
         if _wand_is_mm:
             self.quiz_engine.start_quiz(
                 mode='escalator_chain',
-                subject='ai',
+                subject='science',
                 tier=1,
                 callback=on_complete,
                 max_chain=5,
                 wisdom=self.player.WIS,
                 timer_modifier=self.player.get_quiz_timer_modifier(),
                 extra_seconds=self.player.get_int_quiz_bonus() +
-                              self.player.get_quiz_extra_seconds('ai'),
-                base_seconds=self.player.get_quiz_timer('ai'),
+                              self.player.get_quiz_extra_seconds('science'),
+                base_seconds=self.player.get_quiz_timer('science'),
             )
         else:
             self.quiz_engine.start_quiz(
@@ -10540,15 +10540,15 @@ class Game:
         if _wand_is_mm:
             self.quiz_engine.start_quiz(
                 mode='escalator_chain',
-                subject='ai',
+                subject='science',
                 tier=1,
                 callback=on_complete,
                 max_chain=5,
                 wisdom=self.player.WIS,
                 timer_modifier=self.player.get_quiz_timer_modifier(),
                 extra_seconds=self.player.get_int_quiz_bonus() +
-                              self.player.get_quiz_extra_seconds('ai'),
-                base_seconds=self.player.get_quiz_timer('ai'),
+                              self.player.get_quiz_extra_seconds('science'),
+                base_seconds=self.player.get_quiz_timer('science'),
             )
         else:
             self.quiz_engine.start_quiz(
