@@ -10643,30 +10643,64 @@ class Game:
             return  # don't call _advance_turn or set STATE_PLAYER — quiz handles it
 
         if pid == 'stuffie_fire_breath':
-            from dice import roll as _fb_roll
-            from combat import get_cone_tiles
-            base = _fb_roll('3d6')
-            scaled = self._int_scaled_damage(base)
-            px, py = self.player.x, self.player.y
-            cone = get_cone_tiles(px, py, cx, cy, max_range=6)
-            # Hit all monsters in the cone that are visible
-            hits = 0
-            kills = 0
-            for m in list(self.monsters):
-                if m.alive and (m.x, m.y) in cone and (m.x, m.y) in self.visible:
-                    actual = m.take_damage(scaled)
-                    hits += 1
-                    if not m.alive:
-                        self._on_monster_killed(m)
-                        kills += 1
+            # Store cone target for quiz callback
+            self._stuffie_cone_target = (cx, cy)
             self.add_message(
-                "The Charmander Stuffie glows white-hot! You breathe a cone of fire!", 'success')
-            if hits:
+                "The Charmander Stuffie glows warm... focus your fire!", 'info')
+            self.quiz_title = "FIRE BREATH -- AI"
+            self.state = STATE_QUIZ
+            pl = self.player
+
+            def _on_fire_breath(result):
+                chain = result.score
+                if chain == 0:
+                    self.add_message(
+                        "The Stuffie flickers and dims. The fire fizzles out.", 'warning')
+                    self.state = STATE_PLAYER
+                    self._advance_turn()
+                    return
+                from dice import roll as _fb_roll
+                from combat import get_cone_tiles
+                # Damage scales with chain: base 3d6, +1d6 per chain level
+                dice = f'{2 + chain}d6'
+                base = _fb_roll(dice)
+                scaled = self._int_scaled_damage(base)
+                tcx, tcy = self._stuffie_cone_target
+                px, py = pl.x, pl.y
+                cone = get_cone_tiles(px, py, tcx, tcy, max_range=6)
+                hits = 0
+                kills = 0
+                for m in list(self.monsters):
+                    if m.alive and (m.x, m.y) in cone and (m.x, m.y) in self.visible:
+                        actual = m.take_damage(scaled)
+                        hits += 1
+                        if not m.alive:
+                            self._on_monster_killed(m)
+                            kills += 1
                 self.add_message(
-                    f"{hits} creatures engulfed for {scaled} fire damage! ({kills} slain)", 'combat')
-            else:
-                self.add_message("The flames find no target.", 'info')
-            self.player.power_cooldowns['stuffie_fire_breath'] = 500
+                    "The Charmander Stuffie glows white-hot! "
+                    f"You breathe a cone of fire! ({dice} damage, chain {chain})", 'success')
+                if hits:
+                    self.add_message(
+                        f"{hits} creatures engulfed for {scaled} fire damage! ({kills} slain)", 'combat')
+                else:
+                    self.add_message("The flames find no target.", 'info')
+                pl.power_cooldowns['stuffie_fire_breath'] = 500
+                self.state = STATE_PLAYER
+                self._advance_turn()
+
+            self.quiz_engine.start_quiz(
+                mode='escalator_chain',
+                subject='ai',
+                tier=1,
+                callback=_on_fire_breath,
+                max_chain=5,
+                wisdom=pl.WIS,
+                timer_modifier=pl.get_quiz_timer_modifier(),
+                extra_seconds=pl.get_quiz_extra_seconds('ai'),
+                base_seconds=pl.get_quiz_timer('ai'),
+            )
+            return  # quiz handles state + advance_turn
 
         self.state = STATE_PLAYER
         self._advance_turn()

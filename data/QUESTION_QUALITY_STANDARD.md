@@ -29,11 +29,11 @@ Questions are tiered 1-5. The tier determines when and how they appear:
 
 | Tier | Difficulty | Equivalent | Examples |
 |------|-----------|------------|----------|
-| **T1** | Elementary | 5th grade / age 10 | "What is 2 + 2?", "What continent is Egypt on?" |
-| **T2** | Middle school | 8th grade / age 13 | "What is 15% of 200?", "Who wrote Romeo and Juliet?" |
-| **T3** | High school | 11th grade / age 16 | "What is the derivative of x²?", "What is the Magna Carta?" |
-| **T4** | College | Undergraduate level | "What is Nash Equilibrium?", "Explain Kant's categorical imperative" |
-| **T5** | Expert | Graduate/specialist | "What is the Penrose process?", "Define apophatic theology" |
+| **T1** | 5th grade|
+| **T2** | 6th grade|
+| **T3** |  7th grade|
+| **T4** |8th grade |
+| **T5** | 9th grade| 
 
 **Escalator modes** start at T1 and increase tier with each correct answer. This means T1 questions are seen the MOST — they must be rock-solid.
 
@@ -83,3 +83,10 @@ For each question in the CSV, fill in:
 - **fixed_context**: corrected context (only if the context also needs fixing)
 
 Leave fixed columns blank for OK and DELETE rows.
+
+## Content Guidelines
+
+Questions should be FUN, FUNNY, or inspire a sense a WONDER or CURIOSITY, where possible. 
+Avoid progressive, woke, or leftist content.
+Focus on American exceptionalism where appropriate and the superiority of Western thought.
+ 
