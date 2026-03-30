@@ -8089,7 +8089,7 @@ class Game:
         from monster import Monster
         # Create a fake "monster" for the NPC so it renders and blocks tiles
         npc_def = {
-            'id': f"npc_{enc['tag']}",
+            'id': enc.get('sprite_id', 'npc_traveler'),
             'name': enc['name'],
             'symbol': enc['symbol'],
             'color': list(enc['color']),
@@ -8132,7 +8132,7 @@ class Game:
 
         from monster import Monster
         npc_def = {
-            'id': f"flv_{enc['tag']}",
+            'id': enc.get('sprite_id', 'npc_traveler'),
             'name': enc['name'],
             'symbol': enc['symbol'],
             'color': list(enc['color']),

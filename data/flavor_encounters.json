@@ -42,7 +42,8 @@
         "reward": null,
         "outcome": "He waves you off without looking up, already arguing with the map under his breath. You walk on, accompanied by the fading sound of someone losing a debate with parchment."
       }
-    ]
+    ],
+    "sprite_id": "npc_merchant"
   },
   {
     "tag": "flv_frightened_pilgrim",
@@ -75,7 +76,8 @@
         "reward": null,
         "outcome": "She nods bravely, gripping her idol tighter. \"The gods will provide, I suppose.\" You leave her to her quiet courage and continue deeper into the dark."
       }
-    ]
+    ],
+    "sprite_id": "npc_traveler"
   },
   {
     "tag": "flv_goblin_salesman",
@@ -120,7 +122,8 @@
         "reward": null,
         "outcome": "Brix looks genuinely wounded. \"No customer? But Brix had such good deals today...\" He retreats behind the stalagmite with a tragic little sigh. You feel slightly guilty."
       }
-    ]
+    ],
+    "sprite_id": "npc_merchant"
   },
   {
     "tag": "flv_weeping_ghost",
@@ -161,7 +164,8 @@
         "reward": null,
         "outcome": "You slip past without a word. Behind you, the soft weeping resumes and then is swallowed by the dark. You don't look back."
       }
-    ]
+    ],
+    "sprite_id": "npc_ghost"
   },
   {
     "tag": "flv_apprentice_alchemist",
@@ -206,7 +210,8 @@
         "reward": null,
         "outcome": "He looks disappointed but philosophical. \"Fair enough. Not everyone has the spirit of scientific inquiry.\" One of his potions chooses this moment to turn bright purple. He stares at it. \"That's... new.\""
       }
-    ]
+    ],
+    "sprite_id": "npc_mystic"
   },
   {
     "tag": "flv_singing_bones",
@@ -248,7 +253,8 @@
         "reward": null,
         "outcome": "\"Rude,\" the bones observe, as you leave. The humming resumes behind you, a slow and sourceless melody that follows you down the corridor for longer than it should."
       }
-    ]
+    ],
+    "sprite_id": "npc_traveler"
   },
   {
     "tag": "flv_wandering_herbalist",
@@ -292,7 +298,8 @@
         "reward": null,
         "outcome": "She has already forgotten you exist, loupe back against her eye, muttering notes to herself. The lantern light shrinks behind you as you walk on."
       }
-    ]
+    ],
+    "sprite_id": "npc_traveler"
   },
   {
     "tag": "flv_cursed_mirror",
@@ -337,7 +344,8 @@
         "reward": null,
         "outcome": "\"Wise,\" your reflection says to your back. You keep walking. You are absolutely certain there was a second set of footsteps behind you. There wasn't. Probably."
       }
-    ]
+    ],
+    "sprite_id": "npc_traveler"
   },
   {
     "tag": "flv_child_with_lantern",
@@ -353,7 +361,7 @@
     "text": "A child, perhaps eight years old, sits in the middle of the corridor holding a lantern and eating an apple with great contentment. She looks up at you with complete composure. \"Hello. Are you lost? I know all the paths on this level. My dad's a miner. I'm not supposed to be here but he doesn't know yet.\"",
     "options": [
       {
-        "label": "Ask her about the layout",
+        "label": "Share food and ask about the layout",
         "cost": {
           "type": "food"
         },
@@ -365,7 +373,7 @@
         "outcome": "You trade her a ration for ten minutes of the most thorough dungeon briefing you have ever received, complete with hand gestures. She describes three shortcuts, two trapped passages, and a very large rat she has named Gerald. You feel oddly well-oriented."
       },
       {
-        "label": "Give her something to eat",
+        "label": "Share food and ask about the layout",
         "cost": {
           "type": "food"
         },
@@ -380,7 +388,8 @@
         "reward": null,
         "outcome": "\"I will in a minute,\" she says, not moving. You walk on with the unsettling feeling that she has been here longer than you, understands this place better than you do, and will leave exactly when she decides to."
       }
-    ]
+    ],
+    "sprite_id": "npc_child"
   },
   {
     "tag": "flv_disgraced_knight",
@@ -421,7 +430,8 @@
         "reward": null,
         "outcome": "He doesn't call after you. You look back once and he is already staring at the scratched-out crest on his tabard, his expression unreadable."
       }
-    ]
+    ],
+    "sprite_id": "npc_warrior"
   },
   {
     "tag": "flv_rat_king_tiny",
@@ -463,7 +473,8 @@
         "reward": null,
         "outcome": "The Rat King watches you go with the cool, assessing gaze of a monarch who has seen many adventurers pass and will see many more. The squeaking resumes behind you, businesslike."
       }
-    ]
+    ],
+    "sprite_id": "npc_creature"
   },
   {
     "tag": "flv_mapmaker",
@@ -509,7 +520,8 @@
         "reward": null,
         "outcome": "He shrugs and returns to his measuring. \"Another time, perhaps.\" You hear him muttering new distances as you round the corner, already absorbed in the architecture."
       }
-    ]
+    ],
+    "sprite_id": "npc_scholar"
   },
   {
     "tag": "flv_echo_voice",
@@ -554,7 +566,8 @@
         "reward": null,
         "outcome": "\"Wise,\" the wall says, without reproach. The symbols return to inert stone. The corridor feels ordinary again, or at least it feels that way until you glance back and notice the symbols have changed position."
       }
-    ]
+    ],
+    "sprite_id": "npc_ghost"
   },
   {
     "tag": "flv_broken_automaton",
@@ -600,7 +613,8 @@
         "reward": null,
         "outcome": "\"Understood,\" it says. \"I will... wait.\" Its eyes dim to a faint flicker. You wonder how long it has already been waiting, and how much longer it will."
       }
-    ]
+    ],
+    "sprite_id": "npc_creature"
   },
   {
     "tag": "flv_three_mushrooms",
@@ -645,7 +659,8 @@
         "reward": null,
         "outcome": "The mushrooms watch you go with whatever sense they use for watching. The violet glow lingers at the edge of your vision for some time, a small and patient light in the dark."
       }
-    ]
+    ],
+    "sprite_id": "npc_creature"
   },
   {
     "tag": "flv_treasure_hunter_desperate",
@@ -689,7 +704,8 @@
         "reward": null,
         "outcome": "He stares at you for a moment, then nods with quiet dignity. \"Right. Fair enough. Every man for himself down here.\" He straightens his coat and walks east, toward whatever is waiting for him."
       }
-    ]
+    ],
+    "sprite_id": "npc_warrior"
   },
   {
     "tag": "flv_stone_fox",
@@ -734,7 +750,8 @@
         "reward": null,
         "outcome": "It watches you go without moving. When you glance back from the next junction, it is already facing a different direction, as though it was never waiting for you at all."
       }
-    ]
+    ],
+    "sprite_id": "npc_traveler"
   },
   {
     "tag": "flv_young_scribe",
@@ -762,7 +779,7 @@
         "outcome": "He writes at furious speed, interrupting every sentence with clarifying questions about mandibles and preferred habitats. \"Extraordinary. Just extraordinary.\" He counts out coins carefully. \"Most adventurers just say 'it was big '.\""
       },
       {
-        "label": "Give him a light source",
+        "label": "Share food for his journey",
         "cost": {
           "type": "food"
         },
@@ -778,7 +795,8 @@
         "reward": null,
         "outcome": "He looks torn between relief and professional disappointment. \"Perhaps... yes, perhaps that's sensible.\" He writes one final note, adds a small asterisk, and shuffles off toward the surface with his satchel held tight."
       }
-    ]
+    ],
+    "sprite_id": "npc_scholar"
   },
   {
     "tag": "flv_dwarven_smith_marta",
@@ -811,7 +829,8 @@
         "reward": null,
         "outcome": "She shrugs and returns to her work without ceremony. The rhythmic clanging follows you down the corridor long after she disappears from sight."
       }
-    ]
+    ],
+    "sprite_id": "npc_dwarf"
   },
   {
     "tag": "flv_desperate_treasure_hunter",
@@ -853,7 +872,8 @@
         "reward": null,
         "outcome": "He releases your arm and sinks back against the wall, staring at nothing. You leave him there, and try not to think about whether the dungeon will be more merciful than you were."
       }
-    ]
+    ],
+    "sprite_id": "npc_warrior"
   },
   {
     "tag": "flv_ink_stained_scholar",
@@ -896,7 +916,8 @@
         "reward": null,
         "outcome": "\"Mm. Wise choice — I'm nearly at a breakthrough.\" She's already forgotten you, her quill scratching furiously at a new page."
       }
-    ]
+    ],
+    "sprite_id": "npc_scholar"
   },
   {
     "tag": "flv_ghost_soldier",
@@ -935,7 +956,8 @@
         "reward": null,
         "outcome": "He watches you pass with those empty eyes. You feel the cold radiating off him like an open grave. He says nothing, and you do not look back."
       }
-    ]
+    ],
+    "sprite_id": "npc_warrior"
   },
   {
     "tag": "flv_traveling_alchemist",
@@ -980,7 +1002,8 @@
         "reward": null,
         "outcome": "\"Your loss! My next customer might not have your restraint.\" He tips an imaginary hat and wanders deeper into the dungeon, bottles clinking merrily in the dark."
       }
-    ]
+    ],
+    "sprite_id": "npc_mystic"
   },
   {
     "tag": "flv_whispering_hermit",
@@ -1025,7 +1048,8 @@
         "reward": null,
         "outcome": "They nod slowly, with no offense taken. \"That's how I started too,\" they say. You're not entirely sure what they mean by that."
       }
-    ]
+    ],
+    "sprite_id": "npc_mystic"
   },
   {
     "tag": "flv_goblin_mapmaker",
@@ -1068,7 +1092,8 @@
         "reward": null,
         "outcome": "\"Fine! Fine!\" He hunches back over his vellum, muttering. \"Nobody appreciates cartography. Nobody. Not even in a dungeon where knowing where you ARE is literally life and death.\""
       }
-    ]
+    ],
+    "sprite_id": "npc_scholar"
   },
   {
     "tag": "flv_battle_weary_veteran",
@@ -1112,7 +1137,8 @@
         "reward": null,
         "outcome": "\"Sure you are,\" she says, with the tone of someone who has heard that line from people who didn't make it. She goes back to oiling her sword. You go back to believing."
       }
-    ]
+    ],
+    "sprite_id": "npc_warrior"
   },
   {
     "tag": "flv_cursed_merchant",
@@ -1157,7 +1183,8 @@
         "reward": null,
         "outcome": "His smile does not waver. Not even slightly. \"A wise consumer,\" he says pleasantly. You back away, and he watches you go, still grinning, until you round the corner and he is mercifully out of sight."
       }
-    ]
+    ],
+    "sprite_id": "npc_merchant"
   },
   {
     "tag": "flv_wounded_scout",
@@ -1201,7 +1228,8 @@
         "reward": null,
         "outcome": "\"Yeah,\" she says, to no one in particular. You hope she finds her way out. You've seen enough of this dungeon to know that hope doesn't cost anything, but it isn't cheap either."
       }
-    ]
+    ],
+    "sprite_id": "npc_traveler"
   },
   {
     "tag": "flv_mnemonic_monk",
@@ -1245,7 +1273,8 @@
         "reward": null,
         "outcome": "He does not acknowledge your passage. But as you round the bend, you could swear the silence behind you is a fraction more peaceful than the silence ahead."
       }
-    ]
+    ],
+    "sprite_id": "npc_traveler"
   },
   {
     "tag": "flv_apprentice_runescribe",
@@ -1290,7 +1319,8 @@
         "reward": null,
         "outcome": "\"Right. Okay. I'll figure it out.\" She turns back to her work with the particular determination of someone who has been underestimated their whole life and has stopped minding."
       }
-    ]
+    ],
+    "sprite_id": "npc_scholar"
   },
   {
     "tag": "flv_singing_bones_2",
@@ -1334,7 +1364,8 @@
         "reward": null,
         "outcome": "It gives a skeletal shrug and resumes singing. The melody follows you for two corridors before the stone finally swallows it. It's in your head for longer than that."
       }
-    ]
+    ],
+    "sprite_id": "npc_traveler"
   },
   {
     "tag": "flv_plague_doctor",
@@ -1379,7 +1410,8 @@
         "reward": null,
         "outcome": "\"You are demonstrably not fine,\" they say, and make a note on their clipboard anyway. You find this oddly comforting."
       }
-    ]
+    ],
+    "sprite_id": "npc_traveler"
   },
   {
     "tag": "flv_moth_woman",
@@ -1421,7 +1453,8 @@
         "reward": null,
         "outcome": "She does not follow. She watches you retreat with those silver eyes and does not blink once. Around the corner, you check your reflection in your blade. Your own eyes look briefly, impossibly, silver. Then they don't."
       }
-    ]
+    ],
+    "sprite_id": "npc_creature"
   },
   {
     "tag": "flv_lost_caravan_guard",
@@ -1463,7 +1496,8 @@
         "reward": null,
         "outcome": "He laughs — short, tired, genuine. \"Of course you are.\" He nods toward the dark. \"Well. Company for a few minutes, then. That's something.\""
       }
-    ]
+    ],
+    "sprite_id": "npc_warrior"
   },
   {
     "tag": "flv_rust_collector",
@@ -1504,7 +1538,8 @@
         "reward": null,
         "outcome": "\"Sensible,\" she says, already turning back to her pile. \"Most things worth finding are worth finding by accident anyway.\""
       }
-    ]
+    ],
+    "sprite_id": "npc_traveler"
   },
   {
     "tag": "flv_shade_bargainer",
@@ -1546,7 +1581,8 @@
         "reward": null,
         "outcome": "\"As you wish.\" It does not move to stop you. It simply returns to the wall, and the wall accepts it without argument. You do not look back, but you are certain, completely certain, that nothing follows you."
       }
-    ]
+    ],
+    "sprite_id": "npc_ghost"
   },
   {
     "tag": "flv_food_vendor_dungeon",
@@ -1591,7 +1627,8 @@
         "reward": null,
         "outcome": "\"Free of charge,\" he says magnanimously. You stand there for a moment longer than strictly necessary, and he doesn't rush you. Some kindnesses are very small and very important."
       }
-    ]
+    ],
+    "sprite_id": "npc_merchant"
   },
   {
     "tag": "flv_trapped_spirit_mason",
@@ -1633,7 +1670,8 @@
         "reward": null,
         "outcome": "You walk past quietly. Behind you, the sound of his murmuring fades — \"forty years, forty years\" — until the dungeon swallows it whole."
       }
-    ]
+    ],
+    "sprite_id": "npc_ghost"
   },
   {
     "tag": "flv_mad_cartographer",
@@ -1679,7 +1717,8 @@
         "reward": null,
         "outcome": "\"Yes, yes, of course,\" he mutters, already ignoring you. As you leave you glance back and notice he has added you to the map — a tiny figure labeled \"unhelpful traveler, probably lost.\""
       }
-    ]
+    ],
+    "sprite_id": "npc_scholar"
   },
   {
     "tag": "flv_bottled_constellation",
@@ -1725,7 +1764,8 @@
         "reward": null,
         "outcome": "\"No pressure,\" the merchant says warmly. \"The stars have waited this long.\" One of the bottles glows a little brighter as you walk away, as if wishing you luck."
       }
-    ]
+    ],
+    "sprite_id": "npc_merchant"
   },
   {
     "tag": "flv_disguised_hermes",
@@ -1766,7 +1806,8 @@
         "reward": null,
         "outcome": "\"Fair enough,\" he says, not at all offended. \"You're the careful type. I respect that. Mostly.\" He saunters off whistling something that sounds like it's from a song not yet written."
       }
-    ]
+    ],
+    "sprite_id": "npc_traveler"
   },
   {
     "tag": "flv_echo_child",
@@ -1809,7 +1850,8 @@
         "reward": null,
         "outcome": "You retreat. It retreats, mirroring you. When you turn a corner it is gone. You check over your shoulder three times more than usual for the next hour."
       }
-    ]
+    ],
+    "sprite_id": "npc_ghost"
   },
   {
     "tag": "flv_alchemist_hermit",
@@ -1854,7 +1896,8 @@
         "reward": null,
         "outcome": "\"Coward,\" she says, but not unkindly. \"Come back if you change your mind. I'll be here. I'm always here.\" She says this with a serenity that is somehow more unsettling than if she'd said it with despair."
       }
-    ]
+    ],
+    "sprite_id": "npc_mystic"
   },
   {
     "tag": "flv_stone_singer",
@@ -1897,7 +1940,8 @@
         "reward": null,
         "outcome": "She doesn't call after you. But her song follows you down three corridors, fading so slowly you aren't sure when it stops."
       }
-    ]
+    ],
+    "sprite_id": "npc_traveler"
   },
   {
     "tag": "flv_false_merchant_goblin",
@@ -1942,7 +1986,8 @@
         "reward": null,
         "outcome": "Grix puts a hand to his chest, wounded. \"Nobody trusts Grix,\" he says sadly. \"And yet Grix is here. Every day. With his mostly fine items. For the ungrateful.\" He resumes polishing a skull with his sleeve as you leave."
       }
-    ]
+    ],
+    "sprite_id": "npc_merchant"
   },
   {
     "tag": "flv_time_lost_soldier",
@@ -1984,7 +2029,8 @@
         "reward": null,
         "outcome": "He doesn't stop you. He seems to have already returned to whatever internal world he occupies between visitors. You glance back from the corner. He is still there, still at attention, still facing nothing."
       }
-    ]
+    ],
+    "sprite_id": "npc_warrior"
   },
   {
     "tag": "flv_dream_weaver",
@@ -2029,7 +2075,8 @@
         "reward": null,
         "outcome": "\"Wise,\" she says, without irony. \"Dreams are worth more than most people realize. Hold onto yours.\" She turns back to her loom, and the threads of light continue their slow, luminous dance."
       }
-    ]
+    ],
+    "sprite_id": "npc_traveler"
   },
   {
     "tag": "flv_philosophical_fungus",
@@ -2071,7 +2118,8 @@
         "reward": null,
         "outcome": "\"Understandable,\" the mushroom projects, without resentment. \"Courage without reflection is still courage. I wish you well.\" The green glow fades behind you as you walk on, and you find yourself slightly regretting the conversation you didn't have."
       }
-    ]
+    ],
+    "sprite_id": "npc_creature"
   },
   {
     "tag": "flv_ghost_librarian_junior",
@@ -2117,7 +2165,8 @@
         "reward": null,
         "outcome": "\"Noted!\" it says, writing furiously. You leave. Behind you, you can hear the faint sound of labeling continuing. Somewhere on these walls there is now a small sign that reads: \"ADVENTURER, UNCATALOGUED, UNCOOPERATIVE.\""
       }
-    ]
+    ],
+    "sprite_id": "npc_scholar"
   },
   {
     "tag": "flv_sorrow_lantern",
@@ -2159,7 +2208,8 @@
         "reward": null,
         "outcome": "\"Understandable,\" it says, without bitterness. \"This is usually how it goes.\" It resumes its small, sad circles. The lantern grows fainter as you walk away, until you can no longer tell whether the darkness behind you is shadow or simply the absence of light."
       }
-    ]
+    ],
+    "sprite_id": "npc_traveler"
   },
   {
     "tag": "flv_disguised_dionysus",
@@ -2175,7 +2225,7 @@
     "text": "A man in grape-leaf garlands sits on a barrel of something that definitely wasn't here before, laughing at nothing, his eyes bright as wine held up to sunlight. The dungeon around him seems fractionally more joyful — even the torches burn warmer. \"Excellent timing!\" he announces. \"I've been waiting for someone cheerless enough to need cheering. Sit down. Drink. It's fine. It's all fine, actually.\"",
     "options": [
       {
-        "label": "Share a drink with him (pay food)",
+        "label": "Share food and drink with him",
         "cost": {
           "type": "food"
         },
@@ -2201,7 +2251,8 @@
         "reward": null,
         "outcome": "He sighs the sigh of someone who has been hearing this since the world was young. \"Every stranger,\" he says, \"was a friend you hadn't met yet. And every friend was once a stranger you decided to trust anyway. But.\" He waves graciously. \"Go. Be careful. Drink water at minimum.\""
       }
-    ]
+    ],
+    "sprite_id": "npc_divine"
   },
   {
     "tag": "flv_mirror_walker",
@@ -2243,7 +2294,8 @@
         "reward": null,
         "outcome": "You look away. You keep walking. For a few corridors afterward you can feel it watching your back — not malevolently, but the way you sometimes catch yourself wondering what you could have been if you'd made different choices."
       }
-    ]
+    ],
+    "sprite_id": "npc_traveler"
   },
   {
     "tag": "flv_crying_giant",
@@ -2288,7 +2340,8 @@
         "reward": null,
         "outcome": "You pick your way through the shallow tears, the small glowing fish parting around your boots. The giant doesn't notice, or doesn't mind. You carry the image of it for the rest of the level — all that grief, in the dark, with no one left to witness it."
       }
-    ]
+    ],
+    "sprite_id": "npc_traveler"
   },
   {
     "tag": "flv_wandering_oracle_bone",
@@ -2334,7 +2387,8 @@
         "reward": null,
         "outcome": "She finally looks up as you turn to go. \"The bones don't mind,\" she says. \"They've been patient for three thousand years. A few more centuries makes no difference to them.\""
       }
-    ]
+    ],
+    "sprite_id": "npc_merchant"
   },
   {
     "tag": "flv_spectral_librarian",
@@ -2376,7 +2430,8 @@
         "reward": null,
         "outcome": "She does not pursue you, only watches with patient, luminous eyes. \"Another time, then,\" she whispers. The ledger snaps shut, and she fades between the stones."
       }
-    ]
+    ],
+    "sprite_id": "npc_scholar"
   },
   {
     "tag": "flv_time_lost_centurion",
@@ -2419,7 +2474,8 @@
         "reward": null,
         "outcome": "He squares his jaw. \"Understood. Dismissed.\" He turns back to his post with mechanical precision, and you realize he will still be standing there long after you are gone."
       }
-    ]
+    ],
+    "sprite_id": "npc_traveler"
   },
   {
     "tag": "flv_demigod_beggar",
@@ -2464,7 +2520,8 @@
         "reward": null,
         "outcome": "\"Fair enough,\" he says cheerfully, returning to his mystery meal. \"Self-preservation is a virtue too. Mostly.\" You walk away with the uncomfortable feeling that you have just failed a test administered by someone who grades on a very long curve."
       }
-    ]
+    ],
+    "sprite_id": "npc_divine"
   },
   {
     "tag": "flv_ancient_guardian_chess",
@@ -2506,7 +2563,8 @@
         "reward": null,
         "outcome": "The Warden watches you back away without malice. \"CHALLENGER DECLINES. NOTED IN THE RECORD.\" It taps an entry into a logbook chained to its wrist, and you wonder exactly how long that record goes back."
       }
-    ]
+    ],
+    "sprite_id": "npc_warrior"
   },
   {
     "tag": "flv_prophet_of_the_abyss",
@@ -2548,7 +2606,8 @@
         "reward": null,
         "outcome": "He smiles for the first time, and his teeth are wrong. \"Of course you do,\" he says warmly. \"That's exactly what the other ones said too.\" He returns to his muttering, and you walk on."
       }
-    ]
+    ],
+    "sprite_id": "npc_mystic"
   },
   {
     "tag": "flv_ghost_soldier_post",
@@ -2587,7 +2646,8 @@
         "reward": null,
         "outcome": "You slip past while he is on the far leg of his loop. You hear him counting behind you — one, two, three, four — until the darkness swallows the sound."
       }
-    ]
+    ],
+    "sprite_id": "npc_warrior"
   },
   {
     "tag": "flv_discount_demigod_merchant",
@@ -2632,7 +2692,8 @@
         "reward": null,
         "outcome": "He clutches his chest in theatrical injury. \"And here I thought savvy customers were my favorite. Turns out I lied.\" He folds his table away, gives you a wink that is somehow both mocking and respectful, and departs at speed."
       }
-    ]
+    ],
+    "sprite_id": "npc_merchant"
   },
   {
     "tag": "flv_echo_of_dead_wizard",
@@ -2677,7 +2738,8 @@
         "reward": null,
         "outcome": "You step carefully around the looping figure. Behind you, the hand raises, the mouth forms the word, and resets. Raises. Resets. Some spells take longer to finish than their casters do."
       }
-    ]
+    ],
+    "sprite_id": "npc_mystic"
   },
   {
     "tag": "flv_abyss_cartographer",
@@ -2723,7 +2785,8 @@
         "reward": null,
         "outcome": "She shrugs with the equanimity of someone who has heard this before. \"Most of the 'discover things myself' types don't make it back to update my maps.\" She turns back to her wall and pulls out another pin. \"Good luck, though. I mean that.\""
       }
-    ]
+    ],
+    "sprite_id": "npc_scholar"
   },
   {
     "tag": "flv_djinn_in_a_bottle",
@@ -2769,7 +2832,8 @@
         "reward": null,
         "outcome": "\"Sensible,\" the bottle says. \"Genuinely. I have been in here a very long time and my temperament is not at its best. You made the correct call.\" The rattling resumes as you walk away."
       }
-    ]
+    ],
+    "sprite_id": "npc_traveler"
   },
   {
     "tag": "flv_weeping_champion",
@@ -2809,7 +2873,8 @@
         "reward": null,
         "outcome": "They nod, understanding immediately. \"Of course. The dungeon waits for no one's grief.\" They raise a hand in farewell. You carry the image of them a long time — armor still bright, eyes still red."
       }
-    ]
+    ],
+    "sprite_id": "npc_ghost"
   },
   {
     "tag": "flv_mirror_of_past_self",
@@ -2850,7 +2915,8 @@
         "reward": null,
         "outcome": "It offers no resistance — you pass through cold air and a brief cascade of half-remembered smells: a specific kitchen, a specific rain. You do not look back. The shade, if it watches, says nothing."
       }
-    ]
+    ],
+    "sprite_id": "npc_ghost"
   },
   {
     "tag": "flv_abyssal_alchemist",
@@ -2896,7 +2962,8 @@
         "reward": null,
         "outcome": "\"Noted,\" she says, without offense. \"Healthy skepticism of unsolicited chemistry. Good instinct, actually. Come back if you change your mind — I'll be here until I run out of subjects or the dungeon runs out of patience with me.\" She returns to her bubbling apparatus."
       }
-    ]
+    ],
+    "sprite_id": "npc_mystic"
   },
   {
     "tag": "flv_oracle_of_endings",
@@ -2943,7 +3010,8 @@
         "reward": null,
         "outcome": "Her white eyes find you with an accuracy that makes the claim feel examined. \"Yes,\" she says. \"That is one of the options.\" She folds her hands and says nothing more, and after a while you realize you have been dismissed."
       }
-    ]
+    ],
+    "sprite_id": "npc_mystic"
   },
   {
     "tag": "flv_mad_knight_riddle",
@@ -2988,7 +3056,8 @@
         "reward": null,
         "outcome": "\"Of course, of course,\" he says gamely, stepping aside. \"The quest does not pause for company. I understand. Entirely. Carry on.\" His cheerfulness is very slightly too loud. You hear him composing a new riddle as you walk away."
       }
-    ]
+    ],
+    "sprite_id": "npc_warrior"
   },
   {
     "tag": "flv_fragment_of_a_god",
@@ -3027,7 +3096,8 @@
         "reward": null,
         "outcome": "\"That is perfectly fine,\" it says, with the practiced grace of a being that has been rejected on a theological level and survived it. \"Safe passage, then. Or as safe as it gets from here.\" It dims itself courteously as you pass, like a lamp turned low."
       }
-    ]
+    ],
+    "sprite_id": "npc_divine"
   },
   {
     "tag": "flv_abyssal_wine_merchant",
@@ -3071,7 +3141,8 @@
         "reward": null,
         "outcome": "\"Up,\" he repeats, as though this had not occurred to him. \"Yes. That — that tracks. Thank you. Tremendous. Right.\" He hoists his crate, takes two steps in the wrong direction, corrects himself, and begins a very long journey home."
       }
-    ]
+    ],
+    "sprite_id": "npc_merchant"
   },
   {
     "tag": "flv_bound_spirit_of_stone",
@@ -3117,7 +3188,8 @@
         "reward": null,
         "outcome": "\"YOU ARE BUSY,\" the wall says, without judgment. \"I UNDERSTAND. THE LIVING ALWAYS ARE.\" A pause, ground out in slow syllables. \"IT IS ONE OF THE THINGS I MISS.\""
       }
-    ]
+    ],
+    "sprite_id": "npc_ghost"
   },
   {
     "tag": "flv_invisible_archivist",
@@ -3158,7 +3230,8 @@
         "reward": null,
         "outcome": "\"Noted,\" says the voice, and you hear your refusal being noted. \"That is, itself, a data point. Walk safe.\" The scratching of the quill follows you down the corridor for longer than seems possible, then stops all at once."
       }
-    ]
+    ],
+    "sprite_id": "npc_scholar"
   },
   {
     "tag": "flv_dying_hero_berengar",
@@ -3201,7 +3274,8 @@
         "reward": null,
         "outcome": "He doesn't blame you. He just watches you go with eyes that have seen too many things walk past. You hear him whisper something as you round the corner — a name, perhaps, or a prayer."
       }
-    ]
+    ],
+    "sprite_id": "npc_traveler"
   },
   {
     "tag": "flv_avatar_athena",
@@ -3242,7 +3316,8 @@
         "reward": null,
         "outcome": "She inclines her head in return, a gesture that carries more weight than any blessing you can name. The owl watches you until you are out of sight. You suspect it watches you still."
       }
-    ]
+    ],
+    "sprite_id": "npc_divine"
   },
   {
     "tag": "flv_philosophical_entity_void",
@@ -3284,7 +3359,8 @@
         "reward": null,
         "outcome": "It watches you retreat with an expression that has been assembled from references rather than felt. \"We will catalogue this also,\" it says. \"The experience of watching something leave.\" Somehow, that is the worst thing it could have said."
       }
-    ]
+    ],
+    "sprite_id": "npc_creature"
   },
   {
     "tag": "flv_final_merchant_ortolan",
@@ -3329,7 +3405,8 @@
         "reward": null,
         "outcome": "He taps the side of his nose. \"Good prices and fast feet, friend. The monsters leave me alone because I give them favorable terms on bulk purchases.\" He winks. You cannot tell if he is joking. You strongly suspect he is not joking."
       }
-    ]
+    ],
+    "sprite_id": "npc_merchant"
   },
   {
     "tag": "flv_beyond_reality_chorus",
@@ -3371,7 +3448,8 @@
         "reward": null,
         "outcome": "Behind you, the Absence says nothing. This is somehow more unsettling than if it had called after you. You resist the urge to look back. You are not entirely sure you succeed."
       }
-    ]
+    ],
+    "sprite_id": "npc_traveler"
   },
   {
     "tag": "flv_spectral_archivist",
@@ -3414,7 +3492,8 @@
         "reward": null,
         "outcome": "\"Of course. Everyone is always going somewhere down here.\" She turns back to her stones and resumes her endless reading. You feel the specific weight of an apology that was both necessary and insufficient."
       }
-    ]
+    ],
+    "sprite_id": "npc_scholar"
   },
   {
     "tag": "flv_time_lost_general",
@@ -3454,7 +3533,8 @@
         "reward": null,
         "outcome": "He returns the salute with crisp, unbroken discipline. \"At ease, soldier.\" You walk past his chalk army and his chalk enemy and his single chalk mark, and you do not look back, because some things deserve the dignity of an unwitnessed vigil."
       }
-    ]
+    ],
+    "sprite_id": "npc_warrior"
   },
   {
     "tag": "flv_avatar_hermes_laughing",
@@ -3500,7 +3580,8 @@
         "reward": null,
         "outcome": "He spreads his hands, the picture of innocence. \"A traveler! A merchant! A concerned passerby!\" He ticks them off on his fingers. \"Look, the real question is what are YOU really, and I think we both know the answer to that is a lot more interesting.\" He flips the coin at you. When you catch it, he's gone. The coin is warm."
       }
-    ]
+    ],
+    "sprite_id": "npc_divine"
   },
   {
     "tag": "flv_last_philosopher",
@@ -3546,7 +3627,8 @@
         "reward": null,
         "outcome": "He nods slowly. \"That is itself a philosophy,\" he says, without judgment or irony. \"And it has brought you this far. Perhaps it will carry you further still.\" He closes his eyes again. You feel, unexpectedly, that you have his blessing."
       }
-    ]
+    ],
+    "sprite_id": "npc_scholar"
   },
   {
     "tag": "flv_dying_oracle_cassandra",
@@ -3572,7 +3654,7 @@
         "outcome": "She looks at you with an expression that is the entire history of being taken seriously for the first time. She speaks quickly, like someone who knows the window might close. The words wash over you and sink in, and for a time the dungeon holds no secrets from you."
       },
       {
-        "label": "Offer her something to restore her strength",
+        "label": "Offer her food to restore her strength",
         "cost": {
           "type": "food"
         },
@@ -3589,7 +3671,8 @@
         "reward": null,
         "outcome": "\"Yes,\" she says simply. \"I know.\" She watches you go with the patient, ruined dignity of someone who has been correct about everything and helped no one. The sound of her weeping does not follow you. You almost wish it did."
       }
-    ]
+    ],
+    "sprite_id": "npc_mystic"
   },
   {
     "tag": "flv_trapped_god_fragment",
@@ -3635,7 +3718,8 @@
         "reward": null,
         "outcome": "The light dims as you pass, like eyes closing. \"Another time, perhaps,\" says the voice, with a patience that has been accumulating for longer than civilizations. You feel the light watching you long after the crack is out of sight."
       }
-    ]
+    ],
+    "sprite_id": "npc_divine"
   },
   {
     "tag": "flv_abyss_cartographer_2",
@@ -3681,7 +3765,8 @@
         "reward": null,
         "outcome": "\"Luck!\" she repeats with the joy of someone who's been given a gift they didn't know they wanted. \"What a concept. I've been working on statistical modeling but 'luck' is so much more portable.\" She's already back to her map. You're fairly sure you will appear on it."
       }
-    ]
+    ],
+    "sprite_id": "npc_scholar"
   },
   {
     "tag": "flv_humorous_imp_salesman",
@@ -3722,7 +3807,8 @@
         "reward": null,
         "outcome": "His face falls with operatic despair. \"NO. No no no. Do you know how few people get to level eighty-something? Do you know how long I've been waiting?\" He watches you go. \"I'll be here!\" he calls. \"I am always here. I don't know how to leave!\""
       }
-    ]
+    ],
+    "sprite_id": "npc_merchant"
   },
   {
     "tag": "flv_wondrous_star_being",
@@ -3765,7 +3851,8 @@
         "reward": null,
         "outcome": "You watch. It wheels. The stars that make up its shape pulse slowly, and you think you can almost read them — a story written in fire across impossible distances. When you finally move on, it watches you go, and somehow the dungeon is a little less dark for a while."
       }
-    ]
+    ],
+    "sprite_id": "npc_divine"
   },
   {
     "tag": "flv_eerie_mirror_walker",
@@ -3808,7 +3895,8 @@
         "reward": null,
         "outcome": "You feel it follow you with its gaze across every reflective surface in the corridor. Wet stone. A dropped shield. The dark surface of still water in a crack. You do not look at any of them. You are fairly confident it respects this. You are less confident it stops following."
       }
-    ]
+    ],
+    "sprite_id": "npc_traveler"
   },
   {
     "tag": "flv_melancholy_old_champion",
@@ -3852,7 +3940,8 @@
         "reward": null,
         "outcome": "He looks down at the armor in his hands. The question takes a long time to reach an answer. \"The idea,\" he finally says, \"that someone should still be here when the next one comes through. So they know the road has been walked before.\" He gestures you onward. \"It has been walked before.\""
       }
-    ]
+    ],
+    "sprite_id": "npc_traveler"
   },
   {
     "tag": "flv_practical_golem_medic",
@@ -3897,7 +3986,8 @@
         "reward": null,
         "outcome": "It processes this for a moment. \"ASSESSMENT INDICATES STATEMENT INACCURATE. HOWEVER: PATIENT AUTONOMY PROTOCOLS APPLY.\" It steps back into its alcove. \"SAFE TRAVELS, SUBJECT.\" It says this with something that sounds, against all probability, like it means it."
       }
-    ]
+    ],
+    "sprite_id": "npc_traveler"
   },
   {
     "tag": "flv_beyond_being_offers_name",
@@ -3941,7 +4031,8 @@
         "reward": null,
         "outcome": "\"Understood,\" it says, without disappointment — or perhaps with a disappointment so vast it has become indistinguishable from acceptance. \"Names are powerful. You are wise to protect yours.\" It drifts aside to let you pass. You feel it watching the space where you were long after you have gone."
       }
-    ]
+    ],
+    "sprite_id": "npc_traveler"
   },
   {
     "tag": "flv_wondrous_memory_keeper",
@@ -3984,6 +4075,7 @@
         "reward": null,
         "outcome": "You stand for a moment among the last lights of the lost. The Keeper does not press you. The motes drift around you without touching, as though they sense you are still using yourself. When you go, you feel them watching you with something that is almost hope."
       }
-    ]
+    ],
+    "sprite_id": "npc_traveler"
   }
 ]

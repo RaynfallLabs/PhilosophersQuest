@@ -2043,3 +2043,27 @@ def judge_karma(karma: int) -> tuple[str, str]:
     if karma < 0:
         return _JUDGMENT_TIERS[1][2], _JUDGMENT_TIERS[1][3]
     return _JUDGMENT_TIERS[2][2], _JUDGMENT_TIERS[2][3]
+
+
+# Assign NPC sprites for map rendering
+_KARMA_SPRITES = {
+    'elara_amulet': 'npc_child', 'brother_aldous': 'npc_mystic',
+    'marta_ratchatcher': 'npc_traveler', 'sir_aldric': 'npc_warrior',
+    'tam_thief': 'npc_child', 'helena_cartographer': 'npc_scholar',
+    'marcus_sword': 'npc_warrior', 'blinded_soldier': 'npc_warrior',
+    'dying_messenger': 'npc_traveler', 'deadite_woman': 'npc_ghost',
+    'sister_marguerite': 'npc_mystic', 'chained_priest': 'npc_mystic',
+    'old_konstantin': 'npc_warrior', 'apprentice_healer': 'npc_traveler',
+    'ghost_grave': 'npc_ghost', 'deserter': 'npc_warrior',
+    'blind_seer': 'npc_mystic', 'trapped_seraph': 'npc_divine',
+    'weeping_mother': 'npc_ghost', 'ser_brennan': 'npc_warrior',
+    'cursed_scholar': 'npc_scholar', 'fairy_jar': 'npc_creature',
+    'penitent': 'npc_traveler', 'roderic_shield': 'npc_warrior',
+    'forgotten_prisoner': 'npc_traveler', 'fallen_paladin': 'npc_warrior',
+    'azarael_demon': 'npc_creature', 'child_shrine': 'npc_divine',
+    'dying_prophet': 'npc_mystic', 'petrified_adventurer': 'npc_ghost',
+    'last_merchant': 'npc_merchant',
+}
+for _enc in ENCOUNTERS:
+    if 'sprite_id' not in _enc:
+        _enc['sprite_id'] = _KARMA_SPRITES.get(_enc['tag'], 'npc_traveler')

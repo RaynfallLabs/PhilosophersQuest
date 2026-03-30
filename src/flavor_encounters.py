@@ -33,6 +33,7 @@ FLAVOR_ENCOUNTERS: list[dict] = [
     # ══════════════════════════════════════════════════════════════
     {
         'tag': 'flv_wandering_merchant',
+        'sprite_id': 'npc_merchant',
         'name': 'Wandering Merchant',
         'symbol': '@',
         'color': (180, 160, 100),
@@ -65,6 +66,7 @@ FLAVOR_ENCOUNTERS: list[dict] = [
     },
     {
         'tag': 'flv_old_traveler',
+        'sprite_id': 'npc_traveler',
         'name': 'Old Traveler',
         'symbol': '@',
         'color': (140, 140, 160),
@@ -102,6 +104,7 @@ FLAVOR_ENCOUNTERS: list[dict] = [
     },
     {
         'tag': 'flv_frightened_goblin',
+        'sprite_id': 'npc_creature',
         'name': 'Cowering Goblin',
         'symbol': 'g',
         'color': (100, 160, 80),
@@ -151,6 +154,7 @@ FLAVOR_ENCOUNTERS: list[dict] = [
     # ══════════════════════════════════════════════════════════════
     {
         'tag': 'flv_dwarven_smith',
+        'sprite_id': 'npc_dwarf',
         'name': 'Dwarven Smith',
         'symbol': '@',
         'color': (200, 150, 80),
@@ -189,6 +193,7 @@ FLAVOR_ENCOUNTERS: list[dict] = [
     # ══════════════════════════════════════════════════════════════
     {
         'tag': 'flv_blind_oracle',
+        'sprite_id': 'npc_mystic',
         'name': 'Blind Oracle',
         'symbol': '@',
         'color': (200, 180, 255),
