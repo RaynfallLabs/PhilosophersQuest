@@ -427,7 +427,7 @@ def _oracle_reveal_quirks(player, game):
 
     game.add_message("The Oracle speaks:", 'info')
     for qid in chosen:
-        hint = _HINTS.get(qid, f"A hidden path remains unexplored.")
+        hint = _HINTS.get(qid, "A hidden path remains unexplored.")
         game.add_message(f"  \u2022 {hint}", 'info')
 
 

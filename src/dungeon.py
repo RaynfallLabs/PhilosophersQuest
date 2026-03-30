@@ -1121,7 +1121,7 @@ def spawn_monsters(rooms: List[Room], level: int, dungeon: Dungeon,
 
 def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
     """Spawn items, containers, and lockpicks in dungeon rooms."""
-    from items import load_items, Container, Lockpick
+    from items import load_items, Container
 
     rng          = random.Random()
     ground_items = []

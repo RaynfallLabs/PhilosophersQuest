@@ -108,6 +108,19 @@ def test_all_monsters_have_required_fields():
             assert field in m, f"Monster '{mid}' missing field '{field}'"
 
 
+def test_all_attack_dice_parseable():
+    """Every monster attack damage string must be parseable by the dice roller."""
+    from dice import roll
+    monsters = load_json('data/monsters.json')
+    for mid, m in monsters.items():
+        for atk in m.get('attacks', []):
+            dmg = str(atk.get('damage', '1d1'))
+            try:
+                roll(dmg)
+            except (ValueError, Exception) as e:
+                assert False, f"Monster '{mid}' attack '{atk['name']}' has unparseable damage '{dmg}': {e}"
+
+
 def test_new_monsters_instantiate():
     from monster import Monster
     monsters = load_json('data/monsters.json')

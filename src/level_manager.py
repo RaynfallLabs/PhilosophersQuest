@@ -73,7 +73,6 @@ class LevelManager:
     def _try_spawn_mini_boss(self, dungeon, monsters: list, level_num: int):
         """Attempt to spawn one mini-boss on this level (at most one per level)."""
         import json as _json
-        import os as _os
         import random as _rng
 
         from paths import data_path as _dp

@@ -1,7 +1,7 @@
 import pygame
 
 # FANTASY: Import theme helpers from the central fantasy_ui module
-from fantasy_ui import FP, get_font, draw_panel, draw_divider, draw_shadow_text, ITEM_COLOR
+from fantasy_ui import FP, get_font, ITEM_COLOR
 
 SIDEBAR_W = 430
 
@@ -193,7 +193,7 @@ class Sidebar:
         return y + 2 * 24 + self.SECTION_GAP
 
     def _status(self, player, dungeon_level: int, turn_count: int, gold: int, y: int) -> int:
-        from status_effects import EFFECT_INFO, DEBUFFS
+        from status_effects import EFFECT_INFO
         y = self._header("STATUS", y)
         ac = player.get_ac()
         # FANTASY: AC color thresholds

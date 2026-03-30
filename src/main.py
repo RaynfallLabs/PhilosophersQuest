@@ -10,19 +10,16 @@ VERSION = "1.7.1"
 from fantasy_ui import (FP, get_font, draw_panel, draw_dark_panel,
                          draw_header_bar, draw_divider, draw_shadow_text,
                          draw_glow_text, centered_text, draw_overlay,
-                         draw_rune_circle, draw_filigree_bar, draw_candle_glow,
-                         draw_choice_button, ITEM_COLOR, make_parchment)
+                         draw_rune_circle, draw_filigree_bar, draw_candle_glow)
 
 from combat import player_attack
 from pet_system import Pet, FenrirPet, random_species as random_pet_species
 from quirk_system import QuirkSystem
 from container_system import attempt_lockpick
-from dungeon import (generate_dungeon, spawn_monsters, spawn_items,
-                     WALL, FLOOR, STAIRS_UP, STAIRS_DOWN, DOOR, SECRET_DOOR,
+from dungeon import (spawn_monsters, WALL, FLOOR, STAIRS_UP, STAIRS_DOWN, DOOR, SECRET_DOOR,
                      ALTAR, WATER, LAVA, FOUNTAIN, GRAVE, THRONE, ICE)
 from food_system import (harvest_corpse, cook_ingredient, eat_food, eat_raw,
-                         get_available_compound_recipes, cook_compound_recipe,
-                         get_recipes_for_ingredient)
+                         get_available_compound_recipes, cook_compound_recipe)
 from fov import calculate_fov
 from items import Weapon, Armor, Shield, Corpse, Ingredient, Artifact, Container, Lockpick, Accessory, Wand, Scroll, Spellbook, Ammo, Food, Potion
 from level_manager import LevelManager
@@ -1219,7 +1216,8 @@ class StudyMode:
 
     def run(self, clock):
         """Main study mode loop. Returns when user presses ESC."""
-        import json, random
+        import json
+        import random
         from paths import data_path
 
         while True:
@@ -1892,7 +1890,7 @@ class Game:
 
     def _give_starting_kit(self):
         """Give the player their starting kit, adjusted for their secret build."""
-        from items import load_items, Ammo, Item
+        from items import load_items, Item
         b = self.secret_build or {}
 
         # -- Always: Philosopher's Shard ------------------------------------
@@ -2338,7 +2336,6 @@ class Game:
     }
 
     def _player_input(self, key: int):
-        import random as _rng
 
         if key == pygame.K_PERIOD:
             qs = getattr(self, 'quirk_system', None)
@@ -2515,13 +2512,13 @@ class Game:
                 return
 
         # Fumbling: 20% chance to waste turn
-        if self.player.has_effect('fumbling') and _rng.random() < 0.20:
+        if self.player.has_effect('fumbling') and random.random() < 0.20:
             self.add_message("You stumble and waste your turn!", 'warning')
             self._advance_turn()
             return
 
         # Stunned: 25% chance to fail
-        if self.player.has_effect('stunned') and _rng.random() < 0.25:
+        if self.player.has_effect('stunned') and random.random() < 0.25:
             self.add_message("You are too dazed to act!", 'warning')
             self._advance_turn()
             return
@@ -2584,7 +2581,7 @@ class Game:
         elif tile_at_dest == SECRET_DOOR:
             # Bump reveals secret door (chance based on PER)
             per_chance = min(0.85, 0.3 + self.player.PER * 0.04)
-            if _rng.random() < per_chance:
+            if random.random() < per_chance:
                 self.dungeon.tiles[ny][nx] = DOOR
                 self._refresh_fov()
                 self.add_message("You find a secret door!", 'success')
@@ -3572,7 +3569,6 @@ class Game:
 
     def _pickup(self):
         from items import GoldPile
-        from mystery_system import MysteryAltar
         px, py = self.player.x, self.player.y
         # Skip the Abyssal Shimmer -- it's fixed to the floor
         # Also skip MysteryAltar objects (not_pickable=True)
@@ -3945,7 +3941,7 @@ class Game:
 
     def _draw_mystery_approach(self):
         """Draw the mystery encounter overlay -- description, requirements, Y/N prompt."""
-        from fantasy_ui import FP, get_font
+        from fantasy_ui import get_font
         altar = self._active_mystery_altar
         if altar is None:
             self.state = STATE_PLAYER
@@ -4956,7 +4952,7 @@ class Game:
         item = candidates[0]
         display = self._display_name(item)
         self.add_message(f"You place the {display} upon the altar and pray...", 'info')
-        self.quiz_title = f"ALTAR DIVINATION  --  THEOLOGY"
+        self.quiz_title = "ALTAR DIVINATION  --  THEOLOGY"
         self.state = STATE_QUIZ
 
         def on_complete(result):
@@ -6115,7 +6111,7 @@ class Game:
             self._quirks_scroll = max(0, len(self._quirks_data) - 1)
 
     def _draw_quirks_screen(self):
-        from fantasy_ui import FP, get_font
+        from fantasy_ui import get_font
         data = getattr(self, '_quirks_data', [])
         scroll = getattr(self, '_quirks_scroll', 0)
 
@@ -7055,7 +7051,7 @@ class Game:
             self.add_message("Brilliant light floods the area!", 'success')
 
         elif effect == 'create_monster':
-            import json, os
+            import json
             from monster import Monster
             from paths import data_path
             mp = data_path('data', 'monsters.json')
@@ -7232,7 +7228,7 @@ class Game:
                         self._on_monster_killed(target)
 
             elif effect == 'polymorph_monster':
-                import json, os
+                import json
                 from monster import Monster
                 from paths import data_path
                 mp = data_path('data', 'monsters.json')
@@ -8631,7 +8627,7 @@ class Game:
 
     def _draw_npc_encounter(self):
         """Draw the NPC moral encounter overlay — multi-phase."""
-        from fantasy_ui import FP, get_font, draw_overlay, draw_dark_panel, draw_header_bar
+        from fantasy_ui import get_font, draw_overlay, draw_dark_panel, draw_header_bar
 
         enc = self._npc_encounter_active
         if enc is None:
@@ -8824,7 +8820,7 @@ class Game:
 
     def _draw_judgment(self):
         """Draw the Altar of the Last Judgment result overlay."""
-        from fantasy_ui import FP, get_font, draw_overlay, draw_dark_panel, draw_header_bar
+        from fantasy_ui import get_font, draw_overlay, draw_dark_panel, draw_header_bar
 
         draw_overlay(self.screen, 190)
 
@@ -9316,7 +9312,7 @@ class Game:
                 if is_boss:
                     self.add_message(f"The {target.name} resists the polymorph!", 'warning')
                 else:
-                    import json as _pjson, os as _pos
+                    import json as _pjson
                     from monster import Monster as _PMon
                     from paths import data_path as _pdp
                     try:
@@ -9987,7 +9983,7 @@ class Game:
             return
 
         self.state = STATE_QUIZ
-        self.quiz_title = f"DECIPHER SPELLBOOK -- GRAMMAR"
+        self.quiz_title = "DECIPHER SPELLBOOK -- GRAMMAR"
 
         def on_complete(result):
             self.state = STATE_PLAYER
@@ -11701,7 +11697,7 @@ class Game:
             label = f"Out of throw range ({reach} tiles)  [ESC=cancel]"
             label_color = (255, 160, 40)
         else:
-            label = f"No line of sight  [ESC=cancel]"
+            label = "No line of sight  [ESC=cancel]"
             label_color = (255, 80, 80)
 
         label_surf = self.font_sm.render(label, True, label_color)
@@ -11756,7 +11752,6 @@ class Game:
                 ty += sy
 
         # Highlight all valid target monsters in range
-        from combat import can_ranged_attack
         for m in self._target_candidates:
             scr_x, scr_y = w2s(m.x, m.y)
             if 0 <= scr_x < GAME_W and 0 <= scr_y < GAME_H:
@@ -11779,10 +11774,10 @@ class Game:
             label = f"No line of sight to {target_monster.name}  [ESC=cancel]"
             label_color = (255, 80, 80)
         elif not in_reach:
-            label = f"Out of range  [arrow keys to move cursor  ESC=cancel]"
+            label = "Out of range  [arrow keys to move cursor  ESC=cancel]"
             label_color = (255, 160, 40)
         else:
-            label = f"No target  [arrow keys to move  TAB=cycle targets  ESC=cancel]"
+            label = "No target  [arrow keys to move  TAB=cycle targets  ESC=cancel]"
             label_color = (200, 200, 200)
 
         label_surf = self.font_sm.render(label, True, label_color)
@@ -13890,12 +13885,12 @@ class Game:
         row_y    = cy - 52
         row_gap  = 26
         stats = [
-            (f"Turns Survived",        f"{self.turn_count:,}",                FP.BODY_TEXT),
-            (f"Deepest Level",         f"{self.level_mgr.max_level_reached}",  FP.BODY_TEXT),
-            (f"Monsters Slain",        f"{self.level_mgr.monsters_killed:,}",  FP.BODY_TEXT),
-            (f"Gold Collected",        f"{self.player_gold:,}",               FP.GOLD_PALE),
-            (f"Questions Answered",    f"{total_q:,}",                         FP.BODY_TEXT),
-            (f"Correct  /  Wrong",     f"{self.correct_answers} / {self.wrong_answers}   ({acc_pct}%)",
+            ("Turns Survived",        f"{self.turn_count:,}",                FP.BODY_TEXT),
+            ("Deepest Level",         f"{self.level_mgr.max_level_reached}",  FP.BODY_TEXT),
+            ("Monsters Slain",        f"{self.level_mgr.monsters_killed:,}",  FP.BODY_TEXT),
+            ("Gold Collected",        f"{self.player_gold:,}",               FP.GOLD_PALE),
+            ("Questions Answered",    f"{total_q:,}",                         FP.BODY_TEXT),
+            ("Correct  /  Wrong",     f"{self.correct_answers} / {self.wrong_answers}   ({acc_pct}%)",
              (120, 210, 120) if acc_pct >= 70 else FP.WARNING_TEXT),
         ]
         lx = cx - 260
@@ -14244,7 +14239,7 @@ class Game:
             return
 
         from items import Corpse, Weapon, Armor, Shield, Accessory, Wand, Scroll
-        from items import Food, Ammo, Lockpick, Ingredient
+        from items import Food, Ammo
         is_corpse = isinstance(subject, Corpse)
 
         overlay = pygame.Surface((WINDOW_W, WINDOW_H), pygame.SRCALPHA)
@@ -14677,7 +14672,6 @@ class Game:
         qs = getattr(self, 'quirk_system', None)
         if qs:
             qs.on_examine_used()
-        from items import ARMOR_SLOTS
         items = []
         for item in self.player.inventory:
             if self._item_is_known(item):
@@ -15281,7 +15275,7 @@ class Game:
 
     def _draw_hint_screen(self):
         """Display a Recall Lore result -- parchment-style hint overlay."""
-        from fantasy_ui import FP, get_font
+        from fantasy_ui import get_font
         hint_text = getattr(self, '_lore_hint_text', None)
         chain     = getattr(self, '_lore_hint_chain', 0)
         if hint_text is None:

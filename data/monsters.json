@@ -1595,7 +1595,7 @@
       },
       {
         "name": "gaze",
-        "damage": "0d0",
+        "damage": "1d2",
         "type": "physical",
         "effect": "paralyzed",
         "effect_chance": 1.0,
@@ -1796,7 +1796,7 @@
       },
       {
         "name": "gaze",
-        "damage": "0d0",
+        "damage": "1d2",
         "type": "physical",
         "effect": "paralyzed",
         "effect_chance": 0.7,
@@ -1851,7 +1851,7 @@
       },
       {
         "name": "charm_gaze",
-        "damage": "0d0",
+        "damage": "1d2",
         "type": "magic",
         "effect": "confused",
         "effect_chance": 0.35,
@@ -2139,7 +2139,7 @@
       },
       {
         "name": "charm",
-        "damage": "0d0",
+        "damage": "1d2",
         "type": "physical",
         "effect": "confused",
         "effect_chance": 0.3,
@@ -2192,7 +2192,7 @@
       },
       {
         "name": "fear_aura",
-        "damage": "0d0",
+        "damage": "1d2",
         "type": "physical",
         "effect": "feared",
         "effect_chance": 0.4,
@@ -2477,7 +2477,7 @@
       },
       {
         "name": "charm_gaze",
-        "damage": "0d0",
+        "damage": "1d2",
         "type": "physical",
         "effect": "confused",
         "effect_chance": 0.5,
@@ -2536,7 +2536,7 @@
       },
       {
         "name": "fear_gaze",
-        "damage": "0d0",
+        "damage": "1d2",
         "type": "physical",
         "effect": "feared",
         "effect_chance": 1.0,
@@ -2869,7 +2869,7 @@
       },
       {
         "name": "curse",
-        "damage": "0d0",
+        "damage": "1d2",
         "type": "physical",
         "effect": "weakened",
         "effect_chance": 1.0,
@@ -2936,7 +2936,7 @@
       },
       {
         "name": "fear_aura",
-        "damage": "0d0",
+        "damage": "1d2",
         "type": "physical",
         "effect": "feared",
         "effect_chance": 1.0,
@@ -3050,7 +3050,7 @@
       },
       {
         "name": "terror",
-        "damage": "0d0",
+        "damage": "1d2",
         "type": "physical",
         "effect": "feared",
         "effect_chance": 0.9,
@@ -3421,7 +3421,7 @@
       },
       {
         "name": "charm_song",
-        "damage": "0d0",
+        "damage": "1d2",
         "type": "magic",
         "effect": "confused",
         "effect_chance": 0.5,
@@ -6350,7 +6350,7 @@
       },
       {
         "name": "gibbering",
-        "damage": "0",
+        "damage": "1d2",
         "type": "magic",
         "effect": "confused",
         "effect_chance": 0.45,
@@ -7129,7 +7129,7 @@
       },
       {
         "name": "charm gaze",
-        "damage": "0",
+        "damage": "1d2",
         "type": "magic",
         "effect": "confused",
         "effect_chance": 0.55,
@@ -7186,7 +7186,7 @@
       },
       {
         "name": "entrancing gaze",
-        "damage": "0",
+        "damage": "1d2",
         "type": "magic",
         "effect": "confused",
         "effect_chance": 0.6,
@@ -7775,7 +7775,7 @@
       },
       {
         "name": "slow aura",
-        "damage": "0",
+        "damage": "1d2",
         "type": "magic",
         "effect": "slowed",
         "effect_chance": 0.5,
@@ -9216,7 +9216,7 @@
       },
       {
         "name": "web",
-        "damage": "0",
+        "damage": "1d2",
         "type": "physical",
         "effect": "slowed",
         "effect_chance": 0.6,
@@ -10428,7 +10428,7 @@
       },
       {
         "name": "mesmerize",
-        "damage": "0d1",
+        "damage": "1d2",
         "type": "magic",
         "effect": "confused",
         "effect_chance": 0.3,
@@ -18341,7 +18341,7 @@
       },
       {
         "name": "doom_aura",
-        "damage": "0d0",
+        "damage": "1d2",
         "type": "physical",
         "effect": "feared",
         "effect_chance": 0.4,
@@ -20366,7 +20366,15 @@
     "harvest_tier": 0,
     "harvest_threshold": 99,
     "ingredient_id": null,
-    "lore": "The locusts of the Abyss, summoned by Abaddon's dark will. They swarm like a plague of impossible numbers, draining life and spirit from all they touch. Individually nothing — collectively, a tide of ruin."
+    "lore": "The locusts of the Abyss, summoned by Abaddon's dark will. They swarm like a plague of impossible numbers, draining life and spirit from all they touch. Individually nothing — collectively, a tide of ruin.",
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.0,
+      "item_tier": 1
+    }
   },
   "heavenly_angel": {
     "name": "heavenly angel",
@@ -20396,7 +20404,15 @@
     "harvest_tier": 0,
     "harvest_threshold": 99,
     "ingredient_id": null,
-    "lore": "An angel of the Heavenly Host, summoned by the Scales of Michael. It descends in a pillar of light with single-minded purpose — to meet the locusts of the Abyss in mutual annihilation. Where angel meets locust, both are consumed in holy fire."
+    "lore": "An angel of the Heavenly Host, summoned by the Scales of Michael. It descends in a pillar of light with single-minded purpose — to meet the locusts of the Abyss in mutual annihilation. Where angel meets locust, both are consumed in holy fire.",
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.0,
+      "item_tier": 1
+    }
   },
   "hell_bovine": {
     "name": "Hell Bovine",
