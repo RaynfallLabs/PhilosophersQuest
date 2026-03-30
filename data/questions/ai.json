@@ -50,14 +50,14 @@
   {
     "tier": 1,
     "question": "Can AI write stories?",
-    "answer": "Yes, large language models can generate poems, stories, and creative narratives",
+    "answer": "Yes, AI can generate original stories, poems, and other creative text",
     "choices": [
-      "Yes, large language models can generate poems, stories, and creative narratives",
-      "No, AI can only process structured data and numerical inputs",
+      "Yes, AI can generate original stories, poems, and other creative text",
+      "No, AI can only process structured data like numbers and tables",
       "Only with a human author providing detailed scene-by-scene outlines",
-      "Only short factual summaries, not imaginative or fictional content"
+      "Only short factual summaries — AI cannot produce imaginative content"
     ],
-    "context": "Absolutely — large language models can generate poems, short stories, and even novels by predicting one word at a time. The results can be surprisingly creative, though AI doesn't truly 'understand' the story the way a human author does."
+    "context": "Yes — AI writing tools can produce poems, short stories, scripts, and even entire novel drafts by predicting one word at a time based on patterns learned from vast amounts of human writing. The results can be surprising, though the AI doesn't truly 'understand' the story the way a human author does."
   },
   {
     "tier": 1,
@@ -157,18 +157,6 @@
   },
   {
     "tier": 1,
-    "question": "What device do you use to talk to Siri or Alexa?",
-    "answer": "A smartphone or smart speaker with a built-in microphone",
-    "choices": [
-      "A smartphone or smart speaker with a built-in microphone",
-      "A dedicated voice-only landline telephone device",
-      "A desktop computer operated entirely by keyboard",
-      "A television remote control with voice input buttons"
-    ],
-    "context": "You talk to Siri through an iPhone, iPad, or Mac, and to Alexa through an Amazon Echo smart speaker or the Alexa app. These devices have microphones that send your voice to AI servers for processing."
-  },
-  {
-    "tier": 1,
     "question": "Can AI help translate languages?",
     "answer": "Yes, including both text and spoken language across many languages",
     "choices": [
@@ -178,18 +166,6 @@
       "Only for written text documents, not real-time spoken language"
     ],
     "context": "Yes — apps like Google Translate use AI to convert text and speech between over 100 languages in real time. Modern translation AI uses neural networks that understand context, making translations much more natural than older word-by-word methods."
-  },
-  {
-    "tier": 1,
-    "question": "What is the internet?",
-    "answer": "A global network connecting computers",
-    "choices": [
-      "A global network connecting computers",
-      "A single massive computer owned by governments",
-      "A type of software installed on your device",
-      "A satellite system orbiting the Earth"
-    ],
-    "context": "The internet is a worldwide network of billions of connected computers and devices sharing information. It's not one single thing — it's a vast web of cables, satellites, and wireless signals linking everything from your phone to massive data centers."
   },
   {
     "tier": 1,
@@ -214,30 +190,6 @@
       "Yes, but only for veterinary and dental imaging procedures"
     ],
     "context": "Yes — AI can analyze X-rays, MRIs, and CT scans to spot diseases sometimes faster and more accurately than human eyes. It's also used to predict patient outcomes and help discover new drugs."
-  },
-  {
-    "tier": 1,
-    "question": "What is Siri?",
-    "answer": "Apple's voice assistant, launched in 2011",
-    "choices": [
-      "Apple's voice assistant, launched in 2011",
-      "Google's AI-powered voice and search assistant",
-      "Microsoft's smart assistant built into Windows devices",
-      "A social media and communication app developed by Apple"
-    ],
-    "context": "Siri is Apple's voice assistant, launched in 2011 as one of the first mainstream AI assistants built into a smartphone. It can answer questions, send messages, set reminders, and control smart home devices using natural language."
-  },
-  {
-    "tier": 1,
-    "question": "What is Alexa?",
-    "answer": "Amazon's voice assistant, used through Echo smart speakers",
-    "choices": [
-      "Amazon's voice assistant, used through Echo smart speakers",
-      "A humanoid robot with voice capabilities developed by Google",
-      "Microsoft's AI assistant built into Windows and Xbox devices",
-      "A smart home automation platform created by Samsung"
-    ],
-    "context": "Alexa is Amazon's voice assistant, primarily used through Echo smart speakers launched in 2014. It can play music, control smart home gadgets, shop online, and answer questions — all by listening to your voice."
   },
   {
     "tier": 2,
@@ -286,18 +238,6 @@
       "A standalone robot specifically engineered to perform domestic chores autonomously"
     ],
     "context": "A smart home device is a gadget connected to the internet that you can control remotely — think smart lights, thermostats, or locks. Many use AI voice assistants so you can just say 'turn off the lights' instead of flipping a switch."
-  },
-  {
-    "tier": 1,
-    "question": "Who is more creative, humans or AI?",
-    "answer": "Humans",
-    "choices": [
-      "Humans",
-      "AI",
-      "Both equally",
-      "Neither"
-    ],
-    "context": "Humans are still the champions of genuine creativity — we can imagine entirely new ideas, feel emotions, and draw on life experiences. AI can generate impressive content, but it's remixing patterns from its training data rather than truly inventing from nothing."
   },
   {
     "tier": 1,
@@ -386,14 +326,14 @@
   {
     "tier": 1,
     "question": "What is a computer's brain called?",
-    "answer": "A processor (CPU), which executes instructions and calculations",
+    "answer": "A processor (CPU)",
     "choices": [
-      "A processor (CPU), which executes instructions and calculations",
-      "A hard drive (HDD), which stores all programs and data permanently",
-      "A graphics card (GPU), which handles visual rendering and display output",
-      "The motherboard (PCB), which physically connects all computer components"
+      "A processor (CPU)",
+      "A hard drive (HDD)",
+      "A graphics card (GPU)",
+      "The motherboard"
     ],
-    "context": "The CPU (Central Processing Unit) is often called the computer's brain because it executes instructions and does calculations. For AI work specifically, GPUs (Graphics Processing Units) are often more important because they can handle many parallel calculations at once."
+    "context": "The central processing unit (CPU) is often called the computer's brain because it executes instructions and performs calculations. The hard drive stores files, the graphics card handles visuals, and the motherboard connects everything together — but the CPU is what 'thinks'."
   },
   {
     "tier": 1,
@@ -444,7 +384,7 @@
     "context": "AI needs lots of examples and data to learn effectively. Just like you'd struggle to learn a language from only three sentences, AI needs massive amounts of high-quality examples to find reliable patterns."
   },
   {
-    "tier": 1,
+    "tier": 2,
     "question": "What does GPS navigation use to find the most efficient path?",
     "answer": "Graph-search algorithms that evaluate route options",
     "choices": [
@@ -466,18 +406,6 @@
       "Only if your school has an official AI use policy in place"
     ],
     "context": "Yes, AI can be a great study tool — it can explain concepts, check your work, and suggest approaches. But the key is to learn from it rather than just copy answers, because understanding the material is what actually helps you grow."
-  },
-  {
-    "tier": 1,
-    "question": "What company makes the iPhone's Siri?",
-    "answer": "Apple",
-    "choices": [
-      "Apple",
-      "Google",
-      "Amazon",
-      "Microsoft"
-    ],
-    "context": "Apple develops Siri as part of its iOS ecosystem. Siri was originally created by a startup called SRI International, which Apple acquired in 2010 before launching Siri on the iPhone 4S in 2011. Google, Amazon, and Microsoft have their own voice assistants: Google Assistant, Alexa, and Cortana respectively."
   },
   {
     "tier": 1,
@@ -552,7 +480,7 @@
     "context": "Spell checkers compare your words against a dictionary using rules and AI algorithms. Modern ones go beyond simple dictionary lookups — they use language models to catch grammar errors and suggest better phrasing based on context."
   },
   {
-    "tier": 1,
+    "tier": 2,
     "question": "What year was the first electronic computer built?",
     "answer": "The 1940s, when ENIAC was completed",
     "choices": [
@@ -589,18 +517,6 @@
   },
   {
     "tier": 1,
-    "question": "What is a password used for?",
-    "answer": "Keeping your accounts safe from unauthorized access",
-    "choices": [
-      "Keeping your accounts safe from unauthorized access",
-      "Encrypting your files so the system can load them faster",
-      "Verifying that your device is properly connected to the internet",
-      "Granting permission for apps to access your device hardware"
-    ],
-    "context": "A password is a secret string of characters that proves your identity to a computer system, keeping your accounts safe from unauthorized access. Strong passwords use a mix of letters, numbers, and symbols to make them hard to guess."
-  },
-  {
-    "tier": 1,
     "question": "What is facial recognition?",
     "answer": "AI that can identify people by their faces",
     "choices": [
@@ -610,42 +526,6 @@
       "AI that tracks eye movement to measure attention"
     ],
     "context": "Facial recognition is AI technology that identifies or verifies a person by analyzing their facial features from a photo or video. It maps unique characteristics like the geometry of your face and compares them against a database."
-  },
-  {
-    "tier": 1,
-    "question": "What is the name of Google's voice assistant?",
-    "answer": "Google Assistant",
-    "choices": [
-      "Google Assistant",
-      "Google Helper",
-      "Google Brain",
-      "Google Now"
-    ],
-    "context": "It's called Google Assistant, launched in 2016. It's built into Android phones, Google Home speakers, and many other devices, and it can answer questions, control smart devices, and have back-and-forth conversations. Note: Google Now was a predecessor service, and Google Brain is a separate AI research division."
-  },
-  {
-    "tier": 1,
-    "question": "Can AI create new recipes for cooking?",
-    "answer": "Yes, AI can generate entirely new recipes",
-    "choices": [
-      "Yes, AI can generate entirely new recipes",
-      "No, AI can only follow existing recipes exactly",
-      "Only if a human chef approves each ingredient first",
-      "Only for cuisines with large online recipe databases"
-    ],
-    "context": "Yes — AI can analyze thousands of existing recipes to understand flavor combinations and cooking techniques, then generate brand-new recipes. Some results are delicious; others are hilariously strange, like chocolate-covered pizza with pickles."
-  },
-  {
-    "tier": 1,
-    "question": "What happens when you say 'Hey Siri' to an iPhone?",
-    "answer": "The voice assistant activates and listens for your command",
-    "choices": [
-      "The voice assistant activates and listens for your command",
-      "The phone unlocks using facial recognition instead",
-      "It sends a voice message to your most recent contact",
-      "The phone confirms its microphone is working correctly"
-    ],
-    "context": "A small, always-listening AI on your phone detects the specific 'Hey Siri' sound pattern and wakes up the full voice assistant. Your voice command is then processed (often using cloud AI) to figure out what you're asking."
   },
   {
     "tier": 1,
@@ -685,18 +565,6 @@
   },
   {
     "tier": 1,
-    "question": "What is a pixel?",
-    "answer": "A tiny dot that makes up a digital image",
-    "choices": [
-      "A tiny dot that makes up a digital image",
-      "A unit used to measure a screen's brightness level",
-      "A small chip embedded in displays to store color data",
-      "The software layer that renders graphics on a screen"
-    ],
-    "context": "A pixel is the tiniest individual dot in a digital image — a single point of color. Your phone screen contains millions of them packed so tightly together that they blend into smooth pictures to your eye."
-  },
-  {
-    "tier": 1,
     "question": "Can AI read handwriting?",
     "answer": "Yes, with special training on handwritten samples",
     "choices": [
@@ -706,18 +574,6 @@
       "Yes, but only for numbers and simple symbols"
     ],
     "context": "Yes — with enough training on handwritten samples, AI can recognize and digitize handwritten text. Post offices have used this technology for decades to sort mail by reading handwritten addresses automatically."
-  },
-  {
-    "tier": 1,
-    "question": "What is WiFi?",
-    "answer": "A technology using radio waves for wireless internet access",
-    "choices": [
-      "A technology using radio waves for wireless internet access",
-      "A radio signal used to boost mobile device battery life",
-      "A protocol designed for transferring files between computers",
-      "A type of low-orbit satellite used for GPS navigation"
-    ],
-    "context": "WiFi is a wireless technology that uses radio waves to connect your devices to the internet without physical cables. The name doesn't actually stand for anything specific — it was coined as a catchy brand name in 1999."
   },
   {
     "tier": 1,
@@ -742,30 +598,6 @@
       "Only when paired with specialized depth-sensing cameras"
     ],
     "context": "Yes — computer vision AI can detect and count individual objects in images, even in crowded or complex scenes. This is used in everything from wildlife surveys (counting animals) to manufacturing (counting products on assembly lines)."
-  },
-  {
-    "tier": 1,
-    "question": "What does download mean?",
-    "answer": "Copying data from the internet to your device",
-    "choices": [
-      "Copying data from the internet to your device",
-      "Sending files from your device to a remote server",
-      "Compressing data on your device to save storage space",
-      "Syncing your settings and preferences across multiple accounts"
-    ],
-    "context": "Downloading means copying data from a remote server (usually on the internet) to your local device. The opposite — sending data from your device to a server — is called uploading."
-  },
-  {
-    "tier": 1,
-    "question": "What is a touchscreen?",
-    "answer": "A screen you control by touching it directly with your finger or stylus",
-    "choices": [
-      "A screen you control by touching it directly with your finger or stylus",
-      "A screen that responds to voice commands given by the user",
-      "A high-resolution display optimized for professional digital artwork",
-      "A screen that uses a built-in camera to detect hand gestures nearby"
-    ],
-    "context": "A touchscreen is a display that detects where your finger (or stylus) touches it, letting you interact directly with what's on screen. It uses sensors that track electrical changes when your conductive fingertip makes contact."
   },
   {
     "tier": 1,
@@ -841,30 +673,6 @@
   },
   {
     "tier": 1,
-    "question": "Can AI translate between languages in real time?",
-    "answer": "Yes, modern AI handles this well",
-    "choices": [
-      "Yes, modern AI handles this well",
-      "No, current AI lacks the speed required",
-      "Only with a human interpreter assisting",
-      "Only for text, not spoken conversation"
-    ],
-    "context": "Yes — real-time translation AI can process spoken words, translate them, and even speak the translation aloud in seconds. Some earbuds and apps now let two people speaking different languages have a natural conversation."
-  },
-  {
-    "tier": 1,
-    "question": "What is a digital assistant?",
-    "answer": "An AI program that helps with tasks like reminders and questions",
-    "choices": [
-      "An AI program that helps with tasks like reminders and questions",
-      "A software tool designed primarily for editing documents",
-      "A voice-activated interface used only for web searches",
-      "A chatbot built exclusively to handle customer service queries"
-    ],
-    "context": "A digital assistant is an AI program that helps you with everyday tasks — answering questions, setting reminders, managing calendars, and more. Siri, Alexa, Google Assistant, and Cortana are all digital assistants."
-  },
-  {
-    "tier": 1,
     "question": "What should you never share with an AI chatbot?",
     "answer": "Passwords and personal private information",
     "choices": [
@@ -889,18 +697,6 @@
   },
   {
     "tier": 1,
-    "question": "Can AI help you learn a new language?",
-    "answer": "Yes, apps like Duolingo use AI to personalize lessons",
-    "choices": [
-      "Yes, apps like Duolingo use AI to personalize lessons",
-      "No, only certified human tutors can effectively teach languages",
-      "Only if the learner already has fluency in a second language",
-      "Yes, but AI tools are limited to reading and cannot support speaking practice"
-    ],
-    "context": "Yes — apps like Duolingo use AI to personalize lessons, adjust difficulty, and practice conversation with you. The AI tracks which words you struggle with and reviews them more often, making learning more efficient."
-  },
-  {
-    "tier": 1,
     "question": "What is a self-driving car?",
     "answer": "A car that uses AI to drive without a human",
     "choices": [
@@ -922,18 +718,6 @@
       "Yes, search engines automatically filter out false information before results appear"
     ],
     "context": "Absolutely not — the internet contains misinformation, outdated content, biased articles, and deliberate lies alongside genuine information. Always cross-check important claims with multiple reliable sources before believing them."
-  },
-  {
-    "tier": 1,
-    "question": "What company made Alexa?",
-    "answer": "Amazon, through its Echo smart speaker line",
-    "choices": [
-      "Amazon, through its Echo smart speaker line",
-      "Apple, as part of its voice assistant product family",
-      "Google, alongside its Google Home smart speaker platform",
-      "Microsoft, integrated into its Windows operating system"
-    ],
-    "context": "Amazon created Alexa and launched it with the Echo smart speaker in 2014. The name 'Alexa' was chosen partly because the 'x' sound is distinctive and easy for the device's microphones to detect."
   },
   {
     "tier": 1,
@@ -969,7 +753,7 @@
       "Simple rule-based logic stored on low-power microchips",
       "Crowd-sourced answers collected from millions of online volunteers"
     ],
-    "context": "AI systems run on powerful computers packed with specialized processors (especially GPUs) and are trained on enormous amounts of data. The combination of raw computing power and quality data is what makes modern AI possible."
+    "context": "AI systems run on powerful computers packed with specialized processors — especially graphics processing units (GPUs) — and are trained on enormous amounts of data. The combination of raw computing power and quality data is what makes modern AI possible."
   },
   {
     "tier": 1,
@@ -985,30 +769,6 @@
   },
   {
     "tier": 1,
-    "question": "What is a QR code?",
-    "answer": "A square pattern a device can scan to instantly retrieve encoded information",
-    "choices": [
-      "A square pattern a device can scan to instantly retrieve encoded information",
-      "An encrypted AI language used for secure communication between devices",
-      "A specialized barcode format designed exclusively for identifying books",
-      "A visual error code displayed on screen when software crashes or fails"
-    ],
-    "context": "A QR (Quick Response) code is a square pattern of black and white modules that encodes information like a URL or text. Your phone's camera uses image processing to scan the pattern and decode the data instantly."
-  },
-  {
-    "tier": 1,
-    "question": "Can AI help with spelling and grammar?",
-    "answer": "Yes, AI tools can catch spelling, grammar, and even stylistic issues",
-    "choices": [
-      "Yes, AI tools can catch spelling, grammar, and even stylistic issues",
-      "No, AI lacks the contextual understanding needed to evaluate grammar",
-      "Only spelling errors — grammatical structure is too complex for current AI",
-      "Only in English and a small number of major European languages"
-    ],
-    "context": "Yes — tools like Grammarly and your phone's built-in checker use AI to catch spelling errors, grammar mistakes, and even suggest better word choices. They analyze sentence structure and context, not just individual words."
-  },
-  {
-    "tier": 1,
     "question": "What is a video game NPC?",
     "answer": "A non-player character controlled by the computer's game AI",
     "choices": [
@@ -1018,18 +778,6 @@
       "A narrative programmer who writes a game's storyline and character dialogue"
     ],
     "context": "An NPC (Non-Player Character) is any character in a game not controlled by a human player. Game AI gives NPCs behaviors — patrolling guards, chatty shopkeepers, or enemies that chase you — making the game world feel alive."
-  },
-  {
-    "tier": 1,
-    "question": "Can AI work all day without needing a break?",
-    "answer": "Yes, computers do not get tired",
-    "choices": [
-      "Yes, computers do not get tired",
-      "No, they need to rest after long processing tasks",
-      "Only for about 8 hours before requiring a reset",
-      "Only if kept at a consistently cool temperature"
-    ],
-    "context": "Yes — unlike humans, computers don't need sleep, food, or coffee breaks. An AI can process data 24/7 without any decline in performance, which is one of its biggest advantages for tasks like monitoring security cameras."
   },
   {
     "tier": 1,
@@ -1045,18 +793,6 @@
   },
   {
     "tier": 1,
-    "question": "What is an emoji?",
-    "answer": "A small digital icon used to express emotions or ideas",
-    "choices": [
-      "A small digital icon used to express emotions or ideas",
-      "A coding language used in mobile app development",
-      "A type of compressed image file format for the web",
-      "A text formatting system used in web design"
-    ],
-    "context": "An emoji is a small digital icon or image used to express an idea or emotion in text messages and social media. The word comes from Japanese: 'e' (picture) + 'moji' (character). There are now over 3,600 standard emojis."
-  },
-  {
-    "tier": 1,
     "question": "Can AI help protect the environment?",
     "answer": "Yes, by tracking pollution, wildlife, and energy use",
     "choices": [
@@ -1066,18 +802,6 @@
       "Only through operating robotic recycling machines in factories"
     ],
     "context": "Yes — AI helps track deforestation from satellite images, monitor endangered species, optimize energy usage in buildings, and predict natural disasters. It's a powerful tool for understanding and protecting our planet."
-  },
-  {
-    "tier": 1,
-    "question": "What is a tablet computer?",
-    "answer": "A portable flat touchscreen device, like an iPad",
-    "choices": [
-      "A portable flat touchscreen device, like an iPad",
-      "A compact laptop designed with a detachable keyboard",
-      "A handheld gaming console that uses wireless controllers",
-      "A small desktop computer with a built-in monitor screen"
-    ],
-    "context": "A tablet is a portable, flat touchscreen device like an iPad or Samsung Galaxy Tab — bigger than a phone but more portable than a laptop. Tablets use the same kind of processors and software that power smartphones."
   },
   {
     "tier": 1,
@@ -1093,66 +817,6 @@
   },
   {
     "tier": 1,
-    "question": "Can AI help find lost pets?",
-    "answer": "Yes, using image recognition to match photos against found-pet databases",
-    "choices": [
-      "Yes, using image recognition to match photos against found-pet databases",
-      "No, pet recovery still relies entirely on human volunteer networks",
-      "Yes, but only by remotely tracking registered microchip signals",
-      "Only if the pet was previously enrolled in a national breed registry"
-    ],
-    "context": "Yes — AI-powered apps can match photos of lost pets against found-pet databases using image recognition. Some services analyze unique markings like nose prints (which are as unique as human fingerprints) to identify specific animals."
-  },
-  {
-    "tier": 1,
-    "question": "What is streaming?",
-    "answer": "Watching or listening to content over the internet in real time",
-    "choices": [
-      "Watching or listening to content over the internet in real time",
-      "Downloading a complete media file to local storage before playback begins",
-      "Compressing video or audio files to reduce their overall storage size",
-      "Sending media data between nearby devices using Bluetooth signals"
-    ],
-    "context": "Streaming means watching or listening to content in real time as it's delivered over the internet, rather than downloading the whole file first. Netflix, Spotify, and YouTube all use streaming so you can start enjoying content instantly."
-  },
-  {
-    "tier": 1,
-    "question": "What does USB stand for?",
-    "answer": "Universal Serial Bus",
-    "choices": [
-      "Universal Serial Bus",
-      "Unified Software Bridge",
-      "Ultra Secure Broadband",
-      "United Systems Backbone"
-    ],
-    "context": "USB stands for Universal Serial Bus — a standard for connecting devices and transferring data. It was designed to be 'universal' so one type of cable could work with many different devices, replacing the mess of different connectors."
-  },
-  {
-    "tier": 1,
-    "question": "Can AI summarize long articles for you?",
-    "answer": "Yes, AI can condense long articles into concise summaries",
-    "choices": [
-      "Yes, AI can condense long articles into concise summaries",
-      "No, AI can only summarize audio and video content, not written text",
-      "Only if the article follows a structured format like a research paper",
-      "Only short articles under five hundred words can be processed"
-    ],
-    "context": "Yes — AI language models are great at reading long documents and distilling them into shorter summaries. This is incredibly useful for research, news consumption, and anyone drowning in information overload."
-  },
-  {
-    "tier": 1,
-    "question": "What is Bluetooth?",
-    "answer": "A wireless technology for connecting devices nearby",
-    "choices": [
-      "A wireless technology for connecting devices nearby",
-      "A wired networking protocol used in data centers",
-      "A satellite-based communication system for long distances",
-      "A type of internet connection using radio towers"
-    ],
-    "context": "Bluetooth is a short-range wireless technology that lets devices communicate with each other nearby — usually within about 30 feet. It's named after Harald Bluetooth, a Viking king who united Danish tribes, because the technology unites devices."
-  },
-  {
-    "tier": 1,
     "question": "Can AI identify plants from photos?",
     "answer": "Yes, apps can identify species from photos of leaves, flowers, or bark",
     "choices": [
@@ -1162,18 +826,6 @@
       "Only flowering plants with unique color signatures are supported"
     ],
     "context": "Yes — apps like PlantNet and Google Lens use AI image recognition to identify plant species from photos of leaves, flowers, or bark. They compare your photo against databases of millions of plant images."
-  },
-  {
-    "tier": 1,
-    "question": "What is a software update?",
-    "answer": "A new version of a program with improvements or fixes",
-    "choices": [
-      "A new version of a program with improvements or fixes",
-      "Replacing your device's hardware with newer components",
-      "Transferring files from one device to another",
-      "Clearing your device's cache and temporary storage"
-    ],
-    "context": "A software update is a new version of a program that fixes bugs, patches security holes, or adds new features. Keeping your software updated is one of the most important things you can do for security and performance."
   },
   {
     "tier": 2,
@@ -1257,7 +909,7 @@
       "AI that continuously adapts its core algorithms based on broad user feedback",
       "A theoretical AI designed specifically for large-scale governmental decision-making"
     ],
-    "context": "General AI (AGI) would be a machine that can think, learn, and reason about anything as well as a human can. It doesn't exist yet — and whether it's possible, or when it might arrive, is one of the biggest debates in technology. Choice B describes a more capable narrow AI, not true AGI."
+    "context": "Artificial general intelligence (AGI) would be a machine that can think, learn, and reason about anything as well as a human can. It doesn't exist yet — and whether it's possible, or when it might arrive, is one of the biggest open questions in the field."
   },
   {
     "tier": 2,
@@ -1452,7 +1104,7 @@
     "context": "Pattern recognition is AI's ability to find recurring structures or regularities in data. It's the core skill behind almost everything AI does — from recognizing your face to detecting credit card fraud to predicting tomorrow's weather."
   },
   {
-    "tier": 2,
+    "tier": 1,
     "question": "What is the purpose of a CAPTCHA?",
     "answer": "To tell humans and bots apart",
     "choices": [
@@ -1537,18 +1189,6 @@
   },
   {
     "tier": 2,
-    "question": "What is DALL-E?",
-    "answer": "An AI image generator made by OpenAI",
-    "choices": [
-      "An AI image generator made by OpenAI",
-      "A generative AI chatbot developed by Google DeepMind",
-      "An open-source image recognition model released by Meta AI",
-      "A text-to-video AI system created by Stability AI"
-    ],
-    "context": "DALL-E is an AI image generator created by OpenAI, named as a playful mashup of the artist Salvador Dali and the Pixar robot WALL-E. It can create original images from text prompts and was one of the first widely-used image generation tools."
-  },
-  {
-    "tier": 2,
     "question": "What is the AI 'black box' problem?",
     "answer": "Difficulty understanding how AI reaches its decisions",
     "choices": [
@@ -1584,7 +1224,7 @@
     "context": "In unsupervised learning, AI explores data without any labels or correct answers, discovering hidden patterns on its own. It's like sorting a pile of coins by size, color, and shape without anyone telling you what the categories are."
   },
   {
-    "tier": 2,
+    "tier": 3,
     "question": "What was the first AI program generally considered successful?",
     "answer": "The Logic Theorist (1956)",
     "choices": [
@@ -1728,7 +1368,7 @@
     "context": "Autonomous technology operates independently without direct human control — like self-driving cars, delivery drones, or robot vacuum cleaners. The AI makes its own decisions based on sensor data and programmed objectives."
   },
   {
-    "tier": 2,
+    "tier": 3,
     "question": "What year was the term 'artificial intelligence' first coined?",
     "answer": "1956, at the Dartmouth Conference organized by John McCarthy",
     "choices": [
@@ -1750,18 +1390,6 @@
       "A keyboard tool that saves and replays your frequent phrases"
     ],
     "context": "Predictive text is AI on your phone suggesting the next word you might type. It uses a small language model that learns from your texting habits and general language patterns to offer increasingly accurate suggestions."
-  },
-  {
-    "tier": 2,
-    "question": "What is a smart speaker?",
-    "answer": "A speaker with a built-in voice assistant for hands-free control",
-    "choices": [
-      "A speaker with a built-in voice assistant for hands-free control",
-      "A Bluetooth speaker that pairs with your smartphone via an app",
-      "A speaker with a touchscreen for browsing music and video",
-      "A wireless speaker that auto-adjusts volume based on room acoustics"
-    ],
-    "context": "A smart speaker is a speaker with a built-in AI voice assistant — like Amazon Echo (Alexa), Google Nest (Google Assistant), or Apple HomePod (Siri). You talk to it, and it plays music, answers questions, or controls your smart home."
   },
   {
     "tier": 2,
@@ -1837,18 +1465,6 @@
   },
   {
     "tier": 2,
-    "question": "What is an AI startup?",
-    "answer": "A new company focused on developing AI technology",
-    "choices": [
-      "A new company focused on developing AI technology",
-      "An automated script that initializes an AI system at launch",
-      "A government program that funds and oversees AI research",
-      "The initial configuration phase when deploying an AI model"
-    ],
-    "context": "An AI startup is a new company focused on building products or services powered by AI technology. The AI boom has created thousands of startups working on everything from medical diagnosis to creative writing to autonomous vehicles."
-  },
-  {
-    "tier": 2,
     "question": "What does 'open source' mean in AI?",
     "answer": "AI code and models shared publicly for anyone to use or modify",
     "choices": [
@@ -1882,18 +1498,6 @@
       "Content that has been flagged or filtered by an AI moderation algorithm"
     ],
     "context": "AI-generated content is any text, image, audio, video, or code created by an artificial intelligence system rather than a human. As AI gets better, telling AI-generated content from human-made content is becoming increasingly difficult."
-  },
-  {
-    "tier": 2,
-    "question": "What is a virtual assistant?",
-    "answer": "An AI program that helps you with tasks through natural conversation",
-    "choices": [
-      "An AI program that helps you with tasks through natural conversation",
-      "A human assistant who works remotely through digital communication platforms",
-      "A simulated person represented by an animated avatar inside virtual reality",
-      "Software that automates repetitive data entry and document filing tasks"
-    ],
-    "context": "A virtual assistant is an AI program that helps you through conversation — answering questions, scheduling meetings, or managing tasks. Unlike a human assistant, it's available 24/7 and can handle multiple users simultaneously."
   },
   {
     "tier": 2,
@@ -2064,7 +1668,7 @@
     "context": "Reinforcement learning trains AI through trial and error — rewarding good actions and penalizing bad ones. It's perfect for game-playing AI, robotics, and any situation where the AI needs to develop a strategy through experimentation."
   },
   {
-    "tier": 3,
+    "tier": 2,
     "question": "What is NLP?",
     "answer": "Natural Language Processing",
     "choices": [
@@ -2086,18 +1690,6 @@
       "A Turing Award winner renowned for advancing recurrent neural networks at MIT"
     ],
     "context": "Yann LeCun is a French-American computer scientist who pioneered convolutional neural networks (CNNs) for image recognition and serves as Meta's Chief AI Scientist. Along with Geoffrey Hinton and Yoshua Bengio, he's considered one of the 'Godfathers of Deep Learning' and shared the 2018 Turing Award."
-  },
-  {
-    "tier": 3,
-    "question": "What did IBM Deep Blue achieve in 1997?",
-    "answer": "It became the first computer to defeat a reigning world chess champion in a match",
-    "choices": [
-      "It became the first computer to defeat a reigning world chess champion in a match",
-      "It was the first AI system to pass a formal Turing Test evaluation under controlled conditions",
-      "It defeated top professional Go players using Monte Carlo tree search methods",
-      "It became the first machine to beat human champions on a televised trivia game show"
-    ],
-    "context": "Deep Blue became the first computer system to defeat a reigning world chess champion (Garry Kasparov) in a full match under tournament conditions in 1997. It evaluated 200 million chess positions per second using specialized hardware, relying on brute-force search rather than machine learning."
   },
   {
     "tier": 3,
@@ -2424,7 +2016,7 @@
     "context": "Explainable AI develops methods for AI systems to show their reasoning in ways humans can understand. This matters for trust and accountability — a doctor needs to know why the AI flagged a scan as suspicious, not just that it did."
   },
   {
-    "tier": 3,
+    "tier": 4,
     "question": "What is the vanishing gradient problem?",
     "answer": "When gradients become too small for deep networks to learn effectively",
     "choices": [
@@ -2581,7 +2173,7 @@
   },
   {
     "tier": 3,
-    "question": "What is tokenization in NLP?",
+    "question": "What is tokenization in natural language processing (NLP)?",
     "answer": "Breaking text into smaller units like words or subwords",
     "choices": [
       "Breaking text into smaller units like words or subwords",
@@ -2589,7 +2181,7 @@
       "Parsing sentence grammar into a hierarchical syntax tree",
       "Normalizing text by removing punctuation and stopwords"
     ],
-    "context": "Tokenization breaks text into smaller pieces (tokens) that the model can process. Modern LLMs use subword tokenization — splitting 'unhappiness' into 'un,' 'happiness' — which handles rare words efficiently while keeping common words intact."
+    "context": "Tokenization breaks text into smaller pieces (tokens) that a model can process. Modern large language models (LLMs) use subword tokenization — splitting 'unhappiness' into 'un' and 'happiness' — which handles rare words efficiently without an impossibly large vocabulary."
   },
   {
     "tier": 3,
@@ -2748,7 +2340,7 @@
     "context": "Gradient descent is like walking downhill in a foggy mountain — you feel which direction slopes down (the gradient) and take a step that way. Each step adjusts the model's weights to reduce error, gradually finding the best configuration."
   },
   {
-    "tier": 4,
+    "tier": 3,
     "question": "What is a token in the context of large language models?",
     "answer": "A chunk of text (word, subword, or character) the model processes as one unit",
     "choices": [
@@ -2772,7 +2364,7 @@
     "context": "An embedding maps discrete items (words, images, users) into dense numerical vectors in a continuous space where similarity is measured by distance. It's how AI converts things it can't do math on (words) into things it can (numbers)."
   },
   {
-    "tier": 4,
+    "tier": 3,
     "question": "What is a context window?",
     "answer": "The maximum number of tokens a language model can process at once",
     "choices": [
@@ -2808,7 +2400,7 @@
     "context": "A diffusion model generates images by first learning to add noise to training images until they become pure static, then learning to reverse that process — removing noise step by step. DALL-E 3, Stable Diffusion, and Midjourney all use this approach."
   },
   {
-    "tier": 4,
+    "tier": 2,
     "question": "When was ChatGPT released?",
     "answer": "November 2022",
     "choices": [
@@ -2881,7 +2473,7 @@
   },
   {
     "tier": 4,
-    "question": "What is the role of a reward model in RLHF?",
+    "question": "What is the role of a reward model in reinforcement learning from human feedback (RLHF)?",
     "answer": "It scores AI outputs to guide training toward human-preferred responses",
     "choices": [
       "It scores AI outputs to guide training toward human-preferred responses",
@@ -2889,7 +2481,7 @@
       "It fine-tunes the base language model using supervised learning on labeled examples",
       "It filters training data by applying predefined quality thresholds before fine-tuning"
     ],
-    "context": "The reward model is trained on human preference data to score any AI output by quality. During RLHF training, it acts as a stand-in for human judgment, providing instant feedback to the language model on millions of outputs that would be impossible for humans to rate."
+    "context": "The reward model is trained on human preference data to score any AI output by quality. During RLHF training, it acts as a stand-in for human judgment, providing instant feedback to the language model. Because training a real human to rate every output would be impossibly slow, the reward model makes the process scalable."
   },
   {
     "tier": 4,
@@ -2928,7 +2520,7 @@
     "context": "Softmax converts a vector of raw scores (logits) into a probability distribution where all values are between 0 and 1 and sum to 1. It turns 'this option scored 5, that scored 3' into 'this has 88% probability, that has 12%.'"
   },
   {
-    "tier": 4,
+    "tier": 3,
     "question": "What year was GPT-3 released?",
     "answer": "2020",
     "choices": [
@@ -2978,9 +2570,9 @@
   {
     "tier": 4,
     "question": "What is the temperature parameter in language model generation?",
-    "answer": "A scalar that controls output randomness — higher values produce more varied tokens, lower values more predictable ones",
+    "answer": "A scalar controlling output randomness — higher values increase variety, lower values increase predictability",
     "choices": [
-      "A scalar that controls output randomness — higher values produce more varied tokens, lower values more predictable ones",
+      "A scalar controlling output randomness — higher values increase variety, lower values increase predictability",
       "A scaling factor applied to attention weights to sharpen or soften token relevance scores",
       "A hyperparameter that adjusts the learning rate decay schedule during fine-tuning",
       "A parameter controlling how many candidate tokens are retained at each decoding step"
@@ -3061,7 +2653,7 @@
   },
   {
     "tier": 4,
-    "question": "What is PPO in the context of RLHF?",
+    "question": "What is PPO in the context of reinforcement learning from human feedback (RLHF)?",
     "answer": "Proximal Policy Optimization, an algorithm for stable policy updates",
     "choices": [
       "Proximal Policy Optimization, an algorithm for stable policy updates",
@@ -3336,7 +2928,7 @@
     "context": "Data parallelism puts a complete copy of the model on each GPU but splits the training data across them. Each GPU processes its chunk, computes gradients, and they synchronize before updating — like having multiple students read different chapters and sharing notes."
   },
   {
-    "tier": 4,
+    "tier": 3,
     "question": "What is a system prompt?",
     "answer": "Instructions given to an AI model that define its behavior and constraints",
     "choices": [
@@ -3384,7 +2976,7 @@
     "context": "A foundation model is a large AI model trained on broad data that serves as the base for many different applications. GPT-4, Claude, and Llama are foundation models — they can be adapted for writing, coding, analysis, and countless other tasks."
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "What is the title of the 2017 paper that introduced the transformer?",
     "answer": "Attention Is All You Need",
     "choices": [
@@ -3432,7 +3024,7 @@
     "context": "Mechanistic interpretability reverse-engineers neural networks to understand exactly how they compute internally — identifying specific circuits, features, and algorithms. It's like opening the hood of a car to understand each component, not just measuring speed."
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "What is the EU AI Act?",
     "answer": "The European Union's comprehensive legal framework for regulating AI systems by risk level",
     "choices": [
@@ -3444,7 +3036,7 @@
     "context": "The EU AI Act (passed 2024) is the world's first comprehensive AI law. It classifies AI systems by risk level — banning some (like social scoring), heavily regulating high-risk ones (medical, law enforcement), and lightly regulating low-risk ones."
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "What are emergent capabilities in large language models?",
     "answer": "Abilities that appear suddenly at large scale but are absent in smaller models",
     "choices": [
@@ -3456,7 +3048,7 @@
     "context": "Emergent capabilities are abilities that suddenly appear when models reach a certain scale but are absent in smaller models. For example, GPT-3 could do few-shot arithmetic that GPT-2 could not — the capability emerged from scale alone."
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "What is in-context learning?",
     "answer": "A model performing tasks by following examples given in the prompt without weight updates",
     "choices": [
@@ -3566,9 +3158,9 @@
   {
     "tier": 5,
     "question": "What is the 'lottery ticket hypothesis'?",
-    "answer": "Dense networks contain sparse subnetworks that can match the full network's performance when trained from their original initialization",
+    "answer": "Dense networks contain sparse subnetworks that, trained from their original initialization, can match the full network's performance",
     "choices": [
-      "Dense networks contain sparse subnetworks that can match the full network's performance when trained from their original initialization",
+      "Dense networks contain sparse subnetworks that, trained from their original initialization, can match the full network's performance",
       "Pruning a network after training recovers a smaller submodel that retains equivalent accuracy on the original task",
       "Randomly reinitializing a trained network's weights occasionally produces subnetworks with better generalization",
       "Networks with higher parameter counts have an exponentially greater probability of converging to a global optimum"
@@ -3610,18 +3202,6 @@
       "Decoder-only models lack cross-attention entirely; encoder-decoder uses full self-attention on both input and output"
     ],
     "context": "Decoder-only models (GPT, Claude) generate text token by token using causal masking. Encoder-decoder models (T5, original transformer) first encode the full input bidirectionally, then decode the output. Decoder-only has become dominant for general language models."
-  },
-  {
-    "tier": 5,
-    "question": "What is Anthropic's approach to AI safety called?",
-    "answer": "Constitutional AI, which uses a set of principles for the model to self-critique its responses",
-    "choices": [
-      "Constitutional AI, which uses a set of principles for the model to self-critique its responses",
-      "Reinforcement Learning from Human Feedback (RLHF), which trains models using human preference rankings",
-      "Cooperative Inverse Reinforcement Learning (CIRL), which infers human goals through collaborative interaction",
-      "Scalable Oversight via Debate, which pits AI agents against each other to surface truthful answers"
-    ],
-    "context": "Anthropic's approach is called Constitutional AI (CAI). It defines a set of principles (the 'constitution') that the AI uses to self-critique and improve its responses, creating a scalable alternative to pure human feedback for alignment."
   },
   {
     "tier": 5,
@@ -3696,7 +3276,7 @@
     "context": "Grokking (Power et al., 2022) showed that models can suddenly generalize long after apparently memorizing the training data. A model might achieve 100% training accuracy at step 1000 but not generalize until step 100,000 — the understanding suddenly 'clicks.'"
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "What is a reward hacking in reinforcement learning?",
     "answer": "When an agent finds unintended ways to maximize its reward without fulfilling the true objective",
     "choices": [
@@ -3732,19 +3312,19 @@
     "context": "The alignment tax is the performance cost of making AI safer. If RLHF makes a model slightly less capable at coding in order to refuse harmful requests, that capability reduction is the alignment tax. The goal is to minimize this tax while maximizing safety."
   },
   {
-    "tier": 5,
-    "question": "What is Goodhart's Law as applied to AI?",
+    "tier": 4,
+    "question": "What does Goodhart's Law state?",
     "answer": "When a measure becomes a target, it ceases to be a good measure",
     "choices": [
       "When a measure becomes a target, it ceases to be a good measure",
-      "Optimizing a proxy reward causes the model to exploit the metric rather than the true goal",
-      "Reward models trained on human feedback will eventually overfit to rater biases",
-      "AI systems trained to maximize a single objective neglect all other performance dimensions"
+      "Optimizing any proxy metric causes the true underlying goal to degrade proportionally",
+      "Reward models trained on preference data will eventually overfit to annotator biases",
+      "AI systems maximize a single objective at the cost of all other performance dimensions"
     ],
-    "context": "Goodhart's Law states that 'when a measure becomes a target, it ceases to be a good measure.' In AI, if you optimize a reward model too aggressively, the AI learns to exploit the reward signal rather than actually being helpful — producing outputs that score well but are low quality. This is closely related to reward hacking."
+    "context": "Goodhart's Law states: 'When a measure becomes a target, it ceases to be a good measure.' In AI alignment and reward learning, this matters enormously — if you optimize a model too hard against a proxy reward, it finds ways to score well on the metric while failing the underlying goal. It's the formal name for reward hacking."
   },
   {
-    "tier": 5,
+    "tier": 3,
     "question": "What is multi-modal AI?",
     "answer": "AI that can process and relate multiple types of data like text, images, and audio",
     "choices": [
@@ -3792,7 +3372,7 @@
     "context": "The orthogonality thesis (Bostrom, 2012) argues that any level of intelligence can be combined with any goal. A superintelligent AI could pursue objectives ranging from curing cancer to maximizing paperclip production. Intelligence doesn't automatically produce human-friendly values."
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "What is retrieval-augmented generation (RAG)?",
     "answer": "Enhancing a language model by retrieving relevant documents to include as context",
     "choices": [
@@ -3816,7 +3396,7 @@
     "context": "The shoggoth meme depicts base language models as Lovecraftian aliens (vast and incomprehensible) wearing a smiley-face mask representing RLHF fine-tuning. It humorously captures the idea that the polite chatbot interface conceals something fundamentally alien underneath."
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "What is red-teaming in AI safety?",
     "answer": "Deliberately attempting to make an AI system behave badly in order to find vulnerabilities",
     "choices": [
@@ -3840,7 +3420,7 @@
     "context": "The reversal curse (Berglund et al., 2023) shows that if a model learns 'Tom Cruise's mother is Mary Lee Pfeiffer,' it often cannot answer 'Who is Mary Lee Pfeiffer's son?' Facts appear to be stored directionally rather than bidirectionally — a surprising and important limitation."
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "What is the 'scaling hypothesis'?",
     "answer": "That increasing model scale (parameters, data, compute) will continue to yield capability gains",
     "choices": [
@@ -3912,7 +3492,7 @@
     "context": "The symbol grounding problem asks how AI can connect abstract symbols ('cat') to real-world meaning (the furry thing on your lap). Language models manipulate symbols brilliantly but may not ground them in reality the way humans do through sensory experience."
   },
   {
-    "tier": 5,
+    "tier": 3,
     "question": "What is a 'jailbreak' in the context of AI chatbots?",
     "answer": "A prompt designed to bypass an AI system's safety guidelines",
     "choices": [
@@ -3974,9 +3554,9 @@
   {
     "tier": 5,
     "question": "What are 'scaling moats' in AI competition?",
-    "answer": "Advantages from owning more compute, data, or users that compound over time, making it hard for competitors to catch up",
+    "answer": "Compounding advantages in compute, data, or users that make it hard for competitors to catch up",
     "choices": [
-      "Advantages from owning more compute, data, or users that compound over time, making it hard for competitors to catch up",
+      "Compounding advantages in compute, data, or users that make it hard for competitors to catch up",
       "Proprietary training techniques that become more effective as model parameters increase beyond certain thresholds",
       "Regulatory frameworks that entrench incumbents by requiring costly safety certifications before deployment",
       "Network effects where deep API integrations lock developers into a single provider's ecosystem long-term"
@@ -4054,18 +3634,6 @@
       "Generating sparse attention masks to improve transformer efficiency"
     ],
     "context": "Sparse autoencoders decompose a neural network's activations into a larger set of interpretable, sparsely activated features. Anthropic's landmark paper found features corresponding to concepts like 'Golden Gate Bridge,' 'code bugs,' and 'deception' inside Claude."
-  },
-  {
-    "tier": 1,
-    "question": "What is a computer mouse used for?",
-    "answer": "Pointing and clicking on things on the screen",
-    "choices": [
-      "Pointing and clicking on things on the screen",
-      "Typing letters and numbers into the computer",
-      "Connecting the computer to the internet",
-      "Displaying images and video on a screen"
-    ],
-    "context": "A computer mouse is an input device that moves a pointer on your screen, letting you click buttons, select text, and interact with your computer. It was invented by Douglas Engelbart in 1964 — over 60 years ago!"
   },
   {
     "tier": 1,
@@ -4201,18 +3769,6 @@
   },
   {
     "tier": 2,
-    "question": "What is Midjourney?",
-    "answer": "An AI tool that generates images from text descriptions",
-    "choices": [
-      "An AI tool that generates images from text descriptions",
-      "A neural network service that translates text between languages",
-      "A cloud-based platform for editing and enhancing photos with AI filters",
-      "An AI assistant designed to help plan and structure creative writing projects"
-    ],
-    "context": "Midjourney is an AI image generation tool that creates stunning artwork from text descriptions. It runs through Discord (a chat platform) and has become famous for its artistic, painterly style that many users find more aesthetically pleasing than competitors like DALL-E or Stable Diffusion."
-  },
-  {
-    "tier": 2,
     "question": "What does 'iteration' mean when using AI?",
     "answer": "Refining your request or approach through multiple attempts",
     "choices": [
@@ -4282,18 +3838,6 @@
       "An evaluation framework specifically designed to detect bias in AI outputs"
     ],
     "context": "A benchmark is a standardized test used to measure and compare how well AI models perform on specific tasks. Just like standardized tests for students, benchmarks let researchers objectively compare different AI systems."
-  },
-  {
-    "tier": 2,
-    "question": "What does AI-powered mean?",
-    "answer": "A product or service that uses artificial intelligence to deliver its features",
-    "choices": [
-      "A product or service that uses artificial intelligence to deliver its features",
-      "Software that has been optimized to run faster using specialized hardware",
-      "A platform that connects users directly to machine learning researchers",
-      "A system that automatically updates its features using cloud computing rules"
-    ],
-    "context": "When a product is 'AI-powered,' it uses artificial intelligence under the hood to deliver smarter features. This could mean anything from a camera that enhances your photos to a search engine that understands natural language questions."
   },
   {
     "tier": 2,
@@ -4477,7 +4021,7 @@
   },
   {
     "tier": 3,
-    "question": "What is the purpose of a pooling layer in a CNN?",
+    "question": "What is the purpose of a pooling layer in a convolutional neural network (CNN)?",
     "answer": "Reducing the spatial dimensions of feature maps while retaining important information",
     "choices": [
       "Reducing the spatial dimensions of feature maps while retaining important information",
@@ -4537,7 +4081,7 @@
   },
   {
     "tier": 3,
-    "question": "What is a GAN's generator?",
+    "question": "What is a generative adversarial network (GAN)'s generator?",
     "answer": "The network that creates fake data to try to fool the discriminator",
     "choices": [
       "The network that creates fake data to try to fool the discriminator",
@@ -4686,10 +4230,10 @@
     "choices": [
       "BERT reads text bidirectionally; GPT reads left to right",
       "BERT is optimized for text generation; GPT is optimized for text classification",
-      "BERT was developed by Google; GPT was developed by OpenAI, not DeepMind",
+      "BERT was developed by Google; GPT was developed by OpenAI",
       "BERT uses an encoder-only architecture; GPT uses a decoder-only architecture"
     ],
-    "context": "BERT reads text bidirectionally (both left-to-right and right-to-left), making it great for understanding text. GPT reads only left-to-right, making it great for generating text. BERT excels at comprehension tasks; GPT excels at creation tasks."
+    "context": "BERT (Bidirectional Encoder Representations from Transformers) reads text in both directions, making it excellent at understanding meaning. GPT (Generative Pre-trained Transformer) reads left-to-right, making it excellent at generating text. BERT excels at tasks like question answering and classification; GPT excels at text completion and conversation."
   },
   {
     "tier": 4,
@@ -4752,7 +4296,7 @@
     "context": "Batch norm normalizes across different examples in a batch (computing stats per feature across the batch), while layer norm normalizes across all features within a single example. Transformers use layer norm because it works regardless of batch size."
   },
   {
-    "tier": 4,
+    "tier": 5,
     "question": "What is BPE (Byte Pair Encoding)?",
     "answer": "A tokenization algorithm that iteratively merges the most frequent pairs of characters or tokens",
     "choices": [
@@ -4860,7 +4404,7 @@
     "context": "Pre-training is the massive initial phase where the model learns general knowledge from huge unlabeled datasets using self-supervised objectives. Fine-tuning is the targeted follow-up where the pre-trained model is adapted to a specific downstream task using a smaller labeled dataset, at a fraction of the original compute cost."
   },
   {
-    "tier": 4,
+    "tier": 5,
     "question": "What is SwiGLU?",
     "answer": "An activation function combining Swish and Gated Linear Units, used in modern transformers",
     "choices": [
@@ -4872,7 +4416,7 @@
     "context": "SwiGLU combines the Swish activation function with a Gated Linear Unit, creating a more expressive feed-forward layer. It's used in models like LLaMA and PaLM because it consistently outperforms simpler activation functions like ReLU at the same parameter count."
   },
   {
-    "tier": 4,
+    "tier": 5,
     "question": "What is RMSNorm?",
     "answer": "Root Mean Square Normalization — normalizes activations using only their RMS, skipping mean subtraction",
     "choices": [
@@ -4884,7 +4428,7 @@
     "context": "RMSNorm (Root Mean Square Normalization) normalizes using only the RMS of activations, skipping the mean-subtraction step of layer norm. It's simpler, slightly faster, and works just as well — which is why modern LLMs like LLaMA prefer it."
   },
   {
-    "tier": 4,
+    "tier": 5,
     "question": "What is group query attention (GQA)?",
     "answer": "An attention variant where multiple query heads share key-value heads to reduce memory usage",
     "choices": [
@@ -4896,7 +4440,7 @@
     "context": "GQA is a compromise between multi-head attention (separate KV per head, expensive) and multi-query attention (shared KV for all heads, cheap but lower quality). It groups heads into clusters that share key-value heads, balancing quality and efficiency."
   },
   {
-    "tier": 4,
+    "tier": 5,
     "question": "What is the chinchilla scaling prediction for a 70B parameter model?",
     "answer": "Approximately 1.4 trillion tokens, following the 20-tokens-per-parameter compute-optimal rule",
     "choices": [
@@ -5650,5 +5194,533 @@
       "When the reward model generalizes poorly because it was trained on insufficient or unrepresentative data"
     ],
     "context": "RMOO occurs when you optimize too aggressively against a reward model — the language model finds outputs that exploit quirks in the reward model to score high while actually being lower quality. It's Goodhart's Law in action: gaming the metric instead of improving the reality. This is a key challenge in RLHF (Reinforcement Learning from Human Feedback) pipelines."
+  },
+  {
+    "tier": 1,
+    "question": "Can AI help predict natural disasters like floods and hurricanes?",
+    "answer": "Yes, AI analyzes patterns in weather, sensor, and satellite data to forecast disasters",
+    "choices": [
+      "Yes, AI analyzes patterns in weather, sensor, and satellite data to forecast disasters",
+      "No, natural disasters are completely random events that no system can predict",
+      "Only hurricanes — floods and earthquakes are still beyond any AI prediction",
+      "Only when operated by a team of meteorologists supervising every calculation"
+    ],
+    "context": "Yes — AI systems process data from weather stations, ocean sensors, and satellites to issue earlier and more accurate warnings for floods, hurricanes, and other disasters. This early-warning technology has already saved thousands of lives around the world."
+  },
+  {
+    "tier": 1,
+    "question": "Can robots be used to help care for elderly or disabled people?",
+    "answer": "Yes, robots can assist with reminders, mobility, and companionship tasks",
+    "choices": [
+      "Yes, robots can assist with reminders, mobility, and companionship tasks",
+      "No, robots are too unreliable and expensive for healthcare use",
+      "Only in hospitals — robots are not safe for use in private homes",
+      "Only robots large enough to physically lift and carry patients"
+    ],
+    "context": "Yes — assistive robots and AI are increasingly used in elder care and disability support. Some robots remind patients to take medication, guide exercises, or provide social interaction for isolated individuals. This is a growing field where AI is making a real difference."
+  },
+  {
+    "tier": 3,
+    "question": "Who created the first mathematical model of an artificial neuron in 1943?",
+    "answer": "Warren McCulloch and Walter Pitts, who modeled neurons as logical switches",
+    "choices": [
+      "Warren McCulloch and Walter Pitts, who modeled neurons as logical switches",
+      "Alan Turing and Claude Shannon, who developed digital information theory",
+      "John McCarthy and Marvin Minsky, who founded the AI field at Dartmouth",
+      "Norbert Wiener and Hendrik Bode, who developed cybernetics and control theory"
+    ],
+    "context": "In 1943, neuroscientist Warren McCulloch and mathematician Walter Pitts published a paper showing how interconnected neurons could perform logical computations. Their mathematical neuron was a crucial precursor to modern neural networks — though it took decades and far more computing power before the idea became practical."
+  },
+  {
+    "tier": 5,
+    "question": "What does the 'hard problem of consciousness' imply about determining whether an AI is sentient?",
+    "answer": "There may be no behavioral test that can definitively prove or disprove inner subjective experience",
+    "choices": [
+      "There may be no behavioral test that can definitively prove or disprove inner subjective experience",
+      "The Turing Test provides a sufficient threshold for confirming machine consciousness",
+      "Functional behavior is all that matters — a system that behaves consciously is conscious by definition",
+      "Measuring brain-equivalent processing power offers the most reliable indicator of AI sentience"
+    ],
+    "context": "The hard problem of consciousness, articulated by philosopher David Chalmers, asks why any physical process produces subjective experience at all. For AI, this means a model could perfectly mimic human responses yet have no inner experience — or have one we cannot detect. It is one of the deepest unresolved questions at the intersection of philosophy of mind and AI research."
+  },
+  {
+    "tier": 1,
+    "question": "Why does an AI chatbot sometimes confidently state facts that are completely wrong?",
+    "answer": "It predicts likely-sounding words without checking whether the information is actually true",
+    "choices": [
+      "It predicts likely-sounding words without checking whether the information is actually true",
+      "Its developers program in plausible errors to test whether users are paying attention",
+      "It runs out of processing power and guesses when handling complex questions",
+      "It is trained on outdated data that contained factual errors from old books"
+    ],
+    "context": "AI language models generate text by predicting what word comes next — not by looking things up. They can produce confident-sounding sentences that are completely fabricated. This is called hallucination, and it's the main reason you should always verify important AI answers from a trusted independent source."
+  },
+  {
+    "tier": 1,
+    "question": "Why doesn't an AI chatbot remember your conversation from a previous day?",
+    "answer": "Each conversation starts fresh — the AI has no memory between separate sessions",
+    "choices": [
+      "Each conversation starts fresh — the AI has no memory between separate sessions",
+      "It forgets conversations automatically after 24 hours to protect storage space",
+      "Only paid subscribers can access conversation history in most AI products",
+      "The company deletes all conversations nightly for legal privacy compliance"
+    ],
+    "context": "Most AI chatbots have no persistent memory between sessions. When you close the window and come back later, you're a complete stranger to it. Some apps are building memory features on top, but the underlying AI model starts each conversation with a blank slate. It doesn't know your name, your preferences, or anything you've told it before."
+  },
+  {
+    "tier": 1,
+    "question": "What does it mean when an AI gives two different answers to the exact same question?",
+    "answer": "Randomness is built into how AI generates text so responses naturally vary",
+    "choices": [
+      "Randomness is built into how AI generates text so responses naturally vary",
+      "Different servers in different locations process the same question separately",
+      "The AI adapts its personality based on clues about who is asking",
+      "Previous conversations subtly influence current answers through hidden memory"
+    ],
+    "context": "Most AI language models have a 'temperature' setting that intentionally adds variation. This makes responses feel natural rather than robotic. The trade-off is that the same question can get somewhat different answers each time. For creative tasks this is a feature; for factual questions where you need a precise answer, it can be a problem."
+  },
+  {
+    "tier": 1,
+    "question": "What does an AI learn from that a traditional calculator does not need?",
+    "answer": "Examples and data — the AI has no built-in rules and must learn patterns from experience",
+    "choices": [
+      "Examples and data — the AI has no built-in rules and must learn patterns from experience",
+      "A faster processor to handle the complex equations AI requires",
+      "An internet connection to access mathematical reference tables",
+      "A larger memory to store the results of previous calculations"
+    ],
+    "context": "A calculator follows fixed rules: add these numbers, square that one. It needs no data. AI has no hard-coded rules for most tasks — before it can recognise a dog in a photo it needs to have seen thousands of labeled dog photos. The calculator never needed to see a single number before you used it. This distinction — rules vs. learned patterns — is the core difference between traditional programming and machine learning."
+  },
+  {
+    "tier": 1,
+    "question": "If an AI was trained mostly on text written by English-speaking adults, what group might it serve poorly?",
+    "answer": "Children, non-English speakers, and others underrepresented in the training data",
+    "choices": [
+      "Children, non-English speakers, and others underrepresented in the training data",
+      "Professional academics, since the data would be too informal for their needs",
+      "Elderly users, because older writing styles would dominate the training examples",
+      "Programmers, since code is very different in structure from natural language text"
+    ],
+    "context": "AI learns the patterns in its training data. If that data mostly represents one group, the AI works better for them and worse for everyone else. This is called training bias. It's one reason AI assistants sometimes struggle with certain accents, dialects, or the language patterns of younger users — and why diverse training data matters enormously."
+  },
+  {
+    "tier": 1,
+    "question": "What is one thing AI still struggles with that most young children can do easily?",
+    "answer": "Common sense — understanding obvious things that are never explicitly written down",
+    "choices": [
+      "Common sense — understanding obvious things that are never explicitly written down",
+      "Counting objects in a photograph accurately",
+      "Recalling a specific sentence from a document it was just given",
+      "Following a simple instruction like writing a list of ten items"
+    ],
+    "context": "AI can write essays and solve equations, but it often fails at common sense. It might not realize that a cup placed upside-down can't hold water, or that you can't read a book that's on the other side of a closed door. Humans absorb this kind of obvious, unstated knowledge by living in the world. AI has to learn it from text, which rarely spells these things out."
+  },
+  {
+    "tier": 1,
+    "question": "Why might an AI be excellent at chess but completely useless at making a cup of tea?",
+    "answer": "Chess has fixed rules and a measurable goal; making tea requires physical judgment in an unpredictable world",
+    "choices": [
+      "Chess has fixed rules and a measurable goal; making tea requires physical judgment in an unpredictable world",
+      "Chess AI is connected to the internet for move lookups, while kitchen robots are not",
+      "Chess moves are mathematically simpler to compute than physical robot movements",
+      "Chess AI is far more expensive to develop than household robotic AI"
+    ],
+    "context": "Narrow AI excels when the rules are clear and the environment is controlled. Chess is perfect for this. Making tea means picking up fragile objects, judging water temperature by sight, avoiding spills, and adapting to a messy physical world. This is why AI beating grandmasters at chess in 1997 didn't mean domestic robots were around the corner — the problems are completely different in kind."
+  },
+  {
+    "tier": 1,
+    "question": "When your bank automatically blocks a suspicious transaction, what is most likely doing the work?",
+    "answer": "AI that learned your normal spending patterns and flags anything that breaks them",
+    "choices": [
+      "AI that learned your normal spending patterns and flags anything that breaks them",
+      "A human fraud analyst reviewing every transaction as it happens",
+      "A fixed list of known fraudulent merchants stored in the bank's database",
+      "A government system that automatically flags purchases over a certain amount"
+    ],
+    "context": "Banks use AI to analyze millions of transactions per second, comparing each one against your personal spending history and global fraud patterns. A purchase in a foreign country one minute after a local one, or a sudden luxury item from someone who never makes them, gets flagged instantly — no human reviewer involved. These systems prevent billions in fraud losses every year, almost entirely invisibly."
+  },
+  {
+    "tier": 1,
+    "question": "What is the AI on TikTok and Instagram mainly deciding for each user?",
+    "answer": "Which videos and posts to show based on that user's individual engagement history",
+    "choices": [
+      "Which videos and posts to show based on that user's individual engagement history",
+      "Whether to approve or restrict the user's account based on their posting activity",
+      "How to compress and store the videos each user uploads to save server space",
+      "Which advertisements are inserted between videos during playback"
+    ],
+    "context": "Every time you open TikTok or Instagram, AI analyzes what you've watched, liked, and scrolled past — sometimes for just fractions of a second — to decide what to show you next. The goal is to keep you watching as long as possible. This recommendation engine is one of the most powerful and most studied AI systems in the world, shaping what billions of people see every day."
+  },
+  {
+    "tier": 1,
+    "question": "When you take a photo and your phone automatically makes it look better, what is happening?",
+    "answer": "AI adjusts brightness, color, and sharpness based on patterns from millions of training photos",
+    "choices": [
+      "AI adjusts brightness, color, and sharpness based on patterns from millions of training photos",
+      "The camera's hardware lens physically adjusts to improve the optical quality",
+      "A remote server processes the photo and sends back an improved version instantly",
+      "The phone applies a color filter preset stored in the operating system settings"
+    ],
+    "context": "Modern smartphone cameras use AI for nearly everything — detecting faces to stay in focus, combining multiple rapid shots to reduce blur, adjusting color to match how a scene should look. When a casual snapshot of your friend automatically looks like a professional portrait, that's AI working behind the scenes, not a better lens. This is called computational photography, and it's one of the most widely used AI applications in the world."
+  },
+  {
+    "tier": 1,
+    "question": "What technology automatically suggests the next song when your current one ends on a music app?",
+    "answer": "Recommendation AI that analyzes your listening history and compares it to similar listeners",
+    "choices": [
+      "Recommendation AI that analyzes your listening history and compares it to similar listeners",
+      "A human DJ at the music service who monitors your playlist in real time",
+      "A random selection system that is weighted toward globally popular songs",
+      "The licensing agreements between the music service and different record labels"
+    ],
+    "context": "Music recommendation AI analyses what you've listened to, how long you listened, whether you skipped, and what similar listeners chose after similar songs. It also analyses the actual audio — tempo, key, energy level — to find songs that sound similar even if they're in genres you've never explored. When a playlist feels like it was made for you, that's this system doing its job."
+  },
+  {
+    "tier": 1,
+    "question": "What does an AI do when scanning incoming emails before you read them?",
+    "answer": "It detects patterns of spam and phishing to sort dangerous messages away from your inbox",
+    "choices": [
+      "It detects patterns of spam and phishing to sort dangerous messages away from your inbox",
+      "It reads your email and learns your personal writing style to help you reply faster",
+      "It checks whether each sender is a verified contact in your address book",
+      "It scans attachments for viruses using a database of known malicious files"
+    ],
+    "context": "Email spam filters use machine learning to recognize patterns shared by junk mail — urgent language, unknown senders, suspicious links, certain combinations of words. They also learn from what you personally mark as spam, personalising over time to your inbox. Modern systems also flag phishing attempts — emails pretending to be your bank or a trusted company — which are far more dangerous than ordinary junk mail."
+  },
+  {
+    "tier": 1,
+    "question": "What is one way AI is used in hospitals that most patients never notice?",
+    "answer": "Analyzing medical scans to help doctors spot diseases earlier and more accurately",
+    "choices": [
+      "Analyzing medical scans to help doctors spot diseases earlier and more accurately",
+      "Cleaning and sterilizing medical equipment between patient visits",
+      "Scheduling appointments and managing hospital staff rosters automatically",
+      "Translating medical records between different hospital computer systems"
+    ],
+    "context": "AI tools now analyse X-rays, MRIs, and CT scans for signs of cancer, disease, and abnormalities — often spotting things a tired radiologist might miss after a long shift. In some studies, AI detects certain cancers earlier and more accurately than expert doctors working alone. Most patients never know it happened: the AI flags concerns, and a doctor makes the final call."
+  },
+  {
+    "tier": 1,
+    "question": "What technology is working in the background when content is removed from social media for breaking the rules?",
+    "answer": "Content moderation AI that scans posts and images for harmful material automatically",
+    "choices": [
+      "Content moderation AI that scans posts and images for harmful material automatically",
+      "A team of human reviewers who monitor every post as it is uploaded",
+      "Community members who vote to flag and remove rule-breaking content",
+      "A legal department that processes reports from users who complain about posts"
+    ],
+    "context": "Content moderation AI scans billions of posts, images, and videos every day for content that violates platform rules — hate speech, graphic violence, spam, misinformation. No human team could review this volume. AI flags suspicious content for removal or human review. It makes mistakes in both directions — sometimes removing harmless content and sometimes missing genuinely harmful things — which is why content moderation is one of AI's most debated applications."
+  },
+  {
+    "tier": 1,
+    "question": "What does it mean for an AI to 'learn' from data?",
+    "answer": "Its internal numbers adjust based on patterns in examples until its outputs improve",
+    "choices": [
+      "Its internal numbers adjust based on patterns in examples until its outputs improve",
+      "A human programmer adds new facts to a database the AI can look up",
+      "The AI stores new information the way a human memorizes a phone number",
+      "Its code is rewritten to include new capabilities by developers after each session"
+    ],
+    "context": "AI learning is nothing like human learning. When an AI trains, it processes millions of examples and makes tiny adjustments to billions of internal numbers called weights. After enough adjustments, those weights encode useful patterns — like 'photos with this configuration of edges and colors tend to be cats.' The AI doesn't understand this; it's pure mathematics that happens to produce useful outputs."
+  },
+  {
+    "tier": 1,
+    "question": "What happens if an AI is trained on too little data?",
+    "answer": "It learns poorly and makes frequent mistakes on tasks it should handle",
+    "choices": [
+      "It learns poorly and makes frequent mistakes on tasks it should handle",
+      "It refuses to answer any questions until more data is provided by its developers",
+      "It slows down noticeably but maintains its accuracy for common questions",
+      "It asks users to provide extra information to fill in the gaps itself"
+    ],
+    "context": "AI performance scales dramatically with the amount of training data. A spam filter trained on 100 emails will misclassify often; one trained on 10 million will be quite accurate. An image recognizer trained on 50 dog photos won't generalise well; one trained on 50,000 will. More data — often more than the sophistication of the algorithm itself — determines how well an AI performs."
+  },
+  {
+    "tier": 1,
+    "question": "Why is it important for AI training data to include many different kinds of people and situations?",
+    "answer": "So the AI works well for many different groups, not just the most common ones in the data",
+    "choices": [
+      "So the AI works well for many different groups, not just the most common ones in the data",
+      "So the training process takes less time by covering more topics simultaneously",
+      "So the AI can answer questions about a wider variety of historical events",
+      "So the AI's answers are longer and more detailed by default"
+    ],
+    "context": "If you train a facial recognition system mostly on light-skinned faces, it will work worse on darker-skinned faces — because it learned mostly from one type. This has happened in real commercial products. Diverse training data means the AI has seen many different people, languages, and situations, making it more reliable and fairer across a wider range of users."
+  },
+  {
+    "tier": 1,
+    "question": "What does it mean when someone says an AI made up an answer?",
+    "answer": "The AI generated text that sounds plausible but is not actually true",
+    "choices": [
+      "The AI generated text that sounds plausible but is not actually true",
+      "The AI found an answer through creative reasoning rather than a database lookup",
+      "The AI refused to answer and invented an excuse for why it could not help",
+      "The AI copied an answer from one source and applied it incorrectly to a new question"
+    ],
+    "context": "When AI 'hallucinates,' it produces information that sounds perfectly reasonable but is completely fabricated — a fake study citation, a wrong historical date, a person who never existed. This happens because the AI is optimising for fluent, plausible text, not verified truth. It doesn't know it's making things up. Always check important facts from an AI against a reliable source."
+  },
+  {
+    "tier": 1,
+    "question": "What does an AI image generator actually do when you type in a description?",
+    "answer": "It creates an entirely new image by combining patterns it learned from millions of training images",
+    "choices": [
+      "It creates an entirely new image by combining patterns it learned from millions of training images",
+      "It searches the internet for the closest matching photo and returns it",
+      "It traces a drawing from a template library using your description as a guide",
+      "It asks a human illustrator to draw your description and delivers the result"
+    ],
+    "context": "Image generators don't find existing photos — they synthesize new ones. During training, they learn the visual patterns associated with words and concepts. When you give a prompt, they remix those learned patterns to build an image that has never existed before. This is why they can generate a picture of 'a golden retriever wearing a top hat on the moon' — they've never seen that exact scene, but they know what each element looks like."
+  },
+  {
+    "tier": 1,
+    "question": "Why can't an AI chatbot tell you about things that happened last week?",
+    "answer": "It was trained on data up to a fixed date and does not automatically learn new information",
+    "choices": [
+      "It was trained on data up to a fixed date and does not automatically learn new information",
+      "It does not have access to the internet or any live news sources",
+      "It only stores general knowledge and filters out time-specific events",
+      "Its developers update it once a month to remove outdated information"
+    ],
+    "context": "AI language models are trained on a snapshot of the internet up to a certain date — called the knowledge cutoff. Everything after that is unknown to the AI. Ask it about a recent election or a new movie and it will either say it doesn't know or, worse, make something up. Some tools now add web search to get around this, but the underlying model's knowledge still stops at its training date."
+  },
+  {
+    "tier": 1,
+    "question": "What is one common tell that an image was created by AI rather than a camera?",
+    "answer": "Unnatural details like extra fingers, impossible reflections, or text that is garbled",
+    "choices": [
+      "Unnatural details like extra fingers, impossible reflections, or text that is garbled",
+      "The image file is significantly larger than photos taken by a camera",
+      "The image appears in a special file format that cameras cannot produce",
+      "The image contains a hidden watermark placed there by the AI company"
+    ],
+    "context": "AI-generated images often get small details wrong — hands with six fingers, text that is visually plausible but unreadable, reflections that don't match the scene, or backgrounds that blur into impossible shapes. These artifacts are called 'tells.' As AI improves, tells become harder to spot, which is why researchers are now building AI detection tools specifically designed to catch AI-generated fakes."
+  },
+  {
+    "tier": 1,
+    "question": "What makes it hard for AI to understand sarcasm and jokes?",
+    "answer": "They require understanding context, tone, and shared cultural knowledge the AI often lacks",
+    "choices": [
+      "They require understanding context, tone, and shared cultural knowledge the AI often lacks",
+      "AI systems are programmed to process only factual statements, not creative language",
+      "Sarcastic words are too rare in training data for AI to learn their patterns",
+      "Jokes change meaning too quickly for AI to keep up with through regular updates"
+    ],
+    "context": "When someone says 'Oh great, another Monday,' they mean the opposite of what the words say. Understanding this requires knowing the speaker's tone, cultural attitudes toward Mondays, and the context of the conversation. AI can recognise sarcasm patterns it has seen in training, but genuinely new or subtle irony often slips past it — which is why AI can seem humorless or take things too literally."
+  },
+  {
+    "tier": 1,
+    "question": "If an AI system makes a serious mistake that harms someone, who is most likely responsible?",
+    "answer": "The company that built and deployed the AI",
+    "choices": [
+      "The company that built and deployed the AI",
+      "The AI itself, since it made the decision independently",
+      "The user who gave the AI the instructions it acted on",
+      "No one, since AI mistakes are treated as unforeseeable accidents"
+    ],
+    "context": "When AI causes harm — a wrong medical decision, an unfair rejection, a vehicle crash — legal and moral responsibility falls primarily on the humans and companies that built and deployed it. AI is not a legal person and cannot be held accountable. This is an active area of law and policy, with governments around the world debating who should answer for AI mistakes as the technology becomes more powerful."
+  },
+  {
+    "tier": 1,
+    "question": "What is one reason an AI used to screen job applications might be unfair to some candidates?",
+    "answer": "It may have learned to prefer candidates who look like people previously hired, repeating past biases",
+    "choices": [
+      "It may have learned to prefer candidates who look like people previously hired, repeating past biases",
+      "It scores candidates lower if they use uncommon words not found in its vocabulary",
+      "It cannot assess soft skills, so it only evaluates technical qualifications",
+      "It deliberately ignores education and experience to focus only on personality assessments"
+    ],
+    "context": "Amazon built and then scrapped a hiring AI after discovering it penalized resumes that included the word 'women's' — because most of its training data came from historically male-dominated hiring patterns. The AI learned to replicate those patterns, not overcome them. Any AI trained on historical data risks encoding the biases of the past."
+  },
+  {
+    "tier": 1,
+    "question": "When police use AI to predict where crimes might happen, what is a major concern?",
+    "answer": "The AI may reinforce past policing patterns and unfairly target the same neighborhoods again",
+    "choices": [
+      "The AI may reinforce past policing patterns and unfairly target the same neighborhoods again",
+      "Criminals could hack the system and avoid patrol areas it has predicted",
+      "The AI predictions could replace human officers and reduce police presence overall",
+      "The system might share sensitive location data with private companies"
+    ],
+    "context": "Predictive policing AI is trained on historical crime data — but that data reflects where police chose to patrol before, which is often shaped by racial and economic bias. The AI learns those patterns and recommends sending police to the same areas, creating a feedback loop. Several cities have banned these systems because they don't predict crime — they predict where police have already been looking."
+  },
+  {
+    "tier": 1,
+    "question": "What everyday task did computers learn to do better than humans long before they could understand language?",
+    "answer": "Arithmetic — calculating numbers quickly and without errors",
+    "choices": [
+      "Arithmetic — calculating numbers quickly and without errors",
+      "Recognising faces in photographs",
+      "Understanding spoken language and converting it to text",
+      "Writing grammatically correct sentences"
+    ],
+    "context": "Computers have always beaten humans at raw arithmetic. A basic calculator from the 1970s could multiply ten-digit numbers instantly without error. The interesting AI challenge was always the things humans do effortlessly but can't easily describe as rules — like recognising a face, understanding a sentence, or learning from a few examples. These are the problems that took decades of research to partially solve."
+  },
+  {
+    "tier": 1,
+    "question": "How does your phone use AI to convert your spoken words into text?",
+    "answer": "It matches the sound patterns of your voice to words it learned during training on thousands of hours of speech",
+    "choices": [
+      "It matches the sound patterns of your voice to words it learned during training on thousands of hours of speech",
+      "It looks up each word in a pronunciation dictionary stored on the device",
+      "It connects to a human transcriptionist who types the words in real time",
+      "It compares electrical signals from the microphone to a fixed code table"
+    ],
+    "context": "Speech recognition AI converts continuous sound waves into words by learning the patterns that distinguish 'bat' from 'bad' in different accents, speeds, and noise conditions. Modern systems train on thousands of hours of speech from many different speakers, which is why they handle most accents well — though some dialects and languages are still underrepresented in training data, causing errors for those speakers."
+  },
+  {
+    "tier": 1,
+    "question": "What does an AI need to do before it can be useful for any task?",
+    "answer": "Train on relevant examples and data for that task",
+    "choices": [
+      "Train on relevant examples and data for that task",
+      "Be connected to the internet to access information on demand",
+      "Have its rules carefully written out by a programmer beforehand",
+      "Be tested by humans who verify every possible answer it might give"
+    ],
+    "context": "Unlike traditional software where a programmer writes all the rules, AI systems must be trained. Before a spam filter can catch spam, it needs to study thousands of spam examples. Before an image recognizer can identify cats, it needs to study thousands of labeled cat photos. Training is the essential step that turns an untrained model — which can do nothing useful — into a working AI tool."
+  },
+  {
+    "tier": 1,
+    "question": "What is one surprising thing that is difficult for AI to do in a photograph?",
+    "answer": "Count the exact number of people in a crowded scene accurately",
+    "choices": [
+      "Count the exact number of people in a crowded scene accurately",
+      "Detect whether the scene was taken indoors or outdoors",
+      "Identify that a photo contains a human being at all",
+      "Recognize the general subject matter of a nature photograph"
+    ],
+    "context": "AI is often very good at broad recognition but trips on precise counting and detailed reasoning about spatial arrangements. In a crowded stadium photo, AI may estimate the crowd size incorrectly. In a scene with many overlapping objects, it may miscount. Humans can point and count one by one — AI has to infer from patterns, which breaks down when scenes become complex or unusual."
+  },
+  {
+    "tier": 1,
+    "question": "What does AI use to identify whether an email is spam before you read it?",
+    "answer": "Patterns like suspicious links, urgent language, unknown senders, and keyword combinations",
+    "choices": [
+      "Patterns like suspicious links, urgent language, unknown senders, and keyword combinations",
+      "A count of exclamation points and capital letters in the subject line",
+      "A database of every known spam sender's email address",
+      "The time of day and day of the week the email was sent"
+    ],
+    "context": "Spam filters use machine learning to recognise patterns common to junk mail — 'CLICK NOW,' mismatched sender addresses, links to suspicious domains, and clusters of words that commonly appear together in scam emails. Modern filters also spot phishing — emails impersonating your bank or a delivery company — which are far more dangerous than ordinary spam and require more sophisticated detection."
+  },
+  {
+    "tier": 1,
+    "question": "What is one way AI is used in schools and education that students might already experience?",
+    "answer": "Personalizing practice questions based on which topics a student is struggling with",
+    "choices": [
+      "Personalizing practice questions based on which topics a student is struggling with",
+      "Writing lesson plans that teachers download and follow each day",
+      "Automatically assigning grades to students based on attendance records",
+      "Translating textbooks in real time for students who speak other languages"
+    ],
+    "context": "Adaptive learning platforms use AI to track which concepts a student has mastered and which ones they are struggling with, then serve more practice on the weak areas. Rather than giving every student the same exercises, the AI personalises the experience — moving faster through material a student clearly knows and slowing down on areas where they are making mistakes. Apps like Khan Academy and Duolingo use this approach."
+  },
+  {
+    "tier": 1,
+    "question": "What is the most important reason to verify information that AI gives you?",
+    "answer": "AI can generate plausible-sounding false information without knowing it is wrong",
+    "choices": [
+      "AI can generate plausible-sounding false information without knowing it is wrong",
+      "AI deliberately withholds the most important parts of an answer to encourage research",
+      "AI is programmed to include one deliberate error per response to test the user",
+      "AI gets information from websites that may have been recently hacked"
+    ],
+    "context": "The biggest risk with AI-generated information is not obvious errors — it's convincing ones. AI can cite a study that doesn't exist, quote a date that is wrong, or describe an event that never happened, all in the same confident tone it uses for correct answers. There's no 'uncertainty voice.' Treat AI answers the way you'd treat advice from a knowledgeable friend: useful starting point, always worth checking."
+  },
+  {
+    "tier": 2,
+    "question": "What happened in a 2012 image recognition competition that changed AI research forever?",
+    "answer": "A deep learning system called AlexNet won by a margin so large it convinced researchers to abandon older methods",
+    "choices": [
+      "A deep learning system called AlexNet won by a margin so large it convinced researchers to abandon older methods",
+      "An AI passed a formal Turing Test under controlled academic conditions for the first time",
+      "A neural network solved a famous unsolved mathematical problem, proving AI could reason abstractly",
+      "IBM's successor to Deep Blue won a general knowledge competition against human champions"
+    ],
+    "context": "In 2012, a deep neural network called AlexNet entered the ImageNet competition — an annual contest to classify a million images — and won with an error rate nearly half that of the second-place entry. The margin was so shocking it ended years of debate about whether deep learning was worth pursuing. Almost overnight, the entire AI research community pivoted. This single experiment is widely considered the starting gun of the modern AI era."
+  },
+  {
+    "tier": 2,
+    "question": "What is AlexNet, and why does it matter in AI history?",
+    "answer": "A deep neural network trained on GPUs that won the 2012 ImageNet competition and triggered the deep learning era",
+    "choices": [
+      "A deep neural network trained on GPUs that won the 2012 ImageNet competition and triggered the deep learning era",
+      "The first AI system to hold a conversation convincing enough to fool a human judge in a Turing Test",
+      "A Google project proving AI could translate between 100 languages simultaneously with high accuracy",
+      "IBM's chess computer that first defeated a world champion under full tournament conditions"
+    ],
+    "context": "AlexNet, built by Geoffrey Hinton's lab at the University of Toronto, used a deep convolutional neural network trained on graphics processing units (GPUs) to classify images with dramatically better accuracy than any previous method. It showed the research world that deep learning at scale — more layers, more data, more compute — could leapfrog decades of hand-crafted approaches. Most modern AI vision systems are its descendants."
+  },
+  {
+    "tier": 2,
+    "question": "How does AI detect fraudulent credit card transactions so quickly?",
+    "answer": "It learns each user's normal spending patterns and flags transactions that break them",
+    "choices": [
+      "It learns each user's normal spending patterns and flags transactions that break them",
+      "It checks every transaction against a fixed database of known fraudulent merchants",
+      "It analyses the physical location of the card reader for patterns linked to past fraud",
+      "A human fraud analyst reviews high-value transactions in real time before approving them"
+    ],
+    "context": "Fraud detection AI builds a behavioral profile for every cardholder — what they buy, where, at what times, in what amounts. When a transaction deviates sharply from that profile — a purchase abroad seconds after a local one, or a sudden luxury item from someone who never makes them — the AI flags or blocks it instantly. These systems prevent billions in fraud losses each year, almost entirely invisibly."
+  },
+  {
+    "tier": 2,
+    "question": "What is content moderation in AI?",
+    "answer": "Using AI to automatically detect and remove content that violates platform rules like hate speech or graphic violence",
+    "choices": [
+      "Using AI to automatically detect and remove content that violates platform rules like hate speech or graphic violence",
+      "Editing AI-generated content for accuracy before it is published to users",
+      "Human teams reviewing AI outputs to ensure quality standards are met before deployment",
+      "Guidelines that determine which topics an AI assistant is allowed to discuss"
+    ],
+    "context": "Content moderation AI scans billions of posts, images, and videos every day for rule-breaking content — hate speech, graphic violence, spam, and misinformation. No human team could review this volume. AI flags suspicious content for removal or human review. It makes mistakes in both directions: sometimes removing harmless content, sometimes missing genuinely harmful things. This is why content moderation is one of AI's most scrutinised and debated applications."
+  },
+  {
+    "tier": 2,
+    "question": "What enabled the deep learning revolution of the early 2010s that had not been possible before?",
+    "answer": "Graphics processing units (GPUs) originally designed for video games turned out to be ideal for training neural networks",
+    "choices": [
+      "Graphics processing units (GPUs) originally designed for video games turned out to be ideal for training neural networks",
+      "Processors finally reached the speed that theoretical AI researchers had said would be needed",
+      "New programming languages specifically built for AI were invented and became widely available",
+      "The internet finally contained enough data to make machine learning practically useful"
+    ],
+    "context": "Neural networks had been theorized since the 1980s but were impractical to train. GPUs — the chips that render video game graphics at high speed — turned out to be perfect for the matrix mathematics that neural networks require, since both tasks need to execute many simple calculations in parallel. When researchers started using GPUs for AI training around 2010–2012, training times dropped from months to days, unlocking the deep learning era."
+  },
+  {
+    "tier": 2,
+    "question": "Why might an AI used to screen job applications discriminate against some candidates?",
+    "answer": "It may have learned to prefer candidates similar to people previously hired, encoding past hiring biases",
+    "choices": [
+      "It may have learned to prefer candidates similar to people previously hired, encoding past hiring biases",
+      "It cannot assess communication or creativity, so it over-relies on test scores and grades",
+      "It scores candidates lower if their resumes use language patterns from non-native English speakers",
+      "It is intentionally calibrated to prefer internal candidates over outside applicants"
+    ],
+    "context": "Amazon built a hiring AI that learned to penalize resumes containing the word 'women's' — because its training data came from a decade of historically male-dominated hiring decisions. The AI learned to replicate those patterns, not correct them. Any AI trained on historical data risks encoding the biases of the past into future decisions. Amazon scrapped the tool when the bias was discovered."
+  },
+  {
+    "tier": 2,
+    "question": "What is one way AI is used in the legal system that has sparked serious debate?",
+    "answer": "Risk assessment algorithms that predict likelihood of reoffending are used in bail and sentencing decisions",
+    "choices": [
+      "Risk assessment algorithms that predict likelihood of reoffending are used in bail and sentencing decisions",
+      "AI that reconstructs crime scenes from security footage to establish timelines in trials",
+      "Automated legal research tools that summarize relevant case law for judges and lawyers",
+      "AI translation tools that help non-English speaking defendants follow court proceedings"
+    ],
+    "context": "Several U.S. courts use AI 'risk assessment' tools that score how likely a defendant is to commit future crimes — scores that can influence bail and sentencing. Studies found some of these tools to be racially biased, predicting higher risk for Black defendants even when criminal history and other factors were matched. This has sparked major debates about whether automated decision-making belongs in criminal justice at all."
+  },
+  {
+    "tier": 2,
+    "question": "What is a recommendation algorithm, and where do people encounter it most often?",
+    "answer": "An AI system that predicts what content a user will enjoy based on their past behavior and similar users' choices",
+    "choices": [
+      "An AI system that predicts what content a user will enjoy based on their past behavior and similar users' choices",
+      "A system that ranks search results by how many other websites link to them",
+      "An editor at a streaming service who selects content for each subscriber's homepage",
+      "A random selection system weighted toward content that is currently trending globally"
+    ],
+    "context": "Recommendation algorithms power what you see on Netflix, YouTube, Spotify, TikTok, and Amazon. They analyze your past behavior — what you watched, skipped, rated, clicked — and find patterns shared by users with similar histories. The goal is to surface things you'll engage with before you know you want them. These systems are extraordinarily effective at driving engagement and are among the most commercially important AI applications in existence."
   }
 ]

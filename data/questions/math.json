@@ -1044,7 +1044,7 @@
     "context": "Odd + odd = even, always. Each odd number has one leftover unit, and the two leftovers pair up: 3 + 5 = 8."
   },
   {
-    "tier": 1,
+    "tier": 2,
     "question": "Which is larger: 3/4 or 2/3?",
     "answer": "3/4",
     "choices": [
@@ -2196,7 +2196,7 @@
     "context": "LCM(3,4) = 12. Since 3 and 4 share no common factors, their LCM = 3 × 4 = 12."
   },
   {
-    "tier": 2,
+    "tier": 1,
     "question": "21 + 22 + 26 = ?",
     "answer": "69",
     "choices": [
@@ -2208,7 +2208,7 @@
     "context": "21 + 22 + 26 = 69. Add in pairs: 21+22=43, then 43+26=69. Always break three-number sums into pairs."
   },
   {
-    "tier": 2,
+    "tier": 1,
     "question": "13 + 26 + 28 = ?",
     "answer": "67",
     "choices": [
@@ -2220,7 +2220,7 @@
     "context": "13 + 26 + 28 = 67. Add 26+28=54 first (near-doubles), then 54+13=67."
   },
   {
-    "tier": 2,
+    "tier": 1,
     "question": "19 + 32 + 34 = ?",
     "answer": "85",
     "choices": [
@@ -2232,7 +2232,7 @@
     "context": "19 + 32 + 34 = 85. Add 32+34=66 (near-doubles), then 66+19=85."
   },
   {
-    "tier": 2,
+    "tier": 1,
     "question": "12 + 30 + 33 = ?",
     "answer": "75",
     "choices": [
@@ -2242,18 +2242,6 @@
       "76"
     ],
     "context": "12 + 30 + 33 = 75. Add 30+33=63 first, then 63+12=75."
-  },
-  {
-    "tier": 2,
-    "question": "12 + 30 + 33 = ?",
-    "answer": "75",
-    "choices": [
-      "75",
-      "70",
-      "74",
-      "76"
-    ],
-    "context": "Add 30+33=63 first, then 63+12=75. Always look for the easiest pair to add first."
   },
   {
     "tier": 2,
@@ -3072,7 +3060,7 @@
     "context": "Add 10: 5x=35. Divide by 5: x=7."
   },
   {
-    "tier": 3,
+    "tier": 4,
     "question": "If f(x) = x + 3, what is f(7)?",
     "answer": "10",
     "choices": [
@@ -3084,7 +3072,7 @@
     "context": "f(7) = 7+3 = 10. Functions are input-output machines — feed in 7, get out 10."
   },
   {
-    "tier": 3,
+    "tier": 4,
     "question": "If f(x) = 2x, what is f(9)?",
     "answer": "18",
     "choices": [
@@ -3432,19 +3420,7 @@
     "context": "Area = πr². Note: 2πr is the circumference, not the area. 4πr² is a sphere's surface area (SA)."
   },
   {
-    "tier": 3,
-    "question": "What does a negative exponent mean?",
-    "answer": "Take the reciprocal and use the positive exponent",
-    "choices": [
-      "Take the reciprocal and use the positive exponent",
-      "Negate the base",
-      "Take the root",
-      "Divide by the exponent"
-    ],
-    "context": "x⁻ⁿ = 1/xⁿ. A negative exponent means 'flip to the denominator and make the exponent positive.'"
-  },
-  {
-    "tier": 3,
+    "tier": 4,
     "question": "What does a negative exponent mean?",
     "answer": "Take the reciprocal and use the positive exponent",
     "choices": [
@@ -3840,7 +3816,7 @@
     "context": "Subtract 6: 12x=48. Divide by 12: x=4. Or factor: 6(2x+1)=54, 2x+1=9, x=4."
   },
   {
-    "tier": 4,
+    "tier": 3,
     "question": "-8 + 5 = ?",
     "answer": "-3",
     "choices": [
@@ -3852,7 +3828,7 @@
     "context": "-8 + 5 = -3. Start at -8 on the number line and move 5 right. Still negative since 8 > 5."
   },
   {
-    "tier": 4,
+    "tier": 3,
     "question": "-4 + (-6) = ?",
     "answer": "-10",
     "choices": [
@@ -3864,7 +3840,7 @@
     "context": "-4 + (-6) = -10. Adding two negatives goes further left. Think: owing $4 plus owing $6 = $10 debt."
   },
   {
-    "tier": 4,
+    "tier": 3,
     "question": "7 - 12 = ?",
     "answer": "-5",
     "choices": [
@@ -3876,7 +3852,7 @@
     "context": "7 - 12 = -5. Subtracting a larger number from smaller crosses zero into negative territory."
   },
   {
-    "tier": 4,
+    "tier": 3,
     "question": "-9 - 3 = ?",
     "answer": "-12",
     "choices": [
@@ -3888,7 +3864,7 @@
     "context": "-9 - 3 = -12. Starting negative and subtracting more pushes further negative — three more steps left."
   },
   {
-    "tier": 4,
+    "tier": 3,
     "question": "-6 × -4 = ?",
     "answer": "24",
     "choices": [
@@ -3900,7 +3876,7 @@
     "context": "-6 × -4 = 24. Negative × negative = positive. Two reversals cancel out — like turning around twice."
   },
   {
-    "tier": 4,
+    "tier": 3,
     "question": "-5 × 3 = ?",
     "answer": "-15",
     "choices": [
@@ -3912,7 +3888,7 @@
     "context": "-5 × 3 = -15. Negative × positive = negative. Three groups of -5 debt = -15 total."
   },
   {
-    "tier": 4,
+    "tier": 3,
     "question": "(-3)² = ?",
     "answer": "9",
     "choices": [
@@ -3924,7 +3900,7 @@
     "context": "(-3)² = 9. Squaring any number gives a positive result. Two negatives multiply to positive."
   },
   {
-    "tier": 4,
+    "tier": 3,
     "question": "(-2)³ = ?",
     "answer": "-8",
     "choices": [
@@ -3936,7 +3912,7 @@
     "context": "(-2)³ = -8. Odd exponent preserves the negative sign: (-2)×(-2)×(-2) = 4×(-2) = -8."
   },
   {
-    "tier": 4,
+    "tier": 3,
     "question": "-24 ÷ 6 = ?",
     "answer": "-4",
     "choices": [
@@ -3948,7 +3924,7 @@
     "context": "-24 ÷ 6 = -4. Negative ÷ positive = negative. Sharing $24 of debt among 6 people: -$4 each."
   },
   {
-    "tier": 4,
+    "tier": 3,
     "question": "-36 ÷ -9 = ?",
     "answer": "4",
     "choices": [
@@ -3960,7 +3936,7 @@
     "context": "-36 ÷ -9 = 4. Negative ÷ negative = positive. Two negatives cancel, just like in multiplication."
   },
   {
-    "tier": 4,
+    "tier": 3,
     "question": "-3 × 8 = ?",
     "answer": "-24",
     "choices": [
@@ -3972,7 +3948,7 @@
     "context": "-3 × 8 = -24. Negative × positive = negative. Three debts of $8 each = $24 of debt."
   },
   {
-    "tier": 4,
+    "tier": 3,
     "question": "(-4)² = ?",
     "answer": "16",
     "choices": [
@@ -3984,7 +3960,7 @@
     "context": "(-4)² = 16. Even exponents always produce positive results: (-4)×(-4) = 16."
   },
   {
-    "tier": 4,
+    "tier": 3,
     "question": "1/2 + 1/4 = ?",
     "answer": "3/4",
     "choices": [
@@ -3996,7 +3972,7 @@
     "context": "Convert 1/2 → 2/4, then 2/4 + 1/4 = 3/4. Common denominators are required to add fractions."
   },
   {
-    "tier": 4,
+    "tier": 3,
     "question": "3/4 - 1/4 = ?",
     "answer": "1/2",
     "choices": [
@@ -4008,7 +3984,7 @@
     "context": "Same denominator: 3/4 - 1/4 = 2/4 = 1/2. Simplify by dividing numerator and denominator by 2."
   },
   {
-    "tier": 4,
+    "tier": 3,
     "question": "1/2 - 1/4 = ?",
     "answer": "1/4",
     "choices": [
@@ -4020,7 +3996,7 @@
     "context": "Convert 1/2 → 2/4, then 2/4 - 1/4 = 1/4. Half minus a quarter leaves a quarter."
   },
   {
-    "tier": 4,
+    "tier": 3,
     "question": "3/4 + 1/2 = ?",
     "answer": "5/4",
     "choices": [
@@ -4032,7 +4008,7 @@
     "context": "Convert 1/2 → 2/4: 3/4 + 2/4 = 5/4 (or 1¼). The result exceeds 1 — an improper fraction."
   },
   {
-    "tier": 4,
+    "tier": 3,
     "question": "1/2 × 1/2 = ?",
     "answer": "1/4",
     "choices": [
@@ -4044,7 +4020,7 @@
     "context": "1/2 × 1/2 = 1/4. Half of a half is a quarter. Multiply numerators and denominators separately."
   },
   {
-    "tier": 4,
+    "tier": 3,
     "question": "2/3 × 3/4 = ?",
     "answer": "1/2",
     "choices": [
@@ -4056,7 +4032,7 @@
     "context": "2/3 × 3/4 = 6/12 = 1/2. The 3s cancel: (2×3)/(3×4) simplifies to 2/4 = 1/2."
   },
   {
-    "tier": 4,
+    "tier": 3,
     "question": "3/4 + 1/4 = ?",
     "answer": "1",
     "choices": [
@@ -4066,18 +4042,6 @@
       "5/4"
     ],
     "context": "3/4 + 1/4 = 4/4 = 1. Same denominator: add numerators. Four quarters make a whole."
-  },
-  {
-    "tier": 4,
-    "question": "2³ = ?",
-    "answer": "8",
-    "choices": [
-      "8",
-      "6",
-      "9",
-      "16"
-    ],
-    "context": "2³ = 2×2×2 = 8. Powers of 2 are the language of computing. Each bit doubles the possible states."
   },
   {
     "tier": 4,
@@ -4174,30 +4138,6 @@
       "Undefined"
     ],
     "context": "2⁰ = 1. Any nonzero base raised to the zero power equals 1. Each exponent decrease divides by the base: 2¹÷2 = 1."
-  },
-  {
-    "tier": 4,
-    "question": "3² = ?",
-    "answer": "9",
-    "choices": [
-      "9",
-      "6",
-      "12",
-      "3"
-    ],
-    "context": "3² = 9. Powers of 3 triple each step: 3, 9, 27, 81, 243."
-  },
-  {
-    "tier": 4,
-    "question": "3³ = ?",
-    "answer": "27",
-    "choices": [
-      "27",
-      "18",
-      "9",
-      "81"
-    ],
-    "context": "3³ = 27. A Rubik's cube is 3×3×3 = 27 smaller cubes."
   },
   {
     "tier": 4,
@@ -4548,7 +4488,7 @@
     "context": "Zero slope means zero rise — the line runs perfectly flat. Think of a calm lake surface."
   },
   {
-    "tier": 4,
+    "tier": 5,
     "question": "log₁₀(10) = ?",
     "answer": "1",
     "choices": [
@@ -4560,7 +4500,7 @@
     "context": "log₁₀(10) = 1 because 10¹ = 10. The log of the base itself always equals 1."
   },
   {
-    "tier": 4,
+    "tier": 5,
     "question": "log₁₀(100) = ?",
     "answer": "2",
     "choices": [
@@ -4572,7 +4512,7 @@
     "context": "log₁₀(100) = 2 because 10² = 100. The Richter scale uses log base 10 — each whole step is a 10× increase."
   },
   {
-    "tier": 4,
+    "tier": 5,
     "question": "log₁₀(1000) = ?",
     "answer": "3",
     "choices": [
@@ -4584,7 +4524,7 @@
     "context": "log₁₀(1000) = 3 because 10³ = 1000. 'Kilo' means 10³. Logs turn multiplication into addition."
   },
   {
-    "tier": 4,
+    "tier": 5,
     "question": "log₁₀(1) = ?",
     "answer": "0",
     "choices": [
@@ -4596,55 +4536,7 @@
     "context": "log₁₀(1) = 0 because 10⁰ = 1. The log of 1 is always 0, in any base."
   },
   {
-    "tier": 4,
-    "question": "log₂(8) = ?",
-    "answer": "3",
-    "choices": [
-      "3",
-      "2",
-      "4",
-      "6"
-    ],
-    "context": "log₂(8) = 3 because 2³ = 8. In computing: 3 bits can represent 8 different values (0–7)."
-  },
-  {
-    "tier": 4,
-    "question": "log₂(16) = ?",
-    "answer": "4",
-    "choices": [
-      "4",
-      "3",
-      "5",
-      "8"
-    ],
-    "context": "log₂(16) = 4 because 2⁴ = 16. Four bits represent 16 values — why hex maps to 4 binary digits."
-  },
-  {
-    "tier": 4,
-    "question": "log₂(4) = ?",
-    "answer": "2",
-    "choices": [
-      "2",
-      "1",
-      "3",
-      "4"
-    ],
-    "context": "log₂(4) = 2 because 2² = 4. Two bits give exactly 4 states: 00, 01, 10, 11."
-  },
-  {
-    "tier": 4,
-    "question": "log₂(32) = ?",
-    "answer": "5",
-    "choices": [
-      "5",
-      "4",
-      "6",
-      "3"
-    ],
-    "context": "log₂(32) = 5 because 2⁵ = 32. Five bits represent 32 values — enough for all 26 alphabet letters."
-  },
-  {
-    "tier": 4,
+    "tier": 5,
     "question": "The discriminant of ax² + bx + c = 0 is?",
     "answer": "b² - 4ac",
     "choices": [
@@ -4656,7 +4548,7 @@
     "context": "The discriminant is b² - 4ac. Its sign tells you how many real roots the quadratic has."
   },
   {
-    "tier": 4,
+    "tier": 5,
     "question": "In the quadratic formula, the denominator is?",
     "answer": "2a",
     "choices": [
@@ -4668,7 +4560,7 @@
     "context": "The denominator is 2a. The full formula: x = (-b ± √(b²-4ac)) / 2a. It comes from completing the square."
   },
   {
-    "tier": 4,
+    "tier": 5,
     "question": "If discriminant > 0, a quadratic has how many real roots?",
     "answer": "2",
     "choices": [
@@ -4680,7 +4572,7 @@
     "context": "Positive discriminant → 2 distinct real roots. The ± in the formula gives two different answers."
   },
   {
-    "tier": 4,
+    "tier": 5,
     "question": "If discriminant = 0, a quadratic has how many real roots?",
     "answer": "1",
     "choices": [
@@ -4692,31 +4584,7 @@
     "context": "Discriminant = 0 → exactly 1 real root (a repeated root). ±√0 = 0, so both branches give the same answer."
   },
   {
-    "tier": 4,
-    "question": "log(a) + log(b) equals, using the same base?",
-    "answer": "log(a × b)",
-    "choices": [
-      "log(a × b)",
-      "log(a + b)",
-      "log(a^b)",
-      "log(a / b)"
-    ],
-    "context": "The product rule: log(a) + log(b) = log(ab). Logs turn multiplication into addition — the key property that made slide rules possible."
-  },
-  {
-    "tier": 4,
-    "question": "log(a) + log(b) equals, using the same base?",
-    "answer": "log(a × b)",
-    "choices": [
-      "log(a × b)",
-      "log(a + b)",
-      "log(a^b)",
-      "log(a / b)"
-    ],
-    "context": "The product rule: log(a) + log(b) = log(ab). Logs turn multiplication into addition — the key property that made slide rules possible."
-  },
-  {
-    "tier": 4,
+    "tier": 3,
     "question": "If -2 + 15 = ?",
     "answer": "13",
     "choices": [
@@ -4728,7 +4596,7 @@
     "context": "-2 + 15 = 13. Start at -2 on the number line, move 15 right past zero to land on 13."
   },
   {
-    "tier": 4,
+    "tier": 3,
     "question": "20 + (-8) = ?",
     "answer": "12",
     "choices": [
@@ -4740,7 +4608,7 @@
     "context": "20 + (-8) = 12. Adding a negative is subtraction: 20 - 8 = 12."
   },
   {
-    "tier": 4,
+    "tier": 3,
     "question": "-6 + 6 = ?",
     "answer": "0",
     "choices": [
@@ -4752,7 +4620,7 @@
     "context": "-6 + 6 = 0. A number plus its opposite always equals zero — the additive inverse property."
   },
   {
-    "tier": 4,
+    "tier": 3,
     "question": "1/4 + 1/4 = ?",
     "answer": "1/2",
     "choices": [
@@ -4810,18 +4678,6 @@
       "17"
     ],
     "context": "√361 = 19 since 19×19=361. Recognizing perfect squares helps in geometry and solving quadratic equations."
-  },
-  {
-    "tier": 4,
-    "question": "log₂(1) = ?",
-    "answer": "0",
-    "choices": [
-      "0",
-      "1",
-      "-1",
-      "2"
-    ],
-    "context": "log₂(1) = 0 because 2⁰ = 1. The log of 1 is always 0, regardless of the base."
   },
   {
     "tier": 5,
@@ -5076,7 +4932,7 @@
     "context": "x = (-b ± √(b²-4ac)) / 2a. This formula solves any quadratic, even when factoring fails."
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "In y = mx + b, what does b represent?",
     "answer": "The y-intercept",
     "choices": [
@@ -5088,7 +4944,7 @@
     "context": "b is the y-intercept — where the line crosses the y-axis (when x=0). m is the slope."
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "In y = mx + b, what does m represent?",
     "answer": "The slope",
     "choices": [
@@ -5160,7 +5016,7 @@
     "context": "Distance = √((x₂-x₁)²+(y₂-y₁)²). The distance formula is just the Pythagorean theorem in coordinate form."
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "Slope through (2,3) and (4,7) = ?",
     "answer": "2",
     "choices": [
@@ -5172,7 +5028,7 @@
     "context": "Slope = (7-3)/(4-2) = 4/2 = 2. Rise of 4 over run of 2. The line climbs 2 units per unit right."
   },
   {
-    "tier": 5,
+    "tier": 3,
     "question": "Mean of 4, 7, 9, 12, 8 = ?",
     "answer": "8",
     "choices": [
@@ -5184,7 +5040,7 @@
     "context": "Mean = (4+7+9+12+8)/5 = 40/5 = 8. The mean balances all values — redistribute the total equally."
   },
   {
-    "tier": 5,
+    "tier": 3,
     "question": "Mean of 2, 4, 6, 8, 10 = ?",
     "answer": "6",
     "choices": [
@@ -5196,7 +5052,7 @@
     "context": "Mean = 30/5 = 6. For evenly spaced numbers, the mean always equals the middle value."
   },
   {
-    "tier": 5,
+    "tier": 3,
     "question": "Mean of 10, 20, 30 = ?",
     "answer": "20",
     "choices": [
@@ -5208,7 +5064,7 @@
     "context": "Mean = 60/3 = 20. Three evenly spaced numbers — the mean equals the middle term."
   },
   {
-    "tier": 5,
+    "tier": 3,
     "question": "Mean of 1, 3, 5, 7, 9 = ?",
     "answer": "5",
     "choices": [
@@ -5220,7 +5076,7 @@
     "context": "Mean = 25/5 = 5. These are the odd numbers 1–9. For any arithmetic sequence, mean = middle term."
   },
   {
-    "tier": 5,
+    "tier": 3,
     "question": "Median of 3, 5, 7, 9, 11 = ?",
     "answer": "7",
     "choices": [
@@ -5232,7 +5088,7 @@
     "context": "The median is the middle value of sorted data. Five values: the 3rd is the median = 7."
   },
   {
-    "tier": 5,
+    "tier": 3,
     "question": "Median of 1, 2, 3, 100, 200 = ?",
     "answer": "3",
     "choices": [
@@ -5244,7 +5100,7 @@
     "context": "Median = 3, the middle value. Unlike the mean (61), the median ignores extreme values — it's robust to outliers."
   },
   {
-    "tier": 5,
+    "tier": 3,
     "question": "Mode of 2, 3, 3, 4, 5 = ?",
     "answer": "3",
     "choices": [
@@ -5256,7 +5112,7 @@
     "context": "Mode = 3, appearing twice. The mode is the most frequent value — the only measure that works for non-numeric data."
   },
   {
-    "tier": 5,
+    "tier": 3,
     "question": "Mode of 1, 2, 2, 3, 4, 4, 4 = ?",
     "answer": "4",
     "choices": [
@@ -5268,7 +5124,7 @@
     "context": "Mode = 4, appearing three times. If two values tie, the dataset is bimodal."
   },
   {
-    "tier": 5,
+    "tier": 3,
     "question": "Range of 3, 7, 2, 9, 5 = ?",
     "answer": "7",
     "choices": [
@@ -5280,7 +5136,7 @@
     "context": "Range = max - min = 9 - 2 = 7. Range measures total spread but is sensitive to outliers."
   },
   {
-    "tier": 5,
+    "tier": 3,
     "question": "Range of 15, 3, 9, 21, 6 = ?",
     "answer": "18",
     "choices": [
@@ -5338,66 +5194,6 @@
       "-0.5"
     ],
     "context": "log₁₀(0.01) = -2 because 10⁻² = 0.01. Each step down divides by 10 more."
-  },
-  {
-    "tier": 5,
-    "question": "log₂(1) = ?",
-    "answer": "0",
-    "choices": [
-      "0",
-      "1",
-      "-1",
-      "2"
-    ],
-    "context": "log₂(1) = 0 because 2⁰ = 1. The log of 1 is always 0, in any base."
-  },
-  {
-    "tier": 5,
-    "question": "log₂(1/2) = ?",
-    "answer": "-1",
-    "choices": [
-      "-1",
-      "1",
-      "0",
-      "-2"
-    ],
-    "context": "log₂(1/2) = -1 because 2⁻¹ = 1/2. Halving is the inverse of doubling — the log reflects it as -1."
-  },
-  {
-    "tier": 5,
-    "question": "log₂(64) = ?",
-    "answer": "6",
-    "choices": [
-      "6",
-      "5",
-      "7",
-      "8"
-    ],
-    "context": "log₂(64) = 6 because 2⁶ = 64. What power must 2 be raised to in order to get 64?"
-  },
-  {
-    "tier": 5,
-    "question": "log(a) - log(b) = ?, using the same base",
-    "answer": "log(a/b)",
-    "choices": [
-      "log(a/b)",
-      "log(a-b)",
-      "log(a)/log(b)",
-      "log(a+b)"
-    ],
-    "context": "The quotient rule: log(a) - log(b) = log(a/b). Logs convert division into subtraction."
-  },
-  {
-    "tier": 5,
-    "question": "n × log(a) = ?, using the same base",
-    "answer": "log(aⁿ)",
-    "choices": [
-      "log(aⁿ)",
-      "log(a+n)",
-      "log(a²)×n",
-      "log(a)/log(n)"
-    ],
-    "context": "The power rule: n×log(a) = log(aⁿ). This lets you move exponents in front of a log — key for solving exponential equations."
   },
   {
     "tier": 5,
@@ -5532,19 +5328,7 @@
     "context": "Mutually exclusive events can't occur simultaneously, so P(A and B) = 0. Rolling a 3 AND a 5 in one roll is impossible."
   },
   {
-    "tier": 5,
-    "question": "What does it mean for a sequence to converge?",
-    "answer": "Its terms approach a finite limit as the index grows",
-    "choices": [
-      "Its terms approach a finite limit as the index grows",
-      "Its terms grow without bound",
-      "It oscillates between two fixed values",
-      "Its partial sums alternate positive and negative"
-    ],
-    "context": "A sequence converges if terms get arbitrarily close to a specific number. Example: 1, 1/2, 1/3, 1/4, ... converges to 0."
-  },
-  {
-    "tier": 5,
+    "tier": 4,
     "question": "Is √2 rational or irrational?",
     "answer": "Irrational",
     "choices": [
@@ -5556,7 +5340,7 @@
     "context": "√2 is irrational — it can't be expressed as a fraction of integers. The ancient Greeks proved this using proof by contradiction around 500 BC."
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "A rational number is defined as?",
     "answer": "A number expressible as p/q where p, q are integers and q ≠ 0",
     "choices": [
@@ -5568,7 +5352,7 @@
     "context": "Rationals include all integers, fractions, and decimals that either terminate or repeat. Irrationals (like π and √2) are the rest."
   },
   {
-    "tier": 5,
+    "tier": 3,
     "question": "Fibonacci: 1, 1, ? What comes next?",
     "answer": "2",
     "choices": [
@@ -5580,7 +5364,7 @@
     "context": "Each Fibonacci number is the sum of the two before it: 1+1=2. This sequence appears in sunflowers, pinecones, and spiral galaxies."
   },
   {
-    "tier": 5,
+    "tier": 3,
     "question": "Fibonacci: 1, 2, ? What comes next?",
     "answer": "3",
     "choices": [
@@ -5592,7 +5376,7 @@
     "context": "1+2=3. In the Fibonacci sequence, each term is the sum of the two preceding ones."
   },
   {
-    "tier": 5,
+    "tier": 3,
     "question": "Fibonacci: 2, 3, ? What comes next?",
     "answer": "5",
     "choices": [
@@ -5604,7 +5388,7 @@
     "context": "2+3=5. The Fibonacci sequence grows by roughly 61.8% each step — approaching the golden ratio φ ≈ 1.618."
   },
   {
-    "tier": 5,
+    "tier": 3,
     "question": "Fibonacci: 3, 5, ? What comes next?",
     "answer": "8",
     "choices": [
@@ -5616,7 +5400,7 @@
     "context": "3+5=8. This spiral pattern appears in the arrangement of seeds in sunflowers and scales in pinecones."
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "Fibonacci: 5, 8, ? What comes next?",
     "answer": "13",
     "choices": [
@@ -5628,7 +5412,7 @@
     "context": "5+8=13. The ratio of consecutive Fibonacci terms approaches φ ≈ 1.618, the golden ratio."
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "Fibonacci: 8, 13, ? What comes next?",
     "answer": "21",
     "choices": [
@@ -5640,7 +5424,7 @@
     "context": "8+13=21. Fibonacci numbers appear in phyllotaxis — the branching of trees and arrangement of leaves."
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "Fibonacci: 13, 21, ? What comes next?",
     "answer": "34",
     "choices": [
@@ -5652,7 +5436,7 @@
     "context": "13+21=34. This sequence was introduced to the West by Leonardo of Pisa (Fibonacci) in the 13th century."
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "Fibonacci: 21, 34, ? What comes next?",
     "answer": "55",
     "choices": [
@@ -5664,7 +5448,7 @@
     "context": "21+34=55. As the sequence grows, the ratio between consecutive terms converges ever closer to φ."
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "74 mod 7 = ?",
     "answer": "4",
     "choices": [
@@ -5676,7 +5460,7 @@
     "context": "74 mod 7 = 4. Since 7×10=70 and 74-70=4. Modular arithmetic gives the remainder after division."
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "32 mod 9 = ?",
     "answer": "5",
     "choices": [
@@ -5688,7 +5472,7 @@
     "context": "32 mod 9 = 5. Since 9×3=27 and 32-27=5. Used in cryptography, hashing, and clock arithmetic."
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "44 mod 12 = ?",
     "answer": "8",
     "choices": [
@@ -5700,7 +5484,7 @@
     "context": "44 mod 12 = 8. Since 12×3=36 and 44-36=8. Clock arithmetic: hours wrap around after 12 just like this."
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "30 mod 5 = ?",
     "answer": "0",
     "choices": [
@@ -5712,7 +5496,7 @@
     "context": "30 mod 5 = 0. When a number divides evenly, the remainder is 0. 30/5 = 6 exactly."
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "72 mod 12 = ?",
     "answer": "0",
     "choices": [
@@ -5724,7 +5508,7 @@
     "context": "72 mod 12 = 0. 72/12=6 exactly — no remainder. A result of 0 means perfect divisibility."
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "10 mod 3 = ?",
     "answer": "1",
     "choices": [
@@ -5736,7 +5520,7 @@
     "context": "10 mod 3 = 1. Since 3×3=9 and 10-9=1. The quotient (3) is discarded; only the remainder matters."
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "89 mod 11 = ?",
     "answer": "1",
     "choices": [
@@ -5748,7 +5532,7 @@
     "context": "89 mod 11 = 1. Since 11×8=88 and 89-88=1. Modular arithmetic wraps around like a clock."
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "50 mod 13 = ?",
     "answer": "11",
     "choices": [
@@ -5760,7 +5544,7 @@
     "context": "50 mod 13 = 11. Since 13×3=39 and 50-39=11. The remainder must always be less than the divisor (13)."
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "What does 'a mod n' give you?",
     "answer": "The remainder when a is divided by n",
     "choices": [
@@ -5772,7 +5556,7 @@
     "context": "'a mod n' gives the remainder after division. It's the key operation behind clock arithmetic, cryptography, and checksums."
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "46 mod 9 = ?",
     "answer": "1",
     "choices": [
@@ -5784,7 +5568,7 @@
     "context": "46 mod 9 = 1. Since 9×5=45 and 46-45=1. Used extensively in hashing algorithms and cryptography."
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "3! = ?",
     "answer": "6",
     "choices": [
@@ -5796,7 +5580,7 @@
     "context": "3! = 3×2×1 = 6. Factorials count arrangements: 3! is the number of ways to order 3 distinct items."
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "4! = ?",
     "answer": "24",
     "choices": [
@@ -5808,7 +5592,7 @@
     "context": "4! = 4×3×2×1 = 24. The 24 ways to arrange 4 items. Also: 24 hours in a day!"
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "5! = ?",
     "answer": "120",
     "choices": [
@@ -5832,7 +5616,7 @@
     "context": "6! = 6×5! = 6×120 = 720. Factorials grow extremely fast — and appear throughout probability and combinatorics."
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "What does n! count?",
     "answer": "The number of ways to arrange n distinct items",
     "choices": [
@@ -5844,7 +5628,7 @@
     "context": "n! = n × (n-1) × ... × 2 × 1 counts permutations. For example, 4! = 24 is the number of ways to seat 4 people in a row."
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "Greatest common divisor (GCD) of 11 and 33 = ?",
     "answer": "11",
     "choices": [
@@ -5856,7 +5640,7 @@
     "context": "GCD(11,33) = 11. Since 11 is prime and divides 33 exactly (33=11×3), the GCD is 11 itself."
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "Greatest common divisor (GCD) of 15 and 25 = ?",
     "answer": "5",
     "choices": [
@@ -5868,7 +5652,7 @@
     "context": "GCD(15,25) = 5. Since 15=3×5 and 25=5², the largest shared factor is 5."
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "Greatest common divisor (GCD) of 8 and 24 = ?",
     "answer": "8",
     "choices": [
@@ -5880,7 +5664,7 @@
     "context": "GCD(8,24) = 8. Since 8 divides 24 exactly (24=8×3), the smaller number is always the GCD when it divides the larger."
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "Least common multiple (LCM) of 3 and 5 = ?",
     "answer": "15",
     "choices": [
@@ -5892,19 +5676,7 @@
     "context": "LCM(3,5) = 15. Since 3 and 5 are both prime with no common factors, their LCM = 3×5 = 15."
   },
   {
-    "tier": 5,
-    "question": "Least common multiple (LCM) of 4 and 6 = ?",
-    "answer": "12",
-    "choices": [
-      "12",
-      "24",
-      "18",
-      "8"
-    ],
-    "context": "LCM(4,6) = 12. Multiples of 4: 4,8,12. Multiples of 6: 6,12. First overlap = 12."
-  },
-  {
-    "tier": 5,
+    "tier": 4,
     "question": "Least common multiple (LCM) of 4 and 9 = ?",
     "answer": "36",
     "choices": [
@@ -5940,7 +5712,7 @@
     "context": "Greatest common divisor (GCD) × least common multiple (LCM) = a × b, always. This elegant identity connects both operations — knowing one lets you compute the other from the product a × b."
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "Greatest common divisor (GCD) of 12 and 18 = ?",
     "answer": "6",
     "choices": [
@@ -5952,7 +5724,7 @@
     "context": "GCD(12,18) = 6. Factors of 12: 1,2,3,4,6,12. Factors of 18: 1,2,3,6,9,18. Largest common: 6."
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "Least common multiple (LCM) of 6 and 8 = ?",
     "answer": "24",
     "choices": [
@@ -5964,7 +5736,7 @@
     "context": "LCM(6,8) = 24. Multiples of 6: 6,12,18,24. Multiples of 8: 8,16,24. First overlap is 24."
   },
   {
-    "tier": 5,
+    "tier": 3,
     "question": "Mean of 5, 10, 15, 20, 25 = ?",
     "answer": "15",
     "choices": [
@@ -5976,51 +5748,711 @@
     "context": "Mean = 75/5 = 15. For an arithmetic sequence, the mean equals the middle term. These five terms are evenly spaced."
   },
   {
-    "tier": 5,
-    "question": "The derivative of f(x) at a point represents?",
-    "answer": "The slope of the tangent line at that point",
+    "tier": 1,
+    "question": "In the fraction 3/4, what is the number on the bottom called?",
+    "answer": "Denominator",
     "choices": [
-      "The slope of the tangent line at that point",
-      "The area under the curve to that point",
-      "The average rate of change across the domain",
-      "The curvature of the graph at that point"
+      "Denominator",
+      "Numerator",
+      "Quotient",
+      "Divisor"
     ],
-    "context": "The derivative is the instantaneous rate of change — the slope of the tangent line. This is the central idea of differential calculus."
+    "context": "The denominator (bottom) tells you how many equal parts the whole is split into. The numerator (top) tells you how many of those parts you have. Three-fourths means 3 of 4 equal parts."
+  },
+  {
+    "tier": 1,
+    "question": "In the fraction 3/4, what is the number on the top called?",
+    "answer": "Numerator",
+    "choices": [
+      "Numerator",
+      "Denominator",
+      "Dividend",
+      "Factor"
+    ],
+    "context": "The numerator counts how many equal pieces you have. In 3/4, you have 3 of the 4 equal pieces. The word comes from Latin 'numerare' — to count."
+  },
+  {
+    "tier": 1,
+    "question": "Which fraction is smallest: 1/2, 1/3, or 1/4?",
+    "answer": "1/4",
+    "choices": [
+      "1/4",
+      "1/3",
+      "1/2",
+      "They are equal"
+    ],
+    "context": "1/4 is the smallest. The larger the denominator, the smaller each piece. Cutting something into 4 parts gives smaller slices than cutting it into 2 or 3."
+  },
+  {
+    "tier": 1,
+    "question": "Which fraction is largest: 1/2, 1/3, or 1/6?",
+    "answer": "1/2",
+    "choices": [
+      "1/2",
+      "1/3",
+      "1/6",
+      "They are equal"
+    ],
+    "context": "1/2 is the largest. With a smaller denominator, each piece is bigger. Half a pie is larger than a third or a sixth of the same pie."
+  },
+  {
+    "tier": 2,
+    "question": "What is the name of the horizontal axis on a coordinate plane?",
+    "answer": "x-axis",
+    "choices": [
+      "x-axis",
+      "y-axis",
+      "origin",
+      "z-axis"
+    ],
+    "context": "The x-axis runs left-right (horizontal) and the y-axis runs up-down (vertical). They meet at the origin (0, 0). René Descartes invented the coordinate system in the 17th century."
+  },
+  {
+    "tier": 2,
+    "question": "What is the name of the vertical axis on a coordinate plane?",
+    "answer": "y-axis",
+    "choices": [
+      "y-axis",
+      "x-axis",
+      "origin",
+      "quadrant"
+    ],
+    "context": "The y-axis runs vertically. A point (x, y) uses x to move left or right and y to move up or down from the origin."
+  },
+  {
+    "tier": 2,
+    "question": "The coordinate plane is divided into how many quadrants?",
+    "answer": "4",
+    "choices": [
+      "4",
+      "2",
+      "6",
+      "8"
+    ],
+    "context": "The x-axis and y-axis divide the plane into 4 quadrants, numbered I–IV counterclockwise from the top right. Quadrant I has both x and y positive."
+  },
+  {
+    "tier": 2,
+    "question": "What are the coordinates of the origin on a coordinate plane?",
+    "answer": "(0, 0)",
+    "choices": [
+      "(0, 0)",
+      "(1, 1)",
+      "(0, 1)",
+      "(1, 0)"
+    ],
+    "context": "The origin is where the x-axis and y-axis cross, at the point (0, 0). Every coordinate is measured as a distance from this central reference point."
+  },
+  {
+    "tier": 2,
+    "question": "If a car travels 150 miles in 3 hours, what is its unit rate in miles per hour?",
+    "answer": "50 mph",
+    "choices": [
+      "50 mph",
+      "45 mph",
+      "55 mph",
+      "60 mph"
+    ],
+    "context": "Unit rate = total ÷ number of units: 150 ÷ 3 = 50 mph. A unit rate always expresses the quantity per single unit, such as price per item or miles per hour."
+  },
+  {
+    "tier": 2,
+    "question": "A ratio compares two quantities. What is the ratio of 8 to 12 in simplest form?",
+    "answer": "2:3",
+    "choices": [
+      "2:3",
+      "4:6",
+      "8:12",
+      "1:4"
+    ],
+    "context": "8:12 simplifies by dividing both by 4 to get 2:3. A ratio stays equivalent as long as both parts are multiplied or divided by the same number."
+  },
+  {
+    "tier": 2,
+    "question": "On a number line, which is further from zero: -7 or -3?",
+    "answer": "-7",
+    "choices": [
+      "-7",
+      "-3",
+      "They are equidistant",
+      "Cannot be determined"
+    ],
+    "context": "-7 is further from zero. Its absolute value (7) is larger than 3. Distance from zero is always positive — it's what absolute value measures."
+  },
+  {
+    "tier": 2,
+    "question": "Area formula for a parallelogram with base b and height h?",
+    "answer": "b × h",
+    "choices": [
+      "b × h",
+      "2 × (b + h)",
+      "½ × b × h",
+      "b × h × 2"
+    ],
+    "context": "Area = base × height. A parallelogram can be rearranged into a rectangle with the same base and height — that's why the formula is identical. Note: 2(b+h) is the perimeter."
+  },
+  {
+    "tier": 3,
+    "question": "If a bag has 3 red and 7 blue marbles, what is the probability of drawing red?",
+    "answer": "3/10",
+    "choices": [
+      "3/10",
+      "3/7",
+      "7/10",
+      "1/3"
+    ],
+    "context": "P(red) = favorable outcomes ÷ total outcomes = 3 ÷ (3+7) = 3/10. Probability is always between 0 (impossible) and 1 (certain)."
+  },
+  {
+    "tier": 3,
+    "question": "A fair coin is flipped. What is the probability of landing on heads?",
+    "answer": "1/2",
+    "choices": [
+      "1/2",
+      "1/4",
+      "2/3",
+      "1"
+    ],
+    "context": "P(heads) = 1 favorable outcome ÷ 2 total outcomes = 1/2. Each flip is independent — previous flips do not affect future ones."
+  },
+  {
+    "tier": 3,
+    "question": "A price increases from $40 to $50. What is the percent increase?",
+    "answer": "25%",
+    "choices": [
+      "25%",
+      "10%",
+      "20%",
+      "40%"
+    ],
+    "context": "Percent change = (change ÷ original) × 100 = (10 ÷ 40) × 100 = 25%. Always divide by the original, not the new value."
+  },
+  {
+    "tier": 3,
+    "question": "A price drops from $80 to $60. What is the percent decrease?",
+    "answer": "25%",
+    "choices": [
+      "25%",
+      "20%",
+      "33%",
+      "75%"
+    ],
+    "context": "Percent decrease = (change ÷ original) × 100 = (20 ÷ 80) × 100 = 25%. The change is 20 and the original is 80."
+  },
+  {
+    "tier": 3,
+    "question": "If 3/4 = x/20, what is x?",
+    "answer": "15",
+    "choices": [
+      "15",
+      "12",
+      "16",
+      "5"
+    ],
+    "context": "Cross-multiply: 3 × 20 = 4 × x → 60 = 4x → x = 15. Proportions are equivalent fractions — scale the numerator by the same factor as the denominator."
+  },
+  {
+    "tier": 3,
+    "question": "If 5/8 = 15/x, what is x?",
+    "answer": "24",
+    "choices": [
+      "24",
+      "20",
+      "40",
+      "12"
+    ],
+    "context": "Cross-multiply: 5 × x = 8 × 15 → 5x = 120 → x = 24. Alternatively: 15 is 5 × 3, so x = 8 × 3 = 24."
+  },
+  {
+    "tier": 3,
+    "question": "Two angles are complementary. One is 35°. What is the other?",
+    "answer": "55°",
+    "choices": [
+      "55°",
+      "65°",
+      "145°",
+      "45°"
+    ],
+    "context": "Complementary angles sum to 90°. So the other angle = 90° - 35° = 55°. The word 'complement' hints at completing a right angle."
+  },
+  {
+    "tier": 3,
+    "question": "Two angles are supplementary. One is 110°. What is the other?",
+    "answer": "70°",
+    "choices": [
+      "70°",
+      "80°",
+      "250°",
+      "90°"
+    ],
+    "context": "Supplementary angles sum to 180°. So the other angle = 180° - 110° = 70°. Supplementary angles together form a straight line."
+  },
+  {
+    "tier": 3,
+    "question": "How is 4,500 written in scientific notation?",
+    "answer": "4.5 × 10³",
+    "choices": [
+      "4.5 × 10³",
+      "45 × 10²",
+      "0.45 × 10⁴",
+      "4.5 × 10⁴"
+    ],
+    "context": "Scientific notation: one non-zero digit before the decimal, then × 10^n. Move the decimal 3 places left: 4500 → 4.5 × 10³."
+  },
+  {
+    "tier": 3,
+    "question": "How is 0.0062 written in scientific notation?",
+    "answer": "6.2 × 10⁻³",
+    "choices": [
+      "6.2 × 10⁻³",
+      "0.62 × 10⁻²",
+      "6.2 × 10³",
+      "62 × 10⁻⁴"
+    ],
+    "context": "Move the decimal 3 places right to get 6.2 — that means × 10⁻³. Negative exponents indicate numbers smaller than 1."
+  },
+  {
+    "tier": 4,
+    "question": "aᵐ × aⁿ = ?",
+    "answer": "aᵐ⁺ⁿ",
+    "choices": [
+      "aᵐ⁺ⁿ",
+      "aᵐ × aⁿ",
+      "aᵐⁿ",
+      "a²ᵐⁿ"
+    ],
+    "context": "Product rule: when multiplying same-base powers, add the exponents. Example: 2³ × 2⁴ = 2⁷ = 128. You are counting total factors of a."
+  },
+  {
+    "tier": 4,
+    "question": "aᵐ ÷ aⁿ = ?",
+    "answer": "aᵐ⁻ⁿ",
+    "choices": [
+      "aᵐ⁻ⁿ",
+      "aᵐ⁺ⁿ",
+      "aᵐ/ⁿ",
+      "aᵐ × aⁿ"
+    ],
+    "context": "Quotient rule: when dividing same-base powers, subtract the exponents. Example: 2⁵ ÷ 2³ = 2² = 4. Matching factors in numerator and denominator cancel."
+  },
+  {
+    "tier": 4,
+    "question": "(aᵐ)ⁿ = ?",
+    "answer": "aᵐⁿ",
+    "choices": [
+      "aᵐⁿ",
+      "aᵐ⁺ⁿ",
+      "aᵐ × aⁿ",
+      "a^(m/n)"
+    ],
+    "context": "Power rule: raise a power to another power by multiplying exponents. Example: (2³)⁴ = 2¹² because you have 4 groups of 3 twos."
+  },
+  {
+    "tier": 4,
+    "question": "(ab)ⁿ = ?",
+    "answer": "aⁿ × bⁿ",
+    "choices": [
+      "aⁿ × bⁿ",
+      "aⁿ + bⁿ",
+      "aⁿbⁿ⁻¹",
+      "a × bⁿ"
+    ],
+    "context": "The power of a product: distribute the exponent to each factor. Example: (2×3)⁴ = 2⁴ × 3⁴ = 16 × 81 = 1296. Also equals 6⁴ = 1296. ✓"
+  },
+  {
+    "tier": 4,
+    "question": "a⁻ⁿ = ?",
+    "answer": "1/aⁿ",
+    "choices": [
+      "1/aⁿ",
+      "-aⁿ",
+      "aⁿ",
+      "1/(a×n)"
+    ],
+    "context": "A negative exponent means the reciprocal: a⁻ⁿ = 1/aⁿ. Example: 2⁻³ = 1/8. The base stays positive — only its position flips from numerator to denominator."
+  },
+  {
+    "tier": 4,
+    "question": "Which number is larger: 3.2 × 10⁴ or 8.1 × 10³?",
+    "answer": "3.2 × 10⁴",
+    "choices": [
+      "3.2 × 10⁴",
+      "8.1 × 10³",
+      "They are equal",
+      "Cannot be determined"
+    ],
+    "context": "Compare exponents first: 10⁴ = 10,000 vs 10³ = 1,000. Even with a smaller coefficient (3.2 vs 8.1), the larger power of 10 wins. 3.2 × 10⁴ = 32,000 vs 8,100."
+  },
+  {
+    "tier": 4,
+    "question": "What is 6.02 × 10²³ as a description?",
+    "answer": "A number with 24 digits starting with 6.02",
+    "choices": [
+      "A number with 24 digits starting with 6.02",
+      "602 followed by 21 zeros",
+      "A number between 6 and 7",
+      "6.02 repeated 23 times"
+    ],
+    "context": "6.02 × 10²³ ≈ 602,000,000,000,000,000,000,000 — Avogadro's number, the count of atoms in one mole of a substance. Scientific notation makes such numbers workable."
+  },
+  {
+    "tier": 4,
+    "question": "If x + y = 10 and x = 4, what is y?",
+    "answer": "6",
+    "choices": [
+      "6",
+      "4",
+      "14",
+      "40"
+    ],
+    "context": "Substitute x = 4: 4 + y = 10, so y = 6. Substitution is the most direct method when one variable is already isolated."
+  },
+  {
+    "tier": 4,
+    "question": "If x + y = 7 and x - y = 3, what is x?",
+    "answer": "5",
+    "choices": [
+      "5",
+      "4",
+      "2",
+      "7"
+    ],
+    "context": "Add the equations: 2x = 10, so x = 5. Adding equations to eliminate a variable is called the elimination method."
+  },
+  {
+    "tier": 4,
+    "question": "If 2x + y = 11 and y = 3, what is x?",
+    "answer": "4",
+    "choices": [
+      "4",
+      "3",
+      "5",
+      "7"
+    ],
+    "context": "Substitute y = 3: 2x + 3 = 11, 2x = 8, x = 4. Substitution — replace one variable with a known value and solve for the other."
+  },
+  {
+    "tier": 4,
+    "question": "Two vertical angles are formed when two lines cross. They are always?",
+    "answer": "Equal",
+    "choices": [
+      "Equal",
+      "Supplementary",
+      "Complementary",
+      "Perpendicular"
+    ],
+    "context": "Vertical angles — the opposite pair formed when two lines intersect — are always equal. They share the same vertex but no common sides."
+  },
+  {
+    "tier": 4,
+    "question": "Alternate interior angles are formed when a line crosses two parallel lines. They are always?",
+    "answer": "Equal",
+    "choices": [
+      "Equal",
+      "Supplementary",
+      "Complementary",
+      "Obtuse"
+    ],
+    "context": "Alternate interior angles are equal when the lines are parallel. They sit between the parallel lines on opposite sides of the transversal — like a Z or S shape."
+  },
+  {
+    "tier": 4,
+    "question": "A straight angle is cut by a ray into two angles of 130° and x°. What is x?",
+    "answer": "50°",
+    "choices": [
+      "50°",
+      "40°",
+      "60°",
+      "130°"
+    ],
+    "context": "Supplementary angles sum to 180°: x = 180° - 130° = 50°. Any two angles on a straight line are supplementary."
+  },
+  {
+    "tier": 4,
+    "question": "Two similar triangles have sides 3, 4, 5 and 6, 8, ?. What is the missing side?",
+    "answer": "10",
+    "choices": [
+      "10",
+      "12",
+      "9",
+      "15"
+    ],
+    "context": "Similar triangles have proportional sides. The scale factor is 2 (each side doubles), so 5 × 2 = 10. Similar triangles have equal angles and sides in constant ratio."
+  },
+  {
+    "tier": 4,
+    "question": "Which equation represents a linear function?",
+    "answer": "y = 3x + 2",
+    "choices": [
+      "y = 3x + 2",
+      "y = x²",
+      "y = 1/x",
+      "y = 2ˣ"
+    ],
+    "context": "A linear function has a constant rate of change and graphs as a straight line. Anything with x², 1/x, or an exponent with x as the base is nonlinear."
   },
   {
     "tier": 5,
-    "question": "The integral of a function represents geometrically?",
-    "answer": "The area under the curve between two bounds",
+    "question": "What is the factored form of 6x² + 9x?",
+    "answer": "3x(2x + 3)",
     "choices": [
-      "The area under the curve between two bounds",
-      "The slope of the tangent line at each point",
-      "The maximum value on an interval",
-      "The instantaneous rate of change"
+      "3x(2x + 3)",
+      "3(2x² + 3x)",
+      "6x(x + 9)",
+      "x(6x + 9)"
     ],
-    "context": "Integration sums infinitely many thin rectangles to find the area under a curve. Newton and Leibniz discovered this in the 1660s–70s."
+    "context": "The greatest common factor of 6x² and 9x is 3x. Factoring it out: 6x² ÷ 3x = 2x and 9x ÷ 3x = 3, giving 3x(2x + 3). Always factor the largest possible common term."
   },
   {
     "tier": 5,
-    "question": "What is mathematical induction used to prove?",
-    "answer": "Statements true for all positive integers",
+    "question": "What is the factored form of 4x³ + 8x²?",
+    "answer": "4x²(x + 2)",
     "choices": [
-      "Statements true for all positive integers",
-      "That a function is continuous at every point",
-      "That two series converge to the same value",
-      "That a property holds for all real numbers"
+      "4x²(x + 2)",
+      "4x(x² + 2x)",
+      "2x(2x² + 4x)",
+      "4(x³ + 2x²)"
     ],
-    "context": "Mathematical induction: prove the base case (n=1), then show if true for n=k, it's true for n=k+1. Like an infinite chain of dominoes."
+    "context": "The greatest common factor of 4x³ and 8x² is 4x². Dividing: 4x³ ÷ 4x² = x and 8x² ÷ 4x² = 2, giving 4x²(x + 2)."
   },
   {
     "tier": 5,
-    "question": "Proof by contradiction works by?",
-    "answer": "Assuming the opposite is true and deriving a logical impossibility",
+    "question": "What is the factored form of x² - 25?",
+    "answer": "(x + 5)(x - 5)",
     "choices": [
-      "Assuming the opposite is true and deriving a logical impossibility",
-      "Testing the statement for many specific cases",
-      "Deriving the conclusion directly from axioms",
-      "Showing two expressions are algebraically equivalent"
+      "(x + 5)(x - 5)",
+      "(x - 5)²",
+      "(x + 5)²",
+      "(x - 25)(x + 1)"
     ],
-    "context": "Proof by contradiction (reductio ad absurdum): assume the negation, reach an impossibility. The contradiction proves the original statement."
+    "context": "Difference of squares: a² - b² = (a + b)(a - b). Here a = x and b = 5. Verify: (x+5)(x-5) = x² - 5x + 5x - 25 = x² - 25. ✓"
+  },
+  {
+    "tier": 5,
+    "question": "What is the factored form of x² - 49?",
+    "answer": "(x + 7)(x - 7)",
+    "choices": [
+      "(x + 7)(x - 7)",
+      "(x - 7)²",
+      "(x + 7)²",
+      "(x - 49)(x + 1)"
+    ],
+    "context": "a² - b² = (a+b)(a-b). Here a = x, b = 7 since 7² = 49. The pattern works for any perfect square subtracted from another."
+  },
+  {
+    "tier": 5,
+    "question": "What is the factored form of 4x² - 9?",
+    "answer": "(2x + 3)(2x - 3)",
+    "choices": [
+      "(2x + 3)(2x - 3)",
+      "(4x + 9)(x - 1)",
+      "(2x - 3)²",
+      "(4x - 3)(x + 3)"
+    ],
+    "context": "4x² = (2x)² and 9 = 3², so: (2x+3)(2x-3). The difference-of-squares pattern works whenever both terms are perfect squares."
+  },
+  {
+    "tier": 5,
+    "question": "What is the factored form of x² + 5x + 6?",
+    "answer": "(x + 2)(x + 3)",
+    "choices": [
+      "(x + 2)(x + 3)",
+      "(x + 1)(x + 6)",
+      "(x + 6)(x - 1)",
+      "(x - 2)(x - 3)"
+    ],
+    "context": "Find two numbers that multiply to 6 and add to 5: 2 and 3. So x² + 5x + 6 = (x+2)(x+3). Always check: (x+2)(x+3) = x² + 3x + 2x + 6 = x² + 5x + 6. ✓"
+  },
+  {
+    "tier": 5,
+    "question": "What is the factored form of x² - 7x + 12?",
+    "answer": "(x - 3)(x - 4)",
+    "choices": [
+      "(x - 3)(x - 4)",
+      "(x + 3)(x + 4)",
+      "(x - 6)(x - 2)",
+      "(x - 1)(x - 12)"
+    ],
+    "context": "Find two numbers that multiply to 12 and add to -7: -3 and -4. So (x-3)(x-4). Both negatives because the sum is negative but product is positive."
+  },
+  {
+    "tier": 5,
+    "question": "What is the simplified form of √12?",
+    "answer": "2√3",
+    "choices": [
+      "2√3",
+      "3√2",
+      "√6 × √2",
+      "4√3"
+    ],
+    "context": "√12 = √(4 × 3) = √4 × √3 = 2√3. Factor out the largest perfect square — here 4. The key step is spotting the perfect square factor."
+  },
+  {
+    "tier": 5,
+    "question": "What is the simplified form of √50?",
+    "answer": "5√2",
+    "choices": [
+      "5√2",
+      "2√5",
+      "10√2",
+      "√25 + √2"
+    ],
+    "context": "√50 = √(25 × 2) = √25 × √2 = 5√2. The largest perfect square factor of 50 is 25."
+  },
+  {
+    "tier": 5,
+    "question": "What is the simplified form of √72?",
+    "answer": "6√2",
+    "choices": [
+      "6√2",
+      "3√8",
+      "2√18",
+      "9√2"
+    ],
+    "context": "√72 = √(36 × 2) = 6√2. The largest perfect square factor of 72 is 36. Choosing 4 instead gives 2√18, which still needs simplifying."
+  },
+  {
+    "tier": 5,
+    "question": "In an arithmetic sequence, what is the common difference of 3, 7, 11, 15, ...?",
+    "answer": "4",
+    "choices": [
+      "4",
+      "3",
+      "5",
+      "7"
+    ],
+    "context": "The common difference is constant: 7-3=4, 11-7=4, 15-11=4. In an arithmetic sequence, each term increases (or decreases) by the same fixed amount."
+  },
+  {
+    "tier": 5,
+    "question": "The nth term of an arithmetic sequence is aₙ = a₁ + (n-1)d. For a₁=2 and d=5, what is the 10th term?",
+    "answer": "47",
+    "choices": [
+      "47",
+      "52",
+      "50",
+      "57"
+    ],
+    "context": "a₁₀ = 2 + (10-1)×5 = 2 + 45 = 47. The formula counts how many steps of size d you take from the first term to reach the nth."
+  },
+  {
+    "tier": 5,
+    "question": "What is the common ratio of the geometric sequence 2, 6, 18, 54, ...?",
+    "answer": "3",
+    "choices": [
+      "3",
+      "4",
+      "6",
+      "2"
+    ],
+    "context": "Common ratio = any term ÷ previous term: 6÷2 = 3. In a geometric sequence, each term is multiplied by the same constant ratio."
+  },
+  {
+    "tier": 5,
+    "question": "The nth term of a geometric sequence is aₙ = a₁ × rⁿ⁻¹. For a₁=3 and r=2, what is the 5th term?",
+    "answer": "48",
+    "choices": [
+      "48",
+      "32",
+      "96",
+      "24"
+    ],
+    "context": "a₅ = 3 × 2⁴ = 3 × 16 = 48. The sequence is 3, 6, 12, 24, 48. Each term doubles the previous."
+  },
+  {
+    "tier": 5,
+    "question": "If |x| = 7, what are the possible values of x?",
+    "answer": "x = 7 or x = -7",
+    "choices": [
+      "x = 7 or x = -7",
+      "x = 7 only",
+      "x = -7 only",
+      "x = ±49"
+    ],
+    "context": "Absolute value equations always have two solutions (unless the result equals 0). |x| = 7 means x is 7 units from zero — at +7 or -7."
+  },
+  {
+    "tier": 5,
+    "question": "If |x - 3| = 5, what are the possible values of x?",
+    "answer": "x = 8 or x = -2",
+    "choices": [
+      "x = 8 or x = -2",
+      "x = 8 only",
+      "x = 2 or x = -8",
+      "x = 5 or x = -5"
+    ],
+    "context": "Set up two cases: x-3=5 → x=8 or x-3=-5 → x=-2. Think of it as: what two numbers are exactly 5 units away from 3 on the number line?"
+  },
+  {
+    "tier": 5,
+    "question": "Solve by substitution: x = 2y and x + y = 9. What is y?",
+    "answer": "3",
+    "choices": [
+      "3",
+      "6",
+      "9",
+      "2"
+    ],
+    "context": "Substitute x=2y into x+y=9: 2y+y=9 → 3y=9 → y=3. Then x=6. Substitution works best when one equation already isolates a variable."
+  },
+  {
+    "tier": 5,
+    "question": "Solve by elimination: x + y = 8 and x - y = 2. What is x?",
+    "answer": "5",
+    "choices": [
+      "5",
+      "3",
+      "6",
+      "8"
+    ],
+    "context": "Add the equations: 2x = 10, x = 5. Then y = 3. Elimination works by adding or subtracting equations to cancel one variable."
+  },
+  {
+    "tier": 5,
+    "question": "(3 × 10⁴) × (2 × 10³) = ?",
+    "answer": "6 × 10⁷",
+    "choices": [
+      "6 × 10⁷",
+      "6 × 10¹²",
+      "5 × 10⁷",
+      "6 × 10⁶"
+    ],
+    "context": "Multiply coefficients: 3×2=6. Add exponents: 10⁴ × 10³ = 10⁷. Result: 6 × 10⁷. Keep the operations on coefficients and powers of 10 separate."
+  },
+  {
+    "tier": 5,
+    "question": "(8 × 10⁶) ÷ (4 × 10²) = ?",
+    "answer": "2 × 10⁴",
+    "choices": [
+      "2 × 10⁴",
+      "2 × 10³",
+      "4 × 10⁴",
+      "2 × 10⁸"
+    ],
+    "context": "Divide coefficients: 8÷4=2. Subtract exponents: 10⁶ ÷ 10² = 10⁴. Result: 2 × 10⁴. The quotient rule for exponents applies directly here."
+  },
+  {
+    "tier": 5,
+    "question": "The combination formula for choosing r items from n is: n! / (r! × (n-r)!). How many ways can you choose 2 items from 5?",
+    "answer": "10",
+    "choices": [
+      "10",
+      "20",
+      "15",
+      "25"
+    ],
+    "context": "C(5,2) = 5! / (2! × 3!) = 120 / (2×6) = 10. Combinations count selections where order does not matter — choosing a committee, not ranking them."
+  },
+  {
+    "tier": 5,
+    "question": "A permutation differs from a combination in that permutations count arrangements where ___?",
+    "answer": "Order matters",
+    "choices": [
+      "Order matters",
+      "Order does not matter",
+      "Repetition is allowed",
+      "Items are replaced"
+    ],
+    "context": "In permutations, ABC and BAC are different. In combinations, they are the same selection. The word 'combination lock' is actually a misnomer — it should be a permutation lock, since order matters."
   }
 ]

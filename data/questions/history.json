@@ -129,16 +129,16 @@
       "Neither side — the conflict ended in a negotiated political truce",
       "The Confederacy, after Union forces failed to take Richmond"
     ],
-    "context": "The Union victory preserved the United States as one nation and ended slavery through the 13th Amendment. The war's final year saw Sherman's devastating March to the Sea and Grant's relentless pressure on Lee's army in Virginia. Also referred to as: North."
+    "context": "The Union victory preserved the United States as one nation and ended slavery through the 13th Amendment. The war's final year saw Sherman's devastating March to the Sea and Grant's relentless siege of Petersburg. After Lee's surrender at Appomattox, no defeated rebellion had ever faced a more lenient peace — Lincoln wanted reconciliation, not revenge."
   },
   {
     "tier": 1,
     "question": "The Gettysburg Address was delivered by ___?",
-    "answer": "Abraham Lincoln, at the dedication of the Gettysburg military cemetery",
+    "answer": "Abraham Lincoln, at a Pennsylvania military cemetery in November 1863",
     "choices": [
+      "Abraham Lincoln, at a Pennsylvania military cemetery in November 1863",
       "Ulysses S. Grant, honoring the fallen at the Gettysburg battlefield ceremony",
       "Frederick Douglass, at a memorial ceremony in Washington in 1863",
-      "Abraham Lincoln, at the dedication of the Gettysburg military cemetery",
       "William Seward, who drafted the speech on Lincoln's behalf"
     ],
     "context": "Lincoln delivered his famous 272-word speech on November 19, 1863, at the dedication of a military cemetery in Gettysburg, Pennsylvania. In just two minutes, he redefined the war as a struggle for equality and democratic self-government."
@@ -166,18 +166,6 @@
       "That religiously motivated political conflicts consistently produce the highest death tolls"
     ],
     "context": "Between September 1793 and July 1794, an estimated 17,000 people were officially executed, with thousands more dying in prison. The Terror showed that utopian visions enforced by unlimited state power can produce horrors worse than the tyranny they replaced."
-  },
-  {
-    "tier": 1,
-    "question": "Rome was traditionally founded in ___?",
-    "answer": "753 BC, the traditional date calculated by the Roman scholar Varro",
-    "choices": [
-      "600 BC, when Etruscan settlers first fortified the banks of the Tiber",
-      "753 BC, the traditional date calculated by the Roman scholar Varro",
-      "900 BC, during early Iron Age settlements on the Palatine Hill",
-      "509 BC, the year the Roman Republic replaced the monarchy"
-    ],
-    "context": "According to legend, Romulus and Remus — twin brothers raised by a she-wolf — founded Rome on the Palatine Hill. The date 753 BC comes from the Roman scholar Varro, who calculated it centuries later. Archaeological evidence shows settlements on the site dating to around the same period."
   },
   {
     "tier": 1,
@@ -753,7 +741,7 @@
       "April 1912, on her maiden voyage from Southampton to New York",
       "April 1913, the year after her scheduled maiden voyage"
     ],
-    "context": "On the night of April 14, 1912, the Titanic struck an iceberg in the North Atlantic on its maiden voyage from Southampton to New York. The ship, carrying over 2,200 people, sank in less than three hours in freezing waters."
+    "context": "On April 14, 1912, the Titanic struck an iceberg on its maiden voyage and sank in under three hours. The ship carried over 2,200 people but had lifeboats for barely half — more would have cluttered the promenade deck. Over 1,500 people died in 28°F water. The band famously kept playing. The disaster transformed international maritime safety law: every ocean liner was required to carry sufficient lifeboats for everyone aboard."
   },
   {
     "tier": 1,
@@ -777,7 +765,7 @@
       "1917, when both the February and October Revolutions overthrew the old order",
       "1919, in the political turmoil following Germany's defeat in the Great War"
     ],
-    "context": "Two revolutions shook Russia in 1917: the February Revolution that toppled the Tsar, and the October Revolution in which Lenin's Bolsheviks seized power. The result was the world's first communist state, which would shape global politics for the rest of the century."
+    "context": "Two revolutions shook Russia in 1917: the February Revolution toppled Tsar Nicholas II, and the October Revolution brought Lenin's Bolsheviks to power. Lenin had been living in exile in Switzerland, and the German military secretly transported him through Germany in a sealed train car — they wanted Russia destabilized and out of WWI. The gamble worked: within months, Russia signed a separate peace. Germany's move accelerated their own eventual defeat by freeing the US to focus on the Western Front."
   },
   {
     "tier": 1,
@@ -1513,18 +1501,6 @@
   },
   {
     "tier": 2,
-    "question": "The Rwandan Genocide occurred in ___?",
-    "answer": "1994",
-    "choices": [
-      "1990",
-      "1992",
-      "1994",
-      "1996"
-    ],
-    "context": "In just 100 days from April to July 1994, Hutu extremists murdered approximately 800,000 Tutsi and moderate Hutu. The killing was carried out largely with machetes by neighbors against neighbors, while the world watched and did almost nothing."
-  },
-  {
-    "tier": 2,
     "question": "The Good Friday Agreement ended conflict in ___?",
     "answer": "Northern Ireland",
     "choices": [
@@ -1548,7 +1524,7 @@
     "context": "A US-led coalition of 35 nations liberated Kuwait from Iraqi occupation in just 42 days of combat in early 1991. The war showcased precision-guided weapons for the first time and demonstrated America's post-Cold War military dominance."
   },
   {
-    "tier": 2,
+    "tier": 1,
     "question": "The September 11 attacks occurred in ___?",
     "answer": "2001",
     "choices": [
@@ -1560,7 +1536,7 @@
     "context": "On September 11, 2001, al-Qaeda terrorists hijacked four airliners, crashing two into the World Trade Center, one into the Pentagon, and one into a Pennsylvania field after passengers fought back. Nearly 3,000 people died in the deadliest terrorist attack in U.S. history."
   },
   {
-    "tier": 3,
+    "tier": 2,
     "question": "The Treaty of Versailles ended ___?",
     "answer": "World War I, the Great War ending in 1919",
     "choices": [
@@ -1646,12 +1622,12 @@
   {
     "tier": 3,
     "question": "Emperor Theodosius I made Christianity the official religion of which empire?",
-    "answer": "The Roman Empire, under Emperor Theodosius I in 380 AD",
+    "answer": "The Roman Empire, by imperial decree in 380 AD",
     "choices": [
       "The Byzantine Empire, under Emperor Justinian I in the 6th century",
-      "The Roman Empire, under Emperor Theodosius I in 380 AD",
+      "The Roman Empire, by imperial decree in 380 AD",
       "The Persian Empire, under Cyrus the Great in the 6th century BC",
-      "The Macedonian Empire, under Emperor Theodosius I's predecessors in the 4th century"
+      "The Macedonian Empire, under successive emperors in the 4th century"
     ],
     "context": "In 380 AD, Theodosius declared Nicene Christianity the state religion of the Roman Empire, banning pagan worship. This decision shaped Western civilization for the next 1,500 years, making Christianity the dominant force in European culture, politics, and art."
   },
@@ -1957,18 +1933,6 @@
   },
   {
     "tier": 3,
-    "question": "The Camp David Accords were signed in ___?",
-    "answer": "1978",
-    "choices": [
-      "1973",
-      "1976",
-      "1978",
-      "1980"
-    ],
-    "context": "After twelve intense days of negotiations at the presidential retreat in Maryland, Sadat and Begin signed the accords on September 17, 1978. It was the first peace treaty between Israel and an Arab nation, earning Sadat and Begin the Nobel Peace Prize."
-  },
-  {
-    "tier": 3,
     "question": "The Rwandan Genocide killed approximately ___?",
     "answer": "Approximately 800,000 people",
     "choices": [
@@ -1990,18 +1954,6 @@
       "2000, after the Mitchell Review attempted to salvage the stalled process"
     ],
     "context": "Signed on April 10, 1998 (Good Friday), the agreement established power-sharing between unionists and nationalists in Northern Ireland. It required compromise from all sides and was approved by referendums in both Northern Ireland and the Republic of Ireland."
-  },
-  {
-    "tier": 3,
-    "question": "The Cuban Revolution succeeded in ___?",
-    "answer": "1959, when Castro's forces overthrew the Batista dictatorship on January 1st",
-    "choices": [
-      "1955, when Castro was released from prison and began reorganizing rebel forces",
-      "1957, when guerrilla campaigns in the Sierra Maestra gained significant momentum",
-      "1959, when Castro's forces overthrew the Batista dictatorship on January 1st",
-      "1961, the year the US-backed Bay of Pigs invasion attempted to reverse the revolution"
-    ],
-    "context": "Fidel Castro's guerrilla forces overthrew the Batista dictatorship on January 1, 1959. Castro initially denied being communist, but within two years he had nationalized industry, aligned with the Soviet Union, and established a one-party state."
   },
   {
     "tier": 3,
@@ -2218,18 +2170,6 @@
       "1100"
     ],
     "context": "October 14, 1066, saw William of Normandy defeat the English King Harold II. The Norman Conquest that followed replaced the Anglo-Saxon ruling class, introduced Norman French to the language, and reshaped English law and society for centuries."
-  },
-  {
-    "tier": 4,
-    "question": "Who was declared 'Emperor of the Romans' by Pope Leo III in 800 AD?",
-    "answer": "Charlemagne, King of the Franks crowned in 800 AD",
-    "choices": [
-      "Otto I, who became emperor in 962 AD",
-      "Charlemagne, King of the Franks crowned in 800 AD",
-      "Frederick Barbarossa, who ruled in the 12th century",
-      "Pepin the Short, who was Charlemagne's father"
-    ],
-    "context": "Charlemagne, King of the Franks, was crowned on Christmas Day 800 AD in St. Peter's Basilica. The event symbolized the merger of Germanic, Roman, and Christian traditions that would define medieval Europe. Legend says Charlemagne was surprised by the coronation."
   },
   {
     "tier": 4,
@@ -2713,18 +2653,6 @@
   },
   {
     "tier": 4,
-    "question": "The Maastricht Treaty was ratified and came into force in ___?",
-    "answer": "1992, the year the treaty was formally adopted by the member states of the European Community",
-    "choices": [
-      "1988, the year the Single European Act came into full effect",
-      "1990, the year German reunification was completed",
-      "1992, the year the treaty was formally adopted by the member states of the European Community",
-      "1994, the year the treaty's provisions on monetary union took hold"
-    ],
-    "context": "The treaty was signed on February 7, 1992, in the Dutch city of Maastricht. It represented the most ambitious step toward European integration since the Treaty of Rome in 1957, creating the three-pillar structure of the European Union."
-  },
-  {
-    "tier": 4,
     "question": "Nelson Mandela was imprisoned on ___?",
     "answer": "Robben Island, a remote outpost off the coast of Cape Town",
     "choices": [
@@ -2818,18 +2746,6 @@
       "Alexander I, the Russian Tsar who pushed for a Holy Alliance of monarchs"
     ],
     "context": "Austrian Chancellor Klemens von Metternich masterfully orchestrated the Congress, balancing the interests of five great powers while preventing France from ever again dominating Europe. His conservative vision shaped European politics until the revolutions of 1848."
-  },
-  {
-    "tier": 5,
-    "question": "The Peace of Augsburg established the principle ___?",
-    "answer": "Cuius regio, eius religio — each prince determines his territory's faith",
-    "choices": [
-      "Cuius regio, eius religio — each prince determines his territory's faith",
-      "Libertas ecclesiastica — the universal toleration of all Christian sects",
-      "Prima sedes a nemine iudicatur — papal supremacy over all German principalities",
-      "Reservatum ecclesiasticum — a binding imperial veto on all territorial conversions"
-    ],
-    "context": "'Cuius regio, eius religio' — 'whose realm, his religion' — was a pragmatic solution to religious war that let each German prince choose Catholicism or Lutheranism for his territory. It bought 63 years of uneasy peace before the Thirty Years' War erupted."
   },
   {
     "tier": 5,
@@ -2962,18 +2878,6 @@
       "The Holy Roman Empire into distinct ecclesiastical and secular territorial jurisdictions"
     ],
     "context": "Charlemagne's grandsons divided his empire into three kingdoms: West Francia (future France), East Francia (future Germany), and a Middle Kingdom (future Low Countries and Italy). This partition laid the foundation for the modern nations of Europe."
-  },
-  {
-    "tier": 5,
-    "question": "The Black Death entered Europe primarily through ___?",
-    "answer": "Sicilian ports, when Genoese ships arrived from Caffa in the Crimea",
-    "choices": [
-      "French Mediterranean ports, particularly Marseille, via Genoese trading vessels",
-      "Sicilian ports, when Genoese ships arrived from Caffa in the Crimea",
-      "Venetian lagoons via merchant galleys returning from Constantinople",
-      "Spanish ports along the Iberian peninsula's eastern coastline near Valencia"
-    ],
-    "context": "Genoese trading ships from Caffa in Crimea brought the plague to Sicilian ports in October 1347. From Sicily, it spread along trade routes to every corner of Europe within five years, killing roughly one-third of the continent's population."
   },
   {
     "tier": 5,
@@ -3217,18 +3121,6 @@
   },
   {
     "tier": 5,
-    "question": "The Maastricht Treaty was formally the Treaty on ___?",
-    "answer": "European Union, the 1992 accord that transformed the EEC into a political union",
-    "choices": [
-      "Rome, referencing the 1957 treaty that founded the EEC",
-      "European Union, the 1992 accord that transformed the EEC into a political union",
-      "Lisbon, the 2007 treaty that later reformed EU institutions",
-      "Amsterdam, which addressed justice and internal EU border policies"
-    ],
-    "context": "Formally titled the Treaty on European Union, it transformed the European Economic Community into a far more ambitious political project. It established European citizenship, a common foreign policy, and laid the groundwork for the single European currency."
-  },
-  {
-    "tier": 5,
     "question": "German reunification occurred in ___?",
     "answer": "1990, when East Germany's territory was absorbed into the Federal Republic",
     "choices": [
@@ -3300,7 +3192,7 @@
     "context": "This classified 1950 document, written by Paul Nitze, argued that the Soviet Union posed an existential threat requiring a massive US military buildup — recommending tripling defense spending. NSC-68 became the blueprint for American Cold War strategy, especially after the Korean War began and fears of Soviet expansion intensified."
   },
   {
-    "tier": 5,
+    "tier": 3,
     "question": "The Domino Theory held that if one country fell to communism ___?",
     "answer": "Neighboring countries would follow in a chain reaction",
     "choices": [
@@ -3324,7 +3216,7 @@
     "context": "George Kennan's 8,000-word telegram from Moscow in February 1946 argued that the Soviet Union was inherently expansionist and could only be contained through firm, patient resistance. His analysis shaped American foreign policy for the next 45 years."
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "The Nuclear Test Ban Treaty (1963) prohibited tests in ___?",
     "answer": "The atmosphere, underwater, and in outer space",
     "choices": [
@@ -5820,15 +5712,843 @@
     "context": "In less than 50 years, Japan went from a feudal society closed to the outside world to an industrialized nation that defeated a European power (Russia) in war. Japan proved that modernization does not require abandoning national identity or submitting to Western colonization."
   },
   {
-    "question": "The Sykes-Picot Agreement (1916) drew borders in the Middle East that ___?",
-    "answer": "Ignored ethnic and religious divisions, creating states prone to conflict",
+    "tier": 1,
+    "question": "Alexander Hamilton was killed in a duel with ___?",
+    "answer": "Aaron Burr, who was serving as Vice President at the time",
     "choices": [
-      "Respected Arab nationalist aspirations by granting promised independence to key regional groups",
-      "Ignored ethnic and religious divisions, creating states prone to conflict",
-      "Were negotiated directly with tribal and religious leaders already governing the territories",
-      "Transferred Ottoman territories to a neutral international administration under League of Nations oversight"
+      "Aaron Burr, who was serving as Vice President at the time",
+      "Thomas Jefferson, his political rival for Washington's favor",
+      "James Madison, his co-author of the Federalist Papers",
+      "John Adams, whose presidency Hamilton had openly criticized"
     ],
+    "context": "On July 11, 1804, Vice President Aaron Burr shot Alexander Hamilton in Weehawken, New Jersey. Hamilton had destroyed Burr's bid for governor of New York with a single published letter. Hamilton fired first — deliberately into the air. Burr did not. Hamilton died the next day at 49. A sitting Vice President had killed the former Treasury Secretary, and yet Burr finished his term in office."
+  },
+  {
+    "tier": 1,
+    "question": "Paul Revere's midnight ride warned colonial militias that ___?",
+    "answer": "British troops were marching toward Lexington and Concord",
+    "choices": [
+      "British troops were marching toward Lexington and Concord",
+      "The British Navy had blockaded Boston Harbor that night",
+      "French ships had arrived to support the colonial cause",
+      "The colonial gunpowder stores had been discovered and seized"
+    ],
+    "context": "On April 18, 1775, Revere rode from Charlestown to Lexington to warn Samuel Adams and John Hancock that British regulars were coming. He was actually one of dozens of riders that night — but Henry Wadsworth Longfellow's 1861 poem immortalized him alone. His actual warning was probably 'The Regulars are coming out,' not 'The British are coming' — most colonists still considered themselves British."
+  },
+  {
+    "tier": 1,
+    "question": "The Constitutional Convention of 1787 was held in which city?",
+    "answer": "Philadelphia, in the same hall where the Declaration of Independence was signed",
+    "choices": [
+      "Philadelphia, in the same hall where the Declaration of Independence was signed",
+      "New York City, which served as the nation's capital at the time",
+      "Boston, where revolutionary resistance had been strongest",
+      "Richmond, Virginia, the largest Southern city of the era"
+    ],
+    "context": "Delegates met in secret all summer with windows shut against the Philadelphia heat — no transcripts, no press. Washington presided but rarely spoke in debate. James Madison took the only detailed notes of the discussions. What was supposed to be a modest fix to the Articles of Confederation turned into an entirely new Constitution — a decision made without any formal authorization to do so."
+  },
+  {
+    "tier": 1,
+    "question": "Patrick Henry's famous 1775 speech before the Virginia Convention ended with ___?",
+    "answer": "\"Give me liberty, or give me death!\"",
+    "choices": [
+      "\"Give me liberty, or give me death!\"",
+      "\"We hold these truths to be self-evident\"",
+      "\"The tree of liberty must be refreshed with the blood of patriots\"",
+      "\"Rebellion to tyrants is obedience to God\""
+    ],
+    "context": "Henry gave this speech on March 23, 1775, urging Virginia to raise troops against Britain. No written transcript survived — the speech was reconstructed decades later from the memories of men who heard it. Henry was considered the greatest orator of his age, and the phrase entered the language permanently as the ultimate expression of choosing freedom over survival."
+  },
+  {
+    "tier": 1,
+    "question": "Benjamin Franklin's famous 1752 kite experiment proved that ___?",
+    "answer": "Lightning is electrical — the same phenomenon as static electricity on the ground",
+    "choices": [
+      "Lightning is electrical — the same phenomenon as static electricity on the ground",
+      "Thunderstorms are caused by friction between warm and cold air masses",
+      "Metal rods naturally attract lightning when placed in open fields",
+      "The atmosphere generates a separate type of energy distinct from electricity"
+    ],
+    "context": "Franklin flew a kite with a metal key tied to the string during a thunderstorm. Sparks jumped from the key to his knuckle — proving lightning is electricity. This led directly to the lightning rod, which he invented. Dozens of people later died attempting to repeat his experiment without his precautions. Franklin survived, seemingly by luck. He never claimed his exact method and some historians doubt the kite experiment ever literally happened."
+  },
+  {
+    "tier": 1,
+    "question": "James Madison is called the Father of the Constitution because ___?",
+    "answer": "He drafted the Virginia Plan and was the Convention's most influential architect",
+    "choices": [
+      "He drafted the Virginia Plan and was the Convention's most influential architect",
+      "He cast the deciding vote that ratified the Constitution in Virginia",
+      "He was the oldest and most respected delegate at the Philadelphia Convention",
+      "He wrote the Bill of Rights before the Convention had formally adjourned"
+    ],
+    "context": "Madison arrived in Philadelphia weeks early and prepared the Virginia Plan — a complete blueprint for a three-branch national government with proportional representation. He also kept the only detailed notes of the debates. Madison later wrote that he found the title 'Father of the Constitution' embarrassing, calling it 'too much the work of many minds to be claimed by any one of them.'"
+  },
+  {
+    "tier": 1,
+    "question": "The Federalist Papers were written to argue for ___?",
+    "answer": "Ratification of the US Constitution, primarily aimed at New York voters",
+    "choices": [
+      "Ratification of the US Constitution, primarily aimed at New York voters",
+      "Independence from Britain before the Revolutionary War began",
+      "Abolition of slavery in the Northern states before the Convention finished",
+      "A second Constitutional Convention to repair the flawed final document"
+    ],
+    "context": "Hamilton, Madison, and Jay published 85 essays in New York newspapers in 1787-1788, signed 'Publius.' Hamilton wrote 51 of them in a frenetic sprint. The Papers remain the most authoritative guide to what the Founders intended the Constitution to mean and are regularly cited in Supreme Court opinions more than 230 years later. Jefferson called them 'the best commentary on the principles of government ever written.'"
+  },
+  {
+    "tier": 1,
+    "question": "America's first constitution, the Articles of Confederation, failed mainly because ___?",
+    "answer": "Congress could not tax, raise an army, or enforce any of its own laws",
+    "choices": [
+      "Congress could not tax, raise an army, or enforce any of its own laws",
+      "States refused to recognize any national government of any kind",
+      "Britain refused to honor its terms after the Revolutionary War ended",
+      "The document created a president with too much power and no checks"
+    ],
+    "context": "Under the Articles (1781-1789), Congress could ask states for money but had no power to collect taxes. When Revolutionary War veterans launched Shays' Rebellion in Massachusetts in 1786, Congress could not afford to send troops to suppress it. The crisis embarrassed leaders like Washington, Hamilton, and Madison and convinced them that a completely new constitutional framework was urgently needed."
+  },
+  {
+    "tier": 1,
+    "question": "George Washington voluntarily resigned his military command in 1783, shocking the world because ___?",
+    "answer": "Victorious generals almost never surrendered power willingly in history",
+    "choices": [
+      "Victorious generals almost never surrendered power willingly in history",
+      "The Continental Congress had secretly ordered him to step down",
+      "British peace terms required Washington to resign all military authority",
+      "He had privately promised before the war to retire immediately after victory"
+    ],
+    "context": "When Washington surrendered his sword before Congress in Annapolis, King George III reportedly said he was 'the greatest man in the world' for doing so. It was almost without precedent in modern history. The act proved the Revolution was about principles, not a general's ambition. It set the template for civilian control of the military that would define American democracy for centuries."
+  },
+  {
+    "tier": 1,
+    "question": "The first shots of the American Revolutionary War were fired at ___?",
+    "answer": "Lexington and Concord, Massachusetts, on April 19, 1775",
+    "choices": [
+      "Lexington and Concord, Massachusetts, on April 19, 1775",
+      "Bunker Hill, overlooking Boston harbor, on June 17, 1775",
+      "Fort Ticonderoga, on Lake Champlain, on May 10, 1775",
+      "Boston Common, during the Boston Massacre, on March 5, 1770"
+    ],
+    "context": "British troops marched from Boston to seize colonial arms stored at Concord. At Lexington Green, shots were fired — who fired first is still disputed after 250 years. Eight colonists died. At Concord's North Bridge, the militia fought back and drove the British into retreat all the way back to Boston. Ralph Waldo Emerson later called it 'the shot heard round the world.'"
+  },
+  {
+    "tier": 1,
+    "question": "The Second Continental Congress appointed George Washington commander of the Continental Army in ___?",
+    "answer": "1775, within weeks of the battles at Lexington and Concord",
+    "choices": [
+      "1775, within weeks of the battles at Lexington and Concord",
+      "1776, the year the Declaration of Independence was formally signed",
+      "1774, at the very first meeting of the Continental Congress",
+      "1777, when the war entered its desperate winter at Valley Forge"
+    ],
+    "context": "John Adams nominated Washington in June 1775, partly for strategic reasons — Virginia was the largest colony, and its full participation in the war required a Virginian at the top. Washington accepted command but refused a salary, asking only that Congress reimburse his expenses. He ultimately never collected even those expense accounts — forgoing tens of thousands of dollars over eight years."
+  },
+  {
+    "tier": 1,
+    "question": "John Adams was the first US president to live in ___?",
+    "answer": "The White House, moving in during November 1800",
+    "choices": [
+      "The White House, moving in during November 1800",
+      "Philadelphia's Congress Hall, the original seat of the executive branch",
+      "New York's Federal Hall, where Washington had been inaugurated",
+      "Annapolis, which briefly served as the new nation's first capital"
+    ],
+    "context": "Adams moved into the still-unfinished White House on November 1, 1800, writing his famous prayer: 'May none but honest and wise men ever rule under this roof.' The building had no running water and so few fireplaces that Abigail Adams hung laundry in the East Room to dry. Adams lived there just four months before losing the election to Thomas Jefferson and leaving."
+  },
+  {
+    "tier": 1,
+    "question": "Benjamin Franklin served the colonies in France primarily as ___?",
+    "answer": "A diplomat who secured French military alliance with the American cause",
+    "choices": [
+      "A diplomat who secured French military alliance with the American cause",
+      "A spy gathering intelligence on British naval movements in Europe",
+      "A merchant negotiating favorable trade terms with French businesses",
+      "A scientist presenting his electrical discoveries to French academies"
+    ],
+    "context": "Franklin was the most famous American in Europe — France was enchanted by his wit and his fur cap. His diplomatic genius produced the 1778 Treaty of Alliance, bringing France's army, navy, and treasury into the Revolution. Without French intervention, Washington almost certainly could not have forced the British surrender at Yorktown. Franklin arrived in Paris at age 70 and charmed an entire court."
+  },
+  {
+    "tier": 1,
+    "question": "The Three-Fifths Compromise at the Constitutional Convention determined that ___?",
+    "answer": "Enslaved people would count as three-fifths of a person for Congressional representation",
+    "choices": [
+      "Enslaved people would count as three-fifths of a person for Congressional representation",
+      "Three-fifths of slave states had to ratify the Constitution for it to take effect",
+      "The federal government could regulate slavery in three-fifths of all US territories",
+      "Only three-fifths of a state's white male population could vote in federal elections"
+    ],
+    "context": "Northern delegates wanted enslaved people counted as zero (for representation purposes); Southern delegates wanted them counted fully. Three-fifths was the compromise. It gave Southern states dramatically more Congressional power than their free population warranted — power they used to protect slavery for 70 years. The Constitution's deepest moral contradiction was built into its arithmetic from the first day."
+  },
+  {
+    "tier": 1,
+    "question": "America's first two political parties formed around the competing visions of ___?",
+    "answer": "Hamilton's Federalists and Jefferson's Democratic-Republicans",
+    "choices": [
+      "Hamilton's Federalists and Jefferson's Democratic-Republicans",
+      "Washington's Patriots and Adams's Loyalists, formed during the Revolution",
+      "Madison's Nationalists and Monroe's States'-Rights advocates after independence",
+      "Franklin's Constitutionalists and Henry's Anti-Federalists during ratification"
+    ],
+    "context": "Washington warned against political parties — then watched his own cabinet divide into two factions. Hamilton wanted a strong federal government, a national bank, and industrial development. Jefferson feared concentrated power and preferred an agrarian republic of independent farmers. Their rivalry defined American politics for a generation and established the template of competing visions of government that persists today."
+  },
+  {
+    "tier": 1,
+    "question": "The Monroe Doctrine (1823) warned European powers against ___?",
+    "answer": "Establishing new colonies or interfering in the affairs of independent American nations",
+    "choices": [
+      "Establishing new colonies or interfering in the affairs of independent American nations",
+      "Imposing tariffs on goods exported from the Western Hemisphere to Europe",
+      "Supporting Britain's remaining North American territorial claims",
+      "Forming alliances with Native American nations against the United States"
+    ],
+    "context": "Monroe couldn't enforce the doctrine alone — for decades Britain's Royal Navy actually kept European powers out of the Americas, since Britain wanted to trade there freely. But the Monroe Doctrine became a cornerstone of American foreign policy. A century later, Theodore Roosevelt added the Roosevelt Corollary, claiming the US could intervene in the internal affairs of any Western Hemisphere nation that mismanaged its debts."
+  },
+  {
+    "tier": 1,
+    "question": "Jefferson's Louisiana Purchase was controversial partly because ___?",
+    "answer": "The Constitution said nothing about a president's power to purchase foreign territory",
+    "choices": [
+      "The Constitution said nothing about a president's power to purchase foreign territory",
+      "Congress had already voted twice to reject the purchase before Jefferson overruled them",
+      "Spain, not France, was the legitimate owner of the territory at the time",
+      "Jefferson had personally promised France that the US would not seek western expansion"
+    ],
+    "context": "Jefferson was a 'strict constructionist' who believed the government could only do what the Constitution explicitly allowed — and it said nothing about buying territory. He drafted a constitutional amendment to legalize the purchase, then abandoned it when Napoleon threatened to cancel the deal unless it moved fast. Jefferson acted first and rationalized later. His opponents never forgave the hypocrisy, but history has vindicated the purchase."
+  },
+  {
+    "tier": 1,
+    "question": "The Federalists wanted a stronger national government; Anti-Federalists feared it because ___?",
+    "answer": "They believed concentrated federal power would recreate the tyranny they had just escaped",
+    "choices": [
+      "They believed concentrated federal power would recreate the tyranny they had just escaped",
+      "They preferred a direct democracy in which citizens voted on every major question",
+      "They thought individual states were too small to need any national government at all",
+      "They were secretly loyal to the British Crown and wanted to preserve ties to Parliament"
+    ],
+    "context": "Patrick Henry, George Mason, and other Anti-Federalists argued that a powerful central government inevitably becomes tyrannical — that's why they had just fought a revolution. Their demands forced the Federalists to promise a Bill of Rights as a condition of ratification in key states. The Anti-Federalists lost the constitutional argument but won the Bill of Rights — arguably the more important victory."
+  },
+  {
+    "tier": 1,
+    "question": "The US Constitution's system of three branches was designed to ensure that ___?",
+    "answer": "No single branch could accumulate unlimited power — a system of checks and balances",
+    "choices": [
+      "No single branch could accumulate unlimited power — a system of checks and balances",
+      "Every region of the country would be equally represented in national decisions",
+      "Each branch could operate completely independently without interference from the others",
+      "The president could act swiftly in emergencies without waiting for Congressional approval"
+    ],
+    "context": "Madison wrote in Federalist No. 51: 'Ambition must be made to counteract ambition.' The founders had just escaped a king and feared concentrated power above almost everything else. Each branch can check the others: Congress passes laws but the president can veto; the Supreme Court can strike down laws passed by both. No modern democracy has been more deliberately engineered to prevent tyranny."
+  },
+  {
+    "tier": 1,
+    "question": "Alexander Hamilton's economic vision for America prioritized ___?",
+    "answer": "A national bank, public credit, and manufacturing industry",
+    "choices": [
+      "A national bank, public credit, and manufacturing industry",
+      "Free trade with Britain as the world's leading industrial economy",
+      "Direct democracy with minimal government interference in commerce",
+      "State-level banking to prevent dangerous concentrations of federal financial power"
+    ],
+    "context": "Hamilton's financial program — assumption of state war debts, a national bank, and tariffs to protect American manufacturing — was contested by Jefferson at every turn. Jefferson wanted an America of independent yeoman farmers; Hamilton wanted an industrial superpower. Hamilton won the argument. The United States became the world's largest economy using methods he designed. Jefferson's agrarian dream was poetic but economically outcompeted."
+  },
+  {
+    "tier": 1,
+    "question": "The Boston Tea Party of December 1773 was colonists' protest against ___?",
+    "answer": "British taxation without any colonial representation in Parliament",
+    "choices": [
+      "British taxation without any colonial representation in Parliament",
+      "The East India Company's monopoly on all goods entering colonial ports",
+      "The Stamp Act's extension to cover all commercial transactions and documents",
+      "Britain's total ban on colonial trade with France and other European nations"
+    ],
+    "context": "On December 16, 1773, colonists disguised as Mohawk Indians dumped 342 chests of tea (worth roughly £10,000) into Boston Harbor. It wasn't only about the tax — it was about the principle: Parliament was taxing them without giving them any voice in its decisions. Britain's furious response — the Intolerable Acts — united the colonies like nothing before. 'No taxation without representation' became the rallying cry."
+  },
+  {
+    "tier": 1,
+    "question": "The Declaration of Independence was formally adopted in which year?",
+    "answer": "1776, approved by the Continental Congress on July 4th",
+    "choices": [
+      "1775, the year the Revolutionary War began at Lexington and Concord",
+      "1776, approved by the Continental Congress on July 4th",
+      "1777, after the Continental Army had survived its first full winter",
+      "1783, when the Treaty of Paris formally ended the war with Britain"
+    ],
+    "context": "Congress actually voted for independence on July 2 — John Adams predicted that date would be celebrated forever with fireworks and parades. The document was dated July 4, the day it was formally approved and sent to the printer. Most delegates didn't sign it until August 2. The famous image of everyone signing on July 4 is a myth of later illustration — but the idea they signed is real enough."
+  },
+  {
+    "tier": 1,
+    "question": "George Washington's Virginia plantation home was named ___?",
+    "answer": "Mount Vernon, overlooking the Potomac River",
+    "choices": [
+      "Mount Vernon, overlooking the Potomac River",
+      "Monticello, Jefferson's famous hilltop estate in Virginia",
+      "Montpelier, James Madison's plantation in Orange County",
+      "The Hermitage, Andrew Jackson's estate near Nashville"
+    ],
+    "context": "Washington named the estate after British Admiral Edward Vernon, under whom his older half-brother Lawrence had served. Washington expanded the original farmhouse into an elegant eight-sided mansion and farmed it using 316 enslaved people — a fact he wrestled with privately but never resolved publicly. He is buried on the grounds. The estate draws about one million visitors per year."
+  },
+  {
+    "tier": 2,
+    "question": "Thomas Jefferson's Virginia Statute for Religious Freedom (1786) established ___?",
+    "answer": "That government cannot compel religious belief or punish religious dissent",
+    "choices": [
+      "That government cannot compel religious belief or punish religious dissent",
+      "Christianity as the official religion of Virginia by vote of the state legislature",
+      "Equal legal standing for all Protestant denominations while excluding Catholics",
+      "A tax to fund churches chosen by each citizen according to their own faith"
+    ],
+    "context": "Jefferson considered the Statute one of the three greatest achievements of his life — he had it listed on his tombstone alongside writing the Declaration of Independence and founding the University of Virginia. It separated church and state in Virginia a decade before the Constitution and directly inspired the First Amendment's religious freedom clauses. Jefferson believed faith compelled by law is not faith at all."
+  },
+  {
+    "tier": 3,
+    "question": "In MAIN, the 'I' stands for ___?",
+    "answer": "Imperialism, the competition among European powers for colonies and global influence",
+    "choices": [
+      "Industrialism, the rapid spread of factory production across European nations",
+      "Imperialism, the competition among European powers for colonies and global influence",
+      "Internationalism, the series of diplomatic alliances that bound European states",
+      "Isolationism, the tendency of small nations to avoid entanglement in great-power affairs"
+    ],
+    "context": "By 1914, Britain, France, Germany, Russia, and Belgium were all competing to build or expand empires in Africa, Asia, and the Pacific. Colonial rivalry created flash points for conflict wherever great powers' interests collided — from Morocco to the Congo to Korea. When war came, colonial troops from India, Africa, and Australia were all drawn into a conflict rooted partly in European quarrels over who owned the world."
+  },
+  {
+    "tier": 3,
+    "question": "In MAIN, the 'N' stands for ___?",
+    "answer": "Nationalism, fierce pride in one's nation or ethnic group that destabilized multi-ethnic empires",
+    "choices": [
+      "Navalism, referring to the naval arms race between Britain and Germany",
+      "Neutralism, the policy of small nations avoiding entanglement in great-power conflicts",
+      "Nationalism, fierce pride in one's nation or ethnic group that destabilized multi-ethnic empires",
+      "Nihilism, the revolutionary philosophy that justified political violence across Europe"
+    ],
+    "context": "Nationalism fueled independence movements within the multi-ethnic Austro-Hungarian and Ottoman Empires, where dozens of ethnic groups demanded self-determination. Gavrilo Princip, the young Bosnian Serb who assassinated Archduke Franz Ferdinand in 1914, was motivated by Serbian nationalism and resentment of Habsburg rule. His shot set off a chain reaction — the alliance system turned a regional assassination into a world war."
+  },
+  {
     "tier": 4,
-    "context": "Britain and France secretly divided the Ottoman Empire's Arab lands between themselves, drawing borders with rulers and pencils that ignored centuries of ethnic, religious, and tribal geography. The artificial states they created — Iraq, Syria, Lebanon, Jordan — have struggled with internal conflicts ever since, and the agreement is still cited as a root cause of instability in the modern Middle East."
+    "question": "The Schengen Agreement, allowing passport-free travel across European borders, was signed in ___?",
+    "answer": "1985, named for a small Luxembourg village on the Moselle River",
+    "choices": [
+      "1979, when the European Monetary System was first established",
+      "1985, named for a small Luxembourg village on the Moselle River",
+      "1991, the same year the Maastricht Treaty created the European Union",
+      "1995, when the passport-free zone came into full practical effect"
+    ],
+    "context": "The Schengen Agreement was signed on a riverboat on the Moselle on June 14, 1985, by five nations. It took a decade to implement, entering into force in 1995. Today, 27 European countries are part of the Schengen Area — a passport-free zone covering 400 million people and larger than the continental United States. Britain never joined, a fact that foreshadowed Brexit."
+  },
+  {
+    "tier": 4,
+    "question": "The Carolingian Renaissance of the 8th-9th centuries preserved European civilization by ___?",
+    "answer": "Gathering scholars, standardizing Latin script, and copying ancient manuscripts before they were lost",
+    "choices": [
+      "Establishing a Europe-wide network of cathedral schools to educate the clergy",
+      "Gathering scholars, standardizing Latin script, and copying ancient manuscripts before they were lost",
+      "Translating classical Greek texts into Latin for use across the Frankish Empire",
+      "Founding universities at Paris, Bologna, and Oxford to house collections of ancient learning"
+    ],
+    "context": "Charlemagne gathered scholars from across Europe to his palace school at Aachen. His scribes invented Carolingian minuscule — a clear, legible handwriting style that made manuscripts far easier to read and copy. Without this effort, many classical texts that later inspired the Renaissance would have been lost entirely. Some works we have exist only because Carolingian monks copied them. One script to preserve civilization."
+  },
+  {
+    "tier": 4,
+    "question": "The Gallipoli Campaign of 1915 was designed to ___?",
+    "answer": "Knock the Ottoman Empire out of the war by seizing the Dardanelles strait",
+    "choices": [
+      "Knock the Ottoman Empire out of the war by seizing the Dardanelles strait",
+      "Relieve pressure on Russia by opening a direct supply route through the Black Sea",
+      "Capture Istanbul and force an immediate unconditional Ottoman surrender",
+      "Support the Arab Revolt with a diversionary landing on the Ottoman's western flank"
+    ],
+    "context": "Churchill championed Gallipoli as a brilliant shortcut: seize the Dardanelles, knock out the Ottomans, open a supply route to Russia, and win the war early. It was a catastrophe. The Allies suffered 250,000 casualties and withdrew in defeat. For Australia and New Zealand, the ANZAC landings at Gallipoli became the defining national sacrifice — ANZAC Day remains the most solemn national holiday in both countries."
+  },
+  {
+    "tier": 5,
+    "question": "The Black Death's mortality rate in 14th-century Europe has been estimated at ___?",
+    "answer": "30-50% of Europe's population, roughly 25 million deaths in five years",
+    "choices": [
+      "5-10% of Europe's population, concentrated among the elderly and immunocompromised",
+      "15-20% of Europe's population, primarily in urban trading centers and port cities",
+      "30-50% of Europe's population, roughly 25 million deaths in five years",
+      "60-70% of Europe's population, exceeding even the worst of the Roman plagues"
+    ],
+    "context": "The plague killed so many people that some villages disappeared entirely. The psychological shock was shattering — people believed God had abandoned them. But the labor shortage gave surviving peasants unprecedented bargaining power, accelerating the collapse of feudalism. Landlords desperate for workers had to offer better terms. Out of the worst catastrophe in European history came the conditions that made the Renaissance possible."
+  },
+  {
+    "tier": 5,
+    "question": "The Defenestration of Prague (1618) triggered which major European conflict?",
+    "answer": "The Thirty Years' War, the deadliest conflict on European soil before the 20th century",
+    "choices": [
+      "The Wars of Religion in France, which had already devastated the country for decades",
+      "The Thirty Years' War, the deadliest conflict on European soil before the 20th century",
+      "The Schmalkaldic War between Holy Roman Emperor Charles V and Protestant princes",
+      "The Second Silesian War between Austria and the Protestant German states"
+    ],
+    "context": "Protestant Bohemian nobles threw two Catholic imperial governors out of a Prague window — 70 feet onto the moat below. Both survived, which Catholic propagandists attributed to angels. Protestants noted the dung heap below that broke their fall. This petty incident triggered a war that killed up to a third of the German-speaking population in some regions. The eventual Peace of Westphalia in 1648 created the modern concept of national sovereignty."
+  },
+  {
+    "tier": 5,
+    "question": "The eurozone's common currency, the euro, began circulating as physical banknotes in ___?",
+    "answer": "2002, when 12 countries simultaneously replaced their national currencies",
+    "choices": [
+      "1999, when the euro was introduced for electronic financial markets",
+      "2002, when 12 countries simultaneously replaced their national currencies",
+      "2004, when the EU expanded to include Central and Eastern European nations",
+      "2007, when Slovenia became the first new EU member to adopt the currency"
+    ],
+    "context": "On January 1, 2002, euro banknotes and coins began circulating in 12 countries. For the first time since the Roman Empire, much of Europe shared a physical common currency. Within two weeks, citizens in France, Germany, Italy, and nine other countries had surrendered their francs, marks, and lire — currencies that had defined national identity for centuries. Britain, Sweden, and Denmark kept their own currencies. Britain's choice foreshadowed Brexit."
+  },
+  {
+    "tier": 5,
+    "question": "Alexander Hamilton's 'Report on Manufactures' (1791) argued that American prosperity required ___?",
+    "answer": "Active federal support for industry through tariffs, subsidies, and infrastructure",
+    "choices": [
+      "Free trade with Britain as the world's most advanced industrial nation",
+      "Active federal support for industry through tariffs, subsidies, and infrastructure",
+      "An agrarian economy exporting raw materials to finance industrial imports",
+      "A gold-backed currency to attract British investment and stable credit"
+    ],
+    "context": "Hamilton's 1791 report proposed protective tariffs on manufactured imports, government bounties for new industries, and federal investment in roads and canals. Congress rejected it at the time — Jefferson's agrarian vision dominated. But its ideas shaped American economic policy for over a century, from Civil War-era tariffs through the New Deal. The debate between free trade and industrial protection that Hamilton started has never fully ended."
+  },
+  {
+    "tier": 5,
+    "question": "The XYZ Affair (1797-1798) strained US-French relations because ___?",
+    "answer": "French agents demanded bribes before they would begin negotiating with American diplomats",
+    "choices": [
+      "France had secretly aided Britain during the Jay Treaty negotiations",
+      "The US refused to honor its 1778 alliance obligations to revolutionary France",
+      "French agents demanded bribes before they would begin negotiating with American diplomats",
+      "French privateers had seized over 300 American merchant ships in the Caribbean"
+    ],
+    "context": "French agents (anonymously referred to as X, Y, and Z) demanded $250,000 in personal bribes plus a massive loan before France would negotiate. When Adams published the dispatches, the outraged public rallied behind him — 'Millions for defense, but not one cent for tribute!' The result was an undeclared naval war with France (the Quasi-War) and the politically disastrous Alien and Sedition Acts, which damaged Adams's presidency."
+  },
+  {
+    "tier": 5,
+    "question": "The Virginia and Kentucky Resolutions (1798) argued that ___?",
+    "answer": "States had the authority to judge federal laws unconstitutional and refuse to enforce them",
+    "choices": [
+      "The Supreme Court alone held authority to strike down unconstitutional legislation",
+      "States had the authority to judge federal laws unconstitutional and refuse to enforce them",
+      "Congress could override any state law that interfered with federal supremacy",
+      "Citizens could individually refuse to comply with laws they considered unconstitutional"
+    ],
+    "context": "Jefferson (Kentucky) and Madison (Virginia) secretly wrote the resolutions to protest the Alien and Sedition Acts. They argued states could 'nullify' unconstitutional federal acts. Madison later distanced himself from the nullification interpretation, calling it dangerous. But Calhoun weaponized the argument in the 1830s as a shield for slavery, and South Carolina cited it in the 1860 secession ordinance. Jefferson's emergency theory became the constitutional argument for civil war."
+  },
+  {
+    "tier": 5,
+    "question": "Chief Justice John Marshall's most consequential legal invention was ___?",
+    "answer": "Judicial review — the Supreme Court's power to strike down laws as unconstitutional",
+    "choices": [
+      "Federal supremacy — the principle that federal law overrides conflicting state laws",
+      "Judicial review — the Supreme Court's power to strike down laws as unconstitutional",
+      "Implied powers — the doctrine that Congress can do anything 'necessary and proper'",
+      "Original intent — the rule that courts must interpret the Constitution as the founders wrote it"
+    ],
+    "context": "In Marbury v. Madison (1803), Marshall declared that the Supreme Court had the power to void acts of Congress that violated the Constitution — even though this power isn't explicitly written in the Constitution. It was a breathtaking act of judicial self-assertion. Marshall served 34 years as Chief Justice and shaped constitutional law more profoundly than any other jurist. The Court's power to check Congress and the president stems entirely from this precedent."
+  },
+  {
+    "tier": 5,
+    "question": "The Hartford Convention (1814-1815) considered ___?",
+    "answer": "New England's possible secession from the Union over opposition to the War of 1812",
+    "choices": [
+      "Emergency coastal defenses against a possible British invasion of New England",
+      "New England's possible secession from the Union over opposition to the War of 1812",
+      "A separate peace initiative negotiating an armistice directly between New England and Britain",
+      "Constitutional amendments to give smaller states greater representation in Congress"
+    ],
+    "context": "New England Federalists, furious about a war that devastated their maritime trade, met secretly in Hartford to discuss grievances and possibly secession. The timing was catastrophically bad: the Treaty of Ghent ended the war just as the convention concluded, making the delegates look like traitors. News of Andrew Jackson's victory at New Orleans arrived simultaneously. The Federalist Party never recovered and ceased to exist within a decade."
+  },
+  {
+    "tier": 5,
+    "question": "The 'Era of Good Feelings' (1816-1824) earned its ironic name because ___?",
+    "answer": "The collapse of the Federalist Party temporarily eliminated open partisan conflict",
+    "choices": [
+      "The end of the War of 1812 created a decade of genuine national prosperity and unity",
+      "Monroe's diplomatic skill neutralized all foreign threats during his presidency",
+      "The Missouri Compromise resolved the slavery question to widespread national satisfaction",
+      "The collapse of the Federalist Party temporarily eliminated open partisan conflict"
+    ],
+    "context": "The name is deeply ironic — beneath the surface calm lurked the Missouri Crisis over slavery, intense regional rivalries, and the bitterest presidential election in American history (1824). Monroe ran unopposed in 1820, receiving all electoral votes but one (a New Hampshire elector wanted Washington to remain the only unanimously chosen president). The good feelings exploded spectacularly with the 'Corrupt Bargain' of 1824-25."
+  },
+  {
+    "tier": 5,
+    "question": "The 'Corrupt Bargain' of 1824 allegedly involved ___?",
+    "answer": "Henry Clay throwing his support to Adams in exchange for being named Secretary of State",
+    "choices": [
+      "Henry Clay throwing his support to Adams in exchange for being named Secretary of State",
+      "Andrew Jackson bribing electors in key states to prevent a House vote on the outcome",
+      "John C. Calhoun arranging his own election as Vice President through secret back-channel deals",
+      "Clay and Crawford combining their votes to prevent both Adams and Jackson from winning"
+    ],
+    "context": "When no candidate won a majority in 1824, the House chose the president. Clay — who finished fourth and was eliminated — gave his support to John Quincy Adams, who then appointed Clay Secretary of State (the traditional stepping stone to the presidency). Jackson, who had won the popular vote, was furious. His rage fueled four years of relentless political warfare that swept him to a landslide victory in 1828, crushing Adams in their rematch."
+  },
+  {
+    "tier": 5,
+    "question": "The Homestead Act of 1862 offered Western settlers ___?",
+    "answer": "160 acres of public land free, provided they farmed it for five years",
+    "choices": [
+      "Government loans to purchase up to 500 acres of surveyed federal land",
+      "160 acres of public land free, provided they farmed it for five years",
+      "Priority rights to purchase pre-surveyed farmland at fixed government prices",
+      "Free transportation and agricultural equipment for families relocating westward"
+    ],
+    "context": "The Homestead Act distributed 270 million acres of public land — 10% of the total US land area — to 1.6 million homesteaders over 50 years. It transformed the American West. It also accelerated the dispossession of Native Americans from their lands at a devastating pace. The last homestead claim in the continental United States was filed in 1974; the last claim anywhere in the US was finalized in Alaska in 1988."
+  },
+  {
+    "tier": 5,
+    "question": "General Winfield Scott's Anaconda Plan at the start of the Civil War called for ___?",
+    "answer": "Blockading Southern ports and controlling the Mississippi River to strangle Confederate supply lines",
+    "choices": [
+      "An immediate assault on Richmond to decapitate the Confederate government",
+      "Blockading Southern ports and controlling the Mississippi River to strangle Confederate supply lines",
+      "Invading Georgia to cut the Confederacy in two before it could mobilize",
+      "A naval bombardment of Charleston to destroy Confederate morale at the war's outset"
+    ],
+    "context": "Named for the snake that squeezes prey to death, Scott's plan was ridiculed in the Northern press as too slow — everyone expected a quick war decided by a single great battle. But Grant's campaigns ultimately followed exactly this logic: naval blockade, control of the Mississippi, and gradual economic strangulation of the South. The Union's industrial and logistical superiority was always the decisive factor; Scott simply saw it first."
+  },
+  {
+    "tier": 5,
+    "question": "Lincoln's 'House Divided' speech (1858) argued that ___?",
+    "answer": "The United States could not permanently survive as half slave and half free",
+    "choices": [
+      "The Republican Party must unite all Northern voters against Southern expansion of slavery",
+      "The United States could not permanently survive as half slave and half free",
+      "Congress should immediately impose a constitutional ban on slavery in all western territories",
+      "Slavery must be abolished in all states at once through a constitutional amendment"
+    ],
+    "context": "Lincoln borrowed the phrase from Jesus's warning in Matthew 12:25 that a house divided against itself cannot stand. He delivered it accepting the Republican Senate nomination in Illinois in 1858. His opponent Stephen Douglas used it against him, painting Lincoln as a dangerous radical who would force civil war. Lincoln lost the Senate race — but the speech made him nationally famous and led directly to his presidential nomination two years later."
+  },
+  {
+    "tier": 5,
+    "question": "The Freedmen's Bureau (1865-1872) was designed primarily to ___?",
+    "answer": "Help formerly enslaved people transition to freedom through education, labor contracts, and legal protection",
+    "choices": [
+      "Administer land redistribution from Confederate plantations to formerly enslaved families",
+      "Recruit formerly enslaved men into the Union Army's occupation forces in the South",
+      "Help formerly enslaved people transition to freedom through education, labor contracts, and legal protection",
+      "Enforce equal pay between Black and white workers across the Southern states"
+    ],
+    "context": "The Bureau established over 1,000 schools and negotiated labor contracts to prevent exploitation. But it was chronically underfunded — Congress never gave it the resources to fulfill its mandate — and President Johnson actively undermined it. When it was abolished in 1872, freed people were left without federal protection as Southern states moved swiftly to reassert white supremacy through Black Codes and, later, Jim Crow laws."
+  },
+  {
+    "tier": 5,
+    "question": "Radical Reconstruction (1867-1877) was characterized by ___?",
+    "answer": "Federal military occupation of the South, Black men voting and holding office for the first time",
+    "choices": [
+      "A negotiated peace restoring Southern states to full self-governance immediately after the war",
+      "Redistribution of plantation land to formerly enslaved families as economic reparations",
+      "Federal military occupation of the South, Black men voting and holding office for the first time",
+      "Constitutional amendments permanently stripping all Confederate leaders of political rights"
+    ],
+    "context": "From 1867 to 1877, federal troops enforced Black voting rights and hundreds of Black men served in Southern legislatures and Congress. Then the troops were withdrawn in the Compromise of 1877 — a political deal that gave Rutherford Hayes the disputed presidency in exchange for ending Reconstruction. Within a generation, Jim Crow laws had stripped Black Southerners of virtually every right gained during Reconstruction."
+  },
+  {
+    "tier": 5,
+    "question": "The Crédit Mobilier scandal of 1872-1873 involved ___?",
+    "answer": "Union Pacific insiders creating a fake construction company to overcharge for the transcontinental railroad and bribe Congress",
+    "choices": [
+      "A French bank that defrauded American investors in Union Pacific Railroad bond offerings",
+      "Union Pacific insiders creating a fake construction company to overcharge for the transcontinental railroad and bribe Congress",
+      "Corrupt land grant deals between railroad companies and Ulysses Grant's Treasury Department",
+      "Foreign investors secretly acquiring controlling interests in American transcontinental railroad companies"
+    ],
+    "context": "Union Pacific executives created Crédit Mobilier, a fake construction company, to charge the railroad double or triple cost for construction — pocketing the difference. They distributed shares to key congressmen, including future President James Garfield. When the scheme was exposed, it implicated the sitting Vice President and dozens of legislators. The scandal epitomized what Mark Twain meant when he called the era 'the Gilded Age' — glittering wealth on the outside, corruption within."
+  },
+  {
+    "tier": 5,
+    "question": "Mark Twain coined the term 'the Gilded Age' to describe the 1870s-1890s as a period of ___?",
+    "answer": "Glittering surface wealth concealing vast inequality, corruption, and political rot",
+    "choices": [
+      "Rapid industrialization that genuinely improved the living standards of most Americans",
+      "Unprecedented national unity and economic optimism following the Civil War",
+      "Glittering surface wealth concealing vast inequality, corruption, and political rot",
+      "American cultural achievement that matched the great artistic traditions of Europe"
+    ],
+    "context": "Twain's 1873 novel 'The Gilded Age' gave the era its name. 'Gilded' — gold on the outside, base metal within. The era produced Carnegie, Rockefeller, and Morgan, but also child labor, brutal factory conditions, and political machines selling government favors to the highest bidder. The robber barons and the muckrakers who exposed them were products of the same age. The question of whether inequality is the price of prosperity or a failure of justice has never left American politics since."
+  },
+  {
+    "tier": 5,
+    "question": "Sherman's March to the Sea in 1864 was designed to ___?",
+    "answer": "Break civilian morale and destroy the Confederate economy's ability to supply its army",
+    "choices": [
+      "Encircle Lee's Army of Northern Virginia from the south to end the war in one stroke",
+      "Secure Confederate rail lines in Georgia to prevent Southern resupply",
+      "Break civilian morale and destroy the Confederate economy's ability to supply its army",
+      "Force Jefferson Davis to negotiate peace terms before the winter of 1864-65"
+    ],
+    "context": "Sherman marched 60,000 Union troops 285 miles from Atlanta to Savannah, cutting a 60-mile-wide swath of destruction through Georgia. He targeted infrastructure — railroads, supplies, farms — not civilians, though the line was blurry in practice. The psychological impact was devastating: the Confederate home front finally understood the war was lost. It was one of the first modern applications of 'total war' — attacking a society's capacity to wage war, not just its army."
+  },
+  {
+    "tier": 5,
+    "question": "The 14th Amendment's equal protection clause was effectively ignored for nearly 100 years because ___?",
+    "answer": "The Supreme Court blessed racial segregation as constitutional under 'separate but equal' in 1896",
+    "choices": [
+      "Congress never passed the enabling legislation required to put the amendment into effect",
+      "Reconstruction governments that ratified it were discredited, making their laws easy to evade",
+      "The Supreme Court blessed racial segregation as constitutional under 'separate but equal' in 1896",
+      "Southern states argued successfully that the amendment applied only to Confederate states"
+    ],
+    "context": "Plessy v. Ferguson (1896) declared racial segregation constitutional as long as facilities were 'separate but equal' — making the 14th Amendment nearly meaningless for the people it was meant to protect. Not until Brown v. Board of Education (1954) did the Court finally apply equal protection as intended. The 58 years between Plessy and Brown saw Jim Crow, lynching, and systematic disenfranchisement proceed with constitutional cover."
+  },
+  {
+    "tier": 5,
+    "question": "The Pullman Strike of 1894 ended when ___?",
+    "answer": "President Cleveland sent federal troops over the Illinois governor's explicit objections",
+    "choices": [
+      "The American Railway Union negotiated a settlement restoring workers' original pay",
+      "The Supreme Court struck down the strike as an illegal interference with interstate commerce",
+      "Pullman Company agreed to restore the wage cuts that had triggered the original walkout",
+      "President Cleveland sent federal troops over the Illinois governor's explicit objections"
+    ],
+    "context": "When railroad workers struck against the Pullman Company, the strike spread to 27 states. Illinois Governor John Altgeld refused to send state troops to break it. Cleveland bypassed him entirely, sending federal troops over Altgeld's furious protest, breaking the strike and landing labor leader Eugene Debs in jail for contempt. The episode demonstrated that federal power could be deployed against workers, not just corporations — and radicalized Debs into a socialist."
+  },
+  {
+    "tier": 5,
+    "question": "Theodore Roosevelt's 'Square Deal' domestic program primarily targeted ___?",
+    "answer": "Railroad monopolies, unsafe food and drugs, and the exploitation of natural resources",
+    "choices": [
+      "The power of labor unions, which Roosevelt viewed as threats to economic competition",
+      "Railroad monopolies, unsafe food and drugs, and the exploitation of natural resources",
+      "Foreign investment in American industries, which he wanted regulated by the federal government",
+      "Immigration from Southern Europe, which he believed was undermining American labor standards"
+    ],
+    "context": "Roosevelt's 'Square Deal' meant that workers, consumers, and businesses all deserved fair treatment. He busted 44 trusts using the Sherman Antitrust Act, created the forerunner to the FDA after Upton Sinclair's 'The Jungle' exposed meatpacking horrors, and set aside 230 million acres of public land for conservation. He remains the president most associated with using federal power to discipline capitalism's worst excesses — and he was a Republican."
+  },
+  {
+    "tier": 5,
+    "question": "The Scopes Trial of 1925 pitted ___?",
+    "answer": "A Tennessee teacher's right to teach evolution against a state law banning the theory",
+    "choices": [
+      "A church's right to discipline members who accepted Darwinian evolution",
+      "The right of states to determine all educational curriculum without federal interference",
+      "A journalist's right to report on religious practices in public schools",
+      "A Tennessee teacher's right to teach evolution against a state law banning the theory"
+    ],
+    "context": "John Scopes was convicted of teaching evolution in violation of Tennessee's Butler Act — but the conviction was overturned on a technicality. The real drama was Clarence Darrow's devastating cross-examination of William Jennings Bryan, the famous orator defending biblical literalism. Bryan died five days after the trial ended. The Scopes Trial marked the first nationally broadcast American trial and made the fundamentalism-modernism debate permanent in American culture."
+  },
+  {
+    "tier": 5,
+    "question": "The Lend-Lease Act of 1941 allowed President Roosevelt to ___?",
+    "answer": "Provide military aid to Britain and Allied nations without requiring immediate payment",
+    "choices": [
+      "Conscript American men into military service for up to two years of training",
+      "Nationalize key defense industries to accelerate American war production",
+      "Provide military aid to Britain and Allied nations without requiring immediate payment",
+      "Deploy US warships to escort Allied convoys across the Atlantic against German submarines"
+    ],
+    "context": "Before Pearl Harbor, Neutrality Acts prevented the US from supplying belligerent nations. Lend-Lease let Roosevelt send Britain desperately needed destroyers, aircraft, and supplies, describing the arrangement as lending a neighbor a garden hose to fight a fire. Churchill called it 'the most unsordid act in the history of any nation.' It extended Britain's survival long enough for the US to enter the war directly — effectively ending American neutrality nine months before Pearl Harbor."
+  },
+  {
+    "tier": 5,
+    "question": "McCarthyism in the early 1950s was characterized by ___?",
+    "answer": "Aggressive anti-communist accusations that destroyed careers based on innuendo rather than evidence",
+    "choices": [
+      "A coordinated CIA program that successfully identified over 200 Soviet agents in federal service",
+      "Congressional hearings that prosecuted and convicted over 100 confirmed communist agents",
+      "Aggressive anti-communist accusations that destroyed careers based on innuendo rather than evidence",
+      "A bipartisan movement against Soviet infiltration in labor unions and major universities"
+    ],
+    "context": "Senator Joseph McCarthy claimed lists of communist agents in the State Department — lists that changed size every time he cited them. His televised Army-McCarthy hearings exposed his bullying tactics to a national audience. Attorney Joseph Welch's devastating question — 'Have you no sense of decency, sir?' — turned public opinion against him. McCarthy was censured by the Senate in 1954 and died in 1957, largely from alcoholism. The word 'McCarthyism' entered the language as a synonym for character assassination through accusation."
+  },
+  {
+    "tier": 5,
+    "question": "The phrase 'military-industrial complex' was coined as a warning by ___?",
+    "answer": "President Eisenhower, in his farewell address on January 17, 1961",
+    "choices": [
+      "Senator McCarthy, who used it to attack defense contractors he suspected of communist ties",
+      "President Kennedy, who referenced it during the Cuban Missile Crisis",
+      "C. Wright Mills, the sociologist who coined the exact phrase in his 1956 book",
+      "President Eisenhower, in his farewell address on January 17, 1961"
+    ],
+    "context": "Eisenhower — a five-star general who had commanded the D-Day invasion — warned that the permanent alliance between the military establishment and defense industries could 'endanger our liberties or democratic processes.' Coming from a general, the warning was stunning. He had originally written 'military-industrial-congressional complex' but removed the word 'congressional' before delivery. The speech is one of the most prophetic in American presidential history."
+  },
+  {
+    "tier": 5,
+    "question": "The Gulf of Tonkin Resolution (1964) authorized ___?",
+    "answer": "The president to use military force in Vietnam without a formal Congressional declaration of war",
+    "choices": [
+      "A UN coalition to intervene militarily in the escalating conflict in Vietnam",
+      "The president to use military force in Vietnam without a formal Congressional declaration of war",
+      "The CIA to escalate covert operations against North Vietnamese supply routes",
+      "Congress to formally declare war on North Vietnam and the National Liberation Front"
+    ],
+    "context": "LBJ reported that North Vietnamese boats had attacked US destroyers in the Gulf of Tonkin. The second attack — which triggered the resolution — almost certainly never happened; the crew of the USS Maddox later admitted they may have been firing at radar shadows. The resolution passed 416-0 in the House and 88-2 in the Senate. Johnson called it 'grandma's nightgown' — it covered everything. It became the legal basis for 500,000 troops and 58,000 American deaths."
+  },
+  {
+    "tier": 5,
+    "question": "The Pentagon Papers, leaked in 1971, revealed that ___?",
+    "answer": "Multiple administrations had systematically deceived the public about the Vietnam War's progress",
+    "choices": [
+      "The CIA had planned the assassination of South Vietnamese president Diem without authorization",
+      "Nixon had personally ordered illegal surveillance of antiwar protesters",
+      "Multiple administrations had systematically deceived the public about the Vietnam War's progress",
+      "The Gulf of Tonkin attack had been fabricated by North Vietnam to provoke US intervention"
+    ],
+    "context": "Daniel Ellsberg leaked 7,000 pages of classified Defense Department history to the New York Times in 1971. The Papers showed that administrations from Truman through Johnson had privately concluded the war could not be won while publicly promising victory. Nixon tried to suppress publication; the Supreme Court ruled 6-3 that the press could publish. The case transformed the concept of government whistleblowing and accelerated the collapse of public trust in the Vietnam War."
+  },
+  {
+    "tier": 5,
+    "question": "Nixon's resignation in 1974 was triggered by the revelation that ___?",
+    "answer": "White House tapes proved he personally approved the cover-up of the Watergate break-in",
+    "choices": [
+      "White House tapes proved he personally approved the cover-up of the Watergate break-in",
+      "CIA agents under his direct command had broken into Democratic Party headquarters",
+      "The White House had sold political pardons to major Republican donors",
+      "His administration had secretly sold weapons to North Vietnam while negotiating peace"
+    ],
+    "context": "The 'smoking gun' tape revealed Nixon telling his chief of staff to use the CIA to obstruct the FBI's Watergate investigation — just six days after the break-in. The day after the tape was released, Nixon's remaining congressional support collapsed. Republican leaders told him he would be impeached and convicted. He resigned on August 9, 1974 — the only president in American history to do so. Gerald Ford pardoned him a month later."
+  },
+  {
+    "tier": 5,
+    "question": "The Reagan Doctrine held that the US would ___?",
+    "answer": "Actively support anti-communist insurgents fighting Soviet-backed governments worldwide",
+    "choices": [
+      "Actively support anti-communist insurgents fighting Soviet-backed governments worldwide",
+      "Pursue arms reduction treaties to reduce nuclear tensions with the Soviet Union",
+      "Maintain strict neutrality in regional conflicts unless American interests were directly threatened",
+      "Build a permanent missile defense shield making US territory invulnerable to Soviet attack"
+    ],
+    "context": "Under the Reagan Doctrine, the US armed and funded guerrillas in Afghanistan (the Mujahideen), Nicaragua (the Contras), Angola (UNITA), and Cambodia against Soviet-aligned governments. The Afghanistan campaign contributed to bleeding the Soviet military into exhaustion and eventual withdrawal. In Nicaragua, covert support led to the Iran-Contra scandal, the most serious constitutional crisis of the Reagan years."
+  },
+  {
+    "tier": 5,
+    "question": "The Iran-Contra Affair revealed that Reagan administration officials had ___?",
+    "answer": "Secretly sold arms to Iran and illegally used the profits to fund Nicaraguan rebels",
+    "choices": [
+      "Secretly sold arms to Iran and illegally used the profits to fund Nicaraguan rebels",
+      "Secretly negotiated with Iran before the 1980 election to delay the hostage release",
+      "Authorized the CIA to assassinate the Iranian Revolutionary Guard commander",
+      "Secretly approved Congress's classified legislation funding both Iran and the Nicaraguan Contras"
+    ],
+    "context": "The administration sold weapons to Iran (which was under an arms embargo) and secretly used the proceeds to fund the Contras in Nicaragua — which Congress had explicitly prohibited by law. National Security Council staffer Oliver North orchestrated the scheme. Reagan claimed he didn't know about the diversion of funds. Whether that was true remains disputed. North was convicted but had his conviction overturned on procedural grounds."
+  },
+  {
+    "tier": 5,
+    "question": "The fall of the Berlin Wall on November 9, 1989 was triggered by ___?",
+    "answer": "A bureaucratic miscommunication that led an East German official to announce immediate border opening on live TV",
+    "choices": [
+      "A NATO military ultimatum that forced East Germany to open its borders to avoid conflict",
+      "Mikhail Gorbachev's direct order to open the wall as part of his glasnost reforms",
+      "A bureaucratic miscommunication that led an East German official to announce immediate border opening on live TV",
+      "A coordinated popular uprising planned by West German intelligence services"
+    ],
+    "context": "East German spokesman Günter Schabowski was handed a note announcing new border rules — meant to take effect the next day with proper processing. He hadn't been briefed. Asked when the new rules applied, he consulted his notes and said: 'Immediately, without delay.' The announcement aired live. Within hours, crowds overwhelmed checkpoints. Guards who had orders to shoot let people through. The Wall didn't fall to force — it fell to a bureaucratic accident and a moment of human decency from border guards who chose not to fire."
+  },
+  {
+    "tier": 5,
+    "question": "Radio Mille Collines (RTLM) was essential to the Rwandan Genocide because ___?",
+    "answer": "It broadcast hate propaganda, named specific Tutsi targets, and coordinated militia movements",
+    "choices": [
+      "It broadcast premature peace claims that confused local authorities into inaction",
+      "It relayed Rwandan government evacuation orders that the military then intercepted",
+      "It amplified United Nations broadcasts that inadvertently inflamed ethnic tensions",
+      "It broadcast hate propaganda, named specific Tutsi targets, and coordinated militia movements"
+    ],
+    "context": "RTLM played pop music and genocidal incitement in alternating segments, making it enormously popular. It called Tutsis 'inyenzi' (cockroaches), broadcast the names and locations of specific individuals to be killed, and gave instructions to local militias. After the genocide, UN tribunals prosecuted the station's leaders for crimes against humanity — a landmark ruling establishing that media incitement to genocide is itself a war crime."
+  },
+  {
+    "tier": 5,
+    "question": "Mao's Great Leap Forward (1958-1962) caused an estimated ___?",
+    "answer": "30-45 million deaths from famine — the deadliest in recorded human history",
+    "choices": [
+      "5-8 million deaths, primarily concentrated in Sichuan and Hunan provinces",
+      "15-20 million deaths, spread proportionally across all Chinese regions",
+      "30-45 million deaths from famine — the deadliest in recorded human history",
+      "2-3 million deaths, mainly from forced displacement of peasant communities"
+    ],
+    "context": "Mao's campaign to rapidly industrialize China by melting down farm tools into (useless) backyard steel, while forcing collective farming, produced catastrophic food shortages. Local officials falsified harvest statistics to meet quotas — and avoid being purged. Peasants starved while false reports of abundance flowed upward. The scale was concealed from the world for decades. When Western economists finally studied the data in the 1980s, the death toll shocked even those who had long criticized Mao."
+  },
+  {
+    "tier": 5,
+    "question": "The Bay of Pigs invasion (April 1961) failed primarily because ___?",
+    "answer": "Kennedy cancelled the promised US air support and the expected popular uprising never materialized",
+    "choices": [
+      "Soviet submarines intercepted the invasion fleet before it reached the Cuban coastline",
+      "Kennedy deliberately sabotaged the mission to avoid provoking a Soviet response",
+      "Kennedy cancelled the promised US air support and the expected popular uprising never materialized",
+      "The invasion force was outgunned by Cuban troops equipped entirely with Soviet weapons"
+    ],
+    "context": "The CIA had planned the invasion under Eisenhower; Kennedy inherited it. At the last minute, Kennedy cancelled the air strikes meant to destroy Cuba's air force on the ground — fearing the US footprint would be too visible. Without air cover, the landing brigade was trapped on the beach within three days and captured. The humiliating failure emboldened Khrushchev, who concluded Kennedy was weak and indecisive. He began secretly deploying nuclear missiles to Cuba — triggering the most dangerous crisis of the Cold War."
+  },
+  {
+    "tier": 5,
+    "question": "The Cuban Missile Crisis ended when ___?",
+    "answer": "The Soviets withdrew missiles in exchange for a US non-invasion pledge and secret removal of US missiles from Turkey",
+    "choices": [
+      "The UN brokered a direct Soviet-American meeting producing immediate missile withdrawal",
+      "Kennedy threatened a nuclear strike on Cuba unless missiles were removed within 24 hours",
+      "Cuba voluntarily demilitarized in exchange for normalized US trade relations",
+      "The Soviets withdrew missiles in exchange for a US non-invasion pledge and secret removal of US missiles from Turkey"
+    ],
+    "context": "The public deal: Soviets remove missiles from Cuba; the US pledges not to invade Cuba. The secret deal — never publicly acknowledged for 25 years — US missiles removed from Turkey. Khrushchev could tell his military he'd gotten something in return, saving face. The crisis revealed how close the world came to nuclear war: a Soviet submarine commander under depth-charge attack actually authorized a nuclear torpedo — only to be talked down by his second-in-command."
+  },
+  {
+    "tier": 5,
+    "question": "Nixon's policy of 'détente' in the 1970s was designed primarily to ___?",
+    "answer": "Exploit the Sino-Soviet split and reduce Cold War military costs through arms control agreements",
+    "choices": [
+      "Build a broader coalition of Western nations to contain Soviet global expansion",
+      "Create economic opportunities for American corporations in communist markets",
+      "Exploit the Sino-Soviet split and reduce Cold War military costs through arms control agreements",
+      "Reduce domestic antiwar sentiment by appearing to moderate the nuclear standoff"
+    ],
+    "context": "By reaching out to China, Nixon gave the Soviets an incentive to negotiate — they feared a US-China alliance directed at them. The resulting SALT I arms agreement froze nuclear missile launchers. It was geopolitical chess of a high order: using communist China to pressure communist Russia, while reducing the staggering cost of the nuclear standoff. Détente collapsed when the Soviets invaded Afghanistan in 1979, but the Sino-Soviet split Nixon exploited changed the Cold War permanently."
+  },
+  {
+    "tier": 5,
+    "question": "The neoconservative foreign policy philosophy that shaped the Iraq War argued that ___?",
+    "answer": "Liberal democracy could be spread through military force, transforming the entire Middle East",
+    "choices": [
+      "American power should be used only in direct response to attacks on American soil",
+      "Economic engagement and patient diplomacy were more effective than military intervention",
+      "Nuclear deterrence alone was sufficient to prevent regional conflicts from spreading",
+      "Liberal democracy could be spread through military force, transforming the entire Middle East"
+    ],
+    "context": "Neoconservatism emerged from Cold War liberals disillusioned with détente who believed America had a moral obligation to use its power to spread democracy. After 9/11, this philosophy drove the decision to invade Iraq — believing democratic transformation would cascade across the region. The Iraq War became its definitive test. The results — sectarian chaos, the rise of ISIS, and 4,500 American dead — remain fiercely contested: advocates blame execution failures; critics blame the premise."
+  },
+  {
+    "tier": 5,
+    "question": "The War Powers Resolution (1973) was passed to ___?",
+    "answer": "Require presidents to notify Congress within 48 hours of deploying troops and limit unauthorized deployments to 60 days",
+    "choices": [
+      "Grant Congress the exclusive right to declare all military engagements abroad",
+      "Allow presidents to deploy troops only in response to an actual attack on US soil",
+      "Create a joint congressional-executive committee to jointly approve military operations",
+      "Require presidents to notify Congress within 48 hours of deploying troops and limit unauthorized deployments to 60 days"
+    ],
+    "context": "Passed over Nixon's veto in the wake of Vietnam, the Resolution was designed to prevent future presidents from waging undeclared wars for years at a time. Every president since has contested its constitutionality. In practice, presidents routinely ignore the 60-day limit, and Congress has almost never enforced it — choosing political safety over institutional authority. The tension between congressional war-making power and presidential military action remains one of the Constitution's most unresolved conflicts."
+  },
+  {
+    "tier": 5,
+    "question": "The Austro-Hungarian Dual Monarchy was created in 1867 by ___?",
+    "answer": "The Ausgleich ('compromise') that gave Hungary equal status within the Habsburg Empire",
+    "choices": [
+      "The Treaty of Prague that followed Austria's defeat by Prussia in the Seven Weeks' War",
+      "The Ausgleich ('compromise') that gave Hungary equal status within the Habsburg Empire",
+      "The Congress of Berlin's reorganization of Central European political boundaries",
+      "A constitutional referendum in which all Habsburg subject nationalities voted for federation"
+    ],
+    "context": "After Austria's humiliating defeat by Prussia in 1866, the Habsburgs could no longer afford to antagonize Hungary. The Ausgleich created two equal kingdoms sharing one emperor, one army, and one foreign policy. Austria and Hungary each governed their own internal affairs. The arrangement tried to hold together a multiethnic empire of a dozen nationalities — and held for 51 years before WWI finally tore it apart."
+  },
+  {
+    "tier": 5,
+    "question": "The Crimean War (1853-1856) was fought primarily because ___?",
+    "answer": "Britain and France moved to prevent Russia from expanding influence over the declining Ottoman Empire",
+    "choices": [
+      "The Ottoman Empire invaded Russia to recapture territories lost in earlier Russo-Turkish wars",
+      "France sought to reassert Mediterranean dominance after its humiliation in the Napoleonic Wars",
+      "Britain and France moved to prevent Russia from expanding influence over the declining Ottoman Empire",
+      "Russia invaded Ottoman territory to protect Christian holy sites from Islamic rule"
+    ],
+    "context": "Britain and France went to war alongside the Ottoman Empire not out of affection for the Ottomans, but to prevent Russia from gaining control of the Bosphorus strait — which would threaten Britain's route to India. The war pioneered war photography, modern nursing (Florence Nightingale), and electric telegraph communication for military command. The Charge of the Light Brigade became immortal as a symbol of brave men sacrificed by incompetent commanders."
+  },
+  {
+    "tier": 5,
+    "question": "The Truman Doctrine (1947) committed the United States to ___?",
+    "answer": "Supporting free peoples resisting subjugation by armed minorities or outside pressures",
+    "choices": [
+      "Providing military assistance to any nation at war with a communist government",
+      "Guaranteeing the territorial integrity of all European nations against Soviet encroachment",
+      "Supporting free peoples resisting subjugation by armed minorities or outside pressures",
+      "Funding European economic reconstruction to prevent communism from exploiting poverty"
+    ],
+    "context": "Truman asked Congress for $400 million to support Greece and Turkey in 1947 — both under Soviet pressure. He justified the request with a sweeping universal principle: the US would support free peoples resisting subjugation anywhere in the world. Republican Senator Arthur Vandenberg told Truman he'd have to 'scare the hell out of the American people' to get the money. The Truman Doctrine's open-ended commitment defined American foreign policy for the next 45 years."
   }
 ]

@@ -379,7 +379,7 @@
       "A loss, when costs exceed revenue",
       "A profit, when revenue exceeds costs",
       "A surplus, when supply exceeds demand",
-      "A revenue, the total income before expenses"
+      "A deficit, when expenditure exceeds available capital"
     ],
     "context": "A loss is the opposite of profit -- costs exceed revenue. Persistent losses signal that resources are being used inefficiently and should be redirected. It's the market's way of saying 'try something different.'"
   },
@@ -494,26 +494,26 @@
   {
     "tier": 1,
     "question": "Goods brought into a country from abroad are called:",
-    "answer": "Imports, goods purchased from foreign producers",
+    "answer": "Imports",
     "choices": [
-      "Imports, goods purchased from foreign producers",
-      "Exports, goods sold to buyers in other countries",
-      "Tariffs, taxes levied on goods crossing borders",
-      "Subsidies, government payments to domestic producers"
+      "Imports",
+      "Exports",
+      "Tariffs",
+      "Quotas"
     ],
-    "context": "Imports are goods or services purchased from foreign producers. The U.S. imports bananas from Central America because the tropical climate there makes growing them far cheaper than doing so domestically."
+    "context": "Imports are goods or services purchased from foreign producers. The U.S. imports bananas from Central America because the tropical climate there makes growing them far cheaper domestically. The opposite -- goods sold to foreign buyers -- are called exports."
   },
   {
     "tier": 1,
     "question": "Goods sent from one country to another are called:",
-    "answer": "Exports, goods sold to buyers in other countries",
+    "answer": "Exports",
     "choices": [
-      "Exports, goods sold to buyers in other countries",
-      "Imports, goods purchased from foreign producers",
-      "Remittances, money sent home by workers living abroad",
-      "Tariffs, taxes imposed on goods crossing national borders"
+      "Exports",
+      "Imports",
+      "Tariffs",
+      "Remittances"
     ],
-    "context": "Exports are goods or services sold to foreign buyers. They bring money into the exporting country, which is why governments often promote exports as a path to economic growth."
+    "context": "Exports are goods or services sold to foreign buyers. They bring money into the exporting country, creating jobs and income for domestic workers. Germany's export-driven economy shows how a country can prosper by selling high-quality manufactured goods worldwide. The opposite -- goods purchased from abroad -- are called imports."
   },
   {
     "tier": 1,
@@ -925,15 +925,15 @@
   },
   {
     "tier": 2,
-    "question": "In a command economy, who makes economic decisions -- and what is the fundamental problem this creates?",
-    "answer": "The government -- but it lacks the dispersed local knowledge that markets use through prices",
+    "question": "In a command economy, who makes the major economic decisions?",
+    "answer": "The government or central planning authority",
     "choices": [
-      "The government -- but it lacks the dispersed local knowledge that markets use through prices",
-      "The government -- and it can efficiently direct resources better than decentralized markets",
-      "Individual consumers -- guided by central bank interest rate signals and fiscal policy",
-      "State-owned enterprises -- which negotiate production targets directly with foreign investors"
+      "The government or central planning authority",
+      "Individual consumers and firms responding to market prices",
+      "State-owned enterprises negotiating output targets with foreign investors",
+      "Industry councils elected by workers in each production sector"
     ],
-    "context": "Central planners in a command economy face what Hayek called the 'knowledge problem': the information needed to allocate resources efficiently is scattered among millions of people and cannot be collected in one place. Prices in free markets aggregate this knowledge automatically."
+    "context": "In a command economy, the government decides what to produce, how much, and at what price. The Soviet Union was the largest experiment: central planners set targets for everything from steel output to shoe sizes. Economists including Friedrich Hayek argued this system faces a fundamental challenge -- no central body can replicate the information that market prices aggregate from millions of individual decisions."
   },
   {
     "tier": 2,
@@ -1094,9 +1094,9 @@
   {
     "tier": 2,
     "question": "When a government increases the money supply faster than economic output grows, what happens and why?",
-    "answer": "Prices rise (inflation), because more money is chasing the same goods -- this is why sound money matters",
+    "answer": "Prices rise (inflation), because more money is chasing the same goods",
     "choices": [
-      "Prices rise (inflation), because more money is chasing the same goods -- this is why sound money matters",
+      "Prices rise (inflation), because more money is chasing the same goods",
       "Prices fall because greater money supply increases competition among sellers",
       "Unemployment drops as businesses expand hiring to meet rising consumer demand",
       "GDP grows in real terms because higher spending raises actual productive output"
@@ -1212,7 +1212,7 @@
     "context": "A budget surplus means the government collected more in taxes and other revenues than it spent. Surpluses can be used to pay down national debt or saved for future downturns -- though politically, they're rare because spending is always popular."
   },
   {
-    "tier": 2,
+    "tier": 3,
     "question": "What is fiat currency, and why is it vulnerable to inflation in a way commodity money is not?",
     "answer": "Money with no commodity backing, declared legal tender -- governments can print it without limit, enabling inflation",
     "choices": [
@@ -1248,7 +1248,7 @@
     "context": "Free trade agreements remove tariffs and barriers between countries, letting goods flow more freely. NAFTA (now USMCA) eliminated most tariffs between the U.S., Canada, and Mexico, dramatically boosting trade among all three."
   },
   {
-    "tier": 2,
+    "tier": 3,
     "question": "What does it mean when a country has a 'comparative advantage' in a product?",
     "answer": "The country can produce it at a lower opportunity cost than others",
     "choices": [
@@ -1368,7 +1368,7 @@
     "context": "The CPI tracks the price of a typical 'basket' of goods -- groceries, rent, gas, clothing. If the basket cost $100 last year and $103 this year, inflation was 3%. It's the most widely used inflation gauge in everyday life."
   },
   {
-    "tier": 2,
+    "tier": 3,
     "question": "What is gross national product (GNP)?",
     "answer": "The total value of goods and services produced by a country's residents, whether at home or abroad",
     "choices": [
@@ -2028,7 +2028,7 @@
     "context": "Stagflation combines the worst of both worlds: high inflation AND high unemployment. It defied Keynesian theory, which assumed the two couldn't coexist. The 1970s oil crises proved otherwise, forcing economists to rethink their models."
   },
   {
-    "tier": 3,
+    "tier": 4,
     "question": "What is the Lorenz curve used to show?",
     "answer": "The distribution of income or wealth across a population",
     "choices": [
@@ -2040,7 +2040,7 @@
     "context": "The Lorenz curve plots cumulative income share against cumulative population share. A perfectly equal society would show a 45-degree line; the further the curve bows away from that line, the greater the inequality. The Gini coefficient is derived from this curve."
   },
   {
-    "tier": 3,
+    "tier": 4,
     "question": "What does the Gini coefficient measure?",
     "answer": "Income or wealth inequality within a country",
     "choices": [
@@ -2052,7 +2052,7 @@
     "context": "The Gini coefficient compresses the Lorenz curve into a single number from 0 (perfect equality) to 1 (one person has everything). Scandinavian countries score around 0.25; the U.S. is about 0.39; South Africa exceeds 0.60."
   },
   {
-    "tier": 3,
+    "tier": 4,
     "question": "What is a monopsony?",
     "answer": "A market with only one buyer, able to suppress prices paid to sellers",
     "choices": [
@@ -2112,7 +2112,7 @@
     "context": "Rent control in cities like New York and San Francisco has consistently produced housing shortages. Landlords let buildings deteriorate or convert them to condos, while waiting lists grow to years. As economist Assar Lindbeck said, rent control is 'the most efficient technique presently known to destroy a city -- except for bombing.'"
   },
   {
-    "tier": 3,
+    "tier": 4,
     "question": "What is the Phillips curve?",
     "answer": "A graph showing the inverse trade-off between inflation and unemployment rates",
     "choices": [
@@ -2196,19 +2196,7 @@
     "context": "The first slice of pizza when you're starving is heavenly; the eighth slice makes you sick. Each additional unit of the same good provides less satisfaction. This explains why people diversify their consumption rather than buying only one thing."
   },
   {
-    "tier": 3,
-    "question": "What is structural unemployment?",
-    "answer": "Unemployment caused by changes in industry structure or technology making some skills obsolete",
-    "choices": [
-      "Unemployment caused by changes in industry structure or technology making some skills obsolete",
-      "Unemployment caused by an economic recession reducing overall demand for labor across industries",
-      "Unemployment that occurs while workers voluntarily search between available job openings",
-      "Unemployment tied to predictable seasonal fluctuations in industries like agriculture or tourism"
-    ],
-    "context": "When coal plants close and miners can't easily become software engineers, that's structural unemployment. It's caused by fundamental shifts in the economy -- technological change, globalization, or industry decline -- and requires retraining, not just job searching."
-  },
-  {
-    "tier": 3,
+    "tier": 4,
     "question": "What is the full employment rate in economics?",
     "answer": "The unemployment rate when only frictional and structural unemployment exist",
     "choices": [
@@ -2569,7 +2557,7 @@
   },
   {
     "tier": 4,
-    "question": "If MPC = 0.8, what is the simple Keynesian spending multiplier?",
+    "question": "If the marginal propensity to consume (MPC) equals 0.8, what is the simple Keynesian spending multiplier?",
     "answer": "5",
     "choices": [
       "5",
@@ -2746,18 +2734,6 @@
       "Average wage across all employment sectors, weighted by workforce size"
     ],
     "context": "GDP per capita divides total economic output by population, giving a rough average of how much each person produces. It's the most commonly used proxy for living standards, though it hides inequality and non-market activities."
-  },
-  {
-    "tier": 4,
-    "question": "What is 'economic rent' in economics?",
-    "answer": "Payment to a factor of production above the minimum needed to keep it in use",
-    "choices": [
-      "Payment to a factor of production above the minimum needed to keep it in use",
-      "Income generated from leasing land or physical property under contractual agreement",
-      "Returns on invested capital that exceed the prevailing market rate of interest",
-      "Profit earned by a firm that exploits barriers to entry in a monopolistic market"
-    ],
-    "context": "Economic rent is payment above the minimum needed to keep a resource in its current use. A superstar athlete earning $30 million when they'd play for $500,000 receives $29.5 million in economic rent. Rent-seeking tries to capture such payments without creating new value."
   },
   {
     "tier": 4,
@@ -3024,7 +3000,7 @@
     "context": "Classical economists from Smith to Ricardo believed markets self-correct: prices and wages adjust to clear markets without government help. Say's Law — 'supply creates its own demand' — was the cornerstone. Keynes later challenged this view during the Great Depression, arguing markets could get stuck in prolonged slumps."
   },
   {
-    "tier": 5,
+    "tier": 3,
     "question": "What is 'marginal utility'?",
     "answer": "The additional satisfaction gained from consuming one more unit of a good",
     "choices": [
@@ -3034,18 +3010,6 @@
       "The change in consumer surplus that results from a small rise in the market price"
     ],
     "context": "Marginal utility is the extra satisfaction from consuming one more unit. It typically declines: the first bite of chocolate cake is divine; the tenth is nauseating. This declining marginal utility curve explains why demand curves slope downward and underpins much of modern consumer theory."
-  },
-  {
-    "tier": 5,
-    "question": "What does the law of diminishing marginal utility state?",
-    "answer": "As you consume more of a good, the additional satisfaction from each unit decreases",
-    "choices": [
-      "As you consume more of a good, the additional satisfaction from each unit decreases",
-      "As total consumption rises, overall cumulative satisfaction eventually turns negative",
-      "As output expands beyond capacity, the marginal cost of each additional unit rises steadily",
-      "Each additional unit consumed adds satisfaction at a slower rate, but marginal utility stays positive"
-    ],
-    "context": "Each additional unit of the same good provides less additional satisfaction. This principle, formalized independently by Jevons, Menger, and Walras in the 1870s, solved the water-diamond paradox — why water is cheap despite being vital — and revolutionized how economists understand value."
   },
   {
     "tier": 5,
@@ -3073,18 +3037,6 @@
   },
   {
     "tier": 5,
-    "question": "What does the Consumer Price Index (CPI) measure?",
-    "answer": "The average change in prices paid by urban consumers for a basket of goods and services",
-    "choices": [
-      "The average change in prices paid by urban consumers for a basket of goods and services",
-      "The total market value of all goods and services produced domestically in a given year",
-      "The average change in wholesale prices received by domestic producers before retail markup",
-      "A weighted index of currency exchange rates adjusted for international purchasing power"
-    ],
-    "context": "The CPI tracks a specific basket of about 80,000 items that typical urban consumers buy. It's the government's primary inflation gauge and drives adjustments to Social Security, tax brackets, and millions of contracts indexed to inflation."
-  },
-  {
-    "tier": 5,
     "question": "What does the Producer Price Index (PPI) measure?",
     "answer": "The average change in prices received by domestic producers for their goods",
     "choices": [
@@ -3096,7 +3048,7 @@
     "context": "The PPI tracks wholesale prices that producers receive -- it's a leading indicator of consumer inflation because rising production costs eventually get passed to shoppers. When PPI spikes, CPI usually follows within a few months."
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "What was the Great Depression?",
     "answer": "A severe global economic downturn that began with the U.S. stock market crash of 1929",
     "choices": [
@@ -3156,7 +3108,7 @@
     "context": "MV = PQ states that money supply times velocity equals price level times real output. If velocity and output are stable, increasing M (money supply) directly increases P (prices). It's the mathematical backbone of monetarism."
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "Who wrote 'The General Theory of Employment, Interest and Money'?",
     "answer": "John Maynard Keynes",
     "choices": [
@@ -3168,7 +3120,7 @@
     "context": "John Maynard Keynes published his 'General Theory' in 1936, arguing that insufficient aggregate demand — not wage rigidity — caused the Great Depression. His prescription of government spending to fill the demand gap became the foundation of modern macroeconomic policy."
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "Who wrote 'The Wealth of Nations'?",
     "answer": "Adam Smith",
     "choices": [
@@ -3180,7 +3132,7 @@
     "context": "Adam Smith published 'The Wealth of Nations' in 1776, the same year as the American Declaration of Independence. His insights about specialization, free trade, and the invisible hand laid the intellectual foundation for modern market economics."
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "What economic concept did Milton Friedman champion?",
     "answer": "Monetarism -- controlling the money supply to manage inflation",
     "choices": [
@@ -3192,7 +3144,7 @@
     "context": "Friedman argued that the Federal Reserve's mismanagement of the money supply -- not market failure -- caused the Great Depression. His monetarism prescribed steady, predictable money supply growth rather than activist fiscal or monetary policy."
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "What is 'human capital'?",
     "answer": "The skills, education, and experience embodied in workers that increases their productivity",
     "choices": [
@@ -3228,7 +3180,7 @@
     "context": "TFP is the 'magic residual' -- the growth that can't be explained by more workers or more machines. It captures innovation, better management, and technological progress. TFP growth is the ultimate driver of rising living standards."
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "What is 'behavioral economics'?",
     "answer": "The study of how psychological biases systematically affect economic decision-making",
     "choices": [
@@ -3240,7 +3192,7 @@
     "context": "Behavioral economics documents the systematic ways humans deviate from rational decision-making. We're loss-averse, anchored by irrelevant numbers, overconfident, and terrible at calculating probabilities. Daniel Kahneman won a Nobel Prize for mapping these 'predictably irrational' tendencies."
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "What caused the 2008 financial crisis?",
     "answer": "A collapse in the U.S. housing market fueled by risky mortgage lending and complex financial products",
     "choices": [
@@ -3276,7 +3228,7 @@
     "context": "Keynes identified three motives for holding money: transactions, precautionary, and speculative. The speculative motive means people hold cash to speculate on future interest rate changes. When rates are very low, people expect them to rise (bond prices to fall), so they hoard cash rather than buying bonds — contributing to the liquidity trap."
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "What does the Human Development Index (HDI) measure?",
     "answer": "A composite of income, education, and life expectancy to assess development beyond GDP",
     "choices": [
@@ -3288,7 +3240,7 @@
     "context": "Developed by Mahbub ul Haq and Amartya Sen for the UNDP, the HDI combines income, education, and life expectancy into a single score, capturing development beyond GDP. Norway consistently tops the list because it excels in all three dimensions, while some oil-rich nations rank lower despite high incomes due to poor education or health outcomes."
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "What is 'supply-side economics'?",
     "answer": "The view that reducing taxes and deregulation will boost production and grow the overall economy",
     "choices": [
@@ -3312,7 +3264,7 @@
     "context": "Hayek's deepest insight is that the knowledge needed to run an economy is not scientific data sitting in files -- it's practical, local, and often tacit knowledge possessed by millions of people. Prices in free markets aggregate this dispersed knowledge; no central authority can replicate this process, making central planning inevitably inefficient regardless of the planners' intentions."
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "What is 'capital flight'?",
     "answer": "Rapid movement of financial assets or capital out of a country due to instability or unfavorable conditions",
     "choices": [
@@ -3420,7 +3372,7 @@
     "context": "When a country's own currency becomes worthless through hyperinflation, citizens often turn to the U.S. dollar. Ecuador, El Salvador, and Panama officially dollarized, surrendering monetary policy independence in exchange for currency stability. The trade-off is significant: dollarized nations cannot adjust interest rates or print money to respond to local economic crises."
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "What is 'austerity' in economic policy?",
     "answer": "Government policies to reduce spending and increase taxes to reduce deficits",
     "choices": [
@@ -3456,7 +3408,7 @@
     "context": "Friedman's negative income tax would replace the entire welfare bureaucracy with a simple formula: below a threshold, you receive money; above it, you pay taxes. It preserves work incentives (you always keep some of each dollar earned) while guaranteeing a basic income floor for all citizens."
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "What is 'anchoring bias' in behavioral economics?",
     "answer": "Over-relying on the first piece of information encountered when making decisions",
     "choices": [
@@ -3468,7 +3420,7 @@
     "context": "In experiments, people asked 'Is the population of Turkey more or less than 5 million?' give much lower estimates than those asked 'more or less than 65 million?' The initial number -- even if arbitrary -- 'anchors' subsequent judgment. It's why retailers show inflated 'original' prices next to sale prices."
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "What is 'loss aversion' in behavioral economics?",
     "answer": "People feel the pain of losses more strongly than the pleasure of equivalent gains",
     "choices": [
@@ -3697,18 +3649,6 @@
   },
   {
     "tier": 2,
-    "question": "What is a bond in finance?",
-    "answer": "A debt security where an investor lends money to a borrower in exchange for interest payments",
-    "choices": [
-      "A share of ownership in a company that entitles the holder to dividends and voting rights",
-      "A debt security where an investor lends money to a borrower in exchange for interest payments",
-      "A financial contract whose value is derived from an underlying asset's price movements",
-      "A pooled investment fund that tracks a broad market index or specific sector"
-    ],
-    "context": "A bond is essentially an IOU. When you buy a government bond, you're lending the government money in exchange for periodic interest payments and return of your principal at maturity. Bonds are typically less risky than stocks."
-  },
-  {
-    "tier": 2,
     "question": "What is consumer confidence?",
     "answer": "How optimistic consumers feel about the economy and their financial situation",
     "choices": [
@@ -3721,7 +3661,7 @@
   },
   {
     "tier": 3,
-    "question": "What is a monopolistic competition?",
+    "question": "What is monopolistic competition?",
     "answer": "A market with many firms selling similar but differentiated products",
     "choices": [
       "A market where a single firm controls all supply and sets prices freely",
@@ -4498,18 +4438,6 @@
       "A model describing how total factor productivity growth determines long-run equilibrium employment levels"
     ],
     "context": "The Beveridge curve plots job vacancies against unemployment. When both are high simultaneously, it signals a matching problem: jobs exist and workers want them, but skills, location, or information barriers prevent connections. A shift outward in the curve indicates worsening matching efficiency in the labor market."
-  },
-  {
-    "tier": 5,
-    "question": "What is financialization?",
-    "answer": "The increasing dominance of financial activities and motives in the economy relative to production",
-    "choices": [
-      "The process by which governments regulate and oversee financial institutions to ensure stability",
-      "The increasing dominance of financial activities and motives in the economy relative to production",
-      "The structural shift from manufacturing toward service-sector employment as economies mature",
-      "The expansion of credit markets to previously unbanked populations through microfinance"
-    ],
-    "context": "Since the 1980s, financial sector profits exploded as a share of the economy while manufacturing declined. Critics argue finance extracted wealth rather than creating it; defenders say financial innovation genuinely improves capital allocation."
   },
   {
     "tier": 5,
@@ -5389,27 +5317,27 @@
   },
   {
     "question": "What is the key difference between a market-determined interest rate and a centrally-set one?",
-    "answer": "A market rate reflects the actual supply of savings and time preferences of borrowers; a centrally-set rate is a political decision that distorts investment signals",
+    "answer": "A market rate emerges from the actual decisions of borrowers and savers; a centrally-set rate is determined by a committee using policy objectives",
     "choices": [
-      "A market rate reflects the actual supply of savings and time preferences of borrowers; a centrally-set rate is a political decision that distorts investment signals",
-      "Market rates are set by commercial bank committees, while central bank rates are determined by democratically accountable government economists",
-      "Centrally-set rates incorporate inflation expectations more accurately because they draw on macroeconomic data unavailable to private lenders",
-      "Market rates fluctuate with short-term sentiment and liquidity conditions, whereas central bank rates are calibrated to long-run equilibrium output"
+      "A market rate emerges from the actual decisions of borrowers and savers; a centrally-set rate is determined by a committee using policy objectives",
+      "Market rates are set by commercial bank committees; central bank rates are determined by democratically elected government economists",
+      "Centrally-set rates incorporate macroeconomic data that private lenders cannot access, making them more accurate than market rates",
+      "Market rates fluctuate with short-term sentiment; central bank rates are pegged to long-run equilibrium output targets"
     ],
-    "tier": 3,
-    "context": "A market rate emerges from the actual savings and borrowing decisions of millions of people -- it reflects real time preferences. A centrally-set rate is an educated guess by a committee. When the guess is wrong, it creates booms, busts, and malinvestment. Austrian economists like Ludwig von Mises and Friedrich Hayek argued that artificially low rates trigger unsustainable credit-fueled booms that must eventually correct."
+    "tier": 4,
+    "context": "Market interest rates emerge from millions of borrowing and saving decisions -- when people save more, rates fall; when credit demand surges, rates rise. Central bank rates are set by a committee based on policy goals like inflation targets and employment. Austrian economists such as Ludwig von Mises and Friedrich Hayek argued that when central bank rates are held below what free markets would set, they distort investment signals and fuel unsustainable credit-driven booms. Mainstream economists generally support active rate management as a stabilization tool."
   },
   {
-    "question": "What is a 'negative real interest rate' and why is it problematic from a sound money perspective?",
-    "answer": "When inflation exceeds the nominal interest rate, saving is penalized -- holders of money and bonds see their real wealth decrease, encouraging speculation over prudent saving",
+    "question": "What is a 'negative real interest rate'?",
+    "answer": "When inflation exceeds the nominal interest rate, so the real purchasing power of savings falls over time",
     "choices": [
-      "When inflation exceeds the nominal interest rate, saving is penalized -- holders of money and bonds see their real wealth decrease, encouraging speculation over prudent saving",
-      "When the central bank sets rates above GDP growth, causing deflation that punishes borrowers while rewarding those who hold currency without investing it",
-      "When nominal rates turn negative, commercial banks charge depositors fees rather than paying interest, eroding balances and discouraging deposits entirely",
-      "When real rates fall below the natural rate of interest, triggering a credit contraction that leads to business cycle distortions and rising unemployment"
+      "When inflation exceeds the nominal interest rate, so the real purchasing power of savings falls over time",
+      "When the central bank sets nominal rates above the GDP growth rate, causing a contraction in borrowing",
+      "When nominal rates turn negative, causing commercial banks to charge fees on deposits rather than pay interest",
+      "When the policy rate falls below the natural rate of interest, triggering a credit contraction"
     ],
-    "tier": 3,
-    "context": "When your savings account pays 2% but inflation runs at 5%, you're losing 3% of your purchasing power annually. Negative real rates punish savers, reward debtors, and push people into riskier investments just to break even."
+    "tier": 4,
+    "context": "When your savings account pays 2% but inflation runs at 5%, your purchasing power shrinks by 3% per year -- that is a negative real interest rate. Negative real rates are common during inflationary periods and are sometimes deliberately used by central banks to encourage spending and investment rather than hoarding. They benefit debtors and penalize savers holding fixed-income assets."
   },
   {
     "question": "What is 'inflation targeting' as practiced by most central banks today, and what is a key criticism?",
@@ -5420,8 +5348,8 @@
       "Central banks target a flexible 0–4% inflation band tied to employment conditions -- critics argue this introduces long-run price unpredictability that undermines saving and planning",
       "Central banks use inflation targeting to stabilize currency exchange rates rather than domestic prices -- critics argue this systematically prioritizes export sectors over ordinary consumers"
     ],
-    "tier": 3,
-    "context": "Most central banks explicitly aim for 2% annual inflation. Critics note this means the central bank is deliberately planning to halve your money's value every 36 years -- making long-term savers the guaranteed losers."
+    "tier": 4,
+    "context": "Most central banks target 2% annual inflation. The stated rationale is that moderate, predictable inflation prevents deflationary spirals and gives monetary policy room to cut rates in downturns. Critics from various perspectives -- including Austrian economists and some mainstream economists -- note this means deliberately planning to halve the real value of savings roughly every 36 years. Savers and fixed-income earners bear this cost while debtors and early recipients of new money benefit."
   },
   {
     "question": "What is the connection between fiat money and the ability of governments to fight wars without directly taxing citizens?",
@@ -5432,8 +5360,8 @@
       "Fiat money historically discouraged warfare by generating currency instability, as repeated wartime hyperinflations exposed its unreliability as a long-term funding mechanism",
       "Fiat money ties major military expenditures to central bank authorization, creating an institutional check that constrains how quickly governments can mobilize resources for war"
     ],
-    "tier": 3,
-    "context": "Before fiat money, kings had to levy visible taxes to fund wars -- and often faced resistance. Modern governments can print money to fund military adventures without asking voters, distributing the cost invisibly through inflation."
+    "tier": 4,
+    "context": "Before fiat money, financing a war required visible taxation or explicit borrowing -- both politically constrained. With fiat currency, governments can expand the money supply to fund military spending, spreading the cost through inflation rather than direct taxation. This is a historical observation across economic schools. The debate is whether this flexibility is a valuable feature enabling emergency response, or a dangerous temptation to avoid democratic accountability."
   },
   {
     "question": "What did Hong Kong's laissez-faire economic policy under John Cowperthwaite demonstrate between 1950 and 1997?",
@@ -5444,20 +5372,20 @@
       "Free trade and low taxes helped initially, but sustained prosperity required deliberate industrial policy to shift Hong Kong's economy away from manufacturing and into financial services",
       "Hong Kong's rise reflected the British colonial administration's active management of capital flows and currency pegs, rather than any genuinely hands-off approach to economic governance"
     ],
-    "tier": 3,
-    "context": "Cowperthwaite, Hong Kong's Financial Secretary from 1961-1971, famously refused to collect GDP statistics because he feared officials would use them to justify intervention. Under his policies of minimal regulation, low flat taxes (around 15%), and free trade, Hong Kong's per-capita GDP rose from about 28% of Britain's in 1960 to surpassing it by the 1990s. Milton Friedman called Hong Kong the best example of free market economics in action."
+    "tier": 4,
+    "context": "Cowperthwaite, Hong Kong's Financial Secretary from 1961-71, refused to collect GDP statistics because he feared officials would use the data to justify intervention. Under policies of minimal regulation, low flat taxes, and free trade, Hong Kong's per-capita income rose from roughly 28% of Britain's in 1960 to surpassing it by the 1990s. Milton Friedman cited it as the closest real-world test of free market economics. Critics note Hong Kong also had extensive public housing and land-use controls, complicating a purely laissez-faire reading of its success."
   },
   {
     "question": "What is the 'knowledge problem' as applied to modern healthcare pricing set by government or insurers?",
-    "answer": "Without market prices, providers and patients lack information about real costs, leading to overuse of some services, underuse of others, and overall resource misallocation",
+    "answer": "Without market prices, providers and patients lack information about the real cost of care relative to alternatives, making efficient allocation difficult",
     "choices": [
-      "Without market prices, providers and patients lack information about real costs, leading to overuse of some services, underuse of others, and overall resource misallocation",
-      "Insurer-set pricing improves efficiency because large institutions can aggregate patient data across millions of claims and allocate resources more accurately than fragmented individual market actors",
-      "Electronic health records and standardized billing codes resolve the knowledge problem in healthcare by giving administrators the data needed to set accurate, cost-reflective prices",
-      "Government pricing in healthcare can replicate market outcomes because regulators use competitive benchmarking and detailed cost-of-production analysis to approximate fair market rates"
+      "Without market prices, providers and patients lack information about the real cost of care relative to alternatives, making efficient allocation difficult",
+      "Insurer-set pricing improves efficiency because large institutions can aggregate patient data across millions of claims",
+      "Electronic health records and standardized billing codes resolve the information problem by giving administrators cost data",
+      "Government pricing can replicate market outcomes when regulators use competitive benchmarking and cost-of-production analysis"
     ],
-    "tier": 4,
-    "context": "When prices are hidden behind insurance and government programs, neither patients nor providers have the information needed for efficient choices. The result is massive price variation, overuse of expensive treatments, and a system that costs far more than it should."
+    "tier": 5,
+    "context": "Hayek's knowledge problem -- that efficient resource allocation requires dispersed local information that no central body can gather -- applies acutely to healthcare. When prices are hidden by insurance or government programs, patients and providers cannot easily compare the value of different treatments. Economists across the spectrum acknowledge this as a genuine challenge; the debate is whether markets, regulated markets, or other mechanisms best address it, given that healthcare also involves information asymmetry, externalities, and equity concerns that pure price mechanisms handle imperfectly."
   },
   {
     "question": "What did the repeal of the Corn Laws in Britain (1846) demonstrate?",
@@ -5468,7 +5396,7 @@
       "Repealing the Corn Laws triggered a severe agricultural depression, demonstrating that domestic industries require sustained protectionist policies to survive foreign competition",
       "The move reflected mercantilist doctrine -- demonstrating that controlling grain imports was essential to maintaining a favorable national trade balance"
     ],
-    "tier": 3,
+    "tier": 4,
     "context": "Britain's Corn Laws protected wealthy landowners by taxing grain imports, keeping bread expensive for the poor. Repeal opened Britain to cheap foreign grain, feeding workers better and freeing up income that fueled the Industrial Revolution's next phase. It became a landmark case for free trade advocates like Richard Cobden and the Anti-Corn Law League."
   },
   {
@@ -5480,7 +5408,811 @@
       "When government spreads both costs and benefits evenly across all citizens, collective action problems are resolved through redistributive taxation and public goods provision",
       "When welfare transfers concentrate among specific demographic groups while tax burdens fall on others, political coalitions form along geographic and income lines"
     ],
-    "tier": 4,
+    "tier": 5,
     "context": "A sugar tariff might cost each American $5/year (dispersed and unnoticed) while giving sugar producers millions in extra profit (concentrated and worth lobbying for). This asymmetry explains why inefficient policies persist despite harming the majority. It is a core insight of public choice theory, associated with economists like Gordon Tullock and Mancur Olson."
+  },
+  {
+    "tier": 4,
+    "question": "What does it mean for a market to have 'barriers to entry'?",
+    "answer": "Obstacles that make it difficult for new competitors to enter an industry",
+    "choices": [
+      "Obstacles that make it difficult for new competitors to enter an industry",
+      "Minimum price regulations preventing sellers from undercutting market prices",
+      "Physical infrastructure costs that limit business operations to specific regions",
+      "Legal disclosure requirements firms must meet before listing on a stock exchange"
+    ],
+    "context": "Barriers to entry include patents, high startup costs, regulatory licenses, brand loyalty, and control of key resources. They allow established firms to earn above-normal profits without new competitors eroding them. High barriers are a defining feature of monopolies and oligopolies; low barriers characterise competitive markets where profit attracts new entrants until prices fall to cost."
+  },
+  {
+    "tier": 5,
+    "question": "What is 'shadow banking'?",
+    "answer": "Credit intermediation performed outside the traditional regulated banking system",
+    "choices": [
+      "Credit intermediation performed outside the traditional regulated banking system",
+      "Informal money lending that operates in developing economies lacking formal banking infrastructure",
+      "Central bank operations conducted off-balance-sheet to avoid public scrutiny of monetary policy",
+      "Illegal financial networks that mimic legitimate banks while evading taxation and reporting rules"
+    ],
+    "context": "Shadow banking includes money market funds, hedge funds, repo markets, and securitization vehicles that perform bank-like functions -- borrowing short and lending long -- without being subject to bank regulation. Before 2008, the shadow banking system rivalled the traditional banking sector in size. When it seized up during the financial crisis, it amplified the collapse significantly, prompting global regulatory efforts to bring it under tighter oversight."
+  },
+  {
+    "tier": 5,
+    "question": "What is a key methodological criticism of the Consumer Price Index (CPI) as an inflation measure?",
+    "answer": "Substitution bias -- the fixed basket does not reflect consumers switching to cheaper goods when prices rise",
+    "choices": [
+      "Substitution bias -- the fixed basket does not reflect consumers switching to cheaper goods when prices rise",
+      "Aggregation error -- the index weights all goods equally, ignoring differences in household spending shares",
+      "Recency bias -- the basket is recalculated monthly, so it overstates price changes in fast-moving markets",
+      "Composition error -- the index includes only durable goods, understating service-sector price pressures"
+    ],
+    "context": "The Boskin Commission (1996) estimated that CPI overstated inflation by about 1.1 percentage points per year, largely due to substitution bias: when beef prices rise, consumers switch to chicken, but the fixed basket still assumes they buy beef. This bias has real consequences -- Social Security benefits and inflation-indexed contracts are adjusted using CPI, so overstatement costs billions in overpayments."
+  },
+  {
+    "tier": 5,
+    "question": "How does marginal utility theory resolve the water-diamond paradox first noted by Adam Smith?",
+    "answer": "Prices reflect marginal utility, not total utility -- water is abundant so its last unit adds little value; diamonds are scarce so each adds much",
+    "choices": [
+      "Prices reflect marginal utility, not total utility -- water is abundant so its last unit adds little value; diamonds are scarce so each adds much",
+      "Prices reflect total utility directly, so diamonds must provide more aggregate lifetime value than water",
+      "The paradox dissolves because diamonds cost far more to extract and produce than water does per unit",
+      "Market prices for both reflect prestige signalling rather than any measure of underlying utility or value"
+    ],
+    "context": "Smith noticed the paradox but had no solution. The 'marginal revolution' of the 1870s -- Jevons, Menger, and Walras working independently -- solved it: value at the margin determines price, not total usefulness. You already have nearly all the water you need; one more glass adds almost nothing. You own no diamonds; one would add enormous satisfaction. This breakthrough unified consumer theory and explained price formation far more powerfully than earlier labour or cost-based value theories."
+  },
+  {
+    "tier": 2,
+    "question": "What is a mutual fund?",
+    "answer": "A pooled investment vehicle that collects money from many investors to buy a diversified portfolio",
+    "choices": [
+      "A pooled investment vehicle that collects money from many investors to buy a diversified portfolio",
+      "A government-issued savings certificate that pays a fixed interest rate at maturity",
+      "A direct ownership stake in the shares of a single publicly traded company",
+      "A bank account that earns higher interest in exchange for locking funds in for a fixed term"
+    ],
+    "context": "Mutual funds pool money from thousands of investors to buy a diversified mix of stocks, bonds, or other assets. Diversification reduces risk because losses in one holding are offset by gains in others. Index mutual funds -- which simply track a market index like the S&P 500 -- are among the most cost-effective investment vehicles available to ordinary investors, a point made forcefully by economist John Bogle, founder of Vanguard."
+  },
+  {
+    "tier": 3,
+    "question": "What does the labor force participation rate measure?",
+    "answer": "The percentage of the working-age population that is either employed or actively seeking work",
+    "choices": [
+      "The percentage of the working-age population that is either employed or actively seeking work",
+      "The share of the total population currently holding full-time employment in the formal economy",
+      "The ratio of employed workers to the total number of hours worked across the economy",
+      "The proportion of job-seekers who find employment within a standard 90-day search period"
+    ],
+    "context": "The participation rate supplements the unemployment rate by capturing workers who have given up searching. When discouraged workers stop looking and exit the labor force, the unemployment rate can fall even though fewer people are actually working -- the participation rate unmasks this effect. In the U.S., participation fell significantly after the 2008 recession and again during COVID-19, tracking demographic trends as well as cyclical economic forces."
+  },
+  {
+    "tier": 1,
+    "question": "Which school of economics emphasizes individual choice, subjective value, and the unintended consequences of government intervention?",
+    "answer": "The Austrian School",
+    "choices": [
+      "The Austrian School",
+      "The Keynesian School",
+      "The Chicago School",
+      "The Mercantilist School"
+    ],
+    "context": "The Austrian School was founded by Carl Menger in Vienna in the 1870s. Its key thinkers -- Menger, Ludwig von Mises, and Friedrich Hayek -- built an economics centered on the choices of individual people rather than aggregate statistics. Their insights about prices, knowledge, and the limits of central planning made them persistent critics of government interference in markets."
+  },
+  {
+    "tier": 1,
+    "question": "According to Austrian economics, who determines the value of a good?",
+    "answer": "Individual people, based on their own subjective preferences",
+    "choices": [
+      "Individual people, based on their own subjective preferences",
+      "Government regulators, based on the cost of production",
+      "Markets, based on the objective average of all buyers' assessments",
+      "Central banks, based on benchmarks set by monetary policy committees"
+    ],
+    "context": "Austrian economics holds a subjective theory of value: nothing has value in itself -- value is assigned by individual people based on how much they want something relative to alternatives. This was a revolutionary break from earlier theories that tied value to labor hours or production cost, and it explains why the same item can be worth very different amounts to different people."
+  },
+  {
+    "tier": 2,
+    "question": "What is the 'economic calculation problem' identified by Ludwig von Mises?",
+    "answer": "Without market prices, central planners cannot rationally allocate resources across an economy",
+    "choices": [
+      "Without market prices, central planners cannot rationally allocate resources across an economy",
+      "Without government oversight, private firms will collude to fix prices and exploit consumers",
+      "Without tax revenue, governments cannot fund the public goods that markets fail to provide",
+      "Without international trade data, domestic producers will misprice goods relative to global markets"
+    ],
+    "context": "In 1920, Mises published his devastating critique of socialist planning: without the price signals generated by private ownership and free exchange, planners have no way to know whether any given use of resources is more or less valuable than alternatives. Steel to build tanks or tractors? No committee could ever assemble enough information to answer rationally. The Soviet Union's chronic shortages and surpluses were seen by many economists as real-world confirmation of Mises's argument."
+  },
+  {
+    "tier": 2,
+    "question": "What did Austrian economist Friedrich Hayek win the Nobel Prize in Economics for in 1974?",
+    "answer": "His analysis of the price system as a mechanism for transmitting dispersed knowledge",
+    "choices": [
+      "His analysis of the price system as a mechanism for transmitting dispersed knowledge",
+      "His development of the IS-LM model used in Keynesian macroeconomics",
+      "His mathematical proof that central planning could replicate market equilibrium",
+      "His empirical research showing that lower taxes increase economic growth"
+    ],
+    "context": "Hayek's 1945 essay 'The Use of Knowledge in Society' argued that the knowledge needed to run an economy is not scientific data sitting in files -- it is practical, local, and often tacit, possessed by millions of individuals. Market prices aggregate all of this dispersed knowledge automatically. No central planner could ever collect and process it. This insight underpins both his Nobel Prize and his famous book 'The Road to Serfdom.'"
+  },
+  {
+    "tier": 2,
+    "question": "What did economist Murray Rothbard argue about central banking?",
+    "answer": "That central banks are a state-granted cartel that enables credit expansion, inflation, and business cycle instability",
+    "choices": [
+      "That central banks are a state-granted cartel that enables credit expansion, inflation, and business cycle instability",
+      "That central banks should be fully nationalized so governments can directly control monetary policy",
+      "That central banks serve a valuable function by stabilizing prices and acting as lenders of last resort",
+      "That central banks should be replaced by currency boards that peg the money supply to GDP growth"
+    ],
+    "context": "Murray Rothbard, building on Mises, argued in 'The Mystery of Banking' (1983) that central banks cartelize the banking system, removing the natural discipline that would otherwise limit credit expansion. Without this discipline, banks can create money far in excess of real savings, generating inflation and artificial booms that inevitably bust. Rothbard advocated abolishing central banks and returning to a 100% gold reserve standard."
+  },
+  {
+    "tier": 3,
+    "question": "What is praxeology, as defined by Ludwig von Mises?",
+    "answer": "The study of human action and its logical implications, pursued as a deductive science rather than through statistical observation",
+    "choices": [
+      "The study of human action and its logical implications, pursued as a deductive science rather than through statistical observation",
+      "The empirical study of how market prices change in response to supply and demand shocks over time",
+      "The branch of psychology examining how cognitive biases systematically distort economic decision-making",
+      "The mathematical modeling of aggregate economic behavior using historical statistical regression"
+    ],
+    "context": "Mises argued in 'Human Action' (1949) that economics should be built deductively from a single axiom: humans act purposefully to achieve goals. From this foundation, all economic theory can be derived logically -- without needing statistics, experiments, or historical data to prove it. This contrasts sharply with mainstream economics' empirical, data-driven approach, and remains one of the most distinctive and contested features of Austrian methodology."
+  },
+  {
+    "tier": 3,
+    "question": "According to Austrian business cycle theory, what causes an artificial economic boom?",
+    "answer": "Central bank credit expansion lowers interest rates below the natural market rate, encouraging investment projects that are not supported by real savings",
+    "choices": [
+      "Central bank credit expansion lowers interest rates below the natural market rate, encouraging investment projects that are not supported by real savings",
+      "Rising consumer confidence leads households to overspend, pushing the economy temporarily above its productive potential",
+      "Government fiscal stimulus injects demand that private investment cannot sustain once public spending ends",
+      "Export surpluses create income windfalls that fuel domestic investment beyond long-term productive capacity"
+    ],
+    "context": "Austrian business cycle theory, developed by Mises and Hayek, holds that central banks trigger booms by pushing interest rates below the level that free markets would set. At artificially low rates, businesses borrow to fund long-term investment projects that appear profitable but only because the price signals are distorted. This misallocation of resources -- called malinvestment -- eventually unravels when rates rise or credit tightens, producing the bust that corrects the errors of the boom."
+  },
+  {
+    "tier": 3,
+    "question": "What is 'malinvestment' in Austrian economics?",
+    "answer": "Investment drawn into projects that only appear profitable because artificially low interest rates sent false price signals",
+    "choices": [
+      "Investment drawn into projects that only appear profitable because artificially low interest rates sent false price signals",
+      "Any speculative investment in financial assets rather than productive physical capital",
+      "Long-term infrastructure spending that generates returns over decades rather than in the short run",
+      "Business spending on worker training that does not translate into measurable short-run productivity gains"
+    ],
+    "context": "When credit is artificially cheap, entrepreneurs launch projects -- housing developments, dotcom ventures, factories -- that would never have passed a normal profitability test at higher rates. These are malinvestments: they consume real resources (labor, materials, land) and only reveal themselves as mistakes when the credit that funded them dries up. Austrian economists argue recessions are not caused by falling demand but by the painful but necessary liquidation of these errors."
+  },
+  {
+    "tier": 3,
+    "question": "What is 'time preference' in Austrian economics?",
+    "answer": "The degree to which people prefer goods available now over the same goods available in the future",
+    "choices": [
+      "The degree to which people prefer goods available now over the same goods available in the future",
+      "The rate at which a firm discounts future cash flows for capital budgeting purposes",
+      "The tendency of workers to prefer higher wages in the present over pension benefits in retirement",
+      "The preference consumers show for established brands over new market entrants when quality is uncertain"
+    ],
+    "context": "All else equal, people prefer things sooner rather than later -- that is time preference. A low time preference means you are willing to wait, enabling savings and long-term investment. Interest rates reflect the average time preference of borrowers and lenders: they compensate savers for deferring consumption. Austrian economists argue that when central banks artificially lower interest rates, they override time preferences and trick entrepreneurs into acting as if there are more real savings available than actually exist."
+  },
+  {
+    "tier": 4,
+    "question": "What was the 'socialist calculation debate', and what did Mises argue?",
+    "answer": "A debate over whether central planners could rationally allocate resources; Mises argued it was theoretically impossible without market prices",
+    "choices": [
+      "A debate over whether central planners could rationally allocate resources; Mises argued it was theoretically impossible without market prices",
+      "A debate over growth rates; Mises argued socialist economies could match capitalist ones only in heavy industry",
+      "A dispute over central bank independence; Mises argued the state should control monetary policy directly",
+      "A discussion of whether worker ownership improved productivity; Mises argued it reduced innovation incentives"
+    ],
+    "context": "In the 1920s-30s, socialist economists like Oskar Lange argued that planners could mimic market prices by trial-and-error computation. Mises responded that this missed the point: prices are not data that planners can observe and replicate -- they are generated by the actual process of private ownership and exchange, which socialism abolishes. Without them, no computational power, however great, could solve the allocation problem. This debate anticipated modern insights about information, incentives, and the limits of central control."
+  },
+  {
+    "tier": 4,
+    "question": "According to Austrian business cycle theory, why does the boom phase inevitably end in a bust?",
+    "answer": "Malinvestments induced by artificially cheap credit are eventually revealed as unprofitable when interest rates normalize or credit tightens",
+    "choices": [
+      "Malinvestments induced by artificially cheap credit are eventually revealed as unprofitable when interest rates normalize or credit tightens",
+      "Consumer confidence collapses when households realize their spending has outrun their income",
+      "Speculative stock market excess creates asset price inflation that central banks are forced to deflate",
+      "Export competitiveness erodes as domestic inflation raises production costs relative to trading partners"
+    ],
+    "context": "Mises used the analogy of a builder who starts a house assuming he has enough bricks, only to discover halfway through that he does not. The boom phase of the credit cycle funds projects based on artificially low rates; the bust is the moment when those projects run out of genuine resources and the errors become visible. Austrian economists argue that government stimulus during a bust delays the necessary correction and plants the seeds of the next, larger boom-bust cycle."
+  },
+  {
+    "tier": 5,
+    "question": "What is Mises's regression theorem, and why does it matter for debates about Bitcoin as money?",
+    "answer": "Money must trace its value back to a prior non-monetary use; some argue Bitcoin satisfies this through its initial utility as a censorship-resistant payment network",
+    "choices": [
+      "Money must trace its value back to a prior non-monetary use; some argue Bitcoin satisfies this through its initial utility as a censorship-resistant payment network",
+      "All fiat currencies must eventually be backed by gold; Bitcoin satisfies this because its supply is fixed like gold",
+      "Sound money must be physically tangible; Bitcoin categorically fails the regression theorem because it is purely digital",
+      "The regression theorem predicts all currencies eventually hyperinflate; Bitcoin avoids this by being algorithmically deflationary"
+    ],
+    "context": "Mises argued that money's purchasing power today traces back through history to a point when the good had non-monetary value -- gold was useful before it was money. This creates a logical chain connecting today's prices to historical exchange ratios. Some Austrian economists argue Bitcoin fails this test and cannot become true money. Others, including Saifedean Ammous in 'The Bitcoin Standard', counter that Bitcoin's initial value came from its utility as a permissionless payment network, satisfying the theorem's spirit even if not its letter."
+  },
+  {
+    "tier": 1,
+    "question": "What is commodity money?",
+    "answer": "Money made from or backed by a physical good that has value independent of government decree",
+    "choices": [
+      "Money made from or backed by a physical good that has value independent of government decree",
+      "Money that has value only because a government declares it legal tender",
+      "Money that exists only in electronic form and is issued by commercial banks",
+      "Money created by international institutions to fund global trade and development"
+    ],
+    "context": "Commodity money has been used for thousands of years -- gold, silver, copper, salt, and grain have all served as money in various civilizations. The key feature is that the underlying commodity has uses beyond serving as money, giving it value even if the monetary system collapses. This differs fundamentally from fiat money, which is worth something only as long as people believe the issuing government will remain stable."
+  },
+  {
+    "tier": 1,
+    "question": "If the price of the same basket of groceries rises from $100 to $110 in one year, what has happened?",
+    "answer": "Inflation -- your money buys less than it did a year ago",
+    "choices": [
+      "Inflation -- your money buys less than it did a year ago",
+      "Deflation -- the grocery store is charging more than goods are worth",
+      "Appreciation -- the value of goods has increased relative to your labor",
+      "A surplus -- excess supply is causing prices to adjust upward toward equilibrium"
+    ],
+    "context": "When the same money buys less than before, purchasing power has declined -- that is inflation. A 10% inflation rate means you need $110 to buy what $100 bought a year ago. Over decades, even moderate inflation compounds dramatically: at 3% per year, prices double in roughly 24 years, and a dollar saved in 1970 has lost about 87% of its purchasing power by today."
+  },
+  {
+    "tier": 2,
+    "question": "What is a gold standard monetary system?",
+    "answer": "A system where a currency's value is fixed to a specific quantity of gold, limiting money supply expansion",
+    "choices": [
+      "A system where a currency's value is fixed to a specific quantity of gold, limiting money supply expansion",
+      "A system where the government holds gold in reserves but can print currency freely without limit",
+      "A rating system that grades the quality and purity of newly minted coins",
+      "An international agreement pegging all currencies to the U.S. dollar backed by American gold"
+    ],
+    "context": "Under a gold standard, the amount of currency in circulation is tied to the government's gold reserves -- you can't print more money than you have gold to back. This constrains inflation but also limits flexibility during crises. The U.S. was on a modified gold standard from 1944 until 1971, when President Nixon ended dollar-gold convertibility. Since then all major world currencies have been fiat, with no commodity anchor."
+  },
+  {
+    "tier": 2,
+    "question": "What happened to the U.S. dollar's link to gold in 1971?",
+    "answer": "President Nixon suspended dollar-to-gold convertibility, completing the global transition to fiat currency",
+    "choices": [
+      "President Nixon suspended dollar-to-gold convertibility, completing the global transition to fiat currency",
+      "Congress passed legislation making the Federal Reserve independent of any gold requirement",
+      "The Bretton Woods agreement was renegotiated to reduce gold backing from 100% to 10%",
+      "The U.S. exhausted its gold reserves, triggering an automatic suspension under treaty law"
+    ],
+    "context": "In August 1971, Nixon closed the 'gold window' -- the mechanism by which foreign governments could exchange dollars for U.S. gold at $35 per ounce. The U.S. had been running large deficits financing the Vietnam War and Great Society programs, and countries like France had begun demanding gold. After 1971, no major currency had any commodity backing. The dollar's value rested entirely on trust in the U.S. government -- and the cumulative inflation since 1971 has been dramatic."
+  },
+  {
+    "tier": 2,
+    "question": "What is the difference between monetary inflation and price inflation?",
+    "answer": "Monetary inflation is an increase in the money supply; price inflation is the resulting rise in consumer prices",
+    "choices": [
+      "Monetary inflation is an increase in the money supply; price inflation is the resulting rise in consumer prices",
+      "They are synonyms -- both describe the same phenomenon measured in different ways",
+      "Monetary inflation refers only to central bank action; price inflation is caused solely by supply shocks",
+      "Price inflation measures purchasing power loss; monetary inflation measures nominal GDP growth"
+    ],
+    "context": "Austrian economists emphasize this distinction carefully. Monetary inflation -- expanding the supply of money -- is the cause. Price inflation -- goods and services costing more -- is the effect. The link between them can be delayed and uneven: newly created money may first inflate asset prices (stocks, real estate) before reaching consumer goods. Measuring only consumer price inflation can miss the early stages of monetary inflation already embedded in the economy."
+  },
+  {
+    "tier": 3,
+    "question": "What does the term 'sound money' mean to economists who use it?",
+    "answer": "Money whose supply cannot be arbitrarily expanded by governments or central banks, preserving its purchasing power over time",
+    "choices": [
+      "Money whose supply cannot be arbitrarily expanded by governments or central banks, preserving its purchasing power over time",
+      "Money that is widely accepted internationally and used in global commodity markets",
+      "Paper money that is formally audited by an independent agency to prevent counterfeiting",
+      "A currency issued by a government with a strong credit rating and stable political institutions"
+    ],
+    "context": "Sound money is money you can save with confidence that it will buy something meaningful decades later. Gold served this function for centuries -- supply grew slowly because extraction was difficult. Austrian economists argue that fiat money fails the sound money test because governments can and do expand supply far beyond productive growth, eroding the savings of ordinary people while benefiting those closest to the money creation process."
+  },
+  {
+    "tier": 4,
+    "question": "What is the long-run purchasing power record of fiat currencies compared to historically sound money like gold?",
+    "answer": "Every fiat currency in recorded history has significantly depreciated or failed; gold has maintained purchasing power across centuries",
+    "choices": [
+      "Every fiat currency in recorded history has significantly depreciated or failed; gold has maintained purchasing power across centuries",
+      "Fiat currencies outperform commodity money because flexible supply lets economies grow without deflation",
+      "The record is evenly split -- some fiat currencies have maintained value while others have failed",
+      "Commodity-backed currencies worked in agrarian economies but fiat money is superior in industrial and digital economies"
+    ],
+    "context": "The U.S. dollar has lost roughly 97% of its purchasing power since the Federal Reserve was created in 1913. The British pound has lost over 99% since the Bank of England was founded in 1694. An ounce of gold could buy a fine Roman toga 2,000 years ago -- and it can still buy a fine suit today. No fiat currency in history has survived indefinitely without significant debasement, though the timescales vary enormously."
+  },
+  {
+    "tier": 5,
+    "question": "What is the Austrian response to the mainstream argument that deflation -- falling prices -- is economically harmful and must be prevented?",
+    "answer": "Austrians distinguish productivity-driven deflation (beneficial -- more goods per dollar) from debt-deflation spirals, arguing only the latter is harmful and that the former is a natural reward of progress",
+    "choices": [
+      "Austrians distinguish productivity-driven deflation (beneficial -- more goods per dollar) from debt-deflation spirals, arguing only the latter is harmful and that the former is a natural reward of progress",
+      "Austrians agree that all deflation is harmful and advocate monetary expansion to prevent it",
+      "Austrians argue deflation is always beneficial and that debt-deflation spirals are caused by government intervention, not markets",
+      "Both schools agree that mild deflation is harmless, disagreeing only on the threshold at which it becomes damaging"
+    ],
+    "context": "Consumer electronics get cheaper every year -- that is productivity-driven deflation, and everyone recognizes it as good. Austrian economists argue that a growing economy on a sound monetary standard would naturally produce gentle price declines as productivity rises, just as 19th-century America experienced rising real incomes alongside falling prices. The Keynesian deflation fear is rooted in debt-deflation dynamics, which Austrians argue are themselves caused by prior credit expansions that should not have occurred."
+  },
+  {
+    "tier": 1,
+    "question": "When a government prints more money without producing more goods, what typically happens to prices?",
+    "answer": "Prices rise because more money is chasing the same amount of goods",
+    "choices": [
+      "Prices rise because more money is chasing the same amount of goods",
+      "Prices fall as the extra money makes goods more accessible to lower-income households",
+      "Prices stay the same because markets automatically absorb new currency into savings",
+      "Wages rise first, then prices fall as workers spend more and production increases"
+    ],
+    "context": "This is the core insight of the quantity theory of money, summarized by Milton Friedman as: 'Inflation is always and everywhere a monetary phenomenon.' When you double the money supply without doubling production, each dollar chases the same amount of stuff -- so prices must rise to restore equilibrium. Governments throughout history have discovered this the hard way, from Roman coin debasement to the Weimar hyperinflation of 1923."
+  },
+  {
+    "tier": 2,
+    "question": "Why is inflation sometimes called a 'hidden tax'?",
+    "answer": "Because it reduces everyone's purchasing power without requiring a visible legislative vote",
+    "choices": [
+      "Because it reduces everyone's purchasing power without requiring a visible legislative vote",
+      "Because it is collected by the IRS alongside income tax but not shown on pay stubs",
+      "Because it disproportionately affects high-income households who pay more in taxes",
+      "Because central banks use it to secretly transfer wealth from the private sector to themselves"
+    ],
+    "context": "A conventional tax requires a vote, a law, and an obvious deduction from your paycheck -- people notice and resist. Inflation taxes purchasing power invisibly: your salary might stay the same in nominal terms while buying less every year. Governments that want to spend beyond their tax revenues can do so by creating money, spreading the cost across all holders of the currency without anyone explicitly voting for it. This is why sound money advocates argue that limiting money creation is essential to fiscal accountability."
+  },
+  {
+    "tier": 2,
+    "question": "Who benefits most when newly created money enters the economy, according to the Cantillon effect?",
+    "answer": "Those who receive it first -- banks, governments, and connected contractors -- who spend it before prices have adjusted upward",
+    "choices": [
+      "Those who receive it first -- banks, governments, and connected contractors -- who spend it before prices have adjusted upward",
+      "All citizens equally, since central banks distribute new money through broad-based tax cuts",
+      "Exporters, since new money weakens the currency and makes their goods cheaper abroad",
+      "Savers, since new money raises asset prices and increases the real value of their portfolios"
+    ],
+    "context": "Richard Cantillon observed in the 1730s that new money does not enter the economy uniformly -- it flows in at specific points. Banks get it first, then their borrowers, then suppliers, then workers. By the time it reaches ordinary wage-earners and savers, prices have already risen. This mechanism redistributes purchasing power from latecomers (workers, retirees, savers) toward early recipients (banks, government contractors, asset owners) -- a quiet, regressive wealth transfer with every round of money creation."
+  },
+  {
+    "tier": 3,
+    "question": "What does Austrian economics predict happens to ordinary wage-earners' real purchasing power during periods of sustained money supply expansion?",
+    "answer": "It tends to decline because price increases arrive throughout the economy before wage increases fully compensate for them",
+    "choices": [
+      "It tends to decline because price increases arrive throughout the economy before wage increases fully compensate for them",
+      "It rises proportionally because employers are forced by competition to match inflation with pay increases",
+      "It remains stable because labor unions index wages to the consumer price index automatically",
+      "It is unaffected because central banks target inflation that exactly offsets any reduction in purchasing power"
+    ],
+    "context": "Wage increases typically lag behind price increases. Employers set salaries annually or at contract renewal; grocery prices, rent, and fuel adjust continuously. Workers whose wages are sticky experience a real pay cut during inflationary episodes even if their nominal paycheck is unchanged. This effect is largest for those least able to negotiate: workers in non-unionized industries, retirees on fixed incomes, and those with long-term fixed contracts. Austrian economists argue this predictable mechanism is why inflation consistently widens inequality."
+  },
+  {
+    "tier": 4,
+    "question": "What does Austrian economics predict will happen when central banks hold interest rates below the natural rate for an extended period?",
+    "answer": "An unsustainable credit-fueled boom forms, followed by a necessary and painful recession when rates normalize or credit contracts",
+    "choices": [
+      "An unsustainable credit-fueled boom forms, followed by a necessary and painful recession when rates normalize or credit contracts",
+      "Permanent economic expansion, as cheaper borrowing enables sustained investment and hiring indefinitely",
+      "A moderate acceleration in growth that gradually slows as the economy adjusts to new monetary conditions",
+      "Immediate consumer price inflation that automatically forces interest rates back to their natural level"
+    ],
+    "context": "Austrian business cycle theory predicts that below-natural rates misrepresent the economy's real savings level. Entrepreneurs invest as if there is more genuine capital available than there is. The dot-com boom (Fed rates held low through the late 1990s), the 2008 housing bubble (rates near 1% from 2003-2004), and the 2020-2022 everything bubble (near-zero rates for a decade) all fit this pattern. Each was followed by a painful correction. Austrian economists argue the correct policy is not to suppress rates but to allow them to reflect actual time preferences."
+  },
+  {
+    "tier": 1,
+    "question": "What is Bitcoin?",
+    "answer": "A decentralized digital currency with a fixed maximum supply, not controlled by any government or central bank",
+    "choices": [
+      "A decentralized digital currency with a fixed maximum supply, not controlled by any government or central bank",
+      "A digital payment system operated by a consortium of the world's largest commercial banks",
+      "A government-issued digital currency designed to replace physical cash in developed economies",
+      "A financial instrument whose supply is managed by an international monetary committee"
+    ],
+    "context": "Bitcoin was created in 2008 by a person or group using the pseudonym Satoshi Nakamoto. It runs on a decentralized network of computers worldwide -- there is no headquarters, no CEO, and no government that can print more of it or shut it down. Its total supply is hard-capped at 21 million units by the underlying code, making it the first scarce digital asset in history."
+  },
+  {
+    "tier": 1,
+    "question": "What is the maximum number of bitcoins that will ever exist?",
+    "answer": "21 million",
+    "choices": [
+      "21 million",
+      "100 million",
+      "1 billion",
+      "There is no cap -- supply adjusts to meet demand"
+    ],
+    "context": "Bitcoin's 21 million cap is hard-coded into its protocol -- it is not a policy that a board can vote to change. New bitcoin enters circulation only through the mining process, and the rate halves approximately every four years. The last bitcoin is projected to be mined around the year 2140. This fixed supply is central to Bitcoin's appeal as a hedge against inflation: unlike every fiat currency, nobody can create more of it."
+  },
+  {
+    "tier": 2,
+    "question": "How does Bitcoin's supply differ from that of fiat currencies like the U.S. dollar?",
+    "answer": "Bitcoin has a fixed, algorithmically enforced supply cap; fiat currency supply can be expanded at any time by the issuing authority",
+    "choices": [
+      "Bitcoin has a fixed, algorithmically enforced supply cap; fiat currency supply can be expanded at any time by the issuing authority",
+      "Bitcoin supply grows at 2% per year by design; fiat supply is fixed by international treaty agreements",
+      "Both have limited supplies, but Bitcoin's is enforced by governments rather than code",
+      "Fiat currencies have supplies anchored to economic output; Bitcoin's supply is determined by mining demand"
+    ],
+    "context": "Since 1971, the U.S. money supply (M2) has grown from roughly $600 billion to over $20 trillion -- a 33-fold increase. Bitcoin's supply is determined by code that no government, company, or individual can override. This programmatic scarcity is what makes Bitcoin fundamentally different from every prior form of digital money, which could always be created by a trusted intermediary. Supporters argue it is the monetary equivalent of a constitution that cannot be amended by political pressure."
+  },
+  {
+    "tier": 2,
+    "question": "What is a blockchain?",
+    "answer": "A distributed public ledger that records all transactions in a chain of cryptographically linked blocks",
+    "choices": [
+      "A distributed public ledger that records all transactions in a chain of cryptographically linked blocks",
+      "A private database maintained by central banks to track digital currency balances",
+      "A government registry storing ownership records of financial assets and real property",
+      "An encryption standard used by commercial banks to secure online banking applications"
+    ],
+    "context": "Every Bitcoin transaction is recorded in a block, and each block is mathematically linked to the one before it, forming a chain. This chain is stored simultaneously on thousands of computers worldwide -- altering any past transaction would require rewriting every subsequent block and overwhelming the network's computing power. This makes the Bitcoin ledger essentially tamper-proof without requiring any trusted central authority."
+  },
+  {
+    "tier": 2,
+    "question": "What is Bitcoin 'mining'?",
+    "answer": "The process of verifying transactions and adding them to the blockchain in exchange for newly issued bitcoin",
+    "choices": [
+      "The process of verifying transactions and adding them to the blockchain in exchange for newly issued bitcoin",
+      "The process of converting physical gold into digital tokens backed by cryptographic certificates",
+      "The physical extraction of computer chips used to power Bitcoin network nodes worldwide",
+      "The government process of auditing blockchain transactions for tax compliance purposes"
+    ],
+    "context": "Miners compete to solve a computationally intensive mathematical puzzle. The first to solve it adds the next block of transactions to the blockchain and earns a block reward of newly created bitcoin plus transaction fees. This 'proof of work' system means creating a valid block requires real energy expenditure, making the ledger costly to falsify. The energy use is often criticized, but proponents argue it is the price of a trustless, decentralized monetary system."
+  },
+  {
+    "tier": 3,
+    "question": "Who created Bitcoin, and what is known about them?",
+    "answer": "A person or group using the pseudonym Satoshi Nakamoto, whose real identity has never been confirmed",
+    "choices": [
+      "A person or group using the pseudonym Satoshi Nakamoto, whose real identity has never been confirmed",
+      "A team of computer scientists at MIT funded by a libertarian think tank in the late 2000s",
+      "The cryptographer Nick Szabo, who later confirmed authorship in a published interview",
+      "A consortium of cypherpunk programmers who collectively published the white paper under a shared alias"
+    ],
+    "context": "Satoshi Nakamoto published the Bitcoin white paper in October 2008 and launched the network in January 2009. Nakamoto communicated with early contributors via email and forum posts, then gradually withdrew and disappeared entirely around 2010. The estimated 1 million bitcoins in Nakamoto's original wallets have never been moved, suggesting either that Nakamoto is dead, inaccessible, or deliberately abstaining. The mystery adds to Bitcoin's decentralized ethos: no founder lobbies for changes or controls the project."
+  },
+  {
+    "tier": 3,
+    "question": "What is a Bitcoin 'halving'?",
+    "answer": "An event approximately every four years when the reward for mining a new block is cut in half, slowing the rate of new supply",
+    "choices": [
+      "An event approximately every four years when the reward for mining a new block is cut in half, slowing the rate of new supply",
+      "A protocol upgrade that doubles Bitcoin's transaction processing speed every four years",
+      "A regulatory event in which governments require exchanges to freeze half of all customer holdings",
+      "A market mechanism that automatically adjusts Bitcoin's price for global purchasing power parity"
+    ],
+    "context": "Bitcoin started with a block reward of 50 BTC in 2009. After the first halving in 2012, it dropped to 25 BTC; then 12.5, then 6.25, and so on. Each halving reduces the rate at which new bitcoin enters circulation. Historically, halvings have been followed by significant price appreciation as reduced new supply meets sustained or growing demand -- though past patterns do not guarantee future results. The halvings continue until all 21 million bitcoin have been issued."
+  },
+  {
+    "tier": 3,
+    "question": "What is 'proof of work' in the context of Bitcoin?",
+    "answer": "A computational process miners must complete to add a block to the blockchain, requiring real energy and making the ledger costly and difficult to falsify",
+    "choices": [
+      "A computational process miners must complete to add a block to the blockchain, requiring real energy and making the ledger costly and difficult to falsify",
+      "A legal certification proving that Bitcoin transactions have been verified by a licensed financial institution",
+      "A cryptographic signature that proves the identity of the person sending a Bitcoin transaction",
+      "A government-issued certificate of authenticity for Bitcoin wallets held in regulated exchanges"
+    ],
+    "context": "Proof of work solves a fundamental problem: how can a decentralized network agree on a single transaction history without a trusted central authority? By requiring miners to expend real computational energy to earn the right to write the next block, Bitcoin makes cheating expensive. An attacker who wanted to rewrite history would need to redo all subsequent proof of work faster than the honest network -- currently requiring more computing power than exists on Earth. This is what makes Bitcoin's ledger trustworthy without a bank or government behind it."
+  },
+  {
+    "tier": 3,
+    "question": "What problem does Bitcoin's fixed supply directly address, from a sound money perspective?",
+    "answer": "It prevents any authority from inflating the supply and eroding holders' purchasing power",
+    "choices": [
+      "It prevents any authority from inflating the supply and eroding holders' purchasing power",
+      "It ensures Bitcoin's price will always rise, making it a reliable investment for retail savers",
+      "It allows governments to use Bitcoin as a reserve asset while maintaining independent monetary policy",
+      "It stabilizes Bitcoin's price by pegging its value to a global consumer price index"
+    ],
+    "context": "Every fiat currency ever created has lost purchasing power over time because issuing authorities eventually expand supply beyond productive growth. Bitcoin's hard cap of 21 million units means this cannot happen -- not because of trust in any institution, but because the code makes it mathematically impossible. This is the sound money ideal that gold once represented, now enforced by cryptography rather than geology. Whether Bitcoin can fulfil the full role of money in a modern economy remains an active and unresolved debate."
+  },
+  {
+    "tier": 4,
+    "question": "How does Bitcoin relate to the Austrian concept of sound money?",
+    "answer": "Its fixed supply mimics the scarcity of gold, fulfilling the Austrian requirement that money cannot be arbitrarily expanded to fund spending",
+    "choices": [
+      "Its fixed supply mimics the scarcity of gold, fulfilling the Austrian requirement that money cannot be arbitrarily expanded to fund spending",
+      "It satisfies Keynesian requirements for countercyclical policy through its predictable supply schedule",
+      "It meets IMF reserve currency standards by providing a stable anchor for floating exchange rates",
+      "It solves the gold standard's deflationary bias by calibrating supply to natural GDP growth"
+    ],
+    "context": "Economist Saifedean Ammous, in 'The Bitcoin Standard' (2018), argued that Bitcoin is the most sound money ever invented -- harder than gold because its supply is not merely difficult to expand but impossible to expand beyond 21 million. Austrian economists who accept this view argue that Bitcoin combines gold's scarcity with digital portability and verifiability. Critics within the Austrian tradition, notably those who follow Mises's regression theorem strictly, argue Bitcoin still lacks the anchor of historical non-monetary value that gold possesses."
+  },
+  {
+    "tier": 4,
+    "question": "What is the Lightning Network in relation to Bitcoin?",
+    "answer": "A second-layer payment protocol built on Bitcoin that enables fast, cheap small transactions without recording each one directly on the main blockchain",
+    "choices": [
+      "A second-layer payment protocol built on Bitcoin that enables fast, cheap small transactions without recording each one directly on the main blockchain",
+      "A government-regulated settlement network that converts Bitcoin into fiat currency for merchant payments",
+      "A competing cryptocurrency designed to solve Bitcoin's energy consumption and slow confirmation times",
+      "A hardware security system that protects Bitcoin wallets from unauthorized access and hacking"
+    ],
+    "context": "Bitcoin's base layer is slow and expensive for small payments -- a coffee transaction would take ten minutes and cost significant fees. The Lightning Network solves this by opening payment channels between users: transactions flow instantly off-chain, with the final balance recorded on the blockchain when the channel closes. El Salvador adopted Bitcoin as legal tender in 2021 and built its national payments infrastructure primarily on the Lightning Network, making Bitcoin viable for everyday transactions."
+  },
+  {
+    "tier": 4,
+    "question": "What is Bitcoin's inflation schedule over time, and how does it compare to fiat currency?",
+    "answer": "New bitcoin issuance decreases on a predictable halving schedule, approaching zero around 2140 -- unlike fiat currencies whose supply can be expanded without limit",
+    "choices": [
+      "New bitcoin issuance decreases on a predictable halving schedule, approaching zero around 2140 -- unlike fiat currencies whose supply can be expanded without limit",
+      "Bitcoin's supply grows at a fixed 1% per year, slower than most fiat currencies but still inflationary",
+      "Bitcoin automatically adjusts its issuance rate based on price signals from global cryptocurrency markets",
+      "New bitcoin is created at a rate set by the network's founding organization based on economic conditions"
+    ],
+    "context": "Bitcoin's current inflation rate (new supply as a percentage of existing supply) is approximately 0.9% per year and will drop below 0.5% after the next halving around 2028. For comparison, the Federal Reserve targets 2% consumer price inflation, and actual M2 money supply growth has averaged 7% per year since 1971. By 2140, Bitcoin issuance reaches zero, and miners will be compensated entirely by transaction fees. This is an unprecedented monetary experiment: a known, declining, and ultimately terminal supply schedule."
+  },
+  {
+    "tier": 5,
+    "question": "What core problem did Satoshi Nakamoto's 2008 Bitcoin white paper set out to solve?",
+    "answer": "How to enable peer-to-peer digital cash transfers without a trusted central intermediary to prevent double-spending",
+    "choices": [
+      "How to enable peer-to-peer digital cash transfers without a trusted central intermediary to prevent double-spending",
+      "How to create a government-independent store of value that is immune to confiscation and inflation",
+      "How to build a global payment network that processes more transactions per second than major card networks",
+      "How to encrypt financial records so citizens could protect legal transactions from surveillance"
+    ],
+    "context": "The double-spend problem is the core challenge of digital money: unlike physical cash, digital files can be copied. Before Bitcoin, the only solution was a central authority -- a bank or payment processor -- that kept the authoritative ledger and prevented the same unit from being spent twice. Nakamoto's breakthrough was replacing the trusted central authority with a decentralized network of miners using proof of work to agree on a single transaction history. This made trustless digital cash possible for the first time."
+  },
+  {
+    "tier": 5,
+    "question": "What is the Austrian critique of the claim that Bitcoin cannot be 'real money' because it has no intrinsic value?",
+    "answer": "Austrian subjective value theory holds that no money has intrinsic value -- value is assigned by individuals based on perceived utility and scarcity, not any inherent property of the object",
+    "choices": [
+      "Austrian subjective value theory holds that no money has intrinsic value -- value is assigned by individuals based on perceived utility and scarcity, not any inherent property of the object",
+      "Austrians agree Bitcoin lacks intrinsic value and therefore cannot qualify as sound money under the regression theorem",
+      "Austrians argue Bitcoin's energy consumption gives it objective intrinsic value equivalent to the electricity cost of mining",
+      "Austrians believe intrinsic value is irrelevant because central banks will eventually adopt Bitcoin as a reserve asset"
+    ],
+    "context": "The 'intrinsic value' critique is often levelled at Bitcoin: gold has industrial uses, so it has 'real' value. But Austrian subjective value theory dismantles this argument: gold's monetary value also rests on what people believe others will accept, not on its industrial applications alone. By the same logic, Bitcoin's value stems from its utility as a scarce, portable, verifiable, censorship-resistant asset -- properties that millions of people find genuinely valuable. Value is always and only what people place on things."
+  },
+  {
+    "tier": 2,
+    "question": "What is the core claim of Modern Monetary Theory (MMT) about government spending?",
+    "answer": "Governments that issue their own currency cannot go bankrupt in that currency and are not constrained by revenues the way households are",
+    "choices": [
+      "Governments that issue their own currency cannot go bankrupt in that currency and are not constrained by revenues the way households are",
+      "Governments should balance their budgets every fiscal year to prevent inflationary debt accumulation",
+      "Modern economies require government spending to be fully offset by tax revenues within each business cycle",
+      "Governments should only spend money they have borrowed from private capital markets through bond issuance"
+    ],
+    "context": "MMT, associated with economists Stephanie Kelton, Warren Mosler, and Randall Wray, argues that a sovereign government that issues its own currency -- like the U.S., UK, or Japan -- can never be forced to default on debts denominated in that currency because it can always create more money to pay them. This is descriptively true: the U.S. has not defaulted. The heated debate is about the consequences of this capability, particularly whether it enables sustainable expansion of public programs or inevitably produces inflation."
+  },
+  {
+    "tier": 3,
+    "question": "What does MMT identify as the primary real-world constraint on government spending?",
+    "answer": "Inflation -- once the economy's productive capacity is fully utilized, further spending creates rising prices rather than additional output",
+    "choices": [
+      "Inflation -- once the economy's productive capacity is fully utilized, further spending creates rising prices rather than additional output",
+      "The national debt-to-GDP ratio -- MMT advocates a hard cap at 100% of economic output",
+      "Bond market interest rates -- MMT argues governments must keep borrowing costs below nominal GDP growth",
+      "The central bank's balance sheet -- MMT requires the central bank to absorb all new government bond issuance"
+    ],
+    "context": "MMT proponents argue that the question 'how will you pay for it?' is the wrong frame for a currency-issuing government. The right question is: 'will this create inflation?' When there is spare productive capacity -- unemployed workers, idle factories -- new spending puts those resources to work without raising prices. The constraint is physical, not financial. Critics argue this distinction is easy to state but difficult to calibrate in practice, and that political systems rarely withdraw spending when inflation appears."
+  },
+  {
+    "tier": 3,
+    "question": "What role does MMT assign to taxation?",
+    "answer": "Taxes destroy money and reduce demand -- their primary purpose is to control inflation and create demand for the currency, not to fund spending",
+    "choices": [
+      "Taxes destroy money and reduce demand -- their primary purpose is to control inflation and create demand for the currency, not to fund spending",
+      "Taxes fund government spending directly and must cover all expenditures that don't qualify for deficit financing",
+      "Taxes redistribute wealth from high-income households to fund targeted social programs",
+      "Taxes are needed only to service interest on the national debt, not to fund discretionary spending"
+    ],
+    "context": "MMT inverts the conventional understanding of taxation. In the MMT framework, the government spends first (creating money) and taxes later (destroying money). Taxation is not about raising revenue -- it is about removing excess money from circulation to prevent inflation. This view is deeply counterintuitive to most people's experience of government finance and is one of MMT's most contested claims. Critics ask: if taxes don't fund spending, why do governments with high deficits often face market discipline and currency crises?"
+  },
+  {
+    "tier": 3,
+    "question": "What is the 'Job Guarantee' proposed by MMT economists?",
+    "answer": "A government program that offers employment to any willing worker at a fixed wage, acting as an automatic economic stabilizer",
+    "choices": [
+      "A government program that offers employment to any willing worker at a fixed wage, acting as an automatic economic stabilizer",
+      "A constitutional requirement that full employment be maintained as a legal right in all MMT-adopting nations",
+      "A central bank policy of buying corporate bonds to subsidize private-sector hiring during recessions",
+      "A minimum wage mechanism that automatically adjusts wages to the rate of consumer price inflation"
+    ],
+    "context": "MMT economists argue the Job Guarantee is both a stabilization tool and an inflation anchor. During recessions, the government absorbs unemployed workers into public programs, preventing demand collapse; during booms, workers move back to higher-paying private employment, reducing inflationary pressure. The Job Guarantee wage sets a price floor for labor across the economy. Critics question whether governments can efficiently absorb and productively employ large numbers of workers, and whether the political will to shrink such programs during booms would ever materialize."
+  },
+  {
+    "tier": 4,
+    "question": "What happened in Zimbabwe (2000s) and Venezuela (2010s) that critics cite as evidence against unlimited fiat money creation?",
+    "answer": "Both governments printed money far beyond productive capacity, triggering hyperinflation that destroyed savings and collapsed living standards",
+    "choices": [
+      "Both governments printed money far beyond productive capacity, triggering hyperinflation that destroyed savings and collapsed living standards",
+      "Both governments followed MMT principles correctly but were undermined by coordinated foreign currency attacks",
+      "Both countries experienced supply shocks unrelated to monetary policy, making them irrelevant to the MMT debate",
+      "Both suffered from excessive austerity, demonstrating the danger of contracting the money supply in developing economies"
+    ],
+    "context": "Zimbabwe's inflation peaked at an estimated 89.7 sextillion percent per month in November 2008; Venezuela's surpassed 1,000,000% annually in 2018. In both cases, governments used money creation to cover large fiscal deficits in economies with limited productive capacity. MMT proponents argue these countries lacked the institutional prerequisites -- primarily that they did not have fully sovereign currencies accepted globally -- to apply MMT safely. Critics argue the episodes demonstrate the universal inflation constraint that MMT acknowledges but underestimates the difficulty of managing."
+  },
+  {
+    "tier": 4,
+    "question": "What is the main Austrian and monetarist critique of MMT's claim that currency-issuing governments face no financing constraint?",
+    "answer": "History shows that creating money beyond productive capacity causes inflation or hyperinflation -- the constraint is purchasing power, not solvency",
+    "choices": [
+      "History shows that creating money beyond productive capacity causes inflation or hyperinflation -- the constraint is purchasing power, not solvency",
+      "MMT is valid for reserve currency nations but fails only for countries that borrow in foreign currencies",
+      "The real constraint is political rather than economic, since voters resist the high taxes MMT requires to control inflation",
+      "MMT fails only because central banks are not yet sophisticated enough to manage inflation at the necessary precision"
+    ],
+    "context": "Austrian economists and monetarists agree on the critique even if they differ in other areas: creating money without creating corresponding goods and services devalues the existing money supply. The U.S. dollar's reserve currency status may give more runway before this becomes visible -- other countries must hold dollars, providing demand that absorbs some new supply. But critics argue this merely delays the inflation tax rather than eliminating it, and that the 2021-2022 inflation surge after large pandemic-era money creation was precisely this mechanism at work."
+  },
+  {
+    "tier": 5,
+    "question": "What is the theoretical tension between MMT and the quantity theory of money (MV = PQ)?",
+    "answer": "MMT argues velocity adjusts to absorb new money without automatically causing inflation; quantity theorists argue that expanding M raises P unless real output Q expands proportionally",
+    "choices": [
+      "MMT argues velocity adjusts to absorb new money without automatically causing inflation; quantity theorists argue that expanding M raises P unless real output Q expands proportionally",
+      "MMT and the quantity theory are fully compatible; MMT simply adds the government as an explicit monetary actor",
+      "The quantity theory applies only to commodity money; MMT correctly identifies it as inapplicable to modern fiat systems",
+      "MMT accepts the quantity theory fully but argues governments can control velocity through targeted fiscal transfers"
+    ],
+    "context": "The quantity theory (MV = PQ) says that money supply times velocity equals price level times real output. If velocity (V) and output (Q) are stable, more money (M) means higher prices (P). MMT responds that V is not stable -- when the economy has spare capacity, new spending raises Q rather than P. Quantity theorists reply that V has historically been unstable in ways that erode this defense, and that capacity constraints are hit faster than MMT models predict. The 2021-2023 inflation episode reignited this debate, with quantity theorists arguing it confirmed their model and MMT proponents arguing the inflation was primarily supply-driven."
+  },
+  {
+    "tier": 1,
+    "question": "What does an entrepreneur do when they spot a problem that no one has solved well?",
+    "answer": "Creates a product or service to solve it, taking on personal risk in hopes of earning a profit",
+    "choices": [
+      "Creates a product or service to solve it, taking on personal risk in hopes of earning a profit",
+      "Reports it to government regulators and waits for a public agency to address it",
+      "Forms a committee to research the problem and publish recommendations for others to act on",
+      "Waits to see whether existing businesses recognize the opportunity and enter the market first"
+    ],
+    "context": "Every product you use was created by someone who saw a gap and risked their time and money to fill it. The smartphone, the search engine, the electric car -- none of these were government programs. Entrepreneurs are the engine of innovation because they personally bear the cost of failure and personally capture the reward of success. This alignment of incentives -- risk and reward living in the same hands -- is what makes entrepreneurship so powerful as an economic force."
+  },
+  {
+    "tier": 2,
+    "question": "What is a startup?",
+    "answer": "A newly founded company attempting to build a scalable business model, often under conditions of high uncertainty",
+    "choices": [
+      "A newly founded company attempting to build a scalable business model, often under conditions of high uncertainty",
+      "Any small business with fewer than 10 employees and annual revenues below $1 million",
+      "A company formed by a large corporation to test a new product line in a separate legal entity",
+      "A company that has recently sold shares to the public for the first time on a stock exchange"
+    ],
+    "context": "A startup is not just a small business -- it's a temporary organization searching for a repeatable, scalable business model. A restaurant is a small business; Airbnb was a startup that disrupted the entire hotel industry from a spare bedroom. The difference is ambition and uncertainty. Startups often fail -- most do -- but the ones that succeed can transform industries, create enormous wealth, and produce goods and services that improve millions of lives."
+  },
+  {
+    "tier": 2,
+    "question": "What distinguishes an entrepreneur from a manager?",
+    "answer": "Entrepreneurs create value under genuine uncertainty; managers optimize existing operations within known constraints",
+    "choices": [
+      "Entrepreneurs create value under genuine uncertainty; managers optimize existing operations within known constraints",
+      "Entrepreneurs are paid by commission while managers receive fixed salaries from corporations",
+      "Entrepreneurs always begin with no capital while managers always have institutional backing",
+      "Managers handle daily decisions while entrepreneurs focus only on long-term strategic planning"
+    ],
+    "context": "A manager runs a known system -- they have established products, known costs, and measurable goals. An entrepreneur creates the system under conditions where the right answer is unknown. As economist Frank Knight argued, true entrepreneurship means bearing uncertainty that cannot be quantified or insured away. The profit from successful entrepreneurship is compensation for this irreducible uncertainty -- it is not exploitation or luck but the reward for being right when nobody else knew what was right."
+  },
+  {
+    "tier": 3,
+    "question": "What is economist Israel Kirzner's theory of the entrepreneur?",
+    "answer": "Entrepreneurs are alert discoverers of profit opportunities created by disequilibria that others have failed to notice",
+    "choices": [
+      "Entrepreneurs are alert discoverers of profit opportunities created by disequilibria that others have failed to notice",
+      "Entrepreneurs are primarily innovators who destroy old industries through radical technological disruption",
+      "Entrepreneurs are risk-bearers whose profit is purely compensation for accepting financial uncertainty",
+      "Entrepreneurs are arbitrageurs who profit only from price differences between geographically separated markets"
+    ],
+    "context": "Building on Mises, Kirzner argued in 'Competition and Entrepreneurship' (1973) that entrepreneurs possess a quality he called 'alertness' -- the ability to notice mismatches between what people want and what is currently available. An entrepreneur spots an opportunity that others have overlooked, not because they have special resources, but because they are paying better attention. This theory differs from Schumpeter's: Kirzner's entrepreneur moves markets toward equilibrium by filling gaps; Schumpeter's entrepreneur disrupts equilibria entirely."
+  },
+  {
+    "tier": 3,
+    "question": "According to Austrian economics, what role does profit play in guiding entrepreneurial decisions?",
+    "answer": "Profit signals that an entrepreneur has allocated resources toward uses that consumers value more highly than alternative uses",
+    "choices": [
+      "Profit signals that an entrepreneur has allocated resources toward uses that consumers value more highly than alternative uses",
+      "Profit primarily measures a firm's negotiating power against suppliers and workers",
+      "Profit is an arbitrary reward that does not reflect productive contribution to the economy",
+      "Profit signals that a firm has successfully lobbied for favorable regulations or subsidies"
+    ],
+    "context": "Austrian economists view profit as the economy's guidance system. When a business earns profit, it means consumers voluntarily paid more for its output than the resources used to produce it were worth in alternative uses -- a genuine creation of value. Losses send the opposite signal: resources are being consumed in ways that customers value less than alternatives. This is why Austrian economists argue that preventing losses through bailouts or subsidies is economically destructive -- it silences the signal that would redirect resources to better uses."
+  },
+  {
+    "tier": 3,
+    "question": "What is the difference between risk and uncertainty in entrepreneurship, as described by economist Frank Knight?",
+    "answer": "Risk is measurable and can be insured against; uncertainty is unquantifiable and cannot be hedged -- entrepreneurs profit by bearing true uncertainty",
+    "choices": [
+      "Risk is measurable and can be insured against; uncertainty is unquantifiable and cannot be hedged -- entrepreneurs profit by bearing true uncertainty",
+      "Risk and uncertainty are synonyms in economics, both describing the probability of negative outcomes",
+      "Uncertainty applies only to macroeconomic conditions; risk applies to individual firm decisions",
+      "Risk is borne by investors while uncertainty is borne by managers through daily operational decisions"
+    ],
+    "context": "In 'Risk, Uncertainty, and Profit' (1921), Frank Knight drew a crucial distinction: a car insurance company can price the risk of accidents because they have statistical data. But nobody can price the risk of whether a new technology will transform a market, or whether a new restaurant concept will resonate with customers. That is Knightian uncertainty -- the unknown unknown. Entrepreneurs earn profit precisely because they step into this unquantifiable space. Pure risk-taking can be priced and outsourced; genuine entrepreneurial judgment cannot."
+  },
+  {
+    "tier": 4,
+    "question": "How does creative destruction benefit the economy even when it harms specific industries and workers?",
+    "answer": "It frees labor and capital from less productive uses and redirects them toward higher-value applications, raising living standards over time even as individual sectors are disrupted",
+    "choices": [
+      "It frees labor and capital from less productive uses and redirects them toward higher-value applications, raising living standards over time even as individual sectors are disrupted",
+      "It creates technology sector jobs that exactly offset long-term losses in legacy industries",
+      "It benefits the economy only if governments provide retraining subsidies to cushion displaced workers",
+      "It reduces inequality by dismantling large incumbents and redistributing market share to new entrants"
+    ],
+    "context": "The typewriter industry employed thousands. So did horse-drawn carriage manufacturing, film photography, and physical music retail. Each was destroyed by innovation -- and in each case, the labor and capital freed up moved to more productive uses that created far more wealth than the destroyed industries ever could. This is Schumpeter's creative destruction: painful at the individual level, generative at the systemic level. Economic history strongly suggests that protecting declining industries through subsidies or tariffs delays this process and makes societies poorer."
+  },
+  {
+    "tier": 4,
+    "question": "What is the relationship between secure private property rights and entrepreneurial activity?",
+    "answer": "Secure property rights give entrepreneurs confidence they will keep the rewards of their investment, providing the incentive to create and take risks",
+    "choices": [
+      "Secure property rights give entrepreneurs confidence they will keep the rewards of their investment, providing the incentive to create and take risks",
+      "Property rights constrain entrepreneurship by creating legal protections for incumbents against new competition",
+      "The relationship is weak -- entrepreneurs in high-tax, high-regulation countries consistently outperform those in laissez-faire environments",
+      "Property rights matter only for physical capital; entrepreneurs in digital industries are largely indifferent to them"
+    ],
+    "context": "Why would you build a factory, develop software, or plant an orchard if someone else could seize the results? Property rights are the foundation of entrepreneurship. Cross-country data consistently show that nations with stronger property rights protection have higher rates of investment, innovation, and entrepreneurship. This connection was central to Hernando de Soto's argument in 'The Mystery of Capital' (2000): billions of people in developing countries have assets but lack the legal titles that would let them use those assets as collateral to build businesses."
+  },
+  {
+    "tier": 5,
+    "question": "How did Schumpeter view creative destruction differently from Marx, even though both saw capitalism as inherently unstable through innovation?",
+    "answer": "Schumpeter celebrated creative destruction as the engine of capitalist progress; Marx argued the same instability would generate contradictions that ultimately destroy capitalism itself",
+    "choices": [
+      "Schumpeter celebrated creative destruction as the engine of capitalist progress; Marx argued the same instability would generate contradictions that ultimately destroy capitalism itself",
+      "Both celebrated creative destruction as evidence of capitalism's self-correcting dynamism but disagreed on the state's role",
+      "Marx embraced creative destruction as capitalism's self-renewal mechanism; Schumpeter feared it would destabilize markets permanently",
+      "Schumpeter applied creative destruction only to industrial goods; Marx applied it across all economic activity"
+    ],
+    "context": "Marx saw capitalism's revolutionary dynamism as sowing the seeds of its own destruction: by concentrating capital, proletarianizing workers, and creating periodic crises, it would generate the conditions for socialist revolution. Schumpeter in 'Capitalism, Socialism and Democracy' (1942) admired capitalism's creative energy but ironically predicted its downfall for a different reason: its very success would create a large intellectual class hostile to business values, gradually eroding the institutional foundations that make entrepreneurship possible. Both were wrong about collapse, but their analyses of capitalism's dynamics remain influential."
+  },
+  {
+    "tier": 1,
+    "question": "A drought destroys half a region's apple crop while the number of buyers stays the same. What would you expect to happen to apple prices?",
+    "answer": "Prices rise as the same number of buyers compete for fewer apples",
+    "choices": [
+      "Prices rise as the same number of buyers compete for fewer apples",
+      "Prices fall as farmers try to sell their remaining stock quickly",
+      "Prices stay the same because the government sets apple prices each season",
+      "Prices drop because buyers switch to oranges and reduce apple demand"
+    ],
+    "context": "Supply fell while demand stayed constant -- a classic shortage scenario. When the same number of buyers are competing for a smaller supply, prices rise until some buyers decide the apples are no longer worth the higher price and drop out. This is the law of supply and demand operating in real time. Droughts, freezes, supply chain disruptions, and wars all trigger the same basic mechanism."
+  },
+  {
+    "tier": 1,
+    "question": "A second coffee shop opens next to the only coffee shop in town. The original shop immediately lowers its prices and improves its service. What economic force caused this?",
+    "answer": "Competition -- the threat of losing customers forces sellers to offer better value",
+    "choices": [
+      "Competition -- the threat of losing customers forces sellers to offer better value",
+      "Regulation -- local laws require businesses to match competitors' prices",
+      "Altruism -- business owners naturally want to provide the best deal for customers",
+      "Taxation -- lower prices help the original shop reduce its taxable revenue"
+    ],
+    "context": "Competition is one of the most powerful forces in economics. Before the second coffee shop opened, the original had a local monopoly and could afford to charge more and offer less. The moment a competitor arrived, the incentive structure changed completely. This is why economists across schools of thought generally favor competition: it disciplines sellers far more effectively than any regulator could, without any government action required."
+  },
+  {
+    "tier": 1,
+    "question": "Your grandmother kept $1,000 as cash under her mattress in 1990. After 35 years of inflation, what has happened to what that $1,000 can buy?",
+    "answer": "It buys significantly less -- inflation has eroded the purchasing power of that cash",
+    "choices": [
+      "It buys significantly less -- inflation has eroded the purchasing power of that cash",
+      "It buys the same amount -- cash is protected from inflation by being outside the banking system",
+      "It buys more -- savings held safely tend to appreciate over time",
+      "It depends on whether she kept the cash in large or small denomination notes"
+    ],
+    "context": "Inflation does not care where your money is stored. $1,000 in 1990 had the purchasing power of roughly $2,400 today -- meaning your grandmother's mattress savings can now only buy about 40% of what it could have purchased in 1990. This is why 'saving' by holding cash is not truly safe -- it is a slow, guaranteed loss of purchasing power. Assets that keep pace with or outpace inflation (gold, stocks, real estate, and arguably Bitcoin) are what actually preserve wealth."
+  },
+  {
+    "tier": 1,
+    "question": "A city sets a maximum rent of $800/month on apartments that cost $1,200/month to build and maintain. What would landlords most likely do?",
+    "answer": "Build fewer new apartments and let existing ones deteriorate, reducing housing supply over time",
+    "choices": [
+      "Build fewer new apartments and let existing ones deteriorate, reducing housing supply over time",
+      "Build more apartments to house as many people as possible at the lower price",
+      "Maintain apartments exactly as before since lower price attracts more reliable tenants",
+      "Upgrade units while lobbying the government for a higher maximum rent"
+    ],
+    "context": "Rent control is the textbook example of a price ceiling creating a shortage. When the controlled price is below what the market would set, suppliers have less incentive to provide the good. New construction stops because it cannot break even at the capped price; existing landlords reduce maintenance since they cannot recoup costs. The tenants lucky enough to have controlled apartments benefit; everyone else faces a shrunken and deteriorating housing market. Every major city with long-standing rent control shows this pattern."
+  },
+  {
+    "tier": 2,
+    "question": "If a government doubles the money supply while the total number of goods in the economy stays the same, what does the quantity theory of money predict will happen to the price level?",
+    "answer": "Prices roughly double, as each unit of money now buys fewer goods",
+    "choices": [
+      "Prices roughly double, as each unit of money now buys fewer goods",
+      "Prices fall as consumers with more money create competition that forces sellers to cut prices",
+      "Economic output doubles to match the new money supply, keeping prices unchanged",
+      "Unemployment falls as businesses hire more workers to meet increased consumer spending"
+    ],
+    "context": "The quantity theory of money, formalized as MV = PQ (money supply times velocity equals price level times real output), predicts this result directly: if M doubles and V and Q are constant, P must double. This is the mechanism behind every significant inflation in history, from ancient coin debasement to modern quantitative easing. The debate is not about whether money creation causes inflation, but about the timing, magnitude, and how much of the new money ends up absorbed by higher output rather than higher prices."
+  },
+  {
+    "tier": 2,
+    "question": "If inflation is running at 6% per year and your savings account pays 2% interest, what is your real return?",
+    "answer": "Negative 4% -- you are losing purchasing power despite earning nominal interest",
+    "choices": [
+      "Negative 4% -- you are losing purchasing power despite earning nominal interest",
+      "Positive 8% -- you combine the interest earned with the inflation rate",
+      "Positive 2% -- nominal interest reflects your actual return regardless of inflation",
+      "Zero -- inflation and interest rates cancel each other out when they are both positive"
+    ],
+    "context": "Real return equals nominal interest minus inflation. Earning 2% while prices rise 6% means your money buys 4% less by year's end -- you are getting poorer in real terms even while your account balance grows. This is the situation many savers faced during 2022-2023. Negative real interest rates are common when central banks hold rates low during inflationary periods, effectively taxing savers to reduce the real burden of debt on borrowers and governments."
   }
 ]
