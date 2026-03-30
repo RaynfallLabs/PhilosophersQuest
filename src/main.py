@@ -7642,7 +7642,7 @@ class Game:
         return best
 
     def _on_monster_killed(self, monster):
-        """Handle a monster killed by a wand bolt."""
+        """Central handler for ALL monster kills: treasure, corpse, boss popup, seal tracking."""
         self.level_mgr.monsters_killed += 1
         self.add_message(f"The {monster.name} is slain!", 'success')
         self._drop_treasure(monster)
@@ -10959,10 +10959,7 @@ class Game:
                     'success'
                 )
                 if killed:
-                    self.level_mgr.monsters_killed += 1
-                    self.add_message(f"The {monster.name} is slain!", 'success')
-                    self._drop_treasure(monster)
-                    self.ground_items.append(self._make_corpse(monster))
+                    self._on_monster_killed(monster)
                     _qs_rng = getattr(self, 'quirk_system', None)
                     if _qs_rng:
                         _qs_rng.on_kill(
@@ -11022,12 +11019,7 @@ class Game:
                     "With impossible strength, you wrench the great wolf's mouth apart!", 'combat')
                 self.add_message(
                     "FENRIR, THE WORLD-WOLF, IS TORN ASUNDER!", 'success')
-                self.level_mgr.monsters_killed += 1
-                self._drop_treasure(monster)
-                self.ground_items.append(self._make_corpse(monster))
-                story_key = self._BOSS_STORY_KEYS.get(monster.kind)
-                if story_key:
-                    self._show_story_popup(story_key, STATE_PLAYER)
+                self._on_monster_killed(monster)
                 _qs_kill = getattr(self, 'quirk_system', None)
                 if _qs_kill:
                     _qs_kill.on_monster_killed(monster.kind)
@@ -11060,10 +11052,7 @@ class Game:
                     msg += " You absorb life energy!"
                 self.add_message(msg, 'success')
                 if killed:
-                    self.level_mgr.monsters_killed += 1
-                    self.add_message(f"The {monster.name} is slain!", 'success')
-                    self._drop_treasure(monster)
-                    self.ground_items.append(self._make_corpse(monster))
+                    self._on_monster_killed(monster)
                     _qs_kill = getattr(self, 'quirk_system', None)
                     if _qs_kill:
                         _qs_kill.on_kill(
