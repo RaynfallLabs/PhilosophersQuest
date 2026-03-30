@@ -1771,6 +1771,10 @@ class Game:
             self._maybe_spawn_npc(new_level)
             self._maybe_spawn_flavor_npc(new_level)
             self._maybe_spawn_cow(new_level)
+        else:
+            # Revisit: spawn triggered NPCs if player now has the trigger item
+            # (handles the case where player missed the item on first pass)
+            self._maybe_spawn_npc(new_level)
 
         # Abaddon empowered by negative karma: boost HP on first entry to L100
         if new_level == 100 and not saved and getattr(self, '_abaddon_empowered', False):
