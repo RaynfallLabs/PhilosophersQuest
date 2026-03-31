@@ -4,7 +4,7 @@ import random
 import sys
 import pygame
 
-VERSION = "1.8"
+VERSION = "1.9.0"
 
 # FANTASY: High-fantasy medieval/arcane grimoire UI theme
 from fantasy_ui import (FP, get_font, draw_panel, draw_dark_panel,
@@ -2483,6 +2483,9 @@ class Game:
             return
         if key == pygame.K_TAB:
             if self.zoom_mode == 'full':
+                self.zoom_mode = 'medium'
+                self.add_message("Medium view. [Tab] to zoom closer.", 'info')
+            elif self.zoom_mode == 'medium':
                 self.zoom_mode = 'close'
                 self.add_message("Close-up view. [Tab] to zoom out.", 'info')
             else:
@@ -11903,7 +11906,12 @@ class Game:
             self.renderer.set_close_up(
                 self.player.x, self.player.y,
                 self.dungeon.width, self.dungeon.height,
-                GAME_W, GAME_H)
+                GAME_W, GAME_H, tile_size=64)
+        elif self.zoom_mode == 'medium':
+            self.renderer.set_close_up(
+                self.player.x, self.player.y,
+                self.dungeon.width, self.dungeon.height,
+                GAME_W, GAME_H, tile_size=TILE_SIZE)
         else:
             self.renderer.set_dungeon(
                 self.dungeon.width, self.dungeon.height,
