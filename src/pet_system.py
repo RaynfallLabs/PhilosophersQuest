@@ -483,6 +483,127 @@ class DadPet(Pet):
         return False
 
 
+class UnicornPet(Pet):
+    """Ethereal Unicorn — healer companion obtained through the unicorn encounter.
+
+    Does NOT attack enemies. Instead:
+    - Heals player 3-5 HP every 4 turns
+    - Removes one negative status effect every 8 turns
+    - Detects traps within 3 tiles (sets trap.detected = True)
+    - Not targeted by enemies (but AoE/traps can still hit her)
+    - Follows the player between levels
+    """
+
+    def __init__(self, x: int = 0, y: int = 0):
+        unicorn_species = {
+            'element': 'holy',
+            'damage_type': 'holy',
+            'color': (255, 255, 240),
+            'stages': [
+                {'name': 'Ethereal Unicorn', 'symbol': 'u', 'msg': ''},
+                {'name': 'Ethereal Unicorn', 'symbol': 'u', 'msg': ''},
+                {'name': 'Ethereal Unicorn', 'symbol': 'u', 'msg': ''},
+            ],
+            'special_name': 'Purify',
+            'special_status': '',
+            'special_status_chance': 0,
+        }
+        self.species_key = 'unicorn'
+        self.species = unicorn_species
+        self.level = 30
+        self.xp = 0
+        self.x = x
+        self.y = y
+        self.alive = True
+        self._special_cooldown = 0
+        self._regen_timer = 0
+        self._heal_timer = 0
+        self._cleanse_timer = 0
+        self.is_unicorn = True
+
+        self.max_hp = 120
+        self.hp = 120
+        self.base_damage = 0  # unicorn does not attack
+
+    @property
+    def name(self) -> str:
+        return 'Ethereal Unicorn'
+
+    @property
+    def symbol(self) -> str:
+        return 'u'
+
+    @property
+    def color(self) -> tuple:
+        return (255, 255, 240)
+
+    def get_attack_damage(self, quiz_accuracy: float = 0.5) -> int:
+        return 0  # unicorn does not attack
+
+    def get_special_damage(self, quiz_accuracy: float = 0.5) -> int:
+        return 0
+
+    def can_use_special(self) -> bool:
+        return False
+
+    def gain_xp(self, amount: int = 1) -> list[str]:
+        return []  # unicorn doesn't level
+
+    def tick_regen(self, bonus: int = 0):
+        """Unicorn regens 2 HP every 3 turns."""
+        if not self.alive:
+            return
+        self._regen_timer += 1
+        if self._regen_timer >= 3:
+            self._regen_timer = 0
+            if self.hp < self.max_hp:
+                self.hp = min(self.max_hp, self.hp + 2)
+
+    def take_turn(self, player, dungeon, monsters, pets, ground_items=None) -> tuple | None:
+        """Unicorn AI: follow player, heal, cleanse, detect traps. Never attacks."""
+        if not self.alive:
+            return None
+
+        messages = []
+
+        # Heal player every 4 turns
+        self._heal_timer += 1
+        if self._heal_timer >= 4:
+            self._heal_timer = 0
+            if player.hp < player.max_hp:
+                heal = random.randint(3, 5)
+                player.hp = min(player.max_hp, player.hp + heal)
+                messages.append(('heal', heal))
+
+        # Cleanse one negative status every 8 turns
+        self._cleanse_timer += 1
+        if self._cleanse_timer >= 8:
+            self._cleanse_timer = 0
+            from status_effects import DEBUFFS
+            active_debuffs = [e for e in player.status_effects if e in DEBUFFS]
+            if active_debuffs:
+                removed = active_debuffs[0]
+                player.status_effects.pop(removed, None)
+                messages.append(('cleanse', removed))
+
+        # Detect traps within 3 tiles
+        if hasattr(dungeon, 'traps'):
+            for (tx, ty), trap in dungeon.traps.items():
+                if abs(tx - self.x) <= 3 and abs(ty - self.y) <= 3:
+                    if not trap.get('detected', False):
+                        trap['detected'] = True
+                        messages.append(('trap', tx, ty))
+
+        # Follow player — stay within 2 tiles
+        pdist = max(abs(self.x - player.x), abs(self.y - player.y))
+        if pdist > 2:
+            self._move_toward(player.x, player.y, dungeon, monsters, pets, player, ground_items)
+
+        if messages:
+            return ('unicorn_actions', messages)
+        return None
+
+
 def random_species() -> str:
     """Pick a random species key with equal probability."""
     return random.choice(list(_SPECIES.keys()))

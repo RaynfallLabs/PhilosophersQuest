@@ -1987,7 +1987,7 @@
     "frequency": 2,
     "attacks": [
       {
-        "name": "lightning",
+        "name": "lightning_bolt",
         "damage": "3d6+4",
         "type": "lightning",
         "effect": "stunned",
@@ -3962,7 +3962,7 @@
         "type": "physical"
       },
       {
-        "name": "lightning dive",
+        "name": "lightning_bolt_dive",
         "damage": "2d6",
         "type": "lightning"
       }
@@ -8051,7 +8051,7 @@
         "type": "physical"
       },
       {
-        "name": "lightning arc",
+        "name": "lightning_bolt_arc",
         "damage": "2d6",
         "type": "lightning"
       }
@@ -20514,5 +20514,2584 @@
       "boss_scroll_id": "scroll_of_the_pasture"
     },
     "lore": "The undisputed sovereign of the Moo Moo Farm. Crowned with golden horns and draped in a tattered royal cape, the Cow King rules his herd of Hell Bovines with an iron hoof. His thunderous charge has ended many an adventurer's farming run. Moo."
+  },
+  "skeleton_champion": {
+    "name": "skeleton champion",
+    "symbol": "s",
+    "color": [
+      220,
+      220,
+      200
+    ],
+    "hp": "8d8+38",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "min_level": 28,
+    "max_level": 44,
+    "thac0": -8,
+    "frequency": 5,
+    "attacks": [
+      {
+        "name": "ancient_blade",
+        "damage": "2d8+2",
+        "type": "slash"
+      }
+    ],
+    "resistances": [
+      "pierce",
+      "cold"
+    ],
+    "weaknesses": [
+      "blunt",
+      "holy"
+    ],
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "warrior_bone",
+    "treasure": {
+      "gold": [
+        47,
+        117
+      ],
+      "item_chance": 0.24000000000000002,
+      "item_tier": 2
+    },
+    "lore": "The animated remains of warriors who died with such fury their bones still remember how to fight. Their technique is flawless, even without muscles."
+  },
+  "dire_wolf_alpha": {
+    "name": "dire wolf alpha",
+    "symbol": "d",
+    "color": [
+      120,
+      110,
+      100
+    ],
+    "hp": "8d8+38",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "min_level": 28,
+    "max_level": 42,
+    "thac0": -8,
+    "frequency": 6,
+    "attacks": [
+      {
+        "name": "savage_bite",
+        "damage": "2d6+3",
+        "type": "pierce"
+      }
+    ],
+    "resistances": [
+      "cold"
+    ],
+    "weaknesses": [
+      "fire"
+    ],
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "wolf_pelt",
+    "treasure": {
+      "gold": [
+        47,
+        117
+      ],
+      "item_chance": 0.24000000000000002,
+      "item_tier": 2
+    },
+    "lore": "Massive wolves the size of horses, leading packs of their lesser kin through the deep tunnels. Their howl can paralyze prey with fear.",
+    "pack": true
+  },
+  "troll_brute": {
+    "name": "troll brute",
+    "symbol": "T",
+    "color": [
+      60,
+      140,
+      60
+    ],
+    "hp": "10d8+40",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "min_level": 30,
+    "max_level": 46,
+    "thac0": -10,
+    "frequency": 4,
+    "attacks": [
+      {
+        "name": "smash",
+        "damage": "3d6+5",
+        "type": "blunt"
+      },
+      {
+        "name": "bite",
+        "damage": "2d4+2",
+        "type": "pierce"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [
+      "fire",
+      "acid"
+    ],
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "troll_regeneration_gland",
+    "treasure": {
+      "gold": [
+        50,
+        125
+      ],
+      "item_chance": 0.25,
+      "item_tier": 2
+    },
+    "lore": "Larger and dumber than common trolls, brutes rely on overwhelming force. Their regeneration is even faster than their smaller cousins.",
+    "regeneration": 3
+  },
+  "elder_basilisk": {
+    "name": "elder basilisk",
+    "symbol": "B",
+    "color": [
+      100,
+      160,
+      40
+    ],
+    "hp": "10d8+40",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "min_level": 30,
+    "max_level": 46,
+    "thac0": -10,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "petrifying_bite",
+        "damage": "2d8+3",
+        "type": "poison",
+        "effect": "paralyzed",
+        "effect_chance": 0.3,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": [
+      "poison"
+    ],
+    "weaknesses": [],
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "basilisk_stone",
+    "treasure": {
+      "gold": [
+        50,
+        125
+      ],
+      "item_chance": 0.25,
+      "item_tier": 2
+    },
+    "lore": "Ancient basilisks whose petrifying gaze has calcified into a venomous bite. The ground around their lairs is littered with stone statues."
+  },
+  "greater_earth_elemental": {
+    "name": "greater earth elemental",
+    "symbol": "E",
+    "color": [
+      140,
+      100,
+      60
+    ],
+    "hp": "11d8+46",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "min_level": 32,
+    "max_level": 48,
+    "thac0": -12,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "boulder_slam",
+        "damage": "3d8+4",
+        "type": "blunt"
+      }
+    ],
+    "resistances": [
+      "physical",
+      "pierce",
+      "slash",
+      "lightning"
+    ],
+    "weaknesses": [
+      "cold"
+    ],
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "golem_stone",
+    "treasure": {
+      "gold": [
+        53,
+        132
+      ],
+      "item_chance": 0.26,
+      "item_tier": 2
+    },
+    "lore": "Massive humanoid forms of living rock, summoned from the deepest geological strata. Their footsteps cause minor tremors."
+  },
+  "fungal_horror": {
+    "name": "fungal horror",
+    "symbol": "F",
+    "color": [
+      120,
+      160,
+      80
+    ],
+    "hp": "10d8+40",
+    "speed": 10,
+    "ai_pattern": "sessile",
+    "min_level": 30,
+    "max_level": 44,
+    "thac0": -10,
+    "frequency": 4,
+    "attacks": [
+      {
+        "name": "spore_burst",
+        "damage": "2d6+2",
+        "type": "poison",
+        "effect": "poisoned",
+        "effect_chance": 0.4,
+        "effect_duration": 5
+      }
+    ],
+    "resistances": [
+      "poison"
+    ],
+    "weaknesses": [
+      "fire"
+    ],
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "sovereign_spore_cap",
+    "treasure": {
+      "gold": [
+        50,
+        125
+      ],
+      "item_chance": 0.25,
+      "item_tier": 2
+    },
+    "lore": "A massive fungal colony that's achieved a terrible sentience. It releases clouds of mind-rotting spores and absorbs the nutrients of anything that falls near it."
+  },
+  "corrosive_ooze": {
+    "name": "corrosive ooze",
+    "symbol": "j",
+    "color": [
+      180,
+      200,
+      40
+    ],
+    "hp": "8d8+38",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "min_level": 28,
+    "max_level": 42,
+    "thac0": -8,
+    "frequency": 4,
+    "attacks": [
+      {
+        "name": "dissolve",
+        "damage": "2d6+3",
+        "type": "acid",
+        "effect": "poisoned",
+        "effect_chance": 0.3,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": [
+      "acid",
+      "blunt"
+    ],
+    "weaknesses": [
+      "cold",
+      "fire"
+    ],
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "toxic_jelly_sac",
+    "treasure": {
+      "gold": [
+        47,
+        117
+      ],
+      "item_chance": 0.24000000000000002,
+      "item_tier": 2
+    },
+    "lore": "A seething mass of caustic slime that dissolves metal on contact. Adventurers who fight them barehanded rarely keep their equipment."
+  },
+  "orc_warlord": {
+    "name": "orc warlord",
+    "symbol": "o",
+    "color": [
+      200,
+      50,
+      20
+    ],
+    "hp": "16d8+66",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "min_level": 40,
+    "max_level": 58,
+    "thac0": -16,
+    "frequency": 4,
+    "attacks": [
+      {
+        "name": "warlord_axe",
+        "damage": "3d8+5",
+        "type": "slash"
+      },
+      {
+        "name": "war_cry",
+        "damage": "1d6",
+        "type": "physical"
+      }
+    ],
+    "resistances": [
+      "poison"
+    ],
+    "weaknesses": [
+      "magic"
+    ],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": "orc_blood",
+    "treasure": {
+      "gold": [
+        65,
+        162
+      ],
+      "item_chance": 0.30000000000000004,
+      "item_tier": 3
+    },
+    "lore": "The supreme commanders of orc hordes, warlords have survived hundreds of battles. They wear armor forged from the weapons of fallen enemies.",
+    "pack": true
+  },
+  "veteran_knight": {
+    "name": "veteran knight",
+    "symbol": "@",
+    "color": [
+      180,
+      180,
+      200
+    ],
+    "hp": "16d8+66",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "min_level": 40,
+    "max_level": 58,
+    "thac0": -16,
+    "frequency": 4,
+    "attacks": [
+      {
+        "name": "longsword_combo",
+        "damage": "3d6+6",
+        "type": "slash"
+      },
+      {
+        "name": "shield_slam",
+        "damage": "2d4+3",
+        "type": "blunt"
+      }
+    ],
+    "resistances": [
+      "slash"
+    ],
+    "weaknesses": [],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": "enchanted_plate",
+    "treasure": {
+      "gold": [
+        65,
+        162
+      ],
+      "item_chance": 0.30000000000000004,
+      "item_tier": 3
+    },
+    "lore": "Seasoned warriors encased in masterwork plate armor. They've survived campaigns that killed everyone around them and fight with the grim efficiency of professionals."
+  },
+  "greater_fire_elemental": {
+    "name": "greater fire elemental",
+    "symbol": "E",
+    "color": [
+      255,
+      120,
+      20
+    ],
+    "hp": "19d8+78",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "min_level": 42,
+    "max_level": 58,
+    "thac0": -16,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "inferno_touch",
+        "damage": "3d8+5",
+        "type": "fire",
+        "effect": "burning",
+        "effect_chance": 0.5,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": [
+      "fire",
+      "slash",
+      "pierce"
+    ],
+    "weaknesses": [
+      "cold"
+    ],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": "ember_ash",
+    "treasure": {
+      "gold": [
+        68,
+        170
+      ],
+      "item_chance": 0.31,
+      "item_tier": 3
+    },
+    "lore": "Fire elementals of immense power, their cores burn hot enough to melt stone. The air around them shimmers with lethal heat."
+  },
+  "chimera_alpha": {
+    "name": "chimera alpha",
+    "symbol": "C",
+    "color": [
+      200,
+      160,
+      40
+    ],
+    "hp": "19d8+78",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "min_level": 42,
+    "max_level": 58,
+    "thac0": -16,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "lion_bite",
+        "damage": "3d6+4",
+        "type": "pierce"
+      },
+      {
+        "name": "dragon_breath",
+        "damage": "2d8+3",
+        "type": "fire"
+      },
+      {
+        "name": "goat_gore",
+        "damage": "2d4+2",
+        "type": "blunt"
+      }
+    ],
+    "resistances": [
+      "fire"
+    ],
+    "weaknesses": [
+      "cold"
+    ],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": "chimera_heart",
+    "treasure": {
+      "gold": [
+        68,
+        170
+      ],
+      "item_chance": 0.31,
+      "item_tier": 3
+    },
+    "lore": "A chimera that's survived to adulthood — a rare and terrible thing. Its three heads coordinate attacks with predatory intelligence."
+  },
+  "bone_colossus": {
+    "name": "bone colossus",
+    "symbol": "S",
+    "color": [
+      240,
+      240,
+      220
+    ],
+    "hp": "19d8+78",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "min_level": 42,
+    "max_level": 58,
+    "thac0": -16,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "bone_crush",
+        "damage": "3d8+6",
+        "type": "blunt"
+      },
+      {
+        "name": "bone_shard",
+        "damage": "2d6+3",
+        "type": "pierce"
+      }
+    ],
+    "resistances": [
+      "pierce",
+      "cold",
+      "poison",
+      "drain"
+    ],
+    "weaknesses": [
+      "blunt",
+      "holy"
+    ],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": "giant_bone",
+    "treasure": {
+      "gold": [
+        68,
+        170
+      ],
+      "item_chance": 0.31,
+      "item_tier": 3
+    },
+    "lore": "An enormous construct assembled from the bones of hundreds of fallen warriors. It moves with grinding purpose, each step scattering smaller bones from its frame."
+  },
+  "demon_knight": {
+    "name": "demon knight",
+    "symbol": "&",
+    "color": [
+      180,
+      40,
+      60
+    ],
+    "hp": "22d8+90",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "min_level": 44,
+    "max_level": 60,
+    "thac0": -16,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "hellfire_sword",
+        "damage": "3d8+5",
+        "type": "fire"
+      },
+      {
+        "name": "dark_shield",
+        "damage": "1d8+3",
+        "type": "necrotic"
+      }
+    ],
+    "resistances": [
+      "fire",
+      "poison"
+    ],
+    "weaknesses": [
+      "holy"
+    ],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": "demon_claw",
+    "treasure": {
+      "gold": [
+        71,
+        177
+      ],
+      "item_chance": 0.32,
+      "item_tier": 3
+    },
+    "lore": "Fallen paladins who swore fealty to the Abyss in exchange for terrible power. They retain their combat discipline but fight with hellfire instead of faith."
+  },
+  "gelatinous_titan": {
+    "name": "gelatinous titan",
+    "symbol": "j",
+    "color": [
+      80,
+      255,
+      80
+    ],
+    "hp": "16d8+66",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "min_level": 40,
+    "max_level": 56,
+    "thac0": -16,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "engulf",
+        "damage": "3d6+4",
+        "type": "acid",
+        "effect": "paralyzed",
+        "effect_chance": 0.25,
+        "effect_duration": 2
+      }
+    ],
+    "resistances": [
+      "acid",
+      "physical"
+    ],
+    "weaknesses": [
+      "fire",
+      "lightning"
+    ],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": "slime_core",
+    "treasure": {
+      "gold": [
+        65,
+        162
+      ],
+      "item_chance": 0.30000000000000004,
+      "item_tier": 3
+    },
+    "lore": "A gelatinous cube that has absorbed so much organic matter it's grown to fill entire corridors. Anything it touches begins to dissolve."
+  },
+  "phase_spider_matriarch": {
+    "name": "phase spider matriarch",
+    "symbol": "s",
+    "color": [
+      140,
+      60,
+      180
+    ],
+    "hp": "19d8+78",
+    "speed": 10,
+    "ai_pattern": "ambush",
+    "min_level": 42,
+    "max_level": 56,
+    "thac0": -16,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "phase_bite",
+        "damage": "2d8+4",
+        "type": "poison",
+        "effect": "poisoned",
+        "effect_chance": 0.4,
+        "effect_duration": 5
+      },
+      {
+        "name": "web_snare",
+        "damage": "1d6",
+        "type": "physical",
+        "effect": "paralyzed",
+        "effect_chance": 0.3,
+        "effect_duration": 2
+      }
+    ],
+    "resistances": [
+      "poison"
+    ],
+    "weaknesses": [
+      "fire"
+    ],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": "phase_spider_venom",
+    "treasure": {
+      "gold": [
+        68,
+        170
+      ],
+      "item_chance": 0.31,
+      "item_tier": 3
+    },
+    "lore": "Ancient phase spiders that have mastered the art of dimensional shifting. They attack from blind spots in reality itself."
+  },
+  "manticore_elder": {
+    "name": "manticore elder",
+    "symbol": "m",
+    "color": [
+      200,
+      140,
+      60
+    ],
+    "hp": "19d8+78",
+    "speed": 10,
+    "ai_pattern": "ranged",
+    "min_level": 42,
+    "max_level": 56,
+    "thac0": -16,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "tail_spike_volley",
+        "damage": "3d6+4",
+        "type": "pierce"
+      },
+      {
+        "name": "rend",
+        "damage": "2d8+3",
+        "type": "slash"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [
+      "cold"
+    ],
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": "manticore_spine",
+    "treasure": {
+      "gold": [
+        68,
+        170
+      ],
+      "item_chance": 0.31,
+      "item_tier": 3
+    },
+    "lore": "A manticore whose tail has grown dozens of regenerating spikes over centuries of hunting. It can launch volleys of bone-piercing barbs."
+  },
+  "war_troll": {
+    "name": "war troll",
+    "symbol": "T",
+    "color": [
+      80,
+      180,
+      60
+    ],
+    "hp": "34d8+138",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "min_level": 52,
+    "max_level": 68,
+    "thac0": -16,
+    "frequency": 4,
+    "attacks": [
+      {
+        "name": "warclub",
+        "damage": "4d6+6",
+        "type": "blunt"
+      },
+      {
+        "name": "rend",
+        "damage": "3d4+4",
+        "type": "slash"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [
+      "fire",
+      "acid"
+    ],
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "troll_regeneration_gland",
+    "treasure": {
+      "gold": [
+        83,
+        207
+      ],
+      "item_chance": 0.36,
+      "item_tier": 3
+    },
+    "lore": "Trolls bred and trained for organized warfare. They wear crude iron armor bolted directly to their regenerating flesh.",
+    "regeneration": 4
+  },
+  "frost_giant_jarl": {
+    "name": "frost giant jarl",
+    "symbol": "H",
+    "color": [
+      120,
+      160,
+      220
+    ],
+    "hp": "37d8+150",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "min_level": 54,
+    "max_level": 70,
+    "thac0": -16,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "ice_greataxe",
+        "damage": "4d8+6",
+        "type": "cold"
+      },
+      {
+        "name": "hurled_boulder",
+        "damage": "3d6+4",
+        "type": "blunt"
+      }
+    ],
+    "resistances": [
+      "cold"
+    ],
+    "weaknesses": [
+      "fire"
+    ],
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "frost_giant_bone",
+    "treasure": {
+      "gold": [
+        86,
+        215
+      ],
+      "item_chance": 0.37,
+      "item_tier": 3
+    },
+    "lore": "Chieftains of the frost giant clans, clad in armor forged from glacial iron. Their axes trail wisps of killing frost."
+  },
+  "fire_giant_king": {
+    "name": "fire giant king",
+    "symbol": "H",
+    "color": [
+      220,
+      120,
+      40
+    ],
+    "hp": "37d8+150",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "min_level": 54,
+    "max_level": 70,
+    "thac0": -16,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "molten_hammer",
+        "damage": "4d8+7",
+        "type": "fire"
+      },
+      {
+        "name": "flame_breath",
+        "damage": "3d6+4",
+        "type": "fire"
+      }
+    ],
+    "resistances": [
+      "fire"
+    ],
+    "weaknesses": [
+      "cold"
+    ],
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "fire_gland",
+    "treasure": {
+      "gold": [
+        86,
+        215
+      ],
+      "item_chance": 0.37,
+      "item_tier": 3
+    },
+    "lore": "Rulers of the volcanic forges deep underground. Their hammers glow white-hot and their skin has hardened to near-stone from centuries near the magma."
+  },
+  "elder_vampire": {
+    "name": "elder vampire",
+    "symbol": "V",
+    "color": [
+      160,
+      20,
+      40
+    ],
+    "hp": "34d8+138",
+    "speed": 10,
+    "ai_pattern": "hit_and_run",
+    "min_level": 52,
+    "max_level": 68,
+    "thac0": -16,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "drain_bite",
+        "damage": "3d8+4",
+        "type": "drain"
+      },
+      {
+        "name": "shadow_claw",
+        "damage": "2d6+3",
+        "type": "necrotic"
+      }
+    ],
+    "resistances": [
+      "drain",
+      "necrotic",
+      "poison"
+    ],
+    "weaknesses": [
+      "holy",
+      "fire"
+    ],
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "elder_vampire_blood",
+    "treasure": {
+      "gold": [
+        83,
+        207
+      ],
+      "item_chance": 0.36,
+      "item_tier": 3
+    },
+    "lore": "Vampires who've survived for millennia, gaining terrible powers from centuries of feeding. They move faster than the eye can track and their gaze can freeze prey in place.",
+    "can_phase_walls": true
+  },
+  "death_knight_lord": {
+    "name": "death knight lord",
+    "symbol": "L",
+    "color": [
+      100,
+      40,
+      120
+    ],
+    "hp": "37d8+150",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "min_level": 54,
+    "max_level": 70,
+    "thac0": -16,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "soul_blade",
+        "damage": "4d6+5",
+        "type": "necrotic"
+      },
+      {
+        "name": "death_strike",
+        "damage": "3d4+4",
+        "type": "drain"
+      }
+    ],
+    "resistances": [
+      "cold",
+      "necrotic",
+      "poison",
+      "drain"
+    ],
+    "weaknesses": [
+      "holy",
+      "fire"
+    ],
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "death_essence",
+    "treasure": {
+      "gold": [
+        86,
+        215
+      ],
+      "item_chance": 0.37,
+      "item_tier": 3
+    },
+    "lore": "Once-great commanders who refused to stay dead. Their swordsmanship is unchanged from life, but every strike now carries the chill of the grave."
+  },
+  "arcane_golem": {
+    "name": "arcane golem",
+    "symbol": "G",
+    "color": [
+      160,
+      120,
+      220
+    ],
+    "hp": "37d8+150",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "min_level": 54,
+    "max_level": 72,
+    "thac0": -16,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "force_fist",
+        "damage": "4d6+6",
+        "type": "magic"
+      },
+      {
+        "name": "arcane_pulse",
+        "damage": "2d8+4",
+        "type": "magic"
+      }
+    ],
+    "resistances": [
+      "magic",
+      "physical",
+      "poison"
+    ],
+    "weaknesses": [
+      "lightning"
+    ],
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "enchanted_clay",
+    "treasure": {
+      "gold": [
+        86,
+        215
+      ],
+      "item_chance": 0.37,
+      "item_tier": 3
+    },
+    "lore": "Golems inscribed with complex arcane formulae that grant them limited spellcasting ability. Their creators are long dead, but the constructs endure."
+  },
+  "abyssal_hound": {
+    "name": "abyssal hound",
+    "symbol": "d",
+    "color": [
+      200,
+      60,
+      60
+    ],
+    "hp": "34d8+138",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "min_level": 52,
+    "max_level": 68,
+    "thac0": -16,
+    "frequency": 5,
+    "attacks": [
+      {
+        "name": "hellfire_bite",
+        "damage": "3d6+4",
+        "type": "fire"
+      },
+      {
+        "name": "claw",
+        "damage": "2d4+3",
+        "type": "slash"
+      }
+    ],
+    "resistances": [
+      "fire",
+      "poison"
+    ],
+    "weaknesses": [
+      "holy",
+      "cold"
+    ],
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "demon_claw",
+    "treasure": {
+      "gold": [
+        83,
+        207
+      ],
+      "item_chance": 0.36,
+      "item_tier": 3
+    },
+    "lore": "Demonic hunting dogs loosed from the lower planes. They hunt in packs, cornering prey with coordinated flanking before tearing it apart.",
+    "pack": true
+  },
+  "dread_sphinx": {
+    "name": "dread sphinx",
+    "symbol": "S",
+    "color": [
+      200,
+      180,
+      100
+    ],
+    "hp": "37d8+150",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "min_level": 54,
+    "max_level": 68,
+    "thac0": -16,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "riddle_curse",
+        "damage": "3d8+4",
+        "type": "magic",
+        "effect": "confused",
+        "effect_chance": 0.35,
+        "effect_duration": 4
+      },
+      {
+        "name": "lion_rend",
+        "damage": "3d6+5",
+        "type": "slash"
+      }
+    ],
+    "resistances": [
+      "magic"
+    ],
+    "weaknesses": [
+      "physical"
+    ],
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "sphinx_riddle_stone",
+    "treasure": {
+      "gold": [
+        86,
+        215
+      ],
+      "item_chance": 0.37,
+      "item_tier": 3
+    },
+    "lore": "Ancient sphinxes whose riddles have become weapons — the confusion they inflict is not metaphorical but literal madness. Wrong answers are punished with claws."
+  },
+  "lich_lord": {
+    "name": "lich lord",
+    "symbol": "L",
+    "color": [
+      140,
+      80,
+      200
+    ],
+    "hp": "40d8+162",
+    "speed": 10,
+    "ai_pattern": "ranged",
+    "min_level": 56,
+    "max_level": 72,
+    "thac0": -16,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "death_bolt",
+        "damage": "4d6+5",
+        "type": "necrotic"
+      },
+      {
+        "name": "paralyze_touch",
+        "damage": "2d6+3",
+        "type": "magic",
+        "effect": "paralyzed",
+        "effect_chance": 0.3,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": [
+      "cold",
+      "necrotic",
+      "poison",
+      "drain"
+    ],
+    "weaknesses": [
+      "holy",
+      "fire"
+    ],
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "lord_phylactery",
+    "treasure": {
+      "gold": [
+        89,
+        222
+      ],
+      "item_chance": 0.38,
+      "item_tier": 3
+    },
+    "lore": "Liches who've survived for so long that their phylacteries have become nearly indestructible. Their magic has had centuries to mature into devastating power."
+  },
+  "corrupted_treant": {
+    "name": "corrupted treant",
+    "symbol": "T",
+    "color": [
+      80,
+      100,
+      40
+    ],
+    "hp": "34d8+138",
+    "speed": 10,
+    "ai_pattern": "sessile",
+    "min_level": 52,
+    "max_level": 66,
+    "thac0": -16,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "slam",
+        "damage": "4d6+5",
+        "type": "blunt"
+      },
+      {
+        "name": "root_entangle",
+        "damage": "2d4+2",
+        "type": "physical",
+        "effect": "paralyzed",
+        "effect_chance": 0.25,
+        "effect_duration": 2
+      }
+    ],
+    "resistances": [
+      "blunt",
+      "physical"
+    ],
+    "weaknesses": [
+      "fire",
+      "acid"
+    ],
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "heartwood_sap",
+    "treasure": {
+      "gold": [
+        83,
+        207
+      ],
+      "item_chance": 0.36,
+      "item_tier": 3
+    },
+    "lore": "Ancient trees twisted by dark magic into malevolent sentience. Their roots reach deep enough to trap the unwary, and their bark has hardened to iron."
+  },
+  "skeleton_horde": {
+    "name": "skeleton horde",
+    "symbol": "s",
+    "color": [
+      200,
+      200,
+      180
+    ],
+    "hp": "34d8+138",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "min_level": 52,
+    "max_level": 66,
+    "thac0": -16,
+    "frequency": 5,
+    "attacks": [
+      {
+        "name": "mass_strike",
+        "damage": "3d6+4",
+        "type": "slash"
+      },
+      {
+        "name": "bone_volley",
+        "damage": "2d6+3",
+        "type": "pierce"
+      }
+    ],
+    "resistances": [
+      "pierce",
+      "cold",
+      "poison"
+    ],
+    "weaknesses": [
+      "blunt",
+      "holy"
+    ],
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "bone_shard",
+    "treasure": {
+      "gold": [
+        83,
+        207
+      ],
+      "item_chance": 0.36,
+      "item_tier": 3
+    },
+    "lore": "Not a single skeleton but a coordinated mass of dozens, moving as one unit. What they lack in individual strength they make up in sheer numbers and relentless pressure.",
+    "pack": true
+  },
+  "spectral_dragon": {
+    "name": "spectral dragon",
+    "symbol": "D",
+    "color": [
+      120,
+      140,
+      200
+    ],
+    "hp": "40d8+162",
+    "speed": 10,
+    "ai_pattern": "ranged",
+    "min_level": 56,
+    "max_level": 72,
+    "thac0": -16,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "ghostfire_breath",
+        "damage": "4d6+5",
+        "type": "necrotic"
+      },
+      {
+        "name": "phase_claw",
+        "damage": "3d6+4",
+        "type": "shadow"
+      }
+    ],
+    "resistances": [
+      "physical",
+      "cold",
+      "necrotic"
+    ],
+    "weaknesses": [
+      "holy"
+    ],
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "spectral_essence",
+    "treasure": {
+      "gold": [
+        89,
+        222
+      ],
+      "item_chance": 0.38,
+      "item_tier": 3
+    },
+    "lore": "The undead remnant of a dragon, stripped of flesh but retaining all its fury. Its breath weapon burns not the body but the soul."
+  },
+  "demon_captain": {
+    "name": "demon captain",
+    "symbol": "&",
+    "color": [
+      220,
+      60,
+      40
+    ],
+    "hp": "37d8+150",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "min_level": 54,
+    "max_level": 70,
+    "thac0": -16,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "hellforged_blade",
+        "damage": "4d6+6",
+        "type": "fire"
+      },
+      {
+        "name": "abyssal_strike",
+        "damage": "2d8+4",
+        "type": "necrotic"
+      }
+    ],
+    "resistances": [
+      "fire",
+      "poison"
+    ],
+    "weaknesses": [
+      "holy",
+      "cold"
+    ],
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "demon_heart",
+    "treasure": {
+      "gold": [
+        86,
+        215
+      ],
+      "item_chance": 0.37,
+      "item_tier": 3
+    },
+    "lore": "Mid-ranking officers in the demonic hierarchy, each commanding a small battalion of lesser fiends. They earned their rank through millennia of infernal warfare."
+  },
+  "iron_sentinel": {
+    "name": "iron sentinel",
+    "symbol": "G",
+    "color": [
+      180,
+      180,
+      180
+    ],
+    "hp": "37d8+150",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "min_level": 54,
+    "max_level": 70,
+    "thac0": -16,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "iron_fist",
+        "damage": "4d6+7",
+        "type": "blunt"
+      },
+      {
+        "name": "grinding_gears",
+        "damage": "2d8+3",
+        "type": "slash"
+      }
+    ],
+    "resistances": [
+      "physical",
+      "fire",
+      "cold",
+      "poison",
+      "drain"
+    ],
+    "weaknesses": [
+      "lightning",
+      "acid"
+    ],
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "clockwork_gear",
+    "treasure": {
+      "gold": [
+        86,
+        215
+      ],
+      "item_chance": 0.37,
+      "item_tier": 3
+    },
+    "lore": "Ancient dwarven war constructs, powered by perpetual-motion cores that have run for millennia. They guard vaults and passages with unwavering loyalty to masters long dead."
+  },
+  "ancient_vampire_lord": {
+    "name": "ancient vampire lord",
+    "symbol": "V",
+    "color": [
+      120,
+      10,
+      30
+    ],
+    "hp": "57d8+232",
+    "speed": 10,
+    "ai_pattern": "hit_and_run",
+    "min_level": 66,
+    "max_level": 84,
+    "thac0": -16,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "sovereign_drain",
+        "damage": "4d8+6",
+        "type": "drain"
+      },
+      {
+        "name": "nightmare_claw",
+        "damage": "3d6+5",
+        "type": "necrotic"
+      }
+    ],
+    "resistances": [
+      "drain",
+      "necrotic",
+      "poison",
+      "cold"
+    ],
+    "weaknesses": [
+      "holy",
+      "fire"
+    ],
+    "harvest_tier": 4,
+    "harvest_threshold": 4,
+    "ingredient_id": "elder_vampire_blood",
+    "treasure": {
+      "gold": [
+        104,
+        260
+      ],
+      "item_chance": 0.43000000000000005,
+      "item_tier": 4
+    },
+    "lore": "The oldest and most powerful of vampire kind. They've survived since before recorded history and their powers border on the divine.",
+    "can_phase_walls": true
+  },
+  "elder_storm_giant": {
+    "name": "elder storm giant",
+    "symbol": "H",
+    "color": [
+      100,
+      120,
+      220
+    ],
+    "hp": "57d8+232",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "min_level": 66,
+    "max_level": 84,
+    "thac0": -16,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "storm_hammer",
+        "damage": "5d8+8",
+        "type": "lightning"
+      },
+      {
+        "name": "thunder_clap",
+        "damage": "3d8+5",
+        "type": "physical"
+      }
+    ],
+    "resistances": [
+      "lightning"
+    ],
+    "weaknesses": [
+      "acid"
+    ],
+    "harvest_tier": 4,
+    "harvest_threshold": 4,
+    "ingredient_id": "storm_essence",
+    "treasure": {
+      "gold": [
+        104,
+        260
+      ],
+      "item_chance": 0.43000000000000005,
+      "item_tier": 4
+    },
+    "lore": "The eldest and most terrible of the storm giant race. Lightning dances across their skin and their voices carry the force of a hurricane."
+  },
+  "primordial_fire_elemental": {
+    "name": "primordial fire elemental",
+    "symbol": "E",
+    "color": [
+      255,
+      200,
+      60
+    ],
+    "hp": "57d8+232",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "min_level": 66,
+    "max_level": 84,
+    "thac0": -16,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "solar_flare",
+        "damage": "5d6+7",
+        "type": "fire",
+        "effect": "burning",
+        "effect_chance": 0.6,
+        "effect_duration": 5
+      }
+    ],
+    "resistances": [
+      "fire",
+      "physical",
+      "poison"
+    ],
+    "weaknesses": [
+      "cold"
+    ],
+    "harvest_tier": 4,
+    "harvest_threshold": 4,
+    "ingredient_id": "elemental_magma_core",
+    "treasure": {
+      "gold": [
+        104,
+        260
+      ],
+      "item_chance": 0.43000000000000005,
+      "item_tier": 4
+    },
+    "lore": "Fire elementals old enough to have witnessed the world's creation. They burn with the intensity of a star and everything near them catches fire."
+  },
+  "primordial_ice_elemental": {
+    "name": "primordial ice elemental",
+    "symbol": "E",
+    "color": [
+      140,
+      200,
+      255
+    ],
+    "hp": "61d8+246",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "min_level": 68,
+    "max_level": 86,
+    "thac0": -16,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "absolute_zero",
+        "damage": "5d6+7",
+        "type": "cold",
+        "effect": "paralyzed",
+        "effect_chance": 0.3,
+        "effect_duration": 2
+      }
+    ],
+    "resistances": [
+      "cold",
+      "physical",
+      "poison"
+    ],
+    "weaknesses": [
+      "fire"
+    ],
+    "harvest_tier": 4,
+    "harvest_threshold": 4,
+    "ingredient_id": "elemental_ice_core",
+    "treasure": {
+      "gold": [
+        107,
+        267
+      ],
+      "item_chance": 0.44000000000000006,
+      "item_tier": 4
+    },
+    "lore": "Ice elementals from the dawn of time, when glaciers covered the world. Their presence drops temperatures so far that even sound freezes solid."
+  },
+  "demon_general": {
+    "name": "demon general",
+    "symbol": "&",
+    "color": [
+      255,
+      40,
+      20
+    ],
+    "hp": "61d8+246",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "min_level": 68,
+    "max_level": 86,
+    "thac0": -16,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "doom_blade",
+        "damage": "5d6+8",
+        "type": "fire"
+      },
+      {
+        "name": "corruption",
+        "damage": "3d8+5",
+        "type": "necrotic"
+      },
+      {
+        "name": "command_strike",
+        "damage": "2d8+4",
+        "type": "physical"
+      }
+    ],
+    "resistances": [
+      "fire",
+      "poison",
+      "necrotic"
+    ],
+    "weaknesses": [
+      "holy",
+      "cold"
+    ],
+    "harvest_tier": 4,
+    "harvest_threshold": 4,
+    "ingredient_id": "demon_heart",
+    "treasure": {
+      "gold": [
+        107,
+        267
+      ],
+      "item_chance": 0.44000000000000006,
+      "item_tier": 4
+    },
+    "lore": "The highest non-princely rank in the demonic hierarchy. Each commands legions and has personally slain more mortals than entire plagues."
+  },
+  "zombie_legion": {
+    "name": "zombie legion",
+    "symbol": "z",
+    "color": [
+      100,
+      120,
+      80
+    ],
+    "hp": "57d8+232",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "min_level": 66,
+    "max_level": 82,
+    "thac0": -16,
+    "frequency": 4,
+    "attacks": [
+      {
+        "name": "mass_claw",
+        "damage": "4d6+5",
+        "type": "slash"
+      },
+      {
+        "name": "overwhelm",
+        "damage": "3d4+4",
+        "type": "physical"
+      }
+    ],
+    "resistances": [
+      "cold",
+      "poison",
+      "drain"
+    ],
+    "weaknesses": [
+      "fire",
+      "holy"
+    ],
+    "harvest_tier": 4,
+    "harvest_threshold": 4,
+    "ingredient_id": "zombie_flesh",
+    "treasure": {
+      "gold": [
+        104,
+        260
+      ],
+      "item_chance": 0.43000000000000005,
+      "item_tier": 4
+    },
+    "lore": "Not individual zombies but a coordinated mass of undead flesh, driven by a single necromantic will. They surge forward in waves, trampling everything in their path.",
+    "pack": true
+  },
+  "dracolich": {
+    "name": "dracolich",
+    "symbol": "D",
+    "color": [
+      180,
+      160,
+      220
+    ],
+    "hp": "61d8+246",
+    "speed": 10,
+    "ai_pattern": "ranged",
+    "min_level": 68,
+    "max_level": 86,
+    "thac0": -16,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "death_breath",
+        "damage": "5d8+6",
+        "type": "necrotic"
+      },
+      {
+        "name": "bone_claw",
+        "damage": "4d6+5",
+        "type": "slash"
+      }
+    ],
+    "resistances": [
+      "cold",
+      "necrotic",
+      "poison",
+      "drain",
+      "physical"
+    ],
+    "weaknesses": [
+      "holy"
+    ],
+    "harvest_tier": 4,
+    "harvest_threshold": 4,
+    "ingredient_id": "lich_dragon_scale",
+    "treasure": {
+      "gold": [
+        107,
+        267
+      ],
+      "item_chance": 0.44000000000000006,
+      "item_tier": 4
+    },
+    "lore": "A dragon that chose undeath over mortality, binding its soul to a phylactery. It retains all its draconic power but now breathes death instead of fire."
+  },
+  "mythic_hydra": {
+    "name": "mythic hydra",
+    "symbol": "H",
+    "color": [
+      80,
+      180,
+      80
+    ],
+    "hp": "57d8+232",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "min_level": 66,
+    "max_level": 84,
+    "thac0": -16,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "multi_bite",
+        "damage": "4d8+6",
+        "type": "pierce"
+      },
+      {
+        "name": "acid_spray",
+        "damage": "3d6+4",
+        "type": "acid"
+      },
+      {
+        "name": "tail_sweep",
+        "damage": "2d8+4",
+        "type": "blunt"
+      }
+    ],
+    "resistances": [
+      "acid",
+      "poison"
+    ],
+    "weaknesses": [
+      "fire",
+      "cold"
+    ],
+    "harvest_tier": 4,
+    "harvest_threshold": 4,
+    "ingredient_id": "hydra_bile",
+    "treasure": {
+      "gold": [
+        104,
+        260
+      ],
+      "item_chance": 0.43000000000000005,
+      "item_tier": 4
+    },
+    "lore": "A hydra that has grown beyond nine heads. Each severed head regrows as two, and it has learned to coordinate all of them in devastating multi-directional attacks.",
+    "regeneration": 5
+  },
+  "corrupted_angel": {
+    "name": "corrupted angel",
+    "symbol": "A",
+    "color": [
+      200,
+      180,
+      220
+    ],
+    "hp": "61d8+246",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "min_level": 68,
+    "max_level": 86,
+    "thac0": -16,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "fallen_blade",
+        "damage": "4d8+6",
+        "type": "magic"
+      },
+      {
+        "name": "dark_radiance",
+        "damage": "3d6+5",
+        "type": "necrotic"
+      }
+    ],
+    "resistances": [
+      "magic",
+      "physical"
+    ],
+    "weaknesses": [
+      "holy"
+    ],
+    "harvest_tier": 4,
+    "harvest_threshold": 4,
+    "ingredient_id": "corrupted_wing_feather",
+    "treasure": {
+      "gold": [
+        107,
+        267
+      ],
+      "item_chance": 0.44000000000000006,
+      "item_tier": 4
+    },
+    "lore": "Celestial beings who fell from grace, their divine light twisted into something terrible. They retain their martial prowess but now serve darker purposes."
+  },
+  "titan": {
+    "name": "titan",
+    "symbol": "H",
+    "color": [
+      200,
+      200,
+      160
+    ],
+    "hp": "65d8+260",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "min_level": 70,
+    "max_level": 88,
+    "thac0": -16,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "titan_fist",
+        "damage": "5d8+9",
+        "type": "blunt"
+      },
+      {
+        "name": "earth_shatter",
+        "damage": "3d8+6",
+        "type": "physical"
+      }
+    ],
+    "resistances": [
+      "physical",
+      "fire"
+    ],
+    "weaknesses": [
+      "lightning",
+      "magic"
+    ],
+    "harvest_tier": 4,
+    "harvest_threshold": 4,
+    "ingredient_id": "titan_essence",
+    "treasure": {
+      "gold": [
+        110,
+        275
+      ],
+      "item_chance": 0.45000000000000007,
+      "item_tier": 4
+    },
+    "lore": "The children of gods, imprisoned beneath the earth since the dawn of creation. Their very footsteps reshape the landscape."
+  },
+  "shadow_assassin": {
+    "name": "shadow assassin",
+    "symbol": "a",
+    "color": [
+      60,
+      20,
+      80
+    ],
+    "hp": "57d8+232",
+    "speed": 10,
+    "ai_pattern": "ambush",
+    "min_level": 66,
+    "max_level": 82,
+    "thac0": -16,
+    "frequency": 4,
+    "attacks": [
+      {
+        "name": "shadow_blade",
+        "damage": "4d6+5",
+        "type": "shadow"
+      },
+      {
+        "name": "backstab",
+        "damage": "3d8+4",
+        "type": "pierce"
+      }
+    ],
+    "resistances": [
+      "shadow",
+      "physical"
+    ],
+    "weaknesses": [
+      "holy",
+      "fire"
+    ],
+    "harvest_tier": 4,
+    "harvest_threshold": 4,
+    "ingredient_id": "shadow_essence",
+    "treasure": {
+      "gold": [
+        104,
+        260
+      ],
+      "item_chance": 0.43000000000000005,
+      "item_tier": 4
+    },
+    "lore": "Assassins who've merged with the shadows themselves. They are nearly invisible until they strike, and by then it's usually too late.",
+    "pack": true
+  },
+  "plague_ooze": {
+    "name": "plague ooze",
+    "symbol": "j",
+    "color": [
+      140,
+      180,
+      60
+    ],
+    "hp": "57d8+232",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "min_level": 66,
+    "max_level": 82,
+    "thac0": -16,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "plague_touch",
+        "damage": "3d8+5",
+        "type": "poison",
+        "effect": "poisoned",
+        "effect_chance": 0.5,
+        "effect_duration": 6
+      }
+    ],
+    "resistances": [
+      "acid",
+      "poison",
+      "physical"
+    ],
+    "weaknesses": [
+      "fire",
+      "cold"
+    ],
+    "harvest_tier": 4,
+    "harvest_threshold": 4,
+    "ingredient_id": "toxic_jelly_sac",
+    "treasure": {
+      "gold": [
+        104,
+        260
+      ],
+      "item_chance": 0.43000000000000005,
+      "item_tier": 4
+    },
+    "lore": "An ooze formed from the accumulated diseases of a thousand plagues. Everything it touches rots, rusts, or festers."
+  },
+  "abyssal_behemoth": {
+    "name": "abyssal behemoth",
+    "symbol": "&",
+    "color": [
+      180,
+      40,
+      80
+    ],
+    "hp": "65d8+260",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "min_level": 70,
+    "max_level": 88,
+    "thac0": -16,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "ruin_slam",
+        "damage": "5d8+8",
+        "type": "physical"
+      },
+      {
+        "name": "chaos_breath",
+        "damage": "4d6+5",
+        "type": "fire"
+      }
+    ],
+    "resistances": [
+      "fire",
+      "poison"
+    ],
+    "weaknesses": [
+      "holy",
+      "cold"
+    ],
+    "harvest_tier": 4,
+    "harvest_threshold": 4,
+    "ingredient_id": "demon_scales",
+    "treasure": {
+      "gold": [
+        110,
+        275
+      ],
+      "item_chance": 0.45000000000000007,
+      "item_tier": 4
+    },
+    "lore": "Massive demon-beasts that serve as living siege engines for the armies of the Abyss. Their footfalls crack stone and their breath melts fortress walls."
+  },
+  "arch_lich": {
+    "name": "arch-lich",
+    "symbol": "L",
+    "color": [
+      180,
+      60,
+      220
+    ],
+    "hp": "92d8+374",
+    "speed": 10,
+    "ai_pattern": "ranged",
+    "min_level": 84,
+    "max_level": 100,
+    "thac0": -16,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "annihilation_ray",
+        "damage": "5d8+8",
+        "type": "necrotic"
+      },
+      {
+        "name": "soul_rend",
+        "damage": "4d6+6",
+        "type": "drain"
+      },
+      {
+        "name": "paralysis_touch",
+        "damage": "2d8+4",
+        "type": "magic",
+        "effect": "paralyzed",
+        "effect_chance": 0.35,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": [
+      "cold",
+      "necrotic",
+      "poison",
+      "drain",
+      "magic"
+    ],
+    "weaknesses": [
+      "holy",
+      "fire"
+    ],
+    "harvest_tier": 5,
+    "harvest_threshold": 5,
+    "ingredient_id": "lord_phylactery",
+    "treasure": {
+      "gold": [
+        131,
+        327
+      ],
+      "item_chance": 0.52,
+      "item_tier": 5
+    },
+    "lore": "The apex of undead spellcasters. Their phylacteries are hidden across multiple planes of existence and their magic rivals that of demigods."
+  },
+  "elder_dracolich": {
+    "name": "elder dracolich",
+    "symbol": "D",
+    "color": [
+      200,
+      180,
+      255
+    ],
+    "hp": "97d8+390",
+    "speed": 10,
+    "ai_pattern": "ranged",
+    "min_level": 86,
+    "max_level": 100,
+    "thac0": -16,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "void_breath",
+        "damage": "6d8+8",
+        "type": "necrotic"
+      },
+      {
+        "name": "ancient_claw",
+        "damage": "5d6+7",
+        "type": "slash"
+      },
+      {
+        "name": "tail_crush",
+        "damage": "4d6+5",
+        "type": "blunt"
+      }
+    ],
+    "resistances": [
+      "cold",
+      "necrotic",
+      "poison",
+      "drain",
+      "physical",
+      "slash"
+    ],
+    "weaknesses": [
+      "holy"
+    ],
+    "harvest_tier": 5,
+    "harvest_threshold": 5,
+    "ingredient_id": "lich_dragon_scale",
+    "treasure": {
+      "gold": [
+        134,
+        335
+      ],
+      "item_chance": 0.53,
+      "item_tier": 5
+    },
+    "lore": "A dracolich that's existed for eons, its power compounded by millennia of undeath. It commands lesser undead with a thought and its breath erases souls from existence."
+  },
+  "primordial_titan": {
+    "name": "primordial titan",
+    "symbol": "H",
+    "color": [
+      240,
+      220,
+      180
+    ],
+    "hp": "92d8+374",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "min_level": 84,
+    "max_level": 100,
+    "thac0": -16,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "world_breaker",
+        "damage": "6d8+10",
+        "type": "blunt"
+      },
+      {
+        "name": "titan_stomp",
+        "damage": "4d8+7",
+        "type": "physical"
+      }
+    ],
+    "resistances": [
+      "physical",
+      "fire",
+      "cold"
+    ],
+    "weaknesses": [
+      "lightning",
+      "holy"
+    ],
+    "harvest_tier": 5,
+    "harvest_threshold": 5,
+    "ingredient_id": "titan_essence",
+    "treasure": {
+      "gold": [
+        131,
+        327
+      ],
+      "item_chance": 0.52,
+      "item_tier": 5
+    },
+    "lore": "The first titans, born from the raw chaos before the gods imposed order. Each step echoes across dimensions and their blows can shatter the walls between worlds."
+  },
+  "void_wyrm": {
+    "name": "void wyrm",
+    "symbol": "D",
+    "color": [
+      60,
+      20,
+      120
+    ],
+    "hp": "97d8+390",
+    "speed": 10,
+    "ai_pattern": "ranged",
+    "min_level": 86,
+    "max_level": 100,
+    "thac0": -16,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "reality_bolt",
+        "damage": "5d8+8",
+        "type": "shadow"
+      },
+      {
+        "name": "void_bite",
+        "damage": "4d8+6",
+        "type": "drain"
+      }
+    ],
+    "resistances": [
+      "shadow",
+      "physical",
+      "cold",
+      "fire"
+    ],
+    "weaknesses": [
+      "holy",
+      "lightning"
+    ],
+    "harvest_tier": 5,
+    "harvest_threshold": 5,
+    "ingredient_id": "void_shard",
+    "treasure": {
+      "gold": [
+        134,
+        335
+      ],
+      "item_chance": 0.53,
+      "item_tier": 5
+    },
+    "lore": "Dragons that have transcended the material plane entirely, existing partially in the void between realities. Their breath tears holes in spacetime."
+  },
+  "infernal_lord": {
+    "name": "infernal lord",
+    "symbol": "&",
+    "color": [
+      255,
+      60,
+      20
+    ],
+    "hp": "92d8+374",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "min_level": 84,
+    "max_level": 100,
+    "thac0": -16,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "hellfire_greatsword",
+        "damage": "5d8+9",
+        "type": "fire"
+      },
+      {
+        "name": "doom_bolt",
+        "damage": "4d6+7",
+        "type": "necrotic"
+      },
+      {
+        "name": "corruption_wave",
+        "damage": "3d8+5",
+        "type": "poison"
+      }
+    ],
+    "resistances": [
+      "fire",
+      "poison",
+      "necrotic",
+      "drain"
+    ],
+    "weaknesses": [
+      "holy",
+      "cold"
+    ],
+    "harvest_tier": 5,
+    "harvest_threshold": 5,
+    "ingredient_id": "demon_heart",
+    "treasure": {
+      "gold": [
+        131,
+        327
+      ],
+      "item_chance": 0.52,
+      "item_tier": 5
+    },
+    "lore": "The ruling class of the infernal hierarchy, just below the demon princes themselves. Each has personally conquered worlds and consumed civilizations."
+  },
+  "celestial_guardian": {
+    "name": "celestial guardian",
+    "symbol": "A",
+    "color": [
+      255,
+      255,
+      200
+    ],
+    "hp": "101d8+410",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "min_level": 88,
+    "max_level": 100,
+    "thac0": -16,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "holy_smite",
+        "damage": "5d8+8",
+        "type": "holy"
+      },
+      {
+        "name": "divine_blade",
+        "damage": "4d8+6",
+        "type": "slash"
+      }
+    ],
+    "resistances": [
+      "holy",
+      "magic",
+      "physical"
+    ],
+    "weaknesses": [
+      "necrotic",
+      "shadow"
+    ],
+    "harvest_tier": 5,
+    "harvest_threshold": 5,
+    "ingredient_id": "solar_venom",
+    "treasure": {
+      "gold": [
+        137,
+        342
+      ],
+      "item_chance": 0.54,
+      "item_tier": 5
+    },
+    "lore": "The guardians of the deepest vaults, placed by divine decree to ensure only the truly worthy pass. They are not evil — merely implacable."
+  },
+  "entropy_elemental": {
+    "name": "entropy elemental",
+    "symbol": "E",
+    "color": [
+      100,
+      60,
+      100
+    ],
+    "hp": "97d8+390",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "min_level": 86,
+    "max_level": 100,
+    "thac0": -16,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "entropy_touch",
+        "damage": "5d6+7",
+        "type": "drain"
+      },
+      {
+        "name": "decay_pulse",
+        "damage": "4d6+5",
+        "type": "necrotic"
+      }
+    ],
+    "resistances": [
+      "physical",
+      "poison",
+      "cold",
+      "drain"
+    ],
+    "weaknesses": [
+      "holy",
+      "lightning"
+    ],
+    "harvest_tier": 5,
+    "harvest_threshold": 5,
+    "ingredient_id": "chaos_essence",
+    "treasure": {
+      "gold": [
+        134,
+        335
+      ],
+      "item_chance": 0.53,
+      "item_tier": 5
+    },
+    "lore": "Manifestations of pure entropy — the inevitable heat-death of all things given form. Their touch accelerates the aging of everything it contacts."
+  },
+  "dread_knight_legion": {
+    "name": "dread knight legion",
+    "symbol": "L",
+    "color": [
+      160,
+      140,
+      180
+    ],
+    "hp": "92d8+374",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "min_level": 84,
+    "max_level": 100,
+    "thac0": -16,
+    "frequency": 3,
+    "attacks": [
+      {
+        "name": "legion_charge",
+        "damage": "5d6+7",
+        "type": "slash"
+      },
+      {
+        "name": "death_aura",
+        "damage": "3d8+5",
+        "type": "necrotic"
+      }
+    ],
+    "resistances": [
+      "cold",
+      "necrotic",
+      "poison",
+      "drain"
+    ],
+    "weaknesses": [
+      "holy",
+      "fire"
+    ],
+    "harvest_tier": 5,
+    "harvest_threshold": 5,
+    "ingredient_id": "death_essence",
+    "treasure": {
+      "gold": [
+        131,
+        327
+      ],
+      "item_chance": 0.52,
+      "item_tier": 5
+    },
+    "lore": "An entire cohort of death knights moving as one disciplined unit. Their coordinated charge has broken armies and their death aura withers everything nearby.",
+    "pack": true
+  },
+  "abyssal_dragon": {
+    "name": "abyssal dragon",
+    "symbol": "D",
+    "color": [
+      200,
+      40,
+      60
+    ],
+    "hp": "101d8+410",
+    "speed": 10,
+    "ai_pattern": "ranged",
+    "min_level": 88,
+    "max_level": 100,
+    "thac0": -16,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "chaos_breath",
+        "damage": "6d8+7",
+        "type": "fire"
+      },
+      {
+        "name": "abyssal_claw",
+        "damage": "5d6+6",
+        "type": "slash"
+      },
+      {
+        "name": "corruption_bite",
+        "damage": "4d6+5",
+        "type": "poison"
+      }
+    ],
+    "resistances": [
+      "fire",
+      "poison",
+      "shadow"
+    ],
+    "weaknesses": [
+      "holy",
+      "cold"
+    ],
+    "harvest_tier": 5,
+    "harvest_threshold": 5,
+    "ingredient_id": "corruption_scale",
+    "treasure": {
+      "gold": [
+        137,
+        342
+      ],
+      "item_chance": 0.54,
+      "item_tier": 5
+    },
+    "lore": "Dragons spawned in the Abyss itself, twisted by demonic essence into something far worse than their material-plane cousins. They combine draconic might with demonic cruelty."
+  },
+  "flesh_colossus": {
+    "name": "flesh colossus",
+    "symbol": "G",
+    "color": [
+      200,
+      140,
+      140
+    ],
+    "hp": "92d8+374",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "min_level": 84,
+    "max_level": 100,
+    "thac0": -16,
+    "frequency": 2,
+    "attacks": [
+      {
+        "name": "slam",
+        "damage": "5d8+10",
+        "type": "blunt"
+      },
+      {
+        "name": "absorb",
+        "damage": "3d8+5",
+        "type": "drain"
+      }
+    ],
+    "resistances": [
+      "physical",
+      "poison",
+      "drain"
+    ],
+    "weaknesses": [
+      "fire",
+      "holy",
+      "lightning"
+    ],
+    "harvest_tier": 5,
+    "harvest_threshold": 5,
+    "ingredient_id": "plague_flesh",
+    "treasure": {
+      "gold": [
+        131,
+        327
+      ],
+      "item_chance": 0.52,
+      "item_tier": 5
+    },
+    "lore": "A grotesque construct assembled from the corpses of a thousand warriors by a mad necromancer. It regenerates by absorbing the flesh of anything it kills.",
+    "regeneration": 6
   }
 }

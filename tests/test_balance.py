@@ -171,7 +171,7 @@ def test_economics_question_format():
 def test_food_count():
     from items import load_items
     foods = load_items('food')
-    assert len(foods) == 16, f"Expected 16 food items, got {len(foods)}"
+    assert len(foods) == 17, f"Expected 17 food items, got {len(foods)}"
 
 
 def test_new_deep_food_items():
@@ -215,12 +215,19 @@ def test_weapon_spawn_weighting():
     from items import load_items
     from dungeon import _item_eligible_weighted
     weapons = load_items('weapon')
-    pool_l1  = _item_eligible_weighted(weapons, 1)
-    pool_l100 = _item_eligible_weighted(weapons, 100)
-    iron_l1  = sum(1 for x in pool_l1   if x.id == 'iron_sword')
-    iron_l100 = sum(1 for x in pool_l100 if x.id == 'iron_sword')
-    # iron_sword should be far more common at L1 than L100
-    assert iron_l1 > iron_l100, "iron_sword should be weighted down at high levels"
+    # Sample multiple times to smooth out RNG variance from weighted sampling
+    iron_l1 = 0
+    iron_l100 = 0
+    for _ in range(50):
+        pool_l1  = _item_eligible_weighted(weapons, 1)
+        pool_l100 = _item_eligible_weighted(weapons, 100)
+        iron_l1  += sum(1 for x in pool_l1   if x.id == 'iron_sword')
+        iron_l100 += sum(1 for x in pool_l100 if x.id == 'iron_sword')
+    # iron_sword should be far more common at L1 than L100 across many samples
+    assert iron_l1 > iron_l100, (
+        f"iron_sword should be weighted down at high levels "
+        f"(L1: {iron_l1}, L100: {iron_l100} across 50 samples)"
+    )
 
 
 # ---------------------------------------------------------------------------

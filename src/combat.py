@@ -152,34 +152,33 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
                 # e.g. 30 HP -> 90% chance, 150 HP -> 50%, 300 HP+ -> 5%
                 resist_threshold = min(0.95, max(0.05, monster.max_hp / 300.0))
                 if random.random() > resist_threshold:
-                    current = monster.status_effects.get('paralyzed', 0)
-                    monster.status_effects['paralyzed'] = max(current, 2)
+                    monster.add_effect('paralyzed', 2)
                     stunned = True
 
         # Bleed mechanic
         if weapon and weapon.bleed_chance > 0 and actual > 0:
             if random.random() < weapon.bleed_chance:
-                monster.status_effects['bleeding'] = monster.status_effects.get('bleeding', 0) + 3
+                monster.add_effect('bleeding', 3)
 
         # Poison mechanic
         poisoned = False
         if weapon and getattr(weapon, 'poison_chance', 0) > 0 and actual > 0:
             if random.random() < weapon.poison_chance:
-                monster.status_effects['poisoned'] = monster.status_effects.get('poisoned', 0) + 5
+                monster.add_effect('poisoned', 5)
                 poisoned = True
 
         # Burn mechanic
         burned = False
         if weapon and getattr(weapon, 'burn_chance', 0) > 0 and actual > 0:
             if random.random() < weapon.burn_chance:
-                monster.status_effects['burning'] = max(monster.status_effects.get('burning', 0), 4)
+                monster.add_effect('burning', 4)
                 burned = True
 
         # Confuse mechanic (Thyrsus-style)
         confused = False
         if weapon and getattr(weapon, 'confuse_chance', 0) > 0 and actual > 0:
             if random.random() < weapon.confuse_chance:
-                monster.status_effects['confused'] = max(monster.status_effects.get('confused', 0), 4)
+                monster.add_effect('confused', 4)
                 confused = True
 
         # Lifesteal mechanic (Soul Reaver)

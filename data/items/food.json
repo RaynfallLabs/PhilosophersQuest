@@ -365,5 +365,32 @@
       0,
       128
     ]
+  },
+  "magic_dungeon_carrot": {
+    "name": "Magic Dungeon Carrot",
+    "sp_restore": 30,
+    "hp_restore": 10,
+    "bonus_type": "none",
+    "bonus_amount": 0,
+    "bonus_stat": null,
+    "bonus_effect": null,
+    "weight": 0.3,
+    "value": 500,
+    "min_level": 1,
+    "identified": true,
+    "unidentified_name": "Magic Dungeon Carrot",
+    "lore": "A luminous orange carrot that grows only in the enchanted soil of deep dungeon gardens. It glows faintly with an inner light and smells of wildflowers. Legend says it is the favorite food of a certain magical beast found deeper in the dungeon. You could eat it... but perhaps it would be wiser to hold onto it.",
+    "floorSpawnWeight": {
+      "1-10": 2,
+      "11-20": 3,
+      "21-100": 0
+    },
+    "containerLootTier": "rare",
+    "symbol": "%",
+    "color": [
+      255,
+      160,
+      40
+    ]
   }
 }

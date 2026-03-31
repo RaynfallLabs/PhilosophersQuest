@@ -11,6 +11,8 @@ full mechanics are yet to be wired in -- the UI, tick, and
 resistance systems are fully active for all of them.
 """
 
+MAX_EFFECT_DURATION = 60  # hard cap on status effect turns (prevents infinite stacking)
+
 # --------------------------------------------------------------------------
 # Registry
 # --------------------------------------------------------------------------
@@ -254,7 +256,7 @@ def apply_effect(player, effect: str, duration: int) -> bool:
     if duration == -1:
         player.status_effects[effect] = -1
     else:
-        player.status_effects[effect] = min(current + duration, 60)
+        player.status_effects[effect] = min(current + duration, MAX_EFFECT_DURATION)
     return True
 
 

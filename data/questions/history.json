@@ -48,7 +48,7 @@
     "context": "Lincoln issued the Emancipation Proclamation on January 1, 1863, declaring enslaved people in Confederate states 'forever free.' It transformed the Civil War from a fight to preserve the Union into a moral crusade against slavery, and discouraged European powers from supporting the Confederacy."
   },
   {
-    "tier": 1,
+    "tier": 3,
     "question": "Napoleon's rise to power after the French Revolution illustrated what historical pattern?",
     "answer": "Revolutions that destroy institutions often produce dictatorship",
     "choices": [
@@ -144,7 +144,7 @@
     "context": "Lincoln delivered his famous 272-word speech on November 19, 1863, at the dedication of a military cemetery in Gettysburg, Pennsylvania. In just two minutes, he redefined the war as a struggle for equality and democratic self-government."
   },
   {
-    "tier": 1,
+    "tier": 3,
     "question": "The French Revolution's slogan 'Liberty, Equality, Fraternity' ultimately gave way to what?",
     "answer": "The Reign of Terror and mass executions under the Committee of Public Safety",
     "choices": [
@@ -744,7 +744,7 @@
     "context": "On April 14, 1912, the Titanic struck an iceberg on its maiden voyage and sank in under three hours. The ship carried over 2,200 people but had lifeboats for barely half — more would have cluttered the promenade deck. Over 1,500 people died in 28°F water. The band famously kept playing. The disaster transformed international maritime safety law: every ocean liner was required to carry sufficient lifeboats for everyone aboard."
   },
   {
-    "tier": 1,
+    "tier": 2,
     "question": "The Protestant Reformation challenged Church authority by arguing that ___?",
     "answer": "Individual conscience guided by Scripture overrides priestly authority",
     "choices": [
@@ -2158,18 +2158,6 @@
       "Arab scientific and mathematical achievements"
     ],
     "context": "Artists and scholars rediscovered the works of ancient Greece and Rome, which had been largely forgotten in Western Europe during the Middle Ages. This rediscovery sparked an explosion of creativity in art, architecture, science, and philosophy that transformed European civilization."
-  },
-  {
-    "tier": 2,
-    "question": "The Battle of Hastings occurred in ___?",
-    "answer": "1066",
-    "choices": [
-      "1042",
-      "1066",
-      "1086",
-      "1100"
-    ],
-    "context": "October 14, 1066, saw William of Normandy defeat the English King Harold II. The Norman Conquest that followed replaced the Anglo-Saxon ruling class, introduced Norman French to the language, and reshaped English law and society for centuries."
   },
   {
     "tier": 4,
@@ -4320,16 +4308,16 @@
     "context": "A free press acts as a 'watchdog' on government, exposing corruption and holding officials accountable. Thomas Jefferson famously wrote that if he had to choose between 'a government without newspapers or newspapers without a government, I should not hesitate a moment to prefer the latter.'"
   },
   {
-    "question": "Property rights are considered foundational to liberty because ___?",
-    "answer": "Without secure property, individuals are dependent on government for their livelihood",
+    "question": "The Founding Fathers believed secure property rights were essential to liberty because ___?",
+    "answer": "A person who depends on government for their livelihood cannot exercise true political freedom",
     "choices": [
-      "Concentrated property ownership has historically correlated with stronger democratic institutions",
-      "Without secure property, individuals are dependent on government for their livelihood",
-      "Property rights function primarily as an economic incentive driving innovation and private investment",
-      "Locke argued that natural rights originate exclusively from communal stewardship of the land"
+      "Property ownership was the only qualification the Founders recognized for voting or civic participation",
+      "A person who depends on government for their livelihood cannot exercise true political freedom",
+      "The Founders modeled property rights on the aristocratic land tenure systems of England",
+      "Property rights were included mainly to protect the commercial interests of merchants and traders"
     ],
     "tier": 2,
-    "context": "John Locke argued that without secure property, individuals have no means of supporting themselves independently of the state. Property gives people the economic independence needed to exercise their political freedom. A person who depends entirely on government for livelihood is not truly free."
+    "context": "John Locke, whose ideas shaped the Founders deeply, argued that property is what allows a person to stand independent of the state. Madison called property rights the foundation of all other rights — if the government can take what you own, it can take everything. This is why the 5th Amendment specifically forbids taking private property without just compensation."
   },
   {
     "question": "The Warsaw Pact's 1956 crushing of the Hungarian Uprising demonstrated that ___?",
@@ -5904,7 +5892,7 @@
     "context": "Monroe couldn't enforce the doctrine alone — for decades Britain's Royal Navy actually kept European powers out of the Americas, since Britain wanted to trade there freely. But the Monroe Doctrine became a cornerstone of American foreign policy. A century later, Theodore Roosevelt added the Roosevelt Corollary, claiming the US could intervene in the internal affairs of any Western Hemisphere nation that mismanaged its debts."
   },
   {
-    "tier": 1,
+    "tier": 3,
     "question": "Jefferson's Louisiana Purchase was controversial partly because ___?",
     "answer": "The Constitution said nothing about a president's power to purchase foreign territory",
     "choices": [
@@ -5916,7 +5904,7 @@
     "context": "Jefferson was a 'strict constructionist' who believed the government could only do what the Constitution explicitly allowed — and it said nothing about buying territory. He drafted a constitutional amendment to legalize the purchase, then abandoned it when Napoleon threatened to cancel the deal unless it moved fast. Jefferson acted first and rationalized later. His opponents never forgave the hypocrisy, but history has vindicated the purchase."
   },
   {
-    "tier": 1,
+    "tier": 3,
     "question": "The Federalists wanted a stronger national government; Anti-Federalists feared it because ___?",
     "answer": "They believed concentrated federal power would recreate the tyranny they had just escaped",
     "choices": [
@@ -5950,18 +5938,6 @@
       "State-level banking to prevent dangerous concentrations of federal financial power"
     ],
     "context": "Hamilton's financial program — assumption of state war debts, a national bank, and tariffs to protect American manufacturing — was contested by Jefferson at every turn. Jefferson wanted an America of independent yeoman farmers; Hamilton wanted an industrial superpower. Hamilton won the argument. The United States became the world's largest economy using methods he designed. Jefferson's agrarian dream was poetic but economically outcompeted."
-  },
-  {
-    "tier": 1,
-    "question": "The Boston Tea Party of December 1773 was colonists' protest against ___?",
-    "answer": "British taxation without any colonial representation in Parliament",
-    "choices": [
-      "British taxation without any colonial representation in Parliament",
-      "The East India Company's monopoly on all goods entering colonial ports",
-      "The Stamp Act's extension to cover all commercial transactions and documents",
-      "Britain's total ban on colonial trade with France and other European nations"
-    ],
-    "context": "On December 16, 1773, colonists disguised as Mohawk Indians dumped 342 chests of tea (worth roughly £10,000) into Boston Harbor. It wasn't only about the tax — it was about the principle: Parliament was taxing them without giving them any voice in its decisions. Britain's furious response — the Intolerable Acts — united the colonies like nothing before. 'No taxation without representation' became the rallying cry."
   },
   {
     "tier": 1,
@@ -6550,5 +6526,65 @@
       "Funding European economic reconstruction to prevent communism from exploiting poverty"
     ],
     "context": "Truman asked Congress for $400 million to support Greece and Turkey in 1947 — both under Soviet pressure. He justified the request with a sweeping universal principle: the US would support free peoples resisting subjugation anywhere in the world. Republican Senator Arthur Vandenberg told Truman he'd have to 'scare the hell out of the American people' to get the money. The Truman Doctrine's open-ended commitment defined American foreign policy for the next 45 years."
+  },
+  {
+    "tier": 1,
+    "question": "The Wright Brothers made the first successful powered airplane flight in ___?",
+    "answer": "1903, at Kitty Hawk, North Carolina",
+    "choices": [
+      "1903, at Kitty Hawk, North Carolina",
+      "1895, at Dayton, Ohio",
+      "1910, at Chicago, Illinois",
+      "1899, at Richmond, Virginia"
+    ],
+    "context": "On December 17, 1903, Orville Wright flew 120 feet in 12 seconds at Kitty Hawk. By the end of the day, the brothers had made four flights, the longest covering 852 feet. Within 66 years of that first flight, humans walked on the Moon."
+  },
+  {
+    "tier": 1,
+    "question": "The American flag has how many stripes, and what do they represent?",
+    "answer": "13 stripes, representing the original 13 colonies",
+    "choices": [
+      "13 stripes, representing the original 13 colonies",
+      "50 stripes, representing each state in the Union",
+      "13 stripes, representing the 13 signers of the Declaration of Independence",
+      "10 stripes, representing the first 10 amendments in the Bill of Rights"
+    ],
+    "context": "The 13 alternating red and white stripes represent the original colonies that declared independence in 1776. The 50 stars represent the current 50 states. The design has been updated 27 times as new states joined — the last change came in 1960, after Hawaii became the 50th state."
+  },
+  {
+    "tier": 1,
+    "question": "Abraham Lincoln was the president of the United States during ___?",
+    "answer": "The Civil War",
+    "choices": [
+      "The Civil War",
+      "The War of 1812",
+      "The Spanish-American War",
+      "World War I"
+    ],
+    "context": "Lincoln was elected in 1860, and Southern states began seceding before he was even inaugurated. He guided the Union through four years of the bloodiest war in American history, issued the Emancipation Proclamation, and was assassinated by John Wilkes Booth just five days after Lee's surrender in April 1865."
+  },
+  {
+    "tier": 1,
+    "question": "The first permanent English settlement in America was established at ___?",
+    "answer": "Jamestown, Virginia, in 1607",
+    "choices": [
+      "Jamestown, Virginia, in 1607",
+      "Plymouth, Massachusetts, in 1620",
+      "Boston, Massachusetts, in 1630",
+      "Roanoke, Virginia, in 1587"
+    ],
+    "context": "Jamestown, founded in 1607 by the Virginia Company, was the first permanent English settlement to survive. The earlier Roanoke Colony (1587) famously vanished — all 115 settlers disappeared, leaving only the word 'CROATOAN' carved on a post. Jamestown barely survived its first years before tobacco farming transformed it into a viable colony."
+  },
+  {
+    "tier": 1,
+    "question": "The Apollo 11 mission landed humans on the Moon in ___?",
+    "answer": "July 1969",
+    "choices": [
+      "July 1969",
+      "October 1957",
+      "February 1971",
+      "June 1965"
+    ],
+    "context": "On July 20, 1969, Neil Armstrong and Buzz Aldrin landed on the Moon while Michael Collins orbited above. An estimated 600 million people watched on television — about one-fifth of the world's population. The mission fulfilled President Kennedy's 1961 pledge to land on the Moon before the decade was out."
   }
 ]

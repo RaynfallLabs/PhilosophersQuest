@@ -3272,7 +3272,7 @@
     "symbol": "C"
   },
   "jormungandr_spawn": {
-    "name": "J\u00f6rmungandr Spawn",
+    "name": "Jörmungandr Spawn",
     "silhouette": "serpent_snake",
     "size": 0.88,
     "features": [],
@@ -3380,7 +3380,7 @@
     "symbol": "G"
   },
   "nidhogg_brood": {
-    "name": "N\u00ed\u00f0h\u00f6ggr Brood",
+    "name": "Níðhöggr Brood",
     "silhouette": "humanoid_medium",
     "size": 0.92,
     "features": [],
@@ -4210,7 +4210,7 @@
     "symbol": "C"
   },
   "puca": {
-    "name": "P\u00faca",
+    "name": "Púca",
     "silhouette": "humanoid_small",
     "size": 0.87,
     "features": [],
@@ -13923,7 +13923,7 @@
     "symbol": "W"
   },
   "jormungandr_juvenile": {
-    "name": "J\u00f6rmungandr (Juvenile)",
+    "name": "Jörmungandr (Juvenile)",
     "silhouette": "serpent_snake",
     "size": 1.12,
     "features": [],
@@ -14205,7 +14205,7 @@
     "symbol": "A"
   },
   "nidhoggr_fragment": {
-    "name": "N\u00ed\u00f0h\u00f6ggr Fragment",
+    "name": "Níðhöggr Fragment",
     "silhouette": "humanoid_medium",
     "size": 1.25,
     "features": [],
@@ -14585,5 +14585,2025 @@
     },
     "level": 100,
     "symbol": "a"
+  },
+  "skeleton_champion": {
+    "name": "skeleton champion",
+    "silhouette": "undead_skeleton",
+    "size": 1.05,
+    "features": [
+      "skull",
+      "armor"
+    ],
+    "palette": {
+      "primary": [
+        220,
+        210,
+        180
+      ],
+      "secondary": [
+        255,
+        255,
+        234
+      ],
+      "dark": [
+        88,
+        84,
+        72
+      ],
+      "highlight": [
+        255,
+        255,
+        255
+      ],
+      "saturated": [
+        154,
+        255,
+        125
+      ]
+    },
+    "level": 28,
+    "symbol": "s"
+  },
+  "dire_wolf_alpha": {
+    "name": "dire wolf alpha",
+    "silhouette": "quadruped_large",
+    "size": 1.1,
+    "features": [],
+    "palette": {
+      "primary": [
+        120,
+        110,
+        100
+      ],
+      "secondary": [
+        156,
+        143,
+        130
+      ],
+      "dark": [
+        48,
+        44,
+        40
+      ],
+      "highlight": [
+        204,
+        187,
+        170
+      ],
+      "saturated": [
+        84,
+        143,
+        70
+      ]
+    },
+    "level": 28,
+    "symbol": "d"
+  },
+  "troll_brute": {
+    "name": "troll brute",
+    "silhouette": "troll",
+    "size": 1.35,
+    "features": [],
+    "palette": {
+      "primary": [
+        70,
+        150,
+        70
+      ],
+      "secondary": [
+        91,
+        195,
+        91
+      ],
+      "dark": [
+        28,
+        60,
+        28
+      ],
+      "highlight": [
+        119,
+        255,
+        119
+      ],
+      "saturated": [
+        49,
+        195,
+        49
+      ]
+    },
+    "level": 30,
+    "symbol": "T"
+  },
+  "elder_basilisk": {
+    "name": "elder basilisk",
+    "silhouette": "quadruped_large",
+    "size": 1.1,
+    "features": [
+      "tail"
+    ],
+    "palette": {
+      "primary": [
+        80,
+        140,
+        60
+      ],
+      "secondary": [
+        104,
+        182,
+        78
+      ],
+      "dark": [
+        32,
+        56,
+        24
+      ],
+      "highlight": [
+        136,
+        238,
+        102
+      ],
+      "saturated": [
+        56,
+        182,
+        42
+      ]
+    },
+    "level": 30,
+    "symbol": "B"
+  },
+  "greater_earth_elemental": {
+    "name": "greater earth elemental",
+    "silhouette": "elemental_earth",
+    "size": 1.3,
+    "features": [],
+    "palette": {
+      "primary": [
+        140,
+        100,
+        60
+      ],
+      "secondary": [
+        182,
+        130,
+        78
+      ],
+      "dark": [
+        56,
+        40,
+        24
+      ],
+      "highlight": [
+        238,
+        170,
+        102
+      ],
+      "saturated": [
+        98,
+        130,
+        42
+      ]
+    },
+    "level": 32,
+    "symbol": "E"
+  },
+  "fungal_horror": {
+    "name": "fungal horror",
+    "silhouette": "plant_creature",
+    "size": 1.15,
+    "features": [],
+    "palette": {
+      "primary": [
+        120,
+        160,
+        80
+      ],
+      "secondary": [
+        156,
+        208,
+        104
+      ],
+      "dark": [
+        48,
+        64,
+        32
+      ],
+      "highlight": [
+        204,
+        255,
+        136
+      ],
+      "saturated": [
+        84,
+        208,
+        56
+      ]
+    },
+    "level": 30,
+    "symbol": "F"
+  },
+  "corrosive_ooze": {
+    "name": "corrosive ooze",
+    "silhouette": "blob_ooze",
+    "size": 1.05,
+    "features": [],
+    "palette": {
+      "primary": [
+        180,
+        200,
+        40
+      ],
+      "secondary": [
+        234,
+        255,
+        52
+      ],
+      "dark": [
+        72,
+        80,
+        16
+      ],
+      "highlight": [
+        255,
+        255,
+        68
+      ],
+      "saturated": [
+        125,
+        255,
+        28
+      ]
+    },
+    "level": 28,
+    "symbol": "j"
+  },
+  "orc_warlord": {
+    "name": "orc warlord",
+    "silhouette": "humanoid_large",
+    "size": 1.2,
+    "features": [
+      "armor",
+      "crown"
+    ],
+    "palette": {
+      "primary": [
+        200,
+        50,
+        20
+      ],
+      "secondary": [
+        255,
+        65,
+        26
+      ],
+      "dark": [
+        80,
+        20,
+        8
+      ],
+      "highlight": [
+        255,
+        85,
+        34
+      ],
+      "saturated": [
+        140,
+        65,
+        14
+      ]
+    },
+    "level": 40,
+    "symbol": "o"
+  },
+  "veteran_knight": {
+    "name": "veteran knight",
+    "silhouette": "humanoid_medium",
+    "size": 1.1,
+    "features": [
+      "armor"
+    ],
+    "palette": {
+      "primary": [
+        180,
+        180,
+        200
+      ],
+      "secondary": [
+        234,
+        234,
+        255
+      ],
+      "dark": [
+        72,
+        72,
+        80
+      ],
+      "highlight": [
+        255,
+        255,
+        255
+      ],
+      "saturated": [
+        125,
+        234,
+        140
+      ]
+    },
+    "level": 40,
+    "symbol": "@"
+  },
+  "greater_fire_elemental": {
+    "name": "greater fire elemental",
+    "silhouette": "elemental_fire",
+    "size": 1.25,
+    "features": [
+      "flames"
+    ],
+    "palette": {
+      "primary": [
+        255,
+        120,
+        20
+      ],
+      "secondary": [
+        255,
+        156,
+        26
+      ],
+      "dark": [
+        102,
+        48,
+        8
+      ],
+      "highlight": [
+        255,
+        204,
+        34
+      ],
+      "saturated": [
+        178,
+        156,
+        14
+      ]
+    },
+    "level": 42,
+    "symbol": "E"
+  },
+  "chimera_alpha": {
+    "name": "chimera alpha",
+    "silhouette": "quadruped_large",
+    "size": 1.15,
+    "features": [
+      "multi_head",
+      "wings"
+    ],
+    "palette": {
+      "primary": [
+        200,
+        160,
+        40
+      ],
+      "secondary": [
+        255,
+        208,
+        52
+      ],
+      "dark": [
+        80,
+        64,
+        16
+      ],
+      "highlight": [
+        255,
+        255,
+        68
+      ],
+      "saturated": [
+        140,
+        208,
+        28
+      ]
+    },
+    "level": 42,
+    "symbol": "C"
+  },
+  "bone_colossus": {
+    "name": "bone colossus",
+    "silhouette": "construct_golem",
+    "size": 1.4,
+    "features": [
+      "skull"
+    ],
+    "palette": {
+      "primary": [
+        230,
+        220,
+        200
+      ],
+      "secondary": [
+        255,
+        255,
+        255
+      ],
+      "dark": [
+        92,
+        88,
+        80
+      ],
+      "highlight": [
+        255,
+        255,
+        255
+      ],
+      "saturated": [
+        161,
+        255,
+        140
+      ]
+    },
+    "level": 42,
+    "symbol": "S"
+  },
+  "demon_knight": {
+    "name": "demon knight",
+    "silhouette": "humanoid_medium",
+    "size": 1.1,
+    "features": [
+      "armor",
+      "horns",
+      "flames"
+    ],
+    "palette": {
+      "primary": [
+        180,
+        40,
+        60
+      ],
+      "secondary": [
+        234,
+        52,
+        78
+      ],
+      "dark": [
+        72,
+        16,
+        24
+      ],
+      "highlight": [
+        255,
+        68,
+        102
+      ],
+      "saturated": [
+        125,
+        52,
+        42
+      ]
+    },
+    "level": 44,
+    "symbol": "&"
+  },
+  "gelatinous_titan": {
+    "name": "gelatinous titan",
+    "silhouette": "blob_ooze",
+    "size": 1.4,
+    "features": [],
+    "palette": {
+      "primary": [
+        80,
+        255,
+        80
+      ],
+      "secondary": [
+        104,
+        255,
+        104
+      ],
+      "dark": [
+        32,
+        102,
+        32
+      ],
+      "highlight": [
+        136,
+        255,
+        136
+      ],
+      "saturated": [
+        56,
+        255,
+        56
+      ]
+    },
+    "level": 40,
+    "symbol": "j"
+  },
+  "phase_spider_matriarch": {
+    "name": "phase spider matriarch",
+    "silhouette": "insect_spider",
+    "size": 1.2,
+    "features": [],
+    "palette": {
+      "primary": [
+        140,
+        60,
+        180
+      ],
+      "secondary": [
+        182,
+        78,
+        234
+      ],
+      "dark": [
+        56,
+        24,
+        72
+      ],
+      "highlight": [
+        238,
+        102,
+        255
+      ],
+      "saturated": [
+        98,
+        78,
+        125
+      ]
+    },
+    "level": 42,
+    "symbol": "s"
+  },
+  "manticore_elder": {
+    "name": "manticore elder",
+    "silhouette": "winged_quadruped",
+    "size": 1.15,
+    "features": [
+      "wings",
+      "tail"
+    ],
+    "palette": {
+      "primary": [
+        200,
+        140,
+        60
+      ],
+      "secondary": [
+        255,
+        182,
+        78
+      ],
+      "dark": [
+        80,
+        56,
+        24
+      ],
+      "highlight": [
+        255,
+        238,
+        102
+      ],
+      "saturated": [
+        140,
+        182,
+        42
+      ]
+    },
+    "level": 42,
+    "symbol": "m"
+  },
+  "war_troll": {
+    "name": "war troll",
+    "silhouette": "troll",
+    "size": 1.4,
+    "features": [
+      "armor"
+    ],
+    "palette": {
+      "primary": [
+        80,
+        180,
+        60
+      ],
+      "secondary": [
+        104,
+        234,
+        78
+      ],
+      "dark": [
+        32,
+        72,
+        24
+      ],
+      "highlight": [
+        136,
+        255,
+        102
+      ],
+      "saturated": [
+        56,
+        234,
+        42
+      ]
+    },
+    "level": 52,
+    "symbol": "T"
+  },
+  "frost_giant_jarl": {
+    "name": "frost giant jarl",
+    "silhouette": "humanoid_large",
+    "size": 1.5,
+    "features": [
+      "armor",
+      "ice"
+    ],
+    "palette": {
+      "primary": [
+        120,
+        160,
+        220
+      ],
+      "secondary": [
+        156,
+        208,
+        255
+      ],
+      "dark": [
+        48,
+        64,
+        88
+      ],
+      "highlight": [
+        204,
+        255,
+        255
+      ],
+      "saturated": [
+        84,
+        208,
+        154
+      ]
+    },
+    "level": 54,
+    "symbol": "H"
+  },
+  "fire_giant_king": {
+    "name": "fire giant king",
+    "silhouette": "humanoid_large",
+    "size": 1.5,
+    "features": [
+      "armor",
+      "flames"
+    ],
+    "palette": {
+      "primary": [
+        220,
+        120,
+        40
+      ],
+      "secondary": [
+        255,
+        156,
+        52
+      ],
+      "dark": [
+        88,
+        48,
+        16
+      ],
+      "highlight": [
+        255,
+        204,
+        68
+      ],
+      "saturated": [
+        154,
+        156,
+        28
+      ]
+    },
+    "level": 54,
+    "symbol": "H"
+  },
+  "elder_vampire": {
+    "name": "elder vampire",
+    "silhouette": "vampire_noble",
+    "size": 1.1,
+    "features": [],
+    "palette": {
+      "primary": [
+        160,
+        20,
+        40
+      ],
+      "secondary": [
+        208,
+        26,
+        52
+      ],
+      "dark": [
+        64,
+        8,
+        16
+      ],
+      "highlight": [
+        255,
+        34,
+        68
+      ],
+      "saturated": [
+        112,
+        26,
+        28
+      ]
+    },
+    "level": 52,
+    "symbol": "V"
+  },
+  "death_knight_lord": {
+    "name": "death knight lord",
+    "silhouette": "humanoid_medium",
+    "size": 1.15,
+    "features": [
+      "armor",
+      "skull"
+    ],
+    "palette": {
+      "primary": [
+        100,
+        40,
+        120
+      ],
+      "secondary": [
+        130,
+        52,
+        156
+      ],
+      "dark": [
+        40,
+        16,
+        48
+      ],
+      "highlight": [
+        170,
+        68,
+        204
+      ],
+      "saturated": [
+        70,
+        52,
+        84
+      ]
+    },
+    "level": 54,
+    "symbol": "L"
+  },
+  "arcane_golem": {
+    "name": "arcane golem",
+    "silhouette": "construct_golem",
+    "size": 1.35,
+    "features": [
+      "glow"
+    ],
+    "palette": {
+      "primary": [
+        160,
+        120,
+        220
+      ],
+      "secondary": [
+        208,
+        156,
+        255
+      ],
+      "dark": [
+        64,
+        48,
+        88
+      ],
+      "highlight": [
+        255,
+        204,
+        255
+      ],
+      "saturated": [
+        112,
+        156,
+        154
+      ]
+    },
+    "level": 54,
+    "symbol": "G"
+  },
+  "abyssal_hound": {
+    "name": "abyssal hound",
+    "silhouette": "quadruped_large",
+    "size": 0.95,
+    "features": [
+      "flames"
+    ],
+    "palette": {
+      "primary": [
+        200,
+        60,
+        60
+      ],
+      "secondary": [
+        255,
+        78,
+        78
+      ],
+      "dark": [
+        80,
+        24,
+        24
+      ],
+      "highlight": [
+        255,
+        102,
+        102
+      ],
+      "saturated": [
+        140,
+        78,
+        42
+      ]
+    },
+    "level": 52,
+    "symbol": "d"
+  },
+  "dread_sphinx": {
+    "name": "dread sphinx",
+    "silhouette": "winged_quadruped",
+    "size": 1.2,
+    "features": [
+      "wings"
+    ],
+    "palette": {
+      "primary": [
+        200,
+        180,
+        100
+      ],
+      "secondary": [
+        255,
+        234,
+        130
+      ],
+      "dark": [
+        80,
+        72,
+        40
+      ],
+      "highlight": [
+        255,
+        255,
+        170
+      ],
+      "saturated": [
+        140,
+        234,
+        70
+      ]
+    },
+    "level": 54,
+    "symbol": "S"
+  },
+  "lich_lord": {
+    "name": "lich lord",
+    "silhouette": "lich_caster",
+    "size": 1.2,
+    "features": [
+      "skull",
+      "staff"
+    ],
+    "palette": {
+      "primary": [
+        140,
+        80,
+        200
+      ],
+      "secondary": [
+        182,
+        104,
+        255
+      ],
+      "dark": [
+        56,
+        32,
+        80
+      ],
+      "highlight": [
+        238,
+        136,
+        255
+      ],
+      "saturated": [
+        98,
+        104,
+        140
+      ]
+    },
+    "level": 56,
+    "symbol": "L"
+  },
+  "corrupted_treant": {
+    "name": "corrupted treant",
+    "silhouette": "plant_creature",
+    "size": 1.4,
+    "features": [],
+    "palette": {
+      "primary": [
+        80,
+        100,
+        40
+      ],
+      "secondary": [
+        104,
+        130,
+        52
+      ],
+      "dark": [
+        32,
+        40,
+        16
+      ],
+      "highlight": [
+        136,
+        170,
+        68
+      ],
+      "saturated": [
+        56,
+        130,
+        28
+      ]
+    },
+    "level": 52,
+    "symbol": "T"
+  },
+  "skeleton_horde": {
+    "name": "skeleton horde",
+    "silhouette": "undead_skeleton",
+    "size": 1.0,
+    "features": [
+      "skull",
+      "armor"
+    ],
+    "palette": {
+      "primary": [
+        200,
+        200,
+        180
+      ],
+      "secondary": [
+        255,
+        255,
+        234
+      ],
+      "dark": [
+        80,
+        80,
+        72
+      ],
+      "highlight": [
+        255,
+        255,
+        255
+      ],
+      "saturated": [
+        140,
+        255,
+        125
+      ]
+    },
+    "level": 52,
+    "symbol": "s"
+  },
+  "spectral_dragon": {
+    "name": "spectral dragon",
+    "silhouette": "dragon_large",
+    "size": 1.3,
+    "features": [
+      "wings",
+      "tail",
+      "glow"
+    ],
+    "palette": {
+      "primary": [
+        120,
+        140,
+        200
+      ],
+      "secondary": [
+        156,
+        182,
+        255
+      ],
+      "dark": [
+        48,
+        56,
+        80
+      ],
+      "highlight": [
+        204,
+        238,
+        255
+      ],
+      "saturated": [
+        84,
+        182,
+        140
+      ]
+    },
+    "level": 56,
+    "symbol": "D"
+  },
+  "demon_captain": {
+    "name": "demon captain",
+    "silhouette": "demon_winged",
+    "size": 1.15,
+    "features": [
+      "horns",
+      "wings"
+    ],
+    "palette": {
+      "primary": [
+        220,
+        60,
+        40
+      ],
+      "secondary": [
+        255,
+        78,
+        52
+      ],
+      "dark": [
+        88,
+        24,
+        16
+      ],
+      "highlight": [
+        255,
+        102,
+        68
+      ],
+      "saturated": [
+        154,
+        78,
+        28
+      ]
+    },
+    "level": 54,
+    "symbol": "&"
+  },
+  "iron_sentinel": {
+    "name": "iron sentinel",
+    "silhouette": "construct_golem",
+    "size": 1.3,
+    "features": [
+      "armor"
+    ],
+    "palette": {
+      "primary": [
+        180,
+        180,
+        180
+      ],
+      "secondary": [
+        234,
+        234,
+        234
+      ],
+      "dark": [
+        72,
+        72,
+        72
+      ],
+      "highlight": [
+        255,
+        255,
+        255
+      ],
+      "saturated": [
+        125,
+        234,
+        125
+      ]
+    },
+    "level": 54,
+    "symbol": "G"
+  },
+  "ancient_vampire_lord": {
+    "name": "ancient vampire lord",
+    "silhouette": "vampire_noble",
+    "size": 1.2,
+    "features": [
+      "crown"
+    ],
+    "palette": {
+      "primary": [
+        120,
+        10,
+        30
+      ],
+      "secondary": [
+        156,
+        13,
+        39
+      ],
+      "dark": [
+        48,
+        4,
+        12
+      ],
+      "highlight": [
+        204,
+        17,
+        51
+      ],
+      "saturated": [
+        84,
+        13,
+        21
+      ]
+    },
+    "level": 66,
+    "symbol": "V"
+  },
+  "elder_storm_giant": {
+    "name": "elder storm giant",
+    "silhouette": "humanoid_large",
+    "size": 1.55,
+    "features": [
+      "armor"
+    ],
+    "palette": {
+      "primary": [
+        100,
+        120,
+        220
+      ],
+      "secondary": [
+        130,
+        156,
+        255
+      ],
+      "dark": [
+        40,
+        48,
+        88
+      ],
+      "highlight": [
+        170,
+        204,
+        255
+      ],
+      "saturated": [
+        70,
+        156,
+        154
+      ]
+    },
+    "level": 66,
+    "symbol": "H"
+  },
+  "primordial_fire_elemental": {
+    "name": "primordial fire elemental",
+    "silhouette": "elemental_fire",
+    "size": 1.45,
+    "features": [
+      "flames",
+      "glow"
+    ],
+    "palette": {
+      "primary": [
+        255,
+        200,
+        60
+      ],
+      "secondary": [
+        255,
+        255,
+        78
+      ],
+      "dark": [
+        102,
+        80,
+        24
+      ],
+      "highlight": [
+        255,
+        255,
+        102
+      ],
+      "saturated": [
+        178,
+        255,
+        42
+      ]
+    },
+    "level": 66,
+    "symbol": "E"
+  },
+  "primordial_ice_elemental": {
+    "name": "primordial ice elemental",
+    "silhouette": "elemental_ice",
+    "size": 1.45,
+    "features": [
+      "ice",
+      "glow"
+    ],
+    "palette": {
+      "primary": [
+        140,
+        200,
+        255
+      ],
+      "secondary": [
+        182,
+        255,
+        255
+      ],
+      "dark": [
+        56,
+        80,
+        102
+      ],
+      "highlight": [
+        238,
+        255,
+        255
+      ],
+      "saturated": [
+        98,
+        255,
+        178
+      ]
+    },
+    "level": 68,
+    "symbol": "E"
+  },
+  "demon_general": {
+    "name": "demon general",
+    "silhouette": "demon_winged",
+    "size": 1.35,
+    "features": [
+      "horns",
+      "wings",
+      "armor",
+      "flames"
+    ],
+    "palette": {
+      "primary": [
+        255,
+        40,
+        20
+      ],
+      "secondary": [
+        255,
+        52,
+        26
+      ],
+      "dark": [
+        102,
+        16,
+        8
+      ],
+      "highlight": [
+        255,
+        68,
+        34
+      ],
+      "saturated": [
+        178,
+        52,
+        14
+      ]
+    },
+    "level": 68,
+    "symbol": "&"
+  },
+  "zombie_legion": {
+    "name": "zombie legion",
+    "silhouette": "undead_zombie",
+    "size": 1.1,
+    "features": [
+      "armor"
+    ],
+    "palette": {
+      "primary": [
+        100,
+        120,
+        80
+      ],
+      "secondary": [
+        130,
+        156,
+        104
+      ],
+      "dark": [
+        40,
+        48,
+        32
+      ],
+      "highlight": [
+        170,
+        204,
+        136
+      ],
+      "saturated": [
+        70,
+        156,
+        56
+      ]
+    },
+    "level": 66,
+    "symbol": "z"
+  },
+  "dracolich": {
+    "name": "dracolich",
+    "silhouette": "dragon_large",
+    "size": 1.4,
+    "features": [
+      "wings",
+      "horns",
+      "tail",
+      "skull"
+    ],
+    "palette": {
+      "primary": [
+        180,
+        160,
+        220
+      ],
+      "secondary": [
+        234,
+        208,
+        255
+      ],
+      "dark": [
+        72,
+        64,
+        88
+      ],
+      "highlight": [
+        255,
+        255,
+        255
+      ],
+      "saturated": [
+        125,
+        208,
+        154
+      ]
+    },
+    "level": 68,
+    "symbol": "D"
+  },
+  "mythic_hydra": {
+    "name": "mythic hydra",
+    "silhouette": "serpent_snake",
+    "size": 1.4,
+    "features": [
+      "multi_head"
+    ],
+    "palette": {
+      "primary": [
+        80,
+        180,
+        80
+      ],
+      "secondary": [
+        104,
+        234,
+        104
+      ],
+      "dark": [
+        32,
+        72,
+        32
+      ],
+      "highlight": [
+        136,
+        255,
+        136
+      ],
+      "saturated": [
+        56,
+        234,
+        56
+      ]
+    },
+    "level": 66,
+    "symbol": "H"
+  },
+  "corrupted_angel": {
+    "name": "corrupted angel",
+    "silhouette": "humanoid_medium",
+    "size": 1.15,
+    "features": [
+      "wings",
+      "glow"
+    ],
+    "palette": {
+      "primary": [
+        200,
+        180,
+        220
+      ],
+      "secondary": [
+        255,
+        234,
+        255
+      ],
+      "dark": [
+        80,
+        72,
+        88
+      ],
+      "highlight": [
+        255,
+        255,
+        255
+      ],
+      "saturated": [
+        140,
+        234,
+        154
+      ]
+    },
+    "level": 68,
+    "symbol": "A"
+  },
+  "titan": {
+    "name": "titan",
+    "silhouette": "humanoid_large",
+    "size": 1.55,
+    "features": [
+      "armor"
+    ],
+    "palette": {
+      "primary": [
+        200,
+        200,
+        160
+      ],
+      "secondary": [
+        255,
+        255,
+        208
+      ],
+      "dark": [
+        80,
+        80,
+        64
+      ],
+      "highlight": [
+        255,
+        255,
+        255
+      ],
+      "saturated": [
+        140,
+        255,
+        112
+      ]
+    },
+    "level": 70,
+    "symbol": "H"
+  },
+  "shadow_assassin": {
+    "name": "shadow assassin",
+    "silhouette": "humanoid_medium",
+    "size": 0.9,
+    "features": [],
+    "palette": {
+      "primary": [
+        60,
+        20,
+        80
+      ],
+      "secondary": [
+        78,
+        26,
+        104
+      ],
+      "dark": [
+        24,
+        8,
+        32
+      ],
+      "highlight": [
+        102,
+        34,
+        136
+      ],
+      "saturated": [
+        42,
+        26,
+        56
+      ]
+    },
+    "level": 66,
+    "symbol": "a"
+  },
+  "plague_ooze": {
+    "name": "plague ooze",
+    "silhouette": "blob_ooze",
+    "size": 1.2,
+    "features": [],
+    "palette": {
+      "primary": [
+        140,
+        180,
+        60
+      ],
+      "secondary": [
+        182,
+        234,
+        78
+      ],
+      "dark": [
+        56,
+        72,
+        24
+      ],
+      "highlight": [
+        238,
+        255,
+        102
+      ],
+      "saturated": [
+        98,
+        234,
+        42
+      ]
+    },
+    "level": 66,
+    "symbol": "j"
+  },
+  "abyssal_behemoth": {
+    "name": "abyssal behemoth",
+    "silhouette": "demon_winged",
+    "size": 1.5,
+    "features": [
+      "horns",
+      "wings",
+      "tail"
+    ],
+    "palette": {
+      "primary": [
+        180,
+        40,
+        80
+      ],
+      "secondary": [
+        234,
+        52,
+        104
+      ],
+      "dark": [
+        72,
+        16,
+        32
+      ],
+      "highlight": [
+        255,
+        68,
+        136
+      ],
+      "saturated": [
+        125,
+        52,
+        56
+      ]
+    },
+    "level": 70,
+    "symbol": "&"
+  },
+  "arch_lich": {
+    "name": "arch-lich",
+    "silhouette": "lich_caster",
+    "size": 1.4,
+    "features": [
+      "skull",
+      "staff",
+      "crown",
+      "glow"
+    ],
+    "palette": {
+      "primary": [
+        180,
+        60,
+        220
+      ],
+      "secondary": [
+        234,
+        78,
+        255
+      ],
+      "dark": [
+        72,
+        24,
+        88
+      ],
+      "highlight": [
+        255,
+        102,
+        255
+      ],
+      "saturated": [
+        125,
+        78,
+        154
+      ]
+    },
+    "level": 84,
+    "symbol": "L"
+  },
+  "elder_dracolich": {
+    "name": "elder dracolich",
+    "silhouette": "dragon_large",
+    "size": 1.55,
+    "features": [
+      "wings",
+      "horns",
+      "tail",
+      "skull",
+      "glow"
+    ],
+    "palette": {
+      "primary": [
+        200,
+        180,
+        255
+      ],
+      "secondary": [
+        255,
+        234,
+        255
+      ],
+      "dark": [
+        80,
+        72,
+        102
+      ],
+      "highlight": [
+        255,
+        255,
+        255
+      ],
+      "saturated": [
+        140,
+        234,
+        178
+      ]
+    },
+    "level": 86,
+    "symbol": "D"
+  },
+  "primordial_titan": {
+    "name": "primordial titan",
+    "silhouette": "humanoid_large",
+    "size": 1.6,
+    "features": [
+      "armor",
+      "glow"
+    ],
+    "palette": {
+      "primary": [
+        240,
+        220,
+        180
+      ],
+      "secondary": [
+        255,
+        255,
+        234
+      ],
+      "dark": [
+        96,
+        88,
+        72
+      ],
+      "highlight": [
+        255,
+        255,
+        255
+      ],
+      "saturated": [
+        168,
+        255,
+        125
+      ]
+    },
+    "level": 84,
+    "symbol": "H"
+  },
+  "void_wyrm": {
+    "name": "void wyrm",
+    "silhouette": "dragon_large",
+    "size": 1.45,
+    "features": [
+      "wings",
+      "tail",
+      "glow"
+    ],
+    "palette": {
+      "primary": [
+        60,
+        20,
+        120
+      ],
+      "secondary": [
+        78,
+        26,
+        156
+      ],
+      "dark": [
+        24,
+        8,
+        48
+      ],
+      "highlight": [
+        102,
+        34,
+        204
+      ],
+      "saturated": [
+        42,
+        26,
+        84
+      ]
+    },
+    "level": 86,
+    "symbol": "D"
+  },
+  "infernal_lord": {
+    "name": "infernal lord",
+    "silhouette": "demon_winged",
+    "size": 1.45,
+    "features": [
+      "horns",
+      "wings",
+      "armor",
+      "flames",
+      "crown"
+    ],
+    "palette": {
+      "primary": [
+        255,
+        60,
+        20
+      ],
+      "secondary": [
+        255,
+        78,
+        26
+      ],
+      "dark": [
+        102,
+        24,
+        8
+      ],
+      "highlight": [
+        255,
+        102,
+        34
+      ],
+      "saturated": [
+        178,
+        78,
+        14
+      ]
+    },
+    "level": 84,
+    "symbol": "&"
+  },
+  "celestial_guardian": {
+    "name": "celestial guardian",
+    "silhouette": "humanoid_medium",
+    "size": 1.3,
+    "features": [
+      "wings",
+      "armor",
+      "glow"
+    ],
+    "palette": {
+      "primary": [
+        255,
+        255,
+        200
+      ],
+      "secondary": [
+        255,
+        255,
+        255
+      ],
+      "dark": [
+        102,
+        102,
+        80
+      ],
+      "highlight": [
+        255,
+        255,
+        255
+      ],
+      "saturated": [
+        178,
+        255,
+        140
+      ]
+    },
+    "level": 88,
+    "symbol": "A"
+  },
+  "entropy_elemental": {
+    "name": "entropy elemental",
+    "silhouette": "elemental_storm",
+    "size": 1.35,
+    "features": [
+      "glow"
+    ],
+    "palette": {
+      "primary": [
+        100,
+        60,
+        100
+      ],
+      "secondary": [
+        130,
+        78,
+        130
+      ],
+      "dark": [
+        40,
+        24,
+        40
+      ],
+      "highlight": [
+        170,
+        102,
+        170
+      ],
+      "saturated": [
+        70,
+        78,
+        70
+      ]
+    },
+    "level": 86,
+    "symbol": "E"
+  },
+  "dread_knight_legion": {
+    "name": "dread knight legion",
+    "silhouette": "humanoid_medium",
+    "size": 1.15,
+    "features": [
+      "armor",
+      "skull"
+    ],
+    "palette": {
+      "primary": [
+        160,
+        140,
+        180
+      ],
+      "secondary": [
+        208,
+        182,
+        234
+      ],
+      "dark": [
+        64,
+        56,
+        72
+      ],
+      "highlight": [
+        255,
+        238,
+        255
+      ],
+      "saturated": [
+        112,
+        182,
+        125
+      ]
+    },
+    "level": 84,
+    "symbol": "L"
+  },
+  "abyssal_dragon": {
+    "name": "abyssal dragon",
+    "silhouette": "dragon_large",
+    "size": 1.5,
+    "features": [
+      "wings",
+      "horns",
+      "tail",
+      "flames"
+    ],
+    "palette": {
+      "primary": [
+        200,
+        40,
+        60
+      ],
+      "secondary": [
+        255,
+        52,
+        78
+      ],
+      "dark": [
+        80,
+        16,
+        24
+      ],
+      "highlight": [
+        255,
+        68,
+        102
+      ],
+      "saturated": [
+        140,
+        52,
+        42
+      ]
+    },
+    "level": 88,
+    "symbol": "D"
+  },
+  "flesh_colossus": {
+    "name": "flesh colossus",
+    "silhouette": "construct_golem",
+    "size": 1.5,
+    "features": [],
+    "palette": {
+      "primary": [
+        200,
+        140,
+        140
+      ],
+      "secondary": [
+        255,
+        182,
+        182
+      ],
+      "dark": [
+        80,
+        56,
+        56
+      ],
+      "highlight": [
+        255,
+        238,
+        238
+      ],
+      "saturated": [
+        140,
+        182,
+        98
+      ]
+    },
+    "level": 84,
+    "symbol": "G"
+  },
+  "ethereal_unicorn": {
+    "name": "Ethereal Unicorn",
+    "silhouette": "quadruped_large",
+    "size": 1.15,
+    "features": [
+      "horns",
+      "glow"
+    ],
+    "palette": {
+      "primary": [
+        255,
+        255,
+        240
+      ],
+      "secondary": [
+        255,
+        255,
+        255
+      ],
+      "dark": [
+        180,
+        180,
+        200
+      ],
+      "highlight": [
+        255,
+        255,
+        255
+      ],
+      "saturated": [
+        220,
+        200,
+        255
+      ]
+    },
+    "level": 25,
+    "symbol": "u"
   }
 }

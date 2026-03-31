@@ -985,7 +985,7 @@ LEARNABLE_SPELLS: dict[str, dict] = {
     'light_spell': {
         'name': 'Light', 'effect': 'light', 'power': '',
         'mp_cost': 2,  'quiz_tier': 1, 'needs_target': False,
-        'desc': 'Illuminate surroundings for 20 turns (+3 PER).',
+        'desc': 'Reveal nearby tiles in a 15-radius area.',
     },
     'shield_spell': {
         'name': 'Magic Shield', 'effect': 'shield_self', 'power': '',
@@ -1622,6 +1622,8 @@ class Game:
         self._maybe_spawn_trigger_item(level)
         self._maybe_spawn_npc(level)
         self._maybe_spawn_flavor_npc(level)
+        self._maybe_spawn_magic_carrot(level)
+        self._maybe_spawn_unicorn(level)
 
         # Give the player their Philosopher's Shard and build-specific starting kit
         self._give_starting_kit()
@@ -1641,6 +1643,23 @@ class Game:
             self.player.ranged_weapon = None
         if not hasattr(self.player, 'hack_tiers_claimed'):
             self.player.hack_tiers_claimed = set()
+        # Compat: fields added after initial release
+        if not hasattr(self.player, 'quirk_progress'):
+            self.player.quirk_progress = {}
+        if not hasattr(self.player, 'unlocked_quirks'):
+            self.player.unlocked_quirks = set()
+        if not hasattr(self.player, 'quiz_timer_bonuses'):
+            self.player.quiz_timer_bonuses = {}
+        if not hasattr(self.player, 'power_cooldowns'):
+            self.player.power_cooldowns = {}
+        if not hasattr(self.player, 'power_uses'):
+            self.player.power_uses = {}
+        if not hasattr(self.player, 'cooking_hp_gained'):
+            self.player.cooking_hp_gained = 0
+        if not hasattr(self.player, 'known_spells'):
+            self.player.known_spells = {}
+        if not hasattr(self.player, 'lockpick_charges'):
+            self.player.lockpick_charges = 0
         # BUC migration: patch buc/buc_known on all items from old saves
         self._migrate_buc_all(state)
         self.player_name   = state['player_name']
@@ -1770,6 +1789,8 @@ class Game:
             self._maybe_spawn_trigger_item(new_level)
             self._maybe_spawn_npc(new_level)
             self._maybe_spawn_flavor_npc(new_level)
+            self._maybe_spawn_magic_carrot(new_level)
+            self._maybe_spawn_unicorn(new_level)
             self._maybe_spawn_cow(new_level)
         else:
             # Revisit: spawn triggered NPCs if player now has the trigger item
@@ -2561,6 +2582,11 @@ class Game:
             if getattr(target, '_npc_encounter_tag', None):
                 self._start_npc_encounter(target)
                 return
+            # Unicorn encounter: multi-step interaction
+            if getattr(target, '_is_unicorn', False):
+                self._handle_unicorn_bump(target)
+                self._advance_turn()
+                return
             # Flavor encounter: non-karmic NPC interaction
             if getattr(target, '_flavor_encounter_tag', None):
                 self._start_flavor_encounter(target)
@@ -3164,6 +3190,8 @@ class Game:
         self._do_passive_search()
         # Passive PER-based trap detection
         self._do_passive_trap_detection()
+        # Unicorn NPC state machine tick
+        self._tick_unicorn()
         # Passive PER-based ambush detection
         self._do_passive_ambush_detection()
         # Clairvoyant: reveal tiles within 10-tile radius each turn
@@ -6919,20 +6947,10 @@ class Game:
             if _qs_wand:
                 _qs_wand.on_wand_zapped(wand.id, was_identified=_was_identified_before)
 
-            _is_mm = getattr(wand, 'effect', '') == 'magic_missile'
-            if _is_mm:
-                # Magic missile: chain score = number of missiles
-                if result.score == 0:
-                    self.add_message("The wand fizzes and fails to fire.", 'warning')
-                    self._advance_turn()
-                    return
-                self._wand_chain_score = result.score
-            else:
-                if not result.success:
-                    self.add_message("The wand fizzes and fails to fire.", 'warning')
-                    self._advance_turn()
-                    return
-                self._wand_chain_score = 1
+            if not result.success:
+                self.add_message("The wand fizzes and fails to fire.", 'warning')
+                self._advance_turn()
+                return
 
             wand.charges -= 1
             # Cursed wands: 3% chance to misfire (wastes charge, no effect)
@@ -6945,7 +6963,6 @@ class Game:
                 self._advance_turn()
                 return
             self._apply_wand_effect(wand)
-            self._wand_chain_score = 1  # reset
             if wand.charges <= 0:
                 self.add_message("The wand crumbles to dust -- it is spent.", 'warning')
                 self.player.remove_from_inventory(wand)
@@ -6955,38 +6972,44 @@ class Game:
                 )
             self._advance_turn()
 
-        # Magic missile wands use escalator_chain; all others use threshold
-        _wand_is_mm = getattr(wand, 'effect', '') == 'magic_missile'
-        if _wand_is_mm:
-            self.quiz_engine.start_quiz(
-                mode='escalator_chain',
-                subject='science',
-                tier=1,
-                callback=on_complete,
-                max_chain=5,
-                wisdom=self.player.WIS,
-                timer_modifier=self.player.get_quiz_timer_modifier(),
-                extra_seconds=self.player.get_int_quiz_bonus() +
-                              self.player.get_quiz_extra_seconds('science'),
-                base_seconds=self.player.get_quiz_timer('science'),
-            )
-        else:
-            self.quiz_engine.start_quiz(
-                mode='threshold',
-                subject='science',
-                tier=wand.quiz_tier,
-                callback=on_complete,
-                threshold=wand.quiz_threshold,
-                wisdom=self.player.WIS,
-                timer_modifier=self.player.get_quiz_timer_modifier(),
-                extra_seconds=self.player.get_int_quiz_bonus() +
-                              self.player.get_quiz_extra_seconds('science'),
-                base_seconds=self.player.get_quiz_timer('science'),
-            )
+        # All wands use threshold quiz — power is baked into the wand's tier
+        self.quiz_engine.start_quiz(
+            mode='threshold',
+            subject='science',
+            tier=wand.quiz_tier,
+            callback=on_complete,
+            threshold=wand.quiz_threshold,
+            wisdom=self.player.WIS,
+            timer_modifier=self.player.get_quiz_timer_modifier(),
+            extra_seconds=self.player.get_int_quiz_bonus() +
+                          self.player.get_quiz_extra_seconds('science'),
+            base_seconds=self.player.get_quiz_timer('science'),
+        )
+
+    def _boss_resist_cc(self, target, duration: int) -> tuple:
+        """Boss CC resistance: 50% chance to resist; if it lands, half duration.
+        Returns (adjusted_duration, resisted_bool)."""
+        import random as _rng
+        is_boss = getattr(target, 'is_boss', False) or target.max_hp > 500
+        if not is_boss:
+            return duration, False
+        if _rng.random() < 0.50:
+            return 0, True
+        return max(1, duration // 2), False
 
     def _int_scaled_damage(self, base_dmg: int) -> int:
         """Scale magic damage by INT: 1.0x at INT 0, 2.0x at INT 10, 3.0x at INT 20."""
         return max(1, int(base_dmg * (1.0 + self.player.INT * 0.1)))
+
+    @staticmethod
+    def _wand_tier_duration(base: int, tier: int) -> int:
+        """Scale a wand's effect duration by its tier. T1=base, T5=base*2.5."""
+        return max(2, int(base * (0.5 + tier * 0.5)))
+
+    def _wand_tier_damage(self, base_dmg: int, tier: int) -> int:
+        """Scale wand damage by tier AND player INT."""
+        tier_mult = 0.5 + tier * 0.5  # T1=1.0, T3=2.0, T5=3.0
+        return max(1, int(base_dmg * tier_mult * (1.0 + self.player.INT * 0.1)))
 
     def _apply_wand_effect(self, wand: 'Wand'):
         import random as _rng
@@ -7011,16 +7034,19 @@ class Game:
             self.add_message("Your body is fully restored!", 'success')
 
         elif effect == 'haste_self':
-            self.player.add_effect('hasted', 12)
-            self.add_message("You feel supernaturally swift!", 'success')
+            dur = self._wand_tier_duration(12, wand.quiz_tier)
+            self.player.add_effect('hasted', dur)
+            self.add_message(f"You feel supernaturally swift! ({dur} turns)", 'success')
 
         elif effect == 'invisibility_self':
-            self.player.add_effect('invisible', 15)
-            self.add_message("You fade from sight!", 'success')
+            dur = self._wand_tier_duration(15, wand.quiz_tier)
+            self.player.add_effect('invisible', dur)
+            self.add_message(f"You fade from sight! ({dur} turns)", 'success')
 
         elif effect == 'levitation_self':
-            self.player.add_effect('levitating', 12)
-            self.add_message("You rise gently off the ground!", 'success')
+            dur = self._wand_tier_duration(12, wand.quiz_tier)
+            self.player.add_effect('levitating', dur)
+            self.add_message(f"You rise gently off the ground! ({dur} turns)", 'success')
 
         elif effect == 'teleport_self':
             self._teleport_player()
@@ -7100,29 +7126,58 @@ class Game:
                 return
 
             if effect == 'sleep_monster':
-                target.add_effect('sleeping', 8)
-                self.add_message(f"The {target.name} slumps into a deep sleep!", 'success')
+                dur = self._wand_tier_duration(8, wand.quiz_tier)
+                dur, resisted = self._boss_resist_cc(target, dur)
+                if resisted:
+                    self.add_message(f"The {target.name} shrugs off the sleep!", 'warning')
+                else:
+                    target.add_effect('sleeping', dur)
+                    self.add_message(f"The {target.name} slumps into a deep sleep! ({dur} turns)", 'success')
 
             elif effect == 'slow_monster':
-                target.add_effect('slowed', 8)
-                self.add_message(f"The {target.name} slows to a crawl!", 'success')
+                dur = self._wand_tier_duration(8, wand.quiz_tier)
+                dur, resisted = self._boss_resist_cc(target, dur)
+                if resisted:
+                    self.add_message(f"The {target.name} shrugs off the slowing magic!", 'warning')
+                else:
+                    target.add_effect('slowed', dur)
+                    self.add_message(f"The {target.name} slows to a crawl! ({dur} turns)", 'success')
 
             elif effect == 'confuse_monster':
-                target.add_effect('confused', 10)
-                self.add_message(f"The {target.name} staggers in confusion!", 'success')
+                dur = self._wand_tier_duration(10, wand.quiz_tier)
+                dur, resisted = self._boss_resist_cc(target, dur)
+                if resisted:
+                    self.add_message(f"The {target.name} shrugs off the confusion!", 'warning')
+                else:
+                    target.add_effect('confused', dur)
+                    self.add_message(f"The {target.name} staggers in confusion! ({dur} turns)", 'success')
 
             elif effect == 'paralyze_monster':
-                target.add_effect('paralyzed', 6)
-                self.add_message(f"The {target.name} is locked in place!", 'success')
+                dur = self._wand_tier_duration(6, wand.quiz_tier)
+                dur, resisted = self._boss_resist_cc(target, dur)
+                if resisted:
+                    self.add_message(f"The {target.name} resists the paralysis!", 'warning')
+                else:
+                    target.add_effect('paralyzed', dur)
+                    self.add_message(f"The {target.name} is locked in place! ({dur} turns)", 'success')
 
             elif effect == 'blind_monster':
-                target.add_effect('blinded', 8)
-                self.add_message(f"The {target.name} claws at its eyes, blinded!", 'success')
+                dur = self._wand_tier_duration(8, wand.quiz_tier)
+                dur, resisted = self._boss_resist_cc(target, dur)
+                if resisted:
+                    self.add_message(f"The {target.name} shrugs off the blindness!", 'warning')
+                else:
+                    target.add_effect('blinded', dur)
+                    self.add_message(f"The {target.name} claws at its eyes, blinded! ({dur} turns)", 'success')
 
             elif effect == 'stoning':
-                target.add_effect('petrifying', 5)
-                # Petrifying kills the monster after turns expire
-                self.add_message(f"The {target.name} begins to turn to stone!", 'success')
+                is_boss = getattr(target, 'is_boss', False) or target.max_hp > 500
+                if is_boss:
+                    self.add_message(f"The {target.name} is far too powerful to petrify!", 'warning')
+                else:
+                    dur = self._wand_tier_duration(5, wand.quiz_tier)
+                    target.add_effect('petrifying', dur)
+                    self.add_message(f"The {target.name} begins to turn to stone! ({dur} turns)", 'success')
 
             elif effect == 'cancellation':
                 target.status_effects.clear()
@@ -7131,7 +7186,7 @@ class Game:
                 )
 
             elif effect == 'fire_bolt':
-                dmg = self._int_scaled_damage(roll(wand.power) if wand.power else 6)
+                dmg = self._wand_tier_damage(roll(wand.power) if wand.power else 6, wand.quiz_tier)
                 actual = target.take_damage(dmg)
                 self.add_message(
                     f"A bolt of fire strikes the {target.name} for {actual} damage!", 'success'
@@ -7140,18 +7195,22 @@ class Game:
                     self._on_monster_killed(target)
 
             elif effect == 'cold_bolt':
-                dmg = self._int_scaled_damage(roll(wand.power) if wand.power else 4)
+                dmg = self._wand_tier_damage(roll(wand.power) if wand.power else 4, wand.quiz_tier)
                 actual = target.take_damage(dmg)
-                target.add_effect('slowed', 4)
+                dur = self._wand_tier_duration(4, wand.quiz_tier)
+                dur, sr = self._boss_resist_cc(target, dur)
+                if not sr:
+                    target.add_effect('slowed', dur)
                 self.add_message(
-                    f"A bolt of cold strikes the {target.name} for {actual} damage and slows it!", 'success'
+                    f"A bolt of cold strikes the {target.name} for {actual} damage"
+                    + (f" and slows it! ({dur} turns)" if not sr else "!"), 'success'
                 )
                 if not target.alive:
                     self._on_monster_killed(target)
 
             elif effect == 'lightning_bolt':
                 from combat import get_line_tiles
-                dmg = self._int_scaled_damage(roll(wand.power) if wand.power else 10)
+                dmg = self._wand_tier_damage(roll(wand.power) if wand.power else 10, wand.quiz_tier)
                 px, py = self.player.x, self.player.y
                 line = get_line_tiles(px, py, target.x, target.y)
                 line_set = set(line)
@@ -7160,7 +7219,9 @@ class Game:
                 for lm in line_hits:
                     actual = lm.take_damage(dmg)
                     if actual > 0:
-                        lm.add_effect('stunned', 3)
+                        sd, sr = self._boss_resist_cc(lm, 3)
+                        if not sr:
+                            lm.add_effect('stunned', sd)
                     if not lm.alive:
                         self._on_monster_killed(lm)
                 if len(line_hits) > 1:
@@ -7168,28 +7229,32 @@ class Game:
                         f"Lightning arcs through {len(line_hits)} creatures for {dmg} damage each!", 'success')
                 elif line_hits:
                     self.add_message(
-                        f"Lightning strikes the {line_hits[0].name} for {dmg} damage -- stunned!", 'success')
+                        f"Lightning strikes the {line_hits[0].name} for {dmg} damage!", 'success')
                 else:
                     self.add_message("The lightning dissipates harmlessly.", 'info')
 
             elif effect == 'acid_spray':
-                dmg = self._int_scaled_damage(roll(wand.power) if wand.power else 4)
+                dmg = self._wand_tier_damage(roll(wand.power) if wand.power else 4, wand.quiz_tier)
                 actual = target.take_damage(dmg)
-                target.add_effect('diseased', 6)
+                dur = self._wand_tier_duration(6, wand.quiz_tier)
+                dur, sr = self._boss_resist_cc(target, dur)
+                if not sr:
+                    target.add_effect('diseased', dur)
                 self.add_message(
-                    f"Acid dissolves the {target.name} for {actual} damage -- it is diseased!", 'success'
+                    f"Acid dissolves the {target.name} for {actual} damage"
+                    + (f" -- diseased for {dur} turns!" if not sr else "!"), 'success'
                 )
                 if not target.alive:
                     self._on_monster_killed(target)
 
             elif effect == 'magic_missile':
-                # Irresistible: bypasses all resistances. Multiple missiles from chain.
-                missiles = max(1, getattr(self, '_wand_chain_score', 1))
+                # Irresistible: bypasses all resistances. Missile count = wand tier.
+                missiles = max(1, wand.quiz_tier)
                 total_dmg = 0
                 for _ in range(missiles):
                     if not target.alive:
                         break
-                    dmg = self._int_scaled_damage(roll(wand.power) + 1 if wand.power else 5)
+                    dmg = self._wand_tier_damage(roll(wand.power) if wand.power else 5, wand.quiz_tier)
                     target.hp = max(0, target.hp - dmg)
                     if target.hp == 0:
                         target.alive = False
@@ -7202,7 +7267,7 @@ class Game:
                     self._on_monster_killed(target)
 
             elif effect == 'striking':
-                dmg = self._int_scaled_damage(roll(wand.power) if wand.power else 10)
+                dmg = self._wand_tier_damage(roll(wand.power) if wand.power else 10, wand.quiz_tier)
                 actual = target.take_damage(dmg)
                 self.add_message(
                     f"The wand slams into the {target.name} for {actual} physical damage!", 'success'
@@ -7232,56 +7297,87 @@ class Game:
                         self._on_monster_killed(target)
 
             elif effect == 'polymorph_monster':
-                import json
-                from monster import Monster
-                from paths import data_path
-                mp = data_path('data', 'monsters.json')
-                try:
-                    with open(mp, encoding='utf-8') as f:
-                        all_defs = json.load(f)
-                    eligible = [k for k, v in all_defs.items()
-                                if v.get('min_level', 1) <= self.dungeon_level
-                                and k != target.kind and v.get('frequency', 1) > 0]
-                    if eligible:
-                        old_name = target.name
-                        kind = _rng.choice(eligible)
-                        defn = {**all_defs[kind], 'id': kind}
-                        new_m = Monster(defn, target.x, target.y)
-                        idx = self.monsters.index(target)
-                        self.monsters[idx] = new_m
-                        self.add_message(
-                            f"The {old_name} warps into {self._a_or_an(new_m.name)}!", 'success'
-                        )
-                    else:
-                        self.add_message("The polymorph wand finds no suitable form.", 'info')
-                except Exception:
-                    self.add_message("The wand misfires!", 'warning')
+                is_boss = getattr(target, 'is_boss', False) or target.max_hp > 500
+                if is_boss:
+                    self.add_message(f"The {target.name} resists the transformation!", 'warning')
+                else:
+                    import json
+                    from monster import Monster
+                    from paths import data_path
+                    mp = data_path('data', 'monsters.json')
+                    try:
+                        with open(mp, encoding='utf-8') as f:
+                            all_defs = json.load(f)
+                        eligible = [k for k, v in all_defs.items()
+                                    if v.get('min_level', 1) <= self.dungeon_level
+                                    and k != target.kind and v.get('frequency', 1) > 0]
+                        if eligible:
+                            old_name = target.name
+                            kind = _rng.choice(eligible)
+                            defn = {**all_defs[kind], 'id': kind}
+                            new_m = Monster(defn, target.x, target.y)
+                            idx = self.monsters.index(target)
+                            self.monsters[idx] = new_m
+                            self.add_message(
+                                f"The {old_name} warps into {self._a_or_an(new_m.name)}!", 'success'
+                            )
+                        else:
+                            self.add_message("The polymorph wand finds no suitable form.", 'info')
+                    except Exception:
+                        self.add_message("The wand misfires!", 'warning')
 
             elif effect == 'fear_monster':
-                target.add_effect('feared', 10)
-                target.ai_pattern = 'cowardly'
-                self.add_message(f"The {target.name} turns and flees in terror!", 'success')
+                is_boss = getattr(target, 'is_boss', False) or target.max_hp > 500
+                if is_boss:
+                    self.add_message(f"The {target.name} resists the fear!", 'warning')
+                else:
+                    dur = self._wand_tier_duration(8, wand.quiz_tier)
+                    target.add_effect('feared', dur)
+                    target.ai_pattern = 'cowardly'
+                    self.add_message(f"The {target.name} turns and flees in terror! ({dur} turns)", 'success')
 
             elif effect == 'charm_monster':
-                target.add_effect('charmed', 20)
-                target.ai_pattern = 'sessile'
-                self.add_message(f"The {target.name} gazes at you with adoration.", 'success')
+                is_boss = getattr(target, 'is_boss', False) or target.max_hp > 500
+                if is_boss:
+                    self.add_message(f"The {target.name} is far too willful to charm!", 'warning')
+                else:
+                    dur = self._wand_tier_duration(20, wand.quiz_tier)
+                    target.add_effect('charmed', dur)
+                    target.ai_pattern = 'sessile'
+                    self.add_message(f"The {target.name} gazes at you with adoration. ({dur} turns)", 'success')
 
             elif effect == 'poison_monster':
-                target.add_effect('poisoned', 12)
-                self.add_message(f"The {target.name} writhes as poison courses through it!", 'success')
+                dur = self._wand_tier_duration(12, wand.quiz_tier)
+                dur, resisted = self._boss_resist_cc(target, dur)
+                if resisted:
+                    self.add_message(f"The {target.name} shrugs off the poison!", 'warning')
+                else:
+                    target.add_effect('poisoned', dur)
+                    self.add_message(f"The {target.name} writhes as poison courses through it! ({dur} turns)", 'success')
 
             elif effect == 'disease_monster':
-                target.add_effect('diseased', 15)
-                actual = target.take_damage(max(1, target.max_hp // 5))
-                self.add_message(f"The {target.name} is wracked by disease! ({actual} dmg)", 'success')
-                if not target.alive:
-                    self._on_monster_killed(target)
+                dur = self._wand_tier_duration(15, wand.quiz_tier)
+                dur, resisted = self._boss_resist_cc(target, dur)
+                if resisted:
+                    self.add_message(f"The {target.name} shrugs off the disease!", 'warning')
+                else:
+                    target.add_effect('diseased', dur)
+                    actual = target.take_damage(max(1, target.max_hp // 5))
+                    self.add_message(f"The {target.name} is wracked by disease! ({actual} dmg, {dur} turns)", 'success')
+                    if not target.alive:
+                        self._on_monster_killed(target)
 
             elif effect == 'curse_monster':
-                target.add_effect('cursed', 20)
-                target.add_effect('slowed', 8)
-                self.add_message(f"Dark energy envelops the {target.name}! It is cursed and slowed.", 'success')
+                dur = self._wand_tier_duration(20, wand.quiz_tier)
+                sdur = self._wand_tier_duration(8, wand.quiz_tier)
+                dur, resisted = self._boss_resist_cc(target, dur)
+                if resisted:
+                    self.add_message(f"The {target.name} shrugs off the curse!", 'warning')
+                else:
+                    sdur = max(1, sdur // 2) if (getattr(target, 'is_boss', False) or target.max_hp > 500) else sdur
+                    target.add_effect('cursed', dur)
+                    target.add_effect('slowed', sdur)
+                    self.add_message(f"Dark energy envelops the {target.name}! Cursed ({dur}t) and slowed ({sdur}t).", 'success')
 
             elif effect == 'teleport_monster':
                 open_tiles = [(x, y)
@@ -7299,7 +7395,7 @@ class Game:
 
             elif effect == 'drain_life':
                 from dice import roll
-                dmg = self._int_scaled_damage(roll(wand.power) if wand.power else _rng.randint(3, 10))
+                dmg = self._wand_tier_damage(roll(wand.power) if wand.power else _rng.randint(3, 10), wand.quiz_tier)
                 actual = target.take_damage(dmg)
                 heal = min(actual, self.player.max_hp - self.player.hp)
                 self.player.hp += heal
@@ -7329,11 +7425,16 @@ class Game:
                         self._on_monster_killed(target)
 
             elif effect == 'weaken_monster':
-                target.add_effect('weakened', 15)
-                if target.attacks:
-                    self.add_message(f"The {target.name} looks visibly weaker!", 'success')
+                dur = self._wand_tier_duration(15, wand.quiz_tier)
+                dur, resisted = self._boss_resist_cc(target, dur)
+                if resisted:
+                    self.add_message(f"The {target.name} shrugs off the weakening magic!", 'warning')
+                elif target.attacks:
+                    target.add_effect('weakened', dur)
+                    self.add_message(f"The {target.name} looks visibly weaker! ({dur} turns)", 'success')
                 else:
-                    self.add_message(f"The {target.name} seems diminished.", 'success')
+                    target.add_effect('weakened', dur)
+                    self.add_message(f"The {target.name} seems diminished. ({dur} turns)", 'success')
 
             elif effect == 'drain_magic':
                 target.status_effects.clear()
@@ -7360,28 +7461,34 @@ class Game:
             self.add_message(f"Your mind sharpens! INT: {old} -> {self.player.INT}", 'success')
 
         elif effect == 'shield_self':
-            self.player.add_effect('shielded', 15)
-            self.add_message("A shimmering barrier surrounds you!", 'success')
+            dur = self._wand_tier_duration(15, wand.quiz_tier)
+            self.player.add_effect('shielded', dur)
+            self.add_message(f"A shimmering barrier surrounds you! ({dur} turns)", 'success')
 
         elif effect == 'fire_shield':
-            self.player.add_effect('fire_shield', 15)
-            self.add_message("Flames swirl around you! You are protected from fire.", 'success')
+            dur = self._wand_tier_duration(15, wand.quiz_tier)
+            self.player.add_effect('fire_shield', dur)
+            self.add_message(f"Flames swirl around you! Fire protection for {dur} turns.", 'success')
 
         elif effect == 'cold_shield':
-            self.player.add_effect('cold_shield', 15)
-            self.add_message("Frost encases you! You are protected from cold.", 'success')
+            dur = self._wand_tier_duration(15, wand.quiz_tier)
+            self.player.add_effect('cold_shield', dur)
+            self.add_message(f"Frost encases you! Cold protection for {dur} turns.", 'success')
 
         elif effect == 'regeneration_self':
-            self.player.add_effect('regenerating', 30)
-            self.add_message("You feel your wounds slowly closing.", 'success')
+            dur = self._wand_tier_duration(30, wand.quiz_tier)
+            self.player.add_effect('regenerating', dur)
+            self.add_message(f"You feel your wounds slowly closing. ({dur} turns)", 'success')
 
         elif effect == 'reflect_self':
-            self.player.add_effect('reflecting', 20)
-            self.add_message("A reflective aura surrounds you!", 'success')
+            dur = self._wand_tier_duration(20, wand.quiz_tier)
+            self.player.add_effect('reflecting', dur)
+            self.add_message(f"A reflective aura surrounds you! ({dur} turns)", 'success')
 
         elif effect == 'phase_self':
-            self.player.add_effect('phasing', 15)
-            self.add_message("You feel briefly incorporeal -- walls seem thin.", 'success')
+            dur = self._wand_tier_duration(15, wand.quiz_tier)
+            self.player.add_effect('phasing', dur)
+            self.add_message(f"You feel briefly incorporeal -- walls seem thin. ({dur} turns)", 'success')
 
         elif effect == 'detect_monsters':
             for m in self.monsters:
@@ -7433,7 +7540,7 @@ class Game:
             visible_monsters = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
             total_dmg = 0
             for m in visible_monsters:
-                dmg = self._int_scaled_damage(_rng.randint(5, 20))
+                dmg = self._wand_tier_damage(_rng.randint(5, 20), wand.quiz_tier)
                 actual = m.take_damage(dmg)
                 total_dmg += actual
                 if not m.alive:
@@ -7444,33 +7551,37 @@ class Game:
             from dice import roll
             visible_monsters = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
             for m in visible_monsters:
-                dmg = self._int_scaled_damage(roll(wand.power) if wand.power else _rng.randint(8, 24))
+                dmg = self._wand_tier_damage(roll(wand.power) if wand.power else _rng.randint(8, 24), wand.quiz_tier)
                 actual = m.take_damage(dmg)
                 if not m.alive:
                     self._on_monster_killed(m)
             self.add_message(f"A massive explosion engulfs the area! ({len(visible_monsters)} creatures hit)", 'success')
 
         elif effect == 'mass_confuse':
+            dur = self._wand_tier_duration(12, wand.quiz_tier)
             visible_monsters = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
             for m in visible_monsters:
-                m.add_effect('confused', 12)
-            self.add_message(f"A wave of confusion washes over {len(visible_monsters)} creatures!", 'success')
+                m.add_effect('confused', dur)
+            self.add_message(f"A wave of confusion washes over {len(visible_monsters)} creatures! ({dur} turns)", 'success')
 
         elif effect == 'mass_sleep':
+            dur = self._wand_tier_duration(10, wand.quiz_tier)
             visible_monsters = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
             for m in visible_monsters:
-                m.add_effect('sleeping', 10)
-            self.add_message(f"All visible creatures slump into slumber! ({len(visible_monsters)} affected)", 'success')
+                m.add_effect('sleeping', dur)
+            self.add_message(f"All visible creatures slump into slumber! ({len(visible_monsters)} affected, {dur} turns)", 'success')
 
         elif effect == 'mass_slow':
+            dur = self._wand_tier_duration(10, wand.quiz_tier)
             visible_monsters = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
             for m in visible_monsters:
-                m.add_effect('slowed', 10)
-            self.add_message(f"{len(visible_monsters)} creatures are slowed!", 'success')
+                m.add_effect('slowed', dur)
+            self.add_message(f"{len(visible_monsters)} creatures are slowed! ({dur} turns)", 'success')
 
         elif effect == 'time_stop':
-            self.player.add_effect('time_stopped', 5)
-            self.add_message("Time freezes! You have 5 turns of free movement.", 'success')
+            dur = self._wand_tier_duration(5, wand.quiz_tier)
+            self.player.add_effect('time_stopped', dur)
+            self.add_message(f"Time freezes! You have {dur} turns of free movement.", 'success')
 
         elif effect == 'wish':
             self.add_message("The wand glows brilliantly... but you cannot yet speak your wish.", 'info')
@@ -7508,7 +7619,7 @@ class Game:
             else:
                 total = 0
                 for m in all_monsters:
-                    dmg = self._int_scaled_damage(_roll(wand.power) if wand.power else _rng.randint(15, 30))
+                    dmg = self._wand_tier_damage(_roll(wand.power) if wand.power else _rng.randint(15, 30), wand.quiz_tier)
                     actual = m.take_damage(dmg)
                     total += actual
                     if not m.alive:
@@ -7573,7 +7684,7 @@ class Game:
 
         elif effect == 'turn_undead':
             from dice import roll as _roll_tu
-            base_dmg = self._int_scaled_damage(_roll_tu(wand.power) if wand.power else 8)
+            base_dmg = self._wand_tier_damage(_roll_tu(wand.power) if wand.power else 8, wand.quiz_tier)
             _UNDEAD_WORDS = {'skeleton', 'zombie', 'ghost', 'wraith', 'lich', 'wight',
                              'spectre', 'vampire', 'mummy', 'revenant', 'death', 'undead',
                              'ghoul', 'ghast', 'shade', 'banshee', 'draugr', 'barrow',
@@ -7583,7 +7694,7 @@ class Game:
             if undead:
                 for m in undead:
                     actual = m.take_damage(base_dmg)
-                    m.add_effect('feared', 8)
+                    m.add_effect('feared', self._wand_tier_duration(8, wand.quiz_tier))
                     if not m.alive:
                         self._on_monster_killed(m)
                 self.add_message(
@@ -7604,7 +7715,7 @@ class Game:
                      if m.alive and (m.x, m.y) in self.visible],
                     self.add_message("A wave of confusion erupts!", 'success'))),
                 ('fireball', lambda: (
-                    [m.take_damage(self._int_scaled_damage(_rng.randint(8, 20)))
+                    [m.take_damage(self._wand_tier_damage(_rng.randint(8, 20), wand.quiz_tier))
                      for m in self.monsters if m.alive and (m.x, m.y) in self.visible],
                     self.add_message("A burst of flame erupts from the wand!", 'success'))),
                 ('teleport', lambda: (self._teleport_player(),
@@ -7618,7 +7729,7 @@ class Game:
                 ('invisible', lambda: (self.player.add_effect('invisible', 10),
                     self.add_message("You vanish from sight!", 'success'))),
                 ('lightning', lambda: (
-                    (lambda t: (t.take_damage(self._int_scaled_damage(_rng.randint(10, 25))),
+                    (lambda t: (t.take_damage(self._wand_tier_damage(_rng.randint(10, 25), wand.quiz_tier)),
                      self.add_message(f"Lightning zaps the {t.name}!", 'success'),
                      None if t.alive else self._on_monster_killed(t))
                     )(self._nearest_visible_monster()) if self._nearest_visible_monster() else
@@ -8162,6 +8273,312 @@ class Game:
                     npc._flavor_encounter_tag = enc['tag']
                     self.monsters.append(npc)
                     return
+
+    # ------------------------------------------------------------------
+    # Magic Dungeon Carrot  (guaranteed spawn L1-19, once per run)
+    # ------------------------------------------------------------------
+
+    def _maybe_spawn_magic_carrot(self, level: int):
+        """Place one Magic Dungeon Carrot on a random level between 1-19."""
+        if getattr(self, '_magic_carrot_spawned', False):
+            return
+        if level < 1 or level > 19:
+            return
+        if not hasattr(self, '_magic_carrot_target_level'):
+            import random as _rng
+            self._magic_carrot_target_level = _rng.randint(1, 19)
+        if level != self._magic_carrot_target_level:
+            return
+
+        from items import load_items
+        import random as _rng
+        foods = load_items('food')
+        carrot_template = next((f for f in foods if f.id == 'magic_dungeon_carrot'), None)
+        if carrot_template is None:
+            return
+        import copy
+        carrot = copy.copy(carrot_template)
+        # Place in a random room
+        rooms = self.dungeon.rooms[1:] if len(self.dungeon.rooms) > 1 else self.dungeon.rooms
+        occupied = {(m.x, m.y) for m in self.monsters}
+        occupied.add((self.player.x, self.player.y))
+        for room in _rng.sample(rooms, min(len(rooms), 5)):
+            tiles = list(room.inner_tiles())
+            _rng.shuffle(tiles)
+            for tx, ty in tiles:
+                if self.dungeon.is_walkable(tx, ty) and (tx, ty) not in occupied:
+                    carrot.x, carrot.y = tx, ty
+                    self.ground_items.append(carrot)
+                    self._magic_carrot_spawned = True
+                    return
+
+    # ------------------------------------------------------------------
+    # Unicorn encounter  (L21-39, spawns once per run)
+    # ------------------------------------------------------------------
+
+    def _maybe_spawn_unicorn(self, level: int):
+        """Spawn the ethereal unicorn on one random level between 21-39."""
+        if getattr(self, '_unicorn_spawned', False):
+            return
+        if level < 21 or level > 39:
+            return
+        # Pick a random level in 21-39 on first eligible entry; spawn on that level
+        if not hasattr(self, '_unicorn_target_level'):
+            import random as _rng
+            self._unicorn_target_level = _rng.randint(21, 39)
+        if level != self._unicorn_target_level:
+            return
+
+        from monster import Monster
+        npc_def = {
+            'id': 'ethereal_unicorn',
+            'name': 'Ethereal Unicorn',
+            'symbol': 'u',
+            'color': [255, 255, 240],
+            'hp': 200,
+            'thac0': 20,
+            'speed': 10,
+            'attacks': [],
+            'ai_pattern': 'sessile',
+            'resistances': ['magic', 'holy'],
+            'weaknesses': [],
+            'min_level': level,
+            'is_allied': True,
+            'harvest_tier': 0,
+            'harvest_threshold': 99,
+            'ingredient_id': None,
+        }
+        occupied = {(m.x, m.y) for m in self.monsters}
+        occupied.add((self.player.x, self.player.y))
+        rooms = self.dungeon.rooms[1:] if len(self.dungeon.rooms) > 1 else self.dungeon.rooms
+        import random as _rng
+        for room in _rng.sample(rooms, min(len(rooms), 5)):
+            tiles = list(room.inner_tiles())
+            _rng.shuffle(tiles)
+            for tx, ty in tiles:
+                if self.dungeon.is_walkable(tx, ty) and (tx, ty) not in occupied:
+                    npc = Monster(npc_def, tx, ty)
+                    npc._is_unicorn = True
+                    npc._unicorn_state = 'wary'  # wary → relaxing → offered → eating → trusting
+                    npc._unicorn_wait = 0
+                    npc._unicorn_eat_turns = 0
+                    self.monsters.append(npc)
+                    self._unicorn_spawned = True
+                    return
+
+    def _handle_unicorn_bump(self, unicorn):
+        """Handle player bumping the unicorn at various states."""
+        state = getattr(unicorn, '_unicorn_state', 'wary')
+
+        if state == 'wary':
+            # Unicorn startles and moves away
+            self.add_message("The unicorn startles and leaps away from you!", 'info')
+            self._unicorn_flee(unicorn)
+            unicorn._unicorn_wait = 0
+            return True
+
+        if state == 'relaxing':
+            self.add_message("The unicorn watches you nervously. Perhaps an offering would help...", 'info')
+            unicorn._unicorn_state = 'wary'
+            unicorn._unicorn_wait = 0
+            self._unicorn_flee(unicorn)
+            return True
+
+        if state in ('offered', 'eating'):
+            self.add_message("The unicorn is eating! Don't disturb her!", 'info')
+            unicorn._unicorn_state = 'wary'
+            unicorn._unicorn_wait = 0
+            self._unicorn_flee(unicorn)
+            return True
+
+        if state == 'trusting':
+            # Karma check
+            karma = getattr(self, 'karma', 0)
+            if karma < 0:
+                self.add_message(
+                    "The unicorn gazes into your eyes... and recoils. She senses "
+                    "darkness in your heart and gallops away!", 'danger')
+                unicorn._unicorn_state = 'fled'
+                unicorn.alive = False
+                return True
+
+            # Start the AI escalator quiz
+            self.add_message(
+                "The unicorn lowers her head and nuzzles your hand. "
+                "A warm light envelops you both...", 'success')
+            self._start_unicorn_quiz(unicorn)
+            return True
+
+        if state == 'fled':
+            return True
+        return False
+
+    def _unicorn_flee(self, unicorn):
+        """Move unicorn to a distant walkable tile in the same room or nearby."""
+        import random as _rng
+        px, py = self.player.x, self.player.y
+        candidates = []
+        for dy in range(-8, 9):
+            for dx in range(-8, 9):
+                nx, ny = unicorn.x + dx, unicorn.y + dy
+                if not self.dungeon.in_bounds(nx, ny):
+                    continue
+                if not self.dungeon.is_walkable(nx, ny):
+                    continue
+                dist_from_player = abs(nx - px) + abs(ny - py)
+                if dist_from_player < 4:
+                    continue
+                if any(m.alive and m.x == nx and m.y == ny for m in self.monsters):
+                    continue
+                candidates.append((nx, ny))
+        if candidates:
+            unicorn.x, unicorn.y = _rng.choice(candidates)
+
+    def _tick_unicorn(self):
+        """Called each turn to update unicorn state machine."""
+        for m in self.monsters:
+            if not getattr(m, '_is_unicorn', False) or not m.alive:
+                continue
+            state = getattr(m, '_unicorn_state', 'wary')
+            px, py = self.player.x, self.player.y
+            dist = max(abs(m.x - px), abs(m.y - py))
+
+            if state == 'wary':
+                # Player visible and within 8 tiles? Start watching
+                if (m.x, m.y) in self.visible and dist <= 8:
+                    m._unicorn_wait += 1
+                    if m._unicorn_wait == 1:
+                        self.add_message(
+                            "A beautiful white unicorn stands nearby. She watches you warily.",
+                            'info')
+                    # If player stays still (or moves slowly) for 3 turns
+                    if m._unicorn_wait >= 3:
+                        m._unicorn_state = 'relaxing'
+                        self.add_message(
+                            "The unicorn seems to relax slightly. She sniffs the air...",
+                            'info')
+                else:
+                    m._unicorn_wait = 0
+
+            elif state == 'relaxing':
+                # Check if player dropped a magic carrot adjacent to the unicorn
+                carrot = None
+                for item in self.ground_items:
+                    if getattr(item, 'id', '') == 'magic_dungeon_carrot':
+                        cdist = max(abs(item.x - m.x), abs(item.y - m.y))
+                        if cdist <= 2:
+                            carrot = item
+                            break
+                if carrot:
+                    m._unicorn_state = 'eating'
+                    m._unicorn_eat_turns = 0
+                    # Move unicorn to the carrot
+                    m.x, m.y = carrot.x, carrot.y
+                    self.add_message(
+                        "The unicorn's ears perk up! She approaches the Magic Dungeon "
+                        "Carrot and begins to eat.", 'success')
+
+            elif state == 'eating':
+                m._unicorn_eat_turns += 1
+                if m._unicorn_eat_turns >= 2:
+                    # Remove the carrot from ground
+                    self.ground_items = [
+                        gi for gi in self.ground_items
+                        if not (getattr(gi, 'id', '') == 'magic_dungeon_carrot'
+                                and gi.x == m.x and gi.y == m.y)]
+                    m._unicorn_state = 'trusting'
+                    self.add_message(
+                        "The unicorn finishes the carrot and looks at you with gentle "
+                        "eyes. You may approach her now.", 'success')
+
+    def _start_unicorn_quiz(self, unicorn):
+        """Start the AI escalator_chain quiz for the unicorn encounter."""
+        self._pending_unicorn = unicorn
+        self.quiz_title = "THE UNICORN'S BLESSING  --  AI"
+        self.state = STATE_QUIZ
+
+        def on_complete(result):
+            self.state = STATE_PLAYER
+            chain = result.score  # 0-5
+            self._apply_unicorn_boons(chain, unicorn)
+
+        self.quiz_engine.start_quiz(
+            mode='escalator_chain',
+            subject='ai',
+            tier=1,
+            callback=on_complete,
+            wisdom=self.player.WIS,
+            timer_modifier=self.player.get_quiz_timer_modifier(),
+            extra_seconds=self.player.get_quiz_extra_seconds('ai'),
+            base_seconds=self.player.get_quiz_timer('ai'),
+        )
+
+    def _apply_unicorn_boons(self, chain: int, unicorn):
+        """Apply tiered boons based on quiz chain score."""
+        if chain == 0:
+            self.add_message(
+                "The unicorn nuzzles your hand gently, then trots away. "
+                "Perhaps next time...", 'info')
+            unicorn._unicorn_state = 'fled'
+            unicorn.alive = False
+            return
+
+        # Chain 1+: Regenerating status
+        self.player.add_effect('regenerating', 30)
+        self.add_message("The unicorn's horn glows — warm healing energy fills you! (regenerating 30 turns)", 'success')
+
+        if chain >= 2:
+            # Full HP/SP/MP restore
+            self.player.hp = self.player.max_hp
+            self.player.sp = self.player.max_sp
+            self.player.mp = self.player.max_mp
+            self.add_message("A radiant pulse fully restores your body, stamina, and magic!", 'success')
+
+        if chain >= 3:
+            # Remove curse from all equipped items
+            uncursed = 0
+            for item in self.player.get_equipped_items():
+                if getattr(item, 'buc', 'uncursed') == 'cursed':
+                    item.buc = 'uncursed'
+                    item.buc_known = True
+                    uncursed += 1
+            # Also check inventory
+            for item in self.player.inventory:
+                if getattr(item, 'buc', 'uncursed') == 'cursed':
+                    item.buc = 'uncursed'
+                    item.buc_known = True
+                    uncursed += 1
+            if uncursed:
+                self.add_message(f"Holy light purifies your belongings — {uncursed} item{'s' if uncursed != 1 else ''} uncursed!", 'success')
+            else:
+                self.add_message("Holy light sweeps through your belongings — all is pure.", 'success')
+
+        if chain >= 4:
+            # Permanent bonus: magic resistance
+            import random as _rng
+            bonus = _rng.choice(['magic_resist', 'poison_resist'])
+            self.player.add_effect(bonus, -1)  # -1 = permanent
+            nice = bonus.replace('_', ' ').title()
+            self.add_message(f"The unicorn bestows a permanent blessing: {nice}!", 'success')
+
+        if chain >= 5:
+            # Unicorn joins as a pet!
+            from pet_system import UnicornPet
+            pet = UnicornPet(unicorn.x, unicorn.y)
+            self.pets.append(pet)
+            unicorn.alive = False  # remove the NPC monster
+            self.add_message(
+                "The unicorn bows her head to you. A bond forms between your souls — "
+                "the Ethereal Unicorn joins you as a companion!", 'success')
+            self.add_message(
+                "She will heal you, cleanse afflictions, and sense hidden traps.",
+                'info')
+            return
+
+        # If chain < 5, unicorn departs after granting boons
+        unicorn.alive = False
+        unicorn._unicorn_state = 'fled'
+        self.add_message("The unicorn dips her head in farewell and vanishes in a shimmer of light.", 'info')
 
     def _start_flavor_encounter(self, monster):
         """Begin a flavor encounter when the player bumps a flavor NPC."""
@@ -9080,12 +9497,9 @@ class Game:
 
         if effect == 'teleport_away_spell':
             # Target nearest visible monster, or self-teleport if none
+            # Bosses CAN be teleported — they stay aggro'd and come back
             target_m = self._nearest_visible_monster()
             if target_m:
-                is_boss = getattr(target_m, 'is_boss', False) or target_m.max_hp > 500
-                if is_boss:
-                    self.add_message(f"The {target_m.name} resists the teleportation!", 'warning')
-                    return
                 floors = [(x, y) for y in range(self.dungeon.height)
                           for x in range(self.dungeon.width)
                           if self.dungeon.is_walkable(x, y)
@@ -9193,12 +9607,26 @@ class Game:
                 f"TIME FREEZES! {count} creatures locked in place for {dur} turns! (chain {chain})", 'success')
             return
 
+        # Light spell: reveal tiles in a radius (chain scales radius)
+        if effect == 'light':
+            base_radius = 15
+            radius = max(5, int(base_radius * chain_scale))
+            px, py = self.player.x, self.player.y
+            for dy in range(-radius, radius + 1):
+                for dx in range(-radius, radius + 1):
+                    if dx*dx + dy*dy <= radius*radius:
+                        nx, ny = px + dx, py + dy
+                        if self.dungeon.in_bounds(nx, ny):
+                            self.dungeon.explored.add((nx, ny))
+            self.add_message(
+                f"Brilliant light floods the area! (radius {radius}, chain {chain})", 'success')
+            return
+
         # Scale status durations for self-buff spells
         _SELF_BUFF_DURATIONS = {
             'shield_self':       ('shielded',    12),
             'haste_self':        ('hasted',      10),
             'invisibility_self': ('invisible',   15),
-            'light':             ('clairvoyant', 20),
             'reflect_self':      ('reflecting',  15),
         }
         if effect in _SELF_BUFF_DURATIONS:
@@ -9252,7 +9680,9 @@ class Game:
                 for lm in line_hits:
                     actual = lm.take_damage(scaled)
                     if actual > 0:
-                        lm.add_effect('stunned', stun_dur)
+                        sd, sr = self._boss_resist_cc(lm, stun_dur)
+                        if not sr:
+                            lm.add_effect('stunned', sd)
                     if not lm.alive:
                         self._on_monster_killed(lm)
                 if len(line_hits) > 1:
@@ -9265,29 +9695,49 @@ class Game:
                     self.add_message("The lightning dissipates harmlessly.", 'info')
             elif effect == 'sleep_monster':
                 dur = max(2, int(6 * chain_scale))
-                target.add_effect('sleeping', dur)
-                self.add_message(f"The {target.name} falls asleep for {dur} turns! (chain {chain})", 'success')
+                dur, resisted = self._boss_resist_cc(target, dur)
+                if resisted:
+                    self.add_message(f"The {target.name} shrugs off the sleep! (chain {chain})", 'warning')
+                else:
+                    target.add_effect('sleeping', dur)
+                    self.add_message(f"The {target.name} falls asleep for {dur} turns! (chain {chain})", 'success')
             elif effect == 'confuse_monster':
                 dur = max(2, int(10 * chain_scale))
-                target.add_effect('confused', dur)
-                self.add_message(f"The {target.name} is confused for {dur} turns! (chain {chain})", 'success')
+                dur, resisted = self._boss_resist_cc(target, dur)
+                if resisted:
+                    self.add_message(f"The {target.name} shrugs off the confusion! (chain {chain})", 'warning')
+                else:
+                    target.add_effect('confused', dur)
+                    self.add_message(f"The {target.name} is confused for {dur} turns! (chain {chain})", 'success')
             elif effect == 'paralyze_monster':
                 dur = max(2, int(8 * chain_scale))
-                target.add_effect('paralyzed', dur)
-                self.add_message(f"The {target.name} is paralyzed for {dur} turns! (chain {chain})", 'success')
+                dur, resisted = self._boss_resist_cc(target, dur)
+                if resisted:
+                    self.add_message(f"The {target.name} resists the paralysis! (chain {chain})", 'warning')
+                else:
+                    target.add_effect('paralyzed', dur)
+                    self.add_message(f"The {target.name} is paralyzed for {dur} turns! (chain {chain})", 'success')
             elif effect == 'aard_blast':
                 base_dmg = _roll(power) if power else 10
                 scaled = self._spell_damage(base_dmg, chain)
                 actual = target.take_damage(scaled)
-                target.add_effect('stunned', max(1, int(3 * chain_scale)))
+                stun = max(1, int(3 * chain_scale))
+                stun, sr = self._boss_resist_cc(target, stun)
+                if not sr:
+                    target.add_effect('stunned', stun)
                 self.add_message(
-                    f"Aard! A telekinetic blast strikes the {target.name} for {actual} damage and stuns it! (chain {chain})", 'success')
+                    f"Aard! A telekinetic blast strikes the {target.name} for {actual} damage"
+                    + (f" and stuns it!" if not sr else "!") + f" (chain {chain})", 'success')
                 if not target.alive:
                     self._on_monster_killed(target)
             elif effect == 'slow_monster':
                 dur = max(2, int(8 * chain_scale))
-                target.add_effect('slowed', dur)
-                self.add_message(f"The {target.name} is slowed for {dur} turns! (chain {chain})", 'success')
+                dur, resisted = self._boss_resist_cc(target, dur)
+                if resisted:
+                    self.add_message(f"The {target.name} shrugs off the slowing magic! (chain {chain})", 'warning')
+                else:
+                    target.add_effect('slowed', dur)
+                    self.add_message(f"The {target.name} is slowed for {dur} turns! (chain {chain})", 'success')
             elif effect == 'teleport_self':
                 self._teleport_player()
                 self.add_message("The Elder Blood bends space around you!", 'success')
@@ -9303,17 +9753,24 @@ class Game:
                     self._on_monster_killed(target)
             elif effect == 'slow_monster_spell':
                 dur = max(4, int(10 * chain_scale))
-                target.add_effect('slowed', dur)
-                self.add_message(f"The {target.name} is slowed for {dur} turns! (chain {chain})", 'success')
+                dur, resisted = self._boss_resist_cc(target, dur)
+                if resisted:
+                    self.add_message(f"The {target.name} shrugs off the slowing magic! (chain {chain})", 'warning')
+                else:
+                    target.add_effect('slowed', dur)
+                    self.add_message(f"The {target.name} is slowed for {dur} turns! (chain {chain})", 'success')
             elif effect == 'acid_arrow':
                 base_dmg = _roll(power) if power else 8
                 scaled = self._spell_damage(base_dmg, chain)
                 actual = target.take_damage(scaled)
                 dot_dur = max(2, int(5 * chain_scale))
-                target.add_effect('poisoned', dot_dur)
+                dot_dur, dot_resisted = self._boss_resist_cc(target, dot_dur)
+                if not dot_resisted:
+                    target.add_effect('poisoned', dot_dur)
                 self.add_message(
-                    f"An acid arrow strikes the {target.name} for {actual} damage! "
-                    f"Acid burns for {dot_dur} turns! (chain {chain})", 'success')
+                    f"An acid arrow strikes the {target.name} for {actual} damage!"
+                    + (f" Acid burns for {dot_dur} turns!" if not dot_resisted else " It resists the acid burn!")
+                    + f" (chain {chain})", 'success')
                 if not target.alive:
                     self._on_monster_killed(target)
             elif effect == 'drain_life_spell':
@@ -10532,26 +10989,16 @@ class Game:
             if _qs_wand:
                 _qs_wand.on_wand_zapped(wand.id, was_identified=_was_identified)
 
-            _is_mm = getattr(wand, 'effect', '') == 'magic_missile'
-            if _is_mm:
-                if result.score == 0:
-                    self.add_message("The wand fizzes and fails to fire.", 'warning')
-                    self._advance_turn()
-                    return
-                self._wand_chain_score = result.score
-            else:
-                if not result.success:
-                    self.add_message("The wand fizzes and fails to fire.", 'warning')
-                    self._advance_turn()
-                    return
-                self._wand_chain_score = 1
+            if not result.success:
+                self.add_message("The wand fizzes and fails to fire.", 'warning')
+                self._advance_turn()
+                return
 
             wand.charges -= 1
             # Override auto-target with stored target
             self._wand_override_target = self._wand_target_monster
             self._apply_wand_effect(wand)
             self._wand_override_target = None
-            self._wand_chain_score = 1  # reset
             if wand.charges <= 0:
                 self.add_message("The wand crumbles to dust -- it is spent.", 'warning')
                 self.player.remove_from_inventory(wand)
@@ -10559,32 +11006,18 @@ class Game:
                 self.add_message(f"({wand.charges} charges remain)", 'info')
             self._advance_turn()
 
-        _wand_is_mm = getattr(wand, 'effect', '') == 'magic_missile'
-        if _wand_is_mm:
-            self.quiz_engine.start_quiz(
-                mode='escalator_chain',
-                subject='science',
-                tier=1,
-                callback=on_complete,
-                max_chain=5,
-                wisdom=self.player.WIS,
-                timer_modifier=self.player.get_quiz_timer_modifier(),
-                extra_seconds=self.player.get_int_quiz_bonus() +
-                              self.player.get_quiz_extra_seconds('science'),
-                base_seconds=self.player.get_quiz_timer('science'),
-            )
-        else:
-            self.quiz_engine.start_quiz(
-                mode='threshold',
-                subject='science',
-                tier=wand.quiz_tier,
-                callback=on_complete,
-                threshold=getattr(wand, 'quiz_threshold', 2),
-                wisdom=self.player.WIS,
-                timer_modifier=self.player.get_quiz_timer_modifier(),
-                extra_seconds=self.player.get_int_quiz_bonus() +
-                              self.player.get_quiz_extra_seconds('science'),
-                base_seconds=self.player.get_quiz_timer('science'),
+        # All wands use threshold quiz — power is baked into the wand's tier
+        self.quiz_engine.start_quiz(
+            mode='threshold',
+            subject='science',
+            tier=wand.quiz_tier,
+            callback=on_complete,
+            threshold=getattr(wand, 'quiz_threshold', 2),
+            wisdom=self.player.WIS,
+            timer_modifier=self.player.get_quiz_timer_modifier(),
+            extra_seconds=self.player.get_int_quiz_bonus() +
+                          self.player.get_quiz_extra_seconds('science'),
+            base_seconds=self.player.get_quiz_timer('science'),
             )
 
     def _confirm_power_target(self):
@@ -11333,8 +11766,19 @@ class Game:
             # Pet AI turn
             result = pet.take_turn(self.player, self.dungeon, self.monsters, self.pets, self.ground_items)
             if result:
-                action, target = result
-                if action == 'special' and target.alive:
+                action = result[0] if isinstance(result, tuple) else None
+                # Unicorn pet returns ('unicorn_actions', [...]) instead of combat
+                if action == 'unicorn_actions':
+                    for msg in result[1]:
+                        if msg[0] == 'heal':
+                            self.add_message(f"The unicorn's horn glows softly — you heal {msg[1]} HP.", 'success')
+                        elif msg[0] == 'cleanse':
+                            self.add_message(f"The unicorn purifies you — {msg[1]} removed!", 'success')
+                        elif msg[0] == 'trap':
+                            self.add_message(f"The unicorn stamps nervously — trap sensed nearby!", 'warning')
+                    continue
+                target = result[1] if len(result) > 1 else None
+                if action == 'special' and target and target.alive:
                     dmg = pet.get_special_damage(quiz_acc)
                     actual = target.take_damage(dmg)
                     pet.use_special()

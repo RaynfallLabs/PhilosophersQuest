@@ -116,8 +116,16 @@ class QuizEngine:
         # Build the persistent deck for this subject+tier if it doesn't exist yet.
         # Use ONLY the questions at exactly this tier so lower-tier questions don't
         # flood higher-tier decks and cause frequent repeats.
+        # If exact tier is empty, fall back to nearest lower tier, then all.
         if deck_key not in self._decks:
-            pool = [q for q in all_qs if q.get('tier', 1) == tier] or all_qs[:]
+            pool = [q for q in all_qs if q.get('tier', 1) == tier]
+            if not pool:
+                for fallback_t in range(tier - 1, 0, -1):
+                    pool = [q for q in all_qs if q.get('tier', 1) == fallback_t]
+                    if pool:
+                        break
+            if not pool:
+                pool = all_qs[:]
             pool = self._shuffle_unseen_first(deck_key, pool)
             self._decks[deck_key]    = pool
             self._deck_idx[deck_key] = 0
@@ -302,7 +310,14 @@ class QuizEngine:
         deck_key = (self.subject, self.tier)
 
         if deck_key not in self._decks:
-            new_pool = [q for q in all_qs if q.get('tier', 1) == self.tier] or all_qs[:]
+            new_pool = [q for q in all_qs if q.get('tier', 1) == self.tier]
+            if not new_pool:
+                for fallback_t in range(self.tier - 1, 0, -1):
+                    new_pool = [q for q in all_qs if q.get('tier', 1) == fallback_t]
+                    if new_pool:
+                        break
+            if not new_pool:
+                new_pool = all_qs[:]
             new_pool = self._shuffle_unseen_first(deck_key, new_pool)
             self._decks[deck_key]    = new_pool
             self._deck_idx[deck_key] = 0

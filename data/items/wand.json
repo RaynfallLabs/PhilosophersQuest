@@ -1126,7 +1126,7 @@
       20
     ],
     "weight": 0.5,
-    "min_level": 4,
+    "min_level": 40,
     "charges_min": 3,
     "charges_max": 4,
     "max_charges": 3,
@@ -1137,10 +1137,9 @@
     "unidentified_name": "sunstone wand",
     "lore": "The extreme drain wand can strip vitality entirely from a target. Against powerful undead — which have no natural vitality — this effect is limited, but against living targets it is one of the most feared wand effects in existence.",
     "floorSpawnWeight": {
-      "1-20": 3,
-      "21-40": 2,
-      "41-60": 1,
-      "61-100": 1
+      "40-60": 3,
+      "61-80": 2,
+      "81-100": 1
     }
   },
   "wand_of_stoning": {
@@ -1178,7 +1177,7 @@
       20
     ],
     "weight": 0.5,
-    "min_level": 5,
+    "min_level": 50,
     "charges_min": 3,
     "charges_max": 4,
     "max_charges": 2,
@@ -1189,10 +1188,9 @@
     "unidentified_name": "tiger eye wand",
     "lore": "The most destructive targeted wand — its discharge unravels the molecular structure of the target. The process is not gradual; disintegration occurs in a fraction of a second. What remains is dust.",
     "floorSpawnWeight": {
-      "1-20": 3,
-      "21-40": 2,
-      "41-60": 1,
-      "61-100": 1
+      "50-70": 3,
+      "71-90": 2,
+      "91-100": 1
     }
   },
   "wand_of_speed": {
@@ -1672,7 +1670,7 @@
       200
     ],
     "weight": 0.5,
-    "min_level": 2,
+    "min_level": 15,
     "charges_min": 4,
     "charges_max": 6,
     "max_charges": 6,
@@ -1683,9 +1681,8 @@
     "unidentified_name": "white metal wand",
     "lore": "A null-field wand that temporarily suppresses magical effects on its target. Useful for dispelling ongoing enchantments or neutralizing magically protected creatures.",
     "floorSpawnWeight": {
-      "1-20": 3,
-      "21-40": 2,
-      "41-60": 1,
+      "15-40": 3,
+      "41-60": 2,
       "61-100": 1
     }
   },
@@ -2374,7 +2371,7 @@
       255
     ],
     "weight": 0.5,
-    "min_level": 5,
+    "min_level": 60,
     "charges_min": 1,
     "charges_max": 2,
     "max_charges": 2,
@@ -2385,10 +2382,8 @@
     "unidentified_name": "gold-banded ebony wand",
     "lore": "One of the rarest wands, capable of briefly halting time for everything except the wielder. In that frozen moment, the wielder can act freely. The temporal stress costs charges rapidly.",
     "floorSpawnWeight": {
-      "1-20": 3,
-      "21-40": 2,
-      "41-60": 1,
-      "61-100": 1
+      "60-80": 3,
+      "81-100": 2
     }
   },
   "wand_of_wishing": {
@@ -2400,7 +2395,7 @@
       255
     ],
     "weight": 0.5,
-    "min_level": 5,
+    "min_level": 80,
     "charges_min": 1,
     "charges_max": 1,
     "max_charges": 1,
@@ -2411,10 +2406,7 @@
     "unidentified_name": "crystal-core iron wand",
     "lore": "The legendary wand — able to grant a genuine wish to the wielder. The scope of the wish is limited by the wand's power level, and overreaching causes the wand to produce unintended results. Experienced users ask for specific, modest things.",
     "floorSpawnWeight": {
-      "1-20": 3,
-      "21-40": 2,
-      "41-60": 1,
-      "61-100": 1
+      "80-100": 2
     }
   },
   "wand_of_reflection": {
@@ -2530,7 +2522,7 @@
       255
     ],
     "weight": 0.5,
-    "min_level": 4,
+    "min_level": 25,
     "charges_min": 1,
     "charges_max": 3,
     "max_charges": 3,
@@ -2541,9 +2533,8 @@
     "unidentified_name": "prismatic crystal wand",
     "lore": "An area effect confusion wand affecting all targets in range simultaneously. Useful for escaping surrounded situations.",
     "floorSpawnWeight": {
-      "1-20": 3,
-      "21-40": 2,
-      "41-60": 1,
+      "25-40": 3,
+      "41-60": 2,
       "61-100": 1
     }
   },
@@ -2556,7 +2547,7 @@
       200
     ],
     "weight": 0.5,
-    "min_level": 4,
+    "min_level": 25,
     "charges_min": 1,
     "charges_max": 2,
     "max_charges": 2,
@@ -2567,9 +2558,8 @@
     "unidentified_name": "lightning-forged brass wand",
     "lore": "An area effect sleep wand that can drop entire groups of opponents simultaneously. One of the most tactically useful wands for non-combat exploration.",
     "floorSpawnWeight": {
-      "1-20": 3,
-      "21-40": 2,
-      "41-60": 1,
+      "25-40": 3,
+      "41-60": 2,
       "61-100": 1
     }
   },
@@ -2582,7 +2572,7 @@
       220
     ],
     "weight": 0.5,
-    "min_level": 4,
+    "min_level": 25,
     "charges_min": 1,
     "charges_max": 3,
     "max_charges": 3,
@@ -2593,9 +2583,8 @@
     "unidentified_name": "sea-glass wand",
     "lore": "An area effect slowing wand that significantly reduces the speed of all targets in range. Creates windows of safety for a group.",
     "floorSpawnWeight": {
-      "1-20": 3,
-      "21-40": 2,
-      "41-60": 1,
+      "25-40": 3,
+      "41-60": 2,
       "61-100": 1
     }
   },

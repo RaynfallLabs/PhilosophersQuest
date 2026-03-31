@@ -1,6 +1,7 @@
 import random
 from dice import roll
 from combat import _line_of_sight
+from status_effects import MAX_EFFECT_DURATION
 
 
 class Monster:
@@ -116,7 +117,7 @@ class Monster:
 
     def add_effect(self, name: str, duration: int):
         current = self.status_effects.get(name, 0)
-        self.status_effects[name] = min(current + duration, 60)
+        self.status_effects[name] = min(current + duration, MAX_EFFECT_DURATION)
 
     def has_effect(self, name: str) -> bool:
         return self.status_effects.get(name, 0) > 0
