@@ -8937,16 +8937,40 @@ class Game:
             self.state = STATE_PLAYER
             return
 
-        # For targeted spells, find nearest visible monster
-        target = None
+        # For targeted spells, enter targeting mode
         if spell.get('needs_target'):
-            target = self._nearest_visible_monster()
-            if target is None:
+            self._pending_spell = spell
+            self._pending_spell_id = spell_id
+            px, py = self.player.x, self.player.y
+            candidates = [
+                m for m in self.monsters
+                if m.alive and (m.x, m.y) in self.visible
+            ]
+            candidates.sort(key=lambda m: abs(m.x - px) + abs(m.y - py))
+            if not candidates:
                 self.add_message("No visible target for this spell.", 'warning')
+                self.player.mp += mp_cost  # refund MP
                 self.state = STATE_PLAYER
                 return
+            self.player.mp -= mp_cost
+            self._power_targeting = True
+            self._pending_power = f'spell_{spell_id}'
+            self._target_candidates = candidates
+            self._target_idx = 0
+            self.target_cursor_x = candidates[0].x
+            self.target_cursor_y = candidates[0].y
+            self.state = STATE_TARGET
+            self.add_message(
+                f"Casting {spell['name']}... select target! Arrows to aim, ENTER to cast.",
+                'info')
+            return
 
+        # Non-targeted spells: go straight to quiz
         self.player.mp -= mp_cost
+        self._start_spell_quiz(spell, spell_id, target=None)
+
+    def _start_spell_quiz(self, spell, spell_id, target):
+        """Start the science escalator chain quiz for a spell."""
         self.state = STATE_QUIZ
         self.quiz_title = f"CAST {spell['name'].upper()} -- SCIENCE"
 
@@ -8965,7 +8989,7 @@ class Game:
             self._advance_turn()
 
         self.quiz_engine.start_quiz(
-            mode='chain',
+            mode='escalator_chain',
             subject='science',
             tier=spell['quiz_tier'],
             callback=on_complete,
@@ -10582,6 +10606,16 @@ class Game:
             self.add_message("No clear line of sight!", 'warning')
             self.state = STATE_PLAYER
             return
+
+        if pid and pid.startswith('spell_'):
+            # Targeted spell: start the quiz with this target
+            spell = getattr(self, '_pending_spell', None)
+            spell_id = getattr(self, '_pending_spell_id', None)
+            self._pending_spell = None
+            self._pending_spell_id = None
+            if spell:
+                self._start_spell_quiz(spell, spell_id, target)
+            return  # quiz handles state + advance_turn
 
         if pid == 'sketch_manifest':
             # Store target for quiz callback, then start AI escalator chain
