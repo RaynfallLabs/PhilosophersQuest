@@ -1915,6 +1915,7 @@ class Game:
 
         # Death always enters from the stairs below when pursuing
         if self.death_pursues and self.death_monster is not None:
+            self._maybe_escalate_death()
             self._place_death_on_level(dungeon)
             self.add_message("You hear the scrape of a scythe on stone below you...", 'danger')
 
@@ -2926,7 +2927,7 @@ class Game:
     def _trigger_death_pursuit(self):
         from monster import DeathMonster
         self.death_pursues  = True
-        self.death_monster  = DeathMonster()
+        self.death_monster  = DeathMonster()  # starts at 50% speed
         self.add_message(
             "The dungeon shudders. A bone-cold wind rises from the deep.", 'danger'
         )
@@ -2939,7 +2940,6 @@ class Game:
         """Spawn Death near the down-stairs (rooms[-1]) of the given dungeon."""
         d = self.death_monster
         cx, cy = dungeon.rooms[-1].center
-        # Try tiles radiating out from the down-stair room center
         for dist in range(1, 8):
             for ddx, ddy in [(dist,0),(-dist,0),(0,dist),(0,-dist),
                              (dist,dist),(dist,-dist),(-dist,dist),(-dist,-dist)]:
@@ -2950,9 +2950,42 @@ class Game:
                     d.x, d.y = nx, ny
                     d.alive   = True
                     return
-        # Fallback: same tile as room centre (rare)
         d.x, d.y = cx, cy
         d.alive   = True
+
+    def _maybe_escalate_death(self):
+        """Accelerate Death as player ascends: 50% -> 75% -> 100% -> 125% speed."""
+        if not self.death_pursues or self.death_monster is None:
+            return
+        dm = self.death_monster
+        if not hasattr(dm, '_speed_pct'):
+            dm._speed_pct = 50
+        level = self.dungeon_level
+        old_speed = dm._speed_pct
+
+        if level <= 25:
+            dm._speed_pct = 125
+        elif level <= 50:
+            dm._speed_pct = 100
+        elif level <= 75:
+            dm._speed_pct = 75
+        else:
+            dm._speed_pct = 50
+
+        # Announce speed changes
+        if dm._speed_pct != old_speed:
+            _SPEED_MSGS = {
+                75:  ("Death quickens. The scraping is faster now.", 'danger',
+                      "Death is moving faster. The sound of the scythe is closer between each step."),
+                100: ("Death matches your pace now. Every step you take, it takes one too.", 'danger',
+                      "Death moves as fast as I do now. No more outrunning it. I have to be smarter."),
+                125: ("Death is FASTER than you. It's gaining. RUN.", 'danger',
+                      "It's faster than me. Faster. I can hear it gaining with every step. I need to pray."),
+            }
+            msg = _SPEED_MSGS.get(dm._speed_pct)
+            if msg:
+                self.add_message(msg[0], msg[1])
+                self._log_chronicle(msg[2])
 
     def _use_philosophers_wrench(self):
         """Combine the Philosopher's Stone and the Tablet of Second Death if both are held."""
@@ -2976,6 +3009,7 @@ class Game:
             self.add_message(
                 "You hold the Complete Tablet of Second Death.", 'loot'
             )
+            self._log_chronicle("Used the Wrench. The Stone and the Tablet fused into one. The Complete Tablet glows with purpose. I think I know what it's for.")
         else:
             self.add_message(
                 "The wrench socket seems to need something to fit in it.", 'info'
@@ -3035,6 +3069,7 @@ class Game:
         # Destroy Death
         self.death_pursues = False
         self.death_monster = None
+        self._log_chronicle("I killed Death. The lake of fire opened beneath it and swallowed it whole. The silence afterwards was the loudest thing I've ever heard.")
 
         # Drop the sixth boss reward scroll
         reward = make_death_bane_scroll(dx, dy)
@@ -3049,7 +3084,6 @@ class Game:
             return
         dm = self.death_monster
         dist = abs(dm.x - self.player.x) + abs(dm.y - self.player.y)
-        # Only warn when Death enters FOV
         if (dm.x, dm.y) not in self.visible:
             return
         if dist <= 3:
@@ -3734,6 +3768,8 @@ class Game:
                 'magic_dungeon_carrot',
                 'cats_footstep', 'womans_beard', 'mountain_root',
                 'fish_breath', 'bird_spittle', 'bear_sinew',
+                'tablet_of_second_death', 'philosophers_wrench',
+                'complete_tablet_of_second_death', 'scroll_lake_of_fire',
             }
             if getattr(item, 'id', '') in _CHRONICLE_ITEMS:
                 _cname = self._display_name(item)
@@ -3754,6 +3790,10 @@ class Game:
                     'fish_breath': f"The breath of a fish, sealed in a vial. The stopper must never come off, I think.",
                     'bird_spittle': f"The spittle of a bird. I didn't know birds could spit. I still don't.",
                     'bear_sinew': f"The sinew of a bear's sensitivity. I have no idea what that means, but here it is.",
+                    'tablet_of_second_death': f"Found a stone tablet with a slot in it. The inscription mentions Revelation and a 'second death.' Ominous.",
+                    'philosophers_wrench': f"An odd tool. Not a weapon, not a key. It feels like it wants to join things together.",
+                    'complete_tablet_of_second_death': f"The Stone fit the Tablet perfectly. It's glowing now. The inscription burns with golden light.",
+                    'scroll_lake_of_fire': f"A worn scroll. The ink is red-brown. It smells like ash. I can't read it yet, but I feel its weight.",
                 }
                 self._log_chronicle(_CHRONICLE_FLAVOR.get(item.id, f"Picked up something interesting: {_cname}."))
             if isinstance(item, Artifact) and item.id == 'philosophers_stone':
@@ -5635,6 +5675,14 @@ class Game:
         if effective == 0:
             self.add_message("The heavens are silent.", 'info')
             return
+
+        # Prayer can freeze Death — desperate measure during the chase
+        if self.death_pursues and self.death_monster is not None:
+            freeze_turns = min(8, 3 + effective)  # 4-8 turns depending on chain
+            self.death_monster._frozen_turns = freeze_turns
+            self.add_message(
+                f"Holy light blazes! Death recoils, frozen for {freeze_turns} turns!", 'success')
+            self._log_chronicle(f"Prayed while Death hunted me. It froze in place. {freeze_turns} turns. That's all I get.")
 
         msgs = []
 
@@ -11803,7 +11851,7 @@ class Game:
         if self.player.has_effect('time_stopped'):
             return
 
-        # Death acts first -- it is not part of self.monsters to avoid save/load issues
+        # Death acts first -- not part of self.monsters to avoid save/load issues
         if self.death_pursues and self.death_monster is not None:
             dm = self.death_monster
             all_m = self.monsters + [dm]
@@ -12202,8 +12250,7 @@ class Game:
         if self.death_pursues and self.death_monster is not None:
             dm = self.death_monster
             if (dm.x, dm.y) in self.visible:
-                # Pulse between bone-white and ghostly blue
-                pulse = abs((self.turn_count % 20) - 10) / 10.0   # 0.0-1.0
+                pulse = abs((self.turn_count % 20) - 10) / 10.0
                 r = int(200 + 55 * pulse)
                 g = int(200 + 55 * pulse)
                 b = 255
@@ -15456,6 +15503,7 @@ class Game:
                 self.add_message(
                     "The Complete Tablet resonates with the Abyssal Shimmer.", 'info'
                 )
+                self._log_chronicle("Dropped the Complete Tablet on the Shimmer. The ground split open. Something terrible and ancient stirred beneath. I think I've opened a door that was never meant to be opened.")
 
         # --- Ariadne quest: drop Bronze Bull at a fountain ---
         if getattr(item, 'id', '') == 'bronze_bull':

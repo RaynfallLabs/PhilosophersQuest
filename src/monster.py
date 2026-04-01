@@ -1027,7 +1027,8 @@ class DeathMonster(Monster):
         super().__init__(self._DEFN, x, y)
         self.hp      = 9999
         self.max_hp  = 9999
-        self._half_speed_skip = False   # toggled each turn; True = skip this turn
+        self._speed_pct = 50           # % chance to act each turn (50=half, 75, 100, 125)
+        self._frozen_turns = 0         # prayer freeze countdown
 
     # Death cannot be harmed
     def take_damage(self, amount: int) -> int:
@@ -1044,11 +1045,29 @@ class DeathMonster(Monster):
         pass
 
     def take_turn(self, player, dungeon, all_monsters, extra_occupied=None) -> bool:
-        """Half-speed: acts on alternating turns only."""
-        self._half_speed_skip = not self._half_speed_skip
-        if self._half_speed_skip:
+        """Speed-scaled movement. 50%=half, 100%=normal, 125%=faster than player."""
+        # Backwards compat: old pickled DeathMonsters lack new fields
+        if not hasattr(self, '_speed_pct'):
+            self._speed_pct = 50
+        if not hasattr(self, '_frozen_turns'):
+            self._frozen_turns = 0
+        # Prayer freeze: skip turn, decrement counter
+        if self._frozen_turns > 0:
+            self._frozen_turns -= 1
             return False
-        return super().take_turn(player, dungeon, all_monsters, extra_occupied)
+        # Speed check: roll against _speed_pct to decide if Death acts
+        if self._speed_pct < 100:
+            if random.randint(1, 100) > self._speed_pct:
+                return False
+        result = super().take_turn(player, dungeon, all_monsters, extra_occupied)
+        # 125% speed: 25% chance of a bonus move
+        if self._speed_pct > 100 and self._frozen_turns == 0:
+            bonus_chance = self._speed_pct - 100
+            if random.randint(1, 100) <= bonus_chance:
+                result2 = super().take_turn(player, dungeon, all_monsters, extra_occupied)
+                if result2:
+                    return result2
+        return result
 
     def attack(self, player) -> tuple[int, str]:
         """Death always hits -- no THAC0 roll needed."""
