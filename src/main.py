@@ -4,7 +4,7 @@ import random
 import sys
 import pygame
 
-VERSION = "1.9.0"
+VERSION = "1.9.1"
 
 # FANTASY: High-fantasy medieval/arcane grimoire UI theme
 from fantasy_ui import (FP, get_font, draw_panel, draw_dark_panel,
@@ -1724,11 +1724,15 @@ class Game:
 
     @staticmethod
     def _migrate_buc_item(item):
-        """Patch buc/buc_known onto an item from an old save."""
+        """Patch missing base-Item fields onto items from old saves."""
         if not hasattr(item, 'buc'):
             item.buc = 'cursed' if item.__dict__.get('cursed', False) else 'uncursed'
         if not hasattr(item, 'buc_known'):
             item.buc_known = False
+        if not hasattr(item, 'identified'):
+            item.identified = True  # old items without the field are assumed known
+        if not hasattr(item, 'unidentified_name'):
+            item.unidentified_name = getattr(item, 'name', '???')
 
     def _migrate_buc_all(self, state: dict):
         """Walk every item in inventory, equipment, ground, and stored levels."""

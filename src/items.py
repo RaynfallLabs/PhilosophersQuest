@@ -33,7 +33,11 @@ class Item:
         self.x: int = 0
         self.y: int = 0
         self.count: int = 1          # stack size; >1 only for stackable types
-        # Identification system -- subclasses set identified=False for hidden items
+        # Identification & BUC -- defaults on ALL items so no subclass can be missing them
+        self.identified: bool   = defn.get('identified', True)
+        self.unidentified_name: str = defn.get('unidentified_name', defn['name'])
+        self.buc: str           = defn.get('buc', 'uncursed')
+        self.buc_known: bool    = defn.get('buc_known', False)
         self.lore: str          = defn.get('lore', '')
         self.set_id: str        = defn.get('set_id', '')
         self.set_name: str      = defn.get('set_name', '')
