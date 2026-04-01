@@ -967,6 +967,7 @@ STATE_CHARACTER_SHEET  = 'character_sheet'   # Detailed character info
 STATE_NPC_ENCOUNTER    = 'npc_encounter'     # Moral choice encounter with NPC
 STATE_COW_ENCOUNTER    = 'cow_encounter'     # Secret cow dialog
 STATE_JUDGMENT         = 'judgment'          # Altar of Last Judgment result
+STATE_STUDY            = 'study'             # In-game missed question review
 
 # ---------------------------------------------------------------------------
 # Spells learnable from spellbooks  (spell_id -> attributes)
@@ -2230,7 +2231,7 @@ class Game:
                               STATE_EXAMINE, STATE_ENCYCLOPEDIA,
                               STATE_DROP_MENU, STATE_DROP_GOLD_INPUT,
                               STATE_MYSTERY_APPROACH, STATE_SHOP,
-                              STATE_POWER_MENU):
+                              STATE_POWER_MENU, STATE_STUDY):
                 if self.state == STATE_MYSTERY_APPROACH:
                     self._active_mystery_altar = None
                 if self.state == STATE_TARGET:
@@ -2341,6 +2342,8 @@ class Game:
             self._npc_encounter_input(key)
         elif self.state == STATE_JUDGMENT:
             self._judgment_input(key)
+        elif self.state == STATE_STUDY:
+            self._study_input(key)
         elif self.state == STATE_DEAD:
             if key == pygame.K_r and self.missed_questions:
                 self._review_idx = 0
@@ -2480,6 +2483,9 @@ class Game:
             return
         if key == pygame.K_o:
             self._start_observe()
+            return
+        if key == pygame.K_SEMICOLON:
+            self._open_study_journal()
             return
         if key == pygame.K_TAB:
             if self.zoom_mode == 'full':
@@ -4156,10 +4162,10 @@ class Game:
                 else self.cook_compound_recipes)
 
     def _cook_menu_input(self, key: int):
-        if key in (pygame.K_LEFT, pygame.K_UP):
+        if key == pygame.K_LEFT:
             self._cook_tab = self._cycle_tab(self._cook_tab, -1, len(self._COOK_TABS), self._cook_tab_has_items)
             return
-        if key in (pygame.K_RIGHT, pygame.K_DOWN):
+        if key == pygame.K_RIGHT:
             self._cook_tab = self._cycle_tab(self._cook_tab, 1, len(self._COOK_TABS), self._cook_tab_has_items)
             return
         idx = self._AZ_KEYS.get(key)
@@ -4250,11 +4256,11 @@ class Game:
         return [i for i in self.eat_menu_items if filt(i)]
 
     def _eat_menu_input(self, key: int):
-        if key in (pygame.K_LEFT, pygame.K_UP):
+        if key == pygame.K_LEFT:
             self._eat_tab = self._cycle_tab(self._eat_tab, -1, len(self._EAT_TABS),
                 lambda t: any(self._EAT_TABS[t][1](i) for i in self.eat_menu_items))
             return
-        if key in (pygame.K_RIGHT, pygame.K_DOWN):
+        if key == pygame.K_RIGHT:
             self._eat_tab = self._cycle_tab(self._eat_tab, 1, len(self._EAT_TABS),
                 lambda t: any(self._EAT_TABS[t][1](i) for i in self.eat_menu_items))
             return
@@ -4607,11 +4613,11 @@ class Game:
         return [i for i in self.throw_menu_items if filt(i)]
 
     def _throw_menu_input(self, key: int):
-        if key in (pygame.K_LEFT, pygame.K_UP):
+        if key == pygame.K_LEFT:
             self._throw_tab = self._cycle_tab(self._throw_tab, -1, len(self._THROW_TABS),
                 lambda t: any(self._THROW_TABS[t][1](i) for i in self.throw_menu_items))
             return
-        if key in (pygame.K_RIGHT, pygame.K_DOWN):
+        if key == pygame.K_RIGHT:
             self._throw_tab = self._cycle_tab(self._throw_tab, 1, len(self._THROW_TABS),
                 lambda t: any(self._THROW_TABS[t][1](i) for i in self.throw_menu_items))
             return
@@ -6609,8 +6615,8 @@ class Game:
         return [i for i in self.equip_menu_items if filt(i)]
 
     def _equip_menu_input(self, key: int):
-        # Up/Down or Left/Right: switch tabs
-        if key in (pygame.K_LEFT, pygame.K_UP):
+        # Left/Right: switch tabs
+        if key == pygame.K_LEFT:
             def _eq_has(t):
                 _, filt = self._EQUIP_TABS[t]
                 if filt is None:
@@ -6618,7 +6624,7 @@ class Game:
                 return any(filt(i) for i in self.equip_menu_items)
             self._menu_tab = self._cycle_tab(self._menu_tab, -1, len(self._EQUIP_TABS), _eq_has)
             return
-        if key in (pygame.K_RIGHT, pygame.K_DOWN):
+        if key == pygame.K_RIGHT:
             def _eq_has(t):
                 _, filt = self._EQUIP_TABS[t]
                 if filt is None:
@@ -9886,11 +9892,11 @@ class Game:
         return [i for i in self.scroll_menu_items if filt(i)]
 
     def _scroll_menu_input(self, key: int):
-        if key in (pygame.K_LEFT, pygame.K_UP):
+        if key == pygame.K_LEFT:
             self._scroll_tab = self._cycle_tab(self._scroll_tab, -1, len(self._SCROLL_TABS),
                 lambda t: any(self._SCROLL_TABS[t][1](i) for i in self.scroll_menu_items))
             return
-        if key in (pygame.K_RIGHT, pygame.K_DOWN):
+        if key == pygame.K_RIGHT:
             self._scroll_tab = self._cycle_tab(self._scroll_tab, 1, len(self._SCROLL_TABS),
                 lambda t: any(self._SCROLL_TABS[t][1](i) for i in self.scroll_menu_items))
             return
@@ -12015,6 +12021,8 @@ class Game:
             self._draw_death_screen()
         elif self.state == STATE_REVIEW_MISSED:
             self._draw_review_missed()
+        elif self.state == STATE_STUDY:
+            self._draw_study_journal()
         elif self.state == STATE_HELP:
             self._draw_help_screen()
         elif self.state == STATE_LORE:
@@ -14543,6 +14551,143 @@ class Game:
     # Post-death missed question review
     # ------------------------------------------------------------------
 
+    # ------------------------------------------------------------------
+    # Study Journal  (; key — in-game missed question review)
+    # ------------------------------------------------------------------
+
+    _STUDY_SUBJECTS = [
+        'all', 'math', 'geography', 'history', 'animal', 'cooking',
+        'science', 'philosophy', 'grammar', 'economics', 'theology', 'ai',
+    ]
+
+    def _open_study_journal(self):
+        """Open the study journal to review missed questions by category."""
+        if not self.missed_questions:
+            self.add_message("No missed questions to review yet.", 'info')
+            return
+        self._study_subject_idx = 0  # 0 = 'all'
+        self._study_question_idx = 0
+        self._study_filtered = list(self.missed_questions)
+        self.state = STATE_STUDY
+
+    def _study_filter(self):
+        """Return missed questions filtered by the current subject selection."""
+        subj = self._STUDY_SUBJECTS[self._study_subject_idx]
+        if subj == 'all':
+            return list(self.missed_questions)
+        return [q for q in self.missed_questions if q['subject'] == subj]
+
+    def _study_input(self, key):
+        """Handle input in the study journal.
+        Left/Right: cycle subject tabs.
+        Up/Down: page through questions in current category."""
+        # Left/Right: cycle subject category
+        if key == pygame.K_LEFT:
+            self._study_subject_idx = (self._study_subject_idx - 1) % len(self._STUDY_SUBJECTS)
+            self._study_filtered = self._study_filter()
+            self._study_question_idx = 0
+        elif key == pygame.K_RIGHT:
+            self._study_subject_idx = (self._study_subject_idx + 1) % len(self._STUDY_SUBJECTS)
+            self._study_filtered = self._study_filter()
+            self._study_question_idx = 0
+        # Up/Down (and Space/Backspace): page through questions
+        elif key in (pygame.K_DOWN, pygame.K_SPACE, pygame.K_RETURN):
+            if self._study_filtered:
+                self._study_question_idx = min(
+                    self._study_question_idx + 1, len(self._study_filtered) - 1)
+        elif key in (pygame.K_UP, pygame.K_BACKSPACE):
+            self._study_question_idx = max(0, self._study_question_idx - 1)
+
+    def _draw_study_journal(self):
+        """Draw the in-game study journal overlay."""
+        draw_overlay(self.screen, 190)
+        missed = self._study_filtered
+        subj = self._STUDY_SUBJECTS[self._study_subject_idx]
+        W, H = GAME_W, WINDOW_H
+
+        bw = min(840, W - 40)
+        bh = min(620, H - 40)
+        bx = (W - bw) // 2
+        by = (H - bh) // 2
+
+        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.GOLD)
+
+        # Header
+        draw_header_bar(self.screen, (bx, by, bw, 44),
+                        text="STUDY JOURNAL", font=self.font_md, text_color=FP.GOLD_BRIGHT)
+
+        y = by + 52
+
+        # Subject selector:  <  MATH (5/23)  >
+        total = len(self.missed_questions)
+        filtered = len(missed)
+        subj_label = subj.upper()
+        selector_text = f"<<  {subj_label}  ({filtered}/{total})  >>"
+        sel_surf = self.font_md.render(selector_text, True, FP.GOLD_BRIGHT)
+        self.screen.blit(sel_surf, (bx + (bw - sel_surf.get_width()) // 2, y))
+        y += 32
+
+        draw_divider(self.screen, bx + 15, y, bw - 30)
+        y += 10
+
+        if not missed:
+            empty_msg = "No missed questions in this category."
+            self.screen.blit(
+                self.font_md.render(empty_msg, True, FP.FADED_TEXT),
+                (bx + (bw - self.font_md.size(empty_msg)[0]) // 2, y + 40))
+        else:
+            idx = min(self._study_question_idx, len(missed) - 1)
+            q = missed[idx]
+
+            # Question counter + subject badge on same line
+            counter = f"{idx + 1}/{len(missed)}"
+            badge = q['subject'].upper()
+            self.screen.blit(self.font_sm.render(badge, True, FP.HINT_TEXT), (bx + 25, y))
+            ctr_surf = self.font_sm.render(counter, True, FP.FADED_TEXT)
+            self.screen.blit(ctr_surf, (bx + bw - 25 - ctr_surf.get_width(), y))
+            y += 24
+
+            # Question text
+            q_lines = self._wrap_text(q['question'], self.font_md, bw - 50)
+            for line in q_lines:
+                if y > by + bh - 120:
+                    break
+                self.screen.blit(self.font_md.render(line, True, FP.PARCHMENT_LIGHT), (bx + 25, y))
+                y += 28
+            y += 10
+
+            # Your answer vs correct
+            chosen_lines = self._wrap_text(f"Your answer:    {q['chosen']}", self.font_sm, bw - 50)
+            for line in chosen_lines:
+                if y > by + bh - 80:
+                    break
+                self.screen.blit(self.font_sm.render(line, True, FP.DANGER_TEXT), (bx + 25, y))
+                y += 22
+            correct_lines = self._wrap_text(f"Correct answer: {q['correct']}", self.font_sm, bw - 50)
+            for line in correct_lines:
+                if y > by + bh - 60:
+                    break
+                self.screen.blit(self.font_sm.render(line, True, FP.SUCCESS_TEXT), (bx + 25, y))
+                y += 22
+            y += 8
+
+            # Context
+            context = q.get('context', '')
+            if context and y < by + bh - 55:
+                draw_divider(self.screen, bx + 20, y, bw - 40)
+                y += 10
+                ctx_lines = self._wrap_text(context, self.font_sm, bw - 50)
+                for line in ctx_lines:
+                    if y > by + bh - 45:
+                        break
+                    self.screen.blit(self.font_sm.render(line, True, FP.BODY_TEXT), (bx + 25, y))
+                    y += 22
+
+        # Navigation hints
+        hints = "Left/Right: category  |  Up/Down: question  |  ESC: close"
+        hint_surf = self.font_sm.render(hints, True, FP.HINT_TEXT)
+        self.screen.blit(hint_surf, (bx + (bw - hint_surf.get_width()) // 2, by + bh - 28))
+
     def _draw_review_missed(self):
         """Page through missed questions with educational context."""
         draw_overlay(self.screen, 190)
@@ -15204,11 +15349,11 @@ class Game:
         if key == pygame.K_ESCAPE:
             self.state = STATE_PLAYER
             return
-        if key in (pygame.K_LEFT, pygame.K_UP):
+        if key == pygame.K_LEFT:
             self._examine_tab = self._cycle_tab(self._examine_tab, -1, len(self._EXAMINE_TABS),
                 lambda t: any(self._EXAMINE_TABS[t][1](i) for i in self.examine_menu_items))
             return
-        if key in (pygame.K_RIGHT, pygame.K_DOWN):
+        if key == pygame.K_RIGHT:
             self._examine_tab = self._cycle_tab(self._examine_tab, 1, len(self._EXAMINE_TABS),
                 lambda t: any(self._EXAMINE_TABS[t][1](i) for i in self.examine_menu_items))
             return
@@ -15872,10 +16017,11 @@ class Game:
             ("KNOWLEDGE", None, FP.GOLD_PALE),
             ("\\",             "Pray at altar",                    (200, 180, 255)),
             ("N",              "Recall Lore",                      (120, 200, 240)),
+            (";",              "Study Journal (review missed Qs)",  (120, 200, 240)),
             ("QUIZ", None, FP.GOLD_PALE),
             ("1  2  3  4",     "Answer question during quiz",      FP.GOLD_BRIGHT),
             ("SYSTEM", None, FP.GOLD_PALE),
-            ("Tab",            "Toggle full map / close-up view",  FP.BODY_TEXT),
+            ("Tab",            "Cycle zoom: full / medium / close", FP.BODY_TEXT),
             ("?",              "This help screen",                 FP.BODY_TEXT),
             ("ESC",            "Cancel / close menu",              FP.BODY_TEXT),
         ]
