@@ -1022,7 +1022,8 @@
       "item_chance": 0.25,
       "item_tier": 2
     },
-    "lore": "Trolls are enormously resilient creatures whose flesh regenerates wounds almost as fast as they are inflicted. Only fire and acid can prevent regrowth. Dungeon trolls are larger and more aggressive than their surface kin, evolved in a world of constant violent competition. They hoard shiny objects without understanding their value."
+    "lore": "Trolls are enormously resilient creatures whose flesh regenerates wounds almost as fast as they are inflicted. Only fire and acid can prevent regrowth. Dungeon trolls are larger and more aggressive than their surface kin, evolved in a world of constant violent competition. They hoard shiny objects without understanding their value.",
+    "regeneration": 2
   },
   "orc_warrior": {
     "name": "orc warrior",
@@ -4035,7 +4036,8 @@
       "item_chance": 0.8,
       "item_tier": 5
     },
-    "lore": "The Hydra of Lerna, a water serpent with nine heads, was one of Heracles' twelve labors. Whenever a head was severed, two more grew in its place — until Iolaus cauterized each stump with fire. The dungeon variant still regenerates if not dealt with carefully, and its blood is so toxic that Heracles used it to poison his arrows."
+    "lore": "The Hydra of Lerna, a water serpent with nine heads, was one of Heracles' twelve labors. Whenever a head was severed, two more grew in its place — until Iolaus cauterized each stump with fire. The dungeon variant still regenerates if not dealt with carefully, and its blood is so toxic that Heracles used it to poison his arrows.",
+    "regeneration": 4
   },
   "cerberus": {
     "name": "Cerberus",
@@ -16713,7 +16715,8 @@
       "item_chance": 0.2,
       "item_tier": 2
     },
-    "lore": "Ice trolls haunt the frozen sub-levels and flooded caverns that connect to glacial systems. Their regeneration is slowed by fire and stopped completely by salt, but in their icy domains they are nearly unkillable. Their saliva freezes on contact with warm flesh."
+    "lore": "Ice trolls haunt the frozen sub-levels and flooded caverns that connect to glacial systems. Their regeneration is slowed by fire and stopped completely by salt, but in their icy domains they are nearly unkillable. Their saliva freezes on contact with warm flesh.",
+    "regeneration": 2
   },
   "drow_warrior": {
     "name": "drow warrior",
@@ -17881,7 +17884,8 @@
       "item_chance": 0.4,
       "item_tier": 3
     },
-    "lore": "Chaos trolls have been mutated by proximity to void energy, their regenerative capacity accelerated to grotesque extremes. They regrow severed limbs mid-battle, sometimes growing back wrong — extra arms, heads facing the wrong direction. Fire is the only reliable way to stop their regeneration. Anything else just makes them angrier."
+    "lore": "Chaos trolls have been mutated by proximity to void energy, their regenerative capacity accelerated to grotesque extremes. They regrow severed limbs mid-battle, sometimes growing back wrong — extra arms, heads facing the wrong direction. Fire is the only reliable way to stop their regeneration. Anything else just makes them angrier.",
+    "regeneration": 3
   },
   "wyrm": {
     "name": "wyrm",

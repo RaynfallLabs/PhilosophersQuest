@@ -1101,9 +1101,24 @@ def spawn_monsters(rooms: List[Room], level: int, dungeon: Dungeon,
             defn = {**eligible[kind], 'id': kind}
             monsters.append(Monster(defn, tx, ty))
 
-            # --- Pack spawning: spawn 2-3 extras of same type nearby ---
+            # --- Pack spawning: variable extras based on level and frequency ---
             if defn.get('pack', False):
-                pack_extra = rng.randint(2, 3)
+                # Low levels: 1-2 extras. Mid: 2-3. Deep: 2-4. High freq = bigger packs.
+                freq = defn.get('frequency', 3)
+                ml = defn.get('min_level', 1)
+                if ml >= 60:
+                    base_min, base_max = 2, 4
+                elif ml >= 30:
+                    base_min, base_max = 2, 3
+                else:
+                    base_min, base_max = 1, 2
+                # High frequency monsters get +1 max pack size
+                if freq >= 5:
+                    base_max += 1
+                # 30% chance of a smaller pack (variety)
+                if rng.random() < 0.30:
+                    base_max = base_min
+                pack_extra = rng.randint(base_min, base_max)
                 for ptx, pty in tiles:
                     if pack_extra <= 0:
                         break

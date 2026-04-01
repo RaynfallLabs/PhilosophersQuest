@@ -144,6 +144,8 @@ class QuirkSystem:
         apply_fn(self._pl)
         self.game.add_message(f"TRAIT UNLOCKED: {name}", 'loot')
         self.game.add_message(f"  Reward: {_QUIRK_EFFECTS.get(qid, '')}", 'success')
+        if hasattr(self.game, '_log_chronicle'):
+            self.game._log_chronicle(f"Something changed in me. Unlocked a new trait: {name}. I'm becoming something more.")
         trigger = _QUIRK_TRIGGER.get(qid, '')
         flavor  = _QUIRK_FLAVOR.get(qid, '')
         if trigger:

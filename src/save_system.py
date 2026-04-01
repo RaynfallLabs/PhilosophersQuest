@@ -66,6 +66,10 @@ def save_game(game) -> bool:
             '_cow_level_done': getattr(game, '_cow_level_done', False),
             '_cow_spawned': getattr(game, '_cow_spawned', False),
             '_cow_level': getattr(game, '_cow_level', 35),
+            # Chronicle & Lore Hints (Encyclopedia tabs)
+            '_chronicle': getattr(game, '_chronicle', []),
+            '_recalled_hints': getattr(game, '_recalled_hints', []),
+            '_cooked_recipes': getattr(game, '_cooked_recipes', []),
             # Quiz deck state — preserves shuffle position so questions don't repeat on reload
             'quiz_deck_state': game.quiz_engine.get_deck_state(),
         }

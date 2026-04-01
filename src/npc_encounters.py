@@ -2047,22 +2047,22 @@ def judge_karma(karma: int) -> tuple[str, str]:
 
 # Assign NPC sprites for map rendering
 _KARMA_SPRITES = {
-    'elara_amulet': 'npc_child', 'brother_aldous': 'npc_mystic',
-    'marta_ratchatcher': 'npc_traveler', 'sir_aldric': 'npc_warrior',
-    'tam_thief': 'npc_child', 'helena_cartographer': 'npc_scholar',
-    'marcus_sword': 'npc_warrior', 'blinded_soldier': 'npc_warrior',
-    'dying_messenger': 'npc_traveler', 'deadite_woman': 'npc_ghost',
-    'sister_marguerite': 'npc_mystic', 'chained_priest': 'npc_mystic',
-    'old_konstantin': 'npc_warrior', 'apprentice_healer': 'npc_traveler',
-    'ghost_grave': 'npc_ghost', 'deserter': 'npc_warrior',
-    'blind_seer': 'npc_mystic', 'trapped_seraph': 'npc_divine',
-    'weeping_mother': 'npc_ghost', 'ser_brennan': 'npc_warrior',
-    'cursed_scholar': 'npc_scholar', 'fairy_jar': 'npc_creature',
-    'penitent': 'npc_traveler', 'roderic_shield': 'npc_warrior',
-    'forgotten_prisoner': 'npc_traveler', 'fallen_paladin': 'npc_warrior',
-    'azarael_demon': 'npc_creature', 'child_shrine': 'npc_divine',
-    'dying_prophet': 'npc_mystic', 'petrified_adventurer': 'npc_ghost',
-    'last_merchant': 'npc_merchant',
+    'elara_amulet': 'npc_lost_girl', 'brother_aldous': 'npc_dying_monk',
+    'marta_ratchatcher': 'npc_rat_catcher', 'sir_aldric': 'npc_burdened_knight',
+    'tam_thief': 'npc_young_thief', 'helena_cartographer': 'npc_injured_scholar',
+    'marcus_sword': 'npc_grieving_father', 'blinded_soldier': 'npc_blinded_soldier',
+    'dying_messenger': 'npc_dying_courier', 'deadite_woman': 'npc_deadite_woman',
+    'sister_marguerite': 'npc_starving_nun', 'chained_priest': 'npc_chained_priest',
+    'old_konstantin': 'npc_old_warrior', 'apprentice_healer': 'npc_poisoned_herbalist',
+    'ghost_grave': 'npc_ghost_edwin', 'deserter': 'npc_deserter',
+    'blind_seer': 'npc_blind_seer', 'trapped_seraph': 'npc_caged_angel',
+    'weeping_mother': 'npc_weeping_ghost', 'ser_brennan': 'npc_dying_knight',
+    'cursed_scholar': 'npc_cursed_scholar', 'fairy_jar': 'npc_trapped_fairy',
+    'penitent': 'npc_penitent', 'roderic_shield': 'npc_young_knight',
+    'forgotten_prisoner': 'npc_forgotten_prisoner', 'fallen_paladin': 'npc_fallen_paladin',
+    'azarael_demon': 'npc_bound_demon', 'child_shrine': 'npc_small_shrine',
+    'dying_prophet': 'npc_dying_prophet', 'petrified_adventurer': 'npc_stone_statue',
+    'last_merchant': 'npc_lost_merchant',
 }
 for _enc in ENCOUNTERS:
     if 'sprite_id' not in _enc:

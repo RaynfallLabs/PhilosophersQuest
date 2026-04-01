@@ -49,6 +49,9 @@ class Monster:
         # Minimal status effects for wand interactions
         self.status_effects: dict[str, int] = {}  # effect_id -> turns remaining
 
+        # Regeneration: HP per turn (trolls, hydras; fire stops it)
+        self.regeneration: int = int(defn.get('regeneration', 0))
+
         # --- Hit-and-run AI state (Asterion) ---
         self.can_phase_walls: bool = defn.get('can_phase_walls', False)
         self._hit_run_state: str = 'hunting'   # hunting / retreating / hiding
@@ -153,6 +156,13 @@ class Monster:
             self.take_damage(burning_dmg)
         if disease_tick and random.random() < 0.08:
             self.take_damage(max(1, self.max_hp // 20))
+
+        # Regeneration: heal HP each turn (trolls, hydras)
+        regen = getattr(self, 'regeneration', 0)
+        if regen and self.alive and self.hp < self.max_hp:
+            # Don't regenerate while burning (fire stops troll regen)
+            if not self.has_effect('burning'):
+                self.hp = min(self.max_hp, self.hp + regen)
 
     # --- Combat ---
 
@@ -599,14 +609,22 @@ class Monster:
         return False
 
     def _stumble_random(self, dungeon, all_monsters, extra_occupied, player):
-        """Move in a random direction (confused/blinded stumble)."""
+        """Move in a random direction (confused/blinded stumble).
+        If stumble would bump another monster, attack it (friendly fire)."""
         dirs = [(0,-1),(0,1),(-1,0),(1,0)]
         random.shuffle(dirs)
-        occupied = {(m.x, m.y) for m in all_monsters if m is not self and m.alive}
-        if extra_occupied:
-            occupied |= extra_occupied
+        occupied = {(m.x, m.y): m for m in all_monsters if m is not self and m.alive}
         for ddx, ddy in dirs:
             nx, ny = self.x + ddx, self.y + ddy
+            # Confused friendly fire: bump into another monster = attack it
+            if (nx, ny) in occupied and self.has_effect('confused'):
+                victim = occupied[(nx, ny)]
+                if self.attacks:
+                    atk = random.choice(self.attacks)
+                    dmg = roll(atk.get('damage', '1d4'))
+                    victim.take_damage(dmg)
+                    self._confused_hit = (victim, dmg)  # main.py reads this for messages
+                return
             if ((nx, ny) not in occupied and (nx, ny) != (player.x, player.y)
                     and self._can_move_to(dungeon, nx, ny)):
                 self.x, self.y = nx, ny
