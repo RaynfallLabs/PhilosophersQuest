@@ -10,7 +10,8 @@ VERSION = "1.9.2"
 from fantasy_ui import (FP, get_font, draw_panel, draw_dark_panel,
                          draw_header_bar, draw_divider, draw_shadow_text,
                          draw_glow_text, centered_text, draw_overlay,
-                         draw_rune_circle, draw_filigree_bar, draw_candle_glow)
+                         draw_rune_circle, draw_filigree_bar, draw_candle_glow,
+                         draw_menu, fit_text, wrap_text, draw_tab_bar)
 
 from combat import player_attack
 from pet_system import Pet, FenrirPet, random_species as random_pet_species
@@ -12941,79 +12942,29 @@ class Game:
     # ------------------------------------------------------------------
 
     def _draw_equip_menu(self):
-        draw_overlay(self.screen, 190)
-
-        # Get items for the current tab
         tab_items = self._get_equip_tab_items()
         is_unequip = tab_items is None
         display_items = self.equip_menu_equipped if is_unequip else tab_items
 
-        row_h = 72
-        n_items = min(len(display_items), 26)
-        bw = min(760, GAME_W - 40)
-        bh = min(130 + n_items * row_h + 50, WINDOW_H - 40)
-        bx = (GAME_W - bw) // 2
-        by = (WINDOW_H - bh) // 2
-
-        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.GOLD)
-        draw_header_bar(self.screen, (bx, by, bw, 44),
-                        text="EQUIP / UNEQUIP",
-                        font=self.font_md, text_color=FP.GOLD_BRIGHT)
-
-        _equip_counts = []
-        for _, filt in self._EQUIP_TABS:
-            if filt is None:
-                _equip_counts.append(len(self.equip_menu_equipped))
-            else:
-                _equip_counts.append(sum(1 for it in self.equip_menu_items if filt(it)))
-        tab_end = self._draw_tab_bar(self._EQUIP_TABS, self._menu_tab, bx, by, bw, _equip_counts)
-        cy = tab_end + 6
-        max_detail_w = bw - 90
-
-        ICO = self.MENU_ICON_SIZE
-        ICO_Y_OFF = 4; NAME_Y_OFF = 8; DET_Y_OFF = ICO_Y_OFF + ICO + 6
-        LBL_Y_OFF = ICO_Y_OFF + (ICO - self.font_md.get_height()) // 2
-        tx = bx + 70 + ICO + 8
-        max_detail_w = bw - (70 + ICO + 8) - 20
-
-        if not display_items:
-            self.screen.blit(
-                self.font_sm.render("(empty)", True, FP.FADED_TEXT), (bx + 30, cy + 10)
-            )
-        elif is_unequip:
+        entries = []
+        if is_unequip:
             for i, (slot_name, item) in enumerate(display_items[:26]):
-                iy = cy
-                pygame.draw.rect(self.screen,
-                    FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
-                    (bx + 10, iy, bw - 20, row_h - 8), border_radius=6)
-                self.screen.blit(
-                    self.font_md.render(f"[{self._LETTERS[i]}]", True, FP.WARNING_TEXT), (bx + 18, iy + LBL_Y_OFF))
-                self._draw_menu_icon(item, bx + 56, iy + ICO_Y_OFF)
                 cursed = getattr(item, 'cursed', False)
-                name_col = FP.DANGER_TEXT if cursed else FP.GOLD_PALE
-                self.screen.blit(
-                    self.font_md.render(self._fit_text(self._display_name(item), self.font_md, max_detail_w), True, name_col),
-                    (tx, iy + NAME_Y_OFF))
                 slot_label = slot_name.replace('_', ' ')
                 detail = f"[{slot_label}]"
                 if cursed:
                     detail += "  CURSED"
-                self.screen.blit(
-                    self.font_sm.render(detail, True, FP.DANGER_TEXT if cursed else FP.FADED_TEXT),
-                    (tx, iy + DET_Y_OFF))
-                cy += row_h
+                entries.append({
+                    'name': self._display_name(item),
+                    'detail': detail,
+                    'key': self._LETTERS[i],
+                    'icon': item,
+                    'name_color': FP.DANGER_TEXT if cursed else FP.GOLD_PALE,
+                    'detail_color': FP.DANGER_TEXT if cursed else FP.FADED_TEXT,
+                    'key_color': FP.WARNING_TEXT,
+                })
         else:
             for i, item in enumerate(display_items[:26]):
-                iy = cy
-                pygame.draw.rect(self.screen,
-                    FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
-                    (bx + 10, iy, bw - 20, row_h - 8), border_radius=6)
-                self.screen.blit(
-                    self.font_md.render(f"[{self._LETTERS[i]}]", True, FP.GOLD_BRIGHT), (bx + 18, iy + LBL_Y_OFF))
-                self._draw_menu_icon(item, bx + 56, iy + ICO_Y_OFF)
-                self.screen.blit(
-                    self.font_md.render(self._fit_text(self._display_name(item), self.font_md, max_detail_w), True, FP.BODY_TEXT),
-                    (tx, iy + NAME_Y_OFF))
                 if isinstance(item, Weapon):
                     detail = f"{getattr(item, 'weapon_class', 'weapon')}  {item.base_damage}dmg  chain x{item.max_chain_length or '?'}"
                 elif isinstance(item, Shield):
@@ -13035,351 +12986,216 @@ class Game:
                         detail = "unidentified"
                 else:
                     detail = item.item_class
-                self.screen.blit(
-                    self.font_sm.render(self._fit_text(detail, self.font_sm, max_detail_w), True, FP.FADED_TEXT),
-                    (tx, iy + DET_Y_OFF))
-                cy += row_h
+                entries.append({
+                    'name': self._display_name(item),
+                    'detail': detail,
+                    'key': self._LETTERS[i],
+                    'icon': item,
+                })
 
-        hint_y = by + bh - 34
-        draw_divider(self.screen, bx + 10, hint_y - 8, bw - 20)
-        hint = self.font_sm.render(
-            "Arrows: tab  |  a-z: select  |  ESC: cancel", True, FP.HINT_TEXT)
-        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
+        _equip_counts = []
+        for _, filt in self._EQUIP_TABS:
+            if filt is None:
+                _equip_counts.append(len(self.equip_menu_equipped))
+            else:
+                _equip_counts.append(sum(1 for it in self.equip_menu_items if filt(it)))
+
+        draw_menu(
+            self.screen,
+            title="EQUIP / UNEQUIP",
+            entries=entries,
+            scroll=getattr(self, '_equip_scroll', 0),
+            tabs=self._EQUIP_TABS,
+            active_tab=self._menu_tab,
+            tab_counts=_equip_counts,
+            hint="Arrows: tab  |  a-z: select  |  ESC: cancel",
+            border_color=FP.GOLD,
+            max_width=760,
+            center_in=(GAME_W, WINDOW_H),
+            font_md=self.font_md,
+            font_sm=self.font_sm,
+            draw_icon_fn=lambda s, item, x, y: self._draw_menu_icon(item, x, y),
+        )
 
     # ------------------------------------------------------------------
     # Accessory menu overlay
     # ------------------------------------------------------------------
 
     def _draw_accessory_menu(self):
-        draw_overlay(self.screen, 190)
-        ROW_H = 72
-        ICO = self.MENU_ICON_SIZE
-        TEXT_X = 70 + ICO + 8
-        bw = min(760, GAME_W - 40)
-        max_detail_w = bw - TEXT_X - 20
-        n = min(len(self.accessory_menu_items), 26)
-        bh = min(90 + n * ROW_H + 70, WINDOW_H - 40)
-        bx = (GAME_W - bw) // 2
-        by = (WINDOW_H - bh) // 2
-        tx = bx + TEXT_X
-
-        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.GOLD)
-        draw_header_bar(self.screen, (bx, by, bw, 44), text="EQUIP ACCESSORY",
-                        font=self.font_md, text_color=FP.GOLD_BRIGHT)
         slots_used = sum(1 for s in self.player.accessory_slots if s is not None)
-        self.screen.blit(
-            self.font_sm.render(f"Accessory slots: {slots_used}/4", True, FP.BODY_TEXT),
-            (bx + 20, by + 48)
-        )
-        draw_divider(self.screen, bx + 10, by + 72, bw - 20)
-
-        ICO_Y_OFF = 4; NAME_Y_OFF = 8; DET_Y_OFF = ICO_Y_OFF + ICO + 6
-        LBL_Y_OFF = ICO_Y_OFF + (ICO - self.font_md.get_height()) // 2
-        cy = by + 82
+        entries = []
         for i, item in enumerate(self.accessory_menu_items[:26]):
-            iy = cy
-            pygame.draw.rect(self.screen,
-                FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
-                (bx + 10, iy, bw - 20, ROW_H - 8), border_radius=6)
-            self.screen.blit(
-                self.font_md.render(f"[{self._LETTERS[i]}]", True, FP.GOLD_BRIGHT),
-                (bx + 18, iy + LBL_Y_OFF))
-            self._draw_menu_icon(item, bx + 56, iy + ICO_Y_OFF)
-            self.screen.blit(
-                self.font_md.render(self._fit_text(self._display_name(item), self.font_md, max_detail_w), True, FP.BODY_TEXT),
-                (tx, iy + NAME_Y_OFF))
             if item.identified or item.id in self.player.known_item_ids:
                 fx = item.effects
                 detail_text = f"grants {fx['status']}" if 'status' in fx else f"{fx.get('stat','?')} +{fx.get('amount',0)}"
             else:
                 detail_text = "unidentified"
-            detail_surf = self.font_sm.render(detail_text, True, FP.FADED_TEXT)
-            if detail_surf.get_width() > max_detail_w:
-                while len(detail_text) > 1 and self.font_sm.size(detail_text + '\u2026')[0] > max_detail_w:
-                    detail_text = detail_text[:-1]
-                detail_surf = self.font_sm.render(detail_text + '\u2026', True, FP.FADED_TEXT)
-            self.screen.blit(detail_surf, (tx, iy + DET_Y_OFF))
-            cy += ROW_H
-
-        hint_y = by + bh - 34
-        draw_divider(self.screen, bx + 10, hint_y - 8, bw - 20)
-        hint = self.font_sm.render("a-z: select  |  ESC: cancel", True, FP.HINT_TEXT)
-        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
+            entries.append({
+                'name': self._display_name(item),
+                'detail': detail_text,
+                'key': self._LETTERS[i],
+                'icon': item,
+            })
+        draw_menu(
+            self.screen,
+            title="EQUIP ACCESSORY",
+            entries=entries,
+            scroll=getattr(self, '_accessory_scroll', 0),
+            subtitle=f"Accessory slots: {slots_used}/4",
+            hint="a-z: select  |  ESC: cancel",
+            border_color=FP.GOLD,
+            max_width=760,
+            center_in=(GAME_W, WINDOW_H),
+            font_md=self.font_md,
+            font_sm=self.font_sm,
+            draw_icon_fn=lambda s, item, x, y: self._draw_menu_icon(item, x, y),
+        )
 
     # ------------------------------------------------------------------
     # Wand menu overlay
     # ------------------------------------------------------------------
 
     def _draw_wand_menu(self):
-        draw_overlay(self.screen, 190)
-        ROW_H = 72
-        ICO = self.MENU_ICON_SIZE
-        TEXT_X = 70 + ICO + 8
-        bw = min(760, GAME_W - 40)
-        max_detail_w = bw - TEXT_X - 20
-        n = min(len(self.wand_menu_items), 26)
-        bh = min(90 + n * ROW_H + 70, WINDOW_H - 40)
-        bx = (GAME_W - bw) // 2
-        by = (WINDOW_H - bh) // 2
-        tx = bx + TEXT_X
-
-        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.ARCANE_BRIGHT)
-        draw_header_bar(self.screen, (bx, by, bw, 44), text="ZAP WAND",
-                        font=self.font_md, text_color=FP.GOLD_BRIGHT)
-        self.screen.blit(
-            self.font_sm.render("Nearest visible monster: auto-targeted", True, FP.BODY_TEXT),
-            (bx + 20, by + 48)
-        )
-        draw_divider(self.screen, bx + 10, by + 72, bw - 20)
-
-        ICO_Y_OFF = 4; NAME_Y_OFF = 8; DET_Y_OFF = ICO_Y_OFF + ICO + 6
-        LBL_Y_OFF = ICO_Y_OFF + (ICO - self.font_md.get_height()) // 2
-        cy = by + 82
+        entries = []
         for i, item in enumerate(self.wand_menu_items[:26]):
-            iy = cy
-            pygame.draw.rect(self.screen,
-                FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
-                (bx + 10, iy, bw - 20, ROW_H - 8), border_radius=6)
             charge_color = (
                 FP.SUCCESS_TEXT if item.charges > item.max_charges // 2
                 else FP.WARNING_TEXT if item.charges > 0
                 else FP.DANGER_TEXT
             )
-            self.screen.blit(
-                self.font_md.render(f"[{self._LETTERS[i]}]", True, FP.GOLD_BRIGHT),
-                (bx + 18, iy + LBL_Y_OFF))
-            self._draw_menu_icon(item, bx + 56, iy + ICO_Y_OFF)
-            self.screen.blit(
-                self.font_md.render(self._fit_text(self._display_name(item), self.font_md, max_detail_w), True, FP.BODY_TEXT),
-                (tx, iy + NAME_Y_OFF))
             charge_text = f"charges: {item.charges}/{item.max_charges}"
             if item.identified or item.id in self.player.known_item_ids:
                 charge_text += f"  |  effect: {item.effect.replace('_', ' ')}"
-            detail_surf = self.font_sm.render(
-                self._fit_text(charge_text, self.font_sm, max_detail_w), True, charge_color)
-            self.screen.blit(detail_surf, (tx, iy + DET_Y_OFF))
-            cy += ROW_H
-
-        hint_y = by + bh - 34
-        draw_divider(self.screen, bx + 10, hint_y - 8, bw - 20)
-        hint = self.font_sm.render("a-z: select  |  ESC: cancel", True, FP.HINT_TEXT)
-        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
+            entries.append({
+                'name': self._display_name(item),
+                'detail': charge_text,
+                'key': self._LETTERS[i],
+                'icon': item,
+                'detail_color': charge_color,
+            })
+        draw_menu(
+            self.screen,
+            title="ZAP WAND",
+            entries=entries,
+            scroll=getattr(self, '_wand_scroll', 0),
+            subtitle="Nearest visible monster: auto-targeted",
+            hint="a-z: select  |  ESC: cancel",
+            border_color=FP.ARCANE_BRIGHT,
+            max_width=760,
+            center_in=(GAME_W, WINDOW_H),
+            font_md=self.font_md,
+            font_sm=self.font_sm,
+            draw_icon_fn=lambda s, item, x, y: self._draw_menu_icon(item, x, y),
+        )
 
     # ------------------------------------------------------------------
     # Spell menu overlay
     # ------------------------------------------------------------------
 
     def _draw_spell_menu(self):
-        draw_overlay(self.screen, 190)
-        n_spells = min(len(self.spell_menu_items), 26)
-        ROW_H = 72
-        bw = min(820, GAME_W - 40)
-        bh = min(96 + n_spells * ROW_H + 70, WINDOW_H - 40)
-        bx = (GAME_W - bw) // 2
-        by = (WINDOW_H - bh) // 2
-        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.ARCANE_BRIGHT)
-        draw_header_bar(self.screen, (bx, by, bw, 44),
-                        text="CAST SPELL",
-                        font=self.font_md, text_color=FP.GOLD_BRIGHT)
-        self.screen.blit(
-            self.font_sm.render(f"MP: {self.player.mp}/{self.player.max_mp}",
-                                True, FP.BODY_TEXT),
-            (bx + 20, by + 48)
-        )
-        draw_divider(self.screen, bx + 10, by + 72, bw - 20)
-        ICO = self.MENU_ICON_SIZE
-        ICO_Y_OFF = 4; NAME_Y_OFF = 8; DET_Y_OFF = ICO_Y_OFF + ICO + 6
-        LBL_Y_OFF = ICO_Y_OFF + (ICO - self.font_md.get_height()) // 2
-        TEXT_X = 70 + ICO + 8
-        tx = bx + TEXT_X
-        max_detail_w = bw - TEXT_X - 20
-        cy = by + 82
-        for i, spell_id in enumerate(self.spell_menu_items):
+        entries = []
+        for i, spell_id in enumerate(self.spell_menu_items[:26]):
             spell = LEARNABLE_SPELLS.get(spell_id, {})
-            key_lbl = chr(ord('a') + i)
             mp_cost = spell.get('mp_cost', '?')
             can_cast = self.player.mp >= int(mp_cost)
-            name_color = FP.BODY_TEXT if can_cast else FP.DANGER_TEXT
             tier = spell.get('quiz_tier', 1)
             tier_color = [(180,180,180),(100,200,255),(255,180,80),(200,80,255),(255,100,100)][min(tier-1,4)]
-            iy = cy
-            pygame.draw.rect(
-                self.screen,
-                FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
-                (bx + 10, iy, bw - 20, ROW_H - 8), border_radius=6
-            )
-            self.screen.blit(
-                self.font_md.render(f"[{key_lbl}]", True, FP.GOLD_BRIGHT), (bx + 18, iy + LBL_Y_OFF)
-            )
-            # Spell icon (try spellbook sprite, fall back to colored square)
+            # Build a small proxy object for the icon callback
             book_id = spell_id.replace('_spell', '')
             spellbook_id = f"spellbook_{book_id}"
-            sprite = self._get_menu_sprite(spellbook_id)
-            if sprite:
-                self.screen.blit(sprite, (bx + 56, iy + ICO_Y_OFF))
-            else:
-                tc = tier_color
-                pygame.draw.rect(self.screen, tc, (bx + 56, iy + ICO_Y_OFF, ICO, ICO), border_radius=4)
-            self.screen.blit(
-                self.font_md.render(self._fit_text(spell.get('name', '?'), self.font_md, max_detail_w), True, name_color), (tx, iy + NAME_Y_OFF)
-            )
-            detail_text = f"tier {tier}  |  {mp_cost} MP  |  {spell.get('desc','')}"
-            detail_surf = self.font_sm.render(self._fit_text(detail_text, self.font_sm, max_detail_w), True, tier_color)
-            self.screen.blit(detail_surf, (tx, iy + DET_Y_OFF))
-            cy += ROW_H
-        hint_y = by + bh - 34
-        draw_divider(self.screen, bx + 10, hint_y - 8, bw - 20)
-        hint = self.font_sm.render("a-z: select  |  ESC: cancel", True, FP.HINT_TEXT)
-        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
+            # Create a lightweight namespace so _draw_menu_icon can find .id
+            class _SpellIcon:
+                def __init__(self2, sid, tc):
+                    self2.id = sid
+                    self2.color = list(tc)
+                    self2.symbol = '*'
+            icon_obj = _SpellIcon(spellbook_id, tier_color)
+            entries.append({
+                'name': spell.get('name', '?'),
+                'detail': f"tier {tier}  |  {mp_cost} MP  |  {spell.get('desc','')}",
+                'key': self._LETTERS[i],
+                'icon': icon_obj,
+                'name_color': FP.BODY_TEXT if can_cast else FP.DANGER_TEXT,
+                'detail_color': tier_color,
+                'badge': f"{mp_cost} MP",
+                'badge_color': FP.BODY_TEXT if can_cast else FP.DANGER_TEXT,
+            })
+        draw_menu(
+            self.screen,
+            title="CAST SPELL",
+            entries=entries,
+            scroll=getattr(self, '_spell_scroll', 0),
+            subtitle=f"MP: {self.player.mp}/{self.player.max_mp}",
+            hint="a-z: select  |  ESC: cancel",
+            border_color=FP.ARCANE_BRIGHT,
+            max_width=820,
+            center_in=(GAME_W, WINDOW_H),
+            font_md=self.font_md,
+            font_sm=self.font_sm,
+            draw_icon_fn=lambda s, item, x, y: self._draw_menu_icon(item, x, y),
+        )
 
     # ------------------------------------------------------------------
     # Scroll menu overlay
     # ------------------------------------------------------------------
 
     def _draw_scroll_menu(self):
-        draw_overlay(self.screen, 190)
-
         tab_items = self._get_scroll_tab_items()
-        ROW_H = 72
-        ICO = self.MENU_ICON_SIZE
-        TEXT_X = 70 + ICO + 8
-        bw = min(760, GAME_W - 40)
-        max_detail_w = bw - TEXT_X - 20
-        n_items = min(len(tab_items), 26)
-        bh = min(130 + n_items * ROW_H + 50, WINDOW_H - 40)
-        bx = (GAME_W - bw) // 2
-        by = (WINDOW_H - bh) // 2
-        tx = bx + TEXT_X
-
-        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.GOLD)
-        draw_header_bar(self.screen, (bx, by, bw, 44), text="READ",
-                        font=self.font_md, text_color=FP.GOLD_BRIGHT)
+        entries = []
+        for i, item in enumerate(tab_items[:26]):
+            is_book = isinstance(item, Spellbook)
+            if is_book:
+                known = item.spell_id in self.player.known_spells
+                if known:
+                    detail_text = f"[KNOWN] {item.spell_name}"
+                elif item.identified or item.id in self.player.known_item_ids:
+                    detail_text = f"teaches: {item.spell_name}  {item.mp_cost} MP"
+                else:
+                    detail_text = "spellbook"
+            else:
+                if item.identified or item.id in self.player.known_item_ids:
+                    detail_text = f"effect: {item.effect.replace('_', ' ')}"
+                else:
+                    detail_text = "unknown effect"
+            entries.append({
+                'name': self._display_name(item),
+                'detail': detail_text,
+                'key': self._LETTERS[i],
+                'icon': item,
+            })
 
         _scroll_counts = [sum(1 for it in self.scroll_menu_items if filt(it))
                           for _, filt in self._SCROLL_TABS]
-        tab_end = self._draw_tab_bar(self._SCROLL_TABS, self._scroll_tab, bx, by, bw, _scroll_counts)
-        draw_divider(self.screen, bx + 10, tab_end, bw - 20)
-        cy = tab_end + 10
-
-        ICO_Y_OFF = 4
-        NAME_Y_OFF = 8
-        DET_Y_OFF = ICO_Y_OFF + ICO + 6
-        lbl_h = self.font_md.get_height()
-        LBL_Y_OFF = ICO_Y_OFF + (ICO - lbl_h) // 2
-
-        if not tab_items:
-            self.screen.blit(self.font_sm.render("(empty)", True, FP.FADED_TEXT), (bx + 30, cy))
-        else:
-            for i, item in enumerate(tab_items[:26]):
-                iy = cy
-                pygame.draw.rect(
-                    self.screen,
-                    FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
-                    (bx + 10, iy, bw - 20, ROW_H - 8), border_radius=6
-                )
-                self.screen.blit(
-                    self.font_md.render(f"[{self._LETTERS[i]}]", True, FP.GOLD_BRIGHT),
-                    (bx + 18, iy + LBL_Y_OFF)
-                )
-                self._draw_menu_icon(item, bx + 56, iy + ICO_Y_OFF)
-                self.screen.blit(
-                    self.font_md.render(
-                        self._fit_text(self._display_name(item), self.font_md, max_detail_w),
-                        True, FP.BODY_TEXT),
-                    (tx, iy + NAME_Y_OFF)
-                )
-                is_book = isinstance(item, Spellbook)
-                if is_book:
-                    known = item.spell_id in self.player.known_spells
-                    if known:
-                        detail_text = f"[KNOWN] {item.spell_name}"
-                    elif item.identified or item.id in self.player.known_item_ids:
-                        detail_text = f"teaches: {item.spell_name}  {item.mp_cost} MP"
-                    else:
-                        detail_text = "spellbook"
-                else:
-                    if item.identified or item.id in self.player.known_item_ids:
-                        detail_text = f"effect: {item.effect.replace('_', ' ')}"
-                    else:
-                        detail_text = "unknown effect"
-                detail_surf = self.font_sm.render(detail_text, True, FP.FADED_TEXT)
-                if detail_surf.get_width() > max_detail_w:
-                    while len(detail_text) > 1 and self.font_sm.size(detail_text + '\u2026')[0] > max_detail_w:
-                        detail_text = detail_text[:-1]
-                    detail_surf = self.font_sm.render(detail_text + '\u2026', True, FP.FADED_TEXT)
-                self.screen.blit(detail_surf, (tx, iy + DET_Y_OFF))
-                cy += ROW_H
-
-        hint_y = by + bh - 34
-        draw_divider(self.screen, bx + 10, hint_y - 8, bw - 20)
-        hint = self.font_sm.render(
-            "Left/Right: tab  |  a-z: read  |  ESC: cancel", True, FP.HINT_TEXT
+        draw_menu(
+            self.screen,
+            title="READ",
+            entries=entries,
+            scroll=getattr(self, '_scroll_scroll', 0),
+            tabs=self._SCROLL_TABS,
+            active_tab=self._scroll_tab,
+            tab_counts=_scroll_counts,
+            hint="Left/Right: tab  |  a-z: read  |  ESC: cancel",
+            border_color=FP.GOLD,
+            max_width=760,
+            center_in=(GAME_W, WINDOW_H),
+            font_md=self.font_md,
+            font_sm=self.font_sm,
+            draw_icon_fn=lambda s, item, x, y: self._draw_menu_icon(item, x, y),
         )
-        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
 
     # ------------------------------------------------------------------
     # Identify menu overlay
     # ------------------------------------------------------------------
 
     def _draw_identify_menu(self):
-        draw_overlay(self.screen, 190)
-
-        n_items = min(len(self.identify_menu_items), 26)
-        ROW_H = 72
-        ICO = self.MENU_ICON_SIZE
-        TEXT_X = 70 + ICO + 8
-        bw = min(820, GAME_W - 40)
-        max_detail_w = bw - TEXT_X - 20
-        # Count sections for accurate height: header(82) + sections + rows + footer(50)
-        inv_n = sum(1 for _, is_g, is_c in self.identify_menu_items if not is_g and not is_c)
-        gnd_n = sum(1 for _, is_g, is_c in self.identify_menu_items if is_g and not is_c)
-        crp_n = sum(1 for _, is_g, is_c in self.identify_menu_items if is_c)
-        n_sections = (1 if inv_n else 0) + (1 if gnd_n else 0) + (1 if crp_n else 0)
-        section_overhead = n_sections * 24 + max(0, n_sections - 1) * 12
-        bh = min(82 + section_overhead + n_items * ROW_H + 50, WINDOW_H - 40)
-        bx = (GAME_W - bw) // 2
-        by = (WINDOW_H - bh) // 2
-        tx = bx + TEXT_X
-
-        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.ARCANE_BRIGHT)
-        draw_header_bar(self.screen, (bx, by, bw, 44), text="IDENTIFY ITEM",
-                        font=self.font_md, text_color=FP.GOLD_BRIGHT)
-
-        self.screen.blit(
-            self.font_sm.render("Requires Philosopher's Shard",
-                                True, FP.BODY_TEXT),
-            (bx + 20, by + 48)
-        )
-        draw_divider(self.screen, bx + 10, by + 72, bw - 20)
-
-        ICO_Y_OFF = 4; NAME_Y_OFF = 8; DET_Y_OFF = ICO_Y_OFF + ICO + 6
-        LBL_Y_OFF = ICO_Y_OFF + (ICO - self.font_md.get_height()) // 2
-        cy = by + 82
-
-        # Separate into inv, ground, and corpse sections
         inv_entries    = [(i, item) for i, (item, is_g, is_c) in enumerate(self.identify_menu_items) if not is_g and not is_c]
         ground_entries = [(i, item) for i, (item, is_g, is_c) in enumerate(self.identify_menu_items) if is_g and not is_c]
         corpse_entries = [(i, item) for i, (item, is_g, is_c) in enumerate(self.identify_menu_items) if is_c]
 
-        def _draw_section(entries, label, label_color, name_color, detail_suffix=''):
-            nonlocal cy
-            if not entries:
-                return
-            if cy > by + 82:
-                draw_divider(self.screen, bx + 10, cy + 4, bw - 20)
-                cy += 12
-            self.screen.blit(self.font_sm.render(label, True, label_color), (bx + 18, cy))
-            cy += 24
-            for i, item in entries:
-                iy = cy
-                pygame.draw.rect(self.screen, FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
-                                 (bx + 10, iy, bw - 20, ROW_H - 8), border_radius=6)
-                self.screen.blit(self.font_md.render(f"[{self._LETTERS[i]}]", True, FP.GOLD_BRIGHT),
-                                 (bx + 18, iy + LBL_Y_OFF))
-                self._draw_menu_icon(item, bx + 56, iy + ICO_Y_OFF)
-                self.screen.blit(self.font_md.render(
-                    self._fit_text(self._display_name(item), self.font_md, max_detail_w), True, name_color),
-                    (tx, iy + NAME_Y_OFF))
+        entries = []
+
+        def _add_section(src, label, label_color, name_color, detail_suffix=''):
+            for idx, (i, item) in enumerate(src):
                 if isinstance(item, Corpse):
                     lore_status = "[EXAMINED]" if item.lore_identified else "[UNEXAMINED]"
                     detail_text = f"Corpse  {lore_status}"
@@ -13387,166 +13203,129 @@ class Game:
                     type_label = item.item_class.replace('_', ' ').title()
                     tier_lbl = f"  tier {item.quiz_tier}" if hasattr(item, 'quiz_tier') else ""
                     detail_text = f"{type_label}{tier_lbl}{detail_suffix}"
-                detail_surf = self.font_sm.render(detail_text, True, FP.FADED_TEXT)
-                if detail_surf.get_width() > max_detail_w:
-                    while len(detail_text) > 1 and self.font_sm.size(detail_text + '\u2026')[0] > max_detail_w:
-                        detail_text = detail_text[:-1]
-                    detail_surf = self.font_sm.render(detail_text + '\u2026', True, FP.FADED_TEXT)
-                self.screen.blit(detail_surf, (tx, iy + DET_Y_OFF))
-                cy += ROW_H
+                entry = {
+                    'name': self._display_name(item),
+                    'detail': detail_text,
+                    'key': self._LETTERS[i],
+                    'icon': item,
+                    'name_color': name_color,
+                }
+                if idx == 0:
+                    entry['section'] = label
+                    entry['section_color'] = label_color
+                entries.append(entry)
 
-        _draw_section(inv_entries,    "INVENTORY:",            FP.GOLD_BRIGHT,   FP.BODY_TEXT)
-        _draw_section(ground_entries, "ON THE GROUND:",        FP.WARNING_TEXT,  FP.GOLD_PALE,  "  [ground]")
-        _draw_section(corpse_entries, "CORPSES (at your feet):", (180, 130, 255), FP.FADED_TEXT)
+        if inv_entries:
+            _add_section(inv_entries, "INVENTORY:", FP.GOLD_BRIGHT, FP.BODY_TEXT)
+        if ground_entries:
+            _add_section(ground_entries, "ON THE GROUND:", FP.WARNING_TEXT, FP.GOLD_PALE, "  [ground]")
+        if corpse_entries:
+            _add_section(corpse_entries, "CORPSES (at your feet):", (180, 130, 255), FP.FADED_TEXT)
 
-        hint_y = by + bh - 34
-        draw_divider(self.screen, bx + 10, hint_y - 8, bw - 20)
-        hint = self.font_sm.render(
-            "a-z: select  |  ESC: cancel", True, FP.HINT_TEXT
+        draw_menu(
+            self.screen,
+            title="IDENTIFY ITEM",
+            entries=entries,
+            scroll=getattr(self, '_identify_scroll', 0),
+            subtitle="Requires Philosopher's Shard",
+            hint="a-z: select  |  ESC: cancel",
+            border_color=FP.ARCANE_BRIGHT,
+            max_width=820,
+            center_in=(GAME_W, WINDOW_H),
+            font_md=self.font_md,
+            font_sm=self.font_sm,
+            draw_icon_fn=lambda s, item, x, y: self._draw_menu_icon(item, x, y),
         )
-        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
 
     # ------------------------------------------------------------------
     # Cook menu overlay
     # ------------------------------------------------------------------
 
     def _draw_cook_menu(self):
-        draw_overlay(self.screen, 190)
-
         tab_items = self._get_cook_tab_items()
         is_compound = self._COOK_TABS[self._cook_tab][1] == 'compound'
-        row_h = 72
         bw = min(800, GAME_W - 40)
-        ICO = self.MENU_ICON_SIZE          # 32
-        TEXT_X = 70 + ICO + 8              # left edge of text after [a] + icon
-        max_detail_w = bw - TEXT_X - 20    # wrapping budget for detail lines
-
-        # Pre-compute row heights for compound recipes (ingredient lists may wrap)
-        if is_compound:
-            from food_system import _raw_ingredients as _ri
-            _ings = _ri()
-            def _ing_name(iid): return _ings.get(iid, {}).get('name', iid)
-            rows_h = 0
-            for r in tab_items[:26]:
-                ing_list = ', '.join(_ing_name(iid) for iid in r.get('ingredients', []))
-                detail = f"Consumes: {ing_list}"
-                extra = max(0, len(self._wrap_text(detail, self.font_sm, max_detail_w)) - 1)
-                rows_h += row_h + extra * 16
-        else:
-            rows_h = min(len(tab_items), 26) * row_h
-
-        bh = min(130 + rows_h + 50, WINDOW_H - 40)
-        bx = (GAME_W - bw) // 2
-        by = (WINDOW_H - bh) // 2
-        tx = bx + TEXT_X                   # absolute x for name/detail text
-
-        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.SUCCESS_TEXT)
-        draw_header_bar(self.screen, (bx, by, bw, 44), text="COOK",
-                        font=self.font_md, text_color=FP.GOLD_BRIGHT)
-
-        # SP display (right-aligned inside header)
-        sp = self.player.sp
-        sp_color = FP.SUCCESS_TEXT if sp > 30 else FP.WARNING_TEXT if sp > 10 else FP.DANGER_TEXT
-        sp_surf = self.font_sm.render(f"SP: {sp}/{self.player.max_sp}", True, sp_color)
-        self.screen.blit(sp_surf, (bx + bw - sp_surf.get_width() - 20, by + 14))
-
-        _cook_counts = [len(self.cook_menu_items) if k == 'single' else len(self.cook_compound_recipes)
-                        for _, k in self._COOK_TABS]
-        tab_end = self._draw_tab_bar(self._COOK_TABS, self._cook_tab, bx, by, bw, _cook_counts)
-        draw_divider(self.screen, bx + 10, tab_end, bw - 20)
-        cy = by + 88
-
-        # Vertical layout: icon at iy+4, label centered with icon, name at iy+8, detail at iy+42
-        ICO_Y_OFF  = 4                    # icon top offset within row
-        NAME_Y_OFF = 8                    # name text offset
-        DET_Y_OFF  = ICO_Y_OFF + ICO + 6  # detail starts below icon (4+32+6=42)
-        lbl_h = self.font_md.get_height()
-        LBL_Y_OFF  = ICO_Y_OFF + (ICO - lbl_h) // 2  # center [a] with icon
+        ICO = self.MENU_ICON_SIZE
+        TEXT_X = 70 + ICO + 8
+        max_detail_w = bw - TEXT_X - 20
 
         def _cap(s):
             return s[:1].upper() + s[1:] if s else s
 
-        if not tab_items:
-            self.screen.blit(self.font_sm.render("(none available)", True, FP.FADED_TEXT), (bx + 30, cy))
-        elif is_compound:
+        entries = []
+        if is_compound:
+            from food_system import _raw_ingredients as _ri
+            _ings = _ri()
+            def _ing_name(iid): return _ings.get(iid, {}).get('name', iid)
             for i, recipe in enumerate(tab_items[:26]):
-                iy = cy
                 ing_list = ', '.join(_ing_name(iid) for iid in recipe.get('ingredients', []))
                 detail = f"Consumes: {ing_list}"
                 detail_lines = self._wrap_text(detail, self.font_sm, max_detail_w)
-                extra = max(0, len(detail_lines) - 1)
-                this_row_h = row_h + extra * 16
-                pygame.draw.rect(
-                    self.screen,
-                    FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
-                    (bx + 10, iy, bw - 20, this_row_h - 8), border_radius=6
-                )
-                self.screen.blit(
-                    self.font_md.render(f"[{self._LETTERS[i]}]", True, FP.GOLD_BRIGHT),
-                    (bx + 18, iy + LBL_Y_OFF)
-                )
-                # Draw recipe sprite (fall back to first ingredient sprite)
+                # Build a lightweight icon proxy for the recipe sprite
                 recipe_sprite_id = f"recipe_{recipe.get('id', '')}"
-                recipe_spr = self._get_menu_sprite(recipe_sprite_id)
-                if recipe_spr is None:
-                    first_ing = recipe.get('ingredients', [''])[0]
-                    if first_ing:
-                        recipe_spr = self._get_menu_sprite(first_ing)
-                if recipe_spr is not None:
-                    self.screen.blit(recipe_spr, (bx + 56, iy + ICO_Y_OFF))
-                self.screen.blit(
-                    self.font_md.render(
-                        self._fit_text(_cap(recipe['name']), self.font_md, max_detail_w),
-                        True, FP.GOLD_PALE),
-                    (tx, iy + NAME_Y_OFF)
-                )
-                for li, dl in enumerate(detail_lines):
-                    self.screen.blit(
-                        self.font_sm.render(dl, True, FP.BODY_TEXT),
-                        (tx, iy + DET_Y_OFF + li * 16)
-                    )
-                cy += this_row_h
+                first_ing = recipe.get('ingredients', [''])[0] if recipe.get('ingredients') else ''
+                class _RecipeIcon:
+                    def __init__(self2, rid, fing):
+                        self2.id = rid
+                        self2._fallback = fing
+                        self2.color = [110, 220, 100]
+                        self2.symbol = '*'
+                icon_obj = _RecipeIcon(recipe_sprite_id, first_ing)
+                entries.append({
+                    'name': _cap(recipe['name']),
+                    'detail_lines': detail_lines,
+                    'key': self._LETTERS[i],
+                    'icon': icon_obj,
+                    'name_color': FP.GOLD_PALE,
+                    'detail_color': FP.BODY_TEXT,
+                })
         else:
-            # Single ingredients tab
             for i, item in enumerate(tab_items[:26]):
-                iy = cy
-                pygame.draw.rect(
-                    self.screen,
-                    FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
-                    (bx + 10, iy, bw - 20, row_h - 8), border_radius=6
-                )
                 base = item.recipes.get('1', item.recipes.get('2', {}))
                 dish_name = _cap(base.get('name', '???'))
-                self.screen.blit(
-                    self.font_md.render(f"[{self._LETTERS[i]}]", True, FP.GOLD_BRIGHT),
-                    (bx + 18, iy + LBL_Y_OFF)
-                )
-                # Draw ingredient sprite
-                self.screen.blit(
-                    self._get_menu_sprite(item.id),
-                    (bx + 56, iy + ICO_Y_OFF)
-                )
-                self.screen.blit(
-                    self.font_md.render(
-                        self._fit_text(dish_name, self.font_md, max_detail_w),
-                        True, FP.GOLD_PALE),
-                    (tx, iy + NAME_Y_OFF)
-                )
-                detail = f"Consumes: {self._display_name(item)}"
-                detail_surf = self.font_sm.render(detail, True, FP.BODY_TEXT)
-                if detail_surf.get_width() > max_detail_w:
-                    while len(detail) > 1 and self.font_sm.size(detail + '\u2026')[0] > max_detail_w:
-                        detail = detail[:-1]
-                    detail_surf = self.font_sm.render(detail + '\u2026', True, FP.BODY_TEXT)
-                self.screen.blit(detail_surf, (tx, iy + DET_Y_OFF))
-                cy += row_h
+                entries.append({
+                    'name': dish_name,
+                    'detail': f"Consumes: {self._display_name(item)}",
+                    'key': self._LETTERS[i],
+                    'icon': item,
+                    'name_color': FP.GOLD_PALE,
+                    'detail_color': FP.BODY_TEXT,
+                })
 
-        hint_y = by + bh - 34
-        draw_divider(self.screen, bx + 10, hint_y - 8, bw - 20)
-        hint = self.font_sm.render(
-            "Left/Right: tab  |  a-z: cook  |  ESC: cancel", True, FP.HINT_TEXT
+        sp = self.player.sp
+        sp_color = FP.SUCCESS_TEXT if sp > 30 else FP.WARNING_TEXT if sp > 10 else FP.DANGER_TEXT
+        _cook_counts = [len(self.cook_menu_items) if k == 'single' else len(self.cook_compound_recipes)
+                        for _, k in self._COOK_TABS]
+
+        def _cook_icon(s, item, x, y):
+            # For compound recipe proxies, try recipe sprite then first ingredient
+            fb = getattr(item, '_fallback', None)
+            sprite = self._get_menu_sprite(item.id)
+            if sprite is None and fb:
+                sprite = self._get_menu_sprite(fb)
+            if sprite is not None:
+                self.screen.blit(sprite, (x, y))
+            else:
+                self._draw_menu_icon(item, x, y)
+
+        draw_menu(
+            self.screen,
+            title="COOK",
+            entries=entries,
+            scroll=getattr(self, '_cook_scroll', 0),
+            subtitle=f"SP: {sp}/{self.player.max_sp}",
+            subtitle_color=sp_color,
+            tabs=self._COOK_TABS,
+            active_tab=self._cook_tab,
+            tab_counts=_cook_counts,
+            hint="Left/Right: tab  |  a-z: cook  |  ESC: cancel",
+            border_color=FP.SUCCESS_TEXT,
+            max_width=800,
+            center_in=(GAME_W, WINDOW_H),
+            font_md=self.font_md,
+            font_sm=self.font_sm,
+            draw_icon_fn=_cook_icon,
         )
-        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
 
     # ------------------------------------------------------------------
     # Confirm exit overlay
@@ -13555,173 +13334,86 @@ class Game:
     _DROP_MAX_VISIBLE = 16  # max rows visible in drop menu before scrolling
 
     def _draw_drop_menu(self):
-        draw_overlay(self.screen, 190)
         tab_items = self._get_drop_tab_items()
-        bw = min(600, GAME_W - 40)
-        row_h = 26
-        n_visible = min(self._DROP_MAX_VISIBLE, len(tab_items))
-        bh = min(GAME_H - 80, 130 + n_visible * row_h + 50)
-        bx = (GAME_W - bw) // 2
-        by = (GAME_H - bh) // 2
-        draw_dark_panel(self.screen, (bx, by, bw, bh))
-        draw_header_bar(self.screen, (bx, by, bw, 44),
-                        text="DROP ITEM", font=self.font_md, text_color=FP.GOLD_BRIGHT)
+        entries = []
+        for i, item in enumerate(tab_items[:26]):
+            if isinstance(item, self._GoldDropEntry):
+                dname = f"Gold  ({getattr(self, 'player_gold', 0)} coins)"
+                name_col = FP.GOLD_BRIGHT
+            else:
+                dname = self._display_name(item)
+                name_col = FP.PARCHMENT_LIGHT
+            entries.append({
+                'name': dname,
+                'key': self._LETTERS[i],
+                'name_color': name_col,
+                'row_style': 'text',
+            })
 
         _drop_counts = [len(self.drop_menu_items) if filt is None
                         else sum(1 for it in self.drop_menu_items if filt(it))
                         for _, filt in self._DROP_TABS]
-        tab_end = self._draw_tab_bar(self._DROP_TABS, self._menu_tab, bx, by, bw, _drop_counts)
-        y_off = tab_end + 4
-        if not tab_items:
-            self.screen.blit(self.font_sm.render("(empty)", True, FP.FADED_TEXT), (bx + 30, y_off))
-        else:
-            scroll = getattr(self, '_drop_scroll', 0)
-            scroll = min(scroll, max(0, len(tab_items) - self._DROP_MAX_VISIBLE))
-            visible_slice = tab_items[scroll:scroll + self._DROP_MAX_VISIBLE]
-            for vi, item in enumerate(visible_slice):
-                real_idx = scroll + vi
-                if isinstance(item, self._GoldDropEntry):
-                    dname = f"Gold  ({getattr(self, 'player_gold', 0)} coins)"
-                    col = FP.GOLD_BRIGHT
-                else:
-                    dname = self._display_name(item)
-                    col = FP.PARCHMENT_LIGHT
-                line = f"  {self._LETTERS[real_idx]})  {dname}"
-                surf = self.font_md.render(self._fit_text(line, self.font_md, bw - 30), True, col)
-                self.screen.blit(surf, (bx + 16, y_off + vi * row_h))
-
-            # Scroll indicators
-            if scroll > 0:
-                self.screen.blit(self.font_sm.render("-- more above --", True, FP.FADED_TEXT),
-                                 (bx + (bw - 120) // 2, y_off - 14))
-            if scroll + self._DROP_MAX_VISIBLE < len(tab_items):
-                more_y = y_off + n_visible * row_h + 2
-                self.screen.blit(self.font_sm.render("-- more below --", True, FP.FADED_TEXT),
-                                 (bx + (bw - 120) // 2, more_y))
-
-        hint = self.font_sm.render("Left/Right: tab  |  Up/Down: scroll  |  a-z: drop  |  ESC: cancel", True, FP.HINT_TEXT)
-        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, by + bh - 24))
+        draw_menu(
+            self.screen,
+            title="DROP ITEM",
+            entries=entries,
+            scroll=getattr(self, '_drop_scroll', 0),
+            tabs=self._DROP_TABS,
+            active_tab=self._menu_tab,
+            tab_counts=_drop_counts,
+            hint="Left/Right: tab  |  Up/Down: scroll  |  a-z: drop  |  ESC: cancel",
+            max_width=600,
+            center_in=(GAME_W, GAME_H),
+            font_md=self.font_md,
+            font_sm=self.font_sm,
+            row_style='text',
+        )
 
     def _draw_eat_menu(self):
-        draw_overlay(self.screen, 190)
-
         tab_items = self._get_eat_tab_items()
-        ROW_H = 72
-        ICO = self.MENU_ICON_SIZE
-        TEXT_X = 70 + ICO + 8
-        bw = min(760, GAME_W - 40)
-        max_detail_w = bw - TEXT_X - 20
-        n_items = min(len(tab_items), 26)
-        bh = min(130 + n_items * ROW_H + 50, WINDOW_H - 40)
-        bx = (GAME_W - bw) // 2
-        by = (WINDOW_H - bh) // 2
-        tx = bx + TEXT_X
-
-        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.SUCCESS_TEXT)
-        draw_header_bar(self.screen, (bx, by, bw, 44), text="EAT",
-                        font=self.font_md, text_color=FP.GOLD_BRIGHT)
+        entries = []
+        for i, item in enumerate(tab_items[:26]):
+            if isinstance(item, Food):
+                parts = [f"+{item.sp_restore} SP"]
+                if item.hp_restore:
+                    parts.append(f"+{item.hp_restore} HP")
+                detail_text = "  ".join(parts)
+            else:
+                detail_text = "raw ingredient (cook for better results)"
+            entries.append({
+                'name': self._display_name(item),
+                'detail': detail_text,
+                'key': self._LETTERS[i],
+                'icon': item,
+            })
 
         sp = self.player.sp
         sp_color = FP.SUCCESS_TEXT if sp > 30 else FP.WARNING_TEXT if sp > 10 else FP.DANGER_TEXT
-        self.screen.blit(
-            self.font_sm.render(f"SP: {sp}/{self.player.max_sp}", True, sp_color),
-            (bx + 20, by + 48)
-        )
-
         _eat_counts = [sum(1 for it in self.eat_menu_items if filt(it))
                        for _, filt in self._EAT_TABS]
-        tab_end = self._draw_tab_bar(self._EAT_TABS, self._eat_tab, bx, by, bw, _eat_counts)
-        draw_divider(self.screen, bx + 10, tab_end, bw - 20)
-        cy = by + 88
-
-        ICO_Y_OFF = 4
-        NAME_Y_OFF = 8
-        DET_Y_OFF = ICO_Y_OFF + ICO + 6
-        lbl_h = self.font_md.get_height()
-        LBL_Y_OFF = ICO_Y_OFF + (ICO - lbl_h) // 2
-
-        if not tab_items:
-            self.screen.blit(self.font_sm.render("(empty)", True, FP.FADED_TEXT), (bx + 30, cy))
-        else:
-            for i, item in enumerate(tab_items[:26]):
-                iy = cy
-                pygame.draw.rect(
-                    self.screen,
-                    FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
-                    (bx + 10, iy, bw - 20, ROW_H - 8), border_radius=6
-                )
-                self.screen.blit(
-                    self.font_md.render(f"[{self._LETTERS[i]}]", True, FP.GOLD_BRIGHT),
-                    (bx + 18, iy + LBL_Y_OFF)
-                )
-                self._draw_menu_icon(item, bx + 56, iy + ICO_Y_OFF)
-                self.screen.blit(
-                    self.font_md.render(
-                        self._fit_text(self._display_name(item), self.font_md, max_detail_w),
-                        True, FP.BODY_TEXT),
-                    (tx, iy + NAME_Y_OFF)
-                )
-                if isinstance(item, Food):
-                    parts = [f"+{item.sp_restore} SP"]
-                    if item.hp_restore:
-                        parts.append(f"+{item.hp_restore} HP")
-                    detail_text = "  ".join(parts)
-                else:
-                    detail_text = "raw ingredient (cook for better results)"
-                detail_surf = self.font_sm.render(detail_text, True, FP.FADED_TEXT)
-                if detail_surf.get_width() > max_detail_w:
-                    while len(detail_text) > 1 and self.font_sm.size(detail_text + '\u2026')[0] > max_detail_w:
-                        detail_text = detail_text[:-1]
-                    detail_surf = self.font_sm.render(detail_text + '\u2026', True, FP.FADED_TEXT)
-                self.screen.blit(detail_surf, (tx, iy + DET_Y_OFF))
-                cy += ROW_H
-
-        hint_y = by + bh - 34
-        draw_divider(self.screen, bx + 10, hint_y - 8, bw - 20)
-        hint = self.font_sm.render(
-            "Left/Right: tab  |  a-z: eat  |  ESC: cancel", True, FP.HINT_TEXT
+        draw_menu(
+            self.screen,
+            title="EAT",
+            entries=entries,
+            scroll=getattr(self, '_eat_scroll', 0),
+            subtitle=f"SP: {sp}/{self.player.max_sp}",
+            subtitle_color=sp_color,
+            tabs=self._EAT_TABS,
+            active_tab=self._eat_tab,
+            tab_counts=_eat_counts,
+            hint="Left/Right: tab  |  a-z: eat  |  ESC: cancel",
+            border_color=FP.SUCCESS_TEXT,
+            max_width=760,
+            center_in=(GAME_W, WINDOW_H),
+            font_md=self.font_md,
+            font_sm=self.font_sm,
+            draw_icon_fn=lambda s, item, x, y: self._draw_menu_icon(item, x, y),
         )
-        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
 
     def _draw_quaff_menu(self):
-        draw_overlay(self.screen, 190)
         items = self.quaff_menu_items
-        ROW_H = 72
-        ICO = self.MENU_ICON_SIZE
-        TEXT_X = 70 + ICO + 8
-        bw = min(760, GAME_W - 40)
-        max_detail_w = bw - TEXT_X - 20
-        n = min(len(items), 26)
-        bh = min(90 + n * ROW_H + 70, WINDOW_H - 40)
-        bx = (GAME_W - bw) // 2
-        by = (WINDOW_H - bh) // 2
-        tx = bx + TEXT_X
-
-        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.ARCANE_BRIGHT)
-        draw_header_bar(self.screen, (bx, by, bw, 44), text="QUAFF POTION",
-                        font=self.font_md, text_color=FP.GOLD_BRIGHT)
-        warning = self.font_sm.render(
-            "Unknown potions may harm -- identify first with  I",
-            True, (200, 150, 80)
-        )
-        self.screen.blit(warning, (bx + (bw - warning.get_width()) // 2, by + 50))
-        draw_divider(self.screen, bx + 10, by + 72, bw - 20)
-
-        ICO_Y_OFF = 4; NAME_Y_OFF = 8; DET_Y_OFF = ICO_Y_OFF + ICO + 6
-        LBL_Y_OFF = ICO_Y_OFF + (ICO - self.font_md.get_height()) // 2
-        cy = by + 82
+        entries = []
         for i, item in enumerate(items[:26]):
-            iy = cy
-            pygame.draw.rect(self.screen,
-                FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
-                (bx + 10, iy, bw - 20, ROW_H - 8), border_radius=6)
-            self.screen.blit(
-                self.font_md.render(f"[{self._LETTERS[i]}]", True, FP.GOLD_BRIGHT),
-                (bx + 18, iy + LBL_Y_OFF))
-            self._draw_menu_icon(item, bx + 56, iy + ICO_Y_OFF)
-            self.screen.blit(
-                self.font_md.render(self._fit_text(self._display_name(item), self.font_md, max_detail_w), True, FP.BODY_TEXT),
-                (tx, iy + NAME_Y_OFF))
             known = item.identified or item.id in self.player.known_item_ids
             if known:
                 eff = item.effect.replace('_', ' ')
@@ -13732,92 +13424,72 @@ class Game:
             else:
                 detail_text = "effect unknown -- identify to reveal"
                 detail_col = FP.FADED_TEXT
-            detail_surf = self.font_sm.render(
-                self._fit_text(detail_text, self.font_sm, max_detail_w), True, detail_col)
-            self.screen.blit(detail_surf, (tx, iy + DET_Y_OFF))
-            cy += ROW_H
-
-        hint_y = by + bh - 34
-        draw_divider(self.screen, bx + 10, hint_y - 8, bw - 20)
-        hint = self.font_sm.render("a-z: quaff  |  ESC: cancel", True, FP.HINT_TEXT)
-        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
+            entries.append({
+                'name': self._display_name(item),
+                'detail': detail_text,
+                'key': self._LETTERS[i],
+                'icon': item,
+                'detail_color': detail_col,
+            })
+        draw_menu(
+            self.screen,
+            title="QUAFF POTION",
+            entries=entries,
+            scroll=getattr(self, '_quaff_scroll', 0),
+            subtitle="Unknown potions may harm -- identify first with  I",
+            subtitle_color=(200, 150, 80),
+            hint="a-z: quaff  |  ESC: cancel",
+            border_color=FP.ARCANE_BRIGHT,
+            max_width=760,
+            center_in=(GAME_W, WINDOW_H),
+            font_md=self.font_md,
+            font_sm=self.font_sm,
+            draw_icon_fn=lambda s, item, x, y: self._draw_menu_icon(item, x, y),
+        )
 
     def _draw_throw_menu(self):
-        draw_overlay(self.screen, 190)
         tab_items = self._get_throw_tab_items()
-        ROW_H = 72
-        ICO = self.MENU_ICON_SIZE
-        TEXT_X = 70 + ICO + 8
-        bw = min(760, GAME_W - 40)
-        max_detail_w = bw - TEXT_X - 20
-        n_items = min(len(tab_items), 26)
-        bh = min(130 + n_items * ROW_H + 50, WINDOW_H - 40)
-        bx = (GAME_W - bw) // 2
-        by = (WINDOW_H - bh) // 2
-        tx = bx + TEXT_X
-
-        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.WARNING_TEXT)
-        draw_header_bar(self.screen, (bx, by, bw, 44), text="THROW",
-                        font=self.font_md, text_color=FP.GOLD_BRIGHT)
+        entries = []
+        for i, item in enumerate(tab_items[:26]):
+            if isinstance(item, Weapon):
+                dmg = self._get_weapon_throw_damage(item)
+                brk = int(self._get_weapon_break_chance(item) * 100)
+                detail_text = f"{dmg} dmg  |  {brk}% break chance"
+            elif isinstance(item, Potion):
+                known = item.identified or item.id in self.player.known_item_ids
+                if known:
+                    eff = item.effect.replace('_', ' ')
+                    dur = f"  ({item.duration} turns)" if item.duration else ""
+                    detail_text = f"{eff}{dur}"
+                else:
+                    detail_text = "unknown effect"
+            else:
+                detail_text = ""
+            entries.append({
+                'name': self._display_name(item),
+                'detail': detail_text,
+                'key': self._LETTERS[i],
+                'icon': item,
+            })
 
         _throw_counts = [sum(1 for it in self.throw_menu_items if filt(it))
                          for _, filt in self._THROW_TABS]
-        tab_end = self._draw_tab_bar(self._THROW_TABS, self._throw_tab, bx, by, bw, _throw_counts)
-        draw_divider(self.screen, bx + 10, tab_end, bw - 20)
-        cy = by + 88
-
-        ICO_Y_OFF = 4
-        NAME_Y_OFF = 8
-        DET_Y_OFF = ICO_Y_OFF + ICO + 6
-        lbl_h = self.font_md.get_height()
-        LBL_Y_OFF = ICO_Y_OFF + (ICO - lbl_h) // 2
-
-        if not tab_items:
-            self.screen.blit(self.font_sm.render("(empty)", True, FP.FADED_TEXT), (bx + 30, cy))
-        else:
-            for i, item in enumerate(tab_items[:26]):
-                iy = cy
-                pygame.draw.rect(
-                    self.screen,
-                    FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
-                    (bx + 10, iy, bw - 20, ROW_H - 8), border_radius=6
-                )
-                self.screen.blit(
-                    self.font_md.render(f"[{self._LETTERS[i]}]", True, FP.GOLD_BRIGHT),
-                    (bx + 18, iy + LBL_Y_OFF)
-                )
-                self._draw_menu_icon(item, bx + 56, iy + ICO_Y_OFF)
-                self.screen.blit(
-                    self.font_md.render(
-                        self._fit_text(self._display_name(item), self.font_md, max_detail_w),
-                        True, FP.BODY_TEXT),
-                    (tx, iy + NAME_Y_OFF)
-                )
-                if isinstance(item, Weapon):
-                    dmg = self._get_weapon_throw_damage(item)
-                    brk = int(self._get_weapon_break_chance(item) * 100)
-                    detail_text = f"{dmg} dmg  |  {brk}% break chance"
-                elif isinstance(item, Potion):
-                    known = item.identified or item.id in self.player.known_item_ids
-                    if known:
-                        eff = item.effect.replace('_', ' ')
-                        dur = f"  ({item.duration} turns)" if item.duration else ""
-                        detail_text = f"{eff}{dur}"
-                    else:
-                        detail_text = "unknown effect"
-                else:
-                    detail_text = ""
-                detail_surf = self.font_sm.render(
-                    self._fit_text(detail_text, self.font_sm, max_detail_w), True, FP.FADED_TEXT)
-                self.screen.blit(detail_surf, (tx, iy + DET_Y_OFF))
-                cy += ROW_H
-
-        hint_y = by + bh - 34
-        draw_divider(self.screen, bx + 10, hint_y - 8, bw - 20)
-        hint = self.font_sm.render(
-            "Left/Right: tab  |  a-z: throw  |  ESC: cancel", True, FP.HINT_TEXT
+        draw_menu(
+            self.screen,
+            title="THROW",
+            entries=entries,
+            scroll=getattr(self, '_throw_scroll', 0),
+            tabs=self._THROW_TABS,
+            active_tab=self._throw_tab,
+            tab_counts=_throw_counts,
+            hint="Left/Right: tab  |  a-z: throw  |  ESC: cancel",
+            border_color=FP.WARNING_TEXT,
+            max_width=760,
+            center_in=(GAME_W, WINDOW_H),
+            font_md=self.font_md,
+            font_sm=self.font_sm,
+            draw_icon_fn=lambda s, item, x, y: self._draw_menu_icon(item, x, y),
         )
-        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
 
     # ------------------------------------------------------------------
     # Power menu  (V key)
@@ -14209,56 +13881,40 @@ class Game:
 
     def _draw_power_menu(self):
         powers = getattr(self, '_power_menu_list', [])
-        n = min(len(powers), 26)
-        bw = min(700, GAME_W - 40)
-        row_h = 72
-        bh = min(90 + n * row_h + 44, WINDOW_H - 40)
-        bx = (GAME_W - bw) // 2
-        by = (WINDOW_H - bh) // 2
-        draw_overlay(self.screen, 190)
-        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.ARCANE_BRIGHT)
-        draw_header_bar(self.screen, (bx, by, bw, 44), text="ACTIVE POWERS  [V]",
-                        font=self.font_md, text_color=FP.GOLD_BRIGHT)
-        sub_txt = "Earned through quirk mastery -- each power has limited uses."
-        sub_surf = self.font_sm.render(sub_txt, True, FP.FADED_TEXT)
-        self.screen.blit(sub_surf, (bx + (bw - sub_surf.get_width()) // 2, by + 50))
-        draw_divider(self.screen, bx + 10, by + 68, bw - 20)
+        entries = []
         for i, (pid, pdef, uses_rem, cooldown) in enumerate(powers[:26]):
-            iy = by + 78 + i * row_h
-            pygame.draw.rect(
-                self.screen,
-                FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
-                (bx + 10, iy, bw - 20, row_h - 8), border_radius=6
-            )
             ready = (cooldown == 0) and (pdef.get('uses', 0) == 0 or uses_rem > 0)
-            idx_col = FP.GOLD_BRIGHT if ready else FP.FADED_TEXT
-            self.screen.blit(
-                self.font_md.render(f"[{self._LETTERS[i]}]", True, idx_col),
-                (bx + 16, iy + 12)
-            )
-            label_col = FP.BODY_TEXT if ready else FP.FADED_TEXT
-            self.screen.blit(
-                self.font_md.render(self._fit_text(pdef.get('label', pid), self.font_md, 620), True, label_col),
-                (bx + 56, iy + 12)
-            )
-            # Uses / cooldown badge
+            # Badge
             if pdef.get('uses', 0) > 0:
                 badge_txt = f"x{uses_rem} left" if uses_rem > 0 else "USED UP"
                 badge_col = FP.SUCCESS_TEXT if uses_rem > 0 else FP.DANGER_TEXT
             else:
                 badge_txt = "READY" if cooldown == 0 else f"CD:{cooldown}t"
                 badge_col = FP.SUCCESS_TEXT if cooldown == 0 else (200, 160, 80)
-            badge_surf = self.font_sm.render(badge_txt, True, badge_col)
-            self.screen.blit(badge_surf, (bx + bw - badge_surf.get_width() - 18, iy + 14))
-            # Description line(s) — word-wrapped
-            desc_lines = self._wrap_text(pdef.get('desc', ''), self.font_sm, bw - 76)
-            for di, dl in enumerate(desc_lines[:2]):
-                self.screen.blit(self.font_sm.render(dl, True, FP.FADED_TEXT), (bx + 56, iy + 38 + di * 14))
-        hint_y = by + bh - 34
-        draw_divider(self.screen, bx + 10, hint_y - 8, bw - 20)
-        self.screen.blit(
-            self.font_sm.render("a-z: use power  |  ESC: close", True, FP.HINT_TEXT),
-            (bx + (bw - self.font_sm.size("a-z: use power  |  ESC: close")[0]) // 2, hint_y)
+            entries.append({
+                'name': pdef.get('label', pid),
+                'detail': pdef.get('desc', ''),
+                'key': self._LETTERS[i],
+                'name_color': FP.BODY_TEXT if ready else FP.FADED_TEXT,
+                'key_color': FP.GOLD_BRIGHT if ready else FP.FADED_TEXT,
+                'badge': badge_txt,
+                'badge_color': badge_col,
+                'row_style': 'text',
+            })
+        draw_menu(
+            self.screen,
+            title="ACTIVE POWERS  [V]",
+            entries=entries,
+            scroll=getattr(self, '_power_scroll', 0),
+            subtitle="Earned through quirk mastery -- each power has limited uses.",
+            subtitle_color=FP.FADED_TEXT,
+            hint="a-z: use power  |  ESC: close",
+            border_color=FP.ARCANE_BRIGHT,
+            max_width=700,
+            center_in=(GAME_W, WINDOW_H),
+            font_md=self.font_md,
+            font_sm=self.font_sm,
+            row_style='text',
         )
 
     def _draw_confirm_exit(self):
@@ -14879,113 +14535,64 @@ class Game:
     def _study_input(self, key):
         """Handle input in the study journal.
         Left/Right: cycle subject tabs.
-        Up/Down: page through questions in current category."""
+        Up/Down: scroll through questions in current category."""
         # Left/Right: cycle subject category
         if key == pygame.K_LEFT:
             self._study_subject_idx = (self._study_subject_idx - 1) % len(self._STUDY_SUBJECTS)
             self._study_filtered = self._study_filter()
             self._study_question_idx = 0
+            self._study_scroll = 0
         elif key == pygame.K_RIGHT:
             self._study_subject_idx = (self._study_subject_idx + 1) % len(self._STUDY_SUBJECTS)
             self._study_filtered = self._study_filter()
             self._study_question_idx = 0
-        # Up/Down (and Space/Backspace): page through questions
+            self._study_scroll = 0
+        # Up/Down: scroll the list
         elif key in (pygame.K_DOWN, pygame.K_SPACE, pygame.K_RETURN):
-            if self._study_filtered:
-                self._study_question_idx = min(
-                    self._study_question_idx + 1, len(self._study_filtered) - 1)
+            self._study_scroll = getattr(self, '_study_scroll', 0) + 1
         elif key in (pygame.K_UP, pygame.K_BACKSPACE):
-            self._study_question_idx = max(0, self._study_question_idx - 1)
+            self._study_scroll = max(0, getattr(self, '_study_scroll', 0) - 1)
 
     def _draw_study_journal(self):
         """Draw the in-game study journal overlay."""
-        draw_overlay(self.screen, 190)
         missed = self._study_filtered
         subj = self._STUDY_SUBJECTS[self._study_subject_idx]
-        W, H = GAME_W, WINDOW_H
-
-        bw = min(840, W - 40)
-        bh = min(620, H - 40)
-        bx = (W - bw) // 2
-        by = (H - bh) // 2
-
-        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.GOLD)
-
-        # Header
-        draw_header_bar(self.screen, (bx, by, bw, 44),
-                        text="STUDY JOURNAL", font=self.font_md, text_color=FP.GOLD_BRIGHT)
-
-        y = by + 52
-
-        # Subject selector:  <  MATH (5/23)  >
         total = len(self.missed_questions)
         filtered = len(missed)
         subj_label = subj.upper()
-        selector_text = f"<<  {subj_label}  ({filtered}/{total})  >>"
-        sel_surf = self.font_md.render(selector_text, True, FP.GOLD_BRIGHT)
-        self.screen.blit(sel_surf, (bx + (bw - sel_surf.get_width()) // 2, y))
-        y += 32
 
-        draw_divider(self.screen, bx + 15, y, bw - 30)
-        y += 10
-
-        if not missed:
-            empty_msg = "No missed questions in this category."
-            self.screen.blit(
-                self.font_md.render(empty_msg, True, FP.FADED_TEXT),
-                (bx + (bw - self.font_md.size(empty_msg)[0]) // 2, y + 40))
-        else:
-            idx = min(self._study_question_idx, len(missed) - 1)
-            q = missed[idx]
-
-            # Question counter + subject badge on same line
-            counter = f"{idx + 1}/{len(missed)}"
-            badge = q['subject'].upper()
-            self.screen.blit(self.font_sm.render(badge, True, FP.HINT_TEXT), (bx + 25, y))
-            ctr_surf = self.font_sm.render(counter, True, FP.FADED_TEXT)
-            self.screen.blit(ctr_surf, (bx + bw - 25 - ctr_surf.get_width(), y))
-            y += 24
-
-            # Question text
-            q_lines = self._wrap_text(q['question'], self.font_md, bw - 50)
-            for line in q_lines:
-                if y > by + bh - 120:
-                    break
-                self.screen.blit(self.font_md.render(line, True, FP.PARCHMENT_LIGHT), (bx + 25, y))
-                y += 28
-            y += 10
-
-            # Your answer vs correct
-            chosen_lines = self._wrap_text(f"Your answer:    {q['chosen']}", self.font_sm, bw - 50)
-            for line in chosen_lines:
-                if y > by + bh - 80:
-                    break
-                self.screen.blit(self.font_sm.render(line, True, FP.DANGER_TEXT), (bx + 25, y))
-                y += 22
-            correct_lines = self._wrap_text(f"Correct answer: {q['correct']}", self.font_sm, bw - 50)
-            for line in correct_lines:
-                if y > by + bh - 60:
-                    break
-                self.screen.blit(self.font_sm.render(line, True, FP.SUCCESS_TEXT), (bx + 25, y))
-                y += 22
-            y += 8
-
-            # Context
+        entries = []
+        for i, q in enumerate(missed):
+            detail_parts = []
+            detail_parts.append(f"Your answer: {q['chosen']}")
+            detail_parts.append(f"Correct: {q['correct']}")
             context = q.get('context', '')
-            if context and y < by + bh - 55:
-                draw_divider(self.screen, bx + 20, y, bw - 40)
-                y += 10
-                ctx_lines = self._wrap_text(context, self.font_sm, bw - 50)
-                for line in ctx_lines:
-                    if y > by + bh - 45:
-                        break
-                    self.screen.blit(self.font_sm.render(line, True, FP.BODY_TEXT), (bx + 25, y))
-                    y += 22
+            if context:
+                detail_parts.append(context)
+            entries.append({
+                'name': q['question'],
+                'detail_lines': detail_parts,
+                'name_color': FP.PARCHMENT_LIGHT,
+                'badge': q['subject'].upper(),
+                'badge_color': FP.HINT_TEXT,
+                'row_style': 'text',
+            })
 
-        # Navigation hints
-        hints = "Left/Right: category  |  Up/Down: question  |  ESC: close"
-        hint_surf = self.font_sm.render(hints, True, FP.HINT_TEXT)
-        self.screen.blit(hint_surf, (bx + (bw - hint_surf.get_width()) // 2, by + bh - 28))
+        draw_menu(
+            self.screen,
+            title="STUDY JOURNAL",
+            entries=entries,
+            scroll=getattr(self, '_study_scroll', 0),
+            subtitle=f"<<  {subj_label}  ({filtered}/{total})  >>",
+            subtitle_color=FP.GOLD_BRIGHT,
+            hint="Left/Right: category  |  Up/Down: scroll  |  ESC: close",
+            border_color=FP.GOLD,
+            max_width=840,
+            center_in=(GAME_W, WINDOW_H),
+            font_md=self.font_md,
+            font_sm=self.font_sm,
+            row_style='text',
+        )
 
     def _draw_review_missed(self):
         """Page through missed questions with educational context."""
@@ -15709,72 +15316,34 @@ class Game:
         return item.item_class.replace('_', ' ').title()
 
     def _draw_examine_menu(self):
-        draw_overlay(self.screen, 190)
-
         tab_items = self._get_examine_tab_items()
-        ROW_H = 72
-        ICO = self.MENU_ICON_SIZE
-        TEXT_X = 70 + ICO + 8
-        bw = min(820, GAME_W - 40)
-        max_detail_w = bw - TEXT_X - 20
-        n_items = min(len(tab_items), 26)
-        bh = min(130 + n_items * ROW_H + 50, WINDOW_H - 40)
-        bx = (GAME_W - bw) // 2
-        by = (WINDOW_H - bh) // 2
-        tx = bx + TEXT_X
-
-        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.ARCANE_BRIGHT)
-        draw_header_bar(self.screen, (bx, by, bw, 44), text="EXAMINE ITEM",
-                        font=self.font_md, text_color=FP.GOLD_BRIGHT)
+        entries = []
+        for i, item in enumerate(tab_items[:26]):
+            entries.append({
+                'name': self._display_name(item),
+                'detail': self._get_item_stats_brief(item),
+                'key': self._LETTERS[i],
+                'icon': item,
+            })
 
         _exam_counts = [sum(1 for it in self.examine_menu_items if filt(it))
                         for _, filt in self._EXAMINE_TABS]
-        tab_end = self._draw_tab_bar(self._EXAMINE_TABS, self._examine_tab, bx, by, bw, _exam_counts)
-        draw_divider(self.screen, bx + 10, tab_end, bw - 20)
-        cy = by + 88
-
-        ICO_Y_OFF = 4
-        NAME_Y_OFF = 8
-        DET_Y_OFF = ICO_Y_OFF + ICO + 6
-        lbl_h = self.font_md.get_height()
-        LBL_Y_OFF = ICO_Y_OFF + (ICO - lbl_h) // 2
-
-        if not tab_items:
-            self.screen.blit(self.font_sm.render("(empty)", True, FP.FADED_TEXT), (bx + 30, cy))
-        else:
-            for i, item in enumerate(tab_items[:26]):
-                iy = cy
-                pygame.draw.rect(
-                    self.screen,
-                    FP.MIDNIGHT_MID if i % 2 == 0 else FP.MIDNIGHT,
-                    (bx + 10, iy, bw - 20, ROW_H - 8), border_radius=6
-                )
-                self.screen.blit(
-                    self.font_md.render(f"[{self._LETTERS[i]}]", True, FP.GOLD_BRIGHT),
-                    (bx + 18, iy + LBL_Y_OFF)
-                )
-                self._draw_menu_icon(item, bx + 56, iy + ICO_Y_OFF)
-                self.screen.blit(
-                    self.font_md.render(
-                        self._fit_text(self._display_name(item), self.font_md, max_detail_w),
-                        True, FP.BODY_TEXT),
-                    (tx, iy + NAME_Y_OFF)
-                )
-                stats_text = self._get_item_stats_brief(item)
-                stats_surf = self.font_sm.render(stats_text, True, FP.FADED_TEXT)
-                if stats_surf.get_width() > max_detail_w:
-                    while len(stats_text) > 1 and self.font_sm.size(stats_text + '\u2026')[0] > max_detail_w:
-                        stats_text = stats_text[:-1]
-                    stats_surf = self.font_sm.render(stats_text + '\u2026', True, FP.FADED_TEXT)
-                self.screen.blit(stats_surf, (tx, iy + DET_Y_OFF))
-                cy += ROW_H
-
-        hint_y = by + bh - 34
-        draw_divider(self.screen, bx + 10, hint_y - 8, bw - 20)
-        hint = self.font_sm.render(
-            "Left/Right: tab  |  a-z: select  |  ESC: close", True, FP.HINT_TEXT
+        draw_menu(
+            self.screen,
+            title="EXAMINE ITEM",
+            entries=entries,
+            scroll=getattr(self, '_examine_scroll', 0),
+            tabs=self._EXAMINE_TABS,
+            active_tab=self._examine_tab,
+            tab_counts=_exam_counts,
+            hint="Left/Right: tab  |  a-z: select  |  ESC: close",
+            border_color=FP.ARCANE_BRIGHT,
+            max_width=820,
+            center_in=(GAME_W, WINDOW_H),
+            font_md=self.font_md,
+            font_sm=self.font_sm,
+            draw_icon_fn=lambda s, item, x, y: self._draw_menu_icon(item, x, y),
         )
-        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
 
     # ------------------------------------------------------------------
     # Merchant shop  (t key)
@@ -16022,12 +15591,6 @@ class Game:
 
     def _draw_encyclopedia(self):
         """Draw the encyclopedia overlay -- category, list, or detail view."""
-        draw_overlay(self.screen, 190)
-
-        bw = min(900, GAME_W - 40)
-        by_base = 60
-        bx = (GAME_W - bw) // 2
-
         _CAT_LABELS = {
             '':          'Encyclopedia',
             'bestiary':  'Bestiary -- Monsters',
@@ -16042,62 +15605,52 @@ class Game:
             'recipes':    'Recipes',
         }
 
+        bw = min(900, GAME_W - 40)
+        bx = (GAME_W - bw) // 2
+
         if self.encyclopedia_category == '':
             # -- Category selection screen ---------------------------------
-            bh = min(460, WINDOW_H - 40)
-            by = (WINDOW_H - bh) // 2
-            draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.GOLD)
-            draw_header_bar(self.screen, (bx, by, bw, 44),
-                            text="ENCYCLOPEDIA",
-                            font=self.font_md, text_color=FP.GOLD_BRIGHT)
-            self.screen.blit(
-                self.font_sm.render("Select a category to browse your discovered knowledge.",
-                                    True, FP.BODY_TEXT),
-                (bx + 20, by + 48)
-            )
-            draw_divider(self.screen, bx + 10, by + 72, bw - 20)
-
             cats = [
-                ('A', 'Bestiary',        'Monsters you have encountered'),
-                ('B', 'Armory',          'Weapons'),
-                ('C', 'Armor',           'Armor & Shields'),
-                ('D', 'Accessories',     'Rings and amulets'),
-                ('E', 'Scrolls',         'Scrolls you have read'),
-                ('F', 'Wands',           'Wands you have used'),
-                ('G', 'Spellbooks',      'Spells you have learned'),
-                ('H', 'Chronicle',       'Your journey so far'),
-                ('I', 'Lore Hints',      'Knowledge recalled from memory'),
-                ('J', 'Recipes',         'Compound recipes you have cooked'),
+                ('a', 'Bestiary',    'Monsters you have encountered'),
+                ('b', 'Armory',      'Weapons'),
+                ('c', 'Armor',       'Armor & Shields'),
+                ('d', 'Accessories', 'Rings and amulets'),
+                ('e', 'Scrolls',     'Scrolls you have read'),
+                ('f', 'Wands',       'Wands you have used'),
+                ('g', 'Spellbooks',  'Spells you have learned'),
+                ('h', 'Chronicle',   'Your journey so far'),
+                ('i', 'Lore Hints',  'Knowledge recalled from memory'),
+                ('j', 'Recipes',     'Compound recipes you have cooked'),
             ]
-            cy = by + 88
-            ROW_H = 46
+            entries = []
             for key_lbl, cat_name, cat_desc in cats:
-                pygame.draw.rect(self.screen, FP.MIDNIGHT_MID,
-                                 (bx + 10, cy, bw - 20, ROW_H - 8), border_radius=6)
-                self.screen.blit(
-                    self.font_md.render(f"[{key_lbl}]", True, FP.GOLD_BRIGHT),
-                    (bx + 20, cy + 8)
-                )
-                self.screen.blit(
-                    self.font_md.render(cat_name, True, FP.BODY_TEXT),
-                    (bx + 70, cy + 8)
-                )
-                self.screen.blit(
-                    self.font_sm.render(cat_desc, True, FP.FADED_TEXT),
-                    (bx + 300, cy + 12)
-                )
-                cy += ROW_H
-
-            hint_y = by + bh - 34
-            draw_divider(self.screen, bx + 10, hint_y - 8, bw - 20)
-            hint = self.font_sm.render("1-7: select category  |  ESC: close", True, FP.HINT_TEXT)
-            self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
+                entries.append({
+                    'name': cat_name,
+                    'detail': cat_desc,
+                    'key': key_lbl,
+                    'row_style': 'text',
+                })
+            draw_menu(
+                self.screen,
+                title="ENCYCLOPEDIA",
+                entries=entries,
+                subtitle="Select a category to browse your discovered knowledge.",
+                hint="a-j: select category  |  ESC: close",
+                border_color=FP.GOLD,
+                max_width=900,
+                center_in=(GAME_W, WINDOW_H),
+                font_md=self.font_md,
+                font_sm=self.font_sm,
+                row_style='text',
+            )
             return
 
         header_label = _CAT_LABELS.get(self.encyclopedia_category, self.encyclopedia_category.title())
 
         if self._encyclopedia_entry is not None:
-            # -- Entry detail view -----------------------------------------
+            # -- Entry detail view -- kept as custom draw since it has
+            #    unique lore section layout that doesn't fit draw_menu rows
+            draw_overlay(self.screen, 190)
             entry = self._encyclopedia_entry
             bh = min(560, WINDOW_H - 40)
             by = (WINDOW_H - bh) // 2
@@ -16190,72 +15743,47 @@ class Game:
             return
 
         # -- Entry list view -----------------------------------------------
-        entries = self.encyclopedia_entries
-        n = len(entries)
-        ROW_H = 44
-        visible_rows = min(n, 14)
-        bh = min(96 + visible_rows * ROW_H + 70, WINDOW_H - 40)
-        by = (WINDOW_H - bh) // 2
-
-        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.ARCANE_BRIGHT)
-        draw_header_bar(self.screen, (bx, by, bw, 44),
-                        text=f"ENCYCLOPEDIA -- {header_label.upper()}  ({n} known)",
-                        font=self.font_md, text_color=FP.GOLD_BRIGHT)
-        draw_divider(self.screen, bx + 10, by + 48, bw - 20)
-
-        if n == 0:
-            msg = self.font_md.render("Nothing discovered yet in this category.", True, FP.FADED_TEXT)
-            self.screen.blit(msg, (bx + (bw - msg.get_width()) // 2, by + 80))
-        else:
-            # Scroll window around selection
-            sel = self.encyclopedia_selection
-            start = max(0, min(sel - visible_rows // 2, n - visible_rows))
-            cy = by + 56
-            for idx in range(start, min(start + visible_rows, n)):
-                entry = entries[idx]
-                iy = cy
-                is_sel = (idx == sel)
-                row_bg = (40, 30, 80) if is_sel else (FP.MIDNIGHT_MID if idx % 2 == 0 else FP.MIDNIGHT)
-                pygame.draw.rect(self.screen, row_bg,
-                                 (bx + 10, iy, bw - 20, ROW_H - 4), border_radius=5)
-                if is_sel:
-                    pygame.draw.rect(self.screen, FP.ARCANE_BRIGHT,
-                                     (bx + 10, iy, bw - 20, ROW_H - 4), 1, border_radius=5)
-                entry_name = entry.get('name', entry.get('_id', '?'))
-                name_col = FP.GOLD_PALE if is_sel else FP.BODY_TEXT
-                self.screen.blit(
-                    self.font_md.render(self._fit_text(self._fix_name_case(entry_name), self.font_md, 600), True, name_col),
-                    (bx + 20, iy + 8)
-                )
-                # Brief extra info on same row
-                brief = ''
-                if self.encyclopedia_category == 'bestiary':
-                    hp = entry.get('hp', entry.get('max_hp', '?'))
-                    min_lvl = entry.get('min_level', '?')
-                    brief = f"HP {hp}  |  min lvl {min_lvl}"
-                elif self.encyclopedia_category == 'weapon':
-                    brief = f"{entry.get('weapon_class','?')}  {entry.get('base_damage','?')} dmg"
-                elif self.encyclopedia_category in ('armor',):
-                    brief = f"{entry.get('slot','?')}  -{entry.get('ac_bonus','?')} AC"
-                elif self.encyclopedia_category == 'wand':
-                    brief = f"effect: {entry.get('effect','?')}"
-                elif self.encyclopedia_category == 'scroll':
-                    brief = f"effect: {entry.get('effect','?')}"
-                elif self.encyclopedia_category == 'spellbook':
-                    brief = f"teaches: {entry.get('spell_name','?')}"
-                if brief:
-                    self.screen.blit(
-                        self.font_sm.render(brief, True, FP.FADED_TEXT),
-                        (bx + bw - self.font_sm.size(brief)[0] - 20, iy + 12)
-                    )
-                cy += ROW_H
-
-        hint_y = by + bh - 34
-        draw_divider(self.screen, bx + 10, hint_y - 8, bw - 20)
-        hint = self.font_sm.render(
-            "Up/Down: navigate  |  Enter: view details  |  ESC: categories", True, FP.HINT_TEXT
+        raw_entries = self.encyclopedia_entries
+        sel = self.encyclopedia_selection
+        entries = []
+        for idx, entry in enumerate(raw_entries):
+            entry_name = entry.get('name', entry.get('_id', '?'))
+            # Brief extra info
+            brief = ''
+            if self.encyclopedia_category == 'bestiary':
+                hp = entry.get('hp', entry.get('max_hp', '?'))
+                min_lvl = entry.get('min_level', '?')
+                brief = f"HP {hp}  |  min lvl {min_lvl}"
+            elif self.encyclopedia_category == 'weapon':
+                brief = f"{entry.get('weapon_class','?')}  {entry.get('base_damage','?')} dmg"
+            elif self.encyclopedia_category in ('armor',):
+                brief = f"{entry.get('slot','?')}  -{entry.get('ac_bonus','?')} AC"
+            elif self.encyclopedia_category == 'wand':
+                brief = f"effect: {entry.get('effect','?')}"
+            elif self.encyclopedia_category == 'scroll':
+                brief = f"effect: {entry.get('effect','?')}"
+            elif self.encyclopedia_category == 'spellbook':
+                brief = f"teaches: {entry.get('spell_name','?')}"
+            entries.append({
+                'name': self._fix_name_case(entry_name),
+                'selected': idx == sel,
+                'badge': brief,
+                'badge_color': FP.FADED_TEXT,
+                'row_style': 'text',
+            })
+        draw_menu(
+            self.screen,
+            title=f"ENCYCLOPEDIA -- {header_label.upper()}  ({len(raw_entries)} known)",
+            entries=entries,
+            scroll=getattr(self, '_encyclopedia_scroll', 0),
+            hint="Up/Down: navigate  |  Enter: view details  |  ESC: categories",
+            border_color=FP.ARCANE_BRIGHT,
+            max_width=900,
+            center_in=(GAME_W, WINDOW_H),
+            font_md=self.font_md,
+            font_sm=self.font_sm,
+            row_style='text',
         )
-        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, hint_y))
 
     def _draw_hint_screen(self):
         """Display a Recall Lore result -- parchment-style hint overlay."""

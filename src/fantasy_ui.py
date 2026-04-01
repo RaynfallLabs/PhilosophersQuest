@@ -592,3 +592,346 @@ def draw_choice_button(surf: pygame.Surface, rect: tuple,
     t_surf = text_font.render(text, True, t_color)
     surf.blit(t_surf, (x + badge_w + 10,
                        y + h//2 - t_surf.get_height()//2))
+
+
+# =============================================================================
+# UNIVERSAL MENU RENDERER
+# =============================================================================
+
+def fit_text(text: str, font, max_w: int) -> str:
+    """Truncate text with ellipsis if it exceeds max_w pixels."""
+    if font.size(text)[0] <= max_w:
+        return text
+    while len(text) > 1 and font.size(text + '...')[0] > max_w:
+        text = text[:-1]
+    return text + '...'
+
+
+def wrap_text(text: str, font, max_w: int) -> list:
+    """Break text into lines that fit within max_w pixels."""
+    words = text.split()
+    lines, cur = [], ''
+    for word in words:
+        test = (cur + ' ' + word).strip()
+        if font.size(test)[0] <= max_w:
+            cur = test
+        else:
+            if cur:
+                lines.append(cur)
+            cur = word
+    if cur:
+        lines.append(cur)
+    return lines or ['']
+
+
+def draw_tab_bar(surf, tabs, active_idx: int, bx: int, by: int, bw: int,
+                 font, counts=None):
+    """Draw a tab bar. Returns the y position below it."""
+    tab_y = by + 50
+    avail = bw - 20
+    PAD = 4
+    visible = []
+    for i, tab in enumerate(tabs):
+        label = tab[0]
+        c = counts[i] if counts else None
+        if c is not None and c == 0 and i != active_idx:
+            continue
+        text = f"{label} ({c})" if c is not None else label
+        visible.append((i, text))
+    # If too wide, drop counts
+    total_w = sum(font.size(t)[0] + 14 + PAD for _, t in visible) - PAD
+    if total_w > avail and counts:
+        visible = []
+        for i, tab in enumerate(tabs):
+            c = counts[i] if counts else None
+            if c is not None and c == 0 and i != active_idx:
+                continue
+            visible.append((i, tab[0]))
+    tab_x = bx + 10
+    max_x = bx + bw - 10
+    for idx, text in visible:
+        tw = font.size(text)[0] + 14
+        if tab_x + tw > max_x:
+            break
+        rect = pygame.Rect(tab_x, tab_y, tw, 24)
+        active = idx == active_idx
+        if active:
+            pygame.draw.rect(surf, FP.MIDNIGHT_MID, rect, border_radius=4)
+            pygame.draw.rect(surf, FP.GOLD, rect, 2, border_radius=4)
+            col = FP.GOLD_BRIGHT
+        else:
+            col = FP.FADED_TEXT
+        t_surf = font.render(text, True, col)
+        surf.blit(t_surf, (tab_x + 7, tab_y + 3))
+        tab_x += tw + PAD
+    return tab_y + 28
+
+
+# ── Menu entry helpers ────────────────────────────────────────────────
+
+_ICON_ROW_H = 72
+_ICON_SIZE = 32
+_TEXT_ROW_BASE = 28
+_LETTERS = 'abcdefghijklmnopqrstuvwxyz'
+
+
+def draw_menu(
+    surf,
+    *,
+    title: str,
+    entries: list,         # list of dicts — see below
+    scroll: int = 0,
+    subtitle: str = '',
+    subtitle_color=None,
+    tabs=None,
+    active_tab: int = 0,
+    tab_counts=None,
+    hint: str = 'ESC: close',
+    border_color=None,
+    max_width: int = 820,
+    center_in: tuple = (1280, 900),
+    font_md=None,
+    font_sm=None,
+    draw_icon_fn=None,     # callback(surf, icon_source, x, y)
+    row_style: str = 'icon',  # default; entries can override per-row
+):
+    """
+    Universal scrollable menu overlay.
+
+    Each entry is a dict with keys:
+      'name':        str (required)
+      'detail':      str (optional, one-line subtitle)
+      'detail_lines': list[str] (optional, pre-wrapped multi-line — overrides detail)
+      'key':         str (optional, letter label like 'a')
+      'icon':        object (optional, passed to draw_icon_fn)
+      'name_color':  tuple (default BODY_TEXT)
+      'detail_color': tuple (default FADED_TEXT)
+      'key_color':   tuple (default GOLD_BRIGHT)
+      'selected':    bool (highlight row)
+      'section':     str (section header above this row)
+      'section_color': tuple
+      'badge':       str (right-aligned status badge)
+      'badge_color': tuple
+      'row_style':   'icon' | 'text' (overrides default)
+
+    Returns (visible_count, total_count, scroll_clamped).
+    """
+    cw, ch = center_in
+    bw = min(max_width, cw - 40)
+
+    # ── Measure content height ──
+    header_h = 44
+    subtitle_h = 28 if subtitle else 0
+    tab_h = 30 if tabs else 0
+    divider_h = 10
+    hint_h = 38
+    chrome_h = header_h + subtitle_h + tab_h + divider_h + hint_h + 16  # padding
+
+    # Measure each entry
+    row_heights = []
+    text_max_w = bw - 50 if row_style == 'text' else bw - 140
+    for entry in entries:
+        rs = entry.get('row_style', row_style)
+        if entry.get('section'):
+            row_heights.append(28)  # section header
+        if rs == 'icon':
+            row_heights.append(_ICON_ROW_H)
+        else:
+            # Text row: measure wrapped height
+            detail_lines = entry.get('detail_lines')
+            if not detail_lines and entry.get('detail'):
+                detail_lines = wrap_text(entry['detail'], font_sm, text_max_w) if font_sm else [entry['detail']]
+            name_lines = wrap_text(entry['name'], font_md, text_max_w) if font_md else [entry['name']]
+            n_lines = len(name_lines) + (len(detail_lines) if detail_lines else 0)
+            row_heights.append(max(_TEXT_ROW_BASE, n_lines * 22 + 8))
+
+    total_content = sum(row_heights)
+    max_content = ch - 40 - chrome_h
+    needs_scroll = total_content > max_content
+    bh = min(chrome_h + total_content, ch - 40)
+    bx = (cw - bw) // 2
+    by = (ch - bh) // 2
+
+    # Clamp scroll
+    if needs_scroll:
+        # Compute max scroll by counting how many entries from the end fit
+        max_scroll = max(0, len(entries) - 1)
+        # Simple: allow scrolling entry-by-entry
+        scroll = max(0, min(scroll, max_scroll))
+    else:
+        scroll = 0
+
+    # ── Draw chrome ──
+    draw_overlay(surf, 190)
+    draw_dark_panel(surf, (bx, by, bw, bh), border_color=border_color or FP.GOLD)
+    draw_header_bar(surf, (bx, by, bw, header_h), text=title,
+                    font=font_md, text_color=FP.GOLD_BRIGHT)
+
+    cy = by + header_h + 4
+
+    if subtitle:
+        sc = subtitle_color or FP.BODY_TEXT
+        surf.blit(font_sm.render(subtitle, True, sc), (bx + 20, cy))
+        cy += subtitle_h
+
+    if tabs:
+        cy = draw_tab_bar(surf, tabs, active_tab, bx, by, bw, font_sm, tab_counts)
+
+    draw_divider(surf, bx + 10, cy, bw - 20)
+    cy += 8
+
+    content_top = cy
+    content_bottom = by + bh - hint_h
+
+    # ── Clip to content area ──
+    old_clip = surf.get_clip()
+    surf.set_clip(pygame.Rect(bx, content_top, bw, content_bottom - content_top))
+
+    # ── Render entries ──
+    visible_count = 0
+    entry_idx = 0
+    # Skip entries before scroll offset
+    for skip_i in range(scroll):
+        if skip_i >= len(entries):
+            break
+        entry = entries[skip_i]
+        entry_idx += 1
+
+    has_more_above = scroll > 0
+    has_more_below = False
+
+    for i in range(scroll, len(entries)):
+        entry = entries[i]
+        rs = entry.get('row_style', row_style)
+
+        # Section header
+        sec = entry.get('section', '')
+        if sec:
+            if cy > content_top + 4:
+                draw_divider(surf, bx + 10, cy + 2, bw - 20)
+                cy += 8
+            sec_col = entry.get('section_color', FP.GOLD_BRIGHT)
+            surf.blit(font_sm.render(sec, True, sec_col), (bx + 18, cy))
+            cy += 24
+
+        if cy >= content_bottom:
+            has_more_below = True
+            break
+
+        # Row background
+        bg_col = FP.MIDNIGHT_MID if visible_count % 2 == 0 else FP.MIDNIGHT
+        if entry.get('selected'):
+            bg_col = (40, 55, 110)
+
+        if rs == 'icon':
+            rh = _ICON_ROW_H
+            pygame.draw.rect(surf, bg_col, (bx + 10, cy, bw - 20, rh - 8), border_radius=6)
+
+            # Key label
+            key = entry.get('key', '')
+            if key:
+                kc = entry.get('key_color', FP.GOLD_BRIGHT)
+                lbl_h = font_md.get_height()
+                lbl_y = cy + 4 + (_ICON_SIZE - lbl_h) // 2
+                surf.blit(font_md.render(f"[{key}]", True, kc), (bx + 18, lbl_y))
+
+            # Icon
+            icon_src = entry.get('icon')
+            if icon_src and draw_icon_fn:
+                draw_icon_fn(surf, icon_src, bx + 56, cy + 4)
+
+            # Name
+            tx = bx + (110 if draw_icon_fn else 60)
+            name_max = bw - (tx - bx) - 20
+            nc = entry.get('name_color', FP.BODY_TEXT)
+            name_text = fit_text(entry['name'], font_md, name_max)
+            surf.blit(font_md.render(name_text, True, nc), (tx, cy + 8))
+
+            # Badge (right-aligned on name line)
+            badge = entry.get('badge', '')
+            if badge:
+                bc = entry.get('badge_color', FP.FADED_TEXT)
+                b_surf = font_sm.render(badge, True, bc)
+                surf.blit(b_surf, (bx + bw - 25 - b_surf.get_width(), cy + 10))
+
+            # Detail
+            det_y = cy + 4 + _ICON_SIZE + 6
+            dc = entry.get('detail_color', FP.FADED_TEXT)
+            detail_lines = entry.get('detail_lines')
+            if detail_lines:
+                for dl in detail_lines:
+                    if det_y < content_bottom:
+                        surf.blit(font_sm.render(fit_text(dl, font_sm, name_max), True, dc), (tx, det_y))
+                        det_y += 18
+            elif entry.get('detail'):
+                det_text = fit_text(entry['detail'], font_sm, name_max)
+                surf.blit(font_sm.render(det_text, True, dc), (tx, det_y))
+
+            cy += rh
+
+        else:  # text row
+            name_lines = wrap_text(entry['name'], font_md, bw - 50)
+            detail_lines = entry.get('detail_lines')
+            if not detail_lines and entry.get('detail'):
+                detail_lines = wrap_text(entry['detail'], font_sm, bw - 50)
+
+            n_total = len(name_lines) + (len(detail_lines) if detail_lines else 0)
+            rh = max(_TEXT_ROW_BASE, n_total * 22 + 8)
+            pygame.draw.rect(surf, bg_col, (bx + 10, cy, bw - 20, rh - 4), border_radius=6)
+
+            # Key label
+            key = entry.get('key', '')
+            tx = bx + 20
+            if key:
+                kc = entry.get('key_color', FP.GOLD_BRIGHT)
+                surf.blit(font_md.render(f"[{key}]", True, kc), (tx, cy + 4))
+                tx += 45
+
+            # Name lines
+            nc = entry.get('name_color', FP.BODY_TEXT)
+            line_y = cy + 4
+            for nl in name_lines:
+                if line_y < content_bottom:
+                    surf.blit(font_md.render(nl, True, nc), (tx, line_y))
+                    line_y += 22
+
+            # Detail lines
+            if detail_lines:
+                dc = entry.get('detail_color', FP.FADED_TEXT)
+                for dl in detail_lines:
+                    if line_y < content_bottom:
+                        surf.blit(font_sm.render(dl, True, dc), (tx, line_y))
+                        line_y += 20
+
+            # Badge
+            badge = entry.get('badge', '')
+            if badge:
+                bc = entry.get('badge_color', FP.FADED_TEXT)
+                b_surf = font_sm.render(badge, True, bc)
+                surf.blit(b_surf, (bx + bw - 25 - b_surf.get_width(), cy + 6))
+
+            cy += rh
+
+        visible_count += 1
+
+    if scroll + visible_count < len(entries):
+        has_more_below = True
+
+    # ── Restore clip ──
+    surf.set_clip(old_clip)
+
+    # ── Scroll indicators ──
+    if has_more_above:
+        ind = font_sm.render("-- more above --", True, FP.FADED_TEXT)
+        surf.blit(ind, (bx + (bw - ind.get_width()) // 2, content_top - 2))
+    if has_more_below:
+        ind = font_sm.render("-- more below --", True, FP.FADED_TEXT)
+        surf.blit(ind, (bx + (bw - ind.get_width()) // 2, content_bottom - 4))
+
+    # ── Hint footer ──
+    hint_y = by + bh - 30
+    draw_divider(surf, bx + 10, hint_y - 8, bw - 20)
+    h_surf = font_sm.render(hint, True, FP.HINT_TEXT)
+    surf.blit(h_surf, (bx + (bw - h_surf.get_width()) // 2, hint_y))
+
+    return visible_count, len(entries), scroll
