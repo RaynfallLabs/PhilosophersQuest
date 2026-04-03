@@ -625,9 +625,9 @@ def wrap_text(text: str, font, max_w: int) -> list:
 
 
 def draw_tab_bar(surf, tabs, active_idx: int, bx: int, by: int, bw: int,
-                 font, counts=None):
+                 font, counts=None, y_offset: int = 50):
     """Draw a tab bar. Returns the y position below it."""
-    tab_y = by + 50
+    tab_y = by + y_offset
     avail = bw - 20
     PAD = 4
     visible = []
@@ -775,17 +775,20 @@ def draw_menu(
         cy += subtitle_h
 
     if tabs:
-        cy = draw_tab_bar(surf, tabs, active_tab, bx, by, bw, font_sm, tab_counts)
+        tab_y_off = cy - by  # tabs start wherever cy currently is
+        cy = draw_tab_bar(surf, tabs, active_tab, bx, by, bw, font_sm, tab_counts,
+                          y_offset=tab_y_off)
 
     draw_divider(surf, bx + 10, cy, bw - 20)
     cy += 8
 
     content_top = cy
-    content_bottom = by + bh - hint_h
+    content_bottom = by + bh - hint_h - 4  # 4px safety margin above hint
 
-    # ── Clip to content area ──
+    # ── Clip to content area — HARD boundary, nothing renders outside ──
     old_clip = surf.get_clip()
-    surf.set_clip(pygame.Rect(bx, content_top, bw, content_bottom - content_top))
+    clip_rect = pygame.Rect(bx + 5, content_top, bw - 10, max(1, content_bottom - content_top))
+    surf.set_clip(clip_rect)
 
     # ── Render entries ──
     visible_count = 0
@@ -814,7 +817,7 @@ def draw_menu(
             surf.blit(font_sm.render(sec, True, sec_col), (bx + 18, cy))
             cy += 24
 
-        if cy >= content_bottom:
+        if cy + 20 >= content_bottom:  # stop before last row would overflow
             has_more_below = True
             break
 
@@ -928,10 +931,14 @@ def draw_menu(
         ind = font_sm.render("-- more below --", True, FP.FADED_TEXT)
         surf.blit(ind, (bx + (bw - ind.get_width()) // 2, content_bottom - 4))
 
-    # ── Hint footer ──
-    hint_y = by + bh - 30
+    # ── Hint footer — always inside panel, never outside screen ──
+    hint_y = min(by + bh - 30, ch - 20)  # clamp to screen
     draw_divider(surf, bx + 10, hint_y - 8, bw - 20)
     h_surf = font_sm.render(hint, True, FP.HINT_TEXT)
+    # Center hint, but truncate if wider than panel
+    if h_surf.get_width() > bw - 20:
+        hint = fit_text(hint, font_sm, bw - 20)
+        h_surf = font_sm.render(hint, True, FP.HINT_TEXT)
     surf.blit(h_surf, (bx + (bw - h_surf.get_width()) // 2, hint_y))
 
     return visible_count, len(entries), scroll

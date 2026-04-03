@@ -13363,7 +13363,7 @@ class Game:
             tab_counts=_drop_counts,
             hint="Left/Right: tab  |  Up/Down: scroll  |  a-z: drop  |  ESC: cancel",
             max_width=600,
-            center_in=(GAME_W, GAME_H),
+            center_in=(GAME_W, WINDOW_H),
             font_md=self.font_md,
             font_sm=self.font_sm,
             row_style='text',
@@ -14547,52 +14547,98 @@ class Game:
             self._study_filtered = self._study_filter()
             self._study_question_idx = 0
             self._study_scroll = 0
-        # Up/Down: scroll the list
+        # Up/Down: page through questions within category
         elif key in (pygame.K_DOWN, pygame.K_SPACE, pygame.K_RETURN):
-            self._study_scroll = getattr(self, '_study_scroll', 0) + 1
+            if self._study_filtered:
+                self._study_question_idx = min(
+                    getattr(self, '_study_question_idx', 0) + 1, len(self._study_filtered) - 1)
         elif key in (pygame.K_UP, pygame.K_BACKSPACE):
-            self._study_scroll = max(0, getattr(self, '_study_scroll', 0) - 1)
+            self._study_question_idx = max(0, getattr(self, '_study_question_idx', 0) - 1)
 
     def _draw_study_journal(self):
-        """Draw the in-game study journal overlay."""
+        """Draw the in-game study journal overlay — one question at a time."""
+        draw_overlay(self.screen, 190)
         missed = self._study_filtered
         subj = self._STUDY_SUBJECTS[self._study_subject_idx]
+        W, H = GAME_W, WINDOW_H
         total = len(self.missed_questions)
         filtered = len(missed)
-        subj_label = subj.upper()
 
-        entries = []
-        for i, q in enumerate(missed):
-            detail_parts = []
-            detail_parts.append(f"Your answer: {q['chosen']}")
-            detail_parts.append(f"Correct: {q['correct']}")
+        bw = min(840, W - 40)
+        bh = min(620, H - 40)
+        bx = (W - bw) // 2
+        by = (H - bh) // 2
+
+        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.GOLD)
+        draw_header_bar(self.screen, (bx, by, bw, 44),
+                        text="STUDY JOURNAL", font=self.font_md, text_color=FP.GOLD_BRIGHT)
+
+        y = by + 52
+        # Subject selector
+        selector_text = f"<<  {subj.upper()}  ({filtered}/{total})  >>"
+        sel_surf = self.font_md.render(selector_text, True, FP.GOLD_BRIGHT)
+        self.screen.blit(sel_surf, (bx + (bw - sel_surf.get_width()) // 2, y))
+        y += 32
+        draw_divider(self.screen, bx + 15, y, bw - 30)
+        y += 10
+
+        if not missed:
+            empty_msg = "No missed questions in this category."
+            self.screen.blit(
+                self.font_md.render(empty_msg, True, FP.FADED_TEXT),
+                (bx + (bw - self.font_md.size(empty_msg)[0]) // 2, y + 40))
+        else:
+            idx = min(getattr(self, '_study_question_idx', 0), len(missed) - 1)
+            q = missed[idx]
+
+            # Counter + subject badge
+            counter = f"{idx + 1}/{len(missed)}"
+            badge = q['subject'].upper()
+            self.screen.blit(self.font_sm.render(badge, True, FP.HINT_TEXT), (bx + 25, y))
+            ctr_surf = self.font_sm.render(counter, True, FP.FADED_TEXT)
+            self.screen.blit(ctr_surf, (bx + bw - 25 - ctr_surf.get_width(), y))
+            y += 24
+
+            # Question text
+            q_lines = wrap_text(q['question'], self.font_md, bw - 50)
+            for line in q_lines:
+                if y > by + bh - 120:
+                    break
+                self.screen.blit(self.font_md.render(line, True, FP.PARCHMENT_LIGHT), (bx + 25, y))
+                y += 28
+            y += 10
+
+            # Your answer (red) vs correct (green)
+            chosen_lines = wrap_text(f"Your answer:    {q['chosen']}", self.font_sm, bw - 50)
+            for line in chosen_lines:
+                if y > by + bh - 80:
+                    break
+                self.screen.blit(self.font_sm.render(line, True, FP.DANGER_TEXT), (bx + 25, y))
+                y += 22
+            correct_lines = wrap_text(f"Correct answer: {q['correct']}", self.font_sm, bw - 50)
+            for line in correct_lines:
+                if y > by + bh - 60:
+                    break
+                self.screen.blit(self.font_sm.render(line, True, FP.SUCCESS_TEXT), (bx + 25, y))
+                y += 22
+            y += 8
+
+            # Context
             context = q.get('context', '')
-            if context:
-                detail_parts.append(context)
-            entries.append({
-                'name': q['question'],
-                'detail_lines': detail_parts,
-                'name_color': FP.PARCHMENT_LIGHT,
-                'badge': q['subject'].upper(),
-                'badge_color': FP.HINT_TEXT,
-                'row_style': 'text',
-            })
+            if context and y < by + bh - 55:
+                draw_divider(self.screen, bx + 20, y, bw - 40)
+                y += 10
+                ctx_lines = wrap_text(context, self.font_sm, bw - 50)
+                for line in ctx_lines:
+                    if y > by + bh - 45:
+                        break
+                    self.screen.blit(self.font_sm.render(line, True, FP.BODY_TEXT), (bx + 25, y))
+                    y += 22
 
-        draw_menu(
-            self.screen,
-            title="STUDY JOURNAL",
-            entries=entries,
-            scroll=getattr(self, '_study_scroll', 0),
-            subtitle=f"<<  {subj_label}  ({filtered}/{total})  >>",
-            subtitle_color=FP.GOLD_BRIGHT,
-            hint="Left/Right: category  |  Up/Down: scroll  |  ESC: close",
-            border_color=FP.GOLD,
-            max_width=840,
-            center_in=(GAME_W, WINDOW_H),
-            font_md=self.font_md,
-            font_sm=self.font_sm,
-            row_style='text',
-        )
+        # Navigation hints
+        hints = "Left/Right: category  |  Up/Down: question  |  ESC: close"
+        hint_surf = self.font_sm.render(hints, True, FP.HINT_TEXT)
+        self.screen.blit(hint_surf, (bx + (bw - hint_surf.get_width()) // 2, by + bh - 28))
 
     def _draw_review_missed(self):
         """Page through missed questions with educational context."""
@@ -15076,9 +15122,13 @@ class Game:
         self._do_drop_item(item)
 
     def _do_drop_item(self, item):
-        # Cursed items cannot be dropped
-        if getattr(item, 'cursed', False) or getattr(item, 'buc', '') == 'cursed':
-            self.add_message(f"The {self._display_name(item)} is bound to you by a curse!", 'warning')
+        # Cursed EQUIPPED items cannot be dropped — but cursed items in inventory CAN be
+        is_equipped = (item is self.player.weapon or item is self.player.ranged_weapon
+                       or item is self.player.shield
+                       or item in self.player.armor_slots
+                       or item in getattr(self.player, 'accessory_slots', []))
+        if is_equipped and (getattr(item, 'cursed', False) or getattr(item, 'buc', '') == 'cursed'):
+            self.add_message(f"The {self._display_name(item)} is cursed and bound to you! Uncurse it first.", 'warning')
             return
         if not self.player.remove_from_inventory(item):
             return
