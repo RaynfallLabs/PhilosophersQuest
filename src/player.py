@@ -457,6 +457,8 @@ class Player:
             if new_status:
                 self.add_effect(new_status, -1)
         elif isinstance(item, Shield):
+            if not self.can_equip_shield():
+                return
             old = self.shield
             ok, _ = self.try_unequip_slot(old)
             if not ok:
@@ -471,6 +473,9 @@ class Player:
                 # Swap out existing amulet if present
                 old = self.amulet_slot
                 if old:
+                    ok, msg = self.try_unequip_slot(old)
+                    if not ok:
+                        return
                     self.inventory.append(old)
                     # Reverse old amulet's effects
                     old_fx = old.effects
