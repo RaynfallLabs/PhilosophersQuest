@@ -144,6 +144,10 @@ ENV/
 env.bak/
 venv.bak/
 
+# Un-ignore game asset directories matched by env/ above
+!assets/tiles/env/
+!assets/tiles/env/**
+
 # Spyder project settings
 .spyderproject
 .spyproject

@@ -568,84 +568,84 @@ def gen_ice():
 # SPRITE: player
 # ---------------------------------------------------------------------------
 def gen_player():
-    """The player character — armoured explorer with lantern and blue cloak."""
-    P  = _c(75, 130, 195)   # blue armour primary
-    L  = lt(P, 1.35)        # light blue
-    D  = dk(P, 0.5)         # dark shadow
-    H  = lt(P, 1.7)         # bright highlight
-    CLOAK   = _c(35, 45, 80)
-    CLOAK_LT= lt(CLOAK, 1.4)
+    """The player character — brown-haired ranger in traveler's cloak with sword at belt."""
+    CLOAK   = _c(90, 70, 45)     # earthy brown traveler's cloak
+    CLOAK_LT= lt(CLOAK, 1.35)
+    CLOAK_DK= dk(CLOAK, 0.6)
+    TUNIC   = _c(55, 85, 55)     # forest green ranger tunic
+    TUNIC_LT= lt(TUNIC, 1.3)
+    TUNIC_DK= dk(TUNIC, 0.6)
+    PANTS   = _c(75, 65, 50)     # brown trousers
+    PANTS_DK= dk(PANTS, 0.65)
     SKIN    = _c(210, 170, 130)
     SKIN_DK = dk(SKIN, 0.75)
-    IRON    = _c(140, 145, 155)
-    IRON_LT = lt(IRON, 1.3)
-    GOLD_   = _c(220, 185, 60)
+    HAIR    = _c(100, 65, 35)    # brown hair
+    HAIR_DK = dk(HAIR, 0.6)
+    BOOT    = _c(60, 42, 28)     # dark leather boots
+    BOOT_DK = dk(BOOT, 0.6)
+    BELT    = _c(70, 50, 30)     # leather belt
+    IRON    = _c(160, 165, 175)  # sword blade
+    IRON_DK = dk(IRON, 0.6)
+    EYES    = _c(70, 130, 200)   # blue eyes
 
     img, d = new_canvas()
     cx = S // 2
 
-    # ── Cloak (behind body, wider) ──────────────────────────────────────────
-    poly(d, [(cx-9, 8),(cx-7,28),(cx+7,28),(cx+9,8)], CLOAK, D)
-    d.line([(cx, 10),(cx, 27)], fill=CLOAK_LT, width=1)   # cloak center fold
+    # ── Cloak (behind body, wider, draped) ──────────────────────────────────
+    poly(d, [(cx-9, 8),(cx-8,28),(cx+8,28),(cx+9,8)], CLOAK, CLOAK_DK)
+    d.line([(cx, 10),(cx, 26)], fill=CLOAK_LT, width=1)   # center fold
+    d.line([(cx-6, 10),(cx-7, 26)], fill=CLOAK_DK, width=1)  # left drape shadow
 
     # ── Legs ────────────────────────────────────────────────────────────────
-    rect(d, cx-5, 20, cx-1, 28, dk(P,0.7), D)
-    rect(d, cx+1, 20, cx+5, 28, dk(P,0.7), D)
+    rect(d, cx-4, 20, cx-1, 27, PANTS, PANTS_DK)
+    rect(d, cx+1, 20, cx+4, 27, PANTS, PANTS_DK)
     # boots
-    rect(d, cx-6, 26, cx-1, 30, _c(50,38,24), D)
-    rect(d, cx+1, 26, cx+6, 30, _c(50,38,24), D)
+    rect(d, cx-5, 25, cx-1, 30, BOOT, BOOT_DK)
+    rect(d, cx+1, 25, cx+5, 30, BOOT, BOOT_DK)
+    # boot tops
+    d.line([(cx-5,25),(cx-1,25)], fill=lt(BOOT,1.3), width=1)
+    d.line([(cx+1,25),(cx+5,25)], fill=lt(BOOT,1.3), width=1)
 
-    # ── Torso (plate armour) ─────────────────────────────────────────────────
-    rect(d, cx-5, 11, cx+5, 21, P, D)
-    # breastplate highlight
-    d.line([(cx-4,12),(cx+4,12)], fill=L, width=1)
-    d.line([(cx-4,12),(cx-4,20)], fill=L, width=1)
-    # belly band
-    d.line([(cx-5,19),(cx+5,19)], fill=D, width=1)
-    # centre line
-    d.line([(cx, 12),(cx, 19)], fill=D, width=1)
+    # ── Torso (ranger tunic) ─────────────────────────────────────────────────
+    rect(d, cx-5, 11, cx+5, 21, TUNIC, TUNIC_DK)
+    # collar / neckline V
+    d.line([(cx-2,11),(cx,13)], fill=TUNIC_DK, width=1)
+    d.line([(cx+2,11),(cx,13)], fill=TUNIC_DK, width=1)
+    # tunic highlight
+    d.line([(cx-4,12),(cx-4,19)], fill=TUNIC_LT, width=1)
+    # belt
+    d.line([(cx-5,19),(cx+5,19)], fill=BELT, width=2)
+    # belt buckle
+    d.point((cx, 19), fill=lt(BELT, 1.8))
 
-    # ── Arms ────────────────────────────────────────────────────────────────
-    rect(d, cx-8, 12, cx-5, 21, dk(P,0.8), D)
-    rect(d, cx+5, 12, cx+8, 21, dk(P,0.8), D)
-    # pauldrons
-    rect(d, cx-8, 11, cx-4, 14, IRON, IRON_LT)
-    rect(d, cx+4, 11, cx+8, 14, IRON, IRON_LT)
+    # ── Arms (tunic sleeves) ────────────────────────────────────────────────
+    rect(d, cx-8, 12, cx-5, 20, TUNIC_DK, dk(TUNIC,0.45))
+    rect(d, cx+5, 12, cx+8, 20, TUNIC_DK, dk(TUNIC,0.45))
+    # hands
+    rect(d, cx-8, 19, cx-6, 22, SKIN, SKIN_DK)
+    rect(d, cx+6, 19, cx+8, 22, SKIN, SKIN_DK)
 
-    # ── Left hand: sword hilt ───────────────────────────────────────────────
-    # blade (pointing up-left)
-    d.line([(cx-9,21),(cx-13,10)], fill=IRON_LT, width=1)
-    d.line([(cx-8,21),(cx-12,10)], fill=IRON, width=1)
-    # crossguard
-    d.line([(cx-13,15),(cx-7,15)], fill=GOLD_, width=2)
-    # pommel
-    ell(d, cx-12,20, cx-8,24, GOLD_, dk(GOLD_,0.5))
+    # ── Sword at belt (right hip, sheathed, pointing down) ──────────────────
+    d.line([(cx+5,18),(cx+6,27)], fill=IRON_DK, width=1)   # scabbard
+    d.line([(cx+5,17),(cx+4,17)], fill=IRON, width=1)       # crossguard
+    d.point((cx+5, 16), fill=lt(BELT, 1.5))                 # pommel
 
-    # ── Right hand: lantern ─────────────────────────────────────────────────
-    # lantern glow (soft)
-    for r in range(5,0,-1):
-        a = int(60 * (1-r/5))
-        d.ellipse([cx+8-r,17-r,cx+8+r,17+r], fill=(255,200,60,a))
-    # lantern body
-    rect(d, cx+7, 14, cx+12, 20, _c(80,75,70), _c(50,45,40))
-    d.rectangle([cx+8,15,cx+11,19], fill=_c(255,210,80,200))  # flame window
-    # handle
-    d.line([(cx+8,14),(cx+8,12)], fill=_c(80,75,70), width=1)
+    # ── Head ────────────────────────────────────────────────────────────────
+    # hair (behind head)
+    ell(d, cx-5, 1, cx+5, 10, HAIR, HAIR_DK)
+    # face
+    ell(d, cx-4, 3, cx+4, 10, SKIN, SKIN_DK)
+    # hair on top (fringe)
+    d.arc([cx-5, 0, cx+5, 7], 180, 360, fill=HAIR, width=2)
+    d.line([(cx-4,2),(cx-2,4)], fill=HAIR_DK, width=1)   # hair part
+    # blue eyes
+    d.point((cx-2, 6), fill=EYES)
+    d.point((cx+2, 6), fill=EYES)
+    # mouth hint
+    d.line([(cx-1,8),(cx+1,8)], fill=SKIN_DK, width=1)
 
-    # ── Head (with helmet) ───────────────────────────────────────────────────
-    # helmet
-    ell(d, cx-5,  2, cx+5,  9, IRON, D)
-    # face opening
-    ell(d, cx-3,  5, cx+3,  9, SKIN, SKIN_DK)
-    # visor slit
-    d.line([(cx-3,7),(cx+3,7)], fill=D, width=1)
-    # helmet crest
-    poly(d, [(cx-1,2),(cx,0),(cx+1,2)], GOLD_)
-    # plume
-    d.line([(cx, 0),(cx-2,-2)], fill=_c(200,50,50), width=1)   # red plume tip
-    # eyes gleam
-    for ox in (-1, 1):
-        d.point((cx+ox*2, 7), fill=_c(255,220,120))
+    # ── Cloak clasp at neck ─────────────────────────────────────────────────
+    d.point((cx, 10), fill=lt(BELT, 1.6))
 
     # ── Neck ────────────────────────────────────────────────────────────────
     rect(d, cx-2, 9, cx+2, 12, SKIN, SKIN_DK)
