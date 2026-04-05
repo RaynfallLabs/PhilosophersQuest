@@ -53,11 +53,16 @@ def _cooking_heal(min_level: int, quality: int) -> int:
     return max(1, int(_potency(min_level) * quality * 1.5))
 
 
-def _cooking_sp(min_level: int, quality: int) -> int:
-    """SP restored from eating the cooked meal."""
+def _cooking_sp(min_level: int, quality: int, raw_sp: int = 10) -> int:
+    """SP restored from eating the cooked meal.
+    Q1 = raw SP (same as eating raw, but no poisoning risk).
+    Q2-Q5 scale upward so cooking skill is always rewarded."""
     if quality < 1:
         return 0
-    return max(10, int(5 * _potency(min_level) * quality))
+    formula = int(5 * _potency(min_level) * quality)
+    # Ensure Q1 >= raw, then each quality step adds at least 15% over raw
+    scaled = int(raw_sp * (1.0 + 0.15 * (quality - 1)))
+    return max(formula, scaled)
 
 
 # ------------------------------------------------------------------
@@ -238,7 +243,9 @@ def cook_ingredient(player, ingredient, quiz_engine, on_complete, max_chain: int
         if quality == 0:
             messages.append(f"You ruin the {ingredient.name}. Inedible {meal_name}.")
         else:
-            sp_amount = _cooking_sp(min_level, quality)
+            raw_recipe = ingredient.recipes.get('1', ingredient.recipes.get('0', {}))
+            raw_sp = int(raw_recipe.get('sp', 10))
+            sp_amount = _cooking_sp(min_level, quality, raw_sp)
             messages.append(f"You cook {meal_name}  (quality {quality}/5).")
             player.restore_sp(sp_amount)
             messages.append(f"You eat it and restore {sp_amount} SP.")
@@ -703,8 +710,14 @@ def make_corpse(monster_id: str, x: int, y: int):
 
 
 def eat_raw(player, ingredient) -> list[str]:
-    """Eat an ingredient raw (quality 1 recipe, no quiz)."""
+    """Eat an ingredient raw (quality 1 recipe, no quiz).
+    30% chance of food poisoning — cooking eliminates this risk."""
+    import random
     recipe = ingredient.recipes.get('1', ingredient.recipes.get('0', {}))
     sp = int(recipe.get('sp', 5))
     player.restore_sp(sp)
-    return [f"You choke down the raw {ingredient.name}. ({sp} SP, unpleasant)."]
+    messages = [f"You choke down the raw {ingredient.name}. ({sp} SP, unpleasant)."]
+    if random.random() < 0.30 and not player.has_effect('poison_resist'):
+        player.add_effect('poisoned', 8)
+        messages.append("Your stomach churns... food poisoning! (-1 HP/turn for 8 turns)")
+    return messages
