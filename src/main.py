@@ -15454,6 +15454,7 @@ class Game:
             return
         self._shop_merchant = merchant
         self._shop_selection = 0
+        self._shop_haggled = set()
         self.state = STATE_SHOP
 
     def _shop_input(self, key: int):
@@ -15471,6 +15472,14 @@ class Game:
             self._shop_selection = (sel - 1) % len(stock)
         elif key == pygame.K_DOWN or key == pygame.K_j:
             self._shop_selection = (sel + 1) % len(stock)
+        elif key == pygame.K_h:
+            sel = self._shop_selection
+            if sel < len(stock):
+                haggled = getattr(self, '_shop_haggled', set())
+                if sel in haggled:
+                    self.add_message("You've already haggled over that item.", 'info')
+                else:
+                    self._haggle_item(sel)
         elif key in (pygame.K_RETURN, pygame.K_SPACE):
             sel = self._shop_selection
             if sel < len(stock):
@@ -15486,11 +15495,54 @@ class Game:
                     self.add_message(f"You buy {iname} for {price} gold.", 'success')
                     m.stock.pop(sel)
                     m.prices.pop(sel)
+                    # Shift haggled indices after removal
+                    haggled = getattr(self, '_shop_haggled', set())
+                    self._shop_haggled = {i - 1 if i > sel else i for i in haggled if i != sel}
                     self._shop_selection = min(sel, len(m.stock) - 1)
                     if not m.stock:
                         m.sold_out = True
                         self.add_message("The merchant has sold everything.", 'info')
                         self.state = STATE_PLAYER
+
+    def _haggle_item(self, sel: int):
+        """Haggle over a shop item via economics escalator chain quiz."""
+        m = self._shop_merchant
+        item = m.stock[sel]
+        iname = getattr(item, 'name', 'item')
+        original_price = m.prices[sel]
+        self.add_message(f"You try to haggle over the {iname}...", 'info')
+        self.quiz_title = "HAGGLE -- ECONOMICS"
+        self.state = STATE_QUIZ
+
+        def on_complete(result):
+            chain = result.score
+            if chain == 0:
+                self.add_message(
+                    f"The merchant is unimpressed. Price stays at {original_price} gold.",
+                    'warning')
+            else:
+                discount = min(chain * 10, 50)  # 10% per chain, max 50%
+                new_price = max(1, int(original_price * (100 - discount) / 100))
+                m.prices[sel] = new_price
+                self.add_message(
+                    f"The merchant relents! {iname}: {original_price} -> {new_price} gold ({discount}% off).",
+                    'success')
+            haggled = getattr(self, '_shop_haggled', set())
+            haggled.add(sel)
+            self._shop_haggled = haggled
+            self.state = STATE_SHOP
+
+        self.quiz_engine.start_quiz(
+            mode='escalator_chain',
+            subject='economics',
+            tier=1,
+            callback=on_complete,
+            max_chain=5,
+            wisdom=self.player.WIS,
+            timer_modifier=self.player.get_quiz_timer_modifier(),
+            extra_seconds=self.player.get_quiz_extra_seconds('economics'),
+            base_seconds=self.player.get_quiz_timer('economics'),
+        )
 
     def _draw_shop(self):
         """Draw the merchant shop overlay."""
@@ -15516,11 +15568,13 @@ class Game:
             empty_s = self.font_md.render("Sold out!", True, FP.FADED_TEXT)
             self.screen.blit(empty_s, (cx - empty_s.get_width() // 2, row_y))
         else:
+            haggled = getattr(self, '_shop_haggled', set())
             for i, (item, price) in enumerate(zip(stock, m.prices)):
                 is_sel = (i == sel)
                 iname  = getattr(item, 'name', '?')
                 wt     = getattr(item, 'weight', 0)
-                line   = f"  {iname}  (wt:{wt:.1f})   {price} gold"
+                tag    = " [haggled]" if i in haggled else ""
+                line   = f"  {iname}  (wt:{wt:.1f})   {price} gold{tag}"
                 fg     = FP.PARCHMENT_LIGHT if is_sel else FP.BODY_TEXT
                 bg_col = (60, 50, 20, 180) if is_sel else None
                 if bg_col:
@@ -15534,7 +15588,7 @@ class Game:
                 row_y += row_h
 
         draw_filigree_bar(self.screen, cx - 280, row_y + 8, 560, FP.GOLD_DARK)
-        hint = self.font_sm.render("^v navigate   ENTER buy   ESC close", True, FP.HINT_TEXT)
+        hint = self.font_sm.render("^v navigate   ENTER buy   H haggle   ESC close", True, FP.HINT_TEXT)
         self.screen.blit(hint, (cx - hint.get_width() // 2, row_y + 16))
 
     # ------------------------------------------------------------------
