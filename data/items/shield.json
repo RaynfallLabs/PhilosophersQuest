@@ -67,7 +67,7 @@
     "tier": 2,
     "material": "iron",
     "ac_bonus": 2,
-    "equip_threshold": 3,
+    "equip_threshold": 2,
     "quiz_tier": 2,
     "damage_resistances": {},
     "can_be_cursed": true,
@@ -95,7 +95,7 @@
     "tier": 2,
     "material": "bronze",
     "ac_bonus": 2,
-    "equip_threshold": 3,
+    "equip_threshold": 2,
     "quiz_tier": 2,
     "damage_resistances": {
       "pierce": 0.9
@@ -125,7 +125,7 @@
     "tier": 3,
     "material": "steel",
     "ac_bonus": 2,
-    "equip_threshold": 3,
+    "equip_threshold": 2,
     "quiz_tier": 3,
     "damage_resistances": {
       "slash": 0.95
@@ -154,7 +154,7 @@
     "tier": 3,
     "material": "mithril",
     "ac_bonus": 3,
-    "equip_threshold": 3,
+    "equip_threshold": 2,
     "quiz_tier": 3,
     "damage_resistances": {
       "lightning": 0.8
@@ -183,7 +183,7 @@
     "tier": 4,
     "material": "crystal",
     "ac_bonus": 3,
-    "equip_threshold": 4,
+    "equip_threshold": 2,
     "quiz_tier": 4,
     "damage_resistances": {
       "magic": 0.85
@@ -211,7 +211,7 @@
     "tier": 4,
     "material": "obsidian",
     "ac_bonus": 3,
-    "equip_threshold": 4,
+    "equip_threshold": 2,
     "quiz_tier": 4,
     "damage_resistances": {
       "magic": 0.88,
@@ -240,7 +240,7 @@
     "tier": 5,
     "material": "dragonscale",
     "ac_bonus": 4,
-    "equip_threshold": 5,
+    "equip_threshold": 2,
     "quiz_tier": 5,
     "damage_resistances": {
       "fire": 0.5
@@ -267,7 +267,7 @@
     "tier": 5,
     "material": "adamantine",
     "ac_bonus": 4,
-    "equip_threshold": 5,
+    "equip_threshold": 2,
     "quiz_tier": 5,
     "damage_resistances": {
       "blunt": 0.8
@@ -295,7 +295,7 @@
     "material": "adamantine",
     "ac_bonus": 5,
     "enchant_bonus": 0,
-    "equip_threshold": 5,
+    "equip_threshold": 3,
     "quiz_tier": 5,
     "damage_resistances": {
       "fire": 0.35,
@@ -327,7 +327,7 @@
     "material": "adamantine",
     "ac_bonus": 4,
     "enchant_bonus": 0,
-    "equip_threshold": 5,
+    "equip_threshold": 2,
     "quiz_tier": 5,
     "damage_resistances": {
       "fire": 0.55,
@@ -358,7 +358,7 @@
     "material": "adamantine",
     "ac_bonus": 4,
     "enchant_bonus": 0,
-    "equip_threshold": 5,
+    "equip_threshold": 2,
     "quiz_tier": 5,
     "damage_resistances": {
       "magic": 0.4,
@@ -389,7 +389,7 @@
     "material": "adamantine",
     "ac_bonus": 6,
     "enchant_bonus": 0,
-    "equip_threshold": 5,
+    "equip_threshold": 3,
     "quiz_tier": 5,
     "damage_resistances": {
       "slash": 0.25,
@@ -420,7 +420,7 @@
     "material": "adamantine",
     "ac_bonus": 5,
     "enchant_bonus": 0,
-    "equip_threshold": 5,
+    "equip_threshold": 3,
     "quiz_tier": 5,
     "damage_resistances": {
       "slash": 0.2,
@@ -451,7 +451,7 @@
     "tier": 2,
     "material": "bronze",
     "ac_bonus": 3,
-    "equip_threshold": 3,
+    "equip_threshold": 2,
     "quiz_tier": 2,
     "damage_resistances": {
       "blunt": 0.75,
@@ -500,7 +500,7 @@
     "tier": 4,
     "material": "steel",
     "ac_bonus": 4,
-    "equip_threshold": 3,
+    "equip_threshold": 2,
     "quiz_tier": 3,
     "damage_resistances": {},
     "can_be_cursed": false,
@@ -522,7 +522,7 @@
     "tier": 2,
     "material": "bronze",
     "ac_bonus": 3,
-    "equip_threshold": 2,
+    "equip_threshold": 3,
     "quiz_tier": 2,
     "damage_resistances": {
       "pierce": 0.15
