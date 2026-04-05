@@ -61,6 +61,12 @@ class LevelManager:
         # Populate hidden chambers with themed monsters/items
         _populate_hidden_chambers(dungeon, monsters, items, level_num)
 
+        # Bones: chance to spawn a ghost from a previous player's death
+        from bones import load_bones, spawn_ghost
+        bones = load_bones(level_num)
+        if bones:
+            spawn_ghost(bones, dungeon, monsters, items)
+
         if level_num == STONE_LEVEL:
             stone = _place_stone(dungeon, items)
             if stone:

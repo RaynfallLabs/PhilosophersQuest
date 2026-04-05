@@ -1801,6 +1801,11 @@ class Game:
         }
         if new_level in _MILESTONE_FLAVOR:
             self._log_chronicle(_MILESTONE_FLAVOR[new_level])
+        # Bones ghost notification
+        ghost_name = getattr(dungeon, 'bones_ghost_name', None)
+        if ghost_name:
+            self.add_message(f"You sense a restless presence... the {ghost_name} haunts this floor.", 'danger')
+            self._log_chronicle(f"Encountered the {ghost_name}. A chill ran through me.")
         self.renderer.set_dungeon(dungeon.width, dungeon.height, GAME_W, GAME_H)
 
         # Spawn trigger items and NPCs for moral encounters (only on first visit)
@@ -2239,6 +2244,10 @@ class Game:
             return True
 
         if key == pygame.K_ESCAPE:
+            if self.state == STATE_QUIZ:
+                # Cancel the active quiz — treat as chain-0 failure
+                self.quiz_engine._end(success=False)
+                return True
             if self.state in (STATE_EQUIP_MENU, STATE_ACCESSORY_MENU,
                               STATE_WAND_MENU, STATE_SCROLL_MENU,
                               STATE_IDENTIFY_MENU, STATE_COOK_MENU,
@@ -3156,8 +3165,13 @@ class Game:
             self._show_story_popup('exit_without_stone', STATE_DEAD)
 
     def _on_game_over(self):
-        """Delete save file on any game-ending event (permadeath)."""
+        """Delete save file on any game-ending event (permadeath).
+        Save bones file so ghost can haunt future runs."""
         from save_system import delete_save
+        from bones import save_bones
+        save_bones(self.player_name, self.dungeon_level,
+                   getattr(self, 'defeat_reason', 'died'),
+                   self.player, getattr(self, 'player_gold', 0))
         delete_save(self.player_name)
         _snd.play('death')
 
