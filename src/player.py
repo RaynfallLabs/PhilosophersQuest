@@ -464,8 +464,14 @@ class Player:
             if not ok:
                 return
             if old:
+                old_status = getattr(old, 'on_equip_status', '')
+                if old_status:
+                    self.status_effects.pop(old_status, None)
                 self.inventory.append(old)
             self.shield = item
+            new_status = getattr(item, 'on_equip_status', '')
+            if new_status:
+                self.add_effect(new_status, -1)
         elif isinstance(item, Accessory):
             if getattr(item, 'slot', 'ring') == 'none':
                 return  # carry-only items cannot be equipped

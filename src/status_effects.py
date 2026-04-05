@@ -125,6 +125,11 @@ _ORGANIC = frozenset({
 })
 # Organic materials don't rust but CAN be damaged by acid
 # Rustproof materials are immune to both rust AND acid
+_FLAMMABLE = frozenset({
+    'cloth', 'leather', 'hide', 'fur', 'silk', 'linen', 'wool', 'padded',
+    'enchanted cloth', 'wood', 'hardwood', 'yew', 'bone',
+})
+# Flammable materials degrade when burning. Ironwood and fang excluded (fire-resistant).
 
 
 def _can_corrode(item) -> bool:
@@ -140,6 +145,37 @@ def _can_rust(item) -> bool:
     if mat in _ORGANIC:
         return False  # organic materials don't rust
     return True  # iron, steel, bronze, gold, etc. can rust
+
+
+def _can_scorch(item) -> bool:
+    """Return True if an item can be damaged by fire (flammable materials)."""
+    mat = getattr(item, 'material', '')
+    if mat in _RUSTPROOF:
+        return False
+    return mat in _FLAMMABLE
+
+
+def _scorch_random_gear(player) -> tuple[str, str] | None:
+    """Fire scorches one random equipped flammable item. Returns a message or None."""
+    import random
+    targets = []
+    if player.weapon and _can_scorch(player.weapon):
+        targets.append(('weapon', player.weapon))
+    if player.shield and _can_scorch(player.shield):
+        targets.append(('shield', player.shield))
+    for i, slot in enumerate(player.armor_slots):
+        if slot and _can_scorch(slot):
+            targets.append((f'armor_{i}', slot))
+    if not targets:
+        return None
+    if random.random() > 0.20:
+        return None
+    _, item = random.choice(targets)
+    eb = getattr(item, 'enchant_bonus', 0)
+    if eb > -3:
+        item.enchant_bonus = eb - 1
+        return (f'Fire scorches your {item.name}! (-1 enchantment)', 'danger')
+    return (f'Fire licks at your {item.name}, but it holds.', 'warning')
 
 
 def _corrode_random_gear(player) -> tuple[str, str] | None:
@@ -330,6 +366,9 @@ def tick_all(player, dungeon=None) -> list[tuple[str, str]]:
                 dmg = player.take_damage(1, 'fire')
                 if dmg:
                     messages.append(('You are on fire!', 'danger'))
+                scorch = _scorch_random_gear(player)
+                if scorch:
+                    messages.append(scorch)
 
         elif effect == 'corroding':
             # Acid eats at a random equipped metal item each turn

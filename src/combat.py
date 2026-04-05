@@ -10,7 +10,15 @@ def _damage_multiplier(damage_types: list[str], monster) -> float:
     """Return 0.5 for resistance, 1.5 for weakness, 1.0 otherwise.
     If weapon has multiple types, pick the best result across all types."""
     resistances = getattr(monster, 'resistances', [])
-    weaknesses  = getattr(monster, 'weaknesses', [])
+    weaknesses  = list(getattr(monster, 'weaknesses', []))
+    # Systemic material bonuses based on monster tags
+    tags = getattr(monster, 'tags', [])
+    if any(t in ('undead', 'demon') for t in tags):
+        if 'silver' not in weaknesses:
+            weaknesses.append('silver')
+    if 'fey' in tags:
+        if 'iron' not in weaknesses:
+            weaknesses.append('iron')
     mults = []
     for dt in damage_types:
         if dt in weaknesses:
@@ -82,6 +90,9 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
             mat = getattr(weapon, 'material', '').lower()
             if mat and mat not in dtypes:
                 dtypes.append(mat)
+            # Blessed weapons deal holy damage (effective vs undead/demons)
+            if getattr(weapon, 'buc', 'uncursed') == 'blessed' and 'holy' not in dtypes:
+                dtypes.append('holy')
             dtype_mult = _damage_multiplier(dtypes, monster)
 
         # Shield bypass: ignore_shield weapons deal full damage through monster's shielded effect

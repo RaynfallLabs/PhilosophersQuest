@@ -39,6 +39,8 @@ class Monster:
         # Resistances and weaknesses (damage type strings)
         self.resistances: list[str] = defn.get('resistances', [])
         self.weaknesses:  list[str] = defn.get('weaknesses', [])
+        # Tags for systemic material interactions (undead, demon, fey, etc.)
+        self.tags: list[str] = defn.get('tags', [])
 
         # Treasure drop definition
         self.treasure: dict = defn.get('treasure', {'gold': [0, 0], 'item_chance': 0.0, 'item_tier': 1})

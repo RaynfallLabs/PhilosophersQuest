@@ -22,6 +22,9 @@
     ],
     "resistances": [],
     "weaknesses": [],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
     "ingredient_id": "rat_meat",
@@ -60,6 +63,9 @@
     ],
     "resistances": [],
     "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 1,
     "harvest_threshold": 3,
     "ingredient_id": "goblin_flesh",
@@ -169,6 +175,9 @@
     ],
     "resistances": [],
     "weaknesses": [],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
     "ingredient_id": "bat_wing",
@@ -212,6 +221,9 @@
       "poison"
     ],
     "weaknesses": [],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
     "ingredient_id": "snake_meat",
@@ -251,7 +263,12 @@
       }
     ],
     "resistances": [],
-    "weaknesses": [],
+    "weaknesses": [
+      "holy"
+    ],
+    "tags": [
+      "undead"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 4,
     "ingredient_id": "zombie_flesh",
@@ -355,6 +372,9 @@
     "weaknesses": [
       "fire",
       "holy"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
@@ -514,6 +534,9 @@
       "fire",
       "holy"
     ],
+    "tags": [
+      "demon"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
     "ingredient_id": "changeling_glamour",
@@ -553,6 +576,9 @@
     ],
     "resistances": [],
     "weaknesses": [],
+    "tags": [
+      "fey"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
     "ingredient_id": "lucky_clover",
@@ -590,6 +616,9 @@
     ],
     "resistances": [],
     "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
     "ingredient_id": "kobold_scale",
@@ -633,6 +662,9 @@
       "poison"
     ],
     "weaknesses": [],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
     "ingredient_id": "spider_silk",
@@ -674,7 +706,11 @@
       "cold"
     ],
     "weaknesses": [
-      "slash"
+      "slash",
+      "holy"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -719,6 +755,9 @@
       "fire"
     ],
     "weaknesses": [],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
     "ingredient_id": "fire_gland",
@@ -756,6 +795,9 @@
     ],
     "resistances": [],
     "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
     "ingredient_id": "orc_blood",
@@ -793,6 +835,9 @@
     ],
     "resistances": [],
     "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
     "ingredient_id": "gnoll_hide",
@@ -830,6 +875,9 @@
     ],
     "resistances": [],
     "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
     "ingredient_id": "hobgoblin_blood",
@@ -878,7 +926,12 @@
       "poison",
       "drain"
     ],
-    "weaknesses": [],
+    "weaknesses": [
+      "holy"
+    ],
+    "tags": [
+      "undead"
+    ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
     "ingredient_id": "ghast_ichor",
@@ -919,6 +972,9 @@
     ],
     "resistances": [],
     "weaknesses": [],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
     "ingredient_id": "rat_meat",
@@ -1010,6 +1066,9 @@
       "fire",
       "acid"
     ],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
     "ingredient_id": "troll_hide",
@@ -1048,6 +1107,9 @@
     ],
     "resistances": [],
     "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 2,
     "ingredient_id": "orc_blood",
@@ -1088,6 +1150,9 @@
     ],
     "resistances": [],
     "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
     "ingredient_id": "drow_poison_extract",
@@ -1133,7 +1198,11 @@
       "drain"
     ],
     "weaknesses": [
-      "fire"
+      "fire",
+      "holy"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -1217,6 +1286,9 @@
     ],
     "resistances": [],
     "weaknesses": [],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 2,
     "ingredient_id": "bear_meat",
@@ -1255,6 +1327,9 @@
     "resistances": [],
     "weaknesses": [
       "slash"
+    ],
+    "tags": [
+      "humanoid"
     ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
@@ -1302,7 +1377,11 @@
       "drain"
     ],
     "weaknesses": [
-      "fire"
+      "fire",
+      "holy"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -1356,7 +1435,11 @@
       "poison"
     ],
     "weaknesses": [
-      "fire"
+      "fire",
+      "holy"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -1408,6 +1491,9 @@
       "poison"
     ],
     "weaknesses": [],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
     "ingredient_id": "spider_silk",
@@ -1452,6 +1538,9 @@
     "weaknesses": [
       "slash",
       "pierce"
+    ],
+    "tags": [
+      "humanoid"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -1503,6 +1592,9 @@
     ],
     "resistances": [],
     "weaknesses": [],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
     "ingredient_id": "manticore_spine",
@@ -1558,7 +1650,11 @@
       "drain"
     ],
     "weaknesses": [
-      "fire"
+      "fire",
+      "holy"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -1607,6 +1703,9 @@
       "poison"
     ],
     "weaknesses": [],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
     "ingredient_id": "basilisk_stone",
@@ -1665,6 +1764,9 @@
       "fire"
     ],
     "weaknesses": [],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 2,
     "ingredient_id": "chimera_heart",
@@ -1708,6 +1810,9 @@
     "resistances": [],
     "weaknesses": [
       "slash"
+    ],
+    "tags": [
+      "humanoid"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -1757,6 +1862,9 @@
     ],
     "weaknesses": [
       "fire"
+    ],
+    "tags": [
+      "beast"
     ],
     "harvest_tier": 2,
     "harvest_threshold": 2,
@@ -1808,6 +1916,9 @@
       "poison"
     ],
     "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 5,
     "ingredient_id": "medusa_blood",
@@ -1866,7 +1977,11 @@
       "drain"
     ],
     "weaknesses": [
-      "fire"
+      "fire",
+      "holy"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -1914,6 +2029,9 @@
     "weaknesses": [
       "cold"
     ],
+    "tags": [
+      "elemental"
+    ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
     "ingredient_id": "ember_ash",
@@ -1957,6 +2075,9 @@
     ],
     "weaknesses": [
       "acid"
+    ],
+    "tags": [
+      "elemental"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -2002,6 +2123,9 @@
     ],
     "weaknesses": [
       "blunt"
+    ],
+    "tags": [
+      "elemental"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -2050,7 +2174,11 @@
       "drain"
     ],
     "weaknesses": [
-      "fire"
+      "fire",
+      "holy"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -2101,6 +2229,9 @@
       "drain"
     ],
     "weaknesses": [],
+    "tags": [
+      "aberration"
+    ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
     "ingredient_id": "cerebral_fluid",
@@ -2155,7 +2286,11 @@
       "drain"
     ],
     "weaknesses": [
-      "fire"
+      "fire",
+      "holy"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -2206,7 +2341,11 @@
       "drain"
     ],
     "weaknesses": [
-      "fire"
+      "fire",
+      "holy"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -2253,6 +2392,9 @@
       "slash",
       "fire"
     ],
+    "tags": [
+      "construct"
+    ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
     "ingredient_id": "guardian_bone",
@@ -2298,7 +2440,11 @@
       "poison"
     ],
     "weaknesses": [
-      "cold"
+      "cold",
+      "holy"
+    ],
+    "tags": [
+      "demon"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -2362,6 +2508,9 @@
     ],
     "weaknesses": [
       "cold"
+    ],
+    "tags": [
+      "dragon"
     ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
@@ -2442,6 +2591,9 @@
     "weaknesses": [
       "physical"
     ],
+    "tags": [
+      "aberration"
+    ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
     "ingredient_id": "eyestalk",
@@ -2494,7 +2646,11 @@
       "drain"
     ],
     "weaknesses": [
-      "fire"
+      "fire",
+      "holy"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -2553,7 +2709,11 @@
       "drain"
     ],
     "weaknesses": [
-      "fire"
+      "fire",
+      "holy"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -2610,6 +2770,9 @@
     "weaknesses": [
       "cold"
     ],
+    "tags": [
+      "dragon"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 5,
     "ingredient_id": "dragon_scale",
@@ -2656,6 +2819,9 @@
     ],
     "weaknesses": [
       "acid"
+    ],
+    "tags": [
+      "construct"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -2710,7 +2876,11 @@
       "drain"
     ],
     "weaknesses": [
-      "fire"
+      "fire",
+      "holy"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -2760,7 +2930,11 @@
       "poison"
     ],
     "weaknesses": [
-      "cold"
+      "cold",
+      "holy"
+    ],
+    "tags": [
+      "demon"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -2834,6 +3008,9 @@
     "weaknesses": [
       "fire"
     ],
+    "tags": [
+      "dragon"
+    ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
     "ingredient_id": "dragon_scale",
@@ -2897,7 +3074,12 @@
       "lightning",
       "drain"
     ],
-    "weaknesses": [],
+    "weaknesses": [
+      "holy"
+    ],
+    "tags": [
+      "undead"
+    ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
     "ingredient_id": "death_essence",
@@ -2961,7 +3143,11 @@
       "drain"
     ],
     "weaknesses": [
-      "fire"
+      "fire",
+      "holy"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -3012,6 +3198,9 @@
       "drain"
     ],
     "weaknesses": [],
+    "tags": [
+      "aberration"
+    ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
     "ingredient_id": "chaos_essence",
@@ -3069,7 +3258,11 @@
       "drain"
     ],
     "weaknesses": [
-      "acid"
+      "acid",
+      "holy"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -3110,6 +3303,9 @@
       "magic"
     ],
     "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 2,
     "ingredient_id": "shaman_totem",
@@ -3154,6 +3350,9 @@
       "poison"
     ],
     "weaknesses": [],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
     "ingredient_id": "insect_carapace",
@@ -3195,6 +3394,9 @@
     ],
     "weaknesses": [
       "holy"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 3,
@@ -3242,6 +3444,9 @@
     "weaknesses": [
       "fire"
     ],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 2,
     "ingredient_id": "frog_legs",
@@ -3284,6 +3489,9 @@
     ],
     "resistances": [],
     "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 2,
     "ingredient_id": "battle_ration",
@@ -3331,6 +3539,9 @@
     "weaknesses": [
       "holy",
       "fire"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
@@ -3380,6 +3591,9 @@
     "weaknesses": [
       "fire",
       "holy"
+    ],
+    "tags": [
+      "construct"
     ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
@@ -3433,6 +3647,9 @@
     "weaknesses": [
       "cold"
     ],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 2,
     "ingredient_id": "hollow_bone",
@@ -3479,6 +3696,9 @@
     ],
     "weaknesses": [
       "holy"
+    ],
+    "tags": [
+      "humanoid"
     ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
@@ -3530,6 +3750,9 @@
     "weaknesses": [
       "lightning"
     ],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
     "ingredient_id": "bronze_feather",
@@ -3575,6 +3798,9 @@
     ],
     "resistances": [],
     "weaknesses": [],
+    "tags": [
+      "fey"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 2,
     "ingredient_id": "satyr_horn",
@@ -3625,6 +3851,9 @@
     ],
     "weaknesses": [
       "holy"
+    ],
+    "tags": [
+      "demon"
     ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
@@ -3677,6 +3906,10 @@
       "holy",
       "fire"
     ],
+    "tags": [
+      "undead",
+      "beast"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
     "ingredient_id": "shadow_fur",
@@ -3726,6 +3959,9 @@
     "weaknesses": [
       "fire",
       "holy"
+    ],
+    "tags": [
+      "humanoid"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
@@ -3783,6 +4019,9 @@
     "weaknesses": [
       "lightning"
     ],
+    "tags": [
+      "construct"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
     "ingredient_id": "bronze_hide_strip",
@@ -3834,6 +4073,9 @@
       "lightning",
       "magic"
     ],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
     "ingredient_id": "cyclops_eye",
@@ -3882,6 +4124,9 @@
       "poison"
     ],
     "weaknesses": [],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
     "ingredient_id": "sphinx_mane",
@@ -3928,6 +4173,9 @@
     "weaknesses": [
       "shadow"
     ],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
     "ingredient_id": "griffin_feather",
@@ -3973,6 +4221,10 @@
     ],
     "weaknesses": [
       "shadow"
+    ],
+    "tags": [
+      "celestial",
+      "beast"
     ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
@@ -4024,6 +4276,9 @@
     ],
     "weaknesses": [
       "fire"
+    ],
+    "tags": [
+      "beast"
     ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
@@ -4086,6 +4341,9 @@
     "weaknesses": [
       "holy"
     ],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
     "ingredient_id": "cerberus_saliva",
@@ -4137,6 +4395,9 @@
       "fire",
       "lightning"
     ],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
     "ingredient_id": "scylla_fang",
@@ -4181,6 +4442,9 @@
     ],
     "weaknesses": [
       "lightning"
+    ],
+    "tags": [
+      "beast"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
@@ -4234,6 +4498,9 @@
       "holy",
       "lightning"
     ],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
     "ingredient_id": "titan_essence",
@@ -4284,6 +4551,9 @@
     "weaknesses": [
       "fire"
     ],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
     "ingredient_id": "frost_giant_bone",
@@ -4333,6 +4603,9 @@
     ],
     "weaknesses": [
       "cold"
+    ],
+    "tags": [
+      "humanoid"
     ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
@@ -4387,6 +4660,9 @@
       "holy",
       "fire"
     ],
+    "tags": [
+      "undead"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
     "ingredient_id": "spectral_essence",
@@ -4430,6 +4706,9 @@
     ],
     "weaknesses": [
       "holy"
+    ],
+    "tags": [
+      "beast"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
@@ -4484,6 +4763,9 @@
     "weaknesses": [
       "lightning"
     ],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
     "ingredient_id": "world_serpent_scale",
@@ -4536,6 +4818,9 @@
       "fire",
       "holy"
     ],
+    "tags": [
+      "undead"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 2,
     "ingredient_id": "grave_dust",
@@ -4586,6 +4871,9 @@
     ],
     "weaknesses": [
       "holy"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
@@ -4639,6 +4927,9 @@
       "holy",
       "fire"
     ],
+    "tags": [
+      "dragon"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
     "ingredient_id": "corruption_scale",
@@ -4680,6 +4971,9 @@
     "resistances": [],
     "weaknesses": [
       "lightning"
+    ],
+    "tags": [
+      "beast"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -4734,6 +5028,9 @@
     "weaknesses": [
       "fire"
     ],
+    "tags": [
+      "dragon"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
     "ingredient_id": "lindworm_skin",
@@ -4782,7 +5079,11 @@
     ],
     "weaknesses": [
       "cold",
-      "magic"
+      "magic",
+      "holy"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
@@ -4833,6 +5134,9 @@
     ],
     "weaknesses": [
       "shadow"
+    ],
+    "tags": [
+      "fey"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
@@ -4888,6 +5192,9 @@
       "fire",
       "lightning"
     ],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
     "ingredient_id": "sea_serpent_oil",
@@ -4937,6 +5244,9 @@
       "poison"
     ],
     "weaknesses": [],
+    "tags": [
+      "construct"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
     "ingredient_id": "embalming_resin",
@@ -4988,6 +5298,9 @@
       "cold",
       "shadow"
     ],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
     "ingredient_id": "solar_venom",
@@ -5032,6 +5345,9 @@
     "weaknesses": [
       "fire",
       "cold"
+    ],
+    "tags": [
+      "beast"
     ],
     "harvest_tier": 2,
     "harvest_threshold": 2,
@@ -5085,6 +5401,9 @@
     "weaknesses": [
       "shadow"
     ],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
     "ingredient_id": "sphinx_dust_gold",
@@ -5135,6 +5454,9 @@
     ],
     "weaknesses": [
       "holy"
+    ],
+    "tags": [
+      "beast"
     ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
@@ -5187,6 +5509,9 @@
       "lightning",
       "cold"
     ],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
     "ingredient_id": "crocodile_hide",
@@ -5238,6 +5563,9 @@
     "weaknesses": [
       "holy"
     ],
+    "tags": [
+      "undead"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
     "ingredient_id": "spectral_essence",
@@ -5287,6 +5615,9 @@
     "weaknesses": [
       "cold",
       "shadow"
+    ],
+    "tags": [
+      "beast"
     ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
@@ -5338,6 +5669,9 @@
     "weaknesses": [
       "shadow"
     ],
+    "tags": [
+      "construct"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
     "ingredient_id": "thoth_ink",
@@ -5383,6 +5717,9 @@
     "weaknesses": [
       "holy",
       "fire"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
@@ -5434,7 +5771,11 @@
     ],
     "weaknesses": [
       "cold",
-      "lightning"
+      "lightning",
+      "holy"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
@@ -5488,6 +5829,10 @@
       "holy",
       "fire"
     ],
+    "tags": [
+      "undead",
+      "fey"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
     "ingredient_id": "soul_fragment",
@@ -5538,6 +5883,9 @@
     "weaknesses": [
       "holy",
       "lightning"
+    ],
+    "tags": [
+      "humanoid"
     ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
@@ -5590,6 +5938,9 @@
       "holy",
       "fire"
     ],
+    "tags": [
+      "fey"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
     "ingredient_id": "changeling_glamour",
@@ -5641,6 +5992,9 @@
       "fire",
       "lightning"
     ],
+    "tags": [
+      "fey"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
     "ingredient_id": "each_uisce_mane",
@@ -5691,6 +6045,9 @@
     "weaknesses": [
       "holy"
     ],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
     "ingredient_id": "cath_palug_claw",
@@ -5740,6 +6097,9 @@
     "weaknesses": [
       "shadow"
     ],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
     "ingredient_id": "hero_hound_pelt",
@@ -5783,6 +6143,9 @@
     ],
     "weaknesses": [
       "holy"
+    ],
+    "tags": [
+      "fey"
     ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
@@ -5839,6 +6202,10 @@
       "holy",
       "lightning"
     ],
+    "tags": [
+      "undead",
+      "fey"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 5,
     "ingredient_id": "hollow_bone",
@@ -5892,6 +6259,9 @@
       "holy",
       "fire"
     ],
+    "tags": [
+      "undead"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
     "ingredient_id": "death_essence",
@@ -5944,6 +6314,9 @@
       "holy",
       "cold"
     ],
+    "tags": [
+      "demon"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
     "ingredient_id": "demon_ichor",
@@ -5995,6 +6368,9 @@
     "weaknesses": [
       "lightning",
       "holy"
+    ],
+    "tags": [
+      "aberration"
     ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
@@ -6049,6 +6425,9 @@
       "cold",
       "shadow"
     ],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
     "ingredient_id": "anzu_feather",
@@ -6100,6 +6479,9 @@
       "holy",
       "lightning"
     ],
+    "tags": [
+      "demon"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
     "ingredient_id": "ugallu_claw",
@@ -6149,6 +6531,9 @@
     "weaknesses": [
       "magic",
       "lightning"
+    ],
+    "tags": [
+      "humanoid"
     ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
@@ -6205,6 +6590,9 @@
       "magic"
     ],
     "weaknesses": [],
+    "tags": [
+      "aberration"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
     "ingredient_id": "eyestalk",
@@ -6260,6 +6648,9 @@
       "drain"
     ],
     "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 5,
     "ingredient_id": "cerebral_fluid",
@@ -6313,6 +6704,9 @@
     "weaknesses": [
       "fire"
     ],
+    "tags": [
+      "aberration"
+    ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
     "ingredient_id": "aboleth_mucus",
@@ -6364,6 +6758,9 @@
       "fire",
       "cold"
     ],
+    "tags": [
+      "aberration"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
     "ingredient_id": "mouther_ichor",
@@ -6412,6 +6809,9 @@
       "drain"
     ],
     "weaknesses": [],
+    "tags": [
+      "aberration"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
     "ingredient_id": "brain_lobe",
@@ -6458,6 +6858,9 @@
     "resistances": [],
     "weaknesses": [
       "holy"
+    ],
+    "tags": [
+      "aberration"
     ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
@@ -6506,6 +6909,9 @@
       "lightning"
     ],
     "weaknesses": [],
+    "tags": [
+      "aberration"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
     "ingredient_id": "grell_tentacle",
@@ -6552,6 +6958,9 @@
     "resistances": [],
     "weaknesses": [
       "holy"
+    ],
+    "tags": [
+      "aberration"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
@@ -6604,6 +7013,9 @@
     "weaknesses": [
       "fire",
       "holy"
+    ],
+    "tags": [
+      "aberration"
     ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
@@ -6662,6 +7074,9 @@
       "cold",
       "holy"
     ],
+    "tags": [
+      "demon"
+    ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
     "ingredient_id": "demon_ichor",
@@ -6717,6 +7132,9 @@
     "weaknesses": [
       "cold",
       "holy"
+    ],
+    "tags": [
+      "demon"
     ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
@@ -6776,6 +7194,9 @@
       "holy",
       "cold"
     ],
+    "tags": [
+      "demon"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
     "ingredient_id": "vrock_feather",
@@ -6825,6 +7246,9 @@
     ],
     "weaknesses": [
       "holy"
+    ],
+    "tags": [
+      "demon"
     ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
@@ -6883,6 +7307,9 @@
       "holy",
       "cold"
     ],
+    "tags": [
+      "demon"
+    ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
     "ingredient_id": "chaos_essence",
@@ -6939,6 +7366,9 @@
     "weaknesses": [
       "holy"
     ],
+    "tags": [
+      "demon"
+    ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
     "ingredient_id": "demon_heart",
@@ -6989,6 +7419,9 @@
     "weaknesses": [
       "holy",
       "cold"
+    ],
+    "tags": [
+      "demon"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -7046,6 +7479,9 @@
     "weaknesses": [
       "holy"
     ],
+    "tags": [
+      "demon"
+    ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
     "ingredient_id": "dretch_gland",
@@ -7094,6 +7530,9 @@
     "weaknesses": [
       "holy",
       "fire"
+    ],
+    "tags": [
+      "demon"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
@@ -7152,6 +7591,9 @@
     "weaknesses": [
       "holy"
     ],
+    "tags": [
+      "demon"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
     "ingredient_id": "infernal_perfume",
@@ -7209,6 +7651,9 @@
     "weaknesses": [
       "holy"
     ],
+    "tags": [
+      "demon"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
     "ingredient_id": "infernal_perfume",
@@ -7259,6 +7704,9 @@
     "weaknesses": [
       "holy"
     ],
+    "tags": [
+      "demon"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 2,
     "ingredient_id": "demon_claw",
@@ -7306,6 +7754,9 @@
     "weaknesses": [
       "holy",
       "cold"
+    ],
+    "tags": [
+      "demon"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -7362,6 +7813,9 @@
       "holy",
       "fire"
     ],
+    "tags": [
+      "demon"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
     "ingredient_id": "devil_chain_link",
@@ -7415,6 +7869,9 @@
     ],
     "weaknesses": [
       "holy"
+    ],
+    "tags": [
+      "demon"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
@@ -7472,6 +7929,9 @@
     "weaknesses": [
       "holy"
     ],
+    "tags": [
+      "demon"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
     "ingredient_id": "devil_barb",
@@ -7528,6 +7988,9 @@
     "weaknesses": [
       "holy"
     ],
+    "tags": [
+      "demon"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
     "ingredient_id": "devil_venom",
@@ -7582,6 +8045,9 @@
     "weaknesses": [
       "holy"
     ],
+    "tags": [
+      "demon"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
     "ingredient_id": "erinyes_feather",
@@ -7628,6 +8094,9 @@
     "weaknesses": [
       "holy"
     ],
+    "tags": [
+      "demon"
+    ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
     "ingredient_id": "imp_stinger",
@@ -7670,6 +8139,9 @@
     ],
     "weaknesses": [
       "holy"
+    ],
+    "tags": [
+      "demon"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -7741,6 +8213,9 @@
     "weaknesses": [
       "holy"
     ],
+    "tags": [
+      "demon"
+    ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
     "ingredient_id": "pit_fiend_scale",
@@ -7793,6 +8268,9 @@
     "weaknesses": [
       "lightning"
     ],
+    "tags": [
+      "construct"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 5,
     "ingredient_id": "golem_stone",
@@ -7840,6 +8318,9 @@
       "fire",
       "lightning"
     ],
+    "tags": [
+      "construct"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
     "ingredient_id": "enchanted_clay",
@@ -7881,6 +8362,9 @@
     ],
     "weaknesses": [
       "fire"
+    ],
+    "tags": [
+      "construct"
     ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
@@ -7933,6 +8417,9 @@
       "lightning",
       "magic"
     ],
+    "tags": [
+      "construct"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
     "ingredient_id": "enchanted_plate",
@@ -7976,6 +8463,9 @@
     "weaknesses": [
       "lightning"
     ],
+    "tags": [
+      "construct"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
     "ingredient_id": "shield_core",
@@ -8018,6 +8508,9 @@
       "poison"
     ],
     "weaknesses": [],
+    "tags": [
+      "construct"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
     "ingredient_id": "homunculus_blood",
@@ -8065,6 +8558,9 @@
     "weaknesses": [
       "lightning",
       "magic"
+    ],
+    "tags": [
+      "construct"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
@@ -8115,6 +8611,9 @@
       "magic"
     ],
     "weaknesses": [],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
     "ingredient_id": "displacer_hide",
@@ -8162,6 +8661,9 @@
     ],
     "resistances": [],
     "weaknesses": [],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
     "ingredient_id": "owlbear_feather",
@@ -8513,6 +9015,9 @@
     "weaknesses": [
       "fire"
     ],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
     "ingredient_id": "paralytic_venom",
@@ -8554,6 +9059,9 @@
     "resistances": [],
     "weaknesses": [
       "fire"
+    ],
+    "tags": [
+      "beast"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -8652,6 +9160,9 @@
       "lightning",
       "magic"
     ],
+    "tags": [
+      "elemental"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
     "ingredient_id": "mineral_shard",
@@ -8694,6 +9205,9 @@
     ],
     "resistances": [],
     "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
     "ingredient_id": "pack_lord_skull",
@@ -8737,6 +9251,9 @@
     "resistances": [],
     "weaknesses": [
       "cold"
+    ],
+    "tags": [
+      "humanoid"
     ],
     "harvest_tier": 2,
     "harvest_threshold": 2,
@@ -8787,6 +9304,9 @@
     "weaknesses": [
       "cold"
     ],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
     "ingredient_id": "shaman_totem",
@@ -8830,6 +9350,9 @@
     "resistances": [],
     "weaknesses": [
       "fire"
+    ],
+    "tags": [
+      "humanoid"
     ],
     "harvest_tier": 2,
     "harvest_threshold": 2,
@@ -8879,6 +9402,9 @@
       "fire"
     ],
     "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 2,
     "ingredient_id": "kobold_scale",
@@ -8924,6 +9450,9 @@
     ],
     "weaknesses": [
       "fire"
+    ],
+    "tags": [
+      "humanoid"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -8974,6 +9503,9 @@
     ],
     "weaknesses": [
       "lightning"
+    ],
+    "tags": [
+      "humanoid"
     ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
@@ -9030,6 +9562,9 @@
     "weaknesses": [
       "cold"
     ],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 5,
     "ingredient_id": "behir_scale",
@@ -9079,6 +9614,9 @@
     "weaknesses": [
       "holy"
     ],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
     "ingredient_id": "catoblepas_horn",
@@ -9127,6 +9665,9 @@
     ],
     "resistances": [],
     "weaknesses": [],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
     "ingredient_id": "cockatrice_beak",
@@ -9173,6 +9714,9 @@
     "resistances": [],
     "weaknesses": [
       "fire"
+    ],
+    "tags": [
+      "beast"
     ],
     "harvest_tier": 2,
     "harvest_threshold": 2,
@@ -9231,6 +9775,9 @@
     "weaknesses": [
       "fire"
     ],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
     "ingredient_id": "ettercap_silk",
@@ -9277,6 +9824,9 @@
     "weaknesses": [
       "magic"
     ],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
     "ingredient_id": "grick_hide",
@@ -9320,6 +9870,9 @@
     "resistances": [],
     "weaknesses": [
       "lightning"
+    ],
+    "tags": [
+      "beast"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
@@ -9365,6 +9918,9 @@
       "poison"
     ],
     "weaknesses": [],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
     "ingredient_id": "phase_spider_venom",
@@ -9414,6 +9970,9 @@
     "weaknesses": [
       "cold"
     ],
+    "tags": [
+      "dragon"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
     "ingredient_id": "wyvern_stinger",
@@ -9459,6 +10018,9 @@
     "weaknesses": [
       "holy",
       "fire"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -9514,6 +10076,9 @@
     "weaknesses": [
       "holy",
       "fire"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -9571,6 +10136,9 @@
       "holy",
       "fire"
     ],
+    "tags": [
+      "undead"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
     "ingredient_id": "arcane_bone_dust",
@@ -9624,6 +10192,9 @@
     "weaknesses": [
       "holy",
       "cold"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
@@ -9679,6 +10250,9 @@
       "holy",
       "fire"
     ],
+    "tags": [
+      "undead"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
     "ingredient_id": "frost_bone",
@@ -9726,6 +10300,9 @@
     "weaknesses": [
       "holy",
       "fire"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
@@ -9781,6 +10358,9 @@
       "holy",
       "fire"
     ],
+    "tags": [
+      "undead"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
     "ingredient_id": "plague_flesh",
@@ -9826,6 +10406,9 @@
     "weaknesses": [
       "holy",
       "fire"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -9881,6 +10464,9 @@
       "holy",
       "fire"
     ],
+    "tags": [
+      "undead"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
     "ingredient_id": "ghast_ichor",
@@ -9926,6 +10512,9 @@
     "weaknesses": [
       "holy",
       "fire"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -9982,6 +10571,9 @@
       "holy",
       "fire"
     ],
+    "tags": [
+      "undead"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
     "ingredient_id": "wisp_essence",
@@ -10035,6 +10627,9 @@
     ],
     "weaknesses": [
       "holy"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
@@ -10092,6 +10687,9 @@
       "holy",
       "fire"
     ],
+    "tags": [
+      "undead"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
     "ingredient_id": "soul_fragment",
@@ -10137,6 +10735,9 @@
     ],
     "weaknesses": [
       "holy"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -10194,6 +10795,9 @@
       "holy",
       "fire"
     ],
+    "tags": [
+      "undead"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
     "ingredient_id": "changeling_glamour",
@@ -10241,6 +10845,9 @@
       "holy",
       "fire"
     ],
+    "tags": [
+      "undead"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
     "ingredient_id": "shadow_essence",
@@ -10286,7 +10893,11 @@
       "physical"
     ],
     "weaknesses": [
-      "magic"
+      "magic",
+      "holy"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
@@ -10345,6 +10956,9 @@
       "holy",
       "fire"
     ],
+    "tags": [
+      "undead"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
     "ingredient_id": "shadow_crystal",
@@ -10390,6 +11004,9 @@
     ],
     "weaknesses": [
       "holy"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
@@ -10444,6 +11061,9 @@
     "weaknesses": [
       "holy",
       "fire"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
@@ -10501,6 +11121,9 @@
       "holy",
       "fire"
     ],
+    "tags": [
+      "undead"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
     "ingredient_id": "elder_vampire_blood",
@@ -10555,6 +11178,9 @@
     "weaknesses": [
       "holy",
       "fire"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
@@ -10612,6 +11238,9 @@
       "fire",
       "lightning"
     ],
+    "tags": [
+      "undead"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
     "ingredient_id": "jiangshi_essence",
@@ -10666,6 +11295,9 @@
     "weaknesses": [
       "holy",
       "fire"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
@@ -10725,6 +11357,9 @@
     "weaknesses": [
       "holy"
     ],
+    "tags": [
+      "undead"
+    ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
     "ingredient_id": "demi_lich_skull",
@@ -10778,6 +11413,9 @@
     "weaknesses": [
       "holy",
       "fire"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
@@ -10835,6 +11473,9 @@
       "holy",
       "fire"
     ],
+    "tags": [
+      "undead"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
     "ingredient_id": "death_mage_phylactery",
@@ -10888,6 +11529,9 @@
     "weaknesses": [
       "holy",
       "fire"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
@@ -10943,6 +11587,9 @@
     ],
     "weaknesses": [
       "holy"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
@@ -11001,6 +11648,9 @@
       "holy",
       "fire"
     ],
+    "tags": [
+      "undead"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 5,
     "ingredient_id": "pale_master_essence",
@@ -11055,6 +11705,9 @@
     "weaknesses": [
       "holy",
       "fire"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
@@ -11111,6 +11764,9 @@
       "holy",
       "fire"
     ],
+    "tags": [
+      "undead"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
     "ingredient_id": "barrow_dust",
@@ -11157,6 +11813,9 @@
     "weaknesses": [
       "holy",
       "fire"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
@@ -11212,6 +11871,9 @@
     "weaknesses": [
       "holy"
     ],
+    "tags": [
+      "undead"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
     "ingredient_id": "crypt_dust",
@@ -11265,7 +11927,11 @@
     ],
     "weaknesses": [
       "fire",
-      "magic"
+      "magic",
+      "holy"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
@@ -11321,6 +11987,9 @@
     "weaknesses": [
       "holy",
       "fire"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
@@ -11379,6 +12048,9 @@
       "holy",
       "fire"
     ],
+    "tags": [
+      "undead"
+    ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
     "ingredient_id": "ossuary_shard",
@@ -11433,6 +12105,9 @@
       "holy",
       "fire"
     ],
+    "tags": [
+      "undead"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
     "ingredient_id": "mohrg_organ",
@@ -11478,6 +12153,9 @@
     ],
     "weaknesses": [
       "holy"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
@@ -11537,6 +12215,9 @@
     "weaknesses": [
       "holy"
     ],
+    "tags": [
+      "undead"
+    ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
     "ingredient_id": "death_essence",
@@ -11593,6 +12274,9 @@
     "weaknesses": [
       "holy",
       "fire"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
@@ -11651,6 +12335,9 @@
       "holy",
       "fire"
     ],
+    "tags": [
+      "undead"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 5,
     "ingredient_id": "nightshade_essence",
@@ -11704,6 +12391,9 @@
     "weaknesses": [
       "holy",
       "fire"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
@@ -11759,6 +12449,9 @@
       "holy",
       "fire"
     ],
+    "tags": [
+      "undead"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
     "ingredient_id": "hollow_essence",
@@ -11812,6 +12505,9 @@
     "weaknesses": [
       "holy",
       "fire"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
@@ -11868,6 +12564,9 @@
       "holy",
       "fire"
     ],
+    "tags": [
+      "undead"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
     "ingredient_id": "dread_plate",
@@ -11921,6 +12620,9 @@
     "weaknesses": [
       "holy",
       "fire"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
@@ -11977,6 +12679,9 @@
     "weaknesses": [
       "holy",
       "fire"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
@@ -12043,6 +12748,10 @@
     "weaknesses": [
       "holy",
       "lightning"
+    ],
+    "tags": [
+      "undead",
+      "dragon"
     ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
@@ -12112,6 +12821,10 @@
     "weaknesses": [
       "holy"
     ],
+    "tags": [
+      "undead",
+      "dragon"
+    ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
     "ingredient_id": "lich_dragon_scale",
@@ -12158,6 +12871,9 @@
     "weaknesses": [
       "holy",
       "magic"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
@@ -12214,6 +12930,9 @@
     "weaknesses": [
       "holy",
       "fire"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
@@ -12272,6 +12991,9 @@
       "holy",
       "fire"
     ],
+    "tags": [
+      "undead"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 5,
     "ingredient_id": "soul_fragment",
@@ -12328,6 +13050,9 @@
     "weaknesses": [
       "holy",
       "fire"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
@@ -12393,6 +13118,9 @@
     "weaknesses": [
       "holy",
       "fire"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
@@ -12720,6 +13448,9 @@
       "poison"
     ],
     "weaknesses": [],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
     "ingredient_id": "scorpion_venom_sac",
@@ -12762,6 +13493,9 @@
       "poison"
     ],
     "weaknesses": [],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
     "ingredient_id": "wasp_venom",
@@ -12802,6 +13536,9 @@
     ],
     "weaknesses": [
       "lightning"
+    ],
+    "tags": [
+      "beast"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 3,
@@ -12848,6 +13585,9 @@
     ],
     "resistances": [],
     "weaknesses": [],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
     "ingredient_id": "mantis_foreleg",
@@ -12900,6 +13640,9 @@
     "weaknesses": [
       "fire"
     ],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
     "ingredient_id": "queen_venom_gland",
@@ -12942,6 +13685,9 @@
       "magic"
     ],
     "weaknesses": [],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 4,
     "ingredient_id": "phase_silk",
@@ -12994,6 +13740,9 @@
     "weaknesses": [
       "fire"
     ],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
     "ingredient_id": "spider_silk",
@@ -13045,6 +13794,9 @@
       "holy",
       "lightning"
     ],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
     "ingredient_id": "death_beetle_ichor",
@@ -13088,6 +13840,9 @@
     "resistances": [],
     "weaknesses": [
       "cold"
+    ],
+    "tags": [
+      "beast"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -13136,6 +13891,9 @@
       "magic"
     ],
     "weaknesses": [],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
     "ingredient_id": "basilisk_eye",
@@ -13182,6 +13940,9 @@
     "resistances": [],
     "weaknesses": [
       "cold"
+    ],
+    "tags": [
+      "beast"
     ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
@@ -13232,6 +13993,9 @@
     "weaknesses": [
       "cold"
     ],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
     "ingredient_id": "komodo_venom_gland",
@@ -13277,6 +14041,9 @@
     ],
     "resistances": [],
     "weaknesses": [],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
     "ingredient_id": "frog_legs",
@@ -13322,6 +14089,9 @@
       "fire",
       "cold"
     ],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
     "ingredient_id": "mud_crawler_hide",
@@ -13364,6 +14134,9 @@
       "poison"
     ],
     "weaknesses": [],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
     "ingredient_id": "swamp_serpent_fang",
@@ -13406,6 +14179,9 @@
       "poison"
     ],
     "weaknesses": [],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 1,
     "harvest_threshold": 3,
     "ingredient_id": "sea_snake_venom",
@@ -13451,6 +14227,9 @@
     ],
     "resistances": [],
     "weaknesses": [],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
     "ingredient_id": "lion_meat",
@@ -13496,6 +14275,9 @@
     ],
     "resistances": [],
     "weaknesses": [],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
     "ingredient_id": "bear_meat",
@@ -13541,6 +14323,9 @@
     ],
     "resistances": [],
     "weaknesses": [],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
     "ingredient_id": "wolf_meat",
@@ -13590,6 +14375,10 @@
     "weaknesses": [
       "holy",
       "fire"
+    ],
+    "tags": [
+      "humanoid",
+      "beast"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
@@ -13650,6 +14439,10 @@
       "holy",
       "fire"
     ],
+    "tags": [
+      "humanoid",
+      "beast"
+    ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
     "ingredient_id": "alpha_lycanthrope_blood",
@@ -13699,6 +14492,10 @@
     "weaknesses": [
       "holy"
     ],
+    "tags": [
+      "humanoid",
+      "beast"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
     "ingredient_id": "lycanthrope_blood",
@@ -13747,6 +14544,10 @@
     ],
     "weaknesses": [
       "holy"
+    ],
+    "tags": [
+      "humanoid",
+      "beast"
     ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
@@ -13806,6 +14607,10 @@
       "holy",
       "cold"
     ],
+    "tags": [
+      "humanoid",
+      "beast"
+    ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
     "ingredient_id": "alpha_lycanthrope_blood",
@@ -13856,6 +14661,9 @@
     "weaknesses": [
       "fire"
     ],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
     "ingredient_id": "winter_wolf_pelt",
@@ -13895,6 +14703,9 @@
       "magic"
     ],
     "weaknesses": [],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 4,
     "ingredient_id": "blink_gland",
@@ -13948,6 +14759,9 @@
     "weaknesses": [
       "holy"
     ],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
     "ingredient_id": "death_dog_fang",
@@ -13992,6 +14806,9 @@
       "lightning"
     ],
     "weaknesses": [],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
     "ingredient_id": "eagle_feather",
@@ -14037,6 +14854,9 @@
     ],
     "resistances": [],
     "weaknesses": [],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
     "ingredient_id": "roc_egg_fragment",
@@ -14093,6 +14913,9 @@
       "lightning"
     ],
     "weaknesses": [],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
     "ingredient_id": "roc_talon",
@@ -14137,6 +14960,9 @@
     "weaknesses": [
       "fire",
       "cold"
+    ],
+    "tags": [
+      "beast"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -14186,6 +15012,9 @@
       "lightning"
     ],
     "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
     "ingredient_id": "tengu_feather",
@@ -14235,6 +15064,9 @@
     "weaknesses": [
       "cold"
     ],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 5,
     "ingredient_id": "storm_feather",
@@ -14277,6 +15109,9 @@
       "magic"
     ],
     "weaknesses": [],
+    "tags": [
+      "fey"
+    ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
     "ingredient_id": "pixie_dust",
@@ -14323,6 +15158,9 @@
     "weaknesses": [
       "holy"
     ],
+    "tags": [
+      "fey"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
     "ingredient_id": "redcap_blood",
@@ -14366,7 +15204,12 @@
       "lightning",
       "physical"
     ],
-    "weaknesses": [],
+    "weaknesses": [
+      "holy"
+    ],
+    "tags": [
+      "undead"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 4,
     "ingredient_id": "wisp_essence",
@@ -14417,6 +15260,9 @@
     "weaknesses": [
       "holy"
     ],
+    "tags": [
+      "fey"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 5,
     "ingredient_id": "hag_eye",
@@ -14466,6 +15312,9 @@
     ],
     "weaknesses": [
       "holy"
+    ],
+    "tags": [
+      "fey"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
@@ -14526,6 +15375,9 @@
       "holy",
       "fire"
     ],
+    "tags": [
+      "fey"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 5,
     "ingredient_id": "hag_eye",
@@ -14580,6 +15432,9 @@
     "weaknesses": [
       "holy"
     ],
+    "tags": [
+      "fey"
+    ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
     "ingredient_id": "night_hag_heartstone",
@@ -14627,6 +15482,9 @@
       "magic"
     ],
     "weaknesses": [],
+    "tags": [
+      "fey"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
     "ingredient_id": "satyr_horn",
@@ -14680,6 +15538,9 @@
     "weaknesses": [
       "fire"
     ],
+    "tags": [
+      "fey"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
     "ingredient_id": "heartwood_sap",
@@ -14727,6 +15588,9 @@
       "magic"
     ],
     "weaknesses": [],
+    "tags": [
+      "fey"
+    ],
     "harvest_tier": 1,
     "harvest_threshold": 3,
     "ingredient_id": "lucky_clover",
@@ -14773,6 +15637,9 @@
     "resistances": [],
     "weaknesses": [
       "fire"
+    ],
+    "tags": [
+      "fey"
     ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
@@ -14822,6 +15689,9 @@
     ],
     "weaknesses": [
       "holy"
+    ],
+    "tags": [
+      "fey"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -14878,6 +15748,9 @@
       "fire",
       "lightning"
     ],
+    "tags": [
+      "elemental"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 5,
     "ingredient_id": "elemental_water_core",
@@ -14928,6 +15801,9 @@
     "weaknesses": [
       "fire",
       "cold"
+    ],
+    "tags": [
+      "elemental"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
@@ -14981,6 +15857,9 @@
     ],
     "weaknesses": [
       "fire"
+    ],
+    "tags": [
+      "elemental"
     ],
     "harvest_tier": 4,
     "harvest_threshold": 5,
@@ -15036,6 +15915,9 @@
     "weaknesses": [
       "cold",
       "cold"
+    ],
+    "tags": [
+      "elemental"
     ],
     "harvest_tier": 4,
     "harvest_threshold": 5,
@@ -15093,6 +15975,9 @@
       "holy",
       "fire"
     ],
+    "tags": [
+      "elemental"
+    ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
     "ingredient_id": "void_shard",
@@ -15146,6 +16031,9 @@
     ],
     "weaknesses": [
       "fire"
+    ],
+    "tags": [
+      "elemental"
     ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
@@ -15544,6 +16432,10 @@
       "holy",
       "fire"
     ],
+    "tags": [
+      "celestial",
+      "beast"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 5,
     "ingredient_id": "corrupted_wing_feather",
@@ -15597,6 +16489,10 @@
     "weaknesses": [
       "holy"
     ],
+    "tags": [
+      "celestial",
+      "beast"
+    ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
     "ingredient_id": "corrupted_horn_fragment",
@@ -15644,6 +16540,9 @@
       "magic"
     ],
     "weaknesses": [],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
     "ingredient_id": "sphinx_claw",
@@ -15697,6 +16596,9 @@
     "weaknesses": [
       "holy"
     ],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 5,
     "ingredient_id": "nue_tail_quill",
@@ -15746,6 +16648,9 @@
     "weaknesses": [
       "holy"
     ],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
     "ingredient_id": "peryton_antler",
@@ -15794,6 +16699,9 @@
     ],
     "weaknesses": [
       "physical"
+    ],
+    "tags": [
+      "beast"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 5,
@@ -15854,6 +16762,9 @@
       "lightning",
       "fire"
     ],
+    "tags": [
+      "dragon"
+    ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
     "ingredient_id": "sea_dragon_scale",
@@ -15895,6 +16806,9 @@
     "resistances": [],
     "weaknesses": [
       "holy"
+    ],
+    "tags": [
+      "humanoid"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -15941,6 +16855,9 @@
     ],
     "resistances": [],
     "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
     "ingredient_id": "goblin_crown_dust",
@@ -15986,6 +16903,9 @@
     ],
     "resistances": [],
     "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
     "ingredient_id": "hobgoblin_blood",
@@ -16031,6 +16951,9 @@
     ],
     "resistances": [],
     "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
     "ingredient_id": "hobgoblin_blood",
@@ -16071,6 +16994,9 @@
     ],
     "resistances": [],
     "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 2,
     "ingredient_id": "bugbear_pelt",
@@ -16116,6 +17042,9 @@
     ],
     "resistances": [],
     "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
     "ingredient_id": "bugbear_pelt",
@@ -16153,6 +17082,9 @@
     ],
     "resistances": [],
     "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 2,
     "ingredient_id": "orc_blood",
@@ -16198,6 +17130,9 @@
     ],
     "resistances": [],
     "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
     "ingredient_id": "orc_blood",
@@ -16240,6 +17175,9 @@
     ],
     "resistances": [],
     "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 2,
     "ingredient_id": "battle_ration",
@@ -16289,6 +17227,9 @@
     "weaknesses": [
       "holy"
     ],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
     "ingredient_id": "cultist_reagent",
@@ -16334,6 +17275,9 @@
     ],
     "resistances": [],
     "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 2,
     "ingredient_id": "battle_ration",
@@ -16384,6 +17328,9 @@
       "magic"
     ],
     "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
     "ingredient_id": "cultist_reagent",
@@ -16426,6 +17373,9 @@
     ],
     "resistances": [],
     "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
     "ingredient_id": "giant_marrow",
@@ -16476,6 +17426,9 @@
     "weaknesses": [
       "lightning"
     ],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
     "ingredient_id": "stone_giant_core",
@@ -16523,6 +17476,9 @@
       "lightning"
     ],
     "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
     "ingredient_id": "cloudstuff",
@@ -16571,6 +17527,9 @@
       "cold"
     ],
     "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
     "ingredient_id": "storm_essence",
@@ -16613,6 +17572,9 @@
     ],
     "resistances": [],
     "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
     "ingredient_id": "cyclops_eye",
@@ -16655,6 +17617,9 @@
     ],
     "resistances": [],
     "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
     "ingredient_id": "ogre_hide",
@@ -16704,6 +17669,9 @@
     "weaknesses": [
       "fire"
     ],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
     "ingredient_id": "troll_regeneration_gland",
@@ -16752,6 +17720,9 @@
       "magic"
     ],
     "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
     "ingredient_id": "drow_poison_extract",
@@ -16804,6 +17775,9 @@
     ],
     "weaknesses": [
       "holy"
+    ],
+    "tags": [
+      "humanoid"
     ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
@@ -16858,6 +17832,9 @@
     "weaknesses": [
       "holy"
     ],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
     "ingredient_id": "drow_poison_extract",
@@ -16903,6 +17880,9 @@
     ],
     "resistances": [],
     "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
     "ingredient_id": "minotaur_horn",
@@ -16964,6 +17944,9 @@
       "poison"
     ],
     "weaknesses": [],
+    "tags": [
+      "dragon"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
     "ingredient_id": "black_dragon_scale",
@@ -17026,6 +18009,9 @@
     ],
     "weaknesses": [
       "cold"
+    ],
+    "tags": [
+      "dragon"
     ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
@@ -17096,6 +18082,9 @@
       "lightning"
     ],
     "weaknesses": [],
+    "tags": [
+      "dragon"
+    ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
     "ingredient_id": "blue_dragon_scale",
@@ -17167,6 +18156,9 @@
     "weaknesses": [
       "cold"
     ],
+    "tags": [
+      "dragon"
+    ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
     "ingredient_id": "adult_dragon_heart",
@@ -17215,6 +18207,9 @@
     ],
     "weaknesses": [
       "cold"
+    ],
+    "tags": [
+      "dragon"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
@@ -17266,6 +18261,9 @@
     "weaknesses": [
       "fire"
     ],
+    "tags": [
+      "dragon"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
     "ingredient_id": "frost_sac",
@@ -17314,6 +18312,9 @@
       "magic"
     ],
     "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
     "ingredient_id": "yuan_ti_venom_sac",
@@ -17361,6 +18362,9 @@
       "poison"
     ],
     "weaknesses": [],
+    "tags": [
+      "dragon"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
     "ingredient_id": "wyvern_venom_gland",
@@ -17420,6 +18424,9 @@
       "poison"
     ],
     "weaknesses": [],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
     "ingredient_id": "naga_scale",
@@ -17469,7 +18476,11 @@
       "drain"
     ],
     "weaknesses": [
-      "fire"
+      "fire",
+      "holy"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -17521,6 +18532,9 @@
     ],
     "weaknesses": [
       "fire"
+    ],
+    "tags": [
+      "aberration"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -17576,6 +18590,9 @@
     "weaknesses": [
       "cold"
     ],
+    "tags": [
+      "elemental"
+    ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
     "ingredient_id": "chaos_essence",
@@ -17625,7 +18642,11 @@
     ],
     "weaknesses": [
       "fire",
-      "slash"
+      "slash",
+      "holy"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -17677,6 +18698,10 @@
     "weaknesses": [
       "fire"
     ],
+    "tags": [
+      "humanoid",
+      "beast"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
     "ingredient_id": "lycanthrope_blood",
@@ -17725,7 +18750,11 @@
       "poison"
     ],
     "weaknesses": [
-      "cold"
+      "cold",
+      "holy"
+    ],
+    "tags": [
+      "demon"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -17773,7 +18802,12 @@
     ],
     "weaknesses": [
       "slash",
-      "fire"
+      "fire",
+      "holy"
+    ],
+    "tags": [
+      "undead",
+      "construct"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -17826,7 +18860,11 @@
       "drain"
     ],
     "weaknesses": [
-      "fire"
+      "fire",
+      "holy"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -17871,6 +18909,9 @@
     "resistances": [],
     "weaknesses": [
       "fire"
+    ],
+    "tags": [
+      "humanoid"
     ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
@@ -17922,6 +18963,9 @@
     ],
     "weaknesses": [
       "cold"
+    ],
+    "tags": [
+      "dragon"
     ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
@@ -17980,6 +19024,9 @@
       "drain"
     ],
     "weaknesses": [],
+    "tags": [
+      "aberration"
+    ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
     "ingredient_id": "cerebral_fluid",
@@ -18030,6 +19077,9 @@
     ],
     "weaknesses": [
       "fire"
+    ],
+    "tags": [
+      "aberration"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -18112,6 +19162,9 @@
     "weaknesses": [
       "physical"
     ],
+    "tags": [
+      "aberration"
+    ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
     "ingredient_id": "eyestalk",
@@ -18171,6 +19224,9 @@
     "weaknesses": [
       "cold"
     ],
+    "tags": [
+      "dragon"
+    ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
     "ingredient_id": "dragon_scale",
@@ -18228,7 +19284,12 @@
       "cold",
       "drain"
     ],
-    "weaknesses": [],
+    "weaknesses": [
+      "holy"
+    ],
+    "tags": [
+      "demon"
+    ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
     "ingredient_id": "void_ichor",
@@ -18301,6 +19362,9 @@
     "weaknesses": [
       "cold"
     ],
+    "tags": [
+      "dragon"
+    ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
     "ingredient_id": "dragon_scale",
@@ -18361,7 +19425,11 @@
       "drain"
     ],
     "weaknesses": [
-      "fire"
+      "fire",
+      "holy"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -18418,7 +19486,12 @@
       "cold",
       "drain"
     ],
-    "weaknesses": [],
+    "weaknesses": [
+      "holy"
+    ],
+    "tags": [
+      "demon"
+    ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
     "ingredient_id": "pit_fiend_scale",
@@ -18479,6 +19552,9 @@
     "weaknesses": [
       "fire"
     ],
+    "tags": [
+      "dragon"
+    ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
     "ingredient_id": "world_serpent_scale",
@@ -18535,7 +19611,11 @@
       "drain"
     ],
     "weaknesses": [
-      "fire"
+      "fire",
+      "holy"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
@@ -18582,6 +19662,9 @@
     ],
     "weaknesses": [
       "pierce"
+    ],
+    "tags": [
+      "humanoid"
     ],
     "harvest_tier": 5,
     "harvest_threshold": 3,
@@ -18640,6 +19723,9 @@
     "weaknesses": [
       "slash"
     ],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 5,
     "harvest_threshold": 3,
     "ingredient_id": "medusa_blood",
@@ -18697,6 +19783,9 @@
       "magic"
     ],
     "weaknesses": [],
+    "tags": [
+      "dragon"
+    ],
     "harvest_tier": 5,
     "harvest_threshold": 4,
     "ingredient_id": "dragon_scale",
@@ -18750,6 +19839,9 @@
     ],
     "weaknesses": [
       "fire"
+    ],
+    "tags": [
+      "beast"
     ],
     "harvest_tier": 5,
     "harvest_threshold": 4,
@@ -18830,6 +19922,10 @@
     "weaknesses": [
       "holy"
     ],
+    "tags": [
+      "demon",
+      "celestial"
+    ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
     "ingredient_id": "void_essence",
@@ -18879,6 +19975,9 @@
     "weaknesses": [
       "fire"
     ],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
     "ingredient_id": "arachne_silk_gland",
@@ -18925,6 +20024,9 @@
     "weaknesses": [
       "drain",
       "lightning"
+    ],
+    "tags": [
+      "construct"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
@@ -18981,6 +20083,9 @@
       "fire",
       "holy"
     ],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
     "ingredient_id": "echidna_venom_sac",
@@ -19035,6 +20140,9 @@
     "weaknesses": [
       "fire",
       "iron"
+    ],
+    "tags": [
+      "fey"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
@@ -19092,6 +20200,9 @@
       "holy",
       "lightning"
     ],
+    "tags": [
+      "demon"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
     "ingredient_id": "camazotz_wing_membrane",
@@ -19145,6 +20256,9 @@
       "cold",
       "cold"
     ],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
     "ingredient_id": "cacus_ember_gut",
@@ -19195,6 +20309,9 @@
     ],
     "weaknesses": [
       "pierce"
+    ],
+    "tags": [
+      "beast"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
@@ -19252,6 +20369,9 @@
       "holy",
       "fire"
     ],
+    "tags": [
+      "demon"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
     "ingredient_id": "rangda_mask_splinter",
@@ -19302,6 +20422,9 @@
     ],
     "weaknesses": [
       "blunt"
+    ],
+    "tags": [
+      "beast"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
@@ -19360,6 +20483,9 @@
     "weaknesses": [
       "fire",
       "iron"
+    ],
+    "tags": [
+      "fey"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
@@ -19427,6 +20553,9 @@
       "lightning",
       "fire"
     ],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
     "ingredient_id": "jormungandr_scale",
@@ -19481,6 +20610,9 @@
     "weaknesses": [
       "holy",
       "lightning"
+    ],
+    "tags": [
+      "beast"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
@@ -19537,6 +20669,10 @@
       "fire",
       "magic"
     ],
+    "tags": [
+      "humanoid",
+      "fey"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
     "ingredient_id": "green_knight_sap",
@@ -19590,6 +20726,9 @@
     "weaknesses": [
       "lightning",
       "fire"
+    ],
+    "tags": [
+      "beast"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
@@ -19650,6 +20789,9 @@
     "weaknesses": [
       "fire",
       "holy"
+    ],
+    "tags": [
+      "demon"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
@@ -19717,6 +20859,10 @@
       "fire",
       "holy"
     ],
+    "tags": [
+      "undead",
+      "humanoid"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
     "ingredient_id": "wendigo_heart",
@@ -19777,6 +20923,9 @@
       "iron",
       "holy"
     ],
+    "tags": [
+      "fey"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
     "ingredient_id": "wild_hunt_horn",
@@ -19834,6 +20983,9 @@
     "weaknesses": [
       "fire",
       "lightning"
+    ],
+    "tags": [
+      "beast"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
@@ -19908,6 +21060,9 @@
       "holy",
       "lightning"
     ],
+    "tags": [
+      "dragon"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
     "ingredient_id": "nidhoggr_root_shard",
@@ -19961,6 +21116,9 @@
     "weaknesses": [
       "cold",
       "holy"
+    ],
+    "tags": [
+      "demon"
     ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
@@ -20019,6 +21177,9 @@
       "fire",
       "holy"
     ],
+    "tags": [
+      "demon"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
     "ingredient_id": "buer_plague_gland",
@@ -20074,6 +21235,9 @@
     "weaknesses": [
       "fire",
       "holy"
+    ],
+    "tags": [
+      "demon"
     ],
     "sp_drain": 15,
     "harvest_tier": 4,
@@ -20138,6 +21302,9 @@
       "magic",
       "holy"
     ],
+    "tags": [
+      "demon"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
     "ingredient_id": "bael_war_shard",
@@ -20195,6 +21362,9 @@
       "fire",
       "holy"
     ],
+    "tags": [
+      "demon"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
     "ingredient_id": "samael_death_vial",
@@ -20251,6 +21421,9 @@
     "weaknesses": [
       "magic",
       "holy"
+    ],
+    "tags": [
+      "demon"
     ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
@@ -20312,6 +21485,9 @@
       "slash",
       "holy"
     ],
+    "tags": [
+      "demon"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
     "ingredient_id": "abyzou_silence_dust",
@@ -20366,6 +21542,9 @@
       "holy",
       "fire"
     ],
+    "tags": [
+      "demon"
+    ],
     "sp_drain": 5,
     "harvest_tier": 0,
     "harvest_threshold": 99,
@@ -20404,6 +21583,9 @@
     "weaknesses": [
       "shadow",
       "necrotic"
+    ],
+    "tags": [
+      "celestial"
     ],
     "harvest_tier": 0,
     "harvest_threshold": 99,
@@ -20449,6 +21631,9 @@
     ],
     "weaknesses": [
       "fire"
+    ],
+    "tags": [
+      "beast"
     ],
     "harvest_tier": 2,
     "harvest_threshold": 2,
@@ -20501,6 +21686,9 @@
     "weaknesses": [
       "fire"
     ],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
     "ingredient_id": "royal_beef",
@@ -20549,6 +21737,9 @@
       "blunt",
       "holy"
     ],
+    "tags": [
+      "undead"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
     "ingredient_id": "warrior_bone",
@@ -20589,6 +21780,9 @@
     ],
     "weaknesses": [
       "fire"
+    ],
+    "tags": [
+      "beast"
     ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
@@ -20636,6 +21830,9 @@
       "fire",
       "acid"
     ],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
     "ingredient_id": "troll_regeneration_gland",
@@ -20679,6 +21876,9 @@
       "poison"
     ],
     "weaknesses": [],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
     "ingredient_id": "basilisk_stone",
@@ -20723,6 +21923,9 @@
     "weaknesses": [
       "cold"
     ],
+    "tags": [
+      "elemental"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
     "ingredient_id": "golem_stone",
@@ -20766,6 +21969,9 @@
     ],
     "weaknesses": [
       "fire"
+    ],
+    "tags": [
+      "aberration"
     ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
@@ -20859,6 +22065,9 @@
     "weaknesses": [
       "magic"
     ],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
     "ingredient_id": "orc_blood",
@@ -20904,6 +22113,9 @@
       "slash"
     ],
     "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
     "ingredient_id": "enchanted_plate",
@@ -20949,6 +22161,9 @@
     ],
     "weaknesses": [
       "cold"
+    ],
+    "tags": [
+      "elemental"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
@@ -21001,6 +22216,9 @@
     "weaknesses": [
       "cold"
     ],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
     "ingredient_id": "chimera_heart",
@@ -21051,6 +22269,9 @@
       "blunt",
       "holy"
     ],
+    "tags": [
+      "undead"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
     "ingredient_id": "giant_bone",
@@ -21098,6 +22319,9 @@
     "weaknesses": [
       "holy"
     ],
+    "tags": [
+      "demon"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
     "ingredient_id": "demon_claw",
@@ -21143,6 +22367,9 @@
     "weaknesses": [
       "fire",
       "lightning"
+    ],
+    "tags": [
+      "beast"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
@@ -21196,6 +22423,9 @@
     "weaknesses": [
       "fire"
     ],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
     "ingredient_id": "phase_spider_venom",
@@ -21239,6 +22469,9 @@
     "resistances": [],
     "weaknesses": [
       "cold"
+    ],
+    "tags": [
+      "beast"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
@@ -21284,6 +22517,9 @@
     "weaknesses": [
       "fire",
       "acid"
+    ],
+    "tags": [
+      "humanoid"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
@@ -21332,6 +22568,9 @@
     "weaknesses": [
       "fire"
     ],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
     "ingredient_id": "frost_giant_bone",
@@ -21377,6 +22616,9 @@
     ],
     "weaknesses": [
       "cold"
+    ],
+    "tags": [
+      "humanoid"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
@@ -21426,6 +22668,9 @@
     "weaknesses": [
       "holy",
       "fire"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
@@ -21478,6 +22723,9 @@
       "holy",
       "fire"
     ],
+    "tags": [
+      "undead"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
     "ingredient_id": "death_essence",
@@ -21526,6 +22774,9 @@
     "weaknesses": [
       "lightning"
     ],
+    "tags": [
+      "construct"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
     "ingredient_id": "enchanted_clay",
@@ -21573,6 +22824,9 @@
     "weaknesses": [
       "holy",
       "cold"
+    ],
+    "tags": [
+      "demon"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
@@ -21623,6 +22877,9 @@
     ],
     "weaknesses": [
       "physical"
+    ],
+    "tags": [
+      "beast"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
@@ -21677,6 +22934,9 @@
       "holy",
       "fire"
     ],
+    "tags": [
+      "undead"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
     "ingredient_id": "lord_phylactery",
@@ -21728,6 +22988,9 @@
       "fire",
       "acid"
     ],
+    "tags": [
+      "fey"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
     "ingredient_id": "heartwood_sap",
@@ -21776,6 +23039,9 @@
     "weaknesses": [
       "blunt",
       "holy"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
@@ -21826,6 +23092,10 @@
     "weaknesses": [
       "holy"
     ],
+    "tags": [
+      "undead",
+      "dragon"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
     "ingredient_id": "spectral_essence",
@@ -21873,6 +23143,9 @@
     "weaknesses": [
       "holy",
       "cold"
+    ],
+    "tags": [
+      "demon"
     ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
@@ -21925,6 +23198,9 @@
       "lightning",
       "acid"
     ],
+    "tags": [
+      "construct"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
     "ingredient_id": "clockwork_gear",
@@ -21975,6 +23251,9 @@
       "holy",
       "fire"
     ],
+    "tags": [
+      "undead"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
     "ingredient_id": "elder_vampire_blood",
@@ -22022,6 +23301,9 @@
     "weaknesses": [
       "acid"
     ],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
     "ingredient_id": "storm_essence",
@@ -22068,6 +23350,9 @@
     "weaknesses": [
       "cold"
     ],
+    "tags": [
+      "elemental"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
     "ingredient_id": "elemental_magma_core",
@@ -22113,6 +23398,9 @@
     ],
     "weaknesses": [
       "fire"
+    ],
+    "tags": [
+      "elemental"
     ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
@@ -22168,6 +23456,9 @@
       "holy",
       "cold"
     ],
+    "tags": [
+      "demon"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
     "ingredient_id": "demon_heart",
@@ -22216,6 +23507,9 @@
     "weaknesses": [
       "fire",
       "holy"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
@@ -22267,6 +23561,10 @@
     ],
     "weaknesses": [
       "holy"
+    ],
+    "tags": [
+      "undead",
+      "dragon"
     ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
@@ -22321,6 +23619,9 @@
       "fire",
       "cold"
     ],
+    "tags": [
+      "beast"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
     "ingredient_id": "hydra_bile",
@@ -22368,6 +23669,9 @@
     ],
     "weaknesses": [
       "holy"
+    ],
+    "tags": [
+      "celestial"
     ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
@@ -22417,6 +23721,9 @@
       "lightning",
       "magic"
     ],
+    "tags": [
+      "humanoid"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
     "ingredient_id": "titan_essence",
@@ -22464,6 +23771,9 @@
     "weaknesses": [
       "holy",
       "fire"
+    ],
+    "tags": [
+      "humanoid"
     ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
@@ -22561,6 +23871,9 @@
       "holy",
       "cold"
     ],
+    "tags": [
+      "demon"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
     "ingredient_id": "demon_scales",
@@ -22620,6 +23933,9 @@
       "holy",
       "fire"
     ],
+    "tags": [
+      "undead"
+    ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
     "ingredient_id": "lord_phylactery",
@@ -22676,6 +23992,10 @@
     "weaknesses": [
       "holy"
     ],
+    "tags": [
+      "undead",
+      "dragon"
+    ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
     "ingredient_id": "lich_dragon_scale",
@@ -22724,6 +24044,9 @@
     "weaknesses": [
       "lightning",
       "holy"
+    ],
+    "tags": [
+      "aberration"
     ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
@@ -22774,6 +24097,9 @@
     "weaknesses": [
       "holy",
       "lightning"
+    ],
+    "tags": [
+      "dragon"
     ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
@@ -22830,6 +24156,9 @@
       "holy",
       "cold"
     ],
+    "tags": [
+      "demon"
+    ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
     "ingredient_id": "demon_heart",
@@ -22878,6 +24207,9 @@
     "weaknesses": [
       "necrotic",
       "shadow"
+    ],
+    "tags": [
+      "celestial"
     ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
@@ -22929,6 +24261,9 @@
       "holy",
       "lightning"
     ],
+    "tags": [
+      "elemental"
+    ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
     "ingredient_id": "chaos_essence",
@@ -22978,6 +24313,9 @@
     "weaknesses": [
       "holy",
       "fire"
+    ],
+    "tags": [
+      "undead"
     ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
@@ -23034,6 +24372,10 @@
       "holy",
       "cold"
     ],
+    "tags": [
+      "demon",
+      "dragon"
+    ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
     "ingredient_id": "corruption_scale",
@@ -23083,6 +24425,10 @@
       "fire",
       "holy",
       "lightning"
+    ],
+    "tags": [
+      "undead",
+      "construct"
     ],
     "harvest_tier": 5,
     "harvest_threshold": 5,

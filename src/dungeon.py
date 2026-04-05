@@ -58,10 +58,10 @@ TRAP_TYPES = [
 # BSP tuning
 # ---------------------------------------------------------------------------
 
-_BSP_MIN_LEAF  = 8    # minimum region dimension before splitting stops
-_ROOM_PAD      = 1    # minimum tiles between room edge and region edge
-_ROOM_MIN_INNER = 4   # minimum interior (floor) tiles per axis
-_ROOM_MAX_INNER = 11  # maximum interior tiles per axis
+_BSP_MIN_LEAF   = 7    # minimum region dimension before splitting stops
+_ROOM_PAD       = 1    # minimum tiles between room edge and region edge
+_ROOM_MIN_INNER = 3    # minimum interior (floor) tiles per axis
+_ROOM_MAX_INNER = 11   # maximum interior tiles per axis
 
 # Boss levels — skip maze generation and special terrain on these
 _BOSS_LEVELS = {20, 40, 60, 80, 100}
@@ -277,9 +277,9 @@ def generate_dungeon(width: int = 80, height: int = 50, level: int = 1) -> Dunge
     # -- 1. BSP partitioning --------------------------------------------------
     root   = _BSPNode(1, 1, width - 2, height - 2)
     queue  = [root]
-    target = min(5 + level, 14)
+    target = min(7 + level, 16)
 
-    for _ in range(target * 4):
+    for _ in range(target * 6):
         leaves = [n for n in queue if n.is_leaf and max(n.w, n.h) >= _BSP_MIN_LEAF * 2]
         if not leaves or sum(1 for n in queue if n.is_leaf) >= target:
             break
@@ -300,6 +300,9 @@ def generate_dungeon(width: int = 80, height: int = 50, level: int = 1) -> Dunge
 
     # -- 3. Connect sibling pairs up the BSP tree -----------------------------
     _connect_bsp(root, tiles, rng)
+
+    # -- 3b. Add extra connections between nearby rooms for loops -------------
+    _add_extra_connections(tiles, rooms, rng, count=min(len(rooms) // 3, 3))
 
     # -- 4. Place doors at room-wall openings ---------------------------------
     _place_doors(tiles, rooms, rng, chance=0.70)
@@ -793,13 +796,27 @@ def _nearest_edge_point(room: Room, target: Room, rng: random.Random) -> Tuple[i
 
 
 def _carve_corridor(tiles, x1: int, y1: int, x2: int, y2: int, rng: random.Random):
-    """Carve an L-shaped (or straight) corridor between two points."""
+    """Carve an L-shaped (or straight) corridor between two points.
+    Long corridors get a small 3x3 alcove at the bend to break monotony."""
+    manhattan = abs(x2 - x1) + abs(y2 - y1)
     if rng.random() < 0.5:
+        mx, my = x2, y1
         _carve_h(tiles, x1, x2, y1)
         _carve_v(tiles, y1, y2, x2)
     else:
+        mx, my = x1, y2
         _carve_v(tiles, y1, y2, x1)
         _carve_h(tiles, x1, x2, y2)
+    # Widen the bend into a small alcove if corridor is long
+    if manhattan > 20:
+        h = len(tiles)
+        w = len(tiles[0])
+        for dy in range(-1, 2):
+            for dx in range(-1, 2):
+                nx, ny = mx + dx, my + dy
+                if 1 <= nx < w - 1 and 1 <= ny < h - 1:
+                    if tiles[ny][nx] == WALL:
+                        tiles[ny][nx] = FLOOR
 
 
 def _carve_h(tiles, x1: int, x2: int, y: int):
@@ -812,6 +829,32 @@ def _carve_v(tiles, y1: int, y2: int, x: int):
     for y in range(min(y1, y2), max(y1, y2) + 1):
         if tiles[y][x] == WALL:
             tiles[y][x] = FLOOR
+
+
+def _add_extra_connections(tiles, rooms: List[Room], rng: random.Random, count: int):
+    """Add extra corridors between nearby non-sibling rooms to create loops."""
+    if len(rooms) < 4:
+        return
+    pairs = []
+    for i in range(len(rooms)):
+        cx1, cy1 = rooms[i].center
+        for j in range(i + 1, len(rooms)):
+            cx2, cy2 = rooms[j].center
+            dist = abs(cx1 - cx2) + abs(cy1 - cy2)
+            pairs.append((dist, i, j))
+    pairs.sort()
+    added = 0
+    for dist, i, j in pairs:
+        if added >= count:
+            break
+        if dist < 5:
+            continue
+        if dist > 30:
+            break
+        x1, y1 = _nearest_edge_point(rooms[i], rooms[j], rng)
+        x2, y2 = _nearest_edge_point(rooms[j], rooms[i], rng)
+        _carve_corridor(tiles, x1, y1, x2, y2, rng)
+        added += 1
 
 
 # ---------------------------------------------------------------------------

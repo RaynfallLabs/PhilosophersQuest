@@ -414,6 +414,9 @@ class Sidebar:
                      or item.identified
                      or item.id in player.known_item_ids)
             raw_name = item.name if known else getattr(item, 'unidentified_name', item.name)
+            buc = getattr(item, 'buc', 'uncursed')
+            if getattr(item, 'buc_known', False) and buc != 'uncursed':
+                raw_name = f"{{{buc}}} {raw_name}"
             cname = self._cap(raw_name)
             display = f"{cname} x{count}" if count is not None else cname
             max_disp_w = self.w - self.PAD * 2 - 24

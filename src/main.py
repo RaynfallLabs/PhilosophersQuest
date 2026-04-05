@@ -51,27 +51,6 @@ def _update_layout(w: int, h: int):
 # Module-level helpers
 # ------------------------------------------------------------------
 
-def _cook_menu_bonus_label(recipe: dict) -> str:
-    """Short bonus description for the cook menu."""
-    bt     = recipe.get('bonus_type', 'none')
-    amt    = recipe.get('bonus_amount', 0)
-    stat   = recipe.get('bonus_stat', '')
-    effect = recipe.get('bonus_effect', '')
-    if bt == 'none' or amt == 0:
-        return ''
-    if bt == 'stat' and stat:
-        return f"[+{amt} {stat}]"
-    if bt == 'two_stats':
-        return f"[+{amt} two stats]"
-    if bt == 'all_stats':
-        return f"[+{amt} ALL stats]"
-    if bt == 'combat_stat':
-        return f"[+{amt} STR/CON]"
-    if bt == 'random_stat':
-        return f"[+{amt} random stat]"
-    if bt == 'status' and effect:
-        return f"[{effect.replace('_',' ')} x{amt}t]"
-    return f"[+{amt}]"
 MSG_H  = 200
 GAME_H = WINDOW_H - MSG_H          # 700 px = 17 tiles
 
@@ -5124,6 +5103,57 @@ class Game:
     # Tile interactions  (D key -- fountain/grave/throne)
     # ------------------------------------------------------------------
 
+    def _altar_buc_upgrade(self, item):
+        """Drop an item on an altar to attempt uncurse/bless via theology quiz."""
+        display = self._display_name(item)
+        self.add_message(f"You place the {display} upon the altar...", 'info')
+        self.quiz_title = "ALTAR BLESSING -- THEOLOGY"
+        self.state = STATE_QUIZ
+
+        def on_complete(result):
+            self.state = STATE_PLAYER
+            chain = result.score
+            if chain == 0:
+                self.add_message("The altar remains cold and silent.", 'warning')
+            elif item.buc == 'cursed':
+                if chain >= 3:
+                    item.buc = 'blessed'
+                    item.buc_known = True
+                    self.add_message(
+                        f"Dark energy shatters — golden light suffuses the {display}! It is blessed!",
+                        'success')
+                else:
+                    item.buc = 'uncursed'
+                    item.buc_known = True
+                    self.add_message(
+                        f"The dark aura around the {display} dissipates! It is uncursed.",
+                        'success')
+            elif item.buc == 'uncursed':
+                if chain >= 3:
+                    item.buc = 'blessed'
+                    item.buc_known = True
+                    self.add_message(
+                        f"Golden light suffuses the {display}! It is blessed!",
+                        'success')
+                else:
+                    item.buc_known = True
+                    self.add_message(
+                        "The altar glows faintly but the blessing is insufficient.",
+                        'info')
+            self._advance_turn()
+
+        self.quiz_engine.start_quiz(
+            mode='escalator_chain',
+            subject='theology',
+            tier=1,
+            callback=on_complete,
+            max_chain=5,
+            wisdom=self.player.WIS,
+            timer_modifier=self.player.get_quiz_timer_modifier(),
+            extra_seconds=self.player.get_quiz_extra_seconds('theology'),
+            base_seconds=self.player.get_quiz_timer('theology'),
+        )
+
     def _altar_buc_identify(self):
         """Stand on an altar and attempt to divine the BUC status of an item."""
         # Gather items that have BUC but it's not yet known
@@ -5759,10 +5789,13 @@ class Game:
                     if acc and getattr(acc, 'buc', 'uncursed') == 'cursed':
                         cursed_items.append(acc)
                 if cursed_items:
-                    target = cursed_items[0]
-                    target.buc = 'uncursed'
-                    target.buc_known = True
-                    msgs.append(f"The curse on your {target.name} is broken!")
+                    for target in cursed_items:
+                        target.buc = 'uncursed'
+                        target.buc_known = True
+                    if len(cursed_items) == 1:
+                        msgs.append(f"The curse on your {cursed_items[0].name} is broken!")
+                    else:
+                        msgs.append(f"Divine light purifies {len(cursed_items)} cursed items!")
                 else:
                     minor = ['confused', 'bleeding', 'slowed', 'sleeping']
                     removed = next((e for e in minor if p.has_effect(e)), None)
@@ -8735,8 +8768,8 @@ class Game:
         if chain >= 3:
             # Remove curse from all equipped items
             uncursed = 0
-            for item in self.player.get_equipped_items():
-                if getattr(item, 'buc', 'uncursed') == 'cursed':
+            for item in self.player.get_equipped_items().values():
+                if item and getattr(item, 'buc', 'uncursed') == 'cursed':
                     item.buc = 'uncursed'
                     item.buc_known = True
                     uncursed += 1
@@ -15196,6 +15229,12 @@ class Game:
             px, py = self.player.x, self.player.y
             if (px, py) == vidar_pos:
                 self._check_vidar_altar(px, py)
+
+        # --- BUC altar mechanic: drop item on altar to uncurse/bless ---
+        tile = self.dungeon.tiles[self.player.y][self.player.x]
+        if tile == ALTAR and hasattr(item, 'buc') and item.buc != 'blessed':
+            self._altar_buc_upgrade(item)
+            return  # quiz callback handles _advance_turn
 
         self._advance_turn()
 
