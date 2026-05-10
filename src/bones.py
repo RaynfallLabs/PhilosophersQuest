@@ -184,14 +184,12 @@ def _place_cursed_gear(gear_list: list, gold: int, room, dungeon, ground_items: 
         item.buc_known = False
 
         # Place on a free tile
-        placed = False
         while tile_idx < len(tiles):
             tx, ty = tiles[tile_idx]
             tile_idx += 1
             if dungeon.is_walkable(tx, ty):
                 item.x, item.y = tx, ty
                 ground_items.append(item)
-                placed = True
                 break
 
     # Drop gold pile if any

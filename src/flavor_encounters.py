@@ -6,7 +6,11 @@ encounter system in npc_encounters.py.
 Spawn rate: ~40% per floor, independent of karma NPCs.
 One-shot: each encounter can only be triggered once per run.
 """
+import json
+import os
 import random
+
+from paths import data_path
 
 # ---------------------------------------------------------------------------
 # Encounter definitions
@@ -239,9 +243,6 @@ FLAVOR_ENCOUNTERS: list[dict] = [
 ]
 
 # Load generated encounters from JSON data file
-import json
-import os
-from paths import data_path
 _GEN_PATH = os.path.join(data_path('data'), 'flavor_encounters.json')
 if os.path.exists(_GEN_PATH):
     with open(_GEN_PATH, encoding='utf-8') as _f:

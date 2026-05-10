@@ -34,34 +34,45 @@ A graphical roguelike where knowledge is power. Every action requires answering 
 ## Project Structure
 ```
 src/
-  main.py           - Entry point
-  game.py           - Main game loop and state management
-  player.py         - Player class: stats, inventory, equipment
-  monster.py        - Monster class with AI patterns
-  dungeon.py        - Procedural dungeon generation
-  combat.py         - Combat resolution
-  quiz_engine.py    - All quiz logic (threshold, chain, escalator modes)
-  fov.py            - Shadowcasting field of view
-  renderer.py       - Pygame tile rendering
-  ui.py             - Sidebar, message log, menus
-  input_handler.py  - Keyboard input processing
-  items.py          - Item classes and equipment system
-  food_system.py    - Harvest and cooking mechanics
-  dice.py           - Dice notation parser ("2d6+3")
+  main.py             - Entry point, game loop, state management (large; split planned)
+  player.py           - Player class: stats, inventory, equipment
+  monster.py          - Monster class with AI patterns
+  dungeon.py          - Procedural dungeon generation
+  combat.py           - Combat resolution
+  quiz_engine.py      - All quiz logic (threshold, chain, escalator modes)
+  fov.py              - Shadowcasting field of view
+  renderer.py         - Pygame tile rendering
+  ui.py / fantasy_ui  - Sidebar, message log, menus, fantasy-themed screens
+  items.py            - Item classes and equipment system
+  food_system.py      - Harvest and cooking mechanics
+  dice.py             - Dice notation parser ("2d6+3")
+  boss_levels.py      - Hand-crafted boss floor layouts
+  bones.py            - Persistent ghost/bones across runs
+  container_system.py - Chests, sacks, lockable containers
+  flavor_encounters.py, npc_encounters.py - Scripted encounters and NPC dialog
+  mystery_system.py   - Random mystery / event system
+  quirk_system.py     - Per-character unlockable quirks
+  pet_system.py       - Pet AI and bonding
+  status_effects.py   - Buffs/debuffs (paralysis, poison, berserk, etc.)
+  level_manager.py    - Floor transitions
+  save_system.py, highscore_system.py, sound_system.py, crash_handler.py
+  paths.py            - Path resolution helpers
 
 data/
   questions/        - Quiz question JSON files organized by subject
   monsters.json     - Monster definitions
-  items/            - Item JSON files by category
+  items/            - Item JSON files by category (weapon/armor/shield/accessory/artifact)
+  hints.json        - In-game hint pool
+  (data/ also contains many generator/migration scripts — offline tooling, not loaded at runtime)
 
 assets/
-  tiles/            - Tile graphics (placeholder colored squares initially)
-  fonts/            - Game fonts
+  tiles/            - Tile graphics
+  icon.ico          - Window icon
 ```
 
 ## Tech Stack
-- Python 3.13
-- Pygame — rendering, input, sound
+- Python 3.14 (Microsoft Store install on Windows)
+- Pygame-ce — rendering, input, sound
 - Tile-based graphics (32×32 pixels)
 - JSON data files for questions, monsters, items
 
@@ -71,8 +82,8 @@ assets/
 - Install dependencies: `pip install -r requirements.txt`
 
 ## Development Rules
-- Keep code modular — one responsibility per file
-- Match mechanics exactly from the JS prototype
-- Use placeholder graphics (colored rectangles) initially; swap in real art later
+- Keep code modular — one responsibility per file (main.py is a known exception, split planned)
 - All questions and game data loaded from JSON files — no hardcoded content
 - Commit after each working feature
+- **Play-test rule**: when changing player-facing mechanics that are *easily reachable in a few minutes of play* (combat basics, equipping common gear, food prep, common UI), the user plays the game in person before the feature is "done". Claude can't drive Pygame from the harness, so unit tests and type checks do not prove the feature works — say so explicitly rather than claiming success.
+- **When play-test isn't realistic**: for randomized loot, late-game content, deep-dungeon spawns, or probabilistic effects, play-testing is impractical. Write logic tests instead — at minimum a data-layer test (load the JSON and assert the mechanical fields are set correctly), and a pure-function test where the mechanic is implemented in a standalone module.

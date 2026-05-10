@@ -63,7 +63,7 @@ def test_shields_cover_every_20_levels():
     # Every 20-level band 1-100 must have at least one shield available
     for band_start in range(1, 101, 20):
         band = range(band_start, band_start + 20)
-        available = [l for l in levels if l in band]
+        available = [lvl for lvl in levels if lvl in band]
         assert available, f"No shield available in level band {band_start}-{band_start+19}"
 
 
@@ -88,7 +88,7 @@ def test_no_monster_gaps_26_to_80():
     gaps = []
     for band_start in range(26, 81, 10):
         band = range(band_start, band_start + 10)
-        if not any(l in introduced_levels for l in band):
+        if not any(lvl in introduced_levels for lvl in band):
             gaps.append(f"L{band_start}-{band_start+9}")
     assert not gaps, f"Monster introduction gaps remain: {gaps}"
 
@@ -297,7 +297,6 @@ def test_question_fields_valid():
 # ---------------------------------------------------------------------------
 
 def test_monster_spawn_count_scales():
-    from level_manager import LevelManager
     # Inspect the scaling formula directly
     for level in [1, 10, 50, 100]:
         min_m = min(3 + (level - 1), 12)

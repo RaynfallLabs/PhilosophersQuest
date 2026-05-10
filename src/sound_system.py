@@ -24,6 +24,10 @@ from __future__ import annotations
 
 import math
 import array as _array
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    import pygame
 
 _ENABLED: bool = False
 _sounds: dict = {}

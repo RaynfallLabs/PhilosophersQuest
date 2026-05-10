@@ -913,7 +913,7 @@ class Monster:
                 return False  # no attack on player
 
         # Move toward nearest locust
-        nearest = min(locusts, key=lambda l: abs(l.x - self.x) + abs(l.y - self.y))
+        nearest = min(locusts, key=lambda m: abs(m.x - self.x) + abs(m.y - self.y))
         occupied = {(m.x, m.y) for m in all_monsters if m is not self and m.alive}
         if extra_occupied:
             occupied |= extra_occupied

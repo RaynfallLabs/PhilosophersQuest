@@ -289,7 +289,6 @@ def _populate_hidden_chambers(dungeon, monsters: list, items: list, level: int):
                 themed = [m for m in lair_monsters
                           if any(kw in m.kind.lower() or kw in m.name.lower()
                                  for kw in keywords)]
-                non_themed = [m for m in lair_monsters if m not in themed]
 
                 # If we found no themed monsters at all, keep whatever spawned
                 # (level-appropriate fallback) -- themed monsters may not exist at this level
