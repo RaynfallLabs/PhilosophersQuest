@@ -28,6 +28,12 @@ import sound_system as _snd
 from quiz_engine import QuizEngine, QuizMode, QuizState
 from renderer import Renderer, TILE_SIZE
 from ui import Sidebar, MessageLog, SIDEBAR_W
+from game_helpers import (
+    migrate_buc_item, cycle_tab, throw_crosses_tile, wand_tier_duration,
+    fix_name_case, a_or_an,
+    fit_text as _gh_fit_text,
+    wrap_text as _gh_wrap_text,
+)
 
 VERSION = "1.9.2"
 
@@ -1727,17 +1733,7 @@ class Game:
         self._refresh_fov()
         self.add_message("Welcome back, seeker. Your journey continues...", 'success')
 
-    @staticmethod
-    def _migrate_buc_item(item):
-        """Patch missing base-Item fields onto items from old saves."""
-        if not hasattr(item, 'buc'):
-            item.buc = 'cursed' if item.__dict__.get('cursed', False) else 'uncursed'
-        if not hasattr(item, 'buc_known'):
-            item.buc_known = False
-        if not hasattr(item, 'identified'):
-            item.identified = True  # old items without the field are assumed known
-        if not hasattr(item, 'unidentified_name'):
-            item.unidentified_name = getattr(item, 'name', '???')
+    _migrate_buc_item = staticmethod(migrate_buc_item)
 
     def _migrate_buc_all(self, state: dict):
         """Walk every item in inventory, equipment, ground, and stored levels."""
@@ -4530,18 +4526,7 @@ class Game:
         pygame.K_y: 24, pygame.K_z: 25,
     }
 
-    @staticmethod
-    def _cycle_tab(current: int, direction: int, n_tabs: int, has_items) -> int:
-        """Advance *current* tab by *direction* (+1/-1), skipping empty tabs.
-        *has_items* is called with a tab index and must return True if that tab
-        has at least one item.  Returns the new tab index (unchanged if every
-        other tab is empty)."""
-        original = current
-        for _ in range(n_tabs - 1):
-            current = (current + direction) % n_tabs
-            if has_items(current):
-                return current
-        return original  # all others empty — stay on original tab
+    _cycle_tab = staticmethod(cycle_tab)
 
     def _paged_menu_input(self, key, items) -> int | None:
         """Handle a-z selection within items. Returns index or None."""
@@ -4701,29 +4686,7 @@ class Game:
     # ------------------------------------------------------------------
 
     # Weapon classes that can be thrown, with throw damage multiplier
-    @staticmethod
-    def _throw_crosses_tile(px, py, tx, ty, ax, ay) -> bool:
-        """Check if a thrown item's path from (px,py) to (tx,ty) passes through (ax,ay).
-        Uses Bresenham line to check if the altar tile is on the path."""
-        # Simple check: altar must be between player and target
-        dx, dy = abs(tx - px), abs(ty - py)
-        sx = 1 if tx > px else -1
-        sy = 1 if ty > py else -1
-        err = dx - dy
-        cx, cy = px, py
-        while True:
-            if (cx, cy) == (ax, ay):
-                return True
-            if cx == tx and cy == ty:
-                break
-            e2 = 2 * err
-            if e2 > -dy:
-                err -= dy
-                cx += sx
-            if e2 < dx:
-                err += dx
-                cy += sy
-        return False
+    _throw_crosses_tile = staticmethod(throw_crosses_tile)
 
     _THROWABLE_CLASSES = {
         'dagger':      1.0,    # designed for throwing
@@ -7326,10 +7289,7 @@ class Game:
         """Scale magic damage by INT: 1.0x at INT 0, 2.0x at INT 10, 3.0x at INT 20."""
         return max(1, int(base_dmg * (1.0 + self.player.INT * 0.1)))
 
-    @staticmethod
-    def _wand_tier_duration(base: int, tier: int) -> int:
-        """Scale a wand's effect duration by its tier. T1=base, T5=base*2.5."""
-        return max(2, int(base * (0.5 + tier * 0.5)))
+    _wand_tier_duration = staticmethod(wand_tier_duration)
 
     def _wand_tier_damage(self, base_dmg: int, tier: int) -> int:
         """Scale wand damage by tier AND player INT."""
@@ -11142,21 +11102,8 @@ class Game:
     # Display name helper
     # ------------------------------------------------------------------
 
-    @staticmethod
-    def _fix_name_case(name: str) -> str:
-        """Apply Title Case only if the name is entirely lowercase (avoids breaking 'STR+1' etc.)."""
-        if name == name.lower():
-            return name.title()
-        return name
-
-    @staticmethod
-    def _a_or_an(name: str) -> str:
-        """Return 'a Name' or 'an Name' based on the first letter."""
-        if not name:
-            return name
-        first = name.lstrip('{').lstrip()
-        article = 'an' if first[0:1].lower() in 'aeiou' else 'a'
-        return f"{article} {name}"
+    _fix_name_case = staticmethod(fix_name_case)
+    _a_or_an = staticmethod(a_or_an)
 
     def _auto_identify_all(self):
         """Identify every item in inventory and on the ground (Philosopher's Stone)."""
@@ -12804,32 +12751,8 @@ class Game:
         'ai':         (0,   220, 120),
     }
 
-    @staticmethod
-    def _fit_text(text: str, font: pygame.font.Font, max_w: int) -> str:
-        """Truncate text with ellipsis if it exceeds max_w pixels."""
-        if font.size(text)[0] <= max_w:
-            return text
-        while len(text) > 1 and font.size(text + '\u2026')[0] > max_w:
-            text = text[:-1]
-        return text + '\u2026'
-
-    @staticmethod
-    def _wrap_text(text: str, font: pygame.font.Font, max_w: int) -> list[str]:
-        """Break text into lines that fit within max_w pixels."""
-        words  = text.split()
-        lines  = []
-        cur    = ''
-        for word in words:
-            test = (cur + ' ' + word).strip()
-            if font.size(test)[0] <= max_w:
-                cur = test
-            else:
-                if cur:
-                    lines.append(cur)
-                cur = word
-        if cur:
-            lines.append(cur)
-        return lines or ['']
+    _fit_text = staticmethod(_gh_fit_text)
+    _wrap_text = staticmethod(_gh_wrap_text)
 
     def _draw_quiz(self):
         qe = self.quiz_engine
