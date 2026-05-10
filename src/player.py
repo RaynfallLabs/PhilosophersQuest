@@ -257,7 +257,8 @@ class Player:
         # Shielded status effect (from wand of shielding): -2 AC
         shield_effect   = 2 if self.has_effect('shielded') else 0
         acc_bonus = getattr(self, '_accessory_ac_bonus', 0)
-        return 10 - dex_mod - armor_bonus - shield_bonus - blessed_bonus - invisible_bonus - shield_effect - acc_bonus
+        surr_bonus = getattr(self, '_surrounded_ac_bonus', 0)
+        return 10 - dex_mod - armor_bonus - shield_bonus - blessed_bonus - invisible_bonus - shield_effect - acc_bonus - surr_bonus
 
     def get_armor_resistance(self, damage_type: str) -> float:
         """Combined damage resistance multiplier from all equipped armor/shield."""
@@ -295,12 +296,18 @@ class Player:
         """Multiplier applied to quiz timer based on active effects.
         Floor of 0.40x prevents stacked debuffs from making quizzes unsolvable."""
         mod = 1.0
-        if self.has_effect('confused'):      mod *= 0.55
-        if self.has_effect('stunned'):       mod *= 0.75
-        if self.has_effect('blinded'):       mod *= 0.70
-        if self.has_effect('hallucinating'): mod *= 0.80
-        if self.has_effect('hasted'):        mod *= 1.25
-        if self.has_effect('blessed'):       mod *= 1.25
+        if self.has_effect('confused'):
+            mod *= 0.55
+        if self.has_effect('stunned'):
+            mod *= 0.75
+        if self.has_effect('blinded'):
+            mod *= 0.70
+        if self.has_effect('hallucinating'):
+            mod *= 0.80
+        if self.has_effect('hasted'):
+            mod *= 1.25
+        if self.has_effect('blessed'):
+            mod *= 1.25
         return round(max(0.40, mod), 2)
 
     def get_int_quiz_bonus(self) -> int:
@@ -308,8 +315,13 @@ class Player:
         return max(0, self.INT - 10) // 2
 
     def get_quiz_extra_seconds(self, subject: str) -> int:
-        """Extra quiz seconds from earned quirks."""
-        return getattr(self, 'quiz_timer_bonuses', {}).get(subject, 0)
+        """Extra quiz seconds from earned quirks and equipment."""
+        base = getattr(self, 'quiz_timer_bonuses', {}).get(subject, 0)
+        # Ancile shield: bonus seconds on all quizzes
+        shld = getattr(self, 'shield', None)
+        if shld and getattr(shld, 'quiz_timer_bonus', 0) > 0:
+            base += shld.quiz_timer_bonus
+        return base
 
     def get_carry_limit(self) -> int:
         return self.CARRY_BASE + self.STR * self.CARRY_PER_STR

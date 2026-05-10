@@ -5,6 +5,8 @@ import random
 from enum import Enum, auto
 from dataclasses import dataclass
 
+from paths import data_path
+
 
 class QuizMode(Enum):
     THRESHOLD = "threshold"
@@ -28,7 +30,6 @@ class QuizResult:
     asked: int
 
 
-from paths import data_path
 _QUESTIONS_DIR = data_path('data', 'questions')
 
 
@@ -156,6 +157,10 @@ class QuizEngine:
         self.celebrating = False
         self.celebration_text = ''
         self.celebration_timer = 0.0
+        # Tablet of Destinies: allow one reroll of a wrong answer
+        # Set externally by main.py before starting quiz
+        self.reroll_available = getattr(self, '_reroll_flag', False)
+        self.reroll_was_used = False
 
         # Resume from where the persistent deck left off.
         self._pool     = self._decks[deck_key]
@@ -274,6 +279,13 @@ class QuizEngine:
 
         if mode in (QuizMode.CHAIN, QuizMode.ESCALATOR_CHAIN):
             if not self.last_correct:
+                # Tablet of Destinies: reroll a wrong answer (once)
+                if self.reroll_available:
+                    self.reroll_available = False
+                    self.reroll_was_used = True
+                    self.chain = max(self.chain, 1)  # restore chain
+                    self._next_question()
+                    return
                 self._end(success=True)   # chain mode: always "succeeds"; score = chain length
             elif self.max_chain and self.chain >= self.max_chain:
                 # Celebrate before ending

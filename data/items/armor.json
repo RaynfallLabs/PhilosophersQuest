@@ -3891,5 +3891,83 @@
       "41-55": 2,
       "56-100": 0
     }
+  },
+  "coat_of_cu_chulainn": {
+    "name": "Coat of Cú Chulainn",
+    "symbol": "[",
+    "color": [180, 50, 50],
+    "weight": 4.0,
+    "min_level": 40,
+    "slot": "body",
+    "tier": 3,
+    "material": "enchanted hide",
+    "ac_bonus": 3,
+    "equip_threshold": 2,
+    "quiz_tier": 3,
+    "damage_resistances": {"slash": 0.7, "blunt": 0.8},
+    "can_be_cursed": false,
+    "enchant_bonus": 0,
+    "berserk_trigger": true,
+    "berserk_hp_threshold": 0.25,
+    "berserk_str_bonus": 3,
+    "berserk_duration": 10,
+    "berserk_hp_cost": 1,
+    "unidentified_name": "a blood-red hide coat that pulses warmly",
+    "lore": "The war-harness of Cú Chulainn, the Hound of Ulster. When his blood was up, his body twisted into the ríastrad — the warp-spasm — and no army could stand before him. The coat remembers. When its wearer's life hangs by a thread, it awakens something primal: strength surges, pain fades, but the fury has a cost.",
+    "floorSpawnWeight": {
+      "31-50": 1,
+      "51-70": 2,
+      "71-100": 1
+    }
+  },
+  "babr_e_bayan": {
+    "name": "Babr-e Bayan",
+    "symbol": "[",
+    "color": [200, 160, 80],
+    "weight": 5.0,
+    "min_level": 55,
+    "slot": "body",
+    "tier": 4,
+    "material": "enchanted hide",
+    "ac_bonus": 5,
+    "equip_threshold": 2,
+    "quiz_tier": 4,
+    "damage_resistances": {"slash": 0.6, "pierce": 0.6, "blunt": 0.7},
+    "can_be_cursed": false,
+    "enchant_bonus": 0,
+    "first_hit_absorb": true,
+    "unidentified_name": "a tiger-skin coat of impossible toughness",
+    "lore": "The tiger-skin armor of Rostam, greatest hero of the Shahnameh. He wore it through his Seven Labors — against the lion, the desert, the dragon, the witch, the demon Aulad, the Div-e Sepid, and the Div-e Akvan. The skin remembers every blow it absorbed. On each new floor, it will absorb the first strike completely, as though the blow never fell.",
+    "floorSpawnWeight": {
+      "51-70": 1,
+      "71-90": 2,
+      "91-100": 1
+    }
+  },
+  "tarnhelm": {
+    "name": "Tarnhelm",
+    "symbol": "[",
+    "color": [120, 120, 140],
+    "weight": 1.5,
+    "min_level": 50,
+    "slot": "head",
+    "tier": 4,
+    "material": "dwarf-forged iron",
+    "ac_bonus": 2,
+    "equip_threshold": 2,
+    "quiz_tier": 4,
+    "damage_resistances": {},
+    "can_be_cursed": false,
+    "enchant_bonus": 0,
+    "invisibility_power": true,
+    "invisibility_duration": 5,
+    "invisibility_cooldown": 30,
+    "unidentified_name": "a dull iron helm that seems hard to look at",
+    "lore": "Forged by the Nibelung dwarf Mime for Alberich, who used it to enslave his own kin. Siegfried took it after slaying Fafnir. The Tarnhelm renders its wearer invisible — not merely hidden, but absent from perception entirely. Monsters lose all awareness of the wearer. The effect is brief, and the helm must recover its power between uses.",
+    "floorSpawnWeight": {
+      "41-60": 1,
+      "61-80": 2,
+      "81-100": 1
+    }
   }
 }

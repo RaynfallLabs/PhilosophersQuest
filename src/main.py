@@ -2,16 +2,15 @@ import math
 import os
 import random
 import sys
-import pygame
 
-VERSION = "1.9.2"
+import pygame
 
 # FANTASY: High-fantasy medieval/arcane grimoire UI theme
 from fantasy_ui import (FP, get_font, draw_panel, draw_dark_panel,
                          draw_header_bar, draw_divider, draw_shadow_text,
                          draw_glow_text, centered_text, draw_overlay,
                          draw_rune_circle, draw_filigree_bar, draw_candle_glow,
-                         draw_menu, fit_text, wrap_text, draw_tab_bar)
+                         draw_menu, wrap_text)
 
 from combat import player_attack
 from pet_system import Pet, FenrirPet, random_species as random_pet_species
@@ -29,6 +28,8 @@ import sound_system as _snd
 from quiz_engine import QuizEngine, QuizMode, QuizState
 from renderer import Renderer, TILE_SIZE
 from ui import Sidebar, MessageLog, SIDEBAR_W
+
+VERSION = "1.9.2"
 
 WINDOW_W = 1600
 WINDOW_H = 900
@@ -1202,12 +1203,13 @@ class StudyMode:
         from paths import data_path
 
         while True:
-            dt = clock.tick(60) / 1000.0
+            clock.tick(60)
             W, H = self.screen.get_size()
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    pygame.quit(); sys.exit()
+                    pygame.quit()
+                    sys.exit()
                 if event.type == pygame.WINDOWRESIZED:
                     continue
                 if event.type != pygame.KEYDOWN:
@@ -1412,9 +1414,11 @@ class StudyMode:
             if font.size(test)[0] <= max_w:
                 cur = test
             else:
-                if cur: lines.append(cur)
+                if cur:
+                    lines.append(cur)
                 cur = word
-        if cur: lines.append(cur)
+        if cur:
+            lines.append(cur)
         return lines or ['']
 
 
@@ -1630,6 +1634,8 @@ class Game:
         else:
             self.add_message(f"Welcome, {self.player_name}!", 'success')
         self.add_message("Find the Philosopher's Stone and escape!", 'info')
+        # Chronicle: entering the dungeon
+        self._log_chronicle("Descended into the dungeon. The air smells like dust and old stone. The Stone is somewhere below. I need to find it and get back out.")
 
     def load_state(self, state: dict):
         """Restore all game state from a previously saved dict (pickle)."""
@@ -1820,6 +1826,12 @@ class Game:
             # Revisit: spawn triggered NPCs if player now has the trigger item
             # (handles the case where player missed the item on first pass)
             self._maybe_spawn_npc(new_level)
+
+        # Reset per-floor artifact states
+        self._first_hit_used = False    # Babr-e Bayan
+        self._death_save_used = False   # Jade Cicada
+        self._quiz_reroll_used = False  # Tablet of Destinies
+        self._tarnhelm_used = False     # Tarnhelm
 
         # Abaddon empowered by negative karma: boost HP on first entry to L100
         if new_level == 100 and not saved and getattr(self, '_abaddon_empowered', False):
@@ -2183,6 +2195,14 @@ class Game:
             self.dungeon, self.player.x, self.player.y,
             self.player.get_sight_radius()
         )
+        # Palladium: reveal stairs through walls
+        _has_palladium = any(getattr(i, 'id', '') == 'palladium' for i in self.player.inventory)
+        if _has_palladium:
+            from dungeon import STAIRS_UP, STAIRS_DOWN
+            for _sy in range(self.dungeon.height):
+                for _sx in range(self.dungeon.width):
+                    if self.dungeon.tiles[_sy][_sx] in (STAIRS_UP, STAIRS_DOWN):
+                        self.dungeon.explored.add((_sx, _sy))
         qs = getattr(self, 'quirk_system', None)
         if qs and self.player:
             total = sum(
@@ -2882,7 +2902,8 @@ class Game:
             self._change_level(self.dungeon_level + 1, enter_from_top=True)
         except Exception as e:
             self.add_message(f"Error descending: {e}", 'danger')
-            import traceback; traceback.print_exc()
+            import traceback
+            traceback.print_exc()
 
     def _ascend_stairs(self):
         px, py = self.player.x, self.player.y
@@ -2911,7 +2932,8 @@ class Game:
                 self._change_level(self.dungeon_level - 1, enter_from_top=False)
             except Exception as e:
                 self.add_message(f"Error ascending: {e}", 'danger')
-                import traceback; traceback.print_exc()
+                import traceback
+                traceback.print_exc()
 
     def _trigger_death_pursuit(self):
         from monster import DeathMonster
@@ -3194,13 +3216,20 @@ class Game:
 
     def _get_grade(self, score: int) -> tuple[str, tuple]:
         """Return (letter_grade, color) based on final score."""
-        if score >= 200_000: return 'S',  (255, 230,  80)
-        if score >= 100_000: return 'A+', (220, 200,  60)
-        if score >=  60_000: return 'A',  (200, 180,  50)
-        if score >=  30_000: return 'B+', (140, 220, 140)
-        if score >=  15_000: return 'B',  (100, 190, 100)
-        if score >=   7_000: return 'C',  (120, 160, 220)
-        if score >=   3_000: return 'D',  (180, 140,  80)
+        if score >= 200_000:
+            return 'S',  (255, 230,  80)
+        if score >= 100_000:
+            return 'A+', (220, 200,  60)
+        if score >=  60_000:
+            return 'A',  (200, 180,  50)
+        if score >=  30_000:
+            return 'B+', (140, 220, 140)
+        if score >=  15_000:
+            return 'B',  (100, 190, 100)
+        if score >=   7_000:
+            return 'C',  (120, 160, 220)
+        if score >=   3_000:
+            return 'D',  (180, 140,  80)
         return 'F', (180, 60, 60)
 
     # ------------------------------------------------------------------
@@ -3253,7 +3282,7 @@ class Game:
         # Tick monster status effects (DOT damage, duration expiry)
         for m in self.monsters:
             if m.alive:
-                m_msgs = m.tick_effects()
+                m.tick_effects()
                 if not m.alive:
                     self._on_monster_killed(m)
                     self.add_message(f"The {m.name} succumbs to its wounds!", 'combat')
@@ -3286,6 +3315,48 @@ class Game:
         self._tick_unicorn()
         # Passive PER-based ambush detection
         self._do_passive_ambush_detection()
+        # Eye of Horus: passive HP regen every N turns
+        for _acc in (self.player.amulet, self.player.ring):
+            _pr = getattr(_acc, 'passive_regen', 0) if _acc else 0
+            _pri = getattr(_acc, 'passive_regen_interval', 5) if _acc else 5
+            if _pr > 0 and self.turn_count % _pri == 0:
+                if self.player.hp < self.player.max_hp:
+                    self.player.hp = min(self.player.max_hp, self.player.hp + _pr)
+
+        # Coat of Cú Chulainn: berserk trigger at low HP
+        if not self.player.has_effect('berserk'):
+            for _arm_slot in self.player.armor_slots:
+                if _arm_slot and getattr(_arm_slot, 'berserk_trigger', False):
+                    _bpct = _arm_slot.berserk_hp_threshold
+                    if self.player.hp > 0 and self.player.hp / max(1, self.player.max_hp) <= _bpct:
+                        self.player.status_effects['berserk'] = _arm_slot.berserk_duration
+                        self.player._berserk_str_bonus = _arm_slot.berserk_str_bonus
+                        self.player.STR += _arm_slot.berserk_str_bonus
+                        self.add_message("The ríastrad takes hold! Your body warps with primal fury!", 'combat')
+        elif self.player.has_effect('berserk'):
+            # Berserk HP cost per turn
+            _berserk_cost = getattr(self.player, '_berserk_hp_cost', 1)
+            for _arm_slot in self.player.armor_slots:
+                if _arm_slot and getattr(_arm_slot, 'berserk_trigger', False):
+                    _berserk_cost = _arm_slot.berserk_hp_cost
+                    break
+            self.player.hp = max(1, self.player.hp - _berserk_cost)
+            # Check if berserk just expired
+            if self.player.status_effects.get('berserk', 0) <= 1:
+                _str_bonus = getattr(self.player, '_berserk_str_bonus', 0)
+                if _str_bonus:
+                    self.player.STR -= _str_bonus
+                    self.player._berserk_str_bonus = 0
+                self.add_message("The fury fades. You feel drained.", 'warning')
+
+        # Seal of Solomon: pacify nearby monsters
+        for _acc in (self.player.amulet, self.player.ring):
+            if _acc and getattr(_acc, 'pacify_chance', 0) > 0:
+                for m in self.monsters:
+                    if m.alive and abs(m.x - self.player.x) <= 2 and abs(m.y - self.player.y) <= 2:
+                        if random.random() < _acc.pacify_chance:
+                            m.add_effect('paralyzed', 1)
+
         # Clairvoyant: reveal tiles within 10-tile radius each turn
         if self.player.has_effect('clairvoyant'):
             px, py = self.player.x, self.player.y
@@ -3293,6 +3364,18 @@ class Game:
                 for cx in range(max(0, px - 10), min(self.dungeon.width, px + 11)):
                     if abs(cx - px) + abs(cy - py) <= 10:
                         self.dungeon.explored.add((cx, cy))
+
+        # Torc of Boudicca: AC bonus when surrounded by 3+ enemies
+        _surr_bonus = 0
+        for _acc in (self.player.amulet, self.player.ring):
+            if _acc and getattr(_acc, 'surrounded_ac_bonus', 0) > 0:
+                _adj_enemies = sum(1 for m in self.monsters if m.alive
+                                   and abs(m.x - self.player.x) <= 1
+                                   and abs(m.y - self.player.y) <= 1)
+                if _adj_enemies >= 3:
+                    _surr_bonus = _acc.surrounded_ac_bonus
+                break
+        self.player._surrounded_ac_bonus = _surr_bonus
 
         self._do_monster_turns()
         self._do_pet_turns()
@@ -3599,7 +3682,7 @@ class Game:
                                 f"({self.player.lockpick_charges} picks remaining)", 'success')
                             if not getattr(self, '_chronicle_first_disarm', False):
                                 self._chronicle_first_disarm = True
-                                self._log_chronicle(f"Disarmed my first trap. Hands were shaking the whole time.")
+                                self._log_chronicle("Disarmed my first trap. Hands were shaking the whole time.")
                         else:
                             self.add_message(
                                 f"You fumble the disarm! The {tname} trap remains. "
@@ -3726,9 +3809,15 @@ class Game:
         if isinstance(item, GoldPile):
             if not hasattr(self, 'player_gold'):
                 self.player_gold = 0
-            self.player_gold += item.amount
+            _gold_amt = item.amount
+            # Draupnir: double gold pickups
+            for _acc in (self.player.amulet, self.player.ring):
+                if _acc and getattr(_acc, 'gold_multiplier', 0) > 0:
+                    _gold_amt = int(_gold_amt * _acc.gold_multiplier)
+                    break
+            self.player_gold += _gold_amt
             self.ground_items.remove(item)
-            self.add_message(f"You pick up {item.amount} gold coins.", 'loot')
+            self.add_message(f"You pick up {_gold_amt} gold coins.", 'loot')
             _snd.play('gold')
             self._advance_turn()
             return
@@ -3768,26 +3857,26 @@ class Game:
             if getattr(item, 'id', '') in _CHRONICLE_ITEMS:
                 _cname = self._display_name(item)
                 _CHRONICLE_FLAVOR = {
-                    'philosophers_stone': f"Found the Philosopher's Stone. My hands are shaking. Time to get out of here.",
-                    'ariadnes_thread': f"Picked up a strange golden thread. It feels warm, almost alive.",
-                    'bronze_bull': f"Found a bronze idol shaped like a bull. Heavy. Old. Feels important.",
-                    'eye_of_the_graeae': f"A milky white eye, still wet. I don't want to think about where it came from.",
-                    'broken_blade_of_gram': f"Half a legendary sword. Even broken, the edge could shave a thought.",
-                    'gleipnir': f"Gleipnir. Thin as a ribbon but I can't break it. Nothing can.",
-                    'vidars_sandal': f"A sandal made for a god. It's enormous. And somehow, it fits.",
-                    'scales_of_michael': f"The Scales hover in my hands. I feel the weight of every choice I've made.",
-                    'sword_of_michael': f"A blade of white fire. It knows my name.",
-                    'magic_dungeon_carrot': f"A glowing carrot, of all things. Something tells me I shouldn't eat this one.",
-                    'cats_footstep': f"The sound of a cat's footstep, bottled. How is that even possible?",
-                    'womans_beard': f"The roots of a woman's beard. The dwarves are mad, but maybe that's the point.",
-                    'mountain_root': f"A root of a mountain. It weighs almost nothing. That feels wrong.",
-                    'fish_breath': f"The breath of a fish, sealed in a vial. The stopper must never come off, I think.",
-                    'bird_spittle': f"The spittle of a bird. I didn't know birds could spit. I still don't.",
-                    'bear_sinew': f"The sinew of a bear's sensitivity. I have no idea what that means, but here it is.",
-                    'tablet_of_second_death': f"Found a stone tablet with a slot in it. The inscription mentions Revelation and a 'second death.' Ominous.",
-                    'philosophers_wrench': f"An odd tool. Not a weapon, not a key. It feels like it wants to join things together.",
-                    'complete_tablet_of_second_death': f"The Stone fit the Tablet perfectly. It's glowing now. The inscription burns with golden light.",
-                    'scroll_lake_of_fire': f"A worn scroll. The ink is red-brown. It smells like ash. I can't read it yet, but I feel its weight.",
+                    'philosophers_stone': "Found the Philosopher's Stone. My hands are shaking. Time to get out of here.",
+                    'ariadnes_thread': "Picked up a strange golden thread. It feels warm, almost alive.",
+                    'bronze_bull': "Found a bronze idol shaped like a bull. Heavy. Old. Feels important.",
+                    'eye_of_the_graeae': "A milky white eye, still wet. I don't want to think about where it came from.",
+                    'broken_blade_of_gram': "Half a legendary sword. Even broken, the edge could shave a thought.",
+                    'gleipnir': "Gleipnir. Thin as a ribbon but I can't break it. Nothing can.",
+                    'vidars_sandal': "A sandal made for a god. It's enormous. And somehow, it fits.",
+                    'scales_of_michael': "The Scales hover in my hands. I feel the weight of every choice I've made.",
+                    'sword_of_michael': "A blade of white fire. It knows my name.",
+                    'magic_dungeon_carrot': "A glowing carrot, of all things. Something tells me I shouldn't eat this one.",
+                    'cats_footstep': "The sound of a cat's footstep, bottled. How is that even possible?",
+                    'womans_beard': "The roots of a woman's beard. The dwarves are mad, but maybe that's the point.",
+                    'mountain_root': "A root of a mountain. It weighs almost nothing. That feels wrong.",
+                    'fish_breath': "The breath of a fish, sealed in a vial. The stopper must never come off, I think.",
+                    'bird_spittle': "The spittle of a bird. I didn't know birds could spit. I still don't.",
+                    'bear_sinew': "The sinew of a bear's sensitivity. I have no idea what that means, but here it is.",
+                    'tablet_of_second_death': "Found a stone tablet with a slot in it. The inscription mentions Revelation and a 'second death.' Ominous.",
+                    'philosophers_wrench': "An odd tool. Not a weapon, not a key. It feels like it wants to join things together.",
+                    'complete_tablet_of_second_death': "The Stone fit the Tablet perfectly. It's glowing now. The inscription burns with golden light.",
+                    'scroll_lake_of_fire': "A worn scroll. The ink is red-brown. It smells like ash. I can't read it yet, but I feel its weight.",
                 }
                 self._log_chronicle(_CHRONICLE_FLAVOR.get(item.id, f"Picked up something interesting: {_cname}."))
             if isinstance(item, Artifact) and item.id == 'philosophers_stone':
@@ -4342,7 +4431,6 @@ class Game:
                         max_chain=6 if _persephone else 5)
 
     def _cook_compound(self, recipe: dict):
-        ing_names = ', '.join(recipe.get('ingredients', []))
         self.quiz_title = f"PREPARING {recipe['name'].upper()}  --  COOKING CHAIN"
         self.state = STATE_QUIZ
 
@@ -5847,6 +5935,10 @@ class Game:
     # Recall Lore
     # ------------------------------------------------------------------
 
+    def _has_tablet_of_destinies(self) -> bool:
+        """Check if player is carrying the Tablet of Destinies artifact."""
+        return any(getattr(i, 'id', '') == 'tablet_of_destinies' for i in self.player.inventory)
+
     def _on_quiz_answer(self, is_correct: bool):
         """Fired after every individual quiz answer to tally global stats."""
         if is_correct:
@@ -6410,10 +6502,8 @@ class Game:
         # Locked entries: 2 lines (name, bar) = ~32px
         # Use fixed row height for scrolling simplicity
         ROW_H_LOCKED = 30
-        ROW_H_UNLOCKED = 54
         content_top = by + 42
         content_bot = by + bh - 28
-        avail_h = content_bot - content_top
 
         # Clamp scroll
         max_scroll = max(0, len(data) - 1)
@@ -6826,9 +6916,11 @@ class Game:
         for i, (_, filt) in enumerate(self._EQUIP_TABS):
             if filt is None:
                 if self.equip_menu_equipped:
-                    self._menu_tab = i; break
+                    self._menu_tab = i
+                    break
             elif any(filt(item) for item in self.equip_menu_items):
-                self._menu_tab = i; break
+                self._menu_tab = i
+                break
         self.state = STATE_EQUIP_MENU
 
     def _get_equip_tab_items(self):
@@ -8369,7 +8461,8 @@ class Game:
             self._change_level(COW_LEVEL, enter_from_top=True)
         except Exception as e:
             self.add_message(f"Error entering cow level: {e}", 'danger')
-            import traceback; traceback.print_exc()
+            import traceback
+            traceback.print_exc()
 
     def _exit_cow_level(self):
         """Return from Moo Moo Farm to the level where the cow was."""
@@ -8380,7 +8473,8 @@ class Game:
             self._change_level(self._cow_return_level, enter_from_top=False)
         except Exception as e:
             self.add_message(f"Error exiting cow level: {e}", 'danger')
-            import traceback; traceback.print_exc()
+            import traceback
+            traceback.print_exc()
 
     def _draw_cow_encounter(self):
         """Draw the cow dialog overlay."""
@@ -8825,7 +8919,7 @@ class Game:
         unicorn.alive = False
         unicorn._unicorn_state = 'fled'
         self.add_message("The unicorn dips her head in farewell and vanishes in a shimmer of light.", 'info')
-        self._log_chronicle(f"The unicorn touched her horn to my hand. Warmth flooded through me. Then she was gone, vanished like morning fog. I feel... different.")
+        self._log_chronicle("The unicorn touched her horn to my hand. Warmth flooded through me. Then she was gone, vanished like morning fog. I feel... different.")
 
     def _start_flavor_encounter(self, monster):
         """Begin a flavor encounter when the player bumps a flavor NPC."""
@@ -10005,7 +10099,7 @@ class Game:
                     target.add_effect('stunned', stun)
                 self.add_message(
                     f"Aard! A telekinetic blast strikes the {target.name} for {actual} damage"
-                    + (f" and stuns it!" if not sr else "!") + f" (chain {chain})", 'success')
+                    + (" and stuns it!" if not sr else "!") + f" (chain {chain})", 'success')
                 if not target.alive:
                     self._on_monster_killed(target)
             elif effect == 'slow_monster':
@@ -11460,7 +11554,7 @@ class Game:
                 kills = 0
                 for m in list(self.monsters):
                     if m.alive and (m.x, m.y) in cone and (m.x, m.y) in self.visible:
-                        actual = m.take_damage(scaled)
+                        m.take_damage(scaled)
                         hits += 1
                         if not m.alive:
                             self._on_monster_killed(m)
@@ -11731,8 +11825,6 @@ class Game:
 
         self.state = STATE_QUIZ
         self.combat_target = monster
-        dist = max(abs(weapon.reach - (abs(monster.x - self.player.x) +
-                                        abs(monster.y - self.player.y))), 1)
         self.quiz_title = (
             f"FIRE {weapon.name.upper()} at {monster.name.upper()}  --  MATH CHAIN"
         )
@@ -11764,6 +11856,8 @@ class Game:
                         )
             self._advance_turn()
 
+        # Tablet of Destinies: allow quiz reroll if not used this floor
+        self.quiz_engine._reroll_flag = self._has_tablet_of_destinies() and not getattr(self, '_quiz_reroll_used', False)
         player_attack(self.player, monster, self.quiz_engine, on_complete, ammo=ammo_item)
 
     # ------------------------------------------------------------------
@@ -11797,6 +11891,10 @@ class Game:
                         knocked: bool = False, crit: bool = False, **kwargs):
             self.state = STATE_PLAYER
             self.combat_target = None
+            # Tablet of Destinies: mark reroll as used this floor
+            if getattr(self.quiz_engine, 'reroll_was_used', False):
+                self._quiz_reroll_used = True
+                self.add_message("The Tablet of Destinies cracks — fate rewritten!", 'info')
             if chain == 0:
                 self.add_message(
                     f"You swing wildly at the {monster.name} and miss!", 'warning'
@@ -11848,6 +11946,13 @@ class Game:
                 self.add_message(msg, 'success')
                 if killed:
                     self._on_monster_killed(monster)
+                    # Amenonuhoko: slow adjacent monsters on kill
+                    w = self.player.weapon
+                    if w and getattr(w, 'aoe_slow_on_kill', False):
+                        for m in self.monsters:
+                            if m.alive and abs(m.x - monster.x) <= 1 and abs(m.y - monster.y) <= 1:
+                                m.add_effect('slowed', 3)
+                        self.add_message("A wave of primordial stillness ripples outward.", 'info')
                     _qs_kill = getattr(self, 'quirk_system', None)
                     if _qs_kill:
                         _qs_kill.on_kill(
@@ -11860,6 +11965,8 @@ class Game:
                         )
             self._advance_turn()
 
+        # Tablet of Destinies: allow quiz reroll if not used this floor
+        self.quiz_engine._reroll_flag = self._has_tablet_of_destinies() and not getattr(self, '_quiz_reroll_used', False)
         player_attack(self.player, monster, self.quiz_engine, on_complete)
 
     def _quiz_input(self, key: int):
@@ -12039,6 +12146,66 @@ class Game:
                         m.alive = False
                         self._on_monster_killed(m)
 
+                # Tarnhelm: auto-invisibility when HP drops below 30%
+                if dmg > 0 and not getattr(self, '_tarnhelm_used', False):
+                    if self.player.hp > 0 and self.player.hp / max(1, self.player.max_hp) < 0.30:
+                        for _arm_slot in self.player.armor_slots:
+                            if _arm_slot and getattr(_arm_slot, 'invisibility_power', False):
+                                self.player.add_effect('invisible', _arm_slot.invisibility_duration)
+                                self._tarnhelm_used = True
+                                self.add_message("The Tarnhelm shimmers — you vanish from sight!", 'success')
+                                break
+
+                # Green Chapel Axe: heal when hit
+                _wpn = self.player.weapon
+                if _wpn and getattr(_wpn, 'on_hit_regen', 0) > 0 and dmg > 0:
+                    _regen_amt = _wpn.on_hit_regen
+                    self.player.hp = min(self.player.max_hp, self.player.hp + _regen_amt)
+                    self.add_message(f"The green axe mends your wounds. (+{_regen_amt} HP)", 'info')
+
+                # Svalinn: reflect fire damage back at attacker
+                _shld = self.player.shield
+                if _shld and getattr(_shld, 'fire_reflect', 0) > 0 and dmg > 0:
+                    _atk_types = getattr(m, 'damage_types', getattr(m, 'attack_types', []))
+                    if 'fire' in _atk_types:
+                        _fire_ref = max(1, int(dmg * _shld.fire_reflect))
+                        m.hp -= _fire_ref
+                        self.add_message(f"Svalinn reflects flame back at the {m.name} for {_fire_ref}!", 'combat')
+                        if m.hp <= 0 and m.alive:
+                            m.alive = False
+                            self._on_monster_killed(m)
+
+                # Babr-e Bayan: absorb first hit per floor
+                if dmg > 0 and not getattr(self, '_first_hit_used', False):
+                    for _arm_slot in self.player.armor_slots:
+                        if _arm_slot and getattr(_arm_slot, 'first_hit_absorb', False):
+                            self.player.hp = min(self.player.max_hp, self.player.hp + dmg)
+                            self._first_hit_used = True
+                            self.add_message("The tiger-skin absorbs the blow completely!", 'success')
+                            break
+
+                # Jade Cicada: death save (once per floor)
+                if self.player.hp <= 0 and not getattr(self, '_death_save_used', False):
+                    for _acc in (self.player.amulet, self.player.ring):
+                        if _acc and getattr(_acc, 'death_save', False):
+                            self.player.hp = 1
+                            self._death_save_used = True
+                            self.add_message("The jade cicada cracks — but holds! You cling to life!", 'success')
+                            _snd.play('player_healed')
+                            break
+
+                # Ankh of Isis: resurrect on death (consumes the item)
+                if self.player.hp <= 0:
+                    for _acc_slot in ('amulet', 'ring'):
+                        _acc = getattr(self.player, _acc_slot, None)
+                        if _acc and getattr(_acc, 'resurrect_on_death', False):
+                            self.player.hp = max(1, self.player.max_hp // 2)
+                            setattr(self.player, _acc_slot, None)
+                            self.add_message("The Ankh of Isis shatters! Isis breathes life back into you!", 'success')
+                            self._log_chronicle("I died. Then light. Isis pulled me back. The ankh is dust now.")
+                            _snd.play('player_healed')
+                            break
+
                 # Life Save: if the blow was fatal, survive at 1 HP (burns the amulet)
                 if self.player.hp <= 0 and self.player.has_effect('life_save'):
                     self.player.hp = 1
@@ -12113,7 +12280,7 @@ class Game:
                         elif msg[0] == 'cleanse':
                             self.add_message(f"The unicorn purifies you — {msg[1]} removed!", 'success')
                         elif msg[0] == 'trap':
-                            self.add_message(f"The unicorn stamps nervously — trap sensed nearby!", 'warning')
+                            self.add_message("The unicorn stamps nervously — trap sensed nearby!", 'warning')
                     continue
                 target = result[1] if len(result) > 1 else None
                 if action == 'special' and target and target.alive:
@@ -16018,7 +16185,6 @@ class Game:
 
     def _draw_debug_overlay(self):
         """Transparent debug HUD showing spawn/balance data for playtesting."""
-        import json as _djson
 
         font = self.font_sm
         lh = 18  # line height
@@ -16254,13 +16420,15 @@ def main():
                 except Exception as _evt_err:
                     game.add_message(f"Error: {_evt_err}", 'danger')
                     game.state = STATE_PLAYER  # recover to playable state
-                    import traceback; traceback.print_exc()
+                    import traceback
+                    traceback.print_exc()
             try:
                 game.update(dt)
             except Exception as _upd_err:
                 game.add_message(f"Error: {_upd_err}", 'danger')
                 game.state = STATE_PLAYER
-                import traceback; traceback.print_exc()
+                import traceback
+                traceback.print_exc()
             game.render()
 
         # Save on clean exit if the game is still in progress and player chose to save

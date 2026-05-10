@@ -281,5 +281,33 @@
     "min_level": 9999,
     "identified": true,
     "lore": "An iron-bound scroll case sealed with the sigil of the City Watch. It contains troop positions for an ongoing siege — thousands of lives depend on its delivery. A dying courier asked you to carry it to the surface. It is heavy and useless to you, but it is a promise."
+  },
+  "palladium": {
+    "name": "Palladium",
+    "symbol": "&",
+    "color": [
+      180,
+      180,
+      200
+    ],
+    "weight": 2.0,
+    "min_level": 45,
+    "identified": false,
+    "stair_reveal": true,
+    "lore": "A small wooden statue of Athena, fallen from heaven to protect Troy. The city could not be taken while the Palladium remained within its walls — Odysseus and Diomedes had to steal it before the horse could work. It reveals the path forward: while carried, the stairs on every floor glow faintly in the bearer's mind, visible even through walls and darkness."
+  },
+  "tablet_of_destinies": {
+    "name": "Tablet of Destinies",
+    "symbol": "?",
+    "color": [
+      160,
+      140,
+      100
+    ],
+    "weight": 3.0,
+    "min_level": 70,
+    "identified": false,
+    "quiz_reroll": true,
+    "lore": "Whoever holds the Tablet of Destinies controls the fate of all things. Enlil kept it in his sanctuary; Anzu the storm-bird stole it and plunged the world into chaos. Ninurta slew Anzu and returned it. The Tablet allows its bearer to reject fate once per floor — when a question is answered wrongly, the Tablet cracks and offers a different question. A second chance, drawn from the well of all possible futures."
   }
 }

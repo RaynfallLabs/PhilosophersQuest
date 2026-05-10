@@ -89,8 +89,19 @@ class Weapon(Item):
         self.can_dig: bool              = bool(defn.get('can_dig', False))
         self.ignore_resistances: bool   = bool(defn.get('ignore_resistances', False))
         self.abaddon_bonus_damage: str  = defn.get('abaddon_bonus_damage', '')
+        # Khopesh of Anubis: +max_hp on kill
+        self.kill_max_hp_bonus: int     = int(defn.get('kill_max_hp_bonus', 0))
+        self.kill_max_hp_cap: int       = int(defn.get('kill_max_hp_cap', 0))
+        # Chandrahasa: bonus damage when player HP is low
+        self.low_hp_damage_bonus: bool  = bool(defn.get('low_hp_damage_bonus', False))
+        # Amenonuhoko: slow adjacent monsters on kill
+        self.aoe_slow_on_kill: bool     = bool(defn.get('aoe_slow_on_kill', False))
+        # Green Chapel Axe: heal when hit by enemy
+        self.on_hit_regen: int          = int(defn.get('on_hit_regen', 0))
         # Runtime-only tracking for growing power
         self.kill_count: int            = 0
+        # Runtime: accumulated max_hp bonus from kill_max_hp_bonus
+        self._max_hp_granted: int       = 0
 
     @property
     def max_chain_length(self) -> int:
@@ -125,6 +136,18 @@ class Armor(Item):
         self.floor_spawn_weight: dict = defn.get('floorSpawnWeight', defn.get('floor_spawn_weight', {}))
         self.pet_regen_bonus: int    = int(defn.get('pet_regen_bonus', 0))
         self.chain_bonus: int        = int(defn.get('chain_bonus', 0))
+        # Coat of Cú Chulainn: berserk at low HP
+        self.berserk_trigger: bool   = bool(defn.get('berserk_trigger', False))
+        self.berserk_hp_threshold: float = float(defn.get('berserk_hp_threshold', 0.25))
+        self.berserk_str_bonus: int  = int(defn.get('berserk_str_bonus', 0))
+        self.berserk_duration: int   = int(defn.get('berserk_duration', 0))
+        self.berserk_hp_cost: int    = int(defn.get('berserk_hp_cost', 0))
+        # Babr-e Bayan: absorb first hit per floor
+        self.first_hit_absorb: bool  = bool(defn.get('first_hit_absorb', False))
+        # Tarnhelm: activated invisibility
+        self.invisibility_power: bool = bool(defn.get('invisibility_power', False))
+        self.invisibility_duration: int = int(defn.get('invisibility_duration', 0))
+        self.invisibility_cooldown: int = int(defn.get('invisibility_cooldown', 0))
 
     @property
     def cursed(self) -> bool:
@@ -150,6 +173,10 @@ class Shield(Item):
         self.unidentified_name: str = defn.get('unidentified_name', 'an unknown shield')
         self.container_loot_tier: str = defn.get('containerLootTier', defn.get('container_loot_tier', 'common'))
         self.floor_spawn_weight: dict = defn.get('floorSpawnWeight', defn.get('floor_spawn_weight', {}))
+        # Svalinn: reflect fire damage back at attacker
+        self.fire_reflect: float     = float(defn.get('fire_reflect', 0.0))
+        # Ancile: bonus seconds on quiz timers
+        self.quiz_timer_bonus: int   = int(defn.get('quiz_timer_bonus', 0))
 
     @property
     def cursed(self) -> bool:
@@ -171,6 +198,14 @@ class Accessory(Item):
         self.identified       = bool(defn.get('identified', False))
         self.container_loot_tier: str = defn.get('containerLootTier', defn.get('container_loot_tier', 'common'))
         self.floor_spawn_weight: dict = defn.get('floorSpawnWeight', defn.get('floor_spawn_weight', {}))
+        # Artifact mechanics (defaults match the getattr fallbacks used in main.py)
+        self.passive_regen: int          = int(defn.get('passive_regen', 0))           # Eye of Horus
+        self.passive_regen_interval: int = int(defn.get('passive_regen_interval', 5))
+        self.gold_multiplier: float      = float(defn.get('gold_multiplier', 0.0))     # Draupnir
+        self.surrounded_ac_bonus: int    = int(defn.get('surrounded_ac_bonus', 0))     # Torc of Boudicca
+        self.pacify_chance: float        = float(defn.get('pacify_chance', 0.0))       # Seal of Solomon
+        self.death_save: bool            = bool(defn.get('death_save', False))         # Jade Cicada
+        self.resurrect_on_death: bool    = bool(defn.get('resurrect_on_death', False)) # Ankh of Isis
 
     @property
     def cursed(self) -> bool:

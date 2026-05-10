@@ -130,8 +130,15 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
             elif wbuc == 'cursed':
                 buc_bonus = -1
 
+        # Chandrahasa: bonus damage when player HP is low
+        low_hp_mult = 1.0
+        if weapon and getattr(weapon, 'low_hp_damage_bonus', False) and player.max_hp > 0:
+            hp_pct = player.hp / player.max_hp
+            if hp_pct < 0.5:
+                low_hp_mult = 1.0 + (0.5 - hp_pct) * 2.0  # up to 2x at 0% HP
+
         str_factor = 1.0 + max(0, player.STR - 10) * 0.03
-        damage = max(1, int((base + enchant + ammo_bonus + buc_bonus) * mult * dtype_mult * str_factor))
+        damage = max(1, int((base + enchant + ammo_bonus + buc_bonus) * mult * dtype_mult * str_factor * low_hp_mult))
 
         # Empower spell: 3x damage on next hit, then clears
         if player.has_effect('empowered'):
@@ -209,6 +216,16 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
             weapon.kill_count = getattr(weapon, 'kill_count', 0) + 1
             if weapon.kill_count % weapon.kills_to_grow == 0:
                 weapon.base_damage += 1
+
+        # Kill max HP bonus (Khopesh of Anubis)
+        if monster.is_dead() and weapon and getattr(weapon, 'kill_max_hp_bonus', 0) > 0:
+            granted = getattr(weapon, '_max_hp_granted', 0)
+            cap = getattr(weapon, 'kill_max_hp_cap', 10)
+            if granted < cap:
+                bonus = min(weapon.kill_max_hp_bonus, cap - granted)
+                player.max_hp += bonus
+                player.hp += bonus
+                weapon._max_hp_granted = granted + bonus
 
         # Knockback mechanic (handled by caller via return value; flag via on_complete extra)
         knocked = False

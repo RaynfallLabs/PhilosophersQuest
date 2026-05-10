@@ -538,5 +538,43 @@
       "31-45": 3,
       "46-100": 0
     }
+  },
+  "svalinn": {
+    "name": "Svalinn",
+    "symbol": ")",
+    "color": [255, 180, 50],
+    "weight": 4.0,
+    "min_level": 50,
+    "tier": 4,
+    "material": "divine bronze",
+    "ac_bonus": 4,
+    "equip_threshold": 2,
+    "quiz_tier": 4,
+    "damage_resistances": {"fire": 0.0},
+    "can_be_cursed": false,
+    "enchant_bonus": 0,
+    "fire_reflect": 0.25,
+    "unidentified_name": "a golden shield that radiates warmth",
+    "lore": "In Norse myth, Svalinn stands before the sun. Without it, the mountains and the sea would burn. It drinks fire — not merely blocking it but absorbing it entirely. What it cannot absorb, it sends back. Those who strike its bearer with flame find their own fire returned to them.",
+    "floorSpawnWeight": {"41-60": 1, "61-80": 2, "81-100": 1}
+  },
+  "ancile": {
+    "name": "Ancile",
+    "symbol": ")",
+    "color": [180, 40, 40],
+    "weight": 3.0,
+    "min_level": 30,
+    "tier": 3,
+    "material": "divine bronze",
+    "ac_bonus": 3,
+    "equip_threshold": 1,
+    "quiz_tier": 3,
+    "damage_resistances": {"blunt": 0.7},
+    "can_be_cursed": false,
+    "enchant_bonus": 0,
+    "quiz_timer_bonus": 2,
+    "unidentified_name": "an oval bronze shield with an angular notch",
+    "lore": "The sacred shield that fell from heaven during the reign of Numa Pompilius, second king of Rome. A voice declared that Rome would endure as long as the shield was preserved. Numa had eleven copies made so no thief could identify the original. This is one of the twelve — or perhaps the original. Its divine origin sharpens the mind, granting extra time on all mental challenges.",
+    "floorSpawnWeight": {"21-40": 1, "41-60": 2, "61-80": 1}
   }
 }
