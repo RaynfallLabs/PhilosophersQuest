@@ -30,6 +30,7 @@ from game_helpers import (
     wrap_text as _gh_wrap_text,
 )
 from quiz_engine import QuizMode, QuizState
+from spells import LEARNABLE_SPELLS
 from game_states import (
     STATE_PLAYER, STATE_QUIZ, STATE_EQUIP_MENU, STATE_ACCESSORY_MENU,
     STATE_WAND_MENU, STATE_SCROLL_MENU, STATE_IDENTIFY_MENU, STATE_COOK_MENU,
@@ -1837,10 +1838,9 @@ class RenderMixin:
         )
 
     def _draw_spell_menu(self):
-        from main import LEARNABLE_SPELLS as _LEARNABLE_SPELLS
         entries = []
         for i, spell_id in enumerate(self.spell_menu_items[:26]):
-            spell = _LEARNABLE_SPELLS.get(spell_id, {})
+            spell = LEARNABLE_SPELLS.get(spell_id, {})
             mp_cost = spell.get('mp_cost', '?')
             can_cast = self.player.mp >= int(mp_cost)
             tier = spell.get('quiz_tier', 1)
