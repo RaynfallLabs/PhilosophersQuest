@@ -5281,6 +5281,390 @@
   },
   {
     "tier": 3,
+    "question": "A Neapolitan pizzaiolo defends the original 1889 Margherita pizza — created (per tradition) for Queen Margherita of Savoy. Its three toppings represent the new Italian flag: red, white, green. The toppings are:",
+    "answer": "Tomato, mozzarella, basil",
+    "choices": [
+      "Tomato, mozzarella, basil",
+      "Tomato, mozzarella, oregano",
+      "Tomato, ricotta, parsley",
+      "Tomato, parmesan, basil"
+    ],
+    "context": "Raffaele Esposito of Pizzeria Brandi gets credit. Italy unified just 28 years earlier; the pizza honored the Queen with the national colors. Today's Vera Pizza Napoletana certification requires San Marzano tomatoes, fior di latte or buffalo mozzarella, fresh basil, and a wood-fired oven at 905F."
+  },
+  {
+    "tier": 3,
+    "question": "A Japanese cook simmers kelp and dried-bonito flakes briefly in water to make the foundation broth of Japanese cuisine. The broth's name:",
+    "answer": "Dashi",
+    "choices": [
+      "Dashi",
+      "Shoyu",
+      "Tsuyu",
+      "Mirin"
+    ],
+    "context": "Dashi (kombu + katsuobushi) is the umami base of miso soup, simmered dishes, dipping sauces. Shoyu is soy sauce. Tsuyu is a dashi-based dipping sauce. Mirin is sweet rice wine. Vegetarian dashi uses kombu + dried shiitake."
+  },
+  {
+    "tier": 3,
+    "question": "A Greek waiter explains that the country's mountain herb thyme sits in three classic combinations across the Eastern Mediterranean: with sumac and sesame; with feta and lemon; with which third pairing — a dried red berry that produces a tart, deep-red sprinkle?",
+    "answer": "Sumac (Rhus coriaria), used as a souring agent before lemon was widespread",
+    "choices": [
+      "Sumac (Rhus coriaria), used as a souring agent before lemon was widespread",
+      "Annatto (Bixa orellana), used as a coloring and mild peppery accent",
+      "Aleppo pepper (Capsicum annuum), used as a moderate-heat dried flake",
+      "Pomegranate molasses (Punica granatum), reduced fruit syrup"
+    ],
+    "context": "Sumac was the Levantine sour before citrus reached the region. Today it sits alongside lemon and pomegranate molasses as the three primary sour notes. The dried berry is hand-ground to a coarse red powder; it gives Levantine roast chicken and fattoush their signature bright-tart edge."
+  },
+  {
+    "tier": 3,
+    "question": "A Texan and a Memphis pitmaster argue at a barbecue competition. The Texan defends brisket; the Memphis cook defends ribs. North Carolina enters the room. What does Carolina barbecue typically center on?",
+    "answer": "Pulled pork — whole hog or shoulder, with vinegar-based sauce",
+    "choices": [
+      "Pulled pork — whole hog or shoulder, with vinegar-based sauce",
+      "Beef short ribs — slow-smoked with mustard sauce",
+      "Smoked turkey — the historical Carolina barnyard staple",
+      "Smoked lamb — descended from the Eastern Carolina coastal trade"
+    ],
+    "context": "Eastern Carolina: whole hog, vinegar + red-pepper sauce, no tomato. Western (Lexington): pork shoulder, vinegar + a bit of ketchup. Texas: brisket, dry rub. Memphis: ribs, dry or wet. Kansas City: thick sweet tomato sauce on everything. Each region's identity is in the meat AND the sauce."
+  },
+  {
+    "tier": 3,
+    "question": "A Roman trattoria serves cacio e pepe — three ingredients, exquisitely simple. Pecorino cheese, black pepper, and:",
+    "answer": "Starchy pasta water (no oil, no butter)",
+    "choices": [
+      "Starchy pasta water (no oil, no butter)",
+      "Olive oil and garlic, plus the pasta water",
+      "Heavy cream to bind the pecorino into a sauce",
+      "Egg yolk and butter, in the carbonara style"
+    ],
+    "context": "Pasta water's starch + emulsified pecorino + fresh-ground pepper = a creamy sauce with no dairy beyond cheese. The technique is harder than it looks: too hot and the cheese clumps; too cold and it never melts. Done right, it is a master class in pasta-water emulsification."
+  },
+  {
+    "tier": 3,
+    "question": "A Roman cook insists carbonara contains no cream — only eggs, cheese, cured pork, and pepper. The cheese is pecorino Romano. The cured pork — distinguishing authentic carbonara — is:",
+    "answer": "Guanciale (cured pork jowl)",
+    "choices": [
+      "Guanciale (cured pork jowl)",
+      "Pancetta (cured pork belly)",
+      "Bacon (smoked pork belly)",
+      "Speck (smoked pork leg)"
+    ],
+    "context": "Guanciale comes from the cheek/jowl — fattier, sweeter, more aromatic than pancetta. Pancetta substitutes acceptably; bacon adds smoke that purists exclude. The dish dates to mid-20th century Rome. American adaptations added cream — the Italian gold standard does not."
+  },
+  {
+    "tier": 3,
+    "question": "A French cheesemonger arranges a board with goat cheese (chèvre), Brie, Roquefort, and Comté. De Gaulle's famous quip about France was that:",
+    "answer": "It is hard to govern a country with 246 kinds of cheese",
+    "choices": [
+      "It is hard to govern a country with 246 kinds of cheese",
+      "Every Frenchman's first loyalty is to his region's cheese",
+      "A meal without cheese is like a beautiful woman with one eye",
+      "Cheese is the only French food that does not need a sauce"
+    ],
+    "context": "De Gaulle reportedly said it in the 1960s; the exact number varies in retellings (some have 258, 365). France now has over 1,200 named cheeses, of which about 50 carry AOC protection. The third quote belongs to Brillat-Savarin (with dessert, not cheese)."
+  },
+  {
+    "tier": 3,
+    "question": "A French goat farmer in the Languedoc makes a soft cheese aged in limestone caves where one specific mold colonizes the wheel and creates blue-green veins. The mold's name:",
+    "answer": "Penicillium roqueforti",
+    "choices": [
+      "Penicillium roqueforti",
+      "Penicillium camemberti",
+      "Penicillium glaucum",
+      "Brevibacterium linens"
+    ],
+    "context": "P. roqueforti also makes Stilton, Gorgonzola, and Cabrales blue. Roquefort itself is sheep's milk, aged in the Combalou caves at Roquefort-sur-Soulzon — caves with natural air vents that maintain a constant temperature and humidity year-round. P. camemberti is the white-bloom rind of Camembert and Brie."
+  },
+  {
+    "tier": 3,
+    "question": "A wine purist refuses to call sparkling wine champagne unless it comes from the Champagne region and is made by a specific method — secondary fermentation in the bottle, with riddling and disgorgement. The method's name:",
+    "answer": "Méthode champenoise (méthode traditionnelle)",
+    "choices": [
+      "Méthode champenoise (méthode traditionnelle)",
+      "Méthode charmat — tank-fermented",
+      "Méthode ancestrale — single fermentation",
+      "Méthode rurale — bottle without disgorgement"
+    ],
+    "context": "Méthode champenoise legally restricted to Champagne since 1994 (others must use traditionnelle). Charmat method (tank) makes Prosecco. Méthode ancestrale (pétillant naturel) bottles wine before primary fermentation finishes. Dom Pérignon was a Benedictine monk who refined blending and clarification — not the inventor of sparkling wine."
+  },
+  {
+    "tier": 3,
+    "question": "A Piedmont autumn market sells one of the world's most expensive ingredients by the gram — pungent, earthy, never cultivated, only hunted with trained dogs. The price has crossed $4,000/lb. It is:",
+    "answer": "White truffle (Tuber magnatum pico)",
+    "choices": [
+      "White truffle (Tuber magnatum pico)",
+      "Black Périgord truffle (Tuber melanosporum)",
+      "Burgundy truffle (Tuber uncinatum)",
+      "Summer truffle (Tuber aestivum)"
+    ],
+    "context": "Alba in Piedmont, October-December. Cannot be farmed; must grow with specific oak/hazel roots. Dogs replaced pigs in the late 20th century (pigs ate the truffles). Black truffles from the Périgord and Burgundy are cultivated and run ~10% of the price. Shaved raw over pasta or eggs — heat destroys the aroma."
+  },
+  {
+    "tier": 3,
+    "question": "A Copenhagen chef in 2003 began foraging the Nordic coast and forest, fermenting cabbages and pine, and serving a tasting menu that helped redirect global fine dining toward locality. The restaurant:",
+    "answer": "Noma (chef René Redzepi)",
+    "choices": [
+      "Noma (chef René Redzepi)",
+      "Geranium (chef Rasmus Kofoed)",
+      "Frantzén (chef Björn Frantzén)",
+      "Maaemo (chef Esben Holmboe Bang)"
+    ],
+    "context": "Noma (Nordisk Mad) opened 2003. Won World's Best Restaurant four times. The 2004 New Nordic Manifesto — Redzepi and Claus Meyer — set the regional-foraged template that swept fine dining for two decades. The technique-and-location ethos is now copied from Lima to Sydney."
+  },
+  {
+    "tier": 3,
+    "question": "A Korean grandmother teaches a granddaughter to ferment cabbage in the late fall. Households gather to chop, salt, season with chile and garlic, and pack jars for winter. The community-fermentation tradition's name:",
+    "answer": "Kimjang",
+    "choices": [
+      "Kimjang",
+      "Jangjang",
+      "Mukbang",
+      "Bibimbap"
+    ],
+    "context": "Kimjang (or gimjang) is the autumn kimchi-making — recognized by UNESCO Intangible Heritage in 2013. Mukbang is online eating broadcast. Bibimbap is a rice bowl. Korean kimchi includes over 200 varieties; baechu (napa cabbage) is the most common."
+  },
+  {
+    "tier": 3,
+    "question": "An Indian thali contains many small bowls (katoris) arranged on a large platter. The diner mixes elements at will. The meal-on-a-plate format reflects:",
+    "answer": "Six-rasa balance — sweet, sour, salty, bitter, pungent, astringent — in one meal",
+    "choices": [
+      "Six-rasa balance — sweet, sour, salty, bitter, pungent, astringent — in one meal",
+      "The strict separation of cooked and uncooked foods on the same plate",
+      "Buddhist five-food-color symbolism inherited from China",
+      "Mughal court structure with sequential service in compartments"
+    ],
+    "context": "Ayurvedic theory holds that a balanced meal includes all six tastes. Thali means platter in Hindi. South Indian thalis include rice, sambar, rasam, vegetables, curd, pickles, papadum. Banana-leaf service (Kerala, Tamil Nadu) replaces the metal plate."
+  },
+  {
+    "tier": 3,
+    "question": "An Italian gnocchi recipe survives in 14th-century manuscripts. The classic potato gnocchi the world knows today is much more recent than that — because the potato itself did not reach Italy until:",
+    "answer": "After 1500 — the Columbian Exchange brought potatoes from the Andes",
+    "choices": [
+      "After 1500 — the Columbian Exchange brought potatoes from the Andes",
+      "Roman times — Augustus introduced them from Egyptian conquests",
+      "The Crusades — knights returned with potatoes from the Holy Land",
+      "Before recorded history — the wild Italian potato was always native"
+    ],
+    "context": "Pre-Columbian gnocchi were made with semolina, breadcrumbs, or ricotta. Potatoes spread slowly in Europe (suspected as poisonous nightshade for a century). Potato gnocchi became standard in Italy only by the 18th-19th century. The Andes — Peru, Bolivia — domesticated the potato over 7,000 years ago."
+  },
+  {
+    "tier": 3,
+    "question": "A South Indian breakfast cook ferments rice + urad-dal batter overnight, then ladles thin disks onto a hot griddle. The crisp savory crepe rolls around a potato filling. The dish:",
+    "answer": "Dosa (often masala dosa with potato filling)",
+    "choices": [
+      "Dosa (often masala dosa with potato filling)",
+      "Idli — steamed cake of the same batter",
+      "Uttapam — thicker pancake of the same batter",
+      "Appam — coconut-rice pancake from Kerala"
+    ],
+    "context": "Same batter, three forms: dosa (thin crepe), idli (steamed soft cake), uttapam (thick pancake). All ferment overnight, giving sour notes and probiotic content. Sambar (lentil stew) and coconut chutney accompany. Origins in Karnataka or Tamil Nadu (disputed)."
+  },
+  {
+    "tier": 3,
+    "question": "A Hungarian housewife browns onions, removes the pot from heat, stirs in sweet paprika off the burner, and only then adds tomato or broth. The off-heat step is critical because:",
+    "answer": "Paprika scorches easily, turning bitter and dull if it hits very hot fat",
+    "choices": [
+      "Paprika scorches easily, turning bitter and dull if it hits very hot fat",
+      "Paprika needs acidic liquid first to bloom its color and flavor",
+      "Paprika dissolves only in cool water — heat denatures it instantly",
+      "Paprika releases its color only after slow grain-by-grain hydration"
+    ],
+    "context": "Goulash, paprikás, csirke paprikás — Hungarian cuisine's national fingerprint. The off-heat bloom is the same logic as Indian tadka in reverse: capsicum's color compounds (carotenoids) are fat-soluble but heat-fragile. A good Hungarian cook protects the paprika as carefully as a French cook coaxes a roux."
+  },
+  {
+    "tier": 3,
+    "question": "A Spanish cook builds nearly every traditional savory dish on a base of onions, garlic, tomato, and sometimes peppers slow-cooked in olive oil for a long time. The base — Spanish cooking's foundation — is called:",
+    "answer": "Sofrito",
+    "choices": [
+      "Sofrito",
+      "Refrito",
+      "Picada",
+      "Allioli"
+    ],
+    "context": "Sofrito (sofregit in Catalan) is the slow-cooked aromatic base — sometimes 45 minutes for a proper one. Picada is the breadcrumb-and-nut paste added at the end. Allioli is garlic-oil emulsion. Variations of sofrito travel across Italian (soffritto), Portuguese, Latin American cooking — each region with its own ingredient mix."
+  },
+  {
+    "tier": 3,
+    "question": "A Brazilian dish slow-cooks black beans with pork — bacon, ribs, sausage, sometimes ears and feet — into a deep stew, served with rice, collards (couve), orange slices, and farofa. National dish status. Its name:",
+    "answer": "Feijoada",
+    "choices": [
+      "Feijoada",
+      "Moqueca",
+      "Vatapá",
+      "Acarajé"
+    ],
+    "context": "Feijoada has Portuguese and African roots — slow-cooked bean stews with mixed pork are common across Iberian cuisines. The Brazilian version became iconic. Moqueca is Bahian fish stew with coconut milk. Vatapá is bread-shrimp-peanut paste. Acarajé is the Afro-Brazilian black-eyed-pea fritter from Salvador."
+  },
+  {
+    "tier": 3,
+    "question": "A Soviet collectivization campaign in 1932-33 confiscated grain from Ukraine while drought reduced yields. About 3.5 to 5 million Ukrainians starved. Many states and scholars now recognize this as genocide. The name:",
+    "answer": "Holodomor (death by hunger)",
+    "choices": [
+      "Holodomor (death by hunger)",
+      "Yezhovshchina (the great purge)",
+      "Polish Operation (NKVD ethnic operation)",
+      "Aktion Reinhardt (later Nazi operation)"
+    ],
+    "context": "Stalin's grain-quota policy, blocked food aid, and restrictions on Ukrainian peasant movement turned a poor harvest into mass death. Robert Conquest's Harvest of Sorrow (1986) documented the policy chain. The Verkhovna Rada (Ukrainian parliament), and over 25 nations, formally recognize it as genocide."
+  },
+  {
+    "tier": 3,
+    "question": "Mao's Great Leap Forward (1958-62) combined backyard steel furnaces, collectivized communes, falsified grain reports, and pest-eradication campaigns into history's deadliest famine. Death-toll estimates range from:",
+    "answer": "15 to 45 million — likely the largest famine ever",
+    "choices": [
+      "15 to 45 million — likely the largest famine ever",
+      "1 to 3 million, comparable to the Bengal famine",
+      "50 to 100 million, exceeding all 20th-century famines combined",
+      "0.5 to 1 million, on a scale with WWII rationing deaths"
+    ],
+    "context": "Frank Dikötter (Mao's Great Famine, 2010) put it near 45M; older estimates cluster around 30M. The Four Pests campaign killed sparrows, which had eaten locusts and worms; insect plagues followed. Cadres reported impossible yields to avoid punishment; the state seized 'surplus' that didn't exist. Yang Jisheng's Tombstone (2008) is the inside-China account."
+  },
+  {
+    "tier": 3,
+    "question": "A French confectioner offered a 12,000-franc prize from Napoleon's army for any inventor who could devise a long-storing food for soldiers. In 1809 he won — sealing meat and vegetables in glass jars, then heat-treating. His name:",
+    "answer": "Nicolas Appert — the father of canning",
+    "choices": [
+      "Nicolas Appert — the father of canning",
+      "Louis Pasteur — pasteurization",
+      "Clarence Birdseye — flash freezing",
+      "Hippolyte Mège-Mouriès — margarine"
+    ],
+    "context": "Appert published L'Art de Conserver in 1810. He didn't know why his method worked — bacteriology wouldn't exist for another 60 years (Pasteur, 1864). British inventor Peter Durand patented the tin-can version a year later (1810). The 12,000 franc prize equaled about a decade of skilled wages."
+  },
+  {
+    "tier": 3,
+    "question": "A muckraking American novelist published a 1906 expose of Chicago meatpacking — diseased animals slaughtered, workers maimed, conditions filthy. President Roosevelt read it and pushed legislation through within months. The novelist:",
+    "answer": "Upton Sinclair (The Jungle)",
+    "choices": [
+      "Upton Sinclair (The Jungle)",
+      "Ida Tarbell (Standard Oil expose)",
+      "Lincoln Steffens (Shame of the Cities)",
+      "Jacob Riis (How the Other Half Lives)"
+    ],
+    "context": "Sinclair aimed at the conditions of immigrant workers; the public was outraged at what was in their meat. The Pure Food and Drug Act and the Federal Meat Inspection Act both passed June 30, 1906 — among the first major federal food-safety laws. Sinclair quipped, 'I aimed at the public's heart, and by accident I hit it in the stomach.'"
+  },
+  {
+    "tier": 3,
+    "question": "A Bordeaux ambassador in Paris hosted dinners in 1810 where dishes were served sequentially rather than all at once on the table — a revolution that gave us the modern restaurant meal structure. This service style is called:",
+    "answer": "Service à la russe",
+    "choices": [
+      "Service à la russe",
+      "Service à la française",
+      "Service à l'italienne",
+      "Service moderne"
+    ],
+    "context": "Prince Alexander Kurakin, Russian Ambassador. The earlier service à la française had everything on the table at once (visually impressive but the food cooled). Sequential service required more plates, more staff, and reshaped fine dining everywhere. By the late 19th century it was the universal grand-dinner format."
+  },
+  {
+    "tier": 3,
+    "question": "Three Olmec-Maya-Aztec civilizations cultivated a bitter drink from cacao beans, ground into paste and whipped with water, chiles, and vanilla. Spanish conquistadors took it home and sweetened it. The Mesoamerican name for the drink — which entered Spanish unchanged:",
+    "answer": "Xocoatl (becoming chocolate)",
+    "choices": [
+      "Xocoatl (becoming chocolate)",
+      "Cacahuatl (becoming cocoa)",
+      "Tlapizli (becoming tlapi)",
+      "Capulli (becoming capul)"
+    ],
+    "context": "Cacao was sacred — used in religious rites, currency, and ritual drinks. Bitter chocolate spread to Spain after Cortés (1520s), reached France through royal marriage (1615), and became a mass European drink through the 17th-18th century. Solid eating chocolate is a 19th-century invention (Joseph Fry, 1847)."
+  },
+  {
+    "tier": 3,
+    "question": "Coffee spread from Ethiopian highlands to Yemen, where Sufi monasteries adopted it for nighttime prayer. By 1554 Constantinople had its first coffeehouse. The drink reached Vienna after an Ottoman army left sacks of beans behind — fleeing the siege of:",
+    "answer": "Vienna, 1683",
+    "choices": [
+      "Vienna, 1683",
+      "Lepanto, 1571",
+      "Belgrade, 1521",
+      "Rhodes, 1522"
+    ],
+    "context": "Sobieski's Polish forces broke the Ottoman siege. Franciszek Jerzy Kulczycki (Kolschitzky) is credited with opening Vienna's first coffeehouse with the abandoned beans. Other versions credit Johannes Diodato. By 1700 Vienna had multiple coffeehouses, a culture that UNESCO would honor 300 years later."
+  },
+  {
+    "tier": 3,
+    "question": "Bengal in 1943 suffered a famine that killed 2-3 million under British wartime rule. Grain was being diverted to Allied troops and European stockpiles; an export-allowed policy continued during the worst months. The wartime British leader whose role remains historically contested:",
+    "answer": "Winston Churchill",
+    "choices": [
+      "Winston Churchill",
+      "Clement Attlee",
+      "Stanley Baldwin",
+      "Neville Chamberlain"
+    ],
+    "context": "Madhusree Mukerjee's Churchill's Secret War (2010) argues the famine was preventable and Churchill resisted grain shipments. Defenders cite wartime logistics. Either way, an Indian breadbasket starved while the Empire prioritized other theaters. Estimates of the death toll range from 2.1 to 3.8 million."
+  },
+  {
+    "tier": 3,
+    "question": "A British nobleman who refused to leave the gambling table asked for meat between two slices of bread so he could keep playing. The year was 1762. His title — and the food's name:",
+    "answer": "John Montagu, 4th Earl of Sandwich",
+    "choices": [
+      "John Montagu, 4th Earl of Sandwich",
+      "Robert Walpole, Earl of Orford",
+      "Henry Cavendish, Duke of Newcastle",
+      "Thomas Pelham, Duke of Hampshire"
+    ],
+    "context": "Montagu was First Lord of the Admiralty; the story comes via Pierre-Jean Grosley's 1772 travel writing. Earlier traveler-versions exist (Hillel the Elder's matzah-and-bitter-herb sandwich for Passover predates by 18 centuries). What the Earl popularized was the casual hand-eaten form for English society."
+  },
+  {
+    "tier": 3,
+    "question": "American spaghetti-and-meatballs is widely identified as Italian. In Italy, the combination is essentially unknown. The dish emerged among Italian immigrants in late-19th-early-20th-century:",
+    "answer": "Lower Manhattan and other US Little Italys",
+    "choices": [
+      "Lower Manhattan and other US Little Italys",
+      "Sicily, then exported via emigration",
+      "Naples, then standardized abroad",
+      "Bologna, the meat-sauce city"
+    ],
+    "context": "Italian-American cooking developed its own identity in immigrant New York, Boston, Philadelphia. In Italy, polpette (meatballs) are served as a main course separately; spaghetti goes with simpler sauces. The combination is now a recognized Italian-American genre — not a misunderstanding of Italian food but a parallel cuisine."
+  },
+  {
+    "tier": 3,
+    "question": "A British-occupied Vietnam in the 1860s-1880s drew French colonial bakeries, beef butchery, and the baguette. After the French withdrew in 1954, Vietnamese bakers reinvented the baguette as a sandwich with pâté, pickled daikon, cilantro, jalapeños, and cold cuts. The sandwich's name:",
+    "answer": "Bánh mì",
+    "choices": [
+      "Bánh mì",
+      "Goi cuon",
+      "Cha gio",
+      "Bun cha"
+    ],
+    "context": "Bánh mì literally means bread — the Vietnamese term for any Western-style loaf; only colloquially does it mean the sandwich. The hybrid emerged after French departure in 1954 — South Vietnamese vendors made it street-food. Goi cuon are fresh spring rolls; cha gio are fried; bun cha is grilled pork over noodles."
+  },
+  {
+    "tier": 3,
+    "question": "A Coney Island vendor in 1867 sold sausages on milk rolls. Then in 1916 his ex-employee opened a competing stand selling them at half the price — five cents. That stand became a 4th-of-July landmark. The competitor:",
+    "answer": "Nathan Handwerker (Nathan's Famous)",
+    "choices": [
+      "Nathan Handwerker (Nathan's Famous)",
+      "Oscar Mayer (Wisconsin sausage)",
+      "Charles Feltman (the original Coney vendor)",
+      "Hebrew National (kosher hot dogs)"
+    ],
+    "context": "Feltman was the original vendor (1867). Handwerker worked for him, opened his own stand in 1916 charging 5¢ vs. Feltman's 10¢. Nathan's Famous Hot Dog Eating Contest (July 4) is the cultural marker that ties this to the American summer. Vienna and Frankfurt both claim the sausage's European origin."
+  },
+  {
+    "tier": 3,
+    "question": "A Hollywood restaurant in 1937 became the birthplace of a layered chopped salad. The owner — Robert H. Cobb of the Brown Derby — invented it as a late-night fridge-clean-out. Components: lettuce, tomato, bacon, chicken, egg, avocado, chives, blue cheese, vinaigrette. The salad:",
+    "answer": "Cobb salad",
+    "choices": [
+      "Cobb salad",
+      "Waldorf salad",
+      "Caesar salad",
+      "Chef's salad"
+    ],
+    "context": "Waldorf salad (apple-celery-walnut-mayo) was invented at the Waldorf Astoria, NYC, 1893 by Oscar Tschirky. Caesar salad: Tijuana, 1924. Chef's salad: NYC, early 20th century, multiple claims. Each of these named salads has a clear creator and date — unusual in food history."
+  },
+  {
+    "tier": 3,
+    "question": "The American eggs Benedict — poached eggs and Canadian bacon on English muffin halves with hollandaise — has at least three competing NYC origin stories from the 1890s. The most-cited:",
+    "answer": "Delmonico's, ordered by regular Mrs. LeGrand Benedict (1894)",
+    "choices": [
+      "Delmonico's, ordered by regular Mrs. LeGrand Benedict (1894)",
+      "Waldorf Astoria, ordered by stockbroker Lemuel Benedict as a hangover cure (1894)",
+      "Mrs. Benedict's home, served to friends in Long Island (1893)",
+      "Restaurant Béarnaise, Paris, where the original sauce was named (1880s)"
+    ],
+    "context": "Multiple competing claims; the Delmonico's and Waldorf stories are both within months of each other. Edward and Mabel Benedict, the Waldorf's Lemuel Benedict, and Delmonico's Mrs. LeGrand Benedict have all been credited. By 1900 the dish was a recognized New York classic; Delmonico's print menu cemented it."
+  },
+  {
+    "tier": 3,
     "question": "Feijoada is a signature dish of:",
     "answer": "Brazil",
     "choices": [
@@ -6013,6 +6397,18 @@
   },
   {
     "tier": 5,
+    "question": "In November 2013, UNESCO inscribed a Korean tradition on its Representative List of the Intangible Cultural Heritage of Humanity. Late each autumn, neighbors and extended family gather to make and share enormous quantities of kimchi together — enough to last each household through winter. The communal labor, the recipes passed mother to daughter, and the act of sharing the harvest with neighbors define the tradition. What is it called?",
+    "answer": "Kimjang (the kimchi-making)",
+    "choices": [
+      "Kimjang (the kimchi-making)",
+      "Banchan (the side dishes)",
+      "Hanjeongsik (the formal banquet)",
+      "Jesa (the ancestor rites)"
+    ],
+    "context": "UNESCO's citation praised kimjang for 'reaffirming Korean identity' and offering 'an excellent opportunity for strengthening family cooperation.' Each region — and each family — has its own recipe, with napa cabbage, Korean radish, gochugaru, fish sauce, and ginger as common elements. Modern apartment dwellers increasingly buy kimchi, but the kimjang tradition still anchors many extended families."
+  },
+  {
+    "tier": 5,
     "question": "René Redzepi and Claus Meyer opened Noma in Copenhagen in 2003 — at first an ordinary French-influenced restaurant. In 2004 they convened a symposium that produced a ten-point manifesto: use the freshness and quality of Nordic ingredients, reflect seasons, base cooking on the region's terroir, work with the climate's foraging and fermentation, honor traditional methods, promote animal welfare. The result, ranked the world's best restaurant five times, defined which movement?",
     "answer": "New Nordic cuisine",
     "choices": [
@@ -6094,6 +6490,18 @@
       "Tea merchant"
     ],
     "context": "Vienna coffeehouse culture became UNESCO Intangible Cultural Heritage in 2011 — the Stammtisch, the marble tables, the newspaper rails. The croissant was also said to commemorate the 1683 siege (the kipferl shape mocking the Ottoman crescent), though this origin is folklore. The London coffeehouses of the late 1600s became the trading floors of Lloyd's of London and the London Stock Exchange."
+  },
+  {
+    "tier": 5,
+    "question": "The Dutch East India Company (VOC) wanted exclusive control of one specific spice in the early 1600s — and the only place it grew was a small archipelago in what is now Indonesia: the Banda Islands. The VOC's solution, executed in 1621 under Governor Jan Pieterszoon Coen, was to massacre or enslave most of the 15,000 inhabitants and replace them with VOC-controlled plantations. Which spice's monopoly drove this atrocity?",
+    "answer": "Nutmeg (and mace, its outer husk)",
+    "choices": [
+      "Nutmeg (and mace, its outer husk)",
+      "Black pepper (the Malabar coast trade)",
+      "Cinnamon bark (Ceylon's monopoly spice)",
+      "Whole cloves (from the nearby Maluku)"
+    ],
+    "context": "Nutmeg was believed to ward off plague — a belief unsupported by evidence but lucrative in 17th-century Europe. The VOC also held cloves (from the nearby Maluku Islands). In the 1667 Treaty of Breda, the Dutch traded New Amsterdam (Manhattan) to England in exchange for the Banda island of Run — they thought the spice trade was the better deal. By 1800 nutmeg was being smuggled to other tropical colonies; the monopoly broke."
   },
   {
     "tier": 5,
@@ -6382,6 +6790,18 @@
       "Mediterranean diet cuisine"
     ],
     "context": "Waters had spent a year in France in 1965; the experience of French market culture — local, seasonal, daily — was her template. The Edible Schoolyard project (1995) extended her work into school gardens and cafeterias. Critics charge that 'farm-to-table' has become a marketing label often unmoored from real local sourcing; defenders point to the alternative — the industrial supply chain Waters revolted against."
+  },
+  {
+    "tier": 5,
+    "question": "Antoine Boulanger opened a Paris shop in 1765 selling 'restorative' bouillons — strengthening clear soups — to people too unwell or too busy for a long sit-down inn meal. He hung a Latin sign above the door playing on Matthew 11:28: Venite ad me omnes qui stomacho laboratis et ego restaurabo vos ('Come to me all whose stomachs labor, and I will restore you'). The Latin verb restaurare ('to restore') became the name of the institution Boulanger pioneered. What word?",
+    "answer": "Restaurant (the modern restoring-house)",
+    "choices": [
+      "Restaurant (the modern restoring-house)",
+      "Bistro (a small Parisian eating spot)",
+      "Auberge (a French country roadside inn)",
+      "Café (a coffeehouse with seated service)"
+    ],
+    "context": "The French Revolution accelerated the spread — when aristocratic households dissolved, their cooks opened public eating places. By 1800 Paris had hundreds of restaurants. The format spread to London (Verrey's, 1825), New York (Delmonico's, 1827), and globally. 'Bistro' is post-Napoleonic, possibly from Russian bystro ('quickly') by occupying troops in 1815 — though that origin is disputed."
   },
   {
     "tier": 5,
@@ -6901,6 +7321,18 @@
   },
   {
     "tier": 5,
+    "question": "Louisiana gumbo descends from at least three culinary streams: West African okra-thickened stews (gombo means okra in Bantu languages, and the word entered Louisiana French through enslaved Africans); French roux technique brought by colonists; and the file powder (ground sassafras leaves) used by the Choctaw and other Native peoples of the lower Mississippi. The Creole-Cajun divide in modern gumbo is best described as:",
+    "answer": "Creole gumbos are often city-style with tomatoes and seafood; Cajun gumbos are country-style with dark roux and andouille",
+    "choices": [
+      "Creole gumbos are often city-style with tomatoes and seafood; Cajun gumbos are country-style with dark roux and andouille",
+      "Creole and Cajun gumbos are entirely identical, with no difference in any culinary or historical respect at all",
+      "Creole uses no roux whatever and no Louisiana cook ever uses okra in any sort of gumbo across the region",
+      "Creole gumbos are uniformly sweetened with table sugar; Cajun gumbos are uniformly sweetened with maple syrup"
+    ],
+    "context": "Creole culture is urban New Orleans, mixed European-African-Caribbean. Cajun culture is rural Acadian (descended from the Acadians of Nova Scotia, expelled by the British in 1755 and resettled in Louisiana's bayous). Roux is the thickener — flour and fat cooked from blond to dark mahogany. Gumbo can be okra-thickened, file-thickened, roux-thickened, or some combination — every cook has an opinion. The dish is the layered history of the Gulf South."
+  },
+  {
+    "tier": 5,
     "question": "African American Southern cooking — sometimes called 'soul food' — emerged from the intersection of West African foodways, the limited ingredients available to enslaved people, and the adaptation of those ingredients into resilient dishes. Hoppin' John (black-eyed peas and rice with pork), collard greens with pot likker, fried catfish, cornbread, candied yams, fried chicken, and sweet potato pie are signature dishes. The author who most influentially elevated this cuisine into mainstream food writing in the 1970s was:",
     "answer": "Edna Lewis (The Taste of Country Cooking, 1976)",
     "choices": [
@@ -7009,6 +7441,18 @@
   },
   {
     "tier": 5,
+    "question": "The Muslim observance of Ramadan — daily fast from dawn to sunset for the lunar month — has specific food traditions. The fast is broken at sunset with the iftar meal. The Prophet's tradition (sunna) is to break the fast first with dates and water, then perform the evening (maghrib) prayer, then eat the main meal. The pre-dawn meal taken before the fast resumes is called:",
+    "answer": "Suhoor (the pre-dawn meal before fasting)",
+    "choices": [
+      "Suhoor (the pre-dawn meal before fasting)",
+      "Iftar (the sunset meal breaking the fast)",
+      "Eid (the festival meal after Ramadan ends)",
+      "Tarawih (the special communal night prayer)"
+    ],
+    "context": "Eid al-Fitr — the 'Festival of Breaking the Fast' — concludes Ramadan with celebratory feasting. Many Muslim cultures have signature iftar dishes: dates and water everywhere; samosas and pakoras in South Asia; ramadan pide (a special flatbread) in Turkey; harira soup in Morocco; ful medames in Egypt. The Ramadan fast is one of the Five Pillars of Islam. Communal iftar — at the mosque, with extended family, with neighbors — is the social heart of the month."
+  },
+  {
+    "tier": 5,
     "question": "The Catholic Eucharist — communion with the consecrated bread and wine — is the central sacrament of Catholic worship and a defining theological line between Catholic, Eastern Orthodox, and Protestant traditions. Catholics and Orthodox hold transubstantiation/the Real Presence (the bread and wine become the body and blood of Christ); most Protestant traditions hold a symbolic or memorial view. The biblical institution of the Eucharist is at:",
     "answer": "The Last Supper, the night before Christ's crucifixion (synoptic Gospels)",
     "choices": [
@@ -7030,6 +7474,18 @@
       "Foods reflect imperial Chinese law requiring specific dishes by social rank"
     ],
     "context": "The fifteen-day Spring Festival is the longest holiday in China. Each day has its associations; the family reunion dinner on New Year's Eve is the central meal. Regional foods vary: dumplings in the north (especially Beijing), niangao and rice-based foods in the south. Other New Year foods: oranges and tangerines (sound similar to 'gold' and 'good fortune'), pomelos (representing abundance), spring rolls (representing wealth — their shape)."
+  },
+  {
+    "tier": 5,
+    "question": "Spanish tapas culture — small plates eaten standing at a bar, with drinks — emerged in Andalusia and spread northward. The word tapa means 'cover' or 'lid.' The most widely repeated origin story holds that:",
+    "answer": "A small plate of cheese or bread covered the glass to keep flies out — the practice of free snacks with drinks grew from this",
+    "choices": [
+      "A small plate of cheese or bread covered the glass to keep flies out — the practice of free snacks with drinks grew from this",
+      "King Philip II decreed by law in the year 1567 that all alcohol must be served with food in every venue across Spain",
+      "Roman colonial garrisons established the original practice as a way to ration garrison food among the soldiers stationed in Iberia",
+      "Moorish Andalusian cooks invented the practice as a religious requirement that food must accompany every drink before the Reconquista"
+    ],
+    "context": "Multiple origin stories circulate — the fly-cover story, a king ordering food with alcohol to reduce drunkenness, sea fishermen returning hungry. The practice is unmistakably southern Spanish. In Granada and parts of Andalusia, tapas are still free with drinks; in Madrid and Barcelona, they are charged. The Basque variant — pintxos — is similarly small-plate but with bread-based bites pierced by toothpicks. Spanish tapas were a major influence on American small-plate restaurant culture in the 2000s-2010s."
   },
   {
     "tier": 5,
@@ -7162,5 +7618,509 @@
       "The pasta's surface alone creates the emulsion regardless of pasta-water addition"
     ],
     "context": "Reserved pasta water — 'liquid gold' to Italian cooks — is the secret weapon of mantecatura. The dissolved starch (amylose and amylopectin) stabilizes the oil-water mixture. The technique works with cacio e pepe (pecorino, pepper, pasta water), aglio e olio (garlic, oil, water), and almost every traditional pasta sauce. Restaurant pasta cooks reserve a vat of starchy water; the home cook should save a cup before draining the pasta."
+  },
+  {
+    "tier": 5,
+    "question": "Caramelization is the heat decomposition of sugars alone — distinct from the Maillard reaction (which requires amino acids). Pure cane sugar caramelizes through stages: pale gold (320°F/160°C), amber (340°F/171°C), dark amber (350°F/177°C), mahogany (360°F/182°C), and bitter burnt (above ~365°F). The window between dark amber and burnt is roughly:",
+    "answer": "A few seconds — caramel deepens fast and burns faster",
+    "choices": [
+      "A few seconds — caramel deepens fast and burns faster",
+      "About thirty minutes of slow steady deepening to be ideal",
+      "Several hours over extended low controlled heat in the kitchen",
+      "Caramelization stops on its own and is impossible to over-cook"
+    ],
+    "context": "Professional pastry chefs caramelize by sound and color — the bubbling slows just before the deep amber stage, the color shifts mahogany, and you pull or quench immediately. Adding a small amount of water (or, dangerously, anything cold to hot caramel) can stabilize it. Caramelization produces many of the same flavor compounds as Maillard — diacetyl (buttery), maltol (toasty), furans (nutty) — but without the depth that amino acids contribute. Hence butterscotch (caramel) is different from toffee (caramel plus butter, similar profile but with the milk solids)."
+  },
+  {
+    "tier": 5,
+    "question": "The hottest pepper in the world by Scoville rating — the standard measure of chile heat by dilution to detection of capsaicin — has been a moving target. The 2013-2023 record holder, bred specifically for heat by Ed Currie in South Carolina, measured roughly 1.6-2.2 million Scoville Heat Units (SHU). The 2023 successor, also bred by Currie, measured roughly 2.69 million SHU. The cultivar names were:",
+    "answer": "Carolina Reaper (2013-2023) and Pepper X (2023 successor)",
+    "choices": [
+      "Carolina Reaper (2013-2023) and Pepper X (2023 successor)",
+      "Habanero (2013-2023) and Bhut Jolokia (2023 successor)",
+      "Ghost Pepper (2013-2023) and Trinidad Scorpion (2023 successor)",
+      "Jalapeño (2013-2023) and Serrano (2023 successor) for comparison"
+    ],
+    "context": "Capsaicin acts on the TRPV1 receptor — the same one that fires for actual heat (above ~109°F). Hence the burning sensation, despite no real temperature change. Pure capsaicin is 16 million SHU; police pepper spray is around 2-5 million SHU; a jalapeño is 2,500-8,000 SHU. The endorphin response to chile heat — runner's-high chemistry — explains why hot food is genuinely habit-forming. Chiles came from Mexico and South America via the Columbian Exchange; Indian, Thai, Sichuan, Korean cuisines remade themselves around them in less than 500 years."
+  },
+  {
+    "tier": 5,
+    "question": "The durian — the spike-shelled tropical fruit of Southeast Asia, banned from hotels and public transit across the region for its powerful odor — contains over fifty distinct volatile compounds, including sulfur compounds (egg, onion, garlic), esters (banana, fruit), and others. The fruit's character has been described by Anthony Bourdain as 'indescribable, like French-kissing your dead grandmother' and by an A. R. Wallace as 'rich custard highly flavored with almonds.' The compounds responsible for the polarizing smell are mainly:",
+    "answer": "Sulfur volatiles (ethanethiol, hydrogen sulfide, methional, and others) plus fruit esters",
+    "choices": [
+      "Sulfur volatiles (ethanethiol, hydrogen sulfide, methional, and others) plus fruit esters",
+      "Capsaicinoids similar to those found in chiles producing a burning sensation",
+      "Tannins identical to red wine tannins producing astringent puckering",
+      "Volatile aldehydes identical to those produced by extreme bacterial decomposition"
+    ],
+    "context": "A 2017 study identified 50+ volatiles in durian; the most distinctive are the sulfur compounds, which the human nose detects at parts-per-trillion levels. Whether durian smells delicious or disgusting is a real cross-cultural divide — though even committed Western fans usually concede that the smell is intense. Tasted, the flesh is sweet, custardy, with garlic-onion notes that delight some and repel others. Durian is sometimes called 'the king of fruits' in its homelands."
+  },
+  {
+    "tier": 5,
+    "question": "The slicing of onions causes tears because the cell walls, broken by the knife, release the enzyme alliinase. This enzyme converts amino-acid sulfoxides in the onion to a volatile compound that drifts upward and reacts with water on the eye's surface to produce mild sulfuric acid. The cornea's nerves respond, and the tear ducts flood. The compound that does the irritation has the formal name:",
+    "answer": "Syn-propanethial-S-oxide (lachrymatory factor)",
+    "choices": [
+      "Syn-propanethial-S-oxide (lachrymatory factor)",
+      "Allyl methyl sulfide of garlic origin",
+      "Diallyl trisulfide from garlic oil release",
+      "Acrolein produced during the cooking process"
+    ],
+    "context": "Chilling the onion before cutting slows the enzyme. Sharp knife (less cell damage) helps. Cutting under water washes the volatile away. The compound was the subject of a 2002 paper by S. Imai and colleagues who identified the synthesizing enzyme; New Zealand researchers later created a 'tear-free' onion by silencing the gene. Garlic uses a different enzyme system to produce its sulfur compounds (allicin from alliin via alliinase). Both alliums share the chemical strategy of pre-loading inactive precursors that activate when the cell is damaged — chemical defense against herbivores."
+  },
+  {
+    "tier": 5,
+    "question": "The Mediterranean diet has been studied longer than nearly any other dietary pattern. Ancel Keys's 1958 Seven Countries Study found that men eating in the traditional Mediterranean way had remarkably low rates of cardiovascular disease compared to American men. The contemporary critique of Keys's work focuses on:",
+    "answer": "Selection of which countries to include and exclude from the Seven Countries comparison",
+    "choices": [
+      "Selection of which countries to include and exclude from the Seven Countries comparison",
+      "Improper sample sizes that made all statistical conclusions unreliable",
+      "Inability to gather food intake data across the seven study locations",
+      "Failure to consider any geographic or cultural variables in his analysis"
+    ],
+    "context": "Critics — including Nina Teicholz (The Big Fat Surprise, 2014) and others — argue Keys excluded countries (France, West Germany) that would have weakened his diet-heart hypothesis. The traditional Mediterranean diet of the 1950s-60s — which Keys observed — looks quite different from what contemporary Mediterraneans eat. The PREDIMED RCT (Spain, 2013) provided stronger evidence for the dietary pattern itself, independent of the lipid-hypothesis framing. The pattern's robustness has held up better than the 1950s mechanism Keys proposed."
+  },
+  {
+    "tier": 5,
+    "question": "Insulin resistance — the metabolic state in which cells respond less to insulin's signal, requiring higher insulin levels to manage blood glucose — is increasingly recognized as central to type 2 diabetes, fatty liver disease, and the metabolic syndrome cluster (high blood pressure, dyslipidemia, abdominal obesity). The dietary intervention with the strongest evidence for reversing insulin resistance in clinical trials is:",
+    "answer": "Significant carbohydrate restriction combined with adequate protein and weight loss",
+    "choices": [
+      "Significant carbohydrate restriction combined with adequate protein and weight loss",
+      "Strict caloric restriction without any change in macronutrient composition",
+      "Massive consumption of refined grains and fruit-based juice for fiber content",
+      "Standard American diet with addition of dietary cholesterol from meat"
+    ],
+    "context": "The 2018 VIRTA Health study (and similar work) showed that a well-formulated ketogenic diet can reverse type 2 diabetes biomarkers in many patients within months. Mediterranean and low-carb diets both work; the common element is reducing the glucose load. Sustained caloric restriction also works through weight loss. The role of fructose specifically (Robert Lustig) in hepatic insulin resistance is a separate active area. Nutritional psychiatry — the gut-brain-mood connection through glycemic regulation — is the frontier."
+  },
+  {
+    "tier": 5,
+    "question": "The gut microbiome — the trillions of bacteria, fungi, archaea, and viruses living in the human intestine — is now understood to be central to immune function, metabolism, mental health, and disease risk. The dominant influence on adult microbiome composition is:",
+    "answer": "Long-term dietary patterns, especially fiber and fermented-food intake",
+    "choices": [
+      "Long-term dietary patterns, especially fiber and fermented-food intake",
+      "Genetics — the microbiome is fixed at birth by parental DNA",
+      "Geographic latitude alone determines microbiome composition",
+      "Random microbial colonization that does not respond to any input"
+    ],
+    "context": "Justin Sonnenburg's Stanford research (and Tim Spector's UK group, Eran Segal in Israel, Jeff Gordon at Wash U) has mapped how diet shapes microbiome diversity over weeks to months. Antibiotic use can dramatically reduce microbiome diversity; some species don't return. Fiber feeds beneficial bacteria; ultra-processed food correlates with lower diversity. The American Gut Project crowdsourced microbiome data. The gut-brain axis (vagal signaling, neurotransmitter production) is the active frontier. Personalized nutrition based on microbiome state is plausible but not yet clinically robust."
+  },
+  {
+    "tier": 5,
+    "question": "Vitamin D deficiency is widespread in northern latitudes and in populations with darker skin (which produces less D per UV exposure). The vitamin is fat-soluble and crucial for calcium absorption, immune function, and possibly mood regulation. The dietary sources of meaningful vitamin D, before fortification, were narrow — most people got most of their D from:",
+    "answer": "Sun exposure on bare skin (UVB converts cholesterol to vitamin D3)",
+    "choices": [
+      "Sun exposure on bare skin (UVB converts cholesterol to vitamin D3)",
+      "Daily vitamin D supplements taken by most populations historically",
+      "Dietary intake of fortified breakfast cereals and orange juice",
+      "High intake of green leafy vegetables in seasonal abundance"
+    ],
+    "context": "Cod liver oil was the classic traditional source — northern peoples (Norway, the Inuit) had vitamin D in their diets through fatty fish. Most agricultural peoples got D from sunlight, with deficiency-driven rickets common where children worked indoors or where soot blocked sun. The 20th century fortified milk (1930s American program) to address this. Modern indoor lifestyles, sunscreen use, and northern winters all reduce skin synthesis. The optimal blood level (25(OH)D) is debated — 30-50 ng/mL is the rough mainstream consensus."
+  },
+  {
+    "tier": 5,
+    "question": "Omega-3 fatty acids — EPA and DHA from marine sources, ALA from plants — are essential nutrients with strong evidence for cardiovascular and cognitive benefits. The contemporary American diet is heavily skewed toward omega-6 fats (corn, soy, sunflower seed oils) versus omega-3 fats. The traditional human dietary ratio of omega-6 to omega-3 is estimated at roughly 1:1 or 2:1; the contemporary American ratio is approximately:",
+    "answer": "10:1 to 20:1 (omega-6 to omega-3) — sharply skewed toward omega-6",
+    "choices": [
+      "10:1 to 20:1 (omega-6 to omega-3) — sharply skewed toward omega-6",
+      "Roughly 1:5 omega-6 to omega-3 (already heavily omega-3)",
+      "Approximately 1:1 omega-6 to omega-3 — balanced ratio",
+      "About 1,000:1 omega-6 to omega-3 in standard diets"
+    ],
+    "context": "The shift came from the industrial oils that exploded in U.S. food after about 1909 (and especially after WWII). Both omega-6 and omega-3 are essential fatty acids; the question is the ratio. High omega-6 may compete with omega-3 for the desaturase and elongase enzymes that produce active longer-chain forms (EPA, DHA, arachidonic acid). The clinical relevance of the ratio specifically is debated; the absolute deficit of EPA/DHA in modern diets is firm."
+  },
+  {
+    "tier": 5,
+    "question": "Fiber — the indigestible carbohydrate fraction of plant foods — divides functionally into soluble (which forms gel in water, slows absorption, ferments to short-chain fatty acids in the colon) and insoluble (which adds bulk and speeds transit). The single dietary intervention with the strongest mortality-reduction evidence in observational studies is:",
+    "answer": "Increasing total fiber intake to roughly 25-35 grams per day",
+    "choices": [
+      "Increasing total fiber intake to roughly 25-35 grams per day",
+      "Increasing total saturated fat to over 30 percent of daily calories",
+      "Eliminating all carbohydrates from the diet completely and permanently",
+      "Increasing total caloric intake regardless of food source quality"
+    ],
+    "context": "The Lancet 2019 meta-analysis (Reynolds et al.) of fiber intake and chronic disease showed substantial reductions in cardiovascular disease, type 2 diabetes, colorectal cancer, and all-cause mortality with higher fiber. Current American intake averages 15g/day; the recommended is 25-35g. Sources: legumes, whole grains, vegetables, fruits, nuts. The mechanism includes microbiome feeding, glycemic moderation, lipid binding in the gut, and others. Soluble fiber from oats, beans, psyllium has the strongest cardiovascular evidence; insoluble from wheat bran, vegetables for colorectal."
+  },
+  {
+    "tier": 5,
+    "question": "Sugar consumption per capita in the United States rose from roughly 6 pounds per year in 1822 to about 70-100 pounds per year by 2000. The WHO recommends no more than 5% of daily calories from added sugar (roughly 25 grams or 6 teaspoons for an adult). The average American intake is approximately:",
+    "answer": "60-80 grams (about 15-20 teaspoons) per day, or 2-3 times the WHO recommendation",
+    "choices": [
+      "60-80 grams (about 15-20 teaspoons) per day, or 2-3 times the WHO recommendation",
+      "Roughly equal to the WHO recommendation in most regional populations",
+      "Less than the WHO recommendation across all American demographics studied",
+      "More than two thousand grams per day in some studied populations"
+    ],
+    "context": "The estimate includes added sugars from sweetened beverages, sweetened processed foods, and direct sugar use. It excludes naturally occurring sugars in whole fruit. The 'No Sugar Added' food labeling can hide significant fructose loads in fruit-juice concentrate or other ingredients. Sugar-sweetened beverages are the single largest source of added sugar in the American diet. Robert Lustig's Sugar: The Bitter Truth (2009 viral lecture) brought metabolic concerns about fructose-load to wide attention."
+  },
+  {
+    "tier": 5,
+    "question": "The Whiskey Rebellion of 1791-94 was the first serious test of the U.S. federal government's authority to tax. Western Pennsylvania farmers — many veterans of the Revolution who distilled excess grain into transportable whiskey as a cash product — refused to pay the federal excise tax Alexander Hamilton had imposed to retire Revolutionary War debt. President George Washington responded by:",
+    "answer": "Personally leading a militia of roughly 13,000 men into western Pennsylvania",
+    "choices": [
+      "Personally leading a militia of roughly 13,000 men into western Pennsylvania",
+      "Repealing the whiskey tax immediately and apologizing publicly to farmers",
+      "Resigning the presidency in protest of Hamilton's revenue policies",
+      "Negotiating a peace treaty with a separate sovereign 'Whiskey State'"
+    ],
+    "context": "Washington's show of force broke the rebellion without significant bloodshed. The tax remained but enforcement was light; Jefferson repealed the whiskey tax entirely in 1802. The event established two principles: federal authority over interstate revenue (which would matter again before the Civil War) and the dignity of federal law in the early republic. Bourbon — corn-based American whiskey aged in charred new oak — became the national spirit; Kentucky and Tennessee remain its homelands."
+  },
+  {
+    "tier": 5,
+    "question": "On December 16, 1773, members of the Sons of Liberty disguised as Mohawk Indians boarded three British East India Company ships in Boston Harbor and dumped 342 chests of tea into the water. The cargo was worth roughly £9,000 (a few million in today's dollars). The political point was not about the tax level — the East India Company tea was actually cheaper than smuggled Dutch tea — but about:",
+    "answer": "The principle that Parliament could not tax the colonies without colonial representation",
+    "choices": [
+      "The principle that Parliament could not tax the colonies without colonial representation",
+      "The colonists' permanent preference for coffee instead of any form of tea",
+      "Resentment that East India tea was higher in quality than colonial-grown alternatives",
+      "An attempt to seize the tea cargo for resale by the Sons of Liberty"
+    ],
+    "context": "The Tea Act of 1773 had actually reduced the tax on East India Company tea — but accepting the cheaper tea would have meant accepting Parliament's right to set the tax in the first place. The colonists chose principle over price. Britain responded with the Coercive Acts (the 'Intolerable Acts'), closing Boston Harbor; the colonists responded with the First Continental Congress in 1774. The American Revolution began at Lexington and Concord in April 1775. The tea sacrificed in Boston Harbor was, in a sense, the first cost of the Revolution."
+  },
+  {
+    "tier": 5,
+    "question": "The Boars Head Carol — sung at Queen's College, Oxford each Christmas since the 14th century — accompanies the ceremonial bringing-in of a boar's head decorated with rosemary and bay, on a silver platter. The Latin refrain begins 'Caput apri defero / reddens laudes Domino' ('I bring in the boar's head / giving praises to the Lord'). The boar's head was Yuletide centerpiece across medieval England. The tradition reflects the fact that:",
+    "answer": "Wild boar were abundant in medieval English forests and were Yuletide game",
+    "choices": [
+      "Wild boar were abundant in medieval English forests and were Yuletide game",
+      "Boar were a contemporary breeding success of 18th-century English agriculture",
+      "Boar were imported from Spain by Henry VIII for ceremonial dining purposes",
+      "Boar were exclusively a religious foodway derived from continental monasticism"
+    ],
+    "context": "Wild boar were hunted into local extinction in Britain by the 17th century; the modern Boars Head Carol still proceeds with a pig's head as substitute. Queen's College, Oxford, maintains the tradition through the 'Boar's Head Gaudy' on the Saturday before Christmas. The medieval Christmas table, in noble households, was elaborate: peacock with feathers replaced after roasting, swans, venison, multiple roast meats — feast-and-fast cycles deeply structured the year."
+  },
+  {
+    "tier": 5,
+    "question": "Oktoberfest — the Munich beer festival held in late September through early October — began in 1810 as a celebration of the wedding of Crown Prince Ludwig of Bavaria (the future Ludwig I) and Princess Therese of Saxe-Hildburghausen. The fields outside Munich where the wedding party was held were named Theresienwiese ('Therese's meadow') in her honor. Since then, the festival has run almost continuously. The distinctive Oktoberfest food alongside the famous beer is:",
+    "answer": "Roast chicken, pretzels, weisswurst, sauerkraut, and roast pork",
+    "choices": [
+      "Roast chicken, pretzels, weisswurst, sauerkraut, and roast pork",
+      "Fish and chips with mushy peas in the British style",
+      "Bouillabaisse with rouille and crusty French bread",
+      "Spaghetti carbonara with crispy guanciale and pecorino"
+    ],
+    "context": "The beer served at Oktoberfest must be brewed within Munich city limits to the Reinheitsgebot (the 1516 purity law allowing only water, barley, hops; yeast was added later). Six breweries dominate: Augustiner, Hofbräu, Löwenbräu, Paulaner, Spaten, and Hacker-Pschorr. The 'mass' (one liter glass) is the standard pour. The festival now hosts around six million visitors over two weeks. Bavarian lederhosen and dirndl have become globally recognized cultural symbols largely through Oktoberfest's projection."
+  },
+  {
+    "tier": 5,
+    "question": "Joy of Cooking — Irma Rombauer's American cookbook first self-published in 1931 — has been the kitchen bible of millions of American households for almost a century. Rombauer was a recent widow with no professional culinary training; she compiled the book in part to support her family. The most distinctive feature of Joy of Cooking, compared to earlier American cookbooks, was:",
+    "answer": "Action-method format — instructions interwoven with ingredients in step-by-step prose",
+    "choices": [
+      "Action-method format — instructions interwoven with ingredients in step-by-step prose",
+      "Heavy use of professional French culinary terminology throughout each recipe",
+      "Use of only metric units exclusively for measurement of ingredients and times",
+      "Inclusion of only French haute cuisine recipes from professional kitchens"
+    ],
+    "context": "Joy of Cooking made each recipe readable as continuous narrative, with quantities woven into the directions where each was used. The format is now standard; in 1931 it was novel. Rombauer's daughter Marion Rombauer Becker, granddaughter Ethan Becker, and great-grandson John Becker have edited successive editions. The 75th Anniversary Edition (2006) cut and modernized; the 2019 Becker edition restored older recipes after reader complaints. Over 18 million copies in print."
+  },
+  {
+    "tier": 5,
+    "question": "Fannie Farmer's 1896 Boston Cooking-School Cook Book transformed home cooking with a single technical innovation: standardized measurement. Before Farmer, recipes called for 'a butter the size of an egg' or 'a pinch of salt' — quantities calibrated by experience. Farmer specified:",
+    "answer": "Level measurement of cups, tablespoons, and teaspoons",
+    "choices": [
+      "Level measurement of cups, tablespoons, and teaspoons",
+      "Weight in metric grams for all ingredients without exception",
+      "Volume in milliliters using only laboratory equipment for accuracy",
+      "Color and texture descriptions for novice cooks without prior training"
+    ],
+    "context": "Farmer's level-measurement standardization made recipes portable across kitchens and reliable for beginners. The system became standard in American cooking; European cooking remained more weight-based (grams), which is more precise but requires a scale. Modern baking books are increasingly using weight (especially after the 2010s artisan-bread revival). The Boston Cooking-School Cook Book has been in continuous print for over 125 years. Farmer's measurement system shaped American culinary self-teaching for the 20th century."
+  },
+  {
+    "tier": 5,
+    "question": "The Italian panettone — the tall, dome-topped Christmas bread of Milan — is famously laborious to make traditionally: a 30+ hour ferment using a maintained sourdough mother (lievito madre), multiple rises, hanging upside down after baking so the dome does not collapse. The candied citron and raisins (or chocolate in some modern versions) are the visible signature. The descent of panettone is traced to:",
+    "answer": "15th-16th century Milan — the legend ties it to Duke Ludovico Sforza's court",
+    "choices": [
+      "15th-16th century Milan — the legend ties it to Duke Ludovico Sforza's court",
+      "20th-century industrial baking using only powdered laboratory ingredients",
+      "Ancient Roman cookery as recorded by Apicius in his De Re Coquinaria",
+      "Northern French Christmas bûche tradition exported to Italy in 1820"
+    ],
+    "context": "The Sforza-court origin story credits a scullion named Toni — pan di Toni, 'Toni's bread.' The historical record is sparse on the exact path. Industrial panettone (Motta, Bauli, and major brands) is widely available; artisan panettone from masters like Iginio Massari, Salvatore De Riso, and small Milan pasticcerie remains a craft. The bread is increasingly exported globally — South America, Spain, Brazil all have strong panettone traditions, and South American countries produce many of the artisan panettone master bakers active today."
+  },
+  {
+    "tier": 5,
+    "question": "The Buddhist Five Reflections — chanted before meals in Zen and many other Mahayana traditions — offer a daily moral framework for the act of eating. The reflections include considering the labor that brought the food, examining one's own worthiness to receive it, regarding the meal as medicine against attachment, and committing to the path of awakening. The fifth reflection specifically considers:",
+    "answer": "Whether one's intentions and conduct have been worthy of the food received",
+    "choices": [
+      "Whether one's intentions and conduct have been worthy of the food received",
+      "The technical macronutrient content of each ingredient consumed",
+      "The exact retail price paid for each item at purchase",
+      "Whether the food was prepared by qualified Buddhist monastics"
+    ],
+    "context": "The five reflections in slight variation: (1) think of the labor; (2) consider your virtue and whether it merits this offering; (3) guard your mind against the three poisons (greed, hatred, delusion); (4) regard food as medicine for the body; (5) accept this food only as you may accomplish the way (the Buddhist path). The chant is brief; the discipline is daily. Western analogues — saying grace at table, the Anna Bedford afternoon-tea pause, the Italian sobremesa — share the principle of marking the meal as deliberate rather than incidental."
+  },
+  {
+    "tier": 5,
+    "question": "The Chinese Kitchen God — Zao Jun (灶君) — is, in folk tradition, the household deity who watches over the family from his perch above the stove. At the end of the lunar year he reports to the Jade Emperor on the family's behavior. To ensure a sweet report, families traditionally feed him sticky sweet treats — sometimes sweet rice cake, sometimes a sticky-glutinous tang yuan — just before he ascends. The folk logic of the offering is:",
+    "answer": "Sweet stuff sweetens his words; sticky stuff seals his mouth so he can't speak ill",
+    "choices": [
+      "Sweet stuff sweetens his words; sticky stuff seals his mouth so he can't speak ill",
+      "The Kitchen God consumes only sweet foods on holy fast days",
+      "Modern hygiene rituals require sugar treatment of the household stove",
+      "Sugar offerings replace older meat-and-blood offerings universally"
+    ],
+    "context": "The Kitchen God's paper image, after receiving the offering, is sometimes burned to send him on his journey (the smoke rising). A new image is placed for the new year. The tradition predates Buddhism in China and has Daoist roots. It survives in many parts of the Chinese world — Taiwan, Hong Kong, Singapore, and Mainland communities, though with varying observance. The principle of feeding household spirits is paralleled in Hindu, Japanese (kamidana), and many folk traditions worldwide."
+  },
+  {
+    "tier": 5,
+    "question": "Charity balls — black-tie evening events combining ballroom dancing with fundraising — are a 19th-century American invention. The first 'Black Tie' itself was the tuxedo, popularized at the Tuxedo Club in Tuxedo Park, New York around 1886. Charity balls — debutante balls being a specific subset — became the social architecture of high-society American philanthropy. The Met Gala (the Costume Institute Benefit) is the contemporary inheritor of:",
+    "answer": "The 19th-century charity-ball tradition adapted to contemporary celebrity culture",
+    "choices": [
+      "The 19th-century charity-ball tradition adapted to contemporary celebrity culture",
+      "An ancient Greek symposium reborn through the Renaissance Italian salons",
+      "A medieval English court ball tradition introduced by Queen Victoria",
+      "A French Revolutionary innovation designed to abolish ballroom dining traditions"
+    ],
+    "context": "The Mayflower Society Ball (since 1903), the National Debutante Cotillion (since 1954), the International Debutante Ball (since 1954), and similar present 'coming-out' for young women of selected families. These traditions are openly criticized as classed and exclusionary; defenders point to their fundraising. The form is alive — though, like much of formal Western dining tradition, in slow decline. The Eric Eve dance card, the engraved invitation, the white kid gloves, the program-as-keepsake — all survive at some remaining cotillions."
+  },
+  {
+    "tier": 5,
+    "question": "Greek philotimo — sometimes translated 'love of honor,' often described as untranslatable — is the cultural value most associated with hospitality. A Greek host who receives a guest gives the best food and bed; refusing such hospitality is taken as the most serious insult. The philosophical roots of this value go back to:",
+    "answer": "The xenia tradition of the Homeric epics — Zeus Xenios protected guests and hosts",
+    "choices": [
+      "The xenia tradition of the Homeric epics — Zeus Xenios protected guests and hosts",
+      "A 19th-century Greek nationalist invention without historical foundation",
+      "A modern Greek Orthodox liturgical requirement only added in 1900",
+      "An Ottoman administrative rule imposed during the Tourkokratia period"
+    ],
+    "context": "In the Odyssey, Odysseus is welcomed as a stranger by Eumaeus the swineherd, by King Alcinous, by many others. Failure of xenia — Polyphemus eating the guests, the suitors abusing Penelope's hospitality — brings divine retribution. The mutual obligations are deep: the guest does not abuse hospitality, the host does not exploit the visitor. Modern philotimo extends this — pride in being a generous and honorable person. The concept is shared, in different vocabularies, across many Mediterranean and Middle Eastern traditions."
+  },
+  {
+    "tier": 5,
+    "question": "Indian thali — the multi-bowl platter served as a complete meal — varies regionally but follows a consistent principle: a base of rice or roti, accompanied by multiple small bowls (katoris) of curries, dals, vegetables, raita, chutney, pickle, and a sweet. The Gujarati thali is famously elaborate. South Indian thali (often served on a banana leaf) emphasizes sambar, rasam, vegetable curries, and curd. The right-hand convention in eating thali is rooted in:",
+    "answer": "Traditional Indian cultural practice — left hand is reserved for tasks like personal hygiene",
+    "choices": [
+      "Traditional Indian cultural practice — left hand is reserved for tasks like personal hygiene",
+      "Modern hygiene regulation introduced by British colonial administration",
+      "Religious prohibition unique to Hindu reformists of the 20th century",
+      "Modern fine-dining etiquette borrowed from continental European traditions"
+    ],
+    "context": "The right-hand-eating convention is shared across South Asian, Middle Eastern, and African food cultures. The hand itself — fingers gathering rice, scooping sauce — is part of the meal's tactile experience. South Indian banana-leaf thali is especially formal; the leaf is biodegradable, ritual-pure, and adds a subtle flavor. The thali concept (a complete meal of contrasts in one platter) is itself ancient — the Sanskrit medical text Charaka Samhita described balanced meals with six tastes (sweet, sour, salty, bitter, pungent, astringent) two thousand years ago."
+  },
+  {
+    "tier": 5,
+    "question": "The Parisian café tradition — sidewalk seating, single-coffee customers staying for hours, café as office, study, and salon — flourished particularly on the Left Bank in the 19th and early 20th centuries. Cafés like Café de Flore and Les Deux Magots, in Saint-Germain-des-Prés, became famous as the working spaces of the existentialists in the 1940s-50s. The writers most associated with these cafés were:",
+    "answer": "Jean-Paul Sartre, Simone de Beauvoir, Albert Camus",
+    "choices": [
+      "Jean-Paul Sartre, Simone de Beauvoir, Albert Camus",
+      "Victor Hugo, Honoré de Balzac, and Émile Zola",
+      "Marcel Proust, Gustave Flaubert, and Stendhal",
+      "Voltaire, Denis Diderot, and Jean-Jacques Rousseau"
+    ],
+    "context": "Sartre and Beauvoir wrote at Café de Flore for years — Sartre's notebooks for Being and Nothingness, Beauvoir's drafts of The Second Sex. Camus, Picasso, Hemingway, Joyce, and many others passed through the Left Bank cafés. The flâneur — the sauntering observer of city life — was the 19th-century type for whom the café was destination. Parisian café culture has thinned (Starbucks notwithstanding) but the institutional form remains."
+  },
+  {
+    "tier": 5,
+    "question": "The Irish wake — the vigil with the body before burial, often lasting days, with food, drink, storytelling, and sometimes wild song — has its own deep cultural place. Until refrigeration, the body had to be watched and prepared; the wake was both practical and ritual. The mourners brought food; the family provided drink; the closed casket was opened. The Irish wake's traditional purpose was best described as:",
+    "answer": "Honoring the dead through community gathering and the shared work of grief",
+    "choices": [
+      "Honoring the dead through community gathering and the shared work of grief",
+      "A purely commercial event organized by undertakers in 19th-century cities",
+      "A religious requirement of the Roman Catholic catechism after 1820",
+      "An anti-Catholic Protestant innovation imposed during the 18th century"
+    ],
+    "context": "Hamlet's 'the funeral baked meats / did coldly furnish forth the marriage tables' (Shakespeare, 1599) shows the funeral feast was deep in English tradition too. Irish wakes were sometimes raucous — 'merry wakes' could include card games, music, and competitive storytelling about the deceased. The custom of opening the casket varies by community. The Irish-American wake brought the form to America; American Catholic and many Protestant traditions retain elements. The Jewish shiva, the Cajun lay-in, and the African American repast are kin practices."
+  },
+  {
+    "tier": 5,
+    "question": "The Cajun-French language survives still in parts of southern Louisiana — descendants of the Acadians expelled from Nova Scotia by the British in 1755 during the Great Upheaval (le Grand Dérangement). The expulsion sent roughly 11,500 French Catholics into refugee scattering — Caribbean colonies, then up the Mississippi to Spanish Louisiana, which welcomed them. Their cuisine, blending French peasant cooking with West African ingredients (file powder, okra, peppers) and Native American resources, became the foundation of:",
+    "answer": "Cajun cuisine — gumbo, étouffée, jambalaya, boudin",
+    "choices": [
+      "Cajun cuisine — gumbo, étouffée, jambalaya, boudin",
+      "Tex-Mex cuisine of the San Antonio region",
+      "Soul food of the Mississippi Delta and Memphis",
+      "California cuisine of the San Francisco Bay area"
+    ],
+    "context": "The 1764 Spanish Louisiana census recorded Acadians settling along Bayou Lafourche and Bayou Teche. Their isolated bayou communities preserved the French language, the Catholic faith, and a cuisine that absorbed and transformed influences over generations. Acadian fiddle music, two-stepping dance, the joie de vivre saying — all part of a culture that survived dispossession. Hurricane Katrina (2005) damaged but did not destroy the Cajun parishes; the cuisine remains a living tradition with major contemporary figures like Paul Prudhomme having brought it to wider American attention in the 1980s."
+  },
+  {
+    "tier": 5,
+    "question": "The medieval and Tudor English banquet often featured an elaborate set-piece called a subtlety — a sculptural confection between courses depicting an allegorical scene, the royal arms, a religious figure, or a tableau commenting on the meal's politics. Made of marchpane (almond paste, similar to marzipan), pastillage (gum-paste sugar sculpture), and colored sugar, they were eaten or admired then taken away. The most elaborate subtleties were:",
+    "answer": "Multi-figure scenes — castles, ships, allegorical groups — sometimes taking weeks to build",
+    "choices": [
+      "Multi-figure scenes — castles, ships, allegorical groups — sometimes taking weeks to build",
+      "Simple shapes of religious symbols pressed from a single mold daily",
+      "Plain table-decoration of fresh fruit arranged in pyramids in the center",
+      "Edible meat sculptures of animal heads — boar, peacock, or goose only"
+    ],
+    "context": "Henry VIII's banquets at Hampton Court and Greenwich included elaborate subtleties. At the 1487 coronation of Henry VII, the subtlety depicted St. Paul converted before Damascus. The sugar art tradition continued through Carême in the early 19th century — his elaborate centerpieces were called pièces montées (mounted pieces). The modern croquembouche (the cone-shaped French wedding cake of profiteroles) is a surviving descendant of the high-set-piece centerpiece tradition."
+  },
+  {
+    "tier": 5,
+    "question": "The 18th-19th century English fox hunt — the country gentry's most prestigious pastime — developed elaborate dining rituals around it. The hunt breakfast (a full meal served at the master of foxhounds' house before dawn riders set out) and the hunt dinner or hunt ball (held after the day's ride, often as a black-tie event in winter) anchored the social calendar of rural England. The traditional hunt-breakfast meal would include:",
+    "answer": "Eggs, kidneys, kippers, sausages, ham, kedgeree, broiled tomatoes, toast, and strong tea or coffee",
+    "choices": [
+      "Eggs, kidneys, kippers, sausages, ham, kedgeree, broiled tomatoes, toast, and strong tea or coffee",
+      "Only a quick cup of black coffee with a small thin biscuit before riding out",
+      "A light Continental selection of cold meats and bread for fitness reasons",
+      "An exclusively vegetarian meal mandated by 19th-century animal welfare reformers"
+    ],
+    "context": "The substantial breakfast had a practical logic — many hours of riding in cold weather demanded calories. Kedgeree — fish, rice, eggs, curry powder — was an Anglo-Indian survivor of Empire that made its way to country-house tables. The 'stirrup cup' (a small drink, usually port or cherry brandy, served to mounted riders before the hunt set off) was the final ritual. American foxhunting, in Virginia and parts of the Northeast, descends from this tradition; the social architecture of country-house breakfasts and hunt balls survives in country clubs and equestrian organizations."
+  },
+  {
+    "tier": 5,
+    "question": "Oxford and Cambridge — the Oxbridge college system that dates to the 12th-13th centuries — maintains formal hall as a living tradition. Students dressed in academic gowns process into a hall where dinner is served at long oak tables; the fellows sit at high table on a raised dais; a Latin grace is read; the meal proceeds in courses. The function of formal hall, in addition to feeding students, is:",
+    "answer": "Preserving the medieval guild-and-monastic structure that shaped the university itself",
+    "choices": [
+      "Preserving the medieval guild-and-monastic structure that shaped the university itself",
+      "Providing the only nutritional meal that students receive each week",
+      "Indoctrinating undergraduates in modern professional networking skills",
+      "Replacing the religious devotion of the original college chapel services"
+    ],
+    "context": "Oxbridge formal hall is a daily or nearly-daily institution in many colleges. The Latin grace, the gowns, the silver salt cellars on high table — all link the modern undergraduate to the medieval roots. The traditions vary by college: Trinity Cambridge has the longest grace; St. John's Oxford serves a swan once a year. American university traditions (the eating clubs of Princeton, the final clubs of Harvard, the secret societies of Yale) are loose parallels but lack the medieval continuity. The food itself is sometimes ordinary; the structure of the meal is the point."
+  },
+  {
+    "tier": 5,
+    "question": "The French gastronomic meal — the traditional structured family meal across multiple courses with wine pairings, taking hours — was added to the UNESCO Representative List of Intangible Cultural Heritage of Humanity in 2010. UNESCO recognized it specifically as:",
+    "answer": "A social practice of celebrating important moments, embodying conviviality and taste",
+    "choices": [
+      "A social practice of celebrating important moments, embodying conviviality and taste",
+      "A purely commercial restaurant industry tradition of recent origin",
+      "A specific list of approved French dishes that must be eaten in fixed order",
+      "A medieval European religious practice connected to specific saints' feasts"
+    ],
+    "context": "Other UNESCO-recognized food traditions on the list include Mediterranean diet (2010), Japanese washoku (2013), Korean kimjang (2013), Mexican traditional cuisine (2010), Belgian beer culture (2016), Neapolitan pizzaiuolo (2017), Croatian Zagorje mlinci (2024), and many regional traditions. The French gastronomic meal recognition emphasized the form of the meal — the aperitif, courses, conversation, wine pairings, lingering finish — rather than specific recipes. The UNESCO recognition acknowledged that the meal itself is the cultural artifact."
+  },
+  {
+    "tier": 5,
+    "question": "The Devon vs. Cornwall cream-tea debate is over the order of operations on a scone with clotted cream and jam: in Devon, the convention is cream first, then jam on top; in Cornwall, the convention is jam first, then cream on top. The debate is fiercely defended on both sides. The closest American culinary analog of this kind of geographic identity-marker debate is:",
+    "answer": "Chicago deep-dish vs. New York thin-crust pizza, or Texas-vs-Carolina BBQ traditions",
+    "choices": [
+      "Chicago deep-dish vs. New York thin-crust pizza, or Texas-vs-Carolina BBQ traditions",
+      "Universal agreement on cake-baking techniques across all U.S. regions",
+      "Universal agreement on bread-baking sourdough across the United States",
+      "U.S. has no comparable regional food identity disputes anywhere"
+    ],
+    "context": "American regional food identity is as fierce as British: Carolina BBQ (eastern vs. western), Texas beef vs. Memphis pork ribs, New England clam chowder (cream) vs. Manhattan (tomato), Chicago dog (poppy seed bun, mustard, never ketchup) vs. NYC dog (sauerkraut, brown mustard). The cream-tea debate is identity politics played out in food. Cornwall and Devon have actual culinary differences worth defending; the order of cream and jam is the visible heraldry of an older identity. Authentic Cornish cream is from Cornish cows; authentic Devonshire cream is from Devon. The cream itself is what matters most."
+  },
+  {
+    "tier": 5,
+    "question": "The French galette des rois — the Twelfth Night cake of Epiphany (January 6) — is a flaky puff-pastry tart filled with frangipane (almond cream). A small ceramic figurine (the fève, 'bean,' originally a literal dried bean) is baked into the cake. Whoever finds the fève in their slice is the king or queen for the day and wears a cardboard crown. The tradition's modern French observance is:",
+    "answer": "January 6 through January (still observed in family and workplace gatherings)",
+    "choices": [
+      "January 6 through January (still observed in family and workplace gatherings)",
+      "Only on Christmas Day (December 25) by strict religious tradition",
+      "Across the entire Lenten fasting period (40 days before Easter Sunday)",
+      "Has been entirely abandoned in modern France since the 1990s recession"
+    ],
+    "context": "Epiphany commemorates the Magi's visit to the Christ child. The Roman Saturnalia and pre-Christian Twelfth Night had similar 'temporary king' games. The galette des rois is now a French January institution — bakeries sell millions through the month. Boulangeries display crown stacks; offices buy them for casual gatherings. The youngest person traditionally goes under the table and tells the cutter which slice goes to whom — ensuring the chance of the fève cannot be manipulated. Ceramic figurine collecting (la fabophilie) is its own subculture."
+  },
+  {
+    "tier": 5,
+    "question": "Cesar Ritz and Auguste Escoffier built the modern luxury hotel restaurant in the 1890s. Ritz brought the front-of-house — pristine table linens, attentive but unobtrusive service, the chef's-card menu in French. Escoffier brought the brigade kitchen and a simplified haute cuisine. The 1899 grand opening of the Hotel Ritz in Paris cemented their partnership. The structural innovation Ritz introduced to luxury hotel dining was:",
+    "answer": "Public dining open to non-residents — hotels became destination restaurants",
+    "choices": [
+      "Public dining open to non-residents — hotels became destination restaurants",
+      "Round tables only with strictly no rectangular dining anywhere in his hotels",
+      "Outdoor dining in all seasons regardless of weather conditions",
+      "Self-service buffets for all meal courses at all his hotel properties"
+    ],
+    "context": "Before Ritz, luxury hotel dining was generally restricted to residents. Ritz's Savoy in London (1889) and the Paris Ritz (1898) treated the hotel restaurant as its own attraction. The architectural arrangement of dining rooms, the formal table service, the ratio of staff to diners — Ritz codified the form. The Ritz-Carlton brand, founded in 1898 in Boston, carries his name still. The expression 'Ritzy' entered English vocabulary in the 1920s as a synonym for 'luxurious.'"
+  },
+  {
+    "tier": 5,
+    "question": "The 1992 USDA Food Pyramid — the most widely distributed dietary guidance graphic in American history — placed grains at the broad base (6-11 servings), fruits and vegetables next (5-9 servings combined), dairy and protein in narrow tiers (2-3 servings each), and fats, oils, and sweets at the top to be used sparingly. The pyramid was retired in 2005, replaced by MyPyramid, then MyPlate in 2011. The most substantive critique of the original 1992 pyramid was:",
+    "answer": "Lumping all grains together obscured the difference between whole and refined grains",
+    "choices": [
+      "Lumping all grains together obscured the difference between whole and refined grains",
+      "Including fruits and vegetables at all — a major dietary error of the era",
+      "Failure to recommend artificial sweeteners as a daily required nutrient",
+      "Including water as the base of human nutrition was scientifically unjustified"
+    ],
+    "context": "Walter Willett at Harvard published the alternative 'Healthy Eating Pyramid' in 2001, distinguishing whole grains (broad base) from refined grains and red meat (top, use sparingly). Marion Nestle's Food Politics (2002) traced the food industry's influence on the original USDA pyramid. The 2005 pyramid added physical activity. The 2011 MyPlate replaced the pyramid altogether with a plate divided into vegetables, fruits, grains, protein, with a separate dairy circle. The visual rhetoric of nutrition policy has shifted constantly; the underlying questions remain contested."
+  },
+  {
+    "tier": 5,
+    "question": "The 1973 OPEC oil embargo and the global food-price shocks of 1973-74 sent grain prices skyrocketing and forced governments to confront food security. Two policy responses defined the next half-century. The U.S., under Earl Butz, expanded production through the 'get big or get out' policy that produced cheap corn, soy, and high-fructose corn syrup. The European Common Agricultural Policy (CAP) approach was:",
+    "answer": "Heavy subsidies for European farmers to maintain food sovereignty, often producing surplus",
+    "choices": [
+      "Heavy subsidies for European farmers to maintain food sovereignty, often producing surplus",
+      "Complete deregulation and elimination of all agricultural subsidies by Brussels",
+      "Mandated vegetarianism across all European Union member states uniformly",
+      "Reliance entirely on agricultural imports from the United States and Brazil"
+    ],
+    "context": "The CAP was instituted in 1962, originally to ensure post-WWII food security for Europe. By the 1970s it produced the famous 'butter mountains' and 'wine lakes' — surplus that was sometimes destroyed, sometimes exported below cost, undermining African and Latin American agriculture. The CAP has been repeatedly reformed; it still consumes the largest share of the EU budget (~33%). The American and European responses to the 1973 food crisis diverged sharply — and the resulting policy environments shape global food markets to this day."
+  },
+  {
+    "tier": 5,
+    "question": "MFK Fisher's Consider the Oyster (1941) opens with one of the most famous sentences in American food writing: 'It must be sad to be a man who hates oysters; he has missed so much.' Fisher's body of work — written through wartime rationing, two marriages, the deaths of two husbands, four decades of solo travel — combined autobiography, history, recipe, and philosophy. Her great theme was:",
+    "answer": "How we eat reveals who we are — food as the most intimate expression of being human",
+    "choices": [
+      "How we eat reveals who we are — food as the most intimate expression of being human",
+      "Strict nutritional optimization as the only meaningful subject of food writing",
+      "Patriotic American cuisine as superior to all foreign culinary traditions",
+      "Modern molecular gastronomy techniques as the only valid cooking method"
+    ],
+    "context": "Fisher's prose was praised by W.H. Auden as 'the best in America.' Her translation of Brillat-Savarin's Physiology of Taste (1949) remains standard. The Gastronomical Me (1943) — the WWII food essays — and An Alphabet for Gourmets (1949) are touchstones. Fisher avoided the celebrity-chef path; she lived modestly in Northern California, wrote until her death in 1992 at 83, and shaped how Americans read about food."
+  },
+  {
+    "tier": 5,
+    "question": "Single-estate, bean-to-bar craft chocolate — produced from cacao traceable to a specific farm or cooperative — emerged in the 2000s as a counterpoint to industrial chocolate. The three main cacao varieties have distinct sensory profiles. Criollo (rare, often described as the finest, complex floral and fruit notes, susceptible to disease). Forastero (the workhorse, hardier, deeper bitter-chocolate notes, ~80% of world cocoa). Trinitario (a hybrid of the two, with characteristics of both). The country producing the most cocoa globally is:",
+    "answer": "Côte d'Ivoire (with Ghana the second, together over 50% of world supply)",
+    "choices": [
+      "Côte d'Ivoire (with Ghana the second, together over 50% of world supply)",
+      "Switzerland and Belgium together as the historical leaders",
+      "Mexico, the original homeland of cacao before colonization",
+      "France, through its overseas territories in the Caribbean"
+    ],
+    "context": "Cacao cultivation in West Africa was introduced from South America in the late 1800s; today most of the world's chocolate begins as Forastero beans from West African smallholder farms. Child labor in cocoa harvesting — documented since the 2000s — has been a persistent ethical concern. Fair Trade, Rainforest Alliance, and direct-trade certifications exist but coverage is partial. The bean-to-bar movement (Dandelion Chocolate, Mast Brothers, Rogue Chocolatier, Patric and others) brought the trade back into sharper focus."
+  },
+  {
+    "tier": 5,
+    "question": "The Aceto Balsamico Tradizionale di Modena DOP — true traditional balsamic vinegar from Modena — is aged for a minimum of 12 years in a series of progressively smaller wooden barrels (a 'batteria'), each of a different wood (oak, chestnut, cherry, mulberry, juniper, ash, and others). The process takes decades. The starting material is not wine but:",
+    "answer": "Cooked white grape must (the boiled juice of crushed grapes)",
+    "choices": [
+      "Cooked white grape must (the boiled juice of crushed grapes)",
+      "Apple cider fermented to vinegar over fifteen years",
+      "Distilled white wine vinegar with caramel coloring added",
+      "Mature red wine bottles aged in glass for decades"
+    ],
+    "context": "True traditional balsamic — the small bottles labeled Aceto Balsamico Tradizionale di Modena DOP — costs roughly $80-200 for 100ml and is sold at age 12, 18, 25, or older. Industrial 'balsamic vinegar of Modena' (Aceto Balsamico di Modena PGI) is wine vinegar with concentrated must, allowed to be sold inexpensively. The two are radically different products despite similar names. The DOP traditional version is used a few drops at a time over grilled meat, strawberries, Parmigiano-Reggiano shavings, or vanilla ice cream."
+  },
+  {
+    "tier": 5,
+    "question": "Larousse Gastronomique — the encyclopedia of French cuisine first published in 1938 under the editorship of Prosper Montagné — runs to thousands of entries on dishes, ingredients, regions, chefs, and techniques. Successive editions have updated and expanded. The book serves the function for French cuisine that:",
+    "answer": "The OED serves for English vocabulary — the comprehensive reference work",
+    "choices": [
+      "The OED serves for English vocabulary — the comprehensive reference work",
+      "A travel guide serves for tourists visiting French cities for the first time",
+      "A medical encyclopedia serves for diagnosing food allergies in children",
+      "A philosophical treatise serves for examining the meaning of eating"
+    ],
+    "context": "Auguste Escoffier wrote the original preface. The book has been continuously updated; the current English edition runs roughly 1,400 pages. Joël Robuchon edited a 2001 revision. Larousse Gastronomique is the kind of book a chef opens to settle a dispute about provenance, technique, or definition. It is to French cuisine what the Encyclopedia Britannica was to general knowledge — comprehensive, conservative, authoritative within its tradition."
+  },
+  {
+    "tier": 5,
+    "question": "Roger Scruton, the British philosopher (1944-2020), defended traditional food cultures as part of his broader conservative philosophical project. In I Drink Therefore I Am: A Philosopher's Guide to Wine (2009) and other works, he argued that meals — particularly meals taken together — are essential to:",
+    "answer": "The transmission of culture across generations and the formation of human community",
+    "choices": [
+      "The transmission of culture across generations and the formation of human community",
+      "Strict nutritional optimization through measured caloric intake control",
+      "Industrial efficiency in agricultural production processes globally",
+      "The exclusive practice of religious devotional rituals in private settings"
+    ],
+    "context": "Scruton's broader argument was that local food traditions, family meals, and the social architecture of dining are not nostalgic luxuries but essential to a healthy society. His Green Philosophy (2012) made a conservative environmental case rooted in love of place. Scruton was controversial — his cultural conservatism made enemies — but his food and wine writing has been widely respected across political lines. His death in 2020 was widely mourned by both critics and admirers."
+  },
+  {
+    "tier": 5,
+    "question": "The relationship between food and ideology has been long and contested. Marxism-as-philosophy gave serious analyses of commodity fetishism in food — the way the labor producing food disappears from the final product. Marxism-as-implementation, however, produced the worst famines in modern history. The Holodomor (1932-33, ~3.5-5 million Ukrainians), the Great Leap Forward (1959-61, 15-45 million Chinese), the Khmer Rouge agrarian relocation (1975-79, ~1.7 million Cambodians), and North Korean prison-camp food deprivation (ongoing) — these are facts the historical record establishes. The serious philosophical assessment is:",
+    "answer": "Distinguish the philosophical analysis from the political record; both matter, and the death toll is cited honestly",
+    "choices": [
+      "Distinguish the philosophical analysis from the political record; both matter, and the death toll is cited honestly",
+      "Marxism-as-philosophy was correct and no famines occurred under Marxist regimes in the historical record",
+      "Marxism is uniquely responsible for every famine across all of human history with no other contributor",
+      "All food-policy ideologies are equivalent — none has more deaths than any other across the historical record"
+    ],
+    "context": "The Black Book of Communism (Courtois et al., 1997), Robert Conquest's Harvest of Sorrow (1986), Solzhenitsyn's Gulag Archipelago (1973), Chang and Halliday's Mao (2005), and decades of subsequent scholarship establish roughly 65-100 million civilian deaths from communist regimes between 1917 and 1989. Food was repeatedly the instrument: forced collectivization, grain requisition, famine-as-policy. The bank treats the philosophical and the historical as both real and distinct — not collapsing the analysis nor whitewashing the record."
+  },
+  {
+    "tier": 5,
+    "question": "The Mises-Hayek economic-calculation problem — that without market prices for capital goods no central planner can rationally allocate resources — applies as directly to food as to any industry. The 20th-century socialist economies repeatedly ran this experiment with predictable results: chronic food shortages in the USSR, ration cards in Maoist China, the famine cascade in Cambodia. The market mechanism for food, by contrast, has its own characteristic failure mode:",
+    "answer": "Producing what people will pay for, which is not always what is nutritionally best",
+    "choices": [
+      "Producing what people will pay for, which is not always what is nutritionally best",
+      "Producing too little food, with chronic widespread famine in market economies",
+      "Producing exactly the right food for everyone with no failure mode at all",
+      "Refusing to produce any food without direct central government command"
+    ],
+    "context": "Market economies in food have produced the cheapest, most abundant food in human history — and also the modern metabolic-disease epidemic, driven by hyperpalatable ultra-processed food sold profitably to willing consumers. The two failure modes are not symmetric: central planning produces shortage and famine; markets produce abundance and over-consumption. Both involve costs the bank takes seriously. The intellectual honesty is to credit the market for the abundance, hold it responsible for the metabolic disease, and remember that the alternative (planning) has a far worse twentieth-century record."
   }
 ]
