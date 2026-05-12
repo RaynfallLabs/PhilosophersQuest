@@ -4861,6 +4861,18 @@
   },
   {
     "tier": 3,
+    "question": "A cook reaches into the fridge for ground beef and reads the meat thermometer probe on a fresh burger. Safe to eat at what internal temperature, per USDA?",
+    "answer": "160F",
+    "choices": [
+      "160F",
+      "145F",
+      "135F",
+      "165F"
+    ],
+    "context": "Ground beef must hit 160F because grinding distributes surface bacteria throughout the patty. A whole-muscle steak at 135F is safe because the interior was sterile. Chicken always 165F regardless of cut."
+  },
+  {
+    "tier": 3,
     "question": "A line cook spots fond — the dark caramelized residue stuck to the pan after searing pork chops. Most home cooks scrub it away. The trained cook does what?",
     "answer": "Pours a splash of stock or wine in and scrapes the fond into a pan sauce",
     "choices": [
@@ -4921,6 +4933,18 @@
   },
   {
     "tier": 3,
+    "question": "A cook poking a piece of dough sees the indent slowly spring back about halfway. The traditional baker's call: ready to bake. What is this test diagnosing?",
+    "answer": "Proper fermentation — enough gas to lift the loaf without collapse from over-proof",
+    "choices": [
+      "Proper fermentation — enough gas to lift the loaf without collapse from over-proof",
+      "Gluten development — the protein network's elastic strength",
+      "Sugar exhaustion — the yeast running out of fuel (a related term)",
+      "Hydration absorption — flour saturation with water (a related term)"
+    ],
+    "context": "Fast rebound = under-proofed (more rise to come). No rebound (indent stays) = over-proofed; the structure has collapsed and the bake will sink. Halfway is the sweet spot."
+  },
+  {
+    "tier": 3,
     "question": "A chef teaches an apprentice the difference between honing a knife and sharpening it. Most home cooks confuse them. What does honing do?",
     "answer": "Realigns the existing edge — straightens micro-bent steel back into line",
     "choices": [
@@ -4942,6 +4966,18 @@
       "Reducing"
     ],
     "context": "Parboiling = partial-cook then finish later. Blanching is briefer, often followed by an ice shock for color preservation. Confit is slow cooking submerged in fat. Reducing is concentrating a liquid by evaporation."
+  },
+  {
+    "tier": 3,
+    "question": "A cook salting a steak 40 minutes before cooking gets a darker, crustier sear than salting just before. Why does the timing matter?",
+    "answer": "Salt draws moisture out, dissolves it, then reabsorbs",
+    "choices": [
+      "Salt draws moisture out, dissolves it, then reabsorbs",
+      "Salt denatures myoglobin proteins, deepening the meat's natural color",
+      "Salt lowers the boiling point of surface water, accelerating Maillard onset",
+      "Salt forms a crystalline crust at the moment of contact with hot fat"
+    ],
+    "context": "Within 5 minutes salt is on the surface; from 10-30 minutes water beads on the meat (bad timing — surface is wet, no browning); after 40 minutes it has reabsorbed as concentrated brine. Either salt right before cooking, or 40+ min ahead."
   },
   {
     "tier": 3,
@@ -4990,6 +5026,42 @@
       "Beurre composé"
     ],
     "context": "Monter au beurre = mounting with butter; the cold fat suspends in tiny droplets, emulsifying. Beurre noisette is brown butter. Beurre blanc is the wine-shallot-butter sauce. Beurre composé is flavored compound butter."
+  },
+  {
+    "tier": 3,
+    "question": "A cook heats butter past the foaming stage until the milk solids turn light brown and the kitchen fills with a nutty aroma. What is this finishing fat called?",
+    "answer": "Beurre noisette (brown butter)",
+    "choices": [
+      "Beurre noisette (brown butter)",
+      "Beurre blanc (a related term)",
+      "Ghee (a related term)",
+      "Smen (a related term)"
+    ],
+    "context": "Noisette = hazelnut in French, for the color and aroma. The browning is Maillard on the milk-solid proteins. Ghee is fully clarified butter (solids strained out). Smen is fermented North African butter."
+  },
+  {
+    "tier": 3,
+    "question": "A serious bread baker uses a starter built from a small piece of yesterday's dough kept aside. The technique stretches yeast through generations of loaves. What is this preserved starter called?",
+    "answer": "Levain (or pâte fermentée)",
+    "choices": [
+      "Levain (or pâte fermentée)",
+      "Biga (a related term)",
+      "Sponge (a related term)",
+      "Poolish (a related term)"
+    ],
+    "context": "Levain is the broad French term; pâte fermentée is yesterday's dough specifically. Biga (Italian) is a stiff pre-ferment. Poolish (Polish-origin, refined in France) is a wet pre-ferment. Sponge is a generic English term for a wet starter."
+  },
+  {
+    "tier": 3,
+    "question": "A pastry chef cuts cold butter into flour, leaving pea-sized lumps, then adds ice water. The dough rests, is rolled, and bakes into flaky layers. What is this dough type called?",
+    "answer": "Pâte brisée (short pastry)",
+    "choices": [
+      "Pâte brisée (short pastry)",
+      "Pâte sablée (a related term)",
+      "Pâte feuilletée (a related term)",
+      "Pâte à choux (a related term)"
+    ],
+    "context": "Pâte brisée — flaky short pastry; the butter chunks melt into pockets that create flakes. Sablée is sandy/cookie-like. Feuilletée is laminated puff pastry (many folded layers). Choux is the cooked-dough used for cream puffs."
   },
   {
     "tier": 3,
@@ -5065,6 +5137,18 @@
   },
   {
     "tier": 3,
+    "question": "A grandmother salts pasta water until it tastes like the sea. Why does the timing of salt matter — adding it now, not at the table?",
+    "answer": "Pasta absorbs salt as it cooks, seasoning the noodle internally",
+    "choices": [
+      "Pasta absorbs salt as it cooks, seasoning the noodle internally",
+      "Salt raises the boiling point enough to cook pasta firmer and faster",
+      "Salt prevents starch from leaching out into the water during cooking",
+      "Salt activates the wheat gluten, making the pasta hold sauce better"
+    ],
+    "context": "Boiling-point elevation from typical pasta-water salt is negligible (~0.5F). The real reason: seasoning from inside. A bland noodle cannot be saved by surface sauce; a properly salted one needs less seasoning everywhere else."
+  },
+  {
+    "tier": 3,
     "question": "A grilling guide says ribs are best smoked at 225F for hours, not hot-and-fast at 450F. The collagen-rich cut needs slow time to transform. What conversion is the cook waiting for?",
     "answer": "Collagen breaking down into gelatin",
     "choices": [
@@ -5137,6 +5221,18 @@
   },
   {
     "tier": 3,
+    "question": "Spinach contains a lot of iron but absorption is blocked by one compound that binds the mineral in the gut. What is that compound?",
+    "answer": "Oxalic acid (oxalates)",
+    "choices": [
+      "Oxalic acid (oxalates)",
+      "Phytic acid (phytates)",
+      "Tannic acid (tannins)",
+      "Lectins (a related term)"
+    ],
+    "context": "Oxalates bind iron and calcium, lowering absorption. Phytic acid does the same in grains, legumes, and nuts. Both can be reduced by cooking, soaking, sprouting, or fermenting. Pairing spinach with vitamin C boosts absorption of what remains."
+  },
+  {
+    "tier": 3,
     "question": "A 2015 US Dietary Guidelines revision quietly removed the upper limit on dietary cholesterol that had stood since 1977. The shift reflected decades of research showing:",
     "answer": "Most blood cholesterol is made by the liver — dietary cholesterol has a smaller effect than once thought",
     "choices": [
@@ -5149,6 +5245,42 @@
   },
   {
     "tier": 3,
+    "question": "A 2014 meta-analysis by Chowdhury et al. (Annals of Internal Medicine) reviewed 72 studies and found no clear link between saturated fat intake and heart disease. Earlier USDA guidance had warned against butter and red meat. The current scientific picture:",
+    "answer": "Saturated fat's link to heart disease is more nuanced than the 1980s consensus",
+    "choices": [
+      "Saturated fat's link to heart disease is more nuanced than the 1980s consensus",
+      "Saturated fat has been definitively cleared as a heart disease risk factor",
+      "Saturated fat is now considered heart-protective in all forms and quantities",
+      "Saturated fat from beef differs from that in butter, with only one being harmful"
+    ],
+    "context": "Some replacements for saturated fat (refined carbs) appear worse for heart health; others (polyunsaturated fats from whole foods) appear better. The 1980s low-fat era replaced fat with sugar and starch — possibly making the problem worse. Active scientific debate continues."
+  },
+  {
+    "tier": 3,
+    "question": "A non-celiac dieter cuts gluten and reports feeling better. A celiac patient has a clear autoimmune diagnosis. Non-celiac gluten sensitivity (NCGS) is contested because:",
+    "answer": "Many cases improve when FODMAPs (fermentable carbs) are also removed",
+    "choices": [
+      "Many cases improve when FODMAPs (fermentable carbs) are also removed",
+      "All non-celiac reports are placebo with no measurable physiology",
+      "Celiac and NCGS produce identical antibody panels but different symptoms",
+      "Wheat varieties have changed enough that all modern wheat is now harmful"
+    ],
+    "context": "FODMAPs are fermentable oligosaccharides, disaccharides, monosaccharides, and polyols — wheat is high in them. Monash University trials found many NCGS subjects don't react to pure gluten when FODMAPs are controlled. The condition is real for some; the mechanism is unsettled."
+  },
+  {
+    "tier": 3,
+    "question": "Dan Buettner's National Geographic research identified five regions where people regularly live past 100: Okinawa, Sardinia, Nicoya Costa Rica, Ikaria Greece, and Loma Linda California. Their diets vary widely but share one consistent pattern:",
+    "answer": "Heavy plant base, modest protein, mostly whole foods — variations on a Mediterranean-style or plant-forward diet",
+    "choices": [
+      "Heavy plant base, modest protein, mostly whole foods — variations on a Mediterranean-style or plant-forward diet",
+      "Strict vegan diets with no animal foods in any region's traditional pattern (a related term)",
+      "High-fat ketogenic diets emphasizing meat and dairy as the calorie base (a related term)",
+      "Carnivore-style protein-dominant patterns with minimal plant intake (a related term)"
+    ],
+    "context": "Loma Linda Seventh-Day Adventists are vegetarian. Okinawans eat sweet potato base + small fish. Sardinians eat sourdough, cheese, vegetables, modest meat. Common threads: largely whole foods, modest portions, close community ties — possibly as important as the food."
+  },
+  {
+    "tier": 3,
     "question": "A clinical study evaluates the traditional Mediterranean diet — olive oil, fish, vegetables, whole grains, moderate wine, very little red meat. The 2013 PREDIMED trial found:",
     "answer": "About 30% reduction in cardiovascular events compared to a low-fat control",
     "choices": [
@@ -5158,6 +5290,18 @@
       "Only women showed a benefit; men had no measurable response in the trial"
     ],
     "context": "PREDIMED ran over 5 years in Spain with ~7,000 high-risk subjects. Two Mediterranean variants (extra olive oil; extra nuts) both showed about a third fewer cardiovascular events than the low-fat group. The trial was retracted and republished in 2018 after randomization questions, with the main finding standing."
+  },
+  {
+    "tier": 3,
+    "question": "A nutrition guide names the four NOVA categories. Olive oil — cold-pressed from olives — sits in which group?",
+    "answer": "Group 2 — minimally processed culinary ingredient",
+    "choices": [
+      "Group 2 — minimally processed culinary ingredient",
+      "Group 4 — ultra-processed industrial product",
+      "Group 1 — unprocessed whole food (a related term)",
+      "Group 3 — processed traditional food"
+    ],
+    "context": "Group 2 covers traditional cooking fats, salt, sugar, vinegar — pressed, ground, or refined from group-1 foods. Olive oil belongs there. Group 3 adds salt/sugar/fat to a group-1 food (cheese, bread, smoked fish). Group 4 uses industrial substances not found in home kitchens."
   },
   {
     "tier": 3,
@@ -5197,6 +5341,18 @@
   },
   {
     "tier": 3,
+    "question": "A microbiologist counts the bacteria, archaea, and fungi inhabiting a healthy adult colon. Estimates put the count at:",
+    "answer": "Roughly 1 to 1 with human body cells (~30 trillion bacteria), older estimates of 10:1 have been revised down",
+    "choices": [
+      "Roughly 1 to 1 with human body cells (~30 trillion bacteria), older estimates of 10:1 have been revised down",
+      "Roughly 100 times fewer than human cells — a small auxiliary population (a related term)",
+      "Roughly 1,000 times more than human cells, dominating body composition (a related term)",
+      "Roughly 1/10 of human cells — comparable to other organ subsystems (a related term)"
+    ],
+    "context": "A 2016 Sender-Fuchs-Milo revision recalculated the ratio: about 38T bacteria vs. 30T human cells in a 70-kg male. The 10:1 figure had been widely cited for decades. The microbiome remains an active research area: gut diversity tracks with metabolic and immune health."
+  },
+  {
+    "tier": 3,
     "question": "A genetics class learns that the ability to digest lactose into adulthood — lactase persistence — is a recent evolutionary trait. It emerged independently in dairying populations starting roughly:",
     "answer": "7,500-10,000 years ago, after the domestication of cattle",
     "choices": [
@@ -5230,6 +5386,30 @@
       "Walter Willett — Harvard epidemiologist, Nurses' Health Study (1976)"
     ],
     "context": "Price traveled to remote populations measuring dental arch shape and decay rates. His finding: traditional diets correlated with broad arches and low decay; modern processed foods with crowding and decay. His thesis influences the contemporary traditional-foods movement (Nourishing Traditions, Sally Fallon)."
+  },
+  {
+    "tier": 3,
+    "question": "A cook sears a steak hard, leaving a deep brown crust. The same chemistry that produces the savory flavor also produces compounds with mixed health implications. These compounds are:",
+    "answer": "Advanced glycation end products (AGEs) and some heterocyclic amines at high temperatures",
+    "choices": [
+      "Advanced glycation end products (AGEs) and some heterocyclic amines at high temperatures",
+      "Trans-fatty acids formed by partial hydrogenation of the steak's fat",
+      "Nitrites and nitrates similar to those in cured deli meats (a related term)",
+      "Acrylamides identical to those formed in fried potatoes (a related term)"
+    ],
+    "context": "AGEs form when amino acids and sugars react with heat (Maillard); they accumulate in tissue and may contribute to aging and inflammation at high intake. Heterocyclic amines form on meat charred above 400F. Moderation, not avoidance, is the mainstream call; flavor without char."
+  },
+  {
+    "tier": 3,
+    "question": "An intermittent-fasting proponent skips breakfast and eats only between noon and 8pm — a 16:8 time-restricted pattern. Research on metabolic effects:",
+    "answer": "Some short-term studies show modest weight loss and metabolic improvements; long",
+    "choices": [
+      "Some short-term studies show modest weight loss and metabolic improvements; long",
+      "Intermittent fasting has been proven uniformly superior to all other dietary strategies",
+      "Intermittent fasting has been disproven as no different from random meal timing",
+      "Intermittent fasting works only for women; men show no measurable response"
+    ],
+    "context": "Trials show some metabolic improvements from compressed eating windows. Comparison with simple caloric restriction often shows similar outcomes. Adherence may be the practical advantage — a clearer rule than calorie counting. Long-term human studies remain limited."
   },
   {
     "tier": 3,
@@ -5269,6 +5449,18 @@
   },
   {
     "tier": 3,
+    "question": "A traditional Inuit diet provided almost no plant food yet showed low rates of scurvy. The vitamin C source they relied on was:",
+    "answer": "Raw or lightly cooked organ meats and whale skin (muktuk), where vitamin C survives in usable amounts",
+    "choices": [
+      "Raw or lightly cooked organ meats and whale skin (muktuk), where vitamin C survives in usable amounts",
+      "Seaweed and kelp harvested year-round from coastal waters (a related term)",
+      "Berries and tundra plants preserved through the Arctic winter (a related term)",
+      "Fermented fish that produced vitamin C through microbial action (a related term)"
+    ],
+    "context": "Liver, raw fish skin, and muktuk (whale skin and blubber) carry small amounts of vitamin C — enough to prevent scurvy when eaten raw or lightly heated. Cooking destroys it. Vilhjalmur Stefansson's 1928 year-long all-meat-diet experiment (Bellevue Hospital) confirmed it."
+  },
+  {
+    "tier": 3,
     "question": "A naval surgeon in 1747 ran what is often cited as the first controlled clinical trial — 12 sailors with scurvy split into 6 groups, each given a different remedy. Two got citrus. They recovered fast. His name:",
     "answer": "James Lind",
     "choices": [
@@ -5293,6 +5485,18 @@
   },
   {
     "tier": 3,
+    "question": "A culinary student studies traditional Bolognese cooking. Real ragù alla bolognese uses three meats — beef, pancetta, and:",
+    "answer": "Veal (or sometimes pork)",
+    "choices": [
+      "Veal (or sometimes pork)",
+      "Lamb (a related term)",
+      "Duck (a related term)",
+      "Chicken (a related term)"
+    ],
+    "context": "Other key markers: milk (not cream), small dice of carrot-celery-onion sweated long and slow, white wine (not red), tomato as accent (not dominant). Two-three hour simmer minimum. The Italian-American 'bolognese' is closer to a meaty marinara."
+  },
+  {
+    "tier": 3,
     "question": "A Japanese cook simmers kelp and dried-bonito flakes briefly in water to make the foundation broth of Japanese cuisine. The broth's name:",
     "answer": "Dashi",
     "choices": [
@@ -5302,6 +5506,42 @@
       "Mirin"
     ],
     "context": "Dashi (kombu + katsuobushi) is the umami base of miso soup, simmered dishes, dipping sauces. Shoyu is soy sauce. Tsuyu is a dashi-based dipping sauce. Mirin is sweet rice wine. Vegetarian dashi uses kombu + dried shiitake."
+  },
+  {
+    "tier": 3,
+    "question": "A Cantonese cook explains wok hei — the breath of the wok — to a stagiaire. It is the distinctive smoky-charred flavor that home stoves rarely produce. What conditions create it?",
+    "answer": "Very high heat (700F+) plus constant tossing — surface flash",
+    "choices": [
+      "Very high heat (700F+) plus constant tossing — surface flash",
+      "Low slow heat with the wok lid on — concentrated smoke from charring fat",
+      "Use of a specific aged wok where seasoning has built up over decades",
+      "Use of a chimney-style burner that draws smoke through the food repeatedly"
+    ],
+    "context": "Wok hei comes from food briefly contacting flame as oil aerosols ignite above the wok. Restaurant burners deliver 100,000+ BTU; home burners maybe 15,000. The combination of intense heat, agitation, and brief flame produces a flavor no Western technique replicates."
+  },
+  {
+    "tier": 3,
+    "question": "A traveler in Chengdu eats mapo tofu and feels both heat (from chiles) and a curious tingling numbness on the tongue. The numbing comes from:",
+    "answer": "Sichuan peppercorns — containing hydroxy-alpha-sanshool",
+    "choices": [
+      "Sichuan peppercorns — containing hydroxy-alpha-sanshool",
+      "Black pepper at very high concentration",
+      "Fermented black bean (douchi) (a related term)",
+      "MSG in concentrated form (a related term)"
+    ],
+    "context": "Sanshool molecules activate touch receptors at roughly 50 Hz — your tongue literally vibrates. The combined heat-and-numb (málà) is signature to Sichuan cuisine. Different from chile heat (capsaicin on TRPV1 pain receptors) — these are two distinct sensations."
+  },
+  {
+    "tier": 3,
+    "question": "An Indian cook heats whole spices in hot oil or ghee at the start of cooking, watching for the moment seeds pop and the room fills with aroma. This is:",
+    "answer": "Tadka (or tarka, or chaunk) — tempering of spices in fat",
+    "choices": [
+      "Tadka (or tarka, or chaunk) — tempering of spices in fat",
+      "Garam masala — the finishing-spice blend",
+      "Bhuna — slow roasting of onions and meat together",
+      "Dum — pressure-sealing under dough (a related term)"
+    ],
+    "context": "Tadka releases fat-soluble flavor compounds from cumin, mustard seed, asafoetida, curry leaf, chiles. It can open a dish or finish one (poured hot over dal at the end). Without tempering, the same spices in stew water taste dull and grainy."
   },
   {
     "tier": 3,
@@ -5437,6 +5677,18 @@
   },
   {
     "tier": 3,
+    "question": "A pre-revolutionary French chef cooked for Talleyrand, Tsar Alexander, the Prince Regent (later George IV), and the Rothschilds. He invented the toque, designed elaborate sugar pieces (pièces montées), and named the four original mother sauces. He is called the founder of French haute cuisine:",
+    "answer": "Marie-Antoine Carême",
+    "choices": [
+      "Marie-Antoine Carême",
+      "François Vatel",
+      "Antonin Beauvilliers",
+      "Auguste Escoffier"
+    ],
+    "context": "Carême rose from a child abandoned at age 10 in revolutionary Paris to become 'the king of chefs, the chef of kings.' He published lavish illustrated cookbooks. Vatel committed suicide in 1671 when the fish for Louis XIV's banquet ran late. Beauvilliers ran one of the first Paris restaurants (1782). Escoffier came two generations later."
+  },
+  {
+    "tier": 3,
     "question": "An Italian gnocchi recipe survives in 14th-century manuscripts. The classic potato gnocchi the world knows today is much more recent than that — because the potato itself did not reach Italy until:",
     "answer": "After 1500 — the Columbian Exchange brought potatoes from the Andes",
     "choices": [
@@ -5458,6 +5710,30 @@
       "Appam — coconut-rice pancake from Kerala"
     ],
     "context": "Same batter, three forms: dosa (thin crepe), idli (steamed soft cake), uttapam (thick pancake). All ferment overnight, giving sour notes and probiotic content. Sambar (lentil stew) and coconut chutney accompany. Origins in Karnataka or Tamil Nadu (disputed)."
+  },
+  {
+    "tier": 3,
+    "question": "An Italian winemaker in Modena produces a syrupy black vinegar from cooked Trebbiano grape must, aged in a series of progressively smaller wooden barrels (oak, chestnut, cherry, mulberry, juniper) for years. The protected designation:",
+    "answer": "Aceto Balsamico Tradizionale di Modena DOP",
+    "choices": [
+      "Aceto Balsamico Tradizionale di Modena DOP",
+      "Aceto Balsamico di Modena IGP (any aged variant)",
+      "Aceto Bianco di Modena (white aged vinegar)",
+      "Aceto di Vino di Modena (red wine vinegar)"
+    ],
+    "context": "Tradizionale DOP costs €100-500 per 100 ml. The IGP commercial version is younger and often caramel-blended. The DOP is dripped over Parmigiano, strawberries, or vanilla gelato — never used to dress a salad. A 25-year bottle is a major heirloom; families pass them down."
+  },
+  {
+    "tier": 3,
+    "question": "A New England chowder uses cream; a Manhattan chowder uses tomatoes. A 1939 Maine legislator was so offended by Manhattan-style that he introduced a bill making it illegal to put tomatoes in chowder. The historical-traditional clam chowder is:",
+    "answer": "Cream-based New England (with potatoes, salt pork, onions, clams)",
+    "choices": [
+      "Cream-based New England (with potatoes, salt pork, onions, clams)",
+      "Tomato-based Manhattan (Portuguese-Italian immigrant influence)",
+      "Cream-and-tomato Rhode Island compromise (a related term)",
+      "Clear-broth Cape Cod with no thickening at all"
+    ],
+    "context": "New England chowder predates Manhattan by at least a century. Manhattan chowder emerged in Portuguese and Italian immigrant kitchens in late-19th-century New York. Rhode Island clam chowder is clear-broth (no cream OR tomato). The Maine bill was introduced as a joke that became a tradition."
   },
   {
     "tier": 3,
@@ -5497,6 +5773,18 @@
   },
   {
     "tier": 3,
+    "question": "Ireland's monoculture dependence on a single potato variety (the Irish Lumper) made the island catastrophically vulnerable to one specific water-mold pathogen in 1845-49. The pathogen, named in 1876:",
+    "answer": "Phytophthora infestans",
+    "choices": [
+      "Phytophthora infestans",
+      "Puccinia graminis",
+      "Magnaporthe grisea",
+      "Fusarium oxysporum"
+    ],
+    "context": "About 1 million died and 1 million emigrated from a population of 8 million. British government policy — continued grain exports during famine, the Corn Laws — turned a crop failure into a catastrophe. P. infestans is technically an oomycete (water mold), not a true fungus. The same pathogen still threatens potato production worldwide."
+  },
+  {
+    "tier": 3,
     "question": "A Soviet collectivization campaign in 1932-33 confiscated grain from Ukraine while drought reduced yields. About 3.5 to 5 million Ukrainians starved. Many states and scholars now recognize this as genocide. The name:",
     "answer": "Holodomor (death by hunger)",
     "choices": [
@@ -5530,6 +5818,30 @@
       "Hippolyte Mège-Mouriès — margarine"
     ],
     "context": "Appert published L'Art de Conserver in 1810. He didn't know why his method worked — bacteriology wouldn't exist for another 60 years (Pasteur, 1864). British inventor Peter Durand patented the tin-can version a year later (1810). The 12,000 franc prize equaled about a decade of skilled wages."
+  },
+  {
+    "tier": 3,
+    "question": "A French chemist working on wine spoilage in 1864 found that gently heating it to about 145F killed harmful microbes without changing flavor. He extended the technique to milk. The method now saves countless lives. His name:",
+    "answer": "Louis Pasteur",
+    "choices": [
+      "Louis Pasteur",
+      "Joseph Lister",
+      "Robert Koch",
+      "Ignaz Semmelweis"
+    ],
+    "context": "Pasteurization became standard for milk after Pasteur's work — major US adoption took until the 1920s-40s, reducing infant deaths from tuberculosis, brucellosis, scarlet fever, and typhoid. Lister applied germ theory to surgery (1867). Koch identified specific bacterial pathogens. Semmelweis pioneered handwashing in obstetric wards (1847)."
+  },
+  {
+    "tier": 3,
+    "question": "A US naturalist working in Labrador in the 1910s watched Inuit fishermen freeze fresh-caught fish in the open air. The instant-freezing preserved cell structure perfectly. Returning home, he patented flash-freezing techniques (1924) that built the frozen-food industry. His name:",
+    "answer": "Clarence Birdseye",
+    "choices": [
+      "Clarence Birdseye",
+      "Carl von Linde",
+      "Jacob Perkins",
+      "Frederick Tudor"
+    ],
+    "context": "Birdseye sold his company for $22M in 1929 to General Foods, which kept the Birds Eye brand. Flash-freezing produces small ice crystals that don't rupture cell walls; slow-freezing produces large crystals that destroy texture. Tudor (early 1800s) traded harvested pond ice from New England across the world."
   },
   {
     "tier": 3,
@@ -5581,6 +5893,18 @@
   },
   {
     "tier": 3,
+    "question": "A Dutch trading company's 1621 conquest of the Banda Islands — to monopolize the world's only nutmeg trees — left roughly 15,000 islanders dead through massacre, deportation, and starvation. The company:",
+    "answer": "The VOC (Vereenigde Oostindische Compagnie / Dutch East India Company)",
+    "choices": [
+      "The VOC (Vereenigde Oostindische Compagnie / Dutch East India Company)",
+      "The EIC (English East India Company) (a related term)",
+      "The CDI (Compagnie des Indes Orientales / French East India Company)",
+      "The Companhia da Índia (Portuguese East India Company)"
+    ],
+    "context": "Jan Pieterszoon Coen commanded the campaign. The Banda population fell from ~15,000 to a few hundred. The VOC then enslaved replacement laborers to work nutmeg-tree plantations they owned. The spice trade's profits were genuinely vast — and the human cost on the source side was genuinely catastrophic."
+  },
+  {
+    "tier": 3,
     "question": "Bengal in 1943 suffered a famine that killed 2-3 million under British wartime rule. Grain was being diverted to Allied troops and European stockpiles; an export-allowed policy continued during the worst months. The wartime British leader whose role remains historically contested:",
     "answer": "Winston Churchill",
     "choices": [
@@ -5590,6 +5914,42 @@
       "Neville Chamberlain"
     ],
     "context": "Madhusree Mukerjee's Churchill's Secret War (2010) argues the famine was preventable and Churchill resisted grain shipments. Defenders cite wartime logistics. Either way, an Indian breadbasket starved while the Empire prioritized other theaters. Estimates of the death toll range from 2.1 to 3.8 million."
+  },
+  {
+    "tier": 3,
+    "question": "A British Pennsylvania farmer in 1791 led armed resistance against a federal excise tax on whiskey — corn and rye were too bulky to transport east, so they distilled them into a portable, marketable spirit. The federal response: President Washington personally led 13,000 militia to enforce the tax. The episode:",
+    "answer": "Whiskey Rebellion",
+    "choices": [
+      "Whiskey Rebellion",
+      "Shays' Rebellion",
+      "Fries' Rebellion",
+      "Bacon's Rebellion"
+    ],
+    "context": "Hamilton's whiskey tax targeted distillers to pay Revolutionary debt. Western farmers — who used whiskey as currency — saw it as Eastern oppression. Washington's enforcement (his only campaign as president) established federal taxing power. Shays' (1786) preceded it; Fries' (1799) followed; Bacon's (1676) was colonial."
+  },
+  {
+    "tier": 3,
+    "question": "An Irish hotelier in Tijuana — improvising a salad for famous customers during Prohibition tourism — combined romaine, egg, lemon, anchovy, garlic, parmesan, and croutons. The year was 1924; the chef-owner-creator:",
+    "answer": "Caesar Cardini",
+    "choices": [
+      "Caesar Cardini",
+      "Julius Caesar",
+      "Cesare Borgia",
+      "Caesar Ritz"
+    ],
+    "context": "An Italian immigrant living in San Diego, Cardini opened restaurants on both sides of the border. American Prohibition (1920-33) drove tourists to Tijuana for legal cocktails. July 4, 1924, the restaurant was overrun; he improvised a salad table-side. His daughter Rosa preserved the recipe; Wolfgang Puck still champions a near-original form."
+  },
+  {
+    "tier": 3,
+    "question": "A pizza style was born in Chicago in 1943 — high crust walls, cheese on the bottom, chunky tomato sauce on top, baked in a deep pan. The originator:",
+    "answer": "Pizzeria Uno",
+    "choices": [
+      "Pizzeria Uno",
+      "Gino's East",
+      "Lou Malnati's",
+      "Giordano's"
+    ],
+    "context": "Uno's opened December 3, 1943. Sewell was Texan; Riccardo was Italian. The deep-dish concept — closer to a savory tart — diverged sharply from Italian thin-crust tradition. Gino's East (1966), Lou Malnati's (1971), Giordano's (1974) followed. New York and Chicago developed parallel American pizza identities through the mid-20th century."
   },
   {
     "tier": 3,
@@ -5605,6 +5965,18 @@
   },
   {
     "tier": 3,
+    "question": "A Vienna bakery in 1683 honored victory over the Ottoman siege by shaping pastry into the crescent of the Ottoman flag — to be devoured. The croissant traveled to France via Marie Antoinette's marriage. The Vienna prototype:",
+    "answer": "Kipferl",
+    "choices": [
+      "Kipferl",
+      "Strudel",
+      "Krapfen",
+      "Brioche"
+    ],
+    "context": "Kipferl predates the 1683 siege — references go back to the 13th century. The 1683 origin story is folklore that gained traction in the 19th century. The actual French croissant — laminated puff pastry — is a 19th-20th-century refinement of the Vienna shape. Marie Antoinette (1770) may have introduced Vienna pastries to Paris, but the modern croissant emerged later."
+  },
+  {
+    "tier": 3,
     "question": "American spaghetti-and-meatballs is widely identified as Italian. In Italy, the combination is essentially unknown. The dish emerged among Italian immigrants in late-19th-early-20th-century:",
     "answer": "Lower Manhattan and other US Little Italys",
     "choices": [
@@ -5614,6 +5986,18 @@
       "Bologna, the meat-sauce city"
     ],
     "context": "Italian-American cooking developed its own identity in immigrant New York, Boston, Philadelphia. In Italy, polpette (meatballs) are served as a main course separately; spaghetti goes with simpler sauces. The combination is now a recognized Italian-American genre — not a misunderstanding of Italian food but a parallel cuisine."
+  },
+  {
+    "tier": 3,
+    "question": "A myth perpetuated by the Macaroni Journal in 1929 credits Marco Polo with introducing pasta to Italy from China in the 13th century. The historical reality:",
+    "answer": "Italians were eating pasta centuries before Marco Polo's 1295 return; the myth was 20th",
+    "choices": [
+      "Italians were eating pasta centuries before Marco Polo's 1295 return; the myth was 20th",
+      "Marco Polo did introduce pasta to Italy, but only the lasagna sheet form",
+      "Both Italy and China developed pasta independently around 1200 AD",
+      "Pasta entered Italy from Arab Sicily in the 16th century, after Marco Polo"
+    ],
+    "context": "Sicilian pasta records date to at least the 12th century — Arab introduction during the Emirate of Sicily. References to dried pasta appear in 12th-13th century documents. Polo himself wrote that Chinese pasta reminded him of what Italians ate. The Macaroni Journal myth (1929) was promotional fiction."
   },
   {
     "tier": 3,
@@ -5641,6 +6025,18 @@
   },
   {
     "tier": 3,
+    "question": "An Italian peasant pastry in 1960s Treviso layered ladyfingers soaked in coffee with mascarpone-egg cream, dusted with cocoa. The dish has at least three claimed origins. The most widely accepted attribution:",
+    "answer": "Le Beccherie restaurant in Treviso (1960s)",
+    "choices": [
+      "Le Beccherie restaurant in Treviso (1960s)",
+      "An 18th-century Renaissance Florentine convent",
+      "Modena (Emilia-Romagna) in the 1920s",
+      "Sicily, derived from earlier zuppa inglese"
+    ],
+    "context": "Disputes exist (Friuli claims it too). Le Beccherie holds the strongest documentary case. The name (pick-me-up) refers to coffee + sugar + alcohol energizing effect. Marketed via Italian-American restaurants in the 1980s, it became global. Earlier zuppa inglese (English soup, layered cake-and-cream) is its ancestor."
+  },
+  {
+    "tier": 3,
     "question": "A Hollywood restaurant in 1937 became the birthplace of a layered chopped salad. The owner — Robert H. Cobb of the Brown Derby — invented it as a late-night fridge-clean-out. Components: lettuce, tomato, bacon, chicken, egg, avocado, chives, blue cheese, vinaigrette. The salad:",
     "answer": "Cobb salad",
     "choices": [
@@ -5662,6 +6058,486 @@
       "Restaurant Béarnaise, Paris, where the original sauce was named (1880s)"
     ],
     "context": "Multiple competing claims; the Delmonico's and Waldorf stories are both within months of each other. Edward and Mabel Benedict, the Waldorf's Lemuel Benedict, and Delmonico's Mrs. LeGrand Benedict have all been credited. By 1900 the dish was a recognized New York classic; Delmonico's print menu cemented it."
+  },
+  {
+    "tier": 3,
+    "question": "An American food writer of the 1930s-50s — including How to Cook a Wolf (1942) on stretching wartime rations into delicious meals — set the standard for the English-language food essay. Her name:",
+    "answer": "M.F.K. Fisher",
+    "choices": [
+      "M.F.K. Fisher",
+      "Julia Child",
+      "James Beard",
+      "Elizabeth David"
+    ],
+    "context": "Mary Frances Kennedy Fisher wrote 27 books. Her sentences ('the smell of good bread baking, like the sound of lightly flowing water, is indescribable in its evocation of innocence and delight') made food writing a literary form. David's British parallel emerged after WWII with Mediterranean Food (1950) and French Country Cooking (1951)."
+  },
+  {
+    "tier": 3,
+    "question": "A Boston Cooking School principal published an 1896 cookbook that introduced standardized measurements — exact teaspoons, level cups — replacing the imprecise pinch and handful. The author:",
+    "answer": "Fannie Farmer",
+    "choices": [
+      "Fannie Farmer",
+      "Mary Lincoln",
+      "Sarah Hale",
+      "Eliza Leslie"
+    ],
+    "context": "Mary Lincoln founded the Boston Cooking School in 1879; Farmer succeeded her in 1894. Farmer's measurement reform standardized US baking and made recipes reproducible. Sarah Hale edited Godey's Lady's Book and championed Thanksgiving as a national holiday. Eliza Leslie's Directions for Cookery (1837) was an earlier US bestseller."
+  },
+  {
+    "tier": 3,
+    "question": "A Chinese legend credits one emperor — usually placed around 2737 BC — with discovering tea when leaves blew into his pot of boiling water. The emperor:",
+    "answer": "Shennong (the Divine Farmer)",
+    "choices": [
+      "Shennong (the Divine Farmer)",
+      "Yu the Great (founder of Xia)",
+      "Qin Shi Huang (first emperor)",
+      "Wu of Han (Han dynasty)"
+    ],
+    "context": "Shennong is a mythological figure credited with agriculture, herbal medicine, and tea. The story is folklore; archaeological tea use in China dates to at least the Han Dynasty (200 BC). Tea reached Japan in the 9th century with Buddhist monks; Europe through 17th-century Dutch and British East India Companies."
+  },
+  {
+    "tier": 3,
+    "question": "A primatologist proposed in 2009 that cooking — not stone tools or language — was the key invention that made us human. Cooked food extracted more calories per chew, allowing smaller jaws, smaller guts, and larger brains. The author:",
+    "answer": "Richard Wrangham",
+    "choices": [
+      "Richard Wrangham",
+      "Steven Pinker",
+      "Yuval Noah Harari",
+      "Jared Diamond"
+    ],
+    "context": "Wrangham's argument: Homo erectus's anatomical changes ~1.9 million years ago align with the cooking hypothesis. Direct fire evidence remains hard to date that early; the case rests on indirect anatomical reasoning. The hypothesis is contested but widely discussed. Harari's Sapiens (2011) followed the same intellectual lineage."
+  },
+  {
+    "tier": 3,
+    "question": "Archaeologists at Natufian sites in present-day Jordan have found charred flatbread remains dating to roughly 14,400 years ago — predating agriculture by 4,000 years. The find suggests:",
+    "answer": "Pre-agricultural foragers were already grinding and baking grains; bread",
+    "choices": [
+      "Pre-agricultural foragers were already grinding and baking grains; bread",
+      "The Natufians were a separate agricultural civilization predating Mesopotamia",
+      "Modern dating methods are unreliable for pre-agricultural sites",
+      "The flatbread was made from imported domesticated wheat"
+    ],
+    "context": "Excavations at Shubayqa 1 (Jordan, published 2018) and Göbekli Tepe (Turkey) suggest bread-making is older than agriculture. Foragers gathered wild einkorn and barley, ground them, and baked flat loaves in stone hearths. The implication: bread was so valued that humans may have invented farming partly to make more of it."
+  },
+  {
+    "tier": 3,
+    "question": "A medieval banquet at a great hall seated guests by status — the most honored above the salt, less honored below. The salt cellar was placed:",
+    "answer": "On the high table, marking the line — important guests sat closer to it",
+    "choices": [
+      "On the high table, marking the line — important guests sat closer to it",
+      "At the door, where senior guests entered first (a related term)",
+      "In a separate adjacent room reserved for kitchen staff",
+      "On a private tray for the lord alone, never touched by guests"
+    ],
+    "context": "Salt was expensive enough to mark social hierarchy. The expression 'above the salt' (high social standing) survives in modern English. The medieval high table seated the lord, family, honored guests, and senior clergy; the trestle tables below seated lower household. Status was visible at every meal."
+  },
+  {
+    "tier": 3,
+    "question": "A medieval feast served bread as the plate itself — diners ate atop a stale flat loaf that absorbed juices through the meal, then was given to the poor or fed to dogs at the end. The plate-bread was called:",
+    "answer": "Trencher",
+    "choices": [
+      "Trencher",
+      "Manchet",
+      "Maslin",
+      "Wastel"
+    ],
+    "context": "Trenchers were typically 4-day-old stale bread, often square. Manchet was high-status white bread for the lord. Maslin and wastel were everyday breads. The system meant little waste: the juices that would otherwise stain the table went into the trencher, which fed a dog or beggar. Pewter and wood plates replaced trenchers gradually through the 16th-17th centuries."
+  },
+  {
+    "tier": 3,
+    "question": "The Anglo-Saxon tradition of dinner ABOVE the salt vs. below it persisted into Tudor-era court banquets. Henry VIII's Christmas centerpiece — a roasted whole pig's head, decorated, processed in with carol-singers — was called:",
+    "answer": "Boar's head",
+    "choices": [
+      "Boar's head",
+      "Crown roast",
+      "Saddleback",
+      "Hog's pudding"
+    ],
+    "context": "The Boar's Head Carol is sung every Christmas at Queen's College Oxford to commemorate the medieval tradition. The legend: a student killed a charging boar by stuffing a copy of Aristotle down its throat. The processional carries the boar's head on a platter while academic gowns are worn — a continuous tradition since at least 1340."
+  },
+  {
+    "tier": 3,
+    "question": "Louis XIV's public dining at Versailles — the Grand Couvert — was a daily theater. Hundreds of courtiers stood watching the King eat. The king's meal traveled from kitchen to table in solemn procession with armed guards. The meal was both biological and:",
+    "answer": "Political",
+    "choices": [
+      "Political",
+      "Religious",
+      "Diplomatic",
+      "Educational"
+    ],
+    "context": "The Grand Couvert was held in the King's apartments at Versailles. The monarch ate ritually, often alone at table, while ranked observers watched. It expressed the absolute centrality of the crown — every meal a state event. The institution carried into Louis XV and Louis XVI; it ended with the Revolution."
+  },
+  {
+    "tier": 3,
+    "question": "A French Revolution scattered aristocratic chefs into the streets after 1789 — and they opened public restaurants. The pre-1789 model of dining (court banquets, private aristocratic kitchens) gave way to:",
+    "answer": "Public restaurants where anyone with means could dine on haute cuisine",
+    "choices": [
+      "Public restaurants where anyone with means could dine on haute cuisine",
+      "Mandatory communal eating halls organized by Revolutionary committees",
+      "A return to medieval monastery-based food distribution to nobles",
+      "Closure of all professional kitchens until the Napoleonic restoration"
+    ],
+    "context": "Before the Revolution, the great chefs cooked privately for noble houses. The flight of the aristocracy left thousands of skilled chefs unemployed. They opened restaurants — by the 1820s Paris had 3,000 of them. The institution of haute cuisine moved from private patronage to a public market. Modern dining was born in this displacement."
+  },
+  {
+    "tier": 3,
+    "question": "A New York family in 1827 opened what is generally considered America's first fine-dining restaurant — and the first US restaurant to print an à la carte menu rather than a fixed table d'hôte. The restaurant:",
+    "answer": "Delmonico's (Lower Manhattan, John & Peter Delmonico)",
+    "choices": [
+      "Delmonico's (Lower Manhattan, John & Peter Delmonico)",
+      "Antoine's (New Orleans, Antoine Alciatore)",
+      "Locke-Ober (Boston, Ober & Locke) (a related term)",
+      "The Brown Derby (Hollywood, Robert Cobb)"
+    ],
+    "context": "The Delmonico brothers from Ticino. Their restaurant introduced separate tables, printed menus, French haute cuisine, and trained generations of American chefs. Antoine's (New Orleans, 1840) is older as a continuously-operating American restaurant. Locke-Ober (Boston, 1875). Brown Derby was Hollywood, mid-20th century."
+  },
+  {
+    "tier": 3,
+    "question": "An American Thanksgiving traces to a 1621 harvest celebration shared by Plymouth Pilgrims and Wampanoag. The federal holiday's permanent date — fourth Thursday of November — was fixed by:",
+    "answer": "Franklin D. Roosevelt (1941, signed into law by Congress)",
+    "choices": [
+      "Franklin D. Roosevelt (1941, signed into law by Congress)",
+      "Abraham Lincoln (1863 proclamation, which set last Thursday)",
+      "George Washington (1789, the first national Thanksgiving proclamation)",
+      "Calvin Coolidge (1924, after the Macy's parade was established)"
+    ],
+    "context": "Sarah Josepha Hale lobbied for a national Thanksgiving for decades; Lincoln proclaimed it in 1863 on the last Thursday of November. FDR shifted it forward in 1939 to extend the holiday shopping season; the change was unpopular. Congress fixed the fourth Thursday in 1941. The Plymouth meal probably included venison, fowl, corn, and seafood — not turkey-centric."
+  },
+  {
+    "tier": 3,
+    "question": "An English mince pie was originally savory — minced meat with suet, dried fruit, and spice. Over time the meat dropped out, leaving only the dried fruit. The word that survives:",
+    "answer": "Mincemeat (now a fruit-and-spice filling with no meat)",
+    "choices": [
+      "Mincemeat (now a fruit-and-spice filling with no meat)",
+      "Black bun (the related Scottish currant cake)",
+      "Spotted Dick (a steamed currant pudding)",
+      "Eccles cake (currant-filled puff pastry)"
+    ],
+    "context": "Medieval mince pies contained beef, suet, currants, raisins, cinnamon, mace, cloves, nutmeg. By the Victorian era the meat had vanished but suet remained. Today's mincemeat is dried fruit + suet + brandy. Twelve mince pies eaten across the 12 days of Christmas brings 12 months of good luck — old English tradition."
+  },
+  {
+    "tier": 3,
+    "question": "A French Christmas Eve dessert: a sponge cake rolled with chocolate or coffee buttercream, sculpted to look like a Yule log with bark and moss. The tradition's name:",
+    "answer": "Bûche de Noël",
+    "choices": [
+      "Bûche de Noël",
+      "Galette des Rois",
+      "Brioche des Rois",
+      "Tarte Tatin"
+    ],
+    "context": "The Yule log itself — actual burning wood — was a pre-Christian European winter tradition. The cake replaced the burning log as households grew smaller and central-heated. The Galette des Rois (King Cake) is for Epiphany (Jan 6) — a flaky almond-frangipane cake with a hidden fève (small charm or bean)."
+  },
+  {
+    "tier": 3,
+    "question": "An Italian Christmas tall sweet bread studded with candied fruit and raisins — Milan-origin, named for the panettiere (baker) who created it (legend has multiple versions). The bread's name:",
+    "answer": "Panettone",
+    "choices": [
+      "Panettone",
+      "Pandoro",
+      "Colomba",
+      "Brioche"
+    ],
+    "context": "Panettone dates to at least the 15th century in Milan. Pandoro is the Verona cousin (no fruit, dusted with powdered sugar to look like the Dolomite peaks). Colomba is the Easter version (dove-shape). All three use long fermentation (often 30+ hours) for a light brioche-like crumb that keeps for weeks."
+  },
+  {
+    "tier": 3,
+    "question": "A Christian Easter dinner in much of Europe centers on roast lamb — symbolic of Christ as Lamb of God. The tradition draws on the Jewish:",
+    "answer": "Passover lamb (Pesach), tying Easter to the Last Supper as Passover Seder",
+    "choices": [
+      "Passover lamb (Pesach), tying Easter to the Last Supper as Passover Seder",
+      "Rosh Hashanah pomegranate, symbolizing renewal in the new year",
+      "Sukkot harvest feast, recreated as a spring renewal meal",
+      "Yom Kippur fast, broken by lamb on the holiest evening"
+    ],
+    "context": "Easter dates were set in relation to Passover (Council of Nicaea, 325 AD). Christ's Last Supper was a Passover Seder. The lamb sacrificed at the Temple in Jerusalem foreshadowed (in Christian theology) the Lamb of God. Roast lamb at Easter is the strongest in Mediterranean Christian traditions (Greek, Italian, Spanish)."
+  },
+  {
+    "tier": 3,
+    "question": "An American Easter dinner often centers on baked ham — distinctively different from European lamb. The American tradition stems from:",
+    "answer": "Pork preserved over winter (smoked, salt-cured) being ready in spring just as Easter falls",
+    "choices": [
+      "Pork preserved over winter (smoked, salt-cured) being ready in spring just as Easter falls",
+      "Mid-19th-century Sears-Roebuck mail-order ham promotions (a related term)",
+      "President Eisenhower's 1953 Easter dinner setting a national precedent",
+      "Catholic dispensation allowing pork during Lent breaks in southern colonies"
+    ],
+    "context": "Pre-refrigeration preservation timed pork curing perfectly with Easter. Hams hung in smokehouses through winter were ready to eat by spring. The American Easter ham became a regional staple — especially in the South and Midwest — and now reads as a national tradition alongside lamb."
+  },
+  {
+    "tier": 3,
+    "question": "A Scottish January 25 evening — the birthday of poet Robert Burns — features haggis (sheep heart, liver, lungs, oats, onion stuffed into stomach), neeps (mashed turnips), and tatties (mashed potatoes). The ceremonial highlight:",
+    "answer": "The Address to a Haggis — Burns's 1786 poem recited as the dish is sliced open",
+    "choices": [
+      "The Address to a Haggis — Burns's 1786 poem recited as the dish is sliced open",
+      "The Toast to the Lassies — Burns's love poem read between courses",
+      "The Selkirk Grace — a four-line blessing before the meal",
+      "Auld Lang Syne — sung between the second and third courses"
+    ],
+    "context": "Burns Night runs in a strict order: Selkirk Grace before; piping in the haggis; Address to a Haggis (8 stanzas); the meal; Immortal Memory toast to Burns; Toast to the Lassies; Reply from the Lassies; Auld Lang Syne to close. The institution is roughly two centuries old and remains widely observed in Scotland and the diaspora."
+  },
+  {
+    "tier": 3,
+    "question": "A Scottish New Year's tradition — Hogmanay — includes first-footing: the first person across the threshold after midnight should bring symbolic gifts. The classic first-footer is:",
+    "answer": "A tall dark-haired man bringing coal, shortbread, salt, black bun, and whisky",
+    "choices": [
+      "A tall dark-haired man bringing coal, shortbread, salt, black bun, and whisky",
+      "A young girl with bread and milk for prosperity (a related term)",
+      "An elder of the household carrying ashes from the previous year's hearth",
+      "A neighbor's child bearing only a sprig of holly (a related term)"
+    ],
+    "context": "The tall-dark-man tradition may date to Viking concerns about blond-haired visitors (raiders). Coal for warmth; shortbread + black bun for food; salt for prosperity; whisky for cheer. Hogmanay is older and more elaborate in Scotland than in much of the English-speaking world — partly because Christmas was suppressed by Scottish Presbyterians until the mid-20th century."
+  },
+  {
+    "tier": 3,
+    "question": "A Chinese Lunar New Year reunion dinner serves symbolic foods. Round dumplings shaped like old gold ingots represent wealth. Long uncut noodles represent:",
+    "answer": "Longevity — cutting them shortens life",
+    "choices": [
+      "Longevity — cutting them shortens life",
+      "Wealth — long noodles represent rolls of paper money",
+      "Family unity — multiple strands woven together",
+      "Education — the long path of learning"
+    ],
+    "context": "Other symbolic foods: fish (yu, sounds like surplus) is served whole, head and tail intact, never finished; nian gao (sticky rice cake) sounds like higher year — promotion; oranges (jin) and tangerines (sui) for gold and luck. The reunion dinner on New Year's Eve is the most important Chinese family meal of the year."
+  },
+  {
+    "tier": 3,
+    "question": "A Passover Seder plate contains six symbolic items: bitter herbs (maror), shank bone (zeroa), egg (beitzah), charoset (sweet apple-nut paste), karpas (parsley dipped in salt water), and:",
+    "answer": "Chazeret (a second bitter herb, often romaine lettuce)",
+    "choices": [
+      "Chazeret (a second bitter herb, often romaine lettuce)",
+      "Pomegranate (representing the 613 commandments)",
+      "Date (representing the desert wandering)",
+      "Cucumber (representing the Egyptian summer)"
+    ],
+    "context": "Each item teaches the Exodus story. Maror = the bitterness of slavery. Charoset (mortar-colored) = the bricks the Hebrews made. Zeroa = the Passover lamb sacrificed at the Temple. Beitzah = mourning over Temple's destruction. Karpas in salt water = tears of slavery. Chazeret reinforces the maror's lesson."
+  },
+  {
+    "tier": 3,
+    "question": "A Roman wedding ritual in the most prestigious legal form — confarreatio — involved bride and groom sharing a cake of spelt (far). The cake-sharing symbolized:",
+    "answer": "The literal binding of two households through shared bread",
+    "choices": [
+      "The literal binding of two households through shared bread",
+      "The Christian symbol of communion (added centuries before Christianity)",
+      "An older Etruscan death-and-rebirth rite, repurposed for marriage",
+      "A regional Calabrian custom adopted by Rome in the late Republic"
+    ],
+    "context": "Confarreatio was the patrician legal form; the cake (panis farreus) was broken over the bride's head or shared between bride and groom in the presence of ten witnesses and the priest of Jupiter (the Flamen Dialis). The Roman wedding-cake ancestry is the deep root of the modern Western wedding cake tradition."
+  },
+  {
+    "tier": 3,
+    "question": "Queen Victoria's 1840 wedding to Prince Albert featured a 300-pound iced white wedding cake. Within decades, white royal icing became standard at Western weddings. Why white?",
+    "answer": "Sugar was expensive — pure white icing displayed wealth, refinement, and purity simultaneously",
+    "choices": [
+      "Sugar was expensive — pure white icing displayed wealth, refinement, and purity simultaneously",
+      "The white symbol echoed her wedding dress, also a Victorian innovation",
+      "Both — sugar wealth-display AND coordination with the new white-dress tradition",
+      "Anglican Church-of-England liturgical color requirement for the period"
+    ],
+    "context": "Victoria's white dress (also her innovation) made white the wedding color for Western brides. Her cake was white because refined sugar — bleached for pure color — was a luxury few could afford. The double-symbolic move (white dress + white cake) cemented two traditions that have only loosened in the last 50 years."
+  },
+  {
+    "tier": 3,
+    "question": "A British royal wedding traditionally uses a heavy fruit cake — preserved in alcohol, dense enough to ship by post and last years. The same cake is often the basis for:",
+    "answer": "The first child's christening cake — the top tier saved and re-iced",
+    "choices": [
+      "The first child's christening cake — the top tier saved and re-iced",
+      "The first wedding anniversary tea-table cake (American adaptation)",
+      "The bride's 30th birthday cake (Victorian middle-class custom)",
+      "The first death-anniversary remembrance cake (medieval inheritance custom)"
+    ],
+    "context": "British royal wedding fruit cake tradition: heavy brandy-soaked dried fruit, marzipan layer, royal icing. The top tier survives a year stored in a cool place (or three years frozen). Prince William and Kate Middleton (2011), Prince Harry and Meghan Markle (2018) both followed this tradition with the cake recipe approved by the Buckingham Palace pastry team."
+  },
+  {
+    "tier": 3,
+    "question": "A wedding reception tradition pairs bride and groom cutting the first slice of cake together. The original symbolism — beyond the photo opportunity:",
+    "answer": "Shared first meal as a married couple — pledging to provide for each other",
+    "choices": [
+      "Shared first meal as a married couple — pledging to provide for each other",
+      "Symbolic consummation of the marriage in front of community witnesses",
+      "Distribution to guests as a tax obligation under Roman wedding law",
+      "Hand-feeding to ensure neither would poison the other in the marriage"
+    ],
+    "context": "The cake-cutting once involved breaking bread over the bride's head (Roman confarreatio); the gentler joint-cutting evolved over centuries. The first piece is fed to the spouse — a public pledge of provision and care. The modern photo-tradition reduces a rich ritual into one image, but the symbolic shared-first-meal remains."
+  },
+  {
+    "tier": 3,
+    "question": "An Italian wedding tradition: guests receive a small bag of sugar-coated almonds. The number is always:",
+    "answer": "Five",
+    "choices": [
+      "Five",
+      "Seven",
+      "Three",
+      "Twelve"
+    ],
+    "context": "Confetti (Italian for sugar-coated almonds) — five is the indivisible number, symbolizing the indivisibility of the marriage and the five blessings. The bitter almond + sweet coating signals the mix of bitter and sweet in married life. American wedding favors derive from this Italian tradition. Greek koufeta follows the same pattern."
+  },
+  {
+    "tier": 3,
+    "question": "A British wedding tradition is to serve a wedding breakfast — confusingly, the first meal after the ceremony, regardless of the hour. The phrase originated when:",
+    "answer": "Pre-Reformation weddings were morning Masses; the wedding banquet that followed was the day's first meal after fasting",
+    "choices": [
+      "Pre-Reformation weddings were morning Masses; the wedding banquet that followed was the day's first meal after fasting",
+      "Edwardian etiquette dictated wedding receptions before noon to allow afternoon train travel",
+      "Victorian temperance reforms moved wedding meals earlier to reduce drunkenness (a related term)",
+      "Norman conquest law set wedding feasts at sunrise as a tax-trigger event (a related term)"
+    ],
+    "context": "Catholics traditionally fasted before receiving communion at the wedding Mass. The post-ceremony meal — even held at 2pm or later — was literally the first food of the day, hence breakfast. The phrase stuck even after wedding times shifted later in the day. UK wedding-breakfast tradition continues with formal seated meals, often in the late afternoon or early evening."
+  },
+  {
+    "tier": 3,
+    "question": "An American Southern wedding tradition features a separate cake — often dark, often chocolate, often shaped to reflect the groom's interests (a sports team, hunting, alma mater). The cake's name:",
+    "answer": "Groom's cake",
+    "choices": [
+      "Groom's cake",
+      "Best man's cake",
+      "Father's cake",
+      "Hospitality cake"
+    ],
+    "context": "Victorian English tradition originally — guests took home a slice from the dark cake, with single women supposed to sleep with it under their pillow to dream of their future husband. The tradition mostly faded in Britain but survived strongly in the American South. Often served at the rehearsal dinner now, or as a counterpart at the reception."
+  },
+  {
+    "tier": 3,
+    "question": "An Apache rite of passage for girls at first menses runs four days of fasting, dancing, prayer, and feast. The ceremony's name in English:",
+    "answer": "Sunrise Ceremony (Na'ii'ees)",
+    "choices": [
+      "Sunrise Ceremony (Na'ii'ees)",
+      "Vision Quest (Plains tradition)",
+      "Spirit Dance (Pacific Northwest)",
+      "Coming-Out Dance (Lakota tradition)"
+    ],
+    "context": "The Apache Sunrise Ceremony (Na'ii'ees) celebrates White Painted Woman, the Apache cultural-heroine. The girl embodies the heroine for four days — singing, dancing, fasting, blessing the community. The feast that follows draws on traditional foods. Outlawed by the US government for much of the 20th century; revived after the American Indian Religious Freedom Act of 1978."
+  },
+  {
+    "tier": 3,
+    "question": "A Jewish 7-day mourning period — beginning after burial — sees the bereaved family receive visitors who bring food. Round foods (lentils, eggs, bagels) are traditional because:",
+    "answer": "The round shape represents the continuous cycle of life",
+    "choices": [
+      "The round shape represents the continuous cycle of life",
+      "Round foods avoid sharp angles considered impure in mourning",
+      "The round shape echoes the wheel of the prophet Ezekiel",
+      "Round foods are easier to share without cutting"
+    ],
+    "context": "Sit shiva (the seven) — close family stays home, sits low, accepts visitors. Visitors bring meals; the mourners are not to cook. Round foods (lentils especially — Esau's pottage in the Genesis story is the textual root) signal the wheel of life turning. Eggs symbolize fertility and renewal. Hard-boiled eggs are eaten at the post-burial meal of consolation."
+  },
+  {
+    "tier": 3,
+    "question": "An Irish wake tradition keeps the body in the family home for days while neighbors visit, bringing food and whiskey, telling stories. The wake serves to:",
+    "answer": "Both honor the dead and ensure they are truly dead before burial",
+    "choices": [
+      "Both honor the dead and ensure they are truly dead before burial",
+      "Avoid evil spirits taking the body before burial",
+      "Demonstrate the family's religious purity to the community",
+      "Comply with old Irish hospitality law requiring all guests be welcomed"
+    ],
+    "context": "The wake (from Old English wacian, to keep watch) had a practical original purpose — premature-burial concerns in an era before reliable death-determination. The vigil also served theologically (prayers for the soul) and socially (neighbors gather around the family). The food + drink + storytelling tradition softens the grief and binds the community."
+  },
+  {
+    "tier": 3,
+    "question": "An Ethiopian coffee ceremony brews three rounds from the same beans — each progressively weaker, each named. The first round:",
+    "answer": "Abol",
+    "choices": [
+      "Abol",
+      "Tona",
+      "Baraka",
+      "Jebena"
+    ],
+    "context": "The order: Abol, Tona, Baraka. All three are required for the ceremony; rushing or skipping a round is rude. Green beans are roasted in front of the guests, ground, brewed in the jebena (clay pot), and poured into small cups (sini). Incense burns; sometimes popcorn is served. The ceremony is a daily and hospitality ritual across Ethiopia, often led by the woman of the household."
+  },
+  {
+    "tier": 3,
+    "question": "A Spanish bar tradition serves small plates with drinks. The word for these small plates literally translates as:",
+    "answer": "Cover (placed on top of a glass to keep out flies, originally)",
+    "choices": [
+      "Cover (placed on top of a glass to keep out flies, originally)",
+      "Crown (the small honor served with each glass)",
+      "Welcome (the bartender's gift to the new customer)",
+      "Companion (the food that walks with the drink)"
+    ],
+    "context": "Tapa = cover or lid. Historical theory: bartenders covered glasses with a slice of bread or ham to keep flies and dust out; eventually the cover became a custom — small plates accompanying every drink. King Alfonso XIII helped popularize the practice nationally. Tapas culture transformed bar-hopping into a culinary tradition."
+  },
+  {
+    "tier": 3,
+    "question": "A British tradition descending from the medieval rite of passage for young aristocratic women: presentation at court. The 20th-century commercial version — a society ball where 18-year-old daughters in white gowns are formally introduced — is called:",
+    "answer": "Debutante ball (or cotillion)",
+    "choices": [
+      "Debutante ball (or cotillion)",
+      "Coming-out party (purely American)",
+      "Quinceañera (Latin American 15th birthday)",
+      "Sweet Sixteen (American 16th birthday)"
+    ],
+    "context": "Debutante balls trace to the 17th-18th-century British court presentation of marriageable daughters. The commercial form (post-1958, when the British Royal court ended formal presentation) lives on in the Crillon Ball (Paris), Vienna Opera Ball, Mayflower Ball NY, and the English Season's residue. American cotillions are organized by city — Charleston, Atlanta, San Francisco each have continuous traditions."
+  },
+  {
+    "tier": 3,
+    "question": "An American presidential state dinner honoring a foreign head of state runs by formal protocol: White House, multiple courses, butler service, military strolling strings, toasts. The first state dinner with the institution's modern form:",
+    "answer": "Mid-19th century, formalized by the Lincoln and post-Civil War administrations",
+    "choices": [
+      "Mid-19th century, formalized by the Lincoln and post-Civil War administrations",
+      "George Washington's administration (1789-97), inheriting British court style",
+      "Calvin Coolidge's administration (1923-29), modernizing the menu format",
+      "John F. Kennedy's administration (1961-63), under Jacqueline Kennedy's curation"
+    ],
+    "context": "Diplomatic dinners under Washington, Adams, and Jefferson were less formal. The modern state dinner — multiple courses, formal seating chart, military music, gift exchange — solidified through the mid-19th century. Jacqueline Kennedy elevated the cultural sophistication; subsequent administrations have continued the tradition with varying emphasis."
+  },
+  {
+    "tier": 3,
+    "question": "Since 1953 the US inauguration of a president has been followed by a luncheon held in the Capitol's Statuary Hall — a tradition that began with President:",
+    "answer": "Dwight D. Eisenhower (1953)",
+    "choices": [
+      "Dwight D. Eisenhower (1953)",
+      "Franklin D. Roosevelt (1933)",
+      "John F. Kennedy (1961)",
+      "Theodore Roosevelt (1905)"
+    ],
+    "context": "Eisenhower's inauguration began the tradition: a small lunch hosted by Congress for the new president. The menu typically reflects regional foods from the president's home state. The Joint Congressional Committee on Inaugural Ceremonies plans it. The institution has continued every four years since 1953 — every transition for over 70 years."
+  },
+  {
+    "tier": 3,
+    "question": "A British royal state banquet hosts foreign heads of state under elaborate protocol — silver Banqueting Service from 1730s, hand-engraved menu cards as historical artifact, Yeomen of the Guard in Tudor uniform. The function:",
+    "answer": "Soft diplomatic power — the banquet's elaborate honor confers a state",
+    "choices": [
+      "Soft diplomatic power — the banquet's elaborate honor confers a state",
+      "Purely social — the banquet has no diplomatic function and is just an honor",
+      "Constitutional — the banquet ratifies state visits under the 1707 Acts of Union",
+      "Mercantile — the banquet historically structured Crown trade preferences"
+    ],
+    "context": "The first state banquet of an incoming foreign leader's UK visit is a marker of the visit's significance. The menus from each are archived. Buckingham Palace and Windsor Castle have hosted them since the Victorian era. The institution is unusual among democracies — most countries use working dinners; the UK has preserved court ceremonial as continuous diplomatic vocabulary."
+  },
+  {
+    "tier": 3,
+    "question": "A common American funeral tradition: neighbors bring a casserole — often green bean, tuna noodle, or chicken-and-rice — to the grieving family. The practice is:",
+    "answer": "Community-driven practical care — the family doesn't have to cook during the worst week of their lives",
+    "choices": [
+      "Community-driven practical care — the family doesn't have to cook during the worst week of their lives",
+      "A specifically Lutheran custom inherited from Scandinavian immigrants (a related term)",
+      "A 1950s product of casserole-marketing campaigns now nostalgic (a related term)",
+      "A Southern Baptist convention adopted by other denominations after WWII"
+    ],
+    "context": "The American funeral casserole survives because it works: it transports well, reheats well, feeds many, and the giver doesn't have to know the family's tastes. The tradition is strongest in Southern, Midwestern, and immigrant-descended communities. Sociologists count it as one of the most active surviving informal community-support institutions in the US."
+  },
+  {
+    "tier": 3,
+    "question": "A research-backed correlation: families that regularly eat dinner together produce children with measurably better vocabulary, healthier eating habits, lower depression rates, and better academic performance. The variable is:",
+    "answer": "Frequency of family meals — not the food itself, but the gathering",
+    "choices": [
+      "Frequency of family meals — not the food itself, but the gathering",
+      "Specifically organic ingredients consumed at the family meal",
+      "Use of formal table settings with multiple utensils",
+      "Whether the meal includes a religious blessing or grace"
+    ],
+    "context": "CASA (National Center on Addiction and Substance Abuse) and CDC studies through the 2000s-2010s. Frequency, not menu, matters. The mechanism is debated — conversation, attention, predictability, exposure to vocabulary, sense of family as institution. The same data shows family meal frequency dropped sharply from the 1970s to the 2010s in industrialized countries."
+  },
+  {
+    "tier": 3,
+    "question": "A Western table-setting basic rule: the fork sits to the left of the plate; the knife and spoon to the right. The knife's blade faces:",
+    "answer": "Toward the plate (a holdover from medieval table-safety practice)",
+    "choices": [
+      "Toward the plate (a holdover from medieval table-safety practice)",
+      "Toward the spoon (so the diner can quickly cut and scoop)",
+      "Toward the napkin (a Victorian decorative rule)",
+      "Toward the wine glass (so it can be passed safely if needed)"
+    ],
+    "context": "Knife-blade-in dates to when diners often brought their own knives and a sheathed blade pointed at one's neighbor was a threat. The convention survived. Modern American table service still observes the rule; British formal table-service does too. Outside-in utensil order plus blade-in are the two foundational rules of Western formal place settings."
   },
   {
     "tier": 3,
