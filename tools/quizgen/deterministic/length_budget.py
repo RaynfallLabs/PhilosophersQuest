@@ -27,13 +27,25 @@ DEFAULT_TIER_BUDGETS: dict[int, int] = {
     5: 1000,   # hard problems / sophisticated disputes
 }
 
+# Per-subject budget overrides. Where not listed, default applies.
+# Cooking budgets come from `docs/quiz/subjects/cooking.md` §2.
+SUBJECT_TIER_BUDGETS: dict[str, dict[int, int]] = {
+    "cooking": {1: 280, 2: 480, 3: 680, 4: 900, 5: 1100},
+}
+
 GRACE_FACTOR = 1.05  # +5% per philosophy.md §2
 
 
 def validate_length_budget(
-    q: Question, tier_budgets: dict[int, int] | None = None
+    q: Question,
+    tier_budgets: dict[int, int] | None = None,
+    subject: str | None = None,
 ) -> GateResult:
-    tier_budgets = tier_budgets or DEFAULT_TIER_BUDGETS
+    if tier_budgets is None:
+        if subject in SUBJECT_TIER_BUDGETS:
+            tier_budgets = SUBJECT_TIER_BUDGETS[subject]
+        else:
+            tier_budgets = DEFAULT_TIER_BUDGETS
     tier = q.get("tier")
     question_text = q.get("question", "")
     choices = q.get("choices") or []

@@ -14,10 +14,23 @@ from __future__ import annotations
 
 from tools.quizgen.deterministic.types import GateResult, GateStatus, Question
 
+# Default calibration (philosophy + wonder subjects with substantive-phrase choices)
 MAX_DEVIATION_FROM_MEAN = 0.15  # 15%
 MAX_LONGEST_SHORTEST_RATIO = 1.30
 
 EXEMPT_SUBJECTS = frozenset({"math", "grammar"})
+
+# Per-subject ratio calibration. Default if not listed = 1.30 (philosophy standard).
+# Cooking: single-word answers (cuisine/technique names) need 1.50 to allow natural
+# length variation while still catching blatant "Yes" vs "Yes if X is greater than 10"
+# leak-by-length cases.
+SUBJECT_RATIO_OVERRIDES: dict[str, float] = {
+    "cooking": 1.50,
+}
+
+SUBJECT_DEVIATION_OVERRIDES: dict[str, float] = {
+    "cooking": 0.22,  # 22% mean-deviation allowance — matches the 1.50 ratio relaxation
+}
 
 
 def validate_length_parity(q: Question, subject: str | None = None) -> GateResult:
@@ -27,6 +40,8 @@ def validate_length_parity(q: Question, subject: str | None = None) -> GateResul
             status=GateStatus.NA,
             detail=f"Subject {subject!r} is exempt — parallel form required, not parallel length.",
         )
+    max_ratio = SUBJECT_RATIO_OVERRIDES.get(subject or "", MAX_LONGEST_SHORTEST_RATIO)
+    max_dev = SUBJECT_DEVIATION_OVERRIDES.get(subject or "", MAX_DEVIATION_FROM_MEAN)
     choices = q.get("choices") or []
     if not isinstance(choices, list) or len(choices) != 4 or not all(
         isinstance(c, str) and c.strip() for c in choices
@@ -47,26 +62,28 @@ def validate_length_parity(q: Question, subject: str | None = None) -> GateResul
             metrics={"lengths": lengths},
         )
     deviations = [abs(L - mean) / mean for L in lengths]
-    max_dev = max(deviations)
+    actual_max_dev = max(deviations)
     longest = max(lengths)
     shortest = max(min(lengths), 1)  # guard div-by-zero
     ratio = longest / shortest
 
-    failed_dev = max_dev > MAX_DEVIATION_FROM_MEAN
-    failed_ratio = ratio > MAX_LONGEST_SHORTEST_RATIO
+    failed_dev = actual_max_dev > max_dev
+    failed_ratio = ratio > max_ratio
     metrics = {
         "lengths": lengths,
         "mean": round(mean, 2),
-        "max_deviation_pct": round(max_dev * 100, 1),
+        "max_deviation_pct": round(actual_max_dev * 100, 1),
         "longest_over_shortest": round(ratio, 2),
+        "threshold_ratio": max_ratio,
+        "threshold_deviation_pct": round(max_dev * 100, 1),
     }
 
     if failed_dev or failed_ratio:
         reasons = []
         if failed_dev:
-            reasons.append(f"max deviation {max_dev * 100:.1f}% > 15%")
+            reasons.append(f"max deviation {actual_max_dev * 100:.1f}% > {max_dev * 100:.0f}%")
         if failed_ratio:
-            reasons.append(f"longest/shortest {ratio:.2f} > 1.30")
+            reasons.append(f"longest/shortest {ratio:.2f} > {max_ratio:.2f}")
         return GateResult(
             gate="length_parity",
             status=GateStatus.FAIL,

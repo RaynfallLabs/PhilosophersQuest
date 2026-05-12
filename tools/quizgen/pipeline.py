@@ -187,7 +187,7 @@ def run_deterministic(
         dup_threshold = 0.97 if subject == "math" else 0.85
         qr.gates["schema"] = validate_schema(q)
         qr.gates["length_parity"] = validate_length_parity(q, subject=subject)
-        qr.gates["length_budget"] = validate_length_budget(q)
+        qr.gates["length_budget"] = validate_length_budget(q, subject=subject)
         qr.gates["anti_rote"] = validate_anti_rote(q, subject=subject)
         qr.gates["duplicate"] = validate_duplicate(
             q, dup_index, threshold=dup_threshold, self_idx=local_idx
