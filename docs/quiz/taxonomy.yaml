@@ -1,0 +1,411 @@
+# Quiz taxonomy — guarantees coverage across traditions, periods, and styles.
+#
+# Per subject: a list of topic cells. Per cell: a description and per-tier quotas.
+# The pipeline iterates (subject, topic, tier) and generates that many questions.
+# Total per subject = sum of all (tier_quotas) across all topics.
+#
+# Quota rationale: total per subject ~1000 questions, more than 60% across the
+# pre-modern + non-Western world (current bank over-indexes on Greek-to-German
+# canon). Quotas per cell account for how much of-interest material exists.
+#
+# Tier mapping for cells (the cell's tier_quotas should reflect this):
+#   T1 = accessible, image-led — meet the philosopher / hear the famous move
+#   T2 = famous ideas with surprise — what the move actually claims
+#   T3 = less-famous moves; cross-tradition; multi-step consequence
+#   T4 = technical moves via consequence; mid-20th-century analytic + continental
+#   T5 = hard problems; sophisticated disputes; "why this is hard"
+
+version: 1
+date: 2026-05-10
+
+philosophy:
+  total_target: 1000
+
+  # =================================================================
+  # GREEK & CLASSICAL ANCIENT
+  # =================================================================
+
+  presocratics:
+    description: "Heraclitus (flux), Parmenides (being), Pythagoras (number), Anaximander, Democritus (atoms), Empedocles. The first philosophers wrestling out of myth."
+    tier_quotas: {1: 5, 2: 8, 3: 5, 4: 2, 5: 0}
+
+  classical_socratic:
+    description: "Socrates, Plato, Aristotle — the central canon. Forms, virtue ethics, the Academy, the Lyceum, the dialogues, the syllogism."
+    tier_quotas: {1: 8, 2: 12, 3: 10, 4: 6, 5: 4}
+
+  hellenistic_schools:
+    description: "Stoicism (Zeno, Epictetus, Marcus Aurelius), Epicureanism, Cynicism (Diogenes), Skepticism (Pyrrho, Sextus). How to live, post-polis."
+    tier_quotas: {1: 5, 2: 10, 3: 8, 4: 4, 5: 2}
+
+  neoplatonism_late_antiquity:
+    description: "Plotinus, Porphyry, Iamblichus, Proclus, Hypatia. The One, emanation, the bridge into Christian theology."
+    tier_quotas: {1: 1, 2: 3, 3: 5, 4: 4, 5: 2}
+
+  # =================================================================
+  # MEDIEVAL & RELIGIOUS PHILOSOPHY
+  # =================================================================
+
+  early_christian_thought:
+    description: "Augustine (City of God, will, time, original sin), Origen, Boethius. The first thousand years of Christian philosophy as philosophy."
+    tier_quotas: {1: 2, 2: 5, 3: 6, 4: 4, 5: 2}
+
+  islamic_golden_age:
+    description: "Al-Kindi, Al-Farabi, Avicenna (Ibn Sina), Averroes (Ibn Rushd), Al-Ghazali. Reconciling Aristotle with revelation; Mu'tazila vs. Ash'ari debates."
+    tier_quotas: {1: 2, 2: 5, 3: 7, 4: 5, 5: 3}
+
+  jewish_medieval:
+    description: "Maimonides (Guide for the Perplexed), Saadia Gaon, Gersonides, Crescas. Negative theology, prophecy, the relationship of reason and revelation."
+    tier_quotas: {1: 1, 2: 3, 3: 4, 4: 3, 5: 2}
+
+  scholasticism:
+    description: "Aquinas, Anselm, Abelard, Duns Scotus, William of Ockham. Five Ways, the ontological argument, universals, the razor."
+    tier_quotas: {1: 2, 2: 5, 3: 7, 4: 5, 5: 3}
+
+  # =================================================================
+  # EARLY MODERN — RATIONALISM, EMPIRICISM, POLITICS
+  # =================================================================
+
+  rationalists:
+    description: "Descartes (cogito, demon, dualism), Spinoza (Ethics, one substance), Leibniz (monads, sufficient reason, best of all possible worlds)."
+    tier_quotas: {1: 3, 2: 7, 3: 8, 4: 6, 5: 3}
+
+  empiricists:
+    description: "Locke (tabula rasa, primary/secondary qualities), Berkeley (idealism), Hume (causation, induction, bundle theory of self)."
+    tier_quotas: {1: 3, 2: 7, 3: 8, 4: 6, 5: 3}
+
+  early_modern_political:
+    description: "Hobbes (Leviathan, state of nature), Locke (consent, property, rights), Rousseau (general will, the social contract), Montesquieu (separation of powers)."
+    tier_quotas: {1: 3, 2: 6, 3: 6, 4: 4, 5: 2}
+
+  scientific_revolution_epistemology:
+    description: "Bacon (induction, idols of the mind), Galileo's methodological commitments, Newton's hypotheses non fingo, early philosophy of science."
+    tier_quotas: {1: 1, 2: 3, 3: 4, 4: 3, 5: 1}
+
+  # =================================================================
+  # ENLIGHTENMENT & GERMAN IDEALISM
+  # =================================================================
+
+  kant:
+    description: "The Copernican turn, categorical imperative, synthetic a priori, phenomena/noumena, the three Critiques. The most influential single philosopher of the modern era."
+    tier_quotas: {1: 2, 2: 6, 3: 8, 4: 6, 5: 4}
+
+  german_idealism:
+    description: "Fichte (the I), Schelling (nature philosophy), Hegel (dialectic, Geist, master-slave, end of history). The most ambitious systems ever attempted."
+    tier_quotas: {1: 1, 2: 3, 3: 5, 4: 5, 5: 3}
+
+  enlightenment_misc:
+    description: "Voltaire, Diderot, Hume's social side, Adam Smith as moral philosopher, Mary Wollstonecraft, Condorcet. The Enlightenment beyond the central canon."
+    tier_quotas: {1: 1, 2: 3, 3: 4, 4: 3, 5: 1}
+
+  # =================================================================
+  # 19TH CENTURY
+  # =================================================================
+
+  utilitarianism:
+    description: "Bentham (hedonic calculus), Mill (higher pleasures, harm principle, liberty), Sidgwick. The most influential ethical theory of the 19th century."
+    tier_quotas: {1: 2, 2: 5, 3: 5, 4: 4, 5: 2}
+
+  marx_engels:
+    description: "Historical materialism, alienation, commodity fetishism, the labor theory of value, the critique of ideology. Marx-as-philosopher, not Marx-as-strawman."
+    tier_quotas: {1: 1, 2: 4, 3: 6, 4: 5, 5: 3}
+
+  nietzsche:
+    description: "Genealogy of morals, will to power, eternal recurrence, the death of God, master-slave morality, the Übermensch. Read carefully, not as caricature."
+    tier_quotas: {1: 1, 2: 4, 3: 6, 4: 5, 5: 3}
+
+  kierkegaard_existential_origins:
+    description: "Kierkegaard (anxiety, despair, the leap of faith, the three spheres), Dostoevsky as philosophical novelist. The 19th-century origins of existentialism."
+    tier_quotas: {1: 1, 2: 3, 3: 4, 4: 3, 5: 2}
+
+  american_pragmatists:
+    description: "Peirce (truth as ideal limit, signs), James (radical empiricism, will to believe, pragmatic theory of truth), Dewey (experience, democracy as a way of life)."
+    tier_quotas: {1: 1, 2: 3, 3: 5, 4: 4, 5: 2}
+
+  schopenhauer:
+    description: "Will as the thing-in-itself, pessimism, aesthetic salvation, influence on Buddhism reception in Europe and on Nietzsche, Wittgenstein, Freud."
+    tier_quotas: {1: 1, 2: 3, 3: 3, 4: 2, 5: 1}
+
+  # =================================================================
+  # 20TH/21ST CENTURY — ANALYTIC
+  # =================================================================
+
+  early_analytic_frege_russell:
+    description: "Frege (sense/reference, foundations of arithmetic), Russell (logical atomism, descriptions, paradox), Moore (defense of common sense). The analytic turn."
+    tier_quotas: {1: 0, 2: 2, 3: 5, 4: 5, 5: 3}
+
+  vienna_circle_logical_positivism:
+    description: "Carnap, Schlick, Ayer, the verification principle, the elimination of metaphysics, the protocol-sentence debate, the program's collapse."
+    tier_quotas: {1: 0, 2: 1, 3: 3, 4: 4, 5: 2}
+
+  wittgenstein:
+    description: "Tractatus (picture theory, what cannot be said), the reversal, Philosophical Investigations (language games, family resemblance, private language)."
+    tier_quotas: {1: 0, 2: 2, 3: 4, 4: 5, 5: 3}
+
+  philosophy_of_mind:
+    description: "Mind-body problem, behaviorism, identity theory, functionalism, Searle's Chinese Room, Chalmers's hard problem, Jackson's Mary, Dennett's heterophenomenology."
+    tier_quotas: {1: 0, 2: 2, 3: 4, 4: 5, 5: 4}
+
+  philosophy_of_language:
+    description: "Quine (two dogmas, indeterminacy of translation, web of belief), Kripke (rigid designators, necessary a posteriori), Putnam (Twin Earth, externalism)."
+    tier_quotas: {1: 0, 2: 1, 3: 3, 4: 4, 5: 3}
+
+  philosophy_of_science:
+    description: "Popper (falsifiability), Kuhn (paradigms, revolutions, incommensurability), Lakatos (research programs), Feyerabend (against method), realism vs. anti-realism."
+    tier_quotas: {1: 0, 2: 2, 3: 4, 4: 4, 5: 2}
+
+  contemporary_epistemology:
+    description: "Gettier (justified true belief), reliabilism, virtue epistemology, social epistemology, the regress problem, internalism vs. externalism."
+    tier_quotas: {1: 0, 2: 1, 3: 3, 4: 4, 5: 2}
+
+  contemporary_ethics:
+    description: "Rawls (veil of ignorance, two principles), Nozick (entitlement theory), Foot (trolley problem origins, virtue ethics revival), Williams (against utilitarianism, integrity), Singer (applied ethics)."
+    tier_quotas: {1: 1, 2: 3, 3: 5, 4: 5, 5: 3}
+
+  contemporary_metaphysics:
+    description: "Lewis (modal realism), Kripke (necessity), four-dimensionalism, the problem of universals revived, grounding, the metaphysics of time."
+    tier_quotas: {1: 0, 2: 1, 3: 3, 4: 4, 5: 3}
+
+  # =================================================================
+  # 20TH CENTURY — CONTINENTAL
+  # =================================================================
+
+  phenomenology:
+    description: "Husserl (intentionality, the epoché, the life-world), Heidegger (Being and Time, Dasein, thrownness, being-toward-death), Merleau-Ponty (the embodied subject)."
+    tier_quotas: {1: 0, 2: 1, 3: 3, 4: 5, 5: 4}
+
+  existentialism:
+    description: "Sartre (existence precedes essence, bad faith, radical freedom), de Beauvoir (The Second Sex, situated freedom), Camus (absurd, revolt), Marcel."
+    tier_quotas: {1: 1, 2: 3, 3: 5, 4: 4, 5: 2}
+
+  frankfurt_school:
+    description: "Adorno + Horkheimer (Dialectic of Enlightenment), Marcuse, Benjamin (aura, mechanical reproduction), Habermas (communicative action, public sphere)."
+    tier_quotas: {1: 0, 2: 1, 3: 3, 4: 4, 5: 3}
+
+  foucault_poststructuralism:
+    description: "Foucault (power-knowledge, biopolitics, panopticism), Derrida (differance, deconstruction), Deleuze, Lyotard (postmodern condition). Read seriously, not as bogeyman."
+    tier_quotas: {1: 0, 2: 1, 3: 3, 4: 4, 5: 3}
+
+  hermeneutics:
+    description: "Gadamer (Truth and Method, fusion of horizons, the hermeneutic circle), Ricoeur (narrative identity, the conflict of interpretations)."
+    tier_quotas: {1: 0, 2: 0, 3: 2, 4: 3, 5: 2}
+
+  # =================================================================
+  # MODERN POLITICAL & ECONOMIC PHILOSOPHY
+  # The classical liberal / Austrian / conservative philosophical lineage
+  # plus the moral witness against totalitarianism, plus serious critics of
+  # contemporary identity frameworks. Currently underweighted in academic
+  # philosophy curricula; the bank corrects the imbalance.
+  # =================================================================
+
+  classical_liberal_conservative_thought:
+    description: "Burke (Reflections on the Revolution in France, prudence, organic society), Tocqueville (Democracy in America, soft despotism, mediating institutions), Bastiat (the seen and the unseen, the broken window), Mises (Liberalism, Human Action, methodological subjectivism), Hayek (Constitution of Liberty, Road to Serfdom, knowledge problem, spontaneous order), Rothbard, Friedman (Capitalism and Freedom), Nozick (Anarchy State Utopia, entitlement theory, Wilt Chamberlain), Oakeshott (Rationalism in Politics, conservative disposition), Roger Scruton (How to Be a Conservative, the aesthetics of place, beauty)."
+    tier_quotas: {1: 2, 2: 5, 3: 7, 4: 6, 5: 3}
+
+  soviet_dissidents_moral_witness:
+    description: "Solzhenitsyn (Gulag Archipelago — the moral indictment that broke Western fellow-traveling; Live Not by Lies; Harvard address), Sakharov (memoirs, opposition to Soviet weapons, exile to Gorky), Havel (Power of the Powerless, the greengrocer's sign, living in truth), Bukovsky, Sharansky, Adam Michnik. Some of the most morally serious philosophy of the 20th century, produced under conditions where being right cost everything."
+    tier_quotas: {1: 1, 2: 3, 3: 4, 4: 3, 5: 2}
+
+  critics_of_identity_politics:
+    description: "Substantive philosophical and empirical critiques of contemporary standpoint epistemology and identity-essentialism: Thomas Sowell (Knowledge and Decisions, A Conflict of Visions, the cultural critique of group-disparity narratives), John McWhorter (Woke Racism, the religion-shaped argument), Glenn Loury (Anatomy of Racial Inequality, development as inheritance), Coleman Hughes (The End of Race Politics, color-blindness), Shelby Steele (White Guilt, the morality of post-civil-rights racial politics), Pluckrose and Lindsay (Cynical Theories, the genealogy of postmodernism into applied critical theory), Jonathan Haidt (Coddling, Righteous Mind, moral foundations theory), Steven Pinker (Blank Slate, Enlightenment Now)."
+    tier_quotas: {1: 1, 2: 3, 3: 4, 4: 3, 5: 2}
+
+  american_political_philosophy:
+    description: "The Federalist Papers (Madison on factions and the extended republic; Hamilton on energetic executive and judicial review; Jay), Jefferson's Declaration as natural-rights document, the Constitution as ratified philosophical framework, Frederick Douglass at Rochester 1852 (immanent critique through founding principles), Lincoln (Cooper Union 1860, Gettysburg, Second Inaugural — the philosophical defense of free government), Calhoun's slavery-defense as explicit rejection of natural rights (the real anti-thesis the bank addresses), MLK Letter from Birmingham Jail (natural-law tradition continued), the civil rights movement as legal-moral argument from founding documents, modern American conservative thought (Buckley, Kirk, Kristol), modern American libertarian thought (Friedman, Sowell, Murray Rothbard as American thinker), the American founders' debt to Locke and the Scottish Enlightenment."
+    tier_quotas: {1: 2, 2: 5, 3: 6, 4: 5, 5: 3}
+
+  # =================================================================
+  # EASTERN PHILOSOPHY
+  # =================================================================
+
+  confucian:
+    description: "Confucius (the Analects, ren, li, junzi), Mencius (innate goodness), Xunzi (innate self-interest), neo-Confucian revival (Zhu Xi, Wang Yangming)."
+    tier_quotas: {1: 3, 2: 5, 3: 6, 4: 4, 5: 2}
+
+  daoist:
+    description: "Laozi (Daodejing, wu wei, the uncarved block), Zhuangzi (butterfly dream, useless tree, perspectival pluralism), the Dao as ineffable."
+    tier_quotas: {1: 3, 2: 5, 3: 5, 4: 3, 5: 2}
+
+  buddhist_indian:
+    description: "Buddha (four noble truths, no-self, dependent origination), Nagarjuna (Madhyamaka, emptiness, the two truths), Yogacara (mind-only)."
+    tier_quotas: {1: 2, 2: 5, 3: 6, 4: 4, 5: 3}
+
+  buddhist_east_asian:
+    description: "Chan/Zen (Bodhidharma, koans, Dogen), Pure Land, Tiantai's three truths. The transformation of Buddhism in China and Japan."
+    tier_quotas: {1: 1, 2: 3, 3: 4, 4: 3, 5: 2}
+
+  hindu_philosophy:
+    description: "Upanishads (Brahman, Atman, neti neti), the six orthodox schools (Nyaya, Vaisesika, Samkhya, Yoga, Mimamsa, Vedanta), Shankara's Advaita, Ramanuja's qualified non-dualism."
+    tier_quotas: {1: 1, 2: 4, 3: 5, 4: 4, 5: 2}
+
+  japanese_philosophy:
+    description: "Dogen (Shobogenzo, being-time), the Kyoto School (Nishida, Nishitani), the philosophy of mono no aware, contemporary Japanese ethics."
+    tier_quotas: {1: 0, 2: 1, 3: 3, 4: 3, 5: 2}
+
+  # =================================================================
+  # OTHER TRADITIONS & CROSS-CUTTING
+  # =================================================================
+
+  african_philosophy:
+    description: "Ubuntu and communitarian ethics, ethnophilosophy debates (Tempels, Hountondji), Kwame Anthony Appiah, Wiredu, Mbiti's African religions, contemporary Pan-African thought."
+    tier_quotas: {1: 1, 2: 3, 3: 4, 4: 3, 5: 1}
+
+  indigenous_americas_oceania:
+    description: "Indigenous philosophies of the Americas and Oceania — relational ontology, land-based knowledge, Vine Deloria Jr., contemporary Indigenous philosophers. Real positions, not exoticization."
+    tier_quotas: {1: 1, 2: 2, 3: 3, 4: 2, 5: 1}
+
+  women_in_philosophy:
+    description: "Cross-cutting cell: Hypatia, Hildegard of Bingen, Anne Conway, Mary Astell, Mary Wollstonecraft, Anscombe, Foot, Beauvoir, Murdoch, Anscombe's intention, contemporary women philosophers. Not a 'representation cell' — substantive philosophical contributions, framed as such."
+    tier_quotas: {1: 1, 2: 3, 3: 4, 4: 3, 5: 2}
+
+  # =================================================================
+  # APPLIED & TOPIC AREAS
+  # =================================================================
+
+  philosophy_of_religion:
+    description: "Existence-of-God arguments (cosmological, ontological, design, moral), the problem of evil, religious experience, the relationship of faith and reason, divine hiddenness."
+    tier_quotas: {1: 2, 2: 5, 3: 5, 4: 4, 5: 2}
+
+  aesthetics:
+    description: "What makes art art? Beauty vs. the sublime (Burke, Kant), expression theory, formalism, Danto's institutional theory, Scruton, the aesthetics of nature."
+    tier_quotas: {1: 1, 2: 3, 3: 4, 4: 3, 5: 2}
+
+  logic_paradoxes:
+    description: "The liar, Russell's paradox, Sorites (the heap), Zeno's paradoxes, the surprise exam, Newcomb's problem, the lottery paradox. Logic as wonder."
+    tier_quotas: {1: 1, 2: 4, 3: 5, 4: 4, 5: 3}
+
+  logic_fallacies_debate_skills:
+    description: "Formal and informal fallacies as critical-thinking inoculation: ad hominem, straw man, motte and bailey, equivocation, appeal to authority, appeal to nature, post hoc ergo propter hoc, no true Scotsman, slippery slope, false dichotomy, begging the question (circular reasoning), weak analogy, Texas sharpshooter, anecdotal evidence, genetic fallacy, tu quoque, red herring, loaded question. Plus: Bayesian reasoning basics, base-rate neglect, confirmation bias, motivated reasoning, the structure of valid argument (modus ponens / modus tollens, necessary vs sufficient conditions). Players learn to spot bad arguments in the wild."
+    tier_quotas: {1: 3, 2: 5, 3: 6, 4: 4, 5: 2}
+
+  philosophy_of_human_nature:
+    description: "The blank-slate debate (Pinker, The Blank Slate), nature vs. nurture done honestly, behavioral genetics, the heritability of traits (Plomin), sex differences in psychology examined scientifically, evolutionary psychology (Buss, Tooby and Cosmides), Sowell's A Conflict of Visions (constrained vs. unconstrained visions of human nature as the root of political disagreement), the role of culture and biology in shaping behavior. The bank acknowledges biological variance where established without extrapolating to claims about group moral worth."
+    tier_quotas: {1: 1, 2: 3, 3: 4, 4: 4, 5: 2}
+
+  consciousness_qualia:
+    description: "Block's access vs. phenomenal consciousness, Nagel's bat, Jackson's Mary, the hard problem, integrated information theory, panpsychism revisited."
+    tier_quotas: {1: 0, 2: 1, 3: 3, 4: 4, 5: 4}
+
+  bioethics_applied:
+    description: "Trolley problem variants, abortion, euthanasia, animal rights (Singer, Regan), enhancement, the moral status of future people. Genuinely contested questions, not advocacy."
+    tier_quotas: {1: 1, 2: 3, 3: 4, 4: 3, 5: 2}
+
+  philosophy_of_ai:
+    description: "Turing test, Chinese Room (already counted under phil-of-mind — here we focus on more recent), value alignment, the orthogonality thesis, machine moral status. Avoid timestamped current-events questions."
+    tier_quotas: {1: 0, 2: 1, 3: 3, 4: 3, 5: 2}
+
+  environmental_ethics:
+    description: "Leopold (the land ethic), Naess (deep ecology), Singer-style sentientism applied to ecosystems, climate ethics, intergenerational justice. Avoid partisan framings."
+    tier_quotas: {1: 0, 2: 1, 3: 3, 4: 2, 5: 1}
+
+  # =================================================================
+  # SAFETY NET
+  # =================================================================
+
+  cross_tradition_themes:
+    description: "Comparative questions that draw two traditions together: 'Both Stoics and Buddhists held that…', 'Both Hume and Nagarjuna argued against…'. Reserve cell for natural cross-tradition material that doesn't fit neatly elsewhere."
+    tier_quotas: {1: 0, 2: 2, 3: 4, 4: 3, 5: 2}
+
+# =====================================================================
+# MATH — combat subject, SNAPPY-ROTE style
+# =====================================================================
+# Math is bound to combat; the chain mechanic is supposed to feel like
+# pressure. Char budgets are tight (T1=100, T2=150, T3=200, T4=280, T5=360).
+# Timer was deliberately NOT bumped in the 2026-05-11 learning rebalance.
+# T1-T3 are pure recall; T4-T5 allow brief wonder + word problems.
+# See docs/quiz/subjects/math.md for full spec.
+
+math:
+  total_target: 560
+  style_verdict: SNAPPY-ROTE
+
+  # =================================================================
+  # ARITHMETIC & NUMBER SENSE (T1-heavy)
+  # =================================================================
+
+  basic_arithmetic:
+    description: "Single- and double-digit addition, subtraction, multiplication tables (1-12), division of integers, mixed-operation chains following order of operations. The bread-and-butter combat-recall content."
+    tier_quotas: {1: 35, 2: 15, 3: 5, 4: 0, 5: 0}
+
+  number_sense:
+    description: "Place value, rounding, estimation, number-line position, comparing magnitudes (which is bigger?), negative-number basics, absolute value."
+    tier_quotas: {1: 20, 2: 10, 3: 5, 4: 0, 5: 0}
+
+  fractions_and_decimals:
+    description: "Equivalent fractions, adding/subtracting/multiplying/dividing fractions, decimal-fraction conversion, decimal operations, mixed numbers, fraction-to-percentage conversion."
+    tier_quotas: {1: 12, 2: 15, 3: 10, 4: 5, 5: 0}
+
+  percentages_and_ratios:
+    description: "Basic percentages, percentage-of-a-number, ratios and proportions, discount/markup/tax, compound percentages, percentage increase/decrease."
+    tier_quotas: {1: 5, 2: 10, 3: 10, 4: 5, 5: 0}
+
+  number_theory:
+    description: "Prime numbers, factors, multiples, GCD, LCM, divisibility rules (3, 4, 5, 9, 11), modular arithmetic basics (T4+), famous results like infinitely-many-primes (T5)."
+    tier_quotas: {1: 10, 2: 8, 3: 10, 4: 8, 5: 6}
+
+  # =================================================================
+  # GEOMETRY
+  # =================================================================
+
+  geometry_basics:
+    description: "Area and perimeter (squares, rectangles, triangles, circles), volume of rectangular solids, angle types (acute/right/obtuse), basic coordinate plane reading."
+    tier_quotas: {1: 12, 2: 12, 3: 10, 4: 5, 5: 0}
+
+  geometry_advanced:
+    description: "Pythagorean theorem, trigonometry basics (sin/cos/tan at standard angles), similar triangles and proportional reasoning, circle theorems (inscribed angles, arcs), introductory proofs (T5)."
+    tier_quotas: {1: 0, 2: 0, 3: 8, 4: 10, 5: 6}
+
+  # =================================================================
+  # ALGEBRA
+  # =================================================================
+
+  algebra_basics:
+    description: "Solving one-variable linear equations, inequalities, substitution into expressions, distributive property, combining like terms, basic word problems with one unknown."
+    tier_quotas: {1: 0, 2: 5, 3: 12, 4: 8, 5: 4}
+
+  algebra_advanced:
+    description: "Quadratic equations (factoring, quadratic formula), polynomial operations, systems of two linear equations, factoring techniques, functions and function notation."
+    tier_quotas: {1: 0, 2: 0, 3: 0, 4: 12, 5: 10}
+
+  exponents_and_roots:
+    description: "Powers of small integers, square roots, cube roots, exponent rules (product, quotient, power-of-a-power), scientific notation, negative and fractional exponents (T4+)."
+    tier_quotas: {1: 0, 2: 5, 3: 8, 4: 8, 5: 6}
+
+  # =================================================================
+  # PATTERNS, PROBABILITY, STATISTICS
+  # =================================================================
+
+  sequences_and_patterns:
+    description: "Arithmetic sequences (common difference), geometric sequences (common ratio), Fibonacci, simple pattern recognition (what comes next?), triangular numbers, square numbers."
+    tier_quotas: {1: 5, 2: 5, 3: 8, 4: 8, 5: 6}
+
+  probability:
+    description: "Basic probability (coins, dice, cards), independent vs dependent events, combinations and permutations (T4), expected value, conditional probability (T5), the Birthday Problem (T5)."
+    tier_quotas: {1: 0, 2: 5, 3: 8, 4: 8, 5: 8}
+
+  statistics:
+    description: "Mean, median, mode, range, basic histogram reading, simple correlation, standard deviation intuition (T4+), sampling and bias (T5)."
+    tier_quotas: {1: 0, 2: 5, 3: 8, 4: 8, 5: 6}
+
+  # =================================================================
+  # FUNCTIONS, WORD PROBLEMS, ADVANCED
+  # =================================================================
+
+  functions_and_graphs:
+    description: "Linear functions, slope, y-intercept, plotting points, reading graphs, quadratic functions and their shapes, function transformations (T5)."
+    tier_quotas: {1: 0, 2: 0, 3: 5, 4: 10, 5: 8}
+
+  word_problems:
+    description: "Rate and distance problems, work problems, mixture problems, age problems, profit/loss problems. Math word problems with a real-world setup demanding multi-step reasoning."
+    tier_quotas: {1: 0, 2: 0, 3: 5, 4: 8, 5: 8}
+
+  # =================================================================
+  # MATH WONDER & HISTORY
+  # =================================================================
+
+  famous_math_wonder:
+    description: "π and e as transcendental numbers, famous theorems (Pythagorean, Fermat's Last, Four-Color, Euler's identity), famous mathematicians (Archimedes, Newton, Euler, Gauss, Ramanujan), famous proofs (infinite primes, irrationality of √2), Cantor's hierarchy of infinities, paradoxes (Banach-Tarski, Birthday). Brief wonder content within tight char budgets."
+    tier_quotas: {1: 5, 2: 10, 3: 12, 4: 15, 5: 25}
+
+  calculus_glimpses:
+    description: "Limits intuition, derivative as instantaneous rate of change, basic derivative rules (power rule), integration as accumulation, Fundamental Theorem of Calculus conceptually, famous results (Newton-Leibniz priority dispute as math history). T5-only."
+    tier_quotas: {1: 0, 2: 0, 3: 0, 4: 0, 5: 15}

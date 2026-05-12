@@ -11,19 +11,22 @@ class Player:
     # wis_scale: seconds gained per point of WIS (e.g. 0.8 means WIS 15 adds 12s)
     SUBJECT_TIMER = {
         # (base_seconds, wis_scale) — timer = base + WIS * scale
-        # Recalibrated after LLM review lengthened choices for balance.
-        'math':       ( 8, 0.8),   # flashcard arithmetic — short, no reading needed
-        'science':    (16, 1.0),   # concept questions, medium choices
-        'grammar':    (16, 1.0),   # sentence-level analysis
-        'trivia':     (20, 1.0),   # general knowledge, varied lengths
-        'geography':  (20, 1.0),   # moderate reading, detailed choices
-        'history':    (22, 1.2),   # paragraph-length choices
-        'animal':     (22, 1.2),   # descriptive species questions
-        'ai':         (26, 1.2),   # technical concepts, dense choices
-        'philosophy': (26, 1.2),   # abstract reasoning, dense text
-        'cooking':    (28, 1.4),   # full-sentence choices, recipe context
-        'theology':   (32, 1.4),   # dense doctrinal text, longest choices
-        'economics':  (32, 1.4),   # detailed economic definitions
+        # Recalibrated 2026-05-11 for learning-focused gameplay: kids tune
+        # out under time pressure when foundational concepts are missing,
+        # so wonder subjects get scaffolded prompts that need room to read.
+        # Math stays snappy because combat is the pressure point by design.
+        'math':       ( 8, 0.8),   # combat — supposed to feel snappy
+        'science':    (24, 1.2),   # concept questions with scaffolded setup
+        'grammar':    (20, 1.0),   # sentence-level analysis
+        'trivia':     (26, 1.2),   # general knowledge, varied lengths
+        'geography':  (28, 1.2),   # moderate reading, detailed choices
+        'history':    (32, 1.6),   # paragraph-length choices with scene-setting
+        'animal':     (32, 1.6),   # descriptive species questions
+        'ai':         (40, 1.5),   # technical concepts need room to teach
+        'philosophy': (40, 1.5),   # abstract reasoning + scaffolded definitions
+        'cooking':    (44, 1.6),   # full-sentence choices, recipe context
+        'theology':   (48, 1.7),   # dense doctrinal text, scaffolded
+        'economics':  (48, 1.7),   # detailed economic concepts with definitions
     }
 
     def __init__(self):

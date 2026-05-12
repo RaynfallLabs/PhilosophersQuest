@@ -1,0 +1,2570 @@
+[
+  {
+    "idx": 566,
+    "tier": 1,
+    "question": "Lao Tzu used water as his most important image for wisdom. 'Nothing in the world is softer than water, yet nothing is better at overcoming the hard and strong.' What life lesson was he teaching?",
+    "answer": "Yielding and flexibility are stronger than force and rigidity — what is hard breaks; what is soft flows around obstacles and persists",
+    "choices": [
+      "Patience is more powerful than intelligence — time and persistence accomplish what cleverness cannot",
+      "Yielding and flexibility are stronger than force and rigidity — what is hard breaks; what is soft flows around obstacles and persists",
+      "The natural world teaches all the wisdom humans need — observation of nature is superior to philosophical argument",
+      "Weakness and humility are moral virtues that the gods reward with fortune and long life"
+    ],
+    "context": "This image appears throughout the Tao Te Ching. Water does not fight the rock — it flows around it, finds every crack, and over time hollows the hardest stone. Lao Tzu contrasted this with the way humans typically try to achieve goals: through force, domination, rigid plans, and aggressive action. He called the alternative wu wei — non-action or effortless action, meaning acting in harmony with the natural flow of things rather than against it. The paradox: by not forcing, you accomplish more. He wrote: 'The Tao does nothing, yet leaves nothing undone.'",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[100, 133, 114, 87] mean=108.5 ratio=1.53 max_dev=22.58%",
+      "A3_cost_ok": false,
+      "A3_detail": "total=628 cap=600",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 257,
+    "tier": 1,
+    "question": "Which ancient city was home to Socrates?",
+    "answer": "Athens, the intellectual and democratic heart of Greece",
+    "choices": [
+      "Corinth, a powerful trade city on the isthmus",
+      "Sparta, the militaristic rival of Athens",
+      "Athens, the intellectual and democratic heart of Greece",
+      "Alexandria, the great Egyptian port city founded by Alexander"
+    ],
+    "context": "Athens in the 5th century BC was the intellectual capital of the ancient world. It gave birth to democracy, tragedy, comedy, history, and philosophy. Socrates walked its agora (marketplace) daily, engaging anyone willing to talk about virtue, justice, and the good life.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[45, 40, 55, 61] mean=50.2 ratio=1.52 max_dev=21.39%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=241 cap=600",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 237,
+    "tier": 1,
+    "question": "What word means making a conclusion from clues or evidence?",
+    "answer": "Inference",
+    "choices": [
+      "Inference",
+      "Assumption",
+      "Speculation",
+      "Assertion"
+    ],
+    "context": "Inference is the engine of reasoning. We observe evidence and draw conclusions that go beyond what we directly see. Every detective, scientist, and philosopher relies on inference — the art of reading between the lines of reality.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": true,
+      "A2_detail": "lens=[9, 10, 11, 9] mean=9.8 ratio=1.22 max_dev=12.82%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=98 cap=600",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 555,
+    "tier": 1,
+    "question": "Marcus Aurelius kept returning to one Stoic idea in his private journals: that you cannot control what happens to you, but you can always control something else. What?",
+    "answer": "How you choose to respond — your judgments, attitudes, and reactions are always within your power",
+    "choices": [
+      "How hard you work — effort applied to any situation always produces some positive change",
+      "How you choose to respond — your judgments, attitudes, and reactions are always within your power",
+      "How long you persist — eventually all obstacles yield to patience and determination",
+      "Who you rely on — choosing good advisors protects you from the worst of any misfortune"
+    ],
+    "context": "Marcus wrote: 'You have power over your mind, not outside events.' This is the practical core of Stoicism: divide everything into what is 'up to you' and what is not. Weather, other people's actions, illness, death — not up to you. Your own judgments, desires, values, responses — entirely up to you. Build your peace on the second category and nothing in the first category can destroy you. Marcus ruled during constant wars and plagues and practiced this philosophy under the most extreme pressure imaginable.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": true,
+      "A2_detail": "lens=[88, 97, 83, 86] mean=88.5 ratio=1.17 max_dev=9.60%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=521 cap=600",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 565,
+    "tier": 1,
+    "question": "Lao Tzu began the Tao Te Ching with: 'The Tao that can be told is not the eternal Tao.' Why start a philosophical text by saying it cannot describe what it is about?",
+    "answer": "To warn readers that the Tao is not a concept to be grasped mentally but a reality to be lived — words point toward it but cannot capture it",
+    "choices": [
+      "To create mystery that motivates readers to study the rest of the text more carefully",
+      "To warn readers that the Tao is not a concept to be grasped mentally but a reality to be lived — words point toward it but cannot capture it",
+      "To show that all philosophical texts are limited, and readers should seek direct experience over reading",
+      "To distinguish Taoism from Confucianism, which relied heavily on written texts and precise definitions"
+    ],
+    "context": "The Tao Te Ching is one of the most translated books in history. Its first line is also its central philosophical claim: reality is not fully speakable. The Tao (the Way) is the underlying order of the universe — but the moment you define it, you have frozen into a concept something that is inherently moving, ungraspable, and present in everything. This is not mystical evasion; it is a serious philosophical position about the limits of language. Wittgenstein reached a similar conclusion 2,500 years later: 'Whereof one cannot speak, thereof one must be silent.'",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[85, 140, 104, 102] mean=107.8 ratio=1.65 max_dev=29.93%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=596 cap=600",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 235,
+    "tier": 1,
+    "question": "If every person in a group agrees on something, that agreement is called what?",
+    "answer": "A consensus, where every member of the group is in agreement",
+    "choices": [
+      "A majority vote, where the larger group faction overrules the smaller",
+      "A consensus, where every member of the group is in agreement",
+      "A compromise, reached when each side surrenders something it wanted",
+      "A doctrine, a set of principles imposed by those with authority"
+    ],
+    "context": "Consensus can be a powerful tool for decision-making, but philosophers warn it is no guarantee of truth. The majority has been wrong many times throughout history. As Mill argued, even a single dissenting voice deserves to be heard.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": true,
+      "A2_detail": "lens=[69, 60, 67, 63] mean=64.8 ratio=1.15 max_dev=7.34%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=337 cap=600",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 467,
+    "tier": 1,
+    "question": "Rand said that a person who produces nothing but lives off the work of others — especially using political connections to take from producers — is a what?",
+    "answer": "A parasite or moocher",
+    "choices": [
+      "A citizen",
+      "A consumer",
+      "A parasite or moocher",
+      "A dependent"
+    ],
+    "context": "Rand's villains in Atlas Shrugged are not the desperately poor — they are well-dressed politicians, bureaucrats, and businesspeople who succeed through government favoritism rather than genuine achievement. Her term 'moocher' refers specifically to people who use guilt and pity to extract resources; 'looter' refers to those who use political force. Both live off producers while attacking and regulating them.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[9, 10, 21, 11] mean=12.8 ratio=2.33 max_dev=64.71%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=205 cap=600",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 462,
+    "tier": 1,
+    "question": "John Galt's oath in Atlas Shrugged begins: 'I swear by my life and my love of it that I will never live for the sake of another man, nor ask another man to live for mine.' What widely-taught moral system is he rejecting?",
+    "answer": "Altruism — the moral code that says living for others is the highest duty",
+    "choices": [
+      "Hedonism — the philosophy that pleasure is the only real value",
+      "Nihilism — the view that nothing in life has genuine meaning",
+      "Altruism — the moral code that says living for others is the highest duty",
+      "Pragmatism — the view that actions are right if they produce good outcomes"
+    ],
+    "context": "Rand coined Galt's oath as the philosophical heart of her novel. She spent years perfecting it. Her point: the traditional moral demand that you sacrifice yourself for others treats your life as someone else's resource. She was not against kindness or generosity — she was against the premise that your life does not belong to you.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": true,
+      "A2_detail": "lens=[62, 60, 73, 74] mean=67.2 ratio=1.23 max_dev=10.78%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=489 cap=600",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 559,
+    "tier": 1,
+    "question": "Seneca wrote: 'It is not that I have so little time, but that I waste so much of it.' What did he say most people fail to understand about their lives?",
+    "answer": "Life is long enough if lived deliberately — the problem is not time's shortness but how carelessly we give it away",
+    "choices": [
+      "Most people work too hard and should spend more time enjoying simple pleasures before it is too late",
+      "Life is long enough if lived deliberately — the problem is not time's shortness but how carelessly we give it away",
+      "Time passes faster as we age, so wisdom must be learned young before our perception of time accelerates",
+      "The only way to extend a life is philosophical study, which makes each hour feel richer and more vivid"
+    ],
+    "context": "Seneca's essay On the Shortness of Life is one of history's most practical philosophy texts. His argument: people guard their money carefully but give their time away to parties, social obligations, status-seeking, and entertainment without a second thought. Then they complain they never had time to live. He recommended auditing your time as carefully as your accounts — spend it on what genuinely matters, and notice how much you have been wasting. He wrote this while serving Nero, surrounded by the very distractions he warned against. The irony was not lost on him.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": true,
+      "A2_detail": "lens=[100, 114, 103, 102] mean=104.8 ratio=1.14 max_dev=8.83%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=570 cap=600",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 249,
+    "tier": 1,
+    "question": "A 'contradiction' is when two things are what?",
+    "answer": "Both true and false at the same time",
+    "choices": [
+      "Logically dependent on each other as connected premises",
+      "Both true and false at the same time",
+      "Expressing the same idea through different words",
+      "Impossible to verify through observation or argument"
+    ],
+    "context": "A contradiction -- like 'it is raining and it is not raining at the same time and place' -- cannot be true. Aristotle called the law of non-contradiction the most fundamental principle of thought. If contradictions were allowed, rational discussion would be impossible.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[55, 36, 48, 52] mean=47.8 ratio=1.53 max_dev=24.61%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=237 cap=600",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 109,
+    "tier": 1,
+    "question": "What is 'metaphysics'?",
+    "answer": "The study of the fundamental nature of reality",
+    "choices": [
+      "The branch of philosophy examining what lies beyond the reach of physical science",
+      "The study of the fundamental nature of reality",
+      "The philosophical investigation of moral and ethical principles guiding human conduct",
+      "The analysis of how knowledge is acquired and what justifies our beliefs"
+    ],
+    "context": "The word 'metaphysics' literally means 'after physics' -- it was the title Aristotle's editors gave to the works that came after his physics lectures. It asks the deepest questions: What is real? Why does anything exist? What is the relationship between mind and matter?",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[81, 46, 85, 72] mean=71.0 ratio=1.85 max_dev=35.21%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=306 cap=600",
+      "A4_rote_ok_patched": false,
+      "A4_patched_matches": [
+        "what_is_quoted"
+      ],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 30,
+    "tier": 1,
+    "question": "Which philosopher said 'In the beginning was the Word'?",
+    "answer": "John the Evangelist, in the opening of his Gospel",
+    "choices": [
+      "Plato, in the opening lines of the Timaeus",
+      "Augustine, reflecting on divine creation in the Confessions",
+      "John the Evangelist, in the opening of his Gospel",
+      "Aristotle, describing the Prime Mover in the Metaphysics"
+    ],
+    "context": "The Gospel of John opens with this philosophical statement, identifying Christ with the Logos -- the rational principle that orders the universe. John was writing in Greek philosophical language, connecting Jewish theology with Greek philosophy in a way that shaped Western thought.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[42, 59, 49, 56] mean=51.5 ratio=1.40 max_dev=18.45%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=261 cap=600",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 468,
+    "tier": 1,
+    "question": "Mises said that when you freely choose to buy a book rather than a coffee, you are revealing something important — something no government official can ever access. What is it?",
+    "answer": "Your personal ranking of values at that moment — information that only you have and that exists only through your choice",
+    "choices": [
+      "The objective economic worth of the two goods as determined by their production costs",
+      "Your personal ranking of values at that moment — information that only you have and that exists only through your choice",
+      "A signal to producers about what kinds of goods society as a whole prefers",
+      "The price ratio established by competitive market forces at that instant"
+    ],
+    "context": "This observation — that every economic choice reveals private information that the chooser alone possesses — is the foundation of Mises's entire argument against central planning. No planner can replicate a free market because the data the market uses (individual preferences, revealed moment by moment through actual choices) simply does not exist in any form a planner could access. The market does not gather information — it IS the information.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[85, 120, 74, 72] mean=87.8 ratio=1.67 max_dev=36.75%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=527 cap=600",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 568,
+    "tier": 1,
+    "question": "Aristotle said that to understand anything fully you must answer four questions about it. When you ask why an acorn becomes an oak tree, what are his four types of cause?",
+    "answer": "Material (what it is made of), formal (its shape or structure), efficient (what made it grow), and final (the goal it is moving toward — becoming an oak)",
+    "choices": [
+      "Physical, chemical, biological, and teleological — the four levels of scientific explanation",
+      "Material (what it is made of), formal (its shape or structure), efficient (what made it grow), and final (the goal it is moving toward — becoming an oak)",
+      "Origin, process, result, and purpose — the four phases of any natural change over time",
+      "Substance, property, relation, and quantity — the four fundamental categories of Aristotle's logic"
+    ],
+    "context": "Aristotle's four causes dominated Western science for nearly 2,000 years. The 'final cause' — that everything in nature moves toward a purpose or goal — is the most distinctively Aristotelian idea. Seeds grow toward plants; animals develop toward maturity; the acorn's final cause is the oak. This teleological view was eventually replaced by Newton's mechanical laws, which explain motion without any reference to goals. Darwin then reintroduced a kind of final cause through natural selection: organs and organisms are 'designed' not by God but by the process of selection for function.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[92, 153, 86, 98] mean=107.2 ratio=1.78 max_dev=42.66%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=599 cap=600",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 459,
+    "tier": 1,
+    "question": "Ayn Rand believed that selfishness — caring about your own life and happiness — is not a sin or a weakness. She wrote an entire book arguing it is actually what?",
+    "answer": "A virtue — because your own life and happiness are genuinely valuable",
+    "choices": [
+      "A necessary evil that society must tolerate and manage",
+      "A virtue — because your own life and happiness are genuinely valuable",
+      "A natural instinct that education should eventually replace",
+      "An acceptable habit as long as you harm nobody directly"
+    ],
+    "context": "Rand's 1964 book The Virtue of Selfishness shocked readers. But Rand was precise: she did not mean grabbing from others. She meant the rational pursuit of your own values and life. She argued the demand for self-sacrifice is the immoral position — because it treats your life as a means to others' ends. 'Man's first duty is to himself.'",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[54, 69, 59, 55] mean=59.2 ratio=1.28 max_dev=16.46%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=398 cap=600",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 554,
+    "tier": 1,
+    "question": "Marcus Aurelius was Rome's most powerful man — emperor of an empire of millions. Yet every morning he wrote in a private journal reminding himself to be humble, patient, and just. What was this journal called?",
+    "answer": "Meditations",
+    "choices": [
+      "The Republic",
+      "Meditations",
+      "The Discourses",
+      "Letters to Lucilius"
+    ],
+    "context": "Marcus Aurelius ruled Rome from 161–180 AD and is history's most famous philosopher-king. The Meditations were written entirely for himself — a daily practice of Stoic self-correction. He wrote things like: 'You have power over your mind, not outside events. Realize this and you will find strength.' He never published it. It survived by accident in a monastery and is now one of the most widely read books in history. It is still issued to recruits in some military academies.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[12, 11, 14, 19] mean=14.0 ratio=1.73 max_dev=35.71%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=265 cap=600",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 472,
+    "tier": 1,
+    "question": "Ayn Rand named her own philosophy herself — she did not inherit a school or movement. She named it Objectivism because of what core belief?",
+    "answer": "Reality is objective — it exists independently of what anyone thinks or feels about it",
+    "choices": [
+      "Ethics must be derived from objective scientific facts about human behavior",
+      "Reality is objective — it exists independently of what anyone thinks or feels about it",
+      "Political philosophy must be grounded in objectively measurable outcomes for citizens",
+      "Knowledge is only objective when derived through systematic logical analysis"
+    ],
+    "context": "Rand chose 'Objectivism' because she was fighting against every philosophy that made reality mind-dependent — idealists who said the world is shaped by consciousness, pragmatists who said truth is whatever works, subjectivists who said morality depends on personal feeling. Her answer to all of them: existence exists, whether or not anyone perceives it, approves of it, or wishes it were otherwise. Wishing does not make it so. This is the bedrock of everything else she built.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": true,
+      "A2_detail": "lens=[75, 86, 85, 76] mean=80.5 ratio=1.15 max_dev=6.83%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=461 cap=600",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 253,
+    "tier": 1,
+    "question": "What is a 'premise'?",
+    "answer": "A starting statement in an argument",
+    "choices": [
+      "A conclusion that summarizes the argument's final claim",
+      "A starting statement in an argument",
+      "A logical rule used to connect two ideas",
+      "A counterargument raised against a claim"
+    ],
+    "context": "In a logical argument, premises are the starting statements from which a conclusion is drawn. The strength of any argument depends entirely on whether its premises are true and whether the conclusion follows logically from them.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[55, 35, 40, 40] mean=42.5 ratio=1.57 max_dev=29.41%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=190 cap=600",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 231,
+    "tier": 1,
+    "question": "What is an 'opinion'?",
+    "answer": "A personal belief or view, which may or may not be true",
+    "choices": [
+      "A personal belief or view, which may or may not be true",
+      "A statement confirmed by experimental evidence",
+      "A rule that a governing body enforces on citizens",
+      "A conclusion derived through logical proof"
+    ],
+    "context": "In philosophy, the distinction between opinion (doxa) and knowledge (episteme) goes back to Plato. An opinion may be true, but it becomes knowledge only when it is justified -- when you can explain why it is true.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[55, 46, 49, 42] mean=48.0 ratio=1.31 max_dev=14.58%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=213 cap=600",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 558,
+    "tier": 1,
+    "question": "The Roman philosopher Seneca wrote: 'We suffer more in imagination than in reality.' What practical advice follows from this observation?",
+    "answer": "Examine what you are actually afraid of — most feared disasters never arrive, and the ones that do are rarely as bad as imagined",
+    "choices": [
+      "Avoid any situation where things might go wrong, since prevention costs less than coping with disaster",
+      "Examine what you are actually afraid of — most feared disasters never arrive, and the ones that do are rarely as bad as imagined",
+      "Train yourself to feel nothing, so that neither imagined nor real suffering can disturb your peace",
+      "Trust in the gods to protect you, since anxiety shows insufficient faith in divine providence"
+    ],
+    "context": "Seneca was a Stoic philosopher who was also one of Rome's wealthiest citizens and the emperor Nero's tutor. He wrote in a letter: 'There are more things likely to frighten us than to crush us; we suffer more often in imagination than in reality.' His practical remedy: write down what you fear, then ask honestly how likely it is and how bad it would actually be. This is essentially what modern cognitive behavioral therapy calls 'decatastrophizing.' Seneca was murdered by Nero's order in 65 AD — and by accounts met his death with the calm equanimity he had spent his life preaching.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[102, 128, 98, 93] mean=105.2 ratio=1.38 max_dev=21.62%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=558 cap=600",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 57,
+    "tier": 2,
+    "question": "Descartes argued that your idea of a perfect, infinite God cannot possibly have come from your experience of the world. What did he conclude from this?",
+    "answer": "The idea must have been placed in your mind by God himself — only an actually infinite being could cause the idea of an infinite being in a finite mind",
+    "choices": [
+      "The idea is innate but it merely reflects our capacity for abstract thought about perfection",
+      "The idea must have been placed in your mind by God himself — only an actually infinite being could cause the idea of an infinite being in a finite mind",
+      "The idea comes from combining many finite experiences of partial perfection into an imagined whole",
+      "The idea is meaningless because infinite perfection cannot correspond to any possible experience"
+    ],
+    "context": "This is Descartes's Trademark Argument — God left his trademark in your mind the way an artisan stamps their work. The key premise: every idea must have a cause with at least as much reality as the idea itself. Your idea of infinite perfection is greater than anything finite you could have experienced. Therefore it could not have been produced by you or by the physical world. Only God has enough reality to be the cause. Locke attacked this argument directly: children do not have the idea of God, so it cannot be innate.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[92, 151, 98, 96] mean=109.2 ratio=1.64 max_dev=38.22%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=588 cap=600",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 479,
+    "tier": 2,
+    "question": "Rothbard's property theory derives private property rights from one starting principle. What is the logical chain?",
+    "answer": "You own yourself → you own your labor → you own what you produce with your labor → you own what you trade your products for",
+    "choices": [
+      "Society creates property rights → governments enforce them → individuals may use them within social rules",
+      "You own yourself → you own your labor → you own what you produce with your labor → you own what you trade your products for",
+      "God grants natural rights → nature reflects divine order → property reflects the natural right to subsistence",
+      "First possession establishes ownership → social recognition legitimizes it → law formalizes it"
+    ],
+    "context": "Rothbard built his ethics as a deductive system starting from self-ownership. Each step follows from the last. The power of the argument is that it makes property rights not a social convention but a logical consequence of personhood itself. If you deny any step in the chain, you are implicitly denying some form of self-ownership — which is itself a performance contradiction, since denying anything requires using your own mind and body to do so.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[105, 123, 109, 94] mean=107.8 ratio=1.31 max_dev=14.15%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=545 cap=600",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 43,
+    "tier": 2,
+    "question": "Locke argued that when a government fails to protect citizens' natural rights, citizens do not merely have a right to complain — they have the right to do something far more drastic. What?",
+    "answer": "Overthrow it — government authority comes entirely from the consent of the governed, and a government that betrays its purpose loses all claim to obedience",
+    "choices": [
+      "Petition the legislature for reform — Locke believed violent revolution always produced worse tyranny than it replaced",
+      "Overthrow it — government authority comes entirely from the consent of the governed, and a government that betrays its purpose loses all claim to obedience",
+      "Emigrate — citizens who disagree with their government have consented to it by remaining, so leaving is the only honest response",
+      "Seek international arbitration — Locke believed natural law created obligations between nations as well as between citizens"
+    ],
+    "context": "Locke wrote this in the 1680s to justify the Glorious Revolution, which removed James II from the English throne. His argument was adopted almost word for word by Thomas Jefferson in the Declaration of Independence. Locke was careful: revolution is a last resort after all other remedies fail. But the philosophical point was radical for its time — kings did not rule by divine right but by an implicit contract, and breaking the contract broke the kingdom's obligation to obey.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[118, 155, 128, 123] mean=131.0 ratio=1.31 max_dev=18.32%",
+      "A3_cost_ok": false,
+      "A3_detail": "total=712 cap=600",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 492,
+    "tier": 2,
+    "question": "Mises argued that each act of government economic intervention creates new problems that seem to demand further intervention. He called this pattern what?",
+    "answer": "The interventionist dynamic — where each intervention distorts the market, creating new problems that generate pressure for more intervention",
+    "choices": [
+      "Regulatory capture — where regulated industries gradually control the agencies that regulate them",
+      "The interventionist dynamic — where each intervention distorts the market, creating new problems that generate pressure for more intervention",
+      "The bureaucratic ratchet — where government agencies naturally expand to protect their own budgets",
+      "The progressive spiral — where initial reforms create constituencies demanding more reform"
+    ],
+    "context": "Mises traced a predictable sequence: price controls create shortages; shortages create rationing; rationing creates black markets; black markets require enforcement; enforcement creates bureaucracies. Each step is a rational response to the problem created by the previous step — but the previous problem was created by intervention. Mises argued there is no stable middle ground between a free market and full socialism; every intervention requires either more intervention or reversal.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[97, 141, 98, 90] mean=106.5 ratio=1.57 max_dev=32.39%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=580 cap=600",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 29,
+    "tier": 2,
+    "question": "Nietzsche declared 'God is dead' in The Gay Science. What did he mean by this philosophical claim?",
+    "answer": "The traditional moral framework grounded in Christianity has lost its authority in modern culture",
+    "choices": [
+      "The traditional moral framework grounded in Christianity has lost its authority in modern culture",
+      "The divine being has physically perished, leaving the cosmos without a creator",
+      "Religious institutions have grown too corrupt to mediate between humanity and the sacred",
+      "Science and philosophy have jointly dismantled every rational argument for believing in God"
+    ],
+    "context": "Nietzsche was not celebrating atheism -- he was issuing a warning. If the Christian framework that had given Western civilization its moral compass was no longer believed, what would replace it? He feared the answer might be nihilism, and proposed the Ubermensch as an alternative.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": true,
+      "A2_detail": "lens=[97, 78, 88, 91] mean=88.5 ratio=1.24 max_dev=11.86%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=452 cap=600",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 266,
+    "tier": 2,
+    "question": "What is a 'straw man' argument?",
+    "answer": "Misrepresenting someone's view to attack it more easily",
+    "choices": [
+      "Misrepresenting someone's view to attack it more easily",
+      "Relying on unverifiable assumptions to support a claim",
+      "Appealing to popular opinion rather than logic or evidence",
+      "Presenting a conclusion before the supporting premises are established"
+    ],
+    "context": "A straw man is created when you misrepresent someone's argument to make it easier to attack. It is called a 'straw man' because you are not fighting your opponent's real position -- you are fighting a weaker version you constructed yourself.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[55, 54, 58, 70] mean=59.2 ratio=1.30 max_dev=18.14%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=268 cap=600",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 553,
+    "tier": 2,
+    "question": "Rothbard said the libertarian position can be summed up in one sentence. What was it?",
+    "answer": "No one has the right to aggress against the person or property of anyone else",
+    "choices": [
+      "Taxation is theft and government is force — so minimize both",
+      "No one has the right to aggress against the person or property of anyone else",
+      "Voluntary cooperation serves human needs better than any form of compulsion",
+      "Individual rights precede and constrain whatever governments may do"
+    ],
+    "context": "Rothbard called this the Non-Aggression Principle (NAP) — the single axiom from which he derived his entire political philosophy. Note what it does and does not say: it prohibits aggression (initiating force or fraud against others) but does not require you to help anyone. It is a constraint on action, not a positive duty. Rothbard argued that if everyone consistently applied this single principle, every major political dispute — taxes, war, drug laws, regulation — would resolve itself.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": true,
+      "A2_detail": "lens=[60, 77, 75, 67] mean=69.8 ratio=1.28 max_dev=13.98%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=364 cap=600",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 327,
+    "tier": 2,
+    "question": "What is 'essentialism'?",
+    "answer": "The view that things have innate, unchangeable properties defining their nature",
+    "choices": [
+      "The view that things have innate, unchangeable properties defining their nature",
+      "The existentialist claim that existence precedes and overrides any fixed essence",
+      "The position that cultural and historical context wholly determines the identity of things",
+      "The doctrine that only socially constructed categories give things their defining properties"
+    ],
+    "context": "Essentialism holds that things have fixed, innate properties that make them what they are. A triangle essentially has three sides. Existentialists reject essentialism about humans -- Sartre argued that humans have no fixed nature and define themselves through choices.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": true,
+      "A2_detail": "lens=[79, 80, 90, 92] mean=85.2 ratio=1.16 max_dev=7.92%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=364 cap=600",
+      "A4_rote_ok_patched": false,
+      "A4_patched_matches": [
+        "what_is_quoted"
+      ],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 279,
+    "tier": 2,
+    "question": "What does it mean to say an argument is 'valid'?",
+    "answer": "The conclusion follows logically from the premises",
+    "choices": [
+      "All of the premises in the argument are demonstrably true",
+      "The argument is persuasive and compelling to a general audience",
+      "The conclusion follows logically from the premises",
+      "The argument relies only on empirically verifiable claims"
+    ],
+    "context": "A valid argument is one where the conclusion follows necessarily from the premises — even if the premises are false! 'All cats are blue; Fluffy is a cat; therefore Fluffy is blue' is valid but unsound (because the first premise is false). Validity is about logical structure, not truth.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": true,
+      "A2_detail": "lens=[57, 63, 50, 57] mean=56.8 ratio=1.26 max_dev=11.89%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=275 cap=600",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": false,
+      "A4_old_matches": [
+        "what_x_mean"
+      ]
+    }
+  },
+  {
+    "idx": 308,
+    "tier": 2,
+    "question": "What is 'Plato's cave' meant to illustrate?",
+    "answer": "Most people mistake appearances for reality, never perceiving the true Forms",
+    "choices": [
+      "Structured civic education is the primary foundation of a just and stable society",
+      "Most people mistake appearances for reality, never perceiving the true Forms",
+      "The senses become reliable guides to truth when properly trained and disciplined",
+      "Philosophers who grasp the truth are freed from any obligation to govern others"
+    ],
+    "context": "Most people live like prisoners in a cave, mistaking shadows on the wall for reality. Education is the painful process of turning toward the light and seeing things as they really are — Plato's Theory of Forms. Those who make it out have a duty to return and help guide the others.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": true,
+      "A2_detail": "lens=[81, 76, 80, 79] mean=79.0 ratio=1.07 max_dev=3.80%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=359 cap=600",
+      "A4_rote_ok_patched": false,
+      "A4_patched_matches": [
+        "what_is_quoted"
+      ],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 35,
+    "tier": 2,
+    "question": "Nietzsche's concept of the Ubermensch (Superman) was his proposed response to nihilism. What was the Ubermensch supposed to do?",
+    "answer": "Create new values to replace the old God-given morality that had collapsed",
+    "choices": [
+      "Dominate weaker peoples through an unconstrained will to power",
+      "Create new values to replace the old God-given morality that had collapsed",
+      "Revive ancient Greek virtues as the foundation for a new moral order",
+      "Embrace amor fati and accept the eternal recurrence of all events passively"
+    ],
+    "context": "With 'God dead' and traditional morality collapsing, Nietzsche feared humanity would sink into nihilism. The Ubermensch would be a human who creates their own values and meaning, rising above the herd. Nietzsche's sister later distorted this idea to fit Nazi ideology -- a perversion he would have despised.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": true,
+      "A2_detail": "lens=[62, 74, 68, 75] mean=69.8 ratio=1.21 max_dev=11.11%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=406 cap=600",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 409,
+    "tier": 2,
+    "question": "The philosophical distinction between 'negative rights' and 'positive rights' is crucial in political philosophy. What is a negative right?",
+    "answer": "A right that requires others to refrain from interference, such as the right not to be killed",
+    "choices": [
+      "A right that has been suspended or narrowed by emergency legislation in times of national crisis",
+      "A right that requires others to refrain from interference, such as the right not to be killed",
+      "A right that obligates the state to actively provide goods like housing or healthcare to citizens",
+      "A right whose exercise regularly produces harmful externalities that burden the broader community"
+    ],
+    "context": "Negative rights require only that others leave you alone — the right not to be killed, robbed, or imprisoned without cause. They are 'negative' because they oblige inaction. Positive rights, by contrast, require someone to actively provide something, like food, shelter, or education. The American Bill of Rights is primarily a list of negative rights.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": true,
+      "A2_detail": "lens=[96, 93, 97, 97] mean=95.8 ratio=1.04 max_dev=2.87%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=522 cap=600",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 324,
+    "tier": 2,
+    "question": "What is 'aporia' in Socratic philosophy?",
+    "answer": "A state of puzzlement or inability to find an answer",
+    "choices": [
+      "The moment in dialectic when opposing arguments reach an irresolvable stalemate",
+      "A state of puzzlement or inability to find an answer",
+      "The final stage of Socratic inquiry in which genuine philosophical wisdom is attained",
+      "A formal method of refutation used to expose an opponent's hidden assumptions"
+    ],
+    "context": "Aporia is the state of bewilderment that comes when Socrates's questioning reveals that you do not actually know what you thought you knew. It is uncomfortable but essential: you cannot begin to learn until you realize your ignorance.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[79, 52, 85, 77] mean=73.2 ratio=1.63 max_dev=29.01%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=333 cap=600",
+      "A4_rote_ok_patched": false,
+      "A4_patched_matches": [
+        "what_is_quoted"
+      ],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 425,
+    "tier": 2,
+    "question": "Which of the following is an example of a 'false dilemma' (either-or fallacy) in political philosophy?",
+    "answer": "'Either you support total government healthcare or you want people to die in the streets' — ignoring the many policy positions in between",
+    "choices": [
+      "'Taxation without representation is tyranny, regardless of context' — a universal moral claim about political obligation",
+      "'Either you support total government healthcare or you want people to die in the streets' — ignoring the many policy positions in between",
+      "'Natural rights exist prior to and independent of any political authority' — a foundational claim in liberal political theory",
+      "'A minimal state is structurally incapable of correcting market failures' — an empirical claim about government capacity"
+    ],
+    "context": "A false dilemma (either-or fallacy) artificially limits a complex issue to only two extreme options, ignoring the middle ground. In reality, most political questions — like healthcare policy — have a wide range of possible positions between the two extremes. Recognizing this fallacy is essential for rigorous political reasoning.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": true,
+      "A2_detail": "lens=[120, 137, 125, 120] mean=125.5 ratio=1.14 max_dev=9.16%",
+      "A3_cost_ok": false,
+      "A3_detail": "total=604 cap=600",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 36,
+    "tier": 2,
+    "question": "What is a 'syllogism'?",
+    "answer": "A logical argument with two premises and a conclusion",
+    "choices": [
+      "A self-contradictory statement that undermines its own truth claim",
+      "A logical argument with two premises and a conclusion",
+      "A school of thought holding that all knowledge comes only through the senses",
+      "A rhetorical device that persuades through emotional rather than logical appeal"
+    ],
+    "context": "Aristotle formalized the syllogism as the basic unit of logical reasoning: 'All men are mortal; Socrates is a man; therefore Socrates is mortal.' This structure -- two premises yielding a necessary conclusion -- dominated logic for over 2,000 years.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[66, 53, 76, 79] mean=68.5 ratio=1.49 max_dev=22.63%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=296 cap=600",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 70,
+    "tier": 2,
+    "question": "Who is associated with the philosophical concept of Yin and Yang?",
+    "answer": "Taoism, the tradition centered on harmony with the natural Way",
+    "choices": [
+      "Confucianism, which emphasizes social hierarchy and ritual propriety",
+      "Buddhism, which teaches the path to liberation from suffering",
+      "Taoism, the tradition centered on harmony with the natural Way",
+      "Legalism, which focuses on strict law and centralized state control"
+    ],
+    "context": "Yin and Yang represent the Taoist understanding that all things exist in complementary pairs: light and dark, hot and cold, active and passive. Neither is superior -- balance between them is the key to harmony. The famous black-and-white symbol shows each containing a seed of the other.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": true,
+      "A2_detail": "lens=[68, 61, 62, 67] mean=64.5 ratio=1.11 max_dev=5.43%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=323 cap=600",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 478,
+    "tier": 2,
+    "question": "Rand opposed altruism — but she was not against kindness or generosity. What specific moral principle did she reject?",
+    "answer": "That self-sacrifice is a moral duty — the claim that placing others' welfare above your own is an obligation, not a choice",
+    "choices": [
+      "That compassion and empathy are positive emotions worth cultivating",
+      "That self-sacrifice is a moral duty — the claim that placing others' welfare above your own is an obligation, not a choice",
+      "That people should care about the wellbeing of their family and close friends",
+      "That honesty and fair dealing improve your relationships with others"
+    ],
+    "context": "Rand carefully distinguished voluntary generosity (which she respected) from the moral demand that you must sacrifice yourself for others (which she condemned as a premise that your life is not your own). Her most provocative statement: 'The man who does not value himself cannot value anything or anyone.' She argued that demanding self-sacrifice is the root of every collectivist ideology, because once you accept that your life belongs to others, the only debate is which others and how much.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[67, 122, 77, 68] mean=83.5 ratio=1.82 max_dev=46.11%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=451 cap=600",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 545,
+    "tier": 2,
+    "question": "Bastiat described 'legal plunder' as one of the worst things a government could do. What did he mean by this term?",
+    "answer": "Using law to take from some people and give to others — theft made respectable by calling it legislation",
+    "choices": [
+      "The corruption of judges by wealthy individuals seeking favorable court rulings",
+      "Using law to take from some people and give to others — theft made respectable by calling it legislation",
+      "The enforcement of unjust contracts that violate natural law principles",
+      "The seizure of property during wartime through emergency executive powers"
+    ],
+    "context": "Bastiat's The Law (1850) remains one of libertarianism's foundational texts. His argument: law exists to protect rights — to prohibit violence and fraud. When law is used instead to redistribute wealth, it has become plunder organized by the state. The word 'legal' does not change the moral character of the act; it merely gives it the protection of government force. Bastiat believed legal plunder was uniquely dangerous because it corrupted the very institution (law) meant to prevent plunder.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[79, 104, 71, 73] mean=81.8 ratio=1.46 max_dev=27.22%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=441 cap=600",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 383,
+    "tier": 2,
+    "question": "John Locke argued that people have natural rights to life, liberty, and property that no government may violate. Where do these rights come from, according to Locke?",
+    "answer": "They are pre-political rights grounded in natural law and God-given reason",
+    "choices": [
+      "They are established through the negotiated terms of the social contract",
+      "They are pre-political rights grounded in natural law and God-given reason",
+      "They derive from the ongoing consent of the majority in a given society",
+      "They are codified and protected by constitutional and civil law"
+    ],
+    "context": "Locke grounded natural rights in God-given reason and natural law. Rights exist before government and independently of it. Government's sole purpose is to protect them -- and if it fails, the people may withdraw their consent.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": true,
+      "A2_detail": "lens=[72, 74, 71, 63] mean=70.0 ratio=1.17 max_dev=10.00%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=445 cap=600",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 55,
+    "tier": 2,
+    "question": "Who wrote 'The Art of War', a strategic philosophical text on conflict and tactics?",
+    "answer": "Sun Tzu, a Chinese strategist of the 5th century BC",
+    "choices": [
+      "Confucius, philosopher of ritual and social virtue",
+      "Sun Tzu, a Chinese strategist of the 5th century BC",
+      "Laozi, the founder of Taoist philosophical thought",
+      "Mencius, a Confucian thinker known for moral philosophy"
+    ],
+    "context": "Sun Tzu's ancient Chinese text (c. 5th century BC) teaches that the supreme art of war is to subdue the enemy without fighting. Its principles -- know yourself, know your enemy, use deception, exploit weakness -- have been applied to business, sports, and diplomacy for 2,500 years.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": true,
+      "A2_detail": "lens=[50, 51, 50, 55] mean=51.5 ratio=1.10 max_dev=6.80%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=289 cap=600",
+      "A4_rote_ok_patched": false,
+      "A4_patched_matches": [
+        "who_did_thing"
+      ],
+      "A4_rote_ok_old": false,
+      "A4_old_matches": [
+        "who_did_thing_old"
+      ]
+    }
+  },
+  {
+    "idx": 353,
+    "tier": 3,
+    "question": "What is 'personal identity' concerned with in philosophy?",
+    "answer": "What makes a person the same person over time despite continuous change",
+    "choices": [
+      "How a person's memories and experiences accumulate to constitute their character over time",
+      "What makes a person the same person over time despite continuous change",
+      "The relationship between bodily continuity and the attribution of moral responsibility",
+      "What distinguishes one individual's stream of consciousness from another's"
+    ],
+    "context": "What makes you the same person you were ten years ago? Your body's cells have been replaced, your beliefs have changed, and your memories may be unreliable. Is there a continuous 'self,' or are you a different person at each moment? Parfit argued that personal identity is not what matters.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": true,
+      "A2_detail": "lens=[90, 71, 86, 74] mean=80.2 ratio=1.27 max_dev=12.15%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=378 cap=600",
+      "A4_rote_ok_patched": false,
+      "A4_patched_matches": [
+        "what_is_quoted"
+      ],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 94,
+    "tier": 3,
+    "question": "'Positive liberty' means the capacity to act on your free will. Critics argue this concept can be misused. Which of the following best illustrates the danger?",
+    "answer": "A state claiming it 'truly frees' citizens by removing their choice to behave immorally",
+    "choices": [
+      "A government funding public education to expand citizens' real opportunities and capabilities",
+      "A state claiming it 'truly frees' citizens by removing their choice to behave immorally",
+      "A citizen overcoming addiction through willpower to achieve genuine self-determination",
+      "A regulated market designed to ensure citizens have equal access to resources and options"
+    ],
+    "context": "When a state claims to know citizens' 'true' interests and overrides their actual choices for their 'own good,' it is using positive liberty as a weapon. Berlin warned that this reasoning has justified every totalitarian regime in modern history.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": true,
+      "A2_detail": "lens=[93, 87, 86, 89] mean=88.8 ratio=1.08 max_dev=4.79%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=513 cap=600",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 90,
+    "tier": 3,
+    "question": "Simone de Beauvoir argued that 'woman' is not a natural category — it is a constructed one. What was her evidence that femininity is made, not born?",
+    "answer": "The traits called feminine — passivity, emotionality, domesticity — are consistently produced by how girls are raised and what roles they are allowed, not by biology",
+    "choices": [
+      "Historical societies have defined femininity completely differently, proving there is no universal biological female nature",
+      "The traits called feminine — passivity, emotionality, domesticity — are consistently produced by how girls are raised and what roles they are allowed, not by biology",
+      "Anatomical differences between sexes are real but have no necessary connection to psychological or social differences",
+      "Women who resist feminine norms consistently demonstrate that these traits are not biologically inevitable"
+    ],
+    "context": "De Beauvoir's most famous line: 'One is not born, but rather becomes, a woman.' The Second Sex (1949) documented how girls are raised to see themselves as the 'second sex' — defined in relation to men, as the Other. The feminine mystique of passivity and self-abnegation is not biology; it is the internalized result of systematic restriction. De Beauvoir applied Sartre's existentialism: humans are not born with a fixed nature; we create ourselves through choices. The tragedy of women under patriarchy: they are denied the conditions to make authentic choices and define themselves.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[123, 165, 117, 106] mean=127.8 ratio=1.56 max_dev=29.16%",
+      "A3_cost_ok": false,
+      "A3_detail": "total=659 cap=600",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 224,
+    "tier": 3,
+    "question": "What is 'feminist epistemology'?",
+    "answer": "The study of how gender affects what counts as knowledge and who counts as a knower",
+    "choices": [
+      "The study of how gender affects what counts as knowledge and who counts as a knower",
+      "The branch of formal logic concerned with structuring feminist arguments",
+      "A Marxist-influenced critique of patriarchal reasoning systems",
+      "The application of standpoint theory to formal epistemological categories"
+    ],
+    "context": "Feminist epistemology examines how gender shapes what counts as knowledge and who counts as a knower. It asks why women's experiences were historically excluded from philosophy and science, and how including diverse perspectives improves our understanding of reality.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[83, 72, 62, 73] mean=72.5 ratio=1.34 max_dev=14.48%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=322 cap=600",
+      "A4_rote_ok_patched": false,
+      "A4_patched_matches": [
+        "what_is_quoted"
+      ],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 329,
+    "tier": 3,
+    "question": "What is Wittgenstein's 'private language argument'?",
+    "answer": "A genuinely private language is impossible because meaning requires shared rules",
+    "choices": [
+      "A genuinely private language is impossible because meaning requires shared rules",
+      "Subjective inner experiences are inherently too personal to be fully captured by public language",
+      "Language first develops as a private mental system before it becomes socially communicable",
+      "Speakers within different communities inevitably assign divergent meanings to the same words"
+    ],
+    "context": "Wittgenstein argued that a language only one person could understand is impossible. Meaning requires rules, rules require the possibility of following them correctly or incorrectly, and that requires a community. A purely private sensation-word has no standard of correctness.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": true,
+      "A2_detail": "lens=[80, 96, 90, 92] mean=89.5 ratio=1.20 max_dev=10.61%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=409 cap=600",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 2,
+    "tier": 3,
+    "question": "Confucius taught that social harmony flows from proper roles within family and society. What is the term for this Confucian concept of correct role-fulfillment?",
+    "answer": "Li (ritual propriety governing social roles and conduct)",
+    "choices": [
+      "Wu wei (the Taoist principle of effortless non-action)",
+      "Li (ritual propriety governing social roles and conduct)",
+      "Ren (benevolence and humaneness toward others)",
+      "Dao (the underlying natural order of the universe)"
+    ],
+    "context": "Li encompasses ritual propriety, correct behavior, and fulfilling one's social role. Confucius believed that if everyone performed their role with sincerity and respect, society would be harmonious. This idea shaped Chinese civilization for over 2,500 years.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": true,
+      "A2_detail": "lens=[54, 56, 46, 50] mean=51.5 ratio=1.22 max_dev=10.68%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=366 cap=600",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 505,
+    "tier": 3,
+    "question": "Rothbard derived natural rights not from God, not from social contract, and not from democratic agreement. From what did he derive them?",
+    "answer": "Human nature — specifically that humans are rational beings who must use their minds freely to survive and flourish",
+    "choices": [
+      "Evolutionary pressures that selected for individuals who respected others' survival space",
+      "Human nature — specifically that humans are rational beings who must use their minds freely to survive and flourish",
+      "The universal moral intuitions that appear consistently across all human cultures",
+      "The logical structure of any stable social order that wishes to persist over time"
+    ],
+    "context": "Rothbard wanted a secular foundation for natural rights that could not be dismissed as religious. His argument: rights are not God-given or voted on — they are derivable from what human beings actually are. Humans survive through the use of reason and physical action. Freedom to act without aggression is not a social preference — it is a precondition of human existence itself. Rights follow from nature in the sense that they follow from the nature of the beings who must have them to live as what they are.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[89, 115, 81, 81] mean=91.5 ratio=1.42 max_dev=25.68%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=502 cap=600",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 418,
+    "tier": 3,
+    "question": "John Stuart Mill distinguished between 'higher' and 'lower' pleasures in his version of utilitarianism. What did he argue about intellectual versus physical pleasures?",
+    "answer": "Higher pleasures are qualitatively superior, not just quantitatively greater, than lower physical ones",
+    "choices": [
+      "Physical pleasures are more immediate and thus carry greater moral weight when calculating overall well-being",
+      "Higher pleasures are qualitatively superior, not just quantitatively greater, than lower physical ones",
+      "All pleasures are equal in kind and can only be distinguished by their duration and intensity",
+      "Pleasures tied to social harmony outrank those pursued for purely individual satisfaction"
+    ],
+    "context": "Mill argued that anyone who has experienced both will always prefer intellectual to physical pleasures. 'It is better to be Socrates dissatisfied than a fool satisfied.' This qualitative distinction rescued utilitarianism from the charge that it was a 'philosophy for swine.'",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": true,
+      "A2_detail": "lens=[109, 102, 93, 89] mean=98.2 ratio=1.22 max_dev=10.94%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=560 cap=600",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 606,
+    "tier": 3,
+    "question": "Confucius spent most of his career failing. He advised rulers who ignored him, lost his government positions, wandered in exile for 13 years, and died thinking his work had come to nothing. What did he believe made this not a wasted life?",
+    "answer": "The process of moral cultivation — becoming a junzi, a person of genuine virtue — is valuable in itself and not negated by whether rulers or society ever respond to it",
+    "choices": [
+      "His students carried his teaching forward, so the outcome he hoped for eventually arrived even if he could not see it in his lifetime",
+      "The process of moral cultivation — becoming a junzi, a person of genuine virtue — is valuable in itself and not negated by whether rulers or society ever respond to it",
+      "Failure in office revealed which rulers were unjust, which was itself philosophically useful information for understanding political reality",
+      "His historical reputation ensured that his ideas would outlast every ruler who rejected him, making failure temporary and philosophical influence permanent"
+    ],
+    "context": "The Analects record Confucius's consistent equanimity in the face of political failure: 'The superior man is catholic and no partisan. The mean man is partisan and not catholic.' He was not indifferent to outcomes — he genuinely wanted to reform governance. But he refused to corrupt his teaching for the sake of employment or influence. When Duke Jing of Qi asked about governance, Confucius said: 'Let the ruler be ruler, the minister minister, the father father, and the son son' — meaning: let everyone fulfill their proper role honestly. The Duke found this impractical. Confucius found a ruler who wanted useful flattery rather than genuine counsel less interesting than the question itself.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": true,
+      "A2_detail": "lens=[133, 167, 140, 155] mean=148.8 ratio=1.26 max_dev=12.27%",
+      "A3_cost_ok": false,
+      "A3_detail": "total=833 cap=600",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 390,
+    "tier": 3,
+    "question": "Mill defended freedom of speech even for false and harmful opinions. What was his primary justification?",
+    "answer": "False views, when challenged, sharpen our understanding of why true views are correct",
+    "choices": [
+      "Suppressing speech causes more social harm than tolerating false ideas",
+      "False views, when challenged, sharpen our understanding of why true views are correct",
+      "The state cannot reliably determine which views are false or true",
+      "Free expression is intrinsically valuable regardless of its consequences"
+    ],
+    "context": "Mill argued that silencing an opinion robs us of the chance to replace error with truth -- and even if the silenced opinion is wrong, challenging it keeps our understanding of truth alive and vigorous. Unchallenged truths become 'dead dogmas.'",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[70, 85, 65, 72] mean=73.0 ratio=1.31 max_dev=16.44%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=396 cap=600",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 365,
+    "tier": 3,
+    "question": "What is 'the Gettier problem'?",
+    "answer": "A counterexample showing that justified true belief is not sufficient for knowledge",
+    "choices": [
+      "The argument that justification alone, even without truth, is sufficient to constitute knowledge",
+      "A counterexample showing that justified true belief is not sufficient for knowledge",
+      "The puzzle of how we can simultaneously hold beliefs that are both false and deeply felt",
+      "A challenge to reliabilist theories by showing that even reliable processes can produce false beliefs"
+    ],
+    "context": "Gettier showed that justified true belief is not sufficient for knowledge. You might believe your colleague is in the office (justified by seeing their car), and they are (true), but the car belongs to someone else and your colleague came by bus. Your belief is justified and true -- but it is not knowledge.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": true,
+      "A2_detail": "lens=[96, 83, 88, 101] mean=92.0 ratio=1.22 max_dev=9.78%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=398 cap=600",
+      "A4_rote_ok_patched": false,
+      "A4_patched_matches": [
+        "what_is_quoted"
+      ],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 325,
+    "tier": 3,
+    "question": "What is 'anti-realism'?",
+    "answer": "The view that reality is dependent on our minds or conceptual schemes",
+    "choices": [
+      "The rejection of abstract entities like numbers and universals as genuinely real",
+      "The view that reality is dependent on our minds or conceptual schemes",
+      "The denial that moral facts exist independently of cultural agreement or practice",
+      "The position that scientific theories are useful instruments rather than literal truths"
+    ],
+    "context": "Anti-realism argues that the world as we experience it is shaped by our minds, language, or conceptual frameworks rather than simply mirroring an independent reality. It does not necessarily deny that something exists beyond our minds — just that we cannot access or describe it independently of our conceptual schemes.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": true,
+      "A2_detail": "lens=[80, 69, 81, 87] mean=79.2 ratio=1.26 max_dev=12.93%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=340 cap=600",
+      "A4_rote_ok_patched": false,
+      "A4_patched_matches": [
+        "what_is_quoted"
+      ],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 399,
+    "tier": 3,
+    "question": "Frederic Bastiat described 'legal plunder' as a perversion of the law. What does he mean by this term?",
+    "answer": "When the law is used to take from some and give to others rather than to protect everyone's rights equally",
+    "choices": [
+      "The exploitation of legal loopholes by wealthy interests to shield accumulated property from taxation",
+      "When the law is used to take from some and give to others rather than to protect everyone's rights equally",
+      "The gradual expansion of state authority through incremental legal reforms passed by self-interested legislators",
+      "Government-granted monopolies that allow favored industries to extract wealth from ordinary consumers"
+    ],
+    "context": "Bastiat argued that when the law takes from some to give to others, it has been perverted from its proper purpose. The law exists to protect rights, not to redistribute wealth. When it does the latter, it becomes 'legalized plunder' -- and everyone scrambles to plunder legally.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": true,
+      "A2_detail": "lens=[101, 106, 112, 101] mean=105.0 ratio=1.11 max_dev=6.67%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=522 cap=600",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": false,
+      "A4_old_matches": [
+        "what_x_mean"
+      ]
+    }
+  },
+  {
+    "idx": 81,
+    "tier": 3,
+    "question": "Hegel argued that ideas, cultures, and consciousness itself develop through a specific three-stage pattern. What are the three stages, and what drives the process forward?",
+    "answer": "A thesis generates its contradiction (antithesis); their conflict produces a synthesis that preserves and transcends both — which then becomes the next thesis",
+    "choices": [
+      "Observation generates a hypothesis (thesis); experiment tests it (antithesis); confirmation or revision produces new knowledge (synthesis)",
+      "A thesis generates its contradiction (antithesis); their conflict produces a synthesis that preserves and transcends both — which then becomes the next thesis",
+      "A tradition becomes dominant (thesis); critics attack it (antithesis); compromise between old and new emerges (synthesis)",
+      "An idea is proposed (thesis); reality resists it (antithesis); practical adjustment produces a workable middle ground (synthesis)"
+    ],
+    "context": "The thesis-antithesis-synthesis formula is popularly attributed to Hegel but rarely appeared in his writing — it was Fichte's formula. Hegel's actual term for the process was Aufhebung (sublation): when two opposites conflict, the result does not split the difference — it elevates to a level where the contradiction is resolved without simply canceling either side. Freedom and necessity: at a higher level they are one (you are most free when you act in accordance with rational necessity). Hegel applied this to history itself: Spirit (Geist) progressively comes to know itself through the conflicts of history.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[138, 158, 121, 129] mean=136.5 ratio=1.31 max_dev=15.75%",
+      "A3_cost_ok": false,
+      "A3_detail": "total=717 cap=600",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 320,
+    "tier": 3,
+    "question": "What is 'Zeno's paradox of motion'?",
+    "answer": "Before reaching a goal, you must always cross half the remaining distance first, making completion impossible",
+    "choices": [
+      "Before reaching a goal, you must always cross half the remaining distance first, making completion impossible",
+      "Two objects moving toward each other must each halve their gap infinitely, so contact is never made",
+      "An arrow in flight is actually motionless at each indivisible instant, so movement is an illusion",
+      "Motion through space requires infinite time because every interval contains infinitely many points to traverse"
+    ],
+    "context": "Zeno showed that to walk across a room, you must first cross half the distance, then half the remaining distance, then half again -- infinitely. Since you can never complete an infinite number of steps, motion should be impossible. Calculus eventually resolved the mathematical puzzle by showing infinite series can converge to a finite sum.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": true,
+      "A2_detail": "lens=[109, 99, 97, 110] mean=103.8 ratio=1.13 max_dev=6.51%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=450 cap=600",
+      "A4_rote_ok_patched": false,
+      "A4_patched_matches": [
+        "what_is_quoted"
+      ],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 607,
+    "tier": 3,
+    "question": "Confucius said: 'When you know a thing, hold that you know it; and when you do not know a thing, allow that you do not know it — this is knowledge.' What philosophical virtue is he describing, and why did he think most people lacked it?",
+    "answer": "Intellectual honesty — the ability to hold the boundaries of your knowledge clearly, neither overclaiming understanding you lack nor underclaiming genuine knowledge",
+    "choices": [
+      "Humility — recognizing that all human knowledge is limited compared to the wisdom of heaven and the accumulated wisdom of tradition",
+      "Intellectual honesty — the ability to hold the boundaries of your knowledge clearly, neither overclaiming understanding you lack nor underclaiming genuine knowledge",
+      "Precision — the Confucian virtue of using exactly the right words for exactly the right things, which requires knowing exactly what you know",
+      "Sincerity — the alignment of inner belief with outer expression, which the Confucian tradition considered the foundation of all genuine virtue"
+    ],
+    "context": "This passage from the Analects (II.17) is Confucius's clearest epistemological statement. The failure he diagnoses is not ignorance but false confidence: people who speak as though they know what they don't, and people who refuse to commit to what they do genuinely know (from false modesty or fear of being wrong). The Socratic parallel is striking — Socrates too held that most people's errors come from not knowing the extent of their ignorance. Confucius's application was immediately practical: a minister who pretends to know the answer rather than admitting uncertainty will give wrong advice. The rectification of names begins here: calling knowledge knowledge and ignorance ignorance.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": true,
+      "A2_detail": "lens=[131, 164, 140, 142] mean=144.2 ratio=1.25 max_dev=13.69%",
+      "A3_cost_ok": false,
+      "A3_detail": "total=813 cap=600",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 128,
+    "tier": 3,
+    "question": "What is 'communitarianism'?",
+    "answer": "The view that community shapes individual identity and values",
+    "choices": [
+      "The political theory advocating for collective ownership of productive property",
+      "The view that community shapes individual identity and values",
+      "The principle that social norms should be determined by democratic majorities",
+      "A critique of liberal institutions grounded in Marxist class analysis"
+    ],
+    "context": "Communitarians like Alasdair MacIntyre and Charles Taylor argue that liberalism's emphasis on the isolated individual ignores how communities shape identity and values. We are not blank slates choosing our values from scratch -- we inherit traditions, languages, and ways of life.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": true,
+      "A2_detail": "lens=[79, 61, 77, 69] mean=71.5 ratio=1.30 max_dev=14.69%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=313 cap=600",
+      "A4_rote_ok_patched": false,
+      "A4_patched_matches": [
+        "what_is_quoted"
+      ],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 350,
+    "tier": 3,
+    "question": "What is 'positivism' in the philosophy of science?",
+    "answer": "Only empirically verifiable statements are scientifically meaningful",
+    "choices": [
+      "Scientific theories are social constructions shaped by historical power and cultural context",
+      "Only empirically verifiable statements are scientifically meaningful",
+      "All genuine knowledge must ultimately be reducible to mathematical or logical relationships",
+      "Science advances through the falsification of hypotheses rather than their verification"
+    ],
+    "context": "Logical positivists like the Vienna Circle argued that only statements verifiable through observation or logic are meaningful. Metaphysical, ethical, and religious statements that cannot be empirically tested are literally nonsense. This radical view shaped 20th-century philosophy of science, and was later challenged by Popper's falsificationism and Kuhn's historicism.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[92, 68, 91, 87] mean=84.5 ratio=1.35 max_dev=19.53%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=388 cap=600",
+      "A4_rote_ok_patched": false,
+      "A4_patched_matches": [
+        "what_is_quoted"
+      ],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 99,
+    "tier": 3,
+    "question": "What does 'teleology' mean?",
+    "answer": "Explanation by purpose or end goals toward which things aim",
+    "choices": [
+      "Explanation by prior material causes and physical forces acting on objects",
+      "Explanation by purpose or end goals toward which things aim",
+      "The logical analysis of necessary and sufficient conditions for concepts",
+      "The study of how language and symbols map onto states of the world"
+    ],
+    "context": "Teleology explains things by their purpose or end goal. Aristotle was teleological: he asked 'What is it for?' about everything from acorns (to become oaks) to humans (to achieve eudaimonia). Modern science mostly rejects teleological explanation in nature, but it remains central in ethics and philosophy of action.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": true,
+      "A2_detail": "lens=[74, 59, 72, 66] mean=67.8 ratio=1.25 max_dev=12.92%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=298 cap=600",
+      "A4_rote_ok_patched": false,
+      "A4_patched_matches": [
+        "what_is_quoted"
+      ],
+      "A4_rote_ok_old": false,
+      "A4_old_matches": [
+        "what_x_mean"
+      ]
+    }
+  },
+  {
+    "idx": 136,
+    "tier": 3,
+    "question": "What is the 'coherence theory of truth'?",
+    "answer": "Truth is what coheres with a system of beliefs",
+    "choices": [
+      "Truth is whatever can be expressed in clear, unambiguous logical terms",
+      "Truth is what coheres with a system of beliefs",
+      "Truth is what corresponds to observable facts in the external world",
+      "Truth is determined by its practical value and real-world consequences"
+    ],
+    "context": "The coherence theory holds that a belief is true if it fits consistently with all our other beliefs. Truth is not about matching an external reality but about internal consistency within a system of beliefs. It appeals to those who doubt we can directly access reality.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[70, 46, 67, 70] mean=63.2 ratio=1.52 max_dev=27.27%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=293 cap=600",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 203,
+    "tier": 4,
+    "question": "What is 'mereology' in philosophy?",
+    "answer": "The study of parts and wholes and the relations between them",
+    "choices": [
+      "The branch of metaphysics concerned with modal possibility, necessity, and possible worlds",
+      "The study of parts and wholes and the relations between them",
+      "The formal analysis of vagueness, indeterminacy, and borderline predication",
+      "The investigation of abstract objects such as numbers and their ontological status"
+    ],
+    "context": "Mereology studies the relationship between parts and wholes. When do parts compose a whole? Is a heap of sand one thing or many? Does the universe have parts, or is it one undivided whole? These questions connect to deep issues about identity and existence.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[90, 60, 75, 82] mean=76.8 ratio=1.50 max_dev=21.82%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=341 cap=800",
+      "A4_rote_ok_patched": false,
+      "A4_patched_matches": [
+        "what_is_quoted"
+      ],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 524,
+    "tier": 4,
+    "question": "Rand argued that her ethics solves the is-ought gap that Hume identified. What was her proposed solution?",
+    "answer": "The gap only exists unconditionally — given the conditional 'if you choose to live,' the requirements of your life become binding on you as factual necessities, not arbitrary preferences",
+    "choices": [
+      "Moral facts are synthetic a priori — derived through pure reason without relying on empirical observation",
+      "The gap only exists unconditionally — given the conditional 'if you choose to live,' the requirements of your life become binding on you as factual necessities, not arbitrary preferences",
+      "Human nature provides a natural foundation that converts factual claims about biology into moral obligations",
+      "Emotions are natural facts about humans, so emotional preferences generate natural obligations"
+    ],
+    "context": "Hume showed you cannot derive 'ought' from 'is' without a gap. Rand agreed — but argued ethics is conditional, not categorical. 'You ought to eat' follows from 'you have chosen to live' and 'you need food to live.' The choice to live is not itself a moral obligation — it is a precondition for ethics. Once you grant that you are alive and choose to remain so, the requirements of your survival and flourishing become binding. Rand's deeper point: life is the only standard that can ground value without circularity.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[105, 186, 108, 94] mean=123.2 ratio=1.98 max_dev=50.91%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=598 cap=800",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 125,
+    "tier": 4,
+    "question": "Isaiah Berlin warned that 'positive liberty' — freedom to achieve your true potential — had been used to justify some of history's worst tyrannies. How is this possible?",
+    "answer": "If the state decides what your 'true self' requires, it can coerce you in the name of your own freedom — force becomes liberation when the coercer knows better than you what you really want",
+    "choices": [
+      "Positive freedom requires redistribution of resources, which necessarily restricts the negative freedom of those taxed",
+      "If the state decides what your 'true self' requires, it can coerce you in the name of your own freedom — force becomes liberation when the coercer knows better than you what you really want",
+      "Positive freedom leads people to demand more from the state over time, gradually expanding government power without limit",
+      "The pursuit of positive freedom produces resentment between those who achieve it and those who do not, generating conflict"
+    ],
+    "context": "Berlin's essay Two Concepts of Liberty (1958) was written at the height of the Cold War. Negative liberty: freedom FROM interference — the space where no one can coerce you. Positive liberty: freedom TO realize your rational or true self. The danger Berlin identified: Rousseau said freedom means following the 'general will'; Marxists said the proletariat must be liberated from false consciousness; fascists said the nation must realize its historic destiny. All three used positive liberty to justify coercion. Berlin was not against positive freedom, but he thought its dangerous potential made negative liberty — the messy, inelegant right to be left alone — the safer foundation.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[118, 189, 121, 122] mean=137.5 ratio=1.60 max_dev=37.45%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=719 cap=800",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 339,
+    "tier": 4,
+    "question": "What are 'thick ethical concepts' in philosophy?",
+    "answer": "Terms that combine descriptive and evaluative meaning simultaneously, such as 'cruel' or 'brave'",
+    "choices": [
+      "Moral principles that apply universally across all cultures and historical contexts",
+      "Terms that combine descriptive and evaluative meaning simultaneously, such as 'cruel' or 'brave'",
+      "Ethical frameworks that require extensive philosophical justification before they can be applied",
+      "Value judgments so culturally embedded that they resist any cross-cultural moral translation"
+    ],
+    "context": "Concepts like 'cruel,' 'brave,' and 'generous' are 'thick' because they combine factual description with moral evaluation simultaneously. Calling someone 'cruel' describes their behavior AND condemns it. Thin concepts like 'good' or 'wrong' carry only evaluative content. This distinction, associated with philosophers like Bernard Williams, challenges the sharp fact-value separation assumed in much modern moral philosophy.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": true,
+      "A2_detail": "lens=[83, 96, 96, 92] mean=91.8 ratio=1.16 max_dev=9.54%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=415 cap=800",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 407,
+    "tier": 4,
+    "question": "Hannah Arendt argued in 'The Origins of Totalitarianism' that both Nazism and Stalinism shared a defining feature. What was it?",
+    "answer": "Both used ideology and terror to destroy the capacity for independent thought and spontaneous human action",
+    "choices": [
+      "Both arose from the collapse of class-based political parties and the resulting power vacuum of mass unemployment",
+      "Both used ideology and terror to destroy the capacity for independent thought and spontaneous human action",
+      "Both developed from imperial expansionism and colonial violence that predated World War I by several decades",
+      "Both depended on the personal charisma of a single leader to sustain mass loyalty and ideological cohesion"
+    ],
+    "context": "Arendt identified a distinctly modern form of evil: totalitarian regimes use ideology and terror to destroy people's capacity for independent thought and spontaneous action. They do not merely coerce behavior — they aim to remake human nature itself.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": true,
+      "A2_detail": "lens=[113, 106, 108, 106] mean=108.2 ratio=1.07 max_dev=4.39%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=560 cap=800",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 439,
+    "tier": 4,
+    "question": "Alexis de Tocqueville warned of 'soft despotism' in democratic societies. What did he mean?",
+    "answer": "A tutelary government that provides for every need, keeping citizens dependent and passive while hollowing out their liberty",
+    "choices": [
+      "The gradual erosion of civil liberties as democratic majorities repeatedly vote away the rights of minorities",
+      "A tutelary government that provides for every need, keeping citizens dependent and passive while hollowing out their liberty",
+      "The way commercial prosperity makes citizens too comfortable and distracted to resist incremental authoritarian encroachments",
+      "Majority tyranny expressed through social conformity and ostracism rather than formal legal coercion"
+    ],
+    "context": "Tocqueville foresaw a paternalistic government that 'covers the surface of society with a network of small, complicated rules.' It does not tyrannize openly — it simply 'hinders, restrains, enervates, stifles, and stupefies' until the people are reduced to a flock of timid, dependent animals. The danger is not violent oppression but a slow infantilization of citizens who trade their liberty for comfort and security.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": true,
+      "A2_detail": "lens=[109, 124, 125, 100] mean=114.5 ratio=1.25 max_dev=12.66%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=549 cap=800",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 198,
+    "tier": 4,
+    "question": "What is 'effective altruism' in contemporary ethics?",
+    "answer": "Using evidence and reason to maximize the good done by charitable giving",
+    "choices": [
+      "Prioritizing impartial concern for all sentient beings equally, including animals, over partiality to loved ones",
+      "Using evidence and reason to maximize the good done by charitable giving",
+      "The view that genuine moral obligations scale proportionally with one's personal capacity and resources to help",
+      "The philosophical thesis that all truly altruistic acts, properly understood, produce measurable net positive outcomes"
+    ],
+    "context": "Effective altruism applies rigorous evidence and reasoning to maximize the good achieved through charitable giving and career choices. Rather than donating to whatever cause is emotionally compelling, practitioners calculate where each dollar saves the most lives or prevents the most suffering. Associated with philosophers Peter Singer and William MacAskill, it is broadly utilitarian in spirit.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[112, 72, 111, 118] mean=103.2 ratio=1.64 max_dev=30.27%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=465 cap=800",
+      "A4_rote_ok_patched": false,
+      "A4_patched_matches": [
+        "what_is_quoted"
+      ],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 374,
+    "tier": 4,
+    "question": "What is Hegel's 'Aufhebung' (sublation)?",
+    "answer": "A process where opposites are simultaneously cancelled, preserved, and lifted to a higher level",
+    "choices": [
+      "The dialectical rejection of a thesis in favor of its antithesis, discarding the original position entirely",
+      "A process where opposites are simultaneously cancelled, preserved, and lifted to a higher level",
+      "The reconciliation of contradictory moral duties through the exercise of practical reasoning",
+      "A stage in historical progress where one dominant ideology fully absorbs and replaces its predecessor"
+    ],
+    "context": "Aufhebung is considered untranslatable because it means three things at once: to cancel, to preserve, and to lift up. When a thesis and antithesis produce a synthesis, the original ideas are cancelled as standalone positions, preserved as elements within the synthesis, and elevated to a higher level of understanding.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": true,
+      "A2_detail": "lens=[107, 95, 92, 101] mean=98.8 ratio=1.16 max_dev=8.35%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=435 cap=800",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 420,
+    "tier": 4,
+    "question": "The 'is-ought gap' (Hume) and the naturalistic fallacy (G.E. Moore) both concern deriving values from facts. Why does this matter for collectivist political arguments?",
+    "answer": "Collectivist claims that group welfare 'naturally' justifies overriding individual rights illicitly derive an ought from an is",
+    "choices": [
+      "Collective welfare is an empirical fact, so it automatically generates binding moral obligations for all individuals",
+      "Collectivist claims that group welfare 'naturally' justifies overriding individual rights illicitly derive an ought from an is",
+      "The is-ought gap demonstrates that moral reasoning is fundamentally impossible within any political framework",
+      "Hume showed that collectivist social contracts are logically self-contradictory and therefore invalid"
+    ],
+    "context": "When someone argues that society 'naturally' functions as a collective and therefore individuals should sacrifice for the group, they are committing the naturalistic fallacy. Even if collectivism were 'natural,' that would not make it morally right. You cannot derive 'ought' from 'is.' This applies equally to any political argument that treats a descriptive fact about human nature or social organization as automatically generating a moral conclusion.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": true,
+      "A2_detail": "lens=[116, 126, 109, 101] mean=113.0 ratio=1.25 max_dev=11.50%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=619 cap=800",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 335,
+    "tier": 4,
+    "question": "What is 'transcendental idealism' according to Kant?",
+    "answer": "Space and time are forms of our intuition, not properties of things-in-themselves",
+    "choices": [
+      "Space and time are forms of our intuition, not properties of things-in-themselves",
+      "The external world exists only as a projection of the transcendent and infinite mind of God",
+      "Material reality is a constructed illusion that conceals a deeper underlying spiritual order",
+      "All genuine knowledge is derived from pure reason entirely independent of sensory experience"
+    ],
+    "context": "Kant argued that space, time, and causality are not features of the world 'in itself' but forms that our minds impose on experience. We can never know things as they really are (noumena) -- only as they appear to us through these mental structures (phenomena).",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": true,
+      "A2_detail": "lens=[81, 91, 92, 92] mean=89.0 ratio=1.14 max_dev=8.99%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=408 cap=800",
+      "A4_rote_ok_patched": false,
+      "A4_patched_matches": [
+        "what_is_quoted"
+      ],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 216,
+    "tier": 4,
+    "question": "What is 'agent-relative reasons' in moral philosophy?",
+    "answer": "Reasons that essentially refer to the agent for whom they are reasons",
+    "choices": [
+      "Reasons whose normative force is derived from universal rational principles applying to all agents",
+      "Reasons that essentially refer to the agent for whom they are reasons",
+      "Reasons grounded in an impartial concern for the equal welfare of all persons",
+      "Reasons whose content essentially indexes the particular relationships and projects of the bearer"
+    ],
+    "context": "An agent-relative reason is one that essentially refers to the person who has it. Your reason to care for YOUR children is agent-relative — it applies to you because they are YOUR children. Contrasted with agent-neutral reasons, which apply equally to everyone, agent-relative reasons ground the view that not all moral reasons are universal; some are tied to particular relationships and commitments.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[98, 69, 77, 97] mean=85.2 ratio=1.42 max_dev=19.06%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=394 cap=800",
+      "A4_rote_ok_patched": false,
+      "A4_patched_matches": [
+        "what_is_quoted"
+      ],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 200,
+    "tier": 4,
+    "question": "What is 'testimonial injustice' as described by Miranda Fricker?",
+    "answer": "Giving a speaker less credibility than deserved due to identity prejudice",
+    "choices": [
+      "Dismissing knowledge claims because the speaker belongs to a marginalized cultural group",
+      "Giving a speaker less credibility than deserved due to identity prejudice",
+      "Failing to share relevant testimony with those in epistemic need",
+      "Excluding certain witnesses from participation in epistemic communities"
+    ],
+    "context": "Testimonial injustice occurs when a speaker receives less credibility than they deserve due to prejudice — when a woman's testimony is doubted because she is a woman, or a poor person's claim is dismissed because of their class. It is a wrong done to someone in their capacity as a knower.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[88, 73, 64, 71] mean=74.0 ratio=1.38 max_dev=18.92%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=360 cap=800",
+      "A4_rote_ok_patched": false,
+      "A4_patched_matches": [
+        "what_is_quoted"
+      ],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 448,
+    "tier": 4,
+    "question": "G.E. Moore's 'open question argument' demonstrated that 'good' cannot be defined in terms of any natural property. How does the argument work?",
+    "answer": "For any proposed definition of 'good,' it is always meaningful to ask 'But is that really good?' — proving the definition is incomplete",
+    "choices": [
+      "Good cannot be a natural property because natural properties are empirical and good is logical",
+      "For any proposed definition of 'good,' it is always meaningful to ask 'But is that really good?' — proving the definition is incomplete",
+      "Defining good requires specifying whose good we mean, making it irreducibly perspective-dependent",
+      "Any natural property that qualifies as good would require a separate argument showing why it has moral authority"
+    ],
+    "context": "If 'good' just meant 'pleasant,' then 'Is pleasure good?' would be as trivially true as 'Is pleasure pleasant?' But 'Is pleasure good?' is a genuine, substantive question that thoughtful people still debate. This openness proves 'good' and 'pleasant' are not the same concept. Moore showed the same trick defeats every natural definition, leaving 'good' as a simple, indefinable property.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[94, 135, 97, 112] mean=109.5 ratio=1.44 max_dev=23.29%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=580 cap=800",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 225,
+    "tier": 4,
+    "question": "What is 'situated knowledge' in feminist philosophy?",
+    "answer": "Knowledge is always produced from a particular social and historical position",
+    "choices": [
+      "Knowledge is always produced from a particular social and historical position",
+      "Propositional knowledge that can only be verified within its local context",
+      "Tacit knowledge embedded in specific cultural or embodied practices",
+      "The view that scientific knowledge must be grounded in observable situations"
+    ],
+    "context": "Donna Haraway argued that all knowledge is produced from a particular standpoint — there is no 'view from nowhere.' Rather than being a limitation, acknowledging our situated perspective makes knowledge more honest and accountable than pretending to universal objectivity.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": true,
+      "A2_detail": "lens=[77, 74, 67, 76] mean=73.5 ratio=1.15 max_dev=8.84%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=346 cap=800",
+      "A4_rote_ok_patched": false,
+      "A4_patched_matches": [
+        "what_is_quoted"
+      ],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 379,
+    "tier": 4,
+    "question": "What is 'thick description' in philosophy of social science (Geertz)?",
+    "answer": "Interpreting behavior by providing context, meaning, and cultural significance",
+    "choices": [
+      "Recording exhaustive empirical observations of a subject's behavior over an extended time period",
+      "Interpreting behavior by providing context, meaning, and cultural significance",
+      "Cataloguing observable facts about behavior without imposing any interpretive framework",
+      "Using statistical aggregation to identify behavioral patterns across large social populations"
+    ],
+    "context": "Clifford Geertz distinguished 'thin description' (recording what happened: 'he winked') from 'thick description' (interpreting what it meant in context: 'he was signaling conspiracy'). Understanding human behavior requires grasping the web of cultural meanings behind actions.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": true,
+      "A2_detail": "lens=[96, 78, 87, 93] mean=88.5 ratio=1.23 max_dev=11.86%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=423 cap=800",
+      "A4_rote_ok_patched": false,
+      "A4_patched_matches": [
+        "what_is_quoted"
+      ],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 144,
+    "tier": 4,
+    "question": "What is 'moral psychology'?",
+    "answer": "The study of how psychological factors like emotion and intuition influence moral judgment",
+    "choices": [
+      "The study of how psychological factors like emotion and intuition influence moral judgment",
+      "A branch of ethics concerned with the moral obligations and limits of therapists",
+      "The philosophical investigation of weakness of will, self-deception, and moral failure",
+      "An approach examining how cultural norms and socialization shape individual conscience"
+    ],
+    "context": "Moral psychology investigates the psychological mechanisms behind moral judgment. Why do we feel guilt? How do emotions influence ethical decisions? Recent research shows that moral intuitions often come first, and rational justifications follow — we feel first, then reason.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": true,
+      "A2_detail": "lens=[90, 80, 86, 86] mean=85.5 ratio=1.12 max_dev=6.43%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=369 cap=800",
+      "A4_rote_ok_patched": false,
+      "A4_patched_matches": [
+        "what_is_quoted"
+      ],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 402,
+    "tier": 4,
+    "question": "Nozick used the 'Wilt Chamberlain argument' to challenge Rawls's egalitarianism. What does this argument show?",
+    "answer": "Any pattern of distribution will be upset by free exchanges, so maintaining equality requires constant coercive interference",
+    "choices": [
+      "Exceptional talent naturally justifies unequal rewards in any just economic system",
+      "Any pattern of distribution will be upset by free exchanges, so maintaining equality requires constant coercive interference",
+      "Talented individuals generate social surplus that eventually benefits everyone through trickle-down distribution",
+      "Free markets tend to produce broadly equal outcomes without any deliberate state intervention"
+    ],
+    "context": "Imagine a perfectly equal distribution. If thousands of people freely choose to pay 25 cents to watch Wilt Chamberlain play, he ends up much richer. To restore equality, the state must continually override those free choices. Nozick's point: equality and liberty are in fundamental tension.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[82, 124, 112, 93] mean=102.8 ratio=1.51 max_dev=20.68%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=521 cap=800",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 376,
+    "tier": 4,
+    "question": "What is 'the explanatory gap'?",
+    "answer": "The difficulty in explaining why physical brain processes feel like something from the inside",
+    "choices": [
+      "The unbridgeable divide between first-person phenomenology and third-person scientific methods",
+      "The difficulty in explaining why physical brain processes feel like something from the inside",
+      "The failure of introspection to reliably report on underlying mental states",
+      "The disconnect between folk psychological concepts and neuroscientific vocabulary"
+    ],
+    "context": "Even if neuroscience perfectly maps which brain states correspond to which experiences, we still would not know WHY those physical processes feel like something from the inside. The gap between objective brain science and subjective experience is the explanatory gap, a concept central to the hard problem of consciousness.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": true,
+      "A2_detail": "lens=[94, 93, 75, 81] mean=85.8 ratio=1.25 max_dev=12.54%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=373 cap=800",
+      "A4_rote_ok_patched": false,
+      "A4_patched_matches": [
+        "what_is_quoted"
+      ],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 221,
+    "tier": 4,
+    "question": "Kuhn argued that science does not progress by gradually adding confirmed facts to a growing store of knowledge. What actually happens instead, according to him?",
+    "answer": "Normal science works within a paradigm until anomalies accumulate that it cannot explain; then a revolution replaces the entire framework, changing what counts as valid questions and answers",
+    "choices": [
+      "Scientific progress follows a predictable sequence of hypothesis, experiment, confirmation, and refinement of previous findings",
+      "Normal science works within a paradigm until anomalies accumulate that it cannot explain; then a revolution replaces the entire framework, changing what counts as valid questions and answers",
+      "Scientific progress is driven by competition between rival research programs, with better-funded programs accumulating more confirmations over time",
+      "Scientists advance by bold conjectures followed by attempted falsifications, with surviving theories counting as corroborated though never proven"
+    ],
+    "context": "The Structure of Scientific Revolutions (1962) introduced 'paradigm' into the cultural vocabulary. Kuhn's key claim: before and after a paradigm shift, scientists are not working on the same problems with better tools — they are doing incommensurable things. Newtonian physicists and relativistic physicists do not just disagree about answers; they disagree about what questions are worth asking. Kuhn documented this through detailed history of science: the Copernican revolution, the chemical revolution (Lavoisier), the quantum revolution. His claim that paradigms are incommensurable became highly controversial — critics worried it implied scientific progress was irrational. Kuhn spent decades clarifying that it did not.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[127, 190, 147, 145] mean=152.2 ratio=1.50 max_dev=24.79%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=769 cap=800",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 177,
+    "tier": 4,
+    "question": "What is a 'metanarrative' in postmodern philosophy?",
+    "answer": "A grand overarching story claiming to explain all of history or knowledge",
+    "choices": [
+      "A self-referential narrative that reflects on its own conditions of possibility",
+      "A grand overarching story claiming to explain all of history or knowledge",
+      "A foundational cultural myth that legitimizes a society's dominant values",
+      "A philosophical system that structures inquiry into the nature of reality"
+    ],
+    "context": "Metanarratives are the big stories cultures tell to make sense of history — 'History is progress,' 'God guides human affairs,' 'The proletariat will triumph.' Postmodernists argue these stories are not neutral descriptions but power structures that marginalize alternative voices.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": true,
+      "A2_detail": "lens=[79, 73, 73, 73] mean=74.5 ratio=1.08 max_dev=6.04%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=349 cap=800",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 182,
+    "tier": 5,
+    "question": "What is 'speculative realism'?",
+    "answer": "A movement rejecting the focus on human-world relations in favor of mind-independent reality",
+    "choices": [
+      "A movement rejecting the focus on human-world relations in favor of mind-independent reality",
+      "The Kantian thesis that philosophy can legitimately speculate beyond the limits of possible experience",
+      "A realist theory holding that scientific models accurately represent the structure of unobservable entities",
+      "The view that metaphysical claims can be grounded in a priori rational intuition about necessary truths"
+    ],
+    "context": "Speculative realism rejects the post-Kantian assumption that philosophy can only study the human-world relationship. It insists that reality exists independently of human thought and that philosophy can and should speculate about the nature of things-in-themselves.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": true,
+      "A2_detail": "lens=[92, 102, 107, 103] mean=101.0 ratio=1.16 max_dev=8.91%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=434 cap=800",
+      "A4_rote_ok_patched": false,
+      "A4_patched_matches": [
+        "what_is_quoted"
+      ],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 587,
+    "tier": 5,
+    "question": "Locke's theory of property rests on labor-mixing, but Nozick noticed a strange implication. If you pour a can of tomato juice into the ocean, do you thereby own the ocean? What was Nozick's point, and how does it threaten Locke's entire theory?",
+    "answer": "The labor-mixing metaphor does not work as stated — you might lose your labor to the ocean rather than gain the ocean; the theory needs a different account of why and how much labor transforms into property",
+    "choices": [
+      "Nozick's point shows Locke's theory requires a sufficiency proviso to function — without it the theory generates obviously absurd results",
+      "The labor-mixing metaphor does not work as stated — you might lose your labor to the ocean rather than gain the ocean; the theory needs a different account of why and how much labor transforms into property",
+      "The ocean example shows that natural resources require collective ownership, undermining Locke's individualist theory of original acquisition",
+      "Nozick intended the ocean example as a reductio of all property theory, concluding that property rights have no principled foundation in labor"
+    ],
+    "context": "Nozick raises this in Anarchy, State, and Utopia. The tomato-juice problem exposes that 'mixing your labor with something' is a metaphor, not a principle — it does not tell you what counts as mixing or what you thereby gain. Nozick's own solution was weaker: he retained Locke's labor-acquisition idea but made it subject only to a mild proviso (no one is made worse off by your acquisition). Rothbard tried harder: the principle is not labor-mixing but transformation — you acquire what you first bring into use as a productive resource. But this too generates puzzles: how much transformation? What if you clear one acre of a thousand-acre wilderness? Property theory, it turns out, rests on intuitions that are harder to systematize than Locke made it appear.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[137, 206, 141, 142] mean=156.5 ratio=1.50 max_dev=31.63%",
+      "A3_cost_ok": false,
+      "A3_detail": "total=870 cap=800",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 539,
+    "tier": 5,
+    "question": "Rothbard's theory of punishment in a libertarian legal order derives maximum punishment from rights theory rather than deterrence. What is the governing principle?",
+    "answer": "The aggressor forfeits rights to the extent they violated others' rights — punishment cannot exceed this, because adding more suffering would itself be aggression against the criminal",
+    "choices": [
+      "Punishment should deter future aggression, calibrated by empirical study of what levels actually change behavior",
+      "The aggressor forfeits rights to the extent they violated others' rights — punishment cannot exceed this, because adding more suffering would itself be aggression against the criminal",
+      "Punishment serves only incapacitation — preventing the aggressor from repeating the act against others",
+      "The victim's unlimited right to restitution determines the extent of permissible punishment for any given crime"
+    ],
+    "context": "Rothbard's punishment theory in The Ethics of Liberty is grounded entirely in the logic of rights. A thief forfeits property equivalent to what was stolen, plus damages for the victim's trouble. A murderer forfeits their right to life. But no punishment can exceed the rights violated — imposing extra suffering as deterrence would itself constitute aggression against the criminal's remaining rights. This rules out torture (imposing more suffering than the crime involved) and disproportionate imprisonment while permitting full restitution with damages.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[112, 183, 102, 111] mean=127.0 ratio=1.79 max_dev=44.09%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=671 cap=800",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 192,
+    "tier": 5,
+    "question": "What is 'the myth of the given' in Sellars's epistemology?",
+    "answer": "The idea that basic empirical knowledge is 'given' without conceptual mediation is a myth",
+    "choices": [
+      "The idea that basic empirical knowledge is 'given' without conceptual mediation is a myth",
+      "Scientific frameworks are cultural myths that cannot be grounded in rational justification",
+      "Sense data provide an incorrigible and theory-neutral foundation for all empirical knowledge",
+      "The assumption that perceptual experience directly and transparently reveals mind-independent reality"
+    ],
+    "context": "Wilfrid Sellars attacked the idea that some experiences are 'given' directly to the mind without any conceptual interpretation. Even our most basic perceptions are shaped by concepts we have learned. There is no raw, uninterpreted 'given' at the foundation of knowledge. This critique challenges foundationalist epistemology, particularly logical empiricism's reliance on sense data.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": true,
+      "A2_detail": "lens=[89, 90, 92, 101] mean=93.0 ratio=1.13 max_dev=8.60%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=430 cap=800",
+      "A4_rote_ok_patched": false,
+      "A4_patched_matches": [
+        "what_is_quoted"
+      ],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 195,
+    "tier": 5,
+    "question": "Jonathan Dancy argued that there are no universal moral principles — not even 'causing unnecessary suffering is wrong.' What was his argument?",
+    "answer": "The same feature that makes an action wrong in one context can make it right in another — moral reasons have no fixed valence but vary with context",
+    "choices": [
+      "Moral rules are too vague to apply reliably in specific cases, so practical wisdom must always override general principles",
+      "The same feature that makes an action wrong in one context can make it right in another — moral reasons have no fixed valence but vary with context",
+      "Universal principles are cultural artifacts that cannot claim authority across different moral traditions",
+      "Moral knowledge is too uncertain for confidence in any principle, requiring humility about all ethical generalizations"
+    ],
+    "context": "Dancy's particularism, developed in Moral Reasons (1993), holds that the fact that an action causes pain might count against it in ordinary cases but for it in surgery, competitive sport, or therapeutic contexts. The same deceit that wrongs a patient counts in favor of a resistance fighter protecting civilians. Principles collapse because the weight of any feature as a reason depends entirely on what other features are present. Dancy distinguishes this from relativism: moral reasons are real and objective, but they are particular — no rule captures their behavior across all possible contexts. He was responding directly to the dominant principlism in medical ethics, which had built elaborate frameworks of rules.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[122, 147, 105, 118] mean=123.0 ratio=1.40 max_dev=19.51%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=634 cap=800",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 164,
+    "tier": 5,
+    "question": "What is 'Kripke's causal theory of reference'?",
+    "answer": "Names refer to objects through a causal chain, not descriptions",
+    "choices": [
+      "The meaning of a name is fixed by the cluster of descriptions speakers associate with it",
+      "Names refer to objects through a causal chain, not descriptions",
+      "Reference is grounded in the physical causal powers that objects exert on perceivers",
+      "Names derive meaning from the sensory experiences of the community that first uses them"
+    ],
+    "context": "Kripke argued that names refer to objects not through descriptions (like 'the philosopher who drank hemlock') but through a causal chain going back to an original 'baptism.' Someone named the baby 'Socrates,' and the name was passed down through speakers. Reference is a historical chain, not a description.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[88, 63, 84, 87] mean=80.5 ratio=1.40 max_dev=21.74%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=368 cap=800",
+      "A4_rote_ok_patched": false,
+      "A4_patched_matches": [
+        "what_is_quoted"
+      ],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 578,
+    "tier": 5,
+    "question": "Marcus Aurelius used a meditation technique he called 'the view from above' — imagining his life as seen from high altitude, then from the cosmos itself. What was this exercise meant to produce, and what philosophical tradition is it expressing?",
+    "answer": "Perspective that dissolves the apparent enormity of personal troubles — Stoic cosmopolitanism holding that from the cosmic scale, private ambitions, injuries, and fears are vanishingly small and equally transient",
+    "choices": [
+      "Humility before the gods, recognizing that human reason is inadequate compared to divine intelligence",
+      "Perspective that dissolves the apparent enormity of personal troubles — Stoic cosmopolitanism holding that from the cosmic scale, private ambitions, injuries, and fears are vanishingly small and equally transient",
+      "Detachment from outcomes, training the mind to care equally about success and failure by making both feel distant",
+      "Awareness of mortality, using the sight of all the generations that came before as a reminder that death is natural and nothing to fear"
+    ],
+    "context": "Marcus writes in Meditations Book XI: 'How many a Chrysippus, how many a Socrates, how many an Epictetus?' — naming only philosophers now forgotten. The technique appears repeatedly: look at the whole earth from above and see how small it is; look at the empire and see how brief it is; look at your enemies and see how soon they and you will be dead. This is not nihilism — Marcus does not conclude that nothing matters. He concludes that the only things that genuinely matter are the ones that survive this perspective: virtue, reason, duty, the common good. His model was Stoic cosmopolitanism: every rational being is a citizen of the same universal city, which makes tribalism, fame-seeking, and grudge-holding appear petty rather than important.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[101, 212, 113, 135] mean=140.2 ratio=2.10 max_dev=51.16%",
+      "A3_cost_ok": false,
+      "A3_detail": "total=806 cap=800",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 183,
+    "tier": 5,
+    "question": "What is Hilary Putnam's 'twin earth' thought experiment about?",
+    "answer": "Whether meanings are in the head or determined by the external environment",
+    "choices": [
+      "Whether two qualitatively identical minds could have systematically different belief contents",
+      "Whether meanings are in the head or determined by the external environment",
+      "Whether physical duplicates of persons would bear the same moral responsibilities for their actions",
+      "Whether a referring term picks out the same object consistently across all possible worlds"
+    ],
+    "context": "Imagine a planet exactly like Earth, but where the clear liquid in rivers is XYZ instead of H2O. Putnam argued that 'water' on Earth means H2O and 'water' on Twin Earth means XYZ — even if the inhabitants cannot tell the difference. Meaning, therefore, is not just in the head.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[93, 74, 99, 90] mean=89.0 ratio=1.34 max_dev=16.85%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=418 cap=800",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 210,
+    "tier": 5,
+    "question": "What is 'Alvin Plantinga's reformed epistemology'?",
+    "answer": "Belief in God can be rational without evidence or argument",
+    "choices": [
+      "Religious doctrine must be grounded in classical foundationalist epistemology",
+      "Belief in God can be rational without evidence or argument",
+      "Theological claims require justification through coherentist reasoning",
+      "Faith and rationality operate in entirely separate epistemic domains"
+    ],
+    "context": "Plantinga argues that belief in God can be 'properly basic' — rational without needing evidence or argument, just as our belief in other minds or the reliability of memory is basic. We do not need to prove God's existence any more than we need to prove the external world exists.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[77, 58, 70, 68] mean=68.2 ratio=1.33 max_dev=15.02%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=323 cap=800",
+      "A4_rote_ok_patched": false,
+      "A4_patched_matches": [
+        "what_is_quoted"
+      ],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 212,
+    "tier": 5,
+    "question": "What does 'opacity of reference' mean in philosophy of language?",
+    "answer": "Substituting co-referring terms in belief contexts can change truth value",
+    "choices": [
+      "Definite descriptions fail to pick out unique referents across possible worlds",
+      "Substituting co-referring terms in belief contexts can change truth value",
+      "Indexical expressions shift their referents depending on context of utterance",
+      "Names lack cognitive significance because they carry no descriptive content"
+    ],
+    "context": "In certain contexts (like belief reports), you cannot freely substitute co-referring terms. Lois Lane believes Superman can fly but does not believe Clark Kent can fly — even though Superman IS Clark Kent. The context is 'opaque' to substitution. This contrasts with 'transparent' or extensional contexts where such substitution preserves truth value.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": true,
+      "A2_detail": "lens=[78, 73, 77, 75] mean=75.8 ratio=1.07 max_dev=3.63%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=367 cap=800",
+      "A4_rote_ok_patched": false,
+      "A4_patched_matches": [
+        "what_is_quoted"
+      ],
+      "A4_rote_ok_old": false,
+      "A4_old_matches": [
+        "what_x_mean"
+      ]
+    }
+  },
+  {
+    "idx": 575,
+    "tier": 5,
+    "question": "At his trial, Socrates was offered the chance to propose his own punishment — and nearly chose exile. He instead proposed that Athens give him free meals for life. Why? What philosophical point was he making?",
+    "answer": "He had spent his life benefiting Athens by prodding citizens to examine themselves — the appropriate reward for genuine public service is honor, not punishment; proposing exile or a fine would falsely imply he had done wrong",
+    "choices": [
+      "He was demonstrating contempt for the legal proceedings, forcing the jury to condemn him as his philosophical legacy required",
+      "He had spent his life benefiting Athens by prodding citizens to examine themselves — the appropriate reward for genuine public service is honor, not punishment; proposing exile or a fine would falsely imply he had done wrong",
+      "He was testing whether Athens could recognize true virtue even when it appeared as arrogance, which was his final philosophical experiment",
+      "He genuinely believed he would be acquitted and the punishment proposal was a rhetorical device to provoke the jury into acquitting him"
+    ],
+    "context": "After the jury voted to convict, both sides proposed penalties. The prosecution proposed death. Socrates's counter-proposal of free meals in the Prytaneum — the honor given to Olympic champions — was read as insult by the jury. Scholars debate whether Socrates was provoking his own death or making a philosophical statement. The Apology suggests the latter: Socrates consistently argued that doing injustice is worse than suffering it, and accepting an unjust punishment was not injustice — fleeing or lying to avoid it would be. He eventually proposed a small fine, which the jury rejected. The conviction was 281-220; the death sentence was 360-141 — his counter-proposal actually cost him votes.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[125, 224, 138, 135] mean=155.5 ratio=1.79 max_dev=44.05%",
+      "A3_cost_ok": false,
+      "A3_detail": "total=830 cap=800",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 174,
+    "tier": 5,
+    "question": "Baudrillard argued that Disneyland exists to make Americans believe the rest of their country is real. What philosophical concept was he illustrating?",
+    "answer": "Hyperreality — a simulation that conceals the absence of any original reality; Disneyland is 'fake' so that Los Angeles, presented by contrast, seems 'real,' though it is equally a simulation",
+    "choices": [
+      "Spectacle — the replacement of lived social life with its representation, making the image more powerful than the thing it images",
+      "Hyperreality — a simulation that conceals the absence of any original reality; Disneyland is 'fake' so that Los Angeles, presented by contrast, seems 'real,' though it is equally a simulation",
+      "Ideology — a false picture of the world that serves the interests of a ruling class by making their arrangements seem natural",
+      "Kitsch — aesthetic culture produced for mass consumption that flatters its audience by affirming their existing preferences"
+    ],
+    "context": "Simulacra and Simulation (1981) opens by inverting Borges's map that becomes as large as the territory: now the map comes first, and reality is built to fit it. Baudrillard identified four stages: faithful copy, distorted copy, masking the absence of reality, and finally simulacrum — a copy with no original. His claim: contemporary Western culture has reached stage four. Money, television, politics, sex — all are models that generate 'reality' rather than representing it. Baudrillard wrote that the Gulf War 'did not take place' — not that it was fake but that it existed primarily as a media simulation whose relationship to actual events on the ground was tenuous.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[129, 191, 125, 123] mean=142.0 ratio=1.55 max_dev=34.51%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=718 cap=800",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 583,
+    "tier": 5,
+    "question": "Cicero was murdered on Mark Antony's orders in 43 BC. In the years before his death he wrote De Finibus — a systematic survey of all the competing accounts of what the highest human good is. What was his own conclusion, and why did it upset both Stoics and Epicureans?",
+    "answer": "He followed the New Academy's approach — arguing no single school had the complete truth and that careful philosophical inquiry requires holding conclusions loosely and acknowledging genuine uncertainty rather than committing to a system",
+    "choices": [
+      "He concluded that the Stoic account was closest to truth but required modification by Aristotelian elements about the body and external goods",
+      "He followed the New Academy's approach — arguing no single school had the complete truth and that careful philosophical inquiry requires holding conclusions loosely and acknowledging genuine uncertainty rather than committing to a system",
+      "He concluded the Epicurean view was correct — pleasure and the absence of pain constitute the good — but insisted this required a public, political life rather than withdrawal",
+      "He argued the question of the highest good was unanswerable and that Roman civic virtue was a more practical substitute than any philosophical answer"
+    ],
+    "context": "Cicero's philosophical method was probabilism — he argued for what seems most probable given available arguments, without claiming certainty. This drove dogmatic philosophers mad: both Stoics (who claimed their system was certain) and Epicureans (who claimed pleasure-and-ataraxia was demonstrably the good) felt he was avoiding commitment. Cicero's defense: given the difficulty of the question and the disagreement among brilliant people, intellectual honesty requires acknowledging uncertainty. This made him the ancient world's most influential Academic Skeptic. His procedure — presenting opposing arguments, weighing them, judging provisionally — was the model Thomas More, Erasmus, and Montaigne followed during the Renaissance.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[141, 237, 175, 149] mean=175.5 ratio=1.68 max_dev=35.04%",
+      "A3_cost_ok": false,
+      "A3_detail": "total=970 cap=800",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 551,
+    "tier": 5,
+    "question": "Rand argued that free will operates at the level of focus, not at the level of values. What does this mean for how she handles moral responsibility?",
+    "answer": "You are responsible not for which values you happen to feel but for whether you choose to think clearly enough to examine, correct, and act on those values — evasion is the primary moral vice",
+    "choices": [
+      "You are responsible for your choices but not for your character, since character is formed before the age of reason",
+      "You are responsible not for which values you happen to feel but for whether you choose to think clearly enough to examine, correct, and act on those values — evasion is the primary moral vice",
+      "Moral responsibility requires that you could have done otherwise, which only holds when external pressures are absent",
+      "You are fully responsible for all your values because adults can always choose to change what they care about"
+    ],
+    "context": "Rand located free will at the level of focus — the choice to think actively and clearly about what you are doing and why. You cannot simply decide to value different things; values are deep and partly automatic. But you can choose to look at them, examine the premises behind them, and revise them when they are false. Moral responsibility therefore attaches not to 'I chose to want this' but to 'I chose to look honestly at whether this is worth wanting.' The person who evades that examination — who lets false premises persist because examining them is uncomfortable — bears full responsibility for the consequences.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[115, 191, 117, 109] mean=133.0 ratio=1.75 max_dev=43.61%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=680 cap=800",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": false,
+      "A4_old_matches": [
+        "what_x_mean"
+      ]
+    }
+  },
+  {
+    "idx": 594,
+    "tier": 5,
+    "question": "The Stoics held that the sage — the perfectly wise person — is almost impossible to achieve, and perhaps no one living had achieved it. Why did they maintain this near-impossible ideal rather than adjusting their ethics to what most people could actually reach?",
+    "answer": "The ideal functions as a fixed north star for moral navigation — its impossibility does not make it wrong, and adjusting the standard to average capacity would corrupt the measure you are using to improve",
+    "choices": [
+      "They maintained the ideal to motivate ambitious students — people who aim for the impossible will achieve more than those who aim for the mediocre",
+      "The ideal functions as a fixed north star for moral navigation — its impossibility does not make it wrong, and adjusting the standard to average capacity would corrupt the measure you are using to improve",
+      "They believed a few historical figures (Socrates, Zeno, Cato) had actually achieved sage-hood, so the ideal was not truly impossible — only extremely rare",
+      "The Stoics distinguished practical from theoretical ethics — the ideal defines correct doctrine while the prokopton (one making progress) represents the practical teaching target"
+    ],
+    "context": "The Stoic sage is described in terms that sound almost inhuman: completely free of false beliefs, completely free of irrational emotions (only rational ones — joy, caution, wish), virtuous in all circumstances, fully happy even while being tortured. Chrysippus reportedly said sages are as rare as the phoenix. Critics (especially Carneades of the Academy) used this against them: if your ethics requires conditions no human ever achieves, what practical use is it? The Stoic answer prefigures Kant: the moral law is not derived from what is achievable — it is derived from what is right. The gap between the ideal and our actual state is not a refutation of the ideal but the permanent task of moral progress.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[146, 204, 154, 178] mean=170.5 ratio=1.40 max_dev=19.65%",
+      "A3_cost_ok": false,
+      "A3_detail": "total=943 cap=800",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 199,
+    "tier": 5,
+    "question": "Singer argued that if you passed a shallow pond where a child was drowning and could save it at no significant cost, you would be obligated to do so. He then drew one further conclusion. What was it?",
+    "answer": "That distance is morally irrelevant — the same obligation applies to children dying of poverty across the world, making affluent people morally required to give until giving more would cost them something of comparable moral significance",
+    "choices": [
+      "That any inaction in the face of preventable harm makes you causally responsible for that harm — omission is equivalent to commission",
+      "That distance is morally irrelevant — the same obligation applies to children dying of poverty across the world, making affluent people morally required to give until giving more would cost them something of comparable moral significance",
+      "That charitable giving should be concentrated on the most effective interventions, measured by lives saved per dollar spent",
+      "That governments have a stronger obligation to prevent global poverty than individuals, since collective action is more effective"
+    ],
+    "context": "Singer published 'Famine, Affluence, and Morality' in 1972 in response to the Bangladesh famine. The drowning child argument is designed to pump the intuition that proximity does not ground moral obligation — what matters is ability to help at reasonable cost, not whether the child is in front of you. The conclusion Singer draws: someone in a wealthy country who spends money on luxuries while people die for lack of food or medicine is morally equivalent to walking past the drowning child. The 'effective altruism' movement — which Singer helped found — is the practical application: optimize charitable giving by measuring impact rigorously.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[133, 237, 123, 129] mean=155.5 ratio=1.93 max_dev=52.41%",
+      "A3_cost_ok": false,
+      "A3_detail": "total=821 cap=800",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 166,
+    "tier": 5,
+    "question": "What is 'Quine's thesis of the indeterminacy of translation'?",
+    "answer": "Multiple incompatible translations of a language can all be equally correct",
+    "choices": [
+      "All available evidence underdetermines any single correct translation",
+      "Multiple incompatible translations of a language can all be equally correct",
+      "Linguistic meaning is always relative to the cultural context of its speakers",
+      "No translation can fully capture the original speaker's communicative intention"
+    ],
+    "context": "Quine asked: if you encounter a tribe that points at a rabbit and says 'gavagai,' does the word mean 'rabbit,' 'undetached rabbit part,' or 'rabbit stage'? He argued that all the evidence could support multiple translations equally well, so there is no single correct translation.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": true,
+      "A2_detail": "lens=[69, 75, 77, 79] mean=75.0 ratio=1.14 max_dev=8.00%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=361 cap=800",
+      "A4_rote_ok_patched": false,
+      "A4_patched_matches": [
+        "what_is_quoted"
+      ],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 582,
+    "tier": 5,
+    "question": "Cicero argued in the Republic that Rome's mixed constitution — combining monarchic, aristocratic, and democratic elements — was superior to any pure form. What philosophical argument did he give for why mixed constitutions are more stable?",
+    "answer": "Each pure form carries the seed of its own corruption: monarchy becomes tyranny, aristocracy becomes oligarchy, democracy becomes mob rule — the mixed constitution creates checks that prevent any single element from degenerating",
+    "choices": [
+      "Mixed constitutions gather the best practical wisdom from different traditions, producing wiser decisions than any single governing class could achieve alone",
+      "Each pure form carries the seed of its own corruption: monarchy becomes tyranny, aristocracy becomes oligarchy, democracy becomes mob rule — the mixed constitution creates checks that prevent any single element from degenerating",
+      "Mixed constitutions earn broader legitimacy because each class sees itself represented, reducing the risk of revolutionary violence",
+      "Variety in governance mimics the natural diversity of the cosmos, which is itself mixed and therefore produces the most harmonious political order"
+    ],
+    "context": "Cicero's anacyclosis — the cycle of constitutional degeneration — drew directly from Polybius and ultimately from Plato's Republic (Book VIII). Each form sows the seeds of its own destruction: the king who fears challenge becomes a tyrant; the aristocrats who consolidate power become an oligarchy; the democracy that grants every wish degenerates into mob tyranny when the mob turns against the wealthy. Rome's genius, Cicero argued, was that its constitution evolved organically over centuries (unlike Lycurgus's deliberately designed Sparta) to balance these three impulses against each other. The American founders read Cicero carefully and built the same principle — separation of powers with checks and balances — into the Constitution.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[157, 228, 131, 146] mean=165.5 ratio=1.74 max_dev=37.76%",
+      "A3_cost_ok": false,
+      "A3_detail": "total=901 cap=800",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 154,
+    "tier": 5,
+    "question": "Saussure argued that words get their meaning not by pointing at things in the world but from something entirely internal to language. What is his account of where meaning comes from?",
+    "answer": "Difference within the linguistic system — 'cat' means what it does only because it is not 'bat,' 'rat,' 'cap'; signs have no positive meaning in isolation, only through contrast with other signs",
+    "choices": [
+      "Social convention — meaning is whatever the community agrees to assign to a sound, which is why meanings shift across cultures",
+      "Difference within the linguistic system — 'cat' means what it does only because it is not 'bat,' 'rat,' 'cap'; signs have no positive meaning in isolation, only through contrast with other signs",
+      "Causal history — words acquire meaning through repeated association with the things they are used to refer to",
+      "Use and context — meaning is determined by the role a word plays in the activities and practices of its speakers"
+    ],
+    "context": "Saussure's distinction between the signifier (sound-image) and the signified (concept) launched 20th-century structuralism and everything that followed from it — Lévi-Strauss applying it to anthropology, Barthes to culture and myth, Lacan to psychoanalysis. His key claim: the relationship between signifier and signified is arbitrary (no natural connection between the sounds 'cat' and the animal) and differential (meaning arises from contrast, not correspondence). This had radical implications: if language is a self-contained system of differences, there is no Archimedean point outside language from which to check whether it corresponds to reality.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[126, 194, 109, 112] mean=135.2 ratio=1.78 max_dev=43.44%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=723 cap=800",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  },
+  {
+    "idx": 168,
+    "tier": 5,
+    "question": "G.E. Moore asked: if someone defines 'good' as 'whatever produces pleasure,' can you still meaningfully ask 'but is pleasure actually good?' Why does this question reveal something important?",
+    "answer": "Because the question is always open — no matter how you define 'good' in natural terms, it always makes sense to ask whether that natural property is truly good, showing that 'good' cannot be identical to any natural fact",
+    "choices": [
+      "Because pleasure is subjective and varies by person, so no natural definition can capture what is universally good",
+      "Because the question is always open — no matter how you define 'good' in natural terms, it always makes sense to ask whether that natural property is truly good, showing that 'good' cannot be identical to any natural fact",
+      "Because definitions that identify two different concepts can always be challenged by asking whether they are truly identical",
+      "Because moral language has a prescriptive force that purely descriptive natural language cannot capture"
+    ],
+    "context": "Moore's 'open question argument' in Principia Ethica (1903) is a landmark in metaethics. The pattern: take any natural definition of good — 'good = pleasurable,' 'good = what promotes survival,' 'good = what God commands.' Moore shows you can always coherently ask: 'Yes, but is that actually good?' If the question is coherent, the two terms are not identical, so the definition fails. Moore concluded that 'good' is a simple, indefinable, non-natural property — like the color yellow, you can recognize it but cannot decompose it. This launched 20th-century metaethics. Rand, importantly, directly attacked Moore's conclusion: she argued 'good' can and must be defined through human life as the standard.",
+    "gates": {
+      "A1_schema_ok": true,
+      "A1_detail": "present=True, answer_in_choices=True",
+      "A2_parity_ok": false,
+      "A2_detail": "lens=[114, 221, 124, 103] mean=140.5 ratio=2.15 max_dev=57.30%",
+      "A3_cost_ok": true,
+      "A3_detail": "total=753 cap=800",
+      "A4_rote_ok_patched": true,
+      "A4_patched_matches": [],
+      "A4_rote_ok_old": true,
+      "A4_old_matches": []
+    }
+  }
+]

@@ -4,6 +4,8 @@ line-length = 100
 extend-exclude = [
     "data",
     "__pycache__",
+    "tools/quizgen/state",  # subagent-generated scripts; not part of pipeline
+    "tools/quizgen/cache",
 ]
 
 [lint]

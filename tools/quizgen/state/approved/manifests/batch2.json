@@ -1,0 +1,198 @@
+[
+  {
+    "src": "american_political_philosophy_t3_batch001.json",
+    "idx": 0,
+    "origin": "batch2_clean_keep"
+  },
+  {
+    "src": "batch2_repaired.json",
+    "task_id": "B2_american_political_philosophy_t3_batch001_idx1_Hamilton",
+    "origin": "batch2_repair"
+  },
+  {
+    "src": "american_political_philosophy_t3_batch001.json",
+    "idx": 2,
+    "origin": "batch2_clean_keep"
+  },
+  {
+    "src": "american_political_philosophy_t3_batch001.json",
+    "idx": 3,
+    "origin": "batch2_clean_keep"
+  },
+  {
+    "src": "american_political_philosophy_t3_batch001.json",
+    "idx": 4,
+    "origin": "batch2_clean_keep"
+  },
+  {
+    "src": "batch2_repaired.json",
+    "task_id": "B2_american_political_philosophy_t3_batch001_idx5_Calhoun",
+    "origin": "batch2_repair"
+  },
+  {
+    "src": "american_political_philosophy_t3_batch001.json",
+    "idx": 6,
+    "origin": "batch2_clean_keep"
+  },
+  {
+    "src": "batch2_repaired.json",
+    "task_id": "B2_american_political_philosophy_t3_batch001_idx7_Kirk",
+    "origin": "batch2_repair"
+  },
+  {
+    "src": "american_political_philosophy_t3_batch001.json",
+    "idx": 8,
+    "origin": "batch2_clean_keep"
+  },
+  {
+    "src": "soviet_dissidents_moral_witness_t3_batch001.json",
+    "idx": 0,
+    "origin": "batch2_clean_keep"
+  },
+  {
+    "src": "soviet_dissidents_moral_witness_t3_batch001.json",
+    "idx": 1,
+    "tier_override": 4,
+    "origin": "batch2_reclass_t3_to_t4"
+  },
+  {
+    "src": "batch2_repaired.json",
+    "task_id": "B2_soviet_dissidents_moral_witness_t3_batch001_idx2_Solzhenitsyn",
+    "origin": "batch2_repair"
+  },
+  {
+    "src": "soviet_dissidents_moral_witness_t3_batch001.json",
+    "idx": 3,
+    "origin": "batch2_clean_keep"
+  },
+  {
+    "src": "soviet_dissidents_moral_witness_t3_batch001.json",
+    "idx": 4,
+    "origin": "batch2_clean_keep"
+  },
+  {
+    "src": "soviet_dissidents_moral_witness_t3_batch001.json",
+    "idx": 5,
+    "origin": "batch2_clean_keep"
+  },
+  {
+    "src": "critics_of_identity_politics_t3_batch001.json",
+    "idx": 0,
+    "origin": "batch2_grace_keep"
+  },
+  {
+    "src": "critics_of_identity_politics_t3_batch001.json",
+    "idx": 1,
+    "origin": "batch2_grace_keep"
+  },
+  {
+    "src": "batch2_repaired.json",
+    "task_id": "B2_critics_of_identity_politics_t3_batch001_idx2_McWhorter",
+    "origin": "batch2_repair"
+  },
+  {
+    "src": "critics_of_identity_politics_t3_batch001.json",
+    "idx": 3,
+    "origin": "batch2_grace_keep"
+  },
+  {
+    "src": "critics_of_identity_politics_t3_batch001.json",
+    "idx": 4,
+    "origin": "batch2_grace_keep"
+  },
+  {
+    "src": "critics_of_identity_politics_t3_batch001.json",
+    "idx": 5,
+    "origin": "batch2_grace_keep"
+  },
+  {
+    "src": "marx_engels_t3_batch001.json",
+    "idx": 0,
+    "origin": "batch2_clean_keep"
+  },
+  {
+    "src": "marx_engels_t3_batch001.json",
+    "idx": 1,
+    "origin": "batch2_clean_keep"
+  },
+  {
+    "src": "batch2_repaired.json",
+    "task_id": "B2_marx_engels_t3_batch001_idx2_Marx_(Capital_I,_ch._1)",
+    "origin": "batch2_repair"
+  },
+  {
+    "src": "marx_engels_t3_batch001.json",
+    "idx": 3,
+    "origin": "batch2_clean_keep"
+  },
+  {
+    "src": "marx_engels_t3_batch001.json",
+    "idx": 4,
+    "origin": "batch2_clean_keep"
+  },
+  {
+    "src": "marx_engels_t3_batch001.json",
+    "idx": 5,
+    "origin": "batch2_clean_keep"
+  },
+  {
+    "src": "marx_engels_t3_batch001.json",
+    "idx": 6,
+    "origin": "batch2_clean_keep"
+  },
+  {
+    "src": "marx_engels_t3_batch001.json",
+    "idx": 7,
+    "tier_override": 4,
+    "origin": "batch2_reclass_t3_to_t4"
+  },
+  {
+    "src": "marx_engels_t3_batch001.json",
+    "idx": 8,
+    "origin": "batch2_clean_keep"
+  },
+  {
+    "src": "buddhist_indian_t2_batch001.json",
+    "idx": 0,
+    "origin": "batch2_grace_keep"
+  },
+  {
+    "src": "buddhist_indian_t2_batch001.json",
+    "idx": 1,
+    "tier_override": 3,
+    "origin": "batch2_reclass_t2_to_t3"
+  },
+  {
+    "src": "buddhist_indian_t2_batch001.json",
+    "idx": 2,
+    "tier_override": 3,
+    "origin": "batch2_reclass_t2_to_t3"
+  },
+  {
+    "src": "buddhist_indian_t2_batch001.json",
+    "idx": 3,
+    "origin": "batch2_clean_keep"
+  },
+  {
+    "src": "buddhist_indian_t2_batch001.json",
+    "idx": 4,
+    "origin": "batch2_clean_keep"
+  },
+  {
+    "src": "buddhist_indian_t2_batch001.json",
+    "idx": 5,
+    "tier_override": 3,
+    "origin": "batch2_reclass_t2_to_t3"
+  },
+  {
+    "src": "batch2_repaired.json",
+    "task_id": "B2_buddhist_indian_t2_batch001_idx6_Nagarjuna",
+    "origin": "batch2_repair"
+  },
+  {
+    "src": "buddhist_indian_t2_batch001.json",
+    "idx": 7,
+    "tier_override": 4,
+    "origin": "batch2_reclass_t2_to_t4"
+  }
+]

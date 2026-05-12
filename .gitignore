@@ -213,3 +213,8 @@ __marimo__/
 # Local assistant config
 .claude/
 claude.md
+
+# Quiz pipeline transient state and cache (reports + sampler scripts stay tracked)
+tools/quizgen/cache/
+tools/quizgen/state/runs/
+tools/quizgen/state/queue/

@@ -1,0 +1,577 @@
+[
+  {
+    "idx": 252,
+    "tier": 1,
+    "question": "If you break a promise on purpose, you have acted without what?",
+    "answer": "Integrity",
+    "choices": [
+      "Integrity",
+      "Compassion",
+      "Accountability",
+      "Rationality"
+    ],
+    "context": "Integrity comes from the Latin 'integer,' meaning whole or complete. A person of integrity is undivided -- their actions match their words. Breaking a promise fractures that wholeness, which is why it feels like a betrayal of character, not just of a commitment.",
+    "gates": {
+      "schema_ok": true,
+      "schema_detail": "present=True, answer_in_choices=True",
+      "parity_ok": false,
+      "parity_detail": "mean=11.0 ratio=1.56 lens=[9, 10, 14, 11]",
+      "cost_ok": true,
+      "cost_detail": "total=107 (cap=600)",
+      "rote_ok": true,
+      "rote_detail": "ok"
+    }
+  },
+  {
+    "idx": 464,
+    "tier": 1,
+    "question": "Rothbard said 'The State is a gang of thieves writ large.' What made this a philosophical claim rather than just an insult?",
+    "answer": "He was applying the same moral standard to governments that we use for individuals — if force without consent is theft when one person does it, it remains theft when the state does it",
+    "choices": [
+      "He was documenting the personal corruption of politicians in the historical record",
+      "He was applying the same moral standard to governments that we use for individuals — if force without consent is theft when one person does it, it remains theft when the state does it",
+      "He was arguing that democratic governments have no legitimate mandate from citizens",
+      "He was showing that tax revenues are consistently wasted rather than used for public benefit"
+    ],
+    "context": "Rothbard's key move was moral consistency: he refused to grant the state a special exemption from ordinary ethics. This is what makes the claim philosophical. An insult says 'politicians are bad people.' A philosophical claim says 'the act of compulsory taxation, by its logical structure, is theft — regardless of who performs it or what they call it.'",
+    "gates": {
+      "schema_ok": true,
+      "schema_detail": "present=True, answer_in_choices=True",
+      "parity_ok": false,
+      "parity_detail": "mean=110.0 ratio=2.23 lens=[82, 183, 83, 92]",
+      "cost_ok": true,
+      "cost_detail": "total=563 (cap=600)",
+      "rote_ok": true,
+      "rote_detail": "ok"
+    }
+  },
+  {
+    "idx": 249,
+    "tier": 1,
+    "question": "A 'contradiction' is when two things are what?",
+    "answer": "Both true and false at the same time",
+    "choices": [
+      "Logically dependent on each other as connected premises",
+      "Both true and false at the same time",
+      "Expressing the same idea through different words",
+      "Impossible to verify through observation or argument"
+    ],
+    "context": "A contradiction -- like 'it is raining and it is not raining at the same time and place' -- cannot be true. Aristotle called the law of non-contradiction the most fundamental principle of thought. If contradictions were allowed, rational discussion would be impossible.",
+    "gates": {
+      "schema_ok": true,
+      "schema_detail": "present=True, answer_in_choices=True",
+      "parity_ok": false,
+      "parity_detail": "mean=47.8 ratio=1.53 lens=[55, 36, 48, 52]",
+      "cost_ok": true,
+      "cost_detail": "total=237 (cap=600)",
+      "rote_ok": true,
+      "rote_detail": "ok"
+    }
+  },
+  {
+    "idx": 459,
+    "tier": 1,
+    "question": "Ayn Rand believed that selfishness — caring about your own life and happiness — is not a sin or a weakness. She wrote an entire book arguing it is actually what?",
+    "answer": "A virtue — because your own life and happiness are genuinely valuable",
+    "choices": [
+      "A necessary evil that society must tolerate and manage",
+      "A virtue — because your own life and happiness are genuinely valuable",
+      "A natural instinct that education should eventually replace",
+      "An acceptable habit as long as you harm nobody directly"
+    ],
+    "context": "Rand's 1964 book The Virtue of Selfishness shocked readers. But Rand was precise: she did not mean grabbing from others. She meant the rational pursuit of your own values and life. She argued the demand for self-sacrifice is the immoral position — because it treats your life as a means to others' ends. 'Man's first duty is to himself.'",
+    "gates": {
+      "schema_ok": true,
+      "schema_detail": "present=True, answer_in_choices=True",
+      "parity_ok": false,
+      "parity_detail": "mean=59.2 ratio=1.28 lens=[54, 69, 59, 55]",
+      "cost_ok": true,
+      "cost_detail": "total=398 (cap=600)",
+      "rote_ok": true,
+      "rote_detail": "ok"
+    }
+  },
+  {
+    "idx": 226,
+    "tier": 1,
+    "question": "If all dogs are animals, and Rex is a dog, what is Rex?",
+    "answer": "An animal",
+    "choices": [
+      "A plant",
+      "A mineral",
+      "An animal",
+      "A person"
+    ],
+    "context": "This is a classic example of a syllogism — the basic form of logical reasoning identified by Aristotle. If both premises are true and the logical form is valid, the conclusion must necessarily follow. Syllogistic logic is one of the philosopher's most foundational tools.",
+    "gates": {
+      "schema_ok": true,
+      "schema_detail": "present=True, answer_in_choices=True",
+      "parity_ok": false,
+      "parity_detail": "mean=8.2 ratio=1.29 lens=[7, 9, 9, 8]",
+      "cost_ok": true,
+      "cost_detail": "total=88 (cap=600)",
+      "rote_ok": true,
+      "rote_detail": "ok"
+    }
+  },
+  {
+    "idx": 52,
+    "tier": 2,
+    "question": "What is 'deontological ethics'?",
+    "answer": "Ethics based on duties and universal moral rules",
+    "choices": [
+      "Ethics based on outcomes and maximizing overall happiness",
+      "Ethics based on cultivating virtuous character traits over a lifetime",
+      "Ethics based on duties and universal moral rules",
+      "Ethics based on mutual obligations agreed upon in a social contract"
+    ],
+    "context": "Deontology, from the Greek 'deon' (duty), judges actions by whether they follow moral rules, not by their consequences. Kant is the most famous deontologist: lying is always wrong, even if it would save a life, because it violates a universal moral duty.",
+    "gates": {
+      "schema_ok": true,
+      "schema_detail": "present=True, answer_in_choices=True",
+      "parity_ok": false,
+      "parity_detail": "mean=60.2 ratio=1.44 lens=[57, 69, 48, 67]",
+      "cost_ok": true,
+      "cost_detail": "total=272 (cap=600)",
+      "rote_ok": true,
+      "rote_detail": "ok"
+    }
+  },
+  {
+    "idx": 24,
+    "tier": 2,
+    "question": "Epicurus taught that the goal of life is pleasure — but his idea of the highest pleasure surprises most people. What did he say a person most needs to be happy?",
+    "answer": "Freedom from fear and pain, and the company of close friends — not excitement, wealth, or fame",
+    "choices": [
+      "Physical comfort and regular enjoyment of food, music, and sensory pleasures",
+      "Freedom from fear and pain, and the company of close friends — not excitement, wealth, or fame",
+      "Political freedom and the ability to participate in civic life",
+      "Knowledge of the good, which Epicurus said would automatically produce happiness once discovered"
+    ],
+    "context": "Epicurus was not a hedonist in the modern sense. His highest pleasure was ataraxia — tranquility, freedom from mental disturbance. The two greatest fears he tried to cure: fear of death ('when death is, I am not; when I am, death is not') and fear of the gods (he thought they didn't interfere in human affairs). His school met in a garden in Athens and included women and slaves — radical for his time. He described a simple diet of bread, water, and cheese as a feast.",
+    "gates": {
+      "schema_ok": true,
+      "schema_detail": "present=True, answer_in_choices=True",
+      "parity_ok": false,
+      "parity_detail": "mean=82.0 ratio=1.55 lens=[76, 94, 62, 96]",
+      "cost_ok": true,
+      "cost_detail": "total=488 (cap=600)",
+      "rote_ok": true,
+      "rote_detail": "ok"
+    }
+  },
+  {
+    "idx": 3,
+    "tier": 2,
+    "question": "What was Socrates's most famous philosophical claim?",
+    "answer": "That he knew nothing",
+    "choices": [
+      "That virtue is the only path to true happiness",
+      "That the soul is immortal and exists before birth",
+      "That he knew nothing",
+      "That justice means giving each person what they deserve"
+    ],
+    "context": "Socrates's claim 'I know that I know nothing' was his way of saying that true wisdom begins with recognizing the limits of your own knowledge. The Oracle at Delphi declared him the wisest man in Athens -- because he alone understood how much he didn't know.",
+    "gates": {
+      "schema_ok": true,
+      "schema_detail": "present=True, answer_in_choices=True",
+      "parity_ok": false,
+      "parity_detail": "mean=42.5 ratio=2.75 lens=[46, 49, 20, 55]",
+      "cost_ok": true,
+      "cost_detail": "total=222 (cap=600)",
+      "rote_ok": true,
+      "rote_detail": "ok"
+    }
+  },
+  {
+    "idx": 41,
+    "tier": 2,
+    "question": "When Nietzsche wrote 'God is dead,' he was not celebrating. He was sounding an alarm. What was the danger he was warning about?",
+    "answer": "Western civilization had destroyed the foundation of its values without yet building a new one — leaving a moral vacuum that could collapse into nihilism",
+    "choices": [
+      "Religious wars would intensify as people fought over whose version of God to replace the old one with",
+      "Western civilization had destroyed the foundation of its values without yet building a new one — leaving a moral vacuum that could collapse into nihilism",
+      "Science had made traditional religion implausible but had not yet developed the ability to answer moral questions",
+      "Atheists who celebrated God's death would soon discover they still needed religion for social order"
+    ],
+    "context": "Nietzsche first put these words in the mouth of a 'madman' who runs into the marketplace shouting: 'God is dead — and we have killed him!' The madman is not triumphant — he is horrified. Nietzsche understood that European morality was built on Christian foundations: human dignity, equality, compassion. Smash the foundation and the whole structure becomes groundless. His diagnosis was not 'good riddance' but 'now what?' He spent the rest of his career trying to build new values — the Overman, the will to power, eternal recurrence — that could survive without God.",
+    "gates": {
+      "schema_ok": true,
+      "schema_detail": "present=True, answer_in_choices=True",
+      "parity_ok": false,
+      "parity_detail": "mean=116.5 ratio=1.55 lens=[101, 153, 113, 99]",
+      "cost_ok": true,
+      "cost_detail": "total=593 (cap=600)",
+      "rote_ok": true,
+      "rote_detail": "ok"
+    }
+  },
+  {
+    "idx": 49,
+    "tier": 2,
+    "question": "Locke argued that the human mind at birth is a blank slate — completely empty of all knowledge. Where does everything we know come from, according to him?",
+    "answer": "Experience alone — either sensation (perceiving the world through the senses) or reflection (perceiving our own mental operations)",
+    "choices": [
+      "Reason working on innate principles that all humans possess before any experience",
+      "Experience alone — either sensation (perceiving the world through the senses) or reflection (perceiving our own mental operations)",
+      "Language acquired from parents and community, which structures all subsequent thought",
+      "A combination of experience and divine illumination that allows humans to grasp moral truths directly"
+    ],
+    "context": "Locke's 'tabula rasa' (blank slate) was a direct attack on Descartes, who believed humans are born with innate ideas including God and mathematical truths. Locke's response: look at children, look at people from different cultures — there are no universal innate ideas. What varies by culture and experience shows it came from culture and experience. If everyone were born with the idea of God, why do some cultures lack it? Locke's empiricism — knowledge comes from experience — became the foundation of British philosophy and deeply influenced the Founding Fathers.",
+    "gates": {
+      "schema_ok": true,
+      "schema_detail": "present=True, answer_in_choices=True",
+      "parity_ok": false,
+      "parity_detail": "mean=99.2 ratio=1.60 lens=[81, 130, 85, 101]",
+      "cost_ok": true,
+      "cost_detail": "total=551 (cap=600)",
+      "rote_ok": true,
+      "rote_detail": "ok"
+    }
+  },
+  {
+    "idx": 81,
+    "tier": 3,
+    "question": "Hegel argued that ideas, cultures, and consciousness itself develop through a specific three-stage pattern. What are the three stages, and what drives the process forward?",
+    "answer": "A thesis generates its contradiction (antithesis); their conflict produces a synthesis that preserves and transcends both — which then becomes the next thesis",
+    "choices": [
+      "Observation generates a hypothesis (thesis); experiment tests it (antithesis); confirmation or revision produces new knowledge (synthesis)",
+      "A thesis generates its contradiction (antithesis); their conflict produces a synthesis that preserves and transcends both — which then becomes the next thesis",
+      "A tradition becomes dominant (thesis); critics attack it (antithesis); compromise between old and new emerges (synthesis)",
+      "An idea is proposed (thesis); reality resists it (antithesis); practical adjustment produces a workable middle ground (synthesis)"
+    ],
+    "context": "The thesis-antithesis-synthesis formula is popularly attributed to Hegel but rarely appeared in his writing — it was Fichte's formula. Hegel's actual term for the process was Aufhebung (sublation): when two opposites conflict, the result does not split the difference — it elevates to a level where the contradiction is resolved without simply canceling either side. Freedom and necessity: at a higher level they are one (you are most free when you act in accordance with rational necessity). Hegel applied this to history itself: Spirit (Geist) progressively comes to know itself through the conflicts of history.",
+    "gates": {
+      "schema_ok": true,
+      "schema_detail": "present=True, answer_in_choices=True",
+      "parity_ok": false,
+      "parity_detail": "mean=136.5 ratio=1.31 lens=[138, 158, 121, 129]",
+      "cost_ok": false,
+      "cost_detail": "total=717 (cap=600)",
+      "rote_ok": true,
+      "rote_detail": "ok"
+    }
+  },
+  {
+    "idx": 511,
+    "tier": 3,
+    "question": "Mises argued that the Austrian Business Cycle Theory explains recessions not as accidents but as the inevitable result of one specific government action. What?",
+    "answer": "Central bank credit expansion that pushes interest rates below their natural market level, triggering a boom built on malinvestment that must eventually collapse",
+    "choices": [
+      "Stock market speculation driven by irrational investor psychology and herd behavior",
+      "Central bank credit expansion that pushes interest rates below their natural market level, triggering a boom built on malinvestment that must eventually collapse",
+      "Underconsumption by workers whose wages do not keep pace with the output their labor produces",
+      "Overproduction by firms responding to optimistic forecasts that eventually prove incorrect"
+    ],
+    "context": "The Austrian Business Cycle Theory says recessions are the predictable hangover from artificial booms. When central banks lower interest rates below market levels, they signal that more real savings exist to fund long-term projects than actually do. Entrepreneurs begin projects that cannot be completed when the reality of available resources reasserts itself. The boom is an illusion; the recession is reality correcting the illusion. Mises used this to explain the Great Depression as the correction of the Federal Reserve's credit expansion of the 1920s.",
+    "gates": {
+      "schema_ok": true,
+      "schema_detail": "present=True, answer_in_choices=True",
+      "parity_ok": false,
+      "parity_detail": "mean=106.8 ratio=1.94 lens=[83, 161, 93, 90]",
+      "cost_ok": true,
+      "cost_detail": "total=586 (cap=600)",
+      "rote_ok": true,
+      "rote_detail": "ok"
+    }
+  },
+  {
+    "idx": 328,
+    "tier": 3,
+    "question": "What is 'the examined life' according to Socrates?",
+    "answer": "A life spent questioning beliefs and values to understand what is good",
+    "choices": [
+      "A life spent questioning beliefs and values to understand what is good",
+      "A life devoted to empirical observation and systematic rational inquiry into nature",
+      "A life structured around civic duty, virtue, and active political participation",
+      "A life guided by careful study of philosophical texts and accumulated wisdom"
+    ],
+    "context": "Socrates argued at his trial that 'the unexamined life is not worth living for a human being.' He meant that the daily practice of questioning your own beliefs, values, and actions is what makes life genuinely human. Without it, we are just sleepwalking.",
+    "gates": {
+      "schema_ok": true,
+      "schema_detail": "present=True, answer_in_choices=True",
+      "parity_ok": true,
+      "parity_detail": "mean=77.0 ratio=1.19 lens=[70, 83, 79, 76]",
+      "cost_ok": true,
+      "cost_detail": "total=358 (cap=600)",
+      "rote_ok": true,
+      "rote_detail": "ok"
+    }
+  },
+  {
+    "idx": 312,
+    "tier": 3,
+    "question": "What is the 'trolley problem' designed to explore?",
+    "answer": "Moral choices between doing harm and allowing harm",
+    "choices": [
+      "How utilitarian calculus assigns comparative value to different human lives",
+      "Whether bystanders bear moral responsibility for harms they fail to prevent",
+      "Moral choices between doing harm and allowing harm",
+      "How individuals weigh personal risk against obligation to help strangers"
+    ],
+    "context": "The trolley problem forces a confrontation between two moral intuitions: the utilitarian impulse to save the most lives and the deontological reluctance to actively kill. Why does pulling a lever feel different from pushing a person, even if the outcome is identical?",
+    "gates": {
+      "schema_ok": true,
+      "schema_detail": "present=True, answer_in_choices=True",
+      "parity_ok": false,
+      "parity_detail": "mean=68.0 ratio=1.50 lens=[75, 75, 50, 72]",
+      "cost_ok": true,
+      "cost_detail": "total=322 (cap=600)",
+      "rote_ok": true,
+      "rote_detail": "ok"
+    }
+  },
+  {
+    "idx": 600,
+    "tier": 3,
+    "question": "Seneca argued that anger is the most destructive of all emotions — he wrote an entire essay, On Anger, condemning it absolutely. What was his philosophical case against it?",
+    "answer": "Anger is always based on a false premise — that something has happened that should not have — when in fact everything that can happen to a mortal will happen; accepting this makes anger not just unnecessary but irrational",
+    "choices": [
+      "Anger is physically harmful, producing illness and shortened life, so a self-interested person should suppress it on purely medical grounds",
+      "Anger is always based on a false premise — that something has happened that should not have — when in fact everything that can happen to a mortal will happen; accepting this makes anger not just unnecessary but irrational",
+      "Anger in a ruler is uniquely dangerous because it is never checked by the consequences that correct it in ordinary people",
+      "Anger treats the person who wronged you as more important than they are, giving them power over your inner state they have not earned"
+    ],
+    "context": "Seneca's De Ira is one of antiquity's longest essays. His argument: when you are angry, you have implicitly assumed that the world owed you different treatment. But why? You are mortal, surrounded by mortals, in a world governed by necessity and chance. Insults, losses, betrayals — these are not exceptions to life, they are life. The person who expects them has prepared their mind; the one who does not feels each one as a personal violation of an agreement the world never signed. Seneca also adds a practical observation: nothing you do while angry is better than what you would do calm. Every advantage of anger is available without it. The emotion adds cost and no benefit.",
+    "gates": {
+      "schema_ok": true,
+      "schema_detail": "present=True, answer_in_choices=True",
+      "parity_ok": false,
+      "parity_detail": "mean=153.5 ratio=1.83 lens=[139, 221, 121, 133]",
+      "cost_ok": false,
+      "cost_detail": "total=786 (cap=600)",
+      "rote_ok": true,
+      "rote_detail": "ok"
+    }
+  },
+  {
+    "idx": 546,
+    "tier": 4,
+    "question": "Rand's account of reason as non-contradictory identification has a specific implication for how knowledge must be structured. What is it?",
+    "answer": "All valid knowledge must form a hierarchy rooted in perceptual observation — any concept that cannot be traced back to perceptual concretes through a chain of valid abstractions is floating and invalid",
+    "choices": [
+      "Scientific knowledge is more certain than philosophical knowledge because it rests on experimental evidence",
+      "All valid knowledge must form a hierarchy rooted in perceptual observation — any concept that cannot be traced back to perceptual concretes through a chain of valid abstractions is floating and invalid",
+      "Mathematical knowledge is separate from empirical knowledge because it derives from logical necessity alone",
+      "Introspective knowledge of one's own consciousness is more certain than knowledge of the external world"
+    ],
+    "context": "Rand called this the 'hierarchy of knowledge.' Perceptions are the base — they are given, not inferred. From perceptions we form first-level concepts (table, red, heavy). From these we form higher-level concepts (furniture, color, weight). From higher-level concepts, still more abstract ones. Every concept must be reducible back down this chain. When it cannot be — when a concept has no perceptual referents it can trace to — it is a floating abstraction. Rand used this to identify specific philosophical errors: any concept that cannot survive this test is meaningless, whatever verbal sophistication it carries.",
+    "gates": {
+      "schema_ok": true,
+      "schema_detail": "present=True, answer_in_choices=True",
+      "parity_ok": false,
+      "parity_detail": "mean=129.5 ratio=1.95 lens=[107, 201, 107, 103]",
+      "cost_ok": true,
+      "cost_detail": "total=655 (cap=800)",
+      "rote_ok": true,
+      "rote_detail": "ok"
+    }
+  },
+  {
+    "idx": 525,
+    "tier": 4,
+    "question": "Rothbard identified a libertarian class theory as the key to understanding political economy. What two classes does it identify, and why does this differ from Marx's division?",
+    "answer": "Producers (workers and capitalists who trade voluntarily) versus the political class (all those who extract wealth through state coercion) — cutting across Marx's division by uniting workers and capitalists against the state",
+    "choices": [
+      "Entrepreneurs who create new value versus rent-seekers who extract existing value — a distinction based on whether activity is productive or parasitic",
+      "Producers (workers and capitalists who trade voluntarily) versus the political class (all those who extract wealth through state coercion) — cutting across Marx's division by uniting workers and capitalists against the state",
+      "Citizens who obey natural law versus those who rely on the state's coercive power to achieve their ends",
+      "Taxpayers who fund the state versus the political class that directs spending — a division based on net fiscal contribution"
+    ],
+    "context": "Where Marx divides society horizontally (workers vs. capitalists), Rothbard divides it vertically (those inside the state's privileges vs. those outside them). A union that uses government-backed coercive power to restrict entry belongs with the ruling class. A billionaire who earned through honest exchange without subsidies or special regulations belongs with the productive class. This reframing has radical implications: the fight is not workers against employers but both against the state apparatus that exploits them.",
+    "gates": {
+      "schema_ok": true,
+      "schema_detail": "present=True, answer_in_choices=True",
+      "parity_ok": false,
+      "parity_detail": "mean=150.0 ratio=2.17 lens=[150, 224, 103, 123]",
+      "cost_ok": true,
+      "cost_detail": "total=775 (cap=800)",
+      "rote_ok": true,
+      "rote_detail": "ok"
+    }
+  },
+  {
+    "idx": 143,
+    "tier": 4,
+    "question": "Mill argued in On Liberty that society has exactly one legitimate reason to restrict individual freedom. What is it, and what does it explicitly exclude?",
+    "answer": "Preventing harm to others — the liberty to act may not be restricted to protect the person from themselves, enforce morality, or prevent mere offense",
+    "choices": [
+      "Maintaining social order — Mill believed freedom was valuable only within a stable society capable of protecting it",
+      "Preventing harm to others — the liberty to act may not be restricted to protect the person from themselves, enforce morality, or prevent mere offense",
+      "Maximizing overall happiness — Mill believed freedom should be restricted whenever doing so clearly increases collective welfare",
+      "Upholding democratic consent — Mill believed restrictions on freedom required the approval of those whose freedom was restricted"
+    ],
+    "context": "Mill's 'harm principle' remains the foundation of liberal thought on freedom of expression and personal conduct. Its exclusions are as important as its inclusion: you cannot restrict heroin use to protect the user, homosexuality to enforce Victorian morality, or offensive speech to spare feelings. Mill's additional arguments for free speech go further: even false ideas should not be suppressed, because (1) the suppressed view might be right, (2) even false ideas keep true ones from becoming dead dogma, and (3) truth is often a synthesis of opposing views. He wrote this in 1859 — eight years before British women could even own property.",
+    "gates": {
+      "schema_ok": true,
+      "schema_detail": "present=True, answer_in_choices=True",
+      "parity_ok": true,
+      "parity_detail": "mean=130.0 ratio=1.30 lens=[115, 149, 128, 128]",
+      "cost_ok": true,
+      "cost_detail": "total=673 (cap=800)",
+      "rote_ok": true,
+      "rote_detail": "ok"
+    }
+  },
+  {
+    "idx": 208,
+    "tier": 4,
+    "question": "What is the 'cosmological argument' for God's existence?",
+    "answer": "Everything that exists has a cause, so the universe must have a first uncaused cause",
+    "choices": [
+      "The apparent fine-tuning of cosmic constants points to an intelligent designer behind creation",
+      "Everything that exists has a cause, so the universe must have a first uncaused cause",
+      "The existence of contingent beings implies a necessary being who grounds their existence",
+      "The universe's orderly structure reflects a rational mind responsible for its design"
+    ],
+    "context": "The cosmological argument reasons that everything that exists has a cause. Since causes cannot go back infinitely, there must be an uncaused first cause -- which we call God. Thomas Aquinas gave the most famous version, but the argument dates back to Aristotle.",
+    "gates": {
+      "schema_ok": true,
+      "schema_detail": "present=True, answer_in_choices=True",
+      "parity_ok": true,
+      "parity_detail": "mean=87.5 ratio=1.12 lens=[94, 84, 88, 84]",
+      "cost_ok": true,
+      "cost_detail": "total=406 (cap=800)",
+      "rote_ok": true,
+      "rote_detail": "ok"
+    }
+  },
+  {
+    "idx": 376,
+    "tier": 4,
+    "question": "What is 'the explanatory gap'?",
+    "answer": "The difficulty in explaining why physical brain processes feel like something from the inside",
+    "choices": [
+      "The unbridgeable divide between first-person phenomenology and third-person scientific methods",
+      "The difficulty in explaining why physical brain processes feel like something from the inside",
+      "The failure of introspection to reliably report on underlying mental states",
+      "The disconnect between folk psychological concepts and neuroscientific vocabulary"
+    ],
+    "context": "Even if neuroscience perfectly maps which brain states correspond to which experiences, we still would not know WHY those physical processes feel like something from the inside. The gap between objective brain science and subjective experience is the explanatory gap, a concept central to the hard problem of consciousness.",
+    "gates": {
+      "schema_ok": true,
+      "schema_detail": "present=True, answer_in_choices=True",
+      "parity_ok": true,
+      "parity_detail": "mean=85.8 ratio=1.25 lens=[94, 93, 75, 81]",
+      "cost_ok": true,
+      "cost_detail": "total=373 (cap=800)",
+      "rote_ok": true,
+      "rote_detail": "ok"
+    }
+  },
+  {
+    "idx": 538,
+    "tier": 5,
+    "question": "Rand's trilemma in value theory rejected both intrinsic and subjective value theories. How did she distinguish her 'objective' theory from both, and what makes life the standard of value?",
+    "answer": "Intrinsic: good for nothing and no one; Subjective: good because someone happens to desire it; Objective: good for a specific kind of being given its nature — with life as the standard that avoids both errors",
+    "choices": [
+      "Intrinsic: exists without a perceiver; Subjective: exists only in the perceiver; Objective: exists in the relationship between perceiver and perceived",
+      "Intrinsic: good for nothing and no one; Subjective: good because someone happens to desire it; Objective: good for a specific kind of being given its nature — with life as the standard that avoids both errors",
+      "Intrinsic: eternal and necessary; Subjective: contingent and personal; Objective: discoverable through rational investigation of nature",
+      "Intrinsic: requires no justification; Subjective: requires only preference; Objective: requires logical demonstration from first principles"
+    ],
+    "context": "The trilemma is one of Rand's most elegant philosophical contributions. Intrinsic value (good in itself, for nobody) requires floating values untethered to any living being. Subjective value (good because you happen to want it) makes morality arbitrary — if someone wants to destroy, destruction is good for them. Objective value threads the needle: what is good is determined by the nature of the being for whom it is good. Life — the kind of life appropriate to a rational animal — is the only standard that can ground value without arbitrariness or mysticism.",
+    "gates": {
+      "schema_ok": true,
+      "schema_detail": "present=True, answer_in_choices=True",
+      "parity_ok": false,
+      "parity_detail": "mean=158.0 ratio=1.54 lens=[150, 208, 135, 139]",
+      "cost_ok": false,
+      "cost_detail": "total=819 (cap=800)",
+      "rote_ok": true,
+      "rote_detail": "ok"
+    }
+  },
+  {
+    "idx": 210,
+    "tier": 5,
+    "question": "What is 'Alvin Plantinga's reformed epistemology'?",
+    "answer": "Belief in God can be rational without evidence or argument",
+    "choices": [
+      "Religious doctrine must be grounded in classical foundationalist epistemology",
+      "Belief in God can be rational without evidence or argument",
+      "Theological claims require justification through coherentist reasoning",
+      "Faith and rationality operate in entirely separate epistemic domains"
+    ],
+    "context": "Plantinga argues that belief in God can be 'properly basic' — rational without needing evidence or argument, just as our belief in other minds or the reliability of memory is basic. We do not need to prove God's existence any more than we need to prove the external world exists.",
+    "gates": {
+      "schema_ok": true,
+      "schema_detail": "present=True, answer_in_choices=True",
+      "parity_ok": false,
+      "parity_detail": "mean=68.2 ratio=1.33 lens=[77, 58, 70, 68]",
+      "cost_ok": true,
+      "cost_detail": "total=323 (cap=800)",
+      "rote_ok": true,
+      "rote_detail": "ok"
+    }
+  },
+  {
+    "idx": 451,
+    "tier": 5,
+    "question": "Wilfrid Sellars distinguished between the 'space of causes' and the 'space of reasons.' What is the significance of this distinction for epistemology?",
+    "answer": "Epistemic justification belongs to the space of reasons, not causes — being caused to believe something is not the same as having grounds for it",
+    "choices": [
+      "Causal explanations are always more fundamental than reason-giving explanations in any domain",
+      "The space of reasons is a social construction built on top of the underlying causal order of nature",
+      "Epistemic justification belongs to the space of reasons, not causes — being caused to believe something is not the same as having grounds for it",
+      "Scientific explanation operates in the space of causes while humanistic disciplines operate in the space of reasons"
+    ],
+    "context": "Sellars argued that justification — what makes a belief count as knowledge — is a normative, rational relation, not a causal one. A bright light hitting your retina causes you to believe 'there is a red light,' but the causing is not the justifying. This distinction lets Sellars attack the myth of the given: even if experience causes beliefs, it cannot by itself justify them without conceptual mediation.",
+    "gates": {
+      "schema_ok": true,
+      "schema_detail": "present=True, answer_in_choices=True",
+      "parity_ok": false,
+      "parity_detail": "mean=112.8 ratio=1.55 lens=[93, 99, 144, 115]",
+      "cost_ok": true,
+      "cost_detail": "total=601 (cap=800)",
+      "rote_ok": true,
+      "rote_detail": "ok"
+    }
+  },
+  {
+    "idx": 178,
+    "tier": 5,
+    "question": "What is the philosophy of Emmanuel Levinas centered on?",
+    "answer": "Ethics as first philosophy, rooted in responsibility to the Other",
+    "choices": [
+      "Ontology as first philosophy, grounded in the question of Being",
+      "Ethics as first philosophy, rooted in responsibility to the Other",
+      "Phenomenology of time-consciousness and the lived experience of duration",
+      "The dialectical relationship between self-consciousness and recognition"
+    ],
+    "context": "Levinas (1906–1995) argued that ethics — responsibility to the Other — is the foundation of all philosophy, not an afterthought. The face of another person makes an infinite ethical demand on us. Before we are thinkers, we are beings called to responsibility. His work was partly a critique of Heidegger's prioritization of ontology.",
+    "gates": {
+      "schema_ok": true,
+      "schema_detail": "present=True, answer_in_choices=True",
+      "parity_ok": true,
+      "parity_detail": "mean=67.8 ratio=1.14 lens=[63, 65, 72, 71]",
+      "cost_ok": true,
+      "cost_detail": "total=326 (cap=800)",
+      "rote_ok": true,
+      "rote_detail": "ok"
+    }
+  },
+  {
+    "idx": 452,
+    "tier": 5,
+    "question": "Thomas Aquinas's 'Five Ways' for proving God's existence all share a common logical structure. What is it?",
+    "answer": "Each argument starts from an observable feature of the world and reasons back to a first, uncaused cause",
+    "choices": [
+      "Each argument derives God's existence from the concept of a maximally perfect being through pure reason",
+      "Each argument shows that scripture's claims about God are internally consistent and historically reliable",
+      "Each argument starts from an observable feature of the world and reasons back to a first, uncaused cause",
+      "Each argument demonstrates that morality requires a divine lawgiver as its ultimate foundation"
+    ],
+    "context": "Aquinas's Five Ways begin with motion, causation, contingency, degrees of perfection, and design — all observable features of the natural world. Each argument then traces these features back to a first unmoved mover, uncaused cause, necessary being, source of all perfection, and purposive intelligence. Only Anselm's ontological argument, which Aquinas actually rejected, tries to derive God's existence from reason alone without any appeal to observation.",
+    "gates": {
+      "schema_ok": true,
+      "schema_detail": "present=True, answer_in_choices=True",
+      "parity_ok": true,
+      "parity_detail": "mean=101.5 ratio=1.12 lens=[103, 105, 104, 94]",
+      "cost_ok": true,
+      "cost_detail": "total=512 (cap=800)",
+      "rote_ok": true,
+      "rote_detail": "ok"
+    }
+  }
+]

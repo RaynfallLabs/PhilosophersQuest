@@ -1,0 +1,240 @@
+[
+  {
+    "src": "rationalists_t3_batch001.json",
+    "idx": 0,
+    "origin": "batch3_clean_keep"
+  },
+  {
+    "src": "rationalists_t3_batch001.json",
+    "idx": 1,
+    "origin": "batch3_clean_keep"
+  },
+  {
+    "src": "batch3_repaired.json",
+    "task_id": "B3_rationalists_t3_batch001_idx2_Descartes",
+    "origin": "batch3_repair"
+  },
+  {
+    "src": "rationalists_t3_batch001.json",
+    "idx": 3,
+    "origin": "batch3_clean_keep"
+  },
+  {
+    "src": "rationalists_t3_batch001.json",
+    "idx": 4,
+    "origin": "batch3_clean_keep"
+  },
+  {
+    "src": "rationalists_t3_batch001.json",
+    "idx": 5,
+    "origin": "batch3_clean_keep"
+  },
+  {
+    "src": "rationalists_t3_batch001.json",
+    "idx": 6,
+    "origin": "batch3_clean_keep"
+  },
+  {
+    "src": "rationalists_t3_batch001.json",
+    "idx": 7,
+    "origin": "batch3_clean_keep"
+  },
+  {
+    "src": "rationalists_t3_batch001.json",
+    "idx": 8,
+    "origin": "batch3_clean_keep"
+  },
+  {
+    "src": "rationalists_t3_batch001.json",
+    "idx": 9,
+    "origin": "batch3_clean_keep"
+  },
+  {
+    "src": "rationalists_t3_batch001.json",
+    "idx": 10,
+    "origin": "batch3_clean_keep"
+  },
+  {
+    "src": "rationalists_t3_batch001.json",
+    "idx": 11,
+    "origin": "batch3_clean_keep"
+  },
+  {
+    "src": "empiricists_t3_batch001.json",
+    "idx": 0,
+    "origin": "batch3_clean_keep"
+  },
+  {
+    "src": "empiricists_t3_batch001.json",
+    "idx": 1,
+    "origin": "batch3_clean_keep"
+  },
+  {
+    "src": "empiricists_t3_batch001.json",
+    "idx": 2,
+    "origin": "batch3_clean_keep"
+  },
+  {
+    "src": "empiricists_t3_batch001.json",
+    "idx": 3,
+    "origin": "batch3_clean_keep"
+  },
+  {
+    "src": "empiricists_t3_batch001.json",
+    "idx": 4,
+    "origin": "batch3_clean_keep"
+  },
+  {
+    "src": "empiricists_t3_batch001.json",
+    "idx": 5,
+    "origin": "batch3_clean_keep"
+  },
+  {
+    "src": "batch3_repaired.json",
+    "task_id": "B3_empiricists_t3_batch001_idx6_Berkeley",
+    "origin": "batch3_repair"
+  },
+  {
+    "src": "empiricists_t3_batch001.json",
+    "idx": 7,
+    "origin": "batch3_clean_keep"
+  },
+  {
+    "src": "empiricists_t3_batch001.json",
+    "idx": 8,
+    "origin": "batch3_clean_keep"
+  },
+  {
+    "src": "empiricists_t3_batch001.json",
+    "idx": 9,
+    "origin": "batch3_clean_keep"
+  },
+  {
+    "src": "empiricists_t3_batch001.json",
+    "idx": 10,
+    "origin": "batch3_clean_keep"
+  },
+  {
+    "src": "empiricists_t3_batch001.json",
+    "idx": 11,
+    "origin": "batch3_clean_keep"
+  },
+  {
+    "src": "batch3_repaired.json",
+    "task_id": "B3_nietzsche_t3_batch001_idx0_Nietzsche_(Genealogy_of_Morals",
+    "origin": "batch3_repair"
+  },
+  {
+    "src": "nietzsche_t3_batch001.json",
+    "idx": 1,
+    "tier_override": 2,
+    "origin": "batch3_reclass_t3_to_t2"
+  },
+  {
+    "src": "nietzsche_t3_batch001.json",
+    "idx": 2,
+    "origin": "batch3_clean_keep"
+  },
+  {
+    "src": "nietzsche_t3_batch001.json",
+    "idx": 3,
+    "origin": "batch3_grace_keep"
+  },
+  {
+    "src": "nietzsche_t3_batch001.json",
+    "idx": 4,
+    "origin": "batch3_clean_keep"
+  },
+  {
+    "src": "nietzsche_t3_batch001.json",
+    "idx": 5,
+    "tier_override": 2,
+    "origin": "batch3_reclass_t3_to_t2"
+  },
+  {
+    "src": "batch3_repaired.json",
+    "task_id": "B3_nietzsche_t3_batch001_idx6_Nietzsche_(Birth_of_Tragedy,_1",
+    "origin": "batch3_repair"
+  },
+  {
+    "src": "batch3_repaired.json",
+    "task_id": "B3_nietzsche_t3_batch001_idx7_Nietzsche_(Genealogy_III_\u00a712)",
+    "origin": "batch3_repair"
+  },
+  {
+    "src": "nietzsche_t3_batch001.json",
+    "idx": 8,
+    "origin": "batch3_clean_keep"
+  },
+  {
+    "src": "wittgenstein_t4_batch001.json",
+    "idx": 0,
+    "origin": "batch3_clean_keep"
+  },
+  {
+    "src": "wittgenstein_t4_batch001.json",
+    "idx": 1,
+    "origin": "batch3_clean_keep"
+  },
+  {
+    "src": "wittgenstein_t4_batch001.json",
+    "idx": 2,
+    "origin": "batch3_clean_keep"
+  },
+  {
+    "src": "wittgenstein_t4_batch001.json",
+    "idx": 3,
+    "origin": "batch3_clean_keep"
+  },
+  {
+    "src": "batch3_repaired.json",
+    "task_id": "B3_wittgenstein_t4_batch001_idx4_?",
+    "origin": "batch3_repair"
+  },
+  {
+    "src": "wittgenstein_t4_batch001.json",
+    "idx": 5,
+    "origin": "batch3_clean_keep"
+  },
+  {
+    "src": "wittgenstein_t4_batch001.json",
+    "idx": 6,
+    "tier_override": 5,
+    "origin": "batch3_reclass_t4_to_t5"
+  },
+  {
+    "src": "wittgenstein_t4_batch001.json",
+    "idx": 7,
+    "origin": "batch3_clean_keep"
+  },
+  {
+    "src": "foucault_poststructuralism_t4_batch001.json",
+    "idx": 0,
+    "origin": "batch3_clean_keep"
+  },
+  {
+    "src": "foucault_poststructuralism_t4_batch001.json",
+    "idx": 1,
+    "origin": "batch3_clean_keep"
+  },
+  {
+    "src": "batch3_repaired.json",
+    "task_id": "B3_foucault_poststructuralism_t4_batch001_idx2_Foucault_(Society_Must_Be_Defe",
+    "origin": "batch3_repair"
+  },
+  {
+    "src": "foucault_poststructuralism_t4_batch001.json",
+    "idx": 3,
+    "origin": "batch3_clean_keep"
+  },
+  {
+    "src": "foucault_poststructuralism_t4_batch001.json",
+    "idx": 4,
+    "origin": "batch3_clean_keep"
+  },
+  {
+    "src": "batch3_repaired.json",
+    "task_id": "B3_foucault_poststructuralism_t4_batch001_idx5_Lyotard_(The_Postmodern_Condit",
+    "origin": "batch3_repair"
+  }
+]

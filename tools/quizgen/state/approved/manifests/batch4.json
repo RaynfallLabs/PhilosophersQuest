@@ -1,0 +1,183 @@
+[
+  {
+    "src": "existentialism_t3_batch001.json",
+    "idx": 0,
+    "origin": "batch4_clean_keep"
+  },
+  {
+    "src": "existentialism_t3_batch001.json",
+    "idx": 1,
+    "origin": "batch4_clean_keep"
+  },
+  {
+    "src": "existentialism_t3_batch001.json",
+    "idx": 2,
+    "origin": "batch4_clean_keep"
+  },
+  {
+    "src": "batch4_repaired.json",
+    "task_id": "B4_existentialism_t3_batch001_idx3_Beauvoir_(The_Ethics_of_Ambigu",
+    "origin": "batch4_repair"
+  },
+  {
+    "src": "batch4_repaired.json",
+    "task_id": "B4_existentialism_t3_batch001_idx4_Camus_(The_Myth_of_Sisyphus,_1",
+    "origin": "batch4_repair"
+  },
+  {
+    "src": "existentialism_t3_batch001.json",
+    "idx": 5,
+    "origin": "batch4_clean_keep"
+  },
+  {
+    "src": "existentialism_t3_batch001.json",
+    "idx": 6,
+    "origin": "batch4_clean_keep"
+  },
+  {
+    "src": "batch4_repaired.json",
+    "task_id": "B4_existentialism_t3_batch001_idx7_Sartre_on_Kierkegaard_('Existe",
+    "origin": "batch4_repair"
+  },
+  {
+    "src": "philosophy_of_religion_t3_batch001.json",
+    "idx": 0,
+    "origin": "batch4_clean_keep"
+  },
+  {
+    "src": "philosophy_of_religion_t3_batch001.json",
+    "idx": 1,
+    "origin": "batch4_clean_keep"
+  },
+  {
+    "src": "philosophy_of_religion_t3_batch001.json",
+    "idx": 2,
+    "origin": "batch4_clean_keep"
+  },
+  {
+    "src": "philosophy_of_religion_t3_batch001.json",
+    "idx": 3,
+    "origin": "batch4_clean_keep"
+  },
+  {
+    "src": "batch4_repaired.json",
+    "task_id": "B4_philosophy_of_religion_t3_batch001_idx4_Schellenberg",
+    "origin": "batch4_repair"
+  },
+  {
+    "src": "philosophy_of_religion_t3_batch001.json",
+    "idx": 5,
+    "origin": "batch4_grace_keep"
+  },
+  {
+    "src": "philosophy_of_religion_t3_batch001.json",
+    "idx": 6,
+    "origin": "batch4_clean_keep"
+  },
+  {
+    "src": "philosophy_of_religion_t3_batch001.json",
+    "idx": 7,
+    "origin": "batch4_grace_keep"
+  },
+  {
+    "src": "consciousness_qualia_t5_batch001.json",
+    "idx": 0,
+    "origin": "batch4_clean_keep"
+  },
+  {
+    "src": "consciousness_qualia_t5_batch001.json",
+    "idx": 1,
+    "origin": "batch4_grace_keep"
+  },
+  {
+    "src": "batch4_repaired.json",
+    "task_id": "B4_consciousness_qualia_t5_batch001_idx2_Rosenthal,_Lycan",
+    "origin": "batch4_repair"
+  },
+  {
+    "src": "consciousness_qualia_t5_batch001.json",
+    "idx": 3,
+    "origin": "batch4_clean_keep"
+  },
+  {
+    "src": "batch4_repaired.json",
+    "task_id": "B4_consciousness_qualia_t5_batch001_idx4_Goff,_Shani_(cosmopsychism);_c",
+    "origin": "batch4_repair"
+  },
+  {
+    "src": "consciousness_qualia_t5_batch001.json",
+    "idx": 5,
+    "origin": "batch4_grace_keep"
+  },
+  {
+    "src": "batch4_repaired.json",
+    "task_id": "B4_philosophy_of_science_t4_batch001_idx0_?",
+    "origin": "batch4_repair"
+  },
+  {
+    "src": "philosophy_of_science_t4_batch001.json",
+    "idx": 1,
+    "origin": "batch4_clean_keep"
+  },
+  {
+    "src": "philosophy_of_science_t4_batch001.json",
+    "idx": 2,
+    "origin": "batch4_clean_keep"
+  },
+  {
+    "src": "batch4_repaired.json",
+    "task_id": "B4_philosophy_of_science_t4_batch001_idx3_?",
+    "origin": "batch4_repair"
+  },
+  {
+    "src": "philosophy_of_science_t4_batch001.json",
+    "idx": 4,
+    "origin": "batch4_clean_keep"
+  },
+  {
+    "src": "batch4_repaired.json",
+    "task_id": "B4_philosophy_of_science_t4_batch001_idx5_?",
+    "origin": "batch4_repair"
+  },
+  {
+    "src": "contemporary_ethics_t3_batch001.json",
+    "idx": 0,
+    "tier_override": 4,
+    "origin": "batch4_reclass_t3_to_t4"
+  },
+  {
+    "src": "contemporary_ethics_t3_batch001.json",
+    "idx": 1,
+    "origin": "batch4_clean_keep"
+  },
+  {
+    "src": "contemporary_ethics_t3_batch001.json",
+    "idx": 2,
+    "origin": "batch4_clean_keep"
+  },
+  {
+    "src": "contemporary_ethics_t3_batch001.json",
+    "idx": 3,
+    "origin": "batch4_clean_keep"
+  },
+  {
+    "src": "batch4_repaired.json",
+    "task_id": "B4_contemporary_ethics_t3_batch001_idx4_?",
+    "origin": "batch4_repair"
+  },
+  {
+    "src": "batch4_repaired.json",
+    "task_id": "B4_contemporary_ethics_t3_batch001_idx5_?",
+    "origin": "batch4_repair"
+  },
+  {
+    "src": "batch4_repaired.json",
+    "task_id": "B4_contemporary_ethics_t3_batch001_idx6_?",
+    "origin": "batch4_repair"
+  },
+  {
+    "src": "contemporary_ethics_t3_batch001.json",
+    "idx": 7,
+    "origin": "batch4_clean_keep"
+  }
+]

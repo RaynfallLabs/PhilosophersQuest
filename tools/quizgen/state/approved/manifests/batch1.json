@@ -1,0 +1,317 @@
+[
+  {
+    "src": "classical_socratic_t2_batch001.json",
+    "idx": 0,
+    "origin": "batch1_clean_keep"
+  },
+  {
+    "src": "batch1_repaired.json",
+    "task_id": "B1_classical_socratic_t2_batch001_idx1_Socrates",
+    "origin": "batch1_repair"
+  },
+  {
+    "src": "classical_socratic_t2_batch001.json",
+    "idx": 2,
+    "origin": "batch1_grace_keep"
+  },
+  {
+    "src": "batch1_repaired.json",
+    "task_id": "B1_classical_socratic_t2_batch001_idx3_Socrates",
+    "origin": "batch1_repair"
+  },
+  {
+    "src": "classical_socratic_t2_batch001.json",
+    "idx": 4,
+    "origin": "batch1_grace_keep"
+  },
+  {
+    "src": "classical_socratic_t2_batch001.json",
+    "idx": 5,
+    "origin": "batch1_grace_keep"
+  },
+  {
+    "src": "classical_socratic_t2_batch001.json",
+    "idx": 6,
+    "origin": "batch1_grace_keep"
+  },
+  {
+    "src": "classical_socratic_t2_batch001.json",
+    "idx": 7,
+    "tier_override": 3,
+    "origin": "batch1_reclass_t2_to_t3"
+  },
+  {
+    "src": "batch1_repaired.json",
+    "task_id": "B1_classical_socratic_t2_batch001_idx8_Plato",
+    "origin": "batch1_repair"
+  },
+  {
+    "src": "classical_socratic_t2_batch001.json",
+    "idx": 9,
+    "tier_override": 3,
+    "origin": "batch1_reclass_t2_to_t3"
+  },
+  {
+    "src": "classical_socratic_t2_batch001.json",
+    "idx": 10,
+    "origin": "batch1_clean_keep"
+  },
+  {
+    "src": "batch1_repaired.json",
+    "task_id": "B1_classical_socratic_t2_batch001_idx11_Aristotle",
+    "origin": "batch1_repair"
+  },
+  {
+    "src": "classical_socratic_t2_batch001.json",
+    "idx": 12,
+    "origin": "batch1_grace_keep"
+  },
+  {
+    "src": "classical_socratic_t2_batch001.json",
+    "idx": 13,
+    "origin": "batch1_grace_keep"
+  },
+  {
+    "src": "batch1_repaired.json",
+    "task_id": "B1_classical_socratic_t2_batch001_idx14_Aristotle",
+    "origin": "batch1_repair"
+  },
+  {
+    "src": "classical_socratic_t2_batch001.json",
+    "idx": 15,
+    "origin": "batch1_grace_keep"
+  },
+  {
+    "src": "classical_socratic_t2_batch001.json",
+    "idx": 16,
+    "tier_override": 3,
+    "origin": "batch1_reclass_t2_to_t3"
+  },
+  {
+    "src": "classical_socratic_t2_batch001.json",
+    "idx": 17,
+    "origin": "batch1_grace_keep"
+  },
+  {
+    "src": "hellenistic_schools_t2_batch001.json",
+    "idx": 0,
+    "origin": "batch1_clean_keep"
+  },
+  {
+    "src": "hellenistic_schools_t2_batch001.json",
+    "idx": 1,
+    "origin": "batch1_clean_keep"
+  },
+  {
+    "src": "hellenistic_schools_t2_batch001.json",
+    "idx": 2,
+    "origin": "batch1_clean_keep"
+  },
+  {
+    "src": "hellenistic_schools_t2_batch001.json",
+    "idx": 3,
+    "origin": "batch1_clean_keep"
+  },
+  {
+    "src": "hellenistic_schools_t2_batch001.json",
+    "idx": 4,
+    "origin": "batch1_clean_keep"
+  },
+  {
+    "src": "hellenistic_schools_t2_batch001.json",
+    "idx": 5,
+    "origin": "batch1_clean_keep"
+  },
+  {
+    "src": "hellenistic_schools_t2_batch001.json",
+    "idx": 6,
+    "origin": "batch1_clean_keep"
+  },
+  {
+    "src": "hellenistic_schools_t2_batch001.json",
+    "idx": 7,
+    "origin": "batch1_clean_keep"
+  },
+  {
+    "src": "hellenistic_schools_t2_batch001.json",
+    "idx": 8,
+    "tier_override": 3,
+    "origin": "batch1_reclass_t2_to_t3"
+  },
+  {
+    "src": "batch1_repaired.json",
+    "task_id": "B1_hellenistic_schools_t2_batch001_idx9_?",
+    "origin": "batch1_repair"
+  },
+  {
+    "src": "hellenistic_schools_t2_batch001.json",
+    "idx": 10,
+    "origin": "batch1_clean_keep"
+  },
+  {
+    "src": "hellenistic_schools_t2_batch001.json",
+    "idx": 11,
+    "origin": "batch1_clean_keep"
+  },
+  {
+    "src": "batch1_repaired.json",
+    "task_id": "B1_hellenistic_schools_t2_batch001_idx12_?",
+    "origin": "batch1_repair"
+  },
+  {
+    "src": "hellenistic_schools_t2_batch001.json",
+    "idx": 13,
+    "origin": "batch1_clean_keep"
+  },
+  {
+    "src": "hellenistic_schools_t2_batch001.json",
+    "idx": 14,
+    "origin": "batch1_clean_keep"
+  },
+  {
+    "src": "daoist_t2_batch001.json",
+    "idx": 0,
+    "origin": "batch1_clean_keep"
+  },
+  {
+    "src": "batch1_repaired.json",
+    "task_id": "B1_daoist_t2_batch001_idx1_Laozi",
+    "origin": "batch1_repair"
+  },
+  {
+    "src": "batch1_repaired.json",
+    "task_id": "B1_daoist_t2_batch001_idx2_Laozi",
+    "origin": "batch1_repair"
+  },
+  {
+    "src": "batch1_repaired.json",
+    "task_id": "B1_daoist_t2_batch001_idx3_Laozi",
+    "origin": "batch1_repair"
+  },
+  {
+    "src": "daoist_t2_batch001.json",
+    "idx": 4,
+    "origin": "batch1_clean_keep"
+  },
+  {
+    "src": "daoist_t2_batch001.json",
+    "idx": 5,
+    "tier_override": 3,
+    "origin": "batch1_reclass_t2_to_t3"
+  },
+  {
+    "src": "daoist_t2_batch001.json",
+    "idx": 6,
+    "origin": "batch1_clean_keep"
+  },
+  {
+    "src": "batch1_repaired.json",
+    "task_id": "B1_daoist_t2_batch001_idx7_Laozi",
+    "origin": "batch1_repair"
+  },
+  {
+    "src": "batch1_repaired.json",
+    "task_id": "B1_kant_t3_batch001_idx0_Kant",
+    "origin": "batch1_repair"
+  },
+  {
+    "src": "kant_t3_batch001.json",
+    "idx": 1,
+    "origin": "batch1_clean_keep"
+  },
+  {
+    "src": "kant_t3_batch001.json",
+    "idx": 2,
+    "origin": "batch1_clean_keep"
+  },
+  {
+    "src": "batch1_repaired.json",
+    "task_id": "B1_kant_t3_batch001_idx3_Kant",
+    "origin": "batch1_repair"
+  },
+  {
+    "src": "kant_t3_batch001.json",
+    "idx": 4,
+    "origin": "batch1_clean_keep"
+  },
+  {
+    "src": "kant_t3_batch001.json",
+    "idx": 5,
+    "origin": "batch1_clean_keep"
+  },
+  {
+    "src": "batch1_repaired.json",
+    "task_id": "B1_kant_t3_batch001_idx6_Kant",
+    "origin": "batch1_repair"
+  },
+  {
+    "src": "batch1_repaired.json",
+    "task_id": "B1_kant_t3_batch001_idx7_Kant",
+    "origin": "batch1_repair"
+  },
+  {
+    "src": "kant_t3_batch001.json",
+    "idx": 8,
+    "origin": "batch1_clean_keep"
+  },
+  {
+    "src": "batch1_repaired.json",
+    "task_id": "B1_kant_t3_batch001_idx9_Kant",
+    "origin": "batch1_repair"
+  },
+  {
+    "src": "kant_t3_batch001.json",
+    "idx": 10,
+    "origin": "batch1_clean_keep"
+  },
+  {
+    "src": "kant_t3_batch001.json",
+    "idx": 11,
+    "origin": "batch1_clean_keep"
+  },
+  {
+    "src": "early_christian_thought_t3_batch001.json",
+    "idx": 0,
+    "origin": "batch1_clean_keep"
+  },
+  {
+    "src": "early_christian_thought_t3_batch001.json",
+    "idx": 1,
+    "origin": "batch1_clean_keep"
+  },
+  {
+    "src": "early_christian_thought_t3_batch001.json",
+    "idx": 2,
+    "origin": "batch1_clean_keep"
+  },
+  {
+    "src": "early_christian_thought_t3_batch001.json",
+    "idx": 3,
+    "origin": "batch1_clean_keep"
+  },
+  {
+    "src": "early_christian_thought_t3_batch001.json",
+    "idx": 4,
+    "origin": "batch1_clean_keep"
+  },
+  {
+    "src": "early_christian_thought_t3_batch001.json",
+    "idx": 5,
+    "origin": "batch1_clean_keep"
+  },
+  {
+    "src": "early_christian_thought_t3_batch001.json",
+    "idx": 6,
+    "origin": "batch1_clean_keep"
+  },
+  {
+    "src": "batch1_repaired.json",
+    "task_id": "B1_early_christian_thought_t3_batch001_idx7_Origen",
+    "origin": "batch1_repair"
+  },
+  {
+    "src": "early_christian_thought_t3_batch001.json",
+    "idx": 8,
+    "origin": "batch1_clean_keep"
+  }
+]
