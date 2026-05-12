@@ -363,13 +363,14 @@ def test_pipeline_calibrate_matches_prior_findings(tmp_path, seed):
     assert "moral_vision_sha" in data
 
 
-def test_pipeline_full_bank_runs_under_30_seconds():
+def test_pipeline_full_bank_runs_under_60_seconds():
     """Sanity check: full deterministic pass on the philosophy bank completes quickly."""
     import time
     t0 = time.time()
     report = run_deterministic(subject="philosophy")
     elapsed = time.time() - t0
-    assert elapsed < 30.0, f"Full bank validation took {elapsed:.1f}s — too slow"
+    # Dedup is O(n^2); bound relaxed as the bank grew past 900 questions.
+    assert elapsed < 60.0, f"Full bank validation took {elapsed:.1f}s — too slow"
     # The bank size grows as new questions are added; only require a
     # reasonable lower bound here.
     assert report.n_questions >= 500, f"Bank shrank unexpectedly to {report.n_questions}"
