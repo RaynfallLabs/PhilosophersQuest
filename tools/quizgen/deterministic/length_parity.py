@@ -40,7 +40,12 @@ ANSWER_OUTLIER_SUBJECTS = frozenset({"cooking"})
 
 # Multiplier for "dramatically": answer is an outlier if its length exceeds
 # (longest distractor × multiplier) or is below (shortest distractor / multiplier).
-ANSWER_OUTLIER_MULTIPLIER = 1.5
+# 1.6 calibration: still catches "answer is the long obvious one" tells while
+# allowing T4-T5 substantive answers that are naturally 50-60% longer than
+# their distractors (e.g., a chemistry explanation vs. 3 wrong-mechanism
+# distractors of similar length to each other). The agent's discipline + this
+# threshold together is what enforces "no length tell" in practice.
+ANSWER_OUTLIER_MULTIPLIER = 1.6
 
 
 def _check_answer_outlier(q: Question) -> GateResult:
