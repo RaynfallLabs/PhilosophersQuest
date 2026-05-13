@@ -35,6 +35,7 @@ SUBJECT_TIER_BUDGETS: dict[str, dict[int, int]] = {
     "science":   {1: 280, 2: 480, 3: 680, 4: 900, 5: 1100},
     "ai":        {1: 280, 2: 480, 3: 680, 4: 900, 5: 1100},
     "geography": {1: 280, 2: 480, 3: 680, 4: 900, 5: 1100},
+    "history":   {1: 280, 2: 480, 3: 680, 4: 900, 5: 1100},
 }
 
 GRACE_FACTOR = 1.05  # +5% per philosophy.md §2
