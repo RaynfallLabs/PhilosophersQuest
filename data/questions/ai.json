@@ -2088,6 +2088,150 @@
     "context": "Deepfake-related election rules vary by country."
   },
   {
+    "tier": 1,
+    "question": "A scam where an AI voice clone of a panicked relative calls begging for money is known as a:",
+    "answer": "Grandparent scam",
+    "choices": [
+      "Grandparent scam",
+      "Generational handoff",
+      "Echo replay attack",
+      "Family relay exploit"
+    ],
+    "context": "FTC warned of a surge in 2023; pause and call the real person back at a number you already had."
+  },
+  {
+    "tier": 1,
+    "question": "An AI-generated phishing email is often easier to spot because it has:",
+    "answer": "Suspicious links and urgent demands",
+    "choices": [
+      "Suspicious links and urgent demands",
+      "Handwritten ink signatures",
+      "Postage stamps attached",
+      "Personalized return addresses"
+    ],
+    "context": "AI makes the prose smoother, but the social-engineering tells — pressure, weird links, wrong domain — are unchanged."
+  },
+  {
+    "tier": 1,
+    "question": "When an AI suggests a download link, the safest extra step is to:",
+    "answer": "Verify the file's checksum from the official source",
+    "choices": [
+      "Verify the file's checksum from the official source",
+      "Open it immediately and trust",
+      "Send the file to all contacts first",
+      "Burn it to a CD before opening"
+    ],
+    "context": "AI can invent URLs or hand you a typosquatted clone; matching a SHA-256 from the real vendor catches both."
+  },
+  {
+    "tier": 1,
+    "question": "An unsolicited job offer that asks you to do an AI-graded video interview before any human contact is:",
+    "answer": "A common phishing or data-harvest scam",
+    "choices": [
+      "A common phishing or data-harvest scam",
+      "An ordinary government hiring step",
+      "A standard banking procedure",
+      "Always a legitimate Fortune-500 offer"
+    ],
+    "context": "Fake recruiters use AI-flavored 'screenings' to harvest IDs, faces, and voice samples; verify the company on LinkedIn first."
+  },
+  {
+    "tier": 1,
+    "question": "Automated license-plate readers (ALPRs) deployed by firms like Flock Safety mostly capture:",
+    "answer": "Plate, time, and location of every passing car",
+    "choices": [
+      "Plate, time, and location of every passing car",
+      "Driver fingerprints only",
+      "Engine serial numbers in real time",
+      "Tire-tread DNA profiles always"
+    ],
+    "context": "Flock cameras are in 4,000+ US communities; data is often retained 30 days and shared with police networks."
+  },
+  {
+    "tier": 1,
+    "question": "Apple's plan to scan iCloud photos against a CSAM hash list on-device was, after backlash:",
+    "answer": "Paused in 2021 and quietly dropped in 2022",
+    "choices": [
+      "Paused in 2021 and quietly dropped in 2022",
+      "Made mandatory across all phones",
+      "Adopted by every other vendor immediately",
+      "Replaced by a cloud-only scanning system"
+    ],
+    "context": "Cryptographers, EFF, and Apple's own staff warned the scanner could be repurposed; Apple killed it in Dec 2022."
+  },
+  {
+    "tier": 1,
+    "question": "When Google's AI Overviews summarize an answer at the top of search, traffic to the underlying sites:",
+    "answer": "Falls sharply",
+    "choices": [
+      "Falls sharply",
+      "Increases by tenfold",
+      "Is unaffected by design",
+      "Doubles within one hour"
+    ],
+    "context": "Launched May 2024 at I/O; publishers tracked 25-65% drops on summarized queries — fewer clicks, fewer ad views."
+  },
+  {
+    "tier": 1,
+    "question": "China's WeChat super-app is, from a surveillance standpoint:",
+    "answer": "Monitored extensively by Chinese authorities",
+    "choices": [
+      "Monitored extensively by Chinese authorities",
+      "End-to-end encrypted and audit-free",
+      "Banned inside mainland China itself",
+      "A US-only platform with no PRC ties"
+    ],
+    "context": "Citizen Lab has documented WeChat keyword filtering and account suspensions tied to political content for over a decade."
+  },
+  {
+    "tier": 1,
+    "question": "DeepMind's 2022 fusion-research paper used reinforcement learning to:",
+    "answer": "Steer plasma inside a tokamak reactor",
+    "choices": [
+      "Steer plasma inside a tokamak reactor",
+      "Mine cryptocurrency on the side",
+      "Generate cat videos at scale",
+      "Translate ancient Sumerian poetry"
+    ],
+    "context": "Published Feb 2022 in Nature with the Swiss Plasma Center; RL agent shaped the magnetic field around the plasma."
+  },
+  {
+    "tier": 1,
+    "question": "DeepMind's GNoME system, announced in Nov 2023, used AI to find roughly:",
+    "answer": "2.2 million new stable inorganic crystals",
+    "choices": [
+      "2.2 million new stable inorganic crystals",
+      "Two new chemical elements",
+      "A cure for the common cold",
+      "Twelve undiscovered planets"
+    ],
+    "context": "Graph Networks for Materials Exploration screened candidate structures; about 380,000 are expected to be practically synthesizable."
+  },
+  {
+    "tier": 1,
+    "question": "Live-caption features that transcribe spoken audio in real time mainly help people who are:",
+    "answer": "Deaf or hard of hearing",
+    "choices": [
+      "Deaf or hard of hearing",
+      "Allergic to bright screens",
+      "Unable to use any computer",
+      "Working only on paper"
+    ],
+    "context": "Modern ASR models run on-device on phones (Apple Live Captions, Google Live Caption) without uploading audio."
+  },
+  {
+    "tier": 1,
+    "question": "ML pipelines at the CHIME radio telescope are best known for detecting:",
+    "answer": "Fast radio bursts from deep space",
+    "choices": [
+      "Fast radio bursts from deep space",
+      "Lost airplanes over oceans",
+      "Hidden submarines worldwide",
+      "Traffic jams in major cities"
+    ],
+    "context": "Canadian Hydrogen Intensity Mapping Experiment; sifts terabytes/day of sky data and has logged hundreds of FRBs since 2018."
+  },
+  {
     "tier": 2,
     "question": "A neural network learns by adjusting numbers called weights every time it makes a wrong prediction. The training data tells it: too high, too low — keep tuning. These weights are what people mean when they say a model has X billion ___?",
     "answer": "Parameters",
@@ -17626,5 +17770,137 @@
       "A claim on no entity that has no measurable economic or technical properties."
     ],
     "context": "BIS guidance, the e-CNY pilot, and various central-bank position papers describe varying designs. The civil-liberties concern, common across the political spectrum, is the policy reversal cost if conditions are imposed and then abused."
+  },
+  {
+    "tier": 5,
+    "question": "In April 2023 Samsung Semiconductor banned employee use of public generative-AI tools after engineers pasted confidential source code and meeting recordings into ChatGPT during normal debugging and summarization workflows. Why did that paste-and-go workflow create durable risk rather than a single-session leak?",
+    "answer": "Prompts submitted to a public chatbot may be retained and used to improve future models, so the leaked text can persist outside Samsung's control and surface in unrelated future outputs.",
+    "choices": [
+      "Prompts submitted to a public chatbot may be retained and used to improve future models, so the leaked text can persist outside Samsung's control and surface in unrelated future outputs.",
+      "Pasting code into a web form physically copies the data to a USB stick automatically, so the only fix is to disable every employee's clipboard at the OS level forever.",
+      "ChatGPT immediately publishes every prompt to a public bulletin board indexed by major search engines within ninety seconds of submission.",
+      "The risk was purely theoretical because OpenAI agreed in 2022 to delete all corporate data on receipt before any human or model ever touched it."
+    ],
+    "context": "Per the provider's terms at the time, default data could be used for training; Samsung's ban and the subsequent rise of enterprise-only models (Azure OpenAI, on-prem Llama) trace directly to this incident."
+  },
+  {
+    "tier": 5,
+    "question": "On March 20, 2023, OpenAI took ChatGPT offline for hours after some users briefly saw the conversation titles, names, email addresses, and last-four card digits of OTHER users. The cause was a bug in an open-source asynchronous Redis client (redis-py) that mis-handled cancelled requests. What does this incident illustrate about AI-product privacy?",
+    "answer": "Even a well-resourced lab can leak personal data because of an upstream library bug; an AI front-end is only as private as the entire stack of caches, queues, and clients behind it.",
+    "choices": [
+      "Even a well-resourced lab can leak personal data because of an upstream library bug; an AI front-end is only as private as the entire stack of caches, queues, and clients behind it.",
+      "Chatbots are now immune to ordinary web-app vulnerabilities because language models internally re-validate every request against a constitutional safety layer.",
+      "Redis is a deliberately insecure database designed to randomly expose customer data on the third Monday of each month for compliance purposes.",
+      "The incident proved that local on-device models are mathematically incapable of any privacy failure under any configuration ever."
+    ],
+    "context": "OpenAI's post-mortem named the redis-py async race; the broader lesson is that 'cloud AI' inherits every classic web bug plus its own."
+  },
+  {
+    "tier": 5,
+    "question": "ChatGPT and similar assistants have added 'memory' features that retain notes about the user across sessions — preferences, projects, even health and family details — without the user re-typing them. What is the structural privacy concern this introduces compared with a strictly stateless chatbot?",
+    "answer": "Long-lived memory creates a per-user profile inside the vendor's systems; subpoena, breach, model-training reuse, or a future policy change can all expose details the user shared months earlier in a different context.",
+    "choices": [
+      "Long-lived memory creates a per-user profile inside the vendor's systems; subpoena, breach, model-training reuse, or a future policy change can all expose details the user shared months earlier in a different context.",
+      "Stateful memory is impossible because language models cannot store anything between requests, so the feature is purely a placebo with no underlying data ever recorded.",
+      "Memory features automatically grant the user full ownership of OpenAI's training corpus and a permanent share of corporate revenue.",
+      "The only added risk is that the assistant occasionally forgets which language the user prefers to receive their replies in."
+    ],
+    "context": "Auditing controls and an off-switch are available in most products, but the safe default for sensitive topics — finance, health, legal — is to disable memory or use a non-memory mode."
+  },
+  {
+    "tier": 5,
+    "question": "In March 2023, security firm HYAS demonstrated 'BlackMamba', a proof-of-concept keylogger that asks an LLM API to regenerate its malicious payload at runtime, so the binary on disk contains no static malicious code and the network traffic looks like ordinary API calls. Why does this approach challenge traditional antivirus signatures?",
+    "answer": "Signature-based detection relies on stable byte patterns or hashes of known-bad code; if the payload is fetched fresh from an LLM each run, no two executions share the exact same bytes for a signature to match.",
+    "choices": [
+      "Signature-based detection relies on stable byte patterns or hashes of known-bad code; if the payload is fetched fresh from an LLM each run, no two executions share the exact same bytes for a signature to match.",
+      "Antivirus products in 2023 already perfectly understood the semantic intent of every Python script and could block this category of attack with no updates needed.",
+      "The Windows operating system patches itself nightly with a model that bans all LLM API traffic by default on every consumer PC worldwide.",
+      "BlackMamba was confirmed to work only inside a sealed laboratory and could not run on any real machine connected to the internet."
+    ],
+    "context": "Defenses shift toward behavioral detection (what the process does, what it touches) and egress controls on which API endpoints a binary may reach."
+  },
+  {
+    "tier": 5,
+    "question": "Anthropic's December 2022 paper 'Constitutional AI: Harmlessness from AI Feedback' replaces a large slice of human RLHF labeling with a written 'constitution' — a short list of natural-language principles — and has the model critique and revise its own outputs against that list. Why is this approach important beyond cost savings?",
+    "answer": "The principles are explicit and auditable: a third party can read the constitution and argue about which rules are appropriate, instead of inferring values from millions of opaque human preference labels.",
+    "choices": [
+      "The principles are explicit and auditable: a third party can read the constitution and argue about which rules are appropriate, instead of inferring values from millions of opaque human preference labels.",
+      "Constitutional AI is mathematically guaranteed to make a model factually correct on every question in every language with zero error rate.",
+      "Anthropic's constitution is a literal copy of the United States Constitution, including the Bill of Rights, with no AI-specific additions.",
+      "The technique eliminates the need for any human involvement in alignment, so no policy choices are made by any humans at any stage of training."
+    ],
+    "context": "The trade-off is concentration: whoever writes the constitution sets values for every model deployment; the openness of the document is a partial check on that power."
+  },
+  {
+    "tier": 5,
+    "question": "DeepMind's March 2022 paper 'Training Compute-Optimal Large Language Models' (informally 'Chinchilla') argued that prior frontier models — including the 175B-parameter GPT-3 — were significantly under-trained on data given their parameter count. What was the practical implication of their compute-optimal recipe?",
+    "answer": "For a fixed training budget, smaller models trained on much more data outperform larger models trained on less; Chinchilla (70B, 1.4T tokens) matched or beat Gopher (280B) on most tasks.",
+    "choices": [
+      "For a fixed training budget, smaller models trained on much more data outperform larger models trained on less; Chinchilla (70B, 1.4T tokens) matched or beat Gopher (280B) on most tasks.",
+      "Any model above ten million parameters is provably worse than a smaller one, regardless of how much data is used during training.",
+      "The paper proved that all future progress in AI is impossible because compute and data scale up at identical rates always.",
+      "Chinchilla's key result is that adding parameters always linearly worsens performance, so 1B-parameter models will permanently outperform any larger model."
+    ],
+    "context": "Roughly 20 training tokens per parameter became the rule of thumb; the subsequent Llama family was sized partly around this insight."
+  },
+  {
+    "tier": 5,
+    "question": "OpenAI's o1-preview (Sept 2024) and DeepSeek-R1 (Jan 2025) represent a shift in how strong reasoning is obtained from LLMs: instead of only scaling pre-training, they spend much more compute at INFERENCE — letting the model generate long internal chains of thought before its final answer. What is the central trade-off this introduces?",
+    "answer": "Higher latency and cost per query in exchange for substantially better math, code, and multi-step reasoning; users pay (in time and tokens) for the model to 'think', not just for more parameters at training time.",
+    "choices": [
+      "Higher latency and cost per query in exchange for substantially better math, code, and multi-step reasoning; users pay (in time and tokens) for the model to 'think', not just for more parameters at training time.",
+      "These models eliminate the need for any pre-training at all and are trained entirely from random initialization at inference time on every single user query.",
+      "Reasoning models always respond within ten milliseconds and cost less than ordinary chat models because they generate fewer tokens overall on average.",
+      "The technique only works for poetry generation; math, code, and science see no measurable improvement over standard chat models in any reported benchmark."
+    ],
+    "context": "DeepSeek-R1 also showed reasoning behavior can be elicited from base models with pure RL on verifiable answers, lowering the moat around closed reasoning systems."
+  },
+  {
+    "tier": 5,
+    "question": "In 1973 the UK Science Research Council commissioned Sir James Lighthill, an applied mathematician, to evaluate progress in artificial intelligence. His report concluded that AI had failed to deliver on its promises and that the 'combinatorial explosion' would block further progress in core areas. What did the report's reception trigger?",
+    "answer": "Sharp cuts to UK AI funding outside a few sites; widely cited as a catalyst of the 'first AI winter' alongside US DARPA reductions in the same decade.",
+    "choices": [
+      "Sharp cuts to UK AI funding outside a few sites; widely cited as a catalyst of the 'first AI winter' alongside US DARPA reductions in the same decade.",
+      "An immediate doubling of UK AI funding and the establishment of a national AI ministry that operates to this day.",
+      "A formal British government endorsement of expert systems as the only sanctioned research direction for thirty years.",
+      "A NATO treaty obligating every member state to fund AGI laboratories at the same percentage of GDP every year."
+    ],
+    "context": "Lighthill's framing — over-promise, under-deliver, broken faith with funders — recurs almost word for word in later AI winters and is the playbook critics watch for today."
+  },
+  {
+    "tier": 5,
+    "question": "In February 2019 OpenAI announced GPT-2, a 1.5B-parameter language model, but initially released only smaller versions, citing 'concerns about malicious applications' such as automated propaganda and impersonation. The full model was published in November 2019 after a six-month staged release. What was the lasting effect of that decision?",
+    "answer": "It set the template for 'safety-flavored' staged releases — read by critics as part marketing, part caution, part competitive positioning; the open-vs-gated weights debate traces directly to it.",
+    "choices": [
+      "It set the template for 'safety-flavored' staged releases — read by critics as part marketing, part caution, part competitive positioning; the open-vs-gated weights debate traces directly to it.",
+      "Every major AI lab signed a binding industry treaty agreeing never to release any model larger than one hundred million parameters to the public.",
+      "GPT-2's full weights were destroyed in a fire at OpenAI's offices in 2020 and have never been recovered or reconstructed by anyone since.",
+      "OpenAI was nationalized by the United States government a month later and ran as a federal agency for the following five years under public ownership."
+    ],
+    "context": "Llama's 2023 leak, Mistral's 2023 open release, and DeepSeek's 2024-25 frontier-open weights all argued, implicitly, against the GPT-2 staging logic."
+  },
+  {
+    "tier": 5,
+    "question": "In March 2016, during game two of the AlphaGo vs Lee Sedol match in Seoul, AlphaGo played move 37 — a 'shoulder hit' on the fifth line — that human commentators initially read as a mistake or a misclick. Fan Hui, who had lost to AlphaGo six months earlier, said on air, 'It's not a human move.' Why is move 37 still cited as a milestone?",
+    "answer": "It showed a system trained on millions of human games producing a move outside the human playbook that nonetheless turned out to be objectively strong, hinting that ML systems can discover strategy beyond imitation.",
+    "choices": [
+      "It showed a system trained on millions of human games producing a move outside the human playbook that nonetheless turned out to be objectively strong, hinting that ML systems can discover strategy beyond imitation.",
+      "It was the only legal move available on the board at that turn, and AlphaGo had no choice in the matter under standard Go rules.",
+      "Move 37 was secretly typed by a backup human player when AlphaGo's GPU temporarily overheated and the engine went offline mid-game.",
+      "Lee Sedol's contract required him to lose game two for promotional purposes, and move 37 was a scripted highlight unrelated to AlphaGo's actual play."
+    ],
+    "context": "Lee won game four with move 78, the 'God Move' — a reminder that, even at superhuman level, ML systems still have brittle blind spots a skilled opponent can sometimes find."
+  },
+  {
+    "tier": 5,
+    "question": "On December 27, 2023, the New York Times filed suit against OpenAI and Microsoft in the Southern District of New York, alleging that millions of Times articles had been used to train ChatGPT without license, and that the model can reproduce substantial verbatim passages of Times content on demand. Why does this case matter beyond the parties?",
+    "answer": "It is the first major US legal test of whether large-scale training on copyrighted text qualifies as fair use, with implications for every frontier model and every newsroom that publishes online.",
+    "choices": [
+      "It is the first major US legal test of whether large-scale training on copyrighted text qualifies as fair use, with implications for every frontier model and every newsroom that publishes online.",
+      "The case has already concluded with a unanimous Supreme Court ruling that bans all AI training on any text ever published in any language.",
+      "The Times is suing only for symbolic damages of one dollar, so the outcome cannot affect any other publisher or model in any way.",
+      "OpenAI agreed at filing to delete all copies of every ChatGPT model in existence and exit the business permanently within thirty days."
+    ],
+    "context": "Outcome depends partly on how courts treat verbatim regurgitation versus statistical learning; settlements with other outlets (AP, Axel Springer) hint that the eventual answer may be 'license, don't litigate'."
   }
 ]
