@@ -26,7 +26,7 @@ from tools.quizgen.deterministic.types import GateResult, GateStatus, Question
 MAX_DEVIATION_FROM_MEAN = 0.15  # 15%
 MAX_LONGEST_SHORTEST_RATIO = 1.30
 
-EXEMPT_SUBJECTS = frozenset({"math", "grammar"})
+EXEMPT_SUBJECTS = frozenset({"math"})
 
 # Per-subject ratio calibration. Default if not listed = 1.30 (philosophy standard).
 SUBJECT_RATIO_OVERRIDES: dict[str, float] = {}
@@ -36,7 +36,7 @@ SUBJECT_DEVIATION_OVERRIDES: dict[str, float] = {}
 # only fail condition is: correct answer is dramatically longer or shorter
 # than every distractor. Distractor-length variation among the 3 wrong
 # choices is allowed.
-ANSWER_OUTLIER_SUBJECTS = frozenset({"cooking", "animal"})
+ANSWER_OUTLIER_SUBJECTS = frozenset({"cooking", "animal", "grammar"})
 
 # Multiplier for "dramatically": answer is an outlier if its length exceeds
 # (longest distractor × multiplier) or is below (shortest distractor / multiplier).
