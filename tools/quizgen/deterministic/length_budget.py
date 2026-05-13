@@ -32,6 +32,7 @@ DEFAULT_TIER_BUDGETS: dict[int, int] = {
 SUBJECT_TIER_BUDGETS: dict[str, dict[int, int]] = {
     "cooking": {1: 280, 2: 480, 3: 680, 4: 900, 5: 1100},
     "animal":  {1: 280, 2: 480, 3: 680, 4: 900, 5: 1100},
+    "science": {1: 280, 2: 480, 3: 680, 4: 900, 5: 1100},
 }
 
 GRACE_FACTOR = 1.05  # +5% per philosophy.md §2
