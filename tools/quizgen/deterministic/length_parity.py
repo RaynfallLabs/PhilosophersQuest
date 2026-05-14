@@ -36,7 +36,7 @@ SUBJECT_DEVIATION_OVERRIDES: dict[str, float] = {}
 # only fail condition is: correct answer is dramatically longer or shorter
 # than every distractor. Distractor-length variation among the 3 wrong
 # choices is allowed.
-ANSWER_OUTLIER_SUBJECTS = frozenset({"cooking", "animal", "grammar", "science", "ai", "geography", "history", "theology"})
+ANSWER_OUTLIER_SUBJECTS = frozenset({"cooking", "animal", "grammar", "science", "ai", "geography", "history", "theology", "economics"})
 
 # Multiplier for "dramatically": answer is an outlier if its length exceeds
 # (longest distractor × multiplier) or is below (shortest distractor / multiplier).
