@@ -253,6 +253,9 @@ class Scroll(Item):
         self.identified       = bool(defn.get('identified', False))
         self.container_loot_tier: str = defn.get('containerLootTier', defn.get('container_loot_tier', 'common'))
         self.floor_spawn_weight: dict = defn.get('floorSpawnWeight', defn.get('floor_spawn_weight', {}))
+        # Spawn-once quest scrolls: survive a failed read so the secret-victory
+        # path is not bricked by a single bad grammar quiz.
+        self.single_copy: bool = bool(defn.get('single_copy', False))
 
     @property
     def cursed(self) -> bool:
@@ -511,6 +514,7 @@ def make_scroll_lake_of_fire(x: int, y: int) -> Scroll:
         'power': '',
         'unidentified_name': 'worn scroll',
         'identified': False,
+        'single_copy': True,
         'lore': "A scroll of terrible power, its words drawn from the final chapter of Revelation. The ink smells of ash and brimstone. The last line is underlined twice: 'This is the second death, the lake of fire.'",
     })
     item.x = x
@@ -582,6 +586,7 @@ def make_death_bane_scroll(x: int, y: int) -> Scroll:
         'power': 'ABYSSAL-VICTOR',
         'unidentified_name': "Scroll of Death's Bane",
         'identified': True,
+        'single_copy': True,
     })
     item.x = x
     item.y = y

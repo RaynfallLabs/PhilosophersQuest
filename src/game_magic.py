@@ -1538,17 +1538,38 @@ class MagicMixin:
 
         def on_complete(result):
             self.state = STATE_PLAYER
-            scroll.identified = True
-            self.player.known_item_ids.add(scroll.id)
-            self.player.remove_from_inventory(scroll)
 
             if not result.success:
+                # Quest scrolls (single-copy) survive a bad read AND keep their
+                # mystery — the scroll's purpose is too heavy to be uncovered
+                # by a half-read. Each one gets its own lore-flavored refusal.
+                if getattr(scroll, 'single_copy', False):
+                    if scroll.id == 'scroll_lake_of_fire':
+                        self.add_message(
+                            "The words swim across the page. They are not for this hour, "
+                            "not for this place. The scroll's heat fades back to stillness.",
+                            'warning')
+                    elif scroll.id == 'scroll_deaths_bane':
+                        self.add_message(
+                            "The names of Death grow heavy on the page. Steady your breath. "
+                            "Try again when the words will hold.", 'warning')
+                    else:
+                        self.add_message(
+                            "The page resists you. Its time is not now.", 'warning')
+                    self._advance_turn()
+                    return
+                scroll.identified = True
+                self.player.known_item_ids.add(scroll.id)
+                self.player.remove_from_inventory(scroll)
                 self.add_message(
                     "You stumble over the words -- the scroll crumbles unread.", 'warning'
                 )
                 self._advance_turn()
                 return
 
+            scroll.identified = True
+            self.player.known_item_ids.add(scroll.id)
+            self.player.remove_from_inventory(scroll)
             self.add_message(f"You read the {display}!", 'success')
             _qs_scroll = getattr(self, 'quirk_system', None)
             if _qs_scroll:

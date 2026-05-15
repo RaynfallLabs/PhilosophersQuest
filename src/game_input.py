@@ -219,6 +219,17 @@ class InputMixin:
 
     def _player_input(self, key: int):
 
+        # Sleep / paralysis: no action possible. Turn passes, status ticks down.
+        # Damage still wakes from sleep via Player.take_damage.
+        if self.player.has_effect('sleeping'):
+            self.add_message("You are fast asleep -- you cannot act.", 'warning')
+            self._advance_turn()
+            return
+        if self.player.has_effect('paralyzed'):
+            self.add_message("You are paralyzed -- you cannot act.", 'danger')
+            self._advance_turn()
+            return
+
         if key == pygame.K_PERIOD:
             qs = getattr(self, 'quirk_system', None)
             near = any(m.alive for m in self.monsters)
