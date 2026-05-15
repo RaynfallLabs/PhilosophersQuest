@@ -351,11 +351,13 @@ class Monster:
 
     def take_turn(self, player, dungeon, all_monsters, extra_occupied=None) -> bool:
         """Execute this monster's turn. Returns True if it attacked the player.
-        extra_occupied: optional set of (x,y) positions to avoid (e.g. pet tiles)."""
+        extra_occupied: optional set of (x,y) positions to avoid (e.g. pet tiles).
+
+        Status-effect ticking happens once per game turn in Game._advance_turn, not
+        here — ticking in both places would halve effect durations and double DOTs.
+        """
         if not self.alive:
             return False
-
-        self.tick_effects()
 
         # Immobilised by sleep or paralysis
         if self.has_effect('sleeping') or self.has_effect('paralyzed'):

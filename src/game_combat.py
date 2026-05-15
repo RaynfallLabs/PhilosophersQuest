@@ -1533,8 +1533,8 @@ class CombatMixin:
 
                 # Jade Cicada: death save (once per floor)
                 if self.player.hp <= 0 and not getattr(self, '_death_save_used', False):
-                    for _acc in (self.player.amulet, self.player.ring):
-                        if _acc and getattr(_acc, 'death_save', False):
+                    for _acc in self.player.equipped_accessories:
+                        if getattr(_acc, 'death_save', False):
                             self.player.hp = 1
                             self._death_save_used = True
                             self.add_message("The jade cicada cracks — but holds! You cling to life!", 'success')
@@ -1543,11 +1543,17 @@ class CombatMixin:
 
                 # Ankh of Isis: resurrect on death (consumes the item)
                 if self.player.hp <= 0:
-                    for _acc_slot in ('amulet', 'ring'):
-                        _acc = getattr(self.player, _acc_slot, None)
-                        if _acc and getattr(_acc, 'resurrect_on_death', False):
+                    for _acc in self.player.equipped_accessories:
+                        if getattr(_acc, 'resurrect_on_death', False):
                             self.player.hp = max(1, self.player.max_hp // 2)
-                            setattr(self.player, _acc_slot, None)
+                            # Clear the slot that held the Ankh
+                            if self.player.amulet_slot is _acc:
+                                self.player.amulet_slot = None
+                            else:
+                                for _i, _r in enumerate(self.player.accessory_slots):
+                                    if _r is _acc:
+                                        self.player.accessory_slots[_i] = None
+                                        break
                             self.add_message("The Ankh of Isis shatters! Isis breathes life back into you!", 'success')
                             self._log_chronicle("I died. Then light. Isis pulled me back. The ankh is dust now.")
                             _snd.play('player_healed')

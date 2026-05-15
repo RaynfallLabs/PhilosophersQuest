@@ -101,6 +101,15 @@ class Player:
         # Cooking HP balance: diminishing returns tracking
         self.cooking_hp_gained: int = 0    # total max HP gained from cooking (for softcap)
 
+    @property
+    def equipped_accessories(self):
+        """Every equipped accessory item: amulet (if any) + all non-empty ring slots."""
+        items = []
+        if self.amulet_slot is not None:
+            items.append(self.amulet_slot)
+        items.extend(r for r in self.accessory_slots if r is not None)
+        return items
+
     # --- Resources ---
 
     def take_damage(self, amount: int, damage_type: str = 'physical') -> int:

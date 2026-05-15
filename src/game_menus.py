@@ -767,6 +767,9 @@ class MenuMixin:
             self.add_message(f"{label}: A sage's wisdom descends -- all quiz timers extended.", 'success')
 
         elif pid == 'focused_scholar' or pid == 'arcane_surge':
+            if not pl.has_effect('brilliance'):
+                pl.apply_stat_bonus('INT', 1)
+                pl.apply_stat_bonus('WIS', 1)
             pl.add_effect('brilliance', 10)
             if pid == 'arcane_surge':
                 pl.restore_mp(pl.max_mp)
@@ -788,10 +791,15 @@ class MenuMixin:
 
         elif pid == 'philosophers_stone':
             pl.add_effect('blessed', 10)
+            if not pl.has_effect('brilliance'):
+                pl.apply_stat_bonus('INT', 1)
+                pl.apply_stat_bonus('WIS', 1)
             pl.add_effect('brilliance', 10)
             self.add_message(f"{label}: Gold-bright wisdom suffuses your thoughts.", 'success')
 
         elif pid == 'atlas_burden':
+            if not pl.has_effect('heroism'):
+                pl.apply_stat_bonus('STR', 2)
             pl.add_effect('heroism', 20)
             self.add_message(f"{label}: You bear the weight of the world -- Heroism for 20 turns!", 'success')
 
@@ -815,6 +823,8 @@ class MenuMixin:
             self.add_message(f"{label}: Iron will takes hold -- Shielded + Reflecting for 10 turns.", 'success')
 
         elif pid == 'battle_trance':
+            if not pl.has_effect('heroism'):
+                pl.apply_stat_bonus('STR', 2)
             pl.add_effect('heroism', 15)
             self.add_message(f"{label}: Battle trance descends -- Heroism for 15 turns!", 'success')
 
@@ -829,6 +839,8 @@ class MenuMixin:
             self.add_message(f"{label}: You slip between shadows -- Invisible + Phasing for 5 turns.", 'success')
 
         elif pid == 'death_wish':
+            if not pl.has_effect('heroism'):
+                pl.apply_stat_bonus('STR', 2)
             pl.add_effect('heroism', 10)
             pl.add_effect('hasted', 10)
             self.add_message(f"{label}: You embrace the edge -- Heroism + Hasted for 10 turns!", 'success')

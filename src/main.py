@@ -1590,9 +1590,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Passive PER-based ambush detection
         self._do_passive_ambush_detection()
         # Eye of Horus: passive HP regen every N turns
-        for _acc in (self.player.amulet, self.player.ring):
-            _pr = getattr(_acc, 'passive_regen', 0) if _acc else 0
-            _pri = getattr(_acc, 'passive_regen_interval', 5) if _acc else 5
+        for _acc in self.player.equipped_accessories:
+            _pr = getattr(_acc, 'passive_regen', 0)
+            _pri = getattr(_acc, 'passive_regen_interval', 5)
             if _pr > 0 and self.turn_count % _pri == 0:
                 if self.player.hp < self.player.max_hp:
                     self.player.hp = min(self.player.max_hp, self.player.hp + _pr)
@@ -1624,8 +1624,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 self.add_message("The fury fades. You feel drained.", 'warning')
 
         # Seal of Solomon: pacify nearby monsters
-        for _acc in (self.player.amulet, self.player.ring):
-            if _acc and getattr(_acc, 'pacify_chance', 0) > 0:
+        for _acc in self.player.equipped_accessories:
+            if getattr(_acc, 'pacify_chance', 0) > 0:
                 for m in self.monsters:
                     if m.alive and abs(m.x - self.player.x) <= 2 and abs(m.y - self.player.y) <= 2:
                         if random.random() < _acc.pacify_chance:
@@ -1641,8 +1641,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
         # Torc of Boudicca: AC bonus when surrounded by 3+ enemies
         _surr_bonus = 0
-        for _acc in (self.player.amulet, self.player.ring):
-            if _acc and getattr(_acc, 'surrounded_ac_bonus', 0) > 0:
+        for _acc in self.player.equipped_accessories:
+            if getattr(_acc, 'surrounded_ac_bonus', 0) > 0:
                 _adj_enemies = sum(1 for m in self.monsters if m.alive
                                    and abs(m.x - self.player.x) <= 1
                                    and abs(m.y - self.player.y) <= 1)
@@ -2085,8 +2085,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 self.player_gold = 0
             _gold_amt = item.amount
             # Draupnir: double gold pickups
-            for _acc in (self.player.amulet, self.player.ring):
-                if _acc and getattr(_acc, 'gold_multiplier', 0) > 0:
+            for _acc in self.player.equipped_accessories:
+                if getattr(_acc, 'gold_multiplier', 0) > 0:
                     _gold_amt = int(_gold_amt * _acc.gold_multiplier)
                     break
             self.player_gold += _gold_amt
