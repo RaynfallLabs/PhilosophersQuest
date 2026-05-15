@@ -141,6 +141,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.missed_questions: list = []   # [{subject, question, correct, chosen}]
         self._score_saved       = False    # True after high score is written
         self.quiz_engine.on_answer = self._on_quiz_answer
+        self.quiz_engine.on_complete = self._on_quiz_complete
         self.quirk_system = QuirkSystem(self)
         self._slow_skip         = False    # toggled each turn when slowed
         # Key-held movement (arrow key auto-repeat)
@@ -2498,6 +2499,25 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 wrong_this_session=qe.asked_count - qe.correct_count,
                 score_this_session=qe.score,
             )
+
+    def _on_quiz_complete(self, result, mode: str, subject: str,
+                          correct_count: int, wrong_count: int):
+        """Fired once when a quiz session ends — drives per-session quirks (Apollo, Cassandra)."""
+        qs = getattr(self, 'quirk_system', None)
+        if not (qs and self.player):
+            return
+        qs.on_quiz_complete(
+            mode=mode,
+            subject=subject,
+            score=result.score,
+            correct_count=correct_count,
+            wrong_count=wrong_count,
+            success=result.success,
+            while_blinded=self.player.has_effect('blinded'),
+            while_confused=self.player.has_effect('confused'),
+            while_hallucinating=(self.player.has_effect('hallucinating') or
+                                 self.player.has_effect('hallucinating_pot')),
+        )
 
 
     # ------------------------------------------------------------------

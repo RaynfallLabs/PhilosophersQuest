@@ -576,11 +576,31 @@ class CombatMixin:
     # On-kill side effects
     # ------------------------------------------------------------------
 
-    def _on_monster_killed(self, monster):
-        """Central handler for ALL monster kills: treasure, corpse, boss popup, seal tracking."""
+    def _on_monster_killed(self, monster, *, chain_score: int = 0, ranged: bool = False,
+                           unarmed: bool = False, hp_pct_before: float | None = None):
+        """Central handler for ALL monster kills: treasure, corpse, boss popup, seal tracking,
+        plus the canonical quirk on_kill hook.
+
+        Combat callers pass chain_score/ranged/unarmed/hp_pct_before. Spell, wand, AOE, and
+        trap kill paths use defaults (chain_score=0, ranged=False) and still fire the hook
+        for kill-count quirks like Caesar, Kali, Boudicca, Leonidas, Battle Trance, etc.
+        """
         self.level_mgr.monsters_killed += 1
         self.add_message(f"The {monster.name} is slain!", 'success')
         self._drop_treasure(monster)
+        # Quirk on_kill hook — single canonical call site
+        qs = getattr(self, 'quirk_system', None)
+        if qs:
+            if hp_pct_before is None:
+                hp_pct_before = self.player.hp / max(1, self.player.max_hp)
+            qs.on_kill(
+                monster_kind=monster.kind,
+                chain_score=chain_score,
+                ranged=ranged,
+                unarmed=unarmed,
+                hp_pct_before=hp_pct_before,
+                is_feared=self.player.has_effect('feared'),
+            )
         # Boss narrative popup
         story_key = self._BOSS_STORY_KEYS.get(monster.kind)
         if story_key:
@@ -1218,17 +1238,12 @@ class CombatMixin:
                     'success'
                 )
                 if killed:
-                    self._on_monster_killed(monster)
-                    _qs_rng = getattr(self, 'quirk_system', None)
-                    if _qs_rng:
-                        _qs_rng.on_kill(
-                            monster_kind=monster.kind,
-                            chain_score=chain,
-                            ranged=True,
-                            unarmed=False,
-                            hp_pct_before=getattr(self, '_combat_hp_pct_before', 1.0),
-                            is_feared=self.player.has_effect('feared'),
-                        )
+                    self._on_monster_killed(
+                        monster,
+                        chain_score=chain,
+                        ranged=True,
+                        hp_pct_before=getattr(self, '_combat_hp_pct_before', 1.0),
+                    )
             self._advance_turn()
 
         # Tablet of Destinies: allow quiz reroll if not used this floor
@@ -1287,10 +1302,11 @@ class CombatMixin:
                     "With impossible strength, you wrench the great wolf's mouth apart!", 'combat')
                 self.add_message(
                     "FENRIR, THE WORLD-WOLF, IS TORN ASUNDER!", 'success')
-                self._on_monster_killed(monster)
-                _qs_kill = getattr(self, 'quirk_system', None)
-                if _qs_kill:
-                    _qs_kill.on_monster_killed(monster.kind)
+                self._on_monster_killed(
+                    monster,
+                    chain_score=chain,
+                    hp_pct_before=getattr(self, '_combat_hp_pct_before', 1.0),
+                )
                 self._advance_turn()
                 return
             else:
@@ -1320,7 +1336,12 @@ class CombatMixin:
                     msg += " You absorb life energy!"
                 self.add_message(msg, 'success')
                 if killed:
-                    self._on_monster_killed(monster)
+                    self._on_monster_killed(
+                        monster,
+                        chain_score=chain,
+                        unarmed=(self.player.weapon is None),
+                        hp_pct_before=getattr(self, '_combat_hp_pct_before', 1.0),
+                    )
                     # Amenonuhoko: slow adjacent monsters on kill
                     w = self.player.weapon
                     if w and getattr(w, 'aoe_slow_on_kill', False):
@@ -1328,16 +1349,6 @@ class CombatMixin:
                             if m.alive and abs(m.x - monster.x) <= 1 and abs(m.y - monster.y) <= 1:
                                 m.add_effect('slowed', 3)
                         self.add_message("A wave of primordial stillness ripples outward.", 'info')
-                    _qs_kill = getattr(self, 'quirk_system', None)
-                    if _qs_kill:
-                        _qs_kill.on_kill(
-                            monster_kind=monster.kind,
-                            chain_score=chain,
-                            ranged=False,
-                            unarmed=(self.player.weapon is None),
-                            hp_pct_before=getattr(self, '_combat_hp_pct_before', 1.0),
-                            is_feared=self.player.has_effect('feared'),
-                        )
             self._advance_turn()
 
         # Tablet of Destinies: allow quiz reroll if not used this floor

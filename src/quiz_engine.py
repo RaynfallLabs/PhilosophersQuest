@@ -74,6 +74,7 @@ class QuizEngine:
         self.confused_order: list | None = None   # shuffled choice indices when confused
         self._timer_modifier: float = 1.0
         self.on_answer = None   # optional callable(is_correct: bool) fired after each answer
+        self.on_complete = None  # optional callable(result, mode, subject, correct, wrong) fired once at quiz end
 
         self.celebrating: bool = False
         self.celebration_text: str = ''
@@ -376,5 +377,9 @@ class QuizEngine:
             correct=self.correct_count,
             asked=self.asked_count,
         )
+        if self.on_complete:
+            mode_name = self.mode.value if isinstance(self.mode, QuizMode) else str(self.mode)
+            self.on_complete(result, mode_name, self.subject,
+                             self.correct_count, self.asked_count - self.correct_count)
         if self.callback:
             self.callback(result)
