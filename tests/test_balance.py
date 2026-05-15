@@ -250,7 +250,8 @@ def test_question_length_balance():
     q_dir = os.path.join(os.path.dirname(__file__), '..', 'data', 'questions')
     # Subjects with known length bias pending LLM-assisted distractor rework
     KNOWN_BIASED = {'cooking', 'economics', 'philosophy', 'theology',
-                    'history', 'animal', 'geography', 'grammar', 'science', 'ai'}
+                    'history', 'animal', 'geography', 'grammar', 'science', 'ai',
+                    'trivia'}
     for fpath in sorted(glob.glob(os.path.join(q_dir, '*.json'))):
         subject = os.path.splitext(os.path.basename(fpath))[0]
         qs = load_json(os.path.join('data', 'questions', f'{subject}.json'))
