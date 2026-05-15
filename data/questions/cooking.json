@@ -1,7 +1,7 @@
 [
   {
     "tier": 1,
-    "question": "Sharp knife or dull knife — which is safer in the kitchen?",
+    "question": "In the kitchen, would a sharp knife or a dull knife actually keep your fingers safer?",
     "answer": "A sharp knife",
     "choices": [
       "A sharp knife",
@@ -13,7 +13,7 @@
   },
   {
     "tier": 1,
-    "question": "A knife falls off the counter toward your foot. What should you do?",
+    "question": "A knife tips off the counter and falls toward your bare foot. What should you do?",
     "answer": "Step back, let it fall",
     "choices": [
       "Step back, let it fall",
@@ -25,7 +25,7 @@
   },
   {
     "tier": 1,
-    "question": "The curled-finger grip on the guiding hand while chopping is called:",
+    "question": "Chefs curl the fingers of the guiding hand while chopping so the knuckles, not fingertips, face the blade. What is this grip called?",
     "answer": "The claw",
     "choices": [
       "The claw",
@@ -37,7 +37,7 @@
   },
   {
     "tier": 1,
-    "question": "You finish slicing raw chicken. The cutting board needs to be:",
+    "question": "You just sliced raw chicken on a cutting board. What do you need to do with the board next?",
     "answer": "Washed with hot soapy water",
     "choices": [
       "Washed with hot soapy water",
@@ -49,7 +49,7 @@
   },
   {
     "tier": 1,
-    "question": "Internal temperature that makes chicken safe to eat:",
+    "question": "To kill Salmonella, what internal temperature must chicken reach to be safe to eat?",
     "answer": "165°F (74°C)",
     "choices": [
       "165°F (74°C)",
@@ -61,7 +61,7 @@
   },
   {
     "tier": 1,
-    "question": "The temperature range where bacteria multiply fastest in food:",
+    "question": "Food-safety guides call out a 'danger zone' where bacteria multiply fastest. What temperature range is that?",
     "answer": "40–140°F (4–60°C)",
     "choices": [
       "40–140°F (4–60°C)",
@@ -73,7 +73,7 @@
   },
   {
     "tier": 1,
-    "question": "Recommended handwashing time before cooking, per CDC:",
+    "question": "Before cooking, the CDC recommends washing your hands for roughly how long?",
     "answer": "20 seconds",
     "choices": [
       "20 seconds",
@@ -85,7 +85,7 @@
   },
   {
     "tier": 1,
-    "question": "Raw chicken is dripping from the package. Where should it sit in the fridge?",
+    "question": "Raw chicken is dripping from its package. On which shelf of the fridge should it sit?",
     "answer": "Bottom shelf",
     "choices": [
       "Bottom shelf",
@@ -97,7 +97,7 @@
   },
   {
     "tier": 1,
-    "question": "Frozen chicken needs to thaw. Safest method:",
+    "question": "A frozen chicken needs to thaw for tomorrow night's dinner. What is the safest method?",
     "answer": "In the refrigerator overnight",
     "choices": [
       "In the refrigerator overnight",
@@ -109,7 +109,7 @@
   },
   {
     "tier": 1,
-    "question": "'Best by' date on a packaged food primarily indicates:",
+    "question": "On a packaged food, what does a 'Best by' date primarily tell you about?",
     "answer": "Peak quality",
     "choices": [
       "Peak quality",
@@ -121,7 +121,7 @@
   },
   {
     "tier": 1,
-    "question": "Ripe tomatoes are best stored where?",
+    "question": "To keep the flavor of ripe tomatoes, where should you store them?",
     "answer": "On the counter",
     "choices": [
       "On the counter",
@@ -133,7 +133,7 @@
   },
   {
     "tier": 1,
-    "question": "Whole onions belong:",
+    "question": "To keep whole onions firm, where do they belong in the kitchen?",
     "answer": "In a cool dark place",
     "choices": [
       "In a cool dark place",
@@ -145,7 +145,7 @@
   },
   {
     "tier": 1,
-    "question": "Water at 212°F (100°C) with rapid rolling bubbles is:",
+    "question": "Water reaches 212°F (100°C) and rolls in rapid full-surface bubbles. What is this called?",
     "answer": "Boiling",
     "choices": [
       "Boiling",
@@ -157,7 +157,7 @@
   },
   {
     "tier": 1,
-    "question": "Water just below boiling, with small bubbles barely breaking the surface:",
+    "question": "Water sits just below boiling with small bubbles barely breaking the surface. What is this called?",
     "answer": "Simmering",
     "choices": [
       "Simmering",
@@ -169,7 +169,7 @@
   },
   {
     "tier": 1,
-    "question": "Quickly cooking small pieces in a little hot oil while shaking the pan:",
+    "question": "A chef quickly cooks small pieces in a little hot oil while shaking the pan. What is the technique called?",
     "answer": "Sautéing",
     "choices": [
       "Sautéing",
@@ -181,7 +181,7 @@
   },
   {
     "tier": 1,
-    "question": "Cooking food gently with steam from boiling water below:",
+    "question": "Food cooks gently above boiling water without ever touching it. What is this technique called?",
     "answer": "Steaming",
     "choices": [
       "Steaming",
@@ -193,7 +193,7 @@
   },
   {
     "tier": 1,
-    "question": "Cooking dry in a hot oven, usually for meat or vegetables:",
+    "question": "A chicken sits in a hot dry oven, the surface browning as it cooks. What technique is this?",
     "answer": "Roasting",
     "choices": [
       "Roasting",
@@ -205,7 +205,7 @@
   },
   {
     "tier": 1,
-    "question": "A tough cut of beef simmers for hours in liquid until tender:",
+    "question": "A tough cut of beef simmers for hours in a covered pot of liquid until fork-tender. What is the method called?",
     "answer": "Braising",
     "choices": [
       "Braising",
@@ -217,7 +217,7 @@
   },
   {
     "tier": 1,
-    "question": "Dropping vegetables briefly in boiling water then plunging into ice water:",
+    "question": "Cooks drop vegetables briefly into boiling water, then plunge them into ice water. What is the technique called?",
     "answer": "Blanching",
     "choices": [
       "Blanching",
@@ -229,7 +229,7 @@
   },
   {
     "tier": 1,
-    "question": "A steak hits a screaming-hot dry pan and a deep brown crust forms in seconds:",
+    "question": "A steak hits a screaming-hot dry pan and a deep brown crust forms in seconds. What is this method called?",
     "answer": "Searing",
     "choices": [
       "Searing",
@@ -241,7 +241,7 @@
   },
   {
     "tier": 1,
-    "question": "Cutting food into small, uniform cubes is called:",
+    "question": "To cut food into small uniform cubes, what is the technique you ask for?",
     "answer": "Dicing",
     "choices": [
       "Dicing",
@@ -253,7 +253,7 @@
   },
   {
     "tier": 1,
-    "question": "Garlic cut into tiny pieces so it nearly disappears into the dish:",
+    "question": "Garlic is cut so finely that it nearly disappears into the sauce. What is the word for this?",
     "answer": "Minced",
     "choices": [
       "Minced",
@@ -265,7 +265,7 @@
   },
   {
     "tier": 1,
-    "question": "Standard ratio of long-grain rice to water on the stovetop:",
+    "question": "On the stovetop, what is the standard ratio of long-grain rice to water?",
     "answer": "1 cup rice to 2 cups water",
     "choices": [
       "1 cup rice to 2 cups water",
@@ -277,7 +277,7 @@
   },
   {
     "tier": 1,
-    "question": "Classic vinaigrette ratio, oil to vinegar:",
+    "question": "For a classic vinaigrette, what is the ratio of oil to vinegar?",
     "answer": "3 parts oil to 1 part vinegar",
     "choices": [
       "3 parts oil to 1 part vinegar",
@@ -289,7 +289,7 @@
   },
   {
     "tier": 1,
-    "question": "Italian cooks salt pasta water until it tastes:",
+    "question": "When Italian cooks salt pasta water, what should a tasted spoonful taste like?",
     "answer": "Like the sea",
     "choices": [
       "Like the sea",
@@ -301,7 +301,7 @@
   },
   {
     "tier": 1,
-    "question": "You double a cookie recipe. Baking time should be:",
+    "question": "You decide to double a cookie recipe. What happens to the baking time?",
     "answer": "Roughly the same",
     "choices": [
       "Roughly the same",
@@ -313,7 +313,7 @@
   },
   {
     "tier": 1,
-    "question": "French phrase for prepping and arranging everything before turning on the heat:",
+    "question": "In a professional kitchen, what is the French phrase for prepping and arranging everything before the heat goes on?",
     "answer": "Mise en place",
     "choices": [
       "Mise en place",
@@ -325,7 +325,7 @@
   },
   {
     "tier": 1,
-    "question": "A loaf of bread out of the oven sounds hollow when:",
+    "question": "A loaf of bread is done baking when, tapped on a certain spot, it sounds hollow. Where do you tap?",
     "answer": "Tapped on the bottom",
     "choices": [
       "Tapped on the bottom",
@@ -337,7 +337,7 @@
   },
   {
     "tier": 1,
-    "question": "Most reliable test for steak doneness:",
+    "question": "For checking whether a steak is done, what is the most reliable test?",
     "answer": "Instant-read thermometer",
     "choices": [
       "Instant-read thermometer",
@@ -349,7 +349,7 @@
   },
   {
     "tier": 1,
-    "question": "Brown, sticky bits left in the pan after searing meat are called:",
+    "question": "After searing meat in a pan, you scrape up the brown sticky bits stuck to the bottom. What are those flavorful bits called?",
     "answer": "Fond",
     "choices": [
       "Fond",
@@ -361,7 +361,7 @@
   },
   {
     "tier": 1,
-    "question": "Pan known for retaining heat well and developing seasoning over years:",
+    "question": "Of the common kitchen pans, which one is known for holding heat well and developing seasoning over years?",
     "answer": "Cast iron",
     "choices": [
       "Cast iron",
@@ -373,7 +373,7 @@
   },
   {
     "tier": 1,
-    "question": "Oil with a high smoke point that works well for high-heat searing:",
+    "question": "For high-heat searing without smoking up the kitchen, which oil works best?",
     "answer": "Avocado oil",
     "choices": [
       "Avocado oil",
@@ -385,7 +385,7 @@
   },
   {
     "tier": 1,
-    "question": "An egg cracked into water with vinegar and gently cooked is:",
+    "question": "An egg cracked into barely simmering water with a splash of vinegar — what is it called?",
     "answer": "Poached",
     "choices": [
       "Poached",
@@ -397,7 +397,7 @@
   },
   {
     "tier": 1,
-    "question": "Scrambled eggs cooked low and slow with constant stirring are:",
+    "question": "Scrambled eggs cooked low and slow with constant stirring — how do they turn out?",
     "answer": "Soft and creamy",
     "choices": [
       "Soft and creamy",
@@ -409,7 +409,7 @@
   },
   {
     "tier": 1,
-    "question": "After cleaning a cutting board with soap, sanitizing means:",
+    "question": "After cleaning a cutting board with soap, food handlers separately 'sanitize' it. What does sanitizing mean?",
     "answer": "Killing remaining bacteria",
     "choices": [
       "Killing remaining bacteria",
@@ -433,7 +433,7 @@
   },
   {
     "tier": 1,
-    "question": "Kitchen sponges should be replaced or sanitized about every:",
+    "question": "Damp kitchen sponges grow bacteria fast. How often should you replace or sanitize one?",
     "answer": "Every week",
     "choices": [
       "Every week",
@@ -445,7 +445,7 @@
   },
   {
     "tier": 1,
-    "question": "FIFO — the pantry rule — stands for:",
+    "question": "Pantry organizers swear by 'FIFO.' What does the acronym stand for?",
     "answer": "First in, first out",
     "choices": [
       "First in, first out",
@@ -457,7 +457,7 @@
   },
   {
     "tier": 1,
-    "question": "A grease fire flares up in your pan. You should:",
+    "question": "A grease fire suddenly flares up in your pan on the stove. What is the right move?",
     "answer": "Cover and turn off heat",
     "choices": [
       "Cover and turn off heat",
@@ -469,7 +469,7 @@
   },
   {
     "tier": 1,
-    "question": "Cooked leftovers should be refrigerated within how long after cooking?",
+    "question": "After dinner ends, how long can cooked leftovers sit out before they need to be refrigerated?",
     "answer": "Two hours",
     "choices": [
       "Two hours",
@@ -481,7 +481,7 @@
   },
   {
     "tier": 1,
-    "question": "Internal temperature for safely cooked ground beef:",
+    "question": "For safely cooked ground beef, what internal temperature does the USDA recommend?",
     "answer": "160°F (71°C)",
     "choices": [
       "160°F (71°C)",
@@ -493,7 +493,7 @@
   },
   {
     "tier": 1,
-    "question": "Internal temperature for medium-rare beef steak:",
+    "question": "For medium-rare beef steak, what internal temperature should you pull it at?",
     "answer": "130–135°F (54–57°C)",
     "choices": [
       "130–135°F (54–57°C)",
@@ -505,7 +505,7 @@
   },
   {
     "tier": 1,
-    "question": "After roasting, a chicken rests under foil for ten minutes because:",
+    "question": "Why does a roast chicken rest under foil for ten minutes before carving?",
     "answer": "Juices redistribute, meat stays moist",
     "choices": [
       "Juices redistribute, meat stays moist",
@@ -517,7 +517,7 @@
   },
   {
     "tier": 1,
-    "question": "Baking soda and baking powder — what does powder contain that soda does not?",
+    "question": "Baking soda vs. baking powder — what does powder contain that soda does not?",
     "answer": "Built-in acid",
     "choices": [
       "Built-in acid",
@@ -529,7 +529,7 @@
   },
   {
     "tier": 1,
-    "question": "Yeast bread rises because the yeast produces:",
+    "question": "Yeast bread rises because the yeast eats sugar and releases what?",
     "answer": "Carbon dioxide",
     "choices": [
       "Carbon dioxide",
@@ -541,7 +541,7 @@
   },
   {
     "tier": 1,
-    "question": "Common emergency substitute for one cup of buttermilk:",
+    "question": "Out of buttermilk for the pancakes? What is a common kitchen substitute for one cup?",
     "answer": "Milk with a tablespoon of vinegar",
     "choices": [
       "Milk with a tablespoon of vinegar",
@@ -553,7 +553,7 @@
   },
   {
     "tier": 1,
-    "question": "One stick of butter in the US equals how many tablespoons?",
+    "question": "In the US, one stick of butter equals how many tablespoons?",
     "answer": "8 tablespoons",
     "choices": [
       "8 tablespoons",
@@ -565,7 +565,7 @@
   },
   {
     "tier": 1,
-    "question": "One cup equals how many tablespoons?",
+    "question": "In American baking measurements, one cup contains how many tablespoons?",
     "answer": "16",
     "choices": [
       "16",
@@ -577,7 +577,7 @@
   },
   {
     "tier": 1,
-    "question": "Stiff peaks in whipped cream or egg whites stand:",
+    "question": "When you lift the beater out of whipped cream, what do 'stiff peaks' look like?",
     "answer": "Straight up when lifted",
     "choices": [
       "Straight up when lifted",
@@ -589,7 +589,7 @@
   },
   {
     "tier": 1,
-    "question": "Onions make you cry because cells release:",
+    "question": "Cutting an onion makes your eyes water because the ruptured cells release what?",
     "answer": "A sulfur compound",
     "choices": [
       "A sulfur compound",
@@ -601,7 +601,7 @@
   },
   {
     "tier": 1,
-    "question": "A wooden spoon laid across a pot of water prevents:",
+    "question": "Laying a wooden spoon across a pot of boiling pasta water prevents what?",
     "answer": "Boil-over",
     "choices": [
       "Boil-over",
@@ -613,7 +613,7 @@
   },
   {
     "tier": 1,
-    "question": "Eggs in a bowl of water — a fresh egg will:",
+    "question": "To test an egg's freshness, you drop it in a bowl of water. What will a fresh egg do?",
     "answer": "Sink and lie flat",
     "choices": [
       "Sink and lie flat",
@@ -625,7 +625,7 @@
   },
   {
     "tier": 1,
-    "question": "Most fish cooks through and flakes apart at an internal temperature of:",
+    "question": "At what internal temperature does most fish flake apart when cooked through?",
     "answer": "145°F (63°C)",
     "choices": [
       "145°F (63°C)",
@@ -637,7 +637,7 @@
   },
   {
     "tier": 1,
-    "question": "The three macronutrients are:",
+    "question": "Nutrition labels group calories into three 'macronutrients.' What are they?",
     "answer": "Protein, fat, carbohydrate",
     "choices": [
       "Protein, fat, carbohydrate",
@@ -649,7 +649,7 @@
   },
   {
     "tier": 1,
-    "question": "The macronutrient that builds muscle and replaces tissue is:",
+    "question": "Of the three macronutrients, which one builds muscle and replaces body tissue?",
     "answer": "Protein",
     "choices": [
       "Protein",
@@ -661,7 +661,7 @@
   },
   {
     "tier": 1,
-    "question": "Calories per gram in fat:",
+    "question": "How many calories does one gram of dietary fat deliver?",
     "answer": "9 calories",
     "choices": [
       "9 calories",
@@ -673,7 +673,7 @@
   },
   {
     "tier": 1,
-    "question": "Calories per gram in protein:",
+    "question": "How many calories does one gram of dietary protein deliver?",
     "answer": "4 calories",
     "choices": [
       "4 calories",
@@ -697,7 +697,7 @@
   },
   {
     "tier": 1,
-    "question": "Carrots are especially rich in:",
+    "question": "The orange pigment in carrots converts in the body to vitamin A. What is the pigment itself called?",
     "answer": "Beta-carotene",
     "choices": [
       "Beta-carotene",
@@ -709,7 +709,7 @@
   },
   {
     "tier": 1,
-    "question": "Spinach and red meat are top sources of:",
+    "question": "Spinach and red meat are top dietary sources of which mineral?",
     "answer": "Iron",
     "choices": [
       "Iron",
@@ -721,7 +721,7 @@
   },
   {
     "tier": 1,
-    "question": "Dairy products are the most familiar source of:",
+    "question": "Among everyday foods, dairy products are the most familiar source of what?",
     "answer": "Calcium",
     "choices": [
       "Calcium",
@@ -733,7 +733,7 @@
   },
   {
     "tier": 1,
-    "question": "The vitamin your skin makes from sunlight is:",
+    "question": "Sunlight on the skin triggers your body to make which vitamin?",
     "answer": "Vitamin D",
     "choices": [
       "Vitamin D",
@@ -745,7 +745,7 @@
   },
   {
     "tier": 1,
-    "question": "Iodine deficiency causes goiter — typical dietary source today:",
+    "question": "Iodine deficiency causes goiter. What dietary source supplies most American iodine today?",
     "answer": "Iodized salt",
     "choices": [
       "Iodized salt",
@@ -757,7 +757,7 @@
   },
   {
     "tier": 1,
-    "question": "Dietary fiber mostly comes from:",
+    "question": "Dietary fiber is found almost exclusively in what kind of food?",
     "answer": "Plants",
     "choices": [
       "Plants",
@@ -781,7 +781,7 @@
   },
   {
     "tier": 1,
-    "question": "Which is a whole food (one ingredient, no processing)?",
+    "question": "Of the four options, which qualifies as a 'whole food' — one ingredient, no processing?",
     "answer": "A raw apple",
     "choices": [
       "A raw apple",
@@ -793,7 +793,7 @@
   },
   {
     "tier": 1,
-    "question": "Which best fits 'ultra-processed' under the NOVA system?",
+    "question": "Under the NOVA classification, which of these best fits 'ultra-processed'?",
     "answer": "Sweetened cola in a can",
     "choices": [
       "Sweetened cola in a can",
@@ -805,7 +805,7 @@
   },
   {
     "tier": 1,
-    "question": "Strawberries are most abundant and best-tasting in which season?",
+    "question": "In most of the northern US, strawberries are most abundant and best-tasting in which season?",
     "answer": "Late spring",
     "choices": [
       "Late spring",
@@ -817,7 +817,7 @@
   },
   {
     "tier": 1,
-    "question": "Pumpkins are a signature crop of which season?",
+    "question": "Of the four seasons, which one is pumpkins' signature growing season?",
     "answer": "Autumn",
     "choices": [
       "Autumn",
@@ -829,7 +829,7 @@
   },
   {
     "tier": 1,
-    "question": "Banned in many countries because of cardiovascular harm:",
+    "question": "Many countries banned which type of fat because of clear cardiovascular harm?",
     "answer": "Industrial trans fats",
     "choices": [
       "Industrial trans fats",
@@ -841,7 +841,7 @@
   },
   {
     "tier": 1,
-    "question": "WHO suggests added sugar should be under what percent of daily calories?",
+    "question": "WHO guidelines suggest added sugar should make up under what percent of daily calories?",
     "answer": "Under 10%",
     "choices": [
       "Under 10%",
@@ -853,7 +853,7 @@
   },
   {
     "tier": 1,
-    "question": "Used and reused frying oil is a health concern because heat creates:",
+    "question": "Used and reused frying oil is a health concern because repeated heating produces what?",
     "answer": "Aldehydes from fats",
     "choices": [
       "Aldehydes from fats",
@@ -865,7 +865,7 @@
   },
   {
     "tier": 1,
-    "question": "Sauerkraut, kimchi, and yogurt are all examples of:",
+    "question": "Sauerkraut, kimchi, and yogurt all belong to the same broad category of food. What are they?",
     "answer": "Fermented foods",
     "choices": [
       "Fermented foods",
@@ -877,7 +877,7 @@
   },
   {
     "tier": 1,
-    "question": "Yogurt's tang comes from bacteria producing:",
+    "question": "Yogurt's signature tang comes from bacteria producing what?",
     "answer": "Lactic acid",
     "choices": [
       "Lactic acid",
@@ -889,7 +889,7 @@
   },
   {
     "tier": 1,
-    "question": "Cooking tomatoes actually increases the bioavailability of:",
+    "question": "Cooking tomatoes actually increases the bioavailability of what?",
     "answer": "Lycopene",
     "choices": [
       "Lycopene",
@@ -901,7 +901,7 @@
   },
   {
     "tier": 1,
-    "question": "Which is mostly lost when vegetables are boiled in lots of water?",
+    "question": "When vegetables are boiled in lots of water, what nutrient class is most lost?",
     "answer": "Water-soluble vitamins",
     "choices": [
       "Water-soluble vitamins",
@@ -913,7 +913,7 @@
   },
   {
     "tier": 1,
-    "question": "A 'complete' protein supplies:",
+    "question": "Nutritionists call a protein 'complete' when it supplies what?",
     "answer": "All essential amino acids",
     "choices": [
       "All essential amino acids",
@@ -925,7 +925,7 @@
   },
   {
     "tier": 1,
-    "question": "Beans and rice eaten together form:",
+    "question": "Eaten together at the same meal, beans and rice add up to what?",
     "answer": "A complete protein combination",
     "choices": [
       "A complete protein combination",
@@ -937,7 +937,7 @@
   },
   {
     "tier": 1,
-    "question": "Omega-3 fatty acids are most associated with:",
+    "question": "Of these foods, which is most strongly associated with omega-3 fatty acids?",
     "answer": "Fatty fish (salmon)",
     "choices": [
       "Fatty fish (salmon)",
@@ -949,7 +949,7 @@
   },
   {
     "tier": 1,
-    "question": "At room temperature, saturated fat is typically:",
+    "question": "At room temperature, what state is saturated fat typically in?",
     "answer": "Solid",
     "choices": [
       "Solid",
@@ -961,7 +961,7 @@
   },
   {
     "tier": 1,
-    "question": "The trillions of microorganisms living in the gut are collectively the:",
+    "question": "The trillions of microbes living in the gut are collectively called what?",
     "answer": "Gut microbiome",
     "choices": [
       "Gut microbiome",
@@ -973,7 +973,7 @@
   },
   {
     "tier": 1,
-    "question": "Pathogen most often associated with undercooked chicken and raw eggs:",
+    "question": "Which pathogen is most often linked to undercooked chicken and raw eggs?",
     "answer": "Salmonella",
     "choices": [
       "Salmonella",
@@ -985,7 +985,7 @@
   },
   {
     "tier": 1,
-    "question": "Foodborne illness most commonly linked to undercooked ground beef:",
+    "question": "Which foodborne illness is most often linked to undercooked ground beef?",
     "answer": "E. coli",
     "choices": [
       "E. coli",
@@ -997,7 +997,7 @@
   },
   {
     "tier": 1,
-    "question": "The Mediterranean diet is centered on:",
+    "question": "What foods is the Mediterranean diet, studied for longevity benefits, centered on?",
     "answer": "Olive oil, vegetables, fish, whole grains",
     "choices": [
       "Olive oil, vegetables, fish, whole grains",
@@ -1009,7 +1009,7 @@
   },
   {
     "tier": 1,
-    "question": "About how much water should an average adult aim for daily, from all sources?",
+    "question": "Counting all sources, about how much water should an average adult aim for daily?",
     "answer": "Around 2–3 liters (8–12 cups)",
     "choices": [
       "Around 2–3 liters (8–12 cups)",
@@ -1021,7 +1021,7 @@
   },
   {
     "tier": 1,
-    "question": "A bulging or leaking canned food should be:",
+    "question": "You spot a bulging or leaking canned food in the pantry. What should you do with it?",
     "answer": "Discarded without tasting",
     "choices": [
       "Discarded without tasting",
@@ -1033,7 +1033,7 @@
   },
   {
     "tier": 1,
-    "question": "Pathogen of greatest concern for pregnant women from deli meats and soft cheeses:",
+    "question": "Doctors warn pregnant women off deli meats and soft cheeses because of which pathogen?",
     "answer": "Listeria",
     "choices": [
       "Listeria",
@@ -1045,7 +1045,7 @@
   },
   {
     "tier": 1,
-    "question": "Lack of vitamin C historically caused which sailor's disease?",
+    "question": "Historically, sailors lacking vitamin C suffered from which disease?",
     "answer": "Scurvy",
     "choices": [
       "Scurvy",
@@ -1057,7 +1057,7 @@
   },
   {
     "tier": 1,
-    "question": "Lack of vitamin D in childhood causes weak bones — this is called:",
+    "question": "In children, lack of vitamin D causes soft, weakened bones. What is the disease called?",
     "answer": "Rickets",
     "choices": [
       "Rickets",
@@ -1069,7 +1069,7 @@
   },
   {
     "tier": 1,
-    "question": "Reading a food label, the most useful first number is often:",
+    "question": "Reading a food label, what is the most useful first number to check?",
     "answer": "Serving size",
     "choices": [
       "Serving size",
@@ -1081,7 +1081,7 @@
   },
   {
     "tier": 1,
-    "question": "A thin Italian flatbread topped with olive oil, salt, and herbs:",
+    "question": "Ligurian bakeries make a thin Italian flatbread topped with olive oil, salt, and herbs. What is it called?",
     "answer": "Focaccia",
     "choices": [
       "Focaccia",
@@ -1093,7 +1093,7 @@
   },
   {
     "tier": 1,
-    "question": "Tomato-based slow-cooked meat sauce traditional to Bologna:",
+    "question": "Bologna's signature tomato-based slow-cooked meat sauce, served on tagliatelle, is called what?",
     "answer": "Ragu bolognese",
     "choices": [
       "Ragu bolognese",
@@ -1105,7 +1105,7 @@
   },
   {
     "tier": 1,
-    "question": "Green sauce of basil, pine nuts, garlic, olive oil, and parmesan:",
+    "question": "Genoa's signature green sauce of basil, pine nuts, garlic, olive oil, and parmesan is called what?",
     "answer": "Pesto",
     "choices": [
       "Pesto",
@@ -1117,7 +1117,7 @@
   },
   {
     "tier": 1,
-    "question": "Coffee-and-mascarpone Italian dessert layered with ladyfingers and cocoa:",
+    "question": "Italian dessert of coffee-soaked ladyfingers layered with mascarpone and dusted with cocoa is called what?",
     "answer": "Tiramisu",
     "choices": [
       "Tiramisu",
@@ -1129,7 +1129,7 @@
   },
   {
     "tier": 1,
-    "question": "Hard, aged Italian cheese with DOP protection — grated on pasta:",
+    "question": "What hard, aged DOP-protected Italian cheese — the king of grating cheeses — does Emilia-Romagna produce?",
     "answer": "Parmigiano-Reggiano",
     "choices": [
       "Parmigiano-Reggiano",
@@ -1141,7 +1141,7 @@
   },
   {
     "tier": 1,
-    "question": "Slow-cooked French stew of beef in red wine with mushrooms and pearl onions:",
+    "question": "A French slow-cooked stew of beef in red wine with mushrooms and pearl onions is called what?",
     "answer": "Boeuf bourguignon",
     "choices": [
       "Boeuf bourguignon",
@@ -1153,7 +1153,7 @@
   },
   {
     "tier": 1,
-    "question": "Provençal vegetable stew of tomato, zucchini, eggplant, pepper:",
+    "question": "A Provençal stew of tomato, zucchini, eggplant, and pepper from Nice is called what?",
     "answer": "Ratatouille",
     "choices": [
       "Ratatouille",
@@ -1165,7 +1165,7 @@
   },
   {
     "tier": 1,
-    "question": "Buttery, layered French breakfast pastry with a crescent shape:",
+    "question": "Parisian bakers perfected this buttery layered breakfast pastry with a crescent shape — what is it?",
     "answer": "Croissant",
     "choices": [
       "Croissant",
@@ -1177,7 +1177,7 @@
   },
   {
     "tier": 1,
-    "question": "Egg-and-cream baked savory tart in a pastry shell:",
+    "question": "Lorraine-born savory baked tart of eggs and cream in a pastry shell is called what?",
     "answer": "Quiche",
     "choices": [
       "Quiche",
@@ -1189,7 +1189,7 @@
   },
   {
     "tier": 1,
-    "question": "Lemon-butter-egg-yolk sauce used in eggs Benedict:",
+    "question": "Eggs Benedict is topped with a warm sauce of lemon, butter, and egg yolk. What is the sauce called?",
     "answer": "Hollandaise",
     "choices": [
       "Hollandaise",
@@ -1201,7 +1201,7 @@
   },
   {
     "tier": 1,
-    "question": "Milk-based white sauce thickened with a butter-flour roux:",
+    "question": "French cooks use a milk-based white sauce thickened with a butter-flour roux. What is it called?",
     "answer": "Béchamel",
     "choices": [
       "Béchamel",
@@ -1213,7 +1213,7 @@
   },
   {
     "tier": 1,
-    "question": "Thin round Mexican flatbread used to wrap fillings:",
+    "question": "Mexican kitchens use a thin round flatbread to wrap fillings. What is it called?",
     "answer": "Tortilla",
     "choices": [
       "Tortilla",
@@ -1225,7 +1225,7 @@
   },
   {
     "tier": 1,
-    "question": "Smoke-dried jalapeño pepper used in adobo and salsas:",
+    "question": "A smoke-dried jalapeño pepper used in adobo and salsas is called what?",
     "answer": "Chipotle",
     "choices": [
       "Chipotle",
@@ -1237,7 +1237,7 @@
   },
   {
     "tier": 1,
-    "question": "Steamed corn dough with savory filling, wrapped in a corn husk:",
+    "question": "Mesoamerican cooks steam corn dough with savory filling, wrapped in a corn husk. What is the dish called?",
     "answer": "Tamale",
     "choices": [
       "Tamale",
@@ -1249,7 +1249,7 @@
   },
   {
     "tier": 1,
-    "question": "Mexican avocado-based dip seasoned with lime, salt, onion, cilantro:",
+    "question": "At a Mexican restaurant, the chunky green dip of mashed avocado with lime, salt, onion, and cilantro is called what?",
     "answer": "Guacamole",
     "choices": [
       "Guacamole",
@@ -1261,7 +1261,7 @@
   },
   {
     "tier": 1,
-    "question": "Three foods of the indigenous American 'three sisters' planting system:",
+    "question": "Indigenous Americans called their planting trio the 'three sisters.' What three foods are they?",
     "answer": "Corn, beans, squash",
     "choices": [
       "Corn, beans, squash",
@@ -1273,7 +1273,7 @@
   },
   {
     "tier": 1,
-    "question": "Japanese green tea ground into a fine powder, used in tea ceremony:",
+    "question": "Japanese tea ceremony uses a fine powder of green tea, whisked into hot water. What is it called?",
     "answer": "Matcha",
     "choices": [
       "Matcha",
@@ -1285,7 +1285,7 @@
   },
   {
     "tier": 1,
-    "question": "Foundational Japanese broth made from kombu kelp and bonito flakes:",
+    "question": "Foundational to Japanese cooking, a broth made from kombu kelp and bonito flakes is called what?",
     "answer": "Dashi",
     "choices": [
       "Dashi",
@@ -1297,7 +1297,7 @@
   },
   {
     "tier": 1,
-    "question": "Japanese horseradish paste served with sushi:",
+    "question": "With sushi, Japanese diners often dab a fiery green horseradish paste. What is it called?",
     "answer": "Wasabi",
     "choices": [
       "Wasabi",
@@ -1309,7 +1309,7 @@
   },
   {
     "tier": 1,
-    "question": "Japanese fermented soybean paste used in soup:",
+    "question": "Japanese soup is built on a fermented soybean paste — what is it called?",
     "answer": "Miso",
     "choices": [
       "Miso",
@@ -1321,7 +1321,7 @@
   },
   {
     "tier": 1,
-    "question": "Chinese cuisine famous for the numbing-spicy combination from peppercorn and chile:",
+    "question": "Of the regional Chinese cuisines, which is famous for the numbing-spicy combination from peppercorn and chile?",
     "answer": "Sichuan",
     "choices": [
       "Sichuan",
@@ -1333,7 +1333,7 @@
   },
   {
     "tier": 1,
-    "question": "Small steamed or fried Chinese parcels of dough, often filled with meat:",
+    "question": "In northern China, small steamed or fried parcels of dough filled with meat are called what?",
     "answer": "Jiaozi (dumplings)",
     "choices": [
       "Jiaozi (dumplings)",
@@ -1345,7 +1345,7 @@
   },
   {
     "tier": 1,
-    "question": "Cantonese small-bites dining tradition served from rolling carts:",
+    "question": "Cantonese tea houses serve small bites from rolling carts. What is this dining tradition called?",
     "answer": "Dim sum",
     "choices": [
       "Dim sum",
@@ -1357,7 +1357,7 @@
   },
   {
     "tier": 1,
-    "question": "Round Chinese cooking vessel with sloped sides for stir-frying:",
+    "question": "Stir-fried Chinese cooking uses a round cooking vessel with sloped sides. What is it called?",
     "answer": "A wok",
     "choices": [
       "A wok",
@@ -1369,7 +1369,7 @@
   },
   {
     "tier": 1,
-    "question": "Bright-yellow Indian root spice with a slightly bitter, earthy flavor:",
+    "question": "Indian curries rely on a bright-yellow root spice with a slightly bitter, earthy flavor. What is it?",
     "answer": "Turmeric",
     "choices": [
       "Turmeric",
@@ -1381,7 +1381,7 @@
   },
   {
     "tier": 1,
-    "question": "Indian leavened flatbread baked on the wall of a clay oven:",
+    "question": "North Indian cooks bake a leavened flatbread on the wall of a clay tandoor oven. What is it called?",
     "answer": "Naan",
     "choices": [
       "Naan",
@@ -1393,7 +1393,7 @@
   },
   {
     "tier": 1,
-    "question": "Indian dish of stewed lentils, often eaten with rice or bread:",
+    "question": "Across India, a dish of stewed lentils eaten with rice or bread is called what?",
     "answer": "Dal",
     "choices": [
       "Dal",
@@ -1405,7 +1405,7 @@
   },
   {
     "tier": 1,
-    "question": "Clarified butter, ancient Indian fat with a high smoke point:",
+    "question": "Indian cooks have used clarified butter with a high smoke point since Vedic times. What is it called?",
     "answer": "Ghee",
     "choices": [
       "Ghee",
@@ -1417,7 +1417,7 @@
   },
   {
     "tier": 1,
-    "question": "Spiced sweet milk tea ubiquitous across India:",
+    "question": "Across India, spiced sweet milk tea is everyday street and household fare. What is it called?",
     "answer": "Chai",
     "choices": [
       "Chai",
@@ -1429,7 +1429,7 @@
   },
   {
     "tier": 1,
-    "question": "Chickpea-and-tahini dip from the Levant:",
+    "question": "From the Levant, a creamy dip of chickpeas blended with tahini, lemon, garlic, and olive oil is called what?",
     "answer": "Hummus",
     "choices": [
       "Hummus",
@@ -1441,7 +1441,7 @@
   },
   {
     "tier": 1,
-    "question": "Smoked-eggplant Levantine dip:",
+    "question": "From the Levant, a smoky dip made from charred eggplant and tahini is called what?",
     "answer": "Baba ghanoush",
     "choices": [
       "Baba ghanoush",
@@ -1453,7 +1453,7 @@
   },
   {
     "tier": 1,
-    "question": "Round pocket Middle Eastern flatbread:",
+    "question": "In Middle Eastern kitchens, a round flatbread that puffs in the oven to form an inner pocket is called what?",
     "answer": "Pita",
     "choices": [
       "Pita",
@@ -1465,7 +1465,7 @@
   },
   {
     "tier": 1,
-    "question": "Sesame seed paste used in hummus and halva:",
+    "question": "In hummus and halva, the base ingredient is a paste made by grinding sesame seeds. What is it called?",
     "answer": "Tahini",
     "choices": [
       "Tahini",
@@ -1477,7 +1477,7 @@
   },
   {
     "tier": 1,
-    "question": "Stuffed grape leaves common across Greek and Levantine cuisines:",
+    "question": "Greek and Levantine cooks wrap rice, herbs, and pine nuts in brined vine leaves. What is the dish called?",
     "answer": "Dolmas",
     "choices": [
       "Dolmas",
@@ -1489,7 +1489,7 @@
   },
   {
     "tier": 1,
-    "question": "Thai noodle dish with peanuts, lime, egg, shrimp or tofu, bean sprouts:",
+    "question": "Thai street stalls sell a noodle dish with peanuts, lime, egg, shrimp or tofu, and bean sprouts. What is it?",
     "answer": "Pad Thai",
     "choices": [
       "Pad Thai",
@@ -1501,7 +1501,7 @@
   },
   {
     "tier": 1,
-    "question": "Fermented Thai fish sauce used as a salt and umami base:",
+    "question": "Thai cooks season with a fermented fish sauce that serves as both salt and umami base. What is it called?",
     "answer": "Nam pla",
     "choices": [
       "Nam pla",
@@ -1513,7 +1513,7 @@
   },
   {
     "tier": 1,
-    "question": "Vietnamese sandwich on a baguette with pâté, pickled vegetables, herbs:",
+    "question": "A Vietnamese sandwich on a French baguette with pâté, pickled vegetables, and herbs is called what?",
     "answer": "Banh mi",
     "choices": [
       "Banh mi",
@@ -1525,7 +1525,7 @@
   },
   {
     "tier": 1,
-    "question": "Slow-cooked smoky meat tradition strong in Texas, Memphis, Kansas City, Carolinas:",
+    "question": "Slow-cooked smoky meat is a tradition with strong regional styles in Texas, Memphis, and the Carolinas. What is the method called?",
     "answer": "Barbecue",
     "choices": [
       "Barbecue",
@@ -1537,7 +1537,7 @@
   },
   {
     "tier": 1,
-    "question": "New England chowder of clams and potatoes — traditional base:",
+    "question": "New England chowder of clams and potatoes uses what traditional base?",
     "answer": "Cream",
     "choices": [
       "Cream",
@@ -1549,7 +1549,7 @@
   },
   {
     "tier": 1,
-    "question": "Louisiana stew of stock, meat or seafood, the holy trinity, and a dark roux:",
+    "question": "Louisiana cooks build a stew from stock, meat or seafood, the holy trinity, and a dark roux. What is it called?",
     "answer": "Gumbo",
     "choices": [
       "Gumbo",
@@ -1561,7 +1561,7 @@
   },
   {
     "tier": 1,
-    "question": "Hot wings, blue cheese, celery, born in a 1964 Buffalo, NY bar:",
+    "question": "Hot wings, blue cheese, and celery — Buffalo wings — were born in 1964 at which Buffalo establishment?",
     "answer": "Buffalo wings",
     "choices": [
       "Buffalo wings",
@@ -1573,7 +1573,7 @@
   },
   {
     "tier": 1,
-    "question": "Hot dogs in the US trace their popularity to which seaside amusement district?",
+    "question": "In US food history, hot dogs gained popularity through which seaside amusement district?",
     "answer": "Coney Island, NY",
     "choices": [
       "Coney Island, NY",
@@ -1585,7 +1585,7 @@
   },
   {
     "tier": 1,
-    "question": "Spongy sour East African flatbread used as both plate and utensil:",
+    "question": "In Ethiopian and Eritrean homes, a spongy sour flatbread serves as both plate and utensil. What is it called?",
     "answer": "Injera",
     "choices": [
       "Injera",
@@ -1597,7 +1597,7 @@
   },
   {
     "tier": 1,
-    "question": "Spanish dish of saffron rice cooked with seafood or meat in a wide flat pan:",
+    "question": "Valencia's signature dish of saffron rice cooked with seafood or meat in a wide flat pan is called what?",
     "answer": "Paella",
     "choices": [
       "Paella",
@@ -1609,7 +1609,7 @@
   },
   {
     "tier": 1,
-    "question": "Eastern European boiled dumpling of meat, potato, or cheese:",
+    "question": "Across Poland and Ukraine, a boiled dumpling stuffed with meat, potato, or cheese is called what?",
     "answer": "Pierogi",
     "choices": [
       "Pierogi",
@@ -1621,7 +1621,7 @@
   },
   {
     "tier": 1,
-    "question": "Korean fermented vegetable side dish, most often napa cabbage:",
+    "question": "Korean tables nearly always include a fermented vegetable side dish, usually napa cabbage. What is it called?",
     "answer": "Kimchi",
     "choices": [
       "Kimchi",
@@ -1633,7 +1633,7 @@
   },
   {
     "tier": 1,
-    "question": "Spanish small-plates bar tradition — name comes from a 'cover' placed on a glass:",
+    "question": "Spanish small-plates bar tradition — name comes from a 'cover' placed on a glass — is called what?",
     "answer": "Tapas",
     "choices": [
       "Tapas",
@@ -1645,7 +1645,7 @@
   },
   {
     "tier": 1,
-    "question": "Italian creamy rice dish, stirred slowly with stock added a ladle at a time:",
+    "question": "Italian cooks stir a creamy rice dish slowly, adding stock a ladle at a time. What is the dish called?",
     "answer": "Risotto",
     "choices": [
       "Risotto",
@@ -1657,7 +1657,7 @@
   },
   {
     "tier": 1,
-    "question": "Chinese-American dish of stir-fried mixed bits and a brown sauce, born in the US:",
+    "question": "Born in American Chinatowns, a stir-fried dish of mixed bits and brown sauce is called what?",
     "answer": "Chop suey",
     "choices": [
       "Chop suey",
@@ -1669,7 +1669,7 @@
   },
   {
     "tier": 1,
-    "question": "Hawaiian island-Korean fusion staple — Spam grilled with rice and seaweed:",
+    "question": "A Hawaiian-Korean fusion staple — Spam grilled with rice and seaweed — is called what?",
     "answer": "Spam musubi",
     "choices": [
       "Spam musubi",
@@ -1681,7 +1681,7 @@
   },
   {
     "tier": 1,
-    "question": "Long deli sandwich on a roll — known as hoagie, sub, or grinder in different US regions:",
+    "question": "Hoagie, sub, and grinder are different US regional names for what kind of food?",
     "answer": "All names for the same sandwich",
     "choices": [
       "All names for the same sandwich",
@@ -1693,7 +1693,7 @@
   },
   {
     "tier": 1,
-    "question": "Thin pancake of buckwheat or wheat, savory or sweet — French Breton specialty:",
+    "question": "Brittany's thin pancake of buckwheat or wheat, savory or sweet, is called what?",
     "answer": "Crêpe",
     "choices": [
       "Crêpe",
@@ -1705,7 +1705,7 @@
   },
   {
     "tier": 1,
-    "question": "Cacao (chocolate) was first prepared by which civilizations?",
+    "question": "Which Mesoamerican civilizations first prepared cacao as a ceremonial drink?",
     "answer": "Olmec, Maya, Aztec",
     "choices": [
       "Olmec, Maya, Aztec",
@@ -1717,7 +1717,7 @@
   },
   {
     "tier": 1,
-    "question": "Region where coffee was first cultivated and brewed:",
+    "question": "Coffee was first cultivated and brewed in which region?",
     "answer": "Ethiopia",
     "choices": [
       "Ethiopia",
@@ -1741,7 +1741,7 @@
   },
   {
     "tier": 1,
-    "question": "The chile pepper traveled from the Americas to Asia after which event?",
+    "question": "Chile peppers spread from the Americas to Asia after which historical event?",
     "answer": "The Columbian Exchange",
     "choices": [
       "The Columbian Exchange",
@@ -1753,7 +1753,7 @@
   },
   {
     "tier": 1,
-    "question": "Sandwich named after an 18th-century English nobleman:",
+    "question": "The sandwich got its name from an 18th-century English nobleman. Who was he?",
     "answer": "Earl of Sandwich",
     "choices": [
       "Earl of Sandwich",
@@ -1765,7 +1765,7 @@
   },
   {
     "tier": 1,
-    "question": "Caesar salad was invented in which city?",
+    "question": "Caesar Cardini invented the Caesar salad in 1924 in which city?",
     "answer": "Tijuana, Mexico",
     "choices": [
       "Tijuana, Mexico",
@@ -1777,7 +1777,7 @@
   },
   {
     "tier": 1,
-    "question": "Pizza Margherita was created to honor:",
+    "question": "In 1889, a Naples pizzaiolo created Pizza Margherita to honor which visiting royal?",
     "answer": "Queen Margherita of Italy",
     "choices": [
       "Queen Margherita of Italy",
@@ -1789,7 +1789,7 @@
   },
   {
     "tier": 1,
-    "question": "The 1773 Boston Tea Party was a protest over a tax on:",
+    "question": "The 1773 Boston Tea Party was a protest over a tax on what?",
     "answer": "Tea",
     "choices": [
       "Tea",
@@ -1801,7 +1801,7 @@
   },
   {
     "tier": 1,
-    "question": "The Irish Potato Famine of 1845–49 was triggered by a:",
+    "question": "The Irish Potato Famine of 1845–49 was triggered by what?",
     "answer": "Crop blight (Phytophthora)",
     "choices": [
       "Crop blight (Phytophthora)",
@@ -1813,7 +1813,7 @@
   },
   {
     "tier": 1,
-    "question": "Apple pie is often called 'American,' but its earliest written recipes are:",
+    "question": "Apple pie is often called 'American,' but where do its earliest written recipes come from?",
     "answer": "Medieval English",
     "choices": [
       "Medieval English",
@@ -1825,7 +1825,7 @@
   },
   {
     "tier": 1,
-    "question": "First fully sliced and packaged bread, sold from 1928 in the US:",
+    "question": "The first fully sliced and packaged bread, hitting US stores in 1928, was branded what?",
     "answer": "Wonder Bread (1928)",
     "choices": [
       "Wonder Bread (1928)",
@@ -1837,7 +1837,7 @@
   },
   {
     "tier": 1,
-    "question": "The first patent for a microwave oven came from radar engineer:",
+    "question": "The first patent for a microwave oven came from a 1945 radar engineer named who?",
     "answer": "Percy Spencer (1945)",
     "choices": [
       "Percy Spencer (1945)",
@@ -1849,7 +1849,7 @@
   },
   {
     "tier": 1,
-    "question": "Flash-freezing of food was commercialized by:",
+    "question": "Which American commercialized flash-freezing after watching Inuit fishermen freeze fish in arctic wind?",
     "answer": "Clarence Birdseye",
     "choices": [
       "Clarence Birdseye",
@@ -1861,7 +1861,7 @@
   },
   {
     "tier": 1,
-    "question": "Pasteurization — heating milk to kill pathogens — was developed by:",
+    "question": "Heating milk gently to kill pathogens without ruining flavor was developed by whom?",
     "answer": "Louis Pasteur (1864)",
     "choices": [
       "Louis Pasteur (1864)",
@@ -1873,7 +1873,7 @@
   },
   {
     "tier": 1,
-    "question": "Heat plus protein and sugar in cooking produces brown crust and savory flavor through the:",
+    "question": "Heat plus protein and sugar produces brown crust and savory flavor through which reaction?",
     "answer": "Maillard reaction",
     "choices": [
       "Maillard reaction",
@@ -1885,7 +1885,7 @@
   },
   {
     "tier": 1,
-    "question": "The fifth basic taste, savory and meaty — name coined in Japan in 1908:",
+    "question": "The fifth basic taste — savory and meaty — was named in Japan in 1908. What is it called?",
     "answer": "Umami",
     "choices": [
       "Umami",
@@ -1897,7 +1897,7 @@
   },
   {
     "tier": 1,
-    "question": "World's most expensive spice by weight — handpicked stigmas of a crocus flower:",
+    "question": "The world's most expensive spice by weight is handpicked from the stigmas of a crocus flower. What is it?",
     "answer": "Saffron",
     "choices": [
       "Saffron",
@@ -1909,7 +1909,7 @@
   },
   {
     "tier": 1,
-    "question": "Chile heat is measured on which scale, named after a 1912 American chemist?",
+    "question": "Chile heat is measured on a scale invented by a 1912 American chemist. What is the scale called?",
     "answer": "Scoville scale",
     "choices": [
       "Scoville scale",
@@ -1921,7 +1921,7 @@
   },
   {
     "tier": 1,
-    "question": "The chemical compound that gives chiles their burn:",
+    "question": "In chiles, the compound that produces the burning sensation is called what?",
     "answer": "Capsaicin",
     "choices": [
       "Capsaicin",
@@ -1933,7 +1933,7 @@
   },
   {
     "tier": 1,
-    "question": "Vanilla is the dried pod of a climbing orchid native to:",
+    "question": "Vanilla is the dried pod of a climbing orchid native to which country?",
     "answer": "Mexico",
     "choices": [
       "Mexico",
@@ -1945,7 +1945,7 @@
   },
   {
     "tier": 1,
-    "question": "Wild yeast for sourdough is special to local air — famously distinctive in:",
+    "question": "Wild yeast for sourdough takes on local character — most famously distinctive in which US city?",
     "answer": "San Francisco",
     "choices": [
       "San Francisco",
@@ -1957,7 +1957,7 @@
   },
   {
     "tier": 1,
-    "question": "Bread rises because yeast eats sugar and releases:",
+    "question": "Bread rises because yeast eats sugar and releases what?",
     "answer": "CO2 and alcohol",
     "choices": [
       "CO2 and alcohol",
@@ -1969,7 +1969,7 @@
   },
   {
     "tier": 1,
-    "question": "Blue cheese gets its blue veins from a controlled mold called:",
+    "question": "The blue veins in blue cheese come from a controlled mold called what?",
     "answer": "Penicillium roqueforti",
     "choices": [
       "Penicillium roqueforti",
@@ -1981,7 +1981,7 @@
   },
   {
     "tier": 1,
-    "question": "Mesoamericans soaked corn in alkaline water to unlock vitamin B3 — this process is:",
+    "question": "Mesoamerican cooks soaked corn in alkaline water to unlock vitamin B3. What is the process called?",
     "answer": "Nixtamalization",
     "choices": [
       "Nixtamalization",
@@ -1993,7 +1993,7 @@
   },
   {
     "tier": 1,
-    "question": "Bone broth gels in the fridge thanks to:",
+    "question": "After a long simmer, bone broth gels in the fridge because of what?",
     "answer": "Collagen turned into gelatin",
     "choices": [
       "Collagen turned into gelatin",
@@ -2005,7 +2005,7 @@
   },
   {
     "tier": 1,
-    "question": "Earliest known bread predates farming — flatbreads from this people, ~14,000 years ago:",
+    "question": "Bread predates farming. Who made the earliest known flatbreads, ~14,000 years ago in modern Jordan?",
     "answer": "Natufians",
     "choices": [
       "Natufians",
@@ -2017,7 +2017,7 @@
   },
   {
     "tier": 1,
-    "question": "The agricultural revolution began around 10,000 BC in the:",
+    "question": "Around 10,000 BC, where did the agricultural revolution begin?",
     "answer": "Fertile Crescent",
     "choices": [
       "Fertile Crescent",
@@ -2029,7 +2029,7 @@
   },
   {
     "tier": 1,
-    "question": "First animal domesticated by humans:",
+    "question": "Of all animals, which was the first to be domesticated by humans?",
     "answer": "The dog",
     "choices": [
       "The dog",
@@ -2041,7 +2041,7 @@
   },
   {
     "tier": 1,
-    "question": "The first known canning method, awarded a 12,000-franc prize by Napoleon:",
+    "question": "Napoleon's 1810 12,000-franc prize for the first canning method went to whose glass-jar invention?",
     "answer": "Nicolas Appert's glass jars",
     "choices": [
       "Nicolas Appert's glass jars",
@@ -2053,7 +2053,7 @@
   },
   {
     "tier": 1,
-    "question": "Norman Borlaug's wheat innovations sparked the 'Green Revolution' — credited with saving:",
+    "question": "Norman Borlaug's dwarf wheat sparked the 'Green Revolution.' Roughly how many lives is he credited with saving?",
     "answer": "Around one billion lives",
     "choices": [
       "Around one billion lives",
@@ -2077,7 +2077,7 @@
   },
   {
     "tier": 1,
-    "question": "Ray Kroc franchised which fast-food brand starting in 1955?",
+    "question": "Beginning in 1955, Ray Kroc franchised which American fast-food brand?",
     "answer": "McDonald's",
     "choices": [
       "McDonald's",
@@ -2089,7 +2089,7 @@
   },
   {
     "tier": 1,
-    "question": "The Slow Food movement was founded in 1986 to protest a McDonald's near:",
+    "question": "In 1986, the Slow Food movement was founded to protest a McDonald's near which landmark?",
     "answer": "The Spanish Steps, Rome",
     "choices": [
       "The Spanish Steps, Rome",
@@ -2125,7 +2125,7 @@
   },
   {
     "tier": 1,
-    "question": "America's most famous home-cooking bible, self-published in 1931 by a widow:",
+    "question": "America's most famous home-cooking bible — self-published in 1931 by a widow — is called what?",
     "answer": "The Joy of Cooking",
     "choices": [
       "The Joy of Cooking",
@@ -2137,7 +2137,7 @@
   },
   {
     "tier": 1,
-    "question": "Marco Polo is sometimes credited with bringing pasta from China — historians say this is:",
+    "question": "Marco Polo is sometimes credited with bringing pasta from China. What do historians today say?",
     "answer": "A 20th-century myth",
     "choices": [
       "A 20th-century myth",
@@ -2149,7 +2149,7 @@
   },
   {
     "tier": 1,
-    "question": "Sushi began in early Japan as a method of:",
+    "question": "In early Japan, what was sushi originally a method of?",
     "answer": "Preserving fish in fermented rice",
     "choices": [
       "Preserving fish in fermented rice",
@@ -2161,7 +2161,7 @@
   },
   {
     "tier": 1,
-    "question": "Your food arrives but two guests are still waiting. The polite move is:",
+    "question": "Your food arrives but two guests are still waiting at a Western table. What is the polite move?",
     "answer": "Wait until everyone has been served",
     "choices": [
       "Wait until everyone has been served",
@@ -2173,7 +2173,7 @@
   },
   {
     "tier": 1,
-    "question": "You want the salt and pepper across the table. The polite move is:",
+    "question": "You want the salt and pepper from across the table. What is the polite move?",
     "answer": "Ask someone to pass them",
     "choices": [
       "Ask someone to pass them",
@@ -2185,7 +2185,7 @@
   },
   {
     "tier": 1,
-    "question": "Standard Western place setting — the fork goes on:",
+    "question": "In a standard Western place setting, where is the fork placed?",
     "answer": "The left of the plate",
     "choices": [
       "The left of the plate",
@@ -2197,7 +2197,7 @@
   },
   {
     "tier": 1,
-    "question": "When you finish eating, your fork and knife should be placed:",
+    "question": "When you have finished eating at a Western meal, how should your fork and knife be placed?",
     "answer": "Together on the plate, parallel",
     "choices": [
       "Together on the plate, parallel",
@@ -2209,7 +2209,7 @@
   },
   {
     "tier": 1,
-    "question": "Singing 'Happy Birthday' with candles on a cake is rooted in:",
+    "question": "The tradition of singing 'Happy Birthday' with candles on a cake is rooted in what?",
     "answer": "An 18th-century German children's tradition",
     "choices": [
       "An 18th-century German children's tradition",
@@ -2221,7 +2221,7 @@
   },
   {
     "tier": 1,
-    "question": "Blowing out birthday candles is meant to:",
+    "question": "Folk tradition says blowing out birthday candles is meant to do what?",
     "answer": "Carry your wish to heaven with the smoke",
     "choices": [
       "Carry your wish to heaven with the smoke",
@@ -2233,7 +2233,7 @@
   },
   {
     "tier": 1,
-    "question": "The first Thanksgiving was celebrated by Pilgrims in 1621 at:",
+    "question": "Where did Pilgrims celebrate the first Thanksgiving in 1621?",
     "answer": "Plymouth, Massachusetts",
     "choices": [
       "Plymouth, Massachusetts",
@@ -2245,7 +2245,7 @@
   },
   {
     "tier": 1,
-    "question": "Thanksgiving became a fixed national holiday in the US under which president?",
+    "question": "Thanksgiving became a fixed national American holiday under which president?",
     "answer": "Abraham Lincoln (1863)",
     "choices": [
       "Abraham Lincoln (1863)",
@@ -2257,7 +2257,7 @@
   },
   {
     "tier": 1,
-    "question": "The centerpiece of the modern American Thanksgiving meal:",
+    "question": "At the modern American Thanksgiving meal, what is the centerpiece dish?",
     "answer": "Roast turkey",
     "choices": [
       "Roast turkey",
@@ -2269,7 +2269,7 @@
   },
   {
     "tier": 1,
-    "question": "Traditional UK Christmas dessert flamed with brandy:",
+    "question": "A traditional UK Christmas dessert is flamed with brandy at the table. What is it called?",
     "answer": "Christmas pudding",
     "choices": [
       "Christmas pudding",
@@ -2281,7 +2281,7 @@
   },
   {
     "tier": 1,
-    "question": "Italian sweet bread eaten across the Christmas season — tall and domed:",
+    "question": "Italian families eat a tall, domed sweet bread throughout the Christmas season. What is it called?",
     "answer": "Panettone",
     "choices": [
       "Panettone",
@@ -2293,7 +2293,7 @@
   },
   {
     "tier": 1,
-    "question": "French Christmas log cake shaped to resemble a Yule log:",
+    "question": "French families shape a Christmas log cake to resemble a Yule log. What is it called?",
     "answer": "Bûche de Noël",
     "choices": [
       "Bûche de Noël",
@@ -2305,7 +2305,7 @@
   },
   {
     "tier": 1,
-    "question": "Christian Easter Sunday in many European traditions centers a roast of:",
+    "question": "At Easter Sunday across many European Christian traditions, what is the centerpiece roast?",
     "answer": "Lamb",
     "choices": [
       "Lamb",
@@ -2317,7 +2317,7 @@
   },
   {
     "tier": 1,
-    "question": "Spiced sweet bun marked with a cross, eaten on Good Friday:",
+    "question": "On Good Friday, British tradition marks a spiced sweet bun with a cross. What is the bun called?",
     "answer": "Hot cross buns",
     "choices": [
       "Hot cross buns",
@@ -2329,7 +2329,7 @@
   },
   {
     "tier": 1,
-    "question": "Mardi Gras — French for 'Fat Tuesday' — is the day before:",
+    "question": "Mardi Gras — French for 'Fat Tuesday' — falls the day before which observance?",
     "answer": "Ash Wednesday",
     "choices": [
       "Ash Wednesday",
@@ -2377,7 +2377,7 @@
   },
   {
     "tier": 1,
-    "question": "St. Patrick's Day in the US most famously features:",
+    "question": "What dish does St. Patrick's Day in the US most famously feature?",
     "answer": "Corned beef and cabbage",
     "choices": [
       "Corned beef and cabbage",
@@ -2389,7 +2389,7 @@
   },
   {
     "tier": 1,
-    "question": "Passover Seder centers an unleavened bread called:",
+    "question": "At the Passover Seder, families eat an unleavened bread called what?",
     "answer": "Matzah",
     "choices": [
       "Matzah",
@@ -2401,7 +2401,7 @@
   },
   {
     "tier": 1,
-    "question": "Friday-evening Jewish family meal that opens the Sabbath:",
+    "question": "Friday evening Jewish family meal that opens the Sabbath is called what?",
     "answer": "Shabbat dinner",
     "choices": [
       "Shabbat dinner",
@@ -2413,7 +2413,7 @@
   },
   {
     "tier": 1,
-    "question": "Lunar New Year foods often have symbolic meaning — long noodles symbolize:",
+    "question": "On Lunar New Year, what do long uncut noodles symbolize?",
     "answer": "Long life",
     "choices": [
       "Long life",
@@ -2425,7 +2425,7 @@
   },
   {
     "tier": 1,
-    "question": "Day of the Dead in Mexico features which iconic decorated bread?",
+    "question": "Mexican families honor the Day of the Dead with a special decorated round bread. What is it called?",
     "answer": "Pan de muerto",
     "choices": [
       "Pan de muerto",
@@ -2437,7 +2437,7 @@
   },
   {
     "tier": 1,
-    "question": "The traditional Western wedding cake tradition of three tiers — the top tier is:",
+    "question": "In the Western three-tier wedding cake tradition, what is the top tier reserved for?",
     "answer": "Saved for a first anniversary or christening",
     "choices": [
       "Saved for a first anniversary or christening",
@@ -2461,7 +2461,7 @@
   },
   {
     "tier": 1,
-    "question": "Toasts at weddings are most often raised with which drink?",
+    "question": "At weddings, toasts are most often raised with which drink?",
     "answer": "Champagne",
     "choices": [
       "Champagne",
@@ -2473,7 +2473,7 @@
   },
   {
     "tier": 1,
-    "question": "Cutting the wedding cake together symbolizes:",
+    "question": "Cutting the wedding cake together symbolizes what for the couple?",
     "answer": "The couple's first shared act as spouses",
     "choices": [
       "The couple's first shared act as spouses",
@@ -2485,7 +2485,7 @@
   },
   {
     "tier": 1,
-    "question": "'Companion' comes from a Latin phrase that literally means:",
+    "question": "'Companion' comes from a Latin phrase that literally means what?",
     "answer": "One who eats bread with you",
     "choices": [
       "One who eats bread with you",
@@ -2497,7 +2497,7 @@
   },
   {
     "tier": 1,
-    "question": "Saying a short blessing before eating is most commonly called:",
+    "question": "In Christian households, a short blessing said before eating is most commonly called what?",
     "answer": "Saying grace",
     "choices": [
       "Saying grace",
@@ -2509,7 +2509,7 @@
   },
   {
     "tier": 1,
-    "question": "A multi-hour Italian Sunday meal with several courses and the whole family is:",
+    "question": "A multi-hour Italian Sunday meal with several courses and the whole family is called what?",
     "answer": "Pranzo della domenica",
     "choices": [
       "Pranzo della domenica",
@@ -2521,7 +2521,7 @@
   },
   {
     "tier": 1,
-    "question": "Spanish tradition of staying at the table talking after a meal is over:",
+    "question": "In Spain, what is the tradition of staying at the table talking after a meal is over called?",
     "answer": "Sobremesa",
     "choices": [
       "Sobremesa",
@@ -2533,7 +2533,7 @@
   },
   {
     "tier": 1,
-    "question": "British afternoon tea tradition — usually scones with:",
+    "question": "In Britain, what do afternoon tea scones get paired with?",
     "answer": "Clotted cream and jam",
     "choices": [
       "Clotted cream and jam",
@@ -2545,7 +2545,7 @@
   },
   {
     "tier": 1,
-    "question": "'Afternoon tea' and 'high tea' are often confused — high tea was traditionally:",
+    "question": "'Afternoon tea' and 'high tea' are often confused. What was high tea traditionally?",
     "answer": "A working-class evening meal",
     "choices": [
       "A working-class evening meal",
@@ -2557,7 +2557,7 @@
   },
   {
     "tier": 1,
-    "question": "Afternoon tea is often credited to:",
+    "question": "Britain credits which 19th-century duchess with popularizing afternoon tea?",
     "answer": "Anna of Bedford",
     "choices": [
       "Anna of Bedford",
@@ -2569,7 +2569,7 @@
   },
   {
     "tier": 1,
-    "question": "German afternoon coffee-and-cake social institution:",
+    "question": "Germany's afternoon coffee-and-cake social institution is called what?",
     "answer": "Kaffeeklatsch",
     "choices": [
       "Kaffeeklatsch",
@@ -2581,7 +2581,7 @@
   },
   {
     "tier": 1,
-    "question": "An Ethiopian coffee ceremony involves how many rounds of coffee?",
+    "question": "An Ethiopian coffee ceremony serves the guests how many rounds of coffee?",
     "answer": "Three",
     "choices": [
       "Three",
@@ -2593,7 +2593,7 @@
   },
   {
     "tier": 1,
-    "question": "Japanese tea ceremony, formalized by Sen no Rikyū, uses which tea?",
+    "question": "The Japanese tea ceremony, formalized by Sen no Rikyū, uses which tea?",
     "answer": "Matcha (powdered green tea)",
     "choices": [
       "Matcha (powdered green tea)",
@@ -2605,7 +2605,7 @@
   },
   {
     "tier": 1,
-    "question": "Indian thali — a meal served on a round platter — is traditionally eaten with:",
+    "question": "Indian thali — served on a round platter — is traditionally eaten with what?",
     "answer": "Right hand only",
     "choices": [
       "Right hand only",
@@ -2617,7 +2617,7 @@
   },
   {
     "tier": 1,
-    "question": "Quinceañera in Latin American culture celebrates which milestone?",
+    "question": "In Latin American culture, the quinceañera celebrates which milestone?",
     "answer": "A girl's 15th birthday",
     "choices": [
       "A girl's 15th birthday",
@@ -2629,7 +2629,7 @@
   },
   {
     "tier": 1,
-    "question": "Sweet 16 is an American coming-of-age tradition for:",
+    "question": "Whom does the American coming-of-age tradition called 'Sweet 16' center on?",
     "answer": "A 16-year-old, often a girl",
     "choices": [
       "A 16-year-old, often a girl",
@@ -2641,7 +2641,7 @@
   },
   {
     "tier": 1,
-    "question": "Catholic First Communion children traditionally wear:",
+    "question": "At First Communion in the Catholic Church, what do children traditionally wear?",
     "answer": "White clothing",
     "choices": [
       "White clothing",
@@ -2653,7 +2653,7 @@
   },
   {
     "tier": 1,
-    "question": "An American funeral tradition is bringing the grieving family:",
+    "question": "In an American funeral tradition, what food do neighbors bring the grieving family?",
     "answer": "Casseroles and home dishes",
     "choices": [
       "Casseroles and home dishes",
@@ -2677,7 +2677,7 @@
   },
   {
     "tier": 1,
-    "question": "Jewish mourning meal of consolation after a burial features eggs because:",
+    "question": "After a Jewish burial, why does a mourning meal of consolation feature eggs?",
     "answer": "The round shape symbolizes life's cycle",
     "choices": [
       "The round shape symbolizes life's cycle",
@@ -2689,7 +2689,7 @@
   },
   {
     "tier": 1,
-    "question": "Oktoberfest beer festival is held annually in:",
+    "question": "Oktoberfest, the world's largest beer festival, is held annually in which city?",
     "answer": "Munich, Germany",
     "choices": [
       "Munich, Germany",
@@ -2701,7 +2701,7 @@
   },
   {
     "tier": 1,
-    "question": "Juneteenth — the African American emancipation holiday — traditionally features which color of food?",
+    "question": "Juneteenth — the African American emancipation holiday — traditionally features food of which color?",
     "answer": "Red (strawberry soda, red velvet cake, watermelon)",
     "choices": [
       "Red (strawberry soda, red velvet cake, watermelon)",
@@ -2713,7 +2713,7 @@
   },
   {
     "tier": 1,
-    "question": "Italian-American Sunday dinner with a slow-cooked tomato sauce is often called:",
+    "question": "In Italian-American homes, what is a Sunday dinner of slow-cooked tomato sauce often called?",
     "answer": "Sunday gravy",
     "choices": [
       "Sunday gravy",
@@ -2725,7 +2725,7 @@
   },
   {
     "tier": 1,
-    "question": "Traditional British Sunday lunch most often centers:",
+    "question": "What does the traditional British Sunday lunch most often center on?",
     "answer": "A meat roast",
     "choices": [
       "A meat roast",
@@ -2737,7 +2737,7 @@
   },
   {
     "tier": 1,
-    "question": "Spanish New Year's Eve tradition — at midnight, you eat twelve:",
+    "question": "At midnight on Spanish New Year's Eve, what twelve things does tradition call for eating?",
     "answer": "Grapes",
     "choices": [
       "Grapes",
@@ -2749,7 +2749,7 @@
   },
   {
     "tier": 1,
-    "question": "Southern US New Year's tradition for prosperity — black-eyed peas and:",
+    "question": "Southern US tradition pairs black-eyed peas with which green at New Year's for prosperity?",
     "answer": "Collard greens",
     "choices": [
       "Collard greens",
@@ -2761,7 +2761,7 @@
   },
   {
     "tier": 1,
-    "question": "Continental European fork-and-knife style keeps the fork in:",
+    "question": "Where does the continental European fork-and-knife style keep the fork?",
     "answer": "The left hand throughout the meal",
     "choices": [
       "The left hand throughout the meal",
@@ -2773,7 +2773,7 @@
   },
   {
     "tier": 1,
-    "question": "Sociological data on family meals shows that frequency dropped most sharply during:",
+    "question": "Sociological data shows that frequency of family meals dropped most sharply during which decades?",
     "answer": "The late 20th century",
     "choices": [
       "The late 20th century",
@@ -2797,7 +2797,7 @@
   },
   {
     "tier": 1,
-    "question": "Galette des rois — French Twelfth Night cake — hides a small figurine. Finder is:",
+    "question": "In France's Twelfth Night cake (galette des rois), the finder of the hidden figurine becomes what?",
     "answer": "King or queen for the day",
     "choices": [
       "King or queen for the day",
@@ -2809,7 +2809,7 @@
   },
   {
     "tier": 1,
-    "question": "Italian wedding favors are often five sugared almonds (confetti) — they represent:",
+    "question": "At Italian weddings, five sugared almonds (confetti) are gifted to guests. What do they represent?",
     "answer": "Health, wealth, joy, family, life",
     "choices": [
       "Health, wealth, joy, family, life",
@@ -2821,7 +2821,7 @@
   },
   {
     "tier": 1,
-    "question": "Catholic Lenten tradition of meatless Fridays explains why which dish became regional?",
+    "question": "The Catholic tradition of meatless Lenten Fridays helped popularize which dish regionally?",
     "answer": "Fish and chips in coastal Britain",
     "choices": [
       "Fish and chips in coastal Britain",
@@ -2833,7 +2833,7 @@
   },
   {
     "tier": 1,
-    "question": "Muslim Ramadan fast is broken at sunset with a meal called:",
+    "question": "During Ramadan, the daily fast is broken at sunset with a meal called what?",
     "answer": "Iftar",
     "choices": [
       "Iftar",
@@ -2845,7 +2845,7 @@
   },
   {
     "tier": 1,
-    "question": "First sliced bread was machine-sliced and packaged in:",
+    "question": "The first machine-sliced and packaged bread hit American shelves in which year?",
     "answer": "1928",
     "choices": [
       "1928",
@@ -2857,7 +2857,7 @@
   },
   {
     "tier": 1,
-    "question": "Ethiopian flat sour pancake-bread used to scoop stews:",
+    "question": "Ethiopian cooks use a fermented flat sour pancake-bread to scoop stews. What is it called?",
     "answer": "Injera",
     "choices": [
       "Injera",
@@ -2869,7 +2869,7 @@
   },
   {
     "tier": 1,
-    "question": "Most pricey hand-foraged delicacy from Italian Piedmont in autumn:",
+    "question": "Italy's Piedmont in autumn produces a hand-foraged delicacy worth over $4000 per pound. What is it?",
     "answer": "White truffle",
     "choices": [
       "White truffle",
@@ -2881,7 +2881,7 @@
   },
   {
     "tier": 1,
-    "question": "A simple flour-and-fat paste used to thicken sauces and gravies:",
+    "question": "A simple flour-and-fat paste cooks slowly to thicken sauces and gravies. What is it called?",
     "answer": "Roux",
     "choices": [
       "Roux",
@@ -2893,7 +2893,7 @@
   },
   {
     "tier": 1,
-    "question": "Adding cool stock to a hot roux without lumps requires:",
+    "question": "Adding cool stock to a hot roux without lumps requires what technique?",
     "answer": "Whisking constantly while pouring slowly",
     "choices": [
       "Whisking constantly while pouring slowly",
@@ -2917,7 +2917,7 @@
   },
   {
     "tier": 1,
-    "question": "The Bengal Famine of 1943 killed an estimated:",
+    "question": "How many people did the Bengal Famine of 1943 kill, by best estimate?",
     "answer": "2–3 million people",
     "choices": [
       "2–3 million people",
@@ -2929,7 +2929,7 @@
   },
   {
     "tier": 1,
-    "question": "The Holodomor — a Soviet-engineered famine in Ukraine — took place in:",
+    "question": "In what years did the Holodomor — Stalin's engineered famine targeting Ukraine — take place?",
     "answer": "1932–33",
     "choices": [
       "1932–33",
@@ -2941,7 +2941,7 @@
   },
   {
     "tier": 1,
-    "question": "Mao's Great Leap Forward famine in 1959–61 killed an estimated:",
+    "question": "Mao's Great Leap Forward famine of 1959–61 killed how many people, by best estimate?",
     "answer": "15–45 million people",
     "choices": [
       "15–45 million people",
@@ -2953,7 +2953,7 @@
   },
   {
     "tier": 1,
-    "question": "Salt was so valuable in ancient Rome that one theory holds it gave us the word:",
+    "question": "In ancient Rome, salt was so valuable that one theory holds it gave us which English word?",
     "answer": "Salary",
     "choices": [
       "Salary",
@@ -2965,7 +2965,7 @@
   },
   {
     "tier": 1,
-    "question": "The Spanish spread which beverage in Europe after encountering the Aztecs?",
+    "question": "After encountering the Aztecs, the Spanish spread which beverage throughout Europe?",
     "answer": "Chocolate",
     "choices": [
       "Chocolate",
@@ -2977,7 +2977,7 @@
   },
   {
     "tier": 1,
-    "question": "Spanish colonizers brought which crop from Asia to the Americas?",
+    "question": "From Asia, Spanish colonizers brought which crop to the Americas?",
     "answer": "Sugarcane",
     "choices": [
       "Sugarcane",
@@ -2989,7 +2989,7 @@
   },
   {
     "tier": 1,
-    "question": "Argentinian-style grilled meats over wood or charcoal:",
+    "question": "The Argentinian tradition of grilling meats slowly over wood or charcoal is called what?",
     "answer": "Asado",
     "choices": [
       "Asado",
@@ -3001,7 +3001,7 @@
   },
   {
     "tier": 1,
-    "question": "Brazilian rotisserie-meat tradition served at table from skewers:",
+    "question": "In Brazil, gaúcho herders developed a rotisserie-meat tradition served at table from skewers. What is it?",
     "answer": "Churrasco",
     "choices": [
       "Churrasco",
@@ -3013,7 +3013,7 @@
   },
   {
     "tier": 1,
-    "question": "Pickled cabbage staple of German cuisine:",
+    "question": "German cuisine relies on a pickled cabbage staple, lacto-fermented for long winter storage. What is it called?",
     "answer": "Sauerkraut",
     "choices": [
       "Sauerkraut",
@@ -3025,7 +3025,7 @@
   },
   {
     "tier": 1,
-    "question": "The 'mother sauces' of French cuisine number how many in the modern Escoffier system?",
+    "question": "In the modern Escoffier system, French cuisine has how many 'mother sauces'?",
     "answer": "Five",
     "choices": [
       "Five",
@@ -3037,7 +3037,7 @@
   },
   {
     "tier": 1,
-    "question": "The most expensive beef in the world by reputation is the:",
+    "question": "The most expensive beef in the world by reputation comes from which tradition?",
     "answer": "Japanese wagyu (e.g., Kobe)",
     "choices": [
       "Japanese wagyu (e.g., Kobe)",
@@ -3049,7 +3049,7 @@
   },
   {
     "tier": 1,
-    "question": "Acorn-fed Iberian pigs produce which famous Spanish ham?",
+    "question": "Acorn-fed Iberian pigs roaming the dehesa oak savanna produce which famous Spanish ham?",
     "answer": "Jamon iberico",
     "choices": [
       "Jamon iberico",
@@ -3061,7 +3061,7 @@
   },
   {
     "tier": 1,
-    "question": "Champagne earns its name and rules from production in which French region?",
+    "question": "Sparkling wine can only be called 'Champagne' if it comes from which French region?",
     "answer": "Champagne, France",
     "choices": [
       "Champagne, France",
@@ -3073,7 +3073,7 @@
   },
   {
     "tier": 1,
-    "question": "Japanese knife specifically designed for slicing sushi-grade fish:",
+    "question": "A Japanese knife specifically designed for slicing sushi-grade fish is called what?",
     "answer": "Yanagiba",
     "choices": [
       "Yanagiba",
@@ -3085,7 +3085,7 @@
   },
   {
     "tier": 1,
-    "question": "Kwanzaa, founded in 1966, is a celebration centered on which heritage?",
+    "question": "Kwanzaa, founded in 1966, celebrates which heritage?",
     "answer": "African American / Pan-African",
     "choices": [
       "African American / Pan-African",
@@ -3097,7 +3097,7 @@
   },
   {
     "tier": 1,
-    "question": "The traditional French meal progression starts with:",
+    "question": "What does the traditional French meal progression start with?",
     "answer": "An aperitif",
     "choices": [
       "An aperitif",
@@ -3109,7 +3109,7 @@
   },
   {
     "tier": 1,
-    "question": "Banda Islands massacre of 1621 was a Dutch effort to monopolize trade in:",
+    "question": "The Banda Islands massacre of 1621 was a Dutch effort to monopolize trade in which spice?",
     "answer": "Nutmeg",
     "choices": [
       "Nutmeg",
@@ -3121,7 +3121,7 @@
   },
   {
     "tier": 1,
-    "question": "Pepper, cloves, nutmeg, and cinnamon were the medieval European obsession known as:",
+    "question": "Pepper, cloves, nutmeg, and cinnamon drove a medieval European obsession known as what?",
     "answer": "The spice trade",
     "choices": [
       "The spice trade",
@@ -3133,7 +3133,7 @@
   },
   {
     "tier": 1,
-    "question": "The 'father of food preservation' for his work on canning was:",
+    "question": "For his work on canning, who is called the 'father of food preservation'?",
     "answer": "Nicolas Appert",
     "choices": [
       "Nicolas Appert",
@@ -3157,7 +3157,7 @@
   },
   {
     "tier": 1,
-    "question": "An American Southern wedding may feature a separate 'groom's cake' — typically:",
+    "question": "At an American Southern wedding, what is the separate 'groom's cake' typically like?",
     "answer": "Darker and richer than the bride's cake",
     "choices": [
       "Darker and richer than the bride's cake",
@@ -3169,7 +3169,7 @@
   },
   {
     "tier": 1,
-    "question": "Mardi Gras tradition in New Orleans includes a colorful cake hiding a tiny baby figurine — the:",
+    "question": "At Mardi Gras in New Orleans, a colorful cake hides a tiny baby figurine inside. What is it called?",
     "answer": "King cake",
     "choices": [
       "King cake",
@@ -3181,7 +3181,7 @@
   },
   {
     "tier": 1,
-    "question": "Carbonara sauce is built from egg, hard cheese, black pepper, and:",
+    "question": "Authentic Roman carbonara is built from egg, hard cheese, black pepper, and what other ingredient?",
     "answer": "Cured pork",
     "choices": [
       "Cured pork",
@@ -3193,7 +3193,7 @@
   },
   {
     "tier": 1,
-    "question": "Cheese course in a French meal is served:",
+    "question": "In a traditional French meal, when is the cheese course served?",
     "answer": "After the main, before dessert",
     "choices": [
       "After the main, before dessert",
@@ -3217,7 +3217,7 @@
   },
   {
     "tier": 1,
-    "question": "Coffee was originally roasted and brewed by which kind of community in Yemen?",
+    "question": "In Yemen, coffee was originally roasted and brewed by which kind of community?",
     "answer": "Sufi Muslim mystics",
     "choices": [
       "Sufi Muslim mystics",
@@ -3229,7 +3229,7 @@
   },
   {
     "tier": 1,
-    "question": "Vienna's first coffeehouse opened in 1683 after coffee beans were left behind by:",
+    "question": "Vienna's first coffeehouse opened in 1683 from coffee beans left behind by whom?",
     "answer": "Retreating Ottoman forces",
     "choices": [
       "Retreating Ottoman forces",
@@ -3241,7 +3241,7 @@
   },
   {
     "tier": 1,
-    "question": "The kingdom of bagels, dating to 1610 Krakow, was traditionally a gift for women after:",
+    "question": "Dating to 1610 Krakow, the bagel was traditionally a Polish Jewish gift for women after what event?",
     "answer": "Childbirth",
     "choices": [
       "Childbirth",
@@ -3253,7 +3253,7 @@
   },
   {
     "tier": 1,
-    "question": "Spam, the canned meat, was introduced by Hormel in:",
+    "question": "Spam, central to Hawaiian and Korean cuisine, was introduced by Hormel in which year?",
     "answer": "1937",
     "choices": [
       "1937",
@@ -3265,7 +3265,7 @@
   },
   {
     "tier": 1,
-    "question": "Kimchi is the national side dish of:",
+    "question": "Kimchi is the national side dish of which country?",
     "answer": "Korea",
     "choices": [
       "Korea",
@@ -3277,7 +3277,7 @@
   },
   {
     "tier": 1,
-    "question": "Catholic Easter celebrations in much of the US center which roast?",
+    "question": "Catholic Easter celebrations across much of the US center which roast?",
     "answer": "Ham",
     "choices": [
       "Ham",
@@ -3313,7 +3313,7 @@
   },
   {
     "tier": 1,
-    "question": "Pasta arrived in Italy primarily from which Arab influence?",
+    "question": "Pasta arrived in Italy primarily through which Arab influence?",
     "answer": "Arab Sicily (9th–11th century)",
     "choices": [
       "Arab Sicily (9th–11th century)",
@@ -3325,7 +3325,7 @@
   },
   {
     "tier": 1,
-    "question": "Sourdough starter is kept alive by feeding it:",
+    "question": "A sourdough starter is kept alive by feeding it what?",
     "answer": "Flour and water",
     "choices": [
       "Flour and water",
@@ -3337,7 +3337,7 @@
   },
   {
     "tier": 1,
-    "question": "Beriberi is caused by deficiency of which vitamin?",
+    "question": "Beriberi disease is caused by deficiency of which vitamin?",
     "answer": "B1 (thiamine)",
     "choices": [
       "B1 (thiamine)",
@@ -3349,7 +3349,7 @@
   },
   {
     "tier": 1,
-    "question": "Pellagra was a 19th-century disease caused by diets heavy in:",
+    "question": "Pellagra was a 19th-century disease caused by diets heavy in what?",
     "answer": "Untreated corn",
     "choices": [
       "Untreated corn",
@@ -3361,7 +3361,7 @@
   },
   {
     "tier": 1,
-    "question": "Adding acid (lemon juice or vinegar) to whipping cream:",
+    "question": "Adding acid (lemon juice or vinegar) to whipping cream does what?",
     "answer": "Curdles or stiffens it",
     "choices": [
       "Curdles or stiffens it",
@@ -3373,7 +3373,7 @@
   },
   {
     "tier": 1,
-    "question": "Adding fat to eggs (cream, butter) before scrambling produces:",
+    "question": "Adding fat (cream or butter) to eggs before scrambling produces what kind of result?",
     "answer": "Softer, more tender curds",
     "choices": [
       "Softer, more tender curds",
@@ -3385,7 +3385,7 @@
   },
   {
     "tier": 1,
-    "question": "Caramelizing onions takes how long over genuine low heat?",
+    "question": "To properly caramelize onions over genuine low heat, how long does it take?",
     "answer": "45 minutes to over an hour",
     "choices": [
       "45 minutes to over an hour",
@@ -3397,7 +3397,7 @@
   },
   {
     "tier": 1,
-    "question": "Sourdough bread differs from yeast bread because it uses:",
+    "question": "Sourdough bread differs from yeast bread because it uses what?",
     "answer": "A wild yeast and bacteria starter",
     "choices": [
       "A wild yeast and bacteria starter",
@@ -3409,7 +3409,7 @@
   },
   {
     "tier": 1,
-    "question": "Olive oil's flavor and color come from:",
+    "question": "Olive oil's flavor and color come from what?",
     "answer": "The fruit of the olive tree, pressed",
     "choices": [
       "The fruit of the olive tree, pressed",
@@ -3421,7 +3421,7 @@
   },
   {
     "tier": 1,
-    "question": "The Aztec ruler Moctezuma reportedly drank dozens of cups a day of:",
+    "question": "What did the Aztec ruler Moctezuma reportedly drink dozens of cups of a day?",
     "answer": "Spiced chocolate",
     "choices": [
       "Spiced chocolate",
@@ -3433,7 +3433,7 @@
   },
   {
     "tier": 1,
-    "question": "A small flat square cut about 1cm wide and 3mm thick, used in soups:",
+    "question": "French country soups call for a small flat square cut, about 1cm wide and 3mm thick. What is the cut called?",
     "answer": "Paysanne",
     "choices": [
       "Paysanne",
@@ -3445,7 +3445,7 @@
   },
   {
     "tier": 1,
-    "question": "Seven-sided football-shaped vegetable cut used in classical French plating:",
+    "question": "A seven-sided football-shaped vegetable cut, used in classical French plating, is called what?",
     "answer": "Tourné",
     "choices": [
       "Tourné",
@@ -3457,7 +3457,7 @@
   },
   {
     "tier": 1,
-    "question": "Rough chop of tomato, garlic, or herb broken down by chopping without precision:",
+    "question": "French cooks use a rough chop of peeled, seeded tomato (or herb) called what?",
     "answer": "Concassé",
     "choices": [
       "Concassé",
@@ -3469,7 +3469,7 @@
   },
   {
     "tier": 1,
-    "question": "Matchstick-sized cut, longer and thicker than julienne (about 6mm × 6mm × 6cm):",
+    "question": "A matchstick-sized cut about 6mm × 6mm × 6cm, larger than julienne, is called what?",
     "answer": "Batonnet",
     "choices": [
       "Batonnet",
@@ -3481,7 +3481,7 @@
   },
   {
     "tier": 1,
-    "question": "Mixed cube cut of 5mm dice combining several vegetables for garnish:",
+    "question": "In classical French kitchens, a mixed 5mm dice of several vegetables for garnish is called what?",
     "answer": "Macedoine",
     "choices": [
       "Macedoine",
@@ -3493,7 +3493,7 @@
   },
   {
     "tier": 1,
-    "question": "Refined avocado oil's smoke point is approximately:",
+    "question": "Refined avocado oil has a smoke point of approximately what temperature?",
     "answer": "520°F (270°C)",
     "choices": [
       "520°F (270°C)",
@@ -3505,7 +3505,7 @@
   },
   {
     "tier": 1,
-    "question": "Neutral-flavored oil with a very high smoke point, common in baking and frying:",
+    "question": "Bakers and fryers reach for a neutral-flavored oil with a very high smoke point. What is it?",
     "answer": "Grapeseed oil",
     "choices": [
       "Grapeseed oil",
@@ -3517,7 +3517,7 @@
   },
   {
     "tier": 1,
-    "question": "Ghee tolerates higher heat than regular butter because it has:",
+    "question": "Ghee tolerates higher heat than regular butter because it has what?",
     "answer": "Milk solids removed",
     "choices": [
       "Milk solids removed",
@@ -3529,7 +3529,7 @@
   },
   {
     "tier": 1,
-    "question": "Rendered pork fat traditional in Mexican refried beans and flaky pastry:",
+    "question": "Mexican refried beans and flaky pastry traditionally use a rendered pork fat called what?",
     "answer": "Lard",
     "choices": [
       "Lard",
@@ -3541,7 +3541,7 @@
   },
   {
     "tier": 1,
-    "question": "Rendered beef fat with a clean flavor, the old standard for fried potatoes:",
+    "question": "The old McDonald's french fries (until 1990) were fried in which rendered fat?",
     "answer": "Tallow",
     "choices": [
       "Tallow",
@@ -3553,7 +3553,7 @@
   },
   {
     "tier": 1,
-    "question": "Rendered chicken fat used in matzo balls and Jewish-deli cuisine:",
+    "question": "Matzo balls and Jewish-deli cooking use a rendered chicken fat called what?",
     "answer": "Schmaltz",
     "choices": [
       "Schmaltz",
@@ -3565,7 +3565,7 @@
   },
   {
     "tier": 1,
-    "question": "Toasted sesame oil is added at the end of stir-fries because:",
+    "question": "Why is toasted sesame oil added at the very end of a stir-fry?",
     "answer": "Heat destroys its flavor",
     "choices": [
       "Heat destroys its flavor",
@@ -3577,7 +3577,7 @@
   },
   {
     "tier": 1,
-    "question": "Extra virgin olive oil has a smoke point near:",
+    "question": "Extra virgin olive oil has a smoke point near what temperature?",
     "answer": "375°F (190°C)",
     "choices": [
       "375°F (190°C)",
@@ -3589,7 +3589,7 @@
   },
   {
     "tier": 1,
-    "question": "Quinoa-to-water ratio for fluffy results:",
+    "question": "For fluffy quinoa, what is the standard quinoa-to-water ratio?",
     "answer": "1 cup quinoa to 2 cups water",
     "choices": [
       "1 cup quinoa to 2 cups water",
@@ -3601,7 +3601,7 @@
   },
   {
     "tier": 1,
-    "question": "Pearled farro typically simmers at this ratio:",
+    "question": "Pearled farro typically simmers at which water ratio?",
     "answer": "1 cup farro to 3 cups water",
     "choices": [
       "1 cup farro to 3 cups water",
@@ -3613,7 +3613,7 @@
   },
   {
     "tier": 1,
-    "question": "Bulgur wheat (medium grind) typically needs:",
+    "question": "Medium-grind bulgur wheat typically needs how much water?",
     "answer": "1 cup bulgur to 2 cups water",
     "choices": [
       "1 cup bulgur to 2 cups water",
@@ -3625,7 +3625,7 @@
   },
   {
     "tier": 1,
-    "question": "Polenta (medium coarse cornmeal) cooks at roughly:",
+    "question": "Polenta (medium coarse cornmeal) cooks at roughly which ratio?",
     "answer": "1 part polenta to 4 parts water",
     "choices": [
       "1 part polenta to 4 parts water",
@@ -3637,7 +3637,7 @@
   },
   {
     "tier": 1,
-    "question": "Steel-cut oats simmer in approximately:",
+    "question": "Steel-cut oats simmer at approximately which ratio of oats to water?",
     "answer": "1 cup oats to 4 cups water",
     "choices": [
       "1 cup oats to 4 cups water",
@@ -3649,7 +3649,7 @@
   },
   {
     "tier": 1,
-    "question": "Sushi rice (short grain) cooks at roughly:",
+    "question": "Sushi rice (short grain) cooks at roughly which ratio?",
     "answer": "1 cup rice to 1.25 cups water",
     "choices": [
       "1 cup rice to 1.25 cups water",
@@ -3661,7 +3661,7 @@
   },
   {
     "tier": 1,
-    "question": "Brown rice generally requires this water ratio:",
+    "question": "Brown rice generally requires which water ratio?",
     "answer": "1 cup rice to 2.25 cups water",
     "choices": [
       "1 cup rice to 2.25 cups water",
@@ -3673,7 +3673,7 @@
   },
   {
     "tier": 1,
-    "question": "Instant couscous is prepared by:",
+    "question": "How is instant couscous prepared?",
     "answer": "Boiling water poured on it, rested briefly",
     "choices": [
       "Boiling water poured on it, rested briefly",
@@ -3685,7 +3685,7 @@
   },
   {
     "tier": 1,
-    "question": "Carbon steel pans, like cast iron, develop nonstick performance through:",
+    "question": "Like cast iron, how do carbon steel pans develop nonstick performance?",
     "answer": "Seasoning with polymerized oil",
     "choices": [
       "Seasoning with polymerized oil",
@@ -3697,7 +3697,7 @@
   },
   {
     "tier": 1,
-    "question": "Enameled cast iron (like Le Creuset) should NOT be:",
+    "question": "What should you NOT do with enameled cast iron (like Le Creuset)?",
     "answer": "Heated empty on high",
     "choices": [
       "Heated empty on high",
@@ -3709,7 +3709,7 @@
   },
   {
     "tier": 1,
-    "question": "Ceramic-coated nonstick pans typically lose their nonstick property after:",
+    "question": "Ceramic-coated nonstick pans typically lose their nonstick property after how long?",
     "answer": "1 to 3 years of regular use",
     "choices": [
       "1 to 3 years of regular use",
@@ -3721,7 +3721,7 @@
   },
   {
     "tier": 1,
-    "question": "Stainless steel pans cling to food at first because:",
+    "question": "Why do stainless steel pans cling to food at first?",
     "answer": "The protein has not released yet",
     "choices": [
       "The protein has not released yet",
@@ -3733,7 +3733,7 @@
   },
   {
     "tier": 1,
-    "question": "Copper pans react with this food and should be lined with tin or steel:",
+    "question": "Bare copper pans react with which kind of food and need a tin or steel lining?",
     "answer": "Acidic foods like tomato",
     "choices": [
       "Acidic foods like tomato",
@@ -3745,7 +3745,7 @@
   },
   {
     "tier": 1,
-    "question": "Cast iron is wiped clean after cooking; soap was once feared because:",
+    "question": "Cast iron is wiped clean after cooking; why was soap once feared on it?",
     "answer": "Old lye soaps stripped seasoning",
     "choices": [
       "Old lye soaps stripped seasoning",
@@ -3757,7 +3757,7 @@
   },
   {
     "tier": 1,
-    "question": "Nonstick (PTFE/Teflon) pans should not be used above:",
+    "question": "Nonstick (PTFE/Teflon) pans should not be heated above what temperature?",
     "answer": "About 500°F (260°C)",
     "choices": [
       "About 500°F (260°C)",
@@ -3769,7 +3769,7 @@
   },
   {
     "tier": 1,
-    "question": "Woks are traditionally made of this metal for fast heat response:",
+    "question": "Traditional woks are made of which metal for fast heat response?",
     "answer": "Carbon steel",
     "choices": [
       "Carbon steel",
@@ -3781,7 +3781,7 @@
   },
   {
     "tier": 1,
-    "question": "Wooden cutting boards are cleaned best with:",
+    "question": "Wooden cutting boards are cleaned best with what?",
     "answer": "Hot soapy water and a thorough dry",
     "choices": [
       "Hot soapy water and a thorough dry",
@@ -3793,7 +3793,7 @@
   },
   {
     "tier": 1,
-    "question": "A clean cutting board is dirt-free; a sanitized one is also:",
+    "question": "A clean cutting board is dirt-free; what is also true of a sanitized one?",
     "answer": "Pathogen-reduced to a safe level",
     "choices": [
       "Pathogen-reduced to a safe level",
@@ -3805,7 +3805,7 @@
   },
   {
     "tier": 1,
-    "question": "After cutting raw chicken, a stainless sink can be sanitized with:",
+    "question": "After cutting raw chicken, what can a stainless sink be sanitized with?",
     "answer": "A diluted bleach solution",
     "choices": [
       "A diluted bleach solution",
@@ -3817,7 +3817,7 @@
   },
   {
     "tier": 1,
-    "question": "Dish sponges should be replaced or sanitized because:",
+    "question": "Why must dish sponges be replaced or sanitized frequently?",
     "answer": "They harbor bacteria in damp pores",
     "choices": [
       "They harbor bacteria in damp pores",
@@ -3829,7 +3829,7 @@
   },
   {
     "tier": 1,
-    "question": "Cast iron skillets are cleaned with which combination most often?",
+    "question": "How are cast iron skillets cleaned in most kitchens?",
     "answer": "Hot water, scrub brush, then oil",
     "choices": [
       "Hot water, scrub brush, then oil",
@@ -3841,7 +3841,7 @@
   },
   {
     "tier": 1,
-    "question": "Bottle brushes are needed for cleaning:",
+    "question": "To clean narrow vessels like blender jars and sippy cups, what tool is needed?",
     "answer": "Narrow vessels like blender jars",
     "choices": [
       "Narrow vessels like blender jars",
@@ -3853,7 +3853,7 @@
   },
   {
     "tier": 1,
-    "question": "Briefly plunging vegetables into boiling water, then cold to stop cooking:",
+    "question": "Briefly plunging vegetables into boiling water and then cold water to stop cooking is called what?",
     "answer": "Blanching and shocking",
     "choices": [
       "Blanching and shocking",
@@ -3865,7 +3865,7 @@
   },
   {
     "tier": 1,
-    "question": "Cooking gently in fat at low temperature, like duck legs in their own fat:",
+    "question": "Cooking gently in fat at low temperature, like duck legs in their own fat, is called what?",
     "answer": "Confit",
     "choices": [
       "Confit",
@@ -3877,7 +3877,7 @@
   },
   {
     "tier": 1,
-    "question": "Pouring liquid into a hot pan to lift stuck brown bits is called:",
+    "question": "Pouring liquid into a hot pan to lift stuck brown bits — what is this called?",
     "answer": "Deglazing",
     "choices": [
       "Deglazing",
@@ -3889,7 +3889,7 @@
   },
   {
     "tier": 1,
-    "question": "Cooking vegetables in butter or oil over low heat without color is called:",
+    "question": "Cooking vegetables in butter or oil over low heat without color is called what?",
     "answer": "Sweating",
     "choices": [
       "Sweating",
@@ -3901,7 +3901,7 @@
   },
   {
     "tier": 1,
-    "question": "Simmering a sauce or stock to thicken and concentrate flavor by evaporation:",
+    "question": "Simmering a sauce or stock to thicken and concentrate flavor by evaporation is called what?",
     "answer": "Reducing",
     "choices": [
       "Reducing",
@@ -3913,7 +3913,7 @@
   },
   {
     "tier": 1,
-    "question": "Slow oven cook in a covered pot with a small amount of liquid:",
+    "question": "Cooking slowly in a covered pot with a small amount of liquid, in the oven, is called what?",
     "answer": "Braising",
     "choices": [
       "Braising",
@@ -3925,7 +3925,7 @@
   },
   {
     "tier": 1,
-    "question": "Tempering chocolate uses controlled heating-cooling to:",
+    "question": "Why does tempering chocolate use controlled heating-and-cooling?",
     "answer": "Form stable beta crystals",
     "choices": [
       "Form stable beta crystals",
@@ -3937,7 +3937,7 @@
   },
   {
     "tier": 1,
-    "question": "Soft-ball candy stage corresponds to about which temperature?",
+    "question": "In candy making, the 'soft-ball stage' corresponds to about which temperature?",
     "answer": "234–240°F (112–115°C)",
     "choices": [
       "234–240°F (112–115°C)",
@@ -3949,7 +3949,7 @@
   },
   {
     "tier": 1,
-    "question": "Hard-crack candy stage for brittle and toffee occurs near:",
+    "question": "For brittle and toffee, the 'hard-crack stage' occurs near which temperature?",
     "answer": "300–310°F (150–155°C)",
     "choices": [
       "300–310°F (150–155°C)",
@@ -3961,7 +3961,7 @@
   },
   {
     "tier": 1,
-    "question": "A finger poke into well-proofed bread dough should:",
+    "question": "A finger poked into well-proofed bread dough should rebound how?",
     "answer": "Spring back slowly and incompletely",
     "choices": [
       "Spring back slowly and incompletely",
@@ -3973,7 +3973,7 @@
   },
   {
     "tier": 1,
-    "question": "Caramel color progression in a saucepan goes:",
+    "question": "As caramel cooks in a saucepan, how does the color progress?",
     "answer": "Pale, amber, mahogany, burnt",
     "choices": [
       "Pale, amber, mahogany, burnt",
@@ -3985,7 +3985,7 @@
   },
   {
     "tier": 1,
-    "question": "USDA pork is now considered safe at this internal temperature:",
+    "question": "USDA now considers pork safe at which internal temperature?",
     "answer": "145°F (63°C) with 3 min rest",
     "choices": [
       "145°F (63°C) with 3 min rest",
@@ -3997,7 +3997,7 @@
   },
   {
     "tier": 1,
-    "question": "Mustard added to a vinaigrette serves primarily as a(n):",
+    "question": "Adding mustard to a vinaigrette serves primarily as what?",
     "answer": "Emulsifier (binds oil + vinegar)",
     "choices": [
       "Emulsifier (binds oil + vinegar)",
@@ -4009,7 +4009,7 @@
   },
   {
     "tier": 1,
-    "question": "Saving pasta water before draining is useful because the starch:",
+    "question": "Saving pasta water before draining is useful because the starch does what?",
     "answer": "Helps emulsify the sauce",
     "choices": [
       "Helps emulsify the sauce",
@@ -4021,7 +4021,7 @@
   },
   {
     "tier": 1,
-    "question": "Doubling a cake recipe — what does NOT simply double?",
+    "question": "When you double a cake recipe, what does NOT simply double?",
     "answer": "Baking time",
     "choices": [
       "Baking time",
@@ -4033,7 +4033,7 @@
   },
   {
     "tier": 1,
-    "question": "Leafy greens like kale and spinach are top sources of vitamin:",
+    "question": "Leafy greens like kale and spinach are top sources of which vitamin?",
     "answer": "K",
     "choices": [
       "K",
@@ -4045,7 +4045,7 @@
   },
   {
     "tier": 1,
-    "question": "Vitamin B12 is found almost exclusively in:",
+    "question": "Vitamin B12 is found almost exclusively in what kind of food?",
     "answer": "Animal foods",
     "choices": [
       "Animal foods",
@@ -4057,7 +4057,7 @@
   },
   {
     "tier": 1,
-    "question": "Folate (vitamin B9) is especially high in:",
+    "question": "Folate (vitamin B9) is especially high in which foods?",
     "answer": "Beans, lentils, and leafy greens",
     "choices": [
       "Beans, lentils, and leafy greens",
@@ -4069,7 +4069,7 @@
   },
   {
     "tier": 1,
-    "question": "Vitamin D is unique because the body can make it from:",
+    "question": "Vitamin D is unique because the body can make it from what?",
     "answer": "Sunlight on the skin",
     "choices": [
       "Sunlight on the skin",
@@ -4081,7 +4081,7 @@
   },
   {
     "tier": 1,
-    "question": "Vitamin A from carrots and sweet potatoes is in the form of:",
+    "question": "Vitamin A from carrots and sweet potatoes is in which form?",
     "answer": "Beta-carotene (a precursor)",
     "choices": [
       "Beta-carotene (a precursor)",
@@ -4093,7 +4093,7 @@
   },
   {
     "tier": 1,
-    "question": "Vitamin E is found mostly in:",
+    "question": "Vitamin E is found mostly in what kinds of food?",
     "answer": "Nuts, seeds, and vegetable oils",
     "choices": [
       "Nuts, seeds, and vegetable oils",
@@ -4117,7 +4117,7 @@
   },
   {
     "tier": 1,
-    "question": "Thiamine (B1) deficiency historically caused this disease in rice-eating regions:",
+    "question": "Thiamine (B1) deficiency historically caused which disease in rice-eating regions?",
     "answer": "Beriberi",
     "choices": [
       "Beriberi",
@@ -4129,7 +4129,7 @@
   },
   {
     "tier": 1,
-    "question": "Oysters are famously dense in this mineral important for immunity:",
+    "question": "Oysters are famously dense in which mineral important for immunity?",
     "answer": "Zinc",
     "choices": [
       "Zinc",
@@ -4141,7 +4141,7 @@
   },
   {
     "tier": 1,
-    "question": "Dark chocolate, nuts, and seeds are top dietary sources of:",
+    "question": "Dark chocolate, nuts, and seeds are top dietary sources of which mineral?",
     "answer": "Magnesium",
     "choices": [
       "Magnesium",
@@ -4153,7 +4153,7 @@
   },
   {
     "tier": 1,
-    "question": "Iodized salt was introduced widely in the 1920s to prevent:",
+    "question": "Iodized salt was introduced widely in the 1920s to prevent which condition?",
     "answer": "Goiter",
     "choices": [
       "Goiter",
@@ -4165,7 +4165,7 @@
   },
   {
     "tier": 1,
-    "question": "Bananas, potatoes, and beans are classic sources of:",
+    "question": "Bananas, potatoes, and beans are classic dietary sources of which mineral?",
     "answer": "Potassium",
     "choices": [
       "Potassium",
@@ -4177,7 +4177,7 @@
   },
   {
     "tier": 1,
-    "question": "Brazil nuts are the densest-known dietary source of:",
+    "question": "Brazil nuts are the densest-known dietary source of which mineral?",
     "answer": "Selenium",
     "choices": [
       "Selenium",
@@ -4189,7 +4189,7 @@
   },
   {
     "tier": 1,
-    "question": "Iron from meat is the 'heme' form because it is:",
+    "question": "Iron from meat absorbs better than iron from plants because it is in which form?",
     "answer": "Bound to heme iron-protein",
     "choices": [
       "Bound to heme iron-protein",
@@ -4213,7 +4213,7 @@
   },
   {
     "tier": 1,
-    "question": "Vitamin K2 is bioavailable in this fermented Japanese soybean:",
+    "question": "Vitamin K2 is bioavailable in which fermented Japanese soybean dish?",
     "answer": "Natto",
     "choices": [
       "Natto",
@@ -4225,7 +4225,7 @@
   },
   {
     "tier": 1,
-    "question": "Tangy fermented milk drink originating in the Caucasus:",
+    "question": "A tangy fermented milk drink originating in the Caucasus is called what?",
     "answer": "Kefir",
     "choices": [
       "Kefir",
@@ -4237,7 +4237,7 @@
   },
   {
     "tier": 1,
-    "question": "White (shiro) miso differs from red (aka) miso primarily in:",
+    "question": "White (shiro) miso differs from red (aka) miso primarily in what way?",
     "answer": "Length of fermentation",
     "choices": [
       "Length of fermentation",
@@ -4249,7 +4249,7 @@
   },
   {
     "tier": 1,
-    "question": "Indonesian fermented soybean cake bound by Rhizopus mold:",
+    "question": "Indonesian cooks bind fermented soybeans with Rhizopus mold into a firm cake called what?",
     "answer": "Tempeh",
     "choices": [
       "Tempeh",
@@ -4261,7 +4261,7 @@
   },
   {
     "tier": 1,
-    "question": "Sticky-stringy Japanese fermented soybean famously polarizing in flavor:",
+    "question": "Japanese breakfast tables feature a sticky-stringy fermented soybean that polarizes diners. What is it?",
     "answer": "Natto",
     "choices": [
       "Natto",
@@ -4273,7 +4273,7 @@
   },
   {
     "tier": 1,
-    "question": "Russian fermented black bread drink, slightly fizzy and low alcohol:",
+    "question": "A Russian fermented black bread drink, slightly fizzy and low alcohol, is called what?",
     "answer": "Kvass",
     "choices": [
       "Kvass",
@@ -4285,7 +4285,7 @@
   },
   {
     "tier": 1,
-    "question": "Fermented tea drink with a SCOBY mother culture:",
+    "question": "A fermented tea drink grown from a 'SCOBY' mother culture is called what?",
     "answer": "Kombucha",
     "choices": [
       "Kombucha",
@@ -4297,7 +4297,7 @@
   },
   {
     "tier": 1,
-    "question": "The communal autumn Korean kimchi-making tradition is called:",
+    "question": "The communal autumn Korean tradition of making kimchi for winter is called what?",
     "answer": "Kimjang",
     "choices": [
       "Kimjang",
@@ -4309,7 +4309,7 @@
   },
   {
     "tier": 1,
-    "question": "Fermented foods deliver live bacterial cultures often called:",
+    "question": "Fermented foods deliver live bacterial cultures often called what?",
     "answer": "Probiotics",
     "choices": [
       "Probiotics",
@@ -4321,7 +4321,7 @@
   },
   {
     "tier": 1,
-    "question": "Of the US 'top 9' allergens, which was added by the FASTER Act in 2021?",
+    "question": "Of the US 'top 9' food allergens, which was added by the FASTER Act in 2021?",
     "answer": "Sesame",
     "choices": [
       "Sesame",
@@ -4345,7 +4345,7 @@
   },
   {
     "tier": 1,
-    "question": "Lactose intolerance differs from milk allergy because it is:",
+    "question": "How does lactose intolerance differ from milk allergy?",
     "answer": "An enzyme deficiency, not immune",
     "choices": [
       "An enzyme deficiency, not immune",
@@ -4357,7 +4357,7 @@
   },
   {
     "tier": 1,
-    "question": "Tree nuts and peanuts are kept separate on allergen labels because:",
+    "question": "Why are tree nuts and peanuts kept separate on allergen labels?",
     "answer": "Peanuts are legumes, not nuts",
     "choices": [
       "Peanuts are legumes, not nuts",
@@ -4369,7 +4369,7 @@
   },
   {
     "tier": 1,
-    "question": "Shellfish allergies are typically triggered by:",
+    "question": "Shellfish allergies are typically triggered by which protein?",
     "answer": "Tropomyosin protein",
     "choices": [
       "Tropomyosin protein",
@@ -4381,7 +4381,7 @@
   },
   {
     "tier": 1,
-    "question": "Omega-3 fatty acids are concentrated in:",
+    "question": "In which foods are omega-3 fatty acids concentrated?",
     "answer": "Fatty fish, flax, and walnuts",
     "choices": [
       "Fatty fish, flax, and walnuts",
@@ -4405,7 +4405,7 @@
   },
   {
     "tier": 1,
-    "question": "Coconut oil is unusual among plant oils because it is:",
+    "question": "Coconut oil is unusual among plant oils because it is what?",
     "answer": "Heavily saturated (over 80%)",
     "choices": [
       "Heavily saturated (over 80%)",
@@ -4417,7 +4417,7 @@
   },
   {
     "tier": 1,
-    "question": "Soluble fiber in oats can specifically help lower:",
+    "question": "Soluble fiber in oats can specifically help lower what?",
     "answer": "LDL cholesterol",
     "choices": [
       "LDL cholesterol",
@@ -4429,7 +4429,7 @@
   },
   {
     "tier": 1,
-    "question": "Wheat bran and vegetable skins are mostly:",
+    "question": "Wheat bran and vegetable skins are mostly which kind of fiber?",
     "answer": "Insoluble fiber",
     "choices": [
       "Insoluble fiber",
@@ -4441,7 +4441,7 @@
   },
   {
     "tier": 1,
-    "question": "Quinoa is rare among grains because it is:",
+    "question": "Among grains, quinoa is rare because it is what?",
     "answer": "A complete protein",
     "choices": [
       "A complete protein",
@@ -4453,7 +4453,7 @@
   },
   {
     "tier": 1,
-    "question": "Combining rice and beans yields a complete protein because:",
+    "question": "Why does combining rice and beans yield a complete protein?",
     "answer": "Each fills the other's amino gap",
     "choices": [
       "Each fills the other's amino gap",
@@ -4465,7 +4465,7 @@
   },
   {
     "tier": 1,
-    "question": "Blue Zones research identifies long-lived populations including:",
+    "question": "Blue Zones research identifies long-lived populations in which set of places?",
     "answer": "Okinawa, Sardinia, Loma Linda",
     "choices": [
       "Okinawa, Sardinia, Loma Linda",
@@ -4477,7 +4477,7 @@
   },
   {
     "tier": 1,
-    "question": "Spinach's iron is more bioavailable when:",
+    "question": "Spinach's iron becomes more bioavailable when it is what?",
     "answer": "Cooked, not raw",
     "choices": [
       "Cooked, not raw",
@@ -4489,7 +4489,7 @@
   },
   {
     "tier": 1,
-    "question": "The NOVA classification of ultra-processed food was developed in:",
+    "question": "The NOVA classification system for ultra-processed food was developed in which country?",
     "answer": "Brazil",
     "choices": [
       "Brazil",
@@ -4501,7 +4501,7 @@
   },
   {
     "tier": 1,
-    "question": "A NOVA-4 (ultra-processed) food usually has:",
+    "question": "A NOVA-4 (ultra-processed) food usually has what?",
     "answer": "Many additives no home cook uses",
     "choices": [
       "Many additives no home cook uses",
@@ -4513,7 +4513,7 @@
   },
   {
     "tier": 1,
-    "question": "Salmonella in raw chicken is killed at this internal temperature:",
+    "question": "Salmonella in raw chicken is killed at which internal temperature?",
     "answer": "165°F (74°C)",
     "choices": [
       "165°F (74°C)",
@@ -4525,7 +4525,7 @@
   },
   {
     "tier": 1,
-    "question": "Botulism risk is highest in this preservation method when done wrong:",
+    "question": "Botulism risk is highest in which preservation method when done wrong?",
     "answer": "Low-acid home canning",
     "choices": [
       "Low-acid home canning",
@@ -4537,7 +4537,7 @@
   },
   {
     "tier": 1,
-    "question": "Diversity in gut microbiome is most associated with:",
+    "question": "Diversity in the gut microbiome is most associated with what?",
     "answer": "Diverse plant-rich diet",
     "choices": [
       "Diverse plant-rich diet",
@@ -4549,7 +4549,7 @@
   },
   {
     "tier": 1,
-    "question": "Brazilian coastal stew of fish, coconut milk, dendê palm oil, and peppers:",
+    "question": "From the Brazilian coast, a stew of fish, coconut milk, dendê palm oil, and peppers is called what?",
     "answer": "Moqueca",
     "choices": [
       "Moqueca",
@@ -4561,7 +4561,7 @@
   },
   {
     "tier": 1,
-    "question": "Argentine chimichurri sauce — served with grilled meat — is built on:",
+    "question": "Argentine chimichurri sauce, served with grilled meat, is built from what?",
     "answer": "Parsley, garlic, vinegar, oil",
     "choices": [
       "Parsley, garlic, vinegar, oil",
@@ -4573,7 +4573,7 @@
   },
   {
     "tier": 1,
-    "question": "Peruvian raw fish 'cooked' in citrus juice with chile and onion:",
+    "question": "Peruvian cooks 'cook' raw fish in citrus juice with chile and onion. What is the dish called?",
     "answer": "Ceviche",
     "choices": [
       "Ceviche",
@@ -4585,7 +4585,7 @@
   },
   {
     "tier": 1,
-    "question": "Brazil's national bean and pork stew, traditionally eaten Saturdays:",
+    "question": "Brazil's national bean and pork stew, traditionally eaten Saturdays, is called what?",
     "answer": "Feijoada",
     "choices": [
       "Feijoada",
@@ -4597,7 +4597,7 @@
   },
   {
     "tier": 1,
-    "question": "Caribbean rice cooked with pigeon peas and coconut milk:",
+    "question": "In the Caribbean, rice cooked with pigeon peas and coconut milk is called what?",
     "answer": "Rice and peas",
     "choices": [
       "Rice and peas",
@@ -4609,7 +4609,7 @@
   },
   {
     "tier": 1,
-    "question": "Filipino sour soup, often with tamarind, fish, or pork:",
+    "question": "Filipino kitchens make a sour soup, often with tamarind, fish, or pork. What is it called?",
     "answer": "Sinigang",
     "choices": [
       "Sinigang",
@@ -4621,7 +4621,7 @@
   },
   {
     "tier": 1,
-    "question": "Filipino braise of meat in vinegar, soy, garlic, and bay leaf:",
+    "question": "Filipino cooks braise meat in vinegar, soy, garlic, and bay leaf. What is the dish called?",
     "answer": "Adobo",
     "choices": [
       "Adobo",
@@ -4633,7 +4633,7 @@
   },
   {
     "tier": 1,
-    "question": "Spicy-coconut Malaysian/Singaporean noodle soup:",
+    "question": "Malaysia and Singapore are famous for a spicy-coconut noodle soup called what?",
     "answer": "Laksa",
     "choices": [
       "Laksa",
@@ -4645,7 +4645,7 @@
   },
   {
     "tier": 1,
-    "question": "Indonesian fried rice with sweet soy and chile, a national dish:",
+    "question": "Indonesia's national fried rice with sweet soy and chile is called what?",
     "answer": "Nasi goreng",
     "choices": [
       "Nasi goreng",
@@ -4657,7 +4657,7 @@
   },
   {
     "tier": 1,
-    "question": "Indonesian slow-braised coconut beef from West Sumatra:",
+    "question": "From West Sumatra, a slow-braised coconut beef dish is called what?",
     "answer": "Rendang",
     "choices": [
       "Rendang",
@@ -4669,7 +4669,7 @@
   },
   {
     "tier": 1,
-    "question": "Polish hunter's stew of sauerkraut, cabbage, and various meats:",
+    "question": "A Polish hunter's stew of sauerkraut, cabbage, and various meats is called what?",
     "answer": "Bigos",
     "choices": [
       "Bigos",
@@ -4681,7 +4681,7 @@
   },
   {
     "tier": 1,
-    "question": "Hungarian paprika-rich stew of beef, onions, and peppers:",
+    "question": "From Hungary, a paprika-rich stew of beef, onions, and peppers is called what?",
     "answer": "Goulash",
     "choices": [
       "Goulash",
@@ -4693,7 +4693,7 @@
   },
   {
     "tier": 1,
-    "question": "Russian/Ukrainian beet soup served hot or cold with sour cream:",
+    "question": "Russian and Ukrainian kitchens serve a beet soup hot or cold with sour cream. What is it called?",
     "answer": "Borscht",
     "choices": [
       "Borscht",
@@ -4705,7 +4705,7 @@
   },
   {
     "tier": 1,
-    "question": "Russian beef strips in mustard-sour-cream sauce:",
+    "question": "Beef strips in a mustard-sour-cream sauce, a 19th-century Russian classic, are called what?",
     "answer": "Beef stroganoff",
     "choices": [
       "Beef stroganoff",
@@ -4717,7 +4717,7 @@
   },
   {
     "tier": 1,
-    "question": "Polish-American Christmas Eve (Wigilia) traditionally features:",
+    "question": "What does Polish-American Christmas Eve (Wigilia) traditionally feature?",
     "answer": "Twelve meatless courses",
     "choices": [
       "Twelve meatless courses",
@@ -4729,7 +4729,7 @@
   },
   {
     "tier": 1,
-    "question": "Russian small filled-dough soup dumplings:",
+    "question": "Russian small filled-dough soup dumplings, frozen outside in Siberian winter, are called what?",
     "answer": "Pelmeni",
     "choices": [
       "Pelmeni",
@@ -4741,7 +4741,7 @@
   },
   {
     "tier": 1,
-    "question": "Persian pomegranate-walnut chicken stew, intensely sweet-sour:",
+    "question": "Persian cooks reduce ground walnuts with pomegranate molasses for a sweet-sour chicken stew called what?",
     "answer": "Fesenjan",
     "choices": [
       "Fesenjan",
@@ -4753,7 +4753,7 @@
   },
   {
     "tier": 1,
-    "question": "Iranian crispy rice 'bottom of the pot' that everyone wants:",
+    "question": "Iranian rice cooks prize the golden crust at the bottom of the pot — what do they call it?",
     "answer": "Tahdig",
     "choices": [
       "Tahdig",
@@ -4765,7 +4765,7 @@
   },
   {
     "tier": 1,
-    "question": "Persian herb stew of parsley, cilantro, fenugreek, kidney beans, and lamb:",
+    "question": "Iran's unofficial national dish — a deep-green herb stew with lamb and kidney beans — is called what?",
     "answer": "Ghormeh sabzi",
     "choices": [
       "Ghormeh sabzi",
@@ -4777,7 +4777,7 @@
   },
   {
     "tier": 1,
-    "question": "Lebanese spiced bulgur-and-meat dumpling, often torpedo-shaped:",
+    "question": "Lebanese cooks shape a spiced bulgur-and-meat dumpling, often torpedo-shaped. What is it called?",
     "answer": "Kibbeh",
     "choices": [
       "Kibbeh",
@@ -4789,7 +4789,7 @@
   },
   {
     "tier": 1,
-    "question": "Levantine cooked-tomato dish with eggs poached on top:",
+    "question": "A Levantine breakfast of cooked tomatoes with eggs poached on top is called what?",
     "answer": "Shakshuka",
     "choices": [
       "Shakshuka",
@@ -4801,7 +4801,7 @@
   },
   {
     "tier": 1,
-    "question": "Turkish soft scrambled-egg-and-tomato breakfast:",
+    "question": "In Turkey, what is a soft scrambled-egg-and-tomato breakfast called?",
     "answer": "Menemen",
     "choices": [
       "Menemen",
@@ -4813,7 +4813,7 @@
   },
   {
     "tier": 1,
-    "question": "Jordanian national dish — lamb in fermented yogurt sauce on rice:",
+    "question": "Jordan's national dish — lamb in fermented yogurt sauce on rice, eaten by hand — is called what?",
     "answer": "Mansaf",
     "choices": [
       "Mansaf",
@@ -4825,7 +4825,7 @@
   },
   {
     "tier": 1,
-    "question": "Saudi spiced rice with meat (lamb or chicken), the kingdom's national dish:",
+    "question": "Saudi Arabia's national dish of spiced rice with meat (lamb or chicken) is called what?",
     "answer": "Kabsa",
     "choices": [
       "Kabsa",
@@ -4837,7 +4837,7 @@
   },
   {
     "tier": 1,
-    "question": "Korean marinated grilled beef, paper-thin and slightly sweet:",
+    "question": "Korean kitchens serve a marinated grilled beef, paper-thin and slightly sweet. What is it called?",
     "answer": "Bulgogi",
     "choices": [
       "Bulgogi",
@@ -4849,7 +4849,7 @@
   },
   {
     "tier": 1,
-    "question": "Korean rice bowl topped with sautéed vegetables, egg, and gochujang:",
+    "question": "A Korean rice bowl topped with sautéed vegetables, an egg, and gochujang is called what?",
     "answer": "Bibimbap",
     "choices": [
       "Bibimbap",
@@ -4861,7 +4861,7 @@
   },
   {
     "tier": 1,
-    "question": "Korean fermented red-chile-and-bean paste central to many dishes:",
+    "question": "Korean cooking centers on a fermented red-chile-and-bean paste called what?",
     "answer": "Gochujang",
     "choices": [
       "Gochujang",
@@ -4873,7 +4873,7 @@
   },
   {
     "tier": 1,
-    "question": "Korean chewy rice cakes in spicy gochujang sauce, a street-food classic:",
+    "question": "Korean street stalls sell chewy rice cakes in a spicy gochujang sauce. What is the dish called?",
     "answer": "Tteokbokki",
     "choices": [
       "Tteokbokki",
@@ -4885,7 +4885,7 @@
   },
   {
     "tier": 1,
-    "question": "Japanese savory pancake with cabbage and various toppings:",
+    "question": "A Japanese savory pancake with cabbage and various toppings is called what?",
     "answer": "Okonomiyaki",
     "choices": [
       "Okonomiyaki",
@@ -4897,7 +4897,7 @@
   },
   {
     "tier": 1,
-    "question": "Round Japanese street-food balls with octopus inside:",
+    "question": "On Osaka's streets, round griddle-flipped batter balls hide octopus inside. What is the dish called?",
     "answer": "Takoyaki",
     "choices": [
       "Takoyaki",
@@ -4909,7 +4909,7 @@
   },
   {
     "tier": 1,
-    "question": "Japanese skewered grilled chicken seasoned with salt or sweet tare:",
+    "question": "Japanese izakayas grill skewered chicken with salt or sweet tare over binchotan charcoal. What is the dish called?",
     "answer": "Yakitori",
     "choices": [
       "Yakitori",
@@ -4921,7 +4921,7 @@
   },
   {
     "tier": 1,
-    "question": "Japanese breaded fried pork cutlet, often served with shredded cabbage:",
+    "question": "Japanese cooks bread and fry a pork cutlet, often serving it with shredded cabbage. What is the dish called?",
     "answer": "Tonkatsu",
     "choices": [
       "Tonkatsu",
@@ -4933,7 +4933,7 @@
   },
   {
     "tier": 1,
-    "question": "Sichuan numb-spicy tofu dish with ground meat and bean paste:",
+    "question": "Sichuan cuisine offers a numb-spicy tofu dish with ground meat and bean paste — what is it called?",
     "answer": "Mapo tofu",
     "choices": [
       "Mapo tofu",
@@ -4945,7 +4945,7 @@
   },
   {
     "tier": 1,
-    "question": "Sichuan noodles in fiery sesame-chile sauce, named for street-vendor poles:",
+    "question": "Sichuan vendors carried fiery sesame-chile noodles on bamboo poles. What is the dish called?",
     "answer": "Dan dan noodles",
     "choices": [
       "Dan dan noodles",
@@ -4957,7 +4957,7 @@
   },
   {
     "tier": 1,
-    "question": "Cantonese steamed dumpling cart classic with shrimp and pork:",
+    "question": "On a dim sum cart, a steamed open-topped dumpling of shrimp and pork is called what?",
     "answer": "Siu mai",
     "choices": [
       "Siu mai",
@@ -4969,7 +4969,7 @@
   },
   {
     "tier": 1,
-    "question": "Cantonese sweet-savory roasted pork with a red lacquered crust:",
+    "question": "Cantonese 'fork-roasted' pork with a sweet-savory red lacquered crust is called what?",
     "answer": "Char siu",
     "choices": [
       "Char siu",
@@ -4981,7 +4981,7 @@
   },
   {
     "tier": 1,
-    "question": "Pasta sauce from Amatrice with guanciale, tomato, and pecorino:",
+    "question": "From the town of Amatrice, a pasta sauce of guanciale, tomato, and pecorino is called what?",
     "answer": "Amatriciana",
     "choices": [
       "Amatriciana",
@@ -4993,7 +4993,7 @@
   },
   {
     "tier": 1,
-    "question": "Roman pasta of cheese and pepper alone, simple but technical:",
+    "question": "A Roman pasta made of cheese and pepper alone, technical despite its simplicity, is called what?",
     "answer": "Cacio e pepe",
     "choices": [
       "Cacio e pepe",
@@ -5005,7 +5005,7 @@
   },
   {
     "tier": 1,
-    "question": "Italian rice variety prized for its high starch and creamy risotto:",
+    "question": "Italian risotto traditionally uses a high-starch short-grain rice variety called what?",
     "answer": "Arborio",
     "choices": [
       "Arborio",
@@ -5017,7 +5017,7 @@
   },
   {
     "tier": 1,
-    "question": "Northern Italian cornmeal porridge, served soft or fried in slabs:",
+    "question": "Northern Italy's daily staple before tomato and widespread pasta was a cornmeal porridge called what?",
     "answer": "Polenta",
     "choices": [
       "Polenta",
@@ -5029,7 +5029,7 @@
   },
   {
     "tier": 1,
-    "question": "Milanese saffron risotto served with osso buco:",
+    "question": "Milan's saffron risotto, served with osso buco, is called what?",
     "answer": "Risotto alla milanese",
     "choices": [
       "Risotto alla milanese",
@@ -5041,7 +5041,7 @@
   },
   {
     "tier": 1,
-    "question": "French Provençal fish stew from Marseille, served with rouille:",
+    "question": "From Marseille, a Provençal fish stew served with rouille is called what?",
     "answer": "Bouillabaisse",
     "choices": [
       "Bouillabaisse",
@@ -5053,7 +5053,7 @@
   },
   {
     "tier": 1,
-    "question": "Slow-baked French casserole of white beans, duck confit, and sausage:",
+    "question": "A slow-baked French casserole of white beans, duck confit, and sausage is called what?",
     "answer": "Cassoulet",
     "choices": [
       "Cassoulet",
@@ -5065,7 +5065,7 @@
   },
   {
     "tier": 1,
-    "question": "French Alsatian onion-and-bacon flatbread on thin dough:",
+    "question": "Alsace's pizza-cousin flatbread, topped with onion and bacon on thin dough, is called what?",
     "answer": "Tarte flambée",
     "choices": [
       "Tarte flambée",
@@ -5077,7 +5077,7 @@
   },
   {
     "tier": 1,
-    "question": "Provençal anchovy-onion-olive flatbread from Nice:",
+    "question": "Nice's anchovy-onion-olive flatbread is called what?",
     "answer": "Pissaladière",
     "choices": [
       "Pissaladière",
@@ -5089,7 +5089,7 @@
   },
   {
     "tier": 1,
-    "question": "French chickpea-flour pancake cooked in a wood-fired oven in Nice:",
+    "question": "In Nice, a chickpea-flour pancake cooked in a wood-fired oven is street food called what?",
     "answer": "Socca",
     "choices": [
       "Socca",
@@ -5101,7 +5101,7 @@
   },
   {
     "tier": 1,
-    "question": "South Indian fermented rice-lentil crepe filled with spiced potato:",
+    "question": "South Indian breakfast tables feature a fermented rice-lentil crepe filled with spiced potato. What is it called?",
     "answer": "Masala dosa",
     "choices": [
       "Masala dosa",
@@ -5113,7 +5113,7 @@
   },
   {
     "tier": 1,
-    "question": "South Indian steamed rice-lentil cake eaten at breakfast:",
+    "question": "A South Indian breakfast cake of steamed fermented rice and lentil batter is called what?",
     "answer": "Idli",
     "choices": [
       "Idli",
@@ -5125,7 +5125,7 @@
   },
   {
     "tier": 1,
-    "question": "Indian charcoal-baked yogurt-marinated chicken in tandoor oven:",
+    "question": "Indian cooks charcoal-bake yogurt-marinated chicken in a tandoor oven. What is the dish called?",
     "answer": "Tandoori chicken",
     "choices": [
       "Tandoori chicken",
@@ -5137,7 +5137,7 @@
   },
   {
     "tier": 1,
-    "question": "Indian-Portuguese vinegar-and-chile pork curry from Goa:",
+    "question": "From Goa, an Indian-Portuguese vinegar-and-chile pork curry is called what?",
     "answer": "Vindaloo",
     "choices": [
       "Vindaloo",
@@ -5149,7 +5149,7 @@
   },
   {
     "tier": 1,
-    "question": "Layered rice-and-meat dish with origins in Mughal cuisine:",
+    "question": "The Mughal-origin layered rice-and-meat dish famous across South Asia is called what?",
     "answer": "Biryani",
     "choices": [
       "Biryani",
@@ -5161,7 +5161,7 @@
   },
   {
     "tier": 1,
-    "question": "Bloomy-rind soft cheese from Normandy, often eaten with apples:",
+    "question": "From Normandy, a bloomy-rind soft cheese often eaten with apples is called what?",
     "answer": "Camembert",
     "choices": [
       "Camembert",
@@ -5173,7 +5173,7 @@
   },
   {
     "tier": 1,
-    "question": "French raw-milk hard cheese aged in Jura mountain cellars:",
+    "question": "Aged in the cellars of the Jura mountains, a French raw-milk hard cheese is called what?",
     "answer": "Comté",
     "choices": [
       "Comté",
@@ -5185,7 +5185,7 @@
   },
   {
     "tier": 1,
-    "question": "Italian blue cheese from Lombardy, milder than French blues:",
+    "question": "On a cheese board, the soft blue-veined cheese from Italian Lombardy, milder than French blues, is called what?",
     "answer": "Gorgonzola",
     "choices": [
       "Gorgonzola",
@@ -5197,7 +5197,7 @@
   },
   {
     "tier": 1,
-    "question": "Stretchy fresh Italian cheese pulled by hand from curd, often braided:",
+    "question": "Italian cheesemakers pull a stretchy fresh cheese by hand from curd, often braiding it. What is it called?",
     "answer": "Mozzarella",
     "choices": [
       "Mozzarella",
@@ -5209,7 +5209,7 @@
   },
   {
     "tier": 1,
-    "question": "Italian fresh-cream-filled mozzarella pouch from Puglia:",
+    "question": "From Puglia, an Italian fresh-cream-filled mozzarella pouch is called what?",
     "answer": "Burrata",
     "choices": [
       "Burrata",
@@ -5221,7 +5221,7 @@
   },
   {
     "tier": 1,
-    "question": "Greek brined sheep-milk cheese central to Greek salad:",
+    "question": "In a Greek salad, the brined sheep-milk cheese is called what?",
     "answer": "Feta",
     "choices": [
       "Feta",
@@ -5233,7 +5233,7 @@
   },
   {
     "tier": 1,
-    "question": "Cypriot semi-hard cheese that does not melt — grills with squeaky bite:",
+    "question": "A Cypriot semi-hard cheese that grills without melting, with a squeaky bite, is called what?",
     "answer": "Halloumi",
     "choices": [
       "Halloumi",
@@ -5245,7 +5245,7 @@
   },
   {
     "tier": 1,
-    "question": "Indian fresh non-melting cheese central to vegetarian curries:",
+    "question": "Indian vegetarian curries rely on a fresh non-melting cheese called what?",
     "answer": "Paneer",
     "choices": [
       "Paneer",
@@ -5257,7 +5257,7 @@
   },
   {
     "tier": 1,
-    "question": "Tart-lemony red Middle Eastern spice from ground sumac berries:",
+    "question": "A tart-lemony red Middle Eastern spice ground from sumac berries is called what?",
     "answer": "Sumac",
     "choices": [
       "Sumac",
@@ -5269,7 +5269,7 @@
   },
   {
     "tier": 1,
-    "question": "Middle Eastern herb-and-sesame blend with thyme/oregano notes:",
+    "question": "A Middle Eastern herb-and-sesame blend with thyme and oregano notes is called what?",
     "answer": "Za'atar",
     "choices": [
       "Za'atar",
@@ -5281,7 +5281,7 @@
   },
   {
     "tier": 1,
-    "question": "Egyptian nut-and-spice condiment eaten with bread and olive oil:",
+    "question": "An Egyptian nut-and-spice condiment eaten with bread and olive oil is called what?",
     "answer": "Dukkah",
     "choices": [
       "Dukkah",
@@ -5293,7 +5293,7 @@
   },
   {
     "tier": 1,
-    "question": "French chef who codified the brigade kitchen system and simplified haute cuisine:",
+    "question": "Which French chef codified the brigade kitchen system and simplified haute cuisine?",
     "answer": "Auguste Escoffier",
     "choices": [
       "Auguste Escoffier",
@@ -5305,7 +5305,7 @@
   },
   {
     "tier": 1,
-    "question": "American cook and TV personality often called the 'dean of American cuisine':",
+    "question": "Often called the 'dean of American cuisine,' which mid-20th-century cook and TV personality was that?",
     "answer": "James Beard",
     "choices": [
       "James Beard",
@@ -5317,7 +5317,7 @@
   },
   {
     "tier": 1,
-    "question": "French chef of the 1980s-2010s with the most Michelin stars in history:",
+    "question": "Of all chefs in history, which French chef of the 1980s-2010s held the most Michelin stars?",
     "answer": "Joël Robuchon",
     "choices": [
       "Joël Robuchon",
@@ -5329,7 +5329,7 @@
   },
   {
     "tier": 1,
-    "question": "American chef and writer whose 2000 book 'Kitchen Confidential' shocked diners:",
+    "question": "Which American chef and writer's 2000 book 'Kitchen Confidential' shocked diners?",
     "answer": "Anthony Bourdain",
     "choices": [
       "Anthony Bourdain",
@@ -5341,7 +5341,7 @@
   },
   {
     "tier": 1,
-    "question": "African-American chef who preserved the cooking of Freetown, Virginia:",
+    "question": "Which African-American chef preserved the cooking of Freetown, Virginia in writing?",
     "answer": "Edna Lewis",
     "choices": [
       "Edna Lewis",
@@ -5353,7 +5353,7 @@
   },
   {
     "tier": 1,
-    "question": "American food writer of essays like 'How to Cook a Wolf' during WWII rationing:",
+    "question": "Which American food writer wrote essays like 'How to Cook a Wolf' during WWII rationing?",
     "answer": "M.F.K. Fisher",
     "choices": [
       "M.F.K. Fisher",
@@ -5365,7 +5365,7 @@
   },
   {
     "tier": 1,
-    "question": "Founder of Chez Panisse in Berkeley in 1971, evangelist of farm-to-table:",
+    "question": "Who founded Chez Panisse in Berkeley in 1971 as an evangelist of farm-to-table cooking?",
     "answer": "Alice Waters",
     "choices": [
       "Alice Waters",
@@ -5377,7 +5377,7 @@
   },
   {
     "tier": 1,
-    "question": "American cook whose PBS series brought French technique to home cooks in 1963:",
+    "question": "Which American cook brought French technique to home cooks in a 1963 PBS series?",
     "answer": "Julia Child",
     "choices": [
       "Julia Child",
@@ -5389,7 +5389,7 @@
   },
   {
     "tier": 1,
-    "question": "Spanish chef of elBulli, often credited with launching molecular gastronomy:",
+    "question": "Which Spanish chef of elBulli is credited with launching molecular gastronomy?",
     "answer": "Ferran Adrià",
     "choices": [
       "Ferran Adrià",
@@ -5401,7 +5401,7 @@
   },
   {
     "tier": 1,
-    "question": "Danish chef of Noma in Copenhagen, leader of the New Nordic movement:",
+    "question": "Which Danish chef of Noma in Copenhagen led the New Nordic movement?",
     "answer": "René Redzepi",
     "choices": [
       "René Redzepi",
@@ -5413,7 +5413,7 @@
   },
   {
     "tier": 1,
-    "question": "Israeli-British chef of 'Plenty' and 'Jerusalem' cookbooks, popular in 2010s:",
+    "question": "Which Israeli-British chef wrote 'Plenty' and 'Jerusalem,' hugely influential in the 2010s?",
     "answer": "Yotam Ottolenghi",
     "choices": [
       "Yotam Ottolenghi",
@@ -5425,7 +5425,7 @@
   },
   {
     "tier": 1,
-    "question": "British 'Naked Chef' who built a campaign against school junk food in 2005:",
+    "question": "Which British 'Naked Chef' launched a 2005 campaign against school junk food?",
     "answer": "Jamie Oliver",
     "choices": [
       "Jamie Oliver",
@@ -5437,7 +5437,7 @@
   },
   {
     "tier": 1,
-    "question": "British chef of The Fat Duck, a key figure in molecular gastronomy:",
+    "question": "Which British chef of The Fat Duck became a key figure in molecular gastronomy?",
     "answer": "Heston Blumenthal",
     "choices": [
       "Heston Blumenthal",
@@ -5449,7 +5449,7 @@
   },
   {
     "tier": 1,
-    "question": "French chef of Le Bernardin in New York, master of seafood cuisine:",
+    "question": "Which French chef of Le Bernardin in New York is a master of seafood cuisine?",
     "answer": "Eric Ripert",
     "choices": [
       "Eric Ripert",
@@ -5461,7 +5461,7 @@
   },
   {
     "tier": 1,
-    "question": "American chef of The French Laundry and Per Se, known for tasting menus:",
+    "question": "Which American chef of The French Laundry and Per Se is known for tasting menus?",
     "answer": "Thomas Keller",
     "choices": [
       "Thomas Keller",
@@ -5473,7 +5473,7 @@
   },
   {
     "tier": 1,
-    "question": "US legislation passed in 1906 after Upton Sinclair's 'The Jungle':",
+    "question": "After Upton Sinclair's 'The Jungle,' US Congress passed which 1906 law?",
     "answer": "Pure Food and Drug Act",
     "choices": [
       "Pure Food and Drug Act",
@@ -5485,7 +5485,7 @@
   },
   {
     "tier": 1,
-    "question": "1791 American farmer uprising over a tax on distilled spirits:",
+    "question": "In 1791, American farmers staged an uprising over a tax on distilled spirits. What was it called?",
     "answer": "Whiskey Rebellion",
     "choices": [
       "Whiskey Rebellion",
@@ -5497,7 +5497,7 @@
   },
   {
     "tier": 1,
-    "question": "Year Otto Frederick Rohwedder's machine first sold sliced packaged bread commercially:",
+    "question": "In which year did Otto Frederick Rohwedder's machine first sell sliced packaged bread commercially?",
     "answer": "1928",
     "choices": [
       "1928",
@@ -5509,7 +5509,7 @@
   },
   {
     "tier": 1,
-    "question": "1809 winner of Napoleon's 12,000 franc prize for food preservation:",
+    "question": "In 1809, Napoleon's 12,000 franc prize for food preservation was awarded to whom?",
     "answer": "Nicolas Appert",
     "choices": [
       "Nicolas Appert",
@@ -5521,7 +5521,7 @@
   },
   {
     "tier": 1,
-    "question": "Boston Tea Party protesters disguised themselves as:",
+    "question": "During the Boston Tea Party, what did the protesters disguise themselves as?",
     "answer": "Mohawk Indians",
     "choices": [
       "Mohawk Indians",
@@ -5533,7 +5533,7 @@
   },
   {
     "tier": 1,
-    "question": "French chemist whose 1864 discovery enabled safe milk and wine:",
+    "question": "Which French chemist's 1864 discovery enabled safe milk and wine?",
     "answer": "Louis Pasteur",
     "choices": [
       "Louis Pasteur",
@@ -5545,7 +5545,7 @@
   },
   {
     "tier": 1,
-    "question": "Year Clarence Birdseye patented his flash-freezing process:",
+    "question": "In which year did Clarence Birdseye patent his flash-freezing process?",
     "answer": "1924",
     "choices": [
       "1924",
@@ -5557,7 +5557,7 @@
   },
   {
     "tier": 1,
-    "question": "Year of the first McDonald's Speedee Service System, before Ray Kroc:",
+    "question": "Before Ray Kroc, in which year did Dick and Mac McDonald launch their Speedee Service System?",
     "answer": "1948",
     "choices": [
       "1948",
@@ -5569,7 +5569,7 @@
   },
   {
     "tier": 1,
-    "question": "1953 Swanson product that turned post-Thanksgiving turkey surplus into:",
+    "question": "In 1953, Swanson turned post-Thanksgiving turkey surplus into which mass-market product?",
     "answer": "TV dinners",
     "choices": [
       "TV dinners",
@@ -5581,7 +5581,7 @@
   },
   {
     "tier": 1,
-    "question": "Hormel meat product launched in 1937, key WWII Allied ration:",
+    "question": "Hormel launched which meat product in 1937 — a key WWII Allied ration?",
     "answer": "Spam",
     "choices": [
       "Spam",
@@ -5593,7 +5593,7 @@
   },
   {
     "tier": 1,
-    "question": "1945 Raytheon engineer whose pocket chocolate bar melted near a magnetron:",
+    "question": "In 1945, which Raytheon engineer noticed a pocket chocolate bar melt near a magnetron?",
     "answer": "Percy Spencer",
     "choices": [
       "Percy Spencer",
@@ -5605,7 +5605,7 @@
   },
   {
     "tier": 1,
-    "question": "1986 protest at Rome's Spanish Steps that launched the Slow Food movement:",
+    "question": "Carlo Petrini's 1986 protest at Rome's Spanish Steps launched which food movement?",
     "answer": "Against a new McDonald's",
     "choices": [
       "Against a new McDonald's",
@@ -5617,7 +5617,7 @@
   },
   {
     "tier": 1,
-    "question": "1908 Japanese chemist who isolated glutamate from kombu and named umami:",
+    "question": "In 1908, which Japanese chemist isolated glutamate from kombu and named umami?",
     "answer": "Kikunae Ikeda",
     "choices": [
       "Kikunae Ikeda",
@@ -5629,7 +5629,7 @@
   },
   {
     "tier": 1,
-    "question": "1912 French chemist who described browning chemistry now named for him:",
+    "question": "In 1912, which French chemist described the browning chemistry now named for him?",
     "answer": "Louis-Camille Maillard",
     "choices": [
       "Louis-Camille Maillard",
@@ -5653,7 +5653,7 @@
   },
   {
     "tier": 1,
-    "question": "Carême's apprenticeship as a teen was famously at a:",
+    "question": "As a teen, where did Marie-Antoine Carême famously apprentice?",
     "answer": "Parisian pastry shop",
     "choices": [
       "Parisian pastry shop",
@@ -5665,7 +5665,7 @@
   },
   {
     "tier": 1,
-    "question": "Coffee reached the Caribbean through which 1720s French planter?",
+    "question": "Coffee reached the Caribbean in the 1720s through which French planter?",
     "answer": "Gabriel de Clieu",
     "choices": [
       "Gabriel de Clieu",
@@ -5677,7 +5677,7 @@
   },
   {
     "tier": 1,
-    "question": "Potatoes were originally domesticated in:",
+    "question": "Where were potatoes originally domesticated?",
     "answer": "The Andes of South America",
     "choices": [
       "The Andes of South America",
@@ -5689,7 +5689,7 @@
   },
   {
     "tier": 1,
-    "question": "Coffee's earliest cultivation in the 9th-15th centuries was centered in:",
+    "question": "Where was coffee's earliest cultivation (9th to 15th centuries) centered?",
     "answer": "Yemen and Ethiopia",
     "choices": [
       "Yemen and Ethiopia",
@@ -5701,7 +5701,7 @@
   },
   {
     "tier": 1,
-    "question": "Chocolate began in Mesoamerica as a:",
+    "question": "In Mesoamerica, what did chocolate begin as?",
     "answer": "Bitter, spiced ceremonial drink",
     "choices": [
       "Bitter, spiced ceremonial drink",
@@ -5725,7 +5725,7 @@
   },
   {
     "tier": 1,
-    "question": "Sliced bread was banned briefly in the US during WWII because:",
+    "question": "During WWII, sliced bread was briefly banned in the US for what stated reason?",
     "answer": "It conserved wax-paper wrapping",
     "choices": [
       "It conserved wax-paper wrapping",
@@ -5737,7 +5737,7 @@
   },
   {
     "tier": 1,
-    "question": "Edmond Albius (1841, Réunion) discovered how to:",
+    "question": "On Réunion in 1841, a 12-year-old enslaved boy named Edmond Albius discovered how to do what?",
     "answer": "Hand-pollinate vanilla orchids",
     "choices": [
       "Hand-pollinate vanilla orchids",
@@ -5749,7 +5749,7 @@
   },
   {
     "tier": 1,
-    "question": "Carolina Reaper held the Guinness 'world's hottest pepper' title from:",
+    "question": "The Carolina Reaper held the Guinness 'world's hottest pepper' title during which period?",
     "answer": "2013 to 2023",
     "choices": [
       "2013 to 2023",
@@ -5761,7 +5761,7 @@
   },
   {
     "tier": 1,
-    "question": "1825 'The Physiology of Taste' was written by:",
+    "question": "In 1825, 'The Physiology of Taste' was written by which French food philosopher?",
     "answer": "Brillat-Savarin",
     "choices": [
       "Brillat-Savarin",
@@ -5773,7 +5773,7 @@
   },
   {
     "tier": 1,
-    "question": "The Roman wine-fermented fish sauce ubiquitous across the empire:",
+    "question": "Across the Roman Empire, a fermented fish sauce served as the everyday umami condiment. What was it called?",
     "answer": "Garum",
     "choices": [
       "Garum",
@@ -5785,7 +5785,7 @@
   },
   {
     "tier": 1,
-    "question": "The Aztec 'chocolatl' was thickened with which staple grain?",
+    "question": "The Aztec 'chocolatl' drink was thickened with which staple grain?",
     "answer": "Maize",
     "choices": [
       "Maize",
@@ -5797,7 +5797,7 @@
   },
   {
     "tier": 1,
-    "question": "1959-61 famine in China caused by Mao's policies killed an estimated:",
+    "question": "The 1959-61 famine in China caused by Mao's policies killed roughly how many people?",
     "answer": "15 to 45 million people",
     "choices": [
       "15 to 45 million people",
@@ -5809,7 +5809,7 @@
   },
   {
     "tier": 1,
-    "question": "Soviet 1932-33 grain seizure caused a famine in:",
+    "question": "The Soviet 1932-33 grain seizure caused a famine in which country?",
     "answer": "Ukraine (Holodomor)",
     "choices": [
       "Ukraine (Holodomor)",
@@ -5821,7 +5821,7 @@
   },
   {
     "tier": 1,
-    "question": "1845-49 Irish famine was triggered by:",
+    "question": "The 1845-49 Irish famine was triggered by what?",
     "answer": "Phytophthora potato blight",
     "choices": [
       "Phytophthora potato blight",
@@ -5833,7 +5833,7 @@
   },
   {
     "tier": 1,
-    "question": "Margarine was invented in 1869 as a butter substitute for:",
+    "question": "Margarine was invented in 1869 as a butter substitute for whom?",
     "answer": "The French navy under Napoleon III",
     "choices": [
       "The French navy under Napoleon III",
@@ -5845,7 +5845,7 @@
   },
   {
     "tier": 1,
-    "question": "Worcestershire sauce was first bottled in the 1830s by:",
+    "question": "Worcestershire sauce was first bottled in the 1830s by which company?",
     "answer": "Lea and Perrins",
     "choices": [
       "Lea and Perrins",
@@ -5857,7 +5857,7 @@
   },
   {
     "tier": 1,
-    "question": "Sandwich is named for the 4th Earl of Sandwich (1762) who:",
+    "question": "In 1762, why did the 4th Earl of Sandwich give the sandwich its name?",
     "answer": "Refused to leave a gambling table",
     "choices": [
       "Refused to leave a gambling table",
@@ -5881,7 +5881,7 @@
   },
   {
     "tier": 1,
-    "question": "Coca-Cola was invented in 1886 in which US city?",
+    "question": "In 1886, Coca-Cola was invented in which US city?",
     "answer": "Atlanta, Georgia",
     "choices": [
       "Atlanta, Georgia",
@@ -5893,7 +5893,7 @@
   },
   {
     "tier": 1,
-    "question": "Tabasco hot sauce was first made on Avery Island, Louisiana in:",
+    "question": "On Louisiana's Avery Island, Tabasco hot sauce was first made in which year?",
     "answer": "1868",
     "choices": [
       "1868",
@@ -5905,7 +5905,7 @@
   },
   {
     "tier": 1,
-    "question": "Henry Heinz's '57 varieties' slogan from 1896 actually represented:",
+    "question": "Henry Heinz's '57 varieties' slogan from 1896 actually represented what?",
     "answer": "A randomly chosen number",
     "choices": [
       "A randomly chosen number",
@@ -5917,7 +5917,7 @@
   },
   {
     "tier": 1,
-    "question": "Birthday cake candles in 18th-century Germany were tied to:",
+    "question": "In 18th-century Germany, birthday cake candles were tied to which children's celebration?",
     "answer": "Kinderfest celebrations",
     "choices": [
       "Kinderfest celebrations",
@@ -5929,7 +5929,7 @@
   },
   {
     "tier": 1,
-    "question": "The ancient Greek moon-shaped cakes were offered to the goddess:",
+    "question": "In ancient Greece, moon-shaped cakes were offered to which goddess?",
     "answer": "Artemis",
     "choices": [
       "Artemis",
@@ -5941,7 +5941,7 @@
   },
   {
     "tier": 1,
-    "question": "Mexican children at parties may take a bite of cake by:",
+    "question": "At Mexican parties, 'la mordida' is a fun-mean birthday tradition where the birthday person is what?",
     "answer": "Being pushed face-first into it",
     "choices": [
       "Being pushed face-first into it",
@@ -5953,7 +5953,7 @@
   },
   {
     "tier": 1,
-    "question": "Sweet 16 in the US originated as a:",
+    "question": "In the US, the 'Sweet 16' tradition originated as a what?",
     "answer": "Coming-of-age party for teen girls",
     "choices": [
       "Coming-of-age party for teen girls",
@@ -5965,7 +5965,7 @@
   },
   {
     "tier": 1,
-    "question": "Japanese phrase said BEFORE eating, with hands together:",
+    "question": "In Japan, what phrase is said BEFORE eating, with hands together?",
     "answer": "Itadakimasu",
     "choices": [
       "Itadakimasu",
@@ -5977,7 +5977,7 @@
   },
   {
     "tier": 1,
-    "question": "Japanese phrase said AFTER finishing a meal:",
+    "question": "In Japan, what phrase is said AFTER finishing a meal?",
     "answer": "Gochisousama deshita",
     "choices": [
       "Gochisousama deshita",
@@ -5989,7 +5989,7 @@
   },
   {
     "tier": 1,
-    "question": "Japanese tea ceremony's quiet aesthetic of imperfection is called:",
+    "question": "The Japanese aesthetic of imperfection at the heart of tea ceremony is called what?",
     "answer": "Wabi-sabi",
     "choices": [
       "Wabi-sabi",
@@ -6001,7 +6001,7 @@
   },
   {
     "tier": 1,
-    "question": "Argentine Sunday tradition of family grilling for several hours:",
+    "question": "The Argentine Sunday tradition of family grilling for several hours is called what?",
     "answer": "Asado",
     "choices": [
       "Asado",
@@ -6013,7 +6013,7 @@
   },
   {
     "tier": 1,
-    "question": "Brazilian Saturday tradition centered on slow-cooked black-bean stew:",
+    "question": "The Brazilian Saturday tradition centered on slow-cooked black-bean stew is called what?",
     "answer": "Feijoada Saturday",
     "choices": [
       "Feijoada Saturday",
@@ -6025,7 +6025,7 @@
   },
   {
     "tier": 1,
-    "question": "Mexican afternoon light meal between lunch and dinner:",
+    "question": "In Mexico, the afternoon light meal between lunch and dinner is called what?",
     "answer": "Merienda",
     "choices": [
       "Merienda",
@@ -6037,7 +6037,7 @@
   },
   {
     "tier": 1,
-    "question": "Cuban tradition of small, strong sweetened espresso shared among friends:",
+    "question": "In Cuba, a small, strong sweetened espresso shared among friends is called what?",
     "answer": "Café cubano",
     "choices": [
       "Café cubano",
@@ -6049,7 +6049,7 @@
   },
   {
     "tier": 1,
-    "question": "Argentine sharing ritual passing a gourd of caffeinated infusion:",
+    "question": "Argentines gather to pass a gourd of caffeinated infusion in turn. What is the ritual called?",
     "answer": "Mate (yerba mate)",
     "choices": [
       "Mate (yerba mate)",
@@ -6061,7 +6061,7 @@
   },
   {
     "tier": 1,
-    "question": "Greek concept of joyful, spirit-filled celebration including food and dance:",
+    "question": "In Greek culture, the joyful, spirit-filled celebration including food and dance is called what?",
     "answer": "Kefi",
     "choices": [
       "Kefi",
@@ -6073,7 +6073,7 @@
   },
   {
     "tier": 1,
-    "question": "Greek value of hospitality to guests, treating them as gifts from the gods:",
+    "question": "In Greek culture, the value of hospitality to guests — treating them as gifts from the gods — is called what?",
     "answer": "Filoxenia",
     "choices": [
       "Filoxenia",
@@ -6085,7 +6085,7 @@
   },
   {
     "tier": 1,
-    "question": "Greek practice of doing something with passion, love, and care, including cooking:",
+    "question": "In Greek culture, what is the practice of doing things with passion, love, and care — including cooking — called?",
     "answer": "Meraki",
     "choices": [
       "Meraki",
@@ -6097,7 +6097,7 @@
   },
   {
     "tier": 1,
-    "question": "Italian Sunday lunch with extended family, lasting several hours:",
+    "question": "The multi-hour Italian Sunday lunch with extended family is called what?",
     "answer": "La pranzo della domenica",
     "choices": [
       "La pranzo della domenica",
@@ -6109,7 +6109,7 @@
   },
   {
     "tier": 1,
-    "question": "Italian Christmas Eve seafood tradition popular in Italian-American homes:",
+    "question": "In Italian-American homes, the Christmas Eve seafood tradition is called what?",
     "answer": "Feast of the Seven Fishes",
     "choices": [
       "Feast of the Seven Fishes",
@@ -6121,7 +6121,7 @@
   },
   {
     "tier": 1,
-    "question": "Italian pre-meal drink-and-snack ritual, especially in the north:",
+    "question": "The Italian pre-meal drink-and-snack ritual, especially in the north, is called what?",
     "answer": "Aperitivo",
     "choices": [
       "Aperitivo",
@@ -6133,7 +6133,7 @@
   },
   {
     "tier": 1,
-    "question": "Italian after-dinner drink meant to aid digestion:",
+    "question": "After dinner in Italy, a small bitter or strong drink meant to aid digestion is called what?",
     "answer": "Digestivo",
     "choices": [
       "Digestivo",
@@ -6145,7 +6145,7 @@
   },
   {
     "tier": 1,
-    "question": "Bread plate in a Western place setting belongs:",
+    "question": "In a Western place setting, the bread plate belongs in which position?",
     "answer": "Above the forks (upper left)",
     "choices": [
       "Above the forks (upper left)",
@@ -6157,7 +6157,7 @@
   },
   {
     "tier": 1,
-    "question": "Water glass in a Western place setting goes:",
+    "question": "In a Western place setting, the water glass goes in which position?",
     "answer": "Above the knife (upper right)",
     "choices": [
       "Above the knife (upper right)",
@@ -6169,7 +6169,7 @@
   },
   {
     "tier": 1,
-    "question": "Multiple forks at a formal place setting are used:",
+    "question": "At a formal place setting with multiple forks, you use them in what order?",
     "answer": "Outside-in, course by course",
     "choices": [
       "Outside-in, course by course",
@@ -6181,7 +6181,7 @@
   },
   {
     "tier": 1,
-    "question": "Napkin etiquette in Western dining — when leaving the table briefly:",
+    "question": "In Western dining, when you leave the table briefly, where does the napkin belong?",
     "answer": "Place napkin on the chair",
     "choices": [
       "Place napkin on the chair",
@@ -6193,7 +6193,7 @@
   },
   {
     "tier": 1,
-    "question": "European 'continental' style holds the fork in:",
+    "question": "In the European 'continental' style of eating, where is the fork held?",
     "answer": "The left hand, tines down",
     "choices": [
       "The left hand, tines down",
@@ -6205,7 +6205,7 @@
   },
   {
     "tier": 1,
-    "question": "Tasting wine before pouring for everyone is meant to:",
+    "question": "Before pouring wine for everyone, why does the host taste a small sample first?",
     "answer": "Check the bottle is not spoiled",
     "choices": [
       "Check the bottle is not spoiled",
@@ -6217,7 +6217,7 @@
   },
   {
     "tier": 1,
-    "question": "Asking another diner to pass salt requires asking for:",
+    "question": "To ask another diner to pass the salt, what else does etiquette require asking for?",
     "answer": "Salt AND pepper together",
     "choices": [
       "Salt AND pepper together",
@@ -6229,7 +6229,7 @@
   },
   {
     "tier": 1,
-    "question": "Tradition of saving the top tier of the wedding cake to eat on:",
+    "question": "In the Victorian-era wedding cake tradition, what is the top tier saved for?",
     "answer": "First anniversary or christening",
     "choices": [
       "First anniversary or christening",
@@ -6241,7 +6241,7 @@
   },
   {
     "tier": 1,
-    "question": "Italian wedding 'confetti' (5 sugared almonds) symbolize:",
+    "question": "In Italian weddings, what do the five sugared almonds (confetti) symbolize?",
     "answer": "Luck, fertility, health, wealth, joy",
     "choices": [
       "Luck, fertility, health, wealth, joy",
@@ -6253,7 +6253,7 @@
   },
   {
     "tier": 1,
-    "question": "British 'wedding breakfast' refers to:",
+    "question": "In Britain, what does the 'wedding breakfast' refer to?",
     "answer": "The first meal after the ceremony",
     "choices": [
       "The first meal after the ceremony",
@@ -6265,7 +6265,7 @@
   },
   {
     "tier": 1,
-    "question": "American Southern 'groom's cake' separate from the main cake is typically:",
+    "question": "At an American Southern wedding, what is the separate 'groom's cake' typically like?",
     "answer": "Darker, themed, or chocolate",
     "choices": [
       "Darker, themed, or chocolate",
@@ -6277,7 +6277,7 @@
   },
   {
     "tier": 1,
-    "question": "White wedding cake gained popularity after which 1840 royal wedding?",
+    "question": "White wedding cake gained widespread popularity after which 1840 royal wedding?",
     "answer": "Queen Victoria to Prince Albert",
     "choices": [
       "Queen Victoria to Prince Albert",
@@ -6289,7 +6289,7 @@
   },
   {
     "tier": 1,
-    "question": "American funeral tradition where neighbors bring casseroles is best called:",
+    "question": "In the American tradition where neighbors bring casseroles to grieving families, what is this best called?",
     "answer": "Practical compassion meal-train",
     "choices": [
       "Practical compassion meal-train",
@@ -6301,7 +6301,7 @@
   },
   {
     "tier": 1,
-    "question": "Jewish 7-day mourning period when community brings meals:",
+    "question": "The Jewish 7-day mourning period when community brings meals is called what?",
     "answer": "Shiva",
     "choices": [
       "Shiva",
@@ -6313,7 +6313,7 @@
   },
   {
     "tier": 1,
-    "question": "Irish wake traditionally featured food, drink, and:",
+    "question": "The Irish wake traditionally featured food, drink, and what else beside the body?",
     "answer": "Storytelling beside the body",
     "choices": [
       "Storytelling beside the body",
@@ -6325,7 +6325,7 @@
   },
   {
     "tier": 1,
-    "question": "Caribbean black cake at funerals is typically:",
+    "question": "At Caribbean funerals, what is the traditional 'black cake' shared with mourners typically like?",
     "answer": "Heavy fruit cake soaked in rum",
     "choices": [
       "Heavy fruit cake soaked in rum",
@@ -6337,7 +6337,7 @@
   },
   {
     "tier": 1,
-    "question": "Scottish New Year celebration with first-footing visits:",
+    "question": "The Scottish New Year celebration with first-footing visits is called what?",
     "answer": "Hogmanay",
     "choices": [
       "Hogmanay",
@@ -6349,7 +6349,7 @@
   },
   {
     "tier": 1,
-    "question": "Burns Night (Jan 25) features a recitation called:",
+    "question": "Burns Night (Jan 25) features which recited poem by Robert Burns himself?",
     "answer": "Address to a Haggis",
     "choices": [
       "Address to a Haggis",
@@ -6361,7 +6361,7 @@
   },
   {
     "tier": 1,
-    "question": "Galette des Rois traditionally hides this charm inside the cake:",
+    "question": "In France's Galette des Rois, what is the hidden charm baked inside the cake?",
     "answer": "A fève (bean or figurine)",
     "choices": [
       "A fève (bean or figurine)",
@@ -6373,7 +6373,7 @@
   },
   {
     "tier": 1,
-    "question": "Mexican Day of the Dead altar with offerings to ancestors is called:",
+    "question": "On Day of the Dead in Mexico, what is an altar with offerings to ancestors called?",
     "answer": "Ofrenda",
     "choices": [
       "Ofrenda",
@@ -6385,7 +6385,7 @@
   },
   {
     "tier": 1,
-    "question": "Mexican Three Kings' Day cake (January 6) with a hidden baby figurine:",
+    "question": "On Three Kings' Day (January 6), Mexican families share a cake with a hidden baby figurine. What is it called?",
     "answer": "Rosca de Reyes",
     "choices": [
       "Rosca de Reyes",
@@ -6397,7 +6397,7 @@
   },
   {
     "tier": 1,
-    "question": "Verona's star-shaped Christmas alternative to Milan's panettone:",
+    "question": "Verona's star-shaped Christmas alternative to Milan's panettone is called what?",
     "answer": "Pandoro",
     "choices": [
       "Pandoro",
@@ -6409,7 +6409,7 @@
   },
   {
     "tier": 1,
-    "question": "The Bûche de Noël cake symbolizes the pre-Christian custom of:",
+    "question": "The French Bûche de Noël cake symbolizes which pre-Christian custom?",
     "answer": "Burning a Yule log",
     "choices": [
       "Burning a Yule log",
@@ -6421,7 +6421,7 @@
   },
   {
     "tier": 1,
-    "question": "Spanish New Year tradition of eating twelve grapes at midnight:",
+    "question": "On Spanish New Year's Eve, how are the twelve grapes eaten?",
     "answer": "One grape per chime of the clock",
     "choices": [
       "One grape per chime of the clock",
@@ -6433,7 +6433,7 @@
   },
   {
     "tier": 1,
-    "question": "Southern US New Year good-luck tradition:",
+    "question": "In the Southern US, what does the New Year good-luck tradition center on?",
     "answer": "Black-eyed peas and collards",
     "choices": [
       "Black-eyed peas and collards",
@@ -6445,7 +6445,7 @@
   },
   {
     "tier": 1,
-    "question": "Italian New Year tradition for prosperity:",
+    "question": "In Italy, the New Year tradition for prosperity pairs lentils with what?",
     "answer": "Cotechino sausage and lentils",
     "choices": [
       "Cotechino sausage and lentils",
@@ -6457,7 +6457,7 @@
   },
   {
     "tier": 1,
-    "question": "Eastern Orthodox Easter bread, tall and decorated, blessed in church:",
+    "question": "Eastern Orthodox families bring a tall decorated Easter bread to be blessed in church. What is it called?",
     "answer": "Paska / Kulich",
     "choices": [
       "Paska / Kulich",
@@ -6469,7 +6469,7 @@
   },
   {
     "tier": 1,
-    "question": "The cross marked on hot cross buns is typically made from:",
+    "question": "On hot cross buns, what is the cross marking typically made from?",
     "answer": "Piped flour-water paste",
     "choices": [
       "Piped flour-water paste",
@@ -6481,7 +6481,7 @@
   },
   {
     "tier": 1,
-    "question": "Pre-Lent celebration of indulgence the day before Ash Wednesday:",
+    "question": "The pre-Lent celebration of indulgence the day before Ash Wednesday is called what?",
     "answer": "Mardi Gras (Fat Tuesday)",
     "choices": [
       "Mardi Gras (Fat Tuesday)",
@@ -6493,7 +6493,7 @@
   },
   {
     "tier": 1,
-    "question": "British 'Pancake Day' (Shrove Tuesday) used pancakes to:",
+    "question": "British 'Pancake Day' (Shrove Tuesday) used pancakes specifically to do what?",
     "answer": "Use up rich foods before Lent",
     "choices": [
       "Use up rich foods before Lent",
@@ -6505,7 +6505,7 @@
   },
   {
     "tier": 1,
-    "question": "Hanukkah jelly-filled fried doughnut, a sweet oil-fried staple:",
+    "question": "On Hanukkah, families fry jelly-filled doughnuts to commemorate the Temple oil miracle. What are they called?",
     "answer": "Sufganiyot",
     "choices": [
       "Sufganiyot",
@@ -6517,7 +6517,7 @@
   },
   {
     "tier": 1,
-    "question": "Triangular Purim cookies filled with poppy seed, fruit, or chocolate:",
+    "question": "On Purim, triangular cookies filled with poppy seed, fruit, or chocolate are called what?",
     "answer": "Hamantaschen",
     "choices": [
       "Hamantaschen",
@@ -6529,7 +6529,7 @@
   },
   {
     "tier": 1,
-    "question": "Passover Seder food symbolizing the bricks-and-mortar of Egyptian slavery:",
+    "question": "At Passover Seder, the sweet paste of apples, nuts, and wine symbolizes Egyptian bricks-and-mortar. What is it called?",
     "answer": "Charoset",
     "choices": [
       "Charoset",
@@ -6541,7 +6541,7 @@
   },
   {
     "tier": 1,
-    "question": "Chinese Lunar New Year fish (yu) is eaten because the word sounds like:",
+    "question": "On Chinese Lunar New Year, fish (yu) is eaten because the word sounds like what?",
     "answer": "Surplus / abundance",
     "choices": [
       "Surplus / abundance",
@@ -6553,7 +6553,7 @@
   },
   {
     "tier": 1,
-    "question": "Vietnamese Tet (Lunar New Year) glutinous rice cake wrapped in banana leaf:",
+    "question": "For Vietnamese Tet (Lunar New Year), glutinous rice cake wrapped in banana leaf is called what?",
     "answer": "Bánh chưng",
     "choices": [
       "Bánh chưng",
@@ -6565,7 +6565,7 @@
   },
   {
     "tier": 1,
-    "question": "Ethiopian coffee ceremony's three rounds are called:",
+    "question": "In the Ethiopian coffee ceremony, what are the three rounds of coffee called?",
     "answer": "Abol, Tona, Baraka",
     "choices": [
       "Abol, Tona, Baraka",
@@ -6577,7 +6577,7 @@
   },
   {
     "tier": 1,
-    "question": "German word for 'coffee gossip' — neighbors chatting over cake:",
+    "question": "In German-speaking lands, the afternoon ritual of neighbors chatting over cake and coffee is called what?",
     "answer": "Kaffeeklatsch",
     "choices": [
       "Kaffeeklatsch",
@@ -6589,7 +6589,7 @@
   },
   {
     "tier": 1,
-    "question": "Sobremesa typically takes place after which meal in Spain?",
+    "question": "In Spain, sobremesa typically takes place after which meal of the day?",
     "answer": "Midday lunch (la comida)",
     "choices": [
       "Midday lunch (la comida)",
@@ -6601,7 +6601,7 @@
   },
   {
     "tier": 1,
-    "question": "British 'high tea' historically refers to:",
+    "question": "What does Britain's 'high tea' historically refer to?",
     "answer": "Working-class early evening meal",
     "choices": [
       "Working-class early evening meal",
@@ -6613,7 +6613,7 @@
   },
   {
     "tier": 1,
-    "question": "Anna, 7th Duchess of Bedford, popularized which 1840s ritual?",
+    "question": "In Britain, Anna, 7th Duchess of Bedford, popularized which 1840s ritual?",
     "answer": "Afternoon tea",
     "choices": [
       "Afternoon tea",
@@ -6625,7 +6625,7 @@
   },
   {
     "tier": 1,
-    "question": "Devon cream tea convention places:",
+    "question": "In the Devon cream-tea convention, scones are spread with what?",
     "answer": "Cream first, then jam",
     "choices": [
       "Cream first, then jam",
@@ -6637,7 +6637,7 @@
   },
   {
     "tier": 1,
-    "question": "In which country was Bangers and mash born?",
+    "question": "Sausages and mashed potato — 'bangers and mash' — is a pub classic born in which country?",
     "answer": "Britain",
     "choices": [
       "Britain",
@@ -6649,7 +6649,7 @@
   },
   {
     "tier": 1,
-    "question": "Maple syrup is most associated with the cuisine of:",
+    "question": "Maple syrup is most associated with the cuisine of which country?",
     "answer": "Canada",
     "choices": [
       "Canada",
@@ -6661,7 +6661,7 @@
   },
   {
     "tier": 1,
-    "question": "Long-grain white rice: parts water to parts rice (stovetop)?",
+    "question": "For long-grain white rice cooked on the stovetop, what is the parts water to parts rice ratio?",
     "answer": "2:1",
     "choices": [
       "2:1",
@@ -6673,7 +6673,7 @@
   },
   {
     "tier": 1,
-    "question": "1 tablespoon = how many teaspoons?",
+    "question": "In US baking measurements, 1 tablespoon equals how many teaspoons?",
     "answer": "3",
     "choices": [
       "3",
@@ -6685,7 +6685,7 @@
   },
   {
     "tier": 1,
-    "question": "1 cup = how many tablespoons?",
+    "question": "In US baking measurements, 1 cup equals how many tablespoons?",
     "answer": "16",
     "choices": [
       "16",
@@ -6697,7 +6697,7 @@
   },
   {
     "tier": 1,
-    "question": "At the end of a meal, you should place your napkin:",
+    "question": "At the end of a meal in a Western dining setting, where should your napkin go to signal you're finished?",
     "answer": "Loosely folded to the left of your plate",
     "choices": [
       "Loosely folded to the left of your plate",

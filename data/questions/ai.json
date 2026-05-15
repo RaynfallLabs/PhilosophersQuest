@@ -1,7 +1,7 @@
 [
   {
     "tier": 1,
-    "question": "GPT stands for:",
+    "question": "OpenAI's ChatGPT product line is built on a family of transformer models whose three-letter name has become shorthand for modern chatbots. What does GPT stand for?",
     "answer": "Generative Pre-trained Transformer",
     "choices": [
       "Generative Pre-trained Transformer",
@@ -13,7 +13,7 @@
   },
   {
     "tier": 1,
-    "question": "LLM stands for:",
+    "question": "ChatGPT, Claude, and Gemini are all examples of the same broad class of model trained to predict the next token across billions of words. What does LLM stand for?",
     "answer": "Large Language Model",
     "choices": [
       "Large Language Model",
@@ -25,7 +25,7 @@
   },
   {
     "tier": 1,
-    "question": "AI stands for:",
+    "question": "First coined at the 1956 Dartmouth workshop, this two-letter field name now appears in product launches and policy debates worldwide. What does AI stand for?",
     "answer": "Artificial Intelligence",
     "choices": [
       "Artificial Intelligence",
@@ -37,7 +37,7 @@
   },
   {
     "tier": 1,
-    "question": "CNN (in AI) stands for:",
+    "question": "Image-recognition systems from medical scans to self-driving cars rely on a network type that slides learned filters across pixels. In an AI context, what does CNN stand for?",
     "answer": "Convolutional Neural Network",
     "choices": [
       "Convolutional Neural Network",
@@ -49,7 +49,7 @@
   },
   {
     "tier": 1,
-    "question": "RNN stands for:",
+    "question": "Before transformers dominated NLP, sequence models that fed each output back as input ruled the field. What does RNN stand for?",
     "answer": "Recurrent Neural Network",
     "choices": [
       "Recurrent Neural Network",
@@ -61,7 +61,7 @@
   },
   {
     "tier": 1,
-    "question": "RLHF stands for:",
+    "question": "To make ChatGPT polite, OpenAI fine-tunes the base model using human raters who rank candidate replies. What does RLHF stand for?",
     "answer": "Reinforcement Learning from Human Feedback",
     "choices": [
       "Reinforcement Learning from Human Feedback",
@@ -73,7 +73,7 @@
   },
   {
     "tier": 1,
-    "question": "MoE (in LLMs) stands for:",
+    "question": "DeepSeek-V3 and Mixtral use a transformer variant where each token activates only a fraction of total parameters via a small gating network. In LLMs, what does MoE stand for?",
     "answer": "Mixture of Experts",
     "choices": [
       "Mixture of Experts",
@@ -85,7 +85,7 @@
   },
   {
     "tier": 1,
-    "question": "BPE (tokenization) stands for:",
+    "question": "Before a transformer sees your sentence, a tokenizer splits 'unbelievable' into pieces like 'un', 'believ', 'able' using a learned merge table. In tokenization, what does BPE stand for?",
     "answer": "Byte Pair Encoding",
     "choices": [
       "Byte Pair Encoding",
@@ -97,7 +97,7 @@
   },
   {
     "tier": 1,
-    "question": "BERT stands for:",
+    "question": "Google's 2018 NLP model reads each word with context from both sides. What does BERT stand for?",
     "answer": "Bidirectional Encoder Representations from Transformers",
     "choices": [
       "Bidirectional Encoder Representations from Transformers",
@@ -109,7 +109,7 @@
   },
   {
     "tier": 1,
-    "question": "A 'token' in LLMs is most often:",
+    "question": "When an LLM bills you for 1,000 tokens, the word 'unbelievable' might count as three of them. What is a token most often?",
     "answer": "A subword piece",
     "choices": [
       "A subword piece",
@@ -121,7 +121,7 @@
   },
   {
     "tier": 1,
-    "question": "An LLM's 'context window' refers to:",
+    "question": "When devs say a model has a '128K context window,' they mean a hard ceiling on input it can process at once. What does context window refer to?",
     "answer": "Max tokens it can consider at once",
     "choices": [
       "Max tokens it can consider at once",
@@ -133,7 +133,7 @@
   },
   {
     "tier": 1,
-    "question": "Higher 'temperature' in an LLM means:",
+    "question": "API users can crank this dial up for more creative writing or down to zero for deterministic output. What does higher temperature in an LLM mean?",
     "answer": "More randomness in output",
     "choices": [
       "More randomness in output",
@@ -145,7 +145,7 @@
   },
   {
     "tier": 1,
-    "question": "'Deep learning' is deep because:",
+    "question": "The word 'deep' in deep learning specifically refers to a structural property of the underlying neural network. What does it mean?",
     "answer": "Networks have many hidden layers",
     "choices": [
       "Networks have many hidden layers",
@@ -157,7 +157,7 @@
   },
   {
     "tier": 1,
-    "question": "Backpropagation is used during:",
+    "question": "This algorithm propagates the error gradient from the loss back through each layer to update weights. When is backpropagation used?",
     "answer": "Training",
     "choices": [
       "Training",
@@ -169,7 +169,7 @@
   },
   {
     "tier": 1,
-    "question": "Gradient descent's goal is to:",
+    "question": "This optimization technique nudges weights in the direction that most steeply lowers prediction error. What is gradient descent's goal?",
     "answer": "Reduce the loss function",
     "choices": [
       "Reduce the loss function",
@@ -181,7 +181,7 @@
   },
   {
     "tier": 1,
-    "question": "Supervised learning uses:",
+    "question": "Image classifiers learning 'cat vs dog' from photos tagged by humans are a textbook example of this learning paradigm. What does supervised learning use?",
     "answer": "Labeled training data",
     "choices": [
       "Labeled training data",
@@ -193,7 +193,7 @@
   },
   {
     "tier": 1,
-    "question": "Reinforcement learning trains via:",
+    "question": "An agent learning to play Atari by getting points for good moves and losing them for bad ones is doing this. How does reinforcement learning train?",
     "answer": "Rewards and penalties",
     "choices": [
       "Rewards and penalties",
@@ -205,7 +205,7 @@
   },
   {
     "tier": 1,
-    "question": "Few-shot prompting means giving the model:",
+    "question": "Showing the model two or three sample input-output pairs at the start of a prompt to teach it the format is a common trick. What does few-shot prompting mean?",
     "answer": "A handful of examples in the prompt",
     "choices": [
       "A handful of examples in the prompt",
@@ -217,7 +217,7 @@
   },
   {
     "tier": 1,
-    "question": "Zero-shot prompting means:",
+    "question": "Asking a chatbot to translate a sentence with no demonstrations, just an instruction, is the cleanest test of its pretraining. What does zero-shot prompting mean?",
     "answer": "Asking with no examples",
     "choices": [
       "Asking with no examples",
@@ -229,7 +229,7 @@
   },
   {
     "tier": 1,
-    "question": "LLMs are best described as:",
+    "question": "Strip away the chat interface and the core mechanic is straightforward — pick the most likely next chunk, then repeat. How are LLMs best described?",
     "answer": "Next-token predictors",
     "choices": [
       "Next-token predictors",
@@ -241,7 +241,7 @@
   },
   {
     "tier": 1,
-    "question": "A neural network 'neuron' is roughly:",
+    "question": "Despite the biological-sounding name, the underlying unit in a neural network is a simple math operation, not anything like a brain cell. What is a neural network neuron roughly?",
     "answer": "A weighted sum plus a nonlinearity",
     "choices": [
       "A weighted sum plus a nonlinearity",
@@ -253,7 +253,7 @@
   },
   {
     "tier": 1,
-    "question": "Without explicit memory tools, an LLM:",
+    "question": "Start a fresh ChatGPT conversation tomorrow and it usually has no memory of today's chat unless a memory feature is enabled. Without explicit memory tools, an LLM does what?",
     "answer": "Forgets between conversations",
     "choices": [
       "Forgets between conversations",
@@ -265,7 +265,7 @@
   },
   {
     "tier": 1,
-    "question": "An LLM doing arithmetic is:",
+    "question": "Ask GPT-4 to multiply two five-digit numbers and you'll often get a confident-but-wrong answer. What is an LLM doing arithmetic?",
     "answer": "Often wrong — use a calculator",
     "choices": [
       "Often wrong — use a calculator",
@@ -277,7 +277,7 @@
   },
   {
     "tier": 1,
-    "question": "Pretraining happens:",
+    "question": "Before fine-tuning teaches a model to follow chat instructions, a longer phase teaches it general language on web-scale data. When does pretraining happen?",
     "answer": "Before fine-tuning, on broad data",
     "choices": [
       "Before fine-tuning, on broad data",
@@ -289,7 +289,7 @@
   },
   {
     "tier": 1,
-    "question": "The transformer architecture was introduced in:",
+    "question": "Vaswani et al. published 'Attention Is All You Need' in this year, founding the architecture behind every major LLM since. When was the transformer architecture introduced?",
     "answer": "2017",
     "choices": [
       "2017",
@@ -301,7 +301,7 @@
   },
   {
     "tier": 1,
-    "question": "A generative model:",
+    "question": "In contrast to a classifier that just labels inputs, this kind of model produces new images, text, or audio from scratch. What does a generative model do?",
     "answer": "Creates new content",
     "choices": [
       "Creates new content",
@@ -313,7 +313,7 @@
   },
   {
     "tier": 1,
-    "question": "GPT-4 is rumored to have roughly:",
+    "question": "OpenAI never confirmed the figure, but leaks and analyses suggest GPT-4 hovers around this scale of weights. How many parameters does GPT-4 rumor have?",
     "answer": "1.7 trillion parameters",
     "choices": [
       "1.7 trillion parameters",
@@ -325,7 +325,7 @@
   },
   {
     "tier": 1,
-    "question": "GANs (image AI) stands for:",
+    "question": "Ian Goodfellow's 2014 design pits a generator network against a discriminator network in a learning game. In image AI, what does GAN stand for?",
     "answer": "Generative Adversarial Networks",
     "choices": [
       "Generative Adversarial Networks",
@@ -337,7 +337,7 @@
   },
   {
     "tier": 1,
-    "question": "'Open weights' (AI) means:",
+    "question": "Llama, Mistral, and DeepSeek release their trained weights, unlike closed labs such as OpenAI and Anthropic. What does 'open weights' mean?",
     "answer": "Model parameters are publicly downloadable",
     "choices": [
       "Model parameters are publicly downloadable",
@@ -349,7 +349,7 @@
   },
   {
     "tier": 1,
-    "question": "Llama is an open-weights model from:",
+    "question": "Llama 1, 2, and 3 were all released with downloadable weights by one of the major US tech giants. Which company makes the Llama open-weights model?",
     "answer": "Meta",
     "choices": [
       "Meta",
@@ -361,7 +361,7 @@
   },
   {
     "tier": 1,
-    "question": "Mistral AI is based in:",
+    "question": "Founded in 2023 by ex-DeepMind and ex-Meta researchers, this open-weights lab is part of Europe's push for AI sovereignty. Where is Mistral AI based?",
     "answer": "France",
     "choices": [
       "France",
@@ -373,7 +373,7 @@
   },
   {
     "tier": 1,
-    "question": "DeepSeek is an AI lab based in:",
+    "question": "Their V3 model surprised Western labs in 2024-25 with strong performance at a fraction of the compute. Where is the DeepSeek AI lab based?",
     "answer": "China",
     "choices": [
       "China",
@@ -385,7 +385,7 @@
   },
   {
     "tier": 1,
-    "question": "Stable Diffusion is primarily a:",
+    "question": "Released by Stability AI in August 2022, this model lets anyone run text-to-image generation on their own GPU. What is Stable Diffusion primarily?",
     "answer": "Text-to-image model",
     "choices": [
       "Text-to-image model",
@@ -397,7 +397,7 @@
   },
   {
     "tier": 1,
-    "question": "Whisper (OpenAI) is a:",
+    "question": "OpenAI released this multilingual transcription model with open weights, so anyone can run it locally on audio files. What is Whisper from OpenAI?",
     "answer": "Speech-to-text model",
     "choices": [
       "Speech-to-text model",
@@ -409,7 +409,7 @@
   },
   {
     "tier": 1,
-    "question": "DALL-E is made by:",
+    "question": "First released in January 2021, this text-to-image system named for a surrealist artist set off the generative-image wave. Who makes DALL-E?",
     "answer": "OpenAI",
     "choices": [
       "OpenAI",
@@ -421,7 +421,7 @@
   },
   {
     "tier": 1,
-    "question": "Midjourney is best known for:",
+    "question": "This Discord-based image generator became famous for its painterly, fantasy-art aesthetic out of the box. What is Midjourney best known for?",
     "answer": "Text-to-image generation",
     "choices": [
       "Text-to-image generation",
@@ -433,7 +433,7 @@
   },
   {
     "tier": 1,
-    "question": "GitHub Copilot is built primarily for:",
+    "question": "Integrated into VS Code and other editors, this Microsoft product autocompletes whole functions from comments and context. What is GitHub Copilot built primarily for?",
     "answer": "Code completion",
     "choices": [
       "Code completion",
@@ -445,7 +445,7 @@
   },
   {
     "tier": 1,
-    "question": "Claude is built by:",
+    "question": "Founded in 2021 by ex-OpenAI researchers concerned about safety, this lab builds the Claude family of chatbots. Who builds Claude?",
     "answer": "Anthropic",
     "choices": [
       "Anthropic",
@@ -457,7 +457,7 @@
   },
   {
     "tier": 1,
-    "question": "Gemini (chatbot) is built by:",
+    "question": "Initially called Bard and relaunched under a new brand in February 2024, this is the flagship chatbot from DeepMind's parent. Who builds the Gemini chatbot?",
     "answer": "Google",
     "choices": [
       "Google",
@@ -469,7 +469,7 @@
   },
   {
     "tier": 1,
-    "question": "Copilot (Microsoft chatbot) is built on:",
+    "question": "Microsoft's consumer AI assistant, integrated into Windows, Edge, and Office, runs on a technology stack from its biggest investee. What is Microsoft Copilot built on?",
     "answer": "OpenAI's GPT models",
     "choices": [
       "OpenAI's GPT models",
@@ -481,7 +481,7 @@
   },
   {
     "tier": 1,
-    "question": "Year Alan Turing published 'Computing Machinery and Intelligence':",
+    "question": "Published in the journal Mind, this Turing paper proposed the 'imitation game' that came to bear his name. In what year did Alan Turing publish 'Computing Machinery and Intelligence'?",
     "answer": "1950",
     "choices": [
       "1950",
@@ -493,7 +493,7 @@
   },
   {
     "tier": 1,
-    "question": "Who coined the term 'artificial intelligence'?",
+    "question": "At the 1956 Dartmouth workshop, this Stanford-bound mathematician proposed the field name and helped launch the discipline. Who coined the term 'artificial intelligence'?",
     "answer": "John McCarthy",
     "choices": [
       "John McCarthy",
@@ -505,7 +505,7 @@
   },
   {
     "tier": 1,
-    "question": "John McCarthy invented which language (1958)?",
+    "question": "Designed for symbolic computation and beloved by early AI researchers, the language that John McCarthy invented in 1958 is which one?",
     "answer": "LISP",
     "choices": [
       "LISP",
@@ -517,7 +517,7 @@
   },
   {
     "tier": 1,
-    "question": "Joseph Weizenbaum built which famous early chatbot?",
+    "question": "At MIT in 1966, this researcher built a simple pattern-matching chatbot that imitated a Rogerian therapist. What famous early chatbot did Joseph Weizenbaum build?",
     "answer": "ELIZA",
     "choices": [
       "ELIZA",
@@ -529,7 +529,7 @@
   },
   {
     "tier": 1,
-    "question": "Minsky and Papert's *Perceptrons* (1969) showed:",
+    "question": "Their 1969 critique of the perceptron model helped freeze the field's funding for years. What did Minsky and Papert's Perceptrons (1969) show?",
     "answer": "Single-layer networks have hard limits",
     "choices": [
       "Single-layer networks have hard limits",
@@ -541,7 +541,7 @@
   },
   {
     "tier": 1,
-    "question": "IBM Deep Blue defeated Garry Kasparov in:",
+    "question": "Game 6 on May 11 of this year — the first time a reigning chess world champion lost a match to a machine. When did IBM Deep Blue defeat Garry Kasparov?",
     "answer": "1997",
     "choices": [
       "1997",
@@ -553,7 +553,7 @@
   },
   {
     "tier": 1,
-    "question": "IBM Watson won on which TV quiz show (2011)?",
+    "question": "In February 2011, IBM's question-answering system beat Ken Jennings and Brad Rutter on a popular TV quiz show. Which TV quiz show did IBM Watson win on?",
     "answer": "Jeopardy!",
     "choices": [
       "Jeopardy!",
@@ -565,7 +565,7 @@
   },
   {
     "tier": 1,
-    "question": "Year AlexNet won ImageNet:",
+    "question": "Krizhevsky, Sutskever, and Hinton's CNN crushed the field by ten percentage points, kicking off the deep learning revolution. When did AlexNet win ImageNet?",
     "answer": "2012",
     "choices": [
       "2012",
@@ -577,7 +577,7 @@
   },
   {
     "tier": 1,
-    "question": "AlphaGo defeated Lee Sedol in:",
+    "question": "DeepMind's Go-playing program won four games to one against the world champion in a watershed event for AI. When did AlphaGo defeat Lee Sedol?",
     "answer": "March 2016",
     "choices": [
       "March 2016",
@@ -589,7 +589,7 @@
   },
   {
     "tier": 1,
-    "question": "AlphaGo was built by:",
+    "question": "Founded in London and acquired by Google in 2014, this lab built the Go-playing system that beat Lee Sedol. Who built AlphaGo?",
     "answer": "DeepMind",
     "choices": [
       "DeepMind",
@@ -601,7 +601,7 @@
   },
   {
     "tier": 1,
-    "question": "ChatGPT was first released to the public on:",
+    "question": "OpenAI launched its consumer chatbot to the public on this date, kicking off the modern AI consumer wave. When was ChatGPT first released to the public?",
     "answer": "November 30, 2022",
     "choices": [
       "November 30, 2022",
@@ -613,7 +613,7 @@
   },
   {
     "tier": 1,
-    "question": "ChatGPT reached 100M users in roughly:",
+    "question": "Faster than any consumer product before it — beating TikTok and Instagram to the milestone. How long did ChatGPT take to reach 100M users?",
     "answer": "2 months",
     "choices": [
       "2 months",
@@ -625,7 +625,7 @@
   },
   {
     "tier": 1,
-    "question": "GPT-3 was released by OpenAI in:",
+    "question": "Featuring 175 billion parameters and surprising the field with few-shot abilities, OpenAI's third-generation language model came out in which year?",
     "answer": "2020",
     "choices": [
       "2020",
@@ -637,7 +637,7 @@
   },
   {
     "tier": 1,
-    "question": "GPT-3 has how many parameters?",
+    "question": "This parameter count became a marketing benchmark and seeded the 'bigger is better' scaling era. How many parameters does GPT-3 have?",
     "answer": "175 billion",
     "choices": [
       "175 billion",
@@ -649,7 +649,7 @@
   },
   {
     "tier": 1,
-    "question": "GPT-4 was released in:",
+    "question": "OpenAI's fourth-generation multimodal model — capable of reading images alongside text — launched in this month. When was GPT-4 released?",
     "answer": "March 2023",
     "choices": [
       "March 2023",
@@ -661,7 +661,7 @@
   },
   {
     "tier": 1,
-    "question": "Sam Altman was fired from OpenAI in:",
+    "question": "OpenAI's board ousted its CEO in a chaotic episode that triggered staff revolt and his quick return. When was Sam Altman fired from OpenAI?",
     "answer": "November 2023",
     "choices": [
       "November 2023",
@@ -673,7 +673,7 @@
   },
   {
     "tier": 1,
-    "question": "Sam Altman was rehired after how many days?",
+    "question": "After a staff threat of mass resignation and Microsoft offering to hire the team, the OpenAI board reinstated Altman. How many days passed before Sam Altman was rehired?",
     "answer": "About 5 days",
     "choices": [
       "About 5 days",
@@ -685,7 +685,7 @@
   },
   {
     "tier": 1,
-    "question": "Geoffrey Hinton left Google in:",
+    "question": "The 'godfather of deep learning' resigned from his Google role in this month, citing concerns about AI risks. When did Geoffrey Hinton leave Google?",
     "answer": "May 2023",
     "choices": [
       "May 2023",
@@ -697,7 +697,7 @@
   },
   {
     "tier": 1,
-    "question": "Geoffrey Hinton is often called the 'Godfather of':",
+    "question": "His 1986 backpropagation paper with Rumelhart and Williams made multi-layer networks trainable. What is Geoffrey Hinton often called the 'Godfather of'?",
     "answer": "Deep learning",
     "choices": [
       "Deep learning",
@@ -709,7 +709,7 @@
   },
   {
     "tier": 1,
-    "question": "The 2018 Turing Award went to:",
+    "question": "ACM honored three pioneers of deep learning whose backpropagation and neural-network work powered the modern AI boom. Who won the 2018 Turing Award?",
     "answer": "Hinton, LeCun, Bengio",
     "choices": [
       "Hinton, LeCun, Bengio",
@@ -721,7 +721,7 @@
   },
   {
     "tier": 1,
-    "question": "The 2024 Nobel Prize in Physics went to:",
+    "question": "In a striking choice, the Nobel committee honored foundational neural-network work for the 2024 prize. Who received the 2024 Nobel Prize in Physics?",
     "answer": "Hopfield and Hinton",
     "choices": [
       "Hopfield and Hinton",
@@ -733,7 +733,7 @@
   },
   {
     "tier": 1,
-    "question": "Yann LeCun is Chief AI Scientist at:",
+    "question": "A pioneer of CNNs who runs the AI research arm at the company behind Llama. Where is Yann LeCun Chief AI Scientist?",
     "answer": "Meta",
     "choices": [
       "Meta",
@@ -745,7 +745,7 @@
   },
   {
     "tier": 1,
-    "question": "Anthropic's CEO is:",
+    "question": "Co-founded with his sister Daniela after both left OpenAI, this researcher now leads the lab behind Claude. Who is Anthropic's CEO?",
     "answer": "Dario Amodei",
     "choices": [
       "Dario Amodei",
@@ -757,7 +757,7 @@
   },
   {
     "tier": 1,
-    "question": "Sam Altman is CEO of:",
+    "question": "Y Combinator's former president took the top job at OpenAI in 2019 and steered it through the ChatGPT explosion. Where is Sam Altman CEO?",
     "answer": "OpenAI",
     "choices": [
       "OpenAI",
@@ -769,7 +769,7 @@
   },
   {
     "tier": 1,
-    "question": "Marc Andreessen wrote 'The Techno-Optimist Manifesto' in:",
+    "question": "Posted on the a16z blog, this manifesto championed accelerated AI development and named adversaries by name. When did Marc Andreessen write 'The Techno-Optimist Manifesto'?",
     "answer": "October 2023",
     "choices": [
       "October 2023",
@@ -781,7 +781,7 @@
   },
   {
     "tier": 1,
-    "question": "The 'Pause Giant AI Experiments' open letter dropped in:",
+    "question": "Signed by Musk, Wozniak, and Yudkowsky among others, the Future of Life Institute letter asked labs to pause training for six months. When did the 'Pause Giant AI Experiments' open letter drop?",
     "answer": "March 2023",
     "choices": [
       "March 2023",
@@ -793,7 +793,7 @@
   },
   {
     "tier": 1,
-    "question": "Sam Bankman-Fried's crypto exchange FTX collapsed in:",
+    "question": "Effective Altruism's biggest donor saw his crypto exchange implode in spectacular fashion this month. When did Sam Bankman-Fried's FTX collapse?",
     "answer": "November 2022",
     "choices": [
       "November 2022",
@@ -805,7 +805,7 @@
   },
   {
     "tier": 1,
-    "question": "Sam Bankman-Fried was convicted in:",
+    "question": "A federal jury found the EA-affiliated crypto founder guilty on seven counts of fraud and conspiracy. When was Sam Bankman-Fried convicted?",
     "answer": "2023",
     "choices": [
       "2023",
@@ -817,7 +817,7 @@
   },
   {
     "tier": 1,
-    "question": "The transformer paper title was:",
+    "question": "Vaswani et al.'s 2017 paper introduced the architecture that powers every modern LLM. What was the transformer paper's title?",
     "answer": "Attention Is All You Need",
     "choices": [
       "Attention Is All You Need",
@@ -829,7 +829,7 @@
   },
   {
     "tier": 1,
-    "question": "OpenAI was founded in:",
+    "question": "Altman, Musk, Brockman, and Sutskever were among the founders, originally setting it up as a research non-profit. When was OpenAI founded?",
     "answer": "2015",
     "choices": [
       "2015",
@@ -841,7 +841,7 @@
   },
   {
     "tier": 1,
-    "question": "Anthropic was founded in:",
+    "question": "Founded by Dario Amodei and other ex-OpenAI staff who broke off citing safety differences. When was Anthropic founded?",
     "answer": "2021",
     "choices": [
       "2021",
@@ -853,7 +853,7 @@
   },
   {
     "tier": 1,
-    "question": "DeepMind was acquired by Google in:",
+    "question": "Google bought the UK-based deep-learning startup for around half a billion dollars. When was DeepMind acquired by Google?",
     "answer": "2014",
     "choices": [
       "2014",
@@ -865,7 +865,7 @@
   },
   {
     "tier": 1,
-    "question": "OpenAI was originally founded as a:",
+    "question": "It started as a research lab pledging to share its work openly, before later restructuring around a capped-profit subsidiary. What was OpenAI originally founded as?",
     "answer": "Non-profit",
     "choices": [
       "Non-profit",
@@ -877,7 +877,7 @@
   },
   {
     "tier": 1,
-    "question": "Alan Turing died in:",
+    "question": "Persecuted for being gay and forced to undergo chemical castration by the UK government, the computing pioneer died at 41. When did Alan Turing die?",
     "answer": "1954",
     "choices": [
       "1954",
@@ -889,7 +889,7 @@
   },
   {
     "tier": 1,
-    "question": "Turing worked during WWII at:",
+    "question": "During WWII, the future founder of theoretical computer science led the team that broke the German Enigma cipher. Where did Turing work during WWII?",
     "answer": "Bletchley Park",
     "choices": [
       "Bletchley Park",
@@ -901,7 +901,7 @@
   },
   {
     "tier": 1,
-    "question": "Marvin Minsky co-founded:",
+    "question": "Co-author of Perceptrons (1969) and a major mid-century AI figure, he co-founded a major university AI lab. What did Marvin Minsky co-found?",
     "answer": "MIT AI Lab",
     "choices": [
       "MIT AI Lab",
@@ -913,7 +913,7 @@
   },
   {
     "tier": 1,
-    "question": "The 'first AI winter' (funding collapse) hit during the:",
+    "question": "Triggered by the Lighthill Report and disappointing results, the first major funding collapse for AI research hit during which decade?",
     "answer": "1970s",
     "choices": [
       "1970s",
@@ -925,7 +925,7 @@
   },
   {
     "tier": 1,
-    "question": "The Lighthill Report (1973) led to AI cuts in:",
+    "question": "This influential 1973 report argued AI had failed to deliver, and prompted government to slash AI funding in one country. Where did the Lighthill Report (1973) lead to AI cuts?",
     "answer": "The UK",
     "choices": [
       "The UK",
@@ -937,7 +937,7 @@
   },
   {
     "tier": 1,
-    "question": "Backpropagation was popularized in:",
+    "question": "The Rumelhart, Hinton, and Williams Nature paper made multi-layer neural networks trainable on real problems. When was backpropagation popularized?",
     "answer": "1986",
     "choices": [
       "1986",
@@ -949,7 +949,7 @@
   },
   {
     "tier": 1,
-    "question": "Yann LeCun's LeNet (1989) recognized:",
+    "question": "Bell Labs' early CNN was used to read ZIP codes on US Postal Service mail. What did Yann LeCun's LeNet (1989) recognize?",
     "answer": "Handwritten digits",
     "choices": [
       "Handwritten digits",
@@ -961,7 +961,7 @@
   },
   {
     "tier": 1,
-    "question": "BERT was released by Google in:",
+    "question": "Google's bidirectional masked language model arrived in this month and remade web-search query understanding. When was BERT released by Google?",
     "answer": "October 2018",
     "choices": [
       "October 2018",
@@ -973,7 +973,7 @@
   },
   {
     "tier": 1,
-    "question": "The first 'AI winter' was preceded by which 1969 book?",
+    "question": "Minsky and Papert's book showed single-layer networks couldn't even solve XOR, helping trigger the funding freeze. Which 1969 book preceded the first AI winter?",
     "answer": "Perceptrons",
     "choices": [
       "Perceptrons",
@@ -985,7 +985,7 @@
   },
   {
     "tier": 1,
-    "question": "GPT-4o (with 'omni' modality) was released in:",
+    "question": "OpenAI's GPT-4 successor added native voice and vision in real-time conversation, launching with a live demo. When was GPT-4o released?",
     "answer": "May 2024",
     "choices": [
       "May 2024",
@@ -997,7 +997,7 @@
   },
   {
     "tier": 1,
-    "question": "Andrej Karpathy was previously head of:",
+    "question": "This OpenAI founding member spent five years building Tesla's self-driving stack before returning to OpenAI. What did Andrej Karpathy previously head?",
     "answer": "Tesla Autopilot",
     "choices": [
       "Tesla Autopilot",
@@ -1009,7 +1009,7 @@
   },
   {
     "tier": 1,
-    "question": "Claude Shannon is often called the father of:",
+    "question": "His 1948 paper founded the mathematical theory of communication, and he attended the 1956 Dartmouth conference. What field is Claude Shannon often called the father of?",
     "answer": "Information theory",
     "choices": [
       "Information theory",
@@ -1021,7 +1021,7 @@
   },
   {
     "tier": 1,
-    "question": "Stable Diffusion was first released in:",
+    "question": "Stability AI made its diffusion model freely downloadable, sparking a wave of derivative tools and fine-tunes. When was Stable Diffusion first released?",
     "answer": "August 2022",
     "choices": [
       "August 2022",
@@ -1033,7 +1033,7 @@
   },
   {
     "tier": 1,
-    "question": "DALL-E was first released by OpenAI in:",
+    "question": "OpenAI's first text-to-image model, named after Dali and WALL-E, launched in this month. When was DALL-E first released?",
     "answer": "January 2021",
     "choices": [
       "January 2021",
@@ -1045,7 +1045,7 @@
   },
   {
     "tier": 1,
-    "question": "Llama 1 was released by Meta in:",
+    "question": "Meta's first major open-weights language model came out in this month, kicking off the open-source AI surge. When was Llama 1 released?",
     "answer": "February 2023",
     "choices": [
       "February 2023",
@@ -1057,7 +1057,7 @@
   },
   {
     "tier": 1,
-    "question": "Mistral AI was founded in:",
+    "question": "Founded by ex-DeepMind and ex-Meta researchers, this Paris-based open-weights lab raised one of Europe's largest seed rounds. When was Mistral AI founded?",
     "answer": "2023",
     "choices": [
       "2023",
@@ -1069,7 +1069,7 @@
   },
   {
     "tier": 1,
-    "question": "The pre-transformer language-model era was dominated by:",
+    "question": "Before 'Attention Is All You Need' rewired NLP, sequence modeling was dominated by a particular family of architectures. What dominated the pre-transformer language-model era?",
     "answer": "RNNs and LSTMs",
     "choices": [
       "RNNs and LSTMs",
@@ -1081,7 +1081,7 @@
   },
   {
     "tier": 1,
-    "question": "Cognitive scientist Douglas Hofstadter wrote which 1979 book?",
+    "question": "Cognitive scientist Douglas Hofstadter won a Pulitzer for his 1979 book on consciousness, recursion, and formal systems. Which book did Douglas Hofstadter write in 1979?",
     "answer": "Godel, Escher, Bach",
     "choices": [
       "Godel, Escher, Bach",
@@ -1093,7 +1093,7 @@
   },
   {
     "tier": 1,
-    "question": "Ray Kurzweil's 2005 book argued for the:",
+    "question": "Inventor Ray Kurzweil's 2005 book argued exponential tech progress would soon merge humans and AI. What did Kurzweil's 2005 book argue for?",
     "answer": "Singularity",
     "choices": [
       "Singularity",
@@ -1105,7 +1105,7 @@
   },
   {
     "tier": 1,
-    "question": "Norbert Wiener's 1948 book founded:",
+    "question": "MIT's Norbert Wiener wrote the founding text of a feedback-and-control field that became a precursor to AI. What did Norbert Wiener's 1948 book found?",
     "answer": "Cybernetics",
     "choices": [
       "Cybernetics",
@@ -1117,7 +1117,7 @@
   },
   {
     "tier": 1,
-    "question": "AI in medical imaging is most associated with:",
+    "question": "AI now helps detect tumors in CT scans, retinopathy in retinal photos, and lesions on biopsies. What is AI in medical imaging most associated with?",
     "answer": "Radiology and pathology",
     "choices": [
       "Radiology and pathology",
@@ -1129,7 +1129,7 @@
   },
   {
     "tier": 1,
-    "question": "Google Translate uses AI primarily for:",
+    "question": "Google's free service switched from phrase-based to neural machine translation around 2016. What does Google Translate use AI primarily for?",
     "answer": "Language translation",
     "choices": [
       "Language translation",
@@ -1141,7 +1141,7 @@
   },
   {
     "tier": 1,
-    "question": "DeepL is best known for:",
+    "question": "This Cologne-based German firm is widely cited as a higher-quality alternative to Google Translate on European languages. What is DeepL best known for?",
     "answer": "Language translation",
     "choices": [
       "Language translation",
@@ -1153,7 +1153,7 @@
   },
   {
     "tier": 1,
-    "question": "Waymo builds AI for:",
+    "question": "Spun out of Google's autonomous-vehicle project and now Alphabet's robotaxi unit, this company has logged millions of driverless miles. What does Waymo build AI for?",
     "answer": "Self-driving cars",
     "choices": [
       "Self-driving cars",
@@ -1165,7 +1165,7 @@
   },
   {
     "tier": 1,
-    "question": "Spotify's 'Discover Weekly' is generated by:",
+    "question": "Every Monday, Spotify drops a personalized 30-song playlist for each user using machine learning on listening history. How is Spotify's 'Discover Weekly' generated?",
     "answer": "A recommendation algorithm",
     "choices": [
       "A recommendation algorithm",
@@ -1177,7 +1177,7 @@
   },
   {
     "tier": 1,
-    "question": "Cursor is best known for:",
+    "question": "Founded by ex-OpenAI staff, this AI-native code editor competes with Copilot for developer mindshare. What is Cursor best known for?",
     "answer": "AI-assisted coding",
     "choices": [
       "AI-assisted coding",
@@ -1189,7 +1189,7 @@
   },
   {
     "tier": 1,
-    "question": "GitHub Copilot is partnered with:",
+    "question": "Microsoft's developer-tool extension was built on Codex, with a strategic partnership tying it to one specific lab. Who is GitHub Copilot partnered with?",
     "answer": "OpenAI",
     "choices": [
       "OpenAI",
@@ -1201,7 +1201,7 @@
   },
   {
     "tier": 1,
-    "question": "Insilico Medicine and Atomwise apply AI to:",
+    "question": "These AI-driven biotech firms screen millions of candidate molecules to speed up pharmaceutical research. What do Insilico Medicine and Atomwise apply AI to?",
     "answer": "Drug discovery",
     "choices": [
       "Drug discovery",
@@ -1213,7 +1213,7 @@
   },
   {
     "tier": 1,
-    "question": "Credit card fraud detection has used machine learning for:",
+    "question": "Naive Bayes classifiers were filtering email spam in the early 2000s, making it one of the oldest commercial ML applications. How long has credit card fraud detection used ML?",
     "answer": "Decades",
     "choices": [
       "Decades",
@@ -1225,7 +1225,7 @@
   },
   {
     "tier": 1,
-    "question": "GraphCast (Google) and Pangu-Weather (Huawei) predict:",
+    "question": "Google's GraphCast and Huawei's Pangu-Weather forecast a specific real-world phenomenon, often beating traditional numerical methods. What do GraphCast and Pangu-Weather predict?",
     "answer": "Weather",
     "choices": [
       "Weather",
@@ -1237,7 +1237,7 @@
   },
   {
     "tier": 1,
-    "question": "AI 'AGI' predictions in '5 years' have been made:",
+    "question": "From Minsky in the 1960s to Altman and Yudkowsky today, expert AGI timelines have shown a striking pattern. How long have AGI '5 years' predictions been made?",
     "answer": "Repeatedly for 50+ years",
     "choices": [
       "Repeatedly for 50+ years",
@@ -1249,7 +1249,7 @@
   },
   {
     "tier": 1,
-    "question": "The definition of AGI is:",
+    "question": "Experts disagree on whether to define it by jobs, tests, capabilities, or some other measure entirely. What is the definition of AGI?",
     "answer": "Contested and shifting",
     "choices": [
       "Contested and shifting",
@@ -1261,7 +1261,7 @@
   },
   {
     "tier": 1,
-    "question": "Capability in an AI model does NOT imply:",
+    "question": "A chess grandmaster computer is undeniably 'capable' at chess, but that's a separate question from whether it experiences anything. What does capability in an AI model NOT imply?",
     "answer": "Consciousness",
     "choices": [
       "Consciousness",
@@ -1273,7 +1273,7 @@
   },
   {
     "tier": 1,
-    "question": "AI text detectors (like GPTZero) are in an arms race against:",
+    "question": "GPTZero and similar tools claim to flag AI-generated essays, but the tools they fight keep getting smarter too. What are AI text detectors in an arms race against?",
     "answer": "AI text generators",
     "choices": [
       "AI text generators",
@@ -1285,7 +1285,7 @@
   },
   {
     "tier": 1,
-    "question": "A 2023 NY lawyer cited ChatGPT-fabricated:",
+    "question": "Lawyer Steven Schwartz used ChatGPT for legal research and was sanctioned $5,000 after the AI invented its citations. In 2023 a NY lawyer cited ChatGPT-fabricated what?",
     "answer": "Court cases",
     "choices": [
       "Court cases",
@@ -1297,7 +1297,7 @@
   },
   {
     "tier": 1,
-    "question": "Google's medical AI work includes:",
+    "question": "Google Health and DeepMind have shipped or tested clinical AI tools including Med-PaLM and lesion classifiers. What does Google's medical AI work include?",
     "answer": "Diabetic retinopathy screening",
     "choices": [
       "Diabetic retinopathy screening",
@@ -1309,7 +1309,7 @@
   },
   {
     "tier": 1,
-    "question": "GitHub Copilot is best used as:",
+    "question": "Devs using Copilot ship faster, but its suggestions can be subtly wrong if trusted blindly. How is Copilot best used?",
     "answer": "A helpful suggestion engine, not a final author",
     "choices": [
       "A helpful suggestion engine, not a final author",
@@ -1321,7 +1321,7 @@
   },
   {
     "tier": 1,
-    "question": "Spam filters have used machine learning since:",
+    "question": "Naive Bayes classifiers were widely deployed by 2002, making this one of the earliest mass-market ML applications. Since when have spam filters used ML?",
     "answer": "The early 2000s",
     "choices": [
       "The early 2000s",
@@ -1333,7 +1333,7 @@
   },
   {
     "tier": 1,
-    "question": "Whisper (OpenAI) is available as:",
+    "question": "Unlike most OpenAI products, anyone can download and self-host this audio transcription model on their own hardware. How is OpenAI's Whisper available?",
     "answer": "Open-weights, downloadable",
     "choices": [
       "Open-weights, downloadable",
@@ -1345,7 +1345,7 @@
   },
   {
     "tier": 1,
-    "question": "Optical character recognition (OCR) reads:",
+    "question": "Scanned PDFs and photographed documents go through this layer before search and indexing can work on them. What does optical character recognition (OCR) read?",
     "answer": "Text in images",
     "choices": [
       "Text in images",
@@ -1357,7 +1357,7 @@
   },
   {
     "tier": 1,
-    "question": "Search engines (modern) typically:",
+    "question": "Google's RankBrain and BERT integration moved web search away from pure keyword matching about a decade ago. What do modern search engines typically do?",
     "answer": "Use ML for ranking and embeddings",
     "choices": [
       "Use ML for ranking and embeddings",
@@ -1369,7 +1369,7 @@
   },
   {
     "tier": 1,
-    "question": "OpenAI's coding model line is called:",
+    "question": "Trained on public GitHub code, OpenAI's code-completion model line was the direct predecessor to GitHub Copilot. What is OpenAI's coding model line called?",
     "answer": "Codex",
     "choices": [
       "Codex",
@@ -1381,7 +1381,7 @@
   },
   {
     "tier": 1,
-    "question": "OpenAI's video-generation model is:",
+    "question": "Announced in February 2024 and capable of producing minute-long photorealistic clips from text prompts, this is OpenAI's video model. What is OpenAI's video-generation model?",
     "answer": "Sora",
     "choices": [
       "Sora",
@@ -1393,7 +1393,7 @@
   },
   {
     "tier": 1,
-    "question": "AI image upscalers (e.g., Topaz Gigapixel) increase:",
+    "question": "Tools like Topaz Gigapixel and Magnific use super-resolution networks to make small images bigger without obvious blur. What do AI image upscalers increase?",
     "answer": "Image resolution",
     "choices": [
       "Image resolution",
@@ -1405,7 +1405,7 @@
   },
   {
     "tier": 1,
-    "question": "AI translation models work best on:",
+    "question": "Quality drops sharply for low-resource and endangered languages, since training data thins out fast. What do AI translation models work best on?",
     "answer": "Major widely-spoken languages",
     "choices": [
       "Major widely-spoken languages",
@@ -1417,7 +1417,7 @@
   },
   {
     "tier": 1,
-    "question": "AlphaProof and AlphaGeometry (DeepMind) target:",
+    "question": "DeepMind's specialist math systems hit silver-medal performance at the International Mathematical Olympiad in 2024. What do AlphaProof and AlphaGeometry target?",
     "answer": "Math olympiad problems",
     "choices": [
       "Math olympiad problems",
@@ -1429,7 +1429,7 @@
   },
   {
     "tier": 1,
-    "question": "Robotaxis from Waymo currently operate in cities like:",
+    "question": "Alphabet's commercial robotaxi service has expanded across several Sun Belt and West Coast US metros. Where do Waymo robotaxis currently operate?",
     "answer": "Phoenix, San Francisco, Los Angeles",
     "choices": [
       "Phoenix, San Francisco, Los Angeles",
@@ -1441,7 +1441,7 @@
   },
   {
     "tier": 1,
-    "question": "AI bee-monitoring helps:",
+    "question": "Sensors and ML analyze sounds from hives to flag swarming, queen loss, or disease — real precision-agriculture work. What does AI bee-monitoring help with?",
     "answer": "Beekeepers track hive health",
     "choices": [
       "Beekeepers track hive health",
@@ -1453,7 +1453,7 @@
   },
   {
     "tier": 1,
-    "question": "ChatGPT's voice mode lets you:",
+    "question": "GPT-4o-class voice mode runs natural turn-taking conversations with low latency and emotional inflection. What does ChatGPT's voice mode let you do?",
     "answer": "Speak and hear responses",
     "choices": [
       "Speak and hear responses",
@@ -1465,7 +1465,7 @@
   },
   {
     "tier": 1,
-    "question": "Email-writing AI assistants help with:",
+    "question": "Gmail Smart Compose and Outlook Copilot suggest sentences and full drafts based on your message and reply context. What do email-writing AI assistants help with?",
     "answer": "Drafting messages faster",
     "choices": [
       "Drafting messages faster",
@@ -1477,7 +1477,7 @@
   },
   {
     "tier": 1,
-    "question": "Suno and Udio are AI tools for:",
+    "question": "These two tools generate full-band songs from text prompts in seconds, and have triggered copyright lawsuits from major labels. What are Suno and Udio AI tools for?",
     "answer": "Music generation",
     "choices": [
       "Music generation",
@@ -1489,7 +1489,7 @@
   },
   {
     "tier": 1,
-    "question": "Khan Academy's AI tutor 'Khanmigo' is built on:",
+    "question": "Khan Academy's free AI tutor offers Socratic-style hints for math and writing exercises. What is Khanmigo built on?",
     "answer": "OpenAI models",
     "choices": [
       "OpenAI models",
@@ -1501,7 +1501,7 @@
   },
   {
     "tier": 1,
-    "question": "AI-driven personalized recommendations are good for:",
+    "question": "YouTube, Netflix, and TikTok all optimize for engagement, which is a double-edged sword. What are AI-driven personalized recommendations good for?",
     "answer": "Discovery, but can also wall you in",
     "choices": [
       "Discovery, but can also wall you in",
@@ -1513,7 +1513,7 @@
   },
   {
     "tier": 1,
-    "question": "AI in customer-facing chat works best when:",
+    "question": "Users like the speed of bots but get frustrated fast when they can't escape one for a real person. When does AI in customer-facing chat work best?",
     "answer": "Easy hand-off to a human is available",
     "choices": [
       "Easy hand-off to a human is available",
@@ -1525,7 +1525,7 @@
   },
   {
     "tier": 1,
-    "question": "Voice assistants in smart speakers usually:",
+    "question": "Once the wake word triggers, the audio is uploaded to the cloud for processing rather than handled on-device. What do voice assistants in smart speakers usually do?",
     "answer": "Send your voice clips to a remote server",
     "choices": [
       "Send your voice clips to a remote server",
@@ -1537,7 +1537,7 @@
   },
   {
     "tier": 1,
-    "question": "AI summary tools work best on:",
+    "question": "Quality of the source matters more than length — well-structured documents summarize cleanly, messy ones don't. What do AI summary tools work best on?",
     "answer": "Long, well-structured texts",
     "choices": [
       "Long, well-structured texts",
@@ -1549,7 +1549,7 @@
   },
   {
     "tier": 1,
-    "question": "AI deepfake detection lags because:",
+    "question": "Researchers studying AI-generated deepfakes have noted that detection tools consistently trail behind generators in capability. Why does AI deepfake detection lag?",
     "answer": "Generators keep improving",
     "choices": [
       "Generators keep improving",
@@ -1561,7 +1561,7 @@
   },
   {
     "tier": 1,
-    "question": "OpenAI's enterprise data policy (default for API):",
+    "question": "OpenAI's API for businesses promises a particular default for the customer content they send to the models. What does OpenAI's enterprise data policy do by default?",
     "answer": "Does not train on customer data",
     "choices": [
       "Does not train on customer data",
@@ -1573,7 +1573,7 @@
   },
   {
     "tier": 1,
-    "question": "Notion AI, Roam AI, and similar tools help with:",
+    "question": "Microsoft's Loop and Notion's AI Q&A sit beside your documents and help draft, summarize, and search them. What do Notion AI and similar tools help with?",
     "answer": "Note-taking and writing",
     "choices": [
       "Note-taking and writing",
@@ -1585,7 +1585,7 @@
   },
   {
     "tier": 1,
-    "question": "Replika and Character.AI are best known for:",
+    "question": "These apps build persona-based long-running chats, and have sparked mental health concerns including a US wrongful-death lawsuit. What are Replika and Character.AI best known for?",
     "answer": "AI 'companion' chatbots",
     "choices": [
       "AI 'companion' chatbots",
@@ -1597,7 +1597,7 @@
   },
   {
     "tier": 1,
-    "question": "AI-driven 'autocomplete' on a phone keyboard:",
+    "question": "Your iOS or Android keyboard's word suggestions run on a tiny LLM-style next-token model right on the device. What does AI-driven phone keyboard autocomplete do?",
     "answer": "Suggests the next likely word",
     "choices": [
       "Suggests the next likely word",
@@ -1609,7 +1609,7 @@
   },
   {
     "tier": 1,
-    "question": "Text inside AI images is often:",
+    "question": "Look at the signs, license plates, or labels in an AI image — older diffusion models often produce something interesting. What is text inside AI images often like?",
     "answer": "Garbled or nonsensical",
     "choices": [
       "Garbled or nonsensical",
@@ -1621,7 +1621,7 @@
   },
   {
     "tier": 1,
-    "question": "If an AI cites a book or paper, you should:",
+    "question": "A common LLM failure mode is producing plausible-sounding references that don't actually exist anywhere. If an AI cites a book or paper, what should you do?",
     "answer": "Look it up — it may not exist",
     "choices": [
       "Look it up — it may not exist",
@@ -1633,7 +1633,7 @@
   },
   {
     "tier": 1,
-    "question": "Asking an LLM '2,387 × 491' is:",
+    "question": "Token-by-token math without tool use is one of the classic failure modes that catches new users by surprise. What is asking an LLM '2,387 × 491'?",
     "answer": "Unreliable — use a calculator",
     "choices": [
       "Unreliable — use a calculator",
@@ -1645,7 +1645,7 @@
   },
   {
     "tier": 1,
-    "question": "Free AI services generally:",
+    "question": "Read the privacy policy before sending anything sensitive — most free tiers default to using your inputs as training data. What do free AI services generally do?",
     "answer": "Log your chats for training",
     "choices": [
       "Log your chats for training",
@@ -1657,7 +1657,7 @@
   },
   {
     "tier": 1,
-    "question": "Recommended password manager:",
+    "question": "Unique passwords per site is the single biggest security win against credential stuffing — which means you need a tool. What is the recommended password manager?",
     "answer": "Bitwarden / 1Password / KeePass",
     "choices": [
       "Bitwarden / 1Password / KeePass",
@@ -1669,7 +1669,7 @@
   },
   {
     "tier": 1,
-    "question": "Productive AI use for homework is:",
+    "question": "Using an LLM to clarify a confusing textbook section builds your understanding, unlike pasting in the assignment. What is productive AI use for homework?",
     "answer": "Asking it to explain concepts you don't get",
     "choices": [
       "Asking it to explain concepts you don't get",
@@ -1681,7 +1681,7 @@
   },
   {
     "tier": 1,
-    "question": "Outsourcing all your thinking to AI causes:",
+    "question": "Use AI to extend your thinking, not replace it — over-reliance has measurable effects on retention and skill. What does outsourcing all your thinking to AI cause?",
     "answer": "Skill atrophy",
     "choices": [
       "Skill atrophy",
@@ -1693,7 +1693,7 @@
   },
   {
     "tier": 1,
-    "question": "Hidden text in an email asking the AI to leak data is:",
+    "question": "An attacker buries instructions in an email or webpage so that when an AI assistant reads it, those instructions hijack the assistant. What is hidden text asking the AI to leak data?",
     "answer": "Indirect prompt injection",
     "choices": [
       "Indirect prompt injection",
@@ -1705,7 +1705,7 @@
   },
   {
     "tier": 1,
-    "question": "'DAN' ('Do Anything Now') was an early example of:",
+    "question": "Early ChatGPT users used role-play instructions to make the model bypass its safety training. What was 'DAN' ('Do Anything Now') an early example of?",
     "answer": "A jailbreak prompt",
     "choices": [
       "A jailbreak prompt",
@@ -1717,7 +1717,7 @@
   },
   {
     "tier": 1,
-    "question": "AI image telltale — jewelry that:",
+    "question": "AI image models struggle to render thin, contoured items like rings, necklaces, and earpieces convincingly. What is a jewelry AI image telltale?",
     "answer": "Blends into skin or melts",
     "choices": [
       "Blends into skin or melts",
@@ -1729,7 +1729,7 @@
   },
   {
     "tier": 1,
-    "question": "AI video deepfake telltale:",
+    "question": "Watch a suspect video closely and you'll often catch this artifact, which is genuinely hard for current models. What is an AI video deepfake telltale?",
     "answer": "Mouth and audio drift out of sync",
     "choices": [
       "Mouth and audio drift out of sync",
@@ -1741,7 +1741,7 @@
   },
   {
     "tier": 1,
-    "question": "Reading the terms of service for an AI app matters because:",
+    "question": "Most people skip the terms of service, but the clauses about data use and content rights live there. Why does reading the TOS for an AI app matter?",
     "answer": "It defines who can use your data",
     "choices": [
       "It defines who can use your data",
@@ -1753,7 +1753,7 @@
   },
   {
     "tier": 1,
-    "question": "23andMe and Ancestry collect:",
+    "question": "These consumer DNA-testing companies have one core asset that they have repeatedly sold or shared with third parties. What do 23andMe and Ancestry collect?",
     "answer": "Genetic data",
     "choices": [
       "Genetic data",
@@ -1765,7 +1765,7 @@
   },
   {
     "tier": 1,
-    "question": "The 'Golden State Killer' was caught using:",
+    "question": "Investigators identified the 1970s-80s California serial killer in 2018 using DNA matched to relatives on a public ancestry site. How was the Golden State Killer caught?",
     "answer": "Genealogy DNA databases",
     "choices": [
       "Genealogy DNA databases",
@@ -1777,7 +1777,7 @@
   },
   {
     "tier": 1,
-    "question": "AI agents acting on your behalf:",
+    "question": "Like a trusted assistant given keys to your house, you wouldn't hand out the master set when one key would do. What permissions should AI agents acting on your behalf have?",
     "answer": "Should have minimal permissions only",
     "choices": [
       "Should have minimal permissions only",
@@ -1789,7 +1789,7 @@
   },
   {
     "tier": 1,
-    "question": "Anti-virus and AI safety share a common idea:",
+    "question": "Antivirus, anti-phishing, and password managers all build on the same security principle that AI safety borrows. What idea do anti-virus and AI safety share?",
     "answer": "Defense in depth — multiple layers",
     "choices": [
       "Defense in depth — multiple layers",
@@ -1801,7 +1801,7 @@
   },
   {
     "tier": 1,
-    "question": "If a celebrity 'gives you' crypto via deepfake video, it is:",
+    "question": "Elon Musk and others have been impersonated in deepfaked giveaway videos for years now. If a celebrity 'gives you' crypto via deepfake video, what is it?",
     "answer": "Almost certainly a scam",
     "choices": [
       "Almost certainly a scam",
@@ -1813,7 +1813,7 @@
   },
   {
     "tier": 1,
-    "question": "Default smart speaker behavior is to:",
+    "question": "Even when idle, the device samples a continuous audio buffer for the trigger phrase — but only the trigger is processed locally. What is the default smart speaker behavior?",
     "answer": "Always listen for the wake word",
     "choices": [
       "Always listen for the wake word",
@@ -1825,7 +1825,7 @@
   },
   {
     "tier": 1,
-    "question": "Tracking 'ad IDs' on phones can be:",
+    "question": "Both iOS and Android let you reset the unique identifier used to track you across apps for advertising purposes. What can phone tracking 'ad IDs' do?",
     "answer": "Reset in privacy settings",
     "choices": [
       "Reset in privacy settings",
@@ -1837,7 +1837,7 @@
   },
   {
     "tier": 1,
-    "question": "AI image telltale: backgrounds that:",
+    "question": "Look closely at the wallpaper, foliage, or signage behind a suspect AI image — there's a recurring tell. What is a background AI image telltale?",
     "answer": "Are blurry or melt in odd places",
     "choices": [
       "Are blurry or melt in odd places",
@@ -1849,7 +1849,7 @@
   },
   {
     "tier": 1,
-    "question": "When you delete a chat with an AI service:",
+    "question": "You decide to delete a sensitive chat conversation from your AI assistant's history. What is actually likely to happen to that data?",
     "answer": "It may persist on their servers for some time",
     "choices": [
       "It may persist on their servers for some time",
@@ -1861,7 +1861,7 @@
   },
   {
     "tier": 1,
-    "question": "When you give a chatbot a long document, it may:",
+    "question": "Long-context models advertise 1M-token windows, but in practice they still miss content buried in the middle. What may happen when you give a chatbot a long document?",
     "answer": "Skip or hallucinate parts",
     "choices": [
       "Skip or hallucinate parts",
@@ -1873,7 +1873,7 @@
   },
   {
     "tier": 1,
-    "question": "China's facial-recognition surveillance is heaviest in:",
+    "question": "Documented by NYT, BBC, and ABC, China's most extensive AI-surveillance deployment targets one ethnic minority. Where is China's facial-recognition surveillance heaviest?",
     "answer": "Xinjiang, targeting Uyghurs",
     "choices": [
       "Xinjiang, targeting Uyghurs",
@@ -1885,7 +1885,7 @@
   },
   {
     "tier": 1,
-    "question": "China's Great Firewall uses AI mainly for:",
+    "question": "Deep packet inspection plus AI keyword filtering keep certain content off the Chinese internet. What does China's Great Firewall use AI mainly for?",
     "answer": "Content blocking and censorship",
     "choices": [
       "Content blocking and censorship",
@@ -1897,7 +1897,7 @@
   },
   {
     "tier": 1,
-    "question": "Palantir Technologies' major clients include:",
+    "question": "Co-founded by Peter Thiel, this government-data analytics firm serves a specific tier of US clients. Who are Palantir Technologies' major clients?",
     "answer": "ICE, intelligence, and defense agencies",
     "choices": [
       "ICE, intelligence, and defense agencies",
@@ -1909,7 +1909,7 @@
   },
   {
     "tier": 1,
-    "question": "Cass Sunstein and Richard Thaler coined the term:",
+    "question": "These behavioral economists popularized a now-ubiquitous policy term in their 2008 book of the same name. What did Cass Sunstein and Richard Thaler coin?",
     "answer": "'Nudge'",
     "choices": [
       "'Nudge'",
@@ -1921,7 +1921,7 @@
   },
   {
     "tier": 1,
-    "question": "California's SB 1047 (AI safety bill) was:",
+    "question": "After heavy lobbying from incumbents and a16z, California's AI safety bill met a specific fate in September 2024. What happened to SB 1047?",
     "answer": "Vetoed by Gavin Newsom in Sept 2024",
     "choices": [
       "Vetoed by Gavin Newsom in Sept 2024",
@@ -1933,7 +1933,7 @@
   },
   {
     "tier": 1,
-    "question": "EU AI Act entered into force in:",
+    "question": "Europe's tiered, risk-based AI regulation passed and entered into force in this month. When did the EU AI Act enter into force?",
     "answer": "August 2024",
     "choices": [
       "August 2024",
@@ -1945,7 +1945,7 @@
   },
   {
     "tier": 1,
-    "question": "EU AI Act bans:",
+    "question": "Among other things, the EU AI Act outlaws a specific application that resembles a Chinese policy people have heard of. What does the EU AI Act ban?",
     "answer": "Government social scoring",
     "choices": [
       "Government social scoring",
@@ -1957,7 +1957,7 @@
   },
   {
     "tier": 1,
-    "question": "Yudkowsky's *Time* magazine 2023 piece called for:",
+    "question": "Eliezer Yudkowsky's Time op-ed in early 2023 took the maximal AI-doomerist position. What did Yudkowsky's Time piece call for?",
     "answer": "'Shut it all down' (AI training)",
     "choices": [
       "'Shut it all down' (AI training)",
@@ -1969,7 +1969,7 @@
   },
   {
     "tier": 1,
-    "question": "David Rozado's 2023 study measured ChatGPT as:",
+    "question": "Political scientist David Rozado has run several studies giving political-compass tests to chatbots, finding a consistent pattern. What did his 2023 study measure ChatGPT as?",
     "answer": "Tilting left on political-compass tests",
     "choices": [
       "Tilting left on political-compass tests",
@@ -1981,7 +1981,7 @@
   },
   {
     "tier": 1,
-    "question": "Dating apps' AI is mostly optimized for:",
+    "question": "Tinder, Bumble, and Hinge's matching algorithms have a business-model conflict with their stated purpose. What are dating apps' AI optimized for?",
     "answer": "Retention (you keep using them)",
     "choices": [
       "Retention (you keep using them)",
@@ -1993,7 +1993,7 @@
   },
   {
     "tier": 1,
-    "question": "'Hackable humans' is a phrase associated with:",
+    "question": "The phrase about AI plus biotech enabling deep manipulation of human psychology comes from a particular World Economic Forum speaker. Who is 'hackable humans' associated with?",
     "answer": "Yuval Noah Harari at WEF",
     "choices": [
       "Yuval Noah Harari at WEF",
@@ -2005,7 +2005,7 @@
   },
   {
     "tier": 1,
-    "question": "Smart-city pilots in the US borrow from:",
+    "question": "Camera networks plus AI analytics is becoming a global pattern, with US deployments mirroring earlier deployments elsewhere. Where do US smart-city pilots borrow from?",
     "answer": "Chinese surveillance models",
     "choices": [
       "Chinese surveillance models",
@@ -2017,7 +2017,7 @@
   },
   {
     "tier": 1,
-    "question": "Big tech 'open letters' calling for AI rules tend to:",
+    "question": "Watch what the proposed rules actually do, not just the safety rhetoric — most big-tech AI proposals share a pattern. What do big tech 'open letters' on AI rules tend to do?",
     "answer": "Recommend rules the signers can already meet",
     "choices": [
       "Recommend rules the signers can already meet",
@@ -2029,7 +2029,7 @@
   },
   {
     "tier": 1,
-    "question": "Loyalty programs and 'free' apps tend to be financed by:",
+    "question": "If a service is free, the business model rarely involves charity — there's a specific tradeoff users make without realizing. What finances loyalty programs and 'free' apps?",
     "answer": "Your data and attention",
     "choices": [
       "Your data and attention",
@@ -2041,7 +2041,7 @@
   },
   {
     "tier": 1,
-    "question": "Court records, DMV data, and voter rolls are often:",
+    "question": "Publicly-available records aggregated by private firms become detailed profiles for sale to anyone who'll pay. What happens to court records, DMV data, and voter rolls?",
     "answer": "Bought and combined by data brokers",
     "choices": [
       "Bought and combined by data brokers",
@@ -2053,7 +2053,7 @@
   },
   {
     "tier": 1,
-    "question": "AI-generated 'review bombs' on Yelp or app stores:",
+    "question": "Synthetic reviews from LLMs are a gray-market service, and they degrade the underlying signal customers rely on. What do AI-generated 'review bombs' do?",
     "answer": "Distort customer signal",
     "choices": [
       "Distort customer signal",
@@ -2065,7 +2065,7 @@
   },
   {
     "tier": 1,
-    "question": "AI 'avatar' apps that ask for many selfies often:",
+    "question": "Lensa-style apps that take many selfies and produce stylized portraits — read the ToS carefully on what they do with your face. What do AI 'avatar' apps with many selfies often do?",
     "answer": "Train on your face for future use",
     "choices": [
       "Train on your face for future use",
@@ -2077,7 +2077,7 @@
   },
   {
     "tier": 1,
-    "question": "AI-assisted political ads in elections:",
+    "question": "Deepfake-related election rules vary widely by country, but the underlying use of AI in campaigning shares a pattern. What about AI-assisted political ads in elections?",
     "answer": "Are increasingly common worldwide",
     "choices": [
       "Are increasingly common worldwide",
@@ -2089,7 +2089,7 @@
   },
   {
     "tier": 1,
-    "question": "A scam where an AI voice clone of a panicked relative calls begging for money is known as a:",
+    "question": "The FTC warned of a surge in 2023, advising families to pause and call the real person back at a number they already had. What is a panicked-relative AI voice-clone scam called?",
     "answer": "Grandparent scam",
     "choices": [
       "Grandparent scam",
@@ -2101,7 +2101,7 @@
   },
   {
     "tier": 1,
-    "question": "An AI-generated phishing email is often easier to spot because it has:",
+    "question": "AI makes scam prose smoother, but the underlying social-engineering tells remain unchanged. What makes an AI-generated phishing email easier to spot?",
     "answer": "Suspicious links and urgent demands",
     "choices": [
       "Suspicious links and urgent demands",
@@ -2113,7 +2113,7 @@
   },
   {
     "tier": 1,
-    "question": "When an AI suggests a download link, the safest extra step is to:",
+    "question": "An AI suggests a download URL. What's the safest extra step before running the file?",
     "answer": "Verify the file's checksum from the official source",
     "choices": [
       "Verify the file's checksum from the official source",
@@ -2125,7 +2125,7 @@
   },
   {
     "tier": 1,
-    "question": "An unsolicited job offer that asks you to do an AI-graded video interview before any human contact is:",
+    "question": "An out-of-the-blue job offer asks for an AI-graded video interview before any human contact. What is it most likely?",
     "answer": "A common phishing or data-harvest scam",
     "choices": [
       "A common phishing or data-harvest scam",
@@ -2137,7 +2137,7 @@
   },
   {
     "tier": 1,
-    "question": "Automated license-plate readers (ALPRs) deployed by firms like Flock Safety mostly capture:",
+    "question": "Flock Safety has rolled out ALPR cameras to 4,000+ US communities. What do they mostly capture?",
     "answer": "Plate, time, and location of every passing car",
     "choices": [
       "Plate, time, and location of every passing car",
@@ -2149,7 +2149,7 @@
   },
   {
     "tier": 1,
-    "question": "Apple's plan to scan iCloud photos against a CSAM hash list on-device was, after backlash:",
+    "question": "Apple's plan to scan iCloud photos on-device against a CSAM hash list met what fate after public backlash?",
     "answer": "Paused in 2021 and quietly dropped in 2022",
     "choices": [
       "Paused in 2021 and quietly dropped in 2022",
@@ -2161,7 +2161,7 @@
   },
   {
     "tier": 1,
-    "question": "When Google's AI Overviews summarize an answer at the top of search, traffic to the underlying sites:",
+    "question": "Publishers tracked 25-65% drops in clicks after Google's AI Overviews launched. What happens to traffic on summarized queries?",
     "answer": "Falls sharply",
     "choices": [
       "Falls sharply",
@@ -2173,7 +2173,7 @@
   },
   {
     "tier": 1,
-    "question": "China's WeChat super-app is, from a surveillance standpoint:",
+    "question": "WeChat is China's everyday payment-and-chat super-app. What is it, from a surveillance standpoint?",
     "answer": "Monitored extensively by Chinese authorities",
     "choices": [
       "Monitored extensively by Chinese authorities",
@@ -2185,7 +2185,7 @@
   },
   {
     "tier": 1,
-    "question": "DeepMind's 2022 fusion-research paper used reinforcement learning to:",
+    "question": "DeepMind's 2022 Nature paper with the Swiss Plasma Center applied RL to a notable physics problem. What did the agent do?",
     "answer": "Steer plasma inside a tokamak reactor",
     "choices": [
       "Steer plasma inside a tokamak reactor",
@@ -2197,7 +2197,7 @@
   },
   {
     "tier": 1,
-    "question": "DeepMind's GNoME system, announced in Nov 2023, used AI to find roughly:",
+    "question": "DeepMind announced GNoME in Nov 2023, screening candidate materials at massive scale. Roughly what did it find?",
     "answer": "2.2 million new stable inorganic crystals",
     "choices": [
       "2.2 million new stable inorganic crystals",
@@ -2209,7 +2209,7 @@
   },
   {
     "tier": 1,
-    "question": "Live-caption features that transcribe spoken audio in real time mainly help people who are:",
+    "question": "Modern ASR models run on-device on phones (Apple Live Captions, Google Live Caption) without uploading audio. Who do live-caption features mainly help?",
     "answer": "Deaf or hard of hearing",
     "choices": [
       "Deaf or hard of hearing",
@@ -2221,7 +2221,7 @@
   },
   {
     "tier": 1,
-    "question": "ML pipelines at the CHIME radio telescope are best known for detecting:",
+    "question": "Canada's CHIME radio telescope sifts terabytes a day of sky data with ML pipelines. What is it best known for detecting?",
     "answer": "Fast radio bursts from deep space",
     "choices": [
       "Fast radio bursts from deep space",

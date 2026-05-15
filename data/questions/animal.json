@@ -1,7 +1,7 @@
 [
   {
     "tier": 1,
-    "question": "Largest animal alive today?",
+    "question": "Of every animal alive today, which holds the record for largest?",
     "answer": "Blue whale",
     "choices": [
       "Blue whale",
@@ -13,7 +13,7 @@
   },
   {
     "tier": 1,
-    "question": "Smallest mammal by weight, just 1.8 grams?",
+    "question": "Weighing just 1.8 grams, what is the smallest mammal in the world?",
     "answer": "Etruscan shrew",
     "choices": [
       "Etruscan shrew",
@@ -25,7 +25,7 @@
   },
   {
     "tier": 1,
-    "question": "Smallest bird in the world, native to Cuba?",
+    "question": "Native to Cuba and weighing about 2 grams, what is the smallest bird in the world?",
     "answer": "Bee hummingbird",
     "choices": [
       "Bee hummingbird",
@@ -37,7 +37,7 @@
   },
   {
     "tier": 1,
-    "question": "Tallest land animal alive today?",
+    "question": "Which is the tallest land animal alive today, reaching up to 5.5m?",
     "answer": "Giraffe",
     "choices": [
       "Giraffe",
@@ -49,7 +49,7 @@
   },
   {
     "tier": 1,
-    "question": "Fastest land animal over short distances?",
+    "question": "Over short distances of a few hundred meters, which is the fastest land animal?",
     "answer": "Cheetah",
     "choices": [
       "Cheetah",
@@ -61,7 +61,7 @@
   },
   {
     "tier": 1,
-    "question": "Egg-laying mammal with a duck-like bill, native to Australia?",
+    "question": "Native to Australia with a duck-like bill, what egg-laying mammal is this?",
     "answer": "Platypus",
     "choices": [
       "Platypus",
@@ -73,7 +73,7 @@
   },
   {
     "tier": 1,
-    "question": "Class of animals that includes frogs, toads, and salamanders?",
+    "question": "Frogs, toads, and salamanders all belong to which class of animals?",
     "answer": "Amphibians",
     "choices": [
       "Amphibians",
@@ -85,7 +85,7 @@
   },
   {
     "tier": 1,
-    "question": "Defining feature of all mammals (besides hair)?",
+    "question": "Besides hair, what is the single defining trait shared by all mammals?",
     "answer": "Mammary glands",
     "choices": [
       "Mammary glands",
@@ -97,7 +97,7 @@
   },
   {
     "tier": 1,
-    "question": "Group that includes sharks and rays, with skeletons of cartilage:",
+    "question": "Sharks and rays, with skeletons made of cartilage rather than bone, are called:",
     "answer": "Cartilaginous fish",
     "choices": [
       "Cartilaginous fish",
@@ -109,7 +109,7 @@
   },
   {
     "tier": 1,
-    "question": "Number of hearts an octopus has?",
+    "question": "How many hearts does an octopus have?",
     "answer": "Three",
     "choices": [
       "Three",
@@ -121,7 +121,7 @@
   },
   {
     "tier": 1,
-    "question": "Number of legs on an arachnid like a spider or scorpion?",
+    "question": "An arachnid like a spider or scorpion has how many legs?",
     "answer": "Eight",
     "choices": [
       "Eight",
@@ -133,7 +133,7 @@
   },
   {
     "tier": 1,
-    "question": "Number of legs on an insect?",
+    "question": "How many legs does an insect have?",
     "answer": "Six",
     "choices": [
       "Six",
@@ -145,7 +145,7 @@
   },
   {
     "tier": 1,
-    "question": "Animal that uses ultrasonic echoes to navigate in the dark:",
+    "question": "Which animal uses ultrasonic echoes to navigate in the dark?",
     "answer": "Bat",
     "choices": [
       "Bat",
@@ -157,7 +157,7 @@
   },
   {
     "tier": 1,
-    "question": "Marsupial that carries its joey in a pouch and hops on two legs:",
+    "question": "Which Australian marsupial carries its joey in a pouch and hops on two legs?",
     "answer": "Kangaroo",
     "choices": [
       "Kangaroo",
@@ -169,7 +169,7 @@
   },
   {
     "tier": 1,
-    "question": "Only marsupial native to North America?",
+    "question": "Of all marsupials, only one species is native to North America. Which one?",
     "answer": "Opossum",
     "choices": [
       "Opossum",
@@ -181,7 +181,7 @@
   },
   {
     "tier": 1,
-    "question": "Microscopic animal that survives vacuum, radiation, and boiling water:",
+    "question": "This 8-legged microscopic animal, less than a millimeter long, can survive vacuum, intense radiation, and even boiling water by entering a cryptobiotic state. What is it?",
     "answer": "Tardigrade",
     "choices": [
       "Tardigrade",
@@ -193,7 +193,7 @@
   },
   {
     "tier": 1,
-    "question": "Mexican salamander that regrows lost limbs and stays in larval form:",
+    "question": "Found only in the lake-system of Xochimilco near Mexico City, this neotenic salamander stays in its larval form for life and can regrow lost limbs and even parts of its heart. What is it called?",
     "answer": "Axolotl",
     "choices": [
       "Axolotl",
@@ -205,7 +205,7 @@
   },
   {
     "tier": 1,
-    "question": "Shrimp that punches with cavitation bubbles hotter than the sun's surface:",
+    "question": "This shrimp snaps a claw so fast it creates cavitation bubbles briefly hotter than the sun's surface. What is it?",
     "answer": "Pistol shrimp",
     "choices": [
       "Pistol shrimp",
@@ -217,7 +217,7 @@
   },
   {
     "tier": 1,
-    "question": "Crustacean whose strike accelerates faster than a .22 bullet:",
+    "question": "Which crustacean's strike accelerates faster than a .22 bullet?",
     "answer": "Mantis shrimp",
     "choices": [
       "Mantis shrimp",
@@ -229,7 +229,7 @@
   },
   {
     "tier": 1,
-    "question": "Fish that uses electric shocks to stun prey, native to the Amazon:",
+    "question": "Native to the Amazon basin, which fish uses electric shocks of up to 860 volts to stun prey?",
     "answer": "Electric eel",
     "choices": [
       "Electric eel",
@@ -241,7 +241,7 @@
   },
   {
     "tier": 1,
-    "question": "Animal kingdom's largest eyes, basketball-sized in deep ocean:",
+    "question": "In the deep ocean lurks a creature with basketball-sized eyes — the largest eyes in the animal kingdom. What is it?",
     "answer": "Colossal squid",
     "choices": [
       "Colossal squid",
@@ -253,7 +253,7 @@
   },
   {
     "tier": 1,
-    "question": "Australian songbird that flawlessly mimics chainsaws and car alarms:",
+    "question": "Which Australian songbird flawlessly mimics chainsaws and car alarms?",
     "answer": "Lyrebird",
     "choices": [
       "Lyrebird",
@@ -265,7 +265,7 @@
   },
   {
     "tier": 1,
-    "question": "Fish that spits jets of water to knock insects off leaves:",
+    "question": "This fish spits jets of water with such accuracy that it can knock insects off overhanging leaves. What is it?",
     "answer": "Archerfish",
     "choices": [
       "Archerfish",
@@ -277,7 +277,7 @@
   },
   {
     "tier": 1,
-    "question": "Migratory butterfly making a 3,000-mile journey to Mexico every fall:",
+    "question": "Every fall, this migratory butterfly makes a 3,000-mile journey from Canada to central Mexico. Which one?",
     "answer": "Monarch",
     "choices": [
       "Monarch",
@@ -289,7 +289,7 @@
   },
   {
     "tier": 1,
-    "question": "Bird with the longest migration — pole to pole each year:",
+    "question": "Of all birds, this one makes the longest migration each year — pole to pole. Which is it?",
     "answer": "Arctic tern",
     "choices": [
       "Arctic tern",
@@ -301,7 +301,7 @@
   },
   {
     "tier": 1,
-    "question": "Insect whose figure-eight dance encodes direction and distance to nectar:",
+    "question": "This insect performs a figure-eight dance that encodes the direction and distance to nectar for hivemates. What is it?",
     "answer": "Honeybee",
     "choices": [
       "Honeybee",
@@ -313,7 +313,7 @@
   },
   {
     "tier": 1,
-    "question": "Snake group with heat-sensing pits between eye and nostril:",
+    "question": "Which snake group has heat-sensing pits between eye and nostril for detecting warm prey?",
     "answer": "Pit vipers",
     "choices": [
       "Pit vipers",
@@ -325,7 +325,7 @@
   },
   {
     "tier": 1,
-    "question": "Animal that detects prey through electric fields with snout pores:",
+    "question": "With snout pores called ampullae of Lorenzini, which animal detects prey through electric fields?",
     "answer": "Shark",
     "choices": [
       "Shark",
@@ -337,7 +337,7 @@
   },
   {
     "tier": 1,
-    "question": "Animal with ~300 million olfactory receptors versus a human's ~6 million:",
+    "question": "With ~300 million olfactory receptors versus a human's ~6 million, which animal has the most sensitive nose?",
     "answer": "Dog",
     "choices": [
       "Dog",
@@ -349,7 +349,7 @@
   },
   {
     "tier": 1,
-    "question": "Sea creature with three hearts and an arm-distributed nervous system:",
+    "question": "Three hearts and a nervous system distributed across the arms — which sea creature is this?",
     "answer": "Octopus",
     "choices": [
       "Octopus",
@@ -361,7 +361,7 @@
   },
   {
     "tier": 1,
-    "question": "Apex predator of the open ocean with rows of replaceable teeth:",
+    "question": "With rows of replaceable teeth, which fish is the apex predator of the open ocean?",
     "answer": "Great white shark",
     "choices": [
       "Great white shark",
@@ -373,7 +373,7 @@
   },
   {
     "tier": 1,
-    "question": "Largest carnivore on land today?",
+    "question": "Which is the largest land carnivore alive today, weighing up to ~700kg?",
     "answer": "Polar bear",
     "choices": [
       "Polar bear",
@@ -385,7 +385,7 @@
   },
   {
     "tier": 1,
-    "question": "Striped great cat of Asia, largest living big cat:",
+    "question": "The largest living big cat, this striped Asian predator can weigh over 300kg. What is it?",
     "answer": "Tiger",
     "choices": [
       "Tiger",
@@ -397,7 +397,7 @@
   },
   {
     "tier": 1,
-    "question": "Only great ape native to Asia, found in Borneo and Sumatra:",
+    "question": "Found only in Borneo and Sumatra, which is the sole great ape native to Asia?",
     "answer": "Orangutan",
     "choices": [
       "Orangutan",
@@ -409,7 +409,7 @@
   },
   {
     "tier": 1,
-    "question": "Largest living primate, native to central African forests:",
+    "question": "Native to central African forests, which is the largest living primate?",
     "answer": "Gorilla",
     "choices": [
       "Gorilla",
@@ -421,7 +421,7 @@
   },
   {
     "tier": 1,
-    "question": "Closest living relative of humans, sharing ~98.7% of our DNA:",
+    "question": "Sharing roughly 98.7% of our DNA, what is the closest living relative of humans?",
     "answer": "Chimpanzee",
     "choices": [
       "Chimpanzee",
@@ -433,7 +433,7 @@
   },
   {
     "tier": 1,
-    "question": "Long-necked African mammal whose tongue can reach ~50cm:",
+    "question": "With a tongue that can reach ~50cm and prehensile to strip acacia leaves past long thorns, which long-necked African mammal is this?",
     "answer": "Giraffe",
     "choices": [
       "Giraffe",
@@ -445,7 +445,7 @@
   },
   {
     "tier": 1,
-    "question": "African mammal with the largest land-animal brain, weighing ~5kg:",
+    "question": "Of all land animals, which has the largest brain — weighing about 5kg?",
     "answer": "Elephant",
     "choices": [
       "Elephant",
@@ -457,7 +457,7 @@
   },
   {
     "tier": 1,
-    "question": "Largest fish in the ocean — a filter-feeding spotted giant:",
+    "question": "The largest fish in the ocean is a filter-feeding spotted giant. What is it?",
     "answer": "Whale shark",
     "choices": [
       "Whale shark",
@@ -469,7 +469,7 @@
   },
   {
     "tier": 1,
-    "question": "Sea creature with stinging nematocyst cells and radial symmetry:",
+    "question": "With stinging nematocyst cells and radial symmetry, which sea creature is ~95% water?",
     "answer": "Jellyfish",
     "choices": [
       "Jellyfish",
@@ -481,7 +481,7 @@
   },
   {
     "tier": 1,
-    "question": "Five-armed sea creature in phylum Echinodermata:",
+    "question": "This five-armed sea creature belongs to phylum Echinodermata. What is it?",
     "answer": "Sea star",
     "choices": [
       "Sea star",
@@ -493,7 +493,7 @@
   },
   {
     "tier": 1,
-    "question": "Reef builder that is actually a colony of tiny animals:",
+    "question": "Reefs are built by what is actually a colony of tiny animals each sharing a skeleton. What are they?",
     "answer": "Coral",
     "choices": [
       "Coral",
@@ -505,7 +505,7 @@
   },
   {
     "tier": 1,
-    "question": "Largest order of insects, with ~400,000 named species:",
+    "question": "With ~400,000 named species, which is the largest order of insects on Earth?",
     "answer": "Beetles",
     "choices": [
       "Beetles",
@@ -517,7 +517,7 @@
   },
   {
     "tier": 1,
-    "question": "Eight-legged sea arthropods with hard outer shells, like crabs and lobsters:",
+    "question": "Crabs, lobsters, and shrimp belong to which large group of armored sea arthropods?",
     "answer": "Crustaceans",
     "choices": [
       "Crustaceans",
@@ -529,7 +529,7 @@
   },
   {
     "tier": 1,
-    "question": "Mollusk with two hinged shells, like clams and oysters:",
+    "question": "Clams and oysters are mollusks with two hinged shells. What is this group called?",
     "answer": "Bivalve",
     "choices": [
       "Bivalve",
@@ -541,7 +541,7 @@
   },
   {
     "tier": 1,
-    "question": "Animal that hibernates through winter to save energy:",
+    "question": "Which animal hibernates through winter — though technically in a milder form called torpor?",
     "answer": "Bear",
     "choices": [
       "Bear",
@@ -553,7 +553,7 @@
   },
   {
     "tier": 1,
-    "question": "Class of cold-blooded animals with scales: snakes, lizards, turtles:",
+    "question": "Snakes, lizards, and turtles all belong to which class of cold-blooded scaled animals?",
     "answer": "Reptiles",
     "choices": [
       "Reptiles",
@@ -565,7 +565,7 @@
   },
   {
     "tier": 1,
-    "question": "Only mammals capable of true sustained flight:",
+    "question": "Of all the world's mammals, only one group has evolved true powered, sustained flight (as opposed to gliding). What are they?",
     "answer": "Bats",
     "choices": [
       "Bats",
@@ -577,7 +577,7 @@
   },
   {
     "tier": 1,
-    "question": "Animal that breathes through gills as a larva and lungs as an adult:",
+    "question": "Which animal breathes through gills as a larva and lungs as an adult?",
     "answer": "Frog",
     "choices": [
       "Frog",
@@ -589,7 +589,7 @@
   },
   {
     "tier": 1,
-    "question": "Largest living lizard, top predator of an Indonesian island:",
+    "question": "The top predator of one Indonesian island, this is also the world's largest living lizard. What is it?",
     "answer": "Komodo dragon",
     "choices": [
       "Komodo dragon",
@@ -601,7 +601,7 @@
   },
   {
     "tier": 1,
-    "question": "Largest living reptile, found in estuaries from India to Australia:",
+    "question": "Found in estuaries from India to Australia, which is the largest living reptile?",
     "answer": "Saltwater crocodile",
     "choices": [
       "Saltwater crocodile",
@@ -613,7 +613,7 @@
   },
   {
     "tier": 1,
-    "question": "Bird that cannot fly but is the fastest land bird:",
+    "question": "Which bird cannot fly yet is the fastest land bird on Earth?",
     "answer": "Ostrich",
     "choices": [
       "Ostrich",
@@ -625,7 +625,7 @@
   },
   {
     "tier": 1,
-    "question": "Flightless seabird native to the Southern Hemisphere:",
+    "question": "Which flightless seabird is native to the Southern Hemisphere, with wings evolved into flippers?",
     "answer": "Penguin",
     "choices": [
       "Penguin",
@@ -637,7 +637,7 @@
   },
   {
     "tier": 1,
-    "question": "Smallest known bird, which can hover and fly backwards:",
+    "question": "This is the smallest known bird, capable of hovering and even flying backwards. What is it?",
     "answer": "Hummingbird",
     "choices": [
       "Hummingbird",
@@ -649,7 +649,7 @@
   },
   {
     "tier": 1,
-    "question": "Bird known for tool use, including bending wire into hooks:",
+    "question": "Which bird is famous for crafting tools, including bending wire into hooks?",
     "answer": "Crow",
     "choices": [
       "Crow",
@@ -661,7 +661,7 @@
   },
   {
     "tier": 1,
-    "question": "Animal with the longest gestation, ~22 months:",
+    "question": "With the longest gestation of any mammal at ~22 months, which animal is this?",
     "answer": "African elephant",
     "choices": [
       "African elephant",
@@ -673,7 +673,7 @@
   },
   {
     "tier": 1,
-    "question": "Reptile group with shells fused to spine and ribs:",
+    "question": "Which reptile group has a shell fused to spine and ribs as part of its skeleton?",
     "answer": "Turtles",
     "choices": [
       "Turtles",
@@ -685,7 +685,7 @@
   },
   {
     "tier": 1,
-    "question": "Toxic puffer fish that requires licensed Japanese chefs to prepare:",
+    "question": "In Japan, only specially licensed chefs are allowed to prepare which toxic puffer fish?",
     "answer": "Fugu",
     "choices": [
       "Fugu",
@@ -697,7 +697,7 @@
   },
   {
     "tier": 1,
-    "question": "Black-and-white striped African horse relative:",
+    "question": "With black-and-white stripes unique to every individual, this African horse relative is:",
     "answer": "Zebra",
     "choices": [
       "Zebra",
@@ -709,7 +709,7 @@
   },
   {
     "tier": 1,
-    "question": "Large flightless bird of New Guinea and Australia with a bony helmet:",
+    "question": "Native to New Guinea and Australia with a bony helmet on its head, what large flightless bird is this?",
     "answer": "Cassowary",
     "choices": [
       "Cassowary",
@@ -721,7 +721,7 @@
   },
   {
     "tier": 1,
-    "question": "Australian marsupial that eats almost only eucalyptus leaves:",
+    "question": "Which Australian marsupial eats almost exclusively eucalyptus leaves and sleeps ~20 hours a day?",
     "answer": "Koala",
     "choices": [
       "Koala",
@@ -733,7 +733,7 @@
   },
   {
     "tier": 1,
-    "question": "Sea mammal that uses tools, breaking shells on a stone on its chest:",
+    "question": "Which sea mammal uses tools, breaking open shells against a stone balanced on its chest?",
     "answer": "Sea otter",
     "choices": [
       "Sea otter",
@@ -745,7 +745,7 @@
   },
   {
     "tier": 1,
-    "question": "Toothed whale group that includes orcas and bottlenoses:",
+    "question": "Orcas and bottlenose are part of which toothed whale group?",
     "answer": "Dolphins",
     "choices": [
       "Dolphins",
@@ -757,7 +757,7 @@
   },
   {
     "tier": 1,
-    "question": "Whale with a tusk-like spiral tooth, dubbed 'unicorn of the sea':",
+    "question": "Dubbed the 'unicorn of the sea' for its tusk-like spiral tooth, this Arctic whale is:",
     "answer": "Narwhal",
     "choices": [
       "Narwhal",
@@ -769,7 +769,7 @@
   },
   {
     "tier": 1,
-    "question": "Animal said to sleep more than 20 hours a day in Australian gum trees:",
+    "question": "Said to sleep more than 20 hours a day in Australian gum trees, this marsupial is:",
     "answer": "Koala",
     "choices": [
       "Koala",
@@ -781,7 +781,7 @@
   },
   {
     "tier": 1,
-    "question": "Slowest-moving mammal, native to Central and South American trees:",
+    "question": "Native to Central and South American trees, which is the slowest-moving mammal on Earth?",
     "answer": "Sloth",
     "choices": [
       "Sloth",
@@ -793,7 +793,7 @@
   },
   {
     "tier": 1,
-    "question": "South American mammal with a long sticky tongue and no teeth:",
+    "question": "With a long sticky tongue and no teeth, this South American mammal eats up to 30,000 ants a day. What is it?",
     "answer": "Giant anteater",
     "choices": [
       "Giant anteater",
@@ -805,7 +805,7 @@
   },
   {
     "tier": 1,
-    "question": "Scaly mammal that curls into a ball, the most trafficked mammal on Earth:",
+    "question": "Curling into a ball of keratin scales when threatened, this is the most trafficked mammal on Earth. What is it?",
     "answer": "Pangolin",
     "choices": [
       "Pangolin",
@@ -817,7 +817,7 @@
   },
   {
     "tier": 1,
-    "question": "Rodent that builds dams across streams with felled trees:",
+    "question": "Which rodent builds dams across streams with felled trees?",
     "answer": "Beaver",
     "choices": [
       "Beaver",
@@ -829,7 +829,7 @@
   },
   {
     "tier": 1,
-    "question": "World's largest rodent, native to South American wetlands:",
+    "question": "Native to South American wetlands and reaching ~60kg, which is the world's largest rodent?",
     "answer": "Capybara",
     "choices": [
       "Capybara",
@@ -841,7 +841,7 @@
   },
   {
     "tier": 1,
-    "question": "Animal with the loudest call of any land creature, an Amazon monkey:",
+    "question": "Audible up to 5km through Amazon forest, which monkey has the loudest call of any land creature?",
     "answer": "Howler monkey",
     "choices": [
       "Howler monkey",
@@ -853,7 +853,7 @@
   },
   {
     "tier": 1,
-    "question": "African mammal with a horn made of compressed keratin, not bone:",
+    "question": "Made of compressed keratin rather than bone, the horn of which African mammal drives a poaching crisis?",
     "answer": "Rhinoceros",
     "choices": [
       "Rhinoceros",
@@ -865,7 +865,7 @@
   },
   {
     "tier": 1,
-    "question": "African mammal that secretes a natural sunscreen — pink 'sweat':",
+    "question": "This African mammal secretes a pink 'sweat' that acts as natural sunscreen and antibiotic. Which is it?",
     "answer": "Hippopotamus",
     "choices": [
       "Hippopotamus",
@@ -877,7 +877,7 @@
   },
   {
     "tier": 1,
-    "question": "Burrowing African rodent that is eusocial like ants and resists cancer:",
+    "question": "This burrowing African rodent is eusocial like ants and almost never gets cancer. What is it?",
     "answer": "Naked mole rat",
     "choices": [
       "Naked mole rat",
@@ -889,7 +889,7 @@
   },
   {
     "tier": 1,
-    "question": "Pacific Northwest fish that swims upstream to spawn where it was born:",
+    "question": "Famous for swimming upstream to spawn in its natal stream, this Pacific Northwest fish is:",
     "answer": "Salmon",
     "choices": [
       "Salmon",
@@ -901,7 +901,7 @@
   },
   {
     "tier": 1,
-    "question": "Snake group that kills by constriction rather than venom:",
+    "question": "Which snake group kills by constriction rather than venom?",
     "answer": "Pythons",
     "choices": [
       "Pythons",
@@ -913,7 +913,7 @@
   },
   {
     "tier": 1,
-    "question": "World's largest snake by mass, found in South American swamps:",
+    "question": "Reaching ~200kg in South American swamps, which is the world's largest snake by mass?",
     "answer": "Green anaconda",
     "choices": [
       "Green anaconda",
@@ -925,7 +925,7 @@
   },
   {
     "tier": 1,
-    "question": "Largest venomous snake, capable of standing nearly upright:",
+    "question": "Capable of standing nearly upright at 5m, which is the largest venomous snake in the world?",
     "answer": "King cobra",
     "choices": [
       "King cobra",
@@ -937,7 +937,7 @@
   },
   {
     "tier": 1,
-    "question": "Cetacean with the largest brain on Earth, sometimes 9kg:",
+    "question": "With a brain that can reach 9kg, which cetacean has the largest brain on Earth?",
     "answer": "Sperm whale",
     "choices": [
       "Sperm whale",
@@ -949,7 +949,7 @@
   },
   {
     "tier": 1,
-    "question": "Sea bird known for crash-diving on fish from high above:",
+    "question": "This seabird is known for crash-diving on fish at ~100 km/h from high above. What is it?",
     "answer": "Gannet",
     "choices": [
       "Gannet",
@@ -961,7 +961,7 @@
   },
   {
     "tier": 1,
-    "question": "Bird that can lock its joints and sleep while standing on one leg:",
+    "question": "Pink from carotenoids in its brine-shrimp diet, this bird can lock its joints to sleep on one leg. What is it?",
     "answer": "Flamingo",
     "choices": [
       "Flamingo",
@@ -973,7 +973,7 @@
   },
   {
     "tier": 1,
-    "question": "Bird with a pouch on its lower beak for scooping fish:",
+    "question": "With a pouch on its lower beak holding up to ~13 liters for scooping fish, which bird is this?",
     "answer": "Pelican",
     "choices": [
       "Pelican",
@@ -985,7 +985,7 @@
   },
   {
     "tier": 1,
-    "question": "Nocturnal bird whose face is a sound-funneling disk:",
+    "question": "This nocturnal bird's face is a feathered disk that funnels sound to offset ears for pinpoint hearing. What is it?",
     "answer": "Owl",
     "choices": [
       "Owl",
@@ -997,7 +997,7 @@
   },
   {
     "tier": 1,
-    "question": "Fastest animal in a dive, reaching 300+ km/h:",
+    "question": "Plunging in a stoop dive at 300+ km/h, which bird is the fastest animal alive?",
     "answer": "Peregrine falcon",
     "choices": [
       "Peregrine falcon",
@@ -1009,7 +1009,7 @@
   },
   {
     "tier": 1,
-    "question": "Eight-legged predator whose web protein is stronger than steel by weight:",
+    "question": "Spinning silk with higher tensile strength than steel by weight, which eight-legged predator is this?",
     "answer": "Spider",
     "choices": [
       "Spider",
@@ -1021,7 +1021,7 @@
   },
   {
     "tier": 1,
-    "question": "Most venomous spider in North America, with a red hourglass mark:",
+    "question": "Bearing a red hourglass mark on its abdomen, which is the most venomous spider in North America?",
     "answer": "Black widow",
     "choices": [
       "Black widow",
@@ -1033,7 +1033,7 @@
   },
   {
     "tier": 1,
-    "question": "Sea creature with eight arms and two longer tentacles:",
+    "question": "With eight arms and two longer tentacles ending in clubs, which sea creature is this?",
     "answer": "Squid",
     "choices": [
       "Squid",
@@ -1045,7 +1045,7 @@
   },
   {
     "tier": 1,
-    "question": "Hard-shelled cephalopod that has barely changed in 500 million years:",
+    "question": "Living in a chambered shell built in a logarithmic spiral, this cephalopod has barely changed in 500 million years. What is it?",
     "answer": "Nautilus",
     "choices": [
       "Nautilus",
@@ -1057,7 +1057,7 @@
   },
   {
     "tier": 1,
-    "question": "Fish that builds a bubble nest and defends it fiercely:",
+    "question": "Famous in home aquariums, which fish builds a bubble nest at the surface and defends it fiercely?",
     "answer": "Betta",
     "choices": [
       "Betta",
@@ -1069,7 +1069,7 @@
   },
   {
     "tier": 1,
-    "question": "Sea creature with eight arms that can taste with its skin:",
+    "question": "With chemoreceptors on each of its eight arms, which sea creature can literally taste with its skin?",
     "answer": "Octopus",
     "choices": [
       "Octopus",
@@ -1081,7 +1081,7 @@
   },
   {
     "tier": 1,
-    "question": "Worm that breaks into fragments, each regrowing into a new worm:",
+    "question": "Cut this worm in half and each piece regrows into a whole new worm. What is it?",
     "answer": "Planarian",
     "choices": [
       "Planarian",
@@ -1093,7 +1093,7 @@
   },
   {
     "tier": 1,
-    "question": "Soil-aerating worm that has segmented rings and lives in topsoil:",
+    "question": "Aerating the soil with its segmented body, which worm lives in topsoil and was the subject of Darwin's last book?",
     "answer": "Earthworm",
     "choices": [
       "Earthworm",
@@ -1105,7 +1105,7 @@
   },
   {
     "tier": 1,
-    "question": "Beetle that taps its head on wood to attract a mate:",
+    "question": "Tapping its head against the wooden beams of old houses to attract mates, which ominously named beetle is this?",
     "answer": "Deathwatch beetle",
     "choices": [
       "Deathwatch beetle",
@@ -1117,7 +1117,7 @@
   },
   {
     "tier": 1,
-    "question": "Beetle that mixes hot chemicals on demand to spray attackers:",
+    "question": "Mixing hot chemicals on demand to spray attackers at ~100°C, which beetle is this?",
     "answer": "Bombardier beetle",
     "choices": [
       "Bombardier beetle",
@@ -1129,7 +1129,7 @@
   },
   {
     "tier": 1,
-    "question": "Insect that lives in colonies with workers, soldiers, and a queen:",
+    "question": "Some species farm fungi or herd aphids for sugary honeydew. Which colonial insect is this?",
     "answer": "Ant",
     "choices": [
       "Ant",
@@ -1141,7 +1141,7 @@
   },
   {
     "tier": 1,
-    "question": "Insect that undergoes complete metamorphosis: egg, larva, pupa, adult:",
+    "question": "Inside a chrysalis, larval tissues largely break down and rebuild as adult. Which insect undergoes this complete metamorphosis?",
     "answer": "Butterfly",
     "choices": [
       "Butterfly",
@@ -1153,7 +1153,7 @@
   },
   {
     "tier": 1,
-    "question": "Hardiest animal, surviving outer space and 1000x lethal radiation:",
+    "question": "Sent on an ESA mission in 2007 and returning alive from outer space, which animal is famous for surviving 1000x lethal radiation?",
     "answer": "Tardigrade",
     "choices": [
       "Tardigrade",
@@ -1165,7 +1165,7 @@
   },
   {
     "tier": 1,
-    "question": "Sea creature that hunts by changing color to match its surroundings:",
+    "question": "Switching color in milliseconds via chromatophores, which sea creature hunts by camouflage?",
     "answer": "Cuttlefish",
     "choices": [
       "Cuttlefish",
@@ -1177,7 +1177,7 @@
   },
   {
     "tier": 1,
-    "question": "Largest spider in the world, native to the Amazon basin:",
+    "question": "Native to the Amazon basin with a leg span up to 30cm, which is the largest spider in the world?",
     "answer": "Goliath birdeater",
     "choices": [
       "Goliath birdeater",
@@ -1189,7 +1189,7 @@
   },
   {
     "tier": 1,
-    "question": "Number of stomach chambers in a cow:",
+    "question": "How many stomach chambers does a cow have to ferment grass?",
     "answer": "Four",
     "choices": [
       "Four",
@@ -1201,7 +1201,7 @@
   },
   {
     "tier": 1,
-    "question": "Asteroid impact 66 million years ago wiped out the non-avian:",
+    "question": "An asteroid impact 66 million years ago at Chicxulub wiped out the non-avian what?",
     "answer": "Dinosaurs",
     "choices": [
       "Dinosaurs",
@@ -1213,7 +1213,7 @@
   },
   {
     "tier": 1,
-    "question": "Three-horned plant-eating dinosaur with a bony neck frill:",
+    "question": "Coexisting with T. rex in Late Cretaceous North America, this three-horned plant-eater with a bony frill was:",
     "answer": "Triceratops",
     "choices": [
       "Triceratops",
@@ -1225,7 +1225,7 @@
   },
   {
     "tier": 1,
-    "question": "Tyrant lizard king of late Cretaceous North America:",
+    "question": "Up to 12m and 9 tonnes, this 'tyrant lizard king' was the largest land carnivore of Late Cretaceous North America. Which dinosaur?",
     "answer": "Tyrannosaurus",
     "choices": [
       "Tyrannosaurus",
@@ -1237,7 +1237,7 @@
   },
   {
     "tier": 1,
-    "question": "Plated herbivorous dinosaur with spikes on its tail:",
+    "question": "With plates likely used for thermoregulation and display, which plated herbivorous dinosaur had spikes on its tail?",
     "answer": "Stegosaurus",
     "choices": [
       "Stegosaurus",
@@ -1249,7 +1249,7 @@
   },
   {
     "tier": 1,
-    "question": "Long-necked sauropod whose name means 'arm lizard':",
+    "question": "Whose name means 'arm lizard' for its longer front legs — a long-necked Jurassic sauropod?",
     "answer": "Brachiosaurus",
     "choices": [
       "Brachiosaurus",
@@ -1261,7 +1261,7 @@
   },
   {
     "tier": 1,
-    "question": "First bird-like fossil, found in 1861 Solnhofen, Germany:",
+    "question": "Found in 1861 in Solnhofen, Germany, this feathered, toothed bird-like fossil is:",
     "answer": "Archaeopteryx",
     "choices": [
       "Archaeopteryx",
@@ -1273,7 +1273,7 @@
   },
   {
     "tier": 1,
-    "question": "Largest known dinosaur, a Cretaceous titanosaur from Argentina:",
+    "question": "A Cretaceous titanosaur from Argentina, possibly 35m long and 75 tonnes — which is the largest known dinosaur?",
     "answer": "Argentinosaurus",
     "choices": [
       "Argentinosaurus",
@@ -1285,7 +1285,7 @@
   },
   {
     "tier": 1,
-    "question": "Real-size of a Velociraptor in life:",
+    "question": "Despite Jurassic Park's exaggeration, what was the real-life size of a Velociraptor?",
     "answer": "Turkey-sized",
     "choices": [
       "Turkey-sized",
@@ -1297,7 +1297,7 @@
   },
   {
     "tier": 1,
-    "question": "Famous Australopithecus skeleton found in Ethiopia in 1974:",
+    "question": "Found in Ethiopia in 1974 and named after a Beatles song, which famous Australopithecus skeleton is this?",
     "answer": "Lucy",
     "choices": [
       "Lucy",
@@ -1309,7 +1309,7 @@
   },
   {
     "tier": 1,
-    "question": "Largest, most complete T. rex skeleton, displayed in Chicago:",
+    "question": "Found in South Dakota in 1990 and displayed at Chicago's Field Museum, which is the largest, most complete T. rex skeleton?",
     "answer": "Sue",
     "choices": [
       "Sue",
@@ -1321,7 +1321,7 @@
   },
   {
     "tier": 1,
-    "question": "Self-taught fossil hunter who found the first complete ichthyosaur:",
+    "question": "In 1811 at Lyme Regis, England, this self-taught fossil hunter found the first complete ichthyosaur. Who was she?",
     "answer": "Mary Anning",
     "choices": [
       "Mary Anning",
@@ -1333,7 +1333,7 @@
   },
   {
     "tier": 1,
-    "question": "Extinct Ice Age cousin of the elephant, covered in shaggy fur:",
+    "question": "Holding on at Wrangel Island until about 4,000 years ago, this shaggy Ice Age elephant cousin was:",
     "answer": "Woolly mammoth",
     "choices": [
       "Woolly mammoth",
@@ -1345,7 +1345,7 @@
   },
   {
     "tier": 1,
-    "question": "Ice Age cat with 12cm-long curved canine teeth:",
+    "question": "With 12cm-long curved canine teeth and famous from the La Brea Tar Pits, which Ice Age cat is this?",
     "answer": "Smilodon",
     "choices": [
       "Smilodon",
@@ -1357,7 +1357,7 @@
   },
   {
     "tier": 1,
-    "question": "Elephant-sized Ice Age ground sloth of the Americas:",
+    "question": "Standing up to 6m on hind legs, which elephant-sized Ice Age ground sloth roamed the Americas?",
     "answer": "Megatherium",
     "choices": [
       "Megatherium",
@@ -1369,7 +1369,7 @@
   },
   {
     "tier": 1,
-    "question": "Car-sized armored relative of the armadillo from the Ice Age:",
+    "question": "With a bony domed shell and a clubbed tail, which car-sized Ice Age armadillo relative is this?",
     "answer": "Glyptodon",
     "choices": [
       "Glyptodon",
@@ -1381,7 +1381,7 @@
   },
   {
     "tier": 1,
-    "question": "Deer with antlers spanning up to 3.7m, called the 'Irish elk':",
+    "question": "With antlers up to 3.7m wide, this Ice Age deer is misleadingly called the 'Irish elk'. What is its scientific name?",
     "answer": "Megaloceros",
     "choices": [
       "Megaloceros",
@@ -1393,7 +1393,7 @@
   },
   {
     "tier": 1,
-    "question": "Worst mass extinction in Earth's history, 252 million years ago:",
+    "question": "Linked to Siberian volcanism 252 million years ago, which was the worst mass extinction in Earth's history?",
     "answer": "Permian",
     "choices": [
       "Permian",
@@ -1405,7 +1405,7 @@
   },
   {
     "tier": 1,
-    "question": "Geological event 540 million years ago when most animal phyla appeared:",
+    "question": "About 540 million years ago, the major animal body plans appeared in the fossil record. What is this event called?",
     "answer": "Cambrian explosion",
     "choices": [
       "Cambrian explosion",
@@ -1417,7 +1417,7 @@
   },
   {
     "tier": 1,
-    "question": "Era when dinosaurs ruled, often called the 'Age of Reptiles':",
+    "question": "The 'Age of Reptiles', running from 252 to 66 million years ago, is known as which geological era?",
     "answer": "Mesozoic",
     "choices": [
       "Mesozoic",
@@ -1429,7 +1429,7 @@
   },
   {
     "tier": 1,
-    "question": "Modern era we live in, often called the 'Age of Mammals':",
+    "question": "Often called the 'Age of Mammals' and beginning 66 million years ago, which is the era we live in?",
     "answer": "Cenozoic",
     "choices": [
       "Cenozoic",
@@ -1441,7 +1441,7 @@
   },
   {
     "tier": 1,
-    "question": "Pre-modern human species in Europe and W. Asia until ~40,000 BP:",
+    "question": "Living in Europe and West Asia until ~40,000 BP, which pre-modern human species contributed ~2% of non-African DNA?",
     "answer": "Neanderthal",
     "choices": [
       "Neanderthal",
@@ -1453,7 +1453,7 @@
   },
   {
     "tier": 1,
-    "question": "Hominin known only from a Siberian cave finger bone and DNA:",
+    "question": "Identified in 2010 from a Siberian cave finger bone and ancient DNA, which hominin is this?",
     "answer": "Denisovan",
     "choices": [
       "Denisovan",
@@ -1465,7 +1465,7 @@
   },
   {
     "tier": 1,
-    "question": "Land mammal ancestor of whales, found in Pakistan:",
+    "question": "Found in Pakistan and dating to about 50 million years ago, which dog-sized animal was an early ancestor of whales?",
     "answer": "Pakicetus",
     "choices": [
       "Pakicetus",
@@ -1477,7 +1477,7 @@
   },
   {
     "tier": 1,
-    "question": "Cope and Marsh's late-1800s rivalry that named ~150 dinosaurs:",
+    "question": "Late-1800s rivalry between Cope and Marsh, which produced ~150 named dinosaurs, was called what?",
     "answer": "Bone Wars",
     "choices": [
       "Bone Wars",
@@ -1489,7 +1489,7 @@
   },
   {
     "tier": 1,
-    "question": "Coiner of 'Dinosauria' in 1842, founder of London's Natural History Museum:",
+    "question": "In 1842 he coined 'Dinosauria' and founded London's Natural History Museum. Who was he?",
     "answer": "Richard Owen",
     "choices": [
       "Richard Owen",
@@ -1501,7 +1501,7 @@
   },
   {
     "tier": 1,
-    "question": "First dinosaur with feathers, discovered in 1990s China:",
+    "question": "Discovered in 1990s China's Liaoning Province, which was the first dinosaur confirmed to have feathers?",
     "answer": "Sinosauropteryx",
     "choices": [
       "Sinosauropteryx",
@@ -1513,7 +1513,7 @@
   },
   {
     "tier": 1,
-    "question": "Transitional 'fishapod' fossil discovered in the Arctic in 2004:",
+    "question": "Found in the Arctic in 2004 with proto-wrists and predicted by Neil Shubin's team, which 'fishapod' is this?",
     "answer": "Tiktaalik",
     "choices": [
       "Tiktaalik",
@@ -1525,7 +1525,7 @@
   },
   {
     "tier": 1,
-    "question": "Conservation status ranking the next step from 'Vulnerable':",
+    "question": "On the IUCN Red List, what is the conservation status one step beyond 'Vulnerable'?",
     "answer": "Endangered",
     "choices": [
       "Endangered",
@@ -1537,7 +1537,7 @@
   },
   {
     "tier": 1,
-    "question": "Earliest evidence of life on Earth, ~3.5 billion years ago:",
+    "question": "Best preserved in Western Australia, these ~3.5-billion-year-old layered microbial mats are the earliest evidence of life. What are they called?",
     "answer": "Stromatolites",
     "choices": [
       "Stromatolites",
@@ -1549,7 +1549,7 @@
   },
   {
     "tier": 1,
-    "question": "Period when fish first crawled onto land, ~375 million years ago:",
+    "question": "Often called the 'Age of Fishes', this is the period when fish first crawled onto land ~375 million years ago. Which is it?",
     "answer": "Devonian",
     "choices": [
       "Devonian",
@@ -1561,7 +1561,7 @@
   },
   {
     "tier": 1,
-    "question": "Period of giant insects and coal forests with very high oxygen:",
+    "question": "With Meganeura dragonflies of 70cm wingspan and very high oxygen levels, which period buried the coal?",
     "answer": "Carboniferous",
     "choices": [
       "Carboniferous",
@@ -1573,7 +1573,7 @@
   },
   {
     "tier": 1,
-    "question": "Sail-backed mammal-ancestor often confused with a dinosaur:",
+    "question": "Often mistaken for a dinosaur but actually a Permian mammal-ancestor with a sail on its back, which animal is this?",
     "answer": "Dimetrodon",
     "choices": [
       "Dimetrodon",
@@ -1585,7 +1585,7 @@
   },
   {
     "tier": 1,
-    "question": "1909 Canadian fossil site full of bizarre Cambrian animals:",
+    "question": "In 1909, Charles Walcott found Anomalocaris and other bizarre Cambrian animals at which Canadian fossil site?",
     "answer": "Burgess Shale",
     "choices": [
       "Burgess Shale",
@@ -1597,7 +1597,7 @@
   },
   {
     "tier": 1,
-    "question": "Fossil-rich tar seeps in downtown Los Angeles:",
+    "question": "Smilodon, dire wolves, and mammoths are all preserved in fossil-rich tar seeps in downtown Los Angeles. What is the site called?",
     "answer": "La Brea",
     "choices": [
       "La Brea",
@@ -1609,7 +1609,7 @@
   },
   {
     "tier": 1,
-    "question": "Group of large prehistoric mammals like mammoth, mastodon, and giant sloth:",
+    "question": "Mammoth, mastodon, and giant sloth are all examples of large prehistoric mammals collectively called:",
     "answer": "Megafauna",
     "choices": [
       "Megafauna",
@@ -1621,7 +1621,7 @@
   },
   {
     "tier": 1,
-    "question": "Paul Martin's 1967 hypothesis that humans drove Ice Age megafauna extinct:",
+    "question": "In 1967 Paul Martin proposed which hypothesis: that humans drove Ice Age megafauna to extinction?",
     "answer": "Overkill",
     "choices": [
       "Overkill",
@@ -1633,7 +1633,7 @@
   },
   {
     "tier": 1,
-    "question": "First clearly bipedal hominin genus, including Lucy:",
+    "question": "Living ~4 to 2 million years ago and including the famous Lucy, which was the first clearly bipedal hominin genus?",
     "answer": "Australopithecus",
     "choices": [
       "Australopithecus",
@@ -1645,7 +1645,7 @@
   },
   {
     "tier": 1,
-    "question": "First hominin in the genus Homo, named for 'handy man':",
+    "question": "Making the first Oldowan stone tools ~2.4 million years ago, which 'handy man' was the first hominin in genus Homo?",
     "answer": "Homo habilis",
     "choices": [
       "Homo habilis",
@@ -1657,7 +1657,7 @@
   },
   {
     "tier": 1,
-    "question": "First hominin to leave Africa, ~1.9 million years ago:",
+    "question": "Spreading across Eurasia ~1.9 million years ago, which was the first hominin species to leave Africa?",
     "answer": "Homo erectus",
     "choices": [
       "Homo erectus",
@@ -1669,7 +1669,7 @@
   },
   {
     "tier": 1,
-    "question": "Continent where Homo sapiens originated about 300,000 years ago:",
+    "question": "With the earliest known fossils from Jebel Irhoud in Morocco, on which continent did Homo sapiens originate ~300,000 years ago?",
     "answer": "Africa",
     "choices": [
       "Africa",
@@ -1681,7 +1681,7 @@
   },
   {
     "tier": 1,
-    "question": "First animal humans domesticated, from the gray wolf:",
+    "question": "Descended from the gray wolf 15-40,000 years ago, which was the first animal humans domesticated?",
     "answer": "Dog",
     "choices": [
       "Dog",
@@ -1693,7 +1693,7 @@
   },
   {
     "tier": 1,
-    "question": "Wild ancestor of the domestic dog:",
+    "question": "Which wild canid is the direct ancestor of all domestic dogs?",
     "answer": "Gray wolf",
     "choices": [
       "Gray wolf",
@@ -1705,7 +1705,7 @@
   },
   {
     "tier": 1,
-    "question": "Wild ancestor of domestic cattle:",
+    "question": "Last seen in Poland in 1627, which extinct wild bovid is the ancestor of all domestic cattle?",
     "answer": "Aurochs",
     "choices": [
       "Aurochs",
@@ -1717,7 +1717,7 @@
   },
   {
     "tier": 1,
-    "question": "Wild ancestor of the chicken, native to Southeast Asia:",
+    "question": "Native to Southeast Asia and domesticated ~5,500 years ago, which wild fowl is the ancestor of the chicken?",
     "answer": "Red junglefowl",
     "choices": [
       "Red junglefowl",
@@ -1729,7 +1729,7 @@
   },
   {
     "tier": 1,
-    "question": "Place cats are thought to have self-domesticated by hunting grain pests:",
+    "question": "Earliest evidence comes from a Cyprus burial ~9,500 BP — where are cats thought to have self-domesticated by hunting grain pests?",
     "answer": "Near East",
     "choices": [
       "Near East",
@@ -1741,7 +1741,7 @@
   },
   {
     "tier": 1,
-    "question": "Region where sheep and goats were first domesticated ~11,000 years ago:",
+    "question": "Alongside wheat and barley, sheep and goats were first domesticated ~11,000 years ago in which region?",
     "answer": "Fertile Crescent",
     "choices": [
       "Fertile Crescent",
@@ -1753,7 +1753,7 @@
   },
   {
     "tier": 1,
-    "question": "Black, hornless Scottish cattle breed most common in US beef:",
+    "question": "Black, hornless and originating in northeast Scotland, which is the most common cattle breed in US beef?",
     "answer": "Angus",
     "choices": [
       "Angus",
@@ -1765,7 +1765,7 @@
   },
   {
     "tier": 1,
-    "question": "English breed with a red body and white face — foundational US beef:",
+    "question": "With a red body and a white face, which foundational English breed is hardy on American rangeland?",
     "answer": "Hereford",
     "choices": [
       "Hereford",
@@ -1777,7 +1777,7 @@
   },
   {
     "tier": 1,
-    "question": "Channel Islands dairy breed with rich, high-butterfat milk:",
+    "question": "Small, fawn-colored and from the Channel Islands, which dairy breed produces the richest, highest-butterfat milk?",
     "answer": "Jersey",
     "choices": [
       "Jersey",
@@ -1789,7 +1789,7 @@
   },
   {
     "tier": 1,
-    "question": "Black-and-white dairy breed, top milk producer:",
+    "question": "Producing ~10,000 gallons of milk per cow per year, which black-and-white dairy breed tops the milk volume charts?",
     "answer": "Holstein",
     "choices": [
       "Holstein",
@@ -1801,7 +1801,7 @@
   },
   {
     "tier": 1,
-    "question": "Japanese cattle breed prized for marbled, fatty beef:",
+    "question": "Famed for richly marbled, fatty beef, which Japanese cattle breed (with Kobe as one specific brand) is prized worldwide?",
     "answer": "Wagyu",
     "choices": [
       "Wagyu",
@@ -1813,7 +1813,7 @@
   },
   {
     "tier": 1,
-    "question": "Humped, heat-tolerant cattle of Indian origin used in the US South:",
+    "question": "Humped, heat-tolerant, and originally from India, which zebu cattle breed is used in the US South?",
     "answer": "Brahman",
     "choices": [
       "Brahman",
@@ -1825,7 +1825,7 @@
   },
   {
     "tier": 1,
-    "question": "Spanish-descended American cattle nearly extinct around 1900:",
+    "question": "Spanish-descended and nearly extinct around 1900, which iconic American cattle breed was restored by 20th-century ranchers?",
     "answer": "Texas Longhorn",
     "choices": [
       "Texas Longhorn",
@@ -1837,7 +1837,7 @@
   },
   {
     "tier": 1,
-    "question": "Spanish-origin sheep breed prized for the finest wool:",
+    "question": "Spanish in origin and centered today in Australia, which sheep breed is prized for the finest wool?",
     "answer": "Merino",
     "choices": [
       "Merino",
@@ -1849,7 +1849,7 @@
   },
   {
     "tier": 1,
-    "question": "Black-faced English sheep breed used mainly for meat:",
+    "question": "With a black face and legs and used mainly for meat, which English sheep breed is this?",
     "answer": "Suffolk",
     "choices": [
       "Suffolk",
@@ -1861,7 +1861,7 @@
   },
   {
     "tier": 1,
-    "question": "English sheep that can breed out of season, used for milk and meat:",
+    "question": "Able to lamb twice a year out of season, which English sheep breed is common in spring-lamb production?",
     "answer": "Dorset",
     "choices": [
       "Dorset",
@@ -1873,7 +1873,7 @@
   },
   {
     "tier": 1,
-    "question": "White, lean English pig breed behind most commercial pork:",
+    "question": "With long bodies and low backfat — also called Large White — which English pig breed dominates commercial pork?",
     "answer": "Yorkshire",
     "choices": [
       "Yorkshire",
@@ -1885,7 +1885,7 @@
   },
   {
     "tier": 1,
-    "question": "Black English heritage pig with white points, favored for charcuterie:",
+    "question": "Known as Kurobuta in Japan and favored for charcuterie, which black English heritage pig is this?",
     "answer": "Berkshire",
     "choices": [
       "Berkshire",
@@ -1897,7 +1897,7 @@
   },
   {
     "tier": 1,
-    "question": "Spanish acorn-fed black pig of the Iberian oak savannas:",
+    "question": "Finished on acorns in the dehesa, this Spanish black pig produces jamón Ibérico de bellota. What is it called?",
     "answer": "Iberico",
     "choices": [
       "Iberico",
@@ -1909,7 +1909,7 @@
   },
   {
     "tier": 1,
-    "question": "Curly-haired 'wooly pig' from Hungary, near-extinct, now restored:",
+    "question": "With curly hair earning the name 'wooly pig', which near-extinct Hungarian breed was rescued by heritage breeders in the 1990s?",
     "answer": "Mangalitsa",
     "choices": [
       "Mangalitsa",
@@ -1921,7 +1921,7 @@
   },
   {
     "tier": 1,
-    "question": "Italian commercial chicken breed laying white eggs:",
+    "question": "Producing white eggs and dominant in commercial laying flocks, which is this Italian chicken breed?",
     "answer": "Leghorn",
     "choices": [
       "Leghorn",
@@ -1933,7 +1933,7 @@
   },
   {
     "tier": 1,
-    "question": "American dual-purpose chicken laying brown eggs, named for a state:",
+    "question": "Developed in 1854 and named for a US state, which hardy dual-purpose chicken lays brown eggs?",
     "answer": "Rhode Island Red",
     "choices": [
       "Rhode Island Red",
@@ -1945,7 +1945,7 @@
   },
   {
     "tier": 1,
-    "question": "American chicken breed with black-and-white barred feathers:",
+    "question": "Developed in 1869 with black-and-white barred feathers, which American heritage chicken breed is this?",
     "answer": "Plymouth Rock",
     "choices": [
       "Plymouth Rock",
@@ -1957,7 +1957,7 @@
   },
   {
     "tier": 1,
-    "question": "Fluffy Chinese chicken breed with black skin and five toes:",
+    "question": "With black skin, fluffy feathers, and five toes instead of four, which Chinese chicken breed is this?",
     "answer": "Silkie",
     "choices": [
       "Silkie",
@@ -1969,7 +1969,7 @@
   },
   {
     "tier": 1,
-    "question": "Color of an earlobe usually predicts the color of a hen's:",
+    "question": "In most breeds, the color of a hen's earlobe predicts the color of her what?",
     "answer": "Eggs",
     "choices": [
       "Eggs",
@@ -1981,7 +1981,7 @@
   },
   {
     "tier": 1,
-    "question": "Most popular AKC dog breed for decades until 2022:",
+    "question": "Holding the AKC top spot for decades until 2022, which dog breed has now been dethroned?",
     "answer": "Labrador Retriever",
     "choices": [
       "Labrador Retriever",
@@ -1993,7 +1993,7 @@
   },
   {
     "tier": 1,
-    "question": "Breed widely ranked the most intelligent dog by Stanley Coren:",
+    "question": "Originating in the English-Scottish borderlands and ranked most intelligent by Stanley Coren, which dog breed is this?",
     "answer": "Border Collie",
     "choices": [
       "Border Collie",
@@ -2005,7 +2005,7 @@
   },
   {
     "tier": 1,
-    "question": "Most common modern US military working dog breed:",
+    "question": "Cairo, who served on the bin Laden raid in 2011, was an example of which most common US military working dog breed?",
     "answer": "Belgian Malinois",
     "choices": [
       "Belgian Malinois",
@@ -2017,7 +2017,7 @@
   },
   {
     "tier": 1,
-    "question": "Versatile German dog developed by Max von Stephanitz in 1899:",
+    "question": "Developed in 1899 by Max von Stephanitz and used worldwide in police and military work, which versatile German dog is this?",
     "answer": "German Shepherd",
     "choices": [
       "German Shepherd",
@@ -2029,7 +2029,7 @@
   },
   {
     "tier": 1,
-    "question": "Sled-pulling breed used in the Iditarod, from the Chukchi people:",
+    "question": "Used in the Iditarod and originating with the Chukchi people, which thick-coated sled dog breed is this?",
     "answer": "Siberian Husky",
     "choices": [
       "Siberian Husky",
@@ -2041,7 +2041,7 @@
   },
   {
     "tier": 1,
-    "question": "German 'badger dog' bred to enter setts and corner the prey:",
+    "question": "Whose name literally means 'badger dog' in German for its job entering setts to corner prey?",
     "answer": "Dachshund",
     "choices": [
       "Dachshund",
@@ -2053,7 +2053,7 @@
   },
   {
     "tier": 1,
-    "question": "AKC dog group that includes terriers, hounds, and:",
+    "question": "The AKC has 7 dog groups including terriers, hounds, and which one?",
     "answer": "Sporting",
     "choices": [
       "Sporting",
@@ -2065,7 +2065,7 @@
   },
   {
     "tier": 1,
-    "question": "Flat-faced dog breeds with breathing problems are called:",
+    "question": "Bulldogs, pugs, and French bulldogs all have flat faces and breathing problems — what is the technical term?",
     "answer": "Brachycephalic",
     "choices": [
       "Brachycephalic",
@@ -2077,7 +2077,7 @@
   },
   {
     "tier": 1,
-    "question": "Oldest documented registered horse breed, from the desert Bedouin:",
+    "question": "With a distinctive dished face and developed by the desert Bedouin, which is the oldest documented registered horse breed?",
     "answer": "Arabian",
     "choices": [
       "Arabian",
@@ -2089,7 +2089,7 @@
   },
   {
     "tier": 1,
-    "question": "English racing horse breed, an Arabian-English cross from the 1600s:",
+    "question": "Founded by three Arabian-English foundation stallions in the 1600s, which English racing horse breed is the basis of modern flat racing?",
     "answer": "Thoroughbred",
     "choices": [
       "Thoroughbred",
@@ -2101,7 +2101,7 @@
   },
   {
     "tier": 1,
-    "question": "American horse fastest over a quarter-mile, used for cattle work:",
+    "question": "Compact, muscular, and the fastest horse over a quarter-mile, which American breed is most popular by US registration?",
     "answer": "Quarter Horse",
     "choices": [
       "Quarter Horse",
@@ -2113,7 +2113,7 @@
   },
   {
     "tier": 1,
-    "question": "Scottish draft horse, ~1 tonne, used by Budweiser hitches:",
+    "question": "With feathered legs and a bay coat with white blaze, which ~1-tonne Scottish draft horse pulls Budweiser's iconic hitches?",
     "answer": "Clydesdale",
     "choices": [
       "Clydesdale",
@@ -2125,7 +2125,7 @@
   },
   {
     "tier": 1,
-    "question": "Tallest, heaviest horse breed, an English medieval war-horse line:",
+    "question": "Up to 19 hands tall and originally an English medieval war-horse, which is the tallest, heaviest horse breed?",
     "answer": "Shire",
     "choices": [
       "Shire",
@@ -2137,7 +2137,7 @@
   },
   {
     "tier": 1,
-    "question": "Spotted American breed selectively bred by the Nez Perce:",
+    "question": "Selectively bred by the Nez Perce and named for the Palouse River, which spotted American breed is this?",
     "answer": "Appaloosa",
     "choices": [
       "Appaloosa",
@@ -2149,7 +2149,7 @@
   },
   {
     "tier": 1,
-    "question": "Feral horses of the American West, descended from Spanish stock:",
+    "question": "Descended from Spanish stock and managed by the BLM on public lands, what are the feral horses of the American West called?",
     "answer": "Mustangs",
     "choices": [
       "Mustangs",
@@ -2161,7 +2161,7 @@
   },
   {
     "tier": 1,
-    "question": "Animal milked for the Italian DOP mozzarella di bufala:",
+    "question": "With higher fat than cow milk, the Italian DOP mozzarella di bufala is made from milk of which animal?",
     "answer": "Water buffalo",
     "choices": [
       "Water buffalo",
@@ -2173,7 +2173,7 @@
   },
   {
     "tier": 1,
-    "question": "Dairy animal whose milk has smaller fat globules, easier to digest:",
+    "question": "With smaller fat globules and lower lactose, which dairy animal's milk is often easier to digest than cow's milk?",
     "answer": "Goat",
     "choices": [
       "Goat",
@@ -2185,7 +2185,7 @@
   },
   {
     "tier": 1,
-    "question": "Dairy animal with the highest fat content (~7%) in its milk:",
+    "question": "Used for Roquefort, Pecorino Romano, and traditional feta, which dairy animal's milk has the highest fat content at ~7%?",
     "answer": "Sheep",
     "choices": [
       "Sheep",
@@ -2197,7 +2197,7 @@
   },
   {
     "tier": 1,
-    "question": "Major Spanish cheese made from sheep's milk:",
+    "question": "Made from the milk of Manchega sheep in La Mancha, which PDO-protected Spanish cheese is this?",
     "answer": "Manchego",
     "choices": [
       "Manchego",
@@ -2209,7 +2209,7 @@
   },
   {
     "tier": 1,
-    "question": "Top US egg grade based on freshness and quality:",
+    "question": "USDA grades eggs by air cell, white firmness, and yolk centering. What is the top grade?",
     "answer": "AA",
     "choices": [
       "AA",
@@ -2221,7 +2221,7 @@
   },
   {
     "tier": 1,
-    "question": "Egg label meaning hens have meaningful outdoor access on pasture:",
+    "question": "Which egg-carton label requires that hens have meaningful outdoor access on actual pasture?",
     "answer": "Pasture-raised",
     "choices": [
       "Pasture-raised",
@@ -2233,7 +2233,7 @@
   },
   {
     "tier": 1,
-    "question": "Determines whether an egg is brown or white:",
+    "question": "Despite no nutritional difference, what actually determines whether an egg is brown or white?",
     "answer": "Breed of hen",
     "choices": [
       "Breed of hen",
@@ -2245,7 +2245,7 @@
   },
   {
     "tier": 1,
-    "question": "1965 UK welfare framework listing freedoms from hunger, fear, etc.:",
+    "question": "Coming out of the 1965 Brambell Report, which UK welfare framework lists freedoms from hunger, fear, and more?",
     "answer": "Five Freedoms",
     "choices": [
       "Five Freedoms",
@@ -2257,7 +2257,7 @@
   },
   {
     "tier": 1,
-    "question": "Virginia farm of Joel Salatin known for multispecies rotational grazing:",
+    "question": "Featured in Michael Pollan's writing and run by Joel Salatin in Virginia, which farm pioneered multispecies rotational grazing?",
     "answer": "Polyface",
     "choices": [
       "Polyface",
@@ -2269,7 +2269,7 @@
   },
   {
     "tier": 1,
-    "question": "Sport of hunting with trained birds of prey, on UNESCO list:",
+    "question": "Added to UNESCO's Intangible Heritage list in 2016, which sport involves hunting with trained birds of prey?",
     "answer": "Falconry",
     "choices": [
       "Falconry",
@@ -2281,7 +2281,7 @@
   },
   {
     "tier": 1,
-    "question": "1851 invention of movable frames revolutionized:",
+    "question": "Lorenzo Langstroth's 1851 'bee space' discovery enabling movable frames revolutionized which practice?",
     "answer": "Beekeeping",
     "choices": [
       "Beekeeping",
@@ -2293,7 +2293,7 @@
   },
   {
     "tier": 1,
-    "question": "Phenomenon where worker bees abandon a healthy hive, named in 2006:",
+    "question": "Named in 2006 when worker bees mysteriously abandoned healthy hives, which phenomenon is this?",
     "answer": "Colony collapse",
     "choices": [
       "Colony collapse",
@@ -2305,7 +2305,7 @@
   },
   {
     "tier": 1,
-    "question": "Breed of dog most associated with sheep herding via 'the eye':",
+    "question": "With an intense crouching gaze to control the flock, which dog breed is most associated with sheep herding by 'eye'?",
     "answer": "Border Collie",
     "choices": [
       "Border Collie",
@@ -2317,7 +2317,7 @@
   },
   {
     "tier": 1,
-    "question": "Massive white French breed used as a livestock guardian:",
+    "question": "Bonded with the flock from puppyhood to protect against wolves and bears, which massive white French livestock guardian is this?",
     "answer": "Great Pyrenees",
     "choices": [
       "Great Pyrenees",
@@ -2329,7 +2329,7 @@
   },
   {
     "tier": 1,
-    "question": "1,000-mile Alaskan sled-dog race honoring the 1925 serum run:",
+    "question": "Founded in 1973 to honor the 1925 Nome serum run, which 1,000-mile Alaskan sled-dog race is this?",
     "answer": "Iditarod",
     "choices": [
       "Iditarod",
@@ -2341,7 +2341,7 @@
   },
   {
     "tier": 1,
-    "question": "Asian country where each person averages roughly three horses:",
+    "question": "With ~3 horses per person and a culture of mounted archery from Genghis Khan's day, which Asian country is this?",
     "answer": "Mongolia",
     "choices": [
       "Mongolia",
@@ -2353,7 +2353,7 @@
   },
   {
     "tier": 1,
-    "question": "Norway pioneered commercial farming of this fish in the 1970s:",
+    "question": "Producing ~1.5 million tonnes a year globally, this farmed fish was pioneered commercially by Norway in the 1970s. What is it?",
     "answer": "Atlantic salmon",
     "choices": [
       "Atlantic salmon",
@@ -2365,7 +2365,7 @@
   },
   {
     "tier": 1,
-    "question": "World's most farmed fish, depicted in Egyptian art:",
+    "question": "Native to the Nile and depicted in Egyptian art, which is the world's most farmed fish?",
     "answer": "Tilapia",
     "choices": [
       "Tilapia",
@@ -2377,7 +2377,7 @@
   },
   {
     "tier": 1,
-    "question": "Acronym for large industrial livestock operations criticized by welfare groups:",
+    "question": "Criticized for manure runoff and welfare concerns, what is the acronym for large industrial livestock operations?",
     "answer": "CAFO",
     "choices": [
       "CAFO",
@@ -2389,7 +2389,7 @@
   },
   {
     "tier": 1,
-    "question": "Farming approach that prioritizes building soil and cycling livestock:",
+    "question": "Centered on building soil and cycling livestock — cover crops, minimal tillage, integrated grazing — which farming approach is this?",
     "answer": "Regenerative",
     "choices": [
       "Regenerative",
@@ -2401,7 +2401,7 @@
   },
   {
     "tier": 1,
-    "question": "Diet difference often cited between grass-fed and grain-finished beef:",
+    "question": "Often cited as higher in grass-fed beef than in grain-finished, what is this widely discussed dietary marker?",
     "answer": "Omega-3 ratio",
     "choices": [
       "Omega-3 ratio",
@@ -2413,7 +2413,7 @@
   },
   {
     "tier": 1,
-    "question": "Year-round milk producer used for both cheese and meat in the Mediterranean:",
+    "question": "Used for Roquefort, Pecorino, and feta across millennia of Mediterranean tradition, which dairy and meat animal is this?",
     "answer": "Sheep",
     "choices": [
       "Sheep",
@@ -2425,7 +2425,7 @@
   },
   {
     "tier": 1,
-    "question": "Lamb classification with the highest grade in the US:",
+    "question": "On the USDA scale of Prime, Choice, Good, Utility, and Cull, what is the top grade for lamb?",
     "answer": "Prime",
     "choices": [
       "Prime",
@@ -2437,7 +2437,7 @@
   },
   {
     "tier": 1,
-    "question": "Dog used by the monks of the Great St. Bernard Pass for rescue:",
+    "question": "Used by the monks of the Great St. Bernard Pass in the Swiss Alps for cold-weather rescue, which dog breed is this?",
     "answer": "Saint Bernard",
     "choices": [
       "Saint Bernard",
@@ -2449,7 +2449,7 @@
   },
   {
     "tier": 1,
-    "question": "First federally protected service-animal role for blind veterans (1916):",
+    "question": "Trained in Germany after WWI for blind veterans in 1916, which was the first federally protected service-animal role?",
     "answer": "Guide dog",
     "choices": [
       "Guide dog",
@@ -2461,7 +2461,7 @@
   },
   {
     "tier": 1,
-    "question": "Federal law that defines service animal access in the US:",
+    "question": "Passed in 1990 to define service-animal public access in the US, which federal law is this?",
     "answer": "ADA",
     "choices": [
       "ADA",
@@ -2473,7 +2473,7 @@
   },
   {
     "tier": 1,
-    "question": "Trained farrier shoes which animal?:",
+    "question": "Which animal is trimmed and shoed by a trained farrier?",
     "answer": "Horse",
     "choices": [
       "Horse",
@@ -2485,7 +2485,7 @@
   },
   {
     "tier": 1,
-    "question": "Animal whose young is called a kid:",
+    "question": "Whose young is called a 'kid', with doe and buck for the adults?",
     "answer": "Goat",
     "choices": [
       "Goat",
@@ -2497,7 +2497,7 @@
   },
   {
     "tier": 1,
-    "question": "Young of a sheep is called:",
+    "question": "What is the term for a young sheep?",
     "answer": "Lamb",
     "choices": [
       "Lamb",
@@ -2509,7 +2509,7 @@
   },
   {
     "tier": 1,
-    "question": "Young of a cow is called:",
+    "question": "What is the term for a young cow?",
     "answer": "Calf",
     "choices": [
       "Calf",
@@ -2521,7 +2521,7 @@
   },
   {
     "tier": 1,
-    "question": "Female chicken that lays eggs is called:",
+    "question": "What is the term for a female chicken that lays eggs?",
     "answer": "Hen",
     "choices": [
       "Hen",
@@ -2533,7 +2533,7 @@
   },
   {
     "tier": 1,
-    "question": "Adult male chicken kept for breeding:",
+    "question": "What is the term for an adult male chicken kept for breeding?",
     "answer": "Rooster",
     "choices": [
       "Rooster",
@@ -2545,7 +2545,7 @@
   },
   {
     "tier": 1,
-    "question": "Group name for a flock of geese on the ground:",
+    "question": "What is the collective noun for a flock of geese on the ground?",
     "answer": "Gaggle",
     "choices": [
       "Gaggle",
@@ -2557,7 +2557,7 @@
   },
   {
     "tier": 1,
-    "question": "Group name for a flock of crows:",
+    "question": "What is the collective noun for a flock of crows?",
     "answer": "Murder",
     "choices": [
       "Murder",
@@ -2569,7 +2569,7 @@
   },
   {
     "tier": 1,
-    "question": "Group of lions is called a:",
+    "question": "What is the collective noun for a group of lions?",
     "answer": "Pride",
     "choices": [
       "Pride",
@@ -2581,7 +2581,7 @@
   },
   {
     "tier": 1,
-    "question": "Group of wolves working together is called a:",
+    "question": "What is the collective noun for a group of wolves?",
     "answer": "Pack",
     "choices": [
       "Pack",
@@ -2593,7 +2593,7 @@
   },
   {
     "tier": 1,
-    "question": "Group of whales or dolphins traveling together is a:",
+    "question": "What is the collective noun for a group of whales or dolphins?",
     "answer": "Pod",
     "choices": [
       "Pod",
@@ -2605,7 +2605,7 @@
   },
   {
     "tier": 1,
-    "question": "Group of fish swimming together for safety is a:",
+    "question": "Coordinating motion via lateral-line sensing of neighbors, what is the collective noun for a group of fish?",
     "answer": "School",
     "choices": [
       "School",
@@ -2617,7 +2617,7 @@
   },
   {
     "tier": 1,
-    "question": "Cattle without horns naturally are called:",
+    "question": "Cattle born naturally without horns due to a genetic trait are called what?",
     "answer": "Polled",
     "choices": [
       "Polled",
@@ -2629,7 +2629,7 @@
   },
   {
     "tier": 1,
-    "question": "Castrated adult male bull used for draft work:",
+    "question": "Trained for draft work, what is a castrated adult male bovine called?",
     "answer": "Ox",
     "choices": [
       "Ox",
@@ -2641,7 +2641,7 @@
   },
   {
     "tier": 1,
-    "question": "Type of farm where bees are kept:",
+    "question": "From Latin apis meaning 'bee', what is the name for a farm where bees are kept?",
     "answer": "Apiary",
     "choices": [
       "Apiary",
@@ -2653,7 +2653,7 @@
   },
   {
     "tier": 1,
-    "question": "Place where birds are kept on display or for breeding:",
+    "question": "What is the name for a structure where birds are kept for display or breeding?",
     "answer": "Aviary",
     "choices": [
       "Aviary",
@@ -2665,7 +2665,7 @@
   },
   {
     "tier": 1,
-    "question": "Sheep are sheared mostly for:",
+    "question": "Removing a fleece of 4-7kg once a year keeps the sheep healthy. What primary product are sheep sheared for?",
     "answer": "Wool",
     "choices": [
       "Wool",
@@ -2677,7 +2677,7 @@
   },
   {
     "tier": 1,
-    "question": "Goose product harvested for fine pillows and quilts:",
+    "question": "Harvested from soft under-plumage, what goose product fills fine pillows and quilts?",
     "answer": "Down",
     "choices": [
       "Down",
@@ -2689,7 +2689,7 @@
   },
   {
     "tier": 1,
-    "question": "Cattle and sheep are ruminants, which means they:",
+    "question": "Cattle and sheep are ruminants, meaning they regurgitate fermented forage and what?",
     "answer": "Chew cud",
     "choices": [
       "Chew cud",
@@ -2701,7 +2701,7 @@
   },
   {
     "tier": 1,
-    "question": "Animal kept on dehesa oak savannas in Spain:",
+    "question": "Finished on acorns to produce jamón Ibérico, which animal grazes Spain's dehesa oak savannas?",
     "answer": "Iberico pig",
     "choices": [
       "Iberico pig",
@@ -2713,7 +2713,7 @@
   },
   {
     "tier": 1,
-    "question": "Diamond-shaped white face is the classic look of:",
+    "question": "With a red body, often hornless, and famous for a diamond-shaped white face, which cattle breed is this?",
     "answer": "Hereford cattle",
     "choices": [
       "Hereford cattle",
@@ -2725,7 +2725,7 @@
   },
   {
     "tier": 1,
-    "question": "Selective breeding for color of this Japanese ornamental fish:",
+    "question": "Refined in Edo-period Japan from common carp ~1000 BP in China, which Japanese ornamental fish is selectively bred for color?",
     "answer": "Koi",
     "choices": [
       "Koi",
@@ -2737,7 +2737,7 @@
   },
   {
     "tier": 1,
-    "question": "Dual-purpose chicken from Sussex, England, often white with black neck:",
+    "question": "An old British heritage breed often white with a black neck, which dual-purpose chicken comes from England?",
     "answer": "Sussex",
     "choices": [
       "Sussex",
@@ -2749,7 +2749,7 @@
   },
   {
     "tier": 1,
-    "question": "English breed crossed with Plymouth Rock to make modern broilers:",
+    "question": "Crossed with Plymouth Rock to produce the dominant commercial meat chicken worldwide, which English breed is this?",
     "answer": "Cornish",
     "choices": [
       "Cornish",
@@ -2761,7 +2761,7 @@
   },
   {
     "tier": 1,
-    "question": "Most recent large-animal domesticate, around 2,000 years ago:",
+    "question": "Domesticated by the Sami and other Siberian peoples ~2,000 years ago, which is the most recent large-animal domesticate?",
     "answer": "Reindeer",
     "choices": [
       "Reindeer",
@@ -2773,7 +2773,7 @@
   },
   {
     "tier": 1,
-    "question": "South American camelid domesticated for pack work in the Andes:",
+    "question": "Domesticated for pack work in the Andes, which South American camelid carries cargo while alpacas grow fiber?",
     "answer": "Llama",
     "choices": [
       "Llama",
@@ -2785,7 +2785,7 @@
   },
   {
     "tier": 1,
-    "question": "South American camelid domesticated mainly for fiber:",
+    "question": "Coming in Huacaya (fluffy) and Suri (silky) types, which South American camelid is domesticated mainly for warm hypoallergenic fiber?",
     "answer": "Alpaca",
     "choices": [
       "Alpaca",
@@ -2797,7 +2797,7 @@
   },
   {
     "tier": 1,
-    "question": "Flightless bird hunted to extinction on Mauritius by 1681:",
+    "question": "Hunted to extinction on Mauritius by 1681, just ~80 years after European arrival, which flightless bird is this?",
     "answer": "Dodo",
     "choices": [
       "Dodo",
@@ -2809,7 +2809,7 @@
   },
   {
     "tier": 1,
-    "question": "Bird once numbering in the billions, last seen in 1914:",
+    "question": "Once numbering in the billions, this bird's last individual, Martha, died at the Cincinnati Zoo in 1914. Which species?",
     "answer": "Passenger pigeon",
     "choices": [
       "Passenger pigeon",
@@ -2821,7 +2821,7 @@
   },
   {
     "tier": 1,
-    "question": "Flightless North Atlantic seabird killed off in 1844:",
+    "question": "Last pair killed on Eldey, Iceland in 1844, which flightless North Atlantic seabird went extinct?",
     "answer": "Great auk",
     "choices": [
       "Great auk",
@@ -2833,7 +2833,7 @@
   },
   {
     "tier": 1,
-    "question": "Only native US parrot, last died in Cincinnati Zoo in 1918:",
+    "question": "Killed off by 1918 as a crop pest and for the millinery trade — which was the only parrot native to the United States?",
     "answer": "Carolina parakeet",
     "choices": [
       "Carolina parakeet",
@@ -2845,7 +2845,7 @@
   },
   {
     "tier": 1,
-    "question": "Striped marsupial predator declared extinct in Tasmania in 1936:",
+    "question": "The last one, Benjamin, died at Hobart Zoo in 1936 — which striped marsupial predator went extinct in Tasmania?",
     "answer": "Thylacine",
     "choices": [
       "Thylacine",
@@ -2857,7 +2857,7 @@
   },
   {
     "tier": 1,
-    "question": "Most decorated dog of WWI, captured a German spy:",
+    "question": "A pit bull mix who saved his unit from a gas attack and captured a German spy, which was the most decorated dog of WWI?",
     "answer": "Sergeant Stubby",
     "choices": [
       "Sergeant Stubby",
@@ -2869,7 +2869,7 @@
   },
   {
     "tier": 1,
-    "question": "Spanish-named technique of stalking and pouncing on prey:",
+    "question": "Cheetahs do it across the open plains. What is the technique of stalking and chasing prey called?",
     "answer": "Pursuit",
     "choices": [
       "Pursuit",
@@ -2881,7 +2881,7 @@
   },
   {
     "tier": 1,
-    "question": "Hunting tool that predates the bow, ~30,000 BP:",
+    "question": "With mechanical advantage doubling throw distance and power, which spear-thrower predates the bow at ~30,000 BP?",
     "answer": "Atlatl",
     "choices": [
       "Atlatl",
@@ -2893,7 +2893,7 @@
   },
   {
     "tier": 1,
-    "question": "Plains hunting technique that drove bison off cliffs:",
+    "question": "Preserved at Head-Smashed-In in Alberta (UNESCO 1981), what Plains hunting technique drove bison off cliffs?",
     "answer": "Buffalo jump",
     "choices": [
       "Buffalo jump",
@@ -2905,7 +2905,7 @@
   },
   {
     "tier": 1,
-    "question": "Modern bow with cams and cables that 'lets off' at peak draw:",
+    "question": "Invented in 1966 by Holless Allen with cams and cables that 'let off' at peak draw, which modern bow is this?",
     "answer": "Compound bow",
     "choices": [
       "Compound bow",
@@ -2917,7 +2917,7 @@
   },
   {
     "tier": 1,
-    "question": "1937 US act funding wildlife restoration via firearms tax:",
+    "question": "Largest single source of US wildlife restoration funding via an 11% firearms tax — which 1937 act is this?",
     "answer": "Pittman-Robertson",
     "choices": [
       "Pittman-Robertson",
@@ -2929,7 +2929,7 @@
   },
   {
     "tier": 1,
-    "question": "1900 US wildlife law banning interstate sale of illegally taken animals:",
+    "question": "The first US federal wildlife law, passed in 1900 to ban interstate sale of illegally taken animals, is named:",
     "answer": "Lacey Act",
     "choices": [
       "Lacey Act",
@@ -2941,7 +2941,7 @@
   },
   {
     "tier": 1,
-    "question": "Theodore Roosevelt co-founded this hunting conservation club in 1887:",
+    "question": "Co-founded in 1887 with George Bird Grinnell and setting the fair-chase standard, which hunting conservation club did Theodore Roosevelt help start?",
     "answer": "Boone and Crockett",
     "choices": [
       "Boone and Crockett",
@@ -2953,7 +2953,7 @@
   },
   {
     "tier": 1,
-    "question": "Modern environmental philosophy book by Aldo Leopold (1949):",
+    "question": "Published in 1949 and coining 'the land ethic', which book by Aldo Leopold is foundational to modern environmental philosophy?",
     "answer": "A Sand County Almanac",
     "choices": [
       "A Sand County Almanac",
@@ -2965,7 +2965,7 @@
   },
   {
     "tier": 1,
-    "question": "Roosevelt's total acres protected: ~230 million in:",
+    "question": "Including 150 national forests and 51 wildlife refuges, where did Theodore Roosevelt protect ~230 million acres?",
     "answer": "National lands",
     "choices": [
       "National lands",
@@ -2977,7 +2977,7 @@
   },
   {
     "tier": 1,
-    "question": "Federal stamp required to hunt waterfowl, funding wetlands since 1934:",
+    "question": "Required to hunt waterfowl and funding 6 million acres of refuge since 1934, what is this federal stamp?",
     "answer": "Duck Stamp",
     "choices": [
       "Duck Stamp",
@@ -2989,7 +2989,7 @@
   },
   {
     "tier": 1,
-    "question": "Wolf reintroduced to Yellowstone in 1995 set off a:",
+    "question": "Reintroducing wolves to Yellowstone in 1995 set off elk-willow-beaver-songbird ripple effects called a what?",
     "answer": "Trophic cascade",
     "choices": [
       "Trophic cascade",
@@ -3001,7 +3001,7 @@
   },
   {
     "tier": 1,
-    "question": "American big game restored from <500,000 (1900) to ~30 million today:",
+    "question": "Restored from under 500,000 in 1900 to ~30 million today, which is this American big game success story?",
     "answer": "White-tailed deer",
     "choices": [
       "White-tailed deer",
@@ -3013,7 +3013,7 @@
   },
   {
     "tier": 1,
-    "question": "Bird restored from <200,000 (1930) to ~7 million today via trap-and-transfer:",
+    "question": "Restored from <200,000 in 1930 to ~7 million today via trap-and-transfer starting in the 1950s, which bird is this?",
     "answer": "Wild turkey",
     "choices": [
       "Wild turkey",
@@ -3025,7 +3025,7 @@
   },
   {
     "tier": 1,
-    "question": "Brought back from <1,000 in 1884 to ~500,000 today, the:",
+    "question": "From ~30 million pre-1800 down to <1,000 in 1884 and back to ~500,000 today, which animal is this?",
     "answer": "American bison",
     "choices": [
       "American bison",
@@ -3037,7 +3037,7 @@
   },
   {
     "tier": 1,
-    "question": "Hunting ethic: the animal must have a real chance to escape:",
+    "question": "The Boone and Crockett standard that bans canned high-fence hunts is called what?",
     "answer": "Fair chase",
     "choices": [
       "Fair chase",
@@ -3049,7 +3049,7 @@
   },
   {
     "tier": 1,
-    "question": "Hunting principle that you use what you take, take what you use:",
+    "question": "Common across hunting traditions worldwide, which ethic says 'use what you take, take what you use'?",
     "answer": "No waste",
     "choices": [
       "No waste",
@@ -3061,7 +3061,7 @@
   },
   {
     "tier": 1,
-    "question": "Beef primal cut along the upper back, source of ribeye steaks:",
+    "question": "From which six primal cut of beef do bone-in standing rib roasts and ribeye steaks come?",
     "answer": "Rib",
     "choices": [
       "Rib",
@@ -3073,7 +3073,7 @@
   },
   {
     "tier": 1,
-    "question": "Beef primal from the front shoulder, used for pot roast and ground beef:",
+    "question": "Well-marbled and often slow-cooked or ground, which primal cut comes from the front shoulder of beef?",
     "answer": "Chuck",
     "choices": [
       "Chuck",
@@ -3085,7 +3085,7 @@
   },
   {
     "tier": 1,
-    "question": "Beef primal source of tenderloin and porterhouse steaks:",
+    "question": "The source of tenderloin, T-bones, and porterhouse steaks, which beef primal contains the most tender muscles?",
     "answer": "Short loin",
     "choices": [
       "Short loin",
@@ -3097,7 +3097,7 @@
   },
   {
     "tier": 1,
-    "question": "Beef primal from the breast, source of corned beef and slow-smoked Texas BBQ:",
+    "question": "Two muscles (point and flat) cooked low and slow for Texas BBQ and corned beef — which beef primal is this?",
     "answer": "Brisket",
     "choices": [
       "Brisket",
@@ -3109,7 +3109,7 @@
   },
   {
     "tier": 1,
-    "question": "Beef primal cut from the hindquarter, often used for roasts and steaks:",
+    "question": "Used for top round, bottom round, and eye of round, which lean and economical beef primal comes from the hindquarter?",
     "answer": "Round",
     "choices": [
       "Round",
@@ -3121,7 +3121,7 @@
   },
   {
     "tier": 1,
-    "question": "Pork primal cut from the back leg, cured and smoked for:",
+    "question": "Cured and smoked from the back leg of pig (country dry-cured or city wet-cured), which pork cut is this?",
     "answer": "Ham",
     "choices": [
       "Ham",
@@ -3133,7 +3133,7 @@
   },
   {
     "tier": 1,
-    "question": "Italian dry-cured ham from the upper hind leg of pig:",
+    "question": "Famous DOPs from Parma and San Daniele, which Italian dry-cured ham comes from the upper hind leg of pig?",
     "answer": "Prosciutto",
     "choices": [
       "Prosciutto",
@@ -3145,7 +3145,7 @@
   },
   {
     "tier": 1,
-    "question": "Process of dressing a deer in the field, removing organs quickly:",
+    "question": "Done within hours of the kill to speed cooling, what is the process of removing a deer's organs in the field called?",
     "answer": "Field dressing",
     "choices": [
       "Field dressing",
@@ -3157,7 +3157,7 @@
   },
   {
     "tier": 1,
-    "question": "Letting beef hang in a cool, humid locker to tenderize:",
+    "question": "Typically 14-45 days in a cool, humid locker to tenderize and concentrate flavor — what is this process called?",
     "answer": "Dry aging",
     "choices": [
       "Dry aging",
@@ -3169,7 +3169,7 @@
   },
   {
     "tier": 1,
-    "question": "Vacuum-sealed bag aging that is cheaper but less flavorful than dry:",
+    "question": "Standard for most supermarket beef and cheaper but less flavorful than dry, which vacuum-sealed bag aging is this?",
     "answer": "Wet aging",
     "choices": [
       "Wet aging",
@@ -3181,7 +3181,7 @@
   },
   {
     "tier": 1,
-    "question": "Use of all parts of the animal — heart, liver, marrow, tongue — is called:",
+    "question": "Popularized by Fergus Henderson's 1999 book, what term describes using all parts — heart, liver, marrow, tongue?",
     "answer": "Nose-to-tail",
     "choices": [
       "Nose-to-tail",
@@ -3193,7 +3193,7 @@
   },
   {
     "tier": 1,
-    "question": "Jewish ritual slaughter performed by a trained shochet:",
+    "question": "Performed by a trained shochet with a smooth, sharp chalaf — what is the term for Jewish ritual slaughter?",
     "answer": "Shechita",
     "choices": [
       "Shechita",
@@ -3205,7 +3205,7 @@
   },
   {
     "tier": 1,
-    "question": "Islamic ritual slaughter, with the name of Allah invoked:",
+    "question": "With the name of Allah invoked and the animal traditionally facing Mecca, what is Islamic ritual slaughter called?",
     "answer": "Dhabihah",
     "choices": [
       "Dhabihah",
@@ -3217,7 +3217,7 @@
   },
   {
     "tier": 1,
-    "question": "European whalers of the 11th century operated in the Bay of:",
+    "question": "The earliest documented commercial whaling industry, Basque whalers of the 11th century, operated in which bay?",
     "answer": "Biscay",
     "choices": [
       "Biscay",
@@ -3229,7 +3229,7 @@
   },
   {
     "tier": 1,
-    "question": "1986 international body's moratorium on commercial whaling:",
+    "question": "Imposing the 1986 commercial whaling moratorium with exemptions for aboriginal subsistence, which international body is this?",
     "answer": "IWC",
     "choices": [
       "IWC",
@@ -3241,7 +3241,7 @@
   },
   {
     "tier": 1,
-    "question": "Petroleum replaced whale oil for lighting after this 1859 well:",
+    "question": "Kerosene from Pennsylvania's 1859 well displaced sperm whale oil for lamps. What was that well called?",
     "answer": "Drake",
     "choices": [
       "Drake",
@@ -3253,7 +3253,7 @@
   },
   {
     "tier": 1,
-    "question": "American whaling port that inspired Melville's Moby-Dick:",
+    "question": "Peaking in the 1800s as a Yankee whaling capital and inspiring Melville's Moby-Dick, which American port is this?",
     "answer": "Nantucket",
     "choices": [
       "Nantucket",
@@ -3265,7 +3265,7 @@
   },
   {
     "tier": 1,
-    "question": "Subspecies of black rhino declared extinct in 2011 from poaching:",
+    "question": "Declared extinct in 2011 mostly from horn poaching, which subspecies of black rhino was lost?",
     "answer": "Western black rhino",
     "choices": [
       "Western black rhino",
@@ -3277,7 +3277,7 @@
   },
   {
     "tier": 1,
-    "question": "African hunting model that aims to fund conservation through licensed fees:",
+    "question": "Channeling trophy hunting fees to local communities for habitat, which Zimbabwean conservation hunting program is this?",
     "answer": "CAMPFIRE",
     "choices": [
       "CAMPFIRE",
@@ -3289,7 +3289,7 @@
   },
   {
     "tier": 1,
-    "question": "Lion shot in Zimbabwe in 2015 sparked global outrage:",
+    "question": "Shot illegally in Zimbabwe in 2015 and sparking global outrage over trophy hunting, which lion was this?",
     "answer": "Cecil",
     "choices": [
       "Cecil",
@@ -3301,7 +3301,7 @@
   },
   {
     "tier": 1,
-    "question": "Hudson's Bay Company founded in 1670 traded primarily in:",
+    "question": "Founded in 1670 with ~200 million pelts trapped over the next three centuries, what primary good did the Hudson's Bay Company trade?",
     "answer": "Beaver pelts",
     "choices": [
       "Beaver pelts",
@@ -3313,7 +3313,7 @@
   },
   {
     "tier": 1,
-    "question": "Pacific Northwest tribe with treaty whaling rights, hunted 1999:",
+    "question": "Holding the 1855 Treaty of Neah Bay's whaling rights and exercising them in 1999, which Pacific Northwest tribe is this?",
     "answer": "Makah",
     "choices": [
       "Makah",
@@ -3325,7 +3325,7 @@
   },
   {
     "tier": 1,
-    "question": "Camouflaged pit with sharpened stakes is among the oldest:",
+    "question": "Depicted in Lascaux cave art and appearing in Paleolithic Europe, what kind of camouflaged structures are among the oldest?",
     "answer": "Hunting traps",
     "choices": [
       "Hunting traps",
@@ -3337,7 +3337,7 @@
   },
   {
     "tier": 1,
-    "question": "Inuit hunters' watercraft for seal hunting:",
+    "question": "Sealskin-covered and waterproof, which watercraft did Inuit hunters use for seal hunting?",
     "answer": "Kayak",
     "choices": [
       "Kayak",
@@ -3349,7 +3349,7 @@
   },
   {
     "tier": 1,
-    "question": "Largest sirenian, hunted to extinction in 27 years (1741-1768):",
+    "question": "Hunted to extinction in 27 years (1741-1768) by fur traders in the Bering Sea, which was the largest sirenian?",
     "answer": "Steller's sea cow",
     "choices": [
       "Steller's sea cow",
@@ -3361,7 +3361,7 @@
   },
   {
     "tier": 1,
-    "question": "Largest fur trade species historically — soft Russian fur:",
+    "question": "Driving Russian eastward expansion across Siberia for its soft fur, which was the largest historical fur trade species?",
     "answer": "Sable",
     "choices": [
       "Sable",
@@ -3373,7 +3373,7 @@
   },
   {
     "tier": 1,
-    "question": "Standard size of buckshot pellets named by letter and number:",
+    "question": "Buckshot pellets named by letter and number, like 00 for deer or birdshot for fowl, are loaded into which firearm?",
     "answer": "Shotgun",
     "choices": [
       "Shotgun",
@@ -3385,7 +3385,7 @@
   },
   {
     "tier": 1,
-    "question": "Common centerfire rifle cartridge for deer, named for the year:",
+    "question": "Adopted by the US Army in 1906 with a .30-inch bullet diameter, which common centerfire deer cartridge is this?",
     "answer": ".30-06",
     "choices": [
       ".30-06",
@@ -3397,7 +3397,7 @@
   },
   {
     "tier": 1,
-    "question": "Required orange clothing for many big-game hunting seasons:",
+    "question": "Visible to humans but not to most dichromatic game species, which clothing color is required in many big-game seasons?",
     "answer": "Blaze orange",
     "choices": [
       "Blaze orange",
@@ -3409,7 +3409,7 @@
   },
   {
     "tier": 1,
-    "question": "Tag worn on a hunter's pack so harvested game can be legally tracked:",
+    "question": "Tied by state wildlife agencies to specific zones, seasons, and species, what is worn on a hunter's pack for legal tracking?",
     "answer": "Harvest tag",
     "choices": [
       "Harvest tag",
@@ -3421,7 +3421,7 @@
   },
   {
     "tier": 1,
-    "question": "Pacific salmon species with a green back and silver sides at sea:",
+    "question": "Turning red with a hooked jaw at spawning but silver at sea, which Pacific salmon species is this 'silver' salmon?",
     "answer": "Coho",
     "choices": [
       "Coho",
@@ -3433,7 +3433,7 @@
   },
   {
     "tier": 1,
-    "question": "Largest Pacific salmon species, also called king:",
+    "question": "Up to 45kg and also called 'king', which is the largest Pacific salmon species?",
     "answer": "Chinook",
     "choices": [
       "Chinook",
@@ -3445,7 +3445,7 @@
   },
   {
     "tier": 1,
-    "question": "Sport of stalking and shooting upland gamebirds with a shotgun:",
+    "question": "Quail, pheasant, grouse, and woodcock are taken in which sport of stalking and shooting upland gamebirds?",
     "answer": "Wing-shooting",
     "choices": [
       "Wing-shooting",
@@ -3457,7 +3457,7 @@
   },
   {
     "tier": 1,
-    "question": "Practice of using a trained dog to retrieve downed waterfowl:",
+    "question": "Labradors and Chesapeakes are popular for which practice of using a trained dog to fetch downed waterfowl?",
     "answer": "Retrieving",
     "choices": [
       "Retrieving",
@@ -3469,7 +3469,7 @@
   },
   {
     "tier": 1,
-    "question": "Female deer is called a:",
+    "question": "What is the term for a female deer (called 'hind' in British usage for red deer)?",
     "answer": "Doe",
     "choices": [
       "Doe",
@@ -3481,7 +3481,7 @@
   },
   {
     "tier": 1,
-    "question": "Egyptian goddess depicted as a cat:",
+    "question": "Originally a lioness, later depicted as a domestic cat with a cult center at Bubastis, which Egyptian goddess is this?",
     "answer": "Bastet",
     "choices": [
       "Bastet",
@@ -3493,7 +3493,7 @@
   },
   {
     "tier": 1,
-    "question": "Egyptian jackal-headed god of embalming and the afterlife:",
+    "question": "Overseeing the weighing of the heart against Ma'at's feather, which jackal-headed Egyptian god of embalming is this?",
     "answer": "Anubis",
     "choices": [
       "Anubis",
@@ -3505,7 +3505,7 @@
   },
   {
     "tier": 1,
-    "question": "Egyptian falcon-headed god of kingship and the sky:",
+    "question": "Son of Osiris and Isis, with a protective eye symbol — which falcon-headed Egyptian god of kingship and sky is this?",
     "answer": "Horus",
     "choices": [
       "Horus",
@@ -3517,7 +3517,7 @@
   },
   {
     "tier": 1,
-    "question": "Egyptian crocodile-headed god of the Nile and military prowess:",
+    "question": "Kept sacred crocodiles in temple pools at Faiyum, which crocodile-headed Egyptian god of the Nile is this?",
     "answer": "Sobek",
     "choices": [
       "Sobek",
@@ -3529,7 +3529,7 @@
   },
   {
     "tier": 1,
-    "question": "Egyptian lion-headed warrior goddess of plague and healing:",
+    "question": "Daughter of Ra whose wrath had to be cooled with red beer, which lion-headed Egyptian warrior goddess is this?",
     "answer": "Sekhmet",
     "choices": [
       "Sekhmet",
@@ -3541,7 +3541,7 @@
   },
   {
     "tier": 1,
-    "question": "Egyptian ibis-headed god of writing and wisdom:",
+    "question": "Recording the weighing of the heart and sometimes depicted as a baboon, which ibis-headed Egyptian god of writing is this?",
     "answer": "Thoth",
     "choices": [
       "Thoth",
@@ -3553,7 +3553,7 @@
   },
   {
     "tier": 1,
-    "question": "Egyptian sacred bull, living embodiment of a god:",
+    "question": "Worshipped at Memphis and mummified at death like a king, which Egyptian sacred bull is this?",
     "answer": "Apis",
     "choices": [
       "Apis",
@@ -3565,7 +3565,7 @@
   },
   {
     "tier": 1,
-    "question": "Mythical winged horse born from the blood of Medusa:",
+    "question": "Ridden by Bellerophon to slay the Chimera, which mythical winged horse was born from the blood of Medusa?",
     "answer": "Pegasus",
     "choices": [
       "Pegasus",
@@ -3577,7 +3577,7 @@
   },
   {
     "tier": 1,
-    "question": "Three-headed dog guarding the gates of Hades:",
+    "question": "Captured by Heracles for his twelfth labor, which three-headed dog guards the gates of Hades?",
     "answer": "Cerberus",
     "choices": [
       "Cerberus",
@@ -3589,7 +3589,7 @@
   },
   {
     "tier": 1,
-    "question": "Bull-headed man imprisoned in King Minos's labyrinth:",
+    "question": "Killed by Theseus with Ariadne's thread, which bull-headed man was imprisoned in King Minos's labyrinth?",
     "answer": "Minotaur",
     "choices": [
       "Minotaur",
@@ -3601,7 +3601,7 @@
   },
   {
     "tier": 1,
-    "question": "Greek creature with the upper body of a man and lower body of a horse:",
+    "question": "Mostly savage but with Chiron as a wise tutor, which Greek creature has the upper body of a man and lower body of a horse?",
     "answer": "Centaur",
     "choices": [
       "Centaur",
@@ -3613,7 +3613,7 @@
   },
   {
     "tier": 1,
-    "question": "Norse god Odin's eight-legged steed:",
+    "question": "Born of Loki disguised as a mare, which eight-legged steed does the Norse god Odin ride?",
     "answer": "Sleipnir",
     "choices": [
       "Sleipnir",
@@ -3625,7 +3625,7 @@
   },
   {
     "tier": 1,
-    "question": "Odin's two ravens that fly the world and report back:",
+    "question": "Their names mean 'Thought' and 'Memory' in Old Norse — what are Odin's two ravens called?",
     "answer": "Huginn and Muninn",
     "choices": [
       "Huginn and Muninn",
@@ -3637,7 +3637,7 @@
   },
   {
     "tier": 1,
-    "question": "Wolf-son of Loki, bound until Ragnarök:",
+    "question": "Foretold to kill Odin at Ragnarök, which wolf-son of Loki is bound until then?",
     "answer": "Fenrir",
     "choices": [
       "Fenrir",
@@ -3649,7 +3649,7 @@
   },
   {
     "tier": 1,
-    "question": "Norse world-serpent that encircles the earth, biting its own tail:",
+    "question": "Thor's eternal enemy, biting its own tail and encircling the earth — what is this Norse world-serpent called?",
     "answer": "Jormungandr",
     "choices": [
       "Jormungandr",
@@ -3661,7 +3661,7 @@
   },
   {
     "tier": 1,
-    "question": "Norse squirrel that carries insults between the eagle and the dragon:",
+    "question": "Running up and down Yggdrasil, the world tree, which Norse squirrel carries insults between the eagle and the dragon?",
     "answer": "Ratatoskr",
     "choices": [
       "Ratatoskr",
@@ -3673,7 +3673,7 @@
   },
   {
     "tier": 1,
-    "question": "Primordial Norse cow that licked the first god from salty ice:",
+    "question": "Nourished the giant Ymir and licked Buri free from the ice — which primordial Norse cow is this?",
     "answer": "Audhumla",
     "choices": [
       "Audhumla",
@@ -3685,7 +3685,7 @@
   },
   {
     "tier": 1,
-    "question": "Hindu monkey god of strength and devotion:",
+    "question": "Helped Rama recover Sita, often shown carrying a mountain or a mace — which Hindu monkey god of strength and devotion is this?",
     "answer": "Hanuman",
     "choices": [
       "Hanuman",
@@ -3697,7 +3697,7 @@
   },
   {
     "tier": 1,
-    "question": "Hindu elephant-headed god, remover of obstacles:",
+    "question": "Patron of arts and sciences with the mouse Mushika as his vahana, which elephant-headed Hindu god removes obstacles?",
     "answer": "Ganesha",
     "choices": [
       "Ganesha",
@@ -3709,7 +3709,7 @@
   },
   {
     "tier": 1,
-    "question": "Hindu eagle that is Vishnu's mount:",
+    "question": "National symbol of Indonesia and Thailand, which Hindu eagle is the mount of Vishnu?",
     "answer": "Garuda",
     "choices": [
       "Garuda",
@@ -3721,7 +3721,7 @@
   },
   {
     "tier": 1,
-    "question": "Hindu bull who is Shiva's vahana, facing the linga in temples:",
+    "question": "Always seated facing the inner sanctum and the linga, which Hindu bull is the vahana of Shiva?",
     "answer": "Nandi",
     "choices": [
       "Nandi",
@@ -3733,7 +3733,7 @@
   },
   {
     "tier": 1,
-    "question": "Hindu term for mother cow, Gau Mata:",
+    "question": "Called Gau Mata and central to many strands of Hindu practice, what is the cow's revered status called?",
     "answer": "Sacred cow",
     "choices": [
       "Sacred cow",
@@ -3745,7 +3745,7 @@
   },
   {
     "tier": 1,
-    "question": "Hindu serpent beings depicted with multi-headed cobra hoods:",
+    "question": "Shesha is the cosmic one on whom Vishnu reclines — what are these multi-headed serpent beings called in Hindu lore?",
     "answer": "Nagas",
     "choices": [
       "Nagas",
@@ -3757,7 +3757,7 @@
   },
   {
     "tier": 1,
-    "question": "First animal of the Chinese zodiac, said to have tricked the ox:",
+    "question": "Said to have tricked the ox by hopping on its back in the Jade Emperor's race, which is the first animal of the Chinese zodiac?",
     "answer": "Rat",
     "choices": [
       "Rat",
@@ -3769,7 +3769,7 @@
   },
   {
     "tier": 1,
-    "question": "Number of animals in the Chinese zodiac:",
+    "question": "Rat, ox, tiger, rabbit, dragon, snake, horse, goat, monkey, rooster, dog, pig — how many animals total in the Chinese zodiac?",
     "answer": "Twelve",
     "choices": [
       "Twelve",
@@ -3781,7 +3781,7 @@
   },
   {
     "tier": 1,
-    "question": "Chinese dragon (long) symbolizes:",
+    "question": "Bringing rain and prosperity as an imperial symbol — opposite the Western evil dragon — what does the Chinese long symbolize?",
     "answer": "Good fortune",
     "choices": [
       "Good fortune",
@@ -3793,7 +3793,7 @@
   },
   {
     "tier": 1,
-    "question": "Female counterpart to the Chinese dragon, a phoenix-like bird:",
+    "question": "Symbolizing the empress, virtue, and grace, which phoenix-like bird is the Chinese female counterpart to the dragon?",
     "answer": "Fenghuang",
     "choices": [
       "Fenghuang",
@@ -3805,7 +3805,7 @@
   },
   {
     "tier": 1,
-    "question": "White Tiger of the West is one of the Four Chinese:",
+    "question": "Azure Dragon East, Vermilion Bird South, Black Tortoise North — the White Tiger of the West is one of the Four Chinese what?",
     "answer": "Symbols",
     "choices": [
       "Symbols",
@@ -3817,7 +3817,7 @@
   },
   {
     "tier": 1,
-    "question": "Supernatural bird across many North American tribes, thunder from its wings:",
+    "question": "Lightning flashes from its eyes and thunder rolls from its wings — what is this supernatural bird across many North American tribes called?",
     "answer": "Thunderbird",
     "choices": [
       "Thunderbird",
@@ -3829,7 +3829,7 @@
   },
   {
     "tier": 1,
-    "question": "Pacific Northwest trickster and creator who stole the sun:",
+    "question": "Releasing the sun, moon, and stars to the sky in Tlingit, Haida, and Tsimshian lore, which Pacific Northwest trickster is this?",
     "answer": "Raven",
     "choices": [
       "Raven",
@@ -3841,7 +3841,7 @@
   },
   {
     "tier": 1,
-    "question": "Plains and Southwest tribal trickster — wise fool, both creator and chaos:",
+    "question": "Bringer of fire and bringer of death across many Plains and Southwest tribal stories — which trickster is this wise fool?",
     "answer": "Coyote",
     "choices": [
       "Coyote",
@@ -3853,7 +3853,7 @@
   },
   {
     "tier": 1,
-    "question": "Bird sacred across most Plains tribes, feathers reserved by federal law:",
+    "question": "Their feathers are reserved by federal law for federally recognized tribes — which bird is sacred across most Plains traditions?",
     "answer": "Eagle",
     "choices": [
       "Eagle",
@@ -3865,7 +3865,7 @@
   },
   {
     "tier": 1,
-    "question": "Center of Plains tribal life: food, tipi cover, tools, and clothing:",
+    "question": "Center of Plains tribal life — supplying food, tipi cover, tools, and clothing — which animal is this?",
     "answer": "Buffalo",
     "choices": [
       "Buffalo",
@@ -3877,7 +3877,7 @@
   },
   {
     "tier": 1,
-    "question": "Christian symbol of Christ, 'Lamb of God', from John 1:29:",
+    "question": "From John 1:29 and echoing the Passover, which animal is the Christian symbol of Christ as 'Agnus Dei'?",
     "answer": "Lamb",
     "choices": [
       "Lamb",
@@ -3889,7 +3889,7 @@
   },
   {
     "tier": 1,
-    "question": "Christian symbol of the Holy Spirit, descending at Jesus's baptism:",
+    "question": "Descending at Jesus's baptism in Matthew 3:16 and recalling Noah's olive-branch bird, which animal symbolizes the Holy Spirit?",
     "answer": "Dove",
     "choices": [
       "Dove",
@@ -3901,7 +3901,7 @@
   },
   {
     "tier": 1,
-    "question": "Christian symbol of Christ as conquering king, 'Lion of':",
+    "question": "From Revelation 5:5 and applying a tribal symbol to Christ as conquering king — Lion of where?",
     "answer": "Judah",
     "choices": [
       "Judah",
@@ -3913,7 +3913,7 @@
   },
   {
     "tier": 1,
-    "question": "Greek acrostic ichthys was an early Christian secret symbol for:",
+    "question": "The Greek acrostic ΙΧΘΥΣ ('Jesus Christ God's Son Savior') was an early Christian secret symbol shaped like a:",
     "answer": "Fish",
     "choices": [
       "Fish",
@@ -3925,7 +3925,7 @@
   },
   {
     "tier": 1,
-    "question": "Symbol of John the Evangelist, one of the four living creatures:",
+    "question": "Matthew/man, Mark/lion, Luke/ox — which of the four living creatures is the symbol of John the Evangelist?",
     "answer": "Eagle",
     "choices": [
       "Eagle",
@@ -3937,7 +3937,7 @@
   },
   {
     "tier": 1,
-    "question": "Symbol of Mark the Evangelist:",
+    "question": "Reflecting the desert prophet voice of Mark's opening, which of the four living creatures is his symbol?",
     "answer": "Lion",
     "choices": [
       "Lion",
@@ -3949,7 +3949,7 @@
   },
   {
     "tier": 1,
-    "question": "Animal in Genesis 3 that tempts Eve in the garden:",
+    "question": "Read in John 3 as a type of Christ via Numbers 21's brass serpent — which animal tempts Eve in Genesis 3?",
     "answer": "Serpent",
     "choices": [
       "Serpent",
@@ -3961,7 +3961,7 @@
   },
   {
     "tier": 1,
-    "question": "Medieval Christian bird-symbol of resurrection due to incorruptible flesh:",
+    "question": "Because medieval Christians believed its flesh was incorruptible, which bird became a symbol of resurrection?",
     "answer": "Peacock",
     "choices": [
       "Peacock",
@@ -3973,7 +3973,7 @@
   },
   {
     "tier": 1,
-    "question": "Akita who waited 9 years at Shibuya Station after his master died:",
+    "question": "Bronze statue at Shibuya, Tokyo, honors which Akita who waited 9 years for his master from 1925 to 1935?",
     "answer": "Hachiko",
     "choices": [
       "Hachiko",
@@ -3985,7 +3985,7 @@
   },
   {
     "tier": 1,
-    "question": "Soviet dog, the first living being in orbit, on Sputnik 2 (1957):",
+    "question": "On Sputnik 2 in 1957, this Soviet dog was the first living being in orbit. What was her name?",
     "answer": "Laika",
     "choices": [
       "Laika",
@@ -3997,7 +3997,7 @@
   },
   {
     "tier": 1,
-    "question": "Pigeon that saved 194 men of the 'Lost Battalion' in WWI:",
+    "question": "Flew 25 miles with a bullet wound to save 194 men of the WWI 'Lost Battalion' — which famous carrier pigeon is this?",
     "answer": "Cher Ami",
     "choices": [
       "Cher Ami",
@@ -4009,7 +4009,7 @@
   },
   {
     "tier": 1,
-    "question": "Bear orphaned in 1942 Iran, enlisted in Polish 22nd Artillery Supply Co:",
+    "question": "Orphaned in 1942 Iran and carrying ammo crates at Monte Cassino as a corporal, which bear served in a Polish artillery company?",
     "answer": "Wojtek",
     "choices": [
       "Wojtek",
@@ -4021,7 +4021,7 @@
   },
   {
     "tier": 1,
-    "question": "Sled dog who ran the longest leg of the 1925 Nome serum run:",
+    "question": "Famous for running the longest, hardest leg of the 1925 Nome serum run while Balto got the credit, which sled dog is this?",
     "answer": "Togo",
     "choices": [
       "Togo",
@@ -4033,7 +4033,7 @@
   },
   {
     "tier": 1,
-    "question": "Alexander the Great's famous horse, named for an ox-mark on its head:",
+    "question": "Tamed at age 12 by Alexander the Great, who saw the horse feared its own shadow, which famous mount was this?",
     "answer": "Bucephalus",
     "choices": [
       "Bucephalus",
@@ -4045,7 +4045,7 @@
   },
   {
     "tier": 1,
-    "question": "Carthaginian general who crossed the Alps with war elephants in 218 BC:",
+    "question": "Bringing ~37 elephants across the Alps in 218 BC (most dying en route), which Carthaginian general is this?",
     "answer": "Hannibal",
     "choices": [
       "Hannibal",
@@ -4057,7 +4057,7 @@
   },
   {
     "tier": 1,
-    "question": "Caligula's beloved horse, rumored to be made a consul:",
+    "question": "Fed gold-flecked oats and rumored to be made a consul, which beloved horse belonged to Caligula?",
     "answer": "Incitatus",
     "choices": [
       "Incitatus",
@@ -4069,7 +4069,7 @@
   },
   {
     "tier": 1,
-    "question": "Napoleon's small Arabian war stallion, named for a 1800 battle:",
+    "question": "Named for the 1800 battle and carrying his rider at Austerlitz, Jena, and Waterloo, which Arabian stallion was Napoleon's?",
     "answer": "Marengo",
     "choices": [
       "Marengo",
@@ -4081,7 +4081,7 @@
   },
   {
     "tier": 1,
-    "question": "Roy Rogers's golden palomino, 'Smartest Horse in the Movies':",
+    "question": "Stuffed and mounted at the Roy Rogers Museum after death, which golden palomino was the 'Smartest Horse in the Movies'?",
     "answer": "Trigger",
     "choices": [
       "Trigger",
@@ -4093,7 +4093,7 @@
   },
   {
     "tier": 1,
-    "question": "Egyptian punishment for killing a sacred cat was:",
+    "question": "Even accidental killings could carry this punishment for taking a sacred cat in ancient Egypt:",
     "answer": "Death",
     "choices": [
       "Death",
@@ -4105,7 +4105,7 @@
   },
   {
     "tier": 1,
-    "question": "Roman mosaic warning at the door of a Pompeii house read:",
+    "question": "Found as a Roman mosaic at the door of a Pompeii house, what does the warning 'Cave Canem' mean?",
     "answer": "Cave Canem",
     "choices": [
       "Cave Canem",
@@ -4117,7 +4117,7 @@
   },
   {
     "tier": 1,
-    "question": "Etruscan-derived Roman divination from animal entrails:",
+    "question": "Especially reading the liver, which Etruscan-derived Roman divination from animal entrails is this?",
     "answer": "Haruspicy",
     "choices": [
       "Haruspicy",
@@ -4129,7 +4129,7 @@
   },
   {
     "tier": 1,
-    "question": "Standard symbol of the Roman legions, sacred to Jupiter:",
+    "question": "Sacred to Jupiter and called the aquila — which animal was the standard symbol of the Roman legions?",
     "answer": "Eagle",
     "choices": [
       "Eagle",
@@ -4141,7 +4141,7 @@
   },
   {
     "tier": 1,
-    "question": "World's first animal welfare law (1822 UK), known as Martin's Act:",
+    "question": "Sponsored in 1822 UK by Richard 'Humanity Dick' Martin and the world's first animal welfare law, what is its short name?",
     "answer": "Cruelty to Cattle",
     "choices": [
       "Cruelty to Cattle",
@@ -4153,7 +4153,7 @@
   },
   {
     "tier": 1,
-    "question": "1824 founding of the world's first animal welfare charity:",
+    "question": "Founded in 1824 and gaining royal patronage in 1840, what is the world's first animal welfare charity?",
     "answer": "RSPCA",
     "choices": [
       "RSPCA",
@@ -4165,7 +4165,7 @@
   },
   {
     "tier": 1,
-    "question": "1866 New York founder of the ASPCA:",
+    "question": "Observing a man beating a horse, this man founded the ASPCA in 1866 New York. Who was he?",
     "answer": "Henry Bergh",
     "choices": [
       "Henry Bergh",
@@ -4177,7 +4177,7 @@
   },
   {
     "tier": 1,
-    "question": "1975 book by Peter Singer that launched the modern animal rights movement:",
+    "question": "Launching the modern animal rights movement and popularizing 'speciesism' in 1975, which book by Peter Singer is this?",
     "answer": "Animal Liberation",
     "choices": [
       "Animal Liberation",
@@ -4189,7 +4189,7 @@
   },
   {
     "tier": 1,
-    "question": "Co-founder of PETA in 1980:",
+    "question": "Founded PETA in 1980 with Alex Pacheco after the Silver Spring monkey case — who is this co-founder?",
     "answer": "Ingrid Newkirk",
     "choices": [
       "Ingrid Newkirk",
@@ -4201,7 +4201,7 @@
   },
   {
     "tier": 1,
-    "question": "Oldest continuously held US sporting event, run since 1875:",
+    "question": "Run since 1875 on the first Saturday in May at Churchill Downs, which is the oldest continuously held US sporting event?",
     "answer": "Kentucky Derby",
     "choices": [
       "Kentucky Derby",
@@ -4213,7 +4213,7 @@
   },
   {
     "tier": 1,
-    "question": "Three races to win the US Triple Crown of horse racing:",
+    "question": "Won by 13 horses since 1919, including Secretariat (1973) and American Pharoah (2015), which three races make up the US Triple Crown?",
     "answer": "Derby, Preakness, Belmont",
     "choices": [
       "Derby, Preakness, Belmont",
@@ -4225,7 +4225,7 @@
   },
   {
     "tier": 1,
-    "question": "1973 Triple Crown winner who won the Belmont by 31 lengths:",
+    "question": "Winning the Belmont by 31 lengths with a 132-lb heart (3x average), which 1973 Triple Crown champion was this?",
     "answer": "Secretariat",
     "choices": [
       "Secretariat",
@@ -4237,7 +4237,7 @@
   },
   {
     "tier": 1,
-    "question": "Persian origin sport of stick-and-ball played from horseback:",
+    "question": "Originating in ~6th-century BC Persia as chovgan and reaching the world via British India, which mounted stick-and-ball sport is this?",
     "answer": "Polo",
     "choices": [
       "Polo",
@@ -4249,7 +4249,7 @@
   },
   {
     "tier": 1,
-    "question": "Olympic equestrian discipline of precise, choreographed horse movements:",
+    "question": "Called the 'highest expression of horse training' by the FEI and an Olympic sport since 1912, which equestrian discipline is this?",
     "answer": "Dressage",
     "choices": [
       "Dressage",
@@ -4261,7 +4261,7 @@
   },
   {
     "tier": 1,
-    "question": "Medieval European falconry hierarchy: emperor had the:",
+    "question": "Per the Boke of St Albans falconry hierarchy — king gyrfalcon, prince peregrine, baron buzzard — what bird belonged to the emperor?",
     "answer": "Eagle",
     "choices": [
       "Eagle",
@@ -4273,7 +4273,7 @@
   },
   {
     "tier": 1,
-    "question": "Tasmanian-tiger-style striped marsupial featured in 1936 newsreels:",
+    "question": "The last individual Benjamin died at Hobart Zoo in 1936 — which Tasmanian-tiger-style striped marsupial appeared in newsreels that year?",
     "answer": "Thylacine",
     "choices": [
       "Thylacine",
@@ -4285,7 +4285,7 @@
   },
   {
     "tier": 1,
-    "question": "First Crystal Palace Cat Show held in:",
+    "question": "Established by Harrison Weir with the first breed standards, the first Crystal Palace Cat Show was held in what year?",
     "answer": "1871",
     "choices": [
       "1871",
@@ -4297,7 +4297,7 @@
   },
   {
     "tier": 1,
-    "question": "Westminster Dog Show in NYC has been held continuously since:",
+    "question": "The second-longest continuously held US sporting event after the Kentucky Derby, when did the Westminster Dog Show begin?",
     "answer": "1877",
     "choices": [
       "1877",
@@ -4309,7 +4309,7 @@
   },
   {
     "tier": 1,
-    "question": "Largest dog show in the world, founded 1891 by Charles Cruft:",
+    "question": "Held at the NEC Birmingham and founded in 1891 by a former dog-food salesman, which is the largest dog show in the world?",
     "answer": "Crufts",
     "choices": [
       "Crufts",
@@ -4321,7 +4321,7 @@
   },
   {
     "tier": 1,
-    "question": "Estimated annual size of the US pet industry, in dollars:",
+    "question": "With ~67% of US households owning a pet (2023) and recession-resistant growth, what is the rough annual size of the US pet industry?",
     "answer": "~$140 billion",
     "choices": [
       "~$140 billion",
@@ -4333,7 +4333,7 @@
   },
   {
     "tier": 1,
-    "question": "1966 US federal law regulating animals in research and transport:",
+    "question": "Covering research labs, dealers, exhibitors, and transport since 1966, which US federal law regulates animals in research?",
     "answer": "Animal Welfare Act",
     "choices": [
       "Animal Welfare Act",
@@ -4345,7 +4345,7 @@
   },
   {
     "tier": 1,
-    "question": "Spanish bullfight uses six stages and culminates in the:",
+    "question": "Banned in Catalonia 2010 and the Balearics 2017, which final sword thrust ends a six-stage Spanish bullfight?",
     "answer": "Estocada",
     "choices": [
       "Estocada",
@@ -4357,7 +4357,7 @@
   },
   {
     "tier": 1,
-    "question": "Portuguese bullfighting differs from Spanish in that the bull is:",
+    "question": "With the cavaleiro fighting on horseback, how does Portuguese bullfighting differ from Spanish?",
     "answer": "Not killed in the ring",
     "choices": [
       "Not killed in the ring",
@@ -4369,7 +4369,7 @@
   },
   {
     "tier": 1,
-    "question": "Ancient Greek and Persian blood sport banned across the US:",
+    "question": "Ancient Greek and Persian in origin, banned across the US but legal as sabong in the Philippines, what is this blood sport?",
     "answer": "Cockfighting",
     "choices": [
       "Cockfighting",
@@ -4381,7 +4381,7 @@
   },
   {
     "tier": 1,
-    "question": "US felony in all 50 states since 2007, raised in profile by NFL case:",
+    "question": "Raised to a US felony in all 50 states by 2007 after the Michael Vick NFL case, what activity is this?",
     "answer": "Dog fighting",
     "choices": [
       "Dog fighting",
@@ -4393,7 +4393,7 @@
   },
   {
     "tier": 1,
-    "question": "2004 UK law that banned hunting wild mammals with dogs:",
+    "question": "Banning traditional fox hunting with hounds but allowing drag hunting, which 2004 UK law is this?",
     "answer": "Hunting Act",
     "choices": [
       "Hunting Act",
@@ -4405,7 +4405,7 @@
   },
   {
     "tier": 1,
-    "question": "Pomeranian-sized WWII Yorkie who pulled wire through a 70-ft conduit:",
+    "question": "Found in a New Guinea foxhole in 1944 and pulling wire through a 70-ft conduit, which Pomeranian-sized WWII Yorkie is this?",
     "answer": "Smoky",
     "choices": [
       "Smoky",
@@ -4417,7 +4417,7 @@
   },
   {
     "tier": 1,
-    "question": "Mascot symbol of the US Marine Corps, an English breed:",
+    "question": "Officially Chesty since decades back, which English breed is the mascot symbol of the US Marine Corps?",
     "answer": "Bulldog",
     "choices": [
       "Bulldog",
@@ -4429,7 +4429,7 @@
   },
   {
     "tier": 1,
-    "question": "Animal on the US presidential seal:",
+    "question": "Adopted in 1782 over Benjamin Franklin's preferred turkey, which animal appears on the US presidential seal?",
     "answer": "Bald eagle",
     "choices": [
       "Bald eagle",
@@ -4441,7 +4441,7 @@
   },
   {
     "tier": 1,
-    "question": "Chinese mythological winged fire-bird, like a phoenix:",
+    "question": "Symbolizing virtue and grace and often paired with the dragon, which Chinese mythological winged fire-bird is this?",
     "answer": "Fenghuang",
     "choices": [
       "Fenghuang",
@@ -4453,7 +4453,7 @@
   },
   {
     "tier": 1,
-    "question": "Greek mythological bird that rises from its own ashes:",
+    "question": "Living 500 years, burning, and being reborn — which Greek mythological bird symbolizes renewal and resurrection?",
     "answer": "Phoenix",
     "choices": [
       "Phoenix",
@@ -4465,7 +4465,7 @@
   },
   {
     "tier": 1,
-    "question": "Hindu and Buddhist swan-like bird, symbol of the divine:",
+    "question": "Vehicle of Brahma and Saraswati, said to separate milk from water — which Hindu and Buddhist swan-like bird is this?",
     "answer": "Hamsa",
     "choices": [
       "Hamsa",
@@ -4477,7 +4477,7 @@
   },
   {
     "tier": 1,
-    "question": "Vehicle of the Hindu goddess Saraswati:",
+    "question": "The hamsa, symbolizing discernment between eternal and transient — which bird is the vehicle of the Hindu goddess Saraswati?",
     "answer": "Swan",
     "choices": [
       "Swan",
@@ -4489,7 +4489,7 @@
   },
   {
     "tier": 1,
-    "question": "Peacock is the national bird of:",
+    "question": "Pavo cristatus, the Indian peafowl, is the national bird of which country?",
     "answer": "India",
     "choices": [
       "India",
@@ -4501,7 +4501,7 @@
   },
   {
     "tier": 1,
-    "question": "Bald eagle is the national bird of:",
+    "question": "Adopted in 1782 and recovered after the DDT ban, the bald eagle is the national bird of which country?",
     "answer": "United States",
     "choices": [
       "United States",
@@ -4513,7 +4513,7 @@
   },
   {
     "tier": 1,
-    "question": "Kiwi is a flightless national-symbol bird of:",
+    "question": "Nocturnal with nostrils at the tip of its bill, the kiwi is the flightless national-symbol bird of where?",
     "answer": "New Zealand",
     "choices": [
       "New Zealand",
@@ -4525,7 +4525,7 @@
   },
   {
     "tier": 1,
-    "question": "Kangaroo and emu appear on the coat of arms of:",
+    "question": "Said to symbolize progress because neither walks easily backwards, which country has a kangaroo and emu on its coat of arms?",
     "answer": "Australia",
     "choices": [
       "Australia",
@@ -4537,7 +4537,7 @@
   },
   {
     "tier": 1,
-    "question": "Beaver is the national animal of:",
+    "question": "Recognized in 1975 and tied to the pelt trade that shaped the nation, the beaver is the national animal of where?",
     "answer": "Canada",
     "choices": [
       "Canada",
@@ -4549,7 +4549,7 @@
   },
   {
     "tier": 1,
-    "question": "Giant panda is the national symbol of:",
+    "question": "Native to central China and famous as a diplomatic gift species, which national symbol animal is the giant panda?",
     "answer": "China",
     "choices": [
       "China",
@@ -4561,7 +4561,7 @@
   },
   {
     "tier": 1,
-    "question": "Country whose national animal is the unicorn:",
+    "question": "Appearing on the Royal Coat of Arms and symbolizing purity and untamable power, which country has the unicorn as its national animal?",
     "answer": "Scotland",
     "choices": [
       "Scotland",
@@ -4573,7 +4573,7 @@
   },
   {
     "tier": 1,
-    "question": "Russian heraldic animal, the double-headed:",
+    "question": "Adopted from the Byzantine Empire, which heraldic animal — with a doubled head — represents Russia?",
     "answer": "Eagle",
     "choices": [
       "Eagle",
@@ -4585,7 +4585,7 @@
   },
   {
     "tier": 1,
-    "question": "Lion appearing on the Royal Coat of Arms of England:",
+    "question": "Three of these (passant guardant) were adopted by Richard the Lionheart — which figure appears on the Royal Coat of Arms of England?",
     "answer": "Lion passant",
     "choices": [
       "Lion passant",
@@ -4597,7 +4597,7 @@
   },
   {
     "tier": 1,
-    "question": "Animal on the flag of Sri Lanka:",
+    "question": "The Sinhalese name itself derives from this animal — which beast holds a sword on the flag of Sri Lanka?",
     "answer": "Lion",
     "choices": [
       "Lion",
@@ -4609,7 +4609,7 @@
   },
   {
     "tier": 1,
-    "question": "Dragon on the flag of Wales:",
+    "question": "Called Y Ddraig Goch and linked by tradition to King Arthur, which symbol appears on the flag of Wales?",
     "answer": "Red dragon",
     "choices": [
       "Red dragon",
@@ -4621,7 +4621,7 @@
   },
   {
     "tier": 1,
-    "question": "Animal on the Mexican flag, atop a cactus:",
+    "question": "Drawing on the Aztec founding sign of Tenochtitlan and shown eating a snake atop a cactus, which animal is on the Mexican flag?",
     "answer": "Eagle",
     "choices": [
       "Eagle",
@@ -4633,7 +4633,7 @@
   },
   {
     "tier": 1,
-    "question": "Brazilian flag is most associated with which native animal:",
+    "question": "Featured in tourism iconography alongside the jaguar, which colorful native bird is most associated with the Brazilian flag?",
     "answer": "Macaw",
     "choices": [
       "Macaw",
@@ -4645,7 +4645,7 @@
   },
   {
     "tier": 1,
-    "question": "Symbol of the Republican Party in the US:",
+    "question": "Popularized by Thomas Nast's 1874 Harper's Weekly cartoons, which animal is the symbol of the US Republican Party?",
     "answer": "Elephant",
     "choices": [
       "Elephant",
@@ -4657,7 +4657,7 @@
   },
   {
     "tier": 1,
-    "question": "Symbol of the Democratic Party in the US:",
+    "question": "Embraced by Andrew Jackson after his opponents called him a 'jackass', which animal is the symbol of the US Democratic Party?",
     "answer": "Donkey",
     "choices": [
       "Donkey",
@@ -4669,7 +4669,7 @@
   },
   {
     "tier": 1,
-    "question": "Aesop's fable in which the slow contestant wins:",
+    "question": "From ~6th-century BC Aesop, the moral 'slow and steady wins the race' comes from which fable?",
     "answer": "Tortoise and the Hare",
     "choices": [
       "Tortoise and the Hare",
@@ -4681,7 +4681,7 @@
   },
   {
     "tier": 1,
-    "question": "Aesop's fable about preparing for winter:",
+    "question": "The industrious one stores food while the singer is left hungry — which Aesop fable about preparing for winter is this?",
     "answer": "Ant and the Grasshopper",
     "choices": [
       "Ant and the Grasshopper",
@@ -4693,7 +4693,7 @@
   },
   {
     "tier": 1,
-    "question": "George Orwell allegory using farm animals to critique Soviet communism:",
+    "question": "Published in 1945 with pigs revealing 'all animals are equal, but some more equal' — which Orwell allegory is this?",
     "answer": "Animal Farm",
     "choices": [
       "Animal Farm",
@@ -4705,7 +4705,7 @@
   },
   {
     "tier": 1,
-    "question": "Lewis Carroll's grinning Cheshire cat appears in:",
+    "question": "Disappearing bit by bit until only its grin remains, where does Lewis Carroll's Cheshire cat appear?",
     "answer": "Alice in Wonderland",
     "choices": [
       "Alice in Wonderland",
@@ -4717,7 +4717,7 @@
   },
   {
     "tier": 1,
-    "question": "Talking lion who created Narnia in C.S. Lewis's books:",
+    "question": "Meaning 'lion' in Turkish and a Christ-figure of the Chronicles of Narnia, which talking lion created Narnia?",
     "answer": "Aslan",
     "choices": [
       "Aslan",
@@ -4729,7 +4729,7 @@
   },
   {
     "tier": 1,
-    "question": "Talking bear in A.A. Milne's stories who loves honey:",
+    "question": "Named after a real Canadian black bear at the London Zoo (Winnipeg), which honey-loving bear is from A.A. Milne's stories?",
     "answer": "Winnie-the-Pooh",
     "choices": [
       "Winnie-the-Pooh",
@@ -4741,7 +4741,7 @@
   },
   {
     "tier": 1,
-    "question": "Whale that obsesses Captain Ahab in Melville's novel:",
+    "question": "Published in 1851 at the height of the Yankee whaling era, which whale obsesses Captain Ahab in Melville's novel?",
     "answer": "Moby-Dick",
     "choices": [
       "Moby-Dick",
@@ -4753,7 +4753,7 @@
   },
   {
     "tier": 1,
-    "question": "Pig in Charlotte's Web saved by a literate spider:",
+    "question": "Saved by Charlotte's web spelling 'SOME PIG' in E.B. White's 1952 novel, which pig is this?",
     "answer": "Wilbur",
     "choices": [
       "Wilbur",
@@ -4765,7 +4765,7 @@
   },
   {
     "tier": 1,
-    "question": "Rudyard Kipling's mongoose hero who fights cobras:",
+    "question": "Mongooses really do hunt and kill cobras — which Rudyard Kipling mongoose hero of the Jungle Book is this?",
     "answer": "Rikki-Tikki-Tavi",
     "choices": [
       "Rikki-Tikki-Tavi",
@@ -4777,7 +4777,7 @@
   },
   {
     "tier": 1,
-    "question": "Disney mouse created in 1928:",
+    "question": "First appearing in Steamboat Willie, which Walt Disney signature mouse character was created in 1928?",
     "answer": "Mickey Mouse",
     "choices": [
       "Mickey Mouse",
@@ -4789,7 +4789,7 @@
   },
   {
     "tier": 1,
-    "question": "Female pig used for breeding is called:",
+    "question": "With boar as the intact male and gilt as a young female that hasn't farrowed, what is a female breeding pig called?",
     "answer": "Sow",
     "choices": [
       "Sow",
@@ -4801,7 +4801,7 @@
   },
   {
     "tier": 1,
-    "question": "Adult male sheep, used for breeding:",
+    "question": "With wether as a castrated male and tup as British dialect, what is an adult male sheep used for breeding called?",
     "answer": "Ram",
     "choices": [
       "Ram",
@@ -4813,7 +4813,7 @@
   },
   {
     "tier": 1,
-    "question": "Adult male deer is called a:",
+    "question": "With 'stag' more often used for elk and red deer and 'hart' as older English, what is the common term for an adult male deer?",
     "answer": "Buck",
     "choices": [
       "Buck",
@@ -4825,7 +4825,7 @@
   },
   {
     "tier": 1,
-    "question": "A Cow belongs to which vertebrate class?",
+    "question": "With mammary glands, hair, and three middle-ear bones, to which vertebrate class does a cow belong?",
     "answer": "Mammal",
     "choices": [
       "Mammal",
@@ -4837,7 +4837,7 @@
   },
   {
     "tier": 1,
-    "question": "A Hummingbird belongs to which vertebrate class?",
+    "question": "Evolved from theropod dinosaurs with feathers, hollow bones, and beaks, to which vertebrate class does a hummingbird belong?",
     "answer": "Bird",
     "choices": [
       "Bird",
@@ -4849,7 +4849,7 @@
   },
   {
     "tier": 1,
-    "question": "A Komodo dragon belongs to which vertebrate class?",
+    "question": "With scales, mostly egg-laying, and ectothermic — to which vertebrate class does a Komodo dragon belong?",
     "answer": "Reptile",
     "choices": [
       "Reptile",
@@ -4861,7 +4861,7 @@
   },
   {
     "tier": 1,
-    "question": "A Rattlesnake belongs to which vertebrate class?",
+    "question": "With scales, mostly egg-laying, and ectothermic — to which vertebrate class does a rattlesnake belong?",
     "answer": "Reptile",
     "choices": [
       "Reptile",
@@ -4873,7 +4873,7 @@
   },
   {
     "tier": 1,
-    "question": "A Salamander belongs to which vertebrate class?",
+    "question": "With smooth wet skin and an aquatic larval phase, to which vertebrate class does a salamander belong?",
     "answer": "Amphibian",
     "choices": [
       "Amphibian",
@@ -4885,7 +4885,7 @@
   },
   {
     "tier": 1,
-    "question": "A Pufferfish belongs to which vertebrate class?",
+    "question": "With gills, fins, and a bony or cartilaginous skeleton, to which vertebrate class does a pufferfish belong?",
     "answer": "Fish",
     "choices": [
       "Fish",

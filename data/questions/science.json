@@ -1,7 +1,7 @@
 [
   {
     "tier": 1,
-    "question": "SI unit of force:",
+    "question": "Equal to one kilogram-meter per second squared, this SI unit measures force. What is it called?",
     "answer": "Newton",
     "choices": [
       "Newton",
@@ -13,7 +13,7 @@
   },
   {
     "tier": 1,
-    "question": "SI unit of energy:",
+    "question": "Equal to one newton-meter, this SI unit measures energy and work. What is it called?",
     "answer": "Joule",
     "choices": [
       "Joule",
@@ -25,7 +25,7 @@
   },
   {
     "tier": 1,
-    "question": "SI unit of power:",
+    "question": "Equal to one joule per second, this SI unit measures power. What is it called?",
     "answer": "Watt",
     "choices": [
       "Watt",
@@ -37,7 +37,7 @@
   },
   {
     "tier": 1,
-    "question": "SI unit of electric current:",
+    "question": "Named for the 19th-century French physicist André-Marie Ampère, this SI unit measures electric current. What is it called?",
     "answer": "Ampere",
     "choices": [
       "Ampere",
@@ -49,7 +49,7 @@
   },
   {
     "tier": 1,
-    "question": "SI unit of electrical resistance:",
+    "question": "Symbolized by the Greek letter Ω and appearing in Ohm's law V = IR, this SI unit measures electrical resistance. What is it called?",
     "answer": "Ohm",
     "choices": [
       "Ohm",
@@ -61,7 +61,7 @@
   },
   {
     "tier": 1,
-    "question": "SI unit of electric potential:",
+    "question": "Named for Alessandro Volta, inventor of the battery, this SI unit measures electric potential. What is it called?",
     "answer": "Volt",
     "choices": [
       "Volt",
@@ -73,7 +73,7 @@
   },
   {
     "tier": 1,
-    "question": "SI unit of frequency:",
+    "question": "Equal to one cycle per second and named for Heinrich Hertz, this SI unit measures frequency. What is it called?",
     "answer": "Hertz",
     "choices": [
       "Hertz",
@@ -85,7 +85,7 @@
   },
   {
     "tier": 1,
-    "question": "SI unit of pressure:",
+    "question": "Equal to one newton per square meter and named for Blaise Pascal, this SI unit measures pressure. What is it called?",
     "answer": "Pascal",
     "choices": [
       "Pascal",
@@ -97,7 +97,7 @@
   },
   {
     "tier": 1,
-    "question": "SI unit of magnetic flux density:",
+    "question": "Named for Nikola Tesla, this SI unit measures magnetic flux density. What is it called?",
     "answer": "Tesla",
     "choices": [
       "Tesla",
@@ -109,7 +109,7 @@
   },
   {
     "tier": 1,
-    "question": "Speed of light in vacuum (rounded):",
+    "question": "Exactly 299,792,458 meters per second — the value used to define the meter — the speed of light in vacuum rounds to which figure?",
     "answer": "300,000 km/s",
     "choices": [
       "300,000 km/s",
@@ -121,7 +121,7 @@
   },
   {
     "tier": 1,
-    "question": "Acceleration due to gravity at Earth's surface (rounded):",
+    "question": "Often approximated as 10 m/s² for quick mental math, the acceleration due to gravity at Earth's surface rounds to which value?",
     "answer": "9.8 m/s²",
     "choices": [
       "9.8 m/s²",
@@ -133,7 +133,7 @@
   },
   {
     "tier": 1,
-    "question": "Speed of sound in air at room temperature (rounded):",
+    "question": "Equivalent to roughly 767 mph and varying with temperature and humidity, the speed of sound in air at room temperature rounds to which value?",
     "answer": "343 m/s",
     "choices": [
       "343 m/s",
@@ -145,7 +145,7 @@
   },
   {
     "tier": 1,
-    "question": "Newton's First Law is also known as the law of:",
+    "question": "An object in motion stays in motion unless acted on by a force — Newton's First Law goes by which other name?",
     "answer": "Inertia",
     "choices": [
       "Inertia",
@@ -157,7 +157,7 @@
   },
   {
     "tier": 1,
-    "question": "Newton's Second Law equation:",
+    "question": "Force equals mass times acceleration — Newton's Second Law is captured by which equation?",
     "answer": "F = ma",
     "choices": [
       "F = ma",
@@ -169,7 +169,7 @@
   },
   {
     "tier": 1,
-    "question": "Newton's Third Law:",
+    "question": "For every action, there is an equal and opposite reaction — Newton's Third Law states what?",
     "answer": "Equal and opposite reaction",
     "choices": [
       "Equal and opposite reaction",
@@ -181,7 +181,7 @@
   },
   {
     "tier": 1,
-    "question": "Einstein's most famous equation:",
+    "question": "Energy equals mass times the speed of light squared — Einstein's most famous equation reads how?",
     "answer": "E = mc²",
     "choices": [
       "E = mc²",
@@ -193,7 +193,7 @@
   },
   {
     "tier": 1,
-    "question": "Particle with a positive electric charge:",
+    "question": "Found in the nucleus alongside neutrons, this subatomic particle carries a positive electric charge. What is it called?",
     "answer": "Proton",
     "choices": [
       "Proton",
@@ -205,7 +205,7 @@
   },
   {
     "tier": 1,
-    "question": "Subatomic particle with no charge:",
+    "question": "Sitting in the nucleus with the proton, this subatomic particle carries no electric charge. What is it called?",
     "answer": "Neutron",
     "choices": [
       "Neutron",
@@ -217,7 +217,7 @@
   },
   {
     "tier": 1,
-    "question": "Particle that carries light:",
+    "question": "A massless quantum of the electromagnetic field, this particle carries light itself. What is it called?",
     "answer": "Photon",
     "choices": [
       "Photon",
@@ -229,7 +229,7 @@
   },
   {
     "tier": 1,
-    "question": "Form of energy from movement:",
+    "question": "Captured by the formula KE = ½mv², this form of energy comes from movement. What is it called?",
     "answer": "Kinetic energy",
     "choices": [
       "Kinetic energy",
@@ -241,7 +241,7 @@
   },
   {
     "tier": 1,
-    "question": "Stored energy due to position:",
+    "question": "A book on a shelf has it ready to fall; this form of energy is stored due to position. What is it called?",
     "answer": "Potential energy",
     "choices": [
       "Potential energy",
@@ -253,7 +253,7 @@
   },
   {
     "tier": 1,
-    "question": "Force that opposes motion between surfaces:",
+    "question": "Why you can walk and why brakes work, this force opposes motion between surfaces in contact. What is it called?",
     "answer": "Friction",
     "choices": [
       "Friction",
@@ -265,7 +265,7 @@
   },
   {
     "tier": 1,
-    "question": "Force pulling objects toward Earth's center:",
+    "question": "Described by Newton's universal law of gravitation, this force pulls objects toward Earth's center. What is it called?",
     "answer": "Gravity",
     "choices": [
       "Gravity",
@@ -277,7 +277,7 @@
   },
   {
     "tier": 1,
-    "question": "Simple machine: ramp:",
+    "question": "Trading distance for reduced force, a ramp is which kind of simple machine?",
     "answer": "Inclined plane",
     "choices": [
       "Inclined plane",
@@ -289,7 +289,7 @@
   },
   {
     "tier": 1,
-    "question": "Simple machine: seesaw:",
+    "question": "Built around an effort, a fulcrum, and a load, a seesaw is which kind of simple machine?",
     "answer": "Lever",
     "choices": [
       "Lever",
@@ -301,7 +301,7 @@
   },
   {
     "tier": 1,
-    "question": "Simple machine: door wedge:",
+    "question": "Made of two inclined planes placed back to back, a door wedge is which kind of simple machine?",
     "answer": "Wedge",
     "choices": [
       "Wedge",
@@ -313,7 +313,7 @@
   },
   {
     "tier": 1,
-    "question": "Number of fundamental forces in the Standard Model:",
+    "question": "Gravity, electromagnetism, strong nuclear, and weak nuclear — the Standard Model recognizes how many fundamental forces?",
     "answer": "4",
     "choices": [
       "4",
@@ -325,7 +325,7 @@
   },
   {
     "tier": 1,
-    "question": "Strongest of the four fundamental forces:",
+    "question": "Binding quarks into protons and neutrons, this is the strongest of the four fundamental forces. What is it called?",
     "answer": "Strong nuclear",
     "choices": [
       "Strong nuclear",
@@ -337,7 +337,7 @@
   },
   {
     "tier": 1,
-    "question": "Visible light is part of:",
+    "question": "Including radio, microwave, infrared, visible, ultraviolet, X-ray, and gamma rays, visible light is part of which spectrum?",
     "answer": "Electromagnetic spectrum",
     "choices": [
       "Electromagnetic spectrum",
@@ -349,7 +349,7 @@
   },
   {
     "tier": 1,
-    "question": "Color of light with the shortest visible wavelength:",
+    "question": "Just past it on the electromagnetic spectrum lies ultraviolet — which color of visible light has the shortest wavelength?",
     "answer": "Violet",
     "choices": [
       "Violet",
@@ -361,7 +361,7 @@
   },
   {
     "tier": 1,
-    "question": "Lens that converges parallel light to a point:",
+    "question": "Used in magnifying glasses and farsighted-eye corrections, this kind of lens converges parallel light rays to a point. What is it called?",
     "answer": "Convex",
     "choices": [
       "Convex",
@@ -373,7 +373,7 @@
   },
   {
     "tier": 1,
-    "question": "Phenomenon that splits white light into colors:",
+    "question": "Demonstrated by Newton's prism experiment in 1666, this phenomenon splits white light into its colors. What is it called?",
     "answer": "Refraction",
     "choices": [
       "Refraction",
@@ -385,7 +385,7 @@
   },
   {
     "tier": 1,
-    "question": "State of matter with fixed shape and volume:",
+    "question": "With molecules tightly packed in fixed positions, this state of matter holds both fixed shape and fixed volume. What is it called?",
     "answer": "Solid",
     "choices": [
       "Solid",
@@ -397,7 +397,7 @@
   },
   {
     "tier": 1,
-    "question": "Most abundant state of ordinary matter in the universe:",
+    "question": "Stars are made of it — ionized gas of charged particles — making it the most abundant state of ordinary matter in the universe. What is it called?",
     "answer": "Plasma",
     "choices": [
       "Plasma",
@@ -409,7 +409,7 @@
   },
   {
     "tier": 1,
-    "question": "Boiling point of water at sea level (Celsius):",
+    "question": "Pressure-dependent (at Everest's summit water boils near 70°C), the boiling point of water at sea level in Celsius is what?",
     "answer": "100°C",
     "choices": [
       "100°C",
@@ -421,7 +421,7 @@
   },
   {
     "tier": 1,
-    "question": "Freezing point of water (Celsius):",
+    "question": "Equivalent to 32°F and defining the Celsius zero point, the freezing point of water in Celsius is what?",
     "answer": "0°C",
     "choices": [
       "0°C",
@@ -433,7 +433,7 @@
   },
   {
     "tier": 1,
-    "question": "Absolute zero in Celsius:",
+    "question": "The lowest possible temperature, at which molecular motion ceases, absolute zero in Celsius is approximately what?",
     "answer": "-273.15°C",
     "choices": [
       "-273.15°C",
@@ -445,7 +445,7 @@
   },
   {
     "tier": 1,
-    "question": "Quantity measured in kelvin:",
+    "question": "Starting at absolute zero with no negative values allowed, the kelvin scale measures which physical quantity?",
     "answer": "Temperature",
     "choices": [
       "Temperature",
@@ -457,7 +457,7 @@
   },
   {
     "tier": 1,
-    "question": "Process by which heat moves through solids:",
+    "question": "Why a metal spoon in soup heats up through direct molecular contact, this process moves heat through solids. What is it called?",
     "answer": "Conduction",
     "choices": [
       "Conduction",
@@ -469,7 +469,7 @@
   },
   {
     "tier": 1,
-    "question": "Heat transfer through bulk fluid motion:",
+    "question": "Hot air rises while cold air sinks, forming a cell that transfers heat through bulk fluid motion. What is this process called?",
     "answer": "Convection",
     "choices": [
       "Convection",
@@ -481,7 +481,7 @@
   },
   {
     "tier": 1,
-    "question": "Heat transfer through electromagnetic waves:",
+    "question": "How the Sun's heat reaches Earth across the vacuum of space, this is heat transfer through electromagnetic waves. What is it called?",
     "answer": "Radiation",
     "choices": [
       "Radiation",
@@ -493,7 +493,7 @@
   },
   {
     "tier": 1,
-    "question": "First law of thermodynamics is conservation of:",
+    "question": "Energy is neither created nor destroyed — the first law of thermodynamics is conservation of which quantity?",
     "answer": "Energy",
     "choices": [
       "Energy",
@@ -505,7 +505,7 @@
   },
   {
     "tier": 1,
-    "question": "Second law of thermodynamics: entropy of an isolated system:",
+    "question": "Often called the arrow of time, the second law of thermodynamics says the entropy of an isolated system does what?",
     "answer": "Always increases",
     "choices": [
       "Always increases",
@@ -517,7 +517,7 @@
   },
   {
     "tier": 1,
-    "question": "Device that measures temperature:",
+    "question": "From the Greek thermē (heat) plus metron (measure), this instrument measures temperature. What is it called?",
     "answer": "Thermometer",
     "choices": [
       "Thermometer",
@@ -529,7 +529,7 @@
   },
   {
     "tier": 1,
-    "question": "Device that measures atmospheric pressure:",
+    "question": "Invented by Evangelista Torricelli in 1643, this instrument measures atmospheric pressure. What is it called?",
     "answer": "Barometer",
     "choices": [
       "Barometer",
@@ -541,7 +541,7 @@
   },
   {
     "tier": 1,
-    "question": "Mass per unit volume:",
+    "question": "Defined as ρ = m/V, with water equaling 1 g/cm³ by definition, this quantity is mass per unit volume. What is it called?",
     "answer": "Density",
     "choices": [
       "Density",
@@ -553,7 +553,7 @@
   },
   {
     "tier": 1,
-    "question": "Greek thinker who exclaimed 'Eureka!' on discovering buoyancy:",
+    "question": "Discovering that buoyant force equals the weight of displaced fluid, which Greek thinker reportedly leapt from his bath shouting 'Eureka!'?",
     "answer": "Archimedes",
     "choices": [
       "Archimedes",
@@ -565,7 +565,7 @@
   },
   {
     "tier": 1,
-    "question": "Mass × velocity equals:",
+    "question": "Conserved in closed systems and given by the formula p = mv, this quantity is the product of mass and velocity. What is it called?",
     "answer": "Momentum",
     "choices": [
       "Momentum",
@@ -577,7 +577,7 @@
   },
   {
     "tier": 1,
-    "question": "Unit of work in the SI system:",
+    "question": "Defined as force times distance, with 1 J = 1 N·m, the SI unit of work is which of these?",
     "answer": "Joule",
     "choices": [
       "Joule",
@@ -589,7 +589,7 @@
   },
   {
     "tier": 1,
-    "question": "Number of poles on a magnet:",
+    "question": "Monopoles have never been observed in nature — every magnet has how many poles?",
     "answer": "Two",
     "choices": [
       "Two",
@@ -601,7 +601,7 @@
   },
   {
     "tier": 1,
-    "question": "Like magnetic poles:",
+    "question": "Opposites attract; what do like magnetic poles do?",
     "answer": "Repel",
     "choices": [
       "Repel",
@@ -613,7 +613,7 @@
   },
   {
     "tier": 1,
-    "question": "Nikola Tesla worked primarily on what kind of electricity:",
+    "question": "Winning the late-19th-century 'War of Currents' against Edison's DC, Nikola Tesla worked primarily on which kind of electricity?",
     "answer": "Alternating current",
     "choices": [
       "Alternating current",
@@ -625,7 +625,7 @@
   },
   {
     "tier": 1,
-    "question": "Wrote Principia Mathematica (1687):",
+    "question": "Combining the laws of motion and universal gravitation into one treatise in 1687, which scientist wrote the Principia Mathematica?",
     "answer": "Isaac Newton",
     "choices": [
       "Isaac Newton",
@@ -637,7 +637,7 @@
   },
   {
     "tier": 1,
-    "question": "Discovered four moons of Jupiter (1610):",
+    "question": "Spotting Io, Europa, Ganymede, and Callisto through a new telescope in 1610, which astronomer discovered the four Galilean moons of Jupiter?",
     "answer": "Galileo",
     "choices": [
       "Galileo",
@@ -649,7 +649,7 @@
   },
   {
     "tier": 1,
-    "question": "Theory describing gravity as curved spacetime:",
+    "question": "Verified by Eddington's 1919 eclipse measurement, which 1915 Einstein theory describes gravity as curved spacetime?",
     "answer": "General relativity",
     "choices": [
       "General relativity",
@@ -661,7 +661,7 @@
   },
   {
     "tier": 1,
-    "question": "Theory describing time and space as observer-dependent:",
+    "question": "Published in 1905 and the source of E = mc², which Einstein theory makes time and space observer-dependent?",
     "answer": "Special relativity",
     "choices": [
       "Special relativity",
@@ -673,7 +673,7 @@
   },
   {
     "tier": 1,
-    "question": "Branch of physics dealing with the very small:",
+    "question": "Probabilistic rather than deterministic, dealing with atoms, electrons, and photons, this branch of physics handles the very small. What is it called?",
     "answer": "Quantum mechanics",
     "choices": [
       "Quantum mechanics",
@@ -685,7 +685,7 @@
   },
   {
     "tier": 1,
-    "question": "Particle discovered at CERN in 2012:",
+    "question": "Detected at CERN's Large Hadron Collider in 2012, this particle's field gives other particles their mass. What is it called?",
     "answer": "Higgs boson",
     "choices": [
       "Higgs boson",
@@ -697,7 +697,7 @@
   },
   {
     "tier": 1,
-    "question": "Particle that mediates the electromagnetic force:",
+    "question": "Each fundamental force has its own carrier particle — the one that mediates the electromagnetic force is which?",
     "answer": "Photon",
     "choices": [
       "Photon",
@@ -709,7 +709,7 @@
   },
   {
     "tier": 1,
-    "question": "Up, down, charm, strange, top, bottom — these name:",
+    "question": "Up, down, charm, strange, top, and bottom name six flavors of which subatomic particle?",
     "answer": "Quarks",
     "choices": [
       "Quarks",
@@ -721,7 +721,7 @@
   },
   {
     "tier": 1,
-    "question": "Type of radiation a sheet of paper can stop:",
+    "question": "Heavy and low-penetration — essentially a helium nucleus — which type of nuclear radiation can a sheet of paper stop?",
     "answer": "Alpha",
     "choices": [
       "Alpha",
@@ -733,7 +733,7 @@
   },
   {
     "tier": 1,
-    "question": "Most penetrating type of nuclear radiation:",
+    "question": "High-energy electromagnetic radiation needing lead or thick concrete to block, this is the most penetrating type of nuclear radiation. What is it called?",
     "answer": "Gamma",
     "choices": [
       "Gamma",
@@ -745,7 +745,7 @@
   },
   {
     "tier": 1,
-    "question": "Sound is a:",
+    "question": "Traveling as compression and rarefaction along its direction of travel, a sound wave is which kind of wave?",
     "answer": "Longitudinal wave",
     "choices": [
       "Longitudinal wave",
@@ -757,7 +757,7 @@
   },
   {
     "tier": 1,
-    "question": "Light is a:",
+    "question": "With its electric and magnetic fields oscillating perpendicular to the direction of motion, light is which kind of wave?",
     "answer": "Transverse wave",
     "choices": [
       "Transverse wave",
@@ -769,7 +769,7 @@
   },
   {
     "tier": 1,
-    "question": "Number of meters in one kilometer:",
+    "question": "Using the SI prefix kilo- meaning 10³, one kilometer equals how many meters?",
     "answer": "1,000",
     "choices": [
       "1,000",
@@ -781,7 +781,7 @@
   },
   {
     "tier": 1,
-    "question": "SI prefix meaning 10⁻⁹:",
+    "question": "Used for distances like DNA's ~2 nm helix diameter, the SI prefix meaning 10⁻⁹ is which?",
     "answer": "Nano",
     "choices": [
       "Nano",
@@ -793,7 +793,7 @@
   },
   {
     "tier": 1,
-    "question": "Speed of light slows down most in:",
+    "question": "With a refractive index of ~2.42 — the reason it sparkles — the speed of light slows down most in which substance?",
     "answer": "Diamond",
     "choices": [
       "Diamond",
@@ -805,7 +805,7 @@
   },
   {
     "tier": 1,
-    "question": "Phenomenon causing a rainbow:",
+    "question": "Water droplets bending white light into its colors, a rainbow is caused by which phenomenon?",
     "answer": "Refraction",
     "choices": [
       "Refraction",
@@ -817,7 +817,7 @@
   },
   {
     "tier": 1,
-    "question": "Pitch of a sound depends on:",
+    "question": "Higher means higher — the pitch of a sound depends on which property of its wave?",
     "answer": "Frequency",
     "choices": [
       "Frequency",
@@ -829,7 +829,7 @@
   },
   {
     "tier": 1,
-    "question": "Loudness of a sound depends on:",
+    "question": "Bigger pressure variations mean a louder sound — loudness depends on which wave property?",
     "answer": "Amplitude",
     "choices": [
       "Amplitude",
@@ -841,7 +841,7 @@
   },
   {
     "tier": 1,
-    "question": "Decibel measures:",
+    "question": "A logarithmic scale where every 10 dB is a 10× increase, the decibel measures which physical quantity?",
     "answer": "Sound intensity",
     "choices": [
       "Sound intensity",
@@ -853,7 +853,7 @@
   },
   {
     "tier": 1,
-    "question": "Pendulum period depends on its:",
+    "question": "First observed by Galileo watching a cathedral lamp swing, a pendulum's period depends on which property of the pendulum?",
     "answer": "Length",
     "choices": [
       "Length",
@@ -865,7 +865,7 @@
   },
   {
     "tier": 1,
-    "question": "Faster fluid flow means lower:",
+    "question": "Captured by Bernoulli's principle and central to how airfoils generate lift, faster fluid flow means lower what?",
     "answer": "Pressure",
     "choices": [
       "Pressure",
@@ -877,7 +877,7 @@
   },
   {
     "tier": 1,
-    "question": "Boyle's law: at fixed temperature, gas pressure and volume are:",
+    "question": "Squeezing a balloon shows it: pressure rises as volume falls — Boyle's law says gas pressure and volume at fixed temperature are how related?",
     "answer": "Inversely proportional",
     "choices": [
       "Inversely proportional",
@@ -889,7 +889,7 @@
   },
   {
     "tier": 1,
-    "question": "Object weighs less in water because of:",
+    "question": "With buoyant force pushing up against weight, an object weighs less when submerged in water because of what?",
     "answer": "Buoyancy",
     "choices": [
       "Buoyancy",
@@ -901,7 +901,7 @@
   },
   {
     "tier": 1,
-    "question": "Wavelength × frequency =",
+    "question": "Captured by the fundamental wave equation v = fλ, wavelength times frequency equals which quantity?",
     "answer": "Wave speed",
     "choices": [
       "Wave speed",
@@ -913,7 +913,7 @@
   },
   {
     "tier": 1,
-    "question": "Time it takes light from the Sun to reach Earth (approx):",
+    "question": "Crossing 150 million km at 300,000 km/s — about 500 seconds — light from the Sun reaches Earth in roughly how long?",
     "answer": "8 minutes",
     "choices": [
       "8 minutes",
@@ -925,7 +925,7 @@
   },
   {
     "tier": 1,
-    "question": "Effect responsible for ambulance siren changing pitch as it passes:",
+    "question": "Compressed waves ahead and stretched waves behind a passing ambulance produce the changing siren pitch known by what name?",
     "answer": "Doppler effect",
     "choices": [
       "Doppler effect",
@@ -937,7 +937,7 @@
   },
   {
     "tier": 1,
-    "question": "Doppler shift toward longer wavelengths for receding light is called:",
+    "question": "Seen in distant galaxies and central to Hubble's expanding universe, the Doppler shift of receding light toward longer wavelengths is called what?",
     "answer": "Redshift",
     "choices": [
       "Redshift",
@@ -949,7 +949,7 @@
   },
   {
     "tier": 1,
-    "question": "Effect Einstein won his 1921 Nobel for:",
+    "question": "Treating light as quanta rather than waves — not relativity, despite popular belief — Einstein won his 1921 Nobel for explaining which effect?",
     "answer": "Photoelectric effect",
     "choices": [
       "Photoelectric effect",
@@ -961,7 +961,7 @@
   },
   {
     "tier": 1,
-    "question": "Δx · Δp ≥ ℏ/2 is known as:",
+    "question": "Stating you cannot know position and momentum exactly at the same time, the relation Δx · Δp ≥ ℏ/2 carries which name?",
     "answer": "Heisenberg uncertainty",
     "choices": [
       "Heisenberg uncertainty",
@@ -973,7 +973,7 @@
   },
   {
     "tier": 1,
-    "question": "Cat thought experiment about superposition:",
+    "question": "Imagining a cat both alive and dead until observed, the 1935 thought experiment about quantum superposition belongs to which physicist?",
     "answer": "Schrödinger's",
     "choices": [
       "Schrödinger's",
@@ -985,7 +985,7 @@
   },
   {
     "tier": 1,
-    "question": "Quantum 'spooky action at a distance' refers to:",
+    "question": "Captured in the 1935 EPR paper and confirmed by Aspect's 1980s tests of Bell inequalities, 'spooky action at a distance' refers to which phenomenon?",
     "answer": "Entanglement",
     "choices": [
       "Entanglement",
@@ -997,7 +997,7 @@
   },
   {
     "tier": 1,
-    "question": "Object so dense not even light escapes:",
+    "question": "Imaged directly by the Event Horizon Telescope in 2019 (M87), an object so dense that not even light escapes is called what?",
     "answer": "Black hole",
     "choices": [
       "Black hole",
@@ -1009,7 +1009,7 @@
   },
   {
     "tier": 1,
-    "question": "Boundary around a black hole beyond which nothing escapes:",
+    "question": "Marking where escape velocity equals the speed of light, the boundary around a black hole beyond which nothing escapes is called what?",
     "answer": "Event horizon",
     "choices": [
       "Event horizon",
@@ -1021,7 +1021,7 @@
   },
   {
     "tier": 1,
-    "question": "Color emitted by a hot blacksmith's iron just below white-hot:",
+    "question": "Hotter than red but cooler than blue-white on a blackbody curve, the color emitted by a hot blacksmith's iron just below white-hot is what?",
     "answer": "Yellow",
     "choices": [
       "Yellow",
@@ -1033,7 +1033,7 @@
   },
   {
     "tier": 1,
-    "question": "Type of energy stored in chemical bonds:",
+    "question": "Released in combustion and respiration, which type of energy is stored in chemical bonds?",
     "answer": "Chemical energy",
     "choices": [
       "Chemical energy",
@@ -1045,7 +1045,7 @@
   },
   {
     "tier": 1,
-    "question": "Energy released when atomic nuclei fuse:",
+    "question": "Powering the Sun through hydrogen → helium, the energy released when atomic nuclei fuse is which type?",
     "answer": "Nuclear energy",
     "choices": [
       "Nuclear energy",
@@ -1057,7 +1057,7 @@
   },
   {
     "tier": 1,
-    "question": "Splitting an atomic nucleus is called:",
+    "question": "Powering nuclear reactors and discovered by Hahn and Meitner in 1938, the splitting of an atomic nucleus is called what?",
     "answer": "Fission",
     "choices": [
       "Fission",
@@ -1069,7 +1069,7 @@
   },
   {
     "tier": 1,
-    "question": "Joining of atomic nuclei to release energy:",
+    "question": "Powering hydrogen bombs and stars, the joining of atomic nuclei to release energy is called what?",
     "answer": "Fusion",
     "choices": [
       "Fusion",
@@ -1081,7 +1081,7 @@
   },
   {
     "tier": 1,
-    "question": "Inventor of the first practical light bulb (commercial):",
+    "question": "Refining earlier filament designs into a durable commercial product in 1879, which inventor made the first practical light bulb?",
     "answer": "Thomas Edison",
     "choices": [
       "Thomas Edison",
@@ -1093,7 +1093,7 @@
   },
   {
     "tier": 1,
-    "question": "Inventor of the practical steam engine that powered the Industrial Revolution:",
+    "question": "Introducing the separate condenser in 1769 and lending his name to the unit of power, which inventor made the practical steam engine?",
     "answer": "James Watt",
     "choices": [
       "James Watt",
@@ -1105,7 +1105,7 @@
   },
   {
     "tier": 1,
-    "question": "Inventor of the first chemical battery (voltaic pile, 1800):",
+    "question": "Stacking zinc and copper discs separated by brine-soaked cloth to make the voltaic pile in 1800, who invented the first chemical battery?",
     "answer": "Alessandro Volta",
     "choices": [
       "Alessandro Volta",
@@ -1117,7 +1117,7 @@
   },
   {
     "tier": 1,
-    "question": "Discovered electromagnetic induction (1831):",
+    "question": "Showing that a moving magnet through a coil generates current — the basis of every generator — which scientist discovered electromagnetic induction in 1831?",
     "answer": "Michael Faraday",
     "choices": [
       "Michael Faraday",
@@ -1129,7 +1129,7 @@
   },
   {
     "tier": 1,
-    "question": "Unified electricity, magnetism, and light into one theory (1865):",
+    "question": "With four equations that predicted electromagnetic waves before they were detected, which 1865 unifier of electricity, magnetism, and light deserves credit?",
     "answer": "Maxwell",
     "choices": [
       "Maxwell",
@@ -1141,7 +1141,7 @@
   },
   {
     "tier": 1,
-    "question": "Famous experimentally-verified prediction of general relativity:",
+    "question": "Confirmed by Eddington's 1919 eclipse expedition, which experimentally-verified prediction of general relativity vindicated Einstein?",
     "answer": "Light bends near the Sun",
     "choices": [
       "Light bends near the Sun",
@@ -1153,7 +1153,7 @@
   },
   {
     "tier": 1,
-    "question": "Discovered the law of universal gravitation:",
+    "question": "Realizing the same force pulls the apple down and holds the Moon in orbit, which scientist discovered the law of universal gravitation?",
     "answer": "Newton",
     "choices": [
       "Newton",
@@ -1165,7 +1165,7 @@
   },
   {
     "tier": 1,
-    "question": "Person Voyager 1 carries a recording for, but won't reach for ~40,000 years:",
+    "question": "Voyager 1 entered interstellar space in 2012 carrying a Golden Record meant for whom — even though it won't reach a target for ~40,000 years?",
     "answer": "Any nearby star",
     "choices": [
       "Any nearby star",
@@ -1177,7 +1177,7 @@
   },
   {
     "tier": 1,
-    "question": "Number of significant figures in 0.00450:",
+    "question": "Leading zeros don't count but trailing zeros after a decimal do — how many significant figures does 0.00450 have?",
     "answer": "3",
     "choices": [
       "3",
@@ -1189,7 +1189,7 @@
   },
   {
     "tier": 1,
-    "question": "Astronomer who showed galaxies are receding (1929):",
+    "question": "Showing that farther galaxies recede faster — what we now call Hubble's law — which astronomer demonstrated in 1929 that galaxies are receding?",
     "answer": "Edwin Hubble",
     "choices": [
       "Edwin Hubble",
@@ -1201,7 +1201,7 @@
   },
   {
     "tier": 1,
-    "question": "Approximate age of the universe (years):",
+    "question": "Measured from the cosmic microwave background plus the expansion rate, the approximate age of the universe in years is what?",
     "answer": "13.8 billion",
     "choices": [
       "13.8 billion",
@@ -1213,7 +1213,7 @@
   },
   {
     "tier": 1,
-    "question": "Material with zero electrical resistance below a critical temperature:",
+    "question": "Discovered by Heike Kamerlingh Onnes in 1911 when he cooled mercury with liquid helium and used today in MRI magnets, this kind of material has zero electrical resistance below a critical temperature. What is it called?",
     "answer": "Superconductor",
     "choices": [
       "Superconductor",
@@ -1225,7 +1225,7 @@
   },
   {
     "tier": 1,
-    "question": "Curved spacetime around mass is described by:",
+    "question": "Set out in Einstein's 1915 field equations, curved spacetime around a mass is described by which theory?",
     "answer": "General relativity",
     "choices": [
       "General relativity",
@@ -1237,7 +1237,7 @@
   },
   {
     "tier": 1,
-    "question": "Ratio of circumference to diameter of a circle:",
+    "question": "Approximately 3.14159 and turning up everywhere in physics, the ratio of a circle's circumference to its diameter is given which symbol?",
     "answer": "Pi (π)",
     "choices": [
       "Pi (π)",
@@ -1249,7 +1249,7 @@
   },
   {
     "tier": 1,
-    "question": "Vector quantity with magnitude and direction:",
+    "question": "Unlike speed, which is scalar, this vector quantity has both magnitude and direction. What is it called?",
     "answer": "Velocity",
     "choices": [
       "Velocity",
@@ -1261,7 +1261,7 @@
   },
   {
     "tier": 1,
-    "question": "Centripetal force on an object moving in a circle points:",
+    "question": "Without it, an object flies off in a straight line — the centripetal force on an object moving in a circle points in which direction?",
     "answer": "Toward the center",
     "choices": [
       "Toward the center",
@@ -1273,7 +1273,7 @@
   },
   {
     "tier": 1,
-    "question": "Chemical symbol for gold:",
+    "question": "Taken from the Latin aurum (with Ag for argentum, silver), the chemical symbol for gold is what?",
     "answer": "Au",
     "choices": [
       "Au",
@@ -1285,7 +1285,7 @@
   },
   {
     "tier": 1,
-    "question": "Chemical symbol for silver:",
+    "question": "Taken from the Latin argentum, the chemical symbol for silver is what?",
     "answer": "Ag",
     "choices": [
       "Ag",
@@ -1297,7 +1297,7 @@
   },
   {
     "tier": 1,
-    "question": "Chemical symbol for potassium:",
+    "question": "Taken from the Latin kalium, the chemical symbol for potassium is what?",
     "answer": "K",
     "choices": [
       "K",
@@ -1309,7 +1309,7 @@
   },
   {
     "tier": 1,
-    "question": "Chemical symbol for mercury:",
+    "question": "Taken from the Latin hydrargyrum, meaning 'liquid silver,' the chemical symbol for mercury is what?",
     "answer": "Hg",
     "choices": [
       "Hg",
@@ -1321,7 +1321,7 @@
   },
   {
     "tier": 1,
-    "question": "Chemical symbol for copper:",
+    "question": "Taken from the Latin cuprum (after the island of Cyprus), the chemical symbol for copper is what?",
     "answer": "Cu",
     "choices": [
       "Cu",
@@ -1333,7 +1333,7 @@
   },
   {
     "tier": 1,
-    "question": "Chemical symbol for helium:",
+    "question": "First identified in the Sun's spectrum in 1868, the chemical symbol for helium is what?",
     "answer": "He",
     "choices": [
       "He",
@@ -1345,7 +1345,7 @@
   },
   {
     "tier": 1,
-    "question": "Chemical formula for water:",
+    "question": "Made of two hydrogens covalently bonded to one oxygen, the chemical formula for water is what?",
     "answer": "H₂O",
     "choices": [
       "H₂O",
@@ -1357,7 +1357,7 @@
   },
   {
     "tier": 1,
-    "question": "Chemical formula for table salt:",
+    "question": "An ionic compound of sodium and chloride, the chemical formula for table salt is what?",
     "answer": "NaCl",
     "choices": [
       "NaCl",
@@ -1369,7 +1369,7 @@
   },
   {
     "tier": 1,
-    "question": "Chemical formula for carbon dioxide:",
+    "question": "Exhaled by animals and absorbed by plants in photosynthesis, the chemical formula for carbon dioxide is what?",
     "answer": "CO₂",
     "choices": [
       "CO₂",
@@ -1381,7 +1381,7 @@
   },
   {
     "tier": 1,
-    "question": "Chemical formula for methane:",
+    "question": "The simplest alkane and the main component of natural gas, the chemical formula for methane is what?",
     "answer": "CH₄",
     "choices": [
       "CH₄",
@@ -1393,7 +1393,7 @@
   },
   {
     "tier": 1,
-    "question": "Chemical formula for ammonia:",
+    "question": "A pungent gas widely used in fertilizer, the chemical formula for ammonia is what?",
     "answer": "NH₃",
     "choices": [
       "NH₃",
@@ -1405,7 +1405,7 @@
   },
   {
     "tier": 1,
-    "question": "Chemical formula for glucose:",
+    "question": "A simple sugar serving as the energy fuel of cells, the chemical formula for glucose is what?",
     "answer": "C₆H₁₂O₆",
     "choices": [
       "C₆H₁₂O₆",
@@ -1417,7 +1417,7 @@
   },
   {
     "tier": 1,
-    "question": "Chemical formula for hydrogen peroxide:",
+    "question": "Used as an antiseptic and a bleaching agent, the chemical formula for hydrogen peroxide is what?",
     "answer": "H₂O₂",
     "choices": [
       "H₂O₂",
@@ -1429,7 +1429,7 @@
   },
   {
     "tier": 1,
-    "question": "Chemical formula for sulfuric acid:",
+    "question": "Highly corrosive and the most-produced industrial chemical in the world, the chemical formula for sulfuric acid is what?",
     "answer": "H₂SO₄",
     "choices": [
       "H₂SO₄",
@@ -1441,7 +1441,7 @@
   },
   {
     "tier": 1,
-    "question": "Most abundant gas in Earth's atmosphere:",
+    "question": "Roughly 78% of the air by volume — far ahead of oxygen at 21% and argon at 1% — the most abundant gas in Earth's atmosphere is what?",
     "answer": "Nitrogen",
     "choices": [
       "Nitrogen",
@@ -1453,7 +1453,7 @@
   },
   {
     "tier": 1,
-    "question": "Element with atomic number 1:",
+    "question": "Carrying one proton and ranking as the most abundant element in the universe, the element with atomic number 1 is what?",
     "answer": "Hydrogen",
     "choices": [
       "Hydrogen",
@@ -1465,7 +1465,7 @@
   },
   {
     "tier": 1,
-    "question": "Lightest noble gas:",
+    "question": "Hydrogen is lighter but reactive — not noble — so the lightest noble gas is what?",
     "answer": "Helium",
     "choices": [
       "Helium",
@@ -1477,7 +1477,7 @@
   },
   {
     "tier": 1,
-    "question": "Noble gas in fluorescent signs that glows orange-red:",
+    "question": "Different noble gases give different colors in glass tubes; the one in fluorescent signs that glows orange-red is what?",
     "answer": "Neon",
     "choices": [
       "Neon",
@@ -1489,7 +1489,7 @@
   },
   {
     "tier": 1,
-    "question": "Group of elements that are highly unreactive:",
+    "question": "Group 18 of the periodic table, with full outer electron shells, names which group of highly unreactive elements?",
     "answer": "Noble gases",
     "choices": [
       "Noble gases",
@@ -1501,7 +1501,7 @@
   },
   {
     "tier": 1,
-    "question": "Group of highly reactive metals that react vigorously with water:",
+    "question": "Group 1 of the periodic table — lithium, sodium, potassium, and the rest — these highly reactive metals react vigorously with water. What are they called?",
     "answer": "Alkali metals",
     "choices": [
       "Alkali metals",
@@ -1513,7 +1513,7 @@
   },
   {
     "tier": 1,
-    "question": "Group of nonmetals including F, Cl, Br, I:",
+    "question": "Group 17 of the periodic table, nicknamed the 'salt-formers' and including F, Cl, Br, and I, these nonmetals are called what?",
     "answer": "Halogens",
     "choices": [
       "Halogens",
@@ -1525,7 +1525,7 @@
   },
   {
     "tier": 1,
-    "question": "Scientist who organized the periodic table (1869):",
+    "question": "A Russian chemist who predicted undiscovered elements by leaving gaps, which scientist organized the periodic table in 1869?",
     "answer": "Mendeleev",
     "choices": [
       "Mendeleev",
@@ -1537,7 +1537,7 @@
   },
   {
     "tier": 1,
-    "question": "Smallest unit of an element:",
+    "question": "From the Greek atomos meaning 'uncuttable,' the smallest unit of an element is called what?",
     "answer": "Atom",
     "choices": [
       "Atom",
@@ -1549,7 +1549,7 @@
   },
   {
     "tier": 1,
-    "question": "Atoms of the same element with different neutron counts:",
+    "question": "Carbon-12 versus carbon-14 illustrate it: same chemistry, different mass — atoms of the same element with different neutron counts are called what?",
     "answer": "Isotopes",
     "choices": [
       "Isotopes",
@@ -1561,7 +1561,7 @@
   },
   {
     "tier": 1,
-    "question": "pH of pure water at 25°C:",
+    "question": "Neutral on the pH scale, with values below 7 acidic and above 7 basic, the pH of pure water at 25°C is what?",
     "answer": "7",
     "choices": [
       "7",
@@ -1573,7 +1573,7 @@
   },
   {
     "tier": 1,
-    "question": "pH scale range:",
+    "question": "Logarithmic with each unit a 10× concentration change, the pH scale spans which range?",
     "answer": "0 to 14",
     "choices": [
       "0 to 14",
@@ -1585,7 +1585,7 @@
   },
   {
     "tier": 1,
-    "question": "Substance that speeds up a reaction without being consumed:",
+    "question": "Including enzymes as biological examples, a substance that speeds up a reaction without being consumed is called what?",
     "answer": "Catalyst",
     "choices": [
       "Catalyst",
@@ -1597,7 +1597,7 @@
   },
   {
     "tier": 1,
-    "question": "Substance dissolved in a solution:",
+    "question": "Salt acting as one when dissolved in water, the substance dissolved in a solution is called what?",
     "answer": "Solute",
     "choices": [
       "Solute",
@@ -1609,7 +1609,7 @@
   },
   {
     "tier": 1,
-    "question": "Substance that does the dissolving:",
+    "question": "Water earns its nickname 'the universal solvent' by being a particularly good example — the substance that does the dissolving is called what?",
     "answer": "Solvent",
     "choices": [
       "Solvent",
@@ -1621,7 +1621,7 @@
   },
   {
     "tier": 1,
-    "question": "Bond formed by electron sharing:",
+    "question": "Formed when two nonmetals share electron pairs, this kind of chemical bond is formed by electron sharing. What is it called?",
     "answer": "Covalent",
     "choices": [
       "Covalent",
@@ -1633,7 +1633,7 @@
   },
   {
     "tier": 1,
-    "question": "Bond formed by electron transfer:",
+    "question": "Formed when a metal donates electron(s) to a nonmetal — as in NaCl — this kind of chemical bond is formed by electron transfer. What is it called?",
     "answer": "Ionic",
     "choices": [
       "Ionic",
@@ -1645,7 +1645,7 @@
   },
   {
     "tier": 1,
-    "question": "Type of bond between water molecules:",
+    "question": "Responsible for water's unusual high boiling point and strong surface tension, the kind of bond between water molecules is which?",
     "answer": "Hydrogen",
     "choices": [
       "Hydrogen",
@@ -1657,7 +1657,7 @@
   },
   {
     "tier": 1,
-    "question": "Process by which solid becomes gas directly:",
+    "question": "Demonstrated by dry ice (solid CO₂) at room temperature, the process by which a solid becomes a gas directly is called what?",
     "answer": "Sublimation",
     "choices": [
       "Sublimation",
@@ -1669,7 +1669,7 @@
   },
   {
     "tier": 1,
-    "question": "Process by which gas becomes liquid:",
+    "question": "Seen as water droplets forming on a cold glass, the process by which a gas becomes a liquid is called what?",
     "answer": "Condensation",
     "choices": [
       "Condensation",
@@ -1681,7 +1681,7 @@
   },
   {
     "tier": 1,
-    "question": "Number of atoms in a water molecule:",
+    "question": "Made of two hydrogens plus one oxygen, the number of atoms in a single water molecule is what?",
     "answer": "3",
     "choices": [
       "3",
@@ -1693,7 +1693,7 @@
   },
   {
     "tier": 1,
-    "question": "Number of standard amino acids in the genetic code:",
+    "question": "Coded for by 64 codons with redundancy, the number of standard amino acids used by the genetic code is what?",
     "answer": "20",
     "choices": [
       "20",
@@ -1705,7 +1705,7 @@
   },
   {
     "tier": 1,
-    "question": "Largest organ that produces digestive enzymes:",
+    "question": "Producing trypsin, lipase, and amylase, the largest organ in the body devoted to digestive enzymes is which?",
     "answer": "Pancreas",
     "choices": [
       "Pancreas",
@@ -1717,7 +1717,7 @@
   },
   {
     "tier": 1,
-    "question": "Most common state of matter on Earth's surface (by mass):",
+    "question": "The rocky planet itself supplies most of it — the most common state of matter on Earth's surface by mass is what?",
     "answer": "Solid",
     "choices": [
       "Solid",
@@ -1729,7 +1729,7 @@
   },
   {
     "tier": 1,
-    "question": "Process by which iron rusts:",
+    "question": "Captured by iron + oxygen + water → iron oxide, the chemical process by which iron rusts is called what?",
     "answer": "Oxidation",
     "choices": [
       "Oxidation",
@@ -1741,7 +1741,7 @@
   },
   {
     "tier": 1,
-    "question": "Compound that turns red litmus blue:",
+    "question": "Sitting at pH > 7 on the scale, a compound that turns red litmus blue belongs to which class?",
     "answer": "Base",
     "choices": [
       "Base",
@@ -1753,7 +1753,7 @@
   },
   {
     "tier": 1,
-    "question": "Discovered the law of conservation of mass:",
+    "question": "Founder of modern chemistry and guillotined in 1794, which scientist discovered the law of conservation of mass?",
     "answer": "Lavoisier",
     "choices": [
       "Lavoisier",
@@ -1765,7 +1765,7 @@
   },
   {
     "tier": 1,
-    "question": "First scientist Nobel'd in two different sciences:",
+    "question": "Awarded the Nobel for Physics 1903 (radioactivity) and Chemistry 1911 (polonium + radium), which scientist was the first Nobel laureate in two different sciences?",
     "answer": "Marie Curie",
     "choices": [
       "Marie Curie",
@@ -1777,7 +1777,7 @@
   },
   {
     "tier": 1,
-    "question": "Element Marie Curie named after her homeland:",
+    "question": "Named after Poland — then under Russian rule — the element Marie Curie named for her homeland is which?",
     "answer": "Polonium",
     "choices": [
       "Polonium",
@@ -1789,7 +1789,7 @@
   },
   {
     "tier": 1,
-    "question": "Process by which liquid becomes gas at the surface:",
+    "question": "Happening below boiling point and only at the liquid surface, the process by which a liquid becomes a gas at the surface is called what?",
     "answer": "Evaporation",
     "choices": [
       "Evaporation",
@@ -1801,7 +1801,7 @@
   },
   {
     "tier": 1,
-    "question": "Hardest naturally occurring substance:",
+    "question": "Rated 10 on the Mohs scale and made of pure carbon in a tetrahedral lattice, the hardest naturally occurring substance is which?",
     "answer": "Diamond",
     "choices": [
       "Diamond",
@@ -1813,7 +1813,7 @@
   },
   {
     "tier": 1,
-    "question": "Another pure form of carbon, used in pencils:",
+    "question": "The same element as diamond but in a different structural arrangement, the pure form of carbon used in pencils is what?",
     "answer": "Graphite",
     "choices": [
       "Graphite",
@@ -1825,7 +1825,7 @@
   },
   {
     "tier": 1,
-    "question": "Number of bonds carbon typically forms:",
+    "question": "Tetravalent — which is why carbon makes such diverse molecules — the typical number of bonds a carbon atom forms is what?",
     "answer": "4",
     "choices": [
       "4",
@@ -1837,7 +1837,7 @@
   },
   {
     "tier": 1,
-    "question": "Element essential for steel:",
+    "question": "Combined with a small amount of carbon to make steel, the element essential for steel is what?",
     "answer": "Iron",
     "choices": [
       "Iron",
@@ -1849,7 +1849,7 @@
   },
   {
     "tier": 1,
-    "question": "Alloy of copper and tin:",
+    "question": "An alloy that defined a whole age of civilization, bronze is made of copper combined with which metal?",
     "answer": "Bronze",
     "choices": [
       "Bronze",
@@ -1861,7 +1861,7 @@
   },
   {
     "tier": 1,
-    "question": "Metal liquid at room temperature:",
+    "question": "Bromine is also liquid at room temperature, but it is a nonmetal — the metal liquid at room temperature is which?",
     "answer": "Mercury",
     "choices": [
       "Mercury",
@@ -1873,7 +1873,7 @@
   },
   {
     "tier": 1,
-    "question": "Common name for sodium bicarbonate:",
+    "question": "With the formula NaHCO₃ — a mild base that reacts with acids to release CO₂ — sodium bicarbonate is commonly known as what?",
     "answer": "Baking soda",
     "choices": [
       "Baking soda",
@@ -1885,7 +1885,7 @@
   },
   {
     "tier": 1,
-    "question": "Acid found in vinegar:",
+    "question": "CH₃COOH, usually about 5% concentration in the household bottle, the acid found in vinegar is which?",
     "answer": "Acetic",
     "choices": [
       "Acetic",
@@ -1897,7 +1897,7 @@
   },
   {
     "tier": 1,
-    "question": "Acid in lemon juice:",
+    "question": "Found abundantly in citrus fruits, the acid in lemon juice is which?",
     "answer": "Citric",
     "choices": [
       "Citric",
@@ -1909,7 +1909,7 @@
   },
   {
     "tier": 1,
-    "question": "Acid in your stomach:",
+    "question": "HCl at about pH 1.5–3.5, the acid in your stomach is which?",
     "answer": "Hydrochloric",
     "choices": [
       "Hydrochloric",
@@ -1921,7 +1921,7 @@
   },
   {
     "tier": 1,
-    "question": "Reaction of fuel with oxygen producing heat:",
+    "question": "Captured by hydrocarbon + O₂ → CO₂ + H₂O + heat, the reaction of fuel with oxygen producing heat is called what?",
     "answer": "Combustion",
     "choices": [
       "Combustion",
@@ -1933,7 +1933,7 @@
   },
   {
     "tier": 1,
-    "question": "Large molecule made of repeating units:",
+    "question": "DNA, proteins, and plastics are examples — a large molecule made of repeating units is called what?",
     "answer": "Polymer",
     "choices": [
       "Polymer",
@@ -1945,7 +1945,7 @@
   },
   {
     "tier": 1,
-    "question": "Single building block in a polymer:",
+    "question": "Amino acids are these for proteins — a single building block in a polymer is called what?",
     "answer": "Monomer",
     "choices": [
       "Monomer",
@@ -1957,7 +1957,7 @@
   },
   {
     "tier": 1,
-    "question": "Type of bond in a methane molecule:",
+    "question": "With carbon sharing electrons with four hydrogens, the kind of bond in a methane molecule is which?",
     "answer": "Covalent",
     "choices": [
       "Covalent",
@@ -1969,7 +1969,7 @@
   },
   {
     "tier": 1,
-    "question": "Building block of proteins:",
+    "question": "Twenty standard varieties assemble into proteins, making them the building blocks of proteins. What are they called?",
     "answer": "Amino acid",
     "choices": [
       "Amino acid",
@@ -1981,7 +1981,7 @@
   },
   {
     "tier": 1,
-    "question": "Building block of DNA:",
+    "question": "Made of sugar plus phosphate plus base (A, T, G, or C), the building block of DNA is called what?",
     "answer": "Nucleotide",
     "choices": [
       "Nucleotide",
@@ -1993,7 +1993,7 @@
   },
   {
     "tier": 1,
-    "question": "DNA base that pairs with adenine:",
+    "question": "With A pairing with T and G with C (uracil replaces thymine in RNA), the DNA base that pairs with adenine is what?",
     "answer": "Thymine",
     "choices": [
       "Thymine",
@@ -2005,7 +2005,7 @@
   },
   {
     "tier": 1,
-    "question": "Family of organic compounds with -OH group:",
+    "question": "Ethanol (CH₃CH₂OH) belongs to it — the family of organic compounds containing the -OH group is which?",
     "answer": "Alcohol",
     "choices": [
       "Alcohol",
@@ -2017,7 +2017,7 @@
   },
   {
     "tier": 1,
-    "question": "Ring-shaped hydrocarbon discovered in a dream by Kekulé:",
+    "question": "Reported by Kekulé in 1865 after he dreamt of a snake biting its tail, the ring-shaped hydrocarbon he revealed is which?",
     "answer": "Benzene",
     "choices": [
       "Benzene",
@@ -2029,7 +2029,7 @@
   },
   {
     "tier": 1,
-    "question": "Half-life of carbon-14 (used in dating):",
+    "question": "Useful for dating organic material up to ~50,000 years old, the half-life of carbon-14 is approximately what?",
     "answer": "~5,730 years",
     "choices": [
       "~5,730 years",
@@ -2041,7 +2041,7 @@
   },
   {
     "tier": 1,
-    "question": "Color of copper(II) sulfate solution:",
+    "question": "Owing its vivid color to hydrated copper ions in CuSO₄, the color of copper(II) sulfate solution is what?",
     "answer": "Blue",
     "choices": [
       "Blue",
@@ -2053,7 +2053,7 @@
   },
   {
     "tier": 1,
-    "question": "Gas plants release during photosynthesis:",
+    "question": "Captured by 6CO₂ + 6H₂O + light → C₆H₁₂O₆ + 6O₂, the gas plants release during photosynthesis is what?",
     "answer": "Oxygen",
     "choices": [
       "Oxygen",
@@ -2065,7 +2065,7 @@
   },
   {
     "tier": 1,
-    "question": "Mineral form of calcium carbonate:",
+    "question": "CaCO₃ — the parent rock that becomes marble after metamorphism — the common mineral form of calcium carbonate is which?",
     "answer": "Limestone",
     "choices": [
       "Limestone",
@@ -2077,7 +2077,7 @@
   },
   {
     "tier": 1,
-    "question": "Most abundant element in the Earth's crust:",
+    "question": "Making up about 46% of the crust by mass, bound up in silicate minerals, the most abundant element in Earth's crust is what?",
     "answer": "Oxygen",
     "choices": [
       "Oxygen",
@@ -2089,7 +2089,7 @@
   },
   {
     "tier": 1,
-    "question": "Most abundant element in the human body (by mass):",
+    "question": "Comprising about 65% of body mass — most of it bound up in water — the most abundant element in the human body is what?",
     "answer": "Oxygen",
     "choices": [
       "Oxygen",
@@ -2101,7 +2101,7 @@
   },
   {
     "tier": 1,
-    "question": "Most abundant element in the universe:",
+    "question": "Roughly 75% by mass of the universe, with helium next at ~24%, the most abundant element in the universe is what?",
     "answer": "Hydrogen",
     "choices": [
       "Hydrogen",
@@ -2113,7 +2113,7 @@
   },
   {
     "tier": 1,
-    "question": "Number of electrons in a neutral carbon atom:",
+    "question": "Equal to the proton count in a neutral atom, the number of electrons in a neutral carbon atom is what?",
     "answer": "6",
     "choices": [
       "6",
@@ -2125,7 +2125,7 @@
   },
   {
     "tier": 1,
-    "question": "Electrons orbiting the nucleus occupy regions called:",
+    "question": "Probability distributions rather than fixed paths, the regions where electrons orbit the nucleus are called what?",
     "answer": "Orbitals",
     "choices": [
       "Orbitals",
@@ -2137,7 +2137,7 @@
   },
   {
     "tier": 1,
-    "question": "Compound with same formula but different arrangement:",
+    "question": "Glucose and fructose share the same C₆H₁₂O₆ formula but different arrangements — a compound with the same formula but a different arrangement is called what?",
     "answer": "Isomer",
     "choices": [
       "Isomer",
@@ -2149,7 +2149,7 @@
   },
   {
     "tier": 1,
-    "question": "Number of natural elements (occurring on Earth):",
+    "question": "Out of 118 known total, the approximate number of elements that occur naturally on Earth is what?",
     "answer": "~90",
     "choices": [
       "~90",
@@ -2161,7 +2161,7 @@
   },
   {
     "tier": 1,
-    "question": "Property of metals: ability to be drawn into wire:",
+    "question": "Distinct from malleability (which means hammered into sheets), the property letting metals be drawn into wire is called what?",
     "answer": "Ductility",
     "choices": [
       "Ductility",
@@ -2173,7 +2173,7 @@
   },
   {
     "tier": 1,
-    "question": "Property of metals: ability to be hammered into thin sheets:",
+    "question": "Gold is the standout example, with leaves that can be hammered nearly transparent — the metallic property of being hammered into thin sheets is called what?",
     "answer": "Malleability",
     "choices": [
       "Malleability",
@@ -2185,7 +2185,7 @@
   },
   {
     "tier": 1,
-    "question": "What enzymes are made of:",
+    "question": "Biological catalysts (with a few ribozyme RNA exceptions), enzymes are made of which kind of macromolecule?",
     "answer": "Proteins",
     "choices": [
       "Proteins",
@@ -2197,7 +2197,7 @@
   },
   {
     "tier": 1,
-    "question": "Cellular structure containing DNA:",
+    "question": "The defining feature of eukaryotic cells, the cellular structure containing DNA is which?",
     "answer": "Nucleus",
     "choices": [
       "Nucleus",
@@ -2209,7 +2209,7 @@
   },
   {
     "tier": 1,
-    "question": "Cellular structure where proteins are made:",
+    "question": "Reading mRNA and assembling amino acids into proteins, the cellular structure where proteins are made is which?",
     "answer": "Ribosome",
     "choices": [
       "Ribosome",
@@ -2221,7 +2221,7 @@
   },
   {
     "tier": 1,
-    "question": "Organelle where photosynthesis occurs:",
+    "question": "Containing chlorophyll and found in plant cells, the organelle where photosynthesis occurs is which?",
     "answer": "Chloroplast",
     "choices": [
       "Chloroplast",
@@ -2233,7 +2233,7 @@
   },
   {
     "tier": 1,
-    "question": "Green pigment in plants:",
+    "question": "Absorbing red and blue light while reflecting green, the green pigment in plants is which?",
     "answer": "Chlorophyll",
     "choices": [
       "Chlorophyll",
@@ -2245,7 +2245,7 @@
   },
   {
     "tier": 1,
-    "question": "Cell type with a nucleus:",
+    "question": "Including plants, animals, fungi, and protists, a cell type with a true nucleus is called what?",
     "answer": "Eukaryote",
     "choices": [
       "Eukaryote",
@@ -2257,7 +2257,7 @@
   },
   {
     "tier": 1,
-    "question": "Cell division producing two identical cells:",
+    "question": "Used for growth, repair, and asexual reproduction, the kind of cell division that produces two identical daughter cells is called what?",
     "answer": "Mitosis",
     "choices": [
       "Mitosis",
@@ -2269,7 +2269,7 @@
   },
   {
     "tier": 1,
-    "question": "Cell division producing gametes (eggs and sperm):",
+    "question": "Producing four cells with half the chromosome count, the kind of cell division that yields gametes (eggs and sperm) is called what?",
     "answer": "Meiosis",
     "choices": [
       "Meiosis",
@@ -2281,7 +2281,7 @@
   },
   {
     "tier": 1,
-    "question": "Number of chromosomes in a normal human somatic cell:",
+    "question": "Arranged in 23 pairs, with gametes carrying 23 singles, the number of chromosomes in a normal human somatic cell is what?",
     "answer": "46",
     "choices": [
       "46",
@@ -2293,7 +2293,7 @@
   },
   {
     "tier": 1,
-    "question": "Shape of a DNA molecule:",
+    "question": "Worked out in 1953 by Watson, Crick, and Wilkins from Franklin's essential Photo 51 X-ray, the shape of a DNA molecule is what?",
     "answer": "Double helix",
     "choices": [
       "Double helix",
@@ -2305,7 +2305,7 @@
   },
   {
     "tier": 1,
-    "question": "Year of the Watson-Crick DNA structure paper:",
+    "question": "Published in Nature on April 25 of which year, the Watson-Crick paper revealing DNA's structure appeared when?",
     "answer": "1953",
     "choices": [
       "1953",
@@ -2317,7 +2317,7 @@
   },
   {
     "tier": 1,
-    "question": "Scientist whose Photo 51 X-ray was crucial to the DNA structure:",
+    "question": "Dying of cancer in 1958 before Nobel rules later excluded posthumous awards, which scientist's Photo 51 X-ray was crucial to the DNA structure?",
     "answer": "Rosalind Franklin",
     "choices": [
       "Rosalind Franklin",
@@ -2329,7 +2329,7 @@
   },
   {
     "tier": 1,
-    "question": "Wrote On the Origin of Species (1859):",
+    "question": "Detailing natural selection as the mechanism of evolution, the author of On the Origin of Species (1859) is which scientist?",
     "answer": "Charles Darwin",
     "choices": [
       "Charles Darwin",
@@ -2341,7 +2341,7 @@
   },
   {
     "tier": 1,
-    "question": "Mechanism Darwin proposed for evolution:",
+    "question": "Driven by heritable variation plus differential reproduction, the mechanism Darwin proposed for evolution is called what?",
     "answer": "Natural selection",
     "choices": [
       "Natural selection",
@@ -2353,7 +2353,7 @@
   },
   {
     "tier": 1,
-    "question": "Ship Darwin sailed on (1831-1836):",
+    "question": "Carrying Darwin on a five-year voyage that included the Galápagos (1831-1836), the ship he sailed on was which?",
     "answer": "HMS Beagle",
     "choices": [
       "HMS Beagle",
@@ -2365,7 +2365,7 @@
   },
   {
     "tier": 1,
-    "question": "Monk who founded modern genetics with pea plants:",
+    "question": "Author of an 1866 paper ignored for 34 years, the monk who founded modern genetics with pea plants is which?",
     "answer": "Gregor Mendel",
     "choices": [
       "Gregor Mendel",
@@ -2377,7 +2377,7 @@
   },
   {
     "tier": 1,
-    "question": "Trait masked by another in heterozygotes:",
+    "question": "Mendel's lowercase letter — showing up only when homozygous — a trait masked by another in heterozygotes is called what?",
     "answer": "Recessive",
     "choices": [
       "Recessive",
@@ -2389,7 +2389,7 @@
   },
   {
     "tier": 1,
-    "question": "Year smallpox was declared eradicated by the WHO:",
+    "question": "With the last natural case occurring in Somalia in 1977 — one of humanity's greatest triumphs — smallpox was declared eradicated by the WHO in which year?",
     "answer": "1980",
     "choices": [
       "1980",
@@ -2401,7 +2401,7 @@
   },
   {
     "tier": 1,
-    "question": "Doctor who introduced the smallpox vaccine in 1796:",
+    "question": "Using cowpox to protect against smallpox — the first vaccine — the doctor who introduced the smallpox vaccine in 1796 was which?",
     "answer": "Edward Jenner",
     "choices": [
       "Edward Jenner",
@@ -2413,7 +2413,7 @@
   },
   {
     "tier": 1,
-    "question": "Developed the rabies vaccine in 1885:",
+    "question": "First administered to nine-year-old Joseph Meister, the scientist who developed the rabies vaccine in 1885 was which?",
     "answer": "Louis Pasteur",
     "choices": [
       "Louis Pasteur",
@@ -2425,7 +2425,7 @@
   },
   {
     "tier": 1,
-    "question": "Developed the inactivated polio vaccine (1955):",
+    "question": "Refused to patent it — 'Could you patent the sun?' — the scientist who developed the inactivated polio vaccine in 1955 was which?",
     "answer": "Jonas Salk",
     "choices": [
       "Jonas Salk",
@@ -2437,7 +2437,7 @@
   },
   {
     "tier": 1,
-    "question": "Developed the oral polio vaccine (1962):",
+    "question": "Delivering live attenuated virus on a sugar cube, the scientist who developed the oral polio vaccine in 1962 was which?",
     "answer": "Albert Sabin",
     "choices": [
       "Albert Sabin",
@@ -2449,7 +2449,7 @@
   },
   {
     "tier": 1,
-    "question": "Demonstrated handwashing prevents childbed fever (Vienna, 1847):",
+    "question": "Mocked by the medical establishment and dying in an asylum in 1865, the doctor who demonstrated handwashing prevents childbed fever in Vienna in 1847 was which?",
     "answer": "Ignaz Semmelweis",
     "choices": [
       "Ignaz Semmelweis",
@@ -2461,7 +2461,7 @@
   },
   {
     "tier": 1,
-    "question": "Drank H. pylori himself to prove it causes peptic ulcers:",
+    "question": "Working with Robin Warren and earning a 2005 Nobel after years of mockery, the doctor who drank H. pylori himself to prove it causes peptic ulcers was which?",
     "answer": "Barry Marshall",
     "choices": [
       "Barry Marshall",
@@ -2473,7 +2473,7 @@
   },
   {
     "tier": 1,
-    "question": "Discovered penicillin (1928):",
+    "question": "Finding mold on a contaminated dish that killed surrounding bacteria, the scientist who discovered penicillin in 1928 was which?",
     "answer": "Alexander Fleming",
     "choices": [
       "Alexander Fleming",
@@ -2485,7 +2485,7 @@
   },
   {
     "tier": 1,
-    "question": "Gene-editing tool developed from a bacterial immune system:",
+    "question": "Developed by Doudna and Charpentier, who won the 2020 Nobel in Chemistry, the gene-editing tool derived from a bacterial immune system is called what?",
     "answer": "CRISPR-Cas9",
     "choices": [
       "CRISPR-Cas9",
@@ -2497,7 +2497,7 @@
   },
   {
     "tier": 1,
-    "question": "Year CRISPR's Doudna and Charpentier won the Nobel Prize:",
+    "question": "Awarded for CRISPR — the first all-woman science Nobel pair — Doudna and Charpentier won their Nobel Prize in which year?",
     "answer": "2020",
     "choices": [
       "2020",
@@ -2509,7 +2509,7 @@
   },
   {
     "tier": 1,
-    "question": "First CRISPR therapy approved by the FDA (2023):",
+    "question": "A genuine gene-therapy achievement that millions could benefit from, the first CRISPR therapy approved by the FDA in 2023 was which?",
     "answer": "Casgevy (sickle cell)",
     "choices": [
       "Casgevy (sickle cell)",
@@ -2521,7 +2521,7 @@
   },
   {
     "tier": 1,
-    "question": "Process: DNA → RNA → Protein, known as the:",
+    "question": "Formulated by Crick in 1958 as DNA → RNA → Protein, this informational flow goes by which name?",
     "answer": "Central dogma",
     "choices": [
       "Central dogma",
@@ -2533,7 +2533,7 @@
   },
   {
     "tier": 1,
-    "question": "Process of building protein from mRNA:",
+    "question": "Carried out at the ribosome, the process of building protein from mRNA is called what?",
     "answer": "Translation",
     "choices": [
       "Translation",
@@ -2545,7 +2545,7 @@
   },
   {
     "tier": 1,
-    "question": "Process of copying DNA into mRNA:",
+    "question": "Carried out in the nucleus in eukaryotic cells, the process of copying DNA into mRNA is called what?",
     "answer": "Transcription",
     "choices": [
       "Transcription",
@@ -2557,7 +2557,7 @@
   },
   {
     "tier": 1,
-    "question": "Three-letter mRNA code that specifies one amino acid:",
+    "question": "Drawn from 64 possibilities to specify 20 amino acids with redundancy, the three-letter mRNA code for one amino acid is called what?",
     "answer": "Codon",
     "choices": [
       "Codon",
@@ -2569,7 +2569,7 @@
   },
   {
     "tier": 1,
-    "question": "Approximate number of human genes:",
+    "question": "Surprisingly fewer than expected when the Human Genome Project began, the approximate count of human genes is what?",
     "answer": "~20,000",
     "choices": [
       "~20,000",
@@ -2581,7 +2581,7 @@
   },
   {
     "tier": 1,
-    "question": "Year the Human Genome Project completed:",
+    "question": "Begun in 1990 with a draft in 2000, the Human Genome Project was completed in which year?",
     "answer": "2003",
     "choices": [
       "2003",
@@ -2593,7 +2593,7 @@
   },
   {
     "tier": 1,
-    "question": "Largest organ in the human body:",
+    "question": "Serving as the body's first line of defense, the largest organ in the human body is which?",
     "answer": "Skin",
     "choices": [
       "Skin",
@@ -2605,7 +2605,7 @@
   },
   {
     "tier": 1,
-    "question": "Organ that pumps blood:",
+    "question": "Beating about 60-100 times per minute at rest from its four chambers, the organ that pumps blood through the body is which?",
     "answer": "Heart",
     "choices": [
       "Heart",
@@ -2617,7 +2617,7 @@
   },
   {
     "tier": 1,
-    "question": "Number of chambers in the human heart:",
+    "question": "Two atria plus two ventricles — the number of chambers in the human heart is what?",
     "answer": "4",
     "choices": [
       "4",
@@ -2629,7 +2629,7 @@
   },
   {
     "tier": 1,
-    "question": "Body system including the heart and blood vessels:",
+    "question": "Distributing oxygen, nutrients, and hormones throughout the body, the body system including the heart and blood vessels is called what?",
     "answer": "Circulatory",
     "choices": [
       "Circulatory",
@@ -2641,7 +2641,7 @@
   },
   {
     "tier": 1,
-    "question": "Body system including the lungs:",
+    "question": "Handling gas exchange — oxygen in, carbon dioxide out — the body system that includes the lungs is called what?",
     "answer": "Respiratory",
     "choices": [
       "Respiratory",
@@ -2653,7 +2653,7 @@
   },
   {
     "tier": 1,
-    "question": "Organ that filters blood and makes urine:",
+    "question": "Humans typically have two, and they filter blood and make urine — this organ is which?",
     "answer": "Kidney",
     "choices": [
       "Kidney",
@@ -2665,7 +2665,7 @@
   },
   {
     "tier": 1,
-    "question": "Organ that detoxifies the blood and produces bile:",
+    "question": "With remarkable regenerative capacity, the organ that detoxifies the blood and produces bile is which?",
     "answer": "Liver",
     "choices": [
       "Liver",
@@ -2677,7 +2677,7 @@
   },
   {
     "tier": 1,
-    "question": "Number of bones in the adult human body:",
+    "question": "Infants have about 270, with many fusing during development, the number of bones in the adult human body is what?",
     "answer": "206",
     "choices": [
       "206",
@@ -2689,7 +2689,7 @@
   },
   {
     "tier": 1,
-    "question": "Smallest bone in the human body:",
+    "question": "Stirrup-shaped and sitting in the middle ear, the smallest bone in the human body is called what?",
     "answer": "Stapes",
     "choices": [
       "Stapes",
@@ -2701,7 +2701,7 @@
   },
   {
     "tier": 1,
-    "question": "Red blood cells carry oxygen via:",
+    "question": "An iron-containing protein, and the reason blood is red, red blood cells carry oxygen via which molecule?",
     "answer": "Hemoglobin",
     "choices": [
       "Hemoglobin",
@@ -2713,7 +2713,7 @@
   },
   {
     "tier": 1,
-    "question": "White blood cells that produce antibodies:",
+    "question": "Part of the adaptive immune system, the white blood cells that produce antibodies are called what?",
     "answer": "B cells",
     "choices": [
       "B cells",
@@ -2725,7 +2725,7 @@
   },
   {
     "tier": 1,
-    "question": "Where blood cells are produced:",
+    "question": "With stem cells in red marrow making all blood cell types, blood cells are produced where?",
     "answer": "Bone marrow",
     "choices": [
       "Bone marrow",
@@ -2737,7 +2737,7 @@
   },
   {
     "tier": 1,
-    "question": "Cell type that carries nerve signals:",
+    "question": "Transmitting signals via action potentials, the cell type that carries nerve signals is called what?",
     "answer": "Neuron",
     "choices": [
       "Neuron",
@@ -2749,7 +2749,7 @@
   },
   {
     "tier": 1,
-    "question": "Connection between neurons:",
+    "question": "Most rely on chemical messengers called neurotransmitters — the connection between neurons is called what?",
     "answer": "Synapse",
     "choices": [
       "Synapse",
@@ -2761,7 +2761,7 @@
   },
   {
     "tier": 1,
-    "question": "Brain region controlling balance and coordination:",
+    "question": "Latin for 'little brain,' the region of the brain that controls balance and coordination is called what?",
     "answer": "Cerebellum",
     "choices": [
       "Cerebellum",
@@ -2773,7 +2773,7 @@
   },
   {
     "tier": 1,
-    "question": "Largest part of the human brain:",
+    "question": "Housing higher functions — thinking, language, voluntary motion — the largest part of the human brain is called what?",
     "answer": "Cerebrum",
     "choices": [
       "Cerebrum",
@@ -2785,7 +2785,7 @@
   },
   {
     "tier": 1,
-    "question": "Type of organism that makes its own food:",
+    "question": "Usually doing it via photosynthesis, an organism that makes its own food is called what?",
     "answer": "Producer",
     "choices": [
       "Producer",
@@ -2797,7 +2797,7 @@
   },
   {
     "tier": 1,
-    "question": "Organism that eats only plants:",
+    "question": "Cows, deer, and pandas all qualify — an organism that eats only plants is called what?",
     "answer": "Herbivore",
     "choices": [
       "Herbivore",
@@ -2809,7 +2809,7 @@
   },
   {
     "tier": 1,
-    "question": "Organism that eats both plants and animals:",
+    "question": "Humans, bears, and pigs all qualify — an organism that eats both plants and animals is called what?",
     "answer": "Omnivore",
     "choices": [
       "Omnivore",
@@ -2821,7 +2821,7 @@
   },
   {
     "tier": 1,
-    "question": "Five-kingdom or six-kingdom classification starts with:",
+    "question": "Sitting just below Domain in the taxonomy chain Domain → Kingdom → Phylum → Class → Order → Family → Genus → Species, the five- or six-kingdom classification system starts with which rank?",
     "answer": "Kingdom",
     "choices": [
       "Kingdom",
@@ -2833,7 +2833,7 @@
   },
   {
     "tier": 1,
-    "question": "Smallest taxonomic rank in the standard hierarchy:",
+    "question": "Identified by a two-part Latin name (Genus + species), the smallest taxonomic rank in the standard hierarchy is which?",
     "answer": "Species",
     "choices": [
       "Species",
@@ -2845,7 +2845,7 @@
   },
   {
     "tier": 1,
-    "question": "Founder of binomial nomenclature (1735):",
+    "question": "A Swedish naturalist whose Systema Naturae (1735) organized all life by two-part Latin names, the founder of binomial nomenclature was which scientist?",
     "answer": "Linnaeus",
     "choices": [
       "Linnaeus",
@@ -2857,7 +2857,7 @@
   },
   {
     "tier": 1,
-    "question": "Scientific name for modern humans:",
+    "question": "Latin for 'wise man,' the scientific name for modern humans is what?",
     "answer": "Homo sapiens",
     "choices": [
       "Homo sapiens",
@@ -2869,7 +2869,7 @@
   },
   {
     "tier": 1,
-    "question": "Pigment that gives skin its color:",
+    "question": "Produced by melanocytes and protecting against UV damage, the pigment that gives skin its color is called what?",
     "answer": "Melanin",
     "choices": [
       "Melanin",
@@ -2881,7 +2881,7 @@
   },
   {
     "tier": 1,
-    "question": "Hormone regulating blood sugar:",
+    "question": "Produced by pancreatic beta cells and discovered by Banting and Best in 1921, the hormone regulating blood sugar is which?",
     "answer": "Insulin",
     "choices": [
       "Insulin",
@@ -2893,7 +2893,7 @@
   },
   {
     "tier": 1,
-    "question": "Hormone released during fight-or-flight:",
+    "question": "Also called epinephrine and produced by the adrenal glands, the hormone released during fight-or-flight is which?",
     "answer": "Adrenaline",
     "choices": [
       "Adrenaline",
@@ -2905,7 +2905,7 @@
   },
   {
     "tier": 1,
-    "question": "Microorganisms responsible for fermenting bread and beer:",
+    "question": "Single-celled fungi, the microorganisms responsible for fermenting bread and beer are which?",
     "answer": "Yeast",
     "choices": [
       "Yeast",
@@ -2917,7 +2917,7 @@
   },
   {
     "tier": 1,
-    "question": "Pathogen that is NOT a living cell:",
+    "question": "Needing a host cell to reproduce, the pathogen that is NOT a living cell is which?",
     "answer": "Virus",
     "choices": [
       "Virus",
@@ -2929,7 +2929,7 @@
   },
   {
     "tier": 1,
-    "question": "Virus that causes AIDS:",
+    "question": "The Human Immunodeficiency Virus — antiretrovirals made it manageable — the virus that causes AIDS is which?",
     "answer": "HIV",
     "choices": [
       "HIV",
@@ -2941,7 +2941,7 @@
   },
   {
     "tier": 1,
-    "question": "Father of microbiology, who first observed microbes (1670s):",
+    "question": "A Dutch draper using single-lens microscopes he ground himself in the 1670s, the father of microbiology who first observed microbes was which scientist?",
     "answer": "Leeuwenhoek",
     "choices": [
       "Leeuwenhoek",
@@ -2953,7 +2953,7 @@
   },
   {
     "tier": 1,
-    "question": "Coined the word 'cell' for biological units (1665):",
+    "question": "Looking through his microscope at cork in 1665, with boxes that reminded him of monks' cells, which scientist coined the word 'cell' for biological units?",
     "answer": "Robert Hooke",
     "choices": [
       "Robert Hooke",
@@ -2965,7 +2965,7 @@
   },
   {
     "tier": 1,
-    "question": "Plant tissue carrying water from roots to leaves:",
+    "question": "From the Greek xylon meaning 'wood,' the plant tissue carrying water from roots to leaves is called what?",
     "answer": "Xylem",
     "choices": [
       "Xylem",
@@ -2977,7 +2977,7 @@
   },
   {
     "tier": 1,
-    "question": "Plant tissue carrying sugars from leaves:",
+    "question": "Made of living cells and transporting nutrients made by photosynthesis, the plant tissue carrying sugars from leaves is called what?",
     "answer": "Phloem",
     "choices": [
       "Phloem",
@@ -2989,7 +2989,7 @@
   },
   {
     "tier": 1,
-    "question": "Reproductive organ of a flower:",
+    "question": "The male part that produces pollen (with the pistil being female), the reproductive organ of a flower most directly named here is which?",
     "answer": "Stamen",
     "choices": [
       "Stamen",
@@ -3001,7 +3001,7 @@
   },
   {
     "tier": 1,
-    "question": "Sequence: egg, larva, pupa, adult, describes:",
+    "question": "Seen in butterflies, beetles, flies, and bees, the developmental sequence egg, larva, pupa, adult describes which kind of metamorphosis?",
     "answer": "Complete metamorphosis",
     "choices": [
       "Complete metamorphosis",
@@ -3013,7 +3013,7 @@
   },
   {
     "tier": 1,
-    "question": "Animal that lays eggs but feeds milk to young:",
+    "question": "An Australian monotreme — an egg-laying mammal that still feeds milk to its young — this strange animal is which?",
     "answer": "Platypus",
     "choices": [
       "Platypus",
@@ -3025,7 +3025,7 @@
   },
   {
     "tier": 1,
-    "question": "Cold-blooded vertebrates with scaly skin:",
+    "question": "Lizards, snakes, turtles, and crocodiles all belong to it — the class of cold-blooded vertebrates with scaly skin is called what?",
     "answer": "Reptiles",
     "choices": [
       "Reptiles",
@@ -3037,7 +3037,7 @@
   },
   {
     "tier": 1,
-    "question": "Animals that begin life in water and live on land as adults:",
+    "question": "Including frogs, salamanders, and caecilians, animals that begin life in water and live on land as adults belong to which class?",
     "answer": "Amphibians",
     "choices": [
       "Amphibians",
@@ -3049,7 +3049,7 @@
   },
   {
     "tier": 1,
-    "question": "Largest animal that has ever lived:",
+    "question": "Up to 30 m long and 180 tonnes — bigger than any known dinosaur — the largest animal that has ever lived is which?",
     "answer": "Blue whale",
     "choices": [
       "Blue whale",
@@ -3061,7 +3061,7 @@
   },
   {
     "tier": 1,
-    "question": "Largest land animal:",
+    "question": "Weighing up to ~6 tonnes, the largest land animal alive today is which?",
     "answer": "African elephant",
     "choices": [
       "African elephant",
@@ -3073,7 +3073,7 @@
   },
   {
     "tier": 1,
-    "question": "Fastest land animal:",
+    "question": "Hitting up to ~120 km/h (75 mph) in short bursts, the fastest land animal is which?",
     "answer": "Cheetah",
     "choices": [
       "Cheetah",
@@ -3085,7 +3085,7 @@
   },
   {
     "tier": 1,
-    "question": "Tallest living animal:",
+    "question": "Reaching up to ~5.5 m in height, the tallest living animal is which?",
     "answer": "Giraffe",
     "choices": [
       "Giraffe",
@@ -3097,7 +3097,7 @@
   },
   {
     "tier": 1,
-    "question": "Type of relationship where both species benefit:",
+    "question": "Bees and flowers, or clownfish and anemones — a relationship in which both species benefit is called what?",
     "answer": "Mutualism",
     "choices": [
       "Mutualism",
@@ -3109,7 +3109,7 @@
   },
   {
     "tier": 1,
-    "question": "Relationship where one species benefits at the other's expense:",
+    "question": "Tapeworms, ticks, and fleas all use it — a relationship in which one species benefits at the other's expense is called what?",
     "answer": "Parasitism",
     "choices": [
       "Parasitism",
@@ -3121,7 +3121,7 @@
   },
   {
     "tier": 1,
-    "question": "Energy currency of cells:",
+    "question": "Adenosine triphosphate, which releases energy when a phosphate is removed, the energy currency of cells is called what?",
     "answer": "ATP",
     "choices": [
       "ATP",
@@ -3133,7 +3133,7 @@
   },
   {
     "tier": 1,
-    "question": "Process by which cells use oxygen to make ATP:",
+    "question": "Captured by glucose + O₂ → CO₂ + H₂O + ATP, the process by which cells use oxygen to make ATP is called what?",
     "answer": "Cellular respiration",
     "choices": [
       "Cellular respiration",
@@ -3145,7 +3145,7 @@
   },
   {
     "tier": 1,
-    "question": "Plant process: light + CO₂ + water → glucose + oxygen:",
+    "question": "Captured by 6CO₂ + 6H₂O + light → C₆H₁₂O₆ + 6O₂, the plant process turning sunlight, CO₂, and water into glucose and oxygen is called what?",
     "answer": "Photosynthesis",
     "choices": [
       "Photosynthesis",
@@ -3157,7 +3157,7 @@
   },
   {
     "tier": 1,
-    "question": "Type of life with no nucleus, single-celled:",
+    "question": "Prokaryotes — the most numerous organisms on Earth — single-celled life with no nucleus belongs to which group?",
     "answer": "Bacteria",
     "choices": [
       "Bacteria",
@@ -3169,7 +3169,7 @@
   },
   {
     "tier": 1,
-    "question": "Endosymbiotic theory was championed by:",
+    "question": "Arguing that mitochondria and chloroplasts were once free-living bacteria, the scientist who championed endosymbiotic theory was which?",
     "answer": "Lynn Margulis",
     "choices": [
       "Lynn Margulis",
@@ -3181,7 +3181,7 @@
   },
   {
     "tier": 1,
-    "question": "Number of pairs of chromosomes in humans:",
+    "question": "Made up of 22 autosomal pairs plus the sex chromosomes (XX or XY), the number of pairs of chromosomes in humans is what?",
     "answer": "23",
     "choices": [
       "23",
@@ -3193,7 +3193,7 @@
   },
   {
     "tier": 1,
-    "question": "Human sex chromosomes in a male:",
+    "question": "With sperm carrying Y determining the male sex, the human sex chromosomes in a male are which combination?",
     "answer": "XY",
     "choices": [
       "XY",
@@ -3205,7 +3205,7 @@
   },
   {
     "tier": 1,
-    "question": "Universal blood donor type:",
+    "question": "With no A, B, or Rh antigens to provoke a reaction, the universal blood donor type is which?",
     "answer": "O negative",
     "choices": [
       "O negative",
@@ -3217,7 +3217,7 @@
   },
   {
     "tier": 1,
-    "question": "Disease caused by lack of vitamin C:",
+    "question": "Why British sailors were called 'limeys' after the citrus they carried, the disease caused by lack of vitamin C is called what?",
     "answer": "Scurvy",
     "choices": [
       "Scurvy",
@@ -3229,7 +3229,7 @@
   },
   {
     "tier": 1,
-    "question": "Most numerous type of cell in your blood:",
+    "question": "Erythrocytes carrying oxygen via hemoglobin, the most numerous type of cell in your blood is which?",
     "answer": "Red blood cells",
     "choices": [
       "Red blood cells",
@@ -3241,7 +3241,7 @@
   },
   {
     "tier": 1,
-    "question": "Saved an estimated billion lives with high-yield wheat (1970 Nobel Peace):",
+    "question": "Hailed as the father of the Green Revolution after saving an estimated billion lives with high-yield wheat, the 1970 Nobel Peace laureate was which scientist?",
     "answer": "Norman Borlaug",
     "choices": [
       "Norman Borlaug",
@@ -3253,7 +3253,7 @@
   },
   {
     "tier": 1,
-    "question": "Antimalarial drug derived from sweet wormwood by Tu Youyou:",
+    "question": "Earning the 2015 Nobel in Medicine and drawn from ancient Chinese medical texts, the antimalarial drug Tu Youyou derived from sweet wormwood is called what?",
     "answer": "Artemisinin",
     "choices": [
       "Artemisinin",
@@ -3265,7 +3265,7 @@
   },
   {
     "tier": 1,
-    "question": "Branch of biology studying inheritance:",
+    "question": "Founded by Mendel in 1866, the branch of biology that studies inheritance is called what?",
     "answer": "Genetics",
     "choices": [
       "Genetics",
@@ -3277,7 +3277,7 @@
   },
   {
     "tier": 1,
-    "question": "Lymphatic organ that filters blood and stores platelets:",
+    "question": "Sitting in the upper-left abdomen and removing old red blood cells, the lymphatic organ that filters blood and stores platelets is which?",
     "answer": "Spleen",
     "choices": [
       "Spleen",
@@ -3289,7 +3289,7 @@
   },
   {
     "tier": 1,
-    "question": "Organ where most nutrient absorption happens:",
+    "question": "With villi and microvilli that maximize surface area, the organ where most nutrient absorption happens is which?",
     "answer": "Small intestine",
     "choices": [
       "Small intestine",
@@ -3301,7 +3301,7 @@
   },
   {
     "tier": 1,
-    "question": "Largest part of the human digestive tract:",
+    "question": "Roughly 6 meters long, the largest part of the human digestive tract is which?",
     "answer": "Small intestine",
     "choices": [
       "Small intestine",
@@ -3313,7 +3313,7 @@
   },
   {
     "tier": 1,
-    "question": "Eye part that controls light entering:",
+    "question": "The colored ring whose muscles widen or narrow the pupil, the eye part that controls light entering is which?",
     "answer": "Iris",
     "choices": [
       "Iris",
@@ -3325,7 +3325,7 @@
   },
   {
     "tier": 1,
-    "question": "Eye part where light-sensitive cells are:",
+    "question": "Holding both rods (low light) and cones (color), the eye part where light-sensitive cells live is which?",
     "answer": "Retina",
     "choices": [
       "Retina",
@@ -3337,7 +3337,7 @@
   },
   {
     "tier": 1,
-    "question": "Number of types of taste buds traditionally recognized:",
+    "question": "Including sweet, sour, salty, bitter, and umami, the number of types of taste buds traditionally recognized is what?",
     "answer": "5",
     "choices": [
       "5",
@@ -3349,7 +3349,7 @@
   },
   {
     "tier": 1,
-    "question": "Most diverse animal group on Earth:",
+    "question": "Counting millions of species — beetles alone outnumber all vertebrates — the most diverse animal group on Earth is which?",
     "answer": "Insects",
     "choices": [
       "Insects",
@@ -3361,7 +3361,7 @@
   },
   {
     "tier": 1,
-    "question": "Sequence: producers → herbivores → carnivores:",
+    "question": "With energy flowing in one direction, the sequence producers → herbivores → carnivores describes which ecological concept?",
     "answer": "Food chain",
     "choices": [
       "Food chain",
@@ -3373,7 +3373,7 @@
   },
   {
     "tier": 1,
-    "question": "Maurice Hilleman developed about how many vaccines:",
+    "question": "Including MMR, hepatitis B, and many others, Maurice Hilleman developed about how many vaccines over his career?",
     "answer": "40+",
     "choices": [
       "40+",
@@ -3385,7 +3385,7 @@
   },
   {
     "tier": 1,
-    "question": "Cell that becomes any cell type in the body:",
+    "question": "Embryonic varieties being pluripotent, a cell that can become any cell type in the body is called what?",
     "answer": "Stem cell",
     "choices": [
       "Stem cell",
@@ -3397,7 +3397,7 @@
   },
   {
     "tier": 1,
-    "question": "Number of phyla in the animal kingdom (approx):",
+    "question": "Including Chordata, Arthropoda, Mollusca, and many others, the approximate number of phyla in the animal kingdom is what?",
     "answer": "35",
     "choices": [
       "35",
@@ -3409,7 +3409,7 @@
   },
   {
     "tier": 1,
-    "question": "Largest planet in our solar system:",
+    "question": "More massive than all other planets combined, the largest planet in our solar system is which?",
     "answer": "Jupiter",
     "choices": [
       "Jupiter",
@@ -3421,7 +3421,7 @@
   },
   {
     "tier": 1,
-    "question": "Closest planet to the Sun:",
+    "question": "With day-side temperatures up to ~430°C, the closest planet to the Sun is which?",
     "answer": "Mercury",
     "choices": [
       "Mercury",
@@ -3433,7 +3433,7 @@
   },
   {
     "tier": 1,
-    "question": "Red planet:",
+    "question": "Owing its color to iron oxide on its surface, the so-called red planet is which?",
     "answer": "Mars",
     "choices": [
       "Mars",
@@ -3445,7 +3445,7 @@
   },
   {
     "tier": 1,
-    "question": "Planet famous for its rings:",
+    "question": "Visible from Earth as a yellow point of light, this planet has the most spectacular ring system in the solar system. What is it called?",
     "answer": "Saturn",
     "choices": [
       "Saturn",
@@ -3457,7 +3457,7 @@
   },
   {
     "tier": 1,
-    "question": "Planet that rotates on its side:",
+    "question": "Tilted at an axis of ~98° — probably from a giant collision — the planet that rotates on its side is which?",
     "answer": "Uranus",
     "choices": [
       "Uranus",
@@ -3469,7 +3469,7 @@
   },
   {
     "tier": 1,
-    "question": "Most distant planet from the Sun:",
+    "question": "Pluto having lost planet status, the most distant true planet from the Sun is which?",
     "answer": "Neptune",
     "choices": [
       "Neptune",
@@ -3481,7 +3481,7 @@
   },
   {
     "tier": 1,
-    "question": "Year Pluto was reclassified as a dwarf planet:",
+    "question": "Decided by the International Astronomical Union in Prague, Pluto was reclassified as a dwarf planet in which year?",
     "answer": "2006",
     "choices": [
       "2006",
@@ -3493,7 +3493,7 @@
   },
   {
     "tier": 1,
-    "question": "Number of planets in our solar system:",
+    "question": "Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune — the number of planets in our solar system today is what?",
     "answer": "8",
     "choices": [
       "8",
@@ -3505,7 +3505,7 @@
   },
   {
     "tier": 1,
-    "question": "Star at the center of our solar system:",
+    "question": "A G-type main-sequence star about 4.6 billion years old, the star at the center of our solar system is called what?",
     "answer": "The Sun",
     "choices": [
       "The Sun",
@@ -3517,7 +3517,7 @@
   },
   {
     "tier": 1,
-    "question": "Name of our galaxy:",
+    "question": "A barred spiral with ~100-400 billion stars, our home galaxy is called what?",
     "answer": "The Milky Way",
     "choices": [
       "The Milky Way",
@@ -3529,7 +3529,7 @@
   },
   {
     "tier": 1,
-    "question": "Closest galaxy to ours (large):",
+    "question": "Designated M31 and about 2.5 million light-years away, the closest large galaxy to ours is which?",
     "answer": "Andromeda",
     "choices": [
       "Andromeda",
@@ -3541,7 +3541,7 @@
   },
   {
     "tier": 1,
-    "question": "Earth's only natural satellite:",
+    "question": "Formed ~4.5 Gyr ago, probably from a Mars-sized impactor, Earth's only natural satellite is called what?",
     "answer": "The Moon",
     "choices": [
       "The Moon",
@@ -3553,7 +3553,7 @@
   },
   {
     "tier": 1,
-    "question": "Year humans first landed on the Moon:",
+    "question": "Apollo 11 touched down on July 20 of which year — when humans first landed on the Moon?",
     "answer": "1969",
     "choices": [
       "1969",
@@ -3565,7 +3565,7 @@
   },
   {
     "tier": 1,
-    "question": "First human on the Moon:",
+    "question": "Famous for 'One small step for [a] man, one giant leap for mankind,' the first human on the Moon was which astronaut?",
     "answer": "Neil Armstrong",
     "choices": [
       "Neil Armstrong",
@@ -3577,7 +3577,7 @@
   },
   {
     "tier": 1,
-    "question": "First human in space (1961):",
+    "question": "A Soviet cosmonaut aboard Vostok 1 in 1961, the first human in space was which person?",
     "answer": "Yuri Gagarin",
     "choices": [
       "Yuri Gagarin",
@@ -3589,7 +3589,7 @@
   },
   {
     "tier": 1,
-    "question": "First American to orbit the Earth (1962):",
+    "question": "Aboard Friendship 7 in 1962 and returning to space in 1998 at age 77, the first American to orbit the Earth was which astronaut?",
     "answer": "John Glenn",
     "choices": [
       "John Glenn",
@@ -3601,7 +3601,7 @@
   },
   {
     "tier": 1,
-    "question": "First satellite in orbit (1957):",
+    "question": "A Soviet launch in 1957 that began the Space Age, the first satellite in orbit was called what?",
     "answer": "Sputnik 1",
     "choices": [
       "Sputnik 1",
@@ -3613,7 +3613,7 @@
   },
   {
     "tier": 1,
-    "question": "Space probe that has traveled farthest from Earth:",
+    "question": "Entering interstellar space in 2012 and still transmitting, the space probe that has traveled farthest from Earth is which?",
     "answer": "Voyager 1",
     "choices": [
       "Voyager 1",
@@ -3625,7 +3625,7 @@
   },
   {
     "tier": 1,
-    "question": "Space telescope launched in 1990:",
+    "question": "An optical/UV/near-infrared observatory launched in 1990, the famous space telescope of that year is called what?",
     "answer": "Hubble",
     "choices": [
       "Hubble",
@@ -3637,7 +3637,7 @@
   },
   {
     "tier": 1,
-    "question": "Outer rocky layer of Earth:",
+    "question": "The thinnest layer of Earth — oceanic at ~7 km, continental up to 70 km — the outer rocky layer is called what?",
     "answer": "Crust",
     "choices": [
       "Crust",
@@ -3649,7 +3649,7 @@
   },
   {
     "tier": 1,
-    "question": "Earth's largest layer by volume:",
+    "question": "Comprising about 84% of Earth's volume, Earth's largest layer by volume is which?",
     "answer": "Mantle",
     "choices": [
       "Mantle",
@@ -3661,7 +3661,7 @@
   },
   {
     "tier": 1,
-    "question": "Earth's solid innermost layer:",
+    "question": "Solid despite extreme heat because high pressure keeps it solid, Earth's solid innermost layer is called what?",
     "answer": "Inner core",
     "choices": [
       "Inner core",
@@ -3673,7 +3673,7 @@
   },
   {
     "tier": 1,
-    "question": "Liquid layer of Earth's interior:",
+    "question": "Liquid iron-nickel whose convection generates Earth's magnetic field, the liquid layer of Earth's interior is called what?",
     "answer": "Outer core",
     "choices": [
       "Outer core",
@@ -3685,7 +3685,7 @@
   },
   {
     "tier": 1,
-    "question": "Theory that continents move:",
+    "question": "Dividing the lithosphere into ~15 plates moving on the asthenosphere, the theory that continents move is called what?",
     "answer": "Plate tectonics",
     "choices": [
       "Plate tectonics",
@@ -3697,7 +3697,7 @@
   },
   {
     "tier": 1,
-    "question": "Proposed continental drift in 1912 and was rejected for decades:",
+    "question": "Rejected for decades until vindicated in the 1960s by seafloor spreading evidence, the scientist who proposed continental drift in 1912 was which?",
     "answer": "Alfred Wegener",
     "choices": [
       "Alfred Wegener",
@@ -3709,7 +3709,7 @@
   },
   {
     "tier": 1,
-    "question": "Hypothetical supercontinent that broke up ~200 Myr ago:",
+    "question": "Greek for 'all earth,' the hypothetical supercontinent that broke up ~200 Myr ago was called what?",
     "answer": "Pangaea",
     "choices": [
       "Pangaea",
@@ -3721,7 +3721,7 @@
   },
   {
     "tier": 1,
-    "question": "Three main types of rock:",
+    "question": "Moved between by the rock cycle, the three main types of rock are which trio?",
     "answer": "Igneous, sedimentary, metamorphic",
     "choices": [
       "Igneous, sedimentary, metamorphic",
@@ -3733,7 +3733,7 @@
   },
   {
     "tier": 1,
-    "question": "Rock formed from cooled magma or lava:",
+    "question": "Granite being intrusive and basalt extrusive, rock formed from cooled magma or lava is called what?",
     "answer": "Igneous",
     "choices": [
       "Igneous",
@@ -3745,7 +3745,7 @@
   },
   {
     "tier": 1,
-    "question": "Rock formed from compressed layers of sediment:",
+    "question": "Including sandstone, shale, and limestone, rock formed from compressed layers of sediment is called what?",
     "answer": "Sedimentary",
     "choices": [
       "Sedimentary",
@@ -3757,7 +3757,7 @@
   },
   {
     "tier": 1,
-    "question": "Rock changed by heat and pressure:",
+    "question": "Turning limestone into marble and shale into slate, rock changed by heat and pressure is called what?",
     "answer": "Metamorphic",
     "choices": [
       "Metamorphic",
@@ -3769,7 +3769,7 @@
   },
   {
     "tier": 1,
-    "question": "Scale for earthquake size:",
+    "question": "Successor to the older Richter scale, the scientific scale used to measure earthquake size is called what?",
     "answer": "Moment magnitude",
     "choices": [
       "Moment magnitude",
@@ -3781,7 +3781,7 @@
   },
   {
     "tier": 1,
-    "question": "Scale for tornado intensity:",
+    "question": "Running from EF0 to EF5 based on observed damage, the scale used for tornado intensity is called what?",
     "answer": "Enhanced Fujita",
     "choices": [
       "Enhanced Fujita",
@@ -3793,7 +3793,7 @@
   },
   {
     "tier": 1,
-    "question": "Earth's atmosphere layer where weather occurs:",
+    "question": "The lowest layer of Earth's atmosphere, holding ~80% of atmospheric mass, the layer where weather occurs is called what?",
     "answer": "Troposphere",
     "choices": [
       "Troposphere",
@@ -3805,7 +3805,7 @@
   },
   {
     "tier": 1,
-    "question": "Atmospheric layer containing the ozone layer:",
+    "question": "Where ozone absorbs most UV radiation, the atmospheric layer containing the ozone layer is called what?",
     "answer": "Stratosphere",
     "choices": [
       "Stratosphere",
@@ -3817,7 +3817,7 @@
   },
   {
     "tier": 1,
-    "question": "Year of the Montreal Protocol banning CFCs:",
+    "question": "A real environmental success story — the ozone hole is recovering — the Montreal Protocol banning CFCs was signed in which year?",
     "answer": "1987",
     "choices": [
       "1987",
@@ -3829,7 +3829,7 @@
   },
   {
     "tier": 1,
-    "question": "Largest ocean:",
+    "question": "Covering about 30% of Earth's surface, the largest ocean on the planet is which?",
     "answer": "Pacific",
     "choices": [
       "Pacific",
@@ -3841,7 +3841,7 @@
   },
   {
     "tier": 1,
-    "question": "Deepest point in the ocean:",
+    "question": "At Challenger Deep, about 11 km below sea level, the deepest point in the ocean lies in which trench?",
     "answer": "Mariana Trench",
     "choices": [
       "Mariana Trench",
@@ -3853,7 +3853,7 @@
   },
   {
     "tier": 1,
-    "question": "Tallest mountain on Earth above sea level:",
+    "question": "At ~8,849 m above sea level (Mauna Kea is taller from base, but mostly underwater), the tallest mountain on Earth above sea level is which?",
     "answer": "Mount Everest",
     "choices": [
       "Mount Everest",
@@ -3865,7 +3865,7 @@
   },
   {
     "tier": 1,
-    "question": "Largest desert on Earth:",
+    "question": "Defined by precipitation rather than heat — and very dry — the largest desert on Earth is which?",
     "answer": "Antarctic",
     "choices": [
       "Antarctic",
@@ -3877,7 +3877,7 @@
   },
   {
     "tier": 1,
-    "question": "Largest hot desert:",
+    "question": "Covering most of North Africa, the largest hot desert on Earth is which?",
     "answer": "Sahara",
     "choices": [
       "Sahara",
@@ -3889,7 +3889,7 @@
   },
   {
     "tier": 1,
-    "question": "Longest river in the world:",
+    "question": "About 6,650 km long (with the Amazon contested as longer), the longest river in the world is generally said to be which?",
     "answer": "Nile",
     "choices": [
       "Nile",
@@ -3901,7 +3901,7 @@
   },
   {
     "tier": 1,
-    "question": "Process: water → vapor → cloud → rain:",
+    "question": "Driven by evaporation, condensation, and precipitation, the process taking water from vapor through cloud to rain is called what?",
     "answer": "Water cycle",
     "choices": [
       "Water cycle",
@@ -3913,7 +3913,7 @@
   },
   {
     "tier": 1,
-    "question": "Frozen water vapor that falls from clouds:",
+    "question": "Forming when water vapor freezes directly into ice crystals, the frozen water that falls from clouds in soft flakes is called what?",
     "answer": "Snow",
     "choices": [
       "Snow",
@@ -3925,7 +3925,7 @@
   },
   {
     "tier": 1,
-    "question": "Long-term average of weather conditions:",
+    "question": "Defined over 30+ years rather than day to day, the long-term average of weather conditions is called what?",
     "answer": "Climate",
     "choices": [
       "Climate",
@@ -3937,7 +3937,7 @@
   },
   {
     "tier": 1,
-    "question": "Earth has been warming since the end of:",
+    "question": "Roughly 1300-1850, with long-term recovery beginning before heavy industry, Earth has been warming since the end of which period?",
     "answer": "The Little Ice Age",
     "choices": [
       "The Little Ice Age",
@@ -3949,7 +3949,7 @@
   },
   {
     "tier": 1,
-    "question": "Approximate years of the Medieval Warm Period:",
+    "question": "Long before industrial CO₂, when Vikings farmed Greenland, the Medieval Warm Period spanned approximately which years?",
     "answer": "950-1250",
     "choices": [
       "950-1250",
@@ -3961,7 +3961,7 @@
   },
   {
     "tier": 1,
-    "question": "Approximate years of the Little Ice Age:",
+    "question": "Coinciding with the Maunder Minimum in solar activity (and when the Thames froze regularly), the Little Ice Age spanned approximately which years?",
     "answer": "1300-1850",
     "choices": [
       "1300-1850",
@@ -3973,7 +3973,7 @@
   },
   {
     "tier": 1,
-    "question": "Sun's output varies on cycles of approximately:",
+    "question": "Driving real climate variability through the sunspot cycle, the Sun's output varies on cycles of approximately how many years?",
     "answer": "11 years",
     "choices": [
       "11 years",
@@ -3985,7 +3985,7 @@
   },
   {
     "tier": 1,
-    "question": "Orbital cycles influencing ice ages on ~100,000-year timescales:",
+    "question": "Long-term variations in Earth's orbital eccentricity, axial obliquity, and precession influence ice ages on roughly 100,000-year timescales. What are these cycles called?",
     "answer": "Milankovitch cycles",
     "choices": [
       "Milankovitch cycles",
@@ -3997,7 +3997,7 @@
   },
   {
     "tier": 1,
-    "question": "Higher atmospheric CO₂ has caused measurable global:",
+    "question": "With plants growing faster and using less water — Earth has measurably greened since 1980 — higher atmospheric CO₂ has caused measurable global what?",
     "answer": "Greening",
     "choices": [
       "Greening",
@@ -4009,7 +4009,7 @@
   },
   {
     "tier": 1,
-    "question": "Gas that makes up the greatest mass of Earth's atmosphere:",
+    "question": "Roughly 78% of the atmosphere by mass (CO₂ is just 0.04%), the gas that makes up the greatest mass of Earth's atmosphere is what?",
     "answer": "Nitrogen",
     "choices": [
       "Nitrogen",
@@ -4021,7 +4021,7 @@
   },
   {
     "tier": 1,
-    "question": "Proposed heliocentric model in 1543:",
+    "question": "Publishing De Revolutionibus in the year he died (1543), the astronomer who proposed the heliocentric model was which?",
     "answer": "Copernicus",
     "choices": [
       "Copernicus",
@@ -4033,7 +4033,7 @@
   },
   {
     "tier": 1,
-    "question": "First used a telescope for astronomy (1609):",
+    "question": "Discovering Jupiter's moons, Venus's phases, and lunar craters in 1609, the scientist who first used a telescope for astronomy was which?",
     "answer": "Galileo",
     "choices": [
       "Galileo",
@@ -4045,7 +4045,7 @@
   },
   {
     "tier": 1,
-    "question": "Year the Roman Inquisition convicted Galileo:",
+    "question": "Placed under house arrest until his death — and formally pardoned by the Vatican in 1992 — Galileo was convicted by the Roman Inquisition in which year?",
     "answer": "1633",
     "choices": [
       "1633",
@@ -4057,7 +4057,7 @@
   },
   {
     "tier": 1,
-    "question": "Astronomer who derived planetary motion laws from Brahe's data:",
+    "question": "Deriving ellipses, equal areas in equal times, and T² ∝ a³ from Tycho Brahe's precise data, the astronomer who gave us planetary motion laws was which?",
     "answer": "Kepler",
     "choices": [
       "Kepler",
@@ -4069,7 +4069,7 @@
   },
   {
     "tier": 1,
-    "question": "Pre-telescope astronomer with very precise observations:",
+    "question": "Producing the precise observations that made Kepler's laws possible, the pre-telescope astronomer known for unrivaled measurements was which?",
     "answer": "Tycho Brahe",
     "choices": [
       "Tycho Brahe",
@@ -4081,7 +4081,7 @@
   },
   {
     "tier": 1,
-    "question": "Asteroid belt is between which two planets:",
+    "question": "Filled with rocky debris and home to the dwarf planet Ceres, the asteroid belt lies between which two planets?",
     "answer": "Mars and Jupiter",
     "choices": [
       "Mars and Jupiter",
@@ -4093,7 +4093,7 @@
   },
   {
     "tier": 1,
-    "question": "Halley's comet returns approximately every:",
+    "question": "Next predicted to return in 2061, Halley's comet returns approximately every how many years?",
     "answer": "76 years",
     "choices": [
       "76 years",
@@ -4105,7 +4105,7 @@
   },
   {
     "tier": 1,
-    "question": "Aurora is caused by:",
+    "question": "Charged particles exciting atmospheric gases at high latitudes, the aurora is caused by which phenomenon?",
     "answer": "Solar wind hitting atmosphere",
     "choices": [
       "Solar wind hitting atmosphere",
@@ -4117,7 +4117,7 @@
   },
   {
     "tier": 1,
-    "question": "Star nearest to our solar system:",
+    "question": "Part of the Alpha Centauri system and ~4.24 light-years away, the star nearest to our solar system is which?",
     "answer": "Proxima Centauri",
     "choices": [
       "Proxima Centauri",
@@ -4129,7 +4129,7 @@
   },
   {
     "tier": 1,
-    "question": "Stage at the end of a massive star's life:",
+    "question": "Reserved for stars greater than 8 solar masses, the explosive stage at the end of a massive star's life is called what?",
     "answer": "Supernova",
     "choices": [
       "Supernova",
@@ -4141,7 +4141,7 @@
   },
   {
     "tier": 1,
-    "question": "Remnant of a small-medium star's death:",
+    "question": "The fate awaiting our own Sun in ~5 Gyr, the remnant of a small-to-medium star's death is called what?",
     "answer": "White dwarf",
     "choices": [
       "White dwarf",
@@ -4153,7 +4153,7 @@
   },
   {
     "tier": 1,
-    "question": "Brightest star in Earth's night sky:",
+    "question": "In Canis Major and nicknamed the Dog Star, the brightest star in Earth's night sky is which?",
     "answer": "Sirius",
     "choices": [
       "Sirius",
@@ -4165,7 +4165,7 @@
   },
   {
     "tier": 1,
-    "question": "North Star:",
+    "question": "Located near Earth's rotational axis and not appearing to move across the sky, the North Star is which?",
     "answer": "Polaris",
     "choices": [
       "Polaris",
@@ -4177,7 +4177,7 @@
   },
   {
     "tier": 1,
-    "question": "Number of moons of Earth:",
+    "question": "Just our Moon, no more and no less — the number of moons Earth has is what?",
     "answer": "1",
     "choices": [
       "1",
@@ -4189,7 +4189,7 @@
   },
   {
     "tier": 1,
-    "question": "Earth's age in years (approx):",
+    "question": "Measured from radiometric dating of meteorites, Earth's age in years is approximately what?",
     "answer": "4.5 billion",
     "choices": [
       "4.5 billion",
@@ -4201,7 +4201,7 @@
   },
   {
     "tier": 1,
-    "question": "Body that has the strongest gravity in our solar system:",
+    "question": "Holding the entire solar system in orbit, the body with the strongest gravity in our solar system is which?",
     "answer": "The Sun",
     "choices": [
       "The Sun",
@@ -4213,7 +4213,7 @@
   },
   {
     "tier": 1,
-    "question": "Time Earth takes to rotate on its axis:",
+    "question": "With a sidereal day of about 23h 56m, the time Earth takes to rotate on its axis is approximately what?",
     "answer": "~24 hours",
     "choices": [
       "~24 hours",
@@ -4225,7 +4225,7 @@
   },
   {
     "tier": 1,
-    "question": "Time Earth takes to orbit the Sun:",
+    "question": "About 365.25 days — hence leap years — the time Earth takes to orbit the Sun is approximately what?",
     "answer": "~365 days",
     "choices": [
       "~365 days",
@@ -4237,7 +4237,7 @@
   },
   {
     "tier": 1,
-    "question": "Time the Moon takes to orbit Earth:",
+    "question": "With a sidereal period of 27.3 days and a synodic month (phases) of ~29.5 days, the time the Moon takes to orbit Earth is approximately what?",
     "answer": "~27 days",
     "choices": [
       "~27 days",
@@ -4249,7 +4249,7 @@
   },
   {
     "tier": 1,
-    "question": "Cause of ocean tides:",
+    "question": "With the Sun also contributing, producing spring tides at new and full moons, the primary cause of ocean tides is what?",
     "answer": "Moon's gravity",
     "choices": [
       "Moon's gravity",
@@ -4261,7 +4261,7 @@
   },
   {
     "tier": 1,
-    "question": "Phase when the Moon is between Earth and Sun:",
+    "question": "When the Sun-side of the Moon faces away from us, and solar eclipses can occur, the phase of the Moon between Earth and Sun is called what?",
     "answer": "New moon",
     "choices": [
       "New moon",
@@ -4273,7 +4273,7 @@
   },
   {
     "tier": 1,
-    "question": "Phase when Earth is between Sun and Moon:",
+    "question": "When the fully illuminated face is toward Earth, the phase of the Moon with Earth between Sun and Moon is called what?",
     "answer": "Full moon",
     "choices": [
       "Full moon",
@@ -4285,7 +4285,7 @@
   },
   {
     "tier": 1,
-    "question": "Type of eclipse: Moon blocks Sun:",
+    "question": "Happening at new moon when alignment is exact, the type of eclipse where the Moon blocks the Sun is called what?",
     "answer": "Solar",
     "choices": [
       "Solar",
@@ -4297,7 +4297,7 @@
   },
   {
     "tier": 1,
-    "question": "Type of eclipse: Earth's shadow falls on the Moon:",
+    "question": "Happening at full moon when alignment is exact, the type of eclipse where Earth's shadow falls on the Moon is called what?",
     "answer": "Lunar",
     "choices": [
       "Lunar",
@@ -4309,7 +4309,7 @@
   },
   {
     "tier": 1,
-    "question": "Cause of Earth's seasons:",
+    "question": "Tilted ~23.5° relative to the orbital plane, the axial property of Earth that causes the seasons is called what?",
     "answer": "Earth's axial tilt",
     "choices": [
       "Earth's axial tilt",
@@ -4321,7 +4321,7 @@
   },
   {
     "tier": 1,
-    "question": "Longest day of the year in the Northern Hemisphere:",
+    "question": "Around June 21, when the Sun reaches its highest point in the sky, the longest day of the year in the Northern Hemisphere is called what?",
     "answer": "Summer solstice",
     "choices": [
       "Summer solstice",
@@ -4333,7 +4333,7 @@
   },
   {
     "tier": 1,
-    "question": "Body in our solar system known as the 'morning star':",
+    "question": "The brightest planet visible from Earth, the body in our solar system known as the 'morning star' is which?",
     "answer": "Venus",
     "choices": [
       "Venus",
@@ -4345,7 +4345,7 @@
   },
   {
     "tier": 1,
-    "question": "Largest moon in the solar system:",
+    "question": "Orbiting Jupiter and larger than the planet Mercury, the largest moon in the solar system is which?",
     "answer": "Ganymede",
     "choices": [
       "Ganymede",
@@ -4357,7 +4357,7 @@
   },
   {
     "tier": 1,
-    "question": "Mass extinction at the end of the Cretaceous (~66 Myr ago):",
+    "question": "Wiping out non-avian dinosaurs and triggered by a Yucatán asteroid impact ~66 Myr ago, the mass extinction at the end of the Cretaceous is called what?",
     "answer": "K-Pg event",
     "choices": [
       "K-Pg event",
@@ -4369,7 +4369,7 @@
   },
   {
     "tier": 1,
-    "question": "Era when dinosaurs lived:",
+    "question": "Running ~252 to 66 million years ago, the geologic era when dinosaurs lived is called what?",
     "answer": "Mesozoic",
     "choices": [
       "Mesozoic",
@@ -4381,7 +4381,7 @@
   },
   {
     "tier": 1,
-    "question": "Current geologic era:",
+    "question": "The age of mammals, beginning at the K-Pg extinction, the current geologic era is called what?",
     "answer": "Cenozoic",
     "choices": [
       "Cenozoic",
@@ -4393,7 +4393,7 @@
   },
   {
     "tier": 1,
-    "question": "Loops between flowing water and Earth's surface:",
+    "question": "Solar-powered and looping between flowing water and Earth's surface, the planetary cycle described here is called what?",
     "answer": "Water cycle",
     "choices": [
       "Water cycle",
@@ -4405,7 +4405,7 @@
   },
   {
     "tier": 1,
-    "question": "Hottest layer of Earth's atmosphere (by temperature):",
+    "question": "With very thin air whose individual molecules reach high temperatures, the hottest layer of Earth's atmosphere by temperature is called what?",
     "answer": "Thermosphere",
     "choices": [
       "Thermosphere",
@@ -4417,7 +4417,7 @@
   },
   {
     "tier": 1,
-    "question": "Light from the Sun takes about how long to reach Pluto:",
+    "question": "Roughly 40 AU from the Sun, the light from the Sun takes about how long to reach Pluto?",
     "answer": "5 hours",
     "choices": [
       "5 hours",
@@ -4429,7 +4429,7 @@
   },
   {
     "tier": 1,
-    "question": "Most common type of star in our galaxy:",
+    "question": "Long-lived and low-mass — Proxima Centauri is an example — the most common type of star in our galaxy is which?",
     "answer": "Red dwarf",
     "choices": [
       "Red dwarf",
@@ -4441,7 +4441,7 @@
   },
   {
     "tier": 1,
-    "question": "Outermost edge of the solar system, mostly icy:",
+    "question": "Home to Pluto and many other dwarf planets, the outermost icy edge of the solar system is called what?",
     "answer": "Kuiper Belt",
     "choices": [
       "Kuiper Belt",
@@ -4453,7 +4453,7 @@
   },
   {
     "tier": 1,
-    "question": "Hypothetical spherical region of comets at the solar system's edge:",
+    "question": "The source of long-period comets, the hypothetical spherical region at the solar system's edge is called what?",
     "answer": "Oort Cloud",
     "choices": [
       "Oort Cloud",
@@ -4465,7 +4465,7 @@
   },
   {
     "tier": 1,
-    "question": "Highest mountain in the solar system:",
+    "question": "On Mars, at roughly 22 km tall — about 2.5× Everest — the highest mountain in the solar system is called what?",
     "answer": "Olympus Mons",
     "choices": [
       "Olympus Mons",
@@ -4477,7 +4477,7 @@
   },
   {
     "tier": 1,
-    "question": "Number of Apollo missions that landed humans on the Moon:",
+    "question": "Apollo 11, 12, 14, 15, 16, 17 — with Apollo 13 aborted — the number of Apollo missions that landed humans on the Moon is what?",
     "answer": "6",
     "choices": [
       "6",
@@ -4489,7 +4489,7 @@
   },
   {
     "tier": 1,
-    "question": "Year of the last Apollo Moon landing:",
+    "question": "Apollo 17 — no humans have been beyond low Earth orbit since — the last Apollo Moon landing took place in which year?",
     "answer": "1972",
     "choices": [
       "1972",
@@ -4501,7 +4501,7 @@
   },
   {
     "tier": 1,
-    "question": "Moon thought to have a subsurface ocean below its icy shell:",
+    "question": "A Jovian moon and a top candidate in the search for extraterrestrial life, the body thought to have a subsurface ocean beneath its icy shell is which?",
     "answer": "Europa",
     "choices": [
       "Europa",
@@ -4513,7 +4513,7 @@
   },
   {
     "tier": 1,
-    "question": "Continent that contains the South Pole:",
+    "question": "The coldest, driest, and windiest continent on Earth, the one containing the South Pole is which?",
     "answer": "Antarctica",
     "choices": [
       "Antarctica",
@@ -4525,7 +4525,7 @@
   },
   {
     "tier": 1,
-    "question": "Largest continent by area:",
+    "question": "Comprising roughly 30% of Earth's land area, the largest continent by area is which?",
     "answer": "Asia",
     "choices": [
       "Asia",
@@ -4537,7 +4537,7 @@
   },
   {
     "tier": 1,
-    "question": "Mountain range running along South America's west coast:",
+    "question": "The longest mountain range on Earth above sea level, the chain running along South America's west coast is which?",
     "answer": "Andes",
     "choices": [
       "Andes",
@@ -4549,7 +4549,7 @@
   },
   {
     "tier": 1,
-    "question": "Mountain range containing Mount Everest:",
+    "question": "Formed by the collision of the Indian and Eurasian plates, the mountain range containing Mount Everest is which?",
     "answer": "Himalayas",
     "choices": [
       "Himalayas",
@@ -4561,19 +4561,7 @@
   },
   {
     "tier": 1,
-    "question": "Year smallpox was declared eradicated worldwide:",
-    "answer": "1980",
-    "choices": [
-      "1980",
-      "1970",
-      "1990",
-      "1960"
-    ],
-    "context": "Last natural case 1977 in Somalia. One of humanity's greatest achievements."
-  },
-  {
-    "tier": 1,
-    "question": "Year of the Buck v. Bell Supreme Court ruling allowing forced sterilization:",
+    "question": "An 8-1 ruling with Justice Holmes' chilling line 'Three generations of imbeciles are enough' — never overturned — the Buck v. Bell Supreme Court ruling allowing forced sterilization came in which year?",
     "answer": "1927",
     "choices": [
       "1927",
@@ -4585,7 +4573,7 @@
   },
   {
     "tier": 1,
-    "question": "Justice who wrote the 'three generations of imbeciles' line:",
+    "question": "Penning the 'three generations of imbeciles' line in the 8-1 majority opinion of Buck v. Bell (1927), which Supreme Court Justice authored that infamous passage?",
     "answer": "Oliver Wendell Holmes",
     "choices": [
       "Oliver Wendell Holmes",
@@ -4597,7 +4585,7 @@
   },
   {
     "tier": 1,
-    "question": "State that passed the world's first compulsory sterilization law (1907):",
+    "question": "With American progressives leading the global eugenics movement, the state that passed the world's first compulsory sterilization law in 1907 was which?",
     "answer": "Indiana",
     "choices": [
       "Indiana",
@@ -4609,7 +4597,7 @@
   },
   {
     "tier": 1,
-    "question": "State with the most aggressive US sterilization program (~20,000+):",
+    "question": "Continuing into the 1970s and inspiring Nazi eugenicists in the 1930s, the state with the most aggressive US sterilization program (~20,000+) was which?",
     "answer": "California",
     "choices": [
       "California",
@@ -4621,7 +4609,7 @@
   },
   {
     "tier": 1,
-    "question": "Founded Planned Parenthood and was an open eugenicist:",
+    "question": "With well-documented writings on 'human weeds' and the Negro Project, the open eugenicist who founded Planned Parenthood was which figure?",
     "answer": "Margaret Sanger",
     "choices": [
       "Margaret Sanger",
@@ -4633,7 +4621,7 @@
   },
   {
     "tier": 1,
-    "question": "1947 medical ethics code that established voluntary consent as foundational:",
+    "question": "Coming out of Nazi doctor trials after WWII, the 1947 medical ethics code that established voluntary consent as foundational is called what?",
     "answer": "Nuremberg Code",
     "choices": [
       "Nuremberg Code",
@@ -4645,7 +4633,7 @@
   },
   {
     "tier": 1,
-    "question": "Years of the Tuskegee Syphilis Study by the US Public Health Service:",
+    "question": "Leaving about 400 Black men with syphilis intentionally untreated for decades, the Tuskegee Syphilis Study by the US Public Health Service spanned which years?",
     "answer": "1932-1972",
     "choices": [
       "1932-1972",
@@ -4657,7 +4645,7 @@
   },
   {
     "tier": 1,
-    "question": "Nazi program (1939-1941) that killed disabled people:",
+    "question": "Directly modeled on American eugenics precedent, the Nazi program of 1939-1941 that killed disabled people was called what?",
     "answer": "T4 program",
     "choices": [
       "T4 program",
@@ -4669,7 +4657,7 @@
   },
   {
     "tier": 1,
-    "question": "1986 US law removing manufacturer liability for vaccine injury:",
+    "question": "Creating the VICP federal compensation program, the 1986 US law removing manufacturer liability for vaccine injury is abbreviated how?",
     "answer": "NCVIA",
     "choices": [
       "NCVIA",
@@ -4681,7 +4669,7 @@
   },
   {
     "tier": 1,
-    "question": "Year of the National Childhood Vaccine Injury Act:",
+    "question": "Shifting vaccine injury litigation to a federal compensation program, the National Childhood Vaccine Injury Act was passed in which year?",
     "answer": "1986",
     "choices": [
       "1986",
@@ -4693,7 +4681,7 @@
   },
   {
     "tier": 1,
-    "question": "Author of *Unsettled?* (2021), former Obama DOE Undersecretary for Science:",
+    "question": "Arguing in 2021 that IPCC reports themselves don't support media catastrophist framing, the former Obama DOE Undersecretary for Science who authored Unsettled? was which scientist?",
     "answer": "Steven Koonin",
     "choices": [
       "Steven Koonin",
@@ -4705,7 +4693,7 @@
   },
   {
     "tier": 1,
-    "question": "1968 book predicting hundreds of millions would starve in the 1970s:",
+    "question": "By Paul Ehrlich, predicting hundreds of millions would starve in the 1970s — though global hunger plummeted instead — the 1968 book was titled what?",
     "answer": "The Population Bomb",
     "choices": [
       "The Population Bomb",
@@ -4717,7 +4705,7 @@
   },
   {
     "tier": 1,
-    "question": "Author of *The Population Bomb*:",
+    "question": "Predicting mass starvation that did not happen (while Borlaug saved roughly a billion lives), the author of The Population Bomb was which figure?",
     "answer": "Paul Ehrlich",
     "choices": [
       "Paul Ehrlich",
@@ -4729,7 +4717,7 @@
   },
   {
     "tier": 1,
-    "question": "Stanford epidemiologist, co-author of the Great Barrington Declaration:",
+    "question": "Now the director of the National Institutes of Health, the Stanford epidemiologist who co-authored the Great Barrington Declaration is which scientist?",
     "answer": "Jay Bhattacharya",
     "choices": [
       "Jay Bhattacharya",
@@ -4741,7 +4729,7 @@
   },
   {
     "tier": 1,
-    "question": "Month and year of the Great Barrington Declaration:",
+    "question": "Authored by Bhattacharya (Stanford), Kulldorff (Harvard), and Gupta (Oxford) calling for focused protection, the Great Barrington Declaration appeared in which month and year?",
     "answer": "October 2020",
     "choices": [
       "October 2020",
@@ -4753,7 +4741,7 @@
   },
   {
     "tier": 1,
-    "question": "Harvard biostatistician and Great Barrington co-author:",
+    "question": "Losing his position at Mass General/Harvard over mandate dissent, the Harvard biostatistician who co-authored the Great Barrington Declaration was which scientist?",
     "answer": "Martin Kulldorff",
     "choices": [
       "Martin Kulldorff",
@@ -4765,7 +4753,7 @@
   },
   {
     "tier": 1,
-    "question": "Oxford theoretical epidemiologist and Great Barrington co-author:",
+    "question": "A long-career student of infectious-disease dynamics, the Oxford theoretical epidemiologist who co-authored the Great Barrington Declaration was which scientist?",
     "answer": "Sunetra Gupta",
     "choices": [
       "Sunetra Gupta",
@@ -4777,7 +4765,7 @@
   },
   {
     "tier": 1,
-    "question": "NIH director whose FOIA'd emails called for a 'devastating takedown' of the GBD:",
+    "question": "Revealed by FOIA emails coordinated with Anthony Fauci, the NIH director whose FOIA'd emails called for a 'devastating takedown' of the Great Barrington Declaration was which figure?",
     "answer": "Francis Collins",
     "choices": [
       "Francis Collins",
@@ -4789,7 +4777,7 @@
   },
   {
     "tier": 1,
-    "question": "Country whose lighter-touch COVID approach is often cited as vindicated:",
+    "question": "Avoiding strict lockdowns and seeing excess mortality come in lower than many lockdown countries, the country whose lighter-touch COVID approach is often cited as vindicated is which?",
     "answer": "Sweden",
     "choices": [
       "Sweden",
@@ -4801,7 +4789,7 @@
   },
   {
     "tier": 1,
-    "question": "Johns Hopkins study (2022) on lockdown effects on COVID mortality:",
+    "question": "A meta-analysis estimating only ~0.2% mortality reduction from lockdowns, the 2022 Johns Hopkins study on lockdown effects on COVID mortality is known by which name?",
     "answer": "Hanke-Herby-Jonung",
     "choices": [
       "Hanke-Herby-Jonung",
@@ -4813,7 +4801,7 @@
   },
   {
     "tier": 1,
-    "question": "Imperial College modeler whose predictions repeatedly overstated epidemic deaths:",
+    "question": "With a 25-year track record including BSE, foot-and-mouth, and swine flu, the Imperial College modeler whose predictions repeatedly overstated epidemic deaths was which scientist?",
     "answer": "Neil Ferguson",
     "choices": [
       "Neil Ferguson",
@@ -4825,7 +4813,7 @@
   },
   {
     "tier": 1,
-    "question": "Cochrane mask review (published 2023) conclusion on mandates:",
+    "question": "A major systematic review authored by Tom Jefferson and colleagues, the Cochrane mask review published in 2023 concluded what about mandates?",
     "answer": "No clear evidence of reduced transmission",
     "choices": [
       "No clear evidence of reduced transmission",
@@ -4837,7 +4825,7 @@
   },
   {
     "tier": 1,
-    "question": "Document collection released after Musk's 2022 acquisition of the platform:",
+    "question": "Documenting federal coordination with platforms to suppress dissent, the collection of internal documents released after Musk's 2022 acquisition of the platform is called what?",
     "answer": "Twitter Files",
     "choices": [
       "Twitter Files",
@@ -4849,7 +4837,7 @@
   },
   {
     "tier": 1,
-    "question": "Stanford physician-economist who led the Great Barrington Declaration, later NIH director:",
+    "question": "Targeted as 'fringe' and now leading the agency that smeared him, the Stanford physician-economist who led the Great Barrington Declaration and later became NIH director is which?",
     "answer": "Jay Bhattacharya",
     "choices": [
       "Jay Bhattacharya",
@@ -4861,7 +4849,7 @@
   },
   {
     "tier": 1,
-    "question": "Founder of the World Economic Forum:",
+    "question": "Author of The Fourth Industrial Revolution (2016) and COVID-19: The Great Reset (2020), the founder of the World Economic Forum is which figure?",
     "answer": "Klaus Schwab",
     "choices": [
       "Klaus Schwab",
@@ -4873,7 +4861,7 @@
   },
   {
     "tier": 1,
-    "question": "Historian who calls humans 'hackable animals':",
+    "question": "A WEF advisor and author of Sapiens, Homo Deus, and 21 Lessons, the historian who calls humans 'hackable animals' is which figure?",
     "answer": "Yuval Noah Harari",
     "choices": [
       "Yuval Noah Harari",
@@ -4885,7 +4873,7 @@
   },
   {
     "tier": 1,
-    "question": "Father of modern chemistry, guillotined during the French Revolution:",
+    "question": "Named oxygen, established conservation of mass, and executed during the French Revolution, the father of modern chemistry was which scientist?",
     "answer": "Antoine Lavoisier",
     "choices": [
       "Antoine Lavoisier",
@@ -4897,7 +4885,7 @@
   },
   {
     "tier": 1,
-    "question": "Year Galileo's *Dialogue* led to his trial by the Roman Inquisition:",
+    "question": "Convicted of 'vehement suspicion of heresy' (and formally apologized for by the Vatican in 1992), the year Galileo's Dialogue led to his trial by the Roman Inquisition was which?",
     "answer": "1633",
     "choices": [
       "1633",
@@ -4909,7 +4897,7 @@
   },
   {
     "tier": 1,
-    "question": "Mary Anning discovered her first major fossil at age:",
+    "question": "Earning a man's recognition from a girl's beach at Lyme Regis in 1811 with an ichthyosaur, Mary Anning discovered her first major fossil at what age?",
     "answer": "12",
     "choices": [
       "12",
@@ -4921,7 +4909,7 @@
   },
   {
     "tier": 1,
-    "question": "Year Wegener proposed continental drift:",
+    "question": "Rejected for ~50 years until seafloor spreading data vindicated him, Wegener proposed continental drift in which year?",
     "answer": "1912",
     "choices": [
       "1912",
@@ -4933,7 +4921,7 @@
   },
   {
     "tier": 1,
-    "question": "Year Semmelweis demonstrated handwashing reduced childbed fever:",
+    "question": "At Vienna General Hospital — and rejected by the establishment that drove him into an asylum by 1865 — Semmelweis demonstrated handwashing reduced childbed fever in which year?",
     "answer": "1847",
     "choices": [
       "1847",
@@ -4945,7 +4933,7 @@
   },
   {
     "tier": 1,
-    "question": "Year Marshall and Warren proved H. pylori causes peptic ulcers:",
+    "question": "After Marshall drank a Petri dish of bacteria himself — earning a 2005 Nobel — Marshall and Warren proved H. pylori causes peptic ulcers in which year?",
     "answer": "1984",
     "choices": [
       "1984",
@@ -4957,7 +4945,7 @@
   },
   {
     "tier": 1,
-    "question": "Year the Watson-Crick DNA structure paper was published in Nature:",
+    "question": "Published in Nature on April 25 — with Franklin's Photo 51 central, though she died in 1958 before the 1962 Nobel — the Watson-Crick DNA structure paper appeared in which year?",
     "answer": "1953",
     "choices": [
       "1953",
@@ -4969,7 +4957,7 @@
   },
   {
     "tier": 1,
-    "question": "Year Pasteur successfully tested the rabies vaccine on a boy:",
+    "question": "Administered to nine-year-old Joseph Meister after he was bitten by a rabid dog, Pasteur successfully tested the rabies vaccine on a boy in which year?",
     "answer": "1885",
     "choices": [
       "1885",
@@ -4981,7 +4969,7 @@
   },
   {
     "tier": 1,
-    "question": "Year Jenner published his smallpox vaccination work:",
+    "question": "Using cowpox to protect against smallpox, Jenner published his smallpox vaccination work in which year?",
     "answer": "1798",
     "choices": [
       "1798",
@@ -4993,7 +4981,7 @@
   },
   {
     "tier": 1,
-    "question": "Year Salk's inactivated polio vaccine was licensed:",
+    "question": "Released by Salk who refused to patent it — 'Could you patent the sun?' — the inactivated polio vaccine was licensed in which year?",
     "answer": "1955",
     "choices": [
       "1955",
@@ -5005,7 +4993,7 @@
   },
   {
     "tier": 1,
-    "question": "Year Sabin's oral polio vaccine was licensed:",
+    "question": "Delivered as live attenuated virus on sugar cubes, Sabin's oral polio vaccine was licensed in which year?",
     "answer": "1962",
     "choices": [
       "1962",
@@ -5017,7 +5005,7 @@
   },
   {
     "tier": 1,
-    "question": "Year of Newton's *Principia*:",
+    "question": "Combining the laws of motion plus universal gravitation in one work, Newton's Principia was published in which year?",
     "answer": "1687",
     "choices": [
       "1687",
@@ -5029,7 +5017,7 @@
   },
   {
     "tier": 1,
-    "question": "Einstein's 'miracle year':",
+    "question": "Marked by four papers — special relativity, photoelectric effect, Brownian motion, and E=mc² — Einstein's so-called 'miracle year' was which?",
     "answer": "1905",
     "choices": [
       "1905",
@@ -5041,7 +5029,7 @@
   },
   {
     "tier": 1,
-    "question": "Year Einstein published general relativity:",
+    "question": "Casting gravity as the curvature of spacetime, the year Einstein published general relativity was which?",
     "answer": "1915",
     "choices": [
       "1915",
@@ -5053,7 +5041,7 @@
   },
   {
     "tier": 1,
-    "question": "Year Eddington's eclipse expedition confirmed general relativity:",
+    "question": "Showing light bent around the Sun by the predicted amount, the year Eddington's eclipse expedition confirmed general relativity was which?",
     "answer": "1919",
     "choices": [
       "1919",
@@ -5065,7 +5053,7 @@
   },
   {
     "tier": 1,
-    "question": "Year Einstein won the Nobel Prize:",
+    "question": "Awarded for the photoelectric effect — NOT relativity — Einstein won the Nobel Prize in which year?",
     "answer": "1921",
     "choices": [
       "1921",
@@ -5077,19 +5065,7 @@
   },
   {
     "tier": 1,
-    "question": "Year Doudna and Charpentier won the Nobel for CRISPR:",
-    "answer": "2020",
-    "choices": [
-      "2020",
-      "2015",
-      "2012",
-      "2018"
-    ],
-    "context": "Chemistry. The first all-woman science Nobel pair."
-  },
-  {
-    "tier": 1,
-    "question": "Year Tu Youyou won the Nobel for artemisinin:",
+    "question": "Drawing from a 4th-century Chinese medical text, Tu Youyou won the Nobel for artemisinin in which year?",
     "answer": "2015",
     "choices": [
       "2015",
@@ -5101,7 +5077,7 @@
   },
   {
     "tier": 1,
-    "question": "Norman Borlaug's Nobel category (1970):",
+    "question": "For the Green Revolution — an estimated one billion lives saved — Norman Borlaug's 1970 Nobel was awarded in which category?",
     "answer": "Peace",
     "choices": [
       "Peace",
@@ -5113,7 +5089,7 @@
   },
   {
     "tier": 1,
-    "question": "Year Marshall and Warren won the Nobel for H. pylori:",
+    "question": "In Medicine — mocked for decades before vindication — Marshall and Warren won the Nobel for H. pylori in which year?",
     "answer": "2005",
     "choices": [
       "2005",
@@ -5125,7 +5101,7 @@
   },
   {
     "tier": 1,
-    "question": "Year Penzias and Wilson accidentally discovered the cosmic microwave background:",
+    "question": "Bell Labs antenna noise that turned out to be the echo of the Big Bang, the year Penzias and Wilson accidentally discovered the cosmic microwave background was which?",
     "answer": "1964",
     "choices": [
       "1964",
@@ -5137,7 +5113,7 @@
   },
   {
     "tier": 1,
-    "question": "Year Hubble showed galaxies are receding:",
+    "question": "Demonstrating that distant galaxies recede faster — what we now call Hubble's law — the year Hubble showed galaxies are receding was which?",
     "answer": "1929",
     "choices": [
       "1929",
@@ -5149,7 +5125,7 @@
   },
   {
     "tier": 1,
-    "question": "Year Wright brothers made the first powered flight:",
+    "question": "At Kitty Hawk, North Carolina on December 17, the Wright brothers made the first powered flight in which year?",
     "answer": "1903",
     "choices": [
       "1903",
@@ -5161,7 +5137,7 @@
   },
   {
     "tier": 1,
-    "question": "Year the Spanish flu pandemic began:",
+    "question": "Killing an estimated 50 million people worldwide, the Spanish flu pandemic began in which year?",
     "answer": "1918",
     "choices": [
       "1918",
@@ -5173,7 +5149,7 @@
   },
   {
     "tier": 1,
-    "question": "Year of the first artificial nuclear reactor (Chicago Pile-1):",
+    "question": "Built under the stands of Stagg Field and led by Enrico Fermi, the first artificial nuclear reactor (Chicago Pile-1) went critical in which year?",
     "answer": "1942",
     "choices": [
       "1942",
@@ -5185,7 +5161,7 @@
   },
   {
     "tier": 1,
-    "question": "Year of the first heart transplant (Barnard):",
+    "question": "Done by Barnard in Cape Town, South Africa — patient survived 18 days — the first heart transplant took place in which year?",
     "answer": "1967",
     "choices": [
       "1967",
@@ -5197,7 +5173,7 @@
   },
   {
     "tier": 1,
-    "question": "Year Fleming discovered penicillin:",
+    "question": "Spotting mold on a contaminated dish that killed surrounding bacteria, Fleming discovered penicillin in which year?",
     "answer": "1928",
     "choices": [
       "1928",
@@ -5209,7 +5185,7 @@
   },
   {
     "tier": 1,
-    "question": "Discovered fission of uranium nuclei (1938) but was denied a Nobel:",
+    "question": "Providing the theoretical interpretation but denied a Nobel (Otto Hahn alone received it), the scientist who discovered fission of uranium nuclei in 1938 was which?",
     "answer": "Lise Meitner",
     "choices": [
       "Lise Meitner",
@@ -5221,7 +5197,7 @@
   },
   {
     "tier": 1,
-    "question": "Discovered transposable elements ('jumping genes') and won a 1983 Nobel:",
+    "question": "Working at Cold Spring Harbor after decades of dismissal before vindication, the scientist who discovered transposable elements ('jumping genes') and won a 1983 Nobel was which?",
     "answer": "Barbara McClintock",
     "choices": [
       "Barbara McClintock",
@@ -5233,7 +5209,7 @@
   },
   {
     "tier": 1,
-    "question": "Author of *Why Most Published Research Findings Are False* (2005):",
+    "question": "A Stanford professor whose foundational replication-crisis paper appeared in 2005, the author of Why Most Published Research Findings Are False was which scientist?",
     "answer": "John Ioannidis",
     "choices": [
       "John Ioannidis",
@@ -5245,7 +5221,7 @@
   },
   {
     "tier": 1,
-    "question": "Dutch social psychologist whose 2011 fraud retraction shook the field:",
+    "question": "Fabricating data in 50+ papers, the Dutch social psychologist whose 2011 fraud retraction shook the field was which figure?",
     "answer": "Diederik Stapel",
     "choices": [
       "Diederik Stapel",
@@ -5257,7 +5233,7 @@
   },
   {
     "tier": 1,
-    "question": "Chinese scientist sentenced to 3 years for editing human embryos (2018):",
+    "question": "Producing twin girls 'Lulu' and 'Nana' to widespread global condemnation, the Chinese scientist sentenced to 3 years for editing human embryos in 2018 was which figure?",
     "answer": "He Jiankui",
     "choices": [
       "He Jiankui",
@@ -5269,7 +5245,7 @@
   },
   {
     "tier": 1,
-    "question": "Year the Right to Try Act became federal law:",
+    "question": "Letting terminally ill patients access investigational therapies outside FDA-approved trials, the federal Right to Try Act became law in which year?",
     "answer": "2018",
     "choices": [
       "2018",
@@ -5281,7 +5257,7 @@
   },
   {
     "tier": 1,
-    "question": "Lab where 'gain-of-function' coronavirus research was conducted with NIH funding:",
+    "question": "With EcoHealth Alliance as the NIH grantee channeling funds, the lab where 'gain-of-function' coronavirus research was conducted with NIH funding was which?",
     "answer": "Wuhan Institute of Virology",
     "choices": [
       "Wuhan Institute of Virology",
@@ -5293,7 +5269,7 @@
   },
   {
     "tier": 1,
-    "question": "Author of *The Real Anthony Fauci*:",
+    "question": "Founder of Children's Health Defense, the author of The Real Anthony Fauci is which figure?",
     "answer": "Robert F. Kennedy Jr.",
     "choices": [
       "Robert F. Kennedy Jr.",
@@ -5305,7 +5281,7 @@
   },
   {
     "tier": 1,
-    "question": "1865 work that founded modern genetics, ignored for 34 years:",
+    "question": "Rediscovered in 1900 by de Vries, Correns, and Tschermak, the 1865 work that founded modern genetics — ignored for 34 years — was which?",
     "answer": "Mendel's pea-plant paper",
     "choices": [
       "Mendel's pea-plant paper",
@@ -5317,7 +5293,7 @@
   },
   {
     "tier": 1,
-    "question": "Year Mendeleev published the first periodic table:",
+    "question": "Predicting undiscovered elements via gaps — vindicated within his lifetime — Mendeleev published the first periodic table in which year?",
     "answer": "1869",
     "choices": [
       "1869",
@@ -5329,7 +5305,7 @@
   },
   {
     "tier": 1,
-    "question": "Year Maxwell published his unified theory of electromagnetism:",
+    "question": "Predicting electromagnetic waves before they were detected experimentally, Maxwell published his unified theory of electromagnetism in which year?",
     "answer": "1865",
     "choices": [
       "1865",
@@ -5341,7 +5317,7 @@
   },
   {
     "tier": 1,
-    "question": "Year Copernicus published *De Revolutionibus*:",
+    "question": "A heliocentric solar system published the year he died, Copernicus's De Revolutionibus appeared in which year?",
     "answer": "1543",
     "choices": [
       "1543",
@@ -5353,7 +5329,7 @@
   },
   {
     "tier": 1,
-    "question": "Author of *On the Origin of Species*:",
+    "question": "Published in 1859, twenty-three years after the Beagle voyage ended, the author of On the Origin of Species was which scientist?",
     "answer": "Charles Darwin",
     "choices": [
       "Charles Darwin",
@@ -5365,7 +5341,7 @@
   },
   {
     "tier": 1,
-    "question": "Year Darwin published *Origin of Species*:",
+    "question": "After Wallace's 1858 letter from Indonesia spurred him to publish, Darwin released Origin of Species in which year?",
     "answer": "1859",
     "choices": [
       "1859",
@@ -5377,7 +5353,7 @@
   },
   {
     "tier": 1,
-    "question": "Year Marie Curie won her second Nobel (Chemistry):",
+    "question": "Following her Physics Nobel in 1903 — the first two-time Nobel laureate — Marie Curie won her second Nobel in Chemistry in which year?",
     "answer": "1911",
     "choices": [
       "1911",
@@ -5389,7 +5365,7 @@
   },
   {
     "tier": 1,
-    "question": "Karl Popper's criterion that a scientific theory must be:",
+    "question": "Set out in The Logic of Scientific Discovery (1934), Karl Popper's criterion that a scientific theory must meet is what?",
     "answer": "Falsifiable",
     "choices": [
       "Falsifiable",
@@ -5401,7 +5377,7 @@
   },
   {
     "tier": 1,
-    "question": "Thomas Kuhn's 1962 book on scientific revolutions argued change happens via:",
+    "question": "Set out in The Structure of Scientific Revolutions, Thomas Kuhn's 1962 book argued scientific change happens via what mechanism?",
     "answer": "Paradigm shifts",
     "choices": [
       "Paradigm shifts",
@@ -5413,7 +5389,7 @@
   },
   {
     "tier": 1,
-    "question": "Founder of inductive empirical method in early modern science:",
+    "question": "Author of Novum Organum (1620), the founder of the inductive empirical method in early modern science was which philosopher?",
     "answer": "Francis Bacon",
     "choices": [
       "Francis Bacon",
@@ -5425,7 +5401,7 @@
   },
   {
     "tier": 1,
-    "question": "Philosopher famous for 'I think, therefore I am':",
+    "question": "Author of Meditations (1641) and foundational to rationalism, the philosopher famous for 'I think, therefore I am' was which figure?",
     "answer": "René Descartes",
     "choices": [
       "René Descartes",
@@ -5437,7 +5413,7 @@
   },
   {
     "tier": 1,
-    "question": "Greek thinker who argued the Earth orbits the Sun (3rd c. BC):",
+    "question": "Putting forward the heliocentric idea 1,800 years before Copernicus, the Greek thinker who argued the Earth orbits the Sun in the 3rd century BC was which figure?",
     "answer": "Aristarchus",
     "choices": [
       "Aristarchus",
@@ -5449,7 +5425,7 @@
   },
   {
     "tier": 1,
-    "question": "Greek who calculated the Earth's circumference (3rd c. BC):",
+    "question": "Using shadow lengths at Alexandria and Syene to astonishingly accurate effect, the Greek who calculated Earth's circumference in the 3rd century BC was which figure?",
     "answer": "Eratosthenes",
     "choices": [
       "Eratosthenes",
@@ -5461,7 +5437,7 @@
   },
   {
     "tier": 1,
-    "question": "Persian polymath who wrote the *Canon of Medicine* (~1025):",
+    "question": "Used in European medical schools for 600 years, the Persian polymath who wrote the Canon of Medicine around 1025 was which scholar?",
     "answer": "Ibn Sina (Avicenna)",
     "choices": [
       "Ibn Sina (Avicenna)",
@@ -5473,7 +5449,7 @@
   },
   {
     "tier": 1,
-    "question": "Arabic scholar who pioneered the experimental method in optics (~1021):",
+    "question": "Author of the Book of Optics and often called a father of the scientific method, the Arabic scholar who pioneered the experimental method in optics around 1021 was which figure?",
     "answer": "Ibn al-Haytham",
     "choices": [
       "Ibn al-Haytham",
@@ -5485,7 +5461,7 @@
   },
   {
     "tier": 1,
-    "question": "Philosopher who named oxygen and helped found modern chemistry:",
+    "question": "Guillotined in 1794 — 'a moment to cut off the head, but a century to produce its like' — the figure who named oxygen and helped found modern chemistry was which scientist?",
     "answer": "Antoine Lavoisier",
     "choices": [
       "Antoine Lavoisier",
@@ -5497,7 +5473,7 @@
   },
   {
     "tier": 1,
-    "question": "Year Galileo first used a telescope for astronomy:",
+    "question": "Discovering Jupiter's moons, Venus's phases, and lunar surface detail, the year Galileo first used a telescope for astronomy was which?",
     "answer": "1609",
     "choices": [
       "1609",
@@ -5509,7 +5485,7 @@
   },
   {
     "tier": 1,
-    "question": "Cold Spring Harbor researcher who founded the Eugenics Record Office (1910):",
+    "question": "Funded by the Carnegie Institution and the Rockefeller Foundation, the Cold Spring Harbor researcher who founded the Eugenics Record Office in 1910 was which scientist?",
     "answer": "Charles Davenport",
     "choices": [
       "Charles Davenport",
@@ -5521,7 +5497,7 @@
   },
   {
     "tier": 1,
-    "question": "1916 book Hitler called 'his bible':",
+    "question": "By Madison Grant — making eugenic racism mainstream in elite American thought — the 1916 book Hitler called 'his bible' was which?",
     "answer": "The Passing of the Great Race",
     "choices": [
       "The Passing of the Great Race",
@@ -5533,7 +5509,7 @@
   },
   {
     "tier": 1,
-    "question": "Year Hahn and Strassmann discovered nuclear fission:",
+    "question": "With Lise Meitner providing the theoretical interpretation but denied a Nobel, Hahn and Strassmann discovered nuclear fission in which year?",
     "answer": "1938",
     "choices": [
       "1938",
@@ -5545,7 +5521,7 @@
   },
   {
     "tier": 1,
-    "question": "Manhattan Project lead at Los Alamos:",
+    "question": "A theoretical physicist who later opposed the H-bomb, the Manhattan Project lead at Los Alamos was which figure?",
     "answer": "J. Robert Oppenheimer",
     "choices": [
       "J. Robert Oppenheimer",
@@ -5557,7 +5533,7 @@
   },
   {
     "tier": 1,
-    "question": "First nuclear weapon test (codename Trinity), year:",
+    "question": "On July 16 in the New Mexico desert, the first nuclear weapon test (codename Trinity) took place in which year?",
     "answer": "1945",
     "choices": [
       "1945",
@@ -5569,7 +5545,7 @@
   },
   {
     "tier": 1,
-    "question": "Year DDT was banned in the US:",
+    "question": "Following Rachel Carson's Silent Spring (1962), DDT was banned in the US in which year?",
     "answer": "1972",
     "choices": [
       "1972",
@@ -5581,7 +5557,7 @@
   },
   {
     "tier": 1,
-    "question": "Year of Challenger Space Shuttle disaster:",
+    "question": "Where Feynman's televised O-ring demonstration revealed the failure mode, the Challenger Space Shuttle disaster occurred in which year?",
     "answer": "1986",
     "choices": [
       "1986",
@@ -5593,7 +5569,7 @@
   },
   {
     "tier": 1,
-    "question": "Year Chernobyl reactor exploded:",
+    "question": "In the Ukrainian SSR on April 26 — the Soviet response illustrating systemic failure — the Chernobyl reactor exploded in which year?",
     "answer": "1986",
     "choices": [
       "1986",
@@ -5605,7 +5581,7 @@
   },
   {
     "tier": 1,
-    "question": "Surgisphere papers retracted from *Lancet* and *NEJM* concerned:",
+    "question": "Retracted within weeks of publication in 2020 — never had real data — the Surgisphere papers retracted from Lancet and NEJM concerned which drug?",
     "answer": "Hydroxychloroquine",
     "choices": [
       "Hydroxychloroquine",
@@ -5617,7 +5593,7 @@
   },
   {
     "tier": 1,
-    "question": "Year 'Climategate' emails were leaked from East Anglia:",
+    "question": "Bringing phrases like 'hide the decline' and 'Mike's nature trick' under scrutiny, the 'Climategate' emails were leaked from East Anglia in which year?",
     "answer": "2009",
     "choices": [
       "2009",
@@ -5629,7 +5605,7 @@
   },
   {
     "tier": 1,
-    "question": "Number of doses on the US childhood vaccine schedule in 1986 (by age 6, approx):",
+    "question": "Compared to 70+ doses by age 18 today (rarely discussed in mainstream media), the approximate number of doses on the US childhood vaccine schedule in 1986 by age 6 was what?",
     "answer": "~11",
     "choices": [
       "~11",
@@ -5641,7 +5617,7 @@
   },
   {
     "tier": 1,
-    "question": "First-ever moon landing site:",
+    "question": "Where Apollo 11 touched down on July 20, 1969, the first-ever moon landing site bears which name?",
     "answer": "Sea of Tranquility",
     "choices": [
       "Sea of Tranquility",
@@ -5653,7 +5629,7 @@
   },
   {
     "tier": 1,
-    "question": "Year Yuri Gagarin became first human in space:",
+    "question": "On April 12 aboard Soviet Vostok 1, the year Yuri Gagarin became the first human in space was which?",
     "answer": "1961",
     "choices": [
       "1961",
@@ -5665,7 +5641,7 @@
   },
   {
     "tier": 1,
-    "question": "Year Sputnik 1 launched:",
+    "question": "Launched by the Soviet Union, opening the Space Age and sparking the space race, Sputnik 1 was launched in which year?",
     "answer": "1957",
     "choices": [
       "1957",
@@ -5677,7 +5653,7 @@
   },
   {
     "tier": 1,
-    "question": "President who set the 'Moon by end of the decade' goal (1961):",
+    "question": "Delivering the speech to a joint session of Congress in May 1961, the president who set the 'Moon by end of the decade' goal was which figure?",
     "answer": "John F. Kennedy",
     "choices": [
       "John F. Kennedy",
@@ -5689,7 +5665,7 @@
   },
   {
     "tier": 1,
-    "question": "Computer scientist whose 'Bug' coined a term still used today:",
+    "question": "Finding an actual moth in the Mark II computer relay in 1947, the computer scientist whose 'Bug' coined a term still used today was which figure?",
     "answer": "Grace Hopper",
     "choices": [
       "Grace Hopper",
@@ -5701,7 +5677,7 @@
   },
   {
     "tier": 1,
-    "question": "First programmer (1842), wrote algorithms for Babbage's Analytical Engine:",
+    "question": "Daughter of Lord Byron who wrote algorithms for Babbage's Analytical Engine in 1842, the first programmer was which figure?",
     "answer": "Ada Lovelace",
     "choices": [
       "Ada Lovelace",
@@ -5713,7 +5689,7 @@
   },
   {
     "tier": 1,
-    "question": "Hollywood actress who co-invented frequency-hopping spread spectrum (1942):",
+    "question": "Holder of a 1942 patent foundational to modern wireless communication, the Hollywood actress who co-invented frequency-hopping spread spectrum was which figure?",
     "answer": "Hedy Lamarr",
     "choices": [
       "Hedy Lamarr",
@@ -5725,7 +5701,7 @@
   },
   {
     "tier": 1,
-    "question": "Lead software engineer for Apollo Guidance Computer:",
+    "question": "Coining the term 'software engineering' while leading the Apollo 11 software effort, the lead software engineer for the Apollo Guidance Computer was which figure?",
     "answer": "Margaret Hamilton",
     "choices": [
       "Margaret Hamilton",
@@ -5737,7 +5713,7 @@
   },
   {
     "tier": 1,
-    "question": "Cracked the Enigma code at Bletchley Park:",
+    "question": "A mathematician who laid the foundations of computer science, the scientist who cracked the Enigma code at Bletchley Park was which figure?",
     "answer": "Alan Turing",
     "choices": [
       "Alan Turing",
@@ -5749,7 +5725,7 @@
   },
   {
     "tier": 1,
-    "question": "Co-developed the polio vaccine with Salk's team, later worked at Merck:",
+    "question": "Developing 40+ vaccines including MMR and hepatitis B, the scientist who co-developed the polio vaccine with Salk's team and later worked at Merck was which figure?",
     "answer": "Maurice Hilleman",
     "choices": [
       "Maurice Hilleman",
@@ -5761,7 +5737,7 @@
   },
   {
     "tier": 1,
-    "question": "Wrote *The Selfish Gene* (1976):",
+    "question": "Popularizing the gene-centric view of evolution, the 1976 author of The Selfish Gene was which scientist?",
     "answer": "Richard Dawkins",
     "choices": [
       "Richard Dawkins",
@@ -5773,7 +5749,7 @@
   },
   {
     "tier": 1,
-    "question": "Pioneer of QED and Manhattan Project physicist:",
+    "question": "Author of Surely You're Joking, Mr. Feynman!, the pioneer of QED and Manhattan Project physicist was which figure?",
     "answer": "Richard Feynman",
     "choices": [
       "Richard Feynman",
@@ -5785,7 +5761,7 @@
   },
   {
     "tier": 1,
-    "question": "Proposed the Big Bang (originally called 'primeval atom'):",
+    "question": "A Belgian Catholic priest and physicist who in 1927 first proposed what he called the 'primeval atom,' the originator of the Big Bang was which figure?",
     "answer": "Georges Lemaître",
     "choices": [
       "Georges Lemaître",
@@ -5797,7 +5773,7 @@
   },
   {
     "tier": 1,
-    "question": "Astronomer who showed rotation curves imply dark matter:",
+    "question": "Working at the Carnegie Institution in the 1970s, the astronomer who showed rotation curves imply dark matter was which figure?",
     "answer": "Vera Rubin",
     "choices": [
       "Vera Rubin",
@@ -5809,7 +5785,7 @@
   },
   {
     "tier": 1,
-    "question": "Discovered radioactivity (1896):",
+    "question": "An accidental discovery using uranium salts and photographic plates in 1896, the scientist who discovered radioactivity was which figure?",
     "answer": "Henri Becquerel",
     "choices": [
       "Henri Becquerel",
@@ -5821,7 +5797,7 @@
   },
   {
     "tier": 1,
-    "question": "Showed atoms have a tiny dense nucleus (gold-foil experiment, 1909):",
+    "question": "Overturning the 'plum pudding' atomic model with the gold-foil experiment in 1909, the scientist who showed atoms have a tiny dense nucleus was which figure?",
     "answer": "Ernest Rutherford",
     "choices": [
       "Ernest Rutherford",
@@ -5833,7 +5809,7 @@
   },
   {
     "tier": 1,
-    "question": "Year Watson and Crick published the DNA double helix:",
+    "question": "With Photo 51 from Rosalind Franklin's X-ray crystallography essential to the discovery, Watson and Crick published the DNA double helix in which year?",
     "answer": "1953",
     "choices": [
       "1953",
@@ -5845,7 +5821,7 @@
   },
   {
     "tier": 1,
-    "question": "Year of the Wright brothers' first powered flight:",
+    "question": "At Kitty Hawk on December 17 — risking everything on a calculation — the Wright brothers' first powered flight took place in which year?",
     "answer": "1903",
     "choices": [
       "1903",
@@ -5857,7 +5833,7 @@
   },
   {
     "tier": 1,
-    "question": "Chemical symbol for Carbon:",
+    "question": "The basis of organic chemistry and all known life, carbon takes which chemical symbol?",
     "answer": "C",
     "choices": [
       "C",
@@ -5869,7 +5845,7 @@
   },
   {
     "tier": 1,
-    "question": "Chemical symbol for Nitrogen:",
+    "question": "Making up 78% of Earth's atmosphere, nitrogen takes which chemical symbol?",
     "answer": "N",
     "choices": [
       "N",
@@ -5881,7 +5857,7 @@
   },
   {
     "tier": 1,
-    "question": "Chemical symbol for Fluorine:",
+    "question": "The most reactive nonmetal and present in toothpaste as fluoride, fluorine takes which chemical symbol?",
     "answer": "F",
     "choices": [
       "F",
@@ -5893,7 +5869,7 @@
   },
   {
     "tier": 1,
-    "question": "Chemical symbol for Phosphorus:",
+    "question": "Essential for DNA, ATP, and bone, phosphorus takes which chemical symbol?",
     "answer": "P",
     "choices": [
       "P",
@@ -5905,7 +5881,7 @@
   },
   {
     "tier": 1,
-    "question": "Chemical symbol for Zinc:",
+    "question": "An essential trace element and a component of brass, zinc takes which chemical symbol?",
     "answer": "Zn",
     "choices": [
       "Zn",
@@ -5917,7 +5893,7 @@
   },
   {
     "tier": 1,
-    "question": "Chemical symbol for Manganese:",
+    "question": "Used in steel hardening and an essential trace nutrient, manganese takes which chemical symbol?",
     "answer": "Mn",
     "choices": [
       "Mn",
