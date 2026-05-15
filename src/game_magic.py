@@ -1040,7 +1040,6 @@ class MagicMixin:
             candidates.sort(key=lambda m: abs(m.x - px) + abs(m.y - py))
             if not candidates:
                 self.add_message("No visible target for this spell.", 'warning')
-                self.player.mp += mp_cost  # refund MP
                 self.state = STATE_PLAYER
                 return
             self.player.mp -= mp_cost
@@ -2351,7 +2350,7 @@ class MagicMixin:
             item.identified = True
             self.player.known_item_ids.add(getattr(item, 'id', ''))
         # Equipped items too
-        for slot_item in self.player.get_equipped_items():
+        for slot_item in self.player.get_equipped_items().values():
             if slot_item:
                 slot_item.identified = True
                 self.player.known_item_ids.add(slot_item.id)
