@@ -168,7 +168,20 @@ class Monster:
 
     # --- Combat ---
 
-    def take_damage(self, amount: int) -> int:
+    def take_damage(self, amount: int, damage_type: str = 'physical') -> int:
+        """Apply damage to this monster, consulting resistances/weaknesses for non-physical types.
+
+        Melee callers (combat.player_attack) pre-scale damage with dragon_scales and the
+        full weapon-type multiplier, then call take_damage(amount) — the default
+        damage_type='physical' yields a 1.0 multiplier here, so no double-apply.
+
+        Spell/wand callers pass the elemental type (fire/cold/lightning/acid/holy/...)
+        and let take_damage apply the resistance lookup.
+        """
+        if damage_type and damage_type != 'physical':
+            from combat import _damage_multiplier
+            mult = _damage_multiplier([damage_type], self)
+            amount = int(amount * mult)
         actual = max(0, amount)
         self.hp = max(0, self.hp - actual)
         if self.hp == 0:

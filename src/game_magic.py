@@ -458,7 +458,7 @@ class MagicMixin:
 
             elif effect == 'fire_bolt':
                 dmg = self._wand_tier_damage(roll(wand.power) if wand.power else 6, wand.quiz_tier)
-                actual = target.take_damage(dmg)
+                actual = target.take_damage(dmg, 'fire')
                 self.add_message(
                     f"A bolt of fire strikes the {target.name} for {actual} damage!", 'success'
                 )
@@ -467,7 +467,7 @@ class MagicMixin:
 
             elif effect == 'cold_bolt':
                 dmg = self._wand_tier_damage(roll(wand.power) if wand.power else 4, wand.quiz_tier)
-                actual = target.take_damage(dmg)
+                actual = target.take_damage(dmg, 'cold')
                 dur = self._wand_tier_duration(4, wand.quiz_tier)
                 dur, sr = self._boss_resist_cc(target, dur)
                 if not sr:
@@ -488,7 +488,7 @@ class MagicMixin:
                 line_hits = [m for m in self.monsters
                              if m.alive and (m.x, m.y) in line_set and (m.x, m.y) in self.visible]
                 for lm in line_hits:
-                    actual = lm.take_damage(dmg)
+                    actual = lm.take_damage(dmg, 'lightning')
                     if actual > 0:
                         sd, sr = self._boss_resist_cc(lm, 3)
                         if not sr:
@@ -506,7 +506,7 @@ class MagicMixin:
 
             elif effect == 'acid_spray':
                 dmg = self._wand_tier_damage(roll(wand.power) if wand.power else 4, wand.quiz_tier)
-                actual = target.take_damage(dmg)
+                actual = target.take_damage(dmg, 'acid')
                 dur = self._wand_tier_duration(6, wand.quiz_tier)
                 dur, sr = self._boss_resist_cc(target, dur)
                 if not sr:
@@ -964,7 +964,7 @@ class MagicMixin:
                       and any(w in m.kind.lower() for w in _UNDEAD_WORDS)]
             if undead:
                 for m in undead:
-                    actual = m.take_damage(base_dmg)
+                    actual = m.take_damage(base_dmg, 'holy')
                     m.add_effect('feared', self._wand_tier_duration(8, wand.quiz_tier))
                     if not m.alive:
                         self._on_monster_killed(m)
@@ -986,7 +986,7 @@ class MagicMixin:
                      if m.alive and (m.x, m.y) in self.visible],
                     self.add_message("A wave of confusion erupts!", 'success'))),
                 ('fireball', lambda: (
-                    [m.take_damage(self._wand_tier_damage(_rng.randint(8, 20), wand.quiz_tier))
+                    [m.take_damage(self._wand_tier_damage(_rng.randint(8, 20), wand.quiz_tier), 'fire')
                      for m in self.monsters if m.alive and (m.x, m.y) in self.visible],
                     self.add_message("A burst of flame erupts from the wand!", 'success'))),
                 ('teleport', lambda: (self._teleport_player(),
@@ -1000,7 +1000,7 @@ class MagicMixin:
                 ('invisible', lambda: (self.player.add_effect('invisible', 10),
                     self.add_message("You vanish from sight!", 'success'))),
                 ('lightning', lambda: (
-                    (lambda t: (t.take_damage(self._wand_tier_damage(_rng.randint(10, 25), wand.quiz_tier)),
+                    (lambda t: (t.take_damage(self._wand_tier_damage(_rng.randint(10, 25), wand.quiz_tier), 'lightning'),
                      self.add_message(f"Lightning zaps the {t.name}!", 'success'),
                      None if t.alive else self._on_monster_killed(t))
                     )(self._nearest_visible_monster()) if self._nearest_visible_monster() else
@@ -1121,7 +1121,7 @@ class MagicMixin:
             hit = 0
             for m in list(self.monsters):
                 if m.alive and (m.x, m.y) in self.visible:
-                    m.take_damage(scaled)
+                    m.take_damage(scaled, 'cold')
                     if not m.alive:
                         self._on_monster_killed(m)
                     hit += 1
@@ -1136,7 +1136,7 @@ class MagicMixin:
             hit = 0
             for m in list(self.monsters):
                 if m.alive and (m.x, m.y) in self.visible:
-                    actual = m.take_damage(scaled)
+                    actual = m.take_damage(scaled, 'fire')
                     if not m.alive:
                         self._on_monster_killed(m)
                     hit += 1
@@ -1259,7 +1259,7 @@ class MagicMixin:
             visible_monsters = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
             kills = 0
             for m in visible_monsters:
-                actual = m.take_damage(scaled)
+                actual = m.take_damage(scaled, 'fire')
                 if not m.alive:
                     self._on_monster_killed(m)
                     kills += 1
@@ -1335,7 +1335,7 @@ class MagicMixin:
             elif effect == 'fire_bolt':
                 base_dmg = _roll(power) if power else 8
                 scaled = self._spell_damage(base_dmg, chain)
-                actual = target.take_damage(scaled)
+                actual = target.take_damage(scaled, 'fire')
                 self.add_message(
                     f"A bolt of fire strikes the {target.name} for {actual} damage! (chain {chain})", 'success')
                 if not target.alive:
@@ -1351,7 +1351,7 @@ class MagicMixin:
                              if m.alive and (m.x, m.y) in line_set and (m.x, m.y) in self.visible]
                 stun_dur = max(1, int(3 * chain_scale))
                 for lm in line_hits:
-                    actual = lm.take_damage(scaled)
+                    actual = lm.take_damage(scaled, 'lightning')
                     if actual > 0:
                         sd, sr = self._boss_resist_cc(lm, stun_dur)
                         if not sr:
@@ -1435,7 +1435,7 @@ class MagicMixin:
             elif effect == 'acid_arrow':
                 base_dmg = _roll(power) if power else 8
                 scaled = self._spell_damage(base_dmg, chain)
-                actual = target.take_damage(scaled)
+                actual = target.take_damage(scaled, 'acid')
                 dot_dur = max(2, int(5 * chain_scale))
                 dot_dur, dot_resisted = self._boss_resist_cc(target, dot_dur)
                 if not dot_resisted:
