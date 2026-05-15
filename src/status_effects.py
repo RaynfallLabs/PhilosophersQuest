@@ -48,6 +48,7 @@ EFFECT_INFO: dict[str, tuple] = {
     'in_pit':             ('In Pit',             (140, 100,  60), 'Stuck in a pit; must climb out'),
     'silenced':           ('Silenced',           (120, 120, 160), 'Cannot cast spells or read scrolls'),
     'empowered':          ('Empowered',          (255, 200,  80), 'Next melee attack deals 3x damage'),
+    'berserk':            ('Berserk',            (220,  60,  40), 'Ríastrad — bonus STR, HP cost per turn'),
     # ---- Buffs ----
     'hasted':             ('Hasted',             (245, 245,  60), 'Extra action each turn'),
     'invisible':          ('Invisible',          (185, 235, 235), 'Monsters have 30% miss chance'),
@@ -93,7 +94,7 @@ DEBUFFS: frozenset = frozenset({
     'slowed', 'aggravated', 'teleportitis',
     'feared', 'charmed', 'cursed', 'weakened', 'bleeding', 'doomed', 'draining',
     'burning', 'frozen', 'corroding', 'immobilized', 'in_pit', 'silenced',
-    'hallucinating_pot',
+    'hallucinating_pot', 'berserk',
 })
 
 BUFFS: frozenset = frozenset({
@@ -269,6 +270,7 @@ _EXPIRE_MSGS: dict[str, tuple] = {
     'in_pit':         ('You climb out of the pit.',             'info'),
     'silenced':       ('You find your voice again.',            'success'),
     'hallucinating_pot': ('Reality snaps back into focus.',     'info'),
+    'berserk':        ('The fury fades. You feel drained.',     'warning'),
 }
 
 
@@ -403,6 +405,13 @@ def tick_all(player, dungeon=None) -> list[tuple[str, str]]:
         elif effect == 'brilliance':
             player.apply_stat_bonus('INT', -1)
             player.apply_stat_bonus('WIS', -1)
+        elif effect == 'berserk':
+            # Berserk uses direct STR write (not apply_stat_bonus) because
+            # it's a combat damage bonus, not a full stat buff — no max_sp gain.
+            bonus = getattr(player, '_berserk_str_bonus', 0)
+            if bonus:
+                player.STR -= bonus
+                player._berserk_str_bonus = 0
         msg_pair = _EXPIRE_MSGS.get(effect)
         if msg_pair:
             messages.append(msg_pair)

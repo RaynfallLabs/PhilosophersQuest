@@ -1598,31 +1598,25 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 if self.player.hp < self.player.max_hp:
                     self.player.hp = min(self.player.max_hp, self.player.hp + _pr)
 
-        # Coat of Cú Chulainn: berserk trigger at low HP
-        if not self.player.has_effect('berserk'):
-            for _arm_slot in self.player.armor_slots:
-                if _arm_slot and getattr(_arm_slot, 'berserk_trigger', False):
-                    _bpct = _arm_slot.berserk_hp_threshold
-                    if self.player.hp > 0 and self.player.hp / max(1, self.player.max_hp) <= _bpct:
-                        self.player.status_effects['berserk'] = _arm_slot.berserk_duration
-                        self.player._berserk_str_bonus = _arm_slot.berserk_str_bonus
-                        self.player.STR += _arm_slot.berserk_str_bonus
-                        self.add_message("The ríastrad takes hold! Your body warps with primal fury!", 'combat')
-        elif self.player.has_effect('berserk'):
-            # Berserk HP cost per turn
-            _berserk_cost = getattr(self.player, '_berserk_hp_cost', 1)
-            for _arm_slot in self.player.armor_slots:
-                if _arm_slot and getattr(_arm_slot, 'berserk_trigger', False):
-                    _berserk_cost = _arm_slot.berserk_hp_cost
-                    break
-            self.player.hp = max(1, self.player.hp - _berserk_cost)
-            # Check if berserk just expired
-            if self.player.status_effects.get('berserk', 0) <= 1:
-                _str_bonus = getattr(self.player, '_berserk_str_bonus', 0)
-                if _str_bonus:
-                    self.player.STR -= _str_bonus
-                    self.player._berserk_str_bonus = 0
-                self.add_message("The fury fades. You feel drained.", 'warning')
+        # Coat of Cú Chulainn: berserk trigger at low HP, HP cost while active.
+        # STR refund + expiry message are handled by status_effects.tick_all
+        # so we don't need to manually re-trigger or refund here.
+        _berserk_armor = next(
+            (a for a in self.player.armor_slots
+             if a and getattr(a, 'berserk_trigger', False)),
+            None
+        )
+        if _berserk_armor:
+            if not self.player.has_effect('berserk'):
+                _bpct = _berserk_armor.berserk_hp_threshold
+                if self.player.hp > 0 and self.player.hp / max(1, self.player.max_hp) <= _bpct:
+                    self.player.STR += _berserk_armor.berserk_str_bonus
+                    self.player._berserk_str_bonus = _berserk_armor.berserk_str_bonus
+                    self.player.add_effect('berserk', _berserk_armor.berserk_duration)
+                    self.add_message("The ríastrad takes hold! Your body warps with primal fury!", 'combat')
+            else:
+                # HP cost per turn while berserk is active
+                self.player.hp = max(1, self.player.hp - _berserk_armor.berserk_hp_cost)
 
         # Seal of Solomon: pacify nearby monsters
         for _acc in self.player.equipped_accessories:
